@@ -15,8 +15,8 @@ import { useIsDark } from '@/services/theme';
 import type { StoryChoice } from '@/data/types';
 
 /**
- * Leitor de história interativa: o texto em romeno (com tradução opcional), as escolhas
- * em romeno. Escolha que mostra que o texto não foi entendido → dica do Linu e nova tentativa.
+ * Leitor de história interativa: o texto no idioma (com tradução opcional), as escolhas
+ * no idioma. Escolha que mostra que o texto não foi entendido → dica do Linu e nova tentativa.
  */
 export default function StoryScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();

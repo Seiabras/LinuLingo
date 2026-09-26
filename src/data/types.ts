@@ -244,9 +244,17 @@ export interface LanguagePack extends LanguageInfo {
   shadowing: [string, string][];
   /** Letras especiais para o teclado adaptado */
   specialChars: string[];
+  /** Alfabeto inteiro em fileiras (idiomas de outro alfabeto): vira um teclado completo */
+  keyboardRows?: string[][];
   /** Saudação curta e frase de teste da voz */
   greeting: string;
   sampleSentence: string;
+  /** Frases curtas do Linu no idioma: oi, obrigado e «vamos começar» (com tradução) */
+  phrases: { hi: string; thanks: string; letsStart: [string, string] };
+  /** Marcas do registro formal, citadas quando o aluno fala íntimo demais num cenário */
+  formalMarkers: string;
+  /** Texto da aba de vocabulário sobre o parentesco com o português */
+  cognateNote: string;
 }
 
 /** Meta do núcleo de vocabulário por idioma (as palavras mais frequentes). */

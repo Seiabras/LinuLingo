@@ -36,4 +36,7 @@ export const ROMENO: LanguagePack = {
   specialChars: ['ă', 'â', 'î', 'ș', 'ț'],
   greeting: 'Bună ziua',
   sampleSentence: 'Bună ziua! Mă numesc Linu. Hai să învățăm română!',
+  phrases: { hi: 'Bună!', thanks: 'Mulțumesc!', letsStart: ['Hai să începem!', 'Vamos começar!'] },
+  formalMarkers: 'vă rog, aveți, dumneavoastră',
+  cognateNote: 'O romeno é uma língua românica, prima do português. Cada palavra mostra a raiz e os parentes nas línguas irmãs.',
 };

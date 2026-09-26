@@ -28,9 +28,19 @@ export default function TutorialScreen() {
   const [i, setI] = useState(0);
 
   const slides: Slide[] = [
-    { mood: 'feliz', title: `Bună! Eu sou o Linu 🐧`, text: `Sou um pinguim-de-barbicha, dá para ver pela faixinha preta embaixo do queixo. Vou te acompanhar no ${pack.name.toLowerCase()}. Em 1 minuto te mostro como tudo funciona!` },
+    { mood: 'feliz', title: `${pack.phrases.hi} Eu sou o Linu 🐧`, text: `Sou um pinguim-de-barbicha, dá para ver pela faixinha preta embaixo do queixo. Vou te acompanhar no ${pack.name.toLowerCase()}. Em 1 minuto te mostro como tudo funciona!` },
     { mood: 'falando', title: 'A trilha', text: 'A trilha vai do A1.1 ao C2 em 15 subníveis, na faixa do topo. As lições liberam uma por vez; se você já sabe um nível, toque em «Já sei isto» numa unidade bloqueada e faça o teste: com 80% você pula para lá. Cada unidade tem quatro tipos de parada:', extra: 'trilha' },
     { mood: 'pensando', title: 'Uma lição, 6 etapas', text: 'Primeiro você entende, depois pratica. Nada de decorar sem saber o porquê:', extra: 'etapas' },
+    // idiomas de outro alfabeto (russo): teclado próprio e sílaba tônica marcada
+    ...(pack.keyboardRows
+      ? [
+          {
+            mood: 'pensando' as const,
+            title: 'Outro alfabeto, sem medo',
+            text: `O ${pack.name.toLowerCase()} tem alfabeto próprio. A lição 1 e a aba Gramática ensinam as letras, e nas respostas escritas aparece o botão «⌨️ Mostrar teclado» com todas elas. A sílaba tônica vem marcada com um acento (молоко́): os nativos não escrevem esse acento, ele está aqui para você pronunciar certo. Na hora de responder, pode digitar sem ele.`,
+          },
+        ]
+      : []),
     { mood: 'feliz', title: 'Gestos nos cartões', text: 'No sprint de 5 minutos e na revisão você desliza os cartões. Experimente com este:', extra: 'gestos' },
     { mood: 'pensando', title: 'O cofre lembra por você', text: 'Cada palavra vai para o cofre de vocabulário. O app calcula (algoritmo SM-2) o dia certo de revisar: um pouco antes de você esquecer. Quando aparecer «revisar hoje», é a hora!' },
     { mood: 'comemorando', title: 'Ofensiva e meta do dia', text: 'Estudar todo dia mantém o fogo aceso:', extra: 'ofensiva' },
@@ -39,7 +49,7 @@ export default function TutorialScreen() {
     { mood: 'feliz', title: 'O mundo do idioma', text: 'Na aba Cultura tem um mapa-múndi: toque num idioma para ver onde ele é falado (o que você estuda vem primeiro, seguido dos parentes mais próximos). Os botões embaixo do mapa levam a cada região e sub-região (América do Sul › Andina, por exemplo), com a lista dos países. Toque num país e o mapa aproxima nele, mostrando os estados e as províncias; toque numa região para ver o nome e o código. No cartão aparecem as línguas, da mais falada para a menos falada, os animais nativos e os instrumentos de lá. Dá até para escolher uma variante, como o romeno da Moldávia!' },
     { mood: 'falando', title: 'Conversa e comunidade', text: 'Na aba Conversa você pratica situações reais (café, hotel, entrevista) e eu aviso se o tom ficou formal ou informal demais. Na Comunidade você corrige textos de outros alunos e ganha 20 XP.' },
     { mood: 'falando', title: 'Minha voz', text: `Para ouvir as palavras, o seu aparelho precisa de uma voz em ${pack.name.toLowerCase()}. Confira se já tem:`, extra: 'voz' },
-    { mood: 'comemorando', title: 'Bora começar!', text: 'Se quiser rever este tutorial, ele fica no Perfil. Hai să începem! (Vamos começar!)' },
+    { mood: 'comemorando', title: 'Bora começar!', text: `Se quiser rever este tutorial, ele fica no Perfil. ${pack.phrases.letsStart[0]} (${pack.phrases.letsStart[1]})` },
   ];
   const s = slides[i];
   const last = i === slides.length - 1;

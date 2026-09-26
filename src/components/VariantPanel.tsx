@@ -4,6 +4,11 @@ import { Card, Chip, SpeakButton } from './ui';
 import { CulturalGrammarCard } from './CulturalGrammarCard';
 import { useApp } from '@/services/app-state';
 
+/** «Romeno da Moldávia» → «Moldávia» (o nome do lugar). */
+function shortName(name: string): string {
+  return name.replace(/^\S+ d[aoe]s? /, '');
+}
+
 /** Escolha da variante do idioma (ex.: Romênia × Moldávia) e o que muda em cada uma. */
 export function VariantPanel() {
   const { pack, variant, setVariant } = useApp();
@@ -34,7 +39,7 @@ export function VariantPanel() {
 
       {v.pronunciation && v.pronunciation.length > 0 && (
         <Card className="gap-2">
-          <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">🗣️ Como soa em {v.name.replace('Romeno da ', '')}</Text>
+          <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">🗣️ Como soa em {shortName(v.name)}</Text>
           {v.pronunciation.map((p) => (
             <Text key={p} className="text-base leading-6 text-slate-800 dark:text-slate-200">
               • {p}
@@ -46,7 +51,7 @@ export function VariantPanel() {
       {v.vocab && v.vocab.length > 0 && (
         <Card className="gap-2">
           <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">
-            {standard.flag} Padrão × {v.flag} {v.name.replace('Romeno da ', '')} · {v.vocab.length} palavras
+            {standard.flag} Padrão × {v.flag} {shortName(v.name)} · {v.vocab.length} palavras
           </Text>
           {v.vocab.map(([std, loc, pt, note]) => (
             <View key={`${std}-${loc}`} className="flex-row items-center gap-2 border-b border-slate-100 py-1.5 dark:border-slate-800">

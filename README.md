@@ -11,6 +11,7 @@ O mascote é o **Linu**, um pinguim-de-barbicha (*Pygoscelis antarctica*).
 | Idioma | Família › ramo | Estado |
 | --- | --- | --- |
 | 🇷🇴 Romeno | Indo-europeu › Itálico › Românico › Românico oriental | **disponível** |
+| 🇷🇺 Russo | Indo-europeu › Balto-eslavo › Eslavo › Eslavo oriental | **disponível** (1ª versão) |
 | 🇪🇸 Espanhol | Indo-europeu › Itálico › Românico › Ibero-românico | em breve |
 | 🇬🇧 Inglês | Indo-europeu › Germânico › Germânico ocidental | em breve |
 | 🇫🇮 Finlandês | Urálico › Fínico › Fínico setentrional | em breve |
@@ -19,6 +20,17 @@ O mascote é o **Linu**, um pinguim-de-barbicha (*Pygoscelis antarctica*).
 | 🇰🇷 Coreano | Coreânico | em breve |
 
 O seletor do Perfil agrupa os idiomas por família e ramo linguístico.
+
+## O que tem no russo
+
+- **Trilha CEFR** em 15 subníveis (A1.1 → C2), 60 lições. A 1ª unidade ensina o **alfabeto cirílico** (falsos amigos visuais Р = r, В = v, Н = n, С = s), e as seguintes seguem a gramática do russo: casos, aspecto verbal, verbos de movimento, particípios, gerúndios, registro, estilo literário.
+- **Tônica marcada** em todo texto russo (молоко́), como nos livros didáticos. A marca alimenta a IPA e é ignorada ao comparar respostas (e na voz).
+- **IPA por regras** (src/services/ipa-ru.ts): redução das vogais átonas (о → [ɐ]/[ə], е/я → [ɪ]), consoantes moles, ensurdecimento e assimilação, casos especiais (что, -ого, -тся).
+- **Teclado cirílico** completo (ЙЦУКЕН) nas respostas escritas, para quem não tem o teclado russo instalado.
+- 1.549 palavras com tônica, 354 gravações nativas (Lingua Libre), 30 tópicos de gramática (do alfabeto aos provérbios), 15 histórias (Moscou, São Petersburgo, Volga, Cazã, Almaty, Transiberiano, Kamtchatka, Iásnaia Poliana…), 4 cenários de conversa, 41 etimologias.
+- **Diário** com regras próprias: devolve o ё (еще → ещё), acerta мой/моя́/моё pelo gênero e pega erros de lusófonos (я имею 20 лет → мне 20 лет, я нравится → мне нравится, я есть студент → я студент).
+- **Shadowing**: a pergunta de sim/não em russo não sobe no fim, e sim tem um pico na palavra-chave (IK-3). O app explica isso e não cobra a subida.
+- Conteúdo escrito por um autor e revisado por outro, com verificadores automáticos (scripts/checar-vocab-ru.ts, scripts/checar-conteudo-ru.ts) que exigem a tônica e barram letras latinas misturadas no cirílico.
 
 ## O que tem no romeno
 
@@ -56,6 +68,7 @@ No **Linux**, `scripts/instalar-piper.sh` instala o [Piper](https://github.com/r
 
 ```bash
 sh scripts/instalar-piper.sh          # depois: feche e abra o navegador
+sh scripts/instalar-piper.sh ro_RO-mihai-medium ru_RU-irina-medium   # romeno e russo
 spd-say -l ro "Bună ziua"             # teste
 ```
 
@@ -90,6 +103,7 @@ node scripts/fluxo-extras.mjs              # tutorial, voz, etimologia, sprint, 
 node scripts/fluxo-historia.mjs            # histórias: desvio, dica, final e contador de finais
 node scripts/fluxo-praticas.mjs            # diário (corretor), palácio (jogo) e shadowing (microfone falso)
 npx tsx scripts/fluxo-trilha.mjs          # faixa de subníveis e teste para pular
+npx tsx scripts/fluxo-russo.mjs           # russo: troca de idioma, cirílico, IPA, teclado, diário
 node scripts/fluxo-mapa.mjs                # mapa ISO 3166-1/3166-3, zoom nas subdivisões e variante da Moldávia
 node scripts/capturas.mjs / /vocabulario   # capturas em desktop, iPhone, Android e iPad
 ```

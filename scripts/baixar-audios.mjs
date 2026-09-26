@@ -61,11 +61,13 @@ const vocabSrc = readFileSync(`src/data/${lang}/vocabulario.ts`, 'utf8');
 const words = [...vocabSrc.matchAll(/^\s*\['([^']+)'/gm)].map((m) => m[1]);
 
 const titles = await allTitles();
+// chave de busca: minúscula, sem a marca de tônica do russo (U+0301), ё = е, cedilha = vírgula no romeno
+const keyOf = (w) => w.normalize('NFC').toLowerCase().replace(/\u0301/g, '').replace(/ё/g, 'е').replace(/ş/g, 'ș').replace(/ţ/g, 'ț');
 const byWord = new Map();
 for (const t of titles) {
   const p = parseTitle(t);
   if (!p) continue;
-  const key = p.word.toLowerCase().replace(/ş/g, 'ș').replace(/ţ/g, 'ț');
+  const key = keyOf(p.word);
   if (!byWord.has(key)) byWord.set(key, []);
   byWord.get(key).push({ title: t, speaker: p.speaker });
 }
@@ -76,7 +78,8 @@ for (const list of byWord.values()) for (const f of list) speakerCount.set(f.spe
 
 const wanted = [];
 for (const w of words) {
-  const candidates = [w, w.replace(/^a (se |-și )?/, '')].map((x) => x.toLowerCase());
+  // romeno: o verbo aparece como «a vorbi» no vocabulário e «vorbi» na gravação
+  const candidates = (lang === 'ro' ? [w, w.replace(/^a (se |-și )?/, '')] : [w]).map(keyOf);
   const hit = candidates.map((c) => byWord.get(c)).find(Boolean);
   if (!hit) continue;
   const best = [...hit].sort((a, b) => (speakerCount.get(b.speaker) ?? 0) - (speakerCount.get(a.speaker) ?? 0))[0];

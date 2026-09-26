@@ -33,3 +33,13 @@ test('apóstrofo reto, tipográfico ou ausente dão a mesma resposta', () => {
   assert.equal(normalize('Las’ că!'), normalize("las' ca"));
   assert.equal(normalize('Las’ că!'), normalize('las ca'));
 });
+
+test('cirílico: й continua letra, ё vale е e a tônica marcada não conta', () => {
+  assert.notEqual(normalize('мой'), normalize('мои'));
+  assert.equal(normalize('Мой дом'), 'мой дом');
+  assert.equal(normalize('ещё'), normalize('еще'));
+  assert.equal(normalize('Спаси́бо!', { keepDiacritics: true }), 'спасибо');
+  assert.ok(matchesAny('спасибо большое', ['Спаси́бо большо́е!']));
+  // o romeno segue tolerante: ă → a
+  assert.equal(normalize('mâncă'), 'manca');
+});

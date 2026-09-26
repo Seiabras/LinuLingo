@@ -3,6 +3,7 @@ import type { OS } from '@/services/platform-info';
 /** Nomes das vozes do sistema por idioma (só onde sabemos o nome exato). */
 const VOICE_NAMES: Record<string, Partial<Record<OS | 'piper', string>>> = {
   ro: { ios: 'Ioana', macos: 'Ioana', windows: 'Andrei', piper: 'ro_RO-mihai-medium' },
+  ru: { ios: 'Milena', macos: 'Milena', windows: 'Irina', piper: 'ru_RU-irina-medium' },
 };
 
 export const PIPER_SCRIPT_URL = 'https://github.com/Seiabras/poliglota/blob/master/scripts/instalar-piper.sh';

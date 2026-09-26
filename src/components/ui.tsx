@@ -145,3 +145,59 @@ export const GENDER_LABEL: Record<string, { label: string; tone: 'blue' | 'rose'
   f: { label: 'fem.', tone: 'rose' },
   n: { label: 'neutro', tone: 'amber' },
 };
+
+/**
+ * Teclado de letras do idioma. Poucas letras (ă â î ș ț): uma fileira de botões.
+ * Alfabeto inteiro (cirílico): teclado em fileiras com apagar e espaço, que pode ser recolhido,
+ * para quem não tem o teclado do idioma instalado.
+ */
+export function LetterPad({ onInsert, onBackspace, small }: { onInsert: (ch: string) => void; onBackspace?: () => void; small?: boolean }) {
+  const { pack } = useApp();
+  const [open, setOpen] = useState(false);
+  const rows = pack.keyboardRows;
+  const key = small ? 'h-9 w-9 rounded-lg' : 'h-11 w-11 rounded-xl';
+  if (!rows) {
+    return (
+      <View className="flex-row flex-wrap justify-center gap-2">
+        {pack.specialChars.map((ch) => (
+          <Pressable key={ch} accessibilityLabel={`Inserir ${ch}`} onPress={() => onInsert(ch)} className={`${key} items-center justify-center bg-slate-200 active:bg-slate-300 dark:bg-slate-800`}>
+            <Text className="text-lg font-bold text-slate-800 dark:text-slate-100">{ch}</Text>
+          </Pressable>
+        ))}
+      </View>
+    );
+  }
+  return (
+    <View className="gap-1">
+      <Pressable accessibilityRole="button" accessibilityState={{ expanded: open }} onPress={() => setOpen((v) => !v)} className="self-center rounded-full bg-slate-200 px-3 py-1 dark:bg-slate-800">
+        <Text className="text-sm font-semibold text-slate-700 dark:text-slate-200">⌨️ {open ? 'Esconder' : 'Mostrar'} teclado ({pack.name.toLowerCase()})</Text>
+      </Pressable>
+      {open &&
+        rows.map((row, r) => (
+          <View key={r} className="flex-row justify-center gap-[3px]">
+            {row.map((ch) => (
+              <Pressable
+                key={ch}
+                accessibilityLabel={`Inserir ${ch}`}
+                onPress={() => onInsert(ch)}
+                style={{ flexBasis: 0, maxWidth: 38 }}
+                className="h-10 flex-1 items-center justify-center rounded-md bg-slate-200 active:bg-slate-300 dark:bg-slate-800"
+              >
+                <Text className="text-base font-bold text-slate-800 dark:text-slate-100">{ch}</Text>
+              </Pressable>
+            ))}
+            {r === rows.length - 1 && onBackspace && (
+              <Pressable accessibilityLabel="Apagar" onPress={onBackspace} style={{ flexBasis: 0, maxWidth: 52 }} className="h-10 flex-[1.4] items-center justify-center rounded-md bg-slate-300 dark:bg-slate-700">
+                <Text className="text-base font-bold text-slate-800 dark:text-slate-100">⌫</Text>
+              </Pressable>
+            )}
+          </View>
+        ))}
+      {open && (
+        <Pressable accessibilityLabel="Espaço" onPress={() => onInsert(' ')} className="h-10 w-1/2 items-center justify-center self-center rounded-md bg-slate-200 dark:bg-slate-800">
+          <Text className="text-xs font-semibold text-slate-500">espaço</Text>
+        </Pressable>
+      )}
+    </View>
+  );
+}

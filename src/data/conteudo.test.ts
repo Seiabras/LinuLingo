@@ -4,10 +4,13 @@ import assert from 'node:assert/strict';
 import { PACKS, LANGUAGES, groupByLineage } from './idiomas';
 import { endingIds, reachable } from '../services/stories';
 import { SUBLEVELS } from '../types';
+
 import { WORLD } from './mapa-mundi';
 import { ISO_3166_2 } from './iso-3166-2';
 import { MAP_LANGUAGES } from './onde-se-fala';
 import { FORMER_COUNTRIES } from './iso-3166-3';
+
+const STORIES_PER_LEVEL: Record<string, number> = { ro: 3, ru: 1 };
 
 for (const pack of Object.values(PACKS)) {
   const words = new Set(pack.vocab.map((v) => v.word_target));
@@ -89,7 +92,9 @@ for (const pack of Object.values(PACKS)) {
     for (const st of pack.stories) assert.ok((SUBLEVELS as readonly string[]).includes(st.level), `${st.id}: ${st.level}`);
     assert.equal(new Set(pack.stories.map((s) => s.id)).size, pack.stories.length, 'ids repetidos');
     assert.equal(new Set(pack.stories.map((s) => s.title)).size, pack.stories.length, 'títulos repetidos');
-    for (const lv of SUBLEVELS) assert.ok(pack.stories.filter((s) => s.level === lv).length >= 3, `menos de 3 histórias em ${lv}`);
+    // meta: 3 por subnível (o romeno já tem; o russo chega lá no bloco D2)
+    const min = STORIES_PER_LEVEL[pack.code] ?? 1;
+    for (const lv of SUBLEVELS) assert.ok(pack.stories.filter((s) => s.level === lv).length >= min, `menos de ${min} histórias em ${lv}`);
   });
 
   test(`${pack.code}: cenários têm turnos com sugestões`, () => {
@@ -164,11 +169,31 @@ test('regiões do mundo: cada país ou território do mapa em exatamente uma sub
   );
 });
 
-test('trilha: uma unidade por subnível, na ordem do A1.1 ao C2', () => {
-  const ro = PACKS.ro;
-  assert.deepEqual(
-    ro.units.map((u) => u.level),
-    [...SUBLEVELS],
-  );
-  for (const u of ro.units) assert.equal(u.cefr, u.level.slice(0, 2), u.id);
+for (const pack of Object.values(PACKS))
+  test(`${pack.code}: trilha com uma unidade por subnível, na ordem do A1.1 ao C2`, () => {
+    assert.deepEqual(
+      pack.units.map((u) => u.level),
+      [...SUBLEVELS],
+    );
+    for (const u of pack.units) assert.equal(u.cefr, u.level.slice(0, 2), u.id);
+  });
+
+test('ru: todo texto russo com tônica marcada e só cirílico', async () => {
+  const { russianTextProblems } = await import('../services/ru-texto');
+  const ru = PACKS.ru;
+  const texts: [string, string][] = [];
+  for (const v of ru.vocab) texts.push([v.id, v.word_target], [v.id, v.example_sentence]);
+  for (const u of ru.units)
+    for (const l of u.lessons) {
+      for (const c of l.cloze) texts.push([l.id, c.sentence.replace('___', '')], ...c.options.map((o) => [l.id, o] as [string, string]));
+      texts.push([l.id, l.voice.bot], [l.id, l.voice.expected[0]]);
+    }
+  for (const st of ru.stories)
+    for (const [nid, n] of Object.entries(st.nodes)) {
+      texts.push([`${st.id}.${nid}`, n.text]);
+      for (const c of n.choices ?? []) texts.push([`${st.id}.${nid}`, c.text]);
+    }
+  for (const [ph] of ru.shadowing) texts.push(['shadowing', ph]);
+  const problems = texts.flatMap(([id, t]) => russianTextProblems(t).map((p) => `${id}: ${p}`));
+  assert.deepEqual(problems.slice(0, 10), []);
 });

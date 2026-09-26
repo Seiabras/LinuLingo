@@ -23,7 +23,7 @@ const CATEGORY_EMOJI: Record<string, string> = {
   Escola: '🎒', Profissões: '👷', Animais: '🐾', Sociedade: '🏛️', Tecnologia: '💻', 'Lazer e Esportes': '⚽', Ciência: '🔬', Expressões: '💬',
 };
 
-const LANG_FLAG: Record<string, string> = { pt: '🇧🇷', es: '🇪🇸', it: '🇮🇹', fr: '🇫🇷', ru: '🇷🇺', pl: '🇵🇱', cs: '🇨🇿', sr: '🇷🇸', bg: '🇧🇬', el: '🇬🇷', sq: '🇦🇱', hu: '🇭🇺', tr: '🇹🇷', en: '🇬🇧', de: '🇩🇪' };
+const LANG_FLAG: Record<string, string> = { pt: '🇧🇷', es: '🇪🇸', it: '🇮🇹', fr: '🇫🇷', ru: '🇷🇺', pl: '🇵🇱', cs: '🇨🇿', sr: '🇷🇸', bg: '🇧🇬', el: '🇬🇷', sq: '🇦🇱', hu: '🇭🇺', tr: '🇹🇷', en: '🇬🇧', de: '🇩🇪', nl: '🇳🇱' };
 
 /** Cofre de vocabulário: palavras por frequência com estado SRS, categorias e árvore etimológica. */
 export default function VocabScreen() {
@@ -107,7 +107,7 @@ export default function VocabScreen() {
           <TextInput
             value={search}
             onChangeText={setSearch}
-            placeholder="Buscar em romeno ou português…"
+            placeholder={`Buscar em ${pack.name.toLowerCase()} ou português…`}
             placeholderTextColor="#94A3B8"
             className="flex-1 py-3 text-base text-slate-900 dark:text-white"
           />
@@ -116,7 +116,7 @@ export default function VocabScreen() {
       {tab === 'etimologia' && (
         <View className="gap-2">
           <Text className="text-sm text-slate-600 dark:text-slate-300">
-            O romeno é uma língua românica, prima do português. Cada palavra mostra a raiz e os parentes nas línguas irmãs. Os <Text className="font-bold text-conquista">cognatos transparentes</Text> você já entende sem estudar!
+            {pack.cognateNote} Os <Text className="font-bold text-conquista">cognatos transparentes</Text> você já entende sem estudar!
           </Text>
           <Pressable onPress={() => setOnlyTransparent((v) => !v)} className="self-start">
             <Chip label={onlyTransparent ? '✓ Só cognatos transparentes' : 'Mostrar só cognatos transparentes'} tone={onlyTransparent ? 'green' : 'slate'} />

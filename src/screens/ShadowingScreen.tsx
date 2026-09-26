@@ -6,7 +6,7 @@ import { Screen, Button, Card, Chip, SpeechBubble, Ipa } from '@/components/ui';
 import { Linu } from '@/components/Linu';
 import { useApp } from '@/services/app-state';
 import { useMicCapture, type MicSample } from '@/services/mic';
-import { expectedContour, finalContour, rhythmScore, type Contour } from '@/services/pitch';
+import { finalContour, intonation, rhythmScore, type Contour } from '@/services/pitch';
 import { speakTimed, stopSpeaking } from '@/services/speech';
 import { awardXp, saveShadowing } from '@/database/queries';
 import { goBack } from '@/services/nav';
@@ -23,7 +23,7 @@ interface Result {
   modelMs: number;
   rhythm: number;
   contour: Contour | null;
-  expected: 'sobe' | 'desce';
+  expected: 'sobe' | 'desce' | null;
 }
 
 /**
@@ -46,7 +46,8 @@ export default function ShadowingScreen() {
   const autoStop = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const [phrase, translation] = pack.shadowing[i];
-  const expected = expectedContour(phrase);
+  const into = intonation(phrase, pack.code);
+  const expected = into.contour;
 
   useEffect(
     () => () => {
@@ -70,9 +71,9 @@ export default function ShadowingScreen() {
     const contour = mic.supportsPitch ? finalContour(voiced.map((s) => s.pitch)) : null;
     const r: Result = { userMs, modelMs: model, rhythm: rhythmScore(userMs, model), contour, expected };
     setResult(r);
-    const good = r.rhythm >= 60 && (contour === null || contour === expected);
+    const good = r.rhythm >= 60 && (contour === null || expected === null || contour === expected);
     if (good) haptics.success();
-    await saveShadowing(db, phrase, r.rhythm, contour === null ? null : contour === expected);
+    await saveShadowing(db, phrase, r.rhythm, contour === null || expected === null ? null : contour === expected);
     if (userMs > 0 && !done.has(i)) {
       await awardXp(db, SHADOW_XP, 'shadowing');
       refresh();
@@ -130,10 +131,8 @@ export default function ShadowingScreen() {
           <Text className="text-sm text-conecta">{showTr ? `🇧🇷 ${translation}` : 'Ver tradução'}</Text>
         </Pressable>
         <View className="flex-row flex-wrap items-center gap-2">
-          <Chip label={`Entonação do fim: ${CONTOUR_LABEL[expected]}`} tone="blue" />
-          <Text className="flex-1 text-xs text-slate-500 dark:text-slate-400">
-            {expected === 'sobe' ? 'Pergunta de sim/não: a voz sobe no fim.' : phrase.trim().endsWith('?') ? 'Pergunta com «ce, unde, cum…»: a voz desce no fim.' : 'Afirmação: a voz desce no fim.'}
-          </Text>
+          <Chip label={expected ? `Entonação do fim: ${CONTOUR_LABEL[expected]}` : 'Entonação: pico na palavra-chave'} tone="blue" />
+          <Text className="flex-1 text-xs text-slate-500 dark:text-slate-400">{into.tip}</Text>
         </View>
         <View className="flex-row gap-2">
           {RATES.map((r) => (
@@ -183,7 +182,7 @@ export default function ShadowingScreen() {
               <View className="flex-row flex-wrap gap-2">
                 <Chip label={`Ritmo: ${result.rhythm}%`} tone={result.rhythm >= 75 ? 'green' : result.rhythm >= 50 ? 'amber' : 'rose'} />
                 <Chip label={`você ${(result.userMs / 1000).toFixed(1)} s · modelo ${(result.modelMs / 1000).toFixed(1)} s`} />
-                {result.contour && (
+                {result.contour && result.expected && (
                   <Chip label={`fim ${CONTOUR_LABEL[result.contour]} ${result.contour === result.expected ? '✓' : '✗'}`} tone={result.contour === result.expected ? 'green' : 'rose'} />
                 )}
               </View>
@@ -193,7 +192,7 @@ export default function ShadowingScreen() {
                   : result.userMs < result.modelMs * 0.75
                     ? 'Você falou mais rápido que o modelo. Respire e acompanhe as sílabas.'
                     : 'Ritmo parecido com o do modelo. Boa!'}
-                {result.contour && result.contour !== result.expected ? ` No fim, a voz deveria ${result.expected === 'sobe' ? 'subir, como numa pergunta' : 'descer'}.` : ''}
+                {result.contour && result.expected && result.contour !== result.expected ? ` No fim, a voz deveria ${result.expected === 'sobe' ? 'subir, como numa pergunta' : 'descer'}.` : ''}
               </Text>
             </>
           )}

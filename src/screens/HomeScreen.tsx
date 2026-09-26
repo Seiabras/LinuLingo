@@ -80,10 +80,10 @@ export default function HomeScreen() {
   const goal = user?.daily_goal_xp ?? 30;
   const greeting =
     todayXp >= goal
-      ? `Meta do dia cumprida! ${streak} ${streak === 1 ? 'dia' : 'dias'} de ofensiva. Mulțumesc! 🎉`
+      ? `Meta do dia cumprida! ${streak} ${streak === 1 ? 'dia' : 'dias'} de ofensiva. ${pack.phrases.thanks} 🎉`
       : streak > 0
-        ? `Bună! Faltam ${goal - todayXp} XP para a meta de hoje. Não deixa o fogo apagar! 🔥`
-        : `Bună! Eu sou o Linu. Bora aprender ${pack.name.toLowerCase()} hoje?`;
+        ? `${pack.phrases.hi} Faltam ${goal - todayXp} XP para a meta de hoje. Não deixa o fogo apagar! 🔥`
+        : `${pack.phrases.hi} Eu sou o Linu. Bora aprender ${pack.name.toLowerCase()} hoje?`;
 
   return (
     <Screen>

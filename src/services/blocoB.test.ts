@@ -64,3 +64,27 @@ test('mnemônicos: dicas por terminação', () => {
   assert.match(genderTip('câine', 'm'), /masculina/);
   assert.match(genderTip('tren', 'n'), /un ou/);
 });
+
+test('diário em russo: ё que falta, possessivo pelo gênero e erros de lusófonos', () => {
+  const ru = buildLexicon(['Ещё ча́ю, пожа́луйста.', 'Моя́ ма́ма до́ма.'], [
+    { word: 'ма́ма', gender: 'f' },
+    { word: 'дом', gender: 'm' },
+    { word: 'окно́', gender: 'n' },
+  ]);
+  assert.equal(checkJournal('Еще чаю.', ru, 'ru').corrected, 'Ещё чаю.');
+  assert.equal(checkJournal('Мой мама дома.', ru, 'ru').corrected, 'Моя мама дома.');
+  assert.equal(checkJournal('Моя дом большой.', ru, 'ru').corrected, 'Мой дом большой.');
+  assert.equal(checkJournal('Я имею 20 лет.', ru, 'ru').corrected, 'Мне 20 лет.');
+  assert.equal(checkJournal('Я имею двадцать лет.', ru, 'ru').corrected, 'Мне двадцать лет.');
+  assert.equal(checkJournal('Я нравится музыка.', ru, 'ru').corrected, 'Мне нравится музыка.');
+  assert.equal(checkJournal('Я холодно.', ru, 'ru').corrected, 'Мне холодно.');
+  assert.equal(checkJournal('Я есть студент.', ru, 'ru').corrected, 'Я студент.');
+  // texto correto fica intacto
+  assert.equal(checkJournal('Мне нравится Москва.', ru, 'ru').issues.length, 0);
+});
+
+test('entonação: russo não cobra subida no fim da pergunta de sim/não', () => {
+  assert.equal(expectedContour('Вы говори́те по-ру́сски?', 'ru'), null);
+  assert.equal(expectedContour('Где метро́?', 'ru'), 'desce');
+  assert.equal(expectedContour('Я из Брази́лии.', 'ru'), 'desce');
+});

@@ -27,7 +27,7 @@ export function buildLexicon(texts: string[], nouns: { word: string; gender: 'm'
   const forms = new Map<string, Set<string>>();
   for (const t of texts) {
     for (const raw of t.split(/[^\p{L}-]+/u)) {
-      const w = raw.toLowerCase();
+      const w = raw.toLowerCase().replace(/\u0301/g, '');
       if (!w || !WORD.test(w)) continue;
       const k = stripDiacritics(w);
       if (!forms.has(k)) forms.set(k, new Set());
@@ -35,7 +35,7 @@ export function buildLexicon(texts: string[], nouns: { word: string; gender: 'm'
     }
   }
   const gender = new Map<string, 'm' | 'f' | 'n'>();
-  for (const n of nouns) if (!n.word.includes(' ')) gender.set(n.word.toLowerCase(), n.gender);
+  for (const n of nouns) if (!n.word.includes(' ')) gender.set(n.word.toLowerCase().replace(/\u0301/g, ''), n.gender);
   return { forms, gender };
 }
 
@@ -55,7 +55,20 @@ function restoreDiacritics(token: string, lex: JournalLexicon): string | null {
 const NUMBER = /^(\d+|doi|două|trei|patru|cinci|șase|sase|șapte|sapte|opt|nouă|noua|zece|unsprezece|doisprezece|cincisprezece|douăzeci|douazeci|treizeci|patruzeci|cincizeci|o)$/i;
 const STATES: Record<string, string> = { foame: 'foame', sete: 'sete', frig: 'frig', cald: 'cald', frica: 'frică', frică: 'frică', somn: 'somn' };
 
-export function checkJournal(text: string, lex: JournalLexicon): { corrected: string; issues: JournalIssue[] } {
+const LANG_NAME: Record<string, string> = { ro: 'romeno', ru: 'russo' };
+
+// russo: números por extenso que aparecem com idade (мне двадцать лет)
+const NUMBER_RU = /^(\d+|один|одна|два|две|три|четыре|пять|шесть|семь|восемь|девять|десять|одиннадцать|двенадцать|пятнадцать|двадцать|тридцать|сорок|пятьдесят|шестьдесят)$/i;
+// estados que em russo vão no dativo (мне холодно)
+const STATES_RU = new Set(['холодно', 'жарко', 'скучно', 'грустно', 'плохо', 'весело', 'страшно', 'интересно', 'трудно', 'легко']);
+const PRONOUN_DAT: Record<string, string> = { я: 'мне', ты: 'тебе', он: 'ему', она: 'ей', мы: 'нам', вы: 'вам', они: 'им' };
+const POSSESSIVE: Record<string, Record<'m' | 'f' | 'n', string>> = {
+  мой: { m: 'мой', f: 'моя', n: 'моё' }, моя: { m: 'мой', f: 'моя', n: 'моё' }, моё: { m: 'мой', f: 'моя', n: 'моё' }, мое: { m: 'мой', f: 'моя', n: 'моё' },
+  твой: { m: 'твой', f: 'твоя', n: 'твоё' }, твоя: { m: 'твой', f: 'твоя', n: 'твоё' }, твоё: { m: 'твой', f: 'твоя', n: 'твоё' }, твое: { m: 'твой', f: 'твоя', n: 'твоё' },
+};
+const GENDER_PT = { m: 'masculino', f: 'feminino', n: 'neutro' } as const;
+
+export function checkJournal(text: string, lex: JournalLexicon, lang = 'ro'): { corrected: string; issues: JournalIssue[] } {
   const issues: JournalIssue[] = [];
   // tokens alternando palavra / separador, para reconstruir o texto intacto
   const parts = text.split(/([^\p{L}-]+)/u);
@@ -66,7 +79,7 @@ export function checkJournal(text: string, lex: JournalLexicon): { corrected: st
     if (!parts[i]) continue;
     const fixed = restoreDiacritics(parts[i], lex);
     if (fixed) {
-      issues.push({ kind: 'acento', original: parts[i], suggestion: fixed, why: `Em romeno se escreve «${fixed}».` });
+      issues.push({ kind: 'acento', original: parts[i], suggestion: fixed, why: `Em ${LANG_NAME[lang] ?? 'este idioma'} se escreve «${fixed}».` });
       parts[i] = fixed;
     }
   }
@@ -85,6 +98,43 @@ export function checkJournal(text: string, lex: JournalLexicon): { corrected: st
     const j = next(i);
     const b = low(j);
     const k = j >= 0 ? next(j) : -1;
+    const raw = (x: number) => (x >= 0 ? parts[x].toLowerCase() : '');
+
+    if (lang === 'ru') {
+      const dat = PRONOUN_DAT[raw(i)];
+      // я имею 20 лет → мне 20 лет
+      const ageNum = j >= 0 && (NUMBER_RU.test(parts[k] ?? '') || /\d/.test(parts[j + 1] ?? ''));
+      if (dat && raw(j) === 'имею' && ageNum) {
+        issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: matchCase(parts[i], dat), why: `Idade em russo vai no dativo, sem «ter»: «${matchCase(parts[i], dat)} 20 лет» (literalmente «a mim, 20 anos»).` });
+        parts[i] = matchCase(parts[i], dat);
+        parts[j] = '';
+        parts[j + 1] = parts[j + 1]?.replace(/^\s+/, '') ?? '';
+        continue;
+      }
+      // я нравится / я холодно → мне нравится / мне холодно
+      if (dat && (raw(j) === 'нравится' || raw(j) === 'нравятся' || STATES_RU.has(raw(j)))) {
+        issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: `${matchCase(parts[i], dat)} ${parts[j]}`, why: raw(j).startsWith('нрав') ? '«Нравиться» funciona como «agradar»: «мне нравится» = «me agrada / eu gosto».' : 'Sensações e estados vão no dativo: «мне холодно» = «estou com frio» (literalmente «a mim está frio»).' });
+        parts[i] = matchCase(parts[i], dat);
+        continue;
+      }
+      // я есть студент → я студент (o presente não usa «ser/estar»)
+      if (dat && raw(j) === 'есть' && k >= 0) {
+        issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: parts[i], why: 'No presente, o russo não usa o verbo «ser/estar»: «Я студент» = «eu sou estudante».' });
+        parts[j] = '';
+        parts[j + 1] = parts[j + 1]?.replace(/^\s+/, '') ?? '';
+        continue;
+      }
+      // мой/моя/моё + substantivo com o gênero do vocabulário
+      const poss = POSSESSIVE[raw(i)];
+      const g = j >= 0 ? lex.gender.get(raw(j)) : undefined;
+      if (poss && g && poss[g] !== raw(i)) {
+        const fix = matchCase(parts[i], poss[g]);
+        issues.push({ kind: 'gênero', original: `${parts[i]} ${parts[j]}`, suggestion: `${fix} ${parts[j]}`, why: `«${parts[j]}» é ${GENDER_PT[g]}: o possessivo concorda, «${fix}».` });
+        parts[i] = fix;
+      }
+      continue;
+    }
+    if (lang !== 'ro') continue;
 
     // eu este / tu este → eu sunt / tu ești
     if (a === 'eu' && b === 'este') {

@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { Pressable, Text, TextInput, View } from 'react-native';
-import { Button, Card } from '../ui';
+import { Button, Card, LetterPad } from '../ui';
+import { useApp } from '@/services/app-state';
 
 /**
  * Etapa 5 — envio opcional para a comunidade (Busuu). O texto fica guardado
  * no aparelho até existir o servidor da comunidade.
  */
 export function CommunityStep({ prompt, specialChars, onDone }: { prompt: string; specialChars: string[]; onDone: (text: string | null) => void }) {
+  const { pack } = useApp();
   const [text, setText] = useState('');
   return (
     <View className="flex-1 gap-4">
@@ -20,17 +22,11 @@ export function CommunityStep({ prompt, specialChars, onDone }: { prompt: string
         onChangeText={setText}
         multiline
         textAlignVertical="top"
-        placeholder="Escreva em romeno…"
+        placeholder={`Escreva em ${pack.name.toLowerCase()}…`}
         placeholderTextColor="#94A3B8"
         className="min-h-[120px] rounded-2xl border-2 border-slate-200 bg-white p-4 text-lg text-slate-900 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
       />
-      <View className="flex-row flex-wrap justify-center gap-2">
-        {specialChars.map((ch) => (
-          <Pressable key={ch} accessibilityLabel={`Inserir ${ch}`} onPress={() => setText((t) => t + ch)} className="h-11 w-11 items-center justify-center rounded-xl bg-slate-200 active:bg-slate-300 dark:bg-slate-800">
-            <Text className="text-lg font-bold text-slate-800 dark:text-slate-100">{ch}</Text>
-          </Pressable>
-        ))}
-      </View>
+      <LetterPad onInsert={(ch) => setText((t) => t + ch)} onBackspace={() => setText((t) => t.slice(0, -1))} />
       <Text className="text-center text-xs text-slate-500 dark:text-slate-400">
         Seu texto vai para a fila de correção por falantes nativos (+5 XP). Por enquanto a fila fica salva no aparelho.
       </Text>

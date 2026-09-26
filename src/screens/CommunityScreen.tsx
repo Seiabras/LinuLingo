@@ -2,7 +2,7 @@ import { useCallback, useState } from 'react';
 import { Pressable, Text, TextInput, View } from 'react-native';
 import { useFocusEffect } from 'expo-router';
 import { ArrowLeft } from 'lucide-react-native';
-import { Screen, Button, Card, Chip, SectionTitle } from '@/components/ui';
+import { Screen, Button, Card, Chip, SectionTitle, LetterPad } from '@/components/ui';
 import { useApp } from '@/services/app-state';
 import { awardXp, correctPeer, listCommunity } from '@/database/queries';
 import { XP } from '@/services/progress';
@@ -98,13 +98,7 @@ function PeerCard({ item, specialChars, onCorrect }: { item: Item; specialChars:
             autoCapitalize="none"
             className="min-h-[70px] rounded-xl border-2 border-slate-200 bg-white p-3 text-base text-slate-900 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
           />
-          <View className="flex-row flex-wrap gap-2">
-            {specialChars.map((ch) => (
-              <Pressable key={ch} onPress={() => setText((t) => t + ch)} className="h-9 w-9 items-center justify-center rounded-lg bg-slate-200 dark:bg-slate-800">
-                <Text className="font-bold text-slate-800 dark:text-slate-100">{ch}</Text>
-              </Pressable>
-            ))}
-          </View>
+          <LetterPad small onInsert={(ch) => setText((t) => t + ch)} onBackspace={() => setText((t) => t.slice(0, -1))} />
           <Button
             title="Enviar correção"
             variant="success"

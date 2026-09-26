@@ -34,7 +34,7 @@ export default function StoriesScreen() {
 
       <View className="mt-4 flex-row items-end gap-2">
         <Linu mood="falando" size={70} />
-        <SpeechBubble className="mb-6">Você decide o que eu faço! Leia em romeno e escolha. Cada história tem mais de um final… consegue achar todos?</SpeechBubble>
+        <SpeechBubble className="mb-6">Você decide o que eu faço! Leia em {pack.name.toLowerCase()} e escolha. Cada história tem mais de um final… consegue achar todos?</SpeechBubble>
       </View>
 
       {SUBLEVELS.map((lv) => {

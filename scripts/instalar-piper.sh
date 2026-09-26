@@ -1,12 +1,15 @@
 #!/bin/sh
-# Instala o Piper (voz neural, offline) com a voz romena "mihai" SÓ para o seu usuário
+# Instala o Piper (voz neural, offline) SÓ para o seu usuário, com uma ou mais vozes:
+#   sh instalar-piper.sh                                           (romeno «mihai»)
+#   sh instalar-piper.sh ro_RO-mihai-medium ru_RU-irina-medium     (romeno e russo)
 # e liga ao speech-dispatcher, que é por onde Firefox e Chrome falam no Linux.
 # Não usa sudo. Para desfazer: rm -rf ~/.local/share/piper ~/.local/bin/piper-falar ~/.config/speech-dispatcher
 set -eu
 
-VOZ="${1:-ro_RO-mihai-medium}"          # outras vozes: https://huggingface.co/rhasspy/piper-voices
+VOZES="${*:-ro_RO-mihai-medium}"        # outras vozes: https://huggingface.co/rhasspy/piper-voices
+VOZ="$(echo "$VOZES" | cut -d' ' -f1)"    # a primeira vira a voz padrão
 LANG_CODE="$(echo "$VOZ" | cut -c1-2)"
-FAMILIA="$(echo "$VOZ" | cut -d_ -f1)/$(echo "$VOZ" | cut -d- -f1)/$(echo "$VOZ" | cut -d- -f2)/$(echo "$VOZ" | cut -d- -f3)"
+LANGS_PIPER="$(for v in $VOZES; do echo "$v" | cut -c1-2; done | tr '\n' ' ')"
 D="$HOME/.local/share/piper"
 C="$HOME/.config/speech-dispatcher"
 
@@ -20,12 +23,15 @@ if [ ! -x "$D/piper/piper" ]; then
   curl -fL --progress-bar -o "$D/piper.tgz" https://github.com/rhasspy/piper/releases/download/2023.11.14-2/piper_linux_x86_64.tar.gz
   tar xzf "$D/piper.tgz" -C "$D" && rm "$D/piper.tgz"
 fi
-if [ ! -f "$D/vozes/$VOZ.onnx" ]; then
-  echo "Baixando a voz $VOZ…"
-  URL="https://huggingface.co/rhasspy/piper-voices/resolve/main/$FAMILIA/$VOZ.onnx"
-  curl -fL --progress-bar -o "$D/vozes/$VOZ.onnx" "$URL"
-  curl -fsL -o "$D/vozes/$VOZ.onnx.json" "$URL.json"
-fi
+for V in $VOZES; do
+  if [ ! -f "$D/vozes/$V.onnx" ]; then
+    echo "Baixando a voz $V…"
+    FAMILIA="$(echo "$V" | cut -d_ -f1)/$(echo "$V" | cut -d- -f1)/$(echo "$V" | cut -d- -f2)/$(echo "$V" | cut -d- -f3)"
+    URL="https://huggingface.co/rhasspy/piper-voices/resolve/main/$FAMILIA/$V.onnx"
+    curl -fL --progress-bar -o "$D/vozes/$V.onnx" "$URL"
+    curl -fsL -o "$D/vozes/$V.onnx.json" "$URL.json"
+  fi
+done
 
 cat > "$HOME/.local/bin/piper-falar" <<SCRIPT
 #!/bin/sh
@@ -49,9 +55,8 @@ cat > "$C/modules/piper-generic.conf" <<CONF
 Debug 0
 GenericExecuteSynth "printf %s \\'\$DATA\\' | $HOME/.local/bin/piper-falar \\'\$VOICE\\'"
 GenericCmdDependency "$HOME/.local/bin/piper-falar"
-GenericLanguage "$LANG_CODE" "$LANG_CODE" "utf-8"
-AddVoice "$LANG_CODE" "MALE1" "$VOZ"
-$(for l in pt en es fr it de ru fi et ja ko; do [ "$l" != "$LANG_CODE" ] && printf 'GenericLanguage "%s" "%s" "utf-8"\nAddVoice "%s" "MALE1" "espeak-%s"\n' $l $l $l $l; done)
+$(for v in $VOZES; do l=$(echo "$v" | cut -c1-2); printf 'GenericLanguage "%s" "%s" "utf-8"\nAddVoice "%s" "MALE1" "%s"\n' $l $l $l $v; done)
+$(for l in ro pt en es fr it de ru fi et ja ko; do case " $LANGS_PIPER " in *" $l "*) ;; *) printf 'GenericLanguage "%s" "%s" "utf-8"\nAddVoice "%s" "MALE1" "espeak-%s"\n' $l $l $l $l ;; esac; done)
 DefaultVoice "$VOZ"
 CONF
 if ! grep -q 'AddModule "piper"' "$C/speechd.conf"; then
@@ -63,9 +68,11 @@ if ! grep -q 'AddModule "piper"' "$C/speechd.conf"; then
 AddModule "espeak-ng" "sd_espeak-ng" "espeak-ng.conf"
 AddModule "piper"     "sd_generic"   "piper-generic.conf"
 DefaultModule piper
-LanguageDefaultModule "$LANG_CODE" "piper"
 CONF
 fi
+for l in $LANGS_PIPER; do
+  grep -q "LanguageDefaultModule \"$l\" \"piper\"" "$C/speechd.conf" || echo "LanguageDefaultModule \"$l\" \"piper\"" >> "$C/speechd.conf"
+done
 
 systemctl --user restart speech-dispatcher.socket 2>/dev/null || true
 pkill -x speech-dispatch 2>/dev/null || true

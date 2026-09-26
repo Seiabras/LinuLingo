@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import { Pressable, Text, TextInput, View } from 'react-native';
 import type { ClozeItem } from '@/data/types';
-import { Button, SpeakButton, Ipa } from '../ui';
+import { Button, SpeakButton, Ipa, LetterPad } from '../ui';
 import { normalize, shuffle } from '@/services/answers';
 import * as haptics from '@/services/haptics';
 
@@ -98,13 +98,7 @@ export function ClozeStep({ items, locale, specialChars, onDone }: { items: Cloz
             onSubmitEditing={() => typed.trim() && submit(typed)}
             className="rounded-2xl border-2 border-slate-200 bg-white px-4 py-3 text-lg text-slate-900 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
           />
-          <View className="flex-row flex-wrap justify-center gap-2">
-            {specialChars.map((ch) => (
-              <Pressable key={ch} accessibilityLabel={`Inserir ${ch}`} disabled={answered} onPress={() => setTyped((t) => t + ch)} className="h-11 w-11 items-center justify-center rounded-xl bg-slate-200 active:bg-slate-300 dark:bg-slate-800">
-                <Text className="text-lg font-bold text-slate-800 dark:text-slate-100">{ch}</Text>
-              </Pressable>
-            ))}
-          </View>
+          {!answered && <LetterPad onInsert={(ch) => setTyped((t) => t + ch)} onBackspace={() => setTyped((t) => t.slice(0, -1))} />}
           {!answered && <Button title="Verificar" disabled={!typed.trim()} onPress={() => submit(typed)} />}
           {!answered && (
             <Pressable onPress={() => setTyping(false)} className="self-center p-2">

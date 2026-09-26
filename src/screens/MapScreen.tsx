@@ -8,7 +8,7 @@ import { Screen, Button, Card, Chip, SectionTitle, SpeakButton } from '@/compone
 import { useApp } from '@/services/app-state';
 import { MAP_H, MAP_W, WORLD, type MapCountry } from '@/data/mapa-mundi';
 import { byKinship, flagOf, languagesIn, MAP_LANGUAGES, ROLE_LABEL, type LangRole } from '@/data/onde-se-fala';
-import { FAUNA_MUSICA } from '@/data/fauna-musica';
+import { FAUNA_MUSICA, HOMELANDS } from '@/data/fauna-musica';
 import { WORLD_REGIONS } from '@/data/regioes';
 import { ISO_3166_2 } from '@/data/iso-3166-2';
 import { FORMER_COUNTRIES, KIND_LABEL, type FormerCountry } from '@/data/iso-3166-3';
@@ -51,7 +51,7 @@ export default function MapScreen() {
   const ordered = useMemo(() => byKinship(pack.code), [pack.code]);
   const [langCode, setLangCode] = useState(pack.code);
   const lang = MAP_LANGUAGES.find((l) => l.code === langCode) ?? MAP_LANGUAGES[0];
-  const [selected, setSelected] = useState<MapCountry | null>(() => WORLD.find((c) => c.iso === (pack.code === 'ro' ? 'ROU' : '')) ?? null);
+  const [selected, setSelected] = useState<MapCountry | null>(() => WORLD.find((c) => c.iso === (HOMELANDS[pack.code]?.[0] ?? '')) ?? null);
   const [size, setSize] = useState({ w: 360, h: 240 });
   // mais alto em telas largas (tablet e computador)
   const { width: winW } = useWindowDimensions();

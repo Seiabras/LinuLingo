@@ -1,7 +1,15 @@
 /** Comparação de respostas faladas/digitadas, tolerante a pontuação e diacríticos. */
 
+/**
+ * Tira acentos para comparar com tolerância (ă → a, ș → s, ё → е, marca de tônica do russo).
+ * O й do cirílico é outra letra (não é и com acento) e fica.
+ */
 export function stripDiacritics(s: string): string {
-  return s.normalize('NFD').replace(/[̀-ͯ]/g, '');
+  return s
+    .normalize('NFD')
+    .replace(/(?<![иИ])\u0306/g, '')
+    .replace(/[\u0300-\u0305\u0307-\u036f]/g, '')
+    .normalize('NFC');
 }
 
 export function normalize(s: string, { keepDiacritics = false } = {}): string {
@@ -10,6 +18,8 @@ export function normalize(s: string, { keepDiacritics = false } = {}): string {
     // cedilha (ş ţ) e vírgula (ș ț) são a mesma letra no romeno digitado
     .replace(/ş/g, 'ș')
     .replace(/ţ/g, 'ț')
+    // a marca de tônica do russo (молоко́) nunca conta como diferença
+    .replace(/\u0301/g, '')
     // apóstrofo reto, tipográfico ou ausente valem o mesmo (las’ că = las' că = las că)
     .replace(/['’`´]/g, '')
     .replace(/[.,!?¿¡;:«»"“”„()…-]/g, ' ')

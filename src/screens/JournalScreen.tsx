@@ -2,7 +2,7 @@ import { useCallback, useMemo, useState } from 'react';
 import { Pressable, Text, TextInput, View } from 'react-native';
 import { useFocusEffect } from 'expo-router';
 import { ArrowLeft, Mic } from 'lucide-react-native';
-import { Screen, Button, Card, Chip, SectionTitle, SpeakButton, SpeechBubble } from '@/components/ui';
+import { Screen, Button, Card, Chip, SectionTitle, SpeakButton, SpeechBubble, LetterPad } from '@/components/ui';
 import { Linu } from '@/components/Linu';
 import { useApp } from '@/services/app-state';
 import { awardXp, listJournal, saveJournal, submitToCommunity, type JournalEntry } from '@/database/queries';
@@ -55,7 +55,7 @@ export default function JournalScreen() {
   const doneToday = history.some((h) => h.day === today);
 
   const check = () => {
-    const r = checkJournal(text.trim(), lexicon);
+    const r = checkJournal(text.trim(), lexicon, pack.code);
     setResult(r);
     if (r.issues.length) haptics.tapLight();
     else haptics.success();
@@ -125,11 +125,7 @@ export default function JournalScreen() {
             className="min-h-[130px] rounded-2xl border-2 border-slate-200 bg-white p-4 text-lg text-slate-900 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
           />
           <View className="mt-2 flex-row flex-wrap items-center gap-2">
-            {pack.specialChars.map((ch) => (
-              <Pressable key={ch} accessibilityLabel={`Inserir ${ch}`} onPress={() => setText((t) => t + ch)} className="h-10 w-10 items-center justify-center rounded-xl bg-slate-200 dark:bg-slate-800">
-                <Text className="text-lg font-bold text-slate-800 dark:text-slate-100">{ch}</Text>
-              </Pressable>
-            ))}
+            {!pack.keyboardRows && <LetterPad small onInsert={(ch) => setText((t) => t + ch)} />}
             {canRecognize() && (
               <Pressable accessibilityLabel="Ditar" onPress={dictate} disabled={listening} className={`h-10 flex-row items-center gap-1 rounded-xl px-3 ${listening ? 'bg-rose-500' : 'bg-conecta-light dark:bg-blue-950'}`}>
                 <Mic size={16} color={listening ? '#fff' : '#2563EB'} />
@@ -138,6 +134,7 @@ export default function JournalScreen() {
             )}
             <Text className="ml-auto text-xs font-bold text-slate-500">{Math.min(sentences, 3)}/3 frases</Text>
           </View>
+          {pack.keyboardRows && <LetterPad onInsert={(ch) => setText((t) => t + ch)} onBackspace={() => setText((t) => t.slice(0, -1))} />}
 
           {!result ? (
             <Button title="Corrigir" className="mt-4" disabled={sentences < 1} onPress={check} />

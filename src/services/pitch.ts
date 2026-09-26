@@ -47,21 +47,45 @@ export function finalContour(pitches: (number | null)[]): Contour | null {
   return 'plano';
 }
 
-const WH = /^(ce|unde|cum|când|cand|cât|cat|câte|câți|cine|care|de ce|încotro)\b/i;
+/** Palavras interrogativas no começo da pergunta, por idioma. */
+const WH: Record<string, RegExp> = {
+  ro: /^(ce|unde|cum|când|cand|cât|cat|câte|câți|cine|care|de ce|încotro)\b/i,
+  ru: /^(что|где|как|когда|кто|почему|зачем|куда|откуда|сколько|какой|какая|какое|какие|чей|чья|чьё|чьи)(?![\p{L}\p{M}])/iu,
+};
+
+export interface Intonation {
+  /** Contorno do fim que o app confere; null = o idioma não marca a pergunta pelo fim (não é avaliado) */
+  contour: 'sobe' | 'desce' | null;
+  tip: string;
+}
 
 /**
- * Entonação esperada em romeno: perguntas de sim/não sobem no fim; perguntas com
- * palavra interrogativa (ce, unde, cum…) e afirmações descem.
+ * Entonação esperada. Romeno: perguntas de sim/não sobem no fim; com palavra interrogativa
+ * (ce, unde, cum…) e afirmações descem. Russo: a pergunta de sim/não tem um pico na palavra-chave
+ * e cai logo depois (IK-3), então o fim não é avaliado; perguntas com что/где/как e afirmações descem.
  */
-export function expectedContour(sentence: string): 'sobe' | 'desce' {
+export function intonation(sentence: string, lang = 'ro'): Intonation {
   const s = sentence.trim();
-  if (!s.endsWith('?')) return 'desce';
-  return WH.test(s.replace(/^[«"„¿]/, '')) ? 'desce' : 'sobe';
+  const wh = WH[lang] ?? WH.ro;
+  if (!s.endsWith('?')) return { contour: 'desce', tip: 'Afirmação: a voz desce no fim.' };
+  const bare = s.replace(/^[«"„¿]/, '').replace(/\u0301/g, '');
+  if (wh.test(bare)) return { contour: 'desce', tip: lang === 'ru' ? 'Pergunta com «что, где, как…»: a voz desce no fim.' : 'Pergunta com «ce, unde, cum…»: a voz desce no fim.' };
+  if (lang === 'ru')
+    return { contour: null, tip: 'Pergunta de sim/não em russo: a voz sobe forte na sílaba tônica da palavra-chave e cai logo depois (entonação IK-3). Imite o pico do modelo.' };
+  return { contour: 'sobe', tip: 'Pergunta de sim/não: a voz sobe no fim.' };
 }
+
+/** Atalho do contorno do fim (romeno por padrão). */
+export function expectedContour(sentence: string, lang = 'ro'): 'sobe' | 'desce' | null {
+  return intonation(sentence, lang).contour;
+}
+
+/** Grupos de vogais (latinas e cirílicas): base da estimativa de sílabas. */
+export const VOWEL_GROUPS = /[aăâeiîouyáéíóúàèìòùãõêôàäöüõ]+|[аеёиоуыэюя]+/giu;
 
 /** Estimativa de sílabas (grupos vocálicos), usada quando a voz do aparelho não informa a duração. */
 export function syllables(sentence: string): number {
-  return (sentence.toLowerCase().match(/[aăâeiîouy]+/g) ?? []).length;
+  return (sentence.toLowerCase().match(VOWEL_GROUPS) ?? []).length;
 }
 
 /** Ritmo: 100 = mesma duração do modelo; abaixo de 100 = mais lento ou mais rápido. */

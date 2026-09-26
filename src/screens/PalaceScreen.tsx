@@ -6,7 +6,7 @@ import { Screen, Button, Card, Chip, SectionTitle, SpeakButton, SpeechBubble, Ip
 import { Linu } from '@/components/Linu';
 import { useApp } from '@/services/app-state';
 import { awardXp, palaceNouns, saveMnemonic, type PalaceNoun } from '@/database/queries';
-import { defaultMnemonic, genderTip, ROOMS, type Gender } from '@/services/mnemonics';
+import { defaultMnemonic, genderTip, palaceIntro, roomsFor, type Gender } from '@/services/mnemonics';
 import { shuffle } from '@/services/answers';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
@@ -102,7 +102,7 @@ export default function PalaceScreen() {
             </Card>
             <View className="gap-2">
               {GENDERS.map((g) => {
-                const r = ROOMS[g];
+                const r = roomsFor(pack.code)[g];
                 const picked = game.answer === g;
                 const right = game.answer && w.gender === g;
                 return (
@@ -123,7 +123,7 @@ export default function PalaceScreen() {
             </View>
             {game.answer && (
               <Card className="gap-2">
-                <Text className="text-base text-slate-700 dark:text-slate-300">💡 {genderTip(w.word_target, w.gender)}</Text>
+                <Text className="text-base text-slate-700 dark:text-slate-300">💡 {genderTip(w.word_target, w.gender, pack.code)}</Text>
                 <Button title="Continuar" variant="success" onPress={nextRound} />
               </Card>
             )}
@@ -135,7 +135,7 @@ export default function PalaceScreen() {
 
   // ---------- sala aberta ----------
   if (room) {
-    const r = ROOMS[room];
+    const r = roomsFor(pack.code)[room];
     const list = nouns.filter((n) => n.gender === room);
     return (
       <Screen>
@@ -178,12 +178,12 @@ export default function PalaceScreen() {
       <View className="mt-4 flex-row items-end gap-2">
         <Linu mood="pensando" size={64} />
         <SpeechBubble className="mb-5">
-          O romeno tem 3 gêneros. Imagine cada palavra morando numa sala do palácio: fica muito mais fácil lembrar se é «un» ou «o»!
+          {palaceIntro(pack.code)}
         </SpeechBubble>
       </View>
       <View className="gap-3">
         {GENDERS.map((g) => {
-          const r = ROOMS[g];
+          const r = roomsFor(pack.code)[g];
           return (
             <Pressable key={g} accessibilityRole="button" onPress={() => setRoom(g)} style={{ borderColor: r.color }} className="flex-row items-center gap-4 rounded-2xl border-2 bg-white p-4 active:opacity-80 dark:bg-slate-900">
               <Text className="text-4xl">{r.emoji}</Text>
@@ -203,6 +203,7 @@ export default function PalaceScreen() {
 }
 
 function MnemonicRow({ n, locale, onSave }: { n: PalaceNoun; locale: string; onSave: (t: string) => Promise<void> }) {
+  const { pack } = useApp();
   const [editing, setEditing] = useState(false);
   const [text, setText] = useState(n.mnemonic_prompt ?? '');
   return (
@@ -220,7 +221,7 @@ function MnemonicRow({ n, locale, onSave }: { n: PalaceNoun; locale: string; onS
             value={text}
             onChangeText={setText}
             multiline
-            placeholder={defaultMnemonic(n.word_target, n.word_native, n.gender)}
+            placeholder={defaultMnemonic(n.word_target, n.word_native, n.gender, pack.code)}
             placeholderTextColor="#94A3B8"
             className="min-h-[60px] rounded-xl border-2 border-slate-200 bg-white p-3 text-base text-slate-900 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
           />
@@ -228,7 +229,7 @@ function MnemonicRow({ n, locale, onSave }: { n: PalaceNoun; locale: string; onS
             title="Guardar mnemônico"
             variant="success"
             onPress={async () => {
-              await onSave(text.trim() || defaultMnemonic(n.word_target, n.word_native, n.gender));
+              await onSave(text.trim() || defaultMnemonic(n.word_target, n.word_native, n.gender, pack.code));
               setEditing(false);
             }}
           />
@@ -236,7 +237,7 @@ function MnemonicRow({ n, locale, onSave }: { n: PalaceNoun; locale: string; onS
       ) : (
         <Pressable onPress={() => setEditing(true)}>
           <Text className="text-sm italic text-slate-600 dark:text-slate-400">
-            {n.mnemonic_prompt ?? defaultMnemonic(n.word_target, n.word_native, n.gender)} <Text className="font-semibold not-italic text-conecta">✏️ {n.mnemonic_prompt ? 'editar' : 'criar o meu'}</Text>
+            {n.mnemonic_prompt ?? defaultMnemonic(n.word_target, n.word_native, n.gender, pack.code)} <Text className="font-semibold not-italic text-conecta">✏️ {n.mnemonic_prompt ? 'editar' : 'criar o meu'}</Text>
           </Text>
         </Pressable>
       )}

@@ -1,5 +1,6 @@
 import { Platform } from 'react-native';
 import * as Speech from 'expo-speech';
+import { VOWEL_GROUPS } from './pitch';
 
 import { createAudioPlayer, type AudioPlayer } from 'expo-audio';
 import { clipFor } from '@/data/audio-index';
@@ -86,13 +87,18 @@ export type SpeakResult = 'nativo' | 'sintetica' | 'sem-voz';
  * NO IDIOMA CERTO. Sem voz do idioma, fica em silêncio: a voz padrão (ex.: português)
  * ensinaria a pronúncia errada («faci» como «fassi»).
  */
+/** A marca de tônica do russo (молоко́) ajuda quem lê, mas alguns motores de voz tropeçam nela. */
+export function forVoice(text: string): string {
+  return text.replace(/\u0301/g, '');
+}
+
 export async function speak(text: string, locale: string, opts: { rate?: number } = {}): Promise<SpeakResult> {
   if (playNativeClip(text, locale, opts.rate ?? 1)) return 'nativo';
   const voice = await findVoice(locale);
   Speech.stop();
   stopClip();
   if (!voice) return 'sem-voz';
-  Speech.speak(text, { language: locale, voice: voice.identifier, rate: opts.rate ?? 0.9 });
+  Speech.speak(forVoice(text), { language: locale, voice: voice.identifier, rate: opts.rate ?? 0.9 });
   return 'sintetica';
 }
 
@@ -102,13 +108,13 @@ export async function speak(text: string, locale: string, opts: { rate?: number 
  */
 export async function speakTimed(text: string, locale: string, rate = 0.9): Promise<number> {
   const voice = await findVoice(locale);
-  const estimate = Math.round(((text.toLowerCase().match(/[aăâeiîouy]+/g) ?? []).length * 210) / rate);
+  const estimate = Math.round(((text.toLowerCase().match(VOWEL_GROUPS) ?? []).length * 210) / rate);
   Speech.stop();
   if (!voice) return estimate; // sem voz do idioma: não fala com a voz errada
   return new Promise((resolve) => {
     let startedAt = 0;
     const fallback = setTimeout(() => resolve(estimate), estimate * 3 + 2000);
-    Speech.speak(text, {
+    Speech.speak(forVoice(text), {
       language: locale,
       voice: voice.identifier,
       rate,
