@@ -130,6 +130,39 @@ export const MIGRATIONS: string[] = [
     PRIMARY KEY (user_id, story_id, ending_id)
   );
   `,
+  // 3 — diário, mnemônicos (palácio da memória) e shadowing
+  `
+  CREATE TABLE IF NOT EXISTS User_Journal_Logs (
+    id TEXT PRIMARY KEY,
+    user_id TEXT NOT NULL REFERENCES Users(id),
+    language TEXT NOT NULL,
+    created_at TEXT NOT NULL,
+    day TEXT NOT NULL,
+    prompt TEXT,
+    raw_user_input TEXT NOT NULL,
+    corrected_input TEXT,
+    native_phrasing_suggestion TEXT,
+    audio_recording_path TEXT
+  );
+  CREATE INDEX IF NOT EXISTS idx_journal_day ON User_Journal_Logs(user_id, day);
+
+  CREATE TABLE IF NOT EXISTS Mnemonic_Palaces (
+    id TEXT PRIMARY KEY,
+    vocab_id TEXT NOT NULL REFERENCES Vocabulary(id),
+    gender_visual_tag TEXT,
+    mnemonic_prompt TEXT,
+    custom_image_url TEXT
+  );
+
+  CREATE TABLE IF NOT EXISTS Shadowing_Attempts (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id TEXT NOT NULL,
+    phrase TEXT NOT NULL,
+    rhythm_score INTEGER,
+    contour_ok INTEGER,
+    created_at TEXT NOT NULL
+  );
+  `,
 ];
 
 export const LOCAL_USER_ID = 'local';

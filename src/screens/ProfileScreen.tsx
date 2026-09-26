@@ -187,6 +187,7 @@ export default function ProfileScreen() {
       <View className="gap-2">
         <Button title="🔊 Voz e microfone" variant="ghost" onPress={() => router.push('/voz')} />
         <Button title="🐧 Ver o tutorial do Linu" variant="ghost" onPress={() => router.push('/tutorial')} />
+        <Button title="🎧 Créditos dos áudios" variant="ghost" onPress={() => router.push('/creditos')} />
       </View>
 
       <Button title="Apagar meu progresso" variant="ghost" onPress={confirmReset} className="mt-8" />

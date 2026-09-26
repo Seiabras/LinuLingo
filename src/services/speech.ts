@@ -1,6 +1,8 @@
 import { Platform } from 'react-native';
 import * as Speech from 'expo-speech';
 
+import { createAudioPlayer, type AudioPlayer } from 'expo-audio';
+import { clipFor } from '@/data/audio-index';
 import { pickVoice, type VoiceInfo } from './voice-pick';
 
 export type { VoiceInfo };
@@ -35,14 +37,90 @@ export function resetVoiceCache() {
   for (const k of Object.keys(voiceCache)) delete voiceCache[k];
 }
 
+let player: AudioPlayer | null = null;
+
+function stopClip() {
+  if (!player) return;
+  try {
+    player.pause();
+    player.remove();
+  } catch {}
+  player = null;
+}
+
+/** Toca a gravação de um nativo, se existir para este texto. Devolve false se não houver. */
+export function playNativeClip(text: string, locale: string, rate = 1): boolean {
+  const clip = clipFor(locale, text);
+  if (!clip) return false;
+  // navegadores bloqueiam áudio antes do primeiro toque na página
+  if (Platform.OS === 'web' && typeof navigator !== 'undefined') {
+    const ua = (navigator as Navigator & { userActivation?: { hasBeenActive: boolean } }).userActivation;
+    if (ua && !ua.hasBeenActive) return true;
+  }
+  Speech.stop();
+  stopClip();
+  try {
+    const p = createAudioPlayer(clip.src);
+    player = p;
+    if (rate < 1) p.setPlaybackRate(Math.max(0.5, rate), 'high');
+    p.addListener('playbackStatusUpdate', (s) => {
+      if (s.didJustFinish && player === p) stopClip();
+    });
+    p.play();
+    return true;
+  } catch {
+    stopClip();
+    return false;
+  }
+}
+
+export function hasNativeClip(text: string, locale: string): boolean {
+  return clipFor(locale, text) !== null;
+}
+
+/** Fala o texto: gravação de nativo quando existe (palavras), senão a voz do aparelho. */
 export async function speak(text: string, locale: string, opts: { rate?: number } = {}): Promise<void> {
+  if (playNativeClip(text, locale, opts.rate ?? 1)) return;
   const voice = await findVoice(locale);
   Speech.stop();
+  stopClip();
   Speech.speak(text, { language: locale, voice: voice?.identifier, rate: opts.rate ?? 0.9 });
+}
+
+/**
+ * Fala e mede quanto tempo o modelo levou (para comparar o ritmo no shadowing).
+ * Se a voz do aparelho não avisar início e fim, estima pela quantidade de sílabas.
+ */
+export async function speakTimed(text: string, locale: string, rate = 0.9): Promise<number> {
+  const voice = await findVoice(locale);
+  const estimate = Math.round(((text.toLowerCase().match(/[aăâeiîouy]+/g) ?? []).length * 210) / rate);
+  Speech.stop();
+  return new Promise((resolve) => {
+    let startedAt = 0;
+    const fallback = setTimeout(() => resolve(estimate), estimate * 3 + 2000);
+    Speech.speak(text, {
+      language: locale,
+      voice: voice?.identifier,
+      rate,
+      onStart: () => {
+        startedAt = Date.now();
+      },
+      onDone: () => {
+        clearTimeout(fallback);
+        const took = startedAt ? Date.now() - startedAt : 0;
+        resolve(took > 300 ? took : estimate);
+      },
+      onError: () => {
+        clearTimeout(fallback);
+        resolve(estimate);
+      },
+    });
+  });
 }
 
 export function stopSpeaking() {
   Speech.stop();
+  stopClip();
 }
 
 // ---------- Reconhecimento de fala ----------

@@ -182,6 +182,10 @@ export interface LanguagePack extends LanguageInfo {
   community: CommunitySeed[];
   scenarios: ScenarioSeed[];
   stories: StorySeed[];
+  /** Temas do diário: [pergunta no idioma, tradução] */
+  journalPrompts: [string, string][];
+  /** Frases para shadowing: [frase, tradução] */
+  shadowing: [string, string][];
   /** Letras especiais para o teclado adaptado */
   specialChars: string[];
   /** Saudação curta e frase de teste da voz */
@@ -191,3 +195,13 @@ export interface LanguagePack extends LanguageInfo {
 
 /** Meta do núcleo de vocabulário por idioma (as palavras mais frequentes). */
 export const VOCAB_TARGET_TOTAL = 4000;
+
+/** Gravação de falante nativo (Lingua Libre / Wikimedia Commons). */
+export interface AudioClip {
+  src: number;
+  file: string;
+  author: string;
+  license: string;
+  licenseUrl: string;
+  page: string;
+}

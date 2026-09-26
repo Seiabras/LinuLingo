@@ -237,6 +237,81 @@ export async function reachEnding(db: SQLiteDatabase, storyId: string, endingId:
   return r.changes > 0;
 }
 
+// ---------- Diário ----------
+
+export interface JournalEntry {
+  id: string;
+  created_at: string;
+  day: string;
+  prompt: string | null;
+  raw_user_input: string;
+  corrected_input: string | null;
+}
+
+export function listJournal(db: SQLiteDatabase, language: string) {
+  return db.getAllAsync<JournalEntry>(
+    'SELECT id, created_at, day, prompt, raw_user_input, corrected_input FROM User_Journal_Logs WHERE user_id = ? AND language = ? ORDER BY created_at DESC LIMIT 60',
+    uid, language,
+  );
+}
+
+/** Salva a entrada do dia; devolve true se é a primeira de hoje (vale XP). */
+export async function saveJournal(db: SQLiteDatabase, language: string, day: string, prompt: string, raw: string, corrected: string): Promise<boolean> {
+  const before = await db.getFirstAsync<{ n: number }>('SELECT COUNT(*) AS n FROM User_Journal_Logs WHERE user_id = ? AND language = ? AND day = ?', uid, language, day);
+  await db.runAsync(
+    `INSERT INTO User_Journal_Logs (id, user_id, language, created_at, day, prompt, raw_user_input, corrected_input, native_phrasing_suggestion)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    `j-${Date.now()}`, uid, language, new Date().toISOString(), day, prompt, raw, corrected, corrected,
+  );
+  return (before?.n ?? 0) === 0;
+}
+
+export async function journalDoneToday(db: SQLiteDatabase, language: string, day: string) {
+  const r = await db.getFirstAsync<{ n: number }>('SELECT COUNT(*) AS n FROM User_Journal_Logs WHERE user_id = ? AND language = ? AND day = ?', uid, language, day);
+  return (r?.n ?? 0) > 0;
+}
+
+// ---------- Palácio da memória ----------
+
+export interface PalaceNoun {
+  id: string;
+  word_target: string;
+  word_native: string;
+  emoji: string | null;
+  gender: 'm' | 'f' | 'n';
+  learned: number;
+  mnemonic_prompt: string | null;
+}
+
+export function palaceNouns(db: SQLiteDatabase, language: string) {
+  return db.getAllAsync<PalaceNoun>(
+    `SELECT v.id, v.word_target, v.word_native, v.emoji, v.gender,
+            CASE WHEN s.id IS NULL THEN 0 ELSE 1 END AS learned, p.mnemonic_prompt
+     FROM Vocabulary v
+     LEFT JOIN User_SRS_State s ON s.vocab_id = v.id AND s.user_id = ?
+     LEFT JOIN Mnemonic_Palaces p ON p.vocab_id = v.id
+     WHERE v.language = ? AND v.gender IS NOT NULL AND v.word_target NOT LIKE '% %'
+     ORDER BY learned DESC, v.frequency_rank`,
+    uid, language,
+  );
+}
+
+export async function saveMnemonic(db: SQLiteDatabase, vocabId: string, gender: string, text: string) {
+  await db.runAsync(
+    `INSERT OR REPLACE INTO Mnemonic_Palaces (id, vocab_id, gender_visual_tag, mnemonic_prompt) VALUES (?, ?, ?, ?)`,
+    `mn-${vocabId}`, vocabId, { m: 'masculino_forja', f: 'feminino_lago', n: 'neutro_jardim' }[gender] ?? gender, text,
+  );
+}
+
+// ---------- Shadowing ----------
+
+export async function saveShadowing(db: SQLiteDatabase, phrase: string, rhythm: number, contourOk: boolean | null) {
+  await db.runAsync(
+    'INSERT INTO Shadowing_Attempts (user_id, phrase, rhythm_score, contour_ok, created_at) VALUES (?, ?, ?, ?, ?)',
+    uid, phrase, rhythm, contourOk === null ? null : contourOk ? 1 : 0, new Date().toISOString(),
+  );
+}
+
 // ---------- Preferências (Meta) ----------
 
 export async function getMeta(db: SQLiteDatabase, key: string): Promise<string | null> {
@@ -252,7 +327,7 @@ export async function setMeta(db: SQLiteDatabase, key: string, value: string) {
 
 export async function resetProgress(db: SQLiteDatabase) {
   await db.execAsync(`
-    DELETE FROM User_SRS_State; DELETE FROM Lesson_Progress; DELETE FROM XP_Log; DELETE FROM Story_Progress;
+    DELETE FROM User_SRS_State; DELETE FROM Lesson_Progress; DELETE FROM XP_Log; DELETE FROM Story_Progress; DELETE FROM User_Journal_Logs; DELETE FROM Mnemonic_Palaces; DELETE FROM Shadowing_Attempts;
     DELETE FROM Community_Feedback WHERE is_mine = 1;
     UPDATE Community_Feedback SET correction = NULL, corrected_by = NULL, status = 'aguardando';
     UPDATE Users SET streak_days = 0, total_xp = 0, last_study_date = NULL, streak_freezes = 1;

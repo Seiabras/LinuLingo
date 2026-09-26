@@ -11,6 +11,7 @@ import { isDue } from '@/srs/sm2';
 import { VOCAB_TARGET_TOTAL } from '@/data/types';
 import type { Cognate, VocabWithSRS } from '@/types';
 import { useIsDark } from '@/services/theme';
+import { hasNativeClip } from '@/services/speech';
 
 type Tab = 'frequencia' | 'categorias' | 'etimologia';
 type Ety = Awaited<ReturnType<typeof listEtymology>>[number];
@@ -19,10 +20,10 @@ const CATEGORY_EMOJI: Record<string, string> = {
   Essenciais: '⭐', 'Verbos-chave': '🏃', Pessoas: '🧑‍🤝‍🧑', Tempo: '⏰', Casa: '🏠', Sentimentos: '❤️',
   Natureza: '🌿', 'Viagens e Transporte': '✈️', 'Alimentação e Restaurantes': '🍽️', 'Trabalho e Negócios': '💼',
   Descrições: '🎨', Cores: '🌈', Números: '🔢', Corpo: '🖐️', Roupas: '👕', Saúde: '🩺', Compras: '🛒',
-  Escola: '🎒', Profissões: '👷', Animais: '🐾',
+  Escola: '🎒', Profissões: '👷', Animais: '🐾', Sociedade: '🏛️', Tecnologia: '💻', 'Lazer e Esportes': '⚽',
 };
 
-const LANG_FLAG: Record<string, string> = { pt: '🇧🇷', es: '🇪🇸', it: '🇮🇹', fr: '🇫🇷', ru: '🇷🇺', pl: '🇵🇱', cs: '🇨🇿', sr: '🇷🇸', bg: '🇧🇬', el: '🇬🇷', sq: '🇦🇱' };
+const LANG_FLAG: Record<string, string> = { pt: '🇧🇷', es: '🇪🇸', it: '🇮🇹', fr: '🇫🇷', ru: '🇷🇺', pl: '🇵🇱', cs: '🇨🇿', sr: '🇷🇸', bg: '🇧🇬', el: '🇬🇷', sq: '🇦🇱', hu: '🇭🇺', tr: '🇹🇷', en: '🇬🇧', de: '🇩🇪' };
 
 /** Cofre de vocabulário: palavras por frequência com estado SRS, categorias e árvore etimológica. */
 export default function VocabScreen() {
@@ -192,6 +193,7 @@ function WordRow({ w, locale, now }: { w: VocabWithSRS; locale: string; now: num
         <View className="flex-row flex-wrap items-center gap-1.5">
           <Text className="text-base font-bold text-slate-900 dark:text-white">{w.word_target}</Text>
           {g && <Chip label={g.label} tone={g.tone} />}
+          {hasNativeClip(w.word_target, locale) && <Text accessibilityLabel="gravação de falante nativo" className="text-xs">🎧</Text>}
         </View>
         <Text className="text-sm text-slate-500 dark:text-slate-400">{w.word_native}</Text>
       </View>

@@ -8,7 +8,7 @@ import { Linu } from '@/components/Linu';
 import { StatusHeader } from '@/components/StatusHeader';
 import { CulturalGrammarCard } from '@/components/CulturalGrammarCard';
 import { useApp } from '@/services/app-state';
-import { completedLessons, getMeta, pendingPeerCount, vocabStats, xpByDay } from '@/database/queries';
+import { completedLessons, getMeta, journalDoneToday, pendingPeerCount, vocabStats, xpByDay } from '@/database/queries';
 import { findVoice } from '@/services/speech';
 import { TUTORIAL_KEY } from './TutorialScreen';
 import { buildPath, currentUnit, type PathLesson } from '@/services/curriculum';
@@ -24,6 +24,7 @@ export default function HomeScreen() {
   const [todayXp, setTodayXp] = useState(0);
   const [card, setCard] = useState<CultureCardSeed | null>(null);
   const [noVoice, setNoVoice] = useState(false);
+  const [journalToday, setJournalToday] = useState(false);
 
   useFocusEffect(
     useCallback(() => {
@@ -34,6 +35,7 @@ export default function HomeScreen() {
           return;
         }
         findVoice(pack.speechLocale).then((v) => alive && setNoVoice(v === null));
+        journalDoneToday(db, pack.code, localDay()).then((d) => alive && setJournalToday(d));
         const [done, stats, peerCount, days] = await Promise.all([
           completedLessons(db),
           vocabStats(db, pack.code),
@@ -92,18 +94,24 @@ export default function HomeScreen() {
         </View>
       </Pressable>
 
-      <Pressable
-        accessibilityRole="button"
-        onPress={() => router.push('/historias')}
-        className="mt-3 flex-row items-center gap-3 rounded-2xl bg-conecta p-4 active:opacity-90"
-      >
-        <Text className="text-3xl">📚</Text>
-        <View className="flex-1">
-          <Text className="text-base font-extrabold text-white">Histórias interativas</Text>
-          <Text className="text-sm text-blue-100">Leia em {pack.name.toLowerCase()} e decida o que o Linu faz</Text>
-        </View>
-        <Text className="text-2xl text-white">›</Text>
-      </Pressable>
+      <Text className="mb-2 mt-5 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">Mais práticas</Text>
+      <View className="flex-row flex-wrap gap-2">
+        {PRACTICES.map((p) => (
+          <Pressable
+            key={p.route}
+            accessibilityRole="button"
+            onPress={() => router.push(p.route)}
+            className="min-w-[46%] flex-1 gap-1 rounded-2xl border-2 border-slate-200 bg-white p-3 active:opacity-80 dark:border-slate-700 dark:bg-slate-900"
+          >
+            <View className="flex-row items-center justify-between">
+              <Text className="text-2xl">{p.emoji}</Text>
+              {p.route === '/diario' && journalToday && <Text className="text-xs font-bold text-conquista">✓ hoje</Text>}
+            </View>
+            <Text className="font-extrabold text-slate-900 dark:text-white">{p.title}</Text>
+            <Text className="text-xs text-slate-500 dark:text-slate-400">{p.text}</Text>
+          </Pressable>
+        ))}
+      </View>
 
       {noVoice && (
         <Pressable onPress={() => router.push('/voz')} className="mt-3 flex-row items-center gap-3 rounded-2xl bg-amber-50 p-4 active:opacity-80 dark:bg-amber-950">
@@ -184,6 +192,13 @@ export default function HomeScreen() {
     </Screen>
   );
 }
+
+const PRACTICES = [
+  { route: '/historias', emoji: '📚', title: 'Histórias', text: 'Decida o que o Linu faz' },
+  { route: '/diario', emoji: '📓', title: 'Diário', text: '3 frases sobre o seu dia' },
+  { route: '/shadowing', emoji: '🎙️', title: 'Shadowing', text: 'Repita e imite a melodia' },
+  { route: '/palacio', emoji: '🏛️', title: 'Palácio', text: 'Gêneros com memória visual' },
+] as const;
 
 const NODE_STYLE: Record<LessonKind | 'teoria', { icon: typeof Star; bg: string; label: string }> = {
   teoria: { icon: Lightbulb, bg: 'bg-amber-400', label: 'Teoria' },

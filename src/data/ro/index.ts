@@ -4,6 +4,7 @@ import { UNITS_RO } from './curriculo';
 import { ETYMOLOGY_RO } from './etimologia';
 import { COMMUNITY_RO, SCENARIOS_RO } from './conversas';
 import { STORIES_RO } from './historias';
+import { JOURNAL_PROMPTS_RO, SHADOWING_RO } from './praticas';
 
 export const ROMENO: LanguagePack = {
   code: 'ro',
@@ -24,6 +25,8 @@ export const ROMENO: LanguagePack = {
   community: COMMUNITY_RO,
   scenarios: SCENARIOS_RO,
   stories: STORIES_RO,
+  journalPrompts: JOURNAL_PROMPTS_RO,
+  shadowing: SHADOWING_RO,
   specialChars: ['ă', 'â', 'î', 'ș', 'ț'],
   greeting: 'Bună ziua',
   sampleSentence: 'Bună ziua! Mă numesc Linu. Hai să învățăm română!',

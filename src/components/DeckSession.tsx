@@ -1,23 +1,17 @@
-import { useEffect, useRef, useState } from "react";
-import { Pressable, Text, View } from "react-native";
-import { X } from "lucide-react-native";
-import { SwipeCard, type SwipeDir } from "./SwipeCard";
-import { Linu } from "./Linu";
-import {
-  Button,
-  GENDER_LABEL,
-  Chip,
-  ProgressBar,
-  Screen,
-  SpeakButton,
-} from "./ui";
-import { useApp } from "@/services/app-state";
-import { awardXp, reviewWord } from "@/database/queries";
-import { speak, stopSpeaking } from "@/services/speech";
-import * as haptics from "@/services/haptics";
-import { goBack } from "@/services/nav";
-import { useIsDark } from "@/services/theme";
-import type { VocabWithSRS } from "@/types";
+import { useEffect, useRef, useState } from 'react';
+import { Pressable, Text, View } from 'react-native';
+import { X } from 'lucide-react-native';
+import { SwipeCard, type SwipeDir } from './SwipeCard';
+import { Linu } from './Linu';
+import { Button, GENDER_LABEL, Chip, ProgressBar, Screen, SpeakButton } from './ui';
+import { useApp } from '@/services/app-state';
+import { awardXp, reviewWord } from '@/database/queries';
+import { speak, stopSpeaking } from '@/services/speech';
+import * as haptics from '@/services/haptics';
+import { goBack } from '@/services/nav';
+import { useIsDark } from '@/services/theme';
+import { ROOMS } from '@/services/mnemonics';
+import type { VocabWithSRS } from '@/types';
 
 /** Qualidade SM-2 por gesto: → sei, ← não sei, ↑ fácil demais, ↓ difícil. */
 const QUALITY: Record<SwipeDir, number> = {
@@ -27,10 +21,10 @@ const QUALITY: Record<SwipeDir, number> = {
   baixo: 3,
 };
 const LABEL: Record<SwipeDir, string> = {
-  direita: "Sei",
-  esquerda: "Não sei",
-  cima: "Fácil",
-  baixo: "Difícil",
+  direita: 'Sei',
+  esquerda: 'Não sei',
+  cima: 'Fácil',
+  baixo: 'Difícil',
 };
 
 /**
@@ -98,7 +92,7 @@ export function DeckSession({
   const swipe = async (dir: SwipeDir) => {
     if (!card || done || busy.current) return;
     busy.current = true;
-    if (dir === "esquerda") haptics.error();
+    if (dir === 'esquerda') haptics.error();
     else haptics.success();
     await reviewWord(db, card.id, QUALITY[dir]);
     setTally((t) => ({ ...t, [dir]: t[dir] + 1 }));
@@ -110,150 +104,85 @@ export function DeckSession({
 
   if (!deck.length || done) {
     return (
-      <Screen edges={["top", "bottom"]}>
+      <Screen edges={['top', 'bottom']}>
         <View className="flex-1 items-center justify-center gap-4 py-16">
-          <Linu mood={deck.length ? "comemorando" : "feliz"} size={120} />
+          <Linu mood={deck.length ? 'comemorando' : 'feliz'} size={120} />
           <Text className="text-center text-2xl font-extrabold text-slate-900 dark:text-white">
-            {deck.length ? `${title} concluído!` : "Nada para revisar agora 🎉"}
+            {deck.length ? `${title} concluído!` : 'Nada para revisar agora 🎉'}
           </Text>
           {deck.length > 0 ? (
             <View className="w-full gap-2">
               <Text className="text-center text-lg text-slate-600 dark:text-slate-300">
-                {count} {count === 1 ? "palavra" : "palavras"} ·{" "}
-                <Text className="font-bold text-amber-500">+{earned} XP</Text>
+                {count} {count === 1 ? 'palavra' : 'palavras'} · <Text className="font-bold text-amber-500">+{earned} XP</Text>
               </Text>
               <View className="flex-row flex-wrap justify-center gap-2">
                 {(Object.keys(tally) as SwipeDir[]).map((d) => (
-                  <Chip
-                    key={d}
-                    label={`${LABEL[d]}: ${tally[d]}`}
-                    tone={
-                      d === "esquerda"
-                        ? "rose"
-                        : d === "baixo"
-                          ? "amber"
-                          : "green"
-                    }
-                  />
+                  <Chip key={d} label={`${LABEL[d]}: ${tally[d]}`} tone={d === 'esquerda' ? 'rose' : d === 'baixo' ? 'amber' : 'green'} />
                 ))}
               </View>
             </View>
           ) : (
-            <Text className="text-center text-slate-600 dark:text-slate-300">
-              O SRS avisa quando for a hora certa de revisar cada palavra.
-            </Text>
+            <Text className="text-center text-slate-600 dark:text-slate-300">O SRS avisa quando for a hora certa de revisar cada palavra.</Text>
           )}
-          <Button
-            title="Voltar"
-            variant="success"
-            onPress={goBack}
-            className="w-full"
-          />
+          <Button title="Voltar" variant="success" onPress={goBack} className="w-full" />
         </View>
       </Screen>
     );
   }
 
-  const mm = String(Math.floor(left / 60)).padStart(1, "0");
-  const ss = String(left % 60).padStart(2, "0");
+  const mm = String(Math.floor(left / 60)).padStart(1, '0');
+  const ss = String(left % 60).padStart(2, '0');
   const g = card.gender ? GENDER_LABEL[card.gender] : null;
 
   return (
-    <Screen edges={["top", "bottom"]}>
+    <Screen edges={['top', 'bottom']}>
       <View className="flex-row items-center gap-3 py-3">
-        <Pressable
-          accessibilityLabel="Sair"
-          onPress={() => (count ? finish(count) : goBack())}
-          hitSlop={10}
-        >
-          <X size={26} color={dark ? "#94A3B8" : "#64748B"} />
+        <Pressable accessibilityLabel="Sair" onPress={() => (count ? finish(count) : goBack())} hitSlop={10}>
+          <X size={26} color={dark ? '#94A3B8' : '#64748B'} />
         </Pressable>
-        <ProgressBar
-          value={seconds ? 1 - left / seconds : i / deck.length}
-          color={seconds ? "bg-fogo" : "bg-conecta"}
-          className="flex-1"
-        />
-        <Text className="w-14 text-right font-extrabold text-slate-700 dark:text-slate-200">
-          {seconds ? `${mm}:${ss}` : `${i + 1}/${deck.length}`}
-        </Text>
+        <ProgressBar value={seconds ? 1 - left / seconds : i / deck.length} color={seconds ? 'bg-fogo' : 'bg-conecta'} className="flex-1" />
+        <Text className="w-14 text-right font-extrabold text-slate-700 dark:text-slate-200">{seconds ? `${mm}:${ss}` : `${i + 1}/${deck.length}`}</Text>
       </View>
-      <Text className="mb-4 text-center text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">
-        {title}
-      </Text>
+      <Text className="mb-4 text-center text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">{title}</Text>
 
       <View className="relative items-center">
-        <Text className="absolute -top-1 text-xs font-bold text-conquista">
-          ↑ fácil
-        </Text>
+        <Text className="absolute -top-1 text-xs font-bold text-conquista">↑ fácil</Text>
         <SwipeCard key={card.id} onSwipe={swipe}>
-          <View className="mx-2 mt-5 items-center gap-3 rounded-3xl border-2 border-slate-200 bg-white px-4 pb-8 dark:border-slate-700 dark:bg-slate-900">
+          <View
+            style={card.gender ? { borderColor: ROOMS[card.gender].color } : undefined}
+            className="mx-2 mt-5 items-center gap-3 rounded-3xl border-2 border-slate-200 bg-white px-4 pb-8 dark:border-slate-700 dark:bg-slate-900"
+          >
             <Pressable
               accessibilityRole="button"
               accessibilityLabel="Virar cartão"
               onPress={() => setFlipped((f) => !f)}
               className="w-full items-center gap-3 pt-10"
             >
-              <Text style={{ fontSize: 88, lineHeight: 106 }}>
-                {card.emoji ?? "🔤"}
-              </Text>
-              <Text className="text-4xl font-extrabold text-slate-900 dark:text-white">
-                {card.word_target}
-              </Text>
-              {g && <Chip label={g.label} tone={g.tone} />}
+              <Text style={{ fontSize: 88, lineHeight: 106 }}>{card.emoji ?? '🔤'}</Text>
+              <Text className="text-4xl font-extrabold text-slate-900 dark:text-white">{card.word_target}</Text>
+              {g && card.gender && <Chip label={`${ROOMS[card.gender].emoji} ${g.label}`} tone={g.tone} />}
               {flipped ? (
                 <View className="items-center gap-1">
-                  <Text className="text-xl font-bold text-conecta">
-                    {card.word_native}
-                  </Text>
-                  {card.example_sentence && (
-                    <Text className="text-center italic text-slate-500 dark:text-slate-400">
-                      {card.example_sentence}
-                    </Text>
-                  )}
+                  <Text className="text-xl font-bold text-conecta">{card.word_native}</Text>
+                  {card.example_sentence && <Text className="text-center italic text-slate-500 dark:text-slate-400">{card.example_sentence}</Text>}
                 </View>
               ) : (
-                <Text className="text-sm text-slate-400">
-                  toque para ver o significado
-                </Text>
+                <Text className="text-sm text-slate-400">toque para ver o significado</Text>
               )}
             </Pressable>
-            <SpeakButton
-              text={card.word_target}
-              locale={pack.speechLocale}
-              size={24}
-            />
+            <SpeakButton text={card.word_target} locale={pack.speechLocale} size={24} />
           </View>
         </SwipeCard>
         <Text className="mt-2 text-xs font-bold text-amber-600">↓ difícil</Text>
       </View>
 
       <View className="mt-5 flex-row gap-2">
-        <Button
-          title="← Não sei"
-          variant="danger"
-          className="flex-1"
-          onPress={() => swipe("esquerda")}
-        />
-        <Button
-          title="Sei →"
-          variant="success"
-          className="flex-1"
-          onPress={() => swipe("direita")}
-        />
+        <Button title="← Não sei" variant="danger" className="flex-1" onPress={() => swipe('esquerda')} />
+        <Button title="Sei →" variant="success" className="flex-1" onPress={() => swipe('direita')} />
       </View>
       <View className="mt-2 flex-row gap-2">
-        <Button
-          title="↓ Difícil"
-          variant="ghost"
-          className="flex-1"
-          onPress={() => swipe("baixo")}
-        />
-        <Button
-          title="↑ Fácil"
-          variant="ghost"
-          className="flex-1"
-          onPress={() => swipe("cima")}
-        />
+        <Button title="↓ Difícil" variant="ghost" className="flex-1" onPress={() => swipe('baixo')} />
+        <Button title="↑ Fácil" variant="ghost" className="flex-1" onPress={() => swipe('cima')} />
       </View>
     </Screen>
   );
