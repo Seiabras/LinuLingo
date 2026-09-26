@@ -8,7 +8,9 @@ import { Linu } from '@/components/Linu';
 import { StatusHeader } from '@/components/StatusHeader';
 import { CulturalGrammarCard } from '@/components/CulturalGrammarCard';
 import { useApp } from '@/services/app-state';
-import { completedLessons, pendingPeerCount, vocabStats, xpByDay } from '@/database/queries';
+import { completedLessons, getMeta, pendingPeerCount, vocabStats, xpByDay } from '@/database/queries';
+import { findVoice } from '@/services/speech';
+import { TUTORIAL_KEY } from './TutorialScreen';
 import { buildPath, currentUnit, type PathLesson } from '@/services/curriculum';
 import { localDay } from '@/services/progress';
 import type { CultureCardSeed, LessonKind } from '@/data/types';
@@ -21,11 +23,17 @@ export default function HomeScreen() {
   const [peers, setPeers] = useState(0);
   const [todayXp, setTodayXp] = useState(0);
   const [card, setCard] = useState<CultureCardSeed | null>(null);
+  const [noVoice, setNoVoice] = useState(false);
 
   useFocusEffect(
     useCallback(() => {
       let alive = true;
       (async () => {
+        if (!(await getMeta(db, TUTORIAL_KEY))) {
+          router.push('/tutorial');
+          return;
+        }
+        findVoice(pack.speechLocale).then((v) => alive && setNoVoice(v === null));
         const [done, stats, peerCount, days] = await Promise.all([
           completedLessons(db),
           vocabStats(db, pack.code),
@@ -83,6 +91,15 @@ export default function HomeScreen() {
           <Text className="font-extrabold text-fogo">Iniciar sprint agora</Text>
         </View>
       </Pressable>
+
+      {noVoice && (
+        <Pressable onPress={() => router.push('/voz')} className="mt-3 flex-row items-center gap-3 rounded-2xl bg-amber-50 p-4 active:opacity-80 dark:bg-amber-950">
+          <Text className="text-2xl">🔇</Text>
+          <Text className="flex-1 font-semibold text-amber-900 dark:text-amber-200">
+            Seu aparelho ainda não tem voz em {pack.name.toLowerCase()}. Toque para ver como instalar.
+          </Text>
+        </Pressable>
+      )}
 
       {due > 0 && (
         <Pressable onPress={() => router.push('/revisao')} className="mt-3 flex-row items-center gap-3 rounded-2xl bg-conecta-light p-4 active:opacity-80 dark:bg-blue-950">

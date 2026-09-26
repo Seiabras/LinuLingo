@@ -35,6 +35,35 @@ const go = async (path) => {
   await page.waitForTimeout(6000);
 };
 
+// Tutorial do Linu (abre sozinho na primeira visita)
+await go('/');
+await shot('tutorial-1');
+await click('Próximo');
+await shot('tutorial-trilha');
+await click('Próximo');
+await click('Próximo');
+{
+  const card = page.getByText('pinguin', { exact: true });
+  const b = await card.boundingBox();
+  await page.mouse.move(b.x + b.width / 2, b.y);
+  await page.mouse.down();
+  for (let s = 1; s <= 10; s++) await page.mouse.move(b.x + b.width / 2 + s * 25, b.y, { steps: 2 });
+  await page.mouse.up();
+  await page.waitForTimeout(700);
+}
+await shot('tutorial-gesto');
+for (let k = 0; k < 4; k++) await click('Próximo');
+await shot('tutorial-voz');
+await click('🔊 Configurar a voz');
+await page.waitForTimeout(3500);
+await shot('voz');
+await page.getByLabel('Voltar').click();
+await page.waitForTimeout(800);
+await click('Próximo');
+await click('Começar!');
+await page.waitForTimeout(2000);
+await shot('trilha-apos-tutorial');
+
 // Etimologia
 await go('/vocabulario');
 await click('Etimologia');

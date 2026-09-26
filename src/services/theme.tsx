@@ -20,7 +20,7 @@ export function useThemeSync(pref: ThemePref) {
   useEffect(() => {
     const resolved = pref === 'system' ? (system === 'dark' ? 'dark' : 'light') : pref;
     try {
-      if (colorScheme.get() !== resolved) colorScheme.set(resolved);
+      colorScheme.set(resolved);
     } catch {
       // ambiente sem janela (renderização estática)
     }

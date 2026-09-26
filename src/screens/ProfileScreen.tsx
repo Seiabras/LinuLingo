@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 import { Alert, Platform, Pressable, Text, TextInput, View } from 'react-native';
-import { useFocusEffect } from 'expo-router';
+import { router, useFocusEffect } from 'expo-router';
 import { Screen, Button, Card, Chip, SectionTitle } from '@/components/ui';
 import { Linu } from '@/components/Linu';
 import { useApp } from '@/services/app-state';
@@ -181,6 +181,12 @@ export default function ProfileScreen() {
             <Text className={`font-bold ${theme === k ? 'text-conecta' : 'text-slate-500 dark:text-slate-400'}`}>{label}</Text>
           </Pressable>
         ))}
+      </View>
+
+      <SectionTitle>Ajuda</SectionTitle>
+      <View className="gap-2">
+        <Button title="🔊 Voz e microfone" variant="ghost" onPress={() => router.push('/voz')} />
+        <Button title="🐧 Ver o tutorial do Linu" variant="ghost" onPress={() => router.push('/tutorial')} />
       </View>
 
       <Button title="Apagar meu progresso" variant="ghost" onPress={confirmReset} className="mt-8" />

@@ -212,6 +212,17 @@ export async function correctPeer(db: SQLiteDatabase, id: string, correction: st
   );
 }
 
+// ---------- Preferências (Meta) ----------
+
+export async function getMeta(db: SQLiteDatabase, key: string): Promise<string | null> {
+  const r = await db.getFirstAsync<{ value: string }>('SELECT value FROM Meta WHERE key = ?', key);
+  return r?.value ?? null;
+}
+
+export async function setMeta(db: SQLiteDatabase, key: string, value: string) {
+  await db.runAsync('INSERT OR REPLACE INTO Meta (key, value) VALUES (?, ?)', key, value);
+}
+
 // ---------- Reset (perfil) ----------
 
 export async function resetProgress(db: SQLiteDatabase) {

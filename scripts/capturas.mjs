@@ -39,6 +39,11 @@ for (const [name, opts] of Object.entries(DEVICES)) {
   for (const r of routes) {
     await page.goto(BASE + r, { waitUntil: 'load', timeout: 180000 });
     await page.waitForTimeout(Number(process.env.WAIT ?? 1500));
+    // o tutorial abre sozinho na primeira visita à trilha
+    if (!process.env.TUTORIAL && (await page.getByText('Pular', { exact: true }).isVisible().catch(() => false))) {
+      await page.getByText('Pular', { exact: true }).click();
+      await page.waitForTimeout(1500);
+    }
     const file = `${OUT}/${name}-${scheme}${r.replace(/[^a-z0-9]+/gi, '_')}.png`;
     await page.screenshot({ path: file });
     console.log('📸', file);

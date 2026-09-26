@@ -35,6 +35,11 @@ const click = (text) => page.getByText(text, { exact: true }).first().click();
 
 await page.goto(BASE + '/', { waitUntil: 'load', timeout: 180000 });
 await page.waitForTimeout(5000);
+// primeira visita: o tutorial abre sozinho
+if (await page.getByText('Pular', { exact: true }).isVisible().catch(() => false)) {
+  await click('Pular');
+  await page.waitForTimeout(1500);
+}
 await click('Oi, tudo bem?');
 await page.waitForTimeout(1500);
 await shot('etapa1-card');

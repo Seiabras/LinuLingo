@@ -1,32 +1,44 @@
 import { Platform } from 'react-native';
 import * as Speech from 'expo-speech';
 
-/** Síntese de voz (áudio nativo) com fallback silencioso se não houver voz do idioma. */
-let voiceCache: Record<string, string | null> = {};
+import { pickVoice, type VoiceInfo } from './voice-pick';
 
-async function voiceFor(locale: string): Promise<string | null> {
-  if (locale in voiceCache) return voiceCache[locale];
+export type { VoiceInfo };
+
+/** Síntese de voz (áudio nativo) com fallback silencioso se não houver voz do idioma. */
+const voiceCache: Record<string, VoiceInfo | null> = {};
+
+/** Lista de vozes com limite de tempo: na web a lista pode chegar tarde ou nunca. */
+async function listVoices(timeoutMs = 2500) {
+  const timeout = new Promise<null>((r) => setTimeout(() => r(null), timeoutMs));
   try {
-    const voices = await Speech.getAvailableVoicesAsync();
-    const lang = locale.split('-')[0].toLowerCase();
-    const match =
-      voices.find((v) => v.language?.toLowerCase() === locale.toLowerCase()) ??
-      voices.find((v) => v.language?.toLowerCase().startsWith(lang));
-    voiceCache[locale] = match?.identifier ?? null;
+    return await Promise.race([Speech.getAvailableVoicesAsync(), timeout]);
   } catch {
-    voiceCache[locale] = null;
+    return [];
   }
+}
+
+export async function findVoice(locale: string): Promise<VoiceInfo | null> {
+  if (voiceCache[locale] !== undefined) return voiceCache[locale];
+  const voices = await listVoices();
+  if (voices === null) return null; // lista ainda não chegou: não guarda o resultado
+  voiceCache[locale] = pickVoice(voices, locale);
   return voiceCache[locale];
 }
 
 export async function hasVoice(locale: string): Promise<boolean> {
-  return (await voiceFor(locale)) !== null;
+  return (await findVoice(locale)) !== null;
+}
+
+/** Esquece a voz escolhida (ex.: depois que o aluno instala uma voz nova). */
+export function resetVoiceCache() {
+  for (const k of Object.keys(voiceCache)) delete voiceCache[k];
 }
 
 export async function speak(text: string, locale: string, opts: { rate?: number } = {}): Promise<void> {
-  const voice = await voiceFor(locale);
+  const voice = await findVoice(locale);
   Speech.stop();
-  Speech.speak(text, { language: locale, voice: voice ?? undefined, rate: opts.rate ?? 0.9 });
+  Speech.speak(text, { language: locale, voice: voice?.identifier, rate: opts.rate ?? 0.9 });
 }
 
 export function stopSpeaking() {

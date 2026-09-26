@@ -42,7 +42,7 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
       const [u, pref] = await Promise.all([getUser(db), loadThemePref(db)]);
       const resolved = pref === 'system' ? (Appearance.getColorScheme() === 'dark' ? 'dark' : 'light') : pref;
       try {
-        if (colorScheme.get() !== resolved) colorScheme.set(resolved);
+        colorScheme.set(resolved);
       } catch {}
       setUser(u);
       setThemeState(pref);

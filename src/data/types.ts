@@ -152,6 +152,9 @@ export interface LanguagePack extends LanguageInfo {
   scenarios: ScenarioSeed[];
   /** Letras especiais para o teclado adaptado */
   specialChars: string[];
+  /** Saudação curta e frase de teste da voz */
+  greeting: string;
+  sampleSentence: string;
 }
 
 /** Meta do núcleo de vocabulário por idioma (as palavras mais frequentes). */

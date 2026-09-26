@@ -23,4 +23,6 @@ export const ROMENO: LanguagePack = {
   community: COMMUNITY_RO,
   scenarios: SCENARIOS_RO,
   specialChars: ['ă', 'â', 'î', 'ș', 'ț'],
+  greeting: 'Bună ziua',
+  sampleSentence: 'Bună ziua! Mă numesc Linu. Hai să învățăm română!',
 };

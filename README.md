@@ -29,6 +29,7 @@ O seletor do Perfil agrupa os idiomas por família e ramo linguístico.
 - **Conversação guiada**: café, hotel, bar com amigos, entrevista de emprego. O Linu avisa quando o tom não combina (ex.: «tu» com o recepcionista).
 - **Comunidade**: corrigir textos de outros alunos (+20 XP) e acompanhar os próprios envios.
 - **Gamificação**: ofensiva com congelamento, meta diária, XP da semana.
+- **Tutorial com o Linu** na primeira visita (e no Perfil), com um cartão de verdade para treinar os gestos.
 - Tema claro, escuro ou automático.
 
 ## Rodar
@@ -38,7 +39,18 @@ npm install
 npx expo start          # w = navegador, ou leia o QR code com o Expo Go
 ```
 
-Voz: a leitura em voz alta usa as vozes do aparelho (instale a voz «română» se não houver). O reconhecimento de fala funciona hoje no navegador (Chrome/Edge/Safari); no app nativo o aluno digita o que falou.
+### Voz
+
+A leitura em voz alta usa as vozes do aparelho. A tela **Perfil › Voz e microfone** detecta o seu sistema, testa a voz e mostra o passo a passo (iPhone/iPad, Android, Windows, Mac, Chromebook e Linux). O app prefere vozes naturais (Piper, Google, Microsoft, «premium») às robóticas (eSpeak).
+
+No **Linux**, `scripts/instalar-piper.sh` instala o [Piper](https://github.com/rhasspy/piper) com a voz romena `ro_RO-mihai-medium` só no seu usuário (sem sudo) e liga ao speech-dispatcher, que é por onde Firefox e Chrome falam:
+
+```bash
+sh scripts/instalar-piper.sh          # depois: feche e abra o navegador
+spd-say -l ro "Bună ziua"             # teste
+```
+
+O reconhecimento de fala funciona no Chrome, Edge e Safari; no Firefox e no app nativo o aluno digita o que falou.
 
 ## Publicar
 

@@ -4,7 +4,8 @@ import { Mic, MicOff } from 'lucide-react-native';
 import type { VoiceChallenge } from '@/data/types';
 import { Linu } from '../Linu';
 import { Button, SpeakButton, SpeechBubble } from '../ui';
-import { canRecognize, listen, speak } from '@/services/speech';
+import { router } from 'expo-router';
+import { canRecognize, findVoice, listen, speak } from '@/services/speech';
 import { markWords, matchesAny, pronunciationScore, type WordMark } from '@/services/answers';
 import * as haptics from '@/services/haptics';
 
@@ -25,11 +26,13 @@ export function VoiceStep({ challenge, locale, onDone }: { challenge: VoiceChall
   const [typed, setTyped] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [showTranslation, setShowTranslation] = useState(false);
+  const [noVoice, setNoVoice] = useState(false);
   const mic = canRecognize();
   const model = challenge.expected[0];
 
   useEffect(() => {
     speak(challenge.bot, locale);
+    findVoice(locale).then((v) => setNoVoice(v === null));
   }, [challenge.bot, locale]);
 
   const evaluate = (text: string) => {
@@ -76,6 +79,11 @@ export function VoiceStep({ challenge, locale, onDone }: { challenge: VoiceChall
       </View>
 
       <Text className="text-center text-sm text-slate-500 dark:text-slate-400">💡 {challenge.hint}</Text>
+      {noVoice && (
+        <Pressable onPress={() => router.push('/voz')} className="self-center">
+          <Text className="text-sm font-semibold text-amber-600">🔇 Sem voz neste aparelho, não dá para me ouvir. Como instalar?</Text>
+        </Pressable>
+      )}
 
       {heard === null && (
         <View className="items-center gap-4">
