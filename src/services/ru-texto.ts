@@ -5,6 +5,7 @@ const ENCLITICS = new Set(['нибудь', 'либо', 'таки']);
 
 /** Palavra com 2+ vogais precisa de exatamente uma tônica marcada (U+0301) ou de um ё. */
 export function stressProblem(word: string): string | null {
+  if (ENCLITICS.has(word.toLowerCase())) return null;
   const n = (word.match(VOWELS) ?? []).length;
   const marks = (word.match(/́/g) ?? []).length;
   if (/[ёЁ]/.test(word)) return marks ? 'ё já é tônico: tire a marca' : null;

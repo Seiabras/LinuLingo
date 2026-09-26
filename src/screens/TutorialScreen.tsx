@@ -37,7 +37,7 @@ export default function TutorialScreen() {
           {
             mood: 'pensando' as const,
             title: 'Outro alfabeto, sem medo',
-            text: `O ${pack.name.toLowerCase()} tem alfabeto próprio. A lição 1 e a aba Gramática ensinam as letras, e nas respostas escritas aparece o botão «⌨️ Mostrar teclado» com todas elas. A sílaba tônica vem marcada com um acento (молоко́): os nativos não escrevem esse acento, ele está aqui para você pronunciar certo. Na hora de responder, pode digitar sem ele.`,
+            text: `O ${pack.name.toLowerCase()} tem alfabeto próprio. A lição 1, a aba Gramática e o treino «🔤 Alfabeto» (em Mais práticas) ensinam as letras, e nas respostas escritas aparece o botão «⌨️ Mostrar teclado» com todas elas. A sílaba tônica vem marcada com um acento (молоко́): os nativos não escrevem esse acento, ele está aqui para você pronunciar certo. Na hora de responder, pode digitar sem ele.`,
           },
         ]
       : []),

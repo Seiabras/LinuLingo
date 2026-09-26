@@ -11,7 +11,7 @@ O mascote é o **Linu**, um pinguim-de-barbicha (*Pygoscelis antarctica*).
 | Idioma | Família › ramo | Estado |
 | --- | --- | --- |
 | 🇷🇴 Romeno | Indo-europeu › Itálico › Românico › Românico oriental | **disponível** |
-| 🇷🇺 Russo | Indo-europeu › Balto-eslavo › Eslavo › Eslavo oriental | **disponível** (1ª versão) |
+| 🇷🇺 Russo | Indo-europeu › Balto-eslavo › Eslavo › Eslavo oriental | **disponível** |
 | 🇪🇸 Espanhol | Indo-europeu › Itálico › Românico › Ibero-românico | em breve |
 | 🇬🇧 Inglês | Indo-europeu › Germânico › Germânico ocidental | em breve |
 | 🇫🇮 Finlandês | Urálico › Fínico › Fínico setentrional | em breve |
@@ -27,7 +27,8 @@ O seletor do Perfil agrupa os idiomas por família e ramo linguístico.
 - **Tônica marcada** em todo texto russo (молоко́), como nos livros didáticos. A marca alimenta a IPA e é ignorada ao comparar respostas (e na voz).
 - **IPA por regras** (src/services/ipa-ru.ts): redução das vogais átonas (о → [ɐ]/[ə], е/я → [ɪ]), consoantes moles, ensurdecimento e assimilação, casos especiais (что, -ого, -тся).
 - **Teclado cirílico** completo (ЙЦУКЕН) nas respostas escritas, para quem não tem o teclado russo instalado.
-- 1.549 palavras com tônica, 354 gravações nativas (Lingua Libre), 30 tópicos de gramática (do alfabeto aos provérbios), 15 histórias (Moscou, São Petersburgo, Volga, Cazã, Almaty, Transiberiano, Kamtchatka, Iásnaia Poliana…), 4 cenários de conversa, 41 etimologias.
+- 3.925 palavras com tônica, 803 gravações nativas (Lingua Libre), 40 tópicos de gramática (do alfabeto aos provérbios e à reforma de 1918), 45 histórias, 3 por subnível, cada uma num lugar diferente (Moscou, Súzdal, Minsk, Bishkek, Almaty, Transiberiano, Baikal, Iakútsk, Kamtchatka, Iásnaia Poliana, Peterhof…), 4 cenários de conversa, 41 etimologias.
+- **Treino do alfabeto** («🔤 Alfabeto» em Mais práticas): as 33 letras em «iguais», «falsas amigas» (В Н Р С У Х) e «novas», com som, IPA e palavra de exemplo; jogo de letra → som, som → letra e leitura de palavras emprestadas (метро́, шокола́д…), que prioriza as letras menos dominadas.
 - **Diário** com regras próprias: devolve o ё (еще → ещё), acerta мой/моя́/моё pelo gênero e pega erros de lusófonos (я имею 20 лет → мне 20 лет, я нравится → мне нравится, я есть студент → я студент).
 - **Shadowing**: a pergunta de sim/não em russo não sobe no fim, e sim tem um pico na palavra-chave (IK-3). O app explica isso e não cobra a subida.
 - Conteúdo escrito por um autor e revisado por outro, com verificadores automáticos (scripts/checar-vocab-ru.ts, scripts/checar-conteudo-ru.ts) que exigem a tônica e barram letras latinas misturadas no cirílico.

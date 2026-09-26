@@ -3290,4 +3290,1325 @@ export const GRAMMAR_RU: GrammarTopic[] = [
       },
     ],
   },
+  // --- 2ª leva (bloco D2) ---
+  // ───────────────────────────── A1.2 ─────────────────────────────
+  {
+    id: 'ru-g31',
+    level: 'A1.2',
+    title: 'Números, horas e preços',
+    emoji: '🕒',
+    summary: 'Contar de 11 a 1000, perguntar o preço («Ско́лько сто́ит?») e as horas («Кото́рый час?»), e a regra de ouro: 1 рубль, 2 рубля́, 5 рубле́й.',
+    sections: [
+      {
+        text: 'Você já conhece os números de 1 a 10. Agora vamos às dezenas e centenas, que servem para duas situações do dia a dia: saber quanto custa e saber que horas são. Nas duas aparece a mesma regra: a palavra que vem depois do número muda de forma conforme o número (1, 2–4 ou 5 em diante).',
+      },
+      {
+        heading: 'De 11 a 1000',
+        text: 'De 11 a 19, o russo junta o número com -на́дцать (uma forma antiga de «sobre dez»): оди́ннадцать é literalmente «um sobre dez». As dezenas de 50 a 80 terminam em -десят. Os números compostos se dizem em sequência, sem «e»: два́дцать оди́н (21), сто пятьдеся́т три (153).',
+        table: {
+          head: ['Número', 'Russo', 'Número', 'Russo'],
+          rows: [
+            ['11', 'оди́ннадцать', '30', 'три́дцать'],
+            ['12', 'двена́дцать', '40', 'со́рок'],
+            ['13', 'трина́дцать', '50', 'пятьдеся́т'],
+            ['14', 'четы́рнадцать', '60', 'шестьдеся́т'],
+            ['15', 'пятна́дцать', '70', 'се́мьдесят'],
+            ['16', 'шестна́дцать', '80', 'во́семьдесят'],
+            ['17', 'семна́дцать', '90', 'девяно́сто'],
+            ['18', 'восемна́дцать', '100', 'сто'],
+            ['19', 'девятна́дцать', '200', 'две́сти'],
+            ['20', 'два́дцать', '300', 'три́ста'],
+            ['400', 'четы́реста', '500', 'пятьсо́т'],
+            ['1000', 'ты́сяча', '2000', 'две ты́сячи'],
+          ],
+        },
+        examples: [
+          ['два́дцать оди́н', '21'],
+          ['со́рок пять', '45'],
+          ['сто девяно́сто де́вять', '199'],
+          ['ты́сяча пятьсо́т', '1500'],
+        ],
+      },
+      {
+        heading: 'A regra do 1, 2–4 e 5+',
+        text: 'Depois de 1, o substantivo fica no nominativo singular (a forma do dicionário). Depois de 2, 3 e 4, vai para o genitivo singular. De 5 a 20, vai para o genitivo plural. Nos números compostos, quem manda é o último dígito: 21 рубль, 22 рубля́, 25 рубле́й. Os números de 11 a 14 são exceção: sempre pedem o genitivo plural (оди́ннадцать рубле́й). Com substantivos femininos, 1 e 2 mudam: одна́ копе́йка, две копе́йки.',
+        table: {
+          head: ['', '1 (21, 31…)', '2–4 (22, 33…)', '5–20 (25, 100…)'],
+          rows: [
+            ['rublo', 'оди́н рубль', 'два рубля́', 'пять рубле́й'],
+            ['copeque', 'одна́ копе́йка', 'две копе́йки', 'пять копе́ек'],
+            ['mil', 'одна́ ты́сяча', 'две ты́сячи', 'пять ты́сяч'],
+            ['hora', 'час', 'два часа́', 'пять часо́в'],
+            ['minuto', 'одна́ мину́та', 'две мину́ты', 'пять мину́т'],
+            ['ano', 'оди́н год', 'два го́да', 'пять лет'],
+          ],
+        },
+        examples: [
+          ['три́дцать оди́н рубль', '31 rublos'],
+          ['со́рок два рубля́', '42 rublos'],
+          ['сто рубле́й', '100 rublos'],
+          ['двена́дцать рубле́й', '12 rublos (11–14 sempre com рубле́й)'],
+          ['две ты́сячи рубле́й', '2000 rublos'],
+        ],
+      },
+      {
+        heading: 'Quanto custa?',
+        text: 'Para perguntar o preço de uma coisa, use «Ско́лько сто́ит…?»; para várias coisas, o verbo vai para o plural: «Ско́лько сто́ят…?». No caixa, para saber o total, diga «Ско́лько с меня́?» (quanto eu devo?). O rublo (рубль) é a moeda da Rússia e também da Belarus (белору́сский рубль); no Cazaquistão usa-se o tenge (те́нге), que não muda de forma: пять ты́сяч те́нге.',
+        examples: [
+          ['Ско́лько сто́ит э́тот хлеб?', 'Quanto custa este pão?'],
+          ['Со́рок пять рубле́й.', 'Quarenta e cinco rublos.'],
+          ['Ско́лько сто́ят я́блоки?', 'Quanto custam as maçãs?'],
+          ['Ско́лько с меня́?', 'Quanto eu devo? (no caixa)'],
+          ['Э́то сли́шком до́рого.', 'Isso é caro demais.'],
+          ['А э́то дёшево!', 'E isto é barato!'],
+        ],
+      },
+      {
+        heading: 'Que horas são?',
+        text: 'Pergunte «Кото́рый час?» ou, mais coloquial, «Ско́лько вре́мени?». A resposta usa a regra de 1, 2–4 e 5+ com a palavra час: para 1h basta «час», sem оди́н. Para dizer «a que horas», use в + o número: в семь часо́в. O russo prefere o relógio de 12 horas e acrescenta a parte do dia no genitivo: утра́ (da manhã), дня (da tarde), ве́чера (da noite, até umas 23h), но́чи (da madrugada). Na fala você também vai ouvir «полови́на тре́тьего» (2h30, literalmente «metade da terceira») e «без пяти́ три» (2h55, «três menos cinco»).',
+        table: {
+          head: ['Horário', 'Russo', 'Literalmente'],
+          rows: [
+            ['1h00', 'час', 'hora'],
+            ['3h00', 'три часа́', 'três horas'],
+            ['5h00', 'пять часо́в', 'cinco horas'],
+            ['7h00', 'семь часо́в утра́', 'sete horas da manhã'],
+            ['15h00', 'три часа́ дня', 'três horas do dia'],
+            ['20h00', 'во́семь часо́в ве́чера', 'oito horas da noite'],
+            ['2h00', 'два часа́ но́чи', 'duas horas da madrugada'],
+            ['3h20', 'три часа́ два́дцать мину́т', 'três horas e vinte minutos'],
+          ],
+        },
+        examples: [
+          ['Кото́рый час?', 'Que horas são?'],
+          ['Сейча́с два часа́.', 'Agora são duas horas.'],
+          ['Во ско́лько начина́ется фильм?', 'A que horas começa o filme?'],
+          ['В семь часо́в ве́чера.', 'Às sete da noite.'],
+          ['Я встаю́ в шесть три́дцать.', 'Eu acordo às seis e meia.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Misturar as formas: «пять рубля́» ou «два рубле́й». Depois de 2–4 vem рубля́; de 5 em diante, рубле́й.',
+      'Olhar o número inteiro em vez do último dígito: 21 рубль, 22 рубля́, 25 рубле́й. Mas de 11 a 14 é sempre рубле́й: четы́рнадцать рубле́й.',
+      'Dizer «оди́н час» para 1h. Na hora do relógio, basta «час»: Сейча́с час.',
+      'Esquecer o feminino de 1 e 2: одна́ мину́та, две копе́йки, две ты́сячи (e não «два ты́сячи»).',
+      'Deixar o verbo no singular com várias coisas: «Ско́лько сто́ят бана́ны?», e não «сто́ит».',
+      'Dizer «пять годо́в». Depois de 5+, «ano» vira лет: пять лет, два́дцать лет.',
+    ],
+    quiz: [
+      {
+        question: 'Complete: «Э́то сто́ит пять ___».',
+        options: ['рубль', 'рубля́', 'рубле́й'],
+        answer: 'рубле́й',
+        explanation: 'Depois de 5 (até 20) vem o genitivo plural: пять рубле́й.',
+      },
+      {
+        question: 'O que significa «Кото́рый час?»?',
+        options: ['Quantas horas faltam?', 'Que horas são?', 'Quanto custa?'],
+        answer: 'Que horas são?',
+        explanation: '«Кото́рый час?» (ou «Ско́лько вре́мени?») pergunta as horas. O preço se pergunta com «Ско́лько сто́ит?».',
+      },
+      {
+        question: 'Como se diz «22 rublos»?',
+        options: ['два́дцать два рубля́', 'два́дцать два рубле́й', 'два́дцать два рубль'],
+        answer: 'два́дцать два рубля́',
+        explanation: 'O último dígito é 2, então vem o genitivo singular: рубля́.',
+      },
+      {
+        question: 'Como se diz «às sete da noite (19h)»?',
+        options: ['семь часо́в ве́чера', 'в семь часо́в ве́чера', 'в семь часа́ ве́чера'],
+        answer: 'в семь часо́в ве́чера',
+        explanation: '«A que horas» pede в + número. Depois de 7 vem часо́в, e 19h é ве́чера.',
+      },
+      {
+        question: 'Como se pergunta «Quanto custam as maçãs?»?',
+        options: ['Ско́лько сто́ит я́блоки?', 'Ско́лько сто́ят я́блоки?', 'Как сто́ят я́блоки?'],
+        answer: 'Ско́лько сто́ят я́блоки?',
+        explanation: 'я́блоки está no plural, então o verbo também: сто́ят.',
+      },
+    ],
+  },
+
+  // ───────────────────────────── A2.1 ─────────────────────────────
+  {
+    id: 'ru-g32',
+    level: 'A2.1',
+    title: 'Adjetivos: concordância e declinação básica',
+    emoji: '🎨',
+    summary:
+      'O adjetivo concorda com o substantivo em gênero, número e caso. Tipo duro (но́вый) e mole (си́ний), a regra depois de к, г, х, ж, ш, ч, щ e as formas dos casos.',
+    sections: [
+      {
+        text: 'Em russo o adjetivo vem antes do substantivo e copia dele três coisas: o gênero (masculino, feminino, neutro), o número (singular, plural) e o caso. No dicionário ele aparece no masculino singular, terminado em -ый, -ий ou -ой (tônico). A boa notícia: são poucas terminações, e elas se repetem muito.',
+      },
+      {
+        heading: 'Nominativo: duro × mole',
+        text: 'A maioria dos adjetivos é «dura»: a terminação começa com vogal dura (-ый, -ая, -ое, -ые). Se a tônica cai na terminação, o masculino é -о́й: молодо́й. Um grupo menor é «mole», quase sempre com -н- antes da terminação: си́ний (azul-escuro), после́дний (último), ле́тний (de verão), зи́мний (de inverno), дома́шний (caseiro). Nesses, as vogais são as moles: -ий, -яя, -ее, -ие.',
+        table: {
+          head: ['Tipo', 'Masculino', 'Feminino', 'Neutro', 'Plural'],
+          rows: [
+            ['duro', 'но́вый', 'но́вая', 'но́вое', 'но́вые'],
+            ['duro, tônica no fim', 'молодо́й', 'молода́я', 'молодо́е', 'молоды́е'],
+            ['mole', 'си́ний', 'си́няя', 'си́нее', 'си́ние'],
+          ],
+        },
+        examples: [
+          ['но́вый дом', 'casa nova'],
+          ['но́вая кни́га', 'livro novo (кни́га é feminino)'],
+          ['но́вое окно́', 'janela nova (окно́ é neutro)'],
+          ['но́вые друзья́', 'amigos novos'],
+          ['си́нее мо́ре', 'mar azul'],
+          ['после́дний авто́бус', 'o último ônibus'],
+        ],
+      },
+      {
+        heading: 'Depois de к, г, х, ж, ш, ч, щ',
+        text: 'Duas regras de ortografia mudam algumas terminações. 1) Depois de к, г, х, ж, ш, ч, щ nunca se escreve ы: escreve-se и. Por isso ру́сский, ма́ленький, хоро́ший, горя́чий, e no plural ру́сские, хоро́шие. 2) Depois de ж, ш, ч, щ, um «о» átono vira е: хоро́шее (e não «хоро́шое»), горя́чее. Quando a tônica cai na terminação, o о fica: большо́й, большо́е.',
+        table: {
+          head: ['Masculino', 'Feminino', 'Neutro', 'Plural', 'Português'],
+          rows: [
+            ['ру́сский', 'ру́сская', 'ру́сское', 'ру́сские', 'russo'],
+            ['ма́ленький', 'ма́ленькая', 'ма́ленькое', 'ма́ленькие', 'pequeno'],
+            ['хоро́ший', 'хоро́шая', 'хоро́шее', 'хоро́шие', 'bom'],
+            ['горя́чий', 'горя́чая', 'горя́чее', 'горя́чие', 'quente'],
+            ['большо́й', 'больша́я', 'большо́е', 'больши́е', 'grande'],
+          ],
+        },
+        examples: [
+          ['ру́сский язы́к', 'a língua russa'],
+          ['хоро́шая пого́да', 'tempo bom'],
+          ['горя́чее молоко́', 'leite quente'],
+          ['большо́е спаси́бо', 'muito obrigado (literalmente «grande obrigado»)'],
+        ],
+      },
+      {
+        heading: 'Os casos no singular',
+        text: 'Quando o substantivo muda de caso, o adjetivo muda junto. Masculino e neutro compartilham quase tudo; o feminino tem uma terminação -ой (-ей) que serve para quatro casos. No acusativo masculino, a forma depende de o substantivo ser animado (pessoa, animal: igual ao genitivo) ou inanimado (igual ao nominativo). Atenção à pronúncia: em -ого e -его, o г soa в: но́вого soa «nóvava».',
+        table: {
+          head: ['Caso', 'Masc./neutro duro', 'Feminino duro', 'Masc./neutro mole', 'Feminino mole'],
+          rows: [
+            ['Nominativo', 'но́вый / но́вое', 'но́вая', 'си́ний / си́нее', 'си́няя'],
+            ['Acusativo', 'но́вый (inanimado), но́вого (animado) / но́вое', 'но́вую', 'си́ний, си́него / си́нее', 'си́нюю'],
+            ['Genitivo', 'но́вого', 'но́вой', 'си́него', 'си́ней'],
+            ['Dativo', 'но́вому', 'но́вой', 'си́нему', 'си́ней'],
+            ['Instrumental', 'но́вым', 'но́вой', 'си́ним', 'си́ней'],
+            ['Preposicional', '(о) но́вом', '(о) но́вой', '(о) си́нем', '(о) си́ней'],
+          ],
+        },
+        examples: [
+          ['Я живу́ в большо́м до́ме.', 'Eu moro numa casa grande. (preposicional)'],
+          ['Я чита́ю интере́сную кни́гу.', 'Estou lendo um livro interessante. (acusativo feminino)'],
+          ['Я жду ста́рого дру́га.', 'Estou esperando um velho amigo. (acusativo animado)'],
+          ['У меня́ нет си́ней ру́чки.', 'Eu não tenho caneta azul. (genitivo)'],
+          ['Мы гуля́ем с ма́ленькой соба́кой.', 'Passeamos com uma cachorrinha. (instrumental)'],
+          ['Мы говори́м о ру́сской литерату́ре.', 'Falamos sobre literatura russa. (preposicional)'],
+        ],
+      },
+      {
+        heading: 'O plural',
+        text: 'No plural é ainda mais simples: a mesma terminação para os três gêneros. O acusativo segue a mesma lógica do masculino: igual ao nominativo com coisas, igual ao genitivo com pessoas e animais.',
+        table: {
+          head: ['Caso', 'Duro', 'Mole'],
+          rows: [
+            ['Nominativo', 'но́вые', 'си́ние'],
+            ['Acusativo', 'но́вые (inanimado), но́вых (animado)', 'си́ние, си́них'],
+            ['Genitivo', 'но́вых', 'си́них'],
+            ['Dativo', 'но́вым', 'си́ним'],
+            ['Instrumental', 'но́выми', 'си́ними'],
+            ['Preposicional', '(о) но́вых', '(о) си́них'],
+          ],
+        },
+        examples: [
+          ['Я люблю́ ста́рые фи́льмы.', 'Eu adoro filmes antigos.'],
+          ['Я зна́ю э́тих молоды́х актёров.', 'Eu conheço esses atores jovens.'],
+          ['Мы бы́ли в ма́леньких города́х.', 'Estivemos em cidades pequenas.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Escrever «ру́сскый», «хоро́шый». Depois de к, г, х, ж, ш, ч, щ, sempre и: ру́сский, хоро́ший.',
+      'Esquecer a concordância: «но́вый кни́га». O substantivo é feminino, então: но́вая кни́га.',
+      'Escrever «хоро́шое вино́». Depois de ш, o о átono vira е: хоро́шее вино́. Já em большо́е, com tônica, o о fica.',
+      'Deixar o acusativo feminino igual ao nominativo: «Я люблю́ ру́сская ку́хня». O certo é Я люблю́ ру́сскую ку́хню.',
+      'Usar o acusativo «de coisa» com pessoas: «Я ви́жу но́вый студе́нт». Com animados, o acusativo masculino é igual ao genitivo: Я ви́жу но́вого студе́нта.',
+      'Pronunciar o г de -ого como «g». Ele soa в: большо́го soa «bal’chóva».',
+    ],
+    quiz: [
+      {
+        question: 'Complete: «___ кни́га».',
+        options: ['но́вый', 'но́вая', 'но́вое'],
+        answer: 'но́вая',
+        explanation: 'кни́га é feminino (termina em -а), então o adjetivo termina em -ая.',
+      },
+      {
+        question: 'Qual forma está certa?',
+        options: ['ру́сскый язы́к', 'ру́сский язы́к', 'ру́сской язы́к'],
+        answer: 'ру́сский язы́к',
+        explanation: 'Depois de к nunca vem ы. E -ой só aparece quando a terminação é tônica, o que não é o caso de ру́сский.',
+      },
+      {
+        question: 'Complete: «Я живу́ в ___ до́ме».',
+        options: ['большо́й', 'большо́м', 'большо́го'],
+        answer: 'большо́м',
+        explanation: 'в + preposicional (onde): masculino no preposicional termina em -ом.',
+      },
+      {
+        question: 'Complete: «Я жду ___ дру́га».',
+        options: ['ста́рый', 'ста́рого', 'ста́рому'],
+        answer: 'ста́рого',
+        explanation: 'друг é animado: no acusativo masculino, o adjetivo fica igual ao genitivo, -ого.',
+      },
+      {
+        question: 'Complete: «___ вино́».',
+        options: ['хоро́шое', 'хоро́шее', 'хоро́шая'],
+        answer: 'хоро́шее',
+        explanation: 'вино́ é neutro. Depois de ш, o о átono da terminação vira е: хоро́шее.',
+      },
+    ],
+  },
+
+  // ───────────────────────────── A2.2 ─────────────────────────────
+  {
+    id: 'ru-g33',
+    level: 'A2.2',
+    title: 'Comparativo e superlativo',
+    emoji: '📏',
+    summary: 'Mais rápido (быстре́е), melhor (лу́чше), maior (бо́льше), «do que» com чем ou genitivo, o superlativo com са́мый e a forma literária em -ейший.',
+    sections: [
+      {
+        text: 'O russo tem duas maneiras de comparar. A curta, com o sufixo -ее, é a mais usada na fala: быстре́е (mais rápido). A composta, com бо́лее (mais) ou ме́нее (menos), funciona como no português. Para o superlativo, a palavra-chave é са́мый (o mais).',
+      },
+      {
+        heading: 'O comparativo curto: -ее',
+        text: 'Tire a terminação do adjetivo e junte -ее. Em adjetivos curtos, a tônica costuma pular para o sufixo: быстре́е, тепле́е. Nos mais longos, ela fica onde estava: интере́снее, краси́вее. Esta forma não muda com gênero nem número (э́та кни́га интере́снее, э́ти кни́ги интере́снее) e serve também como advérbio: Он бе́гает быстре́е.',
+        table: {
+          head: ['Adjetivo', 'Comparativo', 'Português'],
+          rows: [
+            ['бы́стрый', 'быстре́е', 'mais rápido'],
+            ['тёплый', 'тепле́е', 'mais quente (clima)'],
+            ['холо́дный', 'холодне́е', 'mais frio'],
+            ['тру́дный', 'трудне́е', 'mais difícil'],
+            ['интере́сный', 'интере́снее', 'mais interessante'],
+            ['краси́вый', 'краси́вее', 'mais bonito'],
+            ['ме́дленный', 'ме́дленнее', 'mais devagar'],
+          ],
+        },
+        examples: [
+          ['Сего́дня холодне́е, чем вчера́.', 'Hoje está mais frio do que ontem.'],
+          ['Говори́те, пожа́луйста, ме́дленнее.', 'Fale mais devagar, por favor.'],
+          ['Э́та кни́га интере́снее.', 'Este livro é mais interessante.'],
+        ],
+      },
+      {
+        heading: 'Os irregulares (e são muito usados)',
+        text: 'Alguns dos adjetivos mais comuns fazem o comparativo em -е, com mudança de consoante: к vira ч, г vira ж, х vira ш, ст vira щ. Vale decorar esta lista, porque ela aparece o tempo todo.',
+        table: {
+          head: ['Adjetivo', 'Comparativo', 'Português'],
+          rows: [
+            ['хоро́ший', 'лу́чше', 'melhor'],
+            ['плохо́й', 'ху́же', 'pior'],
+            ['большо́й', 'бо́льше', 'maior; mais'],
+            ['ма́ленький', 'ме́ньше', 'menor; menos'],
+            ['дорого́й', 'доро́же', 'mais caro'],
+            ['дешёвый', 'деше́вле', 'mais barato'],
+            ['молодо́й', 'моло́же', 'mais novo'],
+            ['ста́рый', 'ста́рше', 'mais velho (pessoas)'],
+            ['высо́кий', 'вы́ше', 'mais alto'],
+            ['ни́зкий', 'ни́же', 'mais baixo'],
+            ['лёгкий', 'ле́гче', 'mais fácil; mais leve'],
+            ['далёкий', 'да́льше', 'mais longe'],
+            ['бли́зкий', 'бли́же', 'mais perto'],
+            ['гро́мкий', 'гро́мче', 'mais alto (som)'],
+            ['ти́хий', 'ти́ше', 'mais baixo (som), mais calmo'],
+            ['просто́й', 'про́ще', 'mais simples'],
+          ],
+        },
+        examples: [
+          ['Так лу́чше.', 'Assim é melhor.'],
+          ['Здесь деше́вле.', 'Aqui é mais barato.'],
+          ['Говори́ гро́мче!', 'Fale mais alto!'],
+        ],
+      },
+      {
+        heading: '«Do que»: чем ou genitivo',
+        text: 'Há duas construções. 1) чем, depois de vírgula, com o segundo termo no mesmo caso do primeiro: Москва́ бо́льше, чем Каза́нь. 2) Só com o comparativo curto, o segundo termo pode ir direto para o genitivo, sem чем: Москва́ бо́льше Каза́ни. Com pronomes, o genitivo é o mais natural: ста́рше меня́ (mais velho do que eu). Para «muito mais», use гора́здо ou намно́го; para a diferença exata, на + acusativo: ста́рше на три го́да.',
+        examples: [
+          ['Москва́ бо́льше, чем Каза́нь.', 'Moscou é maior do que Kazan.'],
+          ['Москва́ бо́льше Каза́ни.', 'Moscou é maior do que Kazan. (com genitivo)'],
+          ['Мой брат ста́рше меня́ на три го́да.', 'Meu irmão é três anos mais velho do que eu.'],
+          ['Ле́том в Со́чи гора́здо тепле́е, чем в Москве́.', 'No verão, em Sochi é bem mais quente do que em Moscou.'],
+          ['Чем бо́льше чита́ешь, тем лу́чше понима́ешь.', 'Quanto mais você lê, melhor entende.'],
+        ],
+      },
+      {
+        heading: 'O comparativo composto: бо́лее / ме́нее',
+        text: 'бо́лее (mais) e ме́нее (menos) + o adjetivo inteiro, que continua concordando e declinando normalmente. É a forma certa quando a comparação vem antes de um substantivo (бо́лее дешёвый биле́т) e é comum no registro escrito. Não confunda: бо́лее só forma o comparativo; бо́льше significa «maior» ou «mais» (quantidade).',
+        examples: [
+          ['Мне ну́жен бо́лее дешёвый биле́т.', 'Eu preciso de uma passagem mais barata.'],
+          ['Э́то ме́нее изве́стный музе́й.', 'É um museu menos conhecido.'],
+          ['Я хочу́ бо́льше ча́я.', 'Quero mais chá.'],
+        ],
+      },
+      {
+        heading: 'O superlativo: са́мый',
+        text: 'Na fala, o superlativo é са́мый + adjetivo, e os dois concordam e declinam juntos: са́мая краси́вая у́лица, в са́мом це́нтре. Outra saída muito comum é o comparativo curto + всех (de todos) ou всего́ (de tudo): Она́ поёт лу́чше всех. Alguns adjetivos já funcionam como superlativo: лу́чший (o melhor), ху́дший (o pior), e ста́рший / мла́дший (o mais velho / o mais novo, entre irmãos).',
+        examples: [
+          ['Байка́л — са́мое глубо́кое о́зеро в ми́ре.', 'O Baikal é o lago mais profundo do mundo.'],
+          ['Во́лга — са́мая дли́нная река́ в Евро́пе.', 'O Volga é o rio mais longo da Europa.'],
+          ['Мы живём в са́мом це́нтре.', 'Moramos bem no centro.'],
+          ['Он мой лу́чший друг.', 'Ele é o meu melhor amigo.'],
+          ['Она́ поёт лу́чше всех.', 'Ela canta melhor do que todos.'],
+          ['Здоро́вье ва́жнее всего́.', 'A saúde é o mais importante de tudo.'],
+        ],
+      },
+      {
+        heading: 'O superlativo literário: -ейший / -айший',
+        text: 'Existe ainda uma forma em -ейший (depois de ж, ш, ч, щ, -айший), parecida com o nosso «-íssimo». Ela é típica de textos escritos, discursos e da fala enfática: интере́снейшая кни́га é «um livro interessantíssimo», não necessariamente «o mais interessante de todos». Com к e г há troca de consoante: вели́кий → велича́йший, глубо́кий → глубоча́йший, стро́гий → строжа́йший.',
+        table: {
+          head: ['Adjetivo', 'Forma em -ейший / -айший', 'Português'],
+          rows: [
+            ['интере́сный', 'интере́снейший', 'interessantíssimo'],
+            ['ва́жный', 'важне́йший', 'importantíssimo'],
+            ['но́вый', 'нове́йший', 'novíssimo, o mais recente'],
+            ['вели́кий', 'велича́йший', 'o maior, grandioso'],
+            ['глубо́кий', 'глубоча́йший', 'profundíssimo'],
+            ['коро́ткий', 'кратча́йший', 'o mais curto'],
+          ],
+        },
+        examples: [
+          ['Э́то важне́йшая зада́ча.', 'Esta é uma tarefa importantíssima.'],
+          ['Пу́шкин — велича́йший ру́сский поэ́т.', 'Púchkin é o maior poeta russo.'],
+          ['Байка́л — глубоча́йшее о́зеро плане́ты.', 'O Baikal é o lago mais profundo do planeta.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Juntar бо́лее com a forma curta: «бо́лее лу́чше», «бо́лее интере́снее». Escolha uma: лу́чше, ou бо́лее интере́сный.',
+      'Usar o genitivo depois de бо́лее: «бо́лее интере́сный меня́». Com бо́лее, use чем: бо́лее интере́сный, чем я.',
+      'Esquecer a vírgula antes de чем: Москва́ бо́льше, чем Каза́нь.',
+      'Tentar concordar a forma curta com o substantivo. Ela é invariável: э́тот фильм интере́снее, э́та кни́га интере́снее, э́ти кни́ги интере́снее.',
+      'Confundir бо́льше e бо́лее. бо́льше é «maior» ou «mais» (quantidade); бо́лее é só a palavrinha do comparativo composto.',
+      'Usar -ейший na conversa do dia a dia como superlativo neutro. Na fala, o normal é са́мый: са́мый интере́сный.',
+    ],
+    quiz: [
+      {
+        question: 'Qual é o comparativo de хоро́ший?',
+        options: ['хоро́шее', 'лу́чше', 'бо́лее хоро́ше'],
+        answer: 'лу́чше',
+        explanation: 'хоро́ший é irregular: лу́чше (melhor).',
+      },
+      {
+        question: 'Como se diz «Meu irmão é mais velho do que eu»?',
+        options: ['Мой брат ста́рше меня́.', 'Мой брат ста́рше я.', 'Мой брат бо́лее ста́рый меня́.'],
+        answer: 'Мой брат ста́рше меня́.',
+        explanation: 'Com a forma curta, o segundo termo vai para o genitivo: меня́. Com бо́лее seria preciso чем.',
+      },
+      {
+        question: 'Como se diz «o lago mais profundo»?',
+        options: ['са́мое глубо́кое о́зеро', 'са́мый глубо́кий о́зеро', 'глубо́кое са́мое о́зеро'],
+        answer: 'са́мое глубо́кое о́зеро',
+        explanation: 'о́зеро é neutro, e са́мый concorda junto com o adjetivo: са́мое глубо́кое.',
+      },
+      {
+        question: 'Complete: «Москва́ бо́льше, ___ Каза́нь».',
+        options: ['чем', 'как', 'что'],
+        answer: 'чем',
+        explanation: '«Do que» na comparação é чем, depois de vírgula.',
+      },
+      {
+        question: 'O que significa «интере́снейшая кни́га»?',
+        options: ['um livro mais interessante que outro', 'um livro interessantíssimo', 'um livro pouco interessante'],
+        answer: 'um livro interessantíssimo',
+        explanation: 'A forma em -ейший equivale ao nosso «-íssimo»: é enfática e mais literária.',
+      },
+    ],
+  },
+
+  // ───────────────────────────── B1.1 ─────────────────────────────
+  {
+    id: 'ru-g34',
+    level: 'B1.1',
+    title: 'Verbos reflexivos em -ся/-сь',
+    emoji: '🪞',
+    summary:
+      'A partícula -ся (-сь depois de vogal): ação sobre si mesmo (мы́ться), ação mútua (встреча́ться), frases «sem sujeito» (мне не спи́тся) e verbos que só existem com ela (смея́ться, боя́ться).',
+    sections: [
+      {
+        text: 'Em russo, o «se» de «lavar-se» não é uma palavra separada: é um pedacinho grudado no fim do verbo. Depois de consoante ele é -ся; depois de vogal, -сь. O verbo conjuga normalmente e o -ся/-сь vai sempre no final. Na pronúncia, -тся e -ться soam igual: «tsa». занима́ется soa «zanimáietsa».',
+        table: {
+          head: ['Pessoa', 'занима́ться (ocupar-se, praticar)', 'учи́ться (estudar, ser aluno)'],
+          rows: [
+            ['я', 'занима́юсь', 'учу́сь'],
+            ['ты', 'занима́ешься', 'у́чишься'],
+            ['он / она́', 'занима́ется', 'у́чится'],
+            ['мы', 'занима́емся', 'у́чимся'],
+            ['вы', 'занима́етесь', 'у́читесь'],
+            ['они́', 'занима́ются', 'у́чатся'],
+            ['passado', 'занима́лся, занима́лась, занима́лись', 'учи́лся, учи́лась, учи́лись'],
+          ],
+        },
+        examples: [
+          ['Я учу́сь в университе́те.', 'Eu estudo na universidade.'],
+          ['Она́ занима́лась му́зыкой.', 'Ela estudava música.'],
+          ['Где вы у́читесь?', 'Onde vocês estudam?'],
+        ],
+      },
+      {
+        heading: 'Sentido reflexivo: a ação volta para quem faz',
+        text: 'É o caso mais próximo do português: o sujeito faz a ação em si mesmo. Compare com o mesmo verbo sem -ся, que pede um objeto: одева́ть ребёнка (vestir a criança) × одева́ться (vestir-se). Se há objeto direto, não há -ся.',
+        examples: [
+          ['Я встаю́, умыва́юсь и одева́юсь.', 'Eu me levanto, lavo o rosto e me visto.'],
+          ['Ма́ма одева́ет сы́на.', 'A mãe veste o filho.'],
+          ['Он причёсывается пе́ред зе́ркалом.', 'Ele se penteia diante do espelho.'],
+          ['Ребёнок мо́ется сам.', 'A criança toma banho sozinha.'],
+        ],
+      },
+      {
+        heading: 'Sentido recíproco: um ao outro',
+        text: 'Com sujeito no plural (ou «eu com alguém»), -ся indica uma ação mútua: встреча́ться (encontrar-se), знако́миться (conhecer-se), целова́ться (beijar-se), обнима́ться (abraçar-se), перепи́сываться (trocar mensagens), ссо́риться (brigar), мири́ться (fazer as pazes). Compare: Я встре́тил дру́га (encontrei um amigo) × Мы встре́тились (nós nos encontramos).',
+        examples: [
+          ['Мы познако́мились в Каза́ни.', 'Nós nos conhecemos em Kazan.'],
+          ['Они́ встреча́ются ка́ждую суббо́ту.', 'Eles se encontram todo sábado.'],
+          ['Мы ча́сто перепи́сываемся.', 'Nós trocamos mensagens com frequência.'],
+          ['Де́ти поссо́рились, а пото́м помири́лись.', 'As crianças brigaram e depois fizeram as pazes.'],
+          ['Я познако́мился с Ни́ной.', 'Eu conheci a Nina. (com + instrumental)'],
+        ],
+      },
+      {
+        heading: 'Frases «sem sujeito»',
+        text: 'Uma construção muito russa: a pessoa vai para o dativo, e o verbo com -ся fica na 3ª pessoa do singular (no passado, no neutro). Ela descreve um estado ou uma vontade que «acontece» com a pessoa, sem que ela controle: мне не спи́тся (o sono não vem), мне хо́чется (tenho vontade), мне ка́жется (me parece). Você já conhece um parente desta família: мне нра́вится.',
+        examples: [
+          ['Мне не спи́тся.', 'Não consigo dormir. (o sono não vem)'],
+          ['Мне хо́чется пить.', 'Estou com vontade de beber algo.'],
+          ['Сего́дня мне не рабо́тается.', 'Hoje o trabalho não está rendendo.'],
+          ['Как тебе́ здесь живётся?', 'Como está a vida por aqui?'],
+          ['Мне ка́жется, что бу́дет дождь.', 'Acho que vai chover.'],
+          ['Вчера́ мне не спало́сь.', 'Ontem eu não consegui dormir.'],
+        ],
+      },
+      {
+        heading: 'Outros usos: coisas que começam, verbos só com -ся',
+        text: 'Com sujeito que é coisa, -ся transforma «começar algo» em «algo começa»: начина́ть уро́к × Уро́к начина́ется. O mesmo vale para конча́ться, открыва́ться, закрыва́ться. Alguns verbos só existem com -ся e não têm nada de reflexivo: смея́ться (rir), боя́ться (ter medo), улыба́ться (sorrir), наде́яться (ter esperança), нра́виться (agradar). Atenção à regência: verbos com -ся quase nunca levam objeto no acusativo. занима́ться e интересова́ться pedem instrumental; боя́ться pede genitivo. (A voz passiva com -ся é tema do nível B2.2.)',
+        examples: [
+          ['Фильм начина́ется в семь.', 'O filme começa às sete.'],
+          ['Магази́н открыва́ется в де́вять.', 'A loja abre às nove.'],
+          ['Он занима́ется спо́ртом.', 'Ele pratica esporte.'],
+          ['Она́ интересу́ется исто́рией.', 'Ela se interessa por história.'],
+          ['Я бою́сь соба́к.', 'Eu tenho medo de cachorro.'],
+          ['Почему́ ты смеёшься?', 'Por que você está rindo?'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar -ся depois de vogal: «я учу́ся», «мы занима́лися». Depois de vogal é -сь: я учу́сь, мы занима́лись.',
+      'Colocar objeto no acusativo: «Я интересу́юсь му́зыку». Verbo com -ся não leva acusativo: Я интересу́юсь му́зыкой.',
+      'Traduzir todo «se» do português com -ся. «Lembrar-se» é по́мнить, «esquecer-se» é забы́ть, «sentar-se» (de uma vez) é сесть: nenhum tem -ся. E o contrário também acontece: «rir» é смея́ться.',
+      'Confundir учи́ть e учи́ться. Я учу́ слова́ (decoro palavras, com objeto) × Я учу́сь в шко́ле (sou aluno, sem objeto).',
+      'Esquecer o -ся no recíproco: «Мы встре́тили вчера́». O certo é Мы встре́тились вчера́ (nós nos encontramos).',
+      'Pronunciar o «ть» de -ться: занима́ться e занима́ется soam igual, com «tsa» no fim.',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz «Eu estudo na universidade»?',
+        options: ['Я учу́ в университе́те.', 'Я учу́сь в университе́те.', 'Я учу́ся в университе́те.'],
+        answer: 'Я учу́сь в университе́те.',
+        explanation: '«Ser aluno em algum lugar» é учи́ться. Depois da vogal у, a partícula vira -сь.',
+      },
+      {
+        question: 'Como se diz «Ontem nós nos encontramos no café»?',
+        options: ['Вчера́ мы встре́тились в кафе́.', 'Вчера́ мы встре́тили в кафе́.', 'Вчера́ мы встре́тимся в кафе́.'],
+        answer: 'Вчера́ мы встре́тились в кафе́.',
+        explanation: 'Ação mútua: встре́титься, com -сь depois da vogal и. встре́тимся é futuro.',
+      },
+      {
+        question: 'O que significa «Мне не спи́тся»?',
+        options: ['Eu não quero dormir.', 'Não consigo dormir.', 'Eu nunca durmo.'],
+        answer: 'Não consigo dormir.',
+        explanation: 'Na construção com dativo + -ся, o estado «acontece» com a pessoa: o sono simplesmente não vem.',
+      },
+      {
+        question: 'Complete: «Он занима́ется ___».',
+        options: ['спорт', 'спо́ртом', 'спо́рту'],
+        answer: 'спо́ртом',
+        explanation: 'занима́ться pede o instrumental: занима́ться спо́ртом, му́зыкой, ру́сским языко́м.',
+      },
+      {
+        question: 'Complete: «Ма́ма ___ сы́на».',
+        options: ['одева́ет', 'одева́ется', 'одева́лась'],
+        answer: 'одева́ет',
+        explanation: 'Há um objeto direto (сы́на), então o verbo fica sem -ся.',
+      },
+    ],
+  },
+
+  // ───────────────────────────── B1.2 ─────────────────────────────
+  {
+    id: 'ru-g35',
+    level: 'B1.2',
+    title: 'Datas e expressões de tempo',
+    emoji: '📅',
+    summary: 'Cada unidade de tempo pede uma construção: в понеде́льник, в ма́е, ле́том, на э́той неде́ле, пя́того ма́я. Mais че́рез неде́лю, неде́лю наза́д e с… до….',
+    sections: [
+      {
+        text: 'No português, quase tudo se resolve com «em» ou «no»: na segunda, em maio, no verão. Em russo, cada unidade de tempo tem a sua construção. A tabela abaixo é o mapa; depois vêm os detalhes.',
+        table: {
+          head: ['Unidade', 'Construção', 'Exemplo', 'Português'],
+          rows: [
+            ['hora', 'в + acusativo', 'в пять часо́в', 'às cinco'],
+            ['parte do dia', 'instrumental, sem preposição', 'ве́чером', 'à noite'],
+            ['dia da semana', 'в + acusativo', 'в сре́ду', 'na quarta'],
+            ['semana', 'на + preposicional', 'на э́той неде́ле', 'nesta semana'],
+            ['mês', 'в + preposicional', 'в ма́е', 'em maio'],
+            ['estação', 'instrumental, sem preposição', 'ле́том', 'no verão'],
+            ['ano', 'в + preposicional (году́)', 'в про́шлом году́', 'no ano passado'],
+            ['século', 'в + preposicional', 'в девятна́дцатом ве́ке', 'no século XIX'],
+            ['data', 'genitivo, sem preposição', 'пя́того ма́я', 'no dia 5 de maio'],
+          ],
+        },
+      },
+      {
+        heading: 'Dias da semana: в + acusativo',
+        text: 'Os dias da semana se escrevem com letra minúscula. Para «em tal dia», use в + acusativo; antes de вто́рник, a preposição vira во. Para um hábito («às segundas»), use по + dativo plural: по понеде́льникам, по суббо́там.',
+        table: {
+          head: ['Dia', 'Quando?', 'Português'],
+          rows: [
+            ['понеде́льник', 'в понеде́льник', 'na segunda-feira'],
+            ['вто́рник', 'во вто́рник', 'na terça-feira'],
+            ['среда́', 'в сре́ду', 'na quarta-feira'],
+            ['четве́рг', 'в четве́рг', 'na quinta-feira'],
+            ['пя́тница', 'в пя́тницу', 'na sexta-feira'],
+            ['суббо́та', 'в суббо́ту', 'no sábado'],
+            ['воскресе́нье', 'в воскресе́нье', 'no domingo'],
+          ],
+        },
+        examples: [
+          ['Како́й сего́дня день?', 'Que dia (da semana) é hoje?'],
+          ['Сего́дня пя́тница.', 'Hoje é sexta-feira.'],
+          ['Уви́димся в понеде́льник!', 'A gente se vê na segunda!'],
+          ['По суббо́там я хожу́ в бассе́йн.', 'Aos sábados eu vou à piscina.'],
+        ],
+      },
+      {
+        heading: 'Partes do dia, estações, semanas, meses e anos',
+        text: 'Partes do dia e estações vão para o instrumental, sem preposição: у́тром, днём, ве́чером, но́чью; зимо́й, весно́й, ле́том, о́сенью. «Semana» pede на: на э́той неде́ле, на про́шлой неде́ле, на сле́дующей неде́ле. Meses e anos usam в + preposicional; os meses também são com minúscula. A palavra год tem um preposicional especial com tônica no fim: в году́.',
+        table: {
+          head: ['Mês', 'Em…', 'Mês', 'Em…'],
+          rows: [
+            ['янва́рь', 'в январе́', 'ию́ль', 'в ию́ле'],
+            ['февра́ль', 'в феврале́', 'а́вгуст', 'в а́вгусте'],
+            ['март', 'в ма́рте', 'сентя́брь', 'в сентябре́'],
+            ['апре́ль', 'в апре́ле', 'октя́брь', 'в октябре́'],
+            ['май', 'в ма́е', 'ноя́брь', 'в ноябре́'],
+            ['ию́нь', 'в ию́не', 'дека́брь', 'в декабре́'],
+          ],
+        },
+        examples: [
+          ['Ле́том мы е́дем на мо́ре.', 'No verão vamos para a praia.'],
+          ['Я позвоню́ тебе́ ве́чером.', 'Eu te ligo à noite.'],
+          ['На про́шлой неде́ле я был бо́лен.', 'Na semana passada eu estava doente.'],
+          ['В Москве́ в январе́ о́чень хо́лодно.', 'Em Moscou faz muito frio em janeiro.'],
+          ['Я роди́лся в две ты́сячи пя́том году́.', 'Eu nasci em 2005.'],
+        ],
+      },
+      {
+        heading: 'Datas: пя́того ма́я',
+        text: 'Para dizer a data, o russo usa o número ordinal no neutro (subentende-se a palavra число́, «número do dia») e o mês no genitivo: Сего́дня пя́тое ма́я. Para responder «quando?», o ordinal também vai para o genitivo, sem preposição: пя́того ма́я (no dia 5 de maio). Se houver ano, ele vem no genitivo no fim: пя́того ма́я две ты́сячи два́дцать шесто́го го́да.',
+        table: {
+          head: ['Pergunta', 'Resposta', 'Português'],
+          rows: [
+            ['Како́е сего́дня число́?', 'Сего́дня пе́рвое сентября́.', 'Que dia é hoje? Hoje é 1º de setembro.'],
+            ['Когда́?', 'Пе́рвого сентября́.', 'Quando? No dia 1º de setembro.'],
+            ['Како́е сего́дня число́?', 'Сего́дня два́дцать тре́тье ию́ня.', 'Hoje é 23 de junho.'],
+            ['Когда́?', 'Два́дцать тре́тьего ию́ня.', 'No dia 23 de junho.'],
+          ],
+        },
+        examples: [
+          ['Когда́ у тебя́ день рожде́ния? — Пя́того ма́я.', 'Quando é o seu aniversário? No dia 5 de maio.'],
+          ['Пе́рвого сентября́ в Росси́и начина́ется уче́бный год.', 'No dia 1º de setembro começa o ano letivo na Rússia.'],
+          ['Восьмо́го ма́рта мы да́рим цветы́.', 'No dia 8 de março damos flores.'],
+          [
+            'Двена́дцатого апре́ля ты́сяча девятьсо́т шестьдеся́т пе́рвого го́да Ю́рий Гага́рин полете́л в ко́смос.',
+            'Em 12 de abril de 1961, Iuri Gagárin voou para o espaço.',
+          ],
+        ],
+      },
+      {
+        heading: 'Daqui a, há, por e em quanto tempo',
+        text: 'че́рез + acusativo é «daqui a» (futuro): че́рез неде́лю. наза́д vem DEPOIS da expressão e indica o passado: неде́лю наза́д (há uma semana). Sem preposição, o acusativo indica quanto durou: Я жил там два го́да. на + acusativo é o período planejado (por quanto tempo vou): на неде́лю. за + acusativo é o tempo gasto para concluir algo: за два дня.',
+        examples: [
+          ['Я верну́сь че́рез неде́лю.', 'Eu volto daqui a uma semana.'],
+          ['Он звони́л час наза́д.', 'Ele ligou há uma hora.'],
+          ['Два го́да наза́д я был в Алматы́.', 'Há dois anos eu estive em Almaty.'],
+          ['Я жил в Ми́нске це́лый год.', 'Eu morei em Minsk um ano inteiro.'],
+          ['Мы е́дем в Со́чи на неде́лю.', 'Vamos para Sochi por uma semana.'],
+          ['Я прочита́л кни́гу за два дня.', 'Eu li o livro em dois dias.'],
+        ],
+      },
+      {
+        heading: 'De… até…: с… до…',
+        text: 'Para um intervalo, use с + genitivo (desde) e до + genitivo (até). Os números também se declinam: с девяти́ до шести́. Com datas e dias, é comum с… по… com o segundo termo no acusativo, que inclui o último dia: с пе́рвого по деся́тое ма́я (de 1º a 10 de maio, inclusive). Sozinho, до também é «antes de»: до обе́да (antes do almoço), e по́сле + genitivo é «depois de».',
+        examples: [
+          ['Магази́н рабо́тает с девяти́ утра́ до девяти́ ве́чера.', 'A loja funciona das 9h às 21h.'],
+          ['Я рабо́таю с понеде́льника по пя́тницу.', 'Trabalho de segunda a sexta.'],
+          ['Музе́й закры́т с января́ до ма́рта.', 'O museu fica fechado de janeiro a março.'],
+          ['Мы отдыха́ли с пе́рвого по деся́тое ма́я.', 'Descansamos de 1º a 10 de maio.'],
+          ['Встре́тимся по́сле обе́да.', 'Vamos nos encontrar depois do almoço.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar o preposicional com dias da semana: «в понеде́льнике». Dia da semana pede acusativo: в понеде́льник, в сре́ду.',
+      'Traduzir «no verão» com preposição: «в ле́те». Estações e partes do dia vão para o instrumental, sem preposição: ле́том, ве́чером.',
+      'Dizer a data com preposição ou com número cardinal: «в пя́тое ма́я», «пять ма́я». O certo é пя́того ма́я.',
+      'Deixar o mês no nominativo dentro da data: «пя́того май». O mês vai para o genitivo: пя́того ма́я.',
+      'Usar в com semana: «в э́той неде́ле». O certo é на э́той неде́ле.',
+      'Colocar наза́д antes: «наза́д неде́лю». Ele vem depois: неде́лю наза́д. E para o futuro é че́рез: че́рез неде́лю.',
+      'Dizer «в про́шлом го́де». O preposicional de год, depois de в, é году́: в про́шлом году́.',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz «na quarta-feira»?',
+        options: ['в сре́де', 'в сре́ду', 'сре́дой'],
+        answer: 'в сре́ду',
+        explanation: 'Dia da semana pede в + acusativo: среда́ → в сре́ду.',
+      },
+      {
+        question: 'Como se diz «em maio»?',
+        options: ['в ма́е', 'в май', 'ма́ем'],
+        answer: 'в ма́е',
+        explanation: 'Mês pede в + preposicional: в ма́е, в январе́.',
+      },
+      {
+        question: 'Como se diz «Meu aniversário é no dia 5 de maio»?',
+        options: ['У меня́ день рожде́ния пя́того ма́я.', 'У меня́ день рожде́ния в пя́тое ма́я.', 'У меня́ день рожде́ния пять май.'],
+        answer: 'У меня́ день рожде́ния пя́того ма́я.',
+        explanation: '«Quando» numa data: ordinal no genitivo e mês no genitivo, sem preposição.',
+      },
+      {
+        question: 'Como se diz «daqui a uma semana»?',
+        options: ['че́рез неде́лю', 'неде́лю наза́д', 'на э́той неде́ле'],
+        answer: 'че́рез неде́лю',
+        explanation: 'че́рез + acusativo aponta para o futuro. неде́лю наза́д é «há uma semana».',
+      },
+      {
+        question: 'Como se diz «A loja funciona das 9h às 18h»?',
+        options: ['Магази́н рабо́тает с девяти́ до восемна́дцати.', 'Магази́н рабо́тает от де́вять до восемна́дцать.', 'Магази́н рабо́тает в де́вять до восемна́дцать.'],
+        answer: 'Магази́н рабо́тает с девяти́ до восемна́дцати.',
+        explanation: 'с… до… pedem o genitivo, e os números também se declinam: девяти́, восемна́дцати.',
+      },
+    ],
+  },
+  // ───────────────────────────── B1.4 ─────────────────────────────
+  {
+    id: 'ru-g36',
+    level: 'B1.4',
+    title: 'свой, себя́, сам e os indefinidos e negativos',
+    emoji: '🪞',
+    summary: 'Como dizer «o seu próprio», «a si mesmo» e «ele mesmo», e a diferença entre кто́-то, кто́-нибудь, никто́ e не́кого.',
+    sections: [
+      {
+        heading: 'свой: o possessivo que aponta para o sujeito',
+        text: 'Quando o dono é o próprio sujeito da oração, o russo usa свой em vez de мой, твой, его́, её, их. Isso resolve uma ambiguidade que o português tem: em «Ele lê o livro dele», o livro é dele mesmo ou de outra pessoa? Он чита́ет свою́ кни́гу é o livro dele próprio; Он чита́ет его́ кни́гу é o livro de outro homem. Com я, ты, мы, вы, свой é opcional (Я люблю́ мою́ / свою́ рабо́ту), mas com a terceira pessoa ele é obrigatório para falar do próprio sujeito. свой se declina como мой.',
+        table: {
+          head: ['Caso', 'Masculino', 'Feminino', 'Neutro', 'Plural'],
+          rows: [
+            ['nominativo', 'свой', 'своя́', 'своё', 'свои́'],
+            ['acusativo', 'свой / своего́', 'свою́', 'своё', 'свои́ / свои́х'],
+            ['genitivo', 'своего́', 'свое́й', 'своего́', 'свои́х'],
+            ['dativo', 'своему́', 'свое́й', 'своему́', 'свои́м'],
+            ['instrumental', 'свои́м', 'свое́й', 'свои́м', 'свои́ми'],
+            ['preposicional', 'о своём', 'о свое́й', 'о своём', 'о свои́х'],
+          ],
+        },
+        examples: [
+          ['Он чита́ет свою́ кни́гу.', 'Ele lê o livro dele (o próprio livro).'],
+          ['Он чита́ет его́ кни́гу.', 'Ele lê o livro dele (de outro homem).'],
+          ['Ма́ша позвони́ла свое́й ма́ме.', 'A Macha ligou para a mãe (dela mesma).'],
+          ['Мы живём в своём до́ме.', 'Moramos na nossa própria casa.'],
+        ],
+      },
+      {
+        heading: 'себя́: «a si mesmo»',
+        text: 'себя́ é o pronome reflexivo. Ele não tem nominativo (nunca é sujeito) e é igual para todas as pessoas: я, ты, он, мы, todos usam себя́. As formas são себя́ (acusativo e genitivo), себе́ (dativo e preposicional) e собо́й (instrumental). Muitas expressões do dia a dia nascem dele: чу́вствовать себя́ (sentir-se), взять с собо́й (levar consigo), у себя́ до́ма (na própria casa).',
+        examples: [
+          ['Как ты себя́ чу́вствуешь?', 'Como você está se sentindo?'],
+          ['Она́ купи́ла себе́ пла́тье.', 'Ela comprou um vestido para si.'],
+          ['Он говори́т то́лько о себе́.', 'Ele só fala de si mesmo.'],
+          ['Возьми́ зонт с собо́й.', 'Leve o guarda-chuva com você.'],
+        ],
+      },
+      {
+        heading: 'сам: «em pessoa», «sozinho»',
+        text: 'сам reforça quem faz a ação: «eu mesmo», «ela mesma». Concorda com o substantivo ou pronome: сам, сама́, само́, са́ми. Não confunda com са́мый, que forma o superlativo (са́мый большо́й, «o maior»). Também dá para usar сам com um nome para dar ênfase: Нас встре́тил сам дире́ктор (O próprio diretor veio nos receber).',
+        table: {
+          head: ['Forma', 'Com quem', 'Exemplo'],
+          rows: [
+            ['сам', 'masculino', 'Я сам сде́лал э́то. (homem)'],
+            ['сама́', 'feminino', 'Она́ сама́ пригото́вила у́жин.'],
+            ['само́', 'neutro', 'Окно́ откры́лось само́.'],
+            ['са́ми', 'plural', 'Мы са́ми всё реши́ли.'],
+          ],
+        },
+        examples: [
+          ['Я сам всё сде́лал.', 'Eu mesmo fiz tudo.'],
+          ['Де́ти са́ми убра́ли ко́мнату.', 'As crianças arrumaram o quarto sozinhas.'],
+          ['Нас встре́тил сам дире́ктор.', 'O próprio diretor veio nos receber.'],
+        ],
+      },
+      {
+        heading: 'Indefinidos: -то, -нибудь e ко́е-',
+        text: 'Juntando partículas aos interrogativos (кто, что, где, когда́, како́й) nascem os indefinidos. Com -то, algo existe de fato, só não se sabe ou não se diz o quê: кто́-то звони́л, alguém ligou (houve uma ligação). Com -нибудь, qualquer um serve, ou nem se sabe se existe: em perguntas, pedidos, futuro e condições. Com ко́е-, quem fala sabe, mas não quer dizer: Мне ну́жно ко́е-что тебе́ сказа́ть.',
+        table: {
+          head: ['Base', '-то (existe, não sei qual)', '-нибудь (qualquer, se houver)'],
+          rows: [
+            ['кто', 'кто́-то (alguém)', 'кто́-нибудь (alguém, qualquer um)'],
+            ['что', 'что́-то (algo)', 'что́-нибудь (alguma coisa)'],
+            ['где', 'где́-то (em algum lugar)', 'где́-нибудь (em qualquer lugar)'],
+            ['когда́', 'когда́-то (certa vez, antigamente)', 'когда́-нибудь (algum dia, alguma vez)'],
+            ['како́й', 'како́й-то (um tal, um certo)', 'како́й-нибудь (algum, qualquer)'],
+          ],
+        },
+        examples: [
+          ['Кто́-то стучи́т в дверь.', 'Alguém está batendo na porta.'],
+          ['Е́сли кто́-нибудь позвони́т, скажи́, что я за́нят.', 'Se alguém ligar, diga que estou ocupado.'],
+          ['Ты когда́-нибудь был в Каза́ни?', 'Você já esteve alguma vez em Kazan?'],
+          ['Когда́-то здесь был лес.', 'Antigamente aqui havia uma floresta.'],
+        ],
+      },
+      {
+        heading: 'Negativos: ни- e не́-',
+        text: 'Com ни- (átono) formam-se никто́, ничто́ (ничего́), нигде́, никогда́, никуда́, никако́й. O verbo leva sempre не, e as negações se acumulam sem problema: Никто́ никогда́ ничего́ не говори́л. Com preposição, ela entra no meio: ни с кем, ни о чём. Já не́- (tônico) forma не́кого, не́чего, не́где, не́когда, не́куда, que significam «não há quem / o quê / onde / quando» e vêm com infinitivo e dativo: Мне не́куда идти́ (Não tenho para onde ir).',
+        table: {
+          head: ['ни- + не + verbo', 'не́- + infinitivo', 'Tradução do par'],
+          rows: [
+            ['Никто́ не пришёл.', 'Не́кого спроси́ть.', 'Ninguém veio. / Não há a quem perguntar.'],
+            ['Я ничего́ не зна́ю.', 'Мне не́чего сказа́ть.', 'Não sei nada. / Não tenho o que dizer.'],
+            ['Он нигде́ не рабо́тает.', 'Здесь не́где сесть.', 'Ele não trabalha em lugar nenhum. / Aqui não há onde sentar.'],
+            ['Она́ никогда́ не опа́здывает.', 'Мне не́когда отдыха́ть.', 'Ela nunca se atrasa. / Não tenho tempo para descansar.'],
+          ],
+        },
+        examples: [
+          ['Никто́ ничего́ не заме́тил.', 'Ninguém percebeu nada.'],
+          ['Я ни с кем не говори́л.', 'Não falei com ninguém.'],
+          ['Нам не́куда спеши́ть.', 'Não temos para onde correr (não há pressa).'],
+          ['Ему́ не́кому позвони́ть.', 'Ele não tem para quem ligar.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar его́ em vez de свой para o próprio sujeito: «Он лю́бит его́ жену́» quer dizer que ele ama a esposa de outro homem! O certo é Он лю́бит свою́ жену́.',
+      'Colocar свой no sujeito: «Свой брат живёт в Ми́нске» está errado. свой aponta para o sujeito, não pode ser parte dele: Его́ брат живёт в Ми́нске.',
+      'Esquecer o не com никто́, ничего́, никогда́: «Я ничего́ зна́ю» está errado. O russo exige a dupla negação: Я ничего́ не зна́ю.',
+      'Usar кто́-то numa pergunta de «qualquer um»: «Кто́-то хо́чет ча́ю?» soa como se você soubesse que alguém quer. Para oferecer a todos: Кто́-нибудь хо́чет ча́ю?',
+      'Confundir сам (em pessoa) com са́мый (o mais): Я сам сде́лал é «eu mesmo fiz»; са́мый вку́сный é «o mais gostoso».',
+      'Confundir не́кого com никто́: не́кого tem a tônica no не́ e vem com infinitivo sem outro не (Не́кого спроси́ть); никто́ tem a tônica no fim e pede не no verbo (Никто́ не зна́ет).',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz «O Oleg ligou para a irmã dele (a própria irmã)»?',
+        options: ['Оле́г позвони́л его́ сестре́.', 'Оле́г позвони́л свое́й сестре́.', 'Оле́г позвони́л себе́ сестре́.'],
+        answer: 'Оле́г позвони́л свое́й сестре́.',
+        explanation: 'O dono é o próprio sujeito (Оле́г), então se usa свой, no dativo feminino: свое́й сестре́. Com его́, seria a irmã de outro homem.',
+      },
+      {
+        question: 'Complete: «Возьми́ докуме́нты с ___.»',
+        options: ['себя́', 'собо́й', 'себе́'],
+        answer: 'собо́й',
+        explanation: 'с pede instrumental, e o instrumental de себя́ é собо́й: взять с собо́й, «levar consigo».',
+      },
+      {
+        question: 'Você quer perguntar a um grupo «Alguém viu minhas chaves?» (qualquer pessoa). Qual forma?',
+        options: ['Кто́-то ви́дел мои́ ключи́?', 'Кто́-нибудь ви́дел мои́ ключи́?', 'Никто́ ви́дел мои́ ключи́?'],
+        answer: 'Кто́-нибудь ви́дел мои́ ключи́?',
+        explanation: 'Na pergunta você não sabe se alguém viu: é o terreno de -нибудь. кто́-то pressupõe que alguém de fato viu.',
+      },
+      {
+        question: 'Qual frase está correta?',
+        options: ['Я никогда́ пил квас.', 'Я никогда́ не пил квас.', 'Я не никогда́ пил квас.'],
+        answer: 'Я никогда́ не пил квас.',
+        explanation: 'никогда́ pede не antes do verbo: é a dupla negação obrigatória do russo.',
+      },
+      {
+        question: 'O que significa «Мне не́чего де́лать»?',
+        options: ['Não tenho nada para fazer.', 'Não faço nada de errado.', 'Nunca faço nada.'],
+        answer: 'Não tenho nada para fazer.',
+        explanation: 'не́чего + infinitivo, com a pessoa no dativo (мне), quer dizer «não há o que (fazer)».',
+      },
+    ],
+  },
+
+  // ───────────────────────────── B2.1 ─────────────────────────────
+  {
+    id: 'ru-g37',
+    level: 'B2.1',
+    title: 'Prefixos verbais: aspecto e sentido',
+    emoji: '🧩',
+    summary:
+      'Além dos verbos de movimento, os prefixos пере-, до-, за-, по-, про-, с- e вы- transformam verbos comuns: tornam o verbo perfectivo e, muitas vezes, mudam o sentido.',
+    sections: [
+      {
+        heading: 'Duas coisas ao mesmo tempo',
+        text: 'Um prefixo colado a um verbo imperfectivo faz duas coisas: (1) torna o verbo perfectivo e (2) pode acrescentar um sentido novo. Às vezes o sentido quase não muda, e o prefixo serve só para formar o par de aspecto: де́лать → сде́лать, писа́ть → написа́ть, чита́ть → прочита́ть, пить → вы́пить. Mas muitas vezes o sentido muda: писа́ть (escrever) → переписа́ть (reescrever), дописа́ть (terminar de escrever), записа́ть (anotar). Cada um desses novos verbos é perfectivo.',
+        table: {
+          head: ['Imperfectivo', 'Perfectivo «puro»', 'Tradução'],
+          rows: [
+            ['де́лать', 'сде́лать', 'fazer'],
+            ['писа́ть', 'написа́ть', 'escrever'],
+            ['чита́ть', 'прочита́ть', 'ler'],
+            ['пить', 'вы́пить', 'beber'],
+            ['есть', 'съесть', 'comer'],
+            ['звони́ть', 'позвони́ть', 'telefonar'],
+          ],
+        },
+      },
+      {
+        heading: 'O que cada prefixo acrescenta',
+        table: {
+          head: ['Prefixo', 'Ideia', 'Exemplo', 'Tradução'],
+          rows: [
+            ['пере-', 'de novo; demais; de um lado ao outro', 'перечита́ть, переде́лать, пересоли́ть', 'reler, refazer, salgar demais'],
+            ['до-', 'até o fim', 'дочита́ть, доде́лать, досмотре́ть', 'terminar de ler, de fazer, de assistir'],
+            ['за-', 'começar (sobretudo sons e emoções); registrar', 'запла́кать, засмея́ться, записа́ть', 'começar a chorar, a rir; anotar'],
+            ['по-', 'um pouco, por um tempo', 'погуля́ть, почита́ть, поспа́ть', 'passear um pouco, ler um pouco, tirar um cochilo'],
+            ['про-', 'por um período inteiro; passar do ponto', 'простоя́ть (час), проспа́ть', 'ficar de pé (uma hora), perder a hora dormindo'],
+            ['с-', 'resultado simples; juntar', 'сде́лать, спеть, скле́ить', 'fazer, cantar, colar (juntar)'],
+            ['вы́-', 'por completo; para fora', 'вы́учить, вы́пить, вы́играть', 'aprender de vez, beber tudo, vencer'],
+          ],
+        },
+        examples: [
+          ['Я дочита́л рома́н вчера́ но́чью.', 'Terminei de ler o romance ontem à noite.'],
+          ['Учи́тель попроси́л переписа́ть сочине́ние.', 'O professor pediu para reescrever a redação.'],
+          ['Ребёнок вдруг запла́кал.', 'A criança de repente começou a chorar.'],
+          ['Дава́й немно́го погуля́ем в па́рке.', 'Vamos passear um pouco no parque.'],
+          ['Он проспа́л и опозда́л на рабо́ту.', 'Ele perdeu a hora e chegou atrasado ao trabalho.'],
+          ['Мы вы́играли матч!', 'Ganhamos a partida!'],
+        ],
+      },
+      {
+        heading: 'O novo imperfectivo: -ыва- / -ива-',
+        text: 'Se o prefixo mudou o sentido, o verbo novo precisa do seu próprio imperfectivo, para ações repetidas ou em andamento. Ele se forma com o sufixo -ыва- / -ива- (às vezes -ва-), e a tônica costuma cair antes do sufixo: переписа́ть → перепи́сывать, дочита́ть → дочи́тывать, записа́ть → запи́сывать, вы́учить → выу́чивать, вы́играть → выи́грывать.',
+        table: {
+          head: ['Perfectivo', 'Novo imperfectivo', 'Tradução'],
+          rows: [
+            ['перечита́ть', 'перечи́тывать', 'reler'],
+            ['переде́лать', 'переде́лывать', 'refazer'],
+            ['дочита́ть', 'дочи́тывать', 'terminar de ler'],
+            ['записа́ть', 'запи́сывать', 'anotar'],
+            ['вы́играть', 'выи́грывать', 'vencer'],
+          ],
+        },
+        examples: [
+          ['Я ча́сто перечи́тываю э́ту кни́гу.', 'Releio este livro com frequência.'],
+          ['Она́ всегда́ запи́сывает но́вые слова́.', 'Ela sempre anota as palavras novas.'],
+          ['На́ша кома́нда ре́дко выи́грывает.', 'Nosso time raramente ganha.'],
+        ],
+      },
+      {
+        heading: 'вы́-: a tônica que não sai do lugar',
+        text: 'Nos verbos perfectivos com вы́-, a tônica cai sempre no prefixo, em todas as formas: вы́учить, вы́учу, вы́учил, вы́учила. No imperfectivo correspondente ela sai do prefixo: выу́чивать, выи́грывать. É um bom jeito de reconhecer o aspecto só de ouvir.',
+        examples: [
+          ['Я вы́учу э́ти слова́ к за́втрашнему дню.', 'Vou aprender estas palavras até amanhã.'],
+          ['Кто вы́пил моё молоко́?', 'Quem bebeu meu leite (todo)?'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Achar que todo prefixo só «perfectiva». почита́ть não é «ler até o fim» (isso é прочита́ть ou дочита́ть): é «ler um pouco».',
+      'Usar o perfectivo com prefixo para hábitos: «Я ка́ждый день перечита́ю» está errado. Para repetição, use o novo imperfectivo: Я ка́ждый день перечи́тываю.',
+      'Entender за- como «atrás» ou «para dentro» em запла́кать e засмея́ться: com sons e emoções, за- marca o começo da ação.',
+      'Pôr a tônica fora do вы́- no perfectivo: é вы́учил, вы́играла, nunca «выучи́л».',
+      'Confundir проспа́ть com поспа́ть: поспа́ть é tirar um cochilo; проспа́ть é dormir demais e perder a hora.',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz «Terminei de ler o livro»?',
+        options: ['Я почита́л кни́гу.', 'Я дочита́л кни́гу.', 'Я перечита́л кни́гу.'],
+        answer: 'Я дочита́л кни́гу.',
+        explanation: 'до- indica chegar até o fim. почита́л é «li um pouco»; перечита́л é «reli».',
+      },
+      {
+        question: 'O que significa «Он пересоли́л суп»?',
+        options: ['Ele salgou a sopa de novo.', 'Ele salgou demais a sopa.', 'Ele esqueceu de salgar a sopa.'],
+        answer: 'Ele salgou demais a sopa.',
+        explanation: 'пере- também indica excesso: пересоли́ть é «pôr sal demais».',
+      },
+      {
+        question: 'Complete com o verbo para um hábito: «Ка́ждое у́тро я ___ пла́ны на день.»',
+        options: ['записа́л', 'запишу́', 'запи́сываю'],
+        answer: 'запи́сываю',
+        explanation: 'Ação repetida pede imperfectivo. O imperfectivo de записа́ть é запи́сывать, com o sufixo -ыва-.',
+      },
+      {
+        question: 'Qual verbo quer dizer «começar a rir»?',
+        options: ['засмея́ться', 'посмея́ться', 'вы́смеять'],
+        answer: 'засмея́ться',
+        explanation: 'за- com verbos de som e emoção marca o início: засмея́ться, запла́кать, запе́ть.',
+      },
+      {
+        question: 'Onde cai a tônica no passado perfectivo de «aprender» (ele)?',
+        options: ['вы́учил', 'выу́чил', 'выучи́л'],
+        answer: 'вы́учил',
+        explanation: 'Nos perfectivos com вы́-, a tônica fica sempre no prefixo.',
+      },
+    ],
+  },
+
+  // ───────────────────────────── B2.3 ─────────────────────────────
+  {
+    id: 'ru-g38',
+    level: 'B2.3',
+    title: 'Formação de palavras: sufixos, diminutivos e aumentativos',
+    emoji: '🏗️',
+    summary:
+      'Com alguns sufixos você adivinha o sentido de centenas de palavras novas: -ость, -ние, -тель, -щик, -ка, -ец, e os sufixos que encolhem ou aumentam.',
+    sections: [
+      {
+        heading: 'Substantivos abstratos: -ость e -ние',
+        text: 'O sufixo -ость transforma adjetivos em qualidades, como o nosso «-dade» ou «-eza»: сме́лый (corajoso) → сме́лость (coragem). Todos são femininos. O sufixo -ние (-ение, -ание) transforma verbos em ações ou resultados, como «-ção» ou «-mento»: реши́ть (decidir) → реше́ние (decisão). Todos são neutros.',
+        table: {
+          head: ['Base', 'Palavra nova', 'Gênero', 'Tradução'],
+          rows: [
+            ['но́вый (novo)', 'но́вость', 'feminino', 'notícia, novidade'],
+            ['сме́лый (corajoso)', 'сме́лость', 'feminino', 'coragem'],
+            ['ско́рый (rápido)', 'ско́рость', 'feminino', 'velocidade'],
+            ['чита́ть (ler)', 'чте́ние', 'neutro', 'leitura'],
+            ['реши́ть (decidir)', 'реше́ние', 'neutro', 'decisão'],
+            ['пригласи́ть (convidar)', 'приглаше́ние', 'neutro', 'convite'],
+          ],
+        },
+        examples: [
+          ['Э́то хоро́шая но́вость!', 'Essa é uma boa notícia!'],
+          ['Чте́ние — моё люби́мое заня́тие.', 'A leitura é minha atividade favorita.'],
+          ['Спаси́бо за приглаше́ние.', 'Obrigado pelo convite.'],
+        ],
+      },
+      {
+        heading: 'Quem faz: -тель, -чик / -щик, -ец',
+        text: '-тель vem de verbos e indica quem faz a ação (ou o aparelho que faz): учи́ть → учи́тель, писа́ть → писа́тель, води́ть → води́тель. -чик / -щик também indica profissão: -чик depois de д, т, з, с, ж (перево́дчик, лётчик, зака́зчик); -щик depois das outras consoantes (ка́менщик, го́нщик). -ец forma pessoas a partir de verbos, adjetivos e nomes de países: певе́ц (cantor), мудре́ц (sábio), кита́ец (chinês). O е de -ец costuma cair na declinação: певе́ц → певца́, продаве́ц → продавца́.',
+        table: {
+          head: ['Sufixo', 'Base', 'Palavra', 'Tradução'],
+          rows: [
+            ['-тель', 'писа́ть', 'писа́тель', 'escritor'],
+            ['-тель', 'води́ть', 'води́тель', 'motorista'],
+            ['-тель', 'стро́ить', 'строи́тель', 'construtor, operário de obra'],
+            ['-чик', 'переводи́ть', 'перево́дчик', 'tradutor'],
+            ['-щик', 'ка́мень', 'ка́менщик', 'pedreiro (de alvenaria)'],
+            ['-ец', 'петь', 'певе́ц', 'cantor'],
+            ['-ец', 'продава́ть', 'продаве́ц', 'vendedor'],
+            ['-ец', 'Кита́й', 'кита́ец', 'chinês'],
+          ],
+        },
+        examples: [
+          ['Мой брат рабо́тает перево́дчиком.', 'Meu irmão trabalha como tradutor.'],
+          ['Води́тель авто́буса был о́чень ве́жлив.', 'O motorista do ônibus foi muito educado.'],
+          ['Я спроси́л продавца́, ско́лько сто́ит сыр.', 'Perguntei ao vendedor quanto custa o queijo.'],
+        ],
+      },
+      {
+        heading: 'O sufixo -ка, um coringa',
+        text: '-ка tem três usos principais. (1) Forma o feminino de pessoas: студе́нт → студе́нтка, спортсме́н → спортсме́нка, брази́лец → бразилья́нка. (2) Encurta expressões com adjetivo, bem coloquial: электри́ческий по́езд → электри́чка (trem suburbano), газиро́ванная вода́ → газиро́вка (refrigerante, água com gás). (3) Forma diminutivos: рука́ → ру́чка, нога́ → но́жка.',
+        examples: [
+          ['Моя́ сестра́ — студе́нтка.', 'Minha irmã é estudante.'],
+          ['Мы пое́дем на да́чу на электри́чке.', 'Vamos para a casa de campo de trem suburbano.'],
+          ['Да́йте, пожа́луйста, ру́чку.', 'Me dê uma caneta, por favor.'],
+        ],
+      },
+      {
+        heading: 'Diminutivos e aumentativos',
+        text: 'Os diminutivos russos são riquíssimos e, como no português, exprimem carinho tanto quanto tamanho. Os mais comuns: -ик e -ок para masculinos (до́мик, сыно́к), -ка, -очка / -ечка para femininos (ру́чка, мину́точка, ко́шечка), -ышко / -ко para neutros (со́лнышко, око́шко). Os aumentativos -ище / -ища e -ина dão ideia de tamanho enorme, grosseria ou afeto brincalhão: дружи́ще é «meu velho amigo».',
+        table: {
+          head: ['Palavra', 'Diminutivo', 'Aumentativo', 'Tradução'],
+          rows: [
+            ['дом', 'до́мик', 'доми́ще', 'casa, casinha, casarão'],
+            ['рука́', 'ру́чка', 'ручи́ща', 'mão, mãozinha, manzorra'],
+            ['друг', 'дружо́к', 'дружи́ще', 'amigo, amiguinho, amigão'],
+            ['со́лнце', 'со́лнышко', '—', 'sol, solzinho'],
+            ['мину́та', 'мину́точка', '—', 'minuto, minutinho'],
+            ['хо́лод', '—', 'холоди́на', 'frio, um frio de rachar'],
+          ],
+        },
+        examples: [
+          ['Посмотри́, како́й ми́лый до́мик!', 'Olha que casinha fofa!'],
+          ['Подожди́те мину́точку.', 'Espere um minutinho.'],
+          ['Приве́т, дружи́ще!', 'E aí, amigão!'],
+          ['Ну и холоди́на сего́дня!', 'Que frio de rachar hoje!'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Errar o gênero dos -ость: todos são femininos. É моя́ ра́дость, хоро́шая но́вость, nunca «мой ра́дость».',
+      'Achar que -тель muda para mulheres: учи́тель, писа́тель, води́тель são masculinos, mas servem para mulheres: Она́ хоро́ший писа́тель. Existem também учи́тельница e писа́тельница, mas a forma masculina vale para qualquer pessoa, e o adjetivo concorda com ela (хоро́ший).',
+      'Ler todo -ка como «pequeno»: ру́чка também é «caneta», де́вочка é simplesmente «menina» e ба́бушка é «avó», sem sentido de tamanho.',
+      'Esquecer o е que cai: певе́ц → певца́, продаве́ц → продавца́, кита́ец → кита́йца (o е some e aparece o й).',
+      'Usar diminutivos em texto formal: мину́точка e со́лнышко são afetivos; num e-mail de trabalho, escreva мину́та.',
+    ],
+    quiz: [
+      {
+        question: 'Qual é o gênero de сме́лость (coragem)?',
+        options: ['masculino', 'feminino', 'neutro'],
+        answer: 'feminino',
+        explanation: 'Todos os substantivos em -ость são femininos: больша́я сме́лость.',
+      },
+      {
+        question: 'Qual palavra quer dizer «leitor», formada de чита́ть com -тель?',
+        options: ['чте́ние', 'чита́тель', 'чита́лка'],
+        answer: 'чита́тель',
+        explanation: '-тель indica quem faz a ação: чита́ть → чита́тель. чте́ние é a leitura em si.',
+      },
+      {
+        question: 'Complete: «Я спроси́л ___, где хлеб.» (o vendedor)',
+        options: ['продаве́ца', 'продавца́', 'продаве́ц'],
+        answer: 'продавца́',
+        explanation: 'Acusativo de pessoa masculina = genitivo, e o е de -ец cai: продаве́ц → продавца́.',
+      },
+      {
+        question: 'O que é uma электри́чка?',
+        options: ['uma eletricista', 'um trem suburbano', 'uma lâmpada pequena'],
+        answer: 'um trem suburbano',
+        explanation: '-ка encurta expressões com adjetivo: электри́ческий по́езд → электри́чка.',
+      },
+      {
+        question: 'Qual é o sentido de дружи́ще?',
+        options: ['amiguinho', 'amigão, meu velho amigo', 'inimigo'],
+        answer: 'amigão, meu velho amigo',
+        explanation: '-ище é aumentativo; com pessoas próximas soa afetuoso e brincalhão.',
+      },
+    ],
+  },
+
+  // ───────────────────────────── C1.1 ─────────────────────────────
+  {
+    id: 'ru-g39',
+    level: 'C1.1',
+    title: 'Pontuação: vírgulas e o travessão',
+    emoji: '✒️',
+    summary:
+      'A vírgula russa segue a gramática, não a respiração: separa toda oração subordinada e os blocos de particípio e gerúndio. E o travessão (тире́) ocupa o lugar do verbo «ser».',
+    sections: [
+      {
+        heading: 'Vírgula antes de toda subordinada',
+        text: 'Em russo, a oração subordinada é sempre separada por vírgula (salvo raras expressões fixas): antes de что, что́бы, где, когда́, е́сли, потому́ что, хотя́, ли, кото́рый. Em português escrevemos «Eu sei que ele vem» sem vírgula; em russo é obrigatório: Я зна́ю, что он придёт. Se a subordinada fica no meio da frase, ela vai entre duas vírgulas.',
+        examples: [
+          ['Я зна́ю, что он придёт.', 'Eu sei que ele vem.'],
+          ['Скажи́, когда́ бу́дешь гото́в.', 'Diga quando você estiver pronto.'],
+          ['Я не зна́ю, до́ма ли она́.', 'Não sei se ela está em casa.'],
+          ['Когда́ я верну́лся, все уже́ спа́ли.', 'Quando voltei, todos já estavam dormindo.'],
+        ],
+      },
+      {
+        heading: 'кото́рый: sempre entre vírgulas',
+        text: 'No português, a oração relativa restritiva vai sem vírgula («o livro que estou lendo»). Em russo, toda oração com кото́рый vai entre vírgulas, seja ela restritiva ou explicativa.',
+        examples: [
+          ['Кни́га, кото́рую я чита́ю, о́чень интере́сная.', 'O livro que estou lendo é muito interessante.'],
+          ['Я познако́мился с челове́ком, кото́рый жил в Брази́лии.', 'Conheci uma pessoa que morou no Brasil.'],
+        ],
+      },
+      {
+        heading: 'Particípios: depende da posição',
+        text: 'Um bloco de particípio (прича́стный оборо́т) que vem DEPOIS do substantivo fica entre vírgulas. Se vem ANTES do substantivo, não leva vírgula nenhuma. É uma das regras mais testadas nas provas escolares russas.',
+        table: {
+          head: ['Posição', 'Pontuação', 'Exemplo'],
+          rows: [
+            ['depois do substantivo', 'entre vírgulas', 'Письмо́, полу́ченное вчера́, лежи́т на столе́.'],
+            ['antes do substantivo', 'sem vírgula', 'Полу́ченное вчера́ письмо́ лежи́т на столе́.'],
+            ['particípio sozinho antes', 'sem vírgula', 'Я нашёл поте́рянный ключ.'],
+          ],
+        },
+        examples: [
+          ['Студе́нты, сда́вшие экза́мен, мо́гут идти́ домо́й.', 'Os estudantes que passaram na prova podem ir para casa.'],
+          ['Сда́вшие экза́мен студе́нты мо́гут идти́ домо́й.', 'Os estudantes que passaram na prova podem ir para casa.'],
+        ],
+      },
+      {
+        heading: 'Gerúndios: sempre entre vírgulas',
+        text: 'Com o gerúndio (дееприча́стие) não importa a posição: ele e o bloco que o acompanha ficam sempre separados por vírgula, no começo, no meio ou no fim da frase. As exceções são expressões fixas que funcionam como advérbio, como сломя́ го́лову (a toda a velocidade): Он бежа́л сломя́ го́лову.',
+        examples: [
+          ['Прочита́в письмо́, она́ улыбну́лась.', 'Depois de ler a carta, ela sorriu.'],
+          ['Она́ сиде́ла у окна́, чита́я кни́гу.', 'Ela estava sentada junto à janela, lendo um livro.'],
+          ['Он, не зна́я доро́ги, шёл ме́дленно.', 'Ele, sem saber o caminho, andava devagar.'],
+        ],
+      },
+      {
+        heading: 'O travessão (тире́) no lugar do «ser»',
+        text: 'Como o russo não usa «ser» no presente, entre sujeito e predicado que são ambos substantivos no nominativo se põe um travessão: Москва́ — столи́ца Росси́и. O mesmo vale com infinitivos, números e antes de э́то. Mas NÃO se usa travessão quando o sujeito é um pronome pessoal (Я врач), quando há negação com не (Бе́дность не поро́к) ou quando o predicado é um adjetivo (Не́бо голубо́е).',
+        table: {
+          head: ['Caso', 'Com тире́', 'Sem тире́'],
+          rows: [
+            ['substantivo + substantivo', 'Мой брат — врач.', 'Он врач. (pronome)'],
+            ['antes de э́то', 'Чте́ние — э́то о́тдых.', '—'],
+            ['infinitivo', 'Гла́вное — не сдава́ться.', '—'],
+            ['números', 'Два́жды два — четы́ре.', '—'],
+            ['negação', '—', 'Бе́дность не поро́к.'],
+            ['adjetivo', '—', 'Не́бо голубо́е.'],
+          ],
+        },
+        examples: [
+          ['Москва́ — столи́ца Росси́и.', 'Moscou é a capital da Rússia.'],
+          ['Байка́л — са́мое глубо́кое о́зеро в ми́ре.', 'O Baikal é o lago mais profundo do mundo.'],
+          ['Моя́ сестра́ — худо́жница.', 'Minha irmã é artista plástica.'],
+          ['Она́ худо́жница.', 'Ela é artista plástica.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Esquecer a vírgula antes de что, como no português: «Я ду́маю что ты прав» está errado. O certo é Я ду́маю, что ты прав.',
+      'Pôr a vírgula depois do что em vez de antes: «Я зна́ю что, он здесь» está errado.',
+      'Separar com vírgula o particípio que vem antes do substantivo: «Полу́ченное вчера́, письмо́…» está errado. Antes do substantivo, sem vírgula.',
+      'Deixar o gerúndio sem vírgula: Прочита́в кни́гу, я лёг спать (a vírgula é obrigatória).',
+      'Usar travessão com pronome sujeito: «Я — студе́нт» só se vê em ênfase literária; o normal é Я студе́нт.',
+      'Deixar a relativa restritiva sem vírgulas, como no português: em russo é sempre Челове́к, кото́рый звони́л, ждёт вас.',
+    ],
+    quiz: [
+      {
+        question: 'Qual frase está pontuada corretamente?',
+        options: ['Я наде́юсь что всё бу́дет хорошо́.', 'Я наде́юсь, что всё бу́дет хорошо́.', 'Я наде́юсь что, всё бу́дет хорошо́.'],
+        answer: 'Я наде́юсь, что всё бу́дет хорошо́.',
+        explanation: 'Toda subordinada é separada por vírgula, e a vírgula vem antes de что.',
+      },
+      {
+        question: 'Qual frase está pontuada corretamente?',
+        options: [
+          'Дом, постро́енный в про́шлом ве́ке, стои́т на берегу́.',
+          'Дом постро́енный в про́шлом ве́ке стои́т на берегу́.',
+          'Постро́енный, в про́шлом ве́ке дом стои́т на берегу́.',
+        ],
+        answer: 'Дом, постро́енный в про́шлом ве́ке, стои́т на берегу́.',
+        explanation: 'O bloco de particípio depois do substantivo fica entre vírgulas; antes do substantivo, fica sem vírgula.',
+      },
+      {
+        question: 'Qual frase está pontuada corretamente?',
+        options: ['Вы́йдя из до́ма я уви́дел дру́га.', 'Вы́йдя, из до́ма я уви́дел дру́га.', 'Вы́йдя из до́ма, я уви́дел дру́га.'],
+        answer: 'Вы́йдя из до́ма, я уви́дел дру́га.',
+        explanation: 'O bloco de gerúndio (вы́йдя из до́ма) fica sempre separado por vírgula.',
+      },
+      {
+        question: 'Em qual frase o travessão é obrigatório?',
+        options: ['Он инжене́р.', 'Мой оте́ц инжене́р.', 'Мой оте́ц не инжене́р.'],
+        answer: 'Мой оте́ц инжене́р.',
+        explanation: 'Dois substantivos no nominativo pedem тире́: Мой оте́ц — инжене́р. Com pronome ou com не, não se usa.',
+      },
+      {
+        question: 'Qual frase está correta?',
+        options: ['Го́род, в кото́ром я роди́лся, о́чень ма́ленький.', 'Го́род в кото́ром я роди́лся о́чень ма́ленький.', 'Го́род в кото́ром я роди́лся, о́чень ма́ленький.'],
+        answer: 'Го́род, в кото́ром я роди́лся, о́чень ма́ленький.',
+        explanation: 'A oração com кото́рый vai sempre entre duas vírgulas, mesmo sendo restritiva.',
+      },
+    ],
+  },
+
+  // ───────────────────────────── C2 ─────────────────────────────
+  {
+    id: 'ru-g40',
+    level: 'C2',
+    title: 'Eslavonismos × russismos e a reforma de 1918',
+    emoji: '📜',
+    summary:
+      'Por que existem град e го́род, глава́ e голова́, врата́ e воро́та? A herança do eslavo eclesiástico, o registro solene que ela dá e a ortografia antes de 1918.',
+    sections: [
+      {
+        heading: 'Duas línguas numa só',
+        text: 'Durante séculos, a língua escrita da Rus foi o eslavo eclesiástico, de origem eslava do sul, enquanto o povo falava o russo antigo (eslavo oriental). As duas eram parentes próximas, mas com diferenças regulares. O russo moderno herdou palavras das duas, e muitas vezes ficou com um par: a forma popular (russismo) e a forma livresca (eslavonismo), com sentidos ou registros diferentes. O mesmo acontece no português com pares como «chave» e «clave», «cheio» e «pleno».',
+      },
+      {
+        heading: 'Pleofonia: оро / ра, оло / ла, ере / ре',
+        text: 'A diferença mais famosa é a pleofonia (полногла́сие): onde o russo tem duas vogais em volta de р ou л (-оро-, -оло-, -ере-), o eslavo eclesiástico tem uma só (-ра-, -ла-, -ре-). A forma russa costuma ser concreta e cotidiana; a eslavônica, abstrata, oficial ou poética.',
+        table: {
+          head: ['Russismo', 'Eslavonismo', 'O que cada um significa hoje'],
+          rows: [
+            ['го́род', 'град', 'cidade / cidade (poético) e em nomes: Ленингра́д, Волгогра́д'],
+            ['голова́', 'глава́', 'cabeça / chefe; capítulo'],
+            ['воро́та', 'врата́', 'portão; gol (futebol) / portas solenes (Ца́рские врата́); daí врата́рь, goleiro'],
+            ['молоко́', 'мле́ко', 'leite / leite (arcaico); daí Мле́чный Путь, a Via Láctea'],
+            ['зо́лото', 'зла́то', 'ouro / ouro (poético)'],
+            ['сторона́', 'страна́', 'lado / país'],
+            ['бе́рег', 'брег', 'margem, costa / margem (poético)'],
+          ],
+        },
+        examples: [
+          ['Не́вский проспе́кт — гла́вная у́лица го́рода.', 'A Avenida Nevski é a rua principal da cidade.'],
+          ['Он глава́ большо́й компа́нии.', 'Ele é o chefe de uma grande empresa.'],
+          ['Прочита́йте пе́рвую главу́.', 'Leiam o primeiro capítulo.'],
+          ['Врата́рь пойма́л мяч у са́мых воро́т.', 'O goleiro pegou a bola bem na frente do gol.'],
+        ],
+      },
+      {
+        heading: 'Outros pares',
+        text: 'Há outras correspondências regulares. Russo ч × eslavônico щ: горя́чий (quente) × горя́щий (que arde, particípio); могу́чий (poderoso) × могу́щий (que pode). Russo ж × eslavônico жд: неве́жа (pessoa mal-educada) × неве́жда (ignorante). Russo о- × eslavônico е- no começo: оди́н (um) × еди́ный (único, unido). Russo середи́на (meio) × eslavônico среда́ (ambiente; também quarta-feira, «o dia do meio» da semana). É por isso que os particípios em -ущий / -ящий têm cara eslavônica: vêm dessa tradição escrita.',
+        examples: [
+          ['Осторо́жно, чай горя́чий!', 'Cuidado, o chá está quente!'],
+          ['Мы уви́дели горя́щий дом.', 'Vimos uma casa em chamas.'],
+          ['Он не неве́жа, про́сто неве́жда.', 'Ele não é mal-educado, só é ignorante.'],
+        ],
+      },
+      {
+        heading: 'O registro solene',
+        text: 'Por virem da língua da Igreja e dos livros, os eslavonismos dão tom elevado, antigo ou irônico. Púchkin os usa para grandiosidade: no poema «O Cavaleiro de Bronze», ele chama São Petersburgo de град Петро́в; no prólogo de «Ruslan e Liudmila», Kachtchei definha sobre o ouro, над зла́том. Hoje, usar глас em vez de го́лос ou град em vez de го́род numa conversa soa bíblico ou brincalhão. Nos nomes de cidades a diferença também aparece: Но́вгород e Бе́лгород têm a forma russa; Калинингра́д e Волгогра́д, nomes dados no século XX, usam a forma eslavônica.',
+        examples: [
+          ['Красу́йся, град Петро́в, и стой / Неколеби́мо, как Росси́я.', 'Resplandece, cidade de Pedro, e fica / inabalável como a Rússia. (Púchkin)'],
+          ['Там царь Каще́й над зла́том ча́хнет.', 'Lá o tsar Kachtchei definha sobre o ouro. (Púchkin)'],
+          ['Глас наро́да — глас бо́жий.', 'A voz do povo é a voz de Deus. (ditado)'],
+        ],
+      },
+      {
+        heading: 'A reforma ortográfica de 1918',
+        text: 'A ortografia russa atual é resultado de uma reforma preparada por linguistas da Academia de Ciências desde o começo do século XX, anunciada em 1917 e tornada obrigatória em 1918. Ela simplificou a escrita: tirou letras que tinham o mesmo som de outras e acabou com o ъ mudo no fim das palavras. Quem lê edições antigas de Púchkin, Tolstói ou Dostoiévski encontra essas formas. Um exemplo famoso: antes da reforma, мир «paz» se escrevia миръ, e мир «mundo» se escrevia міръ. O título de Tolstói, «Война́ и миръ», é «Guerra e paz».',
+        table: {
+          head: ['Mudança', 'Antes de 1918', 'Depois'],
+          rows: [
+            ['ѣ (ять) → е', 'хлѣбъ, лѣсъ', 'хлеб, лес'],
+            ['і → и (antes de vogal)', 'Россі́я', 'Росси́я'],
+            ['ѳ (фита́) → ф', 'Ѳёдоръ', 'Фёдор'],
+            ['ъ mudo no fim some', 'домъ, столъ', 'дом, стол'],
+            ['-аго / -яго → -ого / -его', 'до́браго', 'до́брого'],
+            ['prefixos em -з / -с conforme o som (раз- / рас-, без- / бес-)', 'разска́зъ', 'расска́з'],
+          ],
+        },
+        examples: [
+          ['Война́ и мир.', 'Guerra e paz. (grafia atual)'],
+          ['Фёдор Миха́йлович Достое́вский.', 'Fiódor Mikhailovitch Dostoiévski (antes: Ѳёдоръ).'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Achar que град é só «granizo». Existem duas palavras: град (granizo), russa e comum, e град (cidade), eslavônica e poética, que sobrevive em Ленингра́д e Волгогра́д.',
+      'Usar глава́ como «cabeça» do corpo: hoje глава́ é «chefe» ou «capítulo». A cabeça é голова́.',
+      'Trocar горя́чий por горя́щий: горя́чий чай é chá quente; горя́щий дом é uma casa em chamas.',
+      'Confundir страна́ (país) com сторона́ (lado): «на друго́й страна́» não existe; é на друго́й стороне́ (do outro lado).',
+      'Escrever eslavonismos numa mensagem casual: «Я иду́ во град» soa como um sermão. No dia a dia, Я иду́ в го́род.',
+      'Pensar que ѣ, і e ѳ eram letras de outro som: na época da reforma, ѣ já soava como е, і como и, ѳ como ф. A reforma tirou letras repetidas, não sons.',
+    ],
+    quiz: [
+      {
+        question: 'Qual é a forma russa (com pleofonia) correspondente a врата́?',
+        options: ['воро́та', 'врата́рь', 'воро́тник'],
+        answer: 'воро́та',
+        explanation: 'Pleofonia: -ра- eslavônico corresponde a -оро- russo. воро́та é o portão (e o gol); врата́ é a forma solene.',
+      },
+      {
+        question: 'Qual palavra quer dizer «capítulo»?',
+        options: ['голова́', 'глава́', 'голо́вка'],
+        answer: 'глава́',
+        explanation: 'O eslavonismo глава́ tomou os sentidos abstratos: capítulo e chefe. голова́ é a cabeça.',
+      },
+      {
+        question: 'De qual palavra eslavônica vem Мле́чный Путь (Via Láctea)?',
+        options: ['мле́ко', 'мел', 'ме́лкий'],
+        answer: 'мле́ко',
+        explanation: 'мле́ко é a forma eslavônica de молоко́: literalmente, «o caminho de leite».',
+      },
+      {
+        question: 'O que a reforma de 1918 fez com o ъ no fim das palavras?',
+        options: ['Tirou-o de lá.', 'Trocou-o por ь.', 'Tornou-o pronunciado.'],
+        answer: 'Tirou-o de lá.',
+        explanation: 'домъ virou дом. O ъ ficou só como sinal separador no meio da palavra (подъе́зд).',
+      },
+      {
+        question: 'Qual cidade tem no nome a forma eslavônica град?',
+        options: ['Но́вгород', 'Волгогра́д', 'Бе́лгород'],
+        answer: 'Волгогра́д',
+        explanation: 'Волгогра́д usa град (eslavonismo); Но́вгород e Бе́лгород usam го́род (russismo).',
+      },
+    ],
+  },
 ];

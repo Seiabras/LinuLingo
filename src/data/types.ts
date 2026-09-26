@@ -246,6 +246,8 @@ export interface LanguagePack extends LanguageInfo {
   specialChars: string[];
   /** Alfabeto inteiro em fileiras (idiomas de outro alfabeto): vira um teclado completo */
   keyboardRows?: string[][];
+  /** Treino do alfabeto (idiomas de outro alfabeto) */
+  alphabet?: AlphabetData;
   /** Saudação curta e frase de teste da voz */
   greeting: string;
   sampleSentence: string;
@@ -255,6 +257,27 @@ export interface LanguagePack extends LanguageInfo {
   formalMarkers: string;
   /** Texto da aba de vocabulário sobre o parentesco com o português */
   cognateNote: string;
+}
+
+/** Uma letra de outro alfabeto, para o treino. */
+export interface AlphabetLetter {
+  /** Maiúscula e minúscula: «Б б» */
+  letter: string;
+  ipa: string;
+  /** Som curto para as opções do jogo («v», «tch») */
+  short: string;
+  /** Como soa, explicado para brasileiros */
+  sound: string;
+  /** Palavra de exemplo (com tônica) e tradução */
+  example: [string, string];
+  /** igual ao latim · parece latina mas é outra (falsa amiga) · nova */
+  group: 'igual' | 'falsa' | 'nova';
+}
+
+export interface AlphabetData {
+  letters: AlphabetLetter[];
+  /** Palavras fáceis de ler depois de aprender as letras: [palavra, emoji, tradução] */
+  readingWords: [string, string, string][];
 }
 
 /** Meta do núcleo de vocabulário por idioma (as palavras mais frequentes). */

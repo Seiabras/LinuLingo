@@ -86,5 +86,26 @@ await page.waitForTimeout(1200);
 await expectText('Мне 20 лет');
 await shot('diario-correcao');
 
+// histórias: 3 por subnível
+await page.goto(BASE + '/historias', { waitUntil: 'load' });
+for (const st of RUSSO.stories.filter((x) => x.level === 'A1.1')) await expectText(st.title);
+await shot('historias');
+
+// treino do alfabeto: conhecer uma falsa amiga e jogar uma rodada
+await page.goto(BASE + '/alfabeto', { waitUntil: 'load' });
+await page.getByText('Falsas amigas', { exact: false }).first().waitFor({ timeout: 20000 });
+await page.getByLabel('Letra В в, som v').click();
+await expectText('Parece B, mas é V');
+await shot('alfabeto-letras');
+await click('🎯 Treinar (12 perguntas)');
+for (let q = 0; q < 12; q++) {
+  await page.getByLabel(/^Opção /).first().click();
+  await page.getByText('Continuar', { exact: true }).first().click();
+  await page.waitForTimeout(250);
+  if (q === 0) await shot('alfabeto-jogo');
+}
+await expectText('acertos');
+await shot('alfabeto-fim');
+
 console.log(errors.length ? `⚠️  erros:\n   ${[...new Set(errors)].join('\n   ')}` : '✅ sem erros no console');
 await browser.close();

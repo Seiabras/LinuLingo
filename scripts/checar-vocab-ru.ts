@@ -1,5 +1,5 @@
 // Confere lotes de vocabulário russo: formato, alfabeto (sem letras latinas parecidas),
-// marca de tônica (U+0301) e duplicatas. Uso: npx tsx scripts/checar-vocab-ru.ts arquivo.ts [outro.ts…]
+// marca de tônica (U+0301) e duplicatas. Uso: [EXISTENTES=lista.txt] npx tsx scripts/checar-vocab-ru.ts arquivo.ts [outro.ts…]
 import { pathToFileURL } from 'node:url';
 import { resolve } from 'node:path';
 import { stressProblem } from '../src/services/ru-texto';
@@ -11,6 +11,11 @@ void main();
 async function main() {
   const errors: string[] = [];
   const seen = new Map<string, string>();
+  // EXISTENTES=arquivo.txt: palavras que já estão no app (uma por linha, sem tônica) também contam como repetidas
+  if (process.env.EXISTENTES) {
+    const { readFileSync } = await import('node:fs');
+    for (const w of readFileSync(process.env.EXISTENTES, 'utf8').split('\n')) if (w.trim()) seen.set(w.trim().toLowerCase(), 'o app');
+  }
   let total = 0;
   for (const f of process.argv.slice(2)) {
     const mod = await import(pathToFileURL(resolve(f)).href);

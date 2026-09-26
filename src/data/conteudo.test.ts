@@ -10,7 +10,7 @@ import { ISO_3166_2 } from './iso-3166-2';
 import { MAP_LANGUAGES } from './onde-se-fala';
 import { FORMER_COUNTRIES } from './iso-3166-3';
 
-const STORIES_PER_LEVEL: Record<string, number> = { ro: 3, ru: 1 };
+const STORIES_PER_LEVEL: Record<string, number> = { ro: 3, ru: 3 };
 
 for (const pack of Object.values(PACKS)) {
   const words = new Set(pack.vocab.map((v) => v.word_target));
@@ -92,7 +92,7 @@ for (const pack of Object.values(PACKS)) {
     for (const st of pack.stories) assert.ok((SUBLEVELS as readonly string[]).includes(st.level), `${st.id}: ${st.level}`);
     assert.equal(new Set(pack.stories.map((s) => s.id)).size, pack.stories.length, 'ids repetidos');
     assert.equal(new Set(pack.stories.map((s) => s.title)).size, pack.stories.length, 'títulos repetidos');
-    // meta: 3 por subnível (o romeno já tem; o russo chega lá no bloco D2)
+    // meta: 3 histórias por subnível
     const min = STORIES_PER_LEVEL[pack.code] ?? 1;
     for (const lv of SUBLEVELS) assert.ok(pack.stories.filter((s) => s.level === lv).length >= min, `menos de ${min} histórias em ${lv}`);
   });

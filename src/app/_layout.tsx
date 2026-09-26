@@ -37,6 +37,7 @@ export default function RootLayout() {
               <Stack.Screen name="diario" />
               <Stack.Screen name="shadowing" />
               <Stack.Screen name="palacio" />
+              <Stack.Screen name="alfabeto" />
               <Stack.Screen name="creditos" />
               <Stack.Screen name="gramatica/[id]" />
               <Stack.Screen name="mapa" />

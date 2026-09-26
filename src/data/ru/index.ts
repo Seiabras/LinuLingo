@@ -5,6 +5,7 @@ import { GRAMMAR_RU } from './gramatica';
 import { STORIES_RU } from './historias';
 import { COMMUNITY_RU, ETYMOLOGY_RU, JOURNAL_PROMPTS_RU, SCENARIOS_RU, SHADOWING_RU } from './extras';
 import { toIpaRu } from '@/services/ipa-ru';
+import { ALPHABET_RU } from './alfabeto';
 
 export const RUSSO: LanguagePack = {
   code: 'ru',
@@ -31,6 +32,7 @@ export const RUSSO: LanguagePack = {
   ipa: toIpaRu,
   specialChars: ['ё', 'й', 'ы', 'э', 'ю', 'я', 'ъ', 'ь'],
   // teclado russo padrão (ЙЦУКЕН)
+  alphabet: ALPHABET_RU,
   keyboardRows: [
     ['й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ъ'],
     ['ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э'],
