@@ -1,0 +1,70 @@
+# Poliglota 🐧
+
+App de idiomas (React Native + Expo) que junta o melhor de Duolingo, Busuu, Rosetta Stone, Air Learn, LingoDeer, Drops, Speakly, Babbel e Mondly: trilha CEFR, repetição espaçada (SM-2), cultura e história antes da prática, imersão sem tradução, conversação com registro social e correção pela comunidade. Funciona offline: tudo fica num banco SQLite no aparelho.
+
+O mascote é o **Linu**, um pinguim-de-barbicha (*Pygoscelis antarctica*).
+
+## Idiomas
+
+| Idioma | Família › ramo | Estado |
+| --- | --- | --- |
+| 🇷🇴 Romeno | Indo-europeu › Itálico › Românico › Românico oriental | **disponível** |
+| 🇪🇸 Espanhol | Indo-europeu › Itálico › Românico › Ibero-românico | em breve |
+| 🇬🇧 Inglês | Indo-europeu › Germânico › Germânico ocidental | em breve |
+| 🇫🇮 Finlandês | Urálico › Fínico › Fínico setentrional | em breve |
+| 🇪🇪 Estoniano | Urálico › Fínico › Fínico meridional | em breve |
+| 🇯🇵 Japonês | Japônico | em breve |
+| 🇰🇷 Coreano | Coreânico | em breve |
+
+O seletor do Perfil agrupa os idiomas por família e ramo linguístico.
+
+## O que tem no romeno
+
+- **Trilha CEFR** com 5 unidades (A1 → B1) e 20 lições: lição, desafio de voz e prova por unidade.
+- **Lição em 6 etapas**: card «aprenda primeiro» (história, cultura, o porquê da gramática, guia de letras) → associação imagem-som sem tradução (deslize → para «já sei») → lacunas com teclado de ă â î ș ț → desafio de voz (palavras em verde/amarelo/vermelho) → envio para a comunidade → recompensa com XP e fixação no SRS.
+- **Sprint de 5 minutos** e **revisão do dia** com gestos: → sei, ← não sei, ↑ fácil, ↓ difícil.
+- **Cofre de vocabulário**: 198 palavras por frequência (meta: 4.000), estado no SRS, domínio por categoria e **árvore etimológica** com 41 raízes (latim, eslavo, grego, dácio) e cognatos em português, espanhol, italiano e francês.
+- **Conversação guiada**: café, hotel, bar com amigos, entrevista de emprego. O Linu avisa quando o tom não combina (ex.: «tu» com o recepcionista).
+- **Comunidade**: corrigir textos de outros alunos (+20 XP) e acompanhar os próprios envios.
+- **Gamificação**: ofensiva com congelamento, meta diária, XP da semana.
+- Tema claro, escuro ou automático.
+
+## Rodar
+
+```bash
+npm install
+npx expo start          # w = navegador, ou leia o QR code com o Expo Go
+```
+
+Voz: a leitura em voz alta usa as vozes do aparelho (instale a voz «română» se não houver). O reconhecimento de fala funciona hoje no navegador (Chrome/Edge/Safari); no app nativo o aluno digita o que falou.
+
+## Testes
+
+```bash
+npm test                                   # SM-2, ofensiva, respostas, trilha e validação do conteúdo
+npx tsc --noEmit && npx expo lint
+node scripts/fluxo-licao.mjs               # faz uma lição inteira no navegador (servidor rodando)
+node scripts/fluxo-extras.mjs              # etimologia, sprint, conversa, comunidade, tema escuro
+node scripts/capturas.mjs / /vocabulario   # capturas em desktop, iPhone, Android e iPad
+```
+
+Os scripts usam o Chromium do Playwright (`~/.cache/ms-playwright`) ou `CHROME_PATH`.
+
+## Estrutura
+
+```
+src/
+├── app/          rotas (Expo Router): abas, licao/[id], sprint, revisao, comunidade, cenario/[id]
+├── screens/      telas
+├── components/   Linu, cartões, etapas da lição, UI
+├── database/     esquema SQLite, seed e consultas
+├── srs/          algoritmo SuperMemo-2
+├── services/     progresso/XP, voz, comparação de respostas, tema, trilha
+└── data/         conteúdo por idioma (ro/, es/) e registro de idiomas
+```
+
+### Adicionar um idioma
+
+1. Crie `src/data/<código>/` com `vocabulario.ts`, `curriculo.ts`, `etimologia.ts`, `conversas.ts` e `index.ts` (um `LanguagePack`).
+2. Registre em `PACKS` de `src/data/idiomas.ts`.
+3. Rode `npm test`. O teste de conteúdo verifica palavras das lições, gabaritos e etimologia.

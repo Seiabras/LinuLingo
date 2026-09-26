@@ -1,0 +1,155 @@
+import { useEffect, useMemo, useState } from 'react';
+import { Pressable, Text, View } from 'react-native';
+import { router, useLocalSearchParams } from 'expo-router';
+import { X } from 'lucide-react-native';
+import { Screen, Button, ProgressBar } from '@/components/ui';
+import { CulturalGrammarCard } from '@/components/CulturalGrammarCard';
+import { ImmersionStep, type WordResult } from '@/components/lesson/ImmersionStep';
+import { ClozeStep } from '@/components/lesson/ClozeStep';
+import { VoiceStep } from '@/components/lesson/VoiceStep';
+import { CommunityStep } from '@/components/lesson/CommunityStep';
+import { RewardStep } from '@/components/lesson/RewardStep';
+import { Linu } from '@/components/Linu';
+import { useApp } from '@/services/app-state';
+import { findLesson, resolveLesson } from '@/services/curriculum';
+import { awardXp, completeLesson, listVocab, reviewWord, submitToCommunity, vocabByWords } from '@/database/queries';
+import { lessonXp, XP } from '@/services/progress';
+import { stopSpeaking } from '@/services/speech';
+import { useIsDark } from '@/services/theme';
+import { goBack } from '@/services/nav';
+import type { VocabWithSRS } from '@/types';
+
+const STEPS = ['Aprenda primeiro', 'Imersão', 'Lacunas', 'Voz', 'Comunidade', 'Recompensa'] as const;
+
+/**
+ * Lição diária em 6 etapas: card cultural/gramatical → associação imersiva →
+ * cloze → voz → envio para a comunidade → recompensa (XP + SRS).
+ */
+export default function LessonScreen() {
+  const { id } = useLocalSearchParams<{ id: string }>();
+  const { db, pack, refresh } = useApp();
+  const dark = useIsDark();
+  const found = useMemo(() => findLesson(pack, id), [pack, id]);
+  const lesson = useMemo(() => (found ? resolveLesson(found.unit, found.lesson) : null), [found]);
+
+  const [step, setStep] = useState(0);
+  const [words, setWords] = useState<VocabWithSRS[]>([]);
+  const [pool, setPool] = useState<VocabWithSRS[]>([]);
+  const [wordResults, setWordResults] = useState<WordResult[]>([]);
+  const [clozeCorrect, setClozeCorrect] = useState(0);
+  const [voiceCorrect, setVoiceCorrect] = useState(false);
+  const [reward, setReward] = useState<{ xp: number; streak: number; usedFreeze: boolean; words: VocabWithSRS[] } | null>(null);
+
+  useEffect(() => {
+    if (!lesson) return;
+    (async () => {
+      const ws = await vocabByWords(db, pack.code, lesson.words);
+      // mantém a ordem da lição
+      setWords(lesson.words.map((w) => ws.find((v) => v.word_target === w)).filter(Boolean) as VocabWithSRS[]);
+      setPool((await listVocab(db, pack.code)).filter((v) => v.emoji));
+    })();
+    return () => stopSpeaking();
+  }, [lesson, db, pack.code]);
+
+  if (!found || !lesson) {
+    return (
+      <Screen>
+        <View className="flex-1 items-center justify-center gap-4 py-20">
+          <Linu mood="triste" size={100} />
+          <Text className="text-lg text-slate-700 dark:text-slate-200">Lição não encontrada.</Text>
+          <Button title="Voltar para a trilha" onPress={() => router.replace('/')} />
+        </View>
+      </Screen>
+    );
+  }
+
+  const finish = async (communityText: string | null) => {
+    if (communityText) await submitToCommunity(db, pack.code, lesson.id, lesson.communityPrompt, communityText);
+    for (const r of wordResults) await reviewWord(db, r.vocabId, r.quality);
+
+    const total = wordResults.length + lesson.cloze.length + 1;
+    const correct = wordResults.filter((r) => r.correct).length + clozeCorrect + (voiceCorrect ? 1 : 0);
+    const xp = lessonXp(correct, total, lesson.kind === 'prova') + (communityText ? XP.communitySubmission : 0);
+    await completeLesson(db, lesson.id, correct / total);
+    const streak = await awardXp(db, xp, `licao:${lesson.id}`);
+    const updated = await vocabByWords(db, pack.code, lesson.words);
+    setReward({ xp, streak: streak?.streak ?? 0, usedFreeze: streak?.usedFreeze ?? false, words: updated });
+    setStep(5);
+    refresh();
+  };
+
+  const total = wordResults.length + lesson.cloze.length + 1;
+  const correct = wordResults.filter((r) => r.correct).length + clozeCorrect + (voiceCorrect ? 1 : 0);
+
+  return (
+    <Screen edges={['top', 'bottom']}>
+      <View className="flex-row items-center gap-3 py-3">
+        {step < 5 && (
+          <Pressable accessibilityLabel="Sair da lição" onPress={goBack} hitSlop={10}>
+            <X size={26} color={dark ? '#94A3B8' : '#64748B'} />
+          </Pressable>
+        )}
+        <ProgressBar value={(step + (step === 5 ? 1 : 0)) / STEPS.length} className="flex-1" />
+      </View>
+      <Text className="mb-4 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">
+        {found.unit.emoji} {lesson.title} · Etapa {step + 1} de 6 · {STEPS[step]}
+      </Text>
+
+      {step === 0 && (
+        <View className="gap-4">
+          <CulturalGrammarCard card={found.unit.card} locale={pack.speechLocale} compact={lesson.kind !== 'licao' || found.unit.lessons[0].id !== lesson.id} />
+          <Button title="Entendi, vamos praticar!" variant="success" onPress={() => setStep(1)} />
+        </View>
+      )}
+
+      {step === 1 && words.length > 0 && pool.length > 0 && (
+        <ImmersionStep
+          words={words}
+          pool={pool}
+          locale={pack.speechLocale}
+          onDone={(r) => {
+            setWordResults(r);
+            setStep(2);
+          }}
+        />
+      )}
+
+      {step === 2 && (
+        <ClozeStep
+          items={lesson.cloze}
+          locale={pack.speechLocale}
+          specialChars={pack.specialChars}
+          onDone={(c) => {
+            setClozeCorrect(c);
+            setStep(3);
+          }}
+        />
+      )}
+
+      {step === 3 && (
+        <VoiceStep
+          challenge={lesson.voice}
+          locale={pack.speechLocale}
+          onDone={(ok) => {
+            setVoiceCorrect(ok);
+            setStep(4);
+          }}
+        />
+      )}
+
+      {step === 4 && <CommunityStep prompt={lesson.communityPrompt} specialChars={pack.specialChars} onDone={finish} />}
+
+      {step === 5 && reward && (
+        <RewardStep
+          xp={reward.xp}
+          correct={correct}
+          total={total}
+          streak={reward.streak}
+          usedFreeze={reward.usedFreeze}
+          words={reward.words}
+          onContinue={goBack}
+        />
+      )}
+    </Screen>
+  );
+}
