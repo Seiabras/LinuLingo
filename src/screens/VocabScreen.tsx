@@ -18,7 +18,8 @@ type Ety = Awaited<ReturnType<typeof listEtymology>>[number];
 const CATEGORY_EMOJI: Record<string, string> = {
   Essenciais: '⭐', 'Verbos-chave': '🏃', Pessoas: '🧑‍🤝‍🧑', Tempo: '⏰', Casa: '🏠', Sentimentos: '❤️',
   Natureza: '🌿', 'Viagens e Transporte': '✈️', 'Alimentação e Restaurantes': '🍽️', 'Trabalho e Negócios': '💼',
-  Descrições: '🎨', Cores: '🌈', Números: '🔢', Corpo: '🖐️',
+  Descrições: '🎨', Cores: '🌈', Números: '🔢', Corpo: '🖐️', Roupas: '👕', Saúde: '🩺', Compras: '🛒',
+  Escola: '🎒', Profissões: '👷', Animais: '🐾',
 };
 
 const LANG_FLAG: Record<string, string> = { pt: '🇧🇷', es: '🇪🇸', it: '🇮🇹', fr: '🇫🇷', ru: '🇷🇺', pl: '🇵🇱', cs: '🇨🇿', sr: '🇷🇸', bg: '🇧🇬', el: '🇬🇷', sq: '🇦🇱' };

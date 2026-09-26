@@ -32,6 +32,8 @@ export default function RootLayout() {
               <Stack.Screen name="cenario/[id]" />
               <Stack.Screen name="tutorial" options={{ presentation: 'fullScreenModal', gestureEnabled: false }} />
               <Stack.Screen name="voz" />
+              <Stack.Screen name="historias" />
+              <Stack.Screen name="historia/[id]" />
             </Stack>
           </AppStateProvider>
         </SQLiteProvider>

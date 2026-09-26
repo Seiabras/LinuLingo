@@ -212,6 +212,31 @@ export async function correctPeer(db: SQLiteDatabase, id: string, correction: st
   );
 }
 
+// ---------- Histórias ----------
+
+/** Finais já descobertos por história: { storyId: Set(endingId) } */
+export async function storyEndings(db: SQLiteDatabase): Promise<Map<string, Set<string>>> {
+  const rows = await db.getAllAsync<{ story_id: string; ending_id: string }>(
+    'SELECT story_id, ending_id FROM Story_Progress WHERE user_id = ?',
+    uid,
+  );
+  const out = new Map<string, Set<string>>();
+  for (const r of rows) {
+    if (!out.has(r.story_id)) out.set(r.story_id, new Set());
+    out.get(r.story_id)!.add(r.ending_id);
+  }
+  return out;
+}
+
+/** Registra um final; devolve true se é a primeira vez que o aluno chega nele. */
+export async function reachEnding(db: SQLiteDatabase, storyId: string, endingId: string, mistakes: number): Promise<boolean> {
+  const r = await db.runAsync(
+    `INSERT OR IGNORE INTO Story_Progress (user_id, story_id, ending_id, mistakes, reached_at) VALUES (?, ?, ?, ?, ?)`,
+    uid, storyId, endingId, mistakes, new Date().toISOString(),
+  );
+  return r.changes > 0;
+}
+
 // ---------- Preferências (Meta) ----------
 
 export async function getMeta(db: SQLiteDatabase, key: string): Promise<string | null> {
@@ -227,7 +252,7 @@ export async function setMeta(db: SQLiteDatabase, key: string, value: string) {
 
 export async function resetProgress(db: SQLiteDatabase) {
   await db.execAsync(`
-    DELETE FROM User_SRS_State; DELETE FROM Lesson_Progress; DELETE FROM XP_Log;
+    DELETE FROM User_SRS_State; DELETE FROM Lesson_Progress; DELETE FROM XP_Log; DELETE FROM Story_Progress;
     DELETE FROM Community_Feedback WHERE is_mine = 1;
     UPDATE Community_Feedback SET correction = NULL, corrected_by = NULL, status = 'aguardando';
     UPDATE Users SET streak_days = 0, total_xp = 0, last_study_date = NULL, streak_freezes = 1;

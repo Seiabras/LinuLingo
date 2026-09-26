@@ -25,7 +25,7 @@ export async function initDatabase(db: SQLiteDatabase): Promise<void> {
 
 /** Assinatura barata do conteúdo, para só regravar quando o pacote mudar. */
 function contentVersion(pack: LanguagePack): string {
-  const s = JSON.stringify([pack.vocab, pack.units, pack.etymology, pack.community]);
+  const s = JSON.stringify([pack.vocab, pack.units, pack.etymology, pack.community, pack.stories]);
   let h = 0;
   for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0;
   return `${s.length}:${h}`;
@@ -71,6 +71,13 @@ async function seedPack(db: SQLiteDatabase, pack: LanguagePack): Promise<void> {
          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
         c.id, pack.code, u.id, c.title, c.emoji, c.history, c.culture_tip, c.grammar_why,
         JSON.stringify(c.grammar_examples), c.character_guide ? JSON.stringify(c.character_guide) : null,
+      );
+    }
+
+    for (const st of pack.stories) {
+      await db.runAsync(
+        `INSERT OR REPLACE INTO Interactive_Stories (id, language, cefr_level, title, content_json, cultural_context) VALUES (?, ?, ?, ?, ?, ?)`,
+        st.id, pack.code, st.cefr, st.title, JSON.stringify(st), st.cultural_context,
       );
     }
 

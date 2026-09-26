@@ -125,6 +125,37 @@ export interface ScenarioSeed {
   turns: ScenarioTurn[];
 }
 
+/** Escolha numa história: leva a outro nó, ou (se `wrong`) mostra a dica e fica no mesmo nó. */
+export interface StoryChoice {
+  text: string;
+  translation: string;
+  next?: string;
+  /** Explicação quando a escolha mostra que o texto não foi entendido */
+  wrong?: string;
+}
+
+export interface StoryNode {
+  text: string;
+  translation: string;
+  emoji?: string;
+  choices?: StoryChoice[];
+  ending?: { tone: 'bom' | 'neutro'; title: string; message: string };
+}
+
+/** História interativa ramificada (TPR storytelling / escolha sua aventura). */
+export interface StorySeed {
+  id: string;
+  cefr: CefrLevel;
+  title: string;
+  emoji: string;
+  summary: string;
+  cultural_context: string;
+  start: string;
+  nodes: Record<string, StoryNode>;
+  /** Palavras-chave da história: [idioma alvo, tradução] */
+  glossary: [string, string][];
+}
+
 /** Classificação genealógica e geográfica, usada para agrupar o seletor de idiomas. */
 export interface LanguageLineage {
   family: string; // ex.: 'Indo-europeu', 'Urálico'
@@ -150,6 +181,7 @@ export interface LanguagePack extends LanguageInfo {
   etymology: EtymologySeed[];
   community: CommunitySeed[];
   scenarios: ScenarioSeed[];
+  stories: StorySeed[];
   /** Letras especiais para o teclado adaptado */
   specialChars: string[];
   /** Saudação curta e frase de teste da voz */

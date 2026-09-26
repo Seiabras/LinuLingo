@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
+import { router } from 'expo-router';
 import { ChevronDown, ChevronUp } from 'lucide-react-native';
 import { Screen, Card, SpeechBubble } from '@/components/ui';
 import { CulturalGrammarCard } from '@/components/CulturalGrammarCard';
@@ -38,6 +39,12 @@ export default function CultureScreen() {
         <Text className="text-sm text-slate-600 dark:text-slate-400">📍 Origem: {pack.lineage.region}</Text>
         <Text className="text-sm text-slate-600 dark:text-slate-400">✍️ Escrita: {pack.lineage.writing}</Text>
       </Card>
+
+      <Pressable onPress={() => router.push('/historias')} className="mt-3 flex-row items-center gap-3 rounded-2xl border-2 border-conecta/30 bg-white p-4 active:opacity-80 dark:bg-slate-900">
+        <Text className="text-2xl">📚</Text>
+        <Text className="flex-1 font-semibold text-slate-800 dark:text-slate-100">Histórias interativas: cultura romena vivida pelo Linu, com vários finais.</Text>
+        <Text className="text-xl text-conecta">›</Text>
+      </Pressable>
 
       <Text className="mb-2 mt-6 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">Cards das unidades</Text>
       <View className="gap-3">

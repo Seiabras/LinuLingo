@@ -18,9 +18,9 @@ export default function TabsLayout() {
       }}
     >
       <Tabs.Screen name="index" options={{ title: 'Trilha', tabBarIcon: ({ color, size }) => <Route color={color} size={size} /> }} />
-      <Tabs.Screen name="vocabulario" options={{ title: 'Vocabulário', tabBarIcon: ({ color, size }) => <BookOpenText color={color} size={size} /> }} />
+      <Tabs.Screen name="vocabulario" options={{ title: 'Vocab', tabBarIcon: ({ color, size }) => <BookOpenText color={color} size={size} /> }} />
       <Tabs.Screen name="cultura" options={{ title: 'Cultura', tabBarIcon: ({ color, size }) => <Landmark color={color} size={size} /> }} />
-      <Tabs.Screen name="conversa" options={{ title: 'Conversa IA', tabBarIcon: ({ color, size }) => <MessagesSquare color={color} size={size} /> }} />
+      <Tabs.Screen name="conversa" options={{ title: 'Conversa', tabBarIcon: ({ color, size }) => <MessagesSquare color={color} size={size} /> }} />
       <Tabs.Screen name="perfil" options={{ title: 'Perfil', tabBarIcon: ({ color, size }) => <UserRound color={color} size={size} /> }} />
     </Tabs>
   );

@@ -110,6 +110,26 @@ export const MIGRATIONS: string[] = [
     value TEXT
   );
   `,
+  // 2 — histórias interativas
+  `
+  CREATE TABLE IF NOT EXISTS Interactive_Stories (
+    id TEXT PRIMARY KEY,
+    language TEXT NOT NULL,
+    cefr_level TEXT NOT NULL,
+    title TEXT NOT NULL,
+    content_json TEXT NOT NULL,
+    cultural_context TEXT
+  );
+
+  CREATE TABLE IF NOT EXISTS Story_Progress (
+    user_id TEXT NOT NULL,
+    story_id TEXT NOT NULL,
+    ending_id TEXT NOT NULL,
+    mistakes INTEGER DEFAULT 0,
+    reached_at TEXT NOT NULL,
+    PRIMARY KEY (user_id, story_id, ending_id)
+  );
+  `,
 ];
 
 export const LOCAL_USER_ID = 'local';

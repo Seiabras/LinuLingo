@@ -2,6 +2,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { PACKS, LANGUAGES, groupByLineage } from './idiomas';
+import { endingIds, reachable } from '../services/stories';
 
 for (const pack of Object.values(PACKS)) {
   const words = new Set(pack.vocab.map((v) => v.word_target));
@@ -45,6 +46,23 @@ for (const pack of Object.values(PACKS)) {
 
   test(`${pack.code}: etimologia aponta para palavras do vocabulário`, () => {
     for (const e of pack.etymology) assert.ok(words.has(e.word), `etimologia de "${e.word}" sem palavra`);
+  });
+
+  test(`${pack.code}: histórias sem becos sem saída, com todo nó alcançável`, () => {
+    for (const st of pack.stories) {
+      assert.ok(st.nodes[st.start], `${st.id}: início inexistente`);
+      const seen = reachable(st);
+      for (const [id, n] of Object.entries(st.nodes)) {
+        assert.ok(seen.has(id), `${st.id}/${id} inalcançável`);
+        assert.ok(n.ending || n.choices?.some((c) => c.next), `${st.id}/${id} sem saída`);
+        assert.ok(!(n.ending && n.choices?.length), `${st.id}/${id} é final e tem escolhas`);
+        for (const c of n.choices ?? []) {
+          assert.ok(!!c.next !== !!c.wrong, `${st.id}/${id}: escolha precisa de next OU wrong`);
+          if (c.next) assert.ok(st.nodes[c.next], `${st.id}/${id} → ${c.next} inexistente`);
+        }
+      }
+      assert.ok(endingIds(st).some((e) => st.nodes[e].ending?.tone === 'bom'), `${st.id} sem final bom`);
+    }
   });
 
   test(`${pack.code}: cenários têm turnos com sugestões`, () => {

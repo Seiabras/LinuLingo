@@ -3,6 +3,7 @@ import { VOCAB_RO } from './vocabulario';
 import { UNITS_RO } from './curriculo';
 import { ETYMOLOGY_RO } from './etimologia';
 import { COMMUNITY_RO, SCENARIOS_RO } from './conversas';
+import { STORIES_RO } from './historias';
 
 export const ROMENO: LanguagePack = {
   code: 'ro',
@@ -22,6 +23,7 @@ export const ROMENO: LanguagePack = {
   etymology: ETYMOLOGY_RO,
   community: COMMUNITY_RO,
   scenarios: SCENARIOS_RO,
+  stories: STORIES_RO,
   specialChars: ['ă', 'â', 'î', 'ș', 'ț'],
   greeting: 'Bună ziua',
   sampleSentence: 'Bună ziua! Mă numesc Linu. Hai să învățăm română!',

@@ -25,7 +25,8 @@ O seletor do Perfil agrupa os idiomas por família e ramo linguístico.
 - **Trilha CEFR** com 5 unidades (A1 → B1) e 20 lições: lição, desafio de voz e prova por unidade.
 - **Lição em 6 etapas**: card «aprenda primeiro» (história, cultura, o porquê da gramática, guia de letras) → associação imagem-som sem tradução (deslize → para «já sei») → lacunas com teclado de ă â î ș ț → desafio de voz (palavras em verde/amarelo/vermelho) → envio para a comunidade → recompensa com XP e fixação no SRS.
 - **Sprint de 5 minutos** e **revisão do dia** com gestos: → sei, ← não sei, ↑ fácil, ↓ difícil.
-- **Cofre de vocabulário**: 198 palavras por frequência (meta: 4.000), estado no SRS, domínio por categoria e **árvore etimológica** com 41 raízes (latim, eslavo, grego, dácio) e cognatos em português, espanhol, italiano e francês.
+- **Cofre de vocabulário**: 615 palavras por frequência (meta: 4.000), estado no SRS, domínio por categoria e **árvore etimológica** com 41 raízes (latim, eslavo, grego, dácio) e cognatos em português, espanhol, italiano e francês.
+- **Histórias interativas** (A1 → B1): leia em romeno e escolha o que o Linu faz. Escolhas que mostram que o texto não foi entendido dão uma dica; cada história tem vários finais.
 - **Conversação guiada**: café, hotel, bar com amigos, entrevista de emprego. O Linu avisa quando o tom não combina (ex.: «tu» com o recepcionista).
 - **Comunidade**: corrigir textos de outros alunos (+20 XP) e acompanhar os próprios envios.
 - **Gamificação**: ofensiva com congelamento, meta diária, XP da semana.
@@ -62,7 +63,8 @@ O reconhecimento de fala funciona no Chrome, Edge e Safari; no Firefox e no app 
 npm test                                   # SM-2, ofensiva, respostas, trilha e validação do conteúdo
 npx tsc --noEmit && npx expo lint
 node scripts/fluxo-licao.mjs               # faz uma lição inteira no navegador (servidor rodando)
-node scripts/fluxo-extras.mjs              # etimologia, sprint, conversa, comunidade, tema escuro
+node scripts/fluxo-extras.mjs              # tutorial, voz, etimologia, sprint, conversa, comunidade, tema escuro
+node scripts/fluxo-historia.mjs            # histórias: desvio, dica, final e contador de finais
 node scripts/capturas.mjs / /vocabulario   # capturas em desktop, iPhone, Android e iPad
 ```
 

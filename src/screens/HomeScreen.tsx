@@ -92,6 +92,19 @@ export default function HomeScreen() {
         </View>
       </Pressable>
 
+      <Pressable
+        accessibilityRole="button"
+        onPress={() => router.push('/historias')}
+        className="mt-3 flex-row items-center gap-3 rounded-2xl bg-conecta p-4 active:opacity-90"
+      >
+        <Text className="text-3xl">📚</Text>
+        <View className="flex-1">
+          <Text className="text-base font-extrabold text-white">Histórias interativas</Text>
+          <Text className="text-sm text-blue-100">Leia em {pack.name.toLowerCase()} e decida o que o Linu faz</Text>
+        </View>
+        <Text className="text-2xl text-white">›</Text>
+      </Pressable>
+
       {noVoice && (
         <Pressable onPress={() => router.push('/voz')} className="mt-3 flex-row items-center gap-3 rounded-2xl bg-amber-50 p-4 active:opacity-80 dark:bg-amber-950">
           <Text className="text-2xl">🔇</Text>
