@@ -2,6 +2,8 @@
 
 App de idiomas (React Native + Expo) que junta o melhor de Duolingo, Busuu, Rosetta Stone, Air Learn, LingoDeer, Drops, Speakly, Babbel e Mondly: trilha CEFR, repetição espaçada (SM-2), cultura e história antes da prática, imersão sem tradução, conversação com registro social e correção pela comunidade. Funciona offline: tudo fica num banco SQLite no aparelho.
 
+**Experimente no navegador:** https://seiabras.github.io/poliglota/
+
 O mascote é o **Linu**, um pinguim-de-barbicha (*Pygoscelis antarctica*).
 
 ## Idiomas
@@ -37,6 +39,10 @@ npx expo start          # w = navegador, ou leia o QR code com o Expo Go
 ```
 
 Voz: a leitura em voz alta usa as vozes do aparelho (instale a voz «română» se não houver). O reconhecimento de fala funciona hoje no navegador (Chrome/Edge/Safari); no app nativo o aluno digita o que falou.
+
+## Publicar
+
+`npm run build:web` gera `dist/` para o GitHub Pages (base `/poliglota`, com o `coi-serviceworker` porque o Pages não envia os cabeçalhos COOP/COEP que o SQLite da web exige). O workflow `.github/workflows/pages.yml` faz isso a cada push em `master`.
 
 ## Testes
 

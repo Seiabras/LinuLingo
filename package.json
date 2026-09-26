@@ -31,6 +31,7 @@
   "devDependencies": {
     "@types/node": "^26.6.3",
     "@types/react": "~19.2.2",
+    "coi-serviceworker": "^0.1.7",
     "eslint": "^9.0.0",
     "eslint-config-expo": "~57.0.2",
     "playwright-core": "^1.63.0",
@@ -46,7 +47,8 @@
     "web": "expo start --web",
     "typecheck": "tsc --noEmit",
     "test": "tsx --test src/**/*.test.ts",
-    "lint": "expo lint"
+    "lint": "expo lint",
+    "build:web": "expo export -p web && node scripts/preparar-pages.mjs"
   },
   "private": true
 }

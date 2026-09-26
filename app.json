@@ -43,7 +43,8 @@
     ],
     "scheme": "poliglota",
     "experiments": {
-      "typedRoutes": true
+      "typedRoutes": true,
+      "baseUrl": "/poliglota"
     }
   }
 }
