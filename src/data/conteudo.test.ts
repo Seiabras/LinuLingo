@@ -197,3 +197,22 @@ test('ru: todo texto russo com tônica marcada e só cirílico', async () => {
   const problems = texts.flatMap(([id, t]) => russianTextProblems(t).map((p) => `${id}: ${p}`));
   assert.deepEqual(problems.slice(0, 10), []);
 });
+
+test('linguística: aulas gerais e áreas por idioma consistentes', async () => {
+  const { LESSONS } = await import('./linguistica-aulas');
+  const { AREAS } = await import('./linguistica');
+  assert.equal(new Set(LESSONS.map((l) => l.id)).size, LESSONS.length);
+  for (const l of LESSONS) for (const q of l.quiz) assert.ok(q.options.includes(q.answer), `${l.id}: ${q.question}`);
+  for (const pack of Object.values(PACKS)) {
+    if (!pack.linguistics) continue;
+    assert.deepEqual(
+      pack.linguistics.map((a) => a.area),
+      AREAS.map((a) => a.id),
+      `${pack.code}: áreas fora de ordem`,
+    );
+    const used = pack.linguistics.flatMap((a) => a.topics);
+    assert.equal(new Set(used).size, used.length, `${pack.code}: tópico em duas áreas`);
+    assert.deepEqual([...used].sort(), pack.grammar.map((g) => g.id).sort(), `${pack.code}: todo tópico numa área`);
+    for (const a of pack.linguistics) for (const q of a.quiz) assert.ok(q.options.includes(q.answer), `${pack.code}/${a.area}: ${q.question}`);
+  }
+});

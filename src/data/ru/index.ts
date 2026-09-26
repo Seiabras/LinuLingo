@@ -1,4 +1,5 @@
 import type { LanguagePack } from '../types';
+import { LINGUISTICS_RU } from './linguistica';
 import { VOCAB_RU } from './vocabulario';
 import { UNITS_RU } from './curriculo';
 import { GRAMMAR_RU } from './gramatica';
@@ -27,6 +28,7 @@ export const RUSSO: LanguagePack = {
   scenarios: SCENARIOS_RU,
   stories: STORIES_RU,
   grammar: GRAMMAR_RU,
+  linguistics: LINGUISTICS_RU,
   journalPrompts: JOURNAL_PROMPTS_RU,
   shadowing: SHADOWING_RU,
   ipa: toIpaRu,

@@ -21,6 +21,13 @@ O mascote é o **Linu**, um pinguim-de-barbicha (*Pygoscelis antarctica*).
 
 O seletor do Perfil agrupa os idiomas por família e ramo linguístico.
 
+## Linguística (aba Gramática › Por área da língua)
+
+- **As 7 áreas da língua** (fonética, fonologia, morfologia, sintaxe, semântica, pragmática, estilística): o que cada uma estuda, com exemplos do português e palavras-chave, e como ela funciona no idioma estudado (com exemplos em áudio e IPA, os tópicos de gramática da área e mini-quiz).
+- **Quadro interativo do IPA**: cada símbolo com como o som é feito e exemplos falados em português, espanhol, romeno, russo e inglês.
+- **Ferramentas e normas**: o IPA e a transcrição; códigos ISO 639, ISO 15924 e BCP 47; transliteração e romanização (cirílico, pinyin, Hepburn, coreano); glosas interlineares (regras de Leipzig); o Quadro Europeu (CEFR).
+- **Grandes temas**: famílias de línguas, tipologia, sistemas de escrita, mudança linguística, sociolinguística, aquisição de segunda língua e o português entre as línguas do mundo.
+
 ## O que tem no russo
 
 - **Trilha CEFR** em 15 subníveis (A1.1 → C2), 60 lições. A 1ª unidade ensina o **alfabeto cirílico** (falsos amigos visuais Р = r, В = v, Н = n, С = s), e as seguintes seguem a gramática do russo: casos, aspecto verbal, verbos de movimento, particípios, gerúndios, registro, estilo literário.
@@ -104,6 +111,7 @@ node scripts/fluxo-extras.mjs              # tutorial, voz, etimologia, sprint, 
 node scripts/fluxo-historia.mjs            # histórias: desvio, dica, final e contador de finais
 node scripts/fluxo-praticas.mjs            # diário (corretor), palácio (jogo) e shadowing (microfone falso)
 npx tsx scripts/fluxo-trilha.mjs          # faixa de subníveis e teste para pular
+node scripts/fluxo-linguistica.mjs        # áreas da língua, quadro do IPA e aulas
 npx tsx scripts/fluxo-russo.mjs           # russo: troca de idioma, cirílico, IPA, teclado, diário
 node scripts/fluxo-mapa.mjs                # mapa ISO 3166-1/3166-3, zoom nas subdivisões e variante da Moldávia
 node scripts/capturas.mjs / /vocabulario   # capturas em desktop, iPhone, Android e iPad

@@ -52,7 +52,7 @@ await click('Próximo');
   await page.waitForTimeout(700);
 }
 await shot('tutorial-gesto');
-for (let k = 0; k < 7; k++) await click('Próximo');
+for (let k = 0; k < 8; k++) await click('Próximo');
 await shot('tutorial-voz');
 await click('🔊 Configurar a voz');
 await page.waitForTimeout(3500);

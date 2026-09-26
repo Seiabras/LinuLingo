@@ -1,4 +1,5 @@
 import type { LanguagePack } from '../types';
+import { LINGUISTICS_RO } from './linguistica';
 import { VOCAB_RO } from './vocabulario';
 import { UNITS_RO } from './curriculo';
 import { ETYMOLOGY_RO } from './etimologia';
@@ -30,6 +31,7 @@ export const ROMENO: LanguagePack = {
   stories: [...STORIES_RO, ...VARIANTS_RO.flatMap((v) => v.stories ?? [])],
   variants: VARIANTS_RO,
   grammar: GRAMMAR_RO,
+  linguistics: LINGUISTICS_RO,
   journalPrompts: JOURNAL_PROMPTS_RO,
   shadowing: SHADOWING_RO,
   ipa: toIpa,

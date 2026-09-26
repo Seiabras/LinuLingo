@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import { Pressable, Text, TextInput, View } from 'react-native';
 import { router } from 'expo-router';
 import { Search } from 'lucide-react-native';
-import { Screen, Chip, SpeechBubble } from '@/components/ui';
+import { Screen, Chip, SectionTitle, SpeechBubble } from '@/components/ui';
 import { Linu } from '@/components/Linu';
 import { useApp } from '@/services/app-state';
 import { useIsDark } from '@/services/theme';
@@ -60,34 +60,10 @@ export default function GrammarScreen() {
       {mode === 'area' && (
         <View className="gap-2">
           <Text className="text-sm text-slate-600 dark:text-slate-400">
-            As 7 áreas que os linguistas usam para estudar qualquer língua. Cada uma explica o que estuda, como funciona no {pack.name.toLowerCase()} e reúne os
-            tópicos de gramática dela.
+            Linguística: a ciência da linguagem. As 7 áreas mostram como funciona o {pack.name.toLowerCase()}; as ferramentas e os grandes temas valem para
+            todas as línguas.
           </Text>
-          <Pressable
-            accessibilityRole="button"
-            onPress={() => router.push('/linguistica/ipa')}
-            className="flex-row items-center gap-3 rounded-2xl bg-conecta p-4 active:opacity-80"
-          >
-            <Text className="text-3xl">🔤</Text>
-            <View className="flex-1">
-              <Text className="text-base font-extrabold text-white">Quadro interativo do IPA</Text>
-              <Text className="text-sm text-blue-100">Cada som, como se faz e exemplos em 5 línguas</Text>
-            </View>
-          </Pressable>
-          {LESSONS.map((l) => (
-            <Pressable
-              key={l.id}
-              accessibilityRole="button"
-              onPress={() => router.push(`/linguistica/aula/${l.id}`)}
-              className="flex-row items-center gap-3 rounded-2xl bg-white p-4 active:opacity-80 dark:bg-slate-900"
-            >
-              <Text className="text-3xl">{l.emoji}</Text>
-              <View className="flex-1">
-                <Text className="text-base font-extrabold text-slate-900 dark:text-white">{l.title}</Text>
-                <Text className="text-sm text-slate-600 dark:text-slate-400">{l.summary}</Text>
-              </View>
-            </Pressable>
-          ))}
+          <SectionTitle>🧭 As 7 áreas da língua</SectionTitle>
           {AREAS.map((a) => {
             const data = pack.linguistics?.find((l) => l.area === a.id);
             return (
@@ -102,15 +78,37 @@ export default function GrammarScreen() {
                 <View className="flex-1">
                   <Text className="text-base font-extrabold text-slate-900 dark:text-white">{a.name}</Text>
                   <Text className="text-sm text-slate-600 dark:text-slate-400">{a.question}</Text>
-                  {data && <Text className="mt-0.5 text-xs font-semibold text-conecta">{data.topics.length} tópicos de gramática</Text>}
+                  {data && data.topics.length > 0 && (
+                    <Text className="mt-0.5 text-xs font-semibold text-conecta">{data.topics.length} tópicos de gramática</Text>
+                  )}
                 </View>
                 <Text className="text-xl text-slate-400">›</Text>
               </Pressable>
             );
           })}
+
+          <SectionTitle>🛠️ Ferramentas e normas</SectionTitle>
+          <Pressable
+            accessibilityRole="button"
+            onPress={() => router.push('/linguistica/ipa')}
+            className="flex-row items-center gap-3 rounded-2xl bg-conecta p-4 active:opacity-80"
+          >
+            <Text className="text-3xl">🔤</Text>
+            <View className="flex-1">
+              <Text className="text-base font-extrabold text-white">Quadro interativo do IPA</Text>
+              <Text className="text-sm text-blue-100">Cada som, como se faz e exemplos em 5 línguas</Text>
+            </View>
+          </Pressable>
+          {LESSONS.filter((l) => l.group === 'ferramentas').map((l) => (
+            <LessonRow key={l.id} emoji={l.emoji} title={l.title} summary={l.summary} id={l.id} />
+          ))}
+
+          <SectionTitle>🌍 Grandes temas da linguística</SectionTitle>
+          {LESSONS.filter((l) => l.group === 'temas').map((l) => (
+            <LessonRow key={l.id} emoji={l.emoji} title={l.title} summary={l.summary} id={l.id} />
+          ))}
         </View>
       )}
-
       {mode === 'nivel' && (
         <>
           <View className="flex-row items-center gap-2 rounded-2xl border-2 border-slate-200 bg-white px-3 dark:border-slate-700 dark:bg-slate-900">
@@ -153,5 +151,25 @@ export default function GrammarScreen() {
         </>
       )}
     </Screen>
+  );
+}
+
+function LessonRow({ id, emoji, title, summary }: { id: string; emoji: string; title: string; summary: string }) {
+  return (
+    <Pressable
+      accessibilityRole="button"
+      accessibilityLabel={`Aula: ${title}`}
+      onPress={() => router.push(`/linguistica/aula/${id}`)}
+      className="flex-row items-center gap-3 rounded-2xl bg-white p-4 active:opacity-80 dark:bg-slate-900"
+    >
+      <Text className="text-3xl">{emoji}</Text>
+      <View className="flex-1">
+        <Text className="text-base font-extrabold text-slate-900 dark:text-white">{title}</Text>
+        <Text numberOfLines={2} className="text-sm text-slate-600 dark:text-slate-400">
+          {summary}
+        </Text>
+      </View>
+      <Text className="text-xl text-slate-400">›</Text>
+    </Pressable>
   );
 }
