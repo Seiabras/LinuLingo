@@ -163,3 +163,12 @@ test('regiões do mundo: cada país ou território do mapa em exatamente uma sub
     ['Andina', 'Brasil e Cone Sul', 'Guianas'],
   );
 });
+
+test('trilha: uma unidade por subnível, na ordem do A1.1 ao C2', () => {
+  const ro = PACKS.ro;
+  assert.deepEqual(
+    ro.units.map((u) => u.level),
+    [...SUBLEVELS],
+  );
+  for (const u of ro.units) assert.equal(u.cefr, u.level.slice(0, 2), u.id);
+});

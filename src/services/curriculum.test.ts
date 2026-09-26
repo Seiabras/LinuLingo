@@ -1,7 +1,7 @@
 /// <reference types="node" />
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { buildPath, currentUnit, resolveLesson } from './curriculum';
+import { buildPath, currentUnit, jumpLessons, resolveLesson } from './curriculum';
 import { ROMENO } from '../data/ro';
 
 test('trilha: só a primeira lição fica liberada no começo', () => {
@@ -25,4 +25,14 @@ test('prova junta palavras e lacunas das lições da unidade', () => {
   assert.equal(prova.words.length, 6);
   assert.equal(prova.cloze.length, 5);
   assert.ok(prova.words.every((w) => unitWords.has(w)));
+});
+
+test('teste para pular marca todas as lições até a unidade escolhida', () => {
+  const target = ROMENO.units[2];
+  const ids = jumpLessons(ROMENO, target.id);
+  const expected = ROMENO.units.slice(0, 3).flatMap((u) => u.lessons.map((l) => l.id));
+  assert.deepEqual(ids, expected);
+  const path = buildPath(ROMENO, new Map(ids.map((id) => [id, 0.9] as [string, number])));
+  assert.equal(currentUnit(path)?.id, ROMENO.units[3].id);
+  assert.deepEqual(jumpLessons(ROMENO, 'nao-existe'), []);
 });

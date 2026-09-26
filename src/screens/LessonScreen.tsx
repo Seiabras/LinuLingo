@@ -11,8 +11,8 @@ import { CommunityStep } from '@/components/lesson/CommunityStep';
 import { RewardStep } from '@/components/lesson/RewardStep';
 import { Linu } from '@/components/Linu';
 import { useApp } from '@/services/app-state';
-import { findLesson, resolveLesson } from '@/services/curriculum';
-import { awardXp, completeLesson, listVocab, reviewWord, submitToCommunity, vocabByWords } from '@/database/queries';
+import { findLesson, JUMP_PASS, jumpLessons, resolveLesson } from '@/services/curriculum';
+import { awardXp, completeLesson, listVocab, reviewWord, skipLessons, submitToCommunity, vocabByWords } from '@/database/queries';
 import { lessonXp, XP } from '@/services/progress';
 import { stopSpeaking } from '@/services/speech';
 import { useIsDark } from '@/services/theme';
@@ -26,7 +26,9 @@ const STEPS = ['Aprenda primeiro', 'Imersão', 'Lacunas', 'Voz', 'Comunidade', '
  * cloze → voz → envio para a comunidade → recompensa (XP + SRS).
  */
 export default function LessonScreen() {
-  const { id } = useLocalSearchParams<{ id: string }>();
+  const { id, pular } = useLocalSearchParams<{ id: string; pular?: string }>();
+  // teste para pular: a prova de uma unidade ainda bloqueada
+  const jump = pular === '1';
   const { db, pack, refresh } = useApp();
   const dark = useIsDark();
   const found = useMemo(() => findLesson(pack, id), [pack, id]);
@@ -39,6 +41,7 @@ export default function LessonScreen() {
   const [clozeCorrect, setClozeCorrect] = useState(0);
   const [voiceCorrect, setVoiceCorrect] = useState(false);
   const [reward, setReward] = useState<{ xp: number; streak: number; usedFreeze: boolean; words: VocabWithSRS[] } | null>(null);
+  const [jumped, setJumped] = useState<boolean | null>(null);
 
   useEffect(() => {
     if (!lesson) return;
@@ -70,7 +73,12 @@ export default function LessonScreen() {
     const total = wordResults.length + lesson.cloze.length + 1;
     const correct = wordResults.filter((r) => r.correct).length + clozeCorrect + (voiceCorrect ? 1 : 0);
     const xp = lessonXp(correct, total, lesson.kind === 'prova') + (communityText ? XP.communitySubmission : 0);
-    await completeLesson(db, lesson.id, correct / total);
+    if (!jump) await completeLesson(db, lesson.id, correct / total);
+    else {
+      const passed = correct / total >= JUMP_PASS;
+      if (passed) await skipLessons(db, jumpLessons(pack, found!.unit.id), correct / total);
+      setJumped(passed);
+    }
     const streak = await awardXp(db, xp, `licao:${lesson.id}`);
     const updated = await vocabByWords(db, pack.code, lesson.words);
     setReward({ xp, streak: streak?.streak ?? 0, usedFreeze: streak?.usedFreeze ?? false, words: updated });
@@ -92,7 +100,7 @@ export default function LessonScreen() {
         <ProgressBar value={(step + (step === 5 ? 1 : 0)) / STEPS.length} className="flex-1" />
       </View>
       <Text className="mb-4 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">
-        {found.unit.emoji} {lesson.title} · Etapa {step + 1} de 6 · {STEPS[step]}
+        {found.unit.emoji} {jump ? `Teste para pular · ${found.unit.level}` : lesson.title} · Etapa {step + 1} de 6 · {STEPS[step]}
       </Text>
 
       {step === 0 && (
@@ -138,6 +146,19 @@ export default function LessonScreen() {
       )}
 
       {step === 4 && <CommunityStep prompt={lesson.communityPrompt} specialChars={pack.specialChars} onDone={finish} />}
+
+      {step === 5 && jumped !== null && (
+        <View className={`mb-4 gap-1 rounded-2xl p-4 ${jumped ? 'bg-green-50 dark:bg-green-950' : 'bg-amber-50 dark:bg-amber-950'}`}>
+          <Text className={`text-lg font-extrabold ${jumped ? 'text-conquista' : 'text-amber-800 dark:text-amber-200'}`}>
+            {jumped ? `⏩ Pronto: tudo até o ${found.unit.level} está concluído!` : '🐧 Quase! Ainda não deu para pular.'}
+          </Text>
+          <Text className="text-sm text-slate-700 dark:text-slate-300">
+            {jumped
+              ? 'A trilha continua na unidade seguinte. As palavras das unidades puladas continuam no cofre para revisar.'
+              : `Para pular é preciso acertar ${Math.round(JUMP_PASS * 100)}%. Continue pela trilha ou tente de novo depois.`}
+          </Text>
+        </View>
+      )}
 
       {step === 5 && reward && (
         <RewardStep

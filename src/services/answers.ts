@@ -10,6 +10,8 @@ export function normalize(s: string, { keepDiacritics = false } = {}): string {
     // cedilha (ş ţ) e vírgula (ș ț) são a mesma letra no romeno digitado
     .replace(/ş/g, 'ș')
     .replace(/ţ/g, 'ț')
+    // apóstrofo reto, tipográfico ou ausente valem o mesmo (las’ că = las' că = las că)
+    .replace(/['’`´]/g, '')
     .replace(/[.,!?¿¡;:«»"“”„()…-]/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();

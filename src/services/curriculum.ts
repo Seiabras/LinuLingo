@@ -48,7 +48,22 @@ export function resolveLesson(unit: UnitSeed, lesson: LessonSeed, rnd: () => num
   const others = unit.lessons.filter((l) => l.kind !== 'prova');
   return {
     ...lesson,
-    words: shuffle(others.flatMap((l) => l.words), rnd).slice(0, 6),
-    cloze: shuffle(others.flatMap((l) => l.cloze), rnd).slice(0, 5),
+    words: shuffle(
+      others.flatMap((l) => l.words),
+      rnd,
+    ).slice(0, 6),
+    cloze: shuffle(
+      others.flatMap((l) => l.cloze),
+      rnd,
+    ).slice(0, 5),
   };
+}
+
+/** Nota mínima na prova para pular até uma unidade (teste de nivelamento). */
+export const JUMP_PASS = 0.8;
+
+/** Lições marcadas como feitas ao passar no teste para pular: todas até a unidade, inclusive. */
+export function jumpLessons(pack: LanguagePack, unitId: string): string[] {
+  const i = pack.units.findIndex((u) => u.id === unitId);
+  return i < 0 ? [] : pack.units.slice(0, i + 1).flatMap((u) => u.lessons.map((l) => l.id));
 }

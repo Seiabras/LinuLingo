@@ -78,6 +78,8 @@ export interface LessonSeed {
 
 export interface UnitSeed {
   id: string;
+  /** Subnível da trilha (A1.1 … C2) */
+  level: SubLevel;
   cefr: CefrLevel;
   title: string;
   emoji: string;

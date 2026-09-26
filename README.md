@@ -22,7 +22,7 @@ O seletor do Perfil agrupa os idiomas por família e ramo linguístico.
 
 ## O que tem no romeno
 
-- **Trilha CEFR** com 5 unidades (A1 → B1) e 20 lições: lição, desafio de voz e prova por unidade.
+- **Trilha CEFR** em 15 subníveis (A1.1 → C2), uma unidade por subnível e 60 lições: lição, desafio de voz e prova por unidade, cada uma com a gramática do subnível (imperfeito, condicional, casos, mais-que-perfeito, passiva, gerúndio, argumentação, registro, texto técnico, perfeito simples literário…). **Teste para pular**: quem já sabe faz a prova de uma unidade bloqueada e, com 80%, a trilha avança até ela.
 - **Lição em 6 etapas**: card «aprenda primeiro» (história, cultura, o porquê da gramática, guia de letras) → associação imagem-som sem tradução (deslize → para «já sei») → lacunas com teclado de ă â î ș ț → desafio de voz (palavras em verde/amarelo/vermelho) → envio para a comunidade → recompensa com XP e fixação no SRS.
 - **Sprint de 5 minutos** e **revisão do dia** com gestos: → sei, ← não sei, ↑ fácil, ↓ difícil.
 - **Cofre de vocabulário**: 4.162 palavras por frequência (meta: 4.000), estado no SRS, domínio por categoria e **árvore etimológica** com 41 raízes (latim, eslavo, grego, dácio) e cognatos em português, espanhol, italiano e francês.
@@ -89,6 +89,7 @@ node scripts/fluxo-licao.mjs               # faz uma lição inteira no navegado
 node scripts/fluxo-extras.mjs              # tutorial, voz, etimologia, sprint, conversa, comunidade, tema escuro
 node scripts/fluxo-historia.mjs            # histórias: desvio, dica, final e contador de finais
 node scripts/fluxo-praticas.mjs            # diário (corretor), palácio (jogo) e shadowing (microfone falso)
+npx tsx scripts/fluxo-trilha.mjs          # faixa de subníveis e teste para pular
 node scripts/fluxo-mapa.mjs                # mapa ISO 3166-1/3166-3, zoom nas subdivisões e variante da Moldávia
 node scripts/capturas.mjs / /vocabulario   # capturas em desktop, iPhone, Android e iPad
 ```

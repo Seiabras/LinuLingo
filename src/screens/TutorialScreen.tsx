@@ -29,7 +29,7 @@ export default function TutorialScreen() {
 
   const slides: Slide[] = [
     { mood: 'feliz', title: `Bună! Eu sou o Linu 🐧`, text: `Sou um pinguim-de-barbicha, dá para ver pela faixinha preta embaixo do queixo. Vou te acompanhar no ${pack.name.toLowerCase()}. Em 1 minuto te mostro como tudo funciona!` },
-    { mood: 'falando', title: 'A trilha', text: 'As lições liberam uma por vez, do nível A1 até o B1. Cada unidade tem quatro tipos de parada:', extra: 'trilha' },
+    { mood: 'falando', title: 'A trilha', text: 'A trilha vai do A1.1 ao C2 em 15 subníveis, na faixa do topo. As lições liberam uma por vez; se você já sabe um nível, toque em «Já sei isto» numa unidade bloqueada e faça o teste: com 80% você pula para lá. Cada unidade tem quatro tipos de parada:', extra: 'trilha' },
     { mood: 'pensando', title: 'Uma lição, 6 etapas', text: 'Primeiro você entende, depois pratica. Nada de decorar sem saber o porquê:', extra: 'etapas' },
     { mood: 'feliz', title: 'Gestos nos cartões', text: 'No sprint de 5 minutos e na revisão você desliza os cartões. Experimente com este:', extra: 'gestos' },
     { mood: 'pensando', title: 'O cofre lembra por você', text: 'Cada palavra vai para o cofre de vocabulário. O app calcula (algoritmo SM-2) o dia certo de revisar: um pouco antes de você esquecer. Quando aparecer «revisar hoje», é a hora!' },

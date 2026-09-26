@@ -28,3 +28,8 @@ test('registro social e palavras-chave', () => {
   assert.deepEqual(registerBreaks('Aveți o cameră, vă rog?', ['tu', 'ai', 'te rog']), []);
   assert.equal(keywordHits('O cafea cu lapte', ['cafea', 'ceai', 'lapte']), 2);
 });
+
+test('apóstrofo reto, tipográfico ou ausente dão a mesma resposta', () => {
+  assert.equal(normalize('Las’ că!'), normalize("las' ca"));
+  assert.equal(normalize('Las’ că!'), normalize('las ca'));
+});

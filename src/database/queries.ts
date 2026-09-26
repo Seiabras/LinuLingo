@@ -180,6 +180,13 @@ export async function completeLesson(db: SQLiteDatabase, lessonId: string, score
   );
 }
 
+/** Marca lições como feitas sem mexer nas que já tinham nota (teste para pular). */
+export async function skipLessons(db: SQLiteDatabase, lessonIds: string[], score: number) {
+  const now = new Date().toISOString();
+  for (const id of lessonIds)
+    await db.runAsync(`INSERT OR IGNORE INTO Lesson_Progress (user_id, lesson_id, completed_at, best_score) VALUES (?, ?, ?, ?)`, uid, id, now, score);
+}
+
 // ---------- Comunidade ----------
 
 export function listCommunity(db: SQLiteDatabase, language: string) {
