@@ -71,6 +71,15 @@ await page.waitForFunction(() => [...document.querySelectorAll('[aria-label^="Pa
 await page.waitForTimeout(1500);
 await shot('zoom-ucrania');
 await page.getByLabel('Voltar ao mapa-múndi').click();
+// regiões › sub-regiões › países (como as bandeiras do NeuroSim)
+await click('🌎 América do Sul');
+await click('Andina');
+await expectText('Brasil e Cone Sul');
+await page.getByLabel('País: Peru').click();
+await page.waitForTimeout(900);
+if ((await selected()) !== 'País selecionado: Peru') throw new Error('lista da sub-região não selecionou o Peru');
+await shot('andina');
+await page.getByLabel('Voltar ao mapa-múndi').click();
 await page.waitForTimeout(800);
 if ((await page.locator('svg:has(rect)').first().getAttribute('viewBox')).split(' ').map(Number)[2] < 300) throw new Error('não voltou ao mundo');
 // Brasil: português (oficial) antes das comunidades

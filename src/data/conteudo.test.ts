@@ -151,3 +151,15 @@ test('subdivisões: um arquivo por país do mapa e as regiões de «onde se fala
         );
       }
 });
+
+test('regiões do mundo: cada país ou território do mapa em exatamente uma sub-região', async () => {
+  const { WORLD_REGIONS } = await import('./regioes');
+  const all = WORLD_REGIONS.flatMap((r) => r.subs.flatMap((s) => s.countries));
+  assert.equal(new Set(all).size, all.length, 'país repetido');
+  assert.deepEqual([...all].sort(), WORLD.map((c) => c.iso).sort());
+  const sa = WORLD_REGIONS.find((r) => r.id === 'sa')!;
+  assert.deepEqual(
+    sa.subs.map((s) => s.name),
+    ['Andina', 'Brasil e Cone Sul', 'Guianas'],
+  );
+});

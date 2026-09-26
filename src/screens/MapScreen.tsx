@@ -9,6 +9,7 @@ import { useApp } from '@/services/app-state';
 import { MAP_H, MAP_W, WORLD, type MapCountry } from '@/data/mapa-mundi';
 import { byKinship, flagOf, languagesIn, MAP_LANGUAGES, ROLE_LABEL, type LangRole } from '@/data/onde-se-fala';
 import { FAUNA_MUSICA } from '@/data/fauna-musica';
+import { WORLD_REGIONS } from '@/data/regioes';
 import { ISO_3166_2 } from '@/data/iso-3166-2';
 import { FORMER_COUNTRIES, KIND_LABEL, type FormerCountry } from '@/data/iso-3166-3';
 import { isAvailable } from '@/data/idiomas';
@@ -22,15 +23,21 @@ import { hasSubdivisions, loadSubdivisions } from '@/services/subdivisoes';
 // mas o React avisa em modo de desenvolvimento. Aviso conhecido e inofensivo.
 LogBox.ignoreLogs(['Unknown event handler property']);
 
-const REGIONS: [string, Box][] = [
-  ['Mundo', { x: 0, y: 0, w: MAP_W, h: MAP_H }],
-  ['Europa', { x: 455, y: 20, w: 175, h: 130 }],
-  ['Leste Europeu', { x: 522, y: 66, w: 92, h: 62 }],
-  ['Américas', { x: 90, y: 20, w: 350, h: 420 }],
-  ['África', { x: 440, y: 125, w: 210, h: 250 }],
-  ['Ásia', { x: 545, y: 20, w: 380, h: 270 }],
-  ['Oceania', { x: 760, y: 230, w: 190, h: 180 }],
-];
+const pointBox = (c: MapCountry): Box => ({ x: c.cx - 1, y: c.cy - 1, w: 2, h: 2 });
+const countryBox = (c: MapCountry): Box => (c.d ? focusBox(ringBoxes(c.d)) : null) ?? pointBox(c);
+
+// A Rússia entra na Europa Oriental, mas o enquadramento fica na parte europeia
+const REGION_BOX_OVERRIDE: Record<string, Box> = {
+  eu: { x: 455, y: 20, w: 175, h: 130 },
+  'eu-leste': { x: 522, y: 66, w: 92, h: 62 },
+};
+/** Enquadramento de cada região e sub-região (países distantes, como ilhas do outro lado do mapa, ficam de fora). */
+const REGION_BOX: Record<string, Box> = {};
+for (const r of WORLD_REGIONS) {
+  const boxesOf = (isos: string[]) => WORLD.filter((c) => isos.includes(c.iso)).map(countryBox);
+  for (const sub of r.subs) REGION_BOX[sub.id] = REGION_BOX_OVERRIDE[sub.id] ?? focusBox(boxesOf(sub.countries), 3, 40)!;
+  REGION_BOX[r.id] = REGION_BOX_OVERRIDE[r.id] ?? focusBox(boxesOf(r.subs.flatMap((x) => x.countries)), 3, 40)!;
+}
 
 const OPACITY: Record<LangRole, number> = { oficial: 1, regional: 0.55, diaspora: 0.28 };
 
@@ -50,7 +57,7 @@ export default function MapScreen() {
   const { width: winW } = useWindowDimensions();
   const mapHeight = Math.round(Math.min(440, Math.max(260, Math.min(winW, 680) * 0.6)));
   const aspect = size.h / size.w;
-  const [box, setBox] = useState<Box>(REGIONS[0][1]);
+  const [box, setBox] = useState<Box>({ x: 0, y: 0, w: MAP_W, h: MAP_H });
   const [start, setStart] = useState<Box>(box);
   const [mode, setMode] = useState<'hoje' | 'antigos'>('hoje');
   const [former, setFormer] = useState<FormerCountry | null>(null);
@@ -61,7 +68,7 @@ export default function MapScreen() {
   const [subs, setSubs] = useState<{ iso: string; list: SubShape[] } | null>(null);
   const [subsState, setSubsState] = useState<'idle' | 'loading' | 'error'>('idle');
   const [subSel, setSubSel] = useState<SubShape | null>(null);
-  const [worldBox, setWorldBox] = useState<Box>(REGIONS[0][1]);
+  const [worldBox, setWorldBox] = useState<Box>({ x: 0, y: 0, w: MAP_W, h: MAP_H });
   const anim = useRef<number | null>(null);
   const request = useRef(0);
 
@@ -120,19 +127,29 @@ export default function MapScreen() {
 
   const backToWorld = () => {
     request.current++;
+    setRegion(null);
+    setSubRegion(null);
     setFocus(null);
     setSubSel(null);
     setSubsState('idle');
     animateTo(worldBox);
   };
 
-  const goRegion = (r: Box) => {
+  // navegação por região › sub-região › país (a mesma divisão das bandeiras do NeuroSim)
+  const [region, setRegion] = useState<string | null>(null);
+  const [subRegion, setSubRegion] = useState<string | null>(null);
+  const goRegion = (id: string | null, sub: string | null = null) => {
+    request.current++;
     setFocus(null);
     setSubSel(null);
-    // mantém a região inteira visível na proporção da tela
-    const w = Math.max(r.w, r.h / aspect);
-    setBox(clamp({ x: r.x + r.w / 2 - w / 2, y: r.y + r.h / 2 - (w * aspect) / 2, w, h: w * aspect }));
+    setSubsState('idle');
+    setRegion(id);
+    setSubRegion(sub);
+    const target = sub ?? id;
+    animateTo(target ? fitBox(REGION_BOX[target], aspect, 0.06) : worldBox);
   };
+  const regionData = WORLD_REGIONS.find((r) => r.id === region);
+  const subData = regionData?.subs.find((x) => x.id === subRegion);
 
   // primeira medida da caixa: preenche a altura, centralizado na terra do idioma
   const [fitted, setFitted] = useState(false);
@@ -371,12 +388,40 @@ export default function MapScreen() {
       </View>
 
       <ScrollView horizontal showsHorizontalScrollIndicator={false} className="mt-2" contentContainerStyle={{ gap: 6 }}>
-        {REGIONS.map(([name, r]) => (
-          <Pressable key={name} onPress={() => goRegion(r)} className="rounded-full bg-slate-200 px-3 py-1 dark:bg-slate-800">
-            <Text className="text-sm font-semibold text-slate-700 dark:text-slate-200">{name}</Text>
-          </Pressable>
+        <RegionChip label="🌐 Mundo" active={!region} onPress={() => goRegion(null)} />
+        {WORLD_REGIONS.map((r) => (
+          <RegionChip key={r.id} label={`${r.icon} ${r.name}`} active={region === r.id} onPress={() => goRegion(r.id)} />
         ))}
       </ScrollView>
+      {regionData && (
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} className="mt-1.5" contentContainerStyle={{ gap: 6 }}>
+          <RegionChip small label="Todas" active={!subRegion} onPress={() => goRegion(regionData.id)} />
+          {regionData.subs.map((x) => (
+            <RegionChip small key={x.id} label={x.name} active={subRegion === x.id} onPress={() => goRegion(regionData.id, x.id)} />
+          ))}
+        </ScrollView>
+      )}
+      {regionData && (
+        <View className="mt-2 flex-row flex-wrap gap-1.5">
+          {WORLD.filter((c) => (subData ?? { countries: regionData.subs.flatMap((x) => x.countries) }).countries.includes(c.iso))
+            .sort((a, b) => a.name.localeCompare(b.name, 'pt-BR'))
+            .map((c) => {
+              const role = mode === 'hoje' ? roles.get(c.iso)?.role : undefined;
+              return (
+                <Pressable
+                  key={c.iso}
+                  accessibilityLabel={`País: ${c.name}`}
+                  onPress={() => selectCountry(c)}
+                  style={role ? { borderColor: lang.color } : undefined}
+                  className={`flex-row items-center gap-1 rounded-lg border px-2 py-1 ${selected?.iso === c.iso ? 'bg-amber-100 dark:bg-amber-950' : 'bg-white dark:bg-slate-900'} ${role ? '' : 'border-slate-200 dark:border-slate-700'}`}
+                >
+                  <Text>{flagOf(c.iso2)}</Text>
+                  <Text className="text-xs font-semibold text-slate-700 dark:text-slate-200">{c.name}</Text>
+                </Pressable>
+              );
+            })}
+        </View>
+      )}
 
       {mode === 'antigos' && (
         <View className="mt-4 gap-2">
@@ -551,6 +596,19 @@ export default function MapScreen() {
         </>
       )}
     </Screen>
+  );
+}
+
+function RegionChip({ label, active, onPress, small }: { label: string; active: boolean; onPress: () => void; small?: boolean }) {
+  return (
+    <Pressable
+      accessibilityRole="button"
+      accessibilityState={{ selected: active }}
+      onPress={onPress}
+      className={`rounded-full ${small ? 'px-2.5 py-0.5' : 'px-3 py-1'} ${active ? 'bg-conecta' : 'bg-slate-200 dark:bg-slate-800'}`}
+    >
+      <Text className={`${small ? 'text-xs' : 'text-sm'} font-semibold ${active ? 'text-white' : 'text-slate-700 dark:text-slate-200'}`}>{label}</Text>
+    </Pressable>
   );
 }
 

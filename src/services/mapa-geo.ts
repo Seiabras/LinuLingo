@@ -64,10 +64,10 @@ export function ringBoxes(d: string): Box[] {
  * Ilhas e territórios longe (Alasca, Havaí, a ponta da Rússia do outro lado do mapa) ficam de fora,
  * como faz o Google Maps ao mostrar um país.
  */
-export function focusBox(boxes: Box[]): Box | null {
+export function focusBox(boxes: Box[], reach = 0.6, minReach = 0): Box | null {
   if (!boxes.length) return null;
   const main = boxes.reduce((a, b) => (b.w * b.h > a.w * a.h ? b : a));
-  const mx = Math.max(main.w, main.h, 2) * 0.6;
+  const mx = Math.max(Math.max(main.w, main.h, 2) * reach, minReach);
   let [x0, y0, x1, y1] = [main.x, main.y, main.x + main.w, main.y + main.h];
   for (const b of boxes) {
     const near = b.x < main.x + main.w + mx && b.x + b.w > main.x - mx && b.y < main.y + main.h + mx && b.y + b.h > main.y - mx;
