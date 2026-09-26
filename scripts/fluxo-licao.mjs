@@ -34,8 +34,9 @@ const shot = async (name) => {
 const click = (text) => page.getByText(text, { exact: true }).first().click();
 
 await page.goto(BASE + '/', { waitUntil: 'load', timeout: 180000 });
-await page.waitForTimeout(5000);
-// primeira visita: o tutorial abre sozinho
+// primeira visita: o tutorial abre sozinho — espera ele ou a trilha, o que vier primeiro
+await page.getByText('Pular', { exact: true }).or(page.getByText('Oi, tudo bem?', { exact: true })).first().waitFor({ timeout: 120000 });
+await page.waitForTimeout(800);
 if (await page.getByText('Pular', { exact: true }).isVisible().catch(() => false)) {
   await click('Pular');
   await page.waitForTimeout(1500);

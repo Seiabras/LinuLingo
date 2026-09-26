@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Circle, Line, Path, Rect } from 'react-native-svg';
 import { ArrowLeft, Headphones, Mic, Square } from 'lucide-react-native';
-import { Screen, Button, Card, Chip, SpeechBubble } from '@/components/ui';
+import { Screen, Button, Card, Chip, SpeechBubble, Ipa } from '@/components/ui';
 import { Linu } from '@/components/Linu';
 import { useApp } from '@/services/app-state';
 import { useMicCapture, type MicSample } from '@/services/mic';
@@ -125,6 +125,7 @@ export default function ShadowingScreen() {
 
       <Card className="gap-3">
         <Text className="text-2xl font-extrabold leading-9 text-slate-900 dark:text-white">{phrase}</Text>
+        <Ipa text={phrase} />
         <Pressable onPress={() => setShowTr((v) => !v)}>
           <Text className="text-sm text-conecta">{showTr ? `🇧🇷 ${translation}` : 'Ver tradução'}</Text>
         </Pressable>

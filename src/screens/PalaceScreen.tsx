@@ -2,7 +2,7 @@ import { useCallback, useMemo, useState } from 'react';
 import { Pressable, Text, TextInput, View } from 'react-native';
 import { useFocusEffect } from 'expo-router';
 import { ArrowLeft } from 'lucide-react-native';
-import { Screen, Button, Card, Chip, SectionTitle, SpeakButton, SpeechBubble } from '@/components/ui';
+import { Screen, Button, Card, Chip, SectionTitle, SpeakButton, SpeechBubble, Ipa } from '@/components/ui';
 import { Linu } from '@/components/Linu';
 import { useApp } from '@/services/app-state';
 import { awardXp, palaceNouns, saveMnemonic, type PalaceNoun } from '@/database/queries';
@@ -97,6 +97,7 @@ export default function PalaceScreen() {
                 <Text className="text-4xl font-extrabold text-slate-900 dark:text-white">{w.word_target}</Text>
                 <SpeakButton text={w.word_target} locale={pack.speechLocale} />
               </View>
+              <Ipa text={w.word_target} />
               <Text className="text-slate-500 dark:text-slate-400">{w.word_native}</Text>
             </Card>
             <View className="gap-2">

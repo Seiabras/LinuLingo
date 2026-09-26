@@ -3,7 +3,7 @@ import { FlatList, Pressable, Text, TextInput, View } from 'react-native';
 import { router, useFocusEffect } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Search } from 'lucide-react-native';
-import { Button, Card, Chip, GENDER_LABEL, ProgressBar, SpeakButton } from '@/components/ui';
+import { Button, Card, Chip, GENDER_LABEL, ProgressBar, SpeakButton, Ipa } from '@/components/ui';
 import { useApp } from '@/services/app-state';
 import { categoryStats, listEtymology, listVocab, vocabStats } from '@/database/queries';
 import { cefrFromMastered } from '@/services/progress';
@@ -20,7 +20,7 @@ const CATEGORY_EMOJI: Record<string, string> = {
   Essenciais: '⭐', 'Verbos-chave': '🏃', Pessoas: '🧑‍🤝‍🧑', Tempo: '⏰', Casa: '🏠', Sentimentos: '❤️',
   Natureza: '🌿', 'Viagens e Transporte': '✈️', 'Alimentação e Restaurantes': '🍽️', 'Trabalho e Negócios': '💼',
   Descrições: '🎨', Cores: '🌈', Números: '🔢', Corpo: '🖐️', Roupas: '👕', Saúde: '🩺', Compras: '🛒',
-  Escola: '🎒', Profissões: '👷', Animais: '🐾', Sociedade: '🏛️', Tecnologia: '💻', 'Lazer e Esportes': '⚽',
+  Escola: '🎒', Profissões: '👷', Animais: '🐾', Sociedade: '🏛️', Tecnologia: '💻', 'Lazer e Esportes': '⚽', Ciência: '🔬', Expressões: '💬',
 };
 
 const LANG_FLAG: Record<string, string> = { pt: '🇧🇷', es: '🇪🇸', it: '🇮🇹', fr: '🇫🇷', ru: '🇷🇺', pl: '🇵🇱', cs: '🇨🇿', sr: '🇷🇸', bg: '🇧🇬', el: '🇬🇷', sq: '🇦🇱', hu: '🇭🇺', tr: '🇹🇷', en: '🇬🇧', de: '🇩🇪' };
@@ -195,6 +195,7 @@ function WordRow({ w, locale, now }: { w: VocabWithSRS; locale: string; now: num
           {g && <Chip label={g.label} tone={g.tone} />}
           {hasNativeClip(w.word_target, locale) && <Text accessibilityLabel="gravação de falante nativo" className="text-xs">🎧</Text>}
         </View>
+        <Ipa text={w.word_target} className="text-xs" />
         <Text className="text-sm text-slate-500 dark:text-slate-400">{w.word_native}</Text>
       </View>
       <View className="items-end gap-1">
@@ -217,6 +218,7 @@ function EtymologyCard({ e, locale }: { e: Ety; locale: string }) {
         <Text className="text-2xl">{e.emoji}</Text>
         <View className="flex-1">
           <Text className="text-xl font-extrabold text-slate-900 dark:text-white">{e.word_target}</Text>
+          <Ipa text={e.word_target} className="text-xs" />
           <Text className="text-sm text-slate-500 dark:text-slate-400">{e.word_native}</Text>
         </View>
         {!!e.transparent && <Chip label="cognato transparente" tone="green" />}

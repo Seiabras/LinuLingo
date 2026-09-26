@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import { Pressable, Text, TextInput, View } from 'react-native';
 import type { ClozeItem } from '@/data/types';
-import { Button, SpeakButton } from '../ui';
+import { Button, SpeakButton, Ipa } from '../ui';
 import { normalize, shuffle } from '@/services/answers';
 import * as haptics from '@/services/haptics';
 
@@ -119,6 +119,7 @@ export function ClozeStep({ items, locale, specialChars, onDone }: { items: Cloz
           <Text className={`text-lg font-extrabold ${right || almost ? 'text-conquista-dark dark:text-green-300' : 'text-rose-600 dark:text-rose-300'}`}>
             {right ? 'Perfeito! 🎉' : almost ? 'Quase! Atenção aos acentos.' : `Resposta certa: ${item.answer}`}
           </Text>
+          <Ipa text={full} />
           <Text className="text-slate-700 dark:text-slate-300">🇧🇷 {item.translation}</Text>
           <Button title="Continuar" variant={right || almost ? 'success' : 'danger'} onPress={next} />
         </View>

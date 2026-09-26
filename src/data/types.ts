@@ -1,4 +1,4 @@
-import type { CefrLevel, Cognate, PartOfSpeech } from '@/types';
+import type { CefrLevel, Cognate, PartOfSpeech, SubLevel } from '@/types';
 
 export type Gender = 'm' | 'f' | 'n';
 
@@ -145,6 +145,8 @@ export interface StoryNode {
 /** História interativa ramificada (TPR storytelling / escolha sua aventura). */
 export interface StorySeed {
   id: string;
+  /** Subnível (A1.1 … C2) */
+  level: SubLevel;
   cefr: CefrLevel;
   title: string;
   emoji: string;
@@ -154,6 +156,36 @@ export interface StorySeed {
   nodes: Record<string, StoryNode>;
   /** Palavras-chave da história: [idioma alvo, tradução] */
   glossary: [string, string][];
+}
+
+/** Seção de um tópico de gramática: texto, tabela e/ou exemplos. */
+export interface GrammarSection {
+  heading?: string;
+  text?: string;
+  /** Tabela: cabeçalho + linhas */
+  table?: { head: string[]; rows: string[][] };
+  /** Exemplos: [idioma alvo, tradução] */
+  examples?: [string, string][];
+}
+
+export interface GrammarQuiz {
+  question: string;
+  options: string[];
+  answer: string;
+  explanation: string;
+}
+
+/** Tópico da aba Gramática, organizado por subnível. */
+export interface GrammarTopic {
+  id: string;
+  level: SubLevel;
+  title: string;
+  emoji: string;
+  summary: string;
+  sections: GrammarSection[];
+  /** Armadilhas típicas de quem fala português */
+  pitfalls: string[];
+  quiz: GrammarQuiz[];
 }
 
 /** Classificação genealógica e geográfica, usada para agrupar o seletor de idiomas. */
@@ -182,8 +214,11 @@ export interface LanguagePack extends LanguageInfo {
   community: CommunitySeed[];
   scenarios: ScenarioSeed[];
   stories: StorySeed[];
+  grammar: GrammarTopic[];
   /** Temas do diário: [pergunta no idioma, tradução] */
   journalPrompts: [string, string][];
+  /** Transcrição fonética (IPA) por regras do idioma */
+  ipa?: (text: string) => string;
   /** Frases para shadowing: [frase, tradução] */
   shadowing: [string, string][];
   /** Letras especiais para o teclado adaptado */

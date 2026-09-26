@@ -1,6 +1,6 @@
 import { Text, View } from 'react-native';
 import type { CultureCardSeed } from '@/data/types';
-import { Card, SpeakButton } from './ui';
+import { Card, SpeakButton, Ipa } from './ui';
 
 /**
  * Card de conhecimento prévio («Aprenda primeiro, pratique depois»):
@@ -33,6 +33,7 @@ export function CulturalGrammarCard({ card, locale, compact = false }: { card: C
               <SpeakButton text={target.split('→').pop()!.trim()} locale={locale} size={16} />
               <View className="flex-1">
                 <Text className="font-bold text-conecta-dark dark:text-blue-300">{target}</Text>
+                <Ipa text={target.split('→').pop()!.trim()} className="text-xs" />
                 <Text className="text-sm text-slate-600 dark:text-slate-400">{pt}</Text>
               </View>
             </View>

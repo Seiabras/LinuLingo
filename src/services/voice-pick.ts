@@ -13,7 +13,8 @@ const ROBOTIC = /espeak|mbrola/i;
 
 function score(v: RawVoice): number {
   const label = `${v.name ?? ''} ${v.identifier}`;
-  return (NATURAL.test(label) ? 2 : 0) - (ROBOTIC.test(label) ? 1 : 0);
+  // variantes do eSpeak («Romanian+Robosoft») soam ainda mais artificiais que a voz base
+  return (NATURAL.test(label) ? 2 : 0) - (ROBOTIC.test(label) ? 1 : 0) - (/\+/.test(v.name ?? '') ? 1 : 0);
 }
 
 export function pickVoice(voices: RawVoice[], locale: string): VoiceInfo | null {

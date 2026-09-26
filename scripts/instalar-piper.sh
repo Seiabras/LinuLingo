@@ -11,7 +11,7 @@ D="$HOME/.local/share/piper"
 C="$HOME/.config/speech-dispatcher"
 
 command -v spd-say >/dev/null || { echo "Instale antes: speech-dispatcher e espeak-ng (ex.: sudo pacman -S speech-dispatcher espeak-ng  ou  sudo apt install speech-dispatcher espeak-ng)"; exit 1; }
-PLAYER="pw-play --rate \"\$RATE\" --channels 1 --format s16 -"
+PLAYER="pw-play --raw --rate \"\$RATE\" --channels 1 --format s16 -"
 command -v pw-play >/dev/null || PLAYER="aplay -r \"\$RATE\" -f S16_LE -t raw -"
 
 mkdir -p "$D/vozes" "$HOME/.local/bin"
@@ -29,11 +29,17 @@ fi
 
 cat > "$HOME/.local/bin/piper-falar" <<SCRIPT
 #!/bin/sh
-# Lê texto da entrada padrão e fala com o Piper (usado pelo speech-dispatcher).
-D="\$HOME/.local/share/piper"
-MODELO="\$D/vozes/\$1.onnx"
-RATE=\$(sed -n 's/.*"sample_rate": *\([0-9]*\).*/\1/p' "\$MODELO.json")
-"\$D/piper/piper" --model "\$MODELO" --length_scale "\${2:-1.0}" --output_raw --quiet 2>/dev/null | $PLAYER
+# Lê texto da entrada padrão e fala (usado pelo speech-dispatcher).
+# Vozes do Piper (naturais) quando existem; «espeak-<idioma>» cai no eSpeak.
+case "\$1" in
+  espeak-*)
+    espeak-ng -v "\${1#espeak-}" --stdout 2>/dev/null | pw-play - ;;
+  *)
+    D="\$HOME/.local/share/piper"
+    MODELO="\$D/vozes/\$1.onnx"
+    RATE=\$(sed -n 's/.*"sample_rate": *\([0-9]*\).*/\1/p' "\$MODELO.json")
+    "\$D/piper/piper" --model "\$MODELO" --length_scale "\${2:-1.0}" --output_raw --quiet 2>/dev/null | $PLAYER ;;
+esac
 SCRIPT
 chmod +x "$HOME/.local/bin/piper-falar"
 
@@ -45,19 +51,23 @@ GenericExecuteSynth "printf %s \\'\$DATA\\' | $HOME/.local/bin/piper-falar \\'\$
 GenericCmdDependency "$HOME/.local/bin/piper-falar"
 GenericLanguage "$LANG_CODE" "$LANG_CODE" "utf-8"
 AddVoice "$LANG_CODE" "MALE1" "$VOZ"
+$(for l in pt en es fr it de ru fi et ja ko; do [ "$l" != "$LANG_CODE" ] && printf 'GenericLanguage "%s" "%s" "utf-8"\nAddVoice "%s" "MALE1" "espeak-%s"\n' $l $l $l $l; done)
 DefaultVoice "$VOZ"
 CONF
 if ! grep -q 'AddModule "piper"' "$C/speechd.conf"; then
   cat >> "$C/speechd.conf" <<CONF
 
 # --- Voz natural (Piper) — scripts/instalar-piper.sh do Poliglota ---
+# O Firefox só lista as vozes do módulo padrão: o Piper vira padrão, com o eSpeak
+# como reserva para os outros idiomas dentro do próprio módulo (piper-falar).
 AddModule "espeak-ng" "sd_espeak-ng" "espeak-ng.conf"
 AddModule "piper"     "sd_generic"   "piper-generic.conf"
-DefaultModule espeak-ng
+DefaultModule piper
 LanguageDefaultModule "$LANG_CODE" "piper"
 CONF
 fi
 
+systemctl --user restart speech-dispatcher.socket 2>/dev/null || true
 pkill -x speech-dispatch 2>/dev/null || true
 sleep 1
-spd-say -o piper -L | grep -q "$VOZ" && echo "✅ Pronto! Feche e abra o navegador. Teste: spd-say -l $LANG_CODE \"Bună ziua\"" || echo "⚠️ O módulo não carregou; veja ~/.cache/speech-dispatcher/log"
+spd-say -o piper -L | grep -q "$VOZ" && echo "✅ Pronto! FECHE e abra o navegador de novo (ele só lê as vozes ao abrir). Teste: spd-say -l $LANG_CODE \"Bună ziua\"" || echo "⚠️ O módulo não carregou; veja ~/.cache/speech-dispatcher/log"

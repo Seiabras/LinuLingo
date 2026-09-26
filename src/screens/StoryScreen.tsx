@@ -3,7 +3,7 @@ import { Pressable, ScrollView, Text, View } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
 import Animated, { FadeInDown, useAnimatedStyle, useSharedValue, withSequence, withTiming } from 'react-native-reanimated';
 import { X } from 'lucide-react-native';
-import { Screen, Button, Card, Chip, SpeakButton } from '@/components/ui';
+import { Screen, Button, Card, Chip, SpeakButton, Ipa } from '@/components/ui';
 import { Linu } from '@/components/Linu';
 import { useApp } from '@/services/app-state';
 import { awardXp, reachEnding } from '@/database/queries';
@@ -89,7 +89,7 @@ export default function StoryScreen() {
         <Text className="flex-1 text-base font-extrabold text-slate-900 dark:text-white">
           {story.emoji} {story.title}
         </Text>
-        <Chip label={story.cefr} tone="blue" />
+        <Chip label={story.level} tone="blue" />
       </View>
 
       <Animated.View key={nodeId} entering={FadeInDown.duration(300)} className="gap-4">
@@ -159,6 +159,7 @@ export default function StoryScreen() {
               <View key={ro} className="flex-row items-center gap-2">
                 <SpeakButton text={ro} locale={pack.speechLocale} size={14} />
                 <Text className="font-bold text-slate-900 dark:text-white">{ro}</Text>
+                <Ipa text={ro} className="text-xs" />
                 <Text className="flex-1 text-slate-500 dark:text-slate-400">— {pt}</Text>
               </View>
             ))}

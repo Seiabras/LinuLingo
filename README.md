@@ -25,8 +25,10 @@ O seletor do Perfil agrupa os idiomas por família e ramo linguístico.
 - **Trilha CEFR** com 5 unidades (A1 → B1) e 20 lições: lição, desafio de voz e prova por unidade.
 - **Lição em 6 etapas**: card «aprenda primeiro» (história, cultura, o porquê da gramática, guia de letras) → associação imagem-som sem tradução (deslize → para «já sei») → lacunas com teclado de ă â î ș ț → desafio de voz (palavras em verde/amarelo/vermelho) → envio para a comunidade → recompensa com XP e fixação no SRS.
 - **Sprint de 5 minutos** e **revisão do dia** com gestos: → sei, ← não sei, ↑ fácil, ↓ difícil.
-- **Cofre de vocabulário**: 1.259 palavras por frequência (meta: 4.000), estado no SRS, domínio por categoria e **árvore etimológica** com 41 raízes (latim, eslavo, grego, dácio) e cognatos em português, espanhol, italiano e francês.
-- **Histórias interativas** (A1 → B1): leia em romeno e escolha o que o Linu faz. Escolhas que mostram que o texto não foi entendido dão uma dica; cada história tem vários finais.
+- **Cofre de vocabulário**: 4.162 palavras por frequência (meta: 4.000), estado no SRS, domínio por categoria e **árvore etimológica** com 41 raízes (latim, eslavo, grego, dácio) e cognatos em português, espanhol, italiano e francês.
+- **Histórias interativas** em 15 subníveis (A1.1, A1.2, A2.1 … B2.4, C1.1, C1.2, C2), 45 no total, com pelo menos 3 por subnível: leia em romeno e escolha o que o Linu faz. Escolhas que mostram que o texto não foi entendido dão uma dica; cada história tem vários finais.
+- **Aba Gramática**: 40 tópicos do A1.1 ao C2, com tabelas, exemplos com áudio e IPA, armadilhas para lusófonos e mini-quiz.
+- **IPA** (Alfabeto Fonético Internacional) gerado por regras em todo o romeno do app.
 - **Diário**: 3 frases por dia sobre a sua vida. O corretor offline devolve acentos, acerta «un/o» e «meu/mea» pelo gênero do vocabulário e pega erros típicos de lusófonos (*eu este*, *sunt 20 de ani*, *am foame*…), mostrando a versão «como um nativo diria».
 - **Shadowing**: ouvir e repetir (depois ou junto com o modelo), com a onda e a curva de altura da voz ao vivo; compara o ritmo e a entonação do fim da frase (sim/não sobe; «ce, unde…» e afirmações descem).
 - **Palácio da memória**: os 3 gêneros moram em salas — 🔥 Forja (masc.), 🌊 Lago (fem.), 🦎 Jardim do Camaleão (neutro) —, com jogo «em que sala mora?» e mnemônicos próprios.

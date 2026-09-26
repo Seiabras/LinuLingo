@@ -3,6 +3,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { PACKS, LANGUAGES, groupByLineage } from './idiomas';
 import { endingIds, reachable } from '../services/stories';
+import { SUBLEVELS } from '../types';
 
 for (const pack of Object.values(PACKS)) {
   const words = new Set(pack.vocab.map((v) => v.word_target));
@@ -63,6 +64,24 @@ for (const pack of Object.values(PACKS)) {
       }
       assert.ok(endingIds(st).some((e) => st.nodes[e].ending?.tone === 'bom'), `${st.id} sem final bom`);
     }
+  });
+
+  test(`${pack.code}: gramática com ids únicos, quiz consistente e subnível válido`, () => {
+    const ids = pack.grammar.map((g) => g.id);
+    assert.equal(new Set(ids).size, ids.length);
+    for (const g of pack.grammar) {
+      assert.ok((SUBLEVELS as readonly string[]).includes(g.level), `${g.id}: nível ${g.level}`);
+      assert.ok(g.sections.length > 0, g.id);
+      for (const q of g.quiz) assert.ok(q.options.includes(q.answer), `${g.id}: «${q.answer}» fora das opções`);
+      for (const sec of g.sections) if (sec.table) for (const r of sec.table.rows) assert.equal(r.length, sec.table.head.length, `${g.id}: tabela com colunas desiguais`);
+    }
+  });
+
+  test(`${pack.code}: histórias com subnível válido`, () => {
+    for (const st of pack.stories) assert.ok((SUBLEVELS as readonly string[]).includes(st.level), `${st.id}: ${st.level}`);
+    assert.equal(new Set(pack.stories.map((s) => s.id)).size, pack.stories.length, 'ids repetidos');
+    assert.equal(new Set(pack.stories.map((s) => s.title)).size, pack.stories.length, 'títulos repetidos');
+    for (const lv of SUBLEVELS) assert.ok(pack.stories.filter((s) => s.level === lv).length >= 3, `menos de 3 histórias em ${lv}`);
   });
 
   test(`${pack.code}: cenários têm turnos com sugestões`, () => {

@@ -1,7 +1,9 @@
-import type { ReactNode } from 'react';
+import { Children, useState, type ReactNode } from 'react';
+import { router } from 'expo-router';
 import { ActivityIndicator, Pressable, ScrollView, Text, View, type PressableProps } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Volume2 } from 'lucide-react-native';
+import { Volume2, VolumeX } from 'lucide-react-native';
+import { useApp } from '@/services/app-state';
 import { speak } from '@/services/speech';
 import { tapLight } from '@/services/haptics';
 import { useIsDark } from '@/services/theme';
@@ -86,16 +88,42 @@ export function Chip({ label, tone = 'slate' }: { label: string; tone?: 'slate' 
 /** Botão de alto-falante: lê o texto na voz do idioma. */
 export function SpeakButton({ text, locale, size = 20, slow }: { text: string; locale: string; size?: number; slow?: boolean }) {
   const dark = useIsDark();
+  const [mute, setMute] = useState(false);
   return (
-    <Pressable
-      accessibilityRole="button"
-      accessibilityLabel={`Ouvir: ${text}`}
-      hitSlop={8}
-      onPress={() => speak(text, locale, { rate: slow ? 0.6 : 0.9 })}
-      className="rounded-full bg-conecta-light p-2 active:opacity-70 dark:bg-blue-950"
-    >
-      <Volume2 size={size} color={dark ? '#93C5FD' : '#2563EB'} />
-    </Pressable>
+    <View className="flex-row items-center gap-1">
+      <Pressable
+        accessibilityRole="button"
+        accessibilityLabel={`Ouvir: ${text}`}
+        hitSlop={8}
+        onPress={async () => {
+          const r = await speak(text, locale, { rate: slow ? 0.6 : 0.9 });
+          if (r === 'sem-voz') {
+            setMute(true);
+            setTimeout(() => setMute(false), 3500);
+          }
+        }}
+        className={`rounded-full p-2 active:opacity-70 ${mute ? 'bg-amber-100 dark:bg-amber-950' : 'bg-conecta-light dark:bg-blue-950'}`}
+      >
+        {mute ? <VolumeX size={size} color="#D97706" /> : <Volume2 size={size} color={dark ? '#93C5FD' : '#2563EB'} />}
+      </Pressable>
+      {mute && (
+        <Pressable onPress={() => router.push('/voz')} hitSlop={6}>
+          <Text className="text-xs font-semibold text-amber-600">sem voz neste aparelho · ver IPA</Text>
+        </Pressable>
+      )}
+    </View>
+  );
+}
+
+/** Pronúncia em IPA (Alfabeto Fonético Internacional), gerada por regras do idioma. */
+export function Ipa({ text, className = '' }: { text: string; className?: string }) {
+  const { pack } = useApp();
+  const ipa = pack.ipa?.(text);
+  if (!ipa) return null;
+  return (
+    <Text accessibilityLabel={`Pronúncia: ${ipa}`} selectable className={`font-mono text-sm text-slate-500 dark:text-slate-400 ${className}`}>
+      {ipa}
+    </Text>
   );
 }
 
@@ -107,7 +135,7 @@ export function SectionTitle({ children }: { children: ReactNode }) {
 export function SpeechBubble({ children, className = '' }: { children: ReactNode; className?: string }) {
   return (
     <View className={`flex-1 rounded-2xl rounded-bl-sm border-2 border-slate-200 bg-white px-4 py-3 dark:border-slate-700 dark:bg-slate-900 ${className}`}>
-      {typeof children === 'string' ? <Text className="text-base text-slate-800 dark:text-slate-100">{children}</Text> : children}
+      {Children.toArray(children).every((c) => typeof c === 'string' || typeof c === 'number') ? <Text className="text-base text-slate-800 dark:text-slate-100">{children}</Text> : children}
     </View>
   );
 }

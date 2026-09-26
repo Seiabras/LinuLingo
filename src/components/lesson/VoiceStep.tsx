@@ -3,7 +3,7 @@ import { Pressable, Text, TextInput, View } from 'react-native';
 import { Mic, MicOff } from 'lucide-react-native';
 import type { VoiceChallenge } from '@/data/types';
 import { Linu } from '../Linu';
-import { Button, SpeakButton, SpeechBubble } from '../ui';
+import { Button, SpeakButton, SpeechBubble, Ipa } from '../ui';
 import { router } from 'expo-router';
 import { canRecognize, findVoice, listen, speak } from '@/services/speech';
 import { markWords, matchesAny, pronunciationScore, type WordMark } from '@/services/answers';
@@ -72,6 +72,7 @@ export function VoiceStep({ challenge, locale, onDone }: { challenge: VoiceChall
             <Text className="flex-1 text-xl font-bold text-slate-900 dark:text-white">{challenge.bot}</Text>
             <SpeakButton text={challenge.bot} locale={locale} />
           </View>
+          <Ipa text={challenge.bot} className="text-xs" />
           <Pressable onPress={() => setShowTranslation((s) => !s)}>
             <Text className="mt-1 text-sm text-conecta">{showTranslation ? `🇧🇷 ${challenge.botTranslation}` : 'Ver tradução'}</Text>
           </Pressable>
@@ -135,6 +136,7 @@ export function VoiceStep({ challenge, locale, onDone }: { challenge: VoiceChall
             ))}
             <SpeakButton text={model} locale={locale} size={18} slow />
           </View>
+          <Ipa text={model} />
           <Text className={`text-lg font-extrabold ${accepted ? 'text-conquista-dark dark:text-green-300' : 'text-amber-700 dark:text-amber-300'}`}>
             {accepted ? 'Resposta adequada! 🎉' : 'Quase! Ouça o modelo e tente de novo.'}
           </Text>

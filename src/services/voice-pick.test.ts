@@ -21,6 +21,17 @@ test('aceita ro_RO e cai no eSpeak se for a única', () => {
   assert.equal(v?.natural, false);
 });
 
+test('entre vozes do eSpeak, prefere a base às variantes', () => {
+  const v = pickVoice(
+    [
+      { identifier: 'a', name: 'Romanian+Robosoft', language: 'ro' },
+      { identifier: 'b', name: 'Romanian', language: 'ro' },
+    ],
+    'ro-RO',
+  );
+  assert.equal(v?.identifier, 'b');
+});
+
 test('sem voz do idioma devolve null', () => {
   assert.equal(pickVoice(voices, 'ja-JP'), null);
 });

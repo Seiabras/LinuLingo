@@ -3,7 +3,7 @@ import { Pressable, Text, View } from 'react-native';
 import { X } from 'lucide-react-native';
 import { SwipeCard, type SwipeDir } from './SwipeCard';
 import { Linu } from './Linu';
-import { Button, GENDER_LABEL, Chip, ProgressBar, Screen, SpeakButton } from './ui';
+import { Button, GENDER_LABEL, Chip, ProgressBar, Screen, SpeakButton, Ipa } from './ui';
 import { useApp } from '@/services/app-state';
 import { awardXp, reviewWord } from '@/database/queries';
 import { speak, stopSpeaking } from '@/services/speech';
@@ -160,6 +160,7 @@ export function DeckSession({
             >
               <Text style={{ fontSize: 88, lineHeight: 106 }}>{card.emoji ?? '🔤'}</Text>
               <Text className="text-4xl font-extrabold text-slate-900 dark:text-white">{card.word_target}</Text>
+              <Ipa text={card.word_target} className="text-base" />
               {g && card.gender && <Chip label={`${ROOMS[card.gender].emoji} ${g.label}`} tone={g.tone} />}
               {flipped ? (
                 <View className="items-center gap-1">

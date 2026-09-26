@@ -11,7 +11,7 @@ export type { VoiceInfo };
 const voiceCache: Record<string, VoiceInfo | null> = {};
 
 /** Lista de vozes com limite de tempo: na web a lista pode chegar tarde ou nunca. */
-async function listVoices(timeoutMs = 2500) {
+async function listVoices(timeoutMs = 9000) {
   const timeout = new Promise<null>((r) => setTimeout(() => r(null), timeoutMs));
   try {
     return await Promise.race([Speech.getAvailableVoicesAsync(), timeout]);
@@ -79,12 +79,21 @@ export function hasNativeClip(text: string, locale: string): boolean {
 }
 
 /** Fala o texto: gravação de nativo quando existe (palavras), senão a voz do aparelho. */
-export async function speak(text: string, locale: string, opts: { rate?: number } = {}): Promise<void> {
-  if (playNativeClip(text, locale, opts.rate ?? 1)) return;
+export type SpeakResult = 'nativo' | 'sintetica' | 'sem-voz';
+
+/**
+ * Fala o texto: gravação de nativo quando existe (palavras), senão a voz do aparelho
+ * NO IDIOMA CERTO. Sem voz do idioma, fica em silêncio: a voz padrão (ex.: português)
+ * ensinaria a pronúncia errada («faci» como «fassi»).
+ */
+export async function speak(text: string, locale: string, opts: { rate?: number } = {}): Promise<SpeakResult> {
+  if (playNativeClip(text, locale, opts.rate ?? 1)) return 'nativo';
   const voice = await findVoice(locale);
   Speech.stop();
   stopClip();
-  Speech.speak(text, { language: locale, voice: voice?.identifier, rate: opts.rate ?? 0.9 });
+  if (!voice) return 'sem-voz';
+  Speech.speak(text, { language: locale, voice: voice.identifier, rate: opts.rate ?? 0.9 });
+  return 'sintetica';
 }
 
 /**
@@ -95,12 +104,13 @@ export async function speakTimed(text: string, locale: string, rate = 0.9): Prom
   const voice = await findVoice(locale);
   const estimate = Math.round(((text.toLowerCase().match(/[aăâeiîouy]+/g) ?? []).length * 210) / rate);
   Speech.stop();
+  if (!voice) return estimate; // sem voz do idioma: não fala com a voz errada
   return new Promise((resolve) => {
     let startedAt = 0;
     const fallback = setTimeout(() => resolve(estimate), estimate * 3 + 2000);
     Speech.speak(text, {
       language: locale,
-      voice: voice?.identifier,
+      voice: voice.identifier,
       rate,
       onStart: () => {
         startedAt = Date.now();

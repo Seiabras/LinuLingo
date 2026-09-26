@@ -4,7 +4,7 @@ import { useLocalSearchParams } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ArrowLeft, Mic, Send } from 'lucide-react-native';
 import { Linu } from '@/components/Linu';
-import { Button, Chip, SpeakButton } from '@/components/ui';
+import { Button, Chip, SpeakButton, Ipa } from '@/components/ui';
 import { useApp } from '@/services/app-state';
 import { canRecognize, listen, speak, stopSpeaking } from '@/services/speech';
 import { keywordHits, registerBreaks } from '@/services/answers';
@@ -139,6 +139,7 @@ export default function ScenarioScreen() {
                   <Text className="flex-shrink text-lg font-semibold text-slate-900 dark:text-white">{m.text}</Text>
                   <SpeakButton text={m.text} locale={pack.speechLocale} size={16} />
                 </View>
+                <Ipa text={m.text} className="text-xs" />
                 <Pressable onPress={() => setShowTr((s) => new Set(s).add(i))}>
                   <Text className="mt-1 text-sm text-conecta">{showTr.has(i) ? `🇧🇷 ${m.translation}` : 'traduzir'}</Text>
                 </Pressable>
