@@ -40,6 +40,9 @@ export default function RootLayout() {
               <Stack.Screen name="alfabeto" />
               <Stack.Screen name="creditos" />
               <Stack.Screen name="gramatica/[id]" />
+              <Stack.Screen name="linguistica/[area]" />
+              <Stack.Screen name="linguistica/ipa" />
+              <Stack.Screen name="linguistica/aula/[id]" />
               <Stack.Screen name="mapa" />
             </Stack>
           </AppStateProvider>

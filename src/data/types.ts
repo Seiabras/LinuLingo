@@ -248,6 +248,10 @@ export interface LanguagePack extends LanguageInfo {
   keyboardRows?: string[][];
   /** Treino do alfabeto (idiomas de outro alfabeto) */
   alphabet?: AlphabetData;
+  /** Falsos amigos com o português (idiomas próximos, como o espanhol) */
+  falseFriends?: FalseFriend[];
+  /** As áreas da língua (fonética, fonologia, morfologia…) aplicadas a este idioma */
+  linguistics?: LinguisticsArea[];
   /** Saudação curta e frase de teste da voz */
   greeting: string;
   sampleSentence: string;
@@ -257,6 +261,35 @@ export interface LanguagePack extends LanguageInfo {
   formalMarkers: string;
   /** Texto da aba de vocabulário sobre o parentesco com o português */
   cognateNote: string;
+}
+
+/** As 7 áreas de estudo da língua. */
+export type LingArea = 'fonetica' | 'fonologia' | 'morfologia' | 'sintaxe' | 'semantica' | 'pragmatica' | 'estilistica';
+
+/** Uma área da língua aplicada a um idioma. */
+export interface LinguisticsArea {
+  area: LingArea;
+  /** Uma frase: como esta área se manifesta neste idioma */
+  summary: string;
+  sections: GrammarSection[];
+  /** Tópicos da aba Gramática que pertencem a esta área (ids) */
+  topics: string[];
+  quiz: GrammarQuiz[];
+}
+
+/** Falso amigo: a palavra parece portuguesa, mas quer dizer outra coisa. */
+export interface FalseFriend {
+  /** A palavra no idioma («exquisito») */
+  word: string;
+  /** O que ela quer dizer de verdade, em português («delicioso») */
+  means: string;
+  /** O que o brasileiro acha que é («esquisito») */
+  looksLike: string;
+  /** Como se diz em espanhol o que o brasileiro queria dizer («raro», «extraño») */
+  forThat: string;
+  emoji: string;
+  /** Frase de exemplo [idioma, português] */
+  example: [string, string];
 }
 
 /** Uma letra de outro alfabeto, para o treino. */
