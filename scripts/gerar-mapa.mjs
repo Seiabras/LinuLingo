@@ -7,6 +7,7 @@
 // Uso: node scripts/gerar-mapa.mjs
 import { execFileSync } from 'node:child_process';
 import { readFileSync, writeFileSync } from 'node:fs';
+import { H, W, simplifyRing, toSvg } from './projecao.mjs';
 
 const ISO_DIR = '/usr/share/iso-codes/json';
 const NE_URL = 'https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_admin_0_countries.geojson';
@@ -23,79 +24,33 @@ print(json.dumps([t.gettext(n) for n in json.load(sys.stdin)],ensure_ascii=False
 }
 // nomes usuais no Brasil onde a tradução traz a forma oficial ou a de Portugal
 const USUAL = {
-  RUS: 'Rússia', IRN: 'Irã', CZE: 'Tchéquia', COD: 'República Democrática do Congo', PSE: 'Palestina',
-  FSM: 'Micronésia', VAT: 'Vaticano', KOR: 'Coreia do Sul', PRK: 'Coreia do Norte', SYR: 'Síria', LAO: 'Laos',
-  AZE: 'Azerbaijão', MDA: 'Moldávia', TZA: 'Tanzânia', BOL: 'Bolívia', VEN: 'Venezuela', TWN: 'Taiwan', VNM: 'Vietnã',
+  RUS: 'Rússia',
+  IRN: 'Irã',
+  CZE: 'Tchéquia',
+  COD: 'República Democrática do Congo',
+  PSE: 'Palestina',
+  FSM: 'Micronésia',
+  VAT: 'Vaticano',
+  KOR: 'Coreia do Sul',
+  PRK: 'Coreia do Norte',
+  SYR: 'Síria',
+  LAO: 'Laos',
+  AZE: 'Azerbaijão',
+  MDA: 'Moldávia',
+  TZA: 'Tanzânia',
+  BOL: 'Bolívia',
+  VEN: 'Venezuela',
+  TWN: 'Taiwan',
+  VNM: 'Vietnã',
 };
-const namesPt = translate('iso_3166-1', iso1.map((c) => c.common_name ?? c.name)).map((n, i) => USUAL[iso1[i].alpha_3] ?? n);
-const subNamesPt = translate('iso_3166-2', iso2.map((s) => s.name));
-
-// ---------- projeção ----------
-function project(lon, lat) {
-  const l = (lon * Math.PI) / 180;
-  const p = (lat * Math.PI) / 180;
-  const p2 = p * p;
-  const p4 = p2 * p2;
-  return [
-    l * (0.8707 - 0.131979 * p2 + p4 * (-0.013791 + p4 * (0.003971 * p2 - 0.001529 * p4))),
-    p * (1.007226 + p2 * (0.015085 + p4 * (-0.044475 + 0.028874 * p2 - 0.005916 * p4))),
-  ];
-}
-const X_MAX = project(180, 0)[0];
-const Y_MAX = project(0, 84)[1];
-const Y_MIN = project(0, -58)[1];
-const W = 1000;
-const S = W / (2 * X_MAX);
-const H = Math.round((Y_MAX - Y_MIN) * S);
-const toSvg = ([lon, lat]) => {
-  const [x, y] = project(lon, lat);
-  return [(x + X_MAX) * S, (Y_MAX - y) * S];
-};
-
-// Anel fechado (1º ponto = último): divide no ponto mais distante do início e simplifica as duas metades
-function simplifyRing(pts, tol) {
-  if (pts.length < 5) return pts;
-  let k = 1;
-  let best = 0;
-  for (let i = 1; i < pts.length - 1; i++) {
-    const d = Math.hypot(pts[i][0] - pts[0][0], pts[i][1] - pts[0][1]);
-    if (d > best) {
-      best = d;
-      k = i;
-    }
-  }
-  return [...simplify(pts.slice(0, k + 1), tol).slice(0, -1), ...simplify(pts.slice(k), tol)];
-}
-
-// Douglas–Peucker: tira pontos que não mudam o desenho (arquivo leve)
-function simplify(pts, tol) {
-  if (pts.length < 4) return pts;
-  const keep = new Uint8Array(pts.length);
-  keep[0] = keep[pts.length - 1] = 1;
-  const stack = [[0, pts.length - 1]];
-  while (stack.length) {
-    const [a, b] = stack.pop();
-    const [ax, ay] = pts[a];
-    const [bx, by] = pts[b];
-    const dx = bx - ax;
-    const dy = by - ay;
-    const len = Math.hypot(dx, dy) || 1;
-    let far = -1;
-    let dmax = tol;
-    for (let i = a + 1; i < b; i++) {
-      const d = Math.abs(dy * pts[i][0] - dx * pts[i][1] + bx * ay - by * ax) / len;
-      if (d > dmax) {
-        dmax = d;
-        far = i;
-      }
-    }
-    if (far >= 0) {
-      keep[far] = 1;
-      stack.push([a, far], [far, b]);
-    }
-  }
-  return pts.filter((_, i) => keep[i]);
-}
+const namesPt = translate(
+  'iso_3166-1',
+  iso1.map((c) => c.common_name ?? c.name),
+).map((n, i) => USUAL[iso1[i].alpha_3] ?? n);
+const subNamesPt = translate(
+  'iso_3166-2',
+  iso2.map((s) => s.name),
+);
 
 const r1 = (n) => Math.round(n * 10) / 10;
 
@@ -143,18 +98,76 @@ for (const f of geo.features) {
 
 // marcadores para quem não tem contorno nesta escala
 const POINTS = {
-  GIB: [-5.35, 36.14], BVT: [3.4, -54.43], TKL: [-171.85, -9.2], UMI: [-177.37, 28.21], MCO: [7.42, 43.74], VAT: [12.45, 41.9],
-  SMR: [12.45, 43.94], AND: [1.52, 42.51], LIE: [9.55, 47.16], MLT: [14.4, 35.92], SGP: [103.82, 1.35], BHR: [50.56, 26.07],
-  MDV: [73.5, 3.2], TUV: [179.2, -8.52], NRU: [166.93, -0.53], PLW: [134.58, 7.51], MHL: [171.18, 7.13], FSM: [158.21, 6.88],
-  KIR: [-157.36, 1.87], WLF: [-176.2, -13.28], NIU: [-169.87, -19.05], COK: [-159.78, -21.24], PCN: [-130.1, -25.07],
-  SHN: [-5.71, -15.96], IOT: [72.42, -7.32], CPV: [-23.6, 15.1], STP: [6.61, 0.33], COM: [43.33, -11.7], MUS: [57.55, -20.25],
-  SYC: [55.45, -4.62], BRB: [-59.55, 13.19], LCA: [-60.98, 13.91], VCT: [-61.2, 13.25], GRD: [-61.68, 12.12], DMA: [-61.35, 15.42],
-  ATG: [-61.8, 17.07], KNA: [-62.75, 17.33], AIA: [-63.06, 18.22], MSR: [-62.19, 16.74], VGB: [-64.62, 18.42], VIR: [-64.9, 18.34],
-  ABW: [-69.97, 12.52], CUW: [-68.99, 12.17], SXM: [-63.07, 18.04], MAF: [-63.08, 18.07], BLM: [-62.83, 17.9], TCA: [-71.8, 21.8],
-  CYM: [-81.25, 19.3], BMU: [-64.78, 32.3], SPM: [-56.3, 46.9], FRO: [-6.91, 62.0], IMN: [-4.53, 54.23], JEY: [-2.13, 49.21],
-  GGY: [-2.58, 49.45], ALA: [19.93, 60.18], HKG: [114.17, 22.32], MAC: [113.55, 22.2], GUM: [144.79, 13.44], MNP: [145.75, 15.18],
-  ASM: [-170.7, -14.28], WSM: [-172.1, -13.76], TON: [-175.2, -21.18], NFK: [167.95, -29.03], PYF: [-149.43, -17.68], SGS: [-36.6, -54.4],
-  CCK: [96.83, -12.17], ATF: [69.35, -49.3], HMD: [73.5, -53.1], FLK: [-59.5, -51.75], ATA: [0, -80],
+  GIB: [-5.35, 36.14],
+  BVT: [3.4, -54.43],
+  TKL: [-171.85, -9.2],
+  UMI: [-177.37, 28.21],
+  MCO: [7.42, 43.74],
+  VAT: [12.45, 41.9],
+  SMR: [12.45, 43.94],
+  AND: [1.52, 42.51],
+  LIE: [9.55, 47.16],
+  MLT: [14.4, 35.92],
+  SGP: [103.82, 1.35],
+  BHR: [50.56, 26.07],
+  MDV: [73.5, 3.2],
+  TUV: [179.2, -8.52],
+  NRU: [166.93, -0.53],
+  PLW: [134.58, 7.51],
+  MHL: [171.18, 7.13],
+  FSM: [158.21, 6.88],
+  KIR: [-157.36, 1.87],
+  WLF: [-176.2, -13.28],
+  NIU: [-169.87, -19.05],
+  COK: [-159.78, -21.24],
+  PCN: [-130.1, -25.07],
+  SHN: [-5.71, -15.96],
+  IOT: [72.42, -7.32],
+  CPV: [-23.6, 15.1],
+  STP: [6.61, 0.33],
+  COM: [43.33, -11.7],
+  MUS: [57.55, -20.25],
+  SYC: [55.45, -4.62],
+  BRB: [-59.55, 13.19],
+  LCA: [-60.98, 13.91],
+  VCT: [-61.2, 13.25],
+  GRD: [-61.68, 12.12],
+  DMA: [-61.35, 15.42],
+  ATG: [-61.8, 17.07],
+  KNA: [-62.75, 17.33],
+  AIA: [-63.06, 18.22],
+  MSR: [-62.19, 16.74],
+  VGB: [-64.62, 18.42],
+  VIR: [-64.9, 18.34],
+  ABW: [-69.97, 12.52],
+  CUW: [-68.99, 12.17],
+  SXM: [-63.07, 18.04],
+  MAF: [-63.08, 18.07],
+  BLM: [-62.83, 17.9],
+  TCA: [-71.8, 21.8],
+  CYM: [-81.25, 19.3],
+  BMU: [-64.78, 32.3],
+  SPM: [-56.3, 46.9],
+  FRO: [-6.91, 62.0],
+  IMN: [-4.53, 54.23],
+  JEY: [-2.13, 49.21],
+  GGY: [-2.58, 49.45],
+  ALA: [19.93, 60.18],
+  HKG: [114.17, 22.32],
+  MAC: [113.55, 22.2],
+  GUM: [144.79, 13.44],
+  MNP: [145.75, 15.18],
+  ASM: [-170.7, -14.28],
+  WSM: [-172.1, -13.76],
+  TON: [-175.2, -21.18],
+  NFK: [167.95, -29.03],
+  PYF: [-149.43, -17.68],
+  SGS: [-36.6, -54.4],
+  CCK: [96.83, -12.17],
+  ATF: [69.35, -49.3],
+  HMD: [73.5, -53.1],
+  FLK: [-59.5, -51.75],
+  ATA: [0, -80],
 };
 
 const countries = [];
@@ -193,12 +206,30 @@ for (const [i, c] of iso1.entries()) {
   const NOTES = {
     SRB: 'A Sérvia não reconhece a independência declarada pelo Kosovo em 2008 e o considera sua província autônoma de Kosovo e Metohija (RS-KM na ISO 3166-2).',
   };
-  countries.push({ iso: c.alpha_3, iso2: c.alpha_2, name: namesPt[i], d, cx: r1(best.cx), cy: r1(best.cy), area: Math.round(total), ...(NOTES[c.alpha_3] ? { note: NOTES[c.alpha_3] } : {}) });
+  countries.push({
+    iso: c.alpha_3,
+    iso2: c.alpha_2,
+    name: namesPt[i],
+    d,
+    cx: r1(best.cx),
+    cy: r1(best.cy),
+    area: Math.round(total),
+    ...(NOTES[c.alpha_3] ? { note: NOTES[c.alpha_3] } : {}),
+  });
 }
 // Kosovo: fora da ISO 3166-1, com o código provisório XK (usado pela UE e pelo próprio país)
 {
   const rings = shapes.get('XKX') ?? [];
-  const d = rings.map(({ pts }) => 'M' + simplifyRing(pts, 0.18).map(([x, y]) => `${r1(x)} ${r1(y)}`).join('L') + 'Z').join('');
+  const d = rings
+    .map(
+      ({ pts }) =>
+        'M' +
+        simplifyRing(pts, 0.18)
+          .map(([x, y]) => `${r1(x)} ${r1(y)}`)
+          .join('L') +
+        'Z',
+    )
+    .join('');
   const [x, y] = toSvg([20.9, 42.6]);
   countries.push({
     iso: 'XKX',
@@ -209,8 +240,7 @@ for (const [i, c] of iso1.entries()) {
     cy: r1(y),
     area: 10,
     disputed: true,
-    note:
-      'Declarou independência da Sérvia em 17 de fevereiro de 2008. É reconhecido como Estado por parte dos países-membros da ONU e não é reconhecido por outros, entre eles a Sérvia. Em 2010, um parecer consultivo da Corte Internacional de Justiça concluiu que a declaração de independência não violou o direito internacional. A ISO 3166-1 não atribui código ao Kosovo; «XK» é um código provisório usado por instituições como a União Europeia. Na ISO 3166-2, a região consta como a província autônoma sérvia de Kosovo-Metohija (RS-KM).',
+    note: 'Declarou independência da Sérvia em 17 de fevereiro de 2008. É reconhecido como Estado por parte dos países-membros da ONU e não é reconhecido por outros, entre eles a Sérvia. Em 2010, um parecer consultivo da Corte Internacional de Justiça concluiu que a declaração de independência não violou o direito internacional. A ISO 3166-1 não atribui código ao Kosovo; «XK» é um código provisório usado por instituições como a União Europeia. Na ISO 3166-2, a região consta como a província autônoma sérvia de Kosovo-Metohija (RS-KM).',
   });
 }
 countries.sort((a, b) => b.area - a.area);
@@ -243,12 +273,31 @@ writeFileSync('src/data/mapa-mundi.ts', mapTs);
 
 // ---------- ISO 3166-2 ----------
 const TYPE_PT = {
-  Region: 'região', Province: 'província', State: 'estado', County: 'condado', Department: 'departamento', District: 'distrito',
-  Municipality: 'município', 'Autonomous province': 'província autônoma', 'Autonomous region': 'região autônoma',
-  'Autonomous territorial unit': 'unidade territorial autônoma', 'Territorial unit': 'unidade territorial', Republic: 'república',
-  City: 'cidade', 'Capital city': 'capital', 'Capital district': 'distrito da capital', Oblast: 'óblast', Prefecture: 'prefeitura',
-  'Autonomous community': 'comunidade autônoma', 'Federal district': 'distrito federal', Territory: 'território', Canton: 'cantão',
-  Governorate: 'província (governorado)', Parish: 'paróquia', Island: 'ilha', 'Metropolitan region': 'região metropolitana',
+  Region: 'região',
+  Province: 'província',
+  State: 'estado',
+  County: 'condado',
+  Department: 'departamento',
+  District: 'distrito',
+  Municipality: 'município',
+  'Autonomous province': 'província autônoma',
+  'Autonomous region': 'região autônoma',
+  'Autonomous territorial unit': 'unidade territorial autônoma',
+  'Territorial unit': 'unidade territorial',
+  Republic: 'república',
+  City: 'cidade',
+  'Capital city': 'capital',
+  'Capital district': 'distrito da capital',
+  Oblast: 'óblast',
+  Prefecture: 'prefeitura',
+  'Autonomous community': 'comunidade autônoma',
+  'Federal district': 'distrito federal',
+  Territory: 'território',
+  Canton: 'cantão',
+  Governorate: 'província (governorado)',
+  Parish: 'paróquia',
+  Island: 'ilha',
+  'Metropolitan region': 'região metropolitana',
 };
 const byCountry = {};
 for (const [i, s] of iso2.entries()) {
@@ -264,4 +313,6 @@ export const ISO_3166_2: Record<string, Subdivision[]> = ${JSON.stringify(byCoun
 `;
 writeFileSync('src/data/iso-3166-2.ts', subTs);
 
-console.log(`✅ mapa: ${countries.length} (${countries.filter((c) => c.d).length} com contorno), ${(mapTs.length / 1024).toFixed(0)} KB · ISO 3166-2: ${iso2.length} subdivisões, ${(subTs.length / 1024).toFixed(0)} KB`);
+console.log(
+  `✅ mapa: ${countries.length} (${countries.filter((c) => c.d).length} com contorno), ${(mapTs.length / 1024).toFixed(0)} KB · ISO 3166-2: ${iso2.length} subdivisões, ${(subTs.length / 1024).toFixed(0)} KB`,
+);

@@ -1,7 +1,7 @@
 // Teste de ponta a ponta do mapa (ISO 3166-1 e 3166-3) e das variantes.
 // Uso: node scripts/fluxo-mapa.mjs   (servidor em http://localhost:8081)
 import { chromium } from 'playwright-core';
-import { existsSync, mkdirSync, readdirSync } from 'node:fs';
+import { existsSync, mkdirSync, readdirSync, readFileSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { join } from 'node:path';
 
@@ -35,11 +35,52 @@ await page.waitForTimeout(2500);
 if ((await selected()) !== 'País selecionado: Romênia') throw new Error('Romênia não veio selecionada');
 await shot('romeno');
 
-// clique num país grande do mapa
-const pb = await page.locator('svg:has(rect) path').nth(1).boundingBox();
-await page.mouse.click(pb.x + pb.width / 2, pb.y + pb.height / 2);
-await page.waitForTimeout(600);
-if ((await selected()) === 'País selecionado: Romênia') throw new Error('clique no mapa não trocou o país');
+// ordem dos idiomas: o estudado primeiro, depois os parentes mais próximos
+const chips = await page.locator('text=/^(Romeno|Espanhol|Português|Inglês|Russo|Japonês|Coreano|Finlandês|Estoniano)$/').allTextContents();
+if (chips.slice(0, 4).join() !== 'Romeno,Espanhol,Português,Inglês') throw new Error('ordem dos idiomas: ' + chips.join());
+
+// toque num ponto do mapa (coordenadas do mapa → pixels, pelo viewBox atual)
+const WORLD = readFileSync('src/data/mapa-mundi.ts', 'utf8');
+const centroid = (iso) => {
+  const m = WORLD.match(new RegExp(`"iso":"${iso}"[^}]*?"cx":([\\d.]+),"cy":([\\d.]+)`));
+  return [+m[1], +m[2]];
+};
+const tapMap = async ([x, y]) => {
+  const svg = page.locator('svg:has(rect)').first();
+  const [vx, vy, vw, vh] = (await svg.getAttribute('viewBox')).split(' ').map(Number);
+  const b = await svg.boundingBox();
+  await page.mouse.click(b.x + ((x - vx) / vw) * b.width, b.y + ((y - vy) / vh) * b.height);
+};
+const pathCount = () => page.locator('svg:has(rect) path').count();
+const before = await pathCount();
+await tapMap(centroid('ROU'));
+await page.getByLabel('Voltar ao mapa-múndi').waitFor({ timeout: 5000 });
+await page.waitForFunction((n) => document.querySelectorAll('svg path').length > n + 30, before, { timeout: 15000 });
+await page.waitForTimeout(800);
+const vb = (await page.locator('svg:has(rect)').first().getAttribute('viewBox')).split(' ').map(Number);
+if (vb[2] > 60) throw new Error('não aproximou na Romênia: ' + vb.join(' '));
+await shot('zoom-romenia');
+// toque em Cluj (centro vindo do arquivo de subdivisões)
+const cj = JSON.parse(readFileSync('assets/geo/ROU.geo', 'utf8')).find((x) => x[0] === 'RO-CJ');
+await tapMap([cj[3], cj[4]]);
+await page.locator('[aria-label="Subdivisão selecionada: Cluj"]').waitFor({ timeout: 5000 });
+await shot('cluj');
+// Ucrânia: só as regiões onde se fala romeno ficam em destaque
+await tapMap(centroid('UKR'));
+await page.waitForFunction(() => [...document.querySelectorAll('[aria-label^="País selecionado"]')].some((e) => e.getAttribute('aria-label').includes('Ucrânia')), null, { timeout: 5000 });
+await page.waitForTimeout(1500);
+await shot('zoom-ucrania');
+await page.getByLabel('Voltar ao mapa-múndi').click();
+await page.waitForTimeout(800);
+if ((await page.locator('svg:has(rect)').first().getAttribute('viewBox')).split(' ').map(Number)[2] < 300) throw new Error('não voltou ao mundo');
+// Brasil: português (oficial) antes das comunidades
+await tapMap(centroid('BRA'));
+await page.waitForTimeout(900);
+const langs = await page.locator('text=/^(🇧🇷 Português|🇪🇸 Espanhol|🇯🇵 Japonês)$/').allTextContents();
+if (!langs[0]?.includes('Português')) throw new Error('ordem no Brasil: ' + langs.join());
+await shot('brasil');
+await page.getByLabel('Voltar ao mapa-múndi').click();
+
 
 // ISO 3166-3
 await click('Já existiram · ISO 3166-3');

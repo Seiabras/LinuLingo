@@ -1,13 +1,13 @@
-import { useMemo, useState } from 'react';
-import { LogBox, Pressable, ScrollView, Text, View } from 'react-native';
+import { useMemo, useRef, useState } from 'react';
+import { LogBox, Pressable, ScrollView, Text, useWindowDimensions, View } from 'react-native';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import { scheduleOnRN } from 'react-native-worklets';
-import Svg, { Circle, G, Path, Rect } from 'react-native-svg';
-import { ArrowLeft, Minus, Plus } from 'lucide-react-native';
+import Svg, { Circle, G, Path, Rect, Text as SvgText } from 'react-native-svg';
+import { ArrowLeft, Globe, Minus, Plus } from 'lucide-react-native';
 import { Screen, Button, Card, Chip, SectionTitle, SpeakButton } from '@/components/ui';
 import { useApp } from '@/services/app-state';
 import { MAP_H, MAP_W, WORLD, type MapCountry } from '@/data/mapa-mundi';
-import { flagOf, languagesIn, MAP_LANGUAGES, ROLE_LABEL, type LangRole } from '@/data/onde-se-fala';
+import { byKinship, flagOf, languagesIn, MAP_LANGUAGES, ROLE_LABEL, type LangRole } from '@/data/onde-se-fala';
 import { FAUNA_MUSICA } from '@/data/fauna-musica';
 import { ISO_3166_2 } from '@/data/iso-3166-2';
 import { FORMER_COUNTRIES, KIND_LABEL, type FormerCountry } from '@/data/iso-3166-3';
@@ -15,8 +15,8 @@ import { isAvailable } from '@/data/idiomas';
 import { updateUser } from '@/database/queries';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
-
-type Box = { x: number; y: number; w: number; h: number };
+import { fitBox, focusBox, ringBoxes, type Box, type SubShape } from '@/services/mapa-geo';
+import { hasSubdivisions, loadSubdivisions } from '@/services/subdivisoes';
 
 // Na web o react-native-svg repassa os props de toque (onResponder…) ao HTML: o toque funciona,
 // mas o React avisa em modo de desenvolvimento. Aviso conhecido e inofensivo.
@@ -41,11 +41,14 @@ const OPACITY: Record<LangRole, number> = { oficial: 1, regional: 0.55, diaspora
 export default function MapScreen() {
   const { db, pack, refresh, variant, setVariant } = useApp();
   const dark = useIsDark();
-  const ordered = useMemo(() => [...MAP_LANGUAGES].sort((a, b) => (a.code === pack.code ? -1 : b.code === pack.code ? 1 : 0)), [pack.code]);
+  const ordered = useMemo(() => byKinship(pack.code), [pack.code]);
   const [langCode, setLangCode] = useState(pack.code);
   const lang = MAP_LANGUAGES.find((l) => l.code === langCode) ?? MAP_LANGUAGES[0];
   const [selected, setSelected] = useState<MapCountry | null>(() => WORLD.find((c) => c.iso === (pack.code === 'ro' ? 'ROU' : '')) ?? null);
   const [size, setSize] = useState({ w: 360, h: 240 });
+  // mais alto em telas largas (tablet e computador)
+  const { width: winW } = useWindowDimensions();
+  const mapHeight = Math.round(Math.min(440, Math.max(260, Math.min(winW, 680) * 0.6)));
   const aspect = size.h / size.w;
   const [box, setBox] = useState<Box>(REGIONS[0][1]);
   const [start, setStart] = useState<Box>(box);
@@ -53,17 +56,79 @@ export default function MapScreen() {
   const [former, setFormer] = useState<FormerCountry | null>(null);
   const formerHighlight = useMemo(() => new Set(former?.successors ?? []), [former]);
   const FORMER_COLOR = '#D97706';
+  // país em foco (aproximado) e as subdivisões dele, carregadas sob demanda
+  const [focus, setFocus] = useState<MapCountry | null>(null);
+  const [subs, setSubs] = useState<{ iso: string; list: SubShape[] } | null>(null);
+  const [subsState, setSubsState] = useState<'idle' | 'loading' | 'error'>('idle');
+  const [subSel, setSubSel] = useState<SubShape | null>(null);
+  const [worldBox, setWorldBox] = useState<Box>(REGIONS[0][1]);
+  const anim = useRef<number | null>(null);
+  const request = useRef(0);
 
   const roles = useMemo(() => new Map(lang.countries.map((c) => [c.iso, c])), [lang]);
   const view = { ...box, h: box.w * aspect };
 
   const clamp = (b: Box): Box => {
-    const w = Math.min(MAP_W, Math.max(40, b.w));
+    const w = Math.min(MAP_W, Math.max(0.3, b.w));
     const h = w * aspect;
     return { x: Math.min(MAP_W - w, Math.max(0, b.x)), y: Math.min(Math.max(0, MAP_H - h), Math.max(0, b.y)), w, h };
   };
   const zoom = (f: number) => setBox((b) => clamp({ x: b.x + (b.w * (1 - f)) / 2, y: b.y + (b.w * aspect * (1 - f)) / 2, w: b.w * f, h: b.h }));
+  /** Aproximação suave (como no Google Maps) até a caixa pedida. */
+  const animateTo = (target: Box) => {
+    if (anim.current !== null) cancelAnimationFrame(anim.current);
+    const to = clamp(target);
+    const from = box;
+    let t0 = -1;
+    const step = (t: number) => {
+      if (t0 < 0) t0 = t;
+      const k = Math.min(1, (t - t0) / 480);
+      const e = 1 - (1 - k) ** 3;
+      // interpola a largura em escala logarítmica: o zoom parece constante
+      const w = from.w * (to.w / from.w) ** e;
+      const cx = from.x + from.w / 2 + (to.x + to.w / 2 - from.x - from.w / 2) * e;
+      const cy = from.y + (from.w * aspect) / 2 + (to.y + (to.w * aspect) / 2 - from.y - (from.w * aspect) / 2) * e;
+      setBox(clamp({ x: cx - w / 2, y: cy - (w * aspect) / 2, w, h: w * aspect }));
+      anim.current = k < 1 ? requestAnimationFrame(step) : null;
+    };
+    anim.current = requestAnimationFrame(step);
+  };
+
+  /** Toque num país: seleciona, aproxima e carrega as subdivisões. */
+  const selectCountry = (c: MapCountry) => {
+    setSelected(c);
+    setSubSel(null);
+    if (focus?.iso === c.iso || (!c.d && !hasSubdivisions(c.iso))) return;
+    setFocus(c);
+    const id = ++request.current;
+    const own = c.d ? focusBox(ringBoxes(c.d)) : null;
+    animateTo(fitBox(own ?? { x: c.cx - 1, y: c.cy - 1, w: 2, h: 2 }, aspect));
+    setSubsState('loading');
+    loadSubdivisions(c.iso)
+      .then((list) => {
+        if (id !== request.current) return;
+        setSubs({ iso: c.iso, list });
+        setSubsState('idle');
+        // quem só tinha marcador no mapa-múndi ganha o enquadramento pelas subdivisões
+        if (!c.d && list.length) {
+          const b = focusBox(list.flatMap((sh) => ringBoxes(sh.d)));
+          if (b) animateTo(fitBox(b, aspect));
+        }
+      })
+      .catch(() => id === request.current && setSubsState('error'));
+  };
+
+  const backToWorld = () => {
+    request.current++;
+    setFocus(null);
+    setSubSel(null);
+    setSubsState('idle');
+    animateTo(worldBox);
+  };
+
   const goRegion = (r: Box) => {
+    setFocus(null);
+    setSubSel(null);
     // mantém a região inteira visível na proporção da tela
     const w = Math.max(r.w, r.h / aspect);
     setBox(clamp({ x: r.x + r.w / 2 - w / 2, y: r.y + r.h / 2 - (w * aspect) / 2, w, h: w * aspect }));
@@ -79,7 +144,9 @@ export default function MapScreen() {
     const a = h / w;
     const vw = Math.min(MAP_W, MAP_H / a);
     const cx = home?.cx ?? MAP_W / 2;
-    setBox({ x: Math.min(MAP_W - vw, Math.max(0, cx - vw / 2)), y: 0, w: vw, h: vw * a });
+    const world = { x: Math.min(MAP_W - vw, Math.max(0, cx - vw / 2)), y: 0, w: vw, h: vw * a };
+    setBox(world);
+    setWorldBox(world);
   };
   const onPanStart = () => setStart(box);
   const onPan = (dx: number, dy: number) => {
@@ -103,7 +170,35 @@ export default function MapScreen() {
   const land = dark ? '#334155' : '#CBD5E1';
   const sea = dark ? '#0B1220' : '#E0F2FE';
   const stroke = dark ? '#0F172A' : '#FFFFFF';
-  const markerR = Math.max(1.2, view.w / 180);
+  const markerR = view.w / 180;
+  const px = view.w / size.w; // unidades do mapa por pixel da tela
+
+  // subdivisões do país em foco: cor pelo idioma escolhido (as regiões onde ele é falado se destacam)
+  const focusSubs = focus && subs?.iso === focus.iso ? subs.list : null;
+  const focusRole = focus && mode === 'hoje' ? roles.get(focus.iso) : undefined;
+  const regionCodes = new Set(focusRole?.subdivisions ?? []);
+  const inRegion = (sh: SubShape) => regionCodes.has(sh.code) || regionCodes.has(sh.parent);
+  const subFill = (sh: SubShape): [string, number] => {
+    if (mode === 'antigos') return formerHighlight.has(focus?.iso ?? '') ? [FORMER_COLOR, 1] : [land, 1];
+    if (!focusRole) return [land, 1];
+    if (regionCodes.size) return inRegion(sh) ? [lang.color, 0.9] : [land, 1];
+    return [lang.color, OPACITY[focusRole.role]];
+  };
+  // rótulos: dos maiores para os menores, pulando os que se sobreporiam (como no Google Maps)
+  const labels: { sh: SubShape; text: string }[] = [];
+  if (focusSubs && focus) {
+    const placed: Box[] = [];
+    for (const sh of [...focusSubs].sort((a, b) => b.area - a.area)) {
+      if (sh.area / (px * px) < 450 || labels.length >= 40) continue;
+      const text = subLabel(focus.iso2, sh);
+      const w = text.length * 6 * px;
+      const r = { x: sh.cx - w / 2, y: sh.cy - 7 * px, w, h: 12 * px };
+      if (placed.some((q) => r.x < q.x + q.w && q.x < r.x + r.w && r.y < q.y + q.h && q.y < r.y + r.h)) continue;
+      placed.push(r);
+      labels.push({ sh, text });
+    }
+  }
+  const halo = dark ? '#0F172A' : '#FFFFFF';
 
   const spoken = selected ? languagesIn(selected.iso) : [];
   const nature = selected ? FAUNA_MUSICA[selected.iso] : undefined;
@@ -164,7 +259,7 @@ export default function MapScreen() {
 
       <View
         className="mt-3 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700"
-        style={{ height: 260 }}
+        style={{ height: mapHeight }}
         onLayout={(e) => onLayout(e.nativeEvent.layout.width, e.nativeEvent.layout.height)}
       >
         <GestureDetector gesture={gestures}>
@@ -184,11 +279,43 @@ export default function MapScreen() {
                       stroke={isSel ? (dark ? '#FBBF24' : '#0F172A') : stroke}
                       strokeWidth={isSel ? view.w / 400 : view.w / 1600}
                       strokeDasharray={c.disputed ? `${view.w / 300} ${view.w / 400}` : undefined}
-                      onPress={() => setSelected(c)}
+                      onPress={() => selectCountry(c)}
                     />
                   );
                 })}
               </G>
+              {focusSubs && (
+                <G>
+                  {focusSubs.map((sh, i) => {
+                    const [fill, op] = subFill(sh);
+                    return (
+                      <Path
+                        key={`s-${i}`}
+                        d={sh.d}
+                        fill={fill}
+                        fillOpacity={subSel === sh ? Math.min(1, op + 0.25) : op}
+                        stroke={stroke}
+                        strokeWidth={px}
+                        onPress={() => {
+                          setSelected(focus);
+                          setSubSel(sh);
+                        }}
+                      />
+                    );
+                  })}
+                  {subSel && <Path d={subSel.d} fill="none" stroke={dark ? '#FBBF24' : '#0F172A'} strokeWidth={2.5 * px} pointerEvents="none" />}
+                  {labels.map(({ sh, text }, i) => (
+                    <G key={`l-${i}`} pointerEvents="none">
+                      <SvgText x={sh.cx} y={sh.cy} fontSize={10 * px} fontWeight="bold" textAnchor="middle" stroke={halo} strokeWidth={3 * px} fill={halo}>
+                        {text}
+                      </SvgText>
+                      <SvgText x={sh.cx} y={sh.cy} fontSize={10 * px} fontWeight="bold" textAnchor="middle" fill={dark ? '#E2E8F0' : '#1E293B'}>
+                        {text}
+                      </SvgText>
+                    </G>
+                  ))}
+                </G>
+              )}
               {WORLD.filter((c) => !c.d || (c.area < 12 && (mode === 'hoje' ? roles.has(c.iso) : formerHighlight.has(c.iso)))).map((c) => {
                 const role = mode === 'hoje' ? roles.get(c.iso)?.role : formerHighlight.has(c.iso) ? 'oficial' : undefined;
                 return (
@@ -201,13 +328,30 @@ export default function MapScreen() {
                     fillOpacity={role ? Math.max(0.5, OPACITY[role]) : 1}
                     stroke={selected?.iso === c.iso ? '#FBBF24' : stroke}
                     strokeWidth={markerR / 3}
-                    onPress={() => setSelected(c)}
+                    onPress={() => selectCountry(c)}
                   />
                 );
               })}
             </Svg>
           </View>
         </GestureDetector>
+        {focus && (
+          <Pressable
+            accessibilityLabel="Voltar ao mapa-múndi"
+            onPress={backToWorld}
+            className="absolute left-2 top-2 flex-row items-center gap-1.5 rounded-lg bg-white/90 px-2.5 py-2 dark:bg-slate-800/90"
+          >
+            <Globe size={16} color={dark ? '#E2E8F0' : '#334155'} />
+            <Text className="text-sm font-bold text-slate-700 dark:text-slate-200">Mundo</Text>
+          </Pressable>
+        )}
+        {subsState !== 'idle' && (
+          <View className="absolute bottom-2 left-2 rounded-lg bg-white/90 px-2 py-1 dark:bg-slate-800/90">
+            <Text className="text-xs text-slate-600 dark:text-slate-300">
+              {subsState === 'loading' ? 'Carregando subdivisões…' : 'Não deu para carregar as subdivisões.'}
+            </Text>
+          </View>
+        )}
         <View className="absolute right-2 top-2 gap-1">
           <Pressable
             accessibilityLabel="Aproximar"
@@ -276,7 +420,7 @@ export default function MapScreen() {
                               key={iso}
                               onPress={() => {
                                 setMode('hoje');
-                                setSelected(c);
+                                selectCountry(c);
                               }}
                               className="rounded-lg bg-amber-100 px-2 py-1 dark:bg-amber-950"
                             >
@@ -305,13 +449,17 @@ export default function MapScreen() {
               </View>
             ))}
           </View>
-          <Text className="mt-1 text-xs text-slate-400">Arraste para mover, use a pinça ou os botões para aproximar e toque num país.</Text>
+          <Text className="mt-1 text-xs text-slate-400">
+            Toque num país para aproximar e ver as subdivisões; toque numa delas para saber o nome e o código. Arraste para mover e use a pinça ou os botões
+            para o zoom.
+          </Text>
 
           {selected ? (
             <Card className="mt-4 gap-3">
               <Text accessibilityLabel={`País selecionado: ${selected.name}`} className="text-xl font-extrabold text-slate-900 dark:text-white">
                 {flagOf(selected.iso2)} {selected.name}
               </Text>
+              {subSel && selected.iso === focus?.iso && <SubCard iso2={selected.iso2} sub={subSel} spoken={spoken} onClose={() => setSubSel(null)} />}
               {spoken.length === 0 ? (
                 <Text className="text-slate-600 dark:text-slate-400">Nenhum dos idiomas do app é falado aqui em grande escala.</Text>
               ) : (
@@ -373,7 +521,19 @@ export default function MapScreen() {
                   </Text>
                 </Pressable>
               ))}
-              <Subdivisions iso2={selected.iso2} highlight={spoken.flatMap((x) => x.spoken.subdivisions ?? [])} />
+              <Subdivisions
+                iso2={selected.iso2}
+                highlight={spoken.flatMap((x) => x.spoken.subdivisions ?? [])}
+                onPick={
+                  focusSubs && selected.iso === focus?.iso
+                    ? (code) => {
+                        const sh = focusSubs.find((x) => x.code === code) ?? focusSubs.find((x) => x.parent === code);
+                        if (sh) setSubSel(sh);
+                        return !!sh;
+                      }
+                    : undefined
+                }
+              />
               {selected.note && <Text className="text-xs text-slate-500">ℹ️ {selected.note}</Text>}
 
               {nature && (
@@ -398,8 +558,46 @@ function subName(iso2: string, code: string): string {
   return ISO_3166_2[iso2]?.find(([c]) => c === code)?.[1] ?? code;
 }
 
+/** Nome curto para o rótulo no mapa (o nome ISO em pt-BR; senão, o do Natural Earth). */
+function subLabel(iso2: string, sh: SubShape): string {
+  const name = sh.code ? subName(iso2, sh.code) : sh.name;
+  return name.split(',')[0];
+}
+
+/** A subdivisão tocada: nome, código ISO 3166-2, tipo e quais idiomas do app são falados ali. */
+function SubCard({ iso2, sub, spoken, onClose }: { iso2: string; sub: SubShape; spoken: ReturnType<typeof languagesIn>; onClose: () => void }) {
+  const iso = sub.code ? ISO_3166_2[iso2]?.find(([c]) => c === sub.code) : undefined;
+  const parent = sub.parent ? ISO_3166_2[iso2]?.find(([c]) => c === sub.parent) : undefined;
+  const here = spoken.filter(({ spoken: s }) => s.subdivisions?.some((c) => c === sub.code || c === sub.parent));
+  return (
+    <View className="gap-1.5 rounded-xl border-2 border-amber-400 bg-amber-50 p-3 dark:bg-amber-950/40">
+      <View className="flex-row items-start gap-2">
+        <Text accessibilityLabel={`Subdivisão selecionada: ${iso?.[1] ?? sub.name}`} className="flex-1 text-lg font-extrabold text-slate-900 dark:text-white">
+          📍 {iso?.[1] ?? sub.name}
+        </Text>
+        <Pressable accessibilityLabel="Fechar subdivisão" onPress={onClose} hitSlop={10}>
+          <Text className="text-lg text-slate-400">✕</Text>
+        </Pressable>
+      </View>
+      <View className="flex-row flex-wrap gap-2">
+        {iso ? <Chip label={`${iso[0]} · ${iso[2]}`} tone="blue" /> : <Chip label="sem código ISO 3166-2 próprio" />}
+        {parent && <Chip label={`parte de ${parent[1]} (${parent[0]})`} tone="amber" />}
+      </View>
+      {!iso && !parent && (
+        <Text className="text-xs text-slate-500">Divisão desenhada pelo Natural Earth que não tem um código equivalente na lista ISO atual.</Text>
+      )}
+      {sub.note && <Text className="text-sm text-slate-600 dark:text-slate-400">ℹ️ {sub.note}</Text>}
+      {here.map(({ lang: l, spoken: s }) => (
+        <Text key={l.code} className="text-sm font-semibold text-slate-800 dark:text-slate-200">
+          {l.flag} Aqui se fala {l.name.toLowerCase()} ({ROLE_LABEL[s.role]}).
+        </Text>
+      ))}
+    </View>
+  );
+}
+
 /** Subdivisões ISO 3166-2 do país (lista completa, recolhível). */
-function Subdivisions({ iso2, highlight }: { iso2: string; highlight: string[] }) {
+function Subdivisions({ iso2, highlight, onPick }: { iso2: string; highlight: string[]; onPick?: (code: string) => boolean }) {
   const [open, setOpen] = useState(false);
   const list = ISO_3166_2[iso2] ?? [];
   if (!list.length) return null;
@@ -413,12 +611,13 @@ function Subdivisions({ iso2, highlight }: { iso2: string; highlight: string[] }
       {open && (
         <View className="flex-row flex-wrap gap-1">
           {list.map(([code, name, type]) => (
-            <Text
-              key={code}
-              className={`overflow-hidden rounded-md px-1.5 py-0.5 text-xs ${highlight.includes(code) ? 'bg-conecta text-white' : 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300'}`}
-            >
-              {name} · {code} · {type}
-            </Text>
+            <Pressable key={code} disabled={!onPick} onPress={() => onPick?.(code)}>
+              <Text
+                className={`overflow-hidden rounded-md px-1.5 py-0.5 text-xs ${highlight.includes(code) ? 'bg-conecta text-white' : 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300'}`}
+              >
+                {name} · {code} · {type}
+              </Text>
+            </Pressable>
           ))}
         </View>
       )}

@@ -66,7 +66,10 @@ for (const pack of Object.values(PACKS)) {
           if (c.next) assert.ok(st.nodes[c.next], `${st.id}/${id} → ${c.next} inexistente`);
         }
       }
-      assert.ok(endingIds(st).some((e) => st.nodes[e].ending?.tone === 'bom'), `${st.id} sem final bom`);
+      assert.ok(
+        endingIds(st).some((e) => st.nodes[e].ending?.tone === 'bom'),
+        `${st.id} sem final bom`,
+      );
     }
   });
 
@@ -77,7 +80,8 @@ for (const pack of Object.values(PACKS)) {
       assert.ok((SUBLEVELS as readonly string[]).includes(g.level), `${g.id}: nível ${g.level}`);
       assert.ok(g.sections.length > 0, g.id);
       for (const q of g.quiz) assert.ok(q.options.includes(q.answer), `${g.id}: «${q.answer}» fora das opções`);
-      for (const sec of g.sections) if (sec.table) for (const r of sec.table.rows) assert.equal(r.length, sec.table.head.length, `${g.id}: tabela com colunas desiguais`);
+      for (const sec of g.sections)
+        if (sec.table) for (const r of sec.table.rows) assert.equal(r.length, sec.table.head.length, `${g.id}: tabela com colunas desiguais`);
     }
   });
 
@@ -95,7 +99,11 @@ for (const pack of Object.values(PACKS)) {
 
 test('mapa: códigos ISO 3166-1/2 usados em «onde se fala» existem', () => {
   const countries = new Set(WORLD.map((c) => c.iso));
-  const subs = new Set(Object.values(ISO_3166_2).flat().map(([code]) => code));
+  const subs = new Set(
+    Object.values(ISO_3166_2)
+      .flat()
+      .map(([code]) => code),
+  );
   assert.ok(WORLD.length >= 249, 'mapa sem todos os países da ISO 3166-1');
   for (const l of MAP_LANGUAGES)
     for (const c of l.countries) {
@@ -106,7 +114,9 @@ test('mapa: códigos ISO 3166-1/2 usados em «onde se fala» existem', () => {
 
 test('ISO 3166-3: os 31 códigos oficiais e sucessores que existem no mapa', async () => {
   const { readFileSync } = await import('node:fs');
-  const official = JSON.parse(readFileSync('/usr/share/iso-codes/json/iso_3166-3.json', 'utf8'))['3166-3'].map((x: { alpha_4: string }) => x.alpha_4).sort();
+  const official = JSON.parse(readFileSync('/usr/share/iso-codes/json/iso_3166-3.json', 'utf8'))
+    ['3166-3'].map((x: { alpha_4: string }) => x.alpha_4)
+    .sort();
   assert.deepEqual(FORMER_COUNTRIES.map((f) => f.alpha4).sort(), official);
   const countries = new Set(WORLD.map((c) => c.iso));
   for (const f of FORMER_COUNTRIES) for (const s of f.successors) assert.ok(countries.has(s), `${f.alpha4}: sucessor ${s} fora do mapa`);
@@ -115,6 +125,29 @@ test('ISO 3166-3: os 31 códigos oficiais e sucessores que existem no mapa', asy
 test('seletor agrupa por família e ramo', () => {
   const g = groupByLineage(LANGUAGES);
   assert.deepEqual(Object.keys(g).sort(), ['Coreânico', 'Indo-europeu', 'Japônico', 'Urálico']);
-  assert.deepEqual(g['Indo-europeu']['Itálico'].map((l) => l.code), ['ro', 'es']);
+  assert.deepEqual(
+    g['Indo-europeu']['Itálico'].map((l) => l.code),
+    ['ro', 'es'],
+  );
   assert.deepEqual(g['Urálico']['Fínico'].map((l) => l.code).sort(), ['et', 'fi']);
+});
+
+test('subdivisões: um arquivo por país do mapa e as regiões de «onde se fala» desenhadas', async () => {
+  const { readFileSync, readdirSync } = await import('node:fs');
+  const files = new Set(readdirSync('assets/geo').map((f) => f.replace('.geo', '')));
+  const index = readFileSync('src/data/subdivisoes-geo.ts', 'utf8');
+  // a Antártida não tem subdivisões (só o marcador no mapa)
+  for (const c of WORLD.filter((w) => w.iso !== 'ATA')) {
+    assert.ok(files.has(c.iso), `sem subdivisões: ${c.iso}`);
+    assert.ok(index.includes(`${c.iso}: require(`), `fora do índice: ${c.iso}`);
+  }
+  for (const l of MAP_LANGUAGES)
+    for (const s of l.countries)
+      for (const code of s.subdivisions ?? []) {
+        const shapes = JSON.parse(readFileSync(`assets/geo/${s.iso}.geo`, 'utf8')) as [string, string, string, number, number, number, string][];
+        assert.ok(
+          shapes.some((x) => x[0] === code || x[6] === code),
+          `${l.code}: ${code} não aparece no desenho de ${s.iso}`,
+        );
+      }
 });
