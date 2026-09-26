@@ -1,5 +1,6 @@
 import { Platform } from 'react-native';
 import * as Speech from 'expo-speech';
+import { Asset } from 'expo-asset';
 import { VOWEL_GROUPS } from './pitch';
 
 import { createAudioPlayer, type AudioPlayer } from 'expo-audio';
@@ -39,8 +40,14 @@ export function resetVoiceCache() {
 }
 
 let player: AudioPlayer | null = null;
+// na web tocamos pelo <audio> do navegador: dá para tratar o play() interrompido por outro áudio
+let webAudio: HTMLAudioElement | null = null;
 
 function stopClip() {
+  if (webAudio) {
+    webAudio.pause();
+    webAudio = null;
+  }
   if (!player) return;
   try {
     player.pause();
@@ -60,6 +67,17 @@ export function playNativeClip(text: string, locale: string, rate = 1): boolean 
   }
   Speech.stop();
   stopClip();
+  if (Platform.OS === 'web' && typeof Audio !== 'undefined') {
+    const a = new Audio(Asset.fromModule(clip.src).uri);
+    a.playbackRate = rate < 1 ? Math.max(0.5, rate) : 1;
+    webAudio = a;
+    a.onended = () => {
+      if (webAudio === a) webAudio = null;
+    };
+    // outro áudio pode interromper este antes de começar: não é erro
+    a.play().catch(() => {});
+    return true;
+  }
   try {
     const p = createAudioPlayer(clip.src);
     player = p;
