@@ -4,6 +4,10 @@ import assert from 'node:assert/strict';
 import { PACKS, LANGUAGES, groupByLineage } from './idiomas';
 import { endingIds, reachable } from '../services/stories';
 import { SUBLEVELS } from '../types';
+import { WORLD } from './mapa-mundi';
+import { ISO_3166_2 } from './iso-3166-2';
+import { MAP_LANGUAGES } from './onde-se-fala';
+import { FORMER_COUNTRIES } from './iso-3166-3';
 
 for (const pack of Object.values(PACKS)) {
   const words = new Set(pack.vocab.map((v) => v.word_target));
@@ -88,6 +92,25 @@ for (const pack of Object.values(PACKS)) {
     for (const s of pack.scenarios) for (const t of s.turns) assert.ok(t.suggestions.length && t.keywords.length, s.id);
   });
 }
+
+test('mapa: códigos ISO 3166-1/2 usados em «onde se fala» existem', () => {
+  const countries = new Set(WORLD.map((c) => c.iso));
+  const subs = new Set(Object.values(ISO_3166_2).flat().map(([code]) => code));
+  assert.ok(WORLD.length >= 249, 'mapa sem todos os países da ISO 3166-1');
+  for (const l of MAP_LANGUAGES)
+    for (const c of l.countries) {
+      assert.ok(countries.has(c.iso), `${l.code}: país ${c.iso} fora do mapa`);
+      for (const sd of c.subdivisions ?? []) assert.ok(subs.has(sd), `${l.code}: subdivisão ${sd} não existe`);
+    }
+});
+
+test('ISO 3166-3: os 31 códigos oficiais e sucessores que existem no mapa', async () => {
+  const { readFileSync } = await import('node:fs');
+  const official = JSON.parse(readFileSync('/usr/share/iso-codes/json/iso_3166-3.json', 'utf8'))['3166-3'].map((x: { alpha_4: string }) => x.alpha_4).sort();
+  assert.deepEqual(FORMER_COUNTRIES.map((f) => f.alpha4).sort(), official);
+  const countries = new Set(WORLD.map((c) => c.iso));
+  for (const f of FORMER_COUNTRIES) for (const s of f.successors) assert.ok(countries.has(s), `${f.alpha4}: sucessor ${s} fora do mapa`);
+});
 
 test('seletor agrupa por família e ramo', () => {
   const g = groupByLineage(LANGUAGES);

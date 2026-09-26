@@ -185,6 +185,7 @@ export default function ProfileScreen() {
 
       <SectionTitle>Ajuda</SectionTitle>
       <View className="gap-2">
+        <Button title="🗺️ Mapa: onde se fala" variant="ghost" onPress={() => router.push('/mapa')} />
         <Button title="🔊 Voz e microfone" variant="ghost" onPress={() => router.push('/voz')} />
         <Button title="🐧 Ver o tutorial do Linu" variant="ghost" onPress={() => router.push('/tutorial')} />
         <Button title="🎧 Créditos dos áudios" variant="ghost" onPress={() => router.push('/creditos')} />

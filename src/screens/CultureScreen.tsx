@@ -2,11 +2,15 @@ import { useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { router } from 'expo-router';
 import { ChevronDown, ChevronUp } from 'lucide-react-native';
-import { Screen, Card, SpeechBubble } from '@/components/ui';
+import { Screen, Card, SpeechBubble, SpeakButton } from '@/components/ui';
 import { CulturalGrammarCard } from '@/components/CulturalGrammarCard';
 import { Linu } from '@/components/Linu';
 import { useApp } from '@/services/app-state';
 import { useIsDark } from '@/services/theme';
+import { FAUNA_MUSICA, HOMELANDS } from '@/data/fauna-musica';
+import { WORLD } from '@/data/mapa-mundi';
+import { flagOf } from '@/data/onde-se-fala';
+import { VariantPanel } from '@/components/VariantPanel';
 
 /** Cultura & História: a genealogia do idioma e os cards «aprenda primeiro» de cada unidade. */
 export default function CultureScreen() {
@@ -40,11 +44,56 @@ export default function CultureScreen() {
         <Text className="text-sm text-slate-600 dark:text-slate-400">✍️ Escrita: {pack.lineage.writing}</Text>
       </Card>
 
+      <Pressable onPress={() => router.push('/mapa')} className="mt-3 flex-row items-center gap-3 rounded-2xl bg-conecta p-4 active:opacity-90">
+        <Text className="text-2xl">🗺️</Text>
+        <View className="flex-1">
+          <Text className="font-extrabold text-white">Onde se fala</Text>
+          <Text className="text-sm text-blue-100">Mapa-múndi clicável: países, regiões, animais e instrumentos</Text>
+        </View>
+        <Text className="text-xl text-white">›</Text>
+      </Pressable>
+
       <Pressable onPress={() => router.push('/historias')} className="mt-3 flex-row items-center gap-3 rounded-2xl border-2 border-conecta/30 bg-white p-4 active:opacity-80 dark:bg-slate-900">
         <Text className="text-2xl">📚</Text>
         <Text className="flex-1 font-semibold text-slate-800 dark:text-slate-100">Histórias interativas: cultura romena vivida pelo Linu, com vários finais.</Text>
         <Text className="text-xl text-conecta">›</Text>
       </Pressable>
+
+      {(pack.variants?.length ?? 0) > 1 && (
+        <>
+          <Text className="mb-2 mt-6 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">🌍 Variantes do {pack.name.toLowerCase()}</Text>
+          <VariantPanel />
+        </>
+      )}
+
+      <Text className="mb-2 mt-6 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">🐾🎵 Bichos e sons</Text>
+      <View className="gap-3">
+        {(HOMELANDS[pack.code] ?? []).map((iso) => {
+          const n = FAUNA_MUSICA[iso];
+          const c = WORLD.find((w) => w.iso === iso);
+          if (!n || !c) return null;
+          return (
+            <Card key={iso} className="gap-3">
+              <Text className="text-lg font-extrabold text-slate-900 dark:text-white">
+                {flagOf(c.iso2)} {c.name}
+              </Text>
+              {[...n.animals, ...n.instruments].map((it) => (
+                <View key={it.name} className="flex-row gap-3">
+                  <Text className="text-3xl">{it.emoji}</Text>
+                  <View className="flex-1 gap-0.5">
+                    <View className="flex-row flex-wrap items-center gap-2">
+                      <Text className="font-bold text-slate-900 dark:text-white">{it.name}</Text>
+                      {it.local && <Text className="italic text-conecta">{it.local}</Text>}
+                      {it.local && <SpeakButton text={it.local} locale={pack.speechLocale} size={14} />}
+                    </View>
+                    <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">{it.fact}</Text>
+                  </View>
+                </View>
+              ))}
+            </Card>
+          );
+        })}
+      </View>
 
       <Text className="mb-2 mt-6 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">Cards das unidades</Text>
       <View className="gap-3">

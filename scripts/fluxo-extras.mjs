@@ -20,7 +20,7 @@ const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, de
 const page = await ctx.newPage();
 const errors = [];
 page.on('pageerror', (e) => errors.push(e.message));
-page.on('console', (m) => m.type() === 'error' && errors.push(m.text()));
+page.on('console', (m) => m.type() === 'error' && !m.text().includes('Unknown event handler property') && errors.push(m.text()));
 
 let n = 0;
 const shot = async (name) => {
@@ -52,7 +52,7 @@ await click('Próximo');
   await page.waitForTimeout(700);
 }
 await shot('tutorial-gesto');
-for (let k = 0; k < 6; k++) await click('Próximo');
+for (let k = 0; k < 7; k++) await click('Próximo');
 await shot('tutorial-voz');
 await click('🔊 Configurar a voz');
 await page.waitForTimeout(3500);

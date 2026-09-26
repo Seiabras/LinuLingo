@@ -33,6 +33,8 @@ O seletor do Perfil agrupa os idiomas por família e ramo linguístico.
 - **Shadowing**: ouvir e repetir (depois ou junto com o modelo), com a onda e a curva de altura da voz ao vivo; compara o ritmo e a entonação do fim da frase (sim/não sobe; «ce, unde…» e afirmações descem).
 - **Palácio da memória**: os 3 gêneros moram em salas — 🔥 Forja (masc.), 🌊 Lago (fem.), 🦎 Jardim do Camaleão (neutro) —, com jogo «em que sala mora?» e mnemônicos próprios.
 - **Áudio de falantes nativos** nas palavras, do [Lingua Libre](https://lingualibre.org) (Wikimedia Commons, licenças livres; créditos no app em Perfil › Créditos dos áudios). Frases usam a voz do aparelho.
+- **Mapa-múndi «Onde se fala»**: os 249 países e territórios da ISO 3166-1 (mais o Kosovo, código provisório XK), as 5.046 subdivisões da ISO 3166-2 (as regiões onde cada língua é falada) e uma aba com os 31 países que deixaram de existir (ISO 3166-3), com minimapa dos sucessores. Cada país mostra as línguas, **animais nativos** e **instrumentos musicais** típicos.
+- **Variantes**: romeno da Romênia (padrão) e da **Moldávia** (46 diferenças de vocabulário, pronúncia, cultura e 3 histórias em Chișinău, Orheiul Vechi e Cricova).
 - **Conversação guiada**: café, hotel, bar com amigos, entrevista de emprego. O Linu avisa quando o tom não combina (ex.: «tu» com o recepcionista).
 - **Comunidade**: corrigir textos de outros alunos (+20 XP) e acompanhar os próprios envios.
 - **Gamificação**: ofensiva com congelamento, meta diária, XP da semana.
@@ -65,6 +67,14 @@ O reconhecimento de fala funciona no Chrome, Edge e Safari; no Firefox e no app 
 node scripts/baixar-audios.mjs ro   # precisa de ffmpeg; gera assets/audio/ro/*.mp3 e src/data/ro/audios.ts (com autor e licença)
 ```
 
+### Mapa
+
+```bash
+node scripts/gerar-mapa.mjs   # precisa do pacote iso-codes; gera src/data/mapa-mundi.ts e src/data/iso-3166-2.ts
+```
+
+Contornos: [Natural Earth](https://www.naturalearthdata.com/) 1:50m (domínio público). Nomes em pt-BR: projeto [iso-codes](https://salsa.debian.org/iso-codes-team/iso-codes) (LGPL-2.1).
+
 ## Publicar
 
 `npm run build:web` gera `dist/` para o GitHub Pages (base `/poliglota`, com o `coi-serviceworker` porque o Pages não envia os cabeçalhos COOP/COEP que o SQLite da web exige). O workflow `.github/workflows/pages.yml` faz isso a cada push em `master`.
@@ -78,6 +88,7 @@ node scripts/fluxo-licao.mjs               # faz uma lição inteira no navegado
 node scripts/fluxo-extras.mjs              # tutorial, voz, etimologia, sprint, conversa, comunidade, tema escuro
 node scripts/fluxo-historia.mjs            # histórias: desvio, dica, final e contador de finais
 node scripts/fluxo-praticas.mjs            # diário (corretor), palácio (jogo) e shadowing (microfone falso)
+node scripts/fluxo-mapa.mjs                # mapa ISO 3166-1/3166-3 e variante da Moldávia
 node scripts/capturas.mjs / /vocabulario   # capturas em desktop, iPhone, Android e iPad
 ```
 

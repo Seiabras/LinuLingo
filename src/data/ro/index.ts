@@ -7,6 +7,7 @@ import { STORIES_RO } from './historias';
 import { JOURNAL_PROMPTS_RO, SHADOWING_RO } from './praticas';
 import { toIpa } from '@/services/ipa-ro';
 import { GRAMMAR_RO } from './gramatica';
+import { VARIANTS_RO } from './variantes';
 
 export const ROMENO: LanguagePack = {
   code: 'ro',
@@ -26,7 +27,8 @@ export const ROMENO: LanguagePack = {
   etymology: ETYMOLOGY_RO,
   community: COMMUNITY_RO,
   scenarios: SCENARIOS_RO,
-  stories: STORIES_RO,
+  stories: [...STORIES_RO, ...VARIANTS_RO.flatMap((v) => v.stories ?? [])],
+  variants: VARIANTS_RO,
   grammar: GRAMMAR_RO,
   journalPrompts: JOURNAL_PROMPTS_RO,
   shadowing: SHADOWING_RO,

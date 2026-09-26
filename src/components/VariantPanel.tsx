@@ -1,0 +1,84 @@
+import { Pressable, Text, View } from 'react-native';
+import { router } from 'expo-router';
+import { Card, Chip, SpeakButton } from './ui';
+import { CulturalGrammarCard } from './CulturalGrammarCard';
+import { useApp } from '@/services/app-state';
+
+/** Escolha da variante do idioma (ex.: Romênia × Moldávia) e o que muda em cada uma. */
+export function VariantPanel() {
+  const { pack, variant, setVariant } = useApp();
+  const variants = pack.variants ?? [];
+  if (variants.length < 2) return null;
+  const v = variants.find((x) => x.code === variant) ?? variants[0];
+  const standard = variants[0];
+
+  return (
+    <View className="gap-3">
+      <View className="flex-row flex-wrap gap-2">
+        {variants.map((x) => (
+          <Pressable
+            key={x.code}
+            onPress={() => setVariant(x.code)}
+            accessibilityRole="radio"
+            accessibilityState={{ checked: x.code === v.code }}
+            className={`flex-row items-center gap-1.5 rounded-full border-2 px-3 py-1.5 ${x.code === v.code ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
+          >
+            <Text>{x.flag}</Text>
+            <Text className={`font-bold ${x.code === v.code ? 'text-conecta' : 'text-slate-600 dark:text-slate-300'}`}>{x.name}</Text>
+          </Pressable>
+        ))}
+      </View>
+      {v.summary && <Text className="text-sm text-slate-600 dark:text-slate-400">{v.summary}</Text>}
+
+      {v.card && <CulturalGrammarCard card={v.card} locale={pack.speechLocale} />}
+
+      {v.pronunciation && v.pronunciation.length > 0 && (
+        <Card className="gap-2">
+          <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">🗣️ Como soa em {v.name.replace('Romeno da ', '')}</Text>
+          {v.pronunciation.map((p) => (
+            <Text key={p} className="text-base leading-6 text-slate-800 dark:text-slate-200">
+              • {p}
+            </Text>
+          ))}
+        </Card>
+      )}
+
+      {v.vocab && v.vocab.length > 0 && (
+        <Card className="gap-2">
+          <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">
+            {standard.flag} Padrão × {v.flag} {v.name.replace('Romeno da ', '')} · {v.vocab.length} palavras
+          </Text>
+          {v.vocab.map(([std, loc, pt, note]) => (
+            <View key={`${std}-${loc}`} className="flex-row items-center gap-2 border-b border-slate-100 py-1.5 dark:border-slate-800">
+              <View className="flex-1">
+                <Text className="text-base text-slate-500 dark:text-slate-400">
+                  {std} → <Text className="font-bold text-slate-900 dark:text-white">{loc}</Text>
+                </Text>
+                <Text className="text-xs text-slate-500 dark:text-slate-400">
+                  {pt}
+                  {note ? ` · ${note}` : ''}
+                </Text>
+              </View>
+              <SpeakButton text={loc} locale={pack.speechLocale} size={14} />
+            </View>
+          ))}
+        </Card>
+      )}
+
+      {v.stories && v.stories.length > 0 && (
+        <View className="gap-2">
+          {v.stories.map((s) => (
+            <Pressable key={s.id} onPress={() => router.push(`/historia/${s.id}`)} className="flex-row items-center gap-3 rounded-2xl bg-white p-3 active:opacity-80 dark:bg-slate-900">
+              <Text className="text-2xl">{s.emoji}</Text>
+              <View className="flex-1">
+                <Text className="font-bold text-slate-900 dark:text-white">{s.title}</Text>
+                <Text className="text-xs text-slate-500">{s.summary}</Text>
+              </View>
+              <Chip label={s.level} tone="blue" />
+            </Pressable>
+          ))}
+        </View>
+      )}
+    </View>
+  );
+}

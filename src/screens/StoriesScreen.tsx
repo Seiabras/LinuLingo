@@ -64,6 +64,7 @@ export default function StoriesScreen() {
                       <View className="mt-1 flex-row flex-wrap gap-1.5">
                         <Chip label={`${got}/${total} finais`} tone={got === total ? 'green' : got ? 'amber' : 'slate'} />
                         {got === 0 && <Chip label="nova" tone="orange" />}
+                        {s.variant && <Chip label={`${pack.variants?.find((v) => v.code === s.variant)?.flag ?? ''} ${pack.variants?.find((v) => v.code === s.variant)?.name ?? s.variant}`} tone="blue" />}
                       </View>
                     </View>
                   </Pressable>

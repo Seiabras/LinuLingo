@@ -41,6 +41,9 @@ export default function CreditsScreen() {
         <Text className="text-sm text-slate-500 dark:text-slate-400">
           {authors.map(([a, n]) => `${a} (${n})`).join(' · ')}
         </Text>
+        <Text className="text-sm text-slate-500 dark:text-slate-400">
+          🗺️ Mapa: contornos do Natural Earth (domínio público). Países, territórios e subdivisões: listas ISO 3166-1, 3166-2 e 3166-3 com nomes em português do projeto iso-codes (LGPL-2.1).
+        </Text>
         <Pressable onPress={() => Linking.openURL('https://lingualibre.org')}>
           <Text className="text-sm font-semibold text-conecta">Grave também no Lingua Libre ›</Text>
         </Pressable>

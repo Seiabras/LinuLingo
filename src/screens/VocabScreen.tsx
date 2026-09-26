@@ -27,7 +27,11 @@ const LANG_FLAG: Record<string, string> = { pt: '🇧🇷', es: '🇪🇸', it: 
 
 /** Cofre de vocabulário: palavras por frequência com estado SRS, categorias e árvore etimológica. */
 export default function VocabScreen() {
-  const { db, pack } = useApp();
+  const { db, pack, variant } = useApp();
+  const variantWords = useMemo(() => {
+    const v = pack.variants?.find((x) => x.code === variant);
+    return { flag: v?.flag ?? '', map: new Map((v?.vocab ?? []).map(([std, loc]) => [std, loc])) };
+  }, [pack.variants, variant]);
   const dark = useIsDark();
   const [tab, setTab] = useState<Tab>('frequencia');
   const [search, setSearch] = useState('');
@@ -130,7 +134,7 @@ export default function VocabScreen() {
             data={filtered}
             keyExtractor={(w) => w.id}
             ListHeaderComponent={header}
-            renderItem={({ item }) => <WordRow w={item} locale={pack.speechLocale} now={now} />}
+            renderItem={({ item }) => <WordRow w={item} locale={pack.speechLocale} now={now} variantWord={variantWords.map.get(item.word_target)} variantFlag={variantWords.flag} />}
             ItemSeparatorComponent={() => <View className="h-2" />}
             contentContainerStyle={{ paddingBottom: 24 }}
             keyboardShouldPersistTaps="handled"
@@ -176,7 +180,7 @@ export default function VocabScreen() {
   );
 }
 
-function WordRow({ w, locale, now }: { w: VocabWithSRS; locale: string; now: number }) {
+function WordRow({ w, locale, now, variantWord, variantFlag }: { w: VocabWithSRS; locale: string; now: number; variantWord?: string; variantFlag?: string }) {
   const g = w.gender ? GENDER_LABEL[w.gender] : null;
   let status: { label: string; tone: 'slate' | 'orange' | 'green' | 'blue' };
   if (!w.next_review_date) status = { label: 'nova', tone: 'slate' };
@@ -196,6 +200,7 @@ function WordRow({ w, locale, now }: { w: VocabWithSRS; locale: string; now: num
           {hasNativeClip(w.word_target, locale) && <Text accessibilityLabel="gravação de falante nativo" className="text-xs">🎧</Text>}
         </View>
         <Ipa text={w.word_target} className="text-xs" />
+        {variantWord && <Text className="text-xs font-semibold text-conecta">{variantFlag} {variantWord}</Text>}
         <Text className="text-sm text-slate-500 dark:text-slate-400">{w.word_native}</Text>
       </View>
       <View className="items-end gap-1">

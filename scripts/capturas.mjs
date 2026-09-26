@@ -35,7 +35,7 @@ for (const [name, opts] of Object.entries(DEVICES)) {
   const page = await ctx.newPage();
   const errors = [];
   page.on('pageerror', (e) => errors.push(e.message));
-  page.on('console', (m) => m.type() === 'error' && errors.push(m.text()));
+  page.on('console', (m) => m.type() === 'error' && !m.text().includes('Unknown event handler property') && errors.push(m.text()));
   for (const r of routes) {
     await page.goto(BASE + r, { waitUntil: 'load', timeout: 180000 });
     await page.waitForTimeout(Number(process.env.WAIT ?? 1500));

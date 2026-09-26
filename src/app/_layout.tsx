@@ -39,6 +39,7 @@ export default function RootLayout() {
               <Stack.Screen name="palacio" />
               <Stack.Screen name="creditos" />
               <Stack.Screen name="gramatica/[id]" />
+              <Stack.Screen name="mapa" />
             </Stack>
           </AppStateProvider>
         </SQLiteProvider>

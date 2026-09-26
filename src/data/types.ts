@@ -145,6 +145,8 @@ export interface StoryNode {
 /** História interativa ramificada (TPR storytelling / escolha sua aventura). */
 export interface StorySeed {
   id: string;
+  /** História ambientada numa variante regional (ex.: ro-MD) */
+  variant?: string;
   /** Subnível (A1.1 … C2) */
   level: SubLevel;
   cefr: CefrLevel;
@@ -188,6 +190,22 @@ export interface GrammarTopic {
   quiz: GrammarQuiz[];
 }
 
+/** Variante regional/nacional de um idioma (ex.: romeno da Moldávia, português de Portugal). */
+export interface LanguageVariant {
+  code: string;
+  /** País principal (ISO alfa-3) */
+  country: string;
+  name: string;
+  flag: string;
+  summary?: string;
+  card?: CultureCardSeed;
+  /** Traços de pronúncia próprios */
+  pronunciation?: string[];
+  /** Diferenças de vocabulário: [padrão, variante, português, nota] */
+  vocab?: [string, string, string, string?][];
+  stories?: StorySeed[];
+}
+
 /** Classificação genealógica e geográfica, usada para agrupar o seletor de idiomas. */
 export interface LanguageLineage {
   family: string; // ex.: 'Indo-europeu', 'Urálico'
@@ -215,6 +233,7 @@ export interface LanguagePack extends LanguageInfo {
   scenarios: ScenarioSeed[];
   stories: StorySeed[];
   grammar: GrammarTopic[];
+  variants?: LanguageVariant[];
   /** Temas do diário: [pergunta no idioma, tradução] */
   journalPrompts: [string, string][];
   /** Transcrição fonética (IPA) por regras do idioma */

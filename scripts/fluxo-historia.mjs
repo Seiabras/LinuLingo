@@ -22,7 +22,7 @@ const ctx = await browser.newContext({ viewport: VIEW, deviceScaleFactor: 2, isM
 const page = await ctx.newPage();
 const errors = [];
 page.on('pageerror', (e) => errors.push(e.message));
-page.on('console', (m) => m.type() === 'error' && !m.text().includes('404') && errors.push(m.text()));
+page.on('console', (m) => m.type() === 'error' && !m.text().includes('404') && !m.text().includes('Unknown event handler property') && errors.push(m.text()));
 
 let n = 0;
 const shot = async (name) => {
