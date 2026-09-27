@@ -6,6 +6,7 @@ import { Linu } from '@/components/Linu';
 import { SpeciesPhotos } from '@/components/SpeciesPhotos';
 import { OfflineCard } from '@/components/OfflineCard';
 import { BackupCard } from '@/components/BackupCard';
+import { OutfitsCard } from '@/components/OutfitsCard';
 import { useApp } from '@/services/app-state';
 import { completedLessons, resetProgress, updateUser, vocabStats, xpByDay } from '@/database/queries';
 import { groupByLineage, isAvailable } from '@/data/idiomas';
@@ -193,6 +194,9 @@ export default function ProfileScreen() {
           <OfflineCard />
         </View>
       )}
+      <View className="mt-4">
+        <OutfitsCard />
+      </View>
       <View className="mt-4">
         <BackupCard onRestored={loadStats} />
       </View>

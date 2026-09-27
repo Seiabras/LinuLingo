@@ -9,6 +9,7 @@ import { localDay, visibleStreak } from './progress';
 import { Appearance } from 'react-native';
 import { colorScheme } from 'nativewind';
 import { loadThemePref, saveThemePref, useThemeSync, type ThemePref } from './theme';
+import { loadOutfit } from './linu-outfit';
 
 type AppUser = User & { streak_freezes: number; daily_goal_xp: number };
 
@@ -63,9 +64,10 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     (async () => {
       applyAll(await readAll());
+      await loadOutfit(db).catch(() => {});
       setReady(true);
     })();
-  }, [readAll, applyAll]);
+  }, [db, readAll, applyAll]);
 
   const setLanguage = useCallback(
     async (code: string) => {
@@ -112,8 +114,9 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
     setVariants({});
     setAccents({});
     applyAll(await readAll());
+    await loadOutfit(db).catch(() => {});
     setGeneration((g) => g + 1);
-  }, [readAll, applyAll, setAccents, setVariants]);
+  }, [db, readAll, applyAll, setAccents, setVariants]);
 
   const code = basePack.code;
   const packAccents = basePack.accents;

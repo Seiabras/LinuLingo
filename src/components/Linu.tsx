@@ -14,6 +14,8 @@ import Animated, {
   type SharedValue,
 } from 'react-native-reanimated';
 import Svg, { Circle, Defs, Ellipse, G, LinearGradient, Path, RadialGradient, Stop } from 'react-native-svg';
+import { OutfitArt } from './LinuOutfit';
+import { useLinuOutfit } from '@/services/linu-outfit';
 
 export type LinuMood = 'feliz' | 'pensando' | 'comemorando' | 'triste' | 'falando';
 
@@ -81,8 +83,11 @@ const VB_H = 140;
  * cair uma lágrima quando está triste. `animate={false}` (ou «reduzir movimento» ligado no
  * aparelho) deixa o Linu parado.
  */
-export function Linu({ mood = 'feliz', size = 96, animate = true }: { mood?: LinuMood; size?: number; animate?: boolean }) {
+export function Linu({ mood = 'feliz', size = 96, animate = true, outfit }: { mood?: LinuMood; size?: number; animate?: boolean; outfit?: string | null }) {
   const reduce = useReducedMotion();
+  // a roupinha escolhida no Perfil (ou a pedida, nas prévias)
+  const chosen = useLinuOutfit();
+  const wear = outfit === undefined ? chosen : outfit;
   const live = animate && !reduce;
   const u = size / VB_W;
 
@@ -208,6 +213,11 @@ export function Linu({ mood = 'feliz', size = 96, animate = true }: { mood?: Lin
         </Layer>
         <Eyelids mood={mood} u={u} blink={blink} />
         <Beak mood={mood} u={u} talk={talk} />
+        {wear && (
+          <Layer>
+            <OutfitArt id={wear} />
+          </Layer>
+        )}
         {mood === 'triste' && <Tear u={u} tear={tear} live={live} />}
         {mood === 'pensando' && <Bubbles u={u} think={think} live={live} />}
       </Animated.View>
