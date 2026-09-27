@@ -212,6 +212,36 @@ export interface LanguageVariant {
   ipa?: (text: string) => string;
 }
 
+/**
+ * Sotaque ou dialeto regional (ex.: o sotaque baiano no português do Brasil, o andaluz no espanhol).
+ * «sotaque» muda sobretudo a pronúncia e a melodia; «dialeto» muda também palavras e gramática.
+ */
+export interface Accent {
+  /** ex.: 'es-andaluz' */
+  id: string;
+  name: string;
+  kind: 'sotaque' | 'dialeto';
+  /** Onde se fala, em palavras: «Andaluzia, no sul da Espanha» */
+  region: string;
+  /** País principal (ISO 3166-1 alfa-3) */
+  country: string;
+  /** Onde, dentro do país (ISO 3166-2): pinta o minimapa e aparece ao tocar na região no mapa-múndi */
+  subdivisions?: string[];
+  /** Variante do idioma a que pertence (código de LanguageVariant, ex.: 'es-ES') */
+  variant?: string;
+  /** Voz para os exemplos, se o aparelho tiver (ex.: 'es-AR'); sem ela, a do idioma */
+  speechLocale?: string;
+  emoji: string;
+  /** 1–2 frases: o que marca este jeito de falar */
+  summary: string;
+  /** Traços de pronúncia, vocabulário e gramática, um por item */
+  features: string[];
+  /** Frases como se diz ali: [frase, tradução, pronúncia em IPA ou nota] */
+  examples: [string, string, string?][];
+  /** Palavras típicas: [palavra, o que quer dizer] */
+  words?: [string, string][];
+}
+
 /** Classificação genealógica e geográfica, usada para agrupar o seletor de idiomas. */
 export interface LanguageLineage {
   family: string; // ex.: 'Indo-europeu', 'Urálico'
@@ -258,6 +288,8 @@ export interface LanguagePack extends LanguageInfo {
   genders?: ('m' | 'f' | 'n')[];
   /** As áreas da língua (fonética, fonologia, morfologia…) aplicadas a este idioma */
   linguistics?: LinguisticsArea[];
+  /** Sotaques e dialetos regionais (aba Cultura e mapa) */
+  accents?: Accent[];
   /** Saudação curta e frase de teste da voz */
   greeting: string;
   sampleSentence: string;

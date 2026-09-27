@@ -9,6 +9,7 @@ import { JOURNAL_PROMPTS_RO, SHADOWING_RO } from './praticas';
 import { toIpa } from '@/services/ipa-ro';
 import { GRAMMAR_RO } from './gramatica';
 import { VARIANTS_RO } from './variantes';
+import { ACCENTS_RO } from './sotaques';
 
 export const ROMENO: LanguagePack = {
   code: 'ro',
@@ -32,6 +33,7 @@ export const ROMENO: LanguagePack = {
   variants: VARIANTS_RO,
   grammar: GRAMMAR_RO,
   linguistics: LINGUISTICS_RO,
+  accents: ACCENTS_RO,
   journalPrompts: JOURNAL_PROMPTS_RO,
   shadowing: SHADOWING_RO,
   ipa: toIpa,

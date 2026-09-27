@@ -86,6 +86,15 @@ await page.waitForTimeout(1200);
 await expectText('Мне 20 лет');
 await shot('diario-correcao');
 
+// sotaques: São Petersburgo × Moscou
+await page.goto(BASE + '/cultura', { waitUntil: 'load' });
+await page.getByLabel('Sotaque: São Petersburgo').waitFor({ timeout: 30000 });
+await page.getByLabel('Sotaque: São Petersburgo').click();
+await expectText('поре́брик');
+await page.waitForTimeout(1500);
+await page.getByLabel('Sotaque: São Petersburgo').scrollIntoViewIfNeeded();
+await shot('sotaque-petersburgo');
+
 // histórias: 3 por subnível
 await page.goto(BASE + '/historias', { waitUntil: 'load' });
 for (const st of RUSSO.stories.filter((x) => x.level === 'A1.1')) await expectText(st.title);

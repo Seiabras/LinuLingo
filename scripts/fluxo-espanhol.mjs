@@ -111,6 +111,19 @@ await page.goto(BASE + '/cultura', { waitUntil: 'load' });
 await page.getByText('Espanhol latino-americano', { exact: true }).first().click();
 await page.waitForTimeout(800);
 
+// sotaques e dialetos: o andaluz (regiões no minimapa) e o canário (ilhas longe da península)
+await expectText('Sotaques e dialetos');
+await page.getByLabel('Sotaque: Andaluz').click();
+await expectText('seseo');
+await page.getByText('Carregando as regiões…').waitFor({ state: 'detached', timeout: 15000 }).catch(() => {});
+await page.getByLabel('Sotaque: Andaluz').scrollIntoViewIfNeeded();
+await shot('sotaque-andaluz');
+await page.getByLabel('Sotaque: Canário').click();
+await expectText('escala dos navios');
+await page.waitForTimeout(1500);
+await page.getByLabel('Sotaque: Canário').scrollIntoViewIfNeeded();
+await shot('sotaque-canario');
+
 // linguística: fonética do espanhol
 await page.goto(BASE + '/linguistica/fonetica', { waitUntil: 'load' });
 await expectText('Cinco vogais, nenhuma nasal');

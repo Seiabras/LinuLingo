@@ -29,6 +29,10 @@ O seletor do Perfil agrupa os idiomas por família e ramo linguístico.
 - **Grandes temas**: famílias de línguas, tipologia, sistemas de escrita, mudança linguística, sociolinguística, aquisição de segunda língua e o português entre as línguas do mundo.
 
 ## O que tem no espanhol
+## Sotaques e dialetos (aba Cultura)
+
+Cada idioma mostra os seus jeitos regionais de falar (18 no espanhol, 5 no romeno, 8 no russo): o que marca cada um, exemplos com voz e transcrição, palavras típicas e um **minimapa com as regiões** onde se fala (subdivisões ISO 3166-2). No mapa-múndi, o cartão do país lista os sotaques de lá, e tocar numa região mostra o sotaque daquele lugar. Formato: `Accent` em src/data/types.ts, um arquivo `sotaques.ts` por idioma.
+
 
 - **Variante padrão: América Latina** (neutra, com «ustedes»), e mais duas para escolher na aba Cultura: **Espanha** (vosotros, [θ] no «z», 46 diferenças de vocabulário, 3 histórias em Madri, no Caminho de Santiago e nas Fallas) e **Rio da Prata** (voseo, «ll» chiado, 39 diferenças, 3 histórias em La Boca, Montevidéu e Punta Tombo). A variante escolhida troca também a **voz** (es-MX, es-ES, es-AR) e a **IPA**.
 - **Trilha CEFR** em 15 subníveis, 60 lições, cada card comparando com o português: heterogenéricos (el viaje, la leche), falsos amigos, ser × estar, «muy × mucho», o «lo» neutro, pronomes átonos, subjuntivo com «cuando», voseo, futuro do subjuntivo nas leis.

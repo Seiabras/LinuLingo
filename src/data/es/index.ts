@@ -7,6 +7,7 @@ import { COMMUNITY_ES, ETYMOLOGY_ES, JOURNAL_PROMPTS_ES, SCENARIOS_ES, SHADOWING
 import { FALSE_FRIENDS_ES } from './falsos-amigos';
 import { VARIANTS_ES } from './variantes';
 import { LINGUISTICS_ES } from './linguistica';
+import { ACCENTS_ES } from './sotaques';
 import { toIpaEs } from '@/services/ipa-es';
 
 export const ESPANHOL: LanguagePack = {
@@ -32,6 +33,7 @@ export const ESPANHOL: LanguagePack = {
   variants: VARIANTS_ES,
   grammar: GRAMMAR_ES,
   linguistics: LINGUISTICS_ES,
+  accents: ACCENTS_ES,
   journalPrompts: JOURNAL_PROMPTS_ES,
   shadowing: SHADOWING_ES,
   ipa: (t) => toIpaEs(t, '419'),

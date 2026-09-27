@@ -64,6 +64,7 @@ await shot('zoom-romenia');
 const cj = JSON.parse(readFileSync('assets/geo/ROU.geo', 'utf8')).find((x) => x[0] === 'RO-CJ');
 await tapMap([cj[3], cj[4]]);
 await page.locator('[aria-label="Subdivisão selecionada: Cluj"]').waitFor({ timeout: 5000 });
+await expectText('Dialeto daqui: Transilvano');
 await shot('cluj');
 // Ucrânia: só as regiões onde se fala romeno ficam em destaque
 await tapMap(centroid('UKR'));
@@ -122,6 +123,12 @@ await page.getByText('Variantes do romeno').waitFor({ timeout: 60000 });
 await click('Romeno da Moldávia');
 await expectText('barabule');
 await shot('variante-moldavia');
+// sotaques do romeno: o transilvano, com as regiões no minimapa
+await page.getByLabel('Sotaque: Transilvano').click();
+await expectText('No, hai!');
+await page.waitForTimeout(1500);
+await page.getByLabel('Sotaque: Transilvano').scrollIntoViewIfNeeded();
+await shot('sotaque-transilvano');
 
 console.log(errors.length ? `⚠️  erros:\n   ${[...new Set(errors)].join('\n   ')}` : '✅ sem erros no console');
 await browser.close();

@@ -12,7 +12,8 @@ import { FAUNA_MUSICA, HOMELANDS } from '@/data/fauna-musica';
 import { WORLD_REGIONS } from '@/data/regioes';
 import { ISO_3166_2 } from '@/data/iso-3166-2';
 import { FORMER_COUNTRIES, KIND_LABEL, type FormerCountry } from '@/data/iso-3166-3';
-import { isAvailable, LANGUAGES } from '@/data/idiomas';
+import { isAvailable, LANGUAGES, PACKS } from '@/data/idiomas';
+import type { Accent } from '@/data/types';
 import { updateUser } from '@/database/queries';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
@@ -43,6 +44,15 @@ const OPACITY: Record<LangRole, number> = { oficial: 1, regional: 0.55, falada: 
 
 /** Idioma do app (dá para estudar) ou planejado (em breve). */
 const appStatus = (code: string): 'app' | 'breve' | null => (isAvailable(code) ? 'app' : LANGUAGES.some((l) => l.code === code) ? 'breve' : null);
+
+/** Sotaques e dialetos (de todos os idiomas do app) de um país ou de uma subdivisão dele. */
+function accentsAt(iso: string, code?: string, parent?: string): (Accent & { lang: string })[] {
+  return Object.values(PACKS).flatMap((p) =>
+    (p.accents ?? [])
+      .filter((a) => a.country === iso && (!code || a.subdivisions?.includes(code) || (!!parent && a.subdivisions?.includes(parent))))
+      .map((a) => ({ ...a, lang: p.name.toLowerCase() })),
+  );
+}
 
 /** Quantas línguas o cartão do país mostra antes do «ver todas». */
 const CARD_LANGS = 6;
@@ -654,6 +664,17 @@ export default function MapScreen() {
                   <Text className="text-xs text-slate-400">Toque no nome de uma língua para ver no mapa onde mais ela é falada.</Text>
                 </View>
               )}
+              {accentsAt(selected.iso).length > 0 && (
+                <View className="gap-1">
+                  <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">🗣️ Sotaques e dialetos daqui</Text>
+                  <View className="flex-row flex-wrap gap-1.5">
+                    {accentsAt(selected.iso).map((a) => (
+                      <Chip key={a.id} label={`${a.emoji} ${a.name} (${a.lang})`} tone="amber" />
+                    ))}
+                  </View>
+                  <Text className="text-xs text-slate-400">Toque numa região do país para ver o sotaque de lá; os detalhes estão na aba Cultura.</Text>
+                </View>
+              )}
 
               {FORMER_COUNTRIES.filter((f) => f.successors.includes(selected.iso)).map((f) => (
                 <Pressable
@@ -755,9 +776,16 @@ function SubCard({ iso2, sub, spoken, onClose }: { iso2: string; sub: SubShape; 
           {l.flag} Aqui se fala {l.name.toLowerCase()} ({ROLE_LABEL[s.role]}).
         </Text>
       ))}
+      {accentsAt(isoOf(iso2), sub.code, sub.parent).map((a) => (
+        <Text key={a.id} className="text-sm font-semibold text-amber-700 dark:text-amber-300">
+          {a.emoji} {a.kind === 'dialeto' ? 'Dialeto' : 'Sotaque'} daqui: {a.name} ({a.lang}).
+        </Text>
+      ))}
     </View>
   );
 }
+
+const isoOf = (iso2: string) => WORLD.find((c) => c.iso2 === iso2)?.iso ?? '';
 
 /** Subdivisões ISO 3166-2 do país (lista completa, recolhível). */
 function Subdivisions({ iso2, highlight, onPick }: { iso2: string; highlight: string[]; onPick?: (code: string) => boolean }) {

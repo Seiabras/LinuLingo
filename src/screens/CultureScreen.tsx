@@ -11,6 +11,7 @@ import { FAUNA_MUSICA, HOMELANDS } from '@/data/fauna-musica';
 import { WORLD } from '@/data/mapa-mundi';
 import { flagOf } from '@/data/onde-se-fala';
 import { VariantPanel } from '@/components/VariantPanel';
+import { AccentsPanel } from '@/components/AccentsPanel';
 
 /** Cultura & História: a genealogia do idioma e os cards «aprenda primeiro» de cada unidade. */
 export default function CultureScreen() {
@@ -63,6 +64,13 @@ export default function CultureScreen() {
         <>
           <Text className="mb-2 mt-6 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">🌍 Variantes do {pack.name.toLowerCase()}</Text>
           <VariantPanel />
+        </>
+      )}
+
+      {(pack.accents?.length ?? 0) > 0 && (
+        <>
+          <Text className="mb-2 mt-6 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">🗣️ Sotaques e dialetos</Text>
+          <AccentsPanel />
         </>
       )}
 

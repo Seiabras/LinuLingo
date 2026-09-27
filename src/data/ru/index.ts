@@ -7,6 +7,7 @@ import { STORIES_RU } from './historias';
 import { COMMUNITY_RU, ETYMOLOGY_RU, JOURNAL_PROMPTS_RU, SCENARIOS_RU, SHADOWING_RU } from './extras';
 import { toIpaRu } from '@/services/ipa-ru';
 import { ALPHABET_RU } from './alfabeto';
+import { ACCENTS_RU } from './sotaques';
 
 export const RUSSO: LanguagePack = {
   code: 'ru',
@@ -29,6 +30,7 @@ export const RUSSO: LanguagePack = {
   stories: STORIES_RU,
   grammar: GRAMMAR_RU,
   linguistics: LINGUISTICS_RU,
+  accents: ACCENTS_RU,
   journalPrompts: JOURNAL_PROMPTS_RU,
   shadowing: SHADOWING_RU,
   ipa: toIpaRu,
