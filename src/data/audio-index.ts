@@ -2,13 +2,14 @@ import type { AccentVoice, AudioClip } from './types';
 import { AUDIO_RO } from './ro/audios';
 import { AUDIO_RU } from './ru/audios';
 import { AUDIO_ES } from './es/audios';
+import { AUDIO_IT } from './it/audios';
 import { COMPARAR_SOTAQUES_ES, VOZES_SOTAQUES_ES } from './es/vozes-sotaques';
 import { COMPARAR_SOTAQUES_IT, VOZES_SOTAQUES_IT } from './it/vozes-sotaques';
 import { COMPARAR_SOTAQUES_RO, VOZES_SOTAQUES_RO } from './ro/vozes-sotaques';
 import { COMPARAR_SOTAQUES_RU, VOZES_SOTAQUES_RU } from './ru/vozes-sotaques';
 
 /** Gravações de nativos por idioma e palavra. */
-export const CLIPS: Record<string, Record<string, AudioClip>> = { ro: AUDIO_RO, ru: AUDIO_RU, es: AUDIO_ES };
+export const CLIPS: Record<string, Record<string, AudioClip>> = { ro: AUDIO_RO, ru: AUDIO_RU, es: AUDIO_ES, it: AUDIO_IT };
 
 export function clipFor(locale: string, text: string): AudioClip | null {
   const table = CLIPS[locale.split('-')[0]];
