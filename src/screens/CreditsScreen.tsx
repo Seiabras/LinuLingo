@@ -3,9 +3,9 @@ import { FlatList, Linking, Pressable, Text, TextInput, View } from 'react-nativ
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ArrowLeft } from 'lucide-react-native';
 import { Card } from '@/components/ui';
-import { allClips } from '@/data/audio-index';
+import { allAccentVoices, allClips } from '@/data/audio-index';
 import { LINU_PHOTOS } from '@/data/fotos-linu';
-import { speak } from '@/services/speech';
+import { playClip, speak } from '@/services/speech';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
 
@@ -18,13 +18,21 @@ const LOCALE: Record<string, string> = { ro: 'ro-RO', ru: 'ru-RU' };
 export default function CreditsScreen() {
   const dark = useIsDark();
   const [q, setQ] = useState('');
-  const clips = useMemo(() => allClips(), []);
+  // as palavras e, depois, as gravações de cada sotaque (com o lugar de quem falou)
+  const clips = useMemo(
+    () => [
+      ...allClips().map((c) => ({ ...c, key: `${c.lang}-${c.word}`, place: null as string | null })),
+      ...allAccentVoices().map((v) => ({ lang: v.lang, word: v.voice.word, clip: v.voice, key: `${v.lang}-${v.accent}-${v.voice.speaker}-${v.voice.word}`, place: v.voice.place })),
+    ],
+    [],
+  );
   const authors = useMemo(() => {
     const m = new Map<string, number>();
     for (const c of clips) m.set(c.clip.author, (m.get(c.clip.author) ?? 0) + 1);
     return [...m.entries()].sort((a, b) => b[1] - a[1]);
   }, [clips]);
-  const list = q.trim() ? clips.filter((c) => c.word.toLowerCase().includes(q.trim().toLowerCase()) || c.clip.author.toLowerCase().includes(q.trim().toLowerCase())) : clips;
+  const t = q.trim().toLowerCase();
+  const list = t ? clips.filter((c) => c.word.toLowerCase().includes(t) || c.clip.author.toLowerCase().includes(t) || c.place?.toLowerCase().includes(t)) : clips;
 
   const header = (
     <View className="gap-3 pb-3">
@@ -36,7 +44,7 @@ export default function CreditsScreen() {
       </View>
       <Card className="gap-2">
         <Text className="text-base text-slate-700 dark:text-slate-300">
-          As {clips.length} gravações de palavras foram feitas por falantes nativos voluntários do projeto <Text className="font-bold">Lingua Libre</Text> e estão no{' '}
+          As {clips.length} gravações de palavras (incluindo as de cada sotaque, com o lugar de quem gravou) foram feitas por falantes nativos voluntários do projeto <Text className="font-bold">Lingua Libre</Text> e estão no{' '}
           <Text className="font-bold">Wikimedia Commons</Text> sob licenças livres (em geral CC BY-SA 4.0). Muito obrigado a {authors.length === 1 ? 'quem gravou' : `todas as ${authors.length} pessoas que gravaram`}!
         </Text>
         <Text className="text-sm text-slate-500 dark:text-slate-400">
@@ -56,7 +64,7 @@ export default function CreditsScreen() {
       <TextInput
         value={q}
         onChangeText={setQ}
-        placeholder="Buscar palavra ou autor…"
+        placeholder="Buscar palavra, autor ou lugar…"
         placeholderTextColor="#94A3B8"
         className="rounded-2xl border-2 border-slate-200 bg-white px-4 py-3 text-base text-slate-900 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
       />
@@ -68,19 +76,20 @@ export default function CreditsScreen() {
       <View className="w-full max-w-2xl flex-1 self-center px-4">
         <FlatList
           data={list}
-          keyExtractor={(c) => `${c.lang}-${c.word}`}
+          keyExtractor={(c) => c.key}
           ListHeaderComponent={header}
           initialNumToRender={25}
           contentContainerStyle={{ paddingBottom: 24 }}
           ItemSeparatorComponent={() => <View className="h-1.5" />}
           renderItem={({ item }) => (
             <View className="flex-row items-center gap-3 rounded-xl bg-white px-3 py-2 dark:bg-slate-900">
-              <Pressable accessibilityLabel={`Ouvir ${item.word}`} onPress={() => speak(item.word, LOCALE[item.lang] ?? item.lang)} className="flex-1 flex-row items-center gap-3 active:opacity-70">
+              <Pressable accessibilityLabel={`Ouvir ${item.word}`} onPress={() => (item.place ? playClip(item.clip.src) : speak(item.word, LOCALE[item.lang] ?? item.lang))} className="flex-1 flex-row items-center gap-3 active:opacity-70">
                 <Text className="text-lg">🔊</Text>
                 <View className="flex-1">
                   <Text className="font-bold text-slate-900 dark:text-white">{item.word}</Text>
                   <Text className="text-xs text-slate-500 dark:text-slate-400">
                     {item.clip.author} · {item.clip.license}
+                    {item.place ? ` · 🗺️ ${item.place}` : ''}
                   </Text>
                 </View>
               </Pressable>

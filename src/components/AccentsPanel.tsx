@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { router } from 'expo-router';
 import Svg, { Circle, Path, Rect } from 'react-native-svg';
-import { ChevronDown, ChevronUp } from 'lucide-react-native';
+import { ChevronDown, ChevronUp, Volume2 } from 'lucide-react-native';
 import { Button, Card, Chip, SpeakButton } from '@/components/ui';
 import { useApp } from '@/services/app-state';
 import { useIsDark } from '@/services/theme';
@@ -10,7 +10,9 @@ import { WORLD } from '@/data/mapa-mundi';
 import { flagOf } from '@/data/onde-se-fala';
 import { fitBox, focusBox, ringBoxes, type Box, type SubShape } from '@/services/mapa-geo';
 import { loadSubdivisions } from '@/services/subdivisoes';
-import type { Accent } from '@/data/types';
+import { playClip } from '@/services/speech';
+import { ACCENT_COMPARE, ACCENT_VOICES } from '@/data/audio-index';
+import type { Accent, AccentVoice } from '@/data/types';
 
 const ACCENT_COLOR = '#F59E0B';
 
@@ -33,6 +35,7 @@ export function AccentsPanel() {
       <Text className="text-sm text-slate-600 dark:text-slate-400">
         Sotaque muda a pronúncia e a melodia; dialeto muda também palavras e gramática. Toque num deles para ver onde se fala, como soa e as palavras típicas, e escolha um para estudar: a voz e a pronúncia passam a seguir o jeito de lá.
       </Text>
+      <CompareAccents />
       {byCountry.map(([iso, list]) => {
         const c = WORLD.find((w) => w.iso === iso);
         return (
@@ -87,6 +90,7 @@ function AccentCard({ a, open, onToggle }: { a: Accent; open: boolean; onToggle:
           </View>
           <AccentMap a={a} />
           <Text className="text-base leading-6 text-slate-800 dark:text-slate-200">{a.summary}</Text>
+          <AccentVoices a={a} />
           <View className="gap-1.5">
             {a.features.map((f) => (
               <Text key={f} className="text-sm leading-5 text-slate-700 dark:text-slate-300">
@@ -105,7 +109,7 @@ function AccentCard({ a, open, onToggle }: { a: Accent; open: boolean; onToggle:
                 {note && <Text className={`text-sm text-amber-700 dark:text-amber-300 ${note.startsWith('[') ? 'font-mono' : ''}`}>{note}</Text>}
               </View>
             ))}
-            <Text className="text-xs text-slate-400">A voz do aparelho imita pouco os sotaques: para o som de verdade, siga a descrição e a transcrição.</Text>
+            <Text className="text-xs text-slate-400">A voz do aparelho imita pouco os sotaques: para o som de verdade, ouça a gente de lá (🎙️) e siga a transcrição.</Text>
           </View>
           {a.words && a.words.length > 0 && (
             <View className="gap-1">
@@ -187,5 +191,78 @@ export function AccentMap({ a }: { a: Accent }) {
         </View>
       )}
     </View>
+  );
+}
+
+/** Gravações de gente da região do sotaque (Lingua Libre), com o lugar de cada pessoa. */
+export function AccentVoices({ a }: { a: Accent }) {
+  const { pack } = useApp();
+  const voices = ACCENT_VOICES[pack.code]?.[a.id] ?? [];
+  if (!voices.length) {
+    return (
+      <Text className="text-xs text-slate-400">
+        🎙️ Ainda não há no Lingua Libre gravações de quem aprendeu a língua nesta região. Se você é de lá, pode gravar em lingualibre.org!
+      </Text>
+    );
+  }
+  const people = [...new Map(voices.map((v) => [v.speaker, v])).values()];
+  return (
+    <View className="gap-2">
+      <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">🎙️ Gente de lá</Text>
+      <Text className="text-xs text-slate-500 dark:text-slate-400">
+        {people.map((v) => `${v.speaker} (${v.how === 'aprendeu' ? 'aprendeu a língua em' : 'mora em'} ${v.place})`).join(' · ')}
+      </Text>
+      <View className="flex-row flex-wrap gap-2">
+        {voices.map((v) => (
+          <VoiceChip key={`${v.speaker}-${v.word}`} v={v} />
+        ))}
+      </View>
+      <Text className="text-xs text-slate-400">Gravações do Lingua Libre. Palavra solta mostra pouco da melodia: preste atenção nas vogais e nas consoantes.</Text>
+    </View>
+  );
+}
+
+function VoiceChip({ v, label }: { v: AccentVoice; label?: string }) {
+  const dark = useIsDark();
+  return (
+    <Pressable
+      accessibilityRole="button"
+      accessibilityLabel={`Ouvir ${v.word}${label ? `: ${label}` : ''}, gravado por ${v.speaker}`}
+      onPress={() => playClip(v.src)}
+      className="flex-row items-center gap-1.5 rounded-full bg-slate-100 px-3 py-1.5 active:opacity-70 dark:bg-slate-800"
+    >
+      <Volume2 size={14} color={dark ? '#93C5FD' : '#2563EB'} />
+      <Text className="text-sm font-semibold text-slate-800 dark:text-slate-100">{label ?? v.word}</Text>
+    </Pressable>
+  );
+}
+
+/** A mesma palavra gravada por gente de sotaques diferentes, lado a lado. */
+function CompareAccents() {
+  const { pack } = useApp();
+  const words = ACCENT_COMPARE[pack.code] ?? [];
+  if (!words.length) return null;
+  const voicesOf = (w: string) =>
+    (pack.accents ?? []).flatMap((a) =>
+      (ACCENT_VOICES[pack.code]?.[a.id] ?? [])
+        .filter((v) => v.word === w)
+        .slice(0, 1)
+        .map((v) => ({ a, v })),
+    );
+  return (
+    <Card className="gap-3">
+      <Text className="text-lg font-extrabold text-slate-900 dark:text-white">🎧 A mesma palavra, sotaques diferentes</Text>
+      <Text className="text-sm text-slate-600 dark:text-slate-400">Gravações de nativos de cada região. Toque e compare as vogais, os «s» e os «r».</Text>
+      {words.map((w) => (
+        <View key={w} className="gap-1.5">
+          <Text className="text-base font-bold text-slate-900 dark:text-white">{w}</Text>
+          <View className="flex-row flex-wrap gap-2">
+            {voicesOf(w).map(({ a, v }) => (
+              <VoiceChip key={a.id} v={v} label={`${a.emoji} ${a.name}`} />
+            ))}
+          </View>
+        </View>
+      ))}
+    </Card>
   );
 }

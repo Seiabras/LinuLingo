@@ -359,6 +359,16 @@ export interface AlphabetData {
 export const VOCAB_TARGET_TOTAL = 4000;
 
 /** Gravação de falante nativo (Lingua Libre / Wikimedia Commons). */
+/** Gravação de um nativo de uma região, para ouvir o sotaque de verdade. */
+export interface AccentVoice extends AudioClip {
+  word: string;
+  /** usuário do Lingua Libre */
+  speaker: string;
+  /** onde aprendeu a língua (como a pessoa escreveu) ou onde mora */
+  place: string;
+  how: 'aprendeu' | 'mora';
+}
+
 export interface AudioClip {
   src: number;
   file: string;

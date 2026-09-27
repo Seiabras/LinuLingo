@@ -4,7 +4,7 @@ import { useFocusEffect, useLocalSearchParams } from 'expo-router';
 import { ArrowLeft } from 'lucide-react-native';
 import { Screen, Button, Card, Chip, ProgressBar, SpeakButton, SpeechBubble } from '@/components/ui';
 import { Linu } from '@/components/Linu';
-import { AccentMap } from '@/components/AccentsPanel';
+import { AccentMap, AccentVoices } from '@/components/AccentsPanel';
 import { useApp } from '@/services/app-state';
 import { awardXp, getMeta, setMeta } from '@/database/queries';
 import { accentMastery, buildAccentRound, recordAccent, type AccentProgress, type AccentQuestion } from '@/services/accent-quiz';
@@ -177,6 +177,7 @@ export default function AccentPracticeScreen() {
       <View className="mt-4 gap-3">
         <AccentMap a={a} />
         <Text className="text-base leading-6 text-slate-800 dark:text-slate-200">{a.summary}</Text>
+        <AccentVoices a={a} />
         <View className="gap-1.5">
           {a.features.map((f) => (
             <Text key={f} className="text-sm leading-5 text-slate-700 dark:text-slate-300">
@@ -208,7 +209,7 @@ export default function AccentPracticeScreen() {
             ))}
           </>
         )}
-        <Text className="text-xs text-slate-400">A voz do aparelho imita pouco os sotaques: para o som de verdade, siga a descrição e a transcrição.</Text>
+        <Text className="text-xs text-slate-400">A voz do aparelho imita pouco os sotaques: para o som de verdade, ouça a gente de lá (🎙️) e siga a transcrição.</Text>
       </View>
     </Screen>
   );

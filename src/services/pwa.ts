@@ -1,7 +1,7 @@
 import { useSyncExternalStore } from 'react';
 import { Platform } from 'react-native';
 import { Asset } from 'expo-asset';
-import { CLIPS } from '@/data/audio-index';
+import { ACCENT_VOICES, CLIPS } from '@/data/audio-index';
 
 /**
  * O app na web como «app instalado» (PWA): o pedido de instalação do navegador e as gravações
@@ -91,7 +91,9 @@ export function offlineReady(): boolean {
 const EXTRAS = 'linulingo-extras-v1';
 
 function audioUrls(lang: string): string[] {
-  return Object.values(CLIPS[lang] ?? {}).map((c) => new URL(Asset.fromModule(c.src).uri, window.location.href).href);
+  // as palavras e as gravações de cada sotaque
+  const srcs = [...Object.values(CLIPS[lang] ?? {}), ...Object.values(ACCENT_VOICES[lang] ?? {}).flat()].map((c) => c.src);
+  return [...new Set(srcs.map((src) => new URL(Asset.fromModule(src).uri, window.location.href).href))];
 }
 
 /** Quantas gravações do idioma já estão guardadas no aparelho. */

@@ -60,6 +60,11 @@ function stopClip() {
 export function playNativeClip(text: string, locale: string, rate = 1): boolean {
   const clip = clipFor(locale, text);
   if (!clip) return false;
+  return playClip(clip.src, rate);
+}
+
+/** Toca uma gravação (módulo de áudio). Devolve false se não deu. */
+export function playClip(src: number, rate = 1): boolean {
   // navegadores bloqueiam áudio antes do primeiro toque na página
   if (Platform.OS === 'web' && typeof navigator !== 'undefined') {
     const ua = (navigator as Navigator & { userActivation?: { hasBeenActive: boolean } }).userActivation;
@@ -68,7 +73,7 @@ export function playNativeClip(text: string, locale: string, rate = 1): boolean 
   Speech.stop();
   stopClip();
   if (Platform.OS === 'web' && typeof Audio !== 'undefined') {
-    const a = new Audio(Asset.fromModule(clip.src).uri);
+    const a = new Audio(Asset.fromModule(src).uri);
     a.playbackRate = rate < 1 ? Math.max(0.5, rate) : 1;
     webAudio = a;
     a.onended = () => {
@@ -79,7 +84,7 @@ export function playNativeClip(text: string, locale: string, rate = 1): boolean 
     return true;
   }
   try {
-    const p = createAudioPlayer(clip.src);
+    const p = createAudioPlayer(src);
     player = p;
     if (rate < 1) p.setPlaybackRate(Math.max(0.5, rate), 'high');
     p.addListener('playbackStatusUpdate', (s) => {

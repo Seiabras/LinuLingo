@@ -11,7 +11,7 @@ import { SwipeCard, type SwipeDir } from '@/components/SwipeCard';
 import { useApp } from '@/services/app-state';
 import { setMeta } from '@/database/queries';
 import { speak } from '@/services/speech';
-import { CLIPS } from '@/data/audio-index';
+import { ACCENT_VOICES, CLIPS } from '@/data/audio-index';
 import type { LanguagePack } from '@/data/types';
 
 export const TUTORIAL_KEY = 'tutorial_visto';
@@ -160,7 +160,8 @@ function variantTip(pack: LanguagePack): string {
 function accentTip(pack: LanguagePack): string {
   const n = pack.accents?.length ?? 0;
   if (!n) return '';
-  return ` E em «🗣️ Sotaques e dialetos» estão ${n} jeitos regionais de falar ${pack.name.toLowerCase()}, com minimapa, exemplos e palavras típicas. Escolha um para estudar: a minha voz e a pronúncia passam a seguir o jeito de lá, e o treino do sotaque aparece em Mais práticas. No mapa, ao tocar numa região, aparece o sotaque de lá.`;
+  const voices = Object.keys(ACCENT_VOICES[pack.code] ?? {}).length > 0;
+  return ` E em «🗣️ Sotaques e dialetos» estão ${n} jeitos regionais de falar ${pack.name.toLowerCase()}, com minimapa, exemplos e palavras típicas${voices ? ', gravações de gente de cada região (🎙️) e a mesma palavra dita em sotaques diferentes, lado a lado' : ''}. Escolha um para estudar: a minha voz e a pronúncia passam a seguir o jeito de lá, e o treino do sotaque aparece em Mais práticas. No mapa, ao tocar numa região, aparece o sotaque de lá.`;
 }
 
 function Row({ icon, bg, title, text }: { icon: ReactNode; bg: string; title: string; text: string }) {

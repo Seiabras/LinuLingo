@@ -35,6 +35,8 @@ O seletor do Perfil agrupa os idiomas por família e ramo linguístico.
 
 Cada idioma mostra os seus jeitos regionais de falar (18 no espanhol, 5 no romeno, 8 no russo): o que marca cada um, exemplos com voz e transcrição, palavras típicas e um **minimapa com as regiões** onde se fala (subdivisões ISO 3166-2). No mapa-múndi, o cartão do país lista os sotaques de lá, e tocar numa região mostra o sotaque daquele lugar. Formato: `Accent` em src/data/types.ts, um arquivo `sotaques.ts` por idioma.
 
+
+**Gravações de gente de cada região** (`scripts/baixar-vozes-sotaques.mjs`): o script cruza os falantes do Lingua Libre com as regiões de cada sotaque — vale onde a pessoa aprendeu a língua (quando informado) ou onde mora, resolvidos no Wikidata até o código ISO 3166-2 — e baixa palavras do vocabulário do app ditas por eles (só palavras conferidas: há falantes que gravam listas de dicionário ou palavras de outra língua marcadas errado). No cartão e no treino de cada sotaque aparece «🎙️ Gente de lá» (quem gravou e o lugar) e, no topo do painel, «A mesma palavra, sotaques diferentes» para comparar lado a lado. Hoje: espanhol 8 sotaques (Caracas, Cartagena, Bogotá, Buenos Aires, Málaga, Grã Canária, Costa Rica, Chile), romeno os 5, russo 3 (Moscou, São Petersburgo, Perm), italiano 7. Onde ainda não há gravações, o app avisa e convida a gravar no Lingua Libre.
 ## O que tem no espanhol
 
 - **Variante padrão: América Latina** (neutra, com «ustedes»), e mais duas para escolher na aba Cultura: **Espanha** (vosotros, [θ] no «z», 46 diferenças de vocabulário, 3 histórias em Madri, no Caminho de Santiago e nas Fallas) e **Rio da Prata** (voseo, «ll» chiado, 39 diferenças, 3 histórias em La Boca, Montevidéu e Punta Tombo). A variante escolhida troca também a **voz** (es-MX, es-ES, es-AR) e a **IPA**.
@@ -154,6 +156,7 @@ node scripts/fluxo-backup.mjs              # guarda a cópia, muda nome/tema/idi
 node scripts/fluxo-escuta.mjs              # escuta e ditado em espanhol: descobre a gravação tocada e responde certo, errado e sem acento
 node scripts/fluxo-pares.mjs               # pares mínimos: intercepta gravação e voz, confere casa × caza por variante
 node scripts/fluxo-erros.mjs               # erra de propósito, confere o caderno e revisa até os itens saírem
+node scripts/fluxo-vozes.mjs               # gravações dos sotaques: comparação, «Gente de lá» e créditos com o lugar
 node scripts/fluxo-extras.mjs              # tutorial, voz, etimologia, sprint, conversa, comunidade, tema escuro
 node scripts/fluxo-historia.mjs            # histórias: desvio, dica, final e contador de finais
 node scripts/fluxo-praticas.mjs            # diário (corretor), palácio (jogo) e shadowing (microfone falso)
