@@ -4,6 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { ArrowLeft } from 'lucide-react-native';
 import { Card } from '@/components/ui';
 import { allClips } from '@/data/audio-index';
+import { LINU_PHOTOS } from '@/data/fotos-linu';
 import { speak } from '@/services/speech';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
@@ -43,6 +44,10 @@ export default function CreditsScreen() {
         </Text>
         <Text className="text-sm text-slate-500 dark:text-slate-400">
           🗺️ Mapa: contornos do Natural Earth (domínio público). Países, territórios e subdivisões: listas ISO 3166-1, 3166-2 e 3166-3 com nomes em português do projeto iso-codes (LGPL-2.1).
+        </Text>
+        <Text className="text-sm text-slate-500 dark:text-slate-400">
+          📷 Fotos do pinguim-de-barbicha (Wikimedia Commons):{' '}
+          {LINU_PHOTOS.map((p) => `${p.author} (${p.license})`).join(' · ')}.
         </Text>
         <Pressable onPress={() => Linking.openURL('https://lingualibre.org')}>
           <Text className="text-sm font-semibold text-conecta">Grave também no Lingua Libre ›</Text>

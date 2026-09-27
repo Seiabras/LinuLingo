@@ -1,4 +1,4 @@
-import { useEffect, type ReactNode } from 'react';
+import { createContext, useContext, useEffect, useId, type ReactNode } from 'react';
 import { StyleSheet, View } from 'react-native';
 import Animated, {
   cancelAnimation,
@@ -13,16 +13,59 @@ import Animated, {
   withTiming,
   type SharedValue,
 } from 'react-native-reanimated';
-import Svg, { Circle, Ellipse, G, Path } from 'react-native-svg';
+import Svg, { Circle, Defs, Ellipse, G, LinearGradient, Path, RadialGradient, Stop } from 'react-native-svg';
 
 export type LinuMood = 'feliz' | 'pensando' | 'comemorando' | 'triste' | 'falando';
 
 const INK = '#1F2A44';
-const WHITE = '#F8FAFC';
-const BEAK = '#111827';
-const FEET = '#F4A6B8';
 const STRAP = '#1F2A44';
 const CONFETTI = ['#EA580C', '#16A34A', '#2563EB', '#F59E0B', '#DB2777', '#0891B2'];
+
+/**
+ * Volume «meio 3D»: cada parte tem um degradê (luz vindo de cima, à esquerda). Cada camada é um
+ * SVG próprio, então os degradês são declarados em todas; os ids levam um sufixo por Linu para
+ * não colidir quando há vários na mesma página.
+ */
+const IdCtx = createContext('linu');
+const grad = (id: string, name: string) => `url(#${name}-${id})`;
+
+function Shading() {
+  const id = useContext(IdCtx);
+  return (
+    <Defs>
+      <RadialGradient id={`corpo-${id}`} cx="38%" cy="26%" r="85%">
+        <Stop offset="0" stopColor="#4A5A82" />
+        <Stop offset="0.5" stopColor="#253153" />
+        <Stop offset="1" stopColor="#121A2F" />
+      </RadialGradient>
+      <RadialGradient id={`barriga-${id}`} cx="42%" cy="32%" r="78%">
+        <Stop offset="0" stopColor="#FFFFFF" />
+        <Stop offset="0.65" stopColor="#F1F5F9" />
+        <Stop offset="1" stopColor="#C9D3E1" />
+      </RadialGradient>
+      <LinearGradient id={`nadadeira-${id}`} x1="0" y1="0" x2="1" y2="1">
+        <Stop offset="0" stopColor="#3A4A72" />
+        <Stop offset="1" stopColor="#121A2F" />
+      </LinearGradient>
+      <RadialGradient id={`pe-${id}`} cx="40%" cy="30%" r="80%">
+        <Stop offset="0" stopColor="#FCC8D5" />
+        <Stop offset="1" stopColor="#E07897" />
+      </RadialGradient>
+      <LinearGradient id={`bico-${id}`} x1="0" y1="0" x2="0" y2="1">
+        <Stop offset="0" stopColor="#4B5563" />
+        <Stop offset="1" stopColor="#0B1020" />
+      </LinearGradient>
+      <RadialGradient id={`iris-${id}`} cx="45%" cy="40%" r="60%">
+        <Stop offset="0" stopColor="#B4531F" />
+        <Stop offset="1" stopColor="#5A1A0B" />
+      </RadialGradient>
+      <RadialGradient id={`bochecha-${id}`} cx="50%" cy="50%" r="50%">
+        <Stop offset="0" stopColor="#FB7185" stopOpacity="0.7" />
+        <Stop offset="1" stopColor="#FB7185" stopOpacity="0" />
+      </RadialGradient>
+    </Defs>
+  );
+}
 
 // o desenho vive num quadro 120 × 140; o centro da vista é (60, 70)
 const VB_W = 120;
@@ -141,9 +184,20 @@ export function Linu({ mood = 'feliz', size = 96, animate = true }: { mood?: Lin
     ],
   }));
   const up = mood === 'comemorando';
+  const id = useId().replace(/[^a-zA-Z0-9]/g, '');
+  // a sombra no chão fica parada e encolhe quando o Linu sobe
+  const ground = at(60, 135);
+  const shadowStyle = useAnimatedStyle(() => {
+    const k = Math.max(0.55, 1 + bob.value / 30);
+    return { opacity: 0.35 * k, transform: [{ translateX: ground.dx }, { translateY: ground.dy }, { scaleX: k }, { translateX: -ground.dx }, { translateY: -ground.dy }] };
+  });
 
   return (
+    <IdCtx.Provider value={id}>
     <View style={{ width: size, height: size * (VB_H / VB_W) }} accessibilityRole="image" accessibilityLabel={`Linu, o pinguim-de-barbicha, ${mood}`}>
+      <Layer style={shadowStyle}>
+        <Ellipse cx="60" cy="135" rx="32" ry="4.5" fill="#64748B" />
+      </Layer>
       {up && live && <Confetti party={party} size={size} />}
       <Animated.View style={[StyleSheet.absoluteFill, bodyStyle]} pointerEvents="none">
         {/* nadadeiras atrás do corpo */}
@@ -158,6 +212,7 @@ export function Linu({ mood = 'feliz', size = 96, animate = true }: { mood?: Lin
         {mood === 'pensando' && <Bubbles u={u} think={think} live={live} />}
       </Animated.View>
     </View>
+    </IdCtx.Provider>
   );
 }
 
@@ -166,6 +221,7 @@ function Layer({ children, style }: { children: ReactNode; style?: object }) {
   return (
     <Animated.View style={[StyleSheet.absoluteFill, style]} pointerEvents="none">
       <Svg width="100%" height="100%" viewBox={`0 0 ${VB_W} ${VB_H}`}>
+        <Shading />
         {children}
       </Svg>
     </Animated.View>
@@ -173,23 +229,26 @@ function Layer({ children, style }: { children: ReactNode; style?: object }) {
 }
 
 function BodyShape({ mood }: { mood: LinuMood }) {
+  const id = useContext(IdCtx);
   return (
     <G>
       {/* pés */}
-      <Ellipse cx="46" cy="132" rx="11" ry="5" fill={FEET} />
-      <Ellipse cx="74" cy="132" rx="11" ry="5" fill={FEET} />
-      {/* corpo, cabeça (boné preto) e frente branca */}
-      <Ellipse cx="60" cy="84" rx="40" ry="48" fill={INK} />
-      <Circle cx="60" cy="50" r="33" fill={INK} />
-      <Ellipse cx="60" cy="96" rx="28" ry="34" fill={WHITE} />
-      <Path d="M29 56 Q30 40 44 40 Q60 44 76 40 Q90 40 91 56 Q93 80 80 92 Q60 100 40 92 Q27 80 29 56 Z" fill={WHITE} />
+      <Ellipse cx="46" cy="132" rx="11" ry="5" fill={grad(id, 'pe')} />
+      <Ellipse cx="74" cy="132" rx="11" ry="5" fill={grad(id, 'pe')} />
+      {/* corpo, cabeça (boné preto) e frente branca, com volume */}
+      <Ellipse cx="60" cy="84" rx="40" ry="48" fill={grad(id, 'corpo')} />
+      <Circle cx="60" cy="50" r="33" fill={grad(id, 'corpo')} />
+      <Ellipse cx="60" cy="96" rx="28" ry="34" fill={grad(id, 'barriga')} />
+      <Path d="M29 56 Q30 40 44 40 Q60 44 76 40 Q90 40 91 56 Q93 80 80 92 Q60 100 40 92 Q27 80 29 56 Z" fill={grad(id, 'barriga')} />
+      {/* brilho na cabeça */}
+      <Ellipse cx="45" cy="28" rx="10" ry="4.5" fill="#FFFFFF" opacity={0.2} transform="rotate(-28 45 28)" />
       {/* a barbicha: faixa fina de orelha a orelha, passando sob o bico */}
       <Path d="M31 44 Q30 70 42 78 Q60 88 78 78 Q90 70 89 44" stroke={STRAP} strokeWidth="1.8" fill="none" strokeLinecap="round" />
       {/* bochechas */}
       {(mood === 'feliz' || mood === 'comemorando' || mood === 'falando') && (
-        <G fill="#FB7185" opacity={0.4}>
-          <Circle cx="39" cy="63" r="3.8" />
-          <Circle cx="81" cy="63" r="3.8" />
+        <G>
+          <Circle cx="39" cy="63" r="5.5" fill={grad(id, 'bochecha')} />
+          <Circle cx="81" cy="63" r="5.5" fill={grad(id, 'bochecha')} />
         </G>
       )}
       {/* sobrancelhas tristes */}
@@ -220,9 +279,13 @@ function Flipper({ side, mood, u, wave, flap }: { side: 'esq' | 'dir'; mood: Lin
   else d = left ? 'M24 76 Q6 100 18 120 Q30 104 30 82 Z' : 'M96 76 Q114 100 102 120 Q90 104 90 82 Z';
   return (
     <Layer style={style}>
-      <Path d={d} fill={INK} />
+      <FlipperPath d={d} />
     </Layer>
   );
+}
+
+function FlipperPath({ d }: { d: string }) {
+  return <Path d={d} fill={grad(useContext(IdCtx), 'nadadeira')} />;
 }
 
 /** Olhos: fechados de alegria (^^) ou abertos, piscando. */
@@ -231,6 +294,7 @@ function Eyelids({ mood, u, blink }: { mood: LinuMood; u: number; blink: SharedV
   const dx = mood === 'pensando' ? 3 : 0;
   const cy = ((52 + dy) - VB_H / 2) * u;
   const style = useAnimatedStyle(() => ({ transform: [{ translateY: cy }, { scaleY: blink.value }, { translateY: -cy }] }));
+  const id = useContext(IdCtx);
   if (mood === 'feliz' || mood === 'comemorando') {
     return (
       <Layer>
@@ -243,13 +307,15 @@ function Eyelids({ mood, u, blink }: { mood: LinuMood; u: number; blink: SharedV
   }
   return (
     <Layer style={style}>
-      {/* íris castanho-avermelhada, como na espécie */}
-      <Circle cx={46 + dx} cy={52 + dy} r="5.5" fill="#7C2D12" />
-      <Circle cx={74 + dx} cy={52 + dy} r="5.5" fill="#7C2D12" />
-      <Circle cx={46 + dx} cy={52 + dy} r="3.4" fill={INK} />
-      <Circle cx={74 + dx} cy={52 + dy} r="3.4" fill={INK} />
-      <Circle cx={47.6 + dx} cy={50.2 + dy} r="1.5" fill="#fff" />
-      <Circle cx={75.6 + dx} cy={50.2 + dy} r="1.5" fill="#fff" />
+      {/* íris castanho-avermelhada, como na espécie, com dois reflexos de luz */}
+      <Circle cx={46 + dx} cy={52 + dy} r="6" fill={grad(id, 'iris')} />
+      <Circle cx={74 + dx} cy={52 + dy} r="6" fill={grad(id, 'iris')} />
+      <Circle cx={46.3 + dx} cy={52.4 + dy} r="3.7" fill={INK} />
+      <Circle cx={74.3 + dx} cy={52.4 + dy} r="3.7" fill={INK} />
+      <Circle cx={48 + dx} cy={50 + dy} r="1.9" fill="#fff" />
+      <Circle cx={76 + dx} cy={50 + dy} r="1.9" fill="#fff" />
+      <Circle cx={44.4 + dx} cy={54.2 + dy} r="0.9" fill="#fff" opacity={0.8} />
+      <Circle cx={72.4 + dx} cy={54.2 + dy} r="0.9" fill="#fff" opacity={0.8} />
     </Layer>
   );
 }
@@ -259,10 +325,12 @@ function Beak({ mood, u, talk }: { mood: LinuMood; u: number; talk: SharedValue<
   const open = mood === 'falando' || mood === 'comemorando';
   const jaw = useAnimatedStyle(() => ({ transform: [{ translateY: talk.value * 2.4 * u }] }));
   const mouth = useAnimatedStyle(() => ({ opacity: talk.value }));
+  const fill = grad(useContext(IdCtx), 'bico');
   if (!open) {
     return (
       <Layer>
-        <Path d="M53 60 L67 60 L60 70 Z" fill={BEAK} />
+        <Path d="M53 60 L67 60 L60 70 Z" fill={fill} />
+        <Path d="M56 61.2 L61 61.2 L58 63.6 Z" fill="#FFFFFF" opacity={0.25} />
       </Layer>
     );
   }
@@ -272,10 +340,11 @@ function Beak({ mood, u, talk }: { mood: LinuMood; u: number; talk: SharedValue<
         <Path d="M55 65.5 L65 65.5 L60 69 Z" fill="#F87171" />
       </Layer>
       <Layer>
-        <Path d="M53 60 L67 60 L60 66 Z" fill={BEAK} />
+        <Path d="M53 60 L67 60 L60 66 Z" fill={fill} />
+        <Path d="M56 61.2 L61 61.2 L58 63.2 Z" fill="#FFFFFF" opacity={0.25} />
       </Layer>
       <Layer style={jaw}>
-        <Path d="M55.5 65.5 L64.5 65.5 L60 70 Z" fill={BEAK} />
+        <Path d="M55.5 65.5 L64.5 65.5 L60 70 Z" fill={fill} />
       </Layer>
     </>
   );

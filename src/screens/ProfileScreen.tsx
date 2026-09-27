@@ -3,6 +3,7 @@ import { Alert, Platform, Pressable, Text, TextInput, View } from 'react-native'
 import { router, useFocusEffect } from 'expo-router';
 import { Screen, Button, Card, Chip, SectionTitle } from '@/components/ui';
 import { Linu } from '@/components/Linu';
+import { SpeciesPhotos } from '@/components/SpeciesPhotos';
 import { useApp } from '@/services/app-state';
 import { completedLessons, resetProgress, updateUser, vocabStats, xpByDay } from '@/database/queries';
 import { groupByLineage, isAvailable } from '@/data/idiomas';
@@ -73,6 +74,10 @@ export default function ProfileScreen() {
         />
         <Text className="text-xs text-slate-500">toque no nome para editar</Text>
       </View>
+
+      <Card className="mt-4">
+        <SpeciesPhotos height={130} />
+      </Card>
 
       <View className="mt-4 flex-row flex-wrap gap-2">
         <Stat label="ofensiva" value={`🔥 ${streak}`} />

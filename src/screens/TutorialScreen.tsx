@@ -6,6 +6,7 @@ import { Lightbulb, MessageCircle, Star, Trophy } from 'lucide-react-native';
 import { Screen, Button, ProgressBar, SpeechBubble } from '@/components/ui';
 import { Linu, type LinuMood } from '@/components/Linu';
 import { Logo } from '@/components/Logo';
+import { SpeciesPhotos } from '@/components/SpeciesPhotos';
 import { SwipeCard, type SwipeDir } from '@/components/SwipeCard';
 import { useApp } from '@/services/app-state';
 import { setMeta } from '@/database/queries';
@@ -101,6 +102,11 @@ export default function TutorialScreen() {
             <Text className="mt-1 text-base leading-6 text-slate-700 dark:text-slate-300">{s.text}</Text>
           </SpeechBubble>
         </Animated.View>
+        {i === 0 && (
+          <Animated.View entering={FadeInDown.delay(450).duration(380)}>
+            <SpeciesPhotos height={120} withFacts={false} />
+          </Animated.View>
+        )}
         {s.extra === 'trilha' && <TrailLegend />}
         {s.extra === 'etapas' && <StepsList />}
         {s.extra === 'gestos' && <GestureDemo />}
