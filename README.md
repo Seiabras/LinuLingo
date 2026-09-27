@@ -6,7 +6,9 @@ App de idiomas (React Native + Expo) que junta o melhor de Duolingo, Busuu, Rose
 
 **Experimente no navegador:** https://seiabras.github.io/LinuLingo/
 
-O mascote é o **Linu**, um pinguim-de-barbicha (*Pygoscelis antarctica*).
+O mascote é o **Linu**, um pinguim-de-barbicha (*Pygoscelis antarctica*). O tutorial e o Perfil mostram fotos reais da espécie (Wikimedia Commons, com autor e licença): o recorte fica centrado na cabeça do pinguim e tocar numa foto abre ela inteira, com setas (ou arrastar, ou as setas do teclado) para passar as outras.
+
+As faixas que rolam para os lados (fotos, trilha de subníveis, idiomas e regiões do mapa, tabelas da gramática, sugestões da conversa) têm setas ‹ › nas pontas, para quem usa mouse e não consegue arrastar.
 
 ## Idiomas
 
@@ -188,6 +190,7 @@ node scripts/fluxo-sons.mjs                # adivinhe o som: pelo arquivo tocado
 node scripts/fluxo-roupas.mjs              # roupinhas: restaura 10 lições de romeno, libera a căciulă e o Linu a usa
 node scripts/fluxo-variedades.mjs          # seletor único (italiano): variantes, sotaques e línguas lado a lado
 node scripts/fluxo-tutorial-idioma.mjs     # 1ª visita: o Linu pergunta o idioma, prepara o conteúdo e cumprimenta nele
+node scripts/fluxo-fotos.mjs               # fotos do pinguim: setas da faixa, foto aberta (setas, teclado, Esc, fechar) e seta da trilha
 node scripts/fluxo-extras.mjs              # tutorial, voz, etimologia, sprint, conversa, comunidade, tema escuro
 node scripts/fluxo-historia.mjs            # histórias: desvio, dica, final e contador de finais
 node scripts/fluxo-praticas.mjs            # diário (corretor), palácio (jogo) e shadowing (microfone falso)

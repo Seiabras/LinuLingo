@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Pressable, ScrollView, Text, View } from 'react-native';
+import { Pressable, Text, View } from 'react-native';
+import { HScroll } from './HScroll';
 import { Card, Ipa, SpeakButton } from './ui';
 import { Linu } from './Linu';
 import { useApp } from '@/services/app-state';
@@ -16,7 +17,7 @@ export function GrammarSections({ sections }: { sections: GrammarSection[] }) {
         <Card key={k} className="gap-3">
           {s.heading && <Text className="text-lg font-extrabold text-slate-900 dark:text-white">{s.heading}</Text>}
           {s.table && (
-            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+            <HScroll label="a tabela">
               <View className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700">
                 <View className="flex-row bg-conecta-light dark:bg-blue-950">
                   {s.table.head.map((h, i) => (
@@ -39,7 +40,7 @@ export function GrammarSections({ sections }: { sections: GrammarSection[] }) {
                   </View>
                 ))}
               </View>
-            </ScrollView>
+            </HScroll>
           )}
           {s.text && <Text className="text-base leading-6 text-slate-800 dark:text-slate-200">{s.text}</Text>}
           {s.examples && (

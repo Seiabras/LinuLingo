@@ -1,5 +1,6 @@
 import { useCallback, useState } from 'react';
 import { Modal, Pressable, ScrollView, Text, View } from 'react-native';
+import { HScroll } from '@/components/HScroll';
 import { router, useFocusEffect } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Lightbulb, Lock, MessageCircle, Star, Trophy, Check, X } from 'lucide-react-native';
@@ -179,7 +180,7 @@ export default function HomeScreen() {
         <Text className="text-xs font-extrabold uppercase tracking-widest text-slate-500 dark:text-slate-400">Trilha CEFR · 15 subníveis</Text>
         <View className="h-px flex-1 bg-slate-300 dark:bg-slate-700" />
       </View>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 6, paddingVertical: 4 }}>
+      <HScroll label="a trilha" contentContainerStyle={{ gap: 6, paddingVertical: 4 }}>
         {units.map(({ u, doneCount, total, reached }) => {
           const done = doneCount === total;
           const cur = unit?.id === u.id;
@@ -195,7 +196,7 @@ export default function HomeScreen() {
             </Pressable>
           );
         })}
-      </ScrollView>
+      </HScroll>
 
       {units.map(({ u, items, doneCount, reached }) => {
         const isOpen = open.has(u.id) || (unit?.id === u.id && !closed.has(u.id));

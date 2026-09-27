@@ -6,12 +6,15 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 const UA = 'LinuLingoApp/0.1 (https://github.com/Seiabras/LinuLingo; app educativo)';
 const API = 'https://commons.wikimedia.org/w/api.php';
 
-/** Fotos escolhidas à mão: [arquivo no Commons, legenda em português] */
+/**
+ * Fotos escolhidas à mão: [arquivo no Commons, legenda em português, foco]. O foco é o ponto que não
+ * pode sair do recorte (a cabeça do pinguim), em frações da largura e da altura da foto.
+ */
 const FOTOS = [
-  ['File:Chinstrap Penguin (Unsplash).jpg', 'De perto: a faixinha preta que passa sob o queixo, como uma tira de capacete, dá o nome à espécie.'],
-  ['File:2019-03-03a Vertical - Chinstrap penguin on Barrientos Island, Antarctica.jpg', 'Andando de nadadeiras abertas na ilha Barrientos, na Antártida.'],
-  ['File:Pygoscelis antarctica feeding a chick.jpg', 'Alimentando o filhote, ainda de penugem cinza.'],
-  ['File:A chinstrap penguin (Pygoscelis antarcticus) on Deception Island in Antarctica.jpg', 'Na ilha Deception, nas Shetland do Sul.'],
+  ['File:Chinstrap Penguin (Unsplash).jpg', 'De perto: a faixinha preta que passa sob o queixo, como uma tira de capacete, dá o nome à espécie.', [0.49, 0.42]],
+  ['File:2019-03-03a Vertical - Chinstrap penguin on Barrientos Island, Antarctica.jpg', 'Andando de nadadeiras abertas na ilha Barrientos, na Antártida.', [0.55, 0.3]],
+  ['File:Pygoscelis antarctica feeding a chick.jpg', 'Alimentando o filhote, ainda de penugem cinza.', [0.5, 0.3]],
+  ['File:A chinstrap penguin (Pygoscelis antarcticus) on Deception Island in Antarctica.jpg', 'Na ilha Deception, nas Shetland do Sul.', [0.55, 0.4]],
 ];
 
 const strip = (s) => (s ?? '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
@@ -29,7 +32,7 @@ const pages = (await fetch(`${API}?${q}`, { headers: { 'User-Agent': UA } }).the
 
 mkdirSync('assets/fotos', { recursive: true });
 const out = [];
-for (const [i, [title, caption]] of FOTOS.entries()) {
+for (const [i, [title, caption, focus]] of FOTOS.entries()) {
   const p = pages.find((x) => x.title === title.replace(/_/g, ' '));
   const ii = p?.imageinfo?.[0];
   if (!ii) throw new Error(`não achei ${title}`);
@@ -37,7 +40,7 @@ for (const [i, [title, caption]] of FOTOS.entries()) {
   const file = `pinguim-barbicha-${i + 1}.jpg`;
   const buf = Buffer.from(await fetch(ii.thumburl, { headers: { 'User-Agent': UA } }).then((r) => r.arrayBuffer()));
   writeFileSync(`assets/fotos/${file}`, buf);
-  out.push({ file, caption, author: strip(em.Artist?.value), license: strip(em.LicenseShortName?.value), licenseUrl: strip(em.LicenseUrl?.value), page: ii.descriptionurl, w: ii.thumbwidth, h: ii.thumbheight });
+  out.push({ file, caption, author: strip(em.Artist?.value), license: strip(em.LicenseShortName?.value), licenseUrl: strip(em.LicenseUrl?.value), page: ii.descriptionurl, focus, w: ii.thumbwidth, h: ii.thumbheight });
   console.log(`  ${file}  ${ii.thumbwidth}×${ii.thumbheight}  ${buf.length >> 10} KB  ${strip(em.LicenseShortName?.value)}  ${strip(em.Artist?.value)}`);
   await new Promise((r) => setTimeout(r, 400));
 }
@@ -57,13 +60,15 @@ export interface SpeciesPhoto {
   page: string;
   /** proporção largura / altura */
   ratio: number;
+  /** o ponto que não pode sair do recorte (a cabeça), em frações da largura e da altura */
+  focus: [number, number];
 }
 
 export const LINU_PHOTOS: SpeciesPhoto[] = [
 ${out
   .map(
     (f) =>
-      `  { src: require('../../assets/fotos/${f.file}'), caption: ${esc(f.caption)}, author: ${esc(f.author)}, license: ${esc(f.license)}, licenseUrl: ${esc(f.licenseUrl)}, page: ${esc(f.page)}, ratio: ${(f.w / f.h).toFixed(3)} },`,
+      `  { src: require('../../assets/fotos/${f.file}'), caption: ${esc(f.caption)}, author: ${esc(f.author)}, license: ${esc(f.license)}, licenseUrl: ${esc(f.licenseUrl)}, page: ${esc(f.page)}, ratio: ${(f.w / f.h).toFixed(3)}, focus: [${f.focus.join(', ')}] },`,
   )
   .join('\n')}
 ];

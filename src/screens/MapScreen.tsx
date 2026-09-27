@@ -1,5 +1,6 @@
 import { useMemo, useRef, useState } from 'react';
-import { LogBox, Pressable, ScrollView, Text, TextInput, useWindowDimensions, View } from 'react-native';
+import { LogBox, Pressable, Text, TextInput, useWindowDimensions, View } from 'react-native';
+import { HScroll } from '@/components/HScroll';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import { router } from 'expo-router';
 import { scheduleOnRN } from 'react-native-worklets';
@@ -281,7 +282,7 @@ export default function MapScreen() {
 
       {mode === 'hoje' && (
         <>
-          <ScrollView horizontal showsHorizontalScrollIndicator={false} className="mt-3" contentContainerStyle={{ gap: 8 }}>
+          <HScroll label="os idiomas" className="mt-3" contentContainerStyle={{ gap: 8 }}>
             <Pressable
               accessibilityRole="button"
               accessibilityState={{ expanded: showAll }}
@@ -303,7 +304,7 @@ export default function MapScreen() {
                 <Text className={`font-bold ${langCode === l.code ? 'text-white' : 'text-slate-700 dark:text-slate-200'}`}>{l.name}</Text>
               </Pressable>
             ))}
-          </ScrollView>
+          </HScroll>
 
           {showAll && (
             <Card className="mt-2 gap-2">
@@ -482,19 +483,19 @@ export default function MapScreen() {
         </View>
       </View>
 
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} className="mt-2" contentContainerStyle={{ gap: 6 }}>
+      <HScroll label="as regiões" className="mt-2" contentContainerStyle={{ gap: 6 }}>
         <RegionChip label="🌐 Mundo" active={!region} onPress={() => goRegion(null)} />
         {WORLD_REGIONS.map((r) => (
           <RegionChip key={r.id} label={`${r.icon} ${r.name}`} active={region === r.id} onPress={() => goRegion(r.id)} />
         ))}
-      </ScrollView>
+      </HScroll>
       {regionData && (
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} className="mt-1.5" contentContainerStyle={{ gap: 6 }}>
+        <HScroll label="as sub-regiões" className="mt-1.5" contentContainerStyle={{ gap: 6 }}>
           <RegionChip small label="Todas" active={!subRegion} onPress={() => goRegion(regionData.id)} />
           {regionData.subs.map((x) => (
             <RegionChip small key={x.id} label={x.name} active={subRegion === x.id} onPress={() => goRegion(regionData.id, x.id)} />
           ))}
-        </ScrollView>
+        </HScroll>
       )}
       {regionData && (
         <View className="mt-2 flex-row flex-wrap gap-1.5">

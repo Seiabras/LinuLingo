@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { KeyboardAvoidingView, Platform, Pressable, ScrollView, Text, TextInput, View } from 'react-native';
+import { HScroll } from '@/components/HScroll';
 import { useLocalSearchParams } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ArrowLeft, Mic, Send } from 'lucide-react-native';
@@ -178,13 +179,13 @@ export default function ScenarioScreen() {
 
         {done === null && (
           <View className="gap-2 border-t border-slate-200 px-4 py-3 dark:border-slate-800">
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 8 }}>
+            <HScroll label="as sugestões" contentContainerStyle={{ gap: 8 }}>
               {current.suggestions.map((s) => (
                 <Pressable key={s} onPress={() => setInput(s)} className="rounded-full border border-conecta/40 px-3 py-1.5 active:bg-conecta-light">
                   <Text className="text-sm text-conecta">💡 {s}</Text>
                 </Pressable>
               ))}
-            </ScrollView>
+            </HScroll>
             <View className="flex-row items-center gap-2">
               {canRecognize() && (
                 <Pressable accessibilityLabel="Falar" onPress={record} disabled={listening} className={`h-12 w-12 items-center justify-center rounded-full ${listening ? 'bg-rose-500' : 'bg-conecta-light dark:bg-blue-950'}`}>
