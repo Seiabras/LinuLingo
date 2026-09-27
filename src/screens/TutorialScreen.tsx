@@ -14,6 +14,7 @@ import { speak } from '@/services/speech';
 import { ACCENT_VOICES, CLIPS } from '@/data/audio-index';
 import type { LanguagePack } from '@/data/types';
 import { nomeIdioma } from '@/services/idioma-nome';
+import { PACKS } from '@/data/idiomas';
 
 export const TUTORIAL_KEY = 'tutorial_visto';
 
@@ -21,7 +22,7 @@ interface Slide {
   mood: LinuMood;
   title: string;
   text: string;
-  extra?: 'trilha' | 'etapas' | 'gestos' | 'ofensiva' | 'voz';
+  extra?: 'idioma' | 'trilha' | 'etapas' | 'gestos' | 'ofensiva' | 'voz';
 }
 
 /**
@@ -29,11 +30,19 @@ interface Slide {
  * e pode ser revisto pelo Perfil. Mecânica nova ou mudada entra aqui na mesma entrega.
  */
 export default function TutorialScreen() {
-  const { db, pack } = useApp();
+  const { db, pack, setLanguage } = useApp();
   const [i, setI] = useState(0);
+  // idioma sendo preparado (o conteúdo dele é gravado no banco na primeira vez)
+  const [preparing, setPreparing] = useState<string | null>(null);
 
   const slides: Slide[] = [
-    { mood: 'feliz', title: `${pack.phrases.hi} Eu sou o Linu 🐧`, text: `Sou um pinguim-de-barbicha, dá para ver pela faixinha preta embaixo do queixo. Vou te acompanhar no ${nomeIdioma(pack.name)}. Em 1 minuto te mostro como tudo funciona!` },
+    {
+      mood: 'feliz',
+      title: 'Oi! Eu sou o Linu 🐧',
+      text: 'Sou um pinguim-de-barbicha, dá para ver pela faixinha preta embaixo do queixo. Primeiro: que idioma você quer aprender comigo? Dá para trocar quando quiser, no Perfil.',
+      extra: 'idioma',
+    },
+    { mood: 'feliz', title: `${pack.phrases.hi} Vamos de ${nomeIdioma(pack.name)}!`, text: `Vou te acompanhar no ${nomeIdioma(pack.name)}. Em 1 minuto te mostro como tudo funciona!` },
     { mood: 'falando', title: 'A trilha', text: 'A trilha vai do A1.1 ao C2 em 15 subníveis, na faixa do topo. As lições liberam uma por vez; se você já sabe um nível, toque em «Já sei isto» numa unidade bloqueada e faça o teste: com 80% você pula para lá. Cada unidade tem quatro tipos de parada:', extra: 'trilha' },
     { mood: 'pensando', title: 'Uma lição, 6 etapas', text: 'Primeiro você entende, depois pratica. Nada de decorar sem saber o porquê:', extra: 'etapas' },
     // idiomas de outro alfabeto (russo): teclado próprio e sílaba tônica marcada
@@ -137,7 +146,25 @@ export default function TutorialScreen() {
             <Text className="mt-1 text-base leading-6 text-slate-700 dark:text-slate-300">{s.text}</Text>
           </SpeechBubble>
         </Animated.View>
-        {i === 0 && (
+        {s.extra === 'idioma' && (
+          <Animated.View entering={FadeInDown.delay(400).duration(380)}>
+            <LanguageChoice
+              current={pack.code}
+              preparing={preparing}
+              onPick={async (code) => {
+                if (preparing) return;
+                setPreparing(code);
+                try {
+                  await setLanguage(code);
+                } finally {
+                  setPreparing(null);
+                }
+                setI(1);
+              }}
+            />
+          </Animated.View>
+        )}
+        {i === 1 && (
           <Animated.View entering={FadeInDown.delay(450).duration(380)}>
             <SpeciesPhotos height={120} withFacts={false} />
           </Animated.View>
@@ -159,6 +186,35 @@ export default function TutorialScreen() {
         <Button title={last ? 'Começar!' : 'Próximo'} variant="success" className="flex-1" onPress={() => (last ? finish() : setI(i + 1))} />
       </View>
     </Screen>
+  );
+}
+
+/** Os idiomas do app para escolher logo no começo; o escolhido aparece marcado. */
+function LanguageChoice({ current, preparing, onPick }: { current: string; preparing: string | null; onPick: (code: string) => void }) {
+  const packs = Object.values(PACKS).sort((a, b) => a.name.localeCompare(b.name, 'pt'));
+  return (
+    <View className="flex-row flex-wrap gap-2">
+      {packs.map((p) => {
+        const on = p.code === current;
+        return (
+          <Pressable
+            key={p.code}
+            accessibilityRole="radio"
+            accessibilityState={{ checked: on }}
+            aria-checked={on}
+            accessibilityLabel={`Aprender ${p.name}`}
+            onPress={() => onPick(p.code)}
+            className={`min-w-[46%] flex-1 flex-row items-center gap-3 rounded-2xl border-2 p-3 active:opacity-80 ${on ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
+          >
+            <Text className="text-3xl">{p.flag}</Text>
+            <View className="flex-1">
+              <Text className={`font-extrabold ${on ? 'text-conecta' : 'text-slate-900 dark:text-white'}`}>{p.name}</Text>
+              <Text className="text-xs text-slate-500 dark:text-slate-400">{preparing === p.code ? 'preparando…' : p.nativeName}</Text>
+            </View>
+          </Pressable>
+        );
+      })}
+    </View>
   );
 }
 

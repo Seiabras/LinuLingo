@@ -134,7 +134,10 @@ await shot('historia');
 
 // tutorial: o slide dos falsos amigos
 await page.goto(BASE + '/tutorial', { waitUntil: 'load' });
-await expectText('Hej! Eu sou o Linu');
+// 1º passo: a escolha do idioma (o estudado já vem marcado); o cumprimento no idioma vem no 2º
+await expectText('que idioma você quer aprender comigo?');
+await click('Próximo');
+await expectText('Hej! Vamos de');
 for (let i = 0; i < 3; i++) {
   await click('Próximo');
   await page.waitForTimeout(400);

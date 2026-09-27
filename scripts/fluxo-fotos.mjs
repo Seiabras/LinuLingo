@@ -28,6 +28,8 @@ const photosLoaded = async () => {
 };
 
 await page.goto(BASE + '/tutorial', { waitUntil: 'load', timeout: 180000 });
+// o 1º passo é a escolha do idioma; as fotos vêm no 2º
+await page.getByText('Próximo', { exact: true }).first().click({ timeout: 90000 });
 await photosLoaded();
 await page.waitForTimeout(800);
 await page.screenshot({ path: `${OUT}/fotos-${device}-${scheme}-1-tutorial.png` });

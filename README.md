@@ -117,7 +117,7 @@ Cada idioma mostra os seus jeitos regionais de falar (18 no espanhol, 5 no romen
 - **Conversação guiada**: café, hotel, bar com amigos, entrevista de emprego. O Linu avisa quando o tom não combina (ex.: «tu» com o recepcionista).
 - **Comunidade**: corrigir textos de outros alunos (+20 XP) e acompanhar os próprios envios.
 - **Gamificação**: ofensiva com congelamento, meta diária, XP da semana.
-- **Tutorial com o Linu** na primeira visita (e no Perfil), com um cartão de verdade para treinar os gestos.
+- **Tutorial com o Linu** na primeira visita (e no Perfil): começa pela escolha do idioma, cumprimenta no idioma escolhido e mostra cada mecânica, com um cartão de verdade para treinar os gestos.
 - **Cópia do progresso** (Perfil › 💾): guarda num arquivo JSON tudo o que é do aluno (XP, ofensiva, lições, revisões, histórias, diário, textos da comunidade, tema, variantes e sotaques), sem o conteúdo dos idiomas, que o app já traz. Para trocar de aparelho ou não perder nada ao limpar o navegador. Antes de restaurar, o app mostra o que a cópia traz; a troca é feita numa transação (ou entra tudo, ou nada muda) e as revisões de palavras que não existem mais ficam de fora. No computador o arquivo é baixado; no celular abre o menu de compartilhar (Arquivos, Drive…).
 - Tema claro, escuro ou automático.
 
@@ -187,6 +187,7 @@ node scripts/fluxo-mapa-jogo.mjs           # jogo do mapa: toca nos países e re
 node scripts/fluxo-sons.mjs                # adivinhe o som: pelo arquivo tocado, acerta as opções em romeno; 🐾 dos bichos
 node scripts/fluxo-roupas.mjs              # roupinhas: restaura 10 lições de romeno, libera a căciulă e o Linu a usa
 node scripts/fluxo-variedades.mjs          # seletor único (italiano): variantes, sotaques e línguas lado a lado
+node scripts/fluxo-tutorial-idioma.mjs     # 1ª visita: o Linu pergunta o idioma, prepara o conteúdo e cumprimenta nele
 node scripts/fluxo-extras.mjs              # tutorial, voz, etimologia, sprint, conversa, comunidade, tema escuro
 node scripts/fluxo-historia.mjs            # histórias: desvio, dica, final e contador de finais
 node scripts/fluxo-praticas.mjs            # diário (corretor), palácio (jogo) e shadowing (microfone falso)
