@@ -11,6 +11,7 @@ import { SwipeCard, type SwipeDir } from '@/components/SwipeCard';
 import { useApp } from '@/services/app-state';
 import { setMeta } from '@/database/queries';
 import { speak } from '@/services/speech';
+import { CLIPS } from '@/data/audio-index';
 import type { LanguagePack } from '@/data/types';
 
 export const TUTORIAL_KEY = 'tutorial_visto';
@@ -60,6 +61,11 @@ export default function TutorialScreen() {
     { mood: 'pensando', title: 'Gramática e linguística', text: `Na aba Gramática há dois jeitos de estudar. «Por nível» traz os tópicos do A1.1 ao C2. «Por área da língua» é um curso de linguística: fonética, fonologia, morfologia, sintaxe, semântica, pragmática e estilística aplicadas ao ${pack.name.toLowerCase()}, o quadro interativo do IPA, normas (códigos de línguas, transliteração, glosas, CEFR) e grandes temas, como as famílias de línguas.` },
     { mood: 'comemorando', title: 'Histórias com vários finais', text: `Nas Histórias você lê em ${pack.name.toLowerCase()} e decide o que eu faço. Se escolher algo que mostra que não entendeu o texto, eu dou uma dica. Cada história tem mais de um final: tente achar todos!` },
     { mood: 'pensando', title: 'Diário, shadowing e palácio', text: `No Diário você escreve 3 frases sobre o seu dia e eu corrijo acentos, gênero e erros comuns. No Shadowing você repete frases imitando o ritmo e a melodia, e eu desenho a sua voz. No Palácio da memória cada gênero mora numa sala: ${(pack.genders ?? ['m', 'f', 'n']).includes('n') ? '🔥 Forja (masculino), 🌊 Lago (feminino) e 🦎 Jardim do Camaleão (neutro)' : '🔥 Forja (masculino) e 🌊 Lago (feminino)'}.` },
+    {
+      mood: 'falando',
+      title: 'Treine o ouvido',
+      text: `Em «🎧 Escuta e ditado» (Mais práticas) você ouve uma palavra${CLIPS[pack.code] ? ' gravada por um falante nativo' : ''} e mostra o que entendeu: escolhendo entre 4 que soam parecido ou escrevendo (o ditado vale o dobro). 🔊 ouve de novo e 🐢 ouve devagar. Se você escrever outra palavra que soa igual, eu aceito e mostro a diferença; as que você erra voltam mais vezes.`,
+    },
     { mood: 'feliz', title: 'O mundo do idioma', text: `Na aba Cultura tem um mapa-múndi: toque num idioma para ver onde ele é falado (o que você estuda vem primeiro, seguido dos parentes mais próximos). Em «🔎 Todos os idiomas» estão os mais de 700 idiomas do mundo, com a família de cada um; o botão «Estudar» aparece nos que o app já ensina. Os botões embaixo do mapa levam a cada região e sub-região (América do Sul › Andina, por exemplo), com a lista dos países. Toque num país e o mapa aproxima nele, mostrando os estados e as províncias; toque numa região para ver o nome e o código. No cartão aparecem as línguas, da mais falada para a menos falada, os animais nativos e os instrumentos de lá.${variantTip(pack)}${accentTip(pack)}` },
     { mood: 'falando', title: 'Conversa e comunidade', text: 'Na aba Conversa você pratica situações reais (café, hotel, entrevista) e eu aviso se o tom ficou formal ou informal demais. Na Comunidade você corrige textos de outros alunos e ganha 20 XP.' },
     { mood: 'falando', title: 'Minha voz', text: `Para ouvir as palavras, o seu aparelho precisa de uma voz em ${pack.name.toLowerCase()}. Confira se já tem:`, extra: 'voz' },

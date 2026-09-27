@@ -273,6 +273,7 @@ const ALPHABET_PRACTICE = { route: '/alfabeto', emoji: '🔤', title: 'Alfabeto'
 const FALSE_FRIENDS_PRACTICE = { route: '/falsos-amigos', emoji: '🪤', title: 'Falsos amigos', text: 'Parecem português, mas não são' } as const;
 
 const PRACTICES = [
+  { route: '/escuta', emoji: '🎧', title: 'Escuta e ditado', text: 'Ouça nativos e escreva' },
   { route: '/historias', emoji: '📚', title: 'Histórias', text: 'Decida o que o Linu faz' },
   { route: '/diario', emoji: '📓', title: 'Diário', text: '3 frases sobre o seu dia' },
   { route: '/shadowing', emoji: '🎙️', title: 'Shadowing', text: 'Repita e imite a melodia' },
