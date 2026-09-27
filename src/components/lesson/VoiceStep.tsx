@@ -5,7 +5,7 @@ import type { VoiceChallenge } from '@/data/types';
 import { Linu } from '../Linu';
 import { Button, SpeakButton, SpeechBubble, Ipa } from '../ui';
 import { router } from 'expo-router';
-import { canRecognize, findVoice, listen, speak } from '@/services/speech';
+import { canRecognize, canSpeak, listen, speak } from '@/services/speech';
 import { markWords, matchesAny, pronunciationScore, type WordMark } from '@/services/answers';
 import * as haptics from '@/services/haptics';
 
@@ -32,7 +32,7 @@ export function VoiceStep({ challenge, locale, onDone }: { challenge: VoiceChall
 
   useEffect(() => {
     speak(challenge.bot, locale);
-    findVoice(locale).then((v) => setNoVoice(v === null));
+    canSpeak(locale).then((ok) => setNoVoice(!ok));
   }, [challenge.bot, locale]);
 
   const evaluate = (text: string) => {

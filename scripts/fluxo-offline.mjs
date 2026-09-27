@@ -3,10 +3,10 @@
 // o Perfil guarda as gravações do idioma, e com o servidor DESLIGADO o app abre, navega e toca áudio.
 // Uso: node scripts/fluxo-offline.mjs   (sobe o próprio servidor em http://localhost:8090/LinuLingo/)
 import { chromium } from 'playwright-core';
-import { createServer } from 'node:http';
-import { existsSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, rmSync, statSync } from 'node:fs';
+import { startDistServer } from './servidor-dist.mjs';
+import { existsSync, mkdirSync, mkdtempSync, readdirSync, rmSync } from 'node:fs';
 import { homedir, tmpdir } from 'node:os';
-import { extname, join, normalize } from 'node:path';
+import { join } from 'node:path';
 
 const PORT = Number(process.env.PORT ?? 8090);
 const OUT = process.env.OUT_DIR ?? 'capturas';
@@ -17,38 +17,9 @@ const UA = {
   iphone: 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1',
   desktop: undefined,
 }[device];
-const base = '/' + JSON.parse(readFileSync('app.json', 'utf8')).expo.experiments.baseUrl.replace(/^\/|\/$/g, '') + '/';
-const URL0 = `http://localhost:${PORT}${base}`;
 mkdirSync(OUT, { recursive: true });
-
-// servidor estático como o do GitHub Pages: dist/ em /LinuLingo/, 404.html para o resto, pedaços (Range)
-const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.png': 'image/png', '.jpg': 'image/jpeg', '.ico': 'image/x-icon', '.wasm': 'application/wasm', '.mp3': 'audio/mpeg' };
-const server = createServer((req, res) => {
-  const path = decodeURIComponent(new URL(req.url, 'http://x').pathname);
-  let file = path.startsWith(base) ? normalize(join('dist', path.slice(base.length))) : null;
-  if (file && existsSync(file) && statSync(file).isDirectory()) file = join(file, 'index.html');
-  if (!file || !file.startsWith('dist') || !existsSync(file)) {
-    res.writeHead(404, { 'Content-Type': 'text/html' });
-    return res.end(readFileSync('dist/404.html'));
-  }
-  const body = readFileSync(file);
-  const type = TYPES[extname(file)] ?? 'application/octet-stream';
-  const m = /^bytes=(\d*)-(\d*)$/.exec(req.headers.range ?? '');
-  if (m) {
-    const start = m[1] ? Number(m[1]) : body.length - Number(m[2]);
-    const end = m[1] && m[2] ? Number(m[2]) : body.length - 1;
-    res.writeHead(206, { 'Content-Type': type, 'Content-Range': `bytes ${start}-${end}/${body.length}`, 'Accept-Ranges': 'bytes' });
-    return res.end(body.subarray(start, end + 1));
-  }
-  res.writeHead(200, { 'Content-Type': type, 'Accept-Ranges': 'bytes', 'Cache-Control': 'max-age=600' });
-  res.end(body);
-});
-const sockets = new Set();
-server.on('connection', (s) => {
-  sockets.add(s);
-  s.on('close', () => sockets.delete(s));
-});
-await new Promise((r) => server.listen(PORT, r));
+const dist = await startDistServer(PORT);
+const URL0 = dist.url;
 
 const root = join(homedir(), '.cache/ms-playwright');
 const dir = existsSync(root) && readdirSync(root).find((d) => /^chromium-\d+$/.test(d));
@@ -122,8 +93,7 @@ const audio = await page.evaluate(async () => {
 });
 
 // 5. sem internet: desliga o servidor e reabre
-server.close();
-for (const s of sockets) s.destroy();
+await dist.close();
 await page.goto(URL0 + 'vocabulario', { waitUntil: 'load', timeout: 60000 }).catch((e) => fail(`não abriu sem internet: ${e.message}`));
 await page.waitForFunction(() => window.crossOriginIsolated, null, { timeout: 30000 }).catch(() => fail('sem internet, a página não ficou isolada'));
 await waitText('Vocabulário').then(

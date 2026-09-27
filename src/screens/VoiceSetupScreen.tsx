@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { Platform, Pressable, Text, View } from 'react-native';
+import { Linking, Platform, Pressable, Text, View } from 'react-native';
 import { ArrowLeft, ChevronDown, ChevronUp, Copy } from 'lucide-react-native';
 import { Screen, Button, Card, Chip, SectionTitle, SpeechBubble } from '@/components/ui';
 import { Linu, type LinuMood } from '@/components/Linu';
@@ -10,6 +10,8 @@ import { ALL_OS, voiceGuide, type GuideStep } from '@/data/guias-voz';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
 import { nomeIdioma } from '@/services/idioma-nome';
+import { hasNeuralVoice, neuralCached, onNeuralState, prepareNeural, speakNeural } from '@/services/neural-tts';
+import { neuralVoiceFor } from '@/data/vozes-neurais';
 
 type Status = 'verificando' | 'natural' | 'robotica' | 'nenhuma';
 
@@ -38,13 +40,18 @@ export default function VoiceSetupScreen() {
     });
   }, [pack.speechLocale]);
 
-  const mood: LinuMood = status === 'natural' ? 'comemorando' : status === 'nenhuma' ? 'triste' : status === 'robotica' ? 'feliz' : 'pensando';
-  const bubble = {
-    verificando: 'Deixa eu procurar uma voz aqui no seu aparelho…',
-    natural: `Achei uma voz ${nomeIdioma(pack.name)} bem natural! Toque em «Ouvir» para testar.`,
-    robotica: `Tem voz em ${nomeIdioma(pack.name)}, mas é meio robótica. Dá para trocar por uma mais natural, olha o passo a passo abaixo.`,
-    nenhuma: `Ainda não tem voz em ${nomeIdioma(pack.name)} neste aparelho. É rapidinho: siga os passos do seu sistema aqui embaixo.`,
-  }[status];
+  // sem voz natural no aparelho, a voz neural embutida do LinuLingo fala no lugar (só na web)
+  const neural = hasNeuralVoice(pack.speechLocale);
+  const mood: LinuMood = status === 'natural' || (neural && status !== 'verificando') ? 'comemorando' : status === 'nenhuma' ? 'triste' : status === 'robotica' ? 'feliz' : 'pensando';
+  const bubble =
+    neural && (status === 'nenhuma' || status === 'robotica')
+      ? `${status === 'nenhuma' ? 'Seu aparelho não tem' : 'Seu aparelho só tem uma voz robótica em'} ${status === 'nenhuma' ? `voz em ${nomeIdioma(pack.name)}` : nomeIdioma(pack.name)}, mas tudo bem: eu tenho a minha própria voz neural, que roda aqui no navegador. Quando não houver gravação de um nativo, é ela que fala.`
+      : {
+          verificando: 'Deixa eu procurar uma voz aqui no seu aparelho…',
+          natural: `Achei uma voz ${nomeIdioma(pack.name)} bem natural! Toque em «Ouvir» para testar.`,
+          robotica: `Tem voz em ${nomeIdioma(pack.name)}, mas é meio robótica. Dá para trocar por uma mais natural, olha o passo a passo abaixo.`,
+          nenhuma: `Ainda não tem voz em ${nomeIdioma(pack.name)} neste aparelho. É rapidinho: siga os passos do seu sistema aqui embaixo.`,
+        }[status];
   const others = ALL_OS.filter((o) => o !== os);
   const mic = canRecognize();
 
@@ -68,8 +75,8 @@ export default function VoiceSetupScreen() {
             Voz em {nomeIdioma(pack.name)} {pack.flag}
           </Text>
           <Chip
-            label={{ verificando: 'verificando…', natural: '✓ natural', robotica: '✓ robótica', nenhuma: '✗ não encontrada' }[status]}
-            tone={{ verificando: 'slate', natural: 'green', robotica: 'amber', nenhuma: 'rose' }[status] as 'slate'}
+            label={{ verificando: 'verificando…', natural: '✓ natural', robotica: '✓ robótica', nenhuma: neural ? 'sem voz do sistema' : '✗ não encontrada' }[status]}
+            tone={{ verificando: 'slate', natural: 'green', robotica: 'amber', nenhuma: neural ? 'slate' : 'rose' }[status] as 'slate'}
           />
         </View>
         {voice && <Text className="text-sm text-slate-500 dark:text-slate-400">Usando: {voice.name}</Text>}
@@ -79,6 +86,8 @@ export default function VoiceSetupScreen() {
         </View>
         <Text className="text-xs italic text-slate-500 dark:text-slate-400">«{pack.sampleSentence}»</Text>
       </Card>
+
+      {neural && <NeuralVoiceCard locale={pack.speechLocale} sample={pack.sampleSentence} preferred={status !== 'natural'} />}
 
       <Card className="mt-3 flex-row items-center gap-3">
         <Text className="text-2xl">🎙️</Text>
@@ -119,6 +128,47 @@ export default function VoiceSetupScreen() {
         ))}
       </View>
     </Screen>
+  );
+}
+
+/** A voz neural embutida do idioma: se já está guardada, baixar agora (para usar sem internet) e ouvir. */
+function NeuralVoiceCard({ locale, sample, preferred }: { locale: string; sample: string; preferred: boolean }) {
+  const voice = neuralVoiceFor(locale)!;
+  const [cached, setCached] = useState<boolean | null>(null);
+  const [pct, setPct] = useState<number | null>(null);
+  useEffect(() => {
+    neuralCached(locale).then(setCached);
+    return onNeuralState((st) => {
+      if (st.voice.id !== voice.id) return;
+      if (st.status === 'baixando') setPct(st.total ? Math.round((st.loaded / st.total) * 100) : 0);
+      else {
+        setPct(null);
+        neuralCached(locale).then(setCached);
+      }
+    });
+  }, [locale, voice.id]);
+  return (
+    <Card className="mt-3 gap-3">
+      <View className="flex-row items-center justify-between gap-2">
+        <Text className="flex-1 font-bold text-slate-800 dark:text-slate-100">🐧 Voz neural do LinuLingo</Text>
+        <Chip label={pct !== null ? `baixando ${pct}%` : cached ? '✓ guardada' : `${voice.mb} MB`} tone={cached ? 'green' : 'slate'} />
+      </View>
+      <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">
+        {preferred
+          ? 'É ela que fala quando não há gravação de um nativo. '
+          : 'Fica de reserva: aqui a voz do aparelho já é natural. '}
+        Voz {voice.label}, do projeto Piper, sintetizada no próprio navegador. Na primeira vez ela é baixada ({voice.mb} MB) e depois funciona sem internet.
+      </Text>
+      <View className="flex-row gap-2">
+        <Button title="▶ Ouvir esta voz" className="flex-1" onPress={() => speakNeural(sample, locale)} />
+        {!cached && <Button title={pct !== null ? `Baixando… ${pct}%` : 'Baixar agora'} variant="ghost" className="flex-1" disabled={pct !== null} onPress={() => prepareNeural(locale)} />}
+      </View>
+      <Pressable accessibilityRole="link" onPress={() => Linking.openURL(voice.page)}>
+        <Text className="text-xs text-slate-400 underline">
+          Licença da voz: {voice.license} · motor: Piper (MIT), espeak-ng (GPL-3.0) e ONNX Runtime (MIT)
+        </Text>
+      </Pressable>
+    </Card>
   );
 }
 

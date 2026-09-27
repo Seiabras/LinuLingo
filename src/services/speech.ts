@@ -6,14 +6,42 @@ import { VOWEL_GROUPS } from './pitch';
 import { createAudioPlayer, type AudioPlayer } from 'expo-audio';
 import { clipFor } from '@/data/audio-index';
 import { pickVoice, type VoiceInfo } from './voice-pick';
+import { hasNeuralVoice, speakNeural, stopNeural } from './neural-tts';
 
 export type { VoiceInfo };
 
 /** Síntese de voz (áudio nativo) com fallback silencioso se não houver voz do idioma. */
 const voiceCache: Record<string, VoiceInfo | null> = {};
 
-/** Lista de vozes com limite de tempo: na web a lista pode chegar tarde ou nunca. */
+/**
+ * Vozes do navegador. A lista pode chegar um pouco depois de a página abrir; se não chegar em 1,5 s,
+ * o navegador não tem voz (comum no Linux). O expo-speech esperaria para sempre nesse caso.
+ */
+function webVoices(): Promise<{ identifier: string; name: string; language: string }[]> {
+  const synth = typeof window !== 'undefined' ? window.speechSynthesis : undefined;
+  if (!synth) return Promise.resolve([]);
+  const read = () => synth.getVoices().map((v) => ({ identifier: v.voiceURI, name: v.name, language: v.lang }));
+  const now = read();
+  if (now.length) return Promise.resolve(now);
+  return new Promise((resolve) => {
+    const t = setTimeout(() => resolve(read()), 1500);
+    synth.addEventListener(
+      'voiceschanged',
+      () => {
+        clearTimeout(t);
+        resolve(read());
+      },
+      { once: true },
+    );
+  });
+}
+
+// se as vozes chegarem (ou mudarem) depois, a escolha é refeita
+if (Platform.OS === 'web' && typeof window !== 'undefined') window.speechSynthesis?.addEventListener('voiceschanged', () => resetVoiceCache());
+
+/** Lista de vozes com limite de tempo: no aparelho a lista pode chegar tarde. */
 async function listVoices(timeoutMs = 9000) {
+  if (Platform.OS === 'web') return webVoices();
   const timeout = new Promise<null>((r) => setTimeout(() => r(null), timeoutMs));
   try {
     return await Promise.race([Speech.getAvailableVoicesAsync(), timeout]);
@@ -72,6 +100,7 @@ export function playClip(src: number, rate = 1): boolean {
   }
   Speech.stop();
   stopClip();
+  stopNeural();
   if (Platform.OS === 'web' && typeof Audio !== 'undefined') {
     const a = new Audio(Asset.fromModule(src).uri);
     a.playbackRate = rate < 1 ? Math.max(0.5, rate) : 1;
@@ -102,13 +131,30 @@ export function hasNativeClip(text: string, locale: string): boolean {
   return clipFor(locale, text) !== null;
 }
 
-/** Fala o texto: gravação de nativo quando existe (palavras), senão a voz do aparelho. */
-export type SpeakResult = 'nativo' | 'sintetica' | 'sem-voz';
+/** De onde veio o som: gravação de nativo, voz do aparelho, voz neural embutida ou nenhum. */
+export type SpeakResult = 'nativo' | 'sintetica' | 'neural' | 'sem-voz';
 
 /**
- * Fala o texto: gravação de nativo quando existe (palavras), senão a voz do aparelho
- * NO IDIOMA CERTO. Sem voz do idioma, fica em silêncio: a voz padrão (ex.: português)
- * ensinaria a pronúncia errada («faci» como «fassi»).
+ * Uma voz do aparelho boa o bastante para passar na frente da voz neural embutida: natural (não
+ * eSpeak) e, onde a norma do país muda a pronúncia (pt-PT × pt-BR), do país certo.
+ */
+function goodDeviceVoice(voice: VoiceInfo | null, locale: string): voice is VoiceInfo {
+  if (!voice?.natural) return false;
+  // no Linux, o Firefox e o Chrome falam pelo speech-dispatcher, que muitas vezes lista a voz e não
+  // toca nada (saída «dummy»): a voz embutida é mais garantida
+  if (Platform.OS === 'web' && /speechd|speech-dispatcher/i.test(`${voice.identifier} ${voice.name}`)) return false;
+  if (locale.toLowerCase().startsWith('pt')) return voice.language.toLowerCase().replace('_', '-') === locale.toLowerCase();
+  return true;
+}
+
+/**
+ * Fala o texto sempre NO IDIOMA CERTO, nesta ordem:
+ *  1. a gravação de um nativo, quando existe;
+ *  2. uma voz natural do aparelho para o idioma;
+ *  3. na web, a voz neural embutida do idioma (Piper; muitos computadores não trazem voz nenhuma);
+ *  4. a voz robótica do aparelho (eSpeak), se for o que houver.
+ * Sem nada disso, fica em silêncio: a voz padrão (ex.: português) ensinaria a pronúncia errada
+ * («faci» como «fassi»).
  */
 /** A marca de tônica do russo (молоко́) ajuda quem lê, mas alguns motores de voz tropeçam nela. */
 export function forVoice(text: string): string {
@@ -121,9 +167,19 @@ export async function speak(text: string, locale: string, opts: { rate?: number;
   const voice = await findVoice(locale);
   Speech.stop();
   stopClip();
+  stopNeural();
+  if (!goodDeviceVoice(voice, locale) && hasNeuralVoice(locale)) {
+    speakNeural(forVoice(text), locale, opts.rate ?? 1);
+    return 'neural';
+  }
   if (!voice) return 'sem-voz';
   Speech.speak(forVoice(text), { language: locale, voice: voice.identifier, rate: opts.rate ?? 0.9 });
   return 'sintetica';
+}
+
+/** Há como falar este idioma (voz do aparelho ou voz neural embutida)? */
+export async function canSpeak(locale: string): Promise<boolean> {
+  return hasNeuralVoice(locale) || (await findVoice(locale)) !== null;
 }
 
 /**
@@ -134,6 +190,7 @@ export async function speakTimed(text: string, locale: string, rate = 0.9): Prom
   const voice = await findVoice(locale);
   const estimate = Math.round(((text.toLowerCase().match(VOWEL_GROUPS) ?? []).length * 210) / rate);
   Speech.stop();
+  if (!goodDeviceVoice(voice, locale) && hasNeuralVoice(locale)) return (await speakNeural(forVoice(text), locale, rate)) ?? estimate;
   if (!voice) return estimate; // sem voz do idioma: não fala com a voz errada
   return new Promise((resolve) => {
     let startedAt = 0;
@@ -161,6 +218,7 @@ export async function speakTimed(text: string, locale: string, rate = 0.9): Prom
 export function stopSpeaking() {
   Speech.stop();
   stopClip();
+  stopNeural();
 }
 
 // ---------- Reconhecimento de fala ----------

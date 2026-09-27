@@ -10,7 +10,7 @@ import { StatusHeader } from '@/components/StatusHeader';
 import { CulturalGrammarCard } from '@/components/CulturalGrammarCard';
 import { useApp } from '@/services/app-state';
 import { completedLessons, getMeta, journalDoneToday, pendingPeerCount, vocabStats, xpByDay } from '@/database/queries';
-import { findVoice } from '@/services/speech';
+import { canSpeak } from '@/services/speech';
 import { TUTORIAL_KEY } from './TutorialScreen';
 import { buildPath, currentUnit, type PathLesson } from '@/services/curriculum';
 import { localDay } from '@/services/progress';
@@ -52,7 +52,7 @@ export default function HomeScreen() {
           router.push('/tutorial');
           return;
         }
-        findVoice(pack.speechLocale).then((v) => alive && setNoVoice(v === null));
+        canSpeak(pack.speechLocale).then((ok) => alive && setNoVoice(!ok));
         journalDoneToday(db, pack.code, localDay()).then((d) => alive && setJournalToday(d));
         openMistakeCount(db, pack.code).then((n) => alive && setMistakes(n));
         loadAlbum(db).then((a) => alive && setStickers(albumStats(a).owned));

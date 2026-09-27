@@ -9,6 +9,7 @@ import { playClip, speak } from '@/services/speech';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
 import { SONS } from '@/data/sons';
+import { NEURAL_VOICES } from '@/data/vozes-neurais';
 
 const LOCALE: Record<string, string> = { ro: 'ro-RO', ru: 'ru-RU' };
 
@@ -64,6 +65,13 @@ export default function CreditsScreen() {
             .map(([id, c]) => `${id} — ${c.author} (${c.license})`)
             .join(' · ')}
           .
+        </Text>
+        <Text className="text-sm text-slate-500 dark:text-slate-400">
+          🐧 Voz neural (quando não há gravação de nativo nem voz natural no aparelho): vozes do projeto Piper (Rhasspy / Open Home Foundation) —{' '}
+          {Object.values(NEURAL_VOICES)
+            .map((v) => `${v.label} (${v.license})`)
+            .join(' · ')}
+          . Motor: Piper e piper-phonemize (MIT), espeak-ng (GPL-3.0, código em github.com/espeak-ng/espeak-ng) e ONNX Runtime Web (MIT, Microsoft).
         </Text>
         <Pressable onPress={() => Linking.openURL('https://lingualibre.org')}>
           <Text className="text-sm font-semibold text-conecta">Grave também no Lingua Libre ›</Text>

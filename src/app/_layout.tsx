@@ -8,6 +8,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { DB_NAME, initDatabase } from '@/database/db';
 import { AppStateProvider } from '@/services/app-state';
 import { StickerToast } from '@/components/StickerToast';
+import { NeuralVoiceToast } from '@/components/NeuralVoiceToast';
 // guarda desde o início o aviso do navegador de que o app pode ser instalado
 import '@/services/pwa';
 
@@ -58,6 +59,7 @@ export default function RootLayout() {
               <Stack.Screen name="mapa" />
             </Stack>
             <StickerToast />
+            <NeuralVoiceToast />
           </AppStateProvider>
         </SQLiteProvider>
       </Suspense>
