@@ -8,7 +8,7 @@ import { useApp } from '@/services/app-state';
 import { HOMELANDS } from '@/data/fauna-musica';
 import { WORLD } from '@/data/mapa-mundi';
 import { flagOf } from '@/data/onde-se-fala';
-import { albumStats, loadAlbum, saveAlbum, STICKERS, TRADE_COST, tradeDuplicates, type Album, type Sticker } from '@/services/album';
+import { albumStats, loadAlbum, loadRare, saveAlbum, STICKERS, TRADE_COST, tradeDuplicates, type Album, type Sticker } from '@/services/album';
 import * as haptics from '@/services/haptics';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
@@ -27,10 +27,12 @@ export default function AlbumScreen() {
   const [album, setAlbum] = useState<Album>({});
   const [open, setOpen] = useState<string | null>(null);
   const [traded, setTraded] = useState<Sticker | null>(null);
+  const [rare, setRare] = useState<Set<string>>(new Set());
 
   useFocusEffect(
     useCallback(() => {
       loadAlbum(db).then(setAlbum);
+      loadRare(db).then(setRare);
     }, [db]),
   );
 
@@ -68,7 +70,9 @@ export default function AlbumScreen() {
       <View className="mt-2 flex-row flex-wrap items-center gap-2">
         <Chip label={`${st.owned} de ${st.total}`} tone="green" />
         <Chip label={`${st.duplicates} ${st.duplicates === 1 ? 'repetida' : 'repetidas'}`} tone="amber" />
+        <Chip label={`✨ ${rare.size} ${rare.size === 1 ? 'rara' : 'raras'}`} tone={rare.size ? 'orange' : 'slate'} />
       </View>
+      <Text className="mt-1 text-xs text-slate-500 dark:text-slate-400">As raras (douradas) só saem nas 🧭 Expedições do Linu.</Text>
       {st.duplicates >= TRADE_COST && st.owned < st.total && (
         <Button title={`🔁 Trocar ${TRADE_COST} repetidas por uma nova`} variant="ghost" className="mt-3" onPress={trade} />
       )}
@@ -93,7 +97,7 @@ export default function AlbumScreen() {
             </View>
             <View className="flex-row flex-wrap gap-2">
               {list.map((s, k) => (
-                <StickerTile key={s.id} s={s} n={k + 1} count={album[s.id] ?? 0} selected={open === s.id} onPress={() => setOpen(open === s.id ? null : s.id)} />
+                <StickerTile key={s.id} s={s} n={k + 1} count={album[s.id] ?? 0} rare={rare.has(s.id)} selected={open === s.id} onPress={() => setOpen(open === s.id ? null : s.id)} />
               ))}
             </View>
             {list.map((s) =>
@@ -124,17 +128,18 @@ export default function AlbumScreen() {
   );
 }
 
-function StickerTile({ s, n, count, selected, onPress }: { s: Sticker; n: number; count: number; selected: boolean; onPress: () => void }) {
+function StickerTile({ s, n, count, rare, selected, onPress }: { s: Sticker; n: number; count: number; rare: boolean; selected: boolean; onPress: () => void }) {
   const has = count > 0;
   return (
     <Pressable
       accessibilityRole="button"
-      accessibilityLabel={has ? `Figurinha ${s.item.name}${count > 1 ? `, ${count} iguais` : ''}` : `Figurinha ${n} que falta`}
+      accessibilityLabel={has ? `Figurinha ${rare ? 'rara ' : ''}${s.item.name}${count > 1 ? `, ${count} iguais` : ''}` : `Figurinha ${n} que falta`}
       disabled={!has}
       onPress={onPress}
       style={{ width: 96 }}
-      className={`items-center gap-1 rounded-2xl border-2 p-2 ${has ? (selected ? 'border-conecta bg-blue-50 dark:bg-blue-950' : 'border-amber-300 bg-amber-50 dark:border-amber-700 dark:bg-amber-950/40') : 'border-dashed border-slate-300 bg-slate-100 dark:border-slate-700 dark:bg-slate-900'}`}
+      className={`items-center gap-1 rounded-2xl border-2 p-2 ${has ? (selected ? 'border-conecta bg-blue-50 dark:bg-blue-950' : rare ? 'border-yellow-400 bg-yellow-100 dark:border-yellow-500 dark:bg-yellow-900/40' : 'border-amber-300 bg-amber-50 dark:border-amber-700 dark:bg-amber-950/40') : 'border-dashed border-slate-300 bg-slate-100 dark:border-slate-700 dark:bg-slate-900'}`}
     >
+      {rare && <Text className="absolute left-1 top-0.5 text-sm">✨</Text>}
       <Text className={`text-4xl ${has ? '' : 'opacity-30'}`}>{has ? s.item.emoji : '❔'}</Text>
       <Text numberOfLines={2} className={`text-center text-xs font-bold ${has ? 'text-slate-800 dark:text-slate-100' : 'text-slate-400'}`}>
         {has ? s.item.name : `nº ${n}`}

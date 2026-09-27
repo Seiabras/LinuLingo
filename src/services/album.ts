@@ -94,6 +94,8 @@ export interface StickerEvent {
   /** nova (1ª vez) ou repetida */
   isNew: boolean;
   count: number;
+  /** rara (dourada): só as expedições do Linu dão */
+  rare?: boolean;
 }
 const listeners = new Set<(e: StickerEvent) => void>();
 export function onSticker(l: (e: StickerEvent) => void): () => void {
@@ -110,6 +112,46 @@ export async function grantSticker(db: SQLiteDatabase, lang: string, rnd: () => 
   const count = (album[sticker.id] ?? 0) + 1;
   await saveAlbum(db, { ...album, [sticker.id]: count });
   const e = { sticker, isNew: count === 1, count };
+  listeners.forEach((l) => l(e));
+  return e;
+}
+
+// ---------- figurinhas raras (das expedições) ----------
+
+const RARE_KEY = 'album_raras';
+
+/** As figurinhas que você tem na versão rara, dourada (Meta «album_raras»). */
+export async function loadRare(db: SQLiteDatabase): Promise<Set<string>> {
+  const r = await db.getFirstAsync<{ value: string }>('SELECT value FROM Meta WHERE key = ?', [RARE_KEY]);
+  try {
+    return new Set(r?.value ? (JSON.parse(r.value) as string[]) : []);
+  } catch {
+    return new Set();
+  }
+}
+
+/**
+ * Escolhe a figurinha rara de uma expedição: um bicho ou instrumento dos países visitados que você
+ * ainda não tem na versão rara, de preferência um que falte no álbum. null se todas já forem raras.
+ */
+export function pickRare(album: Album, rare: Set<string>, countries: string[], rnd: () => number = Math.random): Sticker | null {
+  const pool = STICKERS.filter((s) => countries.includes(s.iso) && !rare.has(s.id));
+  if (!pool.length) return null;
+  const missing = pool.filter((s) => !album[s.id]);
+  const from = missing.length ? missing : pool;
+  return from[Math.floor(rnd() * from.length) % from.length];
+}
+
+/** Dá a figurinha rara (ela entra no álbum e fica dourada) e avisa quem estiver ouvindo. */
+export async function grantRareSticker(db: SQLiteDatabase, countries: string[], rnd: () => number = Math.random): Promise<StickerEvent | null> {
+  const [album, rare] = await Promise.all([loadAlbum(db), loadRare(db)]);
+  const sticker = pickRare(album, rare, countries, rnd);
+  if (!sticker) return null;
+  const count = (album[sticker.id] ?? 0) + 1;
+  await saveAlbum(db, { ...album, [sticker.id]: count });
+  rare.add(sticker.id);
+  await db.runAsync('INSERT OR REPLACE INTO Meta (key, value) VALUES (?, ?)', [RARE_KEY, JSON.stringify([...rare])]);
+  const e = { sticker, isNew: count === 1, count, rare: true };
   listeners.forEach((l) => l(e));
   return e;
 }

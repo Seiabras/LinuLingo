@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import Svg, { Path, Rect } from 'react-native-svg';
 import { ArrowLeft } from 'lucide-react-native';
@@ -9,14 +9,12 @@ import { awardXp } from '@/database/queries';
 import { MAP_H, MAP_W, WORLD } from '@/data/mapa-mundi';
 import { findMapLanguage, flagOf } from '@/data/onde-se-fala';
 import { buildMapRound, isAccentRegion, mainOfficial, type MapQuestion } from '@/services/map-game';
-import { fitBox, focusBox, ringBoxes, type Box, type SubShape } from '@/services/mapa-geo';
-import { loadSubdivisions } from '@/services/subdivisoes';
-import { ISO_3166_2 } from '@/data/iso-3166-2';
+import { fitBox, focusBox, ringBoxes, type Box } from '@/services/mapa-geo';
+import { RegionTapMap, regionName } from '@/components/RegionTapMap';
 import { logMistake } from '@/services/mistakes';
 import * as haptics from '@/services/haptics';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
-import type { Accent } from '@/data/types';
 import { nomeIdioma } from '@/services/idioma-nome';
 import { KIND } from '@/services/variedade';
 
@@ -28,11 +26,7 @@ const flagName = (iso: string) => {
   return c ? `${flagOf(c.iso2)} ${c.name}` : iso;
 };
 
-/** Nome da região em português (lista ISO 3166-2); senão, o do Natural Earth. */
-function subName(iso3: string, sh: SubShape): string {
-  const iso2 = WORLD.find((c) => c.iso === iso3)?.iso2 ?? '';
-  return (sh.code && ISO_3166_2[iso2]?.find(([c]) => c === sh.code)?.[1]) || sh.name;
-}
+const subName = regionName;
 
 type Answer = { ok: boolean; tapped?: string; tappedName?: string; option?: string };
 
@@ -140,7 +134,16 @@ export default function MapGameScreen() {
             </Card>
 
             {q.kind === 'sotaque' ? (
-              <AccentTapMap key={`${game.i}`} accent={q.accent} answer={game.answer} onTap={(sh) => decide({ ok: isAccentRegion(q.accent, sh.code, sh.parent), tapped: sh.code, tappedName: subName(q.accent.country, sh) })} />
+              <RegionTapMap
+                key={`${game.i}`}
+                country={q.accent.country}
+                isTarget={(sh) => isAccentRegion(q.accent, sh.code, sh.parent)}
+                reveal={!!game.answer}
+                wrong={game.answer && !game.answer.ok && game.answer.tapped ? [game.answer.tapped] : []}
+                disabled={!!game.answer}
+                height={MAP_HEIGHT}
+                onTap={(sh) => decide({ ok: isAccentRegion(q.accent, sh.code, sh.parent), tapped: sh.code, tappedName: subName(q.accent.country, sh) })}
+              />
             ) : (
               <FrameMap
                 key={`${game.i}`}
@@ -264,50 +267,3 @@ function FrameMap({ frame, highlight, good, bad, onTap }: { frame: string[]; hig
   );
 }
 
-/** O mapa das regiões do país do sotaque, cada uma tocável (sem nomes: é para achar). */
-function AccentTapMap({ accent, answer, onTap }: { accent: Accent; answer: Answer | null; onTap: (sh: SubShape) => void }) {
-  const dark = useIsDark();
-  const [subs, setSubs] = useState<SubShape[] | null>(null);
-  useEffect(() => {
-    let alive = true;
-    loadSubdivisions(accent.country).then((l) => alive && setSubs(l));
-    return () => {
-      alive = false;
-    };
-  }, [accent.country]);
-  const country = WORLD.find((c) => c.iso === accent.country);
-  if (!country?.d) return null;
-  const box = focusBox(ringBoxes(country.d)) ?? { x: country.cx - 2, y: country.cy - 2, w: 4, h: 4 };
-  const v = fitBox(box, 0.75, 0.08);
-  const px = v.w / 360;
-  const lit = (sh: SubShape) => isAccentRegion(accent, sh.code, sh.parent);
-  return (
-    <View className="overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700">
-      <Svg width="100%" height={MAP_HEIGHT} viewBox={`${v.x} ${v.y} ${v.w} ${v.h}`} preserveAspectRatio="xMidYMid meet">
-        <Rect x={v.x - v.w} y={v.y - v.h} width={v.w * 3} height={v.h * 3} fill={dark ? '#0B1220' : '#E0F2FE'} />
-        {WORLD.filter((c) => c.d).map((c) => (
-          <Path key={c.iso} d={c.d} fill={dark ? '#1E293B' : '#CBD5E1'} stroke={dark ? '#0F172A' : '#FFFFFF'} strokeWidth={px} />
-        ))}
-        {subs?.map((sh, i) => {
-          const fill = answer && lit(sh) ? '#16A34A' : answer?.tapped === sh.code && !answer.ok ? '#E11D48' : dark ? '#475569' : '#E2E8F0';
-          return (
-            <Path
-              key={i}
-              id={sh.code ? `regiao-${sh.code}` : undefined}
-              d={sh.d}
-              fill={fill}
-              stroke={dark ? '#0F172A' : '#FFFFFF'}
-              strokeWidth={px * 0.7}
-              onPress={answer ? undefined : () => onTap(sh)}
-            />
-          );
-        })}
-      </Svg>
-      {!subs && (
-        <View className="absolute bottom-2 left-3">
-          <Text className="text-xs text-slate-500">Carregando as regiões…</Text>
-        </View>
-      )}
-    </View>
-  );
-}

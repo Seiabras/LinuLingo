@@ -24,6 +24,11 @@ const LANGS = {
   // o curso ensina a norma de Portugal: só a categoria europeia (a brasileira fica para um sotaque)
   pt: { categories: ['Audio_files_of_European_Portuguese_pronunciation'], prefix: /^Pt-pt-/i },
   sv: { categories: ['Swedish_pronunciation'], prefix: /^Sv-/i },
+  da: { categories: ['Danish_pronunciation'], prefix: /^Da-/i },
+  is: { categories: ['Icelandic_pronunciation'], prefix: /^Is-/i },
+  fo: { categories: ['Faroese_pronunciation'], prefix: /^Fo-/i },
+  fi: { categories: ['Finnish_pronunciation'], prefix: /^Fi-/i },
+  et: { categories: ['Estonian_pronunciation'], prefix: /^Et-/i },
 };
 const lang = process.argv[2] ?? 'ro';
 const cfg = LANGS[lang];
@@ -145,11 +150,21 @@ for (const { word, title } of wanted) {
   jobs.push({ word, title, m, id: String(++lastId).padStart(4, '0') });
 }
 
+// o servidor de arquivos do Wikimedia limita a vazão (responde 429): um arquivo por vez, com pausa,
+// e, se vier 429, espera o que ele pedir (Retry-After) ou cada vez mais
+const PAUSE_MS = 700;
 async function download(job) {
   const file = join(OUT_DIR, `${job.id}.mp3`);
   if (existsSync(file)) return true;
-  for (let tentativa = 0; tentativa < 3; tentativa++) {
+  await sleep(PAUSE_MS);
+  for (let tentativa = 0; tentativa < 5; tentativa++) {
     const res = await fetch(job.m.url, { headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(60_000) }).catch(() => null);
+    if (res?.status === 429) {
+      const wait = Number(res.headers.get('retry-after')) * 1000 || 15_000 * 2 ** tentativa;
+      process.stdout.write(`\n  (limite do servidor: esperando ${Math.round(wait / 1000)} s)\n`);
+      await sleep(Math.min(wait, 120_000));
+      continue;
+    }
     if (res?.ok) {
       const raw = `${file}.raw`;
       writeFileSync(raw, Buffer.from(await res.arrayBuffer()));

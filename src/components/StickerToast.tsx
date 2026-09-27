@@ -28,7 +28,7 @@ export function StickerToast() {
     >
       <Pressable
         accessibilityRole="button"
-        accessibilityLabel={`${e.isNew ? 'Figurinha nova' : 'Figurinha repetida'}: ${e.sticker.item.name}. Abrir o álbum`}
+        accessibilityLabel={`${e.rare ? 'Figurinha rara' : e.isNew ? 'Figurinha nova' : 'Figurinha repetida'}: ${e.sticker.item.name}. Abrir o álbum`}
         onPress={() => {
           setE(null);
           router.push('/album');
@@ -38,7 +38,7 @@ export function StickerToast() {
         <Text className="text-4xl">{e.sticker.item.emoji}</Text>
         <View className="flex-1">
           <Text className="text-xs font-extrabold uppercase tracking-wide text-amber-700 dark:text-amber-300">
-            {e.isNew ? '🎁 Figurinha nova!' : `Repetida (×${e.count})`}
+            {e.rare ? '✨ Figurinha rara!' : e.isNew ? '🎁 Figurinha nova!' : `Repetida (×${e.count})`}
           </Text>
           <Text className="text-base font-extrabold text-slate-900 dark:text-white">{e.sticker.item.name}</Text>
           <Text className="text-xs text-slate-500 dark:text-slate-400">{c ? `${flagOf(c.iso2)} ${c.name}` : e.sticker.iso} · toque para ver o álbum</Text>
