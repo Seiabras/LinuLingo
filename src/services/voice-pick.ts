@@ -23,7 +23,9 @@ export function pickVoice(voices: RawVoice[], locale: string): VoiceInfo | null 
     const l = v.language?.toLowerCase().replace('_', '-') ?? '';
     return l === locale.toLowerCase() || l === lang || l.startsWith(`${lang}-`);
   });
-  matches.sort((a, b) => score(b) - score(a));
+  // mesma qualidade: a voz do país pedido primeiro (es-AR antes de es-ES)
+  const exact = (v: RawVoice) => (v.language?.toLowerCase().replace('_', '-') === locale.toLowerCase() ? 0.5 : 0);
+  matches.sort((a, b) => score(b) + exact(b) - (score(a) + exact(a)));
   const best = matches[0];
   return best ? { identifier: best.identifier, name: best.name ?? best.identifier, language: best.language, natural: score(best) > 0 } : null;
 }

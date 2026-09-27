@@ -1,4 +1,4 @@
-import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from 'react';
+import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
 import { useSQLiteContext, type SQLiteDatabase } from 'expo-sqlite';
 import { getMeta, getUser, setMeta } from '@/database/queries';
 import { getPack } from '@/data/idiomas';
@@ -61,9 +61,15 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
     [db],
   );
 
-  const pack = getPack(user?.current_language ?? 'ro');
+  const basePack = getPack(user?.current_language ?? 'ro');
   const [variants, setVariants] = useState<Record<string, string>>({});
-  const variant = variants[pack.code] ?? pack.variants?.[0]?.code ?? null;
+  const variant = variants[basePack.code] ?? basePack.variants?.[0]?.code ?? null;
+  // a variante escolhida pode trazer voz e IPA próprias (ex.: [θ] e voz da Espanha no es-ES)
+  const pack = useMemo(() => {
+    const v = basePack.variants?.find((x) => x.code === variant);
+    if (!v?.speechLocale && !v?.ipa) return basePack;
+    return { ...basePack, speechLocale: v.speechLocale ?? basePack.speechLocale, ipa: v.ipa ?? basePack.ipa };
+  }, [basePack, variant]);
 
   useEffect(() => {
     getMeta(db, `variante_${pack.code}`).then((v) => {

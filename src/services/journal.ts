@@ -55,7 +55,19 @@ function restoreDiacritics(token: string, lex: JournalLexicon): string | null {
 const NUMBER = /^(\d+|doi|două|trei|patru|cinci|șase|sase|șapte|sapte|opt|nouă|noua|zece|unsprezece|doisprezece|cincisprezece|douăzeci|douazeci|treizeci|patruzeci|cincizeci|o)$/i;
 const STATES: Record<string, string> = { foame: 'foame', sete: 'sete', frig: 'frig', cald: 'cald', frica: 'frică', frică: 'frică', somn: 'somn' };
 
-const LANG_NAME: Record<string, string> = { ro: 'romeno', ru: 'russo' };
+const LANG_NAME: Record<string, string> = { ro: 'romeno', ru: 'russo', es: 'espanhol' };
+
+// espanhol: femininos com «a» tônico levam «el» no singular (el agua, el águila)
+const EL_FEM_ES = new Set(['agua', 'águila', 'alma', 'arma', 'hambre', 'hacha', 'área', 'aula', 'ave', 'hada', 'ala', 'ancla']);
+const ADJ_ES = new Set(['bonito', 'bonita', 'bueno', 'buena', 'grande', 'caro', 'cara', 'lindo', 'linda', 'feo', 'fea', 'difícil', 'fácil', 'importante', 'interesante', 'rico', 'rica', 'cansado', 'cansada', 'contento', 'contenta', 'feliz', 'triste', 'alto', 'alta', 'rápido', 'rápida', 'barato', 'barata', 'bien', 'mal', 'lejos', 'cerca', 'tarde', 'temprano']);
+const ART_ES: Record<string, { g: 'm' | 'f'; pl: boolean; to: Record<'m' | 'f', string> }> = {
+  el: { g: 'm', pl: false, to: { m: 'el', f: 'la' } },
+  la: { g: 'f', pl: false, to: { m: 'el', f: 'la' } },
+  un: { g: 'm', pl: false, to: { m: 'un', f: 'una' } },
+  una: { g: 'f', pl: false, to: { m: 'un', f: 'una' } },
+  los: { g: 'm', pl: true, to: { m: 'los', f: 'las' } },
+  las: { g: 'f', pl: true, to: { m: 'los', f: 'las' } },
+};
 
 // russo: números por extenso que aparecem com idade (мне двадцать лет)
 const NUMBER_RU = /^(\d+|один|одна|два|две|три|четыре|пять|шесть|семь|восемь|девять|десять|одиннадцать|двенадцать|пятнадцать|двадцать|тридцать|сорок|пятьдесят|шестьдесят)$/i;
@@ -100,6 +112,47 @@ export function checkJournal(text: string, lex: JournalLexicon, lang = 'ro'): { 
     const k = j >= 0 ? next(j) : -1;
     const raw = (x: number) => (x >= 0 ? parts[x].toLowerCase() : '');
 
+    if (lang === 'es') {
+      const w = raw(i);
+      const nx = raw(j);
+      // artigo + substantivo com o gênero do vocabulário (heterogenéricos: la viaje → el viaje)
+      const art = ART_ES[w];
+      if (art && j >= 0) {
+        const sing = art.pl ? nx.replace(/es$|s$/, '') : nx;
+        const candidates = art.pl ? [nx.replace(/s$/, ''), nx.replace(/es$/, ''), sing] : [nx];
+        const g = candidates.map((c) => lex.gender.get(c)).find((x) => x === 'm' || x === 'f') as 'm' | 'f' | undefined;
+        const elFem = !art.pl && g === 'f' && EL_FEM_ES.has(nx) && (w === 'el' || w === 'un');
+        if (g && g !== art.g && !elFem) {
+          const fix = matchCase(parts[i], art.to[g]);
+          issues.push({ kind: 'gênero', original: `${parts[i]} ${parts[j]}`, suggestion: `${fix} ${parts[j]}`, why: `«${parts[j]}» é ${g === 'm' ? 'masculino' : 'feminino'} em espanhol${g === 'm' ? '' : ''}: ${fix} ${parts[j]}. Cuidado: muitas palavras mudam de gênero em relação ao português.` });
+          parts[i] = fix;
+        }
+        continue;
+      }
+      // muy + substantivo → mucho(s)/mucha(s)
+      if (w === 'muy' && j >= 0) {
+        const plural = /s$/.test(nx) && (lex.gender.has(nx.replace(/s$/, '')) || lex.gender.has(nx.replace(/es$/, '')));
+        const g = lex.gender.get(nx) ?? lex.gender.get(nx.replace(/s$/, '')) ?? lex.gender.get(nx.replace(/es$/, ''));
+        if (g === 'm' || g === 'f') {
+          const fix = matchCase(parts[i], `much${g === 'f' ? 'a' : 'o'}${plural ? 's' : ''}`);
+          issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: `${fix} ${parts[j]}`, why: 'Antes de substantivo, «muito» é «mucho/mucha/muchos/muchas»; «muy» vai antes de adjetivo e advérbio (muy bonito).' });
+          parts[i] = fix;
+        }
+        continue;
+      }
+      // mucho + adjetivo → muy
+      if ((w === 'mucho' || w === 'mucha') && ADJ_ES.has(nx)) {
+        issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: `${matchCase(parts[i], 'muy')} ${parts[j]}`, why: 'Antes de adjetivo ou advérbio, «muito» é «muy»: muy bonito, muy lejos.' });
+        parts[i] = matchCase(parts[i], 'muy');
+        continue;
+      }
+      // me gusta los/las… → me gustan
+      if (w === 'gusta' && (nx === 'los' || nx === 'las')) {
+        issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: `${matchCase(parts[i], 'gustan')} ${parts[j]}`, why: '«Gustar» concorda com a coisa de que se gosta: me gusta el café, mas me gustan los perros.' });
+        parts[i] = matchCase(parts[i], 'gustan');
+      }
+      continue;
+    }
     if (lang === 'ru') {
       const dat = PRONOUN_DAT[raw(i)];
       // я имею 20 лет → мне 20 лет

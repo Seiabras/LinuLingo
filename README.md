@@ -12,7 +12,7 @@ O mascote é o **Linu**, um pinguim-de-barbicha (*Pygoscelis antarctica*).
 | --- | --- | --- |
 | 🇷🇴 Romeno | Indo-europeu › Itálico › Românico › Românico oriental | **disponível** |
 | 🇷🇺 Russo | Indo-europeu › Balto-eslavo › Eslavo › Eslavo oriental | **disponível** |
-| 🇪🇸 Espanhol | Indo-europeu › Itálico › Românico › Ibero-românico | em breve |
+| 🇪🇸 Espanhol | Indo-europeu › Itálico › Românico › Ibero-românico | **disponível** |
 | 🇬🇧 Inglês | Indo-europeu › Germânico › Germânico ocidental | em breve |
 | 🇫🇮 Finlandês | Urálico › Fínico › Fínico setentrional | em breve |
 | 🇪🇪 Estoniano | Urálico › Fínico › Fínico meridional | em breve |
@@ -27,6 +27,17 @@ O seletor do Perfil agrupa os idiomas por família e ramo linguístico.
 - **Quadro interativo do IPA**: cada símbolo com como o som é feito e exemplos falados em português, espanhol, romeno, russo e inglês.
 - **Ferramentas e normas**: o IPA e a transcrição; códigos ISO 639, ISO 15924 e BCP 47; transliteração e romanização (cirílico, pinyin, Hepburn, coreano); glosas interlineares (regras de Leipzig); o Quadro Europeu (CEFR).
 - **Grandes temas**: famílias de línguas, tipologia, sistemas de escrita, mudança linguística, sociolinguística, aquisição de segunda língua e o português entre as línguas do mundo.
+
+## O que tem no espanhol
+
+- **Variante padrão: América Latina** (neutra, com «ustedes»), e mais duas para escolher na aba Cultura: **Espanha** (vosotros, [θ] no «z», 46 diferenças de vocabulário, 3 histórias em Madri, no Caminho de Santiago e nas Fallas) e **Rio da Prata** (voseo, «ll» chiado, 39 diferenças, 3 histórias em La Boca, Montevidéu e Punta Tombo). A variante escolhida troca também a **voz** (es-MX, es-ES, es-AR) e a **IPA**.
+- **Trilha CEFR** em 15 subníveis, 60 lições, cada card comparando com o português: heterogenéricos (el viaje, la leche), falsos amigos, ser × estar, «muy × mucho», o «lo» neutro, pronomes átonos, subjuntivo com «cuando», voseo, futuro do subjuntivo nas leis.
+- **Falsos amigos** («🪤 Falsos amigos» em Mais práticas): 88 armadilhas (exquisito, embarazada, oficina, polvo…) com o que a palavra quer dizer, o que o brasileiro pensa e como se diz o que ele queria; jogo de 10 perguntas que repete as que você erra.
+- 3.482 palavras (heterogenéricos e falsos amigos marcados na tradução; a forma da Espanha citada quando muda), 40 tópicos de gramática, 51 histórias em mais de 20 países (Coyoacán, Monserrate, San Telmo, Havana, Salar de Uyuni, Canal do Panamá, Galápagos, Torres del Paine, Copán, Aracataca, Isla Negra…), 6 cenários de conversa, 60 etimologias (latim, árabe, náuatle, taíno, quéchua) e as 7 áreas da linguística aplicadas ao espanhol.
+- **IPA por regras** (src/services/ipa-es.ts): seseo ou distinción, yeísmo e o «sh» rioplatense, b/d/g suaves [β ð ɣ], r simples e múltiplo, assimilação do n (un beso [um ˈbeso]) e do s (mismo [ˈmizmo]), tônica pela ortografia.
+- **Palácio da memória** com 2 salas (o espanhol não tem neutro) e dicas para -aje, -umbre e os gregos em -ma; **diário** que pega «la viaje», «mucho bonito» e «me gusta los perros».
+- **Áudio de nativos** do Lingua Libre e **bichos e sons** de 7 países (México, Colômbia, Argentina, Peru, Chile, Cuba e Espanha).
+- Conteúdo conferido pelos verificadores (scripts/checar-vocab-es.ts, scripts/checar-conteudo-es.ts: ortografia da RAE, ¿ ¡, nada de portunhol) e relido por inteiro na revisão.
 
 ## O que tem no russo
 
@@ -76,7 +87,7 @@ No **Linux**, `scripts/instalar-piper.sh` instala o [Piper](https://github.com/r
 
 ```bash
 sh scripts/instalar-piper.sh          # depois: feche e abra o navegador
-sh scripts/instalar-piper.sh ro_RO-mihai-medium ru_RU-irina-medium   # romeno e russo
+sh scripts/instalar-piper.sh ro_RO-mihai-medium ru_RU-irina-medium es_MX-ald-medium   # romeno, russo e espanhol
 spd-say -l ro "Bună ziua"             # teste
 ```
 
@@ -113,6 +124,7 @@ node scripts/fluxo-praticas.mjs            # diário (corretor), palácio (jogo)
 npx tsx scripts/fluxo-trilha.mjs          # faixa de subníveis e teste para pular
 node scripts/fluxo-linguistica.mjs        # áreas da língua, quadro do IPA e aulas
 npx tsx scripts/fluxo-russo.mjs           # russo: troca de idioma, cirílico, IPA, teclado, diário
+npx tsx scripts/fluxo-espanhol.mjs        # espanhol: falsos amigos, palácio, variante da Espanha ([θ]), linguística, diário
 node scripts/fluxo-mapa.mjs                # mapa ISO 3166-1/3166-3, zoom nas subdivisões e variante da Moldávia
 node scripts/capturas.mjs / /vocabulario   # capturas em desktop, iPhone, Android e iPad
 ```
@@ -129,7 +141,7 @@ src/
 ├── database/     esquema SQLite, seed e consultas
 ├── srs/          algoritmo SuperMemo-2
 ├── services/     progresso/XP, voz, comparação de respostas, tema, trilha
-└── data/         conteúdo por idioma (ro/, es/) e registro de idiomas
+└── data/         conteúdo por idioma (ro/, ru/, es/) e registro de idiomas
 ```
 
 ### Adicionar um idioma

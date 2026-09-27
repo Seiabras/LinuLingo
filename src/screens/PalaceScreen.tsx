@@ -13,7 +13,7 @@ import { useIsDark } from '@/services/theme';
 import * as haptics from '@/services/haptics';
 
 const ROUNDS = 10;
-const GENDERS: Gender[] = ['m', 'f', 'n'];
+const ALL_GENDERS: Gender[] = ['m', 'f', 'n'];
 
 /**
  * Palácio da memória: cada gênero mora numa sala (Forja, Lago, Jardim do Camaleão).
@@ -101,7 +101,7 @@ export default function PalaceScreen() {
               <Text className="text-slate-500 dark:text-slate-400">{w.word_native}</Text>
             </Card>
             <View className="gap-2">
-              {GENDERS.map((g) => {
+              {(pack.genders ?? ALL_GENDERS).map((g) => {
                 const r = roomsFor(pack.code)[g];
                 const picked = game.answer === g;
                 const right = game.answer && w.gender === g;
@@ -182,7 +182,7 @@ export default function PalaceScreen() {
         </SpeechBubble>
       </View>
       <View className="gap-3">
-        {GENDERS.map((g) => {
+        {(pack.genders ?? ALL_GENDERS).map((g) => {
           const r = roomsFor(pack.code)[g];
           return (
             <Pressable key={g} accessibilityRole="button" onPress={() => setRoom(g)} style={{ borderColor: r.color }} className="flex-row items-center gap-4 rounded-2xl border-2 bg-white p-4 active:opacity-80 dark:bg-slate-900">

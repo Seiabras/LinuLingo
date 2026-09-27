@@ -12,6 +12,7 @@ import { join } from 'node:path';
 const LANGS = {
   ro: { wikidata: 'Q7913', iso3: 'ron', category: 'Lingua_Libre_pronunciation-ron' },
   ru: { wikidata: 'Q7737', iso3: 'rus', category: 'Lingua_Libre_pronunciation-rus' },
+  es: { wikidata: 'Q1321', iso3: 'spa', category: 'Lingua_Libre_pronunciation-spa' },
 };
 const lang = process.argv[2] ?? 'ro';
 const cfg = LANGS[lang];
@@ -26,8 +27,8 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 async function api(params) {
   const url = `${API}?${new URLSearchParams({ format: 'json', formatversion: '2', ...params })}`;
   for (let tentativa = 0; tentativa < 4; tentativa++) {
-    const res = await fetch(url, { headers: { 'User-Agent': UA } });
-    if (res.ok) return res.json();
+    const res = await fetch(url, { headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(60_000) }).catch(() => null);
+    if (res?.ok) return res.json();
     await sleep(2000 * (tentativa + 1));
   }
   throw new Error(`falha na API: ${url}`);
@@ -124,10 +125,16 @@ async function download(job) {
   const file = join(OUT_DIR, `${job.id}.mp3`);
   if (existsSync(file)) return true;
   for (let tentativa = 0; tentativa < 3; tentativa++) {
-    const res = await fetch(job.m.url, { headers: { 'User-Agent': UA } });
+    // queda de rede (timeout, conexão resetada) conta como tentativa falha, sem derrubar o script
+    const res = await fetch(job.m.url, { headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(60_000) }).catch(() => ({ ok: false, status: 'rede' }));
     if (res.ok) {
       const tmp = join(OUT_DIR, `${job.id}.src`);
-      writeFileSync(tmp, Buffer.from(await res.arrayBuffer()));
+      const body = await res.arrayBuffer().catch(() => null);
+      if (!body) {
+        skipped.http.push('rede');
+        continue;
+      }
+      writeFileSync(tmp, Buffer.from(body));
       // mono, 22 kHz, ~40 kbps, corta o silêncio do começo e do fim
       execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', tmp, '-af', 'silenceremove=start_periods=1:start_threshold=-55dB:start_silence=0.08,areverse,silenceremove=start_periods=1:start_threshold=-55dB:start_silence=0.08,areverse', '-ac', '1', '-ar', '22050', '-b:a', '40k', file]);
       execFileSync('rm', [tmp]);

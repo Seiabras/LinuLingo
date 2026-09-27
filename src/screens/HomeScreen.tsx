@@ -113,7 +113,7 @@ export default function HomeScreen() {
 
       <Text className="mb-2 mt-5 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">Mais práticas</Text>
       <View className="flex-row flex-wrap gap-2">
-        {[...(pack.alphabet ? [ALPHABET_PRACTICE] : []), ...PRACTICES].map((p) => (
+        {[...(pack.alphabet ? [ALPHABET_PRACTICE] : []), ...(pack.falseFriends ? [FALSE_FRIENDS_PRACTICE] : []), ...PRACTICES].map((p) => (
           <Pressable
             key={p.route}
             accessibilityRole="button"
@@ -265,6 +265,8 @@ const CEFR_NAME: Record<string, string> = {
 };
 
 const ALPHABET_PRACTICE = { route: '/alfabeto', emoji: '🔤', title: 'Alfabeto', text: 'Letras, sons e primeiras leituras' } as const;
+
+const FALSE_FRIENDS_PRACTICE = { route: '/falsos-amigos', emoji: '🪤', title: 'Falsos amigos', text: 'Parecem português, mas não são' } as const;
 
 const PRACTICES = [
   { route: '/historias', emoji: '📚', title: 'Histórias', text: 'Decida o que o Linu faz' },

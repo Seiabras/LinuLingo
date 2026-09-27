@@ -156,6 +156,8 @@ export function wordToIpaEs(raw: string, variant: EsVariant = '419', afterVowel 
     else if (ipa === 'd') ipa = start || afterNasal || (prev?.kind === 'C' && prev.ipa === 'l') ? 'd' : 'ð';
     else if (ipa === 'g') ipa = start || afterNasal ? 'g' : 'ɣ';
     else if (ipa === 'ɾ' && (i === 0 || (prev?.kind === 'C' && ['n', 'l', 's'].includes(prev.ipa)))) ipa = 'r';
+    // o «s» se sonoriza antes de consoante sonora: mismo [ˈmizmo], desde [ˈdezðe]
+    else if (ipa === 's' && next?.kind === 'C' && ['b', 'd', 'g', 'm', 'n', 'l', 'ɾ', 'ʝ'].includes(next.ipa)) ipa = 'z';
     else if (ipa === 'n' && next?.kind === 'C') {
       if (['b', 'p', 'm'].includes(next.ipa)) ipa = 'm';
       else if (['k', 'g', 'x'].includes(next.ipa)) ipa = 'ŋ';
@@ -185,15 +187,26 @@ export function toIpaEs(text: string, variant: EsVariant = '419'): string {
   const parts = text.split(/([^\p{L}]+)/u);
   const words: string[] = [];
   let prevEndsVowel = false;
+  let prevPause = false;
   for (let i = 0; i < parts.length; i++) {
     const p = parts[i];
     if (!p || !/\p{L}/u.test(p)) {
       // pausa (vírgula, ponto) reinicia a fala
-      if (/[.,;:!?¡¿…]/.test(p ?? '')) prevEndsVowel = false;
+      if (/[.,;:!?¡¿…]/.test(p ?? '')) {
+        prevEndsVowel = false;
+        prevPause = true;
+      }
       continue;
     }
-    words.push(wordToIpaEs(p, variant, prevEndsVowel));
+    const w = wordToIpaEs(p, variant, prevEndsVowel);
+    // o «n» final assimila a consoante da palavra seguinte, sem pausa: un beso [um ˈbeso]
+    const first = w.replace(/^ˈ/, '')[0];
+    const prev = words.length && !prevPause ? words[words.length - 1] : '';
+    if (prev.endsWith('n') && /[bpm]/.test(first)) words[words.length - 1] = prev.slice(0, -1) + 'm';
+    else if (prev.endsWith('n') && /[kgx]/.test(first)) words[words.length - 1] = prev.slice(0, -1) + 'ŋ';
+    words.push(w);
     prevEndsVowel = /[aeiouáéíóúy]$/i.test(p);
+    prevPause = false;
   }
   return words.length ? `[${words.join(' ')}]` : '';
 }

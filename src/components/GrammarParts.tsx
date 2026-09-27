@@ -18,8 +18,8 @@ export function GrammarSections({ sections }: { sections: GrammarSection[] }) {
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
               <View className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700">
                 <View className="flex-row bg-conecta-light dark:bg-blue-950">
-                  {s.table.head.map((h) => (
-                    <Text key={h} className="w-36 px-3 py-2 text-xs font-extrabold uppercase text-conecta-dark dark:text-blue-300">
+                  {s.table.head.map((h, i) => (
+                    <Text key={i} className="w-36 px-3 py-2 text-xs font-extrabold uppercase text-conecta-dark dark:text-blue-300">
                       {h}
                     </Text>
                   ))}
@@ -43,8 +43,8 @@ export function GrammarSections({ sections }: { sections: GrammarSection[] }) {
           {s.text && <Text className="text-base leading-6 text-slate-800 dark:text-slate-200">{s.text}</Text>}
           {s.examples && (
             <View className="gap-2">
-              {s.examples.map(([ro, pt]) => (
-                <View key={ro} className="flex-row items-center gap-3 rounded-xl bg-conecta-light/60 px-3 py-2 dark:bg-blue-950/60">
+              {s.examples.map(([ro, pt], i) => (
+                <View key={i} className="flex-row items-center gap-3 rounded-xl bg-conecta-light/60 px-3 py-2 dark:bg-blue-950/60">
                   <SpeakButton text={ro} locale={pack.speechLocale} size={16} />
                   <View className="flex-1">
                     <Text className="font-bold text-conecta-dark dark:text-blue-300">{ro}</Text>
@@ -69,7 +69,7 @@ export function GrammarQuiz({ items, onFinish }: { items: QuizItem[]; onFinish: 
   return (
     <View className="gap-3">
       {items.map((q, i) => (
-        <Card key={q.question} className="gap-2">
+        <Card key={i} className="gap-2">
           <Text className="text-base font-bold text-slate-900 dark:text-white">{q.question}</Text>
           <View className="flex-row flex-wrap gap-2">
             {q.options.map((o) => {

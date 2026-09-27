@@ -9,6 +9,7 @@ import { SwipeCard, type SwipeDir } from '@/components/SwipeCard';
 import { useApp } from '@/services/app-state';
 import { setMeta } from '@/database/queries';
 import { speak } from '@/services/speech';
+import type { LanguagePack } from '@/data/types';
 
 export const TUTORIAL_KEY = 'tutorial_visto';
 
@@ -41,13 +42,23 @@ export default function TutorialScreen() {
           },
         ]
       : []),
+    // idiomas próximos do português (espanhol): palavras que parecem iguais e não são
+    ...(pack.falseFriends
+      ? [
+          {
+            mood: 'pensando' as const,
+            title: 'Cuidado com os falsos amigos',
+            text: `O ${pack.name.toLowerCase()} parece fácil porque quase tudo se parece com o português, e é aí que mora a armadilha: «${pack.falseFriends[0].word}» quer dizer «${pack.falseFriends[0].means}», não «${pack.falseFriends[0].looksLike}». No treino «🪤 Falsos amigos» (em Mais práticas) você vê a lista com exemplos e joga 10 perguntas; as palavras que você erra voltam mais vezes. No vocabulário, as que mudam de gênero (el viaje, la leche) também vêm marcadas.`,
+          },
+        ]
+      : []),
     { mood: 'feliz', title: 'Gestos nos cartões', text: 'No sprint de 5 minutos e na revisão você desliza os cartões. Experimente com este:', extra: 'gestos' },
     { mood: 'pensando', title: 'O cofre lembra por você', text: 'Cada palavra vai para o cofre de vocabulário. O app calcula (algoritmo SM-2) o dia certo de revisar: um pouco antes de você esquecer. Quando aparecer «revisar hoje», é a hora!' },
     { mood: 'comemorando', title: 'Ofensiva e meta do dia', text: 'Estudar todo dia mantém o fogo aceso:', extra: 'ofensiva' },
     { mood: 'pensando', title: 'Gramática e linguística', text: `Na aba Gramática há dois jeitos de estudar. «Por nível» traz os tópicos do A1.1 ao C2. «Por área da língua» é um curso de linguística: fonética, fonologia, morfologia, sintaxe, semântica, pragmática e estilística aplicadas ao ${pack.name.toLowerCase()}, o quadro interativo do IPA, normas (códigos de línguas, transliteração, glosas, CEFR) e grandes temas, como as famílias de línguas.` },
     { mood: 'comemorando', title: 'Histórias com vários finais', text: `Nas Histórias você lê em ${pack.name.toLowerCase()} e decide o que eu faço. Se escolher algo que mostra que não entendeu o texto, eu dou uma dica. Cada história tem mais de um final: tente achar todos!` },
-    { mood: 'pensando', title: 'Diário, shadowing e palácio', text: 'No Diário você escreve 3 frases sobre o seu dia e eu corrijo acentos, gênero e erros comuns. No Shadowing você repete frases imitando o ritmo e a melodia, e eu desenho a sua voz. No Palácio da memória cada gênero mora numa sala: 🔥 Forja (masculino), 🌊 Lago (feminino) e 🦎 Jardim do Camaleão (neutro).' },
-    { mood: 'feliz', title: 'O mundo do idioma', text: 'Na aba Cultura tem um mapa-múndi: toque num idioma para ver onde ele é falado (o que você estuda vem primeiro, seguido dos parentes mais próximos). Os botões embaixo do mapa levam a cada região e sub-região (América do Sul › Andina, por exemplo), com a lista dos países. Toque num país e o mapa aproxima nele, mostrando os estados e as províncias; toque numa região para ver o nome e o código. No cartão aparecem as línguas, da mais falada para a menos falada, os animais nativos e os instrumentos de lá. Dá até para escolher uma variante, como o romeno da Moldávia!' },
+    { mood: 'pensando', title: 'Diário, shadowing e palácio', text: `No Diário você escreve 3 frases sobre o seu dia e eu corrijo acentos, gênero e erros comuns. No Shadowing você repete frases imitando o ritmo e a melodia, e eu desenho a sua voz. No Palácio da memória cada gênero mora numa sala: ${(pack.genders ?? ['m', 'f', 'n']).includes('n') ? '🔥 Forja (masculino), 🌊 Lago (feminino) e 🦎 Jardim do Camaleão (neutro)' : '🔥 Forja (masculino) e 🌊 Lago (feminino)'}.` },
+    { mood: 'feliz', title: 'O mundo do idioma', text: `Na aba Cultura tem um mapa-múndi: toque num idioma para ver onde ele é falado (o que você estuda vem primeiro, seguido dos parentes mais próximos). Os botões embaixo do mapa levam a cada região e sub-região (América do Sul › Andina, por exemplo), com a lista dos países. Toque num país e o mapa aproxima nele, mostrando os estados e as províncias; toque numa região para ver o nome e o código. No cartão aparecem as línguas, da mais falada para a menos falada, os animais nativos e os instrumentos de lá.${variantTip(pack)}` },
     { mood: 'falando', title: 'Conversa e comunidade', text: 'Na aba Conversa você pratica situações reais (café, hotel, entrevista) e eu aviso se o tom ficou formal ou informal demais. Na Comunidade você corrige textos de outros alunos e ganha 20 XP.' },
     { mood: 'falando', title: 'Minha voz', text: `Para ouvir as palavras, o seu aparelho precisa de uma voz em ${pack.name.toLowerCase()}. Confira se já tem:`, extra: 'voz' },
     { mood: 'comemorando', title: 'Bora começar!', text: `Se quiser rever este tutorial, ele fica no Perfil. ${pack.phrases.letsStart[0]} (${pack.phrases.letsStart[1]})` },
@@ -98,6 +109,15 @@ export default function TutorialScreen() {
       </View>
     </Screen>
   );
+}
+
+/** Frase sobre as variantes do idioma estudado (romeno da Moldávia, espanhol da Espanha…). */
+function variantTip(pack: LanguagePack): string {
+  const others = (pack.variants ?? []).slice(1);
+  if (!others.length) return '';
+  const names = others.map((v) => v.name.charAt(0).toLowerCase() + v.name.slice(1)).join(' e o ');
+  const voice = others.some((v) => v.speechLocale || v.ipa) ? ' A variante escolhida muda também a voz e a transcrição fonética (IPA).' : '';
+  return ` Na aba Cultura você também escolhe a variante que estuda, como o ${names}.${voice}`;
 }
 
 function Row({ icon, bg, title, text }: { icon: ReactNode; bg: string; title: string; text: string }) {

@@ -206,6 +206,10 @@ export interface LanguageVariant {
   /** Diferenças de vocabulário: [padrão, variante, português, nota] */
   vocab?: [string, string, string, string?][];
   stories?: StorySeed[];
+  /** Voz desta variante (ex.: es-AR); sem ela, vale a do idioma */
+  speechLocale?: string;
+  /** IPA com a pronúncia desta variante (ex.: [θ] na Espanha); sem ela, vale a do idioma */
+  ipa?: (text: string) => string;
 }
 
 /** Classificação genealógica e geográfica, usada para agrupar o seletor de idiomas. */
@@ -250,6 +254,8 @@ export interface LanguagePack extends LanguageInfo {
   alphabet?: AlphabetData;
   /** Falsos amigos com o português (idiomas próximos, como o espanhol) */
   falseFriends?: FalseFriend[];
+  /** Gêneros gramaticais do idioma (padrão: masculino, feminino e neutro) */
+  genders?: ('m' | 'f' | 'n')[];
   /** As áreas da língua (fonética, fonologia, morfologia…) aplicadas a este idioma */
   linguistics?: LinguisticsArea[];
   /** Saudação curta e frase de teste da voz */

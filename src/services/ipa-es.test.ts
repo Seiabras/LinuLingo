@@ -32,6 +32,11 @@ const cases: [string, string][] = [
   ['honra', 'ˈonra'],
   ['general', 'xeneˈɾal'],
   ['examen', 'ekˈsamen'],
+  // s sonoro antes de consoante sonora
+  ['mismo', 'ˈmizmo'],
+  ['desde', 'ˈdezðe'],
+  ['isla', 'ˈizla'],
+  ['casa', 'ˈkasa'],
 ];
 
 test('espanhol: palavras em IPA (seseo, b/d/g suaves, r, ditongos, tônica pela ortografia)', () => {
@@ -45,4 +50,9 @@ test('espanhol: variantes e frases', () => {
   // b entre vogais na fala contínua fica suave; depois de pausa, oclusivo
   assert.equal(toIpaEs('la boca'), '[la ˈβoka]');
   assert.equal(toIpaEs('Boca.'), '[ˈboka]');
+  // n final assimila a consoante seguinte, mas não atravessa a pausa
+  assert.equal(toIpaEs('un beso'), '[um ˈbeso]');
+  assert.equal(toIpaEs('un vaso'), '[um ˈbaso]');
+  assert.equal(toIpaEs('en casa'), '[eŋ ˈkasa]');
+  assert.equal(toIpaEs('Ven, pasa.'), '[ben ˈpasa]');
 });

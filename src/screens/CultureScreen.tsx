@@ -55,7 +55,7 @@ export default function CultureScreen() {
 
       <Pressable onPress={() => router.push('/historias')} className="mt-3 flex-row items-center gap-3 rounded-2xl border-2 border-conecta/30 bg-white p-4 active:opacity-80 dark:bg-slate-900">
         <Text className="text-2xl">📚</Text>
-        <Text className="flex-1 font-semibold text-slate-800 dark:text-slate-100">Histórias interativas: cultura romena vivida pelo Linu, com vários finais.</Text>
+        <Text className="flex-1 font-semibold text-slate-800 dark:text-slate-100">Histórias interativas: a cultura de quem fala {pack.name.toLowerCase()}, vivida pelo Linu, com vários finais.</Text>
         <Text className="text-xl text-conecta">›</Text>
       </Pressable>
 

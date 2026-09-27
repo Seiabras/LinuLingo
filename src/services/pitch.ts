@@ -50,6 +50,7 @@ export function finalContour(pitches: (number | null)[]): Contour | null {
 /** Palavras interrogativas no começo da pergunta, por idioma. */
 const WH: Record<string, RegExp> = {
   ro: /^(ce|unde|cum|când|cand|cât|cat|câte|câți|cine|care|de ce|încotro)\b/i,
+  es: /^(qué|que|dónde|donde|cómo|como|cuándo|cuando|quién|quien|quiénes|cuál|cuál|cuánto|cuánta|cuántos|cuántas|por qué|adónde)(?![\p{L}])/iu,
   ru: /^(что|где|как|когда|кто|почему|зачем|куда|откуда|сколько|какой|какая|какое|какие|чей|чья|чьё|чьи)(?![\p{L}\p{M}])/iu,
 };
 
@@ -68,8 +69,8 @@ export function intonation(sentence: string, lang = 'ro'): Intonation {
   const s = sentence.trim();
   const wh = WH[lang] ?? WH.ro;
   if (!s.endsWith('?')) return { contour: 'desce', tip: 'Afirmação: a voz desce no fim.' };
-  const bare = s.replace(/^[«"„¿]/, '').replace(/\u0301/g, '');
-  if (wh.test(bare)) return { contour: 'desce', tip: lang === 'ru' ? 'Pergunta com «что, где, как…»: a voz desce no fim.' : 'Pergunta com «ce, unde, cum…»: a voz desce no fim.' };
+  const bare = s.replace(/^[«"„¿¡]+/, '').replace(/\u0301/g, '');
+  if (wh.test(bare)) return { contour: 'desce', tip: lang === 'ru' ? 'Pergunta com «что, где, как…»: a voz desce no fim.' : lang === 'es' ? 'Pergunta com «qué, dónde, cómo…»: a voz desce no fim.' : 'Pergunta com «ce, unde, cum…»: a voz desce no fim.' };
   if (lang === 'ru')
     return { contour: null, tip: 'Pergunta de sim/não em russo: a voz sobe forte na sílaba tônica da palavra-chave e cai logo depois (entonação IK-3). Imite o pico do modelo.' };
   return { contour: 'sobe', tip: 'Pergunta de sim/não: a voz sobe no fim.' };

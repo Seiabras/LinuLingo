@@ -38,6 +38,7 @@ export default function RootLayout() {
               <Stack.Screen name="shadowing" />
               <Stack.Screen name="palacio" />
               <Stack.Screen name="alfabeto" />
+              <Stack.Screen name="falsos-amigos" />
               <Stack.Screen name="creditos" />
               <Stack.Screen name="gramatica/[id]" />
               <Stack.Screen name="linguistica/[area]" />

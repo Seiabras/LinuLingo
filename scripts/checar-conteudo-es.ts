@@ -37,7 +37,11 @@ async function main() {
         const g = it as unknown as GrammarTopic;
         walk(g.sections.map((x) => x.text ?? ''), id, err, 'text', true);
         walk(g.sections.map((x) => x.examples ?? []), id, err, 'examples');
-        walk(g.quiz.map((q) => [q.options, q.answer]), id, err, 'quiz');
+        // opções e resposta à parte: um quiz de 3 opções pareceria um trio [idioma, português, …] e a 2ª opção escaparia
+        // quizzes com opções em português (ex.: «O que significa cajón?» → gaveta / caixão) ficam de fora
+        const quizEs = g.quiz.filter((q) => !q.options.some((o) => /[ãõçâêôà]/i.test(o)));
+        walk(quizEs.map((q) => q.options), id, err, 'options');
+        walk(quizEs.map((q) => q.answer), id, err, 'options');
       } else walk(it, id, err);
     }
   }

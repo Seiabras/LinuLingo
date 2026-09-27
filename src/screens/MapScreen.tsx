@@ -716,7 +716,7 @@ function MiniMap({ highlight, color, dark }: { highlight: string[]; color: strin
 
 /** Locale de voz para o nome local (só onde o idioma é do app). */
 function localeFor(iso: string): string | null {
-  return ({ ROU: 'ro-RO', MDA: 'ro-RO', RUS: 'ru-RU', FIN: 'fi-FI', EST: 'et-EE', JPN: 'ja-JP', KOR: 'ko-KR' } as Record<string, string>)[iso] ?? null;
+  return ({ ROU: 'ro-RO', MDA: 'ro-RO', RUS: 'ru-RU', ESP: 'es-ES', MEX: 'es-MX', ARG: 'es-AR', FIN: 'fi-FI', EST: 'et-EE', JPN: 'ja-JP', KOR: 'ko-KR' } as Record<string, string>)[iso] ?? null;
 }
 
 function NatureList({ items, locale }: { items: import('@/data/fauna-musica').NatureItem[]; locale: string | null }) {

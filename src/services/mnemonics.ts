@@ -32,6 +32,12 @@ type Room = (typeof ROOMS)[Gender];
 
 /** Salas com as regras do idioma estudado (o russo não tem o neutro «camaleão» do romeno). */
 export function roomsFor(lang: string): Record<Gender, Room> {
+  if (lang === 'es')
+    return {
+      m: { ...ROOMS.m, rule: 'Masculino: quase todas em -o, e as em -aje (el viaje), -or (el color) e as de origem grega em -ma (el problema, el tema). Cuidado com as que mudam de gênero em relação ao português!' },
+      f: { ...ROOMS.f, rule: 'Feminino: quase todas em -a, e as em -ción/-sión, -dad/-tad, -tud e -umbre (la costumbre, la legumbre). Exceções clássicas: la mano, la radio, la foto, la moto.' },
+      n: ROOMS.n,
+    };
   if (lang !== 'ru') return ROOMS;
   return {
     m: { ...ROOMS.m, rule: 'Masculino: termina em consoante ou em -й (дом, чай, музе́й). Alguns em -ь também (слова́рь, день).' },
@@ -46,8 +52,26 @@ export function roomsFor(lang: string): Record<Gender, Room> {
   };
 }
 
+/** Heterogenéricos mais comuns: gênero diferente do português. */
+const HETERO_ES: Record<string, string> = {
+  leche: 'Atenção: la leche é feminino (o leite).',
+  sal: 'Atenção: la sal é feminino (o sal).',
+  miel: 'Atenção: la miel é feminino (o mel).',
+  sangre: 'Atenção: la sangre é feminino (o sangue).',
+  nariz: 'Atenção: la nariz é feminino (o nariz).',
+  árbol: 'Atenção: el árbol é masculino (a árvore).',
+  color: 'Atenção: el color é masculino (a cor).',
+  dolor: 'Atenção: el dolor é masculino (a dor).',
+  puente: 'Atenção: el puente é masculino (a ponte).',
+  origen: 'Atenção: el origen é masculino (a origem).',
+  labor: 'Atenção: la labor é feminino (o labor).',
+  señal: 'Atenção: la señal é feminino (o sinal).',
+};
+
 /** Texto do Linu na entrada do palácio. */
 export function palaceIntro(lang: string): string {
+  if (lang === 'es')
+    return 'O espanhol tem 2 gêneros, como o português, mas muitas palavras trocam de gênero de uma língua para a outra: el viaje, la leche, el árbol, la nariz. Guarde cada uma na sala certa!';
   return lang === 'ru'
     ? 'O russo tem 3 gêneros, e o gênero muda o adjetivo e o possessivo (мой дом, моя́ ма́ма, моё окно́). Imagine cada palavra morando numa sala do palácio!'
     : 'O romeno tem 3 gêneros. Imagine cada palavra morando numa sala do palácio: fica muito mais fácil lembrar se é «un» ou «o»!';
@@ -56,6 +80,14 @@ export function palaceIntro(lang: string): string {
 /** Dica específica para a palavra, a partir da terminação. */
 export function genderTip(word: string, gender: Gender, lang = 'ro'): string {
   const w = word.toLowerCase().replace(/\u0301/g, '');
+  if (lang === 'es') {
+    if (w.endsWith('aje')) return 'Terminou em -aje? Masculino: el viaje, el paisaje, el garaje (em português é feminino: a viagem).';
+    if (w.endsWith('umbre')) return 'Terminou em -umbre? Feminino: la costumbre, la legumbre (em português: o costume, o legume).';
+    if (gender === 'm' && w.endsWith('ma')) return 'Palavra de origem grega em -ma: masculina, como el problema, el tema, el idioma.';
+    if (gender === 'f' && w.endsWith('o')) return 'Exceção: termina em -o, mas é feminina (la mano, la radio, la foto).';
+    if (HETERO_ES[w]) return HETERO_ES[w];
+    return roomsFor('es')[gender].rule;
+  }
   if (lang === 'ru') {
     const rooms = roomsFor('ru');
     if (w.endsWith('ь')) return gender === 'f' ? 'Termina em -ь: esses se dividem entre masculino e feminino; esta é feminina (como ночь, дверь). As em -ость são sempre femininas.' : 'Termina em -ь: esses se dividem; esta é masculina (como день, слова́рь). Decore junto com um adjetivo: «но́вый день».';

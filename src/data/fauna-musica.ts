@@ -72,12 +72,72 @@ export const FAUNA_MUSICA: Record<string, CountryNature> = {
   },
   ESP: {
     animals: [
-      { emoji: '🐈', name: 'Lince-ibérico', fact: 'Felino exclusivo da Península Ibérica, salvo da extinção por programas de conservação.' },
-      { emoji: '🦅', name: 'Águia-imperial-ibérica', fact: 'Ave de rapina que só existe na Península Ibérica.' },
+      { emoji: '🐈', name: 'Lince-ibérico', local: 'lince ibérico', fact: 'Felino exclusivo da Península Ibérica, salvo da extinção por programas de conservação.' },
+      { emoji: '🦅', name: 'Águia-imperial-ibérica', local: 'águila imperial ibérica', fact: 'Ave de rapina que só existe na Península Ibérica.' },
     ],
     instruments: [
-      { emoji: '🎸', name: 'Violão flamenco', fact: 'O violão moderno ganhou sua forma na Espanha do século XIX.', origin: 'criado' },
-      { emoji: '🥢', name: 'Castanholas', fact: 'Pequenas peças de madeira que marcam o ritmo das danças espanholas.', origin: 'tradicional' },
+      { emoji: '🎸', name: 'Violão flamenco', local: 'guitarra flamenca', fact: 'O violão moderno ganhou sua forma na Espanha do século XIX.', origin: 'criado' },
+      { emoji: '🥢', name: 'Castanholas', local: 'castañuelas', fact: 'Pequenas peças de madeira que marcam o ritmo das danças espanholas.', origin: 'tradicional' },
+    ],
+  },
+  MEX: {
+    animals: [
+      { emoji: '🦎', name: 'Axolote', local: 'ajolote', fact: 'Anfíbio que regenera patas e até partes do coração. Em estado selvagem, só vive nos canais de Xochimilco, na Cidade do México.' },
+      { emoji: '🐬', name: 'Vaquita', local: 'vaquita marina', fact: 'Um dos menores cetáceos do mundo, parente dos golfinhos. Só existe no norte do Golfo da Califórnia e está criticamente ameaçada.' },
+    ],
+    instruments: [
+      { emoji: '🎸', name: 'Guitarrón', local: 'guitarrón mexicano', fact: 'Violão enorme, de fundo abaulado, que faz o baixo dos grupos de mariachi.', origin: 'criado' },
+      { emoji: '🪕', name: 'Jarana jarocha', local: 'jarana jarocha', fact: 'Violinha que faz o ritmo do son jarocho, a música tradicional de Veracruz.', origin: 'criado' },
+    ],
+  },
+  COL: {
+    animals: [
+      { emoji: '🐸', name: 'Rã-dourada', local: 'rana dorada', fact: 'Uma das rãs mais venenosas do mundo; só vive nas florestas da costa do Pacífico colombiano.' },
+      { emoji: '🐦', name: 'Beija-flor', local: 'colibrí', fact: 'A Colômbia é o país com mais espécies de aves do mundo, entre elas dezenas de beija-flores.' },
+    ],
+    instruments: [
+      { emoji: '🎸', name: 'Tiple', local: 'tiple', fact: 'Violão pequeno de 12 cordas, em quatro grupos de três: é o instrumento nacional da Colômbia.', origin: 'criado' },
+      { emoji: '🪈', name: 'Gaita colombiana', local: 'gaita', fact: 'Flauta longa de origem indígena, da costa do Caribe, que puxa a melodia da cumbia.', origin: 'tradicional' },
+    ],
+  },
+  ARG: {
+    animals: [
+      { emoji: '🐧', name: 'Pinguim-de-magalhães', local: 'pingüino de Magallanes', fact: 'Primo do Linu! Forma grandes colônias na costa da Patagônia argentina entre a primavera e o verão.' },
+      { emoji: '🦙', name: 'Guanaco', local: 'guanaco', fact: 'Parente selvagem da lhama, vive nas estepes da Patagônia e nos Andes.' },
+    ],
+    instruments: [
+      { emoji: '🪗', name: 'Bandoneón', local: 'bandoneón', fact: 'Inventado na Alemanha no século XIX, virou a alma do tango de Buenos Aires.', origin: 'tradicional' },
+      { emoji: '🥁', name: 'Bombo legüero', local: 'bombo legüero', fact: 'Tambor grave de madeira e couro da música folclórica do norte argentino.', origin: 'tradicional' },
+    ],
+  },
+  PER: {
+    animals: [
+      { emoji: '🦙', name: 'Vicunha', local: 'vicuña', fact: 'Parente selvagem da lhama, de lã finíssima; aparece no brasão do Peru.' },
+      { emoji: '🐧', name: 'Pinguim-de-humboldt', local: 'pingüino de Humboldt', fact: 'Outro primo do Linu: vive na costa fria do Peru e do Chile, banhada pela corrente de Humboldt.' },
+    ],
+    instruments: [
+      { emoji: '📦', name: 'Cajón peruano', local: 'cajón', fact: 'Caixa de madeira em que o músico senta e toca com as mãos. Nasceu na música afro-peruana.', origin: 'criado' },
+      { emoji: '🪕', name: 'Charango', local: 'charango', fact: 'Violinha de dez cordas dos Andes, também típica da Bolívia.', origin: 'tradicional' },
+    ],
+  },
+  CHL: {
+    animals: [
+      { emoji: '🦌', name: 'Huemul', local: 'huemul', fact: 'Cervo dos Andes do sul, ameaçado de extinção; aparece no brasão do Chile ao lado do condor.' },
+      { emoji: '🦅', name: 'Condor-dos-andes', local: 'cóndor andino', fact: 'Uma das maiores aves voadoras do mundo, com asas de até 3 metros de ponta a ponta.' },
+    ],
+    instruments: [
+      { emoji: '🎸', name: 'Guitarrón chileno', local: 'guitarrón chileno', fact: 'Violão de 25 cordas do canto a lo poeta, a poesia cantada do campo chileno.', origin: 'criado' },
+      { emoji: '🎺', name: 'Trutruca', local: 'trutruca', fact: 'Trompa longa, feita de colihue (um bambu), do povo mapuche.', origin: 'tradicional' },
+    ],
+  },
+  CUB: {
+    animals: [
+      { emoji: '🐦', name: 'Colibri-abelha', local: 'zunzuncito', fact: 'A menor ave do mundo, com cerca de 5 centímetros; só existe em Cuba.' },
+      { emoji: '🐊', name: 'Crocodilo-cubano', local: 'cocodrilo cubano', fact: 'Crocodilo que só existe em Cuba, hoje restrito a poucos pântanos, como o de Zapata.' },
+    ],
+    instruments: [
+      { emoji: '🥁', name: 'Bongô', local: 'bongó', fact: 'Par de tambores pequenos presos um ao outro, nascido no leste de Cuba, no son cubano.', origin: 'criado' },
+      { emoji: '🎸', name: 'Tres cubano', local: 'tres', fact: 'Violão de três pares de cordas que faz os solos do son.', origin: 'criado' },
     ],
   },
   RUS: {
@@ -137,4 +197,4 @@ export const FAUNA_MUSICA: Record<string, CountryNature> = {
 };
 
 /** Países «de origem» de cada idioma do app (seção Bichos e sons da aba Cultura). */
-export const HOMELANDS: Record<string, string[]> = { ro: ['ROU', 'MDA'], ru: ['RUS'], es: ['ESP'], pt: ['BRA', 'PRT'], fi: ['FIN'], et: ['EST'], ja: ['JPN'], ko: ['KOR'], en: ['GBR'] };
+export const HOMELANDS: Record<string, string[]> = { ro: ['ROU', 'MDA'], ru: ['RUS'], es: ['ESP', 'MEX', 'COL', 'ARG', 'PER', 'CHL', 'CUB'], pt: ['BRA', 'PRT'], fi: ['FIN'], et: ['EST'], ja: ['JPN'], ko: ['KOR'], en: ['GBR'] };

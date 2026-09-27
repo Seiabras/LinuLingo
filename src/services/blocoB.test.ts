@@ -88,3 +88,21 @@ test('entonação: russo não cobra subida no fim da pergunta de sim/não', () =
   assert.equal(expectedContour('Где метро́?', 'ru'), 'desce');
   assert.equal(expectedContour('Я из Брази́лии.', 'ru'), 'desce');
 });
+
+test('diário em espanhol: heterogenéricos, muy × mucho e gustar', () => {
+  const es = buildLexicon(['El viaje fue largo.'], [
+    { word: 'viaje', gender: 'm' },
+    { word: 'leche', gender: 'f' },
+    { word: 'agua', gender: 'f' },
+    { word: 'perro', gender: 'm' },
+    { word: 'restaurante', gender: 'm' },
+  ]);
+  assert.equal(checkJournal('La viaje fue larga.', es, 'es').corrected, 'El viaje fue larga.');
+  assert.equal(checkJournal('Quiero el leche.', es, 'es').corrected, 'Quiero la leche.');
+  assert.equal(checkJournal('Bebo el agua.', es, 'es').issues.length, 0);
+  assert.equal(checkJournal('Hay muy restaurantes.', es, 'es').corrected, 'Hay muchos restaurantes.');
+  assert.equal(checkJournal('Es mucho bonito.', es, 'es').corrected, 'Es muy bonito.');
+  assert.equal(checkJournal('Me gusta los perros.', es, 'es').corrected, 'Me gustan los perros.');
+  assert.equal(expectedContour('¿Dónde está el baño?', 'es'), 'desce');
+  assert.equal(expectedContour('¿Hablas portugués?', 'es'), 'sobe');
+});
