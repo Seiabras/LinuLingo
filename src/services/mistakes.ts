@@ -26,6 +26,7 @@ export type MistakeSource =
   | 'sons'
   | 'diario'
   | 'shadowing'
+  | 'irmas'
   | 'revisao';
 
 export const SOURCES: Record<MistakeSource, { emoji: string; name: string }> = {
@@ -44,6 +45,7 @@ export const SOURCES: Record<MistakeSource, { emoji: string; name: string }> = {
   sons: { emoji: '🔊', name: 'Adivinhe o som' },
   diario: { emoji: '📓', name: 'Diário' },
   shadowing: { emoji: '🎙️', name: 'Shadowing' },
+  irmas: { emoji: '🌳', name: 'Palavras irmãs' },
   revisao: { emoji: '🗂️', name: 'Revisão de palavras' },
 };
 

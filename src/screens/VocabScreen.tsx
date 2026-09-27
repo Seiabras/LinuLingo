@@ -119,6 +119,17 @@ export default function VocabScreen() {
           <Text className="text-sm text-slate-600 dark:text-slate-300">
             {pack.cognateNote} Os <Text className="font-bold text-conquista">cognatos transparentes</Text> você já entende sem estudar!
           </Text>
+          <Pressable
+            accessibilityRole="link"
+            onPress={() => router.push('/palavras-irmas')}
+            className="flex-row items-center gap-3 rounded-2xl bg-amber-50 p-3 active:opacity-80 dark:bg-amber-950/40"
+          >
+            <Text className="text-2xl">🌳</Text>
+            <Text className="flex-1 text-sm leading-5 text-slate-800 dark:text-slate-200">
+              <Text className="font-extrabold">Palavras irmãs entre idiomas:</Text> a árvore de cada raiz (noite, noche, notte, noapte, ночь, natt, night) e as que só parecem parentes.
+            </Text>
+            <Text className="text-lg text-slate-400">›</Text>
+          </Pressable>
           <Pressable onPress={() => setOnlyTransparent((v) => !v)} className="self-start">
             <Chip label={onlyTransparent ? '✓ Só cognatos transparentes' : 'Mostrar só cognatos transparentes'} tone={onlyTransparent ? 'green' : 'slate'} />
           </Pressable>

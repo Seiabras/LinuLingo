@@ -35,6 +35,7 @@ export default function RootLayout() {
               <Stack.Screen name="revisao" options={{ presentation: 'fullScreenModal' }} />
               <Stack.Screen name="comunidade" />
               <Stack.Screen name="troca" />
+              <Stack.Screen name="palavras-irmas" />
               <Stack.Screen name="cenario/[id]" />
               <Stack.Screen name="tutorial" options={{ presentation: 'fullScreenModal', gestureEnabled: false }} />
               <Stack.Screen name="voz" />
