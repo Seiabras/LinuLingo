@@ -1,6 +1,7 @@
 import { useMemo, useRef, useState } from 'react';
 import { LogBox, Pressable, ScrollView, Text, TextInput, useWindowDimensions, View } from 'react-native';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
+import { router } from 'expo-router';
 import { scheduleOnRN } from 'react-native-worklets';
 import Svg, { Circle, G, Path, Rect, Text as SvgText } from 'react-native-svg';
 import { ArrowLeft, Globe, Minus, Plus, Search, X } from 'lucide-react-native';
@@ -14,7 +15,7 @@ import { ISO_3166_2 } from '@/data/iso-3166-2';
 import { FORMER_COUNTRIES, KIND_LABEL, type FormerCountry } from '@/data/iso-3166-3';
 import { isAvailable, LANGUAGES, PACKS } from '@/data/idiomas';
 import type { Accent } from '@/data/types';
-import { updateUser } from '@/database/queries';
+
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
 import { fitBox, focusBox, ringBoxes, type Box, type SubShape } from '@/services/mapa-geo';
@@ -596,7 +597,7 @@ export default function MapScreen() {
               <Text accessibilityLabel={`País selecionado: ${selected.name}`} className="text-xl font-extrabold text-slate-900 dark:text-white">
                 {flagOf(selected.iso2)} {selected.name}
               </Text>
-              {subSel && selected.iso === focus?.iso && <SubCard iso2={selected.iso2} sub={subSel} spoken={spoken} onClose={() => setSubSel(null)} />}
+              {subSel && selected.iso === focus?.iso && <SubCard iso2={selected.iso2} sub={subSel} spoken={spoken} onClose={() => setSubSel(null)} studied={pack.name.toLowerCase()} />}
               {spoken.length === 0 ? (
                 <Text className="text-slate-600 dark:text-slate-400">Sem dados de idiomas para este território.</Text>
               ) : (
@@ -674,11 +675,18 @@ export default function MapScreen() {
                 <View className="gap-1">
                   <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">🗣️ Sotaques e dialetos daqui</Text>
                   <View className="flex-row flex-wrap gap-1.5">
-                    {accentsAt(selected.iso).map((a) => (
-                      <Chip key={a.id} label={`${a.emoji} ${a.name} (${a.lang})`} tone="amber" />
-                    ))}
+                    {accentsAt(selected.iso).map((a) =>
+                      // sotaques do idioma estudado abrem o treino; os de outros idiomas são só informação
+                      a.lang === pack.name.toLowerCase() ? (
+                        <Pressable key={a.id} accessibilityRole="button" onPress={() => router.push({ pathname: '/sotaque', params: { id: a.id } })}>
+                          <Chip label={`${a.emoji} ${a.name} ›`} tone="green" />
+                        </Pressable>
+                      ) : (
+                        <Chip key={a.id} label={`${a.emoji} ${a.name} (${a.lang})`} tone="amber" />
+                      ),
+                    )}
                   </View>
-                  <Text className="text-xs text-slate-400">Toque numa região do país para ver o sotaque de lá; os detalhes estão na aba Cultura.</Text>
+                  <Text className="text-xs text-slate-400">Toque num sotaque do idioma que você estuda para treinar, ou numa região do país para ver o sotaque de lá.</Text>
                 </View>
               )}
 
@@ -755,7 +763,7 @@ function subLabel(iso2: string, sh: SubShape): string {
 }
 
 /** A subdivisão tocada: nome, código ISO 3166-2, tipo e quais idiomas do app são falados ali. */
-function SubCard({ iso2, sub, spoken, onClose }: { iso2: string; sub: SubShape; spoken: ReturnType<typeof languagesIn>; onClose: () => void }) {
+function SubCard({ iso2, sub, spoken, onClose, studied }: { iso2: string; sub: SubShape; spoken: ReturnType<typeof languagesIn>; onClose: () => void; studied: string }) {
   const iso = sub.code ? ISO_3166_2[iso2]?.find(([c]) => c === sub.code) : undefined;
   const parent = sub.parent ? ISO_3166_2[iso2]?.find(([c]) => c === sub.parent) : undefined;
   const here = spoken.filter(({ spoken: s }) => s.subdivisions?.some((c) => c === sub.code || c === sub.parent));
@@ -783,9 +791,12 @@ function SubCard({ iso2, sub, spoken, onClose }: { iso2: string; sub: SubShape; 
         </Text>
       ))}
       {accentsAt(isoOf(iso2), sub.code, sub.parent).map((a) => (
-        <Text key={a.id} className="text-sm font-semibold text-amber-700 dark:text-amber-300">
-          {a.emoji} {a.kind === 'dialeto' ? 'Dialeto' : 'Sotaque'} daqui: {a.name} ({a.lang}).
-        </Text>
+        <View key={a.id} className="gap-1">
+          <Text className="text-sm font-semibold text-amber-700 dark:text-amber-300">
+            {a.emoji} {a.kind === 'dialeto' ? 'Dialeto' : 'Sotaque'} daqui: {a.name} ({a.lang}).
+          </Text>
+          {a.lang === studied && <Button title={`Estudar: ${a.name}`} variant="ghost" onPress={() => router.push({ pathname: '/sotaque', params: { id: a.id } })} />}
+        </View>
       ))}
     </View>
   );

@@ -17,7 +17,11 @@ import type { CultureCardSeed, LessonKind } from '@/data/types';
 import { useIsDark } from '@/services/theme';
 
 export default function HomeScreen() {
-  const { db, pack, user, streak, refresh } = useApp();
+  const { db, pack, user, streak, refresh, accent } = useApp();
+  // sotaques: o escolhido, ou o convite para escolher um
+  const ACCENT_PRACTICE = pack.accents?.length
+    ? { route: '/sotaque' as const, emoji: accent?.emoji ?? '🗣️', title: accent ? accent.name : 'Sotaques', text: accent ? 'O sotaque que você estuda' : `${pack.accents.length} jeitos regionais de falar` }
+    : null;
   const [path, setPath] = useState<PathLesson[]>([]);
   const [due, setDue] = useState(0);
   const [peers, setPeers] = useState(0);
@@ -113,7 +117,7 @@ export default function HomeScreen() {
 
       <Text className="mb-2 mt-5 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">Mais práticas</Text>
       <View className="flex-row flex-wrap gap-2">
-        {[...(pack.alphabet ? [ALPHABET_PRACTICE] : []), ...(pack.falseFriends ? [FALSE_FRIENDS_PRACTICE] : []), ...PRACTICES].map((p) => (
+        {[...(pack.alphabet ? [ALPHABET_PRACTICE] : []), ...(pack.falseFriends ? [FALSE_FRIENDS_PRACTICE] : []), ...(ACCENT_PRACTICE ? [ACCENT_PRACTICE] : []), ...PRACTICES].map((p) => (
           <Pressable
             key={p.route}
             accessibilityRole="button"

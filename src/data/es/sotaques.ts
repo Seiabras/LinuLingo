@@ -1,4 +1,5 @@
 import type { Accent } from '../types';
+import { toIpaEs } from '@/services/ipa-es';
 
 /**
  * Sotaques e dialetos do espanhol, da Espanha à Patagônia. A voz dos exemplos usa o país de
@@ -44,6 +45,8 @@ export const ACCENTS_ES: Accent[] = [
     subdivisions: ['ES-AN'],
     variant: 'es-ES',
     speechLocale: 'es-ES',
+    // boa parte da Andaluzia faz seseo: a IPA usa o [s], como na América
+    ipa: (t) => toIpaEs(t, '419'),
     emoji: '💃',
     summary: 'O sul da Espanha fala rápido, «come» consoantes e mistura o «s» e o «z»: é o sotaque espanhol que mais lembra o da América.',
     features: [
@@ -72,6 +75,7 @@ export const ACCENTS_ES: Accent[] = [
     subdivisions: ['ES-CN'],
     variant: 'es-ES',
     speechLocale: 'es-ES',
+    ipa: (t) => toIpaEs(t, '419'),
     emoji: '🏝️',
     summary: 'Espanha no mapa, América no ouvido: as Canárias foram escala dos navios para o Novo Mundo, e o sotaque viajou junto.',
     features: [

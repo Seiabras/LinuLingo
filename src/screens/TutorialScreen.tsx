@@ -140,7 +140,7 @@ function variantTip(pack: LanguagePack): string {
 function accentTip(pack: LanguagePack): string {
   const n = pack.accents?.length ?? 0;
   if (!n) return '';
-  return ` E em «🗣️ Sotaques e dialetos» estão ${n} jeitos regionais de falar ${pack.name.toLowerCase()}, com minimapa, exemplos e palavras típicas; no mapa, ao tocar numa região, aparece o sotaque de lá.`;
+  return ` E em «🗣️ Sotaques e dialetos» estão ${n} jeitos regionais de falar ${pack.name.toLowerCase()}, com minimapa, exemplos e palavras típicas. Escolha um para estudar: a minha voz e a pronúncia passam a seguir o jeito de lá, e o treino do sotaque aparece em Mais práticas. No mapa, ao tocar numa região, aparece o sotaque de lá.`;
 }
 
 function Row({ icon, bg, title, text }: { icon: ReactNode; bg: string; title: string; text: string }) {

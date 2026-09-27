@@ -128,6 +128,33 @@ await page.waitForTimeout(1500);
 await page.getByLabel('Sotaque: Canário').scrollIntoViewIfNeeded();
 await shot('sotaque-canario');
 
+// estudar um sotaque: o portenho liga a variante do Rio da Prata, a IPA com «sh» e o treino
+await page.getByLabel('Sotaque: Portenho (Buenos Aires)').click();
+await page.getByLabel('Sotaque: Portenho (Buenos Aires)').locator('xpath=..').getByText('Estudar este dialeto', { exact: true }).click();
+await expectText('✓ estudando');
+await page.goto(BASE + '/sotaque', { waitUntil: 'load' });
+await expectText('Vamos treinar este dialeto: Portenho');
+await expectText('✓ o sotaque que você estuda');
+await shot('sotaque-treino');
+// a IPA gerada pelo app segue o sotaque: «¿Cómo te llamas?» com o «ll» chiado [ʃ]
+await page.goto(BASE + '/gramatica/' + g1.id, { waitUntil: 'load' });
+await page.locator('text=/ˈkomo te ˈʃamas/').first().waitFor({ timeout: 15000 });
+await page.goto(BASE + '/sotaque', { waitUntil: 'load' });
+await expectText('Vamos treinar este dialeto: Portenho');
+await click('🎯 Treinar (8 perguntas)');
+for (let q = 0; q < 8; q++) {
+  await page.getByLabel(/^Opção /).first().click();
+  if (q === 0) await shot('sotaque-jogo');
+  await page.getByText('Continuar', { exact: true }).first().click();
+  await page.waitForTimeout(250);
+}
+await expectText('acertos');
+await click('Voltar ao sotaque');
+await click('Voltar ao padrão');
+await page.goto(BASE + '/cultura', { waitUntil: 'load' });
+await page.getByText('Espanhol latino-americano', { exact: true }).first().click();
+await page.waitForTimeout(800);
+
 // linguística: fonética do espanhol
 await page.goto(BASE + '/linguistica/fonetica', { waitUntil: 'load' });
 await expectText('Cinco vogais, nenhuma nasal');

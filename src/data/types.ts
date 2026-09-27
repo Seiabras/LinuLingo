@@ -231,6 +231,8 @@ export interface Accent {
   variant?: string;
   /** Voz para os exemplos, se o aparelho tiver (ex.: 'es-AR'); sem ela, a do idioma */
   speechLocale?: string;
+  /** IPA com a pronúncia deste sotaque, quando for diferente da variante (ex.: o seseo andaluz) */
+  ipa?: (text: string) => string;
   emoji: string;
   /** 1–2 frases: o que marca este jeito de falar */
   summary: string;

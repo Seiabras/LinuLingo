@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
+import { router } from 'expo-router';
 import Svg, { Circle, Path, Rect } from 'react-native-svg';
 import { ChevronDown, ChevronUp } from 'lucide-react-native';
-import { Card, Chip, SpeakButton } from '@/components/ui';
+import { Button, Card, Chip, SpeakButton } from '@/components/ui';
 import { useApp } from '@/services/app-state';
 import { useIsDark } from '@/services/theme';
 import { WORLD } from '@/data/mapa-mundi';
@@ -30,7 +31,7 @@ export function AccentsPanel() {
   return (
     <View className="gap-3">
       <Text className="text-sm text-slate-600 dark:text-slate-400">
-        Sotaque muda a pronúncia e a melodia; dialeto muda também palavras e gramática. Toque num deles para ver onde se fala, como soa e as palavras típicas.
+        Sotaque muda a pronúncia e a melodia; dialeto muda também palavras e gramática. Toque num deles para ver onde se fala, como soa e as palavras típicas, e escolha um para estudar: a voz e a pronúncia passam a seguir o jeito de lá.
       </Text>
       {byCountry.map(([iso, list]) => {
         const c = WORLD.find((w) => w.iso === iso);
@@ -50,7 +51,8 @@ export function AccentsPanel() {
 }
 
 function AccentCard({ a, open, onToggle }: { a: Accent; open: boolean; onToggle: () => void }) {
-  const { pack } = useApp();
+  const { pack, accent, setAccent } = useApp();
+  const chosen = accent?.id === a.id;
   const dark = useIsDark();
   const locale = a.speechLocale ?? pack.speechLocale;
   return (
@@ -67,6 +69,7 @@ function AccentCard({ a, open, onToggle }: { a: Accent; open: boolean; onToggle:
           <View className="flex-row flex-wrap items-center gap-2">
             <Text className="text-base font-extrabold text-slate-900 dark:text-white">{a.name}</Text>
             <Chip label={a.kind} tone={a.kind === 'dialeto' ? 'amber' : 'blue'} />
+            {chosen && <Chip label="✓ estudando" tone="green" />}
           </View>
           <Text className="text-xs text-slate-500 dark:text-slate-400">{a.region}</Text>
         </View>
@@ -74,6 +77,14 @@ function AccentCard({ a, open, onToggle }: { a: Accent; open: boolean; onToggle:
       </Pressable>
       {open && (
         <View className="gap-3">
+          <View className="flex-row flex-wrap gap-2">
+            {chosen ? (
+              <Button title="Voltar ao padrão" variant="ghost" onPress={() => setAccent(null)} />
+            ) : (
+              <Button title={`Estudar este ${a.kind}`} variant="ghost" onPress={() => setAccent(a.id)} />
+            )}
+            <Button title="🎯 Treinar" variant="success" onPress={() => router.push({ pathname: '/sotaque', params: { id: a.id } })} />
+          </View>
           <AccentMap a={a} />
           <Text className="text-base leading-6 text-slate-800 dark:text-slate-200">{a.summary}</Text>
           <View className="gap-1.5">
@@ -113,15 +124,16 @@ function AccentCard({ a, open, onToggle }: { a: Accent; open: boolean; onToggle:
 }
 
 /** Minimapa do país com as regiões do sotaque em destaque (o país inteiro, se não houver regiões). */
-function AccentMap({ a }: { a: Accent }) {
+export function AccentMap({ a }: { a: Accent }) {
   const dark = useIsDark();
-  const [subs, setSubs] = useState<SubShape[] | null>(null);
+  // subdivisões carregadas, marcadas com o país: ao trocar de sotaque, as antigas deixam de valer sozinhas
+  const [loaded, setLoaded] = useState<{ iso: string; list: SubShape[] } | null>(null);
+  const subs = loaded?.iso === a.country ? loaded.list : null;
   useEffect(() => {
     let alive = true;
-    setSubs(null);
     if (a.subdivisions?.length)
       loadSubdivisions(a.country)
-        .then((l) => alive && setSubs(l))
+        .then((list) => alive && setLoaded({ iso: a.country, list }))
         .catch(() => {});
     return () => {
       alive = false;
