@@ -334,7 +334,7 @@ export async function setMeta(db: SQLiteDatabase, key: string, value: string) {
 
 export async function resetProgress(db: SQLiteDatabase) {
   await db.execAsync(`
-    DELETE FROM User_SRS_State; DELETE FROM Lesson_Progress; DELETE FROM XP_Log; DELETE FROM Story_Progress; DELETE FROM User_Journal_Logs; DELETE FROM Mnemonic_Palaces; DELETE FROM Shadowing_Attempts;
+    DELETE FROM User_SRS_State; DELETE FROM Lesson_Progress; DELETE FROM XP_Log; DELETE FROM Story_Progress; DELETE FROM User_Journal_Logs; DELETE FROM Mnemonic_Palaces; DELETE FROM Shadowing_Attempts; DELETE FROM Mistake_Log;
     DELETE FROM Community_Feedback WHERE is_mine = 1;
     UPDATE Community_Feedback SET correction = NULL, corrected_by = NULL, status = 'aguardando';
     UPDATE Users SET streak_days = 0, total_xp = 0, last_study_date = NULL, streak_freezes = 1;

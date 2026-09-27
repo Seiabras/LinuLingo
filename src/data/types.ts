@@ -292,6 +292,8 @@ export interface LanguagePack extends LanguageInfo {
   linguistics?: LinguisticsArea[];
   /** Sotaques e dialetos regionais (aba Cultura e mapa) */
   accents?: Accent[];
+  /** Pares mínimos: palavras que só mudam por um som difícil para o brasileiro */
+  minimalPairs?: MinimalPairs;
   /** Saudação curta e frase de teste da voz */
   greeting: string;
   sampleSentence: string;
@@ -364,4 +366,30 @@ export interface AudioClip {
   license: string;
   licenseUrl: string;
   page: string;
+}
+
+/** Um contraste de sons que o brasileiro confunde (r × rr, ы × и, consoante simples × dupla…). */
+export interface PhoneContrast {
+  id: string;
+  name: string;
+  /** os dois sons em IPA */
+  sounds: [string, string];
+  /** o que muda na boca e por que o ouvido do brasileiro se engana */
+  tip: string;
+  /** a voz do aparelho em vez das gravações (quando os falantes gravados podem não fazer o contraste) */
+  deviceVoice?: boolean;
+}
+
+/** Duas palavras [palavra, sentido] que só mudam pelo contraste. */
+export interface MinimalPair {
+  contrast: string;
+  a: [string, string];
+  b: [string, string];
+}
+
+export interface MinimalPairs {
+  contrasts: PhoneContrast[];
+  pairs: MinimalPair[];
+  /** armadilhas ao contrário: escritas diferentes que soam igual (vaca × baca, луг × лук) */
+  sameSound?: { words: [[string, string], [string, string]]; note: string }[];
 }

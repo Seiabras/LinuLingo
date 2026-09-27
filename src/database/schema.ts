@@ -163,6 +163,27 @@ export const MIGRATIONS: string[] = [
     created_at TEXT NOT NULL
   );
   `,
+  // 4 — caderno de erros: um registro por item errado (a última resposta errada e quantas vezes)
+  `
+  CREATE TABLE IF NOT EXISTS Mistake_Log (
+    id TEXT PRIMARY KEY,
+    user_id TEXT NOT NULL,
+    language TEXT NOT NULL,
+    source TEXT NOT NULL,
+    prompt TEXT NOT NULL,
+    expected TEXT NOT NULL,
+    given TEXT,
+    note TEXT,
+    speak TEXT,
+    options TEXT,
+    misses INTEGER DEFAULT 1,
+    streak INTEGER DEFAULT 0,
+    first_at TEXT NOT NULL,
+    last_at TEXT NOT NULL,
+    resolved_at TEXT
+  );
+  CREATE INDEX IF NOT EXISTS idx_mistake_lang ON Mistake_Log(user_id, language, resolved_at);
+  `,
 ];
 
 export const LOCAL_USER_ID = 'local';

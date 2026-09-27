@@ -62,6 +62,12 @@ function parseTitle(t) {
 // quebrou em várias: «[\n    'autobús',»)
 const vocabSrc = readFileSync(`src/data/${lang}/vocabulario.ts`, 'utf8');
 const words = [...vocabSrc.matchAll(/^\s*\[\s*'([^']+)'/gm)].map((m) => m[1]);
+// e as palavras dos pares mínimos (src/data/<idioma>/pares.ts), muitas fora do vocabulário (perra, уголь)
+const paresTs = `src/data/${lang}/pares.ts`;
+if (existsSync(paresTs)) {
+  for (const m of readFileSync(paresTs, 'utf8').matchAll(/\b[ab]: \['([^']+)'/g)) if (!words.includes(m[1])) words.push(m[1]);
+  for (const m of readFileSync(paresTs, 'utf8').matchAll(/\[\s*'([^']+)',\s*'[^']*'\s*\],?\s*\n?\s*\[\s*'([^']+)'/g)) for (const w of [m[1], m[2]]) if (!words.includes(w)) words.push(w);
+}
 
 // ids estáveis: quem já tem gravação mantém o seu arquivo (NNNN.mp3), e as palavras novas ganham
 // ids depois do maior em uso. Antes o id era a posição na lista, e uma palavra nova no meio

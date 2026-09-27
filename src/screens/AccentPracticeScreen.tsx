@@ -11,6 +11,7 @@ import { accentMastery, buildAccentRound, recordAccent, type AccentProgress, typ
 import * as haptics from '@/services/haptics';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
+import { logMistake } from '@/services/mistakes';
 
 const ROUND = 8;
 
@@ -52,6 +53,18 @@ export default function AccentPracticeScreen() {
     if (ok) haptics.success();
     else haptics.error();
     const next = recordAccent(progress, cur, ok);
+    if (!ok)
+      logMistake(db, {
+        language: pack.code,
+        source: 'sotaque',
+        key: `${a.id}:${cur.kind}:${cur.prompt}`,
+        prompt: cur.kind === 'significa' ? `O que quer dizer «${cur.prompt}»? (${a.name})` : cur.kind === 'como-se-diz' ? `Como se diz «${cur.prompt}»? (${a.name})` : `De onde é esta frase: «${cur.prompt}»?`,
+        expected: cur.answer,
+        given: opt,
+        note: cur.kind === 'de-onde' ? cur.translation : null,
+        speak: cur.kind === 'como-se-diz' ? null : cur.prompt,
+        options: cur.options,
+      });
     setProgress(next);
     await setMeta(db, key, JSON.stringify(next));
     setGame({ ...game, answer: opt, hits: game.hits + (ok ? 1 : 0) });

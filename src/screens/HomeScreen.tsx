@@ -15,6 +15,7 @@ import { buildPath, currentUnit, type PathLesson } from '@/services/curriculum';
 import { localDay } from '@/services/progress';
 import type { CultureCardSeed, LessonKind } from '@/data/types';
 import { useIsDark } from '@/services/theme';
+import { openMistakeCount } from '@/services/mistakes';
 
 export default function HomeScreen() {
   const { db, pack, user, streak, refresh, accent } = useApp();
@@ -22,6 +23,9 @@ export default function HomeScreen() {
   const ACCENT_PRACTICE = pack.accents?.length
     ? { route: '/sotaque' as const, emoji: accent?.emoji ?? '🗣️', title: accent ? accent.name : 'Sotaques', text: accent ? 'O sotaque que você estuda' : `${pack.accents.length} jeitos regionais de falar` }
     : null;
+  const firstPair = pack.minimalPairs?.pairs[0];
+  const PAIRS_PRACTICE = firstPair ? { route: '/pares' as const, emoji: '👂', title: 'Pares mínimos', text: `${firstPair.a[0]} × ${firstPair.b[0]}: ouça a diferença` } : null;
+  const MISTAKES_PRACTICE = { route: '/erros' as const, emoji: '📕', title: 'Caderno de erros', text: 'Seus erros viram treino' };
   const [path, setPath] = useState<PathLesson[]>([]);
   const [due, setDue] = useState(0);
   const [peers, setPeers] = useState(0);
@@ -29,6 +33,7 @@ export default function HomeScreen() {
   const [card, setCard] = useState<CultureCardSeed | null>(null);
   const [noVoice, setNoVoice] = useState(false);
   const [journalToday, setJournalToday] = useState(false);
+  const [mistakes, setMistakes] = useState(0);
 
   useFocusEffect(
     useCallback(() => {
@@ -40,6 +45,7 @@ export default function HomeScreen() {
         }
         findVoice(pack.speechLocale).then((v) => alive && setNoVoice(v === null));
         journalDoneToday(db, pack.code, localDay()).then((d) => alive && setJournalToday(d));
+        openMistakeCount(db, pack.code).then((n) => alive && setMistakes(n));
         const [done, stats, peerCount, days] = await Promise.all([
           completedLessons(db),
           vocabStats(db, pack.code),
@@ -117,7 +123,7 @@ export default function HomeScreen() {
 
       <Text className="mb-2 mt-5 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">Mais práticas</Text>
       <View className="flex-row flex-wrap gap-2">
-        {[...(pack.alphabet ? [ALPHABET_PRACTICE] : []), ...(pack.falseFriends ? [FALSE_FRIENDS_PRACTICE] : []), ...(ACCENT_PRACTICE ? [ACCENT_PRACTICE] : []), ...PRACTICES].map((p) => (
+        {[...(pack.alphabet ? [ALPHABET_PRACTICE] : []), ...(pack.falseFriends ? [FALSE_FRIENDS_PRACTICE] : []), ...(ACCENT_PRACTICE ? [ACCENT_PRACTICE] : []), ...PRACTICES.slice(0, 1), ...(PAIRS_PRACTICE ? [PAIRS_PRACTICE] : []), MISTAKES_PRACTICE, ...PRACTICES.slice(1)].map((p) => (
           <Pressable
             key={p.route}
             accessibilityRole="button"
@@ -127,6 +133,7 @@ export default function HomeScreen() {
             <View className="flex-row items-center justify-between">
               <Text className="text-2xl">{p.emoji}</Text>
               {p.route === '/diario' && journalToday && <Text className="text-xs font-bold text-conquista">✓ hoje</Text>}
+              {p.route === '/erros' && mistakes > 0 && <Text className="rounded-full bg-rose-100 px-2 text-xs font-bold text-rose-700 dark:bg-rose-950 dark:text-rose-300">{mistakes}</Text>}
             </View>
             <Text className="font-extrabold text-slate-900 dark:text-white">{p.title}</Text>
             <Text className="text-xs text-slate-500 dark:text-slate-400">{p.text}</Text>

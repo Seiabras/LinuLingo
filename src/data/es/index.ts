@@ -9,6 +9,7 @@ import { VARIANTS_ES } from './variantes';
 import { LINGUISTICS_ES } from './linguistica';
 import { ACCENTS_ES } from './sotaques';
 import { toIpaEs } from '@/services/ipa-es';
+import { PARES_ES } from './pares';
 
 export const ESPANHOL: LanguagePack = {
   code: 'es',
@@ -34,6 +35,7 @@ export const ESPANHOL: LanguagePack = {
   grammar: GRAMMAR_ES,
   linguistics: LINGUISTICS_ES,
   accents: ACCENTS_ES,
+  minimalPairs: PARES_ES,
   journalPrompts: JOURNAL_PROMPTS_ES,
   shadowing: SHADOWING_ES,
   ipa: (t) => toIpaEs(t, '419'),

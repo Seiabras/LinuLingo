@@ -8,6 +8,7 @@ import { COMMUNITY_RU, ETYMOLOGY_RU, JOURNAL_PROMPTS_RU, SCENARIOS_RU, SHADOWING
 import { toIpaRu } from '@/services/ipa-ru';
 import { ALPHABET_RU } from './alfabeto';
 import { ACCENTS_RU } from './sotaques';
+import { PARES_RU } from './pares';
 
 export const RUSSO: LanguagePack = {
   code: 'ru',
@@ -31,6 +32,7 @@ export const RUSSO: LanguagePack = {
   grammar: GRAMMAR_RU,
   linguistics: LINGUISTICS_RU,
   accents: ACCENTS_RU,
+  minimalPairs: PARES_RU,
   journalPrompts: JOURNAL_PROMPTS_RU,
   shadowing: SHADOWING_RU,
   ipa: toIpaRu,

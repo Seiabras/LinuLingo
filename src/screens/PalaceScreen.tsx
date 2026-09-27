@@ -11,6 +11,7 @@ import { shuffle } from '@/services/answers';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
 import * as haptics from '@/services/haptics';
+import { logMistake } from '@/services/mistakes';
 
 const ROUNDS = 10;
 const ALL_GENDERS: Gender[] = ['m', 'f', 'n'];
@@ -19,6 +20,8 @@ const ALL_GENDERS: Gender[] = ['m', 'f', 'n'];
  * Palácio da memória: cada gênero mora numa sala (Forja, Lago, Jardim do Camaleão).
  * O jogo «Em que sala mora?» treina o gênero; cada palavra pode ganhar um mnemônico próprio.
  */
+const GENDER_NAME: Record<string, string> = { m: 'masculino', f: 'feminino', n: 'neutro' };
+
 export default function PalaceScreen() {
   const { db, pack, refresh } = useApp();
   const dark = useIsDark();
@@ -48,9 +51,22 @@ export default function PalaceScreen() {
 
   const answer = (g: Gender) => {
     if (!game || game.answer) return;
-    const ok = game.deck[game.i].gender === g;
+    const noun = game.deck[game.i];
+    const ok = noun.gender === g;
     if (ok) haptics.success();
     else haptics.error();
+    if (!ok)
+      logMistake(db, {
+        language: pack.code,
+        source: 'palacio',
+        key: noun.id,
+        prompt: `Em que sala mora «${noun.word_target}» (${noun.word_native})?`,
+        expected: GENDER_NAME[noun.gender],
+        given: GENDER_NAME[g],
+        note: genderTip(noun.word_target, noun.gender, pack.code),
+        speak: noun.word_target,
+        options: (pack.genders ?? ['m', 'f', 'n']).map((x) => GENDER_NAME[x]),
+      });
     setGame({ ...game, answer: g, hits: game.hits + (ok ? 1 : 0) });
   };
 

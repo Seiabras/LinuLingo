@@ -23,6 +23,7 @@ import { speak } from '@/services/speech';
 import * as haptics from '@/services/haptics';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
+import { logMistake } from '@/services/mistakes';
 
 const ROUND = 10;
 
@@ -80,6 +81,19 @@ export default function ListeningScreen() {
     if (ok) haptics.success();
     else haptics.error();
     const next = recordListen(progress, cur, ok);
+    if (!ok)
+      logMistake(db, {
+        language: pack.code,
+        source: cur.mode === 'escrever' ? 'ditado' : 'escuta',
+        key: cur.item.word,
+        prompt: cur.mode === 'escrever' ? 'Escreva o que ouviu' : 'Qual palavra você ouviu?',
+        expected: cur.item.word,
+        given,
+        note: cur.item.meaning,
+        speak: cur.item.word,
+        byEar: true,
+        options: cur.options ?? null,
+      });
     setProgress(next);
     setGame({ ...game, answer: { given, ok, result }, hits: game.hits + (ok ? 1 : 0) });
     await setMeta(db, key, JSON.stringify(next));

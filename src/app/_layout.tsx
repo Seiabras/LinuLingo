@@ -43,6 +43,8 @@ export default function RootLayout() {
               <Stack.Screen name="falsos-amigos" />
               <Stack.Screen name="sotaque" />
               <Stack.Screen name="escuta" />
+              <Stack.Screen name="pares" />
+              <Stack.Screen name="erros" />
               <Stack.Screen name="creditos" />
               <Stack.Screen name="gramatica/[id]" />
               <Stack.Screen name="linguistica/[area]" />

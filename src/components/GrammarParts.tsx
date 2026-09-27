@@ -5,6 +5,7 @@ import { Linu } from './Linu';
 import { useApp } from '@/services/app-state';
 import * as haptics from '@/services/haptics';
 import type { GrammarQuiz as QuizItem, GrammarSection } from '@/data/types';
+import { logMistake } from '@/services/mistakes';
 
 /** Seções de gramática: título, tabela, texto e exemplos com áudio e IPA. */
 export function GrammarSections({ sections }: { sections: GrammarSection[] }) {
@@ -63,6 +64,7 @@ export function GrammarSections({ sections }: { sections: GrammarSection[] }) {
 
 /** Mini-quiz com explicação em cada resposta. */
 export function GrammarQuiz({ items, onFinish }: { items: QuizItem[]; onFinish: (hits: number) => void }) {
+  const { db, pack } = useApp();
   const [answers, setAnswers] = useState<(string | null)[]>(() => items.map(() => null));
   const done = answers.every((a) => a !== null);
   const hits = answers.filter((a, i) => a === items[i].answer).length;
@@ -85,7 +87,10 @@ export function GrammarQuiz({ items, onFinish }: { items: QuizItem[]; onFinish: 
                     next[i] = o;
                     setAnswers(next);
                     if (right) haptics.success();
-                    else haptics.error();
+                    else {
+                      haptics.error();
+                      logMistake(db, { language: pack.code, source: 'gramatica', key: q.question, prompt: q.question, expected: q.answer, given: o, note: q.explanation, options: q.options });
+                    }
                     if (next.every((a) => a !== null)) onFinish(next.filter((a, k) => a === items[k].answer).length);
                   }}
                   className={`rounded-xl border-2 px-3 py-2 ${show && right ? 'border-conquista bg-conquista-light dark:bg-green-950' : picked ? 'border-rose-400 bg-rose-50 dark:bg-rose-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}

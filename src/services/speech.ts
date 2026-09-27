@@ -110,8 +110,9 @@ export function forVoice(text: string): string {
   return text.replace(/\u0301/g, '');
 }
 
-export async function speak(text: string, locale: string, opts: { rate?: number } = {}): Promise<SpeakResult> {
-  if (playNativeClip(text, locale, opts.rate ?? 1)) return 'nativo';
+export async function speak(text: string, locale: string, opts: { rate?: number; native?: boolean } = {}): Promise<SpeakResult> {
+  // native: false força a voz do aparelho (pares mínimos: as duas palavras na mesma voz)
+  if (opts.native !== false && playNativeClip(text, locale, opts.rate ?? 1)) return 'nativo';
   const voice = await findVoice(locale);
   Speech.stop();
   stopClip();

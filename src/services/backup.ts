@@ -23,6 +23,7 @@ export const USER_TABLES = {
   Mnemonic_Palaces: ['id', 'vocab_id', 'gender_visual_tag', 'mnemonic_prompt', 'custom_image_url'],
   Shadowing_Attempts: ['id', 'user_id', 'phrase', 'rhythm_score', 'contour_ok', 'created_at'],
   Community_Feedback: ['id', 'language', 'author_name', 'is_mine', 'lesson_id', 'prompt', 'content', 'reference', 'correction', 'corrected_by', 'status', 'created_at'],
+  Mistake_Log: ['id', 'user_id', 'language', 'source', 'prompt', 'expected', 'given', 'note', 'speak', 'options', 'misses', 'streak', 'first_at', 'last_at', 'resolved_at'],
   Meta: ['key', 'value'],
 } as const;
 export type UserTable = keyof typeof USER_TABLES;
@@ -58,6 +59,7 @@ export async function exportProgress(db: SQLiteDatabase, now = new Date()): Prom
     `SELECT DISTINCT language FROM Vocabulary WHERE id IN (SELECT vocab_id FROM User_SRS_State UNION SELECT vocab_id FROM Mnemonic_Palaces)
      UNION SELECT current_language FROM Users
      UNION SELECT language FROM User_Journal_Logs
+     UNION SELECT language FROM Mistake_Log
      UNION SELECT language FROM Community_Feedback WHERE is_mine = 1 OR correction IS NOT NULL`,
   );
   return { app: BACKUP_APP, format: BACKUP_FORMAT, exported_at: now.toISOString(), languages: langs.map((l) => l.language).sort(), tables };
@@ -127,7 +129,7 @@ export async function importProgress(db: SQLiteDatabase, b: Backup): Promise<{ s
   await db.withTransactionAsync(async () => {
     await db.execAsync(`
       DELETE FROM User_SRS_State; DELETE FROM Lesson_Progress; DELETE FROM XP_Log; DELETE FROM Story_Progress;
-      DELETE FROM User_Journal_Logs; DELETE FROM Mnemonic_Palaces; DELETE FROM Shadowing_Attempts;
+      DELETE FROM User_Journal_Logs; DELETE FROM Mnemonic_Palaces; DELETE FROM Shadowing_Attempts; DELETE FROM Mistake_Log;
       DELETE FROM Community_Feedback WHERE is_mine = 1;
       UPDATE Community_Feedback SET correction = NULL, corrected_by = NULL, status = 'aguardando';
       DELETE FROM Meta WHERE ${WHERE.Meta};

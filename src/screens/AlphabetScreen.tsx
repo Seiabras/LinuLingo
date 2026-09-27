@@ -12,6 +12,7 @@ import * as haptics from '@/services/haptics';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
 import type { AlphabetLetter } from '@/data/types';
+import { logMistake } from '@/services/mistakes';
 
 const GROUPS: { key: AlphabetLetter['group']; title: string; text: string }[] = [
   { key: 'igual', title: '✅ Iguais às nossas', text: 'Mesma forma e som parecido: você já sabe.' },
@@ -56,6 +57,18 @@ export default function AlphabetScreen() {
     if (ok) haptics.success();
     else haptics.error();
     const next = recordAnswer(progress, q, ok);
+    if (!ok)
+      logMistake(db, {
+        language: pack.code,
+        source: 'alfabeto',
+        key: `${q.kind}:${q.kind === 'leitura' ? q.word[0] : q.letter.letter}`,
+        prompt: q.kind === 'som' ? `Que som tem a letra ${q.letter.letter}?` : q.kind === 'letra' ? `Qual letra faz o som «${q.letter.short}» ${q.letter.ipa}?` : `Leia: o que é «${q.word[0]}»?`,
+        expected: q.answer,
+        given: opt,
+        note: q.kind === 'leitura' ? q.word[2] : q.letter.sound,
+        speak: q.kind === 'leitura' ? q.word[0] : q.letter.example[0],
+        options: q.options,
+      });
     setProgress(next);
     await setMeta(db, key, JSON.stringify(next));
     setGame({ ...game, answer: opt, hits: game.hits + (ok ? 1 : 0) });

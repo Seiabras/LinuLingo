@@ -4,12 +4,15 @@ import type { ClozeItem } from '@/data/types';
 import { Button, SpeakButton, Ipa, LetterPad } from '../ui';
 import { normalize, shuffle } from '@/services/answers';
 import * as haptics from '@/services/haptics';
+import { logMistake } from '@/services/mistakes';
+import { useApp } from '@/services/app-state';
 
 /**
  * Etapa 3 — preenchimento de lacunas (Speakly). Toque numa opção ou digite,
  * com um teclado adaptado para as letras do idioma.
  */
 export function ClozeStep({ items, locale, specialChars, onDone }: { items: ClozeItem[]; locale: string; specialChars: string[]; onDone: (correct: number) => void }) {
+  const { db, pack } = useApp();
   const [i, setI] = useState(0);
   const [correct, setCorrect] = useState(0);
   const [answer, setAnswer] = useState<string | null>(null);
@@ -32,7 +35,20 @@ export function ClozeStep({ items, locale, specialChars, onDone }: { items: Cloz
     if (ok) {
       haptics.success();
       setCorrect((c) => c + 1);
-    } else haptics.error();
+    } else {
+      haptics.error();
+      logMistake(db, {
+        language: pack.code,
+        source: 'licao',
+        key: item.sentence,
+        prompt: `Complete: ${item.sentence}`,
+        expected: item.answer,
+        given: value,
+        note: item.translation,
+        speak: item.sentence.replace('___', item.answer),
+        options: item.options,
+      });
+    }
   };
 
   const next = () => {

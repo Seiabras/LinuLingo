@@ -10,6 +10,7 @@ import { LINGUISTICS_IT } from './linguistica';
 import { ACCENTS_IT } from './sotaques';
 import { PRON_IT } from './pronuncia';
 import { setPronunciationLexicon, toIpaIt } from '@/services/ipa-it';
+import { PARES_IT } from './pares';
 
 // a tônica e o timbre (è × é) não aparecem na escrita: o IPA consulta o dicionário de pronúncia
 setPronunciationLexicon(PRON_IT);
@@ -35,6 +36,7 @@ export const ITALIANO: LanguagePack = {
   stories: [...STORIES_IT, ...VARIANTS_IT.flatMap((v) => v.stories ?? [])],
   variants: VARIANTS_IT,
   accents: ACCENTS_IT,
+  minimalPairs: PARES_IT,
   grammar: GRAMMAR_IT,
   linguistics: LINGUISTICS_IT,
   journalPrompts: JOURNAL_PROMPTS_IT,

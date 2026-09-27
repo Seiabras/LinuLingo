@@ -64,7 +64,12 @@ export default function TutorialScreen() {
     {
       mood: 'falando',
       title: 'Treine o ouvido',
-      text: `Em «🎧 Escuta e ditado» (Mais práticas) você ouve uma palavra${CLIPS[pack.code] ? ' gravada por um falante nativo' : ''} e mostra o que entendeu: escolhendo entre 4 que soam parecido ou escrevendo (o ditado vale o dobro). 🔊 ouve de novo e 🐢 ouve devagar. Se você escrever outra palavra que soa igual, eu aceito e mostro a diferença; as que você erra voltam mais vezes.`,
+      text: `Em «🎧 Escuta e ditado» (Mais práticas) você ouve uma palavra${CLIPS[pack.code] ? ' gravada por um falante nativo' : ''} e mostra o que entendeu: escolhendo entre 4 que soam parecido ou escrevendo (o ditado vale o dobro). 🔊 ouve de novo e 🐢 ouve devagar. Se você escrever outra palavra que soa igual, eu aceito e mostro a diferença; as que você erra voltam mais vezes.${pack.minimalPairs ? ` E em «👂 Pares mínimos» você separa palavras que só mudam por um som, como «${pack.minimalPairs.pairs[0].a[0]}» e «${pack.minimalPairs.pairs[0].b[0]}»: os sons que o português não tem.` : ''}`,
+    },
+    {
+      mood: 'pensando',
+      title: 'Caderno de erros',
+      text: 'Tudo o que você erra, em qualquer treino (lições, gramática, escuta, pares, alfabeto, palácio, revisão…), vai para o «📕 Caderno de erros», em Mais práticas, com a sua resposta e a certa. Revise por lá: acertando 2 vezes seguidas, o item sai do caderno; se errar de novo num treino, ele volta.',
     },
     { mood: 'feliz', title: 'O mundo do idioma', text: `Na aba Cultura tem um mapa-múndi: toque num idioma para ver onde ele é falado (o que você estuda vem primeiro, seguido dos parentes mais próximos). Em «🔎 Todos os idiomas» estão os mais de 700 idiomas do mundo, com a família de cada um; o botão «Estudar» aparece nos que o app já ensina. Os botões embaixo do mapa levam a cada região e sub-região (América do Sul › Andina, por exemplo), com a lista dos países. Toque num país e o mapa aproxima nele, mostrando os estados e as províncias; toque numa região para ver o nome e o código. No cartão aparecem as línguas, da mais falada para a menos falada, os animais nativos e os instrumentos de lá.${variantTip(pack)}${accentTip(pack)}` },
     { mood: 'falando', title: 'Conversa e comunidade', text: 'Na aba Conversa você pratica situações reais (café, hotel, entrevista) e eu aviso se o tom ficou formal ou informal demais. Na Comunidade você corrige textos de outros alunos e ganha 20 XP.' },

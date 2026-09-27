@@ -7,6 +7,8 @@ import { speak } from '@/services/speech';
 import { shuffle } from '@/services/answers';
 import * as haptics from '@/services/haptics';
 import { qualityFromAnswer } from '@/srs/sm2';
+import { logMistake } from '@/services/mistakes';
+import { useApp } from '@/services/app-state';
 
 export interface WordResult {
   vocabId: string;
@@ -20,6 +22,7 @@ export interface WordResult {
  * Deslizar para a direita = «já sei esta palavra».
  */
 export function ImmersionStep({ words, pool, locale, onDone }: { words: VocabWithSRS[]; pool: VocabWithSRS[]; locale: string; onDone: (r: WordResult[]) => void }) {
+  const { db, pack } = useApp();
   const [i, setI] = useState(0);
   const [results, setResults] = useState<WordResult[]>([]);
   const [picked, setPicked] = useState<string | null>(null);
@@ -56,6 +59,18 @@ export function ImmersionStep({ words, pool, locale, onDone }: { words: VocabWit
     } else {
       haptics.error();
       setMisses((m) => m + 1);
+      const wrong = options.find((o) => o.id === id);
+      logMistake(db, {
+        language: pack.code,
+        source: 'imersao',
+        key: word.id,
+        prompt: `O que é «${word.word_target}»?`,
+        expected: word.word_native,
+        given: wrong?.word_native ?? null,
+        note: word.emoji ?? null,
+        speak: word.word_target,
+        options: options.map((o) => o.word_native),
+      });
     }
   };
 

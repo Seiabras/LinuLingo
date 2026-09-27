@@ -11,6 +11,7 @@ import * as haptics from '@/services/haptics';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
 import type { FalseFriend } from '@/data/types';
+import { logMistake } from '@/services/mistakes';
 
 /** Falsos amigos: palavras que parecem portuguesas e querem dizer outra coisa. Lista e treino. */
 export default function FalseFriendsScreen() {
@@ -39,6 +40,18 @@ export default function FalseFriendsScreen() {
     if (ok) haptics.success();
     else haptics.error();
     const next = recordFF(progress, cur, ok);
+    if (!ok)
+      logMistake(db, {
+        language: pack.code,
+        source: 'falsos-amigos',
+        key: `${cur.kind}:${cur.ff.word}`,
+        prompt: cur.kind === 'significa' ? `O que quer dizer «${cur.ff.word}»?` : `Como se diz «${cur.ff.looksLike.split(/[/;,(]/)[0].trim()}» em ${pack.name.toLowerCase()}?`,
+        expected: cur.answer,
+        given: opt,
+        note: `${cur.ff.word} = ${cur.ff.means}; parece «${cur.ff.looksLike}», que se diz «${cur.ff.forThat}».`,
+        speak: cur.kind === 'significa' ? cur.ff.word : null,
+        options: cur.options,
+      });
     setProgress(next);
     await setMeta(db, key, JSON.stringify(next));
     setGame({ ...game, answer: opt, hits: game.hits + (ok ? 1 : 0) });

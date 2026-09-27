@@ -10,6 +10,7 @@ import { toIpa } from '@/services/ipa-ro';
 import { GRAMMAR_RO } from './gramatica';
 import { VARIANTS_RO } from './variantes';
 import { ACCENTS_RO } from './sotaques';
+import { PARES_RO } from './pares';
 
 export const ROMENO: LanguagePack = {
   code: 'ro',
@@ -34,6 +35,7 @@ export const ROMENO: LanguagePack = {
   grammar: GRAMMAR_RO,
   linguistics: LINGUISTICS_RO,
   accents: ACCENTS_RO,
+  minimalPairs: PARES_RO,
   journalPrompts: JOURNAL_PROMPTS_RO,
   shadowing: SHADOWING_RO,
   ipa: toIpa,
