@@ -12,6 +12,7 @@ import * as haptics from '@/services/haptics';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
 import { logMistake } from '@/services/mistakes';
+import { KIND } from '@/services/variedade';
 
 const ROUND = 8;
 
@@ -157,11 +158,11 @@ export default function AccentPracticeScreen() {
         </Text>
       </View>
       <Text className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-        {a.kind} · {a.region}
+        {KIND[a.kind].name} · {a.region}
       </Text>
       <View className="mt-4 flex-row items-end gap-2">
         <Linu mood="falando" size={64} />
-        <SpeechBubble className="mb-5">{`Vamos treinar este ${a.kind}: ${a.name}! Você já domina ${mastery.done} de ${mastery.total} perguntas.`}</SpeechBubble>
+        <SpeechBubble className="mb-5">{`Vamos treinar ${KIND[a.kind].este}: ${a.name}! Você já domina ${mastery.done} de ${mastery.total} perguntas.`}</SpeechBubble>
       </View>
       <ProgressBar value={mastery.total ? mastery.done / mastery.total : 0} />
       {isChosen ? (
@@ -170,7 +171,7 @@ export default function AccentPracticeScreen() {
           <Button title="Voltar ao padrão" variant="ghost" onPress={() => setAccent(null)} />
         </View>
       ) : (
-        <Button title={`Estudar este ${a.kind}`} variant="ghost" className="mt-3" onPress={() => setAccent(a.id)} />
+        <Button title={`Estudar ${KIND[a.kind].este}`} variant="ghost" className="mt-3" onPress={() => setAccent(a.id)} />
       )}
       <Button title={`🎯 Treinar (${ROUND} perguntas)`} variant="success" className="mt-2" onPress={start} />
 

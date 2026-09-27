@@ -99,8 +99,8 @@ await shot('palacio');
 
 // cultura: escolher a variante da Espanha muda a IPA para [θ]
 await page.goto(BASE + '/cultura', { waitUntil: 'load' });
-await expectText('Variantes do espanhol');
-await page.getByText('Espanhol da Espanha', { exact: true }).first().click();
+await expectText('do espanhol');
+await page.getByLabel(/^Estudar: .*Espanhol da Espanha$/).first().click();
 await page.waitForTimeout(800);
 await expectText('Vosotros e o passado de hoje');
 await shot('variante-espanha');
@@ -112,25 +112,24 @@ await page.locator('text=/θ/').first().waitFor({ timeout: 15000 }).catch(() => 
 });
 await shot('gramatica-espanha');
 await page.goto(BASE + '/cultura', { waitUntil: 'load' });
-await page.getByText('Espanhol latino-americano', { exact: true }).first().click();
+await page.getByLabel(/^Estudar: .*Espanhol latino-americano$/).first().click();
 await page.waitForTimeout(800);
 
 // sotaques e dialetos: o andaluz (regiões no minimapa) e o canário (ilhas longe da península)
-await expectText('Sotaques e dialetos');
-await page.getByLabel('Sotaque: Andaluz').click();
+await expectText('sotaques e dialetos do espanhol');
+await page.getByLabel(/^Estudar: .*Andaluz$/).click();
 await expectText('seseo');
 await page.getByText('Carregando as regiões…').waitFor({ state: 'detached', timeout: 15000 }).catch(() => {});
-await page.getByLabel('Sotaque: Andaluz').scrollIntoViewIfNeeded();
+await page.getByLabel(/^Estudar: .*Andaluz$/).scrollIntoViewIfNeeded();
 await shot('sotaque-andaluz');
-await page.getByLabel('Sotaque: Canário').click();
+await page.getByLabel(/^Estudar: .*Canário$/).click();
 await expectText('escala dos navios');
 await page.waitForTimeout(1500);
-await page.getByLabel('Sotaque: Canário').scrollIntoViewIfNeeded();
+await page.getByLabel(/^Estudar: .*Canário$/).scrollIntoViewIfNeeded();
 await shot('sotaque-canario');
 
 // estudar um sotaque: o portenho liga a variante do Rio da Prata, a IPA com «sh» e o treino
-await page.getByLabel('Sotaque: Portenho (Buenos Aires)').click();
-await page.getByLabel('Sotaque: Portenho (Buenos Aires)').locator('xpath=..').getByText('Estudar este dialeto', { exact: true }).click();
+await page.getByLabel(/^Estudar: .*Portenho \(Buenos Aires\)$/).click();
 await expectText('✓ estudando');
 await page.goto(BASE + '/sotaque', { waitUntil: 'load' });
 await expectText('Vamos treinar este dialeto: Portenho');
@@ -152,7 +151,7 @@ await expectText('acertos');
 await click('Voltar ao sotaque');
 await click('Voltar ao padrão');
 await page.goto(BASE + '/cultura', { waitUntil: 'load' });
-await page.getByText('Espanhol latino-americano', { exact: true }).first().click();
+await page.getByLabel(/^Estudar: .*Espanhol latino-americano$/).first().click();
 await page.waitForTimeout(800);
 
 // linguística: fonética do espanhol

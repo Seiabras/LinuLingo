@@ -21,6 +21,7 @@ import { useIsDark } from '@/services/theme';
 import { fitBox, focusBox, ringBoxes, type Box, type SubShape } from '@/services/mapa-geo';
 import { hasSubdivisions, loadSubdivisions } from '@/services/subdivisoes';
 import { nomeIdioma } from '@/services/idioma-nome';
+import { KIND } from '@/services/variedade';
 
 // Na web o react-native-svg repassa os props de toque (onResponder…) ao HTML: o toque funciona,
 // mas o React avisa em modo de desenvolvimento. Aviso conhecido e inofensivo.
@@ -794,7 +795,7 @@ function SubCard({ iso2, sub, spoken, onClose, studied }: { iso2: string; sub: S
       {accentsAt(isoOf(iso2), sub.code, sub.parent).map((a) => (
         <View key={a.id} className="gap-1">
           <Text className="text-sm font-semibold text-amber-700 dark:text-amber-300">
-            {a.emoji} {a.kind === 'dialeto' ? 'Dialeto' : 'Sotaque'} daqui: {a.name} ({a.lang}).
+            {a.emoji} {KIND[a.kind].label} daqui: {a.name} ({a.lang}).
           </Text>
           {a.lang === studied && <Button title={`Estudar: ${a.name}`} variant="ghost" onPress={() => router.push({ pathname: '/sotaque', params: { id: a.id } })} />}
         </View>

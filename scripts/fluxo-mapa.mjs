@@ -119,15 +119,15 @@ await shot('urss');
 
 // variante na aba Cultura
 await page.goto(BASE + '/cultura', { waitUntil: 'load' });
-await page.getByText('Variantes do romeno').waitFor({ timeout: 60000 });
-await click('Romeno da Moldávia');
+await page.getByText('dialetos do romeno').waitFor({ timeout: 60000 });
+await page.getByLabel(/^Estudar: .*Romeno da Moldávia$/).first().click();
 await expectText('barabule');
 await shot('variante-moldavia');
 // sotaques do romeno: o transilvano, com as regiões no minimapa
-await page.getByLabel('Sotaque: Transilvano').click();
+await page.getByLabel(/^Estudar: .*Transilvano$/).click();
 await expectText('No, hai!');
 await page.waitForTimeout(1500);
-await page.getByLabel('Sotaque: Transilvano').scrollIntoViewIfNeeded();
+await page.getByLabel(/^Estudar: .*Transilvano$/).scrollIntoViewIfNeeded();
 await shot('sotaque-transilvano');
 
 console.log(errors.length ? `⚠️  erros:\n   ${[...new Set(errors)].join('\n   ')}` : '✅ sem erros no console');

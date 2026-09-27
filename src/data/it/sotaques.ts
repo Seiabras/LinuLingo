@@ -358,7 +358,7 @@ export const ACCENTS_IT: Accent[] = [
   {
     id: 'it-lingua-napoletana',
     name: 'Napolitano (língua)',
-    kind: 'dialeto',
+    kind: 'língua',
     region: 'Campânia e boa parte do sul continental da Itália',
     country: 'ITA',
     subdivisions: ['IT-72', 'IT-NA'],
@@ -391,7 +391,7 @@ export const ACCENTS_IT: Accent[] = [
   {
     id: 'it-lingua-siciliana',
     name: 'Siciliano (língua)',
-    kind: 'dialeto',
+    kind: 'língua',
     region: 'Sicília, no sul da Itália',
     country: 'ITA',
     subdivisions: ['IT-82', 'IT-PA', 'IT-CT'],
@@ -423,7 +423,7 @@ export const ACCENTS_IT: Accent[] = [
   {
     id: 'it-lingua-veneta',
     name: 'Vêneto (língua)',
-    kind: 'dialeto',
+    kind: 'língua',
     region: 'Vêneto e partes do Friul e do Trentino, no nordeste da Itália',
     country: 'ITA',
     subdivisions: ['IT-34', 'IT-VE'],
@@ -455,7 +455,7 @@ export const ACCENTS_IT: Accent[] = [
   {
     id: 'it-lingua-lombarda',
     name: 'Lombardo (língua)',
-    kind: 'dialeto',
+    kind: 'língua',
     region: 'Lombardia, no norte da Itália, e o Ticino, na Suíça',
     country: 'ITA',
     subdivisions: ['IT-25', 'IT-MI', 'IT-BG'],
@@ -486,7 +486,7 @@ export const ACCENTS_IT: Accent[] = [
   {
     id: 'it-lingua-sarda',
     name: 'Sardo',
-    kind: 'dialeto',
+    kind: 'língua',
     region: 'Sardenha, ilha no oeste da Itália',
     country: 'ITA',
     subdivisions: ['IT-88', 'IT-SS', 'IT-NU', 'IT-CA', 'IT-OR'],
@@ -517,7 +517,7 @@ export const ACCENTS_IT: Accent[] = [
   {
     id: 'it-friulano',
     name: 'Friulano',
-    kind: 'dialeto',
+    kind: 'língua',
     region: 'Friul, no extremo nordeste da Itália',
     country: 'ITA',
     subdivisions: ['IT-36', 'IT-UD', 'IT-PN', 'IT-GO'],
@@ -548,7 +548,7 @@ export const ACCENTS_IT: Accent[] = [
   {
     id: 'it-talian',
     name: 'Talian (vêneto brasileiro)',
-    kind: 'dialeto',
+    kind: 'língua',
     region: 'Serra Gaúcha e oeste de Santa Catarina, no Sul do Brasil',
     country: 'BRA',
     subdivisions: ['BR-RS', 'BR-SC'],

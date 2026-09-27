@@ -237,7 +237,7 @@ export const ACCENTS_SV: Accent[] = [
   {
     id: 'sv-alvdalska',
     name: 'Älvdalska (elfdaliano)',
-    kind: 'dialeto',
+    kind: 'língua',
     region: 'Älvdalen, no norte de Dalarna',
     country: 'SWE',
     subdivisions: ['SE-W'],
@@ -280,7 +280,7 @@ export const ACCENTS_SV: Accent[] = [
   {
     id: 'sv-meankieli',
     name: 'Meänkieli',
-    kind: 'dialeto',
+    kind: 'língua',
     region: 'Vale do rio Torne (Tornedalen), na fronteira com a Finlândia',
     country: 'SWE',
     subdivisions: ['SE-BD'],
@@ -304,7 +304,7 @@ export const ACCENTS_SV: Accent[] = [
   {
     id: 'sv-samiska',
     name: 'Sámi (samiska)',
-    kind: 'dialeto',
+    kind: 'língua',
     region: 'Sápmi: o norte da Suécia, da Noruega e da Finlândia e a península de Kola, na Rússia',
     country: 'SWE',
     subdivisions: ['SE-BD', 'SE-AC', 'SE-Z'],
@@ -328,7 +328,7 @@ export const ACCENTS_SV: Accent[] = [
   {
     id: 'sv-sverigefinska',
     name: 'Finlandês da Suécia (sverigefinska)',
-    kind: 'dialeto',
+    kind: 'língua',
     region: 'Toda a Suécia, sobretudo a região de Estocolmo e do Mälaren',
     country: 'SWE',
     subdivisions: ['SE-AB', 'SE-U', 'SE-D', 'SE-C', 'SE-S'],
@@ -354,7 +354,7 @@ export const ACCENTS_SV: Accent[] = [
   {
     id: 'sv-romani',
     name: 'Romani chib',
-    kind: 'dialeto',
+    kind: 'língua',
     region: 'Toda a Suécia',
     country: 'SWE',
     emoji: '🎻',
@@ -376,7 +376,7 @@ export const ACCENTS_SV: Accent[] = [
   {
     id: 'sv-jiddisch',
     name: 'Ídiche (jiddisch)',
-    kind: 'dialeto',
+    kind: 'língua',
     region: 'Toda a Suécia, sobretudo Estocolmo',
     country: 'SWE',
     subdivisions: ['SE-AB'],

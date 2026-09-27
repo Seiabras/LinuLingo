@@ -809,7 +809,7 @@ export const ACCENTS_PT: Accent[] = [
   {
     id: 'pt-mirandes',
     name: 'Mirandês',
-    kind: 'dialeto',
+    kind: 'língua',
     region: 'Terra de Miranda (Miranda do Douro e Vimioso), no distrito de Bragança',
     country: 'PRT',
     subdivisions: ['PT-04'],
@@ -839,7 +839,7 @@ export const ACCENTS_PT: Accent[] = [
   {
     id: 'pt-kriolu',
     name: 'Crioulo cabo-verdiano (kriolu)',
-    kind: 'dialeto',
+    kind: 'língua',
     region: 'Cabo Verde e as comunidades cabo-verdianas em Portugal, nos EUA e na Europa',
     country: 'CPV',
     subdivisions: ['CV-S', 'CV-B'],
@@ -871,7 +871,7 @@ export const ACCENTS_PT: Accent[] = [
   {
     id: 'pt-galego',
     name: 'Galego',
-    kind: 'dialeto',
+    kind: 'língua',
     region: 'Galiza, no noroeste da Espanha, ao norte do Minho',
     country: 'ESP',
     subdivisions: ['ES-GA'],

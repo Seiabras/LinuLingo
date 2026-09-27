@@ -3,36 +3,20 @@ import { router } from 'expo-router';
 import { Card, Chip, SpeakButton } from './ui';
 import { CulturalGrammarCard } from './CulturalGrammarCard';
 import { useApp } from '@/services/app-state';
+import type { LanguageVariant } from '@/data/types';
 
 /** «Romeno da Moldávia» → «Moldávia» (o nome do lugar). */
 function shortName(name: string): string {
   return name.replace(/^\S+ d[aoe]s? /, '');
 }
 
-/** Escolha da variante do idioma (ex.: Romênia × Moldávia) e o que muda em cada uma. */
-export function VariantPanel() {
-  const { pack, variant, setVariant } = useApp();
-  const variants = pack.variants ?? [];
-  if (variants.length < 2) return null;
-  const v = variants.find((x) => x.code === variant) ?? variants[0];
-  const standard = variants[0];
+/** O que muda numa variante nacional (ex.: Moldávia): resumo, cartão, pronúncia, vocabulário e histórias. */
+export function VariantDetails({ v }: { v: LanguageVariant }) {
+  const { pack } = useApp();
+  const standard = pack.variants?.[0] ?? v;
 
   return (
     <View className="gap-3">
-      <View className="flex-row flex-wrap gap-2">
-        {variants.map((x) => (
-          <Pressable
-            key={x.code}
-            onPress={() => setVariant(x.code)}
-            accessibilityRole="radio"
-            accessibilityState={{ checked: x.code === v.code }}
-            className={`flex-row items-center gap-1.5 rounded-full border-2 px-3 py-1.5 ${x.code === v.code ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
-          >
-            <Text>{x.flag}</Text>
-            <Text className={`font-bold ${x.code === v.code ? 'text-conecta' : 'text-slate-600 dark:text-slate-300'}`}>{x.name}</Text>
-          </Pressable>
-        ))}
-      </View>
       {v.summary && <Text className="text-sm text-slate-600 dark:text-slate-400">{v.summary}</Text>}
 
       {v.card && <CulturalGrammarCard card={v.card} locale={pack.speechLocale} />}

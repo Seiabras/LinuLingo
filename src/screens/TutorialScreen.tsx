@@ -176,7 +176,8 @@ function accentTip(pack: LanguagePack): string {
   const n = pack.accents?.length ?? 0;
   if (!n) return '';
   const voices = Object.keys(ACCENT_VOICES[pack.code] ?? {}).length > 0;
-  return ` E em «🗣️ Sotaques e dialetos» estão ${n} jeitos regionais de falar ${nomeIdioma(pack.name)}, com minimapa, exemplos e palavras típicas${voices ? ', gravações de gente de cada região (🎙️) e a mesma palavra dita em sotaques diferentes, lado a lado' : ''}. Escolha um para estudar: a minha voz e a pronúncia passam a seguir o jeito de lá, e o treino do sotaque aparece em Mais práticas. No mapa, ao tocar numa região, aparece o sotaque de lá.`;
+  const langs = (pack.accents ?? []).filter((a) => a.kind === 'língua').length;
+  return ` Logo abaixo, as variantes, os sotaques, os dialetos${langs ? ' e as línguas regionais' : ''} ficam lado a lado: são ${n} jeitos de falar ${nomeIdioma(pack.name)}${langs ? ` (${langs} deles são línguas próprias, como ${pack.accents!.find((a) => a.kind === 'língua')!.name.replace(/ \(língua\)$/, '')})` : ''}, com minimapa, exemplos e palavras típicas${voices ? ', gravações de gente de cada região (🎙️) e a mesma palavra dita em sotaques diferentes' : ''}. Toque num deles para estudar: a minha voz e a pronúncia passam a seguir o jeito de lá, e o treino aparece em Mais práticas. No mapa, ao tocar numa região, aparece o sotaque de lá.`;
 }
 
 function Row({ icon, bg, title, text }: { icon: ReactNode; bg: string; title: string; text: string }) {

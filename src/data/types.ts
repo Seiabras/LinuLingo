@@ -213,14 +213,16 @@ export interface LanguageVariant {
 }
 
 /**
- * Sotaque ou dialeto regional (ex.: o sotaque baiano no português do Brasil, o andaluz no espanhol).
- * «sotaque» muda sobretudo a pronúncia e a melodia; «dialeto» muda também palavras e gramática.
+ * Sotaque, dialeto ou língua regional (ex.: o sotaque baiano no português do Brasil, o andaluz no
+ * espanhol, o napolitano na Itália). «sotaque» muda sobretudo a pronúncia e a melodia; «dialeto» muda
+ * também palavras e gramática; «língua» é uma língua própria falada na mesma região (com gramática e
+ * literatura suas; não é um sotaque do idioma), que se aprende aqui pelas frases, palavras e sons.
  */
 export interface Accent {
   /** ex.: 'es-andaluz' */
   id: string;
   name: string;
-  kind: 'sotaque' | 'dialeto';
+  kind: 'sotaque' | 'dialeto' | 'língua';
   /** Onde se fala, em palavras: «Andaluzia, no sul da Espanha» */
   region: string;
   /** País principal (ISO 3166-1 alfa-3) */

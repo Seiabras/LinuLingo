@@ -18,6 +18,7 @@ import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
 import type { Accent } from '@/data/types';
 import { nomeIdioma } from '@/services/idioma-nome';
+import { KIND } from '@/services/variedade';
 
 const ROUND = 8;
 const MAP_HEIGHT = 260;
@@ -85,7 +86,7 @@ export default function MapGameScreen() {
         language: pack.code,
         source: 'mapa',
         key: `sotaque:${question.accent.id}`,
-        prompt: `Onde se fala o ${question.accent.kind} ${question.accent.name}?`,
+        prompt: `Onde se fala ${question.accent.kind === 'língua' ? 'o' : KIND[question.accent.kind].o} ${question.accent.name}?`,
         expected: question.accent.region,
         given: a.tappedName ?? null,
         note: question.accent.summary,
@@ -134,7 +135,7 @@ export default function MapGameScreen() {
                   ? `Onde o ${q.lang.name.toLowerCase()} é língua oficial?`
                   : q.kind === 'qual'
                     ? flagName(q.iso)
-                    : `Onde se fala o ${q.accent.kind} ${q.accent.name}?`}
+                    : `Onde se fala ${q.accent.kind === 'língua' ? 'o' : KIND[q.accent.kind].o} ${q.accent.name}?`}
               </Text>
             </Card>
 

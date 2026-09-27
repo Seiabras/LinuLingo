@@ -10,8 +10,8 @@ import { useIsDark } from '@/services/theme';
 import { FAUNA_MUSICA, HOMELANDS } from '@/data/fauna-musica';
 import { WORLD } from '@/data/mapa-mundi';
 import { flagOf } from '@/data/onde-se-fala';
-import { VariantPanel } from '@/components/VariantPanel';
-import { AccentsPanel } from '@/components/AccentsPanel';
+import { VarietyPicker } from '@/components/AccentsPanel';
+import type { LanguagePack } from '@/data/types';
 import { nomeIdioma } from '@/services/idioma-nome';
 
 /** Cultura & História: a genealogia do idioma e os cards «aprenda primeiro» de cada unidade. */
@@ -61,17 +61,12 @@ export default function CultureScreen() {
         <Text className="text-xl text-conecta">›</Text>
       </Pressable>
 
-      {(pack.variants?.length ?? 0) > 1 && (
+      {((pack.variants?.length ?? 0) > 1 || (pack.accents?.length ?? 0) > 0) && (
         <>
-          <Text className="mb-2 mt-6 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">🌍 Variantes do {nomeIdioma(pack.name)}</Text>
-          <VariantPanel />
-        </>
-      )}
-
-      {(pack.accents?.length ?? 0) > 0 && (
-        <>
-          <Text className="mb-2 mt-6 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">🗣️ Sotaques e dialetos</Text>
-          <AccentsPanel />
+          <Text className="mb-2 mt-6 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">
+            🌍 {varietyTitle(pack)}
+          </Text>
+          <VarietyPicker />
         </>
       )}
 
@@ -136,4 +131,12 @@ export default function CultureScreen() {
       </View>
     </Screen>
   );
+}
+
+/** «Variantes, sotaques, dialetos e línguas do italiano»: só o que o idioma tem. */
+function varietyTitle(pack: LanguagePack): string {
+  const kinds = new Set((pack.accents ?? []).map((a) => a.kind));
+  const parts = [...((pack.variants?.length ?? 0) > 1 ? ['variantes'] : []), ...(kinds.has('sotaque') ? ['sotaques'] : []), ...(kinds.has('dialeto') ? ['dialetos'] : []), ...(kinds.has('língua') ? ['línguas'] : [])];
+  const list = parts.length > 1 ? `${parts.slice(0, -1).join(', ')} e ${parts[parts.length - 1]}` : parts[0];
+  return `${list.charAt(0).toUpperCase()}${list.slice(1)} do ${nomeIdioma(pack.name)}`;
 }

@@ -35,6 +35,8 @@ O seletor do Perfil agrupa os idiomas por família e ramo linguístico.
 
 ## Sotaques e dialetos (aba Cultura)
 
+Na aba Cultura, tudo o que dá para estudar de um idioma fica **lado a lado num seletor só**: as variantes nacionais (italiano padrão × da Suíça), os sotaques, os dialetos e as **línguas regionais e minoritárias** (napolitano, siciliano, vêneto, lombardo, sardo, friulano e talian na Itália; mirandês, crioulo cabo-verdiano e galego no português; elfdaliano, meänkieli, sámi, finlandês, romani e ídiche na Suécia), marcadas como «língua» porque não são sotaques do idioma. Escolher qualquer um faz a voz e a IPA seguirem o jeito de lá e liga o treino dele.
+
 Cada idioma mostra os seus jeitos regionais de falar (18 no espanhol, 5 no romeno, 8 no russo): o que marca cada um, exemplos com voz e transcrição, palavras típicas e um **minimapa com as regiões** onde se fala (subdivisões ISO 3166-2). No mapa-múndi, o cartão do país lista os sotaques de lá, e tocar numa região mostra o sotaque daquele lugar. Formato: `Accent` em src/data/types.ts, um arquivo `sotaques.ts` por idioma.
 
 
@@ -184,6 +186,7 @@ node scripts/fluxo-album.mjs               # termina um treino, vê o aviso da f
 node scripts/fluxo-mapa-jogo.mjs           # jogo do mapa: toca nos países e regiões, confere explicação, verde e XP
 node scripts/fluxo-sons.mjs                # adivinhe o som: pelo arquivo tocado, acerta as opções em romeno; 🐾 dos bichos
 node scripts/fluxo-roupas.mjs              # roupinhas: restaura 10 lições de romeno, libera a căciulă e o Linu a usa
+node scripts/fluxo-variedades.mjs          # seletor único (italiano): variantes, sotaques e línguas lado a lado
 node scripts/fluxo-extras.mjs              # tutorial, voz, etimologia, sprint, conversa, comunidade, tema escuro
 node scripts/fluxo-historia.mjs            # histórias: desvio, dica, final e contador de finais
 node scripts/fluxo-praticas.mjs            # diário (corretor), palácio (jogo) e shadowing (microfone falso)

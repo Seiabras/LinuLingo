@@ -92,11 +92,11 @@ await shot('diario-correcao');
 
 // sotaques: São Petersburgo × Moscou
 await page.goto(BASE + '/cultura', { waitUntil: 'load' });
-await page.getByLabel('Sotaque: São Petersburgo').waitFor({ timeout: 30000 });
-await page.getByLabel('Sotaque: São Petersburgo').click();
+await page.getByLabel(/^Estudar: .*São Petersburgo$/).waitFor({ timeout: 30000 });
+await page.getByLabel(/^Estudar: .*São Petersburgo$/).click();
 await expectText('поре́брик');
 await page.waitForTimeout(1500);
-await page.getByLabel('Sotaque: São Petersburgo').scrollIntoViewIfNeeded();
+await page.getByLabel(/^Estudar: .*São Petersburgo$/).scrollIntoViewIfNeeded();
 await shot('sotaque-petersburgo');
 
 // histórias: 3 por subnível

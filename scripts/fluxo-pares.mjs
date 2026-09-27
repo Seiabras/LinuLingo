@@ -115,8 +115,8 @@ await shot('fim');
 
 // 3. variante da Espanha: s × z entra, com [θ]
 await page.goto(BASE + '/cultura', { waitUntil: 'load' });
-await page.getByText('Variantes do espanhol').first().waitFor({ timeout: 60000 });
-await page.getByText('Espanhol da Espanha', { exact: true }).first().click();
+await page.getByText('do espanhol').first().waitFor({ timeout: 60000 });
+await page.getByLabel(/^Estudar: .*Espanhol da Espanha$/).first().click();
 await page.waitForTimeout(800);
 await page.goto(BASE + '/pares', { waitUntil: 'load' });
 await waitText('Pares mínimos são palavras', 60000);
@@ -127,7 +127,7 @@ const es = await body();
 await page.getByText('s × z', { exact: true }).first().scrollIntoViewIfNeeded();
 await shot('espanha');
 await page.goto(BASE + '/cultura', { waitUntil: 'load' });
-await page.getByText('Espanhol latino-americano', { exact: true }).first().click();
+await page.getByLabel(/^Estudar: .*Espanhol latino-americano$/).first().click();
 await page.waitForTimeout(500);
 console.log(errors.length ? `⚠️  erros:\n   ${[...new Set(errors)].join('\n   ')}` : '✅ sem erros no console');
 await browser.close();

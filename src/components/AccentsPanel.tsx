@@ -1,8 +1,8 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { router } from 'expo-router';
 import Svg, { Circle, Path, Rect } from 'react-native-svg';
-import { ChevronDown, ChevronUp, Volume2 } from 'lucide-react-native';
+import { Volume2 } from 'lucide-react-native';
 import { Button, Card, Chip, SpeakButton } from '@/components/ui';
 import { useApp } from '@/services/app-state';
 import { useIsDark } from '@/services/theme';
@@ -13,114 +13,145 @@ import { loadSubdivisions } from '@/services/subdivisoes';
 import { playClip } from '@/services/speech';
 import { ACCENT_COMPARE, ACCENT_VOICES } from '@/data/audio-index';
 import type { Accent, AccentVoice } from '@/data/types';
+import { VariantDetails } from './VariantPanel';
+import { KIND } from '@/services/variedade';
 
 const ACCENT_COLOR = '#F59E0B';
 
 /**
- * Sotaques e dialetos do idioma estudado, agrupados por país: o que marca cada um, exemplos
- * com voz e pronúncia, palavras típicas e um minimapa com as regiões onde se fala.
+ * Tudo o que dá para estudar de um idioma, lado a lado: as variantes nacionais (Romênia × Moldávia),
+ * os sotaques, os dialetos e as línguas regionais e minoritárias (o napolitano na Itália, o sámi na Suécia). Escolher um faz a voz e a
+ * pronúncia do app seguirem o jeito de lá; embaixo vêm os detalhes do escolhido e o treino.
  */
-export function AccentsPanel() {
-  const { pack } = useApp();
-  const [open, setOpen] = useState<string | null>(null);
-  const byCountry = useMemo(() => {
-    const groups = new Map<string, Accent[]>();
-    for (const a of pack.accents ?? []) groups.set(a.country, [...(groups.get(a.country) ?? []), a]);
-    return [...groups];
-  }, [pack.accents]);
-  if (!byCountry.length) return null;
+export function VarietyPicker() {
+  const { pack, variant, setVariant, accent, setAccent } = useApp();
+  const variants = pack.variants ?? [];
+  const accents = pack.accents ?? [];
+  if (variants.length < 2 && !accents.length) return null;
+  const v = variants.find((x) => x.code === variant) ?? variants[0];
+  const groups = (['sotaque', 'dialeto', 'língua'] as const).map((k) => [k, accents.filter((a) => a.kind === k)] as const).filter(([, l]) => l.length);
+  const flagFor = (iso: string) => {
+    const c = WORLD.find((w) => w.iso === iso);
+    return c ? flagOf(c.iso2) : '';
+  };
+  const chosenName = accent ? accent.name : v ? v.name : `${pack.name} padrão`;
 
   return (
     <View className="gap-3">
       <Text className="text-sm text-slate-600 dark:text-slate-400">
-        Sotaque muda a pronúncia e a melodia; dialeto muda também palavras e gramática. Toque num deles para ver onde se fala, como soa e as palavras típicas, e escolha um para estudar: a voz e a pronúncia passam a seguir o jeito de lá.
+        Escolha o que estudar: {variants.length >= 2 ? 'uma variante nacional, ' : ''}um sotaque{groups.some(([k]) => k === 'dialeto') ? ', um dialeto' : ''}
+        {groups.some(([k]) => k === 'língua') ? ' ou uma língua regional' : ''}. A voz e a pronúncia (IPA) do app passam a seguir a escolha, e cada um tem o seu treino.
       </Text>
+      <PickerRow label={variants.length >= 2 ? 'Variantes' : 'Padrão'}>
+        {variants.length >= 2 ? (
+          variants.map((x) => (
+            <PickChip
+              key={x.code}
+              label={`${x.flag} ${x.name}`}
+              on={!accent && x.code === v?.code}
+              onPress={() => {
+                setAccent(null);
+                setVariant(x.code);
+              }}
+            />
+          ))
+        ) : (
+          <PickChip label={`${pack.flag} ${pack.name} padrão`} on={!accent} onPress={() => setAccent(null)} />
+        )}
+      </PickerRow>
+      {groups.map(([k, list]) => (
+        <PickerRow key={k} label={KIND[k].plural}>
+          {list.map((a) => (
+            <PickChip key={a.id} label={`${flagFor(a.country)} ${a.name}`} on={accent?.id === a.id} onPress={() => setAccent(a.id)} />
+          ))}
+        </PickerRow>
+      ))}
+      <View className="flex-row flex-wrap items-center gap-2">
+        <Chip label={`✓ estudando: ${chosenName}`} tone="green" />
+      </View>
+      {accent ? <AccentDetails a={accent} /> : v ? <VariantDetails v={v} /> : null}
       <CompareAccents />
-      {byCountry.map(([iso, list]) => {
-        const c = WORLD.find((w) => w.iso === iso);
-        return (
-          <View key={iso} className="gap-2">
-            <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">
-              {c ? `${flagOf(c.iso2)} ${c.name}` : iso}
-            </Text>
-            {list.map((a) => (
-              <AccentCard key={a.id} a={a} open={open === a.id} onToggle={() => setOpen(open === a.id ? null : a.id)} />
-            ))}
-          </View>
-        );
-      })}
     </View>
   );
 }
 
-function AccentCard({ a, open, onToggle }: { a: Accent; open: boolean; onToggle: () => void }) {
-  const { pack, accent, setAccent } = useApp();
-  const chosen = accent?.id === a.id;
-  const dark = useIsDark();
+function PickerRow({ label, children }: { label: string; children: React.ReactNode }) {
+  return (
+    <View className="gap-1.5">
+      <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">{label}</Text>
+      <View className="flex-row flex-wrap gap-2">{children}</View>
+    </View>
+  );
+}
+
+function PickChip({ label, on, onPress }: { label: string; on: boolean; onPress: () => void }) {
+  return (
+    <Pressable
+      accessibilityRole="radio"
+      accessibilityState={{ checked: on }}
+      // na web o estado precisa ir como aria-checked (leitores de tela e testes)
+      aria-checked={on}
+      accessibilityLabel={`Estudar: ${label}`}
+      onPress={onPress}
+      className={`rounded-full border-2 px-3 py-1.5 ${on ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
+    >
+      <Text className={`font-bold ${on ? 'text-conecta' : 'text-slate-600 dark:text-slate-300'}`}>{label}</Text>
+    </Pressable>
+  );
+}
+
+/** Um sotaque, dialeto ou língua: onde se fala, como soa, frases, palavras, gente de lá e o treino. */
+export function AccentDetails({ a }: { a: Accent }) {
+  const { pack, setAccent } = useApp();
   const locale = a.speechLocale ?? pack.speechLocale;
   return (
     <Card className="gap-3">
-      <Pressable
-        accessibilityRole="button"
-        accessibilityLabel={`Sotaque: ${a.name}`}
-        accessibilityState={{ expanded: open }}
-        onPress={onToggle}
-        className="flex-row items-center gap-3 active:opacity-70"
-      >
+      <View className="flex-row flex-wrap items-center gap-2">
         <Text className="text-3xl">{a.emoji}</Text>
-        <View className="flex-1 gap-0.5">
-          <View className="flex-row flex-wrap items-center gap-2">
-            <Text className="text-base font-extrabold text-slate-900 dark:text-white">{a.name}</Text>
-            <Chip label={a.kind} tone={a.kind === 'dialeto' ? 'amber' : 'blue'} />
-            {chosen && <Chip label="✓ estudando" tone="green" />}
-          </View>
-          <Text className="text-xs text-slate-500 dark:text-slate-400">{a.region}</Text>
-        </View>
-        {open ? <ChevronUp size={20} color={dark ? '#94A3B8' : '#64748B'} /> : <ChevronDown size={20} color={dark ? '#94A3B8' : '#64748B'} />}
-      </Pressable>
-      {open && (
-        <View className="gap-3">
-          <View className="flex-row flex-wrap gap-2">
-            {chosen ? (
-              <Button title="Voltar ao padrão" variant="ghost" onPress={() => setAccent(null)} />
-            ) : (
-              <Button title={`Estudar este ${a.kind}`} variant="ghost" onPress={() => setAccent(a.id)} />
-            )}
-            <Button title="🎯 Treinar" variant="success" onPress={() => router.push({ pathname: '/sotaque', params: { id: a.id } })} />
-          </View>
-          <AccentMap a={a} />
-          <Text className="text-base leading-6 text-slate-800 dark:text-slate-200">{a.summary}</Text>
-          <AccentVoices a={a} />
-          <View className="gap-1.5">
-            {a.features.map((f) => (
-              <Text key={f} className="text-sm leading-5 text-slate-700 dark:text-slate-300">
-                • {f}
-              </Text>
-            ))}
-          </View>
-          <View className="gap-2">
-            {a.examples.map(([t, tr, note]) => (
-              <View key={t} className="gap-0.5 rounded-xl bg-amber-50 px-3 py-2 dark:bg-amber-950/40">
-                <View className="flex-row items-center gap-2">
-                  <SpeakButton text={t} locale={locale} size={14} />
-                  <Text className="flex-1 font-bold text-slate-900 dark:text-white">{t}</Text>
-                </View>
-                <Text className="text-sm text-slate-600 dark:text-slate-400">{tr}</Text>
-                {note && <Text className={`text-sm text-amber-700 dark:text-amber-300 ${note.startsWith('[') ? 'font-mono' : ''}`}>{note}</Text>}
-              </View>
-            ))}
-            <Text className="text-xs text-slate-400">A voz do aparelho imita pouco os sotaques: para o som de verdade, ouça a gente de lá (🎙️) e siga a transcrição.</Text>
-          </View>
-          {a.words && a.words.length > 0 && (
-            <View className="gap-1">
-              <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">Palavras típicas</Text>
-              {a.words.map(([w, m]) => (
-                <Text key={w} className="text-sm text-slate-700 dark:text-slate-300">
-                  <Text className="font-bold text-slate-900 dark:text-white">{w}</Text> · {m}
-                </Text>
-              ))}
+        <Text className="text-lg font-extrabold text-slate-900 dark:text-white">{a.name}</Text>
+        <Chip label={KIND[a.kind].name} tone={KIND[a.kind].tone} />
+      </View>
+      <Text className="text-xs text-slate-500 dark:text-slate-400">{a.region}</Text>
+      <View className="flex-row flex-wrap gap-2">
+        <Button title="🎯 Treinar" variant="success" onPress={() => router.push({ pathname: '/sotaque', params: { id: a.id } })} />
+        <Button title="Voltar ao padrão" variant="ghost" onPress={() => setAccent(null)} />
+      </View>
+      {a.kind === 'língua' && (
+        <Text className="text-sm leading-5 text-emerald-800 dark:text-emerald-300">
+          É uma língua própria, não um sotaque do {pack.name.toLowerCase().split(' ')[0]}, com gramática e tradição suas. Aqui você aprende como ela soa e frases e palavras do dia a dia; os aparelhos quase nunca têm voz dela, então os exemplos saem na voz do {pack.name.toLowerCase().split(' ')[0]}: siga a transcrição.
+        </Text>
+      )}
+      <AccentMap a={a} />
+      <Text className="text-base leading-6 text-slate-800 dark:text-slate-200">{a.summary}</Text>
+      <AccentVoices a={a} />
+      <View className="gap-1.5">
+        {a.features.map((f) => (
+          <Text key={f} className="text-sm leading-5 text-slate-700 dark:text-slate-300">
+            • {f}
+          </Text>
+        ))}
+      </View>
+      <View className="gap-2">
+        {a.examples.map(([t, tr, note]) => (
+          <View key={t} className="gap-0.5 rounded-xl bg-amber-50 px-3 py-2 dark:bg-amber-950/40">
+            <View className="flex-row items-center gap-2">
+              <SpeakButton text={t} locale={locale} size={14} />
+              <Text className="flex-1 font-bold text-slate-900 dark:text-white">{t}</Text>
             </View>
-          )}
+            <Text className="text-sm text-slate-600 dark:text-slate-400">{tr}</Text>
+            {note && <Text className={`text-sm text-amber-700 dark:text-amber-300 ${note.startsWith('[') ? 'font-mono' : ''}`}>{note}</Text>}
+          </View>
+        ))}
+        <Text className="text-xs text-slate-400">A voz do aparelho imita pouco os sotaques: para o som de verdade, ouça a gente de lá (🎙️) e siga a transcrição.</Text>
+      </View>
+      {a.words && a.words.length > 0 && (
+        <View className="gap-1">
+          <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">Palavras típicas</Text>
+          {a.words.map(([w, m]) => (
+            <Text key={w} className="text-sm text-slate-700 dark:text-slate-300">
+              <Text className="font-bold text-slate-900 dark:text-white">{w}</Text> · {m}
+            </Text>
+          ))}
         </View>
       )}
     </Card>
