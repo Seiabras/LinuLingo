@@ -50,6 +50,18 @@ export function roomsFor(lang: string): Record<Gender, Room> {
         rule: 'Neutro (ett-ord): «ett» e a forma definida em -et/-t (ett hus → huset). Muitas em -eri, -um, -ment e os infinitivos que viram substantivo (ett leende).',
       },
     };
+  if (lang === 'nb')
+    return {
+      m: { ...ROOMS.m, rule: 'Masculino (en): a maioria dos substantivos, com a forma definida em -en (en bil → bilen). Pessoas e quase todas em -er, -else e -dom (en lærer, en følelse, en sykdom).' },
+      f: { ...ROOMS.f, rule: 'Feminino (ei): «ei» e a forma definida em -a (ei bok → boka). No bokmål, dá para usar «en» também (en bok, boken). Muitas palavras do dia a dia: ei jente, ei dør, ei hytte, ei klokke.' },
+      n: {
+        ...ROOMS.n,
+        name: 'O Jardim',
+        emoji: '🌲',
+        scene: 'Um jardim à beira de um fiorde, com uma casinha de madeira e grama no telhado.',
+        rule: 'Neutro (et): «et» e a forma definida em -et (et hus → huset). Muitas monossílabas e as em -eri, -um e -ment (et bakeri, et museum, et dokument).',
+      },
+    };
   if (lang === 'pt')
     return {
       m: { ...ROOMS.m, rule: 'Masculino: quase todas em -o, as em -ema/-ama de origem grega (o problema, o programa) e muitas em -e, -r, -l (o leite, o mar, o sal). Em Portugal também: o ecrã, o autocarro, o comboio.' },
@@ -114,6 +126,8 @@ const HETERO_IT: Record<string, string> = {
 export function palaceIntro(lang: string): string {
   if (lang === 'sv')
     return 'O sueco tem 2 gêneros, mas não são masculino e feminino: é o «en» (gênero comum) e o «ett» (neutro). Não dá para adivinhar pelo sentido, então decore cada palavra com o artigo: en bil, ett hus. Guarde cada uma na sala certa!';
+  if (lang === 'nb')
+    return 'O norueguês tem 3 gêneros: masculino (en), feminino (ei) e neutro (et), e o artigo definido vai grudado no fim: bilen, boka, huset. No bokmål, as femininas também aceitam o «en» (en bok, boken). Decore cada palavra com o artigo e guarde-a na sala certa!';
   if (lang === 'pt')
     return 'Você já sabe os gêneros do português! Aqui o desafio são as palavras de Portugal que você ainda não usa: o autocarro, o comboio, a casa de banho, o ecrã, a bica, o pequeno-almoço. Guarde cada uma na sala certa!';
   if (lang === 'it')
@@ -132,6 +146,12 @@ export function genderTip(word: string, gender: Gender, lang = 'ro'): string {
     if (/(het|ing|else|are|a)$/.test(w) && gender === 'm') return 'Terminou em -het, -ing, -else, -are ou -a? Quase sempre en-ord: en frihet, en tidning, en lärare, en flicka.';
     if (/(eri|um|ment)$/.test(w) && gender === 'n') return 'Terminou em -eri, -um ou -ment? Quase sempre ett-ord: ett bageri, ett museum, ett dokument.';
     return roomsFor('sv')[gender].rule;
+  }
+  if (lang === 'nb') {
+    if (/(het|else|dom|er)$/.test(w) && gender === 'm') return 'Terminou em -het, -else, -dom ou -er? Quase sempre masculino: en frihet, en følelse, en sykdom, en lærer.';
+    if (/(eri|um|ment)$/.test(w) && gender === 'n') return 'Terminou em -eri, -um ou -ment? Quase sempre neutro: et bakeri, et museum, et dokument.';
+    if (/(ing)$/.test(w) && gender === 'f') return 'Substantivo de ação em -ing costuma ser feminino: ei øving → øvinga (ou en øving → øvingen, no bokmål).';
+    return roomsFor('nb')[gender].rule;
   }
   if (lang === 'pt') {
     if (w.endsWith('ção') || w.endsWith('são') || w.endsWith('agem')) return 'Terminou em -ção, -são ou -agem? Feminino, nos dois lados do Atlântico: a receção, a viagem.';

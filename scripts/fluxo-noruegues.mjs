@@ -1,12 +1,12 @@
-// Teste de ponta a ponta do sueco: troca de idioma, trilha, lição, gramática com IPA (tons),
-// falsos amigos, palácio com gênero comum e neutro, variante da Finlândia, linguística,
-// corretor do diário (en/ett), histórias e o slide dos falsos amigos no tutorial.
-// Uso: npx tsx scripts/fluxo-sueco.mjs   (servidor em http://localhost:8081)
+// Teste de ponta a ponta do norueguês: troca de idioma, trilha, lição, gramática com IPA (tons),
+// falsos amigos, palácio com os três gêneros, variante nynorsk, linguística,
+// corretor do diário (en/ei/et), histórias e o slide dos falsos amigos no tutorial.
+// Uso: npx tsx scripts/fluxo-noruegues.mjs   (servidor em http://localhost:8081)
 import { chromium } from 'playwright-core';
 import { existsSync, mkdirSync, readdirSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { join } from 'node:path';
-import { SUECO } from '../src/data/sv/index.ts';
+import { NORUEGUES } from '../src/data/nb/index.ts';
 
 const BASE = process.env.BASE_URL ?? 'http://localhost:8081';
 const OUT = process.env.OUT_DIR ?? 'capturas';
@@ -26,7 +26,7 @@ page.on('console', (m) => m.type() === 'error' && !m.text().includes('Unknown ev
 let n = 0;
 const shot = async (name) => {
   await page.waitForTimeout(700);
-  await page.screenshot({ path: `${OUT}/sueco-${device}-${scheme}-${String(++n).padStart(2, '0')}-${name}.png` });
+  await page.screenshot({ path: `${OUT}/noruegues-${device}-${scheme}-${String(++n).padStart(2, '0')}-${name}.png` });
 };
 const click = (text) => page.getByText(text, { exact: true }).first().click();
 const expectText = async (t) => {
@@ -44,9 +44,9 @@ await page.goto(BASE + '/', { waitUntil: 'load', timeout: 180000 });
 await page.locator('text=Pular >> visible=true').or(page.locator('text=Mais práticas >> visible=true')).first().waitFor({ timeout: 120000 });
 await skipTutorial();
 
-// troca para o sueco no Perfil
+// troca para o norueguês no Perfil
 await page.goto(BASE + '/perfil', { waitUntil: 'load' });
-const itRow = page.getByText(/^Sueco · Svenska/).first();
+const itRow = page.getByText(/^Norueguês · Norsk/).first();
 await itRow.waitFor({ timeout: 30000 });
 const tTroca = Date.now();
 await itRow.click();
@@ -56,7 +56,7 @@ await page.waitForFunction(() => !document.body.innerText.includes('preparando�
 console.log(`  troca de idioma: ${((Date.now() - tTroca) / 1000).toFixed(1)} s`);
 await page.goto(BASE + '/', { waitUntil: 'load' });
 await skipTutorial();
-const u1 = SUECO.units[0];
+const u1 = NORUEGUES.units[0];
 await expectText(u1.lessons[0].title);
 await expectText('Falsos amigos');
 await shot('trilha');
@@ -68,15 +68,15 @@ await expectText(u1.card.title);
 await shot('licao-card');
 
 // gramática: pronúncia, com IPA
-const g1 = SUECO.grammar[0];
+const g1 = NORUEGUES.grammar[0];
 await page.goto(BASE + '/gramatica/' + g1.id, { waitUntil: 'load' });
 await expectText(g1.title);
 await shot('gramatica');
-if (!(await page.locator('text=/\\[.*ˈ.*\\]/').count())) throw new Error('IPA do sueco não apareceu na gramática');
+if (!(await page.locator('text=/\\[.*ˈ.*\\]/').count())) throw new Error('IPA do norueguês não apareceu na gramática');
 
 // falsos amigos: a lista, um card aberto e uma rodada de 10 perguntas
 await page.goto(BASE + '/falsos-amigos', { waitUntil: 'load' });
-const ff = SUECO.falseFriends[0];
+const ff = NORUEGUES.falseFriends[0];
 await page.getByLabel(`Falso amigo ${ff.word}`).waitFor({ timeout: 20000 });
 await page.getByLabel(`Falso amigo ${ff.word}`).click();
 await expectText(ff.example[1]);
@@ -91,41 +91,42 @@ for (let q = 0; q < 10; q++) {
 await expectText('acertos');
 await shot('falsos-amigos-fim');
 
-// palácio: gênero comum (en) e neutro (ett), sem o camaleão do romeno
+// palácio: os três gêneros (en, ei, et), sem o camaleão do romeno
 await page.goto(BASE + '/palacio', { waitUntil: 'load' });
-await expectText('comum (en)');
-await expectText('neutro (ett)');
-if (await page.getByText('Jardim do Camaleão', { exact: false }).count()) throw new Error('o palácio do sueco mostrou a sala do romeno');
+await expectText('masculino (en)');
+await expectText('feminino (ei)');
+await expectText('neutro (et)');
+if (await page.getByText('Jardim do Camaleão', { exact: false }).count()) throw new Error('o palácio do norueguês mostrou a sala do romeno');
 await shot('palacio');
 
-// cultura: a variante da Suíça
+// cultura: a variante nynorsk
 await page.goto(BASE + '/cultura', { waitUntil: 'load' });
-await page.getByText(/Variantes.* do sueco/i).first().waitFor({ timeout: 30000 });
-await page.getByLabel(new RegExp(`^Estudar: .*${SUECO.variants[1].name}`)).first().click();
+await page.getByText(/Variantes.* do norueguês/i).first().waitFor({ timeout: 30000 });
+await page.getByLabel(new RegExp(`^Estudar: .*${NORUEGUES.variants[1].name}`)).first().click();
 await page.waitForTimeout(800);
-await expectText(SUECO.variants[1].card.title);
+await expectText(NORUEGUES.variants[1].card.title);
 await shot('variante');
-await page.getByLabel(new RegExp(`^Estudar: .*${SUECO.variants[0].name}`)).first().click();
+await page.getByLabel(new RegExp(`^Estudar: .*${NORUEGUES.variants[0].name}`)).first().click();
 await page.waitForTimeout(800);
 
-// linguística: fonética do sueco
+// linguística: fonética do norueguês
 await page.goto(BASE + '/linguistica/fonetica', { waitUntil: 'load' });
-await expectText(SUECO.linguistics[0].sections[0].heading);
+await expectText(NORUEGUES.linguistics[0].sections[0].heading);
 await shot('linguistica');
 
-// diário: en/ett pelo gênero do vocabulário
+// diário: en/ei/et pelo gênero do vocabulário
 await page.goto(BASE + '/diario', { waitUntil: 'load' });
 await page.waitForTimeout(2500);
-await page.getByLabel('Seu texto do diário').fill('Jag har en hus och ett bil.');
+await page.getByLabel('Seu texto do diário').fill('Jeg har et bil og en hus.');
 await page.getByText('Corrigir', { exact: false }).first().click();
 await page.waitForTimeout(1200);
-await expectText('ett hus');
+await expectText('et hus');
 await expectText('en bil');
 await shot('diario-correcao');
 
 // histórias: 3 no A1.1 e uma aberta
 await page.goto(BASE + '/historias', { waitUntil: 'load' });
-const a11 = SUECO.stories.filter((x) => x.level === 'A1.1');
+const a11 = NORUEGUES.stories.filter((x) => x.level === 'A1.1');
 for (const st of a11) await expectText(st.title);
 await shot('historias');
 await page.goto(BASE + '/historia/' + a11[0].id, { waitUntil: 'load' });
@@ -137,7 +138,7 @@ await page.goto(BASE + '/tutorial', { waitUntil: 'load' });
 // 1º passo: a escolha do idioma (o estudado já vem marcado); o cumprimento no idioma vem no 2º
 await expectText('que idioma você quer aprender comigo?');
 await click('Próximo');
-await expectText('Hej! Vamos de');
+await expectText('Hei! Vamos de');
 for (let i = 0; i < 3; i++) {
   await click('Próximo');
   await page.waitForTimeout(400);

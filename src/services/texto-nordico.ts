@@ -22,7 +22,7 @@ const NEIGHBOR_WORDS: Record<string, string[]> = {
   sv: ['ikke', 'også'], // «hvad» era a grafia sueca antes da reforma de 1906
   nb: ['och', 'inte', 'jag', 'också', 'någon'],
   nn: ['och', 'inte', 'jag', 'också', 'någon'],
-  da: ['och', 'inte', 'jag', 'också', 'någon'],
+  da: ['och', 'inte', 'jag', 'också', 'någon', 'hva', 'ikkje'],
 };
 
 const NAMES: Record<string, string> = { sv: 'sueco', nb: 'bokmål', nn: 'nynorsk', da: 'dinamarquês', is: 'islandês', fo: 'feroês', fi: 'finlandês', et: 'estoniano' };

@@ -158,6 +158,26 @@ export function OutfitArt({ id }: { id: string }) {
       );
     case 'krans':
       return <FlowerCrown />;
+    case 'topplue':
+      return (
+        <G>
+          {/* gorro de lã justo na cabeça, com a barra dobrada e o pompom */}
+          <Path d="M28 33 Q28 8 60 7 Q92 8 92 33 Z" fill="#B91C1C" />
+          <Path d="M26 29 Q60 21 94 29 L94 37 Q60 29 26 37 Z" fill="#991B1B" />
+          {/* faixa de ziguezague branca, como nas malhas norueguesas */}
+          <Path d="M32 22 L36 18 L40 22 L44 18 L48 22 L52 18 L56 22 L60 18 L64 22 L68 18 L72 22 L76 18 L80 22 L84 18 L88 22" fill="none" stroke="#FFFFFF" strokeWidth="1.4" />
+          {[40, 52, 60, 68, 80].map((x) => (
+            <Circle key={x} cx={x} cy="13" r="1" fill="#FFFFFF" />
+          ))}
+          <G stroke="#7F1D1D" strokeWidth="0.6">
+            {[34, 44, 54, 66, 76, 86].map((x) => (
+              <Path key={x} d={`M${x} 30 L${x} 35`} />
+            ))}
+          </G>
+          <Circle cx="60" cy="5" r="6" fill="#FFFFFF" />
+          <Circle cx="58" cy="3.5" r="2" fill="#F1F5F9" />
+        </G>
+      );
     default:
       return null;
   }

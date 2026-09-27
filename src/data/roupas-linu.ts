@@ -26,6 +26,7 @@ export const ROUPAS_LINU: LinuOutfit[] = [
   { id: 'coppola', lang: 'it', name: 'Coppola', region: 'Sicília, Itália', about: 'Boné achatado de tecido, tradicional na Sicília e no sul da Itália.' },
   { id: 'barrete', lang: 'pt', name: 'Barrete de campino', region: 'Ribatejo, Portugal', about: 'Gorro verde com barra vermelha dos campinos, os guardadores de touros e cavalos do Ribatejo.' },
   { id: 'krans', lang: 'sv', name: 'Midsommarkrans', region: 'Suécia', about: 'Coroa de flores do Midsommar, a festa do solstício de verão, em junho.' },
+  { id: 'topplue', lang: 'nb', name: 'Topplue', region: 'Noruega', about: 'Gorro de lã com pompom, companheiro dos noruegueses no esqui e nas trilhas de inverno.' },
 ];
 
 /** Quantas lições do idioma liberam cada roupinha (pela ordem dela entre as do idioma). */

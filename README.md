@@ -20,6 +20,7 @@ As faixas que rolam para os lados (fotos, trilha de subníveis, idiomas e regiõ
 | 🇮🇹 Italiano | Indo-europeu › Itálico › Românico › Ítalo-dálmata | **disponível** |
 | 🇵🇹 Português de Portugal | Indo-europeu › Itálico › Românico › Ibero-românico › Galego-português | **disponível** |
 | 🇸🇪 Sueco | Indo-europeu › Germânico › Germânico setentrional › Nórdico oriental | **disponível** |
+| 🇳🇴 Norueguês (bokmål, com o nynorsk como variante) | Indo-europeu › Germânico › Germânico setentrional › Nórdico ocidental | **disponível** |
 | 🇬🇧 Inglês | Indo-europeu › Germânico › Germânico ocidental | em breve |
 | 🇫🇮 Finlandês | Urálico › Fínico › Fínico setentrional | em breve |
 | 🇪🇪 Estoniano | Urálico › Fínico › Fínico meridional | em breve |
@@ -80,6 +81,12 @@ Cada idioma mostra os seus jeitos regionais de falar (18 no espanhol, 5 no romen
 - **IPA por dicionário** (src/services/ipa-lexicon.ts + src/data/sv/pronuncia.ts): a escrita não mostra a quantidade das vogais nem os dois acentos tonais, então cada uma das 9.353 formas do app tem a sua transcrição (tom 2 com circunflexo); o teste exige IPA para toda palavra sueca.
 - **Palácio** com gênero comum (en) e neutro (ett); **diário** que corrige «en hus» → «ett hus»; pares mínimos (tak × tack, glas × glass, by × bi, kål × kol) e os bichos em sueco (voff voff, kuckeliku).
 - Verificadores genéricos das nórdicas (scripts/checar-vocab-nordico.ts, checar-conteudo-nordico.ts, checar-ipa-nordico.ts): letras e palavras de línguas vizinhas (ø, æ, «ikke» no sueco; ä, ö, «och», «inte» no norueguês e no dinamarquês).
+
+## O que tem no norueguês (bokmål, com o nynorsk)
+
+- 4.330 palavras (os três gêneros en/ei/et, com a forma feminina «boka» nas palavras do dia a dia), 15 unidades, 40 tópicos de gramática (V2, forma definida e dupla definição, o «ikke» na subordinada, passiva com -s e bli, klarspråk, as duas escritas e Ivar Aasen, Ibsen e Bjørnson), 48 histórias (de Oslo e Bergen a Lofoten, Alta, Svalbard e Røros; 3 em nynorsk), 46 falsos amigos (rar, prate, sort, gift, full…), 121 etimologias, 12 sotaques, dialetos e línguas (bergensk, trøndersk, nordnorsk, kebabnorsk, sámi do norte, kven…), variantes bokmål e nynorsk.
+- **IPA por dicionário** (src/data/nb/pronuncia.ts, 9.029 formas, fala de Oslo com os dois tons e as retroflexas); o teste exige IPA para toda palavra norueguesa, inclusive as do nynorsk.
+- **Palácio** com os três gêneros (a Forja, o Lago e o Jardim do fiorde); **diário** que corrige «et bil» → «en bil» e aceita «en bok» ao lado de «ei bok»; pares mínimos (tak × takk, os dois tons, kj × sj), bichos em norueguês e a roupinha do Linu: o topplue.
 
 ## O que tem no russo
 
@@ -199,6 +206,7 @@ node scripts/fluxo-linguistica.mjs        # áreas da língua, quadro do IPA e a
 npx tsx scripts/fluxo-russo.mjs           # russo: troca de idioma, cirílico, IPA, teclado, diário
 npx tsx scripts/fluxo-espanhol.mjs        # espanhol: falsos amigos, palácio, variante da Espanha ([θ]), linguística, diário
 npx tsx scripts/fluxo-sueco.mjs           # sueco: palácio en/ett, variante da Finlândia, diário (en/ett), IPA
+npx tsx scripts/fluxo-noruegues.mjs       # norueguês: palácio en/ei/et, variante nynorsk, diário (en/ei/et), IPA
 npx tsx scripts/fluxo-portugues.mjs        # português de Portugal: variante do Brasil (IPA), diário (estar a, ênclise), falsos amigos
 npx tsx scripts/fluxo-italiano.mjs        # italiano: falsos amigos, IPA, palácio, variante da Suíça, linguística, diário
 node scripts/fluxo-mapa.mjs                # mapa ISO 3166-1/3166-3, zoom nas subdivisões e variante da Moldávia

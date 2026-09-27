@@ -55,7 +55,7 @@ function restoreDiacritics(token: string, lex: JournalLexicon): string | null {
 const NUMBER = /^(\d+|doi|două|trei|patru|cinci|șase|sase|șapte|sapte|opt|nouă|noua|zece|unsprezece|doisprezece|cincisprezece|douăzeci|douazeci|treizeci|patruzeci|cincizeci|o)$/i;
 const STATES: Record<string, string> = { foame: 'foame', sete: 'sete', frig: 'frig', cald: 'cald', frica: 'frică', frică: 'frică', somn: 'somn' };
 
-const LANG_NAME: Record<string, string> = { ro: 'romeno', ru: 'russo', es: 'espanhol', it: 'italiano', pt: 'português de Portugal', sv: 'sueco' };
+const LANG_NAME: Record<string, string> = { ro: 'romeno', ru: 'russo', es: 'espanhol', it: 'italiano', pt: 'português de Portugal', sv: 'sueco', nb: 'norueguês' };
 
 // português de Portugal: estar + gerúndio → estar a + infinitivo; pronome átono no começo da frase → ênclise
 const ESTAR_PT = new Set(['estou', 'estás', 'está', 'estamos', 'estão', 'estava', 'estavas', 'estávamos', 'estavam', 'estive', 'esteve', 'estar']);
@@ -183,6 +183,21 @@ export function checkJournal(text: string, lex: JournalLexicon, lang = 'ro'): { 
         if (right !== w) {
           const fix = matchCase(parts[i], right);
           issues.push({ kind: 'gênero', original: `${parts[i]} ${parts[j]}`, suggestion: `${fix} ${parts[j]}`, why: `«${parts[j]}» é uma ${g === 'n' ? 'ett-ord (neutro)' : 'en-ord (gênero comum)'}: ${fix} ${parts[j]}. Decore cada substantivo junto com o artigo.` });
+          parts[i] = fix;
+        }
+      }
+      continue;
+    }
+    if (lang === 'nb') {
+      // en/ei/et pelo gênero do vocabulário: en bil, ei bok (ou en bok), et hus
+      const w = raw(i);
+      const g = j >= 0 ? lex.gender.get(raw(j)) : undefined;
+      if ((w === 'en' || w === 'ei' || w === 'et') && (g === 'm' || g === 'f' || g === 'n')) {
+        const ok = g === 'n' ? ['et'] : g === 'f' ? ['ei', 'en'] : ['en'];
+        if (!ok.includes(w)) {
+          const fix = matchCase(parts[i], ok[0]);
+          const kind = g === 'n' ? 'neutra (et)' : g === 'f' ? 'feminina (ei, ou en no bokmål)' : 'masculina (en)';
+          issues.push({ kind: 'gênero', original: `${parts[i]} ${parts[j]}`, suggestion: `${fix} ${parts[j]}`, why: `«${parts[j]}» é uma palavra ${kind}: ${fix} ${parts[j]}. Decore cada substantivo junto com o artigo.` });
           parts[i] = fix;
         }
       }
