@@ -6,8 +6,8 @@ import { Screen, Button, Card, Chip, SpeechBubble, Ipa } from '@/components/ui';
 import { Linu } from '@/components/Linu';
 import { useApp } from '@/services/app-state';
 import { useMicCapture, type MicSample } from '@/services/mic';
-import { finalContour, intonation, rhythmScore, type Contour } from '@/services/pitch';
-import { speakTimed, stopSpeaking } from '@/services/speech';
+import { finalContour, intonation, melodyShape, melodySimilarity, melodyTip, pitchTrack, rhythmScore, type Contour } from '@/services/pitch';
+import { modelSamples, speakTimed, stopSpeaking } from '@/services/speech';
 import { awardXp, saveShadowing } from '@/database/queries';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
@@ -25,6 +25,17 @@ interface Result {
   rhythm: number;
   contour: Contour | null;
   expected: 'sobe' | 'desce' | null;
+  /** melodia parecida com a do modelo (0–100); null sem a curva do modelo ou sem voz suficiente */
+  melody: number | null;
+  /** a curva da sua voz, para desenhar por cima da do modelo */
+  userTrack: (number | null)[];
+}
+
+/** A curva do modelo de uma frase (a chave diz de qual frase e velocidade ela é). */
+interface ModelCurve {
+  key: string;
+  track: (number | null)[] | null;
+  source: 'nativo' | 'neural' | null;
 }
 
 /**
@@ -44,11 +55,26 @@ export default function ShadowingScreen() {
   const [result, setResult] = useState<Result | null>(null);
   const [done, setDone] = useState<Set<number>>(new Set());
   const [width, setWidth] = useState(320);
+  const [melodyWidth, setMelodyWidth] = useState(300);
   const autoStop = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const [phrase, translation] = pack.shadowing[i];
   const into = intonation(phrase, pack.code);
   const expected = into.contour;
+
+  // a melodia do modelo (gravação de nativo ou voz embutida), calculada quando a frase muda
+  const modelKey = `${pack.code}|${phrase}|${rate}`;
+  const [curve, setCurve] = useState<ModelCurve | null>(null);
+  useEffect(() => {
+    let alive = true;
+    modelSamples(phrase, pack.speechLocale, rate)
+      .then((m) => alive && setCurve({ key: modelKey, track: m ? pitchTrack(m.samples, m.sampleRate) : null, source: m?.source ?? null }))
+      .catch(() => alive && setCurve({ key: modelKey, track: null, source: null }));
+    return () => {
+      alive = false;
+    };
+  }, [modelKey, phrase, pack.speechLocale, rate]);
+  const model = curve?.key === modelKey ? curve : null;
 
   useEffect(
     () => () => {
@@ -66,17 +92,26 @@ export default function ShadowingScreen() {
     return ms;
   };
 
-  const analyse = async (samples: MicSample[], model: number) => {
+  const modelCurve = model;
+  const analyse = async (samples: MicSample[], modelMs: number) => {
     const voiced = samples.filter((s) => s.level > VOICED);
     const userMs = voiced.length > 1 ? voiced[voiced.length - 1].t - voiced[0].t : 0;
     const contour = mic.supportsPitch ? finalContour(voiced.map((s) => s.pitch)) : null;
-    const r: Result = { userMs, modelMs: model, rhythm: rhythmScore(userMs, model), contour, expected };
+    const userTrack = samples.map((s) => (s.level > VOICED ? s.pitch : null));
+    const melody = mic.supportsPitch && modelCurve?.track ? melodySimilarity(userTrack, modelCurve.track) : null;
+    const r: Result = { userMs, modelMs, rhythm: rhythmScore(userMs, modelMs), contour, expected, melody, userTrack };
     setResult(r);
-    const good = r.rhythm >= 60 && (contour === null || expected === null || contour === expected);
+    const good = r.rhythm >= 60 && (contour === null || expected === null || contour === expected) && (melody === null || melody >= 50);
     if (good) haptics.success();
     else if (userMs > 0) {
       // ritmo longe do modelo ou melodia do fim trocada: a frase vai para o caderno de erros
-      const off = [r.rhythm < 60 ? `ritmo ${r.rhythm}%` : null, contour && expected && contour !== expected ? `a voz ${contour === 'sobe' ? 'subiu' : contour === 'desce' ? 'desceu' : 'ficou plana'} no fim` : null].filter(Boolean).join(' · ');
+      const off = [
+        r.rhythm < 60 ? `ritmo ${r.rhythm}%` : null,
+        contour && expected && contour !== expected ? `a voz ${contour === 'sobe' ? 'subiu' : contour === 'desce' ? 'desceu' : 'ficou plana'} no fim` : null,
+        melody !== null && melody < 50 ? `melodia ${melody}% parecida` : null,
+      ]
+        .filter(Boolean)
+        .join(' · ');
       logMistake(db, {
         language: pack.code,
         source: 'shadowing',
@@ -159,6 +194,23 @@ export default function ShadowingScreen() {
         <Button title={playing ? 'Tocando…' : '▶ Ouvir o modelo'} variant="ghost" disabled={playing || mic.recording} onPress={playModel} />
       </Card>
 
+      {model?.track && (
+        <Card className="mt-3 gap-2">
+          <View className="flex-row items-center justify-between gap-2">
+            <Text className="font-bold text-slate-800 dark:text-slate-100">🎼 Sombra sonora: a melodia</Text>
+            {result?.melody != null && <Chip label={`Melodia: ${result.melody}% parecida`} tone={result.melody >= 75 ? 'green' : result.melody >= 50 ? 'amber' : 'rose'} />}
+          </View>
+          <View onLayout={(e) => setMelodyWidth(e.nativeEvent.layout.width)}>
+            <MelodyChart model={melodyShape(model.track)} user={result && result.userMs > 0 ? melodyShape(result.userTrack) : null} width={melodyWidth} height={110} dark={dark} />
+          </View>
+          <View className="flex-row flex-wrap items-center gap-3">
+            <Text className="text-xs font-bold text-blue-500">━ modelo ({model.source === 'nativo' ? 'gravação de nativo' : 'voz embutida'})</Text>
+            {result && result.userMs > 0 && <Text className="text-xs font-bold text-amber-500">━ você</Text>}
+          </View>
+          <Text className="text-xs leading-5 text-slate-500 dark:text-slate-400">{melodyTip(pack.code)}</Text>
+        </Card>
+      )}
+
       <View className="mt-3 flex-row rounded-2xl bg-slate-200 p-1 dark:bg-slate-800">
         {[
           [false, 'Repetir depois'],
@@ -218,7 +270,7 @@ export default function ShadowingScreen() {
         <Button title="‹ Anterior" variant="ghost" className="flex-1" onPress={() => go(-1)} />
         <Button title="Próxima ›" variant="success" className="flex-1" onPress={() => go(1)} />
       </View>
-      <Text className="mt-3 text-center text-xs text-slate-400">O modelo das frases é a voz do aparelho. Gravações de nativos existem por palavra (Lingua Libre), mas ainda não por frase.</Text>
+      <Text className="mt-3 text-center text-xs text-slate-400">O modelo é a gravação de um nativo quando a frase tem uma; senão, a voz do aparelho ou a voz embutida. A curva azul é a melodia do modelo, e a amarela, a sua, as duas na mesma escala (semitons em relação ao tom de cada voz), para uma voz grave e uma aguda poderem ser comparadas.</Text>
     </Screen>
   );
 }
@@ -248,6 +300,27 @@ function Waveform({ samples, width, height }: { samples: MicSample[]; width: num
       ))}
       {pitchPath ? <Path d={pitchPath} stroke="#FBBF24" strokeWidth={2.5} fill="none" strokeLinejoin="round" /> : null}
       {samples.length > 0 && samples[samples.length - 1].pitch ? <Circle cx={(samples.length - 1) * step} cy={y(samples[samples.length - 1].pitch!)} r={4} fill="#FBBF24" /> : null}
+    </Svg>
+  );
+}
+
+/** As duas melodias (em semitons, centradas), a do modelo tracejada em azul e a sua em amarelo. */
+function MelodyChart({ model, user, width, height, dark }: { model: number[] | null; user: number[] | null; width: number; height: number; dark: boolean }) {
+  const RANGE = 7; // ±7 semitons
+  const path = (pts: number[]) =>
+    pts
+      .map((v, k) => {
+        const x = 8 + (k * (width - 16)) / (pts.length - 1);
+        const y = height / 2 - (Math.max(-RANGE, Math.min(RANGE, v)) / RANGE) * (height / 2 - 8);
+        return `${k ? 'L' : 'M'}${x.toFixed(1)},${y.toFixed(1)}`;
+      })
+      .join(' ');
+  return (
+    <Svg width={width} height={height}>
+      <Rect x={0} y={0} width={width} height={height} rx={12} fill={dark ? '#0F172A' : '#F1F5F9'} />
+      <Line x1={8} y1={height / 2} x2={width - 8} y2={height / 2} stroke={dark ? '#334155' : '#CBD5E1'} strokeWidth={1} strokeDasharray="3 4" />
+      {model && <Path d={path(model)} stroke="#3B82F6" strokeWidth={3} fill="none" strokeDasharray="7 5" strokeLinecap="round" strokeLinejoin="round" />}
+      {user && <Path d={path(user)} stroke="#F59E0B" strokeWidth={3} fill="none" strokeLinecap="round" strokeLinejoin="round" />}
     </Svg>
   );
 }

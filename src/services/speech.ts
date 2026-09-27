@@ -6,7 +6,7 @@ import { VOWEL_GROUPS } from './pitch';
 import { createAudioPlayer, type AudioPlayer } from 'expo-audio';
 import { clipFor } from '@/data/audio-index';
 import { pickVoice, type VoiceInfo } from './voice-pick';
-import { hasNeuralVoice, speakNeural, stopNeural } from './neural-tts';
+import { hasNeuralVoice, neuralCached, speakNeural, stopNeural, synthesizeNeural } from './neural-tts';
 
 export type { VoiceInfo };
 
@@ -187,6 +187,30 @@ export async function speak(text: string, locale: string, opts: { rate?: number;
   if (!voice) return 'sem-voz';
   Speech.speak(forVoice(text), { language: locale, voice: voice.identifier, rate: opts.rate ?? 0.9 });
   return 'sintetica';
+}
+
+/**
+ * O áudio do modelo, para desenhar a melodia dele na sombra sonora (só na web): a gravação do nativo,
+ * se houver, ou a voz embutida. Quando o aparelho tem uma voz natural e a embutida ainda não foi
+ * baixada, não baixa 63 MB só para a curva.
+ */
+export async function modelSamples(text: string, locale: string, rate = 1): Promise<{ samples: Float32Array; sampleRate: number; source: 'nativo' | 'neural' } | null> {
+  if (Platform.OS !== 'web' || typeof window === 'undefined' || typeof OfflineAudioContext === 'undefined') return null;
+  const clip = clipFor(locale, text);
+  if (clip) {
+    try {
+      const data = await fetch(Asset.fromModule(clip.src).uri).then((r) => r.arrayBuffer());
+      // decodifica já em 22 050 Hz (a mesma taxa da voz embutida; é mais que suficiente para a voz)
+      const buf = await new OfflineAudioContext(1, 1, 22050).decodeAudioData(data);
+      return { samples: buf.getChannelData(0), sampleRate: buf.sampleRate, source: 'nativo' };
+    } catch {
+      // sem a gravação, tenta a voz embutida
+    }
+  }
+  if (!hasNeuralVoice(locale)) return null;
+  if (goodDeviceVoice(await findVoice(locale), locale) && !(await neuralCached(locale))) return null;
+  const out = await synthesizeNeural(forVoice(text), locale, rate);
+  return out && { ...out, source: 'neural' };
 }
 
 /** Há como falar este idioma (voz do aparelho ou voz neural embutida)? */

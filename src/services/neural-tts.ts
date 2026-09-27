@@ -144,6 +144,19 @@ export function stopNeural() {
  * Fala com a voz neural. Devolve a duração do áudio em ms quando ele começa a tocar, ou null se não
  * deu (sem voz, erro, ou outra fala passou na frente).
  */
+/** Sintetiza sem tocar (para desenhar a melodia do modelo, por exemplo). Usa as falas recentes. */
+export async function synthesizeNeural(text: string, locale: string, rate = 1): Promise<{ samples: Float32Array; sampleRate: number } | null> {
+  const voice = neuralVoiceFor(locale);
+  if (!voice || !neuralSupported()) return null;
+  const key = `${voice.id}|${rate}|${text}`;
+  let out = recent.get(key) ?? null;
+  if (!out) {
+    out = await request('speak', voice, { text, speed: rate });
+    if (out) remember(key, out);
+  }
+  return out;
+}
+
 export async function speakNeural(text: string, locale: string, rate = 1): Promise<number | null> {
   const voice = neuralVoiceFor(locale);
   if (!voice || !neuralSupported()) return null;
@@ -152,12 +165,7 @@ export async function speakNeural(text: string, locale: string, rate = 1): Promi
   // o contexto de áudio nasce (ou acorda) dentro do toque do aluno: os navegadores só deixam tocar assim
   ctx ??= new AudioContext();
   if (ctx.state === 'suspended') ctx.resume().catch(() => {});
-  const key = `${voice.id}|${rate}|${text}`;
-  let out = recent.get(key) ?? null;
-  if (!out) {
-    out = await request('speak', voice, { text, speed: rate });
-    if (out) remember(key, out);
-  }
+  const out = await synthesizeNeural(text, locale, rate);
   if (!out || mine !== ticket || !ctx) return null;
   const buffer = ctx.createBuffer(1, out.samples.length, out.sampleRate);
   buffer.copyToChannel(out.samples as Float32Array<ArrayBuffer>, 0);
