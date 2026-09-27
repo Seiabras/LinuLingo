@@ -153,6 +153,57 @@ export const FAUNA_MUSICA: Record<string, CountryNature> = {
       { emoji: '🎶', name: 'Zampogna', local: 'zampogna', fact: 'Gaita de foles do centro e do sul da Itália, tocada pelos pastores e, no Natal, pelas ruas.', origin: 'tradicional' },
     ],
   },
+  SWE: {
+    animals: [
+      { emoji: '🫎', name: 'Alce', local: 'älg', fact: 'A Suécia tem uma das maiores populações de alces do mundo; as placas «cuidado com o alce» são símbolo das estradas do país.' },
+      { emoji: '🦡', name: 'Glutão', local: 'järv', fact: 'O maior mustelídeo terrestre, parente das doninhas, vive nas montanhas do norte da Escandinávia.' },
+      { emoji: '🦊', name: 'Raposa-do-ártico', local: 'fjällräv', fact: 'Raposa das montanhas escandinavas, branca no inverno; é uma espécie ameaçada na Suécia e protegida por programas de conservação.' },
+    ],
+    instruments: [
+      { emoji: '🎻', name: 'Nyckelharpa', local: 'nyckelharpa', fact: 'Rabeca de teclas, tocada com arco: as teclas encurtam as cordas. Um relevo de por volta de 1350 numa igreja de Gotland mostra o instrumento.', origin: 'criado' },
+      { emoji: '🎶', name: 'Gaita de foles sueca', local: 'säckpipa', fact: 'Gaita de foles pequena da região de Dalarna, que quase desapareceu no século XX e voltou com os músicos folk.', origin: 'tradicional' },
+    ],
+  },
+  NOR: {
+    animals: [
+      { emoji: '🦌', name: 'Rena-selvagem', local: 'villrein', fact: 'A Noruega guarda as últimas grandes manadas de renas selvagens de montanha da Europa, em planaltos como Hardangervidda.' },
+      { emoji: '🐂', name: 'Boi-almiscarado', local: 'moskus', fact: 'Trazido da Groenlândia no século XX, vive livre nas montanhas de Dovrefjell.' },
+      { emoji: '🐦', name: 'Papagaio-do-mar', local: 'lunde', fact: 'Ave marinha de bico colorido que faz ninho aos milhares nas ilhas e penhascos da costa norueguesa.' },
+    ],
+    instruments: [
+      { emoji: '🎻', name: 'Rabeca de Hardanger', local: 'hardingfele', fact: 'Violino norueguês com cordas extras sob as de cima, que vibram sozinhas e dão ao som um eco brilhante.', origin: 'criado' },
+      { emoji: '🎶', name: 'Langeleik', local: 'langeleik', fact: 'Cítara longa de madeira, tocada sobre a mesa, com uma corda de melodia e várias de bordão.', origin: 'tradicional' },
+    ],
+  },
+  DNK: {
+    animals: [
+      { emoji: '🦢', name: 'Cisne-branco', local: 'knopsvane', fact: 'É a ave nacional da Dinamarca, ligada ao conto «O patinho feio», de Hans Christian Andersen.' },
+      { emoji: '🦭', name: 'Foca-comum', local: 'spættet sæl', fact: 'Vive nas praias e bancos de areia do mar de Wadden e do Kattegat.' },
+    ],
+    instruments: [
+      { emoji: '📯', name: 'Lur de bronze', local: 'lur', fact: 'Trompas longas e curvas da Idade do Bronze; muitas foram achadas em pares nos pântanos da Dinamarca.', origin: 'tradicional' },
+    ],
+  },
+  ISL: {
+    animals: [
+      { emoji: '🐴', name: 'Cavalo islandês', local: 'íslenski hesturinn', fact: 'Raça pequena e robusta, com um andar a mais, o tölt; há mais de mil anos a Islândia não recebe outros cavalos.' },
+      { emoji: '🐦', name: 'Papagaio-do-mar', local: 'lundi', fact: 'Uma grande parte dos papagaios-do-mar do mundo faz ninho na Islândia.' },
+      { emoji: '🦊', name: 'Raposa-do-ártico', local: 'tófa', fact: 'Era o único mamífero terrestre da ilha antes da chegada das pessoas.' },
+    ],
+    instruments: [
+      { emoji: '🎻', name: 'Langspil', local: 'langspil', fact: 'Cítara comprida islandesa, tocada com arco ou dedilhada, sobre a mesa ou os joelhos.', origin: 'criado' },
+      { emoji: '🎻', name: 'Fiðla', local: 'fiðla', fact: 'Rabeca islandesa de duas cordas, apoiada no colo e tocada com arco.', origin: 'criado' },
+    ],
+  },
+  FRO: {
+    animals: [
+      { emoji: '🐑', name: 'Ovelha feroesa', local: 'seyður', fact: 'O nome das ilhas, Føroyar, costuma ser explicado como «ilhas das ovelhas»; há mais ovelhas do que pessoas.' },
+      { emoji: '🐦', name: 'Ostraceiro', local: 'tjaldur', fact: 'A ave nacional das Ilhas Faroé; a chegada dela anuncia a primavera.' },
+    ],
+    instruments: [
+      { emoji: '🎶', name: 'Canto da dança em roda', local: 'kvæði', fact: 'Na dança tradicional feroesa, a roda canta baladas longas, muitas medievais, sem nenhum instrumento: a voz e os pés marcam o ritmo.', origin: 'tradicional' },
+    ],
+  },
   RUS: {
     animals: [
       { emoji: '🐅', name: 'Tigre-siberiano', local: 'амурский тигр', fact: 'O maior felino do mundo vive no extremo leste da Rússia.' },
@@ -210,4 +261,4 @@ export const FAUNA_MUSICA: Record<string, CountryNature> = {
 };
 
 /** Países «de origem» de cada idioma do app (seção Bichos e sons da aba Cultura). */
-export const HOMELANDS: Record<string, string[]> = { ro: ['ROU', 'MDA'], ru: ['RUS'], es: ['ESP', 'MEX', 'COL', 'ARG', 'PER', 'CHL', 'CUB'], it: ['ITA'], pt: ['BRA', 'PRT'], fi: ['FIN'], et: ['EST'], ja: ['JPN'], ko: ['KOR'], en: ['GBR'] };
+export const HOMELANDS: Record<string, string[]> = { ro: ['ROU', 'MDA'], ru: ['RUS'], es: ['ESP', 'MEX', 'COL', 'ARG', 'PER', 'CHL', 'CUB'], it: ['ITA'], sv: ['SWE'], nb: ['NOR'], nn: ['NOR'], da: ['DNK'], is: ['ISL'], fo: ['FRO'], pt: ['BRA', 'PRT'], fi: ['FIN'], et: ['EST'], ja: ['JPN'], ko: ['KOR'], en: ['GBR'] };

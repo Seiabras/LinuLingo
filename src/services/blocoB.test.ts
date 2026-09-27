@@ -127,3 +127,11 @@ test('diário (português de Portugal): estar a + infinitivo e ênclise', () => 
   assert.equal(checkJournal('Me chamo Ana. Te digo já.', empty, 'pt').corrected, 'Chamo-me Ana. Digo-te já.');
   assert.equal(checkJournal('Ela está a ler e não me diz nada.', empty, 'pt').corrected, 'Ela está a ler e não me diz nada.');
 });
+
+test('diário (sueco): en/ett pelo gênero do vocabulário', () => {
+  const lexSv = buildLexicon([], [
+    { word: 'hus', gender: 'n' },
+    { word: 'bil', gender: 'm' },
+  ]);
+  assert.equal(checkJournal('Jag har en hus och ett bil.', lexSv, 'sv').corrected, 'Jag har ett hus och en bil.');
+});

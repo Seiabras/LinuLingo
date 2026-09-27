@@ -38,6 +38,18 @@ export function roomsFor(lang: string): Record<Gender, Room> {
       f: { ...ROOMS.f, rule: 'Feminino: quase todas em -a, e as em -ción/-sión, -dad/-tad, -tud e -umbre (la costumbre, la legumbre). Exceções clássicas: la mano, la radio, la foto, la moto.' },
       n: ROOMS.n,
     };
+  if (lang === 'sv')
+    return {
+      m: { ...ROOMS.m, rule: 'Gênero comum (en-ord): cerca de 3 de cada 4 substantivos, com «en» e a forma definida em -en/-n (en bil → bilen). Pessoas, animais e quase todas em -a, -are, -het, -ing, -else.' },
+      f: ROOMS.f,
+      n: {
+        ...ROOMS.n,
+        name: 'O Jardim',
+        emoji: '🌿',
+        scene: 'Um jardim âmbar à beira de um lago sueco, com uma casinha vermelha de madeira.',
+        rule: 'Neutro (ett-ord): «ett» e a forma definida em -et/-t (ett hus → huset). Muitas em -eri, -um, -ment e os infinitivos que viram substantivo (ett leende).',
+      },
+    };
   if (lang === 'pt')
     return {
       m: { ...ROOMS.m, rule: 'Masculino: quase todas em -o, as em -ema/-ama de origem grega (o problema, o programa) e muitas em -e, -r, -l (o leite, o mar, o sal). Em Portugal também: o ecrã, o autocarro, o comboio.' },
@@ -100,6 +112,8 @@ const HETERO_IT: Record<string, string> = {
 
 /** Texto do Linu na entrada do palácio. */
 export function palaceIntro(lang: string): string {
+  if (lang === 'sv')
+    return 'O sueco tem 2 gêneros, mas não são masculino e feminino: é o «en» (gênero comum) e o «ett» (neutro). Não dá para adivinhar pelo sentido, então decore cada palavra com o artigo: en bil, ett hus. Guarde cada uma na sala certa!';
   if (lang === 'pt')
     return 'Você já sabe os gêneros do português! Aqui o desafio são as palavras de Portugal que você ainda não usa: o autocarro, o comboio, a casa de banho, o ecrã, a bica, o pequeno-almoço. Guarde cada uma na sala certa!';
   if (lang === 'it')
@@ -114,6 +128,11 @@ export function palaceIntro(lang: string): string {
 /** Dica específica para a palavra, a partir da terminação. */
 export function genderTip(word: string, gender: Gender, lang = 'ro'): string {
   const w = word.toLowerCase().replace(/\u0301/g, '');
+  if (lang === 'sv') {
+    if (/(het|ing|else|are|a)$/.test(w) && gender === 'm') return 'Terminou em -het, -ing, -else, -are ou -a? Quase sempre en-ord: en frihet, en tidning, en lärare, en flicka.';
+    if (/(eri|um|ment)$/.test(w) && gender === 'n') return 'Terminou em -eri, -um ou -ment? Quase sempre ett-ord: ett bageri, ett museum, ett dokument.';
+    return roomsFor('sv')[gender].rule;
+  }
   if (lang === 'pt') {
     if (w.endsWith('ção') || w.endsWith('são') || w.endsWith('agem')) return 'Terminou em -ção, -são ou -agem? Feminino, nos dois lados do Atlântico: a receção, a viagem.';
     if (gender === 'm' && /(ema|ama)$/.test(w)) return 'Palavra de origem grega em -ema/-ama: masculina, como o problema, o programa, o sistema.';

@@ -246,3 +246,22 @@ test('pt: dicionário de pronúncia cobre toda palavra europeia do app, com a t�
   const { europeanTexts } = await import('./pt/textos');
   assert.deepEqual(pronunciationProblemsPt(PRON_PT, europeanTexts(PACKS.pt)).slice(0, 10), []);
 });
+
+// idiomas cuja IPA vem de um dicionário por forma (src/data/<idioma>/pronuncia.ts)
+const LEXICON_LANGS = ['sv', 'nb', 'da', 'is', 'fo', 'fi', 'et'];
+for (const code of LEXICON_LANGS.filter((c) => PACKS[c])) {
+  test(`${code}: texto sem letras nem palavras de línguas vizinhas`, async () => {
+    const { nordicTextProblems } = await import('../services/texto-nordico');
+    const { targetTexts } = await import('./textos-alvo');
+    const problems = targetTexts(PACKS[code]).flatMap((t) => nordicTextProblems(code, t).map((p) => `«${t.slice(0, 40)}»: ${p}`));
+    assert.deepEqual(problems.slice(0, 10), []);
+  });
+
+  test(`${code}: toda palavra do app tem IPA no dicionário, com a tônica marcada`, async () => {
+    const { ipaLexiconProblems } = await import('../services/ipa-lexicon');
+    const { targetTexts } = await import('./textos-alvo');
+    const mod = await import(`./${code}/pronuncia`);
+    const lex = Object.values(mod)[0] as Record<string, string>;
+    assert.deepEqual(ipaLexiconProblems(lex, targetTexts(PACKS[code])).slice(0, 10), []);
+  });
+}

@@ -1,4 +1,6 @@
 import type { LanguagePack } from '../types';
+import { PARES_PT } from './pares';
+import { BICHOS_PT_PT } from './bichos';
 import { VOCAB_PT } from './vocabulario';
 import { UNITS_PT } from './curriculo';
 import { GRAMMAR_PT } from './gramatica';
@@ -45,6 +47,8 @@ export const PORTUGUES: LanguagePack = {
   shadowing: SHADOWING_PT,
   ipa: (t) => toIpaPt(t, 'PT'),
   specialChars: ['á', 'à', 'â', 'ã', 'ç', 'é', 'ê', 'í', 'ó', 'ô', 'õ', 'ú', '-'],
+  minimalPairs: PARES_PT,
+  animalSounds: BICHOS_PT_PT,
   falseFriends: FALSE_FRIENDS_PT,
   // o português não tem substantivos neutros: a sala do Jardim fica fechada no palácio
   genders: ['m', 'f'],

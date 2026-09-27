@@ -17,6 +17,7 @@ O mascote é o **Linu**, um pinguim-de-barbicha (*Pygoscelis antarctica*).
 | 🇪🇸 Espanhol | Indo-europeu › Itálico › Românico › Ibero-românico | **disponível** |
 | 🇮🇹 Italiano | Indo-europeu › Itálico › Românico › Ítalo-dálmata | **disponível** |
 | 🇵🇹 Português de Portugal | Indo-europeu › Itálico › Românico › Ibero-românico › Galego-português | **disponível** |
+| 🇸🇪 Sueco | Indo-europeu › Germânico › Germânico setentrional › Nórdico oriental | **disponível** |
 | 🇬🇧 Inglês | Indo-europeu › Germânico › Germânico ocidental | em breve |
 | 🇫🇮 Finlandês | Urálico › Fínico › Fínico setentrional | em breve |
 | 🇪🇪 Estoniano | Urálico › Fínico › Fínico meridional | em breve |
@@ -68,6 +69,13 @@ Cada idioma mostra os seus jeitos regionais de falar (18 no espanhol, 5 no romen
 - **IPA em duas normas** (src/services/ipa-pt.ts): Portugal (vogais átonas reduzidas, «s» chiado, «r» uvular, «l» velar, «ei» [ɐj]) e Brasil (t/d antes de [i] → [tʃ dʒ], «l» final [w]); a variante escolhida na aba Cultura troca a IPA e a voz. Dicionário de pronúncia com 8.038 formas (timbre de Portugal: déve, pôrto, nóva).
 - **Diário** que corrige «estou fazendo» → «estou a fazer» e «Me chamo» → «Chamo-me»; verificador que aponta brasileirismos no texto europeu; **voz**: a de Portugal ganha de uma brasileira mais natural (a pronúncia muda demais).
 - Gravações de nativos só de falantes que moram em Portugal (scripts/falantes-por-pais.mjs).
+
+## O que tem no sueco
+
+- 4.254 palavras (gênero en/ett, formas irregulares na tradução), 15 unidades, 40 tópicos de gramática (V2, forma definida, o «inte» na subordinada, verbos com partícula, s-passiv, klarspråk, Strindberg, Lagerlöf, Bellman), 48 histórias (de Gamla stan a Kiruna e Abisko, Gotland, Åland e a Finlândia sueca, Minnesota), 43 falsos amigos (god, rolig, semester, gift, glass…), 126 etimologias, 15 sotaques e línguas minoritárias (skånska, gotländska, finlandssvenska, älvdalska, meänkieli, sámi…), variantes da Suécia e da Finlândia.
+- **IPA por dicionário** (src/services/ipa-lexicon.ts + src/data/sv/pronuncia.ts): a escrita não mostra a quantidade das vogais nem os dois acentos tonais, então cada uma das 9.353 formas do app tem a sua transcrição (tom 2 com circunflexo); o teste exige IPA para toda palavra sueca.
+- **Palácio** com gênero comum (en) e neutro (ett); **diário** que corrige «en hus» → «ett hus»; pares mínimos (tak × tack, glas × glass, by × bi, kål × kol) e os bichos em sueco (voff voff, kuckeliku).
+- Verificadores genéricos das nórdicas (scripts/checar-vocab-nordico.ts, checar-conteudo-nordico.ts, checar-ipa-nordico.ts): letras e palavras de línguas vizinhas (ø, æ, «ikke» no sueco; ä, ö, «och», «inte» no norueguês e no dinamarquês).
 
 ## O que tem no russo
 
@@ -179,6 +187,7 @@ npx tsx scripts/fluxo-trilha.mjs          # faixa de subníveis e teste para pul
 node scripts/fluxo-linguistica.mjs        # áreas da língua, quadro do IPA e aulas
 npx tsx scripts/fluxo-russo.mjs           # russo: troca de idioma, cirílico, IPA, teclado, diário
 npx tsx scripts/fluxo-espanhol.mjs        # espanhol: falsos amigos, palácio, variante da Espanha ([θ]), linguística, diário
+npx tsx scripts/fluxo-sueco.mjs           # sueco: palácio en/ett, variante da Finlândia, diário (en/ett), IPA
 npx tsx scripts/fluxo-portugues.mjs        # português de Portugal: variante do Brasil (IPA), diário (estar a, ênclise), falsos amigos
 npx tsx scripts/fluxo-italiano.mjs        # italiano: falsos amigos, IPA, palácio, variante da Suíça, linguística, diário
 node scripts/fluxo-mapa.mjs                # mapa ISO 3166-1/3166-3, zoom nas subdivisões e variante da Moldávia

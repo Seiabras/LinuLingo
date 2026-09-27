@@ -55,7 +55,7 @@ function restoreDiacritics(token: string, lex: JournalLexicon): string | null {
 const NUMBER = /^(\d+|doi|două|trei|patru|cinci|șase|sase|șapte|sapte|opt|nouă|noua|zece|unsprezece|doisprezece|cincisprezece|douăzeci|douazeci|treizeci|patruzeci|cincizeci|o)$/i;
 const STATES: Record<string, string> = { foame: 'foame', sete: 'sete', frig: 'frig', cald: 'cald', frica: 'frică', frică: 'frică', somn: 'somn' };
 
-const LANG_NAME: Record<string, string> = { ro: 'romeno', ru: 'russo', es: 'espanhol', it: 'italiano', pt: 'português de Portugal' };
+const LANG_NAME: Record<string, string> = { ro: 'romeno', ru: 'russo', es: 'espanhol', it: 'italiano', pt: 'português de Portugal', sv: 'sueco' };
 
 // português de Portugal: estar + gerúndio → estar a + infinitivo; pronome átono no começo da frase → ênclise
 const ESTAR_PT = new Set(['estou', 'estás', 'está', 'estamos', 'estão', 'estava', 'estavas', 'estávamos', 'estavam', 'estive', 'esteve', 'estar']);
@@ -171,6 +171,20 @@ export function checkJournal(text: string, lex: JournalLexicon, lang = 'ro'): { 
       if (w === 'gusta' && (nx === 'los' || nx === 'las')) {
         issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: `${matchCase(parts[i], 'gustan')} ${parts[j]}`, why: '«Gustar» concorda com a coisa de que se gosta: me gusta el café, mas me gustan los perros.' });
         parts[i] = matchCase(parts[i], 'gustan');
+      }
+      continue;
+    }
+    if (lang === 'sv') {
+      // en/ett pelo gênero do vocabulário: en bil, ett hus
+      const w = raw(i);
+      const g = j >= 0 ? lex.gender.get(raw(j)) : undefined;
+      if ((w === 'en' || w === 'ett') && (g === 'm' || g === 'n')) {
+        const right = g === 'n' ? 'ett' : 'en';
+        if (right !== w) {
+          const fix = matchCase(parts[i], right);
+          issues.push({ kind: 'gênero', original: `${parts[i]} ${parts[j]}`, suggestion: `${fix} ${parts[j]}`, why: `«${parts[j]}» é uma ${g === 'n' ? 'ett-ord (neutro)' : 'en-ord (gênero comum)'}: ${fix} ${parts[j]}. Decore cada substantivo junto com o artigo.` });
+          parts[i] = fix;
+        }
       }
       continue;
     }

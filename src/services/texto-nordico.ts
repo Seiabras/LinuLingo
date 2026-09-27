@@ -16,6 +16,15 @@ const FOREIGN: Record<string, RegExp> = {
   et: /[æøðþåãçñÆØÐÞÅ]/, // estoniano: õ ä ö ü š ž
 };
 
+/** Palavras muito frequentes de um vizinho que denunciam mistura (fora de citações). */
+const NEIGHBOR_WORDS: Record<string, string[]> = {
+  // «og» e «jeg» ficam de fora no sueco: a unidade de intercompreensão tem uma fala em norueguês de propósito
+  sv: ['ikke', 'også'], // «hvad» era a grafia sueca antes da reforma de 1906
+  nb: ['och', 'inte', 'jag', 'också', 'någon'],
+  nn: ['och', 'inte', 'jag', 'också', 'någon'],
+  da: ['och', 'inte', 'jag', 'också', 'någon'],
+};
+
 const NAMES: Record<string, string> = { sv: 'sueco', nb: 'bokmål', nn: 'nynorsk', da: 'dinamarquês', is: 'islandês', fo: 'feroês', fi: 'finlandês', et: 'estoniano' };
 
 /** Nomes próprios de lugares de outros idiomas que podem aparecer no texto (citados). */
@@ -30,5 +39,7 @@ export function nordicTextProblems(lang: string, raw: string): string[] {
   const m = re ? text.match(re) : null;
   if (m) out.push(`«${m[0]}» não existe em ${NAMES[lang] ?? lang} (letra de outra língua?)`);
   if (/[Ѐ-ӿ]/.test(text)) out.push('letra cirílica');
+  for (const w of NEIGHBOR_WORDS[lang] ?? [])
+    if (new RegExp(`(?<![\\p{L}])${w}(?![\\p{L}])`, 'iu').test(text)) out.push(`«${w}» é de uma língua vizinha, não de ${NAMES[lang] ?? lang}`);
   return out;
 }

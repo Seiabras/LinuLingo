@@ -867,7 +867,7 @@ function MiniMap({ highlight, color, dark }: { highlight: string[]; color: strin
 
 /** Locale de voz para o nome local (só onde o idioma é do app). */
 function localeFor(iso: string): string | null {
-  return ({ ROU: 'ro-RO', MDA: 'ro-RO', RUS: 'ru-RU', ESP: 'es-ES', MEX: 'es-MX', ARG: 'es-AR', ITA: 'it-IT', SMR: 'it-IT', VAT: 'it-IT', PRT: 'pt-PT', BRA: 'pt-BR', AGO: 'pt-PT', MOZ: 'pt-PT', CPV: 'pt-PT', GNB: 'pt-PT', STP: 'pt-PT', TLS: 'pt-PT', FIN: 'fi-FI', EST: 'et-EE', JPN: 'ja-JP', KOR: 'ko-KR' } as Record<string, string>)[iso] ?? null;
+  return ({ ROU: 'ro-RO', MDA: 'ro-RO', RUS: 'ru-RU', ESP: 'es-ES', MEX: 'es-MX', ARG: 'es-AR', ITA: 'it-IT', SMR: 'it-IT', VAT: 'it-IT', PRT: 'pt-PT', BRA: 'pt-BR', AGO: 'pt-PT', MOZ: 'pt-PT', CPV: 'pt-PT', GNB: 'pt-PT', STP: 'pt-PT', TLS: 'pt-PT', SWE: 'sv-SE', ALA: 'sv-FI', NOR: 'nb-NO', SJM: 'nb-NO', DNK: 'da-DK', ISL: 'is-IS', FRO: 'fo-FO', FIN: 'fi-FI', EST: 'et-EE', JPN: 'ja-JP', KOR: 'ko-KR' } as Record<string, string>)[iso] ?? null;
 }
 
 function NatureList({ items, locale }: { items: import('@/data/fauna-musica').NatureItem[]; locale: string | null }) {
