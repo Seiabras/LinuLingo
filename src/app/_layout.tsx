@@ -7,6 +7,7 @@ import { SQLiteProvider } from 'expo-sqlite';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { DB_NAME, initDatabase } from '@/database/db';
 import { AppStateProvider } from '@/services/app-state';
+import { StickerToast } from '@/components/StickerToast';
 // guarda desde o início o aviso do navegador de que o app pode ser instalado
 import '@/services/pwa';
 
@@ -46,6 +47,7 @@ export default function RootLayout() {
               <Stack.Screen name="pares" />
               <Stack.Screen name="erros" />
               <Stack.Screen name="bichos" />
+              <Stack.Screen name="album" />
               <Stack.Screen name="creditos" />
               <Stack.Screen name="gramatica/[id]" />
               <Stack.Screen name="linguistica/[area]" />
@@ -53,6 +55,7 @@ export default function RootLayout() {
               <Stack.Screen name="linguistica/aula/[id]" />
               <Stack.Screen name="mapa" />
             </Stack>
+            <StickerToast />
           </AppStateProvider>
         </SQLiteProvider>
       </Suspense>

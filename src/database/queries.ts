@@ -3,6 +3,7 @@ import { LOCAL_USER_ID } from './schema';
 import { calculateNextReview, newCard, type SRSCard } from '@/srs/sm2';
 import { localDay, registerStudy, type StreakResult } from '@/services/progress';
 import type { CommunityFeedback, CultureHistoryNote, EtymologyTree, User, VocabWithSRS } from '@/types';
+import { grantSticker, MIN_XP } from '@/services/album';
 
 const uid = LOCAL_USER_ID;
 
@@ -36,6 +37,8 @@ export async function awardXp(db: SQLiteDatabase, xp: number, source: string): P
     xp, streak.streak, streak.freezes, today, uid,
   );
   await db.runAsync('INSERT INTO XP_Log (user_id, day, xp, source) VALUES (?, ?, ?, ?)', uid, today, xp, source);
+  // cada atividade concluída dá uma figurinha do álbum (o aviso aparece em qualquer tela)
+  if (xp >= MIN_XP) await grantSticker(db, user.current_language).catch(() => null);
   return streak;
 }
 

@@ -16,6 +16,7 @@ import { localDay } from '@/services/progress';
 import type { CultureCardSeed, LessonKind } from '@/data/types';
 import { useIsDark } from '@/services/theme';
 import { openMistakeCount } from '@/services/mistakes';
+import { albumStats, loadAlbum, STICKERS } from '@/services/album';
 
 export default function HomeScreen() {
   const { db, pack, user, streak, refresh, accent } = useApp();
@@ -36,6 +37,8 @@ export default function HomeScreen() {
   const [noVoice, setNoVoice] = useState(false);
   const [journalToday, setJournalToday] = useState(false);
   const [mistakes, setMistakes] = useState(0);
+  const [stickers, setStickers] = useState(0);
+  const ALBUM_PRACTICE = { route: '/album' as const, emoji: '📒', title: 'Álbum', text: `${stickers} de ${STICKERS.length} figurinhas` };
 
   useFocusEffect(
     useCallback(() => {
@@ -48,6 +51,7 @@ export default function HomeScreen() {
         findVoice(pack.speechLocale).then((v) => alive && setNoVoice(v === null));
         journalDoneToday(db, pack.code, localDay()).then((d) => alive && setJournalToday(d));
         openMistakeCount(db, pack.code).then((n) => alive && setMistakes(n));
+        loadAlbum(db).then((a) => alive && setStickers(albumStats(a).owned));
         const [done, stats, peerCount, days] = await Promise.all([
           completedLessons(db),
           vocabStats(db, pack.code),
@@ -125,7 +129,7 @@ export default function HomeScreen() {
 
       <Text className="mb-2 mt-5 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">Mais práticas</Text>
       <View className="flex-row flex-wrap gap-2">
-        {[...(pack.alphabet ? [ALPHABET_PRACTICE] : []), ...(pack.falseFriends ? [FALSE_FRIENDS_PRACTICE] : []), ...(ACCENT_PRACTICE ? [ACCENT_PRACTICE] : []), ...PRACTICES.slice(0, 1), ...(PAIRS_PRACTICE ? [PAIRS_PRACTICE] : []), MISTAKES_PRACTICE, ...PRACTICES.slice(1), ...(ANIMALS_PRACTICE ? [ANIMALS_PRACTICE] : [])].map((p) => (
+        {[...(pack.alphabet ? [ALPHABET_PRACTICE] : []), ...(pack.falseFriends ? [FALSE_FRIENDS_PRACTICE] : []), ...(ACCENT_PRACTICE ? [ACCENT_PRACTICE] : []), ...PRACTICES.slice(0, 1), ...(PAIRS_PRACTICE ? [PAIRS_PRACTICE] : []), MISTAKES_PRACTICE, ...PRACTICES.slice(1), ...(ANIMALS_PRACTICE ? [ANIMALS_PRACTICE] : []), ALBUM_PRACTICE].map((p) => (
           <Pressable
             key={p.route}
             accessibilityRole="button"
