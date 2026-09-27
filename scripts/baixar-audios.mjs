@@ -13,6 +13,7 @@ const LANGS = {
   ro: { wikidata: 'Q7913', iso3: 'ron', category: 'Lingua_Libre_pronunciation-ron' },
   ru: { wikidata: 'Q7737', iso3: 'rus', category: 'Lingua_Libre_pronunciation-rus' },
   es: { wikidata: 'Q1321', iso3: 'spa', category: 'Lingua_Libre_pronunciation-spa' },
+  it: { wikidata: 'Q652', iso3: 'ita', category: 'Lingua_Libre_pronunciation-ita' },
 };
 const lang = process.argv[2] ?? 'ro';
 const cfg = LANGS[lang];

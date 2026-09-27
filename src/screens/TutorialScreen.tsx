@@ -49,7 +49,7 @@ export default function TutorialScreen() {
           {
             mood: 'pensando' as const,
             title: 'Cuidado com os falsos amigos',
-            text: `O ${pack.name.toLowerCase()} parece fácil porque quase tudo se parece com o português, e é aí que mora a armadilha: «${pack.falseFriends[0].word}» quer dizer «${pack.falseFriends[0].means}», não «${pack.falseFriends[0].looksLike}». No treino «🪤 Falsos amigos» (em Mais práticas) você vê a lista com exemplos e joga 10 perguntas; as palavras que você erra voltam mais vezes. No vocabulário, as que mudam de gênero (el viaje, la leche) também vêm marcadas.`,
+            text: `O ${pack.name.toLowerCase()} parece fácil porque quase tudo se parece com o português, e é aí que mora a armadilha: «${pack.falseFriends[0].word}» quer dizer «${pack.falseFriends[0].means}», não «${pack.falseFriends[0].looksLike}». No treino «🪤 Falsos amigos» (em Mais práticas) você vê a lista com exemplos e joga 10 perguntas; as palavras que você erra voltam mais vezes. No vocabulário, ${pack.code === 'it' ? 'as que mudam de gênero (il fiore) ou de gênero no plural (l’uovo → le uova)' : 'as que mudam de gênero (el viaje, la leche)'} também vêm marcadas.`,
           },
         ]
       : []),

@@ -140,6 +140,19 @@ export const FAUNA_MUSICA: Record<string, CountryNature> = {
       { emoji: '🎸', name: 'Tres cubano', local: 'tres', fact: 'Violão de três pares de cordas que faz os solos do son.', origin: 'criado' },
     ],
   },
+  ITA: {
+    animals: [
+      { emoji: '🐺', name: 'Lobo-dos-apeninos', local: 'lupo appenninico', fact: 'Subespécie de lobo da Península Itálica. Quase desapareceu nos anos 1970 e, protegido, voltou a ocupar os Apeninos e parte dos Alpes.' },
+      { emoji: '🐻', name: 'Urso-pardo-marsicano', local: 'orso bruno marsicano', fact: 'Subespécie de urso-pardo que só existe nos Apeninos centrais, sobretudo no Parque Nacional de Abruzzo, Lácio e Molise.' },
+      { emoji: '🐐', name: 'Íbex-dos-alpes', local: 'stambecco', fact: 'Cabra-montesa de chifres enormes. No século XIX restavam poucas dezenas, na região do Gran Paradiso; todas as populações dos Alpes descendem delas.' },
+    ],
+    instruments: [
+      { emoji: '🎹', name: 'Piano', local: 'pianoforte', fact: 'Inventado em Florença por volta de 1700 por Bartolomeo Cristofori. O nome vem de tocar «piano e forte»: baixo e alto.', origin: 'criado' },
+      { emoji: '🎻', name: 'Violino', local: 'violino', fact: 'Ganhou sua forma no norte da Itália no século XVI; em Cremona trabalharam os luthiers Amati, Stradivari e Guarneri.', origin: 'criado' },
+      { emoji: '🪕', name: 'Bandolim napolitano', local: 'mandolino', fact: 'O bandolim de quatro pares de cordas nasceu em Nápoles no século XVIII.', origin: 'criado' },
+      { emoji: '🎶', name: 'Zampogna', local: 'zampogna', fact: 'Gaita de foles do centro e do sul da Itália, tocada pelos pastores e, no Natal, pelas ruas.', origin: 'tradicional' },
+    ],
+  },
   RUS: {
     animals: [
       { emoji: '🐅', name: 'Tigre-siberiano', local: 'амурский тигр', fact: 'O maior felino do mundo vive no extremo leste da Rússia.' },
@@ -197,4 +210,4 @@ export const FAUNA_MUSICA: Record<string, CountryNature> = {
 };
 
 /** Países «de origem» de cada idioma do app (seção Bichos e sons da aba Cultura). */
-export const HOMELANDS: Record<string, string[]> = { ro: ['ROU', 'MDA'], ru: ['RUS'], es: ['ESP', 'MEX', 'COL', 'ARG', 'PER', 'CHL', 'CUB'], pt: ['BRA', 'PRT'], fi: ['FIN'], et: ['EST'], ja: ['JPN'], ko: ['KOR'], en: ['GBR'] };
+export const HOMELANDS: Record<string, string[]> = { ro: ['ROU', 'MDA'], ru: ['RUS'], es: ['ESP', 'MEX', 'COL', 'ARG', 'PER', 'CHL', 'CUB'], it: ['ITA'], pt: ['BRA', 'PRT'], fi: ['FIN'], et: ['EST'], ja: ['JPN'], ko: ['KOR'], en: ['GBR'] };

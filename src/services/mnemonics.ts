@@ -38,6 +38,12 @@ export function roomsFor(lang: string): Record<Gender, Room> {
       f: { ...ROOMS.f, rule: 'Feminino: quase todas em -a, e as em -ción/-sión, -dad/-tad, -tud e -umbre (la costumbre, la legumbre). Exceções clássicas: la mano, la radio, la foto, la moto.' },
       n: ROOMS.n,
     };
+  if (lang === 'it')
+    return {
+      m: { ...ROOMS.m, rule: 'Masculino: quase todas em -o (il libro), muitas em -e (il fiore, il pane) e as de origem grega em -ma (il problema, il tema). Plural em -i.' },
+      f: { ...ROOMS.f, rule: 'Feminino: quase todas em -a (la casa), as em -zione/-sione (la stazione), -tà/-tù (la città, la virtù) e -i (la crisi). Exceções: la mano, la radio, la foto, la moto.' },
+      n: ROOMS.n,
+    };
   if (lang !== 'ru') return ROOMS;
   return {
     m: { ...ROOMS.m, rule: 'Masculino: termina em consoante ou em -й (дом, чай, музе́й). Alguns em -ь também (слова́рь, день).' },
@@ -68,8 +74,28 @@ const HETERO_ES: Record<string, string> = {
   señal: 'Atenção: la señal é feminino (o sinal).',
 };
 
+/** Italiano: gênero diferente do português (ou armadilha de gênero). */
+const HETERO_IT: Record<string, string> = {
+  fiore: 'Atenção: il fiore é masculino (a flor).',
+  carcere: 'Atenção: il carcere é masculino (a prisão, o cárcere).',
+  pepe: 'Atenção: il pepe é masculino (a pimenta-do-reino).',
+  latte: 'Il latte é masculino, como «o leite» — igual ao português (no espanhol é feminino).',
+  mare: 'Il mare é masculino, como em português.',
+  problema: 'Termina em -a, mas é masculino: il problema (plural: i problemi).',
+  mano: 'Termina em -o, mas é feminina: la mano (plural: le mani).',
+  uovo: 'Masculino no singular (l’uovo) e feminino no plural: le uova!',
+  braccio: 'Masculino no singular (il braccio) e feminino no plural: le braccia.',
+  dito: 'Masculino no singular (il dito) e feminino no plural: le dita.',
+  labbro: 'Masculino no singular (il labbro) e feminino no plural: le labbra.',
+  ginocchio: 'Masculino no singular (il ginocchio) e, no plural do corpo, feminino: le ginocchia.',
+  osso: 'Masculino no singular (l’osso) e, no plural do corpo, feminino: le ossa.',
+  lenzuolo: 'Masculino no singular (il lenzuolo) e, no par da cama, feminino: le lenzuola.',
+};
+
 /** Texto do Linu na entrada do palácio. */
 export function palaceIntro(lang: string): string {
+  if (lang === 'it')
+    return 'O italiano tem 2 gêneros, como o português, e quase sempre a terminação entrega: -o masculino, -a feminino. O perigo mora nas em -e (il fiore, la notte) e nos plurais que trocam de gênero: l’uovo → le uova. Guarde cada uma na sala certa!';
   if (lang === 'es')
     return 'O espanhol tem 2 gêneros, como o português, mas muitas palavras trocam de gênero de uma língua para a outra: el viaje, la leche, el árbol, la nariz. Guarde cada uma na sala certa!';
   return lang === 'ru'
@@ -80,6 +106,14 @@ export function palaceIntro(lang: string): string {
 /** Dica específica para a palavra, a partir da terminação. */
 export function genderTip(word: string, gender: Gender, lang = 'ro'): string {
   const w = word.toLowerCase().replace(/\u0301/g, '');
+  if (lang === 'it') {
+    if (HETERO_IT[w]) return HETERO_IT[w];
+    if (w.endsWith('zione') || w.endsWith('sione')) return 'Terminou em -zione/-sione? Feminino: la stazione, la televisione (como «a estação» em português).';
+    if (/(tà|tù)$/.test(w)) return 'Terminou em -tà/-tù? Feminino e invariável no plural: la città → le città.';
+    if (gender === 'm' && w.endsWith('ma')) return 'Palavra de origem grega em -ma: masculina, como il problema, il tema, il programma.';
+    if (w.endsWith('e')) return gender === 'm' ? 'Termina em -e: pode ser dos dois gêneros. Esta é masculina (como il fiore, il pane). Decore com o artigo!' : 'Termina em -e: pode ser dos dois gêneros. Esta é feminina (como la notte, la chiave). Decore com o artigo!';
+    return roomsFor('it')[gender].rule;
+  }
   if (lang === 'es') {
     if (w.endsWith('aje')) return 'Terminou em -aje? Masculino: el viaje, el paisaje, el garaje (em português é feminino: a viagem).';
     if (w.endsWith('umbre')) return 'Terminou em -umbre? Feminino: la costumbre, la legumbre (em português: o costume, o legume).';

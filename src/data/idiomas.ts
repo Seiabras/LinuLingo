@@ -2,15 +2,17 @@ import type { LanguageInfo, LanguagePack } from './types';
 import { ROMENO } from './ro';
 import { RUSSO } from './ru';
 import { ESPANHOL } from './es';
+import { ITALIANO } from './it';
 
 /** Idiomas com conteúdo pronto. */
-export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL };
+export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
   ROMENO,
   RUSSO,
   ESPANHOL,
+  ITALIANO,
   {
     code: 'en', name: 'Inglês', nativeName: 'English', flag: '🇬🇧',
     lineage: { family: 'Indo-europeu', branches: ['Germânico', 'Germânico ocidental', 'Anglo-frísio'], region: 'Ilhas Britânicas', writing: 'Alfabeto latino' },

@@ -55,7 +55,24 @@ function restoreDiacritics(token: string, lex: JournalLexicon): string | null {
 const NUMBER = /^(\d+|doi|două|trei|patru|cinci|șase|sase|șapte|sapte|opt|nouă|noua|zece|unsprezece|doisprezece|cincisprezece|douăzeci|douazeci|treizeci|patruzeci|cincizeci|o)$/i;
 const STATES: Record<string, string> = { foame: 'foame', sete: 'sete', frig: 'frig', cald: 'cald', frica: 'frică', frică: 'frică', somn: 'somn' };
 
-const LANG_NAME: Record<string, string> = { ro: 'romeno', ru: 'russo', es: 'espanhol' };
+const LANG_NAME: Record<string, string> = { ro: 'romeno', ru: 'russo', es: 'espanhol', it: 'italiano' };
+
+// italiano: o artigo certo depende do gênero e do começo da palavra (lo studente, l’amico, un’amica)
+const ART_IT: Record<string, { g: 'm' | 'f'; indef: boolean }> = {
+  il: { g: 'm', indef: false },
+  lo: { g: 'm', indef: false },
+  la: { g: 'f', indef: false },
+  un: { g: 'm', indef: true },
+  uno: { g: 'm', indef: true },
+  una: { g: 'f', indef: true },
+};
+function articleIt(g: 'm' | 'f', noun: string, indef: boolean): string {
+  const vowel = /^[aeiouàèéìòóùh]/i.test(noun);
+  const strong = /^(s[^aeiouàèéìòóù]|z|gn|ps|pn|x|y)/i.test(noun);
+  if (g === 'm') return vowel ? (indef ? 'un' : 'l’') : strong ? (indef ? 'uno' : 'lo') : indef ? 'un' : 'il';
+  return vowel ? (indef ? 'un’' : 'l’') : indef ? 'una' : 'la';
+}
+const NUMBER_IT = /^(\d+|due|tre|quattro|cinque|sei|sette|otto|nove|dieci|undici|dodici|quindici|venti|ventuno|trenta|quaranta|cinquanta|sessanta|settanta|ottanta|novanta)$/i;
 
 // espanhol: femininos com «a» tônico levam «el» no singular (el agua, el águila)
 const EL_FEM_ES = new Set(['agua', 'águila', 'alma', 'arma', 'hambre', 'hacha', 'área', 'aula', 'ave', 'hada', 'ala', 'ancla']);
@@ -150,6 +167,47 @@ export function checkJournal(text: string, lex: JournalLexicon, lang = 'ro'): { 
       if (w === 'gusta' && (nx === 'los' || nx === 'las')) {
         issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: `${matchCase(parts[i], 'gustan')} ${parts[j]}`, why: '«Gustar» concorda com a coisa de que se gosta: me gusta el café, mas me gustan los perros.' });
         parts[i] = matchCase(parts[i], 'gustan');
+      }
+      continue;
+    }
+    if (lang === 'it') {
+      const w = raw(i);
+      const nx = raw(j);
+      // artigo + substantivo com o gênero do vocabulário: la problema → il problema, il mano → la mano
+      const art = ART_IT[w];
+      const g = j >= 0 ? lex.gender.get(nx) : undefined;
+      if (art && (g === 'm' || g === 'f')) {
+        const right = articleIt(g, nx, art.indef);
+        if (right !== w) {
+          const fix = matchCase(parts[i], right);
+          const joined = fix.endsWith('’') ? `${fix}${parts[j]}` : `${fix} ${parts[j]}`;
+          const why =
+            g !== art.g
+              ? `«${parts[j]}» é ${g === 'm' ? 'masculino' : 'feminino'} em italiano: ${joined}.`
+              : `O artigo muda com o começo da palavra: «lo» e «uno» antes de s + consoante, z, gn e ps; «l’» antes de vogal: ${joined}.`;
+          issues.push({ kind: 'gênero', original: `${parts[i]} ${parts[j]}`, suggestion: joined, why });
+          parts[i] = fix;
+          if (fix.endsWith('’')) parts[i + 1] = '';
+        }
+        continue;
+      }
+      // sono 20 anni → ho 20 anni
+      const ageNext = (/\d/.test(parts[i + 1] ?? '') && b === 'anni') || (j >= 0 && NUMBER_IT.test(parts[j]) && k >= 0 && low(k) === 'anni');
+      if (w === 'sono' && ageNext) {
+        issues.push({ kind: 'expressão', original: parts[i], suggestion: matchCase(parts[i], 'ho'), why: 'Idade em italiano se «tem», como em português: «ho vent’anni».' });
+        parts[i] = matchCase(parts[i], 'ho');
+        continue;
+      }
+      // io piace → mi piace
+      if (w === 'io' && (nx === 'piace' || nx === 'piacciono')) {
+        issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: `${matchCase(parts[i], 'mi')} ${parts[j]}`, why: '«Piacere» funciona como «agradar»: «mi piace» = «me agrada / eu gosto».' });
+        parts[i] = matchCase(parts[i], 'mi');
+        continue;
+      }
+      // mi piace i/gli/le… → mi piacciono
+      if (w === 'piace' && ['i', 'gli', 'le'].includes(nx)) {
+        issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: `${matchCase(parts[i], 'piacciono')} ${parts[j]}`, why: '«Piacere» concorda com a coisa de que se gosta: mi piace il caffè, mas mi piacciono i gatti.' });
+        parts[i] = matchCase(parts[i], 'piacciono');
       }
       continue;
     }

@@ -132,7 +132,7 @@ test('seletor agrupa por família e ramo', () => {
   assert.deepEqual(Object.keys(g).sort(), ['Coreânico', 'Indo-europeu', 'Japônico', 'Urálico']);
   assert.deepEqual(
     g['Indo-europeu']['Itálico'].map((l) => l.code),
-    ['ro', 'es'],
+    ['ro', 'es', 'it'],
   );
   assert.deepEqual(g['Urálico']['Fínico'].map((l) => l.code).sort(), ['et', 'fi']);
 });
@@ -215,4 +215,20 @@ test('linguística: aulas gerais e áreas por idioma consistentes', async () => 
     assert.deepEqual([...used].sort(), pack.grammar.map((g) => g.id).sort(), `${pack.code}: todo tópico numa área`);
     for (const a of pack.linguistics) for (const q of a.quiz) assert.ok(q.options.includes(q.answer), `${pack.code}/${a.area}: ${q.question}`);
   }
+});
+
+test('it: todo texto italiano sem letras do português e com os acentos certos', async () => {
+  const { italianTextProblems } = await import('../services/it-texto');
+  const { italianTexts } = await import('./it/textos');
+  const problems = italianTexts(PACKS.it).flatMap((t) => italianTextProblems(t).map((p) => `«${t.slice(0, 40)}»: ${p}`));
+  assert.deepEqual(problems.slice(0, 10), []);
+});
+
+test('it: dicionário de pronúncia cobre o vocabulário, com tônica e timbre bem marcados', async () => {
+  const { PRON_IT } = await import('./it/pronuncia');
+  const { pronunciationProblems } = await import('../services/it-pronuncia');
+  assert.deepEqual(pronunciationProblems(PRON_IT, PACKS.it.vocab.map((v) => v.word_target)).slice(0, 10), []);
+  // e toda palavra das frases em italiano (conjugações, plurais, nomes): senão a IPA erra a tônica
+  const { italianTexts } = await import('./it/textos');
+  assert.deepEqual(pronunciationProblems(PRON_IT, italianTexts(PACKS.it)).slice(0, 10), []);
 });

@@ -106,3 +106,17 @@ test('diário em espanhol: heterogenéricos, muy × mucho e gustar', () => {
   assert.equal(expectedContour('¿Dónde está el baño?', 'es'), 'desce');
   assert.equal(expectedContour('¿Hablas portugués?', 'es'), 'sobe');
 });
+
+test('diário (italiano): artigo pelo gênero e pelo começo da palavra, idade com avere, piacere', async () => {
+  const { ITALIANO } = await import('../data/it');
+  const lexIt = buildLexicon(
+    ITALIANO.vocab.flatMap((v) => [v.word_target, v.example_sentence]),
+    ITALIANO.vocab.filter((v) => v.gender).map((v) => ({ word: v.word_target, gender: v.gender! })),
+  );
+  assert.equal(checkJournal('La fiore è bella.', lexIt, 'it').corrected, 'Il fiore è bella.');
+  assert.equal(checkJournal('Il studente legge.', lexIt, 'it').corrected, 'Lo studente legge.');
+  assert.equal(checkJournal('La amica arriva.', lexIt, 'it').corrected, 'L’amica arriva.');
+  assert.equal(checkJournal('Sono 20 anni.', lexIt, 'it').corrected, 'Ho 20 anni.');
+  assert.equal(checkJournal('Io piace il mare.', lexIt, 'it').corrected, 'Mi piace il mare.');
+  assert.equal(checkJournal('Mi piace i gatti.', lexIt, 'it').corrected, 'Mi piacciono i gatti.');
+});
