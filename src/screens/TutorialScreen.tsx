@@ -72,7 +72,7 @@ export default function TutorialScreen() {
           },
         ]
       : []),
-    { mood: 'comemorando', title: 'Bora começar!', text: `Se quiser rever este tutorial, ele fica no Perfil. ${pack.phrases.letsStart[0]} (${pack.phrases.letsStart[1]})` },
+    { mood: 'comemorando', title: 'Bora começar!', text: `No Perfil ficam este tutorial e a 💾 cópia do progresso, para trocar de aparelho sem perder nada. ${pack.phrases.letsStart[0]} (${pack.phrases.letsStart[1]})` },
   ];
   const s = slides[i];
   const last = i === slides.length - 1;

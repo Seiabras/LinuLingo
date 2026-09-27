@@ -29,6 +29,8 @@ interface AppState {
   /** Sotaque ou dialeto que o aluno escolheu estudar (troca a voz, a IPA e a variante) */
   accent: Accent | null;
   setAccent: (id: string | null) => void;
+  /** Relê tudo do banco (aluno, tema, variantes, sotaques): depois de restaurar uma cópia do progresso */
+  reload: () => Promise<void>;
 }
 
 const Ctx = createContext<AppState | null>(null);
@@ -43,21 +45,27 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
 
   const [theme, setThemeState] = useState<ThemePref>('system');
   const [ready, setReady] = useState(false);
+  // muda quando o banco é relido por inteiro: variantes e sotaques voltam a ser lidos
+  const [generation, setGeneration] = useState(0);
   useThemeSync(theme);
+
+  const readAll = useCallback(() => Promise.all([getUser(db), loadThemePref(db)]), [db]);
+  const applyAll = useCallback(([u, pref]: [AppUser | null, ThemePref]) => {
+    const resolved = pref === 'system' ? (Appearance.getColorScheme() === 'dark' ? 'dark' : 'light') : pref;
+    try {
+      colorScheme.set(resolved);
+    } catch {}
+    setUser(u);
+    setThemeState(pref);
+  }, []);
 
   // Aplica o tema salvo ANTES de montar as telas (evita atualizar componentes ainda montando)
   useEffect(() => {
     (async () => {
-      const [u, pref] = await Promise.all([getUser(db), loadThemePref(db)]);
-      const resolved = pref === 'system' ? (Appearance.getColorScheme() === 'dark' ? 'dark' : 'light') : pref;
-      try {
-        colorScheme.set(resolved);
-      } catch {}
-      setUser(u);
-      setThemeState(pref);
+      applyAll(await readAll());
       setReady(true);
     })();
-  }, [db]);
+  }, [readAll, applyAll]);
 
   const setLanguage = useCallback(
     async (code: string) => {
@@ -98,7 +106,14 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
     getMeta(db, `sotaque_${pack.code}`).then((v) => {
       if (v) setAccents((m) => ({ ...m, [pack.code]: v }));
     });
-  }, [db, pack.code]);
+  }, [db, pack.code, generation]);
+
+  const reload = useCallback(async () => {
+    setVariants({});
+    setAccents({});
+    applyAll(await readAll());
+    setGeneration((g) => g + 1);
+  }, [readAll, applyAll, setAccents, setVariants]);
 
   const code = basePack.code;
   const packAccents = basePack.accents;
@@ -135,7 +150,7 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
     ? visibleStreak({ streak: user.streak_days, freezes: user.streak_freezes, lastStudyDate: user.last_study_date }, localDay())
     : 0;
 
-  return <Ctx.Provider value={{ db, user, pack, streak, refresh, theme, setTheme, variant, setVariant, setLanguage, accent, setAccent }}>{ready ? children : null}</Ctx.Provider>;
+  return <Ctx.Provider value={{ db, user, pack, streak, refresh, theme, setTheme, variant, setVariant, setLanguage, accent, setAccent, reload }}>{ready ? children : null}</Ctx.Provider>;
 }
 
 export function useApp(): AppState {

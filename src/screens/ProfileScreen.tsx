@@ -5,6 +5,7 @@ import { Screen, Button, Card, Chip, SectionTitle } from '@/components/ui';
 import { Linu } from '@/components/Linu';
 import { SpeciesPhotos } from '@/components/SpeciesPhotos';
 import { OfflineCard } from '@/components/OfflineCard';
+import { BackupCard } from '@/components/BackupCard';
 import { useApp } from '@/services/app-state';
 import { completedLessons, resetProgress, updateUser, vocabStats, xpByDay } from '@/database/queries';
 import { groupByLineage, isAvailable } from '@/data/idiomas';
@@ -24,15 +25,16 @@ export default function ProfileScreen() {
   const [learned, setLearned] = useState(0);
   const [selectedBar, setSelectedBar] = useState<number | null>(null);
 
+  const loadStats = useCallback(async () => {
+    setWeek(await xpByDay(db, 7));
+    setLessons((await completedLessons(db)).size);
+    setLearned((await vocabStats(db, pack.code)).learned);
+  }, [db, pack.code]);
   useFocusEffect(
     useCallback(() => {
-      (async () => {
-        setWeek(await xpByDay(db, 7));
-        setLessons((await completedLessons(db)).size);
-        setLearned((await vocabStats(db, pack.code)).learned);
-      })();
+      loadStats();
       setName(user?.name ?? '');
-    }, [db, pack.code, user?.name]),
+    }, [loadStats, user?.name]),
   );
 
   const groups = groupByLineage();
@@ -191,6 +193,9 @@ export default function ProfileScreen() {
           <OfflineCard />
         </View>
       )}
+      <View className="mt-4">
+        <BackupCard onRestored={loadStats} />
+      </View>
 
       <SectionTitle>Tema</SectionTitle>
       <View className="flex-row rounded-2xl bg-slate-200 p-1 dark:bg-slate-800">

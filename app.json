@@ -40,7 +40,8 @@
           "microphonePermission": "Permita o acesso ao microfone para praticar a pronúncia."
         }
       ],
-      "expo-asset"
+      "expo-asset",
+      "expo-sharing"
     ],
     "scheme": "linulingo",
     "experiments": {

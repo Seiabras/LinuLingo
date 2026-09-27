@@ -28,12 +28,15 @@ export async function initDatabase(db: SQLiteDatabase): Promise<void> {
   await ensurePack(db, user && PACKS[user.current_language] ? user.current_language : DEFAULT_LANGUAGE);
 }
 
-const seeding = new Map<string, Promise<void>>();
+// por banco: cada banco guarda o seu conteúdo (no app há um só; nos testes, vários)
+const seedings = new WeakMap<SQLiteDatabase, Map<string, Promise<void>>>();
 
 /** Grava (uma vez por sessão, e só se o conteúdo mudou) o pacote de um idioma no banco. */
 export function ensurePack(db: SQLiteDatabase, code: string): Promise<void> {
   const pack = PACKS[code];
   if (!pack) return Promise.resolve();
+  let seeding = seedings.get(db);
+  if (!seeding) seedings.set(db, (seeding = new Map()));
   let p = seeding.get(code);
   if (!p) {
     p = seedPack(db, pack);
@@ -44,7 +47,7 @@ export function ensurePack(db: SQLiteDatabase, code: string): Promise<void> {
 }
 
 /** Insere muitas linhas com poucos comandos: no navegador, cada comando é uma ida e volta ao SQLite. */
-async function insertMany(db: SQLiteDatabase, head: string, cols: number, rows: SQLiteBindValue[][], tail = ''): Promise<void> {
+export async function insertMany(db: SQLiteDatabase, head: string, cols: number, rows: SQLiteBindValue[][], tail = ''): Promise<void> {
   // até ~900 parâmetros por comando (o limite antigo do SQLite é 999)
   const per = Math.max(1, Math.floor(900 / cols));
   const one = `(${Array(cols).fill('?').join(', ')})`;

@@ -89,6 +89,7 @@ Cada idioma mostra os seus jeitos regionais de falar (18 no espanhol, 5 no romen
 - **Comunidade**: corrigir textos de outros alunos (+20 XP) e acompanhar os próprios envios.
 - **Gamificação**: ofensiva com congelamento, meta diária, XP da semana.
 - **Tutorial com o Linu** na primeira visita (e no Perfil), com um cartão de verdade para treinar os gestos.
+- **Cópia do progresso** (Perfil › 💾): guarda num arquivo JSON tudo o que é do aluno (XP, ofensiva, lições, revisões, histórias, diário, textos da comunidade, tema, variantes e sotaques), sem o conteúdo dos idiomas, que o app já traz. Para trocar de aparelho ou não perder nada ao limpar o navegador. Antes de restaurar, o app mostra o que a cópia traz; a troca é feita numa transação (ou entra tudo, ou nada muda) e as revisões de palavras que não existem mais ficam de fora. No computador o arquivo é baixado; no celular abre o menu de compartilhar (Arquivos, Drive…).
 - Tema claro, escuro ou automático.
 
 ## Rodar
@@ -146,6 +147,7 @@ npm test                                   # SM-2, ofensiva, respostas, trilha e
 npx tsc --noEmit && npx expo lint
 node scripts/fluxo-licao.mjs               # faz uma lição inteira no navegador (servidor rodando)
 npm run build:web && node scripts/fluxo-offline.mjs   # instalável, app guardado e, com o servidor desligado, abre e toca áudio
+node scripts/fluxo-backup.mjs              # guarda a cópia, muda nome/tema/idioma, restaura e confere
 node scripts/fluxo-extras.mjs              # tutorial, voz, etimologia, sprint, conversa, comunidade, tema escuro
 node scripts/fluxo-historia.mjs            # histórias: desvio, dica, final e contador de finais
 node scripts/fluxo-praticas.mjs            # diário (corretor), palácio (jogo) e shadowing (microfone falso)
