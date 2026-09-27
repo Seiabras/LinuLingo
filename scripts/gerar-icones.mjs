@@ -90,6 +90,14 @@ await render(MONO, 'assets/android-icon-monochrome.png', 512, true);
 await render(LOGO, 'assets/favicon.png', 48, false);
 await render(SPLASH, 'assets/splash-icon.png', 1024, true);
 
+// app instalável (PWA): ícones do manifesto em public/ (copiados para a raiz do site)
+mkdirSync('public', { recursive: true });
+await render(LOGO, 'public/icon-192.png', 192, false);
+await render(LOGO, 'public/icon-512.png', 512, false);
+// «maskable»: o sistema recorta em círculo ou gota, então o Linu fica dentro da zona segura (80%)
+await render(svg(linu({ k: 0.72 }), BLUE), 'public/icon-maskable-512.png', 512, false);
+await render(LOGO, 'public/apple-touch-icon.png', 180, false);
+
 // banner do README: o ícone arredondado e o nome
 const BANNER = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 400" width="1280" height="400">
   <rect width="1280" height="400" rx="48" fill="#EFF6FF"/>

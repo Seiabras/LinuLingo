@@ -1,0 +1,18 @@
+{
+  "name": "LinuLingo",
+  "short_name": "LinuLingo",
+  "description": "Aprenda idiomas com o Linu, o pinguim-de-barbicha: trilha do A1 ao C2, histórias, sotaques e áudio de nativos, sem internet.",
+  "lang": "pt-BR",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F8FAFC",
+  "theme_color": "#2563EB",
+  "categories": ["education"],
+  "icons": [
+    { "src": "icon-192.png", "type": "image/png", "sizes": "192x192", "purpose": "any" },
+    { "src": "icon-512.png", "type": "image/png", "sizes": "512x512", "purpose": "any" },
+    { "src": "icon-maskable-512.png", "type": "image/png", "sizes": "512x512", "purpose": "maskable" }
+  ]
+}

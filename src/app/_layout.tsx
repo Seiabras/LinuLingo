@@ -7,6 +7,8 @@ import { SQLiteProvider } from 'expo-sqlite';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { DB_NAME, initDatabase } from '@/database/db';
 import { AppStateProvider } from '@/services/app-state';
+// guarda desde o início o aviso do navegador de que o app pode ser instalado
+import '@/services/pwa';
 
 function Loading() {
   return (

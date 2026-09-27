@@ -2,7 +2,7 @@
 
 ![LinuLingo: aprenda idiomas com o Linu](assets/logo/linulingo-banner.png)
 
-App de idiomas (React Native + Expo) que junta o melhor de Duolingo, Busuu, Rosetta Stone, Air Learn, LingoDeer, Drops, Speakly, Babbel e Mondly: trilha CEFR, repetição espaçada (SM-2), cultura e história antes da prática, imersão sem tradução, conversação com registro social e correção pela comunidade. Funciona offline: tudo fica num banco SQLite no aparelho.
+App de idiomas (React Native + Expo) que junta o melhor de Duolingo, Busuu, Rosetta Stone, Air Learn, LingoDeer, Drops, Speakly, Babbel e Mondly: trilha CEFR, repetição espaçada (SM-2), cultura e história antes da prática, imersão sem tradução, conversação com registro social e correção pela comunidade. Funciona offline: tudo fica num banco SQLite no aparelho, e na web o app pode ser instalado e aberto sem internet.
 
 **Experimente no navegador:** https://seiabras.github.io/LinuLingo/
 
@@ -130,7 +130,14 @@ Contornos: [Natural Earth](https://www.naturalearthdata.com/) 1:50m (domínio p�
 
 ## Publicar
 
-`npm run build:web` gera `dist/` para o GitHub Pages (base `/LinuLingo`, com o `coi-serviceworker` porque o Pages não envia os cabeçalhos COOP/COEP que o SQLite da web exige). O workflow `.github/workflows/pages.yml` faz isso a cada push em `master`.
+`npm run build:web` gera `dist/` para o GitHub Pages (base `/LinuLingo`). O workflow `.github/workflows/pages.yml` faz isso a cada push em `master`.
+
+O site é um **app instalável (PWA)** que funciona **sem internet**:
+
+- `public/manifest.json` e os ícones (gerados por `scripts/gerar-icones.mjs`) deixam o navegador instalar o app: ícone na tela inicial e tela cheia. No Perfil, o cartão «📲 Usar como app» mostra o botão de instalar (Chrome, Edge, Samsung Internet) ou o caminho pelo menu Compartilhar (iPhone e iPad).
+- `scripts/sw-modelo.js` vira `dist/sw.js`, um service worker só que faz duas coisas: põe os cabeçalhos COOP/COEP que o SQLite da web exige (o Pages não deixa configurá-los; mesma técnica do coi-serviceworker) e guarda o app para abrir sem internet. A lista do que guardar (índice, código, imagens, ~17 MB) e a versão saem do próprio `dist/`, em `scripts/preparar-pages.mjs`.
+- Os áudios e os contornos do mapa ficam guardados quando usados pela primeira vez; no Perfil dá para guardar de uma vez todas as gravações do idioma. Pedidos em pedaços (`Range`, como os do `<audio>`) são respondidos do que está guardado.
+- Versão nova no site: o service worker novo guarda o app novo em segundo plano, assume sem recarregar a página aberta e apaga a versão velha.
 
 ## Testes
 
@@ -138,6 +145,7 @@ Contornos: [Natural Earth](https://www.naturalearthdata.com/) 1:50m (domínio p�
 npm test                                   # SM-2, ofensiva, respostas, trilha e validação do conteúdo
 npx tsc --noEmit && npx expo lint
 node scripts/fluxo-licao.mjs               # faz uma lição inteira no navegador (servidor rodando)
+npm run build:web && node scripts/fluxo-offline.mjs   # instalável, app guardado e, com o servidor desligado, abre e toca áudio
 node scripts/fluxo-extras.mjs              # tutorial, voz, etimologia, sprint, conversa, comunidade, tema escuro
 node scripts/fluxo-historia.mjs            # histórias: desvio, dica, final e contador de finais
 node scripts/fluxo-praticas.mjs            # diário (corretor), palácio (jogo) e shadowing (microfone falso)

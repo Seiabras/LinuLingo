@@ -1,5 +1,5 @@
 import { useState, type ReactNode } from 'react';
-import { Pressable, Text, View } from 'react-native';
+import { Platform, Pressable, Text, View } from 'react-native';
 import { router } from 'expo-router';
 import Animated, { BounceIn, FadeIn, FadeInDown } from 'react-native-reanimated';
 import { Lightbulb, MessageCircle, Star, Trophy } from 'lucide-react-native';
@@ -63,6 +63,15 @@ export default function TutorialScreen() {
     { mood: 'feliz', title: 'O mundo do idioma', text: `Na aba Cultura tem um mapa-múndi: toque num idioma para ver onde ele é falado (o que você estuda vem primeiro, seguido dos parentes mais próximos). Em «🔎 Todos os idiomas» estão os mais de 700 idiomas do mundo, com a família de cada um; o botão «Estudar» aparece nos que o app já ensina. Os botões embaixo do mapa levam a cada região e sub-região (América do Sul › Andina, por exemplo), com a lista dos países. Toque num país e o mapa aproxima nele, mostrando os estados e as províncias; toque numa região para ver o nome e o código. No cartão aparecem as línguas, da mais falada para a menos falada, os animais nativos e os instrumentos de lá.${variantTip(pack)}${accentTip(pack)}` },
     { mood: 'falando', title: 'Conversa e comunidade', text: 'Na aba Conversa você pratica situações reais (café, hotel, entrevista) e eu aviso se o tom ficou formal ou informal demais. Na Comunidade você corrige textos de outros alunos e ganha 20 XP.' },
     { mood: 'falando', title: 'Minha voz', text: `Para ouvir as palavras, o seu aparelho precisa de uma voz em ${pack.name.toLowerCase()}. Confira se já tem:`, extra: 'voz' },
+    ...(Platform.OS === 'web'
+      ? [
+          {
+            mood: 'feliz' as const,
+            title: 'Leve o app com você',
+            text: 'No navegador, o LinuLingo pode ser instalado como app: no Perfil, em «📲 Usar como app». Ele ganha um ícone na tela inicial, abre em tela cheia e funciona sem internet. Ali você também guarda todas as gravações de nativos do idioma, para ouvir mesmo offline.',
+          },
+        ]
+      : []),
     { mood: 'comemorando', title: 'Bora começar!', text: `Se quiser rever este tutorial, ele fica no Perfil. ${pack.phrases.letsStart[0]} (${pack.phrases.letsStart[1]})` },
   ];
   const s = slides[i];

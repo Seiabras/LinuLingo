@@ -4,6 +4,7 @@ import { router, useFocusEffect } from 'expo-router';
 import { Screen, Button, Card, Chip, SectionTitle } from '@/components/ui';
 import { Linu } from '@/components/Linu';
 import { SpeciesPhotos } from '@/components/SpeciesPhotos';
+import { OfflineCard } from '@/components/OfflineCard';
 import { useApp } from '@/services/app-state';
 import { completedLessons, resetProgress, updateUser, vocabStats, xpByDay } from '@/database/queries';
 import { groupByLineage, isAvailable } from '@/data/idiomas';
@@ -184,6 +185,12 @@ export default function ProfileScreen() {
           </Card>
         ))}
       </View>
+
+      {Platform.OS === 'web' && (
+        <View className="mt-6">
+          <OfflineCard />
+        </View>
+      )}
 
       <SectionTitle>Tema</SectionTitle>
       <View className="flex-row rounded-2xl bg-slate-200 p-1 dark:bg-slate-800">
