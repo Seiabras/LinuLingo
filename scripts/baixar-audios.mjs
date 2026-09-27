@@ -16,7 +16,7 @@ const LANGS = {
   // o curso de português ensina a norma de Portugal: só falantes que moram lá (scripts/falantes-por-pais.mjs pt PRT)
   pt: { wikidata: 'Q5146', iso3: 'por', category: 'Lingua_Libre_pronunciation-por', speakers: 'scripts/.falantes-pt-PRT.json' },
   sv: { wikidata: 'Q9027', iso3: 'swe', category: 'Lingua_Libre_pronunciation-swe' },
-  nb: { wikidata: 'Q25167', iso3: 'nob', category: 'Lingua_Libre_pronunciation-nob' },
+  nb: { wikidata: 'Q9043', iso3: 'nor', category: 'Lingua_Libre_pronunciation-nor' }, // quase tudo do norueguês está em «nor» (o «nob» tem só 16 arquivos)
   nn: { wikidata: 'Q25164', iso3: 'nno', category: 'Lingua_Libre_pronunciation-nno' },
   da: { wikidata: 'Q9035', iso3: 'dan', category: 'Lingua_Libre_pronunciation-dan' },
   is: { wikidata: 'Q294', iso3: 'isl', category: 'Lingua_Libre_pronunciation-isl' },
