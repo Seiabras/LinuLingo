@@ -13,19 +13,24 @@ import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
 import { logMistake } from '@/services/mistakes';
 import { KIND } from '@/services/variedade';
+import { findAccentAnywhere } from '@/data/linguas-proprias';
 
 const ROUND = 8;
 
 /**
  * Treino de um sotaque ou dialeto: como soa, frases e palavras típicas, e um jogo com as palavras
- * nos dois sentidos e frases para reconhecer de onde são. Abre o sotaque escolhido ou o da rota (?id=).
+ * nos dois sentidos e frases para reconhecer de onde são. Abre o sotaque escolhido ou o da rota (?id=),
+ * que pode ser de outro idioma do app (as línguas próprias).
  */
 export default function AccentPracticeScreen() {
   const { db, pack, accent: chosen, setAccent, refresh } = useApp();
   const dark = useIsDark();
   const { id } = useLocalSearchParams<{ id?: string }>();
-  const accents = pack.accents ?? [];
-  const a = accents.find((x) => x.id === id) ?? chosen ?? accents[0];
+  // pela aba «Línguas próprias» dá para treinar uma língua de outro idioma do app (o sámi estudando romeno)
+  const found = id ? findAccentAnywhere(id) : null;
+  const owner = found?.pack ?? pack;
+  const accents = owner.accents ?? [];
+  const a = found?.accent ?? chosen ?? accents[0];
   const key = `sotaque_prog_${a?.id}`;
   const [progress, setProgress] = useState<AccentProgress>({});
   const [game, setGame] = useState<{ qs: AccentQuestion[]; i: number; hits: number; answer: string | null } | null>(null);
@@ -43,7 +48,7 @@ export default function AccentPracticeScreen() {
       </Screen>
     );
   }
-  const locale = a.speechLocale ?? pack.speechLocale;
+  const locale = a.speechLocale ?? owner.speechLocale;
   const mastery = accentMastery(a, progress);
   const start = () => setGame({ qs: buildAccentRound(a, accents, progress, ROUND), i: 0, hits: 0, answer: null });
 
@@ -167,12 +172,12 @@ export default function AccentPracticeScreen() {
       <ProgressBar value={mastery.total ? mastery.done / mastery.total : 0} />
       {isChosen ? (
         <View className="mt-3 flex-row flex-wrap items-center gap-2">
-          <Chip label="✓ o sotaque que você estuda" tone="green" />
+          <Chip label={`✓ ${KIND[a.kind].o} que você estuda`} tone="green" />
           <Button title="Voltar ao padrão" variant="ghost" onPress={() => setAccent(null)} />
         </View>
-      ) : (
+      ) : owner.code === pack.code ? (
         <Button title={`Estudar ${KIND[a.kind].este}`} variant="ghost" className="mt-3" onPress={() => setAccent(a.id)} />
-      )}
+      ) : null}
       <Button title={`🎯 Treinar (${ROUND} perguntas)`} variant="success" className="mt-2" onPress={start} />
 
       <View className="mt-4 gap-3">

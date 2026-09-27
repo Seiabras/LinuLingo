@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
-import { router } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
 import { ChevronDown, ChevronUp } from 'lucide-react-native';
 import { Screen, Card, SpeechBubble, SpeakButton } from '@/components/ui';
 import { CulturalGrammarCard } from '@/components/CulturalGrammarCard';
@@ -11,20 +11,67 @@ import { FAUNA_MUSICA, HOMELANDS } from '@/data/fauna-musica';
 import { WORLD } from '@/data/mapa-mundi';
 import { flagOf } from '@/data/onde-se-fala';
 import { VarietyPicker } from '@/components/AccentsPanel';
+import { OwnLanguagesTab } from '@/components/OwnLanguagesTab';
+import { IndigenousTab } from '@/components/IndigenousTab';
 import type { LanguagePack } from '@/data/types';
 import { nomeIdioma } from '@/services/idioma-nome';
 
-/** Cultura & História: a genealogia do idioma e os cards «aprenda primeiro» de cada unidade. */
+const TABS = [
+  { id: 'cultura', label: '🏛️ Cultura' },
+  { id: 'proprias', label: '🗣️ Línguas próprias' },
+  { id: 'indigenas', label: '🪶 Indígenas' },
+] as const;
+type TabId = (typeof TABS)[number]['id'];
+
+/**
+ * Cultura & História, em três abas: a do idioma (genealogia, mapa, variantes e sotaques, bichos e
+ * os cards de cada unidade), a das línguas próprias (as que se falam nos mesmos lugares mas não são
+ * o idioma, como o sámi) e a das línguas indígenas de cada país, com o grau de risco.
+ * A aba vem da rota (/cultura?aba=indigenas), para o tutorial e os atalhos levarem direto a ela.
+ */
 export default function CultureScreen() {
+  const { aba } = useLocalSearchParams<{ aba?: string }>();
+  const tab: TabId = TABS.some((t) => t.id === aba) ? (aba as TabId) : 'cultura';
+  const setTab = (id: TabId) => router.setParams({ aba: id });
+
+  return (
+    <Screen>
+      <Text className="pt-3 text-2xl font-extrabold text-slate-900 dark:text-white">🏛️ Cultura & História</Text>
+      <View className="mt-3 flex-row gap-1 rounded-2xl bg-slate-100 p-1 dark:bg-slate-800" accessibilityRole="tablist">
+        {TABS.map((t) => {
+          const on = t.id === tab;
+          return (
+            <Pressable
+              key={t.id}
+              accessibilityRole="tab"
+              accessibilityState={{ selected: on }}
+              aria-selected={on}
+              onPress={() => setTab(t.id)}
+              // cada aba do tamanho do nome (a «Línguas próprias» é a mais longa)
+              className={`grow items-center rounded-xl px-2 py-2 ${on ? 'bg-white shadow-sm dark:bg-slate-950' : ''}`}
+            >
+              <Text numberOfLines={1} className={`text-center text-[13px] font-bold ${on ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400'}`}>
+                {t.label}
+              </Text>
+            </Pressable>
+          );
+        })}
+      </View>
+      {tab === 'cultura' && <CultureTab onOwnLanguages={() => setTab('proprias')} />}
+      {tab === 'proprias' && <OwnLanguagesTab />}
+      {tab === 'indigenas' && <IndigenousTab />}
+    </Screen>
+  );
+}
+
+function CultureTab({ onOwnLanguages }: { onOwnLanguages: () => void }) {
   const { pack } = useApp();
   const dark = useIsDark();
   const [open, setOpen] = useState<string | null>(pack.units[0]?.id ?? null);
   const chain = [pack.lineage.family, ...pack.lineage.branches, pack.name];
 
   return (
-    <Screen>
-      <Text className="pt-3 text-2xl font-extrabold text-slate-900 dark:text-white">🏛️ Cultura & História</Text>
-
+    <>
       <View className="mt-3 flex-row items-end gap-2">
         <Linu mood="pensando" size={64} animate={false} />
         <SpeechBubble className="mb-5">Toda palavra tem uma história. Conhecer a origem ajuda a lembrar!</SpeechBubble>
@@ -61,12 +108,12 @@ export default function CultureScreen() {
         <Text className="text-xl text-conecta">›</Text>
       </Pressable>
 
-      {((pack.variants?.length ?? 0) > 1 || (pack.accents?.length ?? 0) > 0) && (
+      {((pack.variants?.length ?? 0) > 1 || (pack.accents ?? []).some((a) => a.kind !== 'língua')) && (
         <>
           <Text className="mb-2 mt-6 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">
             🌍 {varietyTitle(pack)}
           </Text>
-          <VarietyPicker />
+          <VarietyPicker onOwnLanguages={onOwnLanguages} />
         </>
       )}
 
@@ -129,14 +176,14 @@ export default function CultureScreen() {
           );
         })}
       </View>
-    </Screen>
+    </>
   );
 }
 
-/** «Variantes, sotaques, dialetos e línguas do italiano»: só o que o idioma tem. */
+/** «Variantes, sotaques e dialetos do italiano»: só o que o idioma tem (as línguas próprias têm aba). */
 function varietyTitle(pack: LanguagePack): string {
   const kinds = new Set((pack.accents ?? []).map((a) => a.kind));
-  const parts = [...((pack.variants?.length ?? 0) > 1 ? ['variantes'] : []), ...(kinds.has('sotaque') ? ['sotaques'] : []), ...(kinds.has('dialeto') ? ['dialetos'] : []), ...(kinds.has('língua') ? ['línguas'] : [])];
+  const parts = [...((pack.variants?.length ?? 0) > 1 ? ['variantes'] : []), ...(kinds.has('sotaque') ? ['sotaques'] : []), ...(kinds.has('dialeto') ? ['dialetos'] : [])];
   const list = parts.length > 1 ? `${parts.slice(0, -1).join(', ')} e ${parts[parts.length - 1]}` : parts[0];
   return `${list.charAt(0).toUpperCase()}${list.slice(1)} do ${nomeIdioma(pack.name)}`;
 }

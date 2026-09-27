@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import { Platform, Pressable, Share, Text, TextInput, View } from 'react-native';
+import { Platform, Pressable, Text, TextInput, View } from 'react-native';
 import { router, useFocusEffect } from 'expo-router';
 import { ArrowLeft } from 'lucide-react-native';
 import { Screen, Button, Card, Chip, SectionTitle, LetterPad, SpeechBubble } from '@/components/ui';
@@ -11,6 +11,7 @@ import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
 import { nomeIdioma } from '@/services/idioma-nome';
 import { siteUrl } from '@/services/site-url';
+import { sendLink } from '@/services/share';
 import { useClipRecorder } from '@/services/recorder';
 import { AUDIO_MAX_MS, exchangeLink, listCommunityRows, ratePeer, REACTIONS, submitMine, type CommunityRow, type Reaction } from '@/services/community';
 import * as haptics from '@/services/haptics';
@@ -18,29 +19,6 @@ import * as haptics from '@/services/haptics';
 /** Toca um áudio guardado (data URI) no navegador. */
 function playDataUri(uri: string) {
   if (Platform.OS === 'web' && typeof Audio !== 'undefined') new Audio(uri).play().catch(() => {});
-}
-
-/** Manda o link pelo compartilhar do aparelho; sem ele, copia. Devolve o que aconteceu. */
-async function sendLink(url: string, text: string): Promise<'compartilhado' | 'copiado' | 'falhou'> {
-  if (Platform.OS === 'web' && typeof navigator !== 'undefined') {
-    const nav = navigator as Navigator & { share?: (d: ShareData) => Promise<void> };
-    if (nav.share) {
-      try {
-        await nav.share({ title: 'LinuLingo', text, url });
-        return 'compartilhado';
-      } catch {
-        // a pessoa cancelou ou o navegador recusou: tenta copiar
-      }
-    }
-    try {
-      await navigator.clipboard.writeText(`${text} ${url}`);
-      return 'copiado';
-    } catch {
-      return 'falhou';
-    }
-  }
-  const r = await Share.share({ message: `${text} ${url}` }).catch(() => null);
-  return r ? 'compartilhado' : 'falhou';
 }
 
 /**

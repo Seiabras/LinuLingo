@@ -97,6 +97,7 @@ export default function TutorialScreen() {
       text: `Cada lição ou treino que você termina vale uma figurinha para o «📒 Álbum» (em Mais práticas): os bichos e os instrumentos musicais de cada país, com mais chance de vir dos lugares onde se fala ${nomeIdioma(pack.name)}. Toque numa figurinha para ler a curiosidade dela; com 3 repetidas, você troca por uma que falta.`,
     },
     { mood: 'feliz', title: 'O mundo do idioma', text: `Na aba Cultura tem um mapa-múndi: toque num idioma para ver onde ele é falado (o que você estuda vem primeiro, seguido dos parentes mais próximos). Em «🔎 Todos os idiomas» estão os mais de 700 idiomas do mundo, com a família de cada um; o botão «Estudar» aparece nos que o app já ensina. Os botões embaixo do mapa levam a cada região e sub-região (América do Sul › Andina, por exemplo), com a lista dos países. Toque num país e o mapa aproxima nele, mostrando os estados e as províncias; toque numa região para ver o nome e o código. No cartão aparecem as línguas, da mais falada para a menos falada, os animais nativos e os instrumentos de lá. No «🗺️ Jogo do mapa» (Mais práticas) você treina onde cada língua é oficial, que língua se fala em cada país e onde fica cada sotaque. E toda semana tem a «🧭 Expedição do Linu»: eu viajo por 3 cidades de lugares onde se fala o idioma, você ouve a pista no idioma e toca no mapa a região para onde eu fui; no fim, ganha uma figurinha rara, dourada, que só sai nas expedições. Embaixo do mapa, a «⏳ Linha do tempo das línguas» mostra, etapa por etapa, por onde as românicas, as eslavas, as germânicas e as urálicas se espalharam até hoje.${variantTip(pack)}${accentTip(pack)}` },
+    { mood: 'pensando', title: 'Línguas próprias, indígenas e o seu sotaque', text: languagesTip(pack) },
     { mood: 'falando', title: 'Conversa e comunidade', text: 'Na aba Conversa você pratica situações reais (café, hotel, entrevista) e eu aviso se o tom ficou formal ou informal demais. Na Comunidade você avalia textos de outros alunos com 3 emojis (😊 entendi tudo, 🤔 quase tudo, 😵 não entendi) e uma sugestão gentil, e ganha 20 XP. Para ser avaliado, mande as 3 frases do diário ou grave 10 segundos de áudio e toque em «Mandar para um colega»: vai um link, a pessoa avalia e devolve outro link com a resposta. Sem servidor: tudo vai dentro do link.' },
     { mood: 'falando', title: 'Minha voz', text: `Quando existe gravação de um falante nativo, você ouve a voz dele. Senão, eu uso uma voz do seu aparelho em ${nomeIdioma(pack.name)} e, se ele não tiver, a minha voz embutida: ela baixa uma vez e depois funciona até sem internet, sem instalar nada. Confira:`, extra: 'voz' },
     ...(Platform.OS === 'web'
@@ -228,13 +229,21 @@ function variantTip(pack: LanguagePack): string {
   return ` Na aba Cultura você também escolhe a variante que estuda, como o ${names}.${voice}`;
 }
 
-/** Frase sobre os sotaques e dialetos do idioma (aba Cultura e mapa). */
+/** Frase sobre os sotaques e dialetos do idioma (aba Cultura e mapa); as línguas próprias têm slide. */
 function accentTip(pack: LanguagePack): string {
-  const n = pack.accents?.length ?? 0;
+  const n = (pack.accents ?? []).filter((a) => a.kind !== 'língua').length;
   if (!n) return '';
   const voices = Object.keys(ACCENT_VOICES[pack.code] ?? {}).length > 0;
-  const langs = (pack.accents ?? []).filter((a) => a.kind === 'língua').length;
-  return ` Logo abaixo, as variantes, os sotaques, os dialetos${langs ? ' e as línguas regionais' : ''} ficam lado a lado: são ${n} jeitos de falar ${nomeIdioma(pack.name)}${langs ? ` (${langs} deles são línguas próprias, como ${pack.accents!.find((a) => a.kind === 'língua')!.name.replace(/ \(língua\)$/, '')})` : ''}, com minimapa, exemplos e palavras típicas${voices ? ', gravações de gente de cada região (🎙️) e a mesma palavra dita em sotaques diferentes' : ''}. Toque num deles para estudar: a minha voz e a pronúncia passam a seguir o jeito de lá, e o treino aparece em Mais práticas. No mapa, ao tocar numa região, aparece o sotaque de lá.`;
+  const dialects = (pack.accents ?? []).some((a) => a.kind === 'dialeto');
+  return ` Logo abaixo, as variantes, os sotaques${dialects ? ' e os dialetos' : ''} ficam lado a lado: são ${n} jeitos de falar ${nomeIdioma(pack.name)}, com minimapa, exemplos e palavras típicas${voices ? ', gravações de gente de cada região (🎙️) e a mesma palavra dita em sotaques diferentes' : ''}. Toque num deles para estudar: a minha voz e a pronúncia passam a seguir o jeito de lá, e o treino aparece em Mais práticas. No mapa, ao tocar numa região, aparece o sotaque de lá.`;
+}
+
+/** As abas «Línguas próprias» e «Indígenas» da Cultura, com as línguas próprias do idioma estudado. */
+function languagesTip(pack: LanguagePack): string {
+  const own = (pack.accents ?? []).filter((a) => a.kind === 'língua').map((a) => a.name.replace(/ \(.*\)$/, ''));
+  const list = own.length > 1 ? `${own.slice(0, -1).join(', ')} e ${own[own.length - 1]}` : own[0];
+  const idioma = nomeIdioma(pack.name);
+  return `A aba Cultura tem mais duas abas. Em «🗣️ Línguas próprias» ficam as línguas que se falam nos mesmos lugares que o ${idioma}, mas não são sotaques dele${list ? ` (no caso do ${idioma}: ${list})` : ''}: cada uma com a família — às vezes nem é parente —, o reconhecimento oficial, o grau de risco, frases e um treino. Em «🪶 Indígenas», escolha um país e veja as línguas indígenas de lá e o grau de risco de cada uma, que é diferente: de «ameaçada» (as crianças ainda aprendem, mas ela perde espaço) a «extinta» (que muitos povos preferem chamar de adormecida). E em Mais práticas, o «🕵️ Qual é o seu sotaque?» faz o contrário: eu pergunto como você fala — «legal» é maneiro, massa, da hora ou tri? — e tento adivinhar de onde é o seu sotaque; você me diz se acertei.`;
 }
 
 function Row({ icon, bg, title, text }: { icon: ReactNode; bg: string; title: string; text: string }) {

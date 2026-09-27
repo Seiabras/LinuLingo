@@ -99,7 +99,7 @@ await shot('palacio');
 
 // cultura: a variante do Brasil troca a IPA (t/d antes de i → tʃ dʒ)
 await page.goto(BASE + '/cultura', { waitUntil: 'load' });
-await page.getByText('Português do Brasil', { exact: true }).first().click();
+await page.getByLabel(/^Estudar: .*Português do Brasil$/).first().click();
 await page.waitForTimeout(800);
 await expectText('O seu português, visto de Lisboa');
 await shot('variante-brasil');
@@ -110,7 +110,7 @@ await page.locator('text=/t͡ʃ|d͡ʒ/').first().waitFor({ timeout: 15000 }).cat
 });
 await shot('gramatica-brasil');
 await page.goto(BASE + '/cultura', { waitUntil: 'load' });
-await page.getByText('Português de Portugal', { exact: true }).first().click();
+await page.getByLabel(/^Estudar: .*Português de Portugal$/).first().click();
 await page.waitForTimeout(800);
 
 // linguística: fonética do português

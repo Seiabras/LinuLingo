@@ -1,6 +1,7 @@
-// Confere o seletor único da aba Cultura em italiano: variantes, sotaques e línguas regionais lado a
-// lado; escolher o napolitano (língua) mostra o aviso de língua própria e passa a ser o estudado;
-// «Voltar ao padrão» volta ao italiano padrão; a Suíça (variante) mostra os helvetismos.
+// Confere o seletor único da aba Cultura em italiano: variantes e sotaques lado a lado; as
+// línguas próprias (napolitano, sardo…) não estão entre eles, e o atalho leva à aba delas; escolher um
+// sotaque passa a ser o estudado; «Voltar ao padrão» volta ao italiano padrão; a Suíça (variante)
+// mostra os helvetismos.
 // Uso: node scripts/fluxo-variedades.mjs   (servidor em http://localhost:8081; DEVICE=iphone|desktop, SCHEME=light|dark)
 import { chromium } from 'playwright-core';
 import { existsSync, mkdirSync, readdirSync } from 'node:fs';
@@ -37,22 +38,28 @@ await page.getByText(/^Italiano · Italiano/).first().click();
 await page.waitForTimeout(300);
 await page.waitForFunction(() => !document.body.innerText.includes('preparando…'), null, { timeout: 60000 });
 await page.goto(BASE + '/cultura', { waitUntil: 'load' });
-await waitText('variantes, sotaques e línguas do italiano', 60000).then(() => ok('título: variantes, sotaques e línguas do italiano'), () => fail('título do seletor'));
+await waitText('variantes e sotaques do italiano', 60000).then(() => ok('título: variantes e sotaques do italiano'), () => fail('título do seletor'));
 const txt = (await body()).toLowerCase();
-for (const t of ['Variantes', 'Sotaques', 'Línguas regionais e minoritárias']) txt.includes(t.toLowerCase()) ? ok(`linha «${t}»`) : fail(`falta a linha «${t}»`);
+for (const t of ['Variantes', 'Sotaques']) txt.includes(t.toLowerCase()) ? ok(`linha «${t}»`) : fail(`falta a linha «${t}»`);
 const chips = await page.getByRole('radio').count();
-chips >= 20 ? ok(`${chips} opções lado a lado`) : fail(`poucas opções: ${chips}`);
+chips >= 10 ? ok(`${chips} opções lado a lado`) : fail(`poucas opções: ${chips}`);
+(await page.getByLabel(/^Estudar: .*Napolitano \(língua\)$/).count()) === 0 ? ok('o napolitano (língua própria) não está entre os sotaques') : fail('o napolitano ainda está no seletor');
 (await page.getByLabel(/^Estudar: .*Italiano padrão$/).getAttribute('aria-checked')) === 'true' ? ok('começa no italiano padrão') : fail('não começou no padrão');
 
-await page.getByLabel(/^Estudar: .*Napolitano \(língua\)$/).click();
-await waitText('É uma língua própria, não um sotaque do italiano');
-ok('napolitano: aviso de língua própria');
-(await body()).includes('✓ estudando: Napolitano (língua)') ? ok('napolitano passa a ser o estudado') : fail('napolitano não virou o estudado');
-await page.getByText('Línguas regionais e minoritárias').first().scrollIntoViewIfNeeded();
-await page.screenshot({ path: `${OUT}/variedades-${device}-${scheme}-1-napolitano.png` });
+const sotaque = page.getByLabel(/^Estudar: /).nth(2);
+const nome = (await sotaque.getAttribute('aria-label')).replace(/^Estudar: \S+ /, '');
+await sotaque.click();
+await page.waitForTimeout(500);
+(await body()).includes(`✓ estudando: ${nome}`) ? ok(`${nome} passa a ser o estudado`) : fail(`${nome} não virou o estudado`);
+await page.screenshot({ path: `${OUT}/variedades-${device}-${scheme}-1-sotaque.png` });
 await page.getByRole('button', { name: 'Voltar ao padrão' }).first().click();
 await page.waitForTimeout(500);
 (await page.getByLabel(/^Estudar: .*Italiano padrão$/).getAttribute('aria-checked')) === 'true' ? ok('«Voltar ao padrão» volta ao italiano padrão') : fail('não voltou ao padrão');
+await page.getByText('Línguas próprias de lá:', { exact: false }).first().click();
+await waitText('Onde se fala italiano (o que você estuda)').then(() => ok('o atalho leva à aba «Línguas próprias», com o napolitano'), () => fail('atalho das línguas próprias'));
+(await body()).includes('Napolitano') ? ok('napolitano na aba das línguas próprias') : fail('napolitano fora da aba');
+await page.getByRole('tab', { name: '🏛️ Cultura' }).click();
+await waitText('variantes e sotaques do italiano');
 await page.getByLabel(/^Estudar: .*Italiano da Suíça$/).click();
 await waitText('natel').then(() => ok('Suíça: os helvetismos aparecem'), () => fail('Suíça sem detalhes'));
 await page.getByLabel(/^Estudar: .*Italiano padrão$/).click();

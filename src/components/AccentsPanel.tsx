@@ -15,21 +15,25 @@ import { ACCENT_COMPARE, ACCENT_VOICES } from '@/data/audio-index';
 import type { Accent, AccentVoice } from '@/data/types';
 import { VariantDetails } from './VariantPanel';
 import { KIND } from '@/services/variedade';
+import { nomeIdioma } from '@/services/idioma-nome';
 
 const ACCENT_COLOR = '#F59E0B';
 
 /**
  * Tudo o que dá para estudar de um idioma, lado a lado: as variantes nacionais (Romênia × Moldávia),
- * os sotaques, os dialetos e as línguas regionais e minoritárias (o napolitano na Itália, o sámi na Suécia). Escolher um faz a voz e a
- * pronúncia do app seguirem o jeito de lá; embaixo vêm os detalhes do escolhido e o treino.
+ * os sotaques e os dialetos. Escolher um faz a voz e a pronúncia do app seguirem o jeito de lá; embaixo
+ * vêm os detalhes do escolhido e o treino. As línguas próprias (o sámi na Suécia, o sardo na Itália)
+ * não entram aqui: não são jeitos de falar o idioma, e ficam na aba «Línguas próprias» da Cultura.
  */
-export function VarietyPicker() {
+export function VarietyPicker({ onOwnLanguages }: { onOwnLanguages?: () => void }) {
   const { pack, variant, setVariant, accent, setAccent } = useApp();
   const variants = pack.variants ?? [];
-  const accents = pack.accents ?? [];
+  // as línguas próprias (o sámi, o sardo…) não são jeitos de falar o idioma: têm uma aba só delas
+  const accents = (pack.accents ?? []).filter((a) => a.kind !== 'língua');
+  const own = (pack.accents ?? []).filter((a) => a.kind === 'língua');
   if (variants.length < 2 && !accents.length) return null;
   const v = variants.find((x) => x.code === variant) ?? variants[0];
-  const groups = (['sotaque', 'dialeto', 'língua'] as const).map((k) => [k, accents.filter((a) => a.kind === k)] as const).filter(([, l]) => l.length);
+  const groups = (['sotaque', 'dialeto'] as const).map((k) => [k, accents.filter((a) => a.kind === k)] as const).filter(([, l]) => l.length);
   const flagFor = (iso: string) => {
     const c = WORLD.find((w) => w.iso === iso);
     return c ? flagOf(c.iso2) : '';
@@ -39,8 +43,8 @@ export function VarietyPicker() {
   return (
     <View className="gap-3">
       <Text className="text-sm text-slate-600 dark:text-slate-400">
-        Escolha o que estudar: {variants.length >= 2 ? 'uma variante nacional, ' : ''}um sotaque{groups.some(([k]) => k === 'dialeto') ? ', um dialeto' : ''}
-        {groups.some(([k]) => k === 'língua') ? ' ou uma língua regional' : ''}. A voz e a pronúncia (IPA) do app passam a seguir a escolha, e cada um tem o seu treino.
+        Escolha o que estudar: {variants.length >= 2 ? 'uma variante nacional, ' : ''}um sotaque{groups.some(([k]) => k === 'dialeto') ? ' ou um dialeto' : ''}. A voz e a pronúncia
+        (IPA) do app passam a seguir a escolha, e cada um tem o seu treino.
       </Text>
       <PickerRow label={variants.length >= 2 ? 'Variantes' : 'Padrão'}>
         {variants.length >= 2 ? (
@@ -66,6 +70,16 @@ export function VarietyPicker() {
           ))}
         </PickerRow>
       ))}
+      {own.length > 0 && onOwnLanguages && (
+        <Pressable accessibilityRole="button" onPress={onOwnLanguages} className="flex-row items-center gap-3 rounded-2xl bg-emerald-50 p-3 active:opacity-80 dark:bg-emerald-950/40">
+          <Text className="text-2xl">🗣️</Text>
+          <Text className="flex-1 text-sm leading-5 text-slate-800 dark:text-slate-200">
+            <Text className="font-extrabold">Línguas próprias de lá: </Text>
+            {own.map((a) => a.name.replace(/ \(.*\)$/, '')).join(', ')}. Não são sotaques do {nomeIdioma(pack.name)}: ficam na aba delas.
+          </Text>
+          <Text className="text-lg text-slate-400">›</Text>
+        </Pressable>
+      )}
       <View className="flex-row flex-wrap items-center gap-2">
         <Chip label={`✓ estudando: ${chosenName}`} tone="green" />
       </View>

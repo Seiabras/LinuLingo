@@ -99,12 +99,12 @@ await shot('palacio');
 
 // cultura: a variante da Suíça
 await page.goto(BASE + '/cultura', { waitUntil: 'load' });
-await expectText('Variantes do italiano');
-await page.getByText('Italiano da Suíça', { exact: true }).first().click();
+await expectText('Variantes e sotaques do italiano');
+await page.getByLabel(/^Estudar: .*Italiano da Suíça$/).first().click();
 await page.waitForTimeout(800);
 await expectText('Natel, azione e franchi');
 await shot('variante-suica');
-await page.getByText('Italiano padrão', { exact: true }).first().click();
+await page.getByLabel(/^Estudar: .*Italiano padrão$/).first().click();
 await page.waitForTimeout(800);
 
 // linguística: fonética do italiano

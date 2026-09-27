@@ -101,11 +101,11 @@ await shot('palacio');
 // cultura: a variante da Suíça
 await page.goto(BASE + '/cultura', { waitUntil: 'load' });
 await page.getByText(/Variantes.* do sueco/i).first().waitFor({ timeout: 30000 });
-await page.getByLabel(new RegExp(`^Estudar: .*${SUECO.variants[1].name}`)).first().click();
+await page.getByLabel(new RegExp(`^Estudar: .*${SUECO.variants[1].name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`)).first().click();
 await page.waitForTimeout(800);
 await expectText(SUECO.variants[1].card.title);
 await shot('variante');
-await page.getByLabel(new RegExp(`^Estudar: .*${SUECO.variants[0].name}`)).first().click();
+await page.getByLabel(new RegExp(`^Estudar: .*${SUECO.variants[0].name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`)).first().click();
 await page.waitForTimeout(800);
 
 // linguística: fonética do sueco
