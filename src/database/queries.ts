@@ -341,5 +341,6 @@ export async function resetProgress(db: SQLiteDatabase) {
     DELETE FROM Community_Feedback WHERE is_mine = 1;
     UPDATE Community_Feedback SET correction = NULL, corrected_by = NULL, status = 'aguardando';
     UPDATE Users SET streak_days = 0, total_xp = 0, last_study_date = NULL, streak_freezes = 1;
+    DELETE FROM Meta WHERE key IN ('loja_linu', 'roupa_linu', 'roupas_vistas');
   `);
 }

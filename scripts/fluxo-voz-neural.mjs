@@ -94,7 +94,11 @@ await page.goto(BASE + '/vocabulario', { waitUntil: 'load' });
 await page.getByLabel(/^Ouvir: /).first().waitFor({ timeout: 30000 });
 await page.evaluate(() => (window.__tocado = []));
 await page.getByLabel(/^Ouvir: /).first().click();
-await page.waitForTimeout(3000);
+// aviso de quem gravou e de onde é
+const quem = await page.getByLabel(/^Gravação de /).first().waitFor({ timeout: 3000 }).then(() => page.getByLabel(/^Gravação de /).first().getAttribute('aria-label'), () => null);
+check(!!quem, `aviso de quem fala: ${quem ?? 'não apareceu'}`);
+await page.screenshot({ path: `${OUT}/voz-neural-${device}-${scheme}-4-quem-fala.png` });
+await page.waitForTimeout(2000);
 p = await played();
 check(p[0]?.tipo === 'gravacao', `palavra com gravação de nativo: tocou a gravação (${p[0]?.src ?? 'nada'})`);
 

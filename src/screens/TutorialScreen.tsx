@@ -14,6 +14,7 @@ import { speak } from '@/services/speech';
 import { ACCENT_VOICES, CLIPS } from '@/data/audio-index';
 import type { LanguagePack } from '@/data/types';
 import { nomeIdioma } from '@/services/idioma-nome';
+import { roomsFor } from '@/services/mnemonics';
 import { PACKS } from '@/data/idiomas';
 
 export const TUTORIAL_KEY = 'tutorial_visto';
@@ -70,7 +71,7 @@ export default function TutorialScreen() {
     { mood: 'comemorando', title: 'Ofensiva e meta do dia', text: 'Estudar todo dia mantém o fogo aceso:', extra: 'ofensiva' },
     { mood: 'pensando', title: 'Gramática e linguística', text: `Na aba Gramática há dois jeitos de estudar. «Por nível» traz os tópicos do A1.1 ao C2. «Por área da língua» é um curso de linguística: fonética, fonologia, morfologia, sintaxe, semântica, pragmática e estilística aplicadas ao ${nomeIdioma(pack.name)}, o quadro interativo do IPA, normas (códigos de línguas, transliteração, glosas, CEFR) e grandes temas, como as famílias de línguas.` },
     { mood: 'comemorando', title: 'Histórias com vários finais', text: `Nas Histórias você lê em ${nomeIdioma(pack.name)} e decide o que eu faço. Se escolher algo que mostra que não entendeu o texto, eu dou uma dica. Cada história tem mais de um final: tente achar todos!` },
-    { mood: 'pensando', title: 'Diário, shadowing e palácio', text: `No Diário você escreve 3 frases sobre o seu dia e eu corrijo acentos, gênero e erros comuns. No Shadowing você repete frases imitando o ritmo e a melodia, e eu desenho a sua voz. No Palácio da memória cada gênero mora numa sala: ${(pack.genders ?? ['m', 'f', 'n']).includes('n') ? '🔥 Forja (masculino), 🌊 Lago (feminino) e 🦎 Jardim do Camaleão (neutro)' : '🔥 Forja (masculino) e 🌊 Lago (feminino)'}.` },
+    { mood: 'pensando', title: 'Diário, shadowing e palácio', text: `No Diário você escreve 3 frases sobre o seu dia e eu corrijo acentos, gênero e erros comuns. No Shadowing você repete frases imitando o ritmo e a melodia, e eu desenho a sua voz. No Palácio da memória cada gênero mora numa sala: ${palaceRooms(pack)}.` },
     {
       mood: 'falando',
       title: 'Treine o ouvido',
@@ -97,7 +98,7 @@ export default function TutorialScreen() {
     },
     { mood: 'feliz', title: 'O mundo do idioma', text: `Na aba Cultura tem um mapa-múndi: toque num idioma para ver onde ele é falado (o que você estuda vem primeiro, seguido dos parentes mais próximos). Em «🔎 Todos os idiomas» estão os mais de 700 idiomas do mundo, com a família de cada um; o botão «Estudar» aparece nos que o app já ensina. Os botões embaixo do mapa levam a cada região e sub-região (América do Sul › Andina, por exemplo), com a lista dos países. Toque num país e o mapa aproxima nele, mostrando os estados e as províncias; toque numa região para ver o nome e o código. No cartão aparecem as línguas, da mais falada para a menos falada, os animais nativos e os instrumentos de lá. No «🗺️ Jogo do mapa» (Mais práticas) você treina onde cada língua é oficial, que língua se fala em cada país e onde fica cada sotaque.${variantTip(pack)}${accentTip(pack)}` },
     { mood: 'falando', title: 'Conversa e comunidade', text: 'Na aba Conversa você pratica situações reais (café, hotel, entrevista) e eu aviso se o tom ficou formal ou informal demais. Na Comunidade você corrige textos de outros alunos e ganha 20 XP.' },
-    { mood: 'falando', title: 'Minha voz', text: `Para ouvir as palavras, o seu aparelho precisa de uma voz em ${nomeIdioma(pack.name)}. Confira se já tem:`, extra: 'voz' },
+    { mood: 'falando', title: 'Minha voz', text: `Quando existe gravação de um falante nativo, você ouve a voz dele. Senão, eu uso uma voz do seu aparelho em ${nomeIdioma(pack.name)} e, se ele não tiver, a minha voz embutida: ela baixa uma vez e depois funciona até sem internet, sem instalar nada. Confira:`, extra: 'voz' },
     ...(Platform.OS === 'web'
       ? [
           {
@@ -107,7 +108,7 @@ export default function TutorialScreen() {
           },
         ]
       : []),
-    { mood: 'comemorando', title: 'Bora começar!', text: `No Perfil ficam este tutorial, a 💾 cópia do progresso e as 👒 roupinhas: chapéus típicos que eu ganho quando você conclui lições (a primeira já na lição 1!). ${pack.phrases.letsStart[0]} (${pack.phrases.letsStart[1]})` },
+    { mood: 'comemorando', title: 'Bora começar!', text: `No Perfil ficam este tutorial, a 💾 cópia do progresso e a 🛍️ Loja do Linu: chapéus típicos do mundo inteiro, com o país e a cultura de cada um. Os do idioma que você estuda eu ganho de presente com as lições (o primeiro já na lição 1!), e os outros você compra com krill 🦐, que ganha estudando. ${pack.phrases.letsStart[0]} (${pack.phrases.letsStart[1]})` },
   ];
   const s = slides[i];
   const last = i === slides.length - 1;
@@ -329,4 +330,13 @@ function StreakInfo() {
       </Text>
     </View>
   );
+}
+
+/** As salas do palácio no idioma estudado: «🔥 A Forja (masculino) e 🌊 O Lago (feminino)». */
+function palaceRooms(pack: LanguagePack): string {
+  const rooms = roomsFor(pack.code);
+  const genders = pack.genders ?? ['m', 'f', 'n'];
+  const label = (g: 'm' | 'f' | 'n') => `${rooms[g].emoji} ${rooms[g].name} (${pack.genderNames?.[g] ?? { m: 'masculino', f: 'feminino', n: 'neutro' }[g]})`;
+  const parts = genders.map((g) => label(g as 'm' | 'f' | 'n'));
+  return parts.length > 1 ? `${parts.slice(0, -1).join(', ')} e ${parts[parts.length - 1]}` : parts[0];
 }

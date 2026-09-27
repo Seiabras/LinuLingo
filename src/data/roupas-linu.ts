@@ -1,41 +1,94 @@
 /**
- * Roupinhas do Linu: chapéus e toucados tradicionais de lugares onde se falam os idiomas do app.
- * Cada uma se ganha concluindo lições do idioma dela (a 1ª com 1 lição, a 2ª com 10, a 3ª com 25).
+ * Loja do Linu: chapéus e toucados tradicionais do mundo, cada um com o país, a região e a cultura
+ * de onde veio.
+ * - As roupinhas de um idioma do app (`lang`) vêm de presente com as lições dele (OUTFIT_UNLOCK).
+ * - As do mundo (`price`) se compram com krill 🦐, que se ganha estudando (1 a cada KRILL_XP de XP).
  * Os textos dizem só o que é bem estabelecido: de onde é e quem usa.
  */
 export interface LinuOutfit {
   id: string;
-  /** idioma cujas lições liberam a roupinha */
-  lang: string;
+  /** idioma cujas lições liberam a roupinha (as da loja não têm) */
+  lang?: string;
+  /** preço em krill (só as da loja) */
+  price?: number;
   name: string;
+  /** país de origem (ISO 3166-1 alfa-2), para a bandeira e o nome */
+  country: string;
+  /** região ou cidade dentro do país */
   region: string;
+  /** povo ou cultura que usa */
+  culture: string;
   about: string;
 }
 
-export const OUTFIT_UNLOCK = [1, 10, 25];
+/** Lições do idioma para cada roupinha dele, pela ordem: a 1ª com 1 lição, a 2ª com 5… */
+export const OUTFIT_UNLOCK = [1, 5, 10, 20, 30, 40, 50, 60];
+
+/** Quanto XP vale um krill. */
+export const KRILL_XP = 10;
 
 export const ROUPAS_LINU: LinuOutfit[] = [
-  { id: 'caciula', lang: 'ro', name: 'Căciulă', region: 'Romênia', about: 'Gorro alto de pele de carneiro dos camponeses e pastores romenos, usado no inverno e nas festas tradicionais.' },
-  { id: 'clop', lang: 'ro', name: 'Clop', region: 'Maramureș, Romênia', about: 'Chapeuzinho de palha de aba curta dos homens do Maramureș, às vezes enfeitado com contas e fitas.' },
-  { id: 'ushanka', lang: 'ru', name: 'Ушанка (uchanka)', region: 'Rússia', about: 'Gorro de pele com abas que protegem as orelhas no inverno; o nome vem de «у́ши», orelhas.' },
-  { id: 'kokoshnik', lang: 'ru', name: 'Кокошник (kokóchnik)', region: 'Rússia', about: 'Toucado em forma de arco das roupas de festa russas, bordado e enfeitado com contas.' },
-  { id: 'cordobes', lang: 'es', name: 'Sombrero cordobés', region: 'Andaluzia, Espanha', about: 'Chapéu de aba reta e copa baixa, de Córdoba e da Andaluzia; aparece nas feiras e no flamenco.' },
-  { id: 'charro', lang: 'es', name: 'Sombrero de charro', region: 'México', about: 'Chapéu de aba larga e copa alta dos charros (os cavaleiros mexicanos) e dos mariachis, muitas vezes bordado.' },
-  { id: 'chullo', lang: 'es', name: 'Chullo', region: 'Andes (Peru e Bolívia)', about: 'Gorro de lã, muitas vezes de alpaca, com orelheiras e desenhos coloridos, tricotado nos Andes.' },
-  { id: 'paglietta', lang: 'it', name: 'Paglietta', region: 'Veneza, Itália', about: 'Chapéu de palha de aba reta com fita, o chapéu dos gondoleiros de Veneza.' },
-  { id: 'coppola', lang: 'it', name: 'Coppola', region: 'Sicília, Itália', about: 'Boné achatado de tecido, tradicional na Sicília e no sul da Itália.' },
-  { id: 'barrete', lang: 'pt', name: 'Barrete de campino', region: 'Ribatejo, Portugal', about: 'Gorro verde com barra vermelha dos campinos, os guardadores de touros e cavalos do Ribatejo.' },
-  { id: 'krans', lang: 'sv', name: 'Midsommarkrans', region: 'Suécia', about: 'Coroa de flores do Midsommar, a festa do solstício de verão, em junho.' },
-  { id: 'topplue', lang: 'nb', name: 'Topplue', region: 'Noruega', about: 'Gorro de lã com pompom, companheiro dos noruegueses no esqui e nas trilhas de inverno.' },
+  // ── de presente, com as lições de cada idioma ──
+  { id: 'caciula', lang: 'ro', name: 'Căciulă', country: 'RO', region: 'Romênia', culture: 'Camponeses e pastores romenos', about: 'Gorro alto de pele de carneiro dos camponeses e pastores romenos, usado no inverno e nas festas tradicionais.' },
+  { id: 'clop', lang: 'ro', name: 'Clop', country: 'RO', region: 'Maramureș', culture: 'Aldeias do Maramureș', about: 'Chapeuzinho de palha de aba curta dos homens do Maramureș, às vezes enfeitado com contas e fitas.' },
+  { id: 'naframa', lang: 'ro', name: 'Năframă', country: 'RO', region: 'Romênia rural', culture: 'Mulheres casadas das aldeias romenas', about: 'Lenço de cabeça do traje tradicional romeno: nas aldeias, cobrir o cabelo com a năframă era o costume das mulheres casadas.' },
+  { id: 'ushanka', lang: 'ru', name: 'Ушанка (uchanka)', country: 'RU', region: 'Rússia', culture: 'Inverno russo', about: 'Gorro de pele com abas que protegem as orelhas no inverno; o nome vem de «у́ши», orelhas.' },
+  { id: 'kokoshnik', lang: 'ru', name: 'Кокошник (kokóchnik)', country: 'RU', region: 'Rússia', culture: 'Trajes de festa russos', about: 'Toucado em forma de arco das roupas de festa russas, bordado e enfeitado com contas.' },
+  { id: 'platok', lang: 'ru', name: 'Павлопоса́дский плато́к (xale de Pávlovski Possad)', country: 'RU', region: 'Pávlovski Possad, perto de Moscou', culture: 'Artesanato russo', about: 'Xale de lã estampado com grandes flores, feito na cidade de Pávlovski Possad e famoso desde o século XIX; usado sobre a cabeça ou nos ombros.' },
+  { id: 'cordobes', lang: 'es', name: 'Sombrero cordobés', country: 'ES', region: 'Andaluzia', culture: 'Feiras andaluzas e flamenco', about: 'Chapéu de aba reta e copa baixa, de Córdoba e da Andaluzia; aparece nas feiras e no flamenco.' },
+  { id: 'charro', lang: 'es', name: 'Sombrero de charro', country: 'MX', region: 'México', culture: 'Charros e mariachis', about: 'Chapéu de aba larga e copa alta dos charros (os cavaleiros mexicanos) e dos mariachis, muitas vezes bordado.' },
+  { id: 'chullo', lang: 'es', name: 'Chullo', country: 'PE', region: 'Andes (Peru e Bolívia)', culture: 'Povos andinos (quíchuas e aimarás)', about: 'Gorro de lã, muitas vezes de alpaca, com orelheiras e desenhos coloridos, tricotado nos Andes.' },
+  { id: 'vueltiao', lang: 'es', name: 'Sombrero vueltiao', country: 'CO', region: 'Costa caribenha da Colômbia', culture: 'Povo zenú', about: 'Chapéu trançado com fibra de caña flecha em faixas claras e escuras, feito pelo povo zenú; é um dos símbolos culturais da Colômbia.' },
+  { id: 'toquilla', lang: 'es', name: 'Sombrero de paja toquilla', country: 'EC', region: 'Equador (Montecristi e Cuenca)', culture: 'Tecelões equatorianos', about: 'Chapéu de palha toquilla trançado à mão no Equador. Ficou conhecido no mundo como «chapéu-panamá» porque era vendido pelo Panamá; a tecelagem é Patrimônio Imaterial da UNESCO desde 2012.' },
+  { id: 'txapela', lang: 'es', name: 'Txapela', country: 'ES', region: 'País Basco', culture: 'Bascos', about: 'A boina basca de lã. Nas competições bascas, o vencedor ganha uma txapela, e por isso o campeão se chama «txapeldun».' },
+  { id: 'bombin', lang: 'es', name: 'Bombín', country: 'BO', region: 'La Paz, Bolívia', culture: 'Mulheres aimarás (cholas paceñas)', about: 'Chapéu-coco pequeno, usado no alto da cabeça pelas mulheres aimarás de La Paz junto com a saia pollera e o xale.' },
+  { id: 'chupalla', lang: 'es', name: 'Chupalla', country: 'CL', region: 'Zona central do Chile', culture: 'Huasos chilenos', about: 'Chapéu de palha de aba larga dos huasos, os homens do campo do Chile; aparece nas Fiestas Patrias e na dança da cueca.' },
+  { id: 'paglietta', lang: 'it', name: 'Paglietta', country: 'IT', region: 'Veneza', culture: 'Gondoleiros venezianos', about: 'Chapéu de palha de aba reta com fita, o chapéu dos gondoleiros de Veneza.' },
+  { id: 'coppola', lang: 'it', name: 'Coppola', country: 'IT', region: 'Sicília', culture: 'Sul da Itália', about: 'Boné achatado de tecido, tradicional na Sicília e no sul da Itália.' },
+  { id: 'berritta', lang: 'it', name: 'Berritta', country: 'IT', region: 'Sardenha', culture: 'Traje tradicional sardo', about: 'Gorro comprido de lã, em geral preto, dobrado sobre a cabeça: faz parte do traje tradicional dos homens da Sardenha.' },
+  { id: 'firenze', lang: 'it', name: 'Cappello di paglia di Firenze', country: 'IT', region: 'Signa, Toscana', culture: 'Trançadeiras da Toscana', about: 'Chapéu de palha de trigo trançada bem fina, feito em Signa, perto de Florença, desde o século XVIII.' },
+  { id: 'barrete', lang: 'pt', name: 'Barrete de campino', country: 'PT', region: 'Ribatejo', culture: 'Campinos', about: 'Gorro verde com barra vermelha dos campinos, os guardadores de touros e cavalos do Ribatejo.' },
+  { id: 'carapuca', lang: 'pt', name: 'Carapuça da Madeira', country: 'PT', region: 'Ilha da Madeira', culture: 'Traje tradicional madeirense', about: 'Barrete pequeno e pontudo, com um rabicho no alto, que faz parte do traje tradicional da Madeira.' },
+  { id: 'nazare', lang: 'pt', name: 'Barrete de pescador da Nazaré', country: 'PT', region: 'Nazaré', culture: 'Pescadores da Nazaré', about: 'Barrete comprido de lã preta dos pescadores da Nazaré, que cai para o lado da cabeça.' },
+  { id: 'vaqueiro', lang: 'pt', name: 'Chapéu de couro do vaqueiro', country: 'BR', region: 'Sertão nordestino', culture: 'Vaqueiros do sertão', about: 'Chapéu de couro de aba virada que protege o vaqueiro dos espinhos da caatinga; ficou famoso também na música de Luiz Gonzaga.' },
+  { id: 'krans', lang: 'sv', name: 'Midsommarkrans', country: 'SE', region: 'Suécia', culture: 'Festa do Midsommar', about: 'Coroa de flores do Midsommar, a festa do solstício de verão, em junho.' },
+  { id: 'luciakrona', lang: 'sv', name: 'Luciakrona', country: 'SE', region: 'Suécia', culture: 'Festa de Santa Lúcia', about: 'Coroa de velas usada no dia de Santa Lúcia, 13 de dezembro, no cortejo que canta e traz os pãezinhos de açafrão (lussekatter).' },
+  { id: 'topplue', lang: 'nb', name: 'Topplue', country: 'NO', region: 'Noruega', culture: 'Esqui e trilhas de inverno', about: 'Gorro de lã com pompom, companheiro dos noruegueses no esqui e nas trilhas de inverno.' },
+  // ── da loja, com krill ──
+  { id: 'sugegasa', price: 40, name: 'Sugegasa', country: 'JP', region: 'Japão', culture: 'Camponeses e viajantes japoneses', about: 'Chapéu cônico de junco («suge») que protegia do sol e da chuva quem trabalhava no campo ou viajava a pé.' },
+  { id: 'gat', price: 60, name: 'Gat (갓)', country: 'KR', region: 'Coreia', culture: 'Homens da dinastia Joseon', about: 'Chapéu de aba larga e transparente, feito de crina de cavalo e bambu, usado pelos homens adultos na dinastia Joseon.' },
+  { id: 'nonla', price: 40, name: 'Nón lá', country: 'VN', region: 'Vietnã', culture: 'Vietnamitas', about: 'Chapéu cônico de folhas de palmeira presas em aros de bambu, que protege do sol forte e da chuva de monção.' },
+  { id: 'tam', price: 50, name: "Tam o' shanter", country: 'GB', region: 'Escócia', culture: 'Escoceses', about: 'Boina escocesa de lã com um pompom no alto, o «toorie»; o nome vem do herói do poema de Robert Burns.' },
+  { id: 'bollenhut', price: 80, name: 'Bollenhut', country: 'DE', region: 'Floresta Negra', culture: 'Aldeias de Gutach, Kirnbach e Reichenbach', about: 'Chapéu de palha com grandes pompons de lã: vermelhos para as moças solteiras e pretos para as casadas.' },
+  { id: 'vinok', price: 50, name: 'Вінок (vinok)', country: 'UA', region: 'Ucrânia', culture: 'Moças ucranianas', about: 'Coroa de flores com fitas coloridas, usada pelas moças nas festas, como a noite de Ivana Kupala, no verão.' },
+  { id: 'kalpak', price: 60, name: 'Ак калпак (ak kalpak)', country: 'KG', region: 'Quirguistão', culture: 'Quirguizes', about: 'Chapéu alto de feltro branco com a aba virada, símbolo do Quirguistão; o país tem o Dia do Kalpak em 5 de março.' },
+  { id: 'fez', price: 40, name: 'Fez', country: 'MA', region: 'Marrocos', culture: 'Norte da África', about: 'Chapéu de feltro vermelho em forma de cone cortado, com uma borla preta; o nome vem da cidade de Fez.' },
+  { id: 'gele', price: 70, name: 'Gèlè', country: 'NG', region: 'Sudoeste da Nigéria', culture: 'Mulheres iorubás', about: 'Turbante de tecido duro amarrado em dobras altas, usado pelas mulheres iorubás em casamentos e festas.' },
+  { id: 'isicholo', price: 70, name: 'Isicholo', country: 'ZA', region: 'KwaZulu-Natal, África do Sul', culture: 'Mulheres zulus casadas', about: 'Chapéu largo em forma de disco, tradicionalmente usado pelas mulheres zulus casadas; os modernos costumam ser enfeitados com contas.' },
+  { id: 'pagri', price: 60, name: 'Pagri do Rajastão', country: 'IN', region: 'Rajastão, Índia', culture: 'Rajastanis', about: 'Turbante de tecido longo e colorido; a cor e o jeito de amarrar mudam conforme a região, a ocasião e a estação.' },
+  { id: 'cauboi', price: 50, name: 'Chapéu de caubói', country: 'US', region: 'Oeste dos Estados Unidos', culture: 'Vaqueiros do oeste', about: 'Chapéu de copa alta e aba larga dos vaqueiros do oeste americano, herdeiro do sombrero dos vaqueros mexicanos.' },
+  { id: 'lei', price: 40, name: 'Lei poʻo', country: 'US', region: 'Havaí', culture: 'Havaianos', about: 'Coroa de flores ou folhas usada na cabeça no Havaí, em festas, na dança hula e para receber visitas.' },
+  { id: 'salakot', price: 50, name: 'Salakot', country: 'PH', region: 'Filipinas', culture: 'Filipinos', about: 'Chapéu em forma de cúpula, de bambu ou rattan, com uma ponta no alto; protege do sol e da chuva no campo.' },
+  { id: 'blangkon', price: 60, name: 'Blangkon', country: 'ID', region: 'Java, Indonésia', culture: 'Javaneses', about: 'Turbante pronto de tecido batik dos homens javaneses; o estilo de Yogyakarta tem um nó arredondado atrás, o «mondolan».' },
 ];
 
-/** Quantas lições do idioma liberam cada roupinha (pela ordem dela entre as do idioma). */
+/** Quantas lições do idioma liberam cada roupinha dele (pela ordem entre as do idioma). As da loja não liberam com lições. */
 export function lessonsToUnlock(o: LinuOutfit): number {
+  if (!o.lang) return Infinity;
   const idx = ROUPAS_LINU.filter((x) => x.lang === o.lang).indexOf(o);
   return OUTFIT_UNLOCK[Math.min(idx, OUTFIT_UNLOCK.length - 1)];
 }
 
-/** As roupinhas liberadas, dado quantas lições foram concluídas em cada idioma. */
-export function unlockedOutfits(lessonsByLang: Record<string, number>): Set<string> {
-  return new Set(ROUPAS_LINU.filter((o) => (lessonsByLang[o.lang] ?? 0) >= lessonsToUnlock(o)).map((o) => o.id));
+/** As roupinhas que o aluno tem: as de presente (pelas lições de cada idioma) e as compradas. */
+export function unlockedOutfits(lessonsByLang: Record<string, number>, bought: Iterable<string> = []): Set<string> {
+  const out = new Set(ROUPAS_LINU.filter((o) => o.lang && (lessonsByLang[o.lang] ?? 0) >= lessonsToUnlock(o)).map((o) => o.id));
+  for (const id of bought) if (ROUPAS_LINU.some((o) => o.id === id && o.price)) out.add(id);
+  return out;
+}
+
+/** Krill ganho com o XP total, menos o gasto na loja. */
+export function krillBalance(totalXp: number, bought: Iterable<string>): number {
+  let spent = 0;
+  for (const id of bought) spent += ROUPAS_LINU.find((o) => o.id === id)?.price ?? 0;
+  return Math.floor(totalXp / KRILL_XP) - spent;
 }

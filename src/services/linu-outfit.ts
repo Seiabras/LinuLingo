@@ -1,7 +1,7 @@
 import { useSyncExternalStore } from 'react';
 import type { SQLiteDatabase } from 'expo-sqlite';
 import { LOCAL_USER_ID } from '@/database/schema';
-import { ROUPAS_LINU } from '@/data/roupas-linu';
+import { krillBalance, ROUPAS_LINU } from '@/data/roupas-linu';
 
 /**
  * A roupinha que o Linu está usando, lida por todos os Linus da tela (fica guardada em Meta).
@@ -46,4 +46,22 @@ export async function lessonsByLanguage(db: SQLiteDatabase): Promise<Record<stri
     out[lang] = (out[lang] ?? 0) + 1;
   }
   return out;
+}
+
+/** Roupinhas compradas na loja (ids separados por vírgula em Meta). */
+const SHOP = 'loja_linu';
+
+export async function loadBought(db: SQLiteDatabase): Promise<string[]> {
+  const r = await db.getFirstAsync<{ value: string }>('SELECT value FROM Meta WHERE key = ?', [SHOP]);
+  return (r?.value ?? '').split(',').filter(Boolean);
+}
+
+/** Compra uma roupinha da loja se o krill der; devolve a lista nova, ou null se não deu. */
+export async function buyOutfit(db: SQLiteDatabase, id: string, totalXp: number): Promise<string[] | null> {
+  const o = ROUPAS_LINU.find((x) => x.id === id);
+  const bought = await loadBought(db);
+  if (!o?.price || bought.includes(id) || krillBalance(totalXp, bought) < o.price) return null;
+  const next = [...bought, id];
+  await db.runAsync('INSERT OR REPLACE INTO Meta (key, value) VALUES (?, ?)', [SHOP, next.join(',')]);
+  return next;
 }

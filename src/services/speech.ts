@@ -84,11 +84,23 @@ function stopClip() {
   player = null;
 }
 
+/** Quem gravou a fala nativa que acabou de tocar (para o aviso «🎙️ quem fala · de onde»). */
+export type NativeSpeaker = { lang: string; speaker: string; license: string };
+const speakerListeners = new Set<(s: NativeSpeaker) => void>();
+export function onNativeSpeaker(l: (s: NativeSpeaker) => void): () => void {
+  speakerListeners.add(l);
+  return () => speakerListeners.delete(l);
+}
+
 /** Toca a gravação de um nativo, se existir para este texto. Devolve false se não houver. */
 export function playNativeClip(text: string, locale: string, rate = 1): boolean {
   const clip = clipFor(locale, text);
   if (!clip) return false;
-  return playClip(clip.src, rate);
+  const ok = playClip(clip.src, rate);
+  // «Speaker: Fulano\nRecorder: …» → Fulano
+  const speaker = clip.author.match(/Speaker:\s*([^\n]+)/)?.[1]?.trim() ?? clip.author.split('\n')[0];
+  if (ok) speakerListeners.forEach((l) => l({ lang: locale.split('-')[0].toLowerCase(), speaker, license: clip.license }));
+  return ok;
 }
 
 /** Toca uma gravação (módulo de áudio). Devolve false se não deu. */

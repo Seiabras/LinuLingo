@@ -9,6 +9,7 @@ import { DB_NAME, initDatabase } from '@/database/db';
 import { AppStateProvider } from '@/services/app-state';
 import { StickerToast } from '@/components/StickerToast';
 import { NeuralVoiceToast } from '@/components/NeuralVoiceToast';
+import { NativeSpeakerToast } from '@/components/NativeSpeakerToast';
 // guarda desde o início o aviso do navegador de que o app pode ser instalado
 import '@/services/pwa';
 
@@ -60,6 +61,7 @@ export default function RootLayout() {
             </Stack>
             <StickerToast />
             <NeuralVoiceToast />
+            <NativeSpeakerToast />
           </AppStateProvider>
         </SQLiteProvider>
       </Suspense>
