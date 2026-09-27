@@ -77,7 +77,7 @@ export default function TutorialScreen() {
           {
             mood: 'comemorando' as const,
             title: 'Como faz o bicho?',
-            text: `Em ${nomeIdioma(pack.name)}, o cachorro faz «${pack.animalSounds.find((a) => a.id === 'cao')?.sound ?? ''}», não «au-au»! Em «🐶 Como faz o bicho?» (Mais práticas) você aprende como cada língua escuta os bichos e o verbo de cada som, e joga para fixar.`,
+            text: `Em ${nomeIdioma(pack.name)}, o cachorro faz «${pack.animalSounds.find((a) => a.id === 'cao')?.sound ?? ''}», não «au-au»! Em «🐶 Como faz o bicho?» (Mais práticas) você aprende como cada língua escuta os bichos e o verbo de cada som, e joga para fixar. E no «🔊 Adivinhe o som» você ouve gravações de verdade de bichos e instrumentos e escolhe o nome em ${nomeIdioma(pack.name)}.`,
           },
         ]
       : []),

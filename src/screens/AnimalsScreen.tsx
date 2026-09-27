@@ -9,11 +9,12 @@ import { awardXp, getMeta, setMeta } from '@/database/queries';
 import { BICHOS_PT } from '@/data/bichos-pt';
 import { buildAnimalRound, recordAnimal, splitVerb, type AnimalProgress, type AnimalQuestion } from '@/services/animals';
 import { logMistake } from '@/services/mistakes';
-import { speak } from '@/services/speech';
+import { playClip, speak } from '@/services/speech';
 import * as haptics from '@/services/haptics';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
 import { nomeIdioma } from '@/services/idioma-nome';
+import { SONS } from '@/data/sons';
 
 const ROUND = 10;
 
@@ -195,6 +196,17 @@ export default function AnimalsScreen() {
                     {pt && <Text className="text-sm text-slate-500 dark:text-slate-400">em português: {pt.sound}</Text>}
                   </Pressable>
                 </View>
+                {SONS[a.id] && (
+                  <Pressable
+                    accessibilityRole="button"
+                    accessibilityLabel={`Ouvir o bicho de verdade: ${a.animal}`}
+                    onPress={() => playClip(SONS[a.id].src)}
+                    className="items-center rounded-2xl bg-amber-100 px-2 py-1 active:opacity-70 dark:bg-amber-950"
+                  >
+                    <Text className="text-xl">🐾</Text>
+                    <Text className="text-[10px] font-bold text-amber-800 dark:text-amber-200">de verdade</Text>
+                  </Pressable>
+                )}
               </View>
               <View className="flex-row items-center gap-2">
                 <SpeakButton text={a.verb} locale={locale} size={16} />
@@ -211,7 +223,7 @@ export default function AnimalsScreen() {
           );
         })}
       </View>
-      <Text className="mt-3 text-xs text-slate-400">A voz do aparelho lê as onomatopeias como se fossem palavras: vale pelo jeito de escrever e de falar de cada língua.</Text>
+      <Text className="mt-3 text-xs text-slate-400">A voz do aparelho lê as onomatopeias como se fossem palavras: vale pelo jeito de escrever e de falar de cada língua. O 🐾 toca o som de verdade do bicho (Wikimedia Commons), e o «🔊 Adivinhe o som» vira jogo.</Text>
     </Screen>
   );
 }

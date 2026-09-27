@@ -8,6 +8,7 @@ import { LINU_PHOTOS } from '@/data/fotos-linu';
 import { playClip, speak } from '@/services/speech';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
+import { SONS } from '@/data/sons';
 
 const LOCALE: Record<string, string> = { ro: 'ro-RO', ru: 'ru-RU' };
 
@@ -56,6 +57,13 @@ export default function CreditsScreen() {
         <Text className="text-sm text-slate-500 dark:text-slate-400">
           📷 Fotos do pinguim-de-barbicha (Wikimedia Commons):{' '}
           {LINU_PHOTOS.map((p) => `${p.author} (${p.license})`).join(' · ')}.
+        </Text>
+        <Text className="text-sm text-slate-500 dark:text-slate-400">
+          🔊 Sons de bichos e instrumentos (Wikimedia Commons):{' '}
+          {Object.entries(SONS)
+            .map(([id, c]) => `${id} — ${c.author} (${c.license})`)
+            .join(' · ')}
+          .
         </Text>
         <Pressable onPress={() => Linking.openURL('https://lingualibre.org')}>
           <Text className="text-sm font-semibold text-conecta">Grave também no Lingua Libre ›</Text>

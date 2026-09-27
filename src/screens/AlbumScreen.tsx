@@ -13,6 +13,9 @@ import * as haptics from '@/services/haptics';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
 import { nomeIdioma } from '@/services/idioma-nome';
+import { SONS } from '@/data/sons';
+import { STICKER_SOUNDS } from '@/data/sons-nomes';
+import { playClip } from '@/services/speech';
 
 /**
  * Álbum de figurinhas dos bichos e instrumentos de cada país. Cada atividade concluída dá uma
@@ -108,6 +111,9 @@ export default function AlbumScreen() {
                     </View>
                   )}
                   <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">{s.item.fact}</Text>
+                  {STICKER_SOUNDS[s.id] && SONS[STICKER_SOUNDS[s.id]] && (
+                    <Button title="🔊 Ouvir o som" variant="ghost" onPress={() => playClip(SONS[STICKER_SOUNDS[s.id]].src)} />
+                  )}
                 </Card>
               ) : null,
             )}
