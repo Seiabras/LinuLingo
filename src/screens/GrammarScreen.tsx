@@ -9,6 +9,7 @@ import { useIsDark } from '@/services/theme';
 import { SUBLEVELS } from '@/types';
 import { AREAS } from '@/data/linguistica';
 import { LESSONS } from '@/data/linguistica-aulas';
+import { nomeIdioma } from '@/services/idioma-nome';
 
 /** Aba Gramática: tópicos por subnível (A1.1 … C2), com busca. */
 export default function GrammarScreen() {
@@ -34,7 +35,7 @@ export default function GrammarScreen() {
       <View className="mt-3 flex-row items-end gap-2">
         <Linu mood="pensando" size={64} animate={false} />
         <SpeechBubble className="mb-5">
-          A gramática do {pack.name.toLowerCase()} explicada para quem fala português, do A1.1 ao C2. Cada tópico tem exemplos com áudio, IPA e um mini-quiz.
+          A gramática do {nomeIdioma(pack.name)} explicada para quem fala português, do A1.1 ao C2. Cada tópico tem exemplos com áudio, IPA e um mini-quiz.
         </SpeechBubble>
       </View>
 
@@ -60,7 +61,7 @@ export default function GrammarScreen() {
       {mode === 'area' && (
         <View className="gap-2">
           <Text className="text-sm text-slate-600 dark:text-slate-400">
-            Linguística: a ciência da linguagem. As 7 áreas mostram como funciona o {pack.name.toLowerCase()}; as ferramentas e os grandes temas valem para
+            Linguística: a ciência da linguagem. As 7 áreas mostram como funciona o {nomeIdioma(pack.name)}; as ferramentas e os grandes temas valem para
             todas as línguas.
           </Text>
           <SectionTitle>🧭 As 7 áreas da língua</SectionTitle>

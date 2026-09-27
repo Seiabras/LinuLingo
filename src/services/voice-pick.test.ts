@@ -35,3 +35,12 @@ test('entre vozes do eSpeak, prefere a base às variantes', () => {
 test('sem voz do idioma devolve null', () => {
   assert.equal(pickVoice(voices, 'ja-JP'), null);
 });
+
+test('português: a voz de Portugal ganha de uma voz brasileira mais natural', () => {
+  const voices = [
+    { identifier: 'br', name: 'Google português do Brasil', language: 'pt-BR' },
+    { identifier: 'pt', name: 'Portuguese (Portugal)', language: 'pt-PT' },
+  ];
+  assert.equal(pickVoice(voices, 'pt-PT')?.identifier, 'pt');
+  assert.equal(pickVoice(voices, 'pt-BR')?.identifier, 'br');
+});

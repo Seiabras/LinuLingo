@@ -136,8 +136,8 @@ export const MAP_LANGUAGES: MapLanguage[] = [
     millions: 250,
     lineage: ['Indo-europeu', 'Itálico', 'Românico', 'Ibero-românico'],
     countries: [
-      o('BRA', { variant: 'pt-BR', note: 'Variante brasileira: a do próprio app.' }),
-      o('PRT', { variant: 'pt-PT', note: 'Variante europeia: outra pronúncia, vocabulário (comboio, autocarro) e o «tu» mais usado.' }),
+      o('BRA', { variant: 'pt-BR', note: 'Variante brasileira: a de quem usa o app, e uma das duas variantes do curso de português.' }),
+      o('PRT', { variant: 'pt-PT', note: 'Variante europeia: a que o curso de português ensina, com outra pronúncia, vocabulário (comboio, autocarro), a ênclise («diz-me») e o «tu» mais usado.' }),
       o('AGO'),
       o('MOZ'),
       o('GNB'),

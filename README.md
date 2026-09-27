@@ -16,6 +16,7 @@ O mascote é o **Linu**, um pinguim-de-barbicha (*Pygoscelis antarctica*).
 | 🇷🇺 Russo | Indo-europeu › Balto-eslavo › Eslavo › Eslavo oriental | **disponível** |
 | 🇪🇸 Espanhol | Indo-europeu › Itálico › Românico › Ibero-românico | **disponível** |
 | 🇮🇹 Italiano | Indo-europeu › Itálico › Românico › Ítalo-dálmata | **disponível** |
+| 🇵🇹 Português de Portugal | Indo-europeu › Itálico › Românico › Ibero-românico › Galego-português | **disponível** |
 | 🇬🇧 Inglês | Indo-europeu › Germânico › Germânico ocidental | em breve |
 | 🇫🇮 Finlandês | Urálico › Fínico › Fínico setentrional | em breve |
 | 🇪🇪 Estoniano | Urálico › Fínico › Fínico meridional | em breve |
@@ -59,6 +60,14 @@ Cada idioma mostra os seus jeitos regionais de falar (18 no espanhol, 5 no romen
 - **Palácio da memória** com 2 salas e dicas para -zione, -tà e os plurais que trocam de gênero; **diário** que pega «la fiore», «il studente», «sono 20 anni» e «mi piace i gatti».
 - **Bichos e sons** da Itália: lobo-dos-apeninos, urso-marsicano, íbex; piano, violino de Cremona, bandolim napolitano, zampogna.
 - Conteúdo conferido pelos verificadores (scripts/checar-vocab-it.ts, checar-conteudo-it.ts, checar-pron-it.ts: acentos «è/perché», apóstrofos «un po’/qual è», nada de letras do português) e relido na revisão.
+
+## O que tem no português de Portugal (com norma culta)
+
+- Um curso para **brasileiros**: o «idioma» é o português europeu (padrão de Lisboa) e a «tradução» é o português do Brasil. Junto vem a **norma culta** que vale dos dois lados do Atlântico: crase, regência, concordância, colocação pronominal (ênclise, próclise, mesóclise), conjuntivo e infinitivo pessoal, o Acordo de 1990, pontuação, redação e literatura.
+- 4.616 palavras (o equivalente brasileiro em cada uma: autocarro = ônibus, pequeno-almoço = café da manhã), 15 unidades, 40 tópicos de gramática, 48 histórias (de Alfama aos Açores, de Luanda a Macau e Díli, e 3 no Brasil), 70 falsos amigos entre as duas normas (rapariga, bicha, propina, fato, camisola…), 158 etimologias e 28 sotaques e dialetos (carioca, caipira, mineiro, baiano, gaúcho, manezinho…, lisboeta, açoriano, madeirense, angolano, moçambicano, o mirandês, o crioulo cabo-verdiano e o galego).
+- **IPA em duas normas** (src/services/ipa-pt.ts): Portugal (vogais átonas reduzidas, «s» chiado, «r» uvular, «l» velar, «ei» [ɐj]) e Brasil (t/d antes de [i] → [tʃ dʒ], «l» final [w]); a variante escolhida na aba Cultura troca a IPA e a voz. Dicionário de pronúncia com 8.038 formas (timbre de Portugal: déve, pôrto, nóva).
+- **Diário** que corrige «estou fazendo» → «estou a fazer» e «Me chamo» → «Chamo-me»; verificador que aponta brasileirismos no texto europeu; **voz**: a de Portugal ganha de uma brasileira mais natural (a pronúncia muda demais).
+- Gravações de nativos só de falantes que moram em Portugal (scripts/falantes-por-pais.mjs).
 
 ## O que tem no russo
 
@@ -170,6 +179,7 @@ npx tsx scripts/fluxo-trilha.mjs          # faixa de subníveis e teste para pul
 node scripts/fluxo-linguistica.mjs        # áreas da língua, quadro do IPA e aulas
 npx tsx scripts/fluxo-russo.mjs           # russo: troca de idioma, cirílico, IPA, teclado, diário
 npx tsx scripts/fluxo-espanhol.mjs        # espanhol: falsos amigos, palácio, variante da Espanha ([θ]), linguística, diário
+npx tsx scripts/fluxo-portugues.mjs        # português de Portugal: variante do Brasil (IPA), diário (estar a, ênclise), falsos amigos
 npx tsx scripts/fluxo-italiano.mjs        # italiano: falsos amigos, IPA, palácio, variante da Suíça, linguística, diário
 node scripts/fluxo-mapa.mjs                # mapa ISO 3166-1/3166-3, zoom nas subdivisões e variante da Moldávia
 node scripts/capturas.mjs / /vocabulario   # capturas em desktop, iPhone, Android e iPad

@@ -9,6 +9,7 @@ import { detectPlatform, OS_ICON, OS_LABEL, type OS } from '@/services/platform-
 import { ALL_OS, voiceGuide, type GuideStep } from '@/data/guias-voz';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
+import { nomeIdioma } from '@/services/idioma-nome';
 
 type Status = 'verificando' | 'natural' | 'robotica' | 'nenhuma';
 
@@ -40,9 +41,9 @@ export default function VoiceSetupScreen() {
   const mood: LinuMood = status === 'natural' ? 'comemorando' : status === 'nenhuma' ? 'triste' : status === 'robotica' ? 'feliz' : 'pensando';
   const bubble = {
     verificando: 'Deixa eu procurar uma voz aqui no seu aparelho…',
-    natural: `Achei uma voz ${pack.name.toLowerCase()} bem natural! Toque em «Ouvir» para testar.`,
-    robotica: `Tem voz em ${pack.name.toLowerCase()}, mas é meio robótica. Dá para trocar por uma mais natural, olha o passo a passo abaixo.`,
-    nenhuma: `Ainda não tem voz em ${pack.name.toLowerCase()} neste aparelho. É rapidinho: siga os passos do seu sistema aqui embaixo.`,
+    natural: `Achei uma voz ${nomeIdioma(pack.name)} bem natural! Toque em «Ouvir» para testar.`,
+    robotica: `Tem voz em ${nomeIdioma(pack.name)}, mas é meio robótica. Dá para trocar por uma mais natural, olha o passo a passo abaixo.`,
+    nenhuma: `Ainda não tem voz em ${nomeIdioma(pack.name)} neste aparelho. É rapidinho: siga os passos do seu sistema aqui embaixo.`,
   }[status];
   const others = ALL_OS.filter((o) => o !== os);
   const mic = canRecognize();
@@ -64,7 +65,7 @@ export default function VoiceSetupScreen() {
       <Card className="gap-3">
         <View className="flex-row items-center justify-between">
           <Text className="font-bold text-slate-800 dark:text-slate-100">
-            Voz em {pack.name.toLowerCase()} {pack.flag}
+            Voz em {nomeIdioma(pack.name)} {pack.flag}
           </Text>
           <Chip
             label={{ verificando: 'verificando…', natural: '✓ natural', robotica: '✓ robótica', nenhuma: '✗ não encontrada' }[status]}

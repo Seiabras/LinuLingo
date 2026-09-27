@@ -5,6 +5,7 @@ const VOICE_NAMES: Record<string, Partial<Record<OS | 'piper', string>>> = {
   ro: { ios: 'Ioana', macos: 'Ioana', windows: 'Andrei', piper: 'ro_RO-mihai-medium' },
   ru: { ios: 'Milena', macos: 'Milena', windows: 'Irina', piper: 'ru_RU-irina-medium' },
   es: { ios: 'Paulina', macos: 'Paulina', windows: 'Sabina', piper: 'es_MX-ald-medium' },
+  pt: { ios: 'Joana', macos: 'Joana', windows: 'Helia', piper: 'pt_PT-tugão-medium' },
   it: { ios: 'Alice', macos: 'Alice', windows: 'Elsa', piper: 'it_IT-paola-medium' },
 };
 

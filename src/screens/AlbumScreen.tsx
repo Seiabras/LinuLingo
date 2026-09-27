@@ -12,6 +12,7 @@ import { albumStats, loadAlbum, saveAlbum, STICKERS, TRADE_COST, tradeDuplicates
 import * as haptics from '@/services/haptics';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
+import { nomeIdioma } from '@/services/idioma-nome';
 
 /**
  * Álbum de figurinhas dos bichos e instrumentos de cada país. Cada atividade concluída dá uma
@@ -57,7 +58,7 @@ export default function AlbumScreen() {
         <SpeechBubble className="mb-5">
           {st.owned === st.total
             ? 'Álbum completo! Você conhece os bichos e os instrumentos de todos os países do mapa.'
-            : `Cada lição ou treino que você termina dá uma figurinha: os bichos e os instrumentos de cada país, mais dos lugares onde se fala ${pack.name.toLowerCase()}.`}
+            : `Cada lição ou treino que você termina dá uma figurinha: os bichos e os instrumentos de cada país, mais dos lugares onde se fala ${nomeIdioma(pack.name)}.`}
         </SpeechBubble>
       </View>
       <ProgressBar value={st.owned / st.total} />

@@ -61,11 +61,11 @@ export default function PalaceScreen() {
         source: 'palacio',
         key: noun.id,
         prompt: `Em que sala mora «${noun.word_target}» (${noun.word_native})?`,
-        expected: GENDER_NAME[noun.gender],
-        given: GENDER_NAME[g],
+        expected: pack.genderNames?.[noun.gender] ?? GENDER_NAME[noun.gender],
+        given: pack.genderNames?.[g] ?? GENDER_NAME[g],
         note: genderTip(noun.word_target, noun.gender, pack.code),
         speak: noun.word_target,
-        options: (pack.genders ?? ['m', 'f', 'n']).map((x) => GENDER_NAME[x]),
+        options: (pack.genders ?? ['m', 'f', 'n']).map((x) => pack.genderNames?.[x] ?? GENDER_NAME[x]),
       });
     setGame({ ...game, answer: g, hits: game.hits + (ok ? 1 : 0) });
   };
@@ -205,7 +205,7 @@ export default function PalaceScreen() {
               <Text className="text-4xl">{r.emoji}</Text>
               <View className="flex-1">
                 <Text className="text-lg font-extrabold text-slate-900 dark:text-white">{r.name}</Text>
-                <Text className="text-sm text-slate-600 dark:text-slate-400">{{ m: 'masculino', f: 'feminino', n: 'neutro' }[g]} · {counts[g].all} palavras</Text>
+                <Text className="text-sm text-slate-600 dark:text-slate-400">{pack.genderNames?.[g] ?? GENDER_NAME[g]} · {counts[g].all} palavras</Text>
               </View>
               <Chip label={`${counts[g].learned} vistas`} tone={r.tone} />
             </Pressable>

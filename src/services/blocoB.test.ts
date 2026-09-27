@@ -120,3 +120,10 @@ test('diário (italiano): artigo pelo gênero e pelo começo da palavra, idade c
   assert.equal(checkJournal('Io piace il mare.', lexIt, 'it').corrected, 'Mi piace il mare.');
   assert.equal(checkJournal('Mi piace i gatti.', lexIt, 'it').corrected, 'Mi piacciono i gatti.');
 });
+
+test('diário (português de Portugal): estar a + infinitivo e ênclise', () => {
+  const empty = buildLexicon([], []);
+  assert.equal(checkJournal('Estou fazendo o jantar.', empty, 'pt').corrected, 'Estou a fazer o jantar.');
+  assert.equal(checkJournal('Me chamo Ana. Te digo já.', empty, 'pt').corrected, 'Chamo-me Ana. Digo-te já.');
+  assert.equal(checkJournal('Ela está a ler e não me diz nada.', empty, 'pt').corrected, 'Ela está a ler e não me diz nada.');
+});

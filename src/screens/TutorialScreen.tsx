@@ -13,6 +13,7 @@ import { setMeta } from '@/database/queries';
 import { speak } from '@/services/speech';
 import { ACCENT_VOICES, CLIPS } from '@/data/audio-index';
 import type { LanguagePack } from '@/data/types';
+import { nomeIdioma } from '@/services/idioma-nome';
 
 export const TUTORIAL_KEY = 'tutorial_visto';
 
@@ -32,7 +33,7 @@ export default function TutorialScreen() {
   const [i, setI] = useState(0);
 
   const slides: Slide[] = [
-    { mood: 'feliz', title: `${pack.phrases.hi} Eu sou o Linu 🐧`, text: `Sou um pinguim-de-barbicha, dá para ver pela faixinha preta embaixo do queixo. Vou te acompanhar no ${pack.name.toLowerCase()}. Em 1 minuto te mostro como tudo funciona!` },
+    { mood: 'feliz', title: `${pack.phrases.hi} Eu sou o Linu 🐧`, text: `Sou um pinguim-de-barbicha, dá para ver pela faixinha preta embaixo do queixo. Vou te acompanhar no ${nomeIdioma(pack.name)}. Em 1 minuto te mostro como tudo funciona!` },
     { mood: 'falando', title: 'A trilha', text: 'A trilha vai do A1.1 ao C2 em 15 subníveis, na faixa do topo. As lições liberam uma por vez; se você já sabe um nível, toque em «Já sei isto» numa unidade bloqueada e faça o teste: com 80% você pula para lá. Cada unidade tem quatro tipos de parada:', extra: 'trilha' },
     { mood: 'pensando', title: 'Uma lição, 6 etapas', text: 'Primeiro você entende, depois pratica. Nada de decorar sem saber o porquê:', extra: 'etapas' },
     // idiomas de outro alfabeto (russo): teclado próprio e sílaba tônica marcada
@@ -41,7 +42,7 @@ export default function TutorialScreen() {
           {
             mood: 'pensando' as const,
             title: 'Outro alfabeto, sem medo',
-            text: `O ${pack.name.toLowerCase()} tem alfabeto próprio. A lição 1, a aba Gramática e o treino «🔤 Alfabeto» (em Mais práticas) ensinam as letras, e nas respostas escritas aparece o botão «⌨️ Mostrar teclado» com todas elas. A sílaba tônica vem marcada com um acento (молоко́): os nativos não escrevem esse acento, ele está aqui para você pronunciar certo. Na hora de responder, pode digitar sem ele.`,
+            text: `O ${nomeIdioma(pack.name)} tem alfabeto próprio. A lição 1, a aba Gramática e o treino «🔤 Alfabeto» (em Mais práticas) ensinam as letras, e nas respostas escritas aparece o botão «⌨️ Mostrar teclado» com todas elas. A sílaba tônica vem marcada com um acento (молоко́): os nativos não escrevem esse acento, ele está aqui para você pronunciar certo. Na hora de responder, pode digitar sem ele.`,
           },
         ]
       : []),
@@ -51,15 +52,15 @@ export default function TutorialScreen() {
           {
             mood: 'pensando' as const,
             title: 'Cuidado com os falsos amigos',
-            text: `O ${pack.name.toLowerCase()} parece fácil porque quase tudo se parece com o português, e é aí que mora a armadilha: «${pack.falseFriends[0].word}» quer dizer «${pack.falseFriends[0].means}», não «${pack.falseFriends[0].looksLike}». No treino «🪤 Falsos amigos» (em Mais práticas) você vê a lista com exemplos e joga 10 perguntas; as palavras que você erra voltam mais vezes. No vocabulário, ${pack.code === 'it' ? 'as que mudam de gênero (il fiore) ou de gênero no plural (l’uovo → le uova)' : 'as que mudam de gênero (el viaje, la leche)'} também vêm marcadas.`,
+            text: `${pack.code === 'pt' ? 'Você já fala esta língua, e é aí que mora a armadilha: em Portugal, algumas palavras iguais querem dizer outra coisa.' : `O ${nomeIdioma(pack.name)} parece fácil porque quase tudo se parece com o português, e é aí que mora a armadilha:`} «${pack.falseFriends[0].word}» quer dizer «${pack.falseFriends[0].means}», não «${pack.falseFriends[0].looksLike}». No treino «🪤 Falsos amigos» (em Mais práticas) você vê a lista com exemplos e joga 10 perguntas; as palavras que você erra voltam mais vezes. No vocabulário, ${pack.code === 'pt' ? 'as palavras que mudam de sentido (rapariga, propina) ou de nome (autocarro, pequeno-almoço) em Portugal' : pack.code === 'it' ? 'as que mudam de gênero (il fiore) ou de gênero no plural (l’uovo → le uova)' : 'as que mudam de gênero (el viaje, la leche)'} também vêm marcadas.`,
           },
         ]
       : []),
     { mood: 'feliz', title: 'Gestos nos cartões', text: 'No sprint de 5 minutos e na revisão você desliza os cartões. Experimente com este:', extra: 'gestos' },
     { mood: 'pensando', title: 'O cofre lembra por você', text: 'Cada palavra vai para o cofre de vocabulário. O app calcula (algoritmo SM-2) o dia certo de revisar: um pouco antes de você esquecer. Quando aparecer «revisar hoje», é a hora!' },
     { mood: 'comemorando', title: 'Ofensiva e meta do dia', text: 'Estudar todo dia mantém o fogo aceso:', extra: 'ofensiva' },
-    { mood: 'pensando', title: 'Gramática e linguística', text: `Na aba Gramática há dois jeitos de estudar. «Por nível» traz os tópicos do A1.1 ao C2. «Por área da língua» é um curso de linguística: fonética, fonologia, morfologia, sintaxe, semântica, pragmática e estilística aplicadas ao ${pack.name.toLowerCase()}, o quadro interativo do IPA, normas (códigos de línguas, transliteração, glosas, CEFR) e grandes temas, como as famílias de línguas.` },
-    { mood: 'comemorando', title: 'Histórias com vários finais', text: `Nas Histórias você lê em ${pack.name.toLowerCase()} e decide o que eu faço. Se escolher algo que mostra que não entendeu o texto, eu dou uma dica. Cada história tem mais de um final: tente achar todos!` },
+    { mood: 'pensando', title: 'Gramática e linguística', text: `Na aba Gramática há dois jeitos de estudar. «Por nível» traz os tópicos do A1.1 ao C2. «Por área da língua» é um curso de linguística: fonética, fonologia, morfologia, sintaxe, semântica, pragmática e estilística aplicadas ao ${nomeIdioma(pack.name)}, o quadro interativo do IPA, normas (códigos de línguas, transliteração, glosas, CEFR) e grandes temas, como as famílias de línguas.` },
+    { mood: 'comemorando', title: 'Histórias com vários finais', text: `Nas Histórias você lê em ${nomeIdioma(pack.name)} e decide o que eu faço. Se escolher algo que mostra que não entendeu o texto, eu dou uma dica. Cada história tem mais de um final: tente achar todos!` },
     { mood: 'pensando', title: 'Diário, shadowing e palácio', text: `No Diário você escreve 3 frases sobre o seu dia e eu corrijo acentos, gênero e erros comuns. No Shadowing você repete frases imitando o ritmo e a melodia, e eu desenho a sua voz. No Palácio da memória cada gênero mora numa sala: ${(pack.genders ?? ['m', 'f', 'n']).includes('n') ? '🔥 Forja (masculino), 🌊 Lago (feminino) e 🦎 Jardim do Camaleão (neutro)' : '🔥 Forja (masculino) e 🌊 Lago (feminino)'}.` },
     {
       mood: 'falando',
@@ -76,18 +77,18 @@ export default function TutorialScreen() {
           {
             mood: 'comemorando' as const,
             title: 'Como faz o bicho?',
-            text: `Em ${pack.name.toLowerCase()}, o cachorro faz «${pack.animalSounds.find((a) => a.id === 'cao')?.sound ?? ''}», não «au-au»! Em «🐶 Como faz o bicho?» (Mais práticas) você aprende como cada língua escuta os bichos e o verbo de cada som, e joga para fixar.`,
+            text: `Em ${nomeIdioma(pack.name)}, o cachorro faz «${pack.animalSounds.find((a) => a.id === 'cao')?.sound ?? ''}», não «au-au»! Em «🐶 Como faz o bicho?» (Mais práticas) você aprende como cada língua escuta os bichos e o verbo de cada som, e joga para fixar.`,
           },
         ]
       : []),
     {
       mood: 'comemorando',
       title: 'Álbum de figurinhas',
-      text: `Cada lição ou treino que você termina vale uma figurinha para o «📒 Álbum» (em Mais práticas): os bichos e os instrumentos musicais de cada país, com mais chance de vir dos lugares onde se fala ${pack.name.toLowerCase()}. Toque numa figurinha para ler a curiosidade dela; com 3 repetidas, você troca por uma que falta.`,
+      text: `Cada lição ou treino que você termina vale uma figurinha para o «📒 Álbum» (em Mais práticas): os bichos e os instrumentos musicais de cada país, com mais chance de vir dos lugares onde se fala ${nomeIdioma(pack.name)}. Toque numa figurinha para ler a curiosidade dela; com 3 repetidas, você troca por uma que falta.`,
     },
     { mood: 'feliz', title: 'O mundo do idioma', text: `Na aba Cultura tem um mapa-múndi: toque num idioma para ver onde ele é falado (o que você estuda vem primeiro, seguido dos parentes mais próximos). Em «🔎 Todos os idiomas» estão os mais de 700 idiomas do mundo, com a família de cada um; o botão «Estudar» aparece nos que o app já ensina. Os botões embaixo do mapa levam a cada região e sub-região (América do Sul › Andina, por exemplo), com a lista dos países. Toque num país e o mapa aproxima nele, mostrando os estados e as províncias; toque numa região para ver o nome e o código. No cartão aparecem as línguas, da mais falada para a menos falada, os animais nativos e os instrumentos de lá. No «🗺️ Jogo do mapa» (Mais práticas) você treina onde cada língua é oficial, que língua se fala em cada país e onde fica cada sotaque.${variantTip(pack)}${accentTip(pack)}` },
     { mood: 'falando', title: 'Conversa e comunidade', text: 'Na aba Conversa você pratica situações reais (café, hotel, entrevista) e eu aviso se o tom ficou formal ou informal demais. Na Comunidade você corrige textos de outros alunos e ganha 20 XP.' },
-    { mood: 'falando', title: 'Minha voz', text: `Para ouvir as palavras, o seu aparelho precisa de uma voz em ${pack.name.toLowerCase()}. Confira se já tem:`, extra: 'voz' },
+    { mood: 'falando', title: 'Minha voz', text: `Para ouvir as palavras, o seu aparelho precisa de uma voz em ${nomeIdioma(pack.name)}. Confira se já tem:`, extra: 'voz' },
     ...(Platform.OS === 'web'
       ? [
           {
@@ -175,7 +176,7 @@ function accentTip(pack: LanguagePack): string {
   const n = pack.accents?.length ?? 0;
   if (!n) return '';
   const voices = Object.keys(ACCENT_VOICES[pack.code] ?? {}).length > 0;
-  return ` E em «🗣️ Sotaques e dialetos» estão ${n} jeitos regionais de falar ${pack.name.toLowerCase()}, com minimapa, exemplos e palavras típicas${voices ? ', gravações de gente de cada região (🎙️) e a mesma palavra dita em sotaques diferentes, lado a lado' : ''}. Escolha um para estudar: a minha voz e a pronúncia passam a seguir o jeito de lá, e o treino do sotaque aparece em Mais práticas. No mapa, ao tocar numa região, aparece o sotaque de lá.`;
+  return ` E em «🗣️ Sotaques e dialetos» estão ${n} jeitos regionais de falar ${nomeIdioma(pack.name)}, com minimapa, exemplos e palavras típicas${voices ? ', gravações de gente de cada região (🎙️) e a mesma palavra dita em sotaques diferentes, lado a lado' : ''}. Escolha um para estudar: a minha voz e a pronúncia passam a seguir o jeito de lá, e o treino do sotaque aparece em Mais práticas. No mapa, ao tocar numa região, aparece o sotaque de lá.`;
 }
 
 function Row({ icon, bg, title, text }: { icon: ReactNode; bg: string; title: string; text: string }) {

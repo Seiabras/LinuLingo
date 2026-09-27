@@ -288,6 +288,8 @@ export interface LanguagePack extends LanguageInfo {
   falseFriends?: FalseFriend[];
   /** Gêneros gramaticais do idioma (padrão: masculino, feminino e neutro) */
   genders?: ('m' | 'f' | 'n')[];
+  /** Nome de cada gênero quando não é masculino/feminino/neutro (sueco: «comum (en)», «neutro (ett)») */
+  genderNames?: Partial<Record<'m' | 'f' | 'n', string>>;
   /** As áreas da língua (fonética, fonologia, morfologia…) aplicadas a este idioma */
   linguistics?: LinguisticsArea[];
   /** Sotaques e dialetos regionais (aba Cultura e mapa) */

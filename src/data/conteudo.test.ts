@@ -132,7 +132,7 @@ test('seletor agrupa por família e ramo', () => {
   assert.deepEqual(Object.keys(g).sort(), ['Coreânico', 'Indo-europeu', 'Japônico', 'Urálico']);
   assert.deepEqual(
     g['Indo-europeu']['Itálico'].map((l) => l.code),
-    ['ro', 'es', 'it'],
+    ['ro', 'es', 'it', 'pt'],
   );
   assert.deepEqual(g['Urálico']['Fínico'].map((l) => l.code).sort(), ['et', 'fi']);
 });
@@ -231,4 +231,18 @@ test('it: dicionário de pronúncia cobre o vocabulário, com tônica e timbre b
   // e toda palavra das frases em italiano (conjugações, plurais, nomes): senão a IPA erra a tônica
   const { italianTexts } = await import('./it/textos');
   assert.deepEqual(pronunciationProblems(PRON_IT, italianTexts(PACKS.it)).slice(0, 10), []);
+});
+
+test('pt: texto europeu sem brasileirismos (gerúndio com estar, próclise no começo, grafias do Brasil)', async () => {
+  const { europeanPortugueseProblems } = await import('../services/pt-texto');
+  const { europeanTexts } = await import('./pt/textos');
+  const problems = europeanTexts(PACKS.pt).flatMap((t) => europeanPortugueseProblems(t).map((p) => `«${t.slice(0, 40)}»: ${p}`));
+  assert.deepEqual(problems.slice(0, 10), []);
+});
+
+test('pt: dicionário de pronúncia cobre toda palavra europeia do app, com a tônica marcada', async () => {
+  const { PRON_PT } = await import('./pt/pronuncia');
+  const { pronunciationProblemsPt } = await import('../services/pt-pronuncia');
+  const { europeanTexts } = await import('./pt/textos');
+  assert.deepEqual(pronunciationProblemsPt(PRON_PT, europeanTexts(PACKS.pt)).slice(0, 10), []);
 });

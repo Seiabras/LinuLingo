@@ -55,7 +55,11 @@ function restoreDiacritics(token: string, lex: JournalLexicon): string | null {
 const NUMBER = /^(\d+|doi|două|trei|patru|cinci|șase|sase|șapte|sapte|opt|nouă|noua|zece|unsprezece|doisprezece|cincisprezece|douăzeci|douazeci|treizeci|patruzeci|cincizeci|o)$/i;
 const STATES: Record<string, string> = { foame: 'foame', sete: 'sete', frig: 'frig', cald: 'cald', frica: 'frică', frică: 'frică', somn: 'somn' };
 
-const LANG_NAME: Record<string, string> = { ro: 'romeno', ru: 'russo', es: 'espanhol', it: 'italiano' };
+const LANG_NAME: Record<string, string> = { ro: 'romeno', ru: 'russo', es: 'espanhol', it: 'italiano', pt: 'português de Portugal' };
+
+// português de Portugal: estar + gerúndio → estar a + infinitivo; pronome átono no começo da frase → ênclise
+const ESTAR_PT = new Set(['estou', 'estás', 'está', 'estamos', 'estão', 'estava', 'estavas', 'estávamos', 'estavam', 'estive', 'esteve', 'estar']);
+const CLITIC_START_PT = new Set(['me', 'te', 'lhe', 'lhes', 'nos', 'vos']);
 
 // italiano: o artigo certo depende do gênero e do começo da palavra (lo studente, l’amico, un’amica)
 const ART_IT: Record<string, { g: 'm' | 'f'; indef: boolean }> = {
@@ -167,6 +171,28 @@ export function checkJournal(text: string, lex: JournalLexicon, lang = 'ro'): { 
       if (w === 'gusta' && (nx === 'los' || nx === 'las')) {
         issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: `${matchCase(parts[i], 'gustan')} ${parts[j]}`, why: '«Gustar» concorda com a coisa de que se gosta: me gusta el café, mas me gustan los perros.' });
         parts[i] = matchCase(parts[i], 'gustan');
+      }
+      continue;
+    }
+    if (lang === 'pt') {
+      const w = raw(i);
+      const nx = raw(j);
+      // estou fazendo → estou a fazer
+      if (ESTAR_PT.has(w) && /[aei]ndo$/.test(nx)) {
+        const inf = nx.replace(/ndo$/, 'r');
+        issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: `${parts[i]} a ${inf}`, why: 'Em Portugal, a ação em curso é «estar a + infinitivo»: «estou a fazer» (no Brasil, «estou fazendo»).' });
+        parts[j] = `a ${inf}`;
+        continue;
+      }
+      // Me chamo… no começo da frase → Chamo-me…
+      const sentenceStart = i === 0 || /[.!?…]\s*$/.test(parts.slice(0, i).join(''));
+      if (sentenceStart && CLITIC_START_PT.has(w) && j >= 0 && /^\p{L}+$/u.test(parts[j])) {
+        const fix = `${matchCase(parts[i], parts[j].toLowerCase())}-${w}`;
+        issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: fix, why: 'Em Portugal, a frase não começa pelo pronome átono: ele vai depois do verbo, com hífen (ênclise): «Chamo-me Ana», «Diz-me».' });
+        parts[i] = fix;
+        parts[i + 1] = '';
+        parts[j] = '';
+        if (parts[j + 1] !== undefined) parts[j + 1] = parts[j + 1];
       }
       continue;
     }

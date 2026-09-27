@@ -13,6 +13,7 @@ import { speak } from '@/services/speech';
 import * as haptics from '@/services/haptics';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
+import { nomeIdioma } from '@/services/idioma-nome';
 
 const ROUND = 10;
 
@@ -49,9 +50,9 @@ export default function AnimalsScreen() {
   const label = (q: AnimalQuestion, o: string) => (q.kind === 'que-bicho' ? `${byId.get(o)?.emoji} ${byId.get(o)?.animal}` : o);
   const promptOf = (q: AnimalQuestion) =>
     q.kind === 'que-bicho'
-      ? `Que bicho faz «${q.a.sound}» em ${pack.name.toLowerCase()}?`
+      ? `Que bicho faz «${q.a.sound}» em ${nomeIdioma(pack.name)}?`
       : q.kind === 'como-faz'
-        ? `Como faz ${BICHOS_PT[q.a.id] ? `${BICHOS_PT[q.a.id].art} ${BICHOS_PT[q.a.id].name}` : q.a.animal} em ${pack.name.toLowerCase()}?`
+        ? `Como faz ${BICHOS_PT[q.a.id] ? `${BICHOS_PT[q.a.id].art} ${BICHOS_PT[q.a.id].name}` : q.a.animal} em ${nomeIdioma(pack.name)}?`
         : `Complete: ${q.blank}`;
 
   const answer = async (opt: string) => {
@@ -139,7 +140,7 @@ export default function AnimalsScreen() {
                   {game.answer === q.answer
                     ? 'Isso!'
                     : q.kind === 'como-faz' && game.answer === q.trap
-                      ? `Esse é o som em português! Em ${pack.name.toLowerCase()} é «${q.answer}».`
+                      ? `Esse é o som em português! Em ${nomeIdioma(pack.name)} é «${q.answer}».`
                       : `Era «${label(q, q.answer)}».`}
                 </Text>
                 <View className="flex-row items-center gap-2">
@@ -168,7 +169,7 @@ export default function AnimalsScreen() {
       </View>
       <View className="mt-4 flex-row items-end gap-2">
         <Linu mood="falando" size={64} />
-        <SpeechBubble className="mb-5">{`Em ${pack.name.toLowerCase()}, o cachorro não faz «au-au»! Cada língua escuta os bichos do seu jeito. E o verbo de cada som é vocabulário que aparece em livros e conversas.`}</SpeechBubble>
+        <SpeechBubble className="mb-5">{`Em ${nomeIdioma(pack.name)}, o cachorro não faz «au-au»! Cada língua escuta os bichos do seu jeito. E o verbo de cada som é vocabulário que aparece em livros e conversas.`}</SpeechBubble>
       </View>
       <ProgressBar value={known / list.length} />
       <Text className="mt-1 text-xs text-slate-500 dark:text-slate-400">

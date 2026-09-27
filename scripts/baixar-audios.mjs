@@ -13,6 +13,8 @@ const LANGS = {
   ro: { wikidata: 'Q7913', iso3: 'ron', category: 'Lingua_Libre_pronunciation-ron' },
   ru: { wikidata: 'Q7737', iso3: 'rus', category: 'Lingua_Libre_pronunciation-rus' },
   es: { wikidata: 'Q1321', iso3: 'spa', category: 'Lingua_Libre_pronunciation-spa' },
+  // o curso de português ensina a norma de Portugal: só falantes que moram lá (scripts/falantes-por-pais.mjs pt PRT)
+  pt: { wikidata: 'Q5146', iso3: 'por', category: 'Lingua_Libre_pronunciation-por', speakers: 'scripts/.falantes-pt-PRT.json' },
   it: { wikidata: 'Q652', iso3: 'ita', category: 'Lingua_Libre_pronunciation-ita' },
 };
 const lang = process.argv[2] ?? 'ro';
@@ -84,10 +86,13 @@ let lastId = Math.max(0, ...onDisk, ...[...prevId.values()].map(Number));
 const titles = await allTitles();
 // chave de busca: minúscula, sem a marca de tônica do russo (U+0301), ё = е, cedilha = vírgula no romeno
 const keyOf = (w) => w.normalize('NFC').toLowerCase().replace(/\u0301/g, '').replace(/ё/g, 'е').replace(/ş/g, 'ș').replace(/ţ/g, 'ț');
+// idiomas com mais de uma norma (pt): só os falantes da norma do curso
+const allowedSpeakers = cfg.speakers ? new Set(JSON.parse(readFileSync(cfg.speakers, 'utf8'))) : null;
 const byWord = new Map();
 for (const t of titles) {
   const p = parseTitle(t);
   if (!p) continue;
+  if (allowedSpeakers && !allowedSpeakers.has(p.speaker)) continue;
   const key = keyOf(p.word);
   if (!byWord.has(key)) byWord.set(key, []);
   byWord.get(key).push({ title: t, speaker: p.speaker });

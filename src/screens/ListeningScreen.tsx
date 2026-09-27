@@ -24,6 +24,7 @@ import * as haptics from '@/services/haptics';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
 import { logMistake } from '@/services/mistakes';
+import { nomeIdioma } from '@/services/idioma-nome';
 
 const ROUND = 10;
 
@@ -166,7 +167,7 @@ export default function ListeningScreen() {
               </View>
               {mute && (
                 <Text className="text-center text-sm text-rose-600">
-                  Seu aparelho não tem voz em {pack.name.toLowerCase()}. Veja em Perfil › Voz e microfone.
+                  Seu aparelho não tem voz em {nomeIdioma(pack.name)}. Veja em Perfil › Voz e microfone.
                 </Text>
               )}
             </Card>
@@ -232,13 +233,13 @@ export default function ListeningScreen() {
       </View>
       <View className="mt-4 flex-row items-end gap-2">
         <Linu mood="falando" size={64} />
-        <SpeechBubble className="mb-5">{`Vamos treinar o ouvido! Você ouve uma palavra em ${pack.name.toLowerCase()} e mostra o que entendeu. Você já reconhece ${mastery.done.toLocaleString('pt-BR')} de ${mastery.total.toLocaleString('pt-BR')}.`}</SpeechBubble>
+        <SpeechBubble className="mb-5">{`Vamos treinar o ouvido! Você ouve uma palavra em ${nomeIdioma(pack.name)} e mostra o que entendeu. Você já reconhece ${mastery.done.toLocaleString('pt-BR')} de ${mastery.total.toLocaleString('pt-BR')}.`}</SpeechBubble>
       </View>
       <ProgressBar value={mastery.total ? mastery.done / mastery.total : 0} />
       <Text className="mt-2 text-xs text-slate-500 dark:text-slate-400">
         {native
           ? `${mastery.total.toLocaleString('pt-BR')} palavras gravadas por falantes nativos (Lingua Libre), das mais usadas às menos.`
-          : `O ${pack.name.toLowerCase()} ainda não tem gravações de nativos no app: a voz é a do aparelho.`}
+          : `O ${nomeIdioma(pack.name)} ainda não tem gravações de nativos no app: a voz é a do aparelho.`}
       </Text>
 
       <View className="mt-5 gap-3">

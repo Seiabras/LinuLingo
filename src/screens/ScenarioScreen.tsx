@@ -13,6 +13,7 @@ import { XP } from '@/services/progress';
 import * as haptics from '@/services/haptics';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
+import { nomeIdioma } from '@/services/idioma-nome';
 
 type Msg =
   | { from: 'bot'; text: string; translation: string }
@@ -194,7 +195,7 @@ export default function ScenarioScreen() {
                 value={input}
                 onChangeText={setInput}
                 onSubmitEditing={() => send(input)}
-                placeholder={listening ? 'Ouvindo…' : `Responda em ${pack.name.toLowerCase()}…`}
+                placeholder={listening ? 'Ouvindo…' : `Responda em ${nomeIdioma(pack.name)}…`}
                 placeholderTextColor="#94A3B8"
                 autoCapitalize="none"
                 className="flex-1 rounded-full border-2 border-slate-200 bg-white px-4 py-2.5 text-base text-slate-900 dark:border-slate-700 dark:bg-slate-900 dark:text-white"

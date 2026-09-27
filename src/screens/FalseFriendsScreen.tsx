@@ -12,6 +12,7 @@ import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
 import type { FalseFriend } from '@/data/types';
 import { logMistake } from '@/services/mistakes';
+import { nomeIdioma } from '@/services/idioma-nome';
 
 /** Falsos amigos: palavras que parecem portuguesas e querem dizer outra coisa. Lista e treino. */
 export default function FalseFriendsScreen() {
@@ -45,7 +46,7 @@ export default function FalseFriendsScreen() {
         language: pack.code,
         source: 'falsos-amigos',
         key: `${cur.kind}:${cur.ff.word}`,
-        prompt: cur.kind === 'significa' ? `O que quer dizer «${cur.ff.word}»?` : `Como se diz «${cur.ff.looksLike.split(/[/;,(]/)[0].trim()}» em ${pack.name.toLowerCase()}?`,
+        prompt: cur.kind === 'significa' ? `O que quer dizer «${cur.ff.word}»?` : `Como se diz «${cur.ff.looksLike.split(/[/;,(]/)[0].trim()}» em ${nomeIdioma(pack.name)}?`,
         expected: cur.answer,
         given: opt,
         note: `${cur.ff.word} = ${cur.ff.means}; parece «${cur.ff.looksLike}», que se diz «${cur.ff.forThat}».`,
@@ -91,7 +92,7 @@ export default function FalseFriendsScreen() {
           <View className="mt-6 gap-4">
             <Card className="items-center gap-2 py-6">
               <Text className="text-sm font-bold uppercase tracking-wide text-slate-500">
-                {cur.kind === 'significa' ? `O que quer dizer em ${pack.name.toLowerCase()}?` : `Como se diz em ${pack.name.toLowerCase()}?`}
+                {cur.kind === 'significa' ? `O que quer dizer em ${nomeIdioma(pack.name)}?` : `Como se diz em ${nomeIdioma(pack.name)}?`}
               </Text>
               <Text accessibilityLabel={`Pergunta: ${cur.kind === 'significa' ? cur.ff.word : cur.ff.looksLike}`} className="text-center text-4xl font-extrabold text-slate-900 dark:text-white">
                 {cur.kind === 'significa' ? cur.ff.word : `«${cur.ff.looksLike.split(/[/;,(]/)[0].trim()}»`}

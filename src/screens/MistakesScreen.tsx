@@ -21,6 +21,7 @@ import { speak } from '@/services/speech';
 import * as haptics from '@/services/haptics';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
+import { nomeIdioma } from '@/services/idioma-nome';
 
 const ROUND = 10;
 type Result = 'aprendido' | 'certo' | 'errado';
@@ -197,7 +198,7 @@ export default function MistakesScreen() {
         <Linu mood={open.length ? 'pensando' : 'feliz'} size={64} />
         <SpeechBubble className="mb-5">
           {open.length
-            ? `Errar faz parte! ${open.length === 1 ? 'Tem 1 item' : `Tem ${open.length} itens`} no seu caderno de ${pack.name.toLowerCase()}. Acerte ${RESOLVE_STREAK} vezes seguidas na revisão e ele sai daqui.`
+            ? `Errar faz parte! ${open.length === 1 ? 'Tem 1 item' : `Tem ${open.length} itens`} no seu caderno de ${nomeIdioma(pack.name)}. Acerte ${RESOLVE_STREAK} vezes seguidas na revisão e ele sai daqui.`
             : 'Seu caderno está vazio! O que você errar nos treinos vem para cá, com a sua resposta e a certa.'}
         </SpeechBubble>
       </View>

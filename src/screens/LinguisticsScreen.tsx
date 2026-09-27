@@ -9,6 +9,7 @@ import { awardXp } from '@/database/queries';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
 import { AREAS } from '@/data/linguistica';
+import { nomeIdioma } from '@/services/idioma-nome';
 
 /** Uma área da língua: o que ela estuda (geral) e como funciona no idioma estudado. */
 export default function LinguisticsScreen() {
@@ -58,7 +59,7 @@ export default function LinguisticsScreen() {
       </Card>
 
       <SectionTitle>
-        {pack.flag} {info.name} do {pack.name.toLowerCase()}
+        {pack.flag} {info.name} do {nomeIdioma(pack.name)}
       </SectionTitle>
       {data ? (
         <>
@@ -67,7 +68,7 @@ export default function LinguisticsScreen() {
         </>
       ) : (
         <Card>
-          <Text className="text-slate-600 dark:text-slate-400">Esta parte ainda está sendo escrita para o {pack.name.toLowerCase()}.</Text>
+          <Text className="text-slate-600 dark:text-slate-400">Esta parte ainda está sendo escrita para o {nomeIdioma(pack.name)}.</Text>
         </Card>
       )}
 

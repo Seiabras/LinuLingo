@@ -20,6 +20,7 @@ import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
 import { fitBox, focusBox, ringBoxes, type Box, type SubShape } from '@/services/mapa-geo';
 import { hasSubdivisions, loadSubdivisions } from '@/services/subdivisoes';
+import { nomeIdioma } from '@/services/idioma-nome';
 
 // Na web o react-native-svg repassa os props de toque (onResponder…) ao HTML: o toque funciona,
 // mas o React avisa em modo de desenvolvimento. Aviso conhecido e inofensivo.
@@ -597,7 +598,7 @@ export default function MapScreen() {
               <Text accessibilityLabel={`País selecionado: ${selected.name}`} className="text-xl font-extrabold text-slate-900 dark:text-white">
                 {flagOf(selected.iso2)} {selected.name}
               </Text>
-              {subSel && selected.iso === focus?.iso && <SubCard iso2={selected.iso2} sub={subSel} spoken={spoken} onClose={() => setSubSel(null)} studied={pack.name.toLowerCase()} />}
+              {subSel && selected.iso === focus?.iso && <SubCard iso2={selected.iso2} sub={subSel} spoken={spoken} onClose={() => setSubSel(null)} studied={nomeIdioma(pack.name)} />}
               {spoken.length === 0 ? (
                 <Text className="text-slate-600 dark:text-slate-400">Sem dados de idiomas para este território.</Text>
               ) : (
@@ -677,7 +678,7 @@ export default function MapScreen() {
                   <View className="flex-row flex-wrap gap-1.5">
                     {accentsAt(selected.iso).map((a) =>
                       // sotaques do idioma estudado abrem o treino; os de outros idiomas são só informação
-                      a.lang === pack.name.toLowerCase() ? (
+                      a.lang === nomeIdioma(pack.name) ? (
                         <Pressable key={a.id} accessibilityRole="button" onPress={() => router.push({ pathname: '/sotaque', params: { id: a.id } })}>
                           <Chip label={`${a.emoji} ${a.name} ›`} tone="green" />
                         </Pressable>
@@ -866,7 +867,7 @@ function MiniMap({ highlight, color, dark }: { highlight: string[]; color: strin
 
 /** Locale de voz para o nome local (só onde o idioma é do app). */
 function localeFor(iso: string): string | null {
-  return ({ ROU: 'ro-RO', MDA: 'ro-RO', RUS: 'ru-RU', ESP: 'es-ES', MEX: 'es-MX', ARG: 'es-AR', ITA: 'it-IT', SMR: 'it-IT', VAT: 'it-IT', FIN: 'fi-FI', EST: 'et-EE', JPN: 'ja-JP', KOR: 'ko-KR' } as Record<string, string>)[iso] ?? null;
+  return ({ ROU: 'ro-RO', MDA: 'ro-RO', RUS: 'ru-RU', ESP: 'es-ES', MEX: 'es-MX', ARG: 'es-AR', ITA: 'it-IT', SMR: 'it-IT', VAT: 'it-IT', PRT: 'pt-PT', BRA: 'pt-BR', AGO: 'pt-PT', MOZ: 'pt-PT', CPV: 'pt-PT', GNB: 'pt-PT', STP: 'pt-PT', TLS: 'pt-PT', FIN: 'fi-FI', EST: 'et-EE', JPN: 'ja-JP', KOR: 'ko-KR' } as Record<string, string>)[iso] ?? null;
 }
 
 function NatureList({ items, locale }: { items: import('@/data/fauna-musica').NatureItem[]; locale: string | null }) {

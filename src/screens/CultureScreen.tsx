@@ -12,6 +12,7 @@ import { WORLD } from '@/data/mapa-mundi';
 import { flagOf } from '@/data/onde-se-fala';
 import { VariantPanel } from '@/components/VariantPanel';
 import { AccentsPanel } from '@/components/AccentsPanel';
+import { nomeIdioma } from '@/services/idioma-nome';
 
 /** Cultura & História: a genealogia do idioma e os cards «aprenda primeiro» de cada unidade. */
 export default function CultureScreen() {
@@ -30,7 +31,7 @@ export default function CultureScreen() {
       </View>
 
       <Card className="mt-2 gap-3">
-        <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">🌳 Família do {pack.name.toLowerCase()}</Text>
+        <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">🌳 Família do {nomeIdioma(pack.name)}</Text>
         <View className="gap-0">
           {chain.map((node, i) => (
             <View key={node} style={{ paddingLeft: i * 14 }} className="flex-row items-center gap-2 py-1">
@@ -56,13 +57,13 @@ export default function CultureScreen() {
 
       <Pressable onPress={() => router.push('/historias')} className="mt-3 flex-row items-center gap-3 rounded-2xl border-2 border-conecta/30 bg-white p-4 active:opacity-80 dark:bg-slate-900">
         <Text className="text-2xl">📚</Text>
-        <Text className="flex-1 font-semibold text-slate-800 dark:text-slate-100">Histórias interativas: a cultura de quem fala {pack.name.toLowerCase()}, vivida pelo Linu, com vários finais.</Text>
+        <Text className="flex-1 font-semibold text-slate-800 dark:text-slate-100">Histórias interativas: a cultura de quem fala {nomeIdioma(pack.name)}, vivida pelo Linu, com vários finais.</Text>
         <Text className="text-xl text-conecta">›</Text>
       </Pressable>
 
       {(pack.variants?.length ?? 0) > 1 && (
         <>
-          <Text className="mb-2 mt-6 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">🌍 Variantes do {pack.name.toLowerCase()}</Text>
+          <Text className="mb-2 mt-6 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">🌍 Variantes do {nomeIdioma(pack.name)}</Text>
           <VariantPanel />
         </>
       )}

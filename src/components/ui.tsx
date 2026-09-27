@@ -7,6 +7,7 @@ import { useApp } from '@/services/app-state';
 import { speak } from '@/services/speech';
 import { tapLight } from '@/services/haptics';
 import { useIsDark } from '@/services/theme';
+import { nomeIdioma } from '@/services/idioma-nome';
 
 /** Tela padrão: área segura, fundo do tema e largura máxima no desktop. */
 export function Screen({ children, scroll = true, edges }: { children: ReactNode; scroll?: boolean; edges?: ('top' | 'bottom')[] }) {
@@ -170,7 +171,7 @@ export function LetterPad({ onInsert, onBackspace, small }: { onInsert: (ch: str
   return (
     <View className="gap-1">
       <Pressable accessibilityRole="button" accessibilityState={{ expanded: open }} onPress={() => setOpen((v) => !v)} className="self-center rounded-full bg-slate-200 px-3 py-1 dark:bg-slate-800">
-        <Text className="text-sm font-semibold text-slate-700 dark:text-slate-200">⌨️ {open ? 'Esconder' : 'Mostrar'} teclado ({pack.name.toLowerCase()})</Text>
+        <Text className="text-sm font-semibold text-slate-700 dark:text-slate-200">⌨️ {open ? 'Esconder' : 'Mostrar'} teclado ({nomeIdioma(pack.name)})</Text>
       </Pressable>
       {open &&
         rows.map((row, r) => (

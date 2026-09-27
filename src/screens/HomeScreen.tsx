@@ -17,6 +17,7 @@ import type { CultureCardSeed, LessonKind } from '@/data/types';
 import { useIsDark } from '@/services/theme';
 import { openMistakeCount } from '@/services/mistakes';
 import { albumStats, loadAlbum, STICKERS } from '@/services/album';
+import { nomeIdioma } from '@/services/idioma-nome';
 
 export default function HomeScreen() {
   const { db, pack, user, streak, refresh, accent } = useApp();
@@ -100,7 +101,7 @@ export default function HomeScreen() {
       ? `Meta do dia cumprida! ${streak} ${streak === 1 ? 'dia' : 'dias'} de ofensiva. ${pack.phrases.thanks} 🎉`
       : streak > 0
         ? `${pack.phrases.hi} Faltam ${goal - todayXp} XP para a meta de hoje. Não deixa o fogo apagar! 🔥`
-        : `${pack.phrases.hi} Eu sou o Linu. Bora aprender ${pack.name.toLowerCase()} hoje?`;
+        : `${pack.phrases.hi} Eu sou o Linu. Bora aprender ${nomeIdioma(pack.name)} hoje?`;
 
   return (
     <Screen>
@@ -155,7 +156,7 @@ export default function HomeScreen() {
         >
           <Text className="text-2xl">🔇</Text>
           <Text className="flex-1 font-semibold text-amber-900 dark:text-amber-200">
-            Seu aparelho ainda não tem voz em {pack.name.toLowerCase()}. Toque para ver como instalar.
+            Seu aparelho ainda não tem voz em {nomeIdioma(pack.name)}. Toque para ver como instalar.
           </Text>
         </Pressable>
       )}

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Pressable, Text, TextInput, View } from 'react-native';
 import { Button, Card, LetterPad } from '../ui';
 import { useApp } from '@/services/app-state';
+import { nomeIdioma } from '@/services/idioma-nome';
 
 /**
  * Etapa 5 — envio opcional para a comunidade (Busuu). O texto fica guardado
@@ -22,7 +23,7 @@ export function CommunityStep({ prompt, specialChars, onDone }: { prompt: string
         onChangeText={setText}
         multiline
         textAlignVertical="top"
-        placeholder={`Escreva em ${pack.name.toLowerCase()}…`}
+        placeholder={`Escreva em ${nomeIdioma(pack.name)}…`}
         placeholderTextColor="#94A3B8"
         className="min-h-[120px] rounded-2xl border-2 border-slate-200 bg-white p-4 text-lg text-slate-900 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
       />

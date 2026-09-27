@@ -13,6 +13,7 @@ import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
 import type { MinimalPair } from '@/data/types';
 import { logMistake } from '@/services/mistakes';
+import { nomeIdioma } from '@/services/idioma-nome';
 
 const ROUND = 10;
 
@@ -154,7 +155,7 @@ export default function MinimalPairsScreen() {
                 </Pressable>
               </View>
               <Text className="text-xs text-slate-400">{cur.pair.source === 'nativo' ? '🎙️ gravações de nativos' : '🔈 voz do aparelho'}</Text>
-              {mute && <Text className="text-center text-sm text-rose-600">Seu aparelho não tem voz em {pack.name.toLowerCase()}. Veja em Perfil › Voz e microfone.</Text>}
+              {mute && <Text className="text-center text-sm text-rose-600">Seu aparelho não tem voz em {nomeIdioma(pack.name)}. Veja em Perfil › Voz e microfone.</Text>}
             </Card>
             <View className="flex-row gap-3">
               {(['a', 'b'] as const).map((side) => {
@@ -225,7 +226,7 @@ export default function MinimalPairsScreen() {
               ))}
               {hidden.length > 0 && (
                 <Text className="text-sm text-amber-700 dark:text-amber-300">
-                  {`No ${variantName ? variantName.toLowerCase() : pack.name.toLowerCase()}, estes soam igual e ficam fora do treino: ${hidden.map((p) => `${p.a[0]} × ${p.b[0]}`).join(', ')}. Escolha outra variante na aba Cultura para treiná-los.`}
+                  {`No ${variantName ? variantName.toLowerCase() : nomeIdioma(pack.name)}, estes soam igual e ficam fora do treino: ${hidden.map((p) => `${p.a[0]} × ${p.b[0]}`).join(', ')}. Escolha outra variante na aba Cultura para treiná-los.`}
                 </Text>
               )}
             </Card>

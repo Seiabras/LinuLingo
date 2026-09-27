@@ -14,16 +14,18 @@ export function StatusHeader({ cefr }: { cefr: string }) {
         accessibilityRole="button"
         accessibilityLabel={`Idioma: ${pack.name}, nível ${cefr}. Trocar idioma`}
         onPress={() => router.push('/perfil')}
-        className="flex-row items-center gap-1.5 rounded-full bg-white px-3 py-1.5 active:opacity-70 dark:bg-slate-900"
+        className="mr-2 shrink flex-row items-center gap-1.5 rounded-full bg-white px-3 py-1.5 active:opacity-70 dark:bg-slate-900"
       >
         <Text className="text-lg">{pack.flag}</Text>
-        <Text className="font-bold text-slate-800 dark:text-slate-100">
-          {pack.name} <Text className="text-conecta">({cefr})</Text>
+        {/* nomes longos («Português de Portugal») encolhem com reticências em vez de empurrar o perfil para fora */}
+        <Text numberOfLines={1} className="shrink font-bold text-slate-800 dark:text-slate-100">
+          {pack.name}
         </Text>
+        <Text className="font-bold text-conecta">({cefr})</Text>
         <ChevronDown size={16} color={dark ? '#94A3B8' : '#64748B'} />
       </Pressable>
 
-      <View className="flex-row items-center gap-3">
+      <View className="shrink-0 flex-row items-center gap-3">
         <View accessibilityLabel={`Ofensiva de ${streak} dias`} className="flex-row items-center gap-1">
           <Text className={`text-lg ${streak > 0 ? '' : 'opacity-40'}`}>🔥</Text>
           <Text className="font-extrabold text-fogo">{streak}</Text>

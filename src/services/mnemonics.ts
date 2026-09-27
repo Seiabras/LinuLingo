@@ -38,6 +38,12 @@ export function roomsFor(lang: string): Record<Gender, Room> {
       f: { ...ROOMS.f, rule: 'Feminino: quase todas em -a, e as em -ción/-sión, -dad/-tad, -tud e -umbre (la costumbre, la legumbre). Exceções clássicas: la mano, la radio, la foto, la moto.' },
       n: ROOMS.n,
     };
+  if (lang === 'pt')
+    return {
+      m: { ...ROOMS.m, rule: 'Masculino: quase todas em -o, as em -ema/-ama de origem grega (o problema, o programa) e muitas em -e, -r, -l (o leite, o mar, o sal). Em Portugal também: o ecrã, o autocarro, o comboio.' },
+      f: { ...ROOMS.f, rule: 'Feminino: quase todas em -a e as em -ção/-são, -agem, -dade e -ice (a canção, a viagem, a cidade, a velhice). Exceções: o dia, o mapa, o planeta.' },
+      n: ROOMS.n,
+    };
   if (lang === 'it')
     return {
       m: { ...ROOMS.m, rule: 'Masculino: quase todas em -o (il libro), muitas em -e (il fiore, il pane) e as de origem grega em -ma (il problema, il tema). Plural em -i.' },
@@ -94,6 +100,8 @@ const HETERO_IT: Record<string, string> = {
 
 /** Texto do Linu na entrada do palácio. */
 export function palaceIntro(lang: string): string {
+  if (lang === 'pt')
+    return 'Você já sabe os gêneros do português! Aqui o desafio são as palavras de Portugal que você ainda não usa: o autocarro, o comboio, a casa de banho, o ecrã, a bica, o pequeno-almoço. Guarde cada uma na sala certa!';
   if (lang === 'it')
     return 'O italiano tem 2 gêneros, como o português, e quase sempre a terminação entrega: -o masculino, -a feminino. O perigo mora nas em -e (il fiore, la notte) e nos plurais que trocam de gênero: l’uovo → le uova. Guarde cada uma na sala certa!';
   if (lang === 'es')
@@ -106,6 +114,12 @@ export function palaceIntro(lang: string): string {
 /** Dica específica para a palavra, a partir da terminação. */
 export function genderTip(word: string, gender: Gender, lang = 'ro'): string {
   const w = word.toLowerCase().replace(/\u0301/g, '');
+  if (lang === 'pt') {
+    if (w.endsWith('ção') || w.endsWith('são') || w.endsWith('agem')) return 'Terminou em -ção, -são ou -agem? Feminino, nos dois lados do Atlântico: a receção, a viagem.';
+    if (gender === 'm' && /(ema|ama)$/.test(w)) return 'Palavra de origem grega em -ema/-ama: masculina, como o problema, o programa, o sistema.';
+    if (w === 'ecrã') return 'O ecrã (a tela, no Brasil) é masculino: «o ecrã do telemóvel».';
+    return roomsFor('pt')[gender].rule;
+  }
   if (lang === 'it') {
     if (HETERO_IT[w]) return HETERO_IT[w];
     if (w.endsWith('zione') || w.endsWith('sione')) return 'Terminou em -zione/-sione? Feminino: la stazione, la televisione (como «a estação» em português).';

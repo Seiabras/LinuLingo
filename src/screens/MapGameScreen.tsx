@@ -17,6 +17,7 @@ import * as haptics from '@/services/haptics';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
 import type { Accent } from '@/data/types';
+import { nomeIdioma } from '@/services/idioma-nome';
 
 const ROUND = 8;
 const MAP_HEIGHT = 260;
@@ -196,7 +197,7 @@ export default function MapGameScreen() {
       </View>
       <View className="mt-4 flex-row items-end gap-2">
         <Linu mood="falando" size={64} />
-        <SpeechBubble className="mb-5">{`Vamos rodar o mundo! Você acha no mapa onde cada língua é oficial, descobre que língua se fala num país${pack.accents?.some((a) => a.subdivisions?.length) ? ` e mostra onde ficam os sotaques do ${pack.name.toLowerCase()}` : ''}.`}</SpeechBubble>
+        <SpeechBubble className="mb-5">{`Vamos rodar o mundo! Você acha no mapa onde cada língua é oficial, descobre que língua se fala num país${pack.accents?.some((a) => a.subdivisions?.length) ? ` e mostra onde ficam os sotaques do ${nomeIdioma(pack.name)}` : ''}.`}</SpeechBubble>
       </View>
       <Button title={`🎯 Jogar (${ROUND} perguntas)`} variant="success" onPress={start} />
       <Card className="mt-4 gap-1">

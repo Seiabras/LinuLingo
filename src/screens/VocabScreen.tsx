@@ -12,6 +12,7 @@ import { VOCAB_TARGET_TOTAL } from '@/data/types';
 import type { Cognate, VocabWithSRS } from '@/types';
 import { useIsDark } from '@/services/theme';
 import { hasNativeClip } from '@/services/speech';
+import { nomeIdioma } from '@/services/idioma-nome';
 
 type Tab = 'frequencia' | 'categorias' | 'etimologia';
 type Ety = Awaited<ReturnType<typeof listEtymology>>[number];
@@ -107,7 +108,7 @@ export default function VocabScreen() {
           <TextInput
             value={search}
             onChangeText={setSearch}
-            placeholder={`Buscar em ${pack.name.toLowerCase()} ou português…`}
+            placeholder={`Buscar em ${nomeIdioma(pack.name)} ou português…`}
             placeholderTextColor="#94A3B8"
             className="flex-1 py-3 text-base text-slate-900 dark:text-white"
           />

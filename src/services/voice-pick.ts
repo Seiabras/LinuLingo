@@ -11,6 +11,9 @@ type RawVoice = { identifier: string; name?: string; language: string };
 const NATURAL = /piper|mihai|neural|natural|premium|enhanced|online|google|microsoft|siri|ioana|andrei|emil/i;
 const ROBOTIC = /espeak|mbrola/i;
 
+/** Idiomas em que a voz do país importa mais que a naturalidade: a pronúncia muda demais entre as normas. */
+const COUNTRY_MATTERS = new Set(['pt']);
+
 function score(v: RawVoice): number {
   const label = `${v.name ?? ''} ${v.identifier}`;
   // variantes do eSpeak («Romanian+Robosoft») soam ainda mais artificiais que a voz base
@@ -23,8 +26,10 @@ export function pickVoice(voices: RawVoice[], locale: string): VoiceInfo | null 
     const l = v.language?.toLowerCase().replace('_', '-') ?? '';
     return l === locale.toLowerCase() || l === lang || l.startsWith(`${lang}-`);
   });
-  // mesma qualidade: a voz do país pedido primeiro (es-AR antes de es-ES)
-  const exact = (v: RawVoice) => (v.language?.toLowerCase().replace('_', '-') === locale.toLowerCase() ? 0.5 : 0);
+  // mesma qualidade: a voz do país pedido primeiro (es-AR antes de es-ES); onde as normas soam
+  // muito diferentes (pt-PT × pt-BR), a voz do país ganha até de uma voz mais natural do outro
+  const bonus = COUNTRY_MATTERS.has(lang) ? 3 : 0.5;
+  const exact = (v: RawVoice) => (v.language?.toLowerCase().replace('_', '-') === locale.toLowerCase() ? bonus : 0);
   matches.sort((a, b) => score(b) + exact(b) - (score(a) + exact(a)));
   const best = matches[0];
   return best ? { identifier: best.identifier, name: best.name ?? best.identifier, language: best.language, natural: score(best) > 0 } : null;

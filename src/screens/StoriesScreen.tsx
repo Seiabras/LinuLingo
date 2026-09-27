@@ -10,6 +10,7 @@ import { endingIds } from '@/services/stories';
 import { goBack } from '@/services/nav';
 import { SUBLEVELS } from '@/types';
 import { useIsDark } from '@/services/theme';
+import { nomeIdioma } from '@/services/idioma-nome';
 
 /** Lista das histórias interativas, com os finais já descobertos. */
 export default function StoriesScreen() {
@@ -34,7 +35,7 @@ export default function StoriesScreen() {
 
       <View className="mt-4 flex-row items-end gap-2">
         <Linu mood="falando" size={70} />
-        <SpeechBubble className="mb-6">Você decide o que eu faço! Leia em {pack.name.toLowerCase()} e escolha. Cada história tem mais de um final… consegue achar todos?</SpeechBubble>
+        <SpeechBubble className="mb-6">Você decide o que eu faço! Leia em {nomeIdioma(pack.name)} e escolha. Cada história tem mais de um final… consegue achar todos?</SpeechBubble>
       </View>
 
       {SUBLEVELS.map((lv) => {
