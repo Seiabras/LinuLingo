@@ -43,8 +43,12 @@ if (await page.getByText('Pular', { exact: true }).isVisible().catch(() => false
 await page.goto(BASE + '/perfil', { waitUntil: 'load' });
 const ruRow = page.getByText(/^Russo · Русский/).first();
 await ruRow.waitFor({ timeout: 30000 });
+const tTroca = Date.now();
 await ruRow.click();
-await page.waitForTimeout(1500);
+// o conteúdo do idioma novo é gravado no banco na hora da troca: espera o «preparando…» sumir
+await page.waitForTimeout(300);
+await page.waitForFunction(() => !document.body.innerText.includes('preparando…'), null, { timeout: 60000 });
+console.log(`  troca de idioma: ${((Date.now() - tTroca) / 1000).toFixed(1)} s`);
 await page.goto(BASE + '/', { waitUntil: 'load' });
 // o tutorial abre de novo? pula
 await page.waitForTimeout(2500);

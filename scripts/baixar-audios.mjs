@@ -6,7 +6,7 @@
 // Licença: os arquivos do Lingua Libre são livres (em geral CC BY-SA 4.0); o autor e a
 // licença de CADA arquivo ficam em src/data/<idioma>/audios.ts e aparecem na tela Créditos.
 import { execFileSync } from 'node:child_process';
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const LANGS = {
@@ -58,9 +58,22 @@ function parseTitle(t) {
   return m ? { speaker: m[1], word: m[2].normalize('NFC') } : null;
 }
 
-// palavras do vocabulário, lidas direto do arquivo de dados
+// palavras do vocabulário, lidas direto do arquivo de dados (também as linhas que o formatador
+// quebrou em várias: «[\n    'autobús',»)
 const vocabSrc = readFileSync(`src/data/${lang}/vocabulario.ts`, 'utf8');
-const words = [...vocabSrc.matchAll(/^\s*\['([^']+)'/gm)].map((m) => m[1]);
+const words = [...vocabSrc.matchAll(/^\s*\[\s*'([^']+)'/gm)].map((m) => m[1]);
+
+// ids estáveis: quem já tem gravação mantém o seu arquivo (NNNN.mp3), e as palavras novas ganham
+// ids depois do maior em uso. Antes o id era a posição na lista, e uma palavra nova no meio
+// empurrava a numeração: as gravações trocariam de palavra.
+const AUDIO_TS = `src/data/${lang}/audios.ts`;
+const prevId = new Map(
+  existsSync(AUDIO_TS)
+    ? [...readFileSync(AUDIO_TS, 'utf8').matchAll(/^\s*("(?:[^"\\]|\\.)*"): \{ src: require\('[^']*\/(\d+)\.mp3'\)/gm)].map((m) => [JSON.parse(m[1]), m[2]])
+    : [],
+);
+const onDisk = existsSync(`assets/audio/${lang}`) ? readdirSync(`assets/audio/${lang}`).map((f) => Number.parseInt(f, 10)).filter(Number.isFinite) : [];
+let lastId = Math.max(0, ...onDisk, ...[...prevId.values()].map(Number));
 
 const titles = await allTitles();
 // chave de busca: minúscula, sem a marca de tônica do russo (U+0301), ё = е, cedilha = vírgula no romeno
@@ -119,7 +132,7 @@ for (const { word, title } of wanted) {
     skipped.licenca.add(m.license);
     continue;
   }
-  jobs.push({ word, title, m, id: String(jobs.length + 1).padStart(4, '0') });
+  jobs.push({ word, title, m, id: prevId.get(word) ?? String(++lastId).padStart(4, '0') });
 }
 
 async function download(job) {

@@ -1,6 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
 import { useSQLiteContext, type SQLiteDatabase } from 'expo-sqlite';
-import { getMeta, getUser, setMeta } from '@/database/queries';
+import { getMeta, getUser, setMeta, updateUser } from '@/database/queries';
+import { ensurePack } from '@/database/db';
 import { getPack } from '@/data/idiomas';
 import type { LanguagePack } from '@/data/types';
 import type { User } from '@/types';
@@ -23,6 +24,8 @@ interface AppState {
   /** Variante do idioma que o aluno escolheu (ex.: ro-MD) */
   variant: string | null;
   setVariant: (code: string) => void;
+  /** Troca o idioma estudado: grava o conteúdo dele no banco (se ainda não estiver lá) e só então troca */
+  setLanguage: (code: string) => Promise<void>;
 }
 
 const Ctx = createContext<AppState | null>(null);
@@ -52,6 +55,15 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
       setReady(true);
     })();
   }, [db]);
+
+  const setLanguage = useCallback(
+    async (code: string) => {
+      await ensurePack(db, code);
+      await updateUser(db, { current_language: code });
+      await refresh();
+    },
+    [db, refresh],
+  );
 
   const setTheme = useCallback(
     (t: ThemePref) => {
@@ -88,7 +100,7 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
     ? visibleStreak({ streak: user.streak_days, freezes: user.streak_freezes, lastStudyDate: user.last_study_date }, localDay())
     : 0;
 
-  return <Ctx.Provider value={{ db, user, pack, streak, refresh, theme, setTheme, variant, setVariant }}>{ready ? children : null}</Ctx.Provider>;
+  return <Ctx.Provider value={{ db, user, pack, streak, refresh, theme, setTheme, variant, setVariant, setLanguage }}>{ready ? children : null}</Ctx.Provider>;
 }
 
 export function useApp(): AppState {

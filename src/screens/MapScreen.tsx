@@ -62,7 +62,8 @@ const CARD_LANGS = 6;
  * diáspora); toque num país para ver as línguas, os animais nativos e os instrumentos de lá.
  */
 export default function MapScreen() {
-  const { db, pack, refresh, variant, setVariant } = useApp();
+  const { pack, variant, setVariant, setLanguage } = useApp();
+  const [switching, setSwitching] = useState<string | null>(null);
   const dark = useIsDark();
   const ordered = useMemo(() => byKinship(pack.code), [pack.code]);
   const [langCode, setLangCode] = useState(pack.code);
@@ -631,11 +632,16 @@ export default function MapScreen() {
                         {/* estudar: só os idiomas que o app já ensina */}
                         {st === 'app' && l.code !== pack.code && (
                           <Button
-                            title={`Estudar ${l.name.toLowerCase()}`}
+                            title={switching === l.code ? `Preparando o ${l.name.toLowerCase()}…` : `Estudar ${l.name.toLowerCase()}`}
                             variant="ghost"
+                            disabled={switching !== null}
                             onPress={async () => {
-                              await updateUser(db, { current_language: l.code });
-                              refresh();
+                              setSwitching(l.code);
+                              try {
+                                await setLanguage(l.code);
+                              } finally {
+                                setSwitching(null);
+                              }
                             }}
                           />
                         )}

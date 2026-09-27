@@ -48,8 +48,12 @@ await skipTutorial();
 await page.goto(BASE + '/perfil', { waitUntil: 'load' });
 const esRow = page.getByText(/^Espanhol · Español/).first();
 await esRow.waitFor({ timeout: 30000 });
+const tTroca = Date.now();
 await esRow.click();
-await page.waitForTimeout(1500);
+// o conteúdo do idioma novo é gravado no banco na hora da troca: espera o «preparando…» sumir
+await page.waitForTimeout(300);
+await page.waitForFunction(() => !document.body.innerText.includes('preparando…'), null, { timeout: 60000 });
+console.log(`  troca de idioma: ${((Date.now() - tTroca) / 1000).toFixed(1)} s`);
 await page.goto(BASE + '/', { waitUntil: 'load' });
 await skipTutorial();
 const u1 = ESPANHOL.units[0];

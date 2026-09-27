@@ -13,7 +13,9 @@ const GOALS = [10, 20, 30, 50];
 
 /** Perfil: estatísticas, XP da semana, idioma (agrupado por família), meta diária e tema. */
 export default function ProfileScreen() {
-  const { db, user, pack, streak, refresh, theme, setTheme } = useApp();
+  const { db, user, pack, streak, refresh, theme, setTheme, setLanguage } = useApp();
+  // idioma sendo preparado (o conteúdo dele é gravado no banco na primeira vez)
+  const [switching, setSwitching] = useState<string | null>(null);
   const [name, setName] = useState(user?.name ?? '');
   const [week, setWeek] = useState<{ day: string; xp: number }[]>([]);
   const [lessons, setLessons] = useState(0);
@@ -142,10 +144,14 @@ export default function ProfileScreen() {
                   return (
                     <Pressable
                       key={l.code}
-                      disabled={!available || active}
+                      disabled={!available || active || switching !== null}
                       onPress={async () => {
-                        await updateUser(db, { current_language: l.code });
-                        refresh();
+                        setSwitching(l.code);
+                        try {
+                          await setLanguage(l.code);
+                        } finally {
+                          setSwitching(null);
+                        }
                       }}
                       className={`flex-row items-center gap-3 rounded-xl px-3 py-2.5 ${active ? 'bg-conecta-light dark:bg-blue-950' : 'bg-slate-50 dark:bg-slate-800/50'}`}
                     >
@@ -158,7 +164,13 @@ export default function ProfileScreen() {
                           {l.lineage.branches.join(' › ')} · {l.lineage.region}
                         </Text>
                       </View>
-                      {active ? <Chip label="estudando" tone="blue" /> : !available && <Chip label="em breve" />}
+                      {switching === l.code ? (
+                        <Chip label="preparando…" tone="amber" />
+                      ) : active ? (
+                        <Chip label="estudando" tone="blue" />
+                      ) : (
+                        !available && <Chip label="em breve" />
+                      )}
                     </Pressable>
                   );
                 })}
