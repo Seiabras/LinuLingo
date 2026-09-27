@@ -1,9 +1,14 @@
+import { WORLD_LANGUAGE_ROWS } from './idiomas-mundo';
+
 /**
  * Onde cada idioma é falado, para o mapa-múndi.
  * oficial = língua oficial/nacional; regional = oficial numa região ou minoria reconhecida/grande;
- * diaspora = comunidade grande de falantes nativos fora da terra de origem.
+ * falada = falada no país sem status oficial (dados do CLDR); diaspora = comunidade grande de
+ * falantes nativos fora da terra de origem.
+ * Os idiomas do app (e os planejados) têm lista escrita à mão, com notas e regiões; os outros
+ * ~700 idiomas do mundo vêm do Unicode CLDR (src/data/idiomas-mundo.ts).
  */
-export type LangRole = 'oficial' | 'regional' | 'diaspora';
+export type LangRole = 'oficial' | 'regional' | 'falada' | 'diaspora';
 
 export interface SpokenIn {
   iso: string;
@@ -13,6 +18,8 @@ export interface SpokenIn {
   note?: string;
   /** Onde, dentro do país (códigos ISO 3166-2) */
   subdivisions?: string[];
+  /** % da população do país que fala o idioma (CLDR; inclui segunda língua) */
+  pct?: number;
 }
 
 export interface MapLanguage {
@@ -27,6 +34,10 @@ export interface MapLanguage {
   /** Família e ramos, do mais geral ao mais específico (para medir o parentesco entre idiomas) */
   lineage: string[];
   countries: SpokenIn[];
+  /** Nome no próprio idioma */
+  native?: string;
+  /** Veio da lista do CLDR (não tem notas escritas à mão) */
+  fromCldr?: boolean;
 }
 
 const o = (iso: string, extra: Partial<SpokenIn> = {}): SpokenIn => ({ iso, role: 'oficial', ...extra });
@@ -146,6 +157,33 @@ export const MAP_LANGUAGES: MapLanguage[] = [
     ],
   },
   {
+    code: 'it',
+    name: 'Italiano',
+    flag: '🇮🇹',
+    color: '#65A30D',
+    speakers: 'cerca de 65 milhões de falantes nativos',
+    millions: 65,
+    lineage: ['Indo-europeu', 'Itálico', 'Românico', 'Ítalo-românico'],
+    countries: [
+      o('ITA'),
+      o('SMR'),
+      o('VAT', { note: 'Língua oficial da Cidade do Vaticano, ao lado do latim da Santa Sé.' }),
+      o('CHE', { note: 'Uma das línguas nacionais da Suíça, falada sobretudo no Ticino e no sul dos Grisões.', subdivisions: ['CH-TI', 'CH-GR'] }),
+      r('SVN', 'Minoria italiana reconhecida na Ístria eslovena, com o italiano cooficial em Koper, Izola e Piran.', ['SI-050', 'SI-040', 'SI-090']),
+      r('HRV', 'Minoria italiana reconhecida na Ístria croata.', ['HR-18']),
+      d('BRA', 'Uma das maiores comunidades de origem italiana do mundo; no Sul também se fala o talian, de base vêneta.'),
+      d('ARG', 'Boa parte da população tem origem italiana, e o italiano marcou o espanhol rioplatense.'),
+      d('URY'),
+      d('USA'),
+      d('AUS'),
+      d('CAN'),
+      d('DEU'),
+      d('BEL'),
+      d('FRA'),
+      d('VEN'),
+    ],
+  },
+  {
     code: 'en',
     name: 'Inglês',
     flag: '🇬🇧',
@@ -260,15 +298,80 @@ export const MAP_LANGUAGES: MapLanguage[] = [
   },
 ];
 
-export const ROLE_LABEL: Record<LangRole, string> = { oficial: 'língua oficial', regional: 'regional / minoria', diaspora: 'comunidade no exterior' };
+export const ROLE_LABEL: Record<LangRole, string> = {
+  oficial: 'língua oficial',
+  regional: 'regional / minoria',
+  falada: 'também falada',
+  diaspora: 'comunidade no exterior',
+};
 
-const ROLE_RANK: Record<LangRole, number> = { oficial: 0, regional: 1, diaspora: 2 };
+const ROLE_RANK: Record<LangRole, number> = { oficial: 0, regional: 1, falada: 2, diaspora: 3 };
+const CLDR_ROLE: Record<string, LangRole> = { o: 'oficial', r: 'regional', f: 'falada' };
+
+/** Cor por família, para os idiomas que vêm do CLDR (os do app têm cor própria). */
+const FAMILY_COLOR: Record<string, string> = {
+  'Indo-europeu': '#4F46E5',
+  'Sino-tibetano': '#DC2626',
+  'Afro-asiático': '#D97706',
+  'Níger-Congo': '#059669',
+  Austronésio: '#0891B2',
+  Túrquico: '#7C3AED',
+  Dravídico: '#DB2777',
+  'Austro-asiático': '#65A30D',
+  Tai: '#EA580C',
+  Urálico: '#0D9488',
+};
+// as outras famílias ganham uma cor fixa da paleta, sorteada pelo nome (nunca o cinza de «sem idioma»)
+const PALETTE = ['#B45309', '#0E7490', '#9333EA', '#BE123C', '#15803D', '#1D4ED8', '#C2410C', '#7E22CE', '#047857', '#A16207'];
+const familyColor = (family?: string) => {
+  if (!family) return '#64748B';
+  if (FAMILY_COLOR[family]) return FAMILY_COLOR[family];
+  let h = 0;
+  for (const ch of family) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+  return PALETTE[h % PALETTE.length];
+};
+
+const fmtMillions = (m: number) =>
+  m >= 1 ? `${m >= 10 ? Math.round(m) : m.toLocaleString('pt-BR', { maximumFractionDigits: 1 })} milhões` : `${Math.max(1, Math.round(m * 1000)).toLocaleString('pt-BR')} mil`;
+
+// % da população por idioma e país, segundo o CLDR (para ordenar e mostrar também nos idiomas do app)
+const CLDR_PCT = new Map<string, number>();
+const fromCldr: MapLanguage[] = [];
+const curated = new Set(MAP_LANGUAGES.map((l) => l.code));
+for (const [code, name, native, lineage, millions, spec] of WORLD_LANGUAGE_ROWS) {
+  const countries = spec.split(' ').map((x): SpokenIn => {
+    const [iso, role, pct] = x.split(':');
+    CLDR_PCT.set(`${code}:${iso}`, Number(pct));
+    return { iso, role: CLDR_ROLE[role], pct: Number(pct) };
+  });
+  if (curated.has(code)) continue;
+  fromCldr.push({
+    code,
+    name,
+    native: native || undefined,
+    flag: '🗣️',
+    color: familyColor(lineage[0]),
+    speakers: `cerca de ${fmtMillions(millions)} de falantes, contando quem fala como segunda língua (Unicode CLDR)`,
+    millions,
+    lineage,
+    countries,
+    fromCldr: true,
+  });
+}
+for (const l of MAP_LANGUAGES) for (const c of l.countries) c.pct ??= CLDR_PCT.get(`${l.code}:${c.iso}`);
+
+/** Todos os idiomas do mapa: os do app (com notas) e os demais do mundo (CLDR), do mais falado ao menos. */
+export const ALL_MAP_LANGUAGES: MapLanguage[] = [...MAP_LANGUAGES, ...fromCldr.sort((a, b) => b.millions - a.millions)];
+
+export function findMapLanguage(code: string): MapLanguage | undefined {
+  return ALL_MAP_LANGUAGES.find((l) => l.code === code);
+}
 
 /** Idiomas falados num país (para o cartão ao tocar no mapa), do mais falado ao menos:
- *  primeiro pelo papel (oficial › regional › comunidade no exterior), depois pelo total de falantes. */
+ *  primeiro pelo papel (oficial › regional › também falada › comunidade no exterior), depois pela % da população. */
 export function languagesIn(iso: string) {
-  return MAP_LANGUAGES.flatMap((l) => l.countries.filter((c) => c.iso === iso).map((c) => ({ lang: l, spoken: c }))).sort(
-    (a, b) => ROLE_RANK[a.spoken.role] - ROLE_RANK[b.spoken.role] || b.lang.millions - a.lang.millions,
+  return ALL_MAP_LANGUAGES.flatMap((l) => l.countries.filter((c) => c.iso === iso).map((c) => ({ lang: l, spoken: c }))).sort(
+    (a, b) => ROLE_RANK[a.spoken.role] - ROLE_RANK[b.spoken.role] || (b.spoken.pct ?? 0) - (a.spoken.pct ?? 0) || b.lang.millions - a.lang.millions,
   );
 }
 
@@ -279,11 +382,32 @@ export function kinship(a: MapLanguage, b: MapLanguage): number {
   return n;
 }
 
-/** O idioma estudado primeiro; depois os parentes mais próximos dele; no empate, os mais falados. */
+/** Os idiomas do app e os planejados: o estudado primeiro; depois os parentes mais próximos dele; no empate, os mais falados. */
 export function byKinship(studied: string): MapLanguage[] {
   const base = MAP_LANGUAGES.find((l) => l.code === studied);
   if (!base) return [...MAP_LANGUAGES].sort((a, b) => b.millions - a.millions);
   return [...MAP_LANGUAGES].sort((a, b) => (a === base ? -1 : b === base ? 1 : kinship(base, b) - kinship(base, a) || b.millions - a.millions));
+}
+
+const fold = (s: string) => s.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase();
+
+/** Busca em todos os idiomas do mundo: pelo nome, pelo nome no próprio idioma, pelo código ou pela família. */
+export function searchLanguages(query: string, limit = 40): MapLanguage[] {
+  const q = fold(query.trim());
+  if (!q) return ALL_MAP_LANGUAGES.filter((l) => l.fromCldr).slice(0, limit);
+  const score = (l: MapLanguage) => {
+    const name = fold(l.name);
+    if (name === q || l.code === q) return 0;
+    if (name.startsWith(q)) return 1;
+    if (name.includes(q) || fold(l.native ?? '').includes(q)) return 2;
+    if (l.lineage.some((x) => fold(x).includes(q))) return 3;
+    return 9;
+  };
+  return ALL_MAP_LANGUAGES.map((l) => [l, score(l)] as const)
+    .filter(([, s]) => s < 9)
+    .sort((a, b) => a[1] - b[1] || b[0].millions - a[0].millions)
+    .slice(0, limit)
+    .map(([l]) => l);
 }
 
 /** Bandeira a partir do código de duas letras. */

@@ -31,7 +31,7 @@ test('idiomas: o estudado primeiro, depois os parentes mais próximos', () => {
     byKinship('ro')
       .slice(0, 4)
       .map((l) => l.code),
-    ['ro', 'es', 'pt', 'en'],
+    ['ro', 'es', 'pt', 'it'],
   );
   assert.deepEqual(
     byKinship('fi')
@@ -44,8 +44,8 @@ test('idiomas: o estudado primeiro, depois os parentes mais próximos', () => {
 test('no país, do idioma mais falado ao menos', () => {
   assert.equal(languagesIn('BRA')[0].lang.code, 'pt');
   assert.equal(languagesIn('MDA')[0].lang.code, 'ro');
-  assert.deepEqual(
-    languagesIn('UKR').map((x) => x.lang.code),
-    ['ru', 'ro'],
-  );
+  // Ucrânia: o ucraniano (oficial) primeiro; entre os idiomas do app, o russo antes do romeno
+  const ukr = languagesIn('UKR').map((x) => x.lang.code);
+  assert.equal(ukr[0], 'uk');
+  assert.ok(ukr.indexOf('ru') < ukr.indexOf('ro'));
 });

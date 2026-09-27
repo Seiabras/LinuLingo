@@ -36,7 +36,8 @@ O seletor do Perfil agrupa os idiomas por família e ramo linguístico.
 - 3.482 palavras (heterogenéricos e falsos amigos marcados na tradução; a forma da Espanha citada quando muda), 40 tópicos de gramática, 51 histórias em mais de 20 países (Coyoacán, Monserrate, San Telmo, Havana, Salar de Uyuni, Canal do Panamá, Galápagos, Torres del Paine, Copán, Aracataca, Isla Negra…), 6 cenários de conversa, 60 etimologias (latim, árabe, náuatle, taíno, quéchua) e as 7 áreas da linguística aplicadas ao espanhol.
 - **IPA por regras** (src/services/ipa-es.ts): seseo ou distinción, yeísmo e o «sh» rioplatense, b/d/g suaves [β ð ɣ], r simples e múltiplo, assimilação do n (un beso [um ˈbeso]) e do s (mismo [ˈmizmo]), tônica pela ortografia.
 - **Palácio da memória** com 2 salas (o espanhol não tem neutro) e dicas para -aje, -umbre e os gregos em -ma; **diário** que pega «la viaje», «mucho bonito» e «me gusta los perros».
-- **Áudio de nativos** do Lingua Libre e **bichos e sons** de 7 países (México, Colômbia, Argentina, Peru, Chile, Cuba e Espanha).
+- **Bichos e sons** de 7 países (México, Colômbia, Argentina, Peru, Chile, Cuba e Espanha).
+- 2.504 gravações de nativos (Lingua Libre).
 - Conteúdo conferido pelos verificadores (scripts/checar-vocab-es.ts, scripts/checar-conteudo-es.ts: ortografia da RAE, ¿ ¡, nada de portunhol) e relido por inteiro na revisão.
 
 ## O que tem no russo
@@ -64,7 +65,7 @@ O seletor do Perfil agrupa os idiomas por família e ramo linguístico.
 - **Shadowing**: ouvir e repetir (depois ou junto com o modelo), com a onda e a curva de altura da voz ao vivo; compara o ritmo e a entonação do fim da frase (sim/não sobe; «ce, unde…» e afirmações descem).
 - **Palácio da memória**: os 3 gêneros moram em salas — 🔥 Forja (masc.), 🌊 Lago (fem.), 🦎 Jardim do Camaleão (neutro) —, com jogo «em que sala mora?» e mnemônicos próprios.
 - **Áudio de falantes nativos** nas palavras, do [Lingua Libre](https://lingualibre.org) (Wikimedia Commons, licenças livres; créditos no app em Perfil › Créditos dos áudios). Frases usam a voz do aparelho.
-- **Mapa-múndi «Onde se fala»**: os 249 países e territórios da ISO 3166-1 (mais o Kosovo, código provisório XK), as 5.046 subdivisões da ISO 3166-2 (as regiões onde cada língua é falada) e uma aba com os 31 países que deixaram de existir (ISO 3166-3), com minimapa dos sucessores. Ao tocar num país, o mapa **aproxima nele e desenha as subdivisões** (Natural Earth 1:10m, um arquivo por país, baixado só quando necessário), com rótulos, as regiões onde o idioma é falado em destaque e o código ISO 3166-2 de cada uma. Botões de **região › sub-região** (a mesma divisão das bandeiras do NeuroSim: América do Sul › Andina, Brasil e Cone Sul, Guianas…) levam a cada parte do mundo e listam os países. Os idiomas aparecem na ordem de parentesco com o que você estuda; no cartão do país, do mais falado ao menos. Cada país mostra as línguas, **animais nativos** e **instrumentos musicais** típicos.
+- **Mapa-múndi «Onde se fala»**: os 249 países e territórios da ISO 3166-1 (mais o Kosovo, código provisório XK), as 5.046 subdivisões da ISO 3166-2 (as regiões onde cada língua é falada) e uma aba com os 31 países que deixaram de existir (ISO 3166-3), com minimapa dos sucessores. Ao tocar num país, o mapa **aproxima nele e desenha as subdivisões** (Natural Earth 1:10m, um arquivo por país, baixado só quando necessário), com rótulos, as regiões onde o idioma é falado em destaque e o código ISO 3166-2 de cada uma. Botões de **região › sub-região** (a mesma divisão das bandeiras do NeuroSim: América do Sul › Andina, Brasil e Cone Sul, Guianas…) levam a cada parte do mundo e listam os países. Os idiomas do app aparecem na ordem de parentesco com o que você estuda, e **«🔎 Todos os idiomas»** busca entre os 714 idiomas do mundo (dados do [Unicode CLDR](https://cldr.unicode.org/): em que países cada um é falado, a % da população e o status oficial; família pela árvore da ISO 639-5). No cartão do país aparecem todas as línguas, da mais falada para a menos, e o botão «Estudar» só nas que o app ensina. Cada país mostra as línguas, **animais nativos** e **instrumentos musicais** típicos.
 - **Variantes**: romeno da Romênia (padrão) e da **Moldávia** (46 diferenças de vocabulário, pronúncia, cultura e 3 histórias em Chișinău, Orheiul Vechi e Cricova).
 - **Conversação guiada**: café, hotel, bar com amigos, entrevista de emprego. O Linu avisa quando o tom não combina (ex.: «tu» com o recepcionista).
 - **Comunidade**: corrigir textos de outros alunos (+20 XP) e acompanhar os próprios envios.
@@ -104,6 +105,7 @@ node scripts/baixar-audios.mjs ro   # precisa de ffmpeg; gera assets/audio/ro/*.
 ```bash
 node scripts/gerar-mapa.mjs   # precisa do pacote iso-codes; gera src/data/mapa-mundi.ts e src/data/iso-3166-2.ts
 node scripts/gerar-subdivisoes.mjs   # contornos das subdivisões: assets/geo/<ISO3>.geo e src/data/subdivisoes-geo.ts
+node scripts/gerar-idiomas-mundo.mjs # todos os idiomas por país (Unicode CLDR, pacote cldr-core) → src/data/idiomas-mundo.ts
 ```
 
 Contornos: [Natural Earth](https://www.naturalearthdata.com/) 1:50m (domínio público). Nomes em pt-BR: projeto [iso-codes](https://salsa.debian.org/iso-codes-team/iso-codes) (LGPL-2.1).

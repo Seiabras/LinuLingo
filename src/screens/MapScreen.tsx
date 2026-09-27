@@ -1,18 +1,18 @@
 import { useMemo, useRef, useState } from 'react';
-import { LogBox, Pressable, ScrollView, Text, useWindowDimensions, View } from 'react-native';
+import { LogBox, Pressable, ScrollView, Text, TextInput, useWindowDimensions, View } from 'react-native';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import { scheduleOnRN } from 'react-native-worklets';
 import Svg, { Circle, G, Path, Rect, Text as SvgText } from 'react-native-svg';
-import { ArrowLeft, Globe, Minus, Plus } from 'lucide-react-native';
+import { ArrowLeft, Globe, Minus, Plus, Search, X } from 'lucide-react-native';
 import { Screen, Button, Card, Chip, SectionTitle, SpeakButton } from '@/components/ui';
 import { useApp } from '@/services/app-state';
 import { MAP_H, MAP_W, WORLD, type MapCountry } from '@/data/mapa-mundi';
-import { byKinship, flagOf, languagesIn, MAP_LANGUAGES, ROLE_LABEL, type LangRole } from '@/data/onde-se-fala';
+import { ALL_MAP_LANGUAGES, byKinship, findMapLanguage, flagOf, languagesIn, MAP_LANGUAGES, ROLE_LABEL, searchLanguages, type LangRole, type MapLanguage } from '@/data/onde-se-fala';
 import { FAUNA_MUSICA, HOMELANDS } from '@/data/fauna-musica';
 import { WORLD_REGIONS } from '@/data/regioes';
 import { ISO_3166_2 } from '@/data/iso-3166-2';
 import { FORMER_COUNTRIES, KIND_LABEL, type FormerCountry } from '@/data/iso-3166-3';
-import { isAvailable } from '@/data/idiomas';
+import { isAvailable, LANGUAGES } from '@/data/idiomas';
 import { updateUser } from '@/database/queries';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
@@ -39,7 +39,13 @@ for (const r of WORLD_REGIONS) {
   REGION_BOX[r.id] = REGION_BOX_OVERRIDE[r.id] ?? focusBox(boxesOf(r.subs.flatMap((x) => x.countries)), 3, 40)!;
 }
 
-const OPACITY: Record<LangRole, number> = { oficial: 1, regional: 0.55, diaspora: 0.28 };
+const OPACITY: Record<LangRole, number> = { oficial: 1, regional: 0.55, falada: 0.4, diaspora: 0.28 };
+
+/** Idioma do app (dá para estudar) ou planejado (em breve). */
+const appStatus = (code: string): 'app' | 'breve' | null => (isAvailable(code) ? 'app' : LANGUAGES.some((l) => l.code === code) ? 'breve' : null);
+
+/** Quantas línguas o cartão do país mostra antes do «ver todas». */
+const CARD_LANGS = 6;
 
 /**
  * Mapa-múndi clicável: escolha um idioma para ver onde é falado (oficial, regional,
@@ -50,7 +56,17 @@ export default function MapScreen() {
   const dark = useIsDark();
   const ordered = useMemo(() => byKinship(pack.code), [pack.code]);
   const [langCode, setLangCode] = useState(pack.code);
-  const lang = MAP_LANGUAGES.find((l) => l.code === langCode) ?? MAP_LANGUAGES[0];
+  const lang = findMapLanguage(langCode) ?? MAP_LANGUAGES[0];
+  // busca em todos os idiomas do mundo
+  const [showAll, setShowAll] = useState(false);
+  const [query, setQuery] = useState('');
+  const found = useMemo(() => (showAll ? searchLanguages(query) : []), [showAll, query]);
+  const [allLangs, setAllLangs] = useState(false);
+  const pickLanguage = (l: MapLanguage) => {
+    setLangCode(l.code);
+    setShowAll(false);
+    setQuery('');
+  };
   const [selected, setSelected] = useState<MapCountry | null>(() => WORLD.find((c) => c.iso === (HOMELANDS[pack.code]?.[0] ?? '')) ?? null);
   const [size, setSize] = useState({ w: 360, h: 240 });
   // mais alto em telas largas (tablet e computador)
@@ -105,6 +121,7 @@ export default function MapScreen() {
   const selectCountry = (c: MapCountry) => {
     setSelected(c);
     setSubSel(null);
+    setAllLangs(false);
     if (focus?.iso === c.iso || (!c.d && !hasSubdivisions(c.iso))) return;
     setFocus(c);
     const id = ++request.current;
@@ -157,7 +174,7 @@ export default function MapScreen() {
     setSize({ w, h });
     if (fitted) return;
     setFitted(true);
-    const home = WORLD.find((c) => c.iso === (MAP_LANGUAGES.find((l) => l.code === langCode)?.countries[0]?.iso ?? ''));
+    const home = WORLD.find((c) => c.iso === (findMapLanguage(langCode)?.countries[0]?.iso ?? ''));
     const a = h / w;
     const vw = Math.min(MAP_W, MAP_H / a);
     const cx = home?.cx ?? MAP_W / 2;
@@ -251,7 +268,17 @@ export default function MapScreen() {
       {mode === 'hoje' && (
         <>
           <ScrollView horizontal showsHorizontalScrollIndicator={false} className="mt-3" contentContainerStyle={{ gap: 8 }}>
-            {ordered.map((l) => (
+            <Pressable
+              accessibilityRole="button"
+              accessibilityState={{ expanded: showAll }}
+              onPress={() => setShowAll((v) => !v)}
+              className={`flex-row items-center gap-1 rounded-full border-2 px-3 py-1.5 ${showAll ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-dashed border-slate-300 bg-white dark:border-slate-600 dark:bg-slate-900'}`}
+            >
+              <Search size={14} color={dark ? '#93C5FD' : '#2563EB'} />
+              <Text className="font-bold text-conecta">Todos os idiomas ({ALL_MAP_LANGUAGES.length})</Text>
+            </Pressable>
+            {/* um idioma escolhido na busca aparece primeiro, marcado */}
+            {[...(ordered.some((l) => l.code === lang.code) ? [] : [lang]), ...ordered].map((l) => (
               <Pressable
                 key={l.code}
                 onPress={() => setLangCode(l.code)}
@@ -263,9 +290,63 @@ export default function MapScreen() {
               </Pressable>
             ))}
           </ScrollView>
+
+          {showAll && (
+            <Card className="mt-2 gap-2">
+              <View className="flex-row items-center gap-2 rounded-xl border-2 border-slate-200 bg-white px-3 dark:border-slate-700 dark:bg-slate-900">
+                <Search size={16} color="#94A3B8" />
+                <TextInput
+                  accessibilityLabel="Buscar idioma"
+                  value={query}
+                  onChangeText={setQuery}
+                  placeholder="Buscar: guarani, suaíli, basco, tupi…"
+                  placeholderTextColor="#94A3B8"
+                  autoCorrect={false}
+                  className="flex-1 py-2.5 text-base text-slate-900 dark:text-white"
+                />
+                {query !== '' && (
+                  <Pressable accessibilityLabel="Limpar busca" onPress={() => setQuery('')} hitSlop={8}>
+                    <X size={16} color="#94A3B8" />
+                  </Pressable>
+                )}
+              </View>
+              <Text className="text-xs text-slate-500 dark:text-slate-400">
+                {query ? `${found.length === 40 ? 'Os 40 primeiros' : found.length} resultados` : 'Os mais falados do mundo. Busque pelo nome, pelo nome no próprio idioma ou pela família.'}
+              </Text>
+              {found.map((l) => {
+                const st = appStatus(l.code);
+                return (
+                  <Pressable
+                    key={l.code}
+                    accessibilityRole="button"
+                    accessibilityLabel={`Ver no mapa: ${l.name}`}
+                    onPress={() => pickLanguage(l)}
+                    className="flex-row items-center gap-3 rounded-xl bg-slate-50 px-3 py-2 active:opacity-70 dark:bg-slate-800/60"
+                  >
+                    <View style={{ backgroundColor: l.color }} className="h-3 w-3 rounded-full" />
+                    <View className="flex-1">
+                      <Text className="font-bold text-slate-900 dark:text-white">
+                        {l.name}
+                        {l.native ? <Text className="font-normal text-slate-500"> · {l.native}</Text> : null}
+                      </Text>
+                      <Text className="text-xs text-slate-500 dark:text-slate-400">
+                        {l.lineage.length ? l.lineage.join(' › ') : 'família não classificada'} · {l.countries.length} {l.countries.length === 1 ? 'país' : 'países'}
+                      </Text>
+                    </View>
+                    {st === 'app' ? <Chip label="📚 no app" tone="green" /> : st === 'breve' ? <Chip label="em breve" /> : null}
+                  </Pressable>
+                );
+              })}
+            </Card>
+          )}
+
           <Text className="mt-2 text-sm text-slate-600 dark:text-slate-400">
-            {lang.flag} {lang.name}: {lang.speakers}.
+            {lang.flag} <Text className="font-bold">{lang.name}</Text>
+            {lang.native ? ` (${lang.native})` : ''}: {lang.speakers}.
           </Text>
+          {lang.fromCldr && lang.lineage.length > 0 && (
+            <Text className="text-xs text-slate-500 dark:text-slate-400">Família: {lang.lineage.join(' › ')}</Text>
+          )}
         </>
       )}
       {mode === 'antigos' && (
@@ -487,7 +568,7 @@ export default function MapScreen() {
       {mode === 'hoje' && (
         <>
           <View className="mt-2 flex-row flex-wrap gap-3">
-            {(['oficial', 'regional', 'diaspora'] as LangRole[]).map((r) => (
+            {(['oficial', 'regional', 'falada', 'diaspora'] as LangRole[]).filter((r) => lang.countries.some((c) => c.role === r)).map((r) => (
               <View key={r} className="flex-row items-center gap-1.5">
                 <View style={{ backgroundColor: lang.color, opacity: OPACITY[r] }} className="h-3 w-5 rounded" />
                 <Text className="text-xs text-slate-600 dark:text-slate-400">{ROLE_LABEL[r]}</Text>
@@ -506,47 +587,71 @@ export default function MapScreen() {
               </Text>
               {subSel && selected.iso === focus?.iso && <SubCard iso2={selected.iso2} sub={subSel} spoken={spoken} onClose={() => setSubSel(null)} />}
               {spoken.length === 0 ? (
-                <Text className="text-slate-600 dark:text-slate-400">Nenhum dos idiomas do app é falado aqui em grande escala.</Text>
+                <Text className="text-slate-600 dark:text-slate-400">Sem dados de idiomas para este território.</Text>
               ) : (
                 <View className="gap-2">
-                  {spoken.map(({ lang: l, spoken: s }) => (
-                    <View key={l.code} className="gap-1 rounded-xl bg-slate-50 p-3 dark:bg-slate-800/60">
-                      <View className="flex-row flex-wrap items-center gap-2">
-                        <Text className="font-bold text-slate-900 dark:text-white">
-                          {l.flag} {l.name}
-                        </Text>
-                        <Chip label={ROLE_LABEL[s.role]} tone={s.role === 'oficial' ? 'blue' : s.role === 'regional' ? 'amber' : 'slate'} />
-                      </View>
-                      {s.note && <Text className="text-sm text-slate-600 dark:text-slate-400">{s.note}</Text>}
-                      {s.subdivisions && (
-                        <Text className="text-xs text-slate-500 dark:text-slate-400">
-                          📍 {s.subdivisions.map((code) => `${subName(selected.iso2, code)} (${code})`).join(' · ')}
-                        </Text>
-                      )}
-                      {isAvailable(l.code) && l.code !== pack.code && (
-                        <Button
-                          title={`Estudar ${l.name.toLowerCase()}`}
-                          variant="ghost"
-                          onPress={async () => {
-                            await updateUser(db, { current_language: l.code });
-                            refresh();
-                          }}
-                        />
-                      )}
-                      {s.variant &&
-                        l.code === pack.code &&
-                        pack.variants?.some((v) => v.code === s.variant) &&
-                        (variant === s.variant ? (
-                          <Chip label="✓ variante que você estuda" tone="green" />
-                        ) : (
+                  <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">
+                    {spoken.length === 1 ? '1 língua' : `${spoken.length} línguas`} · da mais falada para a menos
+                  </Text>
+                  {(allLangs ? spoken : spoken.slice(0, CARD_LANGS)).map(({ lang: l, spoken: s }) => {
+                    const st = appStatus(l.code);
+                    return (
+                      <View key={l.code} className="gap-1 rounded-xl bg-slate-50 p-3 dark:bg-slate-800/60">
+                        <View className="flex-row flex-wrap items-center gap-2">
+                          <Pressable accessibilityRole="button" accessibilityLabel={`Ver ${l.name} no mapa`} onPress={() => setLangCode(l.code)} hitSlop={4}>
+                            <Text className={`font-bold ${l.code === langCode ? 'text-conecta' : 'text-slate-900 dark:text-white'}`}>
+                              {l.flag} {l.name}
+                            </Text>
+                          </Pressable>
+                          <Chip label={ROLE_LABEL[s.role]} tone={s.role === 'oficial' ? 'blue' : s.role === 'regional' ? 'amber' : 'slate'} />
+                          {st === 'app' && <Chip label="📚 no app" tone="green" />}
+                          {st === 'breve' && <Chip label="em breve no app" />}
+                        </View>
+                        {s.pct !== undefined && s.pct > 0 && (
+                          <Text className="text-xs text-slate-500 dark:text-slate-400">
+                            ≈ {s.pct >= 1 ? Math.round(s.pct) : s.pct.toLocaleString('pt-BR', { maximumSignificantDigits: 1 })}% da população
+                          </Text>
+                        )}
+                        {s.note && <Text className="text-sm text-slate-600 dark:text-slate-400">{s.note}</Text>}
+                        {s.subdivisions && (
+                          <Text className="text-xs text-slate-500 dark:text-slate-400">
+                            📍 {s.subdivisions.map((code) => `${subName(selected.iso2, code)} (${code})`).join(' · ')}
+                          </Text>
+                        )}
+                        {/* estudar: só os idiomas que o app já ensina */}
+                        {st === 'app' && l.code !== pack.code && (
                           <Button
-                            title={`Estudar a variante ${pack.variants.find((v) => v.code === s.variant)?.name}`}
+                            title={`Estudar ${l.name.toLowerCase()}`}
                             variant="ghost"
-                            onPress={() => setVariant(s.variant!)}
+                            onPress={async () => {
+                              await updateUser(db, { current_language: l.code });
+                              refresh();
+                            }}
                           />
-                        ))}
-                    </View>
-                  ))}
+                        )}
+                        {s.variant &&
+                          l.code === pack.code &&
+                          pack.variants?.some((v) => v.code === s.variant) &&
+                          (variant === s.variant ? (
+                            <Chip label="✓ variante que você estuda" tone="green" />
+                          ) : (
+                            <Button
+                              title={`Estudar a variante ${pack.variants.find((v) => v.code === s.variant)?.name}`}
+                              variant="ghost"
+                              onPress={() => setVariant(s.variant!)}
+                            />
+                          ))}
+                      </View>
+                    );
+                  })}
+                  {spoken.length > CARD_LANGS && (
+                    <Button
+                      title={allLangs ? 'Mostrar menos' : `Ver todas as ${spoken.length} línguas`}
+                      variant="ghost"
+                      onPress={() => setAllLangs((v) => !v)}
+                    />
+                  )}
+                  <Text className="text-xs text-slate-400">Toque no nome de uma língua para ver no mapa onde mais ela é falada.</Text>
                 </View>
               )}
 
@@ -716,7 +821,7 @@ function MiniMap({ highlight, color, dark }: { highlight: string[]; color: strin
 
 /** Locale de voz para o nome local (só onde o idioma é do app). */
 function localeFor(iso: string): string | null {
-  return ({ ROU: 'ro-RO', MDA: 'ro-RO', RUS: 'ru-RU', ESP: 'es-ES', MEX: 'es-MX', ARG: 'es-AR', FIN: 'fi-FI', EST: 'et-EE', JPN: 'ja-JP', KOR: 'ko-KR' } as Record<string, string>)[iso] ?? null;
+  return ({ ROU: 'ro-RO', MDA: 'ro-RO', RUS: 'ru-RU', ESP: 'es-ES', MEX: 'es-MX', ARG: 'es-AR', ITA: 'it-IT', SMR: 'it-IT', VAT: 'it-IT', FIN: 'fi-FI', EST: 'et-EE', JPN: 'ja-JP', KOR: 'ko-KR' } as Record<string, string>)[iso] ?? null;
 }
 
 function NatureList({ items, locale }: { items: import('@/data/fauna-musica').NatureItem[]; locale: string | null }) {

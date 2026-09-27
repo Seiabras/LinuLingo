@@ -1,9 +1,10 @@
 import type { AudioClip } from './types';
 import { AUDIO_RO } from './ro/audios';
 import { AUDIO_RU } from './ru/audios';
+import { AUDIO_ES } from './es/audios';
 
 /** Gravações de nativos por idioma e palavra. */
-export const CLIPS: Record<string, Record<string, AudioClip>> = { ro: AUDIO_RO, ru: AUDIO_RU };
+export const CLIPS: Record<string, Record<string, AudioClip>> = { ro: AUDIO_RO, ru: AUDIO_RU, es: AUDIO_ES };
 
 export function clipFor(locale: string, text: string): AudioClip | null {
   const table = CLIPS[locale.split('-')[0]];

@@ -36,8 +36,8 @@ if ((await selected()) !== 'País selecionado: Romênia') throw new Error('Romê
 await shot('romeno');
 
 // ordem dos idiomas: o estudado primeiro, depois os parentes mais próximos
-const chips = await page.locator('text=/^(Romeno|Espanhol|Português|Inglês|Russo|Japonês|Coreano|Finlandês|Estoniano)$/').allTextContents();
-if (chips.slice(0, 4).join() !== 'Romeno,Espanhol,Português,Inglês') throw new Error('ordem dos idiomas: ' + chips.join());
+const chips = await page.locator('text=/^(Romeno|Espanhol|Português|Italiano|Inglês|Russo|Japonês|Coreano|Finlandês|Estoniano)$/').allTextContents();
+if (chips.slice(0, 5).join() !== 'Romeno,Espanhol,Português,Italiano,Inglês') throw new Error('ordem dos idiomas: ' + chips.join());
 
 // toque num ponto do mapa (coordenadas do mapa → pixels, pelo viewBox atual)
 const WORLD = readFileSync('src/data/mapa-mundi.ts', 'utf8');
@@ -88,6 +88,24 @@ await page.waitForTimeout(900);
 const langs = await page.locator('text=/^(🇧🇷 Português|🇪🇸 Espanhol|🇯🇵 Japonês)$/').allTextContents();
 if (!langs[0]?.includes('Português')) throw new Error('ordem no Brasil: ' + langs.join());
 await shot('brasil');
+// todas as línguas do país (CLDR), com a % da população; «Estudar» só nas do app
+await page.getByText(/^Ver todas as \d+ línguas$/).first().click();
+await expectText('Kaingang');
+await expectText('% da população');
+if (await page.getByText('Estudar kaingang', { exact: true }).count()) throw new Error('botão Estudar num idioma que o app não ensina');
+await shot('brasil-todas');
+await page.getByLabel('Voltar ao mapa-múndi').click();
+
+// busca em todos os idiomas do mundo: o guarani colore o Paraguai
+await page.getByText(/^Todos os idiomas \(\d+\)$/).first().click();
+await page.getByLabel('Buscar idioma').fill('guara');
+await page.getByLabel('Ver no mapa: Guarani').click();
+await expectText('Família: Tupi');
+await tapMap(centroid('PRY'));
+await page.waitForTimeout(1200);
+await expectText('língua oficial');
+if (await page.getByText('Estudar guarani', { exact: true }).count()) throw new Error('botão Estudar no guarani');
+await shot('guarani');
 await page.getByLabel('Voltar ao mapa-múndi').click();
 
 
