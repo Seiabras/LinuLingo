@@ -44,6 +44,7 @@ export default function RootLayout() {
               <Stack.Screen name="voz" />
               <Stack.Screen name="historias" />
               <Stack.Screen name="historia/[id]" />
+              <Stack.Screen name="artigo/[id]" />
               <Stack.Screen name="diario" />
               <Stack.Screen name="shadowing" />
               <Stack.Screen name="palacio" />
