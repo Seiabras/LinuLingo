@@ -1,10 +1,11 @@
 import { useState, type ReactNode } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { router } from 'expo-router';
-import Animated, { FadeIn } from 'react-native-reanimated';
+import Animated, { BounceIn, FadeIn, FadeInDown } from 'react-native-reanimated';
 import { Lightbulb, MessageCircle, Star, Trophy } from 'lucide-react-native';
 import { Screen, Button, ProgressBar, SpeechBubble } from '@/components/ui';
 import { Linu, type LinuMood } from '@/components/Linu';
+import { Logo } from '@/components/Logo';
 import { SwipeCard, type SwipeDir } from '@/components/SwipeCard';
 import { useApp } from '@/services/app-state';
 import { setMeta } from '@/database/queries';
@@ -84,13 +85,21 @@ export default function TutorialScreen() {
       </View>
 
       <Animated.View key={i} entering={FadeIn.duration(250)} className="flex-1 gap-4 pt-4">
-        <View className="items-center">
+        {i === 0 && (
+          <Animated.View entering={FadeInDown.duration(400)} className="items-center">
+            <Logo size={44} />
+          </Animated.View>
+        )}
+        {/* como no tutorial de um app de mascote: o Linu entra quicando e o balão aparece em seguida */}
+        <Animated.View entering={BounceIn.duration(650)} className="items-center">
           <Linu mood={s.mood} size={110} />
-        </View>
-        <SpeechBubble className="flex-none">
-          <Text className="text-xl font-extrabold text-slate-900 dark:text-white">{s.title}</Text>
-          <Text className="mt-1 text-base leading-6 text-slate-700 dark:text-slate-300">{s.text}</Text>
-        </SpeechBubble>
+        </Animated.View>
+        <Animated.View entering={FadeInDown.delay(220).duration(380)}>
+          <SpeechBubble className="flex-none">
+            <Text className="text-xl font-extrabold text-slate-900 dark:text-white">{s.title}</Text>
+            <Text className="mt-1 text-base leading-6 text-slate-700 dark:text-slate-300">{s.text}</Text>
+          </SpeechBubble>
+        </Animated.View>
         {s.extra === 'trilha' && <TrailLegend />}
         {s.extra === 'etapas' && <StepsList />}
         {s.extra === 'gestos' && <GestureDemo />}
