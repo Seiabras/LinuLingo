@@ -8,7 +8,7 @@ const VOICE_NAMES: Record<string, Partial<Record<OS | 'piper', string>>> = {
   it: { ios: 'Alice', macos: 'Alice', windows: 'Elsa', piper: 'it_IT-paola-medium' },
 };
 
-export const PIPER_SCRIPT_URL = 'https://github.com/Seiabras/poliglota/blob/master/scripts/instalar-piper.sh';
+export const PIPER_SCRIPT_URL = 'https://github.com/Seiabras/LinuLingo/blob/master/scripts/instalar-piper.sh';
 
 export interface GuideStep {
   text: string;
@@ -56,8 +56,8 @@ export function voiceGuide(os: OS, langCode: string, langName: string, nativeNam
         { text: 'O Firefox e o Chrome falam pelo speech-dispatcher. Primeiro, teste se já existe voz:', code: `spd-say -l ${langCode} "${greeting}"` },
         { text: 'Se não falou nada, instale a voz básica (eSpeak, soa robótica):', code: 'sudo pacman -S speech-dispatcher espeak-ng   # ou: sudo apt install speech-dispatcher espeak-ng' },
         {
-          text: `Para uma voz natural e offline, instale o Piper${names.piper ? ` com a voz «${names.piper}»` : ''}. O script do Poliglota faz tudo só no seu usuário, sem sudo:`,
-          code: 'git clone https://github.com/Seiabras/poliglota && sh poliglota/scripts/instalar-piper.sh',
+          text: `Para uma voz natural e offline, instale o Piper${names.piper ? ` com a voz «${names.piper}»` : ''}. O script do LinuLingo faz tudo só no seu usuário, sem sudo:`,
+          code: 'git clone https://github.com/Seiabras/LinuLingo && sh LinuLingo/scripts/instalar-piper.sh',
         },
         { text: 'Feche e abra o navegador de novo.' },
       ];

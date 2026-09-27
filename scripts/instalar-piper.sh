@@ -62,7 +62,7 @@ CONF
 if ! grep -q 'AddModule "piper"' "$C/speechd.conf"; then
   cat >> "$C/speechd.conf" <<CONF
 
-# --- Voz natural (Piper) — scripts/instalar-piper.sh do Poliglota ---
+# --- Voz natural (Piper) — scripts/instalar-piper.sh do LinuLingo ---
 # O Firefox só lista as vozes do módulo padrão: o Piper vira padrão, com o eSpeak
 # como reserva para os outros idiomas dentro do próprio módulo (piper-falar).
 AddModule "espeak-ng" "sd_espeak-ng" "espeak-ng.conf"

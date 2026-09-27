@@ -1,7 +1,7 @@
 // Ajusta dist/ (saída de `expo export -p web`) para o GitHub Pages:
 // - coi-serviceworker: o GitHub Pages não deixa configurar os cabeçalhos COOP/COEP que o
 //   SQLite da web (SharedArrayBuffer) exige; o service worker os adiciona no navegador.
-// - 404.html: cópia do index.html, para que links diretos (/poliglota/vocabulario) abram o app.
+// - 404.html: cópia do index.html, para que links diretos (/LinuLingo/vocabulario) abram o app.
 // - .nojekyll: a pasta _expo/ começa com "_" e seria ignorada pelo Jekyll.
 import { copyFileSync, readFileSync, writeFileSync } from 'node:fs';
 

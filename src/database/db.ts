@@ -3,7 +3,7 @@ import { MIGRATIONS, LOCAL_USER_ID } from './schema';
 import { PACKS, DEFAULT_LANGUAGE } from '@/data/idiomas';
 import type { LanguagePack } from '@/data/types';
 
-export const DB_NAME = 'poliglota.db';
+export const DB_NAME = 'linulingo.db';
 
 /** Chamado pelo SQLiteProvider antes de renderizar o app. */
 export async function initDatabase(db: SQLiteDatabase): Promise<void> {

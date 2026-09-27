@@ -20,7 +20,7 @@ const cfg = LANGS[lang];
 if (!cfg) throw new Error(`idioma sem configuração: ${lang}`);
 
 const API = 'https://commons.wikimedia.org/w/api.php';
-const UA = 'PoliglotaApp/0.1 (https://github.com/Seiabras/poliglota; app educativo)';
+const UA = 'LinuLingoApp/0.1 (https://github.com/Seiabras/LinuLingo; app educativo)';
 const OUT_DIR = `assets/audio/${lang}`;
 const CACHE = `scripts/.cache-commons-${lang}.json`;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));

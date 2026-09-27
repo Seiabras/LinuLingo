@@ -1,4 +1,4 @@
-# Guia para escrever histórias interativas em romeno (app Poliglota)
+# Guia para escrever histórias interativas em romeno (app LinuLingo)
 
 Protagonista: **Linu**, um pinguim-de-barbicha simpático e curioso, visitando/morando na Romênia. Público: brasileiros aprendendo romeno.
 

@@ -1,7 +1,7 @@
 name: Publicar no GitHub Pages
 
 # Testa, exporta a versão web (npm run build:web) e publica dist/ em
-# https://seiabras.github.io/poliglota/ a cada push em master.
+# https://seiabras.github.io/LinuLingo/ a cada push em master.
 # O SQLite da web precisa de COOP/COEP, que o Pages não configura: o
 # scripts/preparar-pages.mjs injeta o coi-serviceworker para isso.
 on:

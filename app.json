@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Poliglota",
-    "slug": "meu-app-idiomas",
+    "name": "LinuLingo",
+    "slug": "linulingo",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -42,10 +42,10 @@
       ],
       "expo-asset"
     ],
-    "scheme": "poliglota",
+    "scheme": "linulingo",
     "experiments": {
       "typedRoutes": true,
-      "baseUrl": "/poliglota"
+      "baseUrl": "/LinuLingo"
     }
   }
 }
