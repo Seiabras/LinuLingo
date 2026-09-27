@@ -82,10 +82,14 @@ export function vocabByWords(db: SQLiteDatabase, language: string, words: string
   );
 }
 
+/**
+ * Revisões vencidas. As que acabaram de ser erradas (repetição zerada, vindas do caderno de erros ou
+ * de um «não sei») vêm primeiro, as mais difíceis (fator de facilidade menor) na frente.
+ */
 export function dueReviews(db: SQLiteDatabase, language: string, limit = 50) {
   return db.getAllAsync<VocabWithSRS>(
     `${VOCAB_WITH_SRS} WHERE v.language = ? AND s.next_review_date IS NOT NULL AND s.next_review_date <= ?
-     ORDER BY s.next_review_date LIMIT ?`,
+     ORDER BY (s.repetition = 0) DESC, s.ease_factor, s.next_review_date LIMIT ?`,
     uid, language, new Date().toISOString(), limit,
   );
 }

@@ -57,7 +57,12 @@ const check = (ok, msg) => {
 const waitPlayed = async (n, timeout = 240000) => page.waitForFunction((n) => window.__tocado.length >= n, n, { timeout, polling: 250 });
 
 await page.goto(BASE + '/', { waitUntil: 'load', timeout: 180000 });
-await page.getByText('Pular', { exact: true }).first().click({ timeout: 90000 });
+// com o perfil reaproveitado, o tutorial já pode ter sido concluído numa execução anterior
+await page
+  .getByText('Pular', { exact: true })
+  .first()
+  .click({ timeout: 90000 })
+  .catch(() => console.log('   · sem tutorial (perfil já tinha idioma escolhido)'));
 await page.waitForTimeout(1500);
 if (dist) console.log(`   · página isolada: ${await page.evaluate(() => crossOriginIsolated)}`);
 await page.goto(BASE + '/voz', { waitUntil: 'load' });

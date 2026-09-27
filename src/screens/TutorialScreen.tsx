@@ -70,7 +70,7 @@ export default function TutorialScreen() {
     { mood: 'pensando', title: 'O cofre lembra por você', text: 'Cada palavra vai para o cofre de vocabulário. O app calcula (algoritmo SM-2) o dia certo de revisar: um pouco antes de você esquecer. Quando aparecer «revisar hoje», é a hora!' },
     { mood: 'comemorando', title: 'Ofensiva e meta do dia', text: 'Estudar todo dia mantém o fogo aceso:', extra: 'ofensiva' },
     { mood: 'pensando', title: 'Gramática e linguística', text: `Na aba Gramática há dois jeitos de estudar. «Por nível» traz os tópicos do A1.1 ao C2. «Por área da língua» é um curso de linguística: fonética, fonologia, morfologia, sintaxe, semântica, pragmática e estilística aplicadas ao ${nomeIdioma(pack.name)}, o quadro interativo do IPA, normas (códigos de línguas, transliteração, glosas, CEFR) e grandes temas, como as famílias de línguas.` },
-    { mood: 'comemorando', title: 'Histórias com vários finais', text: `Nas Histórias você lê em ${nomeIdioma(pack.name)} e decide o que eu faço. Se escolher algo que mostra que não entendeu o texto, eu dou uma dica. Cada história tem mais de um final: tente achar todos!` },
+    { mood: 'comemorando', title: 'Histórias com vários finais', text: `Nas Histórias você lê em ${nomeIdioma(pack.name)} e decide o que eu faço. Se escolher algo que mostra que não entendeu o texto, eu dou uma dica. Cada história tem mais de um final: tente achar todos! As leituras seguem o seu nível na trilha: as do seu subnível e as de baixo ficam abertas, a do nível seguinte é um desafio e as de cima abrem quando você chegar lá.` },
     { mood: 'pensando', title: 'Diário, shadowing e palácio', text: `No Diário você escreve 3 frases sobre o seu dia e eu corrijo acentos, gênero e erros comuns. No Shadowing você repete frases imitando o ritmo e a melodia, e eu desenho a sua voz. No Palácio da memória cada gênero mora numa sala: ${palaceRooms(pack)}.` },
     {
       mood: 'falando',
@@ -80,7 +80,7 @@ export default function TutorialScreen() {
     {
       mood: 'pensando',
       title: 'Caderno de erros',
-      text: 'Tudo o que você erra, em qualquer treino (lições, gramática, escuta, pares, alfabeto, palácio, revisão…), vai para o «📕 Caderno de erros», em Mais práticas, com a sua resposta e a certa. Revise por lá: acertando 2 vezes seguidas, o item sai do caderno; se errar de novo num treino, ele volta.',
+      text: 'Tudo o que você erra, em qualquer treino (lições, gramática, diário, shadowing, escuta, pares, mapa, palácio…), vai para o «📕 Caderno de erros», em Mais práticas, com a sua resposta e a certa. Se o erro foi numa palavra do cofre, ela fica mais «difícil» no SM-2 e volta no sprint de amanhã, na frente da fila. Revise pelo caderno: acertando 2 vezes seguidas, o item sai; se errar de novo num treino, ele volta.',
     },
     ...(pack.animalSounds
       ? [
@@ -97,7 +97,7 @@ export default function TutorialScreen() {
       text: `Cada lição ou treino que você termina vale uma figurinha para o «📒 Álbum» (em Mais práticas): os bichos e os instrumentos musicais de cada país, com mais chance de vir dos lugares onde se fala ${nomeIdioma(pack.name)}. Toque numa figurinha para ler a curiosidade dela; com 3 repetidas, você troca por uma que falta.`,
     },
     { mood: 'feliz', title: 'O mundo do idioma', text: `Na aba Cultura tem um mapa-múndi: toque num idioma para ver onde ele é falado (o que você estuda vem primeiro, seguido dos parentes mais próximos). Em «🔎 Todos os idiomas» estão os mais de 700 idiomas do mundo, com a família de cada um; o botão «Estudar» aparece nos que o app já ensina. Os botões embaixo do mapa levam a cada região e sub-região (América do Sul › Andina, por exemplo), com a lista dos países. Toque num país e o mapa aproxima nele, mostrando os estados e as províncias; toque numa região para ver o nome e o código. No cartão aparecem as línguas, da mais falada para a menos falada, os animais nativos e os instrumentos de lá. No «🗺️ Jogo do mapa» (Mais práticas) você treina onde cada língua é oficial, que língua se fala em cada país e onde fica cada sotaque.${variantTip(pack)}${accentTip(pack)}` },
-    { mood: 'falando', title: 'Conversa e comunidade', text: 'Na aba Conversa você pratica situações reais (café, hotel, entrevista) e eu aviso se o tom ficou formal ou informal demais. Na Comunidade você corrige textos de outros alunos e ganha 20 XP.' },
+    { mood: 'falando', title: 'Conversa e comunidade', text: 'Na aba Conversa você pratica situações reais (café, hotel, entrevista) e eu aviso se o tom ficou formal ou informal demais. Na Comunidade você avalia textos de outros alunos com 3 emojis (😊 entendi tudo, 🤔 quase tudo, 😵 não entendi) e uma sugestão gentil, e ganha 20 XP. Para ser avaliado, mande as 3 frases do diário ou grave 10 segundos de áudio e toque em «Mandar para um colega»: vai um link, a pessoa avalia e devolve outro link com a resposta. Sem servidor: tudo vai dentro do link.' },
     { mood: 'falando', title: 'Minha voz', text: `Quando existe gravação de um falante nativo, você ouve a voz dele. Senão, eu uso uma voz do seu aparelho em ${nomeIdioma(pack.name)} e, se ele não tiver, a minha voz embutida: ela baixa uma vez e depois funciona até sem internet, sem instalar nada. Confira:`, extra: 'voz' },
     ...(Platform.OS === 'web'
       ? [

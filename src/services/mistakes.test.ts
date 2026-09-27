@@ -81,3 +81,60 @@ test('caderno: entra na cópia do progresso e sai no «apagar progresso»', asyn
   await resetProgress(other);
   assert.equal(await openMistakeCount(other, 'ro'), 0);
 });
+
+test('caderno ↔ SRS: errar uma palavra do vocabulário derruba o fator de facilidade e marca revisão para amanhã', async () => {
+  const { ensurePack } = await import('@/database/db');
+  const { dueReviews, reviewWord } = await import('@/database/queries');
+  const { MISTAKE_EASE_PENALTY, penalizeWord, tomorrowStart, vocabIdForMistake } = await import('./mistakes');
+  const db = await db0();
+  await ensurePack(db, 'es');
+  const now = new Date('2026-09-27T15:00:00');
+  // «perro» já estudado, com fator 2,5
+  const id = await vocabIdForMistake(db, { language: 'es', key: 'perro' });
+  assert.ok(id, 'perro está no vocabulário do espanhol');
+  await reviewWord(db, id, 5);
+  const before = await db.getFirstAsync<{ ease_factor: number }>('SELECT ease_factor FROM User_SRS_State WHERE vocab_id = ?', [id]);
+  await logMistake(db, { language: 'es', source: 'escuta', key: 'perro', prompt: 'Qual palavra você ouviu?', expected: 'perro', given: 'pero', speak: 'perro', byEar: true }, now);
+  const after = await db.getFirstAsync<{ ease_factor: number; repetition: number; interval: number; next_review_date: string }>('SELECT * FROM User_SRS_State WHERE vocab_id = ?', [id]);
+  assert.equal(after?.ease_factor, Math.round((before!.ease_factor - MISTAKE_EASE_PENALTY) * 100) / 100);
+  assert.equal(after?.repetition, 0);
+  assert.equal(after?.interval, 1);
+  assert.equal(after?.next_review_date, tomorrowStart(now));
+
+  // errar de novo no mesmo dia não derruba duas vezes
+  await logMistake(db, { language: 'es', source: 'pares', key: 'perro', prompt: '?', expected: 'perro', given: 'pero' }, now);
+  const again = await db.getFirstAsync<{ ease_factor: number }>('SELECT ease_factor FROM User_SRS_State WHERE vocab_id = ?', [id]);
+  assert.equal(again?.ease_factor, after?.ease_factor);
+
+  // o fator nunca passa do mínimo do SM-2
+  for (let d = 1; d <= 12; d++) await penalizeWord(db, id, new Date(now.getTime() + d * 86400000));
+  const floor = await db.getFirstAsync<{ ease_factor: number }>('SELECT ease_factor FROM User_SRS_State WHERE vocab_id = ?', [id]);
+  assert.equal(floor?.ease_factor, 1.3);
+
+  // uma palavra nova (nunca estudada) errada entra direto na revisão
+  const gato = await vocabIdForMistake(db, { language: 'es', key: 'gato' });
+  assert.ok(gato);
+  await logMistake(db, { language: 'es', source: 'imersao', key: 'x', word: 'gato', prompt: '?', expected: 'gato' }, now);
+  const g = await db.getFirstAsync<{ ease_factor: number }>('SELECT ease_factor FROM User_SRS_State WHERE vocab_id = ?', [gato]);
+  assert.equal(g?.ease_factor, 2.3);
+
+  // no sprint, as erradas vêm antes das outras revisões vencidas
+  const casa = await vocabIdForMistake(db, { language: 'es', key: 'casa' });
+  await reviewWord(db, casa!, 5);
+  await db.runAsync('UPDATE User_SRS_State SET next_review_date = ? WHERE vocab_id = ?', ['2026-01-01T00:00:00.000Z', casa!]);
+  await db.runAsync('UPDATE User_SRS_State SET next_review_date = ? WHERE vocab_id IN (?, ?)', ['2026-06-01T00:00:00.000Z', id, gato!]);
+  const due = await dueReviews(db, 'es');
+  assert.deepEqual(due.slice(0, 3).map((v) => v.id), [id, gato, casa], 'a mais difícil primeiro, a acertada por último');
+});
+
+test('caderno ↔ SRS: a revisão do sprint já aplica o SM-2 (sem penalidade dobrada) e erros sem palavra não mexem no SRS', async () => {
+  const { ensurePack } = await import('@/database/db');
+  const { vocabIdForMistake } = await import('./mistakes');
+  const db = await db0();
+  await ensurePack(db, 'es');
+  const id = await vocabIdForMistake(db, { language: 'es', key: 'perro' });
+  await logMistake(db, { language: 'es', source: 'revisao', key: id!, prompt: 'O que é «perro»?', expected: 'cachorro', speak: 'perro' });
+  assert.equal((await db.getFirstAsync<{ n: number }>('SELECT COUNT(*) AS n FROM User_SRS_State'))?.n, 0);
+  await logMistake(db, { language: 'es', source: 'gramatica', key: '¿Cuál es el plural de «luz»?', prompt: '?', expected: 'luces' });
+  assert.equal((await db.getFirstAsync<{ n: number }>('SELECT COUNT(*) AS n FROM User_SRS_State'))?.n, 0);
+});

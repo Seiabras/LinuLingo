@@ -64,8 +64,17 @@ await page.waitForTimeout(1200);
 await expectText('1/3 finais');
 await shot('lista-depois');
 
-// B1: escolha errada sobre o vampiro
-await click('O noapte la Castelul Bran');
+// leituras graduadas: para quem está no começo da trilha, a história do B1.2 fica trancada na lista
+await expectText('Seu nível na trilha');
+const locked = page.getByLabel(/^O noapte la Castelul Bran\. Bloqueada: chegue ao B1\.2/);
+if (!(await locked.count())) throw new Error('a história do B1.2 devia estar trancada para quem está no A1.1');
+await locked.first().scrollIntoViewIfNeeded();
+await shot('trancada');
+console.log('   ✓ a história do B1.2 fica trancada no A1.1');
+
+// B1: escolha errada sobre o vampiro (aberta pelo endereço, como quem já chegou lá)
+await page.goto(BASE + '/historia/ro-h4', { waitUntil: 'load' });
+await page.waitForTimeout(1500);
 await click('Ce s-a întâmplat de fapt?');
 await click('Deci Vlad Țepeș era un vampir?');
 await expectText('governante real');

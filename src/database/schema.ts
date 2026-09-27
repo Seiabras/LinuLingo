@@ -184,6 +184,16 @@ export const MIGRATIONS: string[] = [
   );
   CREATE INDEX IF NOT EXISTS idx_mistake_lang ON Mistake_Log(user_id, language, resolved_at);
   `,
+  // 5 — comunidade: avaliação com emoji, áudios de 10 s e a resposta de um colega que chegou por link
+  `
+  ALTER TABLE Community_Feedback ADD COLUMN kind TEXT DEFAULT 'texto';
+  ALTER TABLE Community_Feedback ADD COLUMN audio TEXT;
+  ALTER TABLE Community_Feedback ADD COLUMN reaction TEXT;
+  ALTER TABLE Community_Feedback ADD COLUMN reply_reaction TEXT;
+  ALTER TABLE Community_Feedback ADD COLUMN reply_suggestion TEXT;
+  ALTER TABLE Community_Feedback ADD COLUMN reply_from TEXT;
+  ALTER TABLE Community_Feedback ADD COLUMN reply_at TEXT;
+  `,
 ];
 
 export const LOCAL_USER_ID = 'local';

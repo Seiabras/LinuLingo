@@ -22,7 +22,7 @@ export const USER_TABLES = {
   User_Journal_Logs: ['id', 'user_id', 'language', 'created_at', 'day', 'prompt', 'raw_user_input', 'corrected_input', 'native_phrasing_suggestion', 'audio_recording_path'],
   Mnemonic_Palaces: ['id', 'vocab_id', 'gender_visual_tag', 'mnemonic_prompt', 'custom_image_url'],
   Shadowing_Attempts: ['id', 'user_id', 'phrase', 'rhythm_score', 'contour_ok', 'created_at'],
-  Community_Feedback: ['id', 'language', 'author_name', 'is_mine', 'lesson_id', 'prompt', 'content', 'reference', 'correction', 'corrected_by', 'status', 'created_at'],
+  Community_Feedback: ['id', 'language', 'author_name', 'is_mine', 'lesson_id', 'prompt', 'content', 'reference', 'correction', 'corrected_by', 'status', 'created_at', 'kind', 'audio', 'reaction', 'reply_reaction', 'reply_suggestion', 'reply_from', 'reply_at'],
   Mistake_Log: ['id', 'user_id', 'language', 'source', 'prompt', 'expected', 'given', 'note', 'speak', 'options', 'misses', 'streak', 'first_at', 'last_at', 'resolved_at'],
   Meta: ['key', 'value'],
 } as const;

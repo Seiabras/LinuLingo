@@ -14,8 +14,9 @@ import { NEURAL_VOICES } from '@/data/vozes-neurais';
 const LOCALE: Record<string, string> = { ro: 'ro-RO', ru: 'ru-RU' };
 
 /**
- * Créditos das gravações de falantes nativos (Lingua Libre / Wikimedia Commons).
- * A licença CC BY-SA pede o nome do autor, a licença e o link de cada arquivo.
+ * Créditos das gravações de falantes nativos: a maioria do projeto Lingua Libre, e as que ele ainda
+ * não tinha, de outras coleções livres do Wikimedia Commons (Wikcionário, projeto Shtooka).
+ * As licenças (CC BY, CC BY-SA, CC0) pedem o nome do autor, a licença e o link de cada arquivo.
  */
 export default function CreditsScreen() {
   const dark = useIsDark();
@@ -46,8 +47,7 @@ export default function CreditsScreen() {
       </View>
       <Card className="gap-2">
         <Text className="text-base text-slate-700 dark:text-slate-300">
-          As {clips.length} gravações de palavras (incluindo as de cada sotaque, com o lugar de quem gravou) foram feitas por falantes nativos voluntários do projeto <Text className="font-bold">Lingua Libre</Text> e estão no{' '}
-          <Text className="font-bold">Wikimedia Commons</Text> sob licenças livres (em geral CC BY-SA 4.0). Muito obrigado a {authors.length === 1 ? 'quem gravou' : `todas as ${authors.length} pessoas que gravaram`}!
+          As {clips.length} gravações de palavras (incluindo as de cada sotaque, com o lugar de quem gravou) foram feitas por falantes nativos voluntários, a maioria do projeto <Text className="font-bold">Lingua Libre</Text> e o resto de outras coleções livres do Wikcionário e do projeto Shtooka, todas no <Text className="font-bold">Wikimedia Commons</Text> sob licenças livres (CC BY, CC BY-SA ou CC0). Muito obrigado a {authors.length === 1 ? 'quem gravou' : `todas as ${authors.length} pessoas que gravaram`}!
         </Text>
         <Text className="text-sm text-slate-500 dark:text-slate-400">
           {authors.map(([a, n]) => `${a} (${n})`).join(' · ')}

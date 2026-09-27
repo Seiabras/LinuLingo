@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
 import { Pressable, Text, TextInput, View } from 'react-native';
 import { useFocusEffect } from 'expo-router';
 import { ArrowLeft, Mic } from 'lucide-react-native';
@@ -12,6 +12,7 @@ import { localDay } from '@/services/progress';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
 import * as haptics from '@/services/haptics';
+import { logMistake } from '@/services/mistakes';
 
 const KIND_TONE = { acento: 'blue', gênero: 'rose', expressão: 'amber' } as const;
 export const JOURNAL_XP = 10;
@@ -54,11 +55,30 @@ export default function JournalScreen() {
   const sentences = countSentences(text);
   const doneToday = history.some((h) => h.day === today);
 
+  // cada ajuste do corretor vai para o caderno de erros (uma vez por sessão, mesmo corrigindo de novo)
+  const logged = useRef(new Set<string>());
   const check = () => {
     const r = checkJournal(text.trim(), lexicon, pack.code);
     setResult(r);
     if (r.issues.length) haptics.tapLight();
     else haptics.success();
+    for (const issue of r.issues) {
+      const key = `${issue.kind}:${issue.original.toLowerCase()}`;
+      if (logged.current.has(key)) continue;
+      logged.current.add(key);
+      logMistake(db, {
+        language: pack.code,
+        source: 'diario',
+        key,
+        prompt: `Como se escreve certo? «${issue.original}»`,
+        expected: issue.suggestion,
+        given: issue.original,
+        note: issue.why,
+        speak: issue.suggestion,
+        // a palavra do vocabulário é a última da sugestão («la viaje» → «el viaje»: viaje)
+        word: issue.suggestion.split(/\s+/).at(-1) ?? null,
+      });
+    }
   };
 
   const save = async () => {

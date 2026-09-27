@@ -5,6 +5,9 @@ import { normalize, shuffle } from './answers';
 /**
  * Caderno de erros: cada item errado em qualquer treino fica guardado (com a última resposta errada
  * e quantas vezes). Na revisão do caderno, acertar RESOLVE_STREAK vezes seguidas tira o item de lá.
+ *
+ * Ligado ao SRS: quando o erro é sobre uma palavra do vocabulário, o fator de facilidade (SM-2) dela
+ * cai e ela volta para a revisão já no dia seguinte, na frente das outras no sprint de 5 minutos.
  */
 
 export type MistakeSource =
@@ -21,6 +24,8 @@ export type MistakeSource =
   | 'bichos'
   | 'mapa'
   | 'sons'
+  | 'diario'
+  | 'shadowing'
   | 'revisao';
 
 export const SOURCES: Record<MistakeSource, { emoji: string; name: string }> = {
@@ -37,6 +42,8 @@ export const SOURCES: Record<MistakeSource, { emoji: string; name: string }> = {
   bichos: { emoji: '🐶', name: 'Sons dos bichos' },
   mapa: { emoji: '🗺️', name: 'Jogo do mapa' },
   sons: { emoji: '🔊', name: 'Adivinhe o som' },
+  diario: { emoji: '📓', name: 'Diário' },
+  shadowing: { emoji: '🎙️', name: 'Shadowing' },
   revisao: { emoji: '🗂️', name: 'Revisão de palavras' },
 };
 
@@ -60,6 +67,8 @@ export interface MistakeInput {
   options?: string[] | null;
   /** a pergunta era de ouvir (escuta, pares): a revisão toca o som em vez de mostrar */
   byEar?: boolean;
+  /** a palavra do vocabulário (no idioma) a que o erro se refere, para o SRS; sem ela, tenta «speak» e «key» */
+  word?: string | null;
 }
 
 export interface Mistake {
@@ -79,8 +88,89 @@ export interface Mistake {
   resolved_at: string | null;
 }
 
+/** Quanto o fator de facilidade (SM-2) de uma palavra cai a cada erro (o SM-2 não deixa passar de 1,3). */
+export const MISTAKE_EASE_PENALTY = 0.2;
+const MIN_EASE = 1.3;
+
+/** A revisão do sprint já aplica o SM-2 ao erro: não precisa de penalidade a mais. */
+const SRS_SELF_PENALIZED = new Set<MistakeSource>(['revisao']);
+
+const bare = (w: string) => w.normalize('NFC').toLowerCase().replace(/\u0301/g, '').replace(/ё/g, 'е').replace(/[.!?¿¡,;:«»"]/g, '').trim();
+
+/** Índice palavra → id do vocabulário, por banco e idioma (o vocabulário não muda durante o uso). */
+const vocabIndex = new WeakMap<SQLiteDatabase, Map<string, Promise<Map<string, string>>>>();
+function vocabIdsOf(db: SQLiteDatabase, language: string): Promise<Map<string, string>> {
+  let byLang = vocabIndex.get(db);
+  if (!byLang) vocabIndex.set(db, (byLang = new Map()));
+  let p = byLang.get(language);
+  if (!p) {
+    p = db.getAllAsync<{ id: string; word_target: string }>('SELECT id, word_target FROM Vocabulary WHERE language = ?', [language]).then((rows) => {
+      const m = new Map<string, string>();
+      for (const r of rows) {
+        const k = bare(r.word_target);
+        if (!m.has(k)) m.set(k, r.id);
+        // romeno: «a vorbi» também é achado como «vorbi»
+        if (language === 'ro') {
+          const noA = k.replace(/^a (se |-și )?/, '');
+          if (!m.has(noA)) m.set(noA, r.id);
+        }
+      }
+      return m;
+    });
+    // o vocabulário pode ainda não ter sido semeado: tenta de novo na próxima vez
+    p.then((m) => m.size === 0 && byLang!.delete(language));
+    byLang.set(language, p);
+  }
+  return p;
+}
+
+/** A palavra do vocabulário a que o erro se refere (a indicada, o texto falado ou a chave). */
+export async function vocabIdForMistake(db: SQLiteDatabase, m: Pick<MistakeInput, 'language' | 'word' | 'speak' | 'key'>): Promise<string | null> {
+  const ids = await vocabIdsOf(db, m.language);
+  for (const c of [m.word, m.speak, m.key]) {
+    if (!c) continue;
+    const id = ids.get(bare(c));
+    if (id) return id;
+  }
+  return null;
+}
+
+/** Meia-noite do dia seguinte (hora local), em ISO: a revisão fica para amanhã logo cedo. */
+export function tomorrowStart(now = new Date()): string {
+  const d = new Date(now);
+  d.setHours(24, 0, 0, 0);
+  return d.toISOString();
+}
+
+/**
+ * Penaliza a palavra no SRS: o fator de facilidade cai MISTAKE_EASE_PENALTY, as repetições zeram e a
+ * revisão vai para amanhã. Uma palavra errada várias vezes no mesmo dia cai uma vez só.
+ */
+export async function penalizeWord(db: SQLiteDatabase, vocabId: string, now = new Date()): Promise<void> {
+  const next = tomorrowStart(now);
+  const row = await db.getFirstAsync<{ ease_factor: number; repetition: number; next_review_date: string }>(
+    'SELECT ease_factor, repetition, next_review_date FROM User_SRS_State WHERE user_id = ? AND vocab_id = ?',
+    [LOCAL_USER_ID, vocabId],
+  );
+  if (row && row.repetition === 0 && row.next_review_date === next) return;
+  const ease = Math.max(MIN_EASE, Math.round(((row?.ease_factor ?? 2.5) - MISTAKE_EASE_PENALTY) * 100) / 100);
+  await db.runAsync(
+    `INSERT INTO User_SRS_State (id, user_id, vocab_id, interval, repetition, ease_factor, next_review_date)
+     VALUES (?, ?, ?, 1, 0, ?, ?)
+     ON CONFLICT(user_id, vocab_id) DO UPDATE SET interval = 1, repetition = 0, ease_factor = excluded.ease_factor, next_review_date = excluded.next_review_date`,
+    [`${LOCAL_USER_ID}-${vocabId}`, LOCAL_USER_ID, vocabId, ease, next],
+  );
+}
+
 /** Guarda (ou atualiza) um erro. Um item que volta a ser errado sai de «aprendidos». */
 export async function logMistake(db: SQLiteDatabase, m: MistakeInput, now = new Date()): Promise<void> {
+  await saveMistake(db, m, now);
+  if (SRS_SELF_PENALIZED.has(m.source)) return;
+  const vocabId = await vocabIdForMistake(db, m).catch(() => null);
+  if (vocabId) await penalizeWord(db, vocabId, now);
+}
+
+async function saveMistake(db: SQLiteDatabase, m: MistakeInput, now: Date): Promise<void> {
   const at = now.toISOString();
   const id = `${m.language}:${m.source}:${m.key}`;
   const prompt = m.byEar ? `🔊 ${m.prompt}` : m.prompt;

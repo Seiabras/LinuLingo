@@ -12,6 +12,7 @@ import { awardXp, saveShadowing } from '@/database/queries';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
 import * as haptics from '@/services/haptics';
+import { logMistake } from '@/services/mistakes';
 
 const RATES = [0.6, 0.8, 1.0];
 const CONTOUR_LABEL: Record<Contour, string> = { sobe: '↗ sobe', desce: '↘ desce', plano: '→ reta' };
@@ -73,6 +74,20 @@ export default function ShadowingScreen() {
     setResult(r);
     const good = r.rhythm >= 60 && (contour === null || expected === null || contour === expected);
     if (good) haptics.success();
+    else if (userMs > 0) {
+      // ritmo longe do modelo ou melodia do fim trocada: a frase vai para o caderno de erros
+      const off = [r.rhythm < 60 ? `ritmo ${r.rhythm}%` : null, contour && expected && contour !== expected ? `a voz ${contour === 'sobe' ? 'subiu' : contour === 'desce' ? 'desceu' : 'ficou plana'} no fim` : null].filter(Boolean).join(' · ');
+      logMistake(db, {
+        language: pack.code,
+        source: 'shadowing',
+        key: phrase,
+        prompt: `🎙️ Repita com o ritmo e a melodia do modelo: «${phrase}»`,
+        expected: phrase,
+        given: off || null,
+        note: into.tip,
+        speak: phrase,
+      });
+    }
     await saveShadowing(db, phrase, r.rhythm, contour === null || expected === null ? null : contour === expected);
     if (userMs > 0 && !done.has(i)) {
       await awardXp(db, SHADOW_XP, 'shadowing');

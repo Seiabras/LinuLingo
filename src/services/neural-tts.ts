@@ -1,5 +1,6 @@
 import { Platform } from 'react-native';
 import { neuralVoiceFor, voiceUrls, type NeuralVoice } from '@/data/vozes-neurais';
+import { siteBase } from './site-url';
 
 /**
  * Voz neural embutida (só na web): quando não há gravação de nativo nem uma voz boa do idioma no
@@ -54,15 +55,10 @@ export function hasNeuralVoice(locale: string): boolean {
   return neuralSupported() && neuralVoiceFor(locale) !== null;
 }
 
-/** No site, os arquivos ficam sob /LinuLingo; no servidor de desenvolvimento, na raiz. */
-function base(): string {
-  const b = process.env.EXPO_BASE_URL ?? '';
-  return b && window.location.pathname.startsWith(b) ? b : '';
-}
 
 function getWorker(): Worker {
   if (worker) return worker;
-  worker = new Worker(`${base()}/tts/voz-worker.mjs?v=${TTS_VERSION}`, { type: 'module' });
+  worker = new Worker(`${siteBase()}/tts/voz-worker.mjs?v=${TTS_VERSION}`, { type: 'module' });
   worker.onmessage = (ev: MessageEvent) => {
     const { id, type } = ev.data as { id: number; type: string };
     const p = pending.get(id);

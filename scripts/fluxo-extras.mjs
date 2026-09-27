@@ -38,10 +38,16 @@ const go = async (path) => {
 // Tutorial do Linu (abre sozinho na primeira visita)
 await go('/');
 await shot('tutorial-1');
+// avança até o slide que tem o elemento (o tutorial ganha slides com o tempo; contar «Próximo» quebra)
+const nextUntil = async (locator, max = 20) => {
+  for (let k = 0; k < max && !(await locator.isVisible().catch(() => false)); k++) {
+    await page.getByText('Próximo', { exact: true }).first().click();
+    await page.waitForTimeout(350);
+  }
+};
 await click('Próximo');
 await shot('tutorial-trilha');
-await click('Próximo');
-await click('Próximo');
+await nextUntil(page.getByText('pinguin', { exact: true }));
 {
   const card = page.getByText('pinguin', { exact: true });
   const b = await card.boundingBox();
@@ -52,14 +58,14 @@ await click('Próximo');
   await page.waitForTimeout(700);
 }
 await shot('tutorial-gesto');
-for (let k = 0; k < 8; k++) await click('Próximo');
+await nextUntil(page.getByText('🔊 Configurar a voz', { exact: true }));
 await shot('tutorial-voz');
 await click('🔊 Configurar a voz');
 await page.waitForTimeout(3500);
 await shot('voz');
 await page.getByLabel('Voltar').click();
 await page.waitForTimeout(800);
-await click('Próximo');
+await nextUntil(page.getByText('Começar!', { exact: true }));
 await click('Começar!');
 await page.waitForTimeout(2000);
 await shot('trilha-apos-tutorial');
@@ -106,11 +112,12 @@ await shot('conversa-meio');
 await say('Mulțumesc frumos!');
 await shot('conversa-fim');
 
-// Comunidade: corrigir o Lucas
+// Comunidade: avaliar o Lucas com emoji e uma sugestão
 await go('/comunidade');
+await page.getByLabel('Entendi quase tudo', { exact: true }).first().click();
 const box = page.getByRole('textbox').first();
 await box.fill('Bună! Eu sunt Lucas. Sunt din Brazilia și locuiesc în São Paulo.');
-await click('Enviar correção');
+await click('Enviar avaliação');
 await page.waitForTimeout(1200);
 await shot('comunidade-corrigido');
 
