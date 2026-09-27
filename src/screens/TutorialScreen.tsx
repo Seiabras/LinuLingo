@@ -84,14 +84,15 @@ export default function TutorialScreen() {
         )}
       </View>
 
-      <Animated.View key={i} entering={FadeIn.duration(250)} className="flex-1 gap-4 pt-4">
+      {/* o Animated.View do Reanimated ignora className: o layout vai em style */}
+      <Animated.View key={i} entering={FadeIn.duration(250)} style={{ flex: 1, gap: 16, paddingTop: 16 }}>
         {i === 0 && (
-          <Animated.View entering={FadeInDown.duration(400)} className="items-center">
+          <Animated.View entering={FadeInDown.duration(400)} style={{ alignItems: 'center' }}>
             <Logo size={44} />
           </Animated.View>
         )}
         {/* como no tutorial de um app de mascote: o Linu entra quicando e o balão aparece em seguida */}
-        <Animated.View entering={BounceIn.duration(650)} className="items-center">
+        <Animated.View entering={BounceIn.duration(650)} style={{ alignItems: 'center' }}>
           <Linu mood={s.mood} size={110} />
         </Animated.View>
         <Animated.View entering={FadeInDown.delay(220).duration(380)}>

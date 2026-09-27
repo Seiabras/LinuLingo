@@ -34,7 +34,7 @@ export function RewardStep({
     <View className="flex-1 gap-4">
       <View className="flex-row justify-center gap-3">
         {CONFETTI.map((c, i) => (
-          <Animated.Text key={i} entering={ZoomIn.delay(i * 90).springify()} className="text-2xl">
+          <Animated.Text key={i} entering={ZoomIn.delay(i * 90).springify()} style={{ fontSize: 24, lineHeight: 32 }}>
             {c}
           </Animated.Text>
         ))}
@@ -80,9 +80,12 @@ export function RewardStep({
 
 function Stat({ label, value, color, entering }: { label: string; value: string; color: string; entering: number }) {
   return (
-    <Animated.View entering={FadeInDown.delay(300 + entering * 120)} className="flex-1 items-center rounded-2xl border-2 border-slate-200 bg-white py-3 dark:border-slate-700 dark:bg-slate-900">
-      <Text className={`text-2xl font-extrabold ${color}`}>{value}</Text>
-      <Text className="text-xs font-semibold text-slate-500 dark:text-slate-400">{label}</Text>
+    // o Animated.View do Reanimated ignora className: as classes ficam na View de dentro
+    <Animated.View entering={FadeInDown.delay(300 + entering * 120)} style={{ flex: 1 }}>
+      <View className="flex-1 items-center rounded-2xl border-2 border-slate-200 bg-white py-3 dark:border-slate-700 dark:bg-slate-900">
+        <Text className={`text-2xl font-extrabold ${color}`}>{value}</Text>
+        <Text className="text-xs font-semibold text-slate-500 dark:text-slate-400">{label}</Text>
+      </View>
     </Animated.View>
   );
 }

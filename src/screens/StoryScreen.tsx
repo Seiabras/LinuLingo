@@ -92,7 +92,7 @@ export default function StoryScreen() {
         <Chip label={story.level} tone="blue" />
       </View>
 
-      <Animated.View key={nodeId} entering={FadeInDown.duration(300)} className="gap-4">
+      <Animated.View key={nodeId} entering={FadeInDown.duration(300)} style={{ gap: 16 }}>
         <Card className="gap-3">
           <View className="flex-row items-center justify-between">
             <Text className="text-5xl">{node.emoji ?? '📖'}</Text>
@@ -108,14 +108,14 @@ export default function StoryScreen() {
         </Card>
 
         {hint && (
-          <Animated.View entering={FadeInDown} className="flex-row items-end gap-2">
+          <Animated.View entering={FadeInDown} style={{ flexDirection: 'row', alignItems: 'flex-end', gap: 8 }}>
             <Linu mood="pensando" size={52} animate={false} />
             <Text className="mb-2 flex-1 rounded-2xl bg-amber-100 p-3 text-sm text-amber-900 dark:bg-amber-950 dark:text-amber-200">{hint}</Text>
           </Animated.View>
         )}
 
         {node.choices && (
-          <Animated.View style={shakeStyle} className="gap-2">
+          <Animated.View style={[shakeStyle, { gap: 8 }]}>
             <Text className="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">O que o Linu faz?</Text>
             {node.choices.map((c) => (
               <Pressable
