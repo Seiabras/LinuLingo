@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { LogBox, Pressable, Text, TextInput, useWindowDimensions, View } from 'react-native';
 import { HScroll } from '@/components/HScroll';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
@@ -9,7 +9,7 @@ import { ArrowLeft, Globe, Minus, Plus, Search, X } from 'lucide-react-native';
 import { Screen, Button, Card, Chip, SectionTitle, SpeakButton } from '@/components/ui';
 import { useApp } from '@/services/app-state';
 import { MAP_H, MAP_W, WORLD, type MapCountry } from '@/data/mapa-mundi';
-import { ALL_MAP_LANGUAGES, byKinship, findMapLanguage, flagOf, languagesIn, MAP_LANGUAGES, ROLE_LABEL, searchLanguages, type LangRole, type MapLanguage } from '@/data/onde-se-fala';
+import { addGlottolog, ALL_MAP_LANGUAGES, byKinship, findMapLanguage, flagOf, languagesIn, MAP_LANGUAGES, ROLE_LABEL, searchLanguages, STATUS_LABEL, type LangRole, type MapLanguage } from '@/data/onde-se-fala';
 import { FAUNA_MUSICA, HOMELANDS } from '@/data/fauna-musica';
 import { WORLD_REGIONS } from '@/data/regioes';
 import { ISO_3166_2 } from '@/data/iso-3166-2';
@@ -75,7 +75,21 @@ export default function MapScreen() {
   // busca em todos os idiomas do mundo
   const [showAll, setShowAll] = useState(false);
   const [query, setQuery] = useState('');
-  const found = useMemo(() => (showAll ? searchLanguages(query) : []), [showAll, query]);
+  // todas as línguas do mundo (Glottolog, ~8.000): o arquivo é grande, então chega depois de abrir o mapa
+  const [glotto, setGlotto] = useState(false);
+  useEffect(() => {
+    let alive = true;
+    import('@/data/linguas-glottolog').then((m) => {
+      addGlottolog(m.GLOTTOLOG_ROWS);
+      if (alive) setGlotto(true);
+    });
+    return () => {
+      alive = false;
+    };
+  }, []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- glotto muda a lista de onde a busca lê
+  const found = useMemo(() => (showAll ? searchLanguages(query) : []), [showAll, query, glotto]);
+  const [showExtinct, setShowExtinct] = useState(false);
   const [allLangs, setAllLangs] = useState(false);
   const pickLanguage = (l: MapLanguage) => {
     setLangCode(l.code);
@@ -249,7 +263,10 @@ export default function MapScreen() {
   }
   const halo = dark ? '#0F172A' : '#FFFFFF';
 
-  const spoken = selected ? languagesIn(selected.iso) : [];
+  const allSpoken = selected ? languagesIn(selected.iso) : [];
+  // as extintas ficam numa lista à parte, recolhida
+  const spoken = allSpoken.filter(({ lang: l }) => l.status !== 5);
+  const extinct = allSpoken.filter(({ lang: l }) => l.status === 5);
   const nature = selected ? FAUNA_MUSICA[selected.iso] : undefined;
 
   return (
@@ -619,6 +636,7 @@ export default function MapScreen() {
                             </Text>
                           </Pressable>
                           <Chip label={ROLE_LABEL[s.role]} tone={s.role === 'oficial' ? 'blue' : s.role === 'regional' ? 'amber' : 'slate'} />
+                          {l.status !== undefined && l.status >= 1 && <Chip label={`⚠️ ${STATUS_LABEL[l.status]}`} tone="rose" />}
                           {st === 'app' && <Chip label="📚 no app" tone="green" />}
                           {st === 'breve' && <Chip label="em breve no app" />}
                         </View>
@@ -672,6 +690,17 @@ export default function MapScreen() {
                     />
                   )}
                   <Text className="text-xs text-slate-400">Toque no nome de uma língua para ver no mapa onde mais ela é falada.</Text>
+                  {extinct.length > 0 && (
+                    <Pressable accessibilityRole="button" onPress={() => setShowExtinct((v) => !v)}>
+                      <Text className="text-sm font-semibold text-conecta">
+                        {showExtinct ? '▾' : '▸'} {extinct.length === 1 ? '1 língua que já foi falada aqui' : `${extinct.length} línguas que já foram faladas aqui`} (extintas)
+                      </Text>
+                    </Pressable>
+                  )}
+                  {showExtinct && <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">{extinct.map(({ lang: l }) => l.name).join(' · ')}</Text>}
+                  <Text className="text-[11px] text-slate-400">
+                    {glotto ? 'Fontes: Unicode CLDR (quanto se fala) e Glottolog, do Instituto Max Planck (todas as línguas do lugar e o grau de risco; CC BY 4.0).' : 'Carregando a lista completa de línguas…'}
+                  </Text>
                 </View>
               )}
               {accentsAt(selected.iso).length > 0 && (
@@ -788,11 +817,12 @@ function SubCard({ iso2, sub, spoken, onClose, studied }: { iso2: string; sub: S
         <Text className="text-xs text-slate-500">Divisão desenhada pelo Natural Earth que não tem um código equivalente na lista ISO atual.</Text>
       )}
       {sub.note && <Text className="text-sm text-slate-600 dark:text-slate-400">ℹ️ {sub.note}</Text>}
-      {here.map(({ lang: l, spoken: s }) => (
+      {here.filter(({ lang: l }) => !l.fromGlottolog).map(({ lang: l, spoken: s }) => (
         <Text key={l.code} className="text-sm font-semibold text-slate-800 dark:text-slate-200">
           {l.flag} Aqui se fala {l.name.toLowerCase()} ({ROLE_LABEL[s.role]}).
         </Text>
       ))}
+      <HereLanguages list={here.filter(({ lang: l }) => l.fromGlottolog).map(({ lang: l }) => l)} />
       {accentsAt(isoOf(iso2), sub.code, sub.parent).map((a) => (
         <View key={a.id} className="gap-1">
           <Text className="text-sm font-semibold text-amber-700 dark:text-amber-300">
@@ -801,6 +831,31 @@ function SubCard({ iso2, sub, spoken, onClose, studied }: { iso2: string; sub: S
           {a.lang === studied && <Button title={`Estudar: ${a.name}`} variant="ghost" onPress={() => router.push({ pathname: '/sotaque', params: { id: a.id } })} />}
         </View>
       ))}
+    </View>
+  );
+}
+
+/** As línguas do Glottolog que ficam nesta região (as primeiras 12, o resto num toque). */
+function HereLanguages({ list }: { list: MapLanguage[] }) {
+  const [open, setOpen] = useState(false);
+  if (!list.length) return null;
+  const living = list.filter((l) => l.status !== 5);
+  const gone = list.filter((l) => l.status === 5);
+  const shown = open ? living : living.slice(0, 12);
+  return (
+    <View className="gap-1">
+      <Text className="text-sm font-semibold text-slate-800 dark:text-slate-200">
+        🗣️ {living.length === 1 ? 'Língua desta região' : `${living.length} línguas desta região`}:
+      </Text>
+      <Text className="text-sm leading-5 text-slate-700 dark:text-slate-300">
+        {shown.map((l) => `${l.flag === '🤟' ? '🤟 ' : ''}${l.name}${l.status && l.status >= 1 ? ` (${STATUS_LABEL[l.status]})` : ''}`).join(' · ')}
+      </Text>
+      {living.length > 12 && (
+        <Pressable onPress={() => setOpen((v) => !v)}>
+          <Text className="text-xs font-semibold text-conecta">{open ? 'Mostrar menos' : `Ver as ${living.length}`}</Text>
+        </Pressable>
+      )}
+      {gone.length > 0 && <Text className="text-xs text-slate-500">Já foram faladas aqui: {gone.map((l) => l.name).join(' · ')}</Text>}
     </View>
   );
 }

@@ -38,6 +38,10 @@ export interface MapLanguage {
   native?: string;
   /** Veio da lista do CLDR (não tem notas escritas à mão) */
   fromCldr?: boolean;
+  /** Veio só do Glottolog (sem estatística de falantes) */
+  fromGlottolog?: boolean;
+  /** Grau de risco no Glottolog: 0 = não ameaçada … 5 = extinta */
+  status?: number;
 }
 
 const o = (iso: string, extra: Partial<SpokenIn> = {}): SpokenIn => ({ iso, role: 'oficial', ...extra });
@@ -437,8 +441,57 @@ export function findMapLanguage(code: string): MapLanguage | undefined {
  *  primeiro pelo papel (oficial › regional › também falada › comunidade no exterior), depois pela % da população. */
 export function languagesIn(iso: string) {
   return ALL_MAP_LANGUAGES.flatMap((l) => l.countries.filter((c) => c.iso === iso).map((c) => ({ lang: l, spoken: c }))).sort(
-    (a, b) => ROLE_RANK[a.spoken.role] - ROLE_RANK[b.spoken.role] || (b.spoken.pct ?? 0) - (a.spoken.pct ?? 0) || b.lang.millions - a.lang.millions,
+    (a, b) =>
+      Number(a.lang.status === 5) - Number(b.lang.status === 5) ||
+      ROLE_RANK[a.spoken.role] - ROLE_RANK[b.spoken.role] ||
+      (b.spoken.pct ?? 0) - (a.spoken.pct ?? 0) ||
+      b.lang.millions - a.lang.millions ||
+      a.lang.name.localeCompare(b.lang.name, 'pt'),
   );
+}
+
+/** Grau de risco das línguas (escala AES do Glottolog). */
+export const STATUS_LABEL = ['não ameaçada', 'ameaçada', 'em declínio', 'moribunda', 'quase extinta', 'extinta'];
+
+let glottologLoaded = false;
+/**
+ * Junta as línguas do Glottolog (src/data/linguas-glottolog.ts, carregado sob demanda pelo mapa):
+ * as que o mapa já tem ganham os países que faltavam; as outras entram com o país, a região
+ * (ISO 3166-2, onde o Glottolog põe a língua) e o grau de risco.
+ */
+export function addGlottolog(rows: [string, string, string, number, string, string][]) {
+  if (glottologLoaded) return;
+  glottologLoaded = true;
+  const byCode = new Map(ALL_MAP_LANGUAGES.map((l) => [l.code, l]));
+  const extra: MapLanguage[] = [];
+  for (const [code, name, family, status, spec] of rows) {
+    const places = spec.split(' ').map((x) => {
+      const [iso, sub] = x.split('>');
+      return { iso, sub };
+    });
+    const known = byCode.get(code);
+    if (known) {
+      // só os países que faltavam; a região do Glottolog é um ponto só, não vale para línguas grandes
+      for (const { iso } of places) if (!known.countries.some((c) => c.iso === iso)) known.countries.push({ iso, role: 'falada' });
+      known.status ??= status >= 0 ? status : undefined;
+      continue;
+    }
+    const lang: MapLanguage = {
+      code,
+      name,
+      flag: family === 'Língua de sinais' ? '🤟' : '🗣️',
+      color: familyColor(family),
+      speakers: status === 5 ? 'língua extinta (Glottolog)' : 'sem estimativa de falantes (Glottolog)',
+      millions: 0,
+      lineage: [family],
+      countries: places.map(({ iso, sub }) => ({ iso, role: 'falada' as LangRole, ...(sub ? { subdivisions: [sub] } : {}) })),
+      fromGlottolog: true,
+      status: status >= 0 ? status : undefined,
+    };
+    byCode.set(code, lang);
+    extra.push(lang);
+  }
+  ALL_MAP_LANGUAGES.push(...extra);
 }
 
 /** Quantos níveis da árvore genealógica dois idiomas têm em comum (0 = famílias diferentes). */
@@ -460,7 +513,7 @@ const fold = (s: string) => s.normalize('NFD').replace(/\p{M}/gu, '').toLowerCas
 /** Busca em todos os idiomas do mundo: pelo nome, pelo nome no próprio idioma, pelo código ou pela família. */
 export function searchLanguages(query: string, limit = 40): MapLanguage[] {
   const q = fold(query.trim());
-  if (!q) return ALL_MAP_LANGUAGES.filter((l) => l.fromCldr).slice(0, limit);
+  if (!q) return ALL_MAP_LANGUAGES.filter((l) => l.fromCldr || l.fromGlottolog).slice(0, limit);
   const score = (l: MapLanguage) => {
     const name = fold(l.name);
     if (name === q || l.code === q) return 0;

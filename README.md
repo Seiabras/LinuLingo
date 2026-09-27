@@ -180,7 +180,10 @@ As duas fontes ficam em arquivos separados (audios.ts e audios-extra.ts) para um
 node scripts/gerar-mapa.mjs   # precisa do pacote iso-codes; gera src/data/mapa-mundi.ts e src/data/iso-3166-2.ts
 node scripts/gerar-subdivisoes.mjs   # contornos das subdivisões: assets/geo/<ISO3>.geo e src/data/subdivisoes-geo.ts
 node scripts/gerar-idiomas-mundo.mjs # todos os idiomas por país (Unicode CLDR, pacote cldr-core) → src/data/idiomas-mundo.ts
+node scripts/gerar-linguas-glottolog.mjs # TODAS as línguas de cada país e região (Glottolog, CC BY 4.0; nomes em pt do Wikidata) → src/data/linguas-glottolog.ts
 ```
+
+O cartão de cada país lista todas as línguas faladas lá — as do CLDR com a % da população e as ~8.000 do [Glottolog](https://glottolog.org) (línguas indígenas, de sinais, crioulos), com o grau de risco e as extintas numa lista à parte; tocar numa região mostra as línguas dela (o Glottolog põe cada língua num ponto, que cai numa subdivisão ISO 3166-2). O arquivo (~0,5 MB) é carregado só quando o mapa abre.
 
 Contornos: [Natural Earth](https://www.naturalearthdata.com/) 1:50m (domínio público). Nomes em pt-BR: projeto [iso-codes](https://salsa.debian.org/iso-codes-team/iso-codes) (LGPL-2.1).
 
