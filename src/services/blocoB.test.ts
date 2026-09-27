@@ -146,3 +146,11 @@ test('diário (norueguês): en/ei/et pelo gênero, com «en» aceito nas feminin
   assert.equal(checkJournal('Jeg har en bok og ei bok.', lexNb, 'nb').corrected, 'Jeg har en bok og ei bok.');
   assert.equal(checkJournal('Jeg har et bok.', lexNb, 'nb').corrected, 'Jeg har ei bok.');
 });
+
+test('diário (dinamarquês): en/et pelo gênero do vocabulário', () => {
+  const lexDa = buildLexicon([], [
+    { word: 'hus', gender: 'n' },
+    { word: 'bil', gender: 'm' },
+  ]);
+  assert.equal(checkJournal('Jeg har et bil og en hus.', lexDa, 'da').corrected, 'Jeg har en bil og et hus.');
+});

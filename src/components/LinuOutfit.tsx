@@ -158,6 +158,18 @@ export function OutfitArt({ id }: { id: string }) {
       );
     case 'krans':
       return <FlowerCrown />;
+    case 'studenterhue':
+      return (
+        <G>
+          {/* copa branca, faixa bordô, pala preta e a roseta com a cruz do Dannebrog */}
+          <Path d="M28 30 Q26 14 44 10 Q60 6 78 10 Q96 14 92 30 Z" fill="#F8FAFC" stroke="#CBD5E1" strokeWidth="0.8" />
+          <Path d="M29 26 Q60 20 91 26 L92 32 Q60 26 28 32 Z" fill="#9F1239" />
+          <Path d="M30 31 Q60 27 90 31 Q84 40 60 40 Q36 40 30 31 Z" fill="#0F172A" />
+          <Path d="M40 35 Q60 32 80 35" stroke="#475569" strokeWidth="0.8" fill="none" />
+          <Circle cx="60" cy="23" r="3.2" fill="#DC2626" />
+          <Path d="M60 20.3 L60 25.7 M57.3 23 L62.7 23" stroke="#FFFFFF" strokeWidth="1" />
+        </G>
+      );
     case 'topplue':
       return (
         <G>

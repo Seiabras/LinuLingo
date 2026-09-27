@@ -6,9 +6,10 @@ import { ITALIANO } from './it';
 import { PORTUGUES } from './pt';
 import { SUECO } from './sv';
 import { NORUEGUES } from './nb';
+import { DINAMARQUES } from './da';
 
 /** Idiomas com conteúdo pronto. */
-export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES };
+export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -19,6 +20,7 @@ export const LANGUAGES: LanguageInfo[] = [
   PORTUGUES,
   SUECO,
   NORUEGUES,
+  DINAMARQUES,
   {
     code: 'en', name: 'Inglês', nativeName: 'English', flag: '🇬🇧',
     lineage: { family: 'Indo-europeu', branches: ['Germânico', 'Germânico ocidental', 'Anglo-frísio'], region: 'Ilhas Britânicas', writing: 'Alfabeto latino' },

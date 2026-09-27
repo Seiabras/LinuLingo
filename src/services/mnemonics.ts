@@ -50,6 +50,18 @@ export function roomsFor(lang: string): Record<Gender, Room> {
         rule: 'Neutro (ett-ord): «ett» e a forma definida em -et/-t (ett hus → huset). Muitas em -eri, -um, -ment e os infinitivos que viram substantivo (ett leende).',
       },
     };
+  if (lang === 'da')
+    return {
+      m: { ...ROOMS.m, rule: 'Gênero comum (en): cerca de 3 de cada 4 substantivos, com «en» e a forma definida em -en (en bil → bilen). Pessoas, animais e quase todas em -hed, -else, -ing e -er.' },
+      f: ROOMS.f,
+      n: {
+        ...ROOMS.n,
+        name: 'O Jardim',
+        emoji: '🌷',
+        scene: 'Um jardim de casinhas coloridas à beira de um canal, como Nyhavn, em Copenhague.',
+        rule: 'Neutro (et): «et» e a forma definida em -et (et hus → huset). Muitas monossílabas e as em -eri, -um e -ment (et bageri, et museum, et dokument).',
+      },
+    };
   if (lang === 'nb')
     return {
       m: { ...ROOMS.m, rule: 'Masculino (en): a maioria dos substantivos, com a forma definida em -en (en bil → bilen). Pessoas e quase todas em -er, -else e -dom (en lærer, en følelse, en sykdom).' },
@@ -126,6 +138,8 @@ const HETERO_IT: Record<string, string> = {
 export function palaceIntro(lang: string): string {
   if (lang === 'sv')
     return 'O sueco tem 2 gêneros, mas não são masculino e feminino: é o «en» (gênero comum) e o «ett» (neutro). Não dá para adivinhar pelo sentido, então decore cada palavra com o artigo: en bil, ett hus. Guarde cada uma na sala certa!';
+  if (lang === 'da')
+    return 'O dinamarquês tem 2 gêneros, mas não são masculino e feminino: é o «en» (gênero comum) e o «et» (neutro), e o artigo definido vai grudado no fim: bilen, huset. Não dá para adivinhar pelo sentido, então decore cada palavra com o artigo e guarde-a na sala certa!';
   if (lang === 'nb')
     return 'O norueguês tem 3 gêneros: masculino (en), feminino (ei) e neutro (et), e o artigo definido vai grudado no fim: bilen, boka, huset. No bokmål, as femininas também aceitam o «en» (en bok, boken). Decore cada palavra com o artigo e guarde-a na sala certa!';
   if (lang === 'pt')
@@ -146,6 +160,11 @@ export function genderTip(word: string, gender: Gender, lang = 'ro'): string {
     if (/(het|ing|else|are|a)$/.test(w) && gender === 'm') return 'Terminou em -het, -ing, -else, -are ou -a? Quase sempre en-ord: en frihet, en tidning, en lärare, en flicka.';
     if (/(eri|um|ment)$/.test(w) && gender === 'n') return 'Terminou em -eri, -um ou -ment? Quase sempre ett-ord: ett bageri, ett museum, ett dokument.';
     return roomsFor('sv')[gender].rule;
+  }
+  if (lang === 'da') {
+    if (/(hed|else|ing|er)$/.test(w) && gender === 'm') return 'Terminou em -hed, -else, -ing ou -er? Quase sempre en-ord: en frihed, en følelse, en lærer, en regning.';
+    if (/(eri|um|ment)$/.test(w) && gender === 'n') return 'Terminou em -eri, -um ou -ment? Quase sempre et-ord: et bageri, et museum, et dokument.';
+    return roomsFor('da')[gender].rule;
   }
   if (lang === 'nb') {
     if (/(het|else|dom|er)$/.test(w) && gender === 'm') return 'Terminou em -het, -else, -dom ou -er? Quase sempre masculino: en frihet, en følelse, en sykdom, en lærer.';

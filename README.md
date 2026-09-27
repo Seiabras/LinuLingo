@@ -21,6 +21,7 @@ As faixas que rolam para os lados (fotos, trilha de subníveis, idiomas e regiõ
 | 🇵🇹 Português de Portugal | Indo-europeu › Itálico › Românico › Ibero-românico › Galego-português | **disponível** |
 | 🇸🇪 Sueco | Indo-europeu › Germânico › Germânico setentrional › Nórdico oriental | **disponível** |
 | 🇳🇴 Norueguês (bokmål, com o nynorsk como variante) | Indo-europeu › Germânico › Germânico setentrional › Nórdico ocidental | **disponível** |
+| 🇩🇰 Dinamarquês | Indo-europeu › Germânico › Germânico setentrional › Nórdico oriental | **disponível** |
 | 🇬🇧 Inglês | Indo-europeu › Germânico › Germânico ocidental | em breve |
 | 🇫🇮 Finlandês | Urálico › Fínico › Fínico setentrional | em breve |
 | 🇪🇪 Estoniano | Urálico › Fínico › Fínico meridional | em breve |
@@ -87,6 +88,12 @@ Cada idioma mostra os seus jeitos regionais de falar (18 no espanhol, 5 no romen
 - 4.330 palavras (os três gêneros en/ei/et, com a forma feminina «boka» nas palavras do dia a dia), 15 unidades, 40 tópicos de gramática (V2, forma definida e dupla definição, o «ikke» na subordinada, passiva com -s e bli, klarspråk, as duas escritas e Ivar Aasen, Ibsen e Bjørnson), 48 histórias (de Oslo e Bergen a Lofoten, Alta, Svalbard e Røros; 3 em nynorsk), 46 falsos amigos (rar, prate, sort, gift, full…), 121 etimologias, 12 sotaques, dialetos e línguas (bergensk, trøndersk, nordnorsk, kebabnorsk, sámi do norte, kven…), variantes bokmål e nynorsk.
 - **IPA por dicionário** (src/data/nb/pronuncia.ts, 9.029 formas, fala de Oslo com os dois tons e as retroflexas); o teste exige IPA para toda palavra norueguesa, inclusive as do nynorsk.
 - **Palácio** com os três gêneros (a Forja, o Lago e o Jardim do fiorde); **diário** que corrige «et bil» → «en bil» e aceita «en bok» ao lado de «ei bok»; pares mínimos (tak × takk, os dois tons, kj × sj), bichos em norueguês e a roupinha do Linu: o topplue.
+
+## O que tem no dinamarquês
+
+- 4.188 palavras (gênero en/et, formas irregulares na tradução), 15 unidades, 40 tópicos de gramática (o stød e o d suave, a forma definida sem dupla definição — den store bil —, V2, os números de base 20 — halvtreds, tres, firs —, a vírgula dinamarquesa, klarsprog, Andersen e Kierkegaard na grafia antiga), 48 histórias (de Nyhavn a Skagen, Bornholm, Ribe, Jelling, as Ilhas Faroé e a Groenlândia; 3 no Schleswig do Sul), 45 falsos amigos (rar, frokost, fart, gift…), 134 etimologias, 12 sotaques, dialetos e línguas (københavnsk, jysk, sønderjysk, bornholmsk, feroês, groenlandês, a minoria alemã), variantes da Dinamarca e da minoria dinamarquesa na Alemanha.
+- **IPA por dicionário** (src/data/da/pronuncia.ts, 8.596 formas, rigsdansk com o stød marcado); o teste exige IPA para toda palavra dinamarquesa.
+- **Palácio** com gênero comum (en) e neutro (et), o Jardim de Nyhavn; **diário** que corrige «et bil» → «en bil»; pares mínimos (com e sem stød, o d suave), bichos em dinamarquês e a roupinha do Linu: o studenterhue.
 
 ## O que tem no russo
 
@@ -219,6 +226,7 @@ npx tsx scripts/fluxo-russo.mjs           # russo: troca de idioma, cirílico, I
 npx tsx scripts/fluxo-espanhol.mjs        # espanhol: falsos amigos, palácio, variante da Espanha ([θ]), linguística, diário
 npx tsx scripts/fluxo-sueco.mjs           # sueco: palácio en/ett, variante da Finlândia, diário (en/ett), IPA
 npx tsx scripts/fluxo-noruegues.mjs       # norueguês: palácio en/ei/et, variante nynorsk, diário (en/ei/et), IPA
+npx tsx scripts/fluxo-dinamarques.mjs     # dinamarquês: palácio en/et, variante do Schleswig do Sul, diário (en/et), IPA
 npx tsx scripts/fluxo-portugues.mjs        # português de Portugal: variante do Brasil (IPA), diário (estar a, ênclise), falsos amigos
 npx tsx scripts/fluxo-italiano.mjs        # italiano: falsos amigos, IPA, palácio, variante da Suíça, linguística, diário
 node scripts/fluxo-mapa.mjs                # mapa ISO 3166-1/3166-3, zoom nas subdivisões e variante da Moldávia

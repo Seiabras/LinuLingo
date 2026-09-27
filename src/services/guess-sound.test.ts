@@ -10,7 +10,7 @@ const rnd = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
 const all = new Set([...BICHOS_RO.map((a) => a.id), ...INSTRUMENTOS.map((i) => i.id)]);
 
 test('sons: todo instrumento tem nome nos 6 idiomas do app', () => {
-  for (const i of INSTRUMENTOS) for (const lang of ['es', 'ro', 'ru', 'it', 'pt', 'sv', 'nb']) assert.ok(i.names[lang], `${i.id} em ${lang}`);
+  for (const i of INSTRUMENTOS) for (const lang of ['es', 'ro', 'ru', 'it', 'pt', 'sv', 'nb', 'da']) assert.ok(i.names[lang], `${i.id} em ${lang}`);
 });
 
 test('sons: só entram os que têm gravação, com o nome no idioma estudado', () => {
