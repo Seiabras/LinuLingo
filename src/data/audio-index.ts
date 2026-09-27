@@ -1,6 +1,8 @@
 import type { AccentVoice, AudioClip } from './types';
 import { AUDIO_RO } from './ro/audios';
 import { AUDIO_RU } from './ru/audios';
+import { AUDIO_RU_EXTRA } from './ru/audios-extra';
+import { AUDIO_RO_EXTRA } from './ro/audios-extra';
 import { AUDIO_ES } from './es/audios';
 import { AUDIO_IT } from './it/audios';
 import { AUDIO_PT } from './pt/audios';
@@ -19,8 +21,8 @@ import { COMPARAR_SOTAQUES_RU, VOZES_SOTAQUES_RU } from './ru/vozes-sotaques';
  * palavras que ainda faltavam — um arquivo à parte por idioma, para os dois scripts nunca colidirem.
  */
 export const CLIPS: Record<string, Record<string, AudioClip>> = {
-  ro: AUDIO_RO,
-  ru: AUDIO_RU,
+  ro: { ...AUDIO_RO_EXTRA, ...AUDIO_RO },
+  ru: { ...AUDIO_RU_EXTRA, ...AUDIO_RU },
   es: AUDIO_ES,
   it: AUDIO_IT,
   pt: AUDIO_PT,

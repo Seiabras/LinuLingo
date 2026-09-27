@@ -37,6 +37,7 @@ export default function RootLayout() {
               <Stack.Screen name="troca" />
               <Stack.Screen name="palavras-irmas" />
               <Stack.Screen name="expedicao" />
+              <Stack.Screen name="linha-do-tempo" />
               <Stack.Screen name="cenario/[id]" />
               <Stack.Screen name="tutorial" options={{ presentation: 'fullScreenModal', gestureEnabled: false }} />
               <Stack.Screen name="voz" />

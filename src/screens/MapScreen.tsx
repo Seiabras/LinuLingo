@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { LogBox, Pressable, Text, TextInput, useWindowDimensions, View } from 'react-native';
 import { HScroll } from '@/components/HScroll';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
-import { router } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
 import { scheduleOnRN } from 'react-native-worklets';
 import Svg, { Circle, G, Path, Rect, Text as SvgText } from 'react-native-svg';
 import { ArrowLeft, Globe, Minus, Plus, Search, X } from 'lucide-react-native';
@@ -104,7 +104,9 @@ export default function MapScreen() {
   const aspect = size.h / size.w;
   const [box, setBox] = useState<Box>({ x: 0, y: 0, w: MAP_W, h: MAP_H });
   const [start, setStart] = useState<Box>(box);
-  const [mode, setMode] = useState<'hoje' | 'antigos'>('hoje');
+  // /mapa?aba=antigos abre direto nos países que deixaram de existir (a linha do tempo leva para lá)
+  const { aba } = useLocalSearchParams<{ aba?: string }>();
+  const [mode, setMode] = useState<'hoje' | 'antigos'>(aba === 'antigos' ? 'antigos' : 'hoje');
   const [former, setFormer] = useState<FormerCountry | null>(null);
   const formerHighlight = useMemo(() => new Set(former?.successors ?? []), [former]);
   const FORMER_COLOR = '#D97706';
@@ -200,6 +202,8 @@ export default function MapScreen() {
   // primeira medida da caixa: preenche a altura, centralizado na terra do idioma
   const [fitted, setFitted] = useState(false);
   const onLayout = (w: number, h: number) => {
+    // escondido por outra tela da pilha, o mapa mede 0 × 0: ignorar (senão a proporção vira NaN)
+    if (!w || !h) return;
     setSize({ w, h });
     if (fitted) return;
     setFitted(true);
@@ -381,6 +385,13 @@ export default function MapScreen() {
           )}
         </>
       )}
+      <Pressable
+        accessibilityRole="link"
+        onPress={() => router.push('/linha-do-tempo')}
+        className="mt-3 flex-row items-center gap-2 self-start rounded-full border-2 border-slate-200 bg-white px-3 py-1.5 active:opacity-80 dark:border-slate-700 dark:bg-slate-900"
+      >
+        <Text className="font-bold text-conecta">⏳ Linha do tempo das línguas ›</Text>
+      </Pressable>
       {mode === 'antigos' && (
         <Text className="mt-3 text-sm text-slate-600 dark:text-slate-400">
           Países e territórios que deixaram de existir, mudaram de nome ou foram divididos. Toque num deles para ver no mapa quem está no lugar hoje.
