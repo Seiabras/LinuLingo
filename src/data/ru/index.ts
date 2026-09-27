@@ -9,6 +9,7 @@ import { toIpaRu } from '@/services/ipa-ru';
 import { ALPHABET_RU } from './alfabeto';
 import { ACCENTS_RU } from './sotaques';
 import { PARES_RU } from './pares';
+import { BICHOS_RU } from './bichos';
 
 export const RUSSO: LanguagePack = {
   code: 'ru',
@@ -33,6 +34,7 @@ export const RUSSO: LanguagePack = {
   linguistics: LINGUISTICS_RU,
   accents: ACCENTS_RU,
   minimalPairs: PARES_RU,
+  animalSounds: BICHOS_RU,
   journalPrompts: JOURNAL_PROMPTS_RU,
   shadowing: SHADOWING_RU,
   ipa: toIpaRu,

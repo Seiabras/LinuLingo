@@ -26,6 +26,8 @@ export default function HomeScreen() {
   const firstPair = pack.minimalPairs?.pairs[0];
   const PAIRS_PRACTICE = firstPair ? { route: '/pares' as const, emoji: '👂', title: 'Pares mínimos', text: `${firstPair.a[0]} × ${firstPair.b[0]}: ouça a diferença` } : null;
   const MISTAKES_PRACTICE = { route: '/erros' as const, emoji: '📕', title: 'Caderno de erros', text: 'Seus erros viram treino' };
+  const dogSound = pack.animalSounds?.find((a) => a.id === 'cao')?.sound;
+  const ANIMALS_PRACTICE = dogSound ? { route: '/bichos' as const, emoji: '🐶', title: 'Como faz o bicho?', text: `O cachorro faz «${dogSound}»` } : null;
   const [path, setPath] = useState<PathLesson[]>([]);
   const [due, setDue] = useState(0);
   const [peers, setPeers] = useState(0);
@@ -123,7 +125,7 @@ export default function HomeScreen() {
 
       <Text className="mb-2 mt-5 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">Mais práticas</Text>
       <View className="flex-row flex-wrap gap-2">
-        {[...(pack.alphabet ? [ALPHABET_PRACTICE] : []), ...(pack.falseFriends ? [FALSE_FRIENDS_PRACTICE] : []), ...(ACCENT_PRACTICE ? [ACCENT_PRACTICE] : []), ...PRACTICES.slice(0, 1), ...(PAIRS_PRACTICE ? [PAIRS_PRACTICE] : []), MISTAKES_PRACTICE, ...PRACTICES.slice(1)].map((p) => (
+        {[...(pack.alphabet ? [ALPHABET_PRACTICE] : []), ...(pack.falseFriends ? [FALSE_FRIENDS_PRACTICE] : []), ...(ACCENT_PRACTICE ? [ACCENT_PRACTICE] : []), ...PRACTICES.slice(0, 1), ...(PAIRS_PRACTICE ? [PAIRS_PRACTICE] : []), MISTAKES_PRACTICE, ...PRACTICES.slice(1), ...(ANIMALS_PRACTICE ? [ANIMALS_PRACTICE] : [])].map((p) => (
           <Pressable
             key={p.route}
             accessibilityRole="button"

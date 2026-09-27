@@ -294,6 +294,8 @@ export interface LanguagePack extends LanguageInfo {
   accents?: Accent[];
   /** Pares mínimos: palavras que só mudam por um som difícil para o brasileiro */
   minimalPairs?: MinimalPairs;
+  /** Como os bichos «falam» no idioma (onomatopeias) e o verbo de cada som */
+  animalSounds?: AnimalSound[];
   /** Saudação curta e frase de teste da voz */
   greeting: string;
   sampleSentence: string;
@@ -402,4 +404,17 @@ export interface MinimalPairs {
   pairs: MinimalPair[];
   /** armadilhas ao contrário: escritas diferentes que soam igual (vaca × baca, луг × лук) */
   sameSound?: { words: [[string, string], [string, string]]; note: string }[];
+}
+
+/** Um bicho e o som dele no idioma: «ham-ham», «Câinele latră.» (o id liga ao português, em bichos-pt.ts). */
+export interface AnimalSound {
+  id: string;
+  emoji: string;
+  /** o nome do bicho no idioma */
+  animal: string;
+  /** a onomatopeia no idioma */
+  sound: string;
+  /** frase com o verbo do som: «Câinele latră.» */
+  verb: string;
+  translation: string;
 }
