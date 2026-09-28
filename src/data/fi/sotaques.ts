@@ -1,0 +1,288 @@
+import type { Accent } from '../types';
+
+// Na Finlândia, a língua escrita (kirjakieli) é uma só, mas a falada muda bastante: o finlandês falado
+// (puhekieli) encurta as palavras em todo o país («mä oon» em vez de «minä olen»), e os dialetos se dividem
+// em dois grandes grupos, os do oeste (Turku, Tampere, Ostrobótnia, Lapônia) e os do leste (Savo, Carélia).
+// Aqui: sotaques (kind 'sotaque'), dialetos que mudam gramática e vocabulário (kind 'dialeto') e as outras
+// línguas do país, que não são finlandês (kind 'língua'): o sueco, as línguas sámi e o carélio.
+
+export const ACCENTS_FI: Accent[] = [
+  // ───────────── SOTAQUES ─────────────
+  {
+    id: 'fi-helsinki',
+    name: 'Stadi: a fala de Helsinque e a gíria stadin slangi',
+    kind: 'sotaque',
+    region: 'Helsinque e arredores (a região de Uusimaa)',
+    country: 'FIN',
+    subdivisions: ['FI-18'],
+    variant: 'fi-FI',
+    speechLocale: 'fi-FI',
+    emoji: '🚋',
+    summary: 'O finlandês falado da capital, o mais ouvido na TV, nas séries e nas músicas. Os jovens misturam a ele a stadin slangi, a gíria de Helsinque, nascida há mais de cem anos nos bairros operários, onde se falava finlandês e sueco lado a lado.',
+    features: [
+      'Puhekieli bem marcado: «mä» e «sä» em vez de «minä» e «sinä», «oon» e «oot» em vez de «olen» e «olet», «me mennään» em vez de «me menemme».',
+      '«Stadi» (do sueco «stad», cidade) é o nome carinhoso de Helsinque; quem é de lá é «stadilainen».',
+      'Muitas gírias vieram do sueco e algumas do russo: «kundi» (cara, rapaz), «skidi» (criança), «dösä» (ônibus), «hima» (casa).',
+      'Os números encurtam, como no resto do país: «yks, kaks, kolme» em vez de «yksi, kaksi, kolme».',
+    ],
+    examples: [
+      ['Mä meen himaan.', 'Eu vou para casa.', 'padrão: «Minä menen kotiin»'],
+      ['Mikä meininki?', 'E aí, qual é a boa?', 'cumprimento informal entre jovens'],
+      ['Otetaan dösä stadiin.', 'Vamos pegar o ônibus para o centro.', '«dösä» = ônibus; «stadi» = Helsinque, a cidade'],
+    ],
+    words: [
+      ['stadi', 'Helsinque, «a cidade»'],
+      ['kundi', 'cara, rapaz'],
+      ['skidi', 'criança'],
+      ['dösä', 'ônibus'],
+      ['hima', 'casa, lar'],
+    ],
+  },
+  {
+    id: 'fi-tampere',
+    name: 'Tampere e o Häme',
+    kind: 'sotaque',
+    region: 'Tampere e a região de Häme, no centro-sul',
+    country: 'FIN',
+    subdivisions: ['FI-11', 'FI-06', 'FI-16'],
+    variant: 'fi-FI',
+    speechLocale: 'fi-FI',
+    emoji: '🏭',
+    summary: 'Tampere, a antiga cidade das fábricas entre dois grandes lagos, tem um jeito de falar que todo finlandês reconhece pela partícula «nääs». O povo do Häme em volta tem fama de falar devagar e pensar antes de abrir a boca.',
+    features: [
+      '«Nääs» no fim da frase, como o nosso «viu?» ou «sabe?»: «Se on kallis, nääs.»',
+      '«Mää» e «sää» (com vogal longa) em vez de «minä» e «sinä».',
+      'A cidade tem o apelido de «Manse», de Manchester, pela tradição têxtil.',
+      'O hämäläinen, o morador do Häme, é o personagem das piadas sobre gente lenta e calada.',
+    ],
+    examples: [
+      ['Mää oon Tampereelta, nääs.', 'Eu sou de Tampere, viu?', '«nääs», a marca de Tampere'],
+      ['Mennään Manseen!', 'Vamos para Tampere!', '«Manse» = Tampere, na gíria'],
+      ['Syödään mustamakkaraa.', 'Vamos comer mustamakkara.', 'o chouriço preto, prato típico de Tampere'],
+    ],
+    words: [
+      ['nääs', 'viu?, sabe? (partícula de Tampere)'],
+      ['Manse', 'Tampere, na gíria'],
+      ['mustamakkara', 'chouriço preto (morcela)'],
+    ],
+  },
+
+  // ───────────── DIALETOS DO OESTE ─────────────
+  {
+    id: 'fi-turku',
+    name: 'Os dialetos do sudoeste (Turku)',
+    kind: 'dialeto',
+    region: 'Turku e o litoral do sudoeste (Varsinais-Suomi e Satakunta)',
+    country: 'FIN',
+    subdivisions: ['FI-19', 'FI-17'],
+    variant: 'fi-FI',
+    speechLocale: 'fi-FI',
+    emoji: '⛵',
+    summary: 'Turku foi a primeira cidade e a primeira capital da Finlândia, e o sudoeste guarda um dos grupos de dialetos mais antigos. O que chama a atenção é o fim das palavras, que cai: é como se o falante de Turku economizasse sílabas.',
+    features: [
+      '«Mnää» e «sää»: o famoso «mnää», com o «i» engolido, é a marca de Turku.',
+      'A vogal do fim da palavra cai com frequência: «Turust» em vez de «Turusta» (de Turku).',
+      'As vogais longas do meio da palavra podem encurtar, o que dá um ritmo rápido e picado.',
+      'Palavras locais, como «kaara» (carro), que no resto do país é «auto».',
+    ],
+    examples: [
+      ['Mnää oon Turust.', 'Eu sou de Turku.', 'padrão: «Minä olen Turusta»'],
+      ['Tuuks sää huomenna?', 'Você vem amanhã?', 'padrão: «Tuletko sinä huomenna?»'],
+      ['Mul on uus kaara.', 'Eu tenho um carro novo.', 'padrão: «Minulla on uusi auto»'],
+    ],
+    words: [
+      ['mnää', 'eu'],
+      ['sää', 'você'],
+      ['kaara', 'carro'],
+    ],
+  },
+  {
+    id: 'fi-pohjanmaa',
+    name: 'Os dialetos da Ostrobótnia (Pohjanmaa)',
+    kind: 'dialeto',
+    region: 'A Ostrobótnia, as planícies da costa oeste, até Oulu',
+    country: 'FIN',
+    subdivisions: ['FI-03', 'FI-07', 'FI-14'],
+    variant: 'fi-FI',
+    speechLocale: 'fi-FI',
+    emoji: '🌾',
+    summary: 'As planícies da Ostrobótnia têm fama de gente orgulhosa, teimosa e trabalhadora, e um jeito de falar que se ouve de longe. É daí a expressão «Pohjanmaan kautta» (pela Ostrobótnia), que quer dizer «do jeito mais difícil, mas vai».',
+    features: [
+      'Uma vogal extra aparece entre duas consoantes: «kylymä» em vez de «kylmä» (frio), «ilima» em vez de «ilma» (ar, tempo). Os linguistas chamam isso de vogal de apoio.',
+      'Os ditongos se abrem: «tiä» em vez de «tie» (estrada), «tua» em vez de «tuo» (aquele).',
+      'No sul da região, o «d» vira «r»: «meirän» em vez de «meidän» (nosso).',
+      'Em volta de Oulu, a fala já muda para os dialetos do norte.',
+    ],
+    examples: [
+      ['On kylymä ilima!', 'Que tempo frio!', 'padrão: «On kylmä ilma!»'],
+      ['Meirän talo on tuolla.', 'A nossa casa fica ali.', 'padrão: «Meidän talo on tuolla»'],
+      ['Pohjanmaan kautta!', 'Vai ser do jeito difícil!', 'literalmente «pela Ostrobótnia»'],
+    ],
+    words: [
+      ['kylymä', 'frio (padrão: kylmä)'],
+      ['meirän', 'nosso (padrão: meidän)'],
+      ['lakeus', 'planície (a paisagem da região)'],
+    ],
+  },
+  {
+    id: 'fi-perapohjola',
+    name: 'Os dialetos do norte (Lapônia finlandesa)',
+    kind: 'dialeto',
+    region: 'A Lapônia finlandesa, de Tornio e Rovaniemi para o norte',
+    country: 'FIN',
+    subdivisions: ['FI-10'],
+    variant: 'fi-FI',
+    speechLocale: 'fi-FI',
+    emoji: '🦌',
+    summary: 'No norte, entre renas, montanhas arredondadas (tunturit) e o sol da meia-noite, fala-se o dialeto de Peräpohjola. Ele é parente próximo do meänkieli, o finlandês do outro lado do rio Tornio, na Suécia.',
+    features: [
+      '«Mie» e «sie» em vez de «minä» e «sinä», como no leste.',
+      'Vocabulário da natureza do norte que o país inteiro usa: «tunturi» (montanha arredondada), «kaamos» (a época em que o sol não nasce), «ruska» (as cores do outono).',
+      'Muitas palavras vieram das línguas sámi, como «tunturi» e «jänkä» (brejo aberto).',
+      'Fala calma, com poucas palavras: no norte, o silêncio numa conversa não incomoda ninguém.',
+    ],
+    examples: [
+      ['Mie oon Rovaniemeltä.', 'Eu sou de Rovaniemi.', 'padrão: «Minä olen Rovaniemeltä»'],
+      ['Onko sulla poroja?', 'Você tem renas?', '«sulla», o «sinulla» do finlandês falado'],
+      ['Kaamos alkaa joulukuussa.', 'A noite polar começa em dezembro.', 'finlandês padrão'],
+    ],
+    words: [
+      ['poro', 'rena'],
+      ['tunturi', 'montanha arredondada do norte'],
+      ['kaamos', 'a noite polar, quando o sol não nasce'],
+      ['ruska', 'as cores do outono na Lapônia'],
+    ],
+  },
+
+  // ───────────── DIALETOS DO LESTE ─────────────
+  {
+    id: 'fi-savo',
+    name: 'O dialeto de Savo',
+    kind: 'dialeto',
+    region: 'Savo, na região dos lagos: Kuopio, Mikkeli, Savonlinna',
+    country: 'FIN',
+    subdivisions: ['FI-15', 'FI-04'],
+    variant: 'fi-FI',
+    speechLocale: 'fi-FI',
+    emoji: '🛶',
+    summary: 'O dialeto mais famoso da Finlândia, falado entre os lagos de Kuopio e Savonlinna. O savolainen tem fama de esperto e brincalhão, de responder sem nunca se comprometer, com um «suattaapi olla» (pode ser).',
+    features: [
+      'O «aa» longo vira ditongo: «moa» em vez de «maa» (terra), «suattaa» em vez de «saattaa» (pode ser).',
+      'As consoantes se dobram depois da sílaba tônica: «kottiin» em vez de «kotiin» (para casa), «mittee» em vez de «mitä» (o quê).',
+      '«Ts» vira «tt»: «mettä» em vez de «metsä» (floresta), um traço de todo o leste.',
+      'No plural, «myö, työ, hyö» em vez de «me, te, he», como na Carélia.',
+    ],
+    examples: [
+      ['Suattaapi olla.', 'Pode ser.', 'padrão: «Saattaa olla»; a resposta savolainen clássica'],
+      ['Mittee?', 'O quê?', 'padrão: «Mitä?»'],
+      ['Myö männään kottiin.', 'Nós vamos para casa.', 'padrão: «Me menemme kotiin»'],
+    ],
+    words: [
+      ['mittee', 'o quê (padrão: mitä)'],
+      ['myö', 'nós (padrão: me)'],
+      ['kalakukko', 'pão recheado de peixe, prato típico de Kuopio'],
+    ],
+  },
+  {
+    id: 'fi-karjala',
+    name: 'Os dialetos da Carélia finlandesa',
+    kind: 'dialeto',
+    region: 'A Carélia do Sul e a Carélia do Norte, junto da fronteira com a Rússia',
+    country: 'FIN',
+    subdivisions: ['FI-02', 'FI-13', 'FI-09'],
+    variant: 'fi-FI',
+    speechLocale: 'fi-FI',
+    emoji: '🥧',
+    summary: 'O finlandês falado no leste, perto da fronteira com a Rússia. Depois da Segunda Guerra, a Finlândia perdeu parte da Carélia, e mais de 400 mil carelianos se mudaram para o resto do país, levando o sotaque, a hospitalidade famosa e a torta carélia (karjalanpiirakka).',
+    features: [
+      '«Mie» e «sie» em vez de «minä» e «sinä»: a marca mais conhecida do leste.',
+      'No plural, «myö, työ, hyö» em vez de «me, te, he».',
+      'Fala cantada e animada; o careliano tem fama de falante e acolhedor, o contrário do finlandês calado das piadas.',
+      'Mais palavras de origem russa que no oeste, pelo contato de séculos.',
+    ],
+    examples: [
+      ['Mie oon kotona.', 'Eu estou em casa.', 'padrão: «Minä olen kotona»'],
+      ['Mitä sie teet?', 'O que você está fazendo?', 'padrão: «Mitä sinä teet?»'],
+      ['Tulkaa syömään karjalanpiirakkaa!', 'Venham comer torta carélia!', 'finlandês padrão'],
+    ],
+    words: [
+      ['mie', 'eu'],
+      ['sie', 'você'],
+      ['karjalanpiirakka', 'torta carélia, de centeio com arroz'],
+    ],
+  },
+
+  // ───────────── OUTRAS LÍNGUAS DA FINLÂNDIA ─────────────
+  {
+    id: 'fi-sueco',
+    name: 'O sueco da Finlândia (finlandssvenska)',
+    kind: 'língua',
+    region: 'O litoral sul e oeste da Finlândia e as ilhas Åland',
+    country: 'FIN',
+    subdivisions: ['FI-01', 'FI-12', 'FI-18', 'FI-19'],
+    speechLocale: 'sv-FI',
+    emoji: '⚓',
+    summary: 'Não é finlandês: é sueco, a segunda língua oficial do país, língua materna de cerca de 5% da população. As placas das cidades bilíngues vêm nas duas línguas (Helsinki/Helsingfors, Turku/Åbo), e em Åland o sueco é a única língua oficial.',
+    features: [
+      'Soa diferente do sueco da Suécia: sem a «melodia» de dois tons das palavras, com um ritmo parecido com o do finlandês.',
+      'Tem palavras próprias vindas do finlandês ou do sueco antigo; o cumprimento «moi», do finlandês, também se usa.',
+      'Todo aluno finlandês estuda sueco na escola, e todo aluno de língua sueca estuda finlandês.',
+      'Na Ostrobótnia do litoral (como Närpes e Jakobstad) há cidades onde o sueco é a língua da maioria.',
+    ],
+    examples: [
+      ['Hej, hur mår du?', 'Oi, como vai?', 'sueco'],
+      ['Tack så mycket!', 'Muito obrigado!', 'sueco'],
+      ['Välkommen till Åbo!', 'Bem-vindo a Turku!', 'sueco: Åbo é o nome sueco de Turku'],
+    ],
+    words: [
+      ['Helsingfors', 'Helsinque, em sueco'],
+      ['Åbo', 'Turku, em sueco'],
+    ],
+  },
+  {
+    id: 'fi-saami',
+    name: 'As línguas sámi (saamen kielet)',
+    kind: 'língua',
+    region: 'O extremo norte da Lapônia: Utsjoki, Inari, Enontekiö e o norte de Sodankylä',
+    country: 'FIN',
+    subdivisions: ['FI-10'],
+    emoji: '🦌',
+    summary: 'Não são finlandês, mas são parentes distantes: as línguas sámi também são urálicas. Na Finlândia se falam três, o sámi do norte, o sámi de Inari e o sámi skolt, e na região sámi elas são oficiais ao lado do finlandês.',
+    features: [
+      'O sámi do norte é o mais falado; o de Inari só existe na Finlândia, e o skolt veio com os sámi skolt que se mudaram de Petsamo depois da Segunda Guerra.',
+      'Letras próprias, como á č đ ŋ š ŧ ž.',
+      'O parlamento sámi da Finlândia (Saamelaiskäräjät) fica em Inari.',
+      'O dia nacional sámi, 6 de fevereiro, está no calendário finlandês.',
+    ],
+    examples: [
+      ['Bures!', 'Olá!', 'sámi do norte'],
+      ['Giitu!', 'Obrigado!', 'sámi do norte'],
+      ['Buorre beaivi!', 'Bom dia!', 'sámi do norte'],
+    ],
+    words: [
+      ['boazu', 'rena (sámi do norte)'],
+      ['gákti', 'o traje tradicional sámi'],
+      ['luohti', 'o canto tradicional sámi (em finlandês, joiku)'],
+    ],
+  },
+  {
+    id: 'fi-carelio',
+    name: 'O carélio (karjalan kieli)',
+    kind: 'língua',
+    region: 'Espalhado pela Finlândia, com mais falantes na Carélia do Norte; a maior parte fica na Rússia',
+    country: 'FIN',
+    subdivisions: ['FI-13'],
+    emoji: '🌲',
+    summary: 'O carélio é a língua mais próxima do finlandês, próxima o bastante para parte dela se entender, mas é outra língua. Desde 2009 é reconhecido na Finlândia como língua minoritária; os falantes são sobretudo idosos, descendentes dos refugiados da Carélia.',
+    features: [
+      'Tem sons que o finlandês padrão não tem, como «š» e «ž».',
+      'Muitas palavras vieram do russo, pelo contato de séculos.',
+      'Divide-se em variedades; na Finlândia, as mais faladas são o carélio propriamente dito e o de Olonets (livvi).',
+      'Boa parte dos poemas que Elias Lönnrot reuniu no Kalevala foi recolhida entre os carelianos.',
+    ],
+    examples: [
+      ['Terveh!', 'Olá!', 'carélio'],
+      ['Kuibo voit?', 'Como vai?', 'carélio de Olonets (livvi)'],
+    ],
+  },
+];

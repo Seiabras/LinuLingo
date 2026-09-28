@@ -1,0 +1,103 @@
+import type { MinimalPairs } from '../types';
+
+/** Pares mínimos do islandês para quem fala português (pronúncia de referência: a fala padrão do sul, de Reykjavík). */
+export const PARES_IS: MinimalPairs = {
+  contrasts: [
+    {
+      id: 'b-p',
+      name: 'b d g × p t k no começo da palavra',
+      sounds: ['p', 'pʰ'],
+      tip: 'No islandês, «b d g» saem surdos, sem a garganta vibrar, e soam quase como o nosso «p t k». Já «p t k» vêm com um sopro forte depois, como um «p» seguido de um «h»: bar (bar) × par (par). Se você falar o «p» à brasileira, sem sopro, o islandês ouve «b».',
+    },
+    {
+      id: 'pre-aspiracao',
+      name: 'pré-aspiração: pp tt kk × bb dd gg',
+      sounds: ['ʰp', 'pː'],
+      tip: 'Nas consoantes dobradas «pp tt kk», o sopro vem ANTES: um «h» rápido entre a vogal e a consoante, kappi [ˈkʰaʰpɪ] (herói). Já «bb dd gg» soam como um «p t k» longo, sem sopro nenhum: lappa (remendar) × labba (passear sem pressa). Sem o «h» antes, as duas palavras ficam iguais.',
+    },
+    {
+      id: 'll-l',
+      name: 'll [tl̥] × l',
+      sounds: ['tl̥', 'l'],
+      tip: 'O «ll» islandês quase nunca é um «l» comprido: soa como um «t» que sai de lado, com o ar escapando pelos cantos da língua, sem voz: fjall [fjatl̥] (montanha). Um «l» simples é o nosso «l» de «lua»: fella (derrubar) × fela (esconder).',
+    },
+    {
+      id: 'th-t',
+      name: 'þ [θ] × t',
+      sounds: ['θ', 'tʰ'],
+      tip: 'O «þ» é o «th» do inglês «think»: a ponta da língua entre os dentes, soprando, sem voz. O brasileiro tende a trocar por «t» ou por «f», e aí muda a palavra: þak (telhado) × tak (aperto, pegada).',
+    },
+    {
+      id: 'u-u',
+      name: 'u [ʏ] × ú [u]',
+      sounds: ['ʏ', 'u'],
+      tip: 'Cuidado com a leitura: o «u» sem acento NUNCA é o nosso «u». É um som entre «i» e «u», com os lábios em bico, parecido com o «u» do francês. O nosso «u» se escreve «ú»: full (cheia) × fúll (emburrado).',
+    },
+    {
+      id: 'i-i',
+      name: 'i/y [ɪ] × í/ý [i]',
+      sounds: ['ɪ', 'i'],
+      tip: 'O «i» e o «y» sem acento soam como um «ê» bem fechado, quase «i», com a boca relaxada; o «í» e o «ý» soam como o nosso «i», bem esticado: lin (mole) × lín (linho). O «y» e o «i» soam iguais: só a escrita muda.',
+    },
+    {
+      id: 'a-aa',
+      name: 'a × á [au]',
+      sounds: ['a', 'au'],
+      tip: 'O acento em «á» nunca marca a sílaba forte (a tônica é sempre a primeira): ele muda o som. O «á» soa como o nosso «au» de «mau»: lag (camada; música) × lág (baixa).',
+    },
+    {
+      id: 'au-aa',
+      name: 'au [œy] × á [au]',
+      sounds: ['œy', 'au'],
+      tip: 'A armadilha da leitura: o nosso «au» se escreve «á» no islandês, e o «au» islandês é outra coisa, um «é» de lábios em bico que termina em «i», perto do «eui» do francês «feuille»: laus (solto) × lás (fechadura).',
+    },
+    {
+      id: 'o-oo',
+      name: 'o × ó [ou]',
+      sounds: ['ɔ', 'ou'],
+      tip: 'O «o» sem acento é aberto, como em «avó»; o «ó» é um ditongo, como o «ou» de «estou» falado com cuidado: hol (cavidade) × hól (elogio).',
+    },
+    {
+      id: 'oe-e',
+      name: 'ö [œ] × e × a',
+      sounds: ['œ', 'ɛ'],
+      tip: 'O «ö» é um «é» com os lábios em bico: forme a boca para dizer «ó» e fale «é». O português nunca teve esse som, e o brasileiro escorrega para o «é» ou para o «ó»: fer (vou) × för (viagem); lag (camada) × lög (leis).',
+    },
+    {
+      id: 'r-final',
+      name: 'r vibrado × r apagado no fim',
+      sounds: ['r', '∅'],
+      tip: 'O «r» islandês é sempre vibrado ou batido, como em «caro», até no fim da palavra. Quem fala o «r» final como um «h» (o «r» carioca ou paulistano de «mar») ou o engole acaba dizendo outra palavra: hár (cabelo; alto) × há (alta).',
+    },
+  ],
+  pairs: [
+    { contrast: 'b-p', a: ['bar', 'bar; carregou'], b: ['par', 'par'] },
+    { contrast: 'b-p', a: ['dá', 'transe, admiração'], b: ['tá', 'dedo do pé'] },
+    { contrast: 'b-p', a: ['gæti', 'poderia'], b: ['kæti', 'alegria'] },
+    { contrast: 'pre-aspiracao', a: ['labba', 'passear sem pressa'], b: ['lappa', 'remendar'] },
+    { contrast: 'pre-aspiracao', a: ['æddi', 'saiu em disparada'], b: ['ætti', 'deveria'] },
+    { contrast: 'll-l', a: ['fella', 'derrubar'], b: ['fela', 'esconder'] },
+    { contrast: 'll-l', a: ['kalla', 'chamar'], b: ['kala', 'gelar, queimar de frio'] },
+    { contrast: 'th-t', a: ['þak', 'telhado'], b: ['tak', 'aperto, pegada'] },
+    { contrast: 'th-t', a: ['þá', 'então'], b: ['tá', 'dedo do pé'] },
+    { contrast: 'u-u', a: ['full', 'cheia'], b: ['fúll', 'emburrado'] },
+    { contrast: 'u-u', a: ['suð', 'zumbido'], b: ['súð', 'teto inclinado (de sótão)'] },
+    { contrast: 'i-i', a: ['sin', 'tendão'], b: ['sín', 'seus, suas (reflexivo)'] },
+    { contrast: 'i-i', a: ['lin', 'mole (fem.)'], b: ['lín', 'linho'] },
+    { contrast: 'a-aa', a: ['lag', 'camada; canção'], b: ['lág', 'baixa'] },
+    { contrast: 'a-aa', a: ['far', 'meio de transporte'], b: ['fár', 'perigo, alvoroço'] },
+    { contrast: 'au-aa', a: ['laus', 'solto'], b: ['lás', 'fechadura'] },
+    { contrast: 'au-aa', a: ['laug', 'piscina termal'], b: ['lág', 'baixa'] },
+    { contrast: 'o-oo', a: ['kol', 'carvão'], b: ['kól', 'gelou'] },
+    { contrast: 'o-oo', a: ['hol', 'cavidade'], b: ['hól', 'elogio'] },
+    { contrast: 'oe-e', a: ['fer', 'vou'], b: ['för', 'viagem'] },
+    { contrast: 'oe-e', a: ['lag', 'camada; canção'], b: ['lög', 'leis'] },
+    { contrast: 'r-final', a: ['hár', 'cabelo; alto'], b: ['há', 'alta'] },
+    { contrast: 'r-final', a: ['sár', 'ferida'], b: ['sá', 'viu'] },
+  ],
+  sameSound: [
+    { words: [['hver', 'quem; cada'], ['kver', 'livreto, caderninho']], note: 'O «hv» no início da palavra soa [kv] na fala de Reykjavík: as duas palavras soam iguais.' },
+    { words: [['hvað', 'o quê'], ['kvað', 'disse (literário)']], note: 'De novo o «hv» com som de [kv]: só a escrita separa as duas.' },
+    { words: [['síður', 'menos (advérbio)'], ['sýður', 'ferve']], note: 'O «í» e o «ý» soam iguais, como o nosso «i»: só a escrita e a origem separam as duas.' },
+  ],
+};

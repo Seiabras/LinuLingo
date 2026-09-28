@@ -345,6 +345,7 @@ function StreakInfo() {
 function palaceRooms(pack: LanguagePack): string {
   const rooms = roomsFor(pack.code);
   const genders = pack.genders ?? ['m', 'f', 'n'];
+  if (genders.length === 0) return `no ${nomeIdioma(pack.name)} não há gênero gramatical, então o palácio fica vazio (uma preocupação a menos)`;
   const label = (g: 'm' | 'f' | 'n') => `${rooms[g].emoji} ${rooms[g].name} (${pack.genderNames?.[g] ?? { m: 'masculino', f: 'feminino', n: 'neutro' }[g]})`;
   const parts = genders.map((g) => label(g as 'm' | 'f' | 'n'));
   return parts.length > 1 ? `${parts.slice(0, -1).join(', ')} e ${parts[parts.length - 1]}` : parts[0];

@@ -182,6 +182,23 @@ export default function PalaceScreen() {
     );
   }
 
+  // ---------- idioma sem gênero gramatical (finlandês, estoniano): não há salas ----------
+  if (pack.genders?.length === 0)
+    return (
+      <Screen>
+        <View className="flex-row items-center gap-3 pt-3">
+          <Pressable accessibilityLabel="Voltar" onPress={goBack} hitSlop={10}>
+            <ArrowLeft size={24} color={dark ? '#CBD5E1' : '#334155'} />
+          </Pressable>
+          <Text className="text-2xl font-extrabold text-slate-900 dark:text-white">🏛️ Palácio da memória</Text>
+        </View>
+        <View className="mt-4 flex-row items-end gap-2">
+          <Linu mood="comemorando" size={64} />
+          <SpeechBubble className="mb-5">{palaceIntro(pack.code)}</SpeechBubble>
+        </View>
+      </Screen>
+    );
+
   // ---------- palácio ----------
   return (
     <Screen>

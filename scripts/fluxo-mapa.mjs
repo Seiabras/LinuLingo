@@ -100,7 +100,7 @@ await page.getByLabel('Voltar ao mapa-múndi').click();
 // busca em todos os idiomas do mundo: o guarani colore o Paraguai
 await page.getByText(/^Todos os idiomas \(\d+\)$/).first().click();
 await page.getByLabel('Buscar idioma').fill('guara');
-await page.getByLabel('Ver no mapa: Guarani').click();
+await page.getByLabel('Ver no mapa: Guarani', { exact: true }).first().click();
 await expectText('Família: Tupi');
 await tapMap(centroid('PRY'));
 await page.waitForTimeout(1200);

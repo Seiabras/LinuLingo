@@ -7,9 +7,11 @@ import { PORTUGUES } from './pt';
 import { SUECO } from './sv';
 import { NORUEGUES } from './nb';
 import { DINAMARQUES } from './da';
+import { ISLANDES } from './is';
+import { FINLANDES } from './fi';
 
 /** Idiomas com conteúdo pronto. */
-export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES };
+export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES, is: ISLANDES, fi: FINLANDES };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -21,14 +23,12 @@ export const LANGUAGES: LanguageInfo[] = [
   SUECO,
   NORUEGUES,
   DINAMARQUES,
+  ISLANDES,
   {
     code: 'en', name: 'Inglês', nativeName: 'English', flag: '🇬🇧',
     lineage: { family: 'Indo-europeu', branches: ['Germânico', 'Germânico ocidental', 'Anglo-frísio'], region: 'Ilhas Britânicas', writing: 'Alfabeto latino' },
   },
-  {
-    code: 'fi', name: 'Finlandês', nativeName: 'Suomi', flag: '🇫🇮',
-    lineage: { family: 'Urálico', branches: ['Fínico', 'Fínico setentrional'], region: 'Fenoscândia (Finlândia)', writing: 'Alfabeto latino (ä, ö)' },
-  },
+  FINLANDES,
   {
     code: 'et', name: 'Estoniano', nativeName: 'Eesti', flag: '🇪🇪',
     lineage: { family: 'Urálico', branches: ['Fínico', 'Fínico meridional'], region: 'Costa sul do Golfo da Finlândia (Estônia)', writing: 'Alfabeto latino (õ, ä, ö, ü)' },

@@ -55,7 +55,7 @@ function restoreDiacritics(token: string, lex: JournalLexicon): string | null {
 const NUMBER = /^(\d+|doi|două|trei|patru|cinci|șase|sase|șapte|sapte|opt|nouă|noua|zece|unsprezece|doisprezece|cincisprezece|douăzeci|douazeci|treizeci|patruzeci|cincizeci|o)$/i;
 const STATES: Record<string, string> = { foame: 'foame', sete: 'sete', frig: 'frig', cald: 'cald', frica: 'frică', frică: 'frică', somn: 'somn' };
 
-const LANG_NAME: Record<string, string> = { ro: 'romeno', ru: 'russo', es: 'espanhol', it: 'italiano', pt: 'português de Portugal', sv: 'sueco', nb: 'norueguês', da: 'dinamarquês' };
+const LANG_NAME: Record<string, string> = { ro: 'romeno', ru: 'russo', es: 'espanhol', it: 'italiano', pt: 'português de Portugal', sv: 'sueco', nb: 'norueguês', da: 'dinamarquês', is: 'islandês', fi: 'finlandês' };
 
 // português de Portugal: estar + gerúndio → estar a + infinitivo; pronome átono no começo da frase → ênclise
 const ESTAR_PT = new Set(['estou', 'estás', 'está', 'estamos', 'estão', 'estava', 'estavas', 'estávamos', 'estavam', 'estive', 'esteve', 'estar']);

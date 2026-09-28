@@ -27,6 +27,19 @@ const NAO_VEM_DO_ITALIANO =
 const FORA_DA_LEI_ITALIANA = 'Não está entre as 12 línguas minoritárias da lei italiana de 1999, que protege, por exemplo, o sardo e o friulano.';
 
 export const OWN_LANGUAGE_META: Record<string, OwnLanguageMeta> = {
+  'is-taknmal': { family: 'Língua de sinais', recognition: 'Reconhecida por lei em 2011 como a primeira língua da comunidade surda islandesa, com o mesmo status do islandês para quem precisa dela.' },
+  'is-polska': { family: 'Indo-europeu › Balto-eslavo › Eslavo', recognition: 'Sem status oficial: é a língua de imigração mais falada da Islândia.' },
+  'fi-sueco': { family: 'Indo-europeu › Germânico › Nórdico', recognition: 'Língua nacional da Finlândia ao lado do finlandês, pela Constituição; em Åland é a única oficial.' },
+  'fi-saami': {
+    family: 'Urálico › Sámi',
+    glottocodes: ['nort2671', 'inar1241', 'skol1241'],
+    recognition: 'O sámi do norte, o de Inari e o skolt têm direitos garantidos na região sámi pela Lei das Línguas Sámi, de 2003.',
+  },
+  'fi-carelio': {
+    family: 'Urálico › Fínico',
+    recognition: 'Reconhecido em 2009 como língua minoritária sem território próprio da Finlândia.',
+    debated: 'Por muito tempo foi tratado na Finlândia como um dialeto do finlandês; os linguistas o descrevem como língua própria, e é assim que o Estado o reconhece hoje.',
+  },
   'sv-alvdalska': {
     family: 'Indo-europeu › Germânico › Nórdico',
     recognition: 'Sem reconhecimento oficial: há um pedido para que seja reconhecida como língua minoritária.',

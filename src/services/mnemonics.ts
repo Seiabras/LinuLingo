@@ -50,6 +50,18 @@ export function roomsFor(lang: string): Record<Gender, Room> {
         rule: 'Neutro (ett-ord): «ett» e a forma definida em -et/-t (ett hus → huset). Muitas em -eri, -um, -ment e os infinitivos que viram substantivo (ett leende).',
       },
     };
+  if (lang === 'is')
+    return {
+      m: { ...ROOMS.m, rule: 'Masculino: muitos terminam em -ur no nominativo (hestur, dagur, maður) e muitos em -i (tími, penni, sími).' },
+      f: { ...ROOMS.f, rule: 'Feminino: muitos terminam em -a (kona, saga, stjarna) e em -ing (sending, menning).' },
+      n: {
+        ...ROOMS.n,
+        name: 'O Jardim',
+        emoji: '🌋',
+        scene: 'Um jardim de musgo verde ao pé de um vulcão, com um gêiser soltando vapor.',
+        rule: 'Neutro: muitos terminam em consoante sem -ur (hús, barn, land) e em -a quando são partes do corpo (auga, hjarta, eyra).',
+      },
+    };
   if (lang === 'da')
     return {
       m: { ...ROOMS.m, rule: 'Gênero comum (en): cerca de 3 de cada 4 substantivos, com «en» e a forma definida em -en (en bil → bilen). Pessoas, animais e quase todas em -hed, -else, -ing e -er.' },
@@ -136,8 +148,14 @@ const HETERO_IT: Record<string, string> = {
 
 /** Texto do Linu na entrada do palácio. */
 export function palaceIntro(lang: string): string {
+  if (lang === 'fi')
+    return 'Boa notícia: o finlandês não tem gênero gramatical! Não existe «o» nem «a», nem masculino e feminino: «hän» quer dizer ele e ela ao mesmo tempo. O palácio fica vazio, e a sua memória pode se concentrar nos casos e na harmonia das vogais (talossa, mas metsässä).';
+  if (lang === 'et')
+    return 'Boa notícia: o estoniano não tem gênero gramatical nem artigos! «Tema» (ou «ta») quer dizer ele e ela ao mesmo tempo. O palácio fica vazio, e a sua memória pode se concentrar nos 14 casos e nas três durações dos sons.';
   if (lang === 'sv')
     return 'O sueco tem 2 gêneros, mas não são masculino e feminino: é o «en» (gênero comum) e o «ett» (neutro). Não dá para adivinhar pelo sentido, então decore cada palavra com o artigo: en bil, ett hus. Guarde cada uma na sala certa!';
+  if (lang === 'is')
+    return 'O islandês tem 3 gêneros, como o latim e o alemão, e o gênero muda o artigo que vai grudado no fim (hesturinn, konan, húsið), os adjetivos e até os números de 1 a 4. Não existe artigo indefinido: «hús» já é «uma casa». Guarde cada palavra na sala certa!';
   if (lang === 'da')
     return 'O dinamarquês tem 2 gêneros, mas não são masculino e feminino: é o «en» (gênero comum) e o «et» (neutro), e o artigo definido vai grudado no fim: bilen, huset. Não dá para adivinhar pelo sentido, então decore cada palavra com o artigo e guarde-a na sala certa!';
   if (lang === 'nb')

@@ -1,4 +1,4 @@
-import { Circle, Ellipse, G, Path } from 'react-native-svg';
+import { Circle, Ellipse, G, Path, Rect } from 'react-native-svg';
 
 /**
  * O desenho de cada roupinha, no mesmo sistema de coordenadas do Linu (120 × 140): a cabeça é o
@@ -111,7 +111,12 @@ export function OutfitArt({ id }: { id: string }) {
           {/* gorro com faixas de desenhos */}
           <Path d="M27 37 Q27 9 60 7 Q93 9 93 37 Q60 25 27 37 Z" fill="#DC2626" />
           <Path d="M29 29 Q60 17 91 29 L92 33 Q60 21 28 33 Z" fill="#FFFFFF" />
-          <Path d="M31 31 L35 27 L39 30 L43 25 L47 28 L51 23 L55 26 L60 22 L65 26 L69 23 L73 28 L77 25 L81 30 L85 27 L89 31" fill="none" stroke="#2563EB" strokeWidth="1.3" />
+          <Path
+            d="M31 31 L35 27 L39 30 L43 25 L47 28 L51 23 L55 26 L60 22 L65 26 L69 23 L73 28 L77 25 L81 30 L85 27 L89 31"
+            fill="none"
+            stroke="#2563EB"
+            strokeWidth="1.3"
+          />
           <Path d="M36 16 Q60 8 84 16 L85 19 Q60 11 35 19 Z" fill="#F59E0B" />
           <Circle cx="60" cy="6" r="4" fill="#16A34A" />
         </G>
@@ -170,6 +175,65 @@ export function OutfitArt({ id }: { id: string }) {
           <Path d="M60 20.3 L60 25.7 M57.3 23 L62.7 23" stroke="#FFFFFF" strokeWidth="1" />
         </G>
       );
+    case 'skotthufa':
+      return (
+        <G>
+          {/* a touca preta das islandesas, com a borla presa num tubo dourado */}
+          <Ellipse cx="60" cy="19" rx="18" ry="6.5" fill="#0F172A" stroke="#94A3B8" strokeWidth="1.2" />
+          <Path d="M45 19 Q60 11 75 19" stroke="#475569" strokeWidth="1" fill="none" />
+          <Path d="M75 19 Q86 21 88 29" stroke="#94A3B8" strokeWidth="2.4" fill="none" />
+          <Rect x="85.5" y="28" width="5.5" height="8" rx="1" fill="#EAB308" stroke="#A16207" strokeWidth="0.6" />
+          <Path d="M86.5 36 L84 60 M88 36 L87.5 61 M89.5 36 L91 60 M90.5 36 L93.5 58" stroke="#CBD5E1" strokeWidth="1.6" />
+          <Path d="M86.5 36 L84 60 M88 36 L87.5 61 M89.5 36 L91 60 M90.5 36 L93.5 58" stroke="#0F172A" strokeWidth="0.8" />
+        </G>
+      );
+    case 'hugva':
+      return (
+        <G>
+          {/* o gorro listrado do traje feroês */}
+          <Path d="M28 34 Q26 12 60 9 Q86 9 94 26 Q102 40 96 52 Q92 44 88 36 Q60 26 28 34 Z" fill="#B91C1C" />
+          <Path
+            d="M40 13 Q42 24 40 31 M52 10 Q54 22 52 29 M64 9 Q66 20 66 28 M76 11 Q80 22 80 30 M88 19 Q92 30 92 40"
+            stroke="#1E3A8A"
+            strokeWidth="4"
+            fill="none"
+          />
+          <Circle cx="96" cy="53" r="3.5" fill="#1E3A8A" />
+        </G>
+      );
+    case 'sorokka':
+      return (
+        <G>
+          {/* o toucado bordado das casadas da Carélia */}
+          <Path d="M27 34 Q26 13 60 11 Q94 13 93 34 Z" fill="#F8FAFC" stroke="#CBD5E1" strokeWidth="0.8" />
+          <Path d="M28 27 Q60 19 92 27 L92 31 Q60 23 28 31 Z" fill="#B91C1C" />
+          <Path d="M33 22 Q60 14 87 22" stroke="#B91C1C" strokeWidth="1.5" fill="none" strokeDasharray="3 2" />
+          <Path d="M36 29 L40 25 L44 29 L48 25 L52 29 L56 25 L60 29 L64 25 L68 29 L72 25 L76 29 L80 25 L84 29" stroke="#F8FAFC" strokeWidth="1" fill="none" />
+          <Circle cx="60" cy="16" r="2" fill="#B91C1C" />
+        </G>
+      );
+    case 'tanu':
+      return (
+        <G>
+          {/* a touca branca de renda das casadas estonianas, com a faixa bordada */}
+          <Path d="M27 36 Q25 12 60 10 Q95 12 93 36 Q60 28 27 36 Z" fill="#FFFFFF" stroke="#CBD5E1" strokeWidth="0.8" />
+          <Path d="M27 36 Q60 28 93 36" stroke="#94A3B8" strokeWidth="2.2" strokeDasharray="1.5 1.5" fill="none" />
+          <Path d="M32 26 Q60 18 88 26 L88 30 Q60 22 32 30 Z" fill="#16A34A" />
+          <G fill="#DC2626">
+            <Circle cx="40" cy="25.5" r="1.4" />
+            <Circle cx="50" cy="23.5" r="1.4" />
+            <Circle cx="60" cy="22.5" r="1.4" />
+            <Circle cx="70" cy="23.5" r="1.4" />
+            <Circle cx="80" cy="25.5" r="1.4" />
+          </G>
+          <G fill="#FACC15">
+            <Circle cx="45" cy="24.5" r="1" />
+            <Circle cx="55" cy="23" r="1" />
+            <Circle cx="65" cy="23" r="1" />
+            <Circle cx="75" cy="24.5" r="1" />
+          </G>
+        </G>
+      );
     case 'topplue':
       return (
         <G>
@@ -177,7 +241,12 @@ export function OutfitArt({ id }: { id: string }) {
           <Path d="M28 33 Q28 8 60 7 Q92 8 92 33 Z" fill="#B91C1C" />
           <Path d="M26 29 Q60 21 94 29 L94 37 Q60 29 26 37 Z" fill="#991B1B" />
           {/* faixa de ziguezague branca, como nas malhas norueguesas */}
-          <Path d="M32 22 L36 18 L40 22 L44 18 L48 22 L52 18 L56 22 L60 18 L64 22 L68 18 L72 22 L76 18 L80 22 L84 18 L88 22" fill="none" stroke="#FFFFFF" strokeWidth="1.4" />
+          <Path
+            d="M32 22 L36 18 L40 22 L44 18 L48 22 L52 18 L56 22 L60 18 L64 22 L68 18 L72 22 L76 18 L80 22 L84 18 L88 22"
+            fill="none"
+            stroke="#FFFFFF"
+            strokeWidth="1.4"
+          />
           {[40, 52, 60, 68, 80].map((x) => (
             <Circle key={x} cx={x} cy="13" r="1" fill="#FFFFFF" />
           ))}
@@ -261,7 +330,12 @@ export function OutfitArt({ id }: { id: string }) {
           <Ellipse cx="60" cy="7" rx="14" ry="2.5" fill="#E7D8B1" />
           <Path d="M45.2 11 L74.8 11 L75.3 16 L44.7 16 Z" fill="#1C1917" />
           <Path d="M44.4 19 L75.6 19 L76 24 L44 24 Z" fill="#1C1917" />
-          <Path d="M46 13.5 L49 11.5 L52 13.5 L55 11.5 L58 13.5 L61 11.5 L64 13.5 L67 11.5 L70 13.5 L73 11.5 M46 13.5 L49 15.5 L52 13.5 L55 15.5 L58 13.5 L61 15.5 L64 13.5 L67 15.5 L70 13.5 L73 15.5" fill="none" stroke="#F5EBD3" strokeWidth="0.9" />
+          <Path
+            d="M46 13.5 L49 11.5 L52 13.5 L55 11.5 L58 13.5 L61 11.5 L64 13.5 L67 11.5 L70 13.5 L73 11.5 M46 13.5 L49 15.5 L52 13.5 L55 15.5 L58 13.5 L61 15.5 L64 13.5 L67 15.5 L70 13.5 L73 15.5"
+            fill="none"
+            stroke="#F5EBD3"
+            strokeWidth="0.9"
+          />
           {[47, 51, 55, 59, 63, 67, 71].map((x) => (
             <Path key={x} d={`M${x} 20.5 L${x + 2} 21.5 L${x} 22.5 Z`} fill="#F5EBD3" />
           ))}
@@ -324,7 +398,12 @@ export function OutfitArt({ id }: { id: string }) {
         <G>
           {/* o gorro sardo: a parte comprida dobra por cima da cabeça e cai do lado esquerdo */}
           <Path d="M28 37 Q26 14 60 11 Q93 13 92 37 Q60 27 28 37 Z" fill="#111827" />
-          <Path d="M84 22 Q80 4 56 5 Q30 7 22 30 Q18 42 22 52 Q28 55 32 51 Q29 42 32 32 Q38 16 58 15 Q74 15 78 26 Z" fill="#27303F" stroke="#4B5563" strokeWidth="1" />
+          <Path
+            d="M84 22 Q80 4 56 5 Q30 7 22 30 Q18 42 22 52 Q28 55 32 51 Q29 42 32 32 Q38 16 58 15 Q74 15 78 26 Z"
+            fill="#27303F"
+            stroke="#4B5563"
+            strokeWidth="1"
+          />
           <G stroke="#3F4A5C" strokeWidth="0.7" fill="none">
             <Path d="M36 12 Q30 18 27 28" />
             <Path d="M50 7 Q44 11 40 17" />
@@ -601,7 +680,15 @@ export function OutfitArt({ id }: { id: string }) {
           <Ellipse cx="60" cy="14" rx="40" ry="6" fill="none" stroke="#F97316" strokeWidth="1" />
           {Array.from({ length: 17 }, (_, i) => {
             const a = Math.PI * (0.06 + (0.88 * i) / 16);
-            return <Circle key={i} cx={60 - 51 * Math.cos(a)} cy={17 + 7.5 * Math.sin(a)} r="1.3" fill={['#FFFFFF', '#1D4ED8', '#FACC15', '#FFFFFF', '#16A34A'][i % 5]} />;
+            return (
+              <Circle
+                key={i}
+                cx={60 - 51 * Math.cos(a)}
+                cy={17 + 7.5 * Math.sin(a)}
+                r="1.3"
+                fill={['#FFFFFF', '#1D4ED8', '#FACC15', '#FFFFFF', '#16A34A'][i % 5]}
+              />
+            );
           })}
         </G>
       );
@@ -727,7 +814,13 @@ function Vinok() {
         return (
           <G key={t}>
             {[0, 60, 120, 180, 240, 300].map((a) => (
-              <Circle key={a} cx={x + r * 0.75 * Math.cos((a * Math.PI) / 180)} cy={y - 1 + r * 0.75 * Math.sin((a * Math.PI) / 180)} r={r * 0.6} fill={petal} />
+              <Circle
+                key={a}
+                cx={x + r * 0.75 * Math.cos((a * Math.PI) / 180)}
+                cy={y - 1 + r * 0.75 * Math.sin((a * Math.PI) / 180)}
+                r={r * 0.6}
+                fill={petal}
+              />
             ))}
             <Circle cx={x} cy={y - 1} r={r * 0.4} fill={center} />
           </G>

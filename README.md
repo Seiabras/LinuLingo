@@ -22,8 +22,9 @@ As faixas que rolam para os lados (fotos, trilha de subníveis, idiomas e regiõ
 | 🇸🇪 Sueco | Indo-europeu › Germânico › Germânico setentrional › Nórdico oriental | **disponível** |
 | 🇳🇴 Norueguês (bokmål, com o nynorsk como variante) | Indo-europeu › Germânico › Germânico setentrional › Nórdico ocidental | **disponível** |
 | 🇩🇰 Dinamarquês | Indo-europeu › Germânico › Germânico setentrional › Nórdico oriental | **disponível** |
+| 🇮🇸 Islandês | Indo-europeu › Germânico › Germânico setentrional › Nórdico ocidental | **disponível** |
 | 🇬🇧 Inglês | Indo-europeu › Germânico › Germânico ocidental | em breve |
-| 🇫🇮 Finlandês | Urálico › Fínico › Fínico setentrional | em breve |
+| 🇫🇮 Finlandês | Urálico › Fínico › Fínico setentrional | **disponível** |
 | 🇪🇪 Estoniano | Urálico › Fínico › Fínico meridional | em breve |
 | 🇯🇵 Japonês | Japônico | em breve |
 | 🇰🇷 Coreano | Coreânico | em breve |
@@ -99,6 +100,16 @@ Cada idioma mostra os seus jeitos regionais de falar (18 no espanhol, 5 no romen
 - 4.188 palavras (gênero en/et, formas irregulares na tradução), 15 unidades, 40 tópicos de gramática (o stød e o d suave, a forma definida sem dupla definição — den store bil —, V2, os números de base 20 — halvtreds, tres, firs —, a vírgula dinamarquesa, klarsprog, Andersen e Kierkegaard na grafia antiga), 48 histórias (de Nyhavn a Skagen, Bornholm, Ribe, Jelling, as Ilhas Faroé e a Groenlândia; 3 no Schleswig do Sul), 45 falsos amigos (rar, frokost, fart, gift…), 134 etimologias, 12 sotaques, dialetos e línguas (københavnsk, jysk, sønderjysk, bornholmsk, feroês, groenlandês, a minoria alemã), variantes da Dinamarca e da minoria dinamarquesa na Alemanha.
 - **IPA por dicionário** (src/data/da/pronuncia.ts, 8.596 formas, rigsdansk com o stød marcado); o teste exige IPA para toda palavra dinamarquesa.
 - **Palácio** com gênero comum (en) e neutro (et), o Jardim de Nyhavn; **diário** que corrige «et bil» → «en bil»; pares mínimos (com e sem stød, o d suave), bichos em dinamarquês e a roupinha do Linu: o studenterhue.
+
+## O que tem no islandês
+
+- 4.173 palavras (os três gêneros, com o genitivo e o plural na tradução), 15 unidades, 40 tópicos de gramática (os quatro casos, a declinação forte e fraca, a pré-aspiração, os patronímicos, o purismo e os neologismos, as sagas, o Hávamál e as kenningar), 48 histórias (de Reykjavík a Akureyri, os fiordes do oeste, Grímsey, Þingvellir e Jökulsárlón; 3 entre os descendentes de islandeses em Gimli, no Canadá), 44 falsos amigos, 113 etimologias, 10 sotaques, dialetos e línguas (norte × sul, a língua de sinais islandesa).
+- **IPA por dicionário** (src/data/is/pronuncia.ts, 11.471 formas, com a pré-aspiração); **palácio** com os três gêneros e o Jardim do vulcão; roupinha do Linu: a skotthúfa. A voz neural embutida ainda não tem islandês (a licença das vozes Piper is_IS não é clara): vale a gravação de nativo ou a voz do aparelho.
+
+## O que tem no finlandês
+
+- 4.326 palavras (com o genitivo e o partitivo na tradução), 15 unidades, 40 tópicos de gramática (os 15 casos, a harmonia vocálica, a gradação consonantal, o partitivo, os infinitivos, a língua falada, o Kalevala, Kivi e Leino), 48 histórias (de Helsinque a Turku, Tampere, a Lapônia, Inari, Åland e o lago Saimaa; 3 entre os finlandeses da Suécia), 40 falsos amigos (kasa, mato, pato…), 114 etimologias, 10 sotaques, dialetos e línguas (o sueco da Finlândia, as línguas sámi, o carélio).
+- **Sem gênero gramatical**: o palácio da memória explica que «hän» é ele e ela, em vez de mostrar salas. **IPA** de 13.002 formas: a escrita finlandesa é fonética, então as formas das frases saem de regras (tônica na 1ª sílaba, letra dobrada = longa) conferidas contra o dicionário (99% iguais). Roupinha do Linu: a sorokka da Carélia.
 
 ## O que tem no russo
 
@@ -246,6 +257,8 @@ npx tsx scripts/fluxo-espanhol.mjs        # espanhol: falsos amigos, palácio, v
 npx tsx scripts/fluxo-sueco.mjs           # sueco: palácio en/ett, variante da Finlândia, diário (en/ett), IPA
 npx tsx scripts/fluxo-noruegues.mjs       # norueguês: palácio en/ei/et, variante nynorsk, diário (en/ei/et), IPA
 npx tsx scripts/fluxo-dinamarques.mjs     # dinamarquês: palácio en/et, variante do Schleswig do Sul, diário (en/et), IPA
+npx tsx scripts/fluxo-islandes.mjs        # islandês: palácio com 3 gêneros, variante do Canadá, diário (acentos), IPA
+npx tsx scripts/fluxo-finlandes.mjs       # finlandês: palácio sem gênero, variante da Suécia, diário (ä/ö), IPA
 npx tsx scripts/fluxo-portugues.mjs        # português de Portugal: variante do Brasil (IPA), diário (estar a, ênclise), falsos amigos
 npx tsx scripts/fluxo-italiano.mjs        # italiano: falsos amigos, IPA, palácio, variante da Suíça, linguística, diário
 node scripts/fluxo-mapa.mjs                # mapa ISO 3166-1/3166-3, zoom nas subdivisões e variante da Moldávia
