@@ -6,6 +6,7 @@ import { Card } from '@/components/ui';
 import { allAccentVoices, allClips } from '@/data/audio-index';
 import { LINU_PHOTOS } from '@/data/fotos-linu';
 import { WORD_PHOTOS } from '@/data/fotos-palavras';
+import { PICTO_CREDIT, WORD_PICTOS } from '@/data/pictogramas-palavras';
 import { playClip, speak } from '@/services/speech';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
@@ -13,6 +14,8 @@ import { SONS } from '@/data/sons';
 import { NEURAL_VOICES } from '@/data/vozes-neurais';
 
 const LOCALE: Record<string, string> = { ro: 'ro-RO', ru: 'ru-RU' };
+/** quantos símbolos do Mulberry Symbols aparecem nas palavras */
+const PICTO_COUNT = new Set(Object.values(WORD_PICTOS).map((p) => p.symbol)).size;
 
 /**
  * Créditos das gravações de falantes nativos: a maioria do projeto Lingua Libre, e as que ele ainda
@@ -61,6 +64,12 @@ export default function CreditsScreen() {
         </Text>
         <Text className="text-sm text-slate-500 dark:text-slate-400">
           🖼️ Fotos das palavras: {photos.length} fotos do Wikimedia Commons (a imagem principal do item de cada conceito no Wikidata), recortadas em quadrado, sob licenças livres (CC BY, CC BY-SA, CC0 ou domínio público). O autor e a licença aparecem embaixo da foto e na busca abaixo.
+        </Text>
+        <Text className="text-sm text-slate-500 dark:text-slate-400">
+          🧩 Pictogramas das palavras sem foto: {PICTO_COUNT} símbolos do Mulberry Symbols, de {PICTO_CREDIT.author.replace(/ \(.*\)$/, '')}, sob licença {PICTO_CREDIT.license} (convertidos em imagens quadradas com fundo branco; as imagens seguem a mesma licença).{' '}
+          <Text accessibilityRole="link" className="font-semibold text-conecta" onPress={() => Linking.openURL(PICTO_CREDIT.page)}>
+            mulberrysymbols.org ›
+          </Text>
         </Text>
         <Text className="text-sm text-slate-500 dark:text-slate-400">
           📷 Fotos do pinguim-de-barbicha (Wikimedia Commons):{' '}

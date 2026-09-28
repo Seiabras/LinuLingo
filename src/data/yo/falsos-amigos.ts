@@ -1,3 +1,164 @@
 import type { FalseFriend } from '../types';
 
-export const FALSE_FRIENDS_YO: FalseFriend[] = [];
+/**
+ * Falsos amigos iorubá × português do Brasil. O iorubá não é parente do português, então quase todos
+ * são «sósias» por acaso: palavras curtas que, lidas sem os tons e os pontos, parecem uma palavra
+ * nossa. Há também as armadilhas do candomblé: palavras que o brasileiro conhece do terreiro e que
+ * na Nigéria querem dizer outra coisa, às vezes só por causa dos tons.
+ */
+export const FALSE_FRIENDS_YO: FalseFriend[] = [
+  // ——— os clássicos: parecem português e caem em qualquer conversa ———
+  {
+    word: 'bàbá',
+    means: 'pai (e qualquer senhor mais velho)',
+    looksLike: 'babá (a moça que cuida das crianças)',
+    forThat: 'olùtọ́jú ọmọ',
+    emoji: '👨🏾',
+    example: ['Bàbá mi jẹ́ àgbẹ̀.', 'Meu pai é agricultor.'],
+  },
+  {
+    word: 'pé',
+    means: 'que (liga frases: «ó sọ pé…», ele disse que…); também «estar completo»',
+    looksLike: 'pé (a parte do corpo)',
+    forThat: 'ẹsẹ̀',
+    emoji: '🔗',
+    example: ['Mo mọ̀ pé ó ti dé.', 'Eu sei que ele já chegou.'],
+  },
+  {
+    word: 'rí',
+    means: 'ver; encontrar',
+    looksLike: 'ri (de rir: «eu ri»)',
+    forThat: 'rẹ́rìn-ín',
+    emoji: '👀',
+    example: ['Mo rí ọ lánàá ní ọjà.', 'Eu te vi ontem no mercado.'],
+  },
+  {
+    word: 'já',
+    means: 'arrebentar, romper-se (uma corda, um fio)',
+    looksLike: 'já (advérbio: «já comi»)',
+    forThat: 'ti (antes do verbo: «Mo ti jẹun», já comi)',
+    emoji: '🪢',
+    example: ['Okùn náà já.', 'A corda arrebentou.'],
+  },
+  {
+    word: 'ná',
+    means: 'gastar (dinheiro)',
+    looksLike: 'na (em + a: «na casa»)',
+    forThat: 'ní («ní ilé», em casa)',
+    emoji: '💸',
+    example: ['Mo ná owó púpọ̀ lónìí.', 'Gastei muito dinheiro hoje.'],
+  },
+  {
+    word: 'lá',
+    means: 'lamber; sonhar (lá àlá, «sonhar um sonho»)',
+    looksLike: 'lá (naquele lugar)',
+    forThat: 'níbẹ̀',
+    emoji: '😴',
+    example: ['Mo lá àlá burúkú lóru àná.', 'Tive um pesadelo ontem à noite (sonhei um sonho ruim).'],
+  },
+  {
+    word: 'dá',
+    means: 'criar; parar; quebrar (e ainda outros sentidos, conforme o que vem depois)',
+    looksLike: 'dá (de dar: «ele dá»)',
+    forThat: 'fún («Fún mi», me dá)',
+    emoji: '🌍',
+    example: ['Ọlọ́run ló dá ayé.', 'Foi Deus quem criou o mundo.'],
+  },
+  {
+    word: 'ọ̀la',
+    means: 'amanhã (com ọ aberto e o primeiro tom baixo; ọlá, com o último tom alto, é «honra, prestígio»)',
+    looksLike: 'olá (o cumprimento)',
+    forThat: 'ẹ n lẹ́ (com respeito); báwo ni (entre amigos)',
+    emoji: '📅',
+    example: ['A ó pàdé ní ọ̀la.', 'A gente se encontra amanhã.'],
+  },
+  {
+    word: 'bàtà',
+    means: 'sapato (com os dois tons baixos; bàtá, com o último alto, é o tambor)',
+    looksLike: 'bata (a blusa larga, a túnica)',
+    forThat: 'bùbá',
+    emoji: '👞',
+    example: ['Mo ra bàtà tuntun ní ọjà.', 'Comprei sapatos novos no mercado.'],
+  },
+  {
+    word: 'mọ́tò',
+    means: 'carro (do inglês «motor car»)',
+    looksLike: 'moto (a motocicleta)',
+    forThat: 'alùpùpù; ọ̀kadà (a mototáxi)',
+    emoji: '🚗',
+    example: ['Mọ́tò tuntun ni ẹ̀gbọ́n mi rà.', 'Foi um carro novo que o meu irmão mais velho comprou.'],
+  },
+  {
+    word: 'ata',
+    means: 'pimenta',
+    looksLike: 'ata (o registro escrito de uma reunião)',
+    forThat: 'àkọsílẹ̀ ìpàdé',
+    emoji: '🌶️',
+    example: ['Ọbẹ̀ yìí ní ata púpọ̀.', 'Este ensopado tem muita pimenta.'],
+  },
+  {
+    word: 'tútù',
+    means: 'frio, fresco (omi tútù, água gelada); também cru, molhado',
+    looksLike: 'tutu (dinheiro, na gíria; ou o tutu de feijão)',
+    forThat: 'owó',
+    emoji: '🧊',
+    example: ['Ẹ jọ̀ọ́, ẹ fún mi ní omi tútù.', 'Por favor, me dê água gelada.'],
+  },
+  {
+    word: 'oko',
+    means: 'roça, fazenda (com os dois «o» fechados; ọkọ, com «ọ» aberto, é «marido»)',
+    looksLike: 'oco (vazio por dentro)',
+    forThat: 'ṣófo',
+    emoji: '🌾',
+    example: ['Bàbá mi lọ sí oko láàárọ̀.', 'Meu pai foi para a roça de manhã.'],
+  },
+  {
+    word: 'gààrí',
+    means: 'garri, a farinha de mandioca torrada (a mandioca veio do Brasil)',
+    looksLike: 'gari (o varredor de rua)',
+    forThat: 'agbálẹ̀',
+    emoji: '🥣',
+    example: ['Mo fẹ́ mu gààrí pẹ̀lú ṣúgà àti ẹ̀pà.', 'Quero tomar garri com açúcar e amendoim.'],
+  },
+  {
+    word: 'ẹ̀pà',
+    means: 'amendoim',
+    looksLike: 'epa! (a interjeição de susto)',
+    forThat: 'háà!',
+    emoji: '🥜',
+    example: ['Ẹ̀pà yìí dùn gan-an.', 'Este amendoim está muito gostoso.'],
+  },
+  // ——— as armadilhas do candomblé: o brasileiro conhece a palavra do terreiro ———
+  {
+    word: 'ọjà',
+    means: 'mercado, feira (tom médio e depois baixo)',
+    looksLike: 'ojá (o pano amarrado na cabeça, no candomblé)',
+    forThat: 'ọ̀já',
+    emoji: '🧺',
+    example: ['Ìyá mi ń lọ sí ọjà.', 'A minha mãe está indo ao mercado.'],
+  },
+  {
+    word: 'ìlú',
+    means: 'cidade (o último tom é alto)',
+    looksLike: 'ilu (o tambor e o toque do candomblé)',
+    forThat: 'ìlù',
+    emoji: '🏙️',
+    example: ['Èkó jẹ́ ìlú ńlá.', 'Lagos é uma cidade grande.'],
+  },
+  {
+    word: 'òde',
+    means: 'o lado de fora, a rua (ní òde, lá fora)',
+    looksLike: 'Odé (o orixá caçador, Oxóssi)',
+    forThat: 'ọdẹ',
+    emoji: '🚪',
+    example: ['Àwọn ọmọdé ń ṣeré ní òde.', 'As crianças estão brincando lá fora.'],
+  },
+  {
+    word: 'àmàlà',
+    means: 'pirão firme e escuro de farinha de inhame, comido com ewédú e gbẹ̀gìrì',
+    looksLike: 'amalá (o caruru de quiabo oferecido a Xangô)',
+    forThat: 'ọbẹ̀ ilá',
+    emoji: '🍲',
+    example: ['Mo fẹ́ jẹ àmàlà pẹ̀lú ewédú.', 'Quero comer àmàlà com ewédú (o caldo de folhas de juta).'],
+  },
+];

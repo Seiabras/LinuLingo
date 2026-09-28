@@ -158,5 +158,7 @@ async function loadVocab() {
   if (!existsSync(path)) return new Map();
   const mod = await import(pathToFileURL(path).href);
   const vocab = Object.values(mod).find((x) => Array.isArray(x) && (x as { word_target?: string }[])[0]?.word_target) as { word_target: string; emoji: string | null }[];
+  // pacote sem vocabulário ainda (arquivos vazios): nenhuma palavra conhecida
+  if (!vocab) return new Map();
   return new Map(vocab.map((v: { word_target: string; emoji: string | null }) => [v.word_target, v]));
 }

@@ -100,6 +100,12 @@ export function pronounce(word: string): Syl[] | null {
       }
       a.co = rest || 'ㄷ';
     }
+    // 없다 grudado num substantivo (맛없다, 멋없다): a final se neutraliza antes de ligar → [마덥따]
+    if (!b.on && b.v === 'ㅓ' && b.co === 'ㅄ' && a.co && a.co !== 'ㅇ' && !CLUSTER[a.co]) {
+      b.on = NEUTRAL[a.co] ?? a.co;
+      a.co = '';
+      continue;
+    }
     // ligação: a final passa para a sílaba seguinte que começa em vogal
     if (!b.on && a.co !== 'ㅇ' && a.co) {
       if (CLUSTER[a.co]) {
@@ -115,6 +121,19 @@ export function pronounce(word: string): Syl[] | null {
         else b.on = a.co;
         a.co = '';
       }
+      continue;
+    }
+    // ㄺ antes de ㄱ fica ㄹ (읽고 → [일꼬]); ㄵ e ㄻ, finais de verbo, tornam tensa a consoante seguinte (앉다 → [안따], 젊다 → [점따])
+    if (a.co === 'ㄺ' && b.on === 'ㄱ') {
+      a.co = 'ㄹ';
+      b.on = 'ㄲ';
+      b.tense = true;
+      continue;
+    }
+    if ((a.co === 'ㄵ' || a.co === 'ㄻ') && TENSE[b.on]) {
+      a.co = CLUSTER[a.co][0];
+      b.on = TENSE[b.on];
+      b.tense = true;
       continue;
     }
     if (CLUSTER[a.co]) a.co = CLUSTER[a.co][0];

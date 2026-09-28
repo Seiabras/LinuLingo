@@ -1742,4 +1742,418 @@ export const STORIES_KO_1: StorySeed[] = [
       },
     },
   },
+  {
+    id: 'ko-h18',
+    level: 'B1.2',
+    cefr: 'B1',
+    title: '상파울루에서 온 팬',
+    emoji: '💜',
+    summary: 'A Júlia, fã de K-pop de São Paulo, realiza o sonho de ver seu grupo preferido em Seul, com o Linu de intérprete, um café de aniversário e uma gravação de madrugada.',
+    cultural_context:
+      'O Brasil tem uma das maiores bases de fãs de K-pop fora da Ásia, e grupos coreanos já lotaram estádios em São Paulo; os fãs brasileiros são famosos no meio pela cantoria em coro (떼창). Em Seul, a cultura de fã tem seus rituais: no aniversário de um ídolo, os fãs alugam um café e o decoram com fotos (생일 카페), dando brindes (특전) a quem compra uma bebida; os cards com a foto dos membros (포토카드, ou 포카) vêm aleatórios e são trocados entre fãs. Os programas musicais da TV gravam algumas apresentações de madrugada (사전 녹화), com plateia de fãs do fã-clube oficial, filmagem proibida e o 응원법: o coro combinado, com os nomes dos membros gritados no ritmo da introdução.',
+    start: 'start',
+    glossary: [
+      ['팬 / 팬클럽', 'fã / fã-clube'],
+      ['생일 카페', 'café decorado pelos fãs para o aniversário de um ídolo'],
+      ['특전', 'brinde para quem compra (copo, card, adesivo)'],
+      ['포토카드 (포카)', 'card com a foto de um membro, vem aleatório'],
+      ['교환하다', 'trocar'],
+      ['사전 녹화', 'gravação antecipada de um programa musical, com plateia de fãs'],
+      ['응원봉 / 응원법', 'bastão de luz dos fãs / o coro combinado dos fãs'],
+      ['-(으)실래요?', 'o senhor/a senhora quer …? (convite polido com o honorífico -시-)'],
+      ['-잖아요', 'afinal, …, não é? (algo que os dois já sabem): 유명하잖아요 (é famoso, né?)'],
+      ['-다가', 'no meio de …: 촬영하다가 (filmando, no meio da filmagem)'],
+    ],
+    nodes: {
+      start: {
+        emoji: '✈️',
+        text: '줄리아는 상파울루에서 온 케이팝 팬이다. 이번 여행의 목표는 딱 하나, 좋아하는 그룹 «은하수»를 직접 보는 것이었다. 줄리아와 리누는 여행하는 동안 한국어로만 말하기로 약속했다. 서울에 도착한 다음 날 아침, 줄리아가 휴대폰을 보다가 소리쳤다. «리누야! 오늘 하람 생일 카페가 연남동에서 열린대!»',
+        translation: 'A Júlia é uma fã de K-pop de São Paulo. A viagem tinha um único objetivo: ver ao vivo o seu grupo preferido, o «Eunhasu». A Júlia e o Linu prometeram falar só coreano durante a viagem. Na manhã seguinte à chegada em Seul, a Júlia gritou, olhando o celular: «Linu! Vai ter café de aniversário do Haram hoje em Yeonnam-dong!»',
+        choices: [
+          { text: '«생일 카페? 가수가 거기 오는 거야?»', translation: '«Café de aniversário? O cantor vai estar lá?»', next: 'explica' },
+          { text: '«좋아, 바로 가자!»', translation: '«Beleza, vamos já!»', next: 'cafe' },
+        ],
+      },
+      explica: {
+        emoji: '🎂',
+        text: '줄리아가 웃었다. «아니, 가수는 안 와. 팬들이 카페를 빌려서 멤버 생일을 축하하는 거야. 사진도 걸고, 음료를 사면 컵홀더랑 포토카드도 줘.»',
+        translation: 'A Júlia riu. «Não, o cantor não vai. Os fãs alugam um café para comemorar o aniversário do membro. Penduram fotos, e quem compra uma bebida ganha porta-copo e card.»',
+        choices: [{ text: '«한국 팬 문화는 정말 대단하다. 가 보자!»', translation: '«A cultura de fã coreana é impressionante. Vamos lá ver!»', next: 'cafe' }],
+      },
+      cafe: {
+        emoji: '☕',
+        text: '연남동 카페 앞에는 벌써 줄이 길었다. 카페 안은 하람의 사진과 보라색 풍선으로 가득했다. 계산대에서 직원이 말했다. «음료 한 잔에 특전 한 세트씩 드려요. 포토카드는 랜덤이고, 교환은 밖에서 해 주세요.»',
+        translation: 'Na frente do café em Yeonnam-dong já havia uma fila comprida. Lá dentro, tudo estava cheio de fotos do Haram e balões roxos. No caixa, o atendente disse: «Cada bebida vem com um kit de brindes. O card é aleatório, e as trocas, por favor, lá fora.»',
+        choices: [
+          { text: '«아이스 아메리카노 두 잔 주세요.»', translation: '«Dois americanos gelados, por favor.»', next: 'fotocard' },
+          {
+            text: '«포토카드는 제가 고를게요. 하람 걸로 주세요.»',
+            translation: '«Eu escolho o card. Me dá o do Haram.»',
+            wrong: 'O atendente disse «포토카드는 랜덤이고»: o card vem aleatório, ninguém escolhe. Se não vier o membro que você quer, a troca é lá fora («교환은 밖에서»).',
+          },
+        ],
+      },
+      fotocard: {
+        emoji: '🃏',
+        text: '줄리아가 받은 포토카드는 하람이 아니라 다른 멤버인 도윤이었다. 줄리아의 얼굴이 어두워졌다. 그때 옆에 서 있던 한국 팬이 조심스럽게 말을 걸었다. «저기요, 혹시 도윤 포카 교환하실래요? 저는 하람이 두 장 나왔거든요.»',
+        translation: 'O card que a Júlia recebeu não era do Haram, e sim do Doyun, outro membro. O rosto dela murchou. Nessa hora, uma fã coreana que estava ao lado puxou conversa com cuidado: «Com licença, você trocaria o card do Doyun? É que eu tirei dois do Haram.»',
+        choices: [
+          { text: '«줄리아, 교환하자고 하시네! 잘됐다!»', translation: '«Júlia, ela está propondo uma troca! Que sorte!»', next: 'troca' },
+          {
+            text: '«줄리아, 이분이 네 포토카드를 그냥 달래. 주지 마!»',
+            translation: '«Júlia, essa moça está pedindo o seu card de graça. Não dá!»',
+            wrong: 'A fã não pediu o card de graça: propôs uma TROCA («교환하실래요?»), porque tirou dois do Haram («하람이 두 장 나왔거든요»). É exatamente o que a Júlia queria!',
+          },
+        ],
+      },
+      troca: {
+        emoji: '🤝',
+        text: '두 사람은 포토카드를 바꿨다. 한국 팬의 이름은 수아였다. 수아는 줄리아가 브라질에서 왔다는 말을 듣고 깜짝 놀랐다. «브라질 팬들 떼창 진짜 유명하잖아요! 내일 상암동에서 음악 방송 사전 녹화가 있는데, 같이 가실래요? 새벽 다섯 시까지 가야 하지만요.»',
+        translation: 'As duas trocaram os cards. A fã coreana se chamava Sua. Quando soube que a Júlia vinha do Brasil, levou um susto. «O coro dos fãs brasileiros é superfamoso, né! Amanhã tem gravação antecipada de um programa musical em Sangam-dong. Querem ir comigo? Só que tem que chegar às cinco da manhã.»',
+        choices: [
+          { text: '«새벽 다섯 시요? 당연히 가야죠!»', translation: '«Cinco da manhã? É claro que a gente vai!»', next: 'madrugada' },
+          { text: '«너무 이르네요. 저희는 다음에 갈게요.»', translation: '«É muito cedo. A gente vai numa próxima.»', next: 'final_so_card' },
+        ],
+      },
+      madrugada: {
+        emoji: '🌌',
+        text: '다음 날 새벽, 방송국 앞 골목은 벌써 응원봉을 든 팬들로 가득했다. 스태프가 확성기로 말했다. «입장할 때 신분증과 팬클럽 회원 인증을 확인하겠습니다. 녹화 중에는 휴대폰 촬영이 절대 금지입니다. 촬영하다가 적발되면 바로 퇴장입니다.»',
+        translation: 'Na madrugada seguinte, a viela em frente à emissora já estava cheia de fãs com bastões de luz. Um membro da equipe falou no megafone: «Na entrada, vamos conferir documento e carteirinha do fã-clube. Durante a gravação, é terminantemente proibido filmar com o celular. Quem for pego filmando sai na hora.»',
+        choices: [
+          { text: '리누와 줄리아는 휴대폰을 가방 깊숙이 넣었다.', translation: 'O Linu e a Júlia guardaram o celular no fundo da bolsa.', next: 'gravacao' },
+          { text: '줄리아는 몰래 찍으려고 휴대폰을 소매 안에 숨겼다.', translation: 'A Júlia escondeu o celular na manga para filmar escondido.', next: 'final_fora' },
+        ],
+      },
+      gravacao: {
+        emoji: '🎤',
+        text: '드디어 무대에 은하수가 나왔다. 전주가 시작되자 팬들이 한 목소리로 멤버들의 이름을 외쳤다. 수아가 옆에서 알려 줬다. «지금 응원법 나와요! 따라 하세요!» 줄리아는 응원법을 다 외우지 못해서 잠깐 머뭇거렸다.',
+        translation: 'Finalmente, o Eunhasu entrou no palco. Quando começou a introdução, os fãs gritaram os nomes dos membros numa só voz. A Sua avisou ao lado: «Agora é o coro! Vai junto!» A Júlia não tinha decorado o coro inteiro e hesitou um instante.',
+        choices: [
+          { text: '«줄리아, 브라질처럼 하자!» 두 사람은 목이 터져라 따라 외쳤다.', translation: '«Júlia, vamos fazer como no Brasil!» Os dois gritaram junto a plenos pulmões.', next: 'palco' },
+          { text: '줄리아는 수아의 입 모양을 보면서 한 박자 늦게 따라 했다.', translation: 'A Júlia foi seguindo com um tempo de atraso, olhando a boca da Sua.', next: 'palco' },
+        ],
+      },
+      palco: {
+        emoji: '🌟',
+        text: '녹화가 끝나자 하람이 마이크를 잡았다. «오늘 멀리서 오신 팬분들도 계신 것 같아요. 어디서 오셨어요?» 주변 팬들이 일제히 줄리아를 가리켰다.',
+        translation: 'Quando a gravação terminou, o Haram pegou o microfone. «Parece que hoje tem fãs que vieram de longe. De onde vocês vieram?» Os fãs em volta apontaram todos para a Júlia.',
+        choices: [
+          { text: '줄리아가 떨리는 목소리로 외쳤다. «브라질에서 왔어요! 사랑해요!»', translation: 'A Júlia gritou, com a voz tremendo: «Vim do Brasil! Eu te amo!»', next: 'final_bom' },
+          {
+            text: '줄리아가 외쳤다. «한국에서 왔어요!»',
+            translation: 'A Júlia gritou: «Vim da Coreia!»',
+            wrong: 'O Haram perguntou «어디서 오셨어요?» (de onde vocês vieram?) procurando os fãs que vieram «멀리서» (de longe), e todos apontaram para a Júlia. Ela veio do Brasil, não da Coreia!',
+          },
+        ],
+      },
+      final_bom: {
+        emoji: '🎉',
+        text: '하람이 눈을 크게 뜨고 웃었다. «브라질! 와, 그렇게 멀리서 와 주셔서 정말 고마워요. 오브리가두!» 팬들이 모두 박수를 쳤고, 줄리아는 울면서 웃었다. 돌아오는 지하철에서 줄리아가 말했다. «리누야, 한국어 공부하길 정말 잘했어.»',
+        translation: 'O Haram arregalou os olhos e sorriu. «Brasil! Uau, muito obrigado por virem de tão longe. Obrigado!» Todos os fãs aplaudiram, e a Júlia chorava e ria ao mesmo tempo. No metrô de volta, ela disse: «Linu, ainda bem que eu estudei coreano.»',
+        ending: { tone: 'bom', title: 'De São Paulo para o palco', message: 'Com coreano de verdade, a Júlia trocou cards, entendeu as regras da gravação e ainda falou com o ídolo dela.' },
+      },
+      final_so_card: {
+        emoji: '📷',
+        text: '리누와 줄리아는 다음 날 늦잠을 잤다. 오후에 수아가 보낸 사진이 도착했다. 무대 위의 은하수와 수많은 응원봉 불빛. 줄리아가 한숨을 쉬었다. «새벽 다섯 시가 뭐라고…»',
+        translation: 'No dia seguinte, o Linu e a Júlia dormiram até tarde. À tarde, chegou uma foto mandada pela Sua: o Eunhasu no palco e um mar de luzes dos bastões. A Júlia suspirou. «Que besteira ter deixado de ir por causa das cinco da manhã…»',
+        ending: { tone: 'neutro', title: 'Ficou só o card', message: 'A Júlia ganhou o card do Haram, mas deixou passar o convite para a gravação. Para fã de K-pop, madrugar faz parte!' },
+      },
+      final_fora: {
+        emoji: '🚫',
+        text: '녹화가 시작되자마자 줄리아의 소매 속에서 휴대폰 불빛이 반짝였다. 스태프가 곧바로 다가왔다. «죄송하지만 촬영하셨죠? 나가 주셔야 합니다.» 줄리아는 무대를 겨우 일 분 보고 밖으로 나와야 했고, 리누도 조용히 따라 나왔다.',
+        translation: 'Assim que a gravação começou, a luz do celular brilhou dentro da manga da Júlia. A equipe veio na hora. «Desculpe, mas a senhora filmou, não foi? Vai ter que se retirar.» A Júlia viu o palco por apenas um minuto e teve que sair; o Linu saiu junto, em silêncio.',
+        ending: { tone: 'neutro', title: 'Fora do estúdio', message: 'O aviso foi claro: «촬영하다가 적발되면 바로 퇴장». Na gravação, o celular fica na bolsa.' },
+      },
+    },
+  },
+  // ───────────────────────── B1.3 ─────────────────────────
+  {
+    id: 'ko-h19',
+    level: 'B1.3',
+    cefr: 'B1',
+    title: '천년 고도 경주',
+    emoji: '🏯',
+    summary: 'De bicicleta por Gyeongju, a antiga capital de Silla, o Linu e o amigo Taeyang visitam túmulos reais e o observatório mais antigo da Ásia Oriental, mas uma corrente solta os obriga a escolher: o lago iluminado ou o pão famoso da cidade.',
+    cultural_context:
+      'Gyeongju foi a capital do reino de Silla por quase mil anos (57 a.C.–935 d.C.), e por isso é chamada de «천년 고도», a antiga capital de mil anos. No centro da cidade, os túmulos reais do 대릉원 parecem colinas de grama; do 천마총 saíram uma coroa de ouro e a pintura de um cavalo voador. O 첨성대, do século VII, da época da rainha Seondeok, é considerado o observatório astronômico mais antigo ainda de pé no Leste Asiático. À noite, o palácio de 동궁 se reflete iluminado no lago 월지. O templo 불국사 e a gruta de 석굴암 são Patrimônio Mundial da UNESCO, e o 황남빵, pãozinho recheado de feijão azuki vendido desde 1939, é a lembrança obrigatória. Em 2025, a cidade sediou a cúpula da APEC.',
+    start: 'start',
+    glossary: [
+      ['천년 고도', 'antiga capital de mil anos'],
+      ['신라', 'Silla, reino que unificou boa parte da península'],
+      ['무덤 / 천마총', 'túmulo / «túmulo do cavalo celeste»'],
+      ['금관', 'coroa de ouro'],
+      ['첨성대 / 천문대', 'o observatório de Gyeongju / observatório astronômico'],
+      ['단', 'camada, degrau (contador): 스물일곱 단'],
+      ['-는 바람에', 'por causa de (algo inesperado e ruim): 체인이 빠지는 바람에 (porque a corrente saiu)'],
+      ['-었대 / -답니다', 'dizem que … (no 반말 / num tom de quem conta uma história)'],
+      ['-아/어야겠다', 'tenho que … (decisão): 가 봐야겠어요 (preciso ir ver)'],
+      ['문화관광해설사', 'guia oficial de turismo cultural'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🚲',
+        text: '경주 고속버스터미널에 내리자마자 태양이가 말했다. «경주는 도시 전체가 박물관이야. 신라가 천 년 동안 수도로 삼았던 곳이거든.» 두 사람은 터미널 앞에서 자전거를 빌렸다. «자, 어디부터 갈래?»',
+        translation: 'Assim que desceram na rodoviária de Gyeongju, o Taeyang disse: «Gyeongju inteira é um museu. É que foi a capital de Silla durante mil anos.» Os dois alugaram bicicletas em frente à rodoviária. «E aí, por onde você quer começar?»',
+        choices: [
+          { text: '«무덤부터! 대릉원에 가 보고 싶어.»', translation: '«Pelos túmulos! Quero ver o Daereungwon.»', next: 'tumulos' },
+          { text: '«첨성대부터 보자.»', translation: '«Vamos ver o Cheomseongdae primeiro.»', next: 'cheomseong' },
+        ],
+      },
+      tumulos: {
+        emoji: '⛰️',
+        text: '대릉원에는 풀로 덮인 커다란 언덕들이 줄지어 있었다. 언덕처럼 보이지만 모두 신라 왕과 귀족의 무덤이다. 천마총 안에 들어가자 문화관광해설사 할아버지가 설명해 주셨다. «이 무덤에서 하늘을 나는 말 그림이 나왔어요. 그래서 이름이 천마총이지요. 금관도 여기서 발견됐고요.»',
+        translation: 'No Daereungwon, grandes colinas cobertas de grama se enfileiravam. Parecem colinas, mas são todas túmulos de reis e nobres de Silla. Quando entraram no 천마총, um senhor guia de turismo explicou: «Deste túmulo saiu a pintura de um cavalo voando no céu. Por isso o nome é 천마총, túmulo do cavalo celeste. A coroa de ouro também foi encontrada aqui.»',
+        choices: [
+          { text: '«선생님, 그 금관은 지금 어디에 있어요?»', translation: '«Senhor, onde está essa coroa agora?»', next: 'coroa' },
+          {
+            text: '«아, 여기에 말을 묻어서 천마총이군요.»',
+            translation: '«Ah, chama 천마총 porque enterraram um cavalo aqui.»',
+            wrong: 'O guia explicou que o nome vem de uma PINTURA: «하늘을 나는 말 그림», o desenho de um cavalo voando no céu, encontrado no túmulo. Ninguém falou de cavalo enterrado.',
+          },
+        ],
+      },
+      coroa: {
+        emoji: '👑',
+        text: '«국립경주박물관에 있어요. 신라 금관은 나뭇가지와 사슴뿔 모양인데, 왕이 걸을 때마다 달린 장식들이 흔들리면서 반짝였다고 해요.»',
+        translation: '«Está no Museu Nacional de Gyeongju. A coroa de Silla tem a forma de galhos de árvore e chifres de cervo, e dizem que, a cada passo do rei, os enfeites pendurados balançavam e cintilavam.»',
+        choices: [{ text: '«내일 박물관에도 꼭 가 봐야겠어요. 감사합니다!»', translation: '«Amanhã preciso ir ao museu também. Obrigado!»', next: 'cheomseong' }],
+      },
+      cheomseong: {
+        emoji: '🔭',
+        text: '첨성대는 생각보다 작았다. 돌을 쌓아 만든 병 모양의 탑이었다. 태양이가 퀴즈를 냈다. «첨성대 돌이 몇 개인지 알아? 삼백육십여 개야. 일 년 날수랑 비슷하지. 그리고 스물일곱 단으로 쌓았는데, 선덕여왕이 신라의 스물일곱 번째 왕이었대.»',
+        translation: 'O Cheomseongdae era menor do que o Linu imaginava. Era uma torre de pedras empilhadas, em forma de garrafa. O Taeyang fez um quiz: «Sabe quantas pedras tem o Cheomseongdae? Uns trezentos e sessenta e poucos. Parecido com o número de dias do ano. E foi empilhado em vinte e sete camadas: dizem que a rainha Seondeok foi a vigésima sétima monarca de Silla.»',
+        choices: [
+          { text: '«동양에서 가장 오래된 천문대라니, 정말 대단하다.»', translation: '«E pensar que é o observatório mais antigo do Oriente… impressionante.»', next: 'bicicleta' },
+          {
+            text: '«스물일곱 개의 돌로 쌓았다고? 생각보다 적네.»',
+            translation: '«Foi feito com vinte e sete pedras? Menos do que eu pensava.»',
+            wrong: 'O Taeyang disse «스물일곱 단»: vinte e sete CAMADAS. As pedras são «삼백육십여 개», uns trezentos e sessenta e poucos, quase o número de dias do ano. 단 conta camadas; 개 conta objetos.',
+          },
+        ],
+      },
+      bicicleta: {
+        emoji: '⛓️',
+        text: '해가 지기 시작하자 두 사람은 동궁과 월지로 향했다. 그런데 가는 길에 리누의 자전거 체인이 빠지는 바람에 한참을 멈춰 서야 했다. 태양이가 시계를 보며 말했다. «월지는 불이 켜질 때가 제일 예뻐. 그런데 이러다가는 황남빵 가게가 문을 닫겠어.»',
+        translation: 'Quando o sol começou a se pôr, os dois seguiram para o palácio Donggung e o lago Wolji. Mas, no caminho, a corrente da bicicleta do Linu saiu, e eles tiveram que ficar parados um bom tempo. O Taeyang olhou o relógio e disse: «O Wolji fica mais bonito quando as luzes acendem. Mas, desse jeito, a loja de 황남빵 vai fechar.»',
+        choices: [
+          { text: '«빵은 내일 사자. 지금은 월지가 먼저야.»', translation: '«O pão a gente compra amanhã. Agora o Wolji vem primeiro.»', next: 'wolji' },
+          { text: '«월지는 포기하고 빵 사러 가자.»', translation: '«Esquece o Wolji, vamos comprar o pão.»', next: 'final_pao' },
+        ],
+      },
+      wolji: {
+        emoji: '🌃',
+        text: '체인을 겨우 끼우고 도착했을 때, 연못 위로 전각의 불빛이 거꾸로 비치고 있었다. 물속에 궁궐이 하나 더 있는 것 같았다. 낮에 만난 해설사 할아버지가 반갑게 인사하셨다. «또 만났네요! 신라 사람들은 여기서 귀한 손님을 맞고 잔치를 열었답니다.»',
+        translation: 'Quando finalmente encaixaram a corrente e chegaram, as luzes dos pavilhões se refletiam de cabeça para baixo no lago. Parecia haver outro palácio dentro da água. O senhor guia que eles tinham encontrado de dia cumprimentou, contente: «Nos encontramos de novo! Os antigos de Silla recebiam aqui os hóspedes importantes e davam banquetes.»',
+        choices: [
+          { text: '«선생님 설명 덕분에 경주가 훨씬 재미있었어요. 정말 감사합니다.»', translation: '«Graças às explicações do senhor, Gyeongju ficou muito mais interessante. Muito obrigado.»', next: 'final_bom' },
+        ],
+      },
+      final_bom: {
+        emoji: '🎉',
+        text: '해설사 할아버지는 수첩에 뭔가를 적어 건네주셨다. «내일은 아침 일찍 불국사에 가 보세요. 석굴암 부처님은 해 뜰 때 봐야 해요.» 숙소로 돌아오는 길에 태양이가 웃었다. «리누야, 너 오늘 완전히 신라 사람 다 됐다.»',
+        translation: 'O guia escreveu algo num caderninho e entregou. «Amanhã, vá bem cedo ao Bulguksa. O Buda de Seokguram tem que ser visto ao nascer do sol.» No caminho de volta para a hospedagem, o Taeyang riu. «Linu, hoje você virou um cidadão de Silla.»',
+        ending: { tone: 'bom', title: 'Mil anos numa noite', message: 'Mesmo com a corrente solta, o Linu viu o Wolji iluminado e ganhou do guia a dica de ouro para o dia seguinte.' },
+      },
+      final_pao: {
+        emoji: '🍞',
+        text: '두 사람은 가게가 문을 닫기 직전에 황남빵 한 상자를 샀다. 팥이 가득 든 따끈한 빵은 정말 맛있었다. 하지만 숙소에서 월지 야경 사진을 찾아본 리누는 한숨을 쉬었다. «빵은 택배로도 살 수 있는데, 월지는 오늘밖에 못 보는 거였어.»',
+        translation: 'Os dois compraram uma caixa de 황남빵 pouco antes de a loja fechar. O pãozinho quente, cheio de feijão azuki, era uma delícia. Mas, na hospedagem, o Linu procurou fotos do Wolji à noite e suspirou. «Pão dá para pedir pela entrega, mas o Wolji só dava para ver hoje.»',
+        ending: { tone: 'neutro', title: 'Pão em vez de lago', message: 'O 황남빵 estava ótimo, mas o reflexo do palácio no lago iluminado ficou para outra viagem.' },
+      },
+    },
+  },
+  {
+    id: 'ko-h20',
+    level: 'B1.3',
+    cefr: 'B1',
+    title: '광주 주민센터의 김장 나눔',
+    emoji: '🥬',
+    summary: 'Em Gwangju, o Linu passa o dia como voluntário num 김장 solidário: tempera centenas de couves, prova o kimchi fresco com carne cozida e leva uma caixa a uma senhora que mora sozinha.',
+    cultural_context:
+      'O 김장 é o mutirão de fim de outono em que famílias e vizinhos preparam, de uma vez, o kimchi do inverno inteiro; em 2013, entrou na lista do Patrimônio Cultural Imaterial da UNESCO. A couve é salgada de véspera (hoje muita gente compra a couve já salgada, a 절임배추, e a região de Haenam é famosa por ela) e depois recebe, folha por folha, o tempero: pimenta vermelha em pó, rabanete em tiras, alho, gengibre, cebolinha e 젓갈, frutos do mar fermentados no sal. O prêmio do dia é o 수육, carne de porco cozida, comida com o kimchi recém-temperado. No inverno, centros comunitários e empresas organizam o «김장 나눔», que leva kimchi a idosos que moram sozinhos. Gwangju, no sudoeste, famosa pela culinária da região de Jeolla, tem até um festival mundial do kimchi. Por trás de tudo está o 정, o afeto que liga as pessoas.',
+    start: 'start',
+    glossary: [
+      ['김장 / 김장 나눔', 'o mutirão do kimchi de inverno / 김장 solidário, para doar'],
+      ['배추 / 포기', 'couve chinesa / contador de pés de couve: 천 포기 (mil pés)'],
+      ['절이다 → 절임배추', 'salgar (para conservar) → couve já salgada'],
+      ['양념', 'tempero, a pasta vermelha do kimchi'],
+      ['수육', 'carne de porco cozida, comida com kimchi fresco'],
+      ['어르신', 'pessoa idosa (palavra respeitosa)'],
+      ['빠를수록', 'quanto mais rápido (-(으)ㄹ수록: quanto mais …, mais …)'],
+      ['-더라', 'percebi que … (conta algo que a pessoa mesma viu ou sentiu)'],
+      ['엄두도 못 내다', 'nem ter coragem de tentar'],
+      ['정', 'afeto, laço entre as pessoas'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🧤',
+        text: '십일월 말, 광주의 한 주민센터 마당에 빨간 고무장갑을 낀 사람들이 모였다. 리누는 친구 예린이를 따라 김장 나눔 봉사를 하러 왔다. 오늘 담근 김치는 혼자 사시는 어르신들께 전해 드린다고 했다. 부녀회장님이 앞치마를 나눠 주시며 말씀하셨다. «오늘 배추가 천 포기예요. 손이 빠를수록 일찍 끝나요!»',
+        translation: 'No fim de novembro, pessoas de luvas de borracha vermelhas se reuniram no pátio de um centro comunitário de Gwangju. O Linu foi com a amiga Yerin como voluntário num 김장 solidário. O kimchi feito ali seria entregue a idosos que moram sozinhos. A presidente da associação de moradoras distribuiu aventais e disse: «Hoje são mil pés de couve. Quanto mais rápidas as mãos, mais cedo a gente termina!»',
+        choices: [
+          { text: '«저는 뭐부터 하면 될까요?»', translation: '«Por onde eu começo?»', next: 'tarefa' },
+          { text: '리누는 앞치마를 입자마자 양념 통 앞에 앉았다.', translation: 'Assim que vestiu o avental, o Linu sentou na frente da bacia de tempero.', next: 'tempero' },
+        ],
+      },
+      tarefa: {
+        emoji: '🥬',
+        text: '«배추는 해남에서 소금에 절여서 온 거라서 씻을 필요 없어요. 양념을 배춧잎 사이사이에 골고루 넣으면 돼요. 너무 많이 넣으면 짜지니까 조금씩!»',
+        translation: '«A couve veio de Haenam já salgada, então não precisa lavar. É só passar o tempero por igual entre as folhas. Se puser demais, fica salgado, então aos pouquinhos!»',
+        choices: [
+          { text: '리누는 배춧잎을 한 장씩 들추며 양념을 얇게 발랐다.', translation: 'O Linu foi levantando as folhas uma a uma e passando uma camada fina de tempero.', next: 'ritmo' },
+          {
+            text: '리누는 배추를 수돗물에 한 번 더 깨끗이 씻었다.',
+            translation: 'O Linu lavou a couve mais uma vez na torneira, bem lavadinha.',
+            wrong: 'A presidente explicou que a couve já veio salgada de Haenam e «씻을 필요 없어요» (não precisa lavar). O trabalho era outro: passar o tempero entre as folhas, «조금씩» (aos pouquinhos).',
+          },
+        ],
+      },
+      tempero: {
+        emoji: '🌶️',
+        text: '리누는 양념을 한 움큼 집어 배추 위에 턱 올려놓았다. 옆에 계시던 할머니가 웃으시며 리누의 손을 잡으셨다. «아이고, 그렇게 하면 겉만 빨개져. 잎을 하나씩 들추고 사이사이에 발라야지.»',
+        translation: 'O Linu pegou um punhado de tempero e largou em cima da couve. Uma senhora ao lado riu e segurou a mão dele. «Ai, ai, assim só fica vermelho por fora. Tem que levantar folha por folha e passar no meio.»',
+        choices: [{ text: '«아, 그렇군요. 다시 해 볼게요.»', translation: '«Ah, entendi. Vou tentar de novo.»', next: 'ritmo' }],
+      },
+      ritmo: {
+        emoji: '🍖',
+        text: '두 시간쯤 지나자 리누의 손도 제법 빨라졌지만 허리가 아프기 시작했다. 예린이가 웃었다. «김장은 손이 아니라 허리로 하는 거래.» 점심때가 되자 커다란 솥에서 삶은 돼지고기가 나왔다. 부녀회장님이 방금 버무린 김치를 쭉 찢어 수육에 올려서 리누 입에 넣어 주셨다.',
+        translation: 'Umas duas horas depois, as mãos do Linu já estavam bem rápidas, mas as costas começaram a doer. A Yerin riu. «Dizem que 김장 não se faz com as mãos, e sim com as costas.» Na hora do almoço, saiu de um caldeirão enorme a carne de porco cozida. A presidente rasgou uma tira do kimchi que tinha acabado de temperar, pôs em cima da carne e deu na boca do Linu.',
+        choices: [{ text: '«와, 이 맛에 김장을 하는 거군요!»', translation: '«Uau, então é por este sabor que se faz 김장!»', next: 'entrega' }],
+      },
+      entrega: {
+        emoji: '📦',
+        text: '오후에는 김치 상자를 어르신 댁에 배달했다. 리누와 예린이가 맡은 집은 언덕 위 오래된 주택의 삼 층이었다. 문을 열어 주신 할머니는 귀가 조금 어두우셨다. «누구라고? 뭘 가져왔다고?»',
+        translation: 'À tarde, eles entregaram as caixas de kimchi nas casas dos idosos. A casa que coube ao Linu e à Yerin ficava no terceiro andar de um prédio antigo, no alto de uma ladeira. A senhora que abriu a porta ouvia um pouco mal. «Quem? O que foi que vocês trouxeram?»',
+        choices: [
+          { text: '리누는 천천히, 또박또박 말씀드렸다. «할머니, 주민센터에서 김치 가져왔어요! 겨울 동안 맛있게 드세요.»', translation: 'O Linu falou devagar, bem articulado: «Vó, trouxemos kimchi do centro comunitário! Bom apetite durante o inverno.»', next: 'avo' },
+          { text: '리누는 상자를 문 앞에 내려놓고 인사만 하고 계단을 내려왔다.', translation: 'O Linu deixou a caixa na porta, só cumprimentou e desceu a escada.', next: 'final_porta' },
+          {
+            text: '«할머니, 저희는 김치를 사러 왔어요.»',
+            translation: '«Vó, a gente veio comprar kimchi.»',
+            wrong: 'Eles vieram ENTREGAR o kimchi, e de graça. A avó não ouviu direito e perguntou «뭘 가져왔다고?» (o que vocês disseram que trouxeram?): a resposta é «김치 가져왔어요».',
+          },
+        ],
+      },
+      avo: {
+        emoji: '🍵',
+        text: '할머니 얼굴이 환해지셨다. «아이고, 고마워라. 혼자 사니까 김장은 엄두도 못 냈는데.» 할머니는 두 사람을 기어이 안으로 들이시더니 따뜻한 보리차를 내오셨다. 벽에는 오래된 가족사진이 걸려 있었다. «우리 아들은 서울 살아. 바빠서 명절에나 오지.»',
+        translation: 'O rosto da senhora se iluminou. «Ai, que bondade. Moro sozinha, nem tinha coragem de pensar em fazer 김장.» Ela insistiu para os dois entrarem e trouxe chá de cevada quentinho. Na parede havia uma foto de família antiga. «Meu filho mora em Seul. É ocupado, só vem nos feriados.»',
+        choices: [{ text: '«할머니, 다음 주에 예린이랑 또 놀러 와도 돼요?»', translation: '«Vó, posso vir visitar de novo semana que vem, com a Yerin?»', next: 'final_bom' }],
+      },
+      final_bom: {
+        emoji: '🎉',
+        text: '할머니는 대답 대신 리누의 손을 꼭 잡으셨다. «그럼, 그럼. 언제든지 와. 그때는 내가 이 김치로 찌개 끓여 줄게.» 주민센터로 돌아오는 길에 예린이가 말했다. «김장은 김치만 나누는 게 아니라 정을 나누는 거래. 오늘 그 말이 무슨 뜻인지 알겠더라.»',
+        translation: 'Em vez de responder, a senhora apertou a mão do Linu. «Claro, claro. Venha quando quiser. Aí eu faço um ensopado com este kimchi para vocês.» No caminho de volta ao centro comunitário, a Yerin disse: «Dizem que no 김장 não se divide só o kimchi, e sim o 정. Hoje eu entendi o que isso quer dizer.»',
+        ending: { tone: 'bom', title: 'Kimchi com 정', message: 'O Linu temperou couve até doerem as costas, provou o 수육 e, na entrega, teve tempo para ouvir quem mora sozinho.' },
+      },
+      final_porta: {
+        emoji: '🚪',
+        text: '다음 날 예린이에게서 전화가 왔다. «어제 그 할머니 말이야, 상자가 너무 무거워서 밤까지 문 앞에 그대로 있었대. 통장님이 들어다 드렸대.» 리누는 할머니 얼굴도 제대로 못 보고 온 게 계속 마음에 걸렸다.',
+        translation: 'No dia seguinte, a Yerin ligou. «Sabe aquela senhora de ontem? A caixa era pesada demais e ficou na porta até de noite. Foi o representante do bairro que levou para dentro para ela.» O Linu ficou com aquilo na cabeça: nem tinha olhado direito o rosto da senhora.',
+        ending: { tone: 'neutro', title: 'Deixado na porta', message: 'Levar kimchi a quem mora sozinho é também entrar, carregar a caixa até a cozinha e conversar um pouco.' },
+      },
+    },
+  },
+  {
+    id: 'ko-h21',
+    level: 'B1.3',
+    cefr: 'B1',
+    title: '전주 막걸리 골목',
+    emoji: '🍶',
+    summary: 'Em Jeonju, o amigo Minjae mostra ao Linu a vila de casas tradicionais, o papel 한지, o 비빔밥 da cidade e a viela onde cada chaleira de 막걸리 traz uma mesa cheia de petiscos.',
+    cultural_context:
+      'Jeonju é a capital da província de Jeonbuk e a terra de origem da família real de Joseon: o santuário 경기전 guarda o retrato do rei Taejo, fundador da dinastia. A Vila Hanok tem centenas de casas tradicionais com telhados negros de telha e, no meio delas, a catedral católica de Jeondong, de tijolos vermelhos, erguida no início do século XX. A cidade é Cidade Criativa da Gastronomia da UNESCO: o 비빔밥 de Jeonju leva arroz cozido em caldo de osso e gelatina amarela de feijão-mungo (황포묵), servido em tigela de latão. O papel artesanal 한지, feito da casca da amoreira-do-papel, tem fama de durar mil anos. Nas vielas de 막걸리, cada chaleira pedida traz mais petiscos (안주) à mesa. E à mesa com os mais velhos há etiqueta: recebe-se o copo com as duas mãos e bebe-se virando o rosto de lado.',
+    start: 'start',
+    glossary: [
+      ['한옥 / 기와지붕', 'casa tradicional coreana / telhado de telhas'],
+      ['한지', 'papel artesanal coreano, feito de casca de amoreira-do-papel'],
+      ['놋그릇', 'tigela de latão'],
+      ['비비다', 'misturar (o 비빔밥 é o «arroz misturado»)'],
+      ['고슬고슬하다', 'soltinho (arroz)'],
+      ['주전자 / 안주', 'chaleira (em que vem o 막걸리) / petisco para acompanhar a bebida'],
+      ['인심', 'generosidade (de um lugar, de um povo)'],
+      ['따라 드리다', 'servir (a bebida) a alguém mais velho'],
+      ['해장하다', 'curar a ressaca comendo algo, geralmente uma sopa'],
+      ['-(으)라고 하셨잖아', 'ele não disse para …? (lembrando uma ordem que foi dada)'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🚉',
+        text: '전주역에 마중 나온 민재가 리누를 보자마자 말했다. «전주에 왔으면 세 가지는 꼭 해야 돼. 한옥마을 걷기, 비빔밥 먹기, 그리고 막걸리 골목!»',
+        translation: 'O Minjae, que foi buscar o Linu na estação de Jeonju, disse assim que o viu: «Quem vem a Jeonju tem que fazer três coisas: passear pela Vila Hanok, comer 비빔밥 e ir à viela do 막걸리!»',
+        choices: [
+          { text: '«비빔밥부터! 배고파 죽겠어.»', translation: '«비빔밥 primeiro! Estou morrendo de fome.»', next: 'bibimbap' },
+          { text: '«한옥마을부터 걷자.»', translation: '«Vamos começar andando pela Vila Hanok.»', next: 'hanok' },
+        ],
+      },
+      hanok: {
+        emoji: '🏘️',
+        text: '한옥마을에는 검은 기와지붕이 파도처럼 이어져 있었다. 한복을 입은 관광객들 사이로 붉은 벽돌의 전동성당이 보였다. 민재가 설명했다. «저 성당은 백 년도 넘었어. 한옥마을 한가운데에 서양식 성당이 있는 게 신기하지?» 골목 안쪽 한지 공방에서는 할아버지 한 분이 닥나무 껍질을 물에 풀고 계셨다.',
+        translation: 'Na Vila Hanok, os telhados negros se estendiam como ondas. Entre os turistas de hanbok, aparecia a catedral de Jeondong, de tijolos vermelhos. O Minjae explicou: «Aquela igreja tem mais de cem anos. Engraçado ter uma catedral ocidental bem no meio da vila de 한옥, né?» Numa oficina de 한지 no fundo da viela, um senhor desmanchava na água a casca da amoreira-do-papel.',
+        choices: [
+          { text: '«할아버지, 한지는 어떻게 만드는 거예요?»', translation: '«Senhor, como se faz o 한지?»', next: 'hanji' },
+          { text: '«민재야, 이제 비빔밥 먹으러 가자.»', translation: '«Minjae, agora vamos comer o 비빔밥.»', next: 'bibimbap' },
+        ],
+      },
+      hanji: {
+        emoji: '📜',
+        text: '«닥나무 껍질을 삶고, 두드리고, 물에 풀어서 한 장씩 떠내는 거예요. 이렇게 만든 한지는 천 년을 간다는 말이 있어요. 한번 떠 보시겠어요?»',
+        translation: '«A gente cozinha a casca da amoreira-do-papel, bate, desmancha na água e tira as folhas uma por uma. Dizem que o 한지 feito assim dura mil anos. Quer experimentar tirar uma folha?»',
+        choices: [
+          { text: '리누는 발을 물에 담갔다가 천천히 들어 올렸다. 얇은 종이 한 장이 생겼다.', translation: 'O Linu mergulhou a peneira na água e a ergueu devagar. Formou-se uma folha fininha de papel.', next: 'bibimbap' },
+          {
+            text: '«한 장에 천 원이라고요? 그럼 열 장 살게요.»',
+            translation: '«Mil wons a folha? Então vou levar dez.»',
+            wrong: 'O senhor não falou de preço: disse que o 한지 «천 년을 간다», dura MIL ANOS. 년 é «ano»; 원 é a moeda.',
+          },
+        ],
+      },
+      bibimbap: {
+        emoji: '🍚',
+        text: '민재가 데려간 식당에서는 놋그릇에 담긴 비빔밥이 나왔다. 밥 위에 콩나물, 고사리, 시금치, 노란 황포묵, 육회, 달걀노른자가 꽃처럼 둘러져 있었다. 사장님이 말씀하셨다. «전주 비빔밥은 사골 국물로 밥을 지어서 고슬고슬해요. 고추장은 조금씩 넣으면서 드셔 보세요.»',
+        translation: 'No restaurante aonde o Minjae o levou, o 비빔밥 veio numa tigela de latão. Sobre o arroz, broto de feijão, samambaia, espinafre, a gelatina amarela 황포묵, carne crua temperada e gema de ovo formavam uma flor. O dono disse: «O 비빔밥 de Jeonju tem o arroz cozido em caldo de osso, por isso fica soltinho. Vá pondo a pasta de pimenta aos pouquinhos, para provar.»',
+        choices: [
+          { text: '리누는 고추장을 조금만 넣고 천천히 비볐다.', translation: 'O Linu pôs só um pouco de pasta de pimenta e misturou devagar.', next: 'makgeolli' },
+          { text: '리누는 고추장을 한 숟가락 가득 넣고 비볐다.', translation: 'O Linu pôs uma colherada cheia de pasta de pimenta e misturou.', next: 'picante' },
+          {
+            text: '«사장님, 사골 국물은 따로 한 그릇 주세요.»',
+            translation: '«Senhor, me traga o caldo de osso numa tigela à parte, por favor.»',
+            wrong: 'O dono disse que o arroz é cozido NO caldo de osso («사골 국물로 밥을 지어서»): é por isso que fica soltinho. Não é uma sopa servida à parte.',
+          },
+        ],
+      },
+      picante: {
+        emoji: '🥵',
+        text: '한 입 먹자마자 입안이 불타는 것 같았다. 민재가 콩나물국을 건네며 웃었다. «그러니까 사장님이 조금씩 넣으라고 하셨잖아.»',
+        translation: 'Na primeira colherada, a boca pareceu pegar fogo. O Minjae entregou uma sopa de broto de feijão e riu. «Por isso o dono disse para pôr aos pouquinhos, lembra?»',
+        choices: [{ text: '리누는 국을 마시고 남은 비빔밥을 천천히 다 먹었다.', translation: 'O Linu tomou a sopa e comeu devagar o resto do 비빔밥.', next: 'makgeolli' }],
+      },
+      makgeolli: {
+        emoji: '🍶',
+        text: '저녁에는 삼천동 막걸리 골목으로 갔다. 막걸리 한 주전자를 시키자 상 위에 반찬이 스무 가지 가까이 깔렸다. 삶은 문어, 전, 게장, 두부김치… 민재가 말했다. «여기는 주전자를 추가할 때마다 안주가 더 나와. 그게 전주 인심이야.» 곧 민재 삼촌도 오셨다. «리누 씨, 한 잔 받아요.»',
+        translation: 'À noite, eles foram à viela do 막걸리, em Samcheon-dong. Quando pediram uma chaleira de 막걸리, quase vinte pratinhos se espalharam pela mesa: polvo cozido, panquecas, caranguejo marinado, tofu com kimchi… O Minjae disse: «Aqui, a cada chaleira a mais, vêm mais petiscos. É a generosidade de Jeonju.» Logo chegou também o tio do Minjae. «Linu, aceite um copo.»',
+        choices: [
+          { text: '리누는 두 손으로 잔을 받고, 고개를 살짝 옆으로 돌려서 마셨다.', translation: 'O Linu recebeu o copo com as duas mãos e bebeu virando o rosto levemente de lado.', next: 'etiqueta' },
+          { text: '«주전자 더 시켜요! 안주를 전부 먹어 볼 거예요!»', translation: '«Pede mais chaleiras! Vou provar todos os petiscos!»', next: 'final_ressaca' },
+        ],
+      },
+      etiqueta: {
+        emoji: '🙏',
+        text: '삼촌이 흐뭇해하셨다. «어른 앞에서 고개 돌려 마시는 것까지 알아요? 한국 사람 다 됐네.» 리누도 삼촌 잔이 비자 두 손으로 막걸리를 따라 드렸다. 세 사람은 밤늦게까지 전주 이야기를 나눴지만, 술은 적당히 마셨다.',
+        translation: 'O tio ficou satisfeito. «Você sabe até virar o rosto para beber na frente dos mais velhos? Já virou coreano.» Quando o copo do tio esvaziou, o Linu também serviu o 막걸리 para ele com as duas mãos. Os três conversaram sobre Jeonju até tarde, mas beberam com moderação.',
+        choices: [{ text: '다음 날 아침, 리누는 민재와 콩나물국밥을 먹으러 남부시장에 갔다.', translation: 'Na manhã seguinte, o Linu foi com o Minjae ao Mercado Nambu comer sopa de arroz com broto de feijão.', next: 'final_bom' }],
+      },
+      final_bom: {
+        emoji: '🎉',
+        text: '뜨거운 콩나물국밥에 수란을 곁들이자 몸이 사르르 풀렸다. 민재가 물었다. «전주 어땠어?» 리누는 잠시 생각하다가 대답했다. «비빔밥 같았어. 다 다른데, 섞이니까 더 맛있더라.»',
+        translation: 'Com a sopa quente de broto de feijão e um ovo pochê, o corpo foi relaxando. O Minjae perguntou: «E aí, o que achou de Jeonju?» O Linu pensou um pouco e respondeu: «Parecido com o 비빔밥. Tudo é diferente, mas misturado fica ainda mais gostoso.»',
+        ending: { tone: 'bom', title: 'Tudo misturado', message: 'O Linu fez papel 한지, provou o 비빔밥 de Jeonju e mostrou à mesa que conhece a etiqueta com os mais velhos.' },
+      },
+      final_ressaca: {
+        emoji: '🤕',
+        text: '주전자가 다섯 개째 나오자 상다리가 휘어질 만큼 안주가 쌓였다. 리누는 끝까지 다 먹어 보겠다며 버텼지만, 다음 날 아침 머리가 깨질 것 같았다. 민재가 콩나물국밥을 내밀었다. «전주 사람들은 이걸로 해장해. 어젯밤만 빼면 완벽한 여행이었는데.»',
+        translation: 'Na quinta chaleira, havia tanto petisco que a mesa parecia que ia envergar. O Linu insistiu que ia provar tudo até o fim, mas na manhã seguinte a cabeça parecia que ia explodir. O Minjae lhe estendeu uma sopa de arroz com broto de feijão. «O pessoal de Jeonju cura a ressaca com isto. Tirando a noite de ontem, foi uma viagem perfeita.»',
+        ending: { tone: 'neutro', title: 'Uma chaleira a mais', message: 'Em Jeonju, a mesa é generosa, mas quem dita o ritmo é você: 막걸리 se bebe com calma.' },
+      },
+    },
+  },
 ];

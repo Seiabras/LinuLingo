@@ -2757,7 +2757,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
           ['지금 마트에 가는데 뭐 필요해요?', 'Estou indo ao mercado; precisa de alguma coisa?'],
           ['이 옷은 예쁜데 좀 비싸요.', 'Esta roupa é bonita, mas é um pouco cara.'],
           ['어제 그 식당에 갔는데 문을 닫았어요.', 'Ontem fui àquele restaurante, e estava fechado.'],
-          ['제 친구인데 인사하세요.', 'Este é meu amigo; diga oi para ele.'],
+          ['이쪽은 제 친구인데 한국에서 왔어요.', 'Este é meu amigo; ele veio da Coreia.'],
         ],
       },
       {
@@ -3485,7 +3485,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         text: 'Para qualquer verbo, a causativa produtiva é -게 하다: 아이를 일찍 자게 했어요 (fiz a criança dormir cedo). Ela aparece numa frase que todo mundo precisa: 기다리게 해서 죄송합니다 (desculpe tê-lo feito esperar). O primo -게 되다 diz que algo aconteceu pelas circunstâncias, não por decisão: 한국에서 일하게 되었어요 (acabei vindo trabalhar na Coreia; «surgiu a oportunidade»). É uma forma modesta de dar boas notícias.',
         examples: [
           ['오래 기다리게 해서 죄송합니다.', 'Desculpe tê-lo feito esperar tanto.'],
-          ['선생님이 학생들을 매일 일기를 쓰게 하셨어요.', 'O professor fazia os alunos escreverem um diário todo dia.'],
+          ['선생님이 학생들에게 매일 일기를 쓰게 하셨어요.', 'O professor fazia os alunos escreverem um diário todo dia.'],
           ['다음 달부터 서울에서 일하게 되었어요.', 'A partir do mês que vem, vou trabalhar em Seul.'],
         ],
       },
@@ -4492,7 +4492,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['제안은 감사하지만 이번에는 좀 어려울 것 같습니다.', 'Agradeço a proposta, mas desta vez vai ser difícil.'],
+          ['제안해 주셔서 감사하지만 이번에는 좀 어려울 것 같습니다.', 'Agradeço a proposta, mas desta vez vai ser difícil.'],
           ['선물은 마음만 받을게요.', 'Quanto ao presente, fico só com a intenção.'],
           ['더 드릴까요? 아니요, 괜찮아요.', 'Quer mais? Não, obrigado.'],
         ],
@@ -4765,7 +4765,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     sections: [
       {
         heading: 'O prefácio do 훈민정음 (1446)',
-        text: 'O documento que apresentou o hangul, 훈민정음 («os sons corretos para instruir o povo»), abre com um prefácio do rei Sejong que todo coreano estuda na escola. No original, ele usa letras que sumiram (como o ㆍ, o «ponto» de uma vogal antiga) e uma grafia de 600 anos atrás; abaixo, na versão moderna que se lê nas escolas. O dia da promulgação é feriado nacional: 한글날, 9 de outubro.',
+        text: 'O documento que apresentou o hangul, 훈민정음 («os sons corretos para instruir o povo»), abre com um prefácio do rei Sejong que todo coreano estuda na escola. No original, ele usa letras que sumiram (como o ㆍ, o «ponto» de uma vogal antiga) e uma grafia de quase 600 anos atrás; abaixo, o trecho em coreano moderno. O dia da promulgação é feriado nacional: 한글날, 9 de outubro.',
         examples: [
           ['나라의 말이 중국과 달라 문자와 서로 통하지 아니하므로', 'Como a língua do país difere da China e não se comunica com a escrita [chinesa],'],
           ['어리석은 백성이 이르고자 하는 바가 있어도 끝내 제 뜻을 펴지 못하는 사람이 많으니라.', 'muitos do povo simples, mesmo tendo o que dizer, não conseguem expressar o que pensam.'],

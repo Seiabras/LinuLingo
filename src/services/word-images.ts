@@ -23,6 +23,7 @@ export function normalizeTranslation(s: string): string {
 const clean = normalizeTranslation;
 
 /** Rótulos de registro, uso, região e classe gramatical: não mudam o sentido. */
+// prettier-ignore
 const LABELS = new Set([
   'informal', 'formal', 'mais formal', 'muito formal', 'bem informal', 'coloquial', 'gíria', 'familiar', 'carinhoso', 'vulgar', 'pejorativo',
   'literário', 'formal ou literário', 'poético', 'antiquado', 'arcaico', 'regional', 'raro', 'neologismo', 'neologismo islandês', 'provérbio',
@@ -34,6 +35,7 @@ const LABELS = new Set([
 ]);
 
 /** Palavras que, sozinhas no parêntese, só marcam a regência («ajudar (alguém)», «gostar (de)»). */
+// prettier-ignore
 const FUNCTION_WORDS = new Set([
   'a', 'o', 'as', 'os', 'um', 'uma', 'de', 'do', 'da', 'dos', 'das', 'em', 'no', 'na', 'nos', 'nas', 'com', 'para', 'pra', 'por', 'pelo', 'pela',
   'se', 'que', 'e', 'ou', 'alguém', 'algo', 'alguma', 'coisa', 'eu', 'ele', 'ela', 'nós', 'vós', 'vocês', 'eles', 'elas', 'me', 'te', 'lhe', 'lhes', 'si',
@@ -44,6 +46,7 @@ const ABBREVIATION =
   /(^|[^\p{L}])(pl|sing|perf|imperf|aux|dat|acus|ac|gen|nom|part|lit|arg|méx|m|f|n|fem|masc|subst|adj|adv|abrev|tb|etc|urug|coloq|col|amér|am|parag|esp|subj|inf|pres|pret|fut|conj|intr|tr|refl)\./u;
 
 /** Siglas e palavras estrangeiras que o português usa: «(de TV)» é sentido, não forma da palavra. */
+// prettier-ignore
 const LOANWORDS = new Set([
   'tv', 'cd', 'dvd', 'pc', 'rg', 'cnh', 'cpf', 'gps', 'sms', 'usb', 'wi-fi', 'wifi', 'internet', 'e-mail', 'email', 'chat', 'show', 'rock', 'jazz',
   'pop', 'funk', 'blog', 'app', 'web', 'site', 'download', 'upload', 'skate', 'surf', 'hip-hop', 'playlist', 'podcast', 'kit', 'ketchup', 'bacon',
@@ -75,6 +78,7 @@ const formOf = (w: string, target: string) => {
 };
 
 /** Regiões, nas notas de uso: «(Espanha: patatas fritas)», «(Cone Sul e Peru: palta)», «(Méx./Arg.)». */
+// prettier-ignore
 const REGIONS = new Set([
   'espanha', 'brasil', 'portugal', 'méxico', 'méx', 'arg', 'argentina', 'américa', 'amér', 'am', 'latina', 'latam', 'cone', 'sul', 'central',
   'peru', 'chile', 'cuba', 'porto', 'rico', 'canárias', 'colômbia', 'venezuela', 'caribe', 'urug', 'uruguai', 'parag', 'paraguai', 'galícia',
@@ -161,6 +165,7 @@ export function translationHead(s: string): string {
  * barco; quarto de dormir e 1/4): a imagem delas só vale para a tradução igual à chave, nunca como
  * alternativa de outra tradução («punição, pena» não ganha a foto da pena de ave).
  */
+// prettier-ignore
 export const AMBIGUOUS: ReadonlySet<string> = new Set([
   'pena', 'vela', 'quarto', 'presente', 'papagaio', 'caixa', 'grama', 'órgão', 'ramo', 'entrada', 'corredor', 'câncer', 'cabeça', 'botão',
   'prova', 'marca', 'vale', 'peso', 'cartão', 'sinal', 'lua', 'tinta', 'pilha', 'banco', 'manga', 'carta', 'folha', 'estação', 'conta', 'ponto',
@@ -189,11 +194,10 @@ export function makeImageLookup<T>(table: Record<string, T>, opts: { loose?: boo
       const i = key.lastIndexOf('#');
       return { k: i > 0 ? key.slice(0, i) : key, q: i > 0 ? key.slice(i) : '', v };
     });
-    // primeiro as chaves inteiras, depois as alternativas: uma chave sempre vence a alternativa de outra
-    for (const { k, q, v } of entries) {
-      add(clean(k) + q, v);
-      add(withoutNotes(k) + q, v);
-    }
+    // primeiro as chaves inteiras, depois sem as notas, depois as alternativas: uma chave sempre
+    // vence a de outra sem as notas ou a alternativa de outra, qualquer que seja a ordem da tabela
+    for (const { k, q, v } of entries) add(clean(k) + q, v);
+    for (const { k, q, v } of entries) add(withoutNotes(k) + q, v);
     // as fotos são de conceitos («cachorro / cão» serve para «cão»); as chaves dos pictogramas já
     // são as cabeças, e uma tradução inteira na lista («pipa, papagaio») vale só para ela mesma
     if (!opts.loose) for (const { k, q, v } of entries) for (const a of alternatives(k)) if (!AMBIGUOUS.has(a)) add(a + q, v);

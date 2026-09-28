@@ -32,9 +32,9 @@ writeFileSync(`${dist}/404.html`, html);
 writeFileSync(`${dist}/.nojekyll`, '');
 
 // o que vai guardado desde a instalação: tudo, menos os áudios, os contornos das regiões do mapa, a voz neural
-// e as fotos das palavras (grandes; ficam guardados quando usados pela primeira vez)
+// e as fotos e os pictogramas das palavras (as fotos são grandes, os pictogramas são muitos; ficam guardados quando usados pela primeira vez)
 const walk = (dir) => readdirSync(dir).flatMap((f) => (statSync(join(dir, f)).isDirectory() ? walk(join(dir, f)) : [join(dir, f)]));
-const skip = /\.(mp3|ogg|wav|m4a|map)$|(^|\/)(sw\.js|404\.html|\.nojekyll)$|subdivisoes|geo\/|^tts\/|fotos\/palavras\//;
+const skip = /\.(mp3|ogg|wav|m4a|map)$|(^|\/)(sw\.js|404\.html|\.nojekyll)$|subdivisoes|geo\/|^tts\/|fotos\/palavras\/|pictogramas\/palavras\//;
 const files = walk(dist)
   .map((f) => relative(dist, f).split('\\').join('/'))
   .filter((f) => !skip.test(f))

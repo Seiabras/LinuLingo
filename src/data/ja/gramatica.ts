@@ -12,7 +12,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     sections: [
       {
         heading: 'Três escritas numa frase só',
-        text: 'Uma frase japonesa comum mistura três escritas. O hiragana (ひらがな) escreve as partículas, as terminações dos verbos e as palavras nativas sem kanji. O katakana (カタカナ) escreve as palavras que vieram de fora, os nomes estrangeiros e os barulhos. Os kanji (漢字), que vieram da China, escrevem as raízes com significado: 日 (dia, sol), 人 (pessoa). Cada kana é uma sílaba (か = ka, さ = sa), então com os 46 hiragana você já consegue escrever qualquer palavra japonesa. Não há espaço entre as palavras: a troca de escrita é que ajuda o olho a separar. O japonês se escreve na horizontal, como aqui, ou na vertical, de cima para baixo e da direita para a esquerda, como nos livros e jornais. E há um presente para o brasileiro: algumas palavras vieram do português no século XVI, como パン (pão) e ボタン (botão).',
+        text: 'Uma frase japonesa comum mistura três escritas. O hiragana (ひらがな) escreve as partículas, as terminações dos verbos e as palavras nativas sem kanji. O katakana (カタカナ) escreve as palavras que vieram de fora, os nomes estrangeiros e os barulhos. Os kanji (漢字), que vieram da China, escrevem as raízes com significado: 日 (dia, sol), 人 (pessoa). Cada kana vale uma sílaba curta (か = ka, さ = sa), então com os 46 hiragana você já consegue escrever qualquer palavra japonesa. Não há espaço entre as palavras: a troca de escrita é que ajuda o olho a separar. O japonês se escreve na horizontal, como aqui, ou na vertical, de cima para baixo e da direita para a esquerda, como nos livros e jornais. E há um presente para o brasileiro: algumas palavras vieram do português no século XVI, como パン (pão) e ボタン (botão).',
         table: {
           head: ['Escrita', 'Para que serve', 'Exemplos'],
           rows: [
@@ -344,7 +344,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     sections: [
       {
         heading: 'De zero a cem',
-        text: 'Os números de um a dez são a base de tudo. O 4 e o 7 e o 9 têm duas leituras: よん ou し, なな ou しち, きゅう ou く. Na dúvida, prefira よん, なな e きゅう, que são mais claras. O し do 4 soa como 死 (morte) e o く do 9, como 苦 (sofrimento): por isso muitos hotéis e hospitais pulam o quarto 4 e ninguém dá presente em conjuntos de quatro. Daí em diante é só montar: 十一 (じゅういち) é «dez-um», 二十 (にじゅう) é «dois-dez», 九十九 (きゅうじゅうきゅう) é 99. Na frase japonesa, os números se escrevem em kanji ou em algarismos; aqui no app usamos sempre o kanji, para você aprender a leitura.',
+        text: 'Os números de um a dez são a base de tudo. O 4, o 7 e o 9 têm duas leituras: よん ou し, なな ou しち, きゅう ou く. Na dúvida, prefira よん, なな e きゅう, que são mais claras. O し do 4 soa como 死 (morte) e o く do 9, como 苦 (sofrimento): por isso muitos hotéis e hospitais pulam o quarto 4 e ninguém dá presente em conjuntos de quatro. Daí em diante é só montar: 十一 (じゅういち) é «dez-um», 二十 (にじゅう) é «dois-dez», 九十九 (きゅうじゅうきゅう) é 99. Na frase japonesa, os números se escrevem em kanji ou em algarismos; aqui no app usamos sempre o kanji, para você aprender a leitura.',
         table: {
           head: ['Número', 'Kanji', 'Leitura', 'Observação'],
           rows: [
@@ -1526,7 +1526,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'Transitivo × intransitivo: 開ける × 開く',
-        text: 'O japonês tem pares de verbos para a mesma ação: um em que alguém faz (transitivo, com を) e outro em que a coisa acontece (intransitivo, com が). ドアを開ける = abrir a porta; ドアが開く = a porta abre. O português resolve com o «se» («a porta se abriu»); o japonês troca o verbo. Há um traço cultural aqui: para acidentes, o japonês prefere o intransitivo, que conta o fato sem apontar culpado. «コップがわれた» (o copo quebrou) soa mais natural do que «I broke the cup». Com ている, o intransitivo descreve o estado: ドアが開いている, a porta está aberta.',
+        text: 'O japonês tem pares de verbos para a mesma ação: um em que alguém faz (transitivo, com を) e outro em que a coisa acontece (intransitivo, com が). ドアを開ける = abrir a porta; ドアが開く = a porta abre. O português resolve com o «se» («a porta se abriu»); o japonês troca o verbo. Há um traço cultural aqui: para acidentes, o japonês prefere o intransitivo, que conta o fato sem apontar culpado. «コップがわれた» (o copo quebrou) soa mais natural do que «コップをわった» (quebrei o copo). Com ている, o intransitivo descreve o estado: ドアが開いている, a porta está aberta.',
         table: {
           head: ['Acontece (が)', 'Alguém faz (を)', 'Português'],
           rows: [
@@ -2125,7 +2125,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       'Confundir なら e たら na ordem dos fatos: «日本へ行くなら、パスポートを取って» (antes de ir); «日本へ行ったら、おみやげを買って» (lá no Japão).',
       'Formar o ば de いい como «いければ»: é よければ.',
       'Usar もし sozinho: ele reforça, mas quem faz a condição é o たら ou o ば. «もし雨だったら».',
-      'Na dúvida, travar: たら serve em quase toda conversa do dia a dia.',
+      'Travar na hora de escolher: na dúvida, use たら, que serve em quase toda conversa do dia a dia.',
     ],
     quiz: [
       {
@@ -2708,7 +2708,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     level: 'B2.1',
     title: 'A voz passiva: 〜れる／〜られる (direta, do incômodo e respeitosa)',
     emoji: '🌧️',
-    summary: 'A passiva japonesa vai além da nossa. Além da passiva comum (先生にほめられた, fui elogiado pelo professor), existe a passiva do incômodo, que diz que algo aconteceu com você, para o seu azar: 雨にふられた (peguei chuva), 財布を盗まれた (roubaram minha carteira). E a mesma forma serve de respeito leve: 社長が来られる.',
+    summary: 'A passiva japonesa vai além da nossa. Além da passiva comum (先生にほめられた, fui elogiado pelo professor), existe a passiva do incômodo, que diz que algo aconteceu com você, para o seu azar: 雨にふられた (peguei chuva), 財布を盗まれた (roubaram minha carteira). E a mesma forma serve de respeito leve: 社長が帰られた (o presidente foi embora).',
     sections: [
       {
         heading: 'Como formar',
@@ -2755,7 +2755,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'A passiva impessoal e a passiva de respeito',
-        text: 'Na escrita e no jornal, a passiva aparece como a nossa, sem incômodo nenhum: «この寺は八世紀に建てられた» (este templo foi construído no século VIII), «オリンピックは東京で開かれた». Para autores de obras e descobertas, o agente leva によって: «「源氏物語」は紫式部によって書かれた». Com verbos de dizer e pensar, forma o impessoal: 〜と言われている (diz-se que), 〜と考えられている (acredita-se que). E a mesma forma é um keigo leve, muito usado no trabalho e nas notícias: «部長は明日の会議に出られますか» (o senhor diretor vai participar da reunião?). É menos formal que いらっしゃる e serve para quase qualquer verbo.',
+        text: 'Na escrita e no jornal, a passiva aparece como a nossa, sem incômodo nenhum: «この寺は八世紀に建てられた» (este templo foi construído no século VIII), «オリンピックは東京で開かれた». Para autores de obras e descobertas, o agente leva によって: «「源氏物語」は紫式部によって書かれた». Com verbos de dizer e pensar, forma o impessoal: 〜と言われている (diz-se que), 〜と考えられている (acredita-se que). E a mesma forma é um keigo leve, muito usado no trabalho e nas notícias: «部長はもう帰られましたか» (o senhor diretor já foi embora?). É menos formal que いらっしゃる e serve para quase qualquer verbo. Com verbos do grupo 2, ela coincide com o potencial (来られる pode ser «vem», com respeito, ou «consegue vir»), e o contexto decide.',
         table: {
           head: ['Uso', 'Exemplo', 'Português'],
           rows: [
@@ -2763,14 +2763,14 @@ export const GRAMMAR_JA: GrammarTopic[] = [
             ['autor: によって', '「源氏物語」は紫式部によって書かれた。', 'O «Genji Monogatari» foi escrito por Murasaki Shikibu.'],
             ['〜と言われている', '日本人は時間に正確だと言われている。', 'Dizem que os japoneses são pontuais.'],
             ['〜と考えられている', '原因は地震だと考えられている。', 'Acredita-se que a causa foi o terremoto.'],
-            ['respeito leve', '社長は何時に来られますか。', 'A que horas o presidente vem?'],
+            ['respeito leve', '社長はもう帰られました。', 'O presidente já foi embora.'],
           ],
         },
         examples: [
           ['この寺は八世紀に建てられました。', 'Este templo foi construído no século VIII.'],
           ['「源氏物語」は紫式部によって書かれた。', 'O «Genji Monogatari» foi escrito por Murasaki Shikibu.'],
           ['この祭りは千年以上前から続けられている。', 'Este festival é realizado há mais de mil anos.'],
-          ['部長は明日の会議に出られますか。', 'O senhor diretor vai participar da reunião amanhã?'],
+          ['部長はもう帰られましたか。', 'O senhor diretor já foi embora?'],
         ],
       },
     ],
@@ -2807,10 +2807,10 @@ export const GRAMMAR_JA: GrammarTopic[] = [
         explanation: 'Para o autor de uma obra, o agente leva によって.',
       },
       {
-        question: 'O que quer dizer «社長は何時に来られますか»?',
-        options: ['A que horas o presidente vem?', 'A que horas o presidente consegue ser trazido?', 'A que horas trouxeram o presidente?'],
-        answer: 'A que horas o presidente vem?',
-        explanation: 'Aqui 来られる é keigo leve: a passiva usada como respeito.',
+        question: 'O que quer dizer «先生は毎朝新聞を読まれますか»?',
+        options: ['O professor lê jornal todas as manhãs?', 'O professor é lido pelo jornal todas as manhãs?', 'O jornal do professor é lido todas as manhãs?'],
+        answer: 'O professor lê jornal todas as manhãs?',
+        explanation: 'Aqui 読まれる é keigo leve: a forma passiva usada como respeito ao professor, que é quem lê.',
       },
     ],
   },
@@ -3223,9 +3223,9 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         question: 'Qual é o padrão de 雨 (chuva) em Tóquio?',
-        options: ['あめ ●○', 'あめ ○●'],
+        options: ['あめ ●○', 'あめ ○●', 'あめ ●●'],
         answer: 'あめ ●○',
-        explanation: '雨 é alto-baixo (atamadaka). 飴 (bala) é baixo-alto e plano.',
+        explanation: '雨 é alto-baixo (atamadaka). 飴 (bala) é baixo-alto e plano. E ●● não existe: em Tóquio, a primeira e a segunda mora têm sempre alturas diferentes.',
       },
       {
         question: 'Onde 橋 (ponte) e 端 (beirada) se diferenciam?',
@@ -3930,7 +3930,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     sections: [
       {
         heading: 'Kansai-ben: o dialeto que todo japonês entende',
-        text: 'O dialeto de Kansai é o que o Brasil conhece como o «jeito de falar de Osaka»: a terra da comédia, dos comerciantes e da comida de rua. É também o único dialeto que se ouve o tempo todo na TV nacional, porque os comediantes de Osaka dominam os programas. Na dupla de 漫才 (manzai), um faz o bobo (ボケ) e o outro corrige com um tapinha e um «なんでやねん！» (mas por quê?!). A cópula だ vira や, o negativo ない vira へん, e muita palavra muda. O acento também é outro. Kyoto tem uma fala mais suave e famosa pela indireta elegante, com o honorífico 〜はる (先生が来はる) e o «seja bem-vindo» おいでやす.',
+        text: 'O dialeto de Kansai é o «jeito de falar de Osaka» que todo japonês reconhece na hora: Osaka é a terra da comédia, dos comerciantes e da comida de rua. É também o único dialeto que se ouve o tempo todo na TV nacional, porque os comediantes de Osaka dominam os programas. Na dupla de 漫才 (manzai), um faz o bobo (ボケ) e o outro corrige com um tapinha e um «なんでやねん！» (mas por quê?!). A cópula だ vira や, o negativo ない vira へん, e muita palavra muda. O acento também é outro. Kyoto tem uma fala mais suave e famosa pela indireta elegante, com o honorífico 〜はる (先生が来はる) e o «seja bem-vindo» おいでやす.',
         table: {
           head: ['Padrão', 'Kansai', 'Português'],
           rows: [
@@ -4315,7 +4315,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['祇園精舎の鐘の声、諸行無常の響きあり。', 'O som do sino do mosteiro de Gion ecoa a impermanência de todas as coisas. («Heike Monogatari», século XIII)'],
+          ['祇園精舎の鐘の声、諸行無常の響きあり。', 'O som do sino do mosteiro de Gion Shōja (o Jetavana da Índia, onde Buda pregou) ecoa a impermanência de todas as coisas. («Heike Monogatari», século XIII)'],
           ['ゆく河の流れは絶えずして、しかももとの水にあらず。', 'O fluxo do rio que corre não cessa, e no entanto nunca é a mesma água. (Kamo no Chōmei, «Hōjōki», 1212)'],
           ['月日は百代の過客にして、行きかふ年もまた旅人なり。', 'Os meses e os dias são viajantes da eternidade, e os anos que vão e vêm também são viajantes. (Bashō, «Oku no Hosomichi»; 百代 = はくたい, 過客 = かかく)'],
         ],

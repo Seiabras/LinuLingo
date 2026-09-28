@@ -17,6 +17,7 @@
 // branco, com margem), em WebP, desenhada pelo Chromium, em assets/pictogramas/palavras/, e a lista
 // vai para src/data/pictogramas-palavras.ts. As imagens não entram no pacote offline da web (ficam
 // guardadas quando aparecem pela primeira vez; ver scripts/preparar-pages.mjs).
+import { Buffer } from 'node:buffer';
 import { execFileSync } from 'node:child_process';
 import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, unlinkSync, writeFileSync } from 'node:fs';
 import { homedir } from 'node:os';
@@ -90,13 +91,17 @@ for (const { v } of all) {
     if (key) {
       kind = 'picto';
       used.set(key, table[key]);
-    } else if (excluded.size && plainLookup(v.word_native, { pos: v.part_of_speech, target: v.word_target })) relevantExcluded.add(normalizeTranslation(v.word_native));
+    } else if (excluded.size && plainLookup(v.word_native, { pos: v.part_of_speech, target: v.word_target }))
+      relevantExcluded.add(normalizeTranslation(v.word_native));
   }
   count[kind]++;
   heads[kind].add(head);
 }
 // uma cabeça conta uma vez só, pelo melhor que ela tem em alguma palavra
-for (const h of heads.photo) (heads.picto.delete(h), heads.emoji.delete(h));
+for (const h of heads.photo) {
+  heads.picto.delete(h);
+  heads.emoji.delete(h);
+}
 for (const h of heads.picto) heads.emoji.delete(h);
 const total = all.length;
 const pct = (n) => `${((100 * n) / total).toFixed(1)}%`;
@@ -112,7 +117,10 @@ if (REPORT_ONLY) process.exit(0);
 const fileOf = new Map();
 const taken = new Set();
 for (const s of symbols) {
-  let base = s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  let base = s
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
   while (taken.has(base)) base += '-2';
   taken.add(base);
   fileOf.set(s, `${base}.webp`);
@@ -198,7 +206,10 @@ ${keys.map((k) => `  ${q(k)}: p(${q(used.get(k))}),`).join('\n')}
 
 /** Traduções que não usam o pictograma da cabeça (outro sentido da palavra). */
 export const PICTO_EXCLUDED: ReadonlySet<string> = new Set([
-${[...relevantExcluded].sort((a, b) => a.localeCompare(b, 'pt')).map((t) => `  ${q(t)},`).join('\n')}
+${[...relevantExcluded]
+  .sort((a, b) => a.localeCompare(b, 'pt'))
+  .map((t) => `  ${q(t)},`)
+  .join('\n')}
 ]);
 `;
 writeFileSync(OUT_TS, out);

@@ -1030,4 +1030,570 @@ export const STORIES_KO_2: StorySeed[] = [
       },
     },
   },
+  // ───────────────────────── B2.3 ─────────────────────────
+  {
+    id: 'ko-h31',
+    level: 'B2.3',
+    cefr: 'B2',
+    title: '댓글 천 개의 무게',
+    emoji: '🖋️',
+    summary: 'Assistente num estúdio de webtoon em Bucheon, o Linu vive a noite de fechamento de um capítulo, entre rolagem vertical, uma proposta de adaptação para série e o pulso machucado da autora.',
+    cultural_context:
+      'O 웹툰 nasceu na Coreia no começo dos anos 2000, com os portais de internet, e foi pensado para a tela: lê-se rolando para baixo, e o espaço em branco entre os quadros marca o ritmo da história. Os capítulos saem toda semana, muitas vezes com 60 a 80 quadros, o que exige assistentes e ferramentas como modelos 3D para os cenários; a pressão do 마감 e as lesões por esforço repetitivo levaram as plataformas a adotar pausas regulares para os autores. Muitos sucessos viraram séries e filmes, como «Misaeng» (2014). Bucheon, na Grande Seul, é a cidade dos quadrinhos: lá ficam a agência nacional de quadrinhos e animação, o Museu Coreano de Quadrinhos, estúdios para autores e um festival internacional anual.',
+    start: 'start',
+    glossary: [
+      ['웹툰 / 연재', 'webtoon, quadrinho digital de rolagem vertical / publicação em capítulos'],
+      ['마감 / 원고', 'prazo final / os originais (o capítulo pronto)'],
+      ['콘티 · 선화 · 채색', 'roteiro desenhado · arte-final em linha · colorização'],
+      ['여백', 'espaço em branco'],
+      ['휴재 / 완결', 'pausa na publicação / fim da série'],
+      ['판권', 'direitos de adaptação'],
+      ['악플 / 선플', 'comentário maldoso / comentário gentil'],
+      ['읽는 반면', 'ao passo que se lê… (-는 반면: contraste)'],
+      ['떨어지기 마련이다', 'é natural que caia, sempre acaba caindo (-기 마련이다)'],
+      ['숨을 참게 되는 셈이다', 'na prática, acaba prendendo a respiração (-는 셈이다)'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🗓️',
+        text: '부천 상동의 웹툰융합센터, 작은 작업실 벽에는 이번 주 원고 일정표가 붙어 있었다. 목요일 밤 열한 시 마감. 리누는 이번 달부터 웹툰 ‘밤의 펭귄 편의점’을 연재하는 서하늘 작가 밑에서 어시스턴트로 일하고 있다. 작가가 모니터 두 대를 번갈아 보며 말했다. “콘티, 선화, 채색, 배경, 식자. 한 회에 칠십 컷 가까이 되니까 오늘은 밥 먹을 시간도 없을 거야.”',
+        translation: 'No centro de webtoon de Sang-dong, em Bucheon, a parede de um pequeno estúdio exibia o cronograma dos originais da semana. Prazo: quinta, onze da noite. Desde o começo do mês, o Linu trabalha como assistente da autora Seo Haneul, que publica o webtoon «A Loja de Conveniência Noturna do Pinguim». Olhando alternadamente para os dois monitores, ela disse: «Storyboard, arte-final, cor, cenário, letreiramento. São quase setenta quadros por capítulo, então hoje não vai dar tempo nem de comer.»',
+        choices: [
+          { text: '“작가님, 세로로 내려 읽는 웹툰은 컷을 어떻게 나누세요?”', translation: '«Autora, num webtoon, que se lê rolando para baixo, como a senhora divide os quadros?»', next: 'yeonchul' },
+          { text: '리누는 대답 대신 바로 배경 채색 파일을 열었다.', translation: 'Em vez de responder, o Linu abriu logo o arquivo de colorização dos cenários.', next: 'chaesaek' },
+        ],
+      },
+      yeonchul: {
+        emoji: '📱',
+        text: '작가는 태블릿 펜을 내려놓고 화면을 천천히 내려 보였다. “종이 만화는 페이지를 넘기며 읽는 반면, 웹툰은 손가락으로 내리면서 읽잖아. 그래서 컷과 컷 사이의 여백이 곧 시간이야.” 주인공이 편의점 문을 여는 장면 앞에는 하얀 여백이 길게 이어져 있었다. “여백이 길수록 독자는 숨을 참게 되는 셈이지. 그러다 손가락을 내리면, 쾅.”',
+        translation: 'A autora largou a caneta do tablet e foi rolando a tela devagar: «O quadrinho de papel a gente lê virando a página, ao passo que o webtoon a gente lê descendo com o dedo. Por isso o espaço em branco entre um quadro e outro é o próprio tempo.» Antes da cena em que a protagonista abre a porta da loja, havia um longo espaço branco. «Quanto mais longo o branco, mais o leitor, na prática, prende a respiração. Aí ele desce o dedo e… bum.»',
+        choices: [
+          { text: '리누는 감탄하며 배경 작업을 시작했다.', translation: 'Impressionado, o Linu começou a trabalhar nos cenários.', next: 'chaesaek' },
+          {
+            text: '리누는 긴 여백이 쓸데없으니 줄이자고 제안했다.',
+            translation: 'O Linu sugeriu cortar o espaço em branco comprido, por ser inútil.',
+            wrong: 'A autora explicou que «컷과 컷 사이의 여백이 곧 시간이야»: o espaço em branco entre os quadros É o tempo da narrativa, e «여백이 길수록 독자는 숨을 참게 되는 셈» — quanto mais longo, mais o leitor prende a respiração. Cortá-lo mataria o suspense.',
+          },
+        ],
+      },
+      chaesaek: {
+        emoji: '🎨',
+        text: '리누가 맡은 일은 밤의 편의점 배경에 색을 입히는 것이었다. 옆자리의 선배 어시스턴트 민재는 삼차원 모델로 편의점 진열대를 만들어 두었다가, 필요한 각도로 돌려 가며 선을 땄다. “손으로 다 그리면 일주일에 한 회는 절대 못 맞춰. 대신 사람 얼굴은 무조건 작가님이 직접 그리셔.” 저녁 일곱 시쯤, 작가의 휴대폰에 메일 알림이 떴다.',
+        translation: 'O trabalho do Linu era dar cor aos cenários da loja de conveniência à noite. Na mesa ao lado, o assistente veterano Minjae tinha montado as prateleiras da loja num modelo 3D e as girava no ângulo necessário para decalcar as linhas. «Se for desenhar tudo à mão, não dá de jeito nenhum para fechar um capítulo por semana. Mas rosto de gente é sempre a autora que desenha.» Lá pelas sete da noite, apareceu uma notificação de e-mail no celular da autora.',
+        choices: [
+          { text: '리누는 작가의 표정이 바뀌는 것을 보고 무슨 일인지 여쭤보았다.', translation: 'Vendo a expressão da autora mudar, o Linu perguntou o que tinha acontecido.', next: 'pangwon' },
+        ],
+      },
+      pangwon: {
+        emoji: '🎬',
+        text: '“드라마 제작사에서 판권 문의가 왔어!” 작업실이 순식간에 떠들썩해졌다. 민재는 ‘미생’도 웹툰에서 시작해서 드라마가 되지 않았느냐며 들떠 있었다. 하지만 작가는 오히려 입술을 깨물었다. “이럴수록 더 잘 그려야 해. 지금 연재가 흔들리면 다 끝이야.” 작가는 다시 펜을 잡았지만, 오른쪽 손목에 붙인 파스가 리누의 눈에 들어왔다.',
+        translation: '«Uma produtora de séries perguntou pelos direitos de adaptação!» O estúdio virou uma festa num instante. O Minjae, eufórico, lembrou que «Misaeng» também começou como webtoon e virou série. Mas a autora, ao contrário, mordeu os lábios: «É justamente agora que eu tenho que desenhar melhor. Se a publicação vacilar agora, acabou tudo.» Ela pegou de novo a caneta, mas o Linu reparou no emplastro colado no pulso direito dela.',
+        choices: [
+          { text: '리누는 작가에게 손목이 괜찮으신지 조심스럽게 여쭤보았다.', translation: 'O Linu perguntou, com cuidado, se o pulso dela estava bem.', next: 'sonmok' },
+        ],
+      },
+      sonmok: {
+        emoji: '🩹',
+        text: '작가는 잠시 망설이다가 손목을 보여 주었다. 손목이 퉁퉁 부어 있었다. “이 년 동안 한 주도 안 쉬었거든. 병원에서는 쉬라는데, 휴재 공지를 올리면 별점이 떨어지기 마련이고, 독자들이 떠날까 봐 무서워.” 민재가 말없이 모니터를 돌렸다. 지난주 회차 아래에 댓글이 천 개 넘게 달려 있었다.',
+        translation: 'A autora hesitou um pouco e mostrou o pulso. Estava bem inchado. «Faz dois anos que eu não paro uma semana sequer. O médico mandou descansar, mas, quando se publica aviso de pausa, a nota sempre acaba caindo, e eu tenho medo de os leitores irem embora.» O Minjae, calado, virou o monitor. Embaixo do capítulo da semana anterior havia mais de mil comentários.',
+        choices: [
+          { text: '리누는 댓글을 함께 읽어 보자고 했다.', translation: 'O Linu propôs lerem os comentários juntos.', next: 'daetgeul' },
+          { text: '리누는 아무 말도 하지 못하고 배경 작업으로 돌아갔다.', translation: 'O Linu não conseguiu dizer nada e voltou para os cenários.', next: 'final_neutro' },
+        ],
+      },
+      daetgeul: {
+        emoji: '💬',
+        text: '맨 위의 베스트 댓글은 짧았다. “점장 손목에 파스 그려 넣으신 거 봤어요. 작가님 이번 주는 쉬셔도 돼요. 우리 기다릴 수 있어요.” 공감이 이만 개가 넘었다. 물론 “요즘 전개가 너무 늘어진다”는 날카로운 댓글도 있었다. 작가는 두 댓글을 한참 바라보았다. “웃기지. 나는 악플 하나 때문에 밤을 새우는데, 사람들은 내가 몰래 그려 넣은 파스까지 보고 있었네.”',
+        translation: 'O comentário mais curtido, no topo, era curto: «Vi que a senhora desenhou um emplastro no pulso do gerente. Autora, pode descansar esta semana. A gente consegue esperar.» Tinha mais de vinte mil curtidas. Claro que havia também comentários afiados, como «ultimamente a história está se arrastando demais». A autora ficou um bom tempo olhando os dois. «Engraçado. Eu passo a noite em claro por causa de um comentário maldoso, e as pessoas estavam reparando até no emplastro que eu desenhei escondido.»',
+        choices: [
+          { text: '리누는 이번 회를 끝내고 다음 주에 쉬자고 말씀드렸다.', translation: 'O Linu propôs terminar este capítulo e parar na semana seguinte.', next: 'hyujae' },
+        ],
+      },
+      hyujae: {
+        emoji: '⏸️',
+        text: '“휴재한다고 연재가 끝나는 건 아니잖아요.” 리누의 말에 민재도 거들었다. “요즘은 플랫폼에서도 작가들이 정기적으로 쉴 수 있게 하는 경우가 많대요. 몸이 망가지면 판권이고 뭐고 다 소용없어요.” 작가는 한참 손목을 주무르다가 입을 열었다. “그럼 오늘 원고는 끝까지 하고, 다음 주 한 회만 쉬자. 대신 공지는 리누가 같이 써 줘.”',
+        translation: '«Fazer uma pausa não quer dizer que a série acabou.» O Minjae reforçou o que o Linu disse: «Dizem que hoje até as plataformas deixam os autores descansarem regularmente. Se o corpo quebrar, direito de adaptação e tudo mais não servem para nada.» A autora massageou o pulso por um bom tempo e então falou: «Então hoje a gente fecha o capítulo até o fim e para só um capítulo, na semana que vem. Mas o aviso você escreve comigo, Linu.»',
+        choices: [
+          { text: '리누는 공지 문구를 쓰기 시작했다.', translation: 'O Linu começou a escrever o texto do aviso.', next: 'gongji' },
+          {
+            text: '리누는 작가가 연재를 완전히 그만두기로 했다고 이해했다.',
+            translation: 'O Linu entendeu que a autora tinha decidido encerrar a série de vez.',
+            wrong: 'A autora disse «다음 주 한 회만 쉬자»: vão parar SÓ UM capítulo, na semana que vem. E o próprio Linu lembrou: «휴재한다고 연재가 끝나는 건 아니잖아요» — 휴재 é uma pausa, não o fim da série (que seria 완결).',
+          },
+        ],
+      },
+      gongji: {
+        emoji: '📢',
+        text: '리누와 작가는 공지문을 함께 다듬었다. “독자 여러분께 알려 드립니다. ‘밤의 펭귄 편의점’은 작가의 건강 회복을 위해 다음 주 한 회 쉬어 갑니다. 기다려 주시는 마음에 늘 감사드리며, 더 좋은 이야기로 돌아오겠습니다.” 작가는 공지 이미지 한쪽에 손목에 붕대를 감은 펭귄 점장을 그려 넣었다.',
+        translation: 'O Linu e a autora lapidaram o aviso juntos: «Comunicamos aos leitores: para que a autora se recupere, «A Loja de Conveniência Noturna do Pinguim» fará uma pausa de um capítulo na semana que vem. Agradecemos sempre a paciência de vocês e voltaremos com uma história ainda melhor.» Num canto da imagem do aviso, a autora desenhou o gerente pinguim com o pulso enfaixado.',
+        choices: [
+          { text: '밤 열 시 오십 분, 리누는 원고와 공지를 함께 올렸다.', translation: 'Às dez e cinquenta da noite, o Linu subiu o capítulo e o aviso juntos.', next: 'final_bom' },
+        ],
+      },
+      final_bom: {
+        emoji: '🌃',
+        text: '자정이 지나 새 회차가 공개되자 댓글이 쏟아졌다. “푹 쉬고 오세요!”, “붕대 감은 점장 너무 귀여워요”, “드라마 되면 꼭 볼게요.” 별점은 떨어지기는커녕 오히려 올랐다. 작가는 오랜만에 태블릿을 끄고 기지개를 켰다. “한 주 쉬는 게 이렇게 어려운 일이었네.” 리누는 창밖의 부천 야경을 바라보며, 이야기를 오래 만드는 힘은 결국 사람을 아끼는 데서 나온다고 생각했다.',
+        translation: 'Passada a meia-noite, quando o capítulo novo saiu, choveram comentários: «Descanse bastante!», «O gerente enfaixado é fofo demais», «Se virar série, eu assisto com certeza». A nota, em vez de cair, até subiu. A autora desligou o tablet, coisa que não fazia havia tempo, e se espreguiçou: «Quem diria que parar uma semana era tão difícil.» Olhando as luzes de Bucheon pela janela, o Linu pensou que a força para contar uma história por muito tempo, no fim, vem de cuidar das pessoas.',
+        ending: { tone: 'bom', title: 'Pausa aplaudida', message: 'O Linu entendeu a rolagem do webtoon, leu os comentários com a autora e ajudou a escrever um 휴재 que os leitores aplaudiram.' },
+      },
+      final_neutro: {
+        emoji: '🥀',
+        text: '그날 밤 원고는 겨우 마감에 맞춰 올라갔다. 그러나 이 주 뒤, 작가의 손목은 펜을 쥘 수 없을 만큼 나빠졌다. 결국 ‘밤의 펭귄 편의점’은 한 회가 아니라 석 달 동안 쉬게 되었고, 드라마 판권 이야기도 흐지부지되었다. 리누는 그날 밤 댓글을 함께 읽자고 말하지 못한 것을 두고두고 후회했다.',
+        translation: 'Naquela noite, o capítulo subiu em cima do prazo. Mas, duas semanas depois, o pulso da autora piorou a ponto de ela não conseguir segurar a caneta. No fim, «A Loja de Conveniência Noturna do Pinguim» parou não por um capítulo, mas por três meses, e a conversa sobre a série foi morrendo. O Linu se arrependeu por muito tempo de não ter proposto, naquela noite, lerem os comentários juntos.',
+        ending: { tone: 'neutro', title: 'Três meses de pausa', message: 'Às vezes o comentário que importa é o que diz «pode descansar». Uma semana de 휴재 teria evitado três meses.' },
+      },
+    },
+  },
+  {
+    id: 'ko-h32',
+    level: 'B2.3',
+    cefr: 'B2',
+    title: '문경새재의 보조 출연자',
+    emoji: '🎬',
+    summary: 'No cenário de Mungyeong Saejae, o Linu vira figurante de uma série de época, aprende a falar como no tempo de Joseon e ganha uma fala de última hora.',
+    cultural_context:
+      'O 사극, a série de época, é um dos gêneros mais queridos da TV coreana e tem língua própria: terminações arcaicas como «-옵니다» para o rei, o 하오체 («그렇소», «가시오») entre nobres, o 하게체 («자네, 이리 오게») para inferiores, e pronomes de humildade como 소인, 소녀 e 쇤네. O cenário aberto de Mungyeong Saejae, construído em 2000 para uma grande série histórica, reproduz palácio, casas de telha, casas de palha e a rua do mercado, e já recebeu dezenas de produções. Fica ao pé do passo de Saejae (조령), no antigo caminho entre Hanyang (Seul) e o sudeste: os candidatos ao exame do governo preferiam esse passo porque, dizia-se, quem cruzasse o Chupungnyeong «cairia como folha no vento de outono» e quem cruzasse o Jungnyeong «escorregaria». As filmagens coreanas são famosas pelas longas esperas, pelo 밥차 (o caminhão de comida) e pelo 쪽대본, o roteiro que chega em páginas soltas no próprio dia.',
+    start: 'start',
+    glossary: [
+      ['사극', 'série ou filme de época'],
+      ['보조 출연자', 'figurante (a palavra oficial para «엑스트라»)'],
+      ['쪽대본', 'página de roteiro entregue em cima da hora'],
+      ['전하 / 나으리', 'Vossa Majestade (ao rei) / senhor (a um oficial ou nobre)'],
+      ['아니 되옵니다', 'não pode ser, Majestade («-옵니다»: respeito máximo, arcaico)'],
+      ['그렇소 / 가시오', 'é verdade / vá (하오체, dos nobres entre si)'],
+      ['소인 / 소녀 / 쇤네', '«este humilde» (homem) / «esta humilde» (moça) / «este servo»'],
+      ['성은이 망극하옵니다', 'a graça de Vossa Majestade não tem limites (agradecimento ao rei)'],
+      ['게 섰거라', 'pare aí! (o grito do guarda nas séries de época)'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🌫️',
+        text: '새벽 다섯 시, 문경새재 오픈세트장은 안개에 잠겨 있었다. 분장 천막 앞에는 갓을 쓴 양반, 치마를 입은 궁녀, 창을 든 포졸들이 줄지어 서 있었다. 리누는 사극의 보조 출연자로 뽑혀 오늘 하루 검은 전립을 쓴 포졸이 되었다. 조감독이 확성기를 들고 외쳤다. “오늘은 포도청 장면이랑 임금님 행차 장면 찍습니다! 보조 출연자분들은 대기하시다가 부르면 바로 오세요!” 옆에 선 김 씨 아저씨가 웃었다. “대기가 반이야. 사극은 기다리다 끝나는 날도 많아.”',
+        translation: 'Cinco da manhã: o cenário aberto de Mungyeong Saejae estava mergulhado na neblina. Na frente da tenda de maquiagem, faziam fila nobres de chapéu 갓, damas da corte de saia longa e guardas com lança. O Linu tinha sido escolhido como figurante de uma série de época e, naquele dia, era um guarda de chapéu preto. O assistente de direção gritou no megafone: «Hoje gravamos a cena da delegacia e o cortejo do rei! Figurantes, aguardem e, quando chamarmos, venham na hora!» O senhor Kim, ao lado, riu: «Metade é espera. Em série de época, tem dia que acaba só esperando.»',
+        choices: [
+          { text: '리누는 김 씨 아저씨에게 사극 말투를 가르쳐 달라고 했다.', translation: 'O Linu pediu ao senhor Kim que o ensinasse a falar como nas séries de época.', next: 'malt' },
+          { text: '리누는 대기하는 동안 세트장을 둘러보기로 했다.', translation: 'O Linu resolveu dar uma volta pelo cenário enquanto esperava.', next: 'seteu' },
+        ],
+      },
+      seteu: {
+        emoji: '🏯',
+        text: '세트장 안에는 궁궐의 정문과 기와집, 초가집, 저잣거리가 조선 시대 그대로 재현되어 있었다. 안내판에 따르면 이곳은 이천 년에 한 방송사의 대하드라마를 찍기 위해 지어졌고, 그 뒤로 수많은 사극이 이곳을 거쳐 갔다. 세트장 뒤로는 옛 선비들이 과거를 보러 한양으로 가던 새재 고갯길이 이어져 있었다. 돌아오는 길에 김 씨 아저씨가 말했다. “옛날 선비들은 추풍령을 넘으면 추풍낙엽처럼 떨어지고, 죽령을 넘으면 죽 미끄러진다고 해서 일부러 이 길로 다녔대.”',
+        translation: 'Dentro do cenário, o portão do palácio, as casas de telha, as casas de palha e a rua do mercado estavam reproduzidos tal como na era Joseon. Segundo uma placa, o lugar foi construído em 2000 para gravar uma grande série histórica de uma emissora, e desde então inúmeras séries de época passaram por ali. Atrás do cenário seguia a trilha do passo de Saejae, por onde os letrados de antigamente iam a Hanyang prestar o exame do governo. Na volta, o senhor Kim contou: «Dizem que os letrados de antigamente evitavam o Chupungnyeong, porque quem passava por lá caía no exame como folha no vento de outono, e o Jungnyeong, porque ali se escorregava; por isso vinham de propósito por este caminho.»',
+        choices: [
+          { text: '리누는 웃으며 김 씨 아저씨에게 사극 말투를 물었다.', translation: 'O Linu riu e perguntou ao senhor Kim sobre o jeito de falar das séries de época.', next: 'malt' },
+        ],
+      },
+      malt: {
+        emoji: '📜',
+        text: '김 씨 아저씨는 이십 년 동안 사극에만 수백 번 나온 베테랑이었다. “사극 말은 누구한테 하느냐가 제일 중요해. 임금님께는 ‘아니 되옵니다, 전하’처럼 ‘옵니다’를 쓰고, 양반끼리는 ‘그렇소, 어디 가시오?’ 하고 끝을 ‘오’로 맺지. 아랫사람한테는 ‘자네, 이리 오게’나 ‘게 섰거라’ 하는 거고.” 자기를 낮출 때는 남자는 소인, 젊은 여자는 소녀, 종은 쇤네라고 한다고 했다.',
+        translation: 'O senhor Kim era um veterano que em vinte anos tinha aparecido em centenas de séries de época. «Na fala de época, o mais importante é com quem se fala. Para o rei se usa «옵니다», como em «아니 되옵니다, 전하» (não pode ser, Majestade); entre nobres se termina em «오», como em «그렇소, 어디 가시오?» (é verdade; aonde vai?). Para os de baixo é «자네, 이리 오게» (você, venha cá) ou «게 섰거라» (pare aí!).» E, para se rebaixar, explicou, o homem diz 소인, a moça diz 소녀 e o servo diz 쇤네.',
+        choices: [
+          { text: '리누는 “성은이 망극하옵니다”를 소리 내어 연습했다.', translation: 'O Linu treinou em voz alta: «성은이 망극하옵니다».', next: 'yeonseup' },
+          {
+            text: '리누는 임금님을 만나면 “전하, 어디 가시오?”라고 인사하겠다고 했다.',
+            translation: 'O Linu disse que, se encontrasse o rei, ia cumprimentá-lo com «Majestade, aonde vai?» em 하오체.',
+            wrong: 'O senhor Kim explicou que o fim em «오» («그렇소, 어디 가시오?») é o jeito de os nobres falarem ENTRE SI. Para o rei se usa «옵니다», como em «아니 되옵니다, 전하». Falar com o rei de igual para igual, numa série de época, é escândalo na corte!',
+          },
+        ],
+      },
+      yeonseup: {
+        emoji: '📄',
+        text: '“성은이 망극하옵니다!” 리누가 몇 번 따라 하자 김 씨 아저씨가 고개를 끄덕였다. “임금님 은혜가 끝이 없다는 뜻이야. 사극에서 제일 많이 나오는 말이지.” 그때 조감독이 헐레벌떡 뛰어왔다. 대사가 한 줄 있는 포졸 역 배우가 길이 막혀서 못 온다는 것이다. 조감독은 방금 인쇄한 쪽대본을 리누의 날개에 쥐여 주었다. “리누 씨, 이 대사 한 줄 해 볼래요? ‘나으리, 수상한 놈이 저 고개로 달아났사옵니다!’”',
+        translation: '«성은이 망극하옵니다!» Depois de o Linu repetir algumas vezes, o senhor Kim aprovou: «Quer dizer que a bondade do rei não tem fim. É a frase que mais aparece nas séries de época.» Nisso, o assistente de direção veio correndo, esbaforido: o ator que fazia um guarda com uma fala tinha ficado preso no trânsito e não ia chegar. Ele enfiou na asa do Linu uma página de roteiro recém-impressa: «Linu, topa fazer essa fala? ‘Senhor, um sujeito suspeito fugiu por aquele passo!’»',
+        choices: [
+          { text: '리누는 떨리지만 해 보겠다고 대답했다.', translation: 'Nervoso, o Linu respondeu que ia tentar.', next: 'daesa' },
+          { text: '리누는 너무 떨려서 못 하겠다고 사양했다.', translation: 'O Linu recusou, nervoso demais para fazer.', next: 'geojeol' },
+        ],
+      },
+      geojeol: {
+        emoji: '🙈',
+        text: '대사는 옆에 있던 대학생 보조 출연자에게 돌아갔다. 그 학생은 두 번 만에 오케이를 받았고, 주연 배우와 사진까지 찍었다. 리누는 천막 아래에서 하루 종일 대기하다가, 해 질 녘 행차 장면에서 뒷모습으로 잠깐 나왔다. 몇 달 뒤 방송을 보던 리누는 화면 구석의 검은 전립 하나를 가리키며 중얼거렸다. “저게 나야. 아마도.”',
+        translation: 'A fala ficou com um figurante universitário que estava ao lado. O rapaz acertou na segunda tomada e ainda tirou foto com o ator principal. O Linu passou o dia inteiro esperando debaixo da tenda e, no cortejo do fim da tarde, apareceu rapidinho, de costas. Meses depois, vendo o episódio, o Linu apontou um chapéu preto no canto da tela e murmurou: «Aquele sou eu. Acho.»',
+        ending: { tone: 'neutro', title: 'Figurante de costas', message: 'O Linu aprendeu a fala de Joseon, mas deixou a chance passar. No set, a coragem também faz parte do figurino.' },
+      },
+      daesa: {
+        emoji: '🎥',
+        text: '포도청 마당에 카메라 세 대가 놓였다. 포도대장 역을 맡은 주연 배우 강도윤이 말 위에 앉아 리누를 내려다보았다. 조감독이 외쳤다. “레디, 액션!” 리누는 숨을 크게 들이마셨다.',
+        translation: 'No pátio da delegacia de Joseon, três câmeras foram posicionadas. O ator principal, Kang Doyun, que fazia o chefe de polícia, olhava o Linu de cima do cavalo. O assistente de direção gritou: «Preparar… ação!» O Linu encheu o peito de ar.',
+        choices: [
+          { text: '“나으리, 수상한 놈이 저 고개로 달아났사옵니다!”', translation: '«Senhor, um sujeito suspeito fugiu por aquele passo!» (em fala de época)', next: 'ok_take' },
+          { text: '“나으리, 수상한 사람이 저쪽으로 도망갔어요!”', translation: '«Senhor, uma pessoa suspeita fugiu para lá!» (em 해요체 de hoje)', next: 'ng_take' },
+        ],
+      },
+      ng_take: {
+        emoji: '🤦',
+        text: '“컷!” 조감독이 이마를 짚었다. “리누 씨, 지금 조선 시대예요. ‘도망갔어요’는 편의점 알바 말투고요.” 촬영장에 웃음이 터졌다. 김 씨 아저씨가 멀리서 입 모양으로 알려 주었다. 달, 아, 났, 사, 옵, 니, 다. 주연 배우도 웃으며 말했다. “괜찮아요. 저도 첫 사극 때 ‘전하, 진짜요?’ 했다가 엄청 혼났어요.”',
+        translation: '«Corta!» O assistente de direção pôs a mão na testa: «Linu, estamos na era Joseon. «도망갔어요» é jeito de falar de atendente de loja de conveniência.» O set explodiu em risadas. De longe, o senhor Kim soletrou só com a boca: 달, 아, 났, 사, 옵, 니, 다. O ator principal também riu: «Tudo bem. Na minha primeira série de época, eu disse «Majestade, sério?» e levei uma bronca enorme.»',
+        choices: [
+          { text: '리누는 다시 자세를 잡고 대사를 외쳤다.', translation: 'O Linu se ajeitou de novo e gritou a fala.', next: 'ok_take' },
+        ],
+      },
+      ok_take: {
+        emoji: '🐎',
+        text: '“나으리, 수상한 놈이 저 고개로 달아났사옵니다!” 리누의 목소리가 세트장에 쩌렁쩌렁 울렸다. 주연 배우가 말고삐를 당기며 외쳤다. “여봐라, 저놈을 당장 쫓아라!” 잠시 조용하더니 조감독의 목소리가 들렸다. “오케이! 좋아요!” 주연 배우가 말에서 내려 리누에게 다가왔다. “발음이 저보다 낫네요. 사극 처음 맞아요?”',
+        translation: '«Senhor, um sujeito suspeito fugiu por aquele passo!» A voz do Linu ressoou pelo cenário inteiro. O ator principal puxou as rédeas e gritou: «Ó de lá! Persigam aquele sujeito agora!» Fez-se um breve silêncio, e então veio a voz do assistente de direção: «Valeu! Ótimo!» O ator desceu do cavalo e foi até o Linu: «Sua pronúncia é melhor que a minha. É mesmo sua primeira série de época?»',
+        choices: [
+          { text: '리누는 쑥스러워하며 김 씨 아저씨 덕분이라고 대답했다.', translation: 'Sem graça, o Linu respondeu que era tudo graças ao senhor Kim.', next: 'bapcha' },
+        ],
+      },
+      bapcha: {
+        emoji: '🍱',
+        text: '점심은 밥차에서 나온 제육볶음과 된장국이었다. 김 씨 아저씨는 식판을 무릎에 올려놓고 이야기했다. “나는 이십 년 동안 전쟁 장면에서만 삼백 번은 죽었을걸. 화살 맞고, 칼 맞고, 말에서 떨어지고.” 그는 한참 웃다가 진지한 얼굴이 되었다. “주인공은 한 명이지만, 저잣거리를 채우는 건 우리야. 우리가 없으면 조선도 없는 셈이지.”',
+        translation: 'O almoço, do caminhão de comida, foi porco refogado apimentado e sopa de 된장. Com a bandeja no colo, o senhor Kim contou: «Em vinte anos, só em cena de batalha eu já devo ter morrido umas trezentas vezes. Flechado, esfaqueado, caindo do cavalo.» Riu um bom tempo e depois ficou sério: «O protagonista é um só, mas quem enche a rua do mercado somos nós. Sem a gente, é como se não existisse Joseon.»',
+        choices: [
+          { text: '해 질 녘, 리누는 행차 장면을 찍으러 김 씨 아저씨와 함께 나갔다.', translation: 'No fim da tarde, o Linu saiu com o senhor Kim para gravar o cortejo.', next: 'final_bom' },
+        ],
+      },
+      final_bom: {
+        emoji: '👑',
+        text: '노을이 새재 위로 번질 무렵, 임금님의 가마가 세트장 정문을 지나갔다. 백성 역의 보조 출연자들이 일제히 엎드렸고, 리누도 그 사이에서 이마를 땅에 댔다. “성은이 망극하옵니다!” 촬영이 끝나자 조감독이 리누에게 다음 달 촬영에도 와 달라고 했다. 버스를 타러 가는 길에 김 씨 아저씨가 리누의 전립을 톡 쳤다. “이제 자네도 조선 사람 다 됐네.”',
+        translation: 'Quando o pôr do sol se espalhou sobre o passo de Saejae, a liteira do rei cruzou o portão do cenário. Os figurantes que faziam o povo se prostraram todos de uma vez, e o Linu, no meio deles, encostou a testa no chão: «성은이 망극하옵니다!» No fim da gravação, o assistente de direção pediu que ele voltasse para as filmagens do mês seguinte. A caminho do ônibus, o senhor Kim deu um tapinha no chapéu do Linu: «Agora você também virou gente de Joseon.»',
+        ending: { tone: 'bom', title: 'Um dia em Joseon', message: 'O Linu distinguiu o «-옵니다» do «-오», acertou a fala na série de época e ganhou convite para voltar.' },
+      },
+    },
+  },
+  {
+    id: 'ko-h33',
+    level: 'B2.3',
+    cefr: 'B2',
+    title: '인사동 찻집의 느린 오후',
+    emoji: '🍵',
+    summary: 'Numa tarde de chuva em Insadong, o Linu entra numa casa de chá tradicional e aprende com a dona, professora de chá, a esperar, a esfriar a água e o que é o «justo meio».',
+    cultural_context:
+      'Segundo a crônica 삼국사기, sementes de chá trazidas da China Tang foram plantadas no monte Jirisan em 828, no reino de Silla; o chá floresceu com o budismo na era Goryeo e decaiu na Joseon confuciana, mas deixou rastro na palavra 차례 («rito do chá»), o nome do rito aos antepassados nas festas. No século XIX, o monge Choui (1786–1866) reviveu a cultura do chá, escreveu um poema em louvor ao chá coreano e bebia com amigos letrados como Kim Jeong-hui (Chusa) e Jeong Yak-yong, que adotou o nome de pena Dasan, «montanha do chá». O ideal de Choui é o 중정, a medida certa. As casas de chá de Insadong, bairro de antiquários, galerias e lojas de pincel, servem tanto chá verde de Hadong e Boseong quanto 대용차, bebidas de ervas e frutas como o 쌍화차, o 오미자차 e o 대추차.',
+    start: 'start',
+    glossary: [
+      ['찻집 / 다실', 'casa de chá / sala de chá'],
+      ['다도', 'a arte e a etiqueta do chá'],
+      ['우전', 'o primeiro chá do ano, colhido antes do 곡우 (por volta de 20 de abril)'],
+      ['다관 / 숙우 / 찻잔', 'bule / tigela para esfriar a água / xícara de chá'],
+      ['차를 우리다', 'fazer a infusão do chá'],
+      ['대용차', '«chá substituto»: bebida de ervas ou frutas, sem folha de chá'],
+      ['차례', 'rito aos antepassados nas festas (lit.: «rito do chá»)'],
+      ['중정', 'o justo meio, a medida certa (o ideal do monge Choui)'],
+      ['쓴 법이지요', 'é sempre amargo (-는 법이다: é assim que as coisas são)'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🖌️',
+        text: '비 오는 토요일 오후, 리누는 서예 수업에 쓸 붓을 사러 인사동의 오래된 필방에 들렀다. 주인 할아버지는 붓을 신문지에 싸 주시며 창밖을 보셨다. “비가 쉽게 그칠 것 같지 않네요. 비 그칠 때까지 저 골목 끝 찻집에 가 봐요. 주인이 다도 선생님인데, 거기서는 시간이 천천히 가요. 대신 커피는 없어요.”',
+        translation: 'Num sábado de chuva, à tarde, o Linu passou numa velha loja de pincéis de Insadong para comprar um pincel para a aula de caligrafia. O dono, um senhor de idade, embrulhou o pincel em jornal e olhou pela janela: «Essa chuva não vai parar tão cedo. Até ela passar, vá àquela casa de chá no fim do beco. A dona é professora de chá, e lá o tempo passa devagar. Só que café não tem.»',
+        choices: [
+          { text: '리누는 할아버지께 인사하고 골목 끝 찻집으로 향했다.', translation: 'O Linu se despediu do senhor e foi para a casa de chá no fim do beco.', next: 'dasil' },
+          {
+            text: '리누는 그 찻집에 가서 따뜻한 아메리카노를 마시기로 했다.',
+            translation: 'O Linu resolveu ir à casa de chá tomar um americano quente.',
+            wrong: 'O dono da loja avisou: «대신 커피는 없어요» — só que lá NÃO tem café. É uma casa de chá tradicional, e o forte dela, segundo ele, é o tempo que passa devagar.',
+          },
+        ],
+      },
+      dasil: {
+        emoji: '🏮',
+        text: '‘달빛 다실’이라는 작은 나무 간판이 걸린 찻집 안에는 낮은 탁자 몇 개와 방석이 놓여 있었다. 메뉴판에는 우전 녹차, 쌍화차, 오미자차, 대추차가 붓글씨로 적혀 있었다. 은발을 단정하게 묶은 주인 윤 선생님이 따뜻한 물수건을 내오시며 물으셨다. “차를 마시러 오셨어요, 아니면 쉬러 오셨어요?” 리누의 휴대폰은 그사이에도 계속 울리고 있었다.',
+        translation: 'Dentro da casa de chá, com uma plaquinha de madeira escrito «Sala de Chá do Luar», havia algumas mesas baixas e almofadas no chão. No cardápio, escritos a pincel: chá verde 우전, 쌍화차, 오미자차 e 대추차. A dona, a professora Yoon, de cabelos prateados presos com capricho, trouxe uma toalhinha quente e perguntou: «Veio tomar chá ou veio descansar?» Enquanto isso, o celular do Linu não parava de tocar.',
+        choices: [
+          { text: '“우전 녹차 한 잔 주세요.”', translation: '«Um chá verde 우전, por favor.»', next: 'ujeon' },
+          { text: '“쌍화차는 어떤 차예요?”', translation: '«Que chá é o 쌍화차?»', next: 'ssanghwa' },
+        ],
+      },
+      ssanghwa: {
+        emoji: '🫖',
+        text: '윤 선생님은 웃으셨다. “쌍화차는 숙지황, 당귀, 계피, 대추 같은 약재를 오래 달여서 만들어요. 옛날 다방에서는 달걀노른자를 띄워 주기도 했지요.” 그러고는 엄밀히 말하면 찻잎이 안 들어가서 대용차라고 부른다고 덧붙이셨다. “쌍화차는 몸을 데우는 차고요. 오늘처럼 마음이 바쁜 날에는 진짜 찻잎으로 우린 차를 권하고 싶네요.”',
+        translation: 'A professora Yoon sorriu: «O 쌍화차 é feito fervendo por muito tempo ervas medicinais, como raiz de rehmannia, angélica, canela e tâmara chinesa. Nos cafés de antigamente, até punham uma gema de ovo boiando.» E acrescentou que, a rigor, como não leva folha de chá, é chamado de 대용차, «chá substituto». «O 쌍화차 é para esquentar o corpo. Num dia de cabeça agitada como hoje, eu recomendaria um chá de folha de verdade.»',
+        choices: [
+          { text: '“그럼 선생님이 권하시는 차로 주세요.”', translation: '«Então me traga o chá que a senhora recomenda.»', next: 'ujeon' },
+        ],
+      },
+      ujeon: {
+        emoji: '🌱',
+        text: '윤 선생님은 작은 종이 봉투를 열어 보이셨다. 연둣빛의 가늘고 작은 찻잎이었다. “이건 우전이에요. 곡우, 그러니까 사월 이십일쯤 되기 전에 딴 첫물 잎이라서 양이 아주 적어요. 하동 지리산 자락에서 왔어요.” 선생님은 탁자 위에 다관과 숙우, 찻잔 두 개를 차례로 놓으셨다. 그때 리누의 휴대폰이 또 울렸다. 선생님이 조용히 말씀하셨다. “차는 기다리는 맛으로 마시는 거예요.”',
+        translation: 'A professora abriu um saquinho de papel: eram folhas pequenas e finas, verde-claras. «Este é o 우전. É a primeira colheita, tirada antes do 곡우, ou seja, antes de mais ou menos 20 de abril, então sai muito pouco. Vem da encosta do Jirisan, em Hadong.» Ela foi dispondo sobre a mesa o bule, a tigela de esfriar a água e duas xícaras. Nesse momento, o celular do Linu tocou de novo. A professora disse baixinho: «Chá se bebe pelo gosto da espera.»',
+        choices: [
+          { text: '리누는 휴대폰을 꺼서 가방 깊숙이 넣었다.', translation: 'O Linu desligou o celular e o enfiou no fundo da bolsa.', next: 'sukwu' },
+          { text: '리누는 다음 약속이 있다며 조금 빨리 부탁드린다고 했다.', translation: 'O Linu disse que tinha outro compromisso e pediu que fosse um pouco mais rápido.', next: 'geupham' },
+        ],
+      },
+      geupham: {
+        emoji: '⏱️',
+        text: '윤 선생님은 아무 말씀 없이 펄펄 끓는 물을 바로 다관에 부으셨다. 금세 우러난 차는 색이 짙었고, 한 모금 마시자 입안이 떫고 썼다. 리누는 서둘러 잔을 비우고 계산을 한 뒤 빗속으로 뛰어나갔다. 지하철 안에서 리누는 문득 깨달았다. 방금 무슨 맛의 차를 마셨는지 하나도 기억나지 않는다는 것을.',
+        translation: 'Sem dizer nada, a professora despejou água fervendo direto no bule. O chá, pronto num instante, saiu escuro, e no primeiro gole a boca ficou adstringente e amarga. O Linu esvaziou a xícara correndo, pagou e saiu na chuva. No metrô, de repente, se deu conta: não lembrava nada do gosto do chá que tinha acabado de tomar.',
+        ending: { tone: 'neutro', title: 'Chá às pressas', message: 'Água fervendo e pressa deixam o 우전 amargo. Na casa de chá, o ingrediente principal é a espera.' },
+      },
+      sukwu: {
+        emoji: '💧',
+        text: '선생님은 끓인 물을 먼저 숙우에 옮겨 담으셨다. “우전처럼 여린 잎은 끓는 물을 바로 부으면 잎이 데어서 쓴맛이 나요. 물을 한 김 식혀서 칠십 도쯤으로 맞춰야 해요.” 식힌 물을 다관에 붓고 일 분쯤 기다린 뒤, 선생님은 두 잔에 조금씩 번갈아 따르셨다. “한 잔에 다 따르면 첫 잔은 싱겁고 마지막 잔은 진해지거든요. 번갈아 따라야 맛이 고르게 돼요.”',
+        translation: 'A professora primeiro passou a água fervida para a tigela de esfriar. «Com folha delicada como o 우전, se a gente despeja água fervendo direto, a folha queima e o chá fica amargo. Tem que deixar a água amornar até uns setenta graus.» Ela pôs a água já morna no bule, esperou cerca de um minuto e foi servindo as duas xícaras aos pouquinhos, alternando. «Se enche uma xícara de uma vez, a primeira fica fraca e a última fica forte. Alternando, o sabor fica igual.»',
+        choices: [
+          { text: '리누는 두 손으로 찻잔을 받아 향부터 맡아 보았다.', translation: 'O Linu recebeu a xícara com as duas asas e sentiu primeiro o aroma.', next: 'mat' },
+          {
+            text: '리누는 다음에는 펄펄 끓는 물을 바로 부어야 더 맛있겠다고 생각했다.',
+            translation: 'O Linu pensou que, da próxima vez, ficaria mais gostoso despejar a água fervendo direto.',
+            wrong: 'A professora explicou que, com folhas delicadas como o 우전, «끓는 물을 바로 부으면 잎이 데어서 쓴맛이 나요»: a água fervendo QUEIMA a folha e deixa o chá amargo. Por isso ela esfria a água no 숙우 até uns setenta graus.',
+          },
+        ],
+      },
+      mat: {
+        emoji: '🌿',
+        text: '찻잔에서 봄날 풀밭 같은 향이 올라왔다. 한 모금 마시자 처음에는 싱거운 듯하더니 곧 은은한 단맛이 혀끝에 남았다. 선생님은 두 번째 물을 부으시며 말씀하셨다. “제 스승님은 첫 잔은 향으로, 두 번째 잔은 맛으로, 세 번째 잔은 여운으로 마시라고 하셨어요.” 창밖에서는 빗소리가 점점 작아지고 있었다.',
+        translation: 'Da xícara subiu um cheiro de campo na primavera. No primeiro gole, pareceu fraco, mas logo ficou uma doçura suave na ponta da língua. Colocando a segunda água, a professora disse: «A minha mestra ensinava: a primeira xícara se bebe pelo aroma, a segunda pelo sabor, e a terceira pelo que fica depois.» Lá fora, o barulho da chuva ia diminuindo.',
+        choices: [
+          { text: '“한국 사람들은 언제부터 이렇게 차를 마셨어요?”', translation: '«Desde quando os coreanos tomam chá assim?»', next: 'yeoksa' },
+        ],
+      },
+      yeoksa: {
+        emoji: '📚',
+        text: '“삼국사기에 따르면 신라 때 당나라에서 가져온 차 씨앗을 지리산에 심었다고 해요. 고려 때는 절을 중심으로 차 문화가 크게 꽃피었고요.” 조선에 들어와 차 문화는 한동안 시들었지만, 명절에 조상께 올리는 차례라는 말에 그 흔적이 남아 있다고 선생님은 설명하셨다. “그러다 조선 후기에 초의 스님이 차를 다시 일으키셨어요. 추사 김정희, 다산 정약용 같은 선비들과 차를 나누며 우정을 쌓으셨지요. 초의 스님이 차에서 가장 중요하게 여기신 게 중정이에요.”',
+        translation: '«Segundo o 삼국사기, no tempo de Silla, sementes de chá trazidas da China Tang foram plantadas no Jirisan. Na era Goryeo, a cultura do chá floresceu muito em volta dos templos.» Na era Joseon, explicou a professora, o chá murchou por um tempo, mas deixou rastro na palavra 차례, o rito oferecido aos antepassados nas festas. «Até que, no fim de Joseon, o monge Choui reviveu o chá. Ele fez amizade com letrados como Chusa Kim Jeong-hui e Dasan Jeong Yak-yong tomando chá com eles. E o que o monge Choui considerava mais importante no chá era o 중정.»',
+        choices: [
+          { text: '“중정이 무슨 뜻이에요?”', translation: '«O que quer dizer 중정?»', next: 'jungjeong' },
+        ],
+      },
+      jungjeong: {
+        emoji: '⚖️',
+        text: '선생님은 빈 찻잔을 손바닥 위에 올려놓으셨다. “치우치지 않고 알맞은 것이에요. 물이 너무 뜨거워도, 차를 너무 오래 우려도, 너무 짧게 우려도 안 돼요. 차도 사람도 지나치면 쓰고, 모자라면 싱거운 법이지요.” 리누는 오늘 하루 몇 번이나 휴대폰을 들여다보았는지 떠올렸다. 비는 어느새 그쳐 있었다.',
+        translation: 'A professora pôs a xícara vazia na palma da mão: «É o que não pende para lado nenhum, a medida certa. Não pode a água quente demais, nem a infusão longa demais, nem curta demais. Com chá e com gente é assim: o excesso amarga, a falta fica sem graça.» O Linu lembrou quantas vezes tinha olhado o celular naquele dia. A chuva, sem ele perceber, tinha parado.',
+        choices: [
+          { text: '리누는 선생님께 다도를 제대로 배우고 싶다고 말씀드렸다.', translation: 'O Linu disse à professora que queria aprender de verdade a arte do chá.', next: 'final_bom' },
+          {
+            text: '리누는 중정이 차를 가능한 한 진하게 우리는 기술이라고 이해했다.',
+            translation: 'O Linu entendeu que 중정 é a técnica de fazer o chá o mais forte possível.',
+            wrong: 'A professora disse que 중정 é «치우치지 않고 알맞은 것»: o que NÃO pende para lado nenhum, a medida certa. Nem forte nem fraco demais: «지나치면 쓰고, 모자라면 싱거운 법» (o excesso amarga, a falta fica sem graça).',
+          },
+        ],
+      },
+      final_bom: {
+        emoji: '🌤️',
+        text: '선생님은 매달 둘째 토요일에 다도 모임이 있다며 작은 종이에 날짜를 적어 주셨다. 찻집을 나서자 젖은 돌길 위로 햇빛이 비쳤다. 리누는 가방 속 휴대폰을 켜 보았다. 부재중 전화가 열두 통이었지만, 급한 일은 하나도 없었다. 리누는 인사동 골목을 아주 천천히 걸어 내려갔다.',
+        translation: 'A professora contou que todo segundo sábado do mês há um encontro de chá e anotou a data num papelzinho. Quando o Linu saiu, o sol brilhava sobre o calçamento molhado. Ele ligou o celular: doze chamadas perdidas, e nenhuma era urgente. O Linu desceu o beco de Insadong bem, bem devagar.',
+        ending: { tone: 'bom', title: 'A medida certa', message: 'O Linu esfriou a água, esperou o chá e entendeu o 중정. Em Insadong, até o tempo tem ponto certo.' },
+      },
+    },
+  },
+  // ───────────────────────── B2.4 ─────────────────────────
+  {
+    id: 'ko-h34',
+    level: 'B2.4',
+    cefr: 'B2',
+    title: '새벽 다섯 시의 경매장',
+    emoji: '🐟',
+    summary: 'De madrugada no Mercado Cooperativo de Peixe de Busan, o Linu acompanha um atacadista no leilão de cavalas, onde um simples aceno pode virar lance.',
+    cultural_context:
+      'O Mercado Cooperativo de Peixe de Busan, no porto sul (남항), é o maior mercado atacadista de peixe da Coreia e o centro do comércio de cavala: a maior parte da cavala pescada no país passa por ali. Os barcos descarregam de madrugada, equipes de mulheres separam os peixes por tamanho com uma rapidez lendária, e às seis da manhã um sino abre o leilão. Os atacadistas, com números no boné, fazem lances com sinais de dedos, e o leiloeiro canta os preços num ritmo acelerado. O mercado fica perto do Jagalchi, o mercado de peixe mais famoso da cidade, e ali se ouve o dialeto de Busan: «-데이» no fim da frase, «아이다» (não é), «끼다» (vai ser). O aquecimento do mar tem mudado a pesca: a lula do mar do Leste diminuiu, e aparecem cada vez mais espécies de águas quentes.',
+    start: 'start',
+    glossary: [
+      ['공동어시장', 'mercado cooperativo de peixe (atacado, na beira do porto)'],
+      ['경매 / 경매사 / 낙찰', 'leilão / leiloeiro / arrematação'],
+      ['중도매인', 'atacadista intermediário que compra no leilão'],
+      ['선별', 'triagem, separação por tamanho'],
+      ['싱싱하다', 'fresco (peixe, verdura)'],
+      ['떨어지기 십상이다', 'é quase certo que cai (-기 십상이다: costuma acontecer)'],
+      ['배가 많이 들어온 탓에', 'por terem entrado muitos barcos (-는 탓에: causa)'],
+      ['바다가 있는 한', 'enquanto houver mar (-는 한: enquanto, desde que)'],
+      ['시작한데이 / 기 아이다 / 울릴 끼다', 'dialeto de Busan: «começa, viu» / «não é» / «vai tocar»'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🚢',
+        text: '새벽 다섯 시, 부산 남항의 공동어시장은 한낮처럼 환했다. 밤새 바다에 나갔던 어선들이 줄지어 들어와 은빛 고등어를 쏟아 내고 있었다. 리누는 부산 친구 동현이를 따라 이곳에 왔다. 동현이의 아버지 박 사장님은 삼십 년째 이곳에서 생선을 사들이는 중도매인이다. 모자에 백이십삼 번이라는 번호를 단 박 사장님이 말했다. “경매는 여섯 시에 종 치면 시작한데이. 그 전에 물건부터 봐야 된다.”',
+        translation: 'Cinco da manhã: o Mercado Cooperativo de Peixe, no porto sul de Busan, estava claro como ao meio-dia. Os barcos que tinham passado a noite no mar chegavam em fila e despejavam cavalas prateadas. O Linu tinha vindo com o amigo Donghyeon, de Busan. O pai dele, o senhor Park, é um atacadista que há trinta anos compra peixe ali. Com o número 123 preso no boné, o senhor Park disse: «O leilão começa às seis, quando o sino tocar, viu. Antes disso, tem que ver a mercadoria.»',
+        choices: [
+          { text: '리누는 부두에서 고등어를 고르는 사람들 쪽으로 가 보았다.', translation: 'O Linu foi até as pessoas que separavam as cavalas no cais.', next: 'seonbyeol' },
+          { text: '리누는 박 사장님을 따라 경매장 바닥에 깔린 상자들을 보러 갔다.', translation: 'O Linu seguiu o senhor Park para ver as caixas espalhadas pelo chão do leilão.', next: 'mulgeon' },
+        ],
+      },
+      seonbyeol: {
+        emoji: '🧤',
+        text: '부두 한쪽에서는 앞치마를 두른 아주머니들이 고등어를 크기별로 골라 상자에 담고 있었다. 손이 어찌나 빠른지 고등어가 저절로 날아가 상자에 들어가는 것 같았다. 리누가 한 마리를 집어 들고 한참 망설이자 한 아주머니가 웃었다. “눈으로 보는 기 아이다. 손이 아는 기라.” 동현이가 통역하듯 말했다. “눈으로 보는 게 아니라 손이 안다는 뜻이야. 이 일만 수십 년 하신 분들이거든.”',
+        translation: 'Num canto do cais, senhoras de avental separavam as cavalas por tamanho e as punham em caixas. As mãos eram tão rápidas que parecia que os peixes voavam sozinhos para dentro das caixas. Quando o Linu pegou uma cavala e ficou um tempão na dúvida, uma das senhoras riu: «눈으로 보는 기 아이다. 손이 아는 기라.» O Donghyeon traduziu: «Quer dizer que não é com o olho, é a mão que sabe. Elas fazem só isso há décadas.»',
+        choices: [
+          { text: '리누는 아주머니들께 인사하고 박 사장님에게 돌아갔다.', translation: 'O Linu se despediu das senhoras e voltou para junto do senhor Park.', next: 'mulgeon' },
+        ],
+      },
+      mulgeon: {
+        emoji: '👁️',
+        text: '박 사장님은 상자 앞에 쪼그려 앉아 고등어를 한 마리씩 살펴보았다. “눈이 맑고, 아가미가 빨갛고, 배를 눌렀을 때 단단해야 싱싱한 기다.” 그러면서 오늘은 배가 많이 들어온 탓에 값이 싸게 나올 거라고 했다. “고기가 많이 들어온 날은 값이 떨어지기 십상이고, 적게 들어온 날은 부르는 게 값이지.” 그 말을 하는 동안에도 사장님의 눈은 경매장 곳곳의 상자를 훑고 있었다.',
+        translation: 'O senhor Park se agachou diante das caixas e examinou as cavalas uma por uma: «Peixe fresco tem olho limpo, guelra vermelha e barriga firme quando a gente aperta.» E disse que hoje, como tinham entrado muitos barcos, o preço devia sair barato. «Dia que entra muito peixe, o preço quase sempre cai; dia que entra pouco, o vendedor pede o que quiser.» Enquanto falava, os olhos dele varriam as caixas pelo leilão inteiro.',
+        choices: [
+          { text: '리누는 경매가 어떻게 진행되는지 여쭤보았다.', translation: 'O Linu perguntou como funciona o leilão.', next: 'gyeongmae' },
+          {
+            text: '리누는 오늘은 고기가 많아서 값이 비쌀 거라고 동현이에게 말했다.',
+            translation: 'O Linu disse ao Donghyeon que hoje, como havia muito peixe, o preço ia ser alto.',
+            wrong: 'O senhor Park disse o contrário: «배가 많이 들어온 탓에 값이 싸게 나올 거» — como entraram muitos barcos, o preço deve sair BARATO. «값이 떨어지기 십상» é «o preço quase sempre cai»: muita oferta, preço baixo.',
+          },
+        ],
+      },
+      gyeongmae: {
+        emoji: '🔔',
+        text: '여섯 시 정각, 종소리가 울리자 경매사가 상자 더미 위에 올라서서 노래하듯 빠르게 외치기 시작했다. 번호 모자를 쓴 중도매인들이 경매사를 둘러싸고 손가락을 재빨리 폈다 접었다 했다. 손가락 모양이 곧 부르는 값이었다. 박 사장님이 리누의 날개를 꽉 잡았다. “경매 중에는 절대로 손 들지 마래이. 손 들면 사는 기다.” 바로 그때, 건너편에서 동현이가 리누를 향해 손을 흔들었다.',
+        translation: 'Às seis em ponto, o sino tocou, e o leiloeiro subiu numa pilha de caixas e começou a gritar depressa, como quem canta. Os atacadistas de boné numerado cercaram o leiloeiro e abriam e fechavam os dedos num piscar de olhos: o formato dos dedos era o lance. O senhor Park segurou firme a asa do Linu: «Durante o leilão, não levante a mão de jeito nenhum, viu. Levantou, comprou.» Bem nessa hora, do outro lado, o Donghyeon acenou para o Linu.',
+        choices: [
+          { text: '리누는 반가운 마음에 날개를 번쩍 들어 흔들었다.', translation: 'Contente, o Linu levantou a asa bem alto e acenou.', next: 'silsu' },
+          { text: '리누는 날개를 몸에 딱 붙이고 고개만 끄덕였다.', translation: 'O Linu grudou as asas no corpo e só acenou com a cabeça.', next: 'gwanchal' },
+        ],
+      },
+      silsu: {
+        emoji: '🙊',
+        text: '경매사의 손가락이 리누를 가리켰다. “백이십삼 번 옆에 펭귄 손님, 낙찰!” 순간 경매장에 웃음이 터졌다. 박 사장님은 이마를 짚더니 껄껄 웃었다. “니 방금 고등어 한 상자 샀다!” 리누의 얼굴이 새빨개졌다. 경매사는 벌써 다음 상자로 넘어가 있었다.',
+        translation: 'O dedo do leiloeiro apontou para o Linu: «O cliente pinguim ao lado do 123, arrematado!» Na hora, o leilão explodiu em risadas. O senhor Park pôs a mão na testa e deu uma gargalhada: «Você acabou de comprar uma caixa de cavala!» O Linu ficou vermelho como um pimentão. O leiloeiro já tinha passado para a caixa seguinte.',
+        choices: [
+          { text: '리누는 경매사에게 달려가 실수였다고 사과했다.', translation: 'O Linu correu até o leiloeiro e pediu desculpas, dizendo que tinha sido um engano.', next: 'saryo' },
+          { text: '리누는 기왕 이렇게 된 김에 그 상자를 사기로 했다.', translation: 'Já que tinha sido assim, o Linu resolveu ficar com a caixa.', next: 'bap' },
+        ],
+      },
+      saryo: {
+        emoji: '🙇',
+        text: '경매가 잠깐 쉬는 사이, 리누는 경매사에게 고개를 숙였다. 경매사는 웃으며 그 상자를 다시 경매에 부쳤다. “처음 오신 분들이 제일 많이 하는 실수입니더. 여기선 손이 곧 돈이라예.” 리누는 그 뒤로 날개를 가슴에 꼭 붙인 채 경매를 지켜보았다.',
+        translation: 'Num intervalo do leilão, o Linu se curvou diante do leiloeiro. O leiloeiro riu e pôs a caixa de volta em leilão: «É o erro que mais cometem os que vêm pela primeira vez. Aqui, mão é dinheiro.» Dali em diante, o Linu acompanhou o leilão com as asas bem grudadas no peito.',
+        choices: [
+          { text: '리누는 박 사장님 옆으로 돌아가 조용히 경매를 지켜보았다.', translation: 'O Linu voltou para o lado do senhor Park e ficou observando em silêncio.', next: 'gwanchal' },
+        ],
+      },
+      gwanchal: {
+        emoji: '📦',
+        text: '한 상자의 경매가 끝나는 데는 몇 초밖에 걸리지 않았다. 박 사장님은 중간 크기 고등어를 스무 상자 사들였다. 사장님은 이 고등어들이 오늘 오전 안에 자갈치 시장과 전국의 마트로 흩어질 것이며, 저녁이면 누군가의 밥상에 오를 거라고 했다. “새벽에 여기서 정해진 값이 온 나라 고등어 값이 되는 기라.” 해가 뜨자 경매장은 조금씩 조용해졌다.',
+        translation: 'O leilão de cada caixa levava só alguns segundos. O senhor Park arrematou vinte caixas de cavala média. Ele contou que, ainda de manhã, aquelas cavalas iam se espalhar pelo mercado Jagalchi e pelos supermercados do país inteiro, e que à noite estariam na mesa de alguém. «O preço que se decide aqui de madrugada vira o preço da cavala do país todo.» Com o nascer do sol, o leilão foi ficando mais quieto.',
+        choices: [
+          { text: '리누는 박 사장님을 따라 시장 앞 식당으로 아침을 먹으러 갔다.', translation: 'O Linu seguiu o senhor Park até um restaurante em frente ao mercado para tomar café da manhã.', next: 'bap' },
+          { text: '리누는 너무 졸려서 숙소로 돌아가기로 했다.', translation: 'Com muito sono, o Linu resolveu voltar para a pousada.', next: 'final_neutro' },
+        ],
+      },
+      bap: {
+        emoji: '🍚',
+        text: '시장 앞 허름한 식당에서 박 사장님은 고등어구이와 시락국을 시켰다. 시락국은 시래기를 넣고 끓인 된장국을 부르는 부산 말이다. 사장님은 고등어 살을 발라 리누의 밥 위에 얹어 주며 말했다. “요즘 바다가 따뜻해지는 탓에 오징어는 줄고, 예전에 안 잡히던 고기가 올라온다. 젊은 사람들도 이 일은 안 할라 카고.” 사장님은 잠시 말이 없다가 덧붙였다. “그래도 바다가 있는 한, 이 경매장 종은 매일 울릴 끼다.”',
+        translation: 'Num restaurante simples em frente ao mercado, o senhor Park pediu cavala grelhada e 시락국, que é como se chama em Busan a sopa de 된장 com folhas secas de nabo. Ele tirou as espinhas da cavala e pôs a carne sobre o arroz do Linu: «Hoje em dia, como o mar está esquentando, a lula está diminuindo e aparece peixe que antes não se pescava. E os jovens não querem fazer esse trabalho.» Ficou um instante calado e acrescentou: «Mas, enquanto houver mar, o sino deste leilão vai tocar todo dia.»',
+        choices: [
+          { text: '리누는 사장님께 감사 인사를 드리고 따뜻한 국물을 끝까지 마셨다.', translation: 'O Linu agradeceu ao senhor Park e tomou o caldo quente até o fim.', next: 'final_bom' },
+        ],
+      },
+      final_bom: {
+        emoji: '🌞',
+        text: '식당을 나서자 남항 위로 해가 높이 떠 있었다. 동현이가 물었다. “어때, 부산 새벽은?” 리누는 수첩에 오늘 배운 것을 적었다. 싱싱한 고등어는 눈이 맑다. 고기가 많은 날은 값이 떨어진다. 그리고 경매장에서는 절대로 손을 흔들지 않는다. 마지막 줄을 본 동현이가 배를 잡고 웃었다.',
+        translation: 'Quando saíram do restaurante, o sol já ia alto sobre o porto sul. O Donghyeon perguntou: «E aí, que tal a madrugada de Busan?» O Linu anotou no caderninho o que tinha aprendido: cavala fresca tem olho limpo. Dia de muito peixe, o preço cai. E, no leilão, nunca se acena. Quando leu a última linha, o Donghyeon rolou de rir.',
+        ending: { tone: 'bom', title: 'Madrugada no leilão', message: 'O Linu entendeu o leilão, o dialeto de Busan e a lei da oferta, e terminou a madrugada com cavala grelhada e 시락국.' },
+      },
+      final_neutro: {
+        emoji: '😴',
+        text: '숙소에 돌아온 리누는 점심때가 되어서야 눈을 떴다. 휴대폰에는 동현이가 보낸 사진이 와 있었다. 김이 모락모락 나는 시락국과 노릇하게 구운 고등어였다. “아버지가 니 몫까지 다 드셨다.” 리누는 부산의 새벽은 보았지만, 부산의 아침은 놓치고 말았다.',
+        translation: 'De volta à pousada, o Linu só acordou na hora do almoço. No celular havia uma foto mandada pelo Donghyeon: 시락국 fumegando e cavala grelhada, douradinha. «O meu pai comeu a sua parte também.» O Linu viu a madrugada de Busan, mas acabou perdendo a manhã.',
+        ending: { tone: 'neutro', title: 'O café da manhã perdido', message: 'O leilão foi visto, mas a melhor parte da madrugada no mercado vem depois: a mesa com quem trabalha ali.' },
+      },
+    },
+  },
+  {
+    id: 'ko-h35',
+    level: 'B2.4',
+    cefr: 'B2',
+    title: '뒷집을 가리지 않는 집',
+    emoji: '🏘️',
+    summary: 'Na vila colorida de Gamcheon, em Busan, o Linu troca a fila da foto pela história contada por uma moradora que chegou ali criança, em 1955.',
+    cultural_context:
+      'Durante a Guerra da Coreia (1950–1953), Busan foi capital provisória e recebeu centenas de milhares de refugiados, que ocuparam as encostas com barracos de tábua. Em 1955, seguidores de uma religião nova, o 태극도, se mudaram em massa para a encosta de Gamcheon, ao lado de refugiados, e ergueram casas em degraus com uma regra: a casa da frente não podia tapar o sol nem a vista do mar da casa de trás. Em 2009, um projeto de arte com artistas e moradores pintou as casas e espalhou obras pelos becos, e o bairro virou o 감천문화마을, apelidado de «Machu Picchu de Busan», com mais de um milhão de visitantes por ano; a estátua do Pequeno Príncipe com a raposa, olhando o porto, é o ponto de foto mais disputado. O sucesso trouxe barulho, falta de privacidade e cafés no lugar das casas, enquanto o número de moradores continua caindo.',
+    start: 'start',
+    glossary: [
+      ['피란민', 'refugiado de guerra'],
+      ['산비탈 / 층층이', 'encosta do morro / em camadas, andar sobre andar'],
+      ['가리다', 'tapar, bloquear (a vista, a luz)'],
+      ['짓다시피 했다', 'praticamente construíram (-다시피 하다: quase, praticamente)'],
+      ['되살리고자', 'com a intenção de revitalizar (-고자: para, com o fim de; formal)'],
+      ['밝아졌을뿐더러', 'não só ficou mais alegre, como também… (-을뿐더러)'],
+      ['빈집', 'casa vazia, abandonada'],
+      ['물지게', 'canga de ombro para carregar baldes de água'],
+      ['커피믹스', 'café solúvel em sachê, com açúcar e creme, o café de toda casa coreana'],
+      ['고맙데이', 'dialeto de Busan: «obrigado(a)»'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🚌',
+        text: '마을버스가 가파른 비탈길을 숨 가쁘게 오르더니 감천문화마을 입구에 리누를 내려 주었다. 눈앞에는 파랑, 분홍, 노랑으로 칠한 작은 집들이 산비탈을 따라 계단처럼 층층이 쌓여 있었고, 그 너머로 부산항이 반짝였다. 관광객들은 저마다 휴대폰을 들고 골목으로 흩어졌으며, 전망대 쪽 어린 왕자 조형물 앞에는 긴 줄이 늘어서 있었다. 입구 옆 작은 탁자에는 ‘마을 해설사’라는 명찰을 단 할머니 한 분이 앉아 계셨다.',
+        translation: 'O micro-ônibus do bairro subiu ofegante a ladeira íngreme e deixou o Linu na entrada da vila cultural de Gamcheon. Diante dele, casinhas pintadas de azul, rosa e amarelo se empilhavam em camadas pela encosta, como degraus, e lá atrás brilhava o porto de Busan. Os turistas se espalhavam pelos becos, cada um com o celular na mão, e diante da estátua do Pequeno Príncipe, no mirante, havia uma fila comprida. Numa mesinha ao lado da entrada estava sentada uma senhora com um crachá de «guia do bairro».',
+        choices: [
+          { text: '리누는 할머니께 마을 이야기를 들려 달라고 부탁드렸다.', translation: 'O Linu pediu à senhora que contasse a história do bairro.', next: 'yeoksa' },
+          { text: '리누는 먼저 어린 왕자 조형물 앞에서 사진을 찍으려고 줄을 섰다.', translation: 'O Linu entrou primeiro na fila para tirar foto com a estátua do Pequeno Príncipe.', next: 'saejin' },
+        ],
+      },
+      saejin: {
+        emoji: '📸',
+        text: '삼십 분을 기다리고서야 리누는 바다를 내려다보는 어린 왕자와 여우 옆에 앉을 수 있었다. 사진을 찍는 동안 뒤에서는 빨리 비키라는 소리가 들렸다. 줄을 빠져나온 리누는 장바구니를 든 할머니 한 분이 좁은 계단을 한 칸 한 칸 힘겹게 오르시는 것을 보았다. 그 옆으로 관광객 몇 명이 사진을 찍으며 지나갔다. 할머니의 가슴에는 아까 입구에서 본 ‘마을 해설사’ 명찰이 달려 있었다.',
+        translation: 'Só depois de meia hora de espera o Linu conseguiu sentar ao lado do Pequeno Príncipe e da raposa, que olham o mar. Enquanto tirava a foto, ouvia gente atrás mandando ele sair logo. Ao deixar a fila, viu uma senhora com uma sacola de compras subindo com esforço a escada estreita, degrau por degrau. Uns turistas passavam do lado dela tirando fotos. No peito da senhora estava o crachá de «guia do bairro» que ele tinha visto na entrada.',
+        choices: [
+          { text: '리누는 할머니께 달려가 장바구니를 들어 드렸다.', translation: 'O Linu correu até a senhora e carregou a sacola para ela.', next: 'dowajum' },
+          { text: '리누는 다음 목적지인 해운대로 가려고 버스 정류장으로 향했다.', translation: 'O Linu foi para o ponto de ônibus, rumo ao próximo destino, Haeundae.', next: 'final_neutro' },
+        ],
+      },
+      dowajum: {
+        emoji: '🛍️',
+        text: '“아이고, 고맙데이.” 계단 꼭대기에서 할머니는 숨을 고르시며 리누의 날개를 토닥이셨다. “사진만 찍고 가는 사람이 태반인데, 펭귄이 짐을 다 들어 주네.” 할머니는 보답으로 마을 이야기를 해 주겠다며 계단에 걸터앉으셨다.',
+        translation: '«Ai, obrigada.» No alto da escada, a senhora recuperou o fôlego e deu tapinhas na asa do Linu. «A maioria só tira foto e vai embora, e vem um pinguim carregar as minhas compras.» Como agradecimento, ela sentou num degrau e disse que ia contar a história do bairro.',
+        choices: [
+          { text: '리누는 할머니 옆에 앉아 귀를 기울였다.', translation: 'O Linu sentou ao lado dela e prestou atenção.', next: 'yeoksa' },
+        ],
+      },
+      yeoksa: {
+        emoji: '🪜',
+        text: '김옥순 할머니는 일곱 살 때 이 마을에 왔다고 하셨다. “천구백오십오 년에 태극도라는 종교를 믿던 사람들이 한꺼번에 이 산비탈로 옮겨 왔어. 전쟁 때 피란 온 사람들도 섞여 살았고.” 가진 것 없는 사람들이 나무판자로 하룻밤 사이에 집을 짓다시피 했다고 한다. “그런데도 규칙이 하나 있었어. 앞집이 뒷집의 햇빛과 바다를 가리면 안 된다는 거. 그래서 집들이 이렇게 계단처럼 층층이 앉은 거야.”',
+        translation: 'A senhora Kim Oksun contou que chegou ao bairro com sete anos. «Em 1955, o pessoal que seguia uma religião chamada 태극도 veio todo de uma vez para esta encosta. E morava junto gente que tinha fugido da guerra.» Pessoas sem nada, contou ela, praticamente levantaram as casas de tábua numa noite só. «Mas mesmo assim tinha uma regra: a casa da frente não podia tapar o sol e o mar da casa de trás. Por isso as casas sentaram assim, em camadas, como degraus.»',
+        choices: [
+          { text: '“가난했는데도 서로의 햇빛을 지켜 준 거네요.”', translation: '«Mesmo pobres, vocês protegiam o sol uns dos outros.»', next: 'gyedan' },
+          {
+            text: '리누는 이 마을이 처음부터 관광지로 계획된 부자 동네였다고 이해했다.',
+            translation: 'O Linu entendeu que o bairro foi planejado desde o início como um bairro rico e turístico.',
+            wrong: 'A senhora contou que o bairro nasceu em 1955 com seguidores de uma religião (태극도) e refugiados da guerra, gente «가진 것 없는» (sem nada), que «짓다시피 했다» — praticamente ergueu as casas de tábua numa noite. O turismo só veio muito depois.',
+          },
+        ],
+      },
+      gyedan: {
+        emoji: '🪣',
+        text: '할머니는 고개를 끄덕이셨다. “없이 살았어도 그런 마음은 있었지.” 어린 시절에는 마을에 수도가 없어서 아래쪽 공동 우물에서 물지게로 물을 길어 계단을 올랐고, 화장실도 여러 집이 함께 썼다고 하셨다. “겨울이면 연탄 한 장 나르는 것도 일이었어. 골목이 좁아서 리어카도 못 들어오니까.” 할머니는 이 계단 하나하나에 동네 사람들의 땀이 배어 있다고 하셨다.',
+        translation: 'A senhora concordou: «A gente vivia sem nada, mas esse cuidado existia.» Na infância dela, contou, não havia água encanada no bairro: buscava-se água no poço comunitário lá embaixo e se subia a escada com a canga de baldes nos ombros, e o banheiro era dividido entre várias casas. «No inverno, carregar um tijolo de carvão era um trabalhão. O beco é tão estreito que nem carrinho de mão entra.» Cada degrau daquela escada, disse ela, estava impregnado do suor do pessoal do bairro.',
+        choices: [
+          { text: '“그럼 마을이 이렇게 알록달록해진 건 언제부터예요?”', translation: '«E desde quando o bairro ficou colorido assim?»', next: 'misul' },
+          { text: '“요즘은 관광객이 많아서 오히려 불편하시지 않으세요?”', translation: '«E hoje, com tantos turistas, não fica até incômodo para a senhora?»', next: 'munje' },
+        ],
+      },
+      misul: {
+        emoji: '🎨',
+        text: '“이천구 년에 예술가들이 들어와서 주민들이랑 같이 집을 칠하고 골목에 작품을 놓았어. 마을을 되살리고자 시작한 일이었지.” 그 뒤로 이 마을은 부산의 마추픽추, 한국의 산토리니라는 별명을 얻었고, 한 해에 백만 명이 훌쩍 넘는 사람이 찾는 관광지가 되었다. 할머니는 잠시 말을 멈추셨다. “마을이 밝아졌을뿐더러 일자리도 조금 생겼어. 그런데 좋은 일만 있었던 건 아니야.”',
+        translation: '«Em 2009 chegaram uns artistas e, junto com os moradores, pintaram as casas e puseram obras nos becos. Foi uma coisa que começou para dar vida nova ao bairro.» Desde então, o bairro ganhou os apelidos de Machu Picchu de Busan e Santorini da Coreia, e virou um ponto turístico visitado por bem mais de um milhão de pessoas por ano. A senhora parou um instante: «O bairro não só ficou mais alegre, como também apareceu um pouco de trabalho. Mas não foi só coisa boa.»',
+        choices: [
+          { text: '“어떤 일이 있었는데요?”', translation: '«O que aconteceu?»', next: 'munje' },
+        ],
+      },
+      munje: {
+        emoji: '🚪',
+        text: '“사진 찍는 사람은 늘었는데, 사는 사람은 줄었어.” 할머니는 어느 집 창문에 붙은 안내문을 가리키셨다. “주민이 살고 있습니다. 창문 안을 들여다보지 마세요.” 관광객들이 남의 집 대문을 열어 보기도 하고, 밤늦게까지 떠들기도 한다는 것이다. 젊은 사람들은 일자리를 찾아 떠나고 빈집이 늘었으며, 그 자리에 카페와 기념품 가게가 들어섰다. “구경 오는 건 좋아. 그런데 여기는 박물관이 아니고 사람 사는 동네야.”',
+        translation: '«O número de gente tirando foto aumentou, e o de gente morando diminuiu.» A senhora apontou um aviso colado na janela de uma casa: «Aqui moram pessoas. Não olhe pela janela.» Segundo ela, há turistas que abrem o portão da casa dos outros e fazem barulho até tarde da noite. Os jovens foram embora atrás de emprego, as casas vazias se multiplicaram, e no lugar delas abriram cafés e lojas de lembrancinhas. «Vir passear é bom. Mas aqui não é museu, é bairro onde gente mora.»',
+        choices: [
+          { text: '“그럼 여기 오는 사람들이 어떻게 하면 좋을까요?”', translation: '«Então, o que as pessoas que vêm aqui deveriam fazer?»', next: 'dowoom' },
+        ],
+      },
+      dowoom: {
+        emoji: '🤫',
+        text: '할머니는 손가락을 하나씩 꼽으셨다. “조용히 다니고, 대문 안이나 좁은 뒷골목에는 들어가지 말고, 사진만 찍고 가지 말고 천천히 머물다 가고. 그리고 이왕이면 주민들이 운영하는 가게에서 물건을 사 주면 좋지.” 마을에는 주민들이 함께 운영하는 공방과 찻집이 있다고 하셨다. 그러고는 계단 위의 파란 대문을 가리키셨다. “저기가 우리 집이야. 커피 한잔하고 갈래?”',
+        translation: 'A senhora foi contando nos dedos: «Andar em silêncio, não entrar em portão nem em beco estreito de fundos, não só tirar foto e ir embora, mas ficar com calma. E, se puder, comprar nas lojas que os moradores administram.» Havia no bairro, contou, uma oficina de artesanato e uma casa de chá tocadas juntas pelos moradores. E apontou um portão azul no alto da escada: «Aquela é a minha casa. Quer tomar um café antes de ir?»',
+        choices: [
+          { text: '리누는 기뻐하며 할머니를 따라 계단을 올라갔다.', translation: 'Contente, o Linu subiu a escada atrás da senhora.', next: 'jip' },
+        ],
+      },
+      jip: {
+        emoji: '☕',
+        text: '할머니의 집은 방 두 칸짜리 작은 집이었지만, 창문을 열자 부산항이 한눈에 들어왔다. 할머니는 커피믹스 두 봉지를 뜯어 종이컵에 타 주셨다. “앞집이 가렸으면 이 바다를 못 봤겠지. 육십 년 넘게 이 바다를 보고 살았어.” 아랫집 지붕 너머로 배들이 천천히 항구를 빠져나가고 있었다.',
+        translation: 'A casa da senhora era pequena, de dois cômodos, mas, quando ela abriu a janela, o porto de Busan apareceu inteirinho. Ela rasgou dois sachês de café solúvel e preparou em copos de papel. «Se a casa da frente tapasse, eu não teria visto este mar. Faz mais de sessenta anos que eu vivo olhando para ele.» Por cima do telhado da casa de baixo, os navios deixavam o porto devagar.',
+        choices: [
+          { text: '리누는 내려가는 길에 주민 공방에 들러 기념품을 사기로 했다.', translation: 'O Linu resolveu passar na oficina dos moradores, na descida, para comprar uma lembrança.', next: 'final_bom' },
+        ],
+      },
+      final_bom: {
+        emoji: '🌇',
+        text: '리누는 주민 공방에서 할머니 댁 파란 대문을 닮은 작은 도자기 자석을 샀다. 마을을 내려가는 길, 리누는 일부러 천천히 걸으며 말소리를 낮추었다. 버스 정류장에서 뒤를 돌아보니, 층층이 앉은 집들이 서로의 햇빛을 가리지 않은 채 저녁노을을 받고 있었다. 리누는 수첩에 적었다. “뒷집을 가리지 않는 마음.”',
+        translation: 'Na oficina dos moradores, o Linu comprou um ímã de cerâmica parecido com o portão azul da casa da senhora. Descendo o bairro, andou devagar de propósito e falou baixinho. No ponto de ônibus, olhou para trás: as casas sentadas em camadas recebiam o pôr do sol sem tapar a luz umas das outras. O Linu anotou no caderninho: «O cuidado de não tapar a casa de trás.»',
+        ending: { tone: 'bom', title: 'O sol da casa de trás', message: 'O Linu trocou a fila da foto pela história de Gamcheon e visitou o bairro como se deve: devagar, em silêncio e comprando dos moradores.' },
+      },
+      final_neutro: {
+        emoji: '🖼️',
+        text: '해운대로 가는 버스 안에서 리누는 어린 왕자와 찍은 사진을 넘겨 보았다. 사진은 예쁘게 나왔지만, 감천에 대해 기억나는 것은 긴 줄과 비키라는 목소리뿐이었다. 계단을 오르던 할머니의 뒷모습이 자꾸 떠올랐다. 리누는 그 마을에 사는 사람들의 이야기를 하나도 듣지 못했다는 것을 깨달았다.',
+        translation: 'No ônibus para Haeundae, o Linu foi passando as fotos com o Pequeno Príncipe. Tinham ficado bonitas, mas de Gamcheon ele só lembrava da fila e das vozes mandando ele sair. A imagem da senhora subindo a escada, de costas, não saía da cabeça dele. O Linu se deu conta de que não tinha ouvido nenhuma história de quem mora naquele bairro.',
+        ending: { tone: 'neutro', title: 'Só uma foto', message: 'Gamcheon não é cenário: é um bairro nascido da guerra, com gente morando nele. A história estava subindo a escada ao seu lado.' },
+      },
+    },
+  },
 ];

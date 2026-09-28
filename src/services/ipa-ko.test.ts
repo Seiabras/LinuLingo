@@ -25,6 +25,9 @@ const cases: [string, string, string][] = [
   ['희망', 'himaŋ', 'huimang'],
   ['닭', 'tak̚', 'dak'],
   ['김치', 'kimt͡ɕʰi', 'gimchi'],
+  ['맛없어요', 'madʌp̚s͈ʌjo', 'madeopseoyo'],
+  ['읽고', 'ilk͈o', 'ilgo'],
+  ['앉다', 'ant͈a', 'anda'],
 ];
 
 test('coreano: regras de pronúncia na IPA e na romanização revisada', () => {

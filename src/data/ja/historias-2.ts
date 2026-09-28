@@ -1405,4 +1405,738 @@ export const STORIES_JA_2: StorySeed[] = [
       },
     },
   },
+  // ───────────────────────── B2.4 ─────────────────────────
+  {
+    id: 'ja-h34',
+    level: 'B2.4',
+    cefr: 'B2',
+    title: '寄席の時そば',
+    emoji: '🪭',
+    summary: 'No Suehirotei, a velha casa de rakugo de Shinjuku, o Linu assiste ao clássico «Toki soba» e só vai rir se entender como um freguês engana o vendedor contando moedas pelas horas do período Edo.',
+    cultural_context:
+      'O rakugo é a arte de contar histórias cômicas sentado numa almofada (zabuton), só com um leque (sensu) e uma toalhinha (tenugui) como adereços; o artista faz todos os personagens virando a cabeça para um lado e para o outro. Os yose são as casas onde os artistas se sucedem ao longo do dia, dos aprendizes (zenza) aos mestres (shin’uchi), e o último, o tori, fecha a sessão; no meio há números de variedades, como o kamikiri, recorte de papel feito na hora. O Suehirotei, em Shinjuku, funciona num prédio de madeira de 1946 e tem até assentos de tatame nas laterais. «Toki soba» é um clássico: um freguês engana o vendedor de sobá na contagem das moedas usando as horas do período Edo, em que a noite se contava de seis para baixo até o nove da meia-noite.',
+    start: 'start',
+    glossary: [
+      ['寄席', 'yose, casa de espetáculos de rakugo'],
+      ['噺家', 'artista de rakugo'],
+      ['高座', 'o palquinho onde o artista se senta'],
+      ['前座・真打', 'aprendiz / mestre (os graus do rakugo)'],
+      ['トリ', 'o último artista da sessão, o mais importante'],
+      ['紙切り', 'kamikiri, recortar figuras de papel na hora'],
+      ['文', 'mon, moeda do período Edo'],
+      ['何どき', 'que horas (jeito antigo de 何時)'],
+      ['九つ・四つ', 'meia-noite / umas dez da noite, nas horas de Edo'],
+      ['オチ', 'o desfecho cômico de uma história (também サゲ)'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🏮',
+        text: '新宿三丁目のビルの間に、ちょうちんを並べた木造の建物がぽつんと残っていた。新宿末廣亭だ。落語好きの友だちの翼が、入り口で木戸銭を払いながら言った。「寄席は昼から夜まで、何人もの噺家が次々に出てくるんだ。最初は若い前座で、最後に出てくるのが真打の師匠。それをトリって言うの。」中に入ると、両側に畳の桟敷席があった。',
+        translation: 'Entre os prédios de Shinjuku 3-chōme, restava, solitário, um prédio de madeira com lanternas de papel enfileiradas: o Shinjuku Suehirotei. Pagando a entrada na porta, o Tsubasa, amigo fã de rakugo, explicou: «No yose, vários artistas se revezam, da tarde até a noite. Primeiro vêm os aprendizes, os zenza, e por último entra um mestre, um shin’uchi. Isso se chama tori.» Lá dentro, dos dois lados, havia assentos de tatame.',
+        choices: [
+          { text: '「そもそも落語って、どういうものなの？」', translation: '«Mas, afinal, o que é rakugo?»', next: 'setsumei' },
+          { text: '桟敷席に座って、最初の噺家を待つ。', translation: 'Sentar no tatame lateral e esperar o primeiro artista.', next: 'zenza' },
+        ],
+      },
+      setsumei: {
+        emoji: '🗣️',
+        text: '翼は得意そうに説明した。「着物を着た噺家が、座布団に一人で座って、面白い話をするんだよ。道具は扇子と手ぬぐいだけ。扇子は箸やキセルになるし、手ぬぐいは財布や手紙になる。登場人物が何人いても、顔を右と左に向けるだけで、全部一人で演じ分けるんだ。」リヌは、一人で何人もの声を出す自分を想像してみた。',
+        translation: 'O Tsubasa explicou, todo orgulhoso: «Um artista de quimono senta sozinho numa almofada e conta uma história engraçada. Os únicos objetos são um leque e uma toalhinha. O leque vira hashi ou cachimbo, e a toalhinha vira carteira ou carta. Não importa quantos personagens tenha: só virando o rosto para a direita e para a esquerda, ele faz todos sozinho.» O Linu tentou se imaginar fazendo várias vozes sozinho.',
+        choices: [{ text: '桟敷席に座って、最初の噺家を待つ。', translation: 'Sentar no tatame lateral e esperar o primeiro artista.', next: 'zenza' }],
+      },
+      zenza: {
+        emoji: '🎎',
+        text: '出囃子の三味線が鳴り、若い前座が高座に上がった。少し緊張した声で短い話をすると、客席からあたたかい拍手が起こった。そのあと、何人かの噺家のあいだに、落語ではない芸も入った。紙切りの芸人が、はさみを持って客席に呼びかけた。「何か、お題をいただけますか。」',
+        translation: 'O shamisen da música de entrada tocou, e um zenza jovem subiu ao palco. Contou uma história curta com a voz meio nervosa, e a plateia aplaudiu com carinho. Depois, entre alguns artistas de rakugo, entraram números que não eram rakugo. Um artista de kamikiri, de tesoura na mão, falou com a plateia: «Alguém me dá um tema?»',
+        choices: [
+          { text: '「ペンギン！」と手を上げる。', translation: 'Levantar a asa: «Pinguim!»', next: 'kamikiri' },
+          { text: '「富士山！」と言う。', translation: 'Dizer: «Monte Fuji!»', next: 'kamikiri' },
+        ],
+      },
+      kamikiri: {
+        emoji: '✂️',
+        text: '芸人は、しゃべりながら体を左右にゆらし、はさみを動かし続けた。一分もたたないうちに、白い紙から、富士山を見上げるペンギンの姿が切り出された。客席から「おお」という声が上がる。芸人は「お題をくださったお客様に」と、その紙をリヌに渡してくれた。休憩の仲入りになると、翼がいなり寿司とお茶を買ってきた。「寄席は、食べながら見てもいいんだよ。」',
+        translation: 'O artista conversava, balançava o corpo de um lado para o outro e não parava a tesoura. Em menos de um minuto, do papel branco saiu a figura de um pinguim olhando para o monte Fuji. A plateia soltou um «ooh». «Para o cliente que me deu o tema», disse o artista, entregando o papel ao Linu. No intervalo, o nakairi, o Tsubasa comprou inarizushi e chá. «No yose, pode assistir comendo.»',
+        choices: [{ text: 'いなり寿司を食べながら、トリの師匠を待つ。', translation: 'Esperar o mestre do tori comendo inarizushi.', next: 'makura' }],
+      },
+      makura: {
+        emoji: '🎭',
+        text: 'いよいよトリの師匠が高座に上がった。最初は、最近の物価の話や、立ち食いそば屋の話で客席を笑わせる。「こういう本題の前の話を『まくら』って言うんだ」と翼がささやいた。やがて師匠の声が変わり、江戸の夜の町が目の前に広がった。屋台のそば屋を呼び止めた男が、扇子を箸にして、ずずーっとそばをすする。あまりに本物らしくて、リヌのおなかが鳴った。',
+        translation: 'Enfim, o mestre do tori subiu ao palco. Primeiro, fez a plateia rir falando da inflação e das barracas de sobá em pé. «Essa conversa antes da história principal se chama makura», cochichou o Tsubasa. Logo a voz do mestre mudou, e a cidade noturna de Edo se abriu diante dos olhos. Um homem para uma barraca de sobá e, com o leque como hashi, sorve o macarrão: zuzuuu. Era tão real que a barriga do Linu roncou.',
+        choices: [{ text: '話の続きに集中する。', translation: 'Concentrar-se no resto da história.', next: 'soba1' }],
+      },
+      soba1: {
+        emoji: '🍜',
+        text: '男はそばをほめちぎってから、代金の十六文を払い始めた。「細かいから、手を出してくれ。ひい、ふう、みい、よう、いつ、むう、なな、やあ……今、何どきだい？」「へい、九つで。」「十、十一、十二……十六。ごちそうさん！」男はさっさと帰っていった。客席がどっとわいた。翼がリヌの顔をのぞきこんだ。「わかった？」',
+        translation: 'O homem elogiou o sobá até não poder mais e começou a pagar os dezesseis mon. «É tudo moeda miúda, estende a mão. Um, dois, três, quatro, cinco, seis, sete, oito… que horas são agora?» «Sim senhor, é o nove.» «Dez, onze, doze… dezesseis. Obrigado pela comida!» E o homem foi embora rapidinho. A plateia caiu na gargalhada. O Tsubasa espiou o rosto do Linu: «Entendeu?»',
+        choices: [
+          { text: '「九つのところで数を飛ばして、一文少なく払ったんだね！」', translation: '«Ele pulou o nove na contagem e pagou um mon a menos!»', next: 'soba2' },
+          {
+            text: '「そば屋が数をまちがえて、一文多くもらっちゃったんだね。」',
+            translation: '«O vendedor errou a conta e recebeu um mon a mais, né?»',
+            wrong: 'Quem se deu bem foi o FREGUÊS. Ele contou até やあ (oito), perguntou a hora, o vendedor respondeu 「九つで」 («é o nove») e ele continuou do 十 (dez): o nove nunca foi pago. O vendedor recebeu um mon A MENOS.',
+          },
+        ],
+      },
+      soba2: {
+        emoji: '🤦',
+        text: '次の場面では、それを見ていたぼんやりした男が、まねをしようとする。ところが、次の晩、待ちきれずに早い時間に出かけてしまった。まずいそばを我慢して食べ、同じように数え始める。「ひい、ふう、みい、よう、いつ、むう、なな、やあ……今、何どきだい？」「へい、四つで。」「五つ、六つ、七つ、八つ……。」客席は、さっきよりも大きな笑いに包まれた。',
+        translation: 'Na cena seguinte, um sujeito meio aéreo que tinha visto tudo tenta imitar. Mas, na noite seguinte, sem paciência, sai cedo demais. Come um sobá horrível na marra e começa a contar do mesmo jeito: «Um, dois, três, quatro, cinco, seis, sete, oito… que horas são agora?» «Sim senhor, é o quatro.» «Cinco, seis, sete, oito…» A plateia explodiu numa risada ainda maior que a de antes.',
+        choices: [
+          { text: '「早く来たから『四つ』で、かえって四文多く払っちゃったんだ！」', translation: '«Como chegou cedo, era o «quatro», e ele acabou pagando quatro mon a mais!»', next: 'sage' },
+          {
+            text: '「今度の男は、もっとうまくやって、八文も得したんだね。」',
+            translation: '«Esse segundo foi ainda mais esperto e ganhou oito mon, né?»',
+            wrong: 'O vendedor respondeu 「四つで」 («é o quatro»), e o homem voltou a contar do 五つ (cinco). Ele já tinha dado oito moedas e ainda deu do cinco ao dezesseis: pagou QUATRO MON A MAIS. Quis enganar e saiu enganado.',
+          },
+        ],
+      },
+      sage: {
+        emoji: '🥁',
+        text: '師匠が深く頭を下げると、太鼓が鳴り、客席から大きな拍手が起こった。外に出ると、翼が説明してくれた。「江戸時代は、夜の時刻を『六つ、五つ、四つ』って減らしながら数えて、真夜中が『九つ』なんだ。だから、四つは九つより早い時間なんだよ。それに、そばが十六文なのは、二かける八で『二八そば』って呼ばれてたから、っていう説もあるんだって。」',
+        translation: 'Quando o mestre fez uma reverência profunda, o tambor soou e veio um aplauso enorme. Lá fora, o Tsubasa explicou: «No período Edo, as horas da noite se contavam diminuindo — seis, cinco, quatro —, e a meia-noite era o «nove». Então o quatro vem antes do nove. E dizem também que o sobá custava dezesseis mon porque se chamava «ni-hachi soba», dois vezes oito.»',
+        choices: [
+          { text: '「帰りに、そばを食べていこう。ぼくも師匠みたいに、ずずっとすするよ。」', translation: '«Vamos comer sobá na volta. Vou sorver fazendo zuzu, igual ao mestre.»', next: 'final_bom' },
+          { text: '「ぼくもあの手で、一文もうけてみよう！」', translation: '«Vou tentar esse truque para ganhar um mon!»', next: 'final_neutro' },
+        ],
+      },
+      final_bom: {
+        emoji: '🥢',
+        text: '二人は新宿の古いそば屋に入った。リヌはかけそばを前に、師匠のまねをして、ずずーっと音を立ててすすった。となりの席のおじさんが笑った。「ペンギンさん、いい音だねえ。落語帰りかい？」リヌは胸を張って答えた。「はい、時そばを聞いてきました。今、何どきですか。」三人は声をそろえて笑った。',
+        translation: 'Os dois entraram num restaurante antigo de sobá em Shinjuku. Diante de um kake soba, o Linu imitou o mestre e sorveu fazendo barulho: zuzuuu. O senhor da mesa ao lado riu: «Pinguim, que belo som, hein. Está vindo do rakugo?» O Linu estufou o peito: «Sim, fui ouvir o Toki soba. Que horas são agora?» Os três riram juntos.',
+        ending: { tone: 'bom', title: 'Que horas são?', message: 'O Linu entendeu a contagem de Edo, riu na hora certa e ainda fez a piada ao contrário. Isso é ouvido de rakugo!' },
+      },
+      final_neutro: {
+        emoji: '🎫',
+        text: 'リヌは駅の立ち食いそば屋に入った。ところが、入り口には食券の券売機があり、先にお金を入れないとそばが食べられなかった。「今、何どきですか」と聞くと、店員は「九時十五分です」とだけ答えた。翼は腹を抱えて笑った。「今の時代に、時そばは通用しないんだよ！」',
+        translation: 'O Linu entrou numa barraca de sobá em pé na estação. Mas na entrada havia uma máquina de tíquetes, e sem pôr o dinheiro antes não dava para comer. Quando ele perguntou «Que horas são agora?», o atendente só respondeu: «Nove e quinze.» O Tsubasa se dobrou de rir: «Nos dias de hoje, o Toki soba não funciona!»',
+        ending: { tone: 'neutro', title: 'Derrotado pela máquina', message: 'O Linu entendeu o truque, mas a máquina de tíquetes cobra antes de qualquer contagem. Rakugo é para ouvir, não para imitar!' },
+      },
+    },
+  },
+  {
+    id: 'ja-h35',
+    level: 'B2.4',
+    cefr: 'B2',
+    title: '天神の面接',
+    emoji: '👔',
+    summary: 'Em Fukuoka, o Linu enfrenta uma entrevista de emprego numa agência de turismo, com todo o ritual do keigo de seleção, e depois comemora (ou lamenta) nas barracas de lámen de Nakasu, no dialeto de Hakata.',
+    cultural_context:
+      'A entrevista de emprego (mensetsu) no Japão tem um roteiro quase ritual: bater três vezes na porta (duas é para banheiro), dizer 失礼いたします ao entrar, ficar em pé ao lado da cadeira até ouvir どうぞおかけください, explicar o motivo da candidatura (shibō dōki) e, no fim, fazer uma pergunta à empresa. Falando, a empresa do entrevistador é 御社 (onsha); por escrito, em currículos e cartas, é 貴社 (kisha). Fukuoka, cidade jovem e cheia de startups, tem uns cem yatai, barracas de comida de rua que se armam ao entardecer, muitas à beira do rio em Nakasu. Ali se come o lámen de Hakata, de caldo de osso de porco e macarrão fininho, e quem quer mais pede um kaedama, uma porção extra de macarrão para a sopa que sobrou.',
+    start: 'start',
+    glossary: [
+      ['面接', 'entrevista (de emprego, de seleção)'],
+      ['御社・貴社', 'a sua empresa (falando / por escrito)'],
+      ['志望動機', 'motivo da candidatura'],
+      ['おかけください', 'sente-se, por favor (sonkeigo de 座る)'],
+      ['伺う', 'ouvir, perguntar, visitar (kenjōgo)'],
+      ['長所・短所', 'qualidade / defeito'],
+      ['内定', 'oferta de emprego (antes da contratação formal)'],
+      ['見送る', 'deixar passar; recusar (em negócios)'],
+      ['屋台', 'barraca de comida de rua'],
+      ['替え玉', 'kaedama, porção extra de macarrão na mesma sopa'],
+      ['〜けん・〜と？', 'porque… / …? (dialeto de Hakata)'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🏢',
+        text: '福岡・天神のオフィスビルの十二階で、リヌは緊張した顔で座っていた。今日は、旅行会社の最終面接だ。南米からの観光客向けのツアーを増やすため、ポルトガル語のできる社員を探しているという。スマホに、友だちの拓海からメッセージが届いた。「がんばってね！終わったら中洲の屋台で待っとるけん。」受付の女性が声をかけた。「リヌ様、お待たせいたしました。三番のお部屋へどうぞ。」',
+        translation: 'No décimo segundo andar de um prédio comercial em Tenjin, Fukuoka, o Linu esperava sentado, com cara de nervoso. Hoje era a entrevista final numa agência de turismo, que procurava um funcionário que falasse português para aumentar os passeios para turistas da América do Sul. Chegou no celular uma mensagem do amigo Takumi: «Boa sorte! Quando acabar, tô te esperando nas barracas de Nakasu.» A recepcionista o chamou: «Senhor Linu, desculpe a espera. Por favor, sala três.»',
+        choices: [
+          { text: 'ドアを三回ノックして、「失礼いたします」と言って入る。', translation: 'Bater três vezes na porta e entrar dizendo «Com licença».', next: 'nyushitsu' },
+          { text: '深呼吸を一回してから、ドアを三回ノックする。', translation: 'Respirar fundo uma vez e então bater três vezes na porta.', next: 'nyushitsu' },
+        ],
+      },
+      nyushitsu: {
+        emoji: '🚪',
+        text: '部屋には、人事部の森さんと、ツアー事業部の部長が並んで座っていた。リヌは椅子の横に立ち、「リヌと申します。本日はどうぞよろしくお願いいたします」と頭を下げた。森さんがほほえんだ。「どうぞ、おかけください。」リヌが座ると、部長が書類から目を上げた。「では、さっそくですが、当社を志望された理由をお聞かせいただけますか。」',
+        translation: 'Na sala, estavam sentados lado a lado a senhora Mori, do RH, e o diretor da divisão de passeios. O Linu ficou em pé ao lado da cadeira e se curvou: «Meu nome é Linu. Muito obrigado pela oportunidade hoje.» A senhora Mori sorriu: «Sente-se, por favor.» Quando o Linu se sentou, o diretor levantou os olhos dos papéis. «Então, indo direto ao ponto: poderia nos dizer por que se candidatou à nossa empresa?»',
+        choices: [
+          { text: '「御社が、南米からのお客様向けのツアーに力を入れていらっしゃると伺い、ぜひお役に立ちたいと思いました。」', translation: '«Soube que a sua empresa está investindo em passeios para clientes da América do Sul e quis muito poder contribuir.»', next: 'chosho' },
+          { text: '「貴社が、南米からのお客様向けのツアーに力を入れていらっしゃると伺い……。」', translation: '«Soube que a vossa empresa está investindo em passeios para clientes da América do Sul…»', next: 'kisha' },
+        ],
+      },
+      kisha: {
+        emoji: '📄',
+        text: '森さんは、にこやかに口をはさんだ。「話すときは『御社』で大丈夫ですよ。『貴社』は、履歴書やメールなど、書くときの言葉なんです。」リヌは顔を赤くして言い直した。「失礼いたしました。御社が、南米からのお客様向けのツアーに力を入れていらっしゃると伺い、ぜひお役に立ちたいと思いました。」部長が小さくうなずいた。',
+        translation: 'A senhora Mori interrompeu, simpática: «Falando, pode usar 御社. 貴社 é palavra para escrever: currículo, e-mail.» O Linu, vermelho, reformulou: «Perdão. Soube que a sua empresa está investindo em passeios para clientes da América do Sul e quis muito poder contribuir.» O diretor assentiu de leve.',
+        choices: [{ text: '次の質問を待つ。', translation: 'Esperar a próxima pergunta.', next: 'chosho' }],
+      },
+      chosho: {
+        emoji: '⚖️',
+        text: '部長は続けた。「ポルトガル語ができるのは、大きな強みですね。では、ご自身の長所と短所を教えていただけますか。」森さんがペンを持って、リヌの顔をじっと見ている。',
+        translation: 'O diretor continuou: «Falar português é um grande ponto forte. Então, poderia nos contar suas qualidades e seus defeitos?» A senhora Mori, de caneta na mão, olhava fixamente para o Linu.',
+        choices: [
+          { text: '「長所は、寒さや困難に強く、粘り強いところです。短所は、慎重すぎて決めるのが遅いところですが、期限を決めて判断するようにしております。」', translation: '«Minha qualidade é aguentar frio e dificuldades e ser persistente. Meu defeito é ser cauteloso demais e demorar para decidir, mas tenho procurado me dar prazos para tomar decisões.»', next: 'gyaku' },
+          { text: '「長所はたくさんありますが、短所は特にございません。」', translation: '«Tenho muitas qualidades, mas defeitos, nenhum em especial.»', next: 'nai' },
+        ],
+      },
+      nai: {
+        emoji: '😬',
+        text: '森さんと部長は、ちらりと顔を見合わせた。部長が静かに言った。「短所のない人はいませんよ。自分の弱いところを知っていて、どう工夫しているか。それを伺いたかったんです。」リヌは慌てて、決めるのが遅いという自分の短所と、その直し方を話した。部長の表情が、少しやわらいだ。',
+        translation: 'A senhora Mori e o diretor trocaram um olhar rápido. O diretor disse, calmo: «Não existe quem não tenha defeitos. O que eu queria ouvir é se a pessoa conhece seus pontos fracos e o que faz a respeito.» O Linu, atrapalhado, falou do seu defeito de demorar para decidir e de como tenta corrigi-lo. A expressão do diretor se suavizou um pouco.',
+        choices: [{ text: '次の質問を待つ。', translation: 'Esperar a próxima pergunta.', next: 'gyaku' }],
+      },
+      gyaku: {
+        emoji: '❓',
+        text: '面接の終わりに、部長が言った。「最後に、リヌさんから何かご質問はございますか。」リヌは、これが大事な質問だと本で読んだことを思い出した。「何もない」と答えると、会社に興味がないと思われることもあるらしい。',
+        translation: 'No fim da entrevista, o diretor disse: «Por último, o senhor tem alguma pergunta para nós?» O Linu lembrou de ter lido num livro que essa pergunta é importante. Parece que, se a pessoa responde que não tem nada, pode passar a impressão de que não tem interesse na empresa.',
+        choices: [
+          { text: '「入社までに、勉強しておくべきことがございましたら、教えていただけますか。」', translation: '«Se houver algo que eu deva estudar até a minha entrada, poderiam me dizer?»', next: 'owari' },
+          { text: '「いえ、特にございません。」', translation: '«Não, nada em especial.»', next: 'final_neutro' },
+        ],
+      },
+      final_neutro: {
+        emoji: '📧',
+        text: '一週間後、リヌのもとにメールが届いた。「慎重に検討いたしました結果、誠に残念ながら、今回は採用を見送らせていただくことになりました。」中洲の屋台で、拓海がラーメンをおごってくれた。「最後の質問、大事やったとよ。次はきっとうまくいくけん。」リヌはスープを飲みながら、次の面接で聞くことをノートに書き始めた。',
+        translation: 'Uma semana depois, chegou um e-mail para o Linu: «Após cuidadosa análise, lamentamos muito informar que, desta vez, optamos por não seguir com a sua contratação.» Numa barraca de Nakasu, o Takumi pagou um lámen para ele. «A última pergunta era importante, sabe? Da próxima, vai dar certo.» Tomando a sopa, o Linu começou a anotar no caderno o que perguntar na próxima entrevista.',
+        ending: { tone: 'neutro', title: 'Fica para a próxima', message: 'O keigo estava ótimo, mas «nada em especial» no fim soa como falta de interesse. Na próxima entrevista, leve uma pergunta pronta!' },
+      },
+      owari: {
+        emoji: '🙇',
+        text: '部長はうれしそうに答えた。「ブラジルやポルトガルのお客様は、九州の温泉が大好きなんです。温泉のマナーを、ポルトガル語で説明できるようにしておいていただけると助かります。」そして、書類を閉じた。「本日はありがとうございました。結果は一週間以内に、メールでご連絡いたします。」',
+        translation: 'O diretor respondeu, satisfeito: «Os clientes do Brasil e de Portugal adoram as termas de Kyūshū. Ajudaria muito se o senhor se preparasse para explicar a etiqueta das termas em português.» E fechou os papéis. «Obrigado por hoje. Entraremos em contato com o resultado por e-mail em até uma semana.»',
+        choices: [
+          { text: '立ち上がって礼をし、ドアの前でもう一度「失礼いたします」と頭を下げて出る。', translation: 'Levantar, fazer uma reverência e, na porta, curvar-se mais uma vez dizendo «Com licença» antes de sair.', next: 'yatai' },
+          {
+            text: '「では、明日お電話をお待ちしております。」と言って部屋を出る。',
+            translation: 'Sair da sala dizendo: «Então aguardo a ligação amanhã.»',
+            wrong: 'O diretor disse 「結果は一週間以内に、メールでご連絡いたします」: o resultado vem EM ATÉ UMA SEMANA e POR E-MAIL, não por telefone amanhã. ご連絡いたします é o kenjōgo de 連絡する.',
+          },
+        ],
+      },
+      yatai: {
+        emoji: '🏮',
+        text: '夜の中洲には、那珂川沿いに屋台の明かりがずらりと並んでいた。拓海が手をふった。「リヌ！どうやった？緊張したと？」長いすに並んで座ると、店の大将がとんこつラーメンを出してくれた。細い麺に、白いスープ。「兄ちゃん、面接帰りね。替え玉するなら、スープは残しとかないかんばい。」',
+        translation: 'À noite, em Nakasu, as luzes das barracas se enfileiravam ao longo do rio Naka. O Takumi acenou: «Linu! E aí, como foi? Ficou nervoso?» Quando se sentaram lado a lado no banco comprido, o dono da barraca serviu um lámen tonkotsu: macarrão fininho e caldo branco. «Rapaz, voltando de entrevista, é? Se for pedir kaedama, tem que deixar a sopa, viu?»',
+        choices: [
+          { text: 'スープを半分残して、「替え玉、お願いします！」と言う。', translation: 'Deixar metade da sopa e dizer: «Um kaedama, por favor!»', next: 'kaedama' },
+          {
+            text: 'スープを全部飲んでから、「替え玉、お願いします！」と言う。',
+            translation: 'Tomar a sopa toda e depois dizer: «Um kaedama, por favor!»',
+            wrong: 'O dono avisou 「替え玉するなら、スープは残しとかないかんばい」: para pedir kaedama, é preciso DEIXAR A SOPA, porque o macarrão extra vem sozinho e vai para o caldo que sobrou. 〜とかないかん = 〜ておかないといけない no dialeto de Hakata, e ばい é um «viu?».',
+          },
+        ],
+      },
+      kaedama: {
+        emoji: '🍜',
+        text: '大将が、ゆでたての麺をどんぶりにぽんと入れてくれた。リヌは面接の話をした。御社と貴社をまちがえたこと、最後に温泉のマナーについて聞かれたこと。拓海は笑った。「最後に質問できたなら、よかよ。温泉のマナーなら、俺が教えちゃるけん。」となりのサラリーマンまで、「がんばりんしゃい」と声をかけてくれた。',
+        translation: 'O dono jogou o macarrão recém-cozido na tigela. O Linu contou da entrevista: que confundiu 御社 e 貴社, que no fim ouviu sobre a etiqueta das termas. O Takumi riu: «Se você conseguiu fazer uma pergunta no fim, tá ótimo. Etiqueta de onsen eu te ensino.» Até o assalariado do lado deu uma força: «Vai com tudo!»',
+        choices: [{ text: '一週間、結果のメールを待つ。', translation: 'Esperar uma semana pelo e-mail com o resultado.', next: 'final_bom' }],
+      },
+      final_bom: {
+        emoji: '🎉',
+        text: '六日後の朝、メールが届いた。件名は「内定のお知らせ」。リヌは思わず飛び上がって、拓海に電話をかけた。「受かった！」「やったやん！今夜も屋台で乾杯たい！」その晩、リヌは同じ屋台で、ポルトガル語の温泉マナーの説明を、大将と拓海の前で練習した。',
+        translation: 'Seis dias depois, de manhã, chegou o e-mail. Assunto: «Comunicado de oferta de emprego». O Linu deu um pulo e ligou para o Takumi: «Passei!» «Boa! Hoje à noite tem brinde na barraca de novo!» Naquela noite, na mesma barraca, o Linu ensaiou em português a explicação da etiqueta das termas, diante do dono e do Takumi.',
+        ending: { tone: 'bom', title: 'Contratado!', message: 'Três batidas na porta, 御社 na fala, um defeito bem explicado e uma pergunta no fim: o Linu passou na entrevista e ainda aprendeu a pedir kaedama.' },
+      },
+    },
+  },
+  {
+    id: 'ja-h36',
+    level: 'B2.4',
+    cefr: 'B2',
+    title: '白川郷の結',
+    emoji: '🛖',
+    summary: 'Em Shirakawa-gō, o Linu é voluntário na troca do telhado de palha de uma casa gasshō-zukuri e descobre o yui, o sistema em que a aldeia inteira se ajuda — e que hoje depende também de gente de fora.',
+    cultural_context:
+      'Shirakawa-gō, nas montanhas de Gifu, e a vizinha Gokayama, em Toyama, são Patrimônio Mundial desde 1995 pelas casas gasshō-zukuri, de telhado de palha íngreme como mãos postas em oração (gasshō), feito para aguentar metros de neve; os sótãos serviam para criar bicho-da-seda. A cada trinta ou quarenta anos o telhado precisa ser refeito, e isso se faz pelo yui, o sistema de ajuda mútua da aldeia: dezenas ou centenas de pessoas trabalham um dia inteiro no telhado de um vizinho, e a dívida se paga com trabalho, não com dinheiro. Com o envelhecimento e a saída dos jovens, voluntários de fora passaram a ajudar. As casas de Ogimachi têm as águas do telhado voltadas para leste e oeste, para o sol secar a palha de manhã e à tarde. E o turismo em massa trouxe um lembrete dos moradores: é uma aldeia onde se vive, não um museu.',
+    start: 'start',
+    glossary: [
+      ['合掌造り', 'gasshō-zukuri, casa de telhado de palha íngreme'],
+      ['茅', 'kaya, capim usado para cobrir telhados'],
+      ['葺き替え', 'troca da cobertura de um telhado'],
+      ['結', 'yui, ajuda mútua da aldeia, paga com trabalho'],
+      ['棟梁', 'mestre de obras, chefe dos carpinteiros'],
+      ['〜ていただけますでしょうか', 'poderiam, por gentileza…? (pedido muito educado)'],
+      ['〜やさ', 'é… (fim de frase no dialeto de Hida)'],
+      ['〜なれ', 'faça…, pedido carinhoso no dialeto de Hida (食べなれ)'],
+      ['人手が足りない', 'faltar gente para trabalhar'],
+      ['朴葉味噌', 'missô grelhado numa folha de magnólia, prato de Hida'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🌄',
+        text: '四月の朝六時、白川郷の荻町には、二百人近い人が集まっていた。今日は、ある合掌造りの家の屋根を、一日で葺き替えるのだ。はっぴを着た棟梁が、拡声器で呼びかけた。「本日はお集まりいただき、ありがとうございます。屋根の上は大変危険ですので、ボランティアの皆様は、下で茅を運んでいただけますでしょうか。」',
+        translation: 'Abril, seis da manhã: em Ogimachi, Shirakawa-gō, quase duzentas pessoas estavam reunidas. Naquele dia iam trocar o telhado de uma casa gasshō-zukuri em um dia só. O mestre de obras, de happi, falou pelo megafone: «Obrigado a todos por virem hoje. Como o alto do telhado é muito perigoso, pedimos aos voluntários que, por gentileza, carreguem o capim aqui embaixo.»',
+        choices: [
+          { text: '茅を運ぶ列に加わる。', translation: 'Entrar na fila que carrega o capim.', next: 'kaya' },
+          { text: '近くにいた若い村人に、あいさつする。', translation: 'Cumprimentar um jovem da aldeia que estava por perto.', next: 'sho' },
+        ],
+      },
+      sho: {
+        emoji: '👋',
+        text: '「おはようございます。ボランティアのリヌです。」若い村人は、日に焼けた顔で笑った。「翔です。この家、俺のおじさんの家なんやさ。来てくれて助かるわ。今日はよろしくな。」翔は、茅の束が山のように積まれた場所を指さした。「じゃ、一緒に運ぼか。」',
+        translation: '«Bom dia. Sou o Linu, voluntário.» O jovem sorriu com o rosto queimado de sol. «Sou o Shō. Esta casa é do meu tio. Ajuda muito você ter vindo. Conto contigo hoje, hein.» O Shō apontou um lugar com feixes de capim empilhados feito uma montanha. «Bora carregar juntos?»',
+        choices: [{ text: '翔と一緒に、茅の山へ行く。', translation: 'Ir com o Shō até a pilha de capim.', next: 'kaya' }],
+      },
+      kaya: {
+        emoji: '🌾',
+        text: '茅の束は、思ったよりずっと重かった。翔が説明した。「この屋根一つに、茅が何千束も要るんやさ。切り口を下にして、束のまま、はしごの下の人に渡してな。ほどいたら、あかんよ。」屋根の上では、何十人もの男たちが、声をかけ合いながら、手際よく茅を並べていく。',
+        translation: 'O feixe de capim era muito mais pesado do que o Linu imaginava. O Shō explicou: «Um telhado destes precisa de milhares de feixes. Passa para o pessoal ao pé da escada com a parte cortada para baixo, amarrado do jeito que está. Desamarrar, não pode, viu?» No telhado, dezenas de homens iam arrumando o capim com destreza, gritando uns para os outros.',
+        choices: [
+          { text: '「結って、どういう仕組みなの？」と翔に聞く。', translation: 'Perguntar ao Shō: «Como funciona o yui?»', next: 'yui' },
+          { text: '「どうして、こんなに屋根が急なの？」と聞く。', translation: 'Perguntar: «Por que o telhado é tão inclinado?»', next: 'yane' },
+          {
+            text: '運びやすいように、束のひもをほどいてから渡す。',
+            translation: 'Desamarrar o feixe para ficar mais fácil de carregar e então passar adiante.',
+            wrong: 'O Shō pediu para passar 「束のまま」, AMARRADO DO JEITO QUE ESTÁ, com o corte para baixo, e avisou: 「ほどいたら、あかんよ」, desamarrar não pode (あかん = だめ).',
+          },
+        ],
+      },
+      yui: {
+        emoji: '🤝',
+        text: '翔は茅を肩にかついだまま答えた。「村のみんなで助け合う仕組みやさ。うちの屋根のときは隣の家が手伝いに来てくれて、隣の屋根のときは、うちが行く。お金やなくて、働いて返すんや。じいちゃんの代から、ずっとそうしてきた。」',
+        translation: 'O Shō respondeu com o feixe no ombro: «É o jeito da aldeia inteira se ajudar. Quando é o nosso telhado, a casa vizinha vem ajudar; quando é o telhado deles, a gente vai. Não se paga com dinheiro, se paga trabalhando. Desde a geração do meu avô é assim.»',
+        choices: [{ text: '昼まで、茅を運び続ける。', translation: 'Continuar carregando capim até o almoço.', next: 'hiru' }],
+      },
+      yane: {
+        emoji: '❄️',
+        text: '「冬には、雪が二メートルも積もるからやさ。急な屋根なら、雪が自然に落ちる。」翔は屋根の三角を指でなぞった。「屋根裏は何階にもなってて、昔はそこで蚕を飼ってたんや。それから、この村の家は、みんな屋根が東と西を向いとるやろ。朝と夕方に日が当たって、茅が乾きやすいんやさ。」',
+        translation: '«É porque no inverno a neve acumula uns dois metros. Com o telhado íngreme, a neve cai sozinha.» O Shō desenhou no ar o triângulo do telhado. «O sótão tem vários andares, e antigamente criavam bicho-da-seda lá. E repara: as casas daqui têm todas o telhado virado para leste e oeste. Pega sol de manhã e de tarde, e o capim seca mais fácil.»',
+        choices: [{ text: '昼まで、茅を運び続ける。', translation: 'Continuar carregando capim até o almoço.', next: 'hiru' }],
+      },
+      hiru: {
+        emoji: '🍙',
+        text: '昼になると、村の女性たちがおにぎりと漬物、朴葉味噌を運んできた。翔のおばあちゃんの和子さんが、リヌに皿を渡した。「たんと食べなれ。」それから、少しさびしそうに言った。「若い人がみんな町へ出てしもうて、結の人手も足りんようになってきた。ボランティアさんが来てくれて、ほんとにありがたいんやさ。」',
+        translation: 'Ao meio-dia, as mulheres da aldeia trouxeram bolinhos de arroz, picles e missô grelhado na folha de magnólia. A avó do Shō, dona Kazuko, entregou um prato ao Linu: «Coma bastante.» Depois disse, meio tristonha: «Os jovens foram todos para a cidade, e está faltando gente até para o yui. Os voluntários virem é uma bênção de verdade.»',
+        choices: [
+          { text: '「来年も、きっと手伝いに来ます。」', translation: '«No ano que vem eu venho ajudar de novo, com certeza.»', next: 'gogo' },
+          { text: '「観光客が増えて、村はどう変わりましたか。」', translation: '«Com o aumento dos turistas, como a aldeia mudou?»', next: 'kanko' },
+        ],
+      },
+      kanko: {
+        emoji: '📸',
+        text: '和子さんは、お茶を一口飲んでから答えた。「世界遺産になってから、店もできて、村はにぎやかになったよ。それはありがたい。けど、よその家の庭に黙って入って、写真を撮る人もおる。」和子さんは、茅の屋根を見上げた。「ここは博物館やなくて、人が暮らしとる村なんやさ。それだけは、わかってほしいなあ。」',
+        translation: 'Dona Kazuko tomou um gole de chá antes de responder. «Depois que virou Patrimônio Mundial, abriram lojas e a aldeia ficou movimentada. Isso é bom. Mas tem gente que entra no quintal dos outros sem pedir e fica tirando foto.» Ela olhou para o telhado de capim. «Isto aqui não é museu, é uma aldeia onde gente vive. Só isso eu queria que entendessem.»',
+        choices: [{ text: '「よくわかりました。」と言って、午後の仕事に戻る。', translation: 'Dizer «Entendi bem» e voltar ao trabalho da tarde.', next: 'gogo' }],
+      },
+      gogo: {
+        emoji: '🪜',
+        text: '午後になると、屋根のてっぺんまで新しい茅がそろってきた。翔が言った。「上から見てみる？棟梁に聞いたら、はしごの途中までならええって。」棟梁は、リヌに真剣な顔で言った。「はしごの三段目までにしてください。それ以上は、絶対に上がらないように。」',
+        translation: 'À tarde, o capim novo já chegava ao topo do telhado. O Shō disse: «Quer ver lá de cima? Perguntei ao mestre, e ele disse que até o meio da escada pode.» O mestre de obras falou ao Linu com cara séria: «Só até o terceiro degrau da escada. Mais do que isso, não suba de jeito nenhum.»',
+        choices: [
+          { text: 'はしごの三段目まで上がって、村をながめる。', translation: 'Subir até o terceiro degrau e contemplar a aldeia.', next: 'nagame' },
+          {
+            text: 'せっかくだから、屋根のてっぺんまで上がって写真を撮る。',
+            translation: 'Já que está ali, subir até o alto do telhado e tirar foto.',
+            wrong: 'O mestre disse 「はしごの三段目までにしてください」: SÓ ATÉ O TERCEIRO DEGRAU, e 「それ以上は、絶対に上がらないように」, mais do que isso, não suba de jeito nenhum. O alto do telhado é só para quem sabe o trabalho.',
+          },
+        ],
+      },
+      nagame: {
+        emoji: '🏞️',
+        text: '三段目からでも、村はよく見えた。田んぼの間に、同じ向きの三角の屋根がいくつも並び、その向こうに雪の残る山がそびえている。夕方、最後の茅が刈りそろえられると、屋根は夕日に金色に光った。棟梁が大きな声で言った。「皆様のおかげで、無事に葺き終わりました。本当にお疲れさまでした！」拍手の中で、翔がリヌの肩をたたいた。「このあと、みんなで打ち上げやけど、来るやろ？」',
+        translation: 'Mesmo do terceiro degrau, dava para ver bem a aldeia. Entre os arrozais, vários telhados triangulares, todos na mesma direção, e atrás deles as montanhas ainda com neve. No fim da tarde, quando o último capim foi aparado, o telhado brilhou dourado ao sol poente. O mestre gritou: «Graças a todos, terminamos o telhado sem nenhum acidente. Muito obrigado pelo trabalho!» Em meio aos aplausos, o Shō bateu no ombro do Linu. «Agora tem a festa de encerramento com todo mundo. Você vem, né?»',
+        choices: [
+          { text: '「もちろん！」', translation: '«Claro!»', next: 'final_bom' },
+          { text: '「今日は疲れたから、宿に戻るね。」', translation: '«Hoje estou cansado, vou voltar para a pousada.»', next: 'final_neutro' },
+        ],
+      },
+      final_bom: {
+        emoji: '🍶',
+        text: '囲炉裏のある大きな部屋で、村の人たちとボランティアが一緒に鍋を囲んだ。和子さんが、リヌの湯のみにお茶をついでくれた。「あんたは、もう結の仲間やさ。」翔のおじさんは、「三十年後の葺き替えにも来てくれよ」と笑った。新しい屋根の下で、リヌは、お金では返せないものがあることを知った。',
+        translation: 'Numa sala grande com lareira no chão, os moradores e os voluntários se reuniram em volta da panela. A dona Kazuko serviu chá no copo do Linu. «Você agora é do yui.» O tio do Shō riu: «Venha também na próxima troca, daqui a trinta anos!» Sob o telhado novo, o Linu descobriu que há coisas que não se pagam com dinheiro.',
+        ending: { tone: 'bom', title: 'Membro do yui', message: 'O Linu seguiu à risca os pedidos em keigo do mestre, entendeu o dialeto de Hida e ganhou um lugar na roda da aldeia.' },
+      },
+      final_neutro: {
+        emoji: '🌙',
+        text: '宿に戻ったリヌは、すぐに眠ってしまった。夜中にふと目を覚ますと、遠くから、村の人たちの笑い声と歌が聞こえてきた。次の朝、翔は「昨日の打ち上げ、おばあちゃんがリヌのぶんのおにぎりまで作っとったんやさ」と言った。リヌは少しだけ、昨日の夜を惜しく思った。',
+        translation: 'De volta à pousada, o Linu dormiu na hora. No meio da noite, acordou de repente e ouviu ao longe risadas e cantoria do pessoal da aldeia. Na manhã seguinte, o Shō contou: «Na festa de ontem, a vó tinha feito até bolinho de arroz para você.» O Linu sentiu um pouquinho de pena da noite anterior.',
+        ending: { tone: 'neutro', title: 'A festa sem o Linu', message: 'O trabalho foi impecável, mas o yui também se faz na mesa, depois do telhado pronto. Da próxima vez, fique para a festa!' },
+      },
+    },
+  },
+  // ───────────────────────── C1.1 ─────────────────────────
+  {
+    id: 'ja-h37',
+    level: 'C1.1',
+    cefr: 'C1',
+    title: '一本松の町で',
+    emoji: '🌲',
+    summary: 'Quinze anos depois do tsunami de 2011, o Linu lê a reportagem do aniversário e percorre Rikuzentakata com uma kataribe, uma moradora que conta o que viveu naquele dia e o que a costa aprendeu com ele.',
+    cultural_context:
+      'Em 11 de março de 2011, um terremoto de magnitude 9,0 e o tsunami que veio em seguida deixaram mais de dezoito mil mortos e desaparecidos no nordeste do Japão (Tōhoku) e provocaram o acidente nuclear de Fukushima. Em Rikuzentakata, na costa de Iwate, ondas de mais de quinze metros arrasaram o centro e mataram mais de 1.700 moradores. Dos cerca de setenta mil pinheiros do bosque de Takata Matsubara, só um ficou de pé; morreu depois por causa do sal e foi preservado como monumento, o «pinheiro milagroso», o que também gerou críticas pelo custo. A cidade elevou o terreno do centro em mais de dez metros e ergueu um dique de mais de doze, mas a população não voltou ao que era. Hoje, o Museu do Tsunami e os kataribe, moradores que contam o que viveram, transmitem o lema da costa de Sanriku: «tsunami tendenko», cada um foge por si, confiando que os outros também fugirão.',
+    start: 'start',
+    glossary: [
+      ['東日本大震災', 'o Grande Terremoto do Leste do Japão (2011)'],
+      ['黙とうをささげる', 'fazer um minuto de silêncio'],
+      ['犠牲となる', 'ser vítima, morrer (em desastre; registro jornalístico)'],
+      ['行方不明', 'desaparecido'],
+      ['かさ上げ', 'elevar o nível do terreno com aterro'],
+      ['〜にとどまる', 'ficar em apenas…, não passar de…'],
+      ['防潮堤', 'dique contra maremotos'],
+      ['語り部', 'kataribe, quem conta às novas gerações o que viveu'],
+      ['津波てんでんこ', '«tsunami tendenko»: quando vier o tsunami, cada um foge por si'],
+      ['語り継ぐ', 'transmitir contando, de geração em geração'],
+    ],
+    nodes: {
+      start: {
+        emoji: '📰',
+        text: '線路の跡を走るバスに揺られながら、リヌは今朝の新聞を広げた。見出しは「『あの日』を語り継ぐ」。「東日本大震災から十五年を迎えた十一日、岩手県陸前高田市では、地震が発生した午後二時四十六分に合わせ、市民らが海に向かって黙とうをささげた。市内では千七百人を超える人が犠牲となり、今も二百人近くの行方がわからないままだ。」',
+        translation: 'Balançando no ônibus que corre pelo antigo leito da ferrovia, o Linu abriu o jornal da manhã. A manchete: «Transmitir "aquele dia"». «No dia onze, quando se completaram quinze anos do Grande Terremoto do Leste do Japão, em Rikuzentakata, província de Iwate, moradores fizeram um minuto de silêncio voltados para o mar às 14h46, hora em que ocorreu o terremoto. Mais de 1.700 pessoas morreram na cidade, e perto de duzentas continuam desaparecidas.»',
+        choices: [
+          { text: '記事の続きを読む。', translation: 'Ler o resto da reportagem.', next: 'kiji' },
+          { text: '新聞をたたんで、窓の外を見る。', translation: 'Dobrar o jornal e olhar pela janela.', next: 'mado' },
+        ],
+      },
+      kiji: {
+        emoji: '🏗️',
+        text: '「市は浸水した中心部の土地を最大で十メートル以上かさ上げし、新たな市街地を整備してきた。しかし、人口は震災前の七割あまりにとどまり、かさ上げ地には今も空き地が目立つ。『町はできた。だが、人が戻らない』。商店街で店を再開した男性（七十二）は、そう語った。」リヌは、最後の一文を二度読んだ。',
+        translation: '«A prefeitura elevou em até mais de dez metros o terreno do centro que foi inundado e construiu uma nova área urbana. No entanto, a população não passa de pouco mais de setenta por cento da de antes do terremoto, e os terrenos vazios ainda chamam a atenção na área aterrada. "A cidade ficou pronta. Mas as pessoas não voltam", disse um homem de 72 anos que reabriu sua loja na rua comercial.» O Linu leu a última frase duas vezes.',
+        choices: [
+          { text: '新聞をたたんで、窓の外を見る。', translation: 'Dobrar o jornal e olhar pela janela.', next: 'mado' },
+          {
+            text: '「町が新しくなって、人口も震災前より増えたんだな。」と思う。',
+            translation: 'Pensar: «A cidade foi reconstruída e a população até cresceu em relação a antes do terremoto.»',
+            wrong: 'A reportagem diz o contrário: 「人口は震災前の七割あまりにとどまり」, a população NÃO PASSA de pouco mais de 70% da de antes. 〜にとどまる = «ficar só em», e o comerciante resume: 「人が戻らない」, as pessoas não voltam.',
+          },
+        ],
+      },
+      mado: {
+        emoji: '🧱',
+        text: '窓の外には、灰色の壁がどこまでも続いていた。高さ十二メートルあまりの防潮堤だ。その内側には、土を盛って高くした広い土地に、新しい図書館や商業施設がぽつりぽつりと建っている。海は、壁に隠れてまったく見えなかった。守るための壁が、同時に海を遠ざけている。リヌは、その景色の意味をうまく言葉にできなかった。',
+        translation: 'Lá fora, um muro cinzento se estendia sem fim: o dique de mais de doze metros de altura. Do lado de dentro, num terreno amplo elevado com aterro, uma biblioteca e um centro comercial novos se erguiam aqui e ali. O mar, escondido pelo muro, não aparecia de jeito nenhum. O muro feito para proteger também afastava o mar. O Linu não conseguia pôr em palavras o que aquela paisagem significava.',
+        choices: [{ text: '追悼の公園の前でバスを降りる。', translation: 'Descer do ônibus em frente ao parque memorial.', next: 'koen' }],
+      },
+      koen: {
+        emoji: '🧓',
+        text: '公園の入り口で、語り部の佐々木さんが待っていた。六十代の小柄な女性で、声は穏やかだが、はっきりしている。「遠いところ、よくいらっしゃいました。まず、あちらをご覧ください。」指さす先には、壁がえぐられ、窓枠だけが残ったコンクリートの建物があった。「あの日の姿のまま、残してあるんです。あの四階の高さまで、水が来ました。」',
+        translation: 'Na entrada do parque, a kataribe Sasaki esperava. Era uma senhora miúda de uns sessenta anos, de voz serena mas firme. «Que bom que vieram de tão longe. Primeiro, olhem ali.» Para onde ela apontava, havia um prédio de concreto com as paredes arrancadas, só com os caixilhos das janelas. «Foi deixado exatamente como ficou naquele dia. A água chegou até a altura daquele quarto andar.»',
+        choices: [
+          { text: '「佐々木さんは、あの日、どこにいらっしゃったんですか。」', translation: '«Onde a senhora estava naquele dia?»', next: 'anohi' },
+          { text: '「あの松が、奇跡の一本松ですか。」', translation: '«Aquele pinheiro é o pinheiro milagroso?»', next: 'ipponmatsu' },
+        ],
+      },
+      ipponmatsu: {
+        emoji: '🌲',
+        text: '佐々木さんはうなずいた。「ここには七万本の松原がありました。残ったのは、あの一本だけ。でも、根が海水にやられて、翌年には枯れてしまったんです。今立っているのは、幹を切って中に芯を通し、枝や葉を複製して元の姿に戻したものです。」佐々木さんは少し間をおいた。「一億五千万円もかけて残すことには、反対の声もありました。それでも、あれを見ると、生き残った者として、ここに立っていていいんだと思えるんです。」',
+        translation: 'A senhora Sasaki assentiu. «Aqui havia um bosque de setenta mil pinheiros. Só aquele sobrou. Mas as raízes foram danificadas pela água do mar, e no ano seguinte ele morreu. O que está de pé hoje foi feito cortando o tronco, passando uma estrutura por dentro e reproduzindo os galhos e as folhas para devolver a forma original.» Ela fez uma pausa. «Houve quem fosse contra gastar cento e cinquenta milhões de ienes para preservá-lo. Mesmo assim, quando olho para ele, sinto que eu, que sobrevivi, posso continuar aqui de pé.»',
+        choices: [
+          { text: '「佐々木さんご自身は、あの日、どちらに？」', translation: '«E a senhora, onde estava naquele dia?»', next: 'anohi' },
+          {
+            text: '「じゃあ、あの松は今も生きて、葉を茂らせているんですね。」',
+            translation: '«Então aquele pinheiro continua vivo, cheio de folhas, né?»',
+            wrong: 'A senhora Sasaki explicou que o pinheiro 「翌年には枯れてしまった」, MORREU no ano seguinte por causa da água do mar; o que está de pé é o tronco preservado, com galhos e folhas 「複製して」, REPRODUZIDOS artificialmente.',
+          },
+        ],
+      },
+      anohi: {
+        emoji: '🕑',
+        text: '「市役所の近くの事務所で働いていました。」佐々木さんは海のほうを見つめたまま話した。「揺れは、三分以上続きました。大津波警報が出て、わたしは裏の山へ走りました。でも、母は『ここまでは来ない。前のチリ地震の津波のときも大丈夫だった』と言って、家に残ったんです。」風が、植えたばかりの若い松を揺らした。「母は、見つかりませんでした。」',
+        translation: '«Eu trabalhava num escritório perto da prefeitura.» A senhora Sasaki falava sem tirar os olhos do mar. «O tremor durou mais de três minutos. Veio o alerta de grande tsunami, e eu corri para o morro dos fundos. Mas a minha mãe disse: "Aqui não chega. No tsunami do terremoto do Chile também não aconteceu nada", e ficou em casa.» O vento balançou os pinheirinhos recém-plantados. «A minha mãe nunca foi encontrada.»',
+        choices: [
+          { text: '「『津波てんでんこ』という言葉を聞いたことがあるのですが……。」', translation: '«Já ouvi a expressão «tsunami tendenko»…»', next: 'tendenko' },
+          { text: '何も言わずに、ただ静かに聞く。', translation: 'Não dizer nada; apenas ouvir em silêncio.', next: 'chinmoku' },
+        ],
+      },
+      chinmoku: {
+        emoji: '🤍',
+        text: 'リヌは何も言わずに、ただうなずいた。しばらくして、佐々木さんが小さくほほえんだ。「聞いてくださって、ありがとうございます。最初の何年かは、話すことなんてできませんでした。でも、話すようになって、わたしもなんとか生きてこられたんです。」そして、ゆっくりと言った。「この辺りには、『津波てんでんこ』という言い伝えがあるんですよ。」',
+        translation: 'O Linu não disse nada; só assentiu. Depois de um tempo, a senhora Sasaki deu um sorriso pequeno. «Obrigada por ouvir. Nos primeiros anos, eu não conseguia falar disso de jeito nenhum. Mas, quando comecei a falar, consegui, de algum jeito, seguir vivendo.» E disse devagar: «Por aqui existe um ditado: "tsunami tendenko".»',
+        choices: [{ text: '「どういう意味ですか。」', translation: '«O que quer dizer?»', next: 'tendenko' }],
+      },
+      tendenko: {
+        emoji: '🏃',
+        text: '「『てんでんばらばらに』という意味です。津波が来たら、家族を待たず、探しに戻らず、それぞれが自分の命を守って、高い所へ逃げろ、と。」佐々木さんは続けた。「冷たい言葉に聞こえるでしょう。でも本当は、約束なんです。あの人もきっと逃げている、と互いに信じられるように、ふだんから話し合っておく。そうすれば、誰も迷わずに走れる。」',
+        translation: '«Quer dizer "cada um para um lado". Quando vier o tsunami, não espere a família, não volte para procurar ninguém: cada um protege a própria vida e foge para o alto.» Ela continuou: «Parece uma frase fria, não é? Mas, na verdade, é uma promessa. A gente conversa sobre isso no dia a dia para poder confiar que o outro também vai fugir. Assim, ninguém hesita na hora de correr.»',
+        choices: [
+          { text: '「互いを信じるための約束なんですね。」', translation: '«É uma promessa para poder confiar uns nos outros, então.»', next: 'densho' },
+          {
+            text: '「つまり、まず家族を探しに戻れ、という教えなんですね。」',
+            translation: '«Ou seja, é um ensinamento de voltar primeiro para procurar a família.»',
+            wrong: 'É exatamente o oposto: 「家族を待たず、探しに戻らず」, SEM esperar a família e SEM voltar para procurá-la, cada um foge para o alto. 〜ず é o negativo literário de 〜ないで. A confiança combinada antes é que permite correr sem hesitar.',
+          },
+        ],
+      },
+      densho: {
+        emoji: '🕰️',
+        text: '二人は津波伝承館に入った。ガラスケースの中には、泥にまみれた看板や、二時四十六分をさしたまま止まった時計が並んでいる。壁の映像では、水門を閉めに向かって帰らなかった消防団員たちのことが紹介されていた。出口の近くには、訪れた人がメッセージを書き残すノートが置いてある。ページには、さまざまな言葉と文字が重なっていた。',
+        translation: 'Os dois entraram no Museu do Tsunami. Nas vitrines, placas cobertas de lama e relógios parados marcando 14h46. Num vídeo na parede, falava-se dos bombeiros voluntários que foram fechar as comportas e não voltaram. Perto da saída, havia um caderno onde os visitantes deixavam mensagens. Nas páginas, palavras e escritas de todo tipo se sobrepunham.',
+        choices: [
+          { text: 'ノートに、自分の言葉を書く。', translation: 'Escrever as próprias palavras no caderno.', next: 'kakikomi' },
+          { text: '佐々木さんに、これからの町のことを聞く。', translation: 'Perguntar à senhora Sasaki sobre o futuro da cidade.', next: 'mirai' },
+        ],
+      },
+      kakikomi: {
+        emoji: '✍️',
+        text: 'リヌは少し考えてから、ゆっくりと書いた。「南極から来ました。聞いたことを、ぼくの国のみんなにも伝えます。」佐々木さんがそれを読んで、目を細めた。「語り継ぐというのは、こういうことなんです。わたしの話が、わたしのいないところで生きていく。」',
+        translation: 'O Linu pensou um pouco e escreveu devagar: «Vim da Antártida. Vou contar o que ouvi a todos da minha terra também.» A senhora Sasaki leu e apertou os olhos, emocionada. «Transmitir é isto. A minha história passa a viver em lugares onde eu não estou.»',
+        choices: [{ text: '「これから、この町はどうなっていくと思いますか。」', translation: '«Como a senhora acha que esta cidade vai ser daqui para a frente?»', next: 'mirai' }],
+      },
+      mirai: {
+        emoji: '🌱',
+        text: '外に出ると、防潮堤の向こうの砂浜に、背の低い松の苗が何万本も並んでいた。「市民やボランティアが、少しずつ植えてきたんです。あの松原が元に戻るには、百年かかるかもしれません。わたしは見られないでしょうね。」佐々木さんは笑った。「でも、植える人がいる限り、この町は終わりません。来週も、植樹の手入れがあるんですよ。」',
+        translation: 'Lá fora, na areia além do dique, dezenas de milhares de mudas baixinhas de pinheiro estavam enfileiradas. «Moradores e voluntários foram plantando aos poucos. Para o bosque voltar a ser o que era, talvez leve cem anos. Eu não vou ver, provavelmente.» A senhora Sasaki riu. «Mas, enquanto houver gente plantando, esta cidade não acaba. Semana que vem tem o cuidado das mudas, sabia?»',
+        choices: [
+          { text: '「来週、ぼくも手伝いに来てもいいですか。」', translation: '«Posso vir ajudar semana que vem?»', next: 'final_bom' },
+          { text: '「バスの時間なので、そろそろ失礼します。」', translation: '«Está na hora do meu ônibus; vou me despedindo.»', next: 'final_neutro' },
+        ],
+      },
+      final_bom: {
+        emoji: '🌅',
+        text: '一週間後、リヌは軍手をはめて、若い松のまわりの草を抜いていた。となりでは、高校生たちが、震災のあとに生まれた子どもたちに、松の植え方を教えている。佐々木さんが言った。「あの日を知らない子たちが、あの日を語る日が来るんです。」海風の中で、一本松は遠くに、変わらず立っていた。',
+        translation: 'Uma semana depois, o Linu, de luvas de trabalho, arrancava o mato em volta dos pinheirinhos. Ao lado, estudantes do ensino médio ensinavam a plantar pinheiros a crianças nascidas depois do desastre. A senhora Sasaki disse: «Vai chegar o dia em que crianças que não conheceram aquele dia vão contá-lo.» No vento do mar, ao longe, o pinheiro solitário continuava de pé.',
+        ending: { tone: 'bom', title: 'Quem planta, transmite', message: 'O Linu leu a reportagem nas entrelinhas, ouviu a kataribe com respeito, entendeu o «tendenko» e voltou para plantar: é assim que uma história se transmite.' },
+      },
+      final_neutro: {
+        emoji: '🚌',
+        text: '佐々木さんは「気をつけてお帰りください」と頭を下げた。バスの窓から、防潮堤の灰色の壁がまた流れていく。リヌは新聞の見出しをもう一度見た。「『あの日』を語り継ぐ」。聞いた話を誰かに伝えなければ、と思いながらも、何から話せばいいのか、まだわからなかった。',
+        translation: 'A senhora Sasaki se curvou: «Volte com cuidado.» Pela janela do ônibus, o muro cinzento do dique passava de novo. O Linu olhou outra vez para a manchete: «Transmitir "aquele dia"». Sabia que precisava contar a alguém o que tinha ouvido, mas ainda não sabia por onde começar.',
+        ending: { tone: 'neutro', title: 'A manchete no colo', message: 'O Linu entendeu tudo, mas foi embora antes de encontrar o próprio jeito de transmitir. Às vezes, a história só pede que a gente volte.' },
+      },
+    },
+  },
+  {
+    id: 'ja-h38',
+    level: 'C1.1',
+    cefr: 'C1',
+    title: '西陣の町家',
+    emoji: '🍵',
+    summary: 'Hospedado numa machiya do bairro dos tecelões de Kyoto, o Linu aprende com a dona da casa a arquitetura do «leito da enguia» e a arte mais difícil da cidade: entender o que se diz sem dizer.',
+    cultural_context:
+      'As machiya de Kyoto são casas urbanas de madeira de fachada estreita e fundo comprido, o «leito da enguia» (unagi no nedoko), com treliças na frente, um corredor de terra batida (tōriniwa) que atravessa a casa e um jardinzinho interno (tsuboniwa) que faz o ar circular no verão abafado. Em Nishijin, bairro dos tecelões de seda desde o século XV, ainda se ouve o bater dos teares, embora a indústria tenha encolhido muito. Estima-se que centenas de machiya desapareçam por ano, e a cidade criou em 2017 uma lei para protegê-las. Kyoto também é famosa pela fala indireta: ええ時計してはりますなあ («que relógio bonito!») pode querer dizer «já está tarde», e a lendária oferta de bubuzuke (arroz com chá) sugere que é hora de ir embora. É meio piada, meio verdade: numa cidade apertada, entender sem que se diga (sassuru) é uma arte de convivência.',
+    start: 'start',
+    glossary: [
+      ['町家', 'machiya, casa urbana tradicional de madeira'],
+      ['鰻の寝床', '«leito da enguia»: casa estreita e comprida'],
+      ['坪庭', 'jardinzinho interno'],
+      ['おいでやす', 'seja bem-vindo (Kyoto)'],
+      ['〜はる', 'sufixo respeitoso de Kyoto e Kansai (来はる = いらっしゃる)'],
+      ['〜どす', 'é… (Kyoto, fala tradicional, = です)'],
+      ['いけず', 'maldade sutil, alfinetada disfarçada (Kyoto)'],
+      ['ぶぶ漬け', 'arroz com chá; a oferta famosa que manda a visita embora'],
+      ['察する', 'perceber sem que digam, ler nas entrelinhas'],
+      ['門掃き', 'varrer a frente da casa pela manhã'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🏠',
+        text: '西陣の細い路地に、黒ずんだ格子の家が肩を寄せ合うように並んでいた。軒下には、竹を曲げた犬矢来が、ゆるやかな弧を描いている。リヌが引き戸を開けると、奥から着物姿の八重さんが出てきた。「おいでやす。遠いとこ、よう来てくれはりましたなあ。」土間の細い通路が、薄暗い家の奥まで、まっすぐに続いている。',
+        translation: 'Numa viela estreita de Nishijin, casas de treliça escurecida pelo tempo se enfileiravam ombro a ombro. Sob os beirais, cercas de bambu curvado, os inuyarai, desenhavam arcos suaves. Quando o Linu abriu a porta de correr, a dona Yae, de quimono, veio lá do fundo. «Seja bem-vindo. Que bom que o senhor veio de tão longe.» Um corredor estreito de terra batida seguia reto até o fundo da casa, na penumbra.',
+        choices: [
+          { text: '「どうして、こんなに細長い家なんですか。」', translation: '«Por que a casa é tão estreita e comprida?»', next: 'unagi' },
+          { text: '通路の先に見える、小さな庭のほうへ進む。', translation: 'Seguir na direção do jardinzinho que se vê no fim do corredor.', next: 'tsuboniwa' },
+        ],
+      },
+      unagi: {
+        emoji: '🐍',
+        text: '八重さんは笑った。「間口が狭うて、奥に長い。鰻の寝床いうんどす。昔は間口の広さで税金がかかったさかいや、と言われてますけどな。」そして声を少し落とした。「ほんまのとこは、にぎやかな通りに面した場所を、ようけの人で分け合うたからやろなあ、と、うちは思てます。話は、面白いほうが残りますさかい。」',
+        translation: 'A dona Yae riu. «Frente estreita e fundo comprido. Chamam de "leito da enguia". Dizem que é porque antigamente o imposto era cobrado pela largura da fachada.» E baixou um pouco a voz: «Mas eu acho que, na verdade, é porque muita gente dividia os lugares de frente para as ruas movimentadas. As histórias que ficam são as mais divertidas, sabe?»',
+        choices: [{ text: '小さな庭のほうへ案内してもらう。', translation: 'Pedir para ver o jardinzinho.', next: 'tsuboniwa' }],
+      },
+      tsuboniwa: {
+        emoji: '🪴',
+        text: '家の真ん中に、畳二枚ほどの坪庭があった。苔の上に石灯籠が一つ立ち、上からやわらかな光が落ちている。「京都の夏は蒸し風呂みたいどすさかい、この庭から通り庭へ、風が抜けるようになってますのや。」そのとき、隣の家から、ガッチャン、ガッチャンと規則正しい音が聞こえてきた。「お隣の中村さんの機の音どす。西陣織、織ってはりますのや。」',
+        translation: 'No meio da casa, havia um tsuboniwa do tamanho de uns dois tatames. Uma lanterna de pedra se erguia sobre o musgo, e uma luz suave caía do alto. «O verão de Kyoto é uma sauna, então a casa foi feita para o vento passar deste jardim para o corredor.» Nesse momento, da casa vizinha, veio um som regular: gatchan, gatchan. «É o tear do vizinho, o senhor Nakamura. Ele tece Nishijin-ori.»',
+        choices: [
+          { text: '「お隣の機を、見せていただくことはできますか。」', translation: '«Seria possível ver o tear do vizinho?»', next: 'hata' },
+          { text: '二階の部屋で、荷物をほどく。', translation: 'Desfazer as malas no quarto do segundo andar.', next: 'nimotsu' },
+        ],
+      },
+      hata: {
+        emoji: '🧵',
+        text: '中村さんの仕事場には、背丈より大きな機が据えられていた。上からは、穴のあいた厚紙の束が長く垂れている。「紋紙いうてな、この穴の並びで柄が決まるんや。」中村さんは手を止めずに言った。「わしが若いころは、この辺り一帯が機の音でうるさいくらいやった。今は、何分の一やろか。帯を締める人が、減ってしもたさかいな。」金糸が、光を受けてきらりと光った。',
+        translation: 'Na oficina do senhor Nakamura, havia um tear maior que uma pessoa. Do alto pendia uma longa fileira de cartões grossos perfurados. «Chama monkami; é a ordem desses furos que define o desenho.» O senhor Nakamura falava sem parar as mãos. «Quando eu era jovem, este bairro inteiro era quase barulhento de tanto tear. Hoje, sei lá, deve ser uma fração. É que diminuiu a gente que usa obi.» Um fio de ouro cintilou à luz.',
+        choices: [
+          { text: '「ほんの少しだけ、織らせていただけませんか。」', translation: '«Será que eu poderia tecer só um pouquinho?»', next: 'tameshi' },
+          { text: 'お礼を言って、八重さんの家に戻る。', translation: 'Agradecer e voltar para a casa da dona Yae.', next: 'yoru' },
+        ],
+      },
+      tameshi: {
+        emoji: '🪡',
+        text: '中村さんは少し考えてから、場所を空けてくれた。「ほな、杼を投げてみ。糸を引っぱりすぎたらあかんで。」リヌが羽で杼を通し、足で踏み板を踏むと、ガッチャンと機が鳴った。けれど、何度やっても、布は指一本の幅ほどしか進まない。中村さんは笑った。「ええ帯一本織るのに、ひと月かかることもある。それが西陣や。」',
+        translation: 'O senhor Nakamura pensou um pouco e abriu espaço. «Então joga a lançadeira. Não puxa demais o fio, hein.» Quando o Linu passou a lançadeira com a asa e pisou no pedal, o tear fez gatchan. Mas, por mais que tentasse, o tecido avançava só a largura de um dedo. O senhor Nakamura riu: «Tecer um obi bom pode levar um mês. Isso é Nishijin.»',
+        choices: [{ text: 'お礼を言って、八重さんの家に戻る。', translation: 'Agradecer e voltar para a casa da dona Yae.', next: 'yoru' }],
+      },
+      nimotsu: {
+        emoji: '🎵',
+        text: 'リヌは二階で荷物をほどきながら、スマホで好きな音楽をかけた。しばらくすると、階段の下から八重さんの声がした。「リヌさん、ええ音楽聞いてはりますなあ。お隣さんにも、よう聞こえてますやろなあ。」声は、いつもどおり柔らかだった。',
+        translation: 'Desfazendo as malas no andar de cima, o Linu pôs sua música favorita para tocar no celular. Depois de um tempo, veio a voz da dona Yae do pé da escada: «Senhor Linu, que música boa o senhor está ouvindo, hein. O vizinho também deve estar ouvindo muito bem.» A voz era macia como sempre.',
+        choices: [
+          { text: '音を小さくして、「すみません、気がつきませんでした」と言う。', translation: 'Abaixar o volume e dizer: «Desculpe, não tinha percebido.»', next: 'yoru' },
+          {
+            text: '「ありがとうございます！お隣さんのために、もう少し大きくしましょうか。」',
+            translation: '«Obrigado! Quer que eu aumente um pouco para o vizinho também?»',
+            wrong: 'Não era elogio: 「お隣さんにも、よう聞こえてますやろなあ」, «o vizinho também deve estar ouvindo muito bem», é o jeito de Kyoto de dizer que a música está ALTA DEMAIS. Numa casa de parede com parede, o recado é: abaixe o volume.',
+          },
+        ],
+      },
+      yoru: {
+        emoji: '🍆',
+        text: '夕食に、八重さんはおばんざいを並べてくれた。万願寺とうがらしの炊いたん、湯葉、にしんなす。食べながら、八重さんはいたずらっぽく聞いた。「ぶぶ漬けの話、知ってはります？『ぶぶ漬けでもどうどす』言われたら、『そろそろお帰り』いう意味や、いうの。」八重さんはくすくす笑った。「あれは半分冗談どす。けど、はっきり言わんと、相手に察してもらう。狭い町で、長いこと仲良う暮らすための知恵やったんどすわ。」',
+        translation: 'No jantar, a dona Yae serviu obanzai, a comida caseira de Kyoto: pimentas manganji cozidas, yuba e arenque com berinjela. Enquanto comiam, ela perguntou, marota: «O senhor conhece a história do bubuzuke? Dizem que, se alguém oferece "que tal um bubuzuke?", quer dizer "está na hora de ir embora".» Ela deu uma risadinha. «Aquilo é meio brincadeira. Mas não dizer as coisas às claras e deixar que o outro perceba… era a sabedoria para viver bem por muito tempo numa cidade apertada.»',
+        choices: [
+          { text: '「察するのって、難しそうですね。」', translation: '«Perceber sem que digam parece difícil.»', next: 'sassuru' },
+          { text: '「町家は、これからも残っていくんでしょうか。」', translation: '«As machiya vão continuar existindo?»', next: 'kieru' },
+        ],
+      },
+      kieru: {
+        emoji: '🏚️',
+        text: '八重さんの箸が止まった。「毎年、何百軒もの町家が壊されて、マンションや駐車場になってますのや。直すのにお金はかかるし、冬は底冷えするし、若い人が住みとうないのも無理ないわ。」八重さんは坪庭に目をやった。「東京の息子は、売ったらええ、言いますけどな。この庭に雪が積もるのを見ると、どうしても決められしませんのや。」',
+        translation: 'Os hashis da dona Yae pararam. «Todo ano, centenas de machiya são demolidas e viram prédios ou estacionamentos. Reformar custa caro, no inverno o frio sobe do chão, e não é de estranhar que os jovens não queiram morar nelas.» Ela olhou para o tsuboniwa. «Meu filho, em Tóquio, diz que é só vender. Mas, quando vejo a neve se acumulando neste jardim, não consigo me decidir de jeito nenhum.»',
+        choices: [{ text: '黙ってうなずき、お茶を一口飲む。', translation: 'Assentir em silêncio e tomar um gole de chá.', next: 'sassuru' }],
+      },
+      sassuru: {
+        emoji: '⌚',
+        text: '話がはずみ、気がつくと柱時計は九時半を回っていた。八重さんはちらりと時計を見てから、リヌの手首に目をやり、にっこりほほえんだ。「まあ、リヌさん、ええ時計してはりますなあ。」',
+        translation: 'A conversa estava tão boa que, quando se deram conta, o relógio de parede já passava das nove e meia. A dona Yae deu uma olhadinha no relógio, depois olhou para o pulso do Linu e sorriu. «Ora, senhor Linu, que relógio bonito o senhor tem, hein.»',
+        choices: [
+          { text: '「あっ、もうこんな時間ですね。今日はありがとうございました。そろそろ部屋に戻ります。」', translation: '«Ah, já está tarde assim! Obrigado por hoje. Vou indo para o quarto.»', next: 'asa' },
+          { text: '「よかったら、もう一杯お茶をいただけますか。」', translation: '«Se não for incômodo, poderia me dar mais uma xícara de chá?»', next: 'final_neutro' },
+          {
+            text: '「ありがとうございます！南極で買ったんです。見てください。」',
+            translation: '«Obrigado! Comprei na Antártida. Olhe só.»',
+            wrong: 'Ela olhou PRIMEIRO para o relógio de parede, que passava das nove e meia, e só depois elogiou o relógio do Linu. Em Kyoto, 「ええ時計してはりますなあ」 nessa hora quer dizer «olhe as horas»: está tarde e é hora de encerrar a conversa.',
+          },
+        ],
+      },
+      final_neutro: {
+        emoji: '🍚',
+        text: '八重さんは一瞬だまってから、にっこり笑った。「ほな、ぶぶ漬けでも、どうどす？」「わあ、いただきます！」リヌはお茶漬けをおいしく二杯食べて、十一時すぎに二階へ上がった。次の朝、八重さんはいつもどおりていねいだったが、どこか少しだけ、よそよそしかった。',
+        translation: 'A dona Yae ficou calada por um instante e depois sorriu. «Então, que tal um bubuzuke?» «Oba, aceito!» O Linu comeu, feliz, duas tigelas de arroz com chá e só subiu depois das onze. Na manhã seguinte, a dona Yae estava educada como sempre, mas um tiquinho distante.',
+        ending: { tone: 'neutro', title: 'Duas tigelas de bubuzuke', message: 'O Linu ouviu o relógio e o bubuzuke, mas não o recado. Em Kyoto, o mais importante é o que não se diz.' },
+      },
+      asa: {
+        emoji: '🧹',
+        text: '次の朝、リヌが下りていくと、八重さんはもう竹ぼうきを手に、家の前を掃いていた。「おはようさん。昨日は、ようわかってくれはりましたなあ。」八重さんは、ほうきをリヌに渡した。「門掃き、してみはる？ただな、お隣の前は、ちょっとだけにしとくんどすえ。全部掃いたら、お隣さんが掃除してへんみたいに見えて、かえって失礼になりますさかい。」',
+        translation: 'Na manhã seguinte, quando o Linu desceu, a dona Yae já estava varrendo a frente da casa com uma vassoura de bambu. «Bom dia. Ontem o senhor entendeu direitinho, hein.» Ela entregou a vassoura ao Linu. «Quer fazer o kadohaki? Só que, na frente do vizinho, só um pouquinho. Se varrer tudo, parece que o vizinho não limpa, e acaba sendo falta de educação.»',
+        choices: [
+          { text: '自分の家の前を掃いて、お隣の前は、境目から少しだけ掃く。', translation: 'Varrer a frente da própria casa e, na do vizinho, só um pouquinho além da divisa.', next: 'final_bom' },
+          {
+            text: '親切のつもりで、お隣の家の前もすみずみまできれいに掃く。',
+            translation: 'Querendo ajudar, varrer caprichado a frente inteira da casa do vizinho também.',
+            wrong: 'A dona Yae avisou: 「お隣の前は、ちょっとだけ」, na frente do vizinho, SÓ UM POUQUINHO, porque 「全部掃いたら」, se varrer tudo, parece que o vizinho não limpa, 「かえって失礼」: acaba sendo falta de educação.',
+          },
+        ],
+      },
+      final_bom: {
+        emoji: '🌸',
+        text: 'リヌが掃き終わると、隣の中村さんが戸を開けて顔を出した。「おはようさん。ええ具合に掃いてくれはったなあ。」八重さんは満足そうにうなずいた。「リヌさん、あんた、京都の言葉がようわかってはるわ。また、いつでも帰ってきとくれやす。」その日、ガッチャンという機の音が、リヌにはなぜか、町家の心臓の音のように聞こえた。',
+        translation: 'Quando o Linu terminou de varrer, o vizinho Nakamura abriu a porta e pôs a cabeça para fora. «Bom dia. Varreu na medida certa, hein.» A dona Yae assentiu, satisfeita. «Senhor Linu, o senhor entende muito bem a língua de Kyoto. Volte quando quiser; esta casa é sua.» Naquele dia, o gatchan do tear soou para o Linu, não se sabe por quê, como o coração da machiya.',
+        ending: { tone: 'bom', title: 'Entre as linhas de Kyoto', message: 'Música alta, relógio bonito, vassoura na medida: o Linu leu todos os recados que ninguém disse. Em Kyoto, isso vale mais que qualquer diploma.' },
+      },
+    },
+  },
+  {
+    id: 'ja-h39',
+    level: 'C1.1',
+    cefr: 'C1',
+    title: '松山の俳句ポスト',
+    emoji: '📮',
+    summary: 'Em Matsuyama, cidade de Masaoka Shiki e de «Botchan», o Linu passeia com um velho professor de haicai, aprende o que são kigo e kireji e tenta escrever um poema digno das caixas de correio de haicai da cidade.',
+    cultural_context:
+      'Matsuyama, na ilha de Shikoku, é a cidade do haicai: ali nasceu Masaoka Shiki (1867–1902), que renovou a poesia de dezessete sílabas e escreveu mais de vinte mil haicais antes de morrer de tuberculose aos 34 anos; o pseudônimo Shiki é o nome do cuco, ave que, diz a lenda, canta até cuspir sangue. Em 1895, o romancista Natsume Sōseki, então professor em Matsuyama, dividiu a casa com ele por 52 dias, e depois ambientou ali «Botchan» (1906), cujo herói só fala mal da cidade; os moradores adoraram assim mesmo e deram o nome dele a trem, doces e banhos. Pela cidade há dezenas de caixas de correio de haicai (haiku posuto), desde 1966, onde qualquer um pode deixar um poema. A regra básica: cinco, sete e cinco sílabas, uma palavra de estação (kigo) e, se possível, uma palavra de corte (kireji), como や ou かな.',
+    start: 'start',
+    glossary: [
+      ['俳句', 'haicai, poema de cinco, sete e cinco sílabas'],
+      ['季語', 'kigo, palavra que indica a estação do ano'],
+      ['切れ字', 'kireji, palavra de corte que cria uma pausa (や, かな, けり)'],
+      ['詠む', 'compor (um poema)'],
+      ['歳時記', 'saijiki, dicionário de palavras de estação'],
+      ['季重なり', 'usar dois ou mais kigo no mesmo haicai'],
+      ['城下', 'cidade ao pé de um castelo'],
+      ['〜哉', 'kana, «ah…!», palavra de corte que fecha o poema com emoção'],
+      ['〜けん', 'porque… (dialeto de Iyo, em Ehime)'],
+      ['投句', 'enviar um haicai para concurso ou publicação'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🚂',
+        text: '汽笛を鳴らして、小さな蒸気機関車風の列車が道後温泉駅に着いた。夏目漱石の小説にちなんで、「坊っちゃん列車」と呼ばれている。駅前の広場で、元国語教師の久保先生が、白いパナマ帽を持ち上げた。「ようこそ、俳句の町へ。この町には、あちこちに俳句ポストがあるんですよ。誰でも一句詠んで、投句できる。今日は、リヌさんにも一句作ってもらいましょうかね。」',
+        translation: 'Apitando, um trenzinho em estilo de locomotiva a vapor chegou à estação de Dōgo Onsen. Por causa do romance de Natsume Sōseki, é chamado de «trem do Botchan». Na praça da estação, o professor Kubo, ex-professor de japonês, ergueu o chapéu-panamá branco. «Bem-vindo à cidade do haicai. Aqui há caixas de correio de haicai por toda parte. Qualquer um pode compor um poema e enviar. Hoje, quem sabe, o senhor Linu também não faz o seu?»',
+        choices: [
+          { text: '子規記念博物館を見に行く。', translation: 'Ir ver o Museu Memorial Shiki.', next: 'hakubutsukan' },
+          { text: '道後温泉の本館の前を歩く。', translation: 'Passear em frente ao prédio principal das termas de Dōgo.', next: 'dogo' },
+        ],
+      },
+      hakubutsukan: {
+        emoji: '🐦',
+        text: '博物館には、子規の写真や原稿、病床で描いた草花の絵が並んでいた。「子規は二十一歳で血を吐いて、結核とわかった。そこで、鳴いて血を吐くと言われるほととぎす、漢字で『子規』を名乗ったんです。」久保先生は、一枚の絵の前で足を止めた。「床から起き上がれなくなっても、庭の草花を見つめて、句を作り続けた。三十四年の生涯で、二万を超える句を残しとるんですよ。」',
+        translation: 'No museu havia fotos e manuscritos de Shiki e desenhos de flores que ele fez na cama de doente. «Aos vinte e um anos, Shiki cuspiu sangue e descobriu que tinha tuberculose. Então adotou o nome do cuco, a hototogisu, que dizem cantar até cuspir sangue; em kanji, 子規.» O professor Kubo parou diante de um desenho. «Mesmo quando não conseguia mais se levantar da cama, ficava olhando as flores do jardim e compondo. Em trinta e quatro anos de vida, deixou mais de vinte mil haicais.»',
+        choices: [{ text: '「いちばん有名な句は、どれですか。」', translation: '«Qual é o haicai mais famoso?»', next: 'kaki' }],
+      },
+      dogo: {
+        emoji: '♨️',
+        text: '三層の木造の建物の屋根の上で、白鷺の飾りが朝日を受けていた。道後温泉本館だ。「漱石も、ここの湯に通ったんですよ。『坊っちゃん』の主人公は、湯船で泳いで、次の日に『湯の中で泳ぐべからず』という札を見つけて、腹を立てるでしょう。」久保先生は愉快そうに笑った。「その漱石の親友が、この町で生まれた正岡子規です。」',
+        translation: 'Sobre o telhado do prédio de madeira de três andares, a figura de uma garça-branca recebia o sol da manhã. Era o prédio principal das termas de Dōgo. «Sōseki também frequentava estas águas. O protagonista de «Botchan» nada na banheira e, no dia seguinte, encontra uma placa dizendo "É proibido nadar no banho" e fica furioso, lembra?» O professor Kubo riu, divertido. «E o melhor amigo de Sōseki era Masaoka Shiki, nascido nesta cidade.»',
+        choices: [{ text: '「子規のいちばん有名な句は、どれですか。」', translation: '«Qual é o haicai mais famoso de Shiki?»', next: 'kaki' }],
+      },
+      kaki: {
+        emoji: '🍂',
+        text: '久保先生は、ゆっくりと詠み上げた。「柿食へば鐘が鳴るなり法隆寺。」そして説明した。「松山から東京へ帰る途中、奈良に寄ったときの句です。『食へば』は昔のかなづかいで、『くえば』と読みます。柿をかじった、その瞬間に、法隆寺の鐘がごーんと鳴った。ただそれだけ。でも、秋の奈良の空気が丸ごと、十七音に入っとるでしょう。」',
+        translation: 'O professor Kubo recitou devagar: «Kaki kueba / kane ga naru nari / Hōryūji.» E explicou: «É um haicai de quando ele passou por Nara, voltando de Matsuyama para Tóquio. 食へば é a grafia antiga e se lê くえば. No instante em que ele morde o caqui, o sino do Hōryūji soa: gōn. Só isso. Mas o ar inteiro do outono em Nara cabe nas dezessete sílabas, não cabe?»',
+        choices: [
+          { text: '「季語というのは、この句では『柿』ですか。」', translation: '«O kigo, neste haicai, é o «caqui»?»', next: 'kigo' },
+          {
+            text: '「法隆寺は、松山にあるお寺なんですね。行ってみたいです。」',
+            translation: '«O Hōryūji é um templo de Matsuyama, então. Quero conhecer.»',
+            wrong: 'O professor disse que é um haicai de 「奈良に寄ったとき」, de quando Shiki PASSOU POR NARA a caminho de Tóquio. O Hōryūji fica em Nara, não em Matsuyama. 寄る = passar por um lugar no caminho.',
+          },
+        ],
+      },
+      kigo: {
+        emoji: '📗',
+        text: '「そのとおり。柿は秋の季語です。」久保先生は、手帳ほどの小さな本を取り出した。歳時記だ。「季語は、日本人が何百年もかけて集めてきた、季節の言葉の辞書なんです。一語で、景色も、においも、気持ちも呼び出せる。」先生は城山を見上げた。「さあ、お城へ上がりましょう。子規には、この町を詠んだ、とっておきの句があるけん。」',
+        translation: '«Exatamente. Caqui é kigo de outono.» O professor Kubo tirou um livrinho do tamanho de uma agenda: um saijiki. «Os kigo são um dicionário das palavras das estações que os japoneses foram juntando durante séculos. Com uma palavra só, dá para evocar a paisagem, o cheiro, o sentimento.» Ele olhou para o morro do castelo. «Vamos subir ao castelo. Shiki tem um haicai especial sobre esta cidade.»',
+        choices: [{ text: 'ロープウェイで城山に上がる。', translation: 'Subir o morro do castelo de teleférico.', next: 'shiro' }],
+      },
+      shiro: {
+        emoji: '🏯',
+        text: '天守の上から、松山の町と、その向こうに瀬戸内の島々が見渡せた。江戸時代から残る、数少ない本物の天守の一つだ。久保先生は、胸を張って詠んだ。「春や昔十五万石の城下哉。」「『や』と『哉』が切れ字です。『や』で一度、息を切る。春だなあ、と。そして昔、十五万石の大名がいた城下町を、最後に『哉』で、しみじみと包みこむ。故郷を離れた子規の、なつかしさと誇りが、この二つの字に詰まっとるんです。」',
+        translation: 'Do alto da torre, avistava-se a cidade de Matsuyama e, além dela, as ilhas do mar interior de Seto. É uma das poucas torres de castelo originais que restam desde a era Edo. O professor Kubo recitou, de peito estufado: «Haru ya mukashi / jūgoman-goku no / jōka kana.» «や e 哉 são kireji. Com o や, a respiração se corta uma vez: é primavera… E, no fim, o 哉 envolve com emoção a antiga cidade-castelo de um daimiô de cento e cinquenta mil koku. A saudade e o orgulho de Shiki, longe da terra natal, estão concentrados nesses dois caracteres.»',
+        choices: [
+          { text: '「漱石と子規は、この町で一緒に暮らしていたんですか。」', translation: '«Sōseki e Shiki moraram juntos nesta cidade?»', next: 'soseki' },
+          { text: '「ぼくも、一句作ってみたくなりました。」', translation: '«Fiquei com vontade de fazer um haicai também.»', next: 'tsukuru' },
+        ],
+      },
+      soseki: {
+        emoji: '📚',
+        text: '「五十二日間ね。」久保先生はうなずいた。「漱石の下宿の一階に、病み上がりの子規が転がりこんで、毎晩のように句会を開いた。漱石は二階で本を読もうにも、うるさくてかなわなかったらしい。」先生はくすりと笑った。「面白いのは、『坊っちゃん』の主人公が、松山の悪口ばっかり言うとることです。『〜なもし』いう、ここの言葉までからかわれとる。それでも松山の人は、面白がって町じゅうに坊っちゃんの名前をつけてしもうた。懐が深いんか、のんきなんか。」',
+        translation: '«Cinquenta e dois dias.» O professor Kubo assentiu. «Shiki, convalescendo, se instalou no térreo da pensão de Sōseki e fazia sessões de haicai quase toda noite. Parece que Sōseki, no andar de cima, não conseguia ler de tanto barulho.» Ele deu uma risadinha. «O curioso é que o protagonista de «Botchan» só fala mal de Matsuyama. Zomba até do 〜なもし, o jeito de falar daqui. Mesmo assim, o povo de Matsuyama achou graça e espalhou o nome do Botchan pela cidade inteira. Se é generosidade ou despreocupação, sei lá.»',
+        choices: [{ text: '「ぼくも、一句作ってみたくなりました。」', translation: '«Fiquei com vontade de fazer um haicai também.»', next: 'tsukuru' }],
+      },
+      tsukuru: {
+        emoji: '📝',
+        text: '久保先生は、短冊と筆ペンをリヌに渡した。「五七五で、季語を一つ入れる。季語を二つも三つも入れる『季重なり』は、慣れんうちは避けたほうがええです。季節がぼやけてしまうけんね。」リヌは、城から見た町と、朝の湯けむりを思い浮かべながら、三つの句を書いてみた。',
+        translation: 'O professor Kubo entregou ao Linu uma tira de papel para poemas e uma caneta-pincel. «Cinco, sete, cinco, com um kigo. O kigasanari, pôr dois ou três kigo, é melhor evitar enquanto não pega a prática. A estação fica embaçada.» Lembrando a cidade vista do castelo e o vapor das termas pela manhã, o Linu tentou escrever três haicais.',
+        choices: [
+          { text: '「湯けむりやペンギンひとり春の城」を見せる。', translation: 'Mostrar: «Vapor das termas — / um pinguim, sozinho, / castelo de primavera».', next: 'post' },
+          { text: '「松山のお城はとても大きいです」を見せる。', translation: 'Mostrar: «O castelo de Matsuyama é muito grande».', next: 'naoshi' },
+          {
+            text: '「春の風桜も柿も秋の月」を見せる。',
+            translation: 'Mostrar: «Vento de primavera, / cerejeira e caqui, / lua de outono».',
+            wrong: 'O professor pediu 「季語を一つ入れる」 e avisou para evitar o 季重なり, dois ou mais kigo, porque 「季節がぼやけてしまう」, a estação fica embaçada. Este poema tem quatro kigo (春の風, 桜, 柿, 秋の月) e ainda mistura primavera e outono.',
+          },
+        ],
+      },
+      naoshi: {
+        emoji: '✏️',
+        text: '久保先生は、やさしく笑った。「五七五には、なっとらんし、季語もない。これは俳句やのうて、作文ですな。」先生は短冊を裏返した。「見たものを説明するんやなしに、一つだけ切り取るんです。例えば、城の上で何を感じました？」リヌは少し考えて、朝の湯けむりと、自分のひとりぼっちの影を思い出した。そして、新しい句を書いた。「湯けむりやペンギンひとり春の城。」',
+        translation: 'O professor Kubo sorriu com gentileza. «Não está em cinco-sete-cinco e não tem kigo. Isto não é haicai, é redação.» Ele virou a tira de papel. «Em vez de explicar o que viu, recorte uma coisa só. Por exemplo: o que você sentiu lá no alto do castelo?» O Linu pensou um pouco e lembrou do vapor das termas pela manhã e da própria sombra, sozinha. E escreveu um poema novo: «Vapor das termas — / um pinguim, sozinho, / castelo de primavera».',
+        choices: [{ text: '書き直した句を、先生に見せる。', translation: 'Mostrar o poema reescrito ao professor.', next: 'post' }],
+      },
+      post: {
+        emoji: '📮',
+        text: '久保先生は、句を声に出して二度読んだ。「湯けむりや、で切れて、ひとりのペンギンが、春の城を見上げとる。旅人のさびしさと、うれしさが、両方ある。ええ句です。」二人は子規記念博物館の前の、木でできた俳句ポストの前に立った。「選ばれた句は、季節ごとに発表されます。入れてみますか。」',
+        translation: 'O professor Kubo leu o poema em voz alta duas vezes. «Corta no «vapor das termas —», e um pinguim sozinho olha para o castelo de primavera. Tem a solidão e a alegria do viajante, as duas. É um bom haicai.» Os dois pararam diante da caixa de correio de haicai de madeira em frente ao Museu Memorial Shiki. «Os poemas escolhidos são publicados a cada estação. Quer pôr o seu?»',
+        choices: [
+          { text: '短冊に名前を書いて、ポストに入れる。', translation: 'Escrever o nome na tira de papel e pôr na caixa.', next: 'final_bom' },
+          { text: '「恥ずかしいので、手帳にしまっておきます。」', translation: '«Tenho vergonha; vou guardar na caderneta.»', next: 'final_neutro' },
+        ],
+      },
+      final_bom: {
+        emoji: '🌸',
+        text: '三か月後、南極のリヌのもとに、久保先生から封筒が届いた。中には、松山の新聞の切り抜きが入っていた。「俳句ポスト入選句」の欄の片すみに、小さな字で、「湯けむりやペンギンひとり春の城」の句と、「リヌ（南極）」という名前が載っていた。添えられた手紙には、一行だけ書いてあった。「子規も、きっと笑うとりますよ。」',
+        translation: 'Três meses depois, chegou ao Linu, na Antártida, um envelope do professor Kubo. Dentro, um recorte de jornal de Matsuyama. Num cantinho da coluna «Haicais selecionados das caixas de correio», em letras miúdas: «Vapor das termas — / um pinguim, sozinho, / castelo de primavera. Linu (Antártida)». A carta que acompanhava tinha uma linha só: «Shiki também deve estar sorrindo.»',
+        ending: { tone: 'bom', title: 'Poeta de Matsuyama', message: 'O Linu entendeu kigo e kireji, evitou o kigasanari e teve o haicai publicado na cidade de Shiki.' },
+      },
+      final_neutro: {
+        emoji: '📓',
+        text: '久保先生は「句は、人に読まれて完成するもんですけどな」と、少し残念そうに笑った。リヌは短冊を手帳にはさんで、松山をあとにした。南極に帰ってからも、ときどき手帳を開いては、声に出して読んでみる。「湯けむりや……。」誰にも読まれない句は、湯けむりのように、手帳の中でゆらゆらしていた。',
+        translation: 'O professor Kubo riu, meio desapontado: «Um haicai só fica completo quando alguém o lê.» O Linu guardou a tira de papel na caderneta e deixou Matsuyama. Mesmo de volta à Antártida, de vez em quando abria a caderneta e lia em voz alta: «Vapor das termas…» O poema que ninguém leu tremulava dentro da caderneta, como vapor.',
+        ending: { tone: 'neutro', title: 'Poema na gaveta', message: 'O haicai estava pronto e era bom, mas ficou na caderneta. Como disse o professor, poema se completa quando alguém lê.' },
+      },
+    },
+  },
 ];

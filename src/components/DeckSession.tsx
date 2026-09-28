@@ -162,7 +162,7 @@ export function DeckSession({
               onPress={() => setFlipped((f) => !f)}
               className="w-full items-center gap-3 pt-10"
             >
-              <WordImage wordNative={card.word_native} emoji={card.emoji} size={120} credit={flipped} />
+              <WordImage wordNative={card.word_native} emoji={card.emoji} size={120} credit={flipped} pos={card.part_of_speech} target={card.word_target} />
               <Text className="text-4xl font-extrabold text-slate-900 dark:text-white">{card.word_target}</Text>
               <Ipa text={card.word_target} className="text-base" />
               {g && card.gender && <Chip label={`${ROOMS[card.gender].emoji} ${g.label}`} tone={g.tone} />}
