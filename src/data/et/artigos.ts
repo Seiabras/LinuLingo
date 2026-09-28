@@ -9,16 +9,17 @@ export const ARTIGOS_ET: ArticleSeed[] = [
     emoji: '🎶',
     paragraphs: [
       'Eestis on laulupidu. See on väga suur pidu. Seal laulab palju inimesi: lapsed, noored ja vanad.',
-      'Laulupidu on Tallinnas iga viie aasta tagant. Inimesed kannavad ilusaid rahvariideid ja laulavad eesti laule.',
+      'Laulupidu on Tallinnas tavaliselt iga viie aasta tagant. Inimesed kannavad ilusaid rahvariideid ja laulavad eesti laule.',
     ],
     translation: [
       'Na Estônia existe o Festival da Canção («laulupidu»). É uma festa muito grande. Lá cantam muitas pessoas: crianças, jovens e idosos.',
-      'O Festival da Canção acontece em Tallinn a cada cinco anos. As pessoas usam belos trajes típicos e cantam canções estonianas.',
+      'O Festival da Canção acontece em Tallinn, geralmente, a cada cinco anos. As pessoas usam belos trajes típicos e cantam canções estonianas.',
     ],
     glossary: [
       ['laulupidu / pidu', 'festival da canção / festa'],
       ['rahvariideid', 'trajes típicos (de «rahvariided»)'],
-      ['iga viie aasta tagant', 'a cada cinco anos (de «iga», cada, e «aasta», ano)'],
+      ['tavaliselt', 'geralmente'],
+      ['iga viie aasta tagant', 'a cada cinco anos («iga», cada; «viie», genitivo de «viis», cinco; «aasta», ano; «tagant», depois de)'],
     ],
     questions: [
       { q: 'Quem canta no Festival da Canção?', options: ['Só cantores profissionais', 'Crianças, jovens e idosos', 'Só crianças'], answer: 1 },
@@ -37,7 +38,7 @@ export const ARTIGOS_ET: ArticleSeed[] = [
     ],
     translation: [
       'Na Estônia, a sauna é muito importante. Antigamente havia sauna em quase toda fazenda, e muitas famílias têm sauna ainda hoje.',
-      'Em Võromaa, no sul da Estônia, existe uma velha tradição de sauna de fumaça («suitsusaun»). A sauna de fumaça não tem chaminé. O fogão é aceso por várias horas e a fumaça fica lá dentro. Quando o fogão está quente, deixa-se a fumaça sair e as pessoas entram.',
+      'Em Võromaa, no sul da Estônia, existe uma velha tradição de sauna de fumaça («suitsusaun»). A sauna de fumaça não tem chaminé. O forno é aquecido a lenha durante várias horas, e a fumaça fica lá dentro. Quando o forno está quente, deixa-se a fumaça sair e as pessoas entram.',
       'Lá se joga água nas pedras quentes e se usa o «viht», um feixe de galhos de bétula. Hoje a tradição da sauna de fumaça de Võromaa está também na lista da UNESCO.',
     ],
     glossary: [
@@ -85,7 +86,7 @@ export const ARTIGOS_ET: ArticleSeed[] = [
       ['kudusid', 'tricotavam, teciam (de «kuduma»)'],
       ['triibulisi', 'listrados'],
       ['seelikuid', 'saias (de «seelik»)'],
-      ['körtideks', '«kört», a saia listrada de Kihnu (aqui no plural)'],
+      ['körtideks', '«kört», a saia listrada de Kihnu (plural, translativo: «chamadas de körtid»)'],
       ['külgkorviga', 'com sidecar'],
       ['kultuuriruum', 'espaço cultural'],
       ['vaimse kultuuripärandi', 'do patrimônio cultural imaterial'],
@@ -108,12 +109,12 @@ export const ARTIGOS_ET: ArticleSeed[] = [
     emoji: '🕯️',
     paragraphs: [
       '1980. aastate lõpus, kui Eesti oli veel Nõukogude võimu all, hakkasid inimesed kogunema, et laulda isamaalisi laule. Seda aega nimetatakse laulvaks revolutsiooniks.',
-      '1988. aasta suvel tuli Tallinna lauluväljakule öösiti kokku tuhandeid inimesi. Septembris toimus seal „Eestimaa laul“, kus osales umbes 300 000 inimest.',
+      '1988. aasta suvel tuli Tallinna lauluväljakule öösiti kokku kümneid tuhandeid inimesi. Septembris toimus seal „Eestimaa laul“, kus osales umbes 300 000 inimest.',
       '23. augustil 1989 võtsid umbes kaks miljonit inimest Eestis, Lätis ja Leedus teineteisel käest kinni ja moodustasid Balti keti, mis ulatus Tallinnast Vilniuseni. 20. augustil 1991 sai Eesti rahumeelselt uuesti iseseisvaks.',
     ],
     translation: [
       'No fim dos anos 1980, quando a Estônia ainda estava sob o domínio soviético, as pessoas começaram a se reunir para cantar canções patrióticas. Essa época é chamada de Revolução Cantada.',
-      'No verão de 1988, milhares de pessoas se reuniam à noite no Campo do Festival da Canção, em Tallinn. Em setembro aconteceu ali «A Canção da Estônia» («Eestimaa laul»), com cerca de 300 mil pessoas.',
+      'No verão de 1988, dezenas de milhares de pessoas se reuniam à noite no Campo do Festival da Canção, em Tallinn. Em setembro aconteceu ali «A Canção da Estônia» («Eestimaa laul»), com cerca de 300 mil pessoas.',
       'Em 23 de agosto de 1989, cerca de dois milhões de pessoas na Estônia, na Letônia e na Lituânia deram as mãos e formaram a Corrente Báltica, que ia de Tallinn até Vilnius. Em 20 de agosto de 1991, a Estônia voltou a ser independente, de forma pacífica.',
     ],
     glossary: [
@@ -139,19 +140,20 @@ export const ARTIGOS_ET: ArticleSeed[] = [
     title: 'E-Eesti',
     emoji: '💻',
     paragraphs: [
-      'Eestit nimetatakse sageli üheks maailma kõige digitaalsemaks riigiks. Peaaegu kõiki asju riigiga saab ajada internetis: ID-kaardiga saab allkirjastada dokumente, esitada mõne minutiga maksudeklaratsiooni ja vaadata oma terviseandmeid.',
+      'Eestit nimetatakse sageli üheks maailma kõige digitaalsemaks riigiks. Riigiga saab peaaegu kõiki asju ajada internetis: ID-kaardiga saab allkirjastada dokumente, esitada mõne minutiga tuludeklaratsiooni ja vaadata oma terviseandmeid.',
       'Eesti oli esimene riik maailmas, kus sai kogu riigis hääletada interneti teel: esmalt 2005. aastal kohalikel valimistel ja 2007. aastal ka Riigikogu valimistel.',
-      '2014. aasta lõpus käivitati e-residentsus: nüüd võib ka välismaalane saada Eesti digitaalse isikutunnistuse ja juhtida oma ettevõtet internetis. Maailmas on tuntud ka Skype, mille loomisel olid tähtsal kohal eesti programmeerijad.',
+      '2014. aasta lõpus käivitati e-residentsus: nüüd võib ka välismaalane saada Eesti digitaalse isikutunnistuse ja juhtida oma ettevõtet internetis. Maailmas on tuntud ka Skype, mille loomisel oli eesti programmeerijatel tähtis roll.',
     ],
     translation: [
-      'A Estônia é chamada com frequência de um dos países mais digitais do mundo. Quase todos os assuntos com o Estado podem ser resolvidos pela internet: com a carteira de identidade digital («ID-kaart») dá para assinar documentos, entregar a declaração de imposto em poucos minutos e ver os próprios dados de saúde.',
+      'A Estônia é chamada com frequência de um dos países mais digitais do mundo. Quase todos os assuntos com o Estado podem ser resolvidos pela internet: com a carteira de identidade digital («ID-kaart») dá para assinar documentos, entregar a declaração de imposto de renda em poucos minutos e ver os próprios dados de saúde.',
       'A Estônia foi o primeiro país do mundo onde se pôde votar pela internet em todo o território: primeiro em 2005, nas eleições municipais, e em 2007 também nas eleições para o parlamento (Riigikogu).',
-      'No fim de 2014 foi lançada a e-residência: agora também um estrangeiro pode receber uma identidade digital estoniana e administrar a sua empresa pela internet. No mundo, também é conhecido o Skype, em cuja criação programadores estonianos tiveram um papel importante.',
+      'No fim de 2014 foi lançada a e-residência: agora um estrangeiro também pode receber uma identidade digital estoniana e administrar a sua empresa pela internet. Também é conhecido no mundo todo o Skype, em cuja criação programadores estonianos tiveram um papel importante.',
     ],
     glossary: [
       ['digitaalsemaks / digitaalse', 'mais digital / digital'],
       ['allkirjastada', 'assinar'],
-      ['maksudeklaratsiooni', 'a declaração de imposto'],
+      ['tuludeklaratsiooni', 'a declaração de imposto de renda'],
+      ['roll', 'papel (função)'],
       ['terviseandmeid', 'dados de saúde'],
       ['hääletada', 'votar'],
       ['käivitati', 'foi lançado, foi posto em funcionamento'],
