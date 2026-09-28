@@ -1,9 +1,14 @@
 import { spellDanishNumbers } from './da';
+import { spellSpanishNumbers } from './es';
 import { spellEstonianNumbers } from './et';
 import { spellFaroeseNumbers } from './fo';
 import { spellFinnishNumbers } from './fi';
+import { spellFrenchNumbers } from './fr';
 import { spellIcelandicNumbers } from './is';
+import { spellItalianNumbers } from './it';
 import { spellNorwegianNumbers } from './nb';
+import { spellPortugueseNumbers } from './pt';
+import { spellRomanianNumbers } from './ro';
 import { spellRussianNumbers } from './ru';
 import { spellSwedishNumbers } from './sv';
 
@@ -15,11 +20,16 @@ import { spellSwedishNumbers } from './sv';
  */
 const SPELLERS: Record<string, (text: string) => string> = {
   da: spellDanishNumbers,
+  es: spellSpanishNumbers,
   et: spellEstonianNumbers,
   fi: spellFinnishNumbers,
   fo: spellFaroeseNumbers,
+  fr: spellFrenchNumbers,
   is: spellIcelandicNumbers,
+  it: spellItalianNumbers,
   nb: spellNorwegianNumbers,
+  pt: spellPortugueseNumbers,
+  ro: spellRomanianNumbers,
   ru: spellRussianNumbers,
   sv: spellSwedishNumbers,
 };
@@ -27,6 +37,8 @@ const SPELLERS: Record<string, (text: string) => string> = {
 export function spellNumbers(text: string, locale: string): string {
   if (!/\d/.test(text)) return text;
   const lang = locale.split(/[-_]/)[0].toLowerCase();
+  // o português do Brasil diz dezesseis, dezessete, dezenove (Portugal: dezasseis, dezassete, dezanove)
+  if (lang === 'pt' && /^pt[-_]BR\b/i.test(locale)) return spellPortugueseNumbers(text, true);
   const spell = SPELLERS[lang === 'nn' ? 'nb' : lang];
   return spell ? spell(text) : text;
 }

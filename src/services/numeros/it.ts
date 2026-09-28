@@ -64,9 +64,9 @@ export function italianNumber(n: number, g: G = 'contar', next = ''): string {
   const r = n % 1000;
   let rest = (k === 0 ? '' : k === 1 ? 'mille' : `${below1000(k)}mila`) + (r ? below1000(r) : '');
   // o tre final leva acento: ventitré, centotré, duemilatré
-  if (n > 3) rest = rest.replace(/tre$/, 'tré');
+  if (n % 1e6 > 3) rest = rest.replace(/tre$/, 'tré');
   rest = withUno(rest, n, g, next);
-  const millions = m === 0 ? '' : m === 1 ? 'un milione' : `${withUno(below1000(m).replace(/tre$/, 'tré'), m, 'm')} milioni`;
+  const millions = m === 0 ? '' : m === 1 ? 'un milione' : `${withUno(m > 3 ? below1000(m).replace(/tre$/, 'tré') : below1000(m), m, 'm')} milioni`;
   return [millions, rest].filter(Boolean).join(' ');
 }
 
