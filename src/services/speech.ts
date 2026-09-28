@@ -6,6 +6,7 @@ import { VOWEL_GROUPS } from './pitch';
 import { createAudioPlayer, type AudioPlayer } from 'expo-audio';
 import { clipFor } from '@/data/audio-index';
 import { pickVoice, type VoiceInfo } from './voice-pick';
+import { spellFaroeseNumbers } from './numeros-fo';
 import { hasNeuralVoice, neuralCached, neuralFailed, speakNeural, stopNeural, synthesizeNeural, unlockAudio } from './neural-tts';
 
 export type { VoiceInfo };
@@ -171,9 +172,14 @@ function goodDeviceVoice(voice: VoiceInfo | null, locale: string): voice is Voic
  * Sem nada disso, fica em silêncio: a voz padrão (ex.: português) ensinaria a pronúncia errada
  * («faci» como «fassi»).
  */
-/** A marca de tônica do russo (молоко́) ajuda quem lê, mas alguns motores de voz tropeçam nela. */
-export function forVoice(text: string): string {
-  return text.replace(/\u0301/g, '');
+/**
+ * O texto como a voz deve lê-lo. A marca de tônica do russo (молоко́) ajuda quem lê, mas alguns
+ * motores de voz tropeçam nela.
+ */
+export function forVoice(text: string, locale = ''): string {
+  const plain = text.replace(/\u0301/g, '');
+  // a voz do feroês (MMS) só conhece letras: os números vão por extenso
+  return /^fo\b/i.test(locale) ? spellFaroeseNumbers(plain) : plain;
 }
 
 /** Cada fala nova invalida as anteriores (o plano B da voz do aparelho não fala fora de hora). */
@@ -191,14 +197,14 @@ export async function speak(text: string, locale: string, opts: { rate?: number;
   stopNeural();
   const device: VoiceInfo | null = voice;
   if (!goodDeviceVoice(voice, locale) && hasNeuralVoice(locale)) {
-    speakNeural(forVoice(text), locale, opts.rate ?? 1).then((ms) => {
+    speakNeural(forVoice(text, locale), locale, opts.rate ?? 1).then((ms) => {
       // a voz embutida falhou: a do aparelho, se houver, é melhor que o silêncio
-      if (ms === null && seq === speakSeq && device && neuralFailed(locale)) Speech.speak(forVoice(text), { language: locale, voice: device.identifier, rate: opts.rate ?? 0.9 });
+      if (ms === null && seq === speakSeq && device && neuralFailed(locale)) Speech.speak(forVoice(text, locale), { language: locale, voice: device.identifier, rate: opts.rate ?? 0.9 });
     });
     return 'neural';
   }
   if (!voice) return 'sem-voz';
-  Speech.speak(forVoice(text), { language: locale, voice: voice.identifier, rate: opts.rate ?? 0.9 });
+  Speech.speak(forVoice(text, locale), { language: locale, voice: voice.identifier, rate: opts.rate ?? 0.9 });
   return 'sintetica';
 }
 
@@ -222,7 +228,7 @@ export async function modelSamples(text: string, locale: string, rate = 1): Prom
   }
   if (!hasNeuralVoice(locale)) return null;
   if (goodDeviceVoice(await findVoice(locale), locale) && !(await neuralCached(locale))) return null;
-  const out = await synthesizeNeural(forVoice(text), locale, rate);
+  const out = await synthesizeNeural(forVoice(text, locale), locale, rate);
   return out && { ...out, source: 'neural' };
 }
 
@@ -240,12 +246,12 @@ export async function speakTimed(text: string, locale: string, rate = 0.9): Prom
   const voice = await findVoice(locale);
   const estimate = Math.round(((text.toLowerCase().match(VOWEL_GROUPS) ?? []).length * 210) / rate);
   Speech.stop();
-  if (!goodDeviceVoice(voice, locale) && hasNeuralVoice(locale)) return (await speakNeural(forVoice(text), locale, rate)) ?? estimate;
+  if (!goodDeviceVoice(voice, locale) && hasNeuralVoice(locale)) return (await speakNeural(forVoice(text, locale), locale, rate)) ?? estimate;
   if (!voice) return estimate; // sem voz do idioma: não fala com a voz errada
   return new Promise((resolve) => {
     let startedAt = 0;
     const fallback = setTimeout(() => resolve(estimate), estimate * 3 + 2000);
-    Speech.speak(forVoice(text), {
+    Speech.speak(forVoice(text, locale), {
       language: locale,
       voice: voice.identifier,
       rate,
