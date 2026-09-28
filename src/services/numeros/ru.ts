@@ -87,11 +87,30 @@ const UNIT_NOUNS: Record<string, Noun> = {
   '°': noun('m', 'градус градуса градусу градус градусом градусе', 'градусы градусов градусам градусы градусами градусах'),
   км: noun('m', 'километр километра километру километр километром километре', 'километры километров километрам километры километрами километрах'),
   кг: noun('m', 'килограмм килограмма килограмму килограмм килограммом килограмме', 'килограммы килограммов килограммам килограммы килограммами килограммах'),
+  см: noun('m', 'сантиметр сантиметра сантиметру сантиметр сантиметром сантиметре', 'сантиметры сантиметров сантиметрам сантиметры сантиметрами сантиметрах'),
+  м: noun('m', 'метр метра метру метр метром метре', 'метры метров метрам метры метрами метрах'),
+  л: noun('m', 'литр литра литру литр литром литре', 'литры литров литрам литры литрами литрах'),
+  'мин.': noun('f', 'минута минуты минуте минуту минутой минуте', 'минуты минут минутам минуты минутами минутах'),
+  'ч.': HOUR,
+  'коп.': noun('f', 'копейка копейки копейке копейку копейкой копейке', 'копейки копеек копейкам копейки копейками копейках'),
   'тыс.': THOUSAND,
   млн: MILLION,
   млрд: BILLION,
 };
 UNIT_NOUNS['руб.'] = UNIT_NOUNS['₽'];
+/** Os centavos de cada moeda: 99,99 ₽ = девяносто девять рублей девяносто девять копеек. */
+const MINOR: Record<string, Noun> = { '₽': UNIT_NOUNS['коп.'], 'руб.': UNIT_NOUNS['коп.'], $: noun('m', 'цент цента центу цент центом центе', 'центы центов центам центы центами центах') };
+MINOR['€'] = MINOR.$;
+
+/** Uma quantia, com ou sem centavos: «500 ₽», «99,99 ₽», «€2,50». */
+function money(int: number, dec: string | undefined, unit: string, c: Case): string {
+  const nn = UNIT_NOUNS[unit];
+  const major = `${russianNumber(int, nn.g, c)} ${nounAfter(nn, int, c)}`;
+  const cents = dec ? Number(dec.padEnd(2, '0').slice(0, 2)) : 0;
+  if (!cents) return major;
+  const mn = MINOR[unit];
+  return `${major} ${russianNumber(cents, mn.g, c)} ${nounAfter(mn, cents, c)}`;
+}
 
 const ends1 = (n: number) => n % 10 === 1 && n % 100 !== 11;
 const ends234 = (n: number) => n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14);
@@ -539,18 +558,19 @@ function formMap(): Map<string, Reading[]> {
 const ADJ_END = /(ый|ий|ой|ая|яя|ое|ее|ые|ие|ых|их|ым|им|ыми|ими|ого|его|ому|ему|ую|юю)$/;
 
 /** O substantivo logo depois do número (ou depois de um adjetivo, ou de «–7»): palavra e leituras. */
-function nextNoun(after: string): { word: string; readings: Reading[] } | null {
-  // «5–7 дней», «2 и́ли 3 часа́»: o substantivo vem depois do segundo número
-  const skip = /^(?:\s*[–—-]\s*|\s+(?:или|и)\s+)\d+/.exec(after);
+function nextNoun(after: string): { word: string; readings: Reading[]; n2?: number } | null {
+  // «5–7 дней», «2 и́ли 3 часа́»: o substantivo vem depois do segundo número (que manda no caso)
+  const skip = /^(?:\s*[–—-]\s*|\s+(?:или|и)\s+)(\d+)/.exec(after);
   const rest = skip ? after.slice(skip[0].length) : after;
+  const n2 = skip ? Number(skip[1]) : undefined;
   const m = /^[\s\u00A0]+([а-яё\u0301]+)(?:[\s\u00A0]+([а-яё\u0301]+))?/iu.exec(rest);
   if (!m) return null;
   const map = formMap();
   const w1 = norm(m[1]);
-  if (map.has(w1)) return { word: w1, readings: map.get(w1)! };
+  if (map.has(w1)) return { word: w1, readings: map.get(w1)!, n2 };
   if (m[2] && ADJ_END.test(w1)) {
     const w2 = norm(m[2]);
-    if (map.has(w2)) return { word: w2, readings: map.get(w2)! };
+    if (map.has(w2)) return { word: w2, readings: map.get(w2)!, n2 };
   }
   return null;
 }
@@ -606,7 +626,6 @@ prep(
   'посреди',
   'насчет',
   'порядка',
-  'около',
 );
 prep(['dat'], 'к', 'ко', 'благодаря', 'согласно', 'навстречу');
 prep(['pre'], 'о', 'об', 'обо', 'при');
@@ -673,13 +692,16 @@ const NUMBER = new RegExp(
     // 14:30 (e 14.30 depois de preposição de tempo)
     `(?<time>(?<hh>\\d{1,2})(?::|(?<=(?:^|[\\s(«])(?:[вВсС]|до|к|после|около|от|по)${SPACE}\\d{1,2})\\.)(?<mi>\\d{2}))`,
     // $10, €5
-    `(?<pre>[$€])${SPACE}?(?<pnum>\\d+(?:,\\d+)?)`,
+    `(?<pre>[$€])${SPACE}?(?<pnum>\\d{1,3}(?:${SPACE}\\d{3})+(?:,\\d+)?|\\d+(?:,\\d+)?)`,
     // 1 500 000; 2,5; 5-й; 10%, 500 ₽, 5 млн (o símbolo é o substantivo)
     // (−5 °C, № 5, 1957 г.)
-    `(?<no>№${SPACE}?)?(?<sign>(?<=^|[\\s(])[−+-](?=\\d))?(?<num>\\d{1,3}(?:${SPACE}\\d{3})+|\\d+)(?:,(?<dec>\\d+))?(?:[-‑](?<suf>${ORD_SUFFIX})|${SPACE}?(?<unit>%|₽|°[CС]?|руб\\.|тыс\\.|млн|млрд|км|кг|гг?\\.)(?![\\p{L}]))?`,
+    `(?<no>№${SPACE}?)?(?<sign>(?<=^|[\\s(])[−+-](?=\\d))?(?<num>\\d{1,3}(?:${SPACE}\\d{3})+|\\d+)(?:,(?<dec>\\d+))?(?:[-‑](?<suf>${ORD_SUFFIX})|${SPACE}?(?<unit>%|₽|\\$|€|°[CС]?|руб\\.|тыс\\.|млн|млрд|км|кг|см|мин\\.|ч\\.|коп\\.|гг?\\.|м|л)(?![\\p{L}]))?`,
   ].join('|'),
   'gu',
 );
+
+/** Terminações de ordinal/cardinal escritas depois do hífen (5-й, 2-го, 5-ти): não são palavras compostas. */
+const FULL_SUFFIX = new RegExp(`^(?:${ORD_SUFFIX})$`, 'i');
 
 function isYear(n: number, raw: string) {
   return /^\d{4}$/.test(raw) && n >= 1000 && n <= 2100;
@@ -689,6 +711,12 @@ function isYear(n: number, raw: string) {
 function nextWord(after: string): string | null {
   const m = /^[\s\u00A0]+([а-яё\u0301]+)/iu.exec(after);
   return m ? norm(m[1]) : null;
+}
+
+/** O número vem logo depois de um mês (4 октября́ 1957): o ano vai no genitivo. */
+function afterMonth(before: string): boolean {
+  const prev = /([а-яё\u0301]+)[\s\u00A0]+$/iu.exec(before);
+  return !!prev && MONTHS.has(norm(prev[1]));
 }
 
 /** O caso de um ano, pela forma de «год» depois dele (ou de «г.»), ou pela preposição. */
@@ -720,8 +748,7 @@ function rangePrep(before: string): string | null {
 function cardinalSuffix(suf: string, n: number, p: string | null, noun: { readings: Reading[] } | null): Case | null {
   const loc = p !== null && PREP[p]?.includes('pre') && !PREP[p]?.includes('gen');
   const u = n % 10;
-  if (suf === 'ти' || suf === 'ух' || suf === 'ёх' || (suf === 'х' && n >= 2 && n <= 4) || (suf === 'и' && (u === 0 || u >= 5))) return loc ? 'pre' : 'gen';
-  if (suf === 'ми' && (u === 7 || u === 8) && n % 100 !== 17 && n % 100 !== 18) return loc ? 'pre' : 'gen';
+  if (suf === 'ти' || suf === 'ух' || suf === 'ёх' || (suf === 'х' && n >= 2 && n <= 4) || ((suf === 'и' || suf === 'ми') && (u === 0 || u >= 5))) return loc ? 'pre' : 'gen';
   if (suf === 'мя') return 'ins';
   if (suf === 'м' && n >= 2 && n <= 4 && noun?.readings.some((r) => r.pl && r.c === 'dat')) return 'dat';
   return null;
@@ -808,6 +835,13 @@ function dateCase(before: string, p: string | null): Case {
  */
 export function spellRussianNumbers(text: string): string {
   if (!/\d/.test(text)) return text;
+  // «5-ле́тний» → пятиле́тний, «2-ко́мнатная» → двухко́мнатная, «100-ле́тие» → столе́тие
+  text = text.replace(/(?<![\p{L}\d])(\d{1,3})[-‑]([а-яё\u0301]{3,})/giu, (m, d: string, w: string) => {
+    if (FULL_SUFFIX.test(w)) return m;
+    const n = Number(d);
+    const head = n === 1 ? 'одно' : n === 90 ? 'девяносто' : n === 100 ? 'сто' : compoundPrefix(n);
+    return head ? head + w : m;
+  });
   return text.replace(NUMBER, (m, ...args) => {
     const at = args[args.length - 3] as number;
     const g = args[args.length - 1] as Record<string, string | undefined>;
@@ -832,19 +866,16 @@ export function spellRussianNumbers(text: string): string {
       if (h > 24 || mi > 59) return m;
       // «в 9:00» é acusativo (в де́вять часо́в); «с 9:00 до 18:00», genitivo
       const c: Case = p ? (PREP[p].includes('acc') ? 'acc' : PREP[p][0]) : 'nom';
-      if (mi === 0) {
-        if (h === 1 && (c === 'nom' || c === 'acc')) return 'час';
-        return `${russianNumber(h, 'm', c)} ${nounAfter(HOUR, h, c)}`;
-      }
-      return `${russianNumber(h, 'm', c)} ${mi < 10 ? 'ноль ' : ''}${russianNumber(mi, 'f', c)}`;
+      // «в 1:00» → в час, «в 1:30» → в час тридцать
+      const oneOclock = h === 1 && (c === 'nom' || c === 'acc');
+      if (mi === 0) return oneOclock ? 'час' : `${russianNumber(h, 'm', c)} ${nounAfter(HOUR, h, c)}`;
+      return `${oneOclock ? 'час' : russianNumber(h, 'm', c)} ${mi < 10 ? 'ноль ' : ''}${russianNumber(mi, 'f', c)}`;
     }
 
     if (g.pre) {
-      const nn = UNIT_NOUNS[g.pre];
-      const [int, dec] = g.pnum!.split(',');
-      const c = prepCase(p, Number(int));
-      if (dec) return `${decimal(Number(int), dec, c)} ${nn.sg.gen}`;
-      return `${russianNumber(Number(int), nn.g, c)} ${nounAfter(nn, Number(int), c)}`;
+      const [intRaw, dec] = g.pnum!.split(',');
+      const int = Number(intRaw.replace(/[^\d]/g, ''));
+      return money(int, dec, g.pre, prepCase(p, int));
     }
 
     const raw = g.num!.replace(/[^\d]/g, '');
@@ -863,13 +894,15 @@ function spellNumber(n: number, raw: string, g: Record<string, string | undefine
   if (g.unit && /^г/.test(g.unit)) {
     // «в 1957 г.» → «в ты́сяча девятьсо́т пятьдеся́т седьмо́м году́»
     if (!isYear(n, raw) || g.dec) return `${russianNumber(n)} ${g.unit}`;
-    const c = yearCase(p, 'г')!;
+    // «4 октября́ 1957 г.»: depois do mês, o genitivo (пятьдеся́т седьмо́го го́да)
+    const c: Case = afterMonth(before) ? 'gen' : yearCase(p, 'г')!;
     return `${russianOrdinal(n, 'm', c)} ${(g.unit === 'гг.' ? YEAR_NOUN.pl : YEAR_NOUN.sg)[c]}`;
   }
   if (g.unit) {
     // «10%» → «де́сять проце́нтов»; depois de uma fração, o genitivo singular: две це́лых пять деся́тых проце́нта
     const nn = UNIT_NOUNS[g.unit.replace(/^°.*/, '°')];
     const c = prepCase(p, n);
+    if (MINOR[g.unit]) return money(n, g.dec, g.unit, c);
     return g.dec ? `${decimal(n, g.dec, c)} ${nn.sg.gen}` : `${russianNumber(n, nn.g, c)} ${nounAfter(nn, n, c)}`;
   }
 
@@ -884,6 +917,9 @@ function spellNumber(n: number, raw: string, g: Record<string, string | undefine
 
   if (g.dec) {
     const c = p ? (PREP[p].includes('acc') ? 'nom' : PREP[p][0]) : 'nom';
+    // «1,5 часа́» → полтора́ часа́, «1,5 неде́ли» → полторы́ неде́ли
+    const half = noun?.readings.find((r) => !r.pl && r.c === 'gen');
+    if (n === 1 && g.dec === '5' && half && c === 'nom') return half.g === 'f' ? 'полторы' : 'полтора';
     return decimal(n, g.dec, c);
   }
 
@@ -907,14 +943,34 @@ function spellNumber(n: number, raw: string, g: Record<string, string | undefine
       }
       if (!c && range && /\(\s*$/.test(before) && /^\s*\)/.test(after.slice(range[0].length))) c = 'nom';
       if (!c && /[–—-]\s*$/.test(before) && /\(\s*\d{4}\s*[–—-]\s*$/.test(before)) c = 'nom';
-      const prev = /([а-яё\u0301]+)[\s\u00A0]+$/iu.exec(before);
-      if (!c && prev && MONTHS.has(norm(prev[1]))) c = 'gen';
+      if (!c && afterMonth(before)) c = 'gen';
       // «в 2014,»: sem «году́», mas é ano
       if (!c && p && /^\s*([.,;:!?)»—–]|$)/.test(after)) c = p === 'в' || p === 'во' ? 'pre' : prepCase(p, n);
     }
     if (c) return russianOrdinal(n, 'm', c);
   }
 
-  const c = chooseCase(n, p, noun?.readings ?? null);
-  return russianNumber(n, genderFor(n, noun?.readings ?? null, c), c);
+  // «в 7 кла́ссе», «в 19 ве́ке», «на 5 страни́це»: o substantivo no singular, num caso que nenhum
+  // cardinal pede, é o ordinal (седьмо́м, девятна́дцатом, пя́той)
+  if (noun && !noun.n2 && noun.readings.every((r) => !r.pl)) {
+    const fits = noun.readings.some((r) => casesFor(n, r).length);
+    const ordNoun = ORD_NOUN.test(noun.word) && noun.readings.every((r) => r.c !== 'nom');
+    if (!fits || (ends1(n) && ordNoun)) {
+      const list = p ? PREP[p] : [];
+      const r = noun.readings.find((x) => list.includes(x.c)) ?? noun.readings[0];
+      if (r.c !== 'nom' || !fits) return russianOrdinal(n, r.g, r.c);
+    }
+  }
+  // «1–2 дня», «1 и́ли 2 кни́ги»: o caso e o gênero vêm do número que está colado no substantivo
+  const target = noun?.n2 ?? n;
+  let c = chooseCase(target, p, noun?.readings ?? null);
+  // «сто́ит 1000 рубле́й» → ты́сячу; «по 1000 рубле́й» → по ты́сяче
+  if (!p && c === 'nom' && PRICE_VERB.test(norm(before.slice(-30)))) c = 'acc';
+  if (p === 'по' && (n === 1000 || n === 1e6)) c = 'dat';
+  return russianNumber(n, genderFor(target, noun?.readings ?? null, c), c);
 }
+
+/** Substantivos que, no singular depois de um número, pedem o ordinal (em 1, 21, 31…: в 21 ве́ке). */
+const ORD_NOUN = /^(век|класс|этаж|глав|страниц|ряд|курс|урок|раздел|том|пункт|параграф|съезд)/;
+/** Verbos de preço e compra: o número vai no acusativo (сто́ит ты́сячу рубле́й). */
+const PRICE_VERB = /(?:^|\s)(?:сто(?:и|я)т|стоил[аио]?|заплатил\S*|купил\S*|потратил\S*|получил\S*|продал\S*)\s*$/;

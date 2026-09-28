@@ -18,6 +18,7 @@
  * neljätoista kolmekymmentä; «3,5» → kolme pilkku viisi; «5 %» → viisi prosenttia; «190 000».
  */
 import { ROWS } from '@/data/fi/vocabulario';
+import { clockWords, decimalWords, digitByDigit, minusSign, moneyWords } from './finicas';
 
 type Case = 'nom' | 'gen' | 'par' | 'ill' | 'ess' | 'ine' | 'ela' | 'ade' | 'abl' | 'all' | 'tra';
 /** Os casos que se fazem com a terminação sobre o radical fraco (kolme-ssa, kahde-lle, tuhanne-ksi). */
@@ -128,6 +129,9 @@ const EXTRA: [string, string, string][] = [
   ['dollari', 'dollarin', 'dollaria'],
   ['punta', 'punnan', 'puntaa'],
   ['aste', 'asteen', 'astetta'],
+  // «2 hengen huone»; «Seitsemän veljestä» (o partitivo de veljes, não o elativo de veli)
+  ['henki', 'hengen', 'henkeä'],
+  ['veljes', 'veljeksen', 'veljestä'],
 ];
 
 /**
@@ -234,22 +238,23 @@ function colonCase(suffix: string): { c: Case; ord: boolean } | null {
   return null;
 }
 
-/** Os decimais: até dois algarismos (sem zero na frente), como número: 3,50 = kolme pilkku viisikymmentä; senão, um a um. */
-function decimals(dec: string): string {
-  if (dec.length <= 2 && dec[0] !== '0') return finnishNumber(Number(dec));
-  return [...dec].map((d) => finnishNumber(Number(d))).join(' ');
-}
+const clock = (h: number, min: string) => clockWords(h, min, (x) => finnishNumber(x), 'nolla');
+/** Euros e dólares com centavos se leem como dinheiro. */
+const MONEY: Record<string, [string, string]> = { '€': ['euro', 'euroa'], $: ['dollari', 'dollaria'] };
 
-/** «14.30» → neljätoista kolmekymmentä; «9.05» → yhdeksän nolla viisi; «14.00» → neljätoista. */
-function clock(h: number, min: string): string {
-  const m = Number(min);
-  return `${finnishNumber(h)}${m === 0 ? '' : min[0] === '0' ? ` nolla ${finnishNumber(m)}` : ` ${finnishNumber(m)}`}`;
+/** Posposições que decidem o caso de uma data: 3.5. mennessä → kolmanteen toukokuuta, 6.12. alkaen → kuudennesta. */
+function postpositionCase(words: string): Case | null {
+  const w = words.match(/^\s+(\p{Ll}+)/u)?.[1];
+  if (!w) return null;
+  if (/^(mennessä|asti|saakka)$/.test(w)) return 'ill';
+  if (/^(alkaen|lähtien)$/.test(w)) return 'ela';
+  return null;
 }
 
 const MONTHS_PAR = ['', 'tammikuuta', 'helmikuuta', 'maaliskuuta', 'huhtikuuta', 'toukokuuta', 'kesäkuuta', 'heinäkuuta', 'elokuuta', 'syyskuuta', 'lokakuuta', 'marraskuuta', 'joulukuuta'];
 
 const NUMBER =
-  /(?<![\p{L}\d])([€$£]\s?)?(\d{1,2}\.\d{1,2}\.(?:\d{4}(?!\d))?|\d{1,2}[.:]\d{2}(?![\d,]|\.\d)|\d{1,3}(?:[   ]\d{3})+(?:,\d+)?(?![\d,])|\d+(?:,\d+)?)(\s?[%€$£])?(\.(?=\s+\p{Ll})|:\p{L}+|-\p{L}+)?(?![\p{L}\d])/gu;
+  /(?<![\p{L}\d])([€$£]\s?)?(\d{1,2}\.\d{1,2}\.(?:\d{4}(?!\d))?|\d{1,2}[.:]\d{2}(?![\d,]|\.\d)|\d{1,3}(?:[   ]\d{3})+(?:,\d+)?(?![\d,])|\d+(?:,\d+)?)(\s?[%€$£])?(\.(?=\s+\p{Ll}|–\d+\.\s+\p{Ll})|:\p{L}+|-\p{L}+)?(?![\p{L}\d])/gu;
 
 /**
  * Troca os números de um texto pelas palavras, no caso do substantivo que vem depois: «3 taloa» →
@@ -257,7 +262,7 @@ const NUMBER =
  * «6. joulukuuta» → «kuudes joulukuuta», «vuonna 1917» → «vuonna tuhatyhdeksänsataaseitsemäntoista».
  */
 export function spellFinnishNumbers(text: string): string {
-  const src = text.replace(/(?<![\p{L}])klo(?=\s*\d)/giu, 'kello');
+  const src = digitByDigit(minusSign(text.replace(/(?<![\p{L}])klo(?=\s*\d)/giu, 'kello'), 'miinus'), (x) => finnishNumber(x), /hätä(?:numero|puhelin)\p{L}*(?:\s+on)?/u);
   return src.replace(NUMBER, (all, pre: string | undefined, num: string, sym: string | undefined, tail: string | undefined, at: number) => {
     const before = src.slice(Math.max(0, at - 30), at);
     const end = at + all.length;
@@ -272,7 +277,7 @@ export function spellFinnishNumbers(text: string): string {
       if (!clockBefore && d >= 1 && d <= 31 && mo >= 1 && mo <= 12) {
         // «6.12.» no fim da frase: o ponto da data também fecha a frase
         const stop = !date[3] && !/^\s+\p{Ll}/u.test(after) ? '.' : '';
-        return `${finnishOrdinal(d)} ${MONTHS_PAR[mo]}${date[3] ? ` ${finnishNumber(Number(date[3]))}` : ''}${tail ?? stop}`;
+        return `${finnishOrdinal(d, postpositionCase(after) ?? 'nom')} ${MONTHS_PAR[mo]}${date[3] ? ` ${finnishNumber(Number(date[3]))}` : ''}${tail ?? stop}`;
       }
       if (Number(date[2]) < 60 && date[2].length === 2 && !date[3]) return `${clock(d, date[2])}.${tail ?? ''}`;
       return all;
@@ -284,9 +289,15 @@ export function spellFinnishNumbers(text: string): string {
     const n = Number(intPart);
     if (n >= 1e9) return all;
 
-    // com decimais, o número fica no nominativo e o símbolo no partitivo: kolme pilkku viisi prosenttia
     if (dec !== undefined) {
-      const words = `${finnishNumber(n)} pilkku ${decimals(dec)}`;
+      // 2,90 € → kaksi euroa yhdeksänkymmentä senttiä
+      const money = MONEY[(pre ?? sym ?? '').trim()];
+      if (money) return moneyWords(n, dec, (x) => finnishNumber(x), money, ['sentti', 'senttiä']) + (tail ?? '');
+      // o decimal declina com o substantivo (1,5 litran pullo → yhden pilkku viiden litran), menos no
+      // partitivo; o símbolo vai no partitivo: kolme pilkku viisi prosenttia
+      const nc = symbol ? null : nounCase(after);
+      const dc: Case = nc && nc !== 'par' ? nc : 'nom';
+      const words = `${finnishNumber(n, dc)} pilkku ${decimalWords(dec, (x) => finnishNumber(x, dc))}`;
       return symbol ? `${words} ${symbol[1]}${tail ?? ''}` : words + (tail ?? '');
     }
 
@@ -305,8 +316,16 @@ export function spellFinnishNumbers(text: string): string {
 
     // o ordinal concorda sempre (helmikuun 28. päivänä); o cardinal, só se não for ano, hora ou rótulo
     const ordinal = tail === '.';
-    const c = !ordinal && FIXED_BEFORE.test(before) ? null : nounCase(after);
-    const numeralCase: Case = !c || c === 'par' ? 'nom' : c;
-    return ordinal ? finnishOrdinal(n, numeralCase) : finnishNumber(n, numeralCase);
+    // «1.–3. luokalla»: o caso vem do substantivo depois do intervalo
+    const nounText = ordinal ? after.replace(/^–\d+\./, '') : after;
+    const c = !ordinal && FIXED_BEFORE.test(before) ? null : nounCase(nounText);
+    if (ordinal) {
+      // «3. kirjaa» → kolmatta kirjaa; mas «6. joulukuuta» é kuudes (o mês vai no partitivo, o dia não),
+      // e «3. toukokuuta mennessä» → kolmanteen
+      const month = /^\s+\p{L}*kuuta(?!\p{L})/u.exec(nounText);
+      if (month) return finnishOrdinal(n, postpositionCase(nounText.slice(month[0].length)) ?? 'nom');
+      return finnishOrdinal(n, c ?? 'nom');
+    }
+    return finnishNumber(n, !c || c === 'par' ? 'nom' : c);
   });
 }

@@ -83,10 +83,29 @@ test('números em finlandês: anos, datas, horas, rótulos e compostos', () => {
 
 test('números em finlandês: decimais, porcentagens, moedas; letras e números colados ficam', () => {
   assert.equal(spellFinnishNumbers('Kuume on 37,5 astetta.'), 'Kuume on kolmekymmentäseitsemän pilkku viisi astetta.');
-  assert.equal(spellFinnishNumbers('Se maksaa 3,50 €.'), 'Se maksaa kolme pilkku viisikymmentä euroa.');
+  assert.equal(spellFinnishNumbers('Se maksaa 3,50 €.'), 'Se maksaa kolme euroa viisikymmentä senttiä.');
   assert.equal(spellFinnishNumbers('Se maksaa 1 €.'), 'Se maksaa yksi euro.');
   assert.equal(spellFinnishNumbers('Alv on 24 %.'), 'Alv on kaksikymmentäneljä prosenttia.');
   assert.equal(spellFinnishNumbers('Hinnat nousivat 2 %:lla.'), 'Hinnat nousivat kahdella prosentilla.');
   assert.equal(spellFinnishNumbers('Osaan suomea B2-tasolla.'), 'Osaan suomea B2-tasolla.');
   assert.equal(spellFinnishNumbers('Hyvää huomenta!'), 'Hyvää huomenta!');
+});
+
+test('números em finlandês: revisão (henki, ordinal no partitivo, menos, datas com posposição, decimais, telefones)', () => {
+  const cases: [string, string][] = [
+    ['2 hengen huone', 'kahden hengen huone'],
+    ['jo 100. kertaa', 'jo sadatta kertaa'],
+    ['6. joulukuuta', 'kuudes joulukuuta'],
+    ['-20 astetta', 'miinus kaksikymmentä astetta'],
+    ['3.5. mennessä', 'kolmanteen toukokuuta mennessä'],
+    ['6.12. alkaen', 'kuudennesta joulukuuta alkaen'],
+    ['1,5 litran pullo', 'yhden pilkku viiden litran pullo'],
+    ['2,90 €', 'kaksi euroa yhdeksänkymmentä senttiä'],
+    ['Soita 040 123 4567', 'Soita nolla neljä nolla, yksi kaksi kolme, neljä viisi kuusi seitsemän'],
+    ['Hätänumero on 112.', 'Hätänumero on yksi yksi kaksi.'],
+    ['noin 190 000 järveä', 'noin satayhdeksänkymmentätuhatta järveä'],
+    ['7 veljestä', 'seitsemän veljestä'],
+    ['1.–3. luokalla', 'ensimmäisellä–kolmannella luokalla'],
+  ];
+  for (const [t, want] of cases) assert.equal(spellFinnishNumbers(t), want, t);
 });
