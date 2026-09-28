@@ -24,10 +24,11 @@ test('voz do feroês (MMS): o worker tokeniza igual ao tokenizador oficial', asy
   assert.equal(letters(mmsIds('Seyðir, 3 kýr og ein hundur.', config)), 'seyðir kýr og ein hundur');
 });
 
-test('voz do feroês (MMS): os arquivos estão no site e o modelo registrado é o 1º pedaço', () => {
+test('voz do feroês (MMS): os arquivos estão no site e os pedaços registrados são os do config', () => {
   const config = load<MmsConfig>('public/vozes/fo/config.json');
   assert.equal(config.kind, 'mms');
   for (const f of config.files) assert.ok(existsSync(`public/vozes/fo/${f}`), f);
   const voice = NEURAL_VOICES['fo-mms'];
   assert.equal(voiceUrls(voice.id).model, `vozes/fo/${config.files[0]}`);
+  assert.deepEqual(voice.local?.files, config.files, 'os pedaços do registro são os do config.json');
 });

@@ -19,8 +19,8 @@ export interface NeuralVoice {
   mb: number;
   /** o projeto que treinou a voz (créditos) */
   project: string;
-  /** a voz fica no próprio site, nesta pasta (senão, vem do repositório do Piper) */
-  local?: { dir: string; model: string };
+  /** a voz fica no próprio site, nesta pasta, nestes pedaços (senão, vem do repositório do Piper) */
+  local?: { dir: string; files: string[] };
 }
 
 /** Versão fixa do repositório de vozes: o arquivo baixado é sempre o mesmo que foi testado. */
@@ -68,7 +68,7 @@ export const NEURAL_VOICES: Record<string, NeuralVoice> = Object.fromEntries(
       page: 'https://huggingface.co/facebook/mms-tts-fao',
       mb: 114,
       project: 'MMS-TTS (Meta)',
-      local: { dir: 'vozes/fo', model: 'modelo.onnx.0' },
+      local: { dir: 'vozes/fo', files: ['modelo.onnx.0', 'modelo.onnx.1'] },
     },
   ].map((x) => [x.id, x]),
 );
@@ -82,7 +82,7 @@ export function voicePath(id: string): string {
 /** Os endereços da voz; os das vozes do próprio site são relativos à raiz do app (neural-tts os completa). */
 export function voiceUrls(id: string): { model: string; config: string } {
   const local = NEURAL_VOICES[id]?.local;
-  if (local) return { model: `${local.dir}/${local.model}`, config: `${local.dir}/config.json` };
+  if (local) return { model: `${local.dir}/${local.files[0]}`, config: `${local.dir}/config.json` };
   const model = `${HF}/${encodeURI(voicePath(id))}`;
   return { model, config: `${model}.json` };
 }

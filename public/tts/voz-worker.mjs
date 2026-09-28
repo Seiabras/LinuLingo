@@ -16,8 +16,6 @@
  *            { type: 'prepare', id, voice }                               → { id, type: 'ready' }
  * e, enquanto baixa um modelo, { id, type: 'progress', loaded, total }; se der errado, { id, type: 'error', message }.
  */
-import { mmsIds } from './mms-ids.mjs';
-
 const HERE = new URL('./', import.meta.url).href;
 // a versão (?v=) vai em todos os arquivos do motor: numa versão nova, nada velho sai do cache
 const V = new URL(import.meta.url).search;
@@ -94,27 +92,29 @@ async function phonemeIds(text, espeakVoice) {
   return lines.flatMap((l) => JSON.parse(l).phoneme_ids);
 }
 
-/** O modelo, às vezes em pedaços (o GitHub não aceita arquivos de mais de 100 MB): junta tudo. */
+/**
+ * O modelo, às vezes em pedaços (o GitHub não aceita arquivos de mais de 100 MB): baixa um de cada
+ * vez e junta num buffer só, soltando cada pedaço logo depois de copiado (o modelo do feroês tem
+ * 114 MB; com tudo em dobro na memória, celulares mais fracos derrubariam o worker).
+ */
 async function modelBytes(voice, config, onProgress) {
   if (config.kind !== 'mms') return cachedBytes(voice.model, onProgress);
-  const urls = config.files.map((f) => new URL(f, voice.config).href);
-  const sizes = urls.map(() => 0);
-  const totals = urls.map(() => 0);
-  const parts = await Promise.all(
-    urls.map((u, i) =>
-      cachedBytes(u, (loaded, total) => {
-        sizes[i] = loaded;
-        totals[i] = total;
-        onProgress?.(sizes.reduce((a, b) => a + b, 0), totals.every(Boolean) ? totals.reduce((a, b) => a + b, 0) : config.mb * 1e6);
-      }),
-    ),
-  );
-  if (parts.length === 1) return parts[0];
-  const all = new Uint8Array(parts.reduce((s, p) => s + p.byteLength, 0));
+  const estimate = config.mb * 1e6;
+  const parts = [];
+  let done = 0;
+  for (const f of config.files) {
+    const bytes = new Uint8Array(await cachedBytes(new URL(f, voice.config).href, (loaded) => onProgress?.(done + loaded, estimate)));
+    parts.push(bytes);
+    done += bytes.byteLength;
+    onProgress?.(done, estimate);
+  }
+  if (parts.length === 1) return parts[0].buffer;
+  const all = new Uint8Array(done);
   let at = 0;
-  for (const p of parts) {
-    all.set(new Uint8Array(p), at);
-    at += p.byteLength;
+  for (let i = 0; i < parts.length; i++) {
+    all.set(parts[i], at);
+    at += parts[i].byteLength;
+    parts[i] = null;
   }
   return all.buffer;
 }
@@ -142,7 +142,10 @@ async function synthesize(text, voice, speed, onProgress) {
   const { ort } = await loadEngine();
   const inf = config.inference;
   if (config.kind === 'mms') {
+    const { mmsIds } = await import(`./mms-ids.mjs${V}`);
     const ids = mmsIds(text, config);
+    // só números ou pontuação: o modelo não tem o que dizer (a voz do aparelho assume)
+    if (ids.length <= 1) throw new Error('sem letras que a voz saiba ler');
     const { output } = await session.run({
       input: new ort.Tensor('int64', BigInt64Array.from(ids, BigInt), [1, ids.length]),
       scales: new ort.Tensor('float32', Float32Array.from([inf.noise_scale, inf.length_scale / speed, inf.noise_w]), [3]),

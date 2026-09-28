@@ -1,10 +1,11 @@
 """
 Exporta a voz neural do feroês: o modelo MMS-TTS da Meta (facebook/mms-tts-fao, VITS, licença
 CC BY-NC 4.0 — uso não comercial) para ONNX, com a mesma entrada de «escalas» das vozes Piper
-([ruído, duração, ruído da duração]), comprimido em int8 para caber no repositório.
+([ruído, duração, ruído da duração]). Tenta o int8; se ele mudar demais a fala (no feroês mudou),
+fica o fp32, partido em pedaços de 90 MB (o GitHub recusa arquivos de mais de 100 MB).
 
-Roda no GitHub Actions (.github/workflows/voz-feroes.yml), que tem acesso ao Hugging Face.
-Saída em public/vozes/fo/: modelo.onnx, config.json; e src/data/fo/voz-teste.json, com a
+Roda no GitHub Actions (.github/workflows/voz-feroes.yml, só à mão), que tem acesso ao Hugging Face.
+Saída em public/vozes/fo/: modelo.onnx (ou modelo.onnx.0, .1…), config.json; e src/data/fo/voz-teste.json, com a
 tokenização de frases de teste feita pelo tokenizador oficial (o teste do app confere a do worker).
 Uso: python scripts/exportar-voz-mms.py [repo]
 """

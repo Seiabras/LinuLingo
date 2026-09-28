@@ -1,18 +1,17 @@
 name: Exportar a voz do feroês
 
 # Baixa o MMS-TTS do feroês (Hugging Face), exporta para ONNX (scripts/exportar-voz-mms.py) e
-# grava em public/vozes/fo/ no mesmo branch. Roda à mão, ou quando este arquivo ou o script mudam.
+# grava em public/vozes/fo/ no branch escolhido. Só roda à mão (cada exportação põe ~114 MB no
+# histórico do git), e nunca no master: o resultado entra por um PR, revisado.
 on:
   workflow_dispatch:
-  push:
-    branches-ignore: [master]
-    paths: [.github/workflows/voz-feroes.yml, scripts/exportar-voz-mms.py]
 
 permissions:
   contents: write
 
 jobs:
   exportar:
+    if: github.ref != 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5

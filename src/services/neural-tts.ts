@@ -124,7 +124,10 @@ export async function neuralCached(locale: string): Promise<boolean> {
   if (!voice || !neuralSupported()) return false;
   try {
     const cache = await caches.open('linulingo-vozes-v1');
-    return !!(await cache.match(urlsOf(voice).model));
+    // a voz em pedaços só funciona sem internet com todos eles guardados
+    const { model, config } = urlsOf(voice);
+    const urls = voice.local ? voice.local.files.map((f) => new URL(f, config).href) : [model];
+    return (await Promise.all(urls.map((u) => cache.match(u)))).every(Boolean);
   } catch {
     return false;
   }
