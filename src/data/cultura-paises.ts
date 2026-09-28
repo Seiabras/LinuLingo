@@ -21,7 +21,7 @@ export const CULTURE_KINDS: { key: keyof CountryCulture; label: string; emoji: s
   { key: 'dances', label: 'Danças', emoji: '💃' },
   { key: 'plants', label: 'Plantas', emoji: '🌸' },
   { key: 'games', label: 'Brincadeiras', emoji: '🎲' },
-  { key: 'gestures', label: 'Gestos', emoji: '🤌' },
+  { key: 'gestures', label: 'Gestos e costumes', emoji: '🤌' },
 ];
 
 export const CULTURA_PAISES: Record<string, CountryCulture> = {
@@ -50,7 +50,7 @@ export const CULTURA_PAISES: Record<string, CountryCulture> = {
     ],
     gestures: [
       { emoji: '😘', name: 'Dois beijos no rosto', local: 'pupici pe obraz', fact: 'Entre amigos e parentes, a saudação são dois beijos no rosto; com quem se acabou de conhecer, aperto de mão.' },
-      { emoji: '💋', name: '«Beijo a sua mão»', local: 'sărut mâna', fact: 'A saudação respeitosa a mulheres e aos mais velhos quer dizer «beijo a mão»; alguns senhores ainda chegam a beijar a mão da dama.' },
+      { emoji: '💋', name: '«Beijo a mão»', local: 'sărut mâna', fact: 'A saudação respeitosa a mulheres e aos mais velhos quer dizer «beijo a mão»; alguns senhores ainda chegam a beijar a mão da dama.' },
       { emoji: '🥚', name: 'Bater os ovos de Páscoa', local: 'ciocnitul ouălor', fact: 'Na Páscoa, cada um bate a ponta do seu ovo vermelho na do outro: um diz «Hristos a înviat!» («Cristo ressuscitou!») e o outro responde «Adevărat a înviat!» («Ressuscitou de verdade!»).' },
     ],
   },
@@ -72,7 +72,7 @@ export const CULTURA_PAISES: Record<string, CountryCulture> = {
     ],
     games: [{ emoji: '🙈', name: 'Esconde-esconde', local: 'de-a v-ați ascunselea', fact: 'O nome quer dizer, ao pé da letra, «de brincar de se esconder».' }],
     gestures: [
-      { emoji: '💋', name: '«Beijo a sua mão»', local: 'sărut mâna', fact: 'Na Moldávia, como na Romênia, é o cumprimento respeitoso a mulheres e aos mais velhos: quer dizer «beijo a mão».' },
+      { emoji: '💋', name: '«Beijo a mão»', local: 'sărut mâna', fact: 'Na Moldávia, como na Romênia, é o cumprimento respeitoso a mulheres e aos mais velhos: quer dizer «beijo a mão».' },
       { emoji: '💐', name: 'Flores em número ímpar', local: 'număr impar de flori', fact: 'Buquês de presente têm 1, 3, 5 ou 7 flores; número par só se leva a enterros.' },
       { emoji: '🥚', name: 'Bater os ovos de Páscoa', local: 'ciocnitul ouălor', fact: 'Na Páscoa, as famílias batem os ovos vermelhos uns nos outros: um diz «Hristos a înviat!» e o outro responde «Adevărat a înviat!».' },
     ],
@@ -106,7 +106,7 @@ export const CULTURA_PAISES: Record<string, CountryCulture> = {
     gestures: [
       { emoji: '👍', name: 'Joinha', fact: 'O polegar para cima serve para tudo: «tudo bem», «beleza», «obrigado»; é também o jeito de agradecer a quem deu passagem no trânsito.' },
       { emoji: '✊', name: 'Figa', fact: 'A mão fechada com o polegar entre o indicador e o médio é amuleto de sorte e contra mau-olhado, até em pingente. Na Rússia e em outros países do Leste Europeu, o mesmo gesto é uma recusa debochada: «não vai ganhar nada».' },
-      { emoji: '👌', name: '«OK» com os dedos', fact: 'O círculo de polegar e indicador, que nos Estados Unidos quer dizer «tudo certo», no Brasil é um gesto ofensivo — por isso aqui se faz joinha.' },
+      { emoji: '👌', name: '«OK» com os dedos', fact: 'O círculo de polegar e indicador, que nos Estados Unidos quer dizer «tudo certo», no Brasil é tradicionalmente visto como obsceno — por isso aqui se faz joinha.' },
     ],
   },
   PRT: {
@@ -134,7 +134,7 @@ export const CULTURA_PAISES: Record<string, CountryCulture> = {
     gestures: [
       { emoji: '😘', name: 'Dois beijinhos', local: 'dois beijinhos', fact: 'Mulheres entre si, e homens com mulheres, cumprimentam-se com dois beijos no rosto; entre homens, aperto de mão. No Brasil, o número de beijos muda de região para região.' },
       { emoji: '💪', name: 'Manguito', local: 'manguito', fact: 'Bater com uma mão na dobra do outro braço, erguendo o antebraço, é um gesto grosseiro de desprezo (no Brasil, «dar uma banana»). É a marca do Zé Povinho, o homem do povo desenhado por Rafael Bordalo Pinheiro em 1875.' },
-      { emoji: '🎓', name: 'Senhor doutor', local: 'senhor doutor', fact: 'Em Portugal, quem tem curso superior costuma ser tratado por «doutor» ou «doutora», mesmo sem doutorado — e os engenheiros, por «engenheiro».' },
+      { emoji: '🎓', name: 'Senhor doutor', local: 'senhor doutor', fact: 'Em Portugal, quem tem curso superior costuma ser tratado por «doutor» ou «doutora», mesmo sem doutorado — e os engenheiros, por «engenheiro». No Brasil, «doutor» vai mais para médicos, advogados e autoridades.' },
     ],
   },
   ESP: {
@@ -239,7 +239,7 @@ export const CULTURA_PAISES: Record<string, CountryCulture> = {
     games: [{ emoji: '🪨', name: 'Cinco-marias', local: 'la payana', fact: 'Joga-se com cinco pedrinhas, pegando as do chão enquanto uma está no ar.' }],
     gestures: [
       { emoji: '🤌', name: 'Mão em bolsa', local: '¿qué me decís?', fact: 'As pontas dos dedos juntas, para cima, e a mão balançando: «o que você está dizendo?», «o que você quer?». Chegou com os imigrantes italianos.' },
-      { emoji: '😘', name: 'Beijo até entre homens', local: 'un beso', fact: 'A saudação é um beijo no rosto — e os homens também se cumprimentam assim entre amigos e parentes.' },
+      { emoji: '😘', name: 'Beijo até entre homens', local: 'un beso', fact: 'A saudação é um beijo no rosto — e os homens também se cumprimentam assim entre amigos e parentes (em reuniões formais e de trabalho, vale o aperto de mão).' },
       { emoji: '🧉', name: '«Obrigado» no mate', local: 'gracias', fact: 'Na roda de mate, quem serve (o cebador) enche a cuia e passa a cada um; dizer «gracias» ao devolvê-la quer dizer «não quero mais».' },
     ],
   },
@@ -263,7 +263,7 @@ export const CULTURA_PAISES: Record<string, CountryCulture> = {
     games: [{ emoji: '🌀', name: 'Pião', local: 'trompo', fact: 'Os piões de madeira pintada são lançados com uma cordinha, como no Brasil.' }],
     gestures: [
       { emoji: '😘', name: 'Um beijo', local: 'un beso', fact: 'Entre conhecidos, um beijo no rosto (com as mulheres) ou aperto de mão (entre homens); ao chegar a uma reunião, cumprimenta-se cada pessoa.' },
-      { emoji: '🌎', name: 'Um gole para a Pachamama', local: 'para la Pachamama', fact: 'Nos Andes, antes de beber, derrama-se um pouco de chicha ou de cerveja no chão como oferenda à Mãe Terra, a Pachamama.' },
+      { emoji: '🍺', name: 'Um gole para a Pachamama', local: 'para la Pachamama', fact: 'Nos Andes, antes de beber, derrama-se um pouco de chicha ou de cerveja no chão como oferenda à Mãe Terra, a Pachamama.' },
     ],
   },
   CHL: {
@@ -308,7 +308,7 @@ export const CULTURA_PAISES: Record<string, CountryCulture> = {
     gestures: [
       { emoji: '😘', name: 'Um beijo', local: 'un beso', fact: 'Entre conhecidos, a saudação é um beijo no rosto, mesmo com quem se acabou de conhecer; entre homens, aperto de mão ou abraço.' },
       { emoji: '🧍', name: '«Quem é o último?»', local: '¿quién es el último?', fact: 'Ao chegar a uma fila, pergunta-se quem é o último e guarda-se quem vem antes: assim a fila pode se espalhar pela sombra sem ninguém perder a vez.' },
-      { emoji: '🤫', name: '«Psst!»', local: 'el siseo', fact: 'Para chamar alguém na rua, o cubano faz «psst!» ou «tss!»: é o jeito corriqueiro de chamar a atenção.' },
+      { emoji: '🗣️', name: '«Psst!»', local: 'el siseo', fact: 'Para chamar alguém na rua, o cubano faz «psst!» ou «tss!»: é o jeito corriqueiro de chamar a atenção.' },
     ],
   },
   ITA: {
@@ -337,7 +337,7 @@ export const CULTURA_PAISES: Record<string, CountryCulture> = {
     gestures: [
       { emoji: '🤌', name: 'Mão em bolsa', local: 'ma che vuoi?', fact: 'As pontas dos dedos juntas, viradas para cima, e a mão balançando: «mas o que você quer?», «o que está dizendo?». É o gesto italiano mais famoso e ganhou até emoji.' },
       { emoji: '☝️', name: 'Dedo na bochecha', local: 'buono', fact: 'Girar a ponta do indicador na bochecha quer dizer que a comida está uma delícia.' },
-      { emoji: '🤘', name: 'Chifres', local: 'fare le corna', fact: 'Indicador e mindinho esticados: apontados para baixo, afastam o azar (como bater na madeira); apontados para alguém, são uma ofensa — chamam a pessoa de traída.' },
+      { emoji: '🤘', name: 'Chifres', local: 'fare le corna', fact: 'Indicador e mindinho esticados: apontados para baixo, afastam o azar (como bater na madeira — que na Itália é «tocca ferro», tocar em ferro); apontados para alguém, são uma ofensa — chamam a pessoa de traída.' },
     ],
   },
   SWE: {
@@ -406,7 +406,7 @@ export const CULTURA_PAISES: Record<string, CountryCulture> = {
       { emoji: '🛢️', name: 'Bater no barril', local: 'slå katten af tønden', fact: 'No carnaval (fastelavn), as crianças fantasiadas batem num barril cheio de doces até ele quebrar.' },
     ],
     gestures: [
-      { emoji: '😮‍💨', name: '«Sim» puxando o ar', local: 'ja', fact: 'Como os vizinhos nórdicos, os dinamarqueses também dizem «ja» inspirando, para concordar ou mostrar que estão ouvindo.' },
+      { emoji: '😮‍💨', name: '«Sim» puxando o ar', local: 'ja', fact: 'Na Dinamarca também se ouve o «ja» dito puxando o ar, para concordar ou mostrar que se está ouvindo — embora menos que na Suécia e na Noruega.' },
       { emoji: '🥂', name: 'Brinde olho no olho', local: 'skål', fact: 'Ao brindar, olha-se nos olhos de quem se brinda, diz-se «skål» e só então se bebe.' },
       { emoji: '🍽️', name: '«Obrigado pela comida»', local: 'tak for mad', fact: 'Ao levantar da mesa, agradece-se a quem ofereceu a refeição; é uma das primeiras gentilezas que as crianças aprendem.' },
     ],
@@ -429,7 +429,7 @@ export const CULTURA_PAISES: Record<string, CountryCulture> = {
     games: [{ emoji: '🤼', name: 'Glíma', local: 'glíma', fact: 'A luta nacional, praticada desde a época dos vikings, segurando o cinto do adversário.' }],
     gestures: [
       { emoji: '😮‍💨', name: '«Sim» puxando o ar', local: 'já', fact: 'Os islandeses dizem «já» inspirando, um som bem comum nas conversas para concordar ou mostrar que estão ouvindo.' },
-      { emoji: '🚿', name: 'Banho antes da piscina', local: 'sturta', fact: 'Antes de entrar nas piscinas termais, é obrigatório tomar banho sem roupa e com sabonete no vestiário; há cartazes mostrando as partes do corpo a lavar.' },
+      { emoji: '🚿', name: 'Banho antes da piscina', local: 'sturta', fact: 'Antes de entrar nas piscinas públicas (aquecidas com água geotérmica), é obrigatório tomar banho sem roupa e com sabonete no vestiário; há cartazes mostrando as partes do corpo a lavar.' },
       { emoji: '👋', name: 'Todos pelo primeiro nome', local: 'fornafn', fact: 'Trata-se todo mundo pelo primeiro nome, até o presidente; como o sobrenome só diz de quem se é filho, a lista telefônica é por ordem de nome.' },
     ],
   },
@@ -514,7 +514,7 @@ export const CULTURA_PAISES: Record<string, CountryCulture> = {
     games: [{ emoji: '🔄', name: 'Kiiking', local: 'kiiking', fact: 'Um balanço que dá a volta completa de 360 graus, inventado na Estônia em 1996.' }],
     gestures: [
       { emoji: '👟', name: 'Sapatos na porta', local: 'kingad jalast', fact: 'Na casa dos outros, tiram-se os sapatos logo ao entrar; muitas vezes o anfitrião oferece chinelos.' },
-      { emoji: '💐', name: 'Flores em número ímpar', local: 'paaritu arv lilli', fact: 'Buquês de presente têm número ímpar de flores; número par é para enterros.' },
+      { emoji: '💐', name: 'Flores em número ímpar', local: 'paaritu arv lilli', fact: 'Tradicionalmente, buquês de presente têm número ímpar de flores e número par é para enterros; hoje são sobretudo os mais velhos que ainda fazem questão.' },
     ],
   },
   JPN: {
@@ -594,7 +594,7 @@ export const CULTURA_PAISES: Record<string, CountryCulture> = {
     gestures: [
       { emoji: '😘', name: 'Beijinho no rosto', local: 'la bise', fact: 'O número de beijos muda com a região: em Paris são dois, mas há lugares em que se dá um, três ou quatro.' },
       { emoji: '👁️', name: '«Meu olho!»', local: 'mon œil', fact: 'Puxar a pálpebra de baixo com o indicador quer dizer «não acredito, conta outra». Na Espanha, na Itália e no Brasil, o mesmo gesto quer dizer «fique atento».' },
-      { emoji: '🤷', name: 'Muxoxo francês', local: 'bof', fact: 'Beicinho, ombros erguidos e um sopro pelos lábios: «sei lá», «tanto faz», «mais ou menos».' },
+      { emoji: '🤷', name: '«Tanto faz» à francesa', local: 'bof', fact: 'Beicinho, ombros erguidos e um sopro pelos lábios: «sei lá», «tanto faz», «mais ou menos».' },
     ],
   },
   GBR: {
