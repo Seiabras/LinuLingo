@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LinuLingo · Libras no VLibras</title>
+<!--
+  Página separada do app, de propósito: o app roda «isolado» (COOP/COEP, por causa do SQLite), e
+  nesse modo o navegador bloqueia os arquivos do VLibras, que vêm de outro site. Aqui não há
+  isolamento (o service worker não põe os cabeçalhos nesta página). O VLibras é a ferramenta do
+  governo federal que traduz português para Libras com um avatar 3D (https://vlibras.gov.br).
+-->
+<style>
+  :root { --bg: #F8FAFC; --fg: #0F172A; --muted: #475569; --card: #FFFFFF; --line: #E2E8F0; --blue: #2563EB; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #0B1120; --fg: #F8FAFC; --muted: #94A3B8; --card: #0F172A; --line: #1E293B; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.5 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
+  main { max-width: 640px; margin: 0 auto; padding: 24px 16px 120px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  p { color: var(--muted); margin: 8px 0; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 20px; margin-top: 16px; }
+  #texto { font-size: 40px; font-weight: 800; text-align: center; color: var(--fg); cursor: pointer; margin: 8px 0; word-break: break-word; }
+  button { background: var(--blue); color: #fff; border: 0; border-radius: 14px; padding: 12px 18px; font-weight: 800; font-size: 16px; cursor: pointer; }
+  ol { color: var(--muted); padding-left: 20px; }
+  #erro { display: none; color: #B91C1C; }
+</style>
+</head>
+<body>
+<main>
+  <h1>🤟 Em Libras, pelo VLibras</h1>
+  <p>O avatar do VLibras, do governo federal, sinaliza o texto abaixo.</p>
+  <div class="card">
+    <p id="texto" role="button" tabindex="0" title="Toque para o avatar sinalizar"></p>
+    <p style="text-align:center"><button id="sinalizar" type="button">▶ Sinalizar</button></p>
+    <ol>
+      <li>Se o avatar não abrir sozinho, toque no ícone azul de mãos, no canto da tela.</li>
+      <li>Depois, toque no texto acima: o avatar sinaliza. Toque de novo para repetir.</li>
+      <li>Na primeira vez o avatar demora um pouco para carregar.</li>
+    </ol>
+    <p id="erro">Não deu para carregar o VLibras. Ele precisa de internet; confira a conexão e recarregue a página.</p>
+  </div>
+  <p>Volte ao LinuLingo pela aba ou janela anterior.</p>
+</main>
+<div vw class="enabled">
+  <div vw-access-button class="active"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
+</div>
+<script>
+  var t = new URLSearchParams(location.search).get('t') || 'Olá';
+  var el = document.getElementById('texto');
+  el.textContent = t;
+  document.title = t + ' · Libras no VLibras';
+  // o VLibras traduz o texto em que se toca, depois de aberto
+  function sinalizar() {
+    var botao = document.querySelector('[vw-access-button]');
+    var aberto = document.querySelector('[vw-plugin-wrapper].active');
+    if (botao && !aberto) botao.click();
+    setTimeout(function () { el.click(); }, aberto ? 50 : 2500);
+  }
+  document.getElementById('sinalizar').addEventListener('click', sinalizar);
+  el.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') el.click(); });
+</script>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js" onerror="document.getElementById('erro').style.display='block'"></script>
+<script>
+  if (window.VLibras) {
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+    // tenta abrir o avatar e sinalizar o texto assim que a página carrega
+    window.addEventListener('load', function () { setTimeout(sinalizar, 1500); });
+  }
+</script>
+</body>
+</html>

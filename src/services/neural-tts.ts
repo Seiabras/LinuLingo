@@ -4,12 +4,12 @@ import { siteBase } from './site-url';
 
 /**
  * Voz neural embutida (só na web): quando não há gravação de nativo nem uma voz boa do idioma no
- * aparelho, o próprio navegador sintetiza a fala com o Piper, num worker (public/tts/voz-worker.mjs).
+ * aparelho, o próprio navegador sintetiza a fala com o Piper (ou o MMS, no feroês), num worker (public/tts/voz-worker.mjs).
  * O modelo de cada idioma (~63 MB) é baixado na primeira vez e fica guardado.
  */
 
 /** Muda quando o worker ou o motor mudam: o endereço novo passa por cima do que estiver guardado. */
-const TTS_VERSION = '1';
+const TTS_VERSION = '3';
 
 export type NeuralState = { voice: NeuralVoice; status: 'baixando' | 'pronta' | 'erro'; loaded: number; total: number };
 
@@ -36,6 +36,12 @@ function setState(s: NeuralState) {
 
 export function neuralState(voiceId: string): NeuralState | undefined {
   return states.get(voiceId);
+}
+
+/** A voz embutida deste idioma deu erro na última tentativa (sem internet na 1ª vez, por exemplo)? */
+export function neuralFailed(locale: string): boolean {
+  const voice = neuralVoiceFor(locale);
+  return !!voice && states.get(voice.id)?.status === 'erro';
 }
 
 /** O navegador dá conta? (worker de módulo, WebAssembly e Cache Storage) */
@@ -89,11 +95,18 @@ function getWorker(): Worker {
   return worker;
 }
 
+/** Os endereços completos (as vozes do próprio site vêm relativas à raiz do app). */
+function urlsOf(voice: NeuralVoice): { model: string; config: string } {
+  const { model, config } = voiceUrls(voice.id);
+  const full = (u: string) => (/^https?:/.test(u) ? u : new URL(`${siteBase()}/${u}`, window.location.origin).href);
+  return { model: full(model), config: full(config) };
+}
+
 function request(type: 'speak' | 'prepare', voice: NeuralVoice, extra: Record<string, unknown> = {}) {
   return new Promise<{ samples: Float32Array; sampleRate: number } | null>((resolve) => {
     const id = ++seq;
     pending.set(id, { resolve, voice });
-    getWorker().postMessage({ type, id, voice: voiceUrls(voice.id), ...extra });
+    getWorker().postMessage({ type, id, voice: urlsOf(voice), ...extra });
   });
 }
 
@@ -111,7 +124,10 @@ export async function neuralCached(locale: string): Promise<boolean> {
   if (!voice || !neuralSupported()) return false;
   try {
     const cache = await caches.open('linulingo-vozes-v1');
-    return !!(await cache.match(voiceUrls(voice.id).model));
+    // a voz em pedaços só funciona sem internet com todos eles guardados
+    const { model, config } = urlsOf(voice);
+    const urls = voice.local ? voice.local.files.map((f) => new URL(f, config).href) : [model];
+    return (await Promise.all(urls.map((u) => cache.match(u)))).every(Boolean);
   } catch {
     return false;
   }
@@ -131,6 +147,28 @@ let ctx: AudioContext | null = null;
 let current: AudioBufferSourceNode | null = null;
 /** Cada fala nova invalida as anteriores ainda sendo sintetizadas (o aluno tocou em outra coisa). */
 let ticket = 0;
+
+/**
+ * Cria (ou acorda) o contexto de áudio. Os navegadores só deixam o som sair se isso acontecer dentro
+ * de um toque ou tecla do aluno; o Firefox é o mais rígido: um contexto criado depois de um «await»
+ * (a lista de vozes, por exemplo) nasce pausado e a voz toca muda. Por isso roda logo no início de
+ * speak(); depois, qualquer toque na página o acorda se ele tiver sido pausado.
+ */
+export function unlockAudio() {
+  if (!neuralSupported()) return;
+  try {
+    ctx ??= new AudioContext();
+    if (ctx.state !== 'running') ctx.resume().catch(() => {});
+  } catch {}
+}
+
+/** Num toque qualquer, só acorda o contexto que já existe (criá-lo para todo mundo gastaria bateria). */
+function wakeAudio() {
+  if (ctx && ctx.state !== 'running') ctx.resume().catch(() => {});
+}
+if (neuralSupported()) {
+  for (const ev of ['pointerdown', 'keydown', 'touchend']) window.addEventListener(ev, wakeAudio, { capture: true, passive: true });
+}
 
 export function stopNeural() {
   ticket++;
@@ -162,9 +200,7 @@ export async function speakNeural(text: string, locale: string, rate = 1): Promi
   if (!voice || !neuralSupported()) return null;
   stopNeural();
   const mine = ticket;
-  // o contexto de áudio nasce (ou acorda) dentro do toque do aluno: os navegadores só deixam tocar assim
-  ctx ??= new AudioContext();
-  if (ctx.state === 'suspended') ctx.resume().catch(() => {});
+  unlockAudio();
   const out = await synthesizeNeural(text, locale, rate);
   if (!out || mine !== ticket || !ctx) return null;
   const buffer = ctx.createBuffer(1, out.samples.length, out.sampleRate);

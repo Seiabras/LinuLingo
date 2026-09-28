@@ -11,6 +11,7 @@ import { useApp } from '@/services/app-state';
 import { MAP_H, MAP_W, WORLD, type MapCountry } from '@/data/mapa-mundi';
 import { addGlottolog, ALL_MAP_LANGUAGES, byKinship, findMapLanguage, flagOf, languagesIn, MAP_LANGUAGES, ROLE_LABEL, searchLanguages, STATUS_LABEL, type LangRole, type MapLanguage } from '@/data/onde-se-fala';
 import { FAUNA_MUSICA, HOMELANDS } from '@/data/fauna-musica';
+import { CULTURA_PAISES, CULTURE_KINDS } from '@/data/cultura-paises';
 import { WORLD_REGIONS } from '@/data/regioes';
 import { ISO_3166_2 } from '@/data/iso-3166-2';
 import { FORMER_COUNTRIES, KIND_LABEL, type FormerCountry } from '@/data/iso-3166-3';
@@ -772,9 +773,16 @@ export default function MapScreen() {
                   <NatureList items={nature.instruments} locale={localeFor(selected.iso)} />
                 </>
               )}
+              {CULTURA_PAISES[selected.iso] &&
+                CULTURE_KINDS.map((k) => (
+                  <View key={k.key} className="gap-2">
+                    <SectionTitle>{`${k.emoji} ${k.label}`}</SectionTitle>
+                    <NatureList items={CULTURA_PAISES[selected.iso][k.key]} locale={localeFor(selected.iso)} />
+                  </View>
+                ))}
             </Card>
           ) : (
-            <Text className="mt-4 text-center text-slate-500">Toque num país para ver as línguas, os bichos e os instrumentos de lá.</Text>
+            <Text className="mt-4 text-center text-slate-500">Toque num país para ver as línguas, os bichos, os instrumentos, a comida, o folclore, as danças, as plantas e as brincadeiras de lá.</Text>
           )}
         </>
       )}

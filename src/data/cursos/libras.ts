@@ -1,0 +1,200 @@
+import type { MiniCourse } from './tipos';
+
+/** Libras: os sinais aparecem no avatar do VLibras (governo federal); as lições explicam a gramática. */
+export const CURSO_LIBRAS: MiniCourse = {
+  id: 'libras',
+  name: 'Libras — Língua Brasileira de Sinais',
+  emoji: '🤟',
+  kind: 'sinais',
+  vlibras: true,
+  summary: 'Os primeiros passos na língua da comunidade surda brasileira: alfabeto manual, cumprimentos, apresentação, família, números, perguntas e sentimentos. Cada sinal abre no avatar do VLibras.',
+  sources: [
+    { label: 'VLibras (governo federal)', url: 'https://www.gov.br/governodigital/pt-br/vlibras' },
+    { label: 'Dicionário de Libras do INES', url: 'https://www.ines.gov.br/dicionario-de-libras/' },
+    { label: 'Spread The Sign (vídeos em várias línguas de sinais)', url: 'https://www.spreadthesign.com/pt.br/' },
+  ],
+  lessons: [
+    {
+      id: 'alfabeto',
+      title: 'O alfabeto manual',
+      emoji: '🔤',
+      intro: [
+        'A datilologia é o alfabeto feito com a mão: cada letra tem uma configuração. Ela serve para soletrar nomes próprios e palavras que ainda não têm sinal — não é a Libras em si, assim como soletrar não é falar português.',
+        'O alfabeto da Libras usa uma mão só, a dominante (a direita, para os destros), na frente do corpo, na altura do ombro. Algumas letras têm movimento: o «J» e o «Z» desenham a letra no ar, e o «H», o «K», o «X», o «Y» e o «Ç» também se mexem.',
+        'Toque em «Ver em Libras» para o avatar mostrar cada letra. Depois, tente soletrar o seu nome.',
+      ],
+      items: [
+        { term: 'A', meaning: 'letra A', vlibras: 'A' },
+        { term: 'E', meaning: 'letra E', vlibras: 'E' },
+        { term: 'I', meaning: 'letra I', vlibras: 'I' },
+        { term: 'O', meaning: 'letra O', vlibras: 'O' },
+        { term: 'U', meaning: 'letra U', vlibras: 'U' },
+        { term: 'J', meaning: 'letra J (tem movimento)', vlibras: 'J' },
+        { term: 'Z', meaning: 'letra Z (desenha o Z no ar)', vlibras: 'Z' },
+      ],
+      quiz: [
+        { q: 'Para que serve a datilologia?', options: ['Para soletrar nomes e palavras sem sinal', 'Para substituir todos os sinais', 'Só para crianças'], answer: 0, why: 'É um empréstimo da escrita: a Libras tem sinais próprios para a maioria das palavras.' },
+        { q: 'Quantas mãos o alfabeto manual da Libras usa?', options: ['Uma', 'Duas', 'Depende da letra'], answer: 0, why: 'Como a ASL e a LSF. O da língua de sinais britânica usa as duas.' },
+        { q: 'Quais letras desenham o formato no ar?', options: ['A e B', 'J e Z', 'M e N'], answer: 1 },
+      ],
+    },
+    {
+      id: 'cumprimentos',
+      title: 'Cumprimentos',
+      emoji: '👋',
+      intro: [
+        'Na comunidade surda, chamar a atenção de alguém é tocar de leve no ombro ou no braço, acenar dentro do campo de visão ou piscar a luz — nunca gritar.',
+        'Olhar nos olhos é obrigatório: é por eles que passa a conversa. Desviar o olhar enquanto alguém sinaliza é como tapar os ouvidos numa conversa falada.',
+      ],
+      items: [
+        { term: 'OI', meaning: 'oi, olá', vlibras: 'oi' },
+        { term: 'TUDO BEM?', meaning: 'tudo bem?', vlibras: 'tudo bem?' },
+        { term: 'BOM DIA', meaning: 'bom dia', vlibras: 'bom dia' },
+        { term: 'BOA TARDE', meaning: 'boa tarde', vlibras: 'boa tarde' },
+        { term: 'BOA NOITE', meaning: 'boa noite', vlibras: 'boa noite' },
+        { term: 'OBRIGADO', meaning: 'obrigado, obrigada (o sinal é o mesmo)', vlibras: 'obrigado' },
+        { term: 'DESCULPA', meaning: 'desculpa', vlibras: 'desculpa' },
+        { term: 'POR FAVOR', meaning: 'por favor', vlibras: 'por favor' },
+        { term: 'TCHAU', meaning: 'tchau', vlibras: 'tchau' },
+      ],
+      quiz: [
+        { q: 'Como se chama a atenção de uma pessoa surda que está de costas?', options: ['Gritando o nome dela', 'Com um toque leve no ombro', 'Batendo palmas atrás dela'], answer: 1 },
+        { q: 'Durante a conversa em Libras, para onde se olha?', options: ['Para as mãos só', 'Para os olhos e o rosto de quem sinaliza', 'Para baixo, por educação'], answer: 1, why: 'O rosto faz parte da gramática: perguntas, negação e intensidade passam por ele.' },
+        { q: 'OBRIGADO e OBRIGADA têm sinais diferentes?', options: ['Sim', 'Não, o sinal é o mesmo'], answer: 1, why: 'A Libras não marca o gênero como o português.' },
+      ],
+    },
+    {
+      id: 'apresentacao',
+      title: 'Apresentar-se',
+      emoji: '🙋',
+      intro: [
+        'Numa apresentação em Libras, depois do nome soletrado, costuma-se dizer se a pessoa é surda ou ouvinte e mostrar o sinal-nome, se tiver.',
+        'O sinal-nome é dado por pessoas surdas, a partir de um traço físico, de um jeito de ser ou da letra do nome. Ninguém escolhe o próprio: ele é um presente da comunidade.',
+        'A ordem das palavras não é a do português: «Meu nome é Ana» costuma ser sinalizado como NOME MEU A-N-A.',
+      ],
+      items: [
+        { term: 'EU', meaning: 'eu (aponta para o próprio peito)', vlibras: 'eu' },
+        { term: 'VOCÊ', meaning: 'você (aponta para a pessoa)', vlibras: 'você' },
+        { term: 'NOME', meaning: 'nome', vlibras: 'nome' },
+        { term: 'SURDO', meaning: 'surdo, surda', vlibras: 'surdo' },
+        { term: 'OUVINTE', meaning: 'ouvinte (quem ouve)', vlibras: 'ouvinte' },
+        { term: 'APRENDER', meaning: 'aprender (feito na testa)', vlibras: 'aprender', how: 'Feito na testa. Compare com SÁBADO, na lição dos dias: mesma mão, mesmo movimento, outro lugar.' },
+        { term: 'LIBRAS', meaning: 'Libras', vlibras: 'libras' },
+        { term: 'SINAL', meaning: 'sinal', vlibras: 'sinal' },
+      ],
+      quiz: [
+        { q: 'Quem dá o sinal-nome de uma pessoa?', options: ['Ela mesma', 'A comunidade surda', 'O cartório'], answer: 1 },
+        { q: 'Como se diz «eu» e «você» em Libras?', options: ['Apontando para si e para a pessoa', 'Soletrando E-U', 'Não se diz'], answer: 0, why: 'Os pronomes usam o espaço: apontar é gramática.' },
+        { q: 'A ordem dos sinais segue sempre a do português?', options: ['Sim', 'Não: a Libras tem sintaxe própria'], answer: 1 },
+      ],
+    },
+    {
+      id: 'familia',
+      title: 'Família',
+      emoji: '👨‍👩‍👧',
+      intro: [
+        'Muitos surdos são filhos de pais ouvintes que não sabem Libras. Por isso a escola e a associação de surdos costumam ser o lugar onde a criança encontra a língua e a comunidade.',
+        'Os filhos ouvintes de pais surdos são chamados de CODA (do inglês Children of Deaf Adults). Crescem bilíngues, e muitos viram intérpretes.',
+      ],
+      items: [
+        { term: 'FAMÍLIA', meaning: 'família', vlibras: 'família' },
+        { term: 'MÃE', meaning: 'mãe', vlibras: 'mãe' },
+        { term: 'PAI', meaning: 'pai', vlibras: 'pai' },
+        { term: 'IRMÃO', meaning: 'irmão', vlibras: 'irmão' },
+        { term: 'IRMÃ', meaning: 'irmã', vlibras: 'irmã' },
+        { term: 'FILHO', meaning: 'filho', vlibras: 'filho' },
+        { term: 'AVÓ', meaning: 'avó', vlibras: 'avó' },
+        { term: 'AVÔ', meaning: 'avô', vlibras: 'avô' },
+      ],
+      quiz: [
+        { q: 'O que é um CODA?', options: ['Um intérprete oficial', 'Um filho ouvinte de pais surdos', 'Um tipo de sinal'], answer: 1 },
+        { q: 'Onde muitas crianças surdas encontram a Libras pela primeira vez?', options: ['Na escola e na comunidade surda', 'Na televisão', 'Em casa, sempre'], answer: 0, why: 'A maioria das crianças surdas nasce em famílias ouvintes.' },
+      ],
+    },
+    {
+      id: 'numeros',
+      title: 'Números',
+      emoji: '🔢',
+      intro: [
+        'Na Libras, os números de 1 a 4 têm duas formas: uma para contar quantidade («dois livros») e outra para os números em si (códigos, telefone, documentos).',
+        'Idade, horas e dinheiro às vezes se juntam ao número num sinal só: a mão faz o número no lugar ou com o movimento do sinal de «anos» ou de «hora».',
+      ],
+      items: [
+        { term: '1', meaning: 'um', vlibras: '1' },
+        { term: '2', meaning: 'dois', vlibras: '2' },
+        { term: '3', meaning: 'três', vlibras: '3' },
+        { term: '4', meaning: 'quatro', vlibras: '4' },
+        { term: '5', meaning: 'cinco', vlibras: '5' },
+        { term: '10', meaning: 'dez', vlibras: '10' },
+      ],
+      quiz: [
+        { q: 'Por que os números de 1 a 4 têm duas formas?', options: ['Uma é para quantidade, a outra para os números em si', 'Uma é formal, a outra informal', 'Uma é para a mão esquerda'], answer: 0 },
+        { q: 'A idade pode ser sinalizada...', options: ['só soletrando', 'juntando o número ao sinal num sinal só', 'só escrevendo'], answer: 1 },
+      ],
+    },
+    {
+      id: 'dias',
+      title: 'Dias da semana',
+      emoji: '📅',
+      intro: [
+        'Lembra dos pares mínimos? SÁBADO e APRENDER têm a mesma configuração e o mesmo movimento: SÁBADO é feito perto da boca, APRENDER na testa. Mudar o ponto de articulação muda a palavra.',
+      ],
+      items: [
+        { term: 'SEGUNDA-FEIRA', meaning: 'segunda-feira', vlibras: 'segunda-feira' },
+        { term: 'TERÇA-FEIRA', meaning: 'terça-feira', vlibras: 'terça-feira' },
+        { term: 'QUARTA-FEIRA', meaning: 'quarta-feira', vlibras: 'quarta-feira' },
+        { term: 'QUINTA-FEIRA', meaning: 'quinta-feira', vlibras: 'quinta-feira' },
+        { term: 'SEXTA-FEIRA', meaning: 'sexta-feira', vlibras: 'sexta-feira' },
+        { term: 'SÁBADO', meaning: 'sábado (perto da boca)', vlibras: 'sábado', how: 'Perto da boca. Compare com APRENDER, feito na testa.' },
+        { term: 'DOMINGO', meaning: 'domingo', vlibras: 'domingo' },
+      ],
+      quiz: [
+        { q: 'O que diferencia SÁBADO de APRENDER?', options: ['A configuração da mão', 'O ponto de articulação', 'A expressão facial'], answer: 1, why: 'SÁBADO perto da boca, APRENDER na testa.' },
+        { q: 'Como se chama um par de sinais que muda por um parâmetro só?', options: ['Par mínimo', 'Sinal composto', 'Classificador'], answer: 0 },
+      ],
+    },
+    {
+      id: 'perguntas',
+      title: 'Perguntas',
+      emoji: '❓',
+      intro: [
+        'O rosto faz a pergunta. Nas perguntas de sim ou não, as sobrancelhas sobem. Nas perguntas com QUEM, O QUE, ONDE, QUANDO, POR QUÊ e COMO, as sobrancelhas franzem.',
+        'Muitas vezes o sinal de pergunta vai para o fim da frase: NOME VOCÊ QUAL? (qual é o seu nome?).',
+      ],
+      items: [
+        { term: 'QUEM', meaning: 'quem', vlibras: 'quem' },
+        { term: 'O QUE', meaning: 'o quê', vlibras: 'o que' },
+        { term: 'ONDE', meaning: 'onde', vlibras: 'onde' },
+        { term: 'QUANDO', meaning: 'quando', vlibras: 'quando' },
+        { term: 'POR QUÊ', meaning: 'por quê', vlibras: 'por que' },
+        { term: 'COMO', meaning: 'como', vlibras: 'como' },
+      ],
+      quiz: [
+        { q: 'Numa pergunta com ONDE, as sobrancelhas...', options: ['sobem', 'franzem', 'ficam paradas'], answer: 1 },
+        { q: 'Numa pergunta de sim ou não, as sobrancelhas...', options: ['sobem', 'franzem', 'ficam paradas'], answer: 0 },
+        { q: 'Onde costuma ficar o sinal de pergunta?', options: ['No começo, sempre', 'Muitas vezes no fim da frase', 'Em lugar nenhum'], answer: 1 },
+      ],
+    },
+    {
+      id: 'sentimentos',
+      title: 'Sentimentos',
+      emoji: '💛',
+      intro: [
+        'A intensidade está no rosto e no movimento: FELIZ com um sorriso contido é «contente»; com o rosto aberto e o movimento maior, é «muito feliz».',
+        'Sinalizar TRISTE com um sorriso soa tão estranho quanto dizer «estou triste» rindo: a expressão tem de combinar com o sinal.',
+      ],
+      items: [
+        { term: 'FELIZ', meaning: 'feliz', vlibras: 'feliz' },
+        { term: 'TRISTE', meaning: 'triste', vlibras: 'triste' },
+        { term: 'CANSADO', meaning: 'cansado', vlibras: 'cansado' },
+        { term: 'GOSTAR', meaning: 'gostar', vlibras: 'gostar' },
+        { term: 'AMOR', meaning: 'amor', vlibras: 'amor' },
+        { term: 'SAUDADE', meaning: 'saudade', vlibras: 'saudade' },
+      ],
+      quiz: [
+        { q: 'Como se mostra que alguém está MUITO feliz?', options: ['Repetindo a palavra MUITO três vezes', 'Com a expressão do rosto e um movimento maior', 'Soletrando'], answer: 1 },
+        { q: 'A expressão facial precisa combinar com o sinal?', options: ['Sim, ela é parte do sentido', 'Não, é só enfeite'], answer: 0 },
+      ],
+    },
+  ],
+};

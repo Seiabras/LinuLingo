@@ -11,6 +11,10 @@ import { ARTIGOS_SV } from './sv/artigos';
 import { ARTIGOS_NB } from './nb/artigos';
 import { ARTIGOS_DA } from './da/artigos';
 import { ARTIGOS_FR } from './fr/artigos';
+import { ARTIGOS_IS } from './is/artigos';
+import { ARTIGOS_FI } from './fi/artigos';
+import { ARTIGOS_FO } from './fo/artigos';
+import { ARTIGOS_ET } from './et/artigos';
 
 /**
  * Artigos culturais graduados: textos curtos sobre a cultura de quem fala o idioma, escritos para um
@@ -51,6 +55,10 @@ export const ARTICLES: Record<string, ArticleSeed[]> = {
   nb: ARTIGOS_NB,
   da: ARTIGOS_DA,
   fr: ARTIGOS_FR,
+  is: ARTIGOS_IS,
+  fi: ARTIGOS_FI,
+  fo: ARTIGOS_FO,
+  et: ARTIGOS_ET,
 };
 
 export function articlesOf(lang: string): ArticleSeed[] {

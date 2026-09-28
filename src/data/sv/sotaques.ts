@@ -175,6 +175,7 @@ export const ACCENTS_SV: Accent[] = [
   },
   {
     id: 'sv-finlandssvenska',
+    sameAsVariant: 'sv-FI',
     name: 'Finlandssvenska',
     kind: 'sotaque',
     region: 'Litoral da Finlândia: Helsinque, Turku, Porvoo, Vaasa e as ilhas de Åland',

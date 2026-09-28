@@ -324,6 +324,7 @@ export const ACCENTS_IT: Accent[] = [
   },
   {
     id: 'it-ticinese',
+    sameAsVariant: 'it-CH',
     name: 'Italiano da Suíça (ticinês)',
     kind: 'sotaque',
     region: 'Cantão do Ticino e sul dos Grisões, na Suíça',

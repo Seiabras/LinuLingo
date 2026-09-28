@@ -4,6 +4,10 @@
  *  1. o espeak-ng (compilado para WebAssembly, piper-phonemize) transforma o texto em fonemas;
  *  2. o modelo Piper da voz (ONNX, rodando no onnxruntime-web) transforma os fonemas em som.
  *
+ * Vozes MMS (Meta, VITS; hoje só o feroês, que não tem voz no Piper): não passam pelo espeak-ng — o
+ * modelo lê as letras direto, pelo vocabulário do config.json (kind: 'mms'), e fica em pedaços no
+ * próprio site (public/vozes/), exportado por scripts/exportar-voz-mms.py.
+ *
  * Roda num worker para não travar a tela. Os modelos vêm do repositório do Piper na primeira vez e
  * ficam guardados (Cache Storage), para a voz funcionar também sem internet. Os arquivos do motor
  * (ort-*, piper_phonemize.*) são copiados de node_modules por scripts/preparar-tts.mjs.
@@ -31,8 +35,9 @@ function loadEngine() {
 
 /** Baixa guardando no cache (e avisando o progresso); da segunda vez em diante, lê do cache. */
 async function cachedBytes(url, onProgress) {
-  const cache = await caches.open(CACHE);
-  const hit = await cache.match(url);
+  // numa janela privada o navegador pode recusar o cache: aí a voz baixa e toca sem ficar guardada
+  const cache = await caches.open(CACHE).catch(() => null);
+  const hit = await cache?.match(url).catch(() => null);
   if (hit) return hit.arrayBuffer();
   const res = await fetch(url);
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -48,7 +53,7 @@ async function cachedBytes(url, onProgress) {
     onProgress?.(loaded, total);
   }
   const blob = new Blob(parts);
-  await cache.put(url, new Response(blob, { headers: { 'Content-Type': res.headers.get('Content-Type') ?? 'application/octet-stream' } }));
+  await cache?.put(url, new Response(blob, { headers: { 'Content-Type': res.headers.get('Content-Type') ?? 'application/octet-stream' } })).catch(() => {});
   return blob.arrayBuffer();
 }
 
@@ -87,6 +92,33 @@ async function phonemeIds(text, espeakVoice) {
   return lines.flatMap((l) => JSON.parse(l).phoneme_ids);
 }
 
+/**
+ * O modelo, às vezes em pedaços (o GitHub não aceita arquivos de mais de 100 MB): baixa um de cada
+ * vez e junta num buffer só, soltando cada pedaço logo depois de copiado (o modelo do feroês tem
+ * 114 MB; com tudo em dobro na memória, celulares mais fracos derrubariam o worker).
+ */
+async function modelBytes(voice, config, onProgress) {
+  if (config.kind !== 'mms') return cachedBytes(voice.model, onProgress);
+  const estimate = config.mb * 1e6;
+  const parts = [];
+  let done = 0;
+  for (const f of config.files) {
+    const bytes = new Uint8Array(await cachedBytes(new URL(f, voice.config).href, (loaded) => onProgress?.(done + loaded, estimate)));
+    parts.push(bytes);
+    done += bytes.byteLength;
+    onProgress?.(done, estimate);
+  }
+  if (parts.length === 1) return parts[0].buffer;
+  const all = new Uint8Array(done);
+  let at = 0;
+  for (let i = 0; i < parts.length; i++) {
+    all.set(parts[i], at);
+    at += parts[i].byteLength;
+    parts[i] = null;
+  }
+  return all.buffer;
+}
+
 /** Uma sessão por voz, carregada uma vez. */
 const voices = new Map();
 function loadVoice(voice, onProgress) {
@@ -94,7 +126,7 @@ function loadVoice(voice, onProgress) {
   if (!p) {
     p = (async () => {
       const config = JSON.parse(new TextDecoder().decode(await cachedBytes(voice.config)));
-      const model = await cachedBytes(voice.model, onProgress);
+      const model = await modelBytes(voice, config, onProgress);
       const { ort } = await loadEngine();
       const session = await ort.InferenceSession.create(model, { executionProviders: ['wasm'] });
       return { config, session };
@@ -107,9 +139,20 @@ function loadVoice(voice, onProgress) {
 
 async function synthesize(text, voice, speed, onProgress) {
   const { config, session } = await loadVoice(voice, onProgress);
-  const ids = await phonemeIds(text, config.espeak.voice);
   const { ort } = await loadEngine();
   const inf = config.inference;
+  if (config.kind === 'mms') {
+    const { mmsIds } = await import(`./mms-ids.mjs${V}`);
+    const ids = mmsIds(text, config);
+    // só números ou pontuação: o modelo não tem o que dizer (a voz do aparelho assume)
+    if (ids.length <= 1) throw new Error('sem letras que a voz saiba ler');
+    const { output } = await session.run({
+      input: new ort.Tensor('int64', BigInt64Array.from(ids, BigInt), [1, ids.length]),
+      scales: new ort.Tensor('float32', Float32Array.from([inf.noise_scale, inf.length_scale / speed, inf.noise_w]), [3]),
+    });
+    return { samples: output.data, sampleRate: config.audio.sample_rate };
+  }
+  const ids = await phonemeIds(text, config.espeak.voice);
   const feeds = {
     input: new ort.Tensor('int64', BigInt64Array.from(ids, BigInt), [1, ids.length]),
     input_lengths: new ort.Tensor('int64', BigInt64Array.from([BigInt(ids.length)]), [1]),
@@ -132,7 +175,8 @@ self.onmessage = async (ev) => {
   };
   try {
     if (type === 'prepare') {
-      await Promise.all([loadVoice(voice, onProgress), loadPhonemizer()]);
+      const [{ config }] = await Promise.all([loadVoice(voice, onProgress), loadEngine()]);
+      if (config.kind !== 'mms') await loadPhonemizer();
       self.postMessage({ id, type: 'ready' });
     } else if (type === 'speak') {
       const { samples, sampleRate } = await synthesize(text, voice, speed, onProgress);
