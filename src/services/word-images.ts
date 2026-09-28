@@ -16,6 +16,12 @@ export interface WordContext {
   target?: string | null;
 }
 
+/** A tradução como chave das tabelas: minúsculas, apóstrofo reto, espaços simples. */
+export function normalizeTranslation(s: string): string {
+  return s.normalize('NFC').toLowerCase().replace(/’/g, "'").replace(/\s+/g, ' ').trim();
+}
+const clean = normalizeTranslation;
+
 /** Rótulos de registro, uso, região e classe gramatical: não mudam o sentido. */
 const LABELS = new Set([
   'informal', 'formal', 'mais formal', 'muito formal', 'bem informal', 'coloquial', 'gíria', 'familiar', 'carinhoso', 'vulgar', 'pejorativo',
@@ -99,10 +105,6 @@ export function isGrammarNote(inner: string, target?: string | null): boolean {
   return content.some(foreignWord);
 }
 
-function clean(s: string) {
-  return s.normalize('NFC').toLowerCase().replace(/’/g, "'").replace(/\s+/g, ' ').trim();
-}
-
 /** A tradução em minúsculas, sem os parênteses que são só notas: «queijo (juuston, juustoa)» → «queijo». */
 export function withoutNotes(s: string, target?: string | null): string {
   return clean(s.replace(/\(([^()]*)\)/g, (m, inner: string) => (isGrammarNote(inner, target) ? ' ' : m)));
@@ -172,9 +174,9 @@ export const PHOTO_POS: ReadonlySet<string> = new Set(['substantivo', 'expressã
  * Procura uma tradução numa tabela de imagens (chave = tradução em português, em minúsculas): a
  * tradução inteira, a mesma sem as notas, e então cada alternativa (as da tabela também valem:
  * «cachorro / cão» na tabela serve para «cão»). Uma chave pode valer só para uma classe de palavra
- * («quarto#numeral»), e ela vem antes da chave sem classe. Com `loose`, os parênteses de sentido
- * também saem (só para os pictogramas, conferidos à mão); `exclude` são as traduções que não usam a
- * imagem da cabeça.
+ * («quarto#numeral»), e ela vem antes da chave sem classe. Com `loose` (os pictogramas, conferidos à
+ * mão), os parênteses de sentido também saem da tradução procurada, e as chaves valem inteiras;
+ * `exclude` são as traduções que não usam a imagem da cabeça.
  */
 export function makeImageLookup<T>(table: Record<string, T>, opts: { loose?: boolean; exclude?: ReadonlySet<string> } = {}) {
   let byName: Map<string, T> | null = null;
@@ -192,7 +194,9 @@ export function makeImageLookup<T>(table: Record<string, T>, opts: { loose?: boo
       add(clean(k) + q, v);
       add(withoutNotes(k) + q, v);
     }
-    for (const { k, q, v } of entries) for (const a of alternatives(k)) if (!AMBIGUOUS.has(a)) add(a + q, v);
+    // as fotos são de conceitos («cachorro / cão» serve para «cão»); as chaves dos pictogramas já
+    // são as cabeças, e uma tradução inteira na lista («pipa, papagaio») vale só para ela mesma
+    if (!opts.loose) for (const { k, q, v } of entries) for (const a of alternatives(k)) if (!AMBIGUOUS.has(a)) add(a + q, v);
     return m;
   };
   return (wordNative: string, ctx: WordContext = {}): T | undefined => {

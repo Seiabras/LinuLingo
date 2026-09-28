@@ -3064,4 +3064,345 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
     ],
   },
+  // ───────────────────────────── B2.1 ─────────────────────────────
+  {
+    id: 'ko-g-ryeogo',
+    level: 'B2.1',
+    title: '-(으)려고 e -기 위해서: intenção e finalidade (e a diferença para -(으)러)',
+    emoji: '🎯',
+    summary: '-(으)려고 é «para, com a intenção de»: 살을 빼려고 운동해요. -(으)려고 하다 é «pretender» ou «estar para»: 내년에 유학 가려고 해요. -기 위해서 é o «a fim de» do texto formal. E a diferença para o -(으)러 do A2.2: ele só anda com verbos de movimento, enquanto -(으)려고 aceita qualquer verbo, mas não tolera pedido nem convite depois.',
+    sections: [
+      {
+        heading: '-(으)려고: para, com a intenção de',
+        text: 'Radical com vogal + 려고 (가려고); com consoante, 으려고 (먹으려고). Aqui o ㄹ não cai: 만들려고, 놀려고. Os irregulares fazem o de sempre: 들으려고, 도우려고. As duas orações têm o mesmo sujeito: eu faço exercício para eu emagrecer. Na fala se ouve muito «갈려고», com um ㄹ a mais, mas a forma padrão é 가려고.',
+        table: {
+          head: ['Dicionário', 'Com -(으)려고', 'Exemplo', 'Português'],
+          rows: [
+            ['빼다', '빼려고', '살을 빼려고 운동해요.', 'Faço exercício para emagrecer.'],
+            ['사다', '사려고', '집을 사려고 돈을 모으고 있어요.', 'Estou juntando dinheiro para comprar uma casa.'],
+            ['먹다', '먹으려고', '같이 먹으려고 많이 만들었어요.', 'Fiz bastante para a gente comer junto.'],
+            ['만들다', '만들려고', '케이크를 만들려고 달걀을 샀어요.', 'Comprei ovos para fazer um bolo.'],
+            ['듣다', '들으려고', '음악을 들으려고 이어폰을 샀어요.', 'Comprei fones para ouvir música.'],
+          ],
+        },
+        examples: [
+          ['한국 친구를 사귀려고 동아리에 들어갔어요.', 'Entrei num clube para fazer amigos coreanos.'],
+          ['늦지 않으려고 택시를 탔어요.', 'Peguei um táxi para não me atrasar.'],
+          ['왜 한국어를 배워요? 드라마를 자막 없이 보려고요.', 'Por que você aprende coreano? Para ver novelas sem legenda.'],
+        ],
+      },
+      {
+        heading: '-(으)려고 하다: pretender, estar para',
+        text: 'Com 하다, a intenção vira plano: 내년에 한국에 유학 가려고 해요 (pretendo fazer intercâmbio na Coreia ano que vem). No passado, é o plano que não se realizou ou foi interrompido: 막 나가려고 했는데 전화가 왔어요 (eu estava saindo quando o telefone tocou). Com a natureza, é o que está prestes a acontecer: 비가 오려고 해요 (vai chover, está com cara de chuva).',
+        examples: [
+          ['내년에 한국에 유학 가려고 해요.', 'Pretendo fazer intercâmbio na Coreia ano que vem.'],
+          ['막 나가려고 했는데 전화가 왔어요.', 'Eu estava saindo quando o telefone tocou.'],
+          ['하늘이 어두워요. 비가 오려고 해요.', 'O céu está escuro. Vai chover.'],
+        ],
+      },
+      {
+        heading: '-(으)러, -(으)려고 e -기 위해서',
+        text: 'Três jeitos de dizer finalidade, cada um com seu terreno. -(으)러 só vem antes de 가다, 오다, 다니다, mas aceita pedido depois (밥 먹으러 가세요). -(으)려고 aceita qualquer verbo, mas não ordem nem convite. -기 위해서 (ou 위해) é formal e escrito, e aceita tudo; com substantivo, vira 을/를 위해서: 가족을 위해서 (pela família).',
+        table: {
+          head: ['Estrutura', 'Depois vem', 'Registro', 'Exemplo'],
+          rows: [
+            ['-(으)러', 'só 가다, 오다, 다니다', 'neutro', '밥 먹으러 가요.'],
+            ['-(으)려고', 'qualquer verbo, sem pedido', 'neutro', '밥 먹으려고 일찍 왔어요.'],
+            ['-기 위해서', 'qualquer verbo, até ordem', 'formal, escrito', '건강을 지키기 위해서 운동해야 합니다.'],
+            ['을/를 위해서', 'com substantivo', 'formal', '가족을 위해서 일해요.'],
+          ],
+        },
+        examples: [
+          ['가족을 위해서 열심히 일해요.', 'Trabalho duro pela família.'],
+          ['환경을 보호하기 위해 일회용품 사용을 줄여야 합니다.', 'Para proteger o meio ambiente, é preciso reduzir o uso de descartáveis.'],
+          ['점심 먹으러 같이 가요.', 'Vamos almoçar juntos. (com -(으)러, o convite pode vir depois)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar -(으)러 com verbo que não é de movimento: «살을 빼러 운동해요» está errado; é 빼려고.',
+      'Pôr pedido ou convite depois de -(으)려고: «밥 먹으려고 가세요» está errado; é 밥 먹으러 가세요.',
+      'Escrever «갈려고» e «할려고»: é comum na fala, mas o padrão é 가려고, 하려고.',
+      'Deixar o ㄹ cair: com -(으)려고 ele fica. 만들려고, e não «만드려고».',
+      'Usar -(으)려고 com sujeitos diferentes: «para que o bebê durma» é outra estrutura (아기가 잘 수 있도록).',
+    ],
+    quiz: [
+      {
+        question: 'Complete: 살을 빼___ 운동해요.',
+        options: ['려고', '러', '면'],
+        answer: '려고',
+        explanation: '운동하다 não é verbo de movimento, então -(으)러 não serve: 빼려고.',
+      },
+      {
+        question: 'Qual frase está certa?',
+        options: ['밥 먹으러 가세요.', '밥 먹으려고 가세요.', '밥 먹으려고 가요 주세요.'],
+        answer: '밥 먹으러 가세요.',
+        explanation: '-(으)러 aceita pedido depois; -(으)려고 não.',
+      },
+      {
+        question: 'Qual é a forma padrão?',
+        options: ['가려고 해요', '갈려고 해요', '가을려고 해요'],
+        answer: '가려고 해요',
+        explanation: '«갈려고» se ouve muito, mas o padrão é 가 + 려고.',
+      },
+      {
+        question: 'Complete: 케이크를 ___ 달걀을 샀어요. (para fazer um bolo)',
+        options: ['만들려고', '만드려고', '만들으려고'],
+        answer: '만들려고',
+        explanation: 'Radical em ㄹ + 려고, e o ㄹ fica: 만들려고.',
+      },
+      {
+        question: 'Qual opção soa mais formal, de texto escrito?',
+        options: ['건강을 지키기 위해서', '건강을 지키려고', '건강을 지키러'],
+        answer: '건강을 지키기 위해서',
+        explanation: '-기 위해서 é o «a fim de» dos textos formais e dos discursos.',
+      },
+    ],
+  },
+  {
+    id: 'ko-g-nominalizadores',
+    level: 'B2.1',
+    title: 'Nominalizadores: -는 것, -기 e -(으)ㅁ',
+    emoji: '📦',
+    summary: 'Para transformar um verbo em substantivo («cozinhar» → «o cozinhar»), o coreano tem três ferramentas. -는 것 (na fala, -는 거) é a mais geral: 요리하는 것을 좋아해요. -기 é a da ação em si e de muitas expressões feitas (-기 전에, -기 쉽다, -기 때문에). -(으)ㅁ é a do fato, própria de avisos, bilhetes e textos formais: 회의 없음.',
+    sections: [
+      {
+        heading: '-는 것: o ato, o fato',
+        text: 'O 것 é «coisa»: 먹는 것 é «a coisa de comer», «o comer». O modificador carrega o tempo: -는 것 (presente), -(으)ㄴ 것 (passado), -(으)ㄹ 것 (futuro). Na fala, 것 vira 거, e com as partículas se contrai: 거 + 이 = 게, 거 + 을 = 걸. E como 것 é mesmo «coisa», 매운 것 pode ser simplesmente «coisas apimentadas».',
+        table: {
+          head: ['Frase', 'Português'],
+          rows: [
+            ['저는 요리하는 것을 좋아해요.', 'Gosto de cozinhar.'],
+            ['한국어로 말하는 게 어려워요.', 'Falar em coreano é difícil.'],
+            ['제 취미는 사진 찍는 거예요.', 'Meu hobby é tirar fotos.'],
+            ['그 사람이 온 것을 몰랐어요.', 'Não sabia que ele tinha vindo.'],
+            ['매운 걸 못 먹어요.', 'Não consigo comer coisa apimentada.'],
+          ],
+        },
+        examples: [
+          ['한국 드라마 보는 걸 좋아해요.', 'Gosto de ver novelas coreanas.'],
+          ['제일 중요한 건 건강이에요.', 'O mais importante é a saúde.'],
+          ['내일 시험이 있는 걸 잊어버렸어요.', 'Esqueci que tinha prova amanhã.'],
+        ],
+      },
+      {
+        heading: '-기: a ação em si, e as expressões feitas',
+        text: 'O -기 se cola direto no radical (먹기, 가기) e aparece sobretudo dentro de expressões fixas. Também é a forma das listas de tarefas, metas e regras: 매일 한국어 공부하기 (estudar coreano todo dia), 손 씻기 (lavar as mãos), como os nossos infinitivos em cartazes.',
+        table: {
+          head: ['Estrutura', 'Sentido', 'Exemplo', 'Português'],
+          rows: [
+            ['-기 전에', 'antes de', '자기 전에 이를 닦아요.', 'Escovo os dentes antes de dormir.'],
+            ['-기 쉽다 / 어렵다', 'fácil / difícil de', '이 책은 읽기 쉬워요.', 'Este livro é fácil de ler.'],
+            ['-기 시작하다', 'começar a', '비가 오기 시작했어요.', 'Começou a chover.'],
+            ['-기로 하다', 'decidir', '담배를 끊기로 했어요.', 'Decidi parar de fumar.'],
+            ['-기 때문에', 'porque (formal)', '비가 오기 때문에 경기가 취소되었습니다.', 'O jogo foi cancelado por causa da chuva.'],
+            ['listas e metas', 'infinitivo de tarefa', '매일 한국어 공부하기', 'Estudar coreano todo dia'],
+          ],
+        },
+        examples: [
+          ['올해 목표: 매일 운동하기, 책 읽기.', 'Metas do ano: fazer exercício todo dia, ler livros.'],
+          ['이번 여름에 제주도에 가기로 했어요.', 'Decidimos ir a Jeju neste verão.'],
+          ['새해에는 좋은 일만 있기를 바랍니다.', 'Que no ano novo só aconteçam coisas boas. (voto de ano-novo)'],
+        ],
+      },
+      {
+        heading: '-(으)ㅁ: o fato registrado',
+        text: 'O -(으)ㅁ entra no radical (vogal: 감; consoante: 먹음; radical em ㄹ, ㄻ: 삶, 만듦). Ele transforma uma frase em registro: é o estilo de avisos, atas, bilhetes e mensagens curtas (회의 오후 세 시로 변경됨, reunião mudada para as três). Nos textos formais, aparece com 알다 e 밝혀지다: 그가 범인임이 밝혀졌다 (revelou-se que ele era o culpado). Muitas palavras comuns nasceram assim: 꿈 (sonho, de 꾸다), 춤 (dança, de 추다), 잠 (sono), 삶 (vida). Na internet, os jovens escrevem frases inteiras assim, de brincadeira: é o 음슴체.',
+        table: {
+          head: ['Verbo', 'Substantivo', 'Português'],
+          rows: [
+            ['살다', '삶', 'vida'],
+            ['꾸다', '꿈', 'sonho'],
+            ['추다', '춤', 'dança'],
+            ['자다', '잠', 'sono'],
+            ['웃다', '웃음', 'riso'],
+            ['믿다', '믿음', 'fé, confiança'],
+            ['기쁘다', '기쁨', 'alegria'],
+            ['슬프다', '슬픔', 'tristeza'],
+            ['느끼다', '느낌', 'sensação'],
+          ],
+        },
+        examples: [
+          ['내일 회의 없음.', 'Amanhã não tem reunião. (bilhete, aviso)'],
+          ['기쁨과 슬픔을 함께 나눠요.', 'Dividimos as alegrias e as tristezas.'],
+          ['삶은 여행이다.', 'A vida é uma viagem.'],
+          ['오늘 너무 피곤함.', 'Hoje, cansadíssimo. (estilo de internet, 음슴체)'],
+        ],
+      },
+      {
+        heading: 'Qual usar?',
+        text: 'Regra prática: na conversa, -는 거; nas expressões feitas, -기; nos registros escritos e avisos, -(으)ㅁ. Alguns verbos escolhem: 바라다 (desejar) pede -기 (합격하기를 바랍니다); 알다 e 모르다 pedem -는 것 ou -(으)ㅁ, nunca -기; 좋아하다 aceita -는 것 e -기.',
+        table: {
+          head: ['Verbo principal', 'Aceita', 'Exemplo'],
+          rows: [
+            ['좋아하다', '-는 것, -기', '걷는 것을 좋아해요 / 걷기를 좋아해요'],
+            ['바라다', '-기', '건강하시기를 바랍니다'],
+            ['알다, 모르다', '-는 것, -(으)ㅁ', '그가 온 것을 알았어요'],
+            ['쉽다, 어렵다', '-기', '배우기 쉬워요'],
+          ],
+        },
+        examples: [
+          ['합격하시기를 바랍니다.', 'Desejo que o senhor seja aprovado.'],
+          ['걷기를 좋아해요.', 'Gosto de caminhar.'],
+          ['그 사실을 몰랐음을 인정합니다.', 'Admito que não sabia disso. (formal)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar o verbo do dicionário como substantivo: «요리하다를 좋아해요» está errado. É 요리하는 것을 (ou 요리하기를) 좋아해요.',
+      'Usar -기 com 알다 e 모르다: «그가 오기를 알았어요» está errado; é 그가 온 것을 알았어요.',
+      'Estranhar as formas faladas: 먹는 게 = 먹는 것이, 먹는 걸 = 먹는 것을.',
+      'Tirar o ㄹ no -(으)ㅁ: 살다 → 삶, 만들다 → 만듦 (o ㄹ fica, formando ㄻ).',
+      'Terminar frases de conversa em -(으)ㅁ: soa como bilhete ou brincadeira de internet.',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz «Gosto de cozinhar»?',
+        options: ['요리하는 것을 좋아해요.', '요리하다를 좋아해요.', '요리한 을 좋아해요.'],
+        answer: '요리하는 것을 좋아해요.',
+        explanation: 'O verbo vira substantivo com -는 것: 요리하는 것.',
+      },
+      {
+        question: 'Complete: 자___ 전에 이를 닦아요.',
+        options: ['기', '는 것', '음'],
+        answer: '기',
+        explanation: '«Antes de» é a expressão fixa -기 전에.',
+      },
+      {
+        question: 'Qual é o substantivo de 살다 (viver)?',
+        options: ['삶', '살음', '사기'],
+        answer: '삶',
+        explanation: 'Radical em ㄹ + ㅁ = ㄻ: 삶, «a vida».',
+      },
+      {
+        question: 'Onde você mais vê frases como 회의 없음?',
+        options: ['Em avisos, bilhetes e mensagens curtas', 'Em conversas com os avós', 'Em discursos falados'],
+        answer: 'Em avisos, bilhetes e mensagens curtas',
+        explanation: '-(으)ㅁ no fim da frase é o estilo de registro: avisos, atas, recados.',
+      },
+      {
+        question: 'Complete: 새해에는 건강하시___ 바랍니다.',
+        options: ['기를', '는 것을', '음을'],
+        answer: '기를',
+        explanation: '바라다 (desejar) pede -기: 건강하시기를 바랍니다.',
+      },
+    ],
+  },
+  {
+    id: 'ko-g-discurso-indireto',
+    level: 'B2.1',
+    title: 'Discurso indireto: -다고, -냐고, -라고, -자고 하다 (e 간대요, 가재요)',
+    emoji: '💬',
+    summary: 'Para contar o que alguém disse, o coreano põe a frase no 해라체 e acrescenta 고 하다. Afirmação: -다고 (간다고 했어요). Pergunta: -냐고 (가냐고 물었어요). Ordem: -라고 (가라고 했어요). Convite: -자고 (가자고 했어요). Na fala, tudo se contrai: 간대요 (dizem que vai), 가래요 (mandou ir), 가재요 (chamou para ir).',
+    sections: [
+      {
+        heading: 'Afirmações: -다고 하다',
+        text: 'A frase original vai para o 해라체 e ganha 고: verbos no presente, -ㄴ다고/-는다고 (간다고, 먹는다고); adjetivos, -다고 (좋다고); substantivos, -(이)라고 (학생이라고, 의사라고); passado, -았/었다고; futuro, -(으)ㄹ 거라고. O verbo de citar pode ser 하다, 말하다, 듣다 (ouvir dizer) ou 생각하다 (achar).',
+        table: {
+          head: ['Frase original', 'Indireto', 'Português'],
+          rows: [
+            ['"비가 와요."', '비가 온다고 했어요.', 'Disse que está chovendo.'],
+            ['"날씨가 좋아요."', '날씨가 좋다고 했어요.', 'Disse que o tempo está bom.'],
+            ['"저는 학생이에요."', '학생이라고 했어요.', 'Disse que é estudante.'],
+            ['"어제 갔어요."', '어제 갔다고 했어요.', 'Disse que foi ontem.'],
+            ['"내일 갈 거예요."', '내일 갈 거라고 했어요.', 'Disse que vai amanhã.'],
+          ],
+        },
+        examples: [
+          ['민수 씨가 내일 바쁘다고 했어요.', 'O Minsu disse que amanhã está ocupado.'],
+          ['뉴스에서 태풍이 온다고 들었어요.', 'Ouvi no noticiário que vem um tufão.'],
+          ['저는 한국어가 재미있다고 생각해요.', 'Eu acho que o coreano é divertido.'],
+        ],
+      },
+      {
+        heading: 'Perguntas, ordens e convites',
+        text: 'A pergunta vira -냐고 (가냐고, 먹냐고; com adjetivo, tradicionalmente -(으)냐고, e hoje também -냐고), em geral com 묻다 ou 물어보다. A ordem vira -(으)라고 (가라고, 먹으라고). O convite vira -자고 (가자고). Um caso especial: «me dê» vira 달라고 quando quem pede é quem vai receber (물 좀 달라고 했어요), e 주라고 quando é para outra pessoa (동생한테 물 주라고 했어요).',
+        table: {
+          head: ['Tipo', 'Original', 'Indireto', 'Português'],
+          rows: [
+            ['pergunta', '"어디 가요?"', '어디 가냐고 물었어요.', 'Perguntou aonde eu ia.'],
+            ['pergunta', '"바빠요?"', '바쁘냐고 물었어요.', 'Perguntou se eu estava ocupado.'],
+            ['ordem', '"빨리 오세요."', '빨리 오라고 했어요.', 'Disse para eu vir logo.'],
+            ['ordem', '"많이 먹어."', '많이 먹으라고 했어요.', 'Disse para eu comer bastante.'],
+            ['pedido', '"물 좀 주세요."', '물 좀 달라고 했어요.', 'Pediu água.'],
+            ['convite', '"같이 가요!"', '같이 가자고 했어요.', 'Chamou para irmos juntos.'],
+          ],
+        },
+        examples: [
+          ['선생님이 숙제를 꼭 하라고 하셨어요.', 'O professor disse para fazermos a lição sem falta.'],
+          ['친구가 주말에 같이 등산하자고 했어요.', 'Meu amigo chamou para fazermos trilha no fim de semana.'],
+          ['엄마가 언제 오냐고 물어보셨어요.', 'Minha mãe perguntou quando eu vinha.'],
+        ],
+      },
+      {
+        heading: 'As contrações da fala: 간대요, 가래요, 가재요',
+        text: 'Na conversa, -다고 해요 vira -대요, -라고 해요 vira -래요, -자고 해요 vira -재요 e -냐고 해요 vira -냬요. Você vai ouvir isso o tempo todo, com o sentido de «dizem que», «ele falou que»: 내일 비가 온대요. Cuidado para não confundir -대요 (dizem que) com -데요 (eu vi que, eu percebi), que aparece no B2.2.',
+        table: {
+          head: ['Completo', 'Contraído', 'Português'],
+          rows: [
+            ['비가 온다고 해요', '비가 온대요', 'Dizem que está chovendo.'],
+            ['맛있다고 해요', '맛있대요', 'Dizem que é gostoso.'],
+            ['학생이라고 해요', '학생이래요', 'Dizem que é estudante.'],
+            ['빨리 오라고 해요', '빨리 오래요', 'Mandou vir logo.'],
+            ['같이 가자고 해요', '같이 가재요', 'Está chamando para irmos juntos.'],
+            ['어디 가냐고 해요', '어디 가냬요', 'Está perguntando aonde vou.'],
+          ],
+        },
+        examples: [
+          ['민수 씨가 오늘 못 온대요.', 'O Minsu disse que hoje não vai poder vir.'],
+          ['엄마가 빨리 들어오래.', 'A mãe mandou voltar logo para casa. (반말)'],
+          ['그 식당 진짜 맛있대!', 'Dizem que aquele restaurante é muito bom! (반말)'],
+        ],
+      },
+      {
+        heading: 'A citação direta e o 라고 do nome',
+        text: 'Para citar palavra por palavra, ponha a frase entre aspas e cole 라고 depois, seja qual for o final: "사랑해"라고 했어요. O mesmo 라고 aparece em duas frases essenciais: a apresentação formal (저는 루카스라고 합니다, «eu me chamo Lucas») e a pergunta de quem aprende uma língua: 이건 한국어로 뭐라고 해요? E 뭐라고요? é «o quê? como é?», quando não se ouviu ou não se acreditou no que se ouviu.',
+        examples: [
+          ['저는 루카스라고 합니다.', 'Eu me chamo Lucas. (apresentação formal)'],
+          ['이건 한국어로 뭐라고 해요?', 'Como se diz isto em coreano?'],
+          ['친구가 "생일 축하해!"라고 했어요.', 'Meu amigo disse: «Feliz aniversário!»'],
+          ['뭐라고요? 다시 말해 주세요.', 'Como é? Fale de novo, por favor.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Citar sem passar para o 해라체: «비가 와요고 했어요» está errado; é 비가 온다고 했어요.',
+      'Tratar adjetivo como verbo: 좋다고 (adjetivo) × 간다고 (verbo). «좋는다고» não existe.',
+      'Usar 주라고 quando o pedido era para quem falou: «ele pediu água (para ele)» é 물을 달라고 했어요.',
+      'Confundir -대요 (dizem que) com -데요 (eu percebi que): 맛있대요 é «dizem que é gostoso».',
+      'Esquecer o 이 com substantivo terminado em consoante: 학생이라고, mas 의사라고.',
+    ],
+    quiz: [
+      {
+        question: 'O Minsu disse: «비가 와요.» Como você conta isso?',
+        options: ['민수 씨가 비가 온다고 했어요.', '민수 씨가 비가 와요고 했어요.', '민수 씨가 비가 오냐고 했어요.'],
+        answer: '민수 씨가 비가 온다고 했어요.',
+        explanation: 'Afirmação: 해라체 (온다) + 고 하다. -냐고 seria pergunta.',
+      },
+      {
+        question: 'Complete: 친구가 같이 영화 보___ 했어요. (convidou para ver um filme)',
+        options: ['자고', '라고', '냐고'],
+        answer: '자고',
+        explanation: 'Convite indireto: -자고 하다.',
+      },
+      {
+        question: 'O que quer dizer 내일 비가 온대요?',
+        options: ['Dizem que amanhã vai chover.', 'Amanhã choveu.', 'Vamos ver se chove amanhã.'],
+        answer: 'Dizem que amanhã vai chover.',
+        explanation: '-대요 é a contração de -다고 해요: «dizem que».',
+      },
+      {
+        question: 'O cliente disse: «물 좀 주세요.» Como contar?',
+        options: ['물 좀 달라고 했어요.', '물 좀 주라고 했어요.', '물 좀 주자고 했어요.'],
+        answer: '물 좀 달라고 했어요.',
+        explanation: 'Quem pediu é quem vai receber, então 주다 vira 달라고.',
+      },
+      {
+        question: 'Como se pergunta «Como se diz isto em coreano?»',
+        options: ['이건 한국어로 뭐라고 해요?', '이건 한국어로 뭐다고 해요?', '이건 한국어를 뭐라고 해요?'],
+        answer: '이건 한국어로 뭐라고 해요?',
+        explanation: '«Em coreano» é 한국어로, e «o que» citado é 뭐라고.',
+      },
+    ],
+  },
 ];

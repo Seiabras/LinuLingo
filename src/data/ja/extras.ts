@@ -172,7 +172,7 @@ export const SCENARIOS_JA: ScenarioSeed[] = [
     emoji: '🗺️',
     cefr: 'A2',
     register: 'formal',
-    persona: 'Uma senhora gentil que passa pela estação',
+    persona: 'Senhora gentil que passa pela estação',
     description: 'Shinjuku é a estação mais movimentada do mundo: mais de três milhões de passageiros por dia e mais de duzentas saídas. Você está perdido, e uma senhora se oferece para ajudar. Com desconhecidos, fale sempre com です/ます e comece com «すみません».',
     turns: [
       {
