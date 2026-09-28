@@ -194,3 +194,84 @@ export function transliterateAm(text: string): string {
       .join('');
   }).replace(/።/g, '.').replace(/፣/g, ',').replace(/፧/g, '?').replace(/፤/g, ';').replace(/፡/g, ' ');
 }
+
+// ── suaíli ──
+// A escrita é fonêmica: cada letra (ou dígrafo) é um som e cada vogal é uma sílaba (saa = sa.a).
+// A tônica cai sempre na penúltima sílaba, contando o m/n silábico (mtu = ˈm̩.tu). m/n antes de
+// b, v / d, j, z, g formam uma consoante pré-nasalizada (mbuzi = ᵐbu.zi), a não ser que a palavra
+// fique com uma sílaba só (mbwa = ˈm̩.bwa); antes das outras consoantes, o nasal é silábico.
+const SW_DIGRAPHS: [string, string][] = [
+  ["ng'", 'ŋ'], ['ch', 't͡ʃ'], ['dh', 'ð'], ['gh', 'ɣ'], ['kh', 'x'], ['ny', 'ɲ'], ['sh', 'ʃ'], ['th', 'θ'],
+];
+const SW_SINGLE: Record<string, string> = {
+  b: 'b', c: 'k', d: 'd', f: 'f', g: 'ɡ', h: 'h', j: 'd͡ʒ', k: 'k', l: 'l', m: 'm', n: 'n', p: 'p', q: 'k',
+  r: 'ɾ', s: 's', t: 't', v: 'v', w: 'w', x: 'ks', y: 'j', z: 'z',
+};
+const SW_V: Record<string, string> = { a: 'ɑ', e: 'ɛ', i: 'i', o: 'ɔ', u: 'u' };
+const SW_PRENASAL: Record<string, string[]> = { m: ['b', 'v'], n: ['d', 'j', 'z', 'g'] };
+const SW_PRE_IPA: Record<string, string> = { m: 'ᵐ', n: 'ⁿ' };
+
+function swWord(word: string): string {
+  const w = word.toLowerCase().replace(/[’ʼ]/g, "'");
+  // segmentos: consoantes (com a letra de origem) e vogais
+  const seg: { v: boolean; ipa: string; letter: string }[] = [];
+  for (let i = 0; i < w.length; ) {
+    const dg = SW_DIGRAPHS.find(([g]) => w.startsWith(g, i));
+    if (dg) {
+      seg.push({ v: false, ipa: dg[1], letter: dg[0] });
+      i += dg[0].length;
+      continue;
+    }
+    const ch = w[i];
+    if (SW_V[ch]) seg.push({ v: true, ipa: SW_V[ch], letter: ch });
+    else if (SW_SINGLE[ch]) seg.push({ v: false, ipa: SW_SINGLE[ch], letter: ch });
+    i++;
+  }
+  const vowels = seg.filter((s) => s.v).length;
+  // sílabas: (consoantes)(vogal); m/n antes de consoante vira sílaba, salvo o pré-nasalizado
+  const syll: string[] = [];
+  let onset = '';
+  for (let i = 0; i < seg.length; i++) {
+    const s = seg[i];
+    if (s.v) {
+      syll.push(onset + s.ipa);
+      onset = '';
+      continue;
+    }
+    const next = seg[i + 1];
+    if ((s.letter === 'm' || s.letter === 'n') && next && !next.v && next.letter !== 'w' && next.letter !== 'y' && onset === '') {
+      const inside = i > 0 && seg[i - 1].v;
+      // homorgânica sonora: pré-nasalizada (mb, nd, nj, nz, ng); no meio da palavra, também as surdas (nt, nch, mp)
+      const voiced = SW_PRENASAL[s.letter].includes(next.letter[0]) && next.letter !== 'ny';
+      const homorganic = voiced || (s.letter === 'm' ? ['p', 'f'] : ['t', 'ch', 's', 'k']).includes(next.letter);
+      if (voiced && vowels >= 2) {
+        onset += SW_PRE_IPA[s.letter];
+        continue;
+      }
+      if (inside && homorganic) {
+        onset += next.letter === 'k' ? 'ŋ' : s.ipa;
+        continue;
+      }
+      syll.push(s.letter === 'm' ? 'm̩' : 'n̩');
+      continue;
+    }
+    onset += s.ipa;
+  }
+  if (onset) {
+    if (syll.length) syll[syll.length - 1] += onset;
+    else syll.push(onset);
+  }
+  if (syll.length < 2) return syll.join('');
+  const p = syll.length - 2;
+  return syll.map((x, i) => (i === p ? 'ˈ' + x : x)).join('');
+}
+
+/** Suaíli: tônica na penúltima sílaba, nasais silábicos e pré-nasalizados, dígrafos (ch, dh, ng', ny, sh, th). */
+export function toIpaSw(text: string): string {
+  const words = text
+    .normalize('NFC')
+    .split(/[^\p{L}\p{M}'’ʼ]+/u)
+    .filter((w) => /\p{L}/u.test(w));
+  if (!words.length) return '';
+  return `[${words.map(swWord).join(' ')}]`;
+}

@@ -1,4 +1,5 @@
 import type { NatureItem } from './fauna-musica';
+import { DINHEIRO_PAISES } from './dinheiro-paises';
 
 /**
  * Comida, folclore, danças, plantas, brincadeiras e gestos de cada país que tem bichos e instrumentos
@@ -13,6 +14,8 @@ export interface CountryCulture {
   games: NatureItem[];
   /** Gestos, linguagem corporal e etiqueta (cumprimentos, sinais com as mãos, boas maneiras). */
   gestures: NatureItem[];
+  /** A moeda, as notas e moedas, como se paga no dia a dia e a gorjeta (src/data/dinheiro-paises.ts). */
+  money: NatureItem[];
 }
 
 export const CULTURE_KINDS: { key: keyof CountryCulture; label: string; emoji: string }[] = [
@@ -22,9 +25,10 @@ export const CULTURE_KINDS: { key: keyof CountryCulture; label: string; emoji: s
   { key: 'plants', label: 'Plantas', emoji: '🌸' },
   { key: 'games', label: 'Brincadeiras', emoji: '🎲' },
   { key: 'gestures', label: 'Gestos e costumes', emoji: '🤌' },
+  { key: 'money', label: 'Dinheiro', emoji: '💰' },
 ];
 
-export const CULTURA_PAISES: Record<string, CountryCulture> = {
+const BASE: Record<string, Omit<CountryCulture, 'money'>> = {
   ROU: {
     foods: [
       { emoji: '🥬', name: 'Charutos de repolho', local: 'sarmale', fact: 'Folhas de repolho azedo enroladas com carne e arroz, cozidas por horas: o prato das festas de Natal e dos casamentos.' },
@@ -672,3 +676,8 @@ export const CULTURA_PAISES: Record<string, CountryCulture> = {
     ],
   },
 };
+
+/** Cada país com as seis fichas de cultura e a do dinheiro. */
+export const CULTURA_PAISES: Record<string, CountryCulture> = Object.fromEntries(
+  Object.entries(BASE).map(([iso, c]) => [iso, { ...c, money: DINHEIRO_PAISES[iso] ?? [] }]),
+);

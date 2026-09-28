@@ -10,6 +10,8 @@ const LETTERS: Record<string, RegExp> = {
   ig: /^[abcdefghiịjklmnṅoọprstuụvwyz]+$/,
   ha: /^[abɓcdɗefghijkƙlmnoprstuwyƴz']+$/,
   om: /^[abcdefghijklmnopqrstuvwxyz']+$/,
+  // suaíli: sem q nem x; o apóstrofo só em ng' (ng'ombe)
+  sw: /^[abcdefghijklmnoprstuvwyz']+$/,
 };
 const TONES = /[̀́̂̄̌]/g;
 
