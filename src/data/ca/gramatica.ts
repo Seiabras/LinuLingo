@@ -2216,4 +2216,114 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
   },
+  {
+    id: 'ca-g35',
+    level: 'C1.2',
+    title: 'Concordância do particípio com o complemento direto',
+    emoji: '🧩',
+    summary: 'Quando o particípio dos tempos compostos concorda (e quando não concorda) com um pronome fraco de complemento direto anteposto.',
+    sections: [
+      {
+        heading: 'Concordância com pronome fraco de CD anteposto',
+        text: 'Na norma culta (IEC), quando o complemento direto vem antes do verbo como pronome fraco de 3ª pessoa (el/la/els/les) ou partitivo (en), o particípio concorda em gênero e número com ele.',
+        table: {
+          head: ['Pronome CD anteposto', 'Concordância', 'Exemplo', 'Tradução'],
+          rows: [
+            ['la/les (feminino)', 'obrigatória/recomendada', "L'he escrita.", 'Eu a escrevi.'],
+            ['els/les (plural)', 'obrigatória/recomendada', 'Les meves germanes, no les he vistes.', 'Minhas irmãs, não as vi.'],
+            ['en (partitivo)', 'concorda com a quantidade', "De pomes, n'hem menjades dues.", 'De maçãs, comemos duas.'],
+            ['el/ho (masc./neutro)', 'masculino singular', "El document? Ja l'hem signat.", 'O documento? Já o assinamos.'],
+          ],
+        },
+        examples: [
+          ["Quantes faldilles s'ha comprat? — Se n'ha comprades tres.", 'Quantas saias ela comprou? — Comprou três.'],
+          ['Aquestes propostes, ja les havíem acceptades.', 'Essas propostas, já as tínhamos aceitado.'],
+        ],
+      },
+      {
+        heading: 'Quando o particípio fica invariável',
+        text: 'Fica invariável no masculino singular em três casos.',
+        table: {
+          head: ['Contexto', 'Regra', 'Exemplo', 'Tradução'],
+          rows: [
+            ['CD depois do verbo', 'nunca concorda', 'Hem escrit les cartes (não «escriptes»).', 'Escrevemos as cartas.'],
+            ['Relativo «que» (uso moderno)', 'invariável', 'Les cartes que he escrit són per a tu.', 'As cartas que escrevi são para você.'],
+            ['Particípio + infinitivo', 'invariável', 'Les cançons que he sentit cantar.', 'As músicas que ouvi cantarem.'],
+          ],
+        },
+        examples: [
+          ['Les noies que hem vist sortir de classe.', 'As garotas que vimos sair da aula. (sem concordância)'],
+          ['Hem trobat les claus que havies perdut.', 'Encontramos as chaves que você tinha perdido.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Concordar o particípio com o SUJEITO em vez do complemento direto («haver» não faz concordância de sujeito, ao contrário de «ésser» na passiva).',
+      'Concordar quando o CD vem DEPOIS do verbo («hem menjades les pomes» é erro grave; o certo é «hem menjat les pomes»).',
+      'Flexionar o particípio antes de infinitivo («les he vistes sortir» em vez de «les he vist sortir»).',
+    ],
+    quiz: [
+      {
+        question: 'Como responder «Has llegit les revistes?» usando «les»?',
+        options: ['Sí, les he llegides totes', 'Sí, les he llegit totes', 'Sí, les he llegits totes'],
+        answer: 'Sí, les he llegides totes',
+        explanation: 'CD anteposto feminino plural: o particípio concorda («llegides»).',
+      },
+      {
+        question: 'Em qual frase o particípio fica INVARIÁVEL?',
+        options: ['Les noies, les hem vistes al parc', 'Les cançons que he sentit cantar eren boniques', "De pomes, n'ha collides moltes"],
+        answer: 'Les cançons que he sentit cantar eren boniques',
+        explanation: 'Particípio seguido de infinitivo («sentit cantar»): fica invariável, masculino singular.',
+      },
+    ],
+  },
+  {
+    id: 'ca-g36',
+    level: 'C1.2',
+    title: 'Mudança de preposição antes de infinitivo',
+    emoji: '🔄',
+    summary: 'Alguns verbos trocam a preposição que regem quando o complemento é um infinitivo em vez de um substantivo.',
+    sections: [
+      {
+        heading: 'Verbos que mudam de preposição diante de infinitivo',
+        text: 'Alguns verbos regidos por «en» ou «amb» diante de substantivo trocam essa preposição diante de infinitivo. Dois exemplos bem estabelecidos:',
+        table: {
+          head: ['Regência com substantivo', 'Diante de infinitivo', 'Exemplo', 'Tradução'],
+          rows: [
+            ['trigar en (demorar em)', 'en → a', 'Ha trigat molt a respondre.', 'Demorou muito para responder.'],
+            ['amenaçar amb (ameaçar com)', 'amb → de', 'Amenaça de dimitir.', 'Ameaça se demitir.'],
+          ],
+        },
+        examples: [
+          ["L'acusat amenaça de dir la veritat.", 'O acusado ameaça contar a verdade.'],
+        ],
+      },
+      {
+        heading: 'Nem todo verbo muda: cuidado para não generalizar',
+        text: 'Esse fenômeno («canvi de preposició») é específico de cada verbo, não uma regra geral — muitos verbos que regem preposição com substantivo simplesmente usam o infinitivo direto, sem preposição nenhuma. É o caso de «pensar» no sentido de pretender: «Penso anar-hi demà» (não «penso a anar-hi» nem «penso en anar-hi»). Vale checar um dicionário de regência verbal para cada verbo novo, em vez de aplicar «en/amb → a/de» automaticamente.',
+        examples: [
+          ['Penso anar-hi demà.', 'Pretendo ir lá amanhã.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Manter «en» antes de infinitivo por decalque do espanhol/português («pensa en anar-hi» — mas «pensar» nem muda pra «a»: o certo aqui é sem preposição, «pensa anar-hi»).',
+      'Usar «amb» direto antes de infinitivo («amenaça amb marxar» em vez de «amenaça de marxar»).',
+      'Generalizar o «canvi de preposició» para todo verbo: é específico, verbo por verbo — confira um dicionário de regência.',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz «Ele demorou muito para responder»?',
+        options: ['Ha trigat molt en respondre', 'Ha trigat molt a respondre', 'Ha trigat molt de respondre'],
+        answer: 'Ha trigat molt a respondre',
+        explanation: '«trigar» rege «en» com substantivo, mas muda para «a» diante de infinitivo.',
+      },
+      {
+        question: '«El director amenaça ___ tancar la fàbrica»: complete.',
+        options: ['amb', 'de', 'en'],
+        answer: 'de',
+        explanation: '«amenaçar amb» muda para «amenaçar de» diante de infinitivo.',
+      },
+    ],
+  },
 ];
