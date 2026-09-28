@@ -329,7 +329,7 @@ export const CULTURA_PAISES: Record<string, CountryCulture> = {
     dances: [{ emoji: '🎄', name: 'A roda da árvore de Natal', local: 'dans om juletræet', fact: 'Na noite de Natal, a família dá as mãos e dança cantando em volta da árvore acesa.' }],
     plants: [
       { emoji: '🌳', name: 'Faia', local: 'bøg', fact: 'A árvore nacional, das florestas que chegam até a praia.' },
-      { emoji: '🌼', name: 'Margarida', local: 'marguerit', fact: 'A flor nacional, que também é o nome da rainha Margarida II.' },
+      { emoji: '🌼', name: 'Margarida', local: 'marguerit', fact: 'A flor nacional, que também dá nome à rainha Margarida II, que reinou de 1972 a 2024.' },
     ],
     games: [
       { emoji: '🧱', name: 'LEGO', local: 'LEGO', fact: 'Nasceu em Billund, em 1932; o nome vem de «leg godt», «brinque bem».' },

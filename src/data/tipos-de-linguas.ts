@@ -73,7 +73,7 @@ export const CONLANGS: Conlang[] = [
     origin: 'a posteriori',
     stage: 'completa',
     about: 'Um oftalmologista de Białystok, cidade onde se falavam polonês, russo, iídiche e alemão, quis uma segunda língua comum para a humanidade.',
-    text: 'É a língua artificial mais falada do mundo: as estimativas vão de dezenas de milhares a 2 milhões de falantes, e há até falantes nativos, filhos de casais que se conheceram pelo esperanto. As raízes vêm de línguas românicas, germânicas e eslavas; a gramática não tem exceções, e os substantivos sempre terminam em -o, os adjetivos em -a.',
+    text: 'É a língua artificial mais falada do mundo: as estimativas vão de dezenas de milhares a 2 milhões de falantes, e há até falantes nativos, filhos de casais que se conheceram pelo esperanto. As raízes vêm de línguas românicas, germânicas e eslavas; a gramática quase não tem exceções, e os substantivos sempre terminam em -o, os adjetivos em -a.',
     samples: [
       ['Saluton! Kiel vi fartas?', 'Olá! Como você vai?'],
       ['Mi lernas Esperanton.', 'Eu aprendo esperanto.'],
@@ -384,12 +384,12 @@ export const CONLANGS: Conlang[] = [
     name: 'Simlish',
     emoji: '🏠',
     creator: 'Will Wright e os dubladores de The Sims',
-    year: '2000',
+    year: '1996',
     purpose: 'artistica',
     origin: 'a priori',
     stage: 'esboco',
     about: 'The Sims: a fala dos personagens.',
-    text: 'É quase toda improvisada pelos dubladores, para soar como uma língua sem que os jogadores ouçam a mesma frase repetida em qualquer idioma. Tem algumas expressões fixas, mas não é uma língua de verdade.',
+    text: 'Apareceu pela primeira vez em SimCopter (1996) e ficou famosa com The Sims (2000). É quase toda improvisada pelos dubladores, para soar como uma língua sem que os jogadores ouçam a mesma frase repetida em qualquer idioma. Tem algumas expressões fixas, mas não é uma língua de verdade.',
     samples: [['Sul sul!', 'Olá!']],
   },
 ];

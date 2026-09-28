@@ -31,7 +31,7 @@ export const CURSO_TATIL: MiniCourse = {
       emoji: '⠁',
       intro: [
         'O Braille não é uma língua: é um sistema de escrita, lido com as pontas dos dedos. Cada caractere é uma cela de 6 pontos em relevo, em duas colunas de três. Os pontos são numerados: 1, 2 e 3 na coluna da esquerda, de cima para baixo; 4, 5 e 6 na da direita.',
-        'Louis Braille ficou cego aos 3 anos e, aos 15, em 1824, adaptou um código militar de «escrita noturna» de 12 pontos, de Charles Barbier. O sistema dele, publicado em 1829, cabe inteiro debaixo de uma ponta de dedo.',
+        'Louis Braille se feriu num olho aos 3 anos e ficou totalmente cego por volta dos 5; aos 15, em 1824, adaptou um código militar de «escrita noturna» de 12 pontos, de Charles Barbier. O sistema dele, publicado em 1829, cabe inteiro debaixo de uma ponta de dedo.',
         'As 10 primeiras letras usam só os 4 pontos de cima (1, 2, 4 e 5). Aprenda estas, porque o resto do alfabeto é construído a partir delas.',
       ],
       items: letters('abcdefghij'),
@@ -96,7 +96,7 @@ export const CURSO_TATIL: MiniCourse = {
       emoji: '🇧🇷',
       intro: [
         'Cada língua acrescenta as suas letras. No português, cada letra acentuada tem uma cela própria, segundo a Grafia Braille para a Língua Portuguesa.',
-        'O Braille chegou ao Brasil em 1854, com a fundação do Imperial Instituto dos Meninos Cegos, hoje Instituto Benjamin Constant, no Rio. Foi José Álvares de Azevedo, um jovem cego que tinha estudado em Paris, quem trouxe o sistema.',
+        'O Braille chegou ao Brasil por volta de 1850, trazido por José Álvares de Azevedo, um jovem cego que tinha estudado em Paris. Em 1854 ele foi adotado pelo recém-fundado Imperial Instituto dos Meninos Cegos, hoje Instituto Benjamin Constant, no Rio.',
       ],
       items: [...'çáéíóúâêôãõà'].map((c) => ({ term: c, meaning: `letra ${c}`, braille: BRAILLE[c], how: `pontos ${[...BRAILLE[c]].join('-')}` })),
       quiz: [

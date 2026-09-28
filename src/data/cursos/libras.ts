@@ -20,7 +20,7 @@ export const CURSO_LIBRAS: MiniCourse = {
       emoji: '🔤',
       intro: [
         'A datilologia é o alfabeto feito com a mão: cada letra tem uma configuração. Ela serve para soletrar nomes próprios e palavras que ainda não têm sinal — não é a Libras em si, assim como soletrar não é falar português.',
-        'O alfabeto da Libras usa uma mão só, a dominante (a direita, para os destros), na frente do corpo, na altura do ombro. Algumas letras têm movimento: o «J» e o «Z» desenham a letra no ar, e o «H», o «K», o «X» e o «Y» também se mexem.',
+        'O alfabeto da Libras usa uma mão só, a dominante (a direita, para os destros), na frente do corpo, na altura do ombro. Algumas letras têm movimento: o «J» e o «Z» desenham a letra no ar, e o «H», o «K», o «X», o «Y» e o «Ç» também se mexem.',
         'Toque em «Ver em Libras» para o avatar mostrar cada letra. Depois, tente soletrar o seu nome.',
       ],
       items: [

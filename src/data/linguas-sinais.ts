@@ -434,7 +434,7 @@ export const PARAMETERS: Parameter[] = [
     name: 'Orientação da Mão',
     emoji: '🔄',
     short: 'Para onde a palma está voltada: para cima, para baixo, para o corpo, para a frente…',
-    text: 'A mesma mão, no mesmo lugar e com o mesmo movimento, pode formar sinais diferentes só por girar a palma. Este parâmetro foi o último a ser proposto: o linguista Robbin Battison o acrescentou em 1974 aos três de William Stokoe.',
+    text: 'A mesma mão, no mesmo lugar e com o mesmo movimento, pode formar sinais diferentes só por girar a palma. Este parâmetro não estava entre os três de William Stokoe (1960): o linguista Robbin Battison o propôs em 1974. As expressões não-manuais entraram depois, como quinto parâmetro.',
     spoken: 'Não tem um paralelo direto na fala; é um jeito a mais de criar contraste.',
     examples: [{ title: 'Par mínimo na ASL: CHILD × THING', text: 'CRIANÇA e COISA usam a mão aberta que desce um pouco; em CRIANÇA a palma está virada para baixo, em COISA, para cima.' }],
   },

@@ -5,7 +5,7 @@ export const CURSO_ESPERANTO: MiniCourse = {
   name: 'Esperanto',
   emoji: '💚',
   kind: 'artificial',
-  summary: 'A língua auxiliar mais falada do mundo, com uma gramática sem exceções: em seis lições você lê frases inteiras.',
+  summary: 'A língua auxiliar mais falada do mundo, com uma gramática quase sem exceções: em seis lições você lê frases inteiras.',
   sources: [
     { label: 'Lernu! (curso grátis)', url: 'https://lernu.net/pt' },
     { label: 'Liga Brasileira de Esperanto', url: 'https://esperanto.org.br/' },
@@ -126,8 +126,8 @@ export const CURSO_ESPERANTO: MiniCourse = {
       title: 'A tabela mágica',
       emoji: '🧮',
       intro: [
-        'Os correlativos são as palavras de pergunta e as que respondem a elas, montadas como uma tabela: um começo (ki- pergunta, ti- aponta, ĉi- todos, neni- nenhum, i- algum) mais um final (-o coisa, -u pessoa, -e lugar, -am tempo, -el modo, -al razão).',
-        'Quem aprende a tabela aprende 45 palavras de uma vez.',
+        'Os correlativos são as palavras de pergunta e as que respondem a elas, montadas como uma tabela: um começo (ki- pergunta, ti- aponta, ĉi- todos, neni- nenhum, i- algum) mais um final (-o coisa, -u pessoa ou escolha, -a qualidade, -e lugar, -am tempo, -el modo, -al razão, -es posse, -om quantidade).',
+        'São 5 começos × 9 finais: quem aprende a tabela aprende 45 palavras de uma vez.',
       ],
       items: [
         { term: 'kio? / tio', meaning: 'o quê? / isso' },
