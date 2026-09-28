@@ -210,4 +210,365 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
   },
+  {
+    id: 'ca-g4',
+    level: 'A1.2',
+    title: 'Pronomes pessoais e adjetivos possessivos',
+    emoji: '🙋‍♂️',
+    summary: 'Os pronomes que funcionam como sujeito e os adjetivos possessivos — que em catalão quase sempre pedem o artigo definido antes.',
+    sections: [
+      {
+        heading: 'Pronomes pessoais sujeito',
+        text: 'Para o tratamento formal («o senhor», «a senhora»), usa-se «vostè» no singular e «vostès» no plural — os dois conjugam o verbo na 3ª pessoa.',
+        table: {
+          head: ['Pessoa', 'Singular', 'Plural'],
+          rows: [
+            ['1ª pessoa', 'jo (eu)', 'nosaltres (nós)'],
+            ['2ª pessoa', 'tu (tu/você)', 'vosaltres (vós/vocês)'],
+            ['3ª pessoa', 'ell/ella (ele/ela)', 'ells/elles (eles/elas)'],
+            ['Formal (3ª p.)', 'vostè (o(a) senhor(a))', 'vostès (os senhores/as senhoras)'],
+          ],
+        },
+        examples: [
+          ["Jo soc d'aquí.", 'Eu sou daqui.'],
+          ['Nosaltres parlem català.', 'Nós falamos catalão.'],
+          ['Com es diu vostè?', 'Como o(a) senhor(a) se chama?'],
+        ],
+      },
+      {
+        heading: 'Adjetivos possessivos com artigo definido',
+        text: 'No catalão padrão, é obrigatório pôr o artigo definido antes do possessivo: «el meu llibre», «la meva casa» — nunca só «meu llibre».',
+        table: {
+          head: ['Possuidor', 'Masc. sing.', 'Fem. sing.', 'Masc. pl.', 'Fem. pl.'],
+          rows: [
+            ['jo (meu)', 'el meu', 'la meva', 'els meus', 'les meves'],
+            ['tu (teu)', 'el teu', 'la teva', 'els teus', 'les teves'],
+            ['ell/ella (seu)', 'el seu', 'la seva', 'els seus', 'les seves'],
+            ['nosaltres (nosso)', 'el nostre', 'la nostra', 'els nostres', 'les nostres'],
+            ['vosaltres (vosso)', 'el vostre', 'la vostra', 'els vostres', 'les vostres'],
+            ['ells/elles (seu, deles)', 'el seu', 'la seva', 'els seus', 'les seves'],
+          ],
+        },
+        examples: [
+          ['El meu pare és professor.', 'O meu pai é professor.'],
+          ['La meva mare es diu Anna.', 'A minha mãe se chama Anna.'],
+          ['Els meus amics viuen a Girona.', 'Os meus amigos moram em Girona.'],
+          ['On és el teu cotxe?', 'Onde está o teu carro?'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Não usar o artigo antes do possessivo («meu pare» em vez de «el meu pare»); a omissão só vale em vocativo ou expressão fixa («pare meu!»).',
+      'Confundir «meva/teva/seva» (feminino) com as formas espanholas «mi/tu/su».',
+      'Conjugar na 2ª pessoa ao falar com «vostè»: o certo é a 3ª pessoa.',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz «a minha amiga» em catalão correto?',
+        options: ['mi amiga', 'meva amiga', 'la meva amiga'],
+        answer: 'la meva amiga',
+        explanation: 'É obrigatório o artigo definido («la») antes do possessivo («meva»).',
+      },
+      {
+        question: 'Qual pronome é o tratamento formal no singular?',
+        options: ['vostè', 'tu', 'vosaltres'],
+        answer: 'vostè',
+        explanation: '«Vostè» é o pronome formal singular, e concorda com o verbo na 3ª pessoa do singular.',
+      },
+    ],
+  },
+  {
+    id: 'ca-g5',
+    level: 'A1.2',
+    title: 'Presente do indicativo: verbos regulares',
+    emoji: '⏱️',
+    summary: 'As três conjugações regulares do presente (-ar, -re/-er, -ir) e o grupo especial dos verbos «incoativos» em -ir, que ganham um «-eix-» na raiz.',
+    sections: [
+      {
+        heading: '1ª e 2ª conjugações (-ar, -re/-er)',
+        text: 'A 1ª conjugação reúne os verbos em «-ar» (como «parlar», falar); a 2ª, os verbos em «-re» ou «-er» (como «perdre», perder).',
+        table: {
+          head: ['Pronome', '-ar: parlar', '-re: perdre'],
+          rows: [
+            ['jo', 'parlo', 'perdo'],
+            ['tu', 'parles', 'perds'],
+            ['ell/ella/vostè', 'parla', 'perd'],
+            ['nosaltres', 'parlem', 'perdem'],
+            ['vosaltres', 'parleu', 'perdeu'],
+            ['ells/elles/vostès', 'parlen', 'perden'],
+          ],
+        },
+        examples: [
+          ['Jo parlo català i castellà.', 'Eu falo catalão e espanhol.'],
+          ['Nosaltres perdem el tren.', 'Nós perdemos o trem.'],
+          ['Ells parlen amb el professor.', 'Eles falam com o professor.'],
+        ],
+      },
+      {
+        heading: '3ª conjugação (-ir): verbos puros e incoativos',
+        text: 'A 3ª conjugação (-ir) tem dois tipos: os puros (como «dormir»), com a terminação direta, e os incoativos (como «servir», «llegir» = ler), que ganham «-eix-» na raiz no singular e na 3ª pessoa do plural.',
+        table: {
+          head: ['Pronome', 'Puro: dormir', 'Incoativo: servir'],
+          rows: [
+            ['jo', 'dormo', 'serveixo'],
+            ['tu', 'dorms', 'serveixes'],
+            ['ell/ella/vostè', 'dorm', 'serveix'],
+            ['nosaltres', 'dormim', 'servim'],
+            ['vosaltres', 'dormiu', 'serviu'],
+            ['ells/elles/vostès', 'dormen', 'serveixen'],
+          ],
+        },
+        examples: [
+          ['Jo dormo vuit hores.', 'Eu durmo oito horas.'],
+          ['Jo llegeixo un llibre.', 'Eu leio um livro. (llegir → llegeixo, incoativo)'],
+          ['Ells serveixen el dinar.', 'Eles servem o almoço.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Esquecer o «-o» da 1ª pessoa do singular no dialeto central (escrever «parl» em vez de «parlo» — noutros dialetos, como o valenciano, «parl» é a forma normal).',
+      'Não pôr o «-eix-» nos verbos em -ir que pedem essa forma (dizer «serv» em vez de «serveixo»).',
+      'Pôr o «-eix-» em «nosaltres»/«vosaltres», que não levam: são «servim» e «serviu».',
+    ],
+    quiz: [
+      {
+        question: 'Qual é a forma de «jo» do verbo «parlar»?',
+        options: ['jo parla', 'jo parlo', 'jo parles'],
+        answer: 'jo parlo',
+        explanation: 'A 1ª pessoa do singular dos verbos em «-ar» termina em «-o» no presente.',
+      },
+      {
+        question: 'Como se conjuga «llegir» (ler) para «jo»?',
+        options: ['jo llego', 'jo llegim', 'jo llegeixo'],
+        answer: 'jo llegeixo',
+        explanation: 'Verbo incoativo em -ir: ganha «-eix-» na 1ª pessoa do singular.',
+      },
+    ],
+  },
+  {
+    id: 'ca-g6',
+    level: 'A1.2',
+    title: 'Demonstrativos e expressões de lugar',
+    emoji: '📍',
+    summary: 'Os demonstrativos «aquest»/«aquell» (este/aquele) e as principais preposições e advérbios de lugar.',
+    sections: [
+      {
+        heading: 'Demonstrativos: aquest / aquell',
+        text: 'O catalão padrão moderno usa dois graus de distância: «aquest» para perto (este/esta/esse/essa) e «aquell» para longe (aquele/aquela) — o grau intermediário do catalão antigo (aqueix) só sobrevive, sobretudo, no valenciano.',
+        table: {
+          head: ['Distância', 'Masc. sing.', 'Fem. sing.', 'Masc. pl.', 'Fem. pl.'],
+          rows: [
+            ['Perto/médio', 'aquest', 'aquesta', 'aquests', 'aquestes'],
+            ['Longe', 'aquell', 'aquella', 'aquells', 'aquelles'],
+          ],
+        },
+        examples: [
+          ['Aquest llibre és molt bo.', 'Este livro é muito bom.'],
+          ['Aquesta cadira és còmoda.', 'Esta cadeira é confortável.'],
+          ["Aquell noi d'allà és en Marc.", 'Aquele rapaz dali é o Marc.'],
+        ],
+      },
+      {
+        heading: 'Advérbios e preposições de lugar',
+        text: 'As locuções de lugar levam «de» antes de um substantivo (que costuma contrair com o artigo: «del», «dels»).',
+        table: {
+          head: ['Catalão', 'Português', 'Exemplo'],
+          rows: [
+            ['aquí / ací', 'aqui', 'Soc aquí. (Estou aqui.)'],
+            ['allí / allà', 'ali/lá/acolá', 'El cotxe és allà. (O carro está lá.)'],
+            ['a prop de', 'perto de', 'A prop de casa. (Perto de casa.)'],
+            ['lluny de', 'longe de', 'Lluny de la ciutat. (Longe da cidade.)'],
+            ['a sobre de / damunt de', 'em cima de', 'A sobre de la taula. (Em cima da mesa.)'],
+            ['a sota de / sota de', 'embaixo de', 'Sota de la cadira. (Debaixo da cadeira.)'],
+          ],
+        },
+        examples: [
+          ['El gat és sota de la taula.', 'O gato está debaixo da mesa.'],
+          ["L'hotel és a prop de l'estació.", 'O hotel é perto da estação.'],
+          ["La farmàcia és lluny d'aquí.", 'A farmácia é longe daqui.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Tentar usar três graus como em português (este, esse, aquele): o catalão padrão moderno usa só dois («aquest», «aquell»).',
+      'Esquecer o «de» nas locuções de lugar antes de substantivo (dizer «a prop el parc» em vez de «a prop del parc»).',
+      'Escrever o plural masculino de «aquest» como o espanhol «estos»: em catalão é «aquests».',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz «esta mesa» em catalão?',
+        options: ['esta taula', 'aquesta taula', 'aquella taula'],
+        answer: 'aquesta taula',
+        explanation: '«Aquesta» é o demonstrativo feminino singular para o que está perto.',
+      },
+      {
+        question: 'Qual é a tradução de «perto do restaurante»?',
+        options: ['a prop del restaurant', 'a prop el restaurant', 'lluny del restaurant'],
+        answer: 'a prop del restaurant',
+        explanation: '«A prop de» exige «de», que contrai com o artigo «el»: «del».',
+      },
+    ],
+  },
+  {
+    id: 'ca-g7',
+    level: 'A2.1',
+    title: 'Passado perifrástico (passat perifràstic)',
+    emoji: '📜',
+    summary: 'No catalão falado e escrito de hoje, o passado simples mais comum não é uma forma verbal só: é uma perífrase com o verbo «anar» conjugado + o infinitivo do verbo principal.',
+    sections: [
+      {
+        heading: 'Estrutura e funcionamento',
+        text: 'O passado perifrástico equivale ao pretérito perfeito do português («eu comi», «ele falou»): o auxiliar «anar» numa forma especial de passado + o verbo principal no infinitivo. Apesar de usar «anar» (ir), a estrutura NÃO é futuro — é uma ação concluída no passado.',
+        table: {
+          head: ['Pronome', 'Auxiliar (curta/longa)', 'Exemplo com parlar', 'Tradução'],
+          rows: [
+            ['jo', 'vaig', 'vaig parlar', 'falei'],
+            ['tu', 'vas / vares', 'vas parlar / vares parlar', 'falaste/você falou'],
+            ['ell/ella/vostè', 'va', 'va parlar', 'falou'],
+            ['nosaltres', 'vam / vàrem', 'vam parlar / vàrem parlar', 'falamos'],
+            ['vosaltres', 'vau / vàreu', 'vau parlar / vàreu parlar', 'falastes/vocês falaram'],
+            ['ells/elles/vostès', 'van / varen', 'van parlar / varen parlar', 'falaram'],
+          ],
+        },
+        examples: [
+          ['Jo vaig menjar una poma.', 'Eu comi uma maçã.'],
+          ['Ahir, ell va anar al metge.', 'Ontem ele foi ao médico. (va + anar = foi)'],
+          ['Nosaltres vàrem comprar el pa.', 'Nós compramos o pão.'],
+          ['Ells van arribar tard.', 'Eles chegaram tarde.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Confundir o passado perifrástico com futuro imediato («vaig menjar» é «comi», NUNCA «vou comer»).',
+      'Achar que «vaig anar» é redundante: é correto, e significa «fui, fui a algum lugar».',
+      'Trocar as formas curtas «vam»/«vau» pelas variantes erradas «vem»/«veu» (que não existem em catalão padrão).',
+    ],
+    quiz: [
+      {
+        question: 'O que significa «Ell va menjar una paella»?',
+        options: ['Ele vai comer uma paella', 'Ele comeu uma paella', 'Ele comeria uma paella'],
+        answer: 'Ele comeu uma paella',
+        explanation: '«va + infinitivo» é o passado perifrástico, equivalente ao pretérito perfeito.',
+      },
+      {
+        question: 'Qual é a forma de «jo» do passado perifrástico com «comprar»?',
+        options: ['jo voy comprar', 'jo vaig comprar', 'jo iré comprar'],
+        answer: 'jo vaig comprar',
+        explanation: 'A 1ª pessoa do singular do auxiliar é «vaig» + o infinitivo «comprar».',
+      },
+    ],
+  },
+  {
+    id: 'ca-g8',
+    level: 'A2.1',
+    title: 'Pronomes átonos (pronoms febles)',
+    emoji: '🔗',
+    summary: 'Os pronomes fracos substituem complementos diretos e indiretos para evitar repetição. Mudam de forma conforme vêm antes ou depois do verbo, e se o verbo começa com vogal ou consoante.',
+    sections: [
+      {
+        heading: 'Formas e apostrofação antes do verbo',
+        text: 'Antes do verbo conjugado, os pronomes elidem (viram apóstrofo) se o verbo começa com vogal ou h mudo.',
+        table: {
+          head: ['Pessoa/função', 'Antes de consoante', 'Antes de vogal', 'Exemplo'],
+          rows: [
+            ['1ª sing. (me)', 'em', "m'", "m'agrada (me agrada)"],
+            ['2ª sing. (te)', 'et', "t'", "t'escolto (te escuto)"],
+            ['3ª CD masc. (o)', 'el', "l'", "l'ajudo (o ajudo)"],
+            ['3ª CD fem. (a)', 'la', "l'", "l'estimo (a amo)"],
+            ['3ª CI (lhe)', 'li', 'li (não elide)', 'li faig un regal (faço-lhe um presente)'],
+            ['1ª plur. (nos)', 'ens', 'ens (não elide)', 'ens mira (nos olha)'],
+            ['2ª plur. (vos)', 'us', 'us (não elide)', 'us veig (vejo vocês)'],
+            ['3ª CD plur. masc. (os)', 'els', 'els (não elide)', 'els compro (os compro)'],
+          ],
+        },
+        examples: [
+          ['Em dic Marc.', 'Me chamo Marc.'],
+          ["T'escolto amb atenció.", 'Te escuto com atenção.'],
+          ["L'he vist al carrer.", 'Eu o/a vi na rua.'],
+          ['Li dono el llibre.', 'Dou-lhe o livro.'],
+        ],
+      },
+      {
+        heading: 'Posição do pronome: próclise e ênclise',
+        text: 'O pronome vem antes do verbo na maioria dos tempos. Mas vem DEPOIS do verbo (ligado por hífen ou apóstrofo) em três casos: infinitivo, gerúndio e imperativo afirmativo.',
+        examples: [
+          ["Vull veure'l.", "Quero vê-lo. (infinitivo: veure + el → veure'l)"],
+          ['Menjant-ho.', 'Comendo isso. (gerúndio + pronome ho)'],
+          ["Compra'm el pa!", 'Compra-me o pão! (imperativo + pronome em)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Esquecer de elidir o pronome antes de verbo com vogal (escrever «et escolto» em vez de «t\'escolto»).',
+      'Usar a forma espanhola «le» para complemento indireto em vez do catalão «li».',
+      'Pôr o pronome antes do verbo no imperativo afirmativo ou no infinitivo — o certo é depois.',
+    ],
+    quiz: [
+      {
+        question: 'Como se escreve «Eu te escuto» com o verbo «escoltar»?',
+        options: ['et escolto', "t'escolto", 'te escolto'],
+        answer: "t'escolto",
+        explanation: '«et» elide e vira «t\'» antes de verbo com vogal.',
+      },
+      {
+        question: 'Qual pronome substitui «a la Maria» em «Dono un regal a la Maria»?',
+        options: ['el', 'la', 'li'],
+        answer: 'li',
+        explanation: 'O complemento indireto de 3ª pessoa do singular é substituído por «li».',
+      },
+    ],
+  },
+  {
+    id: 'ca-g9',
+    level: 'A2.1',
+    title: 'Os pronomes «hi» e «en»',
+    emoji: '🧩',
+    summary: 'Os pronomes «hi» e «en» são uma marca do catalão: substituem lugares, quantidades e complementos com preposição, evitando repetição.',
+    sections: [
+      {
+        heading: 'O pronome «hi»',
+        text: '«hi» substitui complemento de lugar com «a», «en», «per», «sobre» (destino ou permanência). É parte fixa de «hi ha» (há, existe).',
+        examples: [
+          ['Vas a Barcelona? — Sí, hi vaig.', 'Você vai a Barcelona? — Sim, vou lá. (hi = a Barcelona)'],
+          ['Ets a casa? — Sí, hi soc.', 'Você está em casa? — Sim, estou lá. (hi = a casa)'],
+          ['Hi ha molta gent.', 'Há muita gente.'],
+        ],
+      },
+      {
+        heading: 'O pronome «en»',
+        text: '«en» substitui complemento com a preposição «de» (origem, posse, causa) e complemento direto indeterminado com quantidade.',
+        table: {
+          head: ['Pronome', 'Substitui', 'Exemplo', 'Tradução'],
+          rows: [
+            ['hi', 'lugar (com a/en/per)', 'Hi vaig demà.', 'Vou lá amanhã.'],
+            ['en', 'origem (com de)', 'Vens de Vic? — Sí, en vinc.', 'Você vem de Vic? — Sim, venho de lá.'],
+            ['en', 'quantidade/indeterminado', 'Vols pa? — Sí, en vull un tros.', 'Quer pão? — Sim, quero um pedaço.'],
+          ],
+        },
+        examples: [
+          ['Quants llibres tens? — En tinc dos.', 'Quantos livros você tem? — Tenho dois.'],
+          ['Tornes de la feina? — Sí, en torno.', 'Está voltando do trabalho? — Sim, estou voltando de lá.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Omitir «hi» ao responder sobre lugar (responder só «Sí, vaig» em vez de «Sí, hi vaig»).',
+      'Omitir «en» ao indicar quantidade (dizer «Tinc dos» em vez de «En tinc dos»).',
+      'Usar «hi» para origem com «de»: origem com «de» pede sempre «en».',
+    ],
+    quiz: [
+      {
+        question: '«Vols poma?» — «Sí, ___ vull una.»: qual pronome?',
+        options: ['hi', 'en', 'la'],
+        answer: 'en',
+        explanation: 'Quantidade com objeto indeterminado («uma maçã») pede «en».',
+      },
+      {
+        question: '«Vas a la platja?»: qual é a resposta afirmativa correta?',
+        options: ['Sí, hi vaig', 'Sí, en vaig', 'Sí, vaig la platja'],
+        answer: 'Sí, hi vaig',
+        explanation: '«hi» substitui o complemento de lugar com «a» (a la platja).',
+      },
+    ],
+  },
 ];
