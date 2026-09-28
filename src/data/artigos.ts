@@ -10,6 +10,7 @@ import { ARTIGOS_RU } from './ru/artigos';
 import { ARTIGOS_SV } from './sv/artigos';
 import { ARTIGOS_NB } from './nb/artigos';
 import { ARTIGOS_DA } from './da/artigos';
+import { ARTIGOS_FR } from './fr/artigos';
 
 /**
  * Artigos culturais graduados: textos curtos sobre a cultura de quem fala o idioma, escritos para um
@@ -49,6 +50,7 @@ export const ARTICLES: Record<string, ArticleSeed[]> = {
   sv: ARTIGOS_SV,
   nb: ARTIGOS_NB,
   da: ARTIGOS_DA,
+  fr: ARTIGOS_FR,
 };
 
 export function articlesOf(lang: string): ArticleSeed[] {

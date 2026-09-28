@@ -132,7 +132,7 @@ test('seletor agrupa por família e ramo', () => {
   assert.deepEqual(Object.keys(g).sort(), ['Coreânico', 'Indo-europeu', 'Japônico', 'Urálico']);
   assert.deepEqual(
     g['Indo-europeu']['Itálico'].map((l) => l.code),
-    ['ro', 'es', 'it', 'pt'],
+    ['ro', 'es', 'it', 'pt', 'fr'],
   );
   assert.deepEqual(g['Urálico']['Fínico'].map((l) => l.code).sort(), ['et', 'fi']);
 });

@@ -92,6 +92,12 @@ export function roomsFor(lang: string): Record<Gender, Room> {
       f: { ...ROOMS.f, rule: 'Feminino: quase todas em -a e as em -ção/-são, -agem, -dade e -ice (a canção, a viagem, a cidade, a velhice). Exceções: o dia, o mapa, o planeta.' },
       n: ROOMS.n,
     };
+  if (lang === 'fr')
+    return {
+      m: { ...ROOMS.m, rule: 'Masculino: muitas em -age (le voyage, le fromage), -ment (le moment), -eau (le bureau), -isme e -phone. Cuidado com as que mudam em relação ao português: le lait e le lit batem, mas «a dor» é la douleur.' },
+      f: { ...ROOMS.f, rule: 'Feminino: quase todas em -tion/-sion (la nation), -té (la liberté), -ette (la fourchette), -ure (la voiture) e -ance/-ence. Mudam em relação ao português: la mer (o mar), la dent (o dente), la fin (o fim).' },
+      n: ROOMS.n,
+    };
   if (lang === 'it')
     return {
       m: { ...ROOMS.m, rule: 'Masculino: quase todas em -o (il libro), muitas em -e (il fiore, il pane) e as de origem grega em -ma (il problema, il tema). Plural em -i.' },
@@ -162,6 +168,8 @@ export function palaceIntro(lang: string): string {
     return 'O norueguês tem 3 gêneros: masculino (en), feminino (ei) e neutro (et), e o artigo definido vai grudado no fim: bilen, boka, huset. No bokmål, as femininas também aceitam o «en» (en bok, boken). Decore cada palavra com o artigo e guarde-a na sala certa!';
   if (lang === 'pt')
     return 'Você já sabe os gêneros do português! Aqui o desafio são as palavras de Portugal que você ainda não usa: o autocarro, o comboio, a casa de banho, o ecrã, a bica, o pequeno-almoço. Guarde cada uma na sala certa!';
+  if (lang === 'fr')
+    return "O francês tem 2 gêneros, como o português, mas a terminação engana mais: -age é masculino (le fromage), -tion é feminino (la nation), e várias palavras trocam de gênero de uma língua para a outra: la mer, la dent, la fin, le lait. No plural, o artigo é «les» para os dois: por isso decore sempre com «le» ou «la» (ou «un», «une», quando vem «l'»). Guarde cada uma na sala certa!";
   if (lang === 'it')
     return 'O italiano tem 2 gêneros, como o português, e quase sempre a terminação entrega: -o masculino, -a feminino. O perigo mora nas em -e (il fiore, la notte) e nos plurais que trocam de gênero: l’uovo → le uova. Guarde cada uma na sala certa!';
   if (lang === 'es')

@@ -22,6 +22,7 @@ export interface OwnLanguageMeta {
 }
 
 const MINORIA_SUECIA = 'Uma das cinco línguas minoritárias nacionais da Suécia, reconhecidas em 2000.';
+const REGIONAIS_FRANCA = 'Na França, as línguas regionais não têm estatuto oficial: desde 2008, a Constituição diz que elas «pertencem ao patrimônio da França».';
 const NAO_VEM_DO_ITALIANO =
   'Na Itália costuma ser chamado de «dialeto», mas não vem do italiano: vem direto do latim, como ele, e tem código próprio na norma ISO 639-3.';
 const FORA_DA_LEI_ITALIANA = 'Não está entre as 12 línguas minoritárias da lei italiana de 1999, que protege, por exemplo, o sardo e o friulano.';
@@ -83,6 +84,19 @@ export const OWN_LANGUAGE_META: Record<string, OwnLanguageMeta> = {
     recognition: 'Oficial na Galiza, junto com o espanhol.',
     debated: 'Galego e português nasceram da mesma língua medieval. A norma oficial da Galiza os trata como línguas diferentes; o reintegracionismo defende que são a mesma língua.',
   },
+  // francês — o bretão, o occitano e o corso aparecem como «não ameaçados» no Glottolog, o que contraria
+  // as avaliações mais comuns (a UNESCO os lista como ameaçados): nesses, o grau de risco fica de fora
+  'fr-breton': { family: 'Indo-europeu › Celta › Britônico', recognition: REGIONAIS_FRANCA },
+  'fr-occitan': { family: 'Indo-europeu › Românico › Occitano-romance', recognition: `${REGIONAIS_FRANCA} Na Espanha, o occitano do Vale de Aran é oficial na Catalunha.` },
+  'fr-basque': { family: 'Isolada (sem parentes conhecidos)', glottocodes: ['basq1248'], recognition: `${REGIONAIS_FRANCA} Na Espanha, é oficial no País Basco e em parte de Navarra.` },
+  'fr-corse': { family: 'Indo-europeu › Românico › Ítalo-românico', recognition: REGIONAIS_FRANCA },
+  'fr-lingua-alsacienne': {
+    family: 'Indo-europeu › Germânico › Alto-alemão',
+    recognition: REGIONAIS_FRANCA,
+    debated: 'É um conjunto de dialetos alemânicos e francônios: há quem o trate como dialeto do alemão e quem o trate como língua regional própria.',
+  },
+  'fr-kreyol-ayisyen': { family: 'Crioulo de base francesa', glottocodes: ['hait1244'], recognition: 'Oficial no Haiti, junto com o francês, desde a Constituição de 1987; é a língua materna de quase todos os haitianos.' },
+  'fr-kreyol-antillais': { family: 'Crioulo de base francesa', recognition: 'Ensinado nas escolas da Martinica e de Guadalupe; na França, é uma língua regional, sem estatuto oficial.' },
 };
 
 export interface OwnLanguage {

@@ -251,6 +251,24 @@ export const FAUNA_MUSICA: Record<string, CountryNature> = {
       { emoji: '🥁', name: 'Janggu', local: '장구', fact: 'Tambor em forma de ampulheta da música tradicional.', origin: 'tradicional' },
     ],
   },
+  FRA: {
+    animals: [
+      { emoji: '🐓', name: 'Galo', local: 'le coq', fact: 'É um dos símbolos da França: em latim, «gallus» era ao mesmo tempo o galo e o gaulês. Aparece em moedas, selos e no uniforme das seleções.' },
+      { emoji: '🐎', name: 'Cavalo da Camargue', local: 'le cheval camargue', fact: 'Cavalo branco e rústico que vive meio selvagem nos pântanos da Camargue, no delta do Ródano; os guardiões da região montam nele para lidar com os touros.' },
+      { emoji: '🦩', name: 'Flamingo-rosa', local: 'le flamant rose', fact: 'A Camargue abriga uma das maiores colônias de flamingos do Mediterrâneo.' },
+      { emoji: '🐻', name: 'Urso-pardo', local: "l'ours brun", fact: 'Quase desapareceu dos Pireneus; a partir de 1996, ursos trazidos da Eslovênia foram soltos lá, e a população voltou a crescer.' },
+      { emoji: '🐺', name: 'Lobo', local: 'le loup', fact: 'Voltou sozinho à França pelos Alpes, vindo da Itália, no começo dos anos 1990, depois de décadas extinto no país.' },
+      { emoji: '🦫', name: 'Castor-europeu', local: "le castor d'Europe", fact: 'Quase extinto no começo do século XX, sobreviveu no vale do Ródano e hoje voltou a muitos rios franceses.' },
+    ],
+    instruments: [
+      { emoji: '🪗', name: 'Acordeão', local: "l'accordéon", fact: 'O som do «bal musette», os bailes populares de Paris da primeira metade do século XX.', origin: 'tradicional' },
+      { emoji: '🎻', name: 'Viela de roda', local: 'la vielle à roue', fact: 'Uma roda, girada por uma manivela, esfrega as cordas; é tradicional no centro da França, como no Berry e na Auvergne.', origin: 'tradicional' },
+      { emoji: '🎶', name: 'Gaita de foles bretã', local: 'le biniou', fact: 'A gaita de foles da Bretanha, tocada em dupla com a bombarde nos bailes «fest-noz», patrimônio imaterial da UNESCO desde 2012.', origin: 'tradicional' },
+      { emoji: '📯', name: 'Trompa de caça', local: 'la trompe de chasse', fact: 'Trompa enrolada em espiral, de som potente, com repertório e tradição próprios na França.', origin: 'tradicional' },
+      { emoji: '🎸', name: 'Violão manouche', local: 'la guitare manouche', fact: 'O violão do jazz cigano, que Django Reinhardt tornou famoso nos anos 1930 com o Quintette du Hot Club de France.', origin: 'tradicional' },
+      { emoji: '🎹', name: 'Órgão de catedral', local: "l'orgue", fact: 'No século XIX, o organeiro Aristide Cavaillé-Coll construiu os grandes órgãos de igrejas como Notre-Dame e Saint-Sulpice, em Paris.', origin: 'tradicional' },
+    ],
+  },
   GBR: {
     animals: [
       { emoji: '🐿️', name: 'Esquilo-vermelho', fact: 'Nativo das Ilhas Britânicas, hoje raro fora da Escócia.' },
@@ -261,4 +279,4 @@ export const FAUNA_MUSICA: Record<string, CountryNature> = {
 };
 
 /** Países «de origem» de cada idioma do app (seção Bichos e sons da aba Cultura). */
-export const HOMELANDS: Record<string, string[]> = { ro: ['ROU', 'MDA'], ru: ['RUS'], es: ['ESP', 'MEX', 'COL', 'ARG', 'PER', 'CHL', 'CUB'], it: ['ITA'], sv: ['SWE'], nb: ['NOR'], nn: ['NOR'], da: ['DNK'], is: ['ISL'], fo: ['FRO'], pt: ['BRA', 'PRT'], fi: ['FIN'], et: ['EST'], ja: ['JPN'], ko: ['KOR'], en: ['GBR'] };
+export const HOMELANDS: Record<string, string[]> = { ro: ['ROU', 'MDA'], ru: ['RUS'], es: ['ESP', 'MEX', 'COL', 'ARG', 'PER', 'CHL', 'CUB'], it: ['ITA'], sv: ['SWE'], nb: ['NOR'], nn: ['NOR'], da: ['DNK'], is: ['ISL'], fo: ['FRO'], pt: ['BRA', 'PRT'], fr: ['FRA'], fi: ['FIN'], et: ['EST'], ja: ['JPN'], ko: ['KOR'], en: ['GBR'] };

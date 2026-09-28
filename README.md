@@ -19,6 +19,7 @@ As faixas que rolam para os lados (fotos, trilha de subníveis, idiomas e regiõ
 | 🇪🇸 Espanhol | Indo-europeu › Itálico › Românico › Ibero-românico | **disponível** |
 | 🇮🇹 Italiano | Indo-europeu › Itálico › Românico › Ítalo-dálmata | **disponível** |
 | 🇵🇹 Português de Portugal | Indo-europeu › Itálico › Românico › Ibero-românico › Galego-português | **disponível** |
+| 🇫🇷 Francês | Indo-europeu › Itálico › Românico › Galo-românico | **disponível** |
 | 🇸🇪 Sueco | Indo-europeu › Germânico › Germânico setentrional › Nórdico oriental | **disponível** |
 | 🇳🇴 Norueguês (bokmål, com o nynorsk como variante) | Indo-europeu › Germânico › Germânico setentrional › Nórdico ocidental | **disponível** |
 | 🇩🇰 Dinamarquês | Indo-europeu › Germânico › Germânico setentrional › Nórdico oriental | **disponível** |
@@ -81,6 +82,14 @@ Cada idioma mostra os seus jeitos regionais de falar (18 no espanhol, 5 no romen
 - **IPA em duas normas** (src/services/ipa-pt.ts): Portugal (vogais átonas reduzidas, «s» chiado, «r» uvular, «l» velar, «ei» [ɐj]) e Brasil (t/d antes de [i] → [tʃ dʒ], «l» final [w]); a variante escolhida na aba Cultura troca a IPA e a voz. Dicionário de pronúncia com 8.038 formas (timbre de Portugal: déve, pôrto, nóva).
 - **Diário** que corrige «estou fazendo» → «estou a fazer» e «Me chamo» → «Chamo-me»; verificador que aponta brasileirismos no texto europeu; **voz**: a de Portugal ganha de uma brasileira mais natural (a pronúncia muda demais).
 - Gravações de nativos só de falantes que moram em Portugal (scripts/falantes-por-pais.mjs).
+
+## O que tem no francês
+
+- Francês padrão da França (norma de Paris) e mais quatro variantes na aba Cultura: **Quebec**, **Bélgica**, **Suíça** e **África Ocidental** (Senegal), com vocabulário próprio (courriel, magasiner, septante, nonante…), voz e histórias de cada lugar.
+- 4.314 palavras (gênero diferente do português, falsos amigos e feminino irregular marcados na tradução), 15 unidades (da pronúncia e do «bonjour» ao passé simple e à literatura, passando pelo verlan, pela argumentação e pela francofonia), 40 tópicos de gramática, 57 histórias pela França e pela francofonia (Paris, Lyon, Bretanha, Córsega, Quebec, Bruxelas, Genebra, Dacar, Martinica, a Guiana vizinha do Brasil…), 85 falsos amigos (attendre, rester, le collège…), 57 etimologias (o «ca» latino que virou «cha», o «s» que virou acento circunflexo, as palavras dos francos e do gaulês e as que chegaram do tupi pelo português: ananas, jaguar, toucan) e 18 sotaques, dialetos e línguas próprias (bretão, occitano, basco, corso, alsaciano e os crioulos do Haiti e das Antilhas).
+- **IPA por regras** da norma de Paris (src/services/ipa-fr.ts: vogais nasais, e mudo, letras finais mudas, liaison obrigatória, elisão, o «-ent» mudo dos verbos) com 467 correções num dicionário (src/data/fr/pronuncia.ts); voz neural embutida SIWIS (CC BY 4.0).
+- Linguística nas 7 áreas, pares mínimos (u × ou, as nasais), bichos em francês, 5 artigos graduados (baguete, la bise, Tour de France, canal du Midi, Juramentos de Estrasburgo), expedições por 18 cidades (Paris, Lyon, Marselha, Estrasburgo, Montreal, Quebec, Bruxelas, Genebra, Dacar, Porto Príncipe, Abidjan…), a França nos «Bichos e sons» (o galo, o cavalo da Camargue, o biniou, a viela de roda) e a roupinha do Linu: a coiffe bigoudène da Bretanha.
+- `scripts/checar-vocab-fr.ts` e `scripts/checar-conteudo-fr.ts` conferem acentos, elisão, apóstrofo reto e letras de outras línguas; `npx tsx scripts/fluxo-frances.mjs` percorre o idioma no navegador.
 
 ## O que tem no sueco
 

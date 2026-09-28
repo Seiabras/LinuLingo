@@ -55,6 +55,7 @@ const GRAMMAR_WORDS: Record<string, string[]> = {
   ru: 'неё наш наша наше наши нашего нашей нашим нашем наших нашу вся всё всех всем всеми всю всего всей я ты он она оно мы вы они меня тебя его её нас вас их мне тебе ему ей нам вам им мной тобой ним ней нами вами ними него нему нём ней них это этот эта эти этого этой этом этих тот та те того той том тех свой своя своё свои своего своей своих был была было были будет будут есть не и в во на с со к ко о об у от до из за по для'.split(' '),
   sv: 'man eller men så när där här då nu en ett den det de dem han hon hen vi ni jag du mig dig sig oss er hans hennes deras min mitt mina din ditt dina sin sitt sina är var har hade ska skulle kan kunde vill ville inte och i på av till för med om som att'.split(' '),
   nb: 'man eller men så når der her da nå en ei et den det de dem han hun vi dere jeg du meg deg seg oss hans hennes deres min mitt mine din ditt dine sin sitt sine er var har hadde skal skulle kan kunne vil ville ikke og i på av til for med om som at'.split(' '),
+  fr: "l d j c n s m t qu jusqu lorsqu puisqu aujourd hui le la les un une des du au aux de et ou en ne pas plus il elle ils elles on nous vous je tu me te se lui leur y ce cet cette ces mon ma mes ton ta tes son sa ses notre nos votre vos leurs qui que quoi dont où est sont es suis ai a as ont avons avez était étaient été être avoir fait".split(' '),
   da: 'man eller men så når der her da nu også en et den det de dem han hun vi I jeg du mig dig sig os hans hendes deres min mit mine din dit dine sin sit sine er var har havde skal skulle kan kunne vil ville ikke og i på af til for med om som at'.split(' '),
 };
 
@@ -63,6 +64,7 @@ const GRAMMAR_WORDS: Record<string, string[]> = {
 const SUFFIXES: Record<string, string[]> = {
   sv: ['en', 'et', 'n', 't', 'a', 'ar', 'er', 'or', 'na', 'arna', 'erna', 'orna', 'arnas', 'ernas', 'ornas', 'ns', 's', 'ens', 'ets', 'e', 'are', 'ast', 'ade', 'at', 'de', 'te', 'r'],
   nb: ['en', 'et', 'a', 'er', 'ene', 'ane', 'e', 's', 't', 'te', 'de', 'ere', 'est', 'r', 'ne', 'ens'],
+  fr: ['s', 'x', 'e', 'es', 'ent', 'ons', 'ez', 'é', 'ée', 'és', 'ées', 'ait', 'ais', 'aient', 'ai', 'a'],
   da: ['en', 'et', 'e', 'er', 'ene', 'erne', 'ne', 'rne', 's', 't', 'te', 'de', 'ede', 'ere', 'est', 'n', 'r', 'ens', 'ets'],
 };
 

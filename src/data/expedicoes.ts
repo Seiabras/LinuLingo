@@ -110,6 +110,26 @@ export const EXPEDITION_PLACES: Record<string, ExpeditionPlace[]> = {
     { city: 'Östersund', cityPt: 'Östersund', country: 'SWE', codes: ['SE-Z'], fact: 'À beira do lago Storsjön, que tem até um monstro de lenda.' },
     { city: 'Kalmar', cityPt: 'Kalmar', country: 'SWE', codes: ['SE-H'], fact: 'Tem um castelo à beira-mar; ali se criou, em 1397, a União de Kalmar, que juntou Suécia, Dinamarca e Noruega.' },
   ],
+  fr: [
+    { city: 'Paris', cityPt: 'Paris', country: 'FRA', codes: ['FR-75C', 'FR-75'], fact: 'A capital, cortada pelo Sena; a Torre Eiffel foi construída para a Exposição Universal de 1889.' },
+    { city: 'Lyon', cityPt: 'Lyon', country: 'FRA', codes: ['FR-69'], fact: 'Capital da gastronomia francesa e cidade dos irmãos Lumière, que apresentaram o cinematógrafo em 1895.' },
+    { city: 'Marseille', cityPt: 'Marselha', country: 'FRA', codes: ['FR-13'], fact: 'A cidade mais antiga da França, fundada por gregos por volta de 600 a.C., à beira do Mediterrâneo.' },
+    { city: 'Bordeaux', cityPt: 'Bordeaux', country: 'FRA', codes: ['FR-33'], fact: 'Cercada de vinhedos famosos; o centro histórico, o «porto da Lua» no rio Garonne, é patrimônio da UNESCO.' },
+    { city: 'Strasbourg', cityPt: 'Estrasburgo', country: 'FRA', codes: ['FR-67'], fact: 'Na fronteira com a Alemanha, é sede do Parlamento Europeu e do Conselho da Europa.' },
+    { city: 'Toulouse', cityPt: 'Toulouse', country: 'FRA', codes: ['FR-31'], fact: 'A «cidade rosa», dos tijolos avermelhados, e um centro da indústria aeronáutica europeia.' },
+    { city: 'Lille', cityPt: 'Lille', country: 'FRA', codes: ['FR-59'], fact: 'Perto da Bélgica, a capital da Flandres francesa, com uma enorme feira de rua em setembro, a Braderie.' },
+    { city: 'Nice', cityPt: 'Nice', country: 'FRA', codes: ['FR-06'], fact: 'Na Côte d\u2019Azur, com a Promenade des Anglais à beira do mar; passou a fazer parte da França em 1860.' },
+    { city: 'Saint-Malo', cityPt: 'Saint-Malo', country: 'FRA', codes: ['FR-35'], fact: 'A cidade murada dos corsários, na costa da Bretanha, onde a maré sobe mais de dez metros.' },
+    { city: 'Chamonix', cityPt: 'Chamonix', country: 'FRA', codes: ['FR-74'], fact: 'Aos pés do Mont Blanc, o ponto mais alto dos Alpes; sediou os primeiros Jogos Olímpicos de Inverno, em 1924.' },
+    { city: 'Ajaccio', cityPt: 'Ajaccio', country: 'FRA', codes: ['FR-2A'], fact: 'A capital da Córsega e a cidade onde nasceu Napoleão Bonaparte.' },
+    { city: 'Montréal', cityPt: 'Montreal', country: 'CAN', codes: ['CA-QC'], fact: 'A maior cidade francófona das Américas, numa ilha do rio São Lourenço.' },
+    { city: 'Québec', cityPt: 'Quebec (cidade)', country: 'CAN', codes: ['CA-QC'], fact: 'Fundada em 1608 por Samuel de Champlain; o bairro antigo, murado, é patrimônio da UNESCO.' },
+    { city: 'Bruxelles', cityPt: 'Bruxelas', country: 'BEL', codes: ['BE-BRU'], fact: 'Capital da Bélgica, oficialmente bilíngue (francês e holandês), e sede de instituições da União Europeia.' },
+    { city: 'Genève', cityPt: 'Genebra', country: 'CHE', codes: ['CH-GE'], fact: 'Na ponta do lago Léman, é sede europeia da ONU e sede da Cruz Vermelha.' },
+    { city: 'Dakar', cityPt: 'Dacar', country: 'SEN', codes: ['SN-DK'], fact: 'A capital do Senegal, na ponta mais ocidental da África continental; ali o francês convive com o uólofe.' },
+    { city: 'Port-au-Prince', cityPt: 'Porto Príncipe', country: 'HTI', codes: ['HT-OU'], fact: 'A capital do Haiti, onde as línguas oficiais são o francês e o crioulo haitiano.' },
+    { city: 'Abidjan', cityPt: 'Abidjan', country: 'CIV', codes: ['CI-AB', 'CI-LG'], fact: 'A maior cidade da Costa do Marfim e uma das maiores cidades francófonas do mundo.' },
+  ],
 };
 
 /** A pista falada: «Linu viaja a Sevilla» no idioma estudado. */
@@ -127,6 +147,8 @@ export function clueSentence(lang: string, city: string): string {
       return `Лину е́дет в го́род ${city}.`;
     case 'sv':
       return `Linu reser till ${city}.`;
+    case 'fr':
+      return `Linu voyage à ${city}.`;
     default:
       return city;
   }

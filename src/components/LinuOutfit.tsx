@@ -58,6 +58,28 @@ export function OutfitArt({ id }: { id: string }) {
           </G>
         </G>
       );
+    case 'bigoudene':
+      return (
+        <G>
+          {/* a coiffe bigoudène: uma torre estreita de renda branca sobre a touquinha presa atrás da cabeça */}
+          <Path d="M33 34 Q33 21 60 19 Q87 21 87 34 Q60 28 33 34 Z" fill="#FFFFFF" stroke="#CBD5E1" strokeWidth="0.8" />
+          <Path d="M52 25 L54 2 Q60 0.5 66 2 L68 25 Z" fill="#FFFFFF" stroke="#CBD5E1" strokeWidth="0.8" />
+          <Path d="M53.5 21 L66.5 21 M54 15 L66 15 M54.5 9 L65.5 9" stroke="#E2E8F0" strokeWidth="0.9" />
+          {[
+            [57, 5],
+            [63, 5],
+            [57, 12],
+            [60, 12],
+            [63, 12],
+            [57, 18],
+            [60, 18],
+            [63, 18],
+          ].map(([x, y]) => (
+            <Circle key={`${x}-${y}`} cx={x} cy={y} r="0.9" fill="#CBD5E1" />
+          ))}
+          <Path d="M38 31 Q60 25 82 31" stroke="#E2E8F0" strokeWidth="1" strokeDasharray="1.6 1.4" fill="none" />
+        </G>
+      );
     case 'kokoshnik':
       return (
         <G>
