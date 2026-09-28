@@ -5,4 +5,8 @@
  */
 export const CORRECOES_JA: Record<string, string> = {
   リヌ: 'リヌ',
+  // o IPADIC lê 日本 como «ニッポン» em alguns contextos; a leitura comum é «にほん»
+  日本: 'ニホン',
+  日本人: 'ニホンジン',
+  日本語: 'ニホンゴ',
 };
