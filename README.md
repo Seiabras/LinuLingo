@@ -20,6 +20,7 @@ As faixas que rolam para os lados (fotos, trilha de subníveis, idiomas e regiõ
 | 🇮🇹 Italiano | Indo-europeu › Itálico › Românico › Ítalo-dálmata | **disponível** |
 | 🇵🇹 Português de Portugal | Indo-europeu › Itálico › Românico › Ibero-românico › Galego-português | **disponível** |
 | 🇫🇷 Francês | Indo-europeu › Itálico › Românico › Galo-românico | **disponível** |
+| 🇪🇸 Catalão | Indo-europeu › Itálico › Românico › Occitano-românico | **disponível** |
 | 🇸🇪 Sueco | Indo-europeu › Germânico › Germânico setentrional › Nórdico oriental | **disponível** |
 | 🇳🇴 Norueguês (bokmål, com o nynorsk como variante) | Indo-europeu › Germânico › Germânico setentrional › Nórdico ocidental | **disponível** |
 | 🇩🇰 Dinamarquês | Indo-europeu › Germânico › Germânico setentrional › Nórdico oriental | **disponível** |
@@ -29,6 +30,7 @@ As faixas que rolam para os lados (fotos, trilha de subníveis, idiomas e regiõ
 | 🇫🇮 Finlandês | Urálico › Fínico › Fínico setentrional | **disponível** |
 | 🇪🇪 Estoniano | Urálico › Fínico › Fínico meridional | **disponível** |
 | 🇱🇹 Lituano | Indo-europeu › Báltico › Báltico oriental | **disponível** |
+| 🇱🇻 Letão | Indo-europeu › Báltico › Báltico oriental | **disponível** |
 | 🇯🇵 Japonês | Japônico | em breve |
 | 🇰🇷 Coreano | Coreânico | em breve |
 | 🇨🇳 Chinês mandarim | Sino-tibetano › Sinítico › Mandarim | em breve |
@@ -41,6 +43,7 @@ As faixas que rolam para os lados (fotos, trilha de subníveis, idiomas e regiõ
 | 🇻🇳 Vietnamita | Austro-asiático › Vietico › Viet-muong | em breve |
 | 🇮🇳 Télugo | Dravídico › Dravídico centro-meridional | em breve |
 | 🇹🇷 Turco | Túrquico › Oghuz | em breve |
+| 🇹🇿 Suaíli | Níger-Congo › Atlântico-congolês › Benue-congolês › Banto | **disponível** |
 | 🇳🇬 Hauçá | Afro-asiático › Chádico › Chádico ocidental | em breve |
 | 🇪🇹 Amárico | Afro-asiático › Semítico › Semítico etiópico | em breve |
 | 🇳🇬 Iorubá | Níger-Congo › Atlântico-congolês › Volta-Níger › Iorubóide | em breve |
@@ -113,6 +116,13 @@ Cada idioma mostra os seus jeitos regionais de falar (18 no espanhol, 5 no romen
 - **IPA por regras** da norma de Paris (src/services/ipa-fr.ts: vogais nasais, e mudo, letras finais mudas, liaison obrigatória, elisão, o «-ent» mudo dos verbos) com 467 correções num dicionário (src/data/fr/pronuncia.ts); voz neural embutida SIWIS (CC BY 4.0). 3.820 palavras com gravação de falantes nativos (Lingua Libre, 53 falantes; CC0, CC BY e CC BY-SA).
 - Linguística nas 7 áreas, pares mínimos (u × ou, as nasais), bichos em francês, 5 artigos graduados (baguete, la bise, Tour de France, canal du Midi, Juramentos de Estrasburgo), expedições por 18 cidades (Paris, Lyon, Marselha, Estrasburgo, Montreal, Quebec, Bruxelas, Genebra, Dacar, Porto Príncipe, Abidjan…), a França nos «Bichos e sons» (o galo, o cavalo da Camargue, o biniou, a viela de roda) e a roupinha do Linu: a coiffe bigoudène da Bretanha.
 - `scripts/checar-vocab-fr.ts` e `scripts/checar-conteudo-fr.ts` conferem acentos, elisão, apóstrofo reto e letras de outras línguas; `npx tsx scripts/fluxo-frances.mjs` percorre o idioma no navegador.
+
+## O que tem no catalão
+
+- Norma do Institut d'Estudis Catalans (pronúncia do catalão central, a de Barcelona), com valenciano e balear tratados como variação dialetal dentro da própria gramática, em vez de um pacote à parte. 3.726 palavras (gênero, falsos amigos e feminino irregular marcados na tradução), 15 unidades, 54 tópicos de gramática (da pronúncia e do «bon dia» aos pronoms febles, à passiva pronominal — que não aceita agente com «per» — e aos numerais), 45 histórias por Catalunha, Comunidade Valenciana, Baleares, Andorra, a Catalunha do Norte e l'Alguer (Cadaqués, Girona, Valls, Sant Jordi, la Patum, els castellers…), 15 falsos amigos (embaràs, carro, llarg…), 61 etimologias e 7 sotaques e línguas pròpries (central, nord-occidental, valencià, balear, rossellonès, alguerès e l'aranès, que não é catalão — é occitano).
+- **Sem gênero neutro** (só masculino e feminino, ao contrário do -o final do espanhol e do italiano); pares mínimos (a vogal neutra, l × ll × l·l, ny, x/ix × s/ss); bichos em catalão; sotaque de cada região, com o article salat balear (es, sa, ses) e o «lo» arcaico do nord-occidental.
+- **IPA por regras** do catalão central (src/services/ipa-ca.ts: redução das átonas a/e → [ə] e o → [u], ll/ny/l·l/x/ix/tx/ig/tg/tz, sonorização entre vogais, b/d/g brandos [β ð ɣ], ensurdecimento final, contrações de clíticos como l'home e fer-ho) com um dicionário de correções (src/data/ca/pronuncia.ts) para o timbre de «e» e «o» tônicos sem acento gráfico, que a escrita não mostra (vell [e] × nen [ɛ]) — inclui os padrões sistemáticos do sufixo -or/-dor/-ior de agente e comparativo, sempre fechado (professor, ordinador, interior, dolor, ao contrário de palavras-raiz como flor e port, que ficam abertas), e do plural sem acento -cions/-ions, também fechado (eleccions, milions), conferidos contra o Viccionari.
+- `npx tsx scripts/fluxo-catala.mjs` percorre o idioma no navegador.
 
 ## O que tem no sueco
 
@@ -339,6 +349,8 @@ npx tsx scripts/fluxo-finlandes.mjs       # finlandês: palácio sem gênero, va
 npx tsx scripts/fluxo-feroes.mjs          # feroês: palácio com 3 gêneros, diário (acentos), IPA
 npx tsx scripts/fluxo-estoniano.mjs       # estoniano: palácio sem gênero, diário (õ ä ö ü), IPA
 npx tsx scripts/fluxo-lituano.mjs         # lituano: palácio m/f, diário (ą č ę ė į š ų ū ž), IPA com a tônica livre
+npx tsx scripts/fluxo-letao.mjs           # letão: palácio m/f, diário (ā č ē ģ ī ķ ļ ņ š ū ž), IPA com a tônica inicial
+npx tsx scripts/fluxo-suaili.mjs          # suaíli: sem gênero (classes nominais), IPA, cumprimentos
 npx tsx scripts/fluxo-portugues.mjs        # português de Portugal: variante do Brasil (IPA), diário (estar a, ênclise), falsos amigos
 npx tsx scripts/fluxo-italiano.mjs        # italiano: falsos amigos, IPA, palácio, variante da Suíça, linguística, diário
 node scripts/fluxo-mapa.mjs                # mapa ISO 3166-1/3166-3, zoom nas subdivisões e variante da Moldávia

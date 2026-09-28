@@ -28,6 +28,7 @@ const LANGS = {
   fr: { wikidata: 'Q150', iso3: 'fra', category: 'Lingua_Libre_pronunciation-fra' },
   ja: { wikidata: 'Q5287', iso3: 'jpn', category: 'Lingua_Libre_pronunciation-jpn' },
   ko: { wikidata: 'Q9176', iso3: 'kor', category: 'Lingua_Libre_pronunciation-kor' },
+  ca: { wikidata: 'Q7026', iso3: 'cat', category: 'Lingua_Libre_pronunciation-cat' },
 };
 const lang = process.argv[2] ?? 'ro';
 const cfg = LANGS[lang];

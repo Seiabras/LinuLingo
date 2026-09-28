@@ -11,6 +11,10 @@ import { ACCENTS_CA } from './sotaques';
 import { PARES_CA } from './pares';
 import { BICHOS_CA } from './bichos';
 import { FALSE_FRIENDS_CA } from './falsos-amigos';
+import { IPA_CA } from './pronuncia';
+import { setPronunciationLexiconCa, toIpaCa } from '@/services/ipa-ca';
+
+setPronunciationLexiconCa(IPA_CA);
 
 export const CATALAO: LanguagePack = {
   code: 'ca',
@@ -27,6 +31,7 @@ export const CATALAO: LanguagePack = {
   },
   speechLocale: 'ca-ES',
   available: true,
+  ipa: toIpaCa,
   vocab: VOCAB_CA,
   units: UNITS_CA,
   etymology: ETYMOLOGY_CA,
