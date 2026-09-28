@@ -198,7 +198,7 @@ Fontes:
 - [r/tsevhu](https://www.reddit.com/r/tsevhu/)
 - [Discord](https://discord.com/invite/75QKKMcR25)
 
-Se os autores pedirem, o módulo sai. O teste de ponta a ponta é `npx tsx scripts/fluxo-tsevhu.mjs`.
+Usado com autorização dos autores (setembro de 2026). O teste de ponta a ponta é `npx tsx scripts/fluxo-tsevhu.mjs`.
 
 ## Rodar
 

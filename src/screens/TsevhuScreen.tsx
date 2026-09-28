@@ -104,7 +104,7 @@ function Intro({ dark, onGo }: { dark: boolean; onGo: (t: Tab) => void }) {
       <Card className="gap-2">
         <Text className="text-base font-extrabold text-slate-900 dark:text-white">Créditos</Text>
         <Text className="text-sm leading-5 text-slate-700 dark:text-slate-300">
-          O Tsevhu foi criado em 2020 por Koa Vhukva («koallary») e cresce com a comunidade. O dicionário, a gramática, as frases e a tabela do Koiwrit vêm das fontes públicas dos autores; as traduções para o português são do LinuLingo. Os sinais do Koiwrit aqui são uma versão estilizada: confira a tabela oficial nos tutoriais. Não há voz para o Tsevhu: a pronúncia aparece em IPA.
+          O Tsevhu foi criado em 2020 por Koa Vhukva («koallary») e cresce com a comunidade, que autorizou o uso no LinuLingo. O dicionário, a gramática, as frases e a tabela do Koiwrit vêm das fontes públicas dos autores; as traduções para o português são do LinuLingo. Os sinais do Koiwrit aqui são uma versão estilizada: confira a tabela oficial nos tutoriais. Não há voz para o Tsevhu: a pronúncia aparece em IPA.
         </Text>
         {LINKS.map(([label, url]) => (
           <Pressable key={url} accessibilityRole="link" onPress={() => Linking.openURL(url)}>
