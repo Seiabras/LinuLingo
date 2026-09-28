@@ -3238,4 +3238,85 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       { question: "Complete: «De mica en mica s'omple la ___.»", options: ["pica", "casa", "boca"], answer: "pica", explanation: "A pica é a pia (de pedra)." },
     ],
   },
+  {
+    id: 'ca-g39',
+    level: 'B2.4',
+    title: "Numerais, expressão da hora (sistema de quarts) e datas",
+    emoji: '🔢',
+    summary:
+      'A regra do hífen nos numerais (entre dezena e unidade, e entre unidade e centena — mas com espaço entre o bloco da centena e o que vem depois), a concordância de gênero dos cardinais, o sistema tradicional catalão de horas por quartos ("sistema de quarts") e a sintaxe culta na indicação de datas e anos.',
+    sections: [
+      {
+        heading: 'Numerais cardinais, concordância e o hífen',
+        text: "Os numerais em catalão concordam em gênero no «2» (dos/dues) e nas centenas (dos-cents/dues-centes). O hífen aparece em dois lugares: entre dezena e unidade («trenta-quatre»; só o «vint» usa «-i-»: «vint-i-dos») e entre unidade e centena, para formar a própria centena («dos-cents», «cinc-centes»). Mas depois do bloco da centena, antes da dezena/unidade seguinte, fica um espaço, não hífen: «dos-cents quaranta-tres», não «dos-cents-quaranta-tres».",
+        table: {
+          head: ['Numeral/regra', 'Exemplo em catalão', 'Explicação'],
+          rows: [
+            ['Concordância de gênero (2)', 'dos homes / dues dones', 'usam-se «dos» (masc.) e «dues» (fem.)'],
+            ['Concordância nas centenas', 'dos-cents euros / dues-centes pàgines', 'a centena flexiona em gênero, com hífen interno'],
+            ['Hífen entre dezena e unidade', 'vint-i-dos / trenta-quatre', 'hífen sempre; só «vint» leva «-i-»'],
+            ['Espaço entre centena e o resto', 'dos-cents quaranta-tres', 'depois do bloco da centena vem um espaço, não hífen'],
+          ],
+        },
+        examples: [
+          ['Tinc dues-centes trenta-dues pàgines per llegir.', 'Tenho duzentas e trinta e duas páginas para ler.'],
+          ['A la reunió hi havia quatre-cents cinquanta assistents.', 'Na reunião havia quatrocentos e cinquenta participantes.'],
+        ],
+      },
+      {
+        heading: 'A hora: o sistema tradicional de quartos ("sistema de quarts")',
+        text: 'O catalão tem um sistema tradicional, muito usado na fala e na mídia, que conta quantos quartos de hora já passaram a caminho da PRÓXIMA hora: [quantidade de quartos] + «de» + [hora seguinte]. Para os minutos que não caem exatamente num quarto, soma-se «i cinc» ou «i deu» (sempre somando, nunca subtraindo).',
+        table: {
+          head: ['Hora', 'Sistema de quarts', 'Lógica'],
+          rows: [
+            ['03:15', 'un quart de quatre', '1 quarto a caminho das 4'],
+            ['03:30', 'dos quarts de quatre', '2 quartos a caminho das 4'],
+            ['03:45', 'tres quarts de quatre', '3 quartos a caminho das 4'],
+            ['03:20', 'un quart i cinc de quatre', '1 quarto + 5 min a caminho das 4'],
+            ['03:40', 'dos quarts i deu de quatre', '2 quartos + 10 min a caminho das 4'],
+          ],
+        },
+        examples: [
+          ['Ens trobarem a dos quarts de deu del vespre.', 'Nos encontraremos às nove e meia da noite.'],
+          ["El tren surt a tres quarts d'una.", 'O trem sai ao meio-dia e quarenta e cinco (ou 0h45).'],
+        ],
+      },
+      {
+        heading: 'Datas, dias da semana e anos',
+        text: 'O ano não leva «en» (isso é castelhano): usa-se o artigo, «el 2026», ou «l\'any 2026». Nas datas completas, «el» + dia + «de» + mês. Para um dia específico da semana, artigo no singular («el dilluns»); para algo que se repete toda semana, artigo no plural («els dissabtes»).',
+        table: {
+          head: ['Elemento', 'Exemplo em catalão', 'Tradução'],
+          rows: [
+            ['Ano (sem «en»)', "El concert serà el 2026 (ou l'any 2026).", 'O show será em 2026.'],
+            ['Data completa', 'Avui és el 28 de setembre.', 'Hoje é 28 de setembro.'],
+            ['Dia específico', 'El dilluns tinc examen de català.', 'Na segunda-feira tenho prova de catalão.'],
+            ['Recorrência', 'Els dissabtes faig esport.', 'Aos sábados faço esporte.'],
+          ],
+        },
+        examples: [
+          ["L'empresa es va fundar l'any 1998.", 'A empresa foi fundada no ano de 1998.'],
+          ['Ens veiem el divendres que ve a les tres.', 'Nos vemos na próxima sexta-feira às três horas.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Nada de «en» antes do ano: «el 2026» ou «l\'any 2026», nunca «en 2026».',
+      "«Dos» é masculino: nas horas, sempre feminino, «són les dues», nunca «són les dos».",
+      "Entre o bloco da centena e o que vem depois é espaço, não hífen: «dos-cents quaranta-tres», não «dos-cents-quaranta-tres».",
+    ],
+    quiz: [
+      {
+        question: 'Como se diz 07:30 no sistema tradicional de quartos?',
+        options: ['dos quarts de vuit', "dos quarts d'vuit", 'set i mitja'],
+        answer: 'dos quarts de vuit',
+        explanation: '07:30 é «dois quartos a caminho das oito». «Vuit» começa com consoante (som [b]), então não há elisão: «de vuit», não «d\'vuit».',
+      },
+      {
+        question: 'Como se diz corretamente «faremos a viagem em 2025»?',
+        options: ['Farem el viatge en 2025.', 'Farem el viatge el 2025.', 'Farem el viatge a 2025.'],
+        answer: 'Farem el viatge el 2025.',
+        explanation: 'Catalão não usa «en» com anos isolados: «el 2025» ou «l\'any 2025».',
+      },
+    ],
+  },
 ];
