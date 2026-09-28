@@ -1408,4 +1408,110 @@ export const STORIES_KO_1: StorySeed[] = [
       },
     },
   },
+  {
+    id: 'ko-h15',
+    level: 'B1.1',
+    cefr: 'B1',
+    title: '대치동 학원의 밤',
+    emoji: '📚',
+    summary: 'Às nove da noite, no bairro dos cursinhos de Seul, o Linu visita uma turma de adolescentes exaustos e conversa com o Jiho, que não sabe qual é o seu sonho.',
+    cultural_context:
+      'Daechi-dong, em Gangnam, é o bairro de cursinhos (학원) mais famoso da Coreia: rua após rua, os prédios são cobertos de placas de cursos de inglês, matemática e redação. Muitos alunos saem da escola, jantam um lanche na loja de conveniência e seguem para o 학원 até a noite. Em Seul, uma norma municipal limita as aulas dos cursinhos a dez da noite; nessa hora, as ruas se enchem de carros de pais esperando os filhos, e muitos ainda vão para uma sala de estudo (독서실). Tudo gira em torno do 수능, o vestibular nacional de novembro: no dia da prova, até os pousos e decolagens de aviões são suspensos durante a parte de compreensão oral do inglês.',
+    start: 'start',
+    glossary: [
+      ['학원', 'cursinho, escola particular de reforço'],
+      ['원장님', 'diretor do 학원 (com o honorífico 님)'],
+      ['수능', 'o vestibular nacional coreano'],
+      ['오셨어 / 계셨어요', 'veio / estava, com o honorífico -시- (왔어, 있었어요 para os mais velhos ou visitas)'],
+      ['초대해 주셔서 감사합니다', 'obrigado pelo convite (-아/어 주셔서: por fazer isso por mim)'],
+      ['-거든요', 'é que …: explica o motivo (숙제했거든요: é que eu fiz lição)'],
+      ['새벽 두 시 / 두 시간', 'duas da madrugada / duas horas de duração'],
+      ['얘들아', 'pessoal!, crianças! (chamando um grupo de alunos)'],
+      ['꿈', 'sonho (o que se quer da vida)'],
+      ['독서실', 'sala de estudo paga, silenciosa, aberta até tarde'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🏢',
+        text: '밤 아홉 시, 서울 대치동. 큰길 양쪽 건물마다 학원 간판이 빼곡했어요. 리누의 친구 은지 씨는 여기 영어 학원 선생님이에요. «리누 씨, 오늘 우리 반 학생들한테 남극 이야기 좀 해 줄 수 있어요?»',
+        translation: 'Nove da noite, em Daechi-dong, Seul. Dos dois lados da avenida, todos os prédios estavam cobertos de placas de cursinhos. A amiga do Linu, a Eunji, é professora de um cursinho de inglês ali. «Linu, você pode contar um pouco da Antártida para os alunos da minha turma hoje?»',
+        choices: [
+          { text: '«물론이죠! 재미있게 해 볼게요.»', translation: '«Claro! Vou tentar deixar divertido.»', next: 'recepcao' },
+          { text: '«밤 아홉 시에 아직 수업이 있어요?»', translation: '«Ainda tem aula às nove da noite?»', next: 'horario' },
+        ],
+      },
+      horario: {
+        emoji: '🕘',
+        text: '은지 씨가 웃었어요. «그럼요. 학생들은 학교가 끝나면 바로 학원에 와요. 저녁은 편의점에서 먹는 경우가 많고요. 그래도 서울에서는 학원 수업을 밤 열 시까지만 할 수 있어요. 규칙으로 정해져 있거든요.»',
+        translation: 'A Eunji riu. «Claro que tem. Os alunos saem da escola e vêm direto para o cursinho. Muitas vezes jantam na loja de conveniência. Mas em Seul as aulas do cursinho só podem ir até as dez da noite. É uma regra.»',
+        choices: [{ text: '«그렇군요. 그럼 빨리 올라가요!»', translation: '«Entendi. Então vamos subir logo!»', next: 'recepcao' }],
+      },
+      recepcao: {
+        emoji: '🤝',
+        text: '학원 입구에서 원장님이 기다리고 계셨어요. 은지 씨가 소개했어요. «원장님, 이쪽은 제 친구 리누 씨예요.» 원장님이 고개를 숙이셨어요. «먼 데서 와 주셔서 고마워요.»',
+        translation: 'Na entrada do cursinho, o diretor estava esperando. A Eunji apresentou: «Diretor, este é o meu amigo Linu.» O diretor fez uma leve reverência. «Obrigado por ter vindo de tão longe.»',
+        choices: [{ text: '«안녕하십니까, 원장님. 초대해 주셔서 감사합니다.»', translation: '«Boa noite, diretor. Obrigado pelo convite.»', next: 'sala' }],
+      },
+      sala: {
+        emoji: '😴',
+        text: '교실에는 고등학생 열두 명이 앉아 있었어요. 모두 피곤해 보였어요. 맨 뒤의 한 학생은 책상에 엎드려 자고 있었어요. 은지 씨가 말했어요. «얘들아, 오늘은 특별한 손님이 오셨어!»',
+        translation: 'Na sala havia doze alunos do ensino médio sentados. Todos pareciam cansados. Um aluno, lá no fundo, dormia debruçado na carteira. A Eunji disse: «Pessoal, hoje temos uma visita especial!»',
+        choices: [
+          { text: '«안녕하세요! 저는 남극에서 온 리누예요. 우리 펭귄 퀴즈 할까요?»', translation: '«Olá! Eu sou o Linu e vim da Antártida. Vamos fazer um quiz sobre pinguins?»', next: 'quiz' },
+          { text: '리누는 맨 뒤로 가서 자는 학생을 살짝 깨웠어요.', translation: 'O Linu foi até o fundo e acordou de leve o aluno que dormia.', next: 'jiho' },
+          {
+            text: '«손님이 어디 계세요? 저도 보고 싶어요.»',
+            translation: '«Onde está a visita? Eu também quero ver.»',
+            wrong: 'A professora anunciou «특별한 손님이 오셨어!» (chegou uma visita especial!), e a visita é o próprio Linu. Repare no honorífico: 오셨어 é 왔어 com -시-, por respeito à visita.',
+          },
+        ],
+      },
+      jiho: {
+        emoji: '🥱',
+        text: '학생이 눈을 비비면서 일어났어요. 이름표에 «지호»라고 쓰여 있었어요. «죄송해요… 어제 새벽 두 시까지 숙제했거든요.»',
+        translation: 'O aluno se levantou esfregando os olhos. No crachá estava escrito «Jiho». «Desculpa… É que ontem fiquei fazendo lição até as duas da madrugada.»',
+        choices: [
+          { text: '«괜찮아요. 많이 힘들죠? 오늘은 공부 말고 남극 이야기를 할 거예요.»', translation: '«Tudo bem. Está puxado, né? Hoje, em vez de estudar, vamos falar da Antártida.»', next: 'quiz' },
+          {
+            text: '«숙제를 두 시간밖에 안 했어요? 더 해야죠!»',
+            translation: '«Você só fez duas horas de lição? Tem que fazer mais!»',
+            wrong: 'O Jiho disse «새벽 두 시까지»: fez lição ATÉ as duas da madrugada. 두 시 é a hora no relógio; «duas horas de duração» seria 두 시간. O -거든요 explica o motivo do sono.',
+          },
+        ],
+      },
+      quiz: {
+        emoji: '🐧',
+        text: '리누가 물었어요. «펭귄은 물속에서 얼마나 빨리 헤엄칠까요?» 학생들이 하나둘 고개를 들었어요. 퀴즈가 계속되자 교실이 시끌시끌해졌어요. 맨 뒤에 앉은 지호도 손을 들었어요. «시속 이십 킬로미터요?»',
+        translation: 'O Linu perguntou: «Com que velocidade um pinguim nada debaixo d’água?» Um a um, os alunos levantaram a cabeça. Com o quiz, a sala foi ficando barulhenta. O Jiho, sentado no fundo, também levantou a mão. «Vinte quilômetros por hora?»',
+        choices: [{ text: '«거의 맞았어요! 제 친구 젠투펭귄은 시속 삼십 킬로미터도 넘게 헤엄쳐요.»', translation: '«Quase! O meu amigo pinguim-gentoo nada a mais de trinta quilômetros por hora.»', next: 'pergunta' }],
+      },
+      pergunta: {
+        emoji: '💭',
+        text: '수업이 끝날 무렵, 지호가 조용히 물었어요. «리누 씨는 어렸을 때 꿈이 뭐였어요? 저는 제 꿈이 뭔지 모르겠어요. 그냥 수능만 생각해요.»',
+        translation: 'Perto do fim da aula, o Jiho perguntou baixinho: «Linu, qual era o seu sonho quando você era pequeno? Eu não sei qual é o meu sonho. Só penso no 수능.»',
+        choices: [
+          { text: '«저는 세상의 모든 바다를 헤엄치고 싶었어요. 지호 학생도 좋아하는 걸 천천히 찾아봐요.»', translation: '«Eu queria nadar em todos os mares do mundo. Você também, Jiho, vai procurando com calma o que você gosta.»', next: 'dez' },
+          { text: '«꿈은 나중에 생각해요. 지금은 공부만 열심히 해요.»', translation: '«Pense no sonho depois. Agora, só estude bastante.»', next: 'final_apostila' },
+        ],
+      },
+      dez: {
+        emoji: '🚙',
+        text: '어느새 밤 열 시가 됐어요. 원장님이 교실 문을 여셨어요. «자, 열 시예요. 모두 집에 가야죠.» 학원 앞 길에는 학부모들의 차가 줄지어 서 있었어요.',
+        translation: 'De repente, já eram dez da noite. O diretor abriu a porta da sala. «Pronto, dez horas. Todo mundo para casa.» Na rua em frente ao cursinho, os carros dos pais faziam fila.',
+        choices: [{ text: '리누는 학생들과 같이 계단을 내려갔어요.', translation: 'O Linu desceu a escada junto com os alunos.', next: 'final_bom' }],
+      },
+      final_bom: {
+        emoji: '🎉',
+        text: '학원 앞에서 지호가 말했어요. «오늘 처음으로 학원이 재미있었어요. 저도 좋아하는 걸 찾아볼게요.» 지호는 웃으면서 엄마 차에 탔어요. 은지 씨가 리누에게 물었어요. «다음 달에도 와 줄 수 있죠?»',
+        translation: 'Na frente do cursinho, o Jiho disse: «Hoje, pela primeira vez, o cursinho foi divertido. Eu também vou procurar o que eu gosto.» O Jiho entrou no carro da mãe sorrindo. A Eunji perguntou ao Linu: «Você volta no mês que vem, né?»',
+        ending: { tone: 'bom', title: 'Aula depois das nove', message: 'O Linu tratou o diretor com honoríficos, acordou uma turma cansada com um quiz e ouviu o Jiho de verdade.' },
+      },
+      final_apostila: {
+        emoji: '📖',
+        text: '지호는 고개를 끄덕이고 다시 문제집을 폈어요. 열 시에 수업이 끝났지만, 지호는 독서실에 간다고 했어요. 리누는 지호의 뒷모습을 보면서 마음이 조금 무거웠어요.',
+        translation: 'O Jiho fez que sim com a cabeça e abriu de novo o livro de exercícios. A aula terminou às dez, mas o Jiho disse que ia para a sala de estudo. Vendo o Jiho se afastar, o Linu ficou com o coração um pouco pesado.',
+        ending: { tone: 'neutro', title: 'De volta à apostila', message: 'O Linu repetiu o que o Jiho escuta todo dia. Às vezes, um adolescente cansado precisa mais de escuta do que de conselho.' },
+      },
+    },
+  },
 ];

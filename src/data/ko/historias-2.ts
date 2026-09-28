@@ -817,4 +817,110 @@ export const STORIES_KO_2: StorySeed[] = [
       },
     },
   },
+  {
+    id: 'ko-h29',
+    level: 'B2.2',
+    cefr: 'B2',
+    title: '천 년 가는 종이',
+    emoji: '📜',
+    summary: 'Numa oficina de papel tradicional em Jeonju, o Linu aprende com um velho mestre a tirar uma folha de 한지 pelo método coreano, que cruza as fibras para o papel durar mil anos.',
+    cultural_context:
+      'O 한지 é feito da casca da amoreira-do-papel (닥나무): a casca é cozida no vapor, descascada, fervida em água de cinzas, batida até soltar as fibras e misturada na água com a seiva viscosa da 닥풀. No método tradicional coreano, o 외발뜨기, a peneira fica pendurada num fio só e a água é jogada para trás e para os lados, cruzando as fibras em camadas; por isso o papel resiste em todas as direções. Um velho ditado diz 지천년 견오백 (紙千年 絹五百): «o papel dura mil anos; a seda, quinhentos». Jeonju, no sudoeste do país, é famosa pelo papel desde a era Joseon e também pela comida: o 비빔밥 e o 콩나물국밥, sopa de broto de feijão com arroz, acompanhada do 모주, bebida doce de 막걸리 fervido com ervas e especiarias.',
+    start: 'start',
+    glossary: [
+      ['한지', 'papel tradicional coreano'],
+      ['닥나무 / 닥풀', 'amoreira-do-papel (a fibra do 한지) / planta cuja seiva viscosa espalha as fibras na água'],
+      ['종이를 뜨다', '«tirar» a folha de papel da tina com a peneira'],
+      ['외발뜨기', 'o método coreano: peneira pendurada num fio só, balançada para a frente e para os lados'],
+      ['세게 흔드는 바람에', 'por ter balançado forte demais (-는 바람에: causa inesperada, resultado ruim)'],
+      ['급하게 뜨다가는', 'se ficar tirando com pressa… (-다가는: se continuar assim, vai dar errado)'],
+      ['찢어지지 않을 뿐만 아니라', 'não só não rasga, como também… (-을 뿐만 아니라)'],
+      ['도침', 'bater o papel seco com um maço para deixá-lo liso e brilhante'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🪵',
+        text: '전주 한옥마을 골목 끝에 있는 한지 공방에는 젖은 나무껍질 냄새가 가득했다. 커다란 물통 앞에서 일흔이 넘은 최 장인이 대나무 발로 물을 떠서 앞뒤로, 옆으로 흔들고 계셨다. 몇 번 흔들고 나자 발 위에 얇고 하얀 막이 생겼다. 장인은 리누를 보고 웃으셨다. “종이는 천 년, 비단은 오백 년이라는 말 알아요? 오늘은 천 년 가는 종이를 한번 떠 봐요.”',
+        translation: 'A oficina de papel no fim de um beco do bairro tradicional de Jeonju cheirava a casca de árvore molhada. Diante de uma tina enorme, o mestre Choi, de mais de setenta anos, pegava água com uma peneira de bambu e a balançava para a frente e para trás, e depois para os lados. Depois de umas balançadas, formou-se sobre a peneira uma película fina e branca. O mestre olhou para o Linu e sorriu: «Conhece o ditado «o papel dura mil anos; a seda, quinhentos»? Hoje você vai tirar uma folha de papel que dura mil anos.»',
+        choices: [
+          { text: '리누는 한지를 무엇으로 만드는지부터 여쭤보았다.', translation: 'O Linu perguntou primeiro de que é feito o 한지.', next: 'gongbang' },
+          { text: '리누는 신이 나서 바로 발을 잡고 물을 떠 보았다.', translation: 'Empolgado, o Linu pegou a peneira na hora e tentou tirar a água.', next: 'baro' },
+        ],
+      },
+      baro: {
+        emoji: '💦',
+        text: '리누는 장인을 흉내 내어 발로 물을 크게 떴다. 그런데 물을 너무 세게 흔드는 바람에 물이 사방으로 튀었고, 발 위의 막은 가운데가 뻥 뚫려 버렸다. 장인은 앞치마로 얼굴의 물을 닦으며 껄껄 웃으셨다. “급하게 뜨다가는 종이가 다 찢어져요. 종이가 뭘로 만들어지는지부터 알아야지.”',
+        translation: 'O Linu imitou o mestre e pegou uma porção grande de água com a peneira. Mas balançou com tanta força que a água espirrou para todo lado, e a película abriu um buraco bem no meio. O mestre enxugou o rosto com o avental e deu uma gargalhada: «Se ficar tirando com pressa, o papel rasga todo. Primeiro tem que saber de que o papel é feito.»',
+        choices: [
+          { text: '리누는 부끄러워하며 장인의 설명을 듣기로 했다.', translation: 'Envergonhado, o Linu resolveu ouvir a explicação do mestre.', next: 'gongbang' },
+        ],
+      },
+      gongbang: {
+        emoji: '🌿',
+        text: '장인은 마당에 쌓인 회색 나무껍질을 보여 주셨다. “한지는 닥나무 껍질로 만들어요. 껍질을 쪄서 벗기고, 잿물에 삶고, 방망이로 두드려서 섬유를 풀어요.” 그 섬유를 물에 풀고, 닥풀 뿌리에서 나온 끈적한 즙을 섞는다고 하셨다. “닥풀이 있어야 섬유가 물속에 골고루 퍼져요. 그래야 종이가 고르게 떠지고요.”',
+        translation: 'O mestre mostrou as cascas cinzentas empilhadas no pátio: «O 한지 é feito da casca da amoreira-do-papel. A gente cozinha a casca no vapor, descasca, ferve em água de cinzas e bate com um maço para soltar as fibras.» Depois, explicou, as fibras são desmanchadas na água e misturadas com a seiva pegajosa da raiz da 닥풀. «Sem a 닥풀, as fibras não se espalham por igual na água. E só assim a folha sai uniforme.»',
+        choices: [
+          { text: '“그럼 아까 발을 앞뒤로, 옆으로 흔드신 건 왜 그런 거예요?”', translation: '«E por que o senhor balançou a peneira para a frente, para trás e para os lados?»', next: 'balddeugi' },
+          {
+            text: '리누는 한지가 볏짚으로 만든 종이라고 수첩에 적었다.',
+            translation: 'O Linu anotou no caderninho que o 한지 é um papel feito de palha de arroz.',
+            wrong: 'O mestre disse «한지는 닥나무 껍질로 만들어요»: o 한지 é feito da CASCA da amoreira-do-papel (닥나무), não de palha de arroz. A 닥풀 é só a planta cuja seiva ajuda a espalhar as fibras.',
+          },
+        ],
+      },
+      balddeugi: {
+        emoji: '🎋',
+        text: '“그게 외발뜨기예요.” 장인은 천장에 매달린 줄 하나를 가리키셨다. 발을 줄 하나에 걸고, 앞에서 물을 떠서 뒤로 흘려보낸 다음 옆으로도 흘려보낸다. 그러면 섬유가 가로로도 세로로도 엇갈려 겹겹이 쌓인다. “그래서 한지는 어느 쪽으로도 잘 찢어지지 않을 뿐만 아니라, 오래 두어도 잘 상하지 않아요. 앞뒤로만 뜨면 빨리 뜰 수는 있지만, 한 방향으로 쉽게 찢어지지.”',
+        translation: '«Isso é o 외발뜨기.» O mestre apontou um único fio pendurado no teto. A peneira fica presa a esse fio só; pega-se a água pela frente, deixa-se escorrer para trás e depois também para os lados. Assim as fibras se acumulam em camadas cruzadas, na horizontal e na vertical. «Por isso o 한지 não só não rasga fácil em direção nenhuma, como também não se estraga mesmo guardado muito tempo. Se tirar só para a frente e para trás, sai mais rápido, mas rasga fácil numa direção.»',
+        choices: [
+          { text: '리누는 이번에는 천천히 외발뜨기를 해 보았다.', translation: 'Dessa vez, o Linu tentou o 외발뜨기 com calma.', next: 'try' },
+        ],
+      },
+      try: {
+        emoji: '🔦',
+        text: '리누는 숨을 고르고 발을 물에 넣었다. 앞으로 한 번, 옆으로 한 번. 물이 발 위를 지나갈 때마다 섬유가 조금씩 쌓였다. 그런데 마지막에 물을 너무 빨리 버리는 바람에 종이 한쪽이 다른 쪽보다 얇아지고 말았다. 장인이 종이를 빛에 비추어 보시더니 말씀하셨다. “나쁘지 않은데, 여기가 얇아요. 한 번 더 해 볼래요?”',
+        translation: 'O Linu tomou fôlego e mergulhou a peneira na água. Uma vez para a frente, uma vez para o lado. Cada vez que a água passava pela peneira, as fibras se acumulavam um pouquinho. Mas, no fim, ele jogou a água fora rápido demais, e um lado da folha acabou ficando mais fino que o outro. O mestre pôs a folha contra a luz e disse: «Não está ruim, mas aqui ficou fino. Quer tentar mais uma vez?»',
+        choices: [
+          { text: '“네, 한 번 더 해 보겠습니다.”', translation: '«Sim, vou tentar mais uma vez.»', next: 'dasi' },
+          { text: '“이 정도면 충분한 것 같아요.”', translation: '«Acho que assim já está bom.»', next: 'final_neutro' },
+        ],
+      },
+      final_neutro: {
+        emoji: '📮',
+        text: '장인은 아무 말씀 없이 리누의 종이를 한쪽에 두셨다. 며칠 뒤 서울로 부쳐 온 종이는 얇은 쪽이 벌써 살짝 일어나 있었다. 함께 들어 있던 쪽지에는 장인의 글씨가 적혀 있었다. “천 년은커녕 십 년도 어렵겠네요. 다음에는 한 장 더 떠 봐요.”',
+        translation: 'O mestre, sem dizer nada, pôs a folha do Linu de lado. Dias depois, a folha que ele mandou pelo correio para Seul chegou com o lado fino já se levantando um pouco. No bilhete que veio junto estava a letra do mestre: «Mil anos? Dez já vai ser difícil. Da próxima vez, tire mais uma folha.»',
+        ending: { tone: 'neutro', title: 'Papel de dez anos', message: 'Papel de mil anos pede paciência: mais uma tentativa teria feito toda a diferença.' },
+      },
+      dasi: {
+        emoji: '✨',
+        text: '두 번째에는 물을 버릴 때 더 천천히, 끝까지 기다렸다. 발을 들어 올리자 고르고 하얀 막이 생겨 있었다. 장인은 종이를 빛에 비추어 보고 고개를 끄덕이셨다. “이제 됐네. 말려서 두드리기만 하면 돼요.” 장인은 젖은 종이를 판에 붙여 햇볕에 마르도록 세워 두셨다. 그러고는 시계를 보셨다. “종이가 마르는 동안 밥 먹으러 갑시다. 전주에 왔으면 콩나물국밥은 먹어야지.”',
+        translation: 'Na segunda vez, ao jogar a água fora, ele foi mais devagar e esperou até o fim. Quando levantou a peneira, havia uma película branca e uniforme. O mestre pôs a folha contra a luz e aprovou com a cabeça: «Agora sim. É só secar e bater.» Ele grudou a folha molhada numa tábua e a deixou em pé para secar ao sol. Depois olhou o relógio: «Enquanto o papel seca, vamos comer. Quem vem a Jeonju tem que comer 콩나물국밥.»',
+        choices: [
+          { text: '리누는 장인을 따라 남부시장으로 갔다.', translation: 'O Linu seguiu o mestre até o mercado Nambu.', next: 'jeomsim' },
+        ],
+      },
+      jeomsim: {
+        emoji: '🍲',
+        text: '남부시장의 국밥집에서 장인은 뚝배기에 담긴 콩나물국밥과 모주 한 잔을 시켜 주셨다. 모주는 막걸리에 계피와 생강 같은 약재를 넣고 오래 끓인 달콤한 음료라서 도수가 아주 낮다고 하셨다. 장인은 전주가 옛날부터 종이로 유명했을 뿐만 아니라 맛있는 음식으로도 유명했다고 자랑하셨다. “좋은 종이도, 좋은 음식도 결국 시간이 만드는 거예요.”',
+        translation: 'Num restaurante de sopa do mercado Nambu, o mestre pediu para o Linu um 콩나물국밥 servido na tigela de barro e um copo de 모주. O 모주, explicou, é uma bebida doce feita fervendo por muito tempo o 막걸리 com canela, gengibre e outras ervas, então quase não tem álcool. O mestre se gabou de que Jeonju sempre foi famosa não só pelo papel, mas também pela comida boa. «Papel bom e comida boa, no fim, quem faz é o tempo.»',
+        choices: [
+          { text: '국밥을 다 먹고 리누는 장인과 함께 공방으로 돌아갔다.', translation: 'Depois de comer a sopa, o Linu voltou com o mestre para a oficina.', next: 'dochim' },
+        ],
+      },
+      dochim: {
+        emoji: '🔨',
+        text: '마른 종이는 조금 거칠었다. 장인은 종이를 여러 장 겹쳐 놓고 나무 방망이로 두드리셨다. 이것을 도침이라고 하는데, 두드릴수록 종이가 매끈해지고 은은한 윤이 났다. “요즘은 유럽의 박물관에서도 오래된 책이나 그림을 고칠 때 한지를 써요. 얇으면서도 질기니까.” 장인은 붓과 먹을 꺼내 놓으셨다. “자기가 뜬 종이에 뭐라도 한번 써 봐요.”',
+        translation: 'Seca, a folha estava um pouco áspera. O mestre empilhou várias folhas e bateu nelas com um maço de madeira. Isso se chama 도침: quanto mais se bate, mais liso o papel fica, com um brilho suave. «Hoje até museus da Europa usam 한지 para restaurar livros e pinturas antigas. Porque é fino e, ao mesmo tempo, resistente.» O mestre trouxe pincel e tinta: «Escreva alguma coisa no papel que você mesmo tirou.»',
+        choices: [
+          { text: '리누는 붓을 들고 또박또박 글을 썼다.', translation: 'O Linu pegou o pincel e escreveu com capricho, letra por letra.', next: 'final_bom' },
+        ],
+      },
+      final_bom: {
+        emoji: '🖌️',
+        text: '리누는 한 글자 한 글자 정성껏 적었다. “천 년 뒤의 펭귄에게, 안녕.” 장인은 그 글을 보시더니 크게 웃으셨다. “천 년 뒤에 누가 이걸 읽으면 깜짝 놀라겠네.” 장인은 종이를 돌돌 말아 한지 끈으로 묶어 주셨다. 서울로 돌아가는 기차에서 리누는 그 종이를 품에 꼭 안고 있었다.',
+        translation: 'O Linu escreveu com todo o cuidado, letra por letra: «Ao pinguim de daqui a mil anos: olá.» O mestre leu e deu uma boa risada: «Quem ler isso daqui a mil anos vai levar um susto.» Ele enrolou a folha e amarrou com um cordão de 한지. No trem de volta para Seul, o Linu foi abraçado ao papel o caminho todo.',
+        ending: { tone: 'bom', title: 'Carta para daqui a mil anos', message: 'Com paciência e o 외발뜨기, o Linu tirou uma folha de 한지 que pode durar mil anos.' },
+      },
+    },
+  },
 ];

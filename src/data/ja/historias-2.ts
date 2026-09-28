@@ -1170,4 +1170,125 @@ export const STORIES_JA_2: StorySeed[] = [
       },
     },
   },
+  {
+    id: 'ja-h32',
+    level: 'B2.3',
+    cefr: 'B2',
+    title: '高野山の宿坊',
+    emoji: '📿',
+    summary: 'O Linu passa uma noite num templo do monte Kōya: copia um sutra, prova a comida vegetariana dos monges, caminha à noite pelo cemitério de Okunoin e acorda (ou não) para a cerimônia da manhã.',
+    cultural_context:
+      'O monte Kōya, em Wakayama, é o centro do budismo Shingon, fundado em 816 pelo monge Kūkai (Kōbō Daishi); no alto da montanha há mais de cem templos, e cerca de cinquenta recebem hóspedes (shukubō), com jantar vegetariano (shōjin ryōri), cerimônia matinal e cópia de sutras (shakyō). O cemitério de Okunoin, com mais de duzentos mil túmulos sob cedros gigantes, leva ao mausoléu de Kūkai, que segundo a crença não morreu: segue em meditação eterna, e os monges lhe levam refeições duas vezes por dia. Depois da ponte Gobyō-bashi é proibido fotografar. Nos templos, o saquê às vezes é chamado, com humor, de hannyatō, a «água da sabedoria». O monte é Patrimônio Mundial desde 2004.',
+    start: 'start',
+    glossary: [
+      ['宿坊', 'shukubō, templo que hospeda visitantes'],
+      ['お坊さん', 'monge budista (com respeito)'],
+      ['写経', 'shakyō, copiar um sutra à mão'],
+      ['精進料理', 'culinária vegetariana dos templos budistas'],
+      ['出汁をとる', 'fazer o caldo-base (dashi)'],
+      ['般若湯', 'hannyatō, «água da sabedoria»: o saquê, no jargão dos templos'],
+      ['参道', 'caminho que leva a um templo ou santuário'],
+      ['ご遠慮ください', 'por favor, abstenha-se (proibição educada)'],
+      ['お大師様', 'Odaishi-sama, o mestre Kūkai'],
+      ['お勤め', 'cerimônia de recitação dos monges'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🚡',
+        text: 'ケーブルカーで山を上り、バスに揺られて着いた宿坊は、苔の庭に囲まれた古い寺だった。玄関で、若いお坊さんの慈海さんが手を合わせた。「ようこそお参りくださいました。お夕食は五時半にお部屋へお持ちいたします。明朝六時から本堂でお勤めがございますので、よろしければご参加ください。それまでのお時間は、写経もお楽しみいただけます。」',
+        translation: 'O shukubō aonde o Linu chegou, depois de subir a montanha de funicular e balançar num ônibus, era um templo antigo cercado por um jardim de musgo. Na entrada, um monge jovem, o Jikai, juntou as mãos. «Seja bem-vindo à sua visita. O jantar será levado ao seu quarto às cinco e meia. Amanhã, às seis, há a cerimônia no salão principal; se quiser, participe. Até lá, o senhor pode também fazer a cópia de sutras.»',
+        choices: [
+          { text: '「写経をやってみたいです。」', translation: '«Quero experimentar a cópia de sutras.»', next: 'shakyo' },
+          { text: '苔の庭をゆっくり歩く。', translation: 'Passear devagar pelo jardim de musgo.', next: 'niwa' },
+        ],
+      },
+      shakyo: {
+        emoji: '🖌️',
+        text: '静かな部屋で、リヌは筆を持った。お手本は般若心経で、二百六十字あまりの漢字が並んでいる。慈海さんが言った。「上手に書こうとなさらなくて結構です。一字一字、心をこめてお書きください。」最初は羽が震えたが、墨のにおいの中で書いているうちに、不思議と心が落ち着いてきた。一時間後、最後の一字を書き終えると、外はもう夕暮れだった。',
+        translation: 'Numa sala silenciosa, o Linu pegou o pincel. O modelo era o Sutra do Coração, com uns duzentos e sessenta kanji enfileirados. O Jikai disse: «Não precisa tentar escrever bonito. Escreva cada caractere com o coração.» No começo a asa tremia, mas, escrevendo em meio ao cheiro de tinta, o coração foi se acalmando de um jeito curioso. Uma hora depois, quando terminou o último caractere, lá fora já era o crepúsculo.',
+        choices: [{ text: '部屋に戻って、夕食を待つ。', translation: 'Voltar ao quarto e esperar o jantar.', next: 'yushoku' }],
+      },
+      niwa: {
+        emoji: '🌿',
+        text: '庭の苔は、雨上がりの光を受けて、緑色に輝いていた。石灯籠のそばで、年配のお坊さんがほうきで落ち葉を集めている。「この山では、掃除も修行のうちなんですよ。」お坊さんはそう言って、また黙々と手を動かし始めた。遠くから鐘の音が聞こえ、リヌはしばらく何も考えずに立っていた。',
+        translation: 'O musgo do jardim brilhava verde sob a luz depois da chuva. Perto de uma lanterna de pedra, um monge idoso juntava as folhas caídas com uma vassoura. «Nesta montanha, varrer também faz parte da prática.» Dito isso, voltou a trabalhar em silêncio. De longe vinha o som de um sino, e o Linu ficou um tempo parado, sem pensar em nada.',
+        choices: [{ text: '部屋に戻って、夕食を待つ。', translation: 'Voltar ao quarto e esperar o jantar.', next: 'yushoku' }],
+      },
+      yushoku: {
+        emoji: '🍱',
+        text: '五時半、朱色のお膳が運ばれてきた。胡麻豆腐、高野豆腐の煮物、山菜の天ぷら、お吸い物。「精進料理でございます。肉や魚は一切使っておりません。お出汁も、昆布と椎茸でとっております。」魚が大好きなリヌは、少しだけ驚いた。しかし、お吸い物を一口飲むと、驚くほど深い味がした。',
+        translation: 'Às cinco e meia, trouxeram as bandejas laqueadas de vermelho: tofu de gergelim, tofu kōya cozido, tempurá de ervas da montanha e uma sopa clara. «É shōjin ryōri. Não usamos carne nem peixe de forma alguma. O caldo também é feito de alga kombu e cogumelo shiitake.» O Linu, fã de peixe, ficou um pouquinho surpreso. Mas, ao tomar um gole da sopa, sentiu um sabor surpreendentemente profundo.',
+        choices: [
+          { text: '「この胡麻豆腐は、どうやって作るんですか。」', translation: '«Como se faz este tofu de gergelim?»', next: 'gomadofu' },
+          { text: '「あの……ビールはありますか。」', translation: '«Hã… tem cerveja?»', next: 'hannya' },
+          {
+            text: '「このお吸い物、かつお節のいい味がしますね。」',
+            translation: '«Esta sopa tem um gosto bom de bonito seco, né?»',
+            wrong: 'O Jikai disse que 「肉や魚は一切使っておりません」 (não se usa carne nem peixe de jeito nenhum) e que o caldo é de 「昆布と椎茸」, alga kombu e shiitake. かつお節 (bonito seco) é peixe, então não pode estar ali.',
+          },
+        ],
+      },
+      gomadofu: {
+        emoji: '🥣',
+        text: '慈海さんはうれしそうに答えた。「胡麻をすり鉢で、一時間ほどすり続けます。それを葛と水と合わせて、弱い火でゆっくり練るのです。すり続けるのも、修行の一つでございます。」リヌは、なめらかな胡麻豆腐をもう一口食べた。一時間分の静かな時間の味がした。',
+        translation: 'O Jikai respondeu, contente: «Moemos o gergelim no pilão por cerca de uma hora. Depois misturamos com araruta kuzu e água e mexemos devagar em fogo baixo. Moer sem parar também é uma forma de prática.» O Linu comeu mais um pedaço do tofu de gergelim, macio. Tinha o gosto de uma hora de silêncio.',
+        choices: [{ text: 'ごちそうさまを言って、お膳を下げてもらう。', translation: 'Agradecer pela refeição e deixar que levem as bandejas.', next: 'yoru' }],
+      },
+      hannya: {
+        emoji: '🍶',
+        text: '慈海さんは、にっこりほほえんだ。「ございますよ。実は、お寺ではお酒のことを『般若湯』と申すこともございます。『知恵のお湯』という意味でございます。」リヌが笑うと、慈海さんも小さく笑った。「ただ、明朝のお勤めに起きられる程度に、お楽しみくださいませ。」',
+        translation: 'O Jikai sorriu. «Temos, sim. Aliás, nos templos às vezes chamamos o saquê de hannyatō, que quer dizer «a água da sabedoria».» Quando o Linu riu, o Jikai também deu uma risadinha. «Só aprecie de modo a conseguir acordar para a cerimônia de amanhã cedo, por favor.»',
+        choices: [{ text: '一杯だけ飲んで、お膳を下げてもらう。', translation: 'Beber um copo só e deixar que levem as bandejas.', next: 'yoru' }],
+      },
+      yoru: {
+        emoji: '🏮',
+        text: '食事のあと、慈海さんが言った。「今夜、奥之院をお坊さんと歩くナイトツアーがございます。ご参加なさいますか。夜の参道は暗うございますので、足もとにお気をつけください。」リヌは窓の外を見た。山はもう真っ暗で、杉の木の上に星が出ている。',
+        translation: 'Depois do jantar, o Jikai disse: «Esta noite há um passeio noturno por Okunoin, guiado por um monge. O senhor deseja participar? O caminho à noite é escuro, então cuidado onde pisa.» O Linu olhou pela janela. A montanha já estava um breu, e havia estrelas sobre os cedros.',
+        choices: [
+          { text: '「ぜひ参加させてください。」', translation: '«Quero participar, por favor.»', next: 'okunoin' },
+          { text: '「明日のお勤めのために、早く休みます。」', translation: '«Vou descansar cedo, por causa da cerimônia de amanhã.»', next: 'asa' },
+        ],
+      },
+      okunoin: {
+        emoji: '🌲',
+        text: '奥之院の参道には、樹齢何百年もの杉がそびえ、両側に古いお墓がどこまでも続いていた。戦国時代の武将のお墓もあるという。石灯籠の明かりだけが、ぼんやりと道を照らしている。やがて小さな橋の前で、案内のお坊さんが立ち止まった。「この御廟橋から先は、お大師様の聖域です。一礼してお渡りください。写真の撮影は、ご遠慮ください。」',
+        translation: 'No caminho de Okunoin, cedros de centenas de anos se erguiam, e túmulos antigos se estendiam sem fim dos dois lados. Dizem que há até túmulos de senhores da guerra do período Sengoku. Só a luz das lanternas de pedra iluminava vagamente o caminho. Logo, diante de uma pequena ponte, o monge guia parou. «Depois desta ponte, a Gobyō-bashi, é o recinto sagrado do Odaishi-sama. Façam uma reverência antes de atravessar. Por favor, abstenham-se de fotografar.»',
+        choices: [
+          { text: '一礼して、スマホをしまってから橋を渡る。', translation: 'Fazer uma reverência, guardar o celular e atravessar a ponte.', next: 'toro' },
+          {
+            text: '橋を渡ったら、灯籠堂の写真をたくさん撮ろうと思う。',
+            translation: 'Pensar em tirar muitas fotos do salão das lanternas depois de atravessar a ponte.',
+            wrong: 'O monge disse que 「この御廟橋から先は」, DAQUI DA PONTE EM DIANTE, é área sagrada, e pediu 「写真の撮影は、ご遠慮ください」. ご遠慮ください é o jeito educado de proibir: «por favor, abstenha-se».',
+          },
+        ],
+      },
+      toro: {
+        emoji: '🕯️',
+        text: '橋の向こうの灯籠堂には、何千もの灯籠が静かにともっていた。お坊さんが小声で説明した。「お大師様は亡くなったのではなく、今も奥の御廟で瞑想を続けておられると信じられております。ですから、今でも毎日二回、お食事をお運びしているのです。」千年以上消えていないという灯火が、ゆらゆらと揺れていた。',
+        translation: 'No salão além da ponte, milhares de lanternas ardiam em silêncio. O monge explicou em voz baixa: «Acredita-se que o Odaishi-sama não morreu, mas continua em meditação até hoje no mausoléu, lá no fundo. Por isso, até hoje levamos refeições a ele duas vezes por dia.» Chamas que, dizem, não se apagam há mais de mil anos tremulavam devagar.',
+        choices: [{ text: '宿坊に戻って、眠る。', translation: 'Voltar ao shukubō e dormir.', next: 'asa' }],
+      },
+      asa: {
+        emoji: '⏰',
+        text: '朝五時四十五分、目覚ましが鳴った。山の朝は冷たく、布団から出るのがつらい。廊下の向こうから、お坊さんたちがお経を唱える低い声が、かすかに聞こえ始めた。',
+        translation: 'Cinco e quarenta e cinco da manhã, o despertador tocou. A manhã na montanha era fria, e era um sacrifício sair do futon. Do fim do corredor, começou a se ouvir, fraquinha, a voz grave dos monges recitando os sutras.',
+        choices: [
+          { text: '起きて、本堂のお勤めに参加する。', translation: 'Levantar e participar da cerimônia no salão principal.', next: 'final_bom' },
+          { text: 'もう少しだけ、布団の中にいる。', translation: 'Ficar só mais um pouquinho debaixo do futon.', next: 'final_neutro' },
+        ],
+      },
+      final_bom: {
+        emoji: '🙏',
+        text: '薄暗い本堂には、お香の煙がゆっくりと流れていた。お坊さんたちの声が重なり合い、床からリヌの体まで響いてくる。お勤めが終わると、慈海さんが、昨日リヌが書いた写経を本堂に納めてくれた。「お大師様のもとへ、お届けいたしました。」山を下りるケーブルカーの中で、リヌの心は驚くほど静かだった。',
+        translation: 'No salão principal, na penumbra, a fumaça do incenso flutuava devagar. As vozes dos monges se sobrepunham e ressoavam do chão até o corpo do Linu. Terminada a cerimônia, o Jikai depositou no salão o sutra que o Linu tinha copiado na véspera. «Entregamos ao Odaishi-sama.» No funicular, descendo a montanha, o coração do Linu estava incrivelmente calmo.',
+        ending: { tone: 'bom', title: 'Silêncio na montanha', message: 'O Linu entendeu o keigo do monge, respeitou o shōjin ryōri e a ponte sagrada, e acordou para a cerimônia: uma noite completa no Kōya.' },
+      },
+      final_neutro: {
+        emoji: '😴',
+        text: '「少しだけ」のつもりが、次に目を開けたときには、もう七時だった。お勤めはとっくに終わっていた。朝食を運んできた慈海さんは、にこにこして言った。「よくお休みになれたようで、何よりでございます。」リヌは顔を赤くして、次は必ず起きようと心に決めた。',
+        translation: 'Era para ser «só um pouquinho», mas quando abriu os olhos de novo já eram sete horas. A cerimônia tinha acabado fazia tempo. O Jikai, trazendo o café da manhã, disse todo sorridente: «Que bom que o senhor conseguiu descansar bem.» O Linu ficou vermelho e decidiu que, da próxima vez, acordaria sem falta.',
+        ending: { tone: 'neutro', title: 'O futon venceu', message: 'Tudo certo na noite no templo, mas o frio da manhã ganhou do Linu. A cerimônia das seis fica para a próxima!' },
+      },
+    },
+  },
 ];

@@ -4416,4 +4416,463 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
     ],
   },
+  // ───────────────────────────── C1.2 ─────────────────────────────
+  {
+    id: 'ko-g-humildade',
+    level: 'C1.2',
+    title: 'A etiqueta avançada: 겸양어, 저희, 압존법, palavras-almofada e o «não» indireto',
+    emoji: '🎎',
+    summary: 'No C1, o respeito vai além do -(으)시-. Há as palavras humildes para o que você faz pelo outro (뵙다, 여쭙다, 드리다, 모시다), o 저희 que rebaixa o próprio grupo, a velha regra do 압존법 (não honrar alguém diante de alguém ainda mais alto), as «palavras-almofada» (쿠션어) que amaciam pedidos e o jeito coreano de recusar sem dizer «não».',
+    sections: [
+      {
+        heading: 'Elevar o outro, abaixar a si',
+        text: 'O sistema tem duas mãos. O honorífico (존경어) eleva o outro quando ele é o sujeito: 드시다, 계시다, 말씀하시다. O humilde (겸양어) abaixa você quando a ação vai na direção do outro: 드리다, 뵙다, 여쭙다, 모시다, 말씀드리다. O 말씀 serve para os dois lados: 선생님 말씀 (as palavras do professor) e 제가 말씀드릴게요 (deixe que eu lhe digo). E o grupo também se abaixa: 저희 (nós, humilde), 저희 회사 (a nossa empresa).',
+        table: {
+          head: ['Ação', 'Neutro', 'O outro faz (honorífico)', 'Eu faço para o outro (humilde)'],
+          rows: [
+            ['dar', '주다', '주시다', '드리다'],
+            ['perguntar', '묻다', '물으시다', '여쭙다, 여쭤보다'],
+            ['ver, encontrar', '보다, 만나다', '보시다, 만나시다', '뵙다, 뵈다'],
+            ['dizer', '말하다', '말씀하시다', '말씀드리다'],
+            ['levar, acompanhar', '데리고 가다', '—', '모시고 가다'],
+            ['eu / nós', '나 / 우리', '—', '저 / 저희'],
+          ],
+        },
+        examples: [
+          ['사장님, 말씀드릴 것이 있습니다.', 'Senhor presidente, tenho algo a lhe dizer.'],
+          ['내일 찾아뵙겠습니다.', 'Amanhã irei visitá-lo.'],
+          ['저희 회사를 찾아 주셔서 감사합니다.', 'Obrigado por visitar a nossa empresa.'],
+        ],
+      },
+      {
+        heading: '우리나라, e não «저희 나라»',
+        text: 'Uma regra fina: diante de um estrangeiro, o coreano diz 우리나라 (o nosso país), e não 저희 나라. O humilde 저희 abaixa o grupo de quem fala, e não se rebaixa a própria nação diante de outra. O mesmo vale para 우리말 (a nossa língua). Já 저희 회사, 저희 가족, 저희 학교 são perfeitamente educados.',
+        examples: [
+          ['우리나라에는 사계절이 뚜렷해요.', 'No nosso país, as quatro estações são bem marcadas.'],
+          ['저희 가족은 모두 네 명이에요.', 'A nossa família tem quatro pessoas.'],
+          ['우리말을 아름답게 씁시다.', 'Vamos usar bem a nossa língua.'],
+        ],
+      },
+      {
+        heading: '압존법: quando não honrar',
+        text: 'A regra tradicional do 압존법 diz: ao falar de alguém superior a você com alguém ainda mais alto, não se honra o do meio. Diante do avô, o neto diz 아버지가 아직 안 왔습니다, sem o -시-, porque o pai é «menor» que o avô. Nas famílias tradicionais ainda se ouve; mas nas empresas, o padrão atual de etiqueta aceita honrar o colega superior mesmo diante do chefe (김 부장님은 회의 중이십니다), e até o exército deixou de exigir essa regra.',
+        examples: [
+          ['할아버지, 아버지가 아직 안 왔습니다.', 'Vovô, o papai ainda não chegou. (diante do avô, sem honrar o pai)'],
+          ['사장님, 김 부장님은 지금 회의 중이십니다.', 'Senhor presidente, o diretor Kim está em reunião. (uso atual nas empresas)'],
+        ],
+      },
+      {
+        heading: 'As palavras-almofada',
+        text: 'Um pedido direto (서류 보내 주세요) é gramaticalmente educado, mas no trabalho soa seco. Os coreanos acolchoam: abrem com uma 쿠션어 (죄송하지만, 실례지만, 번거로우시겠지만, 괜찮으시다면, 혹시) e fecham com uma pergunta indireta (-아/어 주실 수 있을까요?) ou um agradecimento antecipado (-아/어 주시면 감사하겠습니다).',
+        table: {
+          head: ['Direto', 'Com almofada', 'Português'],
+          rows: [
+            ['서류 보내 주세요.', '번거로우시겠지만 서류를 보내 주실 수 있을까요?', 'Sei que dá trabalho, mas poderia enviar os documentos?'],
+            ['조용히 해 주세요.', '죄송하지만 조금만 조용히 해 주시겠어요?', 'Desculpe, poderia falar um pouco mais baixo?'],
+            ['오늘 연락 주세요.', '괜찮으시다면 오늘 중으로 연락 주시면 감사하겠습니다.', 'Se não for incômodo, agradeceria um retorno ainda hoje.'],
+            ['이거 뭐예요?', '혹시 이게 뭔지 여쭤봐도 될까요?', 'Posso perguntar, por acaso, o que é isto?'],
+          ],
+        },
+        examples: [
+          ['바쁘시겠지만 검토 부탁드립니다.', 'Sei que o senhor está ocupado, mas peço que dê uma olhada.'],
+          ['혹시 시간 괜찮으시면 잠깐 이야기 좀 할 수 있을까요?', 'Se por acaso tiver um tempinho, podemos conversar rapidinho?'],
+        ],
+      },
+      {
+        heading: 'Recusar sem dizer «não»',
+        text: 'Com superiores, clientes e convites, o «não» direto (아니요, 싫어요) é raro. A recusa vem embrulhada, e cabe ao ouvinte perceber com 눈치. Aprenda a reconhecer: muitas dessas frases querem dizer exatamente o contrário do que parecem.',
+        table: {
+          head: ['Frase', 'Ao pé da letra', 'O que costuma querer dizer'],
+          rows: [
+            ['생각해 볼게요.', 'Vou pensar.', 'Provavelmente não.'],
+            ['좀 어려울 것 같아요.', 'Acho que vai ser um pouco difícil.', 'Não.'],
+            ['다음에 같이 가요.', 'Vamos juntos da próxima vez.', 'Hoje não.'],
+            ['마음만 받을게요.', 'Aceito só a intenção.', 'Obrigado, mas não posso aceitar.'],
+            ['괜찮아요.', 'Está tudo bem.', 'Não, obrigado.'],
+          ],
+        },
+        examples: [
+          ['제안은 감사하지만 이번에는 좀 어려울 것 같습니다.', 'Agradeço a proposta, mas desta vez vai ser difícil.'],
+          ['선물은 마음만 받을게요.', 'Quanto ao presente, fico só com a intenção.'],
+          ['더 드릴까요? 아니요, 괜찮아요.', 'Quer mais? Não, obrigado.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Trocar os lados: «선생님이 저를 뵈었어요» e «제가 말씀하셨어요» estão errados. O humilde é para você; o honorífico, para o outro.',
+      'Dizer 저희 나라 a um estrangeiro: o certo é 우리나라, porque não se rebaixa o próprio país diante de outro.',
+      'Levar ao pé da letra o 생각해 볼게요: muitas vezes é um não educado.',
+      'Ler 괜찮아요 sempre como «sim, pode ser»: diante de uma oferta, costuma ser «não, obrigado».',
+      'Aplicar o 압존법 no escritório moderno: hoje soa antiquado; honre o colega superior mesmo diante do chefe.',
+      'Encher de almofadas a conversa com amigos: soa distante ou irônico.',
+    ],
+    quiz: [
+      {
+        question: 'Qual é o verbo humilde para «perguntar» a um superior?',
+        options: ['여쭤보다', '물으시다', '말씀하시다'],
+        answer: '여쭤보다',
+        explanation: '여쭙다/여쭤보다 é o humilde. 물으시다 honra quem pergunta, e 말씀하시다 é «dizer» honorífico.',
+      },
+      {
+        question: 'Falando com um estrangeiro sobre a Coreia, qual é o certo?',
+        options: ['우리나라', '저희 나라', '제 나라'],
+        answer: '우리나라',
+        explanation: 'Não se rebaixa o próprio país diante de outra nação: 우리나라.',
+      },
+      {
+        question: 'Um colega responde ao seu convite com 좀 어려울 것 같아요. O que ele quer dizer?',
+        options: ['Que não vai poder ir', 'Que o caminho é difícil', 'Que vai pensar e depois ir'],
+        answer: 'Que não vai poder ir',
+        explanation: 'É a recusa indireta típica: «vai ser um pouco difícil» = não.',
+      },
+      {
+        question: 'Qual pedido soa mais cortês?',
+        options: ['번거로우시겠지만 서류를 보내 주실 수 있을까요?', '서류 보내.', '서류 보내세요.'],
+        answer: '번거로우시겠지만 서류를 보내 주실 수 있을까요?',
+        explanation: 'Palavra-almofada (번거로우시겠지만) + pergunta indireta (-아/어 주실 수 있을까요?).',
+      },
+      {
+        question: 'O garçom oferece mais água e você responde 괜찮아요. O que você disse?',
+        options: ['Não, obrigado.', 'Sim, por favor.', 'A água está boa.'],
+        answer: 'Não, obrigado.',
+        explanation: 'Diante de uma oferta, 괜찮아요 é a recusa educada.',
+      },
+      {
+        question: 'Complete, com humildade: 내일 찾아___. (Amanhã irei visitá-lo.)',
+        options: ['뵙겠습니다', '보시겠습니다', '보겠어요'],
+        answer: '뵙겠습니다',
+        explanation: '뵙다 é o «ver, encontrar» humilde.',
+      },
+    ],
+  },
+  {
+    id: 'ko-g-proverbios',
+    level: 'C1.2',
+    title: '속담: os provérbios coreanos',
+    emoji: '🐅',
+    summary: 'Os provérbios (속담) guardam a sabedoria de um povo agrícola, confucionista e bem-humorado: tigres, bois, baleias, tteok e vizinhos. Muitos têm par em português: 호랑이도 제 말 하면 온다 («falando do tigre, ele aparece») é o nosso «falando no diabo». Eles vivem na conversa, na TV e nas provas, citados com -다고, -(이)라고 e -다더니.',
+    sections: [
+      {
+        heading: 'Os provérbios que você vai ouvir',
+        text: 'Os provérbios costumam estar no 해라체 (-ㄴ다, -다) ou terminar num substantivo (누워서 떡 먹기, «comer tteok deitado»). Repare no trocadilho de 발 없는 말이 천 리 간다: 말 é «palavra» e também «cavalo». O 리 é uma antiga medida de distância (cerca de 400 metros), então mil 리 é «muito longe».',
+        table: {
+          head: ['Provérbio', 'Ao pé da letra', 'Equivalente em português'],
+          rows: [
+            ['호랑이도 제 말 하면 온다.', 'Até o tigre, se falam dele, aparece.', 'Falando no diabo, aparece o rabo.'],
+            ['낮말은 새가 듣고 밤말은 쥐가 듣는다.', 'De dia os pássaros ouvem; de noite, os ratos.', 'As paredes têm ouvidos.'],
+            ['소 잃고 외양간 고친다.', 'Perde o boi e conserta o curral.', 'Casa roubada, trancas à porta.'],
+            ['누워서 떡 먹기.', 'Comer tteok deitado.', 'É moleza.'],
+            ['가는 말이 고와야 오는 말이 곱다.', 'Se a palavra que vai é gentil, a que volta também é.', 'Gentileza gera gentileza.'],
+            ['원숭이도 나무에서 떨어진다.', 'Até o macaco cai da árvore.', 'Até os melhores erram.'],
+            ['발 없는 말이 천 리 간다.', 'A palavra (o cavalo) sem pés anda mil léguas.', 'Notícia corre depressa.'],
+            ['백지장도 맞들면 낫다.', 'Até uma folha de papel pesa menos carregada a dois.', 'A união faz a força.'],
+            ['티끌 모아 태산.', 'Juntando poeira, faz-se uma montanha.', 'De grão em grão, a galinha enche o papo.'],
+            ['금강산도 식후경.', 'Até o monte Geumgang se admira depois de comer.', 'Saco vazio não para em pé.'],
+          ],
+        },
+        examples: [
+          ['낮말은 새가 듣고 밤말은 쥐가 듣는다.', 'As paredes têm ouvidos.'],
+          ['원숭이도 나무에서 떨어진다더니, 선생님도 실수하셨네요.', 'Até o macaco cai da árvore: até o professor errou.'],
+          ['가는 말이 고와야 오는 말이 곱지요.', 'Se a gente fala com gentileza, recebe gentileza, né.'],
+        ],
+      },
+      {
+        heading: 'Bichos, comida e a vida no campo',
+        text: 'O tigre, rei das montanhas coreanas e personagem de mil contos, aparece em muitos provérbios; o tteok, a comida das festas, em outros tantos. Alguns ganharam força política: 고래 싸움에 새우 등 터진다 («na briga das baleias, o camarão racha as costas») é usado para falar de um país pequeno entre potências. E 김칫국부터 마신다 lembra um costume antigo: tomava-se o caldo de kimchi para ajudar a descer o tteok, então tomá-lo antes de ganhar o tteok é contar com o ovo antes da galinha.',
+        table: {
+          head: ['Provérbio', 'Ao pé da letra', 'Sentido'],
+          rows: [
+            ['호랑이 굴에 가야 호랑이 새끼를 잡는다.', 'É preciso entrar na toca do tigre para pegar o filhote.', 'Quem não arrisca não petisca.'],
+            ['고래 싸움에 새우 등 터진다.', 'Na briga das baleias, o camarão racha as costas.', 'Quando os grandes brigam, os pequenos pagam.'],
+            ['개구리 올챙이 적 생각 못 한다.', 'O sapo esquece que foi girino.', 'Quem sobe esquece de onde veio.'],
+            ['떡 줄 사람은 생각도 않는데 김칫국부터 마신다.', 'Quem ia dar o tteok nem pensou nisso, e você já toma o caldo de kimchi.', 'Contar com o ovo antes da galinha.'],
+            ['우물 안 개구리.', 'Sapo no fundo do poço.', 'Quem só conhece o próprio mundinho.'],
+            ['그림의 떡.', 'Tteok pintado.', 'Coisa desejada e inalcançável.'],
+          ],
+        },
+        examples: [
+          ['고래 싸움에 새우 등 터진다고, 부모님이 싸우면 아이들만 힘들어요.', 'Na briga das baleias, quem sofre é o camarão: quando os pais brigam, as crianças é que sofrem.'],
+          ['합격 발표도 안 났는데 벌써 김칫국부터 마시네.', 'Nem saiu o resultado, e você já está contando com a vaga. (반말)'],
+          ['그 비싼 차는 나한테 그림의 떡이야.', 'Aquele carro caro, para mim, é só um sonho. (반말)'],
+        ],
+      },
+      {
+        heading: 'Como usar um provérbio na conversa',
+        text: 'O provérbio se cita como está e se amarra à frase com o discurso indireto: -다고 ou -(이)라고 («como diz o ditado, …»), -다더니 («como dizem, e não é que…») ou -(이)라는 말이 있잖아요 («tem aquele ditado, né»). O tom é de sabedoria compartilhada, mas com um superior, cuidado para não soar como sermão.',
+        examples: [
+          ['호랑이도 제 말 하면 온다더니, 마침 민수 씨가 왔네요!', 'Falando no diabo… olha o Minsu aí!'],
+          ['그 시험이요? 누워서 떡 먹기였어요.', 'Aquela prova? Foi moleza.'],
+          ['티끌 모아 태산이라는 말이 있잖아요. 조금씩 저축하세요.', 'Tem aquele ditado, de grão em grão… Poupe um pouco por vez.'],
+          ['금강산도 식후경이라고, 일단 밥부터 먹읍시다.', 'Saco vazio não para em pé: vamos comer primeiro.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Traduzir palavra por palavra: 누워서 떡 먹기 não fala de comer deitado, e sim de algo facílimo.',
+      'Passar o provérbio para o 해요체: ele se cita como está e se liga com -다고, -(이)라고 ou -다더니.',
+      'Perder o trocadilho de 말 (palavra e cavalo) em 발 없는 말이 천 리 간다.',
+      'Usar provérbios com superiores em tom de lição: soa como sermão.',
+      'Ler 천 리 como mil quilômetros: o 리 tem uns 400 metros, e a expressão só quer dizer «muito longe».',
+    ],
+    quiz: [
+      {
+        question: 'Complete: 호랑이도 제 말 하면 ___.',
+        options: ['온다', '간다', '먹는다'],
+        answer: '온다',
+        explanation: '«Até o tigre, se falam dele, aparece»: falando no diabo…',
+      },
+      {
+        question: 'O que quer dizer 누워서 떡 먹기?',
+        options: ['Uma coisa facílima', 'Uma pessoa preguiçosa', 'Um banquete'],
+        answer: 'Uma coisa facílima',
+        explanation: '«Comer tteok deitado» é o nosso «moleza».',
+      },
+      {
+        question: 'Qual provérbio corresponde a «casa roubada, trancas à porta»?',
+        options: ['소 잃고 외양간 고친다.', '티끌 모아 태산.', '그림의 떡.'],
+        answer: '소 잃고 외양간 고친다.',
+        explanation: '«Perde o boi e conserta o curral»: a providência que chega tarde.',
+      },
+      {
+        question: 'Em 발 없는 말이 천 리 간다, a palavra 말 quer dizer…',
+        options: ['Palavra, com trocadilho com «cavalo»', 'Só cavalo', 'Pé'],
+        answer: 'Palavra, com trocadilho com «cavalo»',
+        explanation: '말 é «palavra» e «cavalo»: a palavra, que não tem pés, corre mais que um cavalo.',
+      },
+      {
+        question: 'Complete: 금강산도 ___이라고, 밥부터 먹읍시다.',
+        options: ['식후경', '그림의 떡', '우물 안 개구리'],
+        answer: '식후경',
+        explanation: '금강산도 식후경: até a paisagem mais bonita se aprecia depois de comer.',
+      },
+    ],
+  },
+  // ───────────────────────────── C2 ─────────────────────────────
+  {
+    id: 'ko-g-sajaseongeo',
+    level: 'C2',
+    title: '사자성어: as expressões de quatro sílabas',
+    emoji: '🏮',
+    summary: 'Os 사자성어 (四字成語) são expressões de quatro sílabas sino-coreanas, muitas nascidas de histórias da China antiga: 일석이조 (uma pedra, dois pássaros), 동문서답 (perguntam pelo leste, responde pelo oeste), 새옹지마 (o cavalo do velho da fronteira). São o toque de erudição de discursos, editoriais, redações e até das legendas dos programas de TV. Cada sílaba é um hanja, e decifrar as partes ajuda a guardar o todo.',
+    sections: [
+      {
+        heading: 'Quatro sílabas, uma imagem',
+        text: 'Cada 사자성어 é uma palavra só, escrita sem espaço, e funciona como substantivo. Muitos têm um equivalente exato num ditado português; outros trazem uma imagem nova, como 금상첨화 («flor sobre a seda») e o seu oposto, 설상가상 («geada sobre a neve»).',
+        table: {
+          head: ['Expressão', 'Hanja', 'Ao pé da letra', 'Sentido'],
+          rows: [
+            ['일석이조', '一石二鳥', 'uma pedra, dois pássaros', 'matar dois coelhos com uma cajadada'],
+            ['동문서답', '東問西答', 'perguntam pelo leste, responde pelo oeste', 'responder alhos quando perguntam bugalhos'],
+            ['작심삼일', '作心三日', 'decisão de três dias', 'resolução que não dura'],
+            ['유비무환', '有備無患', 'com preparo, sem desgraça', 'prevenir é melhor que remediar'],
+            ['금상첨화', '錦上添花', 'flor sobre a seda', 'melhor ainda, a cereja do bolo'],
+            ['설상가상', '雪上加霜', 'geada sobre a neve', 'desgraça pouca é bobagem'],
+            ['우왕좌왕', '右往左往', 'vai à direita, vai à esquerda', 'correr de um lado para o outro, sem rumo'],
+            ['이심전심', '以心傳心', 'de coração a coração', 'entender-se sem palavras'],
+            ['고진감래', '苦盡甘來', 'o amargo acaba, vem o doce', 'depois da tempestade vem a bonança'],
+            ['과유불급', '過猶不及', 'o excesso é como a falta', 'tudo o que é demais faz mal'],
+          ],
+        },
+        examples: [
+          ['자전거로 출근하면 운동도 되고 교통비도 아끼니까 일석이조예요.', 'Indo de bicicleta para o trabalho, faço exercício e economizo a passagem: dois coelhos numa cajadada só.'],
+          ['우산도 없는데 바람까지 불어서 설상가상이었어요.', 'Eu estava sem guarda-chuva, e ainda por cima ventava: desgraça pouca é bobagem.'],
+          ['새해 결심이 또 작심삼일로 끝났어요.', 'A resolução de ano-novo, de novo, não passou de três dias.'],
+        ],
+      },
+      {
+        heading: 'As histórias por trás',
+        text: 'Muitas expressões são 고사성어, «ditos de histórias antigas», e só fazem sentido com a história. 새옹지마 (塞翁之馬): o cavalo de um velho da fronteira fugiu (azar), voltou com outro cavalo (sorte), o filho caiu dele e quebrou a perna (azar) e, por isso, escapou da guerra (sorte). A lição: não se sabe o que é sorte e o que é azar. 사면초가 (四面楚歌): o general Xiang Yu, cercado, ouve canções da sua terra, Chu, vindas de todos os lados, e entende que seu povo se rendeu; hoje, é estar encurralado. 형설지공 (螢雪之功) lembra dois estudantes pobres que liam à luz de vaga-lumes e do reflexo da neve: é o mérito do estudo esforçado.',
+        table: {
+          head: ['Expressão', 'Hanja', 'A história', 'Sentido hoje'],
+          rows: [
+            ['새옹지마', '塞翁之馬', 'o cavalo do velho da fronteira', 'sorte e azar se alternam'],
+            ['사면초가', '四面楚歌', 'canções de Chu dos quatro lados', 'encurralado, sem saída'],
+            ['형설지공', '螢雪之功', 'estudar à luz de vaga-lumes e da neve', 'o fruto do estudo esforçado'],
+            ['대기만성', '大器晩成', 'o grande vaso fica pronto tarde', 'grandes talentos amadurecem tarde'],
+          ],
+        },
+        examples: [
+          ['인생은 새옹지마라고 하잖아요. 너무 걱정하지 마세요.', 'Dizem que na vida sorte e azar se alternam, né? Não se preocupe demais.'],
+          ['사방이 막혀서 완전히 사면초가예요.', 'Está tudo bloqueado; estou completamente encurralado.'],
+          ['그 배우는 마흔 살이 넘어서 성공한 대기만성형이에요.', 'Aquele ator é do tipo que amadureceu tarde: fez sucesso depois dos quarenta.'],
+        ],
+      },
+      {
+        heading: 'Na frase',
+        text: 'O 사자성어 entra na frase como substantivo: com 이다 (일석이조예요), com 의 (금상첨화의 결과), com (으)로 (작심삼일로 끝나다). Os que descrevem ações viram verbos com 하다: 우왕좌왕하다, 동문서답하다. Na conversa informal, um só bem colocado impressiona; vários seguidos soam pedantes.',
+        table: {
+          head: ['Uso', 'Exemplo', 'Português'],
+          rows: [
+            ['com 이다', '그건 동문서답이잖아요.', 'Isso não tem nada a ver com a pergunta!'],
+            ['com 하다', '사람들이 우왕좌왕했어요.', 'As pessoas corriam de um lado para o outro.'],
+            ['com (으)로', '올해 계획도 작심삼일로 끝났어요.', 'Os planos deste ano também não passaram de três dias.'],
+            ['com 의', '금상첨화의 결과를 얻었습니다.', 'Obtivemos um resultado melhor ainda.'],
+          ],
+        },
+        examples: [
+          ['말하지 않아도 이심전심으로 통했어요.', 'Sem precisar falar, a gente se entendeu.'],
+          ['힘들어도 참으세요. 고진감래라는 말도 있잖아요.', 'Aguente firme, mesmo sendo difícil. Depois da tempestade vem a bonança.'],
+          ['운동도 과유불급이에요. 너무 무리하지 마세요.', 'Até o exercício, em excesso, faz mal. Não exagere.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Escrever o 사자성어 com espaço: é uma palavra só (일석이조, e não «일석 이조»).',
+      'Adivinhar o sentido pelas sílabas sem conhecer a história: 새옹지마 não fala de cavalos, e sim da sorte que muda.',
+      'Encher a conversa informal de 사자성어: soa pedante. Eles brilham em discursos, redações e editoriais.',
+      'Confundir 설상가상 (piorou) com 금상첨화 (melhorou): as duas são «algo sobre algo», mas geada sobre neve é ruim, e flor sobre seda é bom.',
+      'Achar que todo 사자성어 é chinês moderno: muitos são usados só na Coreia, e o sentido pode ter mudado.',
+    ],
+    quiz: [
+      {
+        question: 'Qual expressão equivale a «matar dois coelhos com uma cajadada só»?',
+        options: ['일석이조', '작심삼일', '동문서답'],
+        answer: '일석이조',
+        explanation: '일석이조 (一石二鳥): uma pedra, dois pássaros.',
+      },
+      {
+        question: 'Sua resolução de ano-novo durou três dias. Qual expressão combina?',
+        options: ['작심삼일', '유비무환', '대기만성'],
+        answer: '작심삼일',
+        explanation: '작심삼일 (作心三日): a decisão que dura três dias.',
+      },
+      {
+        question: 'O que quer dizer 설상가상?',
+        options: ['Uma desgraça em cima de outra', 'Algo bom em cima de algo bom', 'Paz depois da guerra'],
+        answer: 'Uma desgraça em cima de outra',
+        explanation: '설상가상 (雪上加霜): geada sobre a neve. O oposto, bom sobre bom, é 금상첨화.',
+      },
+      {
+        question: 'Alguém responde algo que não tem nada a ver com a pergunta. Isso é…',
+        options: ['동문서답', '이심전심', '금상첨화'],
+        answer: '동문서답',
+        explanation: '동문서답 (東問西答): perguntam pelo leste, responde pelo oeste.',
+      },
+      {
+        question: 'O que ensina 새옹지마?',
+        options: ['Que sorte e azar se alternam', 'Que cavalos são valiosos', 'Que é preciso trabalhar duro'],
+        answer: 'Que sorte e azar se alternam',
+        explanation: 'Na história do velho da fronteira, cada azar trouxe uma sorte, e vice-versa.',
+      },
+    ],
+  },
+  {
+    id: 'ko-g-literatura',
+    level: 'C2',
+    title: 'A língua da literatura: do 훈민정음 ao 시조, 김소월 e 윤동주',
+    emoji: '📜',
+    summary: 'A literatura coreana guarda formas que a fala perdeu: finais solenes (-노라, -리라, -(으)랴, -옵소서), o ritmo de três versos do 시조, a negação antiga com 아니. Do prefácio do rei Sejong ao hangul (1446), passando pelo duelo de poemas de 1392 e pelos versos de 김소월 e 윤동주, ler literatura em coreano é encontrar o 한 (a mágoa melancólica) e o 정 (o afeto que liga as pessoas).',
+    sections: [
+      {
+        heading: 'O prefácio do 훈민정음 (1446)',
+        text: 'O documento que apresentou o hangul, 훈민정음 («os sons corretos para instruir o povo»), abre com um prefácio do rei Sejong que todo coreano estuda na escola. No original, ele usa letras que sumiram (como o ㆍ, o «ponto» de uma vogal antiga) e uma grafia de 600 anos atrás; abaixo, na versão moderna que se lê nas escolas. O dia da promulgação é feriado nacional: 한글날, 9 de outubro.',
+        examples: [
+          ['나라의 말이 중국과 달라 문자와 서로 통하지 아니하므로', 'Como a língua do país difere da China e não se comunica com a escrita [chinesa],'],
+          ['어리석은 백성이 이르고자 하는 바가 있어도 끝내 제 뜻을 펴지 못하는 사람이 많으니라.', 'muitos do povo simples, mesmo tendo o que dizer, não conseguem expressar o que pensam.'],
+          ['내가 이를 딱하게 여겨 새로 스물여덟 글자를 만드니', 'Compadecido disso, criei vinte e oito letras novas,'],
+          ['사람마다 쉽게 익혀 날마다 씀에 편하게 하고자 할 따름이니라.', 'apenas para que todos as aprendam com facilidade e as usem com conforto no dia a dia.'],
+        ],
+      },
+      {
+        heading: 'O 시조 e o duelo de 1392',
+        text: 'O 시조 é o poema curto clássico: três versos, cada um com quatro grupos de três ou quatro sílabas, e o terceiro verso abre com uma virada de três sílabas. O par mais famoso é um duelo político. Em 1392, 이방원, filho do fundador da nova dinastia Joseon, tenta atrair o ministro 정몽주, fiel à dinastia Goryeo, com o 하여가: «que importa isto ou aquilo? enrosquemo-nos como as trepadeiras». 정몽주 responde com o 단심가, o «canto do coração leal», e foi assassinado pouco depois na ponte 선죽교. Repare nas formas antigas: -리 e -(으)랴 perguntam para negar («que importa?», «haveria de mudar?»), e -리라 promete.',
+        table: {
+          head: ['Forma antiga', 'Hoje', 'No poema'],
+          rows: [
+            ['-(으)리', '-겠는가 (pergunta retórica)', '어떠하리 = que importa?'],
+            ['-(으)랴', '-겠느냐 (pergunta que nega)', '있으랴 = haveria? (não há)'],
+            ['-(으)리라', '-겠다 (promessa, previsão)', '누리리라 = desfrutaremos'],
+            ['-(이)야', 'ênfase: «quanto a»', '일편단심이야 = quanto ao coração leal'],
+          ],
+        },
+        examples: [
+          ['이런들 어떠하리 저런들 어떠하리', 'Que importa se for assim, que importa se for assado? (하여가, 이방원)'],
+          ['우리도 이같이 얽혀져 백 년까지 누리리라', 'Enrosquemo-nos assim também, e gozemos cem anos.'],
+          ['이 몸이 죽고 죽어 일백 번 고쳐 죽어', 'Ainda que este corpo morra e morra, e morra cem vezes de novo, (단심가, 정몽주)'],
+          ['임 향한 일편단심이야 가실 줄이 있으랴', 'o coração leal ao meu senhor, haveria de mudar?'],
+        ],
+      },
+      {
+        heading: '김소월, 진달래꽃 (1925): o 한 em versos simples',
+        text: 'O poema mais amado da Coreia moderna é uma despedida: a pessoa amada vai embora, farta de quem fala, e quem fala promete espalhar azaleias pelo caminho e não chorar. A língua é simples e musical, com formas de humildade antigas: -우리다 (드리우리다, «hei de oferecer») e -옵소서, o pedido mais respeitoso (가시옵소서, «vá, eu lhe peço»). O último verso usa a negação antiga, 아니 antes do verbo, e diz o contrário do que sente: «nem morrendo derramarei lágrimas». Essa dor contida, que não se queixa, é o 한.',
+        examples: [
+          ['나 보기가 역겨워 가실 때에는 말없이 고이 보내 드리우리다.', 'Quando, farto(a) de me ver, você partir, eu o(a) deixarei ir em silêncio, com carinho.'],
+          ['영변에 약산 진달래꽃 아름 따다 가실 길에 뿌리우리다.', 'Colherei braçadas de azaleias do monte Yak, em Yeongbyeon, e as espalharei no seu caminho.'],
+          ['가시는 걸음걸음 놓인 그 꽃을 사뿐히 즈려밟고 가시옵소서.', 'A cada passo, pise de leve nessas flores e siga, eu lhe peço.'],
+          ['나 보기가 역겨워 가실 때에는 죽어도 아니 눈물 흘리우리다.', 'Quando, farto(a) de me ver, você partir, nem morrendo derramarei lágrimas.'],
+        ],
+      },
+      {
+        heading: '윤동주, 서시 (1941): a consciência limpa',
+        text: '윤동주 escreveu sob a ocupação japonesa, quando o coreano era proibido nas escolas, e morreu numa prisão em Fukuoka em 1945, aos 27 anos. Seus poemas saíram depois da libertação, em 하늘과 바람과 별과 시 (Céu, vento, estrelas e poesia). O 서시 (Prefácio) é uma prece de integridade. A gramática é moderna e cheia de nuance: -기를 é um desejo (부끄럼이 없기를, «que não haja vergonha»), -아야지 é uma resolução dita a si mesmo, e -아야겠다, uma decisão firme. O último verso, sozinho, usa 스치운다, uma forma poética de 스친다 (roça).',
+        examples: [
+          ['죽는 날까지 하늘을 우러러 한 점 부끄럼이 없기를,', 'Que até o dia em que eu morrer, olhando o céu, não haja em mim uma só mancha de vergonha;'],
+          ['잎새에 이는 바람에도 나는 괴로워했다.', 'até com o vento que se levanta nas folhas eu sofri.'],
+          ['별을 노래하는 마음으로 모든 죽어 가는 것을 사랑해야지.', 'Com um coração que canta as estrelas, hei de amar tudo o que está morrendo.'],
+          ['그리고 나한테 주어진 길을 걸어가야겠다.', 'E hei de seguir o caminho que me foi dado.'],
+          ['오늘 밤에도 별이 바람에 스치운다.', 'Também esta noite, as estrelas roçam no vento.'],
+        ],
+      },
+      {
+        heading: 'Formas antigas que ainda aparecem',
+        text: 'Essas terminações não se usam na conversa, mas vivem em poemas, orações, hinos, placas e nas novelas de época (사극), onde os ministros respondem ao rei com 황공하옵니다. Às vezes voltam de brincadeira: a tradução coreana de «Veni, vidi, vici» é 왔노라, 보았노라, 이겼노라.',
+        table: {
+          head: ['Forma', 'Valor', 'Onde aparece', 'Exemplo'],
+          rows: [
+            ['-노라', 'declaração solene', 'hinos, frases célebres', '왔노라, 보았노라, 이겼노라'],
+            ['-도다', 'exclamação solene', 'Bíblia, poesia', '아름답도다'],
+            ['-(으)리라', 'promessa, previsão', 'poesia, juramentos', '백 년까지 누리리라'],
+            ['-(으)랴', 'pergunta que nega', 'poesia, provérbios', '가실 줄이 있으랴'],
+            ['-옵소서', 'pedido muito respeitoso', 'orações, poesia', '가시옵소서'],
+            ['-옵니다', 'declaração muito respeitosa', 'novelas de época', '황공하옵니다'],
+            ['아니 + verbo', 'negação antiga', 'poesia', '아니 눈물 흘리우리다'],
+          ],
+        },
+        examples: [
+          ['왔노라, 보았노라, 이겼노라.', 'Vim, vi, venci.'],
+          ['전하, 황공하옵니다.', 'Majestade, é uma honra que não mereço. (novela de época)'],
+          ['주여, 우리를 지켜 주옵소서.', 'Senhor, protegei-nos. (oração)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Ler -리라 e -(으)랴 como erros: são formas antigas vivas na poesia. -리라 promete; -(으)랴 pergunta para negar.',
+      'Levar ao pé da letra o fim de 진달래꽃: «nem morrendo derramarei lágrimas» é a dor contida que diz o contrário.',
+      'Imitar as formas antigas na conversa: soa como novela de época. Serve para brincadeira, não para o dia a dia.',
+      'Traduzir 한 como «ódio»: é uma mistura de mágoa, saudade e resignação, um sentimento que os coreanos veem como parte da sua história.',
+      'Esquecer que as antologias modernizam a ortografia: os originais têm grafias e letras antigas.',
+    ],
+    quiz: [
+      {
+        question: 'Em «가실 줄이 있으랴», o que faz o -(으)랴?',
+        options: ['Faz uma pergunta retórica que nega: «haveria?», ou seja, não há', 'Faz um pedido educado', 'Marca o futuro simples'],
+        answer: 'Faz uma pergunta retórica que nega: «haveria?», ou seja, não há',
+        explanation: 'É a pergunta do 단심가: o coração leal haveria de mudar? Nunca.',
+      },
+      {
+        question: 'Quem escreveu 진달래꽃?',
+        options: ['김소월', '윤동주', '정몽주'],
+        answer: '김소월',
+        explanation: '김소월 publicou 진달래꽃 em 1925. 윤동주 escreveu o 서시, e 정몽주, o 단심가.',
+      },
+      {
+        question: 'O que quer dizer 왔노라, 보았노라, 이겼노라?',
+        options: ['Vim, vi, venci.', 'Venha, veja, vença.', 'Virei, verei, vencerei.'],
+        answer: 'Vim, vi, venci.',
+        explanation: 'O -노라 solene, com o passado -았/었-: a tradução clássica de «Veni, vidi, vici».',
+      },
+      {
+        question: 'Quantos versos tem um 시조?',
+        options: ['Três', 'Quatro', 'Catorze'],
+        answer: 'Três',
+        explanation: 'Três versos de quatro grupos rítmicos, com a virada no começo do terceiro.',
+      },
+      {
+        question: 'No 서시, «한 점 부끄럼이 없기를» expressa…',
+        options: ['Um desejo: que não haja nenhuma vergonha', 'Uma ordem ao leitor', 'Um fato do passado'],
+        answer: 'Um desejo: que não haja nenhuma vergonha',
+        explanation: '-기를 no fim, sem o 바라다, é um desejo, uma prece.',
+      },
+    ],
+  },
 ];

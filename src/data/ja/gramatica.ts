@@ -4248,4 +4248,217 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
     ],
   },
+  // ───────────────────────────── C2 ─────────────────────────────
+  {
+    id: 'ja-g-classico',
+    level: 'C2',
+    title: 'Traços do japonês clássico (文語): ず, べし, なり, ごとし, けり',
+    emoji: '📜',
+    summary: 'O japonês clássico (文語), a língua escrita até o século XX, não morreu: vive nos provérbios, nas placas, nos hinos, nos haicais e nas aberturas célebres que todo estudante japonês decora. Com ず, べし, なり, ごとし, a grafia antiga e o 係り結び, você abre a porta da literatura de mil anos atrás.',
+    sections: [
+      {
+        heading: 'O clássico que você já vê todo dia',
+        text: 'Até a Segunda Guerra, leis, jornais e documentos oficiais eram escritos em 文語, a língua clássica, baseada no japonês da corte de Heian (séculos IX a XII). A Constituição de 1946 foi escrita, pela primeira vez, na língua moderna. Mas as formas antigas continuam por aí. O negativo ず, ぬ, ざる está em provérbios e na piada dos três macacos de Nikkō, 見ざる聞かざる言わざる, em que ざる soa como 猿 (macaco). べし e べからず dão ordens solenes (立ち入るべからず, proibida a entrada). なり é o antigo «ser» (時は金なり), ごとし é «como» (光陰矢のごとし), e o adjetivo clássico em -き ainda enfeita frases: 古き良き時代, os bons velhos tempos.',
+        table: {
+          head: ['Forma clássica', 'Moderno', 'Exemplo', 'Português'],
+          rows: [
+            ['〜ず・〜ぬ・〜ざる', '〜ない', '知らぬが仏', 'quem não sabe fica em paz'],
+            ['〜べし・〜べからず', '〜べきだ・〜てはいけない', '立ち入るべからず', 'proibida a entrada'],
+            ['〜なり', '〜である', '時は金なり', 'tempo é dinheiro'],
+            ['〜ごとし', '〜のようだ', '光陰矢のごとし', 'o tempo voa como uma flecha'],
+            ['adjetivo em 〜き', 'adjetivo em 〜い', '古き良き時代', 'os bons velhos tempos'],
+            ['〜ん (〜む)', '〜よう', 'いざ行かん', 'vamos, avante!'],
+            ['〜けり', '〜た (com emoção)', 'なりにけり', 'veio a ser, enfim'],
+          ],
+        },
+        examples: [
+          ['見ざる、聞かざる、言わざる。', 'Não ver, não ouvir, não falar: os três macacos do santuário de Nikkō (ざる soa como 猿, macaco).'],
+          ['時は金なり。', 'Tempo é dinheiro.'],
+          ['光陰矢のごとし。', 'O tempo voa como uma flecha.'],
+          ['知らぬが仏。', 'Quem não sabe fica em paz (ao pé da letra, «não saber é ser Buda»).'],
+          ['働かざる者食うべからず。', 'Quem não trabalha não come.'],
+        ],
+      },
+      {
+        heading: 'A grafia antiga (歴史的仮名遣い)',
+        text: 'Até 1946, o kana seguia a grafia histórica, que registrava a pronúncia de séculos antes. Para ler os clássicos, bastam algumas regras. は, ひ, ふ, へ, ほ no meio ou no fim da palavra se leem わ, い, う, え, お: いふ é いう (dizer), かは é かわ (rio). ゐ e ゑ, dois kana que caíram em desuso, se leem い e え. E certos encontros de vogais se contraem: やう vira よう, けふ vira きょう (hoje), てふてふ vira ちょうちょう (borboleta). O verbo 言う, que hoje se escreve com う, aparece nos livros antigos como いふ.',
+        table: {
+          head: ['Grafia antiga', 'Leitura', 'Hoje', 'Português'],
+          rows: [
+            ['いふ', 'いう', '言う', 'dizer'],
+            ['おもふ', 'おもう', '思う', 'pensar'],
+            ['かは', 'かわ', '川', 'rio'],
+            ['けふ', 'きょう', '今日', 'hoje'],
+            ['てふてふ', 'ちょうちょう', 'ちょうちょう', 'borboleta'],
+            ['やうやう', 'ようよう', 'ようやく', 'aos poucos'],
+            ['ゐる', 'いる', 'いる', 'estar'],
+            ['こゑ', 'こえ', '声', 'voz'],
+          ],
+        },
+        examples: [
+          ['春はあけぼの。やうやう白くなりゆく山ぎは、少しあかりて、紫だちたる雲の細くたなびきたる。', 'Na primavera, a aurora. A linha das montanhas vai clareando aos poucos, e nuvens arroxeadas se estendem, finas. (Sei Shōnagon, «O Livro do Travesseiro», c. 1000; やうやう se lê ようよう)'],
+          ['つれづれなるままに、日暮らし、硯にむかひて、心にうつりゆくよしなし事を、そこはかとなく書きつくれば、あやしうこそものぐるほしけれ。', 'No tédio, o dia inteiro diante do tinteiro, escrevo à toa as bobagens que me passam pela cabeça, e fico estranhamente fora de mim. (Yoshida Kenkō, «Ensaios no Ócio», c. 1330)'],
+        ],
+      },
+      {
+        heading: 'Aberturas célebres e o 係り結び',
+        text: 'Os estudantes japoneses decoram as primeiras linhas dos clássicos, como nós decoramos «As armas e os barões assinalados». Elas mostram o clássico em ação: o あり (há), o なり (é), o ず (não), e um fenômeno sem par no português moderno, o 係り結び. Quando a frase tem certas partículas de ênfase (ぞ, なむ, や, か), o verbo final muda de forma e vai para a forma de adjetivo; com こそ, vai para outra forma, a 已然形. É o que se vê no fim do trecho de Kenkō: «あやしうこそものぐるほしけれ», em que こそ puxa o final けれ, e não けり.',
+        table: {
+          head: ['Obra', 'Autor', 'Época', 'Abertura'],
+          rows: [
+            ['枕草子', '清少納言', 'c. 1000', '春はあけぼの。'],
+            ['源氏物語', '紫式部', 'c. 1008', 'いづれの御時にか……'],
+            ['方丈記', '鴨長明', '1212', 'ゆく河の流れは絶えずして……'],
+            ['平家物語', 'anônimo', 'século XIII', '祇園精舎の鐘の声……'],
+            ['徒然草', '吉田兼好', 'c. 1330', 'つれづれなるままに……'],
+            ['おくのほそ道', '松尾芭蕉', '1702', '月日は百代の過客にして……'],
+          ],
+        },
+        examples: [
+          ['祇園精舎の鐘の声、諸行無常の響きあり。', 'O som do sino do mosteiro de Gion ecoa a impermanência de todas as coisas. («Heike Monogatari», século XIII)'],
+          ['ゆく河の流れは絶えずして、しかももとの水にあらず。', 'O fluxo do rio que corre não cessa, e no entanto nunca é a mesma água. (Kamo no Chōmei, «Hōjōki», 1212)'],
+          ['月日は百代の過客にして、行きかふ年もまた旅人なり。', 'Os meses e os dias são viajantes da eternidade, e os anos que vão e vêm também são viajantes. (Bashō, «Oku no Hosomichi»; 百代 = はくたい, 過客 = かかく)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Ler a grafia antiga ao pé da letra: いふ é «iu», かは é «kawa», けふ é «kyō».',
+      'Achar que べからず é «não consegue»: é proibição. 立ち入るべからず = proibido entrar.',
+      'Confundir o ぬ negativo (知らぬ, não sabe) com o ぬ de conclusão do clássico (風立ちぬ, o vento se levantou): o contexto e a forma do verbo decidem.',
+      'Achar que o 文語 está morto: ele vive em provérbios, placas, letras de hino e nomes de lojas.',
+      'Espalhar formas clássicas no texto moderno sem motivo: usadas de propósito, dão solenidade; por engano, soam afetadas.',
+    ],
+    quiz: [
+      {
+        question: 'O que quer dizer «立ち入るべからず»?',
+        options: ['Proibida a entrada', 'Entrada livre', 'Não é possível entrar'],
+        answer: 'Proibida a entrada',
+        explanation: 'べからず é a proibição solene do clássico, ainda usada em placas.',
+      },
+      {
+        question: 'Como se lê «けふ» na grafia antiga?',
+        options: ['きょう', 'けふ', 'けう'],
+        answer: 'きょう',
+        explanation: 'けふ é a grafia histórica de 今日: a pronúncia moderna é きょう.',
+      },
+      {
+        question: 'Qual é o equivalente moderno de «時は金なり»?',
+        options: ['時は金である。', '時は金になる。', '時は金がない。'],
+        answer: '時は金である。',
+        explanation: 'なり é a cópula clássica, equivalente a である.',
+      },
+      {
+        question: 'Qual obra começa com «春はあけぼの»?',
+        options: ['枕草子', '平家物語', '方丈記'],
+        answer: '枕草子',
+        explanation: 'É a abertura do «Livro do Travesseiro», de Sei Shōnagon, por volta do ano 1000.',
+      },
+      {
+        question: 'Por que o trecho de Kenkō termina em «ものぐるほしけれ», e não «ものぐるほし»?',
+        options: ['Por causa de uma partícula de ênfase, que exige outra forma no fim da frase', 'Porque é uma pergunta', 'Porque é uma forma negativa'],
+        answer: 'Por causa de uma partícula de ênfase, que exige outra forma no fim da frase',
+        explanation: 'É o 係り結び: com こそ, o final vai para a forma 已然形 (けれ).',
+      },
+    ],
+  },
+  {
+    id: 'ja-g-poesia',
+    level: 'C2',
+    title: 'Haicai e tanka: a poesia em cinco-sete-cinco',
+    emoji: '🌸',
+    summary: 'A poesia japonesa conta moras, não sílabas. O haicai (俳句) tem 5-7-5 moras, uma palavra de estação (季語) e, muitas vezes, uma palavra de corte (切れ字); o tanka (短歌) tem 5-7-5-7-7. De Bashō a Tawara Machi, e dos templos de Kyoto aos cafezais de São Paulo, onde os imigrantes trouxeram o haicai.',
+    sections: [
+      {
+        heading: 'A métrica das moras',
+        text: 'O haicai tem dezessete moras, em três segmentos de cinco, sete e cinco. Conte batidas, como no tópico dos sons: ん, っ e as vogais longas contam uma cada. O poema mais famoso do Japão, de Matsuo Bashō (1686), cabe certinho: ふるいけや (5) かわずとびこむ (7) みずのおと (5). Repare que 蛙, a rã, se lê かわず no poema, a forma poética antiga, e não かえる. Em japonês, o haicai não se escreve em três linhas: vai numa linha só, de preferência na vertical. As três linhas são costume das traduções.',
+        table: {
+          head: ['Segmento', 'Moras', 'Contagem'],
+          rows: [
+            ['古池や', 'ふ・る・い・け・や', '5'],
+            ['蛙飛び込む', 'か・わ・ず・と・び・こ・む', '7'],
+            ['水の音', 'み・ず・の・お・と', '5'],
+          ],
+        },
+        examples: [
+          ['古池や蛙飛び込む水の音', 'Velho tanque: / uma rã salta — / o som da água. (Bashō, 1686; 蛙 se lê かわず)'],
+          ['閑さや岩にしみ入る蝉の声', 'Silêncio: / penetra nas rochas / o canto das cigarras. (Bashō, 1689; 閑さ se lê しずかさ)'],
+          ['柿くへば鐘が鳴るなり法隆寺', 'Mordo um caqui / e o sino ressoa: / Hōryūji. (Masaoka Shiki, 1895; くへば se lê くえば)'],
+        ],
+      },
+      {
+        heading: '季語 e 切れ字: a estação e o corte',
+        text: 'Todo haicai clássico tem um 季語, uma palavra que situa o poema numa estação: as cerejeiras e a rã são da primavera, a cigarra é do verão, a lua é do outono (a lua cheia de setembro é a mais admirada do ano), a neve é do inverno. Os poetas consultam os 歳時記, almanaques que classificam milhares dessas palavras. O 切れ字 é a palavra de corte, como や, かな e けり: ela divide o poema em dois e abre um silêncio, como um travessão cheio de emoção. Quando a mesma forma 5-7-5 fala da vida humana com humor e sem 季語, o nome é outro: 川柳 (senryū), hoje popular em concursos como o dos assalariados, a サラリーマン川柳.',
+        table: {
+          head: ['Estação', 'Kigo', 'Português'],
+          rows: [
+            ['primavera', '桜・蛙・菜の花', 'cerejeira, rã, flor da colza'],
+            ['verão', '蝉・蛍・夕立', 'cigarra, vaga-lume, pancada de chuva'],
+            ['outono', '月・紅葉・柿', 'lua, folhas vermelhas, caqui'],
+            ['inverno', '雪・こたつ・年の暮れ', 'neve, kotatsu, fim de ano'],
+          ],
+        },
+        examples: [
+          ['菜の花や月は東に日は西に', 'Flores de colza: / a lua no leste, / o sol no oeste. (Yosa Buson, 1774)'],
+          ['やせ蛙負けるな一茶これにあり', 'Rã magrela, / não desista: / Issa está aqui! (Kobayashi Issa, 1816; やせ蛙 se lê やせがえる, 一茶 é いっさ)'],
+          ['夏草や兵どもが夢の跡', 'Capim de verão: / é o que resta dos sonhos / dos guerreiros. (Bashō, 1689)'],
+        ],
+      },
+      {
+        heading: 'Tanka, e o haicai no Brasil',
+        text: 'O tanka (短歌), de 5-7-5-7-7 moras, é bem mais antigo que o haicai: já está na primeira grande antologia, o 万葉集 (século VIII), e nos cem poemas do 百人一首, que viraram um jogo de cartas de Ano-Novo. Os poetas clássicos adoravam os duplos sentidos: no poema de Ono no Komachi, ふる é «passar a vida» e «cair (a chuva)», e ながめ é «olhar perdido» e «chuva longa». O tanka seguiu vivo: Ishikawa Takuboku o encheu de vida cotidiana, e Tawara Machi, em 1987, vendeu milhões com tanka em língua coloquial. E o haicai atravessou o oceano. Os imigrantes japoneses escreveram haicais no Brasil desde as primeiras décadas da imigração, adaptando os kigo às estações do hemisfério sul, e poetas brasileiros o adotaram em português: Guilherme de Almeida, Millôr Fernandes, Paulo Leminski, Alice Ruiz.',
+        table: {
+          head: ['Forma', 'Moras', 'Tema', 'Poetas'],
+          rows: [
+            ['短歌', '5-7-5-7-7 (31)', 'sentimentos, natureza, amor', '小野小町、石川啄木、俵万智'],
+            ['俳句', '5-7-5 (17)', 'natureza e estação, com 季語', '松尾芭蕉、与謝蕪村、小林一茶、正岡子規'],
+            ['川柳', '5-7-5 (17)', 'humor e vida humana, sem 季語', 'サラリーマン川柳'],
+          ],
+        },
+        examples: [
+          ['花の色は移りにけりないたづらにわが身世にふるながめせしまに', 'A cor das flores / desbotou, em vão, / enquanto eu passava a vida / olhando a chuva longa. (Ono no Komachi, século IX; いたづらに se lê いたずらに)'],
+          ['はたらけどはたらけど猶わが生活楽にならざりぢつと手を見る', 'Trabalho, trabalho, / e a minha vida / não fica mais leve: / fico olhando as minhas mãos. (Ishikawa Takuboku, 1910; 生活 se lê くらし, ぢつと é じっと)'],
+          ['「この味がいいね」と君が言ったから七月六日はサラダ記念日', '«Este sabor está bom», você disse, e por isso o 6 de julho é o Dia da Salada. (Tawara Machi, 1987)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Contar sílabas em vez de moras: とうきょう tem quatro moras. ん, っ e as vogais longas contam uma cada.',
+      'Achar que haicai tem de ter três linhas: em japonês, é uma linha só; as três linhas vêm das traduções.',
+      'Ler 蛙 como かえる no poema de Bashō: ali é かわず, a forma poética.',
+      'Traduzir o 季語 sem a estação: para o leitor japonês, 月 já diz «outono»; na tradução, isso se perde se ninguém explicar.',
+      'Confundir haicai e 川柳: a mesma forma, mas o 川柳 fala das pessoas, com humor, e dispensa o 季語.',
+    ],
+    quiz: [
+      {
+        question: 'Quantas moras tem um haicai?',
+        options: ['Dezessete (5-7-5)', 'Trinta e uma (5-7-5-7-7)', 'Catorze'],
+        answer: 'Dezessete (5-7-5)',
+        explanation: '5-7-5 = 17 moras. O tanka, 5-7-5-7-7, tem 31.',
+      },
+      {
+        question: 'Como se lê 蛙 no haicai «古池や蛙飛び込む水の音»?',
+        options: ['かわず', 'かえる', 'がえる'],
+        answer: 'かわず',
+        explanation: 'かわず é a forma poética antiga de «rã», e dá as sete moras do segmento do meio.',
+      },
+      {
+        question: 'Qual é a estação do 季語 «月» (lua)?',
+        options: ['Outono', 'Primavera', 'Inverno'],
+        answer: 'Outono',
+        explanation: 'Na poesia japonesa, a lua é o kigo do outono, quando a lua cheia é mais admirada.',
+      },
+      {
+        question: 'O que é o 切れ字?',
+        options: ['Uma palavra de corte, que divide o poema', 'A palavra de estação', 'O título do poema'],
+        answer: 'Uma palavra de corte, que divide o poema',
+        explanation: 'O 切れ字, como や, かな e けり, divide o poema e cria uma pausa carregada de emoção. A palavra de estação é o 季語.',
+      },
+      {
+        question: 'Como se chama a forma 5-7-5 que fala da vida humana com humor, sem kigo?',
+        options: ['川柳', '短歌', '和歌'],
+        answer: '川柳',
+        explanation: 'O 川柳 (senryū) tem a forma do haicai, mas o tema é humano e satírico. 短歌 e 和歌 têm 31 moras.',
+      },
+    ],
+  },
 ];
