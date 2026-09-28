@@ -222,6 +222,7 @@ export default function ProfileScreen() {
         <Button title="🔊 Voz e microfone" variant="ghost" onPress={() => router.push('/voz')} />
         <Button title="🐧 Ver o tutorial do Linu" variant="ghost" onPress={() => router.push('/tutorial')} />
         <Button title="🎧 Créditos dos áudios" variant="ghost" onPress={() => router.push('/creditos')} />
+        <Button title="🐞 Reportar um erro" variant="ghost" onPress={() => router.push('/reportar-erro')} />
       </View>
 
       <Button title="Apagar meu progresso" variant="ghost" onPress={confirmReset} className="mt-8" />
