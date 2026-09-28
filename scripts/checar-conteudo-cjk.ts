@@ -18,7 +18,7 @@ let vocab = new Map<string, { emoji: string | null }>();
 const LEVELS: readonly string[] = SUBLEVELS;
 
 /** Campos em português (não se checa a tônica russa neles). */
-const PT_KEYS = new Set(['translation', 'botTranslation', 'hint', 'communityPrompt', 'title', 'summary', 'cultural_context', 'history', 'culture_tip', 'grammar_why', 'message', 'wrong', 'explanation', 'question', 'heading', 'description', 'persona', 'story', 'evolution_note', 'origin_language', 'prompt', 'author_name', 'means', 'looksLike', 'name', 'pronunciation', 'cognates', 'root_word']);
+const PT_KEYS = new Set(['translation', 'botTranslation', 'hint', 'communityPrompt', 'title', 'summary', 'cultural_context', 'history', 'culture_tip', 'grammar_why', 'message', 'wrong', 'explanation', 'question', 'heading', 'description', 'persona', 'story', 'evolution_note', 'origin_language', 'prompt', 'author_name', 'means', 'looksLike', 'name', 'pronunciation', 'cognates', 'root_word', 'recognition', 'debated', 'family', 'summary']);
 
 void main();
 
@@ -34,6 +34,8 @@ async function main() {
       if (!it || typeof it !== 'object') continue;
       count++;
       const id = String(it.id ?? '?');
+      // variantes: as histórias ficam dentro delas
+      if ('stories' in it && Array.isArray(it.stories)) for (const st of it.stories as StorySeed[]) checkStory(st, err);
       if ('lessons' in it) checkUnit(it as unknown as UnitSeed, err);
       else if ('nodes' in it) checkStory(it as unknown as StorySeed, err);
       // sotaques e dialetos: o texto de dialeto tem grafia própria (friulano «stâstu»); não se confere como o padrão

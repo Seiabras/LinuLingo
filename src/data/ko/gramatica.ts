@@ -2313,4 +2313,755 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
     ],
   },
+  // ───────────────────────────── B1.3 ─────────────────────────────
+  {
+    id: 'ko-g-jiman-seo-nikka',
+    level: 'B1.3',
+    title: 'Ligar frases: -지만, -아/어서 e -(으)니까',
+    emoji: '🪢',
+    summary: '-지만 é «mas» (비싸지만 맛있어요). -아/어서 dá a causa ou liga duas ações encadeadas (바빠서 못 가요; 가서 먹어요). -(으)니까 também é «porque», mas soa como justificativa e é o único que aceita um pedido ou convite depois: 추우니까 창문을 닫아 주세요. E para pedir desculpas, sempre -아/어서: 늦어서 죄송해요.',
+    sections: [
+      {
+        heading: '-지만: mas',
+        text: 'Radical + 지만, sem regra de vogal: 비싸지만, 어렵지만, e no passado 먹었지만. Com substantivo, (이)지만: 학생이지만, 의사지만. Duas expressões com -지만 abrem pedidos educados, como o nosso «desculpe incomodar, mas…»: 죄송하지만 e 실례지만.',
+        table: {
+          head: ['Dicionário', 'Com -지만', 'Exemplo', 'Português'],
+          rows: [
+            ['비싸다', '비싸지만', '비싸지만 맛있어요.', 'É caro, mas é gostoso.'],
+            ['어렵다', '어렵지만', '어렵지만 재미있어요.', 'É difícil, mas é divertido.'],
+            ['먹었다', '먹었지만', '많이 먹었지만 또 배고파요.', 'Comi muito, mas já estou com fome.'],
+            ['죄송하다', '죄송하지만', '죄송하지만 좀 도와주시겠어요?', 'Desculpe, poderia me ajudar?'],
+            ['실례이다', '실례지만', '실례지만 성함이 어떻게 되세요?', 'Com licença, qual é o seu nome?'],
+          ],
+        },
+        examples: [
+          ['한국어는 어렵지만 재미있어요.', 'Coreano é difícil, mas é divertido.'],
+          ['형은 키가 크지만 저는 작아요.', 'Meu irmão é alto, mas eu sou baixo.'],
+          ['실례지만 지하철역이 어디예요?', 'Com licença, onde fica a estação de metrô?'],
+        ],
+      },
+      {
+        heading: '-아/어서: porque, e então',
+        text: 'O -아/어서 segue a regra de vogal do 해요체 (가서, 먹어서, 해서) e tem dois usos. O primeiro é a causa: 바빠서 못 가요 (estou ocupado, por isso não vou). O segundo é a sequência em que a primeira ação é a base da segunda: 친구를 만나서 영화를 봤어요 (encontrei o amigo e vimos um filme, juntos). Compare com -고, que só enfileira: 학교에 가고 친구를 만났어요 (fui à escola, e depois encontrei um amigo, em qualquer lugar) × 학교에 가서 친구를 만났어요 (fui à escola e lá encontrei um amigo). Duas regras: nada de passado antes de -아/어서 (o tempo fica no fim) e nada de pedido ou convite depois dele. Com substantivo, na fala, (이)라서: 휴일이라서.',
+        table: {
+          head: ['Uso', 'Exemplo', 'Português'],
+          rows: [
+            ['causa', '바빠서 못 가요.', 'Estou ocupado, por isso não posso ir.'],
+            ['causa', '늦어서 죄송해요.', 'Desculpe pelo atraso.'],
+            ['causa (substantivo)', '휴일이라서 사람이 많아요.', 'Como é feriado, tem muita gente.'],
+            ['sequência', '친구를 만나서 영화를 봤어요.', 'Encontrei um amigo e vimos um filme.'],
+            ['sequência', '여기 앉아서 기다리세요.', 'Sente-se aqui e espere.'],
+            ['sequência', '한국에 가서 한국어를 배울 거예요.', 'Vou para a Coreia e lá vou aprender coreano.'],
+          ],
+        },
+        examples: [
+          ['만나서 반가워요.', 'Prazer em conhecer. (literalmente: por ter te encontrado, estou contente)'],
+          ['어제 너무 피곤해서 일찍 잤어요.', 'Ontem estava cansado demais, então dormi cedo.'],
+          ['김밥을 사서 공원에서 먹었어요.', 'Comprei kimbap e comi no parque.'],
+        ],
+      },
+      {
+        heading: '-(으)니까: porque (então faça isso)',
+        text: 'O -(으)니까 é 니까 depois de vogal e de ㄹ (가니까, e o ㄹ cai: 사니까) e 으니까 depois de consoante (먹으니까). Ele soa como justificativa, «já que…», e por isso combina com pedidos, ordens e convites: 추우니까 창문 닫아 주세요. Aceita passado (갔으니까) e, sozinho no fim, vira resposta: 왜요? 배가 안 고프니까요. Um segundo uso é a descoberta: «quando fiz X, percebi Y» (집에 가니까 아무도 없었어요). Justamente por soar como argumento, não serve para pedir desculpas: «늦었으니까 죄송해요» parece «já que me atrasei, desculpa aí».',
+        table: {
+          head: ['Critério', '-아/어서', '-(으)니까'],
+          rows: [
+            ['passado antes', 'não (늦어서)', 'sim (늦었으니까)'],
+            ['pedido ou convite depois', 'não', 'sim (추우니까 닫아 주세요)'],
+            ['tom', 'causa natural, desculpas', 'justificativa, argumento'],
+            ['expressões fixas', '만나서 반가워요, 늦어서 죄송해요', '—'],
+          ],
+        },
+        examples: [
+          ['비가 오니까 우산 가져가세요.', 'Está chovendo, então leve um guarda-chuva.'],
+          ['시간이 없으니까 택시를 탑시다.', 'Não temos tempo; vamos de táxi.'],
+          ['왜 안 먹어요? 배가 안 고프니까요.', 'Por que você não come? Porque não estou com fome.'],
+          ['집에 오니까 아무도 없었어요.', 'Quando cheguei em casa, não havia ninguém.'],
+        ],
+      },
+      {
+        heading: 'No começo da frase: 그리고, 그래서, 그런데…',
+        text: 'Cada terminação tem um primo que abre a frase seguinte. Eles são muito usados na fala, e 그런데 (na fala rápida, 근데) serve também para mudar de assunto, como o nosso «aliás» ou «e aí».',
+        table: {
+          head: ['Palavra', 'Português', 'Parente de'],
+          rows: [
+            ['그리고', 'e, além disso', '-고'],
+            ['하지만, 그렇지만', 'mas', '-지만'],
+            ['그래서', 'por isso, então', '-아/어서'],
+            ['그러니까', 'por isso, ou seja', '-(으)니까'],
+            ['그런데 (근데)', 'mas; aliás, e aí', '-는데'],
+          ],
+        },
+        examples: [
+          ['어제 비가 많이 왔어요. 그래서 집에 있었어요.', 'Ontem choveu muito. Por isso fiquei em casa.'],
+          ['그런데 민수 씨는 어디 갔어요?', 'Aliás, aonde o Minsu foi?'],
+          ['근데 너 밥 먹었어?', 'E aí, você já comeu? (반말)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Pôr passado antes de -아/어서: «늦었어서» não existe. O tempo vai no fim: 늦어서 죄송해요.',
+      'Pedir ou convidar depois de -아/어서: «비가 와서 우산 가져가세요» soa errado. Use 비가 오니까.',
+      'Pedir desculpas com -(으)니까: soa como justificativa. Desculpa é sempre com -아/어서.',
+      'Trocar -고 e -아/어서 na sequência: 가서 먹어요 (vou lá e como lá) não é o mesmo que 가고 먹어요 (vou, e também como).',
+      'Esquecer que o ㄹ cai antes de -니까: 살다 → 사니까, 알다 → 아니까.',
+      'Esquecer os irregulares: 춥다 → 추워서, 추우니까; 듣다 → 들어서, 들으니까.',
+    ],
+    quiz: [
+      {
+        question: 'Complete: 이 식당은 비싸___ 맛있어요.',
+        options: ['지만', '아서', '니까'],
+        answer: '지만',
+        explanation: 'Contraste («é caro, mas é gostoso»): -지만.',
+      },
+      {
+        question: 'Como se diz «Desculpe pelo atraso»?',
+        options: ['늦어서 죄송해요.', '늦었으니까 죄송해요.', '늦었어서 죄송해요.'],
+        answer: '늦어서 죄송해요.',
+        explanation: 'Desculpas usam -아/어서, sem passado antes. Com -(으)니까, soaria como justificativa.',
+      },
+      {
+        question: 'Complete: 비가 오___ 우산을 가져가세요.',
+        options: ['니까', '아서', '지만'],
+        answer: '니까',
+        explanation: 'Depois vem um pedido (가져가세요), então só -(으)니까 serve.',
+      },
+      {
+        question: 'Qual frase quer dizer «Fui à escola e lá encontrei um amigo»?',
+        options: ['학교에 가서 친구를 만났어요.', '학교에 가고 친구를 만났어요.', '학교에 갔지만 친구를 만났어요.'],
+        answer: '학교에 가서 친구를 만났어요.',
+        explanation: '-아/어서 liga ações encadeadas: o encontro aconteceu na escola.',
+      },
+      {
+        question: 'O que quer dizer 만나서 반가워요?',
+        options: ['Prazer em conhecer.', 'Vamos nos encontrar.', 'Encontrei e fiquei triste.'],
+        answer: 'Prazer em conhecer.',
+        explanation: 'Literalmente: «por ter te encontrado, estou contente». O -아/어서 dá a causa.',
+      },
+    ],
+  },
+  {
+    id: 'ko-g-honorificos',
+    level: 'B1.3',
+    title: 'Honoríficos: -(으)시-, 께서, 께 e os verbos especiais (드시다, 계시다, 주무시다)',
+    emoji: '🙇',
+    summary: 'Além do nível de fala (com quem você fala), o coreano marca o respeito pela pessoa de quem se fala. O sufixo -(으)시- entra no verbo quando o sujeito é mais velho ou superior (가세요, 읽으셨어요); as partículas viram 께서 (sujeito) e 께 (para); alguns verbos e substantivos têm forma própria: 드시다 (comer), 계시다 (estar), 주무시다 (dormir), 댁 (casa), 연세 (idade), 성함 (nome).',
+    sections: [
+      {
+        heading: 'Duas cortesias diferentes',
+        text: 'O coreano tem duas escalas de respeito, independentes. O nível de fala (합니다체, 해요체, 반말) é o respeito pelo ouvinte. O honorífico -(으)시- é o respeito pelo sujeito da frase. Por isso você pode falar 반말 com um amigo e, mesmo assim, honrar a avó de quem está falando: 할머니가 오셨어 (a avó chegou). E nunca se honra a si mesmo: o -(으)시- é só para os outros. A forma -(으)세요 também é o pedido educado: 앉으세요 (sente-se, por favor).',
+        table: {
+          head: ['Dicionário', 'Presente', 'Passado', '합니다체', 'Português'],
+          rows: [
+            ['가다', '가세요', '가셨어요', '가십니다', 'ir'],
+            ['오다', '오세요', '오셨어요', '오십니다', 'vir'],
+            ['읽다', '읽으세요', '읽으셨어요', '읽으십니다', 'ler'],
+            ['바쁘다', '바쁘세요', '바쁘셨어요', '바쁘십니다', 'estar ocupado'],
+            ['살다', '사세요', '사셨어요', '사십니다', 'morar'],
+            ['이다', '선생님이세요', '선생님이셨어요', '선생님이십니다', 'ser professor(a)'],
+          ],
+        },
+        examples: [
+          ['선생님, 요즘 많이 바쁘세요?', 'Professor, o senhor anda muito ocupado?'],
+          ['할머니가 오셨어!', 'A vovó chegou! (반말 com um amigo, mas honrando a avó)'],
+          ['여기 앉으세요.', 'Sente-se aqui, por favor.'],
+        ],
+      },
+      {
+        heading: 'Verbos com forma própria',
+        text: 'Alguns verbos do dia a dia não recebem simplesmente -(으)시-: trocam de palavra. 드시다 é comer e beber; 계시다 é estar (para pessoas); 주무시다 é dormir; 말씀하시다 é dizer. Atenção à diferença: «o professor está na sala» é 선생님이 교실에 계세요, mas «o senhor tem tempo?» é 시간 있으세요? (ter usa 있으시다). E as despedidas: quem vai embora diz 안녕히 계세요 («fique bem», para quem fica); quem fica diz 안녕히 가세요 («vá bem»).',
+        table: {
+          head: ['Comum', 'Honorífico', 'Português'],
+          rows: [
+            ['먹다, 마시다', '드시다', 'comer, beber'],
+            ['있다 (estar)', '계시다', 'estar (pessoa)'],
+            ['있다 (ter)', '있으시다', 'ter'],
+            ['자다', '주무시다', 'dormir'],
+            ['말하다', '말씀하시다', 'dizer, falar'],
+            ['아프다', '편찮으시다', 'estar doente'],
+            ['죽다', '돌아가시다', 'falecer'],
+          ],
+        },
+        examples: [
+          ['많이 드세요.', 'Bom apetite. (literalmente: coma bastante)'],
+          ['아버지는 지금 집에 계세요.', 'Meu pai está em casa agora.'],
+          ['안녕히 주무세요.', 'Boa noite. (ao ir dormir, para um mais velho)'],
+          ['할아버지는 작년에 돌아가셨어요.', 'Meu avô faleceu no ano passado.'],
+        ],
+      },
+      {
+        heading: 'Partículas e substantivos que se curvam',
+        text: 'O sujeito honrado leva 께서 no lugar de 이/가 (e 께서는 no lugar de 은/는); o destinatário honrado leva 께 no lugar de 에게/한테 («para»). Na conversa, 께서 é formal e aparece pouco; 께 é mais comum. E alguns substantivos têm versão respeitosa: você pergunta o 성함 (nome) e a 연세 (idade) de um senhor, e fala da 댁 (casa) dele.',
+        table: {
+          head: ['Comum', 'Honorífico', 'Português'],
+          rows: [
+            ['이/가', '께서', 'partícula de sujeito'],
+            ['에게, 한테', '께', 'para (alguém)'],
+            ['이름', '성함', 'nome'],
+            ['나이', '연세', 'idade'],
+            ['집', '댁', 'casa'],
+            ['생일', '생신', 'aniversário'],
+            ['밥', '진지', 'refeição'],
+            ['사람', '분', 'pessoa'],
+          ],
+        },
+        examples: [
+          ['할아버지께서 신문을 읽으세요.', 'O avô está lendo o jornal.'],
+          ['어머니께 꽃을 드렸어요.', 'Dei flores à minha mãe.'],
+          ['성함이 어떻게 되세요?', 'Qual é o seu nome, por favor?'],
+          ['할머니, 진지 드셨어요?', 'Vovó, a senhora já comeu?'],
+        ],
+      },
+      {
+        heading: 'Humildade: falar de si para baixo',
+        text: 'O outro lado da moeda: quando você faz algo para um superior, o verbo se abaixa. 드리다 no lugar de 주다 (dar), 여쭤보다 no lugar de 물어보다 (perguntar), 뵙다 no lugar de 만나다 (ver, encontrar), 모시다 (acompanhar, levar alguém respeitado). E o próprio «eu» vira 저, e «nós», 저희. Esse sistema de humildade se aprofunda no C1.2.',
+        table: {
+          head: ['Comum', 'Humilde', 'Português'],
+          rows: [
+            ['주다', '드리다', 'dar (a um superior)'],
+            ['물어보다', '여쭤보다', 'perguntar'],
+            ['만나다, 보다', '뵙다', 'encontrar, ver'],
+            ['데리고 가다', '모시고 가다', 'levar (alguém)'],
+            ['나 / 우리', '저 / 저희', 'eu / nós'],
+          ],
+        },
+        examples: [
+          ['선생님께 여쭤볼게요.', 'Vou perguntar ao professor.'],
+          ['내일 뵙겠습니다.', 'Até amanhã. (literalmente: amanhã o verei)'],
+          ['부모님을 모시고 왔어요.', 'Vim com os meus pais.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Honrar a si mesmo: «제가 가실게요» está errado. O -(으)시- é só para os outros.',
+      'Falar dos próprios pais e avós sem honorífico: em coreano se diz 할머니가 주무세요, e não «할머니가 자요».',
+      'Confundir 계시다 e 있으시다: a pessoa está → 계세요; a pessoa tem → 있으세요 (시간 있으세요?).',
+      'Trocar as despedidas: quem sai diz 안녕히 계세요; quem fica diz 안녕히 가세요.',
+      'Honrar objetos: «커피 나오셨습니다» (o café saiu, com honorífico) se ouve muito em lojas, mas é considerado erro; o respeito vai para pessoas: 커피 나왔습니다.',
+      'Usar 께서 o tempo todo na conversa: é formal; no dia a dia, 이/가 com o verbo honorífico já basta.',
+    ],
+    quiz: [
+      {
+        question: 'Complete com respeito: 할아버지께서 신문을 ___.',
+        options: ['읽으세요', '읽어요', '읽세요'],
+        answer: '읽으세요',
+        explanation: '읽다 termina em consoante, então -으세요: 읽으세요.',
+      },
+      {
+        question: 'Qual é o honorífico de 먹다 (comer)?',
+        options: ['드시다', '주무시다', '계시다'],
+        answer: '드시다',
+        explanation: '드시다 é comer e beber; 주무시다 é dormir; 계시다 é estar.',
+      },
+      {
+        question: 'Você está saindo da loja, e o dono fica. O que você diz?',
+        options: ['안녕히 계세요.', '안녕히 가세요.', '안녕히 주무세요.'],
+        answer: '안녕히 계세요.',
+        explanation: 'Quem sai deseja que o outro «fique bem»: 안녕히 계세요.',
+      },
+      {
+        question: 'Como se pergunta o nome de um senhor mais velho?',
+        options: ['성함이 어떻게 되세요?', '이름이 뭐야?', '너 이름이 뭐예요?'],
+        answer: '성함이 어떻게 되세요?',
+        explanation: '성함 é o «nome» respeitoso, e 어떻게 되세요? é o jeito educado de perguntar dados pessoais.',
+      },
+      {
+        question: 'Complete: 어머니___ 꽃을 드렸어요. (Dei flores à minha mãe.)',
+        options: ['께', '께서', '에서'],
+        answer: '께',
+        explanation: '께 é o «para» honorífico (no lugar de 에게/한테). 께서 marca o sujeito.',
+      },
+      {
+        question: 'Qual frase está errada?',
+        options: ['제가 가실게요.', '제가 갈게요.', '선생님이 가셨어요.'],
+        answer: '제가 가실게요.',
+        explanation: 'Ninguém se honra: com 제가, o verbo fica sem -시-.',
+      },
+    ],
+  },
+  {
+    id: 'ko-g-juda',
+    level: 'B1.3',
+    title: '-아/어 주다 e -아/어 드리다: fazer algo por alguém',
+    emoji: '🎁',
+    summary: 'Quando alguém faz algo em benefício de outro, o coreano acrescenta o verbo «dar»: 사 주다 (comprar para alguém), 읽어 주다 (ler para alguém). O pedido educado de todo dia é -아/어 주세요 (천천히 말해 주세요). Quando o beneficiado é superior, 드리다 (도와 드릴게요); quando é o superior quem faz o favor, 주시다 (가르쳐 주셨어요).',
+    sections: [
+      {
+        heading: 'O favor dentro do verbo',
+        text: 'O português diz «comprei um presente para o meu irmão»; o coreano pode dizer 동생한테 선물을 사 줬어요, e o 주다 deixa claro que foi um favor, um gesto para alguém. Quem recebe leva 에게 ou, na fala, 한테. Na escrita padrão, o 주다 fica separado (사 주다, 읽어 주다), mas 도와주다 (ajudar) já virou uma palavra só.',
+        table: {
+          head: ['Sem 주다', 'Com 주다', 'Português'],
+          rows: [
+            ['사요', '사 줘요', 'compro (para alguém)'],
+            ['읽어요', '읽어 줘요', 'leio (para alguém)'],
+            ['가르쳐요', '가르쳐 줘요', 'ensino (a alguém)'],
+            ['기다려요', '기다려 줘요', 'espero (por alguém)'],
+            ['도와요', '도와줘요', 'ajudo'],
+          ],
+        },
+        examples: [
+          ['동생한테 책을 읽어 줬어요.', 'Li um livro para o meu irmão mais novo.'],
+          ['친구가 길을 가르쳐 줬어요.', 'Um amigo me mostrou o caminho.'],
+          ['생일에 뭐 사 줄까요?', 'O que eu te dou de aniversário? (literalmente: o que compro para você?)'],
+        ],
+      },
+      {
+        heading: '-아/어 주세요: o pedido educado',
+        text: 'É o padrão mais útil para quem viaja: verbo no -아/어 + 주세요. O 좀 («um pouco») antes do verbo suaviza, como um «por favor». Para ser ainda mais cortês, -아/어 주시겠어요? ou -아/어 주실 수 있어요?. E 주세요 sozinho, depois de um substantivo, é «me dá, por favor»: 물 주세요.',
+        table: {
+          head: ['Pedido', 'Português'],
+          rows: [
+            ['천천히 말해 주세요.', 'Fale devagar, por favor.'],
+            ['다시 한번 말해 주세요.', 'Repita, por favor.'],
+            ['사진 좀 찍어 주세요.', 'Pode tirar uma foto nossa?'],
+            ['여기서 세워 주세요.', 'Pare aqui, por favor. (no táxi)'],
+            ['영수증 주세요.', 'O recibo, por favor.'],
+            ['창문 좀 열어 주시겠어요?', 'O senhor poderia abrir a janela?'],
+          ],
+        },
+        examples: [
+          ['도와주세요!', 'Socorro! / Me ajude!'],
+          ['죄송하지만 사진 좀 찍어 주시겠어요?', 'Com licença, poderia tirar uma foto nossa?'],
+          ['잠깐만 기다려 주세요.', 'Espere só um instante, por favor.'],
+        ],
+      },
+      {
+        heading: '드리다 e 주시다: a hierarquia do favor',
+        text: 'O 주다 muda conforme quem dá e quem recebe. Se o favor vai para um superior, 드리다: 도와 드릴게요 (deixe que eu ajudo o senhor). Se é o superior quem faz o favor, 주시다: 선생님이 설명해 주셨어요. E para oferecer ajuda a alguém mais velho, -아/어 드릴까요? (quer que eu…?).',
+        table: {
+          head: ['Quem faz → para quem', 'Forma', 'Exemplo'],
+          rows: [
+            ['eu → amigo', '-아/어 주다', '친구한테 선물을 사 줬어요.'],
+            ['eu → superior', '-아/어 드리다', '부모님께 선물을 사 드렸어요.'],
+            ['superior → eu', '-아/어 주시다', '선생님이 가르쳐 주셨어요.'],
+            ['pedido', '-아/어 주세요', '도와주세요.'],
+            ['oferta a um superior', '-아/어 드릴까요?', '문 열어 드릴까요?'],
+          ],
+        },
+        examples: [
+          ['제가 들어 드릴게요.', 'Deixe que eu carrego para o senhor.'],
+          ['사장님이 저녁을 사 주셨어요.', 'O chefe pagou o jantar para nós.'],
+          ['창문 열어 드릴까요?', 'Quer que eu abra a janela para o senhor?'],
+        ],
+      },
+      {
+        heading: 'Quem paga a conta',
+        text: 'Na Coreia, é comum uma pessoa pagar a conta de todos, muitas vezes a mais velha ou a de posição mais alta. Da próxima vez, quem foi convidado retribui: 다음에는 제가 살게요 (da próxima, pago eu). Por isso os mais novos brincam com os veteranos: 선배님, 밥 사 주세요! (me paga um almoço!). Entre jovens, dividir a conta ficou comum, e tem até nome: 더치페이 (do inglês «Dutch pay») ou 각자 내기 (cada um paga o seu).',
+        examples: [
+          ['오늘은 제가 살게요.', 'Hoje eu pago.'],
+          ['선배님, 밥 사 주세요!', 'Veterano, me paga um almoço! (em tom de brincadeira)'],
+          ['다음에는 제가 사 드릴게요.', 'Da próxima vez, eu pago para o senhor.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Pedir sem 주세요: 말해요 sozinho soa como afirmação ou ordem seca. O pedido educado é 말해 주세요.',
+      'Usar 주다 quando o beneficiado é superior: para o avô é 드리다 (할아버지께 사 드렸어요).',
+      'Esquecer o 주시다 quando o superior faz o favor: 선생님이 가르쳐 주셨어요.',
+      'Oferecer ajuda a um mais velho com 도와줄게요: soa íntimo demais; diga 도와 드릴게요.',
+      'Traduzir 제가 살게요 como «eu vou morar»: no restaurante, é «eu pago» (사다, comprar, no futuro de intenção).',
+    ],
+    quiz: [
+      {
+        question: 'Como se pede «Fale devagar, por favor»?',
+        options: ['천천히 말해 주세요.', '천천히 말해요 주세요.', '천천히 말하세요 줘요.'],
+        answer: '천천히 말해 주세요.',
+        explanation: 'Verbo em -아/어 (말해) + 주세요.',
+      },
+      {
+        question: 'Você oferece ajuda a um senhor mais velho. O que diz?',
+        options: ['제가 도와 드릴게요.', '제가 도와줄게요.', '제가 도와주세요.'],
+        answer: '제가 도와 드릴게요.',
+        explanation: 'O favor vai para um superior: 드리다. 도와주세요 seria pedir ajuda.',
+      },
+      {
+        question: 'Complete: 선생님이 한국어를 가르쳐 ___. (O professor me ensinou coreano.)',
+        options: ['주셨어요', '드렸어요', '줬어요'],
+        answer: '주셨어요',
+        explanation: 'Quem fez o favor é o professor, superior: 주다 + -시- = 주셨어요.',
+      },
+      {
+        question: 'No táxi, como se diz «Pare aqui, por favor»?',
+        options: ['여기서 세워 주세요.', '여기서 세워요 주세요.', '여기서 주세요 세워.'],
+        answer: '여기서 세워 주세요.',
+        explanation: '세우다 (parar o carro) → 세워 + 주세요.',
+      },
+      {
+        question: 'No fim do jantar, alguém diz 오늘은 제가 살게요. O que quer dizer?',
+        options: ['Hoje eu pago.', 'Hoje eu vou morar aqui.', 'Hoje eu compro depois.'],
+        answer: 'Hoje eu pago.',
+        explanation: '사다 (comprar) é também «pagar para alguém». É costume retribuir da próxima vez.',
+      },
+    ],
+  },
+  // ───────────────────────────── B1.4 ─────────────────────────────
+  {
+    id: 'ko-g-myeon-neunde',
+    level: 'B1.4',
+    title: '-(으)면, -(으)ㄹ 때 e -는데: condição, tempo e pano de fundo',
+    emoji: '🌦️',
+    summary: '-(으)면 é «se» e «quando (sempre que)»: 시간이 있으면 가요. -(으)ㄹ 때 é «na hora em que»: 어렸을 때 (quando eu era criança). E -는데 apresenta o pano de fundo do que vem depois: 지금 마트에 가는데 뭐 필요해요? (estou indo ao mercado; precisa de algo?). No fim da frase, -는데요 deixa uma reticência educada, muito coreana.',
+    sections: [
+      {
+        heading: '-(으)면: se, sempre que',
+        text: 'Radical com vogal ou ㄹ + 면 (가면, 살면); com consoante, 으면 (먹으면). Os irregulares mudam: 추우면, 들으면, 모르면. Serve para condição («se chover») e para o que sempre acontece («quando chega a primavera»). Para reforçar a hipótese, 만약 no começo: 만약 비가 오면…',
+        table: {
+          head: ['Dicionário', 'Com -(으)면', 'Exemplo', 'Português'],
+          rows: [
+            ['있다', '있으면', '시간이 있으면 같이 가요.', 'Se tiver tempo, vamos juntos.'],
+            ['가다', '가면', '서울에 가면 연락하세요.', 'Quando for a Seul, me avise.'],
+            ['춥다', '추우면', '추우면 창문을 닫으세요.', 'Se estiver com frio, feche a janela.'],
+            ['모르다', '모르면', '모르면 물어보세요.', 'Se não souber, pergunte.'],
+            ['되다', '되면', '봄이 되면 꽃이 피어요.', 'Quando chega a primavera, as flores desabrocham.'],
+          ],
+        },
+        examples: [
+          ['만약 비가 오면 집에서 영화를 봐요.', 'Se chover, a gente vê um filme em casa.'],
+          ['이 버튼을 누르면 문이 열려요.', 'Apertando este botão, a porta abre.'],
+          ['피곤하면 좀 쉬세요.', 'Se estiver cansado, descanse um pouco.'],
+        ],
+      },
+      {
+        heading: '-았/었으면 좋겠다: tomara que',
+        text: 'Com o passado e 좋겠다 («seria bom»), o -(으)면 vira desejo: 날씨가 좋았으면 좋겠어요 (tomara que faça tempo bom). É o jeito mais comum de dizer «eu queria que…», «tomara». Também se ouve sem o passado (좋으면 좋겠어요), com o mesmo sentido.',
+        examples: [
+          ['주말에 날씨가 좋았으면 좋겠어요.', 'Tomara que faça tempo bom no fim de semana.'],
+          ['한국어를 빨리 잘했으면 좋겠어요.', 'Queria falar coreano bem logo.'],
+          ['시험이 쉬웠으면 좋겠다.', 'Tomara que a prova seja fácil. (falando consigo)'],
+        ],
+      },
+      {
+        heading: '-(으)ㄹ 때: na hora em que',
+        text: 'Para «quando» num momento determinado, sem condição, use -(으)ㄹ 때: 밥 먹을 때 (na hora de comer), 한국에 갈 때 (quando eu for à Coreia). No passado, -았/었을 때: 어렸을 때 (quando eu era criança), 처음 만났을 때 (quando nos conhecemos). Com substantivos, só 때: 방학 때 (nas férias), 점심 때 (na hora do almoço). -(으)면 é «se/sempre que»; -(으)ㄹ 때 é «na ocasião em que».',
+        examples: [
+          ['어렸을 때 부산에 살았어요.', 'Quando eu era criança, morava em Busan.'],
+          ['밥 먹을 때 휴대폰 보지 마.', 'Não fica olhando o celular na hora de comer. (반말)'],
+          ['방학 때 뭐 할 거예요?', 'O que você vai fazer nas férias?'],
+        ],
+      },
+      {
+        heading: '-는데: o pano de fundo',
+        text: 'O -는데 apresenta uma situação para então dizer o que importa: uma pergunta, um pedido, um contraste. «Estou indo ao mercado (e aí), precisa de alguma coisa?» A forma depende da palavra: verbos e 있다/없다 levam -는데 (가는데, 맛있는데); adjetivos, -(으)ㄴ데 (비싼데, 좋은데, 추운데); substantivos, 인데 (학생인데); o passado, -았/었는데 (갔는데). Às vezes é contraste, mais suave que -지만: 이 옷은 예쁜데 좀 비싸요.',
+        table: {
+          head: ['Tipo', 'Forma', 'Exemplo'],
+          rows: [
+            ['verbo', '-는데', '가는데, 먹는데'],
+            ['있다 / 없다', '-는데', '맛있는데, 시간이 없는데'],
+            ['adjetivo terminado em vogal', '-ㄴ데', '비싼데, 큰데'],
+            ['adjetivo terminado em consoante', '-은데', '좋은데, 작은데'],
+            ['substantivo', '인데', '학생인데, 의사인데'],
+            ['passado', '-았/었는데', '갔는데, 좋았는데'],
+          ],
+        },
+        examples: [
+          ['지금 마트에 가는데 뭐 필요해요?', 'Estou indo ao mercado; precisa de alguma coisa?'],
+          ['이 옷은 예쁜데 좀 비싸요.', 'Esta roupa é bonita, mas é um pouco cara.'],
+          ['어제 그 식당에 갔는데 문을 닫았어요.', 'Ontem fui àquele restaurante, e estava fechado.'],
+          ['제 친구인데 인사하세요.', 'Este é meu amigo; diga oi para ele.'],
+        ],
+      },
+      {
+        heading: '-는데요: a reticência educada',
+        text: 'No fim da frase, -는데요 deixa o resto no ar, e o ouvinte completa. É um jeito educado de discordar, recusar ou dar uma notícia chata sem ser direto: ao telefone, 지금 안 계시는데요 («ele não está no momento…», fica implícito «quer deixar recado?»). Também mostra surpresa: 와, 맛있는데요! («nossa, até que é gostoso!»). Esse gosto por deixar as coisas subentendidas tem nome na cultura coreana, 눈치: a arte de perceber o que não foi dito.',
+        examples: [
+          ['저는 잘 모르겠는데요.', 'Eu não sei bem…'],
+          ['죄송한데요, 그건 제 자리인데요.', 'Desculpe, mas esse é o meu lugar…'],
+          ['와, 생각보다 맛있는데요!', 'Nossa, é mais gostoso do que eu pensava!'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar -(으)면 para um momento passado específico: «어렸으면 부산에 살았어요» está errado; é 어렸을 때.',
+      'Errar a forma do -는데: verbo → 는데 (가는데); adjetivo → (으)ㄴ데 (비싼데). «비싸는데» não existe, mas 있다/없다 levam 는데 (맛있는데).',
+      'Traduzir -는데 sempre como «mas»: muitas vezes é só o pano de fundo, um «e aí».',
+      'Esquecer os irregulares: 추우면, 추운데; 들으면; 모르면.',
+      'Dizer «학생이는데»: com substantivo é 인데 (학생인데).',
+      'Achar que -는데요 no fim é frase cortada ou grosseira: é uma reticência educada, das mais usadas.',
+    ],
+    quiz: [
+      {
+        question: 'Complete: 시간이 ___ 같이 가요.',
+        options: ['있으면', '있면', '있는데면'],
+        answer: '있으면',
+        explanation: '있다 termina em consoante, então leva 으면: 있으면.',
+      },
+      {
+        question: 'Complete: 이 가방은 ___ 좀 비싸요. (É bonita, mas…)',
+        options: ['예쁜데', '예쁘는데', '예쁘면'],
+        answer: '예쁜데',
+        explanation: '예쁘다 é adjetivo: -ㄴ데. «예쁘는데» não existe.',
+      },
+      {
+        question: 'Complete: 지금 마트에 가___ 뭐 필요해요?',
+        options: ['는데', '은데', '으면'],
+        answer: '는데',
+        explanation: '가다 é verbo: -는데 apresenta a situação antes da pergunta.',
+      },
+      {
+        question: 'Como se diz «Tomara que amanhã faça tempo bom»?',
+        options: ['내일 날씨가 좋았으면 좋겠어요.', '내일 날씨가 좋으면 좋았어요.', '내일 날씨가 좋는데 좋겠어요.'],
+        answer: '내일 날씨가 좋았으면 좋겠어요.',
+        explanation: '-았/었으면 좋겠다 é o «tomara que».',
+      },
+      {
+        question: 'Ao telefone alguém diz 지금 안 계시는데요. Qual é o tom?',
+        options: ['Educado, deixando a frase em aberto', 'Grosseiro, porque a frase não terminou', 'É uma pergunta'],
+        answer: 'Educado, deixando a frase em aberto',
+        explanation: 'O -는데요 no fim suaviza e deixa o ouvinte completar («quer deixar recado?»).',
+      },
+      {
+        question: 'Complete: 어렸___ 부산에 살았어요. (Quando eu era criança…)',
+        options: ['을 때', '으면', '는데'],
+        answer: '을 때',
+        explanation: 'Momento no passado: -았/었을 때. 어렸을 때 = quando eu era criança.',
+      },
+    ],
+  },
+  {
+    id: 'ko-g-modificadores',
+    level: 'B1.4',
+    title: 'Modificadores: -는, -(으)ㄴ, -(으)ㄹ (a pessoa que come, o livro que li)',
+    emoji: '🏷️',
+    summary: 'O coreano não tem um «que» relativo: a oração inteira vira um adjetivo e vem antes do substantivo. 먹는 사람 (a pessoa que come), 먹은 사람 (que comeu), 먹을 사람 (que vai comer). Os adjetivos usam -(으)ㄴ: 예쁜 꽃, 작은 집. E o modificador está por trás de muitas expressões: -(으)ㄹ 때, -(으)ㄴ 후에, -(으)ㄴ 적이 있다.',
+    sections: [
+      {
+        heading: 'Tudo antes do substantivo, sem «que»',
+        text: 'Em português, a informação vem depois: «o livro que eu li ontem». Em coreano, vem antes, e sem pronome relativo: 어제 제가 읽은 책 (ontem, eu, li → livro). O verbo da oração ganha uma terminação de modificador e encosta no substantivo. Dentro dessa oração, o sujeito usa 이/가, e não 은/는: 제가 만든 음식 (a comida que eu fiz).',
+        table: {
+          head: ['Português', 'Coreano', 'Palavra por palavra'],
+          rows: [
+            ['a pessoa que come', '먹는 사람', 'come + pessoa'],
+            ['o livro que li ontem', '어제 읽은 책', 'ontem + li + livro'],
+            ['a comida que vou fazer', '만들 음식', 'vou fazer + comida'],
+            ['uma flor bonita', '예쁜 꽃', 'bonita + flor'],
+            ['o café onde nos conhecemos', '우리가 처음 만난 카페', 'nós + primeira vez + encontramos + café'],
+          ],
+        },
+        examples: [
+          ['이건 제가 만든 김치예요.', 'Este é o kimchi que eu fiz.'],
+          ['저기 서 있는 사람이 누구예요?', 'Quem é aquela pessoa que está de pé ali?'],
+          ['우리가 처음 만난 카페 기억나요?', 'Lembra do café onde a gente se conheceu?'],
+        ],
+      },
+      {
+        heading: 'Verbos: -는 (agora), -(으)ㄴ (passado), -(으)ㄹ (futuro)',
+        text: 'O modificador carrega o tempo. -는 é o presente (먹는 사람, a pessoa que come), -(으)ㄴ é o passado (먹은 사람, que comeu), -(으)ㄹ é o futuro ou o possível (먹을 사람, que vai comer). Os irregulares e o ㄹ que cai continuam valendo: 살다 → 사는, 산; 듣다 → 들은, 들을. Na pronúncia, 먹는 soa [멍는].',
+        table: {
+          head: ['Dicionário', 'Presente -는', 'Passado -(으)ㄴ', 'Futuro -(으)ㄹ', 'Português'],
+          rows: [
+            ['가다', '가는', '간', '갈', 'ir'],
+            ['먹다', '먹는', '먹은', '먹을', 'comer'],
+            ['보다', '보는', '본', '볼', 'ver'],
+            ['살다', '사는', '산', '살', 'morar'],
+            ['듣다', '듣는', '들은', '들을', 'ouvir'],
+            ['만들다', '만드는', '만든', '만들', 'fazer, fabricar'],
+          ],
+        },
+        examples: [
+          ['요즘 보는 드라마가 있어요?', 'Tem alguma novela que você está vendo?'],
+          ['어제 본 영화는 정말 재미있었어요.', 'O filme que vi ontem foi muito bom.'],
+          ['내일 입을 옷을 골랐어요.', 'Escolhi a roupa que vou usar amanhã.'],
+        ],
+      },
+      {
+        heading: 'Adjetivos: -(으)ㄴ',
+        text: 'Os adjetivos no presente usam -(으)ㄴ: 큰 집, 작은 가방. Os irregulares mudam do jeito de sempre (춥다 → 추운, 빨갛다 → 빨간, 길다 → 긴). A exceção importante: as palavras com 있다 e 없다 se comportam como verbos e levam -는: 맛있는 음식, 재미없는 영화. E o «ser» vira 인: 한국 사람인 친구 (um amigo que é coreano).',
+        table: {
+          head: ['Dicionário', 'Modificador', 'Exemplo', 'Português'],
+          rows: [
+            ['크다', '큰', '큰 집', 'casa grande'],
+            ['작다', '작은', '작은 가방', 'bolsa pequena'],
+            ['춥다', '추운', '추운 날씨', 'tempo frio'],
+            ['빨갛다', '빨간', '빨간 사과', 'maçã vermelha'],
+            ['길다', '긴', '긴 머리', 'cabelo comprido'],
+            ['맛있다', '맛있는', '맛있는 음식', 'comida gostosa'],
+            ['재미없다', '재미없는', '재미없는 영화', 'filme chato'],
+          ],
+        },
+        examples: [
+          ['추운 날에는 따뜻한 국물이 최고예요.', 'Em dia frio, um caldo quente é o melhor.'],
+          ['빨간 가방을 찾고 있어요.', 'Estou procurando uma bolsa vermelha.'],
+          ['맛있는 식당 좀 추천해 주세요.', 'Me indique um restaurante bom, por favor.'],
+        ],
+      },
+      {
+        heading: 'Expressões feitas com o modificador',
+        text: 'Muitas estruturas do dia a dia são, por dentro, um modificador + um substantivo: 때 (hora, ocasião), 후 (depois), 동안 (duração), 적 (experiência), 중 (meio). Elas funcionam como conjunções.',
+        table: {
+          head: ['Estrutura', 'Sentido', 'Exemplo', 'Português'],
+          rows: [
+            ['-(으)ㄹ 때', 'quando', '밥 먹을 때 전화했어요.', 'Liguei na hora em que comia.'],
+            ['-(으)ㄴ 후에', 'depois de', '수업이 끝난 후에 만나요.', 'Vamos nos ver depois da aula.'],
+            ['-는 동안', 'enquanto', '제가 요리하는 동안 기다려 주세요.', 'Espere enquanto eu cozinho.'],
+            ['-아/어 본 적이 있다', 'já ter feito', '한국에 가 본 적이 있어요?', 'Você já foi à Coreia?'],
+            ['-는 중이다', 'estar no meio de', '지금 회의하는 중이에요.', 'Estou em reunião agora.'],
+          ],
+        },
+        examples: [
+          ['한국 음식을 먹어 본 적이 있어요?', 'Você já provou comida coreana?'],
+          ['아니요, 한 번도 없어요.', 'Não, nunca.'],
+          ['숙제를 끝낸 후에 게임을 할 거예요.', 'Depois de terminar a lição, vou jogar.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Pôr o modificador depois do substantivo, como em português: é 예쁜 꽃, e não «꽃 예쁜».',
+      'Procurar um «que» relativo: ele não existe. 제가 산 책 é «o livro que eu comprei».',
+      'Usar -는 com adjetivo: «예쁘는 꽃» está errado (é 예쁜 꽃). Mas 있다 e 없다 levam -는: 맛있는, 재미없는.',
+      'Confundir os tempos: 가는 (que vai), 간 (que foi), 갈 (que irá). O tempo está no modificador.',
+      'Esquecer os irregulares e o ㄹ: 춥다 → 추운, 듣다 → 들은, 길다 → 긴, 살다 → 사는.',
+      'Usar 은/는 no sujeito da oração que modifica: é 제가 만든 음식, e não «저는 만든 음식».',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz «o livro que li ontem»?',
+        options: ['어제 읽은 책', '책 어제 읽은', '어제 읽는 책'],
+        answer: '어제 읽은 책',
+        explanation: 'Oração antes do substantivo, com o passado -(으)ㄴ: 읽은 책.',
+      },
+      {
+        question: 'Complete: ___ 꽃 (uma flor bonita)',
+        options: ['예쁜', '예쁘는', '예쁠은'],
+        answer: '예쁜',
+        explanation: 'Adjetivo no presente usa -(으)ㄴ: 예쁜.',
+      },
+      {
+        question: 'Complete: 이건 제가 ___ 음식이에요. (a comida que eu fiz)',
+        options: ['만든', '만들은', '만드는은'],
+        answer: '만든',
+        explanation: '만들다 perde o ㄹ antes de ㄴ: 만든.',
+      },
+      {
+        question: 'Qual é a forma certa de «comida gostosa»?',
+        options: ['맛있는 음식', '맛있은 음식', '맛있 음식'],
+        answer: '맛있는 음식',
+        explanation: 'Palavras com 있다/없다 levam -는, mesmo sendo «adjetivos».',
+      },
+      {
+        question: 'O que quer dizer 내일 볼 영화?',
+        options: ['o filme que vou ver amanhã', 'o filme que vi ontem', 'o filme que estou vendo'],
+        answer: 'o filme que vou ver amanhã',
+        explanation: '-(으)ㄹ é o modificador do futuro: 볼 영화.',
+      },
+      {
+        question: 'Complete: 한국에 가 본 ___이 있어요? (Você já foi à Coreia?)',
+        options: ['적', '때', '후'],
+        answer: '적',
+        explanation: '-아/어 본 적이 있다 = «já ter feito». 때 é «quando» e 후, «depois».',
+      },
+    ],
+  },
+  {
+    id: 'ko-g-niveis-fala',
+    level: 'B1.4',
+    title: 'Os níveis de fala: 합쇼체, 해요체, 해체 e 해라체',
+    emoji: '🪜',
+    summary: 'O coreano tinha seis níveis de fala; hoje, quatro estão bem vivos. 합쇼체 (formal: 갑니다), 해요체 (polido: 가요), 해체 (o 반말: 가) e 해라체 (o plano: 간다), usado com crianças, entre amigos muito próximos, nas exclamações e em toda a escrita. Cada nível tem formas próprias para afirmar, perguntar, mandar e convidar. Dois outros sobrevivem em placas e novelas de época.',
+    sections: [
+      {
+        heading: 'Os quatro níveis vivos',
+        text: 'Cada nível é um conjunto completo de terminações. Os dois de cima são o 존댓말 (fala respeitosa); os dois de baixo formam o 반말. Na conversa íntima, 해체 e 해라체 se misturam o tempo todo. Um detalhe: o convite -ㅂ시다 (갑시다, vamos), do 합쇼체, soa como alguém que comanda; para convidar um superior, diga 가시죠 ou 가실까요?',
+        table: {
+          head: ['Nível', 'Afirmação', 'Pergunta', 'Ordem', 'Convite'],
+          rows: [
+            ['합쇼체', '읽습니다', '읽습니까?', '읽으십시오', '읽읍시다'],
+            ['해요체', '읽어요', '읽어요?', '읽으세요', '읽어요'],
+            ['해체', '읽어', '읽어?', '읽어', '읽자'],
+            ['해라체', '읽는다', '읽니?', '읽어라', '읽자'],
+          ],
+        },
+        examples: [
+          ['자, 시작합시다.', 'Bom, vamos começar. (quem conduz a reunião)'],
+          ['사장님, 이제 가시죠.', 'Chefe, vamos indo? (convite respeitoso)'],
+          ['얘들아, 빨리 와라!', 'Crianças, venham logo! (해라체)'],
+        ],
+      },
+      {
+        heading: '해라체: o nível plano',
+        text: 'Verbos no presente levam -ㄴ다/-는다 (간다, 먹는다); adjetivos, só -다 (좋다, 예쁘다); o «ser», -(이)다 (학생이다); o passado, -았/었다 (갔다). A pergunta é -니? (suave, de adulto para criança) ou -냐? (seca, entre íntimos); a ordem, -아/어라; o convite, -자. Na fala, aparece dos pais para os filhos, entre amigos próximos e nas exclamações que a gente diz para si mesmo (와, 맛있다!). Na escrita, é o nível de diários, livros, jornais e redações, e ele volta no B2.4.',
+        table: {
+          head: ['Frase', 'Português', 'Onde'],
+          rows: [
+            ['와, 맛있다!', 'Nossa, que gostoso!', 'exclamação, para si'],
+            ['밥 먹었니?', 'Já comeu, filho?', 'mãe para o filho'],
+            ['빨리 자라!', 'Vai dormir logo!', 'pais para crianças'],
+            ['뭐 하냐?', 'Tá fazendo o quê?', 'amigos íntimos'],
+            ['나는 학생이다.', 'Sou estudante.', 'diário, redação'],
+          ],
+        },
+        examples: [
+          ['와, 눈이 온다!', 'Olha, está nevando!'],
+          ['오늘은 날씨가 참 좋다.', 'Hoje o tempo está ótimo. (diário)'],
+          ['얘야, 숙제 다 했니?', 'Filho, já fez toda a lição?'],
+        ],
+      },
+      {
+        heading: 'Como escolher',
+        text: 'A escolha depende de idade, posição, intimidade e situação. A mesma pessoa pode usar níveis diferentes com o mesmo colega: 합쇼체 na reunião, 해요체 no café. No exército, os soldados falam só em 합쇼체, o famoso «다나까» (frases terminadas em -다 e -까). Trocar de nível de repente é um recado: descer sem convite soa desrespeitoso, e subir com um amigo soa frio, como se ele tivesse feito algo errado.',
+        table: {
+          head: ['Situação', 'Nível'],
+          rows: [
+            ['discurso, notícia, reunião formal, exército', '합쇼체'],
+            ['vendedor, desconhecido, colega', '해요체'],
+            ['amigo da mesma idade, irmão mais novo', '해체, com um pouco de 해라체'],
+            ['pais com filhos pequenos', '해라체 e 해체'],
+            ['diário, livro, jornal, prova escrita', '해라체 (escrito)'],
+          ],
+        },
+        examples: [
+          ['회의를 시작하겠습니다.', 'Vamos dar início à reunião.'],
+          ['커피 한 잔 하실래요?', 'Aceita um café? (해요체 com honorífico)'],
+          ['야, 커피 마실래?', 'E aí, quer um café? (해체)'],
+        ],
+      },
+      {
+        heading: 'Os níveis que sumiram: 하오체 e 하게체',
+        text: 'Dois níveis intermediários quase desapareceram da fala. O 하오체 (-오, -소) era o tratamento de autoridade para adultos; hoje vive nas novelas de época e nas placas: toda porta coreana diz 미시오 (empurre) ou 당기시오 (puxe). O 하게체 (-네, -게) era o jeito de um homem mais velho falar com um homem adulto mais novo, como o sogro com o genro ou o professor com o aluno já adulto: 자네, 어서 오게.',
+        examples: [
+          ['미시오.', 'Empurre. (nas portas)'],
+          ['당기시오.', 'Puxe. (nas portas)'],
+          ['자네, 어서 오게.', 'Entre, meu rapaz. (um senhor para um homem mais novo, 하게체)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Achar que 반말 é um nível só: há o 해체 (가, 먹어) e o 해라체 (간다, 먹어라), que se misturam na fala íntima.',
+      'Convidar o chefe com -ㅂ시다: 갑시다 soa como comando. Para um superior, 가시죠 ou 가실까요?',
+      'Trocar de nível sem motivo: descer soa desrespeitoso, e subir com um amigo soa frio.',
+      'Confundir a forma do dicionário com o 해라체: 먹다 é a entrada do dicionário; a frase plana é 먹는다.',
+      'Usar -냐? ou -니? com gente mais velha: são perguntas de 반말.',
+    ],
+    quiz: [
+      {
+        question: 'Qual é o convite do 합쇼체 com 가다 («vamos»)?',
+        options: ['갑시다', '가자', '가요'],
+        answer: '갑시다',
+        explanation: '-ㅂ시다 é o convite formal. 가자 é 반말, e 가요 é 해요체.',
+      },
+      {
+        question: 'Qual frase está no 해라체?',
+        options: ['나는 학생이다.', '저는 학생이에요.', '저는 학생입니다.'],
+        answer: '나는 학생이다.',
+        explanation: '-(이)다 no fim da frase é o 해라체, o nível da escrita e da fala íntima.',
+      },
+      {
+        question: 'O que diz uma porta com a placa 당기시오?',
+        options: ['Puxe', 'Empurre', 'Proibido entrar'],
+        answer: 'Puxe',
+        explanation: '당기다 é puxar; 미시오 (de 밀다) é empurre. As placas usam o antigo 하오체.',
+      },
+      {
+        question: 'Qual é o 해라체 de 먹어요 (afirmação)?',
+        options: ['먹는다', '먹다', '먹어라'],
+        answer: '먹는다',
+        explanation: 'Verbo no presente: -는다 depois de consoante. 먹다 é o dicionário, e 먹어라 é ordem.',
+      },
+      {
+        question: 'Você quer convidar o chefe para almoçar. O que é mais adequado?',
+        options: ['점심 드시러 가시죠.', '점심 먹으러 갑시다.', '점심 먹으러 가자.'],
+        answer: '점심 드시러 가시죠.',
+        explanation: 'Com honorífico (드시러, 가시죠) e sem o -ㅂ시다, que soaria como comando.',
+      },
+    ],
+  },
 ];
