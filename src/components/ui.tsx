@@ -2,7 +2,7 @@ import { Children, useState, type ReactNode } from 'react';
 import { router } from 'expo-router';
 import { ActivityIndicator, Pressable, ScrollView, Text, View, type PressableProps } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Volume2, VolumeX } from 'lucide-react-native';
+import { Info, Volume2, VolumeX } from 'lucide-react-native';
 import { useApp } from '@/services/app-state';
 import { speak } from '@/services/speech';
 import { tapLight } from '@/services/haptics';
@@ -84,6 +84,37 @@ export function Chip({ label, tone = 'slate' }: { label: string; tone?: 'slate' 
     amber: 'bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300',
   };
   return <Text className={`self-start overflow-hidden rounded-full px-2.5 py-0.5 text-xs font-semibold ${tones[tone]}`}>{label}</Text>;
+}
+
+/**
+ * Um rótulo com o botão ⓘ ao lado: tocar mostra (ou esconde) a explicação logo abaixo. Para os termos
+ * que nem todo mundo conhece (variante, sotaque, dialeto) e para dizer o que tem em cada aba.
+ */
+export function InfoLabel({ label, info, className = '', labelClassName = 'text-xs font-bold uppercase tracking-wide text-slate-500' }: { label: ReactNode; info: ReactNode; className?: string; labelClassName?: string }) {
+  const [open, setOpen] = useState(false);
+  const dark = useIsDark();
+  return (
+    <View className={`gap-1.5 ${className}`}>
+      <View className="flex-row items-center gap-1.5">
+        {typeof label === 'string' ? <Text className={labelClassName}>{label}</Text> : label}
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel={`O que é: ${typeof label === 'string' ? label : 'explicação'}`}
+          accessibilityState={{ expanded: open }}
+          aria-expanded={open}
+          hitSlop={10}
+          onPress={() => setOpen((o) => !o)}
+        >
+          <Info size={16} color={open ? '#2563EB' : dark ? '#94A3B8' : '#64748B'} />
+        </Pressable>
+      </View>
+      {open && (
+        <View className="rounded-xl border border-blue-200 bg-conecta-light px-3 py-2 dark:border-blue-900 dark:bg-blue-950">
+          {typeof info === 'string' ? <Text className="text-sm leading-5 text-slate-800 dark:text-slate-100">{info}</Text> : info}
+        </View>
+      )}
+    </View>
+  );
 }
 
 /** Botão de alto-falante: lê o texto na voz do idioma. */

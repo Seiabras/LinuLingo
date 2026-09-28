@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
 import { ChevronDown, ChevronUp } from 'lucide-react-native';
-import { Screen, Card, SpeechBubble, SpeakButton } from '@/components/ui';
+import { Screen, Card, InfoLabel, SpeechBubble, SpeakButton } from '@/components/ui';
 import { CulturalGrammarCard } from '@/components/CulturalGrammarCard';
 import { Linu } from '@/components/Linu';
 import { useApp } from '@/services/app-state';
@@ -13,20 +13,22 @@ import { flagOf } from '@/data/onde-se-fala';
 import { VarietyPicker } from '@/components/AccentsPanel';
 import { OwnLanguagesTab } from '@/components/OwnLanguagesTab';
 import { IndigenousTab } from '@/components/IndigenousTab';
+import { SignLanguagesTab } from '@/components/SignLanguagesTab';
 import type { LanguagePack } from '@/data/types';
 import { nomeIdioma } from '@/services/idioma-nome';
 
 const TABS = [
-  { id: 'cultura', label: '🏛️ Cultura' },
-  { id: 'proprias', label: '🗣️ Línguas próprias' },
-  { id: 'indigenas', label: '🪶 Indígenas' },
+  { id: 'cultura', label: '🏛️ Cultura', info: 'A cultura de quem fala o idioma que você estuda: a família da língua, o mapa, as variantes e os sotaques, os bichos e os sons e os cards de cada unidade.' },
+  { id: 'proprias', label: '🗣️ Línguas próprias', info: 'Outras línguas faladas nos mesmos países do idioma, que não são um jeito de falar ele: o sámi na Suécia, o sardo na Itália, o feroês na Dinamarca.' },
+  { id: 'indigenas', label: '🪶 Indígenas', info: 'As línguas indígenas de cada país (o Brasil primeiro) e o quanto cada uma está em risco de desaparecer.' },
+  { id: 'sinais', label: '🤟 Línguas de sinais', info: 'As línguas das comunidades surdas: como funcionam, as famílias, as de cada país, a história e um quiz.' },
 ] as const;
 type TabId = (typeof TABS)[number]['id'];
 
 /**
- * Cultura & História, em três abas: a do idioma (genealogia, mapa, variantes e sotaques, bichos e
- * os cards de cada unidade), a das línguas próprias (as que se falam nos mesmos lugares mas não são
- * o idioma, como o sámi) e a das línguas indígenas de cada país, com o grau de risco.
+ * Cultura & História, em abas: a do idioma (genealogia, mapa, variantes e sotaques, bichos e os cards
+ * de cada unidade), a das línguas próprias (as que se falam nos mesmos lugares mas não são o idioma,
+ * como o sámi), a das línguas indígenas de cada país, com o grau de risco, e a das línguas de sinais.
  * A aba vem da rota (/cultura?aba=indigenas), para o tutorial e os atalhos levarem direto a ela.
  */
 export default function CultureScreen() {
@@ -36,8 +38,22 @@ export default function CultureScreen() {
 
   return (
     <Screen>
-      <Text className="pt-3 text-2xl font-extrabold text-slate-900 dark:text-white">🏛️ Cultura & História</Text>
-      <View className="mt-3 flex-row gap-1 rounded-2xl bg-slate-100 p-1 dark:bg-slate-800" accessibilityRole="tablist">
+      <InfoLabel
+        className="pt-3"
+        label={<Text className="text-2xl font-extrabold text-slate-900 dark:text-white">🏛️ Cultura & História</Text>}
+        info={
+          <View className="gap-1.5">
+            <Text className="text-sm font-bold text-slate-800 dark:text-slate-100">O que tem em cada aba:</Text>
+            {TABS.map((t) => (
+              <Text key={t.id} className="text-sm leading-5 text-slate-800 dark:text-slate-100">
+                <Text className="font-bold">{t.label}: </Text>
+                {t.info}
+              </Text>
+            ))}
+          </View>
+        }
+      />
+      <View className="mt-3 flex-row flex-wrap gap-1 rounded-2xl bg-slate-100 p-1 dark:bg-slate-800" accessibilityRole="tablist">
         {TABS.map((t) => {
           const on = t.id === tab;
           return (
@@ -47,7 +63,7 @@ export default function CultureScreen() {
               accessibilityState={{ selected: on }}
               aria-selected={on}
               onPress={() => setTab(t.id)}
-              // cada aba do tamanho do nome (a «Línguas próprias» é a mais longa)
+              // cada aba do tamanho do nome; no celular elas quebram em duas linhas
               className={`grow items-center rounded-xl px-2 py-2 ${on ? 'bg-white shadow-sm dark:bg-slate-950' : ''}`}
             >
               <Text numberOfLines={1} className={`text-center text-[13px] font-bold ${on ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400'}`}>
@@ -60,6 +76,7 @@ export default function CultureScreen() {
       {tab === 'cultura' && <CultureTab onOwnLanguages={() => setTab('proprias')} />}
       {tab === 'proprias' && <OwnLanguagesTab />}
       {tab === 'indigenas' && <IndigenousTab />}
+      {tab === 'sinais' && <SignLanguagesTab />}
     </Screen>
   );
 }
