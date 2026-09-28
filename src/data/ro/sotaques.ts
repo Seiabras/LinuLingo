@@ -37,6 +37,8 @@ export const ACCENTS_RO: Accent[] = [
     region: 'Moldávia romena (Iași, Suceava, Bacău…) e a República da Moldávia',
     country: 'ROU',
     subdivisions: ['RO-IS', 'RO-SV', 'RO-BT', 'RO-NT', 'RO-BC', 'RO-VS', 'RO-GL', 'RO-VN'],
+    // sem `variant`, de propósito: esse dialeto atravessa os dois lados do Prut, ro-RO e ro-MD,
+    // e o campo só aceita um código — linkar um dos dois seria escolher errado pela metade
     emoji: '🍇',
     summary: 'O falar do leste, dos dois lados do rio Prut: consoantes que «amolecem» e palavras que o resto do país estranha.',
     features: [
@@ -63,6 +65,7 @@ export const ACCENTS_RO: Accent[] = [
     region: 'Transilvânia, no centro e noroeste da Romênia (Cluj, Sibiu, Brașov…)',
     country: 'ROU',
     subdivisions: ['RO-CJ', 'RO-SB', 'RO-BV', 'RO-MS', 'RO-AB', 'RO-HD', 'RO-BN', 'RO-SJ', 'RO-CV', 'RO-HR'],
+    variant: 'ro-RO',
     emoji: '🏔️',
     summary: 'Famoso na Romênia inteira pela fala lenta e arrastada, alvo de piadas carinhosas, e pelo «no» em toda frase.',
     features: [
@@ -89,6 +92,7 @@ export const ACCENTS_RO: Accent[] = [
     region: 'Banat, no oeste da Romênia (Timișoara, Reșița, Arad)',
     country: 'ROU',
     subdivisions: ['RO-TM', 'RO-CS', 'RO-AR'],
+    variant: 'ro-RO',
     emoji: '🍅',
     summary: 'O falar do oeste, perto da Sérvia e da Hungria: «t» e «d» amolecidos e palavras vindas do alemão.',
     features: [
@@ -110,6 +114,7 @@ export const ACCENTS_RO: Accent[] = [
     region: 'Oltênia, no sudoeste da Romênia (Craiova, Târgu Jiu…)',
     country: 'ROU',
     subdivisions: ['RO-DJ', 'RO-GJ', 'RO-MH', 'RO-OT', 'RO-VL'],
+    variant: 'ro-RO',
     emoji: '🗣️',
     summary: 'Onde o perfeito simples, que no resto do país só aparece nos livros, continua vivo na conversa.',
     features: [
