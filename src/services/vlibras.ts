@@ -9,7 +9,7 @@ import { siteUrl } from './site-url';
 export function openVLibras(text: string) {
   const url = `${siteUrl()}/vlibras.html?t=${encodeURIComponent(text)}`;
   if (Platform.OS === 'web' && typeof window !== 'undefined') {
-    // a mesma janela é reaproveitada a cada sinal
+    // o app é isolado (COOP): cada toque abre uma aba nova, que não enxerga a do app
     const w = window.open(url, 'linulingo-vlibras');
     if (w) return;
   }

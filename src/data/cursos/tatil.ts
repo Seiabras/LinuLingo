@@ -128,3 +128,26 @@ export const CURSO_TATIL: MiniCourse = {
     },
   ],
 };
+
+/**
+ * As celas de um texto: «Brasil» → sinal de maiúscula + b r a s i l; «2026» → sinal de número + b j b f.
+ * Devolve as celas separadas por espaço (o formato de MiniItem.braille).
+ */
+export function brailleOf(text: string): string {
+  const out: string[] = [];
+  let inNumber = false;
+  for (const ch of text) {
+    if (/[0-9]/.test(ch)) {
+      if (!inNumber) out.push(BRAILLE_NUMBER);
+      inNumber = true;
+      out.push(BRAILLE['jabcdefghi'[Number(ch)]]);
+      continue;
+    }
+    inNumber = false;
+    const lower = ch.toLowerCase();
+    if (!BRAILLE[lower]) throw new Error(`sem Braille para «${ch}»`);
+    if (ch !== lower) out.push(BRAILLE_CAPITAL);
+    out.push(BRAILLE[lower]);
+  }
+  return out.join(' ');
+}

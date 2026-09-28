@@ -4,12 +4,13 @@ import { router, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import { ArrowLeft } from 'lucide-react-native';
 import { Screen, Button, Card, Chip, SpeechBubble } from '@/components/ui';
 import { Linu } from '@/components/Linu';
-import { BrailleCell } from '@/components/BrailleCell';
+import { BrailleWord } from '@/components/BrailleCell';
 import { useApp } from '@/services/app-state';
 import { awardXp } from '@/database/queries';
 import { KIND_LABEL, MINI_COURSES, miniCourse, type MiniCourse, type MiniLesson, type MiniQuestion } from '@/data/cursos';
 import { lessonKey, loadMiniProgress, markMiniLesson, miniXp, type MiniProgress } from '@/services/mini-courses';
 import { openVLibras } from '@/services/vlibras';
+import { allLessons, FINAL_EXAM_ID, lessonPractice } from '@/services/mini-practice';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
 import * as haptics from '@/services/haptics';
@@ -44,17 +45,17 @@ function Header({ title }: { title: string }) {
   );
 }
 
-const lessonsDone = (c: MiniCourse, done: MiniProgress) => c.lessons.filter((l) => done[lessonKey(c.id, l.id)]).length;
+const lessonsDone = (c: MiniCourse, done: MiniProgress) => allLessons(c).filter((l) => done[lessonKey(c.id, l.id)]).length;
 
 /** /cursos: os mini-cursos, por tipo (línguas de sinais, táteis, artificiais). */
 export function MiniCoursesScreen() {
   const done = useProgress();
   return (
     <Screen>
-      <Header title="🎓 Mini-cursos" />
+      <Header title="🎓 Cursos" />
       <View className="mt-3 flex-row items-end gap-2">
         <Linu mood="feliz" size={60} animate={false} />
-        <SpeechBubble className="mb-5">Línguas que não cabem na trilha: de sinais, táteis e inventadas. Lições curtas, com exercícios e XP.</SpeechBubble>
+        <SpeechBubble className="mb-5">Línguas que não cabem na trilha: de sinais, táteis e inventadas. Cada curso tem lições com exercícios, XP e uma prova final.</SpeechBubble>
       </View>
       {(Object.keys(KIND_LABEL) as (keyof typeof KIND_LABEL)[]).map((k) => (
         <View key={k} className="mt-4 gap-3">
@@ -77,8 +78,8 @@ export function MiniCoursesScreen() {
                   <Text className="text-sm text-slate-600 dark:text-slate-400" numberOfLines={2}>
                     {c.summary}
                   </Text>
-                  <Text className={`text-xs font-bold ${n === c.lessons.length ? 'text-conquista' : 'text-slate-500'}`}>
-                    {n === c.lessons.length ? '✓ concluído' : `${n} de ${c.lessons.length} lições`}
+                  <Text className={`text-xs font-bold ${n === allLessons(c).length ? 'text-conquista' : 'text-slate-500'}`}>
+                    {n === allLessons(c).length ? '🏆 concluído' : `${n} de ${allLessons(c).length} lições`}
                   </Text>
                 </View>
                 <Text className="text-xl text-slate-400">›</Text>
@@ -104,7 +105,8 @@ export function MiniCourseScreen() {
       </Screen>
     );
   }
-  const lesson = course.lessons.find((l) => l.id === licao);
+  const lessons = allLessons(course);
+  const lesson = lessons.find((l) => l.id === licao);
   if (lesson) return <LessonView key={lesson.id} course={course} lesson={lesson} />;
   return (
     <Screen>
@@ -119,18 +121,19 @@ export function MiniCourseScreen() {
         </Card>
       )}
       <View className="mt-4 gap-3">
-        {course.lessons.map((l, i) => {
+        {lessons.map((l, i) => {
           const d = done[lessonKey(course.id, l.id)];
           return (
             <Pressable
               key={l.id}
               accessibilityRole="button"
-              onPress={() => router.setParams({ licao: l.id })}
+              // push (e não setParams): o voltar do aparelho e do cabeçalho volta para esta lista
+              onPress={() => router.push({ pathname: '/curso/[id]', params: { id: course.id, licao: l.id } })}
               className="flex-row items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 active:opacity-80 dark:border-slate-800 dark:bg-slate-900"
             >
               <Text className="text-2xl">{l.emoji}</Text>
               <View className="flex-1">
-                <Text className="text-xs font-bold text-conecta">Lição {i + 1}</Text>
+                <Text className="text-xs font-bold text-conecta">{l.id === FINAL_EXAM_ID ? 'Fecha o curso' : `Lição ${i + 1}`}</Text>
                 <Text className="text-base font-extrabold text-slate-900 dark:text-white">{l.title}</Text>
               </View>
               {d ? <Chip label={`✓ ${d.hits}/${d.total}`} tone="green" /> : <Text className="text-xl text-slate-400">›</Text>}
@@ -154,20 +157,27 @@ function LessonView({ course, lesson }: { course: MiniCourse; lesson: MiniLesson
   const { db, refresh } = useApp();
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [result, setResult] = useState<{ xp: number; hits: number } | null>(null);
-  const index = course.lessons.indexOf(lesson);
-  const next = course.lessons[index + 1];
-  const allAnswered = lesson.quiz.every((_, i) => answers[i] !== undefined);
-  const hits = lesson.quiz.filter((q, i) => answers[i] === q.answer).length;
+  const [saving, setSaving] = useState(false);
+  const lessons = allLessons(course);
+  const index = lessons.indexOf(lesson);
+  const next = lessons[index + 1];
+  // as perguntas escritas para a lição e os exercícios gerados dos itens
+  const quiz = lesson.id === FINAL_EXAM_ID ? lesson.quiz : [...lesson.quiz, ...lessonPractice(course, lesson)];
+  const allAnswered = quiz.every((_, i) => answers[i] !== undefined);
+  const hits = quiz.filter((q, i) => answers[i] === q.answer).length;
 
   const pick = (i: number, k: number) => {
     if (answers[i] !== undefined) return;
     setAnswers((a) => ({ ...a, [i]: k }));
-    if (k === lesson.quiz[i].answer) haptics.success();
+    if (k === quiz[i].answer) haptics.success();
     else haptics.error();
   };
   const finish = async () => {
-    const { first } = await markMiniLesson(db, course.id, lesson.id, hits, lesson.quiz.length);
-    const xp = miniXp(first, hits, lesson.quiz.length);
+    // dois toques rápidos não podem contar a lição duas vezes
+    if (saving) return;
+    setSaving(true);
+    const { first } = await markMiniLesson(db, course.id, lesson.id, hits, quiz.length);
+    const xp = miniXp(first, hits, quiz.length) * (lesson.id === FINAL_EXAM_ID ? 2 : 1);
     await awardXp(db, xp, 'minicurso');
     refresh();
     setResult({ xp, hits });
@@ -177,7 +187,7 @@ function LessonView({ course, lesson }: { course: MiniCourse; lesson: MiniLesson
     <Screen>
       <Header title={`${lesson.emoji} ${lesson.title}`} />
       <Text className="mt-1 text-sm font-bold text-conecta">
-        {course.emoji} {course.name} · lição {index + 1} de {course.lessons.length}
+        {course.emoji} {course.name} · {lesson.id === FINAL_EXAM_ID ? 'prova final' : `lição ${index + 1} de ${course.lessons.length}`}
       </Text>
       <Card className="mt-3 gap-2">
         {lesson.intro.map((p) => (
@@ -190,7 +200,7 @@ function LessonView({ course, lesson }: { course: MiniCourse; lesson: MiniLesson
       <View className="mt-3 gap-2">
         {lesson.items.map((it) => (
           <Card key={it.term} className="flex-row items-center gap-3">
-            {it.braille !== undefined && <BrailleCell dots={it.braille} size={52} label={`${it.term} em Braille: ${it.how ?? ''}`} />}
+            {it.braille !== undefined && <BrailleWord dots={it.braille} size={it.braille.includes(' ') ? 40 : 52} label={`${it.term} em Braille: ${it.how ?? ''}`} />}
             <View className="flex-1 gap-0.5">
               <Text className="text-lg font-extrabold text-slate-900 dark:text-white">{it.term}</Text>
               <Text className="text-sm text-slate-600 dark:text-slate-400">{it.meaning}</Text>
@@ -212,28 +222,28 @@ function LessonView({ course, lesson }: { course: MiniCourse; lesson: MiniLesson
 
       <Text className="mb-2 mt-6 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">Pratique</Text>
       <View className="gap-3">
-        {lesson.quiz.map((q, i) => (
+        {quiz.map((q, i) => (
           <Question key={q.q + i} q={q} picked={answers[i]} onPick={(k) => pick(i, k)} />
         ))}
       </View>
 
       {result ? (
         <View className="mt-4 flex-row items-end gap-2">
-          <Linu mood={result.hits === lesson.quiz.length ? 'comemorando' : 'feliz'} size={60} />
+          <Linu mood={result.hits === quiz.length ? 'comemorando' : 'feliz'} size={60} />
           <Card className="mb-4 flex-1 gap-2">
             <Text className="text-base font-extrabold text-slate-900 dark:text-white">
-              {result.hits} de {lesson.quiz.length} certas · +{result.xp} XP
+              {result.hits} de {quiz.length} certas · +{result.xp} XP
             </Text>
             {next ? (
-              <Button title={`Próxima: ${next.title}`} onPress={() => router.setParams({ licao: next.id })} />
+              <Button title={`Próxima: ${next.title}`} onPress={() => router.replace({ pathname: '/curso/[id]', params: { id: course.id, licao: next.id } })} />
             ) : (
               <Text className="text-sm text-conquista">🎉 Você terminou o curso!</Text>
             )}
-            <Button title="Voltar às lições" variant="ghost" onPress={() => router.setParams({ licao: '' })} />
+            <Button title="Voltar às lições" variant="ghost" onPress={goBack} />
           </Card>
         </View>
       ) : (
-        <Button title="Terminar a lição" variant="success" className="mt-4" disabled={!allAnswered} onPress={finish} />
+        <Button title="Terminar a lição" variant="success" className="mt-4" disabled={!allAnswered || saving} onPress={finish} />
       )}
       {Platform.OS === 'web' && course.vlibras && <Text className="mt-3 text-xs text-slate-400">O VLibras abre numa janela à parte: o app roda isolado por segurança, e o avatar precisa carregar arquivos de vlibras.gov.br.</Text>}
     </Screen>
@@ -245,7 +255,7 @@ function Question({ q, picked, onPick }: { q: MiniQuestion; picked?: number; onP
   return (
     <Card className="gap-2">
       <View className="flex-row items-center gap-3">
-        {q.braille && <BrailleCell dots={q.braille} size={56} />}
+        {q.braille && <BrailleWord dots={q.braille} size={56} />}
         <Text className="flex-1 font-extrabold text-slate-900 dark:text-white">{q.q}</Text>
       </View>
       {q.options.map((o, k) => {

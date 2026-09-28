@@ -34,3 +34,19 @@ test('Braille: celas válidas, todas diferentes, e as perguntas batem com a tabe
       if (q.braille && BRAILLE[letter]) assert.equal(BRAILLE[letter], q.braille, `${l.id}: ${q.q}`);
     }
 });
+
+test('mini-cursos: exercícios gerados e prova final válidos e sempre iguais', async () => {
+  const { allLessons, lessonPractice } = await import('@/services/mini-practice');
+  for (const c of MINI_COURSES)
+    for (const l of allLessons(c)) {
+      const qs = [...l.quiz, ...(l.id === 'prova-final' ? [] : lessonPractice(c, l))];
+      assert.ok(qs.length > 0, `${c.id}/${l.id}: sem perguntas`);
+      for (const q of qs) assert.ok(q.answer >= 0 && q.answer < q.options.length && new Set(q.options).size === q.options.length, `${c.id}/${l.id}: ${q.q}`);
+      assert.deepEqual(lessonPractice(c, l), lessonPractice(c, l), 'o sorteio muda');
+    }
+});
+
+test('cursos: toda língua artificial com curso tem ficha na aba «Tipos de línguas»', async () => {
+  const { CONLANGS } = await import('./tipos-de-linguas');
+  for (const c of MINI_COURSES.filter((x) => x.kind === 'artificial')) assert.ok(CONLANGS.some((l) => l.id === c.id), `${c.id} sem ficha`);
+});

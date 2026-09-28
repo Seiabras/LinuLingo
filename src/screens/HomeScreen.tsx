@@ -298,7 +298,7 @@ const ALPHABET_PRACTICE = { route: '/alfabeto', emoji: '🔤', title: 'Alfabeto'
 
 const FALSE_FRIENDS_PRACTICE = { route: '/falsos-amigos', emoji: '🪤', title: 'Falsos amigos', text: 'Parecem português, mas não são' } as const;
 
-const COURSES_PRACTICE = { route: '/cursos', emoji: '🎓', title: 'Mini-cursos', text: 'Libras, Braille, esperanto, klingon…' } as const;
+const COURSES_PRACTICE = { route: '/cursos', emoji: '🎓', title: 'Cursos', text: 'Libras, Braille, esperanto, klingon…' } as const;
 
 const PRACTICES = [
   { route: '/escuta', emoji: '🎧', title: 'Escuta e ditado', text: 'Ouça nativos e escreva' },

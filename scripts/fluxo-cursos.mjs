@@ -1,12 +1,14 @@
 // Confere os mini-cursos: a lista em /cursos, uma lição de Braille inteira (celas desenhadas, quiz, XP,
 // «✓» na lista), o botão «Ver em Libras» abrindo a página do VLibras numa janela à parte, e o atalho
 // «Fazer o mini-curso» nas fichas das línguas artificiais.
-// Uso: node scripts/fluxo-cursos.mjs   (servidor em http://localhost:8081; DIST=1 usa o build do site)
+// Uso: npx tsx scripts/fluxo-cursos.mjs   (servidor em http://localhost:8081; DIST=1 usa o build do site)
 import { chromium } from 'playwright-core';
 import { existsSync, mkdirSync, readdirSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { join } from 'node:path';
 import { startDistServer } from './servidor-dist.mjs';
+import { MINI_COURSES } from '../src/data/cursos';
+import { lessonPractice } from '../src/services/mini-practice';
 
 const dist = process.env.DIST ? await startDistServer(Number(process.env.PORT ?? 8093)) : null;
 const BASE = dist ? dist.url.replace(/\/$/, '') : (process.env.BASE_URL ?? 'http://localhost:8081');
@@ -50,10 +52,10 @@ if (await page.getByText('Pular', { exact: true }).isVisible().catch(() => false
 await page.waitForTimeout(1500);
 
 // 1. a lista, a partir de «Mais práticas»
-await page.getByText('Mini-cursos', { exact: true }).first().click();
+await page.getByText('Cursos', { exact: true }).first().click();
 await waitText('Braille e comunicação tátil');
 const list = await body();
-check(['Libras', 'Braille', 'Esperanto', 'Toki Pona', 'Klingon', 'Interlingua', 'Lojban', 'Na’vi', 'Alto Valiriano', 'Solresol'].every((c) => list.includes(c)), 'a lista tem os cursos de sinais, o tátil e os de línguas artificiais');
+check(MINI_COURSES.every((c) => list.includes(c.name)), `a lista tem os ${MINI_COURSES.length} cursos`);
 await shot('lista');
 
 // 2. uma lição de Braille inteira
@@ -63,13 +65,20 @@ await waitText('Terminar a lição');
 const cells = await page.locator('svg[aria-label*="em Braille"]').count();
 check(cells === 10, `as 10 letras de A a J aparecem como celas Braille desenhadas (${cells})`);
 await shot('braille');
-for (const answer of ['h', 'c', 'j', 'Não: é um sistema de escrita']) await page.getByRole('button', { name: answer, exact: true }).last().click(); // o «j» aparece em duas perguntas: a da vez é a última
+// as perguntas escritas e os exercícios gerados dos itens, em ordem: responde cada uma pelo gabarito
+const tatil = MINI_COURSES.find((c) => c.id === 'tatil');
+const cela = tatil.lessons[0];
+const quiz = [...cela.quiz, ...lessonPractice(tatil, cela)];
+for (let i = 0; i < quiz.length; i++) {
+  // as anteriores já foram respondidas (botões desabilitados): o primeiro habilitado é o da pergunta da vez
+  await page.getByRole('button', { name: quiz[i].options[quiz[i].answer], exact: true, disabled: false }).first().click();
+}
 await page.getByText('Terminar a lição').click();
 await waitText('certas');
-check((await body()).includes('4 de 4 certas · +15 XP'), 'acertar tudo dá 15 XP (10 da lição + 5 de bônus)');
+check((await body()).includes(`${quiz.length} de ${quiz.length} certas · +15 XP`), `acertar as ${quiz.length} (escritas e geradas) dá 15 XP`);
 await shot('fim');
 await page.getByText('Voltar às lições').click();
-await waitText('✓ 4/4');
+await waitText(`✓ ${quiz.length}/${quiz.length}`);
 ok('a lição aparece concluída na lista');
 
 // 3. «Ver em Libras» abre o VLibras numa janela à parte, sem o isolamento do app
@@ -85,7 +94,7 @@ await popup.close();
 
 // 4. o atalho nas fichas das línguas artificiais
 await page.goto(BASE + '/cultura?aba=tipos', { waitUntil: 'load' });
-await page.getByText('Fazer o mini-curso de Esperanto').click();
+await page.getByText('Fazer o curso de Esperanto').click();
 await waitText('A tabela mágica');
 ok('a ficha do esperanto leva ao mini-curso');
 

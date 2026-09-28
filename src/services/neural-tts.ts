@@ -142,7 +142,7 @@ let ticket = 0;
  * Cria (ou acorda) o contexto de áudio. Os navegadores só deixam o som sair se isso acontecer dentro
  * de um toque ou tecla do aluno; o Firefox é o mais rígido: um contexto criado depois de um «await»
  * (a lista de vozes, por exemplo) nasce pausado e a voz toca muda. Por isso roda logo no início de
- * speak() e também em qualquer toque na página.
+ * speak(); depois, qualquer toque na página o acorda se ele tiver sido pausado.
  */
 export function unlockAudio() {
   if (!neuralSupported()) return;
@@ -152,8 +152,12 @@ export function unlockAudio() {
   } catch {}
 }
 
+/** Num toque qualquer, só acorda o contexto que já existe (criá-lo para todo mundo gastaria bateria). */
+function wakeAudio() {
+  if (ctx && ctx.state !== 'running') ctx.resume().catch(() => {});
+}
 if (neuralSupported()) {
-  for (const ev of ['pointerdown', 'keydown', 'touchend']) window.addEventListener(ev, unlockAudio, { capture: true, passive: true });
+  for (const ev of ['pointerdown', 'keydown', 'touchend']) window.addEventListener(ev, wakeAudio, { capture: true, passive: true });
 }
 
 export function stopNeural() {

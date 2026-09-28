@@ -206,7 +206,7 @@ function ConlangCard({ c }: { c: Conlang }) {
       {c.note && <Text className="text-xs italic leading-4 text-slate-500 dark:text-slate-400">⚖️ {c.note}</Text>}
       {miniCourse(c.id) && (
         <Pressable accessibilityRole="button" onPress={() => router.push({ pathname: '/curso/[id]', params: { id: c.id } })} className="items-center rounded-xl bg-conecta py-2 active:opacity-90">
-          <Text className="font-bold text-white">🎓 Fazer o mini-curso de {c.name.split(' (')[0]}</Text>
+          <Text className="font-bold text-white">🎓 Fazer o curso de {c.name.split(' (')[0]}</Text>
         </Pressable>
       )}
     </Card>
@@ -383,7 +383,7 @@ function Modality() {
         <Text className="font-extrabold text-white">🤟 Ir para as línguas de sinais</Text>
       </Pressable>
       <Pressable accessibilityRole="button" onPress={() => router.push({ pathname: '/curso/[id]', params: { id: 'tatil' } })} className="items-center rounded-2xl border-2 border-conecta/30 bg-white p-3 active:opacity-80 dark:bg-slate-900">
-        <Text className="font-bold text-conecta">🎓 Mini-curso: Braille e comunicação tátil</Text>
+        <Text className="font-bold text-conecta">🎓 Curso: Braille e comunicação tátil</Text>
       </Pressable>
     </>
   );

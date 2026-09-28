@@ -96,7 +96,7 @@ export function VarietyPicker({ onOwnLanguages }: { onOwnLanguages?: () => void 
           {inside && (
             <>
               <Text className="mt-1 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">🗣️ Como se fala lá</Text>
-              <AccentDetails a={inside} />
+              <AccentDetails a={inside} embedded />
             </>
           )}
         </>
@@ -133,7 +133,7 @@ function PickChip({ label, on, onPress }: { label: string; on: boolean; onPress:
 }
 
 /** Um sotaque, dialeto ou língua: onde se fala, como soa, frases, palavras, gente de lá e o treino. */
-export function AccentDetails({ a }: { a: Accent }) {
+export function AccentDetails({ a, embedded }: { a: Accent; embedded?: boolean }) {
   const { pack, setAccent } = useApp();
   const locale = a.speechLocale ?? pack.speechLocale;
   return (
@@ -146,7 +146,8 @@ export function AccentDetails({ a }: { a: Accent }) {
       <Text className="text-xs text-slate-500 dark:text-slate-400">{a.region}</Text>
       <View className="flex-row flex-wrap gap-2">
         <Button title="🎯 Treinar" variant="success" onPress={() => router.push({ pathname: '/sotaque', params: { id: a.id } })} />
-        <Button title="Voltar ao padrão" variant="ghost" onPress={() => setAccent(null)} />
+        {/* dentro da variante (o sotaque é ela mesma), «voltar ao padrão» não mudaria nada */}
+        {!embedded && <Button title="Voltar ao padrão" variant="ghost" onPress={() => setAccent(null)} />}
       </View>
       {a.kind === 'língua' && (
         <Text className="text-sm leading-5 text-emerald-800 dark:text-emerald-300">

@@ -61,7 +61,7 @@ export function SignLanguagesTab() {
         <Text className="text-2xl">🎓</Text>
         <View className="flex-1">
           <Text className="font-extrabold text-white">Aprenda Libras</Text>
-          <Text className="text-sm text-blue-100">Mini-cursos com o avatar VLibras, a ASL e mais</Text>
+          <Text className="text-sm text-blue-100">Cursos com o avatar VLibras, a ASL e mais</Text>
         </View>
         <Text className="text-xl text-white">›</Text>
       </Pressable>

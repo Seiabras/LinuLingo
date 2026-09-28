@@ -1,3 +1,4 @@
+import { View } from 'react-native';
 import Svg, { Circle, Rect } from 'react-native-svg';
 import { useIsDark } from '@/services/theme';
 
@@ -22,5 +23,18 @@ export function BrailleCell({ dots, size = 44, label }: { dots: string; size?: n
         return <Circle key={d} cx={x} cy={y} r={r} fill={raised ? on : 'none'} stroke={raised ? on : off} strokeWidth={1.2} />;
       })}
     </Svg>
+  );
+}
+
+/** Várias celas em sequência («1234 1» = duas celas), para ler palavras e números inteiros. */
+export function BrailleWord({ dots, size = 44, label }: { dots: string; size?: number; label?: string }) {
+  const cells = dots.split(' ');
+  if (cells.length === 1) return <BrailleCell dots={dots} size={size} label={label} />;
+  return (
+    <View accessibilityLabel={label} className="flex-row flex-wrap gap-1">
+      {cells.map((c, i) => (
+        <BrailleCell key={i} dots={c} size={size} label={`cela ${i + 1}: pontos ${[...c].join('-') || 'nenhum'}`} />
+      ))}
+    </View>
   );
 }

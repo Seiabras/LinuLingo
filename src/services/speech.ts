@@ -173,7 +173,11 @@ export function forVoice(text: string): string {
   return text.replace(/\u0301/g, '');
 }
 
+/** Cada fala nova invalida as anteriores (o plano B da voz do aparelho não fala fora de hora). */
+let speakSeq = 0;
+
 export async function speak(text: string, locale: string, opts: { rate?: number; native?: boolean } = {}): Promise<SpeakResult> {
+  const seq = ++speakSeq;
   // native: false força a voz do aparelho (pares mínimos: as duas palavras na mesma voz)
   if (opts.native !== false && playNativeClip(text, locale, opts.rate ?? 1)) return 'nativo';
   // ainda dentro do toque: depois do «await» o Firefox não deixa mais o áudio da voz neural sair
@@ -186,7 +190,7 @@ export async function speak(text: string, locale: string, opts: { rate?: number;
   if (!goodDeviceVoice(voice, locale) && hasNeuralVoice(locale)) {
     speakNeural(forVoice(text), locale, opts.rate ?? 1).then((ms) => {
       // a voz embutida falhou: a do aparelho, se houver, é melhor que o silêncio
-      if (ms === null && device && neuralFailed(locale)) Speech.speak(forVoice(text), { language: locale, voice: device.identifier, rate: opts.rate ?? 0.9 });
+      if (ms === null && seq === speakSeq && device && neuralFailed(locale)) Speech.speak(forVoice(text), { language: locale, voice: device.identifier, rate: opts.rate ?? 0.9 });
     });
     return 'neural';
   }

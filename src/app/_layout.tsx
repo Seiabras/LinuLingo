@@ -10,9 +10,16 @@ import { AppStateProvider } from '@/services/app-state';
 import { StickerToast } from '@/components/StickerToast';
 import { NeuralVoiceToast } from '@/components/NeuralVoiceToast';
 import { NativeSpeakerToast } from '@/components/NativeSpeakerToast';
-import { DatabaseGate } from '@/components/DatabaseGate';
+import { DatabaseGate, databaseOpened } from '@/components/DatabaseGate';
+import type { SQLiteDatabase } from 'expo-sqlite';
 // guarda desde o início o aviso do navegador de que o app pode ser instalado
 import '@/services/pwa';
+
+/** Abre o banco e avisa o portão das abas (a identidade da função não pode mudar: o SQLiteProvider a usa como chave). */
+async function onInit(db: SQLiteDatabase) {
+  await initDatabase(db);
+  databaseOpened();
+}
 
 function Loading() {
   return (
@@ -27,7 +34,7 @@ export default function RootLayout() {
     <GestureHandlerRootView style={{ flex: 1 }}>
       <DatabaseGate fallback={<Loading />}>
         <Suspense fallback={<Loading />}>
-          <SQLiteProvider databaseName={DB_NAME} onInit={initDatabase} useSuspense>
+          <SQLiteProvider databaseName={DB_NAME} onInit={onInit} useSuspense>
             <AppStateProvider>
               <StatusBar style="auto" />
               <Stack screenOptions={{ headerShown: false }}>

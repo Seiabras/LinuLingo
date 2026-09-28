@@ -32,8 +32,21 @@ function session(key: string, value?: string | null): string | null {
 
 type GateState = 'checking' | 'mine' | 'elsewhere' | 'yielded';
 
+/** O banco abriu (chamado no fim do onInit): zera a contagem de tentativas de recarregar. */
+export function databaseOpened() {
+  if (web) session(RETRIES, null);
+}
+
 export function DatabaseGate({ children, fallback }: { children: ReactNode; fallback: ReactNode }) {
   const [state, setState] = useState<GateState>(web && locks ? (session(YIELDED) ? 'yielded' : 'checking') : 'mine');
+  // pediu a outra aba e ela não respondeu (aba congelada em segundo plano, no celular)
+  const [asked, setAsked] = useState(false);
+  const [slow, setSlow] = useState(false);
+  useEffect(() => {
+    if (!asked || state !== 'elsewhere') return;
+    const t = setTimeout(() => setSlow(true), 5000);
+    return () => clearTimeout(t);
+  }, [asked, state]);
 
   useEffect(() => {
     if (!web || !locks || state === 'mine' || state === 'yielded') return;
@@ -77,8 +90,12 @@ export function DatabaseGate({ children, fallback }: { children: ReactNode; fall
       ch.close();
     }
     session(YIELDED, null);
+    setAsked(true);
     setState('elsewhere');
   };
+
+  // no aparelho (iOS e Android) o banco é um arquivo comum: nada de trava nem de recarregar
+  if (!web) return <>{children}</>;
 
   if (state === 'checking') return <>{fallback}</>;
   if (state === 'elsewhere' || state === 'yielded')
@@ -97,6 +114,9 @@ export function DatabaseGate({ children, fallback }: { children: ReactNode; fall
           <Text className="font-extrabold text-white">Usar nesta aba</Text>
         </Pressable>
         {state === 'elsewhere' && <ActivityIndicator color="#2563EB" />}
+        {slow && (
+          <Text className="max-w-md text-center text-sm text-slate-500 dark:text-slate-400">A outra aba não respondeu. Feche-a (ou recarregue-a) e esta abre em seguida.</Text>
+        )}
       </View>
     );
   return <DatabaseErrorBoundary>{children}</DatabaseErrorBoundary>;
@@ -110,13 +130,8 @@ class DatabaseErrorBoundary extends Component<{ children: ReactNode }, { error: 
     return { error };
   }
 
-  componentDidMount() {
-    // abriu: zera a contagem de tentativas
-    if (web) setTimeout(() => !this.state.error && session(RETRIES, null), 3000);
-  }
-
   componentDidCatch(error: Error) {
-    if (!web || !isBusy(error)) return;
+    if (!isBusy(error)) return;
     const tries = Number(session(RETRIES) ?? 0);
     if (tries >= 5) return;
     session(RETRIES, String(tries + 1));
@@ -131,14 +146,16 @@ class DatabaseErrorBoundary extends Component<{ children: ReactNode }, { error: 
       <View className="flex-1 items-center justify-center gap-4 bg-suave px-6 dark:bg-grafite">
         <Text className="text-5xl">🐧</Text>
         <Text className="text-center text-xl font-extrabold text-slate-900 dark:text-white">
-          {busy ? 'Abrindo o seu progresso…' : 'Não deu para abrir o seu progresso'}
+          {busy ? 'Abrindo o seu progresso…' : isBusy(error) ? 'Não deu para abrir o seu progresso' : 'Algo deu errado ao abrir o app'}
         </Text>
         {busy ? (
           <ActivityIndicator color="#2563EB" />
         ) : (
           <>
             <Text className="max-w-md text-center text-base leading-6 text-slate-600 dark:text-slate-400">
-              Feche as outras abas do LinuLingo e recarregue. Se continuar, o navegador pode estar sem espaço ou bloqueando o armazenamento do site.
+              {isBusy(error)
+                ? 'Feche as outras abas do LinuLingo e recarregue. Se continuar, o navegador pode estar sem espaço ou bloqueando o armazenamento do site.'
+                : 'Recarregue a página. Se continuar, avise quem cuida do app.'}
             </Text>
             <Pressable
               accessibilityRole="button"
