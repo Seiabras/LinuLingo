@@ -40,6 +40,13 @@ export const OWN_LANGUAGE_META: Record<string, OwnLanguageMeta> = {
   },
   'et-vene': { family: 'Indo-europeu › Balto-eslavo › Eslavo', recognition: 'Sem status oficial: é a língua materna de cerca de um quarto da população, sobretudo em Tallinn e no nordeste.' },
   'et-rootsi': { family: 'Indo-europeu › Germânico › Nórdico', recognition: 'Os suecos da costa têm autonomia cultural reconhecida pela lei estoniana; a fala tradicional quase desapareceu depois de 1944.' },
+  'lt-zemaiciu': {
+    family: 'Indo-europeu › Báltico › Báltico oriental',
+    recognition: 'Sem status oficial de língua; tem grafia própria, livros e uma Wikipédia em samogiciano.',
+    debated: 'Os linguistas lituanos o classificam como um dos dois grandes grupos de dialetos do lituano; muitos samogicianos o defendem como língua própria, que tem código ISO 639-3 (sgs).',
+  },
+  'lt-polones': { family: 'Indo-europeu › Balto-eslavo › Eslavo', recognition: 'Língua da maior minoria nacional, sem status oficial: há escolas com ensino em polonês, jornais e rádio.' },
+  'lt-russo': { family: 'Indo-europeu › Balto-eslavo › Eslavo', recognition: 'Língua de uma minoria nacional, sem status oficial; foi a língua da administração no período soviético.' },
   'fo-danskt': { family: 'Indo-europeu › Germânico › Nórdico', recognition: 'Ensinado em todas as escolas; pela Lei de Autonomia de 1948, o feroês é a língua principal, mas o dinamarquês também pode ser usado oficialmente.' },
   'fo-norn': { family: 'Indo-europeu › Germânico › Nórdico', recognition: 'Extinto: foi falado nas Shetland e nas Órcades até por volta do século XVIII.' },
   'is-taknmal': { family: 'Língua de sinais', recognition: 'Reconhecida por lei em 2011 como a primeira língua da comunidade surda islandesa, com o mesmo status do islandês para quem precisa dela.' },

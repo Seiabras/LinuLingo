@@ -248,7 +248,7 @@ test('pt: dicionário de pronúncia cobre toda palavra europeia do app, com a t�
 });
 
 // idiomas cuja IPA vem de um dicionário por forma (src/data/<idioma>/pronuncia.ts)
-const LEXICON_LANGS = ['sv', 'nb', 'da', 'is', 'fo', 'fi', 'et'];
+const LEXICON_LANGS = ['sv', 'nb', 'da', 'is', 'fo', 'fi', 'et', 'lt', 'lv'];
 for (const code of LEXICON_LANGS.filter((c) => PACKS[c])) {
   test(`${code}: texto sem letras nem palavras de línguas vizinhas`, async () => {
     const { nordicTextProblems } = await import('../services/texto-nordico');

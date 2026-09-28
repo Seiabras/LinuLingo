@@ -23,6 +23,7 @@ const LANGS = {
   fo: { wikidata: 'Q25258', iso3: 'fao', category: 'Lingua_Libre_pronunciation-fao' },
   fi: { wikidata: 'Q1412', iso3: 'fin', category: 'Lingua_Libre_pronunciation-fin' },
   et: { wikidata: 'Q9072', iso3: 'est', category: 'Lingua_Libre_pronunciation-est' },
+  lt: { wikidata: 'Q9083', iso3: 'lit', category: 'Lingua_Libre_pronunciation-lit' },
   it: { wikidata: 'Q652', iso3: 'ita', category: 'Lingua_Libre_pronunciation-ita' },
   fr: { wikidata: 'Q150', iso3: 'fra', category: 'Lingua_Libre_pronunciation-fra' },
 };

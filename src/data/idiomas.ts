@@ -12,9 +12,10 @@ import { ISLANDES } from './is';
 import { FINLANDES } from './fi';
 import { ESTONIANO } from './et';
 import { FEROES } from './fo';
+import { LITUANO } from './lt';
 
 /** Idiomas com conteúdo pronto. */
-export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES, fr: FRANCES, is: ISLANDES, fi: FINLANDES, et: ESTONIANO, fo: FEROES };
+export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES, fr: FRANCES, is: ISLANDES, fi: FINLANDES, et: ESTONIANO, fo: FEROES, lt: LITUANO };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -35,6 +36,7 @@ export const LANGUAGES: LanguageInfo[] = [
   FINLANDES,
   FEROES,
   ESTONIANO,
+  LITUANO,
   {
     code: 'ja', name: 'Japonês', nativeName: '日本語', flag: '🇯🇵',
     lineage: { family: 'Japônico', branches: ['Japonês'], region: 'Arquipélago japonês (Leste Asiático)', writing: 'Hiragana, katakana e kanji' },

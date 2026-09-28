@@ -110,6 +110,18 @@ export function roomsFor(lang: string): Record<Gender, Room> {
       f: { ...ROOMS.f, rule: 'Feminino: quase todas em -tion/-sion (la nation), -té (la liberté), -ette (la fourchette), -ure (la voiture) e -ance/-ence. Mudam em relação ao português: la mer (o mar), la dent (o dente), la fin (o fim).' },
       n: ROOMS.n,
     };
+  if (lang === 'lt')
+    return {
+      m: { ...ROOMS.m, rule: 'Masculino: quase todos terminam em -as, -ys ou -us (namas, arklys, sūnus) e em -uo (vanduo, akmuo). Muitos em -is também (brolis, dantis).' },
+      f: { ...ROOMS.f, rule: 'Feminino: quase todos terminam em -a ou -ė (mergaitė, knyga, upė); alguns em -is (naktis, širdis, pilis). Exceções: dėdė (tio) e tėtė (papai) são masculinos.' },
+      n: ROOMS.n,
+    };
+  if (lang === 'lv')
+    return {
+      m: { ...ROOMS.m, rule: 'Masculino: quase todos terminam em -s, -š, -is ou -us (galds, kaķis, lācis, tirgus). Exceção: puika (menino) termina em -a e é masculino.' },
+      f: { ...ROOMS.f, rule: 'Feminino: quase todos terminam em -a ou -e (māja, upe, meitene); um grupo termina em -s (nakts, sirds, govs, acs).' },
+      n: ROOMS.n,
+    };
   if (lang === 'it')
     return {
       m: { ...ROOMS.m, rule: 'Masculino: quase todas em -o (il libro), muitas em -e (il fiore, il pane) e as de origem grega em -ma (il problema, il tema). Plural em -i.' },
@@ -184,6 +196,10 @@ export function palaceIntro(lang: string): string {
     return 'Você já sabe os gêneros do português! Aqui o desafio são as palavras de Portugal que você ainda não usa: o autocarro, o comboio, a casa de banho, o ecrã, a bica, o pequeno-almoço. Guarde cada uma na sala certa!';
   if (lang === 'fr')
     return "O francês tem 2 gêneros, como o português, mas a terminação engana mais: -age é masculino (le fromage), -tion é feminino (la nation), e várias palavras trocam de gênero de uma língua para a outra: la mer, la dent, la fin, le lait. No plural, o artigo é «les» para os dois: por isso decore sempre com «le» ou «la» (ou «un», «une», quando vem «l'»). Guarde cada uma na sala certa!";
+  if (lang === 'lt')
+    return 'O lituano tem 2 gêneros, masculino e feminino, e nenhum artigo. Quase sempre a terminação entrega: -as, -ys, -us masculino (namas), -a, -ė feminino (knyga, upė). O neutro sobrou só em adjetivos e pronomes (gera, gražu). Guarde cada palavra na sala certa!';
+  if (lang === 'lv')
+    return 'O letão tem 2 gêneros, masculino e feminino, e nenhum artigo. A terminação quase sempre entrega: -s, -š, -is, -us masculino (galds), -a, -e feminino (māja, upe). A armadilha são as femininas em -s: nakts, sirds. Guarde cada palavra na sala certa!';
   if (lang === 'it')
     return 'O italiano tem 2 gêneros, como o português, e quase sempre a terminação entrega: -o masculino, -a feminino. O perigo mora nas em -e (il fiore, la notte) e nos plurais que trocam de gênero: l’uovo → le uova. Guarde cada uma na sala certa!';
   if (lang === 'es')
@@ -217,6 +233,17 @@ export function genderTip(word: string, gender: Gender, lang = 'ro'): string {
     if (gender === 'm' && /(ema|ama)$/.test(w)) return 'Palavra de origem grega em -ema/-ama: masculina, como o problema, o programa, o sistema.';
     if (w === 'ecrã') return 'O ecrã (a tela, no Brasil) é masculino: «o ecrã do telemóvel».';
     return roomsFor('pt')[gender].rule;
+  }
+  if (lang === 'lt') {
+    if (w === 'dėdė' || w === 'tėtė') return 'Exceção: termina em -ė, mas é masculino porque designa um homem (dėdė = tio, tėtė = papai).';
+    if (w.endsWith('is')) return gender === 'm' ? 'Termina em -is: pode ser dos dois gêneros. Este é masculino (como brolis, dantis). Decore com um adjetivo: geras brolis.' : 'Termina em -is: pode ser dos dois gêneros. Esta é feminina (como naktis, širdis). Decore com um adjetivo: gera naktis.';
+    if (w.endsWith('uo')) return gender === 'm' ? 'Termina em -uo e é masculino, como vanduo (água) e akmuo (pedra).' : 'Termina em -uo, mas é feminina: sesuo (irmã) é uma das poucas.';
+    return roomsFor('lt')[gender].rule;
+  }
+  if (lang === 'lv') {
+    if (w === 'puika') return 'Exceção: termina em -a, mas é masculino — puika quer dizer «menino».';
+    if (gender === 'f' && w.endsWith('s')) return 'Cuidado: termina em -s, mas é feminina! É o grupo de nakts, sirds, govs e acs. Decore com um adjetivo: tumša nakts.';
+    return roomsFor('lv')[gender].rule;
   }
   if (lang === 'it') {
     if (HETERO_IT[w]) return HETERO_IT[w];

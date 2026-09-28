@@ -14,6 +14,8 @@ const FOREIGN: Record<string, RegExp> = {
   fo: /[äöþõãçñÄÖÞ]/, // feroês: á í ó ú ý ð æ ø
   fi: /[æøðþõãçñÆØÐÞ]/, // finlandês: ä ö (å só em nomes suecos)
   et: /[æøðþåãçñÆØÐÞÅ]/, // estoniano: õ ä ö ü š ž
+  lt: /[āēīģķļņõäöüæøåðþãçñĀĒĪĢĶĻŅ]/, // lituano: ą č ę ė į š ų ū ž (sem os macrons e as cedilhas do letão)
+  lv: /[ąęėįųõäöüæøåðþãçñĄĘĖĮŲ]/, // letão: ā č ē ģ ī ķ ļ ņ š ū ž (sem os ogoneks do lituano)
 };
 
 /** Palavras muito frequentes de um vizinho que denunciam mistura (fora de citações). */
@@ -23,9 +25,12 @@ const NEIGHBOR_WORDS: Record<string, string[]> = {
   nb: ['och', 'inte', 'jag', 'också', 'någon'],
   nn: ['och', 'inte', 'jag', 'också', 'någon'],
   da: ['och', 'inte', 'jag', 'också', 'någon', 'hva', 'ikkje'],
+  // «un» (e) é do letão; «yra» (é) e «labas» (bom) são do lituano
+  lt: ['un'],
+  lv: ['yra', 'labas'],
 };
 
-const NAMES: Record<string, string> = { sv: 'sueco', nb: 'bokmål', nn: 'nynorsk', da: 'dinamarquês', is: 'islandês', fo: 'feroês', fi: 'finlandês', et: 'estoniano' };
+const NAMES: Record<string, string> = { sv: 'sueco', nb: 'bokmål', nn: 'nynorsk', da: 'dinamarquês', is: 'islandês', fo: 'feroês', fi: 'finlandês', et: 'estoniano', lt: 'lituano', lv: 'letão' };
 
 /** Nomes próprios de lugares de outros idiomas que podem aparecer no texto (citados). */
 const PROPER = /São Paulo|Brasília|Ålesund|Tórshavn|Þingvellir|Göteborg|Malmö|Øresund|København|Århus|Aarhus|Tromsø|Bodø|Jökulsárlón|Reykjavík|Mývatn|Saaremaa|Pärnu|Tartu|Åland|Mariehamn|Suðuroy|Klaksvík/g;

@@ -233,6 +233,26 @@ export const FAUNA_MUSICA: Record<string, CountryNature> = {
       { emoji: '🎶', name: 'Gaita de foles estoniana', local: 'torupill', fact: 'Instrumento tradicional das festas de aldeia.', origin: 'tradicional' },
     ],
   },
+  LTU: {
+    animals: [
+      { emoji: '🪿', name: 'Cegonha-branca', local: 'baltasis gandras', fact: 'A ave nacional da Lituânia, que tem um dos maiores números de ninhos de cegonha por área da Europa; dizem que ela traz sorte à casa onde faz o ninho.' },
+      { emoji: '🦬', name: 'Bisão-europeu', local: 'stumbras', fact: 'Sumiu das florestas lituanas e voltou em 1969, com a criação de uma reserva em Pašiliai; hoje vive solto em várias regiões do país.' },
+    ],
+    instruments: [
+      { emoji: '🎼', name: 'Kanklės', local: 'kanklės', fact: 'Cítara tradicional lituana, parente do kantele finlandês e do kokle letão; é o instrumento mais ligado à identidade do país.', origin: 'tradicional' },
+      { emoji: '🪈', name: 'Skudučiai', local: 'skudučiai', fact: 'Flautas de pã soltas: cada músico sopra um ou dois tubos, e a melodia nasce da combinação, como nas canções sutartinės.', origin: 'tradicional' },
+    ],
+  },
+  LVA: {
+    animals: [
+      { emoji: '🐦', name: 'Alvéola-branca', local: 'baltā cielava', fact: 'A ave nacional da Letônia, um passarinho preto e branco que balança o rabo sem parar e vive perto das casas e da água.' },
+      { emoji: '🐞', name: 'Joaninha-de-dois-pontos', local: 'divpunktu mārīte', fact: 'O inseto nacional da Letônia; o nome lembra Māra, deusa da mitologia letã.' },
+    ],
+    instruments: [
+      { emoji: '🎼', name: 'Kokle', local: 'kokle', fact: 'Cítara tradicional letã, parente do kanklės lituano e do kantele finlandês; é o instrumento nacional.', origin: 'tradicional' },
+      { emoji: '🎶', name: 'Gaita de foles letã', local: 'dūdas', fact: 'A gaita de foles tradicional da Letônia, tocada em festas e casamentos na zona rural.', origin: 'tradicional' },
+    ],
+  },
   JPN: {
     animals: [
       { emoji: '🐒', name: 'Macaco-japonês', local: 'ニホンザル', fact: 'Famoso por se banhar em fontes termais no inverno.' },
@@ -279,4 +299,4 @@ export const FAUNA_MUSICA: Record<string, CountryNature> = {
 };
 
 /** Países «de origem» de cada idioma do app (seção Bichos e sons da aba Cultura). */
-export const HOMELANDS: Record<string, string[]> = { ro: ['ROU', 'MDA'], ru: ['RUS'], es: ['ESP', 'MEX', 'COL', 'ARG', 'PER', 'CHL', 'CUB'], it: ['ITA'], sv: ['SWE'], nb: ['NOR'], nn: ['NOR'], da: ['DNK'], is: ['ISL'], fo: ['FRO'], pt: ['BRA', 'PRT'], fr: ['FRA'], fi: ['FIN'], et: ['EST'], ja: ['JPN'], ko: ['KOR'], en: ['GBR'] };
+export const HOMELANDS: Record<string, string[]> = { ro: ['ROU', 'MDA'], ru: ['RUS'], es: ['ESP', 'MEX', 'COL', 'ARG', 'PER', 'CHL', 'CUB'], it: ['ITA'], sv: ['SWE'], nb: ['NOR'], nn: ['NOR'], da: ['DNK'], is: ['ISL'], fo: ['FRO'], pt: ['BRA', 'PRT'], fr: ['FRA'], fi: ['FIN'], et: ['EST'], lt: ['LTU'], lv: ['LVA'], ja: ['JPN'], ko: ['KOR'], en: ['GBR'] };

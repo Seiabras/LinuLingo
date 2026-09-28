@@ -18,6 +18,7 @@ const LANGS = {
   fo: { wikidata: 'Q25258', search: 'fo' },
   fi: { wikidata: 'Q1412', search: 'fi' },
   et: { wikidata: 'Q9072', search: 'et' },
+  lt: { wikidata: 'Q9083', search: 'lt' },
   fr: { wikidata: 'Q150', search: 'fr' },
 };
 const UA = 'LinuLingoApp/0.1 (https://github.com/Seiabras/LinuLingo; app educativo)';

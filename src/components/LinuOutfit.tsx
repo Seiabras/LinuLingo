@@ -223,6 +223,36 @@ export function OutfitArt({ id }: { id: string }) {
           <Circle cx="96" cy="53" r="3.5" fill="#1E3A8A" />
         </G>
       );
+    case 'rutuvainikas':
+      return (
+        <G>
+          {/* a coroa de arruda: folhinhas miúdas verde-azuladas em volta da cabeça */}
+          <Path d="M28 30 Q60 20 92 30" stroke="#166534" strokeWidth="3" fill="none" />
+          {[30, 36, 42, 48, 54, 60, 66, 72, 78, 84, 90].map((x, i) => (
+            <Ellipse key={x} cx={x} cy={30 - Math.sin(((x - 28) / 64) * Math.PI) * 9 + (i % 2 ? -2 : 2)} rx="3.2" ry="2" fill={i % 2 ? '#4D7C0F' : '#65A30D'} transform={`rotate(${i % 2 ? -30 : 30} ${x} ${30 - Math.sin(((x - 28) / 64) * Math.PI) * 9})`} />
+          ))}
+          <Circle cx="44" cy="23" r="1.6" fill="#FDE047" />
+          <Circle cx="76" cy="23" r="1.6" fill="#FDE047" />
+        </G>
+      );
+    case 'ozollapuvainags':
+      return (
+        <G>
+          {/* a coroa de folhas de carvalho do Jāņi */}
+          <Path d="M26 32 Q60 18 94 32" stroke="#3F6212" strokeWidth="4" fill="none" />
+          {[28, 38, 48, 60, 72, 82, 92].map((x, i) => {
+            const y = 32 - Math.sin(((x - 26) / 68) * Math.PI) * 10;
+            return (
+              <Path
+                key={x}
+                d={`M${x} ${y} q-4 -3 -2 -7 q-3 -2 0 -5 q1 -4 4 -2 q3 -2 4 2 q3 3 0 5 q2 4 -2 7 z`}
+                fill={i % 2 ? '#15803D' : '#4D7C0F'}
+                transform={`rotate(${(x - 60) * 0.8} ${x} ${y})`}
+              />
+            );
+          })}
+        </G>
+      );
     case 'sorokka':
       return (
         <G>

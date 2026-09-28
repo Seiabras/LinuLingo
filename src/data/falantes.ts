@@ -2241,5 +2241,11 @@ export const FALANTES: Record<string, Record<string, { place: string; country: s
    "place": "França",
    "country": "FRA"
   }
+ },
+ "lt": {
+  "Trimkev": {
+   "place": "Estados Unidos",
+   "country": "USA"
+  }
  }
 };

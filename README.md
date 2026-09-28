@@ -28,6 +28,7 @@ As faixas que rolam para os lados (fotos, trilha de subníveis, idiomas e regiõ
 | 🇬🇧 Inglês | Indo-europeu › Germânico › Germânico ocidental | em breve |
 | 🇫🇮 Finlandês | Urálico › Fínico › Fínico setentrional | **disponível** |
 | 🇪🇪 Estoniano | Urálico › Fínico › Fínico meridional | **disponível** |
+| 🇱🇹 Lituano | Indo-europeu › Báltico › Báltico oriental | **disponível** |
 | 🇯🇵 Japonês | Japônico | em breve |
 | 🇰🇷 Coreano | Coreânico | em breve |
 
@@ -130,6 +131,12 @@ Cada idioma mostra os seus jeitos regionais de falar (18 no espanhol, 5 no romen
 
 - 4.168 palavras (com o genitivo e o partitivo na tradução), 15 unidades, 40 tópicos de gramática (as três durações, os 14 casos, a gradação, o partitivo, os empréstimos alemães, a reforma de Aavik, o Kalevipoeg e Koidula), 45 histórias (de Tallinn a Tartu, Saaremaa, Kihnu, Pärnu, Narva e o pântano de Soomaa), 54 falsos amigos, 120 etimologias, 8 sotaques e línguas (as ilhas, o nordeste, o võro e o seto, o russo e o sueco da costa).
 - **Sem gênero gramatical** (o palácio explica que «tema» é ele e ela); **IPA** de 11.299 formas com as três durações (curta, longa e sobrelonga); roupinha do Linu: a tanu.
+
+## O que tem no lituano
+
+- 4.091 palavras (com o genitivo e as formas principais do verbo na tradução), 15 unidades, 40 tópicos de gramática (os 7 casos, o genitivo da negação, o aspecto por prefixo, os particípios, o modo relatado, os dialetos, Donelaitis, Maironis, as sutartinės e os knygnešiai), 45 histórias (de Vilnius a Kaunas, Trakai, Kernavė, o Morro das Cruzes, o istmo da Curlândia, Palanga, Rumšiškės e a Vila Zelina, em São Paulo), 40 falsos amigos, 124 etimologias (o lituano como «museu vivo» do indo-europeu: vilkas, sūnus, avis, šimtas), 8 sotaques e línguas (Vilnius, a diáspora, os aukštaičiai, os dzūkai, o samogiciano, o polonês e o russo da Lituânia).
+- **IPA por dicionário** (src/data/lt/pronuncia.ts, 12.508 formas): a tônica lituana é livre e muda de lugar na declinação, e a escrita não a mostra. As formas flexionadas usam o acento do Wikcionário (via kaikki.org, CC BY-SA), a regra do recuo da tônica para o prefixo (nùėjo, pàsakė) e revisão manual; a tônica de algumas formas raras ainda pode estar errada.
+- **Palácio** com masculino e feminino (e as exceções dėdė e tėtė); **diário** que devolve as letras ą č ę ė į š ų ū ž; roupinha do Linu: a coroa de arruda (rūtų vainikas). O Lingua Libre e o Commons têm só 17 gravações livres de palavras do vocabulário; nas outras, a voz é a do aparelho.
 
 ## O que tem no russo
 
@@ -302,6 +309,7 @@ npx tsx scripts/fluxo-islandes.mjs        # islandês: palácio com 3 gêneros, 
 npx tsx scripts/fluxo-finlandes.mjs       # finlandês: palácio sem gênero, variante da Suécia, diário (ä/ö), IPA
 npx tsx scripts/fluxo-feroes.mjs          # feroês: palácio com 3 gêneros, diário (acentos), IPA
 npx tsx scripts/fluxo-estoniano.mjs       # estoniano: palácio sem gênero, diário (õ ä ö ü), IPA
+npx tsx scripts/fluxo-lituano.mjs         # lituano: palácio m/f, diário (ą č ę ė į š ų ū ž), IPA com a tônica livre
 npx tsx scripts/fluxo-portugues.mjs        # português de Portugal: variante do Brasil (IPA), diário (estar a, ênclise), falsos amigos
 npx tsx scripts/fluxo-italiano.mjs        # italiano: falsos amigos, IPA, palácio, variante da Suíça, linguística, diário
 node scripts/fluxo-mapa.mjs                # mapa ISO 3166-1/3166-3, zoom nas subdivisões e variante da Moldávia

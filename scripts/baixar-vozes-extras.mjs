@@ -29,6 +29,8 @@ const LANGS = {
   fo: { categories: ['Faroese_pronunciation'], prefix: /^Fo-/i },
   fi: { categories: ['Finnish_pronunciation'], prefix: /^Fi-/i },
   et: { categories: ['Estonian_pronunciation'], prefix: /^Et-/i },
+  // a maior parte dos arquivos lituanos não tem prefixo («Alytus.ogg»): o prefixo é opcional
+  lt: { categories: ['Lithuanian_pronunciation'], prefix: /^(Lt-)?/i },
 };
 const lang = process.argv[2] ?? 'ro';
 const cfg = LANGS[lang];
