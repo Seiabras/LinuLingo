@@ -30,6 +30,27 @@ export function OutfitArt({ id }: { id: string }) {
           </G>
         </G>
       );
+    case 'borik':
+      return (
+        <G>
+          {/* gorro de pele cazaque, arredondado, com a aba de pele virada na base */}
+          <Path d="M30 33 Q31 4 60 2 Q89 4 90 33 Q60 23 30 33 Z" fill="#A16207" />
+          <Path d="M27 33 Q60 24 93 33 L92 41 Q60 33 28 41 Z" fill="#78350F" />
+          <G stroke="#92400E" strokeWidth="1" strokeLinecap="round" fill="none">
+            {[
+              [32, 37],
+              [40, 39],
+              [48, 36],
+              [58, 35],
+              [68, 36],
+              [76, 39],
+              [84, 37],
+            ].map(([x, y]) => (
+              <Path key={`${x}-${y}`} d={`M${x} ${y} q2 -2 4 0`} />
+            ))}
+          </G>
+        </G>
+      );
     case 'clop':
       return (
         <G>

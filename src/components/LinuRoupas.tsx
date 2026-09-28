@@ -253,6 +253,100 @@ export function BodyArt({ id }: { id: string }) {
           <Circle cx="60" cy="102" r="0.8" fill="#FACC15" />
         </G>
       );
+    case 'chapan':
+      return (
+        <G>
+          <Path d={torso(88, 131, 6)} fill="#134E4A" stroke="#0F3D3A" strokeWidth="0.8" />
+          {/* a barra dourada bordada nas bordas do manto aberto e na gola */}
+          <Path d="M60 94 L57 131 M60 94 L63 131" fill="none" stroke="#EAB308" strokeWidth="2" />
+          <Path d="M40 90 Q60 100 80 90" fill="none" stroke="#EAB308" strokeWidth="2" />
+          <Path d={band(128, 3)} fill="#EAB308" />
+          {[97, 105, 113, 121].map((y) => (
+            <Path key={y} d={`M56 ${y} L58 ${y + 2} L56 ${y + 4} M64 ${y} L62 ${y + 2} L64 ${y + 4}`} stroke="#EAB308" strokeWidth="0.8" fill="none" />
+          ))}
+        </G>
+      );
+    case 'guayabera':
+      return (
+        <G>
+          <Path d={torso(92, 130, 6)} fill="#FEFCE8" stroke="#E7E1C6" strokeWidth="0.8" />
+          {/* as pregas verticais (alforzas) dos dois lados */}
+          {[42, 46, 74, 78].map((x) => (
+            <Line key={x} x1={x} y1="96" x2={x} y2="118" stroke="#D6CBA0" strokeWidth="0.7" />
+          ))}
+          {/* os quatro bolsos */}
+          {[
+            [36, 98],
+            [84, 98],
+            [38, 114],
+            [82, 114],
+          ].map(([x, y]) => (
+            <Rect key={`${x}-${y}`} x={x - 5} y={y} width="10" height="11" fill="none" stroke="#C4B98A" strokeWidth="0.8" />
+          ))}
+          {/* a carreira de botões no meio */}
+          {[98, 104, 110, 116, 122].map((y) => (
+            <Circle key={y} cx="60" cy={y} r="1" fill="#D6CBA0" />
+          ))}
+          <Path d="M60 92 L60 128" stroke="#E7E1C6" strokeWidth="0.6" />
+        </G>
+      );
+    case 'habeshakemis':
+      return (
+        <G>
+          <Path d={torso(90, 131, 6)} fill="#FFFFFF" stroke="#E7E5E4" strokeWidth="0.8" />
+          {/* a faixa bordada geométrica (tibeb) na barra e na gola */}
+          <Path d={band(118, 5)} fill="#B91C1C" />
+          {Array.from({ length: 7 }, (_, i) => 38 + i * 7).map((x) => (
+            <Path key={x} d={`M${x} 119 L${x + 3} 120.5 L${x} 122 L${x - 3} 120.5 Z`} fill="#EAB308" />
+          ))}
+          <Path d="M40 91 Q60 100 80 91" fill="none" stroke="#B91C1C" strokeWidth="2" />
+          <Path d="M42 93 Q60 101 78 93" fill="none" stroke="#EAB308" strokeWidth="1.2" />
+        </G>
+      );
+    case 'deel':
+      return (
+        <G>
+          <Path d={torso(90, 131, 6)} fill="#78350F" stroke="#451A03" strokeWidth="0.8" />
+          {/* a fileira diagonal de fivelas do lado direito, da gola até debaixo do braço */}
+          <Path d="M60 92 Q75 96 84 106" fill="none" stroke="#92400E" strokeWidth="1.2" />
+          {[
+            [64, 93],
+            [70, 96],
+            [76, 100],
+            [81, 104],
+          ].map(([x, y]) => (
+            <Circle key={`${x}-${y}`} cx={x} cy={y} r="1.3" fill="#EAB308" stroke="#92400E" strokeWidth="0.4" />
+          ))}
+          {/* a faixa de seda na cintura */}
+          <Path d={band(112, 8)} fill="#EA580C" />
+          <Path d="M74 113 L80 123 L76 124 L71 114 Z" fill="#EA580C" stroke="#9A3412" strokeWidth="0.5" />
+        </G>
+      );
+    case 'puletasi':
+      return (
+        <G>
+          <Path d={torso(90, 131, 6)} fill="#DB2777" stroke="#9D174D" strokeWidth="0.8" />
+          {/* a blusa mais clara por cima da saia, com a mesma estampa floral */}
+          <Path d={torso(90, 108, 6)} fill="#EC4899" opacity={0.9} />
+          {[
+            [40, 96],
+            [60, 100],
+            [80, 96],
+            [46, 116],
+            [60, 122],
+            [74, 116],
+            [50, 106],
+            [70, 106],
+          ].map(([x, y]) => (
+            <G key={`${x}-${y}`}>
+              {[0, 72, 144, 216, 288].map((a) => (
+                <Circle key={a} cx={(x as number) + 2 * Math.cos((a * Math.PI) / 180)} cy={(y as number) + 2 * Math.sin((a * Math.PI) / 180)} r="1.3" fill="#FEF08A" />
+              ))}
+              <Circle cx={x as number} cy={y as number} r="0.9" fill="#16A34A" />
+            </G>
+          ))}
+        </G>
+      );
     case 'faixa':
       return (
         <G>
@@ -365,6 +459,22 @@ export function FaceArt({ id }: { id: string }) {
               <Circle cx={(x as number) - (r as number) * 0.8} cy={(y as number) + (r as number) * 0.7} r={(r as number) * 0.3} fill={c as string} />
             </G>
           ))}
+        </G>
+      );
+    case 'lianpu':
+      return (
+        <G>
+          {/* pintura facial estilizada da Ópera de Pequim: base vermelha, losango branco central e traços pretos */}
+          <Path d="M30 44 Q46 30 60 34 Q74 30 90 44 Q86 62 74 70 Q60 76 46 70 Q34 62 30 44 Z" fill="#B91C1C" />
+          <Path d="M60 34 Q68 46 60 60 Q52 46 60 34 Z" fill="#FEF2F2" />
+          <Circle cx="60" cy="33" r="2.2" fill="#EAB308" />
+          {[46, 74].map((x) => (
+            <G key={x}>
+              <Path d={`M${x - 9} 46 Q${x} 40 ${x + 9} 46`} fill="none" stroke="#111827" strokeWidth="1.6" />
+              <Path d={`M${x - 8} 58 Q${x} 64 ${x + 8} 58`} fill="none" stroke="#111827" strokeWidth="1.4" />
+            </G>
+          ))}
+          <Path d="M40 68 Q60 74 80 68" fill="none" stroke="#111827" strokeWidth="1.2" />
         </G>
       );
     default:
