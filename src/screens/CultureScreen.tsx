@@ -7,7 +7,9 @@ import { CulturalGrammarCard } from '@/components/CulturalGrammarCard';
 import { Linu } from '@/components/Linu';
 import { useApp } from '@/services/app-state';
 import { useIsDark } from '@/services/theme';
-import { FAUNA_MUSICA, HOMELANDS } from '@/data/fauna-musica';
+import { FAUNA_MUSICA, HOMELANDS, type NatureItem } from '@/data/fauna-musica';
+import { CULTURA_PAISES, CULTURE_KINDS } from '@/data/cultura-paises';
+import { HScroll } from '@/components/HScroll';
 import { WORLD } from '@/data/mapa-mundi';
 import { flagOf } from '@/data/onde-se-fala';
 import { VarietyPicker } from '@/components/AccentsPanel';
@@ -19,7 +21,7 @@ import type { LanguagePack } from '@/data/types';
 import { nomeIdioma } from '@/services/idioma-nome';
 
 const TABS = [
-  { id: 'cultura', label: '🏛️ Cultura', info: 'A cultura de quem fala o idioma que você estuda: a família da língua, o mapa, as variantes e os sotaques, os bichos e os sons e os cards de cada unidade.' },
+  { id: 'cultura', label: '🏛️ Cultura', info: 'A cultura de quem fala o idioma que você estuda: a família da língua, o mapa, as variantes e os sotaques, os bichos, os sons, a comida, o folclore, as danças, as plantas e as brincadeiras de cada país e os cards de cada unidade.' },
   { id: 'proprias', label: '🗣️ Línguas próprias', info: 'Outras línguas faladas nos mesmos países do idioma, que não são um jeito de falar ele: o sámi na Suécia, o sardo na Itália, o feroês na Dinamarca.' },
   { id: 'indigenas', label: '🪶 Indígenas', info: 'As línguas indígenas de cada país (o Brasil primeiro) e o quanto cada uma está em risco de desaparecer.' },
   { id: 'sinais', label: '🤟 Línguas de sinais', info: 'As línguas das comunidades surdas: como funcionam, as famílias, as de cada país, a história e um quiz.' },
@@ -89,6 +91,7 @@ function CultureTab({ onOwnLanguages }: { onOwnLanguages: () => void }) {
   const { pack } = useApp();
   const dark = useIsDark();
   const [open, setOpen] = useState<string | null>(pack.units[0]?.id ?? null);
+  const [kind, setKind] = useState<CountryKind>('animals');
   const chain = [pack.lineage.family, ...pack.lineage.branches, pack.name];
 
   return (
@@ -138,18 +141,38 @@ function CultureTab({ onOwnLanguages }: { onOwnLanguages: () => void }) {
         </>
       )}
 
-      <Text className="mb-2 mt-6 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">🐾🎵 Bichos e sons</Text>
-      <View className="gap-3">
+      <Text className="mb-2 mt-6 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">🌍 Cada país: bichos, sons, comida, folclore…</Text>
+      <HScroll label="as categorias" contentContainerStyle={{ gap: 8 }}>
+        {COUNTRY_KINDS.map((k) => {
+          const on = k.key === kind;
+          return (
+            <Pressable
+              key={k.key}
+              accessibilityRole="radio"
+              accessibilityState={{ checked: on }}
+              aria-checked={on}
+              accessibilityLabel={`Mostrar: ${k.label}`}
+              onPress={() => setKind(k.key)}
+              className={`rounded-full border-2 px-3 py-1.5 ${on ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
+            >
+              <Text className={`font-bold ${on ? 'text-conecta' : 'text-slate-600 dark:text-slate-300'}`}>
+                {k.emoji} {k.label}
+              </Text>
+            </Pressable>
+          );
+        })}
+      </HScroll>
+      <View className="mt-3 gap-3">
         {(HOMELANDS[pack.code] ?? []).map((iso) => {
-          const n = FAUNA_MUSICA[iso];
+          const items = countryItems(iso, kind);
           const c = WORLD.find((w) => w.iso === iso);
-          if (!n || !c) return null;
+          if (!items.length || !c) return null;
           return (
             <Card key={iso} className="gap-3">
               <Text className="text-lg font-extrabold text-slate-900 dark:text-white">
                 {flagOf(c.iso2)} {c.name}
               </Text>
-              {[...n.animals, ...n.instruments].map((it) => (
+              {items.map((it) => (
                 <View key={it.name} className="flex-row gap-3">
                   <Text className="text-3xl">{it.emoji}</Text>
                   <View className="flex-1 gap-0.5">
@@ -199,6 +222,18 @@ function CultureTab({ onOwnLanguages }: { onOwnLanguages: () => void }) {
       </View>
     </>
   );
+}
+
+/** As categorias de cada país: os bichos e os instrumentos (fauna-musica) e as de cultura-paises. */
+type CountryKind = 'animals' | 'instruments' | (typeof CULTURE_KINDS)[number]['key'];
+const COUNTRY_KINDS: { key: CountryKind; label: string; emoji: string }[] = [
+  { key: 'animals', label: 'Bichos', emoji: '🐾' },
+  { key: 'instruments', label: 'Sons', emoji: '🎵' },
+  ...CULTURE_KINDS,
+];
+function countryItems(iso: string, kind: CountryKind): NatureItem[] {
+  if (kind === 'animals' || kind === 'instruments') return FAUNA_MUSICA[iso]?.[kind] ?? [];
+  return CULTURA_PAISES[iso]?.[kind] ?? [];
 }
 
 /** «Variantes, sotaques e dialetos do italiano»: só o que o idioma tem (as línguas próprias têm aba). */
