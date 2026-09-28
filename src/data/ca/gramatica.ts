@@ -2326,4 +2326,122 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
   },
+  {
+    id: 'ca-g37',
+    level: 'C2',
+    title: 'Condicionais e concessivas cultas (sols que, posat que, a condició que, sens que)',
+    emoji: '👑',
+    summary: 'Conectores subordinativos de registro formal, jurídico e literário — a maioria pede obrigatoriamente o subjuntivo.',
+    sections: [
+      {
+        heading: 'Condicionais cultos e restritivos',
+        text: 'Em registro formal, jurídico e acadêmico, conectores condicionais especializados pedem sempre o subjuntivo.',
+        table: {
+          head: ['Conector', 'Sentido', 'Exemplo', 'Tradução'],
+          rows: [
+            ['sols que / solament que', 'condição mínima suficiente («basta que»)', 'Sols que em donis un senyal, vindré.', 'Basta que você me dê um sinal, eu virei.'],
+            ['posat que', 'hipótese formulada («supondo que»)', 'Posat que la proposta sigui acceptada...', 'Supondo que a proposta seja aceita...'],
+            ['a menys que / a menys de', 'exceção («a menos que»)', 'No signarem a menys que hi hagi canvis.', 'Não assinaremos a menos que haja mudanças.'],
+            ['a condició que', 'exigência estrita', 'Aprovarem el crèdit a condició que presenteu aval.', 'Aprovaremos o crédito sob condição de que apresentem aval.'],
+          ],
+        },
+        examples: [
+          ['Sols que haguéssim tingut cinc minuts més, hauríem acabat.', 'Bastava termos tido mais cinco minutos, e teríamos terminado.'],
+          ["Posat que no hi hagi quòrum, s'ajornarà la sessió.", 'Supondo que não haja quórum, a sessão será adiada.'],
+        ],
+      },
+      {
+        heading: 'Concessivos e causais formais/literários',
+        text: 'Locuções de alto registro para ensaios, textos jurídicos e discursos.',
+        table: {
+          head: ['Conector', 'Modo', 'Exemplo', 'Tradução'],
+          rows: [
+            ['per bé que', 'indicativo ou subjuntivo', 'Per bé que no ho admeti, sap que té culpa.', 'Embora não admita, sabe que tem culpa.'],
+            ['com sigui que', 'causal («visto que») ou concessivo', 'Com sigui que la situació és greu, actuarem.', 'Visto que a situação é grave, agiremos.'],
+            ['sens que (= sense que)', 'sempre subjuntivo', 'Va aprovar la llei sens que ningú protestés.', 'Aprovou a lei sem que ninguém protestasse.'],
+          ],
+        },
+        examples: [
+          ['Per bé que la inversió és elevada, el retorn serà ràpid.', 'Embora o investimento seja elevado, o retorno será rápido.'],
+          ["Va marxar de la sala sens que ningú se n'adonés.", 'Saiu da sala sem que ninguém percebesse.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Confundir «sols que» (culto, com subjuntivo: «basta que») com o advérbio simples «solament» («somente»).',
+      'Usar «a menys de» com verbo conjugado («a menys de vingui» é errado; «a menys de» pede infinitivo, «a menys que» pede verbo conjugado).',
+      '«sens que» é forma literária de «sense que» e sempre pede subjuntivo.',
+    ],
+    quiz: [
+      {
+        question: 'Qual conector formal significa «basta que/contanto que» e pede subjuntivo?',
+        options: ['Sols que', 'Per bé que', 'Així com'],
+        answer: 'Sols que',
+        explanation: '«sols que» introduz uma condição mínima suficiente.',
+      },
+      {
+        question: 'Qual frase está certa para concessão em registro culto?',
+        options: ['Per bé que la situació sigui complexa, trobarem la solució', 'Sens que la situació és complexa, trobarem la solució', 'Com sigui de la situació és complexa, trobarem la solució'],
+        answer: 'Per bé que la situació sigui complexa, trobarem la solució',
+        explanation: '«per bé que» é a locução concessiva culta equivalente a «embora».',
+      },
+    ],
+  },
+  {
+    id: 'ca-g38',
+    level: 'C2',
+    title: 'Registro literário: passat simple sintético e a variação -és/-ara do subjuntivo',
+    emoji: '📜',
+    summary: 'Duas marcas do catalão mais literário/formal: o passat simple sintético (em vez de «vaig + infinitiu») e a variante ocidental do imperfeito do subjuntivo em «-ara/-era». São formas de RECONHECIMENTO, raramente produzidas até por falantes nativos.',
+    sections: [
+      {
+        heading: 'Passat simple sintético',
+        text: 'Em textos literários, historiográficos e na norma valenciana, o passado simples pode usar formas conjugadas próprias em vez do passat perifràstic («vaig dir»). A 3ª pessoa do singular leva sempre acento gráfico.',
+        table: {
+          head: ['Pessoa', 'cantar', 'perdre', 'dormir'],
+          rows: [
+            ['jo', 'cantí', 'perdí', 'dormí'],
+            ['ell/ella', 'cantà', 'perdé', 'dormí'],
+            ['nosaltres', 'cantàrem', 'perdérem', 'dormírem'],
+          ],
+        },
+        examples: [
+          ["El rei signà el decret i sortí del palau.", 'O rei assinou o decreto e saiu do palácio.'],
+        ],
+      },
+      {
+        heading: 'A variação -és/-às × -ara/-era no imperfeito do subjuntivo',
+        text: 'Ao lado das formas em «-és»/«-às» (ensinadas em B1.2/B1.3, as de uso geral), existe uma variante em «-ara»/«-era», própria do valenciano e de registros literários, com o MESMO valor de imperfeito do subjuntivo — nunca de condicional.',
+        table: {
+          head: ['Forma geral (B1.2)', 'Variante valenciana/literária', 'Sentido'],
+          rows: [
+            ['Si jo cantés', 'Si jo cantara', 'Se eu cantasse'],
+            ['Si ell fos', 'Si ell fóra', 'Se ele fosse'],
+          ],
+        },
+        examples: [
+          ["Volia que ell digués la darrera paraula. / Volia que ell diguera la darrera paraula.", 'Queria que ele dissesse a última palavra.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Achar que «-ara/-era» é condicional: é imperfeito do subjuntivo («cantara» = «cantasse», nunca «cantaria»).',
+      'Esquecer o acento na 3ª pessoa do singular do passat simple sintético («cantà», «perdé», «dormí»).',
+      'Misturar passat simple sintético com o passat perifràstic (vaig + infinitiu) no mesmo texto sem critério — são registros diferentes.',
+    ],
+    quiz: [
+      {
+        question: 'O que significa a forma literária/valenciana «cantara»?',
+        options: ['Eu cantaria (condicional)', 'Eu cantasse (imperfeito do subjuntivo)', 'Eu cantava (imperfeito do indicativo)'],
+        answer: 'Eu cantasse (imperfeito do subjuntivo)',
+        explanation: '«-ara/-era» é variante literária/valenciana do imperfeito do subjuntivo, equivalente a «-és/-às».',
+      },
+      {
+        question: 'Qual forma do passat simple sintético (3ª pessoa singular) está correta?',
+        options: ['El president signa el document ahir', 'El president signà el document ahir', 'El president va signà el document ahir'],
+        answer: 'El president signà el document ahir',
+        explanation: '3ª pessoa singular do passat simple sintético de verbos em «-ar» leva acento grave: «signà».',
+      },
+    ],
+  },
 ];
