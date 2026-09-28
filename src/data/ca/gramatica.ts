@@ -1686,4 +1686,152 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
   },
+  {
+    id: 'ca-g27',
+    level: 'B1.4',
+    title: 'Perífrases de obrigação, necessidade e probabilidade',
+    emoji: '📌',
+    summary: 'Obrigação pessoal com «haver de», necessidade com o impessoal «caldre», e dedução lógica com «deure».',
+    sections: [
+      {
+        heading: 'Obrigação pessoal: haver de + infinitiu',
+        text: 'Obrigação/necessidade atribuída a um sujeito. No catalão padrão (IEC), evite «tenir que».',
+        table: {
+          head: ['Pronome', 'Estrutura', 'Exemplo', 'Tradução'],
+          rows: [
+            ['jo', 'he de + infinitiu', 'He de redactar una queixa.', 'Tenho que redigir uma reclamação.'],
+            ['tu', 'has de + infinitiu', 'Has de signar el document.', 'Você tem que assinar o documento.'],
+            ['ell/ella', 'ha de + infinitiu', 'Ha de prendre una decisió.', 'Ele/ela tem que tomar uma decisão.'],
+            ['nosaltres', 'hem de + infinitiu', 'Hem de demanar explicacions.', 'Temos que pedir explicações.'],
+            ['vosaltres', 'heu de + infinitiu', 'Heu de presentar la sol·licitud.', 'Vocês têm que apresentar a solicitação.'],
+            ['ells/elles', 'han de + infinitiu', 'Han de respondre aviat.', 'Eles/elas têm que responder logo.'],
+          ],
+        },
+        examples: [
+          ['Avui he de parlar amb el director.', 'Hoje tenho que falar com o diretor.'],
+          ['Hem de justificar aquesta despesa.', 'Temos que justificar essa despesa.'],
+        ],
+      },
+      {
+        heading: 'Necessidade impessoal e específica: caldre',
+        text: '«caldre» é impessoal (3ª pessoa singular «cal»/«calia»), com duas estruturas: sem sujeito específico, ou com sujeito e subjuntivo.',
+        table: {
+          head: ['Estrutura', 'Sentido', 'Exemplo', 'Tradução'],
+          rows: [
+            ['cal + infinitiu', 'necessidade geral', 'Cal respectar les normes.', 'É preciso respeitar as normas.'],
+            ['cal que + subjuntiu', 'necessidade com sujeito', 'Cal que enviïs el correu avui.', 'É necessário que você envie o e-mail hoje.'],
+          ],
+        },
+        examples: [
+          ["Cal millorar l'atenció al client.", 'É necessário melhorar o atendimento ao cliente.'],
+          ['Cal que tots nosaltres hi siguem presents.', 'É necessário que todos nós estejamos presentes.'],
+        ],
+      },
+      {
+        heading: 'Probabilidade: deure + infinitiu',
+        text: 'Hipótese/estimativa no presente ou passado: «deure + infinitiu», SEM preposição no catalão padrão.',
+        table: {
+          head: ['Contexto', 'Exemplo', 'Sentido'],
+          rows: [
+            ['Presente (estimativa)', 'Deuen ser les deu de la nit.', 'Devem ser dez da noite.'],
+            ['Presente (dedução)', 'En Marc no ve; deu estar malalt.', 'O Marc não vem; deve estar doente.'],
+            ['Passado (hipótese)', 'Deu haver tingut un problema.', 'Deve ter tido um problema.'],
+          ],
+        },
+        examples: [
+          ['Quant costa aquest cotxe? — Deu costar molts diners.', 'Quanto custa esse carro? — Deve custar muito dinheiro.'],
+          ['No respon al telèfon; deu haver sortit.', 'Não atende o telefone; deve ter saído.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar «tenir que» em vez de «haver de» para obrigação («tinc que estudiar» em vez de «he d\'estudiar»).',
+      'Pôr «de» depois de «deure» para probabilidade («deu de ser» é erro comum por influência do espanhol; o certo é «deu ser»).',
+      'Esquecer que «cal que» exige subjuntivo («cal que facis», nunca «cal que fas»).',
+      'A fala coloquial usa «deu de» com frequência, mas a norma culta (IEC) exige a forma sem preposição.',
+    ],
+    quiz: [
+      {
+        question: 'Qual é a forma culta de «Tenho que enviar a carta»?',
+        options: ['Tinc que enviar la carta', "He d'enviar la carta", 'Cal de enviar la carta'],
+        answer: "He d'enviar la carta",
+        explanation: 'Obrigação pessoal: «haver de + infinitiu». «Tenir que» não é catalão padrão.',
+      },
+      {
+        question: 'Como se diz «Devem ser cinco horas» na norma culta?',
+        options: ['Deuen de ser les cinc', 'Deuen ser les cinc', 'Han de ser les cinc'],
+        answer: 'Deuen ser les cinc',
+        explanation: '«deure + infinitiu» não aceita a preposição «de» na norma culta.',
+      },
+    ],
+  },
+  {
+    id: 'ca-g28',
+    level: 'B1.4',
+    title: 'Conectores de causa e consequência',
+    emoji: '🔗',
+    summary: 'Conectores causais («perquè», «com que», «ja que») e consecutivos/conclusivos («per tant», «doncs», «per això»), e o uso correto de «doncs».',
+    sections: [
+      {
+        heading: 'Conectores causais',
+        text: 'Apresentam a razão de um fato.',
+        table: {
+          head: ['Conector', 'Posição', 'Exemplo', 'Tradução'],
+          rows: [
+            ['perquè', 'meio ou fim da oração', 'No he vingut perquè estava malalt.', 'Não vim porque estava doente.'],
+            ['com que', 'exclusivamente no início', 'Com que plovia, hem agafat un taxi.', 'Como chovia, pegamos um táxi.'],
+            ['ja que / atès que', 'início ou meio, registro formal', 'Ja que no hi ha acord, ajornem la reunió.', 'Já que não há acordo, adiamos a reunião.'],
+          ],
+        },
+        examples: [
+          ['Com que fa fred, tancaré la finestra.', 'Como está frio, vou fechar a janela.'],
+          ["Hem ajornat l'acte atès que plovia.", 'Adiamos o evento visto que chovia.'],
+        ],
+      },
+      {
+        heading: 'Conectores consecutivos e conclusivos',
+        text: 'Introduzem resultado, consequência ou conclusão lógica.',
+        table: {
+          head: ['Conector', 'Uso', 'Exemplo', 'Tradução'],
+          rows: [
+            ['per tant', 'conclusão lógica formal', 'No tenim diners; per tant, no comprarem el pis.', 'Não temos dinheiro; portanto, não compraremos o apartamento.'],
+            ['doncs', 'consequência/dedução imediata', "Plou? Doncs agafa el paraigua.", 'Está chovendo? Então pegue o guarda-chuva.'],
+            ['per això', 'explicação do resultado', 'No va estudiar; per això va suspendre.', 'Não estudou; por isso reprovou.'],
+          ],
+        },
+        examples: [
+          ['El servei ha estat dolent; per tant, demano la devolució.', 'O serviço foi ruim; portanto, peço o reembolso.'],
+          ['Vols millorar el teu nivell? Doncs has de practicar diàriament.', 'Quer melhorar seu nível? Então tem que praticar todo dia.'],
+        ],
+      },
+      {
+        heading: 'A regra de ouro sobre «doncs»',
+        text: 'No catalão padrão, «doncs» é SEMPRE consecutivo/conclusivo («então», «portanto»). NUNCA introduz causa («porque»).',
+        examples: [
+          ['Errado: No vinc doncs estic cansat. — Certo: No vinc perquè estic cansat.', 'Não venho porque estou cansado.'],
+          ['Certo: Estàs cansat? Doncs descansa!', 'Você está cansado? Então descanse!'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar «doncs» como causa («no vinc doncs estic cansat» é erro grave; use «perquè» ou «ja que»).',
+      'Começar oração causal com «perquè» em vez de «com que» quando a causa vem primeiro.',
+      'Escrever «per tant» junto («pertant»): são duas palavras.',
+      'A fala informal de algumas regiões usa «doncs» como causa por contaminação, mas o IEC não aceita isso em registro normativo.',
+    ],
+    quiz: [
+      {
+        question: 'Qual conector causal abre «___ fa mal temps, ens quedarem a casa»?',
+        options: ['Perquè', 'Com que', 'Doncs'],
+        answer: 'Com que',
+        explanation: '«com que» é o conector causal para abrir a oração.',
+      },
+      {
+        question: 'Qual frase usa «doncs» corretamente?',
+        options: ['No he anat a la festa doncs tenia molta feina', 'Has acabat la feina? Doncs ja pots marxar', "M'agrada el català doncs és molt bonic"],
+        answer: 'Has acabat la feina? Doncs ja pots marxar',
+        explanation: '«doncs» expressa consequência/dedução, nunca causa.',
+      },
+    ],
+  },
 ];
