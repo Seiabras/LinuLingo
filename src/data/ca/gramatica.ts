@@ -1379,4 +1379,163 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
   },
+  {
+    id: 'ca-g22',
+    level: 'B2.2',
+    title: 'Discurso indireto e concordância temporal',
+    emoji: '🗣️',
+    summary: 'Relatar o que alguém disse ajustando tempo verbal, pronomes e advérbios de tempo/lugar conforme a mudança de ponto de vista.',
+    sections: [
+      {
+        heading: 'Mudanças nos tempos verbais',
+        text: 'Quando o verbo introdutório está no passado («va dir», «va comentar»), os tempos da oração citada mudam sistematicamente.',
+        table: {
+          head: ['Discurso direto', 'Discurso indireto (após verbo no passado)', 'Direto', 'Indireto'],
+          rows: [
+            ['Presente do indicativo', 'Imperfeito do indicativo', '"Tinc fam"', 'Va dir que tenia fam.'],
+            ['Passat perifràstic/perfet', 'Mais-que-perfeito do indicativo', '"He comprat pa"', 'Va dir que havia comprat pa.'],
+            ['Futuro simples', 'Condicional simples', '"Vindré demà"', "Va dir que vindria l'endemà."],
+            ['Presente do subjuntivo', 'Imperfeito do subjuntivo', '"Vull que vinguis"', 'Va dir que volia que vingués.'],
+          ],
+        },
+      },
+      {
+        heading: 'Mudanças de advérbios de tempo/lugar',
+        text: 'A passagem ao discurso indireto ajusta os marcadores de tempo e lugar à nova perspectiva.',
+        table: {
+          head: ['Direto', 'Indireto', 'Tradução'],
+          rows: [
+            ['ara', 'aleshores / en aquell moment', 'agora → então/naquele momento'],
+            ['avui', 'aquell dia', 'hoje → aquele dia'],
+            ['ahir', 'el dia abans', 'ontem → o dia anterior'],
+            ['demà', "l'endemà", 'amanhã → o dia seguinte'],
+            ['aquí / ací', 'allà / allí', 'aqui → lá'],
+          ],
+        },
+        examples: [
+          ['"Ahir vaig veure en Marc" → Va dir que el dia abans havia vist en Marc.', '"Ontem vi o Marc" → Disse que no dia anterior tinha visto o Marc.'],
+          ["\"Demà anirem a la platja\" → Van comentar que l'endemà anirien a la platja.", '"Amanhã iremos à praia" → Comentaram que no dia seguinte iriam à praia.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Manter os advérbios do discurso direto sem ajustar («Va dir que vindria demà» em vez de «l\'endemà»).',
+      'Esquecer de mudar presente para imperfeito ao relatar no passado.',
+      'Manter pronome de 1ª pessoa quando a pessoa relatada é 3ª pessoa.',
+    ],
+    quiz: [
+      {
+        question: '«Aniré a Girona demà», dita por en Joan ontem: como fica no indireto?',
+        options: ["En Joan va dir que aniria a Girona l'endemà", 'En Joan va dir que aniré a Girona demà', 'En Joan va dir que anava a Girona avui'],
+        answer: "En Joan va dir que aniria a Girona l'endemà",
+        explanation: 'Futuro «aniré» vira condicional «aniria»; «demà» vira «l\'endemà».',
+      },
+      {
+        question: 'Qual advérbio substitui «avui» no discurso indireto no passado?',
+        options: ['aleshores', 'aquell dia', "l'endemà"],
+        answer: 'aquell dia',
+        explanation: '«Avui» (hoje) vira «aquell dia» (aquele dia) no discurso indireto.',
+      },
+    ],
+  },
+  {
+    id: 'ca-g23',
+    level: 'B2.2',
+    title: 'Formação de palavras e o pronome neutro «ho»',
+    emoji: '🧱',
+    summary: 'Sufixos para formar substantivos a partir de verbos/adjetivos, e o pronome neutro «ho», que substitui atributos e orações inteiras.',
+    sections: [
+      {
+        heading: 'Sufixação e derivação de substantivos',
+        text: 'Sufixos comuns para formar substantivos abstratos, de ação ou de qualidade.',
+        table: {
+          head: ['Sufixo', 'Função', 'Origem', 'Derivado'],
+          rows: [
+            ['-ment', 'ação/resultado', 'pensar', 'pensament (pensamento)'],
+            ['-ció/-sió', 'processo/estado', 'organitzar', 'organització (organização)'],
+            ['-etat/-itat', 'qualidade abstrata', 'real', 'realitat (realidade)'],
+            ['-esa', 'qualidade de adjetivo', 'vell (velho)', 'vellesa (velhice)'],
+          ],
+        },
+      },
+      {
+        heading: 'O pronome neutro «ho»',
+        text: '«ho» é invariável: substitui atributo com verbo copulativo (ser/estar/semblar) ou oração inteira/demonstrativo neutro (això/allò).',
+        examples: [
+          ['Ets feliç? — Sí, ho soc.', 'Você é feliz? — Sim, sou. (ho = «feliç»)'],
+          ['Sabies que en Marc es casa? — No, no ho sabia.', 'Você sabia que o Marc vai casar? — Não sabia. (ho = a oração toda)'],
+          ['Volen fer això? — Sí, volen fer-ho.', 'Eles querem fazer isso? — Sim, querem fazê-lo.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar «el» para substituir atributo/oração neutra em vez de «ho» («Sí, el soc» em vez de «Sí, ho soc»).',
+      'Confundir o sufixo nominal «-esa» (qualidade) com o adjetival «-ès» (nacionalidade).',
+      'Esquecer a troca «-itzar» → «-ització» em verbos eruditos («organitzar» → «organització»).',
+    ],
+    quiz: [
+      {
+        question: 'Qual pronome substitui «[que la reunió s\'havia cancel·lat]» em «No sabia ___»?',
+        options: ['el', 'la', 'ho'],
+        answer: 'ho',
+        explanation: 'Oração subordinada inteira ou ideia abstrata: pronome neutro «ho».',
+      },
+      {
+        question: 'Qual é o substantivo abstrato de «vell» por sufixação?',
+        options: ['vellesa', 'vellitat', 'vellament'],
+        answer: 'vellesa',
+        explanation: '«-esa» forma substantivo abstrato de qualidade a partir de adjetivo: «vellesa».',
+      },
+    ],
+  },
+  {
+    id: 'ca-g24',
+    level: 'B2.2',
+    title: 'Combinação avançada de pronomes fracos (hi/en + CD/CI)',
+    emoji: '🧩',
+    summary: 'Como «hi» e «en» se combinam com pronomes de complemento direto e indireto no mesmo verbo.',
+    sections: [
+      {
+        heading: '«Hi» combinado com CD e CI',
+        text: 'Combinando «hi» com el/la/els/les (CD) ou li (CI), há fusões próprias.',
+        table: {
+          head: ['Combinação', 'Resultado', 'Exemplo', 'Tradução'],
+          rows: [
+            ['el + hi', "l'hi", "L'hi vaig portar.", 'Eu o levei lá.'],
+            ['la + hi', 'la hi', 'La hi vaig portar.', 'Eu a levei lá.'],
+            ['els + hi', 'els hi', 'Els hi vaig portar.', 'Eu os levei lá.'],
+            ['les + hi', 'les hi', 'Les hi vaig portar.', 'Eu as levei lá.'],
+          ],
+        },
+      },
+      {
+        heading: '«En» combinado com outros pronomes',
+        text: '«en» (origem ou quantidade) vem por último na sequência.',
+        examples: [
+          ["Se'n va anar d'hora.", 'Ele/ela foi embora cedo. (se + en → se\'n)'],
+          ["Me'n dones un poc? — Sí, te'n dono.", 'Você me dá um pouco disso? — Sim, te dou um pouco. (me+en→me\'n; te+en→te\'n)'],
+          ['Canta cançons als nens? — Sí, els en canta.', 'Canta canções para as crianças? — Sim, canta-lhes algumas. (els + en, sem elisão)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Pôr «en»/«hi» antes do pronome de pessoa («en me dóna» em vez de «me\'n dóna»).',
+      'Confundir «l\'hi» (el + hi) com o simples «li».',
+      'Esquecer o apóstrofo ao combinar «se»/«me»/«te» com «en» («se\'n», «me\'n», «te\'n»).',
+    ],
+    quiz: [
+      {
+        question: 'Como fica «me» + «en» em «Você me dá um pouco disso?»?',
+        options: ["Me'n dones?", 'En me dones?', 'Me en dones?'],
+        answer: "Me'n dones?",
+        explanation: '«me» precede «en», unidos por apóstrofo: «me\'n».',
+      },
+      {
+        question: 'Como fica «Eu o levei até lá» (el = objeto, hi = lá)?',
+        options: ["L'hi vaig portar", 'El hi vaig portar', 'Li vaig portar'],
+        answer: "L'hi vaig portar",
+        explanation: '«el» + «hi» dá a forma apostrofada «l\'hi».',
+      },
+    ],
+  },
 ];
