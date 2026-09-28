@@ -2444,4 +2444,91 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
   },
+  {
+    id: 'ca-g40',
+    level: 'B2.4',
+    title: 'Sufixos avaluatius: diminutius, augmentatius i valors afectius (-et, -às, -ot, -ó)',
+    emoji: '🧸',
+    summary:
+      'Compreenda a formação, os matizes afetivos e as alterações semânticas dos sufixos avaliativos em catalão: diminutivos (-et/-eta), aumentativos (-às/-assa), sufixos ambivalentes entre pejorativo e afetivo (-ot/-ota) e formas lexicalizadas (-ó/-ona e outras).',
+    sections: [
+      {
+        heading: 'Diminutius i valors afectius: -et/-eta',
+        text: 'O sufixo diminutivo mais comum e produtivo em catalão é -et / -eta (plural: -ets / -etes). É usado tanto para indicar tamanho reduzido real quanto para expressar carinho, intimidade ou atenuação (valor afetivo), e também para formar hipocorísticos de nomes próprios.',
+        table: {
+          head: ['Sufixo', 'Valor/Função', 'Exemplo em catalão', 'Tradução em português'],
+          rows: [
+            ['-et / -eta', 'Tamanho pequeno real', 'un cotxet de joguina', 'um carrinho de brinquedo'],
+            ['-et / -eta', 'Afeição/carinho', 'la meva noieta', 'minha garotinha/filhinha'],
+            ['-et / -eta', 'Atenuação/polidez', 'espera un momentet', 'espere um momentinho'],
+            ['-et / -eta', 'Hipocorístico de nome próprio', 'en Pau → en Paulet', 'Paulo → Paulinho'],
+          ],
+        },
+        examples: [
+          ['Aquest gosset és molt juganer i afectuós.', 'Este cachorrinho é muito brincalhão e carinhoso.'],
+          ['Pren una miqueta de te per recuperar-te.', 'Tome um pouquinho de chá para se recuperar.'],
+        ],
+      },
+      {
+        heading: 'Augmentatius i sufixos ambivalents: -às/-assa i -ot/-ota',
+        text: 'O sufixo -às / -assa expressa dimensão grande, força ou admiração. Já -ot / -ota é ambivalente: pode soar depreciativo, tosco ou vulgar («paraulota» = palavrão), mas com outras palavras soa afetivo, quase carinhoso («cadirota» pode ser «aquela cadeirona confortável e querida», não uma crítica).',
+        table: {
+          head: ['Sufixo', 'Matiz', 'Exemplo em catalão', 'Tradução em português'],
+          rows: [
+            ['-às / -assa', 'Aumentativo de admiração/porte', 'un cotxàs espectacular', 'um carrão/carraço espetacular'],
+            ['-às / -assa', 'Força/robustez', 'un homenàs molt alt', 'um homenzarrão muito alto'],
+            ['-ot / -ota', 'Depreciativo/vulgar', 'dient paraulotes', 'dizendo palavrões'],
+            ['-ot / -ota', 'Dimensão tosca ou pouco refinada', 'un llibrot de centenars de pàgines', 'um calhamaço de centenas de páginas'],
+            ['-ot / -ota', 'Afetivo (não pejorativo, depende da palavra)', 'quina cadirota més còmoda!', 'que cadeirona mais confortável!'],
+          ],
+        },
+        examples: [
+          ["Quina veuassa que té aquest cantant d'òpera!", 'Que vozeirão tem esse cantor de ópera!'],
+          ['Seu en aquesta cadirota, que hi estaràs més còmode.', 'Sente nessa cadeirona, que você vai ficar mais confortável.'],
+        ],
+      },
+      {
+        heading: 'O sufixo ambíguo -ó/-ona e as mudanças de sentido (lexicalização)',
+        text: 'O sufixo -ó / -ona tem natureza dupla: pode funcionar como diminutivo/afetivo em alguns termos. Além disso, vários sufixos avaliativos (não só -ó) perdem o valor de tamanho e criam palavras com sentido próprio (lexicalização), que já não significam apenas «versão pequena de».',
+        table: {
+          head: ['Fenômeno/sufixo', 'Base → derivado', 'Sentido', 'Tradução em português'],
+          rows: [
+            ['-ó/-ona (diminutivo lexicalizado)', 'carrer → carreró', 'beco/travessa estreita', 'rua → beco/travessa'],
+            ['-ó/-ona (afetivo)', 'petit → petitó/petitona', 'atenuação carinhosa', 'pequeno → pequenino/bonitinho'],
+            ['Lexicalização (-eta)', 'camisa → camiseta', 'nova peça de roupa', 'camisa → camiseta'],
+            ['Lexicalização (-eta)', 'taula → tauleta', 'móvel de cabeceira / tablet', 'mesa → mesinha de cabeceira / tablet'],
+            ['Lexicalização (-illa)', 'forca → forquilla', 'novo objeto (talher)', 'forca (forcado agrícola) → garfo'],
+          ],
+        },
+        examples: [
+          ['Hem passejat pels carrerons del barri antic.', 'Passeamos pelos becos do bairro antigo.'],
+          ['La nena és molt petitona i eixerida.', 'A menina é bem pequenininha e esperta.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Não confundir o diminutivo espanhol «-ito/-ita» com o catalão «-et/-eta»: são sistemas diferentes, mesmo tendo função parecida.',
+      'Evitar usar «-às» ou «-ot» sem considerar o contexto: «cotxàs» é elogio a um carro grande, mas «paraulota» é sempre pejorativo — o mesmo sufixo «-ot/-ota» pode soar tanto carinhoso («cadirota») quanto depreciativo («llibrot»), depende da palavra.',
+      'Atenção às formas lexicalizadas: «forquilla» (garfo) ou «tauleta» (mesinha de cabeceira/tablet) já não significam «versão pequena» da palavra de origem, mas objetos com sentido próprio.',
+      'Cuidado com concordância de gênero no aumentativo: «veu» é palavra feminina, então é «veuassa» (não «veuàs»).',
+    ],
+    quiz: [
+      {
+        question: 'Qual é o sufixo diminutivo mais comum e produtivo em catalão padrão para indicar tamanho pequeno ou carinho (ex: «un gosset», «una noieta»)?',
+        options: ['-et / -eta', '-ito / -ita', '-às / -assa'],
+        answer: '-et / -eta',
+        explanation: 'O sufixo -et / -eta é a forma diminutiva por excelência do catalão, usada tanto para indicar tamanho reduzido real quanto afetividade.',
+      },
+      {
+        question: 'Em qual das frases a palavra formada por um sufixo tem nuance claramente pejorativa ou vulgar?',
+        options: [
+          'Aquella xicota no para de dir paraulotes.',
+          'En Marc s\'ha comprat un cotxet de col·lecció.',
+          'La meva àvia viu en un carreró molt tranquil.',
+        ],
+        answer: 'Aquella xicota no para de dir paraulotes.',
+        explanation: 'O sufixo -ot/-ota em «paraulotes» (palavrões) adiciona uma nuance depreciativa e vulgar à palavra base «paraula».',
+      },
+    ],
+  },
 ];
