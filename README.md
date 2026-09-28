@@ -229,6 +229,7 @@ O site é um **app instalável (PWA)** que funciona **sem internet**:
 - `public/manifest.json` e os ícones (gerados por `scripts/gerar-icones.mjs`) deixam o navegador instalar o app: ícone na tela inicial e tela cheia. No Perfil, o cartão «📲 Usar como app» mostra o botão de instalar (Chrome, Edge, Samsung Internet) ou o caminho pelo menu Compartilhar (iPhone e iPad).
 - `scripts/sw-modelo.js` vira `dist/sw.js`, um service worker só que faz duas coisas: põe os cabeçalhos COOP/COEP que o SQLite da web exige (o Pages não deixa configurá-los; mesma técnica do coi-serviceworker) e guarda o app para abrir sem internet. A lista do que guardar (índice, código, imagens, ~17 MB) e a versão saem do próprio `dist/`, em `scripts/preparar-pages.mjs`.
 - Os áudios e os contornos do mapa ficam guardados quando usados pela primeira vez; no Perfil dá para guardar de uma vez todas as gravações do idioma. Pedidos em pedaços (`Range`, como os do `<audio>`) são respondidos do que está guardado.
+- **Uma aba de cada vez**: o banco do navegador (SQLite em OPFS) só abre numa aba. As outras mostram «O LinuLingo já está aberto em outra aba» e abrem sozinhas quando a primeira fecha; «Usar nesta aba» faz a outra ceder (Web Locks + BroadcastChannel, em `src/components/DatabaseGate.tsx`). Se o banco ainda estiver preso pela página anterior, o app recarrega e tenta de novo, em vez de ficar em branco.
 - Versão nova no site: o service worker novo guarda o app novo em segundo plano, assume sem recarregar a página aberta e apaga a versão velha.
 
 ## Testes

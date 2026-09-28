@@ -1,0 +1,163 @@
+import { Component, useEffect, useState, type ReactNode } from 'react';
+import { ActivityIndicator, Platform, Pressable, Text, View } from 'react-native';
+
+/**
+ * Na web, o banco do app (SQLite num arquivo do navegador, OPFS) só pode ser aberto por uma aba de
+ * cada vez: o SQLite reserva os arquivos quando começa e só os solta quando a página fecha. Sem este
+ * portão, a segunda aba ficava em branco para sempre — mesmo depois de fechar a primeira.
+ *
+ * - Uma trava (Web Locks) diz qual aba está usando o banco. As outras mostram «aberto em outra aba» e
+ *   abrem sozinhas quando a trava fica livre; «Usar nesta aba» pede à outra que ceda (ela recarrega
+ *   sem abrir o banco, soltando os arquivos).
+ * - Se o banco ainda estiver preso por um instante (a página anterior ainda fechando), a página
+ *   recarrega e tenta de novo, algumas vezes, em vez de ficar em branco.
+ */
+const LOCK = 'linulingo-banco';
+const CHANNEL = 'linulingo-abas';
+const YIELDED = 'linulingo-cedeu';
+const RETRIES = 'linulingo-tentativas';
+
+const web = Platform.OS === 'web' && typeof window !== 'undefined';
+const locks = web ? (navigator as Navigator & { locks?: LockManager }).locks : undefined;
+
+function session(key: string, value?: string | null): string | null {
+  try {
+    if (value === null) sessionStorage.removeItem(key);
+    else if (value !== undefined) sessionStorage.setItem(key, value);
+    return sessionStorage.getItem(key);
+  } catch {
+    return null;
+  }
+}
+
+type GateState = 'checking' | 'mine' | 'elsewhere' | 'yielded';
+
+export function DatabaseGate({ children, fallback }: { children: ReactNode; fallback: ReactNode }) {
+  const [state, setState] = useState<GateState>(web && locks ? (session(YIELDED) ? 'yielded' : 'checking') : 'mine');
+
+  useEffect(() => {
+    if (!web || !locks || state === 'mine' || state === 'yielded') return;
+    let alive = true;
+    // a trava fica presa enquanto a página existir: a promessa nunca termina
+    const hold = () => {
+      if (alive) setState('mine');
+      return new Promise<void>(() => {});
+    };
+    if (state === 'checking') {
+      locks.request(LOCK, { ifAvailable: true }, (lock) => {
+        if (lock) return hold();
+        if (alive) setState('elsewhere');
+        return undefined;
+      });
+    } else {
+      // na fila: quando a outra aba fechar (ou ceder), esta abre
+      locks.request(LOCK, hold);
+    }
+    return () => {
+      alive = false;
+    };
+  }, [state]);
+
+  // a aba que está com o banco cede quando outra pede
+  useEffect(() => {
+    if (!web || state !== 'mine' || typeof BroadcastChannel === 'undefined') return;
+    const ch = new BroadcastChannel(CHANNEL);
+    ch.onmessage = (ev) => {
+      if (ev.data?.type !== 'quero-usar') return;
+      session(YIELDED, '1');
+      window.location.reload();
+    };
+    return () => ch.close();
+  }, [state]);
+
+  const useHere = () => {
+    if (typeof BroadcastChannel !== 'undefined') {
+      const ch = new BroadcastChannel(CHANNEL);
+      ch.postMessage({ type: 'quero-usar' });
+      ch.close();
+    }
+    session(YIELDED, null);
+    setState('elsewhere');
+  };
+
+  if (state === 'checking') return <>{fallback}</>;
+  if (state === 'elsewhere' || state === 'yielded')
+    return (
+      <View className="flex-1 items-center justify-center gap-4 bg-suave px-6 dark:bg-grafite">
+        <Text className="text-5xl">🐧</Text>
+        <Text className="text-center text-xl font-extrabold text-slate-900 dark:text-white">
+          {state === 'yielded' ? 'O LinuLingo foi aberto em outra aba' : 'O LinuLingo já está aberto em outra aba'}
+        </Text>
+        <Text className="max-w-md text-center text-base leading-6 text-slate-600 dark:text-slate-400">
+          {state === 'yielded'
+            ? 'Para o seu progresso não se misturar, o app funciona numa aba de cada vez.'
+            : 'O app funciona numa aba de cada vez, para o seu progresso não se misturar. Esta aba abre sozinha quando a outra for fechada.'}
+        </Text>
+        <Pressable accessibilityRole="button" onPress={useHere} className="rounded-2xl bg-conecta px-5 py-3 active:opacity-90">
+          <Text className="font-extrabold text-white">Usar nesta aba</Text>
+        </Pressable>
+        {state === 'elsewhere' && <ActivityIndicator color="#2563EB" />}
+      </View>
+    );
+  return <DatabaseErrorBoundary>{children}</DatabaseErrorBoundary>;
+}
+
+/** O banco não abriu: se ainda está preso pela página anterior, recarrega e tenta de novo. */
+class DatabaseErrorBoundary extends Component<{ children: ReactNode }, { error: Error | null }> {
+  state = { error: null as Error | null };
+
+  static getDerivedStateFromError(error: Error) {
+    return { error };
+  }
+
+  componentDidMount() {
+    // abriu: zera a contagem de tentativas
+    if (web) setTimeout(() => !this.state.error && session(RETRIES, null), 3000);
+  }
+
+  componentDidCatch(error: Error) {
+    if (!web || !isBusy(error)) return;
+    const tries = Number(session(RETRIES) ?? 0);
+    if (tries >= 5) return;
+    session(RETRIES, String(tries + 1));
+    setTimeout(() => window.location.reload(), 600 * (tries + 1));
+  }
+
+  render() {
+    const { error } = this.state;
+    if (!error) return this.props.children;
+    const busy = isBusy(error) && Number(session(RETRIES) ?? 0) < 5;
+    return (
+      <View className="flex-1 items-center justify-center gap-4 bg-suave px-6 dark:bg-grafite">
+        <Text className="text-5xl">🐧</Text>
+        <Text className="text-center text-xl font-extrabold text-slate-900 dark:text-white">
+          {busy ? 'Abrindo o seu progresso…' : 'Não deu para abrir o seu progresso'}
+        </Text>
+        {busy ? (
+          <ActivityIndicator color="#2563EB" />
+        ) : (
+          <>
+            <Text className="max-w-md text-center text-base leading-6 text-slate-600 dark:text-slate-400">
+              Feche as outras abas do LinuLingo e recarregue. Se continuar, o navegador pode estar sem espaço ou bloqueando o armazenamento do site.
+            </Text>
+            <Pressable
+              accessibilityRole="button"
+              onPress={() => {
+                session(RETRIES, null);
+                window.location.reload();
+              }}
+              className="rounded-2xl bg-conecta px-5 py-3 active:opacity-90"
+            >
+              <Text className="font-extrabold text-white">Recarregar</Text>
+            </Pressable>
+          </>
+        )}
+      </View>
+    );
+  }
+}
+
+/** O arquivo do banco está preso por outra página (a anterior ainda fechando, ou outra aba). */
+function isBusy(error: Error): boolean {
+  return /NoModificationAllowed|createSyncAccessHandle|Access Handle/i.test(`${error?.name} ${error?.message}`);
+}
