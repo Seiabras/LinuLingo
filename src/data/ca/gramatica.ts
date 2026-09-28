@@ -609,4 +609,223 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
   },
+  {
+    id: 'ca-g10',
+    level: 'A2.2',
+    title: 'Pretérito imperfeito e pretérito perfeito composto',
+    emoji: '⏳',
+    summary: 'O imperfeito descreve rotinas e cenários do passado; o perfeito composto fala de ações concluídas dentro de um período que ainda inclui o presente (hoje, esta semana).',
+    sections: [
+      {
+        heading: 'Pretérito imperfeito (pretèrit imperfet)',
+        text: 'Descreve estados, cenários ou hábitos passados («falava», «comia»). Os verbos em «-ar» usam «-av-»; os em «-re/-er» e «-ir» usam «-i-». Atenção ao acento obrigatório em «nosaltres»/«vosaltres».',
+        table: {
+          head: ['Pronome', '-ar: parlar', '-re: perdre', '-ir: dormir'],
+          rows: [
+            ['jo', 'parlava', 'perdia', 'dormia'],
+            ['tu', 'parlaves', 'perdies', 'dormies'],
+            ['ell/ella/vostè', 'parlava', 'perdia', 'dormia'],
+            ['nosaltres', 'parlàvem', 'perdíem', 'dormíem'],
+            ['vosaltres', 'parlàveu', 'perdíeu', 'dormíeu'],
+            ['ells/elles/vostès', 'parlaven', 'perdien', 'dormien'],
+          ],
+        },
+        examples: [
+          ['Quan era petit, vivia a Girona.', 'Quando eu era pequeno, morava em Girona.'],
+          ['Cada dia, en Marc jugava al futbol.', 'Todo dia, o Marc jogava futebol.'],
+          ['Nosaltres anàvem a la platja cada estiu.', 'Nós íamos à praia todo verão.'],
+        ],
+      },
+      {
+        heading: 'Pretérito perfeito composto (pretèrit perfet compost)',
+        text: 'Presente de «haver» + particípio do verbo principal. Usa-se para ações passadas num período ainda não concluído (hoje, esta semana, este ano) ou com relevância no presente.',
+        table: {
+          head: ['Pronome', 'haver', 'Particípio (-at/-ut/-it)', 'Exemplo'],
+          rows: [
+            ['jo', 'he', 'parlat/perdut/dormit', 'he parlat (falei)'],
+            ['tu', 'has', 'parlat/perdut/dormit', 'has perdut (perdeste)'],
+            ['ell/ella/vostè', 'ha', 'parlat/perdut/dormit', 'ha dormit (dormiu)'],
+            ['nosaltres', 'hem', 'parlat/perdut/dormit', 'hem parlat (falamos)'],
+            ['vosaltres', 'heu', 'parlat/perdut/dormit', 'heu perdut (perdestes)'],
+            ['ells/elles/vostès', 'han', 'parlat/perdut/dormit', 'han dormit (dormiram)'],
+          ],
+        },
+        examples: [
+          ['Aquesta setmana he treballat molt.', 'Esta semana trabalhei muito.'],
+          ['Avui hem vist en Joan.', 'Hoje vimos o Joan.'],
+          ['Què has fet avui?', 'O que você fez hoje? (particípio irregular: fer → fet)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Esquecer o acento em «nosaltres»/«vosaltres» do imperfeito (escrever «parlavem» em vez de «parlàvem»).',
+      'Confundir o passat perifràstic («vaig parlar», passado pontual) com o perfet compost («he parlat», período ainda não concluído como «avui»).',
+      'Errar particípios irregulares comuns: «fet» (fer), «vist» (veure), «escrit» (escriure).',
+    ],
+    quiz: [
+      {
+        question: 'Qual é a forma do imperfeito de «parlar» para «nosaltres»?',
+        options: ['parlavem', 'parlàvem', 'parlíem'],
+        answer: 'parlàvem',
+        explanation: '1ª pessoa do plural do imperfeito de verbos em «-ar»: acento grave, «parlàvem».',
+      },
+      {
+        question: 'Como se diz «Hoje eu trabalhei muito»?',
+        options: ['Ahir vaig treballar molt', 'Avui he treballat molt', 'Avui treballava molt'],
+        answer: 'Avui he treballat molt',
+        explanation: 'Período que ainda inclui o presente («avui»): perfeito composto, «he treballat».',
+      },
+    ],
+  },
+  {
+    id: 'ca-g11',
+    level: 'A2.2',
+    title: 'Futuro e condicional simples',
+    emoji: '🔮',
+    summary: 'O futuro simples para planos e previsões, o condicional simples para pedidos corteses e hipóteses, e as raízes irregulares que os dois tempos compartilham.',
+    sections: [
+      {
+        heading: 'Futuro simples (futur simple)',
+        text: 'Terminações -é/-às/-à/-em/-eu/-an direto no infinitivo (verbos em -re perdem o «e» final antes).',
+        table: {
+          head: ['Pronome', 'parlar', 'perdre', 'dormir'],
+          rows: [
+            ['jo', 'parlaré', 'perdré', 'dormiré'],
+            ['tu', 'parlaràs', 'perdràs', 'dormiràs'],
+            ['ell/ella/vostè', 'parlarà', 'perdrà', 'dormirà'],
+            ['nosaltres', 'parlarem', 'perdrem', 'dormirem'],
+            ['vosaltres', 'parlareu', 'perdreu', 'dormireu'],
+            ['ells/elles/vostès', 'parlaran', 'perdran', 'dormiran'],
+          ],
+        },
+        examples: [
+          ['Demà viatjaré a València.', 'Amanhã viajarei para Valência.'],
+          ['El mes vinent comprarem un cotxe.', 'No mês que vem compraremos um carro.'],
+          ['On aniràs les pròximes vacances?', 'Aonde você irá nas próximas férias?'],
+        ],
+      },
+      {
+        heading: 'Condicional simples (condicional simple)',
+        text: 'Terminações -ia/-ies/-ia/-íem/-íeu/-ien no infinitivo. Muito usado em pedidos corteses.',
+        table: {
+          head: ['Pronome', 'parlar', 'ser'],
+          rows: [
+            ['jo', 'parlaria', 'seria'],
+            ['tu', 'parlaries', 'series'],
+            ['ell/ella/vostè', 'parlaria', 'seria'],
+            ['nosaltres', 'parlaríem', 'seríem'],
+            ['vosaltres', 'parlaríeu', 'seríeu'],
+            ['ells/elles/vostès', 'parlarien', 'serien'],
+          ],
+        },
+        examples: [
+          ['Voldria un cafè, per favor.', 'Eu gostaria de um café, por favor. (condicional de voler)'],
+          ['Em podries ajudar?', 'Você poderia me ajudar?'],
+          ['Jo viuria a la muntanya.', 'Eu moraria na montanha.'],
+        ],
+      },
+      {
+        heading: 'Raízes irregulares compartilhadas (futuro e condicional)',
+        text: 'Alguns verbos mudam a raiz no futuro e no condicional, mas mantêm as mesmas terminações.',
+        table: {
+          head: ['Verbo', 'Raiz', 'Futuro (jo)', 'Condicional (jo)'],
+          rows: [
+            ['fer (fazer)', 'far-', 'faré', 'faria'],
+            ['tenir (ter)', 'tindr-', 'tindré', 'tindria'],
+            ['venir (vir)', 'vindr-', 'vindré', 'vindria'],
+            ['poder (poder)', 'podr-', 'podré', 'podria'],
+            ['voler (querer)', 'voldr-', 'voldré', 'voldria'],
+          ],
+        },
+      },
+    ],
+    pitfalls: [
+      'Confundir a acentuação do futuro (agudo no singular: -é, -às, -à) com a do condicional (-ia, -íem, -íeu).',
+      'Esquecer as raízes irregulares com «-dr-»: «tenir» → «tindré», «venir» → «vindré», «voler» → «voldré».',
+      'Usar o presente pra pedidos corteses («vull un cafè» soa direto demais) em vez do condicional («voldria», «m\'agradaria»).',
+    ],
+    quiz: [
+      {
+        question: 'Qual é o futuro de «tenir» (ter) para «jo»?',
+        options: ['teniré', 'tindré', 'tendré'],
+        answer: 'tindré',
+        explanation: '«Tenir» tem raiz irregular «tindr-» no futuro: «jo tindré».',
+      },
+      {
+        question: 'Como pedir algo com cortesia, com «m\'agradar» (gostar)?',
+        options: ["M'agrada un cafè", "M'agradaria un cafè", "M'agradarà un cafè"],
+        answer: "M'agradaria un cafè",
+        explanation: '«M\'agradaria» é o condicional, usado para pedir de forma educada.',
+      },
+    ],
+  },
+  {
+    id: 'ca-g12',
+    level: 'A2.2',
+    title: 'Graus do adjetivo: comparativos e superlativos',
+    emoji: '⚖️',
+    summary: 'Comparações de superioridade, inferioridade e igualdade, e como intensificar qualidades com o superlativo.',
+    sections: [
+      {
+        heading: 'Estrutura dos comparativos',
+        text: 'Superioridade: «més» + adjetivo + «que». Inferioridade: «menys» + adjetivo + «que». Igualdade: «tan» + adjetivo + «com» (NUNCA «tan...que»).',
+        table: {
+          head: ['Grau', 'Estrutura', 'Exemplo', 'Tradução'],
+          rows: [
+            ['Superioridade', 'més + adj. + que', 'En Marc és més alt que en Pau.', 'Marc é mais alto que Pau.'],
+            ['Inferioridade', 'menys + adj. + que', 'Aquest cotxe és menys ràpid que aquell.', 'Este carro é menos rápido que aquele.'],
+            ['Igualdade', 'tan + adj. + com', 'La meva casa és tan gran com la teva.', 'A minha casa é tão grande quanto a tua.'],
+          ],
+        },
+        examples: [
+          ['Barcelona és més gran que Girona.', 'Barcelona é maior que Girona.'],
+          ["Aquest exercici és tan fàcil com l'altre.", 'Este exercício é tão fácil quanto o outro.'],
+        ],
+      },
+      {
+        heading: 'Comparativos irregulares',
+        text: 'Alguns adjetivos têm forma comparativa própria, sem «més».',
+        table: {
+          head: ['Adjetivo', 'Comparativo', 'Tradução'],
+          rows: [
+            ['bon/bo (bom)', 'millor', 'melhor'],
+            ['dolent (mau)', 'pitjor', 'pior'],
+            ['gran (grande/velho)', 'més gran / major', 'maior/mais velho'],
+            ['petit (pequeno/novo)', 'més petit / menor', 'menor/mais novo'],
+          ],
+        },
+        examples: [
+          ['Aquest vi és millor que aquell.', 'Este vinho é melhor que aquele.'],
+          ["El temps avui és pitjor que ahir.", 'O tempo hoje está pior que ontem.'],
+        ],
+      },
+      {
+        heading: 'Superlativos (absoluto e relativo)',
+        text: 'O absoluto usa «molt» + adjetivo ou o sufixo «-íssim/-íssima». O relativo destaca um elemento dentro de um grupo, com «de».',
+        examples: [
+          ['Un llibre molt interessant / interessantíssim.', 'Um livro muito interessante/interessantíssimo.'],
+          ['És el noi més alt de la classe.', 'É o rapaz mais alto da turma. (superlativo relativo)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar «que» em vez de «com» na comparação de igualdade («tan gran que» em vez de «tan gran com»).',
+      'Usar «més bo» onde o padrão é «millor».',
+      'Esquecer a concordância do sufixo superlativo: «-íssim/-íssima/-íssims/-íssimes».',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz «Ela é tão simpática quanto a irmã»?',
+        options: ['Ella és tan simpàtica que la seva germana', 'Ella és tan simpàtica com la seva germana', 'Ella és més simpàtica com la seva germana'],
+        answer: 'Ella és tan simpàtica com la seva germana',
+        explanation: 'Igualdade em catalão: «tan + adjetivo + com».',
+      },
+      {
+        question: 'Qual é o comparativo irregular de «bon» (bom)?',
+        options: ['més bo', 'millor', 'pitjor'],
+        answer: 'millor',
+        explanation: 'O comparativo de superioridade irregular de «bon» é «millor».',
+      },
+    ],
+  },
 ];
