@@ -57,6 +57,8 @@ const GRAMMAR_WORDS: Record<string, string[]> = {
   nb: 'man eller men så når der her da nå en ei et den det de dem han hun vi dere jeg du meg deg seg oss hans hennes deres min mitt mine din ditt dine sin sitt sine er var har hadde skal skulle kan kunne vil ville ikke og i på av til for med om som at'.split(' '),
   fr: "l d j c n s m t qu jusqu lorsqu puisqu aujourd hui le la les un une des du au aux de et ou en ne pas plus il elle ils elles on nous vous je tu me te se lui leur y ce cet cette ces mon ma mes ton ta tes son sa ses notre nos votre vos leurs qui que quoi dont où est sont es suis ai a as ont avons avez était étaient été être avoir fait".split(' '),
   da: 'man eller men så når der her da nu også en et den det de dem han hun vi I jeg du mig dig sig os hans hendes deres min mit mine din dit dine sin sit sine er var har havde skal skulle kan kunne vil ville ikke og i på af til for med om som at'.split(' '),
+  is: 'ég mig mér mín þú þig þér þín hann hans honum hún hana henni hennar það því þess við okkur okkar þið ykkur ykkar þeir þær þau þá þeim þeirra sig sér sín minn mín mitt mína mínum minni þinn þitt sinn sitt sína sínum er ert erum eruð eru var varst vorum voru verið sé séu hef hefur höfum hafa hafði höfðu get getur geta gat gátu vil vill viljum vildi má mátti skal skulum mun munu mundi og í á að af til frá með um við fyrir eftir hjá sem en eða ekki hinn hin hið þessi þetta þennan þessa þessum þessu þessar'.split(' '),
+  fi: 'minä minun minua minulla minulle minusta sinä sinun sinua sinulla sinulle hän hänen häntä hänellä hänelle me meidän meitä meillä meille te teidän teitä teillä teille he heidän heitä heillä heille se sen sitä siinä siitä siihen sillä sille ne niiden niitä niissä niistä niihin tämä tämän tätä tässä tästä tähän nämä näiden näitä tuo tuon tuota olen olet on olemme olette ovat oli olin olivat ollut olleet ole ei en et emme ette eivät ja tai mutta että kun jos kuin joka jonka jota jossa josta johon jotka joita mikä mitä missä mistä mihin kuka kenen'.split(' '),
 };
 
 /** Minúsculas, sem a marca de tônica, e o ș/ț do romeno com vírgula (há textos com cedilha: ş, ţ). */
@@ -66,6 +68,10 @@ const SUFFIXES: Record<string, string[]> = {
   nb: ['en', 'et', 'a', 'er', 'ene', 'ane', 'e', 's', 't', 'te', 'de', 'ere', 'est', 'r', 'ne', 'ens'],
   fr: ['s', 'x', 'e', 'es', 'ent', 'ons', 'ez', 'é', 'ée', 'és', 'ées', 'ait', 'ais', 'aient', 'ai', 'a'],
   da: ['en', 'et', 'e', 'er', 'ene', 'erne', 'ne', 'rne', 's', 't', 'te', 'de', 'ede', 'ere', 'est', 'n', 'r', 'ens', 'ets'],
+  // os casos e o artigo definido colado no fim (hús → húsið, húsinu, hússins)
+  is: ['inn', 'in', 'ið', 'inu', 'ins', 'num', 'ina', 'nir', 'nar', 'nna', 'anna', 'unum', 'um', 's', 'a', 'i', 'u', 'ar', 'ir', 'ur', 'r', 't', 'ta', 'ð', 'na', 'ri', 'ra', 'rar'],
+  // os casos e os possessivos (talo → talossa, talosta, taloon, taloni)
+  fi: ['n', 'a', 'ä', 'an', 'än', 'en', 'on', 'in', 'un', 'yn', 'seen', 'ta', 'tä', 'ssa', 'ssä', 'sta', 'stä', 'lla', 'llä', 'lta', 'ltä', 'lle', 'ksi', 'na', 'nä', 't', 'ni', 'si', 'nsa', 'nsä', 'mme', 'nne', 'kin', 'ko', 'kö', 'han', 'hän', 'ssaan', 'ssään', 'staan', 'stään', 'lleen', 'ineen'],
 };
 
 export const fold = (s: string) =>
