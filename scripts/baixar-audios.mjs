@@ -26,6 +26,8 @@ const LANGS = {
   lt: { wikidata: 'Q9083', iso3: 'lit', category: 'Lingua_Libre_pronunciation-lit' },
   it: { wikidata: 'Q652', iso3: 'ita', category: 'Lingua_Libre_pronunciation-ita' },
   fr: { wikidata: 'Q150', iso3: 'fra', category: 'Lingua_Libre_pronunciation-fra' },
+  ja: { wikidata: 'Q5287', iso3: 'jpn', category: 'Lingua_Libre_pronunciation-jpn' },
+  ko: { wikidata: 'Q9176', iso3: 'kor', category: 'Lingua_Libre_pronunciation-kor' },
 };
 const lang = process.argv[2] ?? 'ro';
 const cfg = LANGS[lang];
@@ -70,10 +72,15 @@ function parseTitle(t) {
   return m ? { speaker: m[1], word: m[2].normalize('NFC') } : null;
 }
 
-// palavras do vocabulário, lidas direto do arquivo de dados (também as linhas que o formatador
-// quebrou em várias: «[\n    'autobús',»)
-const vocabSrc = readFileSync(`src/data/${lang}/vocabulario.ts`, 'utf8');
-const words = [...vocabSrc.matchAll(/^\s*\[\s*'([^']+)'/gm)].map((m) => m[1]);
+// palavras do vocabulário, lidas direto do(s) arquivo(s) de dados (também as linhas que o
+// formatador quebrou em várias: «[\n    'autobús',»). Em ja/ko o vocabulário vem repartido em
+// vocab-a/vocab-b/vocab-extras/vocab-trilha (vocabulario.ts só reexporta o merge dos quatro).
+const VOCAB_FILES = ['vocab-a', 'vocab-b', 'vocab-extras', 'vocab-trilha'].map((f) => `src/data/${lang}/${f}.ts`).filter(existsSync);
+const vocabSrc = (VOCAB_FILES.length ? VOCAB_FILES : [`src/data/${lang}/vocabulario.ts`]).map((f) => readFileSync(f, 'utf8')).join('\n');
+// a mesma palavra pode aparecer em mais de um dos quatro arquivos (o merge() de vocabulario.ts já
+// resolve isso lá, mas aqui a lista crua tem que ficar sem repetição, senão o objeto de áudio sai
+// com chave duplicada)
+const words = [...new Set([...vocabSrc.matchAll(/^\s*\[\s*'([^']+)'/gm)].map((m) => m[1]))];
 // e as palavras dos pares mínimos (src/data/<idioma>/pares.ts), muitas fora do vocabulário (perra, уголь)
 const paresTs = `src/data/${lang}/pares.ts`;
 if (existsSync(paresTs)) {
