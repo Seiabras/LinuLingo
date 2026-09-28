@@ -2109,4 +2109,311 @@ export const STORIES_CA: StorySeed[] = [
       },
     },
   },
+  // ───────────────────────── B2.1 ─────────────────────────
+  {
+    id: 'ca-h25',
+    level: 'B2.1',
+    cefr: 'B2',
+    title: "El Misteri d'Elx",
+    emoji: '🎭',
+    summary: "Linu viatja a Elx per assistir al tradicional Misteri d'Elx i acaba ajudant l'organització a recuperar una partitura antiga abans de la representació.",
+    cultural_context: 'O Misteri d\'Elx é um drama sacro-lírico medieval em língua catalã/valenciana encenado anualmente na Basílica de Santa Maria, em Elche, nos dias 14 e 15 de agosto. Proclamado Obra-Prima do Patrimônio Oral e Imaterial da Humanidade pela UNESCO em 2001, o espetáculo conta com impressionantes engenhos aéreos medievais, como a "Mangrana", que descem da cúpula do templo.',
+    start: 'start',
+    glossary: [
+      ['el drama sacre', 'o drama sacro'],
+      ['la basílica', 'a basílica'],
+      ["l'assaig general", 'o ensaio geral'],
+      ['la partitura', 'a partitura'],
+      ['les tramolles', 'os maquinismos aéreos / cenografia do teto'],
+      ['la representació', 'a representação / encenação'],
+      ['el Mestre de Capella', 'o mestre de capela (diretor musical)'],
+    ],
+    nodes: {
+      start: {
+        emoji: '⛪',
+        text: "Linu arriba a Elx en ple agost per veure el famós Misteri d'Elx a la Basílica de Santa Maria. Ell ja havia llegit molt sobre aquest drama medieval. Pensava: «Si hagués arribat més tard, no hauria trobat cap seient lliure». A l'entrada, veu l'organitzador molt preocupat.",
+        translation: 'Linu chega a Elche em pleno agosto para ver o famoso Misteri d\'Elx na Basílica de Santa Maria. Ele já tinha lido muito sobre esse drama medieval. Pensava: «Se eu tivesse chegado mais tarde, não teria encontrado nenhum assento livre». Na entrada, vê o organizador muito preocupado.',
+        choices: [
+          { text: "Parlar amb l'organitzador per saber què passa.", translation: 'Falar com o organizador para saber o que está acontecendo.', next: 'organitzador' },
+          {
+            text: "Marxar cap a la platja pensant que l'obra és en castellà.",
+            translation: 'Ir embora para a praia pensando que a peça é em espanhol.',
+            wrong: "O Misteri d'Elx é representado inteiramente em catalão medieval/valenciano. Se Linu tivesse ido embora, teria perdido um patrimônio imaterial único.",
+          },
+        ],
+      },
+      organitzador: {
+        emoji: '📜',
+        text: "L'organitzador li explica: «Si haguessis vingut ahir, hauries vist l'assaig general. Ara tenim un problema: si no trobéssim la partitura antiga del Mestre de Capella, la música no sonaria igual!». Linu vol ajudar.",
+        translation: 'O organizador lhe explica: «Se você tivesse vindo ontem, teria visto o ensaio geral. Agora temos um problema: se não encontrássemos a partitura antiga do Mestre de Capela, a música não soaria igual!». Linu quer ajudar.',
+        choices: [
+          { text: 'Anar a buscar la partitura als arxius de la basílica.', translation: 'Ir procurar a partitura nos arquivos da basílica.', next: 'arxiu' },
+          { text: 'Pujar a les tramolles per parlar amb els tècnics de la Mangrana.', translation: 'Subir aos maquinismos do teto para falar com os técnicos da Mangrana.', next: 'tramolles' },
+        ],
+      },
+      arxiu: {
+        emoji: '🗄️',
+        text: "Linu entra a l'arxiu històric. Molts documents s'havien acumulat durant segles. Linu es diu: «Si haguessin endreçat les caixes l'any passat, tot seria més fàcil». De sobte, veu un moble de fusta antiga.",
+        translation: 'Linu entra no arquivo histórico. Muitos documentos tinham se acumulado ao longo dos séculos. Linu diz a si mesmo: «Se tivessem arrumado as caixas no ano passado, tudo seria mais fácil». De repente, vê um móvel de madeira antiga.',
+        choices: [
+          { text: 'Examinar el moble de fusta i obrir el calaix secret.', translation: 'Examinar o móvel de madeira e abrir a gaveta secreta.', next: 'manuscrit' },
+          {
+            text: 'Llençar els papers vells a les brosses per fer espai.',
+            translation: 'Jogar os papéis velhos no lixo para fazer espaço.',
+            wrong: 'Os documentos do arquivo da basílica são manuscritos históricos insubstituíveis! Destruí-los seria um erro gravíssimo.',
+          },
+        ],
+      },
+      tramolles: {
+        emoji: '⚙️',
+        text: "Linu puja a les altures de la basílica, on hi ha els maquinistes. Ells havien revisat les cordes al matí. Un tècnic diu: «Si l'aparell de la Mangrana fallés, la Verge no podria baixar del cel fictici».",
+        translation: 'Linu sobe às alturas da basílica, onde estão os maquinistas. Eles tinham revisado as cordas de manhã. Um técnico diz: «Se o aparelho da Mangrana falhasse, a Virgem não poderia descer do céu fictício».',
+        choices: [
+          { text: 'Ajudar a verificar les cordes i demanar informació sobre la partitura.', translation: 'Ajudar a verificar as cordas e pedir informações sobre a partitura.', next: 'director' },
+          { text: "Baixar immediatament a l'arxiu per buscar el document.", translation: 'Descer imediatamente ao arquivo para procurar o documento.', next: 'arxiu' },
+        ],
+      },
+      manuscrit: {
+        emoji: '🎼',
+        text: 'Dins del calaix secret, Linu troba el manuscrit original que havia desaparegut fa dies. Conté les notes vocals medievals. Si no hagués mirat darrere dels llibres, mai no hauria trobat la partitura.',
+        translation: 'Dentro da gaveta secreta, Linu encontra o manuscrito original que tinha desaparecido há dias. Contém as notas vocais medievais. Se ele não tivesse olhado atrás dos livros, nunca teria encontrado a partitura.',
+        choices: [
+          { text: 'Portar immediatament la partitura al Mestre de Capella.', translation: 'Levar imediatamente a partitura ao Mestre de Capela.', next: 'director' },
+          { text: 'Intentar cantar les notes ell mateix a la nau central.', translation: 'Tentar cantar as notas ele mesmo na nave central.', next: 'cantar_nau' },
+        ],
+      },
+      cantar_nau: {
+        emoji: '🐧',
+        text: "Linu intenta cantar, però la seva veu de pingüí ressona estranyament. Tanmateix, el Mestre de Capella el veu i s'acosta ràpidament. L'home havia buscat aquest paper tot el matí.",
+        translation: 'Linu tenta cantar, mas sua voz de pinguim ressoa estranhamente. No entanto, o Mestre de Capela o vê e se aproxima rapidamente. O homem tinha procurado esse papel a manhã toda.',
+        choices: [{ text: 'Lliurar la partitura amb respecte al Mestre de Capella.', translation: 'Entregar a partitura com respeito ao Mestre de Capela.', next: 'director' }],
+      },
+      director: {
+        emoji: '🎶',
+        text: 'El Mestre de Capella agafa el paper emocionalment: «Si no haguessis trobat aquesta partitura, la Festa no hauria sigut tan completa!». L\'obra comença i la Mangrana baixant des de les tramolles obre les seves portes daurades.',
+        translation: 'O Mestre de Capela pega o papel emocionado: «Se você não tivesse encontrado esta partitura, a Festa não teria sido tão completa!». A encenação começa e a Mangrana descendo das alturas abre suas portas douradas.',
+        choices: [
+          { text: "Seure a la nau central com a convidat d'honor de la basílica.", translation: 'Sentar-se na nave central como convidado de honra da basílica.', next: 'final_bom' },
+          { text: 'Mirar l\'espectacle des de la porta exterior, de peus.', translation: 'Assistir ao espetáculo da porta externa, de pé.', next: 'final_neutre' },
+        ],
+      },
+      final_bom: {
+        emoji: '🌟',
+        text: "Linu gaudeix de la representació des del millor lloc. La música medieval del Misteri d'Elx ressona magníficament. Ha après que si ajudes a preservar la cultura, el viatge és molt més ric.",
+        translation: 'Linu desfruta da representação do melhor lugar. A música medieval do Misteri d\'Elx ressoa magnificamente. Ele aprendeu que se você ajuda a preservar a cultura, a viagem é muito mais rica.',
+        ending: { tone: 'bom', title: 'Sucesso extraordinário!', message: 'Parabéns! Você ajudou a salvar a apresentação do Misteri d\'Elx e praticou o plusquamperfet e o imperfet de subjuntiu em frases condicionais em catalão.' },
+      },
+      final_neutre: {
+        emoji: '🏛️',
+        text: 'Linu veu l\'obra des de la porta. Tot i que havia ajudat a trobar la partitura, no va poder seure a la nau principal. Tanmateix, l\'experiència ha estat inoblidable.',
+        translation: 'Linu vê a peça da porta. Embora tivesse ajudado a encontrar a partitura, não pôde sentar na nave principal. No entanto, a experiência foi inesquecível.',
+        ending: { tone: 'neutro', title: 'Final razoável', message: 'Você concluiu a história! Ajudou o festival, mas acompanhou o espetáculo de longe. Continue praticando o mais-que-perfeito e as frases com «si»!' },
+      },
+    },
+  },
+  {
+    id: 'ca-h26',
+    level: 'B2.1',
+    cefr: 'B2',
+    title: 'Una tempesta al Pirineu',
+    emoji: '🏔️',
+    summary: 'Linu enfronta un canvi de temps sobtat mentre fa excursionisme als Pirineus catalans i ha de prendre decisions prudents per arribar a un refugi segur.',
+    cultural_context: "O Parc Nacional d'Aigüestortes i Estany de Sant Maurici, localizado na província de Lleida, é o único parque nacional da Catalunha. A região conta com uma rede de refúgios de montanha mantidos pela FEEC (Federació d'Entitats Excursionistes de Catalunya), essenciais para a segurança dos praticantes de caminhada na rota de grande percurso GR-11.",
+    start: 'start',
+    glossary: [
+      ['la tempesta', 'a tempestade'],
+      ['el refugi de muntanya', 'o refúgio de montanha'],
+      ['el sender', 'a trilha / o caminho'],
+      ['la boira', 'a neblina'],
+      ['el pi negre', 'o pinheiro-negro (espécie típica dos Pireneus)'],
+      ['la llar de foc', 'a lareira'],
+      ['el guarda del refugi', 'o guardião do refúgio'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🌧️',
+        text: "Linu camina pel Parc Nacional d'Aigüestortes i Estany de Sant Maurici. El cel es fosca ràpidament. Linu ja havia consultat el temps al matí, però la tempesta havia avançat més ràpid del previst. Pensava: «Si hagués mirat el radar fa una hora, sabria que venia aquesta pluja».",
+        translation: 'Linu caminha pelo Parque Nacional de Aigüestortes e Lago de Sant Maurici. O céu escurece rapidamente. Linu já tinha consultado a previsão do tempo de manhã, mas a tempestade tinha avançado mais rápido do que o previsto. Pensava: «Se eu tivesse olhado o radar há uma hora, saberia que vinha essa chuva».',
+        choices: [
+          { text: "Caminar cap al Refugi d'Amitges seguint el sender assenyalat.", translation: 'Caminhar em direção ao Refúgio de Amitges seguindo a trilha sinalizada.', next: 'refugi' },
+          {
+            text: 'Pujar al cim més alt per fer una foto de la tempesta.',
+            translation: 'Subir ao pico mais alto para tirar uma foto da tempestade.',
+            wrong: 'Subir a um pico durante uma tempestade elétrica nos Pireneus é extremamente perigoso devido aos raios!',
+          },
+        ],
+      },
+      refugi: {
+        emoji: '🌫️',
+        text: "Mentre camina, la boira ho cobreix tot. Linu troba un altre excursionista que s'havia desorientat. L'home diu: «Si tingués una brúixola millor, no m'hauria desviat del camí!».",
+        translation: 'Enquanto caminha, a neblina cobre tudo. Linu encontra outro caminhante que tinha se desorientado. O homem diz: «Se eu tivesse uma bússola melhor, não teria me desviado do caminho!».',
+        choices: [
+          { text: "Convidar l'excursionista a seguir junts les marques vermelles del GR-11.", translation: 'Convidar o caminhante a seguir juntos as marcas vermelhas da GR-11.', next: 'cami_junts' },
+          {
+            text: 'Aturar-se a beure aigua directament d\'un riu que creix ràpidament.',
+            translation: 'Parar para beber água diretamente de um rio que está subindo rapidamente.',
+            wrong: 'Os rios de montanha sobem muito rápido durante tempestades e podem provocar enchentes relâmpago perigosas.',
+          },
+        ],
+      },
+      cami_junts: {
+        emoji: '🌲',
+        text: "Tots dos avancen entre els pins negres. Si la pluja fos més intensa, el terreny seria molt relliscós. Linu recorda que havia vist un senyal de fusta prop d'un estany.",
+        translation: 'Ambos avançam entre os pinheiros-negros. Se a chuva fosse mais intensa, o terreno seria muito escorregadio. Linu lembra que tinha visto uma placa de madeira perto de um lago.',
+        choices: [
+          { text: 'Prendre el camí de la dreta cap a la vall protegida.', translation: 'Pegar o caminho da direita em direção ao vale protegido.', next: 'vall_protegida' },
+          { text: "Prendre el camí de l'esquerra cap a la carena descavallada.", translation: 'Pegar o caminho da esquerda em direção à crista exposta.', next: 'carena' },
+        ],
+      },
+      vall_protegida: {
+        emoji: '🏡',
+        text: 'El camí de la vall és molt més segur. Si no haguessin pres aquesta decisió, el vent fort els hauria dificultat la marxa. Aviat veuen els llums del refugi entre la boira.',
+        translation: 'O caminho do vale é muito mais seguro. Se não tivessem tomado essa decisão, o vento forte teria dificultado a caminhada. Logo veem as luzes do refúgio entre a neblina.',
+        choices: [{ text: 'Picar a la porta del refugi i entrar a escalfar-se.', translation: 'Bater na porta do refúgio e entrar para se aquecer.', next: 'dins_refugi' }],
+      },
+      carena: {
+        emoji: '💨',
+        text: 'A la carena, el vent bufa amb molta força. Linu es diu: «Si no haguéssim pujat aquí, no passaríem tant de fred!». Decideixen recular immediatament cap a la vall.',
+        translation: 'Na crista, o vento sopra com muita força. Linu diz a si mesmo: «Se não tivéssemos subido aqui, não passaríamos tanto frio!». Decidem recuar imediatamente para o vale.',
+        choices: [{ text: 'Baixar ràpidament cap al camí de la vall.', translation: 'Descer rapidamente para o caminho do vale.', next: 'vall_protegida' }],
+      },
+      dins_refugi: {
+        emoji: '☕',
+        text: 'El guarda del refugi els rep amb te calent. Ell havia preparat un gran sopar per als excursionistes atrapats. El guarda comenta: «Si la tempesta no parés demà, hauríem d\'esperar a l\'endemà per baixar a Sant Maurici».',
+        translation: 'O guardião do refúgio os recebe com chá quente. Ele tinha preparado um grande jantar para os caminhantes presos. O guardião comenta: «Se a tempestade não parar amanhã, teríamos que esperar o dia seguinte para descer a Sant Maurici».',
+        choices: [
+          { text: 'Ajudar a encendre la llar de foc i compartir experiències de muntanya.', translation: 'Ajudar a acender a lareira e compartilhar experiências de montanha.', next: 'llar_foc' },
+          { text: 'Anar a dormir directament sense eixugar la roba humida.', translation: 'Ir dormir diretamente sem secar as roupas úmidas.', next: 'dormir_humit' },
+        ],
+      },
+      llar_foc: {
+        emoji: '🔥',
+        text: 'Vora el foc, Linu conversa amb els guardes i altres muntanyencs. Si algú li hagués dit que la tempesta seria tan bonica des de dins, no s\'ho hauria cregut. La calidesa del refugi és reconfortant.',
+        translation: 'Perto do fogo, Linu conversa com os guardiões e outros montanhistas. Se alguém lhe tivesse dito que a tempestade seria tão bonita vista de dentro, ele não teria acreditado. O calor do refúgio é reconfortante.',
+        choices: [{ text: "Planificar la ruta de baixada per a l'endemà amb el mapa.", translation: 'Planejar a rota de descida para o dia seguinte com o mapa.', next: 'final_bom' }],
+      },
+      dormir_humit: {
+        emoji: '🥶',
+        text: "Linu se'n va al llit amb la roba una mica humida. L'endemà es desperta amb fred, tot i que havia passat la nit sota sostre.",
+        translation: 'Linu vai para a cama com as roupas um pouco úmidas. No dia seguinte acorda com frio, embora tivesse passado a noite sob um teto.',
+        choices: [{ text: 'Aixecar-se i prendre un cafè amb llet per escalfar-se.', translation: 'Levantar-se e tomar um café com leite para se aquecer.', next: 'final_neutre' }],
+      },
+      final_bom: {
+        emoji: '☀️',
+        text: "L'endemà el cel s'aclareix i l'Estany de Sant Maurici brilla sota el sol. Linu ha après a respectar la muntanya i ha gaudit d'una nit inoblidable al refugi.",
+        translation: 'No dia seguinte o céu clareia e o Lago de Sant Maurici brilha sob o sol. Linu aprendeu a respeitar a montanha e desfrutou de uma noite inesquecível no refúgio.',
+        ending: { tone: 'bom', title: 'Aventura concluída com sucesso!', message: 'Excelente! Você tomou decisões prudentes na montanha e dominou o uso do mais-que-perfeito e do imperfeito do subjuntivo em estruturas condicionais!' },
+      },
+      final_neutre: {
+        emoji: '🧣',
+        text: 'Linu baixa de la muntanya un xic agripat per culpa de la roba humida. La tempesta havia passat, però hagués estat millor assecar-se bé a la llar de foc.',
+        translation: 'Linu desce da montanha um pouco resfriado por causa das roupas úmidas. A tempestade tinha passado, mas teria sido melhor secar-se bem na lareira.',
+        ending: { tone: 'neutro', title: 'Chegada segura, mas fria', message: 'Você completou o percurso com segurança, embora pudesse ter aproveitado melhor o refúgio. Continue praticando o catalão!' },
+      },
+    },
+  },
+  {
+    id: 'ca-h27',
+    level: 'B2.1',
+    cefr: 'B2',
+    title: "Una carta de l'avi",
+    emoji: '📜',
+    summary: "Linu descobreix una antiga carta escrita pel seu avi a Girona i segueix les pistes pel Barri Jueu i el famós pont de ferro per revelar un secret familiar.",
+    cultural_context: "Girona, no nord-este da Catalunha, possui um dos bairros judaicos (Call Jueu) mais emblemáticos e bem preservados da Europa, centrado na Carrer de la Força. A cidade também é famosa pelas pontes sobre o rio Onyar, destacando-se o Pont de les Peixateries Velles, projetado pela empresa de Gustave Eiffel em 1877.",
+    start: 'start',
+    glossary: [
+      ['la carta antiga', 'a carta antiga'],
+      ['el bagul de fusta', 'o baú de madeira'],
+      ['el Pont de les Peixateries Velles', 'a Ponte das Peixarias Velhas (Ponte Eiffel)'],
+      ['el Call Jueu', 'o bairro judeu medieval de Girona'],
+      ['el riu Onyar', 'o rio Onyar'],
+      ['el pany i la clau', 'a fechadura e a chave'],
+      ['el pati interior', 'o pátio interno'],
+    ],
+    nodes: {
+      start: {
+        emoji: '✉️',
+        text: "Linu troba un sobre groguenc entre els llibres de la família. L'avi havia escrit aquesta carta des de Girona l'any 1965. Pensava: «Si l'avi hagués guardat aquesta carta en un altre lloc, mai no l'hauria trobada».",
+        translation: 'Linu encontra um envelope amarelado entre os livros da família. O avô tinha escrito esta carta de Girona no ano de 1965. Pensava: «Se o avô tivesse guardado esta carta em outro lugar, eu nunca a teria encontrado».',
+        choices: [
+          { text: "Obrir la carta i llegir el missatge de l'avi.", translation: 'Abrir a carta e ler a mensagem do avô.', next: 'llegir_carta' },
+          {
+            text: 'Llençar el sobre a la brossa pensant que és només paper vell.',
+            translation: 'Jogar o envelope no lixo pensando que é apenas papel velho.',
+            wrong: 'As cartas antigas da família contêm memórias e dados históricos valiosos. Nunca se deve descartá-las sem ler!',
+          },
+        ],
+      },
+      llegir_carta: {
+        emoji: '🔍',
+        text: "La carta deia: «Si jo fos jove de nou, tornaria al Pont de les Peixateries Velles de Girona. Allà havia amagat una clau petita prop del pilar de ferro». Linu decideix agafar el tren cap a Girona.",
+        translation: 'A carta dizia: «Se eu fosse jovem de novo, voltaria à Ponte das Peixarias Velhas de Girona. Lá tinha escondido uma chave pequena perto do pilar de ferro». Linu decide pegar o trem para Girona.',
+        choices: [
+          { text: 'Anar directament al riu Onyar per cercar el Pont de les Peixateries Velles.', translation: 'Ir diretamente ao rio Onyar para procurar a Ponte das Peixarias Velhas.', next: 'pont_eiffel' },
+          { text: "Anar al Museu d'Història dels Jueus al Carrer de la Força.", translation: 'Ir ao Museu de História dos Judeus na Carrer de la Força.', next: 'museu_jueus' },
+        ],
+      },
+      pont_eiffel: {
+        emoji: '🌉',
+        text: 'Linu arriba al pont vermell de ferro, dissenyat per la companyia de Gustave Eiffel el 1877. Si el riu Onyar portés més aigua, les cases acolorides es reflectirien encara millor. Linu busca el pilar indicat.',
+        translation: 'Linu chega à ponte vermelha de ferro, projetada pela empresa de Gustave Eiffel em 1877. Se o rio Onyar trouxesse mais água, as casas coloridas se refletiriam ainda melhor. Linu procura o pilar indicado.',
+        choices: [
+          { text: "Mirar darrere de la biga de ferro on l'avi havia gravat una marca.", translation: 'Olhar atrás da viga de ferro onde o avô tinha gravado uma marca.', next: 'trobar_clau' },
+          {
+            text: 'Saltar al riu Onyar per buscar al fons de l\'aigua.',
+            translation: 'Pular no rio Onyar para procurar no fundo da água.',
+            wrong: 'O rio Onyar não é adequado para mergulho e pular da ponte de ferro é perigoso e proibido!',
+          },
+        ],
+      },
+      museu_jueus: {
+        emoji: '🏛️',
+        text: "Al Museu d'Història dels Jueus, l'arxiver escolta la història de Linu. L'home diu: «Si el teu avi hagués viscut al Call Jueu, la seva casa hauria estat al Carrer de la Força».",
+        translation: 'No Museu de História dos Judeus, o arquivista escuta a história de Linu. O homem diz: «Se o seu avô tivesse vivido no Bairro Judeu, sua casa teria sido na Carrer de la Força».',
+        choices: [
+          { text: 'Anar cap al pont de ferro per trobar la clau que falta.', translation: 'Ir em direção à ponte de ferro para encontrar a chave que falta.', next: 'pont_eiffel' },
+          { text: 'Caminar directament pel Carrer de la Força sense la clau.', translation: 'Caminhar diretamente pela Carrer de la Força sem a chave.', next: 'carrer_forca_sense_clau' },
+        ],
+      },
+      trobar_clau: {
+        emoji: '🔑',
+        text: "Darrere de la biga de ferro, Linu troba una antiga clau de bronze embolcallada en un drap. L'avi l'havia amagada fa més de mig segle! Si no hagués observat el pilar amb atenció, no l'hauria utilitzada mai.",
+        translation: 'Atrás da viga de ferro, Linu encontra uma antiga chave de bronze embrulhada em um pano. O avô a tinha escondido há mais de meio século! Se ele não tivesse observado o pilar com atenção, nunca a teria usado.',
+        choices: [{ text: 'Dirigir-se al Carrer de la Força al Call Jueu amb la clau.', translation: 'Dirigir-se à Carrer de la Força no Bairro Judeu com a chave.', next: 'carrer_forca_amb_clau' }],
+      },
+      carrer_forca_sense_clau: {
+        emoji: '🚪',
+        text: "Linu arriba a la vella portalada de fusta que l'avi descrivia, però està tancada. Si tingués la clau de bronze, podria obrir el pany.",
+        translation: 'Linu chega ao velho portão de madeira que o avô descrevia, mas está fechado. Se tivesse a chave de bronze, poderia abrir a fechadura.',
+        choices: [{ text: 'Tornar al pont de ferro a buscar la clau.', translation: 'Voltar à ponte de ferro para procurar a chave.', next: 'pont_eiffel' }],
+      },
+      carrer_forca_amb_clau: {
+        emoji: '🗝️',
+        text: 'Linu posa la clau de bronze al pany del portal número 12 del Carrer de la Força. Si el pany fos nou, no giraria, però la clau encaixa a la perfecció. La porta s\'obre cap a un pati interior medieval.',
+        translation: 'Linu coloca a chave de bronze na fechadura do portão número 12 da Carrer de la Força. Se a fechadura fosse nova, não giraria, mas a chave encaixa com perfeição. A porta se abre para um pátio interno medieval.',
+        choices: [{ text: 'Explorar el pati interior i obrir el vell bagul de fusta.', translation: 'Explorar o pátio interno e abrir o velho baú de madeira.', next: 'pati_baul' }],
+      },
+      pati_baul: {
+        emoji: '📦',
+        text: "Dins del bagul, Linu troba fotografies de la Girona dels anys 60 i un diari de viatges on l'avi havia escrit les seves aventures. Si l'avi fos aquí, estaria orgullós de veure el seu net seguint els seus passos.",
+        translation: 'Dentro do baú, Linu encontra fotografias da Girona dos anos 60 e um diário de viagens onde o avô tinha escrito suas aventuras. Se o avô estivesse aqui, estaria orgulhoso de ver seu neto seguindo seus passos.',
+        choices: [
+          { text: "Compartir les fotografies històriques amb l'Arxiu Municipal de Girona i guardar el diari.", translation: 'Compartilhar as fotografias históricas com o Arquivo Municipal de Girona e guardar o diário.', next: 'final_bom' },
+          { text: 'Guardar-ho tot a la motxilla sense dir res a ningú.', translation: 'Guardar tudo na mochila sem dizer nada a ninguém.', next: 'final_neutre' },
+        ],
+      },
+      final_bom: {
+        emoji: '📸',
+        text: "L'Arxiu Municipal agraeix a Linu la donació de les fotos, que ajuden a documentar la memòria de la ciutat. Linu llegeix el diari de l'avi feliç de conèixer les seves arrels.",
+        translation: 'O Arquivo Municipal agradece a Linu pela doação das fotos, que ajudam a documentar a memória da cidade. Linu lê o diário do avô feliz por conhecer suas raízes.',
+        ending: { tone: 'bom', title: 'Segredo revelado!', message: 'Parabéns! Você desvendou o mistério da carta do avô e praticou a gramática do B2 com o plusquamperfet e o imperfet de subjuntiu!' },
+      },
+      final_neutre: {
+        emoji: '📖',
+        text: 'Linu guarda els records a la seva motxilla. Tot i que havia trobat el tresor familiar, la ciutat de Girona no va poder conèixer aquelles imatges històriques.',
+        translation: 'Linu guarda as recordações em sua mochila. Embora tivesse encontrado o tesouro familiar, a cidade de Girona não pôde conhecer aquelas imagens históricas.',
+        ending: { tone: 'neutro', title: 'Tesouro pessoal', message: 'Você concluiu a história e resgatou as memórias do avô. Continue praticando o catalão para se aprofundar ainda mais!' },
+      },
+    },
+  },
 ];
