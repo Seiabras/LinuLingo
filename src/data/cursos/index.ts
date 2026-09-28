@@ -13,6 +13,18 @@ export type { MiniCourse, MiniCourseKind, MiniItem, MiniLesson, MiniQuestion } f
 /** O curso com as lições que o completam (em outros arquivos, para não virar um arquivo só enorme). */
 const withMore = (c: MiniCourse, more: MiniCourse['lessons']): MiniCourse => ({ ...c, lessons: [...c.lessons, ...more] });
 
+/** Tsevhu tem tela própria (/tsevhu, com o Koiwrit desenhado sobre o peixe koi), não o formato de lições genérico. */
+const CURSO_TSEVHU: MiniCourse = {
+  id: 'tsevhu',
+  name: 'Tsevhu',
+  emoji: '🎏',
+  kind: 'artificial',
+  summary: 'A língua do povo tsavhe, escrita com o Koiwrit: a frase vira um peixe koi cercado de ondulações. Usada com autorização dos autores.',
+  sources: [{ label: 'Wiki do Tsevhu', url: 'https://conlang.fandom.com/wiki/Tsevhu' }],
+  route: '/tsevhu',
+  lessons: [],
+};
+
 export const MINI_COURSES: MiniCourse[] = [
   withMore(CURSO_LIBRAS, LIBRAS_MAIS),
   withMore(CURSO_ASL, ASL_MAIS),
@@ -30,6 +42,7 @@ export const MINI_COURSES: MiniCourse[] = [
   withMore(CURSO_VALIRIANO, VALIRIANO_MAIS),
   CURSO_QUENYA,
   withMore(CURSO_SOLRESOL, SOLRESOL_MAIS),
+  CURSO_TSEVHU,
 ];
 
 export const KIND_LABEL: Record<MiniCourseKind, { label: string; emoji: string; text: string }> = {

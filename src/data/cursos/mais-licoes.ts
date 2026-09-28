@@ -275,6 +275,184 @@ export const TOKI_PONA_MAIS: MiniLesson[] = [
       { q: 'O que é «ma tomo»?', options: ['Cidade', 'Casa', 'País'], answer: 0 },
     ],
   },
+  {
+    id: 'en-anu',
+    title: 'Juntando: en e anu',
+    emoji: '🔗',
+    intro: [
+      '«en» junta vários sujeitos numa frase só: «jan en soweli li moku» — a pessoa e o bicho comem.',
+      '«anu» oferece uma alternativa, o «ou»: «sina wile e telo anu kili?» — você quer água ou fruta? (Vale saber: os limites exatos de uso do «anu» são um dos cantos menos consensuais da gramática — até gente da comunidade debate isso.)',
+    ],
+    items: [
+      { term: 'jan en soweli li moku.', meaning: 'A pessoa e o bicho comem.' },
+      { term: 'sina wile e telo anu kili?', meaning: 'Você quer água ou fruta?' },
+      { term: 'en', meaning: 'e (só para juntar sujeitos)' },
+      { term: 'anu', meaning: 'ou' },
+    ],
+    quiz: [
+      { q: 'Qual partícula junta dois sujeitos na mesma frase?', options: ['en', 'anu', 'pi'], answer: 0 },
+      { q: '«mi wile e moku anu telo» pergunta sobre…', options: ['comida ou água', 'comida e água', 'se você tem fome'], answer: 0 },
+    ],
+  },
+  {
+    id: 'filosofia',
+    title: 'A filosofia da simplicidade',
+    emoji: '🧘',
+    intro: [
+      'Sonja Lang criou o toki pona por volta de 2001: queria uma língua que «mapeasse a própria mente no papel» e simplificasse o pensamento. A palavra «pona» já mostra a ideia: quer dizer «bom» e «simples» ao mesmo tempo — no toki pona, simplificar é uma forma de bondade.',
+      'A língua reduz o vocabulário ao osso: em vez de uma palavra para cada veículo, «tawa» (ir, mover-se) serve para carro, ônibus e avião — o que muda é o modificador («tomo tawa», casa que anda, é carro).',
+      'Por anos, o toki pona foi chamado de «língua taoísta», porque Sonja Lang citou o Tao Te Ching como uma das inspirações no seu livro de 2014. Mas em dezembro de 2024 ela mesma disse que esse rótulo pegou pesado demais: a ligação começou como um comentário solto, não como um projeto de trazer o taoísmo para a língua.',
+    ],
+    items: [
+      { term: 'pona', meaning: 'bom E simples ao mesmo tempo — a mesma palavra' },
+      { term: 'tawa', meaning: 'ir, mover-se; para (uma das palavras «coringa» da língua)' },
+      { term: '2001', meaning: 'ano em que Sonja Lang começou a criar o toki pona' },
+    ],
+    quiz: [
+      { q: 'Por que «pona» é uma palavra-chave da filosofia do toki pona?', options: ['Porque significa «bom» e «simples» ao mesmo tempo', 'Porque é a primeira palavra do dicionário', 'Porque só ela tem acento'], answer: 0 },
+      { q: 'O que Sonja Lang disse em dezembro de 2024 sobre o rótulo «língua taoísta»?', options: ['Que foi exagerado, veio de um comentário solto', 'Que é o objetivo central da língua', 'Que nunca leu o Tao Te Ching'], answer: 0 },
+    ],
+  },
+  {
+    id: 'nimi-sin',
+    title: 'De pu a nimi sin: o vocabulário muda',
+    emoji: '📖',
+    intro: [
+      'O toki pona tem «camadas» de palavras, conforme a fonte: as do livro oficial de 2014 (chamado «pu»), as do Dicionário Oficial de 2021 («ku», que Sonja Lang escreveu ouvindo a comunidade), e as mais novas ainda, criadas pela comunidade depois disso e chamadas de «nimi sin» (palavras novas).',
+      'Isso gera debate de verdade: «tonsi» (para pessoas não-binárias), uma «nimi sin», já teve apoio da maioria numa pesquisa informal da comunidade, mesmo sem ser «oficial». Parte da comunidade acha que cada palavra nova ajuda a língua a crescer; outra parte acha que fugir das ~120 palavras originais trai a ideia de simplicidade do projeto.',
+      'Desde o dicionário de 2021, a própria Sonja Lang passou a bola pra frente: disse que os livros dela são só um retrato do jeito que ela fala, e convidou a comunidade a continuar desenvolvendo a língua por conta própria.',
+    ],
+    items: [
+      { term: 'nimi pu', meaning: 'palavras do livro oficial de 2014' },
+      { term: 'nimi ku', meaning: 'palavras do Dicionário Oficial de 2021' },
+      { term: 'nimi sin', meaning: 'palavras novas, criadas pela comunidade depois disso' },
+      { term: 'tonsi', meaning: 'pessoa não-binária (nimi sin, ainda debatida)' },
+    ],
+    quiz: [
+      { q: 'O que são «nimi sin»?', options: ['Palavras novas criadas pela comunidade depois dos livros oficiais', 'Erros de ortografia', 'Palavras do livro de 2014'], answer: 0 },
+      { q: 'Por que existe debate sobre aceitar palavras novas no toki pona?', options: ['Porque parte da comunidade acha que foge da ideia original de simplicidade', 'Porque são proibidas por lei', 'Porque Sonja Lang nunca comentou sobre isso'], answer: 0 },
+    ],
+  },
+  {
+    id: 'comunidade',
+    title: 'Uma comunidade viva',
+    emoji: '💬',
+    intro: [
+      'O toki pona não parou nos livros: cresceu muito depois de 2014, puxado por vídeo-aulas e por comunidades no Discord — a própria Sonja Lang aponta esse período como uma virada importante para a língua.',
+      'Hoje o maior servidor de Discord da língua, o «ma pona pi toki pona», passa de 16 mil membros. Em pesquisas recentes com a comunidade, cerca de 80% dizem que sabem toki pona e mais da metade diz ter nível de conversação — números que vêm crescendo ano a ano.',
+      'Não é só conversa: a comunidade já traduziu partes da Bíblia para o toki pona e tocou um projeto de tradução do musical Hamilton, com mais de 60 pessoas envolvidas.',
+    ],
+    items: [
+      { term: 'ma pona pi toki pona', meaning: 'o maior servidor de Discord da comunidade (16 mil+ membros)' },
+      { term: 'lipu pu', meaning: 'o livro oficial de 2014, «Toki Pona: The Language of Good»' },
+      { term: 'lipu ku', meaning: 'o Dicionário Oficial de 2021' },
+    ],
+    quiz: [
+      { q: 'Onde vive hoje boa parte da comunidade do toki pona?', options: ['Em servidores de Discord', 'Só em livros impressos', 'Em programas de TV'], answer: 0 },
+      { q: 'Que tipo de projeto coletivo a comunidade já fez em toki pona?', options: ['Tradução de partes da Bíblia e do musical Hamilton', 'Um filme de Hollywood', 'Um tratado internacional'], answer: 0 },
+    ],
+  },
+  {
+    id: 'preverbos',
+    title: 'Antes do verbo: os pré-verbos',
+    emoji: '⏳',
+    intro: [
+      'O toki pona não conjuga verbo — não tem sufixo de passado, futuro ou «estar fazendo». Em vez disso, usa palavrinhas soltas antes do verbo principal, os pré-verbos, para marcar começo, continuação, capacidade e vontade.',
+      '«mi kama sona e toki pona» é «eu estou aprendendo toki pona» (literalmente, «eu venho a saber toki pona») — «kama» marca que a ação está em processo. «mi ken pali» é «eu posso trabalhar» — «ken» marca capacidade ou permissão. Dois pré-verbos podem se juntar: «mi wile lukin e tomo» é «eu quero olhar a casa».',
+    ],
+    items: [
+      { term: 'awen', meaning: 'continuar (fazendo algo); ficar' },
+      { term: 'kama', meaning: 'vir a ser, começar a; chegar' },
+      { term: 'ken', meaning: 'poder, ser capaz de, ter permissão' },
+      { term: 'lukin', meaning: 'tentar (antes de verbo); olhar' },
+      { term: 'sona', meaning: 'saber (fazer algo)' },
+      { term: 'wile', meaning: 'querer, precisar' },
+      { term: 'mi kama sona e toki pona.', meaning: 'Eu estou aprendendo toki pona.' },
+      { term: 'mi ken pali.', meaning: 'Eu posso trabalhar.' },
+    ],
+    quiz: [
+      { q: 'Como o toki pona marca que uma ação está «em processo de acontecer»?', options: ['Com o pré-verbo «kama» antes do verbo principal', 'Com um sufixo no verbo', 'Não dá para marcar isso'], answer: 0 },
+      { q: '«mi wile lukin e tomo» quer dizer…', options: ['Eu quero olhar a casa', 'Eu odeio a casa', 'Eu moro na casa'], answer: 0, why: '«wile» (querer) + «lukin» (olhar) juntos.' },
+    ],
+  },
+  {
+    id: 'mais-palavras',
+    title: 'Mais palavras do dia a dia',
+    emoji: '🧠',
+    intro: ['Com pouco mais de cem palavras oficiais, cada uma puxa bastante peso. Aqui vão mais algumas que aparecem toda hora nas conversas em toki pona.'],
+    items: [
+      { term: 'ilo', meaning: 'ferramenta, instrumento, aparelho' },
+      { term: 'lipu', meaning: 'papel, livro, documento, site' },
+      { term: 'nasin', meaning: 'caminho, jeito de fazer, método' },
+      { term: 'pilin', meaning: 'sentir, sentimento; corpo (por dentro)' },
+      { term: 'olin', meaning: 'amar, amor (de família ou de amizade)' },
+      { term: 'wawa', meaning: 'forte, energia, poder' },
+      { term: 'sama', meaning: 'igual, mesmo; parecido' },
+      { term: 'tan', meaning: 'de, por causa de, origem' },
+      { term: 'pakala', meaning: 'erro, acidente, estragar' },
+      { term: 'utala', meaning: 'briga, guerra, competição' },
+    ],
+    quiz: [
+      { q: '«ilo» quer dizer…', options: ['Ferramenta, instrumento', 'Amor', 'Erro'], answer: 0 },
+      { q: '«mi pilin pona» quer dizer…', options: ['Eu me sinto bem', 'Eu trabalho bem', 'Eu falo bem'], answer: 0 },
+      { q: 'O que é «nasin»?', options: ['Caminho, jeito de fazer as coisas', 'Uma ferramenta', 'Um sentimento'], answer: 0 },
+    ],
+  },
+  {
+    id: 'debates',
+    title: 'Debates dentro da língua',
+    emoji: '⚖️',
+    intro: [
+      'Uma língua com tão poucas palavras tem um preço: no começo, a própria filosofia do toki pona reconhecia que ele não serviria bem para escrita técnica, sem perder um bocado de precisão. Falantes de hoje contestam esse limite e tentam mostrar que dá, sim, para discutir ciência e tecnologia em toki pona — só que de um jeito mais indireto.',
+      'A partícula «anu» (ou) também tem um cantinho polêmico: até onde uma alternativa introduzida por ela vale dentro da frase é uma das coisas em que a própria comunidade ainda debate os limites exatos.',
+      'E o vocabulário vive uma tensão de três tempos: palavras de antes de 2014 que caíram em desuso (pré-pu), as do livro oficial de 2014 (pu) e as criadas depois pela comunidade (pós-pu, os nimi sin). As três convivem, e falantes diferentes escolhem lados diferentes sobre quanto aceitar do pós-pu.',
+    ],
+    items: [
+      { term: 'pré-pu', meaning: 'palavras de antes de 2014, hoje fora de uso' },
+      { term: 'pu', meaning: 'o padrão oficial de 2014' },
+      { term: 'pós-pu', meaning: 'palavras novas da comunidade, depois de 2014' },
+    ],
+    quiz: [
+      { q: 'O que a própria filosofia original do toki pona reconhecia como limite da língua?', options: ['Que ela não seria boa para escrita técnica sem perder precisão', 'Que ninguém conseguiria aprender', 'Que só serve para poesia'], answer: 0 },
+      { q: 'Por que existe tensão entre pré-pu, pu e pós-pu?', options: ['Porque são três «camadas» de vocabulário de épocas diferentes, e nem todo falante aceita a mais nova', 'Porque são três línguas diferentes', 'Porque «pu» significa «errado»'], answer: 0 },
+    ],
+  },
+  {
+    id: 'subcomunidades',
+    title: 'Uma comunidade cheia de cantinhos',
+    emoji: '🧩',
+    intro: [
+      'Dentro da comunidade grande, existem grupos menores para interesses específicos: «ma nanpa» reúne quem gosta de ciências e matemática (STEM) falando em toki pona, «ma sewi» junta quem quer discutir religião e espiritualidade na língua, e a zine comunitária «lipu tenpo» tem mais de 400 pessoas no próprio Discord.',
+      'A adoção do sitelen pona (a escrita própria) também disparou: pesquisas com a comunidade mostram salto de 61% em 2021 para 85% em 2024 — cada vez mais gente escrevendo com os símbolos, não só com o alfabeto latino.',
+    ],
+    items: [
+      { term: 'ma nanpa', meaning: 'comunidade de ciências e matemática em toki pona' },
+      { term: 'ma sewi', meaning: 'comunidade de religião e espiritualidade em toki pona' },
+      { term: 'lipu tenpo', meaning: 'zine (revista) feita pela comunidade, 400+ membros' },
+    ],
+    quiz: [
+      { q: 'O que é «ma nanpa»?', options: ['Uma comunidade de ciências e matemática em toki pona', 'Um livro de gramática', 'Uma cidade fictícia'], answer: 0 },
+      { q: 'O que aconteceu com o uso do sitelen pona entre 2021 e 2024, segundo pesquisas da comunidade?', options: ['Saltou de 61% para 85% de adoção', 'Caiu pela metade', 'Ficou igual'], answer: 0 },
+    ],
+  },
+  {
+    id: 'sitelen-pona',
+    title: 'sitelen pona: escrever com desenhos',
+    emoji: '🖼️',
+    intro: [
+      'Além do alfabeto latino, o toki pona tem uma escrita própria: o sitelen pona («desenho simples»), criada pela própria Sonja Lang e publicada em 2014. Cada palavra vira um único símbolo — não letras soltas, e sim um desenho por ideia.',
+      'Em dezembro de 2021, Sonja Lang liberou os desenhos originais do sitelen pona em licença CC0: são de domínio público, sem restrição nenhuma de uso — a comunidade já usou isso para criar fontes de computador com eles.',
+      'Por enquanto, o sitelen pona ainda não tem um lugar oficial dentro do Unicode (o padrão internacional de caracteres de computador): por isso, cada fonte usa uma área «privada» de códigos, e é preciso instalar a fonte certa para os símbolos aparecerem.',
+    ],
+    items: [
+      { term: 'sitelen pona', meaning: '«desenho simples»: a escrita logográfica do toki pona' },
+      { term: 'CC0 (2021)', meaning: 'a licença que Sonja Lang deu aos desenhos originais: domínio público' },
+    ],
+    quiz: [
+      { q: 'Quem criou o sitelen pona, e quando foi publicado?', options: ['Sonja Lang, em 2014, junto com o livro oficial', 'A comunidade do Discord, em 2021', 'Ninguém sabe'], answer: 0 },
+      { q: 'Qual é o status de licença dos desenhos originais do sitelen pona?', options: ['CC0, domínio público, desde 2021', 'Direitos autorais fechados, sem uso livre', 'Só pode ser usado dentro do livro oficial'], answer: 0 },
+    ],
+  },
 ];
 
 export const INTERLINGUA_MAIS: MiniLesson[] = [
@@ -421,6 +599,81 @@ export const SOLRESOL_MAIS: MiniLesson[] = [
     quiz: [
       { q: '«si» (sim) se escreve com a cor…', options: ['violeta', 'vermelha', 'verde'], answer: 0 },
       { q: 'Como se escreve «solresol» com números?', options: ['5-2-5', '1-2-3', '7-7-7'], answer: 0 },
+    ],
+  },
+  {
+    id: 'silabas-repetidas',
+    title: 'Sílabas repetidas: números e doenças',
+    emoji: '🔢',
+    intro: [
+      'Repetir uma sílaba muda a palavra para outra categoria inteira. Palavras de três sílabas com uma sílaba repetida são números, dias da semana ou meses; de quatro sílabas com repetição, uma doença.',
+      'Isso multiplica muito o vocabulário sem inventar sons novos: basta saber a regra para adivinhar a que grupo uma palavra pertence.',
+    ],
+    items: [
+      { term: 'redodo', meaning: 'um (1)' },
+      { term: 'remimi', meaning: 'dois (2)' },
+      { term: 'solsolredo', meaning: 'enxaqueca (doença: quatro sílabas com repetição)' },
+    ],
+    quiz: [
+      { q: 'Uma palavra de três sílabas com uma sílaba repetida costuma ser…', options: ['um número, dia da semana ou mês', 'um verbo', 'uma cor'], answer: 0 },
+      { q: '«solsolredo» segue o padrão de quatro sílabas repetidas, que indica…', options: ['uma doença', 'uma cor', 'um número'], answer: 0 },
+    ],
+  },
+  {
+    id: 'acentos-gramaticais',
+    title: 'A gramática mora nos acentos',
+    emoji: '✏️',
+    intro: [
+      'Sudre não quis inventar sufixos: fez os acentos carregarem a gramática. O acento agudo marca o plural, e um sinal embaixo da letra marca o feminino.',
+      'Numa palavra de quatro sílabas, o lugar do acento circunflexo diz a classe gramatical. Veja a mesma raiz, «midofa», mudando de infinitivo a substantivo, adjetivo e advérbio só pela posição do acento.',
+    ],
+    items: [
+      { term: 'midofa', meaning: 'preferir (infinitivo, sem circunflexo)' },
+      { term: 'mîdofa', meaning: 'preferência (substantivo: circunflexo na 1ª sílaba)' },
+      { term: 'midôfa', meaning: 'preferível (adjetivo: circunflexo na penúltima sílaba)' },
+      { term: 'midofâ', meaning: 'de preferência (advérbio: circunflexo na última sílaba)' },
+    ],
+    quiz: [
+      { q: 'O que o acento agudo marca no solresol?', options: ['o plural', 'o feminino', 'um advérbio'], answer: 0 },
+      { q: 'Em «midofâ», o circunflexo na última sílaba marca…', options: ['um advérbio', 'um substantivo', 'o plural'], answer: 0 },
+    ],
+  },
+  {
+    id: 'todos-sentidos',
+    title: 'Uma língua para os cinco sentidos',
+    emoji: '🖐️',
+    intro: [
+      'Além de falado, cantado, escrito com notas, números ou cores, o solresol também podia ser mostrado com gestos de mão — um por nota, parecido com os sinais usados para ensinar solfejo — ou marcado com bandeiras, uma cor por nota, como a sinalização naval.',
+      'A ideia de Sudre era que qualquer pessoa pudesse se comunicar nele, mesmo sem ouvir, sem ver, ou a uma distância grande demais para a voz chegar.',
+    ],
+    items: [
+      { term: 'gesto de mão', meaning: 'um sinal para cada nota, parecido com os sinais de solfejo' },
+      { term: 'bandeira', meaning: 'uma bandeira colorida para cada nota, como a sinalização naval' },
+      { term: 'instrumento', meaning: 'qualquer instrumento musical também «fala» solresol, tocando as notas' },
+    ],
+    quiz: [
+      { q: 'Além da voz, de que outro jeito dá para «falar» solresol de longe?', options: ['Com bandeiras, uma cor por nota', 'Não dá', 'Só por escrito'], answer: 0 },
+      { q: 'Por que Sudre pensou o solresol em tantos meios (voz, cor, gesto, bandeira)?', options: ['Para qualquer pessoa poder se comunicar, mesmo sem ouvir ou ver', 'Só por estética', 'Para ser mais difícil de aprender'], answer: 0 },
+    ],
+  },
+  {
+    id: 'historia-solresol',
+    title: 'De um sonho musical ao teclado de hoje',
+    emoji: '📜',
+    intro: [
+      'François Sudre (1787–1862) passou a vida inteira desenvolvendo o solresol a partir de 1827; o livro que fechou a língua, «Langue Musicale Universelle», só saiu em 1866, já depois de sua morte.',
+      'A língua fez sucesso no século 19: Victor Hugo, Lamartine, Alexander von Humboldt e o imperador Napoleão III elogiaram o projeto. Em 1902, o polonês Boleslas Gajewski publicou a gramática mais completa; ela só ganhou tradução para o inglês em 1997, feita por Stephen L. Rice.',
+      'Hoje o solresol não tem um código oficial da ISO — um pedido foi recusado em 2018 —, mas usa a marca informal «qso» ou «art-x-solresol». O linguista C. George Boeree criou uma variante mais fácil de pronunciar, chamada «Ses».',
+    ],
+    items: [
+      { term: '1827', meaning: 'ano em que Sudre começou a criar o solresol' },
+      { term: '1866', meaning: 'ano da publicação de «Langue Musicale Universelle», já depois da morte de Sudre' },
+      { term: 'Boleslas Gajewski', meaning: 'autor da gramática de 1902, a mais completa do solresol' },
+    ],
+    quiz: [
+      { q: 'Quem criou o solresol?', options: ['François Sudre', 'Boleslas Gajewski', 'Victor Hugo'], answer: 0 },
+      { q: 'A gramática mais completa do solresol, de 1902, é de…', options: ['Boleslas Gajewski', 'Zamenhof', 'C. George Boeree'], answer: 0 },
+      { q: 'O solresol tem hoje um código oficial da ISO?', options: ['Não — um pedido foi recusado em 2018', 'Sim, desde 1980', 'Sim, desde 2018'], answer: 0 },
     ],
   },
 ];

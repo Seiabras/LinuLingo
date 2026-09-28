@@ -142,7 +142,7 @@ export default function HomeScreen() {
 
       <Text className="mb-2 mt-5 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">Mais práticas</Text>
       <View className="flex-row flex-wrap gap-2">
-        {[...(pack.alphabet ? [ALPHABET_PRACTICE] : []), ...(pack.falseFriends ? [FALSE_FRIENDS_PRACTICE] : []), ...(ACCENT_PRACTICE ? [ACCENT_PRACTICE] : []), ...PRACTICES.slice(0, 1), ...(PAIRS_PRACTICE ? [PAIRS_PRACTICE] : []), MISTAKES_PRACTICE, ...PRACTICES.slice(1), ...(ANIMALS_PRACTICE ? [ANIMALS_PRACTICE] : []), SOUNDS_PRACTICE, MAP_GAME_PRACTICE, ...(EXPEDITION_PRACTICE ? [EXPEDITION_PRACTICE] : []), KIN_PRACTICE, ACCENT_GUESS_PRACTICE, COURSES_PRACTICE, ALBUM_PRACTICE, RESOURCES_PRACTICE, TSEVHU_PRACTICE].map((p) => (
+        {[...(pack.alphabet ? [ALPHABET_PRACTICE] : []), ...(pack.falseFriends ? [FALSE_FRIENDS_PRACTICE] : []), ...(ACCENT_PRACTICE ? [ACCENT_PRACTICE] : []), ...PRACTICES.slice(0, 1), ...(PAIRS_PRACTICE ? [PAIRS_PRACTICE] : []), MISTAKES_PRACTICE, ...PRACTICES.slice(1), ...(ANIMALS_PRACTICE ? [ANIMALS_PRACTICE] : []), SOUNDS_PRACTICE, MAP_GAME_PRACTICE, ...(EXPEDITION_PRACTICE ? [EXPEDITION_PRACTICE] : []), KIN_PRACTICE, ACCENT_GUESS_PRACTICE, COURSES_PRACTICE, ALBUM_PRACTICE, RESOURCES_PRACTICE].map((p) => (
           <Pressable
             key={p.route}
             accessibilityRole="button"
@@ -301,9 +301,6 @@ const RESOURCES_PRACTICE = { route: '/provas', emoji: '🎓', title: 'Provas e d
 const FALSE_FRIENDS_PRACTICE = { route: '/falsos-amigos', emoji: '🪤', title: 'Falsos amigos', text: 'Parecem português, mas não são' } as const;
 
 const COURSES_PRACTICE = { route: '/cursos', emoji: '🎓', title: 'Cursos', text: 'Libras, Braille, esperanto, klingon…' } as const;
-
-/** O Tsevhu, a língua artificial do peixe koi: um módulo à parte, igual para qualquer idioma. */
-const TSEVHU_PRACTICE = { route: '/tsevhu', emoji: '🐟', title: 'Tsevhu', text: 'A língua escrita num peixe koi' } as const;
 
 const PRACTICES = [
   { route: '/escuta', emoji: '🎧', title: 'Escuta e ditado', text: 'Ouça nativos e escreva' },

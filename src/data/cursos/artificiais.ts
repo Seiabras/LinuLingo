@@ -151,7 +151,7 @@ export const CURSO_TOKI_PONA: MiniCourse = {
   name: 'Toki Pona',
   emoji: '🙂',
   kind: 'artificial',
-  summary: 'A língua minimalista: cerca de 120 palavras e poucas regras. Em cinco lições você monta frases — e aprende a simplificar o que pensa.',
+  summary: 'A língua minimalista: cerca de 120 palavras e poucas regras. Gramática, vocabulário, a filosofia da simplicidade, a comunidade e a escrita sitelen pona — e você aprende a simplificar o que pensa.',
   sources: [
     { label: 'tokipona.org (site oficial)', url: 'https://tokipona.org/' },
     { label: 'sona.pona.la (wiki da comunidade)', url: 'https://sona.pona.la/' },

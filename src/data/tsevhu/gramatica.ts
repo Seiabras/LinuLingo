@@ -260,6 +260,40 @@ export const TOPICS: TsevhuTopic[] = [
         text: 'Cada som tem uma «ondulação» (ripple), um traço curvo; segundo os diagramas, cada uma das 4 variantes de ondulação se baseia num círculo dividido em quatro. As ondulações se encaixam em posições em volta do koi: o participante ativo e o estativo ficam no corpo do peixe, os oblíquos se arrumam num arco à frente dele (ligados por trilhas de bolhas), e o aspecto (contínuo, perfectivo, prospectivo, retrospectivo) e o modo (declarativo, imperativo, interrogativo) também têm lugar próprio. Orações subordinadas viram um koi menor. A direção para onde o koi aponta marca o tempo verbal (veja o tópico de tempos).',
       },
       {
+        heading: 'Não é a única: outras escritas circulares e espaciais',
+        text: 'O Koiwrit não nasceu do nada: escrever sem uma linha reta de início a fim, deixando a forma no espaço carregar parte do sentido, é uma ideia que aparece de novo em outras línguas fictícias e também em escritas reais bem antigas.',
+        table: {
+          head: ['Escrita', 'De onde vem', 'Como funciona'],
+          rows: [
+            [
+              'Heptapod B',
+              'Do filme A Chegada (2016), baseado no conto de Ted Chiang; criada pelo designer de produção Patrice Vermette com a artista Martine Bertrand',
+              'Cada frase inteira vira um único símbolo circular, feito da fusão de vários logogramas sem ordem fixa entre eles — um eco da ideia de que os heptápodes enxergam o tempo todo de uma vez, não em sequência.',
+            ],
+            [
+              'Gallifreyano Circular',
+              'Criado pelo fã Loren Sherman em 2011, inspirado na escrita alienígena de Doctor Who (não é material oficial da BBC)',
+              'Serve para escrever qualquer língua (inglês, por exemplo): cada letra vira uma marca numa roda, cada palavra um círculo, e frases inteiras se agrupam em círculos maiores. O próprio Sherman libera o uso livre da sua escrita, com crédito.',
+            ],
+            [
+              'Unker (Unker Non-Linear Writing System)',
+              'Criada pelos linguistas amadores Sai e Alex Fink',
+              'Não pertence a nenhuma língua fictícia específica: é um sistema aberto, pensado para escrever qualquer língua, em que o lugar de cada símbolo na página (e não a ordem das palavras) mostra a relação gramatical dele com os outros.',
+            ],
+            [
+              'Hieróglifos maias',
+              'Mesoamérica, de uns 300 a.C. até a conquista espanhola',
+              'Misturam sinais logográficos e silábicos comprimidos dentro de um mesmo bloco, lido em pares de colunas; nomes de governantes ficavam encaixados dentro de uma moldura (o «cartucho»), parecido com um monograma.',
+            ],
+            [
+              'Tughra otomana',
+              'Caligrafia oficial dos sultões otomanos, desde o século XIV',
+              'O nome e os títulos do sultão, mais a fórmula «sempre vitorioso», se dobram numa única caligrafia ornamental em árabe, com laços e curvas — não se lê em linha reta, e sim como um emblema.',
+            ],
+          ],
+        },
+      },
+      {
         heading: 'Tsevhling',
         text: 'Tsevhling é uma língua derivada, quase um pidgin, do Tsevhu: ordem das palavras mais rígida e sem o sistema ativo × estativo. O autor diz que não é necessário aprendê-la. Neste curso, tudo o que está escrito é Tsevhu.',
       },

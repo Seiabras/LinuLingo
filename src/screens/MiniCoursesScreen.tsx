@@ -69,7 +69,7 @@ export function MiniCoursesScreen() {
               <Pressable
                 key={c.id}
                 accessibilityRole="button"
-                onPress={() => router.push({ pathname: '/curso/[id]', params: { id: c.id } })}
+                onPress={() => (c.route ? router.push(c.route as Parameters<typeof router.push>[0]) : router.push({ pathname: '/curso/[id]', params: { id: c.id } }))}
                 className="flex-row items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 active:opacity-80 dark:border-slate-800 dark:bg-slate-900"
               >
                 <Text className="text-3xl">{c.emoji}</Text>
@@ -78,9 +78,13 @@ export function MiniCoursesScreen() {
                   <Text className="text-sm text-slate-600 dark:text-slate-400" numberOfLines={2}>
                     {c.summary}
                   </Text>
-                  <Text className={`text-xs font-bold ${n === allLessons(c).length ? 'text-conquista' : 'text-slate-500'}`}>
-                    {n === allLessons(c).length ? '🏆 concluído' : `${n} de ${allLessons(c).length} lições`}
-                  </Text>
+                  {c.route ? (
+                    <Text className="text-xs font-bold text-slate-500">tela própria</Text>
+                  ) : (
+                    <Text className={`text-xs font-bold ${n === allLessons(c).length ? 'text-conquista' : 'text-slate-500'}`}>
+                      {n === allLessons(c).length ? '🏆 concluído' : `${n} de ${allLessons(c).length} lições`}
+                    </Text>
+                  )}
                 </View>
                 <Text className="text-xl text-slate-400">›</Text>
               </Pressable>

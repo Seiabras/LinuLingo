@@ -8,7 +8,7 @@ test('mini-cursos: ids únicos, lições com itens e perguntas válidas', () => 
   for (const c of MINI_COURSES) {
     assert.ok(!ids.has(c.id), `curso repetido: ${c.id}`);
     ids.add(c.id);
-    assert.ok(c.lessons.length >= 2, `${c.id}: poucas lições`);
+    if (!c.route) assert.ok(c.lessons.length >= 2, `${c.id}: poucas lições`);
     const lessons = new Set<string>();
     for (const l of c.lessons) {
       assert.ok(!lessons.has(l.id), `${c.id}/${l.id} repetida`);
