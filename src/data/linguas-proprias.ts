@@ -28,6 +28,20 @@ const NAO_VEM_DO_ITALIANO =
 const FORA_DA_LEI_ITALIANA = 'Não está entre as 12 línguas minoritárias da lei italiana de 1999, que protege, por exemplo, o sardo e o friulano.';
 
 export const OWN_LANGUAGE_META: Record<string, OwnLanguageMeta> = {
+  'et-voro': {
+    family: 'Urálico › Fínico',
+    recognition: 'Sem status oficial; o Estado apoia o ensino, a mídia e a pesquisa em võro, com um instituto próprio em Võru.',
+    debated: 'O Estado estoniano o trata como variedade regional do estoniano; muitos linguistas e falantes o consideram língua própria, que tem código ISO 639-3 (vro).',
+  },
+  'et-seto': {
+    family: 'Urálico › Fínico',
+    recognition: 'Sem status oficial; o canto polifônico seto (leelo) é Patrimônio Imaterial da UNESCO desde 2009.',
+    debated: 'Costuma ser contado junto com o võro, como variedade do estoniano do sul; parte dos setos o defende como língua própria.',
+  },
+  'et-vene': { family: 'Indo-europeu › Balto-eslavo › Eslavo', recognition: 'Sem status oficial: é a língua materna de cerca de um quarto da população, sobretudo em Tallinn e no nordeste.' },
+  'et-rootsi': { family: 'Indo-europeu › Germânico › Nórdico', recognition: 'Os suecos da costa têm autonomia cultural reconhecida pela lei estoniana; a fala tradicional quase desapareceu depois de 1944.' },
+  'fo-danskt': { family: 'Indo-europeu › Germânico › Nórdico', recognition: 'Ensinado em todas as escolas; pela Lei de Autonomia de 1948, o feroês é a língua principal, mas o dinamarquês também pode ser usado oficialmente.' },
+  'fo-norn': { family: 'Indo-europeu › Germânico › Nórdico', recognition: 'Extinto: foi falado nas Shetland e nas Órcades até por volta do século XVIII.' },
   'is-taknmal': { family: 'Língua de sinais', recognition: 'Reconhecida por lei em 2011 como a primeira língua da comunidade surda islandesa, com o mesmo status do islandês para quem precisa dela.' },
   'is-polska': { family: 'Indo-europeu › Balto-eslavo › Eslavo', recognition: 'Sem status oficial: é a língua de imigração mais falada da Islândia.' },
   'fi-sueco': { family: 'Indo-europeu › Germânico › Nórdico', recognition: 'Língua nacional da Finlândia ao lado do finlandês, pela Constituição; em Åland é a única oficial.' },

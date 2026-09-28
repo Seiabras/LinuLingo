@@ -24,9 +24,10 @@ As faixas que rolam para os lados (fotos, trilha de subníveis, idiomas e regiõ
 | 🇳🇴 Norueguês (bokmål, com o nynorsk como variante) | Indo-europeu › Germânico › Germânico setentrional › Nórdico ocidental | **disponível** |
 | 🇩🇰 Dinamarquês | Indo-europeu › Germânico › Germânico setentrional › Nórdico oriental | **disponível** |
 | 🇮🇸 Islandês | Indo-europeu › Germânico › Germânico setentrional › Nórdico ocidental | **disponível** |
+| 🇫🇴 Feroês | Indo-europeu › Germânico › Germânico setentrional › Nórdico ocidental | **disponível** |
 | 🇬🇧 Inglês | Indo-europeu › Germânico › Germânico ocidental | em breve |
 | 🇫🇮 Finlandês | Urálico › Fínico › Fínico setentrional | **disponível** |
-| 🇪🇪 Estoniano | Urálico › Fínico › Fínico meridional | em breve |
+| 🇪🇪 Estoniano | Urálico › Fínico › Fínico meridional | **disponível** |
 | 🇯🇵 Japonês | Japônico | em breve |
 | 🇰🇷 Coreano | Coreânico | em breve |
 
@@ -119,6 +120,16 @@ Cada idioma mostra os seus jeitos regionais de falar (18 no espanhol, 5 no romen
 
 - 4.326 palavras (com o genitivo e o partitivo na tradução), 15 unidades, 40 tópicos de gramática (os 15 casos, a harmonia vocálica, a gradação consonantal, o partitivo, os infinitivos, a língua falada, o Kalevala, Kivi e Leino), 48 histórias (de Helsinque a Turku, Tampere, a Lapônia, Inari, Åland e o lago Saimaa; 3 entre os finlandeses da Suécia), 40 falsos amigos (kasa, mato, pato…), 114 etimologias, 10 sotaques, dialetos e línguas (o sueco da Finlândia, as línguas sámi, o carélio).
 - **Sem gênero gramatical**: o palácio da memória explica que «hän» é ele e ela, em vez de mostrar salas. **IPA** de 13.002 formas: a escrita finlandesa é fonética, então as formas das frases saem de regras (tônica na 1ª sílaba, letra dobrada = longa) conferidas contra o dicionário (99% iguais). Roupinha do Linu: a sorokka da Carélia.
+
+## O que tem no feroês
+
+- 4.080 palavras (os três gêneros, com o genitivo e o plural na tradução), 15 unidades, 40 tópicos de gramática (os casos, a escrita etimológica de Hammershaimb e o ð mudo, os ditongos, o purismo, as baladas kvæði e a dança em roda), 45 histórias (de Tórshavn a Klaksvík, Gjógv, Mykines, Suðuroy e o Slættaratindur), 41 falsos amigos, 154 etimologias, 9 sotaques e línguas (os dialetos das ilhas, o dinamarquês nas Faroé, o norn extinto).
+- **IPA por dicionário** (src/data/fo/pronuncia.ts, 9.021 formas: a escrita não mostra a fala); **palácio** com os três gêneros e o Jardim das ovelhas; roupinha do Linu: a húgva. O feroês não tem voz neural livre nem gravações no Lingua Libre: o som vem da voz do aparelho, quando há.
+
+## O que tem no estoniano
+
+- 4.168 palavras (com o genitivo e o partitivo na tradução), 15 unidades, 40 tópicos de gramática (as três durações, os 14 casos, a gradação, o partitivo, os empréstimos alemães, a reforma de Aavik, o Kalevipoeg e Koidula), 45 histórias (de Tallinn a Tartu, Saaremaa, Kihnu, Pärnu, Narva e o pântano de Soomaa), 54 falsos amigos, 120 etimologias, 8 sotaques e línguas (as ilhas, o nordeste, o võro e o seto, o russo e o sueco da costa).
+- **Sem gênero gramatical** (o palácio explica que «tema» é ele e ela); **IPA** de 11.299 formas com as três durações (curta, longa e sobrelonga); roupinha do Linu: a tanu.
 
 ## O que tem no russo
 
@@ -268,6 +279,8 @@ npx tsx scripts/fluxo-noruegues.mjs       # norueguês: palácio en/ei/et, varia
 npx tsx scripts/fluxo-dinamarques.mjs     # dinamarquês: palácio en/et, variante do Schleswig do Sul, diário (en/et), IPA
 npx tsx scripts/fluxo-islandes.mjs        # islandês: palácio com 3 gêneros, variante do Canadá, diário (acentos), IPA
 npx tsx scripts/fluxo-finlandes.mjs       # finlandês: palácio sem gênero, variante da Suécia, diário (ä/ö), IPA
+npx tsx scripts/fluxo-feroes.mjs          # feroês: palácio com 3 gêneros, diário (acentos), IPA
+npx tsx scripts/fluxo-estoniano.mjs       # estoniano: palácio sem gênero, diário (õ ä ö ü), IPA
 npx tsx scripts/fluxo-portugues.mjs        # português de Portugal: variante do Brasil (IPA), diário (estar a, ênclise), falsos amigos
 npx tsx scripts/fluxo-italiano.mjs        # italiano: falsos amigos, IPA, palácio, variante da Suíça, linguística, diário
 node scripts/fluxo-mapa.mjs                # mapa ISO 3166-1/3166-3, zoom nas subdivisões e variante da Moldávia
