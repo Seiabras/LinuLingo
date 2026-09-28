@@ -60,8 +60,12 @@ async function main() {
   process.exit(errors.length ? 1 : 0);
 }
 
+/** Campos técnicos (ids, níveis, emojis): não são texto do idioma. */
+const SKIP_KEYS = new Set(['id', 'level', 'cefr', 'emoji', 'kind']);
+
 /** Percorre os textos: nos campos em português só procura letra latina dentro de palavra cirílica. */
 function walk(v: unknown, path: string, err: (m: string) => void, key = '', ptContext = false) {
+  if (SKIP_KEYS.has(key)) return;
   if (typeof v === 'string') {
     const pt = ptContext || PT_KEYS.has(key);
     for (const p of textProblems(v)) {
