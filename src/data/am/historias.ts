@@ -1,0 +1,5 @@
+import type { StorySeed } from '../types';
+import { STORIES_AM_1 } from './historias-1';
+import { STORIES_AM_2 } from './historias-2';
+
+export const STORIES_AM: StorySeed[] = [...STORIES_AM_1, ...STORIES_AM_2];

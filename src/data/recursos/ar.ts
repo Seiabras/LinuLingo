@@ -43,7 +43,11 @@ export const RECURSOS_AR: LanguageResources = {
         'Provas separadas de escrita (WPT), leitura e audição, para quem precisa comprovar outras habilidades',
       ],
       validity: 'O certificado não traz prazo, mas universidades, empresas e órgãos públicos costumam aceitar só resultados recentes (em geral, de até 2 anos)',
-      usedFor: ['universidades e programas de estudo nos EUA', 'empregos que pedem nível oral certificado (tradução, relações internacionais, governo)', 'currículo'],
+      usedFor: [
+        'universidades e programas de estudo nos EUA',
+        'empregos que pedem nível oral certificado (tradução, relações internacionais, governo)',
+        'currículo',
+      ],
       where:
         'Tudo pela internet, de casa, com fiscalização remota: a inscrição é no site da LTI, em inglês. O OPI é marcado num horário combinado com o avaliador; o OPIc pode ser agendado sob demanda. A escala ACTFL avalia o árabe moderno padrão; alguns dialetos (como o egípcio, o levantino e o iraquiano) são avaliados só na escala ILR, usada pelo governo americano.',
       tip: 'O OPI mede o que você consegue fazer falando, não a gramática decorada: treine contar histórias no passado, descrever lugares e defender uma opinião por alguns minutos seguidos. Faça antes uma simulação de entrevista com um professor.',

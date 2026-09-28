@@ -20,7 +20,11 @@ export const RECURSOS_HI: LanguageResources = {
         'Tudo ao vivo, por telefone ou vídeo, com um avaliador certificado, em 15 a 30 minutos',
       ],
       validity: 'O certificado não traz prazo, mas universidades, empresas e órgãos públicos costumam aceitar só resultados recentes (em geral, de até 2 anos)',
-      usedFor: ['universidades e programas de estudo nos EUA', 'empregos que pedem nível oral certificado (tradução, relações internacionais, governo)', 'currículo'],
+      usedFor: [
+        'universidades e programas de estudo nos EUA',
+        'empregos que pedem nível oral certificado (tradução, relações internacionais, governo)',
+        'currículo',
+      ],
       where:
         'Tudo pela internet, de casa, com fiscalização remota: a inscrição é no site da LTI, em inglês, e a entrevista é marcada num horário combinado com um avaliador de híndi. Confira no site se a versão no computador (OPIc) está disponível em híndi; a entrevista ao vivo está.',
       tip: 'Não existe uma prova internacional de híndi no estilo do DELE ou do HSK, e o OPI é a opção mais reconhecida fora da Índia. Ele mede o que você faz falando, não a gramática decorada: treine contar histórias no passado (com o «ने» no lugar certo), descrever lugares e defender uma opinião, e faça antes uma simulação com um professor.',

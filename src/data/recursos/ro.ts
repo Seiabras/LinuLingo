@@ -35,11 +35,7 @@ export const RECURSOS_RO: LanguageResources = {
       flag: '🇷🇴',
       levels: 'Um certificado por nível, do B1 ao C2',
       cefr: ['B1', 'C2'],
-      format: [
-        'Compreensão de leitura e gramática',
-        'Produção escrita: um texto sobre um tema dado',
-        'Compreensão e expressão oral: conversa com a banca',
-      ],
+      format: ['Compreensão de leitura e gramática', 'Produção escrita: um texto sobre um tema dado', 'Compreensão e expressão oral: conversa com a banca'],
       validity: 'Sem prazo definido; para a cidadania, o que conta é atestar o nível B1 ou mais',
       usedFor: ['cidadania romena', 'trabalho', 'comprovação de nível'],
       where:

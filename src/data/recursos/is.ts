@@ -42,11 +42,7 @@ export const RECURSOS_IS: LanguageResources = {
         'Avaliação por disciplina: provas, trabalhos e participação',
       ],
       validity: 'O diploma não expira',
-      usedFor: [
-        'Estudar em islandês na universidade',
-        'Mostrar islandês a empregadores na Islândia',
-        'Certificados de escola islandesa podem dispensar a prova de cidadania, a critério da imigração',
-      ],
+      usedFor: ['Estudar em islandês na universidade', 'Mostrar islandês a empregadores na Islândia', 'Certificados de escola islandesa podem dispensar a prova de cidadania, a critério da imigração'],
       where:
         'Presencial, em Reykjavík, com matrícula na Universidade da Islândia (o diploma prático tem turmas de manhã ou no fim da tarde). A Universidade de Akureyri oferece um diploma prático a distância. Do Brasil, dá para começar de graça pelo Icelandic Online, da própria HÍ',
       tip: 'Antes de se candidatar, faça os cursos do Icelandic Online: são gratuitos, vêm da mesma universidade e dão a base de declinações que as aulas presumem.',

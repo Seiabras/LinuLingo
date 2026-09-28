@@ -45,8 +45,7 @@ export const RECURSOS_JA: LanguageResources = {
       ],
       validity: 'A organizadora não fixa prazo; quem pede o certificado decide se aceita um resultado antigo',
       usedFor: ['Emprego em empresas japonesas (a prova é focada no japonês prático e de trabalho)', 'Comprovação de japonês em pedidos de visto para o Japão'],
-      where:
-        'No Brasil, é organizada pela J.Master Brasil (jmasterbrasil.com.br), com aplicações algumas vezes por ano em cidades como São Paulo e Londrina; as datas e os locais mudam a cada ano',
+      where: 'No Brasil, é organizada pela J.Master Brasil (jmasterbrasil.com.br), com aplicações algumas vezes por ano em cidades como São Paulo e Londrina; as datas e os locais mudam a cada ano',
       tip: 'Boa opção para ter nota mais vezes por ano do que o JLPT; treine escrever à mão a leitura dos kanji e frases curtas, que o JLPT não cobra.',
       url: 'https://j-test.jp/',
     },
