@@ -1514,4 +1514,232 @@ export const STORIES_KO_1: StorySeed[] = [
       },
     },
   },
+  // ───────────────────────── B1.2 ─────────────────────────
+  {
+    id: 'ko-h16',
+    level: 'B1.2',
+    cefr: 'B1',
+    title: '수원에서 보낸 설날',
+    emoji: '🧧',
+    summary: 'No Ano-Novo lunar, o Linu passa o 설날 com a família do amigo Hyeonu em Suwon: reverência aos avós, envelope de dinheiro, sopa de arroz que «dá um ano a mais» e uma partida de 윷놀이.',
+    cultural_context:
+      'O 설날, o Ano-Novo do calendário lunar, cai entre janeiro e fevereiro e é o maior feriado do ano junto com o 추석. De manhã, os mais novos fazem o 세배: uma reverência completa, de joelhos (큰절), diante dos mais velhos, dizendo «새해 복 많이 받으세요» («receba muitas bênçãos no ano novo»). Os avós respondem com palavras de bênção (덕담) e dão o 세뱃돈, dinheiro num envelope, que não se abre na frente deles. Come-se o 떡국, sopa de fatias de bolo de arroz: diz-se que quem toma a tigela do Ano-Novo fica um ano mais velho, lembrança da antiga contagem coreana, em que todos faziam aniversário juntos no Ano-Novo. Depois, a família joga 윷놀이, com quatro varetas que caem de um lado ou de outro: 도, 개, 걸, 윷 e 모. Nesta história, a família mora em Suwon, a cidade da fortaleza Hwaseong.',
+    start: 'start',
+    glossary: [
+      ['설날 / 세배', 'Ano-Novo lunar / reverência de Ano-Novo aos mais velhos'],
+      ['큰절', 'a reverência completa, de joelhos até o chão'],
+      ['새해 복 많이 받으세요!', 'Feliz Ano-Novo! (literalmente: «receba muitas bênçãos no ano novo»)'],
+      ['덕담 / 세뱃돈', 'palavras de bênção dos mais velhos / o dinheiro do 세배'],
+      ['떡국', 'sopa de fatias de bolo de arroz, prato do 설날'],
+      ['나이를 먹다', 'ficar mais velho (literalmente: «comer idade»)'],
+      ['할 줄 알다', 'saber fazer (-(으)ㄹ 줄 알다)'],
+      ['-었다 / -는다', 'a narração escrita (한다체): 갔다 (foi), 웃었다 (riu), 이긴다 (vence)'],
+      ['윷놀이 / 모', 'jogo das quatro varetas / a melhor jogada, as quatro de costas'],
+      ['-거라 / -어라', 'imperativo dos avós para os netos: 잘되거라 (que dê tudo certo), 사 먹어라 (compre algo para comer)'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🚪',
+        text: '설날 아침, 리누는 친구 현우를 따라 수원에 있는 현우 할아버지 댁에 갔다. 현관문을 열자 떡국 냄새가 났다. 현우가 속삭였다. «들어가면 제일 먼저 세배부터 해야 돼. 너 할 줄 알지?»',
+        translation: 'Na manhã do 설날, o Linu acompanhou o amigo Hyeonu até a casa do avô dele, em Suwon. Quando a porta se abriu, veio o cheiro de 떡국. O Hyeonu cochichou: «Quando a gente entrar, a primeira coisa é o 세배. Você sabe fazer, né?»',
+        choices: [
+          { text: '«아니, 몰라. 어떻게 하는 거야?»', translation: '«Não, não sei. Como é que faz?»', next: 'aula' },
+          { text: '«당연하지! 걱정 마.»', translation: '«Claro! Pode ficar tranquilo.»', next: 'confiante' },
+        ],
+      },
+      confiante: {
+        emoji: '😅',
+        text: '리누는 할아버지 앞에서 고개만 꾸벅 숙이고 «안녕하세요!» 하고 끝냈다. 사촌 동생들이 킥킥 웃었다. 현우가 한 손으로 얼굴을 가렸다.',
+        translation: 'Diante do avô, o Linu só abaixou a cabeça rapidinho, disse «Olá!» e parou por aí. Os primos pequenos deram risadinhas. O Hyeonu tapou o rosto com a mão.',
+        choices: [{ text: '«현우야… 사실 잘 몰라. 가르쳐 줘.»', translation: '«Hyeonu… na verdade eu não sei direito. Me ensina.»', next: 'aula' }],
+      },
+      aula: {
+        emoji: '🙇',
+        text: '현우가 설명했다. «어른들이 앉으시면, 두 손을 모으고 무릎을 꿇으면서 큰절을 하는 거야. 그다음에 새해 인사를 드리면 돼. 그러면 어른들이 덕담을 해 주시고 세뱃돈도 주셔.»',
+        translation: 'O Hyeonu explicou: «Quando os mais velhos se sentarem, você junta as mãos e se ajoelha fazendo a reverência completa. Depois, faz o cumprimento de Ano-Novo. Aí eles dizem palavras de bênção e ainda dão o 세뱃돈.»',
+        choices: [
+          { text: '리누는 할아버지, 할머니 앞에서 천천히 큰절을 했다. «새해 복 많이 받으세요!»', translation: 'Diante do avô e da avó, o Linu fez devagar a reverência completa. «Feliz Ano-Novo!»', next: 'deokdam' },
+          {
+            text: '리누는 선 채로 할아버지께 손을 흔들었다. «할아버지, 새해 복 많이 받아!»',
+            translation: 'O Linu, de pé, acenou para o avô. «Vô, feliz ano-novo pra você!»',
+            wrong: 'O Hyeonu explicou que o 세배 é a reverência completa, «무릎을 꿇으면서» (de joelhos), e que o cumprimento se «드리다» (oferece, com respeito). Com os avós, nada de 반말: «받으세요», não «받아».',
+          },
+        ],
+      },
+      deokdam: {
+        emoji: '🧓',
+        text: '할아버지가 흐뭇하게 웃으셨다. «그래, 올해도 건강하고 하는 일 다 잘되거라.» 할머니는 하얀 봉투를 내미셨다. «이건 세뱃돈이다. 맛있는 거 사 먹어라.»',
+        translation: 'O avô sorriu, satisfeito. «Isso mesmo. Que este ano você tenha saúde e que tudo o que fizer dê certo.» A avó estendeu um envelope branco. «Isto é o 세뱃돈. Compre alguma coisa gostosa para comer.»',
+        choices: [
+          { text: '리누는 두 손으로 봉투를 받았다. «감사합니다, 할머니.»', translation: 'O Linu recebeu o envelope com as duas mãos. «Obrigado, vó.»', next: 'tteokguk' },
+          { text: '리누는 봉투를 받자마자 열어서 돈을 세었다.', translation: 'Assim que recebeu o envelope, o Linu abriu e contou o dinheiro.', next: 'contar' },
+        ],
+      },
+      contar: {
+        emoji: '💴',
+        text: '현우 고모가 헛기침을 하셨다. 현우가 작게 말했다. «야, 어른들 앞에서 바로 열어 보는 거 아니야.» 리누는 얼굴이 빨개져서 봉투를 얼른 주머니에 넣었다.',
+        translation: 'A tia do Hyeonu pigarreou. O Hyeonu disse baixinho: «Ei, não se abre na frente dos mais velhos.» O Linu ficou vermelho e enfiou depressa o envelope no bolso.',
+        choices: [{ text: '«죄송합니다. 잘 쓰겠습니다, 할머니.»', translation: '«Me desculpem. Vou usar bem, vó.»', next: 'tteokguk' }],
+      },
+      tteokguk: {
+        emoji: '🍲',
+        text: '상에 떡국이 올라왔다. 현우의 어린 사촌 서아가 물었다. «리누 삼촌, 떡국 먹으면 한 살 더 먹는 거 알아요?» 할머니가 웃으셨다. «그래서 설날에는 떡국을 먹어야 나이를 먹는 거야.»',
+        translation: 'O 떡국 chegou à mesa. A priminha do Hyeonu, a Seoa, perguntou: «Tio Linu, sabia que quem toma 떡국 fica um ano mais velho?» A avó riu. «Por isso, no 설날, tem que tomar 떡국 para ganhar mais um ano.»',
+        choices: [
+          { text: '«그럼 두 그릇 먹으면 두 살 더 먹어요?»', translation: '«Então, se eu tomar duas tigelas, fico dois anos mais velho?»', next: 'duas' },
+          { text: '«그럼 저도 오늘부터 한 살 더 먹었네요.»', translation: '«Então eu também fiquei um ano mais velho hoje.»', next: 'yut' },
+          {
+            text: '«떡국을 먹으면 한 살 어려져요? 그럼 많이 먹을래요!»',
+            translation: '«Quem toma 떡국 fica um ano mais novo? Então quero muito!»',
+            wrong: 'A Seoa disse «한 살 더 먹는»: fica um ano MAIS VELHO. 나이를 먹다 («comer idade») é envelhecer; ficar mais novo seria 어려지다.',
+          },
+        ],
+      },
+      duas: {
+        emoji: '😂',
+        text: '모두 크게 웃었다. 할아버지가 껄껄 웃으셨다. «그럼 나는 떡국을 여든 그릇이나 먹었겠구나!»',
+        translation: 'Todos caíram na risada. O avô deu uma gargalhada. «Então eu já devo ter tomado oitenta tigelas de 떡국!»',
+        choices: [
+          { text: '«하하, 그럼 저는 한 그릇만 먹을게요.»', translation: '«Haha, então eu vou tomar só uma.»', next: 'yut' },
+          { text: '리누는 정말로 떡국을 세 그릇이나 먹었다.', translation: 'O Linu tomou mesmo três tigelas de 떡국.', next: 'final_sono' },
+        ],
+      },
+      yut: {
+        emoji: '🎲',
+        text: '점심을 먹은 뒤 온 가족이 거실에서 윷놀이를 했다. 리누는 현우와 한 팀이 됐다. 리누가 던진 윷가락 네 개가 모두 엎어졌다. «모다!» 이제 마지막 말만 들어오면 이긴다. 그런데 바로 앞에 서아 팀 말이 있었다.',
+        translation: 'Depois do almoço, a família inteira jogou 윷놀이 na sala. O Linu fez dupla com o Hyeonu. As quatro varetas que o Linu jogou caíram todas de costas. «모!» Agora, se a última peça chegasse, eles venceriam. Mas bem na frente estava a peça do time da Seoa.',
+        choices: [
+          { text: '«잡자!» 리누는 서아 팀 말을 잡았다.', translation: '«Vamos pegar!» O Linu capturou a peça do time da Seoa.', next: 'final_bom' },
+          { text: '리누는 서아의 얼굴을 보고 일부러 다른 길로 갔다.', translation: 'O Linu olhou o rosto da Seoa e, de propósito, foi por outro caminho.', next: 'final_gentil' },
+        ],
+      },
+      final_bom: {
+        emoji: '🎉',
+        text: '리누의 말이 서아 팀 말을 잡고 한 바퀴를 돌아 들어왔다. «우리가 이겼다!» 현우가 리누를 껴안았다. 서아는 입을 삐죽 내밀었지만, 할아버지가 한 판 더 하자고 하시자 금세 웃었다.',
+        translation: 'A peça do Linu capturou a do time da Seoa, deu a volta e chegou. «Ganhamos!» O Hyeonu abraçou o Linu. A Seoa fez bico, mas quando o avô propôs mais uma partida, ela logo abriu um sorriso.',
+        ending: { tone: 'bom', title: 'Um 모 de campeão', message: 'O Linu fez o 세배 como manda o costume, recebeu o 세뱃돈 com as duas mãos e ainda venceu no 윷놀이.' },
+      },
+      final_gentil: {
+        emoji: '💝',
+        text: '리누는 서아 팀 말을 잡지 않았다. 결국 서아 팀이 이겼고, 서아는 방방 뛰며 좋아했다. 할머니가 리누의 손을 꼭 잡으셨다. «우리 리누, 마음이 참 넓구나.»',
+        translation: 'O Linu não capturou a peça do time da Seoa. No fim, o time da Seoa venceu, e ela pulava de alegria. A avó segurou firme a mão do Linu. «O nosso Linu tem um coração enorme.»',
+        ending: { tone: 'bom', title: 'Perder para ganhar', message: 'O Linu perdeu a partida de 윷놀이, mas ganhou o coração da família do Hyeonu.' },
+      },
+      final_sono: {
+        emoji: '😴',
+        text: '떡국 세 그릇을 먹은 리누는 뜨끈한 방바닥에 잠깐 누웠다가 그대로 잠이 들었다. 눈을 떴을 때 윷놀이는 벌써 끝나 있었다. 서아가 말했다. «리누 삼촌, 이제 세 살 더 먹었어요!»',
+        translation: 'Depois de três tigelas de 떡국, o Linu se deitou um pouco no chão quentinho e pegou no sono ali mesmo. Quando abriu os olhos, o 윷놀이 já tinha acabado. A Seoa disse: «Tio Linu, agora você está três anos mais velho!»',
+        ending: { tone: 'neutro', title: 'Três anos mais velho', message: 'Três tigelas de 떡국 e um cochilo no chão aquecido: o Linu perdeu o 윷놀이, a brincadeira mais animada do 설날.' },
+      },
+    },
+  },
+  {
+    id: 'ko-h17',
+    level: 'B1.2',
+    cefr: 'B1',
+    title: '백운대 가는 길',
+    emoji: '⛰️',
+    summary: 'O Linu e a amiga Daeun sobem ao pico Baegundae, no monte Bukhansan, dentro de Seul, e no caminho encontram um grupo de senhores que sobe a montanha há trinta anos.',
+    cultural_context:
+      'Cerca de setenta por cento do território coreano é montanhoso, e fazer trilha (등산) é um dos passatempos preferidos do país. O Parque Nacional de Bukhansan fica dentro dos limites de Seul, a poucos minutos de metrô, e é um dos parques mais visitados do mundo em relação ao seu tamanho. O pico mais alto, o Baegundae (836 m), tem uma bandeira da Coreia no topo; o último trecho é de rocha, subido com a ajuda de cabos de aço. Nas trilhas, os coreanos usam roupas de trilha coloridas e dividem lanches como pepino, tangerina e ovo cozido. Um costume antigo, o 막걸리 no cume, esbarra hoje na lei: desde 2018, beber álcool nos picos e abrigos dos parques nacionais dá multa.',
+    start: 'start',
+    glossary: [
+      ['등산 / 등산객 / 등산복', 'trilha na montanha / quem faz trilha / roupa de trilha'],
+      ['정상', 'cume, topo da montanha'],
+      ['쇠줄', 'cabo de aço'],
+      ['젊은이', 'jovem (como os mais velhos chamam os jovens)'],
+      ['올라갈 수 있겠어?', 'será que você consegue subir? (-(으)ㄹ 수 있겠다: dúvida sobre a capacidade, no 반말)'],
+      ['-아/어서요', 'é que …: dá o motivo com educação (올라가야 해서요: é que precisamos subir)'],
+      ['-째', 'há … (tempo contínuo): 삼십 년째 (há trinta anos)'],
+      ['-대요', 'dizem que … (-다고 해요 encurtado): 마시면 안 된대요 (dizem que não pode beber)'],
+      ['금지 / 과태료', 'proibição / multa'],
+      ['한 수 배우다', 'aprender uma lição (com alguém)'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🚇',
+        text: '토요일 아침 여덟 시, 북한산우이역 앞은 등산객들로 가득했다. 모두 알록달록한 등산복을 입고 있었다. 리누와 친구 다은이는 오늘 백운대에 오르기로 했다. 다은이가 리누의 운동화를 보고 말했다. «너 그 신발로 올라갈 수 있겠어? 위에는 바위가 많은데.»',
+        translation: 'Sábado, oito da manhã: a frente da estação Bukhansan Ui estava lotada de gente de trilha. Todo mundo usava roupas coloridas de montanha. O Linu e a amiga Daeun tinham combinado de subir o Baegundae. A Daeun olhou o tênis do Linu e disse: «Você acha que consegue subir com esse tênis? Lá em cima tem muita pedra.»',
+        choices: [
+          { text: '«괜찮아. 펭귄 발은 잘 안 미끄러져!»', translation: '«Tranquilo. Pé de pinguim quase não escorrega!»', next: 'subida' },
+          { text: '«그럼 역 앞 가게에서 장갑이라도 사자.»', translation: '«Então vamos pelo menos comprar luvas na loja da estação.»', next: 'luvas' },
+        ],
+      },
+      luvas: {
+        emoji: '🧤',
+        text: '등산용품 가게 아주머니가 목장갑을 건네주셨다. «백운대 올라가는 마지막 길은 쇠줄을 잡고 가야 하니까 장갑이 꼭 필요해요. 조심해서 다녀와요!»',
+        translation: 'A senhora da loja de artigos de montanha entregou um par de luvas de algodão. «O último trecho até o Baegundae é segurando num cabo de aço, então luva é indispensável. Vá com cuidado!»',
+        choices: [{ text: '두 사람은 장갑을 끼고 산으로 출발했다.', translation: 'Os dois calçaram as luvas e partiram para a montanha.', next: 'subida' }],
+      },
+      subida: {
+        emoji: '🥾',
+        text: '절을 지나자 길이 점점 가팔라졌다. 한 시간쯤 올라가자 하루재라는 고개가 나왔다. 거기에서 등산복을 맞춰 입은 아저씨 네 분이 쉬고 계셨다. 한 분이 리누를 보고 반갑게 손짓하셨다. «어이, 젊은이들! 이리 와서 오이 하나 먹고 가요!»',
+        translation: 'Depois do templo, o caminho foi ficando cada vez mais íngreme. Após uma hora de subida, chegaram a um passo chamado Harujae. Ali, quatro senhores com roupas de trilha iguais estavam descansando. Um deles viu o Linu e acenou, animado. «Ei, rapaziada! Venham cá comer um pepino antes de seguir!»',
+        choices: [
+          { text: '«감사합니다! 잘 먹겠습니다.»', translation: '«Obrigado! Vamos aceitar, sim.»', next: 'ajeossi' },
+          { text: '«괜찮습니다. 저희는 빨리 올라가야 해서요.»', translation: '«Não precisa, obrigado. É que a gente precisa subir rápido.»', next: 'rapido' },
+        ],
+      },
+      ajeossi: {
+        emoji: '🥒',
+        text: '아저씨들은 오이, 귤, 삶은 달걀을 나눠 주셨다. «우리는 삼십 년째 토요일마다 북한산에 와. 산에서는 다 친구야.» 그러고는 한 분이 신기하다는 듯이 물으셨다. «그런데 펭귄도 산에 올라가요?»',
+        translation: 'Os senhores dividiram pepino, tangerina e ovo cozido. «A gente vem ao Bukhansan todo sábado há trinta anos. Na montanha, todo mundo é amigo.» Aí um deles perguntou, curioso: «Mas pinguim também sobe montanha?»',
+        choices: [
+          { text: '«그럼요! 남극에서도 바위 언덕을 매일 올라가요.»', translation: '«Claro! Na Antártida também subo encostas de pedra todo dia.»', next: 'rocha' },
+          {
+            text: '«네, 저도 삼십 년 동안 토요일마다 왔어요.»',
+            translation: '«Sim, eu também venho todo sábado há trinta anos.»',
+            wrong: 'Quem sobe há trinta anos são os senhores: «우리는 삼십 년째…» (nós, há trinta anos…). A pergunta para o Linu foi outra: «펭귄도 산에 올라가요?», pinguim também sobe montanha?',
+          },
+        ],
+      },
+      rapido: {
+        emoji: '😮‍💨',
+        text: '두 사람은 쉬지 않고 올라갔다. 그런데 삼십 분쯤 지나자 리누의 다리가 후들후들 떨리기 시작했다. 다은이가 물병을 내밀었다. «거봐, 산에서는 천천히 가야 한다니까.»',
+        translation: 'Os dois subiram sem parar. Mas, uns trinta minutos depois, as pernas do Linu começaram a tremer. A Daeun estendeu a garrafa de água. «Eu não falei? Na montanha tem que ir devagar.»',
+        choices: [{ text: '두 사람은 바위에 앉아 잠깐 쉬었다가 다시 걸었다.', translation: 'Os dois se sentaram numa pedra, descansaram um pouco e seguiram.', next: 'rocha' }],
+      },
+      rocha: {
+        emoji: '🧗',
+        text: '백운대 바로 아래에는 가파른 바위가 있었다. 사람들은 쇠줄을 잡고 한 줄로 천천히 올라가고 있었다. 위에서 내려오던 사람이 말했다. «내려오는 사람이 먼저 지나갈게요. 조금만 기다려 주세요.»',
+        translation: 'Logo abaixo do Baegundae havia uma rocha íngreme. As pessoas subiam devagar, em fila, segurando o cabo de aço. Alguém que vinha descendo disse: «Quem está descendo passa primeiro. Esperem só um pouquinho, por favor.»',
+        choices: [
+          { text: '리누는 옆으로 비켜서서 기다렸다.', translation: 'O Linu deu passagem e esperou.', next: 'cume' },
+          { text: '리누는 기다리기 싫어서 쇠줄을 놓고 바위 옆으로 올라가려고 했다.', translation: 'Sem paciência para esperar, o Linu largou o cabo e tentou subir pela lateral da rocha.', next: 'final_tornozelo' },
+          {
+            text: '«네, 먼저 올라갈게요!» 리누는 그 사람 옆으로 밀고 올라갔다.',
+            translation: '«Certo, eu subo primeiro!» O Linu foi subindo, empurrando a pessoa.',
+            wrong: 'A pessoa disse «내려오는 사람이 먼저 지나갈게요»: quem DESCE passa primeiro. E pediu «조금만 기다려 주세요» (esperem um pouquinho). Era hora de esperar, não de subir!',
+          },
+        ],
+      },
+      cume: {
+        emoji: '🇰🇷',
+        text: '드디어 해발 팔백삼십육 미터, 백운대 정상! 바위 꼭대기에서 태극기가 바람에 펄럭였고, 발아래로 서울 시내가 한눈에 들어왔다. 아까 그 아저씨들도 벌써 올라와 계셨다. 한 분이 가방에서 막걸리를 꺼내셨다. «정상에 왔으면 한 잔 해야지!»',
+        translation: 'Enfim, 836 metros de altitude: o topo do Baegundae! No alto da rocha, a bandeira da Coreia tremulava ao vento, e lá embaixo se via Seul inteira de uma vez. Os senhores de antes já tinham chegado. Um deles tirou um 막걸리 da mochila. «Chegou ao cume, tem que brindar!»',
+        choices: [
+          { text: '«아저씨, 요즘 국립공원 정상에서는 술을 마시면 안 된대요. 대신 제 초콜릿 드세요!»', translation: '«Senhor, dizem que agora é proibido beber no topo dos parques nacionais. Em vez disso, pegue o meu chocolate!»', next: 'final_bom' },
+          { text: '«좋아요! 저도 한 잔 주세요!»', translation: '«Oba! Um copo para mim também!»', next: 'final_multa' },
+        ],
+      },
+      final_bom: {
+        emoji: '🎉',
+        text: '아저씨들은 서로 얼굴을 보시더니 껄껄 웃으셨다. «허허, 젊은이한테 한 수 배웠네!» 막걸리는 다시 가방으로 들어갔고, 모두 초콜릿을 나눠 먹으며 사진을 찍었다. 내려오는 길에 아저씨 한 분이 말씀하셨다. «다음 주 토요일에도 우이역 여덟 시야. 알지?»',
+        translation: 'Os senhores se entreolharam e caíram na gargalhada. «Ha, ha, aprendemos uma lição com o rapaz!» O 막걸리 voltou para a mochila, e todos dividiram o chocolate e tiraram fotos. Na descida, um dos senhores disse: «Sábado que vem, estação Ui, oito horas. Combinado?»',
+        ending: { tone: 'bom', title: 'No topo do Baegundae', message: 'O Linu subiu com calma, deu passagem na rocha e ainda lembrou a regra do parque com educação: agora tem um clube de trilha aos sábados.' },
+      },
+      final_multa: {
+        emoji: '🧾',
+        text: '그때 국립공원 직원이 다가왔다. «여기는 음주 금지 구역입니다. 적발되면 과태료를 내셔야 합니다.» 아저씨들은 머쓱하게 막걸리를 가방에 넣으셨다. 빈 컵을 든 리누도 얼굴이 빨개졌다.',
+        translation: 'Nessa hora, um funcionário do parque nacional se aproximou. «Aqui é proibido consumir bebida alcoólica. Quem for pego tem que pagar multa.» Sem graça, os senhores guardaram o 막걸리 na mochila. O Linu, com o copo vazio na mão, também ficou vermelho.',
+        ending: { tone: 'neutro', title: 'Brinde proibido', message: 'O costume do 막걸리 no cume ficou no passado: nos picos dos parques nacionais, beber dá multa.' },
+      },
+      final_tornozelo: {
+        emoji: '🩹',
+        text: '바위 옆은 생각보다 미끄러웠다. 리누의 발이 쭉 미끄러졌고, 다은이가 재빨리 팔을 잡았다. 다행히 크게 다치지는 않았지만 발목을 삐고 말았다. 두 사람은 정상을 코앞에 두고 천천히 내려와야 했다.',
+        translation: 'A lateral da rocha era mais escorregadia do que parecia. O pé do Linu deslizou, e a Daeun agarrou o braço dele bem rápido. Por sorte, ele não se machucou feio, mas acabou torcendo o tornozelo. Com o cume logo ali, os dois tiveram que descer devagar.',
+        ending: { tone: 'neutro', title: 'Quase no topo', message: 'Na rocha do Baegundae, a regra é simples: segurar o cabo e esperar a vez. A pressa custou o cume.' },
+      },
+    },
+  },
 ];

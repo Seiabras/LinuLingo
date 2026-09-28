@@ -250,7 +250,7 @@ export const UNITS_KO: UnitSeed[] = [
     emoji: '👨‍👩‍👧‍👦',
     card: {
       id: 'ko-c3',
-      title: '«Unni», «oppa» e o nosso 우리',
+      title: '«Eonni», «oppa» e o nosso 우리',
       emoji: '👵',
       history:
         'A família coreana foi moldada pelo confucionismo, que a dinastia Joseon (1392–1910) adotou como base do Estado: cada pessoa tem um lugar na hierarquia, os mais novos respeitam os mais velhos, e os filhos honram os pais e os antepassados com ritos (제사) em datas como o 추석, a festa da colheita, e o 설날, o ano-novo lunar. Muitas famílias guardam um livro de genealogia (족보) que acompanha o clã por séculos, e cada clã tem um lugar de origem (본관): os Kim de Gimhae, que se dizem descendentes do rei Suro, do antigo reino de Gaya, são o maior deles, com mais de quatro milhões de pessoas. A mulher não adota o sobrenome do marido ao se casar, e desde 2008, com o fim do antigo registro por chefe de família (호주제), os filhos podem levar o sobrenome da mãe se os pais combinarem. As famílias hoje são pequenas, mas o vocabulário continua rico: não existe uma palavra neutra para «irmão mais velho», e o nome de cada parente depende de quem fala.',
@@ -298,7 +298,7 @@ export const UNITS_KO: UnitSeed[] = [
       },
       {
         id: 'ko-u3-l2',
-        title: 'Oppa, unni, hyeong, nuna',
+        title: 'Oppa, eonni, hyeong, nuna',
         kind: 'licao',
         words: ['형', '오빠', '누나', '언니', '동생', '있다'],
         cloze: [

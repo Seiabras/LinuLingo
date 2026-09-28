@@ -923,4 +923,111 @@ export const STORIES_KO_2: StorySeed[] = [
       },
     },
   },
+  {
+    id: 'ko-h30',
+    level: 'B2.2',
+    cefr: 'B2',
+    title: '광화문 편집국의 밤',
+    emoji: '🗞️',
+    summary: 'Estagiário num jornal de Gwanghwamun, o Linu aprende a escrever manchetes no estilo seco do jornal coreano e enfrenta, na hora do fechamento, um boato de incêndio que corre nas redes.',
+    cultural_context:
+      'Gwanghwamun, no centro de Seul, é o bairro dos grandes jornais, dos ministérios e da praça com as estátuas do rei Sejong e do almirante Yi Sun-sin. A manchete coreana tem gramática própria: frases curtas, partículas cortadas, o sujeito seguido de vírgula («정부, …»), fim em substantivo e reticências (…) separando as partes. No texto da notícia não se usa honorífico, nem para o presidente: escreve-se «대통령은 …라고 말했다», e a fonte vem sempre explícita, com «-다고 밝혔다». Na era das redes sociais, a pressa gera 오보, a notícia errada, e o jornal precisa publicar um 정정 보도, a correção.',
+    start: 'start',
+    glossary: [
+      ['편집국', 'redação (do jornal)'],
+      ['마감', 'fechamento, prazo final'],
+      ['제목을 달다', 'dar título (a uma matéria)'],
+      ['속보', 'notícia urgente, «plantão»'],
+      ['오보 / 정정 보도', 'notícia errada / correção publicada, errata'],
+      ['확인되는 대로', 'assim que for confirmado (-는 대로: assim que)'],
+      ['-다고 밝혔다', 'declarou que… (na notícia não se usa honorífico, nem para o presidente)'],
+      ['오보 낼 뻔했다', 'por pouco não demos notícia errada (-ㄹ 뻔하다: quase…)'],
+      ['불이 난 게 아니라', 'não foi incêndio, e sim… (-ㄴ 게 아니라: não é que…, e sim…)'],
+    ],
+    nodes: {
+      start: {
+        emoji: '⌨️',
+        text: '밤 아홉 시, 광화문의 한 신문사 편집국은 키보드 소리로 가득했다. 내일 아침 신문의 마감은 밤 열 시 반이었다. 인턴 기자 리누에게 한서연 선배가 기사 한 편을 넘겨주었다. “기상청은 내일 아침 서울의 기온이 영하 십 도까지 떨어져 올겨울 들어 가장 추울 것이라고 밝혔다.” 선배가 말했다. “이 기사 제목 좀 달아 봐요. 열다섯 자 안으로.”',
+        translation: 'Nove da noite: a redação de um jornal de Gwanghwamun estava cheia do barulho de teclados. O fechamento do jornal da manhã seguinte era às dez e meia. A repórter Han Seoyeon passou uma matéria ao estagiário Linu: «O serviço meteorológico declarou que amanhã de manhã a temperatura em Seul vai cair até dez graus negativos, a mais fria deste inverno.» E disse: «Dá um título para essa matéria. Em até quinze caracteres.»',
+        choices: [
+          { text: '“서울 영하 십 도… 올겨울 첫 한파”', translation: '«Seul a dez graus negativos… a primeira onda de frio do inverno»', next: 'jemok_a' },
+          { text: '“기상청께서 내일 아침이 아주 추울 것이라고 말씀하셨습니다”', translation: '«O serviço meteorológico nos informou respeitosamente que amanhã de manhã fará muito frio»', next: 'jemok_b' },
+        ],
+      },
+      jemok_b: {
+        emoji: '🤭',
+        text: '선배는 모니터를 보더니 웃음을 참지 못했다. “신문 제목에 ‘께서’나 ‘말씀하셨습니다’는 안 써요. 기사에서는 대통령한테도 높임말을 안 쓰거든요. 조사는 최대한 빼고, 되도록 명사로 끝내요. 그리고 열다섯 자가 훨씬 넘었어요.” 리누는 제목을 지우고 다시 썼다.',
+        translation: 'A Seoyeon olhou o monitor e não segurou o riso: «Em título de jornal não se usa «께서» nem «말씀하셨습니다». Na notícia, nem para o presidente se usa honorífico. Corte o máximo de partículas e, se der, termine com substantivo. E passou muito dos quinze caracteres.» O Linu apagou o título e escreveu de novo.',
+        choices: [
+          { text: '리누는 “서울 영하 십 도… 올겨울 첫 한파”라고 고쳐 썼다.', translation: 'O Linu reescreveu: «Seul a dez graus negativos… a primeira onda de frio do inverno».', next: 'jemok_a' },
+        ],
+      },
+      jemok_a: {
+        emoji: '✅',
+        text: '한 선배가 고개를 끄덕였다. “좋아요. 짧고, 숫자가 먼저 눈에 들어오네요.” 선배는 기사 본문의 한 단어를 가리켰다. “그런데 여기 ‘내일 아침’은 ‘오늘 아침’으로 바꿔야 해요. 종이 신문은 내일 아침에 읽으니까요.” 리누가 고개를 끄덕이는 순간, 윤 부장이 자리에서 벌떡 일어났다. “속보! 광화문 근처 건물에서 불이 났다는 사진이 에스엔에스에 돌고 있어!”',
+        translation: 'A Seoyeon aprovou com a cabeça: «Bom. Curto, e o número salta aos olhos primeiro.» Ela apontou uma palavra no texto: «Mas aqui o «amanhã de manhã» tem que virar «hoje de manhã». O jornal de papel a pessoa lê amanhã cedo.» No instante em que o Linu concordava, o chefe de redação Yoon se levantou num pulo: «Plantão! Está rodando nas redes sociais uma foto de um prédio pegando fogo perto de Gwanghwamun!»',
+        choices: [
+          { text: '리누는 부장 자리로 달려갔다.', translation: 'O Linu correu até a mesa do chefe.', next: 'sokbo' },
+        ],
+      },
+      sokbo: {
+        emoji: '🔥',
+        text: '부장의 모니터에는 검은 연기가 피어오르는 건물 사진이 떠 있었다. 사진은 벌써 수천 번 공유되었고, 몇몇 인터넷 매체는 “광화문 빌딩 화재”라는 제목을 달기 시작했다. 윤 부장이 리누를 보며 말했다. “리누, 확인되는 대로 한 줄이라도 올려. 다른 데보다 늦으면 안 돼. 하지만 확인되는 대로야, 알겠지?”',
+        translation: 'No monitor do chefe aparecia a foto de um prédio com fumaça preta subindo. A foto já tinha sido compartilhada milhares de vezes, e alguns sites de notícia começavam a publicar o título «Incêndio em prédio de Gwanghwamun». O chefe Yoon olhou para o Linu: «Linu, assim que confirmar, sobe nem que seja uma linha. Não pode sair depois dos outros. Mas é assim que CONFIRMAR, entendeu?»',
+        choices: [
+          { text: '리누는 먼저 종로소방서에 전화를 걸었다.', translation: 'O Linu ligou primeiro para o corpo de bombeiros de Jongno.', next: 'hwagin' },
+          { text: '리누는 다른 매체들처럼 바로 “광화문 빌딩 화재” 기사를 올렸다.', translation: 'O Linu, como os outros sites, publicou na hora a matéria «Incêndio em prédio de Gwanghwamun».', next: 'ollim' },
+        ],
+      },
+      hwagin: {
+        emoji: '📞',
+        text: '소방서 상황실 직원이 차분하게 대답했다. “신고는 몇 건 들어왔는데요, 출동해 보니까 불이 난 게 아니라 식당 주방 환기구에서 연기가 많이 나온 거였습니다. 불은 없었어요. 다친 사람도 없고요.” 리누는 통화 내용을 한 글자도 빠뜨리지 않고 받아 적었다.',
+        translation: 'O atendente da central dos bombeiros respondeu com calma: «Recebemos algumas chamadas, mas, quando a equipe chegou, viu que não era incêndio: saiu muita fumaça do exaustor da cozinha de um restaurante. Não teve fogo. Nem ninguém ferido.» O Linu anotou a conversa sem deixar escapar uma sílaba.',
+        choices: [
+          { text: '리누는 부장에게 불이 아니라 식당 연기였다고 보고했다.', translation: 'O Linu informou ao chefe que não era fogo, e sim fumaça de restaurante.', next: 'bojang' },
+          {
+            text: '리누는 부장에게 광화문에서 큰불이 났지만 다친 사람은 없다고 보고했다.',
+            translation: 'O Linu informou ao chefe que houve um grande incêndio em Gwanghwamun, mas sem feridos.',
+            wrong: 'O bombeiro disse «불이 난 게 아니라» e «불은 없었어요»: NÃO houve incêndio. A fumaça saiu do exaustor da cozinha de um restaurante. «-ㄴ 게 아니라» quer dizer «não é que…, e sim…».',
+          },
+        ],
+      },
+      bojang: {
+        emoji: '😮‍💨',
+        text: '윤 부장은 의자에 등을 기대며 긴 숨을 내쉬었다. “확인 안 했으면 우리도 오보 낼 뻔했네.” 그사이 “광화문 빌딩 화재” 기사를 올렸던 매체들은 하나둘 제목을 고치고 있었다. 부장이 말했다. “그럼 우리가 제대로 쓰자. 제목은 ‘광화문 화재 신고, 식당 연기로 확인’. 본문은 리누가 써 봐.”',
+        translation: 'O chefe Yoon encostou na cadeira e soltou um longo suspiro: «Se não tivéssemos confirmado, por pouco não damos notícia errada também.» Enquanto isso, os sites que tinham publicado «Incêndio em prédio de Gwanghwamun» iam corrigindo o título, um por um. O chefe disse: «Então vamos fazer direito. Título: «Chamado de incêndio em Gwanghwamun: era fumaça de restaurante». O texto, escreve você, Linu.»',
+        choices: [
+          { text: '리누는 떨리는 날개로 키보드를 두드리기 시작했다.', translation: 'Com as asas tremendo, o Linu começou a digitar.', next: 'gisa' },
+        ],
+      },
+      gisa: {
+        emoji: '📝',
+        text: '리누는 소방서의 말을 그대로 옮겨 썼다. “소방 당국은 ‘출동 결과 불이 난 것이 아니라 식당 주방 환기구에서 연기가 나온 것으로 확인됐다’고 밝혔다. 다친 사람은 없었다.” 한 선배가 어깨너머로 읽고 엄지를 들었다. “누가 말했는지 분명하고, 추측이 하나도 없네요. 기사는 그거면 돼요.” 기사는 열 시 이십 분에 올라갔다.',
+        translation: 'O Linu reproduziu fielmente o que os bombeiros disseram: «O corpo de bombeiros declarou que ‘ao chegar ao local, constatou que não se tratava de incêndio, e sim de fumaça saindo do exaustor da cozinha de um restaurante’. Não houve feridos.» A Seoyeon leu por cima do ombro dele e fez um joinha: «Está claro quem disse, e não tem nenhum achismo. Notícia é isso.» A matéria entrou no ar às dez e vinte.',
+        choices: [
+          { text: '리누는 마감을 마치고 선배와 함께 편집국을 나섰다.', translation: 'Terminado o fechamento, o Linu saiu da redação com a Seoyeon.', next: 'final_bom' },
+        ],
+      },
+      final_bom: {
+        emoji: '🌅',
+        text: '새벽 다섯 시, 리누와 한 선배는 광화문광장 앞 편의점에서 막 도착한 신문을 샀다. 일 면 아래쪽에 “서울 영하 십 도… 올겨울 첫 한파”라는 제목이 보였다. 세종대왕 동상 위로 차가운 바람이 불었지만 리누의 가슴은 따뜻했다. 선배가 말했다. “기자는 빨라야 하지만, 그보다 먼저 맞아야 해요. 어젯밤 리누 씨는 둘 다 했어요.”',
+        translation: 'Cinco da manhã: o Linu e a Seoyeon compraram, numa loja de conveniência em frente à praça Gwanghwamun, o jornal que tinha acabado de chegar. Na parte de baixo da primeira página estava o título «Seul a dez graus negativos… a primeira onda de frio do inverno». Um vento gelado soprava sobre a estátua do rei Sejong, mas o peito do Linu estava quentinho. A Seoyeon disse: «Repórter tem que ser rápido, mas antes disso tem que estar certo. Ontem à noite você foi as duas coisas.»',
+        ending: { tone: 'bom', title: 'Primeira manchete', message: 'O Linu escreveu no estilo do jornal, sem honoríficos e com a fonte explícita, e confirmou antes de publicar.' },
+      },
+      ollim: {
+        emoji: '📉',
+        text: '리누의 기사가 올라가고 이십 분 뒤, 소방서의 발표가 나왔다. 불이 아니라 식당 환기구에서 나온 연기였다는 것이다. 편집국이 순식간에 조용해졌다. 윤 부장이 천천히 말했다. “확인되는 대로 올리라고 했지. 빨리 올리라고 한 게 아니라.” 기사 아래에는 벌써 수많은 댓글이 달려 있었다.',
+        translation: 'Vinte minutos depois de a matéria do Linu entrar no ar, saiu o comunicado dos bombeiros: não era fogo, e sim fumaça do exaustor de um restaurante. A redação ficou em silêncio num instante. O chefe Yoon falou devagar: «Eu disse para publicar assim que confirmasse. Não disse para publicar rápido.» Embaixo da matéria já havia uma enxurrada de comentários.',
+        choices: [
+          { text: '리누는 고개를 숙이고 정정 보도를 쓰기 시작했다.', translation: 'O Linu baixou a cabeça e começou a escrever a correção.', next: 'jeongjeong' },
+        ],
+      },
+      jeongjeong: {
+        emoji: '🥫',
+        text: '리누는 기사를 내리고 정정 보도를 썼다. “앞서 보도한 ‘광화문 빌딩 화재’ 기사는 사실이 아닌 것으로 확인돼 바로잡습니다.” 문장을 쓰는 데는 오 분밖에 걸리지 않았지만, 리누에게는 그날 밤 가장 긴 오 분이었다. 퇴근길에 한 선배가 캔 커피를 건넸다. “다들 한 번은 해요. 두 번만 안 하면 돼요.”',
+        translation: 'O Linu tirou a matéria do ar e escreveu a correção: «A matéria publicada anteriormente, ‘Incêndio em prédio de Gwanghwamun’, não corresponde aos fatos, e por isso a corrigimos.» Escrever a frase levou só cinco minutos, mas para o Linu foram os cinco minutos mais longos da noite. Na saída, a Seoyeon lhe passou uma lata de café: «Todo mundo erra uma vez. É só não errar a segunda.»',
+        ending: { tone: 'neutro', title: 'Errata', message: '«확인되는 대로» é «assim que confirmar», não «o mais rápido possível». No jornal, estar certo vem antes de ser rápido.' },
+      },
+    },
+  },
 ];

@@ -1291,4 +1291,118 @@ export const STORIES_JA_2: StorySeed[] = [
       },
     },
   },
+  {
+    id: 'ja-h33',
+    level: 'B2.3',
+    cefr: 'B2',
+    title: '一万分の一ミリの金',
+    emoji: '✨',
+    summary: 'No bairro de Higashi Chaya, em Kanazawa, o Linu aplica folha de ouro numa caixinha, aprende com um artesão por que não se pode respirar em cima dela e descobre de onde vem o papel que as gueixas usavam no rosto.',
+    cultural_context:
+      'Kanazawa, capital de Ishikawa e antiga sede do poderoso clã Maeda, produz mais de 99% da folha de ouro do Japão. O ouro, com um pouquinho de prata e cobre, é batido entre folhas de papel washi até ficar com cerca de um décimo milésimo de milímetro: tão fino que voa com um sopro. O método tradicional, o entsuke, depende de um papel preparado durante meses, e em 2020 entrou para o Patrimônio Imaterial da UNESCO junto com outras técnicas de conservação da arquitetura de madeira japonesa. O papel usado para bater o ouro vira aburatori-gami, o papel para tirar a oleosidade do rosto que as gueixas do bairro de Higashi Chaya usavam. A folha de Kanazawa reveste templos como o Kinkaku-ji, em Kyoto, e aparece até em sorvete.',
+    start: 'start',
+    glossary: [
+      ['金箔', 'folha de ouro'],
+      ['職人', 'artesão, mestre de um ofício'],
+      ['茶屋街', 'bairro de casas de chá, onde se apresentavam as gueixas'],
+      ['〜でいらっしゃいますか', 'o(a) senhor(a) é…? (sonkeigo de ですか)'],
+      ['〜まっし', 'faça… (pedido gentil no dialeto de Kanazawa)'],
+      ['息を吹きかける', 'soprar em cima de algo'],
+      ['押さえる', 'pressionar, segurar no lugar'],
+      ['あぶらとり紙', 'papel que tira a oleosidade do rosto'],
+      ['上出来', 'resultado muito bom, melhor do que se esperava'],
+      ['お待ちいただけますか', 'poderia aguardar? (pedido em keigo)'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🏘️',
+        text: '金沢のひがし茶屋街には、細い格子の窓が美しい木造の建物が並んでいた。江戸時代から続くお茶屋の町だ。リヌが金箔の店に入ると、着物姿の店員がていねいに頭を下げた。「いらっしゃいませ。金箔貼り体験のご予約のお客様でいらっしゃいますか。」',
+        translation: 'No bairro de Higashi Chaya, em Kanazawa, enfileiravam-se casas de madeira com janelas de treliça fina, lindíssimas. É um bairro de casas de chá que vem desde a era Edo. Quando o Linu entrou numa loja de folha de ouro, uma atendente de quimono se curvou com toda a educação. «Seja bem-vindo. O senhor é o cliente com reserva para a oficina de aplicação de folha de ouro?»',
+        choices: [
+          { text: '「はい、十時に予約したリヌです。」', translation: '«Sim, sou o Linu, com reserva para as dez.»', next: 'taiken' },
+          { text: '「いえ、予約はしていないのですが……。」', translation: '«Não, eu não tenho reserva…»', next: 'yoyaku' },
+        ],
+      },
+      yoyaku: {
+        emoji: '📋',
+        text: '店員は予約表を確かめた。「ただいまのお時間でしたら、お一人様ご案内できます。お箸、小皿、小箱の中から、お好きなものをお選びいただけますか。」リヌは、黒い漆の小箱を選んだ。南極の家族へのおみやげにするつもりだ。',
+        translation: 'A atendente conferiu a lista de reservas. «Neste horário, podemos atender uma pessoa. O senhor poderia escolher o que preferir entre hashis, um pratinho ou uma caixinha?» O Linu escolheu uma caixinha de laca preta. Pretendia dá-la de presente à família na Antártida.',
+        choices: [{ text: '作業台の前に座る。', translation: 'Sentar-se diante da bancada.', next: 'taiken' }],
+      },
+      taiken: {
+        emoji: '👴',
+        text: '作業台の向こうに、白髪の職人の田中さんが座っていた。田中さんは、薄い紙の上の金箔を竹の箸で持ち上げてみせた。金箔は光を受けて、ふわふわと揺れている。「これはな、一万分の一ミリしかない。息を吹きかけたら、飛んでいってしまう。だから、話すときは横を向きまっし。」',
+        translation: 'Do outro lado da bancada, estava sentado o artesão Tanaka, de cabelos brancos. Ele ergueu com hashis de bambu uma folha de ouro que estava sobre um papel fino. A folha tremulava, macia, refletindo a luz. «Isto aqui só tem um décimo milésimo de milímetro. Se soprar, sai voando. Então, quando for falar, vire o rosto para o lado, viu?»',
+        choices: [
+          { text: '顔を横に向けて、「わかりました」と答える。', translation: 'Virar o rosto para o lado e responder: «Entendi.»', next: 'hari' },
+          {
+            text: '金箔の真上に顔を近づけて、「本当に薄いですね！」と言う。',
+            translation: 'Aproximar o rosto bem em cima da folha e dizer: «É fininha mesmo!»',
+            wrong: 'O artesão disse 「息を吹きかけたら、飛んでいってしまう」: se soprar, a folha sai voando; por isso pediu 「話すときは横を向きまっし」, para virar o rosto para o lado ao falar. 〜まっし é um «faça» gentil do dialeto de Kanazawa.',
+          },
+        ],
+      },
+      hari: {
+        emoji: '🪄',
+        text: 'リヌは竹の箸で、そっと金箔を小箱の上に置いた。ところが、端がくしゃっと折れて、しわになってしまった。「あっ……。」田中さんは笑った。「大丈夫や。上から綿でそっと押さえれば、しわは目立たんようになる。ほら、こうして。」そのとき、金の細かい粉が舞って、リヌの鼻がむずむずしてきた。',
+        translation: 'Com os hashis de bambu, o Linu pousou a folha de ouro devagar sobre a caixinha. Mas a borda dobrou, amassada, e ficou enrugada. «Ai…» O Tanaka riu. «Não tem problema. Se apertar por cima de leve com algodão, a ruga some. Olha, assim.» Nessa hora, um pó fino de ouro subiu, e o nariz do Linu começou a coçar.',
+        choices: [
+          { text: '急いで作業台から離れて、羽で顔をおおう。', translation: 'Afastar-se depressa da bancada e cobrir o rosto com a asa.', next: 'shokunin' },
+          { text: 'がまんできずに、その場でくしゃみをする。', translation: 'Não aguentar e espirrar ali mesmo.', next: 'final_neutro' },
+        ],
+      },
+      final_neutro: {
+        emoji: '🤧',
+        text: '「はっくしょん！」次の瞬間、作業台の金箔が何枚も、金色の蝶のように宙に舞い上がった。店員が小さく悲鳴を上げ、田中さんは天井を見上げてため息をついた。「言うたやろ……。」小箱は何とか完成したが、リヌの顔も羽も、金の粉でぴかぴかになっていた。',
+        translation: '«Atchim!» No instante seguinte, várias folhas de ouro da bancada subiram no ar como borboletas douradas. A atendente deu um gritinho, e o Tanaka olhou para o teto e suspirou: «Eu não disse…?» A caixinha até ficou pronta, mas o rosto e as asas do Linu ficaram brilhando de pó de ouro.',
+        ending: { tone: 'neutro', title: 'Pinguim dourado', message: 'Folha de ouro de um décimo milésimo de milímetro não resiste a um espirro. O Tanaka avisou!' },
+      },
+      shokunin: {
+        emoji: '🔨',
+        text: 'くしゃみがおさまると、田中さんは奥の仕事場を見せてくれた。金に少しの銀と銅をまぜ、特別な和紙にはさんで、機械と手で何度も打ち延ばすのだという。「大事なのは紙や。この紙を仕込むのに、何か月もかかる。紙がよくないと、金はきれいに延びんのや。」壁には、使い古した茶色い紙が束になって積んであった。',
+        translation: 'Quando o espirro passou, o Tanaka mostrou a oficina dos fundos. Contou que misturam ao ouro um pouco de prata e cobre, põem entre folhas de um washi especial e batem várias vezes, com máquina e à mão, até esticar. «O importante é o papel. Leva meses para preparar este papel. Se o papel não for bom, o ouro não estica bonito.» Na parede, havia pilhas de papel marrom, gasto de tanto uso.',
+        choices: [
+          { text: '「使い終わった紙は、どうするんですか。」', translation: '«O que fazem com o papel depois de usado?»', next: 'aburatori' },
+          { text: '「金沢の金箔は、どんなところに使われているんですか。」', translation: '«Onde a folha de ouro de Kanazawa é usada?»', next: 'kinkaku' },
+        ],
+      },
+      aburatori: {
+        emoji: '💄',
+        text: '田中さんはにやりとした。「それがな、あぶらとり紙になるんや。金を何千回も打った紙は、きめが細かくて、顔のあぶらをよう吸う。昔は、この茶屋街の芸妓さんたちが、お化粧のときに使っとった。」店員が、店で売っているあぶらとり紙の束を見せてくれた。「今でも、いちばん人気のおみやげでございます。」',
+        translation: 'O Tanaka deu um sorriso maroto. «Pois é: vira papel de tirar oleosidade. O papel que bateu ouro milhares de vezes fica com a trama finíssima e absorve bem a oleosidade do rosto. Antigamente, as gueixas deste bairro usavam na maquiagem.» A atendente mostrou os blocos de aburatori-gami vendidos na loja. «Até hoje é a lembrancinha mais procurada.»',
+        choices: [{ text: '作業台に戻って、小箱の仕上げをする。', translation: 'Voltar à bancada e dar o acabamento na caixinha.', next: 'owari' }],
+      },
+      kinkaku: {
+        emoji: '🏯',
+        text: '「仏壇、漆器、お寺、何でもや。」田中さんは誇らしそうに言った。「京都の金閣寺を昭和の終わりに張り替えたときも、金沢の金箔が使われた。普通よりずっと厚い箔を、二十万枚ぐらいな。何百年ももつように、昔の職人に負けん仕事をせんといかん。」',
+        translation: '«Altares budistas, laqueados, templos, tudo.» O Tanaka falou com orgulho. «Quando refizeram o revestimento do Kinkaku-ji, em Kyoto, no fim da era Shōwa, também usaram folha de Kanazawa. Umas duzentas mil folhas, bem mais grossas que o normal. Para durar centenas de anos, a gente tem que fazer um trabalho que não perca para os artesãos de antigamente.»',
+        choices: [{ text: '作業台に戻って、小箱の仕上げをする。', translation: 'Voltar à bancada e dar o acabamento na caixinha.', next: 'owari' }],
+      },
+      owari: {
+        emoji: '📦',
+        text: '最後に、リヌは小箱のふたに、金箔で小さなペンギンの形を残した。田中さんが目を細めた。「初めてにしては上出来や。」店員が言った。「仕上げの液が乾くまで、三十分ほどお待ちいただけますか。その間、よろしければ、金箔のソフトクリームはいかがでしょうか。」',
+        translation: 'Por fim, o Linu deixou na tampa da caixinha o desenho de um pinguim pequeno em folha de ouro. O Tanaka apertou os olhos, satisfeito. «Para a primeira vez, ficou muito bom.» A atendente disse: «Poderia aguardar uns trinta minutos até o verniz de acabamento secar? Enquanto isso, se quiser, que tal um sorvete com folha de ouro?»',
+        choices: [
+          { text: '「ぜひ、いただきます。」', translation: '«Aceito, com certeza.»', next: 'sofuto' },
+          {
+            text: '「いえ、大丈夫です。今すぐ小箱を持って帰ります。」',
+            translation: '«Não precisa. Vou levar a caixinha agora mesmo.»',
+            wrong: 'A atendente pediu para aguardar uns trinta minutos 「仕上げの液が乾くまで」, ATÉ O VERNIZ SECAR. Levar agora estragaria o ouro recém-aplicado. お待ちいただけますか é um pedido bem educado: «poderia esperar?».',
+          },
+        ],
+      },
+      sofuto: {
+        emoji: '🍦',
+        text: '運ばれてきたソフトクリームは、金箔一枚で丸ごと包まれていて、太陽の光にまぶしく輝いていた。一口なめると、ただのバニラの味がした。「金は味がせんけど、目で食べるんや」と田中さんが笑った。窓の外では、着物を着た観光客が、茶屋街の石畳をゆっくり歩いていた。',
+        translation: 'O sorvete que chegou vinha inteiro embrulhado numa folha de ouro e brilhava ofuscante ao sol. Na primeira lambida, era só gosto de baunilha. «Ouro não tem gosto; a gente come com os olhos», riu o Tanaka. Lá fora, turistas de quimono passeavam devagar pelo calçamento de pedra do bairro.',
+        choices: [{ text: '乾いた小箱を受け取る。', translation: 'Buscar a caixinha, já seca.', next: 'final_bom' }],
+      },
+      final_bom: {
+        emoji: '🐧',
+        text: '店員は、小箱を桐の箱に入れて、ていねいに包んでくれた。「遠い南極まで、どうぞお気をつけてお持ち帰りくださいませ。」田中さんは、帰りぎわに小さなあぶらとり紙を一冊、リヌの手にのせた。「おまけや。ペンギンも顔、光るやろ。」ふたの上の小さな金のペンギンが、夕日にきらりと光った。',
+        translation: 'A atendente pôs a caixinha numa caixa de madeira de paulownia e embrulhou com todo o cuidado. «Leve com cuidado até a distante Antártida.» Na saída, o Tanaka pôs na mão do Linu um bloquinho de aburatori-gami. «Brinde. Pinguim também fica com o rosto brilhando, né?» O pinguinzinho de ouro na tampa cintilou ao sol da tarde.',
+        ending: { tone: 'bom', title: 'O pinguim de ouro', message: 'O Linu respeitou a folha de um décimo milésimo de milímetro, entendeu o keigo da loja e o dialeto do artesão, e levou para casa um pedacinho de Kanazawa.' },
+      },
+    },
+  },
 ];
