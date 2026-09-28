@@ -118,10 +118,12 @@ export function spellNordic<F>(text: string, r: RegrasNordicas<F>): string {
     let end = start + m[0].length;
     const antes = text.slice(0, start);
     let spoken: string | null = null;
+    // moeda só antes de um número simples («€5»); o resto fica como está
+    if (g.cur && !g.num) continue;
     if (g.hh) {
       const h = Number(g.hh);
       const min = Number(g.mm);
-      if (h <= 24 && min <= 59 && !g.cur) spoken = r.hora(h, min);
+      if (h <= 24 && min <= 59) spoken = r.hora(h, min);
     } else if (g.on) {
       spoken = r.ordinal(Number(g.on), antes, text.slice(end));
     } else if (g.cn) {

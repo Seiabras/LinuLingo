@@ -6,7 +6,8 @@
  * antes de feminino, una (una casa) ou un' (un'ora). Nos compostos o «uno» perde o o antes de
  * masculino (ventun anni, trentun giorni; mas ventuno studenti) e fica ventuno com feminino. O gênero
  * vem do vocabulário do italiano — o singular, os plurais pelas regras e os anotados («pl. le
- * leggi») —, pulando um adjetivo no meio; sem substantivo conhecido, a forma de contar.
+ * leggi») —, pulando um adjetivo no meio; palavra fora do vocabulário vai pela terminação (libro,
+ * masculino; dozzina, feminino); sem substantivo, a forma de contar.
  *
  * Escreve-se numa palavra só até os milhares (duemilaventisei, millenovecentoquarantasei); a dezena
  * perde a vogal antes de uno e otto (ventuno, trentotto), e o tre final leva acento (ventitré,
@@ -143,10 +144,10 @@ const GLUE = '';
 
 /**
  * Os números do texto: (horas) 14:30 | 14.30, (graus) 36,6 °C, (ordinais) 1º | 1ª | 1°, (número) € 1.400 |
- * 1 400 | 3,5 com % ou € depois. Algarismos colados em letras (A2.1, mp3, 3D), expoentes e barras
+ * 1 400 | 3,5 com % ou € depois. Algarismos colados em letras (A2.1, mp3, 3D), expoentes, hífens
  * (482/1999) ficam como estão.
  */
-const NUMBER = /(?<![\p{L}\p{N}/]|[\p{L}\p{N}][.,]|\p{L}-)(?:(\d{1,2})[:.](\d{2})(?![.,]?\d)|(\d{1,3})(?:,(\d+))?\s?°\s?C\b|(\d{1,3})(º|ª|°)|(€\s?)?(\d{1,3}(?:\.\d{3})+|\d{1,3}(?:[\u00a0\u202f ]\d{3})+(?![\d,])|\d+)(?:,(\d+))?(\s?%|\s?€)?)(?![\p{L}\p{N}/])/gu;
+const NUMBER = /(?<![\p{L}\p{N}/]|[\p{L}\p{N}][.,]|[\p{L}\p{N}]-)(?:(\d{1,2})[:.](\d{2})(?![.,]?\d)|(\d{1,3})(?:,(\d+))?\s?°\s?C\b|(\d{1,3})(º|ª|°)|(€\s?)?(\d{1,3}(?:\.\d{3})+|\d{1,3}(?:[\u00a0\u202f ]\d{3})+(?![\d,])|\d+)(?:,(\d+))?(\s?%|\s?€)?)(?![\p{L}\p{N}/]|-\p{N})/gu;
 
 /**
  * Troca os números de um texto pelas palavras: «Ho 21 anni» → «Ho ventun anni», «1 ora» → «un'ora»,

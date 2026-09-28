@@ -7,8 +7,9 @@
  * as centenas de 200 a 900 (doscientos libros, doscientas casas), também antes de «mil» (doscientas
  * mil personas, veintiún mil euros). «Millón» é masculino (veintiún millones). O gênero vem do
  * vocabulário do espanhol — o singular e os plurais pelas regras —, pulando um adjetivo no meio
- * (dos grandes casas); sem substantivo conhecido, o artigo feminino de antes (las 21 → las
- * veintiuna; a la 1 → a la una, as horas) e, sem nada, a forma de contar (uno, veintiuno).
+ * (dos grandes casas); palavra fora do vocabulário vai pela terminação (-o(s) masculino, -a(s)
+ * feminino); sem substantivo, o artigo feminino de antes (las 21 → las veintiuna; a la 1 → a la
+ * una, as horas) e, sem nada, a forma de contar (uno, veintiuno).
  *
  * De 16 a 29 numa palavra só (dieciséis, veintidós, veintitrés); cien sozinho e ciento com mais
  * (ciento uno); «y» só entre dezena e unidade (treinta y cinco, mil novecientos cuarenta y seis).
@@ -129,9 +130,9 @@ const MONTHS = /^\s+de\s+(enero|febrero|marzo|abril|mayo|junio|julio|agosto|sept
 /**
  * Os números do texto: (horas) 14:30 | 9 h, (ordinais) 1.º | 1ª | 1.er | 3er, (número) € 2.850 |
  * 2,850 | 2 850 | 3,5 | 3.5 com % ou € depois. Algarismos colados em letras (H2O, 3D, mp3),
- * expoentes e barras (1/4, 15/03) ficam como estão.
+ * expoentes, hífens (art. 75-1) e barras (1/4, 15/03) ficam como estão.
  */
-const NUMBER = /(?<![\p{L}\p{N}/]|[\p{L}\p{N}][.,]|\p{L}-)(?:(\d{1,2}):(\d{2})|(\d{1,2})\s?h(?![\p{L}\p{N}])|(\d{1,3})\.?(º|ª|er|ra)|(€\s?)?(\d{1,3}(?:\.\d{3})+(?:,\d+)?|\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d{1,3}(?:[\u00a0\u202f ]\d{3})+(?:,\d+)?(?![\d,])|\d+(?:[.,]\d+)?)(\s?%|\s?€)?)(?![\p{L}\p{N}/])/gu;
+const NUMBER = /(?<![\p{L}\p{N}/]|[\p{L}\p{N}][.,]|[\p{L}\p{N}]-)(?:(\d{1,2}):(\d{2})|(\d{1,2})\s?h(?![\p{L}\p{N}])|(\d{1,3})\.?(º|ª|er|ra)|(€\s?)?(\d{1,3}(?:\.\d{3})+(?:,\d+)?|\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d{1,3}(?:[\u00a0\u202f ]\d{3})+(?:,\d+)?(?![\d,])|\d+(?:[.,]\d+)?)(\s?%|\s?€)?)(?![\p{L}\p{N}/]|-\p{N})/gu;
 
 /** Separa inteiro e decimais, conforme o separador de milhares que o número usa (2.850,5 | 2,850.5 | 2 850,5 | 3,5 | 3.5). */
 function parse(num: string): { int: number; dec?: string; sep?: string } {

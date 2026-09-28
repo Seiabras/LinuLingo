@@ -1,7 +1,11 @@
+import { spellDanishNumbers } from './da';
 import { spellEstonianNumbers } from './et';
 import { spellFaroeseNumbers } from './fo';
 import { spellFinnishNumbers } from './fi';
+import { spellIcelandicNumbers } from './is';
+import { spellNorwegianNumbers } from './nb';
 import { spellRussianNumbers } from './ru';
+import { spellSwedishNumbers } from './sv';
 
 /**
  * Números por extenso antes da voz (neural ou do aparelho): cada idioma escreve os algarismos como
@@ -10,10 +14,14 @@ import { spellRussianNumbers } from './ru';
  * fica muda (a voz do feroês só conhece letras). Idioma sem regras aqui: o texto vai como está.
  */
 const SPELLERS: Record<string, (text: string) => string> = {
+  da: spellDanishNumbers,
   et: spellEstonianNumbers,
   fi: spellFinnishNumbers,
   fo: spellFaroeseNumbers,
+  is: spellIcelandicNumbers,
+  nb: spellNorwegianNumbers,
   ru: spellRussianNumbers,
+  sv: spellSwedishNumbers,
 };
 
 export function spellNumbers(text: string, locale: string): string {

@@ -164,7 +164,7 @@ const HOUR_BEFORE = /(?:^|[^\p{L}])(?:ora|orele)\s+$/iu;
 
 /**
  * Os números do texto: (horas) 14:30, (ordinais) 2-lea | 2-a, (número) € 2.042 | 1 000 | 38,5 com %
- * ou € depois. Algarismos colados em letras (mp3, 3D), expoentes e barras ficam como estão.
+ * ou € depois. Algarismos colados em letras (mp3, 3D), expoentes, hífens (75-1) e barras ficam como estão.
  */
 const NUMBER = /(?<![\p{L}\p{N}/]|[\p{L}\p{N}][.,]|[\p{L}\p{N}]-)(?:(\d{1,2}):(\d{2})|(\d{1,6})-(lea|a)|(€\s?)?(\d{1,3}(?:\.\d{3})+|\d{1,3}(?:[\u00a0\u202f ]\d{3})+(?![\d,])|\d+)(?:,(\d+))?(\s?%|\s?€)?)(?![\p{L}\p{N}/]|-\p{N})/gu;
 

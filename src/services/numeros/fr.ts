@@ -133,9 +133,9 @@ function hours(h: number, min?: number): string {
 /**
  * Os números do texto: (horas) 18 h 30 | 18h30 | 18 h | 14:30, (ordinais) 1er | 1re | 2e | 2ème |
  * 2nd, (número) € 1 000 000 | 1.800 | 3,5 com % ou € depois. Algarismos colados em letras (A2.1,
- * mp3, 3D), expoentes e barras (1/4) ficam como estão.
+ * mp3, 3D), expoentes, hífens (art. 75-1) e barras (1/4) ficam como estão.
  */
-const NUMBER = /(?<![\p{L}\p{N}/]|[\p{L}\p{N}][.,]|\p{L}-)(?:(\d{1,2})\s?h(?:\s?(\d{2}))?(?![\p{L}\p{N}])|(\d{1,2}):(\d{2})|(\d{1,6})(ers?|res?|ères?|nde?s?|èmes?|es?)|(€\s?)?(\d{1,3}(?:[\u00a0\u202f ]\d{3})+(?![\d,])|\d{1,3}(?:\.\d{3})+|\d+)(?:,(\d+))?(\s?%|\s?€)?)(?![\p{L}\p{N}/])/gu;
+const NUMBER = /(?<![\p{L}\p{N}/]|[\p{L}\p{N}][.,]|[\p{L}\p{N}]-)(?:(\d{1,2})\s?h(?:\s?(\d{2}))?(?![\p{L}\p{N}])|(\d{1,2}):(\d{2})|(\d{1,6})(ers?|res?|ères?|nde?s?|èmes?|es?)|(€\s?)?(\d{1,3}(?:[\u00a0\u202f ]\d{3})+(?![\d,])|\d{1,3}(?:\.\d{3})+|\d+)(?:,(\d+))?(\s?%|\s?€)?)(?![\p{L}\p{N}/]|-\p{N})/gu;
 
 /**
  * Troca os números de um texto pelas palavras: «J'ai 21 ans» → «J'ai vingt et un ans», «21 pages» →

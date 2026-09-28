@@ -6,9 +6,9 @@
  * Um, dois e as centenas (duzentos… novecentos) concordam com o substantivo que vem depois: uma casa,
  * duas casas, duzentas pessoas, e também antes de «mil» (duas mil pessoas, trezentas mil libras);
  * «milhão» é masculino (dois milhões de pessoas). O gênero vem do vocabulário do português — o
- * singular e os plurais pelas regras —, pulando um adjetivo no meio (duas grandes casas). Sem
- * substantivo conhecido, vale o artigo de antes (as 2 → as duas; às 3 → às três, as horas) e, sem
- * nada, a forma de contar: um, dois.
+ * singular e os plurais pelas regras —, pulando um adjetivo no meio (duas grandes casas). Palavra
+ * fora do vocabulário vai pela terminação (-o(s) masculino, -a(s) feminino); sem substantivo, vale o
+ * artigo de antes (as 2 → as duas; às 3 → às três, as horas) e, sem nada, a forma de contar: um, dois.
  *
  * O «e» liga centenas, dezenas e unidades (cento e vinte e três) e entra antes do último grupo quando
  * ele é redondo (mil e cem, dois mil e vinte e seis, um milhão e quinhentos mil), mas não no resto
@@ -128,10 +128,10 @@ const MONTHS = /^\s+de\s+(janeiro|fevereiro|março|abril|maio|junho|julho|agosto
 
 /**
  * Os números do texto: (horas) 14h30 | 14:30, (ordinais) 1.º | 1ª, (número) € 1.000 | 1 000 |
- * 2,50 com % ou € depois. Algarismos colados em letras (T2, 3D, mp3), expoentes (10⁹) e barras
+ * 2,50 com % ou € depois. Algarismos colados em letras (T2, 3D, mp3), expoentes (10⁹), hífens (75-1) e barras
  * (7/99, 1/4, 15/03) ficam como estão.
  */
-const NUMBER = /(?<![\p{L}\p{N}/]|[\p{L}\p{N}][.,]|\p{L}-)(?:(\d{1,2})(?:h(\d{2})?|:(\d{2}))|(\d{1,3})\.?([ºª])|(€\s?)?(\d{1,3}(?:\.\d{3})+|\d{1,3}(?:[\u00a0\u202f ]\d{3})+(?![\d,])|\d+)(?:,(\d+))?(\s?%|\s?€)?)(?![\p{L}\p{N}/])/gu;
+const NUMBER = /(?<![\p{L}\p{N}/]|[\p{L}\p{N}][.,]|[\p{L}\p{N}]-)(?:(\d{1,2})(?:h(\d{2})?|:(\d{2}))|(\d{1,3})\.?([ºª])|(€\s?)?(\d{1,3}(?:\.\d{3})+|\d{1,3}(?:[\u00a0\u202f ]\d{3})+(?![\d,])|\d+)(?:,(\d+))?(\s?%|\s?€)?)(?![\p{L}\p{N}/]|-\p{N})/gu;
 
 /**
  * Troca os números de um texto pelas palavras: «Tenho 2 irmãs» → «Tenho duas irmãs», «às 14h30» →
