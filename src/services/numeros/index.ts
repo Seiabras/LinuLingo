@@ -1,4 +1,6 @@
+import { spellEstonianNumbers } from './et';
 import { spellFaroeseNumbers } from './fo';
+import { spellFinnishNumbers } from './fi';
 import { spellRussianNumbers } from './ru';
 
 /**
@@ -8,6 +10,8 @@ import { spellRussianNumbers } from './ru';
  * fica muda (a voz do feroês só conhece letras). Idioma sem regras aqui: o texto vai como está.
  */
 const SPELLERS: Record<string, (text: string) => string> = {
+  et: spellEstonianNumbers,
+  fi: spellFinnishNumbers,
   fo: spellFaroeseNumbers,
   ru: spellRussianNumbers,
 };
