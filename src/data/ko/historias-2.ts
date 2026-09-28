@@ -241,4 +241,124 @@ export const STORIES_KO_2: StorySeed[] = [
       },
     },
   },
+  {
+    id: 'ko-h24',
+    level: 'B1.4',
+    cefr: 'B1',
+    title: '해녀 삼촌의 숨비소리',
+    emoji: '🌊',
+    summary: 'Depois de ler uma notícia sobre as mergulhadoras de Jeju, o Linu vai a Hado-ri, conhece uma 해녀 de setenta e oito anos e aprende as regras do mar.',
+    cultural_context:
+      'As 해녀 de Jeju mergulham sem cilindro de oxigênio, prendendo o ar por cerca de um minuto, para colher conchas, polvos e algas; em 2016, a cultura das 해녀 entrou na lista do Patrimônio Cultural Imaterial da Humanidade da UNESCO. Elas se organizam em cooperativas de vila com regras rígidas (não pegar bicho pequeno, respeitar as épocas de defeso) e se dividem pela experiência em 상군, 중군 e 하군. O número de 해녀 cai ano após ano, e hoje mais da metade tem mais de setenta anos. Em Jeju, os mais velhos são chamados de 삼촌 («tio»), sejam homens ou mulheres. O Museu das Haenyeo fica em Hado-ri, no distrito de Gujwa, no leste da ilha.',
+    start: 'start',
+    glossary: [
+      ['해녀', 'mergulhadora de Jeju, que pesca sem cilindro de oxigênio'],
+      ['물질', 'o trabalho de mergulho das 해녀'],
+      ['숨비소리', 'o assobio da 해녀 ao soltar o ar quando volta à superfície'],
+      ['테왁 / 망사리', 'a boia / a rede presa embaixo dela, onde vai a pesca'],
+      ['불턱', 'o círculo de pedras onde as 해녀 se trocam e se esquentam'],
+      ['삼촌', '«tio»; em Jeju, o jeito de chamar qualquer adulto mais velho, homem ou mulher'],
+      ['-에 따르면 -다고 한다', 'segundo… / dizem que… (discurso indireto, típico da notícia)'],
+      ['욕심내다 / 물숨', 'querer demais, ser ganancioso / «respirar água», afogar-se'],
+      ['왔수꽈?', 'dialeto de Jeju para «왔어요?» (veio?)'],
+    ],
+    nodes: {
+      start: {
+        emoji: '📰',
+        text: '제주로 가는 비행기 안에서 리누는 신문을 펼쳤다. “바다의 어머니들, 제주 해녀가 줄고 있다”라는 제목의 기사였다. 기사에 따르면 제주 해녀 문화는 이천십육 년에 유네스코 인류무형문화유산이 되었다고 한다. 하지만 해녀의 수는 해마다 줄고 있고, 지금은 절반 이상이 일흔 살이 넘었다고 한다. 기자는 해녀를 만나고 싶으면 구좌읍 하도리에 가 보라고 썼다.',
+        translation: 'No avião para Jeju, o Linu abriu o jornal. Era uma reportagem com o título «As mães do mar: as 해녀 de Jeju estão diminuindo». Segundo a matéria, a cultura das 해녀 de Jeju virou Patrimônio Cultural Imaterial da Humanidade da UNESCO em 2016. Mas o número de 해녀 cai a cada ano, e hoje mais da metade já passou dos setenta anos. O jornalista escreveu que, para conhecer as 해녀, vale ir a Hado-ri, no distrito de Gujwa.',
+        choices: [
+          { text: '리누는 먼저 하도리에 있는 해녀박물관에 가 보기로 했다.', translation: 'O Linu resolveu ir primeiro ao Museu das Haenyeo, em Hado-ri.', next: 'bakmulgwan' },
+          { text: '리누는 공항에서 버스를 타고 바로 하도리 바닷가로 갔다.', translation: 'O Linu pegou um ônibus no aeroporto e foi direto para a praia de Hado-ri.', next: 'bada' },
+          {
+            text: '리누는 요즘 젊은 해녀들이 점점 많아지고 있다고 이해했다.',
+            translation: 'O Linu entendeu que hoje em dia há cada vez mais 해녀 jovens.',
+            wrong: 'A notícia diz o contrário: «해녀의 수는 해마다 줄고 있고», o número de 해녀 DIMINUI a cada ano, e «절반 이상이 일흔 살이 넘었다», mais da metade passou dos setenta. «-다고 한다» é o discurso indireto: «dizem que».',
+          },
+        ],
+      },
+      bakmulgwan: {
+        emoji: '🏛️',
+        text: '해녀박물관에는 해녀들이 쓰던 도구가 전시되어 있었다. 둥근 공 모양의 테왁은 물 위에 떠서 해녀가 쉴 수 있게 해 주고, 그 아래에 달린 그물주머니인 망사리에는 잡은 해산물을 넣는다. 안내원은 해녀들이 산소통 없이 한 번에 일 분쯤 숨을 참는다고 설명했다. “물 위로 올라와서 숨을 내쉴 때 휘파람 같은 소리가 나요. 그걸 숨비소리라고 해요.”',
+        translation: 'No Museu das Haenyeo estavam expostas as ferramentas que as mergulhadoras usavam. A 테왁, redonda como uma bola, boia na água e deixa a 해녀 descansar, e no 망사리, a rede pendurada embaixo dela, vai o que ela pesca. A guia explicou que as 해녀 prendem a respiração cerca de um minuto por vez, sem cilindro de oxigênio. «Quando sobem e soltam o ar, sai um som parecido com um assobio. Isso se chama 숨비소리.»',
+        choices: [
+          { text: '리누는 진짜 숨비소리를 듣고 싶어서 바닷가로 걸어갔다.', translation: 'O Linu quis ouvir um 숨비소리 de verdade e foi a pé até a praia.', next: 'bada' },
+        ],
+      },
+      bada: {
+        emoji: '🪨',
+        text: '하도리 바닷가에는 검은 현무암 바위가 끝없이 이어져 있었다. 그때 바다 위에서 “호오이” 하는 소리가 들렸다. 주황색 테왁을 잡은 해녀 한 분이 물에서 나와 돌담 쪽으로 걸어오셨다. 해녀는 리누를 보더니 웃으며 물으셨다. “어디서 왔수꽈?” 리누가 못 알아듣자 이번에는 천천히 말씀하셨다. “어디서 왔어요? 나를 순자 삼촌이라고 불러요.”',
+        translation: 'Na praia de Hado-ri, as pedras pretas de basalto se estendiam sem fim. Nessa hora, veio do mar um som: «hooi». Uma 해녀 segurando uma boia laranja saiu da água e veio andando na direção de um muro de pedras. Ela viu o Linu e perguntou sorrindo: «어디서 왔수꽈?» Como o Linu não entendeu, ela repetiu devagar: «De onde você veio? Pode me chamar de tio Sunja.»',
+        choices: [
+          { text: '리누는 할머니를 왜 삼촌이라고 부르는지 여쭤보았다.', translation: 'O Linu perguntou por que se chamava uma senhora de «tio».', next: 'samchon' },
+          { text: '리누는 돌담으로 둘러싸인 곳이 무엇인지 여쭤보았다.', translation: 'O Linu perguntou o que era aquele lugar cercado de muro de pedras.', next: 'bulteok' },
+        ],
+      },
+      samchon: {
+        emoji: '👵',
+        text: '순자 삼촌은 크게 웃으셨다. “제주에서는 동네 어른을 남자든 여자든 다 삼촌이라고 불러요. 서로 가족처럼 지낸다는 뜻이지.” 삼촌은 올해 일흔여덟 살이고, 열다섯 살 때부터 물질을 하셨다고 했다. 육십 년 넘게 바다에 들어가신 것이다.',
+        translation: 'A tio Sunja deu uma boa risada. «Em Jeju, a gente chama todo adulto da vila de 삼촌, homem ou mulher. Quer dizer que todo mundo se trata como família.» Ela contou que tinha setenta e oito anos e mergulhava desde os quinze. Eram mais de sessenta anos entrando no mar.',
+        choices: [
+          { text: '리누는 순자 삼촌을 따라 돌담 안으로 들어갔다.', translation: 'O Linu seguiu a tio Sunja para dentro do muro de pedras.', next: 'bulteok' },
+          {
+            text: '리누는 삼촌의 조카가 근처에 있는지 두리번거렸다.',
+            translation: 'O Linu olhou em volta procurando o sobrinho da «tio».',
+            wrong: 'A senhora explicou que em Jeju todo adulto mais velho, «남자든 여자든» (seja homem, seja mulher), é chamado de 삼촌 (tio), como se fosse da família. Não há sobrinho nenhum: é só o jeito de tratar os mais velhos da vila.',
+          },
+        ],
+      },
+      bulteok: {
+        emoji: '🔥',
+        text: '돌담을 둥글게 쌓은 그곳은 불턱이었다. 해녀들이 옷을 갈아입고, 불을 피워 몸을 녹이고, 이야기를 나누는 곳이다. 삼촌은 불턱이 해녀들의 학교였다고 말씀하셨다. 물질을 제일 잘하는 상군 해녀가 어린 해녀들에게 바닷길을 가르쳐 주었기 때문이다. 삼촌이 리누를 한참 보시더니 물으셨다. “펭귄이면 헤엄은 잘 치겠네. 내일 아침에 같이 들어가 볼래요?”',
+        translation: 'O lugar cercado por pedras em círculo era um 불턱. É onde as 해녀 trocam de roupa, acendem o fogo para se esquentar e conversam. A tio Sunja disse que o 불턱 era a escola das 해녀, porque ali as melhores mergulhadoras, as 상군, ensinavam os caminhos do mar às mais novas. Ela ficou um tempo olhando para o Linu e perguntou: «Se é pinguim, deve nadar bem. Quer entrar com a gente amanhã de manhã?»',
+        choices: [
+          { text: '리누는 기뻐하며 꼭 가겠다고 대답했다.', translation: 'O Linu respondeu, feliz, que iria sem falta.', next: 'mulzil' },
+          { text: '리누는 겁이 나서 바닷가에서 보기만 하겠다고 했다.', translation: 'O Linu ficou com medo e disse que só ia olhar da praia.', next: 'bakk' },
+        ],
+      },
+      bakk: {
+        emoji: '👀',
+        text: '다음 날 아침, 리누는 바위 위에 앉아 해녀들을 지켜보았다. 여기저기서 숨비소리가 들렸고, 주황색 테왁들이 파도 위에서 흔들렸다. 물질이 끝나자 리누는 무거운 망사리를 나르는 것을 도와드렸다. 삼촌은 고맙다며 소라 두 개를 주셨지만, 리누는 바닷속이 어땠을지 계속 궁금했다.',
+        translation: 'Na manhã seguinte, o Linu sentou numa pedra e ficou observando as 해녀. Ouviam-se 숨비소리 por todo lado, e as boias laranja balançavam nas ondas. Quando o mergulho acabou, o Linu ajudou a carregar as redes pesadas. A tio Sunja agradeceu e deu dois caramujos a ele, mas o Linu ficou o tempo todo imaginando como seria lá embaixo.',
+        ending: { tone: 'neutro', title: 'Da beira da pedra', message: 'O Linu ouviu o 숨비소리 e ajudou em terra, mas perdeu a chance de mergulhar com as 해녀.' },
+      },
+      mulzil: {
+        emoji: '🤿',
+        text: '다음 날 아침, 바다는 차갑고 맑았다. 삼촌은 물에 들어가기 전에 단단히 말씀하셨다. “바다에서는 욕심내면 안 돼요. 숨이 남아도 조금 일찍 올라오고, 작은 전복은 그냥 두고 와야 해. 욕심부리다가 물숨 먹는다는 말이 있어요.” 물숨은 물속에서 숨을 쉬어 버리는 것, 곧 목숨을 잃는 것을 뜻한다.',
+        translation: 'Na manhã seguinte, o mar estava frio e transparente. Antes de entrar na água, a tio Sunja avisou com firmeza: «No mar não se pode ser ganancioso. Mesmo sobrando fôlego, suba um pouco antes, e deixe o abalone pequeno onde está. Tem um ditado: quem é ganancioso engole 물숨.» 물숨, «fôlego de água», é respirar debaixo da água, ou seja, perder a vida.',
+        choices: [
+          { text: '리누는 고개를 끄덕이고 바닷속으로 들어갔다.', translation: 'O Linu fez que sim com a cabeça e mergulhou.', next: 'mitt' },
+        ],
+      },
+      mitt: {
+        emoji: '🐚',
+        text: '바닷속은 파란 유리 같았다. 바위틈에는 소라가 가득했고, 손바닥보다 작은 전복도 몇 개 보였다. 펭귄인 리누는 숨이 아직 많이 남아 있었다. 망사리를 가득 채우는 것은 어렵지 않아 보였다.',
+        translation: 'O fundo do mar parecia de vidro azul. Nas fendas das pedras havia caramujos aos montes, e também alguns abalones menores que a palma da mão. Como pinguim, o Linu ainda tinha muito fôlego. Encher a rede não parecia nada difícil.',
+        choices: [
+          { text: '리누는 큰 소라 몇 개만 망사리에 넣고 물 위로 올라왔다.', translation: 'O Linu pôs na rede só alguns caramujos grandes e subiu.', next: 'sumbi' },
+          { text: '리누는 작은 전복까지 모두 따서 망사리를 가득 채웠다.', translation: 'O Linu pegou tudo, até os abalones pequenos, e encheu a rede.', next: 'yoksim' },
+        ],
+      },
+      sumbi: {
+        emoji: '💨',
+        text: '물 위로 올라온 리누는 삼촌을 흉내 내어 “호오이” 하고 숨을 내쉬었다. 조금 이상한 소리였지만 삼촌은 박수를 치셨다. 리누의 망사리를 들여다보신 삼촌이 고개를 끄덕이셨다. “작은 건 두고 왔네. 바다를 아는구나.”',
+        translation: 'Na superfície, o Linu imitou a tio Sunja e soltou o ar: «hooi». Saiu um som meio esquisito, mas ela bateu palmas. Depois espiou a rede dele e aprovou com a cabeça: «Deixou os pequenos lá. Você entende de mar.»',
+        choices: [
+          { text: '리누는 삼촌과 함께 불턱으로 돌아갔다.', translation: 'O Linu voltou com a tio Sunja para o 불턱.', next: 'final_bom' },
+        ],
+      },
+      final_bom: {
+        emoji: '🧡',
+        text: '불턱에서 해녀 삼촌들은 불을 쬐며 리누가 딴 소라를 구워 나누어 먹었다. 순자 삼촌은 리누에게 작은 테왁 모양의 열쇠고리를 주셨다. “바다는 우리 것이 아니고 손주들 것이에요. 오늘 배운 거 잊지 마요.” 서울로 돌아가는 비행기에서 리누는 그 기사를 다시 읽었다. 이번에는 사진 속 해녀들이 모두 아는 사람처럼 보였다.',
+        translation: 'No 불턱, as 해녀 se esquentaram no fogo, assaram os caramujos que o Linu pegou e repartiram entre todas. A tio Sunja deu a ele um chaveiro em forma de boia. «O mar não é nosso, é dos nossos netos. Não esqueça o que aprendeu hoje.» No avião de volta para Seul, o Linu releu a reportagem. Dessa vez, todas as 해녀 das fotos pareciam gente conhecida.',
+        ending: { tone: 'bom', title: 'O mar dos netos', message: 'O Linu mergulhou com as 해녀, deixou os abalones pequenos no mar e voltou com um 숨비소리 no peito.' },
+      },
+      yoksim: {
+        emoji: '😔',
+        text: '리누가 무거운 망사리를 끌고 올라오자 삼촌의 얼굴이 굳어졌다. “작은 전복은 따면 안 된다고 했잖아요. 이건 내년, 후년에 딸 거예요.” 리누는 부끄러워하며 작은 전복들을 하나하나 바위틈에 돌려놓았다. 삼촌은 곧 다시 웃으셨지만, 그날 리누는 바다의 규칙이 얼마나 엄격한지 배웠다.',
+        translation: 'Quando o Linu subiu arrastando a rede pesada, o rosto da tio Sunja fechou. «Eu não disse que não se pega abalone pequeno? Esses são para o ano que vem e o outro.» Envergonhado, o Linu devolveu os abalones pequenos, um por um, às fendas das pedras. Ela logo voltou a sorrir, mas naquele dia o Linu aprendeu como as regras do mar são rígidas.',
+        ending: { tone: 'neutro', title: 'Rede cheia demais', message: 'A tio Sunja tinha avisado: no mar, nada de ganância. Abalone pequeno fica para crescer.' },
+      },
+    },
+  },
 ];

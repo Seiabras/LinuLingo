@@ -3336,7 +3336,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'As contrações da fala: 간대요, 가래요, 가재요',
-        text: 'Na conversa, -다고 해요 vira -대요, -라고 해요 vira -래요, -자고 해요 vira -재요 e -냐고 해요 vira -냬요. Você vai ouvir isso o tempo todo, com o sentido de «dizem que», «ele falou que»: 내일 비가 온대요. Cuidado para não confundir -대요 (dizem que) com -데요 (eu vi que, eu percebi), que aparece no B2.2.',
+        text: 'Na conversa, -다고 해요 vira -대요, -라고 해요 vira -래요, -자고 해요 vira -재요 e -냐고 해요 vira -냬요. Você vai ouvir isso o tempo todo, com o sentido de «dizem que», «ele falou que»: 내일 비가 온대요. Cuidado para não confundir -대요 (dizem que) com -데요 (eu vi que, eu percebi), que aparece no B2.3.',
         table: {
           head: ['Completo', 'Contraído', 'Português'],
           rows: [
@@ -3402,6 +3402,241 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         options: ['이건 한국어로 뭐라고 해요?', '이건 한국어로 뭐다고 해요?', '이건 한국어를 뭐라고 해요?'],
         answer: '이건 한국어로 뭐라고 해요?',
         explanation: '«Em coreano» é 한국어로, e «o que» citado é 뭐라고.',
+      },
+    ],
+  },
+  // ───────────────────────────── B2.2 ─────────────────────────────
+  {
+    id: 'ko-g-passiva-causativa',
+    level: 'B2.2',
+    title: 'Passiva e causativa: 보이다, 열리다, 먹이다, 재우다, -아/어지다 e -게 하다',
+    emoji: '🔄',
+    summary: 'O coreano forma a passiva e a causativa com sufixos colados ao radical: 이, 히, 리, 기 (e, na causativa, também 우, 구, 추). 열다 → 열리다 (abrir-se), 잡다 → 잡히다 (ser pego); 먹다 → 먹이다 (dar de comer), 자다 → 재우다 (fazer dormir). Quando o verbo não tem sufixo próprio, entram -아/어지다 e 되다 (passiva) e -게 하다 (causativa).',
+    sections: [
+      {
+        heading: 'A passiva: 이, 히, 리, 기',
+        text: 'Qual dos quatro sufixos um verbo usa não tem regra segura: aprende-se com a palavra. O agente, quando aparece, leva 에게 ou 한테 (pessoas e animais) ou 에 (coisas): 비에 젖었어요 (molhei-me na chuva). O coreano prefere a voz ativa; a passiva aparece sobretudo para o que acontece «sozinho» (문이 열렸어요, a porta se abriu) e para o que se percebe sem querer: 산이 보여요 (dá para ver a montanha), 음악 소리가 들려요 (dá para ouvir música). O «se» do português costuma ser a melhor tradução.',
+        table: {
+          head: ['Ativo', 'Passivo', 'Exemplo', 'Português'],
+          rows: [
+            ['보다', '보이다', '창문으로 산이 보여요.', 'Dá para ver a montanha da janela.'],
+            ['쓰다', '쓰이다', '칠판에 이름이 쓰여 있어요.', 'O nome está escrito no quadro.'],
+            ['잡다', '잡히다', '도둑이 경찰에게 잡혔어요.', 'O ladrão foi pego pela polícia.'],
+            ['닫다', '닫히다', '바람 때문에 문이 닫혔어요.', 'A porta se fechou por causa do vento.'],
+            ['열다', '열리다', '문이 열렸어요.', 'A porta se abriu.'],
+            ['듣다', '들리다', '음악 소리가 들려요.', 'Dá para ouvir música.'],
+            ['팔다', '팔리다', '이 책이 잘 팔려요.', 'Este livro vende bem.'],
+            ['안다', '안기다', '아기가 엄마 품에 안겨 있어요.', 'O bebê está no colo da mãe.'],
+            ['쫓다', '쫓기다', '꿈에서 누군가에게 쫓겼어요.', 'No sonho, alguém me perseguia.'],
+          ],
+        },
+        examples: [
+          ['여기서 남산타워가 보여요.', 'Daqui dá para ver a Torre Namsan.'],
+          ['제 목소리 잘 들려요?', 'Está me ouvindo bem?'],
+          ['모기한테 물렸어요.', 'Fui picado por um mosquito.'],
+        ],
+      },
+      {
+        heading: '-아/어지다 e 되다: a passiva sem sufixo',
+        text: 'Muitos verbos não têm sufixo de passiva. Para eles há -아/어지다: 만들다 → 만들어지다 (ser feito), 알리다 → 알려지다 (tornar-se conhecido). Com adjetivos, o mesmo -아/어지다 é «ficar, tornar-se»: 추워지다 (esfriar), 예뻐지다 (ficar bonito). E os verbos em 하다 trocam 하다 por 되다: 취소하다 → 취소되다, 사용하다 → 사용되다, 발견하다 → 발견되다. É a passiva mais comum dos jornais.',
+        table: {
+          head: ['Base', 'Passiva', 'Exemplo', 'Português'],
+          rows: [
+            ['만들다', '만들어지다', '이 다리는 백 년 전에 만들어졌어요.', 'Esta ponte foi construída há cem anos.'],
+            ['켜다', '켜지다', '불이 갑자기 켜졌어요.', 'A luz acendeu de repente.'],
+            ['알리다', '알려지다', '그 가수는 해외에도 알려져 있어요.', 'Esse cantor é conhecido no exterior também.'],
+            ['춥다', '추워지다', '날씨가 많이 추워졌어요.', 'O tempo esfriou bastante.'],
+            ['취소하다', '취소되다', '비 때문에 공연이 취소되었어요.', 'O show foi cancelado por causa da chuva.'],
+            ['사용하다', '사용되다', '한글은 한국에서 사용됩니다.', 'O hangul é usado na Coreia.'],
+          ],
+        },
+        examples: [
+          ['요즘 날씨가 따뜻해졌어요.', 'Ultimamente o tempo esquentou.'],
+          ['회의가 다음 주로 연기되었습니다.', 'A reunião foi adiada para a semana que vem.'],
+          ['이 펜은 글씨가 잘 써져요.', 'Esta caneta escreve bem.'],
+        ],
+      },
+      {
+        heading: 'A causativa: 이, 히, 리, 기, 우, 구, 추',
+        text: 'A causativa diz que alguém faz outro fazer algo, ou provoca um estado: 먹이다 (dar de comer), 입히다 (vestir alguém), 재우다 (pôr para dormir), 웃기다 (fazer rir, ou seja, ser engraçado). Cuidado com 보이다, que é passivo e causativo: 산이 보여요 (a montanha aparece) × 사진을 보여 주세요 (me mostre a foto). Várias causativas viraram palavras do dia a dia: 알리다 (avisar, «fazer saber»), 태우다 (dar carona), 깨우다 (acordar alguém).',
+        table: {
+          head: ['Base', 'Causativo', 'Exemplo', 'Português'],
+          rows: [
+            ['먹다', '먹이다', '아기에게 우유를 먹여요.', 'Dou leite ao bebê.'],
+            ['보다', '보이다', '사진 좀 보여 주세요.', 'Me mostre a foto, por favor.'],
+            ['입다', '입히다', '아이에게 옷을 입혀요.', 'Visto a criança.'],
+            ['살다', '살리다', '의사가 환자를 살렸어요.', 'O médico salvou o paciente.'],
+            ['울다', '울리다', '동생 울리지 마!', 'Não faz o seu irmão chorar!'],
+            ['웃다', '웃기다', '그 사람 정말 웃겨요.', 'Ele é muito engraçado.'],
+            ['자다', '재우다', '아기를 재웠어요.', 'Pus o bebê para dormir.'],
+            ['타다', '태우다', '집까지 태워 줄게요.', 'Te dou uma carona até em casa.'],
+            ['알다', '알리다', '결과를 알려 주세요.', 'Me avise o resultado.'],
+            ['낮다', '낮추다', '목소리 좀 낮춰 주세요.', 'Fale mais baixo, por favor.'],
+          ],
+        },
+        examples: [
+          ['일곱 시에 깨워 주세요.', 'Me acorde às sete, por favor.'],
+          ['그 영화 진짜 웃겨요!', 'Esse filme é muito engraçado!'],
+          ['도착하면 알려 줘.', 'Me avisa quando chegar. (반말)'],
+        ],
+      },
+      {
+        heading: '-게 하다 e -게 되다',
+        text: 'Para qualquer verbo, a causativa produtiva é -게 하다: 아이를 일찍 자게 했어요 (fiz a criança dormir cedo). Ela aparece numa frase que todo mundo precisa: 기다리게 해서 죄송합니다 (desculpe tê-lo feito esperar). O primo -게 되다 diz que algo aconteceu pelas circunstâncias, não por decisão: 한국에서 일하게 되었어요 (acabei vindo trabalhar na Coreia; «surgiu a oportunidade»). É uma forma modesta de dar boas notícias.',
+        examples: [
+          ['오래 기다리게 해서 죄송합니다.', 'Desculpe tê-lo feito esperar tanto.'],
+          ['선생님이 학생들을 매일 일기를 쓰게 하셨어요.', 'O professor fazia os alunos escreverem um diário todo dia.'],
+          ['다음 달부터 서울에서 일하게 되었어요.', 'A partir do mês que vem, vou trabalhar em Seul.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Tentar adivinhar o sufixo: cada verbo tem o seu (열리다, 잡히다, 안기다, 먹이다). Aprenda junto com a palavra.',
+      'Esquecer que 하다 vira 되다 na passiva: 취소되다, 사용되다. «취소해지다» não se usa.',
+      'Traduzir 보여요 sempre como «é visto»: o sentido comum é «dá para ver», «aparece».',
+      'Confundir o 보이다 passivo com o causativo: 산이 보여요 (a montanha aparece) × 사진을 보여 줘요 (mostro a foto).',
+      'Abusar da passiva: «o livro foi lido por mim» soa estranho em coreano; diga 제가 그 책을 읽었어요.',
+      'Ler 웃겨요 como «ri»: é «é engraçado» (faz rir).',
+    ],
+    quiz: [
+      {
+        question: 'Qual é a passiva de 열다 (abrir)?',
+        options: ['열리다', '열히다', '열기다'],
+        answer: '열리다',
+        explanation: '열다 usa o sufixo 리: 열리다, «abrir-se».',
+      },
+      {
+        question: 'O que quer dizer 창문으로 산이 보여요?',
+        options: ['Dá para ver a montanha da janela.', 'Eu mostro a montanha pela janela.', 'A montanha olha pela janela.'],
+        answer: 'Dá para ver a montanha da janela.',
+        explanation: '보이다 passivo: «ser visto», «aparecer».',
+      },
+      {
+        question: 'Complete: 아기에게 우유를 ___. (Dou leite ao bebê.)',
+        options: ['먹여요', '먹혀요', '먹어져요'],
+        answer: '먹여요',
+        explanation: '먹이다 é a causativa (fazer comer). 먹히다 é a passiva (ser comido).',
+      },
+      {
+        question: 'Como se diz «Desculpe tê-lo feito esperar»?',
+        options: ['기다리게 해서 죄송합니다.', '기다려져서 죄송합니다.', '기다리기 해서 죄송합니다.'],
+        answer: '기다리게 해서 죄송합니다.',
+        explanation: 'Causativa produtiva: -게 하다. E o pedido de desculpas com -아/어서.',
+      },
+      {
+        question: 'Qual é a passiva de 취소하다 (cancelar)?',
+        options: ['취소되다', '취소히다', '취소하이다'],
+        answer: '취소되다',
+        explanation: 'Nos verbos em 하다, a passiva troca 하다 por 되다.',
+      },
+      {
+        question: 'O que quer dizer 그 사람 정말 웃겨요?',
+        options: ['Ele é muito engraçado.', 'Ele ri muito.', 'Riram muito dele.'],
+        answer: 'Ele é muito engraçado.',
+        explanation: '웃기다 é a causativa de 웃다: «fazer rir», ou seja, ser engraçado.',
+      },
+    ],
+  },
+  {
+    id: 'ko-g-geodeun-janha',
+    level: 'B2.2',
+    title: '-거든요 e -잖아요: explicar e lembrar',
+    emoji: '💡',
+    summary: 'Duas terminações que dão vida à conversa. -거든요 explica com uma informação que o ouvinte não tinha, como o nosso «é que…»: 아까 먹었거든요. -잖아요 lembra algo que o ouvinte já sabe, ou deveria saber: «você sabe que…», «ué, porque…»: 제가 말했잖아요. Bem usadas, deixam a fala natural; mal usadas, soam como bronca.',
+    sections: [
+      {
+        heading: '-거든요: «é que…»',
+        text: 'Radical + 거든요, sem regra de vogal: 가거든요, 먹거든요, 갔거든요; com substantivo, (이)거든요. Dois usos. O primeiro é explicar o motivo de algo, trazendo uma informação nova: 왜 안 먹어요? — 아까 먹었거든요 (é que eu comi há pouco). O segundo é preparar uma história, como quem diz «então, olha só»: 제가 어제 명동에 갔거든요. 그런데… Entre amigos, sem o 요: 나 오늘 바쁘거든.',
+        table: {
+          head: ['Pergunta', 'Resposta com -거든요', 'Português'],
+          rows: [
+            ['왜 안 먹어요?', '아까 먹었거든요.', 'É que eu comi há pouco.'],
+            ['왜 이렇게 피곤해 보여요?', '어제 잠을 못 잤거든요.', 'É que ontem não consegui dormir.'],
+            ['한국어를 어떻게 이렇게 잘해요?', '어머니가 한국 사람이거든요.', 'É que minha mãe é coreana.'],
+            ['오늘 회식 안 가요?', '내일 아침에 출장을 가거든요.', 'É que amanhã cedo viajo a trabalho.'],
+          ],
+        },
+        examples: [
+          ['제가 어제 명동에 갔거든요. 그런데 거기서 배우를 봤어요!', 'Então, ontem eu fui a Myeongdong. E lá eu vi um ator!'],
+          ['이 집 김치찌개가 유명하거든요. 한번 드셔 보세요.', 'É que o ensopado de kimchi daqui é famoso. Experimente.'],
+          ['나 오늘 좀 바쁘거든. 내일 보자.', 'É que hoje estou meio ocupado. A gente se vê amanhã. (반말)'],
+        ],
+      },
+      {
+        heading: '-잖아요: «você sabe que…»',
+        text: '-잖아요 vem de -지 않아요 («não é?») e aponta para o que é sabido pelos dois. Serve para lembrar (제가 말했잖아요, eu te falei, lembra?), para justificar com o óbvio (왜 코트 입었어요? — 춥잖아요!, ué, está frio!) e para criar cumplicidade (오늘 금요일이잖아요!, hoje é sexta, né!). Com substantivo, (이)잖아요: 친구잖아요. E 있잖아요 no começo da frase é o nosso «sabe…?», «então…», para puxar um assunto.',
+        table: {
+          head: ['Frase', 'Português', 'Tom'],
+          rows: [
+            ['제가 말했잖아요.', 'Eu te falei, lembra?', 'lembrete, leve bronca'],
+            ['오늘 금요일이잖아요!', 'Hoje é sexta, né!', 'animação compartilhada'],
+            ['춥잖아요.', 'Ué, está frio.', 'o óbvio'],
+            ['우리 친구잖아.', 'A gente é amigo, né.', 'afeto (반말)'],
+            ['있잖아요, 제가 어제…', 'Sabe, ontem eu…', 'puxar assunto'],
+          ],
+        },
+        examples: [
+          ['그 가수 있잖아요. 다음 달에 브라질에서 공연한대요.', 'Sabe aquele cantor? Dizem que ele vai fazer show no Brasil mês que vem.'],
+          ['괜찮아, 누구나 실수하잖아.', 'Tudo bem, todo mundo erra, né. (반말)'],
+          ['왜 우산을 가져왔어요? 오후에 비가 온다고 했잖아요.', 'Por que trouxe guarda-chuva? Ué, disseram que ia chover à tarde.'],
+        ],
+      },
+      {
+        heading: '-거든요, -잖아요 ou -아/어서요?',
+        text: 'As três servem para dar um motivo, mas com tons diferentes. -거든요 traz novidade, em tom de conversa. -잖아요 aponta o que o outro já sabe e, com um superior ou um cliente, pode soar como «o senhor devia saber». -아/어서요 é a resposta neutra e segura, boa para o trabalho.',
+        table: {
+          head: ['Terminação', 'O ouvinte já sabia?', 'Tom', 'Exemplo'],
+          rows: [
+            ['-거든요', 'não: é novidade', 'explicação animada', '내일 시험이 있거든요.'],
+            ['-잖아요', 'sim, ou deveria', 'lembrete, às vezes cobrança', '내일 시험이 있잖아요.'],
+            ['-아/어서요', 'tanto faz', 'neutro, seguro', '내일 시험이 있어서요.'],
+          ],
+        },
+        examples: [
+          ['어제 왜 전화 안 받았어요?', 'Por que você não atendeu o telefone ontem?'],
+          ['아, 휴대폰을 집에 두고 나갔거든요.', 'Ah, é que eu saí e deixei o celular em casa.'],
+          ['또요? 지난주에도 그랬잖아요!', 'De novo? Semana passada também foi assim!'],
+          ['부장님, 늦어서 죄송합니다. 길이 많이 막혀서요.', 'Diretor, desculpe o atraso. O trânsito estava muito ruim.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar -거든요 para algo que o ouvinte já sabe: aí o certo é -잖아요.',
+      'Usar -잖아요 com o chefe ou com um cliente: pode soar como cobrança. Prefira -아/어서요.',
+      'Usar -거든요 e -잖아요 na escrita formal: são da conversa.',
+      'Escrever «-쟎아요»: a forma padrão é 잖 (de -지 않아요): 춥잖아요.',
+      'Confundir o -거든요 do fim da frase com o -거든 no meio, que é condicional literário: 도착하거든 연락해 (quando chegar, me avise).',
+    ],
+    quiz: [
+      {
+        question: 'Seu amigo pergunta por que você não está comendo. Você explica com uma informação nova:',
+        options: ['아까 먹었거든요.', '아까 먹었잖아요.', '아까 먹을 거예요.'],
+        answer: '아까 먹었거든요.',
+        explanation: '-거든요 explica com uma informação que o ouvinte não tinha: «é que comi há pouco».',
+      },
+      {
+        question: 'Qual frase lembra algo que o ouvinte já sabe?',
+        options: ['제가 말했잖아요.', '제가 말했거든요.', '제가 말할 거예요.'],
+        answer: '제가 말했잖아요.',
+        explanation: '-잖아요 aponta para o que é conhecido pelos dois: «eu te falei, lembra?».',
+      },
+      {
+        question: 'Qual é a grafia padrão?',
+        options: ['춥잖아요', '춥쟎아요', '춥자나요'],
+        answer: '춥잖아요',
+        explanation: 'É a contração de -지 않아요: 잖. 춥자나요 é só como soa.',
+      },
+      {
+        question: 'Para explicar um atraso ao chefe, a resposta mais segura é…',
+        options: ['길이 막혀서요.', '길이 막혔잖아요.', '길이 막혔거든.'],
+        answer: '길이 막혀서요.',
+        explanation: '-아/어서요 é neutro. -잖아요 soaria como cobrança, e -거든 sem 요 é 반말.',
+      },
+      {
+        question: 'Para que serve o 있잖아요 no começo de uma frase?',
+        options: ['Para puxar um assunto, como «sabe…?»', 'Para dizer que alguma coisa existe', 'Para encerrar a conversa'],
+        answer: 'Para puxar um assunto, como «sabe…?»',
+        explanation: '있잖아요 (ou 있잖아) chama a atenção antes de contar algo.',
       },
     ],
   },

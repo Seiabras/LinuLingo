@@ -1897,4 +1897,378 @@ export const STORIES_JA_1: StorySeed[] = [
       },
     },
   },
+  // ───────────────────────── B1.3 ─────────────────────────
+  {
+    id: 'ja-h19',
+    level: 'B1.3',
+    cefr: 'B1',
+    title: '朝までおどる町',
+    emoji: '🏮',
+    summary: 'Em Gujō, cidade das águas limpas nas montanhas de Gifu, o Linu passa o Obon com a família da amiga Natsuki: recebe os antepassados em casa e dança o bon-odori até o dia amanhecer.',
+    cultural_context:
+      'O Obon, em meados de agosto, é quando, pela tradição budista, os espíritos dos antepassados voltam para visitar a família. Muita gente viaja à cidade natal, limpa os túmulos, acende um pequeno fogo na porta para guiar os espíritos (mukaebi) e monta um altar com cavalinhos de pepino, para que eles cheguem depressa, e vaquinhas de berinjela, para que voltem devagar. Em Gujō Hachiman, na província de Gifu, o Gujō Odori dura mais de trinta noites de verão, e nas quatro noites do Obon a dança vai até o amanhecer; qualquer um pode entrar na roda, de tamancos de madeira batendo no chão. Em 2022, essas danças entraram na lista do Patrimônio Imaterial da UNESCO.',
+    start: 'start',
+    glossary: [
+      ['お盆', 'Obon, os dias em que os antepassados voltam para visitar a família'],
+      ['ご先祖さま', 'os antepassados (com respeito)'],
+      ['しょうりょううま', 'cavalinho de pepino e vaquinha de berinjela, montarias dos espíritos'],
+      ['名残をおしむ', 'ter pena de se despedir'],
+      ['迎え火・送り火', 'fogo de boas-vindas / fogo de despedida'],
+      ['手を合わせる', 'juntar as mãos em oração'],
+      ['徹夜おどり', 'dança que vai a noite inteira'],
+      ['ゆかた・げた', 'quimono leve de algodão, de verão / tamanco de madeira'],
+      ['〜じゃなくて', 'não é…, e sim… (見るおどりじゃなくて、おどるおどり)'],
+      ['見よう見まね', 'aprender imitando, «olhando e copiando»'],
+      ['〜うちに', 'enquanto… (e, sem perceber, algo muda)'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🥒',
+        text: '八月十三日。リヌは友だちのなつきと、岐阜県の郡上の町に来た。なつきのおばあちゃんの家は、町の中を流れる水路のそばにある。家に着くと、おばあちゃんが、きゅうりとなすにわりばしをさしていた。',
+        translation: 'Treze de agosto. O Linu veio com a amiga Natsuki a Gujō, na província de Gifu. A casa da avó da Natsuki fica ao lado de um canal que corre pelo meio da cidade. Quando chegaram, a avó estava espetando palitinhos em pepinos e berinjelas.',
+        choices: [
+          { text: '「それ、何を作ってるんですか？」と聞く。', translation: 'Pergunta: «O que a senhora está fazendo?»', next: 'uma' },
+          { text: '荷物を置いて、なつきと川を見に行く。', translation: 'Deixa as malas e vai ver o rio com a Natsuki.', next: 'rio' },
+        ],
+      },
+      rio: {
+        emoji: '🌉',
+        text: '町の真ん中を流れる吉田川では、子どもたちが高い橋から次々に川へ飛びこんでいた。「郡上の夏の名物だよ。」となつきが言った。水はすきとおっていて、とても冷たそうだ。',
+        translation: 'No rio Yoshida, que corta o centro da cidade, as crianças pulavam de uma ponte alta, uma atrás da outra. «É a marca registrada do verão de Gujō», disse a Natsuki. A água era transparente e parecia geladíssima.',
+        choices: [{ text: 'おばあちゃんの家にもどる。', translation: 'Volta para a casa da avó.', next: 'uma' }],
+      },
+      uma: {
+        emoji: '🍆',
+        text: 'おばあちゃんは笑って教えてくれた。「これは、しょうりょううま。お盆に、ご先祖さまが乗ってくるの。きゅうりの馬は足が速いから、早く帰ってこられるように。なすの牛はゆっくりだから、帰りは名残をおしみながら、のんびり帰れるようにね。」',
+        translation: 'A avó explicou, sorrindo: «Isto é a montaria dos espíritos. No Obon, os antepassados vêm montados nela. O cavalo de pepino é rápido, para eles chegarem logo. A vaca de berinjela é lenta, para na volta eles irem sem pressa, aproveitando até o fim.»',
+        choices: [
+          { text: '「こっちに来るときは早く、帰るときはゆっくり、なんですね。」', translation: '«Para vir, rápido; para voltar, devagar, então.»', next: 'mukaebi' },
+          {
+            text: '「じゃあ、帰るときは、きゅうりの馬で急いで帰るんですね。」',
+            translation: '«Então, na volta, eles vão depressa no cavalo de pepino.»',
+            wrong: 'É o contrário: o cavalo de pepino (きゅうりの馬) é para os antepassados CHEGAREM depressa (早く帰ってこられるように). Na volta, eles vão na vaca de berinjela (なすの牛), devagar, «名残をおしみながら», com pena de se despedir.',
+          },
+        ],
+      },
+      mukaebi: {
+        emoji: '🔥',
+        text: '夕方、家の前で小さな火をたいた。「迎え火」だ。おばあちゃんは手を合わせて、「おじいちゃん、おかえり。」と小さな声で言った。けむりが、ゆっくり空へのぼっていく。',
+        translation: 'No fim da tarde, acenderam um pequeno fogo na frente da casa: é o «mukaebi», o fogo de boas-vindas. A avó juntou as mãos e disse baixinho: «Bem-vindo de volta, querido.» A fumaça subiu devagar para o céu.',
+        choices: [{ text: 'リヌも、だまって手を合わせる。', translation: 'O Linu também junta as mãos, em silêncio.', next: 'convite' }],
+      },
+      convite: {
+        emoji: '👘',
+        text: '夕ご飯のあと、なつきが言った。「さあ、今夜は徹夜おどりだよ。朝までおどるんだ。」おばあちゃんが、リヌにゆかたを着せてくれた。「げたで、カランコロンと音を鳴らしておどるのが、郡上のおどり方だからね。」',
+        translation: 'Depois do jantar, a Natsuki disse: «Hoje é a dança da noite inteira. A gente dança até de manhã.» A avó vestiu o Linu com uma yukata. «Em Gujō, se dança batendo os tamancos, fazendo clac-cloc, viu?»',
+        choices: [{ text: 'げたをはいて、町に出る。', translation: 'Calça os tamancos e sai para a rua.', next: 'praca' }],
+      },
+      praca: {
+        emoji: '🥁',
+        text: '夜十時、通りは人でいっぱいだった。屋形の上で三味線と太鼓と歌が鳴りひびき、みんなが大きな輪になっておどっている。地元の人も観光客も、同じ輪の中だ。',
+        translation: 'Às dez da noite, a rua estava lotada. Em cima do palanque de madeira, soavam o shamisen, os tambores e o canto, e todo mundo dançava numa grande roda. Moradores e turistas, todos na mesma roda.',
+        choices: [
+          { text: '見よう見まねで、輪に入る。', translation: 'Entra na roda, imitando os outros.', next: 'danca' },
+          { text: '「ぼくは観光客だから、見ているだけのほうがいいよね？」となつきに聞く。', translation: 'Pergunta à Natsuki: «Como sou turista, é melhor só assistir, né?»', next: 'pergunta' },
+        ],
+      },
+      pergunta: {
+        emoji: '🙅',
+        text: 'なつきは首をふった。「そんなことないよ！郡上おどりは、見るおどりじゃなくて、おどるおどりなの。だれでも入っていいんだよ。」',
+        translation: 'A Natsuki balançou a cabeça. «Nada disso! O Gujō Odori não é dança para assistir, é dança para dançar. Qualquer um pode entrar.»',
+        choices: [
+          { text: '「じゃあ、ぼくも！」と輪に入る。', translation: '«Então eu também!», e entra na roda.', next: 'danca' },
+          {
+            text: '「そうか、見るためのおどりなんだね。」と、道のはしで見ている。',
+            translation: '«Ah, então é uma dança para assistir», e fica olhando da beira da rua.',
+            wrong: 'A Natsuki disse «見るおどりじゃなくて、おどるおどり» (miru odori ja nakute, odoru odori): NÃO é dança para assistir, é dança para DANÇAR, e «だれでも入っていい», qualquer um pode entrar. 「〜じゃなくて」 = não é…, e sim….',
+          },
+        ],
+      },
+      danca: {
+        emoji: '💃',
+        text: '「かわさき」という曲が始まると、みんなの手が、同じ方向に動いた。前のおじいさんのまねをしているうちに、リヌの足も自然に動くようになった。げたの音が、夜の町にひびく。',
+        translation: 'Quando começou a música «Kawasaki», as mãos de todos se moveram para o mesmo lado. De tanto imitar o senhor da frente, sem perceber, os pés do Linu também começaram a se mexer sozinhos. O som dos tamancos ecoava pela cidade à noite.',
+        choices: [
+          { text: '朝まで、おどりつづける。', translation: 'Continua dançando até de manhã.', next: 'amanhecer' },
+          { text: '真夜中の二時ごろ、ねむくなって、家に帰る。', translation: 'Lá pelas duas da manhã, fica com sono e volta para casa.', next: 'final_neutro' },
+        ],
+      },
+      amanhecer: {
+        emoji: '🌅',
+        text: '空が少しずつ白くなってきた。最後の曲が終わると、みんなが大きな拍手をした。なつきのおでこには、あせが光っている。「おばあちゃんが言ってた。おじいちゃんも毎年、朝までおどってたって。」',
+        translation: 'O céu foi clareando aos poucos. Quando a última música terminou, todos aplaudiram forte. O suor brilhava na testa da Natsuki. «A vovó me contou que o vovô também dançava até de manhã, todo ano.»',
+        choices: [{ text: '「じゃあ、今夜は、おじいちゃんもいっしょにおどってたかもね。」', translation: '«Então, talvez hoje o seu avô tenha dançado com a gente.»', next: 'final_bom' }],
+      },
+      final_bom: {
+        emoji: '✨',
+        text: 'なつきは少しだまってから、笑った。「うん。きっとね。」家に帰ると、おばあちゃんがおにぎりを作って待っていてくれた。お盆の最後の日、みんなで送り火をたいて、なすの牛に乗ったご先祖さまを、ゆっくり見送った。',
+        translation: 'A Natsuki ficou quieta um instante e sorriu. «É. Com certeza.» Em casa, a avó os esperava com onigiri. No último dia do Obon, todos acenderam o fogo de despedida e se despediram, sem pressa, dos antepassados montados na vaca de berinjela.',
+        ending: {
+          tone: 'bom',
+          title: 'Até o amanhecer',
+          message: 'O Linu recebeu os antepassados da família da Natsuki, entrou na roda do Gujō Odori e dançou até o dia nascer, como o avô dela fazia.',
+        },
+      },
+      final_neutro: {
+        emoji: '🛌',
+        text: 'リヌはおばあちゃんの家のふとんに入った。遠くから、げたの音と歌が、いつまでも聞こえていた。朝、帰ってきたなつきは「最後まで最高だったよ！」と言って、そのまま寝てしまった。',
+        translation: 'O Linu se deitou no futon da casa da avó. De longe, o som dos tamancos e o canto não paravam. De manhã, a Natsuki chegou dizendo «Foi incrível até o fim!» e dormiu ali mesmo.',
+        ending: {
+          tone: 'neutro',
+          title: 'Metade da noite',
+          message: 'Duas da manhã é cedo para o Gujō Odori! Nas noites do Obon, a roda só termina quando o sol nasce.',
+        },
+      },
+    },
+  },
+  {
+    id: 'ja-h20',
+    level: 'B1.3',
+    cefr: 'B1',
+    title: 'ひと月に三十五日の雨',
+    emoji: '🌲',
+    summary: 'Em Yakushima, ilha de florestas antigas no sul do Japão, o Linu faz a trilha de dez horas até o Jōmon Sugi, um cedro de milhares de anos, com o guia Takeshi.',
+    cultural_context:
+      'Yakushima, ao sul de Kyūshū, foi um dos primeiros Patrimônios Mundiais do Japão, em 1993. Chove tanto que a escritora Fumiko Hayashi escreveu, num romance, que ali chove «trinta e cinco dias por mês». Os cedros com mais de mil anos são chamados de «yakusugi», e o mais famoso, o Jōmon Sugi, pode ter de dois a sete mil anos, dependendo da estimativa. A trilha de ida e volta leva umas dez horas, parte dela sobre os trilhos de uma antiga ferrovia madeireira; no caminho está o toco de Wilson, um cedro cortado há uns quatrocentos anos, e as florestas de musgo da ilha são apontadas como inspiração para «Princesa Mononoke», de Hayao Miyazaki.',
+    start: 'start',
+    glossary: [
+      ['登山口', 'começo da trilha'],
+      ['往復', 'ida e volta'],
+      ['屋久杉', 'cedro de Yakushima com mais de mil anos'],
+      ['いつものこと', 'coisa de sempre, o normal'],
+      ['トロッコ', 'vagonete (da antiga ferrovia madeireira)'],
+      ['こけ', 'musgo'],
+      ['切り株', 'toco de árvore cortada'],
+      ['見てごらん', 'olhe só (convite gentil para olhar)'],
+      ['無理はしないで', 'não force, não exagere'],
+      ['引き返す', 'dar meia-volta, voltar'],
+      ['〜とも〜とも言われている', 'uns dizem…, outros dizem…'],
+      ['〜ほど', 'tão… que… (囲めないほど太い = tão grosso que não dá para abraçar)'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🌧️',
+        text: '朝まだ暗いうちに、リヌはガイドのたけしさんと、屋久島の登山口に立っていた。空には雲がひくくたれこめ、小雨がふっている。たけしさんが言った。「縄文杉まで、往復で十時間。今日は長い一日になるよ。」',
+        translation: 'Ainda de madrugada, o Linu estava no começo da trilha de Yakushima com o guia Takeshi. Nuvens baixas cobriam o céu, e caía uma garoa. O Takeshi disse: «Até o Jōmon Sugi, são dez horas, ida e volta. Hoje o dia vai ser longo.»',
+        choices: [
+          { text: '「雨なのに、行くんですか？」', translation: '«Mesmo com chuva, a gente vai?»', next: 'chuva' },
+          { text: '「よろしくお願いします！」と歩き始める。', translation: 'Diz «Conto com você!» e começa a andar.', next: 'trilhos' },
+        ],
+      },
+      chuva: {
+        emoji: '☔',
+        text: 'たけしさんは笑った。「屋久島では、雨はいつものこと。林芙美子という作家が、この島では『ひと月に三十五日雨がふる』と書いたくらいだからね。」',
+        translation: 'O Takeshi riu. «Em Yakushima, chuva é coisa de todo dia. Tanto que uma escritora, a Fumiko Hayashi, escreveu que nesta ilha «chove trinta e cinco dias por mês».»',
+        choices: [
+          { text: '「ひと月に三十五日？一か月は三十日ぐらいしかないのに！」', translation: '«Trinta e cinco dias por mês? Mas um mês só tem uns trinta dias!»', next: 'trilhos' },
+          {
+            text: '「じゃあ、屋久島では、雨はめずらしいんですね。」',
+            translation: '«Então em Yakushima a chuva é rara.»',
+            wrong: 'É o contrário: «雨はいつものこと» (ame wa itsumo no koto), a chuva é coisa de SEMPRE. Os «trinta e cinco dias de chuva por mês» são um exagero de propósito, para dizer que chove o tempo todo.',
+          },
+        ],
+      },
+      trilhos: {
+        emoji: '🛤️',
+        text: '最初の三時間は、古いトロッコの線路の上を歩く。昔、屋久杉を切って運ぶために作られた線路だ。「昔の人は、たくさんの屋久杉を切った。でも、森を守ろうとした人たちもいたんだ。だから、今もこの森が残っている。」とたけしさんが言った。',
+        translation: 'As primeiras três horas são em cima dos trilhos de uma velha ferrovia de vagonetes, feita antigamente para levar os yakusugi cortados. «Antigamente cortaram muitos yakusugi. Mas também houve quem lutasse para proteger a floresta. Por isso ela ainda existe», contou o Takeshi.',
+        choices: [{ text: '線路の上を、もくもくと歩きつづける。', translation: 'Continua caminhando pelos trilhos, em silêncio.', next: 'musgo' }],
+      },
+      musgo: {
+        emoji: '🌿',
+        text: '線路が終わると、道は急な上り坂に変わった。木の根も岩も、すべて緑のこけにおおわれている。やわらかい緑の光の中で、リヌは思わず足を止めた。「アニメの中の森みたいだ……。」たけしさんがうなずいた。「このあたりのこけの森は、有名なアニメ映画のモデルになったとも言われているんだ。」',
+        translation: 'Quando os trilhos acabaram, o caminho virou uma subida íngreme. As raízes e as pedras estavam todas cobertas de musgo verde. No meio daquela luz verde e suave, o Linu parou sem querer. «Parece uma floresta de anime…» O Takeshi concordou. «Dizem que as florestas de musgo daqui serviram de modelo para um filme de animação famoso.»',
+        choices: [{ text: '写真を一枚だけとって、先に進む。', translation: 'Tira uma foto só e segue em frente.', next: 'wilson' }],
+      },
+      wilson: {
+        emoji: '💚',
+        text: '少し登ると、大きな切り株があった。中に入れるほど大きい。「ウィルソン株。四百年ぐらい前に切られた杉だよ。中から上を見てごらん。」見上げると、切り口から見える空が、ハートの形になっていた。',
+        translation: 'Mais um pouco de subida, e apareceu um toco enorme, tão grande que dava para entrar nele. «É o toco de Wilson. Um cedro cortado uns quatrocentos anos atrás. Olhe para cima, de dentro.» Olhando para o alto, o pedaço de céu que aparecia pela abertura tinha forma de coração.',
+        choices: [{ text: '「ハートだ！」と写真をとって、また歩き出す。', translation: 'Diz «Um coração!», tira uma foto e volta a caminhar.', next: 'cansaco' }],
+      },
+      cansaco: {
+        emoji: '🥵',
+        text: '歩き始めてから四時間。リヌの足は、だんだん重くなってきた。たけしさんが言った。「縄文杉まで、あと一時間ぐらい。でも、帰りも同じぐらいかかるから、つらかったら、ここで引き返そう。無理はしないで。」',
+        translation: 'Quatro horas de caminhada. As pernas do Linu foram ficando pesadas. O Takeshi disse: «Até o Jōmon Sugi falta mais ou menos uma hora. Mas a volta leva quase o mesmo tanto; se estiver difícil, a gente dá meia-volta aqui. Não force.»',
+        choices: [
+          { text: '「水を飲んで少し休めば、大丈夫です。」', translation: '«Se eu beber água e descansar um pouco, dá.»', next: 'jomon' },
+          { text: '「足がもう限界です。引き返します。」', translation: '«Minhas pernas não aguentam mais. Vamos voltar.»', next: 'final_neutro' },
+          {
+            text: '「あと一時間で、帰り道も終わりですね。」',
+            translation: '«Mais uma hora e a volta também já termina, né?»',
+            wrong: 'O Takeshi disse «あと一時間ぐらい» só até o cedro, e avisou: «帰りも同じぐらいかかる», a VOLTA também leva quase o mesmo tanto. Chegar ao Jōmon Sugi é só a metade do caminho!',
+          },
+        ],
+      },
+      jomon: {
+        emoji: '🌳',
+        text: 'そして、ついに縄文杉が目の前に現れた。みきはごつごつしていて、何人かで手をつないでも、囲めないほど太い。「二千年とも七千年とも言われている。本当の年は、だれにもわからないんだ。」とたけしさんが小さな声で言った。',
+        translation: 'E, finalmente, o Jōmon Sugi apareceu diante deles. O tronco é todo nodoso e tão grosso que nem várias pessoas de mãos dadas conseguiriam abraçá-lo. «Uns dizem dois mil anos, outros, sete mil. A idade de verdade, ninguém sabe», disse o Takeshi em voz baixa.',
+        choices: [
+          { text: 'だまって、長い時間、木を見上げる。', translation: 'Fica um bom tempo olhando a árvore, em silêncio.', next: 'final_bom' },
+          { text: '「さわってみたい！」と、木のほうへ近づく。', translation: '«Quero tocar nela!», e vai chegando perto da árvore.', next: 'saku' },
+        ],
+      },
+      saku: {
+        emoji: '✋',
+        text: 'たけしさんがリヌのうでをつかんだ。「ちょっと待って。根をふむと、木が弱ってしまうんだ。だから、みんなここのデッキから見るだけにしているんだよ。」',
+        translation: 'O Takeshi segurou o braço do Linu. «Espera aí. Se a gente pisa nas raízes, a árvore enfraquece. Por isso, todo mundo olha só daqui do deque.»',
+        choices: [{ text: '「わかりました。ここから見ます。」', translation: '«Entendi. Vou olhar daqui.»', next: 'final_bom' }],
+      },
+      final_bom: {
+        emoji: '✨',
+        text: '雨の音と、鳥の声だけが聞こえる。何千年もここに立って、この雨を受けてきた木。リヌは自分がとても小さく感じたが、なぜかそれが気持ちよかった。帰り道、たけしさんが言った。「この島の雨がなければ、この森もないんだよ。」',
+        translation: 'Só se ouviam a chuva e os pássaros. Uma árvore que estava ali havia milhares de anos, recebendo aquela mesma chuva. O Linu se sentiu muito pequeno, mas, sem saber por quê, isso era bom. Na volta, o Takeshi disse: «Sem a chuva desta ilha, esta floresta não existiria.»',
+        ending: {
+          tone: 'bom',
+          title: 'Diante do Jōmon Sugi',
+          message: 'O Linu caminhou horas na chuva, viu o coração do toco de Wilson e ficou frente a frente com uma árvore de milhares de anos.',
+        },
+      },
+      final_neutro: {
+        emoji: '🥾',
+        text: 'たけしさんとリヌは、ゆっくり山を下りた。縄文杉は見られなかったが、帰り道のこけの森は、行きよりもっと美しく見えた。「縄文杉はにげないよ。また来ればいい。」とたけしさんは笑った。',
+        translation: 'O Takeshi e o Linu desceram a montanha devagar. Não viram o Jōmon Sugi, mas a floresta de musgo da volta pareceu ainda mais bonita que na ida. «O Jōmon Sugi não vai fugir. É só voltar outro dia», riu o Takeshi.',
+        ending: {
+          tone: 'neutro',
+          title: 'O cedro espera',
+          message: 'Saber a hora de voltar é a regra de ouro na montanha. O Jōmon Sugi está ali há milênios: pode esperar a próxima visita do Linu.',
+        },
+      },
+    },
+  },
+  {
+    id: 'ja-h21',
+    level: 'B1.3',
+    cefr: 'B1',
+    title: '十円玉のお寺と一ぱいのお茶',
+    emoji: '🍵',
+    summary: 'Em Uji, terra do chá verde, o Linu descobre que o templo da moeda de dez ienes existe de verdade e participa da sua primeira cerimônia do chá.',
+    cultural_context:
+      'Uji, entre Quioto e Nara, cultiva chá há uns oitocentos anos e é famosa pelo matchá, o chá verde em pó. Ali fica o Byōdō-in, templo cujo Salão da Fênix, de 1053, está gravado na moeda de dez ienes; a fênix do telhado também estampava a nota antiga de dez mil ienes. Na cerimônia do chá (茶道, sadō), cada gesto tem sentido: todos entram pela portinha baixa, de cabeça abaixada, porque diante do chá ninguém é mais importante que ninguém; come-se um docinho antes do chá amargo; gira-se a tigela para não beber pela «frente» dela; e, no fim, elogia-se a tigela. O lema «ichigo ichie» (um encontro, uma vez) lembra que cada encontro é único.',
+    start: 'start',
+    glossary: [
+      ['十円玉', 'moeda de dez ienes'],
+      ['鳳凰', 'fênix (a ave lendária do telhado do Byōdō-in)'],
+      ['茶室', 'casa ou sala da cerimônia do chá'],
+      ['にじり口', 'a portinha baixa da casa de chá'],
+      ['どんなに〜も', 'por mais… que seja (どんなにえらい人も = por mais importante que seja)'],
+      ['一期一会', 'ichigo ichie: cada encontro acontece uma só vez na vida'],
+      ['和菓子', 'doce tradicional japonês'],
+      ['茶わん', 'tigela de chá'],
+      ['正面', 'a frente (da tigela)'],
+      ['〜たまま', 'do jeito que está, sem mudar (向けたまま = deixando virado)'],
+      ['苦い', 'amargo'],
+      ['ほめる', 'elogiar'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🚃',
+        text: '京都駅から電車で二十分ほど。リヌは友だちのはるかと、宇治の駅におりた。町じゅうに、お茶のいいかおりがただよっている。はるかがポケットから十円玉を出した。「この裏にある建物、どこにあると思う？」',
+        translation: 'Uns vinte minutos de trem desde a estação de Quioto. O Linu desceu na estação de Uji com a amiga Haruka. A cidade inteira tem um cheirinho bom de chá. A Haruka tirou uma moeda de dez ienes do bolso. «Onde você acha que fica o prédio do verso desta moeda?»',
+        choices: [
+          { text: '「え、本当にある建物なの？」', translation: '«Ué, é um prédio que existe de verdade?»', next: 'byodoin' },
+          { text: '「わからない。それより、先にお茶を飲もうよ！」', translation: '«Não sei. Em vez disso, vamos tomar chá primeiro!»', next: 'chaya' },
+        ],
+      },
+      chaya: {
+        emoji: '⏰',
+        text: 'はるかは笑った。「お茶会は午後の予約だよ。その前に、平等院を見よう。十円玉の建物は、すぐそこなんだから。」',
+        translation: 'A Haruka riu. «A cerimônia do chá está reservada para a tarde. Antes, vamos ver o Byōdō-in. O prédio da moeda de dez ienes é logo ali.»',
+        choices: [
+          { text: 'はるかについて行く。', translation: 'Vai atrás da Haruka.', next: 'byodoin' },
+          {
+            text: '「じゃあ、今からお茶会に行こう。」',
+            translation: '«Então vamos agora para a cerimônia do chá.»',
+            wrong: 'A Haruka disse «お茶会は午後の予約» (ochakai wa gogo no yoyaku): a cerimônia do chá está reservada para a TARDE. Antes (その前に), eles vão ao Byōdō-in, que fica «すぐそこ», logo ali.',
+          },
+        ],
+      },
+      byodoin: {
+        emoji: '🏯',
+        text: '池の向こうに、赤い建物が、つばさを広げた鳥のように立っていた。屋根の上には、金色の鳥が二羽いる。リヌは十円玉を出して、見くらべた。「同じだ！」「平等院鳳凰堂。千年近く前に建てられたんだよ。」とはるかが言った。',
+        translation: 'Do outro lado do lago, um prédio vermelho se erguia como um pássaro de asas abertas. No telhado, havia dois pássaros dourados. O Linu tirou a moeda de dez ienes e comparou. «É igualzinho!» «É o Salão da Fênix do Byōdō-in. Foi construído há quase mil anos», disse a Haruka.',
+        choices: [
+          { text: '「屋根の上の鳥は何？」と聞く。', translation: 'Pergunta: «Que pássaro é aquele no telhado?»', next: 'houou' },
+          { text: '茶室へ向かう。', translation: 'Vai para a casa de chá.', next: 'chashitsu' },
+        ],
+      },
+      houou: {
+        emoji: '🐦‍🔥',
+        text: '「鳳凰っていう、伝説の鳥。前の一万円札のうらにも、この鳥がいたんだよ。」リヌはあわててさいふを見たが、中には十円玉しか入っていなかった。',
+        translation: '«É a fênix, uma ave lendária. Ela também aparecia no verso da nota antiga de dez mil ienes.» O Linu olhou a carteira correndo, mas lá dentro só tinha moedas de dez ienes.',
+        choices: [{ text: '笑いながら、茶室へ向かう。', translation: 'Rindo, vai para a casa de chá.', next: 'chashitsu' }],
+      },
+      chashitsu: {
+        emoji: '🚪',
+        text: '午後、ふたりは小さな茶室の前にいた。入口はとても低く、頭を下げないと入れない。お茶の先生が言った。「この入口は『にじり口』といいます。どんなにえらい人も、頭を下げて入るんですよ。お茶の前では、みんな同じですから。」',
+        translation: 'À tarde, os dois estavam diante de uma pequena casa de chá. A entrada é tão baixa que só se entra de cabeça abaixada. A mestra de chá disse: «Esta entrada se chama «nijiriguchi». Por mais importante que a pessoa seja, entra de cabeça baixa. Diante do chá, todos são iguais.»',
+        choices: [
+          { text: '頭を下げて、にじり口から入る。', translation: 'Abaixa a cabeça e entra pela portinha.', next: 'dentro' },
+          {
+            text: '「ぼくはえらくないから、頭を下げなくてもいいですね。」',
+            translation: '«Eu não sou importante, então não preciso abaixar a cabeça, né?»',
+            wrong: 'A mestra disse «どんなにえらい人も、頭を下げて入る» (donna ni erai hito mo): TODO MUNDO, por mais importante que seja, entra de cabeça baixa. A regra vale para todos, porque «お茶の前では、みんな同じ», diante do chá, todos são iguais.',
+          },
+        ],
+      },
+      dentro: {
+        emoji: '🍡',
+        text: '茶室の中は、たたみ四まい半。かべには「一期一会」と書かれたかけじくがかかっている。先生は、まず季節の和菓子を出してから、静かにお茶をたて始めた。シャカシャカという茶せんの音だけが聞こえる。',
+        translation: 'Dentro, a casa de chá tem quatro tatames e meio. Na parede, há um rolo pendurado com os dizeres «ichigo ichie». A mestra primeiro serviu um docinho da estação e depois começou, em silêncio, a preparar o chá. Só se ouve o chac-chac do batedor de bambu.',
+        choices: [
+          { text: '「一期一会って、どういう意味ですか？」と聞く。', translation: 'Pergunta: «O que quer dizer ichigo ichie?»', next: 'ichigo' },
+          { text: 'だまって、先生の手の動きを見る。', translation: 'Observa em silêncio os movimentos das mãos da mestra.', next: 'tigela' },
+        ],
+      },
+      ichigo: {
+        emoji: '📜',
+        text: '先生は手を止めずに答えた。「一回の出会いは、一生に一回だけ。今日のこのお茶も、二度と同じにはなりません。だから、心をこめる、という意味です。」',
+        translation: 'A mestra respondeu sem parar as mãos: «Cada encontro acontece uma única vez na vida. Este chá de hoje também nunca vai se repetir igual. Por isso, é preciso pôr o coração em tudo. É isso que quer dizer.»',
+        choices: [{ text: '「今日のお茶は、今日だけなんですね。」', translation: '«O chá de hoje é só de hoje, então.»', next: 'tigela' }],
+      },
+      tigela: {
+        emoji: '🍵',
+        text: '先生がリヌの前に茶わんを置いた。「茶わんの正面は、お客さんのほうに向けてあります。飲む前に、茶わんを二回まわして、正面をよけてから飲んでくださいね。」',
+        translation: 'A mestra pôs a tigela diante do Linu. «A frente da tigela está virada para o convidado. Antes de beber, gire a tigela duas vezes, para tirar a frente da sua direção, e só então beba, está bem?»',
+        choices: [
+          { text: '「いただきます。」と言って、茶わんを二回まわしてから飲む。', translation: 'Diz «itadakimasu», gira a tigela duas vezes e bebe.', next: 'beber' },
+          {
+            text: '正面をこちらに向けたまま、すぐに飲む。',
+            translation: 'Bebe logo, com a frente da tigela ainda virada para si.',
+            wrong: 'A mestra pediu «二回まわして、正面をよけてから飲んで»: girar a tigela duas vezes e beber só DEPOIS de tirar a frente da sua direção. A frente foi virada para o convidado por respeito, e ele, por modéstia, não bebe por ela.',
+          },
+        ],
+      },
+      beber: {
+        emoji: '😌',
+        text: 'お茶は少し苦くて、そのあと、ふしぎなあまさが口に残った。和菓子のあまさとよく合う。はるかが小さな声で言った。「最後に、茶わんをほめるんだよ。」',
+        translation: 'O chá era um pouco amargo e, depois, deixou na boca uma doçura curiosa, que combinava bem com o docinho. A Haruka cochichou: «No final, a gente elogia a tigela.»',
+        choices: [
+          { text: '「きれいな茶わんですね。」と、茶わんをほめる。', translation: 'Elogia a tigela: «Que tigela bonita!»', next: 'final_bom' },
+          { text: '「ちょっと苦いので、さとうをください。」', translation: '«Está meio amargo; pode me dar açúcar?»', next: 'final_neutro' },
+        ],
+      },
+      final_bom: {
+        emoji: '🌸',
+        text: '先生はうれしそうにほほえんだ。「ありがとうございます。この茶わんは、わたしの先生からいただいたものなんです。」帰りの電車で、リヌは十円玉を大事にポケットにしまった。今日のお茶も、きっと一期一会だ。',
+        translation: 'A mestra sorriu, contente. «Muito obrigada. Esta tigela eu ganhei da minha própria mestra.» No trem de volta, o Linu guardou a moeda de dez ienes no bolso com todo o cuidado. O chá daquele dia também tinha sido, com certeza, ichigo ichie.',
+        ending: {
+          tone: 'bom',
+          title: 'Ichigo ichie',
+          message: 'O Linu achou o templo da moeda de dez ienes, entrou de cabeça baixa na casa de chá e seguiu cada gesto da cerimônia, até o elogio final à tigela.',
+        },
+      },
+      final_neutro: {
+        emoji: '🍦',
+        text: '一瞬、茶室がしんとした。先生は笑って言った。「抹茶に、おさとうは入れないんですよ。だから、先にお菓子を食べるんです。でも、あとで町の抹茶ソフトクリームを食べてみてください。とてもあまいですから。」',
+        translation: 'Por um instante, a casa de chá ficou em silêncio. A mestra riu e disse: «No matchá não se põe açúcar. É por isso que se come o docinho antes. Mas depois experimente o sorvete de matchá da cidade. Esse é bem docinho.»',
+        ending: {
+          tone: 'neutro',
+          title: 'Açúcar no matchá?',
+          message: 'Na cerimônia do chá, o amargo faz parte, e o doce vem antes, no wagashi. Para matchá adoçado, a pedida em Uji é o sorvete!',
+        },
+      },
+    },
+  },
 ];
