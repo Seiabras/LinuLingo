@@ -8,7 +8,7 @@ export const ARTIGOS_ET: ArticleSeed[] = [
     title: 'Laulupidu',
     emoji: '🎶',
     paragraphs: [
-      'Eestis on laulupidu. See on väga suur pidu. Seal laulavad palju inimesi: lapsed, noored ja vanad.',
+      'Eestis on laulupidu. See on väga suur pidu. Seal laulab palju inimesi: lapsed, noored ja vanad.',
       'Laulupidu on Tallinnas iga viie aasta tagant. Inimesed kannavad ilusaid rahvariideid ja laulavad eesti laule.',
     ],
     translation: [
@@ -31,7 +31,7 @@ export const ARTIGOS_ET: ArticleSeed[] = [
     title: 'Suitsusaun',
     emoji: '🧖',
     paragraphs: [
-      'Eestis on saun väga tähtis. Vanasti oli saun peaaegu igas talus, ja paljudel peredel on saun ka praegu.',
+      'Eestis on saun väga tähtis. Vanasti oli saun peaaegu igas talus ja paljudel peredel on saun ka praegu.',
       'Võromaal, Lõuna-Eestis, on vana suitsusauna traditsioon. Suitsusaunas ei ole korstnat. Ahju köetakse mitu tundi ja suits jääb sisse. Kui ahi on kuum, lastakse suits välja ja inimesed lähevad sisse.',
       'Seal visatakse vett kerisele ja kasutatakse vihta. Nüüd on Võromaa suitsusauna traditsioon ka UNESCO nimekirjas.',
     ],
@@ -69,23 +69,23 @@ export const ARTIGOS_ET: ArticleSeed[] = [
     emoji: '🏝️',
     paragraphs: [
       'Pärnu lahes on väike Kihnu saar, kus elab vaid mõnisada inimest. Saar on tuntud oma vana kultuuri poolest, mida hoiavad peamiselt naised.',
-      'Mehed olid sageli kaua merel, kalal või laevadel tööl. Sel ajal hoidsid naised kodu, põlde ja traditsioone. Nad laulsid vanu laule, tantsisid ja kudusid.',
-      'Paljud Kihnu naised kannavad ka tänapäeval iga päev värvilisi triibulisi seelikuid, mida kutsutakse kördiks. Saarel võib näha naisi, kes sõidavad külgkorviga mootorrattaga. Nüüd on Kihnu kultuuriruum UNESCO vaimse kultuuripärandi nimekirjas.',
+      'Mehed olid sageli kaua merel, kalal või laevadel tööl. Sel ajal hoolitsesid naised kodu ja põldude eest ning hoidsid traditsioone. Nad laulsid vanu laule, tantsisid ja kudusid.',
+      'Paljud Kihnu naised kannavad ka tänapäeval iga päev värvilisi triibulisi seelikuid, mida kutsutakse körtideks. Saarel võib näha naisi, kes sõidavad külgkorviga mootorrattaga. Nüüd on Kihnu kultuuriruum UNESCO vaimse kultuuripärandi nimekirjas.',
     ],
     translation: [
       'No golfo de Pärnu fica a pequena ilha de Kihnu, onde vivem apenas algumas centenas de pessoas. A ilha é conhecida pela sua cultura antiga, que é mantida principalmente pelas mulheres.',
-      'Os homens ficavam muitas vezes longos períodos no mar, pescando ou trabalhando em navios. Nesse tempo, as mulheres cuidavam da casa, dos campos e das tradições. Elas cantavam canções antigas, dançavam e tricotavam.',
+      'Os homens ficavam muitas vezes longos períodos no mar, pescando ou trabalhando em navios. Nesse tempo, as mulheres cuidavam da casa e dos campos e mantinham as tradições. Elas cantavam canções antigas, dançavam e tricotavam.',
       'Muitas mulheres de Kihnu ainda hoje usam no dia a dia saias listradas e coloridas, chamadas «kört». Na ilha dá para ver mulheres pilotando motos com sidecar. Hoje o espaço cultural de Kihnu está na lista do patrimônio cultural imaterial da UNESCO.',
     ],
     glossary: [
       ['lahes', 'no golfo, na baía (de «laht»)'],
       ['peamiselt', 'principalmente'],
       ['merel', 'no mar (de «meri»)'],
-      ['põlde', 'os campos (de «põld»)'],
+      ['põldude', 'dos campos (de «põld»)'],
       ['kudusid', 'tricotavam, teciam (de «kuduma»)'],
       ['triibulisi', 'listrados'],
       ['seelikuid', 'saias (de «seelik»)'],
-      ['kördiks', '«kört», a saia listrada de Kihnu'],
+      ['körtideks', '«kört», a saia listrada de Kihnu (aqui no plural)'],
       ['külgkorviga', 'com sidecar'],
       ['kultuuriruum', 'espaço cultural'],
       ['vaimse kultuuripärandi', 'do patrimônio cultural imaterial'],
@@ -107,16 +107,17 @@ export const ARTIGOS_ET: ArticleSeed[] = [
     title: 'Laulev revolutsioon',
     emoji: '🕯️',
     paragraphs: [
-      '1980. aastate lõpus, kui Eesti kuulus veel Nõukogude Liitu, hakkasid inimesed kogunema, et laulda isamaalisi laule. Seda aega nimetatakse laulvaks revolutsiooniks.',
-      '1988. aasta suvel tuli Tallinna lauluväljakule öösiti kokku tuhandeid inimesi. Septembris toimus seal „Eestimaa laul“, kus oli umbes 300 000 inimest.',
-      '23. augustil 1989 võtsid umbes kaks miljonit inimest Eestis, Lätis ja Leedus üksteisel käest kinni ja moodustasid Balti keti, mis ulatus Tallinnast Vilniuseni. 20. augustil 1991 sai Eesti rahumeelselt uuesti iseseisvaks.',
+      '1980. aastate lõpus, kui Eesti oli veel Nõukogude võimu all, hakkasid inimesed kogunema, et laulda isamaalisi laule. Seda aega nimetatakse laulvaks revolutsiooniks.',
+      '1988. aasta suvel tuli Tallinna lauluväljakule öösiti kokku tuhandeid inimesi. Septembris toimus seal „Eestimaa laul“, kus osales umbes 300 000 inimest.',
+      '23. augustil 1989 võtsid umbes kaks miljonit inimest Eestis, Lätis ja Leedus teineteisel käest kinni ja moodustasid Balti keti, mis ulatus Tallinnast Vilniuseni. 20. augustil 1991 sai Eesti rahumeelselt uuesti iseseisvaks.',
     ],
     translation: [
-      'No fim dos anos 1980, quando a Estônia ainda pertencia à União Soviética, as pessoas começaram a se reunir para cantar canções patrióticas. Essa época é chamada de Revolução Cantada.',
+      'No fim dos anos 1980, quando a Estônia ainda estava sob o domínio soviético, as pessoas começaram a se reunir para cantar canções patrióticas. Essa época é chamada de Revolução Cantada.',
       'No verão de 1988, milhares de pessoas se reuniam à noite no Campo do Festival da Canção, em Tallinn. Em setembro aconteceu ali «A Canção da Estônia» («Eestimaa laul»), com cerca de 300 mil pessoas.',
       'Em 23 de agosto de 1989, cerca de dois milhões de pessoas na Estônia, na Letônia e na Lituânia deram as mãos e formaram a Corrente Báltica, que ia de Tallinn até Vilnius. Em 20 de agosto de 1991, a Estônia voltou a ser independente, de forma pacífica.',
     ],
     glossary: [
+      ['võimu all', 'sob o domínio (de «võim», poder)'],
       ['isamaalisi', 'patrióticos'],
       ['laulvaks revolutsiooniks', 'Revolução Cantada'],
       ['lauluväljakule', 'para o Campo do Festival da Canção'],
@@ -139,12 +140,12 @@ export const ARTIGOS_ET: ArticleSeed[] = [
     emoji: '💻',
     paragraphs: [
       'Eestit nimetatakse sageli üheks maailma kõige digitaalsemaks riigiks. Peaaegu kõiki asju riigiga saab ajada internetis: ID-kaardiga saab allkirjastada dokumente, esitada mõne minutiga maksudeklaratsiooni ja vaadata oma terviseandmeid.',
-      '2005. aastal said eestlased esimese riigina maailmas hääletada kogu riigis interneti teel, esmalt kohalikel valimistel ja 2007. aastal ka Riigikogu valimistel.',
+      'Eesti oli esimene riik maailmas, kus sai kogu riigis hääletada interneti teel: esmalt 2005. aastal kohalikel valimistel ja 2007. aastal ka Riigikogu valimistel.',
       '2014. aasta lõpus käivitati e-residentsus: nüüd võib ka välismaalane saada Eesti digitaalse isikutunnistuse ja juhtida oma ettevõtet internetis. Maailmas on tuntud ka Skype, mille loomisel olid tähtsal kohal eesti programmeerijad.',
     ],
     translation: [
       'A Estônia é chamada com frequência de um dos países mais digitais do mundo. Quase todos os assuntos com o Estado podem ser resolvidos pela internet: com a carteira de identidade digital («ID-kaart») dá para assinar documentos, entregar a declaração de imposto em poucos minutos e ver os próprios dados de saúde.',
-      'Em 2005, os estonianos foram o primeiro país do mundo a votar pela internet em todo o território, primeiro nas eleições municipais e, em 2007, também nas eleições para o parlamento (Riigikogu).',
+      'A Estônia foi o primeiro país do mundo onde se pôde votar pela internet em todo o território: primeiro em 2005, nas eleições municipais, e em 2007 também nas eleições para o parlamento (Riigikogu).',
       'No fim de 2014 foi lançada a e-residência: agora também um estrangeiro pode receber uma identidade digital estoniana e administrar a sua empresa pela internet. No mundo, também é conhecido o Skype, em cuja criação programadores estonianos tiveram um papel importante.',
     ],
     glossary: [
