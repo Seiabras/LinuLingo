@@ -55,12 +55,19 @@ export function articlesOf(lang: string): ArticleSeed[] {
   return ARTICLES[lang] ?? [];
 }
 
+/**
+ * Os cofres de referência para a mediana de levelRanks: os oito primeiros idiomas do app. Fixos de
+ * propósito — um idioma novo não pode mudar o nível das palavras (e quebrar os artigos) dos outros.
+ */
+const REFERENCE = ['ro', 'ru', 'es', 'it', 'pt', 'sv', 'nb', 'da'];
+
 const cache = new Map<string, VocabSeed[]>();
 /** O cofre do idioma com as posições «de nível» (ver levelRanks), para medir a cobertura dos artigos. */
 export function readingVocab(lang: string): VocabSeed[] {
   let v = cache.get(lang);
   if (!v) {
-    v = levelRanks(PACKS[lang]?.vocab ?? [], Object.values(PACKS).map((p) => p.vocab));
+    const own = PACKS[lang]?.vocab ?? [];
+    v = levelRanks(own, REFERENCE.filter((c) => PACKS[c] && PACKS[c].vocab !== own).map((c) => PACKS[c].vocab));
     cache.set(lang, v);
   }
   return v;
