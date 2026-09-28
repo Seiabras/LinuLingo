@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { FAUNA_MUSICA } from './fauna-musica';
 import { CULTURA_PAISES, CULTURE_KINDS } from './cultura-paises';
 
-test('cultura dos países: todo país com bichos e instrumentos tem as cinco categorias', () => {
+test('cultura dos países: todo país com bichos e instrumentos tem todas as categorias', () => {
   assert.deepEqual(Object.keys(CULTURA_PAISES).sort(), Object.keys(FAUNA_MUSICA).sort());
   for (const [iso, c] of Object.entries(CULTURA_PAISES))
     for (const { key } of CULTURE_KINDS) {

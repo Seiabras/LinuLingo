@@ -782,7 +782,7 @@ export default function MapScreen() {
                 ))}
             </Card>
           ) : (
-            <Text className="mt-4 text-center text-slate-500">Toque num país para ver as línguas, os bichos, os instrumentos, a comida, o folclore, as danças, as plantas e as brincadeiras de lá.</Text>
+            <Text className="mt-4 text-center text-slate-500">Toque num país para ver as línguas, os bichos, os instrumentos, a comida, o folclore, as danças, as plantas, as brincadeiras e os gestos de lá.</Text>
           )}
         </>
       )}
