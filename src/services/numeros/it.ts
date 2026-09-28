@@ -145,7 +145,7 @@ const GLUE = '';
 /**
  * Os números do texto: (horas) 14:30 | 14.30, (graus) 36,6 °C, (ordinais) 1º | 1ª | 1°, (número) € 1.400 |
  * 1 400 | 3,5 com % ou € depois. Algarismos colados em letras (A2.1, mp3, 3D), expoentes, hífens
- * (482/1999) ficam como estão.
+ * (75-1) e barras (482/1999) ficam como estão.
  */
 const NUMBER = /(?<![\p{L}\p{N}/]|[\p{L}\p{N}][.,]|[\p{L}\p{N}]-)(?:(\d{1,2})[:.](\d{2})(?![.,]?\d)|(\d{1,3})(?:,(\d+))?\s?°\s?C\b|(\d{1,3})(º|ª|°)|(€\s?)?(\d{1,3}(?:\.\d{3})+|\d{1,3}(?:[\u00a0\u202f ]\d{3})+(?![\d,])|\d+)(?:,(\d+))?(\s?%|\s?€)?)(?![\p{L}\p{N}/]|-\p{N})/gu;
 
