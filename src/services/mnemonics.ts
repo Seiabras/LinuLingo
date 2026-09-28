@@ -128,6 +128,24 @@ export function roomsFor(lang: string): Record<Gender, Room> {
       f: { ...ROOMS.f, rule: 'Feminino: quase todas em -a (la casa), as em -zione/-sione (la stazione), -tà/-tù (la città, la virtù) e -i (la crisi). Exceções: la mano, la radio, la foto, la moto.' },
       n: ROOMS.n,
     };
+  if (lang === 'ha')
+    return {
+      m: { ...ROOMS.m, rule: 'Masculino: quase toda palavra que não termina em -a (gari, littafi, kare) e muitas em -a também (ruwa, gida, suna). Liga-se ao dono com -n: gidan Audu (a casa do Audu).' },
+      f: { ...ROOMS.f, rule: 'Feminino: seres femininos (mace, yarinya) e quase todas as outras femininas terminam em -a (mota, makaranta, rana). Liga-se ao dono com -r: motar Audu (o carro do Audu).' },
+      n: ROOMS.n,
+    };
+  if (lang === 'am')
+    return {
+      m: { ...ROOMS.m, rule: 'Masculino: o gênero de quase tudo. O artigo definido é -u grudado no fim: ቤት (bet, casa) → ቤቱ (betu, a casa).' },
+      f: { ...ROOMS.f, rule: 'Feminino: seres femininos (ሴት, mulher; ላም, vaca) e algumas palavras por tradição, como ፀሐይ (o sol) e o nome dos países. O artigo é -wa ou -itu: ላሟ (a vaca).' },
+      n: ROOMS.n,
+    };
+  if (lang === 'om')
+    return {
+      m: { ...ROOMS.m, rule: 'Masculino: o gênero da maioria das palavras. Aparece no demonstrativo (kun, kana: este) e no verbo: inni deeme (ele foi).' },
+      f: { ...ROOMS.f, rule: 'Feminino: seres femininos (haadha, mãe; intala, menina) e algumas palavras por tradição, como aduu (o sol). Aparece no demonstrativo (tun, tana: esta) e no verbo: isheen deemte (ela foi).' },
+      n: ROOMS.n,
+    };
   if (lang !== 'ru') return ROOMS;
   return {
     m: { ...ROOMS.m, rule: 'Masculino: termina em consoante ou em -й (дом, чай, музе́й). Alguns em -ь também (слова́рь, день).' },
@@ -180,6 +198,20 @@ const HETERO_IT: Record<string, string> = {
 export function palaceIntro(lang: string): string {
   if (lang === 'fi')
     return 'Boa notícia: o finlandês não tem gênero gramatical! Não existe «o» nem «a», nem masculino e feminino: «hän» quer dizer ele e ela ao mesmo tempo. O palácio fica vazio, e a sua memória pode se concentrar nos casos e na harmonia das vogais (talossa, mas metsässä).';
+  if (lang === 'ja')
+    return 'Boa notícia: o japonês não tem gênero gramatical nem artigos! «本» é livro, um livro e o livro, e 彼 (kare, ele) e 彼女 (kanojo, ela) quase não se usam na conversa: fala-se o nome da pessoa. O palácio fica vazio, e a sua memória pode se concentrar no kana, nos kanji e nos contadores (本, 枚, 匹…), que mudam conforme a forma da coisa.';
+  if (lang === 'ko')
+    return 'Boa notícia: o coreano não tem gênero gramatical nem artigos! «책» é livro, um livro e o livro. O palácio fica vazio, e a sua memória pode se concentrar no hangul, nas partículas (은/는, 이/가, 을/를) e nos dois sistemas de números, o nativo (하나, 둘) e o sino-coreano (일, 이).';
+  if (lang === 'ha')
+    return 'O hauçá tem 2 gêneros, masculino e feminino, e o gênero aparece em quase toda frase: no pronome (shi, ita), no verbo (ya tafi, ta tafi) e na ligação com o dono (gidan Audu, motar Audu). A pista: quase toda feminina termina em -a. Guarde cada palavra na sala certa!';
+  if (lang === 'am')
+    return 'O amárico tem 2 gêneros, masculino e feminino, como o português, mas o masculino é o gênero de quase tudo: o feminino fica para seres femininos e poucas palavras por tradição (ፀሐይ, o sol). O gênero muda o artigo que vai grudado no fim (ቤቱ, ላሟ) e a forma do verbo. Guarde cada palavra na sala certa!';
+  if (lang === 'om')
+    return 'O oromo tem 2 gêneros, masculino e feminino. O gênero aparece no demonstrativo (kun × tun), nos pronomes (inni × isheen) e no verbo (deeme × deemte). A maioria das palavras é masculina; decore as femininas, como aduu (o sol). Guarde cada palavra na sala certa!';
+  if (lang === 'yo')
+    return 'Boa notícia: o iorubá não tem gênero gramatical nem artigos! «Ó» quer dizer ele e ela, e «ọmọ» é filho e filha. O palácio fica vazio, e a sua memória pode se concentrar nos tons: ọkọ́ (enxada), ọkọ̀ (barco) e ọkọ (marido) só mudam pela melodia.';
+  if (lang === 'ig')
+    return 'Boa notícia: o igbo não tem gênero gramatical nem artigos! «Ọ» quer dizer ele e ela ao mesmo tempo. O palácio fica vazio, e a sua memória pode se concentrar nos tons (ákwà, ovo; àkwà, cama; ákwá, choro) e na harmonia das vogais.';
   if (lang === 'et')
     return 'Boa notícia: o estoniano não tem gênero gramatical nem artigos! «Tema» (ou «ta») quer dizer ele e ela ao mesmo tempo. O palácio fica vazio, e a sua memória pode se concentrar nos 14 casos e nas três durações dos sons.';
   if (lang === 'sv')
@@ -268,6 +300,12 @@ export function genderTip(word: string, gender: Gender, lang = 'ro'): string {
     if (gender === 'n' && w.endsWith('мя')) return 'As palavras em -мя (и́мя, вре́мя) são neutras, apesar do -я.';
     return rooms[gender].rule;
   }
+  if (lang === 'ha') {
+    if (gender === 'm' && w.endsWith('a')) return 'Termina em -a, mas é masculina (como ruwa, gida, suna): em hauçá, quase toda feminina termina em -a, mas nem toda palavra em -a é feminina.';
+    if (gender === 'f' && !w.endsWith('a')) return 'Exceção: é feminina sem terminar em -a, como mace (mulher): as poucas assim são quase sempre seres femininos. Na ligação com o dono vem -r, e não -n: matar Audu (a esposa do Audu).';
+    return roomsFor('ha')[gender].rule;
+  }
+  if (lang === 'am' || lang === 'om') return roomsFor(lang)[gender].rule;
   if (gender === 'f') {
     if (w.endsWith('ă')) return 'Terminou em -ă? Quase sempre feminino.';
     if (w.endsWith('ie') || w.endsWith('ea')) return 'Terminações -ie e -ea costumam ser femininas.';

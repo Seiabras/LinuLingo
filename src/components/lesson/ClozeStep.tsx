@@ -23,7 +23,9 @@ export function ClozeStep({ items, locale, specialChars, onDone }: { items: Cloz
 
   if (!item) return null;
   const answered = answer !== null;
-  const right = answered && normalize(answer, { keepDiacritics: true }) === normalize(item.answer, { keepDiacritics: true });
+  // japonês: a resposta digitada em kana vale pela palavra em kanji (みず = 水)
+  const sameReading = (v: string) => !!pack.typedReading && normalize(pack.typedReading(v)) === normalize(pack.typedReading(item.answer));
+  const right = answered && (normalize(answer, { keepDiacritics: true }) === normalize(item.answer, { keepDiacritics: true }) || sameReading(answer));
   const almost = answered && !right && normalize(answer) === normalize(item.answer);
   const [before, after] = item.sentence.split('___');
   const full = item.sentence.replace('___', item.answer);
@@ -31,7 +33,7 @@ export function ClozeStep({ items, locale, specialChars, onDone }: { items: Cloz
   const submit = (value: string) => {
     if (answered) return;
     setAnswer(value);
-    const ok = normalize(value) === normalize(item.answer);
+    const ok = normalize(value) === normalize(item.answer) || sameReading(value);
     if (ok) {
       haptics.success();
       setCorrect((c) => c + 1);

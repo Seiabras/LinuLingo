@@ -47,12 +47,25 @@ export default function TutorialScreen() {
     { mood: 'falando', title: 'A trilha', text: 'A trilha vai do A1.1 ao C2 em 15 subníveis, na faixa do topo. As lições liberam uma por vez; se você já sabe um nível, toque em «Já sei isto» numa unidade bloqueada e faça o teste: com 80% você pula para lá. Cada unidade tem quatro tipos de parada:', extra: 'trilha' },
     { mood: 'pensando', title: 'Uma lição, 6 etapas', text: 'Primeiro você entende, depois pratica. Nada de decorar sem saber o porquê:', extra: 'etapas' },
     // idiomas de outro alfabeto (russo): teclado próprio e sílaba tônica marcada
-    ...(pack.keyboardRows
+    ...(pack.keyboardRows && pack.code === 'ru'
       ? [
           {
             mood: 'pensando' as const,
             title: 'Outro alfabeto, sem medo',
             text: `O ${nomeIdioma(pack.name)} tem alfabeto próprio. A lição 1, a aba Gramática e o treino «🔤 Alfabeto» (em Mais práticas) ensinam as letras, e nas respostas escritas aparece o botão «⌨️ Mostrar teclado» com todas elas. A sílaba tônica vem marcada com um acento (молоко́): os nativos não escrevem esse acento, ele está aqui para você pronunciar certo. Na hora de responder, pode digitar sem ele.`,
+          },
+        ]
+      : []),
+    // japonês e coreano: outra escrita, com a leitura embaixo de cada frase
+    ...(pack.reading
+      ? [
+          {
+            mood: 'pensando' as const,
+            title: 'Outra escrita, sem medo',
+            text:
+              pack.code === 'ja'
+                ? 'O japonês mistura três escritas: o hiragana e o katakana (cada letra é uma sílaba) e os kanji, que vêm do chinês. A lição 1 e o treino «🔤 Kana» (em Mais práticas) ensinam as sílabas, e embaixo de cada frase aparecem a leitura em kana, o romaji e a pronúncia em IPA: 学生 · がくせい · gakusei. Nas respostas escritas, pode digitar em kana (みず vale por 水), com o teclado do celular ou com o botão «⌨️ Mostrar teclado».'
+                : `O ${nomeIdioma(pack.name)} tem escrita própria, mas é um alfabeto: cada bloco é uma sílaba montada com letras (ㅎ + ㅏ + ㄴ = 한). A lição 1 e o treino «🔤 Alfabeto» (em Mais práticas) ensinam as letras, e embaixo de cada frase aparecem a romanização oficial e a pronúncia em IPA, que mostra como as sílabas mudam ao se encontrar (한국어 · hangugeo).`,
           },
         ]
       : []),

@@ -264,6 +264,95 @@ export function OutfitArt({ id }: { id: string }) {
           <Circle cx="60" cy="16" r="2" fill="#B91C1C" />
         </G>
       );
+    case 'fila':
+      return (
+        <G>
+          {/* o gorro iorubá de pano grosso, com as abas dobradas de lado como orelhas de cachorro */}
+          <Path d="M30 33 Q28 12 60 10 Q92 12 90 33 Q60 26 30 33 Z" fill="#7C2D12" />
+          <Path d="M30 33 Q60 26 90 33" stroke="#FBBF24" strokeWidth="1.6" fill="none" />
+          <Path d="M31 31 L22 40 L36 36 Z" fill="#9A3412" />
+          <Path d="M89 31 L98 40 L84 36 Z" fill="#9A3412" />
+          <Path d="M40 18 Q60 12 80 18" stroke="#FBBF24" strokeWidth="0.9" strokeDasharray="2 2" fill="none" />
+        </G>
+      );
+    case 'hula':
+      return (
+        <G>
+          {/* o gorro redondo hauçá, bordado em volta */}
+          <Path d="M33 31 Q32 13 60 12 Q88 13 87 31 Q60 25 33 31 Z" fill="#F8FAFC" stroke="#CBD5E1" strokeWidth="0.8" />
+          <Path d="M35 27 Q60 21 85 27" stroke="#0E7490" strokeWidth="2" fill="none" />
+          <Path d="M38 21 L42 16 L46 21 L50 16 L54 21 L58 16 L62 21 L66 16 L70 21 L74 16 L78 21 L82 16" stroke="#B91C1C" strokeWidth="1" fill="none" />
+          <Circle cx="60" cy="13" r="1.8" fill="#0E7490" />
+        </G>
+      );
+    case 'shash':
+      return (
+        <G>
+          {/* o lenço branco etíope com a barra colorida (tilet) */}
+          <Path d="M26 44 Q22 12 60 10 Q98 12 94 44 Q90 30 60 27 Q30 30 26 44 Z" fill="#FFFFFF" stroke="#CBD5E1" strokeWidth="0.8" />
+          <Path d="M29 38 Q34 29 60 27 Q86 29 91 38" stroke="#16A34A" strokeWidth="2.2" fill="none" />
+          <Path d="M29 38 Q34 29 60 27 Q86 29 91 38" stroke="#FACC15" strokeWidth="0.9" strokeDasharray="2 2" fill="none" />
+          <Path d="M91 36 Q100 44 97 56 L93 55 Q95 46 88 40 Z" fill="#FFFFFF" stroke="#CBD5E1" strokeWidth="0.8" />
+        </G>
+      );
+    case 'callee':
+      return (
+        <G>
+          {/* a tiara de contas coloridas das oromos */}
+          <Path d="M28 31 Q60 21 92 31" stroke="#78350F" strokeWidth="1" fill="none" />
+          {Array.from({ length: 15 }, (_, i) => {
+            const t = i / 14;
+            const x = 28 + 64 * t;
+            const y = 31 - 10 * 4 * t * (1 - t);
+            return <Circle key={i} cx={x} cy={y} r="2.2" fill={['#DC2626', '#FACC15', '#2563EB', '#FFFFFF', '#16A34A'][i % 5]} stroke="#1F2937" strokeWidth="0.4" />;
+          })}
+          <Path d="M60 23 L58 30 L62 30 Z" fill="#FACC15" stroke="#78350F" strokeWidth="0.5" />
+        </G>
+      );
+    case 'okpuagu':
+      return (
+        <G>
+          {/* o gorro igbo com as cabecinhas de leão estampadas */}
+          <Path d="M31 32 Q29 11 60 10 Q91 11 89 32 Q60 26 31 32 Z" fill="#B91C1C" />
+          {[
+            [44, 22],
+            [60, 18],
+            [76, 22],
+          ].map(([x, y]) => (
+            <G key={x}>
+              <Circle cx={x} cy={y} r="4" fill="#FACC15" />
+              <Circle cx={x} cy={y} r="2.2" fill="#78350F" />
+            </G>
+          ))}
+          <Path d="M31 32 Q60 26 89 32" stroke="#FACC15" strokeWidth="1.2" fill="none" />
+        </G>
+      );
+    case 'hachimaki':
+      return (
+        <G>
+          {/* a faixa branca na testa, com o círculo vermelho e as pontas do nó ao lado */}
+          <Path d="M28 33 Q60 23 92 33 L92 41 Q60 31 28 41 Z" fill="#F8FAFC" stroke="#CBD5E1" strokeWidth="0.8" />
+          <Circle cx="60" cy="32.5" r="3.6" fill="#DC2626" />
+          <Path d="M92 35 Q101 31 106 25 L108 29 Q102 35 93 39 Z" fill="#F8FAFC" stroke="#CBD5E1" strokeWidth="0.8" />
+          <Path d="M92 37 Q102 41 107 48 L104 50 Q99 44 92 40 Z" fill="#F8FAFC" stroke="#CBD5E1" strokeWidth="0.8" />
+          <Circle cx="92.5" cy="37" r="2.4" fill="#E2E8F0" stroke="#CBD5E1" strokeWidth="0.6" />
+        </G>
+      );
+    case 'jobawi':
+      return (
+        <G>
+          {/* a touca de seda preta aberta no alto, cobrindo as orelhas, com borlas vermelhas e um enfeite de jade */}
+          <Path d="M26 44 Q24 20 40 14 L46 22 Q34 28 34 44 Z" fill="#111827" />
+          <Path d="M94 44 Q96 20 80 14 L74 22 Q86 28 86 44 Z" fill="#111827" />
+          <Path d="M40 14 Q60 8 80 14 L74 22 Q60 18 46 22 Z" fill="#1F2937" />
+          <Path d="M40 14 Q60 8 80 14" stroke="#B45309" strokeWidth="1.2" fill="none" />
+          <Circle cx="60" cy="11.5" r="2.6" fill="#10B981" stroke="#065F46" strokeWidth="0.6" />
+          <Path d="M60 14 L60 26" stroke="#DC2626" strokeWidth="1.6" />
+          <Path d="M57 26 L60 33 L63 26 Z" fill="#DC2626" />
+          <Path d="M29 44 L27 54 M31 44 L31 55 M33 44 L35 54" stroke="#DC2626" strokeWidth="1.3" />
+          <Path d="M91 44 L93 54 M89 44 L89 55 M87 44 L85 54" stroke="#DC2626" strokeWidth="1.3" />
+        </G>
+      );
     case 'tanu':
       return (
         <G>

@@ -16,7 +16,7 @@ export type AnimalProgress = Record<string, number>;
 
 /** «Câinele latră.» → [«Câinele ___.», «latră»]: o verbo é a última palavra. */
 export function splitVerb(sentence: string): [string, string] {
-  const m = /^(.*\s)(\S+?)([.!?…]*)$/.exec(sentence.trim());
+  const m = /^(.*\s)(\S+?)([.!?…。！]*)$/.exec(sentence.trim());
   return m ? [`${m[1]}___${m[3]}`, m[2]] : [sentence, ''];
 }
 

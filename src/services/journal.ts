@@ -392,10 +392,10 @@ export function checkJournal(text: string, lex: JournalLexicon, lang = 'ro'): { 
   return { corrected: parts.join(''), issues };
 }
 
-/** Conta frases (terminadas em . ! ? ou no fim do texto). */
+/** Conta frases (terminadas em . ! ? 。 ！ ？ ou no fim do texto); no japonês, sem espaços, basta ter 3+ kana ou kanji. */
 export function countSentences(text: string): number {
   return text
-    .split(/[.!?…]+/)
+    .split(/[.!?…。！？]+/)
     .map((s) => s.trim())
-    .filter((s) => s.split(/\s+/).length >= 2).length;
+    .filter((s) => s.split(/\s+/).length >= 2 || (s.match(/[\u3040-\u30ff\u3400-\u9fff々]/g) ?? []).length >= 3).length;
 }

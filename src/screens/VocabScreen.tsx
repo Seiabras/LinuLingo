@@ -4,7 +4,7 @@ import { router, useFocusEffect } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Search } from 'lucide-react-native';
 import { Button, Card, Chip, GENDER_LABEL, ProgressBar, SpeakButton, Ipa } from '@/components/ui';
-import { photoFor, WordImage } from '@/components/WordImage';
+import { hasWordImage, WordImage } from '@/components/WordImage';
 import { useApp } from '@/services/app-state';
 import { categoryStats, listEtymology, listVocab, vocabStats } from '@/database/queries';
 import { cefrFromMastered } from '@/services/progress';
@@ -25,7 +25,7 @@ const CATEGORY_EMOJI: Record<string, string> = {
   Escola: '🎒', Profissões: '👷', Animais: '🐾', Sociedade: '🏛️', Tecnologia: '💻', 'Lazer e Esportes': '⚽', Ciência: '🔬', Expressões: '💬',
 };
 
-const LANG_FLAG: Record<string, string> = { pt: '🇧🇷', es: '🇪🇸', it: '🇮🇹', fr: '🇫🇷', ru: '🇷🇺', pl: '🇵🇱', cs: '🇨🇿', sr: '🇷🇸', bg: '🇧🇬', el: '🇬🇷', sq: '🇦🇱', hu: '🇭🇺', tr: '🇹🇷', en: '🇬🇧', de: '🇩🇪', nl: '🇳🇱' };
+const LANG_FLAG: Record<string, string> = { pt: '🇧🇷', es: '🇪🇸', it: '🇮🇹', fr: '🇫🇷', ru: '🇷🇺', pl: '🇵🇱', cs: '🇨🇿', sr: '🇷🇸', bg: '🇧🇬', el: '🇬🇷', sq: '🇦🇱', hu: '🇭🇺', tr: '🇹🇷', en: '🇬🇧', de: '🇩🇪', nl: '🇳🇱', ro: '🇷🇴', sv: '🇸🇪', nb: '🇳🇴', da: '🇩🇰', is: '🇮🇸', fi: '🇫🇮', et: '🇪🇪', ja: '🇯🇵', ko: '🇰🇷', zh: '🇨🇳', ar: '🇸🇦', fa: '🇮🇷', hi: '🇮🇳', la: '🏛️', ha: '🇳🇬', yo: '🇳🇬', ig: '🇳🇬', am: '🇪🇹', om: '🇪🇹' };
 
 /** Cofre de vocabulário: palavras por frequência com estado SRS, categorias e árvore etimológica. */
 export default function VocabScreen() {
@@ -185,7 +185,7 @@ export default function VocabScreen() {
             ListHeaderComponent={header}
             ItemSeparatorComponent={() => <View className="h-3" />}
             contentContainerStyle={{ paddingBottom: 24 }}
-            renderItem={({ item }) => <EtymologyCard e={item} locale={pack.speechLocale} />}
+            renderItem={({ item }) => <EtymologyCard e={item} locale={pack.speechLocale} flag={pack.flag} />}
           />
         )}
       </View>
@@ -205,7 +205,7 @@ function WordRow({ w, locale, now, variantWord, variantFlag }: { w: VocabWithSRS
   return (
     <View className="flex-row items-center gap-3 rounded-2xl bg-white px-3 py-2.5 dark:bg-slate-900">
       <Text className="w-8 text-right text-xs font-bold text-slate-400">#{w.frequency_rank}</Text>
-      <View className="w-9 items-center">{photoFor(w.word_native) ? <WordImage wordNative={w.word_native} size={36} /> : <Text className="text-xl">{w.emoji ?? ''}</Text>}</View>
+      <View className="w-9 items-center">{hasWordImage(w.word_native, { pos: w.part_of_speech, target: w.word_target }) ? <WordImage wordNative={w.word_native} size={36} pos={w.part_of_speech} target={w.word_target} /> : <Text className="text-xl">{w.emoji ?? ''}</Text>}</View>
       <View className="flex-1">
         <View className="flex-row flex-wrap items-center gap-1.5">
           <Text className="text-base font-bold text-slate-900 dark:text-white">{w.word_target}</Text>
@@ -225,7 +225,7 @@ function WordRow({ w, locale, now, variantWord, variantFlag }: { w: VocabWithSRS
   );
 }
 
-function EtymologyCard({ e, locale }: { e: Ety; locale: string }) {
+function EtymologyCard({ e, locale, flag }: { e: Ety; locale: string; flag: string }) {
   let cognates: Cognate[] = [];
   try {
     cognates = JSON.parse(e.cognate_list);
@@ -243,7 +243,7 @@ function EtymologyCard({ e, locale }: { e: Ety; locale: string }) {
         <SpeakButton text={e.word_target} locale={locale} size={16} />
       </View>
 
-      {/* mini-árvore: raiz → palavra romena + irmãs */}
+      {/* mini-árvore: raiz → palavra do idioma estudado + irmãs */}
       <View className="items-center">
         <View className="rounded-xl bg-amber-100 px-3 py-1.5 dark:bg-amber-950">
           <Text className="text-center font-bold text-amber-900 dark:text-amber-200">
@@ -252,7 +252,7 @@ function EtymologyCard({ e, locale }: { e: Ety; locale: string }) {
         </View>
         <View className="h-3 w-0.5 bg-slate-300 dark:bg-slate-600" />
         <View className="flex-row flex-wrap justify-center gap-1.5">
-          <Text className="overflow-hidden rounded-lg bg-conecta px-2 py-1 font-bold text-white">🇷🇴 {e.word_target}</Text>
+          <Text className="overflow-hidden rounded-lg bg-conecta px-2 py-1 font-bold text-white">{flag} {e.word_target}</Text>
           {cognates.map((c) => (
             <Text key={c.lang + c.word} className={`overflow-hidden rounded-lg px-2 py-1 font-semibold ${c.lang === 'pt' ? 'bg-conquista-light text-conquista-dark dark:bg-green-950 dark:text-green-300' : 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300'}`}>
               {LANG_FLAG[c.lang] ?? c.lang} {c.word}

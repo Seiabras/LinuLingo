@@ -1,0 +1,50 @@
+diff --git a/src/data/linguas-proprias.ts b/src/data/linguas-proprias.ts
+index a278a63a..7d6e0b1c 100644
+--- a/src/data/linguas-proprias.ts
++++ b/src/data/linguas-proprias.ts
+@@ -1,5 +1,12 @@
+ import { PACKS } from './idiomas';
+ import type { Accent, LanguagePack } from './types';
++import { OWN_META_JA } from './ja/linguas-meta';
++import { OWN_META_KO } from './ko/linguas-meta';
++import { OWN_META_HA } from './ha/linguas-meta';
++import { OWN_META_AM } from './am/linguas-meta';
++import { OWN_META_YO } from './yo/linguas-meta';
++import { OWN_META_OM } from './om/linguas-meta';
++import { OWN_META_IG } from './ig/linguas-meta';
+ 
+ /**
+  * Línguas próprias: as que se falam no mesmo território de um idioma do app mas NÃO são um jeito de
+@@ -97,6 +104,14 @@ export const OWN_LANGUAGE_META: Record<string, OwnLanguageMeta> = {
+   },
+   'fr-kreyol-ayisyen': { family: 'Crioulo de base francesa', glottocodes: ['hait1244'], recognition: 'Oficial no Haiti, junto com o francês, desde a Constituição de 1987; é a língua materna de quase todos os haitianos.' },
+   'fr-kreyol-antillais': { family: 'Crioulo de base francesa', recognition: 'Ensinado nas escolas da Martinica e de Guadalupe; na França, é uma língua regional, sem estatuto oficial.' },
++  // as dos pacotes novos ficam em cada pasta (ja/linguas-meta.ts…)
++  ...OWN_META_JA,
++  ...OWN_META_KO,
++  ...OWN_META_HA,
++  ...OWN_META_AM,
++  ...OWN_META_YO,
++  ...OWN_META_OM,
++  ...OWN_META_IG,
+ };
+ 
+ export interface OwnLanguage {
+diff --git a/src/data/roupas-linu.ts b/src/data/roupas-linu.ts
+index d3f5ecab..74e6d239 100644
+--- a/src/data/roupas-linu.ts
++++ b/src/data/roupas-linu.ts
+@@ -58,6 +58,13 @@ export const ROUPAS_LINU: LinuOutfit[] = [
+   { id: 'studenterhue', lang: 'da', name: 'Studenterhue', country: 'DK', region: 'Dinamarca', culture: 'Formandos do ensino médio dinamarquês', about: 'Boné branco de pala preta que os estudantes dinamarqueses ganham ao terminar o ensino médio (o gymnasium); a tradição vem do século XIX, e a festa inclui um passeio de caminhão pela cidade.' },
+   { id: 'skotthufa', lang: 'is', name: 'Skotthúfa', country: 'IS', region: 'Islândia', culture: 'Traje nacional islandês (peysuföt)', about: 'Touquinha preta de tricô usada no alto da cabeça com o traje nacional das islandesas, com uma borla comprida presa num tubinho de metal.' },
+   { id: 'sorokka', lang: 'fi', name: 'Sorokka', country: 'FI', region: 'Carélia', culture: 'Mulheres casadas da Carélia e da Íngria', about: 'Toucado de linho bordado que as mulheres casadas da Carélia e da Íngria usavam para cobrir o cabelo; hoje aparece nos trajes típicos.' },
++  { id: 'hachimaki', lang: 'ja', name: 'Hachimaki (鉢巻)', country: 'JP', region: 'Japão', culture: 'Festivais, esportes e provas', about: 'Faixa de pano amarrada na testa para dar coragem e concentração: aparece nos festivais (matsuri), nas gincanas escolares e na véspera das provas, muitas vezes com o círculo vermelho da bandeira.' },
++  { id: 'jobawi', lang: 'ko', name: 'Jobawi (조바위)', country: 'KR', region: 'Coreia', culture: 'Mulheres da dinastia Joseon', about: 'Touca de inverno de seda escura, aberta no alto, que cobre as orelhas; na frente e atrás leva pingentes coloridos e borlas, e hoje aparece com o hanbok no Ano-Novo Lunar.' },
++  { id: 'fila', lang: 'yo', name: 'Fìlà abetí ajá', country: 'NG', region: 'Sudoeste da Nigéria', culture: 'Homens iorubás', about: 'O gorro iorubá de pano grosso cujas abas dobradas lembram orelhas de cachorro (abetí ajá); o lado para onde a ponta cai dizia, antigamente, se o homem era casado ou solteiro.' },
++  { id: 'hula', lang: 'ha', name: 'Hula', country: 'NG', region: 'Norte da Nigéria e Níger', culture: 'Homens hauçás', about: 'Gorro redondo bordado à mão que os homens hauçás usam no dia a dia e nas orações de sexta-feira; os desenhos e as cores mudam de cidade para cidade.' },
++  { id: 'shash', lang: 'am', name: 'Shash (ሻሽ)', country: 'ET', region: 'Planalto etíope', culture: 'Mulheres etíopes', about: 'Lenço branco de algodão amarrado na cabeça, com a barra colorida tecida à mão (tilet) que combina com o vestido habesha kemis; aparece nas festas, na igreja e no Ano-Novo etíope, o Enkutatash.' },
++  { id: 'callee', lang: 'om', name: 'Callee', country: 'ET', region: 'Oromia, Etiópia', culture: 'Mulheres oromos', about: 'Enfeites de contas coloridas (callee) que as mulheres oromos usam em tiaras e colares nas festas, como o Irreecha, a festa de ação de graças à beira dos lagos no fim da estação das chuvas.' },
++  { id: 'okpuagu', lang: 'ig', name: 'Okpu agu', country: 'NG', region: 'Sudeste da Nigéria', culture: 'Homens igbos', about: 'Gorro com a estampa de cabeças de leão que os homens igbos usam com a camisa isiagu nas festas; o gorro vermelho liso fica para os homens com título tradicional.' },
+   // ── da loja, com krill ──
+   { id: 'sugegasa', price: 40, name: 'Sugegasa', country: 'JP', region: 'Japão', culture: 'Camponeses e viajantes japoneses', about: 'Chapéu cônico de junco («suge») que protegia do sol e da chuva quem trabalhava no campo ou viajava a pé.' },
+   { id: 'gat', price: 60, name: 'Gat (갓)', country: 'KR', region: 'Coreia', culture: 'Homens da dinastia Joseon', about: 'Chapéu de aba larga e transparente, feito de crina de cavalo e bambu, usado pelos homens adultos na dinastia Joseon.' },

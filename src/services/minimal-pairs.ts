@@ -36,10 +36,11 @@ const soundOf = (w: string, ipa?: (t: string) => string) => {
  */
 export function playablePairs(mp: MinimalPairs, ipa: ((t: string) => string) | undefined, hasClip: (w: string) => boolean): { pairs: PlayablePair[]; same: MinimalPair[] } {
   const device = new Set(mp.contrasts.filter((c) => c.deviceVoice).map((c) => c.id));
+  const prosodic = new Set(mp.contrasts.filter((c) => c.prosodic).map((c) => c.id));
   const pairs: PlayablePair[] = [];
   const same: MinimalPair[] = [];
   for (const p of mp.pairs) {
-    if (soundOf(p.a[0], ipa) === soundOf(p.b[0], ipa)) {
+    if (!prosodic.has(p.contrast) && soundOf(p.a[0], ipa) === soundOf(p.b[0], ipa)) {
       same.push(p);
       continue;
     }

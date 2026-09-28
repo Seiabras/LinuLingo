@@ -59,6 +59,7 @@ export default function RootLayout() {
                 <Stack.Screen name="palacio" />
                 <Stack.Screen name="alfabeto" />
                 <Stack.Screen name="falsos-amigos" />
+                <Stack.Screen name="provas" />
                 <Stack.Screen name="sotaque" />
                 <Stack.Screen name="escuta" />
                 <Stack.Screen name="pares" />
@@ -73,8 +74,8 @@ export default function RootLayout() {
                 <Stack.Screen name="linguistica/ipa" />
                 <Stack.Screen name="linguistica/aula/[id]" />
                 <Stack.Screen name="mapa" />
-              <Stack.Screen name="cursos" />
-              <Stack.Screen name="curso/[id]" />
+                <Stack.Screen name="cursos" />
+                <Stack.Screen name="curso/[id]" />
               </Stack>
               <StickerToast />
               <NeuralVoiceToast />
