@@ -39,8 +39,13 @@ As faixas que rolam para os lados (fotos, trilha de subníveis, idiomas e regiõ
 | 🇻🇳 Vietnamita | Austro-asiático › Vietico › Viet-muong | em breve |
 | 🇮🇳 Télugo | Dravídico › Dravídico centro-meridional | em breve |
 | 🇹🇷 Turco | Túrquico › Oghuz | em breve |
+| 🇳🇬 Hauçá | Afro-asiático › Chádico › Chádico ocidental | em breve |
+| 🇪🇹 Amárico | Afro-asiático › Semítico › Semítico etiópico | em breve |
+| 🇳🇬 Iorubá | Níger-Congo › Atlântico-congolês › Volta-Níger › Iorubóide | em breve |
+| 🇪🇹 Oromo | Afro-asiático › Cuchítico › Cuchítico oriental | em breve |
+| 🇳🇬 Igbo | Níger-Congo › Atlântico-congolês › Volta-Níger › Igbóide | em breve |
 
-As maiores línguas da Ásia (mandarim, híndi, árabe, bengali, indonésio, urdu, japonês, marati, vietnamita, télugo e turco, pelo total de falantes no Ethnologue) já estão na lista; o russo, que também é falado na Ásia, já está no app.
+As maiores línguas da Ásia (mandarim, híndi, árabe, bengali, indonésio, urdu, japonês, marati, vietnamita, télugo e turco, pelo total de falantes no Ethnologue) já estão na lista; o russo, que também é falado na Ásia, já está no app. Da África, entram as maiores depois do suaíli: hauçá, amárico, iorubá, oromo e igbo (o árabe já está na lista, e o pidgin nigeriano, um crioulo, fica de fora).
 
 O seletor do Perfil agrupa os idiomas por família e ramo linguístico.
 

@@ -12,8 +12,19 @@ export function stripDiacritics(s: string): string {
     .normalize('NFC');
 }
 
+/**
+ * Escritas sem espaço entre as palavras (japonês) ou com partículas grudadas (coreano): cada kana,
+ * kanji e sílaba de hangul vira uma «palavra», e as comparações por frase viram comparações de
+ * trecho («学生です» contém «学生»; «학교에» contém «학교»), sem depender dos espaços que o
+ * reconhecimento de voz põe ou tira.
+ */
+export const CJK = /[\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\uac00-\ud7a3々〆]/;
+const CJK_ALL = new RegExp(CJK.source, 'g');
+
 export function normalize(s: string, { keepDiacritics = false } = {}): string {
   const base = s
+    // formas de largura cheia e meia largura (ＡＢＣ, ｶﾀｶﾅ) viram as comuns
+    .normalize('NFKC')
     .toLowerCase()
     // cedilha (ş ţ) e vírgula (ș ț) são a mesma letra no romeno digitado
     .replace(/ş/g, 'ș')
@@ -22,7 +33,8 @@ export function normalize(s: string, { keepDiacritics = false } = {}): string {
     .replace(/\u0301/g, '')
     // apóstrofo reto, tipográfico ou ausente valem o mesmo (las’ că = las' că = las că)
     .replace(/['’`´]/g, '')
-    .replace(/[.,!?¿¡;:«»"“”„()…-]/g, ' ')
+    .replace(/[.,!?¿¡;:«»"“”„()…\-。、・「」『』〜～]/g, ' ')
+    .replace(CJK_ALL, ' $& ')
     .replace(/\s+/g, ' ')
     .trim();
   return keepDiacritics ? base : stripDiacritics(base);
@@ -77,6 +89,8 @@ export function markWords(model: string, said: string): { word: string; mark: Wo
   const saidLoose = saidExact.map(stripDiacritics);
   return model
     .split(/\s+/)
+    // japonês e coreano: cada kana, kanji ou sílaba é marcada à parte (a pontuação fica grudada)
+    .flatMap((t) => (CJK.test(t) ? (t.match(new RegExp(`${CJK.source}[^\\s]*?(?=${CJK.source}|$)|[^\\s]+?(?=${CJK.source})`, 'g')) ?? [t]) : [t]))
     .filter(Boolean)
     .map((raw) => {
       const exact = normalize(raw, { keepDiacritics: true });

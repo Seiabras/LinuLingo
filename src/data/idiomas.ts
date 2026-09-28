@@ -84,6 +84,27 @@ export const LANGUAGES: LanguageInfo[] = [
     code: 'tr', name: 'Turco', nativeName: 'Türkçe', flag: '🇹🇷',
     lineage: { family: 'Túrquico', branches: ['Oghuz'], region: 'Anatólia (Ásia Ocidental) e Trácia oriental', writing: 'Alfabeto latino (ç, ğ, ı, ö, ş, ü)' },
   },
+  // as maiores línguas da África depois do suaíli (Ethnologue; o árabe já está acima e o pidgin nigeriano é crioulo)
+  {
+    code: 'ha', name: 'Hauçá', nativeName: 'Harshen Hausa', flag: '🇳🇬',
+    lineage: { family: 'Afro-asiático', branches: ['Chádico', 'Chádico ocidental'], region: 'Norte da Nigéria e sul do Níger (Sahel)', writing: 'Alfabeto latino (boko: ɓ, ɗ, ƙ, ƴ); também em escrita árabe (ajami)' },
+  },
+  {
+    code: 'am', name: 'Amárico', nativeName: 'አማርኛ', flag: '🇪🇹',
+    lineage: { family: 'Afro-asiático', branches: ['Semítico', 'Semítico etiópico'], region: 'Planalto etíope (Chifre da África)', writing: 'Silabário ge’ez (fidel)' },
+  },
+  {
+    code: 'yo', name: 'Iorubá', nativeName: 'Èdè Yorùbá', flag: '🇳🇬',
+    lineage: { family: 'Níger-Congo', branches: ['Atlântico-congolês', 'Volta-Níger', 'Iorubóide'], region: 'Sudoeste da Nigéria, Benin e Togo', writing: 'Alfabeto latino (ẹ, ọ, ṣ e os tons marcados)' },
+  },
+  {
+    code: 'om', name: 'Oromo', nativeName: 'Afaan Oromoo', flag: '🇪🇹',
+    lineage: { family: 'Afro-asiático', branches: ['Cuchítico', 'Cuchítico oriental'], region: 'Centro e sul da Etiópia e norte do Quênia', writing: 'Alfabeto latino (qubee)' },
+  },
+  {
+    code: 'ig', name: 'Igbo', nativeName: 'Asụsụ Igbo', flag: '🇳🇬',
+    lineage: { family: 'Níger-Congo', branches: ['Atlântico-congolês', 'Volta-Níger', 'Igbóide'], region: 'Sudeste da Nigéria', writing: 'Alfabeto latino (ị, ọ, ụ, ṅ e os tons)' },
+  },
 ];
 
 export const DEFAULT_LANGUAGE = 'ro';

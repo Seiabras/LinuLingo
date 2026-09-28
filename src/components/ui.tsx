@@ -116,15 +116,28 @@ export function SpeakButton({ text, locale, size = 20, slow }: { text: string; l
   );
 }
 
-/** Pronúncia em IPA (Alfabeto Fonético Internacional), gerada por regras do idioma. */
+/**
+ * Pronúncia em IPA (Alfabeto Fonético Internacional), gerada por regras do idioma. Nos idiomas de
+ * outra escrita que têm leitura (kana e romaji no japonês, romanização no coreano), ela vem por cima.
+ */
 export function Ipa({ text, className = '' }: { text: string; className?: string }) {
   const { pack } = useApp();
   const ipa = pack.ipa?.(text);
-  if (!ipa) return null;
-  return (
+  const reading = pack.reading?.(text);
+  if (!ipa && !reading) return null;
+  const ipaLine = ipa ? (
     <Text accessibilityLabel={`Pronúncia: ${ipa}`} selectable className={`font-mono text-sm text-slate-500 dark:text-slate-400 ${className}`}>
       {ipa}
     </Text>
+  ) : null;
+  if (!reading) return ipaLine;
+  return (
+    <View>
+      <Text accessibilityLabel={`Leitura: ${reading}`} selectable className={`text-sm font-semibold text-slate-600 dark:text-slate-300 ${className}`}>
+        {reading}
+      </Text>
+      {ipaLine}
+    </View>
   );
 }
 

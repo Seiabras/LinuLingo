@@ -15,7 +15,10 @@ export type PartOfSpeech =
   | 'artigo'
   | 'numeral'
   | 'interjeição'
-  | 'expressão';
+  | 'expressão'
+  // japonês e coreano: partículas pospostas (は, が, 을/를, 에서) e classificadores (〜本, 〜枚, 개, 명)
+  | 'partícula'
+  | 'contador';
 
 export interface User {
   id: string;

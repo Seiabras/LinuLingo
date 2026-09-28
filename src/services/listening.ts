@@ -141,11 +141,13 @@ export type DictationResult =
   | { kind: 'errado' };
 
 /** Confere o ditado. */
-export function checkDictation(typed: string, item: ListenItem, pool: ListenItem[], ipa?: (t: string) => string): DictationResult {
+export function checkDictation(typed: string, item: ListenItem, pool: ListenItem[], ipa?: (t: string) => string, reading?: (t: string) => string): DictationResult {
   const t = normalize(typed, { keepDiacritics: true });
   const w = normalize(item.word, { keepDiacritics: true });
   if (!t) return { kind: 'errado' };
   if (t === w) return { kind: 'certo' };
+  // japonês: escrito em kana, vale pela palavra em kanji (みず = 水)
+  if (reading && normalize(reading(typed)) === normalize(reading(item.word))) return { kind: 'certo' };
   if (stripDiacritics(t) === stripDiacritics(w)) return { kind: 'acentos' };
   const same = pool.find((o) => normalize(o.word, { keepDiacritics: true }) === t);
   if (same && soundOf(same.word, ipa) === soundOf(item.word, ipa)) return { kind: 'homofono', other: same.word };

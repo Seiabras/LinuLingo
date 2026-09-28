@@ -278,6 +278,14 @@ export interface LanguagePack extends LanguageInfo {
   journalPrompts: [string, string][];
   /** Transcrição fonética (IPA) por regras do idioma */
   ipa?: (text: string) => string;
+  /**
+   * Leitura para quem ainda não lê a escrita do idioma, mostrada acima da IPA: kana e romaji no
+   * japonês («わたし は · watashi wa»), romanização revisada no coreano. Também vale como resposta
+   * digitada (quem escreve em kana acerta a palavra em kanji).
+   */
+  reading?: (text: string) => string;
+  /** Só a leitura digitável (kana no japonês), para aceitar respostas escritas sem kanji */
+  typedReading?: (text: string) => string;
   /** Frases para shadowing: [frase, tradução] */
   shadowing: [string, string][];
   /** Letras especiais para o teclado adaptado */

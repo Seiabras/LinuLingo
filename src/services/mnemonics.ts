@@ -156,6 +156,10 @@ const HETERO_IT: Record<string, string> = {
 export function palaceIntro(lang: string): string {
   if (lang === 'fi')
     return 'Boa notícia: o finlandês não tem gênero gramatical! Não existe «o» nem «a», nem masculino e feminino: «hän» quer dizer ele e ela ao mesmo tempo. O palácio fica vazio, e a sua memória pode se concentrar nos casos e na harmonia das vogais (talossa, mas metsässä).';
+  if (lang === 'ja')
+    return 'Boa notícia: o japonês não tem gênero gramatical nem artigos! «本» é livro, um livro e o livro, e 彼 (kare, ele) e 彼女 (kanojo, ela) quase não se usam na conversa: fala-se o nome da pessoa. O palácio fica vazio, e a sua memória pode se concentrar no kana, nos kanji e nos contadores (本, 枚, 匹…), que mudam conforme a forma da coisa.';
+  if (lang === 'ko')
+    return 'Boa notícia: o coreano não tem gênero gramatical nem artigos! «책» é livro, um livro e o livro. O palácio fica vazio, e a sua memória pode se concentrar no hangul, nas partículas (은/는, 이/가, 을/를) e nos dois sistemas de números, o nativo (하나, 둘) e o sino-coreano (일, 이).';
   if (lang === 'et')
     return 'Boa notícia: o estoniano não tem gênero gramatical nem artigos! «Tema» (ou «ta») quer dizer ele e ela ao mesmo tempo. O palácio fica vazio, e a sua memória pode se concentrar nos 14 casos e nas três durações dos sons.';
   if (lang === 'sv')

@@ -78,7 +78,7 @@ export interface Intonation {
 export function intonation(sentence: string, lang = 'ro'): Intonation {
   const s = sentence.trim();
   const wh = WH[lang] ?? WH.ro;
-  if (!s.endsWith('?')) return { contour: 'desce', tip: 'Afirmação: a voz desce no fim.' };
+  if (!/[?？]$/.test(s)) return { contour: 'desce', tip: 'Afirmação: a voz desce no fim.' };
   const bare = s.replace(/^[«"„¿¡]+/, '').replace(/\u0301/g, '');
   if (wh.test(bare)) return { contour: 'desce', tip: lang === 'ru' ? 'Pergunta com «что, где, как…»: a voz desce no fim.' : lang === 'es' ? 'Pergunta com «qué, dónde, cómo…»: a voz desce no fim.' : lang === 'it' ? 'Pergunta com «che, dove, come…»: a voz desce no fim.' : lang === 'pt' ? 'Pergunta com «onde, como, quando…»: a voz desce no fim.' : 'Pergunta com «ce, unde, cum…»: a voz desce no fim.' };
   if (lang === 'ru')
@@ -91,8 +91,8 @@ export function expectedContour(sentence: string, lang = 'ro'): 'sobe' | 'desce'
   return intonation(sentence, lang).contour;
 }
 
-/** Grupos de vogais (latinas e cirílicas): base da estimativa de sílabas. */
-export const VOWEL_GROUPS = /[aăâeiîouyáéíóúàèìòùãõêôàäöüõ]+|[аеёиоуыэюя]+/giu;
+/** Grupos de vogais (latinas e cirílicas), kana, kanji e sílabas de hangul: base da estimativa de sílabas. */
+export const VOWEL_GROUPS = /[aăâeiîouyáéíóúàèìòùãõêôàäöüõ]+|[аеёиоуыэюя]+|[\u3041-\u3094\u30a1-\u30f4ー](?![ゃゅょャュョ])|[\uac00-\ud7a3\u4e00-\u9fff]/giu;
 
 /** Estimativa de sílabas (grupos vocálicos), usada quando a voz do aparelho não informa a duração. */
 export function syllables(sentence: string): number {
