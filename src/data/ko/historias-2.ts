@@ -1596,4 +1596,883 @@ export const STORIES_KO_2: StorySeed[] = [
       },
     },
   },
+  {
+    id: 'ko-h36',
+    level: 'B2.4',
+    cefr: 'B2',
+    title: '춘천 여행 일기',
+    emoji: '📔',
+    summary: 'Numa viagem de um dia a Chuncheon, o Linu perde o trem, come dakgalbi e escreve tudo no diário, no estilo escrito -다 e com os conectivos -느라고, -는 바람에, -더니 e -는 김에.',
+    cultural_context:
+      'Chuncheon, capital da província de Gangwon, fica a cerca de uma hora de Seul pelo trem ITX e é cercada de lagos formados por represas, o que lhe deu o apelido de «cidade do lago». É a terra do dakgalbi, frango apimentado salteado numa grande chapa redonda com repolho, batata-doce e bolinhos de arroz, e do makguksu, macarrão de trigo-sarraceno frio. Os diários coreanos costumam ser escritos no estilo -다 (해라체), o mesmo dos livros e jornais: 오늘은 비가 왔다, e não 비가 왔어요. Os conectivos causais do coreano têm regras finas: -느라고 é para uma ação sua que tomou o tempo (e trouxe um resultado ruim); -는 바람에, para um imprevisto que causou algo.',
+    start: 'start',
+    glossary: [
+      ['닭갈비', 'dakgalbi, frango apimentado salteado na chapa'],
+      ['막국수', 'makguksu, macarrão frio de trigo-sarraceno'],
+      ['-느라고', 'por estar ocupado fazendo… (ação do próprio sujeito, com resultado ruim)'],
+      ['-는 바람에', 'por causa de (um imprevisto)'],
+      ['-더니', 'e então (mudança que se observou); ou contraste com o que se viu antes'],
+      ['-는 김에', 'já que está fazendo…, aproveitando que…'],
+      ['해라체', 'o estilo escrito -다, de diários, livros e jornais'],
+      ['놓치다', 'perder (o trem, a oportunidade)'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🚆',
+        text: '토요일 아침, 리누는 춘천행 열차를 타려고 용산역에 갔다. 그런데 역 안의 빵집 앞에서 발이 멈췄다. 갓 구운 소보로빵 냄새가 너무 좋아서 사진을 찍고, 빵을 고르고, 계산을 하다 보니 시간이 훌쩍 지나 있었다. 승강장에 도착했을 때, 열차는 막 떠나고 있었다.',
+        translation: 'Sábado de manhã, o Linu foi à estação de Yongsan pegar o trem para Chuncheon. Mas os pés pararam diante de uma padaria da estação. O cheiro do soboro-ppang recém-assado era tão bom que ele tirou foto, escolheu o pão, pagou… e o tempo voou. Quando chegou à plataforma, o trem estava acabando de sair.',
+        choices: [
+          { text: '다음 열차를 기다리며 일기에 “빵을 사느라고 기차를 놓쳤다.”라고 쓴다.', translation: 'Esperando o próximo trem, escrever no diário: «Perdi o trem porque estava comprando pão.»', next: 'dahum' },
+          {
+            text: '일기에 “빵을 사는 김에 기차를 놓쳤다.”라고 쓴다.',
+            translation: 'Escrever no diário: «Aproveitando que comprava pão, perdi o trem.»',
+            wrong: '-는 김에 é «aproveitando que…», para uma segunda ação que se faz de propósito (시장에 가는 김에 과일도 샀다). Perder o trem não foi aproveitamento: foi consequência de ficar ocupado comprando pão. Aí cabe -느라고: 빵을 사느라고 기차를 놓쳤다.',
+          },
+        ],
+      },
+      dahum: {
+        emoji: '⏰',
+        text: '다음 열차는 삼십 분 뒤에 있었다. 리누는 승강장 의자에 앉아 소보로빵을 먹으며 일기장을 펼쳤다. 첫 문장을 쓰고 나서, 리누는 문체를 고민했다. 선생님은 일기는 ‘-다’체로 쓰는 게 자연스럽다고 하셨다.',
+        translation: 'O próximo trem era dali a meia hora. O Linu sentou num banco da plataforma, comeu o soboro-ppang e abriu o diário. Depois de escrever a primeira frase, ficou pensando no estilo. A professora tinha dito que o natural é escrever o diário no estilo -다.',
+        choices: [
+          { text: '“오늘은 춘천에 가기로 했다. 날씨가 맑았다.”라고 이어 쓴다.', translation: 'Continuar: «Hoje resolvi ir a Chuncheon. O tempo estava bonito.»', next: 'chuncheon' },
+          {
+            text: '“오늘은 춘천에 가기로 했어요. 날씨가 맑았어요.”라고 이어 쓴다.',
+            translation: 'Continuar: «Hoje resolvi ir a Chuncheon. O tempo estava bonito.» (no estilo -요)',
+            wrong: 'O -요 é o estilo educado da conversa, dirigido a alguém. O diário não fala com ninguém: usa o estilo escrito -다 (해라체), como os livros e os jornais: 가기로 했다, 맑았다.',
+          },
+        ],
+      },
+      chuncheon: {
+        emoji: '🌧️',
+        text: '춘천역에 내리자 하늘이 흐려지더니 갑자기 소나기가 쏟아졌다. 우산이 없던 리누는 역 앞 편의점으로 뛰어 들어갔다. 우산을 사는 김에 호수 주변 지도도 한 장 챙겼다. 비는 삼십 분쯤 내리다가 거짓말처럼 그쳤다.',
+        translation: 'Assim que desceu na estação de Chuncheon, o céu nublou e, de repente, desabou um aguaceiro. Sem guarda-chuva, o Linu entrou correndo na loja de conveniência em frente à estação. Já que estava comprando um guarda-chuva, pegou também um mapa dos lagos. A chuva caiu por uns trinta minutos e parou como por mágica.',
+        choices: [
+          { text: '일기에 “소나기가 내리는 바람에 우산을 사야 했다.”라고 쓴다.', translation: 'Escrever: «Por causa do aguaceiro, tive de comprar um guarda-chuva.»', next: 'dakgalbi' },
+          {
+            text: '일기에 “소나기가 내리느라고 우산을 사야 했다.”라고 쓴다.',
+            translation: 'Escrever: «Por estar ocupada chovendo, a chuva me fez comprar um guarda-chuva.» (-느라고)',
+            wrong: '-느라고 exige que o sujeito faça uma ação que toma o seu tempo, e o sujeito das duas partes é o mesmo. A chuva não «estava ocupada». Para um imprevisto que causou algo, o certo é -는 바람에: 소나기가 내리는 바람에 우산을 사야 했다.',
+          },
+        ],
+      },
+      dakgalbi: {
+        emoji: '🍗',
+        text: '점심은 명동 닭갈비 골목에서 먹었다. 아주머니가 커다란 철판에 닭고기와 양배추, 고구마, 떡을 볶아 주셨다. 처음에는 맵지 않더니 먹을수록 입안이 얼얼해졌다. 아주머니가 웃으며 말씀하셨다. “다 먹으면 밥 볶아 줄게요. 그게 진짜예요.”',
+        translation: 'Almoçou na rua do dakgalbi de Myeongdong, em Chuncheon. A senhora do restaurante salteou frango, repolho, batata-doce e bolinhos de arroz numa chapa enorme. No começo não parecia apimentado, mas, quanto mais comia, mais a boca formigava. A senhora disse, rindo: «Quando terminar, eu salteio arroz na chapa. É aí que fica bom de verdade.»',
+        choices: [
+          { text: '볶음밥까지 먹고, 소양강 쪽으로 산책하러 간다.', translation: 'Comer até o arroz salteado e ir passear para os lados do rio Soyang.', next: 'soyang' },
+          { text: '배가 불러서 볶음밥은 사양하고, 바로 서울행 열차를 타러 간다.', translation: 'Recusar o arroz, de tão cheio, e ir direto pegar o trem para Seul.', next: 'final_neutro' },
+        ],
+      },
+      soyang: {
+        emoji: '🏞️',
+        text: '소양강 스카이워크의 유리 바닥 위를 걸으니 발밑으로 강물이 보였다. 해가 기울자 호수가 붉게 물들었다. 리누는 난간에 기대어 일기의 마지막 문장을 썼다. 아침에 기차를 놓쳐서 속상했는데, 결국 좋은 하루가 되었다는 것을 어떻게 쓸까?',
+        translation: 'Andando no piso de vidro da Soyang Skywalk, dava para ver o rio sob os pés. Quando o sol baixou, o lago ficou avermelhado. Encostado no parapeito, o Linu escreveu a última frase do diário. Como dizer que tinha ficado chateado de manhã por perder o trem, mas que, no fim, tinha sido um dia bom?',
+        choices: [
+          { text: '“아침에는 하늘이 잔뜩 흐리더니 저녁에는 노을이 붉게 번졌다. 기차를 놓쳐서 속상했는데, 늦게 온 덕분에 이 노을을 보았다.”', translation: '«De manhã o céu estava todo nublado, e à noite o pôr do sol se espalhou vermelho. Fiquei chateado por perder o trem, mas foi por chegar atrasado que vi este pôr do sol.»', next: 'final_bom' },
+          { text: '“기차를 놓쳤다. 비가 왔다. 닭갈비를 먹었다. 집에 간다.”', translation: '«Perdi o trem. Choveu. Comi dakgalbi. Vou para casa.»', next: 'final_neutro' },
+        ],
+      },
+      final_bom: {
+        emoji: '📔',
+        text: '다음 주, 한국어 수업에서 리누는 일기를 소리 내어 읽었다. 선생님은 “‘-느라고’, ‘-는 바람에’, ‘-더니’를 모두 제자리에 썼네요. 문체도 처음부터 끝까지 ‘-다’체로 잘 맞췄고요.” 하고 칭찬하셨다. 반 친구들은 다음 여행지로 춘천을 적어 두었다.',
+        translation: 'Na semana seguinte, na aula de coreano, o Linu leu o diário em voz alta. A professora elogiou: «Você usou -느라고, -는 바람에 e -더니, cada um no lugar certo. E manteve o estilo -다 do começo ao fim.» Os colegas anotaram Chuncheon como o próximo destino.',
+        ending: { tone: 'bom', title: 'Um dia bem conectado', message: 'O Linu escolheu o conectivo certo para cada causa, manteve o estilo -다 e ainda usou o -더니 para contar como o dia mudou.' },
+      },
+      final_neutro: {
+        emoji: '🚉',
+        text: '돌아오는 열차에서 리누는 일기를 다시 읽었다. 틀린 곳은 없었지만, 문장들이 너무 짧아서 하루가 뚝뚝 끊겨 보였다. ‘다음에는 연결 어미로 문장을 이어 봐야겠다.’ 창밖으로 춘천의 불빛이 멀어졌다.',
+        translation: 'No trem de volta, o Linu releu o diário. Não havia erros, mas as frases eram tão curtas que o dia parecia picotado. «Da próxima vez, vou ligar as frases com conectivos.» Pela janela, as luzes de Chuncheon ficaram para trás.',
+        ending: { tone: 'neutro', title: 'Frases soltas', message: 'O diário estava correto, mas sem os conectivos que dão causa, contraste e sequência. No nível B2, é deles que o texto vive.' },
+      },
+    },
+  },
+  {
+    id: 'ko-h37',
+    level: 'C1.1',
+    cefr: 'C1',
+    title: '턱끈펭귄 포스터 발표',
+    emoji: '🐧',
+    summary: 'Num congresso científico em Daejeon, o Linu, um pinguim-de-barbicha, ajuda uma pesquisadora da estação antártica coreana a apresentar um pôster e aprende a cautela do coreano acadêmico.',
+    cultural_context:
+      'A Coreia do Sul mantém duas estações na Antártida: a Estação Rei Sejong, na ilha Rei George, aberta em 1988, e a Estação Jang Bogo, na Terra Vitória, de 2014. Perto da Rei Sejong fica uma colônia de pinguins-de-barbicha (턱끈펭귄) e de pinguins-gentoo, protegida como área antártica especial. O coreano acadêmico e o do jornal têm fórmulas próprias de cautela: -ㄴ 것으로 나타났다 (verificou-se que), -ㄹ 가능성이 있다 (é possível que), -는 것으로 추정된다 (estima-se), -에 따르면 (segundo), 시사하다 (sugerir). Dizer que um dado «prova» (증명하다) algo, quando ele só sugere, é um erro grave de estilo e de ciência. Daejeon, sede da Expo de 1993, reúne institutos de pesquisa e universidades.',
+    start: 'start',
+    glossary: [
+      ['턱끈펭귄', 'pinguim-de-barbicha'],
+      ['개체 수', 'número de indivíduos, tamanho da população'],
+      ['-는 것으로 나타났다', 'verificou-se que…, os dados mostraram que…'],
+      ['-을 가능성이 있다', 'é possível que… (-ㄹ/-을 가능성이 있다)'],
+      ['시사하다', 'sugerir, indicar'],
+      ['추정되다', 'ser estimado, supor-se'],
+      ['인과 관계', 'relação de causa e efeito'],
+      ['상관관계', 'correlação'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🏛️',
+        text: '대전의 한 대학에서 열린 극지 과학 학술대회. 포스터 발표장 한쪽에서 박소연 연구원이 리누에게 손짓했다. 소연 씨는 남극 세종기지 근처의 턱끈펭귄을 연구하고 있다. “리누 씨, 턱끈펭귄 당사자니까 설명을 같이 해 주면 좋겠어요. 다만 논문처럼 조심스럽게 말해야 해요.”',
+        translation: 'Um congresso de ciência polar numa universidade de Daejeon. Num canto da sala de pôsteres, a pesquisadora Park Soyeon acenou para o Linu. Ela estuda os pinguins-de-barbicha perto da Estação Rei Sejong, na Antártida. «Linu, como você é um pinguim-de-barbicha em pessoa, seria ótimo você explicar comigo. Só que é preciso falar com cuidado, como num artigo.»',
+        choices: [
+          { text: '“포스터의 결과 부분부터 읽어 볼게요.”', translation: '«Vou ler primeiro a parte dos resultados do pôster.»', next: 'gyeolgwa' },
+          { text: '“발표할 때 조심해야 할 표현이 뭐예요?”', translation: '«Que expressões devo tomar cuidado ao apresentar?»', next: 'pyohyeon' },
+        ],
+      },
+      pyohyeon: {
+        emoji: '📐',
+        text: '소연 씨가 수첩을 펼쳤다. “자료가 보여 준 것은 ‘-는 것으로 나타났다’, 우리가 해석한 것은 ‘-을 가능성이 있다’나 ‘시사한다’로 말해요. ‘증명했다’는 정말 확실할 때만 쓰고요. 기자들이 자주 틀리는 부분이에요.”',
+        translation: 'A Soyeon abriu a agenda. «O que os dados mostraram, a gente diz com -는 것으로 나타났다; o que nós interpretamos, com -을 가능성이 있다 ou 시사한다. 증명했다 (provou) só quando é certeza mesmo. É onde os jornalistas mais erram.»',
+        choices: [{ text: '“알겠어요. 이제 결과를 읽어 볼게요.”', translation: '«Entendi. Agora vou ler os resultados.»', next: 'gyeolgwa' }],
+      },
+      gyeolgwa: {
+        emoji: '📊',
+        text: '포스터에는 이렇게 쓰여 있었다. “조사 결과, 최근 십 년간 연구 지역의 턱끈펭귄 번식 쌍은 약 삼십 퍼센트 감소한 것으로 나타났다. 같은 기간 주변 해역의 크릴 밀도도 낮아진 것으로 추정된다. 이는 먹이 감소가 번식 성공률에 영향을 미쳤을 가능성을 시사한다.” 그때 한 기자가 다가왔다.',
+        translation: 'O pôster dizia: «Segundo a pesquisa, verificou-se que os casais reprodutores de pinguins-de-barbicha da área estudada diminuíram cerca de trinta por cento nos últimos dez anos. Estima-se que, no mesmo período, a densidade de krill nas águas vizinhas também tenha caído. Isso sugere a possibilidade de que a redução do alimento tenha afetado o sucesso reprodutivo.» Nesse momento, um jornalista se aproximou.',
+        choices: [
+          { text: '기자에게 결과를 요약해 준다.', translation: 'Resumir os resultados para o jornalista.', next: 'gija' },
+          {
+            text: '“크릴이 줄어서 펭귄이 줄었다는 것이 증명되었다는 뜻이군요.”라고 이해한다.',
+            translation: 'Entender: «Quer dizer que ficou provado que os pinguins diminuíram porque o krill diminuiu.»',
+            wrong: 'O pôster não diz isso. A queda dos pinguins 「나타났다」 (foi verificada); a do krill é só 「추정된다」 (estimada); e a ligação entre as duas é uma 「가능성」 que os dados 「시사한다」 (sugerem). Nada foi 증명 (provado): há uma correlação, não uma causa demonstrada.',
+          },
+        ],
+      },
+      gija: {
+        emoji: '🎤',
+        text: '기자가 녹음기를 내밀었다. “한 줄로 정리하면, 기후 변화 때문에 펭귄이 사라지고 있다, 이렇게 써도 될까요?” 소연 씨가 리누를 바라보았다. 리누가 대답할 차례였다.',
+        translation: 'O jornalista estendeu o gravador. «Resumindo numa linha: os pinguins estão desaparecendo por causa da mudança climática. Posso escrever assim?» A Soyeon olhou para o Linu. Era a vez dele responder.',
+        choices: [
+          { text: '“번식 쌍이 줄어든 것으로 나타났고, 먹이 감소와 관련이 있을 가능성이 있다고 써 주시면 정확할 것 같습니다.”', translation: '«Seria mais preciso escrever que se verificou uma queda nos casais reprodutores e que é possível que ela esteja ligada à redução do alimento.»', next: 'jeonghwak' },
+          { text: '“네, 그렇게 쓰시면 됩니다. 사람들 눈에 확 띄겠네요.”', translation: '«Sim, pode escrever assim. Vai chamar bastante atenção.»', next: 'final_neutro' },
+        ],
+      },
+      jeonghwak: {
+        emoji: '🔬',
+        text: '기자는 고개를 끄덕이며 받아 적었다. “그럼 기후 변화와의 관계는요?” 소연 씨가 덧붙였다. “해수 온도 상승이 크릴에 영향을 준다는 연구들이 있습니다. 하지만 저희 자료만으로 인과 관계를 단정하기는 어렵습니다. 그래서 장기 관찰이 필요한 것입니다.”',
+        translation: 'O jornalista assentiu e anotou. «E a relação com a mudança climática?» A Soyeon acrescentou: «Há estudos que mostram que o aumento da temperatura do mar afeta o krill. Mas só com os nossos dados é difícil afirmar uma relação de causa e efeito. É por isso que precisamos de observação de longo prazo.»',
+        choices: [
+          { text: '“그래서 세종기지에서 매년 같은 방법으로 조사하는 거군요.”', translation: '«É por isso que, na Estação Rei Sejong, vocês pesquisam todo ano do mesmo jeito.»', next: 'final_bom' },
+          {
+            text: '“결국 저희 자료가 기후 변화가 원인이라는 걸 확실히 보여 줬다는 거죠?”',
+            translation: '«No fim, os nossos dados mostraram com certeza que a causa é a mudança climática, né?»',
+            wrong: 'A Soyeon disse justamente o contrário: 「인과 관계를 단정하기는 어렵습니다」, é difícil AFIRMAR a relação de causa com esses dados. Por isso ela fala de outros estudos e de observação de longo prazo.',
+          },
+        ],
+      },
+      final_bom: {
+        emoji: '📰',
+        text: '다음 날 신문에는 이런 제목이 실렸다. “세종기지 턱끈펭귄 번식 쌍 감소… 연구진 ‘먹이 감소 영향 가능성’”. 소연 씨가 기사를 보여 주며 웃었다. “제목까지 조심스럽게 나왔네요. 리누 씨 덕분이에요.” 리누는 신문을 접어 남극에 있는 가족에게 보낼 편지에 넣었다.',
+        translation: 'No dia seguinte, o jornal trouxe a manchete: «Queda nos casais reprodutores de pinguins-de-barbicha perto da Estação Rei Sejong… pesquisadores: "possível efeito da redução do alimento"». A Soyeon mostrou a matéria e sorriu: «Até a manchete saiu cautelosa. Graças a você.» O Linu dobrou o jornal e o pôs na carta para a família, na Antártida.',
+        ending: { tone: 'bom', title: 'Cautela científica', message: 'O Linu separou o que foi verificado do que foi estimado e do que só é possível, e não deixou uma correlação virar causa: o coreano acadêmico em ação.' },
+      },
+      final_neutro: {
+        emoji: '📰',
+        text: '다음 날 기사의 제목은 “기후 변화로 남극 펭귄 사라진다”였다. 조회 수는 많았지만, 소연 씨의 전화에는 동료 연구자들의 문의가 이어졌다. 소연 씨가 한숨을 쉬었다. “틀린 말은 아니지만, 우리 자료가 말한 것보다 훨씬 크게 나갔어요.”',
+        translation: 'No dia seguinte, a manchete era: «Pinguins da Antártida desaparecem por causa da mudança climática». Teve muitos acessos, mas o telefone da Soyeon não parou de tocar com perguntas de colegas pesquisadores. Ela suspirou: «Não é que seja mentira, mas saiu muito maior do que os nossos dados disseram.»',
+        ending: { tone: 'neutro', title: 'Manchete maior que os dados', message: 'A manchete chamou atenção, mas passou do que os dados sustentavam. No coreano acadêmico, 나타났다, 추정된다 e 가능성이 있다 existem para isso.' },
+      },
+    },
+  },
+  {
+    id: 'ko-h38',
+    level: 'C1.1',
+    cefr: 'C1',
+    title: '오대산의 빗소리',
+    emoji: '🌲',
+    summary: 'Numa temporada no templo Woljeongsa, na montanha Odae, o Linu passa uma noite e uma manhã de chuva e aprende a descrever o mundo com as onomatopeias e mímesis do coreano.',
+    cultural_context:
+      'O templo Woljeongsa, na montanha Odae, em Gangwon, foi fundado no século VII e é conhecido pelo caminho da floresta de abetos, com árvores centenárias. Como muitos templos coreanos, oferece a templestay, em que os visitantes seguem a rotina dos monges: o culto da madrugada, por volta das três ou quatro horas, a refeição monástica em tigelas (발우공양), sem desperdiçar um grão, e a meditação. O coreano tem milhares de palavras que imitam sons (의성어: 똑똑, 주룩주룩) e jeitos de ser ou de se mover (의태어: 살금살금, 꾸벅꾸벅, 반짝반짝). A troca de vogal muda o tom: palavras com ㅏ e ㅗ soam leves e pequenas (졸졸, o fiozinho de água); com ㅓ e ㅜ, pesadas e grandes (줄줄).',
+    start: 'start',
+    glossary: [
+      ['의성어 / 의태어', 'onomatopeia (som) / mímesis (jeito, movimento)'],
+      ['주룩주룩', 'chuva caindo forte e sem parar'],
+      ['똑똑', 'gota pingando; batida na porta'],
+      ['졸졸 / 줄줄', 'filete de água (leve) / água correndo em quantidade'],
+      ['살금살금', 'na ponta dos pés, sem fazer barulho'],
+      ['꾸벅꾸벅', 'cabeceando de sono'],
+      ['발우공양', 'refeição monástica em tigelas'],
+      ['예불', 'culto budista'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🌲',
+        text: '월정사로 이어지는 전나무 숲길에 비가 주룩주룩 내렸다. 우산 위로 빗방울이 투둑투둑 떨어지고, 발밑의 흙길은 촉촉했다. 절 입구에서 템플스테이 담당 스님이 합장하며 맞아 주셨다. “오늘 밤은 빗소리가 좋을 겁니다. 소리를 잘 들어 보세요.”',
+        translation: 'Na trilha da floresta de abetos que leva ao Woljeongsa, a chuva caía sem parar. As gotas batiam, tuk-tuk, no guarda-chuva, e o caminho de terra estava úmido. Na entrada do templo, o monge responsável pela templestay o recebeu de mãos postas: «Esta noite o som da chuva vai estar bonito. Escute bem.»',
+        choices: [
+          { text: '“네, 스님. 빗소리를 한국어로 어떻게 표현하는지도 배우고 싶습니다.”', translation: '«Sim, mestre. Também quero aprender como se descreve o som da chuva em coreano.»', next: 'soli' },
+          { text: '숙소에 짐을 풀고 바로 쉰다.', translation: 'Desfazer a mala no alojamento e descansar logo.', next: 'jam' },
+        ],
+      },
+      jam: {
+        emoji: '😴',
+        text: '방에 들어가 요 위에 눕자, 처마 끝에서 빗물이 똑똑 떨어지는 소리가 들렸다. 리누는 그 소리를 들으며 꾸벅꾸벅 졸다가 스르르 잠이 들었다. 새벽 세 시, 목탁 소리에 눈을 떴다. 똑, 똑, 똑.',
+        translation: 'Quando se deitou no colchão do quarto, ouviu a água da chuva pingando, toc-toc, da ponta do beiral. Ouvindo aquilo, o Linu foi cabeceando e pegou no sono de mansinho. Às três da madrugada, acordou com o som do moktak: toc, toc, toc.',
+        choices: [{ text: '새벽 예불에 간다.', translation: 'Ir ao culto da madrugada.', next: 'yebul' }],
+      },
+      soli: {
+        emoji: '👂',
+        text: '스님은 처마 아래에 서서 손가락으로 소리를 가리키셨다. “지붕에서는 빗물이 줄줄 흐르고, 저 돌 틈에서는 졸졸 흐르지요. 같은 물인데 느낌이 다르지요? ‘줄줄’처럼 ‘우’ 소리가 들어가면 크고 무겁고, ‘졸졸’처럼 ‘오’ 소리가 들어가면 작고 가볍습니다.” 스님이 물으셨다. “그럼 저 작은 도랑의 물소리는 어떻게 말할까요?”',
+        translation: 'O monge, sob o beiral, apontou os sons com o dedo. «Do telhado, a água escorre 줄줄; naquela fenda da pedra, escorre 졸졸. É a mesma água, mas a sensação é outra, não é? Com o som «u», como em 줄줄, fica grande e pesado; com o som «o», como em 졸졸, pequeno e leve.» E perguntou: «Então, como você diria o som daquela valetinha?»',
+        choices: [
+          { text: '“작은 도랑이니까 ‘졸졸’ 흐른다고 하겠습니다.”', translation: '«Como é uma valetinha, eu diria que a água corre 졸졸.»', next: 'yebul' },
+          {
+            text: '“작은 도랑이니까 ‘줄줄’ 흐른다고 하겠습니다.”',
+            translation: '«Como é uma valetinha, eu diria que a água corre 줄줄.»',
+            wrong: 'O monge acabou de explicar: o ㅜ de 줄줄 dá a ideia de grande e pesado (a água que escorre do telhado todo). Para um filete pequeno e leve, a vogal é ㅗ: 졸졸.',
+          },
+        ],
+      },
+      yebul: {
+        emoji: '🔔',
+        text: '새벽 예불 시간, 법당 안은 촛불이 가물가물 흔들렸다. 범종이 “댕—” 하고 울리자 소리가 산 전체로 은은하게 퍼져 나갔다. 스님들의 염불 소리 사이로, 리누는 옆 사람이 꾸벅꾸벅 조는 것을 보았다. 리누도 눈꺼풀이 무거워졌다.',
+        translation: 'Na hora do culto da madrugada, a luz das velas tremeluzia no salão. Quando o grande sino soou, «dang—», o som se espalhou suavemente pela montanha inteira. Entre os cânticos dos monges, o Linu viu a pessoa ao lado cabeceando de sono. As pálpebras dele também pesaram.',
+        choices: [
+          { text: '허리를 곧게 펴고 호흡에 집중한다.', translation: 'Endireitar as costas e se concentrar na respiração.', next: 'baru' },
+          {
+            text: '옆 사람이 ‘꾸벅꾸벅’ 조는 걸 보고, 그 사람이 신나서 춤을 춘다고 생각한다.',
+            translation: 'Ver a pessoa ao lado «꾸벅꾸벅» e achar que ela está dançando de alegria.',
+            wrong: '꾸벅꾸벅 é a mímesis de quem cabeceia de sono, com a cabeça caindo para a frente e voltando. Dançar animado seria algo como 덩실덩실. No culto das três da manhã, cochilar é bem mais comum do que dançar.',
+          },
+        ],
+      },
+      baru: {
+        emoji: '🥣',
+        text: '아침은 발우공양이었다. 네 개의 그릇을 차례로 펼치고, 먹을 만큼만 덜어서 소리 없이 먹는다. 리누가 김치를 씹자 “아삭” 소리가 크게 났다. 스님이 살짝 웃으셨다. 식사가 끝나면 그릇을 물로 헹구고, 김치 한 조각으로 그릇을 싹싹 닦아 그 물까지 마신다. 남기는 것이 하나도 없다.',
+        translation: 'O café da manhã foi o balu-gongyang. Abrem-se quatro tigelas em ordem, serve-se só o que se vai comer, e come-se sem fazer barulho. Quando o Linu mordeu o kimchi, fez um «crac» alto. O monge deu um leve sorriso. No fim, enxágua-se a tigela com água, esfrega-se bem com um pedaço de kimchi, e bebe-se até essa água. Não sobra nada.',
+        choices: [
+          { text: '그릇을 싹싹 닦아 물까지 다 마신다.', translation: 'Esfregar bem a tigela e beber toda a água.', next: 'final_bom' },
+          { text: '헹군 물은 조금 남겨 둔다.', translation: 'Deixar um pouco da água do enxágue.', next: 'final_neutro' },
+        ],
+      },
+      final_bom: {
+        emoji: '🌤️',
+        text: '비가 그치고 숲길에 햇살이 반짝반짝 비쳤다. 떠나는 리누에게 스님이 물으셨다. “오늘 들은 소리를 한 문장으로 말해 볼까요?” 리누가 대답했다. “비가 주룩주룩 오다가, 새벽에는 종소리가 은은하게 퍼지고, 아침에는 그릇을 싹싹 비웠습니다.” 스님이 합장하셨다. “소리를 잘 들으셨군요.”',
+        translation: 'A chuva parou, e o sol cintilou na trilha da floresta. Na despedida, o monge perguntou: «Que tal dizer numa frase os sons de hoje?» O Linu respondeu: «A chuva caiu sem parar, de madrugada o som do sino se espalhou suave, e de manhã eu limpei a tigela até não sobrar nada.» O monge juntou as mãos: «Você ouviu bem.»',
+        ending: { tone: 'bom', title: 'O mundo em som', message: 'O Linu distinguiu 졸졸 de 줄줄, entendeu o 꾸벅꾸벅 e ainda descreveu o dia com as onomatopeias: um nível C1 que se ouve.' },
+      },
+      final_neutro: {
+        emoji: '🍂',
+        text: '스님은 아무 말씀도 하지 않으셨지만, 옆자리의 참가자가 조용히 알려 주었다. “발우공양에서는 헹군 물도 다 마셔요. 아무것도 남기지 않는 게 수행이에요.” 리누는 조금 부끄러웠다. 전나무 숲길을 내려오며, 리누는 발소리를 뚜벅뚜벅 들으며 그 말을 곱씹었다.',
+        translation: 'O monge não disse nada, mas o participante ao lado explicou baixinho: «No balu-gongyang a gente bebe até a água do enxágue. Não deixar nada é parte da prática.» O Linu ficou um pouco envergonhado. Descendo a trilha dos abetos, ouvindo os próprios passos, pensou naquilo.',
+        ending: { tone: 'neutro', title: 'Um pouco de água na tigela', message: 'O Linu aprendeu os sons, mas esqueceu um detalhe da refeição monástica. No templo, até o silêncio e as sobras têm regra.' },
+      },
+    },
+  },
+  {
+    id: 'ko-h39',
+    level: 'C1.1',
+    cefr: 'C1',
+    title: '병산서원의 현판',
+    emoji: '🏯',
+    summary: 'Em Andong, numa academia confuciana de quatrocentos anos, o Linu decifra as placas em hanja com um professor aposentado e descobre as raízes sino-coreanas de palavras que já usava todo dia.',
+    cultural_context:
+      'Os seowon eram academias confucianas particulares da dinastia Joseon, onde se estudavam os clássicos e se prestavam homenagens a sábios. Nove delas, entre elas a de Byeongsan, perto da vila de Hahoe, em Andong, são Patrimônio Mundial da UNESCO desde 2019. O pavilhão Mandaeru, de frente para o rio Nakdong e para um paredão de pedra, tirou o nome de um verso do poeta chinês Du Fu sobre as escarpas verdes que é bom contemplar ao entardecer. Cerca de metade do vocabulário coreano vem de palavras sino-coreanas, formadas por raízes do hanja: quem conhece 學 (학, estudar) e 校 (교, escola) reconhece 학교, 학생, 과학 e 교실.',
+    start: 'start',
+    glossary: [
+      ['서원', 'seowon, academia confuciana da dinastia Joseon'],
+      ['현판', 'placa com o nome do prédio, pendurada na fachada'],
+      ['한자어', 'palavra sino-coreana'],
+      ['만대루', 'Mandaeru (晩對樓), «pavilhão de contemplar ao entardecer»'],
+      ['입교당', 'Ipgyodang (立敎堂), «salão de estabelecer o ensino»'],
+      ['음 / 훈', 'leitura sino-coreana de um hanja / o seu significado em coreano'],
+      ['낙동강', 'rio Nakdong'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🚌',
+        text: '하회마을에서 흙길을 따라 삼십 분쯤 가자 낙동강 굽이 너머로 병산서원이 나타났다. 입구에서 은퇴한 한문 선생님인 권 선생님이 기다리고 계셨다. “여기 현판은 다 한자로 되어 있어요. 한자를 몰라도 괜찮아요. 리누 씨가 이미 아는 단어 속에 답이 숨어 있으니까요.”',
+        translation: 'Depois de uns trinta minutos pela estrada de terra desde a vila de Hahoe, a academia de Byeongsan apareceu além da curva do rio Nakdong. Na entrada, esperava o professor Kwon, professor aposentado de chinês clássico. «Aqui todas as placas estão em hanja. Não tem problema não saber hanja: a resposta está escondida em palavras que você já conhece.»',
+        choices: [
+          { text: '첫 번째 현판인 만대루 앞으로 간다.', translation: 'Ir até a primeira placa, a do Mandaeru (晩對樓).', next: 'mandaeru' },
+          { text: '“한국어 단어의 반 정도가 한자어라는 게 사실이에요?”', translation: '«É verdade que metade das palavras do coreano é sino-coreana?»', next: 'hanjaeo' },
+        ],
+      },
+      hanjaeo: {
+        emoji: '📚',
+        text: '“사전에 실린 단어로 세면 절반이 넘는다는 말도 있지요. 일상 대화에서는 고유어가 더 자주 쓰이지만, 신문이나 교과서로 갈수록 한자어가 많아져요.” 권 선생님은 땅에 나뭇가지로 한자 한 글자를 쓰셨다. “이건 ‘배울 학’. 학교, 학생, 과학의 ‘학’이에요.”',
+        translation: '«Contando as palavras do dicionário, dizem que passa da metade. Na conversa do dia a dia, as palavras nativas aparecem mais, mas, quanto mais se vai para o jornal e o livro didático, mais sino-coreanas há.» O professor Kwon escreveu um hanja no chão com um graveto, 學. «Este é o "hak de aprender". O 학 de 학교, 학생, 과학.»',
+        choices: [{ text: '첫 번째 현판인 만대루 앞으로 간다.', translation: 'Ir até a primeira placa, a do Mandaeru (晩對樓).', next: 'mandaeru' }],
+      },
+      mandaeru: {
+        emoji: '🏞️',
+        text: '길쭉한 누각 위에서 강과 절벽이 한눈에 들어왔다. “현판의 첫 글자는 ‘늦을 만’, 만년의 ‘만’이에요. 둘째 글자는 ‘대할 대’, 대화, 대면의 ‘대’. 셋째 글자는 ‘다락 루’, 누각의 ‘누’고요. 그러면 만대루는 무슨 뜻일까요?” 해가 기울면서 맞은편 절벽이 붉게 물들고 있었다.',
+        translation: 'Do alto do pavilhão comprido se viam, de uma vez, o rio e o paredão. «A primeira letra da placa, 晩, é "man de tarde", o 만 de 만년 (os últimos anos da vida). 對 é "dae de ficar de frente", o 대 de 대화 (diálogo) e 대면 (encontro cara a cara). 樓 é "ru de sobrado", o 누 de 누각 (pavilhão). Então, o que quer dizer 만대루?» Com o sol baixando, o paredão em frente ficava avermelhado.',
+        choices: [
+          { text: '“해 질 무렵에 저 절벽을 마주 보는 누각, 이라는 뜻이군요.”', translation: '«Quer dizer o pavilhão de onde se fica de frente para aquele paredão ao entardecer.»', next: 'dubo' },
+          {
+            text: '“만 명이 대화하는 누각이라는 뜻이군요.”',
+            translation: '«Quer dizer o pavilhão onde dez mil pessoas conversam.»',
+            wrong: 'O 만 daqui não é 萬 (dez mil), é 晩 (tardio, fim de tarde): o professor deu o exemplo de 만년. E 對 é «ficar de frente para». Mandaeru é o pavilhão de contemplar (as escarpas) ao entardecer. Hanjas diferentes podem ter a mesma leitura: por isso as placas vêm em hanja.',
+          },
+        ],
+      },
+      dubo: {
+        emoji: '🌄',
+        text: '권 선생님이 흐뭇하게 웃으셨다. “맞아요. 중국 시인 두보의 시에 ‘푸른 절벽은 저녁 무렵에 마주하기 좋다’는 구절이 있는데, 거기서 따온 이름이에요. 옛 선비들은 공부하다가 이 누각에 올라 저 절벽을 바라보았겠지요.” 선생님은 안쪽 건물을 가리키셨다. “이제 강당으로 가 볼까요?”',
+        translation: 'O professor Kwon sorriu satisfeito. «Isso. Tem um verso do poeta chinês Du Fu que diz que as escarpas verdes são boas de contemplar ao entardecer; o nome vem daí. Os estudiosos de antigamente deviam subir aqui, depois de estudar, para olhar aquele paredão.» Ele apontou o prédio de dentro. «Vamos ao salão de aulas?»',
+        choices: [{ text: '강당의 현판인 입교당을 읽어 본다.', translation: 'Tentar ler a placa do salão, a do Ipgyodang (立敎堂).', next: 'ipgyodang' }],
+      },
+      ipgyodang: {
+        emoji: '🪧',
+        text: '“첫 글자는 ‘설 립’, 독립, 설립의 ‘립’. 둘째는 ‘가르칠 교’, 교육, 교사의 ‘교’. 셋째는 ‘집 당’, 식당, 강당의 ‘당’이에요.” 권 선생님이 리누를 보셨다. “이번에는 리누 씨가 풀어 보세요.”',
+        translation: '«立 é "rip de ficar de pé", o 립 de 독립 (independência) e 설립 (fundação). 敎 é "gyo de ensinar", o 교 de 교육 (educação) e 교사 (professor). 堂 é "dang de casa", o 당 de 식당 (restaurante) e 강당 (auditório).» O professor olhou para o Linu. «Agora é a sua vez de decifrar.»',
+        choices: [
+          { text: '“가르침을 세우는 집, 그러니까 공부를 시작하고 바로 세우는 강당이군요.”', translation: '«A casa onde se estabelece o ensino, ou seja, o salão onde o estudo começa e se firma.»', next: 'final_bom' },
+          { text: '“잘 모르겠어요. 그냥 사진을 찍을게요.”', translation: '«Não sei bem. Vou só tirar uma foto.»', next: 'final_neutro' },
+        ],
+      },
+      final_bom: {
+        emoji: '📜',
+        text: '권 선생님이 박수를 치셨다. “이제 리누 씨는 ‘독립’, ‘교육’, ‘식당’을 볼 때마다 이 서원을 떠올리겠네요.” 돌아가는 길에 리누는 버스 정류장의 ‘안동 시립 도서관’ 표지판을 보았다. 설 립, 책 서, 집 관. 한자 한 글자 한 글자가 낯익은 얼굴처럼 보였다.',
+        translation: 'O professor Kwon bateu palmas. «Agora, toda vez que você vir 독립, 교육 ou 식당, vai se lembrar desta academia.» Na volta, no ponto de ônibus, o Linu viu a placa «Biblioteca Municipal de Andong»: o 립 de ficar de pé, o 서 de livro, o 관 de prédio. Cada hanja parecia um rosto conhecido.',
+        ending: { tone: 'bom', title: 'Raízes à vista', message: 'O Linu não confundiu 晩 com 萬, decifrou 立敎堂 sozinho e passou a ver as raízes sino-coreanas nas palavras do dia a dia.' },
+      },
+      final_neutro: {
+        emoji: '📷',
+        text: '권 선생님은 웃으며 뜻을 알려 주셨다. “가르침을 세우는 집이에요.” 리누는 사진을 찍었지만, 버스에 타고 나서야 ‘교육’과 ‘강당’이 같은 한자를 품고 있다는 것을 깨달았다. 조금만 더 생각해 볼 걸 그랬다.',
+        translation: 'O professor Kwon riu e contou o sentido: «É a casa onde se estabelece o ensino.» O Linu tirou a foto, mas só no ônibus percebeu que 교육 e 강당 carregavam os mesmos hanja da placa. Devia ter pensado um pouco mais.',
+        ending: { tone: 'neutro', title: 'A resposta estava na ponta da língua', message: 'O Linu tinha todas as pistas: 교육, 교사, 식당, 강당. Com as raízes sino-coreanas, uma placa em hanja deixa de ser muro e vira porta.' },
+      },
+    },
+  },
+  {
+    id: 'ko-h40',
+    level: 'C1.2',
+    cefr: 'C1',
+    title: '대구의 상견례',
+    emoji: '💍',
+    summary: 'Em Daegu, o Linu acompanha a Ana, uma brasileira noiva de um coreano, ao 상견례, o encontro formal das duas famílias, onde cada 저희, cada honorífico e cada «não» indireto conta.',
+    cultural_context:
+      'O 상견례 é o primeiro encontro formal entre as famílias dos noivos, em geral num restaurante reservado, antes do casamento. Nele, o coreano mais cerimonioso aparece: 저희 no lugar de 우리 para falar da própria família (mas nunca 저희 나라: diante de estrangeiros, o país não se rebaixa, e o certo é 우리나라), honoríficos para os mais velhos da outra família e recusas indiretas, como 생각해 보겠습니다. A 압존법 é a regra tradicional de não usar honorífico para alguém da família diante de alguém ainda mais velho (dizer ao avô «아버지가 왔습니다»); o Instituto Nacional da Língua Coreana a considera opcional na família hoje, e muita gente já não a segue. Daegu, no sudeste, é conhecida pelo verão escaldante, pelas maçãs e pelo sotaque de Gyeongsang.',
+    start: 'start',
+    glossary: [
+      ['상견례', 'encontro formal entre as famílias dos noivos'],
+      ['사돈', 'consogro(a), os pais do cônjuge do filho'],
+      ['저희', 'nós (humilde; nunca com «país»)'],
+      ['우리나라', 'o nosso país (sem forma humilde)'],
+      ['압존법', 'não honrar um familiar diante de alguém mais velho que ele'],
+      ['말씀 낮추세요', '«fale comigo sem formalidade» (dito a quem é mais velho)'],
+      ['생각해 보겠습니다', 'vou pensar (às vezes, um «não» educado)'],
+      ['예단', 'presentes que a noiva oferece à família do noivo'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🍽️',
+        text: '대구 수성못 근처 한정식집의 조용한 방. 브라질에서 온 아나는 긴장한 얼굴로 한복 치마를 가다듬었다. 오늘은 약혼자 민준의 부모님과 처음으로 정식으로 만나는 날이다. 아나의 부모님은 비행기가 늦어져 영상으로만 인사하게 되었고, 통역은 리누가 맡았다. 방문이 열리고, 민준의 아버지와 어머니, 그리고 할아버지가 들어오셨다.',
+        translation: 'Uma sala silenciosa num restaurante de hanjeongsik perto do lago Suseong, em Daegu. A Ana, que veio do Brasil, ajeitou a saia do hanbok, nervosa. Hoje é o primeiro encontro formal com os pais do noivo, o Minjun. Os pais da Ana, por causa de um voo atrasado, iam cumprimentar só por vídeo, e o Linu ficou de intérprete. A porta se abriu, e entraram o pai e a mãe do Minjun, e também o avô.',
+        choices: [
+          { text: '아나에게 “저희 부모님께서 인사드리고 싶어 하십니다.”라고 말하라고 알려 준다.', translation: 'Sugerir à Ana que diga: «Os meus pais gostariam de cumprimentá-los.»', next: 'insa' },
+          {
+            text: '아나에게 “우리 엄마 아빠가 인사하고 싶대요.”라고 말하라고 알려 준다.',
+            translation: 'Sugerir à Ana que diga: «Minha mãe e meu pai querem dar oi.»',
+            wrong: '엄마 아빠 e 인사하고 싶대요 são de conversa em família. No 상견례, fala-se da própria família com 저희 e com o verbo humilde 인사드리다: 「저희 부모님께서 인사드리고 싶어 하십니다」.',
+          },
+        ],
+      },
+      insa: {
+        emoji: '📱',
+        text: '태블릿 화면 속에서 아나의 부모님이 손을 흔들었다. 리누가 통역하자 민준의 아버지가 고개를 숙이셨다. “먼 곳에서 이렇게 인사를 주시니 감사합니다.” 그때 민준이 할아버지께 말씀드렸다. 민준은 할아버지 앞에서 아버지를 어떻게 불러야 할지 잠깐 망설였다.',
+        translation: 'Na tela do tablet, os pais da Ana acenaram. Quando o Linu traduziu, o pai do Minjun se curvou: «Obrigado por nos cumprimentarem assim, de tão longe.» Então o Minjun foi falar com o avô. Por um instante, hesitou sobre como se referir ao pai na frente do avô.',
+        choices: [
+          { text: '“할아버지, 아버지가 먼저 인사드렸습니다.” (전통적인 압존법)', translation: '«Vovô, o papai já cumprimentou.» (a 압존법 tradicional)', next: 'apjon' },
+          { text: '“할아버지, 아버지께서 먼저 인사드리셨습니다.”', translation: '«Vovô, o papai já cumprimentou.» (com honorífico para o pai)', next: 'apjon' },
+        ],
+      },
+      apjon: {
+        emoji: '👴',
+        text: '할아버지는 허허 웃으셨다. “요즘은 둘 다 괜찮다더라. 우리 때는 내 앞에서 네 아비를 높이지 않았지만.” 그리고 아나를 보며 말씀하셨다. “한국말을 참 잘하는구나. 브라질에서 왔다고?” 아나가 대답을 준비했다.',
+        translation: 'O avô deu uma risada. «Dizem que hoje em dia as duas formas estão certas. No meu tempo, na minha frente, não se honrava o seu pai.» E, olhando para a Ana: «Você fala coreano muito bem. Veio do Brasil, é?» A Ana preparou a resposta.',
+        choices: [
+          { text: '“네, 할아버님. 저는 상파울루에서 왔습니다. 우리나라 음식도 언젠가 대접해 드리고 싶습니다.”', translation: '«Sim, senhor. Eu vim de São Paulo. Um dia também gostaria de lhes servir comida do meu país.»', next: 'yedan' },
+          {
+            text: '“네, 할아버님. 저희 나라 브라질에서 왔습니다.”',
+            translation: '«Sim, senhor. Vim do "nosso humilde país", o Brasil.» (저희 나라)',
+            wrong: '저희 rebaixa quem fala para honrar o ouvinte, mas um país não se rebaixa: 「저희 나라」 é considerado erro. O certo é 「우리나라」, e aqui, falando do Brasil, soa ainda mais natural dizer o nome: 「브라질에서 왔습니다」.',
+          },
+        ],
+      },
+      yedan: {
+        emoji: '🎁',
+        text: '식사가 반쯤 지나자 민준의 어머니가 조심스럽게 말씀을 꺼내셨다. “예단은 간소하게 하셔도 됩니다. 요즘은 다들 줄이는 추세라서요.” 그런데 아나의 부모님은 화면 너머로, 결혼식을 브라질에서도 한 번 더 하고 싶다는 뜻을 전했다. 민준의 아버지는 잠시 말이 없으시다가 이렇게 대답하셨다. “아, 네… 좋은 생각이십니다. 저희가 한번 생각해 보겠습니다.”',
+        translation: 'Na metade da refeição, a mãe do Minjun tocou no assunto com cuidado: «Os presentes da noiva podem ser simples. Hoje em dia, todo mundo tem diminuído.» Mas os pais da Ana, pela tela, disseram que gostariam de fazer mais uma cerimônia de casamento, no Brasil. O pai do Minjun ficou calado um instante e respondeu: «Ah, sim… É uma boa ideia. Vamos pensar a respeito.»',
+        choices: [
+          { text: '아나의 부모님께 “검토해 보시겠다고 하셨지만, 아직 부담스러워하시는 것 같아요. 천천히 이야기해 보면 좋겠어요.”라고 전한다.', translation: 'Explicar aos pais da Ana: «Ele disse que vai pensar, mas parece que ainda acha pesado. Seria bom conversar com calma.»', next: 'jungjae' },
+          {
+            text: '아나의 부모님께 “좋은 생각이라고 하셨으니, 브라질 결혼식도 확정이에요!”라고 전한다.',
+            translation: 'Explicar aos pais da Ana: «Ele disse que é uma boa ideia, então o casamento no Brasil está confirmado!»',
+            wrong: 'O silêncio antes, o 「아, 네…」 hesitante e o 「생각해 보겠습니다」 são o jeito coreano de não dizer «não» na cara. Não é uma confirmação: é um sinal de que o assunto precisa de mais conversa.',
+          },
+        ],
+      },
+      jungjae: {
+        emoji: '🤝',
+        text: '식사가 끝날 무렵, 민준이 조용히 제안했다. “브라질 결혼식은 큰 예식 말고, 가족끼리 작은 식사 자리로 하면 어떨까요? 할아버지 비행기 표는 제가 준비하겠습니다.” 할아버지가 웃으셨다. “내가 이 나이에 브라질 구경을 다 하겠구나.” 민준의 아버지 얼굴도 조금 풀리셨다.',
+        translation: 'No fim da refeição, o Minjun propôs baixinho: «E se, no Brasil, em vez de uma cerimônia grande, fizermos só um jantar pequeno em família? A passagem do vovô eu providencio.» O avô riu: «Olha só, nesta idade eu vou conhecer o Brasil.» O rosto do pai do Minjun também se desanuviou um pouco.',
+        choices: [
+          { text: '아나에게 할아버지께 “할아버님, 말씀 편하게 하세요.”라고 말씀드리라고 알려 준다.', translation: 'Sugerir à Ana que diga ao avô: «Senhor, pode falar comigo sem cerimônia.»', next: 'final_bom' },
+          { text: '분위기가 좋으니 이제 서둘러 자리를 마무리한다.', translation: 'Como o clima está bom, encerrar logo o encontro.', next: 'final_neutro' },
+        ],
+      },
+      final_bom: {
+        emoji: '💐',
+        text: '할아버지는 눈을 가늘게 뜨며 웃으셨다. “그래, 아나야. 이제 우리 손주며느리구나.” 헤어지면서 민준의 어머니가 아나의 손을 꼭 잡으셨다. 화면 속 아나의 부모님도 박수를 쳤다. 돌아가는 차 안에서 민준이 리누에게 말했다. “통역이 아니라, 두 집안의 말을 이어 주셨어요.”',
+        translation: 'O avô sorriu com os olhos apertados: «Está bem, Ana. Agora você é a nossa neta de coração.» Na despedida, a mãe do Minjun segurou firme a mão da Ana. Na tela, os pais da Ana aplaudiram. No carro, na volta, o Minjun disse ao Linu: «Você não só traduziu: ligou a língua das duas famílias.»',
+        ending: { tone: 'bom', title: 'Duas famílias, uma língua', message: 'O Linu acertou o 저희 e o 우리나라, entendeu que 생각해 보겠습니다 não era um sim e ajudou a transformar uma hesitação em acordo.' },
+      },
+      final_neutro: {
+        emoji: '🚗',
+        text: '상견례는 무사히 끝났다. 하지만 브라질 결혼식 이야기는 결론이 나지 않은 채로 남았다. 아나가 한숨을 쉬었다. “분위기는 좋았는데, 뭔가 중요한 얘기를 덮어 둔 것 같아.” 리누는 한국어에서 침묵과 ‘생각해 보겠습니다’가 얼마나 많은 말을 하는지 다시 떠올렸다.',
+        translation: 'O 상견례 terminou sem problemas. Mas a conversa sobre o casamento no Brasil ficou sem conclusão. A Ana suspirou: «O clima foi bom, mas parece que a gente deixou um assunto importante debaixo do tapete.» O Linu lembrou de novo o quanto o silêncio e o 생각해 보겠습니다 dizem em coreano.',
+        ending: { tone: 'neutro', title: 'Assunto em aberto', message: 'O encontro foi cordial, mas o ponto delicado ficou pendente. No coreano formal, entender o «não» indireto é só metade: a outra é saber propor uma saída.' },
+      },
+    },
+  },
+  {
+    id: 'ko-h41',
+    level: 'C1.2',
+    cefr: 'C1',
+    title: '남대문시장 할머니의 속담',
+    emoji: '🥞',
+    summary: 'No mercado de Namdaemun, uma vendedora de hotteok responde a tudo com um provérbio, e o Linu precisa entender o sentido por trás de cada 속담 para ganhar a receita da massa.',
+    cultural_context:
+      'O mercado de Namdaemun, junto ao antigo Portão Sul de Seul (o Sungnyemun), existe desde o século XV e é o maior mercado tradicional do país, com milhares de lojas de roupas, utensílios, ervas e comida de rua. Os provérbios (속담) são parte viva da fala, sobretudo dos mais velhos, e muitos aparecem em provas de coreano: 가는 말이 고와야 오는 말이 곱다 (fale bonito e ouvirá bonito), 발 없는 말이 천 리 간다 (a palavra sem pés anda mil léguas: o boato corre), 원숭이도 나무에서 떨어진다 (até o macaco cai da árvore), 등잔 밑이 어둡다 (embaixo da lamparina é escuro: não se vê o que está perto). O hotteok é uma panqueca recheada de açúcar mascavo, canela e sementes, o lanche do inverno.',
+    start: 'start',
+    glossary: [
+      ['속담', 'provérbio'],
+      ['호떡', 'hotteok, panqueca recheada de açúcar mascavo'],
+      ['가는 말이 고와야 오는 말이 곱다', 'fale bonito e ouvirá bonito'],
+      ['발 없는 말이 천 리 간다', 'o boato corre longe'],
+      ['원숭이도 나무에서 떨어진다', 'até o especialista erra'],
+      ['등잔 밑이 어둡다', 'não se vê o que está bem perto'],
+      ['시작이 반이다', 'começar já é metade do caminho'],
+      ['백지장도 맞들면 낫다', 'até uma folha de papel fica mais leve carregada a dois'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🏮',
+        text: '찬바람이 부는 남대문시장 골목, 호떡 굽는 냄새가 솔솔 풍겼다. 줄 끝에 선 리누 앞에서, 한 손님이 “빨리 좀 줘요!” 하고 짜증을 냈다. 호떡 장수 할머니는 손을 멈추지 않고 말씀하셨다. “가는 말이 고와야 오는 말이 곱지.” 손님은 머쓱해져서 조용히 기다렸다.',
+        translation: 'Num beco de Namdaemun, com vento frio, o cheiro de hotteok assando se espalhava. Na frente do Linu, no fim da fila, um cliente se irritou: «Anda logo com isso!» A vendedora, uma senhora de idade, não parou as mãos e disse: «Palavra que vai bonita volta bonita.» O cliente ficou sem graça e esperou quieto.',
+        choices: [
+          { text: '리누는 차례가 되자 “할머니, 호떡 두 개 부탁드려요. 냄새가 정말 좋네요.”라고 말한다.', translation: 'Na sua vez, o Linu diz: «Senhora, dois hotteok, por favor. O cheiro está ótimo.»', next: 'jumun' },
+          {
+            text: '리누는 그 속담이 ‘말을 빨리 하면 빨리 나온다’는 뜻이라고 생각한다.',
+            translation: 'O Linu acha que o provérbio quer dizer «quem fala rápido é atendido rápido».',
+            wrong: '「가는 말이 고와야 오는 말이 곱다」: a palavra que vai tem de ser bonita (고와야) para a que volta ser bonita. Fala da gentileza, não da pressa. A senhora estava repreendendo a grosseria do cliente.',
+          },
+        ],
+      },
+      jumun: {
+        emoji: '🥞',
+        text: '할머니가 환하게 웃으셨다. “말도 예쁘게 하네. 하나는 덤이야.” 할머니는 반죽을 떼어 흑설탕을 넣고 철판 위에서 꾹 눌러 주셨다. 리누가 물었다. “할머니, 이 반죽은 어떻게 만드세요?” “그건 아무한테나 안 알려 주지. 발 없는 말이 천 리 간다고, 옆 가게에서 다 따라 해.”',
+        translation: 'A senhora abriu um sorriso. «E ainda fala bonito. Um vai de brinde.» Ela pegou um pedaço de massa, pôs açúcar mascavo e apertou bem na chapa. O Linu perguntou: «Senhora, como a senhora faz esta massa?» «Isso eu não conto pra qualquer um. Palavra sem pés anda mil léguas: a barraca do lado copia tudo.»',
+        choices: [
+          { text: '“비밀이 금방 소문날까 봐 걱정하시는 거군요.”', translation: '«A senhora tem medo de que o segredo se espalhe rápido.»', next: 'sillsu' },
+          {
+            text: '“말에 발이 없으니까, 비밀은 어디에도 안 가겠네요.”',
+            translation: '«Como a palavra não tem pés, o segredo não vai a lugar nenhum.»',
+            wrong: 'É o contrário: 「발 없는 말이 천 리 간다」 = a palavra, MESMO sem pés, anda mil léguas. Ou seja, o que se diz se espalha longe e rápido. Por isso a senhora não conta a receita.',
+          },
+        ],
+      },
+      sillsu: {
+        emoji: '🔥',
+        text: '그때 할머니가 철판 위의 호떡 하나를 태우고 말았다. 할머니는 겸연쩍게 웃으셨다. “아이고, 사십 년을 구웠는데도 이러네.” 뒤에 서 있던 젊은 손님이 “할머니도 실수하시네요.” 하고 웃었다. 리누는 어떤 속담으로 할머니를 위로할지 생각했다.',
+        translation: 'Nisso, a senhora deixou queimar um hotteok na chapa. Riu sem graça: «Ai, quarenta anos assando e ainda acontece isso.» Um cliente jovem, atrás, riu: «Até a senhora erra, hein.» O Linu pensou em qual provérbio usaria para consolá-la.',
+        choices: [
+          { text: '“원숭이도 나무에서 떨어진다잖아요. 괜찮아요, 할머니.”', translation: '«Não dizem que até o macaco cai da árvore? Tudo bem, senhora.»', next: 'dojeon' },
+          { text: '“등잔 밑이 어둡다잖아요.”', translation: '«Não dizem que embaixo da lamparina é escuro?»', next: 'deungjan' },
+        ],
+      },
+      deungjan: {
+        emoji: '🪔',
+        text: '할머니는 고개를 갸웃하셨다. “등잔 밑이 어둡다는 건, 가까이 있는 걸 오히려 못 본다는 말인데?” 뒤의 손님도 웃었다. 리누는 얼굴이 빨개졌다. 실수를 위로할 때는 다른 속담이 어울렸다.',
+        translation: 'A senhora inclinou a cabeça: «"Embaixo da lamparina é escuro" quer dizer que a gente não vê justamente o que está perto, né?» O cliente de trás riu também. O Linu ficou vermelho. Para consolar um erro, cabia outro provérbio.',
+        choices: [{ text: '“아, 원숭이도 나무에서 떨어진다, 이게 맞네요!”', translation: '«Ah, é "até o macaco cai da árvore"!»', next: 'dojeon' }],
+      },
+      dojeon: {
+        emoji: '🐒',
+        text: '할머니가 손뼉을 치셨다. “그렇지! 외국 펭귄이 속담을 다 아네.” 할머니는 잠시 생각하시더니 말씀하셨다. “내가 요즘 손목이 아파서, 오후에만 좀 도와줄 사람이 필요한데… 백지장도 맞들면 낫다잖아. 반죽 배워 볼래?”',
+        translation: 'A senhora bateu palmas: «Isso! Um pinguim estrangeiro que sabe até provérbio.» Pensou um pouco e disse: «Ando com o pulso doendo, e preciso de alguém pra ajudar só à tarde… Não dizem que até uma folha de papel fica mais leve carregada a dois? Quer aprender a massa?»',
+        choices: [
+          { text: '“네! 시작이 반이라고 하잖아요. 내일부터 오겠습니다.”', translation: '«Quero! Não dizem que começar é metade do caminho? Venho a partir de amanhã.»', next: 'final_bom' },
+          { text: '“감사하지만, 내일 부산에 가야 해서요.”', translation: '«Obrigado, mas amanhã preciso ir a Busan.»', next: 'final_neutro' },
+        ],
+      },
+      final_bom: {
+        emoji: '🥞',
+        text: '일주일 동안 리누는 오후마다 할머니 옆에서 반죽을 치댔다. 마지막 날, 할머니가 작은 쪽지를 건네셨다. 반죽 비법이 삐뚤빼뚤한 글씨로 적혀 있었다. “아무한테나 보여 주지 마. 발 없는 말이 천 리 간다.” 리누는 쪽지를 날개 속에 꼭 넣었다.',
+        translation: 'Durante uma semana, toda tarde, o Linu sovou a massa ao lado da senhora. No último dia, ela lhe entregou um bilhetinho: a receita da massa, em letra torta. «Não mostra pra ninguém. Palavra sem pés anda mil léguas.» O Linu guardou o bilhete bem dentro da asa.',
+        ending: { tone: 'bom', title: 'Metade do caminho', message: 'O Linu entendeu o sentido de cada 속담, usou o certo na hora certa e ganhou, junto com a receita, a confiança de quem fala por provérbios.' },
+      },
+      final_neutro: {
+        emoji: '🚄',
+        text: '할머니는 아쉬운 듯 웃으며 호떡 하나를 더 싸 주셨다. “그래, 젊을 때 많이 다녀야지.” 부산행 기차 안에서 리누는 식은 호떡을 먹으며 생각했다. 반죽의 비밀은, 다음에 오면 배울 수 있을까.',
+        translation: 'A senhora sorriu, meio chateada, e embrulhou mais um hotteok: «Está certo, tem que passear bastante enquanto é novo.» No trem para Busan, comendo o hotteok já frio, o Linu pensou: será que da próxima vez ainda dá para aprender o segredo da massa?',
+        ending: { tone: 'neutro', title: 'O segredo fica para depois', message: 'O Linu entendeu os provérbios, mas deixou passar o convite. Às vezes, o melhor da língua está num «시작이 반이다» dito na hora certa.' },
+      },
+    },
+  },
+  {
+    id: 'ko-h42',
+    level: 'C1.2',
+    cefr: 'C1',
+    title: '여의도의 협상',
+    emoji: '🍗',
+    summary: 'Num escritório de Yeouido, o Linu ajuda uma exportadora brasileira de frango a negociar com uma rede coreana de frango frito e aprende a ler o «não» educado dos negócios.',
+    cultural_context:
+      'A Coreia é uma das maiores consumidoras de frango frito do mundo, com dezenas de milhares de lojas de 치킨, e o Brasil está entre os principais fornecedores do frango importado pelo país. Nas negociações coreanas, a hierarquia e a humildade dão o tom: 저희 회사 para a própria empresa, 귀사 (na escrita) e 그쪽 회사 evitado na fala, palavras-almofada como 죄송하지만 e 말씀드리기 어렵지만, e recusas indiretas. 긍정적으로 검토해 보겠습니다 pode ser um «sim» a caminho ou um «não» educado; 내부적으로 논의해 보고 다시 연락드리겠습니다 costuma pedir tempo. Yeouido, a ilha no rio Han, reúne a bolsa de valores, bancos, emissoras e a Assembleia Nacional.',
+    start: 'start',
+    glossary: [
+      ['저희 회사', 'a nossa empresa (humilde)'],
+      ['귀사', 'a sua empresa (respeitoso, escrito)'],
+      ['단가', 'preço unitário'],
+      ['물량', 'volume, quantidade de mercadoria'],
+      ['긍정적으로 검토하다', 'examinar de forma positiva (às vezes, «não» educado)'],
+      ['난색을 표하다', 'mostrar relutância'],
+      ['말씀드리기 어렵지만', 'é difícil dizer, mas… (palavra-almofada)'],
+      ['양해 부탁드립니다', 'pedimos a sua compreensão'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🏙️',
+        text: '여의도의 한 빌딩 회의실. 브라질 닭고기 수출 회사의 카를루스 씨와 한국 치킨 프랜차이즈의 최 부장이 마주 앉았다. 통역은 리누가 맡았다. 최 부장이 먼저 입을 열었다. “먼 길 오시느라 고생 많으셨습니다. 보내 주신 자료는 잘 받아 보았습니다.”',
+        translation: 'Sala de reunião num prédio de Yeouido. Frente a frente, o Carlos, de uma exportadora brasileira de frango, e o diretor Choi, de uma rede coreana de frango frito. O Linu é o intérprete. O diretor Choi falou primeiro: «Obrigado por virem de tão longe; deve ter sido cansativo. Recebemos e lemos o material que nos enviaram.»',
+        choices: [
+          { text: '카를루스 씨 대신 “시간을 내어 주셔서 감사합니다. 저희 회사를 소개해 드리겠습니다.”라고 통역한다.', translation: 'Traduzir pelo Carlos: «Obrigado pelo seu tempo. Vou apresentar a nossa empresa.»', next: 'sogae' },
+          {
+            text: '카를루스 씨 대신 “저희 귀사를 소개해 드리겠습니다.”라고 통역한다.',
+            translation: 'Traduzir pelo Carlos: «Vou apresentar a nossa (귀사) empresa.»',
+            wrong: '귀사 é a empresa do OUTRO (respeitoso); a própria é 저희 회사 (humilde). 「저희 귀사」 mistura os dois lados e não faz sentido.',
+          },
+        ],
+      },
+      sogae: {
+        emoji: '📦',
+        text: '카를루스 씨의 설명이 끝나자 리누가 핵심 제안을 전했다. “내년부터 물량을 이십 퍼센트 늘리는 대신, 단가를 조금 올려 주셨으면 합니다.” 최 부장은 자료를 넘기다가 잠시 멈추었다. “아, 네… 단가 부분은 저희가 긍정적으로 검토해 보겠습니다. 다만 요즘 원가 부담이 커서요.”',
+        translation: 'Quando o Carlos terminou a apresentação, o Linu passou a proposta principal: «A partir do ano que vem, em troca de aumentar o volume em vinte por cento, gostaríamos que o preço unitário subisse um pouco.» O diretor Choi, folheando o material, parou por um instante. «Ah, sim… Quanto ao preço, vamos examinar de forma positiva. Só que, hoje em dia, os custos estão pesando muito.»',
+        choices: [
+          { text: '카를루스 씨에게 “바로 수락한 건 아니에요. 원가 이야기를 한 걸 보면, 아직 난색을 표하는 것 같아요.”라고 설명한다.', translation: 'Explicar ao Carlos: «Não foi um sim. Pela menção aos custos, ele ainda parece relutante.»', next: 'nansaek' },
+          {
+            text: '카를루스 씨에게 “긍정적으로 검토한다고 했으니, 가격 인상은 된 거예요!”라고 설명한다.',
+            translation: 'Explicar ao Carlos: «Ele disse que vai examinar de forma positiva, então o aumento está aprovado!»',
+            wrong: 'A pausa, o 「아, 네…」 e o 「다만 요즘 원가 부담이 커서요」 logo depois mostram relutância. 「긍정적으로 검토해 보겠습니다」 é uma forma educada de ganhar tempo, não uma aprovação.',
+          },
+        ],
+      },
+      nansaek: {
+        emoji: '🤔',
+        text: '카를루스 씨가 고개를 끄덕였다. “그럼 다른 방법을 제안해 볼까요? 가격은 그대로 두고, 대신 삼 년 장기 계약을 하는 건 어떨지.” 리누는 이 제안을 최 부장에게 전할 표현을 골랐다.',
+        translation: 'O Carlos assentiu. «Então vamos propor outra coisa? Manter o preço e, em troca, fazer um contrato longo, de três anos.» O Linu escolheu as palavras para passar a proposta ao diretor Choi.',
+        choices: [
+          { text: '“말씀드리기 조심스럽지만, 단가를 유지하는 대신 삼 년 장기 계약을 제안드려도 될까요?”', translation: '«Digo isto com cautela, mas poderíamos propor manter o preço em troca de um contrato de três anos?»', next: 'jangi' },
+          { text: '“그럼 가격은 안 올릴 테니까, 삼 년 계약하시죠.”', translation: '«Então não vamos subir o preço; vamos fechar três anos.»', next: 'jangi_direto' },
+        ],
+      },
+      jangi_direto: {
+        emoji: '😐',
+        text: '최 부장의 표정이 약간 굳었다. 옆에 있던 김 과장이 조용히 메모를 했다. “아… 네, 그 부분도 내부적으로 논의해 보고 다시 연락드리겠습니다.” 리누는 말투가 너무 직설적이었다는 것을 깨달았다. 한국어 협상에서는 제안에도 ‘쿠션’이 필요했다.',
+        translation: 'A expressão do diretor Choi endureceu um pouco. O gerente Kim, ao lado, anotou algo em silêncio. «Ah… sim, esse ponto também vamos discutir internamente e retornaremos o contato.» O Linu percebeu que tinha sido direto demais. Numa negociação em coreano, até a proposta precisa de «almofada».',
+        choices: [{ text: '“갑작스러운 제안이라 죄송합니다. 편하실 때 검토 부탁드립니다.”', translation: '«Desculpe a proposta repentina. Por favor, examinem quando for conveniente.»', next: 'final_neutro' }],
+      },
+      jangi: {
+        emoji: '📑',
+        text: '최 부장의 얼굴이 한결 밝아졌다. “장기 계약이라면 저희도 공급이 안정되니 좋지요. 다만 삼 년 동안 품질 기준을 지켜 주실 수 있는지가 중요합니다.” 카를루스 씨가 브라질 농장의 위생 인증서를 꺼냈다.',
+        translation: 'O rosto do diretor Choi se iluminou. «Um contrato longo também é bom para nós, porque garante o fornecimento. Só é importante saber se vocês conseguem manter o padrão de qualidade durante os três anos.» O Carlos tirou os certificados sanitários das granjas brasileiras.',
+        choices: [
+          { text: '“인증서를 보시면 아시겠지만, 저희가 삼 년 내내 같은 기준을 지키겠습니다. 필요하시면 농장 방문도 준비해 드리겠습니다.”', translation: '«Como os certificados mostram, manteremos o mesmo padrão durante os três anos. Se precisarem, também organizamos uma visita às granjas.»', next: 'final_bom' },
+          {
+            text: '“인증서가 있으니까 품질은 걱정하지 마세요. 그건 저희가 알아서 해요.”',
+            translation: '«Com os certificados, não se preocupem com a qualidade. Isso a gente resolve.»',
+            wrong: '「걱정하지 마세요」 e 「알아서 해요」 soam como descartar a preocupação do cliente, e o 해요 é informal demais para uma negociação. Responde-se ao ponto dele com garantias e oferta concreta, no estilo -습니다.',
+          },
+        ],
+      },
+      final_bom: {
+        emoji: '🍗',
+        text: '두 달 뒤, 최 부장 일행이 브라질 파라나주의 농장을 방문했다. 계약서에는 삼 년 장기 계약과 품질 점검 조항이 담겼다. 카를루스 씨가 리누에게 메시지를 보냈다. “‘긍정적으로 검토’의 진짜 뜻을 알려 줘서 고마워요. 덕분에 방향을 바꿀 수 있었어요.”',
+        translation: 'Dois meses depois, a equipe do diretor Choi visitou as granjas no Paraná. O contrato trazia os três anos e uma cláusula de inspeção de qualidade. O Carlos mandou uma mensagem ao Linu: «Obrigado por me explicar o sentido real do "긍정적으로 검토". Foi graças a isso que conseguimos mudar de rumo.»',
+        ending: { tone: 'bom', title: 'O não que virou sim', message: 'O Linu leu a relutância por trás do 긍정적으로 검토, propôs outra saída com palavra-almofada e fechou com garantias no registro certo.' },
+      },
+      final_neutro: {
+        emoji: '📧',
+        text: '일주일 뒤, 최 부장에게서 정중한 이메일이 왔다. “귀사의 제안에 감사드리며, 이번에는 기존 조건을 유지하는 것으로 결정하였습니다. 양해 부탁드립니다.” 카를루스 씨는 어깨를 으쓱했다. “거래가 끊긴 건 아니니까요. 다음에는 처음부터 부드럽게 가 봅시다.”',
+        translation: 'Uma semana depois, chegou um e-mail cortês do diretor Choi: «Agradecemos a proposta da sua empresa e decidimos, desta vez, manter as condições atuais. Pedimos a sua compreensão.» O Carlos deu de ombros: «Pelo menos a parceria não acabou. Da próxima vez, vamos com mais jeito desde o começo.»',
+        ending: { tone: 'neutro', title: 'Condições mantidas', message: 'A negociação não andou, mas a relação ficou. Em coreano, até a proposta mais razoável precisa de almofada para ser ouvida.' },
+      },
+    },
+  },
+  {
+    id: 'ko-h43',
+    level: 'C2',
+    cefr: 'C2',
+    title: '종로 기원의 사자성어',
+    emoji: '⚫',
+    summary: 'Num velho clube de baduk em Jongno, o Linu joga contra um senhor que comenta cada lance com uma expressão de quatro sílabas, e só entende a partida quem entende os 사자성어.',
+    cultural_context:
+      'O baduk (o go, 圍棋) é jogado na Coreia há mais de mil anos, e os clubes (기원) de Jongno, no centro de Seul, reúnem aposentados que jogam o dia todo. O jogo ficou famoso no mundo inteiro em 2016, quando um programa de inteligência artificial venceu, em Seul, um dos maiores jogadores profissionais, numa série de partidas que o país inteiro acompanhou. Os 사자성어 são expressões de quatro sílabas sino-coreanas, quase todas vindas de histórias chinesas antigas: 새옹지마 (塞翁之馬, o cavalo do velho da fronteira: sorte e azar se alternam), 고진감래 (苦盡甘來, depois do amargo vem o doce), 과유불급 (過猶不及, passar do ponto é tão ruim quanto não chegar), 유비무환 (有備無患, quem se prepara não tem problemas) e 자업자득 (自業自得, colhe-se o que se planta).',
+    start: 'start',
+    glossary: [
+      ['기원', 'clube de baduk'],
+      ['사자성어', 'expressão de quatro sílabas sino-coreanas'],
+      ['새옹지마', 'sorte e azar se alternam (o cavalo do velho da fronteira)'],
+      ['고진감래', 'depois do amargo vem o doce'],
+      ['과유불급', 'o excesso é tão ruim quanto a falta'],
+      ['유비무환', 'quem se prepara não sofre'],
+      ['자업자득', 'colhe-se o que se planta'],
+      ['돌을 던지다', '«jogar a pedra»: desistir da partida'],
+      ['수', 'lance, jogada'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🏚️',
+        text: '종로 뒷골목의 낡은 계단을 올라가자, 바둑돌이 판에 닿는 소리가 딱, 딱 울렸다. 기원 안에서는 백발의 노인들이 조용히 수를 두고 있었다. 창가의 정 선생님이 리누를 손짓해 부르셨다. “펭귄 손님, 한판 두겠나? 대신 내가 사자성어로 훈수를 좀 둘 테니, 알아듣나 보자고.”',
+        translation: 'Subindo a escada velha de um beco de Jongno, ouvia-se o estalo das pedras de baduk no tabuleiro: tac, tac. No clube, senhores de cabelo branco jogavam em silêncio. Perto da janela, o senhor Jeong chamou o Linu com a mão. «Visitante pinguim, uma partida? Mas eu vou comentar com 사자성어; vamos ver se você entende.»',
+        choices: [
+          { text: '“좋습니다, 선생님. 한 수 배우겠습니다.”', translation: '«Aceito, mestre. Vou aprender com o senhor.»', next: 'daegug' },
+          { text: '“사자성어는 어렵지만, 도전해 보겠습니다.”', translation: '«Os 사자성어 são difíceis, mas vou tentar.»', next: 'daegug' },
+        ],
+      },
+      daegug: {
+        emoji: '⚪',
+        text: '초반에 리누는 욕심을 내어 상대의 모든 돌을 잡으려고 돌을 잔뜩 두었다. 그러자 자기 집이 허술해졌다. 정 선생님이 혀를 차셨다. “과유불급이야. 다 잡으려다 다 잃지.”',
+        translation: 'No começo, o Linu, ambicioso, jogou pedra atrás de pedra tentando capturar todas as do adversário. Com isso, o próprio território ficou fraco. O senhor Jeong estalou a língua: «과유불급. Quem quer pegar tudo perde tudo.»',
+        choices: [
+          { text: '“지나친 건 모자란 것과 같다는 말씀이군요. 욕심을 줄이겠습니다.”', translation: '«O senhor quer dizer que o excesso é tão ruim quanto a falta. Vou maneirar na ambição.»', next: 'saeong' },
+          {
+            text: '“더 많이 두면 더 좋다는 말씀이군요!”',
+            translation: '«O senhor quer dizer que, quanto mais pedras, melhor!»',
+            wrong: '과유불급 (過猶不及) = passar do ponto (過) é como (猶) não chegar (不及). É justamente um alerta contra o excesso, e o senhor Jeong completa: 「다 잡으려다 다 잃지」.',
+          },
+        ],
+      },
+      saeong: {
+        emoji: '🐎',
+        text: '중반에 리누의 큰 돌무리가 잡힐 위기에 몰렸다. 리누가 한숨을 쉬자 정 선생님이 웃으셨다. “새옹지마라네. 저 돌이 죽는 대신, 자네는 저쪽 귀에서 큰 집을 얻을 수도 있지.” 정말로, 상대가 돌을 잡는 사이 리누는 반대편 귀를 차지했다.',
+        translation: 'No meio da partida, um grupo grande de pedras do Linu ficou ameaçado. Quando ele suspirou, o senhor Jeong riu: «새옹지마. Em troca daquele grupo morrer, você pode ganhar um território grande naquele canto.» E assim foi: enquanto o adversário capturava as pedras, o Linu ocupou o canto do outro lado.',
+        choices: [
+          { text: '“나쁜 일이 좋은 일로 바뀔 수도 있다는 뜻이군요.”', translation: '«Quer dizer que uma coisa ruim pode virar boa.»', next: 'yubi' },
+          {
+            text: '“새옹지마는 말을 잘 타는 사람이 이긴다는 뜻이죠?”',
+            translation: '«새옹지마 quer dizer que ganha quem sabe montar bem a cavalo, né?»',
+            wrong: 'A expressão vem da história do velho da fronteira (塞翁) que perde um cavalo (馬): o que parecia azar trouxe sorte, e a sorte trouxe azar de novo. 새옹지마 = a sorte e o azar se alternam, não se sabe o que vem. Nada a ver com montar bem.',
+          },
+        ],
+      },
+      yubi: {
+        emoji: '🛡️',
+        text: '종반에 들어서자 정 선생님은 한 수 한 수를 오래 생각하셨다. 리누는 미리 약한 곳을 보강해 두었기 때문에, 상대의 공격을 막아 낼 수 있었다. 정 선생님이 고개를 끄덕이셨다. “유비무환이로군. 미리 막아 두니 걱정이 없지.” 판은 거의 비슷해졌다.',
+        translation: 'Na fase final, o senhor Jeong passou a pensar muito em cada lance. Como o Linu tinha reforçado antes os pontos fracos, conseguiu segurar o ataque. O senhor Jeong assentiu: «유비무환. Quem fecha antes não se preocupa.» A partida ficou praticamente empatada.',
+        choices: [
+          { text: '끝까지 집을 세며 신중하게 둔다.', translation: 'Jogar com cuidado até o fim, contando o território.', next: 'gyesan' },
+          { text: '이길 것 같아 빨리빨리 두다가 실수를 한다.', translation: 'Achando que vai ganhar, jogar depressa e errar.', next: 'jaeop' },
+        ],
+      },
+      jaeop: {
+        emoji: '😵',
+        text: '리누가 서두르다 둔 한 수가 결정적인 실수였다. 정 선생님이 그 틈을 파고들어 귀의 돌을 잡으셨다. 리누가 머리를 긁적이자 정 선생님이 말씀하셨다. “자업자득이지. 그래도 괜찮아. 고진감래라고, 오늘 쓴맛을 보면 다음엔 단맛을 보는 거야.”',
+        translation: 'Um lance que o Linu fez com pressa foi o erro decisivo. O senhor Jeong entrou pela brecha e capturou as pedras do canto. O Linu coçou a cabeça, e o senhor Jeong disse: «자업자득. Mas tudo bem. 고진감래: quem prova o amargo hoje prova o doce na próxima.»',
+        choices: [{ text: '“다음 판에는 끝까지 신중하게 두겠습니다.”', translation: '«Na próxima partida, vou jogar com cuidado até o fim.»', next: 'final_neutro' }],
+      },
+      gyesan: {
+        emoji: '🧮',
+        text: '마지막 돌을 두고 집을 세어 보니, 리누가 반 집 차이로 이겼다. 기원 안의 노인들이 하나둘 모여들었다. 정 선생님이 껄껄 웃으셨다. “처음엔 과유불급, 중간엔 새옹지마, 끝엔 유비무환이었네. 이 판을 한마디로 하면 뭐겠나?”',
+        translation: 'Quando a última pedra foi posta e contaram o território, o Linu tinha ganhado por meio ponto. Os senhores do clube foram se juntando em volta. O senhor Jeong deu uma gargalhada: «No começo foi 과유불급, no meio, 새옹지마, e no fim, 유비무환. Resumindo esta partida numa palavra, qual seria?»',
+        choices: [
+          { text: '“고진감래입니다. 초반에 고생했지만 끝에 단맛을 보았으니까요.”', translation: '«고진감래. Sofri no começo, mas provei o doce no fim.»', next: 'final_bom' },
+          {
+            text: '“자업자득입니다. 제가 잘해서 이겼으니까요.”',
+            translation: '«자업자득. Ganhei porque joguei bem.»',
+            wrong: '자업자득 (自業自得) é colher as consequências dos próprios atos, quase sempre no sentido NEGATIVO, como castigo merecido. Para uma vitória depois do sufoco, a expressão é 고진감래 (苦盡甘來): terminado o amargo, vem o doce.',
+          },
+        ],
+      },
+      final_bom: {
+        emoji: '🏆',
+        text: '노인들이 박수를 쳤다. 정 선생님이 바둑판 옆의 낡은 부채를 리누에게 건네셨다. 부채에는 붓글씨로 ‘고진감래’ 네 글자가 한자로 쓰여 있었다. “바둑은 져도 배우고, 이겨도 배우는 거야. 자네는 오늘 네 글자를 네 개나 배웠구먼.”',
+        translation: 'Os senhores aplaudiram. O senhor Jeong deu ao Linu um leque velho que estava ao lado do tabuleiro, com «苦盡甘來» escrito a pincel. «No baduk, a gente aprende perdendo e aprende ganhando. Hoje você aprendeu quatro expressões de quatro sílabas.»',
+        ending: { tone: 'bom', title: 'Depois do amargo, o doce', message: 'O Linu entendeu cada 사자성어 no seu contexto e escolheu 고진감래, e não 자업자득, para a vitória: o C2 está nas nuances.' },
+      },
+      final_neutro: {
+        emoji: '🔄',
+        text: '정 선생님은 돌을 통에 쓸어 담으며 말씀하셨다. “자, 한 판 더?” 리누는 웃으며 다시 자리에 앉았다. 창밖으로 종로의 해가 지고 있었다. 오늘은 졌지만, 사자성어 다섯 개가 머릿속에 또렷이 남았다.',
+        translation: 'O senhor Jeong varreu as pedras para os potes e disse: «E aí, mais uma?» O Linu riu e sentou de novo. Pela janela, o sol se punha sobre Jongno. Hoje tinha perdido, mas cinco 사자성어 ficaram bem nítidos na cabeça.',
+        ending: { tone: 'neutro', title: 'Mais uma partida', message: 'A pressa custou a partida, mas o Linu saiu entendendo os 사자성어 que o senhor Jeong usou, inclusive o 자업자득 que lhe coube.' },
+      },
+    },
+  },
+  {
+    id: 'ko-h44',
+    level: 'C2',
+    cefr: 'C2',
+    title: '부암동의 서시',
+    emoji: '🌌',
+    summary: 'No Museu de Literatura Yun Dong-ju, em Seul, um antigo reservatório de água transformado em espaço de silêncio, o Linu lê o «Prefácio» do poeta morto aos 27 anos e tenta traduzi-lo para o português.',
+    cultural_context:
+      'Yun Dong-ju (1917–1945) é um dos poetas mais amados da Coreia. Estudante durante a ocupação japonesa, escreveu em coreano quando a língua era reprimida, foi preso no Japão acusado de atividades de independência e morreu na prisão de Fukuoka em fevereiro de 1945, poucos meses antes da libertação. Os seus poemas saíram em livro só depois da morte, em 1948, com o título «O céu, o vento, as estrelas e a poesia». O «서시» (Prefácio) abre o livro e é recitado de cor por gerações de coreanos. O museu, aberto em 2012 no bairro de Buam-dong, perto da colina onde ele costumava passear, ocupa um antigo reservatório de água: uma das salas é um poço aberto para o céu.',
+    start: 'start',
+    glossary: [
+      ['서시', '«Prefácio», o poema que abre o livro de Yun Dong-ju'],
+      ['우러르다', 'erguer os olhos (com respeito) para'],
+      ['부끄럼', 'vergonha (forma poética de 부끄러움)'],
+      ['잎새', 'folha (forma poética de 잎사귀)'],
+      ['괴로워하다', 'atormentar-se, sofrer por dentro'],
+      ['일제 강점기', 'período da ocupação japonesa (1910–1945)'],
+      ['유고 시집', 'livro de poemas publicado após a morte do autor'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🏛️',
+        text: '부암동 언덕길을 따라 올라가자, 하얀 상자 같은 윤동주 문학관이 나타났다. 해설사 한 선생님이 입구에서 리누를 맞으셨다. “여기는 원래 수도 가압장과 물탱크였어요. 두 번째 방에 들어가 보시면, 하늘이 네모나게 열려 있을 거예요.” 리누는 첫 번째 방의 유리 진열장 앞에 섰다. 누렇게 바랜 원고 위에 시가 적혀 있었다.',
+        translation: 'Subindo a ladeira de Buam-dong, apareceu o Museu de Literatura Yun Dong-ju, como uma caixa branca. A guia, senhora Han, recebeu o Linu na entrada. «Isto aqui era uma estação de bombeamento e um reservatório de água. Quando entrar na segunda sala, vai ver o céu aberto num quadrado.» O Linu parou diante da vitrine da primeira sala. Sobre o manuscrito amarelado estava o poema.',
+        choices: [
+          { text: '원고의 첫 구절을 소리 내어 읽는다.', translation: 'Ler em voz alta o primeiro trecho do manuscrito.', next: 'seosi' },
+          { text: '한 선생님께 시인의 삶에 대해 먼저 여쭌다.', translation: 'Perguntar primeiro à senhora Han sobre a vida do poeta.', next: 'salm' },
+        ],
+      },
+      salm: {
+        emoji: '📜',
+        text: '“윤동주 시인은 일제 강점기에 우리말로 시를 썼어요. 일본 유학 중에 독립운동 혐의로 체포되어, 광복을 몇 달 앞두고 스물일곱 살에 후쿠오카 형무소에서 세상을 떠났지요. 살아 있는 동안에는 시집을 내지 못했고, 시집은 세상을 떠난 뒤에 나왔어요.” 한 선생님은 진열장을 가리키셨다. “그 첫 장에 실린 시가 이 서시예요.”',
+        translation: '«Yun Dong-ju escreveu poemas em coreano durante a ocupação japonesa. Estudando no Japão, foi preso acusado de atividades de independência e morreu aos vinte e sete anos na prisão de Fukuoka, poucos meses antes da libertação. Em vida, não conseguiu publicar um livro; o livro saiu depois da morte dele.» A senhora Han apontou a vitrine. «O poema da primeira página é este Prefácio.»',
+        choices: [{ text: '원고의 첫 구절을 소리 내어 읽는다.', translation: 'Ler em voz alta o primeiro trecho do manuscrito.', next: 'seosi' }],
+      },
+      seosi: {
+        emoji: '✨',
+        text: '리누는 천천히 읽었다. “죽는 날까지 하늘을 우러러 / 한 점 부끄럼이 없기를, / 잎새에 이는 바람에도 / 나는 괴로워했다.” 한 선생님이 물으셨다. “‘한 점 부끄럼이 없기를’은 어떤 마음일까요?”',
+        translation: 'O Linu leu devagar: «Até o dia de morrer, erguendo os olhos ao céu, / que eu não tenha nem um ponto de vergonha; / até com o vento que se levanta nas folhas / eu me atormentei.» A senhora Han perguntou: «Que sentimento há em "que eu não tenha nem um ponto de vergonha"?»',
+        choices: [
+          { text: '“하늘 앞에서 조금도 부끄럽지 않게 살고 싶다는 소망이에요. ‘-기를’은 바람을 나타내니까요.”', translation: '«É o desejo de viver sem nenhuma vergonha diante do céu. O -기를 expressa um desejo.»', next: 'baram' },
+          {
+            text: '“시인이 이미 부끄러운 일을 많이 해서 후회한다는 고백이에요.”',
+            translation: '«É a confissão de que o poeta já fez muitas coisas vergonhosas e se arrepende.»',
+            wrong: 'O -기를 no fim de 「한 점 부끄럼이 없기를」 é um desejo, uma prece («que não haja…»), como em 건강하시기를 바랍니다. O poeta não confessa erros: pede para viver sem um único ponto de vergonha, e a ponto de sofrer até com o vento nas folhas.',
+          },
+        ],
+      },
+      baram: {
+        emoji: '🍃',
+        text: '“맞아요. 그리고 ‘잎새에 이는 바람에도 괴로워했다’는, 아주 작은 흔들림에도 자신을 돌아보았다는 뜻이에요.” 한 선생님은 두 번째 방으로 안내하셨다. 물탱크의 천장이 뚫린 자리로 하늘이 네모나게 보였다. 벽에는 물이 흘렀던 자국이 남아 있었다. “이 방을 ‘열린 우물’이라고 불러요.”',
+        translation: '«Isso. E "até com o vento que se levanta nas folhas eu me atormentei" quer dizer que ele se examinava até no menor tremor.» A senhora Han o levou à segunda sala. Pelo teto aberto do antigo reservatório, o céu aparecia num quadrado. Nas paredes ficaram as marcas por onde a água corria. «Chamamos esta sala de "poço aberto".»',
+        choices: [
+          { text: '서시를 포르투갈어로 번역해 본다.', translation: 'Tentar traduzir o Prefácio para o português.', next: 'beonyeok' },
+          { text: '세 번째 방에서 시인의 생애를 다룬 영상을 본다.', translation: 'Ver, na terceira sala, o vídeo sobre a vida do poeta.', next: 'final_neutro' },
+        ],
+      },
+      beonyeok: {
+        emoji: '🖊️',
+        text: '리누는 열린 우물 아래 벤치에 앉아 수첩을 꺼냈다. 가장 어려운 것은 ‘우러러’였다. 그냥 ‘보다’가 아니라, 공경하는 마음으로 고개를 들어 올려다보는 것이다. 포르투갈어로 어떻게 옮길까?',
+        translation: 'O Linu sentou num banco sob o poço aberto e pegou o caderno. O mais difícil era 우러러. Não é só «olhar»: é erguer a cabeça e olhar para cima com reverência. Como passar isso para o português?',
+        choices: [
+          { text: '고개를 들어 공경하며 바라보는 느낌이 살아 있는 포르투갈어 표현으로 옮긴다.', translation: 'Traduzir com uma expressão que mantenha a reverência de erguer os olhos, algo como «erguendo os olhos ao céu».', next: 'final_bom' },
+          {
+            text: '‘흘깃 보다’에 가까운 포르투갈어 표현으로 옮긴다.',
+            translation: 'Traduzir como «olhando o céu de relance».',
+            wrong: '우러르다 é erguer os olhos com respeito, com reverência. «De relance» é um olhar rápido e distraído, o oposto do gesto do poema, em que o eu lírico se põe inteiro diante do céu.',
+          },
+        ],
+      },
+      final_bom: {
+        emoji: '🌌',
+        text: '리누의 번역을 읽은 한 선생님이 조용히 미소 지으셨다. “이 시가 또 다른 말로 살아나는군요.” 문학관 방명록에 리누는 포르투갈어 번역과 함께 한 줄을 남겼다. ‘잎새에 이는 바람도 소중히 여기겠습니다.’ 밖으로 나오자 인왕산 위로 첫 별이 떠 있었다.',
+        translation: 'A senhora Han leu a tradução do Linu e sorriu em silêncio. «Este poema está renascendo em mais uma língua.» No livro de visitas do museu, o Linu deixou a tradução em português e uma linha: «Vou dar valor até ao vento que se levanta nas folhas.» Quando saiu, a primeira estrela já brilhava sobre o monte Inwang.',
+        ending: { tone: 'bom', title: 'Mais uma língua para o Prefácio', message: 'O Linu entendeu o -기를 como prece, sentiu o peso de 우러러 e levou o poema para o português sem perder a reverência.' },
+      },
+      final_neutro: {
+        emoji: '🎞️',
+        text: '영상이 끝나고 불이 켜졌다. 리누는 시인의 짧은 생애에 마음이 먹먹해졌다. 기념품점에서 서시가 적힌 엽서를 한 장 샀지만, 번역은 다음으로 미루었다. 엽서를 들고 언덕을 내려오며, 리누는 ‘우러러’라는 말을 여러 번 되뇌었다.',
+        translation: 'O vídeo acabou e as luzes se acenderam. O Linu ficou com um nó na garganta pela vida curta do poeta. Na lojinha, comprou um cartão-postal com o Prefácio, mas deixou a tradução para depois. Descendo a ladeira com o cartão na mão, repetiu várias vezes a palavra 우러러.',
+        ending: { tone: 'neutro', title: 'Um cartão-postal', message: 'O Linu entendeu o poema e a vida do poeta, mas a tradução ficou para outro dia. Às vezes, um verso pede tempo antes de mudar de língua.' },
+      },
+    },
+  },
+  {
+    id: 'ko-h45',
+    level: 'C2',
+    cefr: 'C2',
+    title: '강릉의 시조 낭송',
+    emoji: '🎋',
+    summary: 'Em Gangneung, terra da poetisa Heo Nanseolheon, o Linu entra num concurso de recitação de sijo e aprende a forma de três linhas, com o verso final que começa sempre com três sílabas.',
+    cultural_context:
+      'O sijo é a forma poética tradicional coreana: três linhas (초장, 중장, 종장), cada uma com cerca de quatorze a dezesseis sílabas divididas em quatro partes, e uma regra fixa: o verso final começa com um grupo de exatamente três sílabas, que muda o rumo do poema. Um dos sijo mais famosos é de Hwang Jini, poetisa e gisaeng do século XVI, que brinca com o nome de um nobre (벽계수, «água azul do riacho») e com o luar de uma montanha vazia. Gangneung, na costa leste, é a terra de Heo Nanseolheon (1563–1589), poetisa cujos poemas foram publicados na China depois da sua morte precoce, e do irmão, Heo Gyun. Kim Sowol (1902–1934) levou o ritmo da canção popular para a poesia moderna em «진달래꽃» (As azaleias), de 1925.',
+    start: 'start',
+    glossary: [
+      ['시조', 'sijo, poema tradicional de três linhas'],
+      ['초장 / 중장 / 종장', 'primeira / segunda / última linha do sijo'],
+      ['청산', 'montanha verde'],
+      ['벽계수', '«água azul do riacho» (e o nome de um nobre, no poema de Hwang Jini)'],
+      ['일도 창해하면', 'uma vez que chega ao mar (clássico)'],
+      ['명월', 'lua cheia, lua clara'],
+      ['쉬어 간들 어떠리', 'que mal haveria em descansar um pouco? (-ㄴ들 어떠리, clássico)'],
+      ['낭송', 'recitação'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🌸',
+        text: '강릉 초당동의 솔숲 사이로 허균·허난설헌 기념공원이 자리하고 있었다. 오늘 이곳에서 외국인 시조 낭송 대회가 열린다. 참가자 명단 끝에 리누의 이름도 있었다. 심사위원인 이 교수님이 참가자들에게 말씀하셨다. “낭송 전에 시조의 틀부터 확인해 볼까요? 종장의 첫 구절은 몇 음절일까요?”',
+        translation: 'Entre os pinheiros de Chodang-dong, em Gangneung, fica o parque memorial de Heo Gyun e Heo Nanseolheon. Hoje, ali, acontece um concurso de recitação de sijo para estrangeiros. No fim da lista de participantes estava o nome do Linu. A professora Lee, do júri, falou aos participantes: «Antes de recitar, vamos conferir a estrutura do sijo? Quantas sílabas tem o primeiro grupo do verso final?»',
+        choices: [
+          { text: '“세 음절입니다. 종장은 꼭 세 음절로 시작해요.”', translation: '«Três sílabas. O verso final sempre começa com três sílabas.»', next: 'teul' },
+          {
+            text: '“다섯 음절입니다. 하이쿠처럼요.”',
+            translation: '«Cinco sílabas. Como no haicai.»',
+            wrong: 'O sijo não segue o 5-7-5 do haicai japonês. A regra fixa dele é o começo do verso final (종장): um grupo de exatamente TRÊS sílabas, que vira o rumo do poema.',
+          },
+        ],
+      },
+      teul: {
+        emoji: '📏',
+        text: '“맞아요.” 이 교수님이 칠판에 황진이의 시조를 적으셨다. “청산리 벽계수야 수이 감을 자랑 마라 / 일도 창해하면 다시 오기 어려우니 / 명월이 만공산하니 쉬어 간들 어떠리” 교수님이 물으셨다. “‘명월이’가 세 음절이죠. 그런데 이 시에서 ‘벽계수’는 무슨 뜻일까요?”',
+        translation: '«Isso mesmo.» A professora Lee escreveu no quadro o sijo de Hwang Jini: «Água azul do riacho da montanha verde, não te gabes de correr depressa; / uma vez que chegues ao mar, difícil será voltar; / a lua clara enche a montanha vazia: que mal haveria em descansar um pouco?» E perguntou: «명월이 tem três sílabas, certo. Mas, neste poema, o que significa 벽계수?»',
+        choices: [
+          { text: '“맑은 시냇물이면서, 동시에 벽계수라는 사람을 가리키는 중의적인 표현이에요.”', translation: '«É a água clara do riacho e, ao mesmo tempo, uma alusão a uma pessoa chamada 벽계수: um duplo sentido.»', next: 'jungui' },
+          { text: '“그냥 시냇물을 뜻하는 것 같아요.”', translation: '«Acho que é só a água do riacho.»', next: 'jungui_hint' },
+        ],
+      },
+      jungui_hint: {
+        emoji: '💡',
+        text: '이 교수님이 웃으셨다. “겉으로는 그렇지요. 그런데 황진이가 살던 때에 ‘벽계수’라고 불리던 왕족이 있었다고 전해져요. 그리고 ‘명월’은 황진이의 기명이었고요. 그러면 이 시가 누구에게 하는 말인지 보이지 않나요?”',
+        translation: 'A professora Lee riu. «Na superfície, sim. Mas conta-se que, no tempo de Hwang Jini, havia um nobre da família real chamado 벽계수. E 명월 era o nome artístico de Hwang Jini. Não dá para ver a quem o poema está falando?»',
+        choices: [{ text: '“아, 명월, 그러니까 황진이 자신에게 잠시 머물다 가라는 뜻이군요!”', translation: '«Ah, é um convite para ficar um pouco com 명월, ou seja, com a própria Hwang Jini!»', next: 'jungui' }],
+      },
+      jungui: {
+        emoji: '🌕',
+        text: '“바로 그거예요. 흐르는 물은 한번 바다에 가면 돌아오지 않듯, 인생도 한번 가면 그만이니 서두르지 말라는 뜻이 겹쳐 있지요.” 이제 참가자들이 차례로 낭송할 시를 골랐다. 리누는 김소월의 ‘진달래꽃’과 황진이의 시조 가운데 무엇을 낭송할지 고민했다.',
+        translation: '«Exatamente. E junto vem outra camada: assim como a água que corre não volta depois de chegar ao mar, a vida também não volta, então não tenha pressa.» Os participantes foram escolhendo o poema que iam recitar. O Linu ficou em dúvida entre «As azaleias», de Kim Sowol, e o sijo de Hwang Jini.',
+        choices: [
+          { text: '황진이의 시조를 종장의 세 음절에 힘을 주어 낭송한다.', translation: 'Recitar o sijo de Hwang Jini, pondo força nas três sílabas do verso final.', next: 'nangsong' },
+          { text: '김소월의 ‘진달래꽃’을 낭송한다.', translation: 'Recitar «As azaleias», de Kim Sowol.', next: 'jindallae' },
+        ],
+      },
+      jindallae: {
+        emoji: '🌺',
+        text: '리누는 낭송을 시작했다. “나 보기가 역겨워 / 가실 때에는 / 말없이 고이 보내 드리우리다.” 심사위원석에서 고개를 끄덕이는 모습이 보였다. 낭송이 끝나자 이 교수님이 말씀하셨다. “아름다웠어요. 다만 오늘은 시조 대회라서, 형식 점수는 조금 아쉽겠네요.”',
+        translation: 'O Linu começou a recitar: «Se, cansado de me ver, / partires, / em silêncio, com delicadeza, te deixarei ir.» Da mesa do júri, dava para ver cabeças assentindo. No fim, a professora Lee disse: «Foi bonito. Só que hoje é um concurso de sijo, então a nota de forma vai ficar um pouco abaixo.»',
+        choices: [{ text: '“다음에는 시조로 도전하겠습니다.”', translation: '«Da próxima vez, vou tentar com um sijo.»', next: 'final_neutro' }],
+      },
+      nangsong: {
+        emoji: '🎤',
+        text: '리누는 솔숲을 향해 천천히 읊었다. 초장과 중장은 물 흐르듯이, 그리고 종장의 “명월이”에서 잠시 숨을 멈추었다가 힘을 주었다. 공원에 정적이 흘렀다. 심사가 끝난 뒤, 이 교수님이 리누를 부르셨다. “종장의 전환을 정말 잘 살렸어요. 혹시 직접 시조를 한 수 지어 볼 수 있겠어요?”',
+        translation: 'O Linu recitou devagar, voltado para os pinheiros. A primeira e a segunda linha, fluindo como água; e, no 명월이 do verso final, parou um instante e deu força. Fez-se silêncio no parque. Depois da avaliação, a professora Lee chamou o Linu: «Você deu vida à virada do verso final. Será que consegue compor um sijo seu?»',
+        choices: [
+          { text: '종장을 세 음절로 시작하는 시조를 짓는다.', translation: 'Compor um sijo com o verso final começando por três sílabas.', next: 'final_bom' },
+          {
+            text: '종장을 일곱 음절로 길게 시작하는 시조를 짓는다.',
+            translation: 'Compor um sijo com o verso final começando por sete sílabas.',
+            wrong: 'A professora acabou de elogiar justamente a virada do verso final, que no sijo tem uma regra fixa: o primeiro grupo do 종장 tem TRÊS sílabas. Começar com sete desmancha a forma.',
+          },
+        ],
+      },
+      final_bom: {
+        emoji: '🏅',
+        text: '리누의 시조는 이랬다. “남극의 얼음 위에 펭귄 하나 서 있으니 / 바다 건너 솔숲에서 옛 시인을 만났구나 / 어즈버 먼 길 끝에서 말 한 줄을 얻었네” 이 교수님이 손뼉을 치셨다. “‘어즈버’로 종장을 열었군요. 옛 시조의 감탄사까지 쓰다니!” 리누는 장려상을 받았다.',
+        translation: 'O sijo do Linu dizia: «Sobre o gelo da Antártida está de pé um pinguim; / do outro lado do mar, num pinheiral, encontrou um poeta antigo; / ah!, no fim do longo caminho, ganhei uma linha de palavras.» A professora Lee bateu palmas: «Abriu o verso final com 어즈버! Usou até a interjeição dos sijo antigos!» O Linu ganhou uma menção honrosa.',
+        ending: { tone: 'bom', title: 'Três sílabas que viram o poema', message: 'O Linu sabia a regra do 종장, entendeu o duplo sentido de 벽계수 e 명월 e ainda compôs um sijo com a interjeição clássica: C2 de verdade.' },
+      },
+      final_neutro: {
+        emoji: '🌲',
+        text: '대회가 끝나고, 리누는 허난설헌의 생가 마당을 천천히 걸었다. 짧은 생을 살았지만 시로 바다 건너까지 이름을 남긴 시인이었다. 리누는 수첩에 시조의 틀을 적어 두었다. 초장, 중장, 그리고 세 음절로 여는 종장. 다음 해에는 꼭 시조로 무대에 서기로 했다.',
+        translation: 'Terminado o concurso, o Linu andou devagar pelo pátio da casa onde nasceu Heo Nanseolheon, a poetisa de vida curta cujo nome atravessou o mar pelos poemas. No caderno, anotou a estrutura do sijo: primeira linha, segunda linha e o verso final aberto por três sílabas. No ano seguinte, subiria ao palco com um sijo.',
+        ending: { tone: 'neutro', title: 'Para o ano que vem', message: 'O Linu recitou bonito, mas fora da forma pedida. Agora ele sabe o que faz um sijo ser sijo: a virada das três sílabas.' },
+      },
+    },
+  },
 ];

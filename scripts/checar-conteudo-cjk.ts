@@ -18,7 +18,7 @@ let vocab = new Map<string, { emoji: string | null }>();
 const LEVELS: readonly string[] = SUBLEVELS;
 
 /** Campos em português (não se checa a tônica russa neles). */
-const PT_KEYS = new Set(['translation', 'botTranslation', 'hint', 'communityPrompt', 'title', 'summary', 'cultural_context', 'history', 'culture_tip', 'grammar_why', 'message', 'wrong', 'explanation', 'question', 'heading', 'description', 'persona', 'story', 'evolution_note', 'origin_language', 'prompt', 'author_name', 'means', 'looksLike', 'name', 'pronunciation', 'cognates', 'root_word', 'recognition', 'debated', 'family', 'summary']);
+const PT_KEYS = new Set(['translation', 'note', 'tip', 'botTranslation', 'hint', 'communityPrompt', 'title', 'summary', 'cultural_context', 'history', 'culture_tip', 'grammar_why', 'message', 'wrong', 'explanation', 'question', 'heading', 'description', 'persona', 'story', 'evolution_note', 'origin_language', 'prompt', 'author_name', 'means', 'looksLike', 'name', 'pronunciation', 'cognates', 'root_word', 'recognition', 'debated', 'family', 'summary']);
 
 void main();
 
@@ -79,7 +79,7 @@ function walk(v: unknown, path: string, err: (m: string) => void, key = '', ptCo
       v.forEach((x, i) => walk(x, `${path}[${i}]`, err, key, ptContext || i >= 2));
       return;
     }
-    const ptIndex = strs && (v.length === 2 || v.length === 3) && key !== 'options' && key !== 'keywords' && key !== 'suggestions' && key !== 'expected' && key !== 'words' ? 1 : -1;
+    const ptIndex = strs && (v.length === 2 || v.length === 3) && key !== 'options' && key !== 'keywords' && key !== 'suggestions' && key !== 'expected' && !(key === 'words' && v.length !== 2) ? 1 : -1;
     v.forEach((x, i) => walk(x, `${path}[${i}]`, err, key, ptContext || i === ptIndex));
     return;
   }

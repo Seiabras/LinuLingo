@@ -1,5 +1,7 @@
 import { PACKS } from './idiomas';
 import type { Accent, LanguagePack } from './types';
+import { OWN_META_JA } from './ja/linguas-meta';
+import { OWN_META_KO } from './ko/linguas-meta';
 
 /**
  * Línguas próprias: as que se falam no mesmo território de um idioma do app mas NÃO são um jeito de
@@ -118,6 +120,9 @@ export const OWN_LANGUAGE_META: Record<string, OwnLanguageMeta> = {
   },
   'fr-kreyol-ayisyen': { family: 'Crioulo de base francesa', glottocodes: ['hait1244'], recognition: 'Oficial no Haiti, junto com o francês, desde a Constituição de 1987; é a língua materna de quase todos os haitianos.' },
   'fr-kreyol-antillais': { family: 'Crioulo de base francesa', recognition: 'Ensinado nas escolas da Martinica e de Guadalupe; na França, é uma língua regional, sem estatuto oficial.' },
+  // as dos pacotes novos ficam em cada pasta (ja/linguas-meta.ts…)
+  ...OWN_META_JA,
+  ...OWN_META_KO,
 };
 
 export interface OwnLanguage {

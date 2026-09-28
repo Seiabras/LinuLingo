@@ -13,9 +13,11 @@ import { FINLANDES } from './fi';
 import { ESTONIANO } from './et';
 import { FEROES } from './fo';
 import { LITUANO } from './lt';
+import { JAPONES } from './ja';
+import { COREANO } from './ko';
 
 /** Idiomas com conteúdo pronto. */
-export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES, fr: FRANCES, is: ISLANDES, fi: FINLANDES, et: ESTONIANO, fo: FEROES, lt: LITUANO };
+export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES, fr: FRANCES, is: ISLANDES, fi: FINLANDES, et: ESTONIANO, fo: FEROES, lt: LITUANO, ja: JAPONES, ko: COREANO };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -37,14 +39,8 @@ export const LANGUAGES: LanguageInfo[] = [
   FEROES,
   ESTONIANO,
   LITUANO,
-  {
-    code: 'ja', name: 'Japonês', nativeName: '日本語', flag: '🇯🇵',
-    lineage: { family: 'Japônico', branches: ['Japonês'], region: 'Arquipélago japonês (Leste Asiático)', writing: 'Hiragana, katakana e kanji' },
-  },
-  {
-    code: 'ko', name: 'Coreano', nativeName: '한국어', flag: '🇰🇷',
-    lineage: { family: 'Coreânico', branches: ['Coreano'], region: 'Península coreana (Leste Asiático)', writing: 'Hangul' },
-  },
+  JAPONES,
+  COREANO,
   // as maiores línguas da Ásia (Ethnologue, falantes nativos + segunda língua; o russo já está no app)
   {
     code: 'ar', name: 'Árabe', nativeName: 'العربية', flag: '🇸🇦',

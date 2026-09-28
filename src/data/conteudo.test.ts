@@ -10,7 +10,7 @@ import { ISO_3166_2 } from './iso-3166-2';
 import { MAP_LANGUAGES } from './onde-se-fala';
 import { FORMER_COUNTRIES } from './iso-3166-3';
 
-const STORIES_PER_LEVEL: Record<string, number> = { ro: 3, ru: 3 };
+const STORIES_PER_LEVEL: Record<string, number> = { ro: 3, ru: 3, lt: 3, ja: 3, ko: 3 };
 
 for (const pack of Object.values(PACKS)) {
   const words = new Set(pack.vocab.map((v) => v.word_target));

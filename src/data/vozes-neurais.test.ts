@@ -5,7 +5,8 @@ import { neuralVoiceFor, NEURAL_VOICES } from './vozes-neurais';
 
 /** Idiomas sem voz neural: o som vem das gravações e da voz do aparelho. */
 // o lituano tem voz no Piper (lt_LT-reginute1), mas ela precisa de um fonemizador próprio que o app ainda não roda
-const WITHOUT_VOICE = new Set<string>(['lt']);
+// japonês e coreano: o Piper não tem voz nenhuma para nenhum dos dois (conferido em rhasspy/piper-voices)
+const WITHOUT_VOICE = new Set<string>(['lt', 'ja', 'ko']);
 
 test('vozes neurais: todo idioma e toda variante do app têm voz embutida', () => {
   // sem ela, no Linux (Chrome sem voz nenhuma, Firefox com o speech-dispatcher mudo) o que não tem
