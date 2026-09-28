@@ -2088,4 +2088,132 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
   },
+  {
+    id: 'ca-g33',
+    level: 'C1.1',
+    title: 'Duplicação de pronomes e deslocamento (dislocació)',
+    emoji: '🔂',
+    summary: 'Quando o pronome fraco precisa (ou não pode) retomar um complemento deslocado para o início ou o fim da frase.',
+    sections: [
+      {
+        heading: 'Deslocamento à esquerda (dislocació a l\'esquerra)',
+        text: 'Quando um complemento vai para o início da frase como tópico, é OBRIGATÓRIO retomá-lo com o pronome fraco correspondente.',
+        table: {
+          head: ['Complemento anteposto', 'Pronome de retomada', 'Exemplo', 'Tradução'],
+          rows: [
+            ['CD determinado', 'el/la/els/les', 'Aquest llibre, el vaig comprar ahir.', 'Este livro, eu o comprei ontem.'],
+            ['CD indeterminado', 'en', 'De pa, no en queda gens.', 'Pão, não sobrou nada.'],
+            ['CI', 'li/els', 'A en Marc, li van entregar el premi.', 'Ao Marc, entregaram-lhe o prêmio.'],
+            ['Circunstancial/regido', 'hi/en', 'A Girona, hi anirem el cap de setmana.', 'A Girona, iremos lá no fim de semana.'],
+          ],
+        },
+        examples: [
+          ['A les teves amigues, no les he vistes avui.', 'Suas amigas, não as vi hoje.'],
+          ["D'aquesta qüestió, no se n'ha parlat gens.", 'Dessa questão, não se falou nada.'],
+        ],
+      },
+      {
+        heading: 'Deslocamento à direita (dislocació a la dreta)',
+        text: 'Quando o complemento vem no final, como esclarecimento depois de uma pausa, o pronome fraco antecipa esse complemento.',
+        examples: [
+          ['Ja li ho vaig dir, a la teva germana.', 'Já disse isso a ela, à sua irmã.'],
+          ['No hi vull tornar, a aquest restaurant.', 'Não quero voltar lá, a esse restaurante.'],
+        ],
+      },
+      {
+        heading: 'Quando NÃO duplicar (pleonasmo incorreto)',
+        text: 'Na ordem neutra (sem deslocamento nem vírgula), ou quando o antecedente já é um pronome relativo, duplicar o pronome é um pleonasmo que a norma culta não aceita.',
+        table: {
+          head: ['Errado', 'Certo', 'Explicação'],
+          rows: [
+            ['El llibre que el vaig llegir', 'El llibre que vaig llegir', 'O relativo «que» já faz a função de complemento.'],
+            ['On hi vas?', 'On vas?', '«on» já é locativo; não precisa de «hi» também.'],
+          ],
+        },
+      },
+    ],
+    pitfalls: [
+      'Duplicar o pronome quando o complemento direto já vem de um relativo («la carta que la vaig enviar» em vez de «la carta que vaig enviar»).',
+      'Omitir o pronome de retomada no deslocamento à esquerda («A la Maria vaig veure ahir» em vez de «A la Maria, la vaig veure ahir»).',
+      'Pôr «a» antes de complemento direto de pessoa por interferência do espanhol («Vaig veure a en Joan» em vez de «Vaig veure en Joan» — o catalão não tem "a" pessoal).',
+    ],
+    quiz: [
+      {
+        question: 'Qual opção está certa, com deslocamento à esquerda?',
+        options: ['Aquestes claus, vaig trobar al passadís', 'Aquestes claus, les vaig trobar al passadís', 'Aquestes claus, se les vaig trobar al passadís'],
+        answer: 'Aquestes claus, les vaig trobar al passadís',
+        explanation: 'Complemento direto determinado anteposto exige retomada pelo pronome («les»).',
+      },
+      {
+        question: 'Por que «El document que el vas signar ahir ja està tramitat» tem um erro?',
+        options: ['O verbo «signar» deveria estar no subjuntivo.', 'É errado duplicar o CD com «el» quando já existe o relativo «que».', 'Falta a preposição «a» antes de «el document».'],
+        answer: 'É errado duplicar o CD com «el» quando já existe o relativo «que».',
+        explanation: 'O relativo «que» já cumpre a função de complemento; «el» junto é pleonasmo incorreto.',
+      },
+    ],
+  },
+  {
+    id: 'ca-g34',
+    level: 'C1.1',
+    title: 'Valores modais e estilísticos dos tempos verbais',
+    emoji: '🎭',
+    summary: 'Usos pragmáticos avançados: imperfeito de cortesia, futuro/condicional de probabilidade, e o condicional de boato (estilo jornalístico).',
+    sections: [
+      {
+        heading: 'Imperfeito de cortesia',
+        text: 'O imperfeito do indicativo, em registro formal, suaviza pedidos, vontades ou intenções recentes.',
+        table: {
+          head: ['Uso', 'Exemplo', 'Sentido'],
+          rows: [
+            ['pedido cortês', 'Volia demanar-li si em pot atendre.', 'Queria pedir-lhe se pode me atender (mais suave que «vull»).'],
+            ['ação prevista não realizada', 'Ara mateix et trucava!', 'Eu já ia te ligar agora! (intenção iminente)'],
+            ['conselho/hipótese (coloquial)', 'Jo de tu hi anava sense pensar-ho.', 'Eu, no seu lugar, iria sem pensar.'],
+          ],
+        },
+        examples: [
+          ['Venia a saber si teniu els resultats de la prova.', 'Vinha saber se vocês têm os resultados do exame.'],
+          ['Què volia el senyor?', 'O que o senhor desejava? (atendimento cortês)'],
+        ],
+      },
+      {
+        heading: 'Futuro e condicional de probabilidade',
+        text: 'O futuro simples estima um fato do presente; o condicional simples, um fato do passado.',
+        table: {
+          head: ['Tempo', 'Valor', 'Exemplo', 'Tradução'],
+          rows: [
+            ['futuro simples', 'probabilidade no presente', 'Seran prop de les deu de la nit.', 'Devem ser quase dez da noite.'],
+            ['futuro composto', 'probabilidade sobre fato concluído', 'Haurà perdut l\'autobús.', 'Deve ter perdido o ônibus.'],
+            ['condicional simples', 'estimativa no passado', 'Serien les cinc quan va arribar.', 'Seriam umas cinco horas quando chegou.'],
+          ],
+        },
+      },
+      {
+        heading: 'Condicional de boato (estilo jornalístico)',
+        text: 'No jornalismo e em relatórios formais, o condicional atribui a informação a terceiros, sem o emissor assumir a veracidade do fato.',
+        examples: [
+          ['Segons fonts del ministeri, el govern aprovaria demà el decret.', 'Segundo fontes do ministério, o governo aprovaria amanhã o decreto. (não confirmado)'],
+          ["L'accident hauria provocat diversos ferits greus.", 'O acidente teria provocado vários feridos graves.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Confundir o futuro de conjectura sobre o presente («Seran les deu» = devem ser dez horas) com uma afirmação categórica de futuro («Demà a les deu serem allà»).',
+      'Usar o presente sem atenuante em pedido formal («Vull parlar amb el director» em vez de «Volia/Voldria parlar amb el director»).',
+      'Abusar do condicional de boato em texto acadêmico/jurídico, onde se exige dado confirmado ou citação direta.',
+    ],
+    quiz: [
+      {
+        question: 'Em «El comitè hauria acceptat la dimissió del director», o que expressa o condicional composto?',
+        options: ['Um desejo do jornalista.', 'Uma informação de boato, não confirmada por fontes oficiais.', 'Uma condição obrigatória do passado.'],
+        answer: 'Uma informação de boato, não confirmada por fontes oficiais.',
+        explanation: 'O condicional de boato reporta fatos pendentes de confirmação oficial — comum no jornalismo.',
+      },
+      {
+        question: 'Qual frase usa o imperfeito com valor de cortesia?',
+        options: ['Ahir estudiava quan vas trucar', 'Volia saber si em pot confirmar la data de la reunió', 'Quan era petit jugava a futbol'],
+        answer: 'Volia saber si em pot confirmar la data de la reunió',
+        explanation: '«Volia» no lugar do presente «vull» suaviza e deixa o pedido mais educado.',
+      },
+    ],
+  },
 ];
