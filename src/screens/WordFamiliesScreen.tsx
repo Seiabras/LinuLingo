@@ -21,6 +21,10 @@ const XP_PER_HIT = 2;
  * indo-europeu) e os ramos (latim, germânico, eslavo). Mostra também as que vieram de outra raiz,
  * para o aluno aprender a desconfiar do «parece, logo é». Com um jogo: qual palavra do português é irmã?
  */
+/** O jogo precisa de palavras irmãs do português; as línguas urálicas quase não têm. */
+const MIN_FOR_QUIZ = 5;
+const siblingCount = (lang: KinLang) => WORD_FAMILIES.filter((f) => areSiblings(f, lang, 'pt')).length;
+
 export default function WordFamiliesScreen() {
   const { db, pack, refresh } = useApp();
   const dark = useIsDark();
@@ -44,7 +48,15 @@ export default function WordFamiliesScreen() {
         </SpeechBubble>
       </View>
 
-      {studied && studied !== 'pt' && (
+      {studied && studied !== 'pt' && siblingCount(studied) < MIN_FOR_QUIZ && (
+        <Card className="mb-3 gap-2">
+          <Text className="font-bold text-slate-800 dark:text-slate-100">🌍 Outra família</Text>
+          <Text className="text-sm text-slate-600 dark:text-slate-400">
+            O {nomeIdioma(pack.name)} não é indo-europeu: é da família urálica, como o finlandês, o estoniano e o húngaro. Por isso quase nenhuma palavra dele é irmã do português — compare nas árvores abaixo, na linha «Fínico».
+          </Text>
+        </Card>
+      )}
+      {studied && studied !== 'pt' && siblingCount(studied) >= MIN_FOR_QUIZ && (
         <Card className="mb-3 gap-2">
           <Text className="font-bold text-slate-800 dark:text-slate-100">🎯 Qual é a irmã?</Text>
           <Text className="text-sm text-slate-600 dark:text-slate-400">

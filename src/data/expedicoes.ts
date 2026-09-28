@@ -130,6 +130,77 @@ export const EXPEDITION_PLACES: Record<string, ExpeditionPlace[]> = {
     { city: 'Port-au-Prince', cityPt: 'Porto Príncipe', country: 'HTI', codes: ['HT-OU'], fact: 'A capital do Haiti, onde as línguas oficiais são o francês e o crioulo haitiano.' },
     { city: 'Abidjan', cityPt: 'Abidjan', country: 'CIV', codes: ['CI-AB', 'CI-LG'], fact: 'A maior cidade da Costa do Marfim e uma das maiores cidades francófonas do mundo.' },
   ],
+  nb: [
+    { city: 'Oslo', cityPt: 'Oslo', country: 'NOR', codes: ['NO-03'], fact: 'A capital da Noruega, no fundo do fiorde de Oslo; ali se entrega o Prêmio Nobel da Paz.' },
+    { city: 'Bergen', cityPt: 'Bergen', country: 'NOR', codes: ['NO-46'], fact: 'A cidade das sete montanhas, com o cais hanseático de Bryggen, Patrimônio Mundial; é uma das cidades mais chuvosas da Europa.' },
+    { city: 'Trondheim', cityPt: 'Trondheim', country: 'NOR', codes: ['NO-50'], fact: 'Fundada pelos vikings; a catedral de Nidaros foi erguida sobre o túmulo de Santo Olavo, o rei que completou a cristianização da Noruega.' },
+    { city: 'Stavanger', cityPt: 'Stavanger', country: 'NOR', codes: ['NO-11'], fact: 'A capital do petróleo da Noruega, perto do Preikestolen, a «Rocha do Púlpito», sobre o Lysefjord.' },
+    { city: 'Tromsø', cityPt: 'Tromsø', country: 'NOR', codes: ['NO-54', 'NO-55'], fact: 'Acima do Círculo Polar Ártico: no inverno o sol não nasce por semanas e a aurora boreal dança no céu.' },
+    { city: 'Kautokeino', cityPt: 'Kautokeino (Guovdageaidnu)', country: 'NOR', codes: ['NO-54', 'NO-56'], fact: 'Em sámi se chama Guovdageaidnu; quase todo mundo ali fala sámi setentrional, e lá fica a universidade sámi.' },
+    { city: 'Bodø', cityPt: 'Bodø', country: 'NOR', codes: ['NO-18'], fact: 'Capital Europeia da Cultura em 2024, perto do Saltstraumen, uma das correntes de maré mais fortes do mundo.' },
+    { city: 'Ålesund', cityPt: 'Ålesund', country: 'NOR', codes: ['NO-15'], fact: 'Reconstruída em estilo art nouveau depois do incêndio que destruiu a cidade em 1904.' },
+    { city: 'Lillehammer', cityPt: 'Lillehammer', country: 'NOR', codes: ['NO-34'], fact: 'Sediou os Jogos Olímpicos de Inverno de 1994.' },
+    { city: 'Kristiansand', cityPt: 'Kristiansand', country: 'NOR', codes: ['NO-42'], fact: 'A maior cidade do Sørlandet, o sul ensolarado da Noruega, com as casinhas brancas de madeira do bairro de Posebyen.' },
+    { city: 'Fredrikstad', cityPt: 'Fredrikstad', country: 'NOR', codes: ['NO-30', 'NO-31'], fact: 'Tem a Gamlebyen, a cidade velha fortificada mais bem conservada dos países nórdicos.' },
+    { city: 'Tønsberg', cityPt: 'Tønsberg', country: 'NOR', codes: ['NO-38', 'NO-39'], fact: 'Considerada a cidade mais antiga da Noruega; perto dali foi achado o navio viking de Oseberg.' },
+  ],
+  da: [
+    { city: 'København', cityPt: 'Copenhague', country: 'DNK', codes: ['DK-84'], fact: 'A capital da Dinamarca, com a Pequena Sereia de Hans Christian Andersen e o porto colorido de Nyhavn.' },
+    { city: 'Aarhus', cityPt: 'Aarhus', country: 'DNK', codes: ['DK-82'], fact: 'A segunda maior cidade da Dinamarca, com o museu a céu aberto Den Gamle By e a passarela arco-íris no alto do museu ARoS.' },
+    { city: 'Odense', cityPt: 'Odense', country: 'DNK', codes: ['DK-83'], fact: 'A cidade natal de Hans Christian Andersen, na ilha de Fiônia.' },
+    { city: 'Aalborg', cityPt: 'Aalborg', country: 'DNK', codes: ['DK-81'], fact: 'No norte da Jutlândia, à beira do Limfjord; é famosa pelo akvavit, a aguardente de cominho.' },
+    { city: 'Skagen', cityPt: 'Skagen', country: 'DNK', codes: ['DK-81'], fact: 'Na ponta norte da Dinamarca, onde dois mares se encontram: o Skagerrak e o Kattegat.' },
+    { city: 'Roskilde', cityPt: 'Roskilde', country: 'DNK', codes: ['DK-85'], fact: 'A catedral guarda os túmulos dos reis dinamarqueses, e o museu mostra navios vikings; entre o fim de junho e o começo de julho, há ali um dos maiores festivais de música da Europa.' },
+    { city: 'Helsingør', cityPt: 'Helsingør', country: 'DNK', codes: ['DK-84'], fact: 'Tem o castelo de Kronborg, onde Shakespeare ambientou Hamlet.' },
+    { city: 'Billund', cityPt: 'Billund', country: 'DNK', codes: ['DK-83'], fact: 'Onde nasceu o LEGO; o primeiro parque Legoland abriu ali em 1968.' },
+    { city: 'Ribe', cityPt: 'Ribe', country: 'DNK', codes: ['DK-83'], fact: 'A cidade mais antiga da Dinamarca, fundada na era viking, no começo do século VIII.' },
+    { city: 'Silkeborg', cityPt: 'Silkeborg', country: 'DNK', codes: ['DK-82'], fact: 'Entre lagos e florestas; no museu está o Homem de Tollund, um corpo de uns 2.400 anos achado num pântano.' },
+    { city: 'Jelling', cityPt: 'Jelling', country: 'DNK', codes: ['DK-83'], fact: 'As pedras rúnicas de Jelling, do século X, são chamadas de «certidão de batismo da Dinamarca».' },
+    { city: 'Rønne', cityPt: 'Rønne', country: 'DNK', codes: ['DK-84'], fact: 'Na ilha de Bornholm, no mar Báltico, famosa pelas igrejas redondas medievais.' },
+  ],
+  is: [
+    { city: 'Reykjavík', cityPt: 'Reykjavík', country: 'ISL', codes: ['IS-RKV', 'IS-1'], fact: 'A capital mais ao norte de um país soberano; a igreja Hallgrímskirkja lembra as colunas de basalto.' },
+    { city: 'Hafnarfjörður', cityPt: 'Hafnarfjörður', country: 'ISL', codes: ['IS-1'], fact: 'A «cidade na lava», onde se diz que moram elfos e o povo oculto.' },
+    { city: 'Akureyri', cityPt: 'Akureyri', country: 'ISL', codes: ['IS-6'], fact: 'A «capital do norte», no fundo do fiorde Eyjafjörður; a luz vermelha dos semáforos tem forma de coração.' },
+    { city: 'Húsavík', cityPt: 'Húsavík', country: 'ISL', codes: ['IS-6'], fact: 'A capital da observação de baleias da Islândia.' },
+    { city: 'Ísafjörður', cityPt: 'Ísafjörður', country: 'ISL', codes: ['IS-4'], fact: 'A maior cidade dos Fiordes do Oeste; tem um festival de música chamado Aldrei fór ég suður, «Nunca fui para o sul».' },
+    { city: 'Egilsstaðir', cityPt: 'Egilsstaðir', country: 'ISL', codes: ['IS-7'], fact: 'No leste, perto do lago Lagarfljót, onde a lenda diz que vive uma serpente gigante, o Lagarfljótsormurinn.' },
+    { city: 'Vík', cityPt: 'Vík í Mýrdal', country: 'ISL', codes: ['IS-8'], fact: 'A vila mais ao sul da Islândia, perto da praia de areia preta de Reynisfjara.' },
+    { city: 'Þingvellir', cityPt: 'Þingvellir', country: 'ISL', codes: ['IS-8'], fact: 'Onde o parlamento islandês, o Alþingi, se reuniu ao ar livre a partir de 930, entre duas placas tectônicas.' },
+    { city: 'Heimaey', cityPt: 'Heimaey (Vestmannaeyjar)', country: 'ISL', codes: ['IS-8'], fact: 'Em 1973 um vulcão entrou em erupção na ilha e quase fechou o porto; a lava foi resfriada com água do mar.' },
+    { city: 'Keflavík', cityPt: 'Keflavík', country: 'ISL', codes: ['IS-2'], fact: 'Onde fica o aeroporto internacional: quase todo viajante chega à Islândia por aqui.' },
+    { city: 'Borgarnes', cityPt: 'Borgarnes', country: 'ISL', codes: ['IS-3'], fact: 'A terra de Egill Skallagrímsson, o poeta viking da saga de Egill.' },
+    { city: 'Sauðárkrókur', cityPt: 'Sauðárkrókur', country: 'ISL', codes: ['IS-5'], fact: 'No Skagafjörður, a região mais famosa pelos cavalos islandeses.' },
+  ],
+  fi: [
+    { city: 'Helsinki', cityPt: 'Helsinque', country: 'FIN', codes: ['FI-18'], fact: 'A capital da Finlândia, com a fortaleza de Suomenlinna, construída sobre ilhas.' },
+    { city: 'Porvoo', cityPt: 'Porvoo', country: 'FIN', codes: ['FI-18'], fact: 'A segunda cidade mais antiga da Finlândia, com armazéns vermelhos à beira do rio.' },
+    { city: 'Turku', cityPt: 'Turku', country: 'FIN', codes: ['FI-19'], fact: 'A antiga capital e a cidade mais antiga da Finlândia, com castelo e catedral medievais.' },
+    { city: 'Tampere', cityPt: 'Tampere', country: 'FIN', codes: ['FI-11'], fact: 'Entre dois lagos ligados por corredeiras, que moviam as fábricas; e se diz a capital mundial da sauna.' },
+    { city: 'Rovaniemi', cityPt: 'Rovaniemi', country: 'FIN', codes: ['FI-10'], fact: 'Na linha do Círculo Polar Ártico; ali fica a Vila do Papai Noel.' },
+    { city: 'Inari', cityPt: 'Inari', country: 'FIN', codes: ['FI-10'], fact: 'O coração da cultura sámi na Finlândia, com o Parlamento Sámi e o museu Siida.' },
+    { city: 'Oulu', cityPt: 'Oulu', country: 'FIN', codes: ['FI-14'], fact: 'Sedia o Campeonato Mundial de Air Guitar e é a Capital Europeia da Cultura de 2026.' },
+    { city: 'Savonlinna', cityPt: 'Savonlinna', country: 'FIN', codes: ['FI-04'], fact: 'O castelo medieval de Olavinlinna, no meio dos lagos do Saimaa, recebe um festival de ópera.' },
+    { city: 'Kuopio', cityPt: 'Kuopio', country: 'FIN', codes: ['FI-15'], fact: 'Na Savônia, a terra do kalakukko, um pão recheado de peixe.' },
+    { city: 'Jyväskylä', cityPt: 'Jyväskylä', country: 'FIN', codes: ['FI-08'], fact: 'A cidade do arquiteto Alvar Aalto, com muitos prédios desenhados por ele.' },
+    { city: 'Vaasa', cityPt: 'Vaasa', country: 'FIN', codes: ['FI-12'], fact: 'Na costa oeste, onde muita gente fala sueco; em frente fica o arquipélago de Kvarken, Patrimônio Mundial.' },
+    { city: 'Lahti', cityPt: 'Lahti', country: 'FIN', codes: ['FI-16'], fact: 'A cidade dos esportes de inverno, com as grandes rampas de salto de esqui.' },
+    { city: 'Joensuu', cityPt: 'Joensuu', country: 'FIN', codes: ['FI-13'], fact: 'A capital da Carélia do Norte, entre florestas, perto da fronteira com a Rússia.' },
+  ],
+  et: [
+    { city: 'Tallinn', cityPt: 'Tallinn', country: 'EST', codes: ['EE-37'], fact: 'A capital da Estônia, com a cidade velha medieval da Liga Hanseática, Patrimônio Mundial.' },
+    { city: 'Tartu', cityPt: 'Tartu', country: 'EST', codes: ['EE-79'], fact: 'A cidade universitária, com a universidade mais antiga da Estônia (1632); foi Capital Europeia da Cultura em 2024.' },
+    { city: 'Pärnu', cityPt: 'Pärnu', country: 'EST', codes: ['EE-68'], fact: 'A «capital de verão» da Estônia, com praias de areia.' },
+    { city: 'Narva', cityPt: 'Narva', country: 'EST', codes: ['EE-45'], fact: 'Na fronteira com a Rússia, onde a maioria fala russo; o castelo de Narva fica de frente para a fortaleza de Ivangorod, do outro lado do rio.' },
+    { city: 'Kuressaare', cityPt: 'Kuressaare', country: 'EST', codes: ['EE-74'], fact: 'Na ilha de Saaremaa, com um castelo episcopal medieval muito bem conservado.' },
+    { city: 'Kärdla', cityPt: 'Kärdla', country: 'EST', codes: ['EE-39'], fact: 'A única cidade da ilha de Hiiumaa, a ilha dos faróis.' },
+    { city: 'Viljandi', cityPt: 'Viljandi', country: 'EST', codes: ['EE-84'], fact: 'Sedia o maior festival de música folclórica da Estônia.' },
+    { city: 'Võru', cityPt: 'Võru', country: 'EST', codes: ['EE-87'], fact: 'No sudeste, onde se fala o võro, língua aparentada com o estoniano que tem escrita própria.' },
+    { city: 'Otepää', cityPt: 'Otepää', country: 'EST', codes: ['EE-81'], fact: 'A «capital de inverno» da Estônia, com pistas de esqui cross-country.' },
+    { city: 'Rakvere', cityPt: 'Rakvere', country: 'EST', codes: ['EE-60'], fact: 'Tem um castelo medieval e a estátua gigante de um auroque, o boi selvagem extinto.' },
+    { city: 'Paide', cityPt: 'Paide', country: 'EST', codes: ['EE-52'], fact: 'No centro do país, e por isso chamada de «coração da Estônia».' },
+    { city: 'Jõgeva', cityPt: 'Jõgeva', country: 'EST', codes: ['EE-50'], fact: 'Registrou a temperatura mais baixa da Estônia: −43,5 °C, em 1940.' },
+  ],
 };
 
 /** A pista falada: «Linu viaja a Sevilla» no idioma estudado. */
@@ -149,6 +220,17 @@ export function clueSentence(lang: string, city: string): string {
       return `Linu reser till ${city}.`;
     case 'fr':
       return `Linu voyage à ${city}.`;
+    case 'nb':
+      return `Linu reiser til ${city}.`;
+    case 'da':
+      return `Linu rejser til ${city}.`;
+    // islandês, finlandês e estoniano mudam o nome da cidade depois de «para» (caso): o nome fica no nominativo
+    case 'is':
+      return `Linu er á ferðalagi. Næsti áfangastaður: ${city}.`;
+    case 'fi':
+      return `Linu matkustaa. Seuraava kohde on ${city}.`;
+    case 'et':
+      return `Linu reisib. Järgmine sihtkoht on ${city}.`;
     default:
       return city;
   }
