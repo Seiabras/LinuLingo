@@ -14,6 +14,7 @@ import { VarietyPicker } from '@/components/AccentsPanel';
 import { OwnLanguagesTab } from '@/components/OwnLanguagesTab';
 import { IndigenousTab } from '@/components/IndigenousTab';
 import { SignLanguagesTab } from '@/components/SignLanguagesTab';
+import { LanguageTypesTab } from '@/components/LanguageTypesTab';
 import type { LanguagePack } from '@/data/types';
 import { nomeIdioma } from '@/services/idioma-nome';
 
@@ -22,13 +23,15 @@ const TABS = [
   { id: 'proprias', label: '🗣️ Línguas próprias', info: 'Outras línguas faladas nos mesmos países do idioma, que não são um jeito de falar ele: o sámi na Suécia, o sardo na Itália, o feroês na Dinamarca.' },
   { id: 'indigenas', label: '🪶 Indígenas', info: 'As línguas indígenas de cada país (o Brasil primeiro) e o quanto cada uma está em risco de desaparecer.' },
   { id: 'sinais', label: '🤟 Línguas de sinais', info: 'As línguas das comunidades surdas: como funcionam, as famílias, as de cada país, a história e um quiz.' },
+  { id: 'tipos', label: '🧭 Tipos de línguas', info: 'Além das línguas naturais: as artificiais (esperanto, klingon, toki pona), as formais (programação, lógica), as de contato (pidgins e crioulos), as controladas e a divisão por modalidade (oral, de sinais, tátil) e por estado (vivas, mortas, protolínguas).' },
 ] as const;
 type TabId = (typeof TABS)[number]['id'];
 
 /**
  * Cultura & História, em abas: a do idioma (genealogia, mapa, variantes e sotaques, bichos e os cards
  * de cada unidade), a das línguas próprias (as que se falam nos mesmos lugares mas não são o idioma,
- * como o sámi), a das línguas indígenas de cada país, com o grau de risco, e a das línguas de sinais.
+ * como o sámi), a das línguas indígenas de cada país, com o grau de risco, a das línguas de sinais e
+ * a dos tipos de línguas (artificiais, formais, de contato, controladas, modalidade e estado).
  * A aba vem da rota (/cultura?aba=indigenas), para o tutorial e os atalhos levarem direto a ela.
  */
 export default function CultureScreen() {
@@ -77,6 +80,7 @@ export default function CultureScreen() {
       {tab === 'proprias' && <OwnLanguagesTab />}
       {tab === 'indigenas' && <IndigenousTab />}
       {tab === 'sinais' && <SignLanguagesTab />}
+      {tab === 'tipos' && <LanguageTypesTab />}
     </Screen>
   );
 }
