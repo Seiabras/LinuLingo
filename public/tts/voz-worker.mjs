@@ -31,8 +31,9 @@ function loadEngine() {
 
 /** Baixa guardando no cache (e avisando o progresso); da segunda vez em diante, lê do cache. */
 async function cachedBytes(url, onProgress) {
-  const cache = await caches.open(CACHE);
-  const hit = await cache.match(url);
+  // numa janela privada o navegador pode recusar o cache: aí a voz baixa e toca sem ficar guardada
+  const cache = await caches.open(CACHE).catch(() => null);
+  const hit = await cache?.match(url).catch(() => null);
   if (hit) return hit.arrayBuffer();
   const res = await fetch(url);
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -48,7 +49,7 @@ async function cachedBytes(url, onProgress) {
     onProgress?.(loaded, total);
   }
   const blob = new Blob(parts);
-  await cache.put(url, new Response(blob, { headers: { 'Content-Type': res.headers.get('Content-Type') ?? 'application/octet-stream' } }));
+  await cache?.put(url, new Response(blob, { headers: { 'Content-Type': res.headers.get('Content-Type') ?? 'application/octet-stream' } })).catch(() => {});
   return blob.arrayBuffer();
 }
 

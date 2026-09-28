@@ -51,7 +51,7 @@ A Cultura tem mais duas abas (`/cultura?aba=proprias` e `?aba=indigenas`):
 Cada idioma mostra os seus jeitos regionais de falar (18 no espanhol, 5 no romeno, 8 no russo): o que marca cada um, exemplos com voz e transcrição, palavras típicas e um **minimapa com as regiões** onde se fala (subdivisões ISO 3166-2). No mapa-múndi, o cartão do país lista os sotaques de lá, e tocar numa região mostra o sotaque daquele lugar. Formato: `Accent` em src/data/types.ts, um arquivo `sotaques.ts` por idioma.
 
 
-**Gravações de gente de cada região** (`scripts/baixar-vozes-sotaques.mjs`): o script cruza os falantes do Lingua Libre com as regiões de cada sotaque — vale onde a pessoa aprendeu a língua (quando informado) ou onde mora, resolvidos no Wikidata até o código ISO 3166-2 — e baixa palavras do vocabulário do app ditas por eles (só palavras conferidas: há falantes que gravam listas de dicionário ou palavras de outra língua marcadas errado). No cartão e no treino de cada sotaque aparece «🎙️ Gente de lá» (quem gravou e o lugar) e, no topo do painel, «A mesma palavra, sotaques diferentes» para comparar lado a lado. Hoje: espanhol 8 sotaques (Caracas, Cartagena, Bogotá, Buenos Aires, Málaga, Grã Canária, Costa Rica, Chile), romeno os 5, russo 3 (Moscou, São Petersburgo, Perm), italiano 7. Onde ainda não há gravações, o app avisa e convida a gravar no Lingua Libre.
+**Gravações de gente de cada região** (`scripts/baixar-vozes-sotaques.mjs`): o script cruza os falantes do Lingua Libre com as regiões de cada sotaque — vale onde a pessoa aprendeu a língua (quando informado) ou onde mora, resolvidos no Wikidata até o código ISO 3166-2 — e baixa palavras do vocabulário do app ditas por eles (só palavras conferidas: há falantes que gravam listas de dicionário ou palavras de outra língua marcadas errado). No cartão e no treino de cada sotaque aparece «🎙️ Gente de lá» (quem gravou e o lugar) e, no topo do painel, «A mesma palavra, sotaques diferentes» para comparar lado a lado. Hoje: espanhol 8 sotaques (Caracas, Cartagena, Bogotá, Buenos Aires, Málaga, Grã Canária, Costa Rica, Chile), romeno os 5, russo 3 (Moscou, São Petersburgo, Perm), italiano 7; português de Portugal, francês e os idiomas nórdicos ainda não têm. Onde ainda não há gravações, o app avisa e convida a gravar no Lingua Libre.
 ## O que tem no espanhol
 
 - **Variante padrão: América Latina** (neutra, com «ustedes»), e mais duas para escolher na aba Cultura: **Espanha** (vosotros, [θ] no «z», 46 diferenças de vocabulário, 3 histórias em Madri, no Caminho de Santiago e nas Fallas) e **Rio da Prata** (voseo, «ll» chiado, 39 diferenças, 3 histórias em La Boca, Montevidéu e Punta Tombo). A variante escolhida troca também a **voz** (es-MX, es-ES, es-AR) e a **IPA**.
@@ -179,7 +179,7 @@ npx expo start          # w = navegador, ou leia o QR code com o Expo Go
 
 **Ordem do som:** gravação de um falante nativo (com quem gravou e de onde) › voz natural do aparelho no idioma certo (no português, do país certo) › **voz neural embutida** › voz robótica do aparelho. O app nunca lê um idioma com a voz de outro.
 
-A **voz neural embutida** ([Piper](https://github.com/rhasspy/piper) rodando no navegador com onnxruntime-web, num worker) garante som em todos os idiomas mesmo sem voz no computador — por exemplo no Chrome do Linux, que não tem nenhuma, ou no Firefox com o speech-dispatcher mudo. A voz de cada idioma (licenças CC0/CC BY, lista em src/data/vozes-neurais.ts) baixa uma vez e fica guardada para uso offline; a tela **Perfil › Voz e microfone** deixa ouvir e baixar antes. `scripts/preparar-tts.mjs` copia o motor para `public/tts/` no build.
+A **voz neural embutida** ([Piper](https://github.com/rhasspy/piper) rodando no navegador com onnxruntime-web, num worker) garante som em todos os idiomas mesmo sem voz no computador — por exemplo no Chrome do Linux, que não tem nenhuma, ou no Firefox com o speech-dispatcher mudo. Todo idioma do app tem a sua (um teste confere; o islandês usa a Ugla, do corpus Talrómur, e o alemão das línguas próprias, o Thorsten). A voz de cada idioma (licenças CC0/CC BY, lista em src/data/vozes-neurais.ts) baixa uma vez e fica guardada para uso offline (numa janela privada, que pode recusar o cache, ela toca sem ficar guardada); a tela **Perfil › Voz e microfone** deixa ouvir e baixar antes. O áudio da voz é liberado já no toque do aluno — o Firefox deixa mudo o som que começa depois de uma espera — e, se a voz embutida falhar, fala a do aparelho em vez de ficar em silêncio. `scripts/preparar-tts.mjs` copia o motor para `public/tts/` no build.
 
 A leitura em voz alta usa as vozes do aparelho. A tela **Perfil › Voz e microfone** detecta o seu sistema, testa a voz e mostra o passo a passo (iPhone/iPad, Android, Windows, Mac, Chromebook e Linux). O app prefere vozes naturais (Piper, Google, Microsoft, «premium») às robóticas (eSpeak).
 
@@ -286,11 +286,12 @@ src/
 ├── database/     esquema SQLite, seed e consultas
 ├── srs/          algoritmo SuperMemo-2
 ├── services/     progresso/XP, voz, comparação de respostas, tema, trilha
-└── data/         conteúdo por idioma (ro/, ru/, es/) e registro de idiomas
+└── data/         conteúdo por idioma (ro/, ru/, es/, it/, pt/, fr/, sv/, nb/, da/, is/, fi/) e registro de idiomas
 ```
 
 ### Adicionar um idioma
 
-1. Crie `src/data/<código>/` com `vocabulario.ts`, `curriculo.ts`, `etimologia.ts`, `conversas.ts` e `index.ts` (um `LanguagePack`).
+1. Crie `src/data/<código>/` com `index.ts` (um `LanguagePack`) e o conteúdo: `vocabulario.ts`, `curriculo.ts`, `gramatica.ts`, `historias.ts`, `extras.ts` (etimologia, conversas, diário e shadowing), `variantes.ts`, `sotaques.ts`, `linguistica.ts`, `falsos-amigos.ts`, `pares.ts`, `bichos.ts` e, se a IPA vier de dicionário, `pronuncia.ts` (use `src/data/fi/` como modelo).
 2. Registre em `PACKS` de `src/data/idiomas.ts`.
-3. Rode `npm test`. O teste de conteúdo verifica palavras das lições, gabaritos e etimologia.
+3. Dê uma voz neural ao idioma em `src/data/vozes-neurais.ts` (sem ela, no Linux, o que não tem gravação de nativo fica mudo).
+4. Rode `npm test`. O teste de conteúdo verifica palavras das lições, gabaritos e etimologia; o das vozes, que todo idioma e variante tem voz embutida.

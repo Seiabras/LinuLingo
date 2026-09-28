@@ -6,7 +6,7 @@ import { VOWEL_GROUPS } from './pitch';
 import { createAudioPlayer, type AudioPlayer } from 'expo-audio';
 import { clipFor } from '@/data/audio-index';
 import { pickVoice, type VoiceInfo } from './voice-pick';
-import { hasNeuralVoice, neuralCached, speakNeural, stopNeural, synthesizeNeural } from './neural-tts';
+import { hasNeuralVoice, neuralCached, neuralFailed, speakNeural, stopNeural, synthesizeNeural, unlockAudio } from './neural-tts';
 
 export type { VoiceInfo };
 
@@ -176,12 +176,18 @@ export function forVoice(text: string): string {
 export async function speak(text: string, locale: string, opts: { rate?: number; native?: boolean } = {}): Promise<SpeakResult> {
   // native: false força a voz do aparelho (pares mínimos: as duas palavras na mesma voz)
   if (opts.native !== false && playNativeClip(text, locale, opts.rate ?? 1)) return 'nativo';
+  // ainda dentro do toque: depois do «await» o Firefox não deixa mais o áudio da voz neural sair
+  if (hasNeuralVoice(locale)) unlockAudio();
   const voice = await findVoice(locale);
   Speech.stop();
   stopClip();
   stopNeural();
+  const device: VoiceInfo | null = voice;
   if (!goodDeviceVoice(voice, locale) && hasNeuralVoice(locale)) {
-    speakNeural(forVoice(text), locale, opts.rate ?? 1);
+    speakNeural(forVoice(text), locale, opts.rate ?? 1).then((ms) => {
+      // a voz embutida falhou: a do aparelho, se houver, é melhor que o silêncio
+      if (ms === null && device && neuralFailed(locale)) Speech.speak(forVoice(text), { language: locale, voice: device.identifier, rate: opts.rate ?? 0.9 });
+    });
     return 'neural';
   }
   if (!voice) return 'sem-voz';
@@ -223,6 +229,7 @@ export async function canSpeak(locale: string): Promise<boolean> {
  * Se a voz do aparelho não avisar início e fim, estima pela quantidade de sílabas.
  */
 export async function speakTimed(text: string, locale: string, rate = 0.9): Promise<number> {
+  if (hasNeuralVoice(locale)) unlockAudio();
   const voice = await findVoice(locale);
   const estimate = Math.round(((text.toLowerCase().match(VOWEL_GROUPS) ?? []).length * 210) / rate);
   Speech.stop();
