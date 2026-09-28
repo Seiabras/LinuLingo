@@ -72,7 +72,7 @@ test('números em estoniano: datas, anos, horas, rótulos e compostos', () => {
   assert.equal(spellEstonianNumbers('Manifest kuulutati välja 24. veebruaril 1918.'), 'Manifest kuulutati välja kahekümne neljandal veebruaril tuhat üheksasada kaheksateist.');
   assert.equal(spellEstonianNumbers('Eepos ilmus aastatel 1857–1861.'), 'Eepos ilmus aastatel tuhat kaheksasada viiskümmend seitse kuni tuhat kaheksasada kuuskümmend üks.');
   assert.equal(spellEstonianNumbers('Rong väljub kell 14.30.'), 'Rong väljub kell neliteist kolmkümmend.');
-  assert.equal(spellEstonianNumbers('Eesti hädaabinumber on 112.'), 'Eesti hädaabinumber on sada kaksteist.');
+  assert.equal(spellEstonianNumbers('Eesti hädaabinumber on 112.'), 'Eesti hädaabinumber on üks üks kaks.');
   assert.equal(spellEstonianNumbers('Vastavalt punktile 4 on tähtaeg kolmkümmend päeva.'), 'Vastavalt punktile neli on tähtaeg kolmkümmend päeva.');
   assert.equal(spellEstonianNumbers('Peterson suri vaid 21-aastasena.'), 'Peterson suri vaid kahekümne üheaastasena.');
 });
@@ -84,4 +84,21 @@ test('números em estoniano: decimais, porcentagens, moedas; letras e números c
   assert.equal(spellEstonianNumbers('Hind tõusis 5% võrra.'), 'Hind tõusis viie protsendi võrra.');
   assert.equal(spellEstonianNumbers('Oskan eesti keelt B2 tasemel.'), 'Oskan eesti keelt B2 tasemel.');
   assert.equal(spellEstonianNumbers('Tere hommikust!'), 'Tere hommikust!');
+});
+
+test('números em estoniano: revisão (plural depois do ordinal, ordinal no partitivo, üle/alla, menos, datas, decimais)', () => {
+  const cases: [string, string][] = [
+    ['1980. aastatel', 'tuhande üheksasaja kaheksakümnendatel aastatel'],
+    ['1980. aastate lõpus', 'tuhande üheksasaja kaheksakümnendate aastate lõpus'],
+    ['Loen 3. raamatut', 'Loen kolmandat raamatut'],
+    ['juba 100. korda', 'juba sajandat korda'],
+    ['üle 100 aasta', 'üle saja aasta'],
+    ['-5 kraadi', 'miinus viis kraadi'],
+    ['24.06.-ni', 'kahekümne neljanda juunini'],
+    ['2,5 tunniga', 'kahe koma viie tunniga'],
+    ['3,50 €', 'kolm eurot viiskümmend senti'],
+    ['1.–3. klassis', 'esimeses–kolmandas klassis'],
+    ['2 päeva pärast', 'kahe päeva pärast'],
+  ];
+  for (const [t, want] of cases) assert.equal(spellEstonianNumbers(t), want, t);
 });
