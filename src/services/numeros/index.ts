@@ -1,4 +1,5 @@
 import { spellFaroeseNumbers } from './fo';
+import { spellRussianNumbers } from './ru';
 
 /**
  * Números por extenso antes da voz (neural ou do aparelho): cada idioma escreve os algarismos como
@@ -8,6 +9,7 @@ import { spellFaroeseNumbers } from './fo';
  */
 const SPELLERS: Record<string, (text: string) => string> = {
   fo: spellFaroeseNumbers,
+  ru: spellRussianNumbers,
 };
 
 export function spellNumbers(text: string, locale: string): string {
