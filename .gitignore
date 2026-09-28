@@ -45,3 +45,4 @@ scripts/.cache-*
 # motor da voz neural, copiado de node_modules por scripts/preparar-tts.mjs
 public/tts/*
 !public/tts/voz-worker.mjs
+!public/tts/mms-ids.mjs

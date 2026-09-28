@@ -76,6 +76,12 @@ export default function CreditsScreen() {
         <Text className="text-sm text-slate-500 dark:text-slate-400">
           🐧 Voz neural (quando não há gravação de nativo nem voz natural no aparelho): vozes do projeto Piper (Rhasspy / Open Home Foundation) —{' '}
           {Object.values(NEURAL_VOICES)
+            .filter((v) => v.project === 'Piper')
+            .map((v) => `${v.label} (${v.license})`)
+            .join(' · ')}
+          ; e, do projeto MMS-TTS da Meta (Massively Multilingual Speech):{' '}
+          {Object.values(NEURAL_VOICES)
+            .filter((v) => v.project !== 'Piper')
             .map((v) => `${v.label} (${v.license})`)
             .join(' · ')}
           . Motor: Piper e piper-phonemize (MIT), espeak-ng (GPL-3.0, código em github.com/espeak-ng/espeak-ng) e ONNX Runtime Web (MIT, Microsoft).
