@@ -828,4 +828,219 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
   },
+  {
+    id: 'ca-g13',
+    level: 'B1.1',
+    title: 'Presente do subjuntivo',
+    emoji: '💭',
+    summary: 'O modo usado para desejo, dúvida, necessidade e sentimento em orações subordinadas.',
+    sections: [
+      {
+        heading: 'Formação regular',
+        text: 'No catalão central, a 1ª conjugação (-ar) usa a vogal «-i-» em todas as pessoas; a 2ª (-re/-er) e a 3ª (-ir) usam «-i-»/«-in» no singular e na 3ª do plural, mas «nosaltres»/«vosaltres» coincidem com o indicativo. Verbos incoativos levam «-eix-».',
+        table: {
+          head: ['Pronome', '-ar: parlar', '-re: perdre', 'Incoativo: servir'],
+          rows: [
+            ['jo', 'parli', 'perdi', 'serveixi'],
+            ['tu', 'parlis', 'perdis', 'serveixis'],
+            ['ell/ella/vostè', 'parli', 'perdi', 'serveixi'],
+            ['nosaltres', 'parlim', 'perdem', 'servim'],
+            ['vosaltres', 'parliu', 'perdeu', 'serviu'],
+            ['ells/elles/vostès', 'parlin', 'perdin', 'serveixin'],
+          ],
+        },
+        examples: [
+          ['Vull que parlis amb el director.', 'Quero que você fale com o diretor.'],
+          ['És millor que perdem la por.', 'É melhor que percamos o medo.'],
+          ['Esperem que serveixin el cafè aviat.', 'Esperamos que sirvam o café logo.'],
+        ],
+      },
+      {
+        heading: 'Gatilhos comuns do subjuntivo',
+        text: 'Verbos e estruturas de desejo, dúvida, necessidade e sentimento seguidos de «que» pedem subjuntivo.',
+        table: {
+          head: ['Categoria', 'Estrutura', 'Exemplo', 'Tradução'],
+          rows: [
+            ['Desejo', 'voler que / desitjar que', 'Vull que vinguis.', 'Quero que você venha.'],
+            ['Dúvida/negação', 'dubtar que / no creure que', 'No crec que sigui veritat.', 'Não creio que seja verdade.'],
+            ['Necessidade', 'cal que / és important que', 'Cal que estudiïs més.', 'É necessário que você estude mais.'],
+            ['Sentimento', 'esperar que / sentir que', 'Espero que tinguis sort.', 'Espero que você tenha sorte.'],
+          ],
+        },
+      },
+      {
+        heading: 'Verbos irregulares essenciais',
+        text: 'Vários verbos de alta frequência mudam a raiz no subjuntivo.',
+        table: {
+          head: ['Infinitivo', 'jo', 'nosaltres'],
+          rows: [
+            ['ésser/ser', 'sigui', 'siguem'],
+            ['estar', 'estigui', 'estiguem'],
+            ['anar', 'vagi', 'anem'],
+            ['fer', 'faci', 'fem'],
+            ['tenir', 'tingui', 'tinguem'],
+          ],
+        },
+        examples: [
+          ['No vol que jo vagi sol.', 'Não quer que eu vá sozinho.'],
+          ['És necessari que tinguem paciència.', 'É necessário que tenhamos paciência.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar o indicativo depois de verbo de desejo («Vull que ve» em vez de «Vull que vingui»).',
+      'Confundir a terminação catalã «-i» («parli», «parlis») com a espanhola «-e» («hable», «hables»).',
+      'Esquecer o «-eix-» no subjuntivo de verbos incoativos em -ir («servi» em vez de «serveixi»).',
+    ],
+    quiz: [
+      {
+        question: '«Vull que tu ___ (parlar) amb ell»: qual é a forma certa?',
+        options: ['parles', 'parlis', 'parle'],
+        answer: 'parlis',
+        explanation: '2ª pessoa do singular do subjuntivo de verbos em «-ar» termina em «-is».',
+      },
+      {
+        question: 'Como se diz «Não acho que seja verdade», com o verbo «ser»?',
+        options: ['No crec que és veritat', 'No crec que sigui veritat', 'No crec que serà veritat'],
+        answer: 'No crec que sigui veritat',
+        explanation: '«No creure que» pede subjuntivo; a 3ª pessoa de «ser» no subjuntivo é «sigui».',
+      },
+    ],
+  },
+  {
+    id: 'ca-g14',
+    level: 'B1.1',
+    title: 'Imperativo afirmativo e negativo',
+    emoji: '📣',
+    summary: 'O imperativo afirmativo tem formas próprias; o negativo usa sempre o presente do subjuntivo.',
+    sections: [
+      {
+        heading: 'Imperativo afirmativo',
+        text: '«tu» geralmente coincide com a 3ª pessoa do indicativo. As formas formais («vostè», «vostès») e «nosaltres» usam o subjuntivo.',
+        table: {
+          head: ['Pessoa', '-ar: parlar', '-re: perdre', 'Incoativo: servir'],
+          rows: [
+            ['(tu)', 'parla', 'perd', 'serveix'],
+            ['(vostè)', 'parli', 'perdi', 'serveixi'],
+            ['(nosaltres)', 'parlem', 'perdem', 'servim'],
+            ['(vosaltres)', 'parleu', 'perdeu', 'serviu'],
+            ['(vostès)', 'parlin', 'perdin', 'serveixin'],
+          ],
+        },
+        examples: [
+          ['Parla més a poc a poc, per favor!', 'Fale mais devagar, por favor!'],
+          ['Escolteu amb atenció!', 'Escutem com atenção! (vosaltres)'],
+          ['Entri vostè, per favor.', 'Entre o(a) senhor(a), por favor.'],
+        ],
+      },
+      {
+        heading: 'Imperativo negativo (proibição)',
+        text: 'Para proibir: «no» + presente do subjuntivo, em todas as pessoas.',
+        table: {
+          head: ['Pessoa', 'Afirmativo', 'Negativo (no + subjuntiu)'],
+          rows: [
+            ['tu', 'parla', 'no parlis'],
+            ['vostè', 'parli', 'no parli'],
+            ['nosaltres', 'parlem', 'no parlem'],
+            ['vosaltres', 'parleu', 'no parleu'],
+            ['vostès', 'parlin', 'no parlin'],
+          ],
+        },
+        examples: [
+          ['No parlis tan ràpid!', 'Não fale tão rápido!'],
+          ['No perdis les claus!', 'Não perca as chaves!'],
+          ['No marxeu encara!', 'Não vão embora ainda!'],
+        ],
+      },
+      {
+        heading: 'Imperativo com pronomes fracos',
+        text: 'No afirmativo, o pronome vem DEPOIS do verbo (hífen ou apóstrofo). No negativo, vem ANTES.',
+        examples: [
+          ["Compra'm el pa! (afirmativo)", 'Compra-me o pão!'],
+          ['No em compris el pa! (negativo)', 'Não me compres o pão!'],
+          ['Digues-me la veritat! (afirmativo)', 'Diga-me a verdade! (dir → imperativo irregular «digues»; termina em consoante, por isso hífen, não apóstrofo)'],
+          ['No em diguis mentides! (negativo)', 'Não me digas mentiras!'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar a forma afirmativa na negação («no parla!» em vez de «no parlis!»).',
+      'Pôr o pronome depois do verbo no imperativo negativo («no compra\'m» em vez de «no em compris»).',
+      'Esquecer que «dir» tem imperativo irregular «digues» (não «diga», que é espanhol).',
+    ],
+    quiz: [
+      {
+        question: 'Qual é o imperativo negativo de «parlar» para «tu»?',
+        options: ['no parla', 'no parlis', 'no parles'],
+        answer: 'no parlis',
+        explanation: 'O imperativo negativo usa o presente do subjuntivo: «no parlis».',
+      },
+      {
+        question: 'Como se diz «Escute-me!» (tu) no imperativo afirmativo?',
+        options: ["Escolta'm!", 'Em escolta!', "No m'escoltis!"],
+        answer: "Escolta'm!",
+        explanation: 'No afirmativo, o pronome vem depois do verbo, ligado por apóstrofo.',
+      },
+    ],
+  },
+  {
+    id: 'ca-g15',
+    level: 'B1.1',
+    title: 'Orações relativas e pronomes relativos',
+    emoji: '🔗',
+    summary: 'O relativo invariável «que», «qui» (pessoas com preposição), «on» (lugar) e as formas compostas «el qual/la qual».',
+    sections: [
+      {
+        heading: 'O relativo invariável «que»',
+        text: 'O relativo mais usado. Sem acento, invariável em gênero e número; funciona como sujeito ou objeto direto.',
+        examples: [
+          ['El llibre que llegeixo és molt bo.', 'O livro que estou lendo é muito bom.'],
+          ['La noia que ve per allà és la meva germana.', 'A garota que vem por ali é minha irmã.'],
+          ['Els cotxes que fan soroll són vells.', 'Os carros que fazem barulho são velhos.'],
+        ],
+      },
+      {
+        heading: 'Os relativos «qui» e «on»',
+        text: '«qui» para pessoas depois de preposição simples (a, de, amb, en, per). «on» para antecedente de lugar.',
+        table: {
+          head: ['Relativo', 'Uso', 'Exemplo', 'Tradução'],
+          rows: [
+            ['qui', 'pessoas (após preposição)', 'El noi de qui et parlava és metge.', 'O rapaz de quem te falava é médico.'],
+            ['on', 'lugar', 'La ciutat on visc és tranquil·la.', 'A cidade onde moro é tranquila.'],
+          ],
+        },
+        examples: [
+          ["L'amiga amb qui vaig sortir ahir.", 'A amiga com quem saí ontem.'],
+          ['El restaurant on hem dinat.', 'O restaurante onde almoçamos.'],
+        ],
+      },
+      {
+        heading: 'O composto «el qual/la qual/els quals/les quals»',
+        text: 'Variável, concorda com o antecedente. Obrigatório depois de preposição composta, ou para evitar ambiguidade sobre a qual antecedente a frase se refere.',
+        examples: [
+          ['La taula a sobre de la qual hi ha el llibre.', 'A mesa em cima da qual está o livro.'],
+          ['El pare de la Maria, el qual viu a Girona.', 'O pai da Maria, o qual mora em Girona.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar «que» logo depois de preposição para pessoa («el noi de que parlo» em vez de «el noi de qui parlo»).',
+      'Pôr acento em «que» relativo: nunca leva.',
+      'Esquecer de concordar «el qual/la qual/els quals/les quals» com o antecedente.',
+    ],
+    quiz: [
+      {
+        question: '«La noia amb ___ vaig parlar és simpàtica»: qual pronome?',
+        options: ['que', 'qui', 'on'],
+        answer: 'qui',
+        explanation: 'Depois de preposição («amb») referindo pessoa, usa-se «qui».',
+      },
+      {
+        question: 'Como se diz «A cidade onde nasci»?',
+        options: ['La ciutat que vaig néixer', 'La ciutat on vaig néixer', 'La ciutat de qui vaig néixer'],
+        answer: 'La ciutat on vaig néixer',
+        explanation: 'Antecedente de lugar: relativo «on».',
+      },
+    ],
+  },
 ];
