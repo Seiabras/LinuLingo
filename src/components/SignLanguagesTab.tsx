@@ -57,6 +57,14 @@ export function SignLanguagesTab() {
           Línguas de sinais são línguas de verdade, com gramática própria — e não são universais! Há centenas delas, e suas famílias não seguem as das línguas faladas.
         </SpeechBubble>
       </View>
+      <Pressable accessibilityRole="button" onPress={() => router.push('/cursos')} className="flex-row items-center gap-3 rounded-2xl bg-conecta p-4 active:opacity-90">
+        <Text className="text-2xl">🎓</Text>
+        <View className="flex-1">
+          <Text className="font-extrabold text-white">Aprenda Libras</Text>
+          <Text className="text-sm text-blue-100">Mini-cursos com o avatar VLibras, a ASL e mais</Text>
+        </View>
+        <Text className="text-xl text-white">›</Text>
+      </Pressable>
       <HScroll label="as partes" contentContainerStyle={{ gap: 8 }}>
         {PARTS.map((p) => {
           const on = p.id === part;

@@ -5,6 +5,7 @@ import { Card, Chip, InfoLabel, SpeechBubble } from '@/components/ui';
 import { HScroll } from '@/components/HScroll';
 import { Linu } from '@/components/Linu';
 import { WORLD } from '@/data/mapa-mundi';
+import { miniCourse } from '@/data/cursos';
 import { flagOf } from '@/data/onde-se-fala';
 import {
   CONLANGS,
@@ -203,6 +204,11 @@ function ConlangCard({ c }: { c: Conlang }) {
         </View>
       ))}
       {c.note && <Text className="text-xs italic leading-4 text-slate-500 dark:text-slate-400">⚖️ {c.note}</Text>}
+      {miniCourse(c.id) && (
+        <Pressable accessibilityRole="button" onPress={() => router.push({ pathname: '/curso/[id]', params: { id: c.id } })} className="items-center rounded-xl bg-conecta py-2 active:opacity-90">
+          <Text className="font-bold text-white">🎓 Fazer o mini-curso de {c.name.split(' (')[0]}</Text>
+        </Pressable>
+      )}
     </Card>
   );
 }
@@ -375,6 +381,9 @@ function Modality() {
       ))}
       <Pressable accessibilityRole="button" onPress={() => router.setParams({ aba: 'sinais', parte: 'estrutura' })} className="items-center rounded-2xl bg-conecta p-3 active:opacity-90">
         <Text className="font-extrabold text-white">🤟 Ir para as línguas de sinais</Text>
+      </Pressable>
+      <Pressable accessibilityRole="button" onPress={() => router.push({ pathname: '/curso/[id]', params: { id: 'tatil' } })} className="items-center rounded-2xl border-2 border-conecta/30 bg-white p-3 active:opacity-80 dark:bg-slate-900">
+        <Text className="font-bold text-conecta">🎓 Mini-curso: Braille e comunicação tátil</Text>
       </Pressable>
     </>
   );

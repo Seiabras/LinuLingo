@@ -95,6 +95,13 @@ if (typeof window === 'undefined') {
       return;
     }
 
+    // a página do VLibras fica sem isolamento: isolada, o navegador bloquearia os arquivos do avatar,
+    // que vêm de vlibras.gov.br (ela é aberta numa janela própria, fora do app)
+    if (r.mode === 'navigate' && url.pathname.endsWith('/vlibras.html')) {
+      event.respondWith(fetch(request).catch(() => caches.match(url.pathname).then((res) => res ?? Response.error())));
+      return;
+    }
+
     // páginas: primeiro a rede (a versão mais nova); sem internet, ou com a rede travada, o índice guardado
     if (r.mode === 'navigate') {
       const index = BASE + 'index.html';
