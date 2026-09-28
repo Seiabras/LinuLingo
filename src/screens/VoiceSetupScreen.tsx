@@ -157,7 +157,7 @@ function NeuralVoiceCard({ locale, sample, preferred }: { locale: string; sample
         {preferred
           ? 'É ela que fala quando não há gravação de um nativo. '
           : 'Fica de reserva: aqui a voz do aparelho já é natural. '}
-        Voz {voice.label}, do projeto Piper, sintetizada no próprio navegador. Na primeira vez ela é baixada ({voice.mb} MB) e depois funciona sem internet.
+        Voz {voice.label}, do projeto {voice.project}, sintetizada no próprio navegador. Na primeira vez ela é baixada ({voice.mb} MB) e depois funciona sem internet.
       </Text>
       <View className="flex-row gap-2">
         <Button title="▶ Ouvir esta voz" className="flex-1" onPress={() => speakNeural(sample, locale)} />
@@ -165,7 +165,7 @@ function NeuralVoiceCard({ locale, sample, preferred }: { locale: string; sample
       </View>
       <Pressable accessibilityRole="link" onPress={() => Linking.openURL(voice.page)}>
         <Text className="text-xs text-slate-400 underline">
-          Licença da voz: {voice.license} · motor: Piper (MIT), espeak-ng (GPL-3.0) e ONNX Runtime (MIT)
+          Licença da voz: {voice.license} · motor: {voice.local ? 'ONNX Runtime (MIT)' : 'Piper (MIT), espeak-ng (GPL-3.0) e ONNX Runtime (MIT)'}
         </Text>
       </Pressable>
     </Card>

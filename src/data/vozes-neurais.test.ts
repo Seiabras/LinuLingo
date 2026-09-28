@@ -3,8 +3,8 @@ import assert from 'node:assert/strict';
 import { PACKS } from './idiomas';
 import { neuralVoiceFor, NEURAL_VOICES } from './vozes-neurais';
 
-/** Idiomas sem voz neural livre (o Piper não tem): o som vem das gravações e da voz do aparelho. */
-const WITHOUT_VOICE = new Set(['fo']);
+/** Idiomas sem voz neural: o som vem das gravações e da voz do aparelho. */
+const WITHOUT_VOICE = new Set<string>([]);
 
 test('vozes neurais: todo idioma e toda variante do app têm voz embutida', () => {
   // sem ela, no Linux (Chrome sem voz nenhuma, Firefox com o speech-dispatcher mudo) o que não tem
@@ -25,7 +25,7 @@ test('vozes neurais: a voz escolhida é do idioma pedido', () => {
     const voice = neuralVoiceFor(p.speechLocale)!;
     const lang = p.speechLocale.split('-')[0];
     // o Piper chama o norueguês de «no»; o app usa «nb» (bokmål)
-    assert.equal(voice.id.split('_')[0], lang === 'nb' ? 'no' : lang, `${p.code}: ${voice.id}`);
+    assert.equal(voice.id.split(/[_-]/)[0], lang === 'nb' ? 'no' : lang, `${p.code}: ${voice.id}`);
   }
   assert.ok(Object.values(NEURAL_VOICES).every((v) => v.mb > 0 && v.license));
 });

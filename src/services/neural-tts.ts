@@ -4,12 +4,12 @@ import { siteBase } from './site-url';
 
 /**
  * Voz neural embutida (só na web): quando não há gravação de nativo nem uma voz boa do idioma no
- * aparelho, o próprio navegador sintetiza a fala com o Piper, num worker (public/tts/voz-worker.mjs).
+ * aparelho, o próprio navegador sintetiza a fala com o Piper (ou o MMS, no feroês), num worker (public/tts/voz-worker.mjs).
  * O modelo de cada idioma (~63 MB) é baixado na primeira vez e fica guardado.
  */
 
 /** Muda quando o worker ou o motor mudam: o endereço novo passa por cima do que estiver guardado. */
-const TTS_VERSION = '2';
+const TTS_VERSION = '3';
 
 export type NeuralState = { voice: NeuralVoice; status: 'baixando' | 'pronta' | 'erro'; loaded: number; total: number };
 
@@ -95,11 +95,18 @@ function getWorker(): Worker {
   return worker;
 }
 
+/** Os endereços completos (as vozes do próprio site vêm relativas à raiz do app). */
+function urlsOf(voice: NeuralVoice): { model: string; config: string } {
+  const { model, config } = voiceUrls(voice.id);
+  const full = (u: string) => (/^https?:/.test(u) ? u : new URL(`${siteBase()}/${u}`, window.location.origin).href);
+  return { model: full(model), config: full(config) };
+}
+
 function request(type: 'speak' | 'prepare', voice: NeuralVoice, extra: Record<string, unknown> = {}) {
   return new Promise<{ samples: Float32Array; sampleRate: number } | null>((resolve) => {
     const id = ++seq;
     pending.set(id, { resolve, voice });
-    getWorker().postMessage({ type, id, voice: voiceUrls(voice.id), ...extra });
+    getWorker().postMessage({ type, id, voice: urlsOf(voice), ...extra });
   });
 }
 
@@ -117,7 +124,7 @@ export async function neuralCached(locale: string): Promise<boolean> {
   if (!voice || !neuralSupported()) return false;
   try {
     const cache = await caches.open('linulingo-vozes-v1');
-    return !!(await cache.match(voiceUrls(voice.id).model));
+    return !!(await cache.match(urlsOf(voice).model));
   } catch {
     return false;
   }

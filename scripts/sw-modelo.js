@@ -128,7 +128,8 @@ if (typeof window === 'undefined') {
         if (cached) return isolate(range ? await partial(cached, range) : cached);
         try {
           const res = await fetch(request);
-          if (res.status === 200 && res.type === 'basic') store(r.url, res.clone()).catch(() => {});
+          // as vozes neurais o worker da voz já guarda no cache dele (guardar aqui seria o dobro)
+          if (res.status === 200 && res.type === 'basic' && !url.pathname.includes('/vozes/')) store(r.url, res.clone()).catch(() => {});
           // um pedaço de áudio: guarda o arquivo inteiro, para tocar também sem internet
           else if (res.status === 206)
             event.waitUntil(

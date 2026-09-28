@@ -1,8 +1,10 @@
 /**
  * Vozes neurais (Piper) que o próprio navegador sintetiza quando não há gravação de nativo nem uma
  * voz boa do idioma no aparelho: em muitos computadores (Linux, por exemplo) o navegador não traz
- * voz nenhuma, e o app ficaria mudo. Só vozes de licença livre; cada uma é baixada do repositório
- * do Piper (Hugging Face) na primeira vez que for usada e fica guardada para funcionar sem internet.
+ * voz nenhuma, e o app ficaria mudo. Cada uma é baixada do repositório do Piper (Hugging Face) na
+ * primeira vez que for usada e fica guardada para funcionar sem internet. O feroês, que o Piper não
+ * tem, usa o MMS-TTS da Meta (licença não comercial, CC BY-NC 4.0), exportado para o próprio site
+ * (public/vozes/fo, por scripts/exportar-voz-mms.py).
  */
 export interface NeuralVoice {
   /** nome da voz no Piper: idioma_PAÍS-voz-qualidade */
@@ -15,6 +17,10 @@ export interface NeuralVoice {
   page: string;
   /** tamanho do modelo, em MB */
   mb: number;
+  /** o projeto que treinou a voz (créditos) */
+  project: string;
+  /** a voz fica no próprio site, nesta pasta (senão, vem do repositório do Piper) */
+  local?: { dir: string; model: string };
 }
 
 /** Versão fixa do repositório de vozes: o arquivo baixado é sempre o mesmo que foi testado. */
@@ -28,6 +34,7 @@ const v = (id: string, label: string, license: string, licenseUrl: string, mb = 
   licenseUrl,
   page: `https://huggingface.co/rhasspy/piper-voices/tree/${PIPER_REVISION}/${voicePath(id).replace(/\/[^/]+$/, '')}`,
   mb,
+  project: 'Piper',
 });
 
 const CC0 = 'https://creativecommons.org/publicdomain/zero/1.0/';
@@ -53,6 +60,16 @@ export const NEURAL_VOICES: Record<string, NeuralVoice> = Object.fromEntries(
     v('de_DE-thorsten-medium', 'alemão (Thorsten)', 'CC0', CC0),
     v('en_US-joe-medium', 'inglês dos EUA (Joe)', 'CC0', CC0),
     v('en_GB-alba-medium', 'inglês britânico (Alba)', 'CC BY 4.0', BY4),
+    {
+      id: 'fo-mms',
+      label: 'feroês (MMS)',
+      license: 'CC BY-NC 4.0 (uso não comercial)',
+      licenseUrl: 'https://creativecommons.org/licenses/by-nc/4.0/',
+      page: 'https://huggingface.co/facebook/mms-tts-fao',
+      mb: 114,
+      project: 'MMS-TTS (Meta)',
+      local: { dir: 'vozes/fo', model: 'modelo.onnx.0' },
+    },
   ].map((x) => [x.id, x]),
 );
 
@@ -62,7 +79,10 @@ export function voicePath(id: string): string {
   return `${locale.split('_')[0]}/${locale}/${name}/${quality}/${id}.onnx`;
 }
 
+/** Os endereços da voz; os das vozes do próprio site são relativos à raiz do app (neural-tts os completa). */
 export function voiceUrls(id: string): { model: string; config: string } {
+  const local = NEURAL_VOICES[id]?.local;
+  if (local) return { model: `${local.dir}/${local.model}`, config: `${local.dir}/config.json` };
   const model = `${HF}/${encodeURI(voicePath(id))}`;
   return { model, config: `${model}.json` };
 }
@@ -87,6 +107,7 @@ const BY_LOCALE: [RegExp, string][] = [
   [/^fi\b/, 'fi_FI-harri-medium'],
   [/^is\b/, 'is_IS-ugla-medium'],
   [/^et\b/, 'et_EE-news-medium'],
+  [/^fo\b/, 'fo-mms'],
   [/^de\b/, 'de_DE-thorsten-medium'],
   [/^en-(GB|IE|AU|NZ|ZA)\b/i, 'en_GB-alba-medium'],
   [/^en\b/, 'en_US-joe-medium'],

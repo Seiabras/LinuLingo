@@ -4,6 +4,10 @@
  *  1. o espeak-ng (compilado para WebAssembly, piper-phonemize) transforma o texto em fonemas;
  *  2. o modelo Piper da voz (ONNX, rodando no onnxruntime-web) transforma os fonemas em som.
  *
+ * Vozes MMS (Meta, VITS; hoje só o feroês, que não tem voz no Piper): não passam pelo espeak-ng — o
+ * modelo lê as letras direto, pelo vocabulário do config.json (kind: 'mms'), e fica em pedaços no
+ * próprio site (public/vozes/), exportado por scripts/exportar-voz-mms.py.
+ *
  * Roda num worker para não travar a tela. Os modelos vêm do repositório do Piper na primeira vez e
  * ficam guardados (Cache Storage), para a voz funcionar também sem internet. Os arquivos do motor
  * (ort-*, piper_phonemize.*) são copiados de node_modules por scripts/preparar-tts.mjs.
@@ -12,6 +16,8 @@
  *            { type: 'prepare', id, voice }                               → { id, type: 'ready' }
  * e, enquanto baixa um modelo, { id, type: 'progress', loaded, total }; se der errado, { id, type: 'error', message }.
  */
+import { mmsIds } from './mms-ids.mjs';
+
 const HERE = new URL('./', import.meta.url).href;
 // a versão (?v=) vai em todos os arquivos do motor: numa versão nova, nada velho sai do cache
 const V = new URL(import.meta.url).search;
@@ -88,6 +94,31 @@ async function phonemeIds(text, espeakVoice) {
   return lines.flatMap((l) => JSON.parse(l).phoneme_ids);
 }
 
+/** O modelo, às vezes em pedaços (o GitHub não aceita arquivos de mais de 100 MB): junta tudo. */
+async function modelBytes(voice, config, onProgress) {
+  if (config.kind !== 'mms') return cachedBytes(voice.model, onProgress);
+  const urls = config.files.map((f) => new URL(f, voice.config).href);
+  const sizes = urls.map(() => 0);
+  const totals = urls.map(() => 0);
+  const parts = await Promise.all(
+    urls.map((u, i) =>
+      cachedBytes(u, (loaded, total) => {
+        sizes[i] = loaded;
+        totals[i] = total;
+        onProgress?.(sizes.reduce((a, b) => a + b, 0), totals.every(Boolean) ? totals.reduce((a, b) => a + b, 0) : config.mb * 1e6);
+      }),
+    ),
+  );
+  if (parts.length === 1) return parts[0];
+  const all = new Uint8Array(parts.reduce((s, p) => s + p.byteLength, 0));
+  let at = 0;
+  for (const p of parts) {
+    all.set(new Uint8Array(p), at);
+    at += p.byteLength;
+  }
+  return all.buffer;
+}
+
 /** Uma sessão por voz, carregada uma vez. */
 const voices = new Map();
 function loadVoice(voice, onProgress) {
@@ -95,7 +126,7 @@ function loadVoice(voice, onProgress) {
   if (!p) {
     p = (async () => {
       const config = JSON.parse(new TextDecoder().decode(await cachedBytes(voice.config)));
-      const model = await cachedBytes(voice.model, onProgress);
+      const model = await modelBytes(voice, config, onProgress);
       const { ort } = await loadEngine();
       const session = await ort.InferenceSession.create(model, { executionProviders: ['wasm'] });
       return { config, session };
@@ -108,9 +139,17 @@ function loadVoice(voice, onProgress) {
 
 async function synthesize(text, voice, speed, onProgress) {
   const { config, session } = await loadVoice(voice, onProgress);
-  const ids = await phonemeIds(text, config.espeak.voice);
   const { ort } = await loadEngine();
   const inf = config.inference;
+  if (config.kind === 'mms') {
+    const ids = mmsIds(text, config);
+    const { output } = await session.run({
+      input: new ort.Tensor('int64', BigInt64Array.from(ids, BigInt), [1, ids.length]),
+      scales: new ort.Tensor('float32', Float32Array.from([inf.noise_scale, inf.length_scale / speed, inf.noise_w]), [3]),
+    });
+    return { samples: output.data, sampleRate: config.audio.sample_rate };
+  }
+  const ids = await phonemeIds(text, config.espeak.voice);
   const feeds = {
     input: new ort.Tensor('int64', BigInt64Array.from(ids, BigInt), [1, ids.length]),
     input_lengths: new ort.Tensor('int64', BigInt64Array.from([BigInt(ids.length)]), [1]),
@@ -133,7 +172,8 @@ self.onmessage = async (ev) => {
   };
   try {
     if (type === 'prepare') {
-      await Promise.all([loadVoice(voice, onProgress), loadPhonemizer()]);
+      const [{ config }] = await Promise.all([loadVoice(voice, onProgress), loadEngine()]);
+      if (config.kind !== 'mms') await loadPhonemizer();
       self.postMessage({ id, type: 'ready' });
     } else if (type === 'speak') {
       const { samples, sampleRate } = await synthesize(text, voice, speed, onProgress);
