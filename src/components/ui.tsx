@@ -87,7 +87,7 @@ export function Chip({ label, tone = 'slate' }: { label: string; tone?: 'slate' 
 }
 
 /** Botão de alto-falante: lê o texto na voz do idioma. */
-export function SpeakButton({ text, locale, size = 20, slow }: { text: string; locale: string; size?: number; slow?: boolean }) {
+export function SpeakButton({ text, locale, size = 20, slow, announce }: { text: string; locale: string; size?: number; slow?: boolean; announce?: boolean }) {
   const dark = useIsDark();
   const [mute, setMute] = useState(false);
   return (
@@ -97,7 +97,7 @@ export function SpeakButton({ text, locale, size = 20, slow }: { text: string; l
         accessibilityLabel={`Ouvir: ${text}`}
         hitSlop={8}
         onPress={async () => {
-          const r = await speak(text, locale, { rate: slow ? 0.6 : 0.9 });
+          const r = await speak(text, locale, { rate: slow ? 0.6 : 0.9, announce });
           if (r === 'sem-voz') {
             setMute(true);
             setTimeout(() => setMute(false), 3500);

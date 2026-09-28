@@ -16,6 +16,7 @@ import { AUDIO_DA } from './da/audios';
 import { AUDIO_IS } from './is/audios';
 import { AUDIO_FI } from './fi/audios';
 import { AUDIO_ET } from './et/audios';
+import { AUDIO_FR } from './fr/audios';
 import { COMPARAR_SOTAQUES_ES, VOZES_SOTAQUES_ES } from './es/vozes-sotaques';
 import { COMPARAR_SOTAQUES_IT, VOZES_SOTAQUES_IT } from './it/vozes-sotaques';
 import { COMPARAR_SOTAQUES_RO, VOZES_SOTAQUES_RO } from './ro/vozes-sotaques';
@@ -38,6 +39,7 @@ export const CLIPS: Record<string, Record<string, AudioClip>> = {
   is: AUDIO_IS,
   fi: AUDIO_FI,
   et: AUDIO_ET,
+  fr: AUDIO_FR,
 };
 
 export function clipFor(locale: string, text: string): AudioClip | null {

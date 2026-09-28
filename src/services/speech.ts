@@ -92,14 +92,17 @@ export function onNativeSpeaker(l: (s: NativeSpeaker) => void): () => void {
   return () => speakerListeners.delete(l);
 }
 
-/** Toca a gravação de um nativo, se existir para este texto. Devolve false se não houver. */
-export function playNativeClip(text: string, locale: string, rate = 1): boolean {
+/**
+ * Toca a gravação de um nativo, se existir para este texto. Devolve false se não houver. `announce: false`
+ * não mostra o aviso «🎙️ quem fala» (para telas que já trazem o crédito na própria tela).
+ */
+export function playNativeClip(text: string, locale: string, rate = 1, announce = true): boolean {
   const clip = clipFor(locale, text);
   if (!clip) return false;
   const ok = playClip(clip.src, rate);
   // «Speaker: Fulano\nRecorder: …» → Fulano
   const speaker = clip.author.match(/Speaker:\s*([^\n]+)/)?.[1]?.trim() ?? clip.author.split('\n')[0];
-  if (ok) speakerListeners.forEach((l) => l({ lang: locale.split('-')[0].toLowerCase(), speaker, license: clip.license }));
+  if (ok && announce) speakerListeners.forEach((l) => l({ lang: locale.split('-')[0].toLowerCase(), speaker, license: clip.license }));
   return ok;
 }
 
@@ -173,9 +176,9 @@ export function forVoice(text: string): string {
   return text.replace(/\u0301/g, '');
 }
 
-export async function speak(text: string, locale: string, opts: { rate?: number; native?: boolean } = {}): Promise<SpeakResult> {
+export async function speak(text: string, locale: string, opts: { rate?: number; native?: boolean; announce?: boolean } = {}): Promise<SpeakResult> {
   // native: false força a voz do aparelho (pares mínimos: as duas palavras na mesma voz)
-  if (opts.native !== false && playNativeClip(text, locale, opts.rate ?? 1)) return 'nativo';
+  if (opts.native !== false && playNativeClip(text, locale, opts.rate ?? 1, opts.announce ?? true)) return 'nativo';
   const voice = await findVoice(locale);
   Speech.stop();
   stopClip();
