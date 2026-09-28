@@ -1043,4 +1043,172 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
   },
+  {
+    id: 'ca-g16',
+    level: 'B1.2',
+    title: 'Pretérito imperfeito do subjuntivo',
+    emoji: '💭',
+    summary: 'Usado para hipóteses, situações irrealizáveis no presente, desejos improváveis, e para concordar com verbo de intenção/sentimento no passado.',
+    sections: [
+      {
+        heading: 'Formação regular',
+        text: 'Terminações «-és» (1ª e 2ª conjugação) e «-ís» (3ª conjugação). Atenção ao acento em «nosaltres»/«vosaltres».',
+        table: {
+          head: ['Pronome', '-ar: parlar', '-re: perdre', '-ir: dormir'],
+          rows: [
+            ['jo', 'parlés', 'perdés', 'dormís'],
+            ['tu', 'parlessis', 'perdessis', 'dormissis'],
+            ['ell/ella/vostè', 'parlés', 'perdés', 'dormís'],
+            ['nosaltres', 'parléssim', 'perdéssim', 'dormíssim'],
+            ['vosaltres', 'parléssiu', 'perdéssiu', 'dormíssiu'],
+            ['ells/elles/vostès', 'parlessin', 'perdessin', 'dormissin'],
+          ],
+        },
+        examples: [
+          ['Volia que tu parlessis amb ell.', 'Eu queria que você falasse com ele.'],
+          ['Si dormíssim més, estaríem menys cansats.', 'Se dormíssemos mais, estaríamos menos cansados.'],
+          ["L'entrenador va demanar que perdessin la por.", 'O treinador pediu que perdessem o medo.'],
+        ],
+      },
+      {
+        heading: 'Verbos irregulares principais',
+        text: 'Vários verbos de alta frequência têm raiz irregular no imperfeito do subjuntivo.',
+        table: {
+          head: ['Verbo', 'jo', 'nosaltres'],
+          rows: [
+            ['ésser/ser', 'fos', 'fóssim'],
+            ['estar', 'estigués', 'estiguéssim'],
+            ['fer', 'fes', 'féssim'],
+            ['anar', 'anés', 'anéssim'],
+            ['tenir', 'tingués', 'tinguéssim'],
+            ['saber', 'sabés', 'sabéssim'],
+          ],
+        },
+        examples: [
+          ['Si jo fos tu, no ho faria.', 'Se eu fosse você, não faria isso.'],
+          ['Tant de bo tinguéssim més temps.', 'Tomara que tivéssemos mais tempo.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Esquecer o acento em «nosaltres»/«vosaltres» («parléssim», «parléssiu»).',
+      'Confundir as formas catalãs em «-és» com o espanhol «-ara/-iera» («hablara», «comiera»).',
+      'Confundir o imperfeito do subjuntivo de «ser» («fos») com o de «fer» («fes»).',
+    ],
+    quiz: [
+      {
+        question: 'Qual é o imperfeito do subjuntivo de «ser» para «jo»?',
+        options: ['fos', 'faria', 'sigui'],
+        answer: 'fos',
+        explanation: 'A forma irregular de «ésser/ser» no imperfeito do subjuntivo, 1ª pessoa, é «fos».',
+      },
+      {
+        question: 'Qual é «nosaltres» de «tenir» no imperfeito do subjuntivo?',
+        options: ['tinguéssim', 'tinguem', 'teníem'],
+        answer: 'tinguéssim',
+        explanation: '«Tenir» forma «tinguéssim» na 1ª pessoa do plural do imperfeito do subjuntivo.',
+      },
+    ],
+  },
+  {
+    id: 'ca-g17',
+    level: 'B1.2',
+    title: 'Condicionais de 2º tipo (hipóteses no presente)',
+    emoji: '🔀',
+    summary: '«si» + imperfeito do subjuntivo na oração condicional, com a principal no condicional simples — para hipóteses irrealizáveis no presente.',
+    sections: [
+      {
+        heading: 'Estrutura',
+        text: 'Oração com «si» (imperfeito do subjuntivo) + oração principal (condicional simples).',
+        table: {
+          head: ['Oração com si', 'Oração principal', 'Tradução'],
+          rows: [
+            ['Si tingués diners,', 'compraria un cotxe.', 'Se eu tivesse dinheiro, compraria um carro.'],
+            ['Si visquéssim a Barcelona,', 'aniríem a la platja.', 'Se morássemos em Barcelona, iríamos à praia.'],
+            ['Si tu fossis més atent,', 'no cometries tants errors.', 'Se você fosse mais atento, não cometeria tantos erros.'],
+          ],
+        },
+        examples: [
+          ['Si plogués, no sortiríem de casa.', 'Se chovesse, não sairíamos de casa.'],
+          ["Què faries si tinguessis un milió d'euros?", 'O que você faria se tivesse um milhão de euros?'],
+          ['Si em demanessis ajuda, te la donaria.', 'Se você me pedisse ajuda, eu te daria.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar o condicional logo depois de «si» («Si tindria diners» é erro grave; o certo é «Si tingués diners»).',
+      'Usar o presente na oração principal quando a condição está no imperfeito do subjuntivo.',
+      'Trocar a ordem das orações sem ajustar a pontuação (invertida, não precisa de vírgula).',
+    ],
+    quiz: [
+      {
+        question: '«Si jo ___ (tenir) temps, aniria al cinema»: qual é a forma certa?',
+        options: ['tinc', 'tindria', 'tingués'],
+        answer: 'tingués',
+        explanation: 'Depois de «si» em hipótese no presente, exige-se o imperfeito do subjuntivo.',
+      },
+      {
+        question: '«Si tu estiguessis cansat, ___ (dormir) més»: complete.',
+        options: ['dormiries', 'dorms', 'dormíssis'],
+        answer: 'dormiries',
+        explanation: 'A oração principal (o resultado hipotético) vai no condicional simples.',
+      },
+    ],
+  },
+  {
+    id: 'ca-g18',
+    level: 'B1.2',
+    title: 'Combinação de pronomes fracos (CI + CD)',
+    emoji: '🧩',
+    summary: 'Quando dois pronomes fracos acompanham o mesmo verbo, combinam-se numa ordem fixa, com regras próprias de apostrofação.',
+    sections: [
+      {
+        heading: 'Ordem dos pronomes',
+        text: 'A ordem padrão é complemento indireto (CI) antes do direto (CD), com exceção do reflexivo «se», que vem antes de qualquer outro.',
+        table: {
+          head: ['Regra', 'Estrutura', 'Exemplo'],
+          rows: [
+            ['Geral', 'CI + CD', "me + el → me'l"],
+            ['Reflexivo', 'se + CI/CD', 'se + li → se li'],
+          ],
+        },
+      },
+      {
+        heading: 'Combinações mais comuns antes do verbo',
+        text: 'Diante de verbo com consoante inicial. Note que «li» + CD de 3ª pessoa vira «hi» — nunca «li» somado direto ao outro pronome.',
+        table: {
+          head: ['CI', 'CD (el)', 'CD (la)', 'CD (els)', 'CD (les)', 'Exemplo'],
+          rows: [
+            ['em (me)', "me'l", 'me la', "me'ls", 'me les', "Me'l dóna. (Ele me dá o objeto.)"],
+            ['et (te)', "te'l", 'te la', "te'ls", 'te les', "Te'l compro. (Eu compro para você.)"],
+            ['li (lhe)', "l'hi", 'la hi', 'els hi', 'les hi', "L'hi dono. (Eu dou a ele/ela.)"],
+          ],
+        },
+        examples: [
+          ["Aquest llibre? Me'l compres? — Sí, te'l compro.", 'Este livro? Você compra para mim? — Sim, compro para você.'],
+          ['Dones la carta a la Maria? — Sí, la hi dono.', 'Você dá a carta para a Maria? — Sim, dou para ela. (la + li → la hi)'],
+          ['Qui te les ha portat?', 'Quem trouxe elas para você?'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Inverter a ordem, pondo o CD antes do CI («el em dóna» em vez de «me\'l dóna»).',
+      'Errar a combinação «li + el», que vira «l\'hi» (não «li\'l»).',
+      'Esquecer a apostrofação quando o segundo pronome é «el» ou começa por vogal («me\'l», «te\'l»).',
+    ],
+    quiz: [
+      {
+        question: 'Como fica «em» (CI) + «el» (CD) antes de «donar»?',
+        options: ['el em dóna', "me'l dóna", 'em el dóna'],
+        answer: "me'l dóna",
+        explanation: 'O indireto «em» precede o direto «el» e se junta por apóstrofo: «me\'l».',
+      },
+      {
+        question: 'Como substituir «la carta» (la) + «a en Marc» (li) em «Dono la carta a en Marc»?',
+        options: ['li la dono', 'la hi dono', "l'hi dono"],
+        answer: 'la hi dono',
+        explanation: 'CD feminino «la» + CI «li» dá «la hi» (o «l\'hi» é só para o masculino «el»).',
+      },
+    ],
+  },
 ];
