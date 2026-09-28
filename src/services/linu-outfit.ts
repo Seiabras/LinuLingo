@@ -1,22 +1,27 @@
 import { useSyncExternalStore } from 'react';
 import type { SQLiteDatabase } from 'expo-sqlite';
 import { LOCAL_USER_ID } from '@/database/schema';
-import { krillBalance, ROUPAS_LINU } from '@/data/roupas-linu';
+import { krillBalance, ROUPAS_LINU, withOutfit } from '@/data/roupas-linu';
 
 /**
- * A roupinha que o Linu está usando, lida por todos os Linus da tela (fica guardada em Meta).
- * Um armazenamento pequeno fora do React, como o do tema: o Linu aparece em lugares sem o contexto do app.
+ * O visual do Linu — uma peça em cada lugar (cabeça, corpo, mão, rosto) —, lido por todos os Linus da
+ * tela (fica guardado em Meta, ids separados por vírgula; o formato antigo, com uma peça só, continua
+ * valendo). Um armazenamento pequeno fora do React, como o do tema: o Linu aparece em lugares sem o
+ * contexto do app.
  */
 const KEY = 'roupa_linu';
-let current: string | null = null;
+let current: string[] = [];
 const listeners = new Set<() => void>();
 
-export function setCurrentOutfit(id: string | null) {
-  current = id && ROUPAS_LINU.some((o) => o.id === id) ? id : null;
+export function setCurrentOutfit(ids: readonly string[]) {
+  // só as que existem, uma por lugar (a última de cada lugar vale)
+  let look: string[] = [];
+  for (const id of ids) if (ROUPAS_LINU.some((o) => o.id === id)) look = withOutfit(look, id);
+  current = look;
   listeners.forEach((l) => l());
 }
 
-export function useLinuOutfit(): string | null {
+export function useLinuOutfit(): string[] {
   return useSyncExternalStore(
     (l) => {
       listeners.add(l);
@@ -29,12 +34,12 @@ export function useLinuOutfit(): string | null {
 
 export async function loadOutfit(db: SQLiteDatabase): Promise<void> {
   const r = await db.getFirstAsync<{ value: string }>('SELECT value FROM Meta WHERE key = ?', [KEY]);
-  setCurrentOutfit(r?.value || null);
+  setCurrentOutfit((r?.value ?? '').split(',').filter(Boolean));
 }
 
-export async function saveOutfit(db: SQLiteDatabase, id: string | null): Promise<void> {
-  await db.runAsync('INSERT OR REPLACE INTO Meta (key, value) VALUES (?, ?)', [KEY, id ?? '']);
-  setCurrentOutfit(id);
+export async function saveOutfit(db: SQLiteDatabase, ids: readonly string[]): Promise<void> {
+  await db.runAsync('INSERT OR REPLACE INTO Meta (key, value) VALUES (?, ?)', [KEY, ids.join(',')]);
+  setCurrentOutfit(ids);
 }
 
 /** Lições concluídas em cada idioma (os ids começam pelo código: «es-u1-l1»). */

@@ -18,13 +18,14 @@ export function speakerPlace(lang: string, speaker: string): { text: string; fla
 
 /**
  * Aviso discreto quando toca a gravação de um falante nativo: quem fala e de onde ele é — o sotaque
- * vem de lá. Some sozinho em alguns segundos.
+ * vem de lá. Some sozinho em alguns segundos; uma gravação nova troca o texto no mesmo aviso (em vez de
+ * montar outro enquanto o anterior ainda sai, o que empilhava os dois por cima do botão).
  */
 export function NativeSpeakerToast() {
   const [s, setS] = useState<(NativeSpeaker & { n: number }) | null>(null);
   const count = useRef(0);
   const insets = useSafeAreaInsets();
-  // cada gravação nova reinicia o aviso (a chave muda)
+  // cada gravação nova reinicia o tempo do aviso (n muda)
   useEffect(() => onNativeSpeaker((x) => setS({ ...x, n: ++count.current })), []);
   useEffect(() => {
     if (!s) return;
@@ -35,7 +36,6 @@ export function NativeSpeakerToast() {
   const where = speakerPlace(s.lang, s.speaker);
   return (
     <Animated.View
-      key={s.n}
       entering={FadeInDown}
       exiting={FadeOutDown}
       pointerEvents="none"

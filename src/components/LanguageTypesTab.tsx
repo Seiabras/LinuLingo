@@ -209,6 +209,11 @@ function ConlangCard({ c }: { c: Conlang }) {
           <Text className="font-bold text-white">🎓 Fazer o curso de {c.name.split(' (')[0]}</Text>
         </Pressable>
       )}
+      {c.id === 'tsevhu' && (
+        <Pressable accessibilityRole="button" onPress={() => router.push('/tsevhu')} className="items-center rounded-xl bg-conecta py-2 active:opacity-90">
+          <Text className="font-bold text-white">🐟 Abrir o módulo do Tsevhu</Text>
+        </Pressable>
+      )}
     </Card>
   );
 }

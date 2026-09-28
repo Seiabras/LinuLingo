@@ -4,7 +4,7 @@ import { CURSO_ASL, CURSO_MAIS_SINAIS } from './outras-sinais';
 import { CURSO_TATIL } from './tatil';
 import { CURSO_ESPERANTO, CURSO_KLINGON, CURSO_TOKI_PONA } from './artificiais';
 import { CURSO_INTERLINGUA, CURSO_LOJBAN, CURSO_NAVI, CURSO_SOLRESOL, CURSO_VALIRIANO } from './artificiais-mais';
-import { CURSO_ELEFEN, CURSO_IDO, CURSO_QUENYA, CURSO_TSEVHU, CURSO_VOLAPUK } from './novas-artificiais';
+import { CURSO_ELEFEN, CURSO_IDO, CURSO_QUENYA, CURSO_VOLAPUK } from './novas-artificiais';
 import { LIBRAS_MAIS } from './libras-mais';
 import { ASL_MAIS, ESPERANTO_MAIS, INTERLINGUA_MAIS, KLINGON_MAIS, LOJBAN_MAIS, NAVI_MAIS, SOLRESOL_MAIS, TATIL_MAIS, TOKI_PONA_MAIS, VALIRIANO_MAIS } from './mais-licoes';
 
@@ -29,14 +29,13 @@ export const MINI_COURSES: MiniCourse[] = [
   withMore(CURSO_NAVI, NAVI_MAIS),
   withMore(CURSO_VALIRIANO, VALIRIANO_MAIS),
   CURSO_QUENYA,
-  CURSO_TSEVHU,
   withMore(CURSO_SOLRESOL, SOLRESOL_MAIS),
 ];
 
 export const KIND_LABEL: Record<MiniCourseKind, { label: string; emoji: string; text: string }> = {
   sinais: { label: 'Línguas de sinais', emoji: '🤟', text: 'A Libras com o avatar VLibras, a ASL e o que muda nas outras.' },
   tatil: { label: 'Táteis', emoji: '🤲', text: 'O Braille e as formas de conversar pelo toque.' },
-  artificial: { label: 'Línguas artificiais', emoji: '🛠️', text: 'Do esperanto ao klingon e aos peixes koi do Tsevhu: línguas inventadas que dá para aprender.' },
+  artificial: { label: 'Línguas artificiais', emoji: '🛠️', text: 'Do esperanto ao klingon e ao quenya: línguas inventadas que dá para aprender.' },
 };
 
 export function miniCourse(id: string): MiniCourse | undefined {

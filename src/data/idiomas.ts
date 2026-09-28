@@ -10,9 +10,11 @@ import { DINAMARQUES } from './da';
 import { FRANCES } from './fr';
 import { ISLANDES } from './is';
 import { FINLANDES } from './fi';
+import { ESTONIANO } from './et';
+import { FEROES } from './fo';
 
 /** Idiomas com conteúdo pronto. */
-export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES, fr: FRANCES, is: ISLANDES, fi: FINLANDES };
+export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES, fr: FRANCES, is: ISLANDES, fi: FINLANDES, et: ESTONIANO, fo: FEROES };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -31,10 +33,8 @@ export const LANGUAGES: LanguageInfo[] = [
     lineage: { family: 'Indo-europeu', branches: ['Germânico', 'Germânico ocidental', 'Anglo-frísio'], region: 'Ilhas Britânicas', writing: 'Alfabeto latino' },
   },
   FINLANDES,
-  {
-    code: 'et', name: 'Estoniano', nativeName: 'Eesti', flag: '🇪🇪',
-    lineage: { family: 'Urálico', branches: ['Fínico', 'Fínico meridional'], region: 'Costa sul do Golfo da Finlândia (Estônia)', writing: 'Alfabeto latino (õ, ä, ö, ü)' },
-  },
+  FEROES,
+  ESTONIANO,
   {
     code: 'ja', name: 'Japonês', nativeName: '日本語', flag: '🇯🇵',
     lineage: { family: 'Japônico', branches: ['Japonês'], region: 'Arquipélago japonês (Leste Asiático)', writing: 'Hiragana, katakana e kanji' },

@@ -15,6 +15,8 @@ import Animated, {
 } from 'react-native-reanimated';
 import Svg, { Circle, Defs, Ellipse, G, LinearGradient, Path, RadialGradient, Stop } from 'react-native-svg';
 import { OutfitArt } from './LinuOutfit';
+import { BodyArt, FaceArt, HeldArt } from './LinuRoupas';
+import { slotOf } from '@/data/roupas-linu';
 import { useLinuOutfit } from '@/services/linu-outfit';
 
 export type LinuMood = 'feliz' | 'pensando' | 'comemorando' | 'triste' | 'falando';
@@ -83,11 +85,16 @@ const VB_H = 140;
  * cair uma lágrima quando está triste. `animate={false}` (ou «reduzir movimento» ligado no
  * aparelho) deixa o Linu parado.
  */
-export function Linu({ mood = 'feliz', size = 96, animate = true, outfit }: { mood?: LinuMood; size?: number; animate?: boolean; outfit?: string | null }) {
+export function Linu({ mood = 'feliz', size = 96, animate = true, outfit }: { mood?: LinuMood; size?: number; animate?: boolean; outfit?: string | readonly string[] | null }) {
   const reduce = useReducedMotion();
-  // a roupinha escolhida no Perfil (ou a pedida, nas prévias)
+  // o visual escolhido no Perfil (ou o pedido, nas prévias): uma peça na cabeça, no corpo, na mão e no rosto
   const chosen = useLinuOutfit();
-  const wear = outfit === undefined ? chosen : outfit;
+  const look = outfit === undefined ? chosen : outfit == null ? [] : typeof outfit === 'string' ? [outfit] : outfit;
+  const inSlot = (slot: string) => look.find((o) => slotOf(o) === slot);
+  const head = inSlot('cabeca');
+  const body = inSlot('corpo');
+  const held = inSlot('mao');
+  const face = inSlot('rosto');
   const live = animate && !reduce;
   const u = size / VB_W;
 
@@ -211,11 +218,22 @@ export function Linu({ mood = 'feliz', size = 96, animate = true, outfit }: { mo
         <Layer>
           <BodyShape mood={mood} />
         </Layer>
+        {body && (
+          <Layer>
+            <BodyArt id={body} />
+          </Layer>
+        )}
+        {held && <Held id={held} mood={mood} u={u} flap={flap} />}
         <Eyelids mood={mood} u={u} blink={blink} />
         <Beak mood={mood} u={u} talk={talk} />
-        {wear && (
+        {face && (
           <Layer>
-            <OutfitArt id={wear} />
+            <FaceArt id={face} />
+          </Layer>
+        )}
+        {head && (
+          <Layer>
+            <OutfitArt id={head} />
           </Layer>
         )}
         {mood === 'triste' && <Tear u={u} tear={tear} live={live} />}
@@ -290,6 +308,27 @@ function Flipper({ side, mood, u, wave, flap }: { side: 'esq' | 'dir'; mood: Lin
   return (
     <Layer style={style}>
       <FlipperPath d={d} />
+    </Layer>
+  );
+}
+
+/**
+ * O objeto na nadadeira esquerda: na ponta dela quando está abaixada, e lá no alto quando o Linu
+ * comemora, balançando junto com ela.
+ */
+function Held({ id, mood, u, flap }: { id: string; mood: LinuMood; u: number; flap: SharedValue<number> }) {
+  const up = mood === 'comemorando';
+  const sx = (30 - VB_W / 2) * u;
+  const sy = (74 - VB_H / 2) * u;
+  const style = useAnimatedStyle(() => {
+    const deg = mood === 'comemorando' ? flap.value * -14 : 0;
+    return { transform: [{ translateX: sx }, { translateY: sy }, { rotate: `${deg}deg` }, { translateX: -sx }, { translateY: -sy }] };
+  });
+  return (
+    <Layer style={style}>
+      <G transform={up ? 'translate(15 42) rotate(-18) scale(0.95)' : 'translate(15 113) rotate(-10) scale(1.12)'}>
+        <HeldArt id={id} />
+      </G>
     </Layer>
   );
 }

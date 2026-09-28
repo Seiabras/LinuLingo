@@ -1,6 +1,6 @@
-// Confere «🎧 Escuta e ditado» em espanhol: descobre qual gravação de nativo tocou (pelo arquivo) e
+// Confere «🎧 Escuta e ditado» (espanhol, ou o idioma de IDIOMA=fr…): descobre qual gravação de nativo tocou (pelo arquivo) e
 // responde certo, errado e sem acento, nos dois modos; confere as mensagens, o XP e as capturas.
-// Uso: node scripts/fluxo-escuta.mjs   (servidor em http://localhost:8081; DEVICE=iphone|desktop, SCHEME=light|dark)
+// Uso: node scripts/fluxo-escuta.mjs   (servidor em http://localhost:8081; DEVICE=iphone|desktop, SCHEME=light|dark, IDIOMA=es|fr)
 import { chromium } from 'playwright-core';
 import { existsSync, mkdirSync, readdirSync, readFileSync } from 'node:fs';
 import { homedir } from 'node:os';
@@ -10,11 +10,13 @@ const BASE = process.env.BASE_URL ?? 'http://localhost:8081';
 const OUT = process.env.OUT_DIR ?? 'capturas';
 const device = process.env.DEVICE ?? 'iphone';
 const scheme = process.env.SCHEME ?? 'light';
+const lang = process.env.IDIOMA ?? 'es';
+const LABEL = { es: /^Espanhol · Español/, fr: /^Francês · Français/ }[lang];
 const VIEW = { iphone: { width: 390, height: 844 }, desktop: { width: 1280, height: 800 } }[device];
 mkdirSync(OUT, { recursive: true });
 
-// arquivo da gravação → palavra (src/data/es/audios.ts)
-const byFile = new Map([...readFileSync('src/data/es/audios.ts', 'utf8').matchAll(/^\s*"([^"]+)": \{ src: require\('[^']*\/(\d+\.mp3)'\)/gm)].map((m) => [m[2], m[1]]));
+// arquivo da gravação → palavra (src/data/<idioma>/audios.ts)
+const byFile = new Map([...readFileSync(`src/data/${lang}/audios.ts`, 'utf8').matchAll(/^\s*"([^"]+)": \{ src: require\('[^']*\/(\d+\.mp3)'\)/gm)].map((m) => [m[2], m[1]]));
 
 const root = join(homedir(), '.cache/ms-playwright');
 const dir = existsSync(root) && readdirSync(root).find((d) => /^chromium-\d+$/.test(d));
@@ -41,7 +43,7 @@ const ok = (msg) => console.log(`✅ ${msg}`);
 const waitText = (t, timeout = 30000) => page.waitForFunction((x) => document.body.innerText.includes(x), t, { timeout, polling: 200 });
 const body = () => page.evaluate(() => document.body.innerText);
 let shots = 0;
-const shot = (name) => page.screenshot({ path: `${OUT}/escuta-${device}-${scheme}-${++shots}-${name}.png` });
+const shot = (name) => page.screenshot({ path: `${OUT}/escuta-${lang}-${device}-${scheme}-${++shots}-${name}.png` });
 
 /** Espera a gravação nova e devolve a palavra dela. */
 let seen = 0;
@@ -57,7 +59,7 @@ await page.goto(BASE + '/', { waitUntil: 'load', timeout: 180000 });
 await page.locator('text=Pular >> visible=true').or(page.locator('text=Mais práticas >> visible=true')).first().waitFor({ timeout: 120000 });
 if (await page.getByText('Pular', { exact: true }).isVisible().catch(() => false)) await page.getByText('Pular', { exact: true }).first().click();
 await page.goto(BASE + '/perfil', { waitUntil: 'load' });
-await page.getByText(/^Espanhol · Español/).first().click();
+await page.getByText(LABEL).first().click();
 await page.waitForTimeout(300);
 await page.waitForFunction(() => !document.body.innerText.includes('preparando…'), null, { timeout: 60000 });
 
@@ -104,7 +106,7 @@ for (let i = 0; i < 10; i++) {
   if (i === 1) {
     await box.fill('zzzz');
     expect = `Era «${word}».`;
-  } else if (!accents && /[áéíóúñü]/.test(word)) {
+  } else if (!accents && /[áéíóúñüàâçèêëîïôûùÿ]/.test(word)) {
     accents = true;
     await box.fill(word.normalize('NFD').replace(/[̀-ͯ]/g, ''));
     expect = word.includes('ñ') ? null : 'só faltou acento';

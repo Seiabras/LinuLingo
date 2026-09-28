@@ -7,7 +7,7 @@ import { useApp } from '@/services/app-state';
 import { PACKS } from '@/data/idiomas';
 import { WORLD } from '@/data/mapa-mundi';
 import { flagOf } from '@/data/onde-se-fala';
-import { KRILL_XP, krillBalance, lessonsToUnlock, ROUPAS_LINU, unlockedOutfits, type LinuOutfit } from '@/data/roupas-linu';
+import { KRILL_XP, krillBalance, lessonsToUnlock, ROUPAS_LINU, SLOTS, slotOf, unlockedOutfits, withOutfit, type LinuOutfit, type OutfitSlot } from '@/data/roupas-linu';
 import { buyOutfit, lessonsByLanguage, loadBought, saveOutfit, useLinuOutfit } from '@/services/linu-outfit';
 import { nomeIdioma } from '@/services/idioma-nome';
 import * as haptics from '@/services/haptics';
@@ -17,8 +17,9 @@ const SEEN = 'roupas_vistas';
 const countryName = (iso2: string) => WORLD.find((c) => c.iso2 === iso2)?.name ?? iso2;
 
 /**
- * Loja do Linu: chapéus e toucados tradicionais, cada um com o país, a região e a cultura de onde
- * veio. As dos idiomas do app vêm de presente com as lições; as do mundo se compram com krill 🦐.
+ * Loja do Linu: chapéus, roupas, objetos para a nadadeira e pinturas de rosto tradicionais, cada um
+ * com o país, a região e a cultura de onde veio. O Linu usa uma peça de cada lugar ao mesmo tempo.
+ * As dos idiomas do app vêm de presente com as lições; as do mundo se compram com krill 🦐.
  */
 export function OutfitsCard() {
   const { db, pack, user } = useApp();
@@ -27,6 +28,7 @@ export function OutfitsCard() {
   const [bought, setBought] = useState<string[]>([]);
   const [fresh, setFresh] = useState<Set<string>>(new Set());
   const [picked, setPicked] = useState<string | null>(null);
+  const [slot, setSlot] = useState<OutfitSlot | null>(null);
   const xp = user?.total_xp ?? 0;
 
   useFocusEffect(
@@ -48,21 +50,28 @@ export function OutfitsCard() {
 
   const unlocked = unlockedOutfits(lessons, bought);
   const krill = krillBalance(xp, bought);
-  const mine = ROUPAS_LINU.filter((o) => o.lang === pack.code);
-  const others = ROUPAS_LINU.filter((o) => o.lang && o.lang !== pack.code);
-  const shop = ROUPAS_LINU.filter((o) => o.price);
-  const shown = ROUPAS_LINU.find((o) => o.id === (picked ?? wearing)) ?? null;
+  const inSlot = (o: LinuOutfit) => !slot || slotOf(o.id) === slot;
+  const mine = ROUPAS_LINU.filter((o) => o.lang === pack.code && inSlot(o));
+  const others = ROUPAS_LINU.filter((o) => o.lang && o.lang !== pack.code && inSlot(o));
+  const shop = ROUPAS_LINU.filter((o) => o.price && inSlot(o));
+  const shown = ROUPAS_LINU.find((o) => o.id === picked) ?? null;
+  // a prévia mostra o Linu com o que já usa e a peça escolhida no lugar dela
+  const preview = shown ? withOutfit(wearing, shown.id) : wearing;
 
-  const wear = async (o: LinuOutfit | null) => {
+  const wear = async (o: LinuOutfit) => {
     haptics.success();
-    await saveOutfit(db, o?.id ?? null);
+    await saveOutfit(db, withOutfit(wearing, o.id));
+  };
+  const takeOff = async (id: string | null) => {
+    haptics.tapLight();
+    await saveOutfit(db, id ? wearing.filter((x) => x !== id) : []);
   };
   const buy = async (o: LinuOutfit) => {
     const next = await buyOutfit(db, o.id, xp);
     if (!next) return;
     haptics.success();
     setBought(next);
-    await saveOutfit(db, o.id);
+    await saveOutfit(db, withOutfit(wearing, o.id));
   };
 
   const tile = (o: LinuOutfit) => {
@@ -75,7 +84,7 @@ export function OutfitsCard() {
       const langName = PACKS[o.lang!] ? nomeIdioma(PACKS[o.lang!].name) : o.lang;
       sub = `🔒 ${Math.min(lessons[o.lang!] ?? 0, need)}/${need} ${need === 1 ? 'lição' : 'lições'} de ${langName}`;
     }
-    return <OutfitTile key={o.id} label={o.name.split(' (')[0]} sub={sub} outfit={o.id} on={wearing === o.id} seen={shown?.id === o.id} locked={!open} isNew={fresh.has(o.id)} onPress={() => setPicked(o.id)} />;
+    return <OutfitTile key={o.id} label={o.name.split(' (')[0]} sub={sub} outfit={o.id} on={wearing.includes(o.id)} seen={shown?.id === o.id} locked={!open} isNew={fresh.has(o.id)} onPress={() => setPicked(o.id)} />;
   };
 
   return (
@@ -87,12 +96,12 @@ export function OutfitsCard() {
         </View>
       </View>
       <Text className="text-sm leading-5 text-slate-700 dark:text-slate-300">
-        Chapéus e toucados tradicionais do mundo. Os dos idiomas do app vêm de presente com as lições; os do mundo se compram com krill, o petisco preferido do Linu: você ganha 1 🦐 a cada {KRILL_XP} XP.
+        Chapéus, roupas, coisas para levar na nadadeira e pinturas de rosto tradicionais do mundo — o Linu usa uma peça de cada lugar ao mesmo tempo. As dos idiomas do app vêm de presente com as lições; as do mundo se compram com krill, o petisco preferido do Linu: você ganha 1 🦐 a cada {KRILL_XP} XP.
       </Text>
 
       {/* prévia grande e os detalhes da escolhida */}
       <View className="flex-row items-center gap-3 rounded-2xl bg-amber-50 p-3 dark:bg-amber-950/40">
-        <Linu mood="feliz" size={96} animate={false} outfit={shown?.id ?? null} />
+        <Linu mood="feliz" size={96} animate={false} outfit={preview} />
         <View className="flex-1 gap-1">
           {shown ? (
             <>
@@ -100,9 +109,12 @@ export function OutfitsCard() {
               <Text className="text-sm font-bold text-slate-700 dark:text-slate-300">
                 {flagOf(shown.country)} {countryName(shown.country)} · {shown.region}
               </Text>
+              <Text className="text-xs font-semibold text-slate-500 dark:text-slate-400">
+                Lugar: {SLOTS.find((x) => x.id === slotOf(shown.id))?.emoji} {SLOTS.find((x) => x.id === slotOf(shown.id))?.label}
+              </Text>
               <Text className="text-xs font-semibold text-slate-500 dark:text-slate-400">Cultura: {shown.culture}</Text>
               <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">{shown.about}</Text>
-              <ActionButton o={shown} open={unlocked.has(shown.id)} on={wearing === shown.id} krill={krill} lessons={lessons} onWear={() => wear(shown)} onBuy={() => buy(shown)} />
+              <ActionButton o={shown} open={unlocked.has(shown.id)} on={wearing.includes(shown.id)} krill={krill} lessons={lessons} onWear={() => wear(shown)} onTakeOff={() => takeOff(shown.id)} onBuy={() => buy(shown)} />
             </>
           ) : (
             <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">Toque numa roupinha para ver de onde ela é.</Text>
@@ -110,8 +122,26 @@ export function OutfitsCard() {
         </View>
       </View>
 
+      {/* filtro por lugar */}
       <View className="flex-row flex-wrap gap-2">
-        <OutfitTile label="Sem roupinha" sub="o Linu de sempre" outfit={null} on={!wearing} seen={false} onPress={() => { setPicked(null); void wear(null); }} />
+        {[null, ...SLOTS.map((x) => x.id)].map((id) => {
+          const info = SLOTS.find((x) => x.id === id);
+          const on = slot === id;
+          return (
+            <Pressable
+              key={id ?? 'tudo'}
+              accessibilityRole="button"
+              accessibilityState={{ selected: on }}
+              onPress={() => setSlot(id)}
+              className={`rounded-full border-2 px-3 py-1 ${on ? 'border-conecta bg-blue-50 dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
+            >
+              <Text className="text-sm font-bold text-slate-800 dark:text-slate-100">{info ? `${info.emoji} ${info.label}` : '✨ Tudo'}</Text>
+            </Pressable>
+          );
+        })}
+      </View>
+      <View className="flex-row flex-wrap gap-2">
+        <OutfitTile label="Sem roupinha" sub="tira tudo" outfit={null} on={wearing.length === 0} seen={false} onPress={() => { setPicked(null); void takeOff(null); }} />
       </View>
       {mine.length > 0 && <Section title={`🎁 Presentes do ${nomeIdioma(pack.name)}`}>{mine.map(tile)}</Section>}
       <Section title="🎁 Presentes dos outros idiomas">{others.map(tile)}</Section>
@@ -129,13 +159,13 @@ function Section({ title, children }: { title: string; children: ReactNode }) {
   );
 }
 
-function ActionButton({ o, open, on, krill, lessons, onWear, onBuy }: { o: LinuOutfit; open: boolean; on: boolean; krill: number; lessons: Record<string, number>; onWear: () => void; onBuy: () => void }) {
+function ActionButton({ o, open, on, krill, lessons, onWear, onTakeOff, onBuy }: { o: LinuOutfit; open: boolean; on: boolean; krill: number; lessons: Record<string, number>; onWear: () => void; onTakeOff: () => void; onBuy: () => void }) {
   const base = 'mt-1 self-start rounded-xl px-4 py-2';
   if (on)
     return (
-      <View className={`${base} bg-slate-200 dark:bg-slate-700`}>
-        <Text className="font-extrabold text-slate-700 dark:text-slate-200">✓ Usando</Text>
-      </View>
+      <Pressable accessibilityRole="button" accessibilityLabel={`Tirar: ${o.name}`} onPress={onTakeOff} className={`${base} bg-slate-200 dark:bg-slate-700`}>
+        <Text className="font-extrabold text-slate-700 dark:text-slate-200">✓ Usando · Tirar</Text>
+      </Pressable>
     );
   if (open)
     return (

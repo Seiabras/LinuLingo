@@ -4,6 +4,7 @@ import { router, useFocusEffect } from 'expo-router';
 import { ArrowLeft } from 'lucide-react-native';
 import { Screen, Button, Card, Chip, Ipa, LetterPad, ProgressBar, SpeakButton, SpeechBubble } from '@/components/ui';
 import { Linu } from '@/components/Linu';
+import { speakerPlace } from '@/components/NativeSpeakerToast';
 import { useApp } from '@/services/app-state';
 import { awardXp, getMeta, setMeta } from '@/database/queries';
 import { CLIPS } from '@/data/audio-index';
@@ -57,7 +58,7 @@ export default function ListeningScreen() {
   const play = useCallback(
     async (rate = 0.9) => {
       if (!cur) return;
-      const r = await speak(cur.item.word, pack.speechLocale, { rate });
+      const r = await speak(cur.item.word, pack.speechLocale, { rate, announce: false });
       setMute(r === 'sem-voz');
     },
     [cur, pack.speechLocale],
@@ -66,7 +67,8 @@ export default function ListeningScreen() {
   const answered = !!game?.answer;
   useEffect(() => {
     if (!cur || answered) return;
-    speak(cur.item.word, pack.speechLocale, { rate: 0.9 }).then((r) => setMute(r === 'sem-voz'));
+    // o crédito da gravação aparece no cartão da resposta, sem o aviso por cima do botão
+    speak(cur.item.word, pack.speechLocale, { rate: 0.9, announce: false }).then((r) => setMute(r === 'sem-voz'));
   }, [cur, answered, pack.speechLocale]);
 
   const mastery = listenMastery(pool, progress);
@@ -281,17 +283,22 @@ function Feedback({ q, answer, locale, onNext, last }: { q: ListenQuestion; answ
           : r.kind === 'quase'
             ? `Por uma letra! Era «${w}».`
             : `Era «${w}».`;
+  const clip = q.item.clip;
+  const who = clip ? speakerOf(clip) : '';
+  const where = clip ? speakerPlace(locale.split('-')[0].toLowerCase(), who) : null;
+  // as do Lingua Libre começam com «LL-»; as outras vêm de outras coleções do Commons (Shtooka, Wikcionário…)
+  const source = clip?.file.startsWith('LL-') ? 'Lingua Libre' : 'Wikimedia Commons';
   return (
     <Card className="gap-2">
       <Text className={`text-lg font-extrabold ${answer.ok ? 'text-conquista' : 'text-rose-600'}`}>{title}</Text>
       <View className="flex-row items-center gap-2">
-        <SpeakButton text={w} locale={locale} />
+        <SpeakButton text={w} locale={locale} announce={false} />
         <Text className="text-2xl font-extrabold text-slate-900 dark:text-white">{w}</Text>
       </View>
       <Ipa text={w} />
       <Text className="text-base text-slate-700 dark:text-slate-300">{q.item.meaning}</Text>
       <Text className="text-xs text-slate-400">
-        {q.item.clip ? `🎙️ Voz de ${speakerOf(q.item.clip)} · Lingua Libre · ${q.item.clip.license}` : '🔈 Voz do aparelho'}
+        {clip ? `🎙️ Voz de ${who}${where ? ` (${where.flag} ${where.text})` : ''} · ${source} · ${clip.license}` : '🔈 Voz do aparelho'}
       </Text>
       <Button title={last ? 'Ver resultado' : 'Continuar'} variant="success" onPress={onNext} />
     </Card>

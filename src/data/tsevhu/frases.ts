@@ -1,0 +1,212 @@
+// Frases comuns e expressões idiomáticas do Tsevhu.
+// Fonte: Common_phrases.csv (planilha oficial de Koa Vhukva, «koallary»).
+// As formas em Tsevhu estão exatamente como na planilha. O apóstrofo reto (') é a
+// letra da oclusiva glotal /ʔ/; por isso, strings com ele vão entre aspas duplas.
+// Marcas de gênero dos pronomes no literal: (n) = neutro, (m) = masculino, (f) = feminino.
+
+export const FRASES: { tsevhu: string; curta?: string; pt: string; literal?: string; nota?: string }[] = [
+  {
+    tsevhu: "veu gelccet tso'iir mai",
+    curta: "tsy'iir mai(f), tso'iir mai(n), chy'iir mai(m)",
+    pt: 'de nada',
+    literal: 'isso vem com o meu (n) coração',
+    nota: 'Versão neutra. Na forma curta, o possessivo muda com o gênero de quem fala: (f) feminino, (n) neutro, (m) masculino.',
+  },
+  { tsevhu: 'siketso nsa non', curta: 'siketso', pt: 'obrigado / obrigada', literal: 'eu (n) agradeço a você (n)' },
+  {
+    tsevhu: 'tzahdei ny liisnesa ohauri',
+    curta: 'liisnesa auri',
+    pt: 'feliz aniversário (desejando que seu aniversário seja festivo)',
+    literal: 'eu quero que o seu (n) aniversário seja alegre',
+  },
+  { tsevhu: 'khes ruj', pt: 'boa noite' },
+  { tsevhu: 'liis ruj', pt: 'bom dia (tenha um bom dia)' },
+  { tsevhu: 'mbys ruj', pt: 'bom dia (de manhã)' },
+  { tsevhu: 'sau ruj', pt: 'boa noite (ao anoitecer)' },
+  { tsevhu: 'kesme ruj', pt: 'durma bem; boa noite de sono' },
+  { tsevhu: 'aweyat yvon(x)', curta: 'we(y)yvon / yvon(x)', pt: 'tchau', literal: 'navegue em segurança' },
+  { tsevhu: 'tiru', pt: 'bem-vindo / bem-vinda' },
+  { tsevhu: 'No yhronyon?', curta: 'yronyn / yhronyn', pt: 'olá', literal: 'você (n, singular) está em paz?' },
+  { tsevhu: 'mic', pt: 'oi' },
+  {
+    tsevhu: "iina'aa nav vii",
+    pt: 'qual é o seu nome?',
+    literal: 'o que (esta palavra interrogativa) seu (n, singular) nome',
+  },
+  {
+    tsevhu: 'o-(...) cho vii',
+    pt: 'meu nome é ...',
+    literal: 'meu (n) nome é (...)',
+    nota: 'Coloque o- antes do seu nome.',
+  },
+  { tsevhu: 'iisara non / ysarn non', pt: 'como vai você?', literal: 'como você (n)' },
+  { tsevhu: 'ny mona yoyenni', pt: 'de onde você é?', literal: 'onde é o seu (n) lar' },
+  { tsevhu: 'tso mona (...)', pt: 'eu sou de ...', literal: 'o meu (n) lar é (...)' },
+  { tsevhu: 'wri', pt: 'talvez' },
+  { tsevhu: 'tsa kimvh', pt: 'eu entendo', literal: 'eu (n) entendo' },
+  { tsevhu: 'cytsa kimvh', pt: 'eu não entendo', literal: 'não eu (n) entendo' },
+  { tsevhu: 'nsa kimyo', pt: 'eu sei', literal: 'eu (n) sei' },
+  { tsevhu: 'cynsa kimyo', pt: 'eu não sei', literal: 'não eu (n) sei' },
+  { tsevhu: 'sanu', pt: 'por favor' },
+  { tsevhu: 'awent sanu vaeyr', pt: 'fale mais devagar, por favor' },
+  {
+    tsevhu: 'te / chi / ches',
+    pt: 'sim',
+    literal: 'concordância neutra (sim) / concordância animada (sim!!) / concordância neutra ou sem entusiasmo (tá bom, tudo bem)',
+  },
+  { tsevhu: 'ka', pt: 'não' },
+  { tsevhu: 'wbe', pt: 'legal; incrível' },
+  { tsevhu: 'uya', pt: 'hã? o quê? (expressa confusão)' },
+  { tsevhu: 'ca; cym', pt: 'bem..., hum, é... (palavra de preenchimento)' },
+  { tsevhu: 'hwa', pt: 'ei (para chamar alguém que está do seu lado)' },
+  { tsevhu: 'oic', pt: 'ei, ei você, ei [nome] (gritando para chamar a atenção de alguém longe)' },
+  { tsevhu: 'hwe', pt: 'o quê?! tá brincando? (expressa surpresa)' },
+  { tsevhu: 'xaqat', pt: 'palavrão genérico (droga!)' },
+  {
+    tsevhu: 'tsa non lonayo',
+    curta: 'non lona',
+    pt: 'eu te amo',
+    nota: 'A versão curta quer dizer mais «(eu (n)) expresso amor a você (n)».',
+  },
+  { tsevhu: 'che ruj', pt: 'bom apetite', literal: 'comer bom' },
+  { tsevhu: 'awnamt (ruj)', pt: 'come tudo! / bebe tudo!', literal: 'beba / engula (bom)' },
+  {
+    tsevhu: "tsa mbae'en",
+    pt: 'não tenho certeza; estou indeciso (não sei o que escolher)',
+    literal: 'eu não sei',
+  },
+  {
+    tsevhu: "cytsa mbae'en",
+    curta: "cymbae'en / apmbae'en",
+    pt: 'tenho certeza; com certeza',
+    literal: 'eu não estou inseguro (não sou eu quem está involuntariamente inseguro) / eu estou tudo, menos involuntariamente inseguro',
+  },
+  { tsevhu: 'amiinmt(a) va tsaro', pt: 'me dá isso', literal: 'dê para mim (n) isso (n)' },
+  { tsevhu: 'avaecset', pt: 'me escuta; escute', literal: 'escute' },
+  { tsevhu: 'nsa non sayo', pt: 'sinto sua falta', literal: 'eu (n) sinto falta de você (n)' },
+  { tsevhu: 'iiyena (...)', pt: 'onde fica (...)?', literal: '(...) é onde' },
+  {
+    tsevhu: "chi twnkhov (/khov tqetu'en) vu tvyype",
+    pt: 'meu aerodeslizador está cheio de enguias',
+    literal: 'minha (f) carroça que desliza está cheia de umas enguias',
+  },
+  { tsevhu: 'iinaebo', pt: 'boa sorte', literal: 'sorte grande' },
+  { tsevhu: 'Bemmai', pt: 'saúde! (no brinde)', literal: 'coração quente' },
+  {
+    tsevhu: 'ohenon tsa suk',
+    curta: '(tsa) syuk',
+    pt: 'desculpa',
+    literal: 'eu (n) me sinto culpado (na forma curta: eu sou culpa)',
+  },
+  { tsevhu: 'nonre aurilvh', pt: 'parabéns', literal: '(eu) fico feliz em seu benefício' },
+  { tsevhu: 'TOKTOKRO MAITS PAS!', pt: 'um montão de nuggets de frango gostosos' },
+  {
+    tsevhu: 'Yhavatanvha / Yhava Atanvhat',
+    curta: 'havatan',
+    pt: 'se cuida; fique em segurança',
+    literal: 'Deus cuida, mantém em boas condições',
+  },
+  {
+    tsevhu: 'Sy Twnsibae amiinmt kjero',
+    pt: 'dá um crédito para ele; pega leve com ele',
+    literal: 'dê a ele (m) um chocolate celestial (Snickers)',
+  },
+  {
+    tsevhu: "essl'en (rui) m'iir wynsyuncae",
+    curta: 'wynsyuncae/ cywynsyun',
+    pt: 'ideia boba; mal planejado; você está ferrado',
+    literal: 'vai ser pego sem lanterna',
+  },
+  { tsevhu: "non owa'en syunnue", pt: 'você é uma boa pessoa', literal: 'você tem luz na alma' },
+  { tsevhu: 'ruok', pt: 'tudo bem? (pergunta se alguém está bem, principalmente depois de se machucar)' },
+  { tsevhu: 'ajieniet', pt: 'escolhe logo!', literal: 'chaleira, assente (imperativo)' },
+  {
+    tsevhu: 'tatse sy mekiniik, tatse omekiniik',
+    pt: 'o tiro saiu pela culatra; vitória de Pirro',
+    literal: 'chutar (um) cacto',
+  },
+  {
+    tsevhu: 'osiuri dy',
+    curta: 'osiuri / siugi',
+    pt: 'que triste; ah, não!',
+    literal: 'isso está cheio de lágrimas / lágrimas! (tipo «ai, meu Deus», «ah, não»)',
+  },
+  {
+    tsevhu: 'nsa tiru non uomona yn (yiit mona yn) / no otiru umona yn / (non) tiru mona',
+    curta: 'womonyn / yiimonyn (tiru) / otirumona',
+    pt: 'bem-vindo ao lar; bem-vindo de volta para casa',
+    literal: 'eu te dou as boas-vindas ao (nosso) lar, você é bem-vindo ao lar / o lar (te) dá as boas-vindas',
+  },
+  {
+    tsevhu: 'kvix tiru nsa non',
+    curta: 'kvix (tiru) / kviru',
+    pt: 'bem-vindo de volta',
+    literal: 'eu te dou as boas-vindas de volta',
+  },
+  { tsevhu: 'Cho nue omun', pt: 'tem uma coisa me preocupando; estou com algo na cabeça', literal: 'minha alma é fio' },
+  { tsevhu: 'no opili (o)qom', curta: 'pili qom', pt: 'você é pele e osso (muito magro)', literal: 'você é pele (e) osso' },
+  {
+    tsevhu: 'otama vulak / hiisevh',
+    pt: 'o tempo está acabando',
+    literal: 'o tempo está queimando até o fim / ardendo em brasa',
+  },
+  {
+    tsevhu: "No vuni nav nmu'u syt esphakhi liin.",
+    pt: 'Você muda de ideia rápido como um dardo.',
+    literal: 'você vira a sua mente como um dardo veloz',
+  },
+  { tsevhu: 'aniemset nav teumyth', pt: 'segure a língua; fique quieto', literal: 'aquiete os seus lábios' },
+  { tsevhu: "m'uk 'iis hidon", pt: 'em primeiro lugar; antes de tudo', literal: 'com a ondulação original' },
+  { tsevhu: "anue'enhut / ahsemanit / ahenbyohut", pt: 'deixa para lá' },
+];
+
+// Expressões idiomáticas (colunas «Interesting phrases and idioms» / «Trans»).
+// Só entram as que têm forma em Tsevhu na planilha.
+export const EXPRESSOES: { tsevhu: string; pt: string; sentido?: string }[] = [
+  { tsevhu: 'nsi ysenbtsun?', pt: 'Eu dou medo?' },
+  {
+    tsevhu: 'soem qat vuvha',
+    pt: 'o sol queima',
+    sentido: 'O sol é tratado como um ser animado (com qat), como se queimasse de propósito.',
+  },
+  {
+    tsevhu: 'dyva sy tseu itox li',
+    pt: 'agora isso existe como uma lembrança',
+    sentido: 'Fórmula para terminar uma história.',
+  },
+  {
+    tsevhu: "Und wben weyatb liin te'e sy esal",
+    pt: 'a história está viva como o navio que navega para o futuro',
+    sentido: 'Fórmula (ou alguma variação dela) para começar uma história.',
+  },
+  {
+    tsevhu: 'Meq feuo sytamlak (bae)',
+    pt: 'E assim aconteceu.',
+    sentido: 'Ao pé da letra: «e isto se concretizou».',
+  },
+  {
+    tsevhu: "syky'en xe'iyu 'aro",
+    pt: 'vendo coisas estranhas',
+    sentido: 'No fundo, «o que é que eu estou vendo?».',
+  },
+  {
+    tsevhu: "aje'i un tem moni",
+    pt: 'está tudo em jogo',
+    sentido: 'Ao pé da letra: «tudo está sobre o risco».',
+  },
+  {
+    tsevhu: 'kymangmse sy vhu; obe ovhuphe',
+    pt: 'assinar com um koi; usar papel de koi',
+    sentido: 'Esconder uma mensagem; querer dizer o contrário do que se diz.',
+  },
+  {
+    tsevhu: 'wtyu/vhutyu syhzenak (tsa)',
+    pt: 'o peixe / o koi (me) deixou',
+    sentido: 'Perder o fio da meada.',
+  },
+  {
+    tsevhu: 'osaej siada',
+    pt: 'jogar areia',
+    sentido: 'Ideia boba: jogar areia não adianta nada e ainda pode voltar na sua cara.',
+  },
+];

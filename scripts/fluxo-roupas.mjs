@@ -1,6 +1,7 @@
-// Confere as «👒 Roupinhas do Linu»: sem lições, todas bloqueadas; restaura uma cópia do progresso com
-// 10 lições de romeno concluídas, a căciulă e o clop liberam (com «nova!»), veste a căciulă e confere
-// que o Linu a usa no Perfil e na trilha.
+// Confere a «🛍️ Loja do Linu»: sem lições, tudo bloqueado; restaura uma cópia do progresso com 40 lições
+// de romeno, a căciulă, o clop, a ia e o nai liberam (com «nova!»); veste uma peça de cada lugar ao
+// mesmo tempo (căciulă + ia + nai), compra o fez (troca só o chapéu) e a thanaka (rosto), tira o nai,
+// filtra por lugar e confere que o Linu usa o visual no Perfil e na trilha.
 // Uso: node scripts/fluxo-roupas.mjs   (servidor em http://localhost:8081; DEVICE=iphone|desktop, SCHEME=light|dark)
 import { chromium } from 'playwright-core';
 import { existsSync, mkdirSync, readdirSync, writeFileSync } from 'node:fs';
@@ -28,6 +29,8 @@ const ok = (msg) => console.log(`✅ ${msg}`);
 const waitText = (t, timeout = 30000) => page.waitForFunction((x) => document.body.innerText.toLowerCase().includes(x.toLowerCase()), t, { timeout, polling: 200 });
 // a căciulă tem uma cor só dela no desenho
 const wearsCaciula = () => page.evaluate(() => [...document.querySelectorAll('path')].some((p) => p.getAttribute('fill') === '#3F3F46' && /Q60 0 34 7/.test(p.getAttribute('d') ?? '')));
+// cores próprias: a ia (branco da blusa), o nai (madeira dos tubos), a thanaka (bochechas)
+const hasFill = (sel, fill) => page.evaluate(([s, f]) => [...document.querySelectorAll(s)].some((e) => e.getAttribute('fill') === f), [sel, fill]);
 
 await page.goto(BASE + '/', { waitUntil: 'load', timeout: 180000 });
 await page.locator('text=Pular >> visible=true').or(page.locator('text=Mais práticas >> visible=true')).first().waitFor({ timeout: 90000 });
@@ -38,7 +41,7 @@ await waitText('Loja do Linu', 60000);
 (await page.getByRole('button', { name: /^Ver bloqueada: / }).count()) >= 30 ? ok('sem lições: todas as roupinhas bloqueadas') : fail('deveria estar tudo bloqueado');
 (await page.getByLabel('Você tem 0 krill').count()) ? ok('0 krill sem XP') : fail('saldo de krill errado no começo');
 
-// cópia do progresso com 10 lições de romeno e 1.000 XP (= 100 krill)
+// cópia do progresso com 40 lições de romeno e 1.000 XP (= 100 krill)
 const now = new Date().toISOString();
 const file = join(OUT, 'roupas-copia.json');
 writeFileSync(
@@ -50,7 +53,7 @@ writeFileSync(
     languages: ['ro'],
     tables: {
       Users: { columns: ['id', 'total_xp'], rows: [['local', 1000]] },
-      Lesson_Progress: { columns: ['user_id', 'lesson_id', 'completed_at', 'best_score', 'times_completed'], rows: Array.from({ length: 10 }, (_, i) => ['local', `ro-u${Math.floor(i / 4) + 1}-l${(i % 4) + 1}`, now, 1, 1]) },
+      Lesson_Progress: { columns: ['user_id', 'lesson_id', 'completed_at', 'best_score', 'times_completed'], rows: Array.from({ length: 40 }, (_, i) => ['local', `ro-u${Math.floor(i / 4) + 1}-l${(i % 4) + 1}`, now, 1, 1]) },
     },
   }),
 );
@@ -63,8 +66,9 @@ await waitText('Pronto! O progresso da cópia está de volta.', 60000);
 await page.goto(BASE + '/', { waitUntil: 'load' });
 await page.goto(BASE + '/perfil', { waitUntil: 'load' });
 await waitText('Loja do Linu', 60000);
-await page.getByRole('button', { name: 'Ver: Căciulă' }).waitFor({ timeout: 15000 }).then(() => ok('10 lições de romeno: căciulă liberada'), () => fail('căciulă não liberou'));
+await page.getByRole('button', { name: 'Ver: Căciulă' }).waitFor({ timeout: 15000 }).then(() => ok('40 lições de romeno: căciulă liberada'), () => fail('căciulă não liberou'));
 (await page.getByRole('button', { name: 'Ver: Clop' }).count()) && (await page.getByRole('button', { name: 'Ver: Năframă' }).count()) ? ok('clop (5 lições) e năframă (10) liberados') : fail('clop/năframă não liberaram');
+(await page.getByRole('button', { name: 'Ver: Ia' }).count()) && (await page.getByRole('button', { name: 'Ver: Nai' }).count()) ? ok('ia (20) e nai (40) liberados: roupa e objeto da mão') : fail('ia/nai não liberaram');
 (await page.getByRole('button', { name: /^Ver bloqueada: Sombrero cordob/ }).count()) ? ok('as de espanhol continuam bloqueadas') : fail('espanhol liberou sem lições');
 (await page.getByText('nova!').count()) >= 3 ? ok('«nova!» nas recém-liberadas') : fail('sem o «nova!»');
 (await page.getByLabel('Você tem 100 krill').count()) ? ok('1.000 XP = 100 krill') : fail('saldo de krill errado');
@@ -76,6 +80,16 @@ await waitText('Cultura: Camponeses e pastores romenos');
 (await page.getByText(/🇷🇴 Romênia/).count()) ? ok('bandeira e país da roupinha') : fail('sem bandeira/país');
 await page.getByRole('button', { name: 'Vestir: Căciulă' }).click();
 await waitText('✓ Usando');
+// uma peça de cada lugar ao mesmo tempo
+await page.getByRole('button', { name: 'Ver: Ia' }).click();
+await waitText('Lugar: 👕 Corpo');
+await page.getByRole('button', { name: /^Vestir: Ia/ }).click();
+await page.getByRole('button', { name: 'Ver: Nai' }).click();
+await waitText('Lugar: ✋ Na mão');
+await page.getByRole('button', { name: 'Vestir: Nai' }).click();
+await page.waitForTimeout(400);
+(await page.getByRole('button', { name: /^Usando: / }).count()) === 3 ? ok('căciulă + ia + nai ao mesmo tempo') : fail(`deveria usar 3 peças (usa ${await page.getByRole('button', { name: /^Usando: / }).count()})`);
+(await wearsCaciula()) && (await hasFill('path', '#FFFDF7')) && (await hasFill('rect', '#D6A15E')) ? ok('o desenho mostra o chapéu, a blusa e o nai') : fail('falta alguma peça no desenho');
 await page.getByText('🛍️ Loja do Linu').first().scrollIntoViewIfNeeded();
 await page.screenshot({ path: `${OUT}/roupas-${device}-${scheme}-1-perfil.png` });
 
@@ -85,16 +99,33 @@ await waitText('o nome vem da cidade de Fez');
 await page.getByRole('button', { name: 'Comprar: Fez' }).click();
 await page.getByLabel('Você tem 60 krill').waitFor({ timeout: 10000 }).then(() => ok('comprou o fez: 100 − 40 = 60 krill'), () => fail('o saldo não baixou depois da compra'));
 (await page.getByRole('button', { name: 'Usando: Fez' }).count()) ? ok('o Linu veste o fez comprado') : fail('o fez comprado não foi vestido');
+(await page.getByRole('button', { name: 'Usando: Căciulă' }).count()) === 0 && (await page.getByRole('button', { name: 'Usando: Ia' }).count()) ? ok('o fez trocou só o chapéu (a ia ficou)') : fail('o fez devia trocar só a căciulă');
+await page.getByRole('button', { name: 'Ver bloqueada: Thanaka' }).click();
+await page.getByRole('button', { name: 'Comprar: Thanaka' }).click();
+await page.getByLabel('Você tem 20 krill').waitFor({ timeout: 10000 }).then(() => ok('thanaka no rosto: 60 − 40 = 20 krill'), () => fail('a thanaka não foi comprada'));
+(await hasFill('circle', '#EAD9A6')) ? ok('a thanaka aparece nas bochechas') : fail('a thanaka não aparece');
+// tirar o nai (o quadrinho dele diz «Usando»)
+await page.getByRole('button', { name: 'Usando: Nai' }).click();
+await page.getByRole('button', { name: 'Tirar: Nai' }).click();
+await page.waitForTimeout(300);
+(await page.getByRole('button', { name: 'Usando: Nai' }).count()) === 0 ? ok('«Tirar» tira só o nai') : fail('o nai não saiu');
 (await page.getByRole('button', { name: /^Comprar: Bollenhut/ }).count()) === 0 ? ok('sem krill para o Bollenhut (80)') : fail('deixou comprar sem krill');
 await page.getByRole('button', { name: 'Ver bloqueada: Bollenhut' }).click();
-await waitText('Faltam 🦐 20');
+await waitText('Faltam 🦐 60');
+// filtro por lugar
+await page.getByRole('button', { name: '✋ Na mão' }).click();
+await page.waitForTimeout(300);
+(await page.getByRole('button', { name: 'Ver: Nai' }).count()) && !(await page.getByRole('button', { name: /Căciulă$/ }).count()) ? ok('filtro «Na mão» mostra só objetos') : fail('filtro por lugar não funcionou');
+await page.getByRole('button', { name: '✨ Tudo' }).click();
 await page.screenshot({ path: `${OUT}/roupas-${device}-${scheme}-2-loja.png` });
 
 await page.getByRole('button', { name: 'Ver: Căciulă' }).click();
 await page.getByRole('button', { name: 'Vestir: Căciulă' }).click();
+await page.getByRole('button', { name: 'Ver: Nai' }).click();
+await page.getByRole('button', { name: 'Vestir: Nai' }).click();
 await page.goto(BASE + '/', { waitUntil: 'load' });
 await page.waitForTimeout(3000);
-(await wearsCaciula()) ? ok('o Linu usa a căciulă fora do Perfil também') : fail('a roupinha não aparece na trilha');
-await page.screenshot({ path: `${OUT}/roupas-${device}-${scheme}-3-trilha.png` });
+(await wearsCaciula()) && (await hasFill('path', '#FFFDF7')) && (await hasFill('rect', '#D6A15E')) ? ok('o Linu usa o visual inteiro fora do Perfil também') : fail('o visual não aparece na tela inicial');
+await page.screenshot({ path: `${OUT}/roupas-${device}-${scheme}-3-inicio.png` });
 console.log(errors.length ? `⚠️  erros:\n   ${[...new Set(errors)].join('\n   ')}` : '✅ sem erros no console');
 await browser.close();

@@ -1,6 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { KRILL_XP, krillBalance, lessonsToUnlock, OUTFIT_UNLOCK, ROUPAS_LINU, unlockedOutfits } from './roupas-linu';
+import { readFileSync } from 'node:fs';
+import { KRILL_XP, krillBalance, lessonsToUnlock, OUTFIT_UNLOCK, ROUPAS_LINU, slotOf, unlockedOutfits, withOutfit } from './roupas-linu';
 import { PACKS } from './idiomas';
 import { WORLD } from './mapa-mundi';
 
@@ -20,7 +21,7 @@ test('roupinhas: as de cada idioma vêm com as lições (1, 5, 10…); as da loj
   assert.deepEqual(es.map(lessonsToUnlock), OUTFIT_UNLOCK.slice(0, es.length));
   assert.deepEqual([...unlockedOutfits({})], []);
   assert.deepEqual([...unlockedOutfits({ es: 1 })], [es[0].id]);
-  assert.equal(unlockedOutfits({ es: 100, ro: 100 }).size, es.length + ROUPAS_LINU.filter((o) => o.lang === 'ro').length);
+  assert.equal(unlockedOutfits({ es: 1000, ro: 1000 }).size, es.length + ROUPAS_LINU.filter((o) => o.lang === 'ro').length);
   assert.ok(!unlockedOutfits({ ro: 50 }).has('cordobes'), 'lições de romeno não dão roupinha de espanhol');
   assert.ok(!unlockedOutfits({ es: 1000 }).has('fez'), 'lições não dão as da loja');
 });
@@ -32,4 +33,39 @@ test('loja: krill = XP / 10 menos o que foi gasto; o comprado fica liberado', ()
   assert.equal(krillBalance(100 * KRILL_XP, ['fez']), 100 - fez.price!);
   assert.ok(unlockedOutfits({}, ['fez']).has('fez'));
   assert.ok(!unlockedOutfits({}, ['caciula']).has('caciula'), 'presente de idioma não se «compra»');
+});
+
+test('visual: uma peça por lugar (cabeça, corpo, mão, rosto); vestir outra do mesmo lugar troca', () => {
+  assert.equal(slotOf('fez'), 'cabeca');
+  assert.equal(slotOf('ie'), 'corpo');
+  assert.equal(slotOf('matriochka'), 'mao');
+  assert.equal(slotOf('catrina'), 'rosto');
+  const look = withOutfit(withOutfit(withOutfit(withOutfit([], 'fez'), 'ie'), 'matriochka'), 'catrina');
+  assert.deepEqual([...look].sort(), ['catrina', 'fez', 'ie', 'matriochka']);
+  assert.deepEqual([...withOutfit(look, 'ushanka')].sort(), ['catrina', 'ie', 'matriochka', 'ushanka']);
+  assert.deepEqual([...withOutfit(look, 'balalaica')].sort(), ['balalaica', 'catrina', 'fez', 'ie']);
+});
+
+test('visual: toda peça tem desenho (chapéus em LinuOutfit.tsx; o resto em LinuRoupas.tsx, na função do lugar)', () => {
+  const hats = readFileSync('src/components/LinuOutfit.tsx', 'utf8');
+  const rest = readFileSync('src/components/LinuRoupas.tsx', 'utf8');
+  // o corpo de cada função exportada de LinuRoupas.tsx
+  const fn = (name: string) => {
+    const start = rest.indexOf(`export function ${name}`);
+    const end = rest.indexOf('export function', start + 1);
+    return rest.slice(start, end < 0 ? undefined : end);
+  };
+  const where: Record<string, string> = { corpo: fn('BodyArt'), rosto: fn('FaceArt'), mao: fn('HeldArt') };
+  for (const o of ROUPAS_LINU) {
+    const src = o.slot ? where[o.slot] : hats;
+    assert.ok(src.includes(`case '${o.id}':`), `${o.id}: falta o desenho (${o.slot ?? 'cabeca'})`);
+  }
+});
+
+test('visual: as peças novas de um idioma vêm depois dos chapéus dele (quem já liberou um chapéu não o perde)', () => {
+  for (const code of new Set(ROUPAS_LINU.map((o) => o.lang).filter(Boolean))) {
+    const mine = ROUPAS_LINU.filter((o) => o.lang === code);
+    const firstExtra = mine.findIndex((o) => o.slot);
+    if (firstExtra >= 0) assert.ok(mine.slice(firstExtra).every((o) => o.slot), `${code}: chapéu depois de roupa muda a ordem das liberações`);
+  }
 });
