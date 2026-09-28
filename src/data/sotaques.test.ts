@@ -27,7 +27,9 @@ test('sotaques: russo com tônica marcada, espanhol com a ortografia da RAE', ()
     const texts = [a.summary, ...a.features, ...a.examples.flatMap(([t, , n]) => [t, n ?? '']), ...(a.words ?? []).flat()];
     for (const t of texts) assert.deepEqual(russianTextProblems(t), [], `${a.id}: ${t}`);
   }
+  // kind 'língua' não é espanhol (catalão, basco, galego…): a ortografia da RAE não se aplica
   for (const a of PACKS.es?.accents ?? []) {
+    if (a.kind === 'língua') continue;
     for (const [t] of a.examples) assert.deepEqual(spanishTextProblems(t), [], `${a.id}: ${t}`);
     for (const [w] of a.words ?? []) assert.deepEqual(spanishTextProblems(w), [], `${a.id}: ${w}`);
   }

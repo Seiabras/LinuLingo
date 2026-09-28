@@ -120,6 +120,21 @@ export const OWN_LANGUAGE_META: Record<string, OwnLanguageMeta> = {
   },
   'fr-kreyol-ayisyen': { family: 'Crioulo de base francesa', glottocodes: ['hait1244'], recognition: 'Oficial no Haiti, junto com o francês, desde a Constituição de 1987; é a língua materna de quase todos os haitianos.' },
   'fr-kreyol-antillais': { family: 'Crioulo de base francesa', recognition: 'Ensinado nas escolas da Martinica e de Guadalupe; na França, é uma língua regional, sem estatuto oficial.' },
+  'es-catalan': {
+    family: 'Indo-europeu › Itálico › Românico › Galo-românico › Occitano-românico',
+    glottocodes: ['stan1289'],
+    recognition: 'Cooficial na Catalunha (Estatuto de 1979), nas Ilhas Baleares (1983) e na Comunidade Valenciana (como valenciano, 1982), amparado pelo artigo 3º da Constituição espanhola de 1978.',
+  },
+  'es-basque': {
+    family: 'Isolada (sem parentes conhecidos)',
+    glottocodes: ['basq1248'],
+    recognition: 'Cooficial na Comunidade Autónoma do País Basco (Estatuto de Guernica, 1979) e na zona bascófona de Navarra (Lei do Vascuence, 1986), amparado pelo artigo 3º da Constituição espanhola de 1978.',
+  },
+  'es-galician': {
+    family: 'Indo-europeu › Itálico › Românico › Ibero-românico › Galaico-português',
+    glottocodes: ['gali1258'],
+    recognition: 'Cooficial em toda a Galícia desde o Estatuto de Autonomia de 1981 e a Lei de Normalização Linguística de 1983, amparado pelo artigo 3º da Constituição espanhola de 1978.',
+  },
   // as dos pacotes novos ficam em cada pasta (ja/linguas-meta.ts…)
   ...OWN_META_JA,
   ...OWN_META_KO,
