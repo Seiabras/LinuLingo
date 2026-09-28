@@ -4,8 +4,11 @@ import { AUDIO_RU } from './ru/audios';
 import { AUDIO_RU_EXTRA } from './ru/audios-extra';
 import { AUDIO_RO_EXTRA } from './ro/audios-extra';
 import { AUDIO_ES } from './es/audios';
+import { AUDIO_ES_EXTRA } from './es/audios-extra';
 import { AUDIO_IT } from './it/audios';
+import { AUDIO_IT_EXTRA } from './it/audios-extra';
 import { AUDIO_PT } from './pt/audios';
+import { AUDIO_PT_EXTRA } from './pt/audios-extra';
 import { AUDIO_SV } from './sv/audios';
 import { AUDIO_SV_EXTRA } from './sv/audios-extra';
 import { AUDIO_NB } from './nb/audios';
@@ -23,9 +26,9 @@ import { COMPARAR_SOTAQUES_RU, VOZES_SOTAQUES_RU } from './ru/vozes-sotaques';
 export const CLIPS: Record<string, Record<string, AudioClip>> = {
   ro: { ...AUDIO_RO_EXTRA, ...AUDIO_RO },
   ru: { ...AUDIO_RU_EXTRA, ...AUDIO_RU },
-  es: AUDIO_ES,
-  it: AUDIO_IT,
-  pt: AUDIO_PT,
+  es: { ...AUDIO_ES_EXTRA, ...AUDIO_ES },
+  it: { ...AUDIO_IT_EXTRA, ...AUDIO_IT },
+  pt: { ...AUDIO_PT_EXTRA, ...AUDIO_PT },
   sv: { ...AUDIO_SV_EXTRA, ...AUDIO_SV },
   nb: AUDIO_NB,
   da: AUDIO_DA,

@@ -67,7 +67,7 @@ export default function TutorialScreen() {
         ]
       : []),
     { mood: 'feliz', title: 'Gestos nos cartões', text: 'No sprint de 5 minutos e na revisão você desliza os cartões. Experimente com este:', extra: 'gestos' },
-    { mood: 'pensando', title: 'O cofre lembra por você', text: 'Cada palavra vai para o cofre de vocabulário. O app calcula (algoritmo SM-2) o dia certo de revisar: um pouco antes de você esquecer. Quando aparecer «revisar hoje», é a hora! Na aba Etimologia do cofre (e em «🌳 Palavras irmãs», em Mais práticas) você vê a árvore de cada raiz em várias línguas — noite, noche, notte, noapte, ночь, natt, night — e as que só parecem parentes, como «day» e «dia».' },
+    { mood: 'pensando', title: 'O cofre lembra por você', text: 'Cada palavra vai para o cofre de vocabulário — as concretas, com uma foto de verdade no lugar do emoji (do Wikimedia Commons, com o nome de quem fotografou). O app calcula (algoritmo SM-2) o dia certo de revisar: um pouco antes de você esquecer. Quando aparecer «revisar hoje», é a hora! Na aba Etimologia do cofre (e em «🌳 Palavras irmãs», em Mais práticas) você vê a árvore de cada raiz em várias línguas — noite, noche, notte, noapte, ночь, natt, night — e as que só parecem parentes, como «day» e «dia».' },
     { mood: 'comemorando', title: 'Ofensiva e meta do dia', text: 'Estudar todo dia mantém o fogo aceso:', extra: 'ofensiva' },
     { mood: 'pensando', title: 'Gramática e linguística', text: `Na aba Gramática há dois jeitos de estudar. «Por nível» traz os tópicos do A1.1 ao C2. «Por área da língua» é um curso de linguística: fonética, fonologia, morfologia, sintaxe, semântica, pragmática e estilística aplicadas ao ${nomeIdioma(pack.name)}, o quadro interativo do IPA, normas (códigos de línguas, transliteração, glosas, CEFR) e grandes temas, como as famílias de línguas.` },
     { mood: 'comemorando', title: 'Histórias com vários finais', text: `Nas Histórias você lê em ${nomeIdioma(pack.name)} e decide o que eu faço. Se escolher algo que mostra que não entendeu o texto, eu dou uma dica. Cada história tem mais de um final: tente achar todos! As leituras seguem o seu nível na trilha: as do seu subnível e as de baixo ficam abertas, a do nível seguinte é um desafio e as de cima abrem quando você chegar lá. Na aba «📰 Artigos» há textos curtos sobre a cultura de lá, do A1 ao C1, escritos só com as palavras do seu nível: as poucas novas vêm destacadas — toque para ver a tradução — e no fim há perguntas para ver se você entendeu.` },
@@ -271,7 +271,7 @@ function TrailLegend() {
 function StepsList() {
   const steps = [
     ['📜', 'Aprenda primeiro', 'cultura e regra'],
-    ['🖼️', 'Imersão', 'imagem + som, sem tradução'],
+    ['🖼️', 'Imersão', 'foto (ou emoji) + som, sem tradução'],
     ['✏️', 'Lacunas', 'complete a frase'],
     ['🎙️', 'Voz', 'responda falando'],
     ['👥', 'Comunidade', 'escreva para nativos (opcional)'],

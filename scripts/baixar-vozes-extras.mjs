@@ -89,11 +89,14 @@ if (existsSync(paresTs)) {
 // quem já tem gravação (do Lingua Libre ou desta coleção): não busca essas de novo
 const AUDIO_TS = `src/data/${lang}/audios.ts`;
 const EXTRA_TS = `src/data/${lang}/audios-extra.ts`;
-const already = new Set([
-  ...(existsSync(AUDIO_TS) ? [...readFileSync(AUDIO_TS, 'utf8').matchAll(/^\s*"((?:[^"\\]|\\.)*)": \{/gm)].map((m) => JSON.parse(`"${m[1]}"`)) : []),
-  ...(existsSync(EXTRA_TS) ? [...readFileSync(EXTRA_TS, 'utf8').matchAll(/^\s*"((?:[^"\\]|\\.)*)": \{/gm)].map((m) => JSON.parse(`"${m[1]}"`)) : []),
-]);
 const keyOf = (w) => w.normalize('NFC').toLowerCase().replace(/́/g, '').replace(/ё/g, 'е').replace(/ş/g, 'ș').replace(/ţ/g, 'ț');
+// as chaves dos arquivos têm a tônica do russo (челове́к): comparar sempre pela forma sem ela
+const already = new Set(
+  [
+    ...(existsSync(AUDIO_TS) ? [...readFileSync(AUDIO_TS, 'utf8').matchAll(/^\s*"((?:[^"\\]|\\.)*)": \{/gm)].map((m) => JSON.parse(`"${m[1]}"`)) : []),
+    ...(existsSync(EXTRA_TS) ? [...readFileSync(EXTRA_TS, 'utf8').matchAll(/^\s*"((?:[^"\\]|\\.)*)": \{/gm)].map((m) => JSON.parse(`"${m[1]}"`)) : []),
+  ].map(keyOf),
+);
 const missing = words.filter((w) => !already.has(keyOf(w)));
 console.log(`  ${missing.length} de ${words.length} palavras ainda sem gravação nenhuma`);
 if (!missing.length) process.exit(0);
@@ -120,13 +123,16 @@ if (!wanted.length) process.exit(0);
 const meta = new Map();
 for (let i = 0; i < wanted.length; i += 50) {
   const batch = wanted.slice(i, i + 50);
-  const d = await api({ action: 'query', prop: 'imageinfo', iiprop: 'url|extmetadata', iiextmetadatafilter: 'Artist|LicenseShortName|LicenseUrl', titles: batch.map((b) => b.title).join('|') });
+  const d = await api({ action: 'query', prop: 'imageinfo', iiprop: 'url|extmetadata|user', iiextmetadatafilter: 'Artist|Credit|LicenseShortName|LicenseUrl', titles: batch.map((b) => b.title).join('|') });
   for (const p of d.query.pages) {
     const ii = p.imageinfo?.[0];
     if (!ii) continue;
     const em = ii.extmetadata ?? {};
     const strip = (s) => (s ?? '').replace(/<[^>]+>/g, '').trim();
-    meta.set(p.title, { url: ii.url, page: ii.descriptionurl, author: strip(em.Artist?.value) || p.title, license: strip(em.LicenseShortName?.value), licenseUrl: strip(em.LicenseUrl?.value) });
+    // o autor: o campo Artist; nas gravações do projeto Shtooka ele vem vazio e o crédito fica em Credit;
+    // sem ficha nenhuma, quem gravou é quem enviou («Uploaded and recorded by…»)
+    const authorOf = (em, title) => strip(em.Artist?.value) || (/shtooka/i.test(em.Credit?.value ?? '') ? 'The Shtooka Project' : strip(em.Credit?.value)) || ii.user || title;
+    meta.set(p.title, { url: ii.url, page: ii.descriptionurl, author: authorOf(em, p.title), license: strip(em.LicenseShortName?.value), licenseUrl: strip(em.LicenseUrl?.value) });
   }
   await sleep(300);
 }

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { X } from 'lucide-react-native';
+import { WordImage } from '@/components/WordImage';
 import { SwipeCard, type SwipeDir } from './SwipeCard';
 import { Linu } from './Linu';
 import { Button, GENDER_LABEL, Chip, ProgressBar, Screen, SpeakButton, Ipa } from './ui';
@@ -161,7 +162,7 @@ export function DeckSession({
               onPress={() => setFlipped((f) => !f)}
               className="w-full items-center gap-3 pt-10"
             >
-              <Text style={{ fontSize: 88, lineHeight: 106 }}>{card.emoji ?? '🔤'}</Text>
+              <WordImage wordNative={card.word_native} emoji={card.emoji} size={120} credit={flipped} />
               <Text className="text-4xl font-extrabold text-slate-900 dark:text-white">{card.word_target}</Text>
               <Ipa text={card.word_target} className="text-base" />
               {g && card.gender && <Chip label={`${ROOMS[card.gender].emoji} ${g.label}`} tone={g.tone} />}

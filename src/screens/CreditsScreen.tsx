@@ -5,6 +5,7 @@ import { ArrowLeft } from 'lucide-react-native';
 import { Card } from '@/components/ui';
 import { allAccentVoices, allClips } from '@/data/audio-index';
 import { LINU_PHOTOS } from '@/data/fotos-linu';
+import { WORD_PHOTOS } from '@/data/fotos-palavras';
 import { playClip, speak } from '@/services/speech';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
@@ -29,13 +30,16 @@ export default function CreditsScreen() {
     ],
     [],
   );
+  // as fotos das palavras entram na mesma busca (🖼️), cada uma com o link do arquivo
+  const photos = useMemo(() => Object.entries(WORD_PHOTOS).map(([word, p]) => ({ lang: 'foto', word, clip: p, key: `foto-${word}`, place: null as string | null })), []);
   const authors = useMemo(() => {
     const m = new Map<string, number>();
     for (const c of clips) m.set(c.clip.author, (m.get(c.clip.author) ?? 0) + 1);
     return [...m.entries()].sort((a, b) => b[1] - a[1]);
   }, [clips]);
   const t = q.trim().toLowerCase();
-  const list = t ? clips.filter((c) => c.word.toLowerCase().includes(t) || c.clip.author.toLowerCase().includes(t) || c.place?.toLowerCase().includes(t)) : clips;
+  const all = useMemo(() => [...clips, ...photos], [clips, photos]);
+  const list = t ? all.filter((c) => c.word.toLowerCase().includes(t) || c.clip.author.toLowerCase().includes(t) || c.place?.toLowerCase().includes(t)) : all;
 
   const header = (
     <View className="gap-3 pb-3">
@@ -54,6 +58,9 @@ export default function CreditsScreen() {
         </Text>
         <Text className="text-sm text-slate-500 dark:text-slate-400">
           🗺️ Mapa: contornos do Natural Earth (domínio público). Países, territórios e subdivisões: listas ISO 3166-1, 3166-2 e 3166-3 com nomes em português do projeto iso-codes (LGPL-2.1).
+        </Text>
+        <Text className="text-sm text-slate-500 dark:text-slate-400">
+          🖼️ Fotos das palavras: {photos.length} fotos do Wikimedia Commons (a imagem principal do item de cada conceito no Wikidata), recortadas em quadrado, sob licenças livres (CC BY, CC BY-SA, CC0 ou domínio público). O autor e a licença aparecem embaixo da foto e na busca abaixo.
         </Text>
         <Text className="text-sm text-slate-500 dark:text-slate-400">
           📷 Fotos do pinguim-de-barbicha (Wikimedia Commons):{' '}
@@ -80,7 +87,7 @@ export default function CreditsScreen() {
       <TextInput
         value={q}
         onChangeText={setQ}
-        placeholder="Buscar palavra, autor ou lugar…"
+        placeholder="Buscar palavra, foto, autor ou lugar…"
         placeholderTextColor="#94A3B8"
         className="rounded-2xl border-2 border-slate-200 bg-white px-4 py-3 text-base text-slate-900 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
       />
@@ -99,8 +106,12 @@ export default function CreditsScreen() {
           ItemSeparatorComponent={() => <View className="h-1.5" />}
           renderItem={({ item }) => (
             <View className="flex-row items-center gap-3 rounded-xl bg-white px-3 py-2 dark:bg-slate-900">
-              <Pressable accessibilityLabel={`Ouvir ${item.word}`} onPress={() => (item.place ? playClip(item.clip.src) : speak(item.word, LOCALE[item.lang] ?? item.lang))} className="flex-1 flex-row items-center gap-3 active:opacity-70">
-                <Text className="text-lg">🔊</Text>
+              <Pressable
+                accessibilityLabel={item.lang === 'foto' ? `Foto: ${item.word}` : `Ouvir ${item.word}`}
+                onPress={() => (item.lang === 'foto' ? Linking.openURL(item.clip.page) : item.place ? playClip(item.clip.src) : speak(item.word, LOCALE[item.lang] ?? item.lang))}
+                className="flex-1 flex-row items-center gap-3 active:opacity-70"
+              >
+                <Text className="text-lg">{item.lang === 'foto' ? '🖼️' : '🔊'}</Text>
                 <View className="flex-1">
                   <Text className="font-bold text-slate-900 dark:text-white">{item.word}</Text>
                   <Text className="text-xs text-slate-500 dark:text-slate-400">

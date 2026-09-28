@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
+import { WordImage } from '@/components/WordImage';
 import type { VocabWithSRS } from '@/types';
 import { SwipeCard } from '../SwipeCard';
 import { Button, SpeakButton, Ipa } from '../ui';
@@ -85,7 +86,7 @@ export function ImmersionStep({ words, pool, locale, onDone }: { words: VocabWit
 
       <SwipeCard key={word.id} enabled={['direita']} onSwipe={() => next({ vocabId: word.id, quality: qualityFromAnswer(true, { knewAlready: true }), correct: true })}>
         <View className="items-center gap-3 rounded-3xl border-2 border-slate-200 bg-white py-8 dark:border-slate-700 dark:bg-slate-900">
-          <Text style={{ fontSize: 96, lineHeight: 116 }}>{word.emoji}</Text>
+          <WordImage wordNative={word.word_native} emoji={word.emoji} size={150} credit />
           <SpeakButton text={word.word_target} locale={locale} size={26} />
           {solved && <Ipa text={word.word_target} className="text-base" />}
         </View>
