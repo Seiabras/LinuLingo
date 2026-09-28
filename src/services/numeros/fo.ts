@@ -6,9 +6,13 @@
  *
  * 1, 2 e 3 mudam com o gênero: sozinhos, contando, são ein, tveir, trý; nas horas e nas contas,
  * neutros (klokkan er tvey, tvey og tvey eru fýra); antes de «hundrað» e «túsund» (neutros), eitt,
- * tvey, trý; antes de «milliónir» (feminino), tvær, tríggjar. Não concorda com o substantivo que
- * vem depois no texto (para isso seria preciso saber o gênero de cada palavra).
+ * tvey, trý; antes de «milliónir» (feminino), tvær, tríggjar. Antes de um substantivo, concorda com
+ * o gênero dele (tveir menn, tvær bøkur, tvey børn), que vem do vocabulário do feroês — a forma do
+ * dicionário, o genitivo e o plural anotados —, pulando um adjetivo no meio (tvær stórar bøkur).
+ * O caso não muda: depois de preposição que pede dativo (við tveimum) o número fica no nominativo.
  */
+import { ROWS } from '@/data/fo/vocabulario';
+
 type Gender = 'm' | 'f' | 'n' | 'contar';
 const SMALL: Record<Gender, string[]> = {
   m: ['', 'ein', 'tveir', 'tríggir'],
@@ -60,24 +64,104 @@ export function faroeseNumber(n: number, g: Gender = 'contar'): string {
   return join(parts);
 }
 
-/** Nas horas e nas contas o número vai no neutro: «klokkan 2» = klokkan tvey, «2 + 2» = tvey pluss tvey. */
+/** Formas que o vocabulário não anota, mas que vêm muito depois de um número. */
+const EXTRA: Record<string, Gender> = { ára: 'n', krónur: 'f', ferðir: 'f' };
+
+let genders: Map<string, Gender> | null = null;
+/** Forma do substantivo (minúscula) → gênero; formas de dois gêneros ficam de fora. */
+function genderMap(): Map<string, Gender> {
+  if (genders) return genders;
+  const seen = new Map<string, Gender | null>();
+  const add = (form: string, g: Gender) => {
+    const f = form.trim().toLowerCase();
+    if (!f || f.includes(' ')) return;
+    seen.set(f, seen.has(f) && seen.get(f) !== g ? null : g);
+  };
+  for (const row of ROWS) {
+    const g = row[6];
+    if (row[2] !== 'substantivo' || (g !== 'm' && g !== 'f' && g !== 'n')) continue;
+    add(row[0], g);
+    // «(gen. krónu, pl. krónur)», «(pl. neyt)»
+    for (const m of row[1].matchAll(/\b(?:gen|pl)\. ([^,;)]+)/g)) for (const alt of m[1].split('/')) add(alt, g);
+  }
+  genders = new Map([...seen].filter((e): e is [string, Gender] => e[1] !== null));
+  for (const [f, g] of Object.entries(EXTRA)) genders.set(f, g);
+  return genders;
+}
+
+/** O gênero do substantivo logo depois do número (ou depois de um adjetivo), se o vocabulário souber. */
+function nounGender(after: string): Gender | null {
+  const words = after.match(/^\s+([\p{L}]+)(?:\s+([\p{L}]+))?/u);
+  if (!words) return null;
+  const map = genderMap();
+  return map.get(words[1].toLowerCase()) ?? (words[2] ? map.get(words[2].toLowerCase()) : undefined) ?? null;
+}
+
+/**
+ * O gênero do número neste ponto do texto: nas horas e nas contas, neutro («klokkan 2» = klokkan
+ * tvey, «2 + 2» = tvey pluss tvey); antes de um substantivo, o dele; sozinho, o de contar.
+ */
 function genderAt(text: string, at: number, end: number): Gender {
   const before = text.slice(Math.max(0, at - 20), at);
-  const after = text.slice(end, end + 3);
-  return /(klokkan|kl\.)(\s+(er|var|verður))?\s*$/i.test(before) || /[+\-−=×*/]\s*$/.test(before) || /^\s*[+\-−=×*/]/.test(after) ? 'n' : 'contar';
+  const after = text.slice(end, end + 40);
+  if (/(klokkan|kl\.)(\s+(er|var|verður))?\s*$/i.test(before) || /[+\-−=×*/]\s*$/.test(before) || /^\s*[+\-−=×*/]/.test(after)) return 'n';
+  return nounGender(after) ?? 'contar';
+}
+
+/** Os meses: depois de «15.» vem a data, com o ordinal. */
+const MONTHS = /^\s+(januar|februar|mars|apríl|mai|juni|juli|august|september|oktober|november|desember)\b/i;
+
+/** Ordinais fracos (depois de «tann», nas datas e nos séculos): o radical, sem a terminação. */
+const ORD = ['', 'fyrst', 'annar', 'triðj', 'fjórð', 'fimt', 'sætt', 'sjeynd', 'áttand', 'níggjund', 'tíggjund', 'ellivt', 'tólvt', 'trettand', 'fjúrtand', 'fimtand', 'sekstand', 'seytjand', 'átjand', 'nítjand', 'tjúgund'];
+
+/**
+ * O ordinal fraco: masculino -i no nominativo (fyrsti), -a nos outros casos e no feminino e neutro
+ * (fyrsta); feminino -u fora do nominativo (í átjandu øld). «annar» é forte e irregular: nas datas,
+ * «annan». De 21 a 31 (as datas): a dezena e a unidade no ordinal, ligadas por «og».
+ */
+function ordinal(n: number, ending: 'i' | 'a' | 'u'): string {
+  if (n === 2) return ending === 'i' ? 'annar' : ending === 'u' ? 'aðru' : 'annan';
+  if (n === 3) return ending === 'i' ? 'triði' : `triðj${ending}`;
+  if (n <= 20) return ORD[n] + ending;
+  if (n === 30) return `tríatund${ending}`;
+  const tens = n < 30 ? 'tjúgund' : 'tríatund';
+  return `${tens}${ending} og ${ordinal(n % 10, ending)}`;
+}
+
+/** Os anos de 1100 a 1999 se leem em centenas: 1846 = átjan hundrað fýrati og seks. */
+function year(n: number): string {
+  const rest = n % 100;
+  const head = `${below100(Math.floor(n / 100), 'n')} hundrað`;
+  return rest ? join([head, below100(rest, 'contar')]) : head;
 }
 
 /**
  * Troca os números de um texto pelas palavras: «12 seyðir» → «tólv seyðir», «3,5» → «trý komma
- * fimm», «1.500» → «túsund og fimm hundrað». Números grandes demais ficam como estão.
+ * fimm», «1.500» → «túsund og fimm hundrað», «tann 29. juli» → «tann tjúgunda og níggjunda juli»,
+ * «í 16. øld» → «í sekstandu øld», «í 1846» → «í átjan hundrað fýrati og seks». Números colados a
+ * letras (V2, 3ª) e grandes demais ficam como estão.
  */
 export function spellFaroeseNumbers(text: string): string {
-  return text.replace(/\d{1,3}(?:\.\d{3})+(?!\d)|\d+(?:,\d+)?/g, (m, at: number) => {
-    const g = genderAt(text, at, at + m.length);
-    if (m.includes(',')) {
-      const [int, dec] = m.split(',');
-      return `${faroeseNumber(Number(int), g)} komma ${[...dec].map((d) => faroeseNumber(Number(d))).join(' ')}`;
+  return text.replace(/(?<![\p{L}\d.,])(?:\d{1,3}(?:\.\d{3})+(?![\d,])|\d+(?:,\d+)?)(\.(?=\s+\p{Ll}))?(?![\p{L}ªº°\d])/gu, (m, dot: string | undefined, at: number) => {
+    const num = dot ? m.slice(0, -1) : m;
+    const after = text.slice(at + m.length, at + m.length + 40);
+    // «15. juli», «16. øld»: ordinal
+    if (dot && /^\d{1,2}$/.test(num) && Number(num) >= 1 && Number(num) <= 31) {
+      const n = Number(num);
+      // «tann 28. og 29. juli»: o primeiro também é data
+      if (MONTHS.test(after) || MONTHS.test(after.replace(/^\s+og\s+\d{1,2}\./, ''))) return ordinal(n, 'a');
+      if (/^\s+øld\b/i.test(after)) return ordinal(n, 'u');
     }
-    return faroeseNumber(Number(m.replace(/\./g, '')), g);
+    const g = genderAt(text, at, at + num.length);
+    let out: string;
+    if (num.includes(',')) {
+      // com decimais, o número não concorda com o substantivo: trý komma fimm kilometrar
+      const [int, dec] = num.split(',');
+      out = `${faroeseNumber(Number(int), g === 'n' ? 'n' : 'contar')} komma ${[...dec].map((d) => faroeseNumber(Number(d))).join(' ')}`;
+    } else {
+      const n = Number(num.replace(/\./g, ''));
+      out = /^1[1-9]\d\d$/.test(num) ? year(n) : faroeseNumber(n, g);
+    }
+    return dot ? `${out}.` : out;
   });
 }

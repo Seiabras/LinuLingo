@@ -6,7 +6,7 @@ import { VOWEL_GROUPS } from './pitch';
 import { createAudioPlayer, type AudioPlayer } from 'expo-audio';
 import { clipFor } from '@/data/audio-index';
 import { pickVoice, type VoiceInfo } from './voice-pick';
-import { spellFaroeseNumbers } from './numeros-fo';
+import { spellNumbers } from './numeros';
 import { hasNeuralVoice, neuralCached, neuralFailed, speakNeural, stopNeural, synthesizeNeural, unlockAudio } from './neural-tts';
 
 export type { VoiceInfo };
@@ -178,8 +178,8 @@ function goodDeviceVoice(voice: VoiceInfo | null, locale: string): voice is Voic
  */
 export function forVoice(text: string, locale = ''): string {
   const plain = text.replace(/\u0301/g, '');
-  // a voz do feroês (MMS) só conhece letras: os números vão por extenso
-  return /^fo\b/i.test(locale) ? spellFaroeseNumbers(plain) : plain;
+  // números por extenso, concordando com o substantivo (e a voz do feroês só conhece letras)
+  return locale ? spellNumbers(plain, locale) : plain;
 }
 
 /** Cada fala nova invalida as anteriores (o plano B da voz do aparelho não fala fora de hora). */
