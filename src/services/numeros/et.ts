@@ -19,6 +19,7 @@
  * kolm koma viiskümmend; «5%» → viis protsenti; «45 000».
  */
 import { ROWS } from '@/data/et/vocabulario';
+import { clockWords, decimalWords, digitByDigit, minusSign, moneyWords } from './finicas';
 
 type Case = 'nom' | 'gen' | 'par' | 'ine' | 'ela' | 'ill' | 'ade' | 'abl' | 'all' | 'tra' | 'ter' | 'ess' | 'abe' | 'com';
 /** As terminações, sempre sobre o genitivo: kolme-s, kahe-le, viie-ga. */
@@ -86,8 +87,12 @@ export function estonianNumber(n: number, c: Case = 'nom'): string {
   return decline(parts(n), c);
 }
 
-/** Ordinal: só a última palavra vira ordinal (as outras no genitivo). estonianOrdinal(1918, 'ade') = «tuhande üheksasaja kaheksateistkümnendal». */
-export function estonianOrdinal(n: number, c: Case = 'nom'): string {
+/**
+ * Ordinal: só a última palavra vira ordinal (as outras no genitivo). estonianOrdinal(1918, 'ade') =
+ * «tuhande üheksasaja kaheksateistkümnendal»; no plural, o radical leva «-te»: estonianOrdinal(1980,
+ * 'ade', true) = «… kaheksakümnendatel» (1980. aastatel).
+ */
+export function estonianOrdinal(n: number, c: Case = 'nom', plural = false): string {
   if (!Number.isInteger(n) || n < 1 || n >= 1e9) return String(n);
   const ps = parts(n);
   const last = ps[ps.length - 1];
@@ -95,7 +100,10 @@ export function estonianOrdinal(n: number, c: Case = 'nom'): string {
   const [nom, stem] =
     last.unit === 1 ? ['esimene', 'esimese'] : last.unit === 2 ? ['teine', 'teise'] : last.unit === 3 ? ['kolmas', 'kolmanda'] : last.million ? ['miljones', 'miljonenda'] : [`${last.gen}s`, `${last.gen}nda`];
   const head = ps.slice(0, -1).map((p) => `${p.gen} `).join('');
-  if (c === 'nom' || c === 'par') return head + nom;
+  if (plural) return head + stem + (c === 'nom' ? 'd' : `te${ENDING[c] ?? ''}`);
+  if (c === 'nom') return head + nom;
+  // partitivo: esimest, teist, kolmandat, sajandat (3. raamatut → kolmandat raamatut)
+  if (c === 'par') return head + (last.unit === 1 ? 'esimest' : last.unit === 2 ? 'teist' : `${stem}t`);
   return head + stem + (ENDING[c] ?? '');
 }
 
@@ -111,6 +119,7 @@ const EXTRA: [string, string, string][] = [
   ['gramm', 'grammi', 'grammi'],
   ['dollar', 'dollari', 'dollarit'],
   ['kraad', 'kraadi', 'kraadi'],
+  ['raamat', 'raamatu', 'raamatut'],
 ];
 
 /** As formas do vocabulário (substantivos e adjetivos): «nädal (nädala, nädalat)». */
@@ -152,6 +161,15 @@ function caseOf(w: string, guess = false): Case | 'amb' | null {
   return null;
 }
 
+/** O caso de uma forma de plural (genitivo + «te»/«de», e a terminação): aastate, aastatel. */
+function pluralCase(w: string): Case | null {
+  const l = lex();
+  const plural = (stem: string) => /(te|de)$/.test(stem) && l.gen.has(stem.slice(0, -2));
+  if (plural(w)) return 'gen';
+  for (const [c, end] of SUFFIXES) if (w.endsWith(end) && plural(w.slice(0, -end.length))) return c;
+  return null;
+}
+
 /** Posposições que pedem o genitivo: kolme päeva pärast, kahe aasta jooksul, viie euro eest. */
 const POSTPOSITION =
   /^(pärast|jooksul|järel|eest|kaupa|võrra|ees|taga|tagant|juures|juurde|juurest|kohta|vältel|kestel|ajal|kaudu|abil|asemel|eel|paiku|vanune|vanuselt|pikkune|sees|sisse|seest)$/;
@@ -161,7 +179,7 @@ const NOT_NOUN = /^(hommikul|õhtul|päeval|öösel|suvel|talvel|kevadel|sügise
 const VERBISH = /^(on|oli|olid|ei|algab|algas|lõpeb|lõppes|tuleb|tuli|sai|saab|jääb|jäi|ja|ning|või)$/;
 
 /** O caso que o número toma pela palavra seguinte (ou a depois dela, pulando um adjetivo); null se não souber. */
-function nounCase(after: string, ordinal: boolean): Case | null {
+function nounCase(after: string, ordinal: boolean, before = ''): Case | null {
   const m = after.match(/^\s+(\p{Ll}+)(?:\s+(\p{Ll}+))?/u);
   if (!m || NOT_NOUN.test(m[1])) return null;
   let c = caseOf(m[1], true);
@@ -172,7 +190,9 @@ function nounCase(after: string, ordinal: boolean): Case | null {
     next = after.slice(m[0].length).match(/^\s+(\p{Ll}+)/u)?.[1];
   }
   if (c !== 'amb') return c;
+  // «üle 100 aasta», «alla 2 tunni»: preposições do genitivo
   if (next && POSTPOSITION.test(next)) return 'gen';
+  if (/(?:^|[^\p{L}])(üle|alla)\s+$/iu.test(before)) return 'gen';
   return ordinal && next && !VERBISH.test(next) ? 'gen' : 'nom';
 }
 
@@ -189,22 +209,26 @@ const SYMBOLS: Record<string, [string, string, string]> = {
   '£': ['nael', 'naela', 'naela'],
 };
 
-/** Os decimais: até dois algarismos (sem zero na frente), como número: 3,50 = kolm koma viiskümmend; senão, um a um. */
-function decimals(dec: string): string {
-  if (dec.length <= 2 && dec[0] !== '0') return estonianNumber(Number(dec));
-  return [...dec].map((d) => estonianNumber(Number(d))).join(' ');
-}
-
-/** «14.30» → neliteist kolmkümmend; «9.05» → üheksa null viis; «14.00» → neliteist. */
-function clock(h: number, min: string): string {
-  const m = Number(min);
-  return `${estonianNumber(h)}${m === 0 ? '' : min[0] === '0' ? ` null ${estonianNumber(m)}` : ` ${estonianNumber(m)}`}`;
-}
+const clock = (h: number, min: string) => clockWords(h, min, (x) => estonianNumber(x), 'null');
+/** Euros e dólares com centavos se leem como dinheiro. */
+const MONEY: Record<string, [string, string]> = { '€': ['euro', 'eurot'], $: ['dollar', 'dollarit'] };
 
 const MONTHS = ['', 'jaanuar', 'veebruar', 'märts', 'aprill', 'mai', 'juuni', 'juuli', 'august', 'september', 'oktoober', 'november', 'detsember'];
+/** O genitivo dos meses, onde entram as terminações: juuni-ni, märtsi-st. */
+const MONTHS_GEN = ['', 'jaanuari', 'veebruari', 'märtsi', 'aprilli', 'mai', 'juuni', 'juuli', 'augusti', 'septembri', 'oktoobri', 'novembri', 'detsembri'];
+
+/** O caso de uma data pelo que está em volta: «kuni 24.06.» / «24.06.-ni» → terminativo, «alates 6.12.» → elativo. */
+function dateCase(before: string, tail: string | undefined): Case {
+  const t = tail?.slice(1).toLowerCase();
+  const byTail = t ? SUFFIXES.find(([, e]) => e === t)?.[0] : undefined;
+  if (byTail) return byTail;
+  if (/(?:^|[^\p{L}])kuni\s+$/iu.test(before)) return 'ter';
+  if (/(?:^|[^\p{L}])alates\s+$/iu.test(before)) return 'ela';
+  return 'nom';
+}
 
 const NUMBER =
-  /(?<![\p{L}\d])([€$£]\s?)?(\d{1,2}\.\d{1,2}\.(?:\d{4}(?!\d))?|\d{1,2}[.:]\d{2}(?![\d,]|\.\d)|\d{1,3}(?:[   ]\d{3})+(?:,\d+)?(?![\d,])|\d+(?:,\d+)?)(\s?[%€$£])?(\.(?=\s+\p{Ll})|-\p{L}+)?(?![\p{L}\d])/gu;
+  /(?<![\p{L}\d])([€$£]\s?)?(\d{1,2}\.\d{1,2}\.(?:\d{4}(?!\d))?|\d{1,2}[.:]\d{2}(?![\d,]|\.\d)|\d{1,3}(?:[   ]\d{3})+(?:,\d+)?(?![\d,])|\d+(?:,\d+)?)(\s?[%€$£])?(\.(?=\s+\p{Ll}|–\d+\.\s+\p{Ll})|-\p{L}+)?(?![\p{L}\d])/gu;
 
 /**
  * Troca os números de um texto pelas palavras, no caso do substantivo que vem depois: «3 maja» →
@@ -214,7 +238,8 @@ const NUMBER =
  */
 export function spellEstonianNumbers(text: string): string {
   // intervalos: 1857–1861 → … kuni …
-  const src = text.replace(/(?<![\p{L}\d.,])(\d+)\s?[–—-]\s?(?=\d)/gu, '$1 kuni ');
+  const clean = digitByDigit(minusSign(text, 'miinus'), (x) => estonianNumber(x), /hädaabi\p{L}*(?:\s+on)?/u);
+  const src = clean.replace(/(?<![\p{L}\d.,])(\d+)\s?[–—-]\s?(?=\d)/gu, '$1 kuni ');
   return src.replace(NUMBER, (all, pre: string | undefined, num: string, sym: string | undefined, tail: string | undefined, at: number) => {
     const before = src.slice(Math.max(0, at - 30), at);
     const end = at + all.length;
@@ -229,6 +254,11 @@ export function spellEstonianNumbers(text: string): string {
       if (!clockBefore && d >= 1 && d <= 31 && mo >= 1 && mo <= 12) {
         // «6.12.» no fim da frase: o ponto da data também fecha a frase
         const stop = !date[3] && !/^\s+\p{Ll}/u.test(after) ? '.' : '';
+        const dc = date[3] ? 'nom' : dateCase(before, tail);
+        if (dc !== 'nom') {
+          // «kuni 24.06.» → kahekümne neljanda juunini; «alates 6.12.» → kuuendast detsembrist
+          return `${estonianOrdinal(d, LAST_ONLY.has(dc) ? 'gen' : dc)} ${MONTHS_GEN[mo]}${ENDING[dc] ?? ''}${tail ? '' : stop}`;
+        }
         return `${estonianOrdinal(d)} ${MONTHS[mo]}${date[3] ? ` ${estonianNumber(Number(date[3]))}` : ''}${tail ?? stop}`;
       }
       if (Number(date[2]) < 60 && date[2].length === 2 && !date[3]) return `${clock(d, date[2])}.${tail ?? ''}`;
@@ -241,9 +271,15 @@ export function spellEstonianNumbers(text: string): string {
     const n = Number(intPart);
     if (n >= 1e9) return all;
 
-    // com decimais, o número fica no nominativo e o símbolo no partitivo: kolm koma viis protsenti
     if (dec !== undefined) {
-      const words = `${estonianNumber(n)} koma ${decimals(dec)}`;
+      // 3,50 € → kolm eurot viiskümmend senti
+      const money = MONEY[(pre ?? sym ?? '').trim()];
+      if (money) return moneyWords(n, dec, (x) => estonianNumber(x), money, ['sent', 'senti']) + (tail ?? '');
+      // o decimal declina com o substantivo (2,5 tunniga → kahe koma viie tunniga), menos no
+      // partitivo; o símbolo vai no partitivo: kolm koma viis protsenti
+      const nc = symbol ? null : nounCase(after, false, before);
+      const dc: Case = !nc || nc === 'par' ? 'nom' : LAST_ONLY.has(nc) ? 'gen' : nc;
+      const words = `${estonianNumber(n, dc)} koma ${decimalWords(dec, (x) => estonianNumber(x, dc))}`;
       return symbol ? `${words} ${symbol[1]}${tail ?? ''}` : words + (tail ?? '');
     }
 
@@ -267,9 +303,22 @@ export function spellEstonianNumbers(text: string): string {
 
     // o ordinal concorda sempre (24. veebruaril); o cardinal, só se não for ano, hora ou rótulo
     const ordinal = tail === '.';
-    const c = !ordinal && FIXED_BEFORE.test(before) ? null : nounCase(after, ordinal);
+    // «1.–3. klassis»: o caso vem do substantivo depois do intervalo
+    const nounText = ordinal ? after.replace(/^–\d+\./, '') : after;
     // antes de um substantivo, o terminativo, o essivo, o abessivo e o comitativo pedem o genitivo
-    const numeralCase: Case = !c || c === 'par' ? 'nom' : LAST_ONLY.has(c) ? 'gen' : c;
-    return ordinal ? estonianOrdinal(n, numeralCase) : estonianNumber(n, numeralCase);
+    const attr = (c: Case): Case => (LAST_ONLY.has(c) ? 'gen' : c);
+    if (ordinal) {
+      // «1980. aastatel» → kaheksakümnendatel aastatel; «3. raamatut» → kolmandat raamatut
+      const first = nounText.match(/^\s+(\p{Ll}+)/u)?.[1];
+      const pc = first ? pluralCase(first) : null;
+      if (pc) return estonianOrdinal(n, attr(pc), true);
+      // só partitivo (raamatut, korda): o ordinal também (kolmandat raamatut, sajandat korda)
+      const l = lex();
+      if (first && l.par.has(first) && !l.nom.has(first) && !l.gen.has(first)) return estonianOrdinal(n, 'par');
+      const c = nounCase(nounText, true, before);
+      return estonianOrdinal(n, c ? attr(c) : 'nom');
+    }
+    const c = FIXED_BEFORE.test(before) ? null : nounCase(after, false, before);
+    return estonianNumber(n, !c || c === 'par' ? 'nom' : attr(c));
   });
 }
