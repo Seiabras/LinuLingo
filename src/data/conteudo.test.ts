@@ -129,7 +129,11 @@ test('ISO 3166-3: os 31 códigos oficiais e sucessores que existem no mapa', asy
 
 test('seletor agrupa por família e ramo', () => {
   const g = groupByLineage(LANGUAGES);
-  assert.deepEqual(Object.keys(g).sort(), ['Coreânico', 'Indo-europeu', 'Japônico', 'Urálico']);
+  assert.deepEqual(Object.keys(g).sort(), ['Afro-asiático', 'Austro-asiático', 'Austronésio', 'Coreânico', 'Dravídico', 'Indo-europeu', 'Japônico', 'Sino-tibetano', 'Túrquico', 'Urálico']);
+  assert.deepEqual(
+    g['Indo-europeu']['Indo-iraniano'].map((l) => l.code),
+    ['hi', 'bn', 'ur', 'mr'],
+  );
   assert.deepEqual(
     g['Indo-europeu']['Itálico'].map((l) => l.code),
     ['ro', 'es', 'it', 'pt', 'fr'],

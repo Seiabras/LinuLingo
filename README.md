@@ -29,6 +29,18 @@ As faixas que rolam para os lados (fotos, trilha de subníveis, idiomas e regiõ
 | 🇪🇪 Estoniano | Urálico › Fínico › Fínico meridional | em breve |
 | 🇯🇵 Japonês | Japônico | em breve |
 | 🇰🇷 Coreano | Coreânico | em breve |
+| 🇨🇳 Chinês mandarim | Sino-tibetano › Sinítico › Mandarim | em breve |
+| 🇮🇳 Híndi | Indo-europeu › Indo-iraniano › Indo-ariano › Indo-ariano central | em breve |
+| 🇸🇦 Árabe | Afro-asiático › Semítico › Semítico central | em breve |
+| 🇧🇩 Bengali | Indo-europeu › Indo-iraniano › Indo-ariano › Indo-ariano oriental | em breve |
+| 🇮🇩 Indonésio | Austronésio › Malaio-polinésio › Malaico | em breve |
+| 🇵🇰 Urdu | Indo-europeu › Indo-iraniano › Indo-ariano › Indo-ariano central | em breve |
+| 🇮🇳 Marati | Indo-europeu › Indo-iraniano › Indo-ariano › Indo-ariano meridional | em breve |
+| 🇻🇳 Vietnamita | Austro-asiático › Vietico › Viet-muong | em breve |
+| 🇮🇳 Télugo | Dravídico › Dravídico centro-meridional | em breve |
+| 🇹🇷 Turco | Túrquico › Oghuz | em breve |
+
+As maiores línguas da Ásia (mandarim, híndi, árabe, bengali, indonésio, urdu, japonês, marati, vietnamita, télugo e turco, pelo total de falantes no Ethnologue) já estão na lista; o russo, que também é falado na Ásia, já está no app.
 
 O seletor do Perfil agrupa os idiomas por família e ramo linguístico.
 
