@@ -419,6 +419,46 @@ export const CULTURA_PAISES: Record<string, CountryCulture> = {
     ],
     games: [{ emoji: '🔄', name: 'Kiiking', local: 'kiiking', fact: 'Um balanço que dá a volta completa de 360 graus, inventado na Estônia em 1996.' }],
   },
+  LTU: {
+    foods: [
+      { emoji: '🥟', name: 'Cepelinai', local: 'cepelinai', fact: 'Bolinhos grandes de massa de batata recheados de carne, servidos com creme azedo e torresmo; o nome vem do dirigível zepelim, pelo formato.' },
+      { emoji: '🍲', name: 'Sopa fria de beterraba', local: 'šaltibarščiai', fact: 'Rosa-choque, feita com kefir, beterraba, pepino e endro, e servida com batata quente ao lado: é o prato do verão.' },
+      { emoji: '🎂', name: 'Bolo-árvore', local: 'šakotis', fact: 'A massa é despejada aos poucos num espeto que gira diante do fogo, e escorre formando «galhos»; é o bolo de casamentos e festas.' },
+    ],
+    folklore: [
+      { emoji: '🐍', name: 'Eglė, a rainha das cobras', local: 'Eglė žalčių karalienė', fact: 'A moça que se casa com o rei-serpente Žilvinas; no fim, ela e os filhos viram árvores. É o conto mais conhecido do país.' },
+      { emoji: '🐺', name: 'O lobo de ferro', local: 'geležinis vilkas', fact: 'O grão-duque Gediminas sonhou com um lobo de ferro uivando num morro e ali fundou Vilnius, diz a lenda.' },
+    ],
+    dances: [
+      { emoji: '🎶', name: 'Sutartinės', local: 'sutartinės', fact: 'Cantos a várias vozes do nordeste do país, muitas vezes com passos em roda; as linhas se cruzam de propósito. Patrimônio da UNESCO desde 2010.' },
+      { emoji: '🎤', name: 'Festa da Canção', local: 'Dainų šventė', fact: 'Milhares de cantores e dançarinos juntos em Vilnius; a tradição das festas de canto dos países bálticos é patrimônio da UNESCO.' },
+    ],
+    plants: [
+      { emoji: '🌿', name: 'Arruda', local: 'rūta', fact: 'A planta nacional: a coroa de arruda era o sinal das moças solteiras e saía da cabeça da noiva no casamento.' },
+      { emoji: '🌳', name: 'Carvalho', local: 'ąžuolas', fact: 'A árvore de Perkūnas, o deus do trovão. O carvalho de Stelmužė tem idade estimada em mais de mil anos.' },
+    ],
+    games: [
+      { emoji: '🥚', name: 'Rolar ovos na Páscoa', local: 'kiaušinių ridenimas', fact: 'As crianças rolam os ovos pintados (margučiai) por uma rampinha de madeira: quem acerta o ovo de outro fica com ele.' },
+      { emoji: '🏀', name: 'Basquete', local: 'krepšinis', fact: 'Chamado de «a segunda religião» do país: a Lituânia foi campeã europeia em 1937 e 1939 e ganhou três bronzes olímpicos seguidos, de 1992 a 2000.' },
+    ],
+  },
+  LVA: {
+    foods: [
+      { emoji: '🥐', name: 'Pīrāgi', local: 'pīrāgi', fact: 'Pãezinhos em meia-lua recheados de toucinho e cebola, presença certa nas festas.' },
+      { emoji: '🧀', name: 'Queijo de Jāņi', local: 'Jāņu siers', fact: 'Queijo fresco com cominho, feito para a festa do solstício de verão; a forma redonda lembra o sol.' },
+      { emoji: '🍞', name: 'Pão de centeio', local: 'rupjmaize', fact: 'Escuro e denso; com as sobras se faz uma sobremesa, a «sopa de pão» (maizes zupa), com chantili.' },
+    ],
+    folklore: [
+      { emoji: '🐻', name: 'Lāčplēsis, o Matador de Ursos', local: 'Lāčplēsis', fact: 'O herói do épico de Andrejs Pumpurs (1888), com orelhas de urso que lhe davam a força; luta contra o Cavaleiro Negro.' },
+      { emoji: '🗄️', name: 'O armário das dainas', local: 'Dainu skapis', fact: 'Krišjānis Barons reuniu centenas de milhares de quadras folclóricas (dainas) num armário de fichas, hoje no registro Memória do Mundo da UNESCO.' },
+    ],
+    dances: [{ emoji: '🎤', name: 'Festa da Canção e da Dança', local: 'Dziesmu un deju svētki', fact: 'A cada cinco anos, dezenas de milhares cantam e dançam juntos em Riga; patrimônio da UNESCO, como nas vizinhas Estônia e Lituânia.' }],
+    plants: [
+      { emoji: '🌼', name: 'Margarida', local: 'pīpene', fact: 'A flor nacional da Letônia, dos prados de verão.' },
+      { emoji: '🌳', name: 'Carvalho e tília', local: 'ozols un liepa', fact: 'As árvores nacionais: o carvalho é o símbolo masculino, e a tília, o feminino.' },
+    ],
+    games: [{ emoji: '🔥', name: 'A noite de Jāņi', local: 'Jāņi', fact: 'No solstício de verão se pula a fogueira, se canta a noite toda e se procura a flor da samambaia, que só «floresceria» nessa noite.' }],
+  },
   JPN: {
     foods: [
       { emoji: '🍣', name: 'Sushi', local: '寿司', fact: 'A cozinha tradicional japonesa (washoku) é patrimônio da UNESCO desde 2013.' },
