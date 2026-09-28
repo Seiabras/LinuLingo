@@ -135,6 +135,12 @@ export const OWN_LANGUAGE_META: Record<string, OwnLanguageMeta> = {
     glottocodes: ['gali1258'],
     recognition: 'Cooficial em toda a Galícia desde o Estatuto de Autonomia de 1981 e a Lei de Normalização Linguística de 1983, amparado pelo artigo 3º da Constituição espanhola de 1978.',
   },
+  // o aranês é uma variedade do occitano (gascão), não do catalão: mesma família do fr-occitan, sem
+  // o grau de risco do Glottolog (a proteção oficial na Vall d'Aran não bate com «não ameaçado»)
+  'ca-aranes': {
+    family: 'Indo-europeu › Românico › Occitano-romance',
+    recognition: "Oficial em toda a Catalunha desde o Estatuto de Autonomia de 2006, ao lado do catalão e do castelhano; é a única variedade do occitano com esse grau de reconhecimento e a língua de ensino na Vall d'Aran.",
+  },
   // as dos pacotes novos ficam em cada pasta (ja/linguas-meta.ts…)
   ...OWN_META_JA,
   ...OWN_META_KO,

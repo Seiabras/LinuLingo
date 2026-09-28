@@ -5,6 +5,7 @@ import { RECURSOS_ES } from './es';
 import { RECURSOS_IT } from './it';
 import { RECURSOS_PT } from './pt';
 import { RECURSOS_FR } from './fr';
+import { RECURSOS_CA } from './ca';
 import { RECURSOS_SV } from './sv';
 import { RECURSOS_NB } from './nb';
 import { RECURSOS_DA } from './da';
@@ -40,6 +41,7 @@ export const RESOURCES: Record<string, LanguageResources> = {
   it: RECURSOS_IT,
   pt: RECURSOS_PT,
   fr: RECURSOS_FR,
+  ca: RECURSOS_CA,
   sv: RECURSOS_SV,
   nb: RECURSOS_NB,
   da: RECURSOS_DA,

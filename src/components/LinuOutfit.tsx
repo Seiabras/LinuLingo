@@ -223,6 +223,14 @@ export function OutfitArt({ id }: { id: string }) {
           <Circle cx="96" cy="53" r="3.5" fill="#1E3A8A" />
         </G>
       );
+    case 'barretina':
+      return (
+        <G>
+          {/* o gorro comprido de lã, vermelho, que cai dobrado para o lado */}
+          <Path d="M30 30 Q28 10 60 8 Q88 9 95 27 Q101 18 108 23 Q114 30 105 40 Q94 48 81 41 Q68 34 30 30 Z" fill="#B91C1C" />
+          <Path d="M28 28 Q60 20 96 28 L96 35 Q60 27 28 35 Z" fill="#7F1D1D" />
+        </G>
+      );
     case 'rutuvainikas':
       return (
         <G>

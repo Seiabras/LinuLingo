@@ -110,6 +110,12 @@ export function roomsFor(lang: string): Record<Gender, Room> {
       f: { ...ROOMS.f, rule: 'Feminino: quase todas em -tion/-sion (la nation), -té (la liberté), -ette (la fourchette), -ure (la voiture) e -ance/-ence. Mudam em relação ao português: la mer (o mar), la dent (o dente), la fin (o fim).' },
       n: ROOMS.n,
     };
+  if (lang === 'ca')
+    return {
+      m: { ...ROOMS.m, rule: 'Masculino: o catalão perdeu o -o final que marca o masculino no espanhol, no italiano e no português, então a maioria termina em consoante (el gat, el llop, el cel) ou numa vogal sem regra fixa (el cotxe, el dia, el mapa).' },
+      f: { ...ROOMS.f, rule: 'Feminino: quase todas em -a (la casa, la taula) e, diferente do português, as terminadas em -or: la calor, la olor, la suor — em português essas são masculinas.' },
+      n: ROOMS.n,
+    };
   if (lang === 'lt')
     return {
       m: { ...ROOMS.m, rule: 'Masculino: quase todos terminam em -as, -ys ou -us (namas, arklys, sūnus) e em -uo (vanduo, akmuo). Muitos em -is também (brolis, dantis).' },
@@ -194,6 +200,17 @@ const HETERO_IT: Record<string, string> = {
   lenzuolo: 'Masculino no singular (il lenzuolo) e, no par da cama, feminino: le lenzuola.',
 };
 
+/** Catalão: gênero diferente do português, sobretudo as palavras em -or (femininas em catalão). */
+const HETERO_CA: Record<string, string> = {
+  calor: 'Atenção: la calor é feminino (o calor).',
+  olor: "Atenção: la olor (ou l'olor) é feminino (o cheiro, o odor).",
+  suor: 'Atenção: la suor é feminino (o suor).',
+  pont: 'Atenção: el pont é masculino (a ponte).',
+  sang: 'Atenção: la sang é feminino (o sangue).',
+  dubte: 'Atenção: el dubte é masculino (a dúvida).',
+  deute: 'Atenção: el deute é masculino (a dívida).',
+};
+
 /** Texto do Linu na entrada do palácio. */
 export function palaceIntro(lang: string): string {
   if (lang === 'fi')
@@ -228,6 +245,8 @@ export function palaceIntro(lang: string): string {
     return 'Você já sabe os gêneros do português! Aqui o desafio são as palavras de Portugal que você ainda não usa: o autocarro, o comboio, a casa de banho, o ecrã, a bica, o pequeno-almoço. Guarde cada uma na sala certa!';
   if (lang === 'fr')
     return "O francês tem 2 gêneros, como o português, mas a terminação engana mais: -age é masculino (le fromage), -tion é feminino (la nation), e várias palavras trocam de gênero de uma língua para a outra: la mer, la dent, la fin, le lait. No plural, o artigo é «les» para os dois: por isso decore sempre com «le» ou «la» (ou «un», «une», quando vem «l'»). Guarde cada uma na sala certa!";
+  if (lang === 'ca')
+    return 'O catalão tem 2 gêneros, como o português, mas sem o -o final que ajuda a reconhecer o masculino no espanhol e no italiano: a maioria dos masculinos termina em consoante (el gat, el cel). E cuidado com as palavras em -or, como «la calor» e «la olor»: em catalão são femininas, ao contrário do português. Guarde cada uma na sala certa!';
   if (lang === 'lt')
     return 'O lituano tem 2 gêneros, masculino e feminino, e nenhum artigo. Quase sempre a terminação entrega: -as, -ys, -us masculino (namas), -a, -ė feminino (knyga, upė). O neutro sobrou só em adjetivos e pronomes (gera, gražu). Guarde cada palavra na sala certa!';
   if (lang === 'lv')
@@ -265,6 +284,13 @@ export function genderTip(word: string, gender: Gender, lang = 'ro'): string {
     if (gender === 'm' && /(ema|ama)$/.test(w)) return 'Palavra de origem grega em -ema/-ama: masculina, como o problema, o programa, o sistema.';
     if (w === 'ecrã') return 'O ecrã (a tela, no Brasil) é masculino: «o ecrã do telemóvel».';
     return roomsFor('pt')[gender].rule;
+  }
+  if (lang === 'ca') {
+    if (HETERO_CA[w]) return HETERO_CA[w];
+    if (w.endsWith('or') && gender === 'f') return 'Terminou em -or e é feminina: é o grupo de la calor, la olor, la suor, la resplendor — em português essas palavras são masculinas.';
+    if (w.endsWith('a') && gender === 'f') return 'Terminou em -a? Quase sempre feminino, como a maioria das línguas românicas: la casa, la taula.';
+    if (gender === 'm') return 'Masculino: o catalão não tem um -o final como pista, então decore a palavra junto com «el» ou «un».';
+    return roomsFor('ca')[gender].rule;
   }
   if (lang === 'lt') {
     if (w === 'dėdė' || w === 'tėtė') return 'Exceção: termina em -ė, mas é masculino porque designa um homem (dėdė = tio, tėtė = papai).';

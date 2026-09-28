@@ -8,6 +8,7 @@ import { SUECO } from './sv';
 import { NORUEGUES } from './nb';
 import { DINAMARQUES } from './da';
 import { FRANCES } from './fr';
+import { CATALAO } from './ca';
 import { ISLANDES } from './is';
 import { FINLANDES } from './fi';
 import { ESTONIANO } from './et';
@@ -17,7 +18,7 @@ import { JAPONES } from './ja';
 import { COREANO } from './ko';
 
 /** Idiomas com conteúdo pronto. */
-export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES, fr: FRANCES, is: ISLANDES, fi: FINLANDES, et: ESTONIANO, fo: FEROES, lt: LITUANO, ja: JAPONES, ko: COREANO };
+export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES, fr: FRANCES, ca: CATALAO, is: ISLANDES, fi: FINLANDES, et: ESTONIANO, fo: FEROES, lt: LITUANO, ja: JAPONES, ko: COREANO };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -27,6 +28,7 @@ export const LANGUAGES: LanguageInfo[] = [
   ITALIANO,
   PORTUGUES,
   FRANCES,
+  CATALAO,
   SUECO,
   NORUEGUES,
   DINAMARQUES,

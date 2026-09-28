@@ -3416,12 +3416,6 @@ export const STORIES_CA: StorySeed[] = [
         translation: 'O entardecer cai sobre a Serra de Tramuntana com uma luz dourada. Linu demonstrou um domínio excelente do artigo salat em contextos coloquiais e da formalidade em instituições mallorquinas.',
         ending: { tone: 'bom', title: 'Imersão mallorquina bem-sucedida!', message: 'Parabéns! Você dominou o uso do artigo salat balear (es, sa, ses, s\') e soube alternar entre os registros formal e coloquial em Mallorca!' },
       },
-      final_neutre: {
-        emoji: '⛰️',
-        text: 'Linu ha visitat la Serra de Tramuntana, però la barreja inadequada de registres ha creat moments de confusió amb els habitants locals.',
-        translation: 'Linu visitou a Serra de Tramuntana, mas a mistura inadequada de registros criou momentos de confusão com os moradores locais.',
-        ending: { tone: 'neutro', title: 'Visita incompleta', message: 'Você completou o percurso! Lembre-se de adequar o registro e usar o artigo salat com naturalidade ao falar com os moradores de Mallorca.' },
-      },
     },
   },
   {
@@ -3506,12 +3500,6 @@ export const STORIES_CA: StorySeed[] = [
         text: "El sol es pon sobre l'Albufera pintant el cel de taronja i roig. Linu ha demostrat una fluïdesa impecable en valencià, respectant les formes dialectals locals i adaptant el registre segons el context.",
         translation: 'O sol se põe sobre a Albufera pintando o céu de laranja e vermelho. Linu demonstrou uma fluidez impecável em valenciano, respeitando as formas dialetais locais e adaptando o registro segundo o contexto.',
         ending: { tone: 'bom', title: 'Vivência valenciana impecável!', message: 'Parabéns! Você utilizou com maestria o dialeto valenciano (jo parle, este/esta, la meua, eixir) alternando perfeitamente os registros formal e coloquial!' },
-      },
-      final_neutre: {
-        emoji: '🌾',
-        text: "Linu ha gaudit de l'Albufera, però no ha aconseguit adaptar el registre formal durant la ponència davant la Conselleria.",
-        translation: 'Linu aproveitou a Albufera, mas não conseguiu adaptar o registro formal durante a palestra diante da Secretaria.',
-        ending: { tone: 'neutro', title: 'Participação regular', message: 'Você completou a história! Siga praticando as formas dialetais do valenciano e os registros de linguagem para aprimorar seu nível C1.' },
       },
     },
   },
@@ -3685,12 +3673,6 @@ export const STORIES_CA: StorySeed[] = [
         translation: 'Linu conclui a pesquisa com uma visão clara. A combinação da nominalização, da passiva pronominal e das orações relativas com preposição permitiu-lhe analisar o feito de Narcís Monturiol com rigor acadêmico.',
         ending: { tone: 'bom', title: 'Conhecimento histórico rigoroso!', message: 'Parabéns! Você analisou a invenção do Ictíneo de Monturiol aplicando nominalização, passiva pronominal e relativas com preposição em catalão C1.2.' },
       },
-      final_neutre: {
-        emoji: '📄',
-        text: "Linu ha après els detalls de l'Ictíneo, però no ha aprofundit suficientment en les estructures gramaticals complexes del nivell C1.",
-        translation: 'Linu aprendeu os detalhes do Ictíneo, mas não aprofundou suficientemente nas estruturas gramaticais complexas do nível C1.',
-        ending: { tone: 'neutro', title: 'Estudo parcial', message: 'Você completou a jornada! Continue praticando as orações relativas com preposição e a nominalização em contextos científicos.' },
-      },
     },
   },
   {
@@ -3762,12 +3744,6 @@ export const STORIES_CA: StorySeed[] = [
         translation: 'Linu completa seu relatório sobre as colônias industriais têxteis. O uso preciso da nominalização, da passiva pronominal e das relativas complexas permite-lhe descrever este fenômeno patrimonial com elevado rigor formal.',
         ending: { tone: 'bom', title: 'Análise patrimonial de excelência!', message: 'Parabéns! Você dominou a história das colônias têxteis catalãs aplicando a gramática do nível C1.2 (nominalização, passiva pronominal e orações relativas com preposição)!' },
       },
-      final_neutre: {
-        emoji: '🏭',
-        text: 'Linu ha visitat les colònies, però no ha aplicat totes les estructures gramaticals requerides per a un nivell avançat.',
-        translation: 'Linu visitou as colônias, mas não aplicou todas as estruturas gramaticais requeridas para um nível avançado.',
-        ending: { tone: 'neutro', title: 'Visita incompleta', message: 'Você completou o percurso! Continue exercitando as orações relativas com preposição em textos de análise histórica.' },
-      },
     },
   },
   {
@@ -3838,12 +3814,6 @@ export const STORIES_CA: StorySeed[] = [
         text: "Linu finalitza la seva estada a l'Observatori Fabra. La seva capacitat d'articular oracions amb nominalització, passiva pronominal i pronoms relatius amb preposició reflecteix un nivell de català C1.2 brillant i rigorosament acadèmic.",
         translation: 'Linu finaliza sua estadia no Observatório Fabra. Sua capacidade de articular orações com nominalização, passiva pronominal e pronomes relativos com preposição reflete um nível de catalão C1.2 brilhante e rigorosamente acadêmico.',
         ending: { tone: 'bom', title: 'Seminário científico concluído!', message: 'Parabéns! Você vivenciou a ciência no Observatori Fabra aplicando com maestria nominalizações, passiva pronominal e relativas complexas em catalão C1.2!' },
-      },
-      final_neutre: {
-        emoji: '🔭',
-        text: 'Linu ha gaudit de les estrelles des del Tibidabo, però el seu registre escrit no ha mostrat la complexitat gramatical d\'un nivell C1 avançat.',
-        translation: 'Linu aproveitou as estrelas a partir do Tibidabo, mas seu registro escrito não mostrou a complexidade gramatical de um nível C1 avançado.',
-        ending: { tone: 'neutro', title: 'Sessão parcial', message: 'Você completou a história! Siga praticando a nominalização e as orações relativas com preposição para consolidar seu nível C1.2.' },
       },
     },
   },
@@ -3924,12 +3894,6 @@ export const STORIES_CA: StorySeed[] = [
         translation: 'Linu fechou o volume de Joanot Martorell com profunda admiração. O uso impecável do passado simples e a riqueza do registro clássico demonstram um domínio absoluto do catalão literário de nível C2.',
         ending: { tone: 'bom', title: 'Obra-prima da literatura catalã!', message: 'Parabéns! Você recriou a atmosfera literária do Tirant lo Blanc utilizando o passat simple e o estilo literário erudito do nível C2.' },
       },
-      final_neutre: {
-        emoji: '📖',
-        text: "Linu llegí el Tirant lo Blanc, però la seva redacció barrejà passats perifràstics i simples sense mantenir la coherència de l'estil clàssic.",
-        translation: 'Linu leu o Tirant lo Blanc, mas sua redação misturou passados perifrásticos e simples sem manter a coerência do estilo clássico.',
-        ending: { tone: 'neutro', title: 'Texto incompleto', message: 'Você completou a leitura! Lembre-se de manter a uniformidade do perfet simple (passat simple) nos textos de registro literário formal C2.' },
-      },
     },
   },
   {
@@ -3995,12 +3959,6 @@ export const STORIES_CA: StorySeed[] = [
         translation: 'Linu redigiu uma página de alta prosa literária sobre o mito do Canigó. O uso consistente do passado simples e o estilo elevado honram o legado de Jacint Verdaguer e o nível C2.',
         ending: { tone: 'bom', title: 'Épica literária pirenaica!', message: 'Parabéns! Você recriou o mito do Canigó com mestria gramatical, utilizando o perfet simple e a prosa literária de nível C2.' },
       },
-      final_neutre: {
-        emoji: '🏔️',
-        text: 'Linu coronà el Canigó, però la seva memòria escrita no emprà el passat simple de manera uniforme.',
-        translation: 'Linu coroou o Canigó, mas seu relatório escrito não empregou o passado simples de maneira uniforme.',
-        ending: { tone: 'neutro', title: 'Relato parcial', message: 'Você completou a ascensão! Continue praticando o perfet simple (passat simple) para dominar a prosa literária catalã.' },
-      },
     },
   },
   {
@@ -4065,12 +4023,6 @@ export const STORIES_CA: StorySeed[] = [
         text: 'Linu conclogué la seva crònica sobre Montblanc i la llegenda de Sant Jordi. L\'ús magistral del perfet simple (arribà, fou, atemorí, caigué, clavà, nasqué, lliurà) reflecteix l\'excel·lència en la prosa narrativa de nivell C2.',
         translation: 'Linu concluiu sua crônica sobre Montblanc e a lenda de Sant Jordi. O uso magistral do passado simples reflete a excelência na prosa narrativa de nível C2.',
         ending: { tone: 'bom', title: 'Lenda imortal de Montblanc!', message: 'Parabéns! Você narrou a lenda de Sant Jordi em Montblanc dominando o perfet simple e a elegância literária em catalão C2!' },
-      },
-      final_neutre: {
-        emoji: '🏰',
-        text: 'Linu va visitar Montblanc, però la seva narració no emprà el perfet simple amb el rigor literari exigit en el nivell C2.',
-        translation: 'Linu visitou Montblanc, mas sua narrativa não empregou o passado simples com o rigor literário exigido no nível C2.',
-        ending: { tone: 'neutro', title: 'Crônica incompleta', message: 'Você completou a história! Siga praticando o perfet simple e o estilo literário erudito para consolidar o nível C2.' },
       },
     },
   },
