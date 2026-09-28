@@ -344,7 +344,7 @@ export const CULTURA_PAISES: Record<string, CountryCulture> = {
     ],
     folklore: [
       { emoji: '🪨', name: 'O povo oculto', local: 'huldufólk', fact: 'Elfos que moram nas pedras: já houve obra de estrada desviada para não mexer numa pedra de elfos.' },
-      { emoji: '🎅', name: 'Os 13 jólasveinar', local: 'jólasveinar', fact: 'Os Papais Noéis islandeses, filhos da giganta Grýla, com o Gato de Natal.' },
+      { emoji: '🎅', name: 'Os 13 jólasveinar', local: 'jólasveinar', fact: 'Os «rapazes do Natal»: trolls brincalhões, filhos da giganta Grýla, que descem das montanhas um por noite, com o Gato de Natal.' },
     ],
     dances: [{ emoji: '💃', name: 'Vikivaki', local: 'vikivaki', fact: 'Antiga dança de roda com cantos, que a Igreja chegou a proibir.' }],
     plants: [

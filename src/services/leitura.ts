@@ -69,9 +69,9 @@ const SUFFIXES: Record<string, string[]> = {
   fr: ['s', 'x', 'e', 'es', 'ent', 'ons', 'ez', 'é', 'ée', 'és', 'ées', 'ait', 'ais', 'aient', 'ai', 'a'],
   da: ['en', 'et', 'e', 'er', 'ene', 'erne', 'ne', 'rne', 's', 't', 'te', 'de', 'ede', 'ere', 'est', 'n', 'r', 'ens', 'ets'],
   // os casos e o artigo definido colado no fim (hús → húsið, húsinu, hússins)
-  is: ['inn', 'in', 'ið', 'inu', 'ins', 'num', 'ina', 'nir', 'nar', 'nna', 'anna', 'unum', 'um', 's', 'a', 'i', 'u', 'ar', 'ir', 'ur', 'r', 't', 'ta', 'ð', 'na', 'ri', 'ra', 'rar'],
+  is: ['inn', 'in', 'ið', 'inu', 'ins', 'inum', 'unni', 'innar', 'num', 'ina', 'nir', 'nar', 'nna', 'anna', 'unum', 'um', 's', 'a', 'i', 'u', 'ar', 'ir', 'ur', 'r', 't', 'ta', 'ð', 'na', 'ri', 'ra', 'rar'],
   // os casos e os possessivos (talo → talossa, talosta, taloon, taloni)
-  fi: ['n', 'a', 'ä', 'an', 'än', 'en', 'on', 'in', 'un', 'yn', 'seen', 'ta', 'tä', 'ssa', 'ssä', 'sta', 'stä', 'lla', 'llä', 'lta', 'ltä', 'lle', 'ksi', 'na', 'nä', 't', 'ni', 'si', 'nsa', 'nsä', 'mme', 'nne', 'kin', 'ko', 'kö', 'han', 'hän', 'ssaan', 'ssään', 'staan', 'stään', 'lleen', 'ineen'],
+  fi: ['n', 'a', 'ä', 'an', 'än', 'en', 'on', 'ön', 'in', 'un', 'yn', 'seen', 'ta', 'tä', 'ssa', 'ssä', 'sta', 'stä', 'lla', 'llä', 'lta', 'ltä', 'lle', 'ksi', 'na', 'nä', 't', 'ni', 'si', 'nsa', 'nsä', 'mme', 'nne', 'kin', 'ko', 'kö', 'han', 'hän', 'ssaan', 'ssään', 'staan', 'stään', 'lleen', 'ineen'],
 };
 
 export const fold = (s: string) =>

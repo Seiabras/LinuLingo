@@ -9,11 +9,11 @@ export const ARTIGOS_IS: ArticleSeed[] = [
     emoji: '🌭',
     paragraphs: [
       'Pylsa er mjög vinsæll matur á Íslandi. Margir borða pylsu „með öllu“: með lauk, tómatsósu og sinnepi.',
-      'Pylsan er ódýr og góð. Maður kaupir pylsu í búð og borðar hana þar.',
+      'Pylsan er ódýr og góð. Maður kaupir pylsu í sjoppu og borðar hana þar.',
     ],
     translation: [
       'O cachorro-quente é uma comida muito popular na Islândia. Muita gente come o cachorro-quente «com tudo»: com cebola, ketchup e mostarda.',
-      'O cachorro-quente é barato e bom. A gente compra o cachorro-quente numa loja e come ali mesmo.',
+      'O cachorro-quente é barato e bom. A gente compra o cachorro-quente num quiosque e come ali mesmo.',
     ],
     glossary: [
       ['öllu', 'tudo (em «með öllu», com tudo)'],
@@ -21,6 +21,7 @@ export const ARTIGOS_IS: ArticleSeed[] = [
       ['tómatsósu', 'ketchup'],
       ['sinnepi', 'mostarda'],
       ['ódýr', 'barato'],
+      ['sjoppu', 'quiosque, lanchonete (de «sjoppa»)'],
     ],
     questions: [
       { q: 'O que quer dizer «pylsa með öllu»?', options: ['Cachorro-quente com tudo', 'Cachorro-quente sem nada', 'Peixe com batata'], answer: 0 },
@@ -62,23 +63,23 @@ export const ARTIGOS_IS: ArticleSeed[] = [
     title: 'Jólasveinarnir þrettán',
     emoji: '🎅',
     paragraphs: [
-      'Á Íslandi eru jólasveinarnir ekki einn, heldur þrettán. Þeir búa uppi í fjöllunum hjá Grýlu, sem borðar óþekk börn.',
-      'Í desember kemur einn jólasveinn á dag. Börnin setja skó út í gluggann og fá nammi eða eitthvað lítið í hann ef þau hafa verið góð. Ef þau hafa verið óþekk fá þau kartöflu.',
+      'Á Íslandi er ekki einn jólasveinn, heldur þrettán. Þeir búa uppi í fjöllunum hjá Grýlu, sem étur óþekk börn.',
+      'Í desember kemur einn jólasveinn á dag. Börnin setja skóinn út í glugga og fá nammi eða eitthvað lítið í hann ef þau hafa verið góð. Ef þau hafa verið óþekk fá þau kartöflu.',
       'Jólasveinarnir heita skemmtilegum nöfnum: Stúfur er minnstur, Hurðaskellir skellir hurðum, Gluggagægir horfir inn um glugga og Kertasníkir stelur kertum.',
       'Og svo er það jólakötturinn: hann étur börn sem fá ekkert nýtt til að fara í fyrir jólin.',
     ],
     translation: [
-      'Na Islândia, os Papais Noéis («jólasveinar») não são um, e sim treze. Eles moram lá em cima nas montanhas, com a Grýla, que come crianças malcriadas.',
-      'Em dezembro, chega um Papai Noel por dia. As crianças põem um sapato na janela e ganham doce ou alguma coisinha nele se foram boazinhas. Se foram malcriadas, ganham uma batata.',
-      'Os Papais Noéis têm nomes divertidos: Stúfur é o menor, Hurðaskellir bate as portas, Gluggagægir espia pelas janelas e Kertasníkir rouba velas.',
-      'E ainda tem o Gato de Natal («jólakötturinn»): ele devora as crianças que não ganham nada novo para vestir no Natal.',
+      'Na Islândia, não há um «jólasveinn» (rapaz do Natal), e sim treze: uns trolls brincalhões, e não Papais Noéis. Eles moram lá em cima nas montanhas, com a Grýla, que devora crianças malcriadas.',
+      'Em dezembro, chega um jólasveinn por dia. As crianças põem um sapato na janela e ganham doce ou alguma coisinha nele se foram boazinhas. Se foram malcriadas, ganham uma batata.',
+      'Os jólasveinar têm nomes divertidos: Stúfur é o menor, Hurðaskellir bate as portas, Gluggagægir espia pelas janelas e Kertasníkir rouba velas.',
+      'E ainda tem o Gato de Natal («jólakötturinn»): ele devora as crianças que não ganham nada novo para vestir antes do Natal.',
     ],
     glossary: [
-      ['jólasveinarnir / jólasveinn', 'os Papais Noéis / Papai Noel'],
+      ['jólasveinarnir / jólasveinn', 'os rapazes do Natal / o rapaz do Natal (os «Papais Noéis» islandeses)'],
       ['fjöllunum', 'as montanhas'],
       ['óþekk', 'malcriadas, desobedientes'],
       ['desember', 'dezembro'],
-      ['skó', 'sapato'],
+      ['skóinn', 'o sapato'],
       ['kertum', 'velas'],
       ['jólakötturinn', 'o Gato de Natal'],
       ['jólin', 'o Natal'],
@@ -95,9 +96,9 @@ export const ARTIGOS_IS: ArticleSeed[] = [
       ['nýtt', 'nýr'],
     ],
     questions: [
-      { q: 'Quantos Papais Noéis há na Islândia?', options: ['Um', 'Treze', 'Vinte e quatro'], answer: 1 },
+      { q: 'Quantos jólasveinar há na Islândia?', options: ['Um', 'Treze', 'Vinte e quatro'], answer: 1 },
       { q: 'O que ganha a criança malcriada no sapato?', options: ['Um presente', 'Uma batata', 'Nada, nem o sapato'], answer: 1 },
-      { q: 'Quem o Gato de Natal devora?', options: ['Quem não ganha nada novo para vestir no Natal', 'Quem come muito doce', 'Os Papais Noéis'], answer: 0 },
+      { q: 'Quem o Gato de Natal devora?', options: ['Quem não ganha nada novo para vestir antes do Natal', 'Quem come muito doce', 'Os jólasveinar'], answer: 0 },
     ],
   },
   {

@@ -63,11 +63,11 @@ export const ARTIGOS_FI: ArticleSeed[] = [
     paragraphs: [
       'Muumit ovat valkoisia, pyöreitä olentoja, jotka muistuttavat vähän virtahepoja. Ne asuvat Muumilaaksossa yhdessä ystäviensä kanssa.',
       'Muumit keksi Tove Jansson, suomalainen taiteilija ja kirjailija. Hän kirjoitti kirjansa ruotsiksi, koska hänen äidinkielensä oli ruotsi. Suomessa ruotsi on toinen virallinen kieli.',
-      'Ensimmäinen Muumi-kirja ilmestyi vuonna 1945, heti sodan jälkeen. Tänään Muumit tunnetaan kaikkialla maailmassa, ja Naantalissa on Muumimaailma, jossa lapset voivat tavata Muumipeikon.',
+      'Ensimmäinen Muumi-kirja ilmestyi vuonna 1945, heti sodan jälkeen. Nykyään Muumit tunnetaan kaikkialla maailmassa, ja Naantalissa on Muumimaailma, jossa lapset voivat tavata Muumipeikon.',
     ],
     translation: [
       'Os Mumins são criaturas brancas e redondas que lembram um pouco hipopótamos. Eles moram no Vale dos Mumins com os amigos.',
-      'Quem inventou os Mumins foi Tove Jansson, artista e escritora finlandesa. Ela escreveu os livros em sueco, porque a língua materna dela era o sueco. Na Finlândia, o sueco é a segunda língua oficial.',
+      'Quem inventou os Mumins foi Tove Jansson, artista e escritora finlandesa. Ela escreveu os livros em sueco, porque a língua materna dela era o sueco. Na Finlândia, o sueco é a outra língua oficial, com os mesmos direitos do finlandês.',
       'O primeiro livro dos Mumins saiu em 1945, logo depois da guerra. Hoje os Mumins são conhecidos no mundo inteiro, e em Naantali existe o Mundo dos Mumins, onde as crianças podem conhecer o Mumintroll.',
     ],
     glossary: [
@@ -76,6 +76,7 @@ export const ARTIGOS_FI: ArticleSeed[] = [
       ['kirjailija', 'escritor, escritora'],
       ['äidinkielensä', 'a língua materna dela'],
       ['maailmassa', 'no mundo'],
+      ['nykyään', 'hoje em dia'],
     ],
     forms: [['sodan', 'sota']],
     questions: [
@@ -118,7 +119,7 @@ export const ARTIGOS_FI: ArticleSeed[] = [
     emoji: '✒️',
     paragraphs: [
       'Mikael Agricolaa kutsutaan suomen kirjakielen isäksi. Hän opiskeli Wittenbergissä Martti Lutherin johdolla, ja reformaation mukaisesti hän halusi, että kansa voisi lukea Raamattua omalla kielellään.',
-      'Vuonna 1543 ilmestyi hänen aapisensa, ensimmäinen suomeksi painettu kirja, ja vuonna 1548 Uusi testamentti. Koska yhteistä kirjakieltä ei vielä ollut, Agricola joutui keksimään paljon sanoja itse, ja osa niistä on käytössä yhä. Kirjoitusasun hän otti ruotsista, saksasta ja latinasta.',
+      'Vuonna 1543 ilmestyi hänen aapisensa, ensimmäinen suomeksi painettu kirja, ja vuonna 1548 Uusi testamentti. Koska yhteistä kirjakieltä ei vielä ollut, Agricola joutui keksimään paljon sanoja itse, ja osa niistä on yhä käytössä. Kirjoitusasun hän otti ruotsista, saksasta ja latinasta.',
       'Nykyään Agricolan kuolinpäivää, 9. huhtikuuta, vietetään suomen kielen päivänä, ja silloin liputetaan.',
     ],
     translation: [
@@ -127,7 +128,7 @@ export const ARTIGOS_FI: ArticleSeed[] = [
       'Hoje, o dia da morte de Agricola, 9 de abril, é comemorado como o Dia da Língua Finlandesa, e nesse dia se hasteia a bandeira.',
     ],
     glossary: [
-      ['reformaation', 'a Reforma (protestante)'],
+      ['reformaation', 'da Reforma protestante (genitivo de «reformaatio»)'],
       ['aapisensa', 'a cartilha dele (de «aapinen»)'],
       ['kirjoitusasun', 'a forma escrita, a ortografia'],
       ['kuolinpäivää', 'o dia da morte'],
