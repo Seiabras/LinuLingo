@@ -2416,4 +2416,916 @@ export const STORIES_CA: StorySeed[] = [
       },
     },
   },
+  // ───────────────────────── B2.2 ─────────────────────────
+  {
+    id: 'ca-h28',
+    level: 'B2.2',
+    cefr: 'B2',
+    title: "L'entrevista de feina",
+    emoji: '💼',
+    summary: 'Linu participa de uma entrevista de emprego formal em uma empresa de inovação no distrito 22@ em Barcelona.',
+    cultural_context: "O distrito 22@ Barcelona, criado no ano 2000 no histórico bairro industrial do Poblenou, é o principal polo de tecnologia e inovação da Catalunha. Em entrevistas de emprego formais em empresas catalãs, utiliza-se estritamente o tratamento de cortesia «vostè» e é comum valorizar certificados do Consorci per a la Normalització Lingüística (CPNL).",
+    start: 'start',
+    glossary: [
+      ["l'entrevista de feina", 'a entrevista de emprego'],
+      ['el districte de la innovació', 'o distrito de inovação'],
+      ['el tractament de vostè', 'o tratamento formal (senhor/senhora/você formal)'],
+      ['la carta de presentació', 'a carta de apresentação'],
+      ['el procés de selecció', 'o processo de seleção'],
+      ['els recursos humans', 'os recursos humanos'],
+      ['el contracte laboral', 'o contrato de trabalho'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🏢',
+        text: "Linu arriba a l'edifici MediaTIC, al districte 22@ de Barcelona, per a una entrevista de feina. A la cartellera es publiquen moltes ofertes per a professionals qualificats. A la recepció, Linu dubta sobre com adreçar-se al personal.",
+        translation: 'Linu chega ao edifício MediaTIC, no distrito 22@ de Barcelona, para uma entrevista de emprego. No mural publicam-se muitas ofertas para profissionais qualificados. Na recepção, Linu hesita sobre como se dirigir à equipe.',
+        choices: [
+          {
+            text: "«Bon dia. Vostè em pot indicar on es fa l'entrevista de selecció?»",
+            translation: '«Bom dia. O senhor/A senhora pode me indicar onde é feita a entrevista de seleção?»',
+            next: 'recepcio',
+          },
+          {
+            text: '«Epa, tu! Com va això? On és el cap per parlar un moment?»',
+            translation: '«E aí, cara! Como vão as coisas? Onde está o chefe pra conversar um pouco?»',
+            wrong: 'Em um ambiente profissional formal na Catalunha, usa-se o tratamento de «vostè». O uso de linguagem demasiadamente informal («tu / epa») na recepção é inadequado.',
+          },
+        ],
+      },
+      recepcio: {
+        emoji: '🛋️',
+        text: "La recepcionista li indica la sala d'espera: «Es prega que vostè s'assegui un moment. Se li demana que tingui preparat el seu currículum i la carta de presentació». Linu revisa la seva documentació.",
+        translation: 'A recepcionista lhe indica a sala de espera: «Pede-se que o senhor se sente um momento. Solicita-se que tenha preparado o seu currículo e a carta de apresentação». Linu revisa sua documentação.',
+        choices: [
+          { text: 'Comprovar els documents i esperar pacientment que es cridi el seu nom.', translation: 'Checar os documentos e esperar pacientemente que chamem seu nome.', next: 'despatx' },
+          {
+            text: "Marxar a fer un cafè fora de l'edifici sense avisar ningú.",
+            translation: 'Sair para tomar um café fora do prédio sem avisar ninguém.',
+            wrong: 'Se você se ausentar da sala de espera após ser solicitado a aguardar, perderá a vez no processo seletivo.',
+          },
+        ],
+      },
+      despatx: {
+        emoji: '🤝',
+        text: "El director de recursos humans el rep al seu despatx: «Sigui benvingut, senyor Linu. A la nostra empresa es valora molt el domini lingüístic. Es requereix que vostè ens expliqui quines tasques es van realitzar en el seu darrer projecte».",
+        translation: 'O diretor de recursos humanos o recebe em sua sala: «Seja bem-vindo, senhor Linu. Em nossa empresa valoriza-se muito o domínio linguístico. Requer-se que o senhor nos explique quais tarefas foram realizadas em seu último projeto».',
+        choices: [
+          { text: '«Es van organitzar tallers culturals i es van redactar informes oficials en català.»', translation: '«Organizaram-se oficinas culturais e redigiram-se relatórios oficiais em catalão.»', next: 'demostració' },
+          { text: '«Es va fer poca cosa perquè no em gaire agradava treballar al matí.»', translation: '«Fez-se pouca coisa porque eu não gostava muito de trabalhar de manhã.»', next: 'pregunta_formal' },
+        ],
+      },
+      demostració: {
+        emoji: '📝',
+        text: "El director nodreix l'entrevista: «A la nostra corporació es demana una comunicació impecable. Com es redacta una notificació si vostè ha de convocar una reunió d'urgència?».",
+        translation: 'O diretor aprofunda a entrevista: «Em nossa corporação pede-se uma comunicação impecável. Como se redige uma notificação se o senhor precisa convocar uma reunião de emergência?».',
+        choices: [
+          { text: '«S\'utilitza l\'encapçalament formal «Benvolguts senyors» i s\'empra la passiva pronominal.»', translation: '«Utiliza-se o cabeçalho formal «Prezados senhores» e emprega-se a passiva pronominal.»', next: 'carta_presentacio' },
+          {
+            text: '«S\'envia un missatge dient «Hola a tothom, veniu ara mateix!» sense fórmules de cortesia.»',
+            translation: '«Envia-se uma mensagem dizendo «Olá a todos, venham agora mesmo!» sem fórmulas de cortesia.»',
+            wrong: 'Nas comunicações empresariais formais na Catalunha, exigem-se fórmulas de cortesia e estrutura corporativa adequada.',
+          },
+        ],
+      },
+      pregunta_formal: {
+        emoji: '📊',
+        text: 'El director li fa una altra pregunta: «Com es van gestionar els recursos econòmics en la seva etapa anterior? Es van auditar els comptes degudament?».',
+        translation: 'O diretor lhe faz outra pergunta: «Como se geriram os recursos financeiros em sua etapa anterior? Auditaram-se as contas devidamente?».',
+        choices: [
+          { text: '«Es van aprovar els comptes anuals i es va presentar un balanç equilibrat a la direcció.»', translation: '«Aprovaram-se as contas anuais e apresentou-se um balanço equilibrado à diretoria.»', next: 'carta_presentacio' },
+          {
+            text: '«No ho sé, els diners es van gastar sense cap control ni registre.»',
+            translation: '«Não sei, o dinheiro foi gasto sem nenhum controle nem registro.»',
+            wrong: 'Admitir descontrole financeiro demonstra falta de responsabilidade em uma entrevista de nível profissional.',
+          },
+        ],
+      },
+      carta_presentacio: {
+        emoji: '📜',
+        text: 'El director mostra la seva satisfacció: «Es veu clarament que vostè té una excel·lent formació. Se li demana una darrera verificació: disposa vostè del certificat oficial de llengua?».',
+        translation: 'O diretor mostra sua satisfação: «Vê-se claramente que o senhor tem uma excelente formação. Solicita-se uma última verificação: o senhor dispõe do certificado oficial de língua?».',
+        choices: [
+          { text: 'Mostrar el certificat acreditat pel Consorci per a la Normalització Lingüística.', translation: 'Mostrar o certificado acreditado pelo Consorci per a la Normalització Lingüística.', next: 'proposta' },
+          { text: 'Dir que els títols oficials no serveixen de res en el món laboral.', translation: 'Dizer que os títulos oficiais não servem para nada no mundo do trabalho.', next: 'final_neutre' },
+        ],
+      },
+      proposta: {
+        emoji: '📑',
+        text: "El director somriu i estén la mà: «Se li ofereix la plaça de coordinació de projectes. Es signarà el contracte demà mateix si vostè hi està d'acord».",
+        translation: 'O diretor sorri e estende a mão: «Ofertam-lhe a vaga de coordenação de projetos. Assinar-se-á o contrato amanhã mesmo se o senhor estiver de acordo».',
+        choices: [
+          { text: '«Li agraeixo profundament aquesta oportunitat, senyor director. Resto a la seva disposició.»', translation: '«Agradeço-lhe profundamente esta oportunidade, senhor diretor. Fico à sua disposição.»', next: 'final_bom' },
+          { text: '«D\'acord, però ara mateix es va a canviar la meva jornada per treballar només dos dies.»', translation: '«De acordo, mas agora mesmo vai-se mudar minha jornada para trabalhar só dois dias.»', next: 'final_neutre' },
+        ],
+      },
+      final_bom: {
+        emoji: '🎉',
+        text: 'Linu signa el seu contracte laboral al districte 22@. La seva actitud formal i el domini de la passiva pronominal i del registre de cortesia li han obert les portes del món professional a Barcelona.',
+        translation: 'Linu assina seu contrato de trabalho no distrito 22@. Sua atitude formal e o domínio da passiva pronominal e do registro de cortesia abriram-lhe as portas do mundo profissional em Barcelona.',
+        ending: { tone: 'bom', title: 'Contratação de sucesso!', message: 'Parabéns! Você conquistou a vaga corporativa utilizando com precisão o registro formal com «vostè» e as estruturas da voz passiva pronominal em catalão.' },
+      },
+      final_neutre: {
+        emoji: '📋',
+        text: "Linu rep una oferta només per a una substitució temporal. Tot i que es van valorar els seus coneixements, l'actitud no va ser del tot constant durant l'entrevista.",
+        translation: 'Linu recebe uma oferta apenas para uma substituição temporária. Embora tenham sido valorizados seus conhecimentos, a atitude não foi totalmente constante durante a entrevista.',
+        ending: { tone: 'neutro', title: 'Vaga temporária', message: 'Você completou a entrevista e obteve uma oportunidade temporária. Continue praticando o registro formal e as formas passivas pronominais para alcançar cargos de liderança!' },
+      },
+    },
+  },
+  {
+    id: 'ca-h29',
+    level: 'B2.2',
+    cefr: 'B2',
+    title: "Una queixa a l'Ajuntament",
+    emoji: '🏛️',
+    summary: "Linu comparece à Oficina d'Atenció Ciutadana para registrar uma queixa formal sobre a manutenção do parque do seu bairro.",
+    cultural_context: "Na Catalunha, o atendimento presencial e administrativo aos cidadãos centraliza-se na OAC (Oficina d'Atenció Ciutadana) de cada Ajuntament. Para apresentar petições ou reclamações formais, utiliza-se o procedimento da «instància genèrica», um requerimento público em que se expõem os fatos e se solicita formalmente a intervenção municipal.",
+    start: 'start',
+    glossary: [
+      ["l'Oficina d'Atenció Ciutadana (OAC)", 'o escritório de atendimento ao cidadão'],
+      ['la instància genèrica', 'o requerimento formal genérico'],
+      ["el número d'expedient", 'o número de processo / protocolo'],
+      ['el registre d\'entrada', 'o protocolo de entrada'],
+      ['el manteniment urbà', 'a manutenção urbana'],
+      ['el comprovant', 'o comprovante'],
+      ['la Sindicatura de Greuges', 'a ouvidoria pública de defesa do cidadão'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🏦',
+        text: "Linu entra a l'Oficina d'Atenció Ciutadana (OAC) de l'Ajuntament. Al parc del seu barri es van trobar bancs trencats i no es va recollir la brossa durant dies. Linu vol obrir un procediment administratiu oficial.",
+        translation: 'Linu entra na Oficina d\'Atenció Ciutadana (OAC) da Prefeitura. No parque do seu bairro encontraram-se bancos quebrados e não se recolheu o lixo durante dias. Linu quer abrir um procedimento administrativo oficial.',
+        choices: [
+          { text: "Solicitar el torn d'atenció i adreçar-se al funcionari amb tractament formal.", translation: 'Solicitar a senha de atendimento e dirigir-se ao funcionário com tratamento formal.', next: 'oac_entrada' },
+          {
+            text: "Cridar al mig del vestíbul dient que l'alcalde ha de dimitir immediatament.",
+            translation: 'Gritar no meio do saguão dizendo que o prefeito deve renunciar imediatamente.',
+            wrong: 'Nos órgãos públicos municipais deve-se manter o respeito e seguir os canais administrativos institucionais. Gritar no saguão não gera nenhum registro oficial.',
+          },
+        ],
+      },
+      oac_entrada: {
+        emoji: '🗂️',
+        text: "El funcionari de la finestra li diu: «Bon dia, senyor Linu. Si vostè vol registrar una queixa formal, es requereix omplir el formulari d'instància genèrica». Linu agafa el document.",
+        translation: 'O funcionário do guichê lhe diz: «Bom dia, senhor Linu. Se o senhor quer registrar uma queixa formal, requer-se preencher o formulário de requerimento genérico». Linu pega o documento.',
+        choices: [
+          { text: '«Li agrairia que vostè m\'indiqués quines seccions s\'han de completar.»', translation: '«Agradeceria se o senhor me indicasse quais seções devem ser completadas.»', next: 'taula_atencio' },
+          {
+            text: 'Escriure la reclamació en un grapat de xiclets i enganxar-lo al tauler.',
+            translation: 'Escrever a reclamação em um punhado de chicletes e colá-lo no painel.',
+            wrong: 'Para que uma petição tenha validade jurídica perante o município, exige-se o preenchimento da instància genèrica em formato oficial.',
+          },
+        ],
+      },
+      taula_atencio: {
+        emoji: '📄',
+        text: 'El funcionari li explica la primera part: «A la secció Exposo, es descriuen els fets de manera objectiva. Es van detectar altres danys a la zona verda del barri?».',
+        translation: 'O funcionário lhe explica a primeira parte: «Na seção Exponho, descrevem-se os fatos de maneira objetiva. Detectaram-se outros danos na área verde do bairro?».',
+        choices: [
+          { text: '«Es van malmetre les tanques protectores i no es van reparar els fanals principals.»', translation: '«Danificaram-se as cercas protetoras e não se repararam os postes de luz principais.»', next: 'instancia_form' },
+          {
+            text: 'Inventar-se que es van veure alienígenes destruint els arbres del parc.',
+            translation: 'Inventar que se viram alienígenas destruindo as árvores do parque.',
+            wrong: 'Os documentos públicos administrativos exigem veracidade dos fatos; informações falsas provocam o arquivamento imediato do processo.',
+          },
+        ],
+      },
+      instancia_form: {
+        emoji: '🖋️',
+        text: "El funcionari continua: «Ara passem a la secció Sol·licito. Quines mesures es demanen exactament als serveis municipals per part de vostè?». Linu redacta la secció.",
+        translation: 'O funcionário continua: «Agora passamos à seção Solicito. Quais medidas se pedem exatamente aos serviços municipais por parte do senhor?». Linu redige a seção.',
+        choices: [
+          { text: '«Sol·licito que es revisi l\'estat del parc i es programin les obres de manteniment.»', translation: '«Solicito que se revise o estado do parque e se programem as obras de manutenção.»', next: 'redaccio_instancia' },
+          {
+            text: 'Redactar amenaces directes contra el personal de neteja de la ciutat.',
+            translation: 'Redigir ameaças diretas contra a equipe de limpeza da cidade.',
+            wrong: 'Ameaças em documentos oficiais configuram infração grave e invalidam a tramitação do requerimento.',
+          },
+        ],
+      },
+      redaccio_instancia: {
+        emoji: '✉️',
+        text: 'La instància està gairebé enllestida. El funcionari li indica: «Es recomana concloure el text amb una fórmula de comiat adient. Com prefereix tancar la carta formal vostè?».',
+        translation: 'O requerimento está quase pronto. O funcionário lhe indica: «Recomenda-se concluir o texto com uma fórmula de despedida adequada. Como prefere encerrar a carta formal o senhor?».',
+        choices: [
+          { text: '«Atentament, resta a la seva disposició, Linu» i signar la llista.', translation: 'Redigir: «Atenciosamente, fica à sua disposição, Linu» e assinar a lista.', next: 'registre_entrada' },
+          { text: '«Apa, adéu!» i deixar la instància sense data ni signatura.', translation: 'Encerrar com um «Tchau, até mais!» e deixar o requerimento sem data nem assinatura.', next: 'entrevista_tecnic' },
+        ],
+      },
+      registre_entrada: {
+        emoji: '🏷️',
+        text: "El funcionari posa el segell oficial: «Es tramita la sol·licitud amb el número d'expedient 4052. Es va enviar una còpia al departament d'Urbanisme i Medi Ambient». Linu rep el comprovant.",
+        translation: 'O funcionário coloca o selo oficial: «Tramita-se a solicitação com o número de processo 4052. Enviou-se uma cópia ao departamento de Urbanismo e Meio Ambiente». Linu recebe o comprovante.',
+        choices: [
+          { text: '«Li agraeixo molt l\'atenció, senyor funcionari. Guardaré el número de registre.»', translation: '«Agradeço-lhe muito a atenção, senhor funcionário. Guardarei o número de protocolo.»', next: 'entrevista_tecnic' },
+          { text: 'Llençar el comprovant de registre a la brossa de la sortida.', translation: 'Jogar o comprovante de protocolo no lixo da saída.', next: 'final_neutre' },
+        ],
+      },
+      entrevista_tecnic: {
+        emoji: '📬',
+        text: "Al cap de tres setmanes, Linu rep una notificació oficial de l'Ajuntament: «Se l'informa que es van aprovar les obres i es va contractar un equip de reparació per al parc».",
+        translation: 'Três semanas depois, Linu recebe uma notificação oficial da Prefeitura: «Informa-se-lhe que se aprovaram as obras e se contratou uma equipe de reparo para o parque».',
+        choices: [
+          { text: 'Anar al parc per comprovar que es van executar els treballs adequadament.', translation: 'Ir ao parque para comprovar que se executaram os trabalhos adequadamente.', next: 'final_bom' },
+          { text: 'Ignorar la notificació municipal i no tornar a visitar la zona verda.', translation: 'Ignorar a notificação municipal e não voltar a visitar a área verde.', next: 'final_neutre' },
+        ],
+      },
+      final_bom: {
+        emoji: '🌳',
+        text: "Linu comprova que es van renovar els bancs i es van reparar les tanques del parc. Els veïns gaudeixen de l'espai gràcies a una instància genèrica redactada impecablement en registre formal.",
+        translation: 'Linu comprova que se renovaram os bancos e se repararam as cercas do parque. Os moradores desfrutam do espaço graças a um requerimento genérico redigido impecavelmente em registro formal.',
+        ending: { tone: 'bom', title: 'Cidadania e manutenção ativa!', message: 'Excelente! Você concluiu a tramitação administrativa com sucesso, utilizando corretamente o requerimento formal, o tratamento com «vostè» e as estruturas passivas pronominais.' },
+      },
+      final_neutre: {
+        emoji: '📄',
+        text: "Les obres del parc es van dur a terme, però Linu no va conservar el comprovant del registre d'entrada, per la qual cosa no va poder fer el seguiment directe de l'expedient.",
+        translation: 'As obras do parque foram realizadas, mas Linu não conservou o comprovante do protocolo de entrada, motivo pelo qual não pôde fazer o acompanhamento direto do processo.',
+        ending: { tone: 'neutro', title: 'Tramitação concluída', message: 'Você completou o processo na prefeitura! Lembre-se de sempre guardar os comprovantes com o número de expediente e praticar o registro formal em catalão.' },
+      },
+    },
+  },
+  {
+    id: 'ca-h30',
+    level: 'B2.2',
+    cefr: 'B2',
+    title: 'El Museu Dalí de Figueres',
+    emoji: '🎨',
+    summary: 'Linu explora o Teatre-Museu Dalí em Figueres durante uma visita guiada formal para descobrir o universo do surrealismo.',
+    cultural_context: 'O Teatre-Museu Dalí em Figueres, inaugurado em 1974 sobre as ruínas do antigo Teatro Municipal destruído na Guerra Civil, é considerado o maior objeto surrealista do mundo. Projetado pelo próprio Salvador Dalí, abriga a famosa cúpula geodésica transparente desenhada por Emilio Pérez Piñero e a cripta onde repousam os restos do artista.',
+    start: 'start',
+    glossary: [
+      ['el Teatre-Museu Dalí', 'o Teatro-Museu Dalí'],
+      ['la cúpula geodèsica', 'a cúpula geodésica'],
+      ['el Cadillac plujós', 'o Cadillac chuvoso (instalação de Dalí)'],
+      ['la visita guiada', 'a visita guiada'],
+      ['la Sala Mae West', 'a Sala Mae West'],
+      ['la cripta subterrània', 'a cripta subterrânea'],
+      ['el surrealisme', 'o surrealismo'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🏛️',
+        text: "Linu arriba a Figueres per visitar el Teatre-Museu Dalí. Aquest recinte es va construir sobre l'antic teatre municipal. Un cartell a l'entrada recorda les normes: «Es prega que vostès mantinguin el silenci i no utilitzin flaix».",
+        translation: 'Linu chega a Figueres para visitar o Teatro-Museu Dalí. Este recinto construiu-se sobre o antigo teatro municipal. Um cartaz na entrada recorda as normas: «Pede-se que os senhores mantenham o silêncio e não utilizem flash».',
+        choices: [
+          { text: 'Comprar l\'entrada i adreçar-se al guia formalment: «Bon dia, com es distribueix la ruta?»', translation: 'Comprar o ingresso e dirigir-se ao guia formalmente: «Bom dia, como se distribui a rota?»', next: 'entrada_museu' },
+          {
+            text: 'Encendre un flaix fotogràfic potent davant del primer quadre de la sala.',
+            translation: 'Acender um flash fotográfico potente diante do primeiro quadro da sala.',
+            wrong: 'Proíbe-se estritamente o uso de flash no museu para proteger as pinturas originais. Pede-se respeitar as normas de conservação patrimonial.',
+          },
+        ],
+      },
+      entrada_museu: {
+        emoji: '🎟️',
+        text: 'El guia de la institució es presenta: «Siguin benvinguts, estimats visitants. En aquest museu es conserven obres de totes les etapes de Salvador Dalí. Si vostès em segueixen, observarem el pati central».',
+        translation: 'O guia da instituição se apresenta: «Sejam bem-vindos, caros visitantes. Neste museu conservam-se obras de todas as etapas de Salvador Dalí. Se os senhores me seguirem, observaremos o pátio central».',
+        choices: [
+          { text: "Seguir el guia amb atenció i observar l'arquitectura del pati.", translation: 'Seguir o guia com atenção e observar a arquitetura do pátio.', next: 'patio_cadillac' },
+          {
+            text: 'Ratllar la muralla del museu amb un llapis de colors.',
+            translation: 'Riscar a parede do museu com um lápis de cor.',
+            wrong: 'Riscar ou danificar as instalações de um museu é um ato de vandalismo punido por lei. Deve-se preservar o patrimônio cultural.',
+          },
+        ],
+      },
+      patio_cadillac: {
+        emoji: '🚘',
+        text: 'Al pati central es troba el monument del «Cadillac plujós». El guia explica: «Si vostès observen el vehicle, es veu com plou a l\'interior quan s\'introdueix una moneda. Aquesta instal·lació es va concebre per impactar el públic».',
+        translation: 'No pátio central encontra-se o monumento do «Cadillac chuvoso». O guia explica: «Se os senhores observarem o veículo, vê-se como chove no interior quando se introduz uma moeda. Esta instalação concebeu-se para impactar o público».',
+        choices: [
+          { text: '«Senyor guia, com es va dissenyar la columna de pneumàtics que hi ha a sobre del cotxe?»', translation: '«Senhor guia, como se projetou a coluna de pneus que há em cima do carro?»', next: 'cupula_geodesica' },
+          {
+            text: 'Pujar al sostre del Cadillac per fer una foto estrambòtica.',
+            translation: 'Subir no teto do Cadillac para tirar uma foto extravagante.',
+            wrong: 'A instalação artística é uma peça de museu frágil e histórica. Subir nas esculturas é estritamente proibido.',
+          },
+        ],
+      },
+      cupula_geodesica: {
+        emoji: '🌐',
+        text: 'El grup s\'atura sota la gran cúpula geodèsica. El guia comenta: «Aquesta estructura reticular va ser construïda el 1973 per l\'arquitecte Emilio Pérez Piñero. Es considera la icona urbana de Figueres. Li preguem, senyor Linu, que mireu el teló de fons».',
+        translation: 'O grupo para sob a grande cúpula geodésica. O guia comenta: «Esta estrutura reticular foi construída em 1973 pelo arquiteto Emilio Pérez Piñero. Considera-se o ícone urbano de Figueres. Pedimos-lhe, senhor Linu, que olhe o telão ao fundo».',
+        choices: [
+          { text: "Contemplar l'enorme escenari teatral i formular una pregunta en registre formal.", translation: 'Contemplar o enorme cenário teatral e formular uma pergunta em registro formal.', next: 'sala_mae_west' },
+          {
+            text: "Intentar escalar l'estructura de la cúpula per tocar el vidre superior.",
+            translation: 'Tentar escalar a estrutura da cúpula para tocar o vidro superior.',
+            wrong: 'Escalar a cúpula põe em risco a segurança do visitante e a integridade do edifício histórico.',
+          },
+        ],
+      },
+      sala_mae_west: {
+        emoji: '🛋️',
+        text: 'A la Sala Mae West, el guia mostra com es van combinar diferents mobles: «Aquí es va transformar el rostre d\'una actriu en un apartament. Si vostès pugen per l\'escala i miren per la lent, es veu la il·lusió òptica completa».',
+        translation: 'Na Sala Mae West, o guia mostra como se combinaram diferentes móveis: «Aqui transformou-se o rosto de uma atriz em um apartamento. Se os senhores subirem pela escada e olharem pela lente, vê-se a ilusão ótica completa».',
+        choices: [
+          { text: 'Pujar l\'escala amb ordre i admirar com es forma la cara femenina.', translation: 'Subir a escada com ordem e admirar como se forma a imagem da face feminina.', next: 'cripta_dali' },
+          {
+            text: "Asseure's al sofà en forma de llavis vermells saltant-se la corda de protecció.",
+            translation: 'Sentar-se no sofá em forma de lábios vermelhos ultrapassando a corda de proteção.',
+            wrong: 'O sofá-lábios é uma obra de exposição original. Não é permitido sentar-se nas peças do acervo.',
+          },
+        ],
+      },
+      cripta_dali: {
+        emoji: '🕯️',
+        text: 'El guia condueix el grup a la cripta: «En aquest espai subterrani es va sepultar el cos de Salvador Dalí el 1989. Es manté un ambient de màxim respecte. Li agraïm a vostè el seu silenci».',
+        translation: 'O guia conduz o grupo à cripta: «Neste espaço subterrâneo sepultou-se o corpo de Salvador Dalí em 1989. Mantém-se um ambiente de máximo respeito. Agradecemos ao senhor o seu silêncio».',
+        choices: [
+          { text: 'Guardar un silenci de respecte davant de la làpida del mestre surrealista.', translation: 'Guardar um silêncio de respeito diante da lápide do mestre surrealista.', next: 'pregunta_guia' },
+          { text: "Posar-se a cantar cançons pop a ple pulmó dins de la cripta.", translation: 'Começar a cantar canções pop a plenos pulmões dentro da cripta.', next: 'final_neutre' },
+        ],
+      },
+      pregunta_guia: {
+        emoji: '🗣️',
+        text: 'En acabar la ruta, Linu s\'acosta al guia: «Senyor guia, es va trigar molts anys a completar tot el museu?». El guia respon satisfet: «Se sap que Dalí hi va treballar durant més d\'una dècada».',
+        translation: 'Ao encerrar a rota, Linu aproxima-se do guia: «Senhor guia, demorou-se muitos anos para completar todo o museu?». O guia responde satisfeito: «Sabe-se que Dalí trabalhou nele durante mais de uma década».',
+        choices: [
+          { text: '«Li estic molt agraït per les seves explicacions. Vostè ha fet una guia excel·lent.»', translation: '«Estou-lhe muito agradecido por suas explicações. O senhor fez uma guia excelente.»', next: 'final_bom' },
+          { text: 'Exigir que li regalin un quadre original de Dalí com a record del viatge.', translation: 'Exigir que lhe presenteiem um quadro original de Dalí como recordação da viagem.', next: 'final_neutre' },
+        ],
+      },
+      final_bom: {
+        emoji: '🎨',
+        text: 'Linu conclou la visita al Teatre-Museu Dalí fascinat pel surrealisme. Durant tota la jornada ha usat la passiva pronominal i les fórmules de tractament formal de manera impecable.',
+        translation: 'Linu conclui a visita ao Teatro-Museu Dalí fascinado pelo surrealismo. Durante toda a jornada usou a passiva pronominal e as fórmulas de tratamento formal de maneira impecável.',
+        ending: { tone: 'bom', title: 'Imersão surrealista concluída!', message: 'Parabéns! Você explorou o Teatre-Museu Dalí em Figueres e dominou a voz passiva pronominal em catalão e o registro formal com «vostè».' },
+      },
+      final_neutre: {
+        emoji: '🖼️',
+        text: 'Linu va visitar el museu de Figueres, però per no mantenir sempre la formalitat i el decòrum requerit, no va poder aprofitar al màxim la trobada amb el guia cultural.',
+        translation: 'Linu visitou o museu de Figueres, mas por não manter sempre a postura formal e o decoro requerido, não pôde aproveitar ao máximo o encontro com o guia cultural.',
+        ending: { tone: 'neutro', title: 'Visita concluída', message: 'Você completou a visita ao museu! Lembre-se de praticar a passiva pronominal e o tratamento de cortesia para se comunicar perfeitamente em contextos culturais formais.' },
+      },
+    },
+  },
+  // ───────────────────────── B2.3 ─────────────────────────
+  {
+    id: 'ca-h31',
+    level: 'B2.3',
+    cefr: 'B2',
+    title: 'Un sopar complicat',
+    emoji: '🍲',
+    summary: 'Linu organiza um jantar em casa para os amigos e precisa fazer compras rapidamente no Mercat de la Boqueria em Barcelona enfrentando vários imprevistos.',
+    cultural_context: 'O Mercat de Sant Josep, popularmente conhecido como La Boqueria, é o mercado público mais famoso de Barcelona, localizado na emblemática La Rambla. Inaugurado em 1840 no local de um antigo convento, é um ponto gastronômico central para encontrar produtos frescos catalães como o peixe do Mediterrâneo, cogumelos silvestres e embutidos tradicionais.',
+    start: 'start',
+    glossary: [
+      ['anar de bòlit', 'estar muito atarefado / correndo contra o tempo'],
+      ['ploure a bots i barrals', 'chover a cântaros / chover muito forte'],
+      ['ser un tros de pa', 'ser uma excelente pessoa / ser um pão de açúcar'],
+      ['fer figa', 'falhar / pifar / perder as forças'],
+      ['anar com un llamp', 'ir como um raio / ir rapidíssimo'],
+      ['haver de', 'ter de / dever (forma correta em catalão, evitando "tenir que")'],
+      ['la parada del mercat', 'a banca do mercado'],
+    ],
+    nodes: {
+      start: {
+        emoji: '⏰',
+        text: "Havent vist que l'hora passava, Linu s'adona que ha de fer la compra ràpidament per al sopar d'aquesta nit. Tot el grup d'amics ve a casa seva. Linu es diu: «Si vull tenir-ho tot a punt, he d'anar com un llamp al Mercat de la Boqueria».",
+        translation: 'Tendo visto que a hora estava passando, Linu percebe que tem de fazer as compras rapidamente para o jantar desta noite. Todo o grupo de amigos vem à sua casa. Linu diz a si mesmo: «Se quero ter tudo pronto, tenho de ir como um raio ao Mercado da Boqueria».',
+        choices: [
+          { text: 'Caminar ràpidament cap a La Rambla per entrar al mercat.', translation: 'Caminhar rapidamente em direção à La Rambla para entrar no mercado.', next: 'anar_mercat' },
+          {
+            text: 'Pensar: «Tinc que esperar un poc més abans de sortir».',
+            translation: 'Pensar: «Tenho que esperar um pouco mais antes de sair».',
+            wrong: 'A expressão "tinc que" é um barbarismo em catalão (deve-se usar "he de" ou "cal que"). Além disso, se você atrasar, não encontrará produtos frescos!',
+          },
+        ],
+      },
+      anar_mercat: {
+        emoji: '🧺',
+        text: 'Tot caminant per La Rambla, Linu entra a La Boqueria. Les parades estan plenes de gent i els paradistes van de bòlit atenent els clients. Linu necessita peix fresc i verdures de temporada.',
+        translation: 'Caminhando pela La Rambla, Linu entra na Boqueria. As bancas estão cheias de gente e os feirantes estão atarefadíssimos atendendo os clientes. Linu precisa de peixe fresco e legumes de temporada.',
+        choices: [
+          { text: 'Anar primer a la parada del peix per encarar la recepta principal.', translation: 'Ir primeiro à banca de peixe para encaminhar a receita principal.', next: 'parada_peix' },
+          { text: 'Buscar la parada de verdures per comprar patates i carxofes.', translation: 'Procurar a banca de legumes para comprar batatas e alcachofras.', next: 'parada_verdures' },
+        ],
+      },
+      parada_peix: {
+        emoji: '🐟',
+        text: "Havent triat un peix excel·lent, la peixatera, que és un tros de pa, li regala una mica de julivert fresc. De sobte, fora del mercat s'alça una tempesta i comença a ploure a bots i barrals.",
+        translation: 'Tendo escolhido um excelente peixe, a peixeira, que é uma excelente pessoa, dá-lhe de presente um pouco de salsa fresca. De repente, fora do mercado arma-se uma tempestade e começa a chover a cântaros.',
+        choices: [
+          { text: 'Comprar les verdures ràpidament i agafar el metro cap a casa.', translation: 'Comprar os legumes rapidamente e pegar o metrô para casa.', next: 'cuina_casa' },
+          {
+            text: 'Dir a la peixatera: «Tinc que agafar el peix sense pagar».',
+            translation: 'Dizer à peixeira: «Tenho que pegar o peixe sem pagar».',
+            wrong: 'A estrutura "tinc que" é incorreta (use "he de"). Além disso, sair sem pagar é inaceitável!',
+          },
+        ],
+      },
+      parada_verdures: {
+        emoji: '🥦',
+        text: 'Havent comprat les verdures, Linu es troba amb un amic que li explica que el seu forn ha fet figa. Linu es preocupa perquè ell també ha de coure el seu peix al forn.',
+        translation: 'Tendo comprado os legumes, Linu encontra um amigo que lhe conta que o seu forno pifou. Linu fica preocupado porque ele também tem de assar seu peixe no forno.',
+        choices: [
+          { text: 'Tornar ràpidament a casa per comprovar que el seu forn funciona.', translation: 'Voltar rapidamente para casa para comprovar se o seu forno funciona.', next: 'cuina_casa' },
+          { text: 'Quedar-se xerrant hores i hores al mercat sense fer la compra.', translation: 'Ficar conversando horas e horas no mercado sem fazer as compras.', next: 'sopar_tard' },
+        ],
+      },
+      cuina_casa: {
+        emoji: '🍳',
+        text: "Arribat a casa i havent-se eixugat de la pluja, Linu comença a cuinar. Cuinant el peix amb les verdures i escoltant música, veu que l'escalfador de la cuina comença a fer figa.",
+        translation: 'Chegado em casa e tendo-se enxugado da chuva, Linu começa a cozinhar. Cozinhando o peixe com os legumes e ouvindo música, vê que o aquecedor da cozinha começa a pifar.',
+        choices: [{ text: "Ajustar el fogó amb cura per evitar que s'apagui el foc.", translation: 'Ajustar a boca do fogão com cuidado para evitar que o fogo apague.', next: 'reparar_forn' }],
+      },
+      reparar_forn: {
+        emoji: '🔥',
+        text: "Havent resolt el problema del fogó, la cuina s'omple d'una aroma deliciosa. Els amics truquen al portal just quan el plat està a punt. Tots entren somrient.",
+        translation: 'Tendo resolvido o problema do fogão, a cozinha se enche de um aroma delicioso. Os amigos tocam o interfone bem quando o prato está pronto. Todos entram sorrindo.',
+        choices: [
+          { text: 'Servir el sopar a la taula i gaudir de la vetllada.', translation: 'Servir o jantar na mesa e desfrutar da noite.', next: 'final_bom' },
+          { text: 'Servir el peix fred sense haver acabat la cocció.', translation: 'Servir o peixe frio sem ter terminado o cozimento.', next: 'final_neutre' },
+        ],
+      },
+      sopar_tard: {
+        emoji: '🕰️',
+        text: 'Havent perdut molt de temps al mercat, Linu arriba a casa quan els amics ja estan esperant a la porta. Ha de preparar un sopar ràpid i improvisat.',
+        translation: 'Tendo perdido muito tempo no mercado, Linu chega em casa quando os amigos já estão esperando na porta. Ele tem de preparar um jantar rápido e improvisado.',
+        choices: [{ text: 'Preparar una amanida ràpida i demanar perdó pel retard.', translation: 'Preparar uma salada rápida e pedir desculpas pelo atraso.', next: 'final_neutre' }],
+      },
+      final_bom: {
+        emoji: '🍷',
+        text: 'El sopar és un èxit absolut. Havent superat la tempesta i els imprevistos, Linu i els seus amics gaudeixen d\'una vetllada inoblidable plena de riures i bona gastronomia.',
+        translation: 'O jantar é um sucesso absoluto. Tendo superado a tempestade e os imprevistos, Linu e seus amigos desfrutam de uma noite inesquecível cheia de risos e boa gastronomia.',
+        ending: { tone: 'bom', title: 'Jantar perfeito!', message: 'Parabéns! Você ajudou o Linu a organizar um jantar incrível enquanto praticava o uso de gerúndios, particípios e expressões idiomáticas catalãs sem barbarismos!' },
+      },
+      final_neutre: {
+        emoji: '🍕',
+        text: "El sopar es converteix en una nit de pizzes encarregades a última hora. Tot i que els amics s'ho passen bé, el peix fresc de La Boqueria va quedar sense coure.",
+        translation: 'O jantar se transforma em uma noite de pizzas pedidas na última hora. Embora os amigos se divirtam, o peixe fresco da Boqueria ficou sem cozinhar.',
+        ending: { tone: 'neutro', title: 'Jantar improvisado', message: 'Você completou a história! Linu conseguiu salvar a noite com pizzas. Continue praticando o catalão correto para aprimorar seu vocabulário!' },
+      },
+    },
+  },
+  {
+    id: 'ca-h32',
+    level: 'B2.3',
+    cefr: 'B2',
+    title: 'Una odissea urbana a Gràcia',
+    emoji: '🚲',
+    summary: 'Linu precisa cruzar Barcelona para um compromisso importante no bairro de Gràcia e enfrenta imprevistos no transporte público e de bicicleta.',
+    cultural_context: 'O bairro de Gràcia, que foi uma vila independente até ser anexada a Barcelona em 1897, é famoso por suas praças charmosas, como a Plaça del Sol e a Plaça de la Vila de Gràcia. Suas ruas estreitas e semipeatonalizadas tornam o transporte de bicicleta e a caminhada as melhores opções para circular na região.',
+    start: 'start',
+    glossary: [
+      ['traure el fetge per la boca', 'ficar exausto / esfaforido de tanto esforço'],
+      ['estar de mala llet', 'estar de mau humor / irritado'],
+      ['no tocar de peus a terra', 'não ter os pés no chão / ser irrealista'],
+      ['fer fressa', 'fazer barulho / ruído'],
+      ['la punxada', 'o pneu furado'],
+      ['haver de', 'ter de / dever (forma correta)'],
+      ['la col·lisió', 'a colisão / o esbarrão'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🚇',
+        text: 'Havent sortit de casa amb el temps just, Linu s\'adona que la línia de metro està interrompuda. Ell té una cita crucial a la Plaça del Sol. Pensant ràpidament, sap que ha de trobar una alternativa.',
+        translation: 'Tendo saído de casa com o tempo contado, Linu percebe que a linha do metrô está interrompida. Ele tem um compromisso crucial na Plaça del Sol. Pensando rapidamente, sabe que tem de encontrar uma alternativa.',
+        choices: [
+          { text: 'Agafar una bicicleta pública i pedalar de pressa cap a Gràcia.', translation: 'Pegar uma bicicleta pública e pedalar rápido em direção a Gràcia.', next: 'agafar_bici' },
+          {
+            text: 'Pensar: «Tinc que esperar que el metro funcioni altra vegada».',
+            translation: 'Pensar: «Tenho que esperar que o metrô funcione outra vez».',
+            wrong: 'A forma "tinc que" é um barbarismo (use "he de"). Além disso, o metrô vai demorar horas para voltar a funcionar!',
+          },
+        ],
+      },
+      agafar_bici: {
+        emoji: '🚴',
+        text: "Pedalant carrer amunt i traient el fetge per la boca, Linu avança per l'Eixample. La pujada cap a Gràcia és dura. De sobte, la roda de la bicicleta pateix una punxada inesperada.",
+        translation: 'Pedalando rua acima e ficando exausto de tanto esforço, Linu avança pelo Eixample. A subida para Gràcia é dura. De repente, a roda da bicicleta sofre um furo inesperado.',
+        choices: [
+          { text: 'Deixar la bicicleta a la primera estació i continuar caminant a bon pas.', translation: 'Deixar a bicicleta no ponto de estações e continuar caminhando a passo firme.', next: 'caminar_gracia' },
+          {
+            text: 'Estar de mala llet i llençar la bicicleta al mig del carrer.',
+            translation: 'Ficar de mau humor e jogar a bicicleta no meio da rua.',
+            wrong: 'Ficar irado e vandalizar o transporte público é inaceitável. Deve-se encaixar a bicicleta na estação e agir civilizadamente.',
+          },
+        ],
+      },
+      caminar_gracia: {
+        emoji: '🚶',
+        text: "Havent caminat durant quinze minuts, Linu entra finalment al barri de Gràcia. Els carrers són estrets i hi ha molta gent fent fressa per les terrasses de la Plaça de la Vila.",
+        translation: 'Tendo caminhado durante quinze minutos, Linu entra finalmente no bairro de Gràcia. As ruas são estreitas e há muita gente fazendo barulho pelas varandas da Plaça de la Vila.',
+        choices: [
+          { text: 'Cercar el camí cap a la Plaça del Sol entre els carrers de vianants.', translation: 'Procurar o caminho para a Plaça del Sol entre as ruas de pedestres.', next: 'cercar_carrer' },
+          {
+            text: 'Dir a un veí: «Tinc que trobar la plaça ara mateix!».',
+            translation: 'Dizer a um vizinho: «Tenho que encontrar a praça agora mesmo!».',
+            wrong: 'Lembre-se de evitar "tinc que" (em catalão correto: "he de trobar").',
+          },
+        ],
+      },
+      cercar_carrer: {
+        emoji: '🗺️',
+        text: 'Cercant el portal de la seva reunió, Linu es troba amb un antic conegut que li proposa anar a fer un vermut. El conegut li diu que no cal tenir pressa, però Linu sap que ha de tocar de peus a terra.',
+        translation: 'Procurando o portão da sua reunião, Linu encontra um antigo conhecido que lhe propõe ir tomar um vermute. O conhecido diz-lhe que não precisa ter pressa, mas Linu sabe que precisa manter os pés no chão.',
+        choices: [
+          { text: 'Agrair la invitació però explicar que ha d\'arribar puntual a la cita.', translation: 'Agradecer o convite, mas explicar que tem de chegar pontual ao compromisso.', next: 'trobar_local' },
+          { text: 'Acceptar el vermut i oblidar la reunió important.', translation: 'Aceitar o vermute e esquecer a reunião importante.', next: 'cita_massa_tard' },
+        ],
+      },
+      trobar_local: {
+        emoji: '📍',
+        text: "Havent accelerat el pas, Linu arriba a la Plaça del Sol. Veu el local on el seu soci l'està esperant a la terrassa amb uns plànols oberts sobre la taula.",
+        translation: 'Tendo acelerado o passo, Linu chega à Plaça del Sol. Vê o estabelecimento onde seu sócio o está esperando na varanda com algumas plantas abertas sobre a mesa.',
+        choices: [{ text: 'Adreçar-se al soci i demanar disculpes per la suor del trajecte.', translation: 'Dirigir-se ao sócio e pedir desculpas pelo suor do trajeto.', next: 'cita_exit' }],
+      },
+      cita_massa_tard: {
+        emoji: '⌛',
+        text: 'Havent arribat molt tard per culpa de la distracció, Linu troba la terrassa buida. El seu soci ja ha marxat decebut pel retard.',
+        translation: 'Tendo chegado muito tarde por causa da distração, Linu encontra a varanda vazia. Seu sócio já foi embora decepcionado pelo atraso.',
+        choices: [{ text: 'Trucar al soci per demanar una segona oportunitat.', translation: 'Ligar para o sócio para pedir uma segunda oportunidade.', next: 'final_neutre' }],
+      },
+      cita_exit: {
+        emoji: '🤝',
+        text: 'El soci somriu veient l\'esforç de Linu: «Havent arribat fins aquí a peu i en bici, veig que realment t\'interessa el projecte!». Tots dos signen l\'acord de col·laboració.',
+        translation: 'O sócio sorri vendo o esforço de Linu: «Tendo chegado até aqui a pé e de bike, vejo que realmente você se interessa pelo projeto!». Ambos assinam o acordo de colaboração.',
+        choices: [{ text: 'Celebrar l\'èxit del projecte amb un suc natural a la plaça.', translation: 'Celebrar o sucesso do projeto com um suco natural na praça.', next: 'final_bom' }],
+      },
+      final_bom: {
+        emoji: '🌟',
+        text: "Linu ha aconseguit tancar un acord professional molt valuós. Havent superat els obstacles del transport urbà a Gràcia, torna a casa satisfet per haver mantingut la determinació.",
+        translation: 'Linu conseguiu fechar um acordo profissional muito valioso. Tendo superado os obstáculos do transporte urbano em Gràcia, volta para casa satisfeito por ter mantido a determinação.',
+        ending: { tone: 'bom', title: 'Compromisso de sucesso!', message: 'Parabéns! Você guiou o Linu pelas ruas de Gràcia usando expressões idiomáticas, gerúndios e particípios, evitando barbarismos em catalão!' },
+      },
+      final_neutre: {
+        emoji: '💬',
+        text: 'Linu ha d\'ajornar la reunió per a la setmana següent. Tot i que no va perdre l\'oportunitat del tot, el trajecte va ser més estressant del compte.',
+        translation: 'Linu tem de adiar a reunião para a semana seguinte. Embora não tenha perdido a oportunidade completamente, o trajeto foi mais estressante do que o previsto.',
+        ending: { tone: 'neutro', title: 'Reunião adiada', message: 'Você completou a jornada! Linu conseguirá remarcar a reunião. Continue praticando o vocabulário e as formas gramaticais do catalão B2!' },
+      },
+    },
+  },
+  {
+    id: 'ca-h33',
+    level: 'B2.3',
+    cefr: 'B2',
+    title: 'La Festa Major del barri',
+    emoji: '🎺',
+    summary: 'Linu ajuda a organizar os preparativos da Festa Major do seu bairro e resolve os problemas de última hora antes do início do espetáculo dos castellers.',
+    cultural_context: 'As Festes Majors são as celebrações populares mais importantes dos bairros e cidades da Catalunha, combinando música, concertos e manifestações de cultura popular. Um dos pontos altos é a atuação dos "castellers", que constroem impressionantes torres humanas formadas pela "pinya" (base), o "tronc" (corpo) e a "enxaneta" (a criança que coroa a torre).',
+    start: 'start',
+    glossary: [
+      ['posar-hi el coll', 'dedicar-se ao máximo / dar o sangue por algo'],
+      ['fer pinya', 'unir forças / juntar-se para apoiar uma causa (ou na base do castell)'],
+      ["l'enxaneta", 'a criança que escala até o topo do castell e ergue o braço'],
+      ['la colla castellera', 'o grupo / associação de castellers'],
+      ['la festa major', 'a festa tradicional do bairro/cidade'],
+      ['haver de', 'ter de / dever (evitando "tenir que")'],
+      ['el cercavila', 'o desfile festivo pelas ruas'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🎪',
+        text: "Havent arribat d'hora a la plaça major, Linu veu que la comissió de festes va de bòlit. Qüestió d'hores perquè comenci la Festa Major i el cercavila. La meitat de les taules encara estan per muntar.",
+        translation: 'Tendo chegado cedo à praça principal, Linu vê que a comissão de festas está atarefadíssima. É questão de horas para que comece a Festa Major e o desfile. A metade das mesas ainda está por montar.',
+        choices: [
+          { text: "Posar-hi el coll i començar a carregar les taules amb els veïns.", translation: 'Dedicar-se ao máximo e começar a carregar as mesas com os vizinhos.', next: 'ajudar_muntatge' },
+          {
+            text: 'Pensar: «Tinc que anar a prendre un cafè abans d\'ajudar».',
+            translation: 'Pensar: «Tenho que ir tomar um café antes de ajudar».',
+            wrong: 'A expressão "tinc que" é um barbarismo em catalão (use "he de"). Além disso, a comissão de festas precisa de ajuda urgente!',
+          },
+        ],
+      },
+      ajudar_muntatge: {
+        emoji: '🪑',
+        text: "Muntant les taules i penjant les banderoles acolorides, Linu treballa colze a colze amb la gent del barri. Havent acabat el muntatge de l'escenari, arriba la colla castellera amb les seves camises blaves.",
+        translation: 'Montando as mesas e pendurando as bandeirolas coloridas, Linu trabalha lado a lado com a gente do bairro. Tendo terminado a montagem do palco, chega o grupo de castellers com suas camisas azuis.',
+        choices: [
+          { text: "Anar a rebre la colla castellera i ajudar a organitzar l'espai central.", translation: 'Ir receber o grupo de castellers e ajudar a organizar o espaço central.', next: 'rebre_castellers' },
+          { text: 'Anar a provar els equips de so que estan fent un soroll estrany.', translation: 'Ir testar os equipamentos de som que estão fazendo um barulho estranho.', next: 'provar_so' },
+        ],
+      },
+      provar_so: {
+        emoji: '🔊',
+        text: "Havent connectat els cables de l'amplificador, el so es resol perfectament. El tècnic li diu a Linu: «Havent ajustat això, la música sonarà increïble durant el concert nocturn».",
+        translation: 'Tendo conectado os cabos do amplificador, o som se resolve perfeitamente. O técnico diz a Linu: «Tendo ajustado isso, a música soará incrível durante o show noturno».',
+        choices: [{ text: 'Unir-se a la plaça per veure la diada castellera.', translation: 'Juntar-se à praça para ver a apresentação dos castellers.', next: 'fer_pinya' }],
+      },
+      rebre_castellers: {
+        emoji: '🏰',
+        text: 'El cap de colla demana voluntaris per fer la pinya. Cal molta gent a la base per donar seguretat a la torre humana. Ells recorden que tots han de fer pinya per aconseguir el castell.',
+        translation: 'O líder do grupo pede voluntários para fazer a base (pinya). É necessária muita gente na base para dar segurança à torre humana. Eles lembram que todos têm de unir forças para conseguir o castell.',
+        choices: [
+          { text: 'Entrar a la pinya amb fermesa mantenint els braços creuats.', translation: 'Entrar na pinya com firmeza mantendo os braços cruzados.', next: 'fer_pinya' },
+          {
+            text: 'Cridar: «Tinc que ser l\'enxaneta i pujar a dalt de tot!».',
+            translation: 'Gritar: «Tenho que ser o enxaneta e subir ao topo de tudo!».',
+            wrong: 'O "enxaneta" é sempre uma criança treinada por razões de peso e agilidade. Além disso, evite o barbarismo "tinc que"!',
+          },
+        ],
+      },
+      fer_pinya: {
+        emoji: '👥',
+        text: 'Fent pinya amb desenes de veïns, Linu nota la força de la pinya. El castell comença a pujar pis a pis. El tronc es manté estable mentre la gent de la plaça aguanta la respiració.',
+        translation: 'Fazendo a base com dezenas de vizinhos, Linu sente a força da união. O castell começa a subir andar por andar. O corpo da torre mantém-se estável enquanto as pessoas da praça prendem a respiração.',
+        choices: [{ text: 'Mantenir la posició fermament fins que l\'enxaneta coroni el castell.', translation: 'Manter a posição firmemente até que o enxaneta coroe o castell.', next: 'coronar_castell' }],
+      },
+      coronar_castell: {
+        emoji: '🙌',
+        text: "L'enxaneta pujant a tota velocitat arriba al capdamunt i aixeca el braç. La plaça sencera esclata en aplaudiments! Havent descarregat el castell amb èxit, la celebració continua.",
+        translation: 'O enxaneta subindo a toda velocidade chega ao topo e ergue o braço. A praça inteira explode em aplausos! Tendo desmontado o castell com sucesso, a celebração continua.',
+        choices: [{ text: 'Participar en el dinar popular de germanor a la plaça.', translation: 'Participar do almoço comunitário de confraternização na praça.', next: 'dinar_popular' }],
+      },
+      dinar_popular: {
+        emoji: '🥘',
+        text: 'Sent part de la festa, Linu comparteix una gran arrossada amb els castellers i els organitzadors. Tothom agraeix la seva ajuda durant tota la jornada.',
+        translation: 'Sendo parte da festa, Linu compartilha uma grande arrozada com os castellers e os organizadores. Todos agradecem sua ajuda durante todo o dia.',
+        choices: [
+          { text: 'Gaudir del concert de nit i ballar amb el veïnat.', translation: 'Aproveitar o show à noite e dançar com os vizinhos.', next: 'final_bom' },
+          { text: 'Marxar a casa immediatament sense acomiadar-se de ningú.', translation: 'Ir embora para casa imediatamente sem se despedir de ninguém.', next: 'final_neutre' },
+        ],
+      },
+      final_bom: {
+        emoji: '🎆',
+        text: 'La Festa Major acaba amb un castell de focs d\'artifici. Havent ajudat en l\'organització i havent fet pinya amb la colla, Linu se sent plenament integrat en la vida cultural del barri.',
+        translation: 'A Festa Major termina com um show de fogos de artifício. Tendo ajudado na organização e tendo unido forças com o grupo, Linu se sente plenamente integrado na vida cultural do bairro.',
+        ending: { tone: 'bom', title: 'Festa Major inesquecível!', message: 'Parabéns! Você vivenciou uma autêntica Festa Major catalã e praticou gerúndios, particípios e expressões culturais evitando barbarismos com perfeição!' },
+      },
+      final_neutre: {
+        emoji: '🌙',
+        text: "Linu torna a casa d'hora. Tot i que va ajudar al matí, es va perdre el concert de nit i la germanor final amb la comissió de festes.",
+        translation: 'Linu volta para casa cedo. Embora tenha ajudado de manhã, perdeu o show noturno e a confraternização final com a comissão de festas.',
+        ending: { tone: 'neutro', title: 'Participação parcial', message: 'Você completou a história! Linu ajudou nos castellers, mas descansou cedo. Continue praticando seu catalão de nível avançado!' },
+      },
+    },
+  },
+  // ───────────────────────── B2.4 ─────────────────────────
+  {
+    id: 'ca-h34',
+    level: 'B2.4',
+    cefr: 'B2',
+    title: 'El debat del turisme',
+    emoji: '🏙️',
+    summary: "Linu participa d'un debat comunitari a Barcelona sobre el model turístic i el desenvolupament sostenible dels barris.",
+    cultural_context: "Barcelona compta amb el Pla Especial Urbanístic d'Allotjaments Turístics (PEUAT) per regular l'oferta d'hotels i pisos turístics en barris congestionats com Ciutat Vella. A més, el Consell de Ciutat organitza taules de diàleg veïnal per trobar un equilibri entre l'economia turística i el dret a l'habitatge dels residents.",
+    start: 'start',
+    glossary: [
+      ['el model turístic', 'o modelo turístico'],
+      ['el veïnat', 'a vizinhança / os moradores'],
+      ['la regulació', 'a regulamentação'],
+      ['la massificació', 'a lotação de massa / superlotação'],
+      ["l'habitatge", 'a moradia / habitação'],
+      ['tanmateix', 'no entanto / contudo'],
+      ['en canvi', 'por outro lado / em contrapartida'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🎙️',
+        text: 'Linu assisteix a un debat al Centre Cultural El Born sobre el futur del turisme a Barcelona. Molts veïns protesten per la massificació. Linu pensa: «No crec que el turisme sigui dolent en si mateix, però cal planificació. A més, cal escoltar totes les parts».',
+        translation: 'Linu assiste a um debate no Centro Cultural El Born sobre o futuro do turismo em Barcelona. Muitos moradores protestam contra a lotação de massa. Linu pensa: «Não acho que o turismo seja ruim em si mesmo, mas é preciso planejamento. Além disso, é necessário ouvir todas as partes».',
+        choices: [
+          { text: 'Demanar el torn de paraula per exposar una visió equilibrada.', translation: 'Pedir a palavra para expor uma visão equilibrada.', next: 'debat_inici' },
+          {
+            text: 'Cridar sense demanar la paraula i exigir tancar tots els hotels demà.',
+            translation: 'Gritar sem pedir a palavra e exigir fechar todos os hotéis amanhã.',
+            wrong: 'Num debate democrático e formal, interromper aos gritos impede o diálogo e ignora as propostas de regulamentação urbana.',
+          },
+        ],
+      },
+      debat_inici: {
+        emoji: '🗣️',
+        text: "Linu pren el micròfon: «Encara que el turisme aporti ingressos econòmics importants, genera pressió sobre els lloguers dels veïns. Per tant, necessitem mesures concretes per protegir l'habitatge».",
+        translation: 'Linu pega o microfone: «Embora o turismo traga receitas econômicas importantes, gera pressão sobre os aluguéis dos moradores. Portanto, precisamos de medidas concretas para proteger a moradia».',
+        choices: [
+          { text: 'Proposar la regulació de pisos turístics mitjançant el PEUAT.', translation: 'Propor a regulamentação de apartamentos turísticos mediante o PEUAT.', next: 'proposta_regulacio' },
+          {
+            text: 'Suggerir que es duguin tots els turistes a una altra ciutat veïna.',
+            translation: 'Sugerir que levem todos os turistas para outra cidade vizinha.',
+            wrong: 'Transferir a pressão para outros municípios não resolve o modelo sustentável da região metropolitana.',
+          },
+        ],
+      },
+      proposta_regulacio: {
+        emoji: '📋',
+        text: 'Un representant del sector hoteler respon: «No crec que limitar les llicències sigui la millor solució». Tanmateix, Linu replica que, si no es fixa un límit, la convivència als barris serà impossible.',
+        translation: 'Um representante do setor hoteleiro responde: «Não acho que limitar as licenças seja a melhor solução». No entanto, Linu replica que, se não for fixado um limite, a convivência nos bairros será impossível.',
+        choices: [
+          { text: "Defensar la diversificació de l'economia i la descentralització de les visites.", translation: 'Defender a diversificação da economia e a descentralização das visitas.', next: 'visita_barri' },
+          { text: 'Abandonar la sala immediatament per no discutir amb els hotelers.', translation: 'Abandonar a sala imediatamente para não discutir com os hoteleiros.', next: 'vots_finals' },
+        ],
+      },
+      visita_barri: {
+        emoji: '🚶‍♂️',
+        text: 'El debat es trasllada a una taula de treball a Ciutat Vella. Linu recorda: «A més de promoure el patrimoni cultural, hem de garantir que el comerç local subsisteixi. En canvi, si només hi ha botigues de records, el barri perd la seva identitat».',
+        translation: 'O debate se transfere para uma mesa de trabalho em Ciutat Vella. Linu lembra: «Além de promover o patrimônio cultural, devemos garantir que o comércio local subsista. Por outro lado, se só houver lojas de lembrancinhas, o bairro perde sua identidade».',
+        choices: [{ text: 'Presentar una proposta de suport al comerç de proximitat.', translation: 'Apresentar uma proposta de apoio ao comércio de proximidade.', next: 'taula_rodona' }],
+      },
+      taula_rodona: {
+        emoji: '🤝',
+        text: 'Els participants redacten un esborrany d\'acord. Linu afirma: «Encara que hi hagi diferències entre veïns i comerciants, no crec que sigui impossible trobar un punt mitjà. Per tant, aprovem aquest manifest conjunt».',
+        translation: 'Os participantes redigem um rascunho de acordo. Linu afirma: «Embora haja diferenças entre moradores e comerciantes, não acho que seja impossível encontrar um meio-termo. Portanto, aprovemos este manifesto conjunto».',
+        choices: [{ text: 'Sotmetre el manifest a votació general a la sala.', translation: 'Submeter o manifesto a votação geral na sala.', next: 'vots_finals' }],
+      },
+      vots_finals: {
+        emoji: '🗳️',
+        text: 'Es vota la proposta. Tanmateix, un grup reduït prefereix no signar. Linu explica que, per tant, caldrà continuar treballant en el seguiment de les mesures aprovades per la majoria.',
+        translation: 'Vota-se a proposta. No entanto, um grupo reduzido prefere não assinar. Linu explica que, portanto, será necessário continuar trabalhando no acompanhamento das medidas aprovadas pela maioria.',
+        choices: [
+          { text: "Lliurar la proposta final aprovada a l'Ajuntament de Barcelona.", translation: 'Entregar a proposta final aprovada à Prefeitura de Barcelona.', next: 'final_bom' },
+          { text: 'Deixar la proposta en un calaix sense enviar-la a les autoritats.', translation: 'Deixar a proposta em uma gaveta sem enviá-la às autoridades.', next: 'final_neutre' },
+        ],
+      },
+      final_bom: {
+        emoji: '📜',
+        text: "L'Ajuntament rep el document participatiu. Gràcies a les aportacions de Linu amb un ús rigorós de connectors i del subjuntiu, el debat sobre el turisme sostenible avança cap a solucions reals.",
+        translation: 'A Prefeitura recebe o documento participativo. Graças às contribuições de Linu com um uso rigoroso de conectores e do subjuntivo, o debate sobre o turismo sustentável avança rumo a soluções reais.',
+        ending: { tone: 'bom', title: 'Debate de alto nível!', message: 'Parabéns! Você expressou argumentos complexos sobre o turismo urbano utilizando conectores formais e estruturas com o subjuntivo em catalão B2.4.' },
+      },
+      final_neutre: {
+        emoji: '📑',
+        text: 'El manifest va ser aprovat al centre cultural, però per no fer-ne el seguiment administratiu, les propostes van quedar com a recomanacions sense aplicació immediata.',
+        translation: 'O manifesto foi aprovado no centro cultural, mas por não ter acompanhamento administrativo, as propostas ficaram como recomendações sem aplicação imediata.',
+        ending: { tone: 'neutro', title: 'Acordo parcial', message: 'Você concluiu o debate! A discussão foi produtiva, mas faltou o encaminhamento final. Continue praticando a argumentação em catalão!' },
+      },
+    },
+  },
+  {
+    id: 'ca-h35',
+    level: 'B2.4',
+    cefr: 'B2',
+    title: "El futur del Delta de l'Ebre",
+    emoji: '🌾',
+    summary: "Linu assisteix a un fòrum ecològic al Parc Natural del Delta de l'Ebre per debatre sobre el canvi climàtic i la protecció de la biodiversitat.",
+    cultural_context: "El Parc Natural del Delta de l'Ebre, creat el 1986 a les comarques del Montsià i el Baix Ebre, és una de les zones humides més importants del Mediterrani occidental. Enfronta greus reptes com la regressió de la línia de costa i la falta de sediments, fet que ha impulsat iniciatives com el Pla de Protecció del Delta per a la seva sostenibilitat.",
+    start: 'start',
+    glossary: [
+      ['el fòrum ecològic', 'o fórum ecológico'],
+      ['els sediments', 'os sedimentos'],
+      ['la regressió de la costa', 'a regressão da linha de costa'],
+      ['a més', 'além disso'],
+      ['per tant', 'portanto'],
+      ['encara que', 'embora / ainda que'],
+      ['la biodiversitat', 'a biodiversidade'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🦆',
+        text: 'Linu participa en una trobada de conservació al Parc Natural del Delta de l\'Ebre, prop de la llacuna de la Tancada. Pensa: «No crec que la situació sigui irreversible si actuem ara. A més, els científics tenen propostes molt clares».',
+        translation: 'Linu participa de um encontro de conservação no Parque Natural do Delta do Ebro, perto da lagoa da Tancada. Pensa: «Não acho que a situação seja irreversível se agirmos agora. Além disso, os cientistas têm propostas muito claras».',
+        choices: [
+          { text: "Escoltar la ponència dels tècnics sobre l'arribada de sediments.", translation: 'Ouvir a palestra dos técnicos sobre a chegada de sedimentos.', next: 'forum_ecologic' },
+          {
+            text: 'Llençar escombraries a la llacuna per provar si el filtre natural funciona.',
+            translation: 'Jogar lixo na lagoa para testar se o filtro natural funciona.',
+            wrong: 'Lixar ou poluir uma área natural protegida destrói a biodiversidade e é um crime ambiental grave.',
+          },
+        ],
+      },
+      forum_ecologic: {
+        emoji: '🌱',
+        text: 'Un enginyer ambiental exposa la situació: «Encara que els embassaments retinguin la majoria de sediments del riu, podem gestionar millor els cabals d\'aigua. Per tant, cal una inversió estatal urgent».',
+        translation: 'Um engenheiro ambiental expõe a situação: «Embora as represas retenham a maioria dos sedimentos do rio, podemos gerenciar melhor as vazões de água. Portanto, é necessária uma intervenção estatal urgente».',
+        choices: [
+          { text: 'Defensar l\'aportació immediata de sediments per frenar el mar.', translation: 'Defender o aporte imediato de sedimentos para conter o mar.', next: 'debat_sediments' },
+          {
+            text: 'Construir un mur de formigó gegant enmig del parc natural.',
+            translation: 'Construir um muro de concreto gigante no meio do parque natural.',
+            wrong: 'Paredões de concreto alteram a dinâmica costeira e destroem a paisagem e o ecossistema único do Delta.',
+          },
+        ],
+      },
+      debat_sediments: {
+        emoji: '🌊',
+        text: 'Un portaveu de la zona comenta: «No crec que el pressupost actual sigui suficient per cobrir totes les obres». Tanmateix, Linu intervé per recordar que la inacció costarà molt més cara a llarg termini.',
+        translation: 'Um porta-voz da região comenta: «Não acho que o orçamento atual seja suficiente para cobrir todas as obras». No entanto, Linu intervém para lembrar que a inação custará muito mais caro a longo prazo.',
+        choices: [{ text: "Proposar una combinació de solucions naturals i gestió de l'aigua.", translation: 'Propor uma combinação de soluções naturais e gestão da água.', next: 'mesures_urgents' }],
+      },
+      mesures_urgents: {
+        emoji: '🗺️',
+        text: 'Linu afegeix arguments: «A més de protegir la costa, hem de recolzar els agricultors de l\'arròs. En canvi, si els camps se salinitzen, l\'economia local patirà. Per tant, la protecció ambiental i l\'economia han d\'anar plegades».',
+        translation: 'Linu adiciona argumentos: «Além de proteger a costa, devemos apoiar os agricultores de arroz. Por outro lado, se os campos salinizarem, a economia local sofrerá. Portanto, a proteção ambiental e a economia devem ir juntas».',
+        choices: [{ text: "Visitar una parcel·la d'arrossar per comprovar l'impacte de la salinitat.", translation: 'Visitar um lote de arrozal para comprovar o impacto da salinidade.', next: 'visita_llacuna' }],
+      },
+      visita_llacuna: {
+        emoji: '🌾',
+        text: 'Als arrossars, els pagesos mostren els seus canals. Un d\'ells diu: «Encara que pugi el nivell del mar, no crec que haguem de rendir-nos». Linu els encoratja a presentar una resolució conjunta al fòrum.',
+        translation: 'Nos arrozais, os agricultores mostram seus canais. Um deles diz: «Embora o nível do mar suba, não acho que devamos nos render». Linu os encoraja a apresentar uma resolução conjunta ao fórum.',
+        choices: [{ text: 'Redactar el document de conclusions de la trobada ambiental.', translation: 'Redigir o documento de conclusões do encontro ambiental.', next: 'taula_tecnica' }],
+      },
+      taula_tecnica: {
+        emoji: '📝',
+        text: 'De tornada a la sala, Linu llegeix les conclusions: «Així doncs, encara que hi hagi obstacles polítics, no crec que puguem esperar més. Per tant, sol·licitem l\'activació immediata del Pla de Protecció».',
+        translation: 'De volta à sala, Linu lê as conclusões: «Assim sendo, embora haja obstáculos políticos, não acho que possamos esperar mais. Portanto, solicitamos a ativação imediata do Plano de Proteção».',
+        choices: [{ text: 'Aprovar la resolució per unanimitat de tots els assistents.', translation: 'Aprovar a resolução por unanimidade de todos os presentes.', next: 'resolucio_forum' }],
+      },
+      resolucio_forum: {
+        emoji: '🕊️',
+        text: "La resolució queda signada per ecologistes, agricultors i investigadors. Tanmateix, ara caldrà enviar-la al Departament d'Acció Climàtica de la Generalitat.",
+        translation: 'A resolução fica assinada por ecologistas, agricultores e pesquisadores. No entanto, agora será necessário enviá-la ao Departamento de Ação Climática da Generalitat.',
+        choices: [
+          { text: 'Enviar la resolució formalment i publicar-la als mitjans.', translation: 'Enviar a resolução formalmente e publicá-la nos meios de comunicação.', next: 'final_bom' },
+          { text: 'Guardar el document sense distribuir-lo a la premsa.', translation: 'Guardar o documento sem distribuí-lo à imprensa.', next: 'final_neutre' },
+        ],
+      },
+      final_bom: {
+        emoji: '🏞️',
+        text: "El document del fòrum té una gran ressonància als mitjans. Gràcies al domini dels connectors i les frases condicionals i de subjuntiu de Linu, la veu del Delta de l'Ebre s'escolta amb claredat i rigor.",
+        translation: 'O documento do fórum tem grande repercussão na mídia. Graças ao domínio dos conectores e das frases condicionais e de subjuntivo de Linu, a voz do Delta do Ebro é ouvida com clareza e rigor.',
+        ending: { tone: 'bom', title: 'Defesa ambiental bem-sucedida!', message: 'Excelente! Você defendeu a preservação ecológica do Delta do Ebro aplicando conectores avançados e o modo subjuntivo em catalão B2.4.' },
+      },
+      final_neutre: {
+        emoji: '📄',
+        text: "La resolució es va aprovar al fòrum, però per no difondre-la adequadament, l'impacte mediàtic va ser limitat i les obres als sediments s'hauran d'esperar.",
+        translation: 'A resolução foi aprovada no fórum, mas por não divulgá-la adequadamente, o impacto na mídia foi limitado e as obras nos sedimentos terão de esperar.',
+        ending: { tone: 'neutro', title: 'Ação incompleta', message: 'Você concluiu o fórum ambiental! O documento foi elaborado, mas sua divulgação falhou. Continue treinando seu catalão avançado!' },
+      },
+    },
+  },
+  {
+    id: 'ca-h36',
+    level: 'B2.4',
+    cefr: 'B2',
+    title: 'Informació o desinformació?',
+    emoji: '📰',
+    summary: "Linu participa d'una taula rodona al Col·legi de Periodistes de Catalunya per analitzar el paper de les xarxes socials davant dels diaris tradicionals.",
+    cultural_context: 'O Col·legi de Periodistes de Catalunya, fundado em 1985 por lei do Parlamento catalão e com sede na Rambla de Catalunya, em Barcelona, é a instituição de referência para os profissionais da informação. Promove o Codi Deontològic do jornalismo e desenvolve projetos de verificação de fatos (fact-checking) para combater a desinformação e as notícias falsas.',
+    start: 'start',
+    glossary: [
+      ['el Col·legi de Periodistes', 'a ordem/associação dos jornalistas'],
+      ['la verificació de fets', 'a checagem de fatos / fact-checking'],
+      ['les notícies falses', 'as notícias falsas / fake news'],
+      ['no crec que', 'não acho que / não creio que (+ subjuntivo)'],
+      ['en canvi', 'por outro lado / em contrapartida'],
+      ['tanmateix', 'no entanto / contudo'],
+      ['el codi deontològic', 'o código de ética/deontológico'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🎙️',
+        text: 'Linu és convidat a una taula rodona al Col·legi de Periodistes de Catalunya, a la Rambla de Catalunya de Barcelona. El tema és el contrast entre xarxes socials i periodisme. Linu pensa: «No crec que la premsa tradicional desaparegui, però s\'ha d\'adaptar».',
+        translation: 'Linu é convidado para uma mesa-redonda no Col·legi de Periodistes de Catalunya, na Rambla de Catalunya em Barcelona. O tema é o contraste entre redes sociais e jornalismo. Linu pensa: «Não acho que a imprensa tradicional vá desaparecer, mas precisa se adaptar».',
+        choices: [
+          { text: 'Prendre el micròfon per obrir el debat sobre el rigor informatiu.', translation: 'Pegar o microfone para abrir o debate sobre o rigor informativo.', next: 'colegi_periodistes' },
+          {
+            text: 'Inventar una notícia falsa sobre un meteorit i publicar-la a Internet.',
+            translation: 'Inventar uma notícia falsa sobre um meteorito e publicá-la na Internet.',
+            wrong: 'Propagar desinformação deliberada viola o código de ética do jornalismo e prejudica o debate público.',
+          },
+        ],
+      },
+      colegi_periodistes: {
+        emoji: '📱',
+        text: 'Un jove creador de contingut afirma: «Les xarxes socials són molt més ràpides que els diaris». Linu respon: «Encara que les xarxes vagin ràpides, sovint els falta verificació. Per tant, la velocitat no pot substituir el rigor».',
+        translation: 'Um jovem criador de conteúdo afirma: «As redes sociais são muito mais rápidas que os jornais». Linu responde: «Embora as redes sejam rápidas, frequentemente lhes falta checagem. Portanto, a velocidade não pode substituir o rigor».',
+        choices: [
+          { text: 'Explicar com la verificació de fets protegeix la ciutadania.', translation: 'Explicar como a checagem de fatos protege a cidadania.', next: 'debat_xarxes_diaris' },
+          {
+            text: 'Dir que les notícies als diaris no tenen cap importància.',
+            translation: 'Dizer que as notícias nos jornais não têm nenhuma importância.',
+            wrong: 'Desqualificar todo o jornalismo sem distinção ignora o papel da imprensa livre numa sociedade democrática.',
+          },
+        ],
+      },
+      debat_xarxes_diaris: {
+        emoji: '🕵️‍♂️',
+        text: 'Un periodista veterà afegeix: «A més, el Codi Deontològic ens obliga a contrastar les fonts amb dues vies independents». Linu coincideix: «Tanmateix, no crec que el públic jove llegeixi menys, sinó que llegeix en formats diferents».',
+        translation: 'Um jornalista veterano adiciona: «Além disso, o Código de Ética nos obriga a checar as fontes por duas vias independentes». Linu concorda: «No entanto, não acho que o público jovem leia menos, e sim que lê em formatos diferentes».',
+        choices: [{ text: 'Analitzar un cas real de notícia falsa detectat recentment.', translation: 'Analisar um caso real de notícia falsa detectado recentemente.', next: 'cas_noticia_falsa' }],
+      },
+      cas_noticia_falsa: {
+        emoji: '📊',
+        text: 'Linu presenta un exemple: «Encara que un rumor es faci viral en pocs minuts, no crec que sigui ètic publicar-lo sense confirmar-lo. En canvi, un mitjà seriós ha de prioritzar la veracitat sobre el clic fàcil».',
+        translation: 'Linu apresenta um exemplo: «Embora um rumor se torne viral em poucos minutos, não acho que seja ético publicá-lo sem confirmá-lo. Por outro lado, um veículo sério deve priorizar a veracidade sobre o clique fácil».',
+        choices: [{ text: 'Proposar eines digitals de verificació per als usuaris de xarxes.', translation: 'Propor ferramentas digitais de checagem para os usuários de redes.', next: 'verificacio_de_fets' }],
+      },
+      verificacio_de_fets: {
+        emoji: '🔍',
+        text: 'Linu continua: «A més d\'educar la ciutadania en la lectura crítica, hem de demanar transparència als algorismes. Per tant, el periodisme i la tecnologia han de col·laborar».',
+        translation: 'Linu continua: «Além de educar a cidadania na leitura crítica, devemos pedir transparência aos algoritmos. Portanto, o jornalismo e a tecnologia devem colaborar».',
+        choices: [{ text: 'Sintetitzar les propostes en un manifest sobre el futur del periodisme.', translation: 'Sintetizar as propostas em um manifesto sobre o futuro do jornalismo.', next: 'taula_dialeg' }],
+      },
+      taula_dialeg: {
+        emoji: '✍️',
+        text: 'El públic aplaudeix les idees. Linu redacta la conclusió: «Encara que la tecnologia canviï el suport, no crec que l\'ètica informativa hagi de canviar. Tanmateix, cal adaptar el llenguatge als nous temps».',
+        translation: 'O público aplaude as ideias. Linu redige a conclusão: «Embora a tecnologia mude o suporte, não acho que a ética informativa deva mudar. No entanto, é preciso adaptar a linguagem aos novos tempos».',
+        choices: [{ text: "Llegir el manifest davant l'assemblea del Col·legi.", translation: 'Ler o manifesto diante da assembleia do Colégio.', next: 'manifest_informatiu' }],
+      },
+      manifest_informatiu: {
+        emoji: '📜',
+        text: 'El degà del Col·legi de Periodistes felicita Linu: «Aquest manifest recull l\'essència de la nostra professió. Per tant, el publicarem a la nostra web oficial».',
+        translation: 'O decano do Colégio de Jornalistas parabeniza Linu: «Este manifesto reúne a essência da nossa profissão. Portanto, vamos publicá-lo em nosso site oficial».',
+        choices: [
+          { text: 'Signar el document i atendre les preguntes de la premsa.', translation: 'Assinar o documento e responder às perguntas da imprensa.', next: 'final_bom' },
+          { text: 'Marxar immediatament sense signar el text definitiu.', translation: 'Ir embora imediatamente sem assinar o texto definitivo.', next: 'final_neutre' },
+        ],
+      },
+      final_bom: {
+        emoji: '🗞️',
+        text: 'El manifest per la informació rigorosa té una excel·lent acollida. Linu ha demostrat una capacitat d\'oratòria impecable a Barcelona, utilitzant amb mestria els connectors i les frases de subjuntiu.',
+        translation: 'O manifesto pela informação rigorosa tem uma excelente acolhida. Linu demonstrou uma capacidade de oratória impecável em Barcelona, utilizando com maestria os conectores e as frases de subjuntivo.',
+        ending: { tone: 'bom', title: 'Debate jornalístico brilhante!', message: 'Parabéns! Você participou de um debate de alto nível no Col·legi de Periodistes exercitando conectores e estruturas com o subjuntivo em catalão B2.4.' },
+      },
+      final_neutre: {
+        emoji: '📱',
+        text: 'El debat va ser molt interessant, però com que Linu no va signar el manifest final, la iniciativa es va quedar en un intercanvi d\'opinió sense continuïtat formal.',
+        translation: 'O debate foi muito interessante, mas como Linu não assinou o manifesto final, a iniciativa ficou em uma troca de opiniões sem continuidade formal.',
+        ending: { tone: 'neutro', title: 'Debate aberto', message: 'Você completou a história! A troca de ideias foi rica, embora não tenha gerado um documento assinado. Siga praticando seu catalão avançado!' },
+      },
+    },
+  },
 ];
