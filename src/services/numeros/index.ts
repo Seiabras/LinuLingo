@@ -34,8 +34,13 @@ const SPELLERS: Record<string, (text: string) => string> = {
   sv: spellSwedishNumbers,
 };
 
+const KEYCAP = /[\d#*]\uFE0F?\u20E3/;
+const KEYCAP_SPLIT = /([\d#*]\uFE0F?\u20E3)/;
+
 export function spellNumbers(text: string, locale: string): string {
   if (!/\d/.test(text)) return text;
+  // emojis de tecla (2️⃣, #️⃣) ficam como estão: cada pedaço entre eles é convertido à parte
+  if (KEYCAP.test(text)) return text.split(KEYCAP_SPLIT).map((p, i) => (i % 2 ? p : spellNumbers(p, locale))).join('');
   const lang = locale.split(/[-_]/)[0].toLowerCase();
   // o português do Brasil diz dezesseis, dezessete, dezenove (Portugal: dezasseis, dezassete, dezanove)
   if (lang === 'pt' && /^pt[-_]BR\b/i.test(locale)) return spellPortugueseNumbers(text, true);
