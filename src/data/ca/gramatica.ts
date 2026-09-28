@@ -256,9 +256,17 @@ export const GRAMMAR_CA: GrammarTopic[] = [
           ['On és el teu cotxe?', 'Onde está o teu carro?'],
         ],
       },
+      {
+        heading: 'Omissão excepcional do artigo',
+        text: 'O artigo só some antes do possessivo em vocativo, em parentesco em fórmula fixa («pare meu!») ou na expressão de lugar «a casa meva/teva/seva» (em minha/tua/sua casa) — diferente de «la meva casa» (minha casa, o prédio), que mantém o artigo.',
+        examples: [
+          ['Vine a casa meva.', 'Vem à minha casa.'],
+          ['Mare meva!', 'Minha nossa!'],
+        ],
+      },
     ],
     pitfalls: [
-      'Não usar o artigo antes do possessivo («meu pare» em vez de «el meu pare»); a omissão só vale em vocativo ou expressão fixa («pare meu!»).',
+      'Não usar o artigo antes do possessivo («meu pare» em vez de «el meu pare»); a omissão só vale em vocativo ou expressão fixa («pare meu!», «a casa meva»).',
       'Confundir «meva/teva/seva» (feminino) com as formas espanholas «mi/tu/su».',
       'Conjugar na 2ª pessoa ao falar com «vostè»: o certo é a 3ª pessoa.',
     ],
@@ -324,11 +332,33 @@ export const GRAMMAR_CA: GrammarTopic[] = [
           ['Ells serveixen el dinar.', 'Eles servem o almoço.'],
         ],
       },
+      {
+        heading: 'Verbos irregulares de alta frequência',
+        text: 'Fundamentais para desejo, capacidade, ações diárias e locomoção.',
+        table: {
+          head: ['Pronome', 'anar (ir)', 'fer (fazer)', 'voler (querer)', 'poder (poder)'],
+          rows: [
+            ['jo', 'vaig', 'faig', 'vull', 'puc'],
+            ['tu', 'vas', 'fas', 'vols', 'pots'],
+            ['ell/ella/vostè', 'va', 'fa', 'vol', 'pot'],
+            ['nosaltres', 'anem', 'fem', 'volem', 'podem'],
+            ['vosaltres', 'aneu', 'feu', 'voleu', 'podeu'],
+            ['ells/elles/vostès', 'van', 'fan', 'volen', 'poden'],
+          ],
+        },
+        examples: [
+          ['Jo vaig a la feina.', 'Eu vou ao trabalho.'],
+          ['Què fas avui?', 'O que você está fazendo hoje?'],
+          ['Vull un cafè, per favor.', 'Quero um café, por favor.'],
+          ['No puc venir demà.', 'Não posso vir amanhã.'],
+        ],
+      },
     ],
     pitfalls: [
       'Esquecer o «-o» da 1ª pessoa do singular no dialeto central (escrever «parl» em vez de «parlo» — noutros dialetos, como o valenciano, «parl» é a forma normal).',
       'Não pôr o «-eix-» nos verbos em -ir que pedem essa forma (dizer «serv» em vez de «serveixo»).',
       'Pôr o «-eix-» em «nosaltres»/«vosaltres», que não levam: são «servim» e «serviu».',
+      'Confundir «voler»/«poder» com as formas espanholas «quiero»/«puedo».',
     ],
     quiz: [
       {
@@ -342,6 +372,12 @@ export const GRAMMAR_CA: GrammarTopic[] = [
         options: ['jo llego', 'jo llegim', 'jo llegeixo'],
         answer: 'jo llegeixo',
         explanation: 'Verbo incoativo em -ir: ganha «-eix-» na 1ª pessoa do singular.',
+      },
+      {
+        question: 'Qual é a forma de «jo» do verbo «voler» (querer)?',
+        options: ['jo quiero', 'jo vull', 'jo vol'],
+        answer: 'jo vull',
+        explanation: '«Voler» é irregular: a 1ª pessoa do singular é «vull».',
       },
     ],
   },
@@ -380,6 +416,8 @@ export const GRAMMAR_CA: GrammarTopic[] = [
             ['lluny de', 'longe de', 'Lluny de la ciutat. (Longe da cidade.)'],
             ['a sobre de / damunt de', 'em cima de', 'A sobre de la taula. (Em cima da mesa.)'],
             ['a sota de / sota de', 'embaixo de', 'Sota de la cadira. (Debaixo da cadeira.)'],
+            ['davant de', 'em frente a', "Davant de l'estació. (Em frente à estação.)"],
+            ['darrere de', 'atrás de', "Darrere de l'església. (Atrás da igreja.)"],
           ],
         },
         examples: [
