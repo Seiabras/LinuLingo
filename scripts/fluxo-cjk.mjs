@@ -1,0 +1,154 @@
+// Teste de ponta a ponta do japonês e do coreano: troca de idioma, trilha, lição, gramática com a
+// linha de leitura e a IPA, treino do alfabeto (kana ou hangul), falsos amigos, palácio sem gênero,
+// cultura, linguística, histórias (uma do C2) e o cumprimento no tutorial.
+// Uso: IDIOMA=ja npx tsx scripts/fluxo-cjk.mjs   (ou IDIOMA=ko; servidor em http://localhost:8081)
+import { chromium } from 'playwright-core';
+import { existsSync, mkdirSync, readdirSync } from 'node:fs';
+import { homedir } from 'node:os';
+import { join } from 'node:path';
+import { JAPONES } from '../src/data/ja/index.ts';
+import { COREANO } from '../src/data/ko/index.ts';
+
+const lang = process.env.IDIOMA ?? 'ja';
+const PACK = { ja: JAPONES, ko: COREANO }[lang];
+const NOME = { ja: 'japones', ko: 'coreano' }[lang];
+const BASE = process.env.BASE_URL ?? 'http://localhost:8081';
+const OUT = process.env.OUT_DIR ?? 'capturas';
+const device = process.env.DEVICE ?? 'iphone';
+const scheme = process.env.SCHEME ?? 'light';
+const VIEW = { iphone: { width: 390, height: 844 }, desktop: { width: 1280, height: 800 } }[device];
+mkdirSync(OUT, { recursive: true });
+const root = join(homedir(), '.cache/ms-playwright');
+const dir = existsSync(root) && readdirSync(root).find((d) => /^chromium-\d+$/.test(d));
+const browser = await chromium.launch({ executablePath: process.env.CHROME_PATH ?? (dir ? join(root, dir, 'chrome-linux64/chrome') : undefined) });
+const page = await (
+  await browser.newContext({ viewport: VIEW, deviceScaleFactor: 2, isMobile: device !== 'desktop', hasTouch: device !== 'desktop', colorScheme: scheme })
+).newPage();
+const errors = [];
+page.on('pageerror', (e) => errors.push(e.message));
+page.on('console', (m) => m.type() === 'error' && !m.text().includes('Unknown event handler property') && !m.text().includes('404') && errors.push(m.text()));
+let n = 0;
+const shot = async (name) => {
+  await page.waitForTimeout(700);
+  await page.screenshot({ path: `${OUT}/${NOME}-${device}-${scheme}-${String(++n).padStart(2, '0')}-${name}.png` });
+};
+const click = (text) => page.getByText(text, { exact: true }).first().click();
+const expectText = async (t) => {
+  await page.getByText(t, { exact: false }).first().waitFor({ timeout: 15000 });
+};
+const skipTutorial = async () => {
+  await page.waitForTimeout(2500);
+  if (await page.getByText('Pular', { exact: true }).isVisible().catch(() => false)) {
+    await click('Pular');
+    await page.waitForTimeout(1500);
+  }
+};
+
+await page.goto(BASE + '/', { waitUntil: 'load', timeout: 180000 });
+await page.locator('text=Pular >> visible=true').or(page.locator('text=Mais práticas >> visible=true')).first().waitFor({ timeout: 120000 });
+await skipTutorial();
+
+// troca de idioma no Perfil
+await page.goto(BASE + '/perfil', { waitUntil: 'load' });
+const itRow = page.getByText(new RegExp(`^${PACK.name} · ${PACK.nativeName}`)).first();
+await itRow.waitFor({ timeout: 30000 });
+const tTroca = Date.now();
+await itRow.click();
+// o conteúdo do idioma novo é gravado no banco na hora da troca: espera o «preparando…» sumir
+await page.waitForTimeout(300);
+await page.waitForFunction(() => !document.body.innerText.includes('preparando…'), null, { timeout: 60000 });
+console.log(`  troca de idioma: ${((Date.now() - tTroca) / 1000).toFixed(1)} s`);
+await page.goto(BASE + '/', { waitUntil: 'load' });
+await skipTutorial();
+const u1 = PACK.units[0];
+await expectText(u1.lessons[0].title);
+await expectText('Falsos amigos');
+await shot('trilha');
+
+// primeira lição: card «Aprenda primeiro»
+await click(u1.lessons[0].title);
+await page.waitForTimeout(1500);
+await expectText(u1.card.title);
+await shot('licao-card');
+
+// gramática: pronúncia, com IPA
+const g1 = PACK.grammar[0];
+await page.goto(BASE + '/gramatica/' + g1.id, { waitUntil: 'load' });
+await expectText(g1.title);
+await shot('gramatica');
+if (!(await page.locator('text=/\\[.+\\]/').count())) throw new Error('IPA não apareceu na gramática');
+
+// falsos amigos: a lista, um card aberto e uma rodada de 10 perguntas
+await page.goto(BASE + '/falsos-amigos', { waitUntil: 'load' });
+const ff = PACK.falseFriends[0];
+await page.getByLabel(`Falso amigo ${ff.word}`).waitFor({ timeout: 20000 });
+await page.getByLabel(`Falso amigo ${ff.word}`).click();
+await expectText(ff.example[1]);
+await shot('falsos-amigos-lista');
+await click('🎯 Treinar (10 perguntas)');
+for (let q = 0; q < 10; q++) {
+  await page.getByLabel(/^Opção /).first().click();
+  if (q === 0) await shot('falsos-amigos-jogo');
+  await page.getByText('Continuar', { exact: true }).first().click();
+  await page.waitForTimeout(250);
+}
+await expectText('acertos');
+await shot('falsos-amigos-fim');
+
+// palácio: a explicação de que não há gênero, sem o camaleão do romeno
+await page.goto(BASE + '/palacio', { waitUntil: 'load' });
+await expectText('não tem gênero gramatical');
+if (await page.getByText('Jardim do Camaleão', { exact: false }).count()) throw new Error('o palácio mostrou a sala do romeno');
+await shot('palacio');
+
+// alfabeto: o treino do kana ou do hangul
+await page.goto(BASE + '/alfabeto', { waitUntil: 'load' });
+await page.waitForTimeout(1500);
+await shot('alfabeto');
+
+// cultura: a variante 
+await page.goto(BASE + '/cultura', { waitUntil: 'load' });
+await page.getByText(new RegExp(`(Variantes|Sotaques|Dialetos|Línguas).* do ${PACK.name.toLowerCase()}`, 'i')).first().waitFor({ timeout: 30000 });
+if ((PACK.variants?.length ?? 0) > 1) {
+await page.getByLabel(new RegExp(`^Estudar: .*${PACK.variants[1].name.replace(/[()]/g, "\\$&")}`)).first().click();
+await page.waitForTimeout(800);
+await expectText(PACK.variants[1].card.title);
+await shot('variante');
+await page.getByLabel(new RegExp(`^Estudar: .*${PACK.variants[0].name.replace(/[()]/g, "\\$&")}`)).first().click();
+await page.waitForTimeout(800);
+}
+
+// linguística: fonética
+await page.goto(BASE + '/linguistica/fonetica', { waitUntil: 'load' });
+await expectText(PACK.linguistics[0].sections[0].heading);
+await shot('linguistica');
+
+// histórias: 3 no A1.1 e uma aberta
+await page.goto(BASE + '/historias', { waitUntil: 'load' });
+const a11 = PACK.stories.filter((x) => x.level === 'A1.1');
+for (const st of a11) await expectText(st.title);
+await shot('historias');
+await page.goto(BASE + '/historia/' + a11[0].id, { waitUntil: 'load' });
+await expectText(a11[0].nodes[a11[0].start].text.slice(0, 30));
+await shot('historia');
+const c2 = PACK.stories.filter((x) => x.level === 'C2').at(-1);
+await page.goto(BASE + '/historia/' + c2.id, { waitUntil: 'load' });
+await expectText(c2.nodes[c2.start].text.slice(0, 12));
+await shot('historia-c2');
+
+// tutorial: o slide dos falsos amigos
+await page.goto(BASE + '/tutorial', { waitUntil: 'load' });
+// 1º passo: a escolha do idioma (o estudado já vem marcado); o cumprimento no idioma vem no 2º
+await expectText('que idioma você quer aprender comigo?');
+await click('Próximo');
+await expectText(`${PACK.phrases.hi} Vamos de`);
+// o japonês e o coreano têm o slide do alfabeto antes: avança até o dos falsos amigos
+for (let i = 0; i < 8 && !(await page.getByText('Cuidado com os falsos amigos').first().isVisible().catch(() => false)); i++) {
+  await click('Próximo');
+  await page.waitForTimeout(400);
+}
+await expectText('Cuidado com os falsos amigos');
+await shot('tutorial-falsos-amigos');
+
+console.log(errors.length ? `⚠️  erros:\n   ${[...new Set(errors)].join('\n   ')}` : '✅ sem erros no console');
+await browser.close();
