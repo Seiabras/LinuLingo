@@ -1,0 +1,167 @@
+import type { ArticleSeed } from '../artigos';
+
+/** Artigos culturais graduados do estoniano (ver src/data/artigos.ts). */
+export const ARTIGOS_ET: ArticleSeed[] = [
+  {
+    id: 'et-a-laulupidu',
+    level: 'A1.1',
+    title: 'Laulupidu',
+    emoji: '🎶',
+    paragraphs: [
+      'Eestis on laulupidu. See on väga suur pidu. Seal laulavad palju inimesi: lapsed, noored ja vanad.',
+      'Laulupidu on Tallinnas iga viie aasta tagant. Inimesed kannavad ilusaid rahvariideid ja laulavad eesti laule.',
+    ],
+    translation: [
+      'Na Estônia existe o Festival da Canção («laulupidu»). É uma festa muito grande. Lá cantam muitas pessoas: crianças, jovens e idosos.',
+      'O Festival da Canção acontece em Tallinn a cada cinco anos. As pessoas usam belos trajes típicos e cantam canções estonianas.',
+    ],
+    glossary: [
+      ['laulupidu / pidu', 'festival da canção / festa'],
+      ['rahvariideid', 'trajes típicos (de «rahvariided»)'],
+      ['iga viie aasta tagant', 'a cada cinco anos (de «iga», cada, e «aasta», ano)'],
+    ],
+    questions: [
+      { q: 'Quem canta no Festival da Canção?', options: ['Só cantores profissionais', 'Crianças, jovens e idosos', 'Só crianças'], answer: 1 },
+      { q: 'De quanto em quanto tempo acontece o festival?', options: ['Todo ano', 'A cada cinco anos', 'A cada dez anos'], answer: 1 },
+    ],
+  },
+  {
+    id: 'et-a-suitsusaun',
+    level: 'A2.1',
+    title: 'Suitsusaun',
+    emoji: '🧖',
+    paragraphs: [
+      'Eestis on saun väga tähtis. Vanasti oli saun peaaegu igas talus, ja paljudel peredel on saun ka praegu.',
+      'Võromaal, Lõuna-Eestis, on vana suitsusauna traditsioon. Suitsusaunas ei ole korstnat. Ahju köetakse mitu tundi ja suits jääb sisse. Kui ahi on kuum, lastakse suits välja ja inimesed lähevad sisse.',
+      'Seal visatakse vett kerisele ja kasutatakse vihta. Nüüd on Võromaa suitsusauna traditsioon ka UNESCO nimekirjas.',
+    ],
+    translation: [
+      'Na Estônia, a sauna é muito importante. Antigamente havia sauna em quase toda fazenda, e muitas famílias têm sauna ainda hoje.',
+      'Em Võromaa, no sul da Estônia, existe uma velha tradição de sauna de fumaça («suitsusaun»). A sauna de fumaça não tem chaminé. O fogão é aceso por várias horas e a fumaça fica lá dentro. Quando o fogão está quente, deixa-se a fumaça sair e as pessoas entram.',
+      'Lá se joga água nas pedras quentes e se usa o «viht», um feixe de galhos de bétula. Hoje a tradição da sauna de fumaça de Võromaa está também na lista da UNESCO.',
+    ],
+    glossary: [
+      ['saun', 'sauna'],
+      ['suitsusauna / suitsusaunas', 'da sauna de fumaça / na sauna de fumaça'],
+      ['suits', 'fumaça'],
+      ['korstnat', 'chaminé (de «korsten»)'],
+      ['köetakse', 'é aceso, é aquecido (de «kütma»)'],
+      ['kerisele', 'nas pedras da sauna (de «keris»)'],
+      ['vihta', 'o «viht», feixe de galhos de bétula para bater de leve no corpo'],
+      ['nimekirjas', 'na lista (de «nimekiri»)'],
+    ],
+    forms: [
+      ['ahju', 'ahi'],
+      ['vett', 'vesi'],
+      ['lastakse', 'laskma'],
+      ['visatakse', 'viskama'],
+    ],
+    questions: [
+      { q: 'O que a sauna de fumaça não tem?', options: ['Porta', 'Chaminé', 'Pedras'], answer: 1 },
+      { q: 'Onde fica a tradição da sauna de fumaça?', options: ['Em Võromaa, no sul da Estônia', 'Em Tallinn', 'Numa ilha do norte'], answer: 0 },
+      { q: 'O que se faz antes de as pessoas entrarem?', options: ['Deixa-se a fumaça sair', 'Apaga-se o fogo com neve', 'Abre-se a chaminé'], answer: 0 },
+    ],
+  },
+  {
+    id: 'et-a-kihnu',
+    level: 'B1.1',
+    title: 'Kihnu saar',
+    emoji: '🏝️',
+    paragraphs: [
+      'Pärnu lahes on väike Kihnu saar, kus elab vaid mõnisada inimest. Saar on tuntud oma vana kultuuri poolest, mida hoiavad peamiselt naised.',
+      'Mehed olid sageli kaua merel, kalal või laevadel tööl. Sel ajal hoidsid naised kodu, põlde ja traditsioone. Nad laulsid vanu laule, tantsisid ja kudusid.',
+      'Paljud Kihnu naised kannavad ka tänapäeval iga päev värvilisi triibulisi seelikuid, mida kutsutakse kördiks. Saarel võib näha naisi, kes sõidavad külgkorviga mootorrattaga. Nüüd on Kihnu kultuuriruum UNESCO vaimse kultuuripärandi nimekirjas.',
+    ],
+    translation: [
+      'No golfo de Pärnu fica a pequena ilha de Kihnu, onde vivem apenas algumas centenas de pessoas. A ilha é conhecida pela sua cultura antiga, que é mantida principalmente pelas mulheres.',
+      'Os homens ficavam muitas vezes longos períodos no mar, pescando ou trabalhando em navios. Nesse tempo, as mulheres cuidavam da casa, dos campos e das tradições. Elas cantavam canções antigas, dançavam e tricotavam.',
+      'Muitas mulheres de Kihnu ainda hoje usam no dia a dia saias listradas e coloridas, chamadas «kört». Na ilha dá para ver mulheres pilotando motos com sidecar. Hoje o espaço cultural de Kihnu está na lista do patrimônio cultural imaterial da UNESCO.',
+    ],
+    glossary: [
+      ['lahes', 'no golfo, na baía (de «laht»)'],
+      ['peamiselt', 'principalmente'],
+      ['merel', 'no mar (de «meri»)'],
+      ['põlde', 'os campos (de «põld»)'],
+      ['kudusid', 'tricotavam, teciam (de «kuduma»)'],
+      ['triibulisi', 'listrados'],
+      ['seelikuid', 'saias (de «seelik»)'],
+      ['kördiks', '«kört», a saia listrada de Kihnu'],
+      ['külgkorviga', 'com sidecar'],
+      ['kultuuriruum', 'espaço cultural'],
+      ['vaimse kultuuripärandi', 'do patrimônio cultural imaterial'],
+      ['nimekirjas', 'na lista (de «nimekiri»)'],
+    ],
+    forms: [
+      ['mehed', 'mees'],
+      ['näha', 'nägema'],
+    ],
+    questions: [
+      { q: 'Quem mantém principalmente a cultura de Kihnu?', options: ['Os homens', 'As mulheres', 'Os turistas'], answer: 1 },
+      { q: 'Por que os homens ficavam muito tempo longe?', options: ['Estavam no mar, pescando ou em navios', 'Trabalhavam em Tallinn', 'Estavam na guerra'], answer: 0 },
+      { q: 'O que é o «kört»?', options: ['Uma dança', 'Uma saia listrada e colorida', 'Um barco'], answer: 1 },
+    ],
+  },
+  {
+    id: 'et-a-laulev-revolutsioon',
+    level: 'B2.1',
+    title: 'Laulev revolutsioon',
+    emoji: '🕯️',
+    paragraphs: [
+      '1980. aastate lõpus, kui Eesti kuulus veel Nõukogude Liitu, hakkasid inimesed kogunema, et laulda isamaalisi laule. Seda aega nimetatakse laulvaks revolutsiooniks.',
+      '1988. aasta suvel tuli Tallinna lauluväljakule öösiti kokku tuhandeid inimesi. Septembris toimus seal „Eestimaa laul“, kus oli umbes 300 000 inimest.',
+      '23. augustil 1989 võtsid umbes kaks miljonit inimest Eestis, Lätis ja Leedus üksteisel käest kinni ja moodustasid Balti keti, mis ulatus Tallinnast Vilniuseni. 20. augustil 1991 sai Eesti rahumeelselt uuesti iseseisvaks.',
+    ],
+    translation: [
+      'No fim dos anos 1980, quando a Estônia ainda pertencia à União Soviética, as pessoas começaram a se reunir para cantar canções patrióticas. Essa época é chamada de Revolução Cantada.',
+      'No verão de 1988, milhares de pessoas se reuniam à noite no Campo do Festival da Canção, em Tallinn. Em setembro aconteceu ali «A Canção da Estônia» («Eestimaa laul»), com cerca de 300 mil pessoas.',
+      'Em 23 de agosto de 1989, cerca de dois milhões de pessoas na Estônia, na Letônia e na Lituânia deram as mãos e formaram a Corrente Báltica, que ia de Tallinn até Vilnius. Em 20 de agosto de 1991, a Estônia voltou a ser independente, de forma pacífica.',
+    ],
+    glossary: [
+      ['isamaalisi', 'patrióticos'],
+      ['laulvaks revolutsiooniks', 'Revolução Cantada'],
+      ['lauluväljakule', 'para o Campo do Festival da Canção'],
+      ['moodustasid', 'formaram'],
+      ['keti', 'corrente (de «kett»)'],
+      ['ulatus', 'estendia-se, ia (de «ulatuma»)'],
+      ['rahumeelselt', 'pacificamente'],
+    ],
+    forms: [['käest', 'käsi']],
+    questions: [
+      { q: 'O que as pessoas faziam nos encontros da Revolução Cantada?', options: ['Cantavam canções patrióticas', 'Faziam greve de fome', 'Assistiam a jogos de futebol'], answer: 0 },
+      { q: 'O que foi a Corrente Báltica?', options: ['Uma ferrovia', 'Uma corrente humana de Tallinn até Vilnius', 'Um festival de música'], answer: 1 },
+      { q: 'Quando a Estônia voltou a ser independente?', options: ['Em 20 de agosto de 1991', 'Em 1918', 'Em 23 de agosto de 1989'], answer: 0 },
+    ],
+  },
+  {
+    id: 'et-a-e-eesti',
+    level: 'C1.1',
+    title: 'E-Eesti',
+    emoji: '💻',
+    paragraphs: [
+      'Eestit nimetatakse sageli üheks maailma kõige digitaalsemaks riigiks. Peaaegu kõiki asju riigiga saab ajada internetis: ID-kaardiga saab allkirjastada dokumente, esitada mõne minutiga maksudeklaratsiooni ja vaadata oma terviseandmeid.',
+      '2005. aastal said eestlased esimese riigina maailmas hääletada kogu riigis interneti teel, esmalt kohalikel valimistel ja 2007. aastal ka Riigikogu valimistel.',
+      '2014. aasta lõpus käivitati e-residentsus: nüüd võib ka välismaalane saada Eesti digitaalse isikutunnistuse ja juhtida oma ettevõtet internetis. Maailmas on tuntud ka Skype, mille loomisel olid tähtsal kohal eesti programmeerijad.',
+    ],
+    translation: [
+      'A Estônia é chamada com frequência de um dos países mais digitais do mundo. Quase todos os assuntos com o Estado podem ser resolvidos pela internet: com a carteira de identidade digital («ID-kaart») dá para assinar documentos, entregar a declaração de imposto em poucos minutos e ver os próprios dados de saúde.',
+      'Em 2005, os estonianos foram o primeiro país do mundo a votar pela internet em todo o território, primeiro nas eleições municipais e, em 2007, também nas eleições para o parlamento (Riigikogu).',
+      'No fim de 2014 foi lançada a e-residência: agora também um estrangeiro pode receber uma identidade digital estoniana e administrar a sua empresa pela internet. No mundo, também é conhecido o Skype, em cuja criação programadores estonianos tiveram um papel importante.',
+    ],
+    glossary: [
+      ['digitaalsemaks / digitaalse', 'mais digital / digital'],
+      ['allkirjastada', 'assinar'],
+      ['maksudeklaratsiooni', 'a declaração de imposto'],
+      ['terviseandmeid', 'dados de saúde'],
+      ['hääletada', 'votar'],
+      ['käivitati', 'foi lançado, foi posto em funcionamento'],
+      ['isikutunnistuse', 'documento de identidade'],
+      ['e-residentsus', 'e-residência'],
+    ],
+    forms: [['asju', 'asi']],
+    questions: [
+      { q: 'O que se pode fazer com a carteira de identidade digital?', options: ['Assinar documentos e declarar impostos', 'Só viajar de ônibus', 'Nada pela internet'], answer: 0 },
+      { q: 'Em que eleições se votou pela internet pela primeira vez, em 2005?', options: ['Nas eleições para o parlamento', 'Nas eleições municipais', 'Nas eleições para presidente'], answer: 1 },
+      { q: 'O que é a e-residência?', options: ['Um visto de turista', 'Uma identidade digital para estrangeiros administrarem empresas', 'Um aplicativo de mensagens'], answer: 1 },
+    ],
+  },
+];
