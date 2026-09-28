@@ -10,6 +10,7 @@ import { ALPHABET_RU } from './alfabeto';
 import { ACCENTS_RU } from './sotaques';
 import { PARES_RU } from './pares';
 import { BICHOS_RU } from './bichos';
+import { FALSE_FRIENDS_RU } from './falsos-amigos';
 
 export const RUSSO: LanguagePack = {
   code: 'ru',
@@ -35,6 +36,7 @@ export const RUSSO: LanguagePack = {
   accents: ACCENTS_RU,
   minimalPairs: PARES_RU,
   animalSounds: BICHOS_RU,
+  falseFriends: FALSE_FRIENDS_RU,
   journalPrompts: JOURNAL_PROMPTS_RU,
   shadowing: SHADOWING_RU,
   ipa: toIpaRu,

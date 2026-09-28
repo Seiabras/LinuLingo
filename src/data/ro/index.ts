@@ -12,6 +12,7 @@ import { VARIANTS_RO } from './variantes';
 import { ACCENTS_RO } from './sotaques';
 import { PARES_RO } from './pares';
 import { BICHOS_RO } from './bichos';
+import { FALSE_FRIENDS_RO } from './falsos-amigos';
 
 export const ROMENO: LanguagePack = {
   code: 'ro',
@@ -38,6 +39,7 @@ export const ROMENO: LanguagePack = {
   accents: ACCENTS_RO,
   minimalPairs: PARES_RO,
   animalSounds: BICHOS_RO,
+  falseFriends: FALSE_FRIENDS_RO,
   journalPrompts: JOURNAL_PROMPTS_RO,
   shadowing: SHADOWING_RO,
   ipa: toIpa,
