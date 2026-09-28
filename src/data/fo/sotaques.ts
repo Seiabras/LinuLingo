@@ -5,6 +5,11 @@ import type { Accent } from '../types';
 // na fala: as vogais, a melodia e algumas palavras. A grande divisão passa entre o norte e o sul.
 // Aqui: sotaques (kind 'sotaque'), dialetos com traços próprios mais fortes (kind 'dialeto') e as
 // línguas que convivem ou conviveram com o feroês (kind 'língua').
+//
+// Sem `subdivisions` nos sotaques daqui de propósito: não existe norma ISO 3166-2 publicada para
+// as Ilhas Faroé (confirmado no pacote iso-codes e na ISO 3166 Maintenance Agency) — não há código
+// nenhum para citar, nem para Tórshavn, nem para nenhuma ilha. A exceção é «fo-norn», cujo território
+// (Shetland e Órcades) é do Reino Unido e tem código normal (GB-ZET, GB-ORK).
 
 export const ACCENTS_FO: Accent[] = [
   // ───────────── SOTAQUES ─────────────

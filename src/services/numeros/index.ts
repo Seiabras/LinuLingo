@@ -6,6 +6,7 @@ import { spellFinnishNumbers } from './fi';
 import { spellFrenchNumbers } from './fr';
 import { spellIcelandicNumbers } from './is';
 import { spellItalianNumbers } from './it';
+import { spellLithuanianNumbers } from './lt';
 import { spellNorwegianNumbers } from './nb';
 import { spellPortugueseNumbers } from './pt';
 import { spellRomanianNumbers } from './ro';
@@ -27,6 +28,7 @@ const SPELLERS: Record<string, (text: string) => string> = {
   fr: spellFrenchNumbers,
   is: spellIcelandicNumbers,
   it: spellItalianNumbers,
+  lt: spellLithuanianNumbers,
   nb: spellNorwegianNumbers,
   pt: spellPortugueseNumbers,
   ro: spellRomanianNumbers,

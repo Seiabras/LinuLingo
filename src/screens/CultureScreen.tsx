@@ -92,7 +92,8 @@ function CultureTab({ onOwnLanguages }: { onOwnLanguages: () => void }) {
   const dark = useIsDark();
   const [open, setOpen] = useState<string | null>(pack.units[0]?.id ?? null);
   const [kind, setKind] = useState<CountryKind>('animals');
-  const chain = [pack.lineage.family, ...pack.lineage.branches, pack.name];
+  // o ramo às vezes tem o nome do próprio idioma (Japônico › Japonês): não repete o nó
+  const chain = [pack.lineage.family, ...pack.lineage.branches, pack.name].filter((x, i, all) => i === 0 || x !== all[i - 1]);
 
   return (
     <>
@@ -105,7 +106,7 @@ function CultureTab({ onOwnLanguages }: { onOwnLanguages: () => void }) {
         <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">🌳 Família do {nomeIdioma(pack.name)}</Text>
         <View className="gap-0">
           {chain.map((node, i) => (
-            <View key={node} style={{ paddingLeft: i * 14 }} className="flex-row items-center gap-2 py-1">
+            <View key={`${i}-${node}`} style={{ paddingLeft: i * 14 }} className="flex-row items-center gap-2 py-1">
               {i > 0 && <Text className="text-slate-400">└</Text>}
               <Text className={`${i === chain.length - 1 ? 'rounded-lg bg-conecta px-2 py-0.5 font-extrabold text-white' : 'font-semibold text-slate-700 dark:text-slate-300'}`}>
                 {i === chain.length - 1 ? `${pack.flag} ${node}` : node}
