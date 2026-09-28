@@ -1211,4 +1211,172 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
   },
+  {
+    id: 'ca-g19',
+    level: 'B2.1',
+    title: 'Voz passiva e construções impessoais',
+    emoji: '🔄',
+    summary: 'A passiva analítica (ésser + particípio), a passiva pronominal («es» + verbo) e a construção impessoal, comuns em textos formais e jornalísticos.',
+    sections: [
+      {
+        heading: 'Passiva analítica (ésser/ser + particípio)',
+        text: 'Auxiliar «ésser»/«ser» no tempo certo + particípio do verbo principal. O particípio concorda em gênero e número com o sujeito paciente. O agente vem com «per» (ou «per part de») — nunca «por».',
+        table: {
+          head: ['Tempo', 'Exemplo', 'Tradução'],
+          rows: [
+            ['Presente', 'El discurs és llegit pel president.', 'O discurso é lido pelo presidente.'],
+            ['Passat perifràstic', 'Les lleis van ser aprovades pel parlament.', 'As leis foram aprovadas pelo parlamento.'],
+            ['Futuro', 'Les propostes seran examinades per la comissió.', 'As propostas serão examinadas pela comissão.'],
+          ],
+        },
+        examples: [
+          ['Aquesta novel·la va ser escrita per Mercè Rodoreda.', 'Este romance foi escrito por Mercè Rodoreda.'],
+          ['Les cartes van ser enviades ahir.', 'As cartas foram enviadas ontem.'],
+        ],
+      },
+      {
+        heading: 'Passiva pronominal e impessoalidade com «es»',
+        text: 'Na fala e na escrita informal/média, prefere-se «es» + verbo (3ª pessoa) à passiva analítica. Na passiva pronominal, o verbo concorda com o objeto paciente.',
+        table: {
+          head: ['Tipo', 'Estrutura', 'Exemplo', 'Tradução'],
+          rows: [
+            ['Passiva pronominal', 'es + verbo 3ª pl. + substantivo plural', 'Es venen pisos al centre.', 'Vendem-se apartamentos no centro.'],
+            ['Passiva pronominal', 'es + verbo 3ª sing. + substantivo singular', 'Es busca cambrer.', 'Procura-se garçom.'],
+            ['Impessoal', 'es + verbo 3ª sing. (sem sujeito)', 'Es viu molt bé aquí.', 'Vive-se muito bem aqui.'],
+          ],
+        },
+        examples: [
+          ['Es van aprovar totes les esmenes.', 'Aprovaram-se todas as emendas.'],
+          ['En aquesta ciutat es parla català i castellà.', 'Nesta cidade fala-se catalão e espanhol.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Esquecer a concordância do particípio na passiva analítica («les lleis van ser aprovat» em vez de «aprovades»).',
+      'Usar «por» (espanhol) para o agente da passiva em vez de «per».',
+      'Não pôr o verbo no plural na passiva pronominal («es ven pisos» em vez de «es venen pisos»).',
+    ],
+    quiz: [
+      {
+        question: 'Qual é a passiva analítica correta de «As propostas serão examinadas pela comissão»?',
+        options: ['Les propostes seran examinat per la comissió', 'Les propostes seran examinades per la comissió', 'Les propostes seran examinats per la comissió'],
+        answer: 'Les propostes seran examinades per la comissió',
+        explanation: 'O particípio concorda em feminino plural com «les propostes»: «examinades».',
+      },
+      {
+        question: 'Qual frase concorda certo na passiva pronominal com substantivo plural?',
+        options: ['Es ven pisos al centre', 'Es venen pisos al centre', 'Es venent pisos al centre'],
+        answer: 'Es venen pisos al centre',
+        explanation: 'O verbo no plural («venen») concorda com o sujeito paciente plural («pisos»).',
+      },
+    ],
+  },
+  {
+    id: 'ca-g20',
+    level: 'B2.1',
+    title: 'Mais-que-perfeito do subjuntivo e condicional composto',
+    emoji: '⏪',
+    summary: 'A condicional de 3º tipo, para hipóteses irrealizáveis no passado: «si» + mais-que-perfeito do subjuntivo, principal no condicional composto.',
+    sections: [
+      {
+        heading: 'Formação dos tempos compostos',
+        text: 'Mais-que-perfeito do subjuntivo: imperfeito do subjuntivo de «haver» + particípio. Condicional composto: condicional simples de «haver» + particípio.',
+        table: {
+          head: ['Pronome', 'Mais-que-perfeito subj. (haver)', 'Condicional composto (haver)', 'Particípio'],
+          rows: [
+            ['jo', 'hagués', 'hauria', 'parlat/fet/vist'],
+            ['tu', 'haguessis', 'hauries', 'parlat/fet/vist'],
+            ['ell/ella/vostè', 'hagués', 'hauria', 'parlat/fet/vist'],
+            ['nosaltres', 'haguéssim', 'hauríem', 'parlat/fet/vist'],
+            ['vosaltres', 'haguéssiu', 'hauríeu', 'parlat/fet/vist'],
+            ['ells/elles/vostès', 'haguessin', 'haurien', 'parlat/fet/vist'],
+          ],
+        },
+      },
+      {
+        heading: 'Condicionais de 3º tipo (hipóteses no passado)',
+        text: 'Para situações irrealizáveis ou lamentações sobre o passado. A oração com «si» pede o mais-que-perfeito do subjuntivo; a principal, o condicional composto.',
+        examples: [
+          ["Si hagués sabut la veritat, m'hauria quedat a casa.", 'Se eu soubesse a verdade, teria ficado em casa.'],
+          ['Si haguéssim agafat el tren, hauríem arribat a temps.', 'Se tivéssemos pego o trem, teríamos chegado a tempo.'],
+          ["Si haguessis estudiat més, hauries aprovat l'examen.", 'Se você tivesse estudado mais, teria passado no exame.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar o condicional composto logo depois de «si» («Si hauria sabut» é erro grave; o certo é «Si hagués sabut»).',
+      'Esquecer o acento nas formas de «nosaltres»/«vosaltres» («haguéssim/haguéssiu», «hauríem/hauríeu»).',
+      'Confundir a raiz catalã de «haver» no subjuntivo («hagués») com a espanhola («hubiera»).',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz «Se eu tivesse sabido a verdade, teria vindo»?',
+        options: ['Si hauria sabut la veritat, hauria vingut', 'Si hagués sabut la veritat, hauria vingut', 'Si hagués sabut la veritat, hagués vingut'],
+        answer: 'Si hagués sabut la veritat, hauria vingut',
+        explanation: '«si» pede mais-que-perfeito do subjuntivo («hagués sabut»); a principal, condicional composto («hauria vingut»).',
+      },
+      {
+        question: 'Qual é «nosaltres» de «haver» no mais-que-perfeito do subjuntivo?',
+        options: ['haguéssim', 'hauríem', 'haguem'],
+        answer: 'haguéssim',
+        explanation: '1ª pessoa do plural de «haver» no mais-que-perfeito do subjuntivo: «haguéssim».',
+      },
+    ],
+  },
+  {
+    id: 'ca-g21',
+    level: 'B2.1',
+    title: 'Conectores avançados: causa, concessão e finalidade',
+    emoji: '🪢',
+    summary: 'Conectores causais, concessivos e de finalidade, e quando cada um pede indicativo ou subjuntivo.',
+    sections: [
+      {
+        heading: 'Conectores causais (pedem indicativo)',
+        text: 'Expressam causa de um fato real: «perquè» (porque), «ja que» (já que), «atès que» (visto que) e «com que» (como/visto que — obrigatoriamente no início da frase).',
+        table: {
+          head: ['Conector', 'Posição', 'Exemplo', 'Tradução'],
+          rows: [
+            ['perquè / ja que', 'meio ou fim da oração', 'No vaig venir perquè plovia.', 'Não vim porque chovia.'],
+            ['com que', 'início (obrigatório)', 'Com que era tard, vam agafar un taxi.', 'Como estava tarde, pegamos um táxi.'],
+            ['atès que', 'registro formal', 'Atès que no hi ha preguntes, cloem la sessió.', 'Visto que não há perguntas, encerramos a sessão.'],
+          ],
+        },
+      },
+      {
+        heading: 'Conectores concessivos e finais',
+        text: '«tot i que»/«malgrat que» (concessivo, fato real) pedem indicativo; «encara que» pode pedir subjuntivo quando é hipótese. Conectores de finalidade («perquè», «per tal que», com sentido de «para que») pedem SEMPRE subjuntivo — cuidado: «perquè» serve tanto de causa (indicativo) quanto de finalidade (subjuntivo).',
+        table: {
+          head: ['Tipo', 'Conector', 'Modo', 'Exemplo'],
+          rows: [
+            ['Concessivo (fato real)', 'tot i que / malgrat que', 'indicatiu', 'Tot i que plou, sortirem a passejar.'],
+            ['Concessivo (hipótese)', 'encara que', 'subjuntiu', 'Encara que plogui demà, sortirem.'],
+            ['Finalidade', 'perquè / per tal que', 'subjuntiu (sempre)', "T'ho explico perquè ho entenguis."],
+          ],
+        },
+        examples: [
+          ['Et truco per tal que sàpigues la notícia.', 'Ligo para você para que saiba da notícia.'],
+          ['Malgrat que fa fred, hem anat a la platja.', 'Apesar de estar frio, fomos à praia.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar indicativo depois de conector de finalidade («perquè ho entens» em vez de «perquè ho entenguis»).',
+      'Confundir «com que» (causal, início de frase) com o «com» simples.',
+      'Começar frase causal com «perquè»: prefira «com que» quando a causa vem primeiro.',
+    ],
+    quiz: [
+      {
+        question: 'Que modo verbal vem depois de «per tal que»?',
+        options: ['Indicatiu', 'Subjuntiu', 'Infinitiu'],
+        answer: 'Subjuntiu',
+        explanation: 'Conectores de finalidade («per tal que», «perquè» com sentido de propósito) sempre pedem subjuntivo.',
+      },
+      {
+        question: 'Qual conector causal abre a frase «___ era tard, vam agafar un taxi»?',
+        options: ['Com que', 'Perquè', 'Per tal que'],
+        answer: 'Com que',
+        explanation: '«Com que» é o conector causal próprio para abrir a oração.',
+      },
+    ],
+  },
 ];
