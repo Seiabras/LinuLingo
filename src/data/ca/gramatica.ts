@@ -1834,4 +1834,258 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
   },
+  {
+    id: 'ca-g29',
+    level: 'B2.3',
+    title: 'Perífrases aspectuais avançadas',
+    emoji: '⏳',
+    summary: '«anar + gerundi» (progressão gradual), «portar + tempo + gerundi» (duração), «deixar de»/«tornar a» + infinitivo (interrupção e repetição).',
+    sections: [
+      {
+        heading: 'Progressão gradual: anar + gerundi',
+        text: 'Indica um processo gradual e contínuo ao longo do tempo.',
+        table: {
+          head: ['Perífrase', 'Sentido', 'Exemplo', 'Tradução'],
+          rows: [
+            ['anar + gerundi', 'ação gradual', "El deute de l'empresa va augmentant.", 'A dívida da empresa vai aumentando.'],
+            ['anar + gerundi', 'aproximação progressiva', 'Els negociadors van acostant posicions.', 'Os negociadores vão aproximando posições.'],
+          ],
+        },
+        examples: [
+          ['La situació econòmica va millorant a poc a poc.', 'A situação econômica vai melhorando aos poucos.'],
+          ['Les despeses van creixent mes rere mes.', 'As despesas vão crescendo mês após mês.'],
+        ],
+      },
+      {
+        heading: 'Duração continuada: portar + tempo + gerundi',
+        text: 'Duração de uma ação iniciada no passado que continua no presente — sem a preposição «de» (decalque do espanhol).',
+        examples: [
+          ['Portem tres mesos negociant aquest contracte.', 'Estamos há três meses negociando esse contrato.'],
+          ['Quant temps portes treballant en aquest projecte?', 'Há quanto tempo você está trabalhando neste projeto?'],
+        ],
+      },
+      {
+        heading: 'Interrupção e repetição: deixar de / tornar a + infinitivo',
+        text: '«deixar de + infinitiu»: cessação de hábito/processo. «tornar a + infinitiu»: repetição do evento.',
+        table: {
+          head: ['Estrutura', 'Função', 'Exemplo', 'Tradução'],
+          rows: [
+            ['deixar de + infinitiu', 'interrupção', 'Han deixat de negociar amb els proveïdors.', 'Deixaram de negociar com os fornecedores.'],
+            ['tornar a + infinitiu', 'repetição', 'Tornarem a analitzar la proposta demà.', 'Voltaremos a analisar a proposta amanhã.'],
+          ],
+        },
+      },
+    ],
+    pitfalls: [
+      'Pôr «de» depois de «portar» + tempo + gerúndio («porto de tres anys treballant» em vez de «porto tres anys treballant»).',
+      'Confundir «anar + gerundi» (ação gradual) com o passat perifràstic «anar + infinitiu» (ação pontual concluída: «vaig parlar»).',
+      'Usar «volver a» (espanhol) em vez de «tornar a».',
+    ],
+    quiz: [
+      {
+        question: 'Como se diz «Estamos há seis meses analisando o mercado»?',
+        options: ['Portem sis mesos analitzant el mercat', 'Portem de sis mesos analitzant el mercat', 'Anem sis mesos analitzant el mercat'],
+        answer: 'Portem sis mesos analitzant el mercat',
+        explanation: '«portar + tempo + gerundi», sem preposição no meio.',
+      },
+      {
+        question: 'Qual perífrase indica mudança gradual e progressiva?',
+        options: ['tornar a + infinitiu', 'anar + gerundi', 'deixar de + infinitiu'],
+        answer: 'anar + gerundi',
+        explanation: '«anar + gerundi» expressa ação que se desenvolve aos poucos.',
+      },
+    ],
+  },
+  {
+    id: 'ca-g30',
+    level: 'B2.3',
+    title: 'Verbos de mudança (esdevenir, fer-se, posar-se, quedar, convertir-se en)',
+    emoji: '🔄',
+    summary: 'Verbos pseudocopulativos de mudança de estado — cada um para um tipo de transformação (rápida, gradual, formal, radical).',
+    sections: [
+      {
+        heading: 'Mudanças rápidas ou involuntárias: posar-se e quedar',
+        text: '«posar-se + adj.»: mudança física/emocional rápida e transitória. «quedar»/«quedar-se»: estado resultante de uma ação, acidente ou perda.',
+        table: {
+          head: ['Verbo', 'Tipo', 'Exemplo', 'Tradução'],
+          rows: [
+            ['posar-se + adj.', 'físico/emocional momentâneo', 'Es va posar vermell de vergonya.', 'Ficou vermelho de vergonha.'],
+            ['posar-se + adj.', 'saúde, rápido', "S'ha posat malalt aquest cap de setmana.", 'Ficou doente neste fim de semana.'],
+            ['quedar/quedar-se', 'estado resultante', 'Va quedar orfe a deu anys.', 'Ficou órfão aos dez anos.'],
+            ['quedar + adj.', 'resultado de evento', 'Tots van quedar sorpresos amb la notícia.', 'Todos ficaram surpresos com a notícia.'],
+          ],
+        },
+        examples: [
+          ['Quan li van fer la pregunta, es va posar nerviós.', 'Quando lhe fizeram a pergunta, ficou nervoso.'],
+          ['Després de l\'accident, va quedar incapaç de caminar.', 'Depois do acidente, ficou incapaz de caminhar.'],
+        ],
+      },
+      {
+        heading: 'Mudanças graduais, profissionais ou ideológicas: fer-se e esdevenir',
+        text: '«fer-se»: transformação gradual, por vontade, tempo ou evolução (profissão, idade, ideologia, religião). «esdevenir» (formal): mudança de natureza, resultado final.',
+        table: {
+          head: ['Verbo', 'Uso', 'Exemplo', 'Tradução'],
+          rows: [
+            ['fer-se + nom/adj.', 'profissão, idade, ideologia', 'Es va fer metge després de molts anys.', 'Tornou-se médico depois de muitos anos.'],
+            ['fer-se + adj.', 'evolução natural do tempo', "S'ha fet gran molt de pressa.", 'Ficou grande muito rápido.'],
+            ['esdevenir + nom/adj.', 'mudança formal/resultado', 'El projecte va esdevenir un èxit total.', 'O projeto se tornou um sucesso total.'],
+          ],
+        },
+        examples: [
+          ['Es va fer vegetarià fa dos anys.', 'Tornou-se vegetariano há dois anos.'],
+          ['Aquest petit poble ha esdevingut un centre turístic.', 'Esse pequeno povoado se tornou um centro turístico.'],
+        ],
+      },
+      {
+        heading: 'Transformação radical: convertir-se en / transformar-se en',
+        text: 'Sempre com a preposição «en»: mudança profunda de natureza, substância ou categoria.',
+        examples: [
+          ['L\'aigua es converteix en gel a zero graus.', 'A água se converte em gelo a zero graus.'],
+          ["L'antiga fàbrica s'ha convertit en un museu.", 'A antiga fábrica se converteu num museu.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar «tornar-se» com «en» antes de adjetivo simples («es va tornar en vermell» em vez de «es va posar/tornar vermell»).',
+      'Omitir o «en» com «convertir-se» («convertir-se una ciutat» em vez de «convertir-se en una ciutat»).',
+      'Confundir «quedar» (resultar/ficar após um processo) com «quedar-se» (permanecer num lugar ou guardar algo).',
+    ],
+    quiz: [
+      {
+        question: 'Qual verbo para uma reação emocional instantânea («Ele ficou muito nervoso»)?',
+        options: ['Es va fer molt nerviós', 'Es va posar molt nerviós', 'Va esdevenir molt nerviós'],
+        answer: 'Es va posar molt nerviós',
+        explanation: 'Estado físico/emocional rápido e passageiro: «posar-se + adjetivo».',
+      },
+      {
+        question: '«Aquesta decisió ___ un problema per a tots nosaltres» (tornou-se, formal): complete.',
+        options: ['va esdevenir', "va posar-se", 'va quedar-se'],
+        answer: 'va esdevenir',
+        explanation: '«esdevenir» é o verbo formal para transformação num novo estado/resultado.',
+      },
+    ],
+  },
+  {
+    id: 'ca-g31',
+    level: 'B2.4',
+    title: 'Marcadores de contraste, reformulação e modalização',
+    emoji: '🧭',
+    summary: 'Conectores avançados de oposição («en canvi», «mentre que»), concessão («així i tot»), reformulação («és a dir») e confirmação («de fet»).',
+    sections: [
+      {
+        heading: 'Conectores de oposição e contraste',
+        text: 'Contrapõem duas ideias ou restringem algo dito antes.',
+        table: {
+          head: ['Conector', 'Função', 'Exemplo', 'Tradução'],
+          rows: [
+            ['en canvi / per contra', 'contraste direto', 'En Marc és molt xerraire; en canvi, el seu germà és callat.', 'O Marc é muito falante; em contrapartida, o irmão é calado.'],
+            ['mentre que', 'comparação simultânea', 'Ell vol viatjar, mentre que ella prefereix quedar-se a casa.', 'Ele quer viajar, enquanto ela prefere ficar em casa.'],
+            ['no obstant això / així i tot', 'concessão forte', 'Plovia molt; així i tot, vam sortir a passejar.', 'Chovia muito; mesmo assim, saímos para passear.'],
+          ],
+        },
+        examples: [
+          ['El primer equip va guanyar; per contra, el filial va perdre.', 'O primeiro time venceu; por outro lado, o time reserva perdeu.'],
+          ["Hi havia moltes dificultats; no obstant això, vam assolir l'objectiu.", 'Havia muitas dificuldades; não obstante, alcançamos o objetivo.'],
+        ],
+      },
+      {
+        heading: 'Reformulação, precisão e modalização',
+        text: 'Para reexplicar, confirmar, corrigir ou matizar o que foi dito.',
+        table: {
+          head: ['Conector', 'Função', 'Exemplo', 'Tradução'],
+          rows: [
+            ['de fet / en efecte', 'confirmação', 'És un bon especialista; de fet, ha escrit diversos llibres.', 'É um bom especialista; de fato, escreveu vários livros.'],
+            ['és a dir / o sigui', 'esclarecimento', 'És un contracte indefinit; és a dir, no té data de finalització.', 'É um contrato por prazo indeterminado; ou seja, não tem data de término.'],
+            ['més aviat', 'correção de matiz', 'No estic enfadat, sinó més aviat sorprès.', 'Não estou bravo, mas sim surpreso.'],
+            ['així com', 'adição paralela', 'L\'alcalde, així com els regidors, va assistir a l\'acte.', 'O prefeito, assim como os vereadores, compareceu ao evento.'],
+          ],
+        },
+        examples: [
+          ['No és una crisi, sinó més aviat un canvi de tendència.', 'Não é uma crise, mas sim uma mudança de tendência.'],
+          ['Tots els socis, així com els convidats, han de signar el registre.', 'Todos os sócios, assim como os convidados, devem assinar o registro.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar «en canvi de» (espanhol) para «em vez de»: o certo é «en comptes de»/«en lloc de». «En canvi» sozinho significa «em contrapartida».',
+      'Confundir «així com» (assim como) com «així com així» (de qualquer jeito).',
+      'Escrever só «no obstant» como conector: a norma escrita culta pede «no obstant això».',
+    ],
+    quiz: [
+      {
+        question: '«O João gosta de praia; ___, a Maria prefere a montanha»: qual conector?',
+        options: ['en canvi', 'així com', 'de fet'],
+        answer: 'en canvi',
+        explanation: '«en canvi» é o conector padrão para contraste direto entre dois elementos.',
+      },
+      {
+        question: 'Como se diz «Ele é muito inteligente; de fato, ganhou o primeiro prêmio»?',
+        options: ['És molt intel·ligent; de fet, va guanyar el primer premi', 'És molt intel·ligent; en canvi, va guanyar el primer premi', 'És molt intel·ligent; així com va guanyar el primer premi'],
+        answer: 'És molt intel·ligent; de fet, va guanyar el primer premi',
+        explanation: '«de fet» confirma/reforça o que foi dito antes.',
+      },
+    ],
+  },
+  {
+    id: 'ca-g32',
+    level: 'B2.4',
+    title: '«Que» e «què»: quando acentuar',
+    emoji: '✍️',
+    summary: 'A distinção ortográfica e sintática entre «que» (conjunção/relativo sem preposição) e «què» (interrogativo, exclamativo, relativo com preposição, substantivo).',
+    sections: [
+      {
+        heading: '«Que» (sem acento)',
+        text: 'Conjunção integrante, relativo sem preposição, conjunção causal/explicativa, ou partícula enfática/interrogativa.',
+        table: {
+          head: ['Função', 'Exemplo', 'Tradução'],
+          rows: [
+            ['conjunção integrante', 'Sé que vindràs demà.', 'Sei que você virá amanhã.'],
+            ['relativo (sem preposição)', 'El llibre que he llegit és molt bo.', 'O livro que li é muito bom.'],
+            ['conjunção causal/explicativa', 'Tanca la finestra, que fa fred.', 'Feche a janela, que está frio.'],
+            ['partícula enfática', 'Que vols venir amb nosaltres?', 'Quer vir com a gente? (ênfase)'],
+          ],
+        },
+        examples: [
+          ['Espero que tot vagi bé.', 'Espero que tudo corra bem.'],
+          ['L\'home que parla és el meu oncle.', 'O homem que fala é meu tio.'],
+        ],
+      },
+      {
+        heading: '«Què» (com acento)',
+        text: 'Interrogativo, exclamativo, relativo precedido de preposição fraca (a/de/en/amb), ou substantivo masculino.',
+        table: {
+          head: ['Função', 'Exemplo', 'Tradução'],
+          rows: [
+            ['interrogativo direto/indireto', 'Què vols fer? / No sé què dir.', 'O que você quer fazer? / Não sei o que dizer.'],
+            ['exclamativo', 'Què bonic que és aquest paisatge!', 'Que bonita é essa paisagem!'],
+            ['relativo + preposição fraca', 'Aquest és el tema de què parlàvem.', 'Este é o tema de que falávamos.'],
+            ['substantivo (o porquê)', 'Vull saber el què i el com de la qüestió.', 'Quero saber o porquê e o como da questão.'],
+          ],
+        },
+        examples: [
+          ['No sé què cal fer en aquesta situació.', 'Não sei o que é preciso fazer nessa situação.'],
+          ["La cadira en què t'has assegut està trencada.", 'A cadeira em que você se sentou está quebrada.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Acentuar «que» relativo sem preposição («el llibre què he llegit» está errado; o certo é «que»).',
+      'Esquecer o acento de «què» em pergunta indireta («no sé que fer» em vez de «no sé què fer»).',
+      'Confundir a partícula enfática «que» («que fa fred!») com o interrogativo «què» («què dius?»).',
+    ],
+    quiz: [
+      {
+        question: '«No sé ___ he de dir en aquesta reunió»: qual forma?',
+        options: ['què', 'que', "que d'"],
+        answer: 'què',
+        explanation: 'Pergunta indireta com sentido de «o que»: forma tônica «què».',
+      },
+      {
+        question: 'Por que em «El pis en què visc és molt lluminós» leva acento?',
+        options: ['Porque é relativo precedido de preposição fraca («en»).', 'Porque é conjunção integrante.', 'Porque está no início de oração subordinada.'],
+        answer: 'Porque é relativo precedido de preposição fraca («en»).',
+        explanation: 'Relativo de coisa com preposição fraca (a/de/en/amb) antes: «què».',
+      },
+    ],
+  },
 ];
