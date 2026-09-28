@@ -179,6 +179,27 @@ Cada idioma mostra os seus jeitos regionais de falar (18 no espanhol, 5 no romen
 - **Cópia do progresso** (Perfil › 💾): guarda num arquivo JSON tudo o que é do aluno (XP, ofensiva, lições, revisões, histórias, diário, textos da comunidade, tema, variantes e sotaques), sem o conteúdo dos idiomas, que o app já traz. Para trocar de aparelho ou não perder nada ao limpar o navegador. Antes de restaurar, o app mostra o que a cópia traz; a troca é feita numa transação (ou entra tudo, ou nada muda) e as revisões de palavras que não existem mais ficam de fora. No computador o arquivo é baixado; no celular abre o menu de compartilhar (Arquivos, Drive…).
 - Tema claro, escuro ou automático.
 
+## Tsevhu, a língua do peixe koi (módulo especial)
+
+O Tsevhu é uma língua artificial (artlang) criada em 2020 por **Koa Vhukva («koallary»)** e ampliada pela comunidade. Ela fica em «🐟 Tsevhu», em Mais práticas, fora das trilhas.
+
+- **Koiwrit:** os 40 sinais (10 traços em 4 tamanhos) e um treino de 10 perguntas.
+- **Escrever no koi:** cada palavra vira uma ondulação de anéis. O focinho do koi mostra o tempo do verbo e o rabo mostra o modo.
+- **Dicionário:** 3.917 palavras traduzidas para o português, em 27 categorias.
+- **Gramática:** 12 tópicos.
+- **Frases:** 65 frases e 10 expressões.
+
+Nenhum texto em Tsevhu foi inventado pelo app: tudo vem das fontes públicas dos autores. As traduções para o português são do LinuLingo. Os sinais são uma versão estilizada da tabela oficial.
+
+Fontes:
+- [planilha-dicionário](https://docs.google.com/spreadsheets/d/1Z3GgLvUsjAupx9l_Zo0lBfozFwRk_K_gE6kCBJmuU3Y)
+- [The Art of Koiwriting](https://www.youtube.com/watch?v=bZJa-C3lsjg)
+- [wiki](https://conlang.fandom.com/wiki/Tsevhu)
+- [r/tsevhu](https://www.reddit.com/r/tsevhu/)
+- [Discord](https://discord.com/invite/75QKKMcR25)
+
+Se os autores pedirem, o módulo sai. O teste de ponta a ponta é `npx tsx scripts/fluxo-tsevhu.mjs`.
+
 ## Rodar
 
 ```bash
