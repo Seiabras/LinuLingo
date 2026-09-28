@@ -357,6 +357,107 @@ export function BodyArt({ id }: { id: string }) {
           <Path d="M27 110 L22 124 L27 125 L31 112 Z" fill="#111827" />
         </G>
       );
+    case 'agbada':
+      return (
+        <G>
+          <Path d={torso(88, 131, 8)} fill="#1D4ED8" stroke="#1E3A8A" strokeWidth="0.8" />
+          {/* mangas largas caindo dos ombros */}
+          <Path d="M22 96 Q18 110 26 122 L34 118 Q29 106 32 96 Z" fill="#1D4ED8" stroke="#1E3A8A" strokeWidth="0.6" />
+          <Path d="M98 96 Q102 110 94 122 L86 118 Q91 106 88 96 Z" fill="#1D4ED8" stroke="#1E3A8A" strokeWidth="0.6" />
+          {/* bordado dourado no decote e na abertura da frente */}
+          <Path d="M38 90 Q60 102 82 90" fill="none" stroke="#EAB308" strokeWidth="2.2" />
+          <Path d="M60 96 L58 131 M60 96 L62 131" fill="none" stroke="#EAB308" strokeWidth="1.4" />
+          {[96, 104, 112, 120].map((y) => (
+            <Path key={y} d={`M55 ${y} L60 ${y + 3} L65 ${y} L60 ${y - 3} Z`} fill="#EAB308" />
+          ))}
+        </G>
+      );
+    case 'qipao':
+      return (
+        <G>
+          <Path d={torso(90, 131, 4)} fill="#B91C1C" stroke="#7F1D1D" strokeWidth="0.8" />
+          {/* gola alta mandarim */}
+          <Path d="M50 90 Q60 85 70 90 L68 94 Q60 91 52 94 Z" fill="#991B1B" />
+          {/* fechamento diagonal com botões-nó (pankou) */}
+          <Path d="M60 93 Q72 97 78 108" fill="none" stroke="#EAB308" strokeWidth="1.4" />
+          {[64, 70, 75].map((x, i) => (
+            <Circle key={x} cx={x} cy={95 + i * 5} r="1.3" fill="#EAB308" />
+          ))}
+          <Path d={band(127, 3)} fill="#EAB308" />
+        </G>
+      );
+    case 'aodai':
+      return (
+        <G>
+          <Path d={torso(90, 131, 6)} fill="#FBCFE8" stroke="#F9A8D4" strokeWidth="0.8" />
+          {/* a calça branca vista nas aberturas laterais da túnica */}
+          <Path d="M40 112 L37 131 L44 131 L46 112 Z" fill="#FFFFFF" />
+          <Path d="M80 112 L83 131 L76 131 L74 112 Z" fill="#FFFFFF" />
+          {/* gola alta e a fileira de botões */}
+          <Path d="M52 90 Q60 86 68 90 L66 94 Q60 91 54 94 Z" fill="#F472B6" />
+          {[95, 101, 107].map((y) => (
+            <Circle key={y} cx="60" cy={y} r="1" fill="#F472B6" />
+          ))}
+        </G>
+      );
+    case 'barong':
+      return (
+        <G>
+          <Path d={torso(90, 128, 6)} fill="#FDF6E3" stroke="#E7DCC0" strokeWidth="0.8" />
+          {/* gola pontuda e a carreira de botões */}
+          <Path d="M48 90 L60 97 L72 90 L69 95 L60 101 L51 95 Z" fill="#F5ECD1" stroke="#D8C99A" strokeWidth="0.6" />
+          {[100, 106, 112, 118].map((y) => (
+            <Circle key={y} cx="60" cy={y} r="1" fill="#D8C99A" />
+          ))}
+          {/* bordado floral vertical dos dois lados */}
+          {[44, 76].map((x) => (
+            <Path key={x} d={`M${x} 96 Q${x + 3} 102 ${x} 108 Q${x - 3} 114 ${x} 120`} fill="none" stroke="#B45309" strokeWidth="0.7" />
+          ))}
+        </G>
+      );
+    case 'poncho':
+      return (
+        <G>
+          <Path d="M20 90 Q60 100 100 90 Q98 116 60 130 Q22 116 20 90 Z" fill="#78350F" />
+          {/* listras andinas */}
+          <Path d="M24 98 L96 98 L92 105 L28 105 Z" fill="#EA580C" opacity={0.9} />
+          <Path d="M29 109 L91 109 L85 116 L35 116 Z" fill="#FDE68A" opacity={0.9} />
+          <Path d="M37 120 L83 120 L76 126 L44 126 Z" fill="#EA580C" opacity={0.9} />
+          {/* a abertura central para a cabeça */}
+          <Path d="M52 91 Q60 96 68 91 L66 88 Q60 91 54 88 Z" fill="#451A03" />
+          {/* franja na barra */}
+          {Array.from({ length: 9 }, (_, i) => {
+            const t = (i + 0.5) / 9;
+            const lx = 22 + (60 - 22) * t;
+            const ly = 91 + (129 - 91) * t;
+            return <Line key={i} x1={lx} y1={ly} x2={lx - 1.5} y2={ly + 5} stroke="#451A03" strokeWidth="1.1" />;
+          })}
+          {Array.from({ length: 9 }, (_, i) => {
+            const t = (i + 0.5) / 9;
+            const lx = 120 - (22 + (60 - 22) * t);
+            const ly = 91 + (129 - 91) * t;
+            return <Line key={`r-${i}`} x1={lx} y1={ly} x2={lx + 1.5} y2={ly + 5} stroke="#451A03" strokeWidth="1.1" />;
+          })}
+        </G>
+      );
+    case 'geansai':
+      return (
+        <G>
+          <Path d={torso(91, 131, 6)} fill="#F5F0E1" stroke="#D8CFB0" strokeWidth="0.8" />
+          {/* colunas de tranças em relevo */}
+          {[44, 60, 76].map((x) => (
+            <G key={x} stroke="#C9BD94" strokeWidth="1" fill="none">
+              {[96, 104, 112, 120].map((y) => (
+                <Path key={y} d={`M${x - 3} ${y} Q${x} ${y - 3} ${x + 3} ${y} Q${x} ${y + 3} ${x - 3} ${y + 6} Q${x} ${y + 9} ${x + 3} ${y + 6}`} />
+              ))}
+            </G>
+          ))}
+          {/* barra ribbed */}
+          {[38, 43, 48, 72, 77, 82].map((x) => (
+            <Line key={x} x1={x} y1="127" x2={x} y2="130.5" stroke="#C9BD94" strokeWidth="0.6" />
+          ))}
+        </G>
+      );
     default:
       return null;
   }
@@ -718,6 +819,76 @@ export function HeldArt({ id }: { id: string }) {
           <Path d="M-8 -6 Q0 -4 8 -6 Q9 -2 6 0 L-6 0 Q-9 -2 -8 -6 Z" fill="#7F1D1D" />
           <Path d="M5 -10 L16 -30 L17.5 -29 L7 -8 Z" fill="#E0F2FE" stroke="#7DD3FC" strokeWidth="0.6" />
           <Rect x="-3.5" y="-33" width="7" height="3" rx="1" fill="#BAE6FD" />
+        </G>
+      );
+    case 'alpenhorn':
+      return (
+        <G>
+          <Path d="M-2 2 Q-4 -20 2 -34 Q10 -44 22 -42 Q14 -40 8 -32 Q2 -20 2 2 Z" fill="#B45309" stroke="#78350F" strokeWidth="0.7" />
+          {/* o pavilhão alargado na ponta */}
+          <Path d="M22 -42 Q30 -46 30 -38 Q30 -32 22 -34 Z" fill="#D97706" stroke="#78350F" strokeWidth="0.7" />
+          {/* aros de reforço de vime */}
+          <Path d="M0 -6 Q4 -6 4 -2" stroke="#78350F" strokeWidth="1" fill="none" />
+          <Path d="M-1 -18 Q3 -18 4 -14" stroke="#78350F" strokeWidth="1" fill="none" />
+        </G>
+      );
+    case 'sitar':
+      return (
+        <G>
+          <Rect x="-1.3" y="-40" width="2.6" height="34" fill="#78350F" />
+          {/* cravelhas nas laterais do braço comprido */}
+          {[-36, -30, -24, -18].map((y) => (
+            <G key={y}>
+              <Circle cx="-3.5" cy={y} r="0.9" fill="#D1D5DB" />
+              <Circle cx="3.5" cy={y} r="0.9" fill="#D1D5DB" />
+            </G>
+          ))}
+          {/* a cabaça grande, o corpo ressonante */}
+          <Path d="M0 -8 Q11 -8 11 2 Q11 10 0 11 Q-11 10 -11 2 Q-11 -8 0 -8 Z" fill="#D97706" stroke="#78350F" strokeWidth="0.8" />
+          <Ellipse cx="0" cy="-6" rx="3" ry="2" fill="#451A03" />
+          {[-0.9, 0, 0.9].map((x) => (
+            <Line key={x} x1={x} y1="-40" x2={x} y2="-5" stroke="#E5E7EB" strokeWidth="0.3" />
+          ))}
+        </G>
+      );
+    case 'papelpicado':
+      return (
+        <G>
+          <Path d="M-13 -30 Q0 -38 13 -30" stroke="#78350F" strokeWidth="1" fill="none" />
+          {['#DC2626', '#EAB308', '#16A34A', '#2563EB', '#EC4899'].map((c, i) => {
+            const t = (i + 0.5) / 5;
+            const x = -13 + 26 * t;
+            const y = -30 - Math.sin(Math.PI * t) * 8;
+            return (
+              <G key={c}>
+                <Path d={`M${x - 3} ${y} L${x + 3} ${y} L${x + 2} ${y + 7} L${x} ${y + 5} L${x - 2} ${y + 7} Z`} fill={c} />
+                <Circle cx={x} cy={y + 2.5} r="0.6" fill="#FFFFFF" />
+              </G>
+            );
+          })}
+        </G>
+      );
+    case 'quena':
+      return (
+        <G transform="rotate(-25)">
+          <Rect x="-2" y="-40" width="4" height="38" rx="1.6" fill="#B45309" stroke="#78350F" strokeWidth="0.6" />
+          {[-34, -29, -24, -19].map((y) => (
+            <Circle key={y} cx="0" cy={y} r="0.7" fill="#451A03" />
+          ))}
+          <Path d="M-2 -40 L2 -40 L1.6 -37 L-1.6 -37 Z" fill="#78350F" />
+        </G>
+      );
+    case 'mochilawayuu':
+      return (
+        <G>
+          <Path d="M-2 -34 Q6 -30 8 -14" stroke="#B45309" strokeWidth="1.4" fill="none" />
+          <Circle cx="0" cy="-4" r="11" fill="#FACC15" stroke="#B45309" strokeWidth="0.8" />
+          {[0, 45, 90, 135, 180, 225, 270, 315].map((a) => {
+            const x = 8 * Math.cos((a * Math.PI) / 180);
+            const y = -4 + 8 * Math.sin((a * Math.PI) / 180);
+            return <Circle key={a} cx={x} cy={y} r="1.6" fill={a % 90 === 0 ? '#DC2626' : '#2563EB'} />;
+          })}
+          <Circle cx="0" cy="-4" r="3" fill="#16A34A" />
         </G>
       );
     default:

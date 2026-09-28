@@ -944,6 +944,25 @@ export function OutfitArt({ id }: { id: string }) {
           <Path d="M27 39 Q60 31 93 39" fill="none" stroke="#3F2410" strokeWidth="1.5" />
         </G>
       );
+    case 'rogatywka':
+      return (
+        <G>
+          {/* barrete cracoviano: cilindro vermelho, banda de pele e uma pena de pavão do lado */}
+          <Path d="M40 32 L38 10 Q60 4 82 10 L80 32 Q60 26 40 32 Z" fill="#B91C1C" />
+          <Path d="M38 10 Q60 4 82 10 L81 15 Q60 9 39 15 Z" fill="#DC2626" />
+          <Path d="M37 33 Q60 26 83 33 L83 39 Q60 32 37 39 Z" fill="#78350F" />
+          <G stroke="#92400E" strokeWidth="0.9" strokeLinecap="round" fill="none">
+            <Path d="M42 36 q2 -2 4 0" />
+            <Path d="M52 34 q2 -2 4 0" />
+            <Path d="M62 34 q2 -2 4 0" />
+            <Path d="M72 34 q2 -2 4 0" />
+          </G>
+          <Path d="M80 20 Q92 10 100 0" stroke="#0F766E" strokeWidth="1.4" fill="none" />
+          <Ellipse cx="100" cy="0" rx="4" ry="5.5" fill="#0D9488" transform="rotate(-35 100 0)" />
+          <Circle cx="100" cy="0" r="2" fill="#1E3A8A" />
+          <Circle cx="100" cy="0" r="0.9" fill="#EAB308" />
+        </G>
+      );
     default:
       return null;
   }

@@ -18,6 +18,8 @@ import { OutfitArt } from './LinuOutfit';
 import { BodyArt, FaceArt, HeldArt } from './LinuRoupas';
 import { slotOf } from '@/data/roupas-linu';
 import { useLinuOutfit } from '@/services/linu-outfit';
+import { corLinu, type CorLinu } from '@/data/cores-linu';
+import { useLinuCor } from '@/services/linu-cor';
 
 export type LinuMood = 'feliz' | 'pensando' | 'comemorando' | 'triste' | 'falando';
 
@@ -31,16 +33,18 @@ const CONFETTI = ['#EA580C', '#16A34A', '#2563EB', '#F59E0B', '#DB2777', '#0891B
  * não colidir quando há vários na mesma página.
  */
 const IdCtx = createContext('linu');
+const CorCtx = createContext<CorLinu>(corLinu(undefined));
 const grad = (id: string, name: string) => `url(#${name}-${id})`;
 
 function Shading() {
   const id = useContext(IdCtx);
+  const cor = useContext(CorCtx);
   return (
     <Defs>
       <RadialGradient id={`corpo-${id}`} cx="38%" cy="26%" r="85%">
-        <Stop offset="0" stopColor="#4A5A82" />
-        <Stop offset="0.5" stopColor="#253153" />
-        <Stop offset="1" stopColor="#121A2F" />
+        <Stop offset="0" stopColor={cor.corpo[0]} />
+        <Stop offset="0.5" stopColor={cor.corpo[1]} />
+        <Stop offset="1" stopColor={cor.corpo[2]} />
       </RadialGradient>
       <RadialGradient id={`barriga-${id}`} cx="42%" cy="32%" r="78%">
         <Stop offset="0" stopColor="#FFFFFF" />
@@ -48,8 +52,8 @@ function Shading() {
         <Stop offset="1" stopColor="#C9D3E1" />
       </RadialGradient>
       <LinearGradient id={`nadadeira-${id}`} x1="0" y1="0" x2="1" y2="1">
-        <Stop offset="0" stopColor="#3A4A72" />
-        <Stop offset="1" stopColor="#121A2F" />
+        <Stop offset="0" stopColor={cor.nadadeira[0]} />
+        <Stop offset="1" stopColor={cor.nadadeira[1]} />
       </LinearGradient>
       <RadialGradient id={`pe-${id}`} cx="40%" cy="30%" r="80%">
         <Stop offset="0" stopColor="#FCC8D5" />
@@ -85,11 +89,14 @@ const VB_H = 140;
  * cair uma lágrima quando está triste. `animate={false}` (ou «reduzir movimento» ligado no
  * aparelho) deixa o Linu parado.
  */
-export function Linu({ mood = 'feliz', size = 96, animate = true, outfit }: { mood?: LinuMood; size?: number; animate?: boolean; outfit?: string | readonly string[] | null }) {
+export function Linu({ mood = 'feliz', size = 96, animate = true, outfit, cor }: { mood?: LinuMood; size?: number; animate?: boolean; outfit?: string | readonly string[] | null; cor?: string | null }) {
   const reduce = useReducedMotion();
   // o visual escolhido no Perfil (ou o pedido, nas prévias): uma peça na cabeça, no corpo, na mão e no rosto
   const chosen = useLinuOutfit();
   const look = outfit === undefined ? chosen : outfit == null ? [] : typeof outfit === 'string' ? [outfit] : outfit;
+  // a cor escolhida no Perfil (ou a pedida, nas prévias)
+  const chosenCor = useLinuCor();
+  const corEscolhida = corLinu(cor === undefined ? chosenCor : cor);
   const inSlot = (slot: string) => look.find((o) => slotOf(o) === slot);
   const head = inSlot('cabeca');
   const body = inSlot('corpo');
@@ -206,6 +213,7 @@ export function Linu({ mood = 'feliz', size = 96, animate = true, outfit }: { mo
 
   return (
     <IdCtx.Provider value={id}>
+    <CorCtx.Provider value={corEscolhida}>
     <View style={{ width: size, height: size * (VB_H / VB_W) }} accessibilityRole="image" accessibilityLabel={`Linu, o pinguim-de-barbicha, ${mood}`}>
       <Layer style={shadowStyle}>
         <Ellipse cx="60" cy="135" rx="32" ry="4.5" fill="#64748B" />
@@ -240,6 +248,7 @@ export function Linu({ mood = 'feliz', size = 96, animate = true, outfit }: { mo
         {mood === 'pensando' && <Bubbles u={u} think={think} live={live} />}
       </Animated.View>
     </View>
+    </CorCtx.Provider>
     </IdCtx.Provider>
   );
 }

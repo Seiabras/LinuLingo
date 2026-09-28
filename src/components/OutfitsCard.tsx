@@ -8,7 +8,9 @@ import { PACKS } from '@/data/idiomas';
 import { WORLD } from '@/data/mapa-mundi';
 import { flagOf } from '@/data/onde-se-fala';
 import { KRILL_XP, krillBalance, lessonsToUnlock, ROUPAS_LINU, SLOTS, slotOf, unlockedOutfits, withOutfit, type LinuOutfit, type OutfitSlot } from '@/data/roupas-linu';
+import { CORES_LINU, corLinu } from '@/data/cores-linu';
 import { buyOutfit, lessonsByLanguage, loadBought, saveOutfit, useLinuOutfit } from '@/services/linu-outfit';
+import { saveCor, useLinuCor } from '@/services/linu-cor';
 import { nomeIdioma } from '@/services/idioma-nome';
 import * as haptics from '@/services/haptics';
 
@@ -24,6 +26,11 @@ const countryName = (iso2: string) => WORLD.find((c) => c.iso2 === iso2)?.name ?
 export function OutfitsCard() {
   const { db, pack, user } = useApp();
   const wearing = useLinuOutfit();
+  const corAtual = useLinuCor();
+  const escolherCor = async (id: string) => {
+    haptics.tapLight();
+    await saveCor(db, id);
+  };
   const [lessons, setLessons] = useState<Record<string, number>>({});
   const [bought, setBought] = useState<string[]>([]);
   const [fresh, setFresh] = useState<Set<string>>(new Set());
@@ -99,8 +106,8 @@ export function OutfitsCard() {
         Chapéus, roupas, coisas para levar na nadadeira e pinturas de rosto tradicionais do mundo — o Linu usa uma peça de cada lugar ao mesmo tempo. As dos idiomas do app vêm de presente com as lições; as do mundo se compram com krill, o petisco preferido do Linu: você ganha 1 🦐 a cada {KRILL_XP} XP.
       </Text>
 
-      {/* prévia grande e os detalhes da escolhida */}
-      <View className="flex-row items-center gap-3 rounded-2xl bg-amber-50 p-3 dark:bg-amber-950/40">
+      {/* prévia grande, com um anel na cor escolhida, e os detalhes da escolhida */}
+      <View className="flex-row items-center gap-3 rounded-2xl bg-amber-50 p-3 dark:bg-amber-950/40" style={{ borderWidth: 3, borderColor: corLinu(corAtual).swatch }}>
         <Linu mood="feliz" size={96} animate={false} outfit={preview} />
         <View className="flex-1 gap-1">
           {shown ? (
@@ -117,8 +124,40 @@ export function OutfitsCard() {
               <ActionButton o={shown} open={unlocked.has(shown.id)} on={wearing.includes(shown.id)} krill={krill} lessons={lessons} onWear={() => wear(shown)} onTakeOff={() => takeOff(shown.id)} onBuy={() => buy(shown)} />
             </>
           ) : (
-            <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">Toque numa roupinha para ver de onde ela é.</Text>
+            <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">Toque numa roupinha para ver de onde ela é. Escolha a cor do Linu embaixo, do jeitinho que quiser.</Text>
           )}
+        </View>
+      </View>
+
+      {/* cor do Linu, estilo Club Penguin */}
+      <View className="gap-2">
+        <Text className="text-sm font-extrabold text-slate-700 dark:text-slate-200">🎨 Cor do Linu</Text>
+        <View className="flex-row flex-wrap gap-2.5">
+          {CORES_LINU.map((c) => {
+            const on = corAtual === c.id;
+            const escuro = c.id === 'branco' || c.id === 'amarelo';
+            return (
+              <Pressable
+                key={c.id}
+                accessibilityRole="button"
+                accessibilityState={{ selected: on }}
+                accessibilityLabel={`Cor: ${c.label}${on ? ', escolhida' : ''}`}
+                onPress={() => escolherCor(c.id)}
+                style={{
+                  width: 36,
+                  height: 36,
+                  borderRadius: 18,
+                  backgroundColor: c.swatch,
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  borderWidth: on ? 3 : 1,
+                  borderColor: on ? '#0EA5E9' : 'rgba(100,116,139,0.35)',
+                }}
+              >
+                {on && <Text style={{ color: escuro ? '#1F2937' : '#FFFFFF', fontWeight: '900' }}>✓</Text>}
+              </Pressable>
+            );
+          })}
         </View>
       </View>
 

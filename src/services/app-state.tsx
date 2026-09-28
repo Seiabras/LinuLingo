@@ -10,6 +10,7 @@ import { Appearance } from 'react-native';
 import { colorScheme } from 'nativewind';
 import { loadThemePref, saveThemePref, useThemeSync, type ThemePref } from './theme';
 import { loadOutfit } from './linu-outfit';
+import { loadCor } from './linu-cor';
 
 type AppUser = User & { streak_freezes: number; daily_goal_xp: number };
 
@@ -65,6 +66,7 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
     (async () => {
       applyAll(await readAll());
       await loadOutfit(db).catch(() => {});
+      await loadCor(db).catch(() => {});
       setReady(true);
     })();
   }, [db, readAll, applyAll]);
@@ -115,6 +117,7 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
     setAccents({});
     applyAll(await readAll());
     await loadOutfit(db).catch(() => {});
+    await loadCor(db).catch(() => {});
     setGeneration((g) => g + 1);
   }, [db, readAll, applyAll, setAccents, setVariants]);
 
