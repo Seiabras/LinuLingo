@@ -2531,4 +2531,711 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
   },
+  {
+    id: "ca-g41",
+    level: "A1.1",
+    title: "Pronúncia: a vogal neutra, os acentos e as consoantes do catalão",
+    emoji: "🔤",
+    summary: "O catalão se lê com regras claras. O que mais surpreende o brasileiro: fora da sílaba tônica, «a» e «e» viram um som neutro, [ə], e «o» vira [u] (no catalão central); e há sons conhecidos escritos de outro jeito: ll é o nosso «lh», ny é o «nh», x é o «x» de «xícara».",
+    sections: [
+      {
+        heading: "A sílaba tônica e os acentos",
+        text: "Palavras terminadas em vogal, em -es, -en ou -in são paroxítonas (CA-sa, PA-res, e-XA-men); as outras são oxítonas (par-LAR, se-NYOR, ciu-TAT). Quando a palavra foge dessa regra, leva acento gráfico: cafè, català, música, telèfon. O acento também mostra o timbre: à é sempre aberto; è e ò são abertos (cafè, òpera); é e ó são fechados (bé, cançó); í e ú não mudam o som.",
+        table: {
+          head: ["Palavra", "IPA", "Português", "Por quê"],
+          rows: [
+            ["casa", "[ˈkazə]", "casa", "termina em vogal: paroxítona"],
+            ["parlar", "[pərˈla]", "falar", "termina em -r: oxítona"],
+            ["ciutat", "[siwˈtat]", "cidade", "termina em -t: oxítona"],
+            ["cafè", "[kəˈfɛ]", "café", "oxítona terminada em vogal: acento; è aberto"],
+            ["cançó", "[kənˈso]", "canção", "oxítona em vogal; ó fechado"],
+            ["música", "[ˈmuzikə]", "música", "proparoxítona: sempre com acento"],
+            ["telèfon", "[təˈlɛfun]", "telefone", "paroxítona terminada em -n (não em -en, -in): acento"],
+          ],
+        },
+      },
+      {
+        heading: "As vogais átonas: o [ə] e o [u]",
+        text: "No catalão central (Barcelona, Girona, Tarragona), o «a» e o «e» sem tônica soam iguais, como um «â» fraco: [ə]. O «o» sem tônica soa [u]. Por isso «pare» (pai) soa [ˈpaɾə] e «Barcelona» soa [bərsəˈlonə]. Na parte ocidental (Lleida, Valência), o «a» e o «e» átonos continuam distintos: o valenciano diz [ˈpaɾe]. Os dois jeitos são corretos.",
+        table: {
+          head: ["Palavra", "IPA (central)", "Português"],
+          rows: [
+            ["pare", "[ˈpaɾə]", "pai"],
+            ["mare", "[ˈmaɾə]", "mãe"],
+            ["porta", "[ˈpɔɾtə]", "porta"],
+            ["cosí", "[kuˈzi]", "primo"],
+            ["escola", "[əsˈkɔlə]", "escola"],
+          ],
+        },
+        examples: [
+          ["La meva mare parla català.", "A minha mãe fala catalão."],
+          ["Barcelona és a la costa.", "Barcelona fica no litoral."],
+        ],
+      },
+      {
+        heading: "As consoantes que enganam",
+        table: {
+          head: ["Grafia", "IPA", "Como soa", "Exemplos"],
+          rows: [
+            ["ll", "[ʎ]", "«lh» de «filho»", "llet, cavall, llengua"],
+            ["l·l", "[lː]", "um «l» dobrado (a ela geminada)", "col·legi, il·lusió"],
+            ["ny", "[ɲ]", "«nh» de «ninho»", "any, Catalunya, muntanya"],
+            ["x (no início, depois de consoante e de i)", "[ʃ]", "«x» de «xícara»", "xocolata, caixa, panxa"],
+            ["tx; -ig no fim", "[tʃ]", "«tch»", "cotxe, mig, maig"],
+            ["tj, tg", "[dʒ]", "«dj»", "platja, metge"],
+            ["j; g + e, i", "[ʒ]", "«j» de «janela»", "jo, gent, girar"],
+            ["s entre vogais; z", "[z]", "«z»", "casa, zero, onze"],
+            ["ss; ç; c + e, i", "[s]", "«s» de «sapo»", "massa, plaça, cel"],
+            ["v (catalão central)", "[b]", "como b", "vi, vaca, avió"],
+            ["h", "—", "nunca soa", "hora, home, ahir"],
+            ["qu, gu + e, i", "[k], [ɡ]", "o u não soa; com trema (qü, gü), soa", "que, guerra; qüestió, pingüí"],
+          ],
+        },
+      },
+      {
+        heading: "Letras que não soam",
+        text: "Algumas letras finais caem. No catalão central: o t depois de n ou l (gent [ʒɛn], molt [mol]); o r de muitas palavras oxítonas, como os infinitivos (menjar [mənˈʒa], senyor [səˈɲo]); e o i do «ix» depois de vogal (caixa [ˈkaʃə], peix [peʃ]). E, como em alemão, as consoantes finais sonoras ficam surdas: verd [bɛɾt], fred [fɾɛt].",
+        examples: [
+          ["Tinc molt de fred.", "Estou com muito frio."],
+          ["El senyor menja peix.", "O senhor come peixe."],
+        ],
+      },
+    ],
+    pitfalls: [
+      "No catalão central, não pronuncie o «a» átono como «a» cheio: «casa» é [ˈkazə], com o final fraco.",
+      "«ll» é o nosso «lh», e «l·l» (com o ponto no meio) é um l dobrado: «col·legi» não tem som de «lh».",
+      "O «x» depois de vogal leva um «i» que não soa: «caixa» soa [ˈkaʃə], não «caicha».",
+      "«tj» e «tg» soam «dj»: «platja» é [ˈpladʒə], não «plátia».",
+    ],
+    quiz: [
+      { question: "Qual palavra é oxítona (tônica na última sílaba)?", options: ["parlar", "casa", "parles"], answer: "parlar", explanation: "Termina em -r, então é oxítona: par-LAR. «casa» termina em vogal e «parles» em -es: paroxítonas." },
+      { question: "Como soa o «ny» de «Catalunya»?", options: ["como o «nh» de «ninho»", "como o «ni» de «nível»", "como o «n» de «nada»"], answer: "como o «nh» de «ninho»", explanation: "«ny» é o som [ɲ], o nosso «nh»." },
+      { question: "Em «cotxe» (carro), o «tx» soa…", options: ["«tch»", "«x» de «xícara»", "«ks»"], answer: "«tch»", explanation: "«tx» é [tʃ]: [ˈkɔtʃə]." },
+      { question: "Que acento marca um «e» aberto, como o de «café» do português?", options: ["è", "é", "ë"], answer: "è", explanation: "O grave (è) marca o «é» aberto: cafè, vèncer. O agudo (é) marca o «ê» fechado: bé, més." },
+    ],
+  },
+  {
+    id: "ca-g42",
+    level: "A1.1",
+    title: "Saudações, pronomes pessoais e tu × vostè",
+    emoji: "👋",
+    summary: "Os pronomes do catalão lembram os do português, com duas diferenças: o plural é «nosaltres» e «vosaltres» (nós outros, vós outros), e o tratamento formal é «vostè», que conjuga como a 3ª pessoa — como o nosso «o senhor».",
+    sections: [
+      {
+        heading: "Os pronomes pessoais",
+        text: "Como no português, o sujeito costuma ficar oculto, porque o verbo já mostra a pessoa: «Parlo català» (falo catalão). O pronome aparece para dar ênfase ou contrastar: «Jo soc de Recife i ella és de Girona».",
+        table: {
+          head: ["Catalão", "Português", "Nota"],
+          rows: [
+            ["jo", "eu", ""],
+            ["tu", "você (informal)", "amigos, família, colegas, crianças"],
+            ["ell / ella", "ele / ela", ""],
+            ["vostè", "o senhor / a senhora", "formal; verbo na 3ª pessoa"],
+            ["nosaltres", "nós", ""],
+            ["vosaltres", "vocês (informal)", ""],
+            ["ells / elles", "eles / elas", ""],
+            ["vostès", "os senhores / as senhoras", "formal; verbo na 3ª pessoa do plural"],
+          ],
+        },
+      },
+      {
+        heading: "Tu, vostè e vós",
+        text: "O «tu» é bem mais usado do que o nosso «tu»: entre colegas de trabalho, com vizinhos e muitas vezes até com professores. «Vostè» fica para desconhecidos mais velhos, atendimento ao público e situações formais. Existe ainda «vós», um tratamento respeitoso com o verbo no plural (vós sou, vós teniu), que se lê em textos antigos e em cartas muito formais e que ainda sobrevive na fala de algumas zonas rurais e em Eivissa, entre gerações mais velhas.",
+        examples: [
+          ["Com et dius? —Em dic Marta.", "Como você se chama? — Eu me chamo Marta."],
+          ["Com es diu vostè?", "Como o senhor se chama?"],
+          ["Vostès són del Brasil?", "Os senhores são do Brasil?"],
+        ],
+      },
+      {
+        heading: "Cumprimentos do dia a dia",
+        table: {
+          head: ["Catalão", "Português", "Quando"],
+          rows: [
+            ["Hola!", "Oi! / Olá!", "a qualquer hora"],
+            ["Bon dia!", "Bom dia!", "até a hora do almoço (por volta das 14h)"],
+            ["Bona tarda!", "Boa tarde!", "do almoço até escurecer"],
+            ["Bon vespre!", "Boa noite! (ao chegar)", "no começo da noite"],
+            ["Bona nit!", "Boa noite!", "à noite e para se despedir"],
+            ["Adéu!", "Tchau!", ""],
+            ["Fins demà!", "Até amanhã!", ""],
+            ["Què tal?", "Tudo bem?", "informal"],
+          ],
+        },
+        examples: [
+          ["Bon dia, senyora Puig! Com està?", "Bom dia, senhora Puig! Como a senhora está?"],
+          ["Hola, Pau! Què tal?", "Oi, Pau! Tudo bem?"],
+        ],
+      },
+    ],
+    pitfalls: [
+      "Com «vostè», o verbo vai para a 3ª pessoa: «Vostè és…», não «Vostè ets…».",
+      "«Nosaltres» e «vosaltres» são as formas normais do plural: «Nosaltres som brasilers».",
+      "«Bona nit» serve também para se despedir à noite; para chegar à noite, diz-se também «bon vespre».",
+    ],
+    quiz: [
+      { question: "Como se diz «o senhor é de Girona?»", options: ["Vostè és de Girona?", "Vostè ets de Girona?", "Tu és de Girona?"], answer: "Vostè és de Girona?", explanation: "«Vostè» conjuga como a 3ª pessoa: és." },
+      { question: "Qual é o pronome catalão para «nós»?", options: ["nosaltres", "nosotros", "nós"], answer: "nosaltres", explanation: "Em catalão, «nosaltres»; «nosotros» é castelhano." },
+      { question: "São 11 da manhã. Como você cumprimenta?", options: ["Bon dia!", "Bona tarda!", "Bona nit!"], answer: "Bon dia!", explanation: "«Bon dia» vale até a hora do almoço." },
+      { question: "Você acaba de conhecer um colega de curso da sua idade. O mais natural é…", options: ["tu", "vostè", "vós"], answer: "tu", explanation: "Entre colegas, o «tu» é o normal." },
+    ],
+  },
+  {
+    id: "ca-g43",
+    level: "A1.2",
+    title: "Contrações (al, del, pel), «can» e «hi ha»",
+    emoji: "🔗",
+    summary: "As preposições a, de e per se juntam com el e els: al, als, del, dels, pel, pels — como o nosso «ao», «do», «pelo». Com la, les e l' não há contração.",
+    sections: [
+      {
+        text: "A contração é obrigatória: «Vaig al cinema». Mas diante de l' não há contração: «Vaig a l'hotel», «la porta de l'escola».",
+        table: {
+          head: ["", "+ el", "+ els", "+ la / l'", "+ les"],
+          rows: [
+            ["a", "al", "als", "a la / a l'", "a les"],
+            ["de", "del", "dels", "de la / de l'", "de les"],
+            ["per", "pel", "pels", "per la / per l'", "per les"],
+          ],
+        },
+        examples: [
+          ["Anem al mercat i després a la platja.", "Vamos ao mercado e depois à praia."],
+          ["El gat del veí passeja pel jardí.", "O gato do vizinho passeia pelo jardim."],
+          ["Vinc de l'escola.", "Venho da escola."],
+        ],
+      },
+      {
+        heading: "Can: a casa de",
+        text: "«Can» vem de «ca» (casa) + «en»: «can Joan» é a casa do Joan; com mulheres, «ca la Maria». Muitos restaurantes, masias e bairros têm nome com «Can», porque eram a casa de alguma família.",
+        examples: [["Sopem a can Pere?", "Vamos jantar na casa do Pere?"]],
+      },
+      {
+        heading: "Hi ha: há, tem",
+        text: "«Hi ha» corresponde ao nosso «há» ou «tem» (de existência) e, na língua padrão, não muda no plural: «Hi ha un bar», «Hi ha dos bars». No passado, «hi havia»; no futuro, «hi haurà». Na fala de várias regiões se ouve «hi han» no plural, mas a norma culta prefere «hi ha».",
+        examples: [
+          ["Hi ha una farmàcia a prop?", "Tem uma farmácia perto?"],
+          ["Ahir hi havia molta gent a la plaça.", "Ontem havia muita gente na praça."],
+        ],
+      },
+    ],
+    pitfalls: [
+      "Contraia sempre: «al», «del», «pel» — «a el» e «de el» estão errados.",
+      "Mas não contraia com l': «a l'hotel», «de l'aigua».",
+      "«Hi ha» fica igual no plural na norma: «hi ha dues botigues».",
+    ],
+    quiz: [
+      { question: "Complete: «Anem ___ cinema.»", options: ["al", "a la", "als"], answer: "al", explanation: "a + el = al." },
+      { question: "Complete: «La porta ___ escola.»", options: ["de l'", "del", "dels"], answer: "de l'", explanation: "Com l' não há contração." },
+      { question: "«Tem dois bancos na praça» fica…", options: ["Hi ha dos bancs a la plaça.", "Són dos bancs a la plaça.", "Té dos bancs a la plaça."], answer: "Hi ha dos bancs a la plaça.", explanation: "Para existência: hi ha, que não muda no plural." },
+      { question: "O que é «can Pere»?", options: ["a casa do Pere", "o cachorro do Pere", "o carro do Pere"], answer: "a casa do Pere", explanation: "«can» = ca (casa) + en." },
+    ],
+  },
+  {
+    id: "ca-g44",
+    level: "B2.2",
+    title: "Registro formal: cartas, e-mails e documentos",
+    emoji: "✉️",
+    summary: "A carta formal em catalão tem fórmulas fixas: «Benvolgut senyor» para começar, «Atentament» para terminar, e o tratamento de «vostè» (ou «vosaltres», quando se escreve a uma instituição). Datas, abreviações e endereços também seguem convenções próprias.",
+    sections: [
+      {
+        heading: "A estrutura da carta",
+        table: {
+          head: ["Parte", "Exemplo", "Português"],
+          rows: [
+            ["lugar e data", "Girona, 3 de març de 2025", "Girona, 3 de março de 2025"],
+            ["saudação", "Benvolgut senyor, / Benvolguda senyora, / Senyores i senyors,", "Prezado senhor / Prezada senhora / Senhoras e senhores"],
+            ["abertura", "Li escric per sol·licitar-li informació sobre…", "Escrevo para solicitar informações sobre…"],
+            ["pedido", "Li agrairia que em fes arribar…", "Eu agradeceria se me enviasse…"],
+            ["fecho", "Resto a la seva disposició per a qualsevol aclariment.", "Fico à disposição para qualquer esclarecimento."],
+            ["despedida", "Atentament, / Cordialment,", "Atenciosamente / Cordialmente"],
+          ],
+        },
+        text: "Escrevendo a uma empresa ou instituição (e não a uma pessoa), é comum o plural «vosaltres»: «Us escric per…», «Us agrairia que…». Com uma pessoa, «vostè»: «Li escric per…».",
+      },
+      {
+        heading: "Abreviações e convenções",
+        table: {
+          head: ["Abreviação", "Significado"],
+          rows: [
+            ["Sr., Sra.", "senyor, senyora"],
+            ["Dr., Dra.", "doctor, doctora"],
+            ["c/", "carrer (rua)"],
+            ["pl.", "plaça"],
+            ["núm.", "número"],
+            ["tel.", "telèfon"],
+            ["a/e", "adreça electrònica (e-mail)"],
+          ],
+        },
+        text: "Nas datas, «de» antes do mês e do ano: «el 5 de maig de 2024». As horas se escrevem «a les 10 h» ou «a les 10.30 h». E o vocabulário dos trâmites: sol·licitud (requerimento), termini (prazo), expedient (processo), certificat (certidão), empadronament (registro de residência).",
+        examples: [
+          ["Benvolguda senyora Soler, li escric per demanar-li una cita.", "Prezada senhora Soler, escrevo para pedir-lhe um horário."],
+          ["Us agrairíem que ens enviéssiu el certificat abans del 15 de juny.", "Agradeceríamos se vocês nos enviassem a certidão antes de 15 de junho."],
+          ["Atentament,", "Atenciosamente,"],
+        ],
+      },
+    ],
+    pitfalls: [
+      "Numa carta formal, nada de «Hola»: comece com «Benvolgut/Benvolguda».",
+      "Não misture tratamentos: se começou com «vostè» (li escric), não passe para «tu» (et demano).",
+      "Data com «de»: «3 de març de 2025», não «3 març 2025».",
+    ],
+    quiz: [
+      { question: "Como começar uma carta formal a um senhor?", options: ["Benvolgut senyor,", "Hola, senyor!", "Estimat amic,"], answer: "Benvolgut senyor,", explanation: "Saudação formal: Benvolgut / Benvolguda." },
+      { question: "Uma despedida formal é…", options: ["Atentament,", "Petons,", "Fins aviat!"], answer: "Atentament,", explanation: "Atentament ou Cordialment." },
+      { question: "O que significa «c/ Major, 12»?", options: ["carrer Major, 12", "casa Major, 12", "carta Major, 12"], answer: "carrer Major, 12", explanation: "c/ = carrer (rua)." },
+      { question: "Escrevendo a uma pessoa com «vostè», o pedido educado é…", options: ["Li agrairia que em respongués.", "T'agrairia que em responguessis.", "Us agraeixo que respongueu ja."], answer: "Li agrairia que em respongués.", explanation: "vostè = 3ª pessoa (li), condicional + imperfeito do subjuntivo." },
+    ],
+  },
+  {
+    id: "ca-g45",
+    level: "B2.3",
+    title: "Gerúndio e particípio: os usos certos e os errados",
+    emoji: "🏃",
+    summary: "O gerúndio (parlant, bevent, dormint) indica ação em curso ou o modo, como no português. Mas há usos copiados do castelhano que a norma evita, como o gerúndio de consequência («va caure, trencant-se el braç»). O particípio concorda como adjetivo e forma frases curtas: «Acabada la feina, vam sortir».",
+    sections: [
+      {
+        heading: "As formas do gerúndio",
+        table: {
+          head: ["Infinitivo", "Gerúndio", "Infinitivo", "Gerúndio"],
+          rows: [
+            ["parlar", "parlant", "fer", "fent"],
+            ["perdre", "perdent", "dir", "dient"],
+            ["dormir", "dormint", "veure", "veient"],
+            ["ser", "sent (essent)", "escriure", "escrivint"],
+            ["tenir", "tenint", "beure", "bevent"],
+          ],
+        },
+      },
+      {
+        heading: "Usos certos e usos a evitar",
+        text: "Certos: ação em curso (Estic llegint), modo (Va arribar corrent), simultaneidade (Caminant pel carrer, vaig veure la Rosa) e progressão com «anar» (La cosa va millorant). A evitar: o gerúndio de consequência posterior («Va caure, trencant-se el braç» → «Va caure i es va trencar el braç») e o gerúndio como adjetivo («una caixa contenint llibres» → «una caixa que conté llibres»).",
+        examples: [
+          ["Estic escrivint un correu.", "Estou escrevendo um e-mail."],
+          ["Va entrar cantant.", "Entrou cantando."],
+          ["El temps va millorant.", "O tempo vai melhorando."],
+        ],
+      },
+      {
+        heading: "O particípio",
+        text: "Como adjetivo, concorda: «les portes obertes», «la feina acabada». Com haver, não concorda com o sujeito, mas pode concordar com os pronomes la e les: «Les he vistes» ou «Les he vist». Numa construção absoluta, resume uma ação anterior: «Acabat el sopar, vam sortir» (terminado o jantar, saímos).",
+        examples: [
+          ["Un cop acabada la reunió, anirem a dinar.", "Depois de terminada a reunião, iremos almoçar."],
+          ["La finestra està oberta.", "A janela está aberta."],
+        ],
+      },
+    ],
+    pitfalls: [
+      "Nada de gerúndio para consequência posterior: «Va caure i es va trencar el braç».",
+      "Nada de gerúndio como adjetivo: «un sobre que conté documents».",
+      "Para o tempo decorrido, prefira «fa … que»: «Fa dues hores que t'espero».",
+    ],
+    quiz: [
+      { question: "Gerúndio de «fer»:", options: ["fent", "fant", "fient"], answer: "fent", explanation: "fer → fent." },
+      { question: "Qual frase segue a norma?", options: ["Va caure i es va fer mal al peu.", "Va caure, fent-se mal al peu.", "Va caure fent-se després mal al peu."], answer: "Va caure i es va fer mal al peu.", explanation: "A consequência posterior se liga com «i», não com gerúndio." },
+      { question: "Complete: «Tenim les finestres ___.» (obrir)", options: ["obertes", "obert", "obrint"], answer: "obertes", explanation: "Particípio como adjetivo, concordando: obertes." },
+      { question: "Qual frase segue a norma?", options: ["Tinc una capsa que conté fotos.", "Tinc una capsa contenint fotos.", "Tinc una capsa continguent fotos."], answer: "Tinc una capsa que conté fotos.", explanation: "Gerúndio como adjetivo se evita: use uma oração com «que»." },
+    ],
+  },
+  {
+    id: "ca-g46",
+    level: "B2.3",
+    title: "Expressões idiomáticas",
+    emoji: "🌧️",
+    summary: "As expressões idiomáticas dão cor à língua e muitas não se traduzem ao pé da letra: «ploure a bots i barrals» é chover canivetes, e «fer campana» é matar aula. Conhecê-las ajuda a entender a conversa do dia a dia.",
+    sections: [
+      {
+        heading: "Expressões do dia a dia",
+        table: {
+          head: ["Catalão", "Ao pé da letra", "Sentido"],
+          rows: [
+            ["ploure a bots i barrals", "chover a odres e barris", "chover canivetes"],
+            ["fer-la petar", "fazê-la estourar", "bater papo"],
+            ["anar de bòlit", "ir como um pião", "estar na correria"],
+            ["estar fet pols", "estar feito pó", "estar morto de cansaço"],
+            ["tocar el dos", "tocar o dois", "dar no pé, ir embora"],
+            ["fer campana", "fazer sino", "matar aula"],
+            ["fer dissabte", "fazer sábado", "fazer faxina geral"],
+            ["estar a la lluna de València", "estar na lua de Valência", "estar no mundo da lua"],
+            ["costar un ull de la cara", "custar um olho da cara", "custar os olhos da cara"],
+            ["ser un pa sense sal", "ser um pão sem sal", "ser uma pessoa sem graça"],
+            ["no tenir ni cinc", "não ter nem cinco", "estar sem um tostão"],
+            ["posar-se les piles", "pôr as pilhas", "acordar, entrar em ação"],
+            ["ficar-se de peus a la galleda", "enfiar os pés no balde", "meter os pés pelas mãos"],
+            ["tallar el bacallà", "cortar o bacalhau", "mandar, dar as cartas"],
+          ],
+        },
+        examples: [
+          ["Ahir vam fer-la petar fins a les tantes.", "Ontem ficamos batendo papo até altas horas."],
+          ["Aquest mes no tinc ni cinc.", "Este mês estou sem um tostão."],
+          ["Posa't les piles, que l'examen és demà!", "Acorda, que a prova é amanhã!"],
+        ],
+      },
+      {
+        heading: "Interjeições",
+        text: "Algumas palavras curtas resumem uma reação: «Ostres!» (puxa!), «Déu n'hi do!» (nossa, e como!), «Mare de Déu!» (minha nossa!), «Au!» (vamos!), «Apa!» (vamos!, olha só!), «Vinga!» (vamos!, anda!). «Home!» e «Dona!» servem para chamar a atenção, como o nosso «cara!».",
+        examples: [["Déu n'hi do, quina calor que fa!", "Nossa, que calor que está fazendo!"]],
+      },
+    ],
+    pitfalls: [
+      "Não traduza ao pé da letra: «tocar el dos» não tem nada a ver com o número dois.",
+      "Muitas expressões são informais: evite-as numa carta formal.",
+      "«Fer dissabte» (faxina) não quer dizer «fazer algo no sábado».",
+    ],
+    quiz: [
+      { question: "O que quer dizer «fer campana»?", options: ["matar aula", "tocar o sino", "fazer festa"], answer: "matar aula", explanation: "Fer campana = faltar à aula sem motivo." },
+      { question: "«Estou morto de cansaço» fica…", options: ["Estic fet pols.", "Estic fet pa.", "Estic a la lluna."], answer: "Estic fet pols.", explanation: "Estar fet pols = estar exausto." },
+      { question: "O que quer dizer «tallar el bacallà»?", options: ["mandar, dar as cartas", "cozinhar peixe", "cortar gastos"], answer: "mandar, dar as cartas", explanation: "Quem talla el bacallà é quem decide." },
+      { question: "«Chover canivetes» em catalão é…", options: ["ploure a bots i barrals", "ploure ganivets", "fer campana"], answer: "ploure a bots i barrals", explanation: "Bots e barrals são odres e barris." },
+    ],
+  },
+  {
+    id: "ca-g47",
+    level: "B2.3",
+    title: "Barbarismos: as formas do padrão",
+    emoji: "🧹",
+    summary: "Toda língua em contato com outra empresta palavras e construções. A norma do catalão registra, para vários empréstimos recentes do castelhano, qual é a forma do padrão: «haver de» em vez de «tenir que», «adonar-se» em vez de «donar-se compte». Na fala informal eles aparecem; em textos, prefere-se a forma catalã.",
+    sections: [
+      {
+        heading: "As trocas mais comuns",
+        table: {
+          head: ["Evite", "Use", "Português"],
+          rows: [
+            ["tenir que", "haver de", "ter que"],
+            ["hi ha que", "cal, s'ha de", "é preciso"],
+            ["donar-se compte", "adonar-se", "perceber"],
+            ["enterar-se", "assabentar-se", "ficar sabendo"],
+            ["per suposat", "per descomptat", "é claro"],
+            ["en quant a", "quant a, pel que fa a", "quanto a"],
+            ["desde", "des de", "desde"],
+            ["bueno", "bé, doncs", "bom, então"],
+            ["vale", "d'acord, entesos", "tá bom"],
+            ["tonteria", "ximpleria, bajanada", "bobagem"],
+            ["dormir la siesta", "fer la migdiada", "tirar a sesta"],
+            ["vaig a fer (futuro)", "faré", "vou fazer"],
+          ],
+        },
+      },
+      {
+        heading: "Nem tudo que parece castelhano é barbarismo",
+        text: "Muitas palavras são iguais nas duas línguas porque vêm do mesmo latim: «buscar», «enfadar-se», «mercat» estão corretas. Na dúvida, os dicionários do IEC e da AVL e o serviço de consultas Optimot mostram a forma recomendada.",
+        examples: [
+          ["He d'acabar aquest informe avui.", "Tenho que terminar este relatório hoje."],
+          ["No m'havia adonat que era tan tard.", "Eu não tinha percebido que era tão tarde."],
+          ["Cal portar el passaport.", "É preciso levar o passaporte."],
+        ],
+      },
+    ],
+    pitfalls: [
+      "«Tenir que» → «haver de»: «He de marxar».",
+      "«Hi ha que» → «cal»: «Cal esperar».",
+      "Na conversa informal essas formas se ouvem muito; em textos, na escola e na imprensa, use a do padrão.",
+    ],
+    quiz: [
+      { question: "Forma do padrão para «tenho que estudar»:", options: ["He d'estudiar.", "Tinc que estudiar.", "Hi ha que estudiar."], answer: "He d'estudiar.", explanation: "Obrigação: haver de." },
+      { question: "Forma do padrão para «perceber»:", options: ["adonar-se", "donar-se compte", "enterar-se"], answer: "adonar-se", explanation: "adonar-se: «No me n'havia adonat»." },
+      { question: "Forma do padrão para «é claro»:", options: ["per descomptat", "per suposat", "per supost"], answer: "per descomptat", explanation: "per descomptat (ou és clar)." },
+      { question: "Qual destas palavras é catalã padrão?", options: ["buscar", "enterar-se", "desde"], answer: "buscar", explanation: "«buscar» é catalão correto; as outras têm forma própria (assabentar-se, des de)." },
+    ],
+  },
+  {
+    id: "ca-g48",
+    level: "C1.1",
+    title: "Os dialetos: oriental e ocidental",
+    emoji: "🗺️",
+    summary: "O catalão costuma ser dividido em dois blocos, numa classificação proposta por Manuel Milà i Fontanals em 1861: o oriental (central, balear, rossellonês e alguerês) e o ocidental (nord-occidental e valenciano). A diferença mais fácil de ouvir está nas vogais átonas.",
+    sections: [
+      {
+        heading: "As vogais",
+        text: "No oriental, o «a» e o «e» átonos se fundem num [ə] («pare» [ˈpaɾə]); no central, o «o» átono soa [u] («poma» e «cosí» [kuˈzi]). No ocidental, as vogais átonas continuam distintas: «pare» [ˈpaɾe], «cosí» [koˈzi]. O maiorquino tem ainda um [ə] tônico que os outros não têm.",
+        table: {
+          head: ["Palavra", "Central (Barcelona)", "Valenciano (Valência)", "Nord-occidental (Lleida)"],
+          rows: [
+            ["pare", "[ˈpaɾə]", "[ˈpaɾe]", "[ˈpaɾe]"],
+            ["cosí", "[kuˈzi]", "[koˈzi]", "[koˈzi]"],
+            ["mare", "[ˈmaɾə]", "[ˈmaɾe]", "[ˈmaɾe]"],
+          ],
+        },
+      },
+      {
+        heading: "A 1ª pessoa do presente e outras marcas",
+        table: {
+          head: ["", "Central", "Nord-occidental", "Valenciano", "Balear"],
+          rows: [
+            ["eu falo", "parlo", "parlo", "parle", "parl"],
+            ["eu canto", "canto", "canto", "cante", "cant"],
+            ["hoje", "avui", "avui", "hui", "avui"],
+            ["sair", "sortir", "eixir / sortir", "eixir", "sortir"],
+          ],
+        },
+        text: "No nord-occidental ainda se ouve o artigo antigo «lo» (lo pare, lo gos), o mesmo de «Tirant lo Blanc». Todas essas formas são corretas na sua região; a língua padrão escolhe umas para a escrita comum, sem torná-las «mais certas» que as outras.",
+        examples: [
+          ["Jo parlo català (Barcelona). Jo parle valencià (València).", "Eu falo catalão. Eu falo valenciano."],
+          ["Lo meu germà viu a Lleida.", "O meu irmão mora em Lleida (com o artigo «lo» da região)."],
+        ],
+      },
+    ],
+    pitfalls: [
+      "Não trate as variedades como «erradas»: «parle» é a forma normal em Valência.",
+      "A divisão em oriental e ocidental é uma classificação dos linguistas; a língua é uma só.",
+      "O [ə] das vogais átonas é típico do oriental; no valenciano o «e» átono soa [e].",
+    ],
+    quiz: [
+      { question: "Como se diz «eu falo» em Valência?", options: ["parle", "parlo", "parl"], answer: "parle", explanation: "No valenciano, a 1ª pessoa do presente termina em -e." },
+      { question: "E em Maiorca?", options: ["parl", "parle", "parli"], answer: "parl", explanation: "No balear, a 1ª pessoa não tem terminação: parl, cant." },
+      { question: "«Hoje» no valenciano é…", options: ["hui", "avui", "ahir"], answer: "hui", explanation: "Valenciano: hui; central: avui." },
+      { question: "Qual destes dialetos é ocidental?", options: ["valencià", "balear", "rossellonès"], answer: "valencià", explanation: "Ocidental: nord-occidental e valenciano." },
+    ],
+  },
+  {
+    id: "ca-g49",
+    level: "C1.1",
+    title: "O valenciano e as duas academias",
+    emoji: "🍊",
+    summary: "Na Comunidade Valenciana, o nome oficial da língua é «valencià», e a norma é cuidada pela Acadèmia Valenciana de la Llengua (AVL), criada por lei em 1998. No resto do território, a referência é o Institut d'Estudis Catalans (IEC), fundado em 1907. As duas normas são muito próximas e aceitam formas uma da outra.",
+    sections: [
+      {
+        heading: "Uma história de normas",
+        text: "Em 1913 o IEC publicou as Normes ortogràfiques, preparadas por Pompeu Fabra. Em 1932, escritores e instituições valencianas assinaram em Castelló as «Normes de Castelló», que adaptavam essa ortografia ao valenciano. Em 2005, um parecer da AVL afirmou que a língua própria dos valencianos é a mesma que se fala na Catalunha, nas Ilhas Baleares e em Andorra — por isso o app ensina tudo como uma língua só, mostrando as variantes. Na sociedade valenciana o nome e a identidade da língua ainda geram debate, e muitos falantes preferem dizer que falam valenciano.",
+      },
+      {
+        heading: "Formas próprias do padrão valenciano",
+        table: {
+          head: ["Padrão do IEC (central)", "Padrão valenciano (AVL)", "Português"],
+          rows: [
+            ["parlo", "parle", "falo"],
+            ["aquest, aquesta", "este, esta (ou aquest)", "este, esta"],
+            ["aqueix (pouco usado)", "eixe, eixa", "esse, essa"],
+            ["la meva, la teva", "la meua, la teua", "a minha, a sua"],
+            ["tenir, venir", "tindre, vindre (ou tenir, venir)", "ter, vir"],
+            ["que parlés", "que parlara (ou parlés)", "que falasse"],
+            ["anglès, conèixer", "anglés, conéixer", "inglês, conhecer"],
+            ["avui", "hui", "hoje"],
+          ],
+        },
+        text: "No vocabulário do dia a dia também há diferenças: xiquet (nen), creïlla (patata), espill (mirall), granera (escombra), eixir (sortir). Muitas dessas palavras também aparecem nos dicionários do IEC.",
+        examples: [
+          ["Hui eixim a sopar amb els xiquets.", "Hoje vamos sair para jantar com as crianças. (valenciano)"],
+          ["Esta és la meua casa.", "Esta é a minha casa. (valenciano)"],
+        ],
+      },
+    ],
+    pitfalls: [
+      "«Este» e «meua» não são erros: são as formas do padrão valenciano.",
+      "O acento de «anglés» (AVL) e «anglès» (IEC) mostra a pronúncia de cada região; as duas grafias são normativas.",
+      "Sobre o nome da língua, siga o costume do lugar: em Valência, «valencià».",
+    ],
+    quiz: [
+      { question: "Quem cuida da norma na Comunidade Valenciana?", options: ["a AVL", "o IEC", "a RAE"], answer: "a AVL", explanation: "A Acadèmia Valenciana de la Llengua, criada por lei em 1998." },
+      { question: "«A minha casa» no padrão valenciano é…", options: ["la meua casa", "la mia casa", "la meva casa de"], answer: "la meua casa", explanation: "Possessivo valenciano: meua, teua, seua." },
+      { question: "Em que ano foram assinadas as Normes de Castelló?", options: ["1932", "1913", "1998"], answer: "1932", explanation: "1913: normas do IEC; 1932: Castelló; 1998: lei da AVL." },
+      { question: "«Xiquet» quer dizer…", options: ["nen", "xic", "gos"], answer: "nen", explanation: "Xiquet = nen (menino, criança)." },
+    ],
+  },
+  {
+    id: "ca-g50",
+    level: "C1.1",
+    title: "Baleares, Alguer e Rossilhão; e o aranês, uma língua vizinha",
+    emoji: "🏝️",
+    summary: "O balear tem o artigo «salat» (es, sa), o alguerês é falado numa cidade da Sardenha desde o século XIV e o rossellonês convive com o francês desde 1659. No Vale de Aran, dentro da Catalunha, fala-se aranês, que não é catalão: é uma variedade do occitano.",
+    sections: [
+      {
+        heading: "O balear",
+        text: "O artigo vem do latim «ipse»: es, sa, ses (es cotxe, sa casa, ses cases); antes de vogal, s' (s'aigua). Há também o artigo pessoal «en» e «na» (en Joan, na Maria). A 1ª pessoa do presente não tem terminação (jo cant, jo parl), e muitas palavras são próprias: al·lot (menino), moix (gato), ca (cachorro), horabaixa (fim de tarde), idò (então). Restos do artigo salat existem também em alguns pontos da Costa Brava.",
+        examples: [
+          ["Idò, anam a sa platja?", "Então, vamos à praia? (maiorquino)"],
+          ["S'al·lot juga amb es moix.", "O menino brinca com o gato. (maiorquino)"],
+        ],
+      },
+      {
+        heading: "O alguerês e o rossellonês",
+        text: "Em Alghero (em catalão, l'Alguer), na Sardenha, o catalão chegou com colonos no século XIV e sobreviveu até hoje, cercado pelo sardo e pelo italiano; a lei italiana de 1999 sobre minorias linguísticas o reconhece. Tem traços próprios, como o l entre vogais que pode soar como r. No Rossilhão, a Catalunha do Norte, que passou à França com o Tratado dos Pireneus (1659), o catalão convive com o francês e usa muito a negação com «pas»: «No ho sé pas».",
+      },
+      {
+        heading: "O aranês",
+        text: "No Vale de Aran, nos Pireneus, fala-se aranês, uma variedade do gascão, que é um dialeto do occitano — a língua dos trovadores medievais do sul da França. Desde o Estatuto de 2006, o occitano (aranês em Aran) é língua oficial na Catalunha, ao lado do catalão e do castelhano. Parece catalão em muitas palavras, mas tem gramática e ortografia próprias: «obrigado» é «mercés».",
+      },
+    ],
+    pitfalls: [
+      "«Es» e «sa» no balear são artigos, não pronomes: «sa platja» é «a praia».",
+      "O aranês não é um dialeto do catalão, e sim do occitano.",
+      "No Rossilhão, o «pas» da negação é normal, não um erro.",
+    ],
+    quiz: [
+      { question: "O que quer dizer «sa casa» em maiorquino?", options: ["la casa", "la seva casa", "aquesta casa"], answer: "la casa", explanation: "Artigo salat: sa = la." },
+      { question: "O aranês é uma variedade de qual língua?", options: ["occità", "català", "basc"], answer: "occità", explanation: "Aranês = gascão, dialeto do occitano." },
+      { question: "Em que ano o Rossilhão passou à França?", options: ["1659", "1714", "1492"], answer: "1659", explanation: "Tratado dos Pireneus, 1659." },
+      { question: "«Moix» em maiorquino é…", options: ["gat", "gos", "noi"], answer: "gat", explanation: "Moix = gato; ca = cachorro." },
+    ],
+  },
+  {
+    id: "ca-g51",
+    level: "C1.2",
+    title: "A nominalização e o estilo científico",
+    emoji: "🔬",
+    summary: "Os textos científicos e técnicos preferem substantivos a verbos (la reducció del consum em vez de «reduir el consum»), a passiva pronominal (s'observa, es constata) e uma terminologia própria, coordenada pelo TERMCAT.",
+    sections: [
+      {
+        heading: "Do verbo ao substantivo",
+        table: {
+          head: ["Verbo", "Substantivo", "Português"],
+          rows: [
+            ["investigar", "la investigació", "a pesquisa"],
+            ["créixer", "el creixement", "o crescimento"],
+            ["analitzar", "l'anàlisi (f.)", "a análise"],
+            ["reduir", "la reducció", "a redução"],
+            ["augmentar", "l'augment", "o aumento"],
+            ["disminuir", "la disminució", "a diminuição"],
+            ["descobrir", "el descobriment", "a descoberta"],
+          ],
+        },
+        examples: [
+          ["La reducció de les emissions és l'objectiu principal.", "A redução das emissões é o objetivo principal."],
+          ["S'observa un augment del 12 % en les temperatures mitjanes.", "Observa-se um aumento de 12% nas temperaturas médias."],
+        ],
+      },
+      {
+        heading: "Termos, números e cautela",
+        text: "O TERMCAT propõe termos catalães para conceitos novos: maquinari (hardware), programari (software), correu brossa (spam), en línia (on-line). Os números usam vírgula decimal e o símbolo de porcentagem separado por espaço: «el 12,5 %», ou por extenso, «un 12,5 per cent». E o texto científico evita certezas absolutas: «sembla que», «les dades indiquen», «podria explicar».",
+        examples: [
+          ["Segons les dades, el fenomen podria estar relacionat amb el clima.", "Segundo os dados, o fenômeno poderia estar relacionado com o clima."],
+          ["Cal instal·lar el programari abans de connectar el maquinari.", "É preciso instalar o software antes de conectar o hardware."],
+        ],
+      },
+    ],
+    pitfalls: [
+      "«L'anàlisi» é feminino: «una anàlisi detallada».",
+      "Porcentagem com espaço: «12 %».",
+      "Prefira o termo catalão quando existe: «programari», «en línia».",
+    ],
+    quiz: [
+      { question: "Substantivo de «créixer»:", options: ["el creixement", "la creixença", "el crescut"], answer: "el creixement", explanation: "créixer → el creixement." },
+      { question: "Complete: «Es va fer ___ anàlisi molt detallada.»", options: ["una", "un", "uns"], answer: "una", explanation: "anàlisi é feminino." },
+      { question: "«Software» em catalão padrão é…", options: ["programari", "maquinari", "programació"], answer: "programari", explanation: "programari = software; maquinari = hardware." },
+      { question: "Complete: «___ un augment de la temperatura.»", options: ["S'observa", "Observa", "Se observa"], answer: "S'observa", explanation: "Passiva pronominal: s'observa." },
+    ],
+  },
+  {
+    id: "ca-g52",
+    level: "C1.2",
+    title: "Estilo jornalístico e administrativo",
+    emoji: "📰",
+    summary: "A notícia vai direto ao fato, com manchete no presente e as fontes citadas. O texto administrativo segue fórmulas fixas, como a «instància» com as partes EXPOSO e SOL·LICITO, e evita expressões vagas como «a nivell de» ou «en base a».",
+    sections: [
+      {
+        heading: "A notícia",
+        text: "Manchetes no presente e sem artigos desnecessários: «El Parlament aprova la llei de residus». O primeiro parágrafo responde qui, què, quan, on i per què. As declarações se atribuem com verbos variados: ha declarat, ha explicat, ha afirmat, segons fonts de…",
+        examples: [
+          ["L'Ajuntament de Girona obre una nova biblioteca al barri de Sant Narcís.", "A Prefeitura de Girona abre uma nova biblioteca no bairro de Sant Narcís."],
+          ["Segons ha explicat la directora, el centre obrirà cada dia.", "Segundo explicou a diretora, o centro abrirá todos os dias."],
+        ],
+      },
+      {
+        heading: "A instância",
+        text: "O requerimento formal à administração tem partes fixas: os dados de quem pede; EXPOSO (os fatos, em frases numeradas: «Que vaig presentar la sol·licitud el dia…»); SOL·LICITO (o pedido: «Que se'm concedeixi…»); lugar, data e assinatura; e o órgão a quem se dirige.",
+        table: {
+          head: ["Evite", "Use", "Português"],
+          rows: [
+            ["a nivell de", "pel que fa a, en l'àmbit de", "no que diz respeito a"],
+            ["en base a", "a partir de, sobre la base de", "com base em"],
+            ["de cara a", "per a, amb vista a", "tendo em vista"],
+            ["hi ha que", "cal", "é preciso"],
+            ["és per això que", "per això", "é por isso que"],
+          ],
+        },
+        examples: [["Sol·licito: Que se'm concedeixi la beca d'estudis.", "Solicito: Que me seja concedida a bolsa de estudos."]],
+      },
+    ],
+    pitfalls: [
+      "Manchete no presente: «El Govern presenta…», não «El Govern ha presentat…».",
+      "Na instância, EXPOSO (fatos) vem antes de SOL·LICITO (pedido).",
+      "Troque «a nivell de» por «pel que fa a».",
+    ],
+    quiz: [
+      { question: "Na instância, qual parte traz o pedido?", options: ["Sol·licito", "Exposo", "Atentament"], answer: "Sol·licito", explanation: "Exposo = fatos; Sol·licito = pedido." },
+      { question: "Forma recomendada no lugar de «en base a»:", options: ["a partir de", "a nivell de", "de cara a"], answer: "a partir de", explanation: "«en base a» se troca por «a partir de» ou «sobre la base de»." },
+      { question: "Qual manchete segue o estilo jornalístico?", options: ["El Parlament aprova la llei.", "El Parlament ha aprovat la llei ahir.", "El Parlament aprovarà ahir la llei."], answer: "El Parlament aprova la llei.", explanation: "Manchete no presente, curta." },
+      { question: "Forma recomendada no lugar de «a nivell de salut»:", options: ["pel que fa a la salut", "de cara a la salut", "en base a la salut"], answer: "pel que fa a la salut", explanation: "«a nivell de» só se usa para níveis de verdade (a nivell del mar)." },
+    ],
+  },
+  {
+    id: "ca-g53",
+    level: "C2",
+    title: "Os clássicos: de Llull a Maragall",
+    emoji: "✒️",
+    summary: "A literatura catalã tem oito séculos. Três momentos para conhecer: a Idade Média de Ramon Llull, o «Segle d'Or» valenciano do século XV (Ausiàs March, «Tirant lo Blanc») e a Renaixença do século XIX (Verdaguer, e depois Maragall).",
+    sections: [
+      {
+        heading: "Idade Média e Segle d'Or",
+        text: "Ramon Llull (c. 1232–1316), de Maiorca, escreveu em catalão, latim e árabe; o «Blanquerna» e o «Llibre de meravelles» usam o catalão para a filosofia e para o romance. No século XV, Valência viveu o seu «Segle d'Or». Ausiàs March renovou a poesia amorosa e moral; Joanot Martorell escreveu «Tirant lo Blanc», publicado em Valência em 1490, que Cervantes, no «Dom Quixote», fez um personagem chamar de o melhor livro do mundo no seu estilo. Um verso de March muito citado:",
+        examples: [
+          ["Veles e vents han mos desigs complir, / faent camins dubtosos per la mar.", "Velas e ventos hão de cumprir os meus desejos, / fazendo caminhos incertos pelo mar. (Ausiàs March, século XV)"],
+        ],
+      },
+      {
+        heading: "Renaixença e Modernisme",
+        text: "Depois de séculos em que a literatura culta se escreveu sobretudo em castelhano, a Renaixença do século XIX recuperou o catalão literário. Os Jocs Florals, restaurados em Barcelona em 1859, premiaram Jacint Verdaguer, autor dos poemas épicos «L'Atlàntida» (1877) e «Canigó» (1886). Joan Maragall (1860–1911) defendeu a «paraula viva», a poesia próxima da fala; «La vaca cega» começa assim:",
+        examples: [
+          ["Topant de cap en una i altra soca, / avançant d'esma pel camí de l'aigua, / se'n ve la vaca tota sola. És cega.", "Batendo a cabeça num e noutro tronco, / avançando por instinto pelo caminho da água, / vem a vaca sozinha. É cega. (Joan Maragall)"],
+        ],
+      },
+      {
+        heading: "Século XX",
+        text: "No século XX, a literatura catalã seguiu viva apesar das proibições do franquismo. Um romance muito traduzido é «La plaça del Diamant» (1962), de Mercè Rodoreda, sobre a vida de uma mulher em Barcelona antes, durante e depois da Guerra Civil.",
+      },
+    ],
+    pitfalls: [
+      "Os textos medievais têm ortografia antiga («e» por «i», «mos» por «els meus»): leia em edição anotada.",
+      "«Tirant lo Blanc» usa o artigo antigo «lo», ainda vivo em Lleida.",
+      "Verdaguer e Maragall são do século XIX; Llull, do XIII; March e Martorell, do XV.",
+    ],
+    quiz: [
+      { question: "Quem escreveu «Tirant lo Blanc»?", options: ["Joanot Martorell", "Ramon Llull", "Jacint Verdaguer"], answer: "Joanot Martorell", explanation: "Publicado em Valência em 1490." },
+      { question: "Em que século viveu Ausiàs March?", options: ["segle XV", "segle XIII", "segle XIX"], answer: "segle XV", explanation: "O Segle d'Or valenciano." },
+      { question: "Quem escreveu «Canigó»?", options: ["Jacint Verdaguer", "Joan Maragall", "Ausiàs March"], answer: "Jacint Verdaguer", explanation: "Canigó, 1886." },
+      { question: "O que defendia Maragall?", options: ["la paraula viva", "l'article salat", "les Normes de Castelló"], answer: "la paraula viva", explanation: "A poesia próxima da fala." },
+    ],
+  },
+  {
+    id: "ca-g54",
+    level: "C2",
+    title: "Provérbios e o catalão antigo",
+    emoji: "🏺",
+    summary: "Os provérbios («refranys») guardam a sabedoria do campo e do mar, e o catalão antigo aparece em textos desde o século XII, como as Homilies d'Organyà. Conhecer os dois ajuda a ler literatura e a entender as conversas dos mais velhos.",
+    sections: [
+      {
+        heading: "Refranys",
+        table: {
+          head: ["Refrany", "Sentido", "Equivalente em português"],
+          rows: [
+            ["De mica en mica s'omple la pica.", "pouco a pouco se chega lá", "De grão em grão a galinha enche o papo."],
+            ["Qui no vulgui pols, que no vagi a l'era.", "quem não aceita as consequências não se meta", "Quem sai na chuva é pra se molhar."],
+            ["Qui matina, fa farina.", "quem acorda cedo produz mais", "Deus ajuda quem cedo madruga."],
+            ["No diguis blat fins que no sigui al sac i ben lligat.", "não conte com algo antes de tê-lo", "Não conte com o ovo antes da galinha."],
+            ["Val més un boig conegut que un savi per conèixer.", "melhor o conhecido que o incerto", "Mais vale um pássaro na mão…"],
+            ["Qui dia passa, any empeny.", "um dia de cada vez", "Um dia de cada vez."],
+            ["On menja un, mengen dos.", "sempre dá para dividir", "Onde come um, comem dois."],
+            ["A l'abril, cada gota val per mil.", "a chuva de abril é preciosa para o campo", "Chuva de abril vale ouro."],
+          ],
+        },
+      },
+      {
+        heading: "O catalão antigo",
+        text: "As Homilies d'Organyà, sermões do fim do século XII encontrados em 1904 na casa paroquial de Organyà, estão entre os textos mais antigos inteiramente em catalão. No século XIII, o rei Jaume I ditou o «Llibre dels fets», a primeira das quatro grandes crônicas medievais. No catalão antigo, «e» era a conjunção «i», o artigo masculino era muitas vezes «lo» e havia formas como «mos» (os meus) e «llur» (deles).",
+        examples: [
+          ["Qui no vulgui pols, que no vagi a l'era.", "Quem não quer poeira que não vá à eira."],
+          ["Qui matina, fa farina.", "Quem madruga faz farinha."],
+        ],
+      },
+    ],
+    pitfalls: [
+      "Os refranys não se traduzem palavra por palavra: procure o equivalente.",
+      "«Era» no provérbio é a eira (lugar de debulhar), não o verbo ser.",
+      "No catalão antigo, «e» = «i» (e); não confunda com o «e» átono de hoje.",
+    ],
+    quiz: [
+      { question: "Qual refrany corresponde a «Deus ajuda quem cedo madruga»?", options: ["Qui matina, fa farina.", "On menja un, mengen dos.", "Qui dia passa, any empeny."], answer: "Qui matina, fa farina.", explanation: "Matinar = madrugar." },
+      { question: "As Homilies d'Organyà são do…", options: ["segle XII", "segle XV", "segle XIX"], answer: "segle XII", explanation: "Fim do século XII; encontradas em 1904." },
+      { question: "Quem ditou o «Llibre dels fets»?", options: ["Jaume I", "Ramon Llull", "Ausiàs March"], answer: "Jaume I", explanation: "O rei Jaume I, no século XIII." },
+      { question: "Complete: «De mica en mica s'omple la ___.»", options: ["pica", "casa", "boca"], answer: "pica", explanation: "A pica é a pia (de pedra)." },
+    ],
+  },
 ];
