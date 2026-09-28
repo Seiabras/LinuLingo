@@ -19,7 +19,8 @@
  * și treizeci), decimais com vírgula (38,5 → treizeci și opt virgulă cinci), milhares com ponto
  * (2.042), percentagens (7% → șapte la sută) e euros (20 € → douăzeci de euro).
  */
-import { ROWS } from '@/data/ro/vocabulario';
+import { VOCAB_RO } from '@/data/ro/vocabulario';
+import type { VocabRow } from '@/data/types';
 import { adjectiveForms, decimalDigits, genderAfter, nounGenders, type Gender } from './romanicas';
 
 /** contar: unu, doi (sozinho); m, n, f: o gênero do substantivo; ora: as horas (ora unu, ora două). */
@@ -65,7 +66,7 @@ export function romanianNumber(n: number, g: G = 'contar'): string {
   return parts.join(' ');
 }
 
-const ORD_F: Record<string, string> = { unu: 'una', doi: 'doua', trei: 'treia', patru: 'patra', cinci: 'cincea', șase: 'șasea', șapte: 'șaptea', opt: 'opta', nouă: 'noua', sută: 'suta', sute: 'suta', mie: 'mia', mii: 'mia' };
+const ORD_F: Record<string, string> = { una: 'una', două: 'doua', trei: 'treia', patru: 'patra', cinci: 'cincea', șase: 'șasea', șapte: 'șaptea', opt: 'opta', nouă: 'noua', sută: 'suta', sute: 'suta', mie: 'mia', mii: 'mia' };
 
 /**
  * Al 2-lea = al doilea, a 2-a = a doua (sem o «al»/«a», que fica na frase); 1 = întâi (al întâilea,
@@ -144,14 +145,17 @@ function adjForms(w: string): string[] {
 /** Palavras que vêm muito depois de um número e que o vocabulário pode não trazer (ou traz com um plural irregular). */
 const EXTRA: Record<string, Gender> = { lei: 'm', leu: 'm', bani: 'm', ban: 'm', euro: 'm', dolari: 'm', cenți: 'm', ani: 'm', an: 'm', oameni: 'm', copii: 'm', kilometri: 'm', metri: 'm', zile: 'f', zi: 'f', ore: 'f', oră: 'f', surori: 'f', mii: 'f', mie: 'f', milioane: 'n', milion: 'n', miliarde: 'n', grade: 'n', minute: 'n', secole: 'n', kilograme: 'n', ouă: 'n', persoane: 'f', săptămâni: 'f', luni: 'f' };
 
+/** O vocabulário do romeno não exporta as linhas; refaz a partir das entradas. */
+const rows = (): VocabRow[] => VOCAB_RO.map((v) => [v.word_target, v.word_native, v.part_of_speech, v.category, v.emoji, v.example_sentence, v.gender ?? undefined]);
+
 let nouns: Map<string, Gender> | null = null;
 let adjectives: Set<string> | null = null;
 /** «22 de fete»: o número concorda com fete, por cima do «de». */
 const SKIP = new Set(['de']);
 
 function genderAt(text: string, end: number): Gender | null {
-  nouns ??= nounGenders(ROWS, plurals, EXTRA);
-  adjectives ??= adjectiveForms(ROWS, adjForms);
+  nouns ??= nounGenders(rows(), plurals, EXTRA);
+  adjectives ??= adjectiveForms(rows(), adjForms);
   return genderAfter(text, end, nouns, adjectives, SKIP);
 }
 
