@@ -3640,4 +3640,780 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
     ],
   },
+  // ───────────────────────────── B2.3 ─────────────────────────────
+  {
+    id: 'ko-g-deora-deon',
+    level: 'B2.3',
+    title: '-더라고요, -데요 e -던: o que eu vi e o que era',
+    emoji: '👁️',
+    summary: 'O coreano tem uma marca para o que você mesmo presenciou: o retrospectivo -더-. -더라고요 conta uma impressão ou descoberta pessoal (그 식당 맛있더라고요, «fui lá e vi que é gostoso»). -던 modifica um substantivo com uma ação habitual ou interrompida do passado: 자주 가던 카페 (o café aonde eu costumava ir), 먹던 빵 (o pão que eu estava comendo).',
+    sections: [
+      {
+        heading: '-더라고요: «eu vi, eu percebi»',
+        text: 'Radical + 더라고요, sem regra de vogal: 가더라고요, 맛있더라고요; com substantivo, (이)더라고요. A forma diz que a informação vem da sua própria experiência: você esteve lá, viu, provou, sentiu. Por isso ela fala dos outros e das coisas, e não das suas ações voluntárias: «저는 어제 공부하더라고요» soa como se você se observasse de fora. A exceção são as reações que escapam ao controle: 저도 모르게 눈물이 나더라고요 (as lágrimas vieram sem eu perceber). Entre amigos, -더라.',
+        table: {
+          head: ['Frase', 'Português', 'O que indica'],
+          rows: [
+            ['그 식당 정말 맛있더라고요.', 'Aquele restaurante é gostoso mesmo.', 'experiência própria'],
+            ['민수 씨가 한국어를 잘하더라고요.', 'O Minsu fala coreano bem, vi.', 'observação'],
+            ['밖에 비가 오더라고요.', 'Lá fora está chovendo, acabei de ver.', 'descoberta'],
+            ['서울은 생각보다 크더라고요.', 'Seul é maior do que eu pensava.', 'impressão'],
+            ['저도 모르게 눈물이 나더라고요.', 'As lágrimas vieram sem eu perceber.', 'reação involuntária'],
+          ],
+        },
+        examples: [
+          ['제주도 어땠어요? 바다가 정말 예쁘더라고요.', 'Como foi em Jeju? O mar é lindo mesmo.'],
+          ['어제 명동에 갔는데 사람이 정말 많더라.', 'Ontem fui a Myeongdong, e tinha muita gente mesmo. (반말)'],
+          ['그 옷 잘 어울리던데요!', 'Aquela roupa ficou ótima em você! (eu vi)'],
+        ],
+      },
+      {
+        heading: '-데요 × -대요: vi ou ouvi dizer?',
+        text: 'Na fala, -더라고요 tem um primo mais curto, -데요 (그 영화 재미있데요, «eu vi, achei bom»). Ele soa quase igual a -대요, a contração do discurso indireto (그 영화 재미있대요, «dizem que é bom»). A diferença é a fonte: com ㅔ, você presenciou; com ㅐ, você ouviu de alguém. Na escrita, não troque; na fala, o contexto ajuda.',
+        table: {
+          head: ['Forma', 'Fonte', 'Exemplo', 'Português'],
+          rows: [
+            ['-데요 (= -더라고요)', 'eu vi, eu senti', '그 영화 재미있데요.', 'Achei esse filme bom. (eu vi)'],
+            ['-대요 (= -다고 해요)', 'ouvi dizer', '그 영화 재미있대요.', 'Dizem que esse filme é bom.'],
+            ['-던데요', 'eu vi, e deixo no ar', '그 영화 재미있던데요.', 'Achei bom, viu… (sugerindo algo)'],
+          ],
+        },
+        examples: [
+          ['그 카페 커피가 맛있데요.', 'O café de lá é gostoso. (eu provei)'],
+          ['그 카페 커피가 맛있대요.', 'Dizem que o café de lá é gostoso.'],
+          ['민수 씨 아까 도서관에 있던데요.', 'O Minsu estava na biblioteca agora há pouco, eu vi…'],
+        ],
+      },
+      {
+        heading: '-던: o que era, o que costumava ser',
+        text: 'Como modificador, -던 descreve um substantivo com algo que acontecia no passado e não se completou, ou se repetia. 먹던 빵 é o pão que eu estava comendo (sobrou); 먹은 빵 é o pão que eu comi (acabou). 자주 가던 카페 é o café aonde eu ia sempre. Com adjetivos, é um estado que já não é o mesmo: 조용하던 동네 (o bairro que era tranquilo). E -았/었던 é a lembrança de algo concluído, com um tom de memória: 작년에 갔던 식당, 우리가 처음 만났던 날.',
+        table: {
+          head: ['Forma', 'Sentido', 'Exemplo', 'Português'],
+          rows: [
+            ['-(으)ㄴ', 'ação concluída', '어제 먹은 빵', 'o pão que comi ontem'],
+            ['-던', 'ação interrompida', '내가 먹던 빵', 'o pão que eu estava comendo'],
+            ['-던', 'hábito no passado', '자주 가던 카페', 'o café aonde eu costumava ir'],
+            ['-았/었던', 'lembrança de algo concluído', '작년에 갔던 식당', 'o restaurante aonde fomos ano passado'],
+            ['adjetivo + -던', 'estado antigo', '조용하던 동네', 'o bairro que era tranquilo'],
+          ],
+        },
+        examples: [
+          ['여기가 제가 어릴 때 살던 동네예요.', 'Este é o bairro onde eu morava quando criança.'],
+          ['내가 먹던 빵 어디 갔어?', 'Cadê o pão que eu estava comendo? (반말)'],
+          ['우리가 처음 만났던 날 기억나?', 'Lembra do dia em que a gente se conheceu? (반말)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar -더라고요 para as próprias ações voluntárias: «저는 어제 공부하더라고요» está errado. Ele é para o que você observou.',
+      'Usar -더라고요 para o que ouviu dizer: aí é -대요 (discurso indireto).',
+      'Confundir 먹은 빵 (acabou) com 먹던 빵 (ficou pela metade).',
+      'Trocar -데요 e -대요 na escrita: 재미있데요 (eu vi) × 재미있대요 (dizem).',
+      'Usar -던 para algo que continua igual: 조용하던 동네 sugere que o bairro já não é tão tranquilo.',
+    ],
+    quiz: [
+      {
+        question: 'Você foi a um restaurante e achou ótimo. Como conta isso a um colega?',
+        options: ['그 식당 정말 맛있더라고요.', '그 식당 정말 맛있대요.', '그 식당 정말 맛있을 거예요.'],
+        answer: '그 식당 정말 맛있더라고요.',
+        explanation: '-더라고요 conta a sua própria experiência. -대요 seria «dizem que».',
+      },
+      {
+        question: 'O que quer dizer 그 영화 재미있대요?',
+        options: ['Dizem que esse filme é bom.', 'Eu vi e achei esse filme bom.', 'Esse filme vai ser bom.'],
+        answer: 'Dizem que esse filme é bom.',
+        explanation: '-대요 (com ㅐ) é o discurso indireto contraído: -다고 해요.',
+      },
+      {
+        question: 'Complete: 제가 ___ 빵 어디 있어요? (o pão que eu estava comendo)',
+        options: ['먹던', '먹은', '먹을'],
+        answer: '먹던',
+        explanation: '-던 é a ação interrompida: o pão ficou pela metade.',
+      },
+      {
+        question: 'Qual frase está errada?',
+        options: ['저는 어제 도서관에서 공부하더라고요.', '민수 씨가 도서관에서 공부하더라고요.', '밖에 눈이 오더라고요.'],
+        answer: '저는 어제 도서관에서 공부하더라고요.',
+        explanation: '-더라고요 relata o que se observou; não serve para a própria ação voluntária.',
+      },
+      {
+        question: 'Como se diz «o café aonde eu costumava ir»?',
+        options: ['자주 가던 카페', '자주 간 카페', '자주 갈 카페'],
+        answer: '자주 가던 카페',
+        explanation: '-던 marca o hábito passado.',
+      },
+    ],
+  },
+  {
+    id: 'ko-g-tende',
+    level: 'B2.3',
+    title: 'Supor com nuance: -(으)ㄹ 것 같다, -나 보다 e -(으)ㄹ 텐데',
+    emoji: '🤔',
+    summary: 'O coreano tem várias formas de supor. -(으)ㄹ 것 같다 é o «acho que» mais comum (비가 올 것 같아요). -나 보다 e -(으)ㄴ가 보다 deduzem pelo que se vê (배가 고픈가 봐요, pelo jeito ele está com fome). E -(으)ㄹ 텐데 junta suposição com preocupação, gentileza ou pesar: 바쁘실 텐데 와 주셔서 감사합니다 (sei que o senhor deve estar ocupado; obrigado por vir).',
+    sections: [
+      {
+        heading: '-것 같다: acho que, parece que',
+        text: 'O 것 같다 («parece a coisa») vem depois de um modificador, que carrega o tempo: -(으)ㄹ 것 같다 para o futuro ou o palpite, -는 것 같다 para o que parece estar acontecendo, -(으)ㄴ 것 같다 para o passado dos verbos e para o presente dos adjetivos. Os coreanos também usam 것 같아요 para suavizar opiniões (이게 더 좋은 것 같아요, acho que este é melhor). Mas usar para os próprios sentimentos (맛있는 것 같아요, dito de boca cheia) soa indeciso, e é um vício de linguagem criticado na Coreia.',
+        table: {
+          head: ['Forma', 'Tempo', 'Exemplo', 'Português'],
+          rows: [
+            ['-(으)ㄹ 것 같다', 'futuro, palpite', '비가 올 것 같아요.', 'Acho que vai chover.'],
+            ['-는 것 같다', 'presente (verbo)', '밖에 비가 오는 것 같아요.', 'Parece que está chovendo lá fora.'],
+            ['-(으)ㄴ 것 같다', 'passado (verbo)', '민수 씨가 벌써 간 것 같아요.', 'Parece que o Minsu já foi.'],
+            ['-(으)ㄴ 것 같다', 'presente (adjetivo)', '이 옷이 좀 작은 것 같아요.', 'Acho que esta roupa está pequena.'],
+            ['-(으)ㄹ 것 같다', 'palpite (adjetivo)', '그 영화 재미있을 것 같아요.', 'Acho que esse filme vai ser bom.'],
+          ],
+        },
+        examples: [
+          ['하늘을 보니까 곧 비가 올 것 같아요.', 'Olhando o céu, acho que vai chover logo.'],
+          ['제 생각에는 이게 더 나은 것 같아요.', 'Na minha opinião, este aqui é melhor.'],
+          ['시험이 생각보다 어려울 것 같아.', 'Acho que a prova vai ser mais difícil do que eu pensava. (반말)'],
+        ],
+      },
+      {
+        heading: '-나 보다: pelo jeito',
+        text: 'Quando a suposição nasce de uma pista concreta, use -나 보다 com verbos (자나 봐요) e -(으)ㄴ가 보다 com adjetivos (바쁜가 봐요); no passado, -았/었나 보다. Ele serve para os outros, não para você mesmo: é o raciocínio de detetive. A rua está molhada? 비가 왔나 봐요.',
+        examples: [
+          ['길이 젖었어요. 밤에 비가 왔나 봐요.', 'A rua está molhada. Pelo jeito, choveu de noite.'],
+          ['민수 씨가 전화를 안 받아요. 바쁜가 봐요.', 'O Minsu não atende. Deve estar ocupado.'],
+          ['불이 꺼져 있네요. 다들 자나 봐요.', 'As luzes estão apagadas. Pelo jeito, todo mundo está dormindo.'],
+        ],
+      },
+      {
+        heading: '-(으)ㄹ 텐데: deve ser assim, e então…',
+        text: 'O 텐데 junta a expectativa (터) com o pano de fundo do -ㄴ데: «imagino que seja assim, e por isso…». É a gramática da consideração. Mostra cuidado com o outro (배고플 텐데 먼저 드세요, você deve estar com fome, coma primeiro) e aparece numa frase feita de agradecimento (바쁘실 텐데 와 주셔서 감사합니다). No fim da frase, é um aviso suave (밖에 추울 텐데요, lá fora deve estar frio, hein). Com hipóteses irreais, é o desejo e o arrependimento: 시간이 있으면 좋을 텐데 (quem me dera ter tempo), 일찍 왔으면 만날 수 있었을 텐데 (se tivesse vindo cedo, teria encontrado). O parente -(으)ㄹ 테니까 anuncia uma intenção e pede algo: 제가 할 테니까 쉬세요 (deixa que eu faço; descanse).',
+        table: {
+          head: ['Uso', 'Exemplo', 'Português'],
+          rows: [
+            ['cuidado com o outro', '배고플 텐데 먼저 드세요.', 'Você deve estar com fome; coma primeiro.'],
+            ['agradecimento', '바쁘실 텐데 와 주셔서 감사합니다.', 'Obrigado por ter vindo, mesmo ocupado.'],
+            ['aviso suave', '밖에 추울 텐데요.', 'Lá fora deve estar frio, hein.'],
+            ['desejo', '시간이 있으면 좋을 텐데.', 'Quem me dera ter tempo.'],
+            ['arrependimento', '일찍 왔으면 만날 수 있었을 텐데.', 'Se tivesse vindo cedo, teria encontrado.'],
+            ['intenção + pedido', '제가 할 테니까 쉬세요.', 'Deixa que eu faço; descanse.'],
+          ],
+        },
+        examples: [
+          ['많이 피곤하실 텐데 푹 쉬세요.', 'O senhor deve estar muito cansado; descanse bem.'],
+          ['지금 가면 길이 막힐 텐데요.', 'Se for agora, o trânsito deve estar ruim, hein.'],
+          ['네가 여기 있으면 좋을 텐데.', 'Queria que você estivesse aqui. (반말)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar 것 같아요 para os próprios sentimentos: «맛있는 것 같아요», dito de boca cheia, soa indeciso. Diga 맛있어요.',
+      'Usar -나 보다 sobre si mesmo: é dedução sobre os outros ou sobre as coisas, a partir de pistas.',
+      'Trocar -(으)ㄴ 것 같다 e -(으)ㄹ 것 같다: 간 것 같아요 (parece que já foi) × 갈 것 같아요 (acho que vai).',
+      'Escrever «할텐데» junto: 텐데 é uma palavra à parte (터 + 인데), então 할 텐데.',
+      'Usar -(으)ㄹ 텐데 como simples futuro: ele pede uma continuação ou deixa uma implícita («…então cuidado»).',
+    ],
+    quiz: [
+      {
+        question: 'O céu está escuro. Como se diz «Acho que vai chover»?',
+        options: ['비가 올 것 같아요.', '비가 온 것 같아요.', '비가 오나 봐요.'],
+        answer: '비가 올 것 같아요.',
+        explanation: 'Palpite sobre o futuro: -(으)ㄹ 것 같다. 온 것 같아요 seria «parece que choveu».',
+      },
+      {
+        question: 'A rua está molhada. Como dizer «Pelo jeito, choveu»?',
+        options: ['비가 왔나 봐요.', '비가 올 텐데요.', '비가 오고 싶어요.'],
+        answer: '비가 왔나 봐요.',
+        explanation: 'Dedução a partir de uma pista: -았/었나 보다.',
+      },
+      {
+        question: 'Como agradecer a presença de alguém muito ocupado?',
+        options: ['바쁘실 텐데 와 주셔서 감사합니다.', '바쁘니까 와 주셔서 감사합니다.', '바빠서 와 주셨어요 감사합니다.'],
+        answer: '바쁘실 텐데 와 주셔서 감사합니다.',
+        explanation: 'A fórmula de consideração: «o senhor deve estar ocupado, e mesmo assim veio».',
+      },
+      {
+        question: 'Qual é a grafia padrão?',
+        options: ['할 텐데', '할텐데', '할 텐대'],
+        answer: '할 텐데',
+        explanation: '텐데 (터 + 인데) se escreve separado do modificador: 할 텐데.',
+      },
+      {
+        question: 'Complete: 조금만 일찍 왔으면 만날 수 있었을 ___.',
+        options: ['텐데', '것 같다', '나 봐요'],
+        answer: '텐데',
+        explanation: 'Hipótese irreal + arrependimento: -았/었을 텐데.',
+      },
+    ],
+  },
+  // ───────────────────────────── B2.4 ─────────────────────────────
+  {
+    id: 'ko-g-escrita-da',
+    level: 'B2.4',
+    title: 'O estilo escrito: -다, -ㄴ다, -는다 e a gramática do texto',
+    emoji: '✍️',
+    summary: 'Livros, jornais, redações, trabalhos acadêmicos e a prova escrita do TOPIK são escritos no 해라체: 나는 학생이다, 그는 매일 신문을 읽는다. Junto com ele vêm conectivos próprios da escrita (-(으)며, -(으)나, -(으)므로, -고자), um vocabulário mais formal e a regra de ouro: nada de 요 e nada das palavras da conversa.',
+    sections: [
+      {
+        heading: 'As terminações do texto',
+        text: 'Verbos no presente levam -ㄴ다 depois de vogal ou de ㄹ (간다, 산다) e -는다 depois de consoante (먹는다); adjetivos e 있다/없다 ficam só com -다 (좋다, 있다); o «ser» é -(이)다. Passado: -았/었다. Futuro e suposição: -(으)ㄹ 것이다 (nunca o 거 da fala). Na escrita formal, muitas contrações se desfazem: 했다 vira 하였다, 됐다 vira 되었다.',
+        table: {
+          head: ['Tipo', 'Presente', 'Passado', 'Futuro'],
+          rows: [
+            ['verbo com vogal', '간다', '갔다', '갈 것이다'],
+            ['verbo com consoante', '먹는다', '먹었다', '먹을 것이다'],
+            ['verbo em ㄹ', '산다', '살았다', '살 것이다'],
+            ['adjetivo', '좋다', '좋았다', '좋을 것이다'],
+            ['substantivo', '학생이다', '학생이었다', '학생일 것이다'],
+            ['negação', '가지 않는다', '가지 않았다', '가지 않을 것이다'],
+          ],
+        },
+        examples: [
+          ['나는 서울에 산다.', 'Eu moro em Seul.'],
+          ['그는 매일 아침 신문을 읽는다.', 'Ele lê o jornal toda manhã.'],
+          ['한국어는 배우기 어렵지만 매우 흥미롭다.', 'O coreano é difícil de aprender, mas muito interessante.'],
+        ],
+      },
+      {
+        heading: 'Do falado para o escrito',
+        text: 'Passar um texto para o estilo escrito não é só trocar o final. O 저 humilde vira 나 (ou some; em trabalhos acadêmicos, evita-se o pronome), as contrações da fala se desfazem (이거 → 이것, 거 → 것) e as palavras informais dão lugar às formais: 진짜 e 되게 viram 매우 ou 정말, 근데 vira 그런데 ou 그러나.',
+        table: {
+          head: ['Fala (해요체)', 'Escrita (해라체)', 'Português'],
+          rows: [
+            ['저는 학생이에요.', '나는 학생이다.', 'Sou estudante.'],
+            ['한국어를 공부해요.', '한국어를 공부한다.', 'Estudo coreano.'],
+            ['진짜 재미있어요.', '매우 재미있다.', 'É muito interessante.'],
+            ['근데 좀 어려워요.', '그러나 조금 어렵다.', 'Porém, é um pouco difícil.'],
+            ['이거 제 거예요.', '이것은 나의 것이다.', 'Isto é meu.'],
+            ['내일 할 거예요.', '내일 할 것이다.', 'Farei amanhã.'],
+          ],
+        },
+        examples: [
+          ['나는 브라질에서 태어났다.', 'Nasci no Brasil.'],
+          ['한국 문화에 관심이 생겨서 한국어를 배우기 시작하였다.', 'Comecei a aprender coreano porque me interessei pela cultura coreana.'],
+          ['앞으로도 꾸준히 공부할 것이다.', 'Daqui em diante, continuarei estudando com constância.'],
+        ],
+      },
+      {
+        heading: 'Os conectivos da escrita',
+        text: 'Cada conectivo da conversa tem um equivalente mais formal. -(으)며 é o «e» escrito (e também «enquanto»); -(으)나 é o «porém»; -(으)므로 é o «visto que»; -고자 é o «a fim de»; 및 liga itens de uma lista, como o nosso «e» em documentos. No começo das frases, 따라서 (portanto), 또한 (além disso), 즉 (ou seja) e 한편 (por outro lado) organizam o argumento.',
+        table: {
+          head: ['Fala', 'Escrita', 'Português'],
+          rows: [
+            ['-고', '-(으)며', 'e; ao mesmo tempo'],
+            ['-지만', '-(으)나', 'mas, porém'],
+            ['-아/어서, -(으)니까', '-(으)므로, -기 때문에', 'porque, visto que'],
+            ['-(으)려고', '-고자', 'a fim de'],
+            ['하고, (이)랑', '및, 와/과', 'e (em listas)'],
+            ['그래서', '따라서, 그러므로', 'portanto'],
+            ['근데', '그런데, 한편', 'por outro lado'],
+          ],
+        },
+        examples: [
+          ['그는 의사이며 작가이다.', 'Ele é médico e escritor.'],
+          ['열심히 노력하였으나 결과는 좋지 않았다.', 'Esforçou-se muito, porém o resultado não foi bom.'],
+          ['이 글에서는 한국의 교육 문제를 살펴보고자 한다.', 'Neste texto, pretende-se examinar os problemas da educação coreana.'],
+        ],
+      },
+      {
+        heading: 'Diário, carta e e-mail',
+        text: 'O diário é escrito em 해라체, para si mesmo. Já a carta e o e-mail têm destinatário, então voltam ao 해요체 ou ao 합니다체. A carta abre com o nome e 에게 (ou 께, para alguém respeitado) e fecha com a assinatura seguida de 드림 ou 올림 («oferece», com humildade). O e-mail de trabalho começa quase sempre com 안녕하세요 e uma apresentação: 김민수입니다.',
+        examples: [
+          ['오늘은 날씨가 맑았다. 친구와 한강에서 자전거를 탔다.', 'Hoje o tempo estava limpo. Andei de bicicleta no rio Han com um amigo. (diário)'],
+          ['사랑하는 엄마에게', 'Para a minha querida mãe, (abertura de carta)'],
+          ['선생님께', 'Ao professor, (abertura respeitosa)'],
+          ['김민수 드림', 'Kim Minsu (assinatura de carta ou e-mail)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Misturar 요 e -다 no mesmo texto: a redação inteira fica no 해라체.',
+      'Usar a forma do dicionário como frase: «나는 매일 공부하다» está errado; é 공부한다.',
+      'Pôr -는다 em adjetivo: «좋는다» está errado; adjetivo fica só com -다 (좋다).',
+      'Levar para a redação as palavras da fala: 진짜, 되게, 근데, 이거, 거 → 매우, 그런데, 이것, 것.',
+      'Escrever uma carta ao professor em 해라체: carta e e-mail têm destinatário, então 해요체 ou 합니다체.',
+    ],
+    quiz: [
+      {
+        question: 'Qual é a forma escrita de 한국어를 공부해요?',
+        options: ['한국어를 공부한다.', '한국어를 공부하다.', '한국어를 공부해.'],
+        answer: '한국어를 공부한다.',
+        explanation: 'Verbo no presente com vogal: -ㄴ다. 공부하다 é só a forma do dicionário, e 공부해 é 반말 falado.',
+      },
+      {
+        question: 'Qual é a forma escrita de 날씨가 좋아요?',
+        options: ['날씨가 좋다.', '날씨가 좋는다.', '날씨가 좋아.'],
+        answer: '날씨가 좋다.',
+        explanation: 'Adjetivo leva só -다 no presente.',
+      },
+      {
+        question: 'Qual conectivo equivale a -지만 na escrita formal?',
+        options: ['-(으)나', '-(으)며', '-고자'],
+        answer: '-(으)나',
+        explanation: '-(으)나 é o «porém» escrito; -(으)며 é «e», e -고자, «a fim de».',
+      },
+      {
+        question: 'Qual palavra não combina com uma redação?',
+        options: ['진짜', '매우', '그러나'],
+        answer: '진짜',
+        explanation: '진짜 é da conversa. Na escrita, 매우 ou 정말.',
+      },
+      {
+        question: 'Complete a redação: 나는 매일 아침 운동을 ___.',
+        options: ['한다', '해요', '하다'],
+        answer: '한다',
+        explanation: '하다 no presente escrito: 한다.',
+      },
+    ],
+  },
+  {
+    id: 'ko-g-conectivos-b2',
+    level: 'B2.4',
+    title: 'Conectivos avançados: -다가, -느라고, -는 바람에, -더니, -는 김에',
+    emoji: '🧵',
+    summary: 'No B2, a fala ganha nuance. -다가 interrompe ou troca uma ação (가다가 돌아왔어요). -느라고 dá a atividade que tomou o tempo (공부하느라고 못 잤어요). -는 바람에 dá a causa imprevista e chata (버스를 놓치는 바람에 늦었어요). -더니 liga o que se observou ao que veio depois. E -는 김에 é o «já que, aproveitando».',
+    sections: [
+      {
+        heading: '-다가: no meio de uma ação',
+        text: '-다가 (na fala, muitas vezes só -다) diz que uma ação foi interrompida ou deu lugar a outra: 학교에 가다가 친구를 만났어요 (indo para a escola, encontrei um amigo), 공부하다가 잠이 들었어요 (estudando, peguei no sono). Com o passado, -았/었다가, a primeira ação se completou e depois veio outra, muitas vezes o contrário: 불을 켰다가 껐어요 (acendi e apaguei), 학교에 갔다가 왔어요 (fui à escola e voltei). E -다(가) 보면 é «de tanto fazer»: 계속 연습하다 보면 잘하게 될 거예요.',
+        table: {
+          head: ['Forma', 'Exemplo', 'Português'],
+          rows: [
+            ['-다가', '학교에 가다가 친구를 만났어요.', 'Indo para a escola, encontrei um amigo.'],
+            ['-다가', '공부하다가 잠이 들었어요.', 'Peguei no sono estudando.'],
+            ['-았/었다가', '불을 켰다가 껐어요.', 'Acendi a luz e depois apaguei.'],
+            ['-았/었다가', '학교에 갔다가 왔어요.', 'Fui à escola e voltei.'],
+            ['-다 보면', '계속 연습하다 보면 잘하게 될 거예요.', 'De tanto praticar, você vai ficar bom.'],
+          ],
+        },
+        examples: [
+          ['영화를 보다가 울었어요.', 'Chorei vendo o filme.'],
+          ['코트를 샀다가 환불했어요.', 'Comprei um casaco e depois devolvi.'],
+          ['한국 드라마를 보다 보면 한국어가 늘어요.', 'De tanto ver novelas coreanas, o coreano melhora.'],
+        ],
+      },
+      {
+        heading: 'Três jeitos de dar a causa: -아/어서, -느라고, -는 바람에',
+        text: '-느라고 (ou -느라) é para quando uma atividade sua ocupou o tempo e atrapalhou outra coisa: 게임하느라고 숙제를 못 했어요. Só vale com verbos e com o mesmo sujeito. Também aparece numa frase de gratidão: 준비하느라 고생 많으셨어요 (obrigado por todo o trabalho na preparação). -는 바람에 é para o imprevisto, algo que aconteceu de repente e trouxe um resultado ruim: 갑자기 비가 오는 바람에 옷이 다 젖었어요. Em ambos, o passado fica só no fim.',
+        table: {
+          head: ['Conectivo', 'Tipo de causa', 'Exemplo', 'Português'],
+          rows: [
+            ['-아/어서', 'qualquer causa', '바빠서 못 갔어요.', 'Estava ocupado e não fui.'],
+            ['-느라고', 'uma atividade minha que tomou o tempo', '이사하느라고 바빴어요.', 'Estive ocupado com a mudança.'],
+            ['-는 바람에', 'um imprevisto, resultado ruim', '알람이 안 울리는 바람에 늦잠을 잤어요.', 'O alarme não tocou, e perdi a hora.'],
+          ],
+        },
+        examples: [
+          ['친구랑 이야기하느라고 버스를 놓쳤어요.', 'Fiquei conversando com um amigo e perdi o ônibus.'],
+          ['준비하느라 고생 많으셨어요.', 'Obrigado por todo o esforço na preparação.'],
+          ['갑자기 비가 오는 바람에 옷이 다 젖었어요.', 'Começou a chover de repente, e fiquei todo molhado.'],
+        ],
+      },
+      {
+        heading: '-더니 e -는 김에',
+        text: '-더니 liga o que você observou em alguém ao que aconteceu depois, com um tom de relato: 민수 씨가 열심히 공부하더니 시험에 합격했어요 (o Minsu estudou muito, e então passou). Também contrasta estados: 아침에는 날씨가 좋더니 오후에 비가 왔어요. Com «eu», vira -았/었더니: 약을 먹었더니 괜찮아졌어요 (tomei o remédio e melhorei). Já -(으)ㄴ/는 김에 é o «já que você vai…, aproveita e…»: 시장에 가는 김에 우유도 사 와.',
+        examples: [
+          ['민수 씨가 열심히 공부하더니 시험에 합격했어요.', 'O Minsu estudou muito, e então passou na prova.'],
+          ['아침에는 날씨가 좋더니 오후에 비가 왔어요.', 'De manhã o tempo estava bom, mas à tarde choveu.'],
+          ['약을 먹었더니 좀 괜찮아졌어요.', 'Tomei o remédio e melhorei um pouco.'],
+          ['시장에 가는 김에 우유도 좀 사 와.', 'Já que você vai ao mercado, traz leite também. (반말)'],
+          ['말이 나온 김에 하나 물어볼게요.', 'Já que tocamos no assunto, deixa eu perguntar uma coisa.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar -느라고 com adjetivo ou com sujeitos diferentes: «바쁘느라고» está errado; é 바빠서.',
+      'Usar -는 바람에 com resultado bom: ele é para imprevistos que atrapalharam.',
+      'Confundir 가다가 (no caminho, interrompido) com 갔다가 (fui, e depois voltei ou mudei).',
+      'Usar -더니 com «eu» sem o passado: é 먹었더니, e não «제가 먹더니».',
+      'Pôr passado antes de -느라고 ou -는 바람에: o tempo fica no último verbo.',
+    ],
+    quiz: [
+      {
+        question: 'Complete: 학교에 가___ 친구를 만났어요. (indo para a escola)',
+        options: ['다가', '느라고', '더니'],
+        answer: '다가',
+        explanation: '-다가: a ação de ir foi interrompida pelo encontro.',
+      },
+      {
+        question: 'Complete: 게임하___ 숙제를 못 했어요.',
+        options: ['느라고', '는 김에', '더니'],
+        answer: '느라고',
+        explanation: 'A atividade (jogar) tomou o tempo e atrapalhou a lição: -느라고.',
+      },
+      {
+        question: 'Qual frase usa bem -는 바람에?',
+        options: ['갑자기 비가 오는 바람에 옷이 다 젖었어요.', '열심히 공부하는 바람에 시험에 합격했어요.', '비가 오는 바람에 우산을 가져가세요.'],
+        answer: '갑자기 비가 오는 바람에 옷이 다 젖었어요.',
+        explanation: '-는 바람에 é para o imprevisto com resultado ruim, e não aceita pedido depois.',
+      },
+      {
+        question: 'O que quer dizer 학교에 갔다가 왔어요?',
+        options: ['Fui à escola e voltei.', 'No caminho da escola, voltei.', 'Vou à escola e depois volto.'],
+        answer: 'Fui à escola e voltei.',
+        explanation: '-았/었다가: a primeira ação se completou, e depois veio outra.',
+      },
+      {
+        question: 'Complete: 시장에 가는 ___ 우유도 사 와.',
+        options: ['김에', '바람에', '다가'],
+        answer: '김에',
+        explanation: '-는 김에: «já que vai, aproveita e…».',
+      },
+      {
+        question: 'Complete: 약을 먹었___ 괜찮아졌어요.',
+        options: ['더니', '느라고', '다가'],
+        answer: '더니',
+        explanation: 'Com a primeira pessoa, -았/었더니: fiz X e então aconteceu Y.',
+      },
+    ],
+  },
+  // ───────────────────────────── C1.1 ─────────────────────────────
+  {
+    id: 'ko-g-jornal-academico',
+    level: 'C1.1',
+    title: 'O coreano do jornal e da academia: manchetes, fontes e cautela',
+    emoji: '📰',
+    summary: 'Notícias e textos acadêmicos têm gramática própria: manchetes que cortam o verbo (정부, 새 정책 발표), fontes citadas com -에 따르면 e -다고 밝혔다, resultados com -는 것으로 나타났다, previsões cautelosas com -(으)ㄹ 것으로 보인다, o -겠- do boletim do tempo e frases longas, nominalizadas, cheias de vocabulário sino-coreano. É essa leitura que separa o B2 do C1.',
+    sections: [
+      {
+        heading: 'A manchete: cortar tudo',
+        text: 'A manchete coreana (헤드라인) é telegráfica. A vírgula toma o lugar da partícula de sujeito, o verbo some e a frase termina num substantivo sino-coreano (발표, anúncio; 진출, avanço; 상승, alta). As falas vêm entre aspas, sem verbo de dizer. Para ler, complete mentalmente: 정부, 새 교육 정책 발표 = 정부가 새 교육 정책을 발표했다.',
+        table: {
+          head: ['Manchete', 'Frase completa', 'Português'],
+          rows: [
+            ['정부, 새 교육 정책 발표', '정부가 새 교육 정책을 발표했다.', 'O governo anunciou uma nova política educacional.'],
+            ['한국 축구, 월드컵 본선 진출', '한국 축구 대표팀이 월드컵 본선에 진출했다.', 'A seleção coreana se classificou para a Copa.'],
+            ['서울 집값 석 달째 상승', '서울의 집값이 석 달째 오르고 있다.', 'O preço dos imóveis em Seul sobe pelo terceiro mês seguido.'],
+            ['내일 전국에 비', '내일 전국에 비가 내리겠다.', 'Amanhã chove em todo o país.'],
+          ],
+        },
+        examples: [
+          ['정부, 새 교육 정책 발표', 'Governo anuncia nova política educacional.'],
+          ['한국 축구, 월드컵 본선 진출', 'Futebol coreano garante vaga na Copa.'],
+          ['장관 "청년 일자리 문제 해결에 최선"', 'Ministro: «Faremos o possível para resolver o desemprego jovem».'],
+        ],
+      },
+      {
+        heading: 'Citar a fonte e medir a certeza',
+        text: 'O texto jornalístico separa com cuidado o que é fato, o que alguém disse e o que se prevê. -에 따르면 dá a fonte (segundo…); -다고 밝혔다 e -다고 전했다 relatam declarações; -(으)ㄴ/는 것으로 나타났다 apresenta resultados de pesquisa; -(으)ㄹ 것으로 보인다 e -(으)ㄹ 전망이다 fazem previsões sem comprometer o jornal.',
+        table: {
+          head: ['Estrutura', 'Função', 'Exemplo'],
+          rows: [
+            ['-에 따르면', 'fonte', '기상청에 따르면 내일 눈이 올 것으로 보인다.'],
+            ['-다고 밝혔다', 'declaração', '장관은 제도를 개선하겠다고 밝혔다.'],
+            ['-는 것으로 나타났다', 'resultado de pesquisa', '청소년의 수면 시간이 줄어든 것으로 나타났다.'],
+            ['-(으)ㄹ 것으로 보인다', 'previsão cautelosa', '물가는 당분간 오를 것으로 보인다.'],
+            ['-(으)ㄹ 전망이다', 'previsão', '올해 수출은 증가할 전망이다.'],
+          ],
+        },
+        examples: [
+          ['기상청에 따르면 이번 주말에 첫눈이 내릴 것으로 보인다.', 'Segundo o serviço meteorológico, a primeira neve deve cair neste fim de semana.'],
+          ['조사 결과 청소년의 수면 시간이 크게 줄어든 것으로 나타났다.', 'O levantamento constatou que o tempo de sono dos adolescentes diminuiu muito.'],
+          ['회사 측은 사실이 아니라고 밝혔다.', 'A empresa declarou que a informação não procede.'],
+        ],
+      },
+      {
+        heading: 'A frase acadêmica',
+        text: 'O texto acadêmico empilha substantivos: nominaliza verbos (-는 것, -(으)ㅁ, -기), usa verbos sino-coreanos com 하다 e 되다 e liga as ideias com expressões fixas. O autor quase nunca diz «eu»: fala em 본 연구 (este estudo) ou 본고 (este artigo), e conclui com prudência, -다고 볼 수 있다 (pode-se considerar que).',
+        table: {
+          head: ['Expressão', 'Português', 'Exemplo'],
+          rows: [
+            ['-에 대한', 'sobre, a respeito de', '한국어 교육에 대한 연구'],
+            ['-을/를 통해', 'por meio de', '설문 조사를 통해 자료를 수집하였다.'],
+            ['-(으)로 인해', 'devido a', '기후 변화로 인해 여름이 길어지고 있다.'],
+            ['-(으)ㄴ 반면(에)', 'ao passo que', '도시 인구는 증가한 반면 농촌 인구는 감소하였다.'],
+            ['-에 비해', 'em comparação com', '작년에 비해 관광객이 늘었다.'],
+            ['-다고 볼 수 있다', 'pode-se considerar que', '이는 사회 변화의 결과라고 볼 수 있다.'],
+          ],
+        },
+        examples: [
+          ['본 연구는 한국어 학습자의 발음 오류를 분석하는 데 목적이 있다.', 'Este estudo tem por objetivo analisar os erros de pronúncia de aprendizes de coreano.'],
+          ['도시 인구는 증가한 반면 농촌 인구는 감소하였다.', 'A população urbana aumentou, ao passo que a rural diminuiu.'],
+          ['이러한 결과는 교육 환경의 변화 때문이라고 볼 수 있다.', 'Pode-se considerar que esses resultados se devem à mudança no ambiente educacional.'],
+        ],
+      },
+      {
+        heading: 'O -겠- da previsão e da formalidade',
+        text: 'O sufixo -겠- aparece em toda fala pública. No boletim do tempo, é a previsão: 비가 내리겠습니다. No trem e no avião, é o anúncio do que vai acontecer: 잠시 후 도착하겠습니다. E em frases feitas, é modéstia: 알겠습니다 (entendido) e 모르겠습니다 (não sei) soam mais educados que 알아요 e 몰라요, porque «suavizam» a certeza. O mesmo -겠- está em 처음 뵙겠습니다 e em 잘 먹겠습니다, dito antes de comer.',
+        examples: [
+          ['내일은 전국에 비가 내리겠습니다.', 'Amanhã choverá em todo o país. (previsão do tempo)'],
+          ['이 열차는 잠시 후 서울역에 도착하겠습니다.', 'Este trem chegará em instantes à estação de Seul.'],
+          ['잘 먹겠습니다!', 'Obrigado pela comida! (dito antes de comer)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Ler a manchete como frase quebrada: a vírgula substitui o sujeito, e o verbo ficou implícito no substantivo final.',
+      'Traduzir -는 것으로 나타났다 ao pé da letra: é «constatou-se que», «o levantamento mostrou que».',
+      'Levar o estilo de jornal para a conversa: ninguém diz «밝혔어요» sobre o que um amigo contou.',
+      'Confundir -(으)로 인해 (devido a, formal) com o -(으)로 de meio (버스로, de ônibus).',
+      'Achar que -겠- é só futuro: ele também faz previsões e dá modéstia (알겠습니다, 모르겠습니다).',
+    ],
+    quiz: [
+      {
+        question: 'O que diz a manchete 정부, 새 교육 정책 발표?',
+        options: ['O governo anuncia uma nova política educacional.', 'O governo pergunta sobre educação.', 'Nova escola do governo é inaugurada.'],
+        answer: 'O governo anuncia uma nova política educacional.',
+        explanation: 'A vírgula faz o papel do 이/가, e 발표 (anúncio) substitui 발표했다.',
+      },
+      {
+        question: 'Complete: 기상청___ 내일 눈이 올 것으로 보인다.',
+        options: ['에 따르면', '에 대한', '에 비해'],
+        answer: '에 따르면',
+        explanation: '-에 따르면 = «segundo» (a fonte).',
+      },
+      {
+        question: 'O que expressa -(으)ㄹ 것으로 보인다 numa notícia?',
+        options: ['Uma previsão cautelosa', 'Uma ordem', 'Uma lembrança pessoal'],
+        answer: 'Uma previsão cautelosa',
+        explanation: '«Prevê-se que», «deve»: o jornal não se compromete.',
+      },
+      {
+        question: 'Complete: 도시 인구는 증가한 ___ 농촌 인구는 감소하였다.',
+        options: ['반면', '김에', '바람에'],
+        answer: '반면',
+        explanation: '-(으)ㄴ 반면 = «ao passo que», o contraste do texto formal.',
+      },
+      {
+        question: 'No boletim do tempo, em 비가 내리겠습니다, o -겠- serve para…',
+        options: ['fazer uma previsão', 'expressar o desejo do locutor', 'contar algo que já aconteceu'],
+        answer: 'fazer uma previsão',
+        explanation: 'O -겠- da previsão: «choverá».',
+      },
+    ],
+  },
+  {
+    id: 'ko-g-sino-coreano',
+    level: 'C1.1',
+    title: 'As raízes sino-coreanas: o hanja por trás das palavras',
+    emoji: '🀄',
+    summary: 'Mais da metade do vocabulário coreano vem do chinês clássico: são as palavras sino-coreanas (한자어), hoje escritas só em hangul. Cada sílaba costuma ser um caractere (hanja) com sentido próprio: 학 (學, estudar) está em 학교, 학생, 대학, 과학. Conhecer umas cem raízes abre milhares de palavras, como o latim e o grego fazem no português.',
+    sections: [
+      {
+        heading: 'Uma sílaba, um sentido',
+        text: 'Durante séculos, a língua culta da Coreia foi escrita em caracteres chineses (한자, hanja), lidos à coreana. Cada caractere tem uma leitura e um «nome» que diz o sentido: 學 se chama 배울 학, «o 학 de aprender». Hoje o hanja quase sumiu do dia a dia: aparece em nomes próprios, diplomas, alguns títulos de jornal e, entre parênteses, para desfazer ambiguidades. Mas as palavras ficaram, e montá-las é como montar «tele-fone» ou «biblio-teca»: 전화 é 電 (eletricidade) + 話 (fala), «fala elétrica».',
+        table: {
+          head: ['Palavra', 'Partes (hanja)', 'Ao pé da letra', 'Português'],
+          rows: [
+            ['전화', '電 eletricidade + 話 fala', 'fala elétrica', 'telefone'],
+            ['학교', '學 estudar + 校 escola', 'escola de estudar', 'escola'],
+            ['한국', '韓 Han (o povo) + 國 país', 'país dos Han', 'Coreia'],
+            ['대학', '大 grande + 學 estudar', 'grande estudo', 'universidade'],
+            ['식당', '食 comer + 堂 salão', 'salão de comer', 'restaurante'],
+            ['도서관', '圖 figura + 書 livro + 館 prédio', 'prédio dos livros', 'biblioteca'],
+          ],
+        },
+        examples: [
+          ['대학교 도서관에서 공부해요.', 'Estudo na biblioteca da universidade.'],
+          ['학교 식당은 싸고 맛있어요.', 'O restaurante da escola é barato e gostoso.'],
+          ['전화번호 좀 알려 주세요.', 'Me passe o seu número de telefone, por favor.'],
+        ],
+      },
+      {
+        heading: 'As raízes mais produtivas',
+        text: 'Algumas sílabas aparecem em centenas de palavras. Aprender o sentido delas é o atalho para o vocabulário do nível avançado: quem sabe que 가 (家) é «casa, especialista» entende de primeira 작가 (escritor), 화가 (pintor) e 전문가 (especialista).',
+        table: {
+          head: ['Raiz', 'Hanja', 'Sentido', 'Palavras'],
+          rows: [
+            ['학', '學', 'estudar', '학생, 학교, 대학, 과학, 수학'],
+            ['생', '生', 'vida, nascer', '학생, 생일, 선생님, 인생'],
+            ['인', '人', 'pessoa', '한국인, 외국인, 인구, 인기'],
+            ['국', '國', 'país', '한국, 외국, 국제, 국가'],
+            ['대', '大', 'grande', '대학, 대통령, 대사관, 확대'],
+            ['전', '電', 'eletricidade', '전화, 전기, 전철, 전자'],
+            ['식', '食', 'comer', '식당, 음식, 식사, 한식'],
+            ['문', '文', 'escrita', '문화, 문학, 문법, 한문'],
+            ['가', '家', 'casa, especialista', '가족, 작가, 화가, 전문가'],
+          ],
+        },
+        examples: [
+          ['외국인 등록증을 받으러 왔어요.', 'Vim buscar a carteira de registro de estrangeiro.'],
+          ['한식 중에서 뭘 제일 좋아해요?', 'Da comida coreana, do que você mais gosta?'],
+          ['저는 한국 문학과 문화에 관심이 많아요.', 'Tenho muito interesse por literatura e cultura coreanas.'],
+        ],
+      },
+      {
+        heading: 'Homônimos: o contexto decide',
+        text: 'Como o coreano tem menos sílabas possíveis que o chinês, muitos caracteres diferentes soam igual. O resultado são homônimos que só o contexto separa, e é por isso que textos jurídicos e acadêmicos às vezes põem o hanja entre parênteses. Quem conhece a raiz não se perde.',
+        table: {
+          head: ['Palavra', 'Sentido 1', 'Sentido 2'],
+          rows: [
+            ['수도', 'capital (首都)', 'água encanada (水道)'],
+            ['사고', 'acidente (事故)', 'pensamento (思考)'],
+            ['부자', 'rico (富者)', 'pai e filho (父子)'],
+            ['전기', 'eletricidade (電氣)', 'biografia (傳記)'],
+            ['동화', 'conto infantil (童話)', 'assimilação (同化)'],
+          ],
+        },
+        examples: [
+          ['서울은 한국의 수도예요.', 'Seul é a capital da Coreia. (수도, 首都)'],
+          ['수도에서 물이 안 나와요.', 'Não sai água da torneira. (수도, 水道)'],
+          ['어제 교통사고가 났어요.', 'Ontem houve um acidente de trânsito. (사고, 事故)'],
+        ],
+      },
+      {
+        heading: 'A semana dos cinco elementos (e de Marte)',
+        text: 'Os dias da semana são sino-coreanos: lua e sol, e os cinco elementos da filosofia chinesa (fogo, água, madeira, metal, terra). E há uma surpresa: esses elementos dão nome aos planetas no Leste Asiático (火星 é Marte, 水星 é Mercúrio), então a semana coreana segue o mesmo sistema planetário da semana latina, que o espanhol manteve e o português trocou pelas «feiras». 화요일 é o dia de Marte, como o martes espanhol; 금요일, o de Vênus, como o viernes.',
+        table: {
+          head: ['Dia', 'Hanja', 'Elemento', 'Astro', 'Português'],
+          rows: [
+            ['월요일', '月', 'lua', 'Lua', 'segunda-feira'],
+            ['화요일', '火', 'fogo', 'Marte (화성)', 'terça-feira'],
+            ['수요일', '水', 'água', 'Mercúrio (수성)', 'quarta-feira'],
+            ['목요일', '木', 'madeira', 'Júpiter (목성)', 'quinta-feira'],
+            ['금요일', '金', 'metal, ouro', 'Vênus (금성)', 'sexta-feira'],
+            ['토요일', '土', 'terra', 'Saturno (토성)', 'sábado'],
+            ['일요일', '日', 'sol', 'Sol', 'domingo'],
+          ],
+        },
+        examples: [
+          ['화요일에 만나요.', 'A gente se vê na terça. (화, o fogo: o dia de Marte)'],
+          ['금요일 저녁에 시간 있어요?', 'Você tem tempo na sexta à noite?'],
+          ['밤하늘에 금성이 밝게 보여요.', 'Vênus aparece brilhante no céu noturno.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Achar que o coreano é «chinês com outro alfabeto»: a gramática é totalmente diferente; o que veio do chinês foi sobretudo o vocabulário culto.',
+      'Escrever hanja no coreano do dia a dia: hoje quase ninguém escreve; ele fica para nomes, documentos, dicionários e textos especializados.',
+      'Adivinhar o sentido só pelo som: 수 pode ser água (水), número (數) ou mão (手). O contexto decide.',
+      'Ignorar o par nativo × sino-coreano: 이 (dente, nativo) × 치아 (dente, formal), como «dente» × «odontológico». A palavra nativa é a do dia a dia.',
+      'Confiar na escrita para a pronúncia: muitas sino-coreanas endurecem sem aviso: 여권 [여꿘], 사건 [사껀], 문법 [문뻡].',
+    ],
+    quiz: [
+      {
+        question: 'Qual sílaba das palavras 학생, 학교, 대학 e 과학 quer dizer «estudar»?',
+        options: ['학', '생', '교'],
+        answer: '학',
+        explanation: '학 (學) é «estudar»: 학생 (estudante), 학교 (escola), 대학 (universidade), 과학 (ciência).',
+      },
+      {
+        question: 'Qual é o dia da semana do fogo (火), o dia de Marte?',
+        options: ['화요일', '수요일', '목요일'],
+        answer: '화요일',
+        explanation: '화 (火) é fogo, e 화성 é Marte: 화요일 é terça-feira, como o martes espanhol.',
+      },
+      {
+        question: 'Em «어제 교통사고가 났어요», o que quer dizer 사고?',
+        options: ['acidente', 'pensamento', 'compra'],
+        answer: 'acidente',
+        explanation: '사고 (事故) é acidente; o homônimo 사고 (思考) é pensamento. O contexto (교통, trânsito) decide.',
+      },
+      {
+        question: 'Qual palavra quer dizer «biblioteca», o «prédio dos livros»?',
+        options: ['도서관', '대사관', '식당'],
+        answer: '도서관',
+        explanation: '도서 (livros) + 관 (館, prédio). 대사관 é embaixada, e 식당, restaurante.',
+      },
+      {
+        question: 'Sabendo que 식 (食) é «comer, comida», o que quer dizer 한식?',
+        options: ['comida coreana', 'restaurante japonês', 'sala de estar'],
+        answer: 'comida coreana',
+        explanation: '한 (韓, coreano) + 식 (食, comida). Do mesmo jeito: 양식 (comida ocidental), 일식 (comida japonesa).',
+      },
+    ],
+  },
+  {
+    id: 'ko-g-onomatopeias',
+    level: 'C1.1',
+    title: 'Onomatopeias e mímesis: 의성어 e 의태어 (반짝반짝, 두근두근)',
+    emoji: '✨',
+    summary: 'O coreano tem milhares de palavras que imitam sons (의성어: 멍멍, 똑똑, 콜록콜록) e, o que mais surpreende o brasileiro, que «imitam» movimentos, sensações e estados (의태어: 반짝반짝, brilhando; 두근두근, o coração acelerado; 엉금엉금, rastejando). Elas se repetem, brincam com vogais claras e escuras e com as consoantes da série tripla, e estão em toda parte: na conversa, na comida, nos 웹툰 e na poesia.',
+    sections: [
+      {
+        heading: 'Sons e jeitos',
+        text: 'O português tem onomatopeias (au-au, toc-toc), mas o coreano vai muito além: tem palavras para o jeito de andar, de brilhar, de sorrir, para a textura da comida. Quase sempre vêm dobradas (반짝반짝, 엉금엉금) e funcionam como advérbios, antes do verbo: 별이 반짝반짝 빛나요. Muitas não têm tradução direta; em português, viram um advérbio («devagarinho»), um verbo mais preciso («cintilar») ou simplesmente somem.',
+        table: {
+          head: ['Palavra', 'Tipo', 'O que evoca', 'Exemplo'],
+          rows: [
+            ['멍멍', 'som', 'latido', '강아지가 멍멍 짖어요.'],
+            ['똑똑', 'som', 'batida na porta', '누가 문을 똑똑 두드려요.'],
+            ['콜록콜록', 'som', 'tosse', '아이가 콜록콜록 기침해요.'],
+            ['쿨쿨', 'som', 'sono pesado', '아기가 쿨쿨 자요.'],
+            ['반짝반짝', 'jeito', 'brilho que pisca', '별이 반짝반짝 빛나요.'],
+            ['두근두근', 'jeito', 'coração acelerado', '가슴이 두근두근해요.'],
+            ['엉금엉금', 'jeito', 'andar lento, de rastros', '거북이가 엉금엉금 기어가요.'],
+            ['깡충깡충', 'jeito', 'pulinhos', '토끼가 깡충깡충 뛰어요.'],
+          ],
+        },
+        examples: [
+          ['반짝반짝 작은 별, 아름답게 비치네.', 'Brilha, brilha, estrelinha, que lindo o seu brilhar. (a cantiga infantil)'],
+          ['첫 데이트라서 가슴이 두근두근했어요.', 'Era o primeiro encontro, e meu coração batia forte.'],
+          ['고양이가 살금살금 다가왔어요.', 'O gato se aproximou de mansinho.'],
+        ],
+      },
+      {
+        heading: 'Vogais claras, vogais escuras, consoantes fortes',
+        text: 'A harmonia vocálica, que no 해요체 escolhe entre 아요 e 어요, aqui ganha cor. Com as vogais claras (ㅏ ㅗ), a imagem fica pequena, leve, fofa; com as escuras (ㅓ ㅜ), grande, pesada. 퐁당 é uma pedrinha caindo na água; 풍덩, um corpo. E a série tripla gradua a intensidade: suave, aspirada, tensa. As cores fazem o mesmo jogo: 발갛다 (avermelhado), 빨갛다 (vermelho vivo), 새빨갛다 (vermelhíssimo); 노랗다 (amarelo) × 누렇다 (amarelado, encardido).',
+        table: {
+          head: ['Claro, pequeno', 'Escuro, grande', 'Português'],
+          rows: [
+            ['반짝반짝', '번쩍번쩍', 'cintilar × relampejar'],
+            ['졸졸', '줄줄', 'fiozinho de água × água escorrendo'],
+            ['퐁당', '풍덩', 'plic (pedrinha) × tchibum (corpo)'],
+            ['방긋', '벙긋', 'sorrisinho × sorriso aberto'],
+            ['노랗다', '누렇다', 'amarelo vivo × amarelado'],
+          ],
+        },
+        examples: [
+          ['시냇물이 졸졸 흘러요.', 'O riacho corre, fiozinho de água.'],
+          ['아이가 수영장에 풍덩 뛰어들었어요.', 'A criança pulou na piscina, tchibum.'],
+          ['하늘에서 번쩍 번개가 쳤어요.', 'Um relâmpago cortou o céu.'],
+        ],
+      },
+      {
+        heading: 'Da mímese ao verbo, e ao prato',
+        text: 'Muitas mímesis viram verbos e adjetivos com -하다, -거리다 ou -이다: 두근거리다 (palpitar), 반짝이다 (brilhar), 끄덕이다 (balançar a cabeça). É assim que o coreano descreve a comida com tanta precisão: 바삭하다 (crocante), 쫄깃하다 (elástico, «no dente», o elogio máximo do tteok e do macarrão), 말랑하다 (macio). E nos 웹툰, os efeitos sonoros (효과음) enchem os quadros: 쾅! (bum!), 휙 (vuush), 두둥 (o «tchan tchan tchan» da revelação).',
+        table: {
+          head: ['Mímese', 'Verbo ou adjetivo', 'Exemplo', 'Português'],
+          rows: [
+            ['두근두근', '두근거리다', '가슴이 두근거려요.', 'Meu coração está acelerado.'],
+            ['반짝반짝', '반짝이다', '눈이 반짝여요.', 'Os olhos brilham.'],
+            ['바삭바삭', '바삭하다', '튀김이 바삭해요.', 'A fritura está crocante.'],
+            ['쫄깃쫄깃', '쫄깃하다', '떡이 쫄깃해요.', 'O tteok está elástico, no ponto.'],
+            ['끄덕끄덕', '끄덕이다', '고개를 끄덕였어요.', 'Balançou a cabeça, concordando.'],
+            ['투덜투덜', '투덜거리다', '동생이 계속 투덜거려요.', 'Meu irmão não para de resmungar.'],
+          ],
+        },
+        examples: [
+          ['이 집 치킨은 겉은 바삭하고 속은 촉촉해요.', 'O frango daqui é crocante por fora e suculento por dentro.'],
+          ['면발이 정말 쫄깃쫄깃해요!', 'O macarrão está no ponto certinho!'],
+          ['문이 쾅 닫혔어요.', 'A porta bateu com tudo.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Traduzir cada mímese ao pé da letra: muitas viram um advérbio ou um verbo mais preciso em português, ou somem na tradução.',
+      'Trocar claro e escuro sem querer: 퐁당 é uma pedrinha; 풍덩 é alguém pulando na água.',
+      'Usar mímesis em texto formal: são da fala, da literatura e dos quadrinhos; relatórios evitam.',
+      'Usar a mímese como verbo sem 하다 ou 거리다: «가슴이 두근두근요» está errado; é 두근두근해요 ou 두근거려요.',
+      'Achar que são linguagem de criança: adultos usam o tempo todo, principalmente para comida, sensações e emoções.',
+    ],
+    quiz: [
+      {
+        question: 'O que evoca 반짝반짝?',
+        options: ['Um brilho que pisca', 'Um latido', 'Passos pesados'],
+        answer: 'Um brilho que pisca',
+        explanation: '반짝반짝 é o cintilar das estrelas, de «brilha, brilha, estrelinha».',
+      },
+      {
+        question: 'Uma pedrinha cai na água. Qual palavra combina?',
+        options: ['퐁당', '풍덩', '쾅'],
+        answer: '퐁당',
+        explanation: 'Vogal clara (ㅗ), imagem pequena: 퐁당. 풍덩 seria um corpo, e 쾅, uma batida forte.',
+      },
+      {
+        question: 'Como se diz «Meu coração está acelerado»?',
+        options: ['가슴이 두근거려요.', '가슴이 두근두근요.', '가슴이 두근해요거려요.'],
+        answer: '가슴이 두근거려요.',
+        explanation: 'A mímese vira verbo com -거리다 (ou 두근두근해요).',
+      },
+      {
+        question: 'O que quer dizer 떡이 쫄깃해요?',
+        options: ['O tteok está elástico, no ponto.', 'O tteok está queimado.', 'O tteok está sem gosto.'],
+        answer: 'O tteok está elástico, no ponto.',
+        explanation: '쫄깃하다 é a textura elástica e macia, o elogio do tteok e do macarrão.',
+      },
+      {
+        question: 'Qual destas palavras imita um som?',
+        options: ['콜록콜록', '엉금엉금', '반짝반짝'],
+        answer: '콜록콜록',
+        explanation: '콜록콜록 é a tosse (의성어). 엉금엉금 e 반짝반짝 imitam jeitos (의태어).',
+      },
+    ],
+  },
 ];

@@ -361,4 +361,460 @@ export const STORIES_KO_2: StorySeed[] = [
       },
     },
   },
+  // ───────────────────────── B2.1 ─────────────────────────
+  {
+    id: 'ko-h25',
+    level: 'B2.1',
+    cefr: 'B2',
+    title: '판교의 월요일 회의',
+    emoji: '💼',
+    summary: 'No polo de tecnologia de Pangyo, o Linu, estagiário numa empresa de aplicativos, precisa apresentar a pesquisa com usuários na reunião de segunda, em 합니다체 e diante do diretor.',
+    cultural_context:
+      'O Pangyo Techno Valley, em Seongnam, logo ao sul de Seul, reúne desde os anos 2010 as sedes de grandes empresas de internet e de games, como a Kakao, a NCSoft e a Nexon, e por isso ganhou o apelido de «Vale do Silício coreano». Muitas dessas empresas trocaram os cargos pelo tratamento «nome + 님» entre colegas, para achatar a hierarquia; mesmo assim, diante da diretoria, a apresentação continua em 합니다체 (-습니다/-ㅂ니다). O novato costuma ter um 사수, o colega mais experiente encarregado de treiná-lo. E, no corredor, a notícia corre no discurso indireto contraído: «-대요» (dizem que), «-래요» (mandou dizer que).',
+    start: 'start',
+    glossary: [
+      ['사수', 'o colega experiente que treina o novato (termo de escritório vindo do exército)'],
+      ['이사님', 'diretor(a), o cargo; homônimo de «이사», mudança de casa'],
+      ['들어오신대요 / 발표하래요', 'dizem que ele vai entrar / mandou dizer que você apresenta (-대요 = -다고 해요; -래요 = -라고 해요)'],
+      ['안 좋아하시더라고요', 'pelo que eu vi, ele não gosta (-더라고요 conta algo observado)'],
+      ['아는 척하다', 'fingir que sabe (-는 척하다: fingir que…)'],
+      ['보고드리다', 'reportar a um superior (forma humilde)'],
+      ['결제 / 단계', 'pagamento / etapa'],
+      ['줄이다 ↔ 늘리다', 'diminuir ↔ aumentar'],
+    ],
+    nodes: {
+      start: {
+        emoji: '☕',
+        text: '월요일 아침 여덟 시 사십 분, 판교역에서 나온 사람들은 모두 커피를 들고 빠르게 걸어갔다. 리누가 자리에 앉자마자 사수인 정지호 님이 모니터 너머로 말했다. “리누 님, 오늘 열 시 회의에 윤 이사님도 들어오신대요. 그리고 지난주 사용자 설문 결과는 리누 님이 발표하래요, 팀장님이.” 리누는 들고 있던 커피를 떨어뜨릴 뻔했다.',
+        translation: 'Segunda-feira, oito e quarenta da manhã: todo mundo que saía da estação Pangyo andava depressa com um café na mão. Assim que o Linu se sentou, o mentor dele, o Jiho, falou por cima do monitor: «Linu, dizem que o diretor Yoon também vai entrar na reunião das dez. E a chefe mandou dizer que quem apresenta o resultado da pesquisa com usuários da semana passada é você.» O Linu quase derrubou o café.',
+        choices: [
+          { text: '리누는 지호 님에게 발표를 어떻게 준비하면 좋을지 물었다.', translation: 'O Linu perguntou ao Jiho como seria bom preparar a apresentação.', next: 'junbi' },
+          { text: '리누는 떨리는 마음을 숨기고 괜찮은 척 웃었다.', translation: 'O Linu escondeu o nervosismo e sorriu, fingindo que estava tudo bem.', next: 'cheok' },
+          {
+            text: '리누는 이사님께 드릴 이사 선물을 검색하기 시작했다.',
+            translation: 'O Linu começou a procurar um presente de mudança para dar ao diretor.',
+            wrong: 'O «이사» de «윤 이사님» é o cargo de DIRETOR (理事), não «mudança de casa» (移徙): são homônimos sino-coreanos. E «들어오신대요» é «들어오신다고 해요»: dizem que o diretor vai ENTRAR na reunião.',
+          },
+        ],
+      },
+      junbi: {
+        emoji: '📊',
+        text: '지호 님은 의자를 돌려 앉으며 하나씩 알려 주었다. “우리끼리는 해요체로 편하게 말하지만, 이사님 앞에서 발표할 때는 꼭 합니다체로 하세요. ‘했어요’가 아니라 ‘했습니다’요. 그리고 결론부터 말하고, 숫자는 세 개만 보여 주세요. 이사님은 긴 설명을 안 좋아하시더라고요.” 리누는 점심도 거르고 발표 자료를 세 장으로 줄였다.',
+        translation: 'O Jiho virou a cadeira e foi explicando item por item: «Entre nós a gente fala à vontade, em 해요체, mas na apresentação para o diretor use sempre o 합니다체. Não é «했어요», é «했습니다». E comece pela conclusão e mostre só três números. Pelo que eu já vi, o diretor não gosta de explicação comprida.» O Linu pulou até o almoço e reduziu a apresentação a três slides.',
+        choices: [
+          { text: '리누는 떨리지만 자료를 들고 회의실로 들어갔다.', translation: 'Nervoso, mas com o material na mão, o Linu entrou na sala de reunião.', next: 'hoeui' },
+        ],
+      },
+      cheok: {
+        emoji: '😅',
+        text: '“괜찮아요, 할 수 있어요!” 리누는 아무렇지 않은 척했지만, 자료를 넘기는 날개가 계속 떨렸다. 지호 님이 웃으면서 다가왔다. “안 괜찮은 거 다 보여요. 저도 첫 발표 때 그랬어요.” 그러고는 의자를 끌고 와 리누 옆에 앉았다.',
+        translation: '«Tudo bem, eu consigo!» O Linu fingiu que não era nada, mas a asa que passava as folhas não parava de tremer. O Jiho se aproximou rindo: «Dá para ver que não está tudo bem. Eu também fiquei assim na minha primeira apresentação.» E puxou uma cadeira e se sentou ao lado dele.',
+        choices: [
+          { text: '리누는 솔직하게 도와 달라고 부탁했다.', translation: 'O Linu pediu ajuda com sinceridade.', next: 'junbi' },
+        ],
+      },
+      hoeui: {
+        emoji: '🗣️',
+        text: '열 시 정각, 윤 이사님이 들어오시자 회의실이 조용해졌다. “시작하시죠.” 리누는 숨을 크게 쉬고 말했다. “지금부터 지난주 사용자 설문 결과를 말씀드리겠습니다. 응답자는 모두 천이백 명이었습니다. 가장 큰 불만은 결제 과정이 너무 길다는 것이었습니다.” 이사님이 안경을 고쳐 쓰며 물으셨다. “그러면 결제를 몇 단계로 줄이자는 겁니까?”',
+        translation: 'Às dez em ponto, o diretor Yoon entrou e a sala ficou em silêncio. «Vamos começar.» O Linu respirou fundo e disse: «Apresento agora o resultado da pesquisa com usuários da semana passada. Foram mil e duzentos respondentes ao todo. A maior reclamação foi que o processo de pagamento é longo demais.» O diretor ajeitou os óculos e perguntou: «Então vocês propõem reduzir o pagamento para quantas etapas?»',
+        choices: [
+          { text: '“정확한 숫자는 확인해서 오늘 오후까지 보고드리겠습니다.”', translation: '«Vou confirmar o número exato e reporto ao senhor até hoje à tarde.»', next: 'jeongjik' },
+          { text: '리누는 확실하지 않았지만 아는 척하며 “세 단계면 충분합니다.”라고 대답했다.', translation: 'O Linu não tinha certeza, mas fingiu que sabia e respondeu: «Três etapas bastam.»', next: 'chujeong' },
+        ],
+      },
+      jeongjik: {
+        emoji: '👍',
+        text: '이사님은 고개를 끄덕이셨다. “좋습니다. 모르는 걸 아는 척하는 것보다 그게 낫죠. 오후에 메일로 보내 주세요.” 회의가 끝나고 복도에서 지호 님이 리누의 등을 두드렸다. “팀장님한테 들었는데, 이사님이 리누 님 발표 깔끔했대요.”',
+        translation: 'O diretor concordou com a cabeça: «Ótimo. É melhor assim do que fingir que sabe o que não sabe. Mande por e-mail à tarde.» Terminada a reunião, no corredor, o Jiho deu um tapinha nas costas do Linu: «Ouvi da chefe que o diretor disse que a sua apresentação foi bem objetiva.»',
+        choices: [
+          { text: '리누는 개발자 민수 님을 찾아가 결제 단계를 함께 살펴보았다.', translation: 'O Linu foi procurar o desenvolvedor Minsu e os dois examinaram juntos as etapas do pagamento.', next: 'ohu' },
+        ],
+      },
+      chujeong: {
+        emoji: '😶',
+        text: '이사님이 다시 물으셨다. “세 단계라는 근거가 뭡니까?” 리누는 대답하지 못했고, 회의실에 긴 침묵이 흘렀다. 한 팀장님이 “오후까지 자료를 정리해서 드리겠습니다.” 하고 대신 수습하셨다. 회의가 끝난 뒤 지호 님이 조용히 말했다. “모르면 모른다고 하는 게 나아요. 이사님은 아는 척하는 걸 제일 싫어하시거든요.”',
+        translation: 'O diretor perguntou de novo: «Em que se baseiam essas três etapas?» O Linu não conseguiu responder, e um longo silêncio caiu sobre a sala. A chefe Han contornou a situação: «Até a tarde organizamos os dados e enviamos ao senhor.» Depois da reunião, o Jiho disse baixinho: «Se não sabe, é melhor dizer que não sabe. O diretor detesta, mais que tudo, quem finge que sabe.»',
+        choices: [
+          { text: '리누는 팀장님께 가서 사과드리고 자료를 직접 만들겠다고 했다.', translation: 'O Linu foi pedir desculpas à chefe e disse que ele mesmo prepararia os dados.', next: 'sagwa' },
+          { text: '리누는 창피해서 아무 말도 하지 않고 자리로 돌아갔다.', translation: 'Envergonhado, o Linu voltou para a mesa sem dizer nada.', next: 'final_neutro' },
+        ],
+      },
+      sagwa: {
+        emoji: '🙇',
+        text: '한 팀장님은 리누의 사과를 듣고 웃으셨다. “첫 발표니까 그럴 수 있어요. 대신 근거는 리누 님이 제대로 찾아와요.” 리누는 고개를 숙여 인사하고 개발팀 쪽으로 달려갔다.',
+        translation: 'A chefe Han ouviu o pedido de desculpas e sorriu: «É a primeira apresentação, acontece. Mas então a base dos números você vai buscar direitinho.» O Linu agradeceu com uma reverência e correu para o lado da equipe de desenvolvimento.',
+        choices: [
+          { text: '리누는 개발자 민수 님과 함께 결제 화면을 하나하나 살펴보았다.', translation: 'O Linu examinou com o desenvolvedor Minsu as telas de pagamento, uma por uma.', next: 'ohu' },
+        ],
+      },
+      ohu: {
+        emoji: '💻',
+        text: '민수 님과 함께 확인해 보니 지금 결제는 다섯 단계였다. 민수 님은 주소 입력 화면과 확인 화면을 합치면 세 단계로 줄일 수 있다고 했다. 리누는 이사님께 보낼 메일을 썼다. “이사님, 오전 회의 때 말씀하신 결제 단계 관련 자료를 첨부해 드립니다. 현재 다섯 단계인 결제 과정을 세 단계로 줄일 수 있을 것으로 보입니다.”',
+        translation: 'Conferindo com o Minsu, viram que o pagamento hoje tinha cinco etapas. O Minsu disse que, juntando a tela do endereço com a de confirmação, dava para reduzir a três. O Linu escreveu o e-mail para o diretor: «Senhor diretor, segue em anexo o material sobre as etapas do pagamento que o senhor mencionou na reunião da manhã. Ao que tudo indica, o processo de pagamento, hoje com cinco etapas, pode ser reduzido a três.»',
+        choices: [
+          { text: '리누는 보내기 전에 지호 님에게 메일을 봐 달라고 부탁했다.', translation: 'Antes de enviar, o Linu pediu ao Jiho que desse uma olhada no e-mail.', next: 'final_bom' },
+          {
+            text: '리누는 민수 님이 결제 단계를 다섯 개로 늘리자고 했다고 메일에 썼다.',
+            translation: 'O Linu escreveu no e-mail que o Minsu propôs aumentar o pagamento para cinco etapas.',
+            wrong: 'O Minsu disse que o pagamento hoje TEM cinco etapas («다섯 단계였다») e que, juntando duas telas, dá para REDUZIR a três («세 단계로 줄일 수 있다»). «줄이다» é diminuir; aumentar seria «늘리다».',
+          },
+        ],
+      },
+      final_bom: {
+        emoji: '📨',
+        text: '지호 님은 메일을 읽고 딱 한 군데만 칭찬했다. “‘보입니다’ 좋네요. 아직 확실하지 않을 때는 그렇게 쓰는 거예요.” 한 시간 뒤 이사님의 답장이 왔다. “확인했습니다. 다음 주 회의에서 이 내용으로 다시 발표해 주세요.” 리누는 모니터 앞에서 조용히 날개를 흔들었다.',
+        translation: 'O Jiho leu o e-mail e só comentou um trecho, para elogiar: «Esse «보입니다» ficou ótimo. Quando ainda não é certeza, é assim que se escreve.» Uma hora depois, chegou a resposta do diretor: «Recebido. Apresente isso de novo na reunião da semana que vem.» Diante do monitor, o Linu balançou as asas em silêncio.',
+        ending: { tone: 'bom', title: 'Aprovado pelo diretor', message: 'O Linu apresentou em 합니다체, admitiu o que não sabia e voltou com dados: o jeito certo de sobreviver à reunião de segunda.' },
+      },
+      final_neutro: {
+        emoji: '🌆',
+        text: '리누는 오후 내내 모니터만 바라보았다. 결국 결제 자료는 한 팀장님이 직접 정리해서 이사님께 보내셨다. 퇴근길에 판교역으로 걸어가며 리누는 생각했다. 모르는 것을 아는 척하는 일이 모른다고 말하는 일보다 훨씬 더 부끄럽다는 것을.',
+        translation: 'O Linu passou a tarde inteira olhando para o monitor. No fim, quem organizou os dados do pagamento e mandou ao diretor foi a própria chefe Han. Voltando a pé para a estação Pangyo, o Linu pensou: fingir que sabe o que não sabe é muito mais vergonhoso do que dizer que não sabe.',
+        ending: { tone: 'neutro', title: 'Quem finge que sabe', message: 'Numa reunião coreana, «확인해서 보고드리겠습니다» (vou confirmar e reporto) salva mais do que um número inventado.' },
+      },
+    },
+  },
+  {
+    id: 'ko-h26',
+    level: 'B2.1',
+    cefr: 'B2',
+    title: '시청역 유실물 센터',
+    emoji: '🧳',
+    summary: 'O Linu cochila na linha 2 do metrô de Seul e desce sem a bolsa com o presente de aniversário da amiga. Para recuperá-la, precisa explicar direitinho sentido, horário e vagão.',
+    cultural_context:
+      'O metrô de Seul é famoso pelos achados e perdidos: quem esquece alguma coisa avisa o 역무실 (a sala dos funcionários da estação) com o horário, o sentido do trem e o número do vagão e da porta, escrito em cima de cada porta, como «4-3», lido «사 다시 삼». O objeto fica na estação ou num dos centros de achados e perdidos da operadora (o da estação City Hall recebe o que aparece nas linhas 1 e 2) e, se ninguém o busca, vai para a polícia, que o cadastra no portal nacional lost112. A linha 2 é circular: o trem que roda no sentido horário é o 내선순환 (linha interna), e o do sentido anti-horário, o 외선순환 (linha externa); uma volta completa leva cerca de uma hora e meia. Ao lado da estação, a rua do muro do palácio Deoksugung (덕수궁 돌담길) é um dos passeios mais bonitos de Seul.',
+    start: 'start',
+    glossary: [
+      ['역무실 / 역무원', 'sala da administração da estação / funcionário da estação'],
+      ['유실물 센터', 'centro de achados e perdidos'],
+      ['두고 내리다', 'descer (do transporte) deixando algo para trás'],
+      ['순환선 / 내선순환 / 외선순환', 'linha circular / sentido horário / sentido anti-horário (na linha 2)'],
+      ['칸', 'vagão; «사 다시 삼» é vagão 4, porta 3 (o hífen se lê «다시»)'],
+      ['두고 내리는 바람에', 'porque (sem querer) desci deixando… (-는 바람에: causa inesperada, resultado ruim)'],
+      ['찾았대요 / 보낸대요', 'disseram que acharam / disseram que vão mandar (-대요)'],
+      ['수령 확인서', 'recibo de retirada'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🚇',
+        text: '토요일 정오, 리누는 이호선을 타고 홍대입구역에서 시청역으로 가고 있었다. 덕수궁 돌담길에서 친구 수빈이를 만나 생일 선물을 주기로 했기 때문이다. 선물은 브라질에서 가져온 원두커피 한 봉지와 할머니가 직접 뜨신 목도리였다. 전날 밤늦게까지 일을 하다 보니 리누는 자리에 앉자마자 꾸벅꾸벅 졸았다. “이번 역은 시청, 시청역입니다.” 안내 방송에 깜짝 놀라 뛰어내린 순간 문이 닫혔다. 선물이 든 가방은 선반 위에 그대로 있었다.',
+        translation: 'Sábado, meio-dia: o Linu ia de linha 2 da estação Hongik Univ. até City Hall. Tinha combinado de encontrar a amiga Subin na rua do muro do Deoksugung para dar o presente de aniversário dela: um pacote de café em grão trazido do Brasil e um cachecol que a avó dele tinha tricotado. Como tinha trabalhado até tarde na véspera, assim que se sentou começou a cochilar. «Próxima estação: City Hall, estação City Hall.» Com o susto do aviso, ele pulou para fora, e a porta se fechou. A bolsa com o presente tinha ficado no bagageiro.',
+        choices: [
+          { text: '리누는 곧바로 역무실로 달려갔다.', translation: 'O Linu correu na hora para a sala dos funcionários da estação.', next: 'yeongmusil' },
+          { text: '리누는 다음 열차를 타고 가방을 쫓아가기로 했다.', translation: 'O Linu resolveu pegar o trem seguinte e ir atrás da bolsa.', next: 'dwittara' },
+        ],
+      },
+      dwittara: {
+        emoji: '🏃',
+        text: '리누는 다음 열차에 올라탔지만, 가방이 있는 열차는 이미 한 정거장 앞서 달리고 있었다. 을지로입구역과 을지로삼가역을 지나도록 가방은 보이지 않았다. 옆에 앉은 할아버지가 리누의 이야기를 들으시더니 혀를 차셨다. “이호선은 뱅글뱅글 도는 순환선이라 쫓아가면 끝이 없어. 역무실에 얘기하는 게 제일 빨라.”',
+        translation: 'O Linu embarcou no trem seguinte, mas o trem da bolsa já ia uma estação à frente. Passaram Euljiro 1-ga e Euljiro 3-ga, e nada da bolsa. Um senhor sentado ao lado ouviu a história e estalou a língua: «A linha 2 é circular, fica dando voltas; se for correr atrás, não acaba nunca. O mais rápido é falar com o pessoal da estação.»',
+        choices: [
+          { text: '리누는 다음 역에서 내려 역무실을 찾아갔다.', translation: 'O Linu desceu na estação seguinte e foi à sala dos funcionários.', next: 'yeongmusil' },
+          { text: '리누는 그래도 가방을 따라잡을 수 있을 거라고 믿고 계속 타고 갔다.', translation: 'O Linu acreditou que ainda dava para alcançar a bolsa e continuou no trem.', next: 'sunhwan' },
+        ],
+      },
+      sunhwan: {
+        emoji: '🔄',
+        text: '리누는 계속 앞으로만 갔다. 강남, 신도림, 홍대입구를 지나 한 시간 반 만에 다시 시청역에 도착했을 때, 리누는 이호선을 한 바퀴 다 돌았다는 것을 깨달았다. 수빈이는 기다리다 지쳐 먼저 집에 갔다. 가방은 그날 저녁 역무원이 찾아서 유실물 센터로 보냈다고 했다.',
+        translation: 'O Linu só foi em frente. Passou por Gangnam, Sindorim, Hongik Univ. e, uma hora e meia depois, quando chegou de novo a City Hall, percebeu que tinha dado a volta inteira na linha 2. A Subin cansou de esperar e foi para casa. A bolsa, disseram depois, um funcionário achou naquela noite e mandou para os achados e perdidos.',
+        ending: { tone: 'neutro', title: 'Uma volta inteira na linha 2', message: 'A linha 2 é circular: correr atrás do trem só dá voltas. O caminho mais rápido é avisar o 역무실.' },
+      },
+      yeongmusil: {
+        emoji: '🗺️',
+        text: '역무실의 역무원은 침착하게 물었다. “몇 시쯤 내리셨어요? 어느 방향 열차였는지, 몇 번째 칸이었는지 기억나세요?” 역무원은 벽에 붙은 노선도를 가리키며 설명했다. “이호선은 순환선이라서 시계 방향으로 도는 열차를 내선순환, 반대로 도는 열차를 외선순환이라고 해요.” 리누는 노선도를 보았다. 홍대입구에서 신촌을 지나 시청으로 오는 길은 시계 방향이었다.',
+        translation: 'O funcionário da estação perguntou com calma: «Mais ou menos que horas o senhor desceu? Lembra em que sentido ia o trem e em que vagão estava?» Apontando o mapa da linha na parede, ele explicou: «Como a linha 2 é circular, o trem que roda no sentido horário se chama 내선순환, e o que roda ao contrário, 외선순환.» O Linu olhou o mapa. O caminho de Hongik Univ., passando por Sinchon, até City Hall era no sentido horário.',
+        choices: [
+          { text: '“열두 시 십 분쯤 내린 내선순환 열차였어요. 문 위에 사 다시 삼이라고 적혀 있었어요.”', translation: '«Desci por volta de meio-dia e dez, era um trem do sentido horário. Em cima da porta estava escrito 4-3.»', next: 'yeollak' },
+          {
+            text: '“시계 반대 방향으로 왔으니까 외선순환 열차였어요.”',
+            translation: '«Eu vim no sentido anti-horário, então era um trem 외선순환.»',
+            wrong: 'O texto diz que o caminho de Hongik Univ. até City Hall «시계 방향이었다»: era no sentido HORÁRIO. E o funcionário explicou que o trem do sentido horário é o 내선순환; o 외선순환 é o que roda ao contrário.',
+          },
+        ],
+      },
+      yeollak: {
+        emoji: '📞',
+        text: '역무원은 고개를 끄덕이며 수첩에 적었다. “사 다시 삼이면 네 번째 칸, 세 번째 문 근처네요.” 역무원은 관제실에 열차 위치를 확인하더니, 그 열차가 곧 도착할 동대문역사문화공원역에 전화를 걸었다. 오 분 뒤 전화가 다시 울렸다. “찾았대요! 파란 가방 안에 커피랑 목도리가 들어 있대요. 오늘은 그 역 역무실에서 보관하고, 내일 시청역 유실물 센터로 보낸대요.”',
+        translation: 'O funcionário concordou com a cabeça e anotou: «4-3 é o quarto vagão, perto da terceira porta.» Ele confirmou com o centro de controle onde estava o trem e ligou para a estação Dongdaemun History & Culture Park, onde o trem ia chegar logo. Cinco minutos depois, o telefone tocou de novo: «Acharam! Disseram que tem café e um cachecol dentro de uma bolsa azul. Hoje fica guardada na sala daquela estação e amanhã eles mandam para os achados e perdidos da estação City Hall.»',
+        choices: [
+          { text: '리누는 먼저 수빈이에게 전화를 걸었다.', translation: 'Primeiro, o Linu ligou para a Subin.', next: 'jeonhwa' },
+        ],
+      },
+      jeonhwa: {
+        emoji: '📱',
+        text: '“수빈아, 미안해. 가방을 지하철에 두고 내리는 바람에 좀 늦을 것 같아.” 리누가 사정을 이야기하자 수빈이는 웃음을 터뜨렸다. “괜찮아, 천천히 와. 나도 지난달에 지하철에 우산 두고 내렸잖아. 근데 선물 때문이면 오늘 꼭 안 줘도 돼.”',
+        translation: '«Subin, desculpa. Deixei a bolsa no metrô sem querer, então acho que vou me atrasar um pouco.» Quando o Linu explicou o que tinha acontecido, a Subin caiu na risada: «Tudo bem, vem com calma. Eu mesma esqueci um guarda-chuva no metrô mês passado, lembra? Mas, se é por causa do presente, não precisa ser hoje.»',
+        choices: [
+          { text: '리누는 지금 바로 동대문역사문화공원역에 가서 가방을 찾아오기로 했다.', translation: 'O Linu resolveu ir agora mesmo à estação Dongdaemun History & Culture Park buscar a bolsa.', next: 'dongdaemun' },
+          { text: '리누는 수빈이를 먼저 만나고, 가방은 내일 유실물 센터에서 찾기로 했다.', translation: 'O Linu resolveu encontrar a Subin primeiro e buscar a bolsa no dia seguinte, nos achados e perdidos.', next: 'senteo' },
+        ],
+      },
+      dongdaemun: {
+        emoji: '🪪',
+        text: '동대문역사문화공원역 역무실에서 역무원이 파란 가방을 꺼내 주었다. “신분증 좀 보여 주시겠어요? 그리고 여기 수령 확인서에 서명해 주세요.” 리누가 외국인 등록증을 내밀자 역무원은 사진과 리누의 얼굴을 번갈아 보더니 웃음을 참지 못했다. “펭귄 손님은 처음이라서요. 그래도 목도리에 이름이 수놓아져 있으니 확실하네요.”',
+        translation: 'Na sala da estação Dongdaemun History & Culture Park, o funcionário trouxe a bolsa azul. «Pode me mostrar um documento? E assine aqui o recibo de retirada, por favor.» Quando o Linu mostrou a carteira de estrangeiro, o funcionário olhou da foto para o rosto dele e não segurou o riso: «É que é o meu primeiro cliente pinguim. Mas o nome está bordado no cachecol, então não tem dúvida.»',
+        choices: [
+          { text: '리누는 가방을 꼭 안고 덕수궁 돌담길로 향했다.', translation: 'O Linu abraçou bem a bolsa e seguiu para a rua do muro do Deoksugung.', next: 'doldam' },
+        ],
+      },
+      doldam: {
+        emoji: '🍂',
+        text: '덕수궁 돌담길의 은행나무 아래에서 수빈이가 손을 흔들었다. 리누가 가방에서 커피와 목도리를 꺼내자 수빈이는 목도리를 바로 목에 둘렀다. “이렇게 고생해서 받은 선물은 평생 못 잊겠다.” 두 친구는 돌담을 따라 걸으며, 한국 지하철에서는 잃어버린 물건이 대부분 주인에게 돌아온다는 이야기를 나누었다.',
+        translation: 'Debaixo das árvores de ginkgo da rua do muro do Deoksugung, a Subin acenou. Quando o Linu tirou da bolsa o café e o cachecol, ela enrolou o cachecol no pescoço na mesma hora. «Um presente que deu tanto trabalho assim eu não esqueço nunca mais.» Os dois foram andando ao longo do muro, comentando que no metrô coreano quase tudo o que se perde volta para o dono.',
+        ending: { tone: 'bom', title: 'Presente entregue', message: 'Horário, sentido e vagão: com a informação certa, o metrô de Seul devolveu a bolsa em minutos.' },
+      },
+      senteo: {
+        emoji: '🗃️',
+        text: '다음 날 리누는 시청역 유실물 센터를 찾아갔다. 선반마다 우산, 휴대폰, 지갑, 인형, 심지어 전기밥솥까지 번호표를 달고 줄지어 있었다. 직원은 일호선과 이호선에서 나온 물건이 모두 이곳으로 온다고 했다. “제일 많이 들어오는 건 지갑이에요. 그다음이 휴대폰이고요. 한동안 아무도 안 찾아가는 물건은 경찰서로 넘어가요.”',
+        translation: 'No dia seguinte, o Linu foi aos achados e perdidos da estação City Hall. Nas prateleiras, enfileirados e com etiqueta, havia guarda-chuvas, celulares, carteiras, bichos de pelúcia e até uma panela elétrica de arroz. A funcionária contou que tudo o que aparece nas linhas 1 e 2 vem para lá. «O que mais chega é carteira. Depois, celular. O que ninguém vem buscar por um tempo vai para a delegacia.»',
+        choices: [
+          { text: '리누는 신분증을 보여 주고 서명한 다음 가방을 받았다.', translation: 'O Linu mostrou o documento, assinou e recebeu a bolsa.', next: 'final_senteo' },
+          {
+            text: '리누는 아무도 안 찾아가는 물건은 모두 버려진다는 사실에 놀랐다.',
+            translation: 'O Linu ficou espantado ao saber que tudo o que ninguém busca vai para o lixo.',
+            wrong: 'A funcionária disse «경찰서로 넘어가요»: o que ninguém busca é ENCAMINHADO À DELEGACIA (경찰서), não jogado fora. «넘어가다» aqui é «passar para», ser transferido.',
+          },
+        ],
+      },
+      final_senteo: {
+        emoji: '🎁',
+        text: '가방 안의 커피와 목도리는 그대로였다. 그날 저녁 리누는 수빈이네 집 근처 카페에서 하루 늦은 생일 선물을 건넸다. 수빈이는 하루 늦게 받은 선물이 더 특별하다며 웃었다. 리누는 수첩에 적었다. “내선순환은 시계 방향. 사 다시 삼. 그리고 내릴 때는 선반 위를 꼭 확인할 것.”',
+        translation: 'O café e o cachecol estavam intactos dentro da bolsa. Naquela noite, numa cafeteria perto da casa da Subin, o Linu entregou o presente com um dia de atraso. A Subin riu e disse que presente recebido um dia depois é ainda mais especial. O Linu anotou no caderninho: «내선순환 é sentido horário. 4-3. E, ao descer, sempre olhar o bagageiro.»',
+        ending: { tone: 'bom', title: 'Um dia de atraso', message: 'O Linu conheceu os achados e perdidos do metrô de Seul por dentro e entregou o presente, um dia depois.' },
+      },
+    },
+  },
+  {
+    id: 'ko-h27',
+    level: 'B2.1',
+    cefr: 'B2',
+    title: '천년 고도의 아침 신문',
+    emoji: '🏛️',
+    summary: 'Numa casa tradicional de Gyeongju, o Linu lê o jornal local no café da manhã: o observatório de pedra depois do terremoto e a gentrificação do bairro de Hwangnam.',
+    cultural_context:
+      'Gyeongju foi a capital do reino de Silla por quase mil anos (57 a.C.–935 d.C.), por isso é chamada de 천년 고도, «a capital milenar». No centro da cidade ficam o 첨성대, observatório de pedra do século VII, do reinado da rainha Seondeok, tido como o mais antigo da Ásia Oriental ainda de pé, e o 대릉원, parque dos túmulos-colina dos reis de Silla, onde o túmulo 천마총 pode ser visitado por dentro. Em 12 de setembro de 2016, um terremoto de magnitude 5,8, o mais forte registrado na península até então, abalou a cidade; desde então o órgão do patrimônio (hoje 국가유산청) monitora o 첨성대 de perto. O bairro de Hwangnam virou o badalado 황리단길, e os moradores discutem a gentrificação, que o coreano padrão chama de 둥지 내몰림.',
+    start: 'start',
+    glossary: [
+      ['천년 고도', 'a capital milenar (apelido de Gyeongju, capital de Silla por quase mil anos)'],
+      ['첨성대', 'o observatório de pedra de Silla'],
+      ['규모 오 점 팔', 'magnitude 5,8 (규모: magnitude de terremoto)'],
+      ['기사에 따르면', 'segundo a reportagem'],
+      ['-다고 밝혔다', 'declarou que… (verbo típico da notícia)'],
+      ['논쟁거리', 'motivo de debate, questão polêmica'],
+      ['둥지 내몰림', 'gentrificação (lit.: «expulsão do ninho»; a palavra coreana proposta para 젠트리피케이션)'],
+      ['황남빵', 'pãozinho recheado de feijão doce, especialidade de Gyeongju'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🗞️',
+        text: '경주 황남동의 한옥 게스트하우스에서 맞은 첫 아침이었다. 마당의 평상에서 아침을 먹는데, 주인 할아버지가 지역 신문을 건네주셨다. “경주에 왔으면 경주 소식부터 알아야지.” 일 면에는 기사 두 개가 나란히 실려 있었다. “첨성대, 지진 뒤 해마다 정밀 점검… ‘큰 변화 없어’” 그리고 “황리단길 방문객 급증… 주민들 ‘밤마다 잠 못 자’”였다.',
+        translation: 'Era a primeira manhã do Linu numa casa tradicional transformada em pousada, no bairro de Hwangnam, em Gyeongju. Enquanto ele tomava café no tablado de madeira do pátio, o dono, um senhor de idade, lhe passou o jornal local: «Quem vem a Gyeongju tem que saber primeiro as notícias de Gyeongju.» Na primeira página, lado a lado, havia duas matérias: «Cheomseongdae passa por inspeção minuciosa todo ano desde o terremoto: ‘nenhuma mudança grande’» e «Explode o número de visitantes no Hwangnidan-gil; moradores: ‘não dormimos à noite’».',
+        choices: [
+          { text: '리누는 첨성대 기사부터 읽었다.', translation: 'O Linu leu primeiro a matéria sobre o Cheomseongdae.', next: 'gisa1' },
+          { text: '리누는 황리단길 기사부터 읽었다.', translation: 'O Linu leu primeiro a matéria sobre o Hwangnidan-gil.', next: 'gisa2' },
+        ],
+      },
+      gisa1: {
+        emoji: '📉',
+        text: '기사에 따르면 이천십육 년 구월 십이일 저녁, 경주 근처에서 규모 오 점 팔의 지진이 일어났다. 그때까지 한반도에서 관측된 지진 가운데 가장 강한 지진이었다. 이 지진으로 첨성대 꼭대기의 돌 사이가 조금 벌어졌지만, 첨성대는 무너지지 않고 그대로 서 있었다. 국가유산청은 그 뒤로 첨성대의 기울기를 해마다 정밀하게 재고 있으며, 아직 큰 변화는 없다고 밝혔다.',
+        translation: 'Segundo a matéria, na noite de 12 de setembro de 2016, houve um terremoto de magnitude 5,8 perto de Gyeongju. Foi o mais forte já registrado na península coreana até então. Com o tremor, as pedras do topo do Cheomseongdae se afastaram um pouco umas das outras, mas o observatório não desabou e continuou de pé. O órgão nacional do patrimônio declarou que desde então mede com precisão, todo ano, a inclinação do Cheomseongdae, e que por enquanto não há nenhuma mudança grande.',
+        choices: [
+          { text: '리누는 할아버지께 지진이 났던 날에 대해 여쭤보았다.', translation: 'O Linu perguntou ao senhor sobre o dia do terremoto.', next: 'jijin' },
+          { text: '리누는 첨성대를 직접 보러 가기로 했다.', translation: 'O Linu resolveu ir ver o Cheomseongdae com os próprios olhos.', next: 'cheomseongdae' },
+          {
+            text: '리누는 첨성대가 지진으로 무너져서 지금은 볼 수 없다고 생각했다.',
+            translation: 'O Linu pensou que o Cheomseongdae tinha desabado no terremoto e que hoje não dá mais para vê-lo.',
+            wrong: 'A notícia diz «무너지지 않고 그대로 서 있었다»: o observatório NÃO desabou e continua de pé. Só as pedras do topo se afastaram um pouco («조금 벌어졌지만»), e a inclinação é medida todo ano.',
+          },
+        ],
+      },
+      jijin: {
+        emoji: '🏚️',
+        text: '할아버지는 숟가락을 내려놓으시고 그날 이야기를 해 주셨다. “저녁을 먹고 있는데 갑자기 집이 쿵 하고 흔들리더라고. 지붕에서 기와가 몇 장 떨어지고, 동네 사람들이 다 밖으로 뛰어나왔지.” 그날 이후 경주의 학교들은 지진 대피 훈련을 더 자주 한다고 했다. “그래도 천삼백 년 넘게 버틴 첨성대가 그 정도로 무너지겠어? 옛날 사람들이 참 튼튼하게 쌓았지.”',
+        translation: 'O senhor largou a colher e contou como foi aquele dia: «A gente estava jantando e de repente a casa deu um tranco e começou a tremer. Caíram umas telhas do telhado, e o bairro inteiro correu para a rua.» Desde então, contou ele, as escolas de Gyeongju fazem simulação de evacuação com mais frequência. «Mas você acha que o Cheomseongdae, que aguentou mais de mil e trezentos anos, ia cair por tão pouco? O pessoal de antigamente construiu muito bem.»',
+        choices: [
+          { text: '리누는 할아버지 말씀을 듣고 첨성대로 향했다.', translation: 'Depois de ouvir o senhor, o Linu foi para o Cheomseongdae.', next: 'cheomseongdae' },
+        ],
+      },
+      gisa2: {
+        emoji: '☕',
+        text: '황리단길은 황남동의 ‘황’ 자와 서울의 유명한 거리인 경리단길을 합쳐 만든 이름이다. 기사에 따르면 오래된 한옥들이 카페와 식당으로 바뀌면서 주말이면 골목이 관광객으로 발 디딜 틈이 없다. 하지만 주민들은 밤늦게까지 이어지는 소음과 쓰레기 때문에 괴롭다고 호소했다. 임대료가 오르면서 오래 살던 주민과 작은 가게들이 동네를 떠나는 둥지 내몰림 현상도 나타나고 있다고 한다.',
+        translation: '«Hwangnidan-gil» é um nome feito juntando o «Hwang» de Hwangnam-dong com o Gyeongnidan-gil, uma rua famosa de Seul. Segundo a matéria, como as casas tradicionais antigas viraram cafés e restaurantes, nos fins de semana os becos ficam tão cheios de turistas que não há onde pisar. Mas os moradores se queixam do barulho e do lixo, que vão até tarde da noite. E, com a alta dos aluguéis, está acontecendo a gentrificação: moradores antigos e lojinhas estão deixando o bairro.',
+        choices: [
+          { text: '리누는 할아버지께 동네가 정말 그렇게 변했는지 여쭤보았다.', translation: 'O Linu perguntou ao senhor se o bairro tinha mesmo mudado tanto assim.', next: 'dongne' },
+        ],
+      },
+      dongne: {
+        emoji: '🏘️',
+        text: '할아버지는 한숨을 쉬셨다. “사십 년을 산 옆집 할머니도 작년에 이사 갔어요. 집세가 너무 올라서.” 그러면서도 할아버지는 관광객 덕분에 동네에 젊은 사람들이 돌아오고, 이 게스트하우스도 먹고살 수 있다고 덧붙이셨다. “좋은 것도 있고 나쁜 것도 있는 거지. 그러니까 손님들이 조금만 조용히 다녀 주면 좋겠어요.”',
+        translation: 'O senhor suspirou: «A senhora da casa ao lado, que morou aqui quarenta anos, também se mudou no ano passado. O aluguel subiu demais.» Mesmo assim, ele acrescentou que, graças aos turistas, os jovens voltaram para o bairro e a pousada dele também consegue se manter. «Tem o lado bom e o lado ruim. Por isso, eu só queria que os hóspedes andassem por aí com um pouquinho mais de silêncio.»',
+        choices: [
+          { text: '리누는 조용히 다니겠다고 약속하고 첨성대로 출발했다.', translation: 'O Linu prometeu andar em silêncio e partiu para o Cheomseongdae.', next: 'cheomseongdae' },
+        ],
+      },
+      cheomseongdae: {
+        emoji: '🌌',
+        text: '이른 아침의 첨성대는 생각보다 작았다. 병처럼 아래는 둥글고 위로 갈수록 좁아지는 돌탑이었다. 문화관광해설사 한 분이 다가와 설명을 시작하셨다. “첨성대는 신라 선덕여왕 때 만들어졌다고 해요. 돌을 스물일곱 단으로 쌓았는데, 선덕여왕이 신라의 스물일곱 번째 왕이라서 그렇다는 이야기도 있어요. 동아시아에 지금까지 남아 있는 천문대 가운데 가장 오래된 것으로 알려져 있지요.”',
+        translation: 'De manhã cedo, o Cheomseongdae era menor do que ele imaginava: uma torre de pedra redonda embaixo, como uma garrafa, que vai afinando para cima. Uma guia de turismo cultural se aproximou e começou a explicar: «Dizem que o Cheomseongdae foi construído no reinado da rainha Seondeok, de Silla. As pedras foram empilhadas em vinte e sete camadas, e há quem diga que é porque a rainha Seondeok foi a vigésima sétima monarca de Silla. Ele é conhecido como o observatório astronômico mais antigo que ainda existe na Ásia Oriental.»',
+        choices: [
+          { text: '“그럼 옛날 사람들이 여기서 정말 별을 봤을까요?”', translation: '«Então o pessoal de antigamente observava mesmo as estrelas daqui?»', next: 'haeseol' },
+        ],
+      },
+      haeseol: {
+        emoji: '🪜',
+        text: '해설사는 웃으셨다. “그게 아직도 논쟁거리예요. 별을 관측하던 곳이라는 의견이 가장 많지만, 제사를 지내던 제단이었다는 주장도 있고, 해 그림자로 계절을 재던 곳이라는 주장도 있어요.” 해설사는 가운데의 네모난 창을 가리키셨다. “옛날에는 저 창에 사다리를 걸치고 안으로 들어갔을 거라고 보고 있어요.”',
+        translation: 'A guia sorriu: «Isso ainda é motivo de debate. A opinião mais comum é que era um lugar de observar as estrelas, mas há quem defenda que era um altar para rituais, e há quem diga que servia para medir as estações pela sombra do sol.» Ela apontou a janelinha quadrada do meio: «Acredita-se que antigamente se apoiava uma escada naquela janela para entrar.»',
+        choices: [
+          { text: '리누는 감사 인사를 하고 근처의 대릉원으로 걸어갔다.', translation: 'O Linu agradeceu e foi a pé até o Daereungwon, ali perto.', next: 'daereungwon' },
+          {
+            text: '리누는 첨성대가 별을 보던 곳이라는 것이 확실히 밝혀졌다고 이해했다.',
+            translation: 'O Linu entendeu que já está comprovado que o Cheomseongdae servia para ver as estrelas.',
+            wrong: 'A guia disse «그게 아직도 논쟁거리예요»: isso AINDA É motivo de debate. Observatório é a opinião mais comum («의견이 가장 많지만»), mas há quem diga que era um altar (제단) ou um relógio de sol para medir as estações.',
+          },
+        ],
+      },
+      daereungwon: {
+        emoji: '🐎',
+        text: '대릉원에는 작은 언덕처럼 생긴 거대한 무덤들이 모여 있었다. 신라의 왕과 귀족들이 잠든 곳이다. 그중 천마총은 안에 들어가 볼 수 있는데, 천구백칠십삼 년 발굴 때 하늘을 나는 흰 말이 그려진 말다래가 나와서 그런 이름이 붙었다. 무덤 안은 서늘했고, 금관의 복제품이 어둠 속에서 반짝였다.',
+        translation: 'No Daereungwon se reúnem túmulos enormes com cara de colinas pequenas: é onde descansam reis e nobres de Silla. Um deles, o Cheonmachong, pode ser visitado por dentro; ganhou esse nome («túmulo do cavalo celeste») porque na escavação de 1973 apareceu uma aba de sela com a pintura de um cavalo branco voando pelo céu. Lá dentro estava fresco, e uma réplica da coroa de ouro brilhava no escuro.',
+        choices: [
+          { text: '리누는 황리단길 쪽으로 걸어가다가 한 빵집 앞에 멈춰 섰다.', translation: 'Indo a pé para o lado do Hwangnidan-gil, o Linu parou na frente de uma padaria.', next: 'ppang' },
+        ],
+      },
+      ppang: {
+        emoji: '🥮',
+        text: '긴 줄이 선 그 빵집은 경주의 명물인 황남빵 가게였다. 팥소가 가득 든 작고 둥근 빵으로, 천구백삼십구 년부터 황남동에서 구워 왔다고 한다. 해가 지자 골목은 사람들로 가득 찼다. 게스트하우스에서 만난 여행자들이 리누를 불렀다. “리누 씨, 저 안쪽 골목에 예쁜 한옥 대문이 있대요. 사진 찍으러 가요!” 골목 입구에는 “주민이 사는 곳입니다. 조용히 해 주세요.”라는 안내판이 붙어 있었다.',
+        translation: 'A padaria com uma fila enorme era a do 황남빵, a especialidade de Gyeongju: um pãozinho redondo e pequeno, cheio de pasta de feijão doce, assado em Hwangnam-dong desde 1939. Quando o sol se pôs, os becos se encheram de gente. Uns viajantes que o Linu tinha conhecido na pousada o chamaram: «Linu, dizem que tem um portão de casa tradicional lindo lá no fundo daquele beco. Vamos tirar foto!» Na entrada do beco havia uma placa: «Aqui moram pessoas. Por favor, silêncio.»',
+        choices: [
+          { text: '리누는 여행자들을 따라 안쪽 골목으로 들어갔다.', translation: 'O Linu seguiu os viajantes para dentro do beco.', next: 'sikkeureom' },
+          { text: '리누는 안내판을 가리키며 동궁과 월지 야경을 보러 가자고 했다.', translation: 'O Linu apontou a placa e propôs irem ver a vista noturna do Donggung e do lago Wolji.', next: 'wolji' },
+        ],
+      },
+      sikkeureom: {
+        emoji: '📸',
+        text: '좁은 골목에서 여행자들은 크게 웃고 떠들며 대문 앞에서 사진을 찍었다. 잠시 후 대문이 열리고 잠옷 차림의 할머니가 나오셨다. “여기 사람 사는 집이에요. 밤마다 이러면 우리는 어떻게 살아요?” 리누는 아침 신문의 제목과 게스트하우스 할아버지의 얼굴이 떠올라 얼굴이 화끈거렸다.',
+        translation: 'No beco estreito, os viajantes riam e falavam alto enquanto tiravam fotos na frente do portão. Pouco depois, o portão se abriu e saiu uma senhora de pijama: «Aqui é a casa de gente. Se for assim toda noite, como é que a gente vive?» O Linu lembrou da manchete do jornal da manhã e do rosto do dono da pousada, e sentiu o rosto queimar de vergonha.',
+        ending: { tone: 'neutro', title: 'Foto no portão alheio', message: 'A notícia estava na primeira página: no Hwangnidan-gil, os becos são a casa de alguém. A placa pedia silêncio.' },
+      },
+      wolji: {
+        emoji: '🌙',
+        text: '여행자들은 잠깐 망설였지만 곧 리누를 따라왔다. 동궁과 월지에서는 신라 왕궁의 누각들이 연못 위에 거꾸로 비치고 있었다. 한 여행자가 말했다. “아까 그 골목보다 여기가 훨씬 예쁘네요.” 게스트하우스로 돌아오니 할아버지가 평상에 앉아 계셨다. 리누가 오늘 본 것들을 이야기하자, 할아버지는 내일 아침에도 신문을 같이 읽자며 웃으셨다.',
+        translation: 'Os viajantes hesitaram um pouco, mas logo seguiram o Linu. No Donggung e no lago Wolji, os pavilhões do palácio de Silla se refletiam de cabeça para baixo na água. Um dos viajantes disse: «Aqui é muito mais bonito do que aquele beco.» Quando voltaram à pousada, o dono estava sentado no tablado. O Linu contou tudo o que tinha visto no dia, e o senhor sorriu e propôs lerem o jornal juntos de novo na manhã seguinte.',
+        ending: { tone: 'bom', title: 'Leitor de jornal em Gyeongju', message: 'O Linu leu as notícias, entendeu o debate sobre o 첨성대 e o 둥지 내몰림 e visitou a capital milenar sem incomodar ninguém.' },
+      },
+    },
+  },
+  // ───────────────────────── B2.2 ─────────────────────────
+  {
+    id: 'ko-h28',
+    level: 'B2.2',
+    cefr: 'B2',
+    title: '봉헤치루의 재봉틀',
+    emoji: '🧵',
+    summary: 'No Bom Retiro, em São Paulo, o Linu entra numa loja de roupas e ouve de uma avó coreana a história da imigração que começou num navio em 1963.',
+    cultural_context:
+      'Em 12 de fevereiro de 1963, o navio holandês Tjitjalengka atracou no porto de Santos com 103 coreanos, o primeiro grupo oficial de imigrantes da Coreia para o Brasil; tinham saído de Busan quase dois meses antes. Vieram para trabalhar na lavoura, mas muitos eram gente da cidade, as terras eram ruins, e a maioria logo se mudou para São Paulo, onde começou vendendo roupa de porta em porta (a «벤데») e costurando em casa. Nas décadas seguintes, as confecções e lojas coreanas transformaram o Bom Retiro, antes bairro de imigrantes judeus e italianos, num dos grandes polos de moda do país; hoje as oficinas empregam também muitos imigrantes bolivianos. A comunidade coreana do Brasil, a maior da América Latina, celebrou 60 anos de imigração em 2023.',
+    start: 'start',
+    glossary: [
+      ['이민 / 이민자', 'imigração / imigrante'],
+      ['봉헤치루', 'o bairro do Bom Retiro, em São Paulo'],
+      ['재봉틀 / 봉제', 'máquina de costura / costura, confecção'],
+      ['벤데', 'a venda de porta em porta dos primeiros imigrantes (do português «vende»)'],
+      ['먹고살다', 'ganhar a vida, se sustentar'],
+      ['살던 곳', 'o lugar onde moravam (-던: ação habitual no passado)'],
+      ['당신', 'aqui, «ela mesma»: pronome reflexivo respeitoso para um mais velho'],
+      ['뿌리를 내리다', 'criar raízes'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🛍️',
+        text: '토요일 오전, 상파울루의 봉헤치루는 옷을 사러 온 사람들로 북적였다. 주제 파울리누 거리에는 포르투갈어 간판 사이사이에 한글 간판이 걸려 있었고, 어디선가 김치찌개 냄새가 풍겨 왔다. 리누는 ‘정숙 패션’이라는 작은 가게에 들어갔다. 계산대에는 백발의 할머니가 앉아 계셨고, 그 옆에서는 스무 살쯤 된 청년이 포르투갈어로 손님과 이야기하고 있었다.',
+        translation: 'Sábado de manhã, o Bom Retiro, em São Paulo, fervia de gente comprando roupa. Na rua José Paulino, entre as placas em português, havia placas em hangul, e de algum lugar vinha cheiro de 김치찌개, o ensopado de kimchi. O Linu entrou numa lojinha chamada «Jeongsuk Fashion». No caixa estava sentada uma avó de cabelos brancos e, ao lado, um rapaz de uns vinte anos conversava com uma cliente em português.',
+        choices: [
+          { text: '리누는 할머니께 한국어로 인사를 드렸다.', translation: 'O Linu cumprimentou a avó em coreano.', next: 'halmeoni' },
+          { text: '리누는 가게 구석에 놓인 낡은 재봉틀에 대해 여쭤보았다.', translation: 'O Linu perguntou sobre a máquina de costura velha no canto da loja.', next: 'jaebongtl' },
+        ],
+      },
+      halmeoni: {
+        emoji: '👵',
+        text: '“안녕하세요, 할머니. 저는 한국어를 공부하는 리누라고 합니다.” 할머니는 안경을 벗으며 눈을 동그랗게 뜨셨다. “아이고, 한국말을 이렇게 잘하는 펭귄은 처음 보네! 여기서 태어난 우리 손주보다 낫다.” 할머니는 리누에게 의자를 내주시며, 당신도 어렸을 때 이 나라에 처음 왔다고 하셨다. “나는 여덟 살 때 배를 타고 왔어.”',
+        translation: '«Bom dia, vovó. Meu nome é Linu, eu estudo coreano.» A avó tirou os óculos e arregalou os olhos: «Nossa, nunca vi um pinguim falar coreano tão bem! Melhor que o meu neto, que nasceu aqui.» Ela ofereceu uma cadeira ao Linu e contou que ela mesma tinha chegado a este país quando era criança: «Eu vim de navio, com oito anos.»',
+        choices: [
+          { text: '리누는 배를 타고 온 이야기를 들려 달라고 부탁드렸다.', translation: 'O Linu pediu que ela contasse a história da viagem de navio.', next: 'baeh' },
+        ],
+      },
+      jaebongtl: {
+        emoji: '🪡',
+        text: '구석의 재봉틀은 검은 칠이 군데군데 벗겨져 있었다. 할머니가 웃으며 재봉틀을 쓰다듬으셨다. “이게 우리 집 첫 재봉틀이야. 칠십 년대에 할아버지랑 밤새 이걸로 블라우스를 만들었지. 이 재봉틀 한 대로 우리 식구가 먹고살았어.” 그러고는 재봉틀 이야기를 하려면 배 이야기부터 해야 한다고 하셨다.',
+        translation: 'A máquina do canto tinha a pintura preta descascada aqui e ali. A avó sorriu e passou a mão nela: «Essa foi a primeira máquina de costura da nossa casa. Nos anos setenta, eu e o meu marido passávamos a noite fazendo blusas nela. Foi com essa máquina aí que a família inteira se sustentou.» E disse que, para falar da máquina, precisava começar pela história do navio.',
+        choices: [
+          { text: '리누는 할머니 옆에 앉아 이야기를 들었다.', translation: 'O Linu sentou ao lado da avó para ouvir.', next: 'baeh' },
+        ],
+      },
+      baeh: {
+        emoji: '🚢',
+        text: '“천구백육십이 년 겨울에 부산항에서 네덜란드 배를 탔어. 두 달 가까이 바다 위에 있었지. 그리고 육십삼 년 이월 십이일에 산투스 항구에 내렸어.” 그 배에 탄 사람은 백삼 명이었고, 그들은 공식 이민단으로 브라질에 온 첫 한국인들이었다. “땅을 사서 농사를 지으려고 온 거였어.” 할머니는 잠시 창밖을 바라보셨다.',
+        translation: '«No inverno de 1962, em Busan, a gente embarcou num navio holandês. Ficamos quase dois meses no mar. E em 12 de fevereiro de 63 desembarcamos no porto de Santos.» Eram cento e três pessoas no navio, os primeiros coreanos a chegar ao Brasil num grupo oficial de imigração. «A gente veio para comprar terra e plantar.» A avó ficou um tempo olhando pela janela.',
+        choices: [
+          { text: '“그래서 농사는 잘되었어요?”', translation: '«E a lavoura deu certo?»', next: 'nongjang' },
+          {
+            text: '리누는 할머니 가족이 비행기를 타고 며칠 만에 도착했다고 이해했다.',
+            translation: 'O Linu entendeu que a família da avó chegou de avião, em poucos dias.',
+            wrong: 'A avó disse «배를 탔어» e «두 달 가까이 바다 위에 있었지»: eles vieram DE NAVIO e passaram quase dois meses no mar, de Busan até o porto de Santos.',
+          },
+        ],
+      },
+      nongjang: {
+        emoji: '🌾',
+        text: '할머니는 고개를 저으셨다. “땅은 돌투성이였고, 우리 식구 중에 농사를 지어 본 사람이 한 명도 없었어. 아버지는 서울에서 학교 선생님이셨거든.” 결국 많은 가족이 일 년도 버티지 못하고 상파울루 시내로 나왔다. 할머니의 어머니는 옷 보따리를 이고 집집마다 문을 두드리며 옷을 파셨다. “포르투갈어도 모르면서 ‘벤데, 벤데’ 하고 다니셨지. 그래서 우리는 그 일을 벤데라고 불렀어.”',
+        translation: 'A avó balançou a cabeça: «A terra era cheia de pedra, e ninguém da família tinha plantado na vida. O meu pai era professor de escola em Seul.» No fim, muitas famílias não aguentaram nem um ano e se mudaram para a cidade de São Paulo. A mãe da avó carregava na cabeça uma trouxa de roupas e batia de porta em porta para vender. «Não sabia português, mas andava dizendo «vende, vende». Por isso a gente chamava esse trabalho de 벤데.»',
+        choices: [
+          { text: '“그럼 옷 가게는 언제부터 하셨어요?”', translation: '«E a loja de roupas, vocês começaram quando?»', next: 'bongje' },
+          {
+            text: '리누는 할머니의 아버지가 원래 농부였는데 땅이 나빠서 실패했다고 이해했다.',
+            translation: 'O Linu entendeu que o pai da avó era agricultor, mas fracassou porque a terra era ruim.',
+            wrong: 'A avó contou que ninguém da família tinha plantado antes («농사를 지어 본 사람이 한 명도 없었어») e que o pai era PROFESSOR em Seul («학교 선생님이셨거든»). A terra ruim só piorou uma coisa que ninguém sabia fazer.',
+          },
+        ],
+      },
+      bongje: {
+        emoji: '👗',
+        text: '벤데로 모은 돈으로 할머니 가족은 재봉틀을 샀다. 낮에는 옷을 팔고, 밤에는 온 식구가 둘러앉아 옷을 만들었다. 한인들이 하나둘 봉제 공장과 가게를 열면서, 원래 유대인과 이탈리아 이민자들이 살던 봉헤치루는 어느새 의류의 거리가 되었다. 할머니는 목소리를 낮추셨다. “요즘은 볼리비아에서 온 사람들이 재봉틀 앞에 많이 앉아. 우리가 옛날에 했던 고생을 이제 그 사람들이 하고 있는 거지. 그러니까 우리가 더 잘해 줘야 돼.”',
+        translation: 'Com o dinheiro juntado na 벤데, a família da avó comprou uma máquina de costura. De dia vendiam roupa e, à noite, a família inteira sentava em volta para costurar. À medida que os coreanos foram abrindo, um a um, oficinas de costura e lojas, o Bom Retiro, onde antes moravam imigrantes judeus e italianos, acabou virando a rua da moda. A avó baixou a voz: «Hoje quem senta na frente das máquinas é muita gente que veio da Bolívia. O sofrimento que a gente passou antigamente, agora são eles que passam. Por isso a gente tem que tratar essa gente ainda melhor.»',
+        choices: [
+          { text: '리누는 손님을 보내고 돌아온 손자에게 말을 걸었다.', translation: 'O Linu puxou conversa com o neto, que tinha acabado de atender a cliente.', next: 'lucas' },
+          { text: '“할머니는 한국이 그립지 않으세요?”', translation: '«A senhora não sente saudade da Coreia?»', next: 'gohyang' },
+        ],
+      },
+      lucas: {
+        emoji: '📱',
+        text: '손자 루카스는 쑥스럽게 웃으며 천천히 한국어로 말했다. “저는… 한국말 조금 해요. 할머니랑 말할 때만.” 루카스는 요즘 할머니 가게의 옷을 인터넷으로 팔고 있다고 했다. 그리고 한국 드라마와 케이팝 덕분에 브라질 젊은이들이 떡볶이를 먹으러 봉헤치루에 온다며 신기해했다. “어렸을 때는 한국 사람인 게 조금 창피했는데, 지금은 친구들이 부러워해요.”',
+        translation: 'O neto, Lucas, sorriu sem graça e falou devagar, em coreano: «Eu… falo um pouco de coreano. Só quando falo com a vó.» Ele contou que agora vende as roupas da loja da avó pela internet. E achava curioso que, graças às séries coreanas e ao K-pop, os jovens brasileiros viessem ao Bom Retiro para comer 떡볶이. «Quando eu era pequeno, tinha um pouco de vergonha de ser coreano. Agora os meus amigos têm inveja.»',
+        choices: [
+          { text: '리누는 할머니께 한국이 그립지 않으신지 여쭤보았다.', translation: 'O Linu perguntou à avó se ela não sentia saudade da Coreia.', next: 'gohyang' },
+        ],
+      },
+      gohyang: {
+        emoji: '🏠',
+        text: '할머니는 한참 동안 대답하지 않으셨다. “한국에는 몇 번 가 봤지. 그런데 거기 가면 내가 브라질 사람이고, 여기 오면 한국 사람이야.” 할머니는 웃으시며 재봉틀을 가리키셨다. “누가 고향이 어디냐고 물으면 이제는 봉헤치루라고 해. 여기서 육십 년을 살았으니까.” 그러고는 자리에서 일어나셨다. “위층에 김치찌개 끓여 놨어. 올라가서 밥 먹고 가.”',
+        translation: 'A avó demorou a responder. «Já fui à Coreia algumas vezes. Mas lá eu sou brasileira, e aqui eu sou coreana.» Ela sorriu e apontou a máquina de costura: «Quando alguém pergunta qual é a minha terra, agora eu digo que é o Bom Retiro. Faz sessenta anos que moro aqui.» E se levantou: «Deixei um 김치찌개 pronto lá em cima. Sobe e come antes de ir.»',
+        choices: [
+          { text: '리누는 감사하다고 말씀드리고 할머니를 따라 올라갔다.', translation: 'O Linu agradeceu e subiu atrás da avó.', next: 'final_bom' },
+          { text: '리누는 리베르다지에서 친구와 약속이 있다며 정중히 사양했다.', translation: 'O Linu recusou com educação, dizendo que tinha combinado com um amigo na Liberdade.', next: 'final_neutro' },
+        ],
+      },
+      final_bom: {
+        emoji: '🍲',
+        text: '위층 부엌에서 할머니와 루카스와 리누는 김치찌개와 밥을 나누어 먹었다. 토요일이라 식탁 위에는 페이조아다 냄비와 깍두기 그릇이 나란히 놓여 있었다. 할머니는 리누의 수첩에 삐뚤빼뚤한 글씨로 한 줄을 적어 주셨다. “바다를 건너온 사람은 어디서든 뿌리를 내린다.” 리누는 그 문장을 오래오래 들여다보았다.',
+        translation: 'Na cozinha do andar de cima, a avó, o Lucas e o Linu dividiram o 김치찌개 e o arroz. Como era sábado, na mesa estavam lado a lado a panela de feijoada e a tigela de 깍두기, o kimchi de rabanete. A avó escreveu uma frase no caderninho do Linu, com a letra tremida: «Quem atravessou o mar cria raízes em qualquer lugar.» O Linu ficou olhando para aquela frase por muito tempo.',
+        ending: { tone: 'bom', title: 'Raízes no Bom Retiro', message: 'O Linu ouviu, em coreano, sessenta anos de imigração coreana no Brasil, e ainda almoçou feijoada com 깍두기.' },
+      },
+      final_neutro: {
+        emoji: '🚶',
+        text: '리누는 할머니께 허리 숙여 인사하고 가게를 나섰다. 지하철역으로 걸어가는 동안에도 김치찌개 냄새가 계속 따라오는 것 같았다. 리베르다지에 도착해서야 리누는 할머니의 이야기를 끝까지 듣지 못한 것이 아쉬워졌다. 리누는 다음에 봉헤치루에 가면 꼭 밥을 먹고 오겠다고 수첩에 적었다.',
+        translation: 'O Linu se despediu da avó com uma reverência e saiu da loja. No caminho até o metrô, parecia que o cheiro do 김치찌개 vinha atrás dele. Só quando chegou à Liberdade é que bateu o arrependimento de não ter ouvido a história da avó até o fim. Ele anotou no caderninho: da próxima vez que fosse ao Bom Retiro, ia ficar para comer.',
+        ending: { tone: 'neutro', title: 'Fica para a próxima', message: 'Quando uma avó coreana diz «밥 먹고 가», é mais que um convite: é o fim da história que ela queria contar.' },
+      },
+    },
+  },
 ];

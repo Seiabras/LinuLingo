@@ -56,6 +56,7 @@ export const PARES_JA: MinimalPairs = {
       tip: 'O japonês de Tóquio tem acento de altura: cada batida é alta ou baixa, e às vezes essa melodia é a única diferença entre duas palavras. 箸 (hashi, pauzinhos) começa alto e desce: HA-shi; 橋 (hashi, ponte) começa baixo e sobe: ha-SHI. Não é mais forte nem mais longo, como a nossa tônica: é mais agudo. O contexto quase sempre salva, mas é a melodia que faz você soar natural.',
       // a gravação de uma palavra solta nem sempre deixa ouvir a melodia: aqui vale a voz do aparelho, que lê o kanji
       deviceVoice: true,
+      prosodic: true,
     },
   ],
   pairs: [
@@ -79,7 +80,7 @@ export const PARES_JA: MinimalPairs = {
     { contrast: 'tsu-su', a: ['つみ', 'pecado, crime (罪)'], b: ['すみ', 'canto; carvão (隅, 炭)'] },
     { contrast: 'tsu-chu', a: ['つうがく', 'ir para a escola (通学)'], b: ['ちゅうがく', 'ginásio, ensino fundamental II (中学)'] },
     { contrast: 'tsu-chu', a: ['つうか', 'passagem, trânsito (通過)'], b: ['ちゅうか', 'comida chinesa (中華)'] },
-    { contrast: 'tsu-chu', a: ['つうこう', 'circulação, tráfego (通行)'], b: ['ちゅうこう', 'fundamental II e médio juntos (中高)'] },
+    { contrast: 'tsu-chu', a: ['つうこう', 'circulação, tráfego (通行)'], b: ['ちゅうこう', 'ginásio e colegial juntos (中学 + 高校)'] },
     { contrast: 'r-h', a: ['ろうか', 'corredor (廊下)'], b: ['ほうか', 'incêndio criminoso (放火)'] },
     { contrast: 'r-h', a: ['れい', 'agradecimento, reverência; zero (礼, 零)'], b: ['へい', 'muro (塀)'] },
     { contrast: 'r-h', a: ['らん', 'orquídea (蘭)'], b: ['はん', 'carimbo; grupo (判, 班)'] },

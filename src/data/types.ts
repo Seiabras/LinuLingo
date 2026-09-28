@@ -402,6 +402,8 @@ export interface PhoneContrast {
   tip: string;
   /** a voz do aparelho em vez das gravações (quando os falantes gravados podem não fazer o contraste) */
   deviceVoice?: boolean;
+  /** contraste de melodia (acento de altura do japonês) que a IPA do app não marca: os pares não caem em «soam igual» */
+  prosodic?: boolean;
 }
 
 /** Duas palavras [palavra, sentido] que só mudam pelo contraste. */

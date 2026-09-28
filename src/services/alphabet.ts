@@ -37,7 +37,13 @@ export function buildRound(data: AlphabetData, progress: AlphabetProgress, size 
   for (let i = 0; i < letterQs; i++) {
     const l = ordered[i % ordered.length];
     if (i % 3 === 2) {
-      const others = pickOthers(data.letters, l, 3, rnd).map(lower);
+      // sem alternativas de mesmo som (お e を, じ e ぢ): as duas estariam certas
+      const others = pickOthers(
+        data.letters.filter((x) => x.short !== l.short),
+        l,
+        3,
+        rnd,
+      ).map(lower);
       out.push({ kind: 'letra', letter: l, options: shuffle([lower(l), ...others], rnd), answer: lower(l) });
     } else {
       const others = pickOthers(

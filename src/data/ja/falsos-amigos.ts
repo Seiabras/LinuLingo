@@ -319,7 +319,7 @@ export const FALSE_FRIENDS_JA: FalseFriend[] = [
     looksLike: 'casa',
     forThat: '家',
     emoji: '☂️',
-    example: ['雨が降りそうだから、傘を持って行きます。', 'Parece que vai chover, então vou levar o guarda-chuva.'],
+    example: ['雨になりそうだから、傘を持って行きます。', 'Parece que vai chover, então vou levar o guarda-chuva.'],
   },
   {
     word: 'タコ',
@@ -383,7 +383,7 @@ export const FALSE_FRIENDS_JA: FalseFriend[] = [
     looksLike: 'goma (de tapioca; ou de mascar)',
     forThat: 'タピオカ粉; ガム',
     emoji: '🥢',
-    example: ['ほうれん草のごまあえが好きです。', 'Gosto de espinafre temperado com gergelim.'],
+    example: ['ごまドレッシングが好きです。', 'Gosto de molho de gergelim.'],
   },
   {
     word: 'あと',

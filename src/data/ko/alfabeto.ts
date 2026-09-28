@@ -13,7 +13,8 @@ export const ALPHABET_KO: AlphabetData = {
       letter: 'ㄱ 가',
       ipa: '[k ~ ɡ]',
       short: 'g/k',
-      sound: 'No começo da palavra, um «k» sem sopro, quase «g», e a sílaba começa em tom baixo; entre vogais, «g» de «gato» (가방 soa «kabang»). No fim da sílaba, «k» preso: a boca fecha e o ar não sai.',
+      sound:
+        'No começo da palavra, um «k» sem sopro, quase «g», e a sílaba começa em tom baixo; entre vogais, «g» de «gato» (가방 soa «kabang»). No fim da sílaba, «k» preso: a boca fecha e o ar não sai.',
       example: ['가방', 'bolsa, mochila'],
       group: 'nova',
     },
@@ -37,7 +38,8 @@ export const ALPHABET_KO: AlphabetData = {
       letter: 'ㄹ 라',
       ipa: '[ɾ ~ l]',
       short: 'r/l',
-      sound: 'Entre vogais e no começo, o «r» de «caro» (a língua bate uma vez só, nunca o «r» de «rato»). No fim da sílaba, um «l» com a ponta da língua no céu da boca, sem virar «u» como no nosso «Brasil». Dobrado (ㄹㄹ), um «l» longo: 빨리 (rápido) soa «ppalli».',
+      sound:
+        'Entre vogais e no começo, o «r» de «caro» (a língua bate uma vez só, nunca o «r» de «rato»). No fim da sílaba, um «l» com a ponta da língua no céu da boca, sem virar «u» como no nosso «Brasil». Dobrado (ㄹㄹ), um «l» longo: 빨리 (rápido) soa «ppalli».',
       example: ['라면', 'lámen instantâneo'],
       group: 'nova',
     },
@@ -61,7 +63,8 @@ export const ALPHABET_KO: AlphabetData = {
       letter: 'ㅅ 사',
       ipa: '[s ~ ɕ]',
       short: 's',
-      sound: '«s» de «sapo», suave e com um fiozinho de ar. Antes de «i» e dos ditongos com «i», vira quase um «x»: 시 soa «xi». No fim da sílaba, soa como um «t» preso.',
+      sound:
+        '«s» de «sapo», suave e com um fiozinho de ar. Antes de «i» e dos ditongos com «i», vira quase um «x»: 시 soa «xi». No fim da sílaba, soa como um «t» preso.',
       example: ['사과', 'maçã'],
       group: 'nova',
     },
@@ -69,7 +72,8 @@ export const ALPHABET_KO: AlphabetData = {
       letter: 'ㅇ 앙',
       ipa: '[∅ ~ ŋ]',
       short: 'ng',
-      sound: 'Tem duas funções. No começo da sílaba é muda: só ocupa o lugar da consoante (아 é só «a»). No fim, é o «ng» do inglês «sing», com o fundo da língua no céu da boca: 방 (quarto) é «bang».',
+      sound:
+        'Tem duas funções. No começo da sílaba é muda: só ocupa o lugar da consoante (아 é só «a»). No fim, é o «ng» do inglês «sing», com o fundo da língua no céu da boca: 방 (quarto) é «bang».',
       example: ['사랑', 'amor'],
       group: 'nova',
     },
@@ -142,7 +146,8 @@ export const ALPHABET_KO: AlphabetData = {
       letter: 'ㅓ 어',
       ipa: '[ʌ]',
       short: 'eo (ó aberto)',
-      sound: 'Um «ó» aberto, mas sem arredondar os lábios, com a boca relaxada: fica entre o «ó» de «avó» e um «â». A romanização «eo» engana: não tem «e» nenhum.',
+      sound:
+        'Um «ó» aberto, mas sem arredondar os lábios, com a boca relaxada: fica entre o «ó» de «avó» e um «â». A romanização «eo» engana: não tem «e» nenhum.',
       example: ['어머니', 'mãe'],
       group: 'nova',
     },
@@ -190,7 +195,8 @@ export const ALPHABET_KO: AlphabetData = {
       letter: 'ㅡ 으',
       ipa: '[ɯ]',
       short: 'eu (u sem bico)',
-      sound: 'Um «u» sem bico: diga «u» sorrindo, com os lábios esticados e a língua lá atrás. É a vogal que o coreano põe quando sobra consoante nas palavras estrangeiras (버스, ônibus), como nós pomos «i» em «Facebook» («feicibúqui»).',
+      sound:
+        'Um «u» sem bico: diga «u» sorrindo, com os lábios esticados e a língua lá atrás. É a vogal que o coreano põe quando sobra consoante nas palavras estrangeiras (버스, ônibus), como nós pomos «i» em «Facebook» («feicibúqui»).',
       example: ['음악', 'música'],
       group: 'nova',
     },
@@ -248,7 +254,8 @@ export const ALPHABET_KO: AlphabetData = {
       letter: 'ㅐ 애',
       ipa: '[ɛ]',
       short: 'ae (é)',
-      sound: 'Na escrita, um «é» aberto, de «café». Na fala de hoje soa igual ao ㅔ: 개 (cachorro) e 게 (caranguejo) só se separam pela escrita e pelo contexto.',
+      sound:
+        'Na escrita, um «é» aberto, de «café». Na fala de hoje soa igual ao ㅔ: 개 (cachorro) e 게 (caranguejo) só se separam pela escrita e pelo contexto.',
       example: ['개', 'cachorro'],
       group: 'nova',
     },
@@ -328,7 +335,8 @@ export const ALPHABET_KO: AlphabetData = {
       letter: 'ㅢ 의',
       ipa: '[ɰi]',
       short: 'ui (eu + i)',
-      sound: 'Comece com o «u» sem bico do ㅡ e deslize para o «i», numa sílaba só. Depois de consoante, soa só «i» (희망, esperança, é «himang»); como partícula de posse («de»), costuma soar «ê».',
+      sound:
+        'Comece com o «u» sem bico do ㅡ e deslize para o «i», numa sílaba só. Depois de consoante, soa só «i» (희망, esperança, é «himang»); como partícula de posse («de»), costuma soar «ê».',
       example: ['의사', 'médico'],
       group: 'nova',
     },
