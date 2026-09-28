@@ -1538,4 +1538,152 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
   },
+  {
+    id: 'ca-g25',
+    level: 'B1.3',
+    title: 'Preposições «per» e «per a»: causa, meio, destino e finalidade',
+    emoji: '🎯',
+    summary: 'Um dos pontos mais sensíveis do catalão: «per» é causa, meio, lugar de passagem ou tempo aproximado; «per a» é destinatário, finalidade e prazo.',
+    sections: [
+      {
+        heading: 'Usos de «per»',
+        text: 'Introduz causa/motivo, meio/instrumento, passagem por lugar, troca/preço e o agente da passiva.',
+        table: {
+          head: ['Uso', 'Exemplo', 'Tradução'],
+          rows: [
+            ['Causa/motivo', "Ho fa per por d'equivocar-se.", 'Faz por medo de errar.'],
+            ['Meio/instrumento', 'Li ho vaig dir per telèfon.', 'Disse a ele por telefone.'],
+            ['Lugar/passagem', 'Vam passejar per la platja.', 'Passeamos pela praia.'],
+            ['Troca/preço', 'Ho vaig comprar per deu euros.', 'Comprei por dez euros.'],
+            ['Agente da passiva', 'Un quadre pintat per Miró.', 'Um quadro pintado por Miró.'],
+          ],
+        },
+        examples: [
+          ['No hem pogut sortir per la pluja.', 'Não pudemos sair por causa da chuva. (causa)'],
+          ['Envio l\'informe per correu electrònic.', 'Envio o relatório por e-mail. (meio)'],
+        ],
+      },
+      {
+        heading: 'Usos de «per a»',
+        text: 'Reservada para destinatário/beneficiário, finalidade e prazo/data limite.',
+        table: {
+          head: ['Uso', 'Exemplo', 'Tradução'],
+          rows: [
+            ['Destinatário', 'Aquest regal és per a la mare.', 'Este presente é para a mãe.'],
+            ['Finalidade (+ substantivo)', 'Una eina per a la fusteria.', 'Uma ferramenta para a marcenaria.'],
+            ['Prazo/data limite', 'He de tenir la feina feta per a demà.', 'Tenho que ter o trabalho pronto para amanhã.'],
+          ],
+        },
+        examples: [
+          ['Aquesta carta és per a tu.', 'Esta carta é para você. (destinatário)'],
+          ['Necessitem diners per a la reforma.', 'Precisamos de dinheiro para a reforma. (finalidade)'],
+        ],
+      },
+      {
+        heading: 'Contrastes de sentido e um ponto debatido',
+        text: 'A escolha entre «per» e «per a» pode mudar o sentido da frase. Um ponto sem consenso total: a gramática tradicional (Pompeu Fabra) prescreve «per» (sem «a») antes de infinitivo quando o sujeito da ação e do infinitivo é o mesmo («Estudio per aprendre»); mas «per a» antes de infinitivo («Estudio per a aprendre») é muito comum na prática atual, inclusive em registros cuidados — trate os dois como aceitos, sem apresentar um como certo e outro como errado.',
+        examples: [
+          ['Ho faig per tu.', 'Faço por você. (por sua causa/em seu lugar — causa)'],
+          ['Ho faig per a tu.', 'Faço para você. (em seu benefício — destinatário)'],
+          ['Treballa per la pau.', 'Trabalha pela paz. (causa/ideal)'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Confundir causa («per tu» = por você/por sua causa) com destinatário («per a tu» = para você).',
+      'Usar «per» sozinho para prazo (o certo é «per a demà», «per al mes vinent»).',
+      'Confundir as contrações: «per + el = pel» (pelo), mas «per a + el = per al» (para o).',
+      'A fala cotidiana do catalão central costuma reduzir «per a» para «per» antes de infinitivo/vogal, mas a norma escrita culta mantém a distinção de sentido.',
+    ],
+    quiz: [
+      {
+        question: '«L\'informe ha d\'estar a punt ___ demà»: qual preposição?',
+        options: ['per a', 'per', 'per de'],
+        answer: 'per a',
+        explanation: 'Prazo/data limite no futuro pede «per a».',
+      },
+      {
+        question: 'Qual é a diferença entre «Ho faig per tu» e «Ho faig per a tu»?',
+        options: [
+          '«per tu» indica causa/motivo; «per a tu» indica destinatário/benefício.',
+          '«per tu» indica futuro; «per a tu» indica passado.',
+          'Não há diferença, são intercambiáveis.',
+        ],
+        answer: '«per tu» indica causa/motivo; «per a tu» indica destinatário/benefício.',
+        explanation: '«per» expressa causa/motivo; «per a» assinala o destinatário ou beneficiário.',
+      },
+    ],
+  },
+  {
+    id: 'ca-g26',
+    level: 'B1.3',
+    title: 'Indefinidos, «no... pas» e «tampoc»',
+    emoji: '🔍',
+    summary: 'Pronomes e advérbios indefinidos (algú, ningú, res, cap, tothom) e os recursos catalães de negação enfática («no... pas») e concordância negativa («tampoc»).',
+    sections: [
+      {
+        heading: 'Indefinidos de pessoa, coisa e quantidade',
+        text: 'Opõem formas afirmativas/existenciais a formas negativas/de ausência total.',
+        table: {
+          head: ['Categoria', 'Afirmativo', 'Negativo', 'Exemplo'],
+          rows: [
+            ['Pessoa', 'algú (alguém)', 'ningú (ninguém)', 'Algú truca. / No hi ha ningú.'],
+            ['Coisa', 'alguna cosa (algo)', 'res (nada)', 'Vols alguna cosa? / No sé res.'],
+            ['Pessoas (total)', 'tothom (todo mundo)', '—', 'Tothom ho sap. (verbo sempre singular)'],
+            ['Substantivo', 'algun/alguna/alguns/algunes', 'cap (nenhum)', 'Alguns llibres. / Cap llibre.'],
+            ['Totalidade', 'tot/tota/tots/totes', '—', 'Tota la classe.'],
+          ],
+        },
+        examples: [
+          ['Tothom està a punt per a la reunió.', 'Todo mundo está pronto para a reunião.'],
+          ['No hi ha cap dubte sobre la decisió.', 'Não há nenhuma dúvida sobre a decisão.'],
+        ],
+      },
+      {
+        heading: 'Valor positivo de «cap», «res» e «ningú»',
+        text: 'Em pergunta, dúvida ou condição, «cap», «res» e «ningú» perdem a carga negativa e viram indefinidos afirmativos («algum», «algo», «alguém»).',
+        examples: [
+          ['Tens cap pregunta?', 'Você tem alguma pergunta? (não «nenhuma»)'],
+          ['Has vist ningú al passadís?', 'Viu alguém no corredor?'],
+          ["Si necessites res, avisa'm.", 'Se precisar de alguma coisa, me avise.'],
+        ],
+      },
+      {
+        heading: 'A negação enfática «no... pas» e o advérbio «tampoc»',
+        text: 'Estruturas catalãs próprias para matizar ou reforçar a negação.',
+        table: {
+          head: ['Estrutura', 'Uso', 'Exemplo', 'Tradução'],
+          rows: [
+            ['no... pas', 'reforça a negação, contradiz expectativa do ouvinte', 'No és pas tan difícil com sembla.', 'Não é (de jeito nenhum) tão difícil quanto parece.'],
+            ['tampoc (antes do verbo)', 'concordância negativa sem «no»', 'Jo tampoc ho sé.', 'Eu também não sei.'],
+            ['tampoc (depois do verbo)', 'concordância negativa, precisa de «no» antes', 'No ho sé jo tampoc.', 'Não sei eu tampouco.'],
+          ],
+        },
+        examples: [
+          ["No vull pas ofendre't.", 'Não quero (de jeito nenhum) te ofender.'],
+          ['Ell no ve i jo tampoc.', 'Ele não vem e eu também não.'],
+        ],
+      },
+    ],
+    pitfalls: [
+      'Usar o verbo no plural com «tothom» («tothom saben» em vez de «tothom sap»).',
+      'Usar «nada»/«nadie» (espanhol) em vez de «res»/«ningú».',
+      'Confundir o determinante «cap» (invariável: «cap idea», «cap llibre») com a preposição de direção «cap a».',
+      'Achar que «no... pas» é obrigatório em toda negativa: é um recurso expressivo, não regra geral.',
+    ],
+    quiz: [
+      {
+        question: 'Como fica «Todo mundo concorda» com «tothom»?',
+        options: ["Tothom hi està d'acord", 'Tothom hi estan d\'acord', "Tots tothom hi estan d'acord"],
+        answer: "Tothom hi està d'acord",
+        explanation: '«tothom» sempre pede o verbo na 3ª pessoa do singular.',
+      },
+      {
+        question: 'Em «Tens cap dubte?», o que «cap» quer dizer?',
+        options: ['Alguma', 'Nenhuma', 'Muita'],
+        answer: 'Alguma',
+        explanation: 'Em pergunta/condição, «cap» tem valor afirmativo de «algum(a)».',
+      },
+    ],
+  },
 ];
