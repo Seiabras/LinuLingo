@@ -109,7 +109,7 @@ export default function TutorialScreen() {
           },
         ]
       : []),
-    { mood: 'comemorando', title: 'Bora começar!', text: `No Perfil ficam este tutorial, a 💾 cópia do progresso e a 🛍️ Loja do Linu: chapéus típicos do mundo inteiro, com o país e a cultura de cada um. Os do idioma que você estuda eu ganho de presente com as lições (o primeiro já na lição 1!), e os outros você compra com krill 🦐, que ganha estudando. ${pack.phrases.letsStart[0]} (${pack.phrases.letsStart[1]})` },
+    { mood: 'comemorando', title: 'Bora começar!', text: `No Perfil ficam este tutorial, a 💾 cópia do progresso e a 🛍️ Loja do Linu: chapéus, roupas, coisas para eu segurar na nadadeira e pinturas de rosto típicas do mundo inteiro, com o país e a cultura de cada uma — e dá para eu usar uma de cada lugar ao mesmo tempo. As do idioma que você estuda eu ganho de presente com as lições (a primeira já na lição 1!), e as outras você compra com krill 🦐, que ganha estudando. ${pack.phrases.letsStart[0]} (${pack.phrases.letsStart[1]})` },
   ];
   const s = slides[i];
   const last = i === slides.length - 1;
