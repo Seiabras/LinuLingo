@@ -931,4 +931,305 @@ export const STORIES_CA: StorySeed[] = [
       },
     },
   },
+  // ───────────────────────── B1.1 ─────────────────────────
+  {
+    id: 'ca-h13',
+    level: 'B1.1',
+    cefr: 'B1',
+    title: 'Linu a Cadaqués i la casa de Dalí',
+    emoji: '🎨',
+    summary: 'Linu visita la vila blanca de Cadaqués, a l\'Alt Empordà, per descobrir la casa on vivia el pintor Salvador Dalí.',
+    cultural_context: 'Cadaqués é uma vila histórica de pescadores na comarca de l\'Alt Empordà (Girona), famosa por suas casas brancas e por ter sido a residência de Salvador Dalí na baía de Portlligat. Hoje, a Casa-Museu Salvador Dalí preserva o ateliê, os objetos pessoais e as obras do artista surrealista diante do mar do Parque Natural do Cap de Creus.',
+    start: 'start',
+    glossary: [
+      ['vila blanca', 'vila branca'],
+      ['quadre', 'quadro / pintura'],
+      ['pescador', 'pescador'],
+      ['taller', 'ateliê / oficina'],
+      ['badia', 'baía'],
+      ['llum', 'luz'],
+      ['teulada', 'telhado'],
+      ['pinzell', 'pincel'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🐧',
+        text: 'En Linu era a Cadaqués. Quan era petit, el seu avi li explicava històries sobre un pintor que tenia un bigoti molt curiós. En Linu volia visitar la casa de Salvador Dalí a Portlligat.',
+        translation: 'Linu estava em Cadaqués. Quando era pequeno, seu avô lhe contava histórias sobre um pintor que tinha um bigode muito curioso. Linu queria visitar a casa de Salvador Dalí em Portlligat.',
+        choices: [
+          { text: 'Caminar cap a Portlligat pel camí de la costa.', translation: 'Caminhar em direção a Portlligat pelo caminho da costa.', next: 'cami_portlligat' },
+          {
+            text: 'Agafar un autobús cap a Figueres per error.',
+            translation: 'Pegar um ônibus para Figueres por engano.',
+            wrong: 'Figueres fica a cerca de 35 km e abriga o Teatre-Museu Dalí, mas a casa onde o artista morava à beira-mar fica em Portlligat (Cadaqués)! Volte e caminhe pelo litoral.',
+          },
+        ],
+      },
+      cami_portlligat: {
+        emoji: '🌊',
+        text: 'Mentre passejava, en Linu mirava la mar blava. El vent bufava fort, però ell tenia molta curiositat. A la badia, va trobar un vell pescador que coneixia molt bé la zona.',
+        translation: 'Enquanto passeava, Linu olhava o mar azul. O vento soprava forte, mas ele tinha muita curiosidade. Na baía, encontrou um velho pescador que conhecia muito bem a área.',
+        choices: [
+          { text: "Preguntar-li pel taller on Dalí pintava els seus quadres.", translation: 'Perguntar-lhe pelo ateliê onde Dalí pintava seus quadros.', next: 'davant_casa' },
+          {
+            text: 'Demanar-li que el porti en barca cap a França.',
+            translation: 'Pedir-lhe para levá-lo de barco em direção à França.',
+            wrong: 'França fica mais ao norte além do Cap de Creus! O objetivo do Linu hoje é explorar Portlligat e a casa-museu de Dalí em Cadaqués.',
+          },
+        ],
+      },
+      davant_casa: {
+        emoji: '🏡',
+        text: 'El pescador li va assenyalar la casa blanca de Portlligat. Dalí la va construir unint diverses casetes tradicionals de pescadors. Hi havia un ou gegant a la teulada!',
+        translation: 'O pescador lhe apontou a casa branca de Portlligat. Dalí a construiu unindo várias casinhas tradicionais de pescadores. Havia um ovo gigante no telhado!',
+        choices: [
+          { text: 'Comprar una entrada i entrar a la casa-museu.', translation: 'Comprar um ingresso e entrar na casa-museu.', next: 'dins_taller' },
+          { text: 'Quedar-se a la platja a prendre el sol sense entrar.', translation: 'Ficar na praia tomando sol sem entrar.', next: 'cami_platja' },
+        ],
+      },
+      dins_taller: {
+        emoji: '🎨',
+        text: "Dins del taller, la llum era extraordinària. Hi havia una paleta de colors i un quadre inacabat. La guia li va explicar com treballava l'artista.",
+        translation: 'Dentro do ateliê, a luz era extraordinária. Havia uma paleta de cores e um quadro inacabado. A guia lhe explicou como o artista trabalhava.',
+        choices: [
+          { text: 'Escoltar-la amb atenció i observar els detalls de la cambra.', translation: 'Escutá-la com atenção e observar os detalhes da sala.', next: 'jardi_dali' },
+          {
+            text: 'Tocar els pinzells antics de Dalí sense permís.',
+            translation: 'Tocar os pincéis antigos de Dalí sem permissão.',
+            wrong: 'Não se deve tocar nos objetos históricos do museu! O ateliê é mantido exatamente como o artista o deixou para preservação.',
+          },
+        ],
+      },
+      cami_platja: {
+        emoji: '🏖️',
+        text: "En Linu va decidir reposar a la platja. El sol brillava i l'aigua estava freda. Un veí li va dir que el jardí de la casa tenia escultures molt singulars.",
+        translation: 'Linu decidiu descansar na praia. O sol brilhava e a água estava fria. Um vizinho lhe disse que o jardim da casa tinha esculturas muito singulares.',
+        choices: [
+          { text: "Anar al jardí per no perdre's les escultures de Dalí.", translation: 'Ir ao jardim para não perder as esculturas de Dalí.', next: 'jardi_dali' },
+          { text: "Anar-se'n directament a l'hotel a dormir.", translation: 'Ir embora diretamente ao hotel para dormir.', next: 'final_neutre' },
+        ],
+      },
+      jardi_dali: {
+        emoji: '🗿',
+        text: 'Al jardí, en Linu va veure l\'escultura d\'un elefant amb potes llargues. Un gatet li caminava al voltant i en Linu li va donar una mica d\'aigua fresqueta.',
+        translation: 'No jardim, Linu viu a escultura de um elefante com pernas longas. Um gatinho caminhava ao seu redor e Linu lhe deu um pouco de água fresca.',
+        choices: [{ text: 'Fer una foto del jardí i escriure les seves impressions.', translation: 'Tirar uma foto do jardim e escrever suas impressões.', next: 'final_bom' }],
+      },
+      final_bom: {
+        emoji: '🌟',
+        text: 'En Linu va aprendre molt sobre la vida de Salvador Dalí a Cadaqués. Va comprendre per què la llum de la costa inspirava tant el pintor surrealista!',
+        translation: 'Linu aprendeu muito sobre a vida de Salvador Dalí em Cadaqués. Compreendeu por que a luz da costa inspirava tanto o pintor surrealista!',
+        ending: { tone: 'bom', title: 'Un viatge surrealista', message: 'Parabéns! Você explorou Cadaqués com o Linu e praticou o imperfet e os pronoms febles em catalão.' },
+      },
+      final_neutre: {
+        emoji: '⛵',
+        text: 'En Linu va gaudir del paisatge de Cadaqués i de la platja, tot i que no va visitar tot l\'interior de la casa-museu de Dalí.',
+        translation: 'Linu aproveitou a paisagem de Cadaqués e a praia, embora não tenha visitado todo o interior da casa-museu de Dalí.',
+        ending: { tone: 'neutro', title: 'Passeio pela baía', message: 'Você completou a história! Linu aproveitou o mar de Cadaqués. Que tal jogar novamente para entrar no ateliê e ver as obras de Dalí?' },
+      },
+    },
+  },
+  {
+    id: 'ca-h14',
+    level: 'B1.1',
+    cefr: 'B1',
+    title: 'Linu i la gran calçotada de Valls',
+    emoji: '🧅',
+    summary: 'Linu viatja a Valls, a la comarca de l\'Alt Camp, per participar en una tradicional calçotada i aprendre com es preparen els calçots.',
+    cultural_context: 'A cidade de Valls, na comarca de l\'Alt Camp (Tarragona), é considerada a capital do calçot. A temporada da calçotada vai do final de novembro a abril, quando brotos de cebola doce (calçots) são assados diretamente nas brasas de sarmentos de videira e servidos com molho romesco, com os comensais usando um babador (pitet) para não se sujarem.',
+    start: 'start',
+    glossary: [
+      ['calçot', 'cebola doce brotada típica'],
+      ['sarment', 'ramo seco de videira'],
+      ['pitet', 'babador'],
+      ['graella', 'grelha'],
+      ['pell', 'casca / pele'],
+      ['teula', 'telha (usada para servir)'],
+      ['mullar', 'molhar / mergulhar no molho'],
+      ['xafar', 'apertar / amassar'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🔥',
+        text: 'En Linu era a Valls a finals de gener. La ciutat celebrava la Gran Festa del Calçot. Tota la plaça olorava a fum de sarments i la gent portava un pitet al coll.',
+        translation: 'Linu estava em Valls no final de janeiro. A cidade celebrava a Gran Festa del Calçot. Toda a praça cheirava a fumaça de ramos de videira e as pessoas usavam um babador no pescoço.',
+        choices: [
+          { text: 'Apropar-se a les graelles on es coïen els calçots.', translation: 'Aproximar-se das grelhas onde assavam os calçots.', next: 'vora_foc' },
+          {
+            text: 'Demanar una sopa d\'espinacs freda en un bar ràpid.',
+            translation: 'Pedir uma sopa de espinafre fria em uma lanchonete rápida.',
+            wrong: 'Valls é o berço do calçot! O prato principal e a grande atração de hoje são os calçots assados na brasa. Vá até a praça!',
+          },
+        ],
+      },
+      vora_foc: {
+        emoji: '🧅',
+        text: 'Un pagès tenia una gran quantitat de calçots sobre el foc. Les flames els cremaven per fora fins que la pell quedava ben negra. En Linu el mirava amb molta atenció.',
+        translation: 'Um agricultor tinha uma grande quantidade de calçots sobre o fogo. As chamas os queimavam por fora até que a casca ficava bem preta. Linu o olhava com muita atenção.',
+        choices: [
+          { text: 'Preguntar-li al pagès com sabien si ja estaven cuits.', translation: 'Perguntar ao agricultor como sabiam se já estavam cozidos.', next: 'explicacio_pages' },
+          {
+            text: 'Intentar agafar un calçot directament del foc amb la mà nua.',
+            translation: 'Tentar pegar um calçot diretamente do fogo com a mão nua.',
+            wrong: 'Cuidado! Os calçots são assados diretamente sobre brasas bem quentes. Queimar as patas do pinguim seria um desastre! Aguarde as instruções.',
+          },
+        ],
+      },
+      explicacio_pages: {
+        emoji: '🗞️',
+        text: "El pagès li va explicar que els calçots s'havien de xafar un xic per veure si estaven tous. Després, els embolcallaven en paper de diari per mantenir la calor.",
+        translation: 'O agricultor lhe explicou que os calçots deviam ser apertados um pouco para ver se estavam macios. Depois, embrulhavam-nos em jornal para manter o calor.',
+        choices: [
+          { text: 'Acompanyar el pagès a la taula on servien les teules.', translation: 'Acompanhar o agricultor até a mesa onde serviam as telhas.', next: 'preparar_salsa' },
+          { text: "Anar-se'n a jugar a futbol a la plaça de l'ajuntament.", translation: 'Ir embora jogar futebol na praça da prefeitura.', next: 'cami_futbol' },
+        ],
+      },
+      preparar_salsa: {
+        emoji: '🥣',
+        text: 'A la taula hi havia teules plenes de calçots calents. La cuinera li va ensenyar a en Linu la salsa romesco, feta amb ametlles, tomàquets, nyores i oli.',
+        translation: 'Na mesa havia telhas cheias de calçots quentes. A cozinheira ensinou a Linu o molho romesco, feito com amêndoas, tomates, pimentões ñora e azeite.',
+        choices: [
+          { text: 'Posar-se el pitet i aprendre la tècnica per pelar-los.', translation: 'Colocar o babador e aprender a técnica para descascá-los.', next: 'menjar_calçots' },
+          {
+            text: 'Pelar el calçot sense treure la pell cremada de fora.',
+            translation: 'Descascar o calçot sem tirar a casca queimada de fora.',
+            wrong: 'A casca externa está queimada pelo fogo! É preciso puxar suavemente as folhas superiores para retirar a casca preta e comer o interior branco macio.',
+          },
+        ],
+      },
+      cami_futbol: {
+        emoji: '⚽',
+        text: 'En Linu va anar a jugar a futbol. Mentrestant, la gent menjava els calçots i reia. Quan en Linu va tornar, la millor salsa ja s\'havia acabat.',
+        translation: 'Linu foi jogar futebol. Enquanto isso, as pessoas comiam os calçots e riam. Quando Linu voltou, o melhor molho já tinha acabado.',
+        choices: [{ text: 'Provar els calçots restants sense la salsa especial.', translation: 'Provar os calçots restantes sem o molho especial.', next: 'final_neutre' }],
+      },
+      menjar_calçots: {
+        emoji: '😋',
+        text: "La cuinera li va mostrar com pelar el calçot: s'agafava de la punta, es tirava de la pell cap avall, es mullava a la salsa i s'aixecava el braç per menjar-se'l.",
+        translation: 'A cozinheira lhe mostrou como descascar o calçot: pegava-se pela ponta, puxava-se a casca para baixo, molhava-se no molho e erguia-se o braço para comê-lo.',
+        choices: [{ text: 'Seguir les instruccions de la cuinera i tastar el primer calçot.', translation: 'Seguir as instruções da cozinheira e provar o primeiro calçot.', next: 'dinar_festiu' }],
+      },
+      dinar_festiu: {
+        emoji: '🎉',
+        text: "El calçot era dolç i la salsa el feia encara més saborós! En Linu se'n va menjar una dotzena sencera sense taquetar-se la samarreta gràcies al pitet.",
+        translation: 'O calçot era doce e o molho o deixava ainda mais saboroso! Linu comeu uma dúzia inteira sem manchar a camiseta graças ao babador.',
+        choices: [{ text: 'Celebrar la festa amb els veïns de Valls i cantar cançons.', translation: 'Celebrar a festa com os moradores de Valls e cantar canções.', next: 'final_bom' }],
+      },
+      final_bom: {
+        emoji: '🏆',
+        text: 'En Linu va gaudir d\'una autèntica calçotada a Valls! Va aprendre el procés de cocció i va dominar la tècnica tradicional de menjar els calçots.',
+        translation: 'Linu aproveitou uma autêntica calçotada em Valls! Aprendeu o processo de cozimento e dominou a técnica tradicional de comer os calçots.',
+        ending: { tone: 'bom', title: 'Un mestre calçotaire!', message: 'Parabéns! Você acompanhou o Linu em Valls e praticou o imperfet e os pronoms febles (els, la, li) no contexto gastronômico catalão.' },
+      },
+      final_neutre: {
+        emoji: '🥖',
+        text: 'En Linu va tastar els calçots, però per haver anat a jugar a futbol es va perdre el moment de la salsa romesco.',
+        translation: 'Linu provou os calçots, mas por ter ido jogar futebol perdeu o momento do molho romesco.',
+        ending: { tone: 'neutro', title: 'Degustação incompleta', message: 'Você completou a história! Linu provou os calçots sem o molho ideal. Na próxima vez, fique perto da mesa para aprender a receita completa!' },
+      },
+    },
+  },
+  {
+    id: 'ca-h15',
+    level: 'B1.1',
+    cefr: 'B1',
+    title: 'Linu i el misteri del Barri Vell de Girona',
+    emoji: '🏰',
+    summary: 'Linu explora la ciutat històrica de Girona, creua els ponts sobre el riu Onyar i visita el famós Barri Vell i la Catedral.',
+    cultural_context: 'Girona é famosa por seu Barri Vell (bairro antigo), que preserva um dos bairros judaicos (El Call) mais bem conservados da Europa. As casas coloridas debruçadas sobre o rio Onyar e a imponente Catedral de Santa Maria de Girona, com uma das naves góticas mais largas do mundo, são marcos históricos inconfundíveis da cidade.',
+    start: 'start',
+    glossary: [
+      ['barri vell', 'bairro antigo'],
+      ['pont de ferro', 'ponte de ferro (Ponte Eiffel)'],
+      ['escalinata', 'escadaria'],
+      ['call jueu', 'bairro judaico'],
+      ["cases de l'Onyar", 'casas coloridas do rio Onyar'],
+      ['lleona', 'leoa (escultura famosa)'],
+      ['besar', 'beijar'],
+      ['nau gòtica', 'nave gótica'],
+    ],
+    nodes: {
+      start: {
+        emoji: '🏛️',
+        text: "En Linu era a Girona durant un matí de tardor. Quan passejava vora el riu Onyar, mirava les cases de colors vermells i grocs que es reflectien a l'aigua.",
+        translation: 'Linu estava em Girona durante uma manhã de outono. Quando passeava à beira do rio Onyar, olhava as casas de cores vermelhas e amarelas que se refletiam na água.',
+        choices: [
+          { text: 'Creuar el Pont de les Peixateries Velles, dissenyat per Gustave Eiffel.', translation: 'Cruzar a Ponte de les Peixateries Velles, projetada por Gustave Eiffel.', next: 'pont_eiffel' },
+          {
+            text: 'Intentar creuar el riu nedant entre els ànecs.',
+            translation: 'Tentar cruzar o rio nadando entre os patos.',
+            wrong: 'O rio Onyar tem correnteza e não é adequado para travessias a nado no centro urbano! Use as belas pontes históricas da cidade.',
+          },
+        ],
+      },
+      pont_eiffel: {
+        emoji: '🌉',
+        text: "Des del pont vermell de ferro, en Linu veia la majestuosa catedral de Girona al fons. Un guia local li va explicar que el pont el va construir l'empresa de Gustave Eiffel.",
+        translation: 'Da ponte vermelha de ferro, Linu via a majestosa catedral de Girona ao fundo. Um guia local lhe explicou que a ponte foi construída pela empresa de Gustave Eiffel.',
+        choices: [
+          { text: 'Seguir el camí cap a la gran escalinata de la Catedral.', translation: 'Seguir o caminho em direção à grande escadaria da Catedral.', next: 'escalinata_catedral' },
+          {
+            text: 'Agafar un tren cap a la platja de Lloret de Mar.',
+            translation: 'Pegar um trem para a praia de Lloret de Mar.',
+            wrong: 'Girona tem séculos de história no centro antigo para você explorar! Não abandone o Barri Vell antes de ver a Catedral e o bairro judaico.',
+          },
+        ],
+      },
+      escalinata_catedral: {
+        emoji: '⛪',
+        text: 'La Catedral tenia una escalinata enorme amb noranta esglaons. Quan en Linu la pujava, un amic li deia que la nau gòtica de l\'interior era una de les més amples del món.',
+        translation: 'A Catedral tinha uma escadaria enorme com noventa degraus. Quando Linu a subia, um amigo lhe dizia que a nave gótica do interior era uma das mais largas do mundo.',
+        choices: [
+          { text: 'Pujar fins a dalt de tot i entrar a la catedral.', translation: 'Subir até o topo e entrar na catedral.', next: 'dins_catedral' },
+          { text: 'Baixar corrent i anar a buscar un cafè sense mirar res.', translation: 'Descer correndo e ir procurar um café sem olhar nada.', next: 'cami_bar' },
+        ],
+      },
+      dins_catedral: {
+        emoji: '🧵',
+        text: 'Dins la catedral, l\'atmosfera era silenciosa i antiga. En Linu mirava el Tapís de la Creació, un tresor romànic del segle XII. La guia li va mostrar les figures brodades.',
+        translation: 'Dentro da catedral, a atmosfera era silenciosa e antiga. Linu olhava a Tapeçaria da Criação, um tesouro românico do século XII. A guia lhe mostrou as figuras bordadas.',
+        choices: [
+          { text: 'Escoltar les explicacions de la guia sobre el tapís.', translation: 'Escutar as explicações da guia sobre a tapeçaria.', next: 'call_jueu' },
+          {
+            text: 'Intentar tocar el tapís romànic amb les potes humides.',
+            translation: 'Tentar tocar a tapeçaria românica com as patas úmidas.',
+            wrong: 'A Tapeçaria da Criação é um tecido medieval extremamente delicado do século XII! É proibido tocá-lo para garantir sua preservação histórica.',
+          },
+        ],
+      },
+      cami_bar: {
+        emoji: '☕',
+        text: "En Linu va anar a una terrassa de la Plaça del Vi a prendre una xocolata calenta. L'ambient era molt agradable, però sabia que li faltava veure el Call jueu.",
+        translation: 'Linu foi a uma esplanada da Plaça del Vi tomar um chocolate quente. O ambiente era muito agradável, mas sabia que faltava ver o bairro judaico (Call).',
+        choices: [
+          { text: 'Reprendre la caminada pel Call jueu.', translation: 'Retomar a caminhada pelo bairro judaico (Call).', next: 'call_jueu' },
+          { text: "Tornar a l'estació de trens sense veure el barri antic.", translation: 'Voltar à estação de trens sem ver o bairro antigo.', next: 'final_neutre' },
+        ],
+      },
+      call_jueu: {
+        emoji: '🕯️',
+        text: 'En Linu va caminar pels carrers estrets i empedrats del Call jueu. Els murs antics el protegien del sol. Hi havia petites botigues d\'artesans i museus.',
+        translation: 'Linu caminhou pelas ruas estreitas e de pedra do Call judaico. As muralhas antigas o protegiam do sol. Havia pequenas lojas de artesãos e museus.',
+        choices: [{ text: 'Anar a buscar la famosa escultura de la Lleona de Girona.', translation: 'Ir procurar a famosa escultura da Leoa de Girona.', next: 'lleona_girona' }],
+      },
+      lleona_girona: {
+        emoji: '🦁',
+        text: 'A prop de la col·legiata de Sant Feliu, en Linu va trobar la petita escultura de la Lleona. La tradició deia que qui li besa el darrere torna sempre a Girona!',
+        translation: 'Perto da colegiada de Sant Feliu, Linu encontrou a pequena escultura da Leoa. A tradição dizia que quem beija o traseiro da leoa sempre volta a Girona!',
+        choices: [{ text: 'Seguir la tradició i fer-se una foto al costat de la Lleona.', translation: 'Seguir a tradição e tirar uma foto ao lado da Leoa.', next: 'final_bom' }],
+      },
+      final_bom: {
+        emoji: '👑',
+        text: 'En Linu va complir la tradició de la Lleona i va quedar fascinat per la història de Girona. Va ser un viatge inoblidable pel Barri Vell!',
+        translation: 'Linu cumpriu a tradição da Leoa e ficou fascinado pela história de Girona. Foi uma viagem inesquecível pelo Barri Vell!',
+        ending: { tone: 'bom', title: 'Un ciutadà de Girona!', message: 'Parabéns! Você acompanhou o Linu pelas pontes e ruelas medievais de Girona, treinando o imperfet e os pronoms febles em frases completas.' },
+      },
+      final_neutre: {
+        emoji: '☕',
+        text: "En Linu va gaudir de la xocolata a la Plaça del Vi i de les vistes des del pont d'Eiffel, tot i que no va visitar la Catedral ni el Call en profunditat.",
+        translation: 'Linu aproveitou o chocolate na Plaça del Vi e as vistas da ponte Eiffel, embora não tenha visitado a Catedral nem o Call em profundidade.',
+        ending: { tone: 'neutro', title: 'Pausa para café', message: 'Você concluiu a jornada! Linu aproveitou o centro histórico, mas perdeu os segredos da Catedral. Tente jogar novamente para subir os 90 degraus!' },
+      },
+    },
+  },
 ];
