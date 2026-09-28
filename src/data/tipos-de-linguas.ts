@@ -128,7 +128,7 @@ export const CONLANGS: Conlang[] = [
     purpose: 'auxiliar',
     origin: 'a posteriori',
     stage: 'completa',
-    about: 'Uma língua auxiliar com o nome da antiga língua de contato do Mediterrâneo.',
+    about: 'Uma língua auxiliar com o nome da antiga língua de contato do Mediterrâneo, começada nos anos 1960 e publicada em 1998.',
     text: 'O vocabulário vem das línguas românicas (português, espanhol, francês, italiano e catalão), e a gramática é simples como a de um crioulo: o verbo nunca muda, e o tempo vai numa partícula — «me ia come», eu comi.',
     samples: [['Bon dia! Me es Ana.', 'Bom dia! Eu sou a Ana.']],
   },

@@ -216,7 +216,7 @@ export const CURSO_ELEFEN: MiniCourse = {
   name: 'Lingua Franca Nova (Elefen)',
   emoji: '🌊',
   kind: 'artificial',
-  summary: 'Uma língua auxiliar de 1998 com palavras das línguas românicas e gramática de crioulo: o verbo nunca muda.',
+  summary: 'Uma língua auxiliar publicada em 1998, com palavras das línguas românicas e gramática de crioulo: o verbo nunca muda.',
   sources: [{ label: 'elefen.org', url: 'https://elefen.org/' }],
   lessons: [
     {
@@ -224,7 +224,7 @@ export const CURSO_ELEFEN: MiniCourse = {
       title: 'Palavras românicas, gramática simples',
       emoji: '🧩',
       intro: [
-        'O psicólogo George Boeree criou a Lingua Franca Nova em 1998, com o nome de uma língua de contato do Mediterrâneo. O vocabulário vem do português, do espanhol, do francês, do italiano e do catalão; a gramática, simples como a de um crioulo.',
+        'O psicólogo George Boeree começou a Lingua Franca Nova nos anos 1960 e a publicou em 1998, com o nome de uma língua de contato do Mediterrâneo. O vocabulário vem do português, do espanhol, do francês, do italiano e do catalão; a gramática, simples como a de um crioulo.',
         'O artigo é «la» para tudo, o plural é -s (ou -es) e o verbo não muda nunca: me es, tu es, el es (eu sou, você é, ele/ela é).',
       ],
       items: [
@@ -253,7 +253,7 @@ export const CURSO_ELEFEN: MiniCourse = {
       ],
       quiz: [
         { q: '«el ia parla» quer dizer…', options: ['ele/ela falou', 'ele/ela vai falar', 'ele/ela fala'], answer: 0 },
-        { q: 'Como se diz «nós vamos ler» (lee = ler)?', options: ['nos va lee', 'nos ia lee', 'nos leeremos'], answer: 0 },
+        { q: 'Como se diz «nós vamos ler» (leje = ler)?', options: ['nos va leje', 'nos ia leje', 'nos lejeremos'], answer: 0 },
       ],
     },
   ],

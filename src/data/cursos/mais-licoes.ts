@@ -74,7 +74,7 @@ export const ESPERANTO_MAIS: MiniLesson[] = [
     id: 'numeros',
     title: 'Números',
     emoji: '🔢',
-    intro: ['Dez palavras e você conta até mil: os números se juntam como no chinês. «dek du» é 12 (dez-dois), «dudek» é 20 (dois-dez). Com -a viram ordinais: unua (primeiro), dua (segundo).'],
+    intro: ['Com doze palavras (unu a naŭ, dek, cent e mil) você conta até mil: os números se juntam como no chinês. «dek du» é 12 (dez-dois), «dudek» é 20 (dois-dez). Com -a viram ordinais: unua (primeiro), dua (segundo).'],
     items: [
       { term: 'unu, du, tri', meaning: 'um, dois, três' },
       { term: 'kvar, kvin, ses', meaning: 'quatro, cinco, seis' },
@@ -112,7 +112,7 @@ export const ESPERANTO_MAIS: MiniLesson[] = [
     id: 'tempo',
     title: 'Dias e tempo',
     emoji: '📅',
-    intro: ['Os dias da semana terminam em -o, como todo substantivo. Com -n viram «quando»: lundon — na segunda-feira.'],
+    intro: ['Os dias da semana terminam em -o, como todo substantivo. Com -n (ou com o -e de advérbio) viram «quando»: lundon ou lunde — na segunda-feira.'],
     items: [
       { term: 'lundo, mardo, merkredo', meaning: 'segunda, terça, quarta' },
       { term: 'ĵaŭdo, vendredo', meaning: 'quinta, sexta' },
@@ -122,7 +122,7 @@ export const ESPERANTO_MAIS: MiniLesson[] = [
     ],
     quiz: [
       { q: '«Mi venos morgaŭ» quer dizer…', options: ['Eu virei amanhã', 'Eu vim ontem', 'Eu venho hoje'], answer: 0 },
-      { q: 'Como se diz «no domingo»?', options: ['dimanĉon', 'dimanĉa', 'dimanĉe'], answer: 0 },
+      { q: 'Como se diz «no domingo» com o -n?', options: ['dimanĉon', 'dimanĉa', 'dimanĉoj'], answer: 0, why: 'Também se diz «dimanĉe», com o -e de advérbio.' },
     ],
   },
   {
@@ -241,14 +241,14 @@ export const TOKI_PONA_MAIS: MiniLesson[] = [
     id: 'numeros',
     title: 'Contar com poucas palavras',
     emoji: '🔢',
-    intro: ['O jeito simples de contar tem só «wan» (1), «tu» (2) e «mute» (muitos). Para números maiores, somam-se as palavras: «tu tu» é 4, «luka wan» é 6 (luka, a mão, vale 5).'],
+    intro: ['O jeito mais simples de contar usa só «wan» (1), «tu» (2) e «mute» (muitos). No sistema do livro oficial, somam-se as palavras: «luka» (a mão) vale 5, «mute» vale 20 e «ale» vale 100 — «tu tu» é 4, «luka wan» é 6.'],
     items: [
       { term: 'ala', meaning: 'nenhum, zero' },
       { term: 'wan', meaning: 'um' },
       { term: 'tu', meaning: 'dois' },
       { term: 'luka', meaning: 'cinco (a mão)' },
-      { term: 'mute', meaning: 'muitos' },
-      { term: 'ale', meaning: 'tudo, todos' },
+      { term: 'mute', meaning: 'muitos (ou 20, no sistema com luka)' },
+      { term: 'ale', meaning: 'tudo, todos (ou 100, no sistema com luka)' },
     ],
     quiz: [
       { q: 'Quanto é «luka tu»?', options: ['7', '3', '10'], answer: 0 },
