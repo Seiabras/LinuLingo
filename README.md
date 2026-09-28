@@ -128,12 +128,12 @@ Cada idioma mostra os seus jeitos regionais de falar (18 no espanhol, 5 no romen
 ## O que tem no feroês
 
 - 4.080 palavras (os três gêneros, com o genitivo e o plural na tradução), 15 unidades, 40 tópicos de gramática (os casos, a escrita etimológica de Hammershaimb e o ð mudo, os ditongos, o purismo, as baladas kvæði e a dança em roda), 45 histórias (de Tórshavn a Klaksvík, Gjógv, Mykines, Suðuroy e o Slættaratindur), 41 falsos amigos, 154 etimologias, 9 sotaques e línguas (os dialetos das ilhas, o dinamarquês nas Faroé, o norn extinto).
-- **IPA por dicionário** (src/data/fo/pronuncia.ts, 9.021 formas: a escrita não mostra a fala); **palácio** com os três gêneros e o Jardim das ovelhas; roupinha do Linu: a húgva. O feroês não tem voz neural livre nem gravações no Lingua Libre: o som vem da voz do aparelho, quando há.
+- **IPA por dicionário** (src/data/fo/pronuncia.ts, 9.021 formas: a escrita não mostra a fala); **palácio** com os três gêneros e o Jardim das ovelhas; roupinha do Linu: a húgva. 5 artigos graduados (o skerpikjøt, a Ólavsøka, a dança em roda, os papagaios-do-mar de Mykines e a ortografia de Hammershaimb). O feroês não tem voz neural livre nem gravações no Lingua Libre: o som vem da voz do aparelho, quando há.
 
 ## O que tem no estoniano
 
 - 4.168 palavras (com o genitivo e o partitivo na tradução), 15 unidades, 40 tópicos de gramática (as três durações, os 14 casos, a gradação, o partitivo, os empréstimos alemães, a reforma de Aavik, o Kalevipoeg e Koidula), 45 histórias (de Tallinn a Tartu, Saaremaa, Kihnu, Pärnu, Narva e o pântano de Soomaa), 54 falsos amigos, 120 etimologias, 8 sotaques e línguas (as ilhas, o nordeste, o võro e o seto, o russo e o sueco da costa).
-- **Sem gênero gramatical** (o palácio explica que «tema» é ele e ela); **IPA** de 11.299 formas com as três durações (curta, longa e sobrelonga); roupinha do Linu: a tanu.
+- **Sem gênero gramatical** (o palácio explica que «tema» é ele e ela); **IPA** de 11.299 formas com as três durações (curta, longa e sobrelonga); roupinha do Linu: a tanu. 5 artigos graduados (o Festival da Canção, a sauna de fumaça de Võromaa, a ilha de Kihnu, a Revolução Cantada e a Estônia digital).
 
 ## O que tem no russo
 
