@@ -2,6 +2,8 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { EXPEDITION_PLACES, isoWeek, STOPS_PER_EXPEDITION, weeklyStops } from './expedicoes';
+import { ISO_3166_2 } from './iso-3166-2';
+import { WORLD } from './mapa-mundi';
 
 test('expedições: toda parada tem a região no mapa do país (senão ninguém acerta)', () => {
   for (const [lang, places] of Object.entries(EXPEDITION_PLACES)) {
@@ -25,4 +27,12 @@ test('expedições: a semana ISO e as 3 paradas da semana, sempre as mesmas', ()
   assert.deepEqual(weeklyStops('ro', '2026-39'), a, 'mesma semana, mesmas paradas');
   assert.notDeepEqual(weeklyStops('ro', '2026-40').map((p) => p.city), a.map((p) => p.city));
   assert.deepEqual(weeklyStops('xx', '2026-39'), []);
+});
+
+test('expedições: o 1º código de cada parada tem nome (a tela mostra o nome da região por ele)', () => {
+  for (const [lang, places] of Object.entries(EXPEDITION_PLACES))
+    for (const p of places) {
+      const iso2 = WORLD.find((c) => c.iso === p.country)?.iso2 ?? '';
+      assert.ok(ISO_3166_2[iso2]?.some(([c]) => c === p.codes[0]), `${lang}: ${p.cityPt} (${p.codes[0]}) sem nome na lista ISO 3166-2`);
+    }
 });
