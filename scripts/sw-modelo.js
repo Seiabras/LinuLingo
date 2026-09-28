@@ -95,6 +95,13 @@ if (typeof window === 'undefined') {
       return;
     }
 
+    // a página do VLibras fica sem isolamento: isolada, o navegador bloquearia os arquivos do avatar,
+    // que vêm de vlibras.gov.br (ela é aberta numa janela própria, fora do app)
+    if (r.mode === 'navigate' && url.pathname.endsWith('/vlibras.html')) {
+      event.respondWith(fetch(request).catch(() => caches.match(url.pathname).then((res) => res ?? Response.error())));
+      return;
+    }
+
     // páginas: primeiro a rede (a versão mais nova); sem internet, ou com a rede travada, o índice guardado
     if (r.mode === 'navigate') {
       const index = BASE + 'index.html';
@@ -137,6 +144,26 @@ if (typeof window === 'undefined') {
     );
   });
 } else {
+  // Rede de segurança da primeira visita: quando o service worker assume e a página recarrega, o
+  // navegador às vezes cancela o pedido do código do app (net::ERR_ABORTED) e não tenta de novo — a
+  // página fica só com o esqueleto, sem o app. Se o app não montou 4 s depois de a página carregar
+  // (o «load» só vem depois de o código ter rodado), recarrega — no máximo duas vezes seguidas.
+  window.addEventListener('load', () =>
+    setTimeout(() => {
+      const KEY = 'linulingo-montou';
+      try {
+        const root = document.getElementById('root');
+        if (!root || root.children.length) return sessionStorage.removeItem(KEY);
+        const tries = Number(sessionStorage.getItem(KEY) || 0);
+        if (tries >= 2) return;
+        sessionStorage.setItem(KEY, String(tries + 1));
+      } catch {
+        return;
+      }
+      window.location.reload();
+    }, 4000),
+  );
+
   (() => {
     const n = navigator;
     if (!n.serviceWorker) return;

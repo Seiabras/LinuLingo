@@ -231,6 +231,11 @@ export interface Accent {
   subdivisions?: string[];
   /** Variante do idioma a que pertence (código de LanguageVariant, ex.: 'es-ES') */
   variant?: string;
+  /**
+   * O sotaque é a própria variante (o sueco da Finlândia, o islandês do Canadá): em vez de aparecer
+   * duas vezes no seletor, ele entra nos detalhes da variante, com a pronúncia, o mapa e as gravações.
+   */
+  sameAsVariant?: string;
   /** Voz para os exemplos, se o aparelho tiver (ex.: 'es-AR'); sem ela, a do idioma */
   speechLocale?: string;
   /** IPA com a pronúncia deste sotaque, quando for diferente da variante (ex.: o seseo andaluz) */

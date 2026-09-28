@@ -3,7 +3,7 @@ import { Pressable, Text, View } from 'react-native';
 import { router } from 'expo-router';
 import Svg, { Circle, Path, Rect } from 'react-native-svg';
 import { Volume2 } from 'lucide-react-native';
-import { Button, Card, Chip, SpeakButton } from '@/components/ui';
+import { Button, Card, Chip, InfoLabel, SpeakButton } from '@/components/ui';
 import { useApp } from '@/services/app-state';
 import { useIsDark } from '@/services/theme';
 import { WORLD } from '@/data/mapa-mundi';
@@ -14,7 +14,7 @@ import { playClip } from '@/services/speech';
 import { ACCENT_COMPARE, ACCENT_VOICES } from '@/data/audio-index';
 import type { Accent, AccentVoice } from '@/data/types';
 import { VariantDetails } from './VariantPanel';
-import { KIND } from '@/services/variedade';
+import { KIND, VARIETY_INFO } from '@/services/variedade';
 import { nomeIdioma } from '@/services/idioma-nome';
 
 const ACCENT_COLOR = '#F59E0B';
@@ -29,7 +29,8 @@ export function VarietyPicker({ onOwnLanguages }: { onOwnLanguages?: () => void 
   const { pack, variant, setVariant, accent, setAccent } = useApp();
   const variants = pack.variants ?? [];
   // as línguas próprias (o sámi, o sardo…) não são jeitos de falar o idioma: têm uma aba só delas
-  const accents = (pack.accents ?? []).filter((a) => a.kind !== 'língua');
+  // os sotaques que são a própria variante (o sueco da Finlândia) aparecem dentro dela, não duas vezes
+  const accents = (pack.accents ?? []).filter((a) => a.kind !== 'língua' && !a.sameAsVariant);
   const own = (pack.accents ?? []).filter((a) => a.kind === 'língua');
   if (variants.length < 2 && !accents.length) return null;
   const v = variants.find((x) => x.code === variant) ?? variants[0];
@@ -38,7 +39,11 @@ export function VarietyPicker({ onOwnLanguages }: { onOwnLanguages?: () => void 
     const c = WORLD.find((w) => w.iso === iso);
     return c ? flagOf(c.iso2) : '';
   };
-  const chosenName = accent ? accent.name : v ? v.name : `${pack.name} padrão`;
+  // o sotaque escolhido que é a própria variante conta como a variante escolhida
+  const accentAsVariant = accent?.sameAsVariant ? variants.find((x) => x.code === accent.sameAsVariant) : undefined;
+  const shown = accentAsVariant ?? v;
+  const inside = shown ? (pack.accents ?? []).find((a) => a.sameAsVariant === shown.code) : undefined;
+  const chosenName = accent && !accentAsVariant ? accent.name : shown ? shown.name : `${pack.name} padrão`;
 
   return (
     <View className="gap-3">
@@ -46,13 +51,13 @@ export function VarietyPicker({ onOwnLanguages }: { onOwnLanguages?: () => void 
         Escolha o que estudar: {variants.length >= 2 ? 'uma variante nacional, ' : ''}um sotaque{groups.some(([k]) => k === 'dialeto') ? ' ou um dialeto' : ''}. A voz e a pronúncia
         (IPA) do app passam a seguir a escolha, e cada um tem o seu treino.
       </Text>
-      <PickerRow label={variants.length >= 2 ? 'Variantes' : 'Padrão'}>
+      <PickerRow label={variants.length >= 2 ? 'Variantes' : 'Padrão'} info={variants.length >= 2 ? VARIETY_INFO.variante : VARIETY_INFO.padrao}>
         {variants.length >= 2 ? (
           variants.map((x) => (
             <PickChip
               key={x.code}
               label={`${x.flag} ${x.name}`}
-              on={!accent && x.code === v?.code}
+              on={(!accent || !!accentAsVariant) && x.code === shown?.code}
               onPress={() => {
                 setAccent(null);
                 setVariant(x.code);
@@ -64,7 +69,7 @@ export function VarietyPicker({ onOwnLanguages }: { onOwnLanguages?: () => void 
         )}
       </PickerRow>
       {groups.map(([k, list]) => (
-        <PickerRow key={k} label={KIND[k].plural}>
+        <PickerRow key={k} label={KIND[k].plural} info={VARIETY_INFO[k]}>
           {list.map((a) => (
             <PickChip key={a.id} label={`${flagFor(a.country)} ${a.name}`} on={accent?.id === a.id} onPress={() => setAccent(a.id)} />
           ))}
@@ -74,7 +79,7 @@ export function VarietyPicker({ onOwnLanguages }: { onOwnLanguages?: () => void 
         <Pressable accessibilityRole="button" onPress={onOwnLanguages} className="flex-row items-center gap-3 rounded-2xl bg-emerald-50 p-3 active:opacity-80 dark:bg-emerald-950/40">
           <Text className="text-2xl">🗣️</Text>
           <Text className="flex-1 text-sm leading-5 text-slate-800 dark:text-slate-200">
-            <Text className="font-extrabold">Línguas próprias de lá: </Text>
+            <Text className="font-extrabold">Línguas próprias de lá (outras línguas, não jeitos de falar o {nomeIdioma(pack.name)}): </Text>
             {own.map((a) => a.name.replace(/ \(.*\)$/, '')).join(', ')}. Não são sotaques do {nomeIdioma(pack.name)}: ficam na aba delas.
           </Text>
           <Text className="text-lg text-slate-400">›</Text>
@@ -83,16 +88,28 @@ export function VarietyPicker({ onOwnLanguages }: { onOwnLanguages?: () => void 
       <View className="flex-row flex-wrap items-center gap-2">
         <Chip label={`✓ estudando: ${chosenName}`} tone="green" />
       </View>
-      {accent ? <AccentDetails a={accent} /> : v ? <VariantDetails v={v} /> : null}
+      {accent && !accentAsVariant ? (
+        <AccentDetails a={accent} />
+      ) : shown ? (
+        <>
+          <VariantDetails v={shown} />
+          {inside && (
+            <>
+              <Text className="mt-1 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">🗣️ Como se fala lá</Text>
+              <AccentDetails a={inside} embedded />
+            </>
+          )}
+        </>
+      ) : null}
       <CompareAccents />
     </View>
   );
 }
 
-function PickerRow({ label, children }: { label: string; children: React.ReactNode }) {
+function PickerRow({ label, info, children }: { label: string; info: string; children: React.ReactNode }) {
   return (
     <View className="gap-1.5">
-      <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">{label}</Text>
+      <InfoLabel label={label} info={info} />
       <View className="flex-row flex-wrap gap-2">{children}</View>
     </View>
   );
@@ -107,15 +124,16 @@ function PickChip({ label, on, onPress }: { label: string; on: boolean; onPress:
       aria-checked={on}
       accessibilityLabel={`Estudar: ${label}`}
       onPress={onPress}
-      className={`rounded-full border-2 px-3 py-1.5 ${on ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
+      // nomes longos (Vestfirskur einhljóðaframburður) quebram a linha em vez de sair da tela
+      className={`max-w-full rounded-2xl border-2 px-3 py-1.5 ${on ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
     >
-      <Text className={`font-bold ${on ? 'text-conecta' : 'text-slate-600 dark:text-slate-300'}`}>{label}</Text>
+      <Text className={`shrink font-bold ${on ? 'text-conecta' : 'text-slate-600 dark:text-slate-300'}`}>{label}</Text>
     </Pressable>
   );
 }
 
 /** Um sotaque, dialeto ou língua: onde se fala, como soa, frases, palavras, gente de lá e o treino. */
-export function AccentDetails({ a }: { a: Accent }) {
+export function AccentDetails({ a, embedded }: { a: Accent; embedded?: boolean }) {
   const { pack, setAccent } = useApp();
   const locale = a.speechLocale ?? pack.speechLocale;
   return (
@@ -128,7 +146,8 @@ export function AccentDetails({ a }: { a: Accent }) {
       <Text className="text-xs text-slate-500 dark:text-slate-400">{a.region}</Text>
       <View className="flex-row flex-wrap gap-2">
         <Button title="🎯 Treinar" variant="success" onPress={() => router.push({ pathname: '/sotaque', params: { id: a.id } })} />
-        <Button title="Voltar ao padrão" variant="ghost" onPress={() => setAccent(null)} />
+        {/* dentro da variante (o sotaque é ela mesma), «voltar ao padrão» não mudaria nada */}
+        {!embedded && <Button title="Voltar ao padrão" variant="ghost" onPress={() => setAccent(null)} />}
       </View>
       {a.kind === 'língua' && (
         <Text className="text-sm leading-5 text-emerald-800 dark:text-emerald-300">

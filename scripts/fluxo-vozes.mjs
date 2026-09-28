@@ -95,7 +95,7 @@ await waitText('Ainda não há no Lingua Libre', 60000).then(() => ok('cubano: a
 // 4. créditos com o lugar
 await page.goto(BASE + '/creditos', { waitUntil: 'load' });
 await waitText('Créditos dos áudios', 60000);
-await page.getByPlaceholder('Buscar palavra, autor ou lugar…').fill('Caracas');
+await page.getByPlaceholder(/^Buscar palavra/).fill('Caracas');
 await page.waitForTimeout(800);
 (await body()).includes('🗺️ Caracas') ? ok('créditos mostram o lugar de quem gravou') : fail('créditos sem o lugar');
 console.log(errors.length ? `⚠️  erros:\n   ${[...new Set(errors)].join('\n   ')}` : '✅ sem erros no console');

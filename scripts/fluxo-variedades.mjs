@@ -55,7 +55,7 @@ await page.screenshot({ path: `${OUT}/variedades-${device}-${scheme}-1-sotaque.p
 await page.getByRole('button', { name: 'Voltar ao padrão' }).first().click();
 await page.waitForTimeout(500);
 (await page.getByLabel(/^Estudar: .*Italiano padrão$/).getAttribute('aria-checked')) === 'true' ? ok('«Voltar ao padrão» volta ao italiano padrão') : fail('não voltou ao padrão');
-await page.getByText('Línguas próprias de lá:', { exact: false }).first().click();
+await page.getByText(/Línguas próprias de lá/).first().click();
 await waitText('Onde se fala italiano (o que você estuda)').then(() => ok('o atalho leva à aba «Línguas próprias», com o napolitano'), () => fail('atalho das línguas próprias'));
 (await body()).includes('Napolitano') ? ok('napolitano na aba das línguas próprias') : fail('napolitano fora da aba');
 await page.getByRole('tab', { name: '🏛️ Cultura' }).click();

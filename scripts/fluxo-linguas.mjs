@@ -41,10 +41,10 @@ await page.waitForTimeout(800);
 
 // 1. a aba Cultura: o sámi não está mais entre os sotaques
 await page.goto(BASE + '/cultura', { waitUntil: 'load' });
-await waitText(/Línguas próprias de lá:/);
+await waitText(/Línguas próprias de lá/);
 check((await page.getByLabel(/^Estudar: .*Meänkieli/).count()) === 0, 'o meänkieli saiu do seletor de sotaques do sueco');
 check((await page.getByLabel(/^Estudar: .*Sámi/).count()) === 0, 'o sámi também');
-await page.getByText('Línguas próprias de lá:', { exact: false }).first().click();
+await page.getByText(/Línguas próprias de lá/).first().click();
 await waitText(/Onde se fala sueco \(o que você estuda\)/);
 check(page.url().includes('aba=proprias'), 'o atalho abre a aba «Línguas próprias» (/cultura?aba=proprias)');
 await shot('proprias');

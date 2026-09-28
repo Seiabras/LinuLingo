@@ -234,6 +234,7 @@ export const ACCENTS_FR: Accent[] = [
   },
   {
     id: 'fr-belge',
+    sameAsVariant: 'fr-BE',
     name: 'Belga',
     kind: 'sotaque',
     region: 'Valônia e Bruxelas, na Bélgica',
@@ -266,6 +267,7 @@ export const ACCENTS_FR: Accent[] = [
   },
   {
     id: 'fr-suisse',
+    sameAsVariant: 'fr-CH',
     name: 'Suíço (romando)',
     kind: 'sotaque',
     region: 'Suíça romanda: Genebra, Vaud, Neuchâtel, Jura, Friburgo e Valais',
