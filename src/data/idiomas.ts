@@ -28,18 +28,31 @@ import { INGLES } from './en';
 import { INDONESIO } from './id';
 import { VIETNAMITA } from './vi';
 import { IORUBA } from './yo';
+import { LADINO_DOLOMITAS } from './lld';
+import { ALEMAO } from './de';
+import { NEERLANDES } from './nl';
+import { AFRICANER } from './af';
+import { POLONES } from './pl';
+import { TCHECO } from './cs';
+import { ESLOVACO } from './sk';
+import { UCRANIANO } from './uk';
 import { JAPONES } from './ja';
 import { COREANO } from './ko';
 
 /** Idiomas com conteúdo pronto. */
 export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES, fr: FRANCES, ca: CATALAO, is: ISLANDES, fi: FINLANDES, et: ESTONIANO, fo: FEROES, lt: LITUANO, lv: LETAO, sw: SUAILI, ja: JAPONES, ko: COREANO,
   // incompletos (só o A1 por enquanto; ver o campo `incomplete` de cada pacote)
-  gl: GALEGO, ast: ASTURIANO, oc: OCCITANO, sc: SARDO, rm: ROMANCHE, fur: FRIULANO, la: LATIM, lad: JUDEU_ESPANHOL, en: INGLES, id: INDONESIO, vi: VIETNAMITA, yo: IORUBA };
+  gl: GALEGO, ast: ASTURIANO, oc: OCCITANO, sc: SARDO, rm: ROMANCHE, fur: FRIULANO, la: LATIM, lad: JUDEU_ESPANHOL, en: INGLES, id: INDONESIO, vi: VIETNAMITA, yo: IORUBA,
+  lld: LADINO_DOLOMITAS, de: ALEMAO, nl: NEERLANDES, af: AFRICANER, pl: POLONES, cs: TCHECO, sk: ESLOVACO, uk: UCRANIANO };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
   ROMENO,
   RUSSO,
+  UCRANIANO,
+  POLONES,
+  TCHECO,
+  ESLOVACO,
   ESPANHOL,
   ITALIANO,
   PORTUGUES,
@@ -51,6 +64,7 @@ export const LANGUAGES: LanguageInfo[] = [
   SARDO,
   ROMANCHE,
   FRIULANO,
+  LADINO_DOLOMITAS,
   LATIM,
   JUDEU_ESPANHOL,
   SUECO,
@@ -58,6 +72,9 @@ export const LANGUAGES: LanguageInfo[] = [
   DINAMARQUES,
   ISLANDES,
   INGLES,
+  ALEMAO,
+  NEERLANDES,
+  AFRICANER,
   FINLANDES,
   FEROES,
   ESTONIANO,

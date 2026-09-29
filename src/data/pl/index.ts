@@ -20,7 +20,7 @@ export const POLONES: LanguagePack = {
   available: true,
   incomplete: {
     until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, ~89 palavras, 4 tópicos de gramática, 2 histórias), no polonês padrão e ainda sem transcrição fonética. Da A2.1 até o C2 chega nas próximas atualizações.',
+    note: 'Só o nível A1 por enquanto (unidades 1 e 2, ~89 palavras, 4 tópicos de gramática, 2 histórias), no polonês padrão. Da A2.1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_PL,
   units: UNITS_PL,
