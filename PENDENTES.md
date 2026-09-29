@@ -25,7 +25,7 @@ O trabalho foi interrompido por falta de créditos. Tudo está comitado. Este ar
 ## Prontos, mas ainda não registrados
 Passam no `checkpack`, mas falta revisar o conteúdo, pôr em `PACKS` e em `LANGUAGES` no grupo da
 família (em `src/data/idiomas.ts`) e rodar o roteiro:
-- **lb** luxemburguês (LUXEMBURGUES?), **bg** búlgaro, **sr** sérvio, **hr** croata,
+- **lb** luxemburguês (LUXEMBURGUES), **bg** búlgaro, **sr** sérvio, **hr** croata,
   **sl** esloveno, **eu** basco.
 - Os nomes das exportações estão no `index.ts` de cada pasta.
 
