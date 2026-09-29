@@ -1,0 +1,107 @@
+import { buildVocab, type VocabRow } from '../types';
+
+/**
+ * Vocabulário do eslovaco padrão (spisovná slovenčina, ortografia das Regras da Ortografia
+ * Eslovaca). Idioma incompleto: por enquanto só o suficiente para o nível A1 (unidades 1 e 2) —
+ * ver o campo `incomplete` do pacote.
+ */
+export const ROWS: VocabRow[] = [
+  // ── Expressões ──
+  ['ahoj', 'oi, olá (informal; também serve de tchau)', 'interjeição', 'Expressões', '👋', 'Ahoj! Ako sa máš?'],
+  ['dobrý deň', 'bom dia; boa tarde (formal, durante o dia)', 'interjeição', 'Expressões', '🌅', 'Dobrý deň! Ako sa máte?'],
+  ['dobrý večer', 'boa noite (ao chegar)', 'interjeição', 'Expressões', '🌇', 'Dobrý večer! Ako sa máte?'],
+  ['dobrú noc', 'boa noite (ao se despedir ou ir dormir)', 'interjeição', 'Expressões', '🌙', 'Dobrú noc, mami!'],
+  ['dovidenia', 'tchau, até logo (formal)', 'interjeição', 'Expressões', '👋', 'Dovidenia a ďakujem!'],
+  ['ďakujem', 'obrigado', 'interjeição', 'Expressões', '🙏', 'Ďakujem veľmi pekne!'],
+  ['prosím', 'por favor; de nada', 'interjeição', 'Expressões', '🙏', 'Kávu, prosím.'],
+  ['prepáčte', 'com licença, desculpe (formal)', 'interjeição', 'Expressões', '🙏', 'Prepáčte, kde je stanica?'],
+  ['ako sa máš?', 'como vai? (informal)', 'expressão', 'Expressões', '🙂', 'Ahoj, Zuzka! Ako sa máš?'],
+  // ── Essenciais ──
+  ['áno', 'sim (na fala, também «hej»)', 'partícula', 'Essenciais', '👍', 'Áno, prosím.'],
+  ['nie', 'não', 'partícula', 'Essenciais', '👎', 'Nie, ďakujem.'],
+  ['a', 'e', 'conjunção', 'Essenciais', null, 'Chlieb a syr.'],
+  ['alebo', 'ou', 'conjunção', 'Essenciais', null, 'Káva alebo čaj?'],
+  ['veľmi', 'muito', 'advérbio', 'Essenciais', null, 'Je to veľmi dobré.'],
+  ['tiež', 'também', 'advérbio', 'Essenciais', null, 'Ja tiež hovorím po slovensky.'],
+  ['dobre', 'bem', 'advérbio', 'Essenciais', '👌', 'Dobre, ďakujem. A ty?'],
+  ['čo', 'o que, que', 'pronome', 'Essenciais', '❓', 'Čo je to?'],
+  ['kde', 'onde', 'advérbio', 'Essenciais', '❓', 'Kde bývaš?'],
+  ['ako', 'como', 'advérbio', 'Essenciais', '❓', 'Ako sa voláš?'],
+  ['odkiaľ', 'de onde', 'advérbio', 'Essenciais', '❓', 'Odkiaľ si?'],
+  ['mesto', 'cidade', 'substantivo', 'Essenciais', '🏙️', 'Bratislava je krásne mesto.', 'n'],
+  ['dom', 'casa', 'substantivo', 'Casa', '🏠', 'Môj dom je malý.', 'm'],
+  ['pes', 'cachorro', 'substantivo', 'Animais', '🐕', 'Pes spí.', 'm'],
+  ['mačka', 'gato', 'substantivo', 'Animais', '🐈', 'Mačka je čierna.', 'f'],
+  ['dobrý', 'bom (fem. dobrá, neutro dobré)', 'adjetivo', 'Descrições', '👍', 'Chlieb je dobrý.'],
+  ['veľký', 'grande (fem. veľká, neutro veľké)', 'adjetivo', 'Descrições', '📏', 'Moja rodina je veľká.'],
+  ['malý', 'pequeno (fem. malá, neutro malé)', 'adjetivo', 'Descrições', '📏', 'Mačka je malá.'],
+  // ── Pessoas ──
+  ['ja', 'eu', 'pronome', 'Pessoas', '🙋', 'Ja sa volám Anna.'],
+  ['ty', 'tu, você', 'pronome', 'Pessoas', '🫵', 'A ty? Ako sa voláš?'],
+  ['on', 'ele', 'pronome', 'Pessoas', '👨', 'On je z Košíc.'],
+  ['ona', 'ela', 'pronome', 'Pessoas', '👩', 'Ona je z Bratislavy.'],
+  ['my', 'nós', 'pronome', 'Pessoas', '🙌', 'My hovoríme po slovensky.'],
+  ['vy', 'vocês; o senhor, a senhora (formal)', 'pronome', 'Pessoas', '🫵', 'Odkiaľ ste vy?'],
+  ['oni', 'eles', 'pronome', 'Pessoas', '👥', 'Oni bývajú v Bratislave.'],
+  ['meno', 'nome', 'substantivo', 'Pessoas', '🏷️', 'Moje meno je Linu.', 'n'],
+  ['kamarát', 'amigo', 'substantivo', 'Pessoas', '🧑‍🤝‍🧑', 'To je môj kamarát.', 'm'],
+  ['kamarátka', 'amiga', 'substantivo', 'Pessoas', '🧑‍🤝‍🧑', 'To je moja kamarátka.', 'f'],
+  // ── Verbos-chave ──
+  ['byť', 'ser, estar (som, si, je)', 'verbo', 'Verbos-chave', '🧑', 'Som zo São Paula.'],
+  ['mať', 'ter (mám, máš, má)', 'verbo', 'Verbos-chave', '🤲', 'Mám brata.'],
+  ['volať sa', 'chamar-se (volám sa, voláš sa)', 'verbo', 'Verbos-chave', '🏷️', 'Volám sa Anna Nováková.'],
+  ['hovoriť', 'falar (hovorím, hovoríš)', 'verbo', 'Verbos-chave', '🗣️', 'Hovorím trochu po slovensky.'],
+  ['bývať', 'morar (bývam, bývaš)', 'verbo', 'Verbos-chave', '🏠', 'Bývam v Košiciach.'],
+  ['ísť', 'ir (a pé: idem, ideš)', 'verbo', 'Verbos-chave', '🚶', 'Idem domov.'],
+  ['jesť', 'comer (jem, ješ; perf. zjesť)', 'verbo', 'Verbos-chave', '🍽️', 'Jem chlieb so syrom.'],
+  ['piť', 'beber (pijem, piješ; perf. vypiť)', 'verbo', 'Verbos-chave', '🥤', 'Pijem vodu.'],
+  ['mať rád', 'gostar (lit. «ter querido»: mám rád, uma mulher diz «mám rada»)', 'expressão', 'Verbos-chave', '❤️', 'Mám rád kávu.'],
+  ['vedieť', 'saber (viem, vieš)', 'verbo', 'Verbos-chave', '🧠', 'Neviem.'],
+  ['chcieť', 'querer (chcem, chceš)', 'verbo', 'Verbos-chave', '💭', 'Chcem sa učiť slovenčinu.'],
+  ['učiť sa', 'aprender, estudar (učím sa; perf. naučiť sa)', 'verbo', 'Verbos-chave', '📚', 'Učím sa slovenčinu.'],
+  // ── Pessoas (família) ──
+  ['rodina', 'família', 'substantivo', 'Pessoas', '👪', 'Moja rodina je veľká.', 'f'],
+  ['mama', 'mãe', 'substantivo', 'Pessoas', '👩', 'Moja mama sa volá Eva.', 'f'],
+  ['otec', 'pai', 'substantivo', 'Pessoas', '👨', 'Môj otec je z Košíc.', 'm'],
+  ['brat', 'irmão', 'substantivo', 'Pessoas', '🧑', 'Môj brat má desať rokov.', 'm'],
+  ['sestra', 'irmã', 'substantivo', 'Pessoas', '🧑', 'Mám sestru.', 'f'],
+  ['syn', 'filho', 'substantivo', 'Pessoas', '🧒', 'Ich syn je malý.', 'm'],
+  ['dcéra', 'filha', 'substantivo', 'Pessoas', '🧒', 'Naša dcéra má rada mačky.', 'f'],
+  // ── Alimentação ──
+  ['voda', 'água', 'substantivo', 'Alimentação e Restaurantes', '💧', 'Vodu, prosím.', 'f'],
+  ['chlieb', 'pão', 'substantivo', 'Alimentação e Restaurantes', '🍞', 'Chlieb je čerstvý.', 'm'],
+  ['mlieko', 'leite', 'substantivo', 'Alimentação e Restaurantes', '🥛', 'Mlieko je biele.', 'n'],
+  ['syr', 'queijo', 'substantivo', 'Alimentação e Restaurantes', '🧀', 'Mám rád syr.', 'm'],
+  ['káva', 'café', 'substantivo', 'Alimentação e Restaurantes', '☕', 'Kávu, prosím.', 'f'],
+  ['víno', 'vinho', 'substantivo', 'Alimentação e Restaurantes', '🍷', 'Červené víno, prosím.', 'n'],
+  // ── Números ──
+  ['jeden', 'um (fem. jedna, neutro jedno)', 'numeral', 'Números', '1️⃣', 'Jeden chlieb, prosím.'],
+  ['dva', 'dois (fem. e neutro dve)', 'numeral', 'Números', '2️⃣', 'Dva čaje, prosím.'],
+  ['tri', 'três', 'numeral', 'Números', '3️⃣', 'Tri kávy, prosím.'],
+  ['štyri', 'quatro', 'numeral', 'Números', '4️⃣', 'Mačka má štyri nohy.'],
+  ['päť', 'cinco', 'numeral', 'Números', '5️⃣', 'Päť dní.'],
+  ['šesť', 'seis', 'numeral', 'Números', '6️⃣', 'Šesť rokov.'],
+  ['sedem', 'sete', 'numeral', 'Números', '7️⃣', 'Týždeň má sedem dní.'],
+  ['osem', 'oito', 'numeral', 'Números', '8️⃣', 'Osem hodín.'],
+  ['deväť', 'nove', 'numeral', 'Números', '9️⃣', 'Deväť rokov.'],
+  ['desať', 'dez', 'numeral', 'Números', '🔟', 'Desať eur.'],
+  // ── Tempo ──
+  ['dnes', 'hoje', 'advérbio', 'Tempo', '📅', 'Dnes je pondelok.'],
+  ['zajtra', 'amanhã', 'advérbio', 'Tempo', '📅', 'Zajtra je sobota.'],
+  ['včera', 'ontem', 'advérbio', 'Tempo', '📅', 'Včera, dnes a zajtra.'],
+  ['pondelok', 'segunda-feira', 'substantivo', 'Tempo', '📅', 'Dnes je pondelok.', 'm'],
+  ['utorok', 'terça-feira', 'substantivo', 'Tempo', '📅', 'Dnes je utorok.', 'm'],
+  ['streda', 'quarta-feira', 'substantivo', 'Tempo', '📅', 'Dnes je streda.', 'f'],
+  ['štvrtok', 'quinta-feira', 'substantivo', 'Tempo', '📅', 'Dnes je štvrtok.', 'm'],
+  ['piatok', 'sexta-feira', 'substantivo', 'Tempo', '📅', 'Dnes je piatok.', 'm'],
+  ['sobota', 'sábado', 'substantivo', 'Tempo', '📅', 'Dnes je sobota.', 'f'],
+  ['nedeľa', 'domingo', 'substantivo', 'Tempo', '📅', 'Dnes je nedeľa.', 'f'],
+  // ── Cores ──
+  ['červený', 'vermelho', 'adjetivo', 'Cores', '🔴', 'Víno je červené.'],
+  ['modrý', 'azul', 'adjetivo', 'Cores', '🔵', 'Obloha je modrá.'],
+  ['zelený', 'verde', 'adjetivo', 'Cores', '🟢', 'Tráva je zelená.'],
+  ['biely', 'branco', 'adjetivo', 'Cores', '⚪', 'Mlieko je biele.'],
+  ['čierny', 'preto', 'adjetivo', 'Cores', '⚫', 'Mačka je čierna.'],
+];
+
+export const VOCAB_SK = buildVocab('sk', ROWS);

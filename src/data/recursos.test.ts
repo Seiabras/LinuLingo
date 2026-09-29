@@ -1,14 +1,15 @@
 /// <reference types="node" />
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { LANGUAGES } from './idiomas';
+import { LANGUAGES, PACKS } from './idiomas';
 import { RESOURCES } from './recursos';
 import { MEDIA_LABEL } from './recursos/tipos';
 
 const CEFR = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 
 test('provas e dicas: todo idioma da lista tem a sua página', () => {
-  for (const l of LANGUAGES) assert.ok(RESOURCES[l.code], `sem provas e dicas: ${l.code}`);
+  // os idiomas em construção (só o A1) podem ainda não ter a página; o aviso de incompleto diz isso
+  for (const l of LANGUAGES) if (!PACKS[l.code]?.incomplete) assert.ok(RESOURCES[l.code], `sem provas e dicas: ${l.code}`);
   for (const [code, r] of Object.entries(RESOURCES)) assert.equal(r.lang, code);
 });
 

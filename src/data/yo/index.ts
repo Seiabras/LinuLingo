@@ -25,6 +25,10 @@ export const IORUBA: LanguagePack = {
   },
   speechLocale: 'yo-NG',
   available: true,
+  incomplete: {
+    until: 'A2.1',
+    note: 'Trilha até o A2.1 (3 unidades, 270 palavras, 7 histórias) por enquanto. Já há 18 tópicos de gramática escritos além da trilha — entram nas próximas unidades, do A2.2 em diante.',
+  },
   vocab: VOCAB_YO,
   units: UNITS_YO,
   etymology: ETYMOLOGY_YO,
@@ -34,7 +38,8 @@ export const IORUBA: LanguagePack = {
   variants: VARIANTS_YO.length ? VARIANTS_YO : undefined,
   accents: ACCENTS_YO,
   grammar: GRAMMAR_YO,
-  linguistics: LINGUISTICS_YO,
+  // ainda vazio: os tópicos de gramática (18) cobrem além das 3 unidades já montadas na trilha
+  linguistics: LINGUISTICS_YO.length ? LINGUISTICS_YO : undefined,
   journalPrompts: JOURNAL_PROMPTS_YO,
   shadowing: SHADOWING_YO,
   ipa: toIpaYo,

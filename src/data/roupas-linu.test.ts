@@ -13,7 +13,8 @@ test('roupinhas: ids únicos, com país, região, cultura e texto; de um idioma 
     assert.ok(WORLD.some((c) => c.iso2 === o.country), `${o.id}: país ${o.country}`);
     assert.ok(o.name && o.region && o.culture && o.about.length > 20, o.id);
   }
-  for (const code of Object.keys(PACKS)) assert.ok(ROUPAS_LINU.some((o) => o.lang === code), `${code} tem pelo menos uma roupinha`);
+  // os idiomas em construção (só o A1) ganham a roupinha quando a trilha crescer
+  for (const code of Object.keys(PACKS)) if (!PACKS[code].incomplete) assert.ok(ROUPAS_LINU.some((o) => o.lang === code), `${code} tem pelo menos uma roupinha`);
 });
 
 test('roupinhas: as de cada idioma vêm com as lições (1, 5, 10…); as da loja, não', () => {

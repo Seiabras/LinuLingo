@@ -8,8 +8,9 @@ import { OfflineCard } from '@/components/OfflineCard';
 import { BackupCard } from '@/components/BackupCard';
 import { OutfitsCard } from '@/components/OutfitsCard';
 import { useApp } from '@/services/app-state';
+import { missingParts } from '@/services/incompleto';
 import { completedLessons, resetProgress, updateUser, vocabStats, xpByDay } from '@/database/queries';
-import { groupByLineage, isAvailable } from '@/data/idiomas';
+import { groupByLineage, isAvailable, PACKS } from '@/data/idiomas';
 import type { ThemePref } from '@/services/theme';
 
 const WEEKDAY = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'];
@@ -150,6 +151,7 @@ export default function ProfileScreen() {
                 {langs.map((l) => {
                   const available = isAvailable(l.code);
                   const active = l.code === pack.code;
+                  const incomplete = available ? PACKS[l.code].incomplete : undefined;
                   return (
                     <Pressable
                       key={l.code}
@@ -172,11 +174,19 @@ export default function ProfileScreen() {
                         <Text className="text-xs text-slate-500 dark:text-slate-400">
                           {l.lineage.branches.join(' › ')} · {l.lineage.region}
                         </Text>
+                        {incomplete && (
+                          <Text className="mt-0.5 text-xs text-amber-700 dark:text-amber-400">
+                            {incomplete.note}
+                            {missingParts(PACKS[l.code]).length > 0 && ` Ainda falta também: ${missingParts(PACKS[l.code]).join(', ')}.`}
+                          </Text>
+                        )}
                       </View>
                       {switching === l.code ? (
                         <Chip label="preparando…" tone="amber" />
                       ) : active ? (
                         <Chip label="estudando" tone="blue" />
+                      ) : incomplete ? (
+                        <Chip label={`só até ${incomplete.until}`} tone="amber" />
                       ) : (
                         !available && <Chip label="em breve" />
                       )}

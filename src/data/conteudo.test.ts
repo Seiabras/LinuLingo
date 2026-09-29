@@ -4,11 +4,16 @@ import assert from 'node:assert/strict';
 import { PACKS, LANGUAGES, groupByLineage } from './idiomas';
 import { endingIds, reachable } from '../services/stories';
 import { SUBLEVELS } from '../types';
+import type { LanguagePack } from './types';
 
 import { WORLD } from './mapa-mundi';
 import { ISO_3166_2 } from './iso-3166-2';
 import { MAP_LANGUAGES } from './onde-se-fala';
 import { FORMER_COUNTRIES } from './iso-3166-3';
+
+/** Os subníveis que o pacote já tem: todos, ou só até `incomplete.until` nos idiomas em construção. */
+const levelsOf = (pack: LanguagePack) =>
+  pack.incomplete ? SUBLEVELS.slice(0, SUBLEVELS.indexOf(pack.incomplete.until) + 1) : [...SUBLEVELS];
 
 const STORIES_PER_LEVEL: Record<string, number> = { ro: 3, ru: 3, lt: 3, ja: 3, ko: 3 };
 
@@ -94,7 +99,7 @@ for (const pack of Object.values(PACKS)) {
     assert.equal(new Set(pack.stories.map((s) => s.title)).size, pack.stories.length, 'títulos repetidos');
     // meta: 3 histórias por subnível
     const min = STORIES_PER_LEVEL[pack.code] ?? 1;
-    for (const lv of SUBLEVELS) assert.ok(pack.stories.filter((s) => s.level === lv).length >= min, `menos de ${min} histórias em ${lv}`);
+    for (const lv of levelsOf(pack)) assert.ok(pack.stories.filter((s) => s.level === lv).length >= min, `menos de ${min} histórias em ${lv}`);
   });
 
   test(`${pack.code}: cenários têm turnos com sugestões`, () => {
@@ -134,10 +139,10 @@ test('seletor agrupa por família e ramo', () => {
     g['Indo-europeu']['Indo-iraniano'].map((l) => l.code),
     ['hi', 'bn', 'ur', 'mr'],
   );
-  assert.deepEqual(
-    g['Indo-europeu']['Itálico'].map((l) => l.code),
-    ['ro', 'es', 'it', 'pt', 'fr', 'ca'],
-  );
+  // os seis completos primeiro, depois os incompletos (só o A1), na ordem da lista
+  const italico = g['Indo-europeu']['Itálico'].map((l) => l.code);
+  assert.deepEqual(italico.slice(0, 6), ['ro', 'es', 'it', 'pt', 'fr', 'ca']);
+  for (const code of italico.slice(6)) assert.ok(PACKS[code]?.incomplete, `${code}: românico novo sem a marca de incompleto`);
   assert.deepEqual(g['Urálico']['Fínico'].map((l) => l.code).sort(), ['et', 'fi']);
 });
 
@@ -174,10 +179,10 @@ test('regiões do mundo: cada país ou território do mapa em exatamente uma sub
 });
 
 for (const pack of Object.values(PACKS))
-  test(`${pack.code}: trilha com uma unidade por subnível, na ordem do A1.1 ao C2`, () => {
+  test(`${pack.code}: trilha com uma unidade por subnível, na ordem do A1.1 ao C2 (ou até onde o idioma incompleto chegou)`, () => {
     assert.deepEqual(
       pack.units.map((u) => u.level),
-      [...SUBLEVELS],
+      levelsOf(pack),
     );
     for (const u of pack.units) assert.equal(u.cefr, u.level.slice(0, 2), u.id);
   });

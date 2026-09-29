@@ -10,6 +10,8 @@ import { ROWS as L11 } from './vocab-11';
 import { ROWS as L12 } from './vocab-12';
 import { ROWS as L13 } from './vocab-13';
 import { ROWS as L14 } from './vocab-14';
+import { ROWS as L15 } from './vocab-15';
+import { ROWS as L16 } from './vocab-16';
 
 /**
  * Vocabulário: primeiro as palavras da trilha (as mais úteis), depois as das etimologias e dos
@@ -31,5 +33,5 @@ function merge(...lists: VocabRow[][]): VocabRow[] {
 const interleave = (...lists: VocabRow[][]) =>
   Array.from({ length: Math.max(...lists.map((l) => l.length)) }, (_, i) => lists.map((l) => l[i])).flat().filter(Boolean) as VocabRow[];
 
-export const ROWS: VocabRow[] = merge(TRILHA, EXTRAS, interleave(TEMAS_A, TEMAS_B, L06, L09, L10, L11, L12, L13, L14));
+export const ROWS: VocabRow[] = merge(TRILHA, EXTRAS, interleave(TEMAS_A, TEMAS_B, L06, L09, L10, L11, L12, L13, L14, L15, L16));
 export const VOCAB_SW = buildVocab('sw', ROWS);

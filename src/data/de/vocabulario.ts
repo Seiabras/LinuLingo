@@ -1,0 +1,112 @@
+import { buildVocab, type VocabRow } from '../types';
+
+/**
+ * Vocabulário do alemão-padrão (Standarddeutsch), na ortografia reformada em vigor desde 2006
+ * (a do dicionário Duden): todo substantivo com maiúscula, ß depois de vogal longa ou ditongo.
+ * Nos substantivos, a tradução traz o artigo definido (der, die, das), que se aprende junto com a
+ * palavra. Idioma incompleto: por enquanto só o nível A1 (unidades 1 e 2) — ver `incomplete`.
+ */
+export const ROWS: VocabRow[] = [
+  // ── Expressões ──
+  ['hallo', 'oi, olá', 'interjeição', 'Expressões', '👋', "Hallo! Wie geht's?"],
+  ['guten Morgen', 'bom dia (de manhã)', 'interjeição', 'Expressões', '🌅', 'Guten Morgen, Anna!'],
+  ['guten Tag', 'bom dia, boa tarde (cumprimento neutro do dia)', 'interjeição', 'Expressões', '🌞', 'Guten Tag! Ich heiße Paulo.'],
+  ['guten Abend', 'boa noite (ao chegar)', 'interjeição', 'Expressões', '🌇', 'Guten Abend, Herr Weber!'],
+  ['gute Nacht', 'boa noite (ao se despedir ou ir dormir)', 'interjeição', 'Expressões', '🌙', 'Gute Nacht und schlaf gut!'],
+  ['tschüss', 'tchau', 'interjeição', 'Expressões', '👋', 'Tschüss, bis morgen!'],
+  ['auf Wiedersehen', 'até logo, adeus (mais formal)', 'interjeição', 'Expressões', '👋', 'Auf Wiedersehen und danke!'],
+  ['danke', 'obrigado', 'interjeição', 'Expressões', '🙏', 'Danke schön!'],
+  ['bitte', 'por favor; de nada', 'interjeição', 'Expressões', '🙏', 'Einen Kaffee, bitte.'],
+  ['Entschuldigung', 'com licença, desculpe (die Entschuldigung)', 'interjeição', 'Expressões', '🙏', 'Entschuldigung, wo ist der Bahnhof?'],
+  ["wie geht's?", 'como vai?', 'expressão', 'Expressões', '🙂', "Hallo, Anna! Wie geht's?"],
+  // ── Essenciais ──
+  ['ja', 'sim', 'advérbio', 'Essenciais', '👍', 'Ja, gern!'],
+  ['nein', 'não (resposta)', 'advérbio', 'Essenciais', '👎', 'Nein, danke.'],
+  ['nicht', 'não (nega o verbo ou um adjetivo)', 'partícula', 'Essenciais', '🚫', 'Das Haus ist nicht groß.'],
+  ['und', 'e', 'conjunção', 'Essenciais', null, 'Brot und Käse.'],
+  ['oder', 'ou', 'conjunção', 'Essenciais', null, 'Kaffee oder Tee?'],
+  ['sehr', 'muito (antes de adjetivo e advérbio)', 'advérbio', 'Essenciais', null, 'Das ist sehr gut!'],
+  ['auch', 'também', 'advérbio', 'Essenciais', null, 'Ich spreche auch Deutsch.'],
+  ['gern', 'com gosto (ich trinke gern Kaffee = eu gosto de tomar café)', 'advérbio', 'Essenciais', '😊', 'Ich lerne gern Deutsch.'],
+  ['was', 'o que', 'pronome', 'Essenciais', '❓', 'Was ist das?'],
+  ['wo', 'onde', 'advérbio', 'Essenciais', '❓', 'Wo wohnst du?'],
+  ['wie', 'como', 'advérbio', 'Essenciais', '❓', 'Wie heißt du?'],
+  ['woher', 'de onde', 'advérbio', 'Essenciais', '❓', 'Woher kommst du?'],
+  ['wer', 'quem', 'pronome', 'Essenciais', '❓', 'Wer ist das?'],
+  ['Haus', 'casa (das Haus)', 'substantivo', 'Casa', '🏠', 'Mein Haus ist klein.', 'n'],
+  ['Stadt', 'cidade (die Stadt)', 'substantivo', 'Essenciais', '🏙️', 'Hamburg ist eine große Stadt.', 'f'],
+  ['Hund', 'cachorro (der Hund)', 'substantivo', 'Animais', '🐕', 'Der Hund schläft.', 'm'],
+  ['Katze', 'gato (die Katze)', 'substantivo', 'Animais', '🐈', 'Die Katze ist schwarz.', 'f'],
+  ['gut', 'bom; bem', 'adjetivo', 'Descrições', '👍', 'Das Brot ist gut.'],
+  ['groß', 'grande', 'adjetivo', 'Descrições', '📏', 'Meine Familie ist groß.'],
+  ['klein', 'pequeno', 'adjetivo', 'Descrições', '📏', 'Die Katze ist klein.'],
+  // ── Pessoas ──
+  ['ich', 'eu', 'pronome', 'Pessoas', '🙋', 'Ich bin Anna.'],
+  ['du', 'tu, você (informal)', 'pronome', 'Pessoas', '🫵', 'Und du, wie heißt du?'],
+  ['er', 'ele', 'pronome', 'Pessoas', '👨', 'Er kommt aus Berlin.'],
+  ['sie', 'ela; eles, elas (com maiúscula, Sie = o senhor, a senhora)', 'pronome', 'Pessoas', '👩', 'Sie kommt aus Wien.'],
+  ['wir', 'nós', 'pronome', 'Pessoas', '🙌', 'Wir sind Freunde.'],
+  ['ihr', 'vocês (informal)', 'pronome', 'Pessoas', '👥', 'Woher kommt ihr?'],
+  ['Name', 'nome (der Name)', 'substantivo', 'Pessoas', '🏷️', 'Mein Name ist Linu.', 'm'],
+  ['Freund', 'amigo (der Freund)', 'substantivo', 'Pessoas', '🧑‍🤝‍🧑', 'Er ist mein Freund.', 'm'],
+  ['Freundin', 'amiga (die Freundin)', 'substantivo', 'Pessoas', '🧑‍🤝‍🧑', 'Sie ist meine Freundin.', 'f'],
+  // ── Verbos-chave ──
+  ['sein', 'ser, estar (ich bin, du bist, er ist)', 'verbo', 'Verbos-chave', '🧑', 'Ich bin aus São Paulo.'],
+  ['haben', 'ter (ich habe, du hast, er hat)', 'verbo', 'Verbos-chave', '🤲', 'Ich habe einen Bruder.'],
+  ['heißen', 'chamar-se (ich heiße, du heißt)', 'verbo', 'Verbos-chave', '🏷️', 'Ich heiße Ana.'],
+  ['kommen', 'vir (ich komme aus… = eu sou de…)', 'verbo', 'Verbos-chave', '🧭', 'Ich komme aus Recife.'],
+  ['sprechen', 'falar (ich spreche, du sprichst)', 'verbo', 'Verbos-chave', '🗣️', 'Ich spreche ein bisschen Deutsch.'],
+  ['wohnen', 'morar', 'verbo', 'Verbos-chave', '🏠', 'Ich wohne in Porto Alegre.'],
+  ['gehen', 'ir (a pé)', 'verbo', 'Verbos-chave', '🚶', 'Ich gehe nach Hause.'],
+  ['essen', 'comer (ich esse, du isst)', 'verbo', 'Verbos-chave', '🍽️', 'Ich esse Brot mit Käse.'],
+  ['trinken', 'beber', 'verbo', 'Verbos-chave', '🥤', 'Ich trinke Wasser.'],
+  ['mögen', 'gostar (ich mag, du magst)', 'verbo', 'Verbos-chave', '❤️', 'Ich mag Katzen.'],
+  ['wissen', 'saber (ich weiß, du weißt)', 'verbo', 'Verbos-chave', '🧠', 'Ich weiß es nicht.'],
+  ['wollen', 'querer (ich will, du willst)', 'verbo', 'Verbos-chave', '💭', 'Ich will Deutsch lernen.'],
+  ['lernen', 'aprender; estudar', 'verbo', 'Verbos-chave', '📚', 'Wir lernen Deutsch.'],
+  // ── Pessoas (família) ──
+  ['Familie', 'família (die Familie)', 'substantivo', 'Pessoas', '👪', 'Meine Familie ist groß.', 'f'],
+  ['Mutter', 'mãe (die Mutter)', 'substantivo', 'Pessoas', '👩', 'Meine Mutter heißt Rosa.', 'f'],
+  ['Vater', 'pai (der Vater)', 'substantivo', 'Pessoas', '👨', 'Mein Vater kommt aus Hamburg.', 'm'],
+  ['Bruder', 'irmão (der Bruder)', 'substantivo', 'Pessoas', '🧑', 'Ich habe einen Bruder.', 'm'],
+  ['Schwester', 'irmã (die Schwester)', 'substantivo', 'Pessoas', '🧑', 'Ich habe eine Schwester.', 'f'],
+  ['Sohn', 'filho (der Sohn)', 'substantivo', 'Pessoas', '🧒', 'Sein Sohn ist zehn Jahre alt.', 'm'],
+  ['Tochter', 'filha (die Tochter)', 'substantivo', 'Pessoas', '🧒', 'Ihre Tochter ist klein.', 'f'],
+  // ── Alimentação ──
+  ['Wasser', 'água (das Wasser)', 'substantivo', 'Alimentação e Restaurantes', '💧', 'Ein Glas Wasser, bitte.', 'n'],
+  ['Brot', 'pão (das Brot)', 'substantivo', 'Alimentação e Restaurantes', '🍞', 'Das Brot ist frisch.', 'n'],
+  ['Milch', 'leite (die Milch)', 'substantivo', 'Alimentação e Restaurantes', '🥛', 'Die Milch ist kalt.', 'f'],
+  ['Käse', 'queijo (der Käse)', 'substantivo', 'Alimentação e Restaurantes', '🧀', 'Der Käse ist sehr gut.', 'm'],
+  ['Kaffee', 'café (der Kaffee)', 'substantivo', 'Alimentação e Restaurantes', '☕', 'Einen Kaffee, bitte.', 'm'],
+  ['Wein', 'vinho (der Wein)', 'substantivo', 'Alimentação e Restaurantes', '🍷', 'Ein Glas Wein, bitte.', 'm'],
+  // ── Números ──
+  ['eins', 'um', 'numeral', 'Números', '1️⃣', 'Eins, zwei, drei!'],
+  ['zwei', 'dois', 'numeral', 'Números', '2️⃣', 'Zwei Kaffee, bitte.'],
+  ['drei', 'três', 'numeral', 'Números', '3️⃣', 'Ich habe drei Brüder.'],
+  ['vier', 'quatro', 'numeral', 'Números', '4️⃣', 'Die Katze hat vier Beine.'],
+  ['fünf', 'cinco', 'numeral', 'Números', '5️⃣', 'Fünf Tage.'],
+  ['sechs', 'seis', 'numeral', 'Números', '6️⃣', 'Sechs Freunde.'],
+  ['sieben', 'sete', 'numeral', 'Números', '7️⃣', 'Die Woche hat sieben Tage.'],
+  ['acht', 'oito', 'numeral', 'Números', '8️⃣', 'Acht Uhr.'],
+  ['neun', 'nove', 'numeral', 'Números', '9️⃣', 'Neun Jahre.'],
+  ['zehn', 'dez', 'numeral', 'Números', '🔟', 'Zehn Euro.'],
+  // ── Tempo ──
+  ['heute', 'hoje', 'advérbio', 'Tempo', '📅', 'Heute ist Montag.'],
+  ['morgen', 'amanhã (com maiúscula, der Morgen = a manhã)', 'advérbio', 'Tempo', '📅', 'Bis morgen!'],
+  ['gestern', 'ontem', 'advérbio', 'Tempo', '📅', 'Gestern, heute und morgen.'],
+  ['Montag', 'segunda-feira (der Montag)', 'substantivo', 'Tempo', '📅', 'Heute ist Montag.', 'm'],
+  ['Dienstag', 'terça-feira (der Dienstag)', 'substantivo', 'Tempo', '📅', 'Heute ist Dienstag.', 'm'],
+  ['Mittwoch', 'quarta-feira (der Mittwoch)', 'substantivo', 'Tempo', '📅', 'Heute ist Mittwoch.', 'm'],
+  ['Donnerstag', 'quinta-feira (der Donnerstag)', 'substantivo', 'Tempo', '📅', 'Heute ist Donnerstag.', 'm'],
+  ['Freitag', 'sexta-feira (der Freitag)', 'substantivo', 'Tempo', '📅', 'Heute ist Freitag.', 'm'],
+  ['Samstag', 'sábado (der Samstag; no norte também Sonnabend)', 'substantivo', 'Tempo', '📅', 'Am Samstag gehe ich ins Kino.', 'm'],
+  ['Sonntag', 'domingo (der Sonntag)', 'substantivo', 'Tempo', '📅', 'Heute ist Sonntag.', 'm'],
+  // ── Cores ──
+  ['rot', 'vermelho', 'adjetivo', 'Cores', '🔴', 'Der Wein ist rot.'],
+  ['blau', 'azul', 'adjetivo', 'Cores', '🔵', 'Der Himmel ist blau.'],
+  ['grün', 'verde', 'adjetivo', 'Cores', '🟢', 'Das Gras ist grün.'],
+  ['weiß', 'branco', 'adjetivo', 'Cores', '⚪', 'Die Milch ist weiß.'],
+  ['schwarz', 'preto', 'adjetivo', 'Cores', '⚫', 'Die Katze ist schwarz.'],
+];
+
+export const VOCAB_DE = buildVocab('de', ROWS);

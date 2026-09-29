@@ -16,11 +16,25 @@ import { FEROES } from './fo';
 import { LITUANO } from './lt';
 import { LETAO } from './lv';
 import { SUAILI } from './sw';
+import { GALEGO } from './gl';
+import { ASTURIANO } from './ast';
+import { OCCITANO } from './oc';
+import { SARDO } from './sc';
+import { ROMANCHE } from './rm';
+import { FRIULANO } from './fur';
+import { LATIM } from './la';
+import { JUDEU_ESPANHOL } from './lad';
+import { INGLES } from './en';
+import { INDONESIO } from './id';
+import { VIETNAMITA } from './vi';
+import { IORUBA } from './yo';
 import { JAPONES } from './ja';
 import { COREANO } from './ko';
 
 /** Idiomas com conteúdo pronto. */
-export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES, fr: FRANCES, ca: CATALAO, is: ISLANDES, fi: FINLANDES, et: ESTONIANO, fo: FEROES, lt: LITUANO, lv: LETAO, sw: SUAILI, ja: JAPONES, ko: COREANO };
+export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES, fr: FRANCES, ca: CATALAO, is: ISLANDES, fi: FINLANDES, et: ESTONIANO, fo: FEROES, lt: LITUANO, lv: LETAO, sw: SUAILI, ja: JAPONES, ko: COREANO,
+  // incompletos (só o A1 por enquanto; ver o campo `incomplete` de cada pacote)
+  gl: GALEGO, ast: ASTURIANO, oc: OCCITANO, sc: SARDO, rm: ROMANCHE, fur: FRIULANO, la: LATIM, lad: JUDEU_ESPANHOL, en: INGLES, id: INDONESIO, vi: VIETNAMITA, yo: IORUBA };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -31,14 +45,19 @@ export const LANGUAGES: LanguageInfo[] = [
   PORTUGUES,
   FRANCES,
   CATALAO,
+  GALEGO,
+  ASTURIANO,
+  OCCITANO,
+  SARDO,
+  ROMANCHE,
+  FRIULANO,
+  LATIM,
+  JUDEU_ESPANHOL,
   SUECO,
   NORUEGUES,
   DINAMARQUES,
   ISLANDES,
-  {
-    code: 'en', name: 'Inglês', nativeName: 'English', flag: '🇬🇧',
-    lineage: { family: 'Indo-europeu', branches: ['Germânico', 'Germânico ocidental', 'Anglo-frísio'], region: 'Ilhas Britânicas', writing: 'Alfabeto latino' },
-  },
+  INGLES,
   FINLANDES,
   FEROES,
   ESTONIANO,
@@ -63,10 +82,7 @@ export const LANGUAGES: LanguageInfo[] = [
     code: 'bn', name: 'Bengali', nativeName: 'বাংলা', flag: '🇧🇩',
     lineage: { family: 'Indo-europeu', branches: ['Indo-iraniano', 'Indo-ariano', 'Indo-ariano oriental'], region: 'Bengala (Bangladesh e leste da Índia)', writing: 'Alfabeto bengali' },
   },
-  {
-    code: 'id', name: 'Indonésio', nativeName: 'Bahasa Indonesia', flag: '🇮🇩',
-    lineage: { family: 'Austronésio', branches: ['Malaio-polinésio', 'Malaico'], region: 'Arquipélago malaio (Sudeste Asiático)', writing: 'Alfabeto latino' },
-  },
+  INDONESIO,
   {
     code: 'ur', name: 'Urdu', nativeName: 'اردو', flag: '🇵🇰',
     lineage: { family: 'Indo-europeu', branches: ['Indo-iraniano', 'Indo-ariano', 'Indo-ariano central'], region: 'Norte do subcontinente indiano (Paquistão e Índia)', writing: 'Alfabeto perso-árabe (nastaliq)' },
@@ -75,10 +91,7 @@ export const LANGUAGES: LanguageInfo[] = [
     code: 'mr', name: 'Marati', nativeName: 'मराठी', flag: '🇮🇳',
     lineage: { family: 'Indo-europeu', branches: ['Indo-iraniano', 'Indo-ariano', 'Indo-ariano meridional'], region: 'Maharashtra (oeste da Índia)', writing: 'Devanágari' },
   },
-  {
-    code: 'vi', name: 'Vietnamita', nativeName: 'Tiếng Việt', flag: '🇻🇳',
-    lineage: { family: 'Austro-asiático', branches: ['Vietico', 'Viet-muong'], region: 'Delta do rio Vermelho (Sudeste Asiático)', writing: 'Alfabeto latino (chữ Quốc ngữ, com os tons marcados)' },
-  },
+  VIETNAMITA,
   {
     code: 'te', name: 'Télugo', nativeName: 'తెలుగు', flag: '🇮🇳',
     lineage: { family: 'Dravídico', branches: ['Dravídico centro-meridional'], region: 'Andhra Pradesh e Telangana (sudeste da Índia)', writing: 'Alfabeto télugo' },
@@ -98,10 +111,7 @@ export const LANGUAGES: LanguageInfo[] = [
     code: 'am', name: 'Amárico', nativeName: 'አማርኛ', flag: '🇪🇹',
     lineage: { family: 'Afro-asiático', branches: ['Semítico', 'Semítico etiópico'], region: 'Planalto etíope (Chifre da África)', writing: 'Silabário ge’ez (fidel)' },
   },
-  {
-    code: 'yo', name: 'Iorubá', nativeName: 'Èdè Yorùbá', flag: '🇳🇬',
-    lineage: { family: 'Níger-Congo', branches: ['Atlântico-congolês', 'Volta-Níger', 'Iorubóide'], region: 'Sudoeste da Nigéria, Benin e Togo', writing: 'Alfabeto latino (ẹ, ọ, ṣ e os tons marcados)' },
-  },
+  IORUBA,
   {
     code: 'om', name: 'Oromo', nativeName: 'Afaan Oromoo', flag: '🇪🇹',
     lineage: { family: 'Afro-asiático', branches: ['Cuchítico', 'Cuchítico oriental'], region: 'Centro e sul da Etiópia e norte do Quênia', writing: 'Alfabeto latino (qubee)' },

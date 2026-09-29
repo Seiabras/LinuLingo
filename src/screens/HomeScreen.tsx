@@ -9,6 +9,7 @@ import { Linu } from '@/components/Linu';
 import { StatusHeader } from '@/components/StatusHeader';
 import { CulturalGrammarCard } from '@/components/CulturalGrammarCard';
 import { useApp } from '@/services/app-state';
+import { missingParts } from '@/services/incompleto';
 import { completedLessons, getMeta, journalDoneToday, pendingPeerCount, vocabStats, xpByDay } from '@/database/queries';
 import { canSpeak } from '@/services/speech';
 import { TUTORIAL_KEY } from './TutorialScreen';
@@ -186,7 +187,7 @@ export default function HomeScreen() {
 
       <View className="mb-2 mt-7 flex-row items-center gap-3">
         <View className="h-px flex-1 bg-slate-300 dark:bg-slate-700" />
-        <Text className="text-xs font-extrabold uppercase tracking-widest text-slate-500 dark:text-slate-400">Trilha CEFR · 15 subníveis</Text>
+        <Text className="text-xs font-extrabold uppercase tracking-widest text-slate-500 dark:text-slate-400">{pack.incomplete ? `Trilha CEFR · até o ${pack.incomplete.until}` : 'Trilha CEFR · 15 subníveis'}</Text>
         <View className="h-px flex-1 bg-slate-300 dark:bg-slate-700" />
       </View>
       <HScroll label="a trilha" contentContainerStyle={{ gap: 6, paddingVertical: 4 }}>
@@ -206,6 +207,16 @@ export default function HomeScreen() {
           );
         })}
       </HScroll>
+
+      {pack.incomplete && (
+        <Card className="mt-3 border border-amber-300 bg-amber-50 dark:border-amber-700 dark:bg-amber-950">
+          <Text className="text-sm font-extrabold text-amber-800 dark:text-amber-300">🚧 {pack.name}: idioma em construção</Text>
+          <Text className="mt-1 text-sm text-amber-900 dark:text-amber-200">{pack.incomplete.note}</Text>
+          {missingParts(pack).length > 0 && (
+            <Text className="mt-1 text-xs text-amber-800 dark:text-amber-300">Ainda falta também: {missingParts(pack).join(', ')}.</Text>
+          )}
+        </Card>
+      )}
 
       {units.map(({ u, items, doneCount, reached }) => {
         const isOpen = open.has(u.id) || (unit?.id === u.id && !closed.has(u.id));

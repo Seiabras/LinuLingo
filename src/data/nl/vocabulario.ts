@@ -1,0 +1,113 @@
+import { buildVocab, type VocabRow } from '../types';
+
+/**
+ * Vocabulário do neerlandês-padrão (Standaardnederlands) na ortografia oficial da Nederlandse
+ * Taalunie (a Woordenlijst Nederlandse Taal, o «Groene Boekje»), comum aos Países Baixos, à Bélgica
+ * e ao Suriname. Nos substantivos, a tradução traz o artigo: «de» (gênero comum, marcado aqui como
+ * 'm') ou «het» (neutro, 'n'). Idioma incompleto: por enquanto só o nível A1 — ver `incomplete`.
+ */
+export const ROWS: VocabRow[] = [
+  // ── Expressões ──
+  ['hallo', 'oi, olá', 'interjeição', 'Expressões', '👋', 'Hallo! Hoe gaat het?'],
+  ['goedemorgen', 'bom dia', 'interjeição', 'Expressões', '🌅', 'Goedemorgen, Anna!'],
+  ['goedemiddag', 'boa tarde', 'interjeição', 'Expressões', '🌞', 'Goedemiddag! Ik heet Paulo.'],
+  ['goedenavond', 'boa noite (ao chegar)', 'interjeição', 'Expressões', '🌇', 'Goedenavond, meneer De Vries!'],
+  ['welterusten', 'boa noite, durma bem (ao ir dormir)', 'interjeição', 'Expressões', '🌙', 'Welterusten en tot morgen!'],
+  ['doei', 'tchau (informal)', 'interjeição', 'Expressões', '👋', 'Doei, tot morgen!'],
+  ['tot ziens', 'até logo, adeus', 'interjeição', 'Expressões', '👋', 'Tot ziens en bedankt!'],
+  ['dank je', 'obrigado (informal; formal: dank u)', 'interjeição', 'Expressões', '🙏', 'Dank je wel!'],
+  ['alsjeblieft', 'por favor; aqui está (informal; formal: alstublieft)', 'interjeição', 'Expressões', '🙏', 'Een koffie, alsjeblieft.'],
+  ['sorry', 'desculpe, com licença', 'interjeição', 'Expressões', '🙏', 'Sorry, waar is het station?'],
+  ['hoe gaat het?', 'como vai?', 'expressão', 'Expressões', '🙂', 'Hallo, Anna! Hoe gaat het?'],
+  // ── Essenciais ──
+  ['ja', 'sim', 'advérbio', 'Essenciais', '👍', 'Ja, graag!'],
+  ['nee', 'não (resposta)', 'advérbio', 'Essenciais', '👎', 'Nee, dank je.'],
+  ['niet', 'não (nega o verbo ou um adjetivo)', 'advérbio', 'Essenciais', '🚫', 'Het huis is niet groot.'],
+  ['en', 'e', 'conjunção', 'Essenciais', null, 'Brood en kaas.'],
+  ['of', 'ou', 'conjunção', 'Essenciais', null, 'Koffie of thee?'],
+  ['heel', 'muito (antes de adjetivo)', 'advérbio', 'Essenciais', null, 'Dat is heel goed!'],
+  ['ook', 'também', 'advérbio', 'Essenciais', null, 'Ik spreek ook Nederlands.'],
+  ['graag', 'com gosto (ik drink graag koffie = gosto de tomar café)', 'advérbio', 'Essenciais', '😊', 'Ik leer graag Nederlands.'],
+  ['wat', 'o que', 'pronome', 'Essenciais', '❓', 'Wat is dat?'],
+  ['waar', 'onde', 'advérbio', 'Essenciais', '❓', 'Waar woon je?'],
+  ['hoe', 'como', 'advérbio', 'Essenciais', '❓', 'Hoe heet je?'],
+  ['waar kom je vandaan?', 'de onde você é?', 'expressão', 'Essenciais', '❓', 'Hallo! Waar kom je vandaan?'],
+  ['wie', 'quem', 'pronome', 'Essenciais', '❓', 'Wie is dat?'],
+  ['huis', 'casa (het huis)', 'substantivo', 'Casa', '🏠', 'Mijn huis is klein.', 'n'],
+  ['stad', 'cidade (de stad)', 'substantivo', 'Essenciais', '🏙️', 'Amsterdam is een grote stad.', 'm'],
+  ['hond', 'cachorro (de hond)', 'substantivo', 'Animais', '🐕', 'De hond slaapt.', 'm'],
+  ['kat', 'gato (de kat)', 'substantivo', 'Animais', '🐈', 'De kat is zwart.', 'm'],
+  ['goed', 'bom; bem', 'adjetivo', 'Descrições', '👍', 'Het gaat goed, dank je.'],
+  ['groot', 'grande', 'adjetivo', 'Descrições', '📏', 'Mijn familie is groot.'],
+  ['klein', 'pequeno', 'adjetivo', 'Descrições', '📏', 'De kat is klein.'],
+  // ── Pessoas ──
+  ['ik', 'eu', 'pronome', 'Pessoas', '🙋', 'Ik ben Anna.'],
+  ['jij', 'tu, você (informal; forma curta: je)', 'pronome', 'Pessoas', '🫵', 'En jij, hoe heet jij?'],
+  ['hij', 'ele', 'pronome', 'Pessoas', '👨', 'Hij komt uit Utrecht.'],
+  ['zij', 'ela; eles, elas (forma curta: ze)', 'pronome', 'Pessoas', '👩', 'Zij komt uit Gent.'],
+  ['wij', 'nós (forma curta: we)', 'pronome', 'Pessoas', '🙌', 'Wij zijn vrienden.'],
+  ['jullie', 'vocês', 'pronome', 'Pessoas', '👥', 'Waar komen jullie vandaan?'],
+  ['u', 'o senhor, a senhora (formal)', 'pronome', 'Pessoas', '🤝', 'Hoe heet u?'],
+  ['naam', 'nome (de naam)', 'substantivo', 'Pessoas', '🏷️', 'Mijn naam is Linu.', 'm'],
+  ['vriend', 'amigo (de vriend; também «namorado»)', 'substantivo', 'Pessoas', '🧑‍🤝‍🧑', 'Hij is mijn vriend.', 'm'],
+  ['vriendin', 'amiga (de vriendin; também «namorada»)', 'substantivo', 'Pessoas', '🧑‍🤝‍🧑', 'Zij is mijn vriendin.', 'm'],
+  // ── Verbos-chave ──
+  ['zijn', 'ser, estar (ik ben, jij bent, hij is)', 'verbo', 'Verbos-chave', '🧑', 'Ik ben student.'],
+  ['hebben', 'ter (ik heb, jij hebt, hij heeft)', 'verbo', 'Verbos-chave', '🤲', 'Ik heb een broer.'],
+  ['heten', 'chamar-se (ik heet)', 'verbo', 'Verbos-chave', '🏷️', 'Ik heet Ana.'],
+  ['komen', 'vir (ik kom uit… = eu sou de…)', 'verbo', 'Verbos-chave', '🧭', 'Ik kom uit Recife.'],
+  ['spreken', 'falar', 'verbo', 'Verbos-chave', '🗣️', 'Ik spreek een beetje Nederlands.'],
+  ['wonen', 'morar', 'verbo', 'Verbos-chave', '🏠', 'Ik woon in Porto Alegre.'],
+  ['gaan', 'ir (ik ga, jij gaat)', 'verbo', 'Verbos-chave', '🚶', 'Ik ga naar huis.'],
+  ['eten', 'comer', 'verbo', 'Verbos-chave', '🍽️', 'Ik eet brood met kaas.'],
+  ['drinken', 'beber', 'verbo', 'Verbos-chave', '🥤', 'Ik drink water.'],
+  ['houden van', 'gostar de, amar (ik hou van…)', 'verbo', 'Verbos-chave', '❤️', 'Ik hou van katten.'],
+  ['weten', 'saber (ik weet)', 'verbo', 'Verbos-chave', '🧠', 'Ik weet het niet.'],
+  ['willen', 'querer (ik wil, jij wilt)', 'verbo', 'Verbos-chave', '💭', 'Ik wil Nederlands leren.'],
+  ['leren', 'aprender', 'verbo', 'Verbos-chave', '📚', 'Wij leren Nederlands.'],
+  // ── Pessoas (família) ──
+  ['familie', 'família (de familie)', 'substantivo', 'Pessoas', '👪', 'Mijn familie is groot.', 'm'],
+  ['moeder', 'mãe (de moeder)', 'substantivo', 'Pessoas', '👩', 'Mijn moeder heet Rosa.', 'm'],
+  ['vader', 'pai (de vader)', 'substantivo', 'Pessoas', '👨', 'Mijn vader komt uit Rotterdam.', 'm'],
+  ['broer', 'irmão (de broer)', 'substantivo', 'Pessoas', '🧑', 'Ik heb een broer.', 'm'],
+  ['zus', 'irmã (de zus)', 'substantivo', 'Pessoas', '🧑', 'Ik heb een zus.', 'm'],
+  ['zoon', 'filho (de zoon)', 'substantivo', 'Pessoas', '🧒', 'Zijn zoon is tien jaar.', 'm'],
+  ['dochter', 'filha (de dochter)', 'substantivo', 'Pessoas', '🧒', 'Haar dochter is klein.', 'm'],
+  // ── Alimentação ──
+  ['water', 'água (het water)', 'substantivo', 'Alimentação e Restaurantes', '💧', 'Een glas water, alsjeblieft.', 'n'],
+  ['brood', 'pão (het brood)', 'substantivo', 'Alimentação e Restaurantes', '🍞', 'Het brood is vers.', 'n'],
+  ['melk', 'leite (de melk)', 'substantivo', 'Alimentação e Restaurantes', '🥛', 'De melk is koud.', 'm'],
+  ['kaas', 'queijo (de kaas)', 'substantivo', 'Alimentação e Restaurantes', '🧀', 'De kaas is lekker.', 'm'],
+  ['koffie', 'café (de koffie)', 'substantivo', 'Alimentação e Restaurantes', '☕', 'Een koffie, alsjeblieft.', 'm'],
+  ['wijn', 'vinho (de wijn)', 'substantivo', 'Alimentação e Restaurantes', '🍷', 'Een glas wijn, alsjeblieft.', 'm'],
+  // ── Números ──
+  ['één', 'um (com acento, para não confundir com o artigo «een»)', 'numeral', 'Números', '1️⃣', 'Eén, twee, drie!'],
+  ['twee', 'dois', 'numeral', 'Números', '2️⃣', 'Twee koffie, alsjeblieft.'],
+  ['drie', 'três', 'numeral', 'Números', '3️⃣', 'Ik heb drie broers.'],
+  ['vier', 'quatro', 'numeral', 'Números', '4️⃣', 'De kat heeft vier poten.'],
+  ['vijf', 'cinco', 'numeral', 'Números', '5️⃣', 'Vijf dagen.'],
+  ['zes', 'seis', 'numeral', 'Números', '6️⃣', 'Zes vrienden.'],
+  ['zeven', 'sete', 'numeral', 'Números', '7️⃣', 'Een week heeft zeven dagen.'],
+  ['acht', 'oito', 'numeral', 'Números', '8️⃣', 'Acht uur.'],
+  ['negen', 'nove', 'numeral', 'Números', '9️⃣', 'Negen jaar.'],
+  ['tien', 'dez', 'numeral', 'Números', '🔟', 'Tien euro.'],
+  // ── Tempo ──
+  ['vandaag', 'hoje', 'advérbio', 'Tempo', '📅', 'Vandaag is het maandag.'],
+  ['morgen', 'amanhã (de morgen = a manhã)', 'advérbio', 'Tempo', '📅', 'Tot morgen!'],
+  ['gisteren', 'ontem', 'advérbio', 'Tempo', '📅', 'Gisteren, vandaag en morgen.'],
+  ['maandag', 'segunda-feira (de maandag)', 'substantivo', 'Tempo', '📅', 'Vandaag is het maandag.', 'm'],
+  ['dinsdag', 'terça-feira (de dinsdag)', 'substantivo', 'Tempo', '📅', 'Vandaag is het dinsdag.', 'm'],
+  ['woensdag', 'quarta-feira (de woensdag)', 'substantivo', 'Tempo', '📅', 'Vandaag is het woensdag.', 'm'],
+  ['donderdag', 'quinta-feira (de donderdag)', 'substantivo', 'Tempo', '📅', 'Vandaag is het donderdag.', 'm'],
+  ['vrijdag', 'sexta-feira (de vrijdag)', 'substantivo', 'Tempo', '📅', 'Vandaag is het vrijdag.', 'm'],
+  ['zaterdag', 'sábado (de zaterdag)', 'substantivo', 'Tempo', '📅', 'Zaterdag ga ik naar de markt.', 'm'],
+  ['zondag', 'domingo (de zondag)', 'substantivo', 'Tempo', '📅', 'Vandaag is het zondag.', 'm'],
+  // ── Cores ──
+  ['rood', 'vermelho', 'adjetivo', 'Cores', '🔴', 'De wijn is rood.'],
+  ['blauw', 'azul', 'adjetivo', 'Cores', '🔵', 'De lucht is blauw.'],
+  ['groen', 'verde', 'adjetivo', 'Cores', '🟢', 'Het gras is groen.'],
+  ['wit', 'branco', 'adjetivo', 'Cores', '⚪', 'De melk is wit.'],
+  ['zwart', 'preto', 'adjetivo', 'Cores', '⚫', 'De kat is zwart.'],
+];
+
+export const VOCAB_NL = buildVocab('nl', ROWS);

@@ -1,0 +1,110 @@
+import { buildVocab, type VocabRow } from '../types';
+
+/**
+ * Vocabulário do asturiano (norma ortográfica da Academia de la Llingua Asturiana, ALLA). Idioma
+ * incompleto: por enquanto só o suficiente para o nível A1 (unidades 1 e 2) — ver o campo
+ * `incomplete` do pacote. Todas as palavras e frases foram conferidas em fontes de referência
+ * (Wiktionary asturiano, Omniglot, Wikipédia) antes de entrar aqui.
+ */
+export const ROWS: VocabRow[] = [
+  // Saudações
+  ['hola', 'oi', 'interjeição', 'Saudações', '👋', 'Hola! Cómo tas?'],
+  ['bonos díes', 'bom dia', 'interjeição', 'Saudações', '🌅', 'Bonos díes! Cómo tas?'],
+  ['bones tardes', 'boa tarde', 'interjeição', 'Saudações', '🌇', 'Bones tardes, amigu!'],
+  ['bones nueches', 'boa noite', 'interjeição', 'Saudações', '🌙', 'Bones nueches! Hasta mañana.'],
+  ['adiós', 'tchau', 'interjeição', 'Saudações', '👋', 'Adiós! Hasta llueu.'],
+  ['hasta llueu', 'até logo', 'interjeição', 'Saudações', '👋', 'Adiós, hasta llueu!'],
+  ['gracies', 'obrigado', 'interjeição', 'Saudações', '🙏', 'Munches gracies!'],
+  ['munches gracies', 'muito obrigado', 'interjeição', 'Saudações', '🙏', 'Munches gracies pol café!'],
+  ['de nada', 'de nada', 'interjeição', 'Saudações', '🙏', '— Gracies! — De nada!'],
+  ['por favor', 'por favor', 'interjeição', 'Saudações', '🙏', 'Un café, por favor.'],
+  ['perdón', 'desculpa', 'interjeição', 'Saudações', '🙏', 'Perdón, tas bien?'],
+  // Essenciais
+  ['sí', 'sim', 'advérbio', 'Essenciais', '👍', 'Sí, quiero un café.'],
+  ['non', 'não', 'advérbio', 'Essenciais', '👎', 'Non, gracies.'],
+  ['y', 'e', 'conjunção', 'Essenciais', null, 'Pan y vinu.'],
+  ['o', 'ou', 'conjunção', 'Essenciais', null, 'Café o lleche?'],
+  ['mui', 'muito (advérbio)', 'advérbio', 'Essenciais', null, 'Toi mui bien.'],
+  ['tamién', 'também', 'advérbio', 'Essenciais', null, 'Yo tamién falo asturianu.'],
+  ['casa', 'casa', 'substantivo', 'Essenciais', '🏠', 'La mio casa ye pequeña.', 'f'],
+  ['ciudá', 'cidade', 'substantivo', 'Essenciais', '🏙️', 'Uviéu ye una ciudá grande.', 'f'],
+  ['güei', 'hoje', 'advérbio', 'Essenciais', '📅', 'Güei fai sol.'],
+  ['mañana', 'amanhã', 'advérbio', 'Essenciais', '📅', 'Hasta mañana!'],
+  ['ayeri', 'ontem', 'advérbio', 'Essenciais', '📅', 'Ayeri, güei y mañana.'],
+  ['onde', 'onde', 'pronome', 'Essenciais', '❓', 'Onde tas?'],
+  ['qué', 'o que', 'pronome', 'Essenciais', '❓', 'Qué ye esto?'],
+  ['cómo', 'como', 'advérbio', 'Essenciais', '❓', 'Cómo te llames?'],
+  ['de ónde', 'de onde', 'advérbio', 'Essenciais', '❓', 'De ónde yes?'],
+  ['perru', 'cachorro', 'substantivo', 'Essenciais', '🐕', 'El mio perru llámase Toi.', 'm'],
+  ['gatu', 'gato', 'substantivo', 'Essenciais', '🐈', 'El gatu ye pequeñu.', 'm'],
+  ['bonu', 'bom', 'adjetivo', 'Essenciais', '👍', 'Esti vinu ye mui bonu.'],
+  ['bona', 'boa', 'adjetivo', 'Essenciais', '👍', 'Qué bona idea!'],
+  ['grande', 'grande', 'adjetivo', 'Essenciais', '📏', 'La casa ye grande.'],
+  ['pequeñu', 'pequeno', 'adjetivo', 'Essenciais', '📏', 'El gatu ye pequeñu.'],
+  // Pessoas
+  ['yo', 'eu', 'pronome', 'Pessoas', '🙋', 'Yo llámome Ana.'],
+  ['tu', 'tu', 'pronome', 'Pessoas', '🫵', 'Y tu, cómo te llames?'],
+  ['elli', 'ele', 'pronome', 'Pessoas', '👨', 'Elli ye d’Uviéu.'],
+  ['ella', 'ela', 'pronome', 'Pessoas', '👩', 'Ella ye de Xixón.'],
+  ['nós', 'nós', 'pronome', 'Pessoas', '🙌', 'Nós somos d’Asturies.'],
+  ['vós', 'vocês', 'pronome', 'Pessoas', '🫵', 'Vós sois mui amables.'],
+  ['ellos', 'eles', 'pronome', 'Pessoas', '👥', 'Ellos son d’Asturies.'],
+  ['elles', 'elas', 'pronome', 'Pessoas', '👥', 'Elles son de Xixón.'],
+  ['nome', 'nome', 'substantivo', 'Pessoas', '🏷️', 'Cuál ye’l nome?', 'm'],
+  ['amigu', 'amigo', 'substantivo', 'Pessoas', '🧑‍🤝‍🧑', 'Ye’l mio amigu.', 'm'],
+  ['amiga', 'amiga', 'substantivo', 'Pessoas', '🧑‍🤝‍🧑', 'Ye la mio amiga.', 'f'],
+  // Verbos-chave
+  ['ser', 'ser', 'verbo', 'Verbos-chave', '🧑', 'Soi de Brasil.'],
+  ['tar', 'estar', 'verbo', 'Verbos-chave', '📍', 'Toi n’Uviéu.'],
+  ['tener', 'ter', 'verbo', 'Verbos-chave', '🤲', 'Tengo un perru y un gatu.'],
+  ['llamase', 'chamar-se', 'verbo', 'Verbos-chave', '🏷️', 'Llámome Xuan.'],
+  ['falar', 'falar', 'verbo', 'Verbos-chave', '🗣️', 'Falo asturianu.'],
+  ['vivir', 'morar', 'verbo', 'Verbos-chave', '🏠', 'Vivo en Xixón.'],
+  ['dir', 'ir', 'verbo', 'Verbos-chave', '🚶', 'Vamos pa casa.'],
+  ['comer', 'comer', 'verbo', 'Verbos-chave', '🍽️', 'Como pan y lleche.'],
+  ['beber', 'beber', 'verbo', 'Verbos-chave', '🥤', 'Bebo agua.'],
+  ['prestar', 'gostar', 'verbo', 'Verbos-chave', '❤️', 'Préstame l’asturianu.'],
+  ['saber', 'saber', 'verbo', 'Verbos-chave', '🧠', 'Nun sé falar francés.'],
+  ['querer', 'querer', 'verbo', 'Verbos-chave', '💭', 'Quiero deprender asturianu.'],
+  // Família
+  ['familia', 'família', 'substantivo', 'Família', '👪', 'La mio familia ye grande.', 'f'],
+  ['ma', 'mãe', 'substantivo', 'Família', '👩', 'La mio ma llámase Rosa.', 'f'],
+  ['pá', 'pai', 'substantivo', 'Família', '👨', 'El mio pá ye d’Uviéu.', 'm'],
+  ['hermanu', 'irmão', 'substantivo', 'Família', '🧑', 'Tengo un hermanu.', 'm'],
+  ['hermana', 'irmã', 'substantivo', 'Família', '🧑', 'Tengo una hermana.', 'f'],
+  ['fíu', 'filho', 'substantivo', 'Família', '🧒', 'El mio fíu ye pequeñu.', 'm'],
+  ['fía', 'filha', 'substantivo', 'Família', '🧒', 'La mio fía ye pequeña.', 'f'],
+  // Comida
+  ['agua', 'água', 'substantivo', 'Comida', '💧', 'Quiero agua, por favor.', 'f'],
+  ['pan', 'pão', 'substantivo', 'Comida', '🍞', 'El pan ye bonu.', 'm'],
+  ['lleche', 'leite', 'substantivo', 'Comida', '🥛', 'Bebo lleche pela mañana.', 'f'],
+  ['café', 'café', 'substantivo', 'Comida', '☕', 'Un café, por favor.', 'm'],
+  ['vinu', 'vinho', 'substantivo', 'Comida', '🍷', 'Un vinu tinto, por favor.', 'm'],
+  // Números
+  ['un', 'um', 'numeral', 'Números', '1️⃣', 'Un café, por favor.'],
+  ['dos', 'dois', 'numeral', 'Números', '2️⃣', 'Dos cafés, por favor.'],
+  ['tres', 'três', 'numeral', 'Números', '3️⃣', 'Tres hermanos.'],
+  ['cuatro', 'quatro', 'numeral', 'Números', '4️⃣', 'Cuatro estaciones.'],
+  ['cinco', 'cinco', 'numeral', 'Números', '5️⃣', 'Cinco euros.'],
+  ['seis', 'seis', 'numeral', 'Números', '6️⃣', 'Seis de la mañana.'],
+  ['siete', 'sete', 'numeral', 'Números', '7️⃣', 'Siete díes.'],
+  ['ocho', 'oito', 'numeral', 'Números', '8️⃣', 'Ocho hores.'],
+  ['nueve', 'nove', 'numeral', 'Números', '9️⃣', 'Nueve meses.'],
+  ['diez', 'dez', 'numeral', 'Números', '🔟', 'Diez euros.'],
+  // Tempo (díes de la selmana)
+  ['llunes', 'segunda-feira', 'substantivo', 'Tempo', '📅', 'Güei ye llunes.', 'm'],
+  ['martes', 'terça-feira', 'substantivo', 'Tempo', '📅', 'Güei ye martes.', 'm'],
+  ['miércoles', 'quarta-feira', 'substantivo', 'Tempo', '📅', 'Güei ye miércoles.', 'm'],
+  ['xueves', 'quinta-feira', 'substantivo', 'Tempo', '📅', 'Güei ye xueves.', 'm'],
+  ['vienres', 'sexta-feira', 'substantivo', 'Tempo', '📅', 'Güei ye vienres.', 'm'],
+  ['sábadu', 'sábado', 'substantivo', 'Tempo', '📅', 'Güei ye sábadu.', 'm'],
+  ['domingu', 'domingo', 'substantivo', 'Tempo', '📅', 'Güei ye domingu.', 'm'],
+  // Colores
+  ['bermeyu', 'vermelho', 'adjetivo', 'Cores', '🔴', 'El vinu ye bermeyu.'],
+  ['azul', 'azul', 'adjetivo', 'Cores', '🔵', 'El cielu ye azul.'],
+  ['verde', 'verde', 'adjetivo', 'Cores', '🟢', 'La yerba ye verde.'],
+  ['blancu', 'branco', 'adjetivo', 'Cores', '⚪', 'La lleche ye blanca.'],
+  ['prietu', 'preto', 'adjetivo', 'Cores', '⚫', 'El café ye prietu.'],
+];
+
+export const VOCAB_AST = buildVocab('ast', ROWS);

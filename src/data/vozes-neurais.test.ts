@@ -12,6 +12,8 @@ test('vozes neurais: todo idioma e toda variante do app têm voz embutida', () =
   // sem ela, no Linux (Chrome sem voz nenhuma, Firefox com o speech-dispatcher mudo) o que não tem
   // gravação de nativo fica em silêncio
   for (const p of Object.values(PACKS)) {
+    // idioma em construção (só o A1) sem voz no Piper: usa a voz do aparelho, e o aviso de incompleto diz isso
+    if (p.incomplete && !neuralVoiceFor(p.speechLocale)) continue;
     if (WITHOUT_VOICE.has(p.code)) {
       assert.equal(neuralVoiceFor(p.speechLocale), null, `${p.code}: tem voz agora, tire da lista`);
       continue;
@@ -23,7 +25,7 @@ test('vozes neurais: todo idioma e toda variante do app têm voz embutida', () =
 
 test('vozes neurais: a voz escolhida é do idioma pedido', () => {
   for (const p of Object.values(PACKS)) {
-    if (WITHOUT_VOICE.has(p.code)) continue;
+    if (WITHOUT_VOICE.has(p.code) || (p.incomplete && !neuralVoiceFor(p.speechLocale))) continue;
     const voice = neuralVoiceFor(p.speechLocale)!;
     const lang = p.speechLocale.split('-')[0];
     // o Piper chama o norueguês de «no»; o app usa «nb» (bokmål)

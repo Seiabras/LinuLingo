@@ -271,6 +271,12 @@ export interface LanguagePack extends LanguageInfo {
   /** Locale para síntese e reconhecimento de voz */
   speechLocale: string;
   available: boolean;
+  /**
+   * Idioma em construção: só as unidades até este subnível existem — as de depois (e mais
+   * vocabulário, gramática e histórias nas que já existem) chegam aos poucos. `note` aparece para
+   * o aluno explicando o que falta.
+   */
+  incomplete?: { until: SubLevel; note: string };
   vocab: VocabSeed[];
   units: UnitSeed[];
   etymology: EtymologySeed[];
