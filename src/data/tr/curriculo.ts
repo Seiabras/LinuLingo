@@ -16,13 +16,13 @@ export const UNITS_TR: UnitSeed[] = [
       title: 'Uma língua de sufixos e harmonia vocálica',
       emoji: '🗺️',
       history:
-        'O turco é uma língua túrquica, falada por mais de 80 milhões de pessoas, principal na Turquia e em comunidades no Chipre, nos Bálcãs e na diáspora europeia. Em 1928, Mustafa Kemal Atatürk trocou a escrita árabe-persa, usada por séculos, pelo alfabeto latino atual — uma das reformas mais rápidas da história de uma língua nacional. O turco é aglutinante: em vez de preposições e conjugações separadas, ele gruda sufixo atrás de sufixo numa mesma palavra: «evlerimizden» (das nossas casas) é «ev» (casa) + «ler» (plural) + «imiz» (nosso) + «den» (de/desde).',
+        'O turco é da família túrquica, parente do azeri, do cazaque e do uzbeque, e não do português. É a língua da Turquia e do norte do Chipre, com mais de 80 milhões de falantes nativos, e também de comunidades nos Bálcãs e na Alemanha. Até 1928 era escrito com o alfabeto árabe; naquele ano, a república de Mustafa Kemal Atatürk adotou o alfabeto latino atual, numa reforma feita em poucos meses. O turco é aglutinante: em vez de preposições e conjugações separadas, ele gruda sufixo atrás de sufixo numa mesma palavra: «evlerimizden» (das nossas casas) é «ev» (casa) + «ler» (plural) + «imiz» (nosso) + «den» (de/desde).',
       culture_tip:
-        '«Merhaba» é o cumprimento mais comum a qualquer hora; «günaydın» vale só de manhã. «Teşekkür ederim» é o obrigado mais formal, e «teşekkürler» o mais casual. A hospitalidade é levada muito a sério na cultura turca: oferecer chá (çay) a um visitante é quase automático, e recusar pode soar estranho.',
+        '«Merhaba» é o cumprimento mais comum a qualquer hora; «günaydın» vale só de manhã. «Teşekkür ederim» é o obrigado mais formal, e «teşekkürler» o mais casual. Oferecer chá (çay) a quem chega é um gesto comum de boas-vindas.',
       grammar_why:
         'A harmonia vocálica é a regra mais importante do turco: as vogais de um sufixo mudam para "combinar" com a última vogal da palavra. Por isso «-im» (meu) vira «-ım», «-um» ou «-üm» dependendo da palavra: «adım» (meu nome), «evim» (minha casa). O turco também não tem gênero gramatical nenhum — «o» serve para «ele», «ela» e «isso».',
       grammar_examples: [
-        ['Ben Brezilyalıyım.', 'Eu sou brasileiro(a). (Brezilya + lı + yım: "de-Brasil-eu-sou")'],
+        ["Ben São Paulo'luyum.", 'Eu sou de São Paulo. (São Paulo + lu + yum: «de-São-Paulo-sou»)'],
         ['O İstanbul\'dan.', 'Ele/ela é de Istambul.'],
         ['Adın ne?', 'Qual é o seu nome?'],
       ],
@@ -59,10 +59,10 @@ export const UNITS_TR: UnitSeed[] = [
         id: 'tr-u1-l2',
         title: 'Ben, sen, o',
         kind: 'licao',
-        words: ['ben', 'sen', 'o', 'olmak', 'isim', 'nerede'],
+        words: ['ben', 'sen', 'o', 'ad', 'nerede', 'nasıl'],
         cloze: [
-          { sentence: '___ Brezilyalıyım.', answer: 'Ben', options: ['Ben', 'Sen', 'O'], translation: 'Eu sou brasileiro(a).' },
-          { sentence: 'Senin ___ ne?', answer: 'isim', options: ['isim', 'nerede', 'ben'], translation: 'Qual é o seu nome?' },
+          { sentence: "___ São Paulo'luyum.", answer: 'Ben', options: ['Ben', 'Sen', 'O'], translation: 'Eu sou de São Paulo.' },
+          { sentence: 'Senin ___ ne?', answer: 'adın', options: ['adın', 'nerede', 'ben'], translation: 'Qual é o seu nome?' },
           { sentence: '___ İstanbul\'dan.', answer: 'O', options: ['O', 'Ben', 'Sen'], translation: 'Ele/ela é de Istambul.' },
         ],
         voice: {
@@ -80,10 +80,10 @@ export const UNITS_TR: UnitSeed[] = [
         words: [],
         cloze: [],
         voice: {
-          bot: 'Merhaba! Adım Mehmet. Senin adın ne, ve nerelisin?',
+          bot: 'Merhaba! Adım Mehmet. Senin adın ne? Nerelisin?',
           botTranslation: 'Oi! Meu nome é Mehmet. Qual é o seu nome, e de onde você é?',
-          expected: ['Merhaba! Adım Lucia, ve Brezilyalıyım. Tanıştığımıza memnun oldum!', 'adım', 'brezilyalıyım', 'merhaba'],
-          hint: 'Devolva o cumprimento («Merhaba!»), diga o seu nome com «Adım…», a origem com «…lıyım» e feche com «Tanıştığımıza memnun oldum!».',
+          expected: ["Merhaba! Adım Lucia. Ben Salvador'luyum. Memnun oldum!", 'adım', 'merhaba', 'memnun oldum'],
+          hint: 'Devolva o cumprimento («Merhaba!»), diga o seu nome com «Adım…», a sua cidade com «…lıyım / …luyum» e feche com «Memnun oldum!» (prazer).',
         },
         communityPrompt: 'Escreva uma apresentação completa: cumprimento, nome com «Adım…», origem e uma despedida.',
       },
@@ -102,7 +102,7 @@ export const UNITS_TR: UnitSeed[] = [
       history:
         'O turco não tem um verbo separado para «ter»: em vez disso, usa «var» (existe/há) ou «yok» (não existe/não há) depois da coisa possuída, com um sufixo possessivo. «İki kardeşim var» é, literalmente, «dois irmãos-meus existe» — bem diferente da estrutura sujeito-verbo-objeto do português.',
       culture_tip:
-        'Como em muitas culturas do Oriente Médio e Ásia Central, a hospitalidade e o respeito aos mais velhos são centrais na vida familiar turca; é comum várias gerações se visitarem com frequência, e os avós têm um papel ativo na criação dos netos.',
+        'Na Turquia, os mais velhos costumam ser chamados por palavras de família, mesmo sem parentesco: «abla» (irmã mais velha), «abi» (irmão mais velho), «teyze» (tia) e «amca» (tio). E depois do nome vem «Hanım» (senhora) ou «Bey» (senhor): «Ayşe Hanım», «Mehmet Bey».',
       grammar_why:
         'O sufixo possessivo muda a vogal por harmonia vocálica, mas a lógica é sempre a mesma: substantivo + sufixo de posse + (var/yok). «Kardeşim var» é «eu tenho irmão(s)»; «Kardeşim yok» é «eu não tenho irmãos».',
       grammar_examples: [
@@ -119,10 +119,10 @@ export const UNITS_TR: UnitSeed[] = [
         id: 'tr-u2-l1',
         title: 'Ailem',
         kind: 'licao',
-        words: ['aile', 'anne', 'baba', 'erkek kardeş', 'kız kardeş', 'sahip olmak'],
+        words: ['aile', 'anne', 'baba', 'erkek kardeş', 'kız kardeş', 'var'],
         cloze: [
           { sentence: '___ İzmir\'den.', answer: 'Annem', options: ['Annem', 'Babam', 'Ailem'], translation: 'A minha mãe é de Esmirna.' },
-          { sentence: 'Bir erkek kardeşim ve bir kız kardeşim ___.', answer: 'var', options: ['var', 'yok', 'olmak'], translation: 'Eu tenho um irmão e uma irmã.' },
+          { sentence: 'Bir erkek kardeşim ve bir kız kardeşim ___.', answer: 'var', options: ['var', 'yok', 'değil'], translation: 'Eu tenho um irmão e uma irmã.' },
           { sentence: '___ adı Mehmet.', answer: 'Erkek kardeşimin', options: ['Erkek kardeşimin', 'Kız kardeşimin', 'Babamın'], translation: 'O meu irmão se chama Mehmet.' },
         ],
         voice: {
