@@ -1,0 +1,115 @@
+import { buildVocab, type VocabRow } from '../types';
+
+/**
+ * Vocabulário do basco na norma comum, o euskara batua (a da Euskaltzaindia, a Academia da Língua
+ * Basca). O basco não tem gênero gramatical: as linhas vêm sem gênero. Os substantivos e adjetivos
+ * aparecem na forma de dicionário, sem o artigo «-a» que vai grudado no fim (etxe → etxea, «a
+ * casa»). Idioma incompleto: por enquanto só o suficiente para o nível A1 (unidades 1 e 2) — ver o
+ * campo `incomplete` do pacote.
+ */
+export const ROWS: VocabRow[] = [
+  // ── Expressões ──
+  ['kaixo', 'oi, olá', 'interjeição', 'Expressões', '👋', 'Kaixo! Zer moduz?'],
+  ['egun on', 'bom dia', 'interjeição', 'Expressões', '🌅', 'Egun on, Miren!'],
+  ['arratsalde on', 'boa tarde', 'interjeição', 'Expressões', '🌇', 'Arratsalde on denoi!'],
+  ['gabon', 'boa noite', 'interjeição', 'Expressões', '🌙', 'Gabon, ama!'],
+  ['agur', 'tchau, até logo', 'interjeição', 'Expressões', '👋', 'Agur, bihar arte!'],
+  ['eskerrik asko', 'obrigado (lit. «muitos agradecimentos»)', 'interjeição', 'Expressões', '🙏', 'Eskerrik asko, Mikel!'],
+  ['mila esker', 'muito obrigado (lit. «mil agradecimentos»)', 'interjeição', 'Expressões', '🙏', 'Mila esker!'],
+  ['mesedez', 'por favor', 'interjeição', 'Expressões', '🙏', 'Kafe bat, mesedez.'],
+  ['barkatu', 'desculpe, com licença', 'interjeição', 'Expressões', '🙏', 'Barkatu, non dago geltokia?'],
+  ['zer moduz?', 'como vai?', 'expressão', 'Expressões', '🙂', 'Kaixo, Ane! Zer moduz?'],
+  ['ongi etorri', 'bem-vindo', 'expressão', 'Expressões', '🤗', 'Ongi etorri Bilbora!'],
+  // ── Essenciais ──
+  ['bai', 'sim', 'advérbio', 'Essenciais', '👍', 'Bai, eskerrik asko!'],
+  ['ez', 'não', 'advérbio', 'Essenciais', '👎', 'Ez, eskerrik asko.'],
+  ['eta', 'e', 'conjunção', 'Essenciais', null, 'Ogia eta gazta.'],
+  ['edo', 'ou', 'conjunção', 'Essenciais', null, 'Kafea edo tea?'],
+  ['asko', 'muito (vem depois da palavra)', 'advérbio', 'Essenciais', null, 'Eskerrik asko!'],
+  ['ere', 'também', 'advérbio', 'Essenciais', null, 'Ni ere ondo nago.'],
+  ['ondo', 'bem', 'advérbio', 'Essenciais', '👌', 'Ondo, eskerrik asko. Eta zu?'],
+  ['zer', 'o que, que', 'pronome', 'Essenciais', '❓', 'Zer da hau?'],
+  ['non', 'onde', 'advérbio', 'Essenciais', '❓', 'Non bizi zara?'],
+  ['nola', 'como', 'advérbio', 'Essenciais', '❓', 'Nola deitzen zara?'],
+  ['nor', 'quem', 'pronome', 'Essenciais', '❓', 'Nor da hura?'],
+  ['nongoa zara?', 'de onde você é?', 'expressão', 'Essenciais', '❓', 'Kaixo! Nongoa zara?'],
+  ['hau', 'isto, este', 'pronome', 'Essenciais', null, 'Zer da hau?'],
+  ['ezker', 'esquerda', 'substantivo', 'Viagens e Transporte', '⬅️', 'Geltokia ezkerrean dago.'],
+  ['etxe', 'casa (etxea = a casa)', 'substantivo', 'Casa', '🏠', 'Nire etxea txikia da.'],
+  ['hiri', 'cidade', 'substantivo', 'Essenciais', '🏙️', 'Bilbo hiri handia da.'],
+  ['txakur', 'cachorro', 'substantivo', 'Animais', '🐕', 'Txakurra lo dago.'],
+  ['katu', 'gato', 'substantivo', 'Animais', '🐈', 'Katua beltza da.'],
+  ['liburu', 'livro', 'substantivo', 'Escola', '📖', 'Liburu hau oso ona da.'],
+  ['on', 'bom (ona = o bom)', 'adjetivo', 'Descrições', '👍', 'Ogia ona da.'],
+  ['handi', 'grande', 'adjetivo', 'Descrições', '📏', 'Nire familia handia da.'],
+  ['txiki', 'pequeno', 'adjetivo', 'Descrições', '📏', 'Katua txikia da.'],
+  // ── Pessoas ──
+  ['ni', 'eu (nik, quando faz a ação de um verbo com objeto)', 'pronome', 'Pessoas', '🙋', 'Ni Ane naiz.'],
+  ['zu', 'você (zuk, quando faz a ação de um verbo com objeto)', 'pronome', 'Pessoas', '🫵', 'Eta zu, nola deitzen zara?'],
+  ['hura', 'ele, ela (o basco não distingue)', 'pronome', 'Pessoas', '🧑', 'Hura Bilbokoa da.'],
+  ['gu', 'nós', 'pronome', 'Pessoas', '🙌', 'Gu lagunak gara.'],
+  ['zuek', 'vocês', 'pronome', 'Pessoas', '🫵', 'Zuek euskaraz hitz egiten duzue?'],
+  ['haiek', 'eles, elas', 'pronome', 'Pessoas', '👥', 'Haiek euskaraz eta gaztelaniaz hitz egiten dute.'],
+  ['izen', 'nome', 'substantivo', 'Pessoas', '🏷️', 'Nire izena Linu da.'],
+  ['lagun', 'amigo, amiga', 'substantivo', 'Pessoas', '🧑‍🤝‍🧑', 'Mikel nire laguna da.'],
+  // ── Verbos-chave ──
+  ['izan', 'ser (naiz, zara, da); com objeto, ter (dut, duzu, du)', 'verbo', 'Verbos-chave', '🧑', 'São Paulokoa naiz.'],
+  ['egon', 'estar (nago, zaude, dago)', 'verbo', 'Verbos-chave', '📍', 'Ondo nago, eskerrik asko.'],
+  ['deitu', 'chamar; chamar-se (… deitzen naiz)', 'verbo', 'Verbos-chave', '🏷️', 'Ane deitzen naiz.'],
+  ['hitz egin', 'falar (lit. «fazer palavra»)', 'verbo', 'Verbos-chave', '🗣️', 'Euskaraz pixka bat hitz egiten dut.'],
+  ['bizi izan', 'morar, viver (… bizi naiz)', 'verbo', 'Verbos-chave', '🏠', 'São Paulon bizi naiz.'],
+  ['joan', 'ir (noa, zoaz, doa)', 'verbo', 'Verbos-chave', '🚶', 'Etxera noa.'],
+  ['jan', 'comer', 'verbo', 'Verbos-chave', '🍽️', 'Nik ogia jaten dut.'],
+  ['edan', 'beber', 'verbo', 'Verbos-chave', '🥤', 'Nik ura edaten dut.'],
+  ['gustatu', 'gostar (… gustatzen zait = eu gosto de …)', 'verbo', 'Verbos-chave', '❤️', 'Euskara gustatzen zait.'],
+  ['jakin', 'saber (dakit = eu sei)', 'verbo', 'Verbos-chave', '🧠', 'Ez dakit.'],
+  ['nahi izan', 'querer (… nahi dut)', 'verbo', 'Verbos-chave', '💭', 'Euskara ikasi nahi dut.'],
+  ['ikasi', 'aprender, estudar', 'verbo', 'Verbos-chave', '📚', 'Euskara ikasten dugu.'],
+  // ── Pessoas (família) ──
+  ['familia', 'família', 'substantivo', 'Pessoas', '👪', 'Nire familia handia da.'],
+  ['ama', 'mãe', 'substantivo', 'Pessoas', '👩', 'Nire ama Rosa deitzen da.'],
+  ['aita', 'pai', 'substantivo', 'Pessoas', '👨', 'Nire aita Bilbokoa da.'],
+  ['anaia', 'irmão (de um homem; em muitos lugares, de qualquer pessoa)', 'substantivo', 'Pessoas', '🧑', 'Anaia bat dut.'],
+  ['neba', 'irmão (de uma mulher)', 'substantivo', 'Pessoas', '🧑', 'Nire neba Donostian bizi da.'],
+  ['ahizpa', 'irmã (de uma mulher)', 'substantivo', 'Pessoas', '🧑', 'Ahizpa bat dut.'],
+  ['arreba', 'irmã (de um homem)', 'substantivo', 'Pessoas', '🧑', 'Nire arreba txikia da.'],
+  ['seme', 'filho', 'substantivo', 'Pessoas', '🧒', 'Nire semeak hamar urte ditu.'],
+  ['alaba', 'filha', 'substantivo', 'Pessoas', '🧒', 'Nire alaba txikia da.'],
+  // ── Alimentação ──
+  ['ur', 'água', 'substantivo', 'Alimentação e Restaurantes', '💧', 'Ur botila bat, mesedez.'],
+  ['ogi', 'pão', 'substantivo', 'Alimentação e Restaurantes', '🍞', 'Ogia freskoa da.'],
+  ['esne', 'leite', 'substantivo', 'Alimentação e Restaurantes', '🥛', 'Esnea zuria da.'],
+  ['gazta', 'queijo', 'substantivo', 'Alimentação e Restaurantes', '🧀', 'Gazta hau oso ona da.'],
+  ['kafe', 'café', 'substantivo', 'Alimentação e Restaurantes', '☕', 'Kafe bat, mesedez.'],
+  ['ardo', 'vinho', 'substantivo', 'Alimentação e Restaurantes', '🍷', 'Ardo bat, mesedez.'],
+  // ── Números ──
+  ['bat', 'um (vem depois da palavra: kafe bat)', 'numeral', 'Números', '1️⃣', 'Kafe bat, mesedez.'],
+  ['bi', 'dois', 'numeral', 'Números', '2️⃣', 'Bi anaia ditut.'],
+  ['hiru', 'três', 'numeral', 'Números', '3️⃣', 'Hiru kafe, mesedez.'],
+  ['lau', 'quatro', 'numeral', 'Números', '4️⃣', 'Katuak lau hanka ditu.'],
+  ['bost', 'cinco', 'numeral', 'Números', '5️⃣', 'Bost egun.'],
+  ['sei', 'seis', 'numeral', 'Números', '6️⃣', 'Sei lagun.'],
+  ['zazpi', 'sete', 'numeral', 'Números', '7️⃣', 'Asteak zazpi egun ditu.'],
+  ['zortzi', 'oito', 'numeral', 'Números', '8️⃣', 'Zortzi ordu.'],
+  ['bederatzi', 'nove', 'numeral', 'Números', '9️⃣', 'Bederatzi urte.'],
+  ['hamar', 'dez', 'numeral', 'Números', '🔟', 'Hamar euro.'],
+  // ── Tempo ──
+  ['gaur', 'hoje', 'advérbio', 'Tempo', '📅', 'Gaur astelehena da.'],
+  ['bihar', 'amanhã', 'advérbio', 'Tempo', '📅', 'Bihar arte!'],
+  ['atzo', 'ontem', 'advérbio', 'Tempo', '📅', 'Atzo, gaur eta bihar.'],
+  ['astelehen', 'segunda-feira', 'substantivo', 'Tempo', '📅', 'Gaur astelehena da.'],
+  ['astearte', 'terça-feira', 'substantivo', 'Tempo', '📅', 'Gaur asteartea da.'],
+  ['asteazken', 'quarta-feira', 'substantivo', 'Tempo', '📅', 'Gaur asteazkena da.'],
+  ['ostegun', 'quinta-feira', 'substantivo', 'Tempo', '📅', 'Gaur osteguna da.'],
+  ['ostiral', 'sexta-feira', 'substantivo', 'Tempo', '📅', 'Gaur ostirala da.'],
+  ['larunbat', 'sábado', 'substantivo', 'Tempo', '📅', 'Gaur larunbata da.'],
+  ['igande', 'domingo', 'substantivo', 'Tempo', '📅', 'Gaur igandea da.'],
+  // ── Cores ──
+  ['gorri', 'vermelho', 'adjetivo', 'Cores', '🔴', 'Ardoa gorria da.'],
+  ['urdin', 'azul', 'adjetivo', 'Cores', '🔵', 'Itsasoa urdina da.'],
+  ['berde', 'verde', 'adjetivo', 'Cores', '🟢', 'Belarra berdea da.'],
+  ['zuri', 'branco', 'adjetivo', 'Cores', '⚪', 'Esnea zuria da.'],
+  ['beltz', 'preto', 'adjetivo', 'Cores', '⚫', 'Katua beltza da.'],
+];
+
+export const VOCAB_EU = buildVocab('eu', ROWS);

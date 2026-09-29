@@ -60,7 +60,63 @@ export interface Conlang {
   samples?: [string, string][];
   /** por que a classificação pode ser discutida */
   note?: string;
+  /** a árvore genealógica, quando a língua tem parentes (dentro da ficção ou de verdade) */
+  tree?: ConlangTree;
 }
+
+/** Um galho da árvore: a língua, uma explicação curta e as filhas. */
+export interface ConlangTreeNode {
+  name: string;
+  note?: string;
+  children?: ConlangTreeNode[];
+}
+
+export interface ConlangTree {
+  /** «Dentro da ficção» (a história que o autor inventou) ou «De verdade» (quem veio de quem no mundo real) */
+  kind: 'ficção' | 'real';
+  root: ConlangTreeNode;
+  /** o nome (igual ao de um galho) que fica destacado */
+  highlight: string;
+  note?: string;
+}
+
+/** As línguas dos elfos de Tolkien, na versão tardia (a do Silmarillion). */
+const ARVORE_ELFICA: ConlangTreeNode = {
+  name: 'Quendiano primitivo',
+  note: 'a língua dos primeiros elfos',
+  children: [
+    { name: 'Avarin', note: 'as línguas dos elfos que não fizeram a Grande Jornada para o oeste' },
+    {
+      name: 'Eldarin comum',
+      note: 'a língua dos elfos que partiram na Grande Jornada',
+      children: [
+        { name: 'Quenya', note: 'dos Vanyar e dos Noldor, em Valinor' },
+        {
+          name: 'Telerin comum',
+          children: [
+            { name: 'Telerin', note: 'dos Teleri que chegaram a Aman' },
+            { name: 'Sindarin', note: 'dos elfos cinzentos, que ficaram em Beleriand' },
+            { name: 'Nandorin', note: 'dos elfos silvestres' },
+          ],
+        },
+      ],
+    },
+  ],
+};
+const NOTA_ELFICA =
+  'Tolkien mudou essa árvore várias vezes. Nos anos 1930, a língua com som de galês se chamava «noldorin» e era a dos noldor; na versão final, ela virou o sindarin dos elfos que ficaram na Terra-média.';
+
+const ARVORE_ESPERANTO: ConlangTreeNode = {
+  name: 'Esperanto',
+  note: '1887',
+  children: [
+    {
+      name: 'Ido',
+      note: '1907, uma reforma do esperanto',
+      children: [{ name: 'Novial', note: '1928, criado pelo linguista dinamarquês Otto Jespersen, que antes defendia o ido' }],
+    },
+  ],
+};
 
 export const CONLANGS: Conlang[] = [
   {
@@ -78,6 +134,7 @@ export const CONLANGS: Conlang[] = [
       ['Saluton! Kiel vi fartas?', 'Olá! Como você vai?'],
       ['Mi lernas Esperanton.', 'Eu aprendo esperanto.'],
     ],
+    tree: { kind: 'real', root: ARVORE_ESPERANTO, highlight: 'Esperanto', note: 'Línguas artificiais também têm parentes de verdade: o ido nasceu de uma reforma do esperanto, e o novial aproveitou ideias do ido.' },
   },
   {
     id: 'volapuk',
@@ -105,6 +162,7 @@ export const CONLANGS: Conlang[] = [
     about: 'Uma reforma do esperanto, feita por uma comissão internacional.',
     text: 'Tira as letras com acento do esperanto e deixa as palavras mais parecidas com as das línguas europeias. O nome quer dizer «descendente» em esperanto. Dividiu o movimento: a maioria ficou com o esperanto.',
     samples: [['Quale vu standas?', 'Como você está?']],
+    tree: { kind: 'real', root: ARVORE_ESPERANTO, highlight: 'Ido' },
   },
   {
     id: 'interlingua',
@@ -172,8 +230,12 @@ export const CONLANGS: Conlang[] = [
     stage: 'parcial',
     about: 'O Senhor dos Anéis e O Silmarillion: a língua antiga dos elfos.',
     text: 'Tolkien, que era filólogo, dizia que inventou as histórias para dar um mundo às suas línguas, e não o contrário. O quenya tem o som e as terminações de caso inspirados no finlandês, com toques do latim e do grego, e se escreve com as tengwar, letras criadas por ele.',
-    samples: [['Elen síla lúmenn’ omentielvo', 'Uma estrela brilha sobre a hora do nosso encontro']],
+    samples: [
+      ['elen', 'estrela'],
+      ['aiya', 'salve! (saudação)'],
+    ],
     note: 'As raízes são inventadas (a priori), mas o som e a gramática imitam línguas reais. Tolkien mudou a língua a vida inteira e não a terminou: o «neo-quenya» dos fãs preenche as lacunas.',
+    tree: { kind: 'ficção', root: ARVORE_ELFICA, highlight: 'Quenya', note: NOTA_ELFICA },
   },
   {
     id: 'sindarin',
@@ -191,6 +253,7 @@ export const CONLANGS: Conlang[] = [
       ['mellon', 'amigo'],
     ],
     note: 'Como o quenya: raízes inventadas, som de língua real, obra inacabada.',
+    tree: { kind: 'ficção', root: ARVORE_ELFICA, highlight: 'Sindarin', note: NOTA_ELFICA },
   },
   {
     id: 'klingon',
@@ -236,6 +299,20 @@ export const CONLANGS: Conlang[] = [
       ['Valar morghulis.', 'Todos os homens devem morrer.'],
       ['Valar dohaeris.', 'Todos os homens devem servir.'],
     ],
+    tree: {
+      kind: 'ficção',
+      root: {
+        name: 'Alto Valiriano',
+        note: 'a língua do antigo império de Valíria',
+        children: [
+          { name: 'Valiriano de Astapor', note: 'criado por Peterson para a série' },
+          { name: 'Valiriano de Meereen', note: 'criado por Peterson para a série' },
+          { name: 'Dialetos das Cidades Livres', note: 'nos livros, cada cidade fala o seu' },
+        ],
+      },
+      highlight: 'Alto Valiriano',
+      note: 'Depois da queda de Valíria, a língua se partiu em dialetos «bastardos», como o latim se partiu nas línguas românicas.',
+    },
   },
   {
     id: 'navi',
@@ -334,6 +411,21 @@ export const CONLANGS: Conlang[] = [
     stage: 'completa',
     about: 'Uma história alternativa: e se o latim tivesse sobrevivido na Grã-Bretanha?',
     text: 'É uma língua românica imaginária, derivada do latim com as mudanças de som que o galês sofreu. Deu origem a um passatempo inteiro de línguas de «histórias alternativas».',
+    tree: {
+      kind: 'ficção',
+      root: {
+        name: 'Latim',
+        children: [
+          { name: 'Português' },
+          { name: 'Espanhol' },
+          { name: 'Francês' },
+          { name: 'Italiano' },
+          { name: 'Brithenig', note: 'imaginário: o latim da Grã-Bretanha, com as mudanças de som do galês' },
+        ],
+      },
+      highlight: 'Brithenig',
+      note: 'Na história alternativa, o brithenig seria irmão das línguas românicas de verdade.',
+    },
   },
   {
     id: 'toki-pona',
@@ -368,6 +460,11 @@ export const CONLANGS: Conlang[] = [
       ['mi prami do', 'eu te amo'],
     ],
     note: 'Costuma ser chamada de a priori, porque as raízes não se parecem com nenhuma língua; mas elas foram montadas a partir de seis línguas reais.',
+    tree: {
+      kind: 'real',
+      root: { name: 'Loglan', note: '1955, de James Cooke Brown', children: [{ name: 'Lojban', note: '1987, refeito do zero pelo Logical Language Group' }] },
+      highlight: 'Lojban',
+    },
   },
   {
     id: 'ithkuil',

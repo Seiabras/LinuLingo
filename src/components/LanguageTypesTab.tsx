@@ -25,6 +25,8 @@ import {
   STATES,
   contactFromGlottolog,
   type Conlang,
+  type ConlangTree,
+  type ConlangTreeNode,
   type ConlangOrigin,
   type ConlangPurpose,
   type ConlangStage,
@@ -204,6 +206,7 @@ function ConlangCard({ c }: { c: Conlang }) {
         </View>
       ))}
       {c.note && <Text className="text-xs italic leading-4 text-slate-500 dark:text-slate-400">⚖️ {c.note}</Text>}
+      {c.tree && <ConlangTreeView tree={c.tree} />}
       {miniCourse(c.id) && (
         <Pressable accessibilityRole="button" onPress={() => router.push({ pathname: '/curso/[id]', params: { id: c.id } })} className="items-center rounded-xl bg-conecta py-2 active:opacity-90">
           <Text className="font-bold text-white">🎓 Fazer o curso de {c.name.split(' (')[0]}</Text>
@@ -215,6 +218,35 @@ function ConlangCard({ c }: { c: Conlang }) {
         </Pressable>
       )}
     </Card>
+  );
+}
+
+/** A árvore genealógica de uma língua artificial: galhos recuados, com a língua do cartão em destaque. */
+function ConlangTreeView({ tree }: { tree: ConlangTree }) {
+  return (
+    <View className="gap-1 rounded-xl bg-emerald-50 px-3 py-2 dark:bg-emerald-950/40">
+      <Text className="text-xs font-bold uppercase tracking-wide text-emerald-800 dark:text-emerald-300">
+        🌳 Árvore genealógica · {tree.kind === 'ficção' ? 'dentro da ficção' : 'de verdade'}
+      </Text>
+      <TreeBranch node={tree.root} highlight={tree.highlight} depth={0} />
+      {tree.note && <Text className="mt-1 text-xs leading-4 text-slate-600 dark:text-slate-400">{tree.note}</Text>}
+    </View>
+  );
+}
+
+function TreeBranch({ node, highlight, depth }: { node: ConlangTreeNode; highlight: string; depth: number }) {
+  const on = node.name === highlight;
+  return (
+    <View className={depth > 0 ? 'ml-3 border-l-2 border-emerald-300 pl-2 dark:border-emerald-800' : ''}>
+      <Text className={`text-sm leading-5 ${on ? 'font-extrabold text-emerald-900 dark:text-emerald-200' : 'text-slate-800 dark:text-slate-200'}`}>
+        {on ? '📍 ' : ''}
+        {node.name}
+        {node.note && <Text className="text-xs font-normal text-slate-500 dark:text-slate-400"> — {node.note}</Text>}
+      </Text>
+      {node.children?.map((ch) => (
+        <TreeBranch key={ch.name} node={ch} highlight={highlight} depth={depth + 1} />
+      ))}
+    </View>
   );
 }
 

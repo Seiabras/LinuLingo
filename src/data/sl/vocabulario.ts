@@ -1,0 +1,107 @@
+import { buildVocab, type VocabRow } from '../types';
+
+/**
+ * Vocabulário do esloveno padrão (knjižna slovenščina, ortografia do Slovenski pravopis), no
+ * alfabeto latino de 25 letras (com č, š, ž). O acento não é marcado. Idioma incompleto: por
+ * enquanto só o suficiente para o nível A1 (unidades 1 e 2) — ver o campo `incomplete` do pacote.
+ */
+export const ROWS: VocabRow[] = [
+  // ── Expressões ──
+  ['živjo', 'oi, olá (informal; também serve de tchau)', 'interjeição', 'Expressões', '👋', 'Živjo! Kako si?'],
+  ['dober dan', 'bom dia; boa tarde (durante o dia)', 'interjeição', 'Expressões', '🌅', 'Dober dan! Kako ste?'],
+  ['dober večer', 'boa noite (ao chegar)', 'interjeição', 'Expressões', '🌇', 'Dober večer! Kako ste?'],
+  ['lahko noč', 'boa noite (ao se despedir ou ir dormir)', 'interjeição', 'Expressões', '🌙', 'Lahko noč, mama!'],
+  ['nasvidenje', 'tchau, até logo', 'interjeição', 'Expressões', '👋', 'Nasvidenje in hvala!'],
+  ['hvala', 'obrigado', 'interjeição', 'Expressões', '🙏', 'Hvala lepa!'],
+  ['prosim', 'por favor; de nada', 'interjeição', 'Expressões', '🙏', 'Kavo, prosim.'],
+  ['oprostite', 'com licença, desculpe (formal)', 'interjeição', 'Expressões', '🙏', 'Oprostite, kje je postaja?'],
+  ['kako si?', 'como vai? (informal)', 'expressão', 'Expressões', '🙂', 'Živjo, Nina! Kako si?'],
+  // ── Essenciais ──
+  ['da', 'sim (na fala, muito comum «ja»)', 'partícula', 'Essenciais', '👍', 'Da, prosim.'],
+  ['ne', 'não', 'partícula', 'Essenciais', '👎', 'Ne, hvala.'],
+  ['in', 'e', 'conjunção', 'Essenciais', null, 'Kruh in sir.'],
+  ['ali', 'ou', 'conjunção', 'Essenciais', null, 'Kava ali čaj?'],
+  ['zelo', 'muito', 'advérbio', 'Essenciais', null, 'To je zelo dobro.'],
+  ['tudi', 'também', 'advérbio', 'Essenciais', null, 'Tudi jaz govorim slovensko.'],
+  ['dobro', 'bem', 'advérbio', 'Essenciais', '👌', 'Dobro, hvala. Pa ti?'],
+  ['kaj', 'o que, que', 'pronome', 'Essenciais', '❓', 'Kaj je to?'],
+  ['kje', 'onde', 'advérbio', 'Essenciais', '❓', 'Kje živiš?'],
+  ['kako', 'como', 'advérbio', 'Essenciais', '❓', 'Kako ti je ime?'],
+  ['od kod', 'de onde', 'advérbio', 'Essenciais', '❓', 'Od kod si?'],
+  ['mesto', 'cidade', 'substantivo', 'Essenciais', '🏙️', 'Ljubljana je lepo mesto.', 'n'],
+  ['hiša', 'casa', 'substantivo', 'Casa', '🏠', 'Moja hiša je majhna.', 'f'],
+  ['pes', 'cachorro', 'substantivo', 'Animais', '🐕', 'Pes spi.', 'm'],
+  ['mačka', 'gato', 'substantivo', 'Animais', '🐈', 'Mačka je črna.', 'f'],
+  ['dober', 'bom (fem. dobra, neutro dobro)', 'adjetivo', 'Descrições', '👍', 'Kruh je dober.'],
+  ['velik', 'grande (fem. velika, neutro veliko)', 'adjetivo', 'Descrições', '📏', 'Moja družina je velika.'],
+  ['majhen', 'pequeno (fem. majhna, neutro majhno)', 'adjetivo', 'Descrições', '📏', 'Mačka je majhna.'],
+  // ── Pessoas ──
+  ['jaz', 'eu', 'pronome', 'Pessoas', '🙋', 'Jaz sem Ana.'],
+  ['ti', 'tu, você', 'pronome', 'Pessoas', '🫵', 'Pa ti? Kako ti je ime?'],
+  ['on', 'ele', 'pronome', 'Pessoas', '👨', 'On je iz Maribora.'],
+  ['ona', 'ela', 'pronome', 'Pessoas', '👩', 'Ona je iz Ljubljane.'],
+  ['mi', 'nós', 'pronome', 'Pessoas', '🙌', 'Mi govorimo slovensko.'],
+  ['vi', 'vocês; o senhor, a senhora (formal)', 'pronome', 'Pessoas', '🫵', 'Od kod ste vi?'],
+  ['oni', 'eles', 'pronome', 'Pessoas', '👥', 'Oni živijo v Ljubljani.'],
+  ['ime', 'nome', 'substantivo', 'Pessoas', '🏷️', 'Moje ime je Linu.', 'n'],
+  ['prijatelj', 'amigo', 'substantivo', 'Pessoas', '🧑‍🤝‍🧑', 'To je moj prijatelj.', 'm'],
+  ['prijateljica', 'amiga', 'substantivo', 'Pessoas', '🧑‍🤝‍🧑', 'To je moja prijateljica.', 'f'],
+  // ── Verbos-chave ──
+  ['biti', 'ser, estar (sem, si, je)', 'verbo', 'Verbos-chave', '🧑', 'Sem iz São Paula.'],
+  ['imeti', 'ter (imam, imaš)', 'verbo', 'Verbos-chave', '🤲', 'Imam brata.'],
+  ['ime mi je', 'eu me chamo (lit. «nome me é»)', 'expressão', 'Verbos-chave', '🏷️', 'Ime mi je Ana.'],
+  ['govoriti', 'falar (govorim, govoriš)', 'verbo', 'Verbos-chave', '🗣️', 'Govorim malo slovensko.'],
+  ['živeti', 'morar, viver (živim, živiš)', 'verbo', 'Verbos-chave', '🏠', 'Živim v Ljubljani.'],
+  ['iti', 'ir (grem, greš)', 'verbo', 'Verbos-chave', '🚶', 'Grem domov.'],
+  ['jesti', 'comer (jem, ješ)', 'verbo', 'Verbos-chave', '🍽️', 'Jem kruh s sirom.'],
+  ['piti', 'beber (pijem, piješ)', 'verbo', 'Verbos-chave', '🥤', 'Pijem vodo.'],
+  ['imeti rad', 'gostar (lit. «ter querido»: rad imam, uma mulher diz «rada imam»)', 'expressão', 'Verbos-chave', '❤️', 'Rad imam kavo.'],
+  ['vedeti', 'saber (vem, veš)', 'verbo', 'Verbos-chave', '🧠', 'Ne vem.'],
+  ['hoteti', 'querer (hočem, hočeš)', 'verbo', 'Verbos-chave', '💭', 'Hočem se učiti slovenščino.'],
+  ['učiti se', 'aprender, estudar (učim se; perf. naučiti se)', 'verbo', 'Verbos-chave', '📚', 'Učim se slovenščino.'],
+  // ── Pessoas (família) ──
+  ['družina', 'família', 'substantivo', 'Pessoas', '👪', 'Moja družina je velika.', 'f'],
+  ['mama', 'mãe', 'substantivo', 'Pessoas', '👩', 'Moja mama je iz Maribora.', 'f'],
+  ['oče', 'pai', 'substantivo', 'Pessoas', '👨', 'Moj oče je iz Ljubljane.', 'm'],
+  ['brat', 'irmão', 'substantivo', 'Pessoas', '🧑', 'Moj brat ima deset let.', 'm'],
+  ['sestra', 'irmã', 'substantivo', 'Pessoas', '🧑', 'Imam sestro.', 'f'],
+  ['sin', 'filho', 'substantivo', 'Pessoas', '🧒', 'Njihov sin je majhen.', 'm'],
+  ['hči', 'filha (acus. hčer)', 'substantivo', 'Pessoas', '🧒', 'Naša hči ima rada mačke.', 'f'],
+  // ── Alimentação ──
+  ['voda', 'água', 'substantivo', 'Alimentação e Restaurantes', '💧', 'Vodo, prosim.', 'f'],
+  ['kruh', 'pão', 'substantivo', 'Alimentação e Restaurantes', '🍞', 'Kruh je svež.', 'm'],
+  ['mleko', 'leite', 'substantivo', 'Alimentação e Restaurantes', '🥛', 'Mleko je belo.', 'n'],
+  ['sir', 'queijo', 'substantivo', 'Alimentação e Restaurantes', '🧀', 'Rad imam sir.', 'm'],
+  ['kava', 'café', 'substantivo', 'Alimentação e Restaurantes', '☕', 'Kavo, prosim.', 'f'],
+  ['vino', 'vinho', 'substantivo', 'Alimentação e Restaurantes', '🍷', 'Rdeče vino, prosim.', 'n'],
+  // ── Números ──
+  ['en', 'um (fem. ena, neutro eno)', 'numeral', 'Números', '1️⃣', 'En čaj, prosim.'],
+  ['dva', 'dois (fem. e neutro dve)', 'numeral', 'Números', '2️⃣', 'Dva čaja, prosim.'],
+  ['tri', 'três', 'numeral', 'Números', '3️⃣', 'Tri kave, prosim.'],
+  ['štiri', 'quatro', 'numeral', 'Números', '4️⃣', 'Mačka ima štiri noge.'],
+  ['pet', 'cinco', 'numeral', 'Números', '5️⃣', 'Pet dni.'],
+  ['šest', 'seis', 'numeral', 'Números', '6️⃣', 'Šest let.'],
+  ['sedem', 'sete', 'numeral', 'Números', '7️⃣', 'Teden ima sedem dni.'],
+  ['osem', 'oito', 'numeral', 'Números', '8️⃣', 'Osem ur.'],
+  ['devet', 'nove', 'numeral', 'Números', '9️⃣', 'Devet let.'],
+  ['deset', 'dez', 'numeral', 'Números', '🔟', 'Deset minut.'],
+  // ── Tempo ──
+  ['danes', 'hoje', 'advérbio', 'Tempo', '📅', 'Danes je ponedeljek.'],
+  ['jutri', 'amanhã', 'advérbio', 'Tempo', '📅', 'Jutri je sobota.'],
+  ['včeraj', 'ontem', 'advérbio', 'Tempo', '📅', 'Včeraj, danes in jutri.'],
+  ['ponedeljek', 'segunda-feira', 'substantivo', 'Tempo', '📅', 'Danes je ponedeljek.', 'm'],
+  ['torek', 'terça-feira', 'substantivo', 'Tempo', '📅', 'Danes je torek.', 'm'],
+  ['sreda', 'quarta-feira', 'substantivo', 'Tempo', '📅', 'Danes je sreda.', 'f'],
+  ['četrtek', 'quinta-feira', 'substantivo', 'Tempo', '📅', 'Danes je četrtek.', 'm'],
+  ['petek', 'sexta-feira', 'substantivo', 'Tempo', '📅', 'Danes je petek.', 'm'],
+  ['sobota', 'sábado', 'substantivo', 'Tempo', '📅', 'Danes je sobota.', 'f'],
+  ['nedelja', 'domingo', 'substantivo', 'Tempo', '📅', 'Danes je nedelja.', 'f'],
+  // ── Cores ──
+  ['rdeč', 'vermelho', 'adjetivo', 'Cores', '🔴', 'Jabolko je rdeče.'],
+  ['moder', 'azul', 'adjetivo', 'Cores', '🔵', 'Nebo je modro.'],
+  ['zelen', 'verde', 'adjetivo', 'Cores', '🟢', 'Trava je zelena.'],
+  ['bel', 'branco', 'adjetivo', 'Cores', '⚪', 'Mleko je belo.'],
+  ['črn', 'preto', 'adjetivo', 'Cores', '⚫', 'Mačka je črna.'],
+];
+
+export const VOCAB_SL = buildVocab('sl', ROWS);
