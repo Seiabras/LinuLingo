@@ -117,6 +117,16 @@ export const DINHEIRO_PAISES: Record<string, NatureItem[]> = {
     { emoji: '💳', name: 'Cartão e transferência', local: 'bankas karte', fact: 'O cartão por aproximação domina nas cidades, e a transferência bancária pelo celular é o jeito comum de pagar um amigo.' },
     { emoji: '🧺', name: 'Mercado Central', local: 'Centrāltirgus', fact: 'Nos hangares de dirigíveis do Mercado Central de Riga, muitas bancas ainda preferem dinheiro vivo.' },
   ],
+  TZA: [
+    { emoji: '💵', name: 'Xelim tanzaniano', local: 'shilingi (TZS)', fact: 'Os preços costumam vir em milhares: um lanche de rua custa alguns milhares de xelins. Em áreas turísticas, alguns serviços são cobrados em dólar.' },
+    { emoji: '📱', name: 'Dinheiro pelo celular', local: 'pesa kwa simu', fact: 'Muita gente paga e recebe pelo celular, com um número de telefone, sem conta em banco: das bancas do mercado às contas de luz.' },
+    { emoji: '🍽️', name: 'Gorjeta', local: 'bakshishi', fact: 'Não é obrigatória; em restaurantes e com guias de safári, deixar algo a mais é comum e bem-vindo.' },
+  ],
+  KEN: [
+    { emoji: '💵', name: 'Xelim queniano', local: 'shilingi (KES)', fact: 'As notas trazem a fauna do país, como o leão, o búfalo e o elefante, além de imagens da agricultura e da indústria.' },
+    { emoji: '📱', name: 'M-Pesa', local: 'M-Pesa', fact: 'Lançado no Quênia em 2007, o dinheiro pelo celular mudou o país: paga-se o táxi, a feira e a escola pelo celular, mesmo sem conta em banco.' },
+    { emoji: '🍽️', name: 'Gorjeta', local: 'bakshishi', fact: 'Nos restaurantes das cidades, deixar cerca de dez por cento é comum quando o serviço não vem incluído.' },
+  ],
   JPN: [
     { emoji: '💴', name: 'Iene', local: '円 (JPY, ¥)', fact: 'As moedas de cinco e de cinquenta ienes têm um furo no meio. Em 2024 entraram em circulação notas novas de mil, cinco mil e dez mil ienes.' },
     { emoji: '🚃', name: 'Cartão de transporte', local: 'IC カード', fact: 'Os cartões recarregáveis de trem, como o Suica, também pagam em lojas de conveniência e máquinas de bebida; e o pagamento por QR code no celular cresceu muito.' },

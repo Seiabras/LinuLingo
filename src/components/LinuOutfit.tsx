@@ -304,6 +304,22 @@ export function OutfitArt({ id }: { id: string }) {
           <Path d="M40 18 Q60 12 80 18" stroke="#FBBF24" strokeWidth="0.9" strokeDasharray="2 2" fill="none" />
         </G>
       );
+    case 'kofia':
+      return (
+        <G>
+          {/* a kofia suaíli: gorro cilíndrico de topo plano, bordado à mão com motivos miúdos */}
+          <Path d="M34 31 L36 12 Q60 8 84 12 L86 31 Q60 26 34 31 Z" fill="#F5F5F4" stroke="#D6D3D1" strokeWidth="0.8" />
+          <Ellipse cx="60" cy="12" rx="24" ry="3.4" fill="#FAFAF9" stroke="#D6D3D1" strokeWidth="0.8" />
+          <Path d="M35.5 16 Q60 12 84.5 16" stroke="#92400E" strokeWidth="1" fill="none" />
+          <Path d="M35 27 Q60 22 85 27" stroke="#92400E" strokeWidth="1" fill="none" />
+          {[40, 47, 54, 61, 68, 75, 81].map((x) => (
+            <G key={x}>
+              <Path d={`M${x} 18.5 l2.5 2.5 l-2.5 2.5 l-2.5 -2.5 Z`} stroke="#0F766E" strokeWidth="0.7" fill="none" />
+              <Circle cx={x} cy={21} r="0.6" fill="#B45309" />
+            </G>
+          ))}
+        </G>
+      );
     case 'hula':
       return (
         <G>

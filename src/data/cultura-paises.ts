@@ -567,6 +567,54 @@ const BASE: Record<string, Omit<CountryCulture, 'money'>> = {
       { emoji: '💐', name: 'Flores em número ímpar', fact: 'Buquês de presente têm número ímpar de flores; número par se associa a funerais. Rosas vermelhas também ficam reservadas para ocasiões românticas específicas.' },
     ],
   },
+  TZA: {
+    foods: [
+      { emoji: '🍚', name: 'Ugali', local: 'ugali', fact: 'Polenta firme de farinha de milho, a base da refeição; faz-se uma bolinha com a mão direita para pegar o molho e a verdura.' },
+      { emoji: '🍛', name: 'Pilau', local: 'pilau', fact: 'Arroz cozido com cominho, cravo, canela e cardamomo, herança das rotas de comércio do oceano Índico; não falta nas festas da costa.' },
+      { emoji: '🍳', name: 'Omelete de batata frita', local: 'chipsi mayai', fact: 'Batata frita coberta de ovo batido e frita junto: o lanche de rua mais popular da Tanzânia.' },
+    ],
+    folklore: [
+      { emoji: '❓', name: 'As adivinhas', local: 'kitendawili', fact: 'Quem vai propor a adivinha diz «Kitendawili!», e quem escuta responde «Tega!» (pode lançar!); é o começo das noites de histórias dos avós.' },
+      { emoji: '🦊', name: 'Abunuwasi, o esperto', local: 'Abunuwasi', fact: 'Personagem das histórias da costa suaíli que engana os poderosos com a própria esperteza; o nome vem de Abu Nuwas, poeta árabe que virou personagem de contos.' },
+    ],
+    dances: [
+      { emoji: '🥁', name: 'Ngoma', local: 'ngoma', fact: 'Nome das danças tradicionais ao som de tambores, cada povo com a sua: nas festas, casamentos e colheitas, dança-se em roda.' },
+      { emoji: '🎻', name: 'Taarab', local: 'taarab', fact: 'Música de Zanzibar e da costa com violino, alaúde e acordeão; as letras são poesia em suaíli, e o público às vezes levanta para dançar e dar gorjeta ao cantor.' },
+    ],
+    plants: [
+      { emoji: '🌳', name: 'Baobá', local: 'mbuyu', fact: 'Árvore de tronco enorme, que guarda água e vive por séculos; do fruto se faz uma bebida e um doce.' },
+      { emoji: '🌺', name: 'Cravo-da-índia', local: 'karafuu', fact: 'Zanzibar e a ilha de Pemba ficaram famosas pelas plantações de cravo, o que deu ao arquipélago o apelido de «ilhas das especiarias».' },
+    ],
+    games: [{ emoji: '🎲', name: 'Bao', local: 'bao', fact: 'Jogo de tabuleiro com quatro fileiras de buracos e sementes, da família da mancala; em Zanzibar há torneios e mestres famosos.' }],
+    gestures: [
+      { emoji: '🤲', name: 'Com a mão direita', fact: 'Dar e receber coisas, comer e cumprimentar se faz com a mão direita, ou com as duas mãos em sinal de respeito.' },
+      { emoji: '🙇', name: 'Shikamoo', local: 'shikamoo', fact: 'O cumprimento de respeito dos mais novos aos mais velhos; a resposta é «marahaba». Cumprimentar vem antes de qualquer pergunta.' },
+    ],
+  },
+  KEN: {
+    foods: [
+      { emoji: '🍖', name: 'Carne assada', local: 'nyama choma', fact: 'Carne de cabra ou de boi assada na brasa, dividida entre amigos com ugali e salada de tomate e cebola (kachumbari).' },
+      { emoji: '🥬', name: 'Couve refogada', local: 'sukuma wiki', fact: 'Couve refogada com tomate e cebola; o nome quer dizer «empurrar a semana», porque é barata e ajuda a chegar ao fim do mês.' },
+      { emoji: '🫓', name: 'Chapati', local: 'chapati', fact: 'Pão achatado em camadas, herança das comunidades de origem indiana, que virou comida de festa em todo o Quênia.' },
+    ],
+    folklore: [
+      { emoji: '🐇', name: 'A lebre esperta', local: 'Sungura mjanja', fact: 'A lebre que, pequena e fraca, vence os bichos grandes com a esperteza: a heroína de muitas fábulas da África Oriental.' },
+      { emoji: '🗣️', name: 'Os provérbios', local: 'methali', fact: 'Os provérbios são usados em discursos, casamentos e até nos tecidos kanga; saber citar um na hora certa é sinal de sabedoria.' },
+    ],
+    dances: [
+      { emoji: '🦘', name: 'Dança do salto maasai', local: 'adumu', fact: 'Os jovens guerreiros maasai saltam bem alto, um de cada vez, ao som do canto do grupo; quem pula mais alto mostra força.' },
+      { emoji: '🥁', name: 'Isukuti', local: 'isukuti', fact: 'Dança rápida do povo luhya ao som de três tambores, nas festas e nos casamentos do oeste do Quênia.' },
+    ],
+    plants: [
+      { emoji: '🌳', name: 'Acácia', local: 'mgunga', fact: 'A árvore de copa achatada como um guarda-chuva é o símbolo das savanas; as girafas comem as folhas entre os espinhos.' },
+      { emoji: '🍵', name: 'Chá', local: 'chai', fact: 'As colinas de Kericho e de outras regiões altas estão cobertas de plantações de chá; o Quênia está entre os maiores exportadores do mundo, e o chai com leite e açúcar é bebida de todo dia.' },
+    ],
+    games: [{ emoji: '🎲', name: 'Bao', local: 'bao', fact: 'O jogo de tabuleiro com sementes também é jogado no Quênia, sobretudo na costa, em tabuleiros de madeira ou em buracos cavados no chão.' }],
+    gestures: [
+      { emoji: '🤝', name: 'Harambee', local: 'harambee', fact: '«Vamos puxar juntos»: o lema do Quênia e o nome das vaquinhas comunitárias para pagar uma escola, um hospital ou uma festa.' },
+      { emoji: '👋', name: 'Mambo? Poa!', local: 'mambo, poa', fact: 'O cumprimento descontraído dos jovens; com os mais velhos, o respeito pede «shikamoo» ou um aperto de mão demorado.' },
+    ],
+  },
   JPN: {
     foods: [
       { emoji: '🍣', name: 'Sushi', local: '寿司', fact: 'A cozinha tradicional japonesa (washoku) é patrimônio da UNESCO desde 2013.' },

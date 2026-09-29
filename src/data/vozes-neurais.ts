@@ -57,6 +57,9 @@ export const NEURAL_VOICES: Record<string, NeuralVoice> = Object.fromEntries(
     v('fi_FI-harri-medium', 'finlandês (Harri)', 'CC0', CC0),
     v('is_IS-ugla-medium', 'islandês (Ugla, Talrómur)', 'CC BY 4.0', BY4, 77),
     v('et_EE-news-medium', 'estoniano (news)', 'CC BY 4.0', BY4, 77),
+    v('lv_LV-aivars-medium', 'letão (Aivars)', 'CC0', CC0),
+    // a licença do conjunto de gravações (Lanfrica) não está clara na página; a voz foi treinada a partir da en_US-lessac
+    v('sw_CD-lanfrica-medium', 'suaíli (Lanfrica)', 'ver a página do conjunto de dados', 'https://lanfrica.com/record/kiswahili-tts-dataset'),
     v('de_DE-thorsten-medium', 'alemão (Thorsten)', 'CC0', CC0),
     v('en_US-joe-medium', 'inglês dos EUA (Joe)', 'CC0', CC0),
     v('en_GB-alba-medium', 'inglês britânico (Alba)', 'CC BY 4.0', BY4),
@@ -107,6 +110,8 @@ const BY_LOCALE: [RegExp, string][] = [
   [/^fi\b/, 'fi_FI-harri-medium'],
   [/^is\b/, 'is_IS-ugla-medium'],
   [/^et\b/, 'et_EE-news-medium'],
+  [/^lv\b/, 'lv_LV-aivars-medium'],
+  [/^sw\b/, 'sw_CD-lanfrica-medium'],
   [/^fo\b/, 'fo-mms'],
   [/^de\b/, 'de_DE-thorsten-medium'],
   [/^en-(GB|IE|AU|NZ|ZA)\b/i, 'en_GB-alba-medium'],

@@ -253,6 +253,28 @@ export const FAUNA_MUSICA: Record<string, CountryNature> = {
       { emoji: '🎶', name: 'Gaita de foles letã', local: 'dūdas', fact: 'A gaita de foles tradicional da Letônia, tocada em festas e casamentos na zona rural.', origin: 'tradicional' },
     ],
   },
+  TZA: {
+    animals: [
+      { emoji: '🦒', name: 'Girafa', local: 'twiga', fact: 'O animal nacional da Tanzânia; a girafa-maasai, que vive no Serengeti, é a maior das girafas.' },
+      { emoji: '🐃', name: 'Gnu', local: 'nyumbu', fact: 'Mais de um milhão de gnus fazem todo ano a grande migração entre o Serengeti e o Maasai Mara, atrás do capim novo.' },
+      { emoji: '🐒', name: 'Chimpanzé', local: 'sokwe', fact: 'No Parque Nacional de Gombe, às margens do lago Tanganica, os chimpanzés são estudados desde 1960.' },
+    ],
+    instruments: [
+      { emoji: '🥁', name: 'Ngoma', local: 'ngoma', fact: 'Na África Oriental, «ngoma» quer dizer ao mesmo tempo tambor, dança e festa: não há festa sem tambor.', origin: 'tradicional' },
+      { emoji: '🎻', name: 'Zeze', local: 'zeze', fact: 'Instrumento de cordas tocado com arco ou dedilhado, com uma cabaça que faz a caixa de som; comum em várias regiões da Tanzânia.', origin: 'tradicional' },
+    ],
+  },
+  KEN: {
+    animals: [
+      { emoji: '🦁', name: 'Leão', local: 'simba', fact: 'Dois leões seguram o escudo no brasão do Quênia; nas savanas do Maasai Mara vivem alguns dos leões mais estudados da África.' },
+      { emoji: '🦏', name: 'Rinoceronte-negro', local: 'kifaru', fact: 'Criticamente ameaçado pela caça ilegal, é protegido em reservas como o Parque Nacional de Nairobi, a poucos quilômetros dos prédios da capital.' },
+      { emoji: '🦩', name: 'Flamingo', local: 'heroe', fact: 'Os lagos salgados do Vale do Rift, como o Nakuru e o Bogoria, ficam cor-de-rosa com milhares de flamingos.' },
+    ],
+    instruments: [
+      { emoji: '🪕', name: 'Nyatiti', local: 'nyatiti', fact: 'Lira de oito cordas do povo luo, perto do lago Vitória; o músico toca sentado e marca o ritmo com um guizo no dedão do pé.', origin: 'tradicional' },
+      { emoji: '🥁', name: 'Isukuti', local: 'isukuti', fact: 'Tambores do povo luhya, tocados em trio nas festas e nos casamentos, com uma dança rápida do mesmo nome.', origin: 'tradicional' },
+    ],
+  },
   JPN: {
     animals: [
       { emoji: '🐒', name: 'Macaco-japonês', local: 'ニホンザル', fact: 'Famoso por se banhar em fontes termais no inverno.' },
@@ -299,4 +321,4 @@ export const FAUNA_MUSICA: Record<string, CountryNature> = {
 };
 
 /** Países «de origem» de cada idioma do app (seção Bichos e sons da aba Cultura). */
-export const HOMELANDS: Record<string, string[]> = { ro: ['ROU', 'MDA'], ru: ['RUS'], es: ['ESP', 'MEX', 'COL', 'ARG', 'PER', 'CHL', 'CUB'], it: ['ITA'], sv: ['SWE'], nb: ['NOR'], nn: ['NOR'], da: ['DNK'], is: ['ISL'], fo: ['FRO'], pt: ['BRA', 'PRT'], fr: ['FRA'], fi: ['FIN'], et: ['EST'], lt: ['LTU'], lv: ['LVA'], ja: ['JPN'], ko: ['KOR'], en: ['GBR'] };
+export const HOMELANDS: Record<string, string[]> = { ro: ['ROU', 'MDA'], ru: ['RUS'], es: ['ESP', 'MEX', 'COL', 'ARG', 'PER', 'CHL', 'CUB'], it: ['ITA'], sv: ['SWE'], nb: ['NOR'], nn: ['NOR'], da: ['DNK'], is: ['ISL'], fo: ['FRO'], pt: ['BRA', 'PRT'], fr: ['FRA'], fi: ['FIN'], et: ['EST'], lt: ['LTU'], lv: ['LVA'], sw: ['TZA', 'KEN'], ja: ['JPN'], ko: ['KOR'], en: ['GBR'] };

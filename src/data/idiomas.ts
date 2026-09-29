@@ -14,11 +14,13 @@ import { FINLANDES } from './fi';
 import { ESTONIANO } from './et';
 import { FEROES } from './fo';
 import { LITUANO } from './lt';
+import { LETAO } from './lv';
+import { SUAILI } from './sw';
 import { JAPONES } from './ja';
 import { COREANO } from './ko';
 
 /** Idiomas com conteúdo pronto. */
-export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES, fr: FRANCES, ca: CATALAO, is: ISLANDES, fi: FINLANDES, et: ESTONIANO, fo: FEROES, lt: LITUANO, ja: JAPONES, ko: COREANO };
+export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES, fr: FRANCES, ca: CATALAO, is: ISLANDES, fi: FINLANDES, et: ESTONIANO, fo: FEROES, lt: LITUANO, lv: LETAO, sw: SUAILI, ja: JAPONES, ko: COREANO };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -41,6 +43,7 @@ export const LANGUAGES: LanguageInfo[] = [
   FEROES,
   ESTONIANO,
   LITUANO,
+  LETAO,
   JAPONES,
   COREANO,
   // as maiores línguas da Ásia (Ethnologue, falantes nativos + segunda língua; o russo já está no app)
@@ -84,7 +87,9 @@ export const LANGUAGES: LanguageInfo[] = [
     code: 'tr', name: 'Turco', nativeName: 'Türkçe', flag: '🇹🇷',
     lineage: { family: 'Túrquico', branches: ['Oghuz'], region: 'Anatólia (Ásia Ocidental) e Trácia oriental', writing: 'Alfabeto latino (ç, ğ, ı, ö, ş, ü)' },
   },
-  // as maiores línguas da África depois do suaíli (Ethnologue; o árabe já está acima e o pidgin nigeriano é crioulo)
+  // o suaíli, a língua africana mais falada como segunda língua, e as maiores da África depois dele
+  // (Ethnologue; o árabe já está acima e o pidgin nigeriano é crioulo)
+  SUAILI,
   {
     code: 'ha', name: 'Hauçá', nativeName: 'Harshen Hausa', flag: '🇳🇬',
     lineage: { family: 'Afro-asiático', branches: ['Chádico', 'Chádico ocidental'], region: 'Norte da Nigéria e sul do Níger (Sahel)', writing: 'Alfabeto latino (boko: ɓ, ɗ, ƙ, ƴ); também em escrita árabe (ajami)' },

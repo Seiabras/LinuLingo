@@ -225,6 +225,8 @@ export function palaceIntro(lang: string): string {
     return 'O amárico tem 2 gêneros, masculino e feminino, como o português, mas o masculino é o gênero de quase tudo: o feminino fica para seres femininos e poucas palavras por tradição (ፀሐይ, o sol). O gênero muda o artigo que vai grudado no fim (ቤቱ, ላሟ) e a forma do verbo. Guarde cada palavra na sala certa!';
   if (lang === 'om')
     return 'O oromo tem 2 gêneros, masculino e feminino. O gênero aparece no demonstrativo (kun × tun), nos pronomes (inni × isheen) e no verbo (deeme × deemte). A maioria das palavras é masculina; decore as femininas, como aduu (o sol). Guarde cada palavra na sala certa!';
+  if (lang === 'sw')
+    return 'O suaíli não tem masculino nem feminino: «yeye» quer dizer ele e ela. No lugar do gênero, ele tem algo parecido e mais rico: as classes de substantivos, marcadas por prefixos (mtoto/watoto, kitabu/vitabu), que mudam o adjetivo, o possessivo e o verbo. O palácio fica vazio de masculinos e femininos, e a sua memória pode se concentrar em decorar cada palavra com o plural, que mostra a classe.';
   if (lang === 'yo')
     return 'Boa notícia: o iorubá não tem gênero gramatical nem artigos! «Ó» quer dizer ele e ela, e «ọmọ» é filho e filha. O palácio fica vazio, e a sua memória pode se concentrar nos tons: ọkọ́ (enxada), ọkọ̀ (barco) e ọkọ (marido) só mudam pela melodia.';
   if (lang === 'ig')

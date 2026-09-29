@@ -15,6 +15,8 @@ import { RECURSOS_FI } from './fi';
 import { RECURSOS_ET } from './et';
 import { RECURSOS_FO } from './fo';
 import { RECURSOS_LT } from './lt';
+import { RECURSOS_LV } from './lv';
+import { RECURSOS_SW } from './sw';
 import { RECURSOS_JA } from './ja';
 import { RECURSOS_KO } from './ko';
 import { RECURSOS_AR } from './ar';
@@ -51,6 +53,8 @@ export const RESOURCES: Record<string, LanguageResources> = {
   et: RECURSOS_ET,
   fo: RECURSOS_FO,
   lt: RECURSOS_LT,
+  lv: RECURSOS_LV,
+  sw: RECURSOS_SW,
   ja: RECURSOS_JA,
   ko: RECURSOS_KO,
   ar: RECURSOS_AR,

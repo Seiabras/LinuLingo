@@ -49,6 +49,23 @@ export const OWN_LANGUAGE_META: Record<string, OwnLanguageMeta> = {
   },
   'lt-polones': { family: 'Indo-europeu › Balto-eslavo › Eslavo', recognition: 'Língua da maior minoria nacional, sem status oficial: há escolas com ensino em polonês, jornais e rádio.' },
   'lt-russo': { family: 'Indo-europeu › Balto-eslavo › Eslavo', recognition: 'Língua de uma minoria nacional, sem status oficial; foi a língua da administração no período soviético.' },
+  'lv-latgaliano': {
+    family: 'Indo-europeu › Báltico › Báltico oriental',
+    recognition: 'A Lei da Língua de 1999 protege a «língua escrita latgaliana» como variante histórica do letão; é ensinada em algumas escolas e usada na imprensa, no rádio e na música.',
+    debated: 'O Estado letão a trata como variante histórica do letão; muitos falantes e linguistas a consideram língua regional, que tem código próprio na norma ISO 639-3 (ltg).',
+  },
+  'lv-livonio': {
+    family: 'Urálico › Fínico',
+    glottocodes: ['livv1244'],
+    recognition: 'A Lei da Língua de 1999 diz que o Estado garante a preservação e o desenvolvimento do livônio, língua de uma população nativa; a Costa Livônia é área protegida desde 1991.',
+  },
+  'sw-kongo': {
+    family: 'Níger-Congo › Banto',
+    glottocodes: ['cong1236'],
+    recognition: 'Uma das quatro línguas nacionais da República Democrática do Congo, ao lado do lingala, do kikongo e do tshiluba; a oficial é o francês.',
+    debated: 'Muitos falantes e linguistas o tratam como variedade do suaíli; a norma ISO 639-3 lhe dá código próprio (swc), separado do suaíli padrão (swh).',
+  },
+  'lv-russo': { family: 'Indo-europeu › Balto-eslavo › Eslavo', recognition: 'Sem status oficial: é a língua de casa de cerca de um terço da população; foi a língua da administração no período soviético.' },
   'fo-danskt': { family: 'Indo-europeu › Germânico › Nórdico', recognition: 'Ensinado em todas as escolas; pela Lei de Autonomia de 1948, o feroês é a língua principal, mas o dinamarquês também pode ser usado oficialmente.' },
   'fo-norn': { family: 'Indo-europeu › Germânico › Nórdico', recognition: 'Extinto: foi falado nas Shetland e nas Órcades até por volta do século XVIII.' },
   'is-taknmal': { family: 'Língua de sinais', recognition: 'Reconhecida por lei em 2011 como a primeira língua da comunidade surda islandesa, com o mesmo status do islandês para quem precisa dela.' },
