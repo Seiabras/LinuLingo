@@ -65,6 +65,7 @@ export default function RootLayout() {
                 <Stack.Screen name="pares" />
                 <Stack.Screen name="erros" />
                 <Stack.Screen name="bichos" />
+                <Stack.Screen name="amigos" />
                 <Stack.Screen name="album" />
                 <Stack.Screen name="mapa-jogo" />
                 <Stack.Screen name="sons" />

@@ -82,6 +82,9 @@ export default function ProfileScreen() {
 
       <Card className="mt-4">
         <SpeciesPhotos height={130} />
+        <Pressable accessibilityRole="button" onPress={() => router.push('/amigos')} className="mt-3 items-center rounded-xl bg-conecta py-2 active:opacity-90">
+          <Text className="font-bold text-white">🐧 Conhecer os amigos do Linu</Text>
+        </Pressable>
       </Card>
 
       <View className="mt-4 flex-row flex-wrap gap-2">

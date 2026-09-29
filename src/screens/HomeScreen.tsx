@@ -143,7 +143,7 @@ export default function HomeScreen() {
 
       <Text className="mb-2 mt-5 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">Mais práticas</Text>
       <View className="flex-row flex-wrap gap-2">
-        {[...(pack.alphabet ? [ALPHABET_PRACTICE] : []), ...(pack.falseFriends ? [FALSE_FRIENDS_PRACTICE] : []), ...(ACCENT_PRACTICE ? [ACCENT_PRACTICE] : []), ...PRACTICES.slice(0, 1), ...(PAIRS_PRACTICE ? [PAIRS_PRACTICE] : []), MISTAKES_PRACTICE, ...PRACTICES.slice(1), ...(ANIMALS_PRACTICE ? [ANIMALS_PRACTICE] : []), SOUNDS_PRACTICE, MAP_GAME_PRACTICE, ...(EXPEDITION_PRACTICE ? [EXPEDITION_PRACTICE] : []), KIN_PRACTICE, ACCENT_GUESS_PRACTICE, COURSES_PRACTICE, ALBUM_PRACTICE, RESOURCES_PRACTICE].map((p) => (
+        {[...(pack.alphabet ? [ALPHABET_PRACTICE] : []), ...(pack.falseFriends ? [FALSE_FRIENDS_PRACTICE] : []), ...(ACCENT_PRACTICE ? [ACCENT_PRACTICE] : []), ...PRACTICES.slice(0, 1), ...(PAIRS_PRACTICE ? [PAIRS_PRACTICE] : []), MISTAKES_PRACTICE, ...PRACTICES.slice(1), ...(ANIMALS_PRACTICE ? [ANIMALS_PRACTICE] : []), SOUNDS_PRACTICE, MAP_GAME_PRACTICE, ...(EXPEDITION_PRACTICE ? [EXPEDITION_PRACTICE] : []), KIN_PRACTICE, ACCENT_GUESS_PRACTICE, COURSES_PRACTICE, ALBUM_PRACTICE, FRIENDS_PRACTICE, RESOURCES_PRACTICE].map((p) => (
           <Pressable
             key={p.route}
             accessibilityRole="button"
@@ -310,6 +310,8 @@ const ALPHABET_PRACTICE = { route: '/alfabeto', emoji: '🔤', title: 'Alfabeto'
 const RESOURCES_PRACTICE = { route: '/provas', emoji: '🎓', title: 'Provas e dicas', text: 'Certificados, filmes, livros e séries' } as const;
 
 const FALSE_FRIENDS_PRACTICE = { route: '/falsos-amigos', emoji: '🪤', title: 'Falsos amigos', text: 'Parecem português, mas não são' } as const;
+
+const FRIENDS_PRACTICE = { route: '/amigos', emoji: '🐧', title: 'Amigos do Linu', text: 'Pinguins e bichos da Antártida' } as const;
 
 const COURSES_PRACTICE = { route: '/cursos', emoji: '🎓', title: 'Cursos', text: 'Libras, Braille, esperanto, klingon…' } as const;
 
