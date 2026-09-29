@@ -231,8 +231,8 @@ export const CONLANGS: Conlang[] = [
     about: 'O Senhor dos Anéis e O Silmarillion: a língua antiga dos elfos.',
     text: 'Tolkien, que era filólogo, dizia que inventou as histórias para dar um mundo às suas línguas, e não o contrário. O quenya tem o som e as terminações de caso inspirados no finlandês, com toques do latim e do grego, e se escreve com as tengwar, letras criadas por ele.',
     samples: [
+      ['Elen síla lúmenn’ omentielvo', 'Uma estrela brilha sobre a hora do nosso encontro (Frodo, em «O Senhor dos Anéis», de J. R. R. Tolkien)'],
       ['elen', 'estrela'],
-      ['aiya', 'salve! (saudação)'],
     ],
     note: 'As raízes são inventadas (a priori), mas o som e a gramática imitam línguas reais. Tolkien mudou a língua a vida inteira e não a terminou: o «neo-quenya» dos fãs preenche as lacunas.',
     tree: { kind: 'ficção', root: ARVORE_ELFICA, highlight: 'Quenya', note: NOTA_ELFICA },

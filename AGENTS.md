@@ -47,3 +47,7 @@ O conteúdo de todos os idiomas deve mostrar **imagens em vez de emojis**: emoji
 - Palavras do vocabulário: a imagem vem da tradução em português (`photoFor` em `src/components/WordImage.tsx`), primeiro a foto do Wikimedia Commons (`src/data/fotos-palavras.ts`) e, para o que não tem foto (verbos, adjetivos, palavras abstratas), um pictograma de licença livre. O emoji fica só como último recurso.
 - Ao criar conteúdo novo (palavras, lições, histórias, bichos, idiomas novos), não conte com o emoji para ilustrar: garanta que a palavra tem imagem (rode os scripts de imagens depois de acrescentar palavras) e use a mesma tradução em português das outras línguas para o mesmo conceito, para a imagem ser reaproveitada.
 - Só licenças livres (CC0, CC BY, CC BY-SA, domínio público), com autor e licença na tela de créditos.
+
+## Citações (decisão do dono do projeto)
+
+O LinuLingo é um app pessoal e sem fins lucrativos, então citações curtas de qualquer autor podem entrar, inclusive de autores recentes. Não é preciso esperar os 70 anos do domínio público. Mas sempre com o crédito: o autor e a obra. Trechos longos (páginas, letras de música inteiras) continuam de fora.

@@ -19,7 +19,7 @@ O trabalho foi interrompido por falta de créditos. Tudo está comitado. Este ar
   - esperanto → ido → novial;
   - brithenig;
   - loglan → lojban.
-  - A amostra do quenya virou palavras soltas, porque Tolkien morreu há menos de 70 anos.
+  - A regra dos 70 anos foi relaxada (ver AGENTS.md): a frase do quenya voltou, com o crédito.
   - **Falta ver no navegador**: Cultura → Tipos de línguas → Artificiais.
 
 ## Prontos, mas ainda não registrados
