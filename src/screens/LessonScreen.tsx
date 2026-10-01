@@ -12,8 +12,8 @@ import { RewardStep } from '@/components/lesson/RewardStep';
 import { Linu } from '@/components/Linu';
 import { useApp } from '@/services/app-state';
 import { findLesson, JUMP_PASS, jumpLessons, resolveLesson } from '@/services/curriculum';
-import { awardXp, completeLesson, listVocab, reviewWord, skipLessons, submitToCommunity, vocabByWords } from '@/database/queries';
-import { lessonXp, XP } from '@/services/progress';
+import { awardXp, completeLesson, listVocab, reviewWord, skipLessons, submitToCommunity, vocabByWords, xpByDay } from '@/database/queries';
+import { lessonXp, localDay, XP } from '@/services/progress';
 import { stopSpeaking } from '@/services/speech';
 import { useIsDark } from '@/services/theme';
 import { goBack } from '@/services/nav';
@@ -29,7 +29,7 @@ export default function LessonScreen() {
   const { id, pular } = useLocalSearchParams<{ id: string; pular?: string }>();
   // teste para pular: a prova de uma unidade ainda bloqueada
   const jump = pular === '1';
-  const { db, pack, refresh } = useApp();
+  const { db, pack, user, refresh } = useApp();
   const dark = useIsDark();
   const found = useMemo(() => findLesson(pack, id), [pack, id]);
   const lesson = useMemo(() => (found ? resolveLesson(found.unit, found.lesson) : null), [found]);
@@ -40,7 +40,7 @@ export default function LessonScreen() {
   const [wordResults, setWordResults] = useState<WordResult[]>([]);
   const [clozeCorrect, setClozeCorrect] = useState(0);
   const [voiceCorrect, setVoiceCorrect] = useState(false);
-  const [reward, setReward] = useState<{ xp: number; streak: number; usedFreeze: boolean; words: VocabWithSRS[] } | null>(null);
+  const [reward, setReward] = useState<{ xp: number; streak: number; usedFreeze: boolean; words: VocabWithSRS[]; todayXp: number; goalXp: number } | null>(null);
   const [jumped, setJumped] = useState<boolean | null>(null);
 
   useEffect(() => {
@@ -81,7 +81,9 @@ export default function LessonScreen() {
     }
     const streak = await awardXp(db, xp, `licao:${lesson.id}`);
     const updated = await vocabByWords(db, pack.code, lesson.words);
-    setReward({ xp, streak: streak?.streak ?? 0, usedFreeze: streak?.usedFreeze ?? false, words: updated });
+    const days = await xpByDay(db, 1);
+    const todayXp = days.find((d) => d.day === localDay())?.xp ?? xp;
+    setReward({ xp, streak: streak?.streak ?? 0, usedFreeze: streak?.usedFreeze ?? false, words: updated, todayXp, goalXp: user?.daily_goal_xp ?? 30 });
     setStep(5);
     refresh();
   };
@@ -168,6 +170,8 @@ export default function LessonScreen() {
           streak={reward.streak}
           usedFreeze={reward.usedFreeze}
           words={reward.words}
+          todayXp={reward.todayXp}
+          goalXp={reward.goalXp}
           onContinue={goBack}
         />
       )}

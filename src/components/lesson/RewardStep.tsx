@@ -17,6 +17,8 @@ export function RewardStep({
   streak,
   usedFreeze,
   words,
+  todayXp,
+  goalXp,
   onContinue,
 }: {
   xp: number;
@@ -25,6 +27,8 @@ export function RewardStep({
   streak: number;
   usedFreeze: boolean;
   words: VocabWithSRS[];
+  todayXp: number;
+  goalXp: number;
   onContinue: () => void;
 }) {
   useEffect(() => haptics.success(), []);
@@ -51,6 +55,17 @@ export function RewardStep({
         <Stat entering={2} label="Ofensiva" value={`🔥 ${streak}`} color="text-fogo" />
       </View>
       {usedFreeze && <Text className="text-center text-sm text-conecta">🧊 Um congelamento protegeu sua ofensiva de ontem.</Text>}
+
+      <Animated.View entering={FadeInDown.delay(620)} style={{ gap: 4 }}>
+        <View className="flex-row items-center justify-between">
+          <Text className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">Meta de hoje</Text>
+          <Text className="text-xs font-bold text-slate-500 dark:text-slate-400">
+            {Math.min(todayXp, goalXp)}/{goalXp} XP
+          </Text>
+        </View>
+        <ProgressBar value={todayXp / goalXp} color={todayXp >= goalXp ? 'bg-conquista' : 'bg-fogo'} />
+        {todayXp >= goalXp && <Text className="text-center text-sm font-bold text-conquista">🎉 Meta do dia batida!</Text>}
+      </Animated.View>
 
       {words.length > 0 && (
         <Card className="gap-3">
