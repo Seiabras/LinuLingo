@@ -39,12 +39,19 @@ import { UCRANIANO } from './uk';
 import { TURCO } from './tr';
 import { JAPONES } from './ja';
 import { COREANO } from './ko';
+import { LUXEMBURGUES } from './lb';
+import { BULGARO } from './bg';
+import { SERVIO } from './sr';
+import { CROATA } from './hr';
+import { ESLOVENO } from './sl';
+import { BASCO } from './eu';
 
 /** Idiomas com conteúdo pronto. */
 export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES, fr: FRANCES, ca: CATALAO, is: ISLANDES, fi: FINLANDES, et: ESTONIANO, fo: FEROES, lt: LITUANO, lv: LETAO, sw: SUAILI, ja: JAPONES, ko: COREANO,
   // incompletos (só o A1 por enquanto; ver o campo `incomplete` de cada pacote)
   gl: GALEGO, ast: ASTURIANO, oc: OCCITANO, sc: SARDO, rm: ROMANCHE, fur: FRIULANO, la: LATIM, lad: JUDEU_ESPANHOL, en: INGLES, id: INDONESIO, vi: VIETNAMITA, yo: IORUBA,
-  lld: LADINO_DOLOMITAS, de: ALEMAO, nl: NEERLANDES, af: AFRICANER, pl: POLONES, cs: TCHECO, sk: ESLOVACO, uk: UCRANIANO, tr: TURCO };
+  lld: LADINO_DOLOMITAS, de: ALEMAO, nl: NEERLANDES, af: AFRICANER, pl: POLONES, cs: TCHECO, sk: ESLOVACO, uk: UCRANIANO, tr: TURCO,
+  lb: LUXEMBURGUES, bg: BULGARO, sr: SERVIO, hr: CROATA, sl: ESLOVENO, eu: BASCO };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -54,6 +61,10 @@ export const LANGUAGES: LanguageInfo[] = [
   POLONES,
   TCHECO,
   ESLOVACO,
+  BULGARO,
+  SERVIO,
+  CROATA,
+  ESLOVENO,
   ESPANHOL,
   ITALIANO,
   PORTUGUES,
@@ -68,6 +79,7 @@ export const LANGUAGES: LanguageInfo[] = [
   LADINO_DOLOMITAS,
   LATIM,
   JUDEU_ESPANHOL,
+  BASCO,
   SUECO,
   NORUEGUES,
   DINAMARQUES,
@@ -76,6 +88,7 @@ export const LANGUAGES: LanguageInfo[] = [
   ALEMAO,
   NEERLANDES,
   AFRICANER,
+  LUXEMBURGUES,
   FINLANDES,
   FEROES,
   ESTONIANO,
