@@ -67,6 +67,9 @@ import { LIGURE } from './lij';
 import { LOMBARDO } from './lmo';
 import { MIRANDES } from './mwl';
 import { FRANCOPROVENCAL } from './frp';
+import { GREGO } from './el';
+import { ALBANES } from './sq';
+import { ARMENIO } from './hy';
 
 /** Idiomas com conteúdo pronto. */
 export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES, fr: FRANCES, ca: CATALAO, is: ISLANDES, fi: FINLANDES, et: ESTONIANO, fo: FEROES, lt: LITUANO, lv: LETAO, sw: SUAILI, ja: JAPONES, ko: COREANO,
@@ -77,7 +80,8 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   mk: MACEDONIO, rup: AROMENO, zh: CHINES,
   co: CORSO, an: ARAGONES, wa: VALAO, vec: VENETO, nap: NAPOLITANO, scn: SICILIANO,
   fy: FRISIO, nds: BAIXO_ALEMAO, sco: SCOTS, gsw: SUICO_ALEMAO, be: BIELORRUSSO, bs: BOSNIO, hsb: ALTO_SORABIO, csb: CASSUBIO,
-  pms: PIEMONTES, lij: LIGURE, lmo: LOMBARDO, mwl: MIRANDES, frp: FRANCOPROVENCAL };
+  pms: PIEMONTES, lij: LIGURE, lmo: LOMBARDO, mwl: MIRANDES, frp: FRANCOPROVENCAL,
+  el: GREGO, sq: ALBANES, hy: ARMENIO };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -143,6 +147,10 @@ export const LANGUAGES: LanguageInfo[] = [
   LETAO,
   JAPONES,
   COREANO,
+  // ramos próprios do indo-europeu, sem parentes vivos próximos
+  GREGO,
+  ALBANES,
+  ARMENIO,
   // as maiores línguas da Ásia (Ethnologue, falantes nativos + segunda língua; o russo já está no app)
   {
     code: 'ar', name: 'Árabe', nativeName: 'العربية', flag: '🇸🇦',

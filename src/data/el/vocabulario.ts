@@ -1,0 +1,108 @@
+import { buildVocab, type VocabRow } from '../types';
+
+/**
+ * Vocabulário do grego moderno. O grego já marca a sílaba tônica na própria escrita (o tonos, ´),
+ * então as palavras aqui aparecem exatamente como um grego escreveria — sem marca extra, diferente
+ * do que fizemos no russo e no ucraniano. Idioma incompleto: por enquanto só o suficiente para o
+ * nível A1 (unidades 1 e 2) — ver o campo `incomplete` do pacote.
+ */
+export const ROWS: VocabRow[] = [
+  // ── Expressões ──
+  ['γεια σου', 'oi, tchau (informal)', 'interjeição', 'Expressões', '👋', 'Γεια σου! Τι κάνεις;'],
+  ['καλημέρα', 'bom dia', 'interjeição', 'Expressões', '🌅', 'Καλημέρα! Τι κάνεις;'],
+  ['καλησπέρα', 'boa tarde, boa noite (ao chegar)', 'interjeição', 'Expressões', '🌇', 'Καλησπέρα σε όλους!'],
+  ['καληνύχτα', 'boa noite (ao se despedir ou ir dormir)', 'interjeição', 'Expressões', '🌙', 'Καληνύχτα, μαμά!'],
+  ['αντίο', 'tchau, adeus', 'interjeição', 'Expressões', '👋', 'Αντίο και ευχαριστώ!'],
+  ['ευχαριστώ', 'obrigado', 'interjeição', 'Expressões', '🙏', 'Ευχαριστώ πολύ!'],
+  ['παρακαλώ', 'por favor; de nada', 'interjeição', 'Expressões', '🙏', 'Έναν καφέ, παρακαλώ.'],
+  ['συγγνώμη', 'com licença, desculpe', 'interjeição', 'Expressões', '🙏', 'Συγγνώμη, πού είναι ο σταθμός;'],
+  ['τι κάνεις;', 'como vai? (informal)', 'expressão', 'Expressões', '🙂', 'Γεια σου, Μαρία! Τι κάνεις;'],
+  // ── Essenciais ──
+  ['ναι', 'sim', 'partícula', 'Essenciais', '👍', 'Ναι, παρακαλώ.'],
+  ['όχι', 'não', 'partícula', 'Essenciais', '👎', 'Όχι, ευχαριστώ.'],
+  ['και', 'e', 'conjunção', 'Essenciais', null, 'Ψωμί και τυρί.'],
+  ['ή', 'ou', 'conjunção', 'Essenciais', null, 'Καφές ή τσάι;'],
+  ['πολύ', 'muito', 'advérbio', 'Essenciais', null, 'Ευχαριστώ πολύ!'],
+  ['επίσης', 'também', 'advérbio', 'Essenciais', null, 'Μιλάω και αγγλικά επίσης.'],
+  ['καλά', 'bem', 'advérbio', 'Essenciais', '👌', 'Καλά, ευχαριστώ. Κι εσύ;'],
+  ['τι', 'o que', 'pronome', 'Essenciais', '❓', 'Τι είναι αυτό;'],
+  ['πού', 'onde', 'advérbio', 'Essenciais', '❓', 'Πού μένεις;'],
+  ['πώς', 'como', 'advérbio', 'Essenciais', '❓', 'Πώς σε λένε;'],
+  ['από πού', 'de onde', 'advérbio', 'Essenciais', '❓', 'Από πού είσαι;'],
+  ['πόλη', 'cidade', 'substantivo', 'Essenciais', '🏙️', 'Η Αθήνα είναι μεγάλη πόλη.', 'f'],
+  ['σπίτι', 'casa', 'substantivo', 'Casa', '🏠', 'Το σπίτι μου είναι μικρό.', 'n'],
+  ['σκύλος', 'cachorro', 'substantivo', 'Animais', '🐕', 'Ο σκύλος κοιμάται.', 'm'],
+  ['γάτα', 'gato', 'substantivo', 'Animais', '🐈', 'Η γάτα είναι μαύρη.', 'f'],
+  ['καλός', 'bom (fem. καλή, neutro καλό)', 'adjetivo', 'Descrições', '👍', 'Το ψωμί είναι καλό.'],
+  ['μεγάλος', 'grande (fem. μεγάλη, neutro μεγάλο)', 'adjetivo', 'Descrições', '📏', 'Η οικογένειά μου είναι μεγάλη.'],
+  ['μικρός', 'pequeno (fem. μικρή, neutro μικρό)', 'adjetivo', 'Descrições', '📏', 'Η γάτα είναι μικρή.'],
+  // ── Pessoas ──
+  ['εγώ', 'eu', 'pronome', 'Pessoas', '🙋', 'Εγώ είμαι φοιτήτρια.'],
+  ['εσύ', 'tu, você', 'pronome', 'Pessoas', '🫵', 'Κι εσύ; Πώς σε λένε;'],
+  ['αυτός', 'ele', 'pronome', 'Pessoas', '👨', 'Αυτός είναι από την Αθήνα.'],
+  ['αυτή', 'ela', 'pronome', 'Pessoas', '👩', 'Αυτή είναι από τη Θεσσαλονίκη.'],
+  ['εμείς', 'nós', 'pronome', 'Pessoas', '🙌', 'Εμείς μιλάμε ελληνικά.'],
+  ['εσείς', 'vocês; o senhor, a senhora (formal)', 'pronome', 'Pessoas', '🫵', 'Από πού είστε;'],
+  ['αυτοί', 'eles, elas', 'pronome', 'Pessoas', '👥', 'Αυτοί μένουν στην Αθήνα.'],
+  ['όνομα', 'nome', 'substantivo', 'Pessoas', '🏷️', 'Το όνομά μου είναι Λίνα.', 'n'],
+  ['φίλος', 'amigo', 'substantivo', 'Pessoas', '🧑‍🤝‍🧑', 'Αυτός είναι ο φίλος μου.', 'm'],
+  ['φίλη', 'amiga', 'substantivo', 'Pessoas', '🧑‍🤝‍🧑', 'Αυτή είναι η φίλη μου.', 'f'],
+  // ── Verbos-chave ──
+  ['είμαι', 'ser, estar (είμαι, είσαι, είναι)', 'verbo', 'Verbos-chave', '🧑', 'Είμαι από το Ρίο ντε Τζανέιρο.'],
+  ['έχω', 'ter (έχω, έχεις, έχει)', 'verbo', 'Verbos-chave', '🤲', 'Έχω έναν αδελφό.'],
+  ['με λένε', 'eu me chamo (lit. “me chamam”)', 'expressão', 'Verbos-chave', '🏷️', 'Με λένε Άννα.'],
+  ['μιλάω', 'falar (μιλάω, μιλάς, μιλάει)', 'verbo', 'Verbos-chave', '🗣️', 'Μιλάω λίγο ελληνικά.'],
+  ['μένω', 'morar, viver (μένω, μένεις, μένει)', 'verbo', 'Verbos-chave', '🏠', 'Μένω στην Αθήνα.'],
+  ['πηγαίνω', 'ir (πηγαίνω, πηγαίνεις, πηγαίνει)', 'verbo', 'Verbos-chave', '🚶', 'Πηγαίνω σπίτι.'],
+  ['τρώω', 'comer (τρώω, τρως, τρώει)', 'verbo', 'Verbos-chave', '🍽️', 'Τρώω ψωμί και τυρί.'],
+  ['πίνω', 'beber (πίνω, πίνεις, πίνει)', 'verbo', 'Verbos-chave', '🥤', 'Πίνω νερό.'],
+  ['μου αρέσει', 'eu gosto (lit. “me agrada”)', 'expressão', 'Verbos-chave', '❤️', 'Μου αρέσει ο καφές.'],
+  ['ξέρω', 'saber, conhecer (ξέρω, ξέρεις, ξέρει)', 'verbo', 'Verbos-chave', '🧠', 'Δεν ξέρω.'],
+  ['θέλω', 'querer (θέλω, θέλεις, θέλει)', 'verbo', 'Verbos-chave', '💭', 'Θέλω να μάθω ελληνικά.'],
+  ['μαθαίνω', 'aprender (μαθαίνω, μαθαίνεις, μαθαίνει)', 'verbo', 'Verbos-chave', '📚', 'Μαθαίνω ελληνικά.'],
+  // ── Pessoas (família) ──
+  ['οικογένεια', 'família', 'substantivo', 'Pessoas', '👪', 'Η οικογένειά μου είναι μεγάλη.', 'f'],
+  ['μαμά', 'mãe (formal: μητέρα)', 'substantivo', 'Pessoas', '👩', 'Τη μαμά μου τη λένε Όλγα.', 'f'],
+  ['μπαμπάς', 'pai (formal: πατέρας)', 'substantivo', 'Pessoas', '👨', 'Ο μπαμπάς μου είναι από την Αθήνα.', 'm'],
+  ['αδελφός', 'irmão', 'substantivo', 'Pessoas', '🧑', 'Τον αδελφό μου τον λένε Γιάννης.', 'm'],
+  ['αδελφή', 'irmã', 'substantivo', 'Pessoas', '🧑', 'Έχω μια αδελφή.', 'f'],
+  ['γιος', 'filho', 'substantivo', 'Pessoas', '🧒', 'Ο γιος τους είναι μικρός.', 'm'],
+  ['κόρη', 'filha', 'substantivo', 'Pessoas', '🧒', 'Η κόρη τους είναι μικρή.', 'f'],
+  // ── Alimentação ──
+  ['νερό', 'água', 'substantivo', 'Alimentação e Restaurantes', '💧', 'Νερό, παρακαλώ.', 'n'],
+  ['ψωμί', 'pão', 'substantivo', 'Alimentação e Restaurantes', '🍞', 'Το ψωμί είναι φρέσκο.', 'n'],
+  ['γάλα', 'leite', 'substantivo', 'Alimentação e Restaurantes', '🥛', 'Το γάλα είναι άσπρο.', 'n'],
+  ['τυρί', 'queijo', 'substantivo', 'Alimentação e Restaurantes', '🧀', 'Μου αρέσει το τυρί.', 'n'],
+  ['καφές', 'café', 'substantivo', 'Alimentação e Restaurantes', '☕', 'Έναν καφέ, παρακαλώ.', 'm'],
+  ['κρασί', 'vinho', 'substantivo', 'Alimentação e Restaurantes', '🍷', 'Κόκκινο κρασί, παρακαλώ.', 'n'],
+  // ── Números ──
+  ['ένα', 'um', 'numeral', 'Números', '1️⃣', 'Έναν καφέ, παρακαλώ.'],
+  ['δύο', 'dois', 'numeral', 'Números', '2️⃣', 'Δύο καφέδες, παρακαλώ.'],
+  ['τρία', 'três', 'numeral', 'Números', '3️⃣', 'Τρία νερά, παρακαλώ.'],
+  ['τέσσερα', 'quatro', 'numeral', 'Números', '4️⃣', 'Η γάτα έχει τέσσερα πόδια.'],
+  ['πέντε', 'cinco', 'numeral', 'Números', '5️⃣', 'Πέντε μέρες.'],
+  ['έξι', 'seis', 'numeral', 'Números', '6️⃣', 'Έξι χρόνια.'],
+  ['εφτά', 'sete', 'numeral', 'Números', '7️⃣', 'Η εβδομάδα έχει εφτά μέρες.'],
+  ['οκτώ', 'oito', 'numeral', 'Números', '8️⃣', 'Οκτώ ώρες.'],
+  ['εννιά', 'nove', 'numeral', 'Números', '9️⃣', 'Εννιά χρόνια.'],
+  ['δέκα', 'dez', 'numeral', 'Números', '🔟', 'Δέκα ευρώ.'],
+  // ── Tempo ──
+  ['σήμερα', 'hoje', 'advérbio', 'Tempo', '📅', 'Σήμερα είναι Δευτέρα.'],
+  ['αύριο', 'amanhã', 'advérbio', 'Tempo', '📅', 'Αύριο είναι Σάββατο.'],
+  ['χθες', 'ontem', 'advérbio', 'Tempo', '📅', 'Χθες, σήμερα και αύριο.'],
+  ['Δευτέρα', 'segunda-feira', 'substantivo', 'Tempo', '📅', 'Σήμερα είναι Δευτέρα.', 'f'],
+  ['Τρίτη', 'terça-feira', 'substantivo', 'Tempo', '📅', 'Σήμερα είναι Τρίτη.', 'f'],
+  ['Τετάρτη', 'quarta-feira', 'substantivo', 'Tempo', '📅', 'Σήμερα είναι Τετάρτη.', 'f'],
+  ['Πέμπτη', 'quinta-feira', 'substantivo', 'Tempo', '📅', 'Σήμερα είναι Πέμπτη.', 'f'],
+  ['Παρασκευή', 'sexta-feira', 'substantivo', 'Tempo', '📅', 'Σήμερα είναι Παρασκευή.', 'f'],
+  ['Σάββατο', 'sábado', 'substantivo', 'Tempo', '📅', 'Σήμερα είναι Σάββατο.', 'n'],
+  ['Κυριακή', 'domingo', 'substantivo', 'Tempo', '📅', 'Σήμερα είναι Κυριακή.', 'f'],
+  // ── Cores ──
+  ['κόκκινος', 'vermelho', 'adjetivo', 'Cores', '🔴', 'Το κρασί είναι κόκκινο.'],
+  ['μπλε', 'azul (invariável)', 'adjetivo', 'Cores', '🔵', 'Η μπλούζα μου είναι μπλε.'],
+  ['πράσινος', 'verde', 'adjetivo', 'Cores', '🟢', 'Το γρασίδι είναι πράσινο.'],
+  ['άσπρος', 'branco', 'adjetivo', 'Cores', '⚪', 'Το γάλα είναι άσπρο.'],
+  ['μαύρος', 'preto', 'adjetivo', 'Cores', '⚫', 'Η γάτα είναι μαύρη.'],
+];
+
+export const VOCAB_EL = buildVocab('el', ROWS);
