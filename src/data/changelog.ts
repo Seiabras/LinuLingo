@@ -7,6 +7,10 @@ export interface ChangelogEntry {
 }
 
 export const CHANGELOG: ChangelogEntry[] = [
+  { date: '2026-10-01T14:02:35-03:00', summary: "Registra frísio, baixo-alemão, scots, suíço-alemão e 4 eslavos" },
+  { date: '2026-10-01T08:01:17-03:00', summary: "Melhora a tela de recompensa: mostra a meta de XP do dia" },
+  { date: '2026-10-01T07:57:57-03:00', summary: "Figurinha vira sorte (50%), não mais toda atividade; avisa limite do diário" },
+  { date: '2026-10-01T07:52:28-03:00', summary: "Pedidos do Matheus: trilha no topo, gesto avança, figurinha, UNESCO" },
   { date: '2026-10-01T02:21:19-03:00', summary: "Registra corso, aragonês, valão, vêneto, napolitano e siciliano" },
   { date: '2026-10-01T00:23:03-03:00', summary: "Docs: mk/rup/zh viram \"disponível\", corrige contagem de completos" },
   { date: '2026-10-01T00:20:48-03:00', summary: "Completa e registra macedônio, arromeno e chinês mandarim" },
