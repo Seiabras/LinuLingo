@@ -7,6 +7,10 @@ export interface ChangelogEntry {
 }
 
 export const CHANGELOG: ChangelogEntry[] = [
+  { date: '2026-10-01T14:17:05-03:00', summary: "Registra piemontês, lígure, lombardo, mirandês e francoprovençal" },
+  { date: '2026-10-01T14:12:30-03:00', summary: "Nova tela \"Não confunda\": palavras parecidas no idioma estudado" },
+  { date: '2026-10-01T14:03:33-03:00', summary: "PENDENTES: atualiza com os 14 idiomas novos e os pedidos do Matheus" },
+  { date: '2026-10-01T14:02:46-03:00', summary: "Changelog: regenera com os commits mais recentes" },
   { date: '2026-10-01T14:02:35-03:00', summary: "Registra frísio, baixo-alemão, scots, suíço-alemão e 4 eslavos" },
   { date: '2026-10-01T08:01:17-03:00', summary: "Melhora a tela de recompensa: mostra a meta de XP do dia" },
   { date: '2026-10-01T07:57:57-03:00', summary: "Figurinha vira sorte (50%), não mais toda atividade; avisa limite do diário" },
