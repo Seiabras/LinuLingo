@@ -45,13 +45,17 @@ import { SERVIO } from './sr';
 import { CROATA } from './hr';
 import { ESLOVENO } from './sl';
 import { BASCO } from './eu';
+import { MACEDONIO } from './mk';
+import { AROMENO } from './rup';
+import { CHINES } from './zh';
 
 /** Idiomas com conteúdo pronto. */
 export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES, fr: FRANCES, ca: CATALAO, is: ISLANDES, fi: FINLANDES, et: ESTONIANO, fo: FEROES, lt: LITUANO, lv: LETAO, sw: SUAILI, ja: JAPONES, ko: COREANO,
   // incompletos (só o A1 por enquanto; ver o campo `incomplete` de cada pacote)
   gl: GALEGO, ast: ASTURIANO, oc: OCCITANO, sc: SARDO, rm: ROMANCHE, fur: FRIULANO, la: LATIM, lad: JUDEU_ESPANHOL, en: INGLES, id: INDONESIO, vi: VIETNAMITA, yo: IORUBA,
   lld: LADINO_DOLOMITAS, de: ALEMAO, nl: NEERLANDES, af: AFRICANER, pl: POLONES, cs: TCHECO, sk: ESLOVACO, uk: UCRANIANO, tr: TURCO,
-  lb: LUXEMBURGUES, bg: BULGARO, sr: SERVIO, hr: CROATA, sl: ESLOVENO, eu: BASCO };
+  lb: LUXEMBURGUES, bg: BULGARO, sr: SERVIO, hr: CROATA, sl: ESLOVENO, eu: BASCO,
+  mk: MACEDONIO, rup: AROMENO, zh: CHINES };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -65,6 +69,7 @@ export const LANGUAGES: LanguageInfo[] = [
   SERVIO,
   CROATA,
   ESLOVENO,
+  MACEDONIO,
   ESPANHOL,
   ITALIANO,
   PORTUGUES,
@@ -79,6 +84,7 @@ export const LANGUAGES: LanguageInfo[] = [
   LADINO_DOLOMITAS,
   LATIM,
   JUDEU_ESPANHOL,
+  AROMENO,
   BASCO,
   SUECO,
   NORUEGUES,
@@ -101,10 +107,7 @@ export const LANGUAGES: LanguageInfo[] = [
     code: 'ar', name: 'Árabe', nativeName: 'العربية', flag: '🇸🇦',
     lineage: { family: 'Afro-asiático', branches: ['Semítico', 'Semítico central'], region: 'Península Arábica (Ásia Ocidental), hoje também o norte da África', writing: 'Alfabeto árabe (abjad, da direita para a esquerda)' },
   },
-  {
-    code: 'zh', name: 'Chinês mandarim', nativeName: '中文（普通话）', flag: '🇨🇳',
-    lineage: { family: 'Sino-tibetano', branches: ['Sinítico', 'Mandarim'], region: 'Planície do Norte da China (Leste Asiático)', writing: 'Caracteres chineses (simplificados; tradicionais em Taiwan)' },
-  },
+  CHINES,
   {
     code: 'hi', name: 'Híndi', nativeName: 'हिन्दी', flag: '🇮🇳',
     lineage: { family: 'Indo-europeu', branches: ['Indo-iraniano', 'Indo-ariano', 'Indo-ariano central'], region: 'Norte da Índia (planície do Ganges)', writing: 'Devanágari' },
