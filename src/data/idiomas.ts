@@ -54,6 +54,14 @@ import { VALAO } from './wa';
 import { VENETO } from './vec';
 import { NAPOLITANO } from './nap';
 import { SICILIANO } from './scn';
+import { FRISIO } from './fy';
+import { BAIXO_ALEMAO } from './nds';
+import { SCOTS } from './sco';
+import { SUICO_ALEMAO } from './gsw';
+import { BIELORRUSSO } from './be';
+import { BOSNIO } from './bs';
+import { ALTO_SORABIO } from './hsb';
+import { CASSUBIO } from './csb';
 
 /** Idiomas com conteúdo pronto. */
 export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES, fr: FRANCES, ca: CATALAO, is: ISLANDES, fi: FINLANDES, et: ESTONIANO, fo: FEROES, lt: LITUANO, lv: LETAO, sw: SUAILI, ja: JAPONES, ko: COREANO,
@@ -62,7 +70,8 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   lld: LADINO_DOLOMITAS, de: ALEMAO, nl: NEERLANDES, af: AFRICANER, pl: POLONES, cs: TCHECO, sk: ESLOVACO, uk: UCRANIANO, tr: TURCO,
   lb: LUXEMBURGUES, bg: BULGARO, sr: SERVIO, hr: CROATA, sl: ESLOVENO, eu: BASCO,
   mk: MACEDONIO, rup: AROMENO, zh: CHINES,
-  co: CORSO, an: ARAGONES, wa: VALAO, vec: VENETO, nap: NAPOLITANO, scn: SICILIANO };
+  co: CORSO, an: ARAGONES, wa: VALAO, vec: VENETO, nap: NAPOLITANO, scn: SICILIANO,
+  fy: FRISIO, nds: BAIXO_ALEMAO, sco: SCOTS, gsw: SUICO_ALEMAO, be: BIELORRUSSO, bs: BOSNIO, hsb: ALTO_SORABIO, csb: CASSUBIO };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -77,6 +86,10 @@ export const LANGUAGES: LanguageInfo[] = [
   CROATA,
   ESLOVENO,
   MACEDONIO,
+  BIELORRUSSO,
+  BOSNIO,
+  ALTO_SORABIO,
+  CASSUBIO,
   ESPANHOL,
   ITALIANO,
   PORTUGUES,
@@ -108,6 +121,10 @@ export const LANGUAGES: LanguageInfo[] = [
   NEERLANDES,
   AFRICANER,
   LUXEMBURGUES,
+  FRISIO,
+  BAIXO_ALEMAO,
+  SCOTS,
+  SUICO_ALEMAO,
   FINLANDES,
   FEROES,
   ESTONIANO,
