@@ -86,6 +86,8 @@ import { XAVANTE } from './xav';
 import { TUKANO } from './tuo';
 import { TAILANDES } from './th';
 import { KHMER } from './km';
+import { BANIWA } from './kpc';
+import { LAOSIANO } from './lo';
 import { AIMARA } from './ay';
 import { GUARANI_KAIOWA } from './kgk';
 import { NAUATLE } from './nah';
@@ -103,7 +105,7 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   el: GREGO, sq: ALBANES, hy: ARMENIO,
   hi: HINDI, gn: GUARANI, tpw: TUPI_ANTIGO, ha: HAUCA, ig: IGBO, yrl: NHEENGATU, bn: BENGALI, qu: QUECHUA, kgp: KAINGANG, tca: TIKUNA,
   xav: XAVANTE, tuo: TUKANO, gun: GUARANI_MBYA, ka: GEORGIANO, th: TAILANDES, km: KHMER,
-  ay: AIMARA, kgk: GUARANI_KAIOWA, nah: NAUATLE };
+  ay: AIMARA, kgk: GUARANI_KAIOWA, nah: NAUATLE, kpc: BANIWA, lo: LAOSIANO };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -198,9 +200,10 @@ export const LANGUAGES: LanguageInfo[] = [
     code: 'te', name: 'Télugo', nativeName: 'తెలుగు', flag: '🇮🇳',
     lineage: { family: 'Dravídico', branches: ['Dravídico centro-meridional'], region: 'Andhra Pradesh e Telangana (sudeste da Índia)', writing: 'Alfabeto télugo' },
   },
-  // tailandês: família kra-dai, sem parentesco com o vietnamita nem com o khmer (vizinhos geográficos,
-  // não linguísticos)
+  // tailandês e laosiano: família kra-dai, parentes reais entre si (mutuamente inteligíveis em boa
+  // parte), mas sem parentesco com o vietnamita nem com o khmer (vizinhos geográficos, não linguísticos)
   TAILANDES,
+  LAOSIANO,
   TURCO,
   // línguas indígenas das Américas (família tupi-guarani)
   GUARANI,
@@ -219,6 +222,8 @@ export const LANGUAGES: LanguageInfo[] = [
   TIKUNA,
   // tukano: família própria (tukanoana), língua franca do Alto Rio Negro
   TUKANO,
+  // baniwa: família aruak, cooficial em São Gabriel da Cachoeira ao lado do nheengatu e do tukano
+  BANIWA,
   // náuatle: família uto-asteca, a língua dos astecas/mexicas
   NAUATLE,
   // o suaíli, a língua africana mais falada como segunda língua, e as maiores da África depois dele
