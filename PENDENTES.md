@@ -50,30 +50,27 @@ commitado.
   idiomas registrados contra a classificação de verdade (Glottolog/Ethnologue): não achei nenhum erro
   de fundo, só um nome de ramo impreciso no scots (dizia "Inglês" no lugar de "Ânglico" — corrigido;
   scots é parente do inglês, não veio dele).
-- **Asiáticos**: hi (híndi), bn (bengali), th (tailandês) e km (khmer) feitos; faltam ur e fa
-  (bloqueados por RTL, ver abaixo), mr, te, ta, tl. Do Sudeste Asiático continental ainda faltam lo
-  (laosiano) e my (birmanês) — ainda não confirmados, conferir documentação antes de começar.
+- **Asiáticos**: hi (híndi), bn (bengali), th (tailandês), km (khmer) e lo (laosiano) feitos; faltam
+  ur e fa (bloqueados por RTL, ver abaixo), mr, te, ta, tl. Do Sudeste Asiático continental ainda
+  falta my (birmanês) — ainda não confirmado, conferir documentação antes de começar.
 - **Indígenas**: tpw (tupi antigo), gn (guarani paraguaio), qu (quéchua sulenho), yrl (nheengatu),
-  kgp (kaingang), tca (tikuna), xav (xavante) e tuo (tukano) feitos; guarani mbyá (gun) e georgiano
-  (ka, pedido à parte) em andamento. **Nota de 01/10/2026, madrugada**: esta sessão passou a rodar em
-  paralelo com outra sessão do Claude Code (mesmo repositório) — por isso os idiomas feitos vêm às
-  vezes de um processo, às vezes de outro; sempre `git pull` antes de editar `idiomas.ts`/
-  `conteudo.test.ts`/este arquivo, pra não divergir. **Pedido do Matheus Vega: dar prioridade às
-  línguas indígenas brasileiras.**
-  - **Família guarani (pesquisa do próprio Matheus, 01/10/2026 de madrugada)** — não são a mesma
-    língua com nomes diferentes, são variedades/línguas próprias, cada uma com seu código:
-    - gn guarani paraguaio (**feito**) — jopará (mistura com o espanhol no dia a dia) não é uma
-      língua à parte, só uma nota no texto do `gn`;
-    - gun guarani mbyá (**em andamento**) — Brasil (Sul/Sudeste), Paraguai, Argentina;
-    - kgk guarani kaiowá/pãi-tavyterã — Mato Grosso do Sul e norte do Paraguai;
+  kgp (kaingang), tca (tikuna), xav (xavante), tuo (tukano), kpc (baniwa), ay (aimará), kgk (guarani
+  kaiowá) e nah (náuatle) feitos; gun (guarani mbyá) e ka (georgiano, pedido à parte) feitos por outra
+  sessão. **Nota de 01/10/2026, madrugada**: esta sessão rodou em paralelo com outra sessão do Claude
+  Code no mesmo repositório — por isso os idiomas feitos vêm às vezes de um processo, às vezes de
+  outro; sempre `git pull` antes de editar `idiomas.ts`/`conteudo.test.ts`/este arquivo, pra não
+  divergir. **Pedido do Matheus Vega: dar prioridade às línguas indígenas brasileiras.**
+  - **Família guarani**: gn (paraguaio), gun (mbyá) e kgk (kaiowá/pãi-tavyterã) **feitos**, cada um
+    com fonte própria — não são a mesma língua com nomes diferentes. Jopará (mistura guarani-espanhol
+    do dia a dia) não é uma língua à parte, só uma nota no texto do `gn`. Ainda faltam:
     - guarani ñandeva/avá guarani (código a confirmar) — Brasil (MS e outras regiões), Paraguai,
       Argentina; o avá chiripá costuma ser agrupado com essa variedade, confirmar antes de separar;
     - tpj tapieté — grupo pequeno na região do Chaco (Bolívia, Paraguai, Argentina);
     - **guarani antigo** (colonial, documentado por jesuítas como Ruiz de Montoya) — língua histórica
       à parte, prima do tupi antigo (`tpw`) mas não o mesmo pacote; ainda não começado.
-  - xavante (xav) e tukano (tuo) **feitos**; falta baniwa (kpc);
-  - huni kuĩ/kaxinawá (hvn, grafia a confirmar — o Matheus não tinha certeza da escrita certa).
-  - Ainda não começados: ay (aimará), nah (náuatle), mi (maori), haw (havaiano), nv (navajo).
+  - huni kuĩ/kaxinawá (hvn, grafia a confirmar — o Matheus não tinha certeza da escrita certa) —
+    ainda não começado.
+  - Ainda não começados: mi (maori), haw (havaiano), nv (navajo).
   - Todos exigem fonte para cada palavra: não inventar, e usar o empréstimo que a comunidade usa.
 - **Africanos**: ha (haussá), ig (igbo) feitos; falta am (amárico) e om (oromo) — ambos já têm o
   scaffold "língua madura" pronto em `src/data/am/` e `src/data/om/` (como `ha`/`ig` tinham), só
