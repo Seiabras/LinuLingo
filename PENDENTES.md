@@ -17,6 +17,17 @@ commitado.
 - **mk (macedônio), rup (arromeno) e zh (chinês mandarim): completos até A1.2** (01/10/2026) —
   eram os "pela metade"; agora têm vocabulário, currículo, gramática, histórias e extras, iguais
   aos outros 28 "só A1". Testados no navegador.
+- **14 idiomas novos do zero até A1.2** (01/10/2026): corso, aragonês, valão, vêneto, napolitano,
+  siciliano, frísio ocidental, baixo-alemão, scots, suíço-alemão (dialeto de Zurique), bielorrusso,
+  bósnio, alto-sorábio, cassubiano — todos criados com a receita de "pacote novo" abaixo, vocabulário
+  verificado por busca, testados no navegador. O iídiche (yi) e o árabe (ar) ficaram de fora por
+  exigirem escrita da direita pra esquerda, que o app ainda não suporta.
+- **Mudanças de UI pedidas pelo Matheus Vega (= o dono do app)** (01/10/2026): trilha subiu pro
+  topo da Home; gesto de arrastar no tutorial avança sozinho; tocar na figurinha nova abre ela
+  direto no álbum com som; escala de risco das línguas indígenas (e do mapa) usa os nomes da
+  UNESCO; nova tela "🗓️ Atualizações" no Perfil (changelog gerado do git, hora de São Paulo);
+  figurinha agora é por sorte (50%), não mais toda atividade; tela de recompensa da lição mostra a
+  meta de XP do dia; aviso de que "enviar pra nativos" ainda é só local, sem servidor.
 - **Aspas « » trocadas por “ ”/‘ ’ no app inteiro** (30/09/2026, commit `325ecd21`): 546 arquivos,
   incluindo ~20 arquivos de serviço que usavam « » em regex (resposta do aluno, avisos de
   ortografia, extração de citação em histórias). Comentários de código continuam com « » (não é
@@ -26,9 +37,10 @@ commitado.
   desatualizados — nem listavam o catalão).
 
 ## Não começados
-- **Românicos**: co, an, wa, vec, nap, scn, pms, lij, lmo, mwl, frp.
-- **Germânicos**: fy, yi, nds, sco, gsw.
-- **Eslavos**: be, bs, hsb, csb.
+- **Românicos**: pms (piemontês), lij (lígure), lmo (lombardo), mwl (mirandês), frp
+  (francoprovençal) — em andamento, 5 agentes escrevendo agora (01/10/2026 de madrugada).
+- **Germânico que falta**: yi (iídiche) — precisa de suporte a escrita direita-pra-esquerda no app
+  antes de dar pra fazer (ver "RTL" abaixo).
 - **Família única**: el (grego), sq (albanês), hy (armênio).
 - **Asiáticos**: hi, bn, ur, mr, te, ta, th, fa, tl.
 - **Indígenas**:
@@ -36,7 +48,14 @@ commitado.
   - qu quéchua, ay aimará, nah náuatle;
   - mi maori, haw havaiano, nv navajo.
   - Todos exigem fonte para cada palavra: não inventar, e usar o empréstimo que a comunidade usa.
-- **Africanos que ainda são só um nome em `LANGUAGES`**: ar, ha, am, om, ig.
+- **Africanos que ainda são só um nome em `LANGUAGES`**: ar (árabe — também precisa de RTL, ver
+  abaixo), ha, am, om, ig.
+
+### Pendência técnica: escrita da direita pra esquerda (RTL)
+O app nunca precisou disso até agora (nenhum idioma atual é RTL). Árabe (ar) e iídiche (yi) estão
+parados por causa disso — teclado, cloze, comparação de resposta e o layout geral assumem texto da
+esquerda pra direita. Resolver isso (telas, `writingDirection`, o teclado virtual, o SM-2/cloze)
+antes de começar esses dois.
 
 ### Como fazer um pacote novo
 - Modelo: `src/data/rm/` e `src/data/lad/`. Para uma língua morta, veja `src/data/la/`; para uma
