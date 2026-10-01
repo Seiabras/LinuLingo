@@ -7,6 +7,9 @@ export interface ChangelogEntry {
 }
 
 export const CHANGELOG: ChangelogEntry[] = [
+  { date: '2026-10-01T14:39:27-03:00', summary: "feat: adiciona grego (el), albanês (sq) e armênio (hy) até A1.2" },
+  { date: '2026-10-01T14:32:59-03:00', summary: "feat: pacote de chance (loot box com krill) na Loja do Linu" },
+  { date: '2026-10-01T14:17:15-03:00', summary: "Changelog: regenera com os commits mais recentes" },
   { date: '2026-10-01T14:17:05-03:00', summary: "Registra piemontês, lígure, lombardo, mirandês e francoprovençal" },
   { date: '2026-10-01T14:12:30-03:00', summary: "Nova tela \"Não confunda\": palavras parecidas no idioma estudado" },
   { date: '2026-10-01T14:03:33-03:00', summary: "PENDENTES: atualiza com os 14 idiomas novos e os pedidos do Matheus" },
