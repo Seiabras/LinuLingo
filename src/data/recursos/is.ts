@@ -23,7 +23,7 @@ export const RECURSOS_IS: LanguageResources = {
       usedFor: ['Pedido de cidadania islandesa (há isenções, por exemplo para quem tem mais de 65 anos ou certificado equivalente de uma escola islandesa)'],
       where:
         'Só na Islândia, duas vezes por ano (primavera e outono), em Reykjavík e Akureyri — na primavera, também em outras cidades, como Egilsstaðir e Ísafjörður. A inscrição é no site da Mímir (mimir.is), com vagas limitadas e prazo fixo; não há aplicação no Brasil nem pela internet',
-      tip: 'O material «Íslenska fyrir alla» (A1–A2, gratuito na internet) cobre o nível cobrado; para a compreensão auditiva, ouça todo dia as notícias fáceis da RÚV (Auðskilið) e o Krakkafréttir.',
+      tip: 'O material “Íslenska fyrir alla” (A1–A2, gratuito na internet) cobre o nível cobrado; para a compreensão auditiva, ouça todo dia as notícias fáceis da RÚV (Auðskilið) e o Krakkafréttir.',
       url: 'https://island.is/en/icelandic-test-for-citizenship',
     },
     {
@@ -73,7 +73,7 @@ export const RECURSOS_IS: LanguageResources = {
       by: 'Baltasar Kormákur',
       year: '2006',
       level: 'B1',
-      why: 'Policial baseado em Arnaldur Indriðason, com o detetive Erlendur (lançado lá fora como «Jar City»); vocabulário de investigação e uma Reykjavík cinzenta.',
+      why: 'Policial baseado em Arnaldur Indriðason, com o detetive Erlendur (lançado lá fora como “Jar City”); vocabulário de investigação e uma Reykjavík cinzenta.',
     },
     {
       kind: 'filme',
@@ -97,7 +97,7 @@ export const RECURSOS_IS: LanguageResources = {
       by: 'Benedikt Erlingsson',
       year: '2018',
       level: 'B1',
-      why: 'Uma regente de coral que sabota linhas de energia para proteger as terras altas (lançado lá fora como «Woman at War»); humor, política e natureza islandesa.',
+      why: 'Uma regente de coral que sabota linhas de energia para proteger as terras altas (lançado lá fora como “Woman at War”); humor, política e natureza islandesa.',
     },
     {
       kind: 'filme',
@@ -115,7 +115,7 @@ export const RECURSOS_IS: LanguageResources = {
       by: 'Baltasar Kormákur (criação)',
       year: '2015–2021',
       level: 'B1',
-      why: 'Suspense numa cidadezinha isolada pela neve (conhecida lá fora como «Trapped»): diálogos de polícia e de gente de vila pequena.',
+      why: 'Suspense numa cidadezinha isolada pela neve (conhecida lá fora como “Trapped”): diálogos de polícia e de gente de vila pequena.',
     },
     {
       kind: 'serie',
@@ -203,7 +203,7 @@ export const RECURSOS_IS: LanguageResources = {
       by: 'Sykurmolarnir',
       year: '1986',
       level: 'B1',
-      why: 'A versão original, em islandês, de «Birthday», da banda de Björk antes da carreira solo.',
+      why: 'A versão original, em islandês, de “Birthday”, da banda de Björk antes da carreira solo.',
     },
     {
       kind: 'musica',
@@ -219,7 +219,7 @@ export const RECURSOS_IS: LanguageResources = {
       by: 'Sigur Rós',
       year: '1999',
       level: 'B1',
-      why: 'O disco que levou o islandês ao mundo, com letras cantadas bem devagar; em parte da obra, porém, a banda usa o «vonlenska», uma língua inventada.',
+      why: 'O disco que levou o islandês ao mundo, com letras cantadas bem devagar; em parte da obra, porém, a banda usa o “vonlenska”, uma língua inventada.',
     },
     {
       kind: 'musica',
@@ -227,7 +227,7 @@ export const RECURSOS_IS: LanguageResources = {
       by: 'Ásgeir',
       year: '2012',
       level: 'B1',
-      why: 'A estreia mais vendida da Islândia, com letras poéticas escritas pelo pai do cantor; depois saiu em inglês como «In the Silence» — dá para comparar.',
+      why: 'A estreia mais vendida da Islândia, com letras poéticas escritas pelo pai do cantor; depois saiu em inglês como “In the Silence” — dá para comparar.',
     },
     {
       kind: 'musica',
@@ -286,9 +286,9 @@ export const RECURSOS_IS: LanguageResources = {
   ],
   tips: [
     'Não existe prova internacional de islandês: para quem quer morar lá, a meta concreta é o A2 da prova de cidadania. Para a residência permanente, a Islândia pede 150 aulas de islandês numa escola reconhecida (ou aprovação num teste).',
-    'Domine cedo as letras próprias: þ soa como o «th» de «think», ð como o «th» de «this», æ como «ai», e o «ll» de «fjall» soa quase «tl». Depois disso, a leitura é bem regular.',
+    'Domine cedo as letras próprias: þ soa como o “th” de “think”, ð como o “th” de “this”, æ como “ai”, e o “ll” de “fjall” soa quase “tl”. Depois disso, a leitura é bem regular.',
     'Decore cada substantivo com o gênero, o genitivo e o plural (hestur – hests – hestar): os três gêneros e os quatro casos são o coração da gramática. O BÍN, no Málið.is, mostra todas as formas de qualquer palavra.',
-    'O islandês prefere criar palavras com raízes próprias a importar estrangeirismos: tölva («computador») junta tala («número») e völva («profetisa»). Entender a raiz ajuda a memorizar.',
+    'O islandês prefere criar palavras com raízes próprias a importar estrangeirismos: tölva (“computador”) junta tala (“número”) e völva (“profetisa”). Entender a raiz ajuda a memorizar.',
     'Com nível B2, dá para ler as sagas medievais numa edição com ortografia moderna: a língua mudou tão pouco que os islandeses as leem na escola.',
   ],
 };

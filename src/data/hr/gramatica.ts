@@ -10,17 +10,17 @@ export const GRAMMAR_HR: GrammarTopic[] = [
     summary: 'O alfabeto croata tem 30 letras, e cada uma tem sempre o mesmo som. Três delas são escritas com duas letras: dž, lj e nj.',
     sections: [
       {
-        text: 'O croata se lê exatamente como se escreve. A atenção vai para as letras com sinais e para o «j», que é sempre um «i» curto.',
+        text: 'O croata se lê exatamente como se escreve. A atenção vai para as letras com sinais e para o “j”, que é sempre um “i” curto.',
         table: {
           head: ['Escrita', 'Som', 'Exemplo'],
           rows: [
-            ['č', '«tch» duro', 'četiri (quatro)'],
-            ['ć', '«tch» macio', 'noć (noite)'],
-            ['đ', '«dj» macio', 'doviđenja'],
-            ['š / ž', '«ch» / «j»', 'šest, živim'],
-            ['j', '«i» de «pai»', 'ja (eu)'],
-            ['lj / nj', '«lh» / «nh»', 'prijatelj, njihov'],
-            ['c', '«ts»', 'otac (pai)'],
+            ['č', '“tch” duro', 'četiri (quatro)'],
+            ['ć', '“tch” macio', 'noć (noite)'],
+            ['đ', '“dj” macio', 'doviđenja'],
+            ['š / ž', '“ch” / “j”', 'šest, živim'],
+            ['j', '“i” de “pai”', 'ja (eu)'],
+            ['lj / nj', '“lh” / “nh”', 'prijatelj, njihov'],
+            ['c', '“ts”', 'otac (pai)'],
           ],
         },
         examples: [
@@ -30,13 +30,13 @@ export const GRAMMAR_HR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Ler o «j» como o nosso «j»: «ja» soa «iá».',
-      'Ler o «c» como «k»: «otac» soa «ótats».',
-      'Esperar uma vogal em «crn» ou «četvrtak»: o «r» faz o papel de vogal.',
+      'Ler o “j” como o nosso “j”: “ja” soa “iá”.',
+      'Ler o “c” como “k”: “otac” soa “ótats”.',
+      'Esperar uma vogal em “crn” ou “četvrtak”: o “r” faz o papel de vogal.',
     ],
     quiz: [
-      { question: 'Como soa o «j» de «ja» (eu)?', options: ['como o «i» de «pai»', 'como o «j» de «já»', 'como o «g» de «gato»'], answer: 'como o «i» de «pai»', explanation: '«Ja» soa «iá».' },
-      { question: 'Qual destas é uma letra só do alfabeto croata, mesmo escrita com dois sinais?', options: ['lj', 'lh', 'll'], answer: 'lj', explanation: '«Lj», «nj» e «dž» contam como uma letra cada.' },
+      { question: 'Como soa o “j” de “ja” (eu)?', options: ['como o “i” de “pai”', 'como o “j” de “já”', 'como o “g” de “gato”'], answer: 'como o “i” de “pai”', explanation: '“Ja” soa “iá”.' },
+      { question: 'Qual destas é uma letra só do alfabeto croata, mesmo escrita com dois sinais?', options: ['lj', 'lh', 'll'], answer: 'lj', explanation: '“Lj”, “nj” e “dž” contam como uma letra cada.' },
     ],
   },
   {
@@ -44,10 +44,10 @@ export const GRAMMAR_HR: GrammarTopic[] = [
     level: 'A1.1',
     title: 'Os pronomes e o verbo biti',
     emoji: '🙋',
-    summary: 'Sete pronomes, as formas curtas de «biti» (ser, estar) e o tratamento formal com «vi».',
+    summary: 'Sete pronomes, as formas curtas de “biti” (ser, estar) e o tratamento formal com “vi”.',
     sections: [
       {
-        text: 'No presente, «biti» tem formas curtas e átonas: «sam», «si», «je»… Elas não podem abrir a frase: vem antes o pronome ou outra palavra.',
+        text: 'No presente, “biti” tem formas curtas e átonas: “sam”, “si”, “je”… Elas não podem abrir a frase: vem antes o pronome ou outra palavra.',
         table: {
           head: ['Pronome', 'Tradução', 'biti'],
           rows: [
@@ -66,17 +66,17 @@ export const GRAMMAR_HR: GrammarTopic[] = [
       },
       {
         heading: 'O tratamento formal',
-        text: 'Com desconhecidos, mais velhos e no trabalho, use «vi» com o verbo no plural, mesmo falando com uma pessoa só.',
+        text: 'Com desconhecidos, mais velhos e no trabalho, use “vi” com o verbo no plural, mesmo falando com uma pessoa só.',
         examples: [
           ['Kako ste?', 'Como vai o senhor / a senhora?'],
           ['Odakle ste?', 'De onde o senhor é?'],
         ],
       },
     ],
-    pitfalls: ['Começar a frase com «sam»: diga «Ja sam…» ou «Iz Zagreba sam».', 'Tratar um desconhecido por «ti»: soa íntimo demais. Use «vi».'],
+    pitfalls: ['Começar a frase com “sam”: diga “Ja sam…” ou “Iz Zagreba sam”.', 'Tratar um desconhecido por “ti”: soa íntimo demais. Use “vi”.'],
     quiz: [
-      { question: 'Complete: «Ja ___ iz Curitibe.» (Eu sou de Curitiba.)', options: ['sam', 'je', 'si'], answer: 'sam', explanation: '«Sam» é a forma curta de «biti» para «ja».' },
-      { question: '«Kako ste?» é…', options: ['formal ou plural', 'só para amigos', 'só para crianças'], answer: 'formal ou plural', explanation: '«Ste» é a forma de «vi», usada para vocês e para tratar alguém com respeito.' },
+      { question: 'Complete: “Ja ___ iz Curitibe.” (Eu sou de Curitiba.)', options: ['sam', 'je', 'si'], answer: 'sam', explanation: '“Sam” é a forma curta de “biti” para “ja”.' },
+      { question: '“Kako ste?” é…', options: ['formal ou plural', 'só para amigos', 'só para crianças'], answer: 'formal ou plural', explanation: '“Ste” é a forma de “vi”, usada para vocês e para tratar alguém com respeito.' },
     ],
   },
   {
@@ -84,12 +84,12 @@ export const GRAMMAR_HR: GrammarTopic[] = [
     level: 'A1.2',
     title: 'O gênero dos substantivos e o possessivo',
     emoji: '👪',
-    summary: 'Masculino, feminino e neutro, quase sempre visíveis na terminação, e «moj / moja / moje».',
+    summary: 'Masculino, feminino e neutro, quase sempre visíveis na terminação, e “moj / moja / moje”.',
     sections: [
       {
-        text: 'A última letra costuma mostrar o gênero: consoante → masculino, -a → feminino, -o ou -e → neutro. Algumas palavras terminadas em consoante são femininas, como «obitelj» (família) e «noć» (noite). O possessivo e o adjetivo concordam com o substantivo.',
+        text: 'A última letra costuma mostrar o gênero: consoante → masculino, -a → feminino, -o ou -e → neutro. Algumas palavras terminadas em consoante são femininas, como “obitelj” (família) e “noć” (noite). O possessivo e o adjetivo concordam com o substantivo.',
         table: {
-          head: ['Gênero', 'Terminação', 'Exemplo com «meu»'],
+          head: ['Gênero', 'Terminação', 'Exemplo com “meu”'],
           rows: [
             ['masculino', 'consoante', 'moj grad, moj brat'],
             ['feminino', '-a (e algumas em consoante)', 'moja kuća, moja obitelj'],
@@ -103,12 +103,12 @@ export const GRAMMAR_HR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      '«Obitelj» (família) termina em consoante mas é feminino: «moja obitelj».',
-      '«Mačka» (gato) é feminino: «mačka je crna».',
+      '“Obitelj” (família) termina em consoante mas é feminino: “moja obitelj”.',
+      '“Mačka” (gato) é feminino: “mačka je crna”.',
     ],
     quiz: [
-      { question: 'Qual é o gênero de «mlijeko» (leite)?', options: ['neutro', 'masculino', 'feminino'], answer: 'neutro', explanation: 'Palavras terminadas em -o costumam ser neutras.' },
-      { question: 'Como se diz «a minha família»?', options: ['moja obitelj', 'moj obitelj', 'moje obitelj'], answer: 'moja obitelj', explanation: '«Obitelj» é feminino, apesar da consoante no fim.' },
+      { question: 'Qual é o gênero de “mlijeko” (leite)?', options: ['neutro', 'masculino', 'feminino'], answer: 'neutro', explanation: 'Palavras terminadas em -o costumam ser neutras.' },
+      { question: 'Como se diz “a minha família”?', options: ['moja obitelj', 'moj obitelj', 'moje obitelj'], answer: 'moja obitelj', explanation: '“Obitelj” é feminino, apesar da consoante no fim.' },
     ],
   },
   {
@@ -116,10 +116,10 @@ export const GRAMMAR_HR: GrammarTopic[] = [
     level: 'A1.2',
     title: 'O verbo imati e a negação',
     emoji: '🚫',
-    summary: '«Imati» (ter) no presente e a negação: «ne» antes do verbo, com algumas formas grudadas.',
+    summary: '“Imati” (ter) no presente e a negação: “ne” antes do verbo, com algumas formas grudadas.',
     sections: [
       {
-        text: 'Para negar, «ne» vem antes do verbo e se escreve separado: «ne znam». Três verbos muito usados grudam a negação: «imati» → «nemam», «biti» → «nisam», «htjeti» → «neću».',
+        text: 'Para negar, “ne” vem antes do verbo e se escreve separado: “ne znam”. Três verbos muito usados grudam a negação: “imati” → “nemam”, “biti” → “nisam”, “htjeti” → “neću”.',
         table: {
           head: ['Pronome', 'imati', 'negativo'],
           rows: [
@@ -138,10 +138,10 @@ export const GRAMMAR_HR: GrammarTopic[] = [
         ],
       },
     ],
-    pitfalls: ['Dizer «ne imam»: o certo é «nemam».', 'Dizer «ne sam»: o certo é «nisam».'],
+    pitfalls: ['Dizer “ne imam”: o certo é “nemam”.', 'Dizer “ne sam”: o certo é “nisam”.'],
     quiz: [
-      { question: 'Como se diz «eu não tenho irmão»?', options: ['Nemam brata.', 'Ne imam brata.', 'Imam ne brata.'], answer: 'Nemam brata.', explanation: 'A negação de «imam» é uma palavra só: «nemam».' },
-      { question: 'Complete: «On ___ sestru.» (Ele tem uma irmã.)', options: ['ima', 'imam', 'imaju'], answer: 'ima', explanation: '«Ima» é a forma de «imati» para on / ona.' },
+      { question: 'Como se diz “eu não tenho irmão”?', options: ['Nemam brata.', 'Ne imam brata.', 'Imam ne brata.'], answer: 'Nemam brata.', explanation: 'A negação de “imam” é uma palavra só: “nemam”.' },
+      { question: 'Complete: “On ___ sestru.” (Ele tem uma irmã.)', options: ['ima', 'imam', 'imaju'], answer: 'ima', explanation: '“Ima” é a forma de “imati” para on / ona.' },
     ],
   },
 ];

@@ -12,12 +12,12 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     sections: [
       {
         heading: 'As vogais e a vogal neutra',
-        text: 'O catalão tem 7 sons vocálicos tônicos (a, e aberto, e fechado, i, o aberto, o fechado, u). No catalão oriental (a fala padrão de Barcelona e das Baleares), as vogais «a» e «e» átonas (sem acento tônico) viram uma «vogal neutra» — um som entre o A e o E, parecido com o «a» final de «mesa» no português. As vogais «o» e «u» átonas geralmente soam «u».',
+        text: 'O catalão tem 7 sons vocálicos tônicos (a, e aberto, e fechado, i, o aberto, o fechado, u). No catalão oriental (a fala padrão de Barcelona e das Baleares), as vogais “a” e “e” átonas (sem acento tônico) viram uma “vogal neutra” — um som entre o A e o E, parecido com o “a” final de “mesa” no português. As vogais “o” e “u” átonas geralmente soam “u”.',
         examples: [
-          ['casa', 'casa (o «a» final soa como vogal neutra)'],
-          ['pare', 'pai (o «e» final soa como vogal neutra)'],
-          ['mare', 'mãe (o «e» final soa como vogal neutra)'],
-          ['poma', 'maçã (o «a» final soa como vogal neutra; o «o» inicial é tônico, então fica aberto, não reduz)'],
+          ['casa', 'casa (o “a” final soa como vogal neutra)'],
+          ['pare', 'pai (o “e” final soa como vogal neutra)'],
+          ['mare', 'mãe (o “e” final soa como vogal neutra)'],
+          ['poma', 'maçã (o “a” final soa como vogal neutra; o “o” inicial é tônico, então fica aberto, não reduz)'],
         ],
       },
       {
@@ -26,11 +26,11 @@ export const GRAMMAR_CA: GrammarTopic[] = [
         table: {
           head: ['Grafia', 'Nome', 'Como soa'],
           rows: [
-            ['l·l', 'ela geminada', 'l duplo e prolongado, com uma pequena pausa antes (ex.: «col·legi»)'],
-            ['ny', 'ena i grega', 'igual ao «nh» do português (ex.: «Catalunya»)'],
-            ['ç', 'c trencada', 'igual ao «ç» do português, um «s» surdo (ex.: «Barça»)'],
-            ['ix', '—', 'som de «x»/«ch» do português depois de vogal (ex.: «caixa»)'],
-            ['tg / tj', '—', 'parecido com o «dj» de «dia» no português do Brasil (ex.: «platja»)'],
+            ['l·l', 'ela geminada', 'l duplo e prolongado, com uma pequena pausa antes (ex.: “col·legi”)'],
+            ['ny', 'ena i grega', 'igual ao “nh” do português (ex.: “Catalunya”)'],
+            ['ç', 'c trencada', 'igual ao “ç” do português, um “s” surdo (ex.: “Barça”)'],
+            ['ix', '—', 'som de “x”/“ch” do português depois de vogal (ex.: “caixa”)'],
+            ['tg / tj', '—', 'parecido com o “dj” de “dia” no português do Brasil (ex.: “platja”)'],
           ],
         },
         examples: [
@@ -42,7 +42,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: 'Apostrofação (elisió)',
-        text: 'Quando o artigo definido masculino «el» ou feminino «la» vem antes de palavra que começa com vogal ou h mudo, a vogal do artigo some e vira apóstrofo («l\'»). É para não ter pausa entre duas vogais.',
+        text: 'Quando o artigo definido masculino “el” ou feminino “la” vem antes de palavra que começa com vogal ou h mudo, a vogal do artigo some e vira apóstrofo (“l\'”). É para não ter pausa entre duas vogais.',
         examples: [
           ["l'home", 'o homem (el + home)'],
           ["l'aigua", 'a água (la + aigua)'],
@@ -52,22 +52,22 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Confundir o «l·l» (ponto geminado) com «ll» junto: «ll» sem ponto soa «lh» português (ex.: «llit» = cama), «l·l» é um l duplo prolongado.',
-      'Separar o «ny» em «n» + «y»: é um dígrafo só, com som de «nh».',
-      'Esquecer de apostrofar o artigo antes de vogal ou h mudo (escrever «el home» em vez de «l\'home»).',
+      'Confundir o “l·l” (ponto geminado) com “ll” junto: “ll” sem ponto soa “lh” português (ex.: “llit” = cama), “l·l” é um l duplo prolongado.',
+      'Separar o “ny” em “n” + “y”: é um dígrafo só, com som de “nh”.',
+      'Esquecer de apostrofar o artigo antes de vogal ou h mudo (escrever “el home” em vez de “l\'home”).',
     ],
     quiz: [
       {
-        question: 'Qual é a forma correta do artigo masculino «el» antes de «home» (homem)?',
+        question: 'Qual é a forma correta do artigo masculino “el” antes de “home” (homem)?',
         options: ['el home', "l'home", 'la home'],
         answer: "l'home",
-        explanation: 'Antes de palavra que começa com vogal ou h mudo, «el» sofre elisão e vira «l\'».',
+        explanation: 'Antes de palavra que começa com vogal ou h mudo, “el” sofre elisão e vira “l\'”.',
       },
       {
-        question: 'Como se pronuncia «ny», como em «Catalunya»?',
-        options: ['Como o «lh» do português', 'Como o «nh» do português', 'Como o «rr» do português'],
-        answer: 'Como o «nh» do português',
-        explanation: 'O dígrafo «ny» do catalão é igual ao «nh» do português.',
+        question: 'Como se pronuncia “ny”, como em “Catalunya”?',
+        options: ['Como o “lh” do português', 'Como o “nh” do português', 'Como o “rr” do português'],
+        answer: 'Como o “nh” do português',
+        explanation: 'O dígrafo “ny” do catalão é igual ao “nh” do português.',
       },
     ],
   },
@@ -101,7 +101,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: 'Regras principais de plural',
-        text: 'A regra geral é acrescentar «-s»; palavras femininas terminadas em «-a» trocam a terminação por «-es»; palavras terminadas em vogal tônica ou sibilante acrescentam «-os».',
+        text: 'A regra geral é acrescentar “-s”; palavras femininas terminadas em “-a” trocam a terminação por “-es”; palavras terminadas em vogal tônica ou sibilante acrescentam “-os”.',
         examples: [
           ['llibre → llibres', 'livro → livros (regra geral: acrescenta -s)'],
           ['casa → cases', 'casa → casas (feminino em -a muda para -es)'],
@@ -111,7 +111,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: 'Preposições e contrações',
-        text: 'As preposições «a», «de» e «per» se contraem com o artigo masculino «el»/«els». Se o artigo estiver apostrofado («l\'»), a contração NÃO acontece.',
+        text: 'As preposições “a”, “de” e “per” se contraem com o artigo masculino “el”/“els”. Se o artigo estiver apostrofado (“l\'”), a contração NÃO acontece.',
         table: {
           head: ['Preposição + artigo', 'Contração', 'Exemplo', 'Tradução'],
           rows: [
@@ -126,27 +126,27 @@ export const GRAMMAR_CA: GrammarTopic[] = [
         examples: [
           ['Vaig al mercat.', 'Vou ao mercado.'],
           ['El llibre del professor.', 'O livro do professor.'],
-          ["De l'home.", 'Do homem (sem contração «del», porque o artigo está apostrofado: de + l\'home).'],
+          ["De l'home.", 'Do homem (sem contração “del”, porque o artigo está apostrofado: de + l\'home).'],
         ],
       },
     ],
     pitfalls: [
-      'Formar o plural feminino em -a só com -s (escrever «casas» em vez de «cases»).',
-      'Tentar contrair «de» com um artigo apostrofado formando «del» (o certo é «de l\'aigua», nunca «del aigua»).',
-      'Confundir a preposição «a» com o artigo: o artigo feminino singular é «la».',
+      'Formar o plural feminino em -a só com -s (escrever “casas” em vez de “cases”).',
+      'Tentar contrair “de” com um artigo apostrofado formando “del” (o certo é “de l\'aigua”, nunca “del aigua”).',
+      'Confundir a preposição “a” com o artigo: o artigo feminino singular é “la”.',
     ],
     quiz: [
       {
-        question: 'Qual é o plural correto de «taula» (mesa)?',
+        question: 'Qual é o plural correto de “taula” (mesa)?',
         options: ['taulas', 'taules', 'taulos'],
         answer: 'taules',
-        explanation: 'Substantivos femininos terminados em «-a» trocam a terminação por «-es» no plural.',
+        explanation: 'Substantivos femininos terminados em “-a” trocam a terminação por “-es” no plural.',
       },
       {
-        question: 'Como fica «de» + «el» em «El cotxe ___ professor»?',
+        question: 'Como fica “de” + “el” em “El cotxe ___ professor”?',
         options: ['do', 'del', "de l'"],
         answer: 'del',
-        explanation: 'A preposição «de» com o artigo masculino «el» forma a contração «del».',
+        explanation: 'A preposição “de” com o artigo masculino “el” forma a contração “del”.',
       },
     ],
   },
@@ -155,7 +155,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     level: 'A1.1',
     title: 'Os verbos ésser/ser e estar',
     emoji: '👥',
-    summary: 'Como o português, o catalão tem dois verbos para existência e estado: «ésser»/«ser» e «estar». A conjugação no presente e quando usar cada um.',
+    summary: 'Como o português, o catalão tem dois verbos para existência e estado: “ésser”/“ser” e “estar”. A conjugação no presente e quando usar cada um.',
     sections: [
       {
         heading: 'Conjugação no presente do indicativo',
@@ -181,7 +181,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: 'Quando usar ésser/ser × estar',
-        text: 'A distinção lembra a do português: identidade, nacionalidade, profissão e características permanentes usam «ésser/ser»; localização temporária e estados físicos/emocionais usam «estar».',
+        text: 'A distinção lembra a do português: identidade, nacionalidade, profissão e características permanentes usam “ésser/ser”; localização temporária e estados físicos/emocionais usam “estar”.',
         examples: [
           ['La Maria és alta i simpàtica.', 'A Maria é alta e simpática. (identidade/característica: ser)'],
           ['Aquest llibre és del Joan.', 'Este livro é do Joan. (origem/posse: ser)'],
@@ -191,22 +191,22 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar as formas do espanhol «soy»/«estoy» — em catalão é «soc» e «estic».',
-      'Esquecer o acento na 3ª pessoa do plural de ser: «són» (eles são).',
-      'Confundir «soc» (eu sou) com a palavra espanhola «sois» (vocês são).',
+      'Usar as formas do espanhol “soy”/“estoy” — em catalão é “soc” e “estic”.',
+      'Esquecer o acento na 3ª pessoa do plural de ser: “són” (eles são).',
+      'Confundir “soc” (eu sou) com a palavra espanhola “sois” (vocês são).',
     ],
     quiz: [
       {
-        question: 'Como se diz «Eu sou brasileiro» em catalão?',
+        question: 'Como se diz “Eu sou brasileiro” em catalão?',
         options: ['Jo estic brasiler', 'Jo soc brasiler', 'Jo soy brasiler'],
         answer: 'Jo soc brasiler',
-        explanation: 'Nacionalidade e origem usam «ésser/ser»: 1ª pessoa do singular «soc».',
+        explanation: 'Nacionalidade e origem usam “ésser/ser”: 1ª pessoa do singular “soc”.',
       },
       {
-        question: 'Qual é a forma de «estar» para «nosaltres» (nós) no presente?',
+        question: 'Qual é a forma de “estar” para “nosaltres” (nós) no presente?',
         options: ['som', 'estem', 'estan'],
         answer: 'estem',
-        explanation: '«Nosaltres estem» é a 1ª pessoa do plural do presente de «estar».',
+        explanation: '“Nosaltres estem” é a 1ª pessoa do plural do presente de “estar”.',
       },
     ],
   },
@@ -219,7 +219,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     sections: [
       {
         heading: 'Pronomes pessoais sujeito',
-        text: 'Para o tratamento formal («o senhor», «a senhora»), usa-se «vostè» no singular e «vostès» no plural — os dois conjugam o verbo na 3ª pessoa.',
+        text: 'Para o tratamento formal (“o senhor”, “a senhora”), usa-se “vostè” no singular e “vostès” no plural — os dois conjugam o verbo na 3ª pessoa.',
         table: {
           head: ['Pessoa', 'Singular', 'Plural'],
           rows: [
@@ -237,7 +237,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: 'Adjetivos possessivos com artigo definido',
-        text: 'No catalão padrão, é obrigatório pôr o artigo definido antes do possessivo: «el meu llibre», «la meva casa» — nunca só «meu llibre».',
+        text: 'No catalão padrão, é obrigatório pôr o artigo definido antes do possessivo: “el meu llibre”, “la meva casa” — nunca só “meu llibre”.',
         table: {
           head: ['Possuidor', 'Masc. sing.', 'Fem. sing.', 'Masc. pl.', 'Fem. pl.'],
           rows: [
@@ -258,7 +258,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: 'Omissão excepcional do artigo',
-        text: 'O artigo só some antes do possessivo em vocativo, em parentesco em fórmula fixa («pare meu!») ou na expressão de lugar «a casa meva/teva/seva» (em minha/tua/sua casa) — diferente de «la meva casa» (minha casa, o prédio), que mantém o artigo.',
+        text: 'O artigo só some antes do possessivo em vocativo, em parentesco em fórmula fixa (“pare meu!”) ou na expressão de lugar “a casa meva/teva/seva” (em minha/tua/sua casa) — diferente de “la meva casa” (minha casa, o prédio), que mantém o artigo.',
         examples: [
           ['Vine a casa meva.', 'Vem à minha casa.'],
           ['Mare meva!', 'Minha nossa!'],
@@ -266,22 +266,22 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Não usar o artigo antes do possessivo («meu pare» em vez de «el meu pare»); a omissão só vale em vocativo ou expressão fixa («pare meu!», «a casa meva»).',
-      'Confundir «meva/teva/seva» (feminino) com as formas espanholas «mi/tu/su».',
-      'Conjugar na 2ª pessoa ao falar com «vostè»: o certo é a 3ª pessoa.',
+      'Não usar o artigo antes do possessivo (“meu pare” em vez de “el meu pare”); a omissão só vale em vocativo ou expressão fixa (“pare meu!”, “a casa meva”).',
+      'Confundir “meva/teva/seva” (feminino) com as formas espanholas “mi/tu/su”.',
+      'Conjugar na 2ª pessoa ao falar com “vostè”: o certo é a 3ª pessoa.',
     ],
     quiz: [
       {
-        question: 'Como se diz «a minha amiga» em catalão correto?',
+        question: 'Como se diz “a minha amiga” em catalão correto?',
         options: ['mi amiga', 'meva amiga', 'la meva amiga'],
         answer: 'la meva amiga',
-        explanation: 'É obrigatório o artigo definido («la») antes do possessivo («meva»).',
+        explanation: 'É obrigatório o artigo definido (“la”) antes do possessivo (“meva”).',
       },
       {
         question: 'Qual pronome é o tratamento formal no singular?',
         options: ['vostè', 'tu', 'vosaltres'],
         answer: 'vostè',
-        explanation: '«Vostè» é o pronome formal singular, e concorda com o verbo na 3ª pessoa do singular.',
+        explanation: '“Vostè” é o pronome formal singular, e concorda com o verbo na 3ª pessoa do singular.',
       },
     ],
   },
@@ -290,11 +290,11 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     level: 'A1.2',
     title: 'Presente do indicativo: verbos regulares',
     emoji: '⏱️',
-    summary: 'As três conjugações regulares do presente (-ar, -re/-er, -ir) e o grupo especial dos verbos «incoativos» em -ir, que ganham um «-eix-» na raiz.',
+    summary: 'As três conjugações regulares do presente (-ar, -re/-er, -ir) e o grupo especial dos verbos “incoativos” em -ir, que ganham um “-eix-” na raiz.',
     sections: [
       {
         heading: '1ª e 2ª conjugações (-ar, -re/-er)',
-        text: 'A 1ª conjugação reúne os verbos em «-ar» (como «parlar», falar); a 2ª, os verbos em «-re» ou «-er» (como «perdre», perder).',
+        text: 'A 1ª conjugação reúne os verbos em “-ar” (como “parlar”, falar); a 2ª, os verbos em “-re” ou “-er” (como “perdre”, perder).',
         table: {
           head: ['Pronome', '-ar: parlar', '-re: perdre'],
           rows: [
@@ -314,7 +314,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: '3ª conjugação (-ir): verbos puros e incoativos',
-        text: 'A 3ª conjugação (-ir) tem dois tipos: os puros (como «dormir»), com a terminação direta, e os incoativos (como «servir», «llegir» = ler), que ganham «-eix-» na raiz no singular e na 3ª pessoa do plural.',
+        text: 'A 3ª conjugação (-ir) tem dois tipos: os puros (como “dormir”), com a terminação direta, e os incoativos (como “servir”, “llegir” = ler), que ganham “-eix-” na raiz no singular e na 3ª pessoa do plural.',
         table: {
           head: ['Pronome', 'Puro: dormir', 'Incoativo: servir'],
           rows: [
@@ -355,29 +355,29 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Esquecer o «-o» da 1ª pessoa do singular no dialeto central (escrever «parl» em vez de «parlo» — noutros dialetos, como o valenciano, «parl» é a forma normal).',
-      'Não pôr o «-eix-» nos verbos em -ir que pedem essa forma (dizer «serv» em vez de «serveixo»).',
-      'Pôr o «-eix-» em «nosaltres»/«vosaltres», que não levam: são «servim» e «serviu».',
-      'Confundir «voler»/«poder» com as formas espanholas «quiero»/«puedo».',
+      'Esquecer o “-o” da 1ª pessoa do singular no dialeto central (escrever “parl” em vez de “parlo” — noutros dialetos, como o valenciano, “parl” é a forma normal).',
+      'Não pôr o “-eix-” nos verbos em -ir que pedem essa forma (dizer “serv” em vez de “serveixo”).',
+      'Pôr o “-eix-” em “nosaltres”/“vosaltres”, que não levam: são “servim” e “serviu”.',
+      'Confundir “voler”/“poder” com as formas espanholas “quiero”/“puedo”.',
     ],
     quiz: [
       {
-        question: 'Qual é a forma de «jo» do verbo «parlar»?',
+        question: 'Qual é a forma de “jo” do verbo “parlar”?',
         options: ['jo parla', 'jo parlo', 'jo parles'],
         answer: 'jo parlo',
-        explanation: 'A 1ª pessoa do singular dos verbos em «-ar» termina em «-o» no presente.',
+        explanation: 'A 1ª pessoa do singular dos verbos em “-ar” termina em “-o” no presente.',
       },
       {
-        question: 'Como se conjuga «llegir» (ler) para «jo»?',
+        question: 'Como se conjuga “llegir” (ler) para “jo”?',
         options: ['jo llego', 'jo llegim', 'jo llegeixo'],
         answer: 'jo llegeixo',
-        explanation: 'Verbo incoativo em -ir: ganha «-eix-» na 1ª pessoa do singular.',
+        explanation: 'Verbo incoativo em -ir: ganha “-eix-” na 1ª pessoa do singular.',
       },
       {
-        question: 'Qual é a forma de «jo» do verbo «voler» (querer)?',
+        question: 'Qual é a forma de “jo” do verbo “voler” (querer)?',
         options: ['jo quiero', 'jo vull', 'jo vol'],
         answer: 'jo vull',
-        explanation: '«Voler» é irregular: a 1ª pessoa do singular é «vull».',
+        explanation: '“Voler” é irregular: a 1ª pessoa do singular é “vull”.',
       },
     ],
   },
@@ -386,11 +386,11 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     level: 'A1.2',
     title: 'Demonstrativos e expressões de lugar',
     emoji: '📍',
-    summary: 'Os demonstrativos «aquest»/«aquell» (este/aquele) e as principais preposições e advérbios de lugar.',
+    summary: 'Os demonstrativos “aquest”/“aquell” (este/aquele) e as principais preposições e advérbios de lugar.',
     sections: [
       {
         heading: 'Demonstrativos: aquest / aquell',
-        text: 'O catalão padrão moderno usa dois graus de distância: «aquest» para perto (este/esta/esse/essa) e «aquell» para longe (aquele/aquela) — o grau intermediário do catalão antigo (aqueix) só sobrevive, sobretudo, no valenciano.',
+        text: 'O catalão padrão moderno usa dois graus de distância: “aquest” para perto (este/esta/esse/essa) e “aquell” para longe (aquele/aquela) — o grau intermediário do catalão antigo (aqueix) só sobrevive, sobretudo, no valenciano.',
         table: {
           head: ['Distância', 'Masc. sing.', 'Fem. sing.', 'Masc. pl.', 'Fem. pl.'],
           rows: [
@@ -406,7 +406,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: 'Advérbios e preposições de lugar',
-        text: 'As locuções de lugar levam «de» antes de um substantivo (que costuma contrair com o artigo: «del», «dels»).',
+        text: 'As locuções de lugar levam “de” antes de um substantivo (que costuma contrair com o artigo: “del”, “dels”).',
         table: {
           head: ['Catalão', 'Português', 'Exemplo'],
           rows: [
@@ -428,22 +428,22 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Tentar usar três graus como em português (este, esse, aquele): o catalão padrão moderno usa só dois («aquest», «aquell»).',
-      'Esquecer o «de» nas locuções de lugar antes de substantivo (dizer «a prop el parc» em vez de «a prop del parc»).',
-      'Escrever o plural masculino de «aquest» como o espanhol «estos»: em catalão é «aquests».',
+      'Tentar usar três graus como em português (este, esse, aquele): o catalão padrão moderno usa só dois (“aquest”, “aquell”).',
+      'Esquecer o “de” nas locuções de lugar antes de substantivo (dizer “a prop el parc” em vez de “a prop del parc”).',
+      'Escrever o plural masculino de “aquest” como o espanhol “estos”: em catalão é “aquests”.',
     ],
     quiz: [
       {
-        question: 'Como se diz «esta mesa» em catalão?',
+        question: 'Como se diz “esta mesa” em catalão?',
         options: ['esta taula', 'aquesta taula', 'aquella taula'],
         answer: 'aquesta taula',
-        explanation: '«Aquesta» é o demonstrativo feminino singular para o que está perto.',
+        explanation: '“Aquesta” é o demonstrativo feminino singular para o que está perto.',
       },
       {
-        question: 'Qual é a tradução de «perto do restaurante»?',
+        question: 'Qual é a tradução de “perto do restaurante”?',
         options: ['a prop del restaurant', 'a prop el restaurant', 'lluny del restaurant'],
         answer: 'a prop del restaurant',
-        explanation: '«A prop de» exige «de», que contrai com o artigo «el»: «del».',
+        explanation: '“A prop de” exige “de”, que contrai com o artigo “el”: “del”.',
       },
     ],
   },
@@ -452,11 +452,11 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     level: 'A2.1',
     title: 'Passado perifrástico (passat perifràstic)',
     emoji: '📜',
-    summary: 'No catalão falado e escrito de hoje, o passado simples mais comum não é uma forma verbal só: é uma perífrase com o verbo «anar» conjugado + o infinitivo do verbo principal.',
+    summary: 'No catalão falado e escrito de hoje, o passado simples mais comum não é uma forma verbal só: é uma perífrase com o verbo “anar” conjugado + o infinitivo do verbo principal.',
     sections: [
       {
         heading: 'Estrutura e funcionamento',
-        text: 'O passado perifrástico equivale ao pretérito perfeito do português («eu comi», «ele falou»): o auxiliar «anar» numa forma especial de passado + o verbo principal no infinitivo. Apesar de usar «anar» (ir), a estrutura NÃO é futuro — é uma ação concluída no passado.',
+        text: 'O passado perifrástico equivale ao pretérito perfeito do português (“eu comi”, “ele falou”): o auxiliar “anar” numa forma especial de passado + o verbo principal no infinitivo. Apesar de usar “anar” (ir), a estrutura NÃO é futuro — é uma ação concluída no passado.',
         table: {
           head: ['Pronome', 'Auxiliar (curta/longa)', 'Exemplo com parlar', 'Tradução'],
           rows: [
@@ -477,22 +477,22 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Confundir o passado perifrástico com futuro imediato («vaig menjar» é «comi», NUNCA «vou comer»).',
-      'Achar que «vaig anar» é redundante: é correto, e significa «fui, fui a algum lugar».',
-      'Trocar as formas curtas «vam»/«vau» pelas variantes erradas «vem»/«veu» (que não existem em catalão padrão).',
+      'Confundir o passado perifrástico com futuro imediato (“vaig menjar” é “comi”, NUNCA “vou comer”).',
+      'Achar que “vaig anar” é redundante: é correto, e significa “fui, fui a algum lugar”.',
+      'Trocar as formas curtas “vam”/“vau” pelas variantes erradas “vem”/“veu” (que não existem em catalão padrão).',
     ],
     quiz: [
       {
-        question: 'O que significa «Ell va menjar una paella»?',
+        question: 'O que significa “Ell va menjar una paella”?',
         options: ['Ele vai comer uma paella', 'Ele comeu uma paella', 'Ele comeria uma paella'],
         answer: 'Ele comeu uma paella',
-        explanation: '«va + infinitivo» é o passado perifrástico, equivalente ao pretérito perfeito.',
+        explanation: '“va + infinitivo” é o passado perifrástico, equivalente ao pretérito perfeito.',
       },
       {
-        question: 'Qual é a forma de «jo» do passado perifrástico com «comprar»?',
+        question: 'Qual é a forma de “jo” do passado perifrástico com “comprar”?',
         options: ['jo voy comprar', 'jo vaig comprar', 'jo iré comprar'],
         answer: 'jo vaig comprar',
-        explanation: 'A 1ª pessoa do singular do auxiliar é «vaig» + o infinitivo «comprar».',
+        explanation: 'A 1ª pessoa do singular do auxiliar é “vaig” + o infinitivo “comprar”.',
       },
     ],
   },
@@ -537,35 +537,35 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Esquecer de elidir o pronome antes de verbo com vogal (escrever «et escolto» em vez de «t\'escolto»).',
-      'Usar a forma espanhola «le» para complemento indireto em vez do catalão «li».',
+      'Esquecer de elidir o pronome antes de verbo com vogal (escrever “et escolto” em vez de “t\'escolto”).',
+      'Usar a forma espanhola “le” para complemento indireto em vez do catalão “li”.',
       'Pôr o pronome antes do verbo no imperativo afirmativo ou no infinitivo — o certo é depois.',
     ],
     quiz: [
       {
-        question: 'Como se escreve «Eu te escuto» com o verbo «escoltar»?',
+        question: 'Como se escreve “Eu te escuto” com o verbo “escoltar”?',
         options: ['et escolto', "t'escolto", 'te escolto'],
         answer: "t'escolto",
-        explanation: '«et» elide e vira «t\'» antes de verbo com vogal.',
+        explanation: '“et” elide e vira “t\'” antes de verbo com vogal.',
       },
       {
-        question: 'Qual pronome substitui «a la Maria» em «Dono un regal a la Maria»?',
+        question: 'Qual pronome substitui “a la Maria” em “Dono un regal a la Maria”?',
         options: ['el', 'la', 'li'],
         answer: 'li',
-        explanation: 'O complemento indireto de 3ª pessoa do singular é substituído por «li».',
+        explanation: 'O complemento indireto de 3ª pessoa do singular é substituído por “li”.',
       },
     ],
   },
   {
     id: 'ca-g9',
     level: 'A2.1',
-    title: 'Os pronomes «hi» e «en»',
+    title: 'Os pronomes “hi” e “en”',
     emoji: '🧩',
-    summary: 'Os pronomes «hi» e «en» são uma marca do catalão: substituem lugares, quantidades e complementos com preposição, evitando repetição.',
+    summary: 'Os pronomes “hi” e “en” são uma marca do catalão: substituem lugares, quantidades e complementos com preposição, evitando repetição.',
     sections: [
       {
-        heading: 'O pronome «hi»',
-        text: '«hi» substitui complemento de lugar com «a», «en», «per», «sobre» (destino ou permanência). É parte fixa de «hi ha» (há, existe).',
+        heading: 'O pronome “hi”',
+        text: '“hi” substitui complemento de lugar com “a”, “en”, “per”, “sobre” (destino ou permanência). É parte fixa de “hi ha” (há, existe).',
         examples: [
           ['Vas a Barcelona? — Sí, hi vaig.', 'Você vai a Barcelona? — Sim, vou lá. (hi = a Barcelona)'],
           ['Ets a casa? — Sí, hi soc.', 'Você está em casa? — Sim, estou lá. (hi = a casa)'],
@@ -573,8 +573,8 @@ export const GRAMMAR_CA: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'O pronome «en»',
-        text: '«en» substitui complemento com a preposição «de» (origem, posse, causa) e complemento direto indeterminado com quantidade.',
+        heading: 'O pronome “en”',
+        text: '“en” substitui complemento com a preposição “de” (origem, posse, causa) e complemento direto indeterminado com quantidade.',
         table: {
           head: ['Pronome', 'Substitui', 'Exemplo', 'Tradução'],
           rows: [
@@ -590,22 +590,22 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Omitir «hi» ao responder sobre lugar (responder só «Sí, vaig» em vez de «Sí, hi vaig»).',
-      'Omitir «en» ao indicar quantidade (dizer «Tinc dos» em vez de «En tinc dos»).',
-      'Usar «hi» para origem com «de»: origem com «de» pede sempre «en».',
+      'Omitir “hi” ao responder sobre lugar (responder só “Sí, vaig” em vez de “Sí, hi vaig”).',
+      'Omitir “en” ao indicar quantidade (dizer “Tinc dos” em vez de “En tinc dos”).',
+      'Usar “hi” para origem com “de”: origem com “de” pede sempre “en”.',
     ],
     quiz: [
       {
-        question: '«Vols poma?» — «Sí, ___ vull una.»: qual pronome?',
+        question: '“Vols poma?” — “Sí, ___ vull una.”: qual pronome?',
         options: ['hi', 'en', 'la'],
         answer: 'en',
-        explanation: 'Quantidade com objeto indeterminado («uma maçã») pede «en».',
+        explanation: 'Quantidade com objeto indeterminado (“uma maçã”) pede “en”.',
       },
       {
-        question: '«Vas a la platja?»: qual é a resposta afirmativa correta?',
+        question: '“Vas a la platja?”: qual é a resposta afirmativa correta?',
         options: ['Sí, hi vaig', 'Sí, en vaig', 'Sí, vaig la platja'],
         answer: 'Sí, hi vaig',
-        explanation: '«hi» substitui o complemento de lugar com «a» (a la platja).',
+        explanation: '“hi” substitui o complemento de lugar com “a” (a la platja).',
       },
     ],
   },
@@ -618,7 +618,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     sections: [
       {
         heading: 'Pretérito imperfeito (pretèrit imperfet)',
-        text: 'Descreve estados, cenários ou hábitos passados («falava», «comia»). Os verbos em «-ar» usam «-av-»; os em «-re/-er» e «-ir» usam «-i-». Atenção ao acento obrigatório em «nosaltres»/«vosaltres».',
+        text: 'Descreve estados, cenários ou hábitos passados (“falava”, “comia”). Os verbos em “-ar” usam “-av-”; os em “-re/-er” e “-ir” usam “-i-”. Atenção ao acento obrigatório em “nosaltres”/“vosaltres”.',
         table: {
           head: ['Pronome', '-ar: parlar', '-re: perdre', '-ir: dormir'],
           rows: [
@@ -638,7 +638,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: 'Pretérito perfeito composto (pretèrit perfet compost)',
-        text: 'Presente de «haver» + particípio do verbo principal. Usa-se para ações passadas num período ainda não concluído (hoje, esta semana, este ano) ou com relevância no presente.',
+        text: 'Presente de “haver” + particípio do verbo principal. Usa-se para ações passadas num período ainda não concluído (hoje, esta semana, este ano) ou com relevância no presente.',
         table: {
           head: ['Pronome', 'haver', 'Particípio (-at/-ut/-it)', 'Exemplo'],
           rows: [
@@ -658,22 +658,22 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Esquecer o acento em «nosaltres»/«vosaltres» do imperfeito (escrever «parlavem» em vez de «parlàvem»).',
-      'Confundir o passat perifràstic («vaig parlar», passado pontual) com o perfet compost («he parlat», período ainda não concluído como «avui»).',
-      'Errar particípios irregulares comuns: «fet» (fer), «vist» (veure), «escrit» (escriure).',
+      'Esquecer o acento em “nosaltres”/“vosaltres” do imperfeito (escrever “parlavem” em vez de “parlàvem”).',
+      'Confundir o passat perifràstic (“vaig parlar”, passado pontual) com o perfet compost (“he parlat”, período ainda não concluído como “avui”).',
+      'Errar particípios irregulares comuns: “fet” (fer), “vist” (veure), “escrit” (escriure).',
     ],
     quiz: [
       {
-        question: 'Qual é a forma do imperfeito de «parlar» para «nosaltres»?',
+        question: 'Qual é a forma do imperfeito de “parlar” para “nosaltres”?',
         options: ['parlavem', 'parlàvem', 'parlíem'],
         answer: 'parlàvem',
-        explanation: '1ª pessoa do plural do imperfeito de verbos em «-ar»: acento grave, «parlàvem».',
+        explanation: '1ª pessoa do plural do imperfeito de verbos em “-ar”: acento grave, “parlàvem”.',
       },
       {
-        question: 'Como se diz «Hoje eu trabalhei muito»?',
+        question: 'Como se diz “Hoje eu trabalhei muito”?',
         options: ['Ahir vaig treballar molt', 'Avui he treballat molt', 'Avui treballava molt'],
         answer: 'Avui he treballat molt',
-        explanation: 'Período que ainda inclui o presente («avui»): perfeito composto, «he treballat».',
+        explanation: 'Período que ainda inclui o presente (“avui”): perfeito composto, “he treballat”.',
       },
     ],
   },
@@ -686,7 +686,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     sections: [
       {
         heading: 'Futuro simples (futur simple)',
-        text: 'Terminações -é/-às/-à/-em/-eu/-an direto no infinitivo (verbos em -re perdem o «e» final antes).',
+        text: 'Terminações -é/-às/-à/-em/-eu/-an direto no infinitivo (verbos em -re perdem o “e” final antes).',
         table: {
           head: ['Pronome', 'parlar', 'perdre', 'dormir'],
           rows: [
@@ -741,21 +741,21 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     ],
     pitfalls: [
       'Confundir a acentuação do futuro (agudo no singular: -é, -às, -à) com a do condicional (-ia, -íem, -íeu).',
-      'Esquecer as raízes irregulares com «-dr-»: «tenir» → «tindré», «venir» → «vindré», «voler» → «voldré».',
-      'Usar o presente pra pedidos corteses («vull un cafè» soa direto demais) em vez do condicional («voldria», «m\'agradaria»).',
+      'Esquecer as raízes irregulares com “-dr-”: “tenir” → “tindré”, “venir” → “vindré”, “voler” → “voldré”.',
+      'Usar o presente pra pedidos corteses (“vull un cafè” soa direto demais) em vez do condicional (“voldria”, “m\'agradaria”).',
     ],
     quiz: [
       {
-        question: 'Qual é o futuro de «tenir» (ter) para «jo»?',
+        question: 'Qual é o futuro de “tenir” (ter) para “jo”?',
         options: ['teniré', 'tindré', 'tendré'],
         answer: 'tindré',
-        explanation: '«Tenir» tem raiz irregular «tindr-» no futuro: «jo tindré».',
+        explanation: '“Tenir” tem raiz irregular “tindr-” no futuro: “jo tindré”.',
       },
       {
-        question: 'Como pedir algo com cortesia, com «m\'agradar» (gostar)?',
+        question: 'Como pedir algo com cortesia, com “m\'agradar” (gostar)?',
         options: ["M'agrada un cafè", "M'agradaria un cafè", "M'agradarà un cafè"],
         answer: "M'agradaria un cafè",
-        explanation: '«M\'agradaria» é o condicional, usado para pedir de forma educada.',
+        explanation: '“M\'agradaria” é o condicional, usado para pedir de forma educada.',
       },
     ],
   },
@@ -768,7 +768,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     sections: [
       {
         heading: 'Estrutura dos comparativos',
-        text: 'Superioridade: «més» + adjetivo + «que». Inferioridade: «menys» + adjetivo + «que». Igualdade: «tan» + adjetivo + «com» (NUNCA «tan...que»).',
+        text: 'Superioridade: “més” + adjetivo + “que”. Inferioridade: “menys” + adjetivo + “que”. Igualdade: “tan” + adjetivo + “com” (NUNCA “tan...que”).',
         table: {
           head: ['Grau', 'Estrutura', 'Exemplo', 'Tradução'],
           rows: [
@@ -784,7 +784,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: 'Comparativos irregulares',
-        text: 'Alguns adjetivos têm forma comparativa própria, sem «més».',
+        text: 'Alguns adjetivos têm forma comparativa própria, sem “més”.',
         table: {
           head: ['Adjetivo', 'Comparativo', 'Tradução'],
           rows: [
@@ -801,7 +801,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: 'Superlativos (absoluto e relativo)',
-        text: 'O absoluto usa «molt» + adjetivo ou o sufixo «-íssim/-íssima». O relativo destaca um elemento dentro de um grupo, com «de».',
+        text: 'O absoluto usa “molt” + adjetivo ou o sufixo “-íssim/-íssima”. O relativo destaca um elemento dentro de um grupo, com “de”.',
         examples: [
           ['Un llibre molt interessant / interessantíssim.', 'Um livro muito interessante/interessantíssimo.'],
           ['És el noi més alt de la classe.', 'É o rapaz mais alto da turma. (superlativo relativo)'],
@@ -809,22 +809,22 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar «que» em vez de «com» na comparação de igualdade («tan gran que» em vez de «tan gran com»).',
-      'Usar «més bo» onde o padrão é «millor».',
-      'Esquecer a concordância do sufixo superlativo: «-íssim/-íssima/-íssims/-íssimes».',
+      'Usar “que” em vez de “com” na comparação de igualdade (“tan gran que” em vez de “tan gran com”).',
+      'Usar “més bo” onde o padrão é “millor”.',
+      'Esquecer a concordância do sufixo superlativo: “-íssim/-íssima/-íssims/-íssimes”.',
     ],
     quiz: [
       {
-        question: 'Como se diz «Ela é tão simpática quanto a irmã»?',
+        question: 'Como se diz “Ela é tão simpática quanto a irmã”?',
         options: ['Ella és tan simpàtica que la seva germana', 'Ella és tan simpàtica com la seva germana', 'Ella és més simpàtica com la seva germana'],
         answer: 'Ella és tan simpàtica com la seva germana',
-        explanation: 'Igualdade em catalão: «tan + adjetivo + com».',
+        explanation: 'Igualdade em catalão: “tan + adjetivo + com”.',
       },
       {
-        question: 'Qual é o comparativo irregular de «bon» (bom)?',
+        question: 'Qual é o comparativo irregular de “bon” (bom)?',
         options: ['més bo', 'millor', 'pitjor'],
         answer: 'millor',
-        explanation: 'O comparativo de superioridade irregular de «bon» é «millor».',
+        explanation: 'O comparativo de superioridade irregular de “bon” é “millor”.',
       },
     ],
   },
@@ -837,7 +837,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     sections: [
       {
         heading: 'Formação regular',
-        text: 'No catalão central, a 1ª conjugação (-ar) usa a vogal «-i-» em todas as pessoas; a 2ª (-re/-er) e a 3ª (-ir) usam «-i-»/«-in» no singular e na 3ª do plural, mas «nosaltres»/«vosaltres» coincidem com o indicativo. Verbos incoativos levam «-eix-».',
+        text: 'No catalão central, a 1ª conjugação (-ar) usa a vogal “-i-” em todas as pessoas; a 2ª (-re/-er) e a 3ª (-ir) usam “-i-”/“-in” no singular e na 3ª do plural, mas “nosaltres”/“vosaltres” coincidem com o indicativo. Verbos incoativos levam “-eix-”.',
         table: {
           head: ['Pronome', '-ar: parlar', '-re: perdre', 'Incoativo: servir'],
           rows: [
@@ -857,7 +857,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: 'Gatilhos comuns do subjuntivo',
-        text: 'Verbos e estruturas de desejo, dúvida, necessidade e sentimento seguidos de «que» pedem subjuntivo.',
+        text: 'Verbos e estruturas de desejo, dúvida, necessidade e sentimento seguidos de “que” pedem subjuntivo.',
         table: {
           head: ['Categoria', 'Estrutura', 'Exemplo', 'Tradução'],
           rows: [
@@ -888,22 +888,22 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar o indicativo depois de verbo de desejo («Vull que ve» em vez de «Vull que vingui»).',
-      'Confundir a terminação catalã «-i» («parli», «parlis») com a espanhola «-e» («hable», «hables»).',
-      'Esquecer o «-eix-» no subjuntivo de verbos incoativos em -ir («servi» em vez de «serveixi»).',
+      'Usar o indicativo depois de verbo de desejo (“Vull que ve” em vez de “Vull que vingui”).',
+      'Confundir a terminação catalã “-i” (“parli”, “parlis”) com a espanhola “-e” (“hable”, “hables”).',
+      'Esquecer o “-eix-” no subjuntivo de verbos incoativos em -ir (“servi” em vez de “serveixi”).',
     ],
     quiz: [
       {
-        question: '«Vull que tu ___ (parlar) amb ell»: qual é a forma certa?',
+        question: '“Vull que tu ___ (parlar) amb ell”: qual é a forma certa?',
         options: ['parles', 'parlis', 'parle'],
         answer: 'parlis',
-        explanation: '2ª pessoa do singular do subjuntivo de verbos em «-ar» termina em «-is».',
+        explanation: '2ª pessoa do singular do subjuntivo de verbos em “-ar” termina em “-is”.',
       },
       {
-        question: 'Como se diz «Não acho que seja verdade», com o verbo «ser»?',
+        question: 'Como se diz “Não acho que seja verdade”, com o verbo “ser”?',
         options: ['No crec que és veritat', 'No crec que sigui veritat', 'No crec que serà veritat'],
         answer: 'No crec que sigui veritat',
-        explanation: '«No creure que» pede subjuntivo; a 3ª pessoa de «ser» no subjuntivo é «sigui».',
+        explanation: '“No creure que” pede subjuntivo; a 3ª pessoa de “ser” no subjuntivo é “sigui”.',
       },
     ],
   },
@@ -916,7 +916,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     sections: [
       {
         heading: 'Imperativo afirmativo',
-        text: '«tu» geralmente coincide com a 3ª pessoa do indicativo. As formas formais («vostè», «vostès») e «nosaltres» usam o subjuntivo.',
+        text: '“tu” geralmente coincide com a 3ª pessoa do indicativo. As formas formais (“vostè”, “vostès”) e “nosaltres” usam o subjuntivo.',
         table: {
           head: ['Pessoa', '-ar: parlar', '-re: perdre', 'Incoativo: servir'],
           rows: [
@@ -935,7 +935,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: 'Imperativo negativo (proibição)',
-        text: 'Para proibir: «no» + presente do subjuntivo, em todas as pessoas.',
+        text: 'Para proibir: “no” + presente do subjuntivo, em todas as pessoas.',
         table: {
           head: ['Pessoa', 'Afirmativo', 'Negativo (no + subjuntiu)'],
           rows: [
@@ -958,25 +958,25 @@ export const GRAMMAR_CA: GrammarTopic[] = [
         examples: [
           ["Compra'm el pa! (afirmativo)", 'Compra-me o pão!'],
           ['No em compris el pa! (negativo)', 'Não me compres o pão!'],
-          ['Digues-me la veritat! (afirmativo)', 'Diga-me a verdade! (dir → imperativo irregular «digues»; termina em consoante, por isso hífen, não apóstrofo)'],
+          ['Digues-me la veritat! (afirmativo)', 'Diga-me a verdade! (dir → imperativo irregular “digues”; termina em consoante, por isso hífen, não apóstrofo)'],
           ['No em diguis mentides! (negativo)', 'Não me digas mentiras!'],
         ],
       },
     ],
     pitfalls: [
-      'Usar a forma afirmativa na negação («no parla!» em vez de «no parlis!»).',
-      'Pôr o pronome depois do verbo no imperativo negativo («no compra\'m» em vez de «no em compris»).',
-      'Esquecer que «dir» tem imperativo irregular «digues» (não «diga», que é espanhol).',
+      'Usar a forma afirmativa na negação (“no parla!” em vez de “no parlis!”).',
+      'Pôr o pronome depois do verbo no imperativo negativo (“no compra\'m” em vez de “no em compris”).',
+      'Esquecer que “dir” tem imperativo irregular “digues” (não “diga”, que é espanhol).',
     ],
     quiz: [
       {
-        question: 'Qual é o imperativo negativo de «parlar» para «tu»?',
+        question: 'Qual é o imperativo negativo de “parlar” para “tu”?',
         options: ['no parla', 'no parlis', 'no parles'],
         answer: 'no parlis',
-        explanation: 'O imperativo negativo usa o presente do subjuntivo: «no parlis».',
+        explanation: 'O imperativo negativo usa o presente do subjuntivo: “no parlis”.',
       },
       {
-        question: 'Como se diz «Escute-me!» (tu) no imperativo afirmativo?',
+        question: 'Como se diz “Escute-me!” (tu) no imperativo afirmativo?',
         options: ["Escolta'm!", 'Em escolta!', "No m'escoltis!"],
         answer: "Escolta'm!",
         explanation: 'No afirmativo, o pronome vem depois do verbo, ligado por apóstrofo.',
@@ -988,10 +988,10 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     level: 'B1.1',
     title: 'Orações relativas e pronomes relativos',
     emoji: '🔗',
-    summary: 'O relativo invariável «que», «qui» (pessoas com preposição), «on» (lugar) e as formas compostas «el qual/la qual».',
+    summary: 'O relativo invariável “que”, “qui” (pessoas com preposição), “on” (lugar) e as formas compostas “el qual/la qual”.',
     sections: [
       {
-        heading: 'O relativo invariável «que»',
+        heading: 'O relativo invariável “que”',
         text: 'O relativo mais usado. Sem acento, invariável em gênero e número; funciona como sujeito ou objeto direto.',
         examples: [
           ['El llibre que llegeixo és molt bo.', 'O livro que estou lendo é muito bom.'],
@@ -1000,8 +1000,8 @@ export const GRAMMAR_CA: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'Os relativos «qui» e «on»',
-        text: '«qui» para pessoas depois de preposição simples (a, de, amb, en, per). «on» para antecedente de lugar.',
+        heading: 'Os relativos “qui” e “on”',
+        text: '“qui” para pessoas depois de preposição simples (a, de, amb, en, per). “on” para antecedente de lugar.',
         table: {
           head: ['Relativo', 'Uso', 'Exemplo', 'Tradução'],
           rows: [
@@ -1015,7 +1015,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'O composto «el qual/la qual/els quals/les quals»',
+        heading: 'O composto “el qual/la qual/els quals/les quals”',
         text: 'Variável, concorda com o antecedente. Obrigatório depois de preposição composta, ou para evitar ambiguidade sobre a qual antecedente a frase se refere.',
         examples: [
           ['La taula a sobre de la qual hi ha el llibre.', 'A mesa em cima da qual está o livro.'],
@@ -1024,22 +1024,22 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar «que» logo depois de preposição para pessoa («el noi de que parlo» em vez de «el noi de qui parlo»).',
-      'Pôr acento em «que» relativo: nunca leva.',
-      'Esquecer de concordar «el qual/la qual/els quals/les quals» com o antecedente.',
+      'Usar “que” logo depois de preposição para pessoa (“el noi de que parlo” em vez de “el noi de qui parlo”).',
+      'Pôr acento em “que” relativo: nunca leva.',
+      'Esquecer de concordar “el qual/la qual/els quals/les quals” com o antecedente.',
     ],
     quiz: [
       {
-        question: '«La noia amb ___ vaig parlar és simpàtica»: qual pronome?',
+        question: '“La noia amb ___ vaig parlar és simpàtica”: qual pronome?',
         options: ['que', 'qui', 'on'],
         answer: 'qui',
-        explanation: 'Depois de preposição («amb») referindo pessoa, usa-se «qui».',
+        explanation: 'Depois de preposição (“amb”) referindo pessoa, usa-se “qui”.',
       },
       {
-        question: 'Como se diz «A cidade onde nasci»?',
+        question: 'Como se diz “A cidade onde nasci”?',
         options: ['La ciutat que vaig néixer', 'La ciutat on vaig néixer', 'La ciutat de qui vaig néixer'],
         answer: 'La ciutat on vaig néixer',
-        explanation: 'Antecedente de lugar: relativo «on».',
+        explanation: 'Antecedente de lugar: relativo “on”.',
       },
     ],
   },
@@ -1052,7 +1052,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     sections: [
       {
         heading: 'Formação regular',
-        text: 'Terminações «-és» (1ª e 2ª conjugação) e «-ís» (3ª conjugação). Atenção ao acento em «nosaltres»/«vosaltres».',
+        text: 'Terminações “-és” (1ª e 2ª conjugação) e “-ís” (3ª conjugação). Atenção ao acento em “nosaltres”/“vosaltres”.',
         table: {
           head: ['Pronome', '-ar: parlar', '-re: perdre', '-ir: dormir'],
           rows: [
@@ -1091,22 +1091,22 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Esquecer o acento em «nosaltres»/«vosaltres» («parléssim», «parléssiu»).',
-      'Confundir as formas catalãs em «-és» com o espanhol «-ara/-iera» («hablara», «comiera»).',
-      'Confundir o imperfeito do subjuntivo de «ser» («fos») com o de «fer» («fes»).',
+      'Esquecer o acento em “nosaltres”/“vosaltres” (“parléssim”, “parléssiu”).',
+      'Confundir as formas catalãs em “-és” com o espanhol “-ara/-iera” (“hablara”, “comiera”).',
+      'Confundir o imperfeito do subjuntivo de “ser” (“fos”) com o de “fer” (“fes”).',
     ],
     quiz: [
       {
-        question: 'Qual é o imperfeito do subjuntivo de «ser» para «jo»?',
+        question: 'Qual é o imperfeito do subjuntivo de “ser” para “jo”?',
         options: ['fos', 'faria', 'sigui'],
         answer: 'fos',
-        explanation: 'A forma irregular de «ésser/ser» no imperfeito do subjuntivo, 1ª pessoa, é «fos».',
+        explanation: 'A forma irregular de “ésser/ser” no imperfeito do subjuntivo, 1ª pessoa, é “fos”.',
       },
       {
-        question: 'Qual é «nosaltres» de «tenir» no imperfeito do subjuntivo?',
+        question: 'Qual é “nosaltres” de “tenir” no imperfeito do subjuntivo?',
         options: ['tinguéssim', 'tinguem', 'teníem'],
         answer: 'tinguéssim',
-        explanation: '«Tenir» forma «tinguéssim» na 1ª pessoa do plural do imperfeito do subjuntivo.',
+        explanation: '“Tenir” forma “tinguéssim” na 1ª pessoa do plural do imperfeito do subjuntivo.',
       },
     ],
   },
@@ -1115,11 +1115,11 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     level: 'B1.2',
     title: 'Condicionais de 2º tipo (hipóteses no presente)',
     emoji: '🔀',
-    summary: '«si» + imperfeito do subjuntivo na oração condicional, com a principal no condicional simples — para hipóteses irrealizáveis no presente.',
+    summary: '“si” + imperfeito do subjuntivo na oração condicional, com a principal no condicional simples — para hipóteses irrealizáveis no presente.',
     sections: [
       {
         heading: 'Estrutura',
-        text: 'Oração com «si» (imperfeito do subjuntivo) + oração principal (condicional simples).',
+        text: 'Oração com “si” (imperfeito do subjuntivo) + oração principal (condicional simples).',
         table: {
           head: ['Oração com si', 'Oração principal', 'Tradução'],
           rows: [
@@ -1136,19 +1136,19 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar o condicional logo depois de «si» («Si tindria diners» é erro grave; o certo é «Si tingués diners»).',
+      'Usar o condicional logo depois de “si” (“Si tindria diners” é erro grave; o certo é “Si tingués diners”).',
       'Usar o presente na oração principal quando a condição está no imperfeito do subjuntivo.',
       'Trocar a ordem das orações sem ajustar a pontuação (invertida, não precisa de vírgula).',
     ],
     quiz: [
       {
-        question: '«Si jo ___ (tenir) temps, aniria al cinema»: qual é a forma certa?',
+        question: '“Si jo ___ (tenir) temps, aniria al cinema”: qual é a forma certa?',
         options: ['tinc', 'tindria', 'tingués'],
         answer: 'tingués',
-        explanation: 'Depois de «si» em hipótese no presente, exige-se o imperfeito do subjuntivo.',
+        explanation: 'Depois de “si” em hipótese no presente, exige-se o imperfeito do subjuntivo.',
       },
       {
-        question: '«Si tu estiguessis cansat, ___ (dormir) més»: complete.',
+        question: '“Si tu estiguessis cansat, ___ (dormir) més”: complete.',
         options: ['dormiries', 'dorms', 'dormíssis'],
         answer: 'dormiries',
         explanation: 'A oração principal (o resultado hipotético) vai no condicional simples.',
@@ -1164,7 +1164,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     sections: [
       {
         heading: 'Ordem dos pronomes',
-        text: 'A ordem padrão é complemento indireto (CI) antes do direto (CD), com exceção do reflexivo «se», que vem antes de qualquer outro.',
+        text: 'A ordem padrão é complemento indireto (CI) antes do direto (CD), com exceção do reflexivo “se”, que vem antes de qualquer outro.',
         table: {
           head: ['Regra', 'Estrutura', 'Exemplo'],
           rows: [
@@ -1175,7 +1175,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: 'Combinações mais comuns antes do verbo',
-        text: 'Diante de verbo com consoante inicial. Note que «li» + CD de 3ª pessoa vira «hi» — nunca «li» somado direto ao outro pronome.',
+        text: 'Diante de verbo com consoante inicial. Note que “li” + CD de 3ª pessoa vira “hi” — nunca “li” somado direto ao outro pronome.',
         table: {
           head: ['CI', 'CD (el)', 'CD (la)', 'CD (els)', 'CD (les)', 'Exemplo'],
           rows: [
@@ -1192,22 +1192,22 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Inverter a ordem, pondo o CD antes do CI («el em dóna» em vez de «me\'l dóna»).',
-      'Errar a combinação «li + el», que vira «l\'hi» (não «li\'l»).',
-      'Esquecer a apostrofação quando o segundo pronome é «el» ou começa por vogal («me\'l», «te\'l»).',
+      'Inverter a ordem, pondo o CD antes do CI (“el em dóna” em vez de “me\'l dóna”).',
+      'Errar a combinação “li + el”, que vira “l\'hi” (não “li\'l”).',
+      'Esquecer a apostrofação quando o segundo pronome é “el” ou começa por vogal (“me\'l”, “te\'l”).',
     ],
     quiz: [
       {
-        question: 'Como fica «em» (CI) + «el» (CD) antes de «donar»?',
+        question: 'Como fica “em” (CI) + “el” (CD) antes de “donar”?',
         options: ['el em dóna', "me'l dóna", 'em el dóna'],
         answer: "me'l dóna",
-        explanation: 'O indireto «em» precede o direto «el» e se junta por apóstrofo: «me\'l».',
+        explanation: 'O indireto “em” precede o direto “el” e se junta por apóstrofo: “me\'l”.',
       },
       {
-        question: 'Como substituir «la carta» (la) + «a en Marc» (li) em «Dono la carta a en Marc»?',
+        question: 'Como substituir “la carta” (la) + “a en Marc” (li) em “Dono la carta a en Marc”?',
         options: ['li la dono', 'la hi dono', "l'hi dono"],
         answer: 'la hi dono',
-        explanation: 'CD feminino «la» + CI «li» dá «la hi» (o «l\'hi» é só para o masculino «el»).',
+        explanation: 'CD feminino “la” + CI “li” dá “la hi” (o “l\'hi” é só para o masculino “el”).',
       },
     ],
   },
@@ -1216,11 +1216,11 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     level: 'B2.1',
     title: 'Voz passiva e construções impessoais',
     emoji: '🔄',
-    summary: 'A passiva analítica (ésser + particípio), a passiva pronominal («es» + verbo) e a construção impessoal, comuns em textos formais e jornalísticos.',
+    summary: 'A passiva analítica (ésser + particípio), a passiva pronominal (“es” + verbo) e a construção impessoal, comuns em textos formais e jornalísticos.',
     sections: [
       {
         heading: 'Passiva analítica (ésser/ser + particípio)',
-        text: 'Auxiliar «ésser»/«ser» no tempo certo + particípio do verbo principal. O particípio concorda em gênero e número com o sujeito paciente. O agente vem com «per» (ou «per part de») — nunca «por».',
+        text: 'Auxiliar “ésser”/“ser” no tempo certo + particípio do verbo principal. O particípio concorda em gênero e número com o sujeito paciente. O agente vem com “per” (ou “per part de”) — nunca “por”.',
         table: {
           head: ['Tempo', 'Exemplo', 'Tradução'],
           rows: [
@@ -1235,8 +1235,8 @@ export const GRAMMAR_CA: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'Passiva pronominal e impessoalidade com «es»',
-        text: 'Na fala e na escrita informal/média, prefere-se «es» + verbo (3ª pessoa) à passiva analítica. Na passiva pronominal, o verbo concorda com o objeto paciente.',
+        heading: 'Passiva pronominal e impessoalidade com “es”',
+        text: 'Na fala e na escrita informal/média, prefere-se “es” + verbo (3ª pessoa) à passiva analítica. Na passiva pronominal, o verbo concorda com o objeto paciente.',
         table: {
           head: ['Tipo', 'Estrutura', 'Exemplo', 'Tradução'],
           rows: [
@@ -1252,22 +1252,22 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Esquecer a concordância do particípio na passiva analítica («les lleis van ser aprovat» em vez de «aprovades»).',
-      'Usar «por» (espanhol) para o agente da passiva em vez de «per».',
-      'Não pôr o verbo no plural na passiva pronominal («es ven pisos» em vez de «es venen pisos»).',
+      'Esquecer a concordância do particípio na passiva analítica (“les lleis van ser aprovat” em vez de “aprovades”).',
+      'Usar “por” (espanhol) para o agente da passiva em vez de “per”.',
+      'Não pôr o verbo no plural na passiva pronominal (“es ven pisos” em vez de “es venen pisos”).',
     ],
     quiz: [
       {
-        question: 'Qual é a passiva analítica correta de «As propostas serão examinadas pela comissão»?',
+        question: 'Qual é a passiva analítica correta de “As propostas serão examinadas pela comissão”?',
         options: ['Les propostes seran examinat per la comissió', 'Les propostes seran examinades per la comissió', 'Les propostes seran examinats per la comissió'],
         answer: 'Les propostes seran examinades per la comissió',
-        explanation: 'O particípio concorda em feminino plural com «les propostes»: «examinades».',
+        explanation: 'O particípio concorda em feminino plural com “les propostes”: “examinades”.',
       },
       {
         question: 'Qual frase concorda certo na passiva pronominal com substantivo plural?',
         options: ['Es ven pisos al centre', 'Es venen pisos al centre', 'Es venent pisos al centre'],
         answer: 'Es venen pisos al centre',
-        explanation: 'O verbo no plural («venen») concorda com o sujeito paciente plural («pisos»).',
+        explanation: 'O verbo no plural (“venen”) concorda com o sujeito paciente plural (“pisos”).',
       },
     ],
   },
@@ -1276,11 +1276,11 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     level: 'B2.1',
     title: 'Mais-que-perfeito do subjuntivo e condicional composto',
     emoji: '⏪',
-    summary: 'A condicional de 3º tipo, para hipóteses irrealizáveis no passado: «si» + mais-que-perfeito do subjuntivo, principal no condicional composto.',
+    summary: 'A condicional de 3º tipo, para hipóteses irrealizáveis no passado: “si” + mais-que-perfeito do subjuntivo, principal no condicional composto.',
     sections: [
       {
         heading: 'Formação dos tempos compostos',
-        text: 'Mais-que-perfeito do subjuntivo: imperfeito do subjuntivo de «haver» + particípio. Condicional composto: condicional simples de «haver» + particípio.',
+        text: 'Mais-que-perfeito do subjuntivo: imperfeito do subjuntivo de “haver” + particípio. Condicional composto: condicional simples de “haver” + particípio.',
         table: {
           head: ['Pronome', 'Mais-que-perfeito subj. (haver)', 'Condicional composto (haver)', 'Particípio'],
           rows: [
@@ -1295,7 +1295,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: 'Condicionais de 3º tipo (hipóteses no passado)',
-        text: 'Para situações irrealizáveis ou lamentações sobre o passado. A oração com «si» pede o mais-que-perfeito do subjuntivo; a principal, o condicional composto.',
+        text: 'Para situações irrealizáveis ou lamentações sobre o passado. A oração com “si” pede o mais-que-perfeito do subjuntivo; a principal, o condicional composto.',
         examples: [
           ["Si hagués sabut la veritat, m'hauria quedat a casa.", 'Se eu soubesse a verdade, teria ficado em casa.'],
           ['Si haguéssim agafat el tren, hauríem arribat a temps.', 'Se tivéssemos pego o trem, teríamos chegado a tempo.'],
@@ -1304,22 +1304,22 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar o condicional composto logo depois de «si» («Si hauria sabut» é erro grave; o certo é «Si hagués sabut»).',
-      'Esquecer o acento nas formas de «nosaltres»/«vosaltres» («haguéssim/haguéssiu», «hauríem/hauríeu»).',
-      'Confundir a raiz catalã de «haver» no subjuntivo («hagués») com a espanhola («hubiera»).',
+      'Usar o condicional composto logo depois de “si” (“Si hauria sabut” é erro grave; o certo é “Si hagués sabut”).',
+      'Esquecer o acento nas formas de “nosaltres”/“vosaltres” (“haguéssim/haguéssiu”, “hauríem/hauríeu”).',
+      'Confundir a raiz catalã de “haver” no subjuntivo (“hagués”) com a espanhola (“hubiera”).',
     ],
     quiz: [
       {
-        question: 'Como se diz «Se eu tivesse sabido a verdade, teria vindo»?',
+        question: 'Como se diz “Se eu tivesse sabido a verdade, teria vindo”?',
         options: ['Si hauria sabut la veritat, hauria vingut', 'Si hagués sabut la veritat, hauria vingut', 'Si hagués sabut la veritat, hagués vingut'],
         answer: 'Si hagués sabut la veritat, hauria vingut',
-        explanation: '«si» pede mais-que-perfeito do subjuntivo («hagués sabut»); a principal, condicional composto («hauria vingut»).',
+        explanation: '“si” pede mais-que-perfeito do subjuntivo (“hagués sabut”); a principal, condicional composto (“hauria vingut”).',
       },
       {
-        question: 'Qual é «nosaltres» de «haver» no mais-que-perfeito do subjuntivo?',
+        question: 'Qual é “nosaltres” de “haver” no mais-que-perfeito do subjuntivo?',
         options: ['haguéssim', 'hauríem', 'haguem'],
         answer: 'haguéssim',
-        explanation: '1ª pessoa do plural de «haver» no mais-que-perfeito do subjuntivo: «haguéssim».',
+        explanation: '1ª pessoa do plural de “haver” no mais-que-perfeito do subjuntivo: “haguéssim”.',
       },
     ],
   },
@@ -1332,7 +1332,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     sections: [
       {
         heading: 'Conectores causais (pedem indicativo)',
-        text: 'Expressam causa de um fato real: «perquè» (porque), «ja que» (já que), «atès que» (visto que) e «com que» (como/visto que — obrigatoriamente no início da frase).',
+        text: 'Expressam causa de um fato real: “perquè” (porque), “ja que” (já que), “atès que” (visto que) e “com que” (como/visto que — obrigatoriamente no início da frase).',
         table: {
           head: ['Conector', 'Posição', 'Exemplo', 'Tradução'],
           rows: [
@@ -1344,7 +1344,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: 'Conectores concessivos e finais',
-        text: '«tot i que»/«malgrat que» (concessivo, fato real) pedem indicativo; «encara que» pode pedir subjuntivo quando é hipótese. Conectores de finalidade («perquè», «per tal que», com sentido de «para que») pedem SEMPRE subjuntivo — cuidado: «perquè» serve tanto de causa (indicativo) quanto de finalidade (subjuntivo).',
+        text: '“tot i que”/“malgrat que” (concessivo, fato real) pedem indicativo; “encara que” pode pedir subjuntivo quando é hipótese. Conectores de finalidade (“perquè”, “per tal que”, com sentido de “para que”) pedem SEMPRE subjuntivo — cuidado: “perquè” serve tanto de causa (indicativo) quanto de finalidade (subjuntivo).',
         table: {
           head: ['Tipo', 'Conector', 'Modo', 'Exemplo'],
           rows: [
@@ -1360,22 +1360,22 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar indicativo depois de conector de finalidade («perquè ho entens» em vez de «perquè ho entenguis»).',
-      'Confundir «com que» (causal, início de frase) com o «com» simples.',
-      'Começar frase causal com «perquè»: prefira «com que» quando a causa vem primeiro.',
+      'Usar indicativo depois de conector de finalidade (“perquè ho entens” em vez de “perquè ho entenguis”).',
+      'Confundir “com que” (causal, início de frase) com o “com” simples.',
+      'Começar frase causal com “perquè”: prefira “com que” quando a causa vem primeiro.',
     ],
     quiz: [
       {
-        question: 'Que modo verbal vem depois de «per tal que»?',
+        question: 'Que modo verbal vem depois de “per tal que”?',
         options: ['Indicatiu', 'Subjuntiu', 'Infinitiu'],
         answer: 'Subjuntiu',
-        explanation: 'Conectores de finalidade («per tal que», «perquè» com sentido de propósito) sempre pedem subjuntivo.',
+        explanation: 'Conectores de finalidade (“per tal que”, “perquè” com sentido de propósito) sempre pedem subjuntivo.',
       },
       {
-        question: 'Qual conector causal abre a frase «___ era tard, vam agafar un taxi»?',
+        question: 'Qual conector causal abre a frase “___ era tard, vam agafar un taxi”?',
         options: ['Com que', 'Perquè', 'Per tal que'],
         answer: 'Com que',
-        explanation: '«Com que» é o conector causal próprio para abrir a oração.',
+        explanation: '“Com que” é o conector causal próprio para abrir a oração.',
       },
     ],
   },
@@ -1388,7 +1388,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     sections: [
       {
         heading: 'Mudanças nos tempos verbais',
-        text: 'Quando o verbo introdutório está no passado («va dir», «va comentar»), os tempos da oração citada mudam sistematicamente.',
+        text: 'Quando o verbo introdutório está no passado (“va dir”, “va comentar”), os tempos da oração citada mudam sistematicamente.',
         table: {
           head: ['Discurso direto', 'Discurso indireto (após verbo no passado)', 'Direto', 'Indireto'],
           rows: [
@@ -1419,31 +1419,31 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Manter os advérbios do discurso direto sem ajustar («Va dir que vindria demà» em vez de «l\'endemà»).',
+      'Manter os advérbios do discurso direto sem ajustar (“Va dir que vindria demà” em vez de “l\'endemà”).',
       'Esquecer de mudar presente para imperfeito ao relatar no passado.',
       'Manter pronome de 1ª pessoa quando a pessoa relatada é 3ª pessoa.',
     ],
     quiz: [
       {
-        question: '«Aniré a Girona demà», dita por en Joan ontem: como fica no indireto?',
+        question: '“Aniré a Girona demà”, dita por en Joan ontem: como fica no indireto?',
         options: ["En Joan va dir que aniria a Girona l'endemà", 'En Joan va dir que aniré a Girona demà', 'En Joan va dir que anava a Girona avui'],
         answer: "En Joan va dir que aniria a Girona l'endemà",
-        explanation: 'Futuro «aniré» vira condicional «aniria»; «demà» vira «l\'endemà».',
+        explanation: 'Futuro “aniré” vira condicional “aniria”; “demà” vira “l\'endemà”.',
       },
       {
-        question: 'Qual advérbio substitui «avui» no discurso indireto no passado?',
+        question: 'Qual advérbio substitui “avui” no discurso indireto no passado?',
         options: ['aleshores', 'aquell dia', "l'endemà"],
         answer: 'aquell dia',
-        explanation: '«Avui» (hoje) vira «aquell dia» (aquele dia) no discurso indireto.',
+        explanation: '“Avui” (hoje) vira “aquell dia” (aquele dia) no discurso indireto.',
       },
     ],
   },
   {
     id: 'ca-g23',
     level: 'B2.2',
-    title: 'Formação de palavras e o pronome neutro «ho»',
+    title: 'Formação de palavras e o pronome neutro “ho”',
     emoji: '🧱',
-    summary: 'Sufixos para formar substantivos a partir de verbos/adjetivos, e o pronome neutro «ho», que substitui atributos e orações inteiras.',
+    summary: 'Sufixos para formar substantivos a partir de verbos/adjetivos, e o pronome neutro “ho”, que substitui atributos e orações inteiras.',
     sections: [
       {
         heading: 'Sufixação e derivação de substantivos',
@@ -1459,32 +1459,32 @@ export const GRAMMAR_CA: GrammarTopic[] = [
         },
       },
       {
-        heading: 'O pronome neutro «ho»',
-        text: '«ho» é invariável: substitui atributo com verbo copulativo (ser/estar/semblar) ou oração inteira/demonstrativo neutro (això/allò).',
+        heading: 'O pronome neutro “ho”',
+        text: '“ho” é invariável: substitui atributo com verbo copulativo (ser/estar/semblar) ou oração inteira/demonstrativo neutro (això/allò).',
         examples: [
-          ['Ets feliç? — Sí, ho soc.', 'Você é feliz? — Sim, sou. (ho = «feliç»)'],
+          ['Ets feliç? — Sí, ho soc.', 'Você é feliz? — Sim, sou. (ho = “feliç”)'],
           ['Sabies que en Marc es casa? — No, no ho sabia.', 'Você sabia que o Marc vai casar? — Não sabia. (ho = a oração toda)'],
           ['Volen fer això? — Sí, volen fer-ho.', 'Eles querem fazer isso? — Sim, querem fazê-lo.'],
         ],
       },
     ],
     pitfalls: [
-      'Usar «el» para substituir atributo/oração neutra em vez de «ho» («Sí, el soc» em vez de «Sí, ho soc»).',
-      'Confundir o sufixo nominal «-esa» (qualidade) com o adjetival «-ès» (nacionalidade).',
-      'Esquecer a troca «-itzar» → «-ització» em verbos eruditos («organitzar» → «organització»).',
+      'Usar “el” para substituir atributo/oração neutra em vez de “ho” (“Sí, el soc” em vez de “Sí, ho soc”).',
+      'Confundir o sufixo nominal “-esa” (qualidade) com o adjetival “-ès” (nacionalidade).',
+      'Esquecer a troca “-itzar” → “-ització” em verbos eruditos (“organitzar” → “organització”).',
     ],
     quiz: [
       {
-        question: 'Qual pronome substitui «[que la reunió s\'havia cancel·lat]» em «No sabia ___»?',
+        question: 'Qual pronome substitui “[que la reunió s\'havia cancel·lat]” em “No sabia ___”?',
         options: ['el', 'la', 'ho'],
         answer: 'ho',
-        explanation: 'Oração subordinada inteira ou ideia abstrata: pronome neutro «ho».',
+        explanation: 'Oração subordinada inteira ou ideia abstrata: pronome neutro “ho”.',
       },
       {
-        question: 'Qual é o substantivo abstrato de «vell» por sufixação?',
+        question: 'Qual é o substantivo abstrato de “vell” por sufixação?',
         options: ['vellesa', 'vellitat', 'vellament'],
         answer: 'vellesa',
-        explanation: '«-esa» forma substantivo abstrato de qualidade a partir de adjetivo: «vellesa».',
+        explanation: '“-esa” forma substantivo abstrato de qualidade a partir de adjetivo: “vellesa”.',
       },
     ],
   },
@@ -1493,11 +1493,11 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     level: 'B2.2',
     title: 'Combinação avançada de pronomes fracos (hi/en + CD/CI)',
     emoji: '🧩',
-    summary: 'Como «hi» e «en» se combinam com pronomes de complemento direto e indireto no mesmo verbo.',
+    summary: 'Como “hi” e “en” se combinam com pronomes de complemento direto e indireto no mesmo verbo.',
     sections: [
       {
-        heading: '«Hi» combinado com CD e CI',
-        text: 'Combinando «hi» com el/la/els/les (CD) ou li (CI), há fusões próprias.',
+        heading: '“Hi” combinado com CD e CI',
+        text: 'Combinando “hi” com el/la/els/les (CD) ou li (CI), há fusões próprias.',
         table: {
           head: ['Combinação', 'Resultado', 'Exemplo', 'Tradução'],
           rows: [
@@ -1509,8 +1509,8 @@ export const GRAMMAR_CA: GrammarTopic[] = [
         },
       },
       {
-        heading: '«En» combinado com outros pronomes',
-        text: '«en» (origem ou quantidade) vem por último na sequência.',
+        heading: '“En” combinado com outros pronomes',
+        text: '“en” (origem ou quantidade) vem por último na sequência.',
         examples: [
           ["Se'n va anar d'hora.", 'Ele/ela foi embora cedo. (se + en → se\'n)'],
           ["Me'n dones un poc? — Sí, te'n dono.", 'Você me dá um pouco disso? — Sim, te dou um pouco. (me+en→me\'n; te+en→te\'n)'],
@@ -1519,34 +1519,34 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pôr «en»/«hi» antes do pronome de pessoa («en me dóna» em vez de «me\'n dóna»).',
-      'Confundir «l\'hi» (el + hi) com o simples «li».',
-      'Esquecer o apóstrofo ao combinar «se»/«me»/«te» com «en» («se\'n», «me\'n», «te\'n»).',
+      'Pôr “en”/“hi” antes do pronome de pessoa (“en me dóna” em vez de “me\'n dóna”).',
+      'Confundir “l\'hi” (el + hi) com o simples “li”.',
+      'Esquecer o apóstrofo ao combinar “se”/“me”/“te” com “en” (“se\'n”, “me\'n”, “te\'n”).',
     ],
     quiz: [
       {
-        question: 'Como fica «me» + «en» em «Você me dá um pouco disso?»?',
+        question: 'Como fica “me” + “en” em “Você me dá um pouco disso?”?',
         options: ["Me'n dones?", 'En me dones?', 'Me en dones?'],
         answer: "Me'n dones?",
-        explanation: '«me» precede «en», unidos por apóstrofo: «me\'n».',
+        explanation: '“me” precede “en”, unidos por apóstrofo: “me\'n”.',
       },
       {
-        question: 'Como fica «Eu o levei até lá» (el = objeto, hi = lá)?',
+        question: 'Como fica “Eu o levei até lá” (el = objeto, hi = lá)?',
         options: ["L'hi vaig portar", 'El hi vaig portar', 'Li vaig portar'],
         answer: "L'hi vaig portar",
-        explanation: '«el» + «hi» dá a forma apostrofada «l\'hi».',
+        explanation: '“el” + “hi” dá a forma apostrofada “l\'hi”.',
       },
     ],
   },
   {
     id: 'ca-g25',
     level: 'B1.3',
-    title: 'Preposições «per» e «per a»: causa, meio, destino e finalidade',
+    title: 'Preposições “per” e “per a”: causa, meio, destino e finalidade',
     emoji: '🎯',
-    summary: 'Um dos pontos mais sensíveis do catalão: «per» é causa, meio, lugar de passagem ou tempo aproximado; «per a» é destinatário, finalidade e prazo.',
+    summary: 'Um dos pontos mais sensíveis do catalão: “per” é causa, meio, lugar de passagem ou tempo aproximado; “per a” é destinatário, finalidade e prazo.',
     sections: [
       {
-        heading: 'Usos de «per»',
+        heading: 'Usos de “per”',
         text: 'Introduz causa/motivo, meio/instrumento, passagem por lugar, troca/preço e o agente da passiva.',
         table: {
           head: ['Uso', 'Exemplo', 'Tradução'],
@@ -1564,7 +1564,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'Usos de «per a»',
+        heading: 'Usos de “per a”',
         text: 'Reservada para destinatário/beneficiário, finalidade e prazo/data limite.',
         table: {
           head: ['Uso', 'Exemplo', 'Tradução'],
@@ -1581,7 +1581,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: 'Contrastes de sentido e um ponto debatido',
-        text: 'A escolha entre «per» e «per a» pode mudar o sentido da frase. Um ponto sem consenso total: a gramática tradicional (Pompeu Fabra) prescreve «per» (sem «a») antes de infinitivo quando o sujeito da ação e do infinitivo é o mesmo («Estudio per aprendre»); mas «per a» antes de infinitivo («Estudio per a aprendre») é muito comum na prática atual, inclusive em registros cuidados — trate os dois como aceitos, sem apresentar um como certo e outro como errado.',
+        text: 'A escolha entre “per” e “per a” pode mudar o sentido da frase. Um ponto sem consenso total: a gramática tradicional (Pompeu Fabra) prescreve “per” (sem “a”) antes de infinitivo quando o sujeito da ação e do infinitivo é o mesmo (“Estudio per aprendre”); mas “per a” antes de infinitivo (“Estudio per a aprendre”) é muito comum na prática atual, inclusive em registros cuidados — trate os dois como aceitos, sem apresentar um como certo e outro como errado.',
         examples: [
           ['Ho faig per tu.', 'Faço por você. (por sua causa/em seu lugar — causa)'],
           ['Ho faig per a tu.', 'Faço para você. (em seu benefício — destinatário)'],
@@ -1590,36 +1590,36 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Confundir causa («per tu» = por você/por sua causa) com destinatário («per a tu» = para você).',
-      'Usar «per» sozinho para prazo (o certo é «per a demà», «per al mes vinent»).',
-      'Confundir as contrações: «per + el = pel» (pelo), mas «per a + el = per al» (para o).',
-      'A fala cotidiana do catalão central costuma reduzir «per a» para «per» antes de infinitivo/vogal, mas a norma escrita culta mantém a distinção de sentido.',
+      'Confundir causa (“per tu” = por você/por sua causa) com destinatário (“per a tu” = para você).',
+      'Usar “per” sozinho para prazo (o certo é “per a demà”, “per al mes vinent”).',
+      'Confundir as contrações: “per + el = pel” (pelo), mas “per a + el = per al” (para o).',
+      'A fala cotidiana do catalão central costuma reduzir “per a” para “per” antes de infinitivo/vogal, mas a norma escrita culta mantém a distinção de sentido.',
     ],
     quiz: [
       {
-        question: '«L\'informe ha d\'estar a punt ___ demà»: qual preposição?',
+        question: '“L\'informe ha d\'estar a punt ___ demà”: qual preposição?',
         options: ['per a', 'per', 'per de'],
         answer: 'per a',
-        explanation: 'Prazo/data limite no futuro pede «per a».',
+        explanation: 'Prazo/data limite no futuro pede “per a”.',
       },
       {
-        question: 'Qual é a diferença entre «Ho faig per tu» e «Ho faig per a tu»?',
+        question: 'Qual é a diferença entre “Ho faig per tu” e “Ho faig per a tu”?',
         options: [
-          '«per tu» indica causa/motivo; «per a tu» indica destinatário/benefício.',
-          '«per tu» indica futuro; «per a tu» indica passado.',
+          '“per tu” indica causa/motivo; “per a tu” indica destinatário/benefício.',
+          '“per tu” indica futuro; “per a tu” indica passado.',
           'Não há diferença, são intercambiáveis.',
         ],
-        answer: '«per tu» indica causa/motivo; «per a tu» indica destinatário/benefício.',
-        explanation: '«per» expressa causa/motivo; «per a» assinala o destinatário ou beneficiário.',
+        answer: '“per tu” indica causa/motivo; “per a tu” indica destinatário/benefício.',
+        explanation: '“per” expressa causa/motivo; “per a” assinala o destinatário ou beneficiário.',
       },
     ],
   },
   {
     id: 'ca-g26',
     level: 'B1.3',
-    title: 'Indefinidos, «no... pas» e «tampoc»',
+    title: 'Indefinidos, “no... pas” e “tampoc”',
     emoji: '🔍',
-    summary: 'Pronomes e advérbios indefinidos (algú, ningú, res, cap, tothom) e os recursos catalães de negação enfática («no... pas») e concordância negativa («tampoc»).',
+    summary: 'Pronomes e advérbios indefinidos (algú, ningú, res, cap, tothom) e os recursos catalães de negação enfática (“no... pas”) e concordância negativa (“tampoc”).',
     sections: [
       {
         heading: 'Indefinidos de pessoa, coisa e quantidade',
@@ -1640,23 +1640,23 @@ export const GRAMMAR_CA: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'Valor positivo de «cap», «res» e «ningú»',
-        text: 'Em pergunta, dúvida ou condição, «cap», «res» e «ningú» perdem a carga negativa e viram indefinidos afirmativos («algum», «algo», «alguém»).',
+        heading: 'Valor positivo de “cap”, “res” e “ningú”',
+        text: 'Em pergunta, dúvida ou condição, “cap”, “res” e “ningú” perdem a carga negativa e viram indefinidos afirmativos (“algum”, “algo”, “alguém”).',
         examples: [
-          ['Tens cap pregunta?', 'Você tem alguma pergunta? (não «nenhuma»)'],
+          ['Tens cap pregunta?', 'Você tem alguma pergunta? (não “nenhuma”)'],
           ['Has vist ningú al passadís?', 'Viu alguém no corredor?'],
           ["Si necessites res, avisa'm.", 'Se precisar de alguma coisa, me avise.'],
         ],
       },
       {
-        heading: 'A negação enfática «no... pas» e o advérbio «tampoc»',
+        heading: 'A negação enfática “no... pas” e o advérbio “tampoc”',
         text: 'Estruturas catalãs próprias para matizar ou reforçar a negação.',
         table: {
           head: ['Estrutura', 'Uso', 'Exemplo', 'Tradução'],
           rows: [
             ['no... pas', 'reforça a negação, contradiz expectativa do ouvinte', 'No és pas tan difícil com sembla.', 'Não é (de jeito nenhum) tão difícil quanto parece.'],
-            ['tampoc (antes do verbo)', 'concordância negativa sem «no»', 'Jo tampoc ho sé.', 'Eu também não sei.'],
-            ['tampoc (depois do verbo)', 'concordância negativa, precisa de «no» antes', 'No ho sé jo tampoc.', 'Não sei eu tampouco.'],
+            ['tampoc (antes do verbo)', 'concordância negativa sem “no”', 'Jo tampoc ho sé.', 'Eu também não sei.'],
+            ['tampoc (depois do verbo)', 'concordância negativa, precisa de “no” antes', 'No ho sé jo tampoc.', 'Não sei eu tampouco.'],
           ],
         },
         examples: [
@@ -1666,23 +1666,23 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar o verbo no plural com «tothom» («tothom saben» em vez de «tothom sap»).',
-      'Usar «nada»/«nadie» (espanhol) em vez de «res»/«ningú».',
-      'Confundir o determinante «cap» (invariável: «cap idea», «cap llibre») com a preposição de direção «cap a».',
-      'Achar que «no... pas» é obrigatório em toda negativa: é um recurso expressivo, não regra geral.',
+      'Usar o verbo no plural com “tothom” (“tothom saben” em vez de “tothom sap”).',
+      'Usar “nada”/“nadie” (espanhol) em vez de “res”/“ningú”.',
+      'Confundir o determinante “cap” (invariável: “cap idea”, “cap llibre”) com a preposição de direção “cap a”.',
+      'Achar que “no... pas” é obrigatório em toda negativa: é um recurso expressivo, não regra geral.',
     ],
     quiz: [
       {
-        question: 'Como fica «Todo mundo concorda» com «tothom»?',
+        question: 'Como fica “Todo mundo concorda” com “tothom”?',
         options: ["Tothom hi està d'acord", 'Tothom hi estan d\'acord', "Tots tothom hi estan d'acord"],
         answer: "Tothom hi està d'acord",
-        explanation: '«tothom» sempre pede o verbo na 3ª pessoa do singular.',
+        explanation: '“tothom” sempre pede o verbo na 3ª pessoa do singular.',
       },
       {
-        question: 'Em «Tens cap dubte?», o que «cap» quer dizer?',
+        question: 'Em “Tens cap dubte?”, o que “cap” quer dizer?',
         options: ['Alguma', 'Nenhuma', 'Muita'],
         answer: 'Alguma',
-        explanation: 'Em pergunta/condição, «cap» tem valor afirmativo de «algum(a)».',
+        explanation: 'Em pergunta/condição, “cap” tem valor afirmativo de “algum(a)”.',
       },
     ],
   },
@@ -1691,11 +1691,11 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     level: 'B1.4',
     title: 'Perífrases de obrigação, necessidade e probabilidade',
     emoji: '📌',
-    summary: 'Obrigação pessoal com «haver de», necessidade com o impessoal «caldre», e dedução lógica com «deure».',
+    summary: 'Obrigação pessoal com “haver de”, necessidade com o impessoal “caldre”, e dedução lógica com “deure”.',
     sections: [
       {
         heading: 'Obrigação pessoal: haver de + infinitiu',
-        text: 'Obrigação/necessidade atribuída a um sujeito. No catalão padrão (IEC), evite «tenir que».',
+        text: 'Obrigação/necessidade atribuída a um sujeito. No catalão padrão (IEC), evite “tenir que”.',
         table: {
           head: ['Pronome', 'Estrutura', 'Exemplo', 'Tradução'],
           rows: [
@@ -1714,7 +1714,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: 'Necessidade impessoal e específica: caldre',
-        text: '«caldre» é impessoal (3ª pessoa singular «cal»/«calia»), com duas estruturas: sem sujeito específico, ou com sujeito e subjuntivo.',
+        text: '“caldre” é impessoal (3ª pessoa singular “cal”/“calia”), com duas estruturas: sem sujeito específico, ou com sujeito e subjuntivo.',
         table: {
           head: ['Estrutura', 'Sentido', 'Exemplo', 'Tradução'],
           rows: [
@@ -1729,7 +1729,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: 'Probabilidade: deure + infinitiu',
-        text: 'Hipótese/estimativa no presente ou passado: «deure + infinitiu», SEM preposição no catalão padrão.',
+        text: 'Hipótese/estimativa no presente ou passado: “deure + infinitiu”, SEM preposição no catalão padrão.',
         table: {
           head: ['Contexto', 'Exemplo', 'Sentido'],
           rows: [
@@ -1745,23 +1745,23 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar «tenir que» em vez de «haver de» para obrigação («tinc que estudiar» em vez de «he d\'estudiar»).',
-      'Pôr «de» depois de «deure» para probabilidade («deu de ser» é erro comum por influência do espanhol; o certo é «deu ser»).',
-      'Esquecer que «cal que» exige subjuntivo («cal que facis», nunca «cal que fas»).',
-      'A fala coloquial usa «deu de» com frequência, mas a norma culta (IEC) exige a forma sem preposição.',
+      'Usar “tenir que” em vez de “haver de” para obrigação (“tinc que estudiar” em vez de “he d\'estudiar”).',
+      'Pôr “de” depois de “deure” para probabilidade (“deu de ser” é erro comum por influência do espanhol; o certo é “deu ser”).',
+      'Esquecer que “cal que” exige subjuntivo (“cal que facis”, nunca “cal que fas”).',
+      'A fala coloquial usa “deu de” com frequência, mas a norma culta (IEC) exige a forma sem preposição.',
     ],
     quiz: [
       {
-        question: 'Qual é a forma culta de «Tenho que enviar a carta»?',
+        question: 'Qual é a forma culta de “Tenho que enviar a carta”?',
         options: ['Tinc que enviar la carta', "He d'enviar la carta", 'Cal de enviar la carta'],
         answer: "He d'enviar la carta",
-        explanation: 'Obrigação pessoal: «haver de + infinitiu». «Tenir que» não é catalão padrão.',
+        explanation: 'Obrigação pessoal: “haver de + infinitiu”. “Tenir que” não é catalão padrão.',
       },
       {
-        question: 'Como se diz «Devem ser cinco horas» na norma culta?',
+        question: 'Como se diz “Devem ser cinco horas” na norma culta?',
         options: ['Deuen de ser les cinc', 'Deuen ser les cinc', 'Han de ser les cinc'],
         answer: 'Deuen ser les cinc',
-        explanation: '«deure + infinitiu» não aceita a preposição «de» na norma culta.',
+        explanation: '“deure + infinitiu” não aceita a preposição “de” na norma culta.',
       },
     ],
   },
@@ -1770,7 +1770,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     level: 'B1.4',
     title: 'Conectores de causa e consequência',
     emoji: '🔗',
-    summary: 'Conectores causais («perquè», «com que», «ja que») e consecutivos/conclusivos («per tant», «doncs», «per això»), e o uso correto de «doncs».',
+    summary: 'Conectores causais (“perquè”, “com que”, “ja que”) e consecutivos/conclusivos (“per tant”, “doncs”, “per això”), e o uso correto de “doncs”.',
     sections: [
       {
         heading: 'Conectores causais',
@@ -1805,8 +1805,8 @@ export const GRAMMAR_CA: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'A regra de ouro sobre «doncs»',
-        text: 'No catalão padrão, «doncs» é SEMPRE consecutivo/conclusivo («então», «portanto»). NUNCA introduz causa («porque»).',
+        heading: 'A regra de ouro sobre “doncs”',
+        text: 'No catalão padrão, “doncs” é SEMPRE consecutivo/conclusivo (“então”, “portanto”). NUNCA introduz causa (“porque”).',
         examples: [
           ['Errado: No vinc doncs estic cansat. — Certo: No vinc perquè estic cansat.', 'Não venho porque estou cansado.'],
           ['Certo: Estàs cansat? Doncs descansa!', 'Você está cansado? Então descanse!'],
@@ -1814,23 +1814,23 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar «doncs» como causa («no vinc doncs estic cansat» é erro grave; use «perquè» ou «ja que»).',
-      'Começar oração causal com «perquè» em vez de «com que» quando a causa vem primeiro.',
-      'Escrever «per tant» junto («pertant»): são duas palavras.',
-      'A fala informal de algumas regiões usa «doncs» como causa por contaminação, mas o IEC não aceita isso em registro normativo.',
+      'Usar “doncs” como causa (“no vinc doncs estic cansat” é erro grave; use “perquè” ou “ja que”).',
+      'Começar oração causal com “perquè” em vez de “com que” quando a causa vem primeiro.',
+      'Escrever “per tant” junto (“pertant”): são duas palavras.',
+      'A fala informal de algumas regiões usa “doncs” como causa por contaminação, mas o IEC não aceita isso em registro normativo.',
     ],
     quiz: [
       {
-        question: 'Qual conector causal abre «___ fa mal temps, ens quedarem a casa»?',
+        question: 'Qual conector causal abre “___ fa mal temps, ens quedarem a casa”?',
         options: ['Perquè', 'Com que', 'Doncs'],
         answer: 'Com que',
-        explanation: '«com que» é o conector causal para abrir a oração.',
+        explanation: '“com que” é o conector causal para abrir a oração.',
       },
       {
-        question: 'Qual frase usa «doncs» corretamente?',
+        question: 'Qual frase usa “doncs” corretamente?',
         options: ['No he anat a la festa doncs tenia molta feina', 'Has acabat la feina? Doncs ja pots marxar', "M'agrada el català doncs és molt bonic"],
         answer: 'Has acabat la feina? Doncs ja pots marxar',
-        explanation: '«doncs» expressa consequência/dedução, nunca causa.',
+        explanation: '“doncs” expressa consequência/dedução, nunca causa.',
       },
     ],
   },
@@ -1839,7 +1839,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     level: 'B2.3',
     title: 'Perífrases aspectuais avançadas',
     emoji: '⏳',
-    summary: '«anar + gerundi» (progressão gradual), «portar + tempo + gerundi» (duração), «deixar de»/«tornar a» + infinitivo (interrupção e repetição).',
+    summary: '“anar + gerundi” (progressão gradual), “portar + tempo + gerundi” (duração), “deixar de”/“tornar a” + infinitivo (interrupção e repetição).',
     sections: [
       {
         heading: 'Progressão gradual: anar + gerundi',
@@ -1858,7 +1858,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: 'Duração continuada: portar + tempo + gerundi',
-        text: 'Duração de uma ação iniciada no passado que continua no presente — sem a preposição «de» (decalque do espanhol).',
+        text: 'Duração de uma ação iniciada no passado que continua no presente — sem a preposição “de” (decalque do espanhol).',
         examples: [
           ['Portem tres mesos negociant aquest contracte.', 'Estamos há três meses negociando esse contrato.'],
           ['Quant temps portes treballant en aquest projecte?', 'Há quanto tempo você está trabalhando neste projeto?'],
@@ -1866,7 +1866,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: 'Interrupção e repetição: deixar de / tornar a + infinitivo',
-        text: '«deixar de + infinitiu»: cessação de hábito/processo. «tornar a + infinitiu»: repetição do evento.',
+        text: '“deixar de + infinitiu”: cessação de hábito/processo. “tornar a + infinitiu”: repetição do evento.',
         table: {
           head: ['Estrutura', 'Função', 'Exemplo', 'Tradução'],
           rows: [
@@ -1877,22 +1877,22 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pôr «de» depois de «portar» + tempo + gerúndio («porto de tres anys treballant» em vez de «porto tres anys treballant»).',
-      'Confundir «anar + gerundi» (ação gradual) com o passat perifràstic «anar + infinitiu» (ação pontual concluída: «vaig parlar»).',
-      'Usar «volver a» (espanhol) em vez de «tornar a».',
+      'Pôr “de” depois de “portar” + tempo + gerúndio (“porto de tres anys treballant” em vez de “porto tres anys treballant”).',
+      'Confundir “anar + gerundi” (ação gradual) com o passat perifràstic “anar + infinitiu” (ação pontual concluída: “vaig parlar”).',
+      'Usar “volver a” (espanhol) em vez de “tornar a”.',
     ],
     quiz: [
       {
-        question: 'Como se diz «Estamos há seis meses analisando o mercado»?',
+        question: 'Como se diz “Estamos há seis meses analisando o mercado”?',
         options: ['Portem sis mesos analitzant el mercat', 'Portem de sis mesos analitzant el mercat', 'Anem sis mesos analitzant el mercat'],
         answer: 'Portem sis mesos analitzant el mercat',
-        explanation: '«portar + tempo + gerundi», sem preposição no meio.',
+        explanation: '“portar + tempo + gerundi”, sem preposição no meio.',
       },
       {
         question: 'Qual perífrase indica mudança gradual e progressiva?',
         options: ['tornar a + infinitiu', 'anar + gerundi', 'deixar de + infinitiu'],
         answer: 'anar + gerundi',
-        explanation: '«anar + gerundi» expressa ação que se desenvolve aos poucos.',
+        explanation: '“anar + gerundi” expressa ação que se desenvolve aos poucos.',
       },
     ],
   },
@@ -1905,7 +1905,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     sections: [
       {
         heading: 'Mudanças rápidas ou involuntárias: posar-se e quedar',
-        text: '«posar-se + adj.»: mudança física/emocional rápida e transitória. «quedar»/«quedar-se»: estado resultante de uma ação, acidente ou perda.',
+        text: '“posar-se + adj.”: mudança física/emocional rápida e transitória. “quedar”/“quedar-se”: estado resultante de uma ação, acidente ou perda.',
         table: {
           head: ['Verbo', 'Tipo', 'Exemplo', 'Tradução'],
           rows: [
@@ -1922,7 +1922,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: 'Mudanças graduais, profissionais ou ideológicas: fer-se e esdevenir',
-        text: '«fer-se»: transformação gradual, por vontade, tempo ou evolução (profissão, idade, ideologia, religião). «esdevenir» (formal): mudança de natureza, resultado final.',
+        text: '“fer-se”: transformação gradual, por vontade, tempo ou evolução (profissão, idade, ideologia, religião). “esdevenir” (formal): mudança de natureza, resultado final.',
         table: {
           head: ['Verbo', 'Uso', 'Exemplo', 'Tradução'],
           rows: [
@@ -1938,7 +1938,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: 'Transformação radical: convertir-se en / transformar-se en',
-        text: 'Sempre com a preposição «en»: mudança profunda de natureza, substância ou categoria.',
+        text: 'Sempre com a preposição “en”: mudança profunda de natureza, substância ou categoria.',
         examples: [
           ['L\'aigua es converteix en gel a zero graus.', 'A água se converte em gelo a zero graus.'],
           ["L'antiga fàbrica s'ha convertit en un museu.", 'A antiga fábrica se converteu num museu.'],
@@ -1946,22 +1946,22 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar «tornar-se» com «en» antes de adjetivo simples («es va tornar en vermell» em vez de «es va posar/tornar vermell»).',
-      'Omitir o «en» com «convertir-se» («convertir-se una ciutat» em vez de «convertir-se en una ciutat»).',
-      'Confundir «quedar» (resultar/ficar após um processo) com «quedar-se» (permanecer num lugar ou guardar algo).',
+      'Usar “tornar-se” com “en” antes de adjetivo simples (“es va tornar en vermell” em vez de “es va posar/tornar vermell”).',
+      'Omitir o “en” com “convertir-se” (“convertir-se una ciutat” em vez de “convertir-se en una ciutat”).',
+      'Confundir “quedar” (resultar/ficar após um processo) com “quedar-se” (permanecer num lugar ou guardar algo).',
     ],
     quiz: [
       {
-        question: 'Qual verbo para uma reação emocional instantânea («Ele ficou muito nervoso»)?',
+        question: 'Qual verbo para uma reação emocional instantânea (“Ele ficou muito nervoso”)?',
         options: ['Es va fer molt nerviós', 'Es va posar molt nerviós', 'Va esdevenir molt nerviós'],
         answer: 'Es va posar molt nerviós',
-        explanation: 'Estado físico/emocional rápido e passageiro: «posar-se + adjetivo».',
+        explanation: 'Estado físico/emocional rápido e passageiro: “posar-se + adjetivo”.',
       },
       {
-        question: '«Aquesta decisió ___ un problema per a tots nosaltres» (tornou-se, formal): complete.',
+        question: '“Aquesta decisió ___ un problema per a tots nosaltres” (tornou-se, formal): complete.',
         options: ['va esdevenir', "va posar-se", 'va quedar-se'],
         answer: 'va esdevenir',
-        explanation: '«esdevenir» é o verbo formal para transformação num novo estado/resultado.',
+        explanation: '“esdevenir” é o verbo formal para transformação num novo estado/resultado.',
       },
     ],
   },
@@ -1970,7 +1970,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     level: 'B2.4',
     title: 'Marcadores de contraste, reformulação e modalização',
     emoji: '🧭',
-    summary: 'Conectores avançados de oposição («en canvi», «mentre que»), concessão («així i tot»), reformulação («és a dir») e confirmação («de fet»).',
+    summary: 'Conectores avançados de oposição (“en canvi”, “mentre que”), concessão (“així i tot”), reformulação (“és a dir”) e confirmação (“de fet”).',
     sections: [
       {
         heading: 'Conectores de oposição e contraste',
@@ -2007,34 +2007,34 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar «en canvi de» (espanhol) para «em vez de»: o certo é «en comptes de»/«en lloc de». «En canvi» sozinho significa «em contrapartida».',
-      'Confundir «així com» (assim como) com «així com així» (de qualquer jeito).',
-      'Escrever só «no obstant» como conector: a norma escrita culta pede «no obstant això».',
+      'Usar “en canvi de” (espanhol) para “em vez de”: o certo é “en comptes de”/“en lloc de”. “En canvi” sozinho significa “em contrapartida”.',
+      'Confundir “així com” (assim como) com “així com així” (de qualquer jeito).',
+      'Escrever só “no obstant” como conector: a norma escrita culta pede “no obstant això”.',
     ],
     quiz: [
       {
-        question: '«O João gosta de praia; ___, a Maria prefere a montanha»: qual conector?',
+        question: '“O João gosta de praia; ___, a Maria prefere a montanha”: qual conector?',
         options: ['en canvi', 'així com', 'de fet'],
         answer: 'en canvi',
-        explanation: '«en canvi» é o conector padrão para contraste direto entre dois elementos.',
+        explanation: '“en canvi” é o conector padrão para contraste direto entre dois elementos.',
       },
       {
-        question: 'Como se diz «Ele é muito inteligente; de fato, ganhou o primeiro prêmio»?',
+        question: 'Como se diz “Ele é muito inteligente; de fato, ganhou o primeiro prêmio”?',
         options: ['És molt intel·ligent; de fet, va guanyar el primer premi', 'És molt intel·ligent; en canvi, va guanyar el primer premi', 'És molt intel·ligent; així com va guanyar el primer premi'],
         answer: 'És molt intel·ligent; de fet, va guanyar el primer premi',
-        explanation: '«de fet» confirma/reforça o que foi dito antes.',
+        explanation: '“de fet” confirma/reforça o que foi dito antes.',
       },
     ],
   },
   {
     id: 'ca-g32',
     level: 'B2.4',
-    title: '«Que» e «què»: quando acentuar',
+    title: '“Que” e “què”: quando acentuar',
     emoji: '✍️',
-    summary: 'A distinção ortográfica e sintática entre «que» (conjunção/relativo sem preposição) e «què» (interrogativo, exclamativo, relativo com preposição, substantivo).',
+    summary: 'A distinção ortográfica e sintática entre “que” (conjunção/relativo sem preposição) e “què” (interrogativo, exclamativo, relativo com preposição, substantivo).',
     sections: [
       {
-        heading: '«Que» (sem acento)',
+        heading: '“Que” (sem acento)',
         text: 'Conjunção integrante, relativo sem preposição, conjunção causal/explicativa, ou partícula enfática/interrogativa.',
         table: {
           head: ['Função', 'Exemplo', 'Tradução'],
@@ -2051,7 +2051,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
         ],
       },
       {
-        heading: '«Què» (com acento)',
+        heading: '“Què” (com acento)',
         text: 'Interrogativo, exclamativo, relativo precedido de preposição fraca (a/de/en/amb), ou substantivo masculino.',
         table: {
           head: ['Função', 'Exemplo', 'Tradução'],
@@ -2069,22 +2069,22 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Acentuar «que» relativo sem preposição («el llibre què he llegit» está errado; o certo é «que»).',
-      'Esquecer o acento de «què» em pergunta indireta («no sé que fer» em vez de «no sé què fer»).',
-      'Confundir a partícula enfática «que» («que fa fred!») com o interrogativo «què» («què dius?»).',
+      'Acentuar “que” relativo sem preposição (“el llibre què he llegit” está errado; o certo é “que”).',
+      'Esquecer o acento de “què” em pergunta indireta (“no sé que fer” em vez de “no sé què fer”).',
+      'Confundir a partícula enfática “que” (“que fa fred!”) com o interrogativo “què” (“què dius?”).',
     ],
     quiz: [
       {
-        question: '«No sé ___ he de dir en aquesta reunió»: qual forma?',
+        question: '“No sé ___ he de dir en aquesta reunió”: qual forma?',
         options: ['què', 'que', "que d'"],
         answer: 'què',
-        explanation: 'Pergunta indireta com sentido de «o que»: forma tônica «què».',
+        explanation: 'Pergunta indireta com sentido de “o que”: forma tônica “què”.',
       },
       {
-        question: 'Por que em «El pis en què visc és molt lluminós» leva acento?',
-        options: ['Porque é relativo precedido de preposição fraca («en»).', 'Porque é conjunção integrante.', 'Porque está no início de oração subordinada.'],
-        answer: 'Porque é relativo precedido de preposição fraca («en»).',
-        explanation: 'Relativo de coisa com preposição fraca (a/de/en/amb) antes: «què».',
+        question: 'Por que em “El pis en què visc és molt lluminós” leva acento?',
+        options: ['Porque é relativo precedido de preposição fraca (“en”).', 'Porque é conjunção integrante.', 'Porque está no início de oração subordinada.'],
+        answer: 'Porque é relativo precedido de preposição fraca (“en”).',
+        explanation: 'Relativo de coisa com preposição fraca (a/de/en/amb) antes: “què”.',
       },
     ],
   },
@@ -2126,29 +2126,29 @@ export const GRAMMAR_CA: GrammarTopic[] = [
         table: {
           head: ['Errado', 'Certo', 'Explicação'],
           rows: [
-            ['El llibre que el vaig llegir', 'El llibre que vaig llegir', 'O relativo «que» já faz a função de complemento.'],
-            ['On hi vas?', 'On vas?', '«on» já é locativo; não precisa de «hi» também.'],
+            ['El llibre que el vaig llegir', 'El llibre que vaig llegir', 'O relativo “que” já faz a função de complemento.'],
+            ['On hi vas?', 'On vas?', '“on” já é locativo; não precisa de “hi” também.'],
           ],
         },
       },
     ],
     pitfalls: [
-      'Duplicar o pronome quando o complemento direto já vem de um relativo («la carta que la vaig enviar» em vez de «la carta que vaig enviar»).',
-      'Omitir o pronome de retomada no deslocamento à esquerda («A la Maria vaig veure ahir» em vez de «A la Maria, la vaig veure ahir»).',
-      'Pôr «a» antes de complemento direto de pessoa por interferência do espanhol («Vaig veure a en Joan» em vez de «Vaig veure en Joan» — o catalão não tem "a" pessoal).',
+      'Duplicar o pronome quando o complemento direto já vem de um relativo (“la carta que la vaig enviar” em vez de “la carta que vaig enviar”).',
+      'Omitir o pronome de retomada no deslocamento à esquerda (“A la Maria vaig veure ahir” em vez de “A la Maria, la vaig veure ahir”).',
+      'Pôr “a” antes de complemento direto de pessoa por interferência do espanhol (“Vaig veure a en Joan” em vez de “Vaig veure en Joan” — o catalão não tem "a" pessoal).',
     ],
     quiz: [
       {
         question: 'Qual opção está certa, com deslocamento à esquerda?',
         options: ['Aquestes claus, vaig trobar al passadís', 'Aquestes claus, les vaig trobar al passadís', 'Aquestes claus, se les vaig trobar al passadís'],
         answer: 'Aquestes claus, les vaig trobar al passadís',
-        explanation: 'Complemento direto determinado anteposto exige retomada pelo pronome («les»).',
+        explanation: 'Complemento direto determinado anteposto exige retomada pelo pronome (“les”).',
       },
       {
-        question: 'Por que «El document que el vas signar ahir ja està tramitat» tem um erro?',
-        options: ['O verbo «signar» deveria estar no subjuntivo.', 'É errado duplicar o CD com «el» quando já existe o relativo «que».', 'Falta a preposição «a» antes de «el document».'],
-        answer: 'É errado duplicar o CD com «el» quando já existe o relativo «que».',
-        explanation: 'O relativo «que» já cumpre a função de complemento; «el» junto é pleonasmo incorreto.',
+        question: 'Por que “El document que el vas signar ahir ja està tramitat” tem um erro?',
+        options: ['O verbo “signar” deveria estar no subjuntivo.', 'É errado duplicar o CD com “el” quando já existe o relativo “que”.', 'Falta a preposição “a” antes de “el document”.'],
+        answer: 'É errado duplicar o CD com “el” quando já existe o relativo “que”.',
+        explanation: 'O relativo “que” já cumpre a função de complemento; “el” junto é pleonasmo incorreto.',
       },
     ],
   },
@@ -2165,7 +2165,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
         table: {
           head: ['Uso', 'Exemplo', 'Sentido'],
           rows: [
-            ['pedido cortês', 'Volia demanar-li si em pot atendre.', 'Queria pedir-lhe se pode me atender (mais suave que «vull»).'],
+            ['pedido cortês', 'Volia demanar-li si em pot atendre.', 'Queria pedir-lhe se pode me atender (mais suave que “vull”).'],
             ['ação prevista não realizada', 'Ara mateix et trucava!', 'Eu já ia te ligar agora! (intenção iminente)'],
             ['conselho/hipótese (coloquial)', 'Jo de tu hi anava sense pensar-ho.', 'Eu, no seu lugar, iria sem pensar.'],
           ],
@@ -2197,13 +2197,13 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Confundir o futuro de conjectura sobre o presente («Seran les deu» = devem ser dez horas) com uma afirmação categórica de futuro («Demà a les deu serem allà»).',
-      'Usar o presente sem atenuante em pedido formal («Vull parlar amb el director» em vez de «Volia/Voldria parlar amb el director»).',
+      'Confundir o futuro de conjectura sobre o presente (“Seran les deu” = devem ser dez horas) com uma afirmação categórica de futuro (“Demà a les deu serem allà”).',
+      'Usar o presente sem atenuante em pedido formal (“Vull parlar amb el director” em vez de “Volia/Voldria parlar amb el director”).',
       'Abusar do condicional de boato em texto acadêmico/jurídico, onde se exige dado confirmado ou citação direta.',
     ],
     quiz: [
       {
-        question: 'Em «El comitè hauria acceptat la dimissió del director», o que expressa o condicional composto?',
+        question: 'Em “El comitè hauria acceptat la dimissió del director”, o que expressa o condicional composto?',
         options: ['Um desejo do jornalista.', 'Uma informação de boato, não confirmada por fontes oficiais.', 'Uma condição obrigatória do passado.'],
         answer: 'Uma informação de boato, não confirmada por fontes oficiais.',
         explanation: 'O condicional de boato reporta fatos pendentes de confirmação oficial — comum no jornalismo.',
@@ -2212,7 +2212,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
         question: 'Qual frase usa o imperfeito com valor de cortesia?',
         options: ['Ahir estudiava quan vas trucar', 'Volia saber si em pot confirmar la data de la reunió', 'Quan era petit jugava a futbol'],
         answer: 'Volia saber si em pot confirmar la data de la reunió',
-        explanation: '«Volia» no lugar do presente «vull» suaviza e deixa o pedido mais educado.',
+        explanation: '“Volia” no lugar do presente “vull” suaviza e deixa o pedido mais educado.',
       },
     ],
   },
@@ -2246,8 +2246,8 @@ export const GRAMMAR_CA: GrammarTopic[] = [
         table: {
           head: ['Contexto', 'Regra', 'Exemplo', 'Tradução'],
           rows: [
-            ['CD depois do verbo', 'nunca concorda', 'Hem escrit les cartes (não «escriptes»).', 'Escrevemos as cartas.'],
-            ['Relativo «que» (uso moderno)', 'invariável', 'Les cartes que he escrit són per a tu.', 'As cartas que escrevi são para você.'],
+            ['CD depois do verbo', 'nunca concorda', 'Hem escrit les cartes (não “escriptes”).', 'Escrevemos as cartas.'],
+            ['Relativo “que” (uso moderno)', 'invariável', 'Les cartes que he escrit són per a tu.', 'As cartas que escrevi são para você.'],
             ['Particípio + infinitivo', 'invariável', 'Les cançons que he sentit cantar.', 'As músicas que ouvi cantarem.'],
           ],
         },
@@ -2258,22 +2258,22 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Concordar o particípio com o SUJEITO em vez do complemento direto («haver» não faz concordância de sujeito, ao contrário de «ésser» na passiva).',
-      'Concordar quando o CD vem DEPOIS do verbo («hem menjades les pomes» é erro grave; o certo é «hem menjat les pomes»).',
-      'Flexionar o particípio antes de infinitivo («les he vistes sortir» em vez de «les he vist sortir»).',
+      'Concordar o particípio com o SUJEITO em vez do complemento direto (“haver” não faz concordância de sujeito, ao contrário de “ésser” na passiva).',
+      'Concordar quando o CD vem DEPOIS do verbo (“hem menjades les pomes” é erro grave; o certo é “hem menjat les pomes”).',
+      'Flexionar o particípio antes de infinitivo (“les he vistes sortir” em vez de “les he vist sortir”).',
     ],
     quiz: [
       {
-        question: 'Como responder «Has llegit les revistes?» usando «les»?',
+        question: 'Como responder “Has llegit les revistes?” usando “les”?',
         options: ['Sí, les he llegides totes', 'Sí, les he llegit totes', 'Sí, les he llegits totes'],
         answer: 'Sí, les he llegides totes',
-        explanation: 'CD anteposto feminino plural: o particípio concorda («llegides»).',
+        explanation: 'CD anteposto feminino plural: o particípio concorda (“llegides”).',
       },
       {
         question: 'Em qual frase o particípio fica INVARIÁVEL?',
         options: ['Les noies, les hem vistes al parc', 'Les cançons que he sentit cantar eren boniques', "De pomes, n'ha collides moltes"],
         answer: 'Les cançons que he sentit cantar eren boniques',
-        explanation: 'Particípio seguido de infinitivo («sentit cantar»): fica invariável, masculino singular.',
+        explanation: 'Particípio seguido de infinitivo (“sentit cantar”): fica invariável, masculino singular.',
       },
     ],
   },
@@ -2286,7 +2286,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     sections: [
       {
         heading: 'Verbos que mudam de preposição diante de infinitivo',
-        text: 'Alguns verbos regidos por «en» ou «amb» diante de substantivo trocam essa preposição diante de infinitivo. Dois exemplos bem estabelecidos:',
+        text: 'Alguns verbos regidos por “en” ou “amb” diante de substantivo trocam essa preposição diante de infinitivo. Dois exemplos bem estabelecidos:',
         table: {
           head: ['Regência com substantivo', 'Diante de infinitivo', 'Exemplo', 'Tradução'],
           rows: [
@@ -2300,29 +2300,29 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: 'Nem todo verbo muda: cuidado para não generalizar',
-        text: 'Esse fenômeno («canvi de preposició») é específico de cada verbo, não uma regra geral — muitos verbos que regem preposição com substantivo simplesmente usam o infinitivo direto, sem preposição nenhuma. É o caso de «pensar» no sentido de pretender: «Penso anar-hi demà» (não «penso a anar-hi» nem «penso en anar-hi»). Vale checar um dicionário de regência verbal para cada verbo novo, em vez de aplicar «en/amb → a/de» automaticamente.',
+        text: 'Esse fenômeno (“canvi de preposició”) é específico de cada verbo, não uma regra geral — muitos verbos que regem preposição com substantivo simplesmente usam o infinitivo direto, sem preposição nenhuma. É o caso de “pensar” no sentido de pretender: “Penso anar-hi demà” (não “penso a anar-hi” nem “penso en anar-hi”). Vale checar um dicionário de regência verbal para cada verbo novo, em vez de aplicar “en/amb → a/de” automaticamente.',
         examples: [
           ['Penso anar-hi demà.', 'Pretendo ir lá amanhã.'],
         ],
       },
     ],
     pitfalls: [
-      'Manter «en» antes de infinitivo por decalque do espanhol/português («pensa en anar-hi» — mas «pensar» nem muda pra «a»: o certo aqui é sem preposição, «pensa anar-hi»).',
-      'Usar «amb» direto antes de infinitivo («amenaça amb marxar» em vez de «amenaça de marxar»).',
-      'Generalizar o «canvi de preposició» para todo verbo: é específico, verbo por verbo — confira um dicionário de regência.',
+      'Manter “en” antes de infinitivo por decalque do espanhol/português (“pensa en anar-hi” — mas “pensar” nem muda pra “a”: o certo aqui é sem preposição, “pensa anar-hi”).',
+      'Usar “amb” direto antes de infinitivo (“amenaça amb marxar” em vez de “amenaça de marxar”).',
+      'Generalizar o “canvi de preposició” para todo verbo: é específico, verbo por verbo — confira um dicionário de regência.',
     ],
     quiz: [
       {
-        question: 'Como se diz «Ele demorou muito para responder»?',
+        question: 'Como se diz “Ele demorou muito para responder”?',
         options: ['Ha trigat molt en respondre', 'Ha trigat molt a respondre', 'Ha trigat molt de respondre'],
         answer: 'Ha trigat molt a respondre',
-        explanation: '«trigar» rege «en» com substantivo, mas muda para «a» diante de infinitivo.',
+        explanation: '“trigar” rege “en” com substantivo, mas muda para “a” diante de infinitivo.',
       },
       {
-        question: '«El director amenaça ___ tancar la fàbrica»: complete.',
+        question: '“El director amenaça ___ tancar la fàbrica”: complete.',
         options: ['amb', 'de', 'en'],
         answer: 'de',
-        explanation: '«amenaçar amb» muda para «amenaçar de» diante de infinitivo.',
+        explanation: '“amenaçar amb” muda para “amenaçar de” diante de infinitivo.',
       },
     ],
   },
@@ -2339,9 +2339,9 @@ export const GRAMMAR_CA: GrammarTopic[] = [
         table: {
           head: ['Conector', 'Sentido', 'Exemplo', 'Tradução'],
           rows: [
-            ['sols que / solament que', 'condição mínima suficiente («basta que»)', 'Sols que em donis un senyal, vindré.', 'Basta que você me dê um sinal, eu virei.'],
-            ['posat que', 'hipótese formulada («supondo que»)', 'Posat que la proposta sigui acceptada...', 'Supondo que a proposta seja aceita...'],
-            ['a menys que / a menys de', 'exceção («a menos que»)', 'No signarem a menys que hi hagi canvis.', 'Não assinaremos a menos que haja mudanças.'],
+            ['sols que / solament que', 'condição mínima suficiente (“basta que”)', 'Sols que em donis un senyal, vindré.', 'Basta que você me dê um sinal, eu virei.'],
+            ['posat que', 'hipótese formulada (“supondo que”)', 'Posat que la proposta sigui acceptada...', 'Supondo que a proposta seja aceita...'],
+            ['a menys que / a menys de', 'exceção (“a menos que”)', 'No signarem a menys que hi hagi canvis.', 'Não assinaremos a menos que haja mudanças.'],
             ['a condició que', 'exigência estrita', 'Aprovarem el crèdit a condició que presenteu aval.', 'Aprovaremos o crédito sob condição de que apresentem aval.'],
           ],
         },
@@ -2357,7 +2357,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
           head: ['Conector', 'Modo', 'Exemplo', 'Tradução'],
           rows: [
             ['per bé que', 'indicativo ou subjuntivo', 'Per bé que no ho admeti, sap que té culpa.', 'Embora não admita, sabe que tem culpa.'],
-            ['com sigui que', 'causal («visto que») ou concessivo', 'Com sigui que la situació és greu, actuarem.', 'Visto que a situação é grave, agiremos.'],
+            ['com sigui que', 'causal (“visto que”) ou concessivo', 'Com sigui que la situació és greu, actuarem.', 'Visto que a situação é grave, agiremos.'],
             ['sens que (= sense que)', 'sempre subjuntivo', 'Va aprovar la llei sens que ningú protestés.', 'Aprovou a lei sem que ninguém protestasse.'],
           ],
         },
@@ -2368,22 +2368,22 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Confundir «sols que» (culto, com subjuntivo: «basta que») com o advérbio simples «solament» («somente»).',
-      'Usar «a menys de» com verbo conjugado («a menys de vingui» é errado; «a menys de» pede infinitivo, «a menys que» pede verbo conjugado).',
-      '«sens que» é forma literária de «sense que» e sempre pede subjuntivo.',
+      'Confundir “sols que” (culto, com subjuntivo: “basta que”) com o advérbio simples “solament” (“somente”).',
+      'Usar “a menys de” com verbo conjugado (“a menys de vingui” é errado; “a menys de” pede infinitivo, “a menys que” pede verbo conjugado).',
+      '“sens que” é forma literária de “sense que” e sempre pede subjuntivo.',
     ],
     quiz: [
       {
-        question: 'Qual conector formal significa «basta que/contanto que» e pede subjuntivo?',
+        question: 'Qual conector formal significa “basta que/contanto que” e pede subjuntivo?',
         options: ['Sols que', 'Per bé que', 'Així com'],
         answer: 'Sols que',
-        explanation: '«sols que» introduz uma condição mínima suficiente.',
+        explanation: '“sols que” introduz uma condição mínima suficiente.',
       },
       {
         question: 'Qual frase está certa para concessão em registro culto?',
         options: ['Per bé que la situació sigui complexa, trobarem la solució', 'Sens que la situació és complexa, trobarem la solució', 'Com sigui de la situació és complexa, trobarem la solució'],
         answer: 'Per bé que la situació sigui complexa, trobarem la solució',
-        explanation: '«per bé que» é a locução concessiva culta equivalente a «embora».',
+        explanation: '“per bé que” é a locução concessiva culta equivalente a “embora”.',
       },
     ],
   },
@@ -2392,11 +2392,11 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     level: 'C2',
     title: 'Registro literário: passat simple sintético e a variação -és/-ara do subjuntivo',
     emoji: '📜',
-    summary: 'Duas marcas do catalão mais literário/formal: o passat simple sintético (em vez de «vaig + infinitiu») e a variante ocidental do imperfeito do subjuntivo em «-ara/-era». São formas de RECONHECIMENTO, raramente produzidas até por falantes nativos.',
+    summary: 'Duas marcas do catalão mais literário/formal: o passat simple sintético (em vez de “vaig + infinitiu”) e a variante ocidental do imperfeito do subjuntivo em “-ara/-era”. São formas de RECONHECIMENTO, raramente produzidas até por falantes nativos.',
     sections: [
       {
         heading: 'Passat simple sintético',
-        text: 'Em textos literários, historiográficos e na norma valenciana, o passado simples pode usar formas conjugadas próprias em vez do passat perifràstic («vaig dir»). A 3ª pessoa do singular leva sempre acento gráfico.',
+        text: 'Em textos literários, historiográficos e na norma valenciana, o passado simples pode usar formas conjugadas próprias em vez do passat perifràstic (“vaig dir”). A 3ª pessoa do singular leva sempre acento gráfico.',
         table: {
           head: ['Pessoa', 'cantar', 'perdre', 'dormir'],
           rows: [
@@ -2411,7 +2411,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: 'A variação -és/-às × -ara/-era no imperfeito do subjuntivo',
-        text: 'Ao lado das formas em «-és»/«-às» (ensinadas em B1.2/B1.3, as de uso geral), existe uma variante em «-ara»/«-era», própria do valenciano e de registros literários, com o MESMO valor de imperfeito do subjuntivo — nunca de condicional.',
+        text: 'Ao lado das formas em “-és”/“-às” (ensinadas em B1.2/B1.3, as de uso geral), existe uma variante em “-ara”/“-era”, própria do valenciano e de registros literários, com o MESMO valor de imperfeito do subjuntivo — nunca de condicional.',
         table: {
           head: ['Forma geral (B1.2)', 'Variante valenciana/literária', 'Sentido'],
           rows: [
@@ -2425,22 +2425,22 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Achar que «-ara/-era» é condicional: é imperfeito do subjuntivo («cantara» = «cantasse», nunca «cantaria»).',
-      'Esquecer o acento na 3ª pessoa do singular do passat simple sintético («cantà», «perdé», «dormí»).',
+      'Achar que “-ara/-era” é condicional: é imperfeito do subjuntivo (“cantara” = “cantasse”, nunca “cantaria”).',
+      'Esquecer o acento na 3ª pessoa do singular do passat simple sintético (“cantà”, “perdé”, “dormí”).',
       'Misturar passat simple sintético com o passat perifràstic (vaig + infinitiu) no mesmo texto sem critério — são registros diferentes.',
     ],
     quiz: [
       {
-        question: 'O que significa a forma literária/valenciana «cantara»?',
+        question: 'O que significa a forma literária/valenciana “cantara”?',
         options: ['Eu cantaria (condicional)', 'Eu cantasse (imperfeito do subjuntivo)', 'Eu cantava (imperfeito do indicativo)'],
         answer: 'Eu cantasse (imperfeito do subjuntivo)',
-        explanation: '«-ara/-era» é variante literária/valenciana do imperfeito do subjuntivo, equivalente a «-és/-às».',
+        explanation: '“-ara/-era” é variante literária/valenciana do imperfeito do subjuntivo, equivalente a “-és/-às”.',
       },
       {
         question: 'Qual forma do passat simple sintético (3ª pessoa singular) está correta?',
         options: ['El president signa el document ahir', 'El president signà el document ahir', 'El president va signà el document ahir'],
         answer: 'El president signà el document ahir',
-        explanation: '3ª pessoa singular do passat simple sintético de verbos em «-ar» leva acento grave: «signà».',
+        explanation: '3ª pessoa singular do passat simple sintético de verbos em “-ar” leva acento grave: “signà”.',
       },
     ],
   },
@@ -2471,7 +2471,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: 'Augmentatius i sufixos ambivalents: -às/-assa i -ot/-ota',
-        text: 'O sufixo -às / -assa expressa dimensão grande, força ou admiração. Já -ot / -ota é ambivalente: pode soar depreciativo, tosco ou vulgar («paraulota» = palavrão), mas com outras palavras soa afetivo, quase carinhoso («cadirota» pode ser «aquela cadeirona confortável e querida», não uma crítica).',
+        text: 'O sufixo -às / -assa expressa dimensão grande, força ou admiração. Já -ot / -ota é ambivalente: pode soar depreciativo, tosco ou vulgar (“paraulota” = palavrão), mas com outras palavras soa afetivo, quase carinhoso (“cadirota” pode ser “aquela cadeirona confortável e querida”, não uma crítica).',
         table: {
           head: ['Sufixo', 'Matiz', 'Exemplo em catalão', 'Tradução em português'],
           rows: [
@@ -2489,7 +2489,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: 'O sufixo ambíguo -ó/-ona e as mudanças de sentido (lexicalização)',
-        text: 'O sufixo -ó / -ona tem natureza dupla: pode funcionar como diminutivo/afetivo em alguns termos. Além disso, vários sufixos avaliativos (não só -ó) perdem o valor de tamanho e criam palavras com sentido próprio (lexicalização), que já não significam apenas «versão pequena de».',
+        text: 'O sufixo -ó / -ona tem natureza dupla: pode funcionar como diminutivo/afetivo em alguns termos. Além disso, vários sufixos avaliativos (não só -ó) perdem o valor de tamanho e criam palavras com sentido próprio (lexicalização), que já não significam apenas “versão pequena de”.',
         table: {
           head: ['Fenômeno/sufixo', 'Base → derivado', 'Sentido', 'Tradução em português'],
           rows: [
@@ -2507,14 +2507,14 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Não confundir o diminutivo espanhol «-ito/-ita» com o catalão «-et/-eta»: são sistemas diferentes, mesmo tendo função parecida.',
-      'Evitar usar «-às» ou «-ot» sem considerar o contexto: «cotxàs» é elogio a um carro grande, mas «paraulota» é sempre pejorativo — o mesmo sufixo «-ot/-ota» pode soar tanto carinhoso («cadirota») quanto depreciativo («llibrot»), depende da palavra.',
-      'Atenção às formas lexicalizadas: «forquilla» (garfo) ou «tauleta» (mesinha de cabeceira/tablet) já não significam «versão pequena» da palavra de origem, mas objetos com sentido próprio.',
-      'Cuidado com concordância de gênero no aumentativo: «veu» é palavra feminina, então é «veuassa» (não «veuàs»).',
+      'Não confundir o diminutivo espanhol “-ito/-ita” com o catalão “-et/-eta”: são sistemas diferentes, mesmo tendo função parecida.',
+      'Evitar usar “-às” ou “-ot” sem considerar o contexto: “cotxàs” é elogio a um carro grande, mas “paraulota” é sempre pejorativo — o mesmo sufixo “-ot/-ota” pode soar tanto carinhoso (“cadirota”) quanto depreciativo (“llibrot”), depende da palavra.',
+      'Atenção às formas lexicalizadas: “forquilla” (garfo) ou “tauleta” (mesinha de cabeceira/tablet) já não significam “versão pequena” da palavra de origem, mas objetos com sentido próprio.',
+      'Cuidado com concordância de gênero no aumentativo: “veu” é palavra feminina, então é “veuassa” (não “veuàs”).',
     ],
     quiz: [
       {
-        question: 'Qual é o sufixo diminutivo mais comum e produtivo em catalão padrão para indicar tamanho pequeno ou carinho (ex: «un gosset», «una noieta»)?',
+        question: 'Qual é o sufixo diminutivo mais comum e produtivo em catalão padrão para indicar tamanho pequeno ou carinho (ex: “un gosset”, “una noieta”)?',
         options: ['-et / -eta', '-ito / -ita', '-às / -assa'],
         answer: '-et / -eta',
         explanation: 'O sufixo -et / -eta é a forma diminutiva por excelência do catalão, usada tanto para indicar tamanho reduzido real quanto afetividade.',
@@ -2527,7 +2527,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
           'La meva àvia viu en un carreró molt tranquil.',
         ],
         answer: 'Aquella xicota no para de dir paraulotes.',
-        explanation: 'O sufixo -ot/-ota em «paraulotes» (palavrões) adiciona uma nuance depreciativa e vulgar à palavra base «paraula».',
+        explanation: 'O sufixo -ot/-ota em “paraulotes” (palavrões) adiciona uma nuance depreciativa e vulgar à palavra base “paraula”.',
       },
     ],
   },
@@ -2536,7 +2536,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     level: "A1.1",
     title: "Pronúncia: a vogal neutra, os acentos e as consoantes do catalão",
     emoji: "🔤",
-    summary: "O catalão se lê com regras claras. O que mais surpreende o brasileiro: fora da sílaba tônica, «a» e «e» viram um som neutro, [ə], e «o» vira [u] (no catalão central); e há sons conhecidos escritos de outro jeito: ll é o nosso «lh», ny é o «nh», x é o «x» de «xícara».",
+    summary: "O catalão se lê com regras claras. O que mais surpreende o brasileiro: fora da sílaba tônica, “a” e “e” viram um som neutro, [ə], e “o” vira [u] (no catalão central); e há sons conhecidos escritos de outro jeito: ll é o nosso “lh”, ny é o “nh”, x é o “x” de “xícara”.",
     sections: [
       {
         heading: "A sílaba tônica e os acentos",
@@ -2556,7 +2556,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: "As vogais átonas: o [ə] e o [u]",
-        text: "No catalão central (Barcelona, Girona, Tarragona), o «a» e o «e» sem tônica soam iguais, como um «â» fraco: [ə]. O «o» sem tônica soa [u]. Por isso «pare» (pai) soa [ˈpaɾə] e «Barcelona» soa [bərsəˈlonə]. Na parte ocidental (Lleida, Valência), o «a» e o «e» átonos continuam distintos: o valenciano diz [ˈpaɾe]. Os dois jeitos são corretos.",
+        text: "No catalão central (Barcelona, Girona, Tarragona), o “a” e o “e” sem tônica soam iguais, como um “â” fraco: [ə]. O “o” sem tônica soa [u]. Por isso “pare” (pai) soa [ˈpaɾə] e “Barcelona” soa [bərsəˈlonə]. Na parte ocidental (Lleida, Valência), o “a” e o “e” átonos continuam distintos: o valenciano diz [ˈpaɾe]. Os dois jeitos são corretos.",
         table: {
           head: ["Palavra", "IPA (central)", "Português"],
           rows: [
@@ -2577,15 +2577,15 @@ export const GRAMMAR_CA: GrammarTopic[] = [
         table: {
           head: ["Grafia", "IPA", "Como soa", "Exemplos"],
           rows: [
-            ["ll", "[ʎ]", "«lh» de «filho»", "llet, cavall, llengua"],
-            ["l·l", "[lː]", "um «l» dobrado (a ela geminada)", "col·legi, il·lusió"],
-            ["ny", "[ɲ]", "«nh» de «ninho»", "any, Catalunya, muntanya"],
-            ["x (no início, depois de consoante e de i)", "[ʃ]", "«x» de «xícara»", "xocolata, caixa, panxa"],
-            ["tx; -ig no fim", "[tʃ]", "«tch»", "cotxe, mig, maig"],
-            ["tj, tg", "[dʒ]", "«dj»", "platja, metge"],
-            ["j; g + e, i", "[ʒ]", "«j» de «janela»", "jo, gent, girar"],
-            ["s entre vogais; z", "[z]", "«z»", "casa, zero, onze"],
-            ["ss; ç; c + e, i", "[s]", "«s» de «sapo»", "massa, plaça, cel"],
+            ["ll", "[ʎ]", "“lh” de “filho”", "llet, cavall, llengua"],
+            ["l·l", "[lː]", "um “l” dobrado (a ela geminada)", "col·legi, il·lusió"],
+            ["ny", "[ɲ]", "“nh” de “ninho”", "any, Catalunya, muntanya"],
+            ["x (no início, depois de consoante e de i)", "[ʃ]", "“x” de “xícara”", "xocolata, caixa, panxa"],
+            ["tx; -ig no fim", "[tʃ]", "“tch”", "cotxe, mig, maig"],
+            ["tj, tg", "[dʒ]", "“dj”", "platja, metge"],
+            ["j; g + e, i", "[ʒ]", "“j” de “janela”", "jo, gent, girar"],
+            ["s entre vogais; z", "[z]", "“z”", "casa, zero, onze"],
+            ["ss; ç; c + e, i", "[s]", "“s” de “sapo”", "massa, plaça, cel"],
             ["v (catalão central)", "[b]", "como b", "vi, vaca, avió"],
             ["h", "—", "nunca soa", "hora, home, ahir"],
             ["qu, gu + e, i", "[k], [ɡ]", "o u não soa; com trema (qü, gü), soa", "que, guerra; qüestió, pingüí"],
@@ -2594,7 +2594,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: "Letras que não soam",
-        text: "Algumas letras finais caem. No catalão central: o t depois de n ou l (gent [ʒɛn], molt [mol]); o r de muitas palavras oxítonas, como os infinitivos (menjar [mənˈʒa], senyor [səˈɲo]); e o i do «ix» depois de vogal (caixa [ˈkaʃə], peix [peʃ]). E, como em alemão, as consoantes finais sonoras ficam surdas: verd [bɛɾt], fred [fɾɛt].",
+        text: "Algumas letras finais caem. No catalão central: o t depois de n ou l (gent [ʒɛn], molt [mol]); o r de muitas palavras oxítonas, como os infinitivos (menjar [mənˈʒa], senyor [səˈɲo]); e o i do “ix” depois de vogal (caixa [ˈkaʃə], peix [peʃ]). E, como em alemão, as consoantes finais sonoras ficam surdas: verd [bɛɾt], fred [fɾɛt].",
         examples: [
           ["Tinc molt de fred.", "Estou com muito frio."],
           ["El senyor menja peix.", "O senhor come peixe."],
@@ -2602,16 +2602,16 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "No catalão central, não pronuncie o «a» átono como «a» cheio: «casa» é [ˈkazə], com o final fraco.",
-      "«ll» é o nosso «lh», e «l·l» (com o ponto no meio) é um l dobrado: «col·legi» não tem som de «lh».",
-      "O «x» depois de vogal leva um «i» que não soa: «caixa» soa [ˈkaʃə], não «caicha».",
-      "«tj» e «tg» soam «dj»: «platja» é [ˈpladʒə], não «plátia».",
+      "No catalão central, não pronuncie o “a” átono como “a” cheio: “casa” é [ˈkazə], com o final fraco.",
+      "“ll” é o nosso “lh”, e “l·l” (com o ponto no meio) é um l dobrado: “col·legi” não tem som de “lh”.",
+      "O “x” depois de vogal leva um “i” que não soa: “caixa” soa [ˈkaʃə], não “caicha”.",
+      "“tj” e “tg” soam “dj”: “platja” é [ˈpladʒə], não “plátia”.",
     ],
     quiz: [
-      { question: "Qual palavra é oxítona (tônica na última sílaba)?", options: ["parlar", "casa", "parles"], answer: "parlar", explanation: "Termina em -r, então é oxítona: par-LAR. «casa» termina em vogal e «parles» em -es: paroxítonas." },
-      { question: "Como soa o «ny» de «Catalunya»?", options: ["como o «nh» de «ninho»", "como o «ni» de «nível»", "como o «n» de «nada»"], answer: "como o «nh» de «ninho»", explanation: "«ny» é o som [ɲ], o nosso «nh»." },
-      { question: "Em «cotxe» (carro), o «tx» soa…", options: ["«tch»", "«x» de «xícara»", "«ks»"], answer: "«tch»", explanation: "«tx» é [tʃ]: [ˈkɔtʃə]." },
-      { question: "Que acento marca um «e» aberto, como o de «café» do português?", options: ["è", "é", "ë"], answer: "è", explanation: "O grave (è) marca o «é» aberto: cafè, vèncer. O agudo (é) marca o «ê» fechado: bé, més." },
+      { question: "Qual palavra é oxítona (tônica na última sílaba)?", options: ["parlar", "casa", "parles"], answer: "parlar", explanation: "Termina em -r, então é oxítona: par-LAR. “casa” termina em vogal e “parles” em -es: paroxítonas." },
+      { question: "Como soa o “ny” de “Catalunya”?", options: ["como o “nh” de “ninho”", "como o “ni” de “nível”", "como o “n” de “nada”"], answer: "como o “nh” de “ninho”", explanation: "“ny” é o som [ɲ], o nosso “nh”." },
+      { question: "Em “cotxe” (carro), o “tx” soa…", options: ["“tch”", "“x” de “xícara”", "“ks”"], answer: "“tch”", explanation: "“tx” é [tʃ]: [ˈkɔtʃə]." },
+      { question: "Que acento marca um “e” aberto, como o de “café” do português?", options: ["è", "é", "ë"], answer: "è", explanation: "O grave (è) marca o “é” aberto: cafè, vèncer. O agudo (é) marca o “ê” fechado: bé, més." },
     ],
   },
   {
@@ -2619,11 +2619,11 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     level: "A1.1",
     title: "Saudações, pronomes pessoais e tu × vostè",
     emoji: "👋",
-    summary: "Os pronomes do catalão lembram os do português, com duas diferenças: o plural é «nosaltres» e «vosaltres» (nós outros, vós outros), e o tratamento formal é «vostè», que conjuga como a 3ª pessoa — como o nosso «o senhor».",
+    summary: "Os pronomes do catalão lembram os do português, com duas diferenças: o plural é “nosaltres” e “vosaltres” (nós outros, vós outros), e o tratamento formal é “vostè”, que conjuga como a 3ª pessoa — como o nosso “o senhor”.",
     sections: [
       {
         heading: "Os pronomes pessoais",
-        text: "Como no português, o sujeito costuma ficar oculto, porque o verbo já mostra a pessoa: «Parlo català» (falo catalão). O pronome aparece para dar ênfase ou contrastar: «Jo soc de Recife i ella és de Girona».",
+        text: "Como no português, o sujeito costuma ficar oculto, porque o verbo já mostra a pessoa: “Parlo català” (falo catalão). O pronome aparece para dar ênfase ou contrastar: “Jo soc de Recife i ella és de Girona”.",
         table: {
           head: ["Catalão", "Português", "Nota"],
           rows: [
@@ -2640,7 +2640,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: "Tu, vostè e vós",
-        text: "O «tu» é bem mais usado do que o nosso «tu»: entre colegas de trabalho, com vizinhos e muitas vezes até com professores. «Vostè» fica para desconhecidos mais velhos, atendimento ao público e situações formais. Existe ainda «vós», um tratamento respeitoso com o verbo no plural (vós sou, vós teniu), que se lê em textos antigos e em cartas muito formais e que ainda sobrevive na fala de algumas zonas rurais e em Eivissa, entre gerações mais velhas.",
+        text: "O “tu” é bem mais usado do que o nosso “tu”: entre colegas de trabalho, com vizinhos e muitas vezes até com professores. “Vostè” fica para desconhecidos mais velhos, atendimento ao público e situações formais. Existe ainda “vós”, um tratamento respeitoso com o verbo no plural (vós sou, vós teniu), que se lê em textos antigos e em cartas muito formais e que ainda sobrevive na fala de algumas zonas rurais e em Eivissa, entre gerações mais velhas.",
         examples: [
           ["Com et dius? —Em dic Marta.", "Como você se chama? — Eu me chamo Marta."],
           ["Com es diu vostè?", "Como o senhor se chama?"],
@@ -2669,26 +2669,26 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Com «vostè», o verbo vai para a 3ª pessoa: «Vostè és…», não «Vostè ets…».",
-      "«Nosaltres» e «vosaltres» são as formas normais do plural: «Nosaltres som brasilers».",
-      "«Bona nit» serve também para se despedir à noite; para chegar à noite, diz-se também «bon vespre».",
+      "Com “vostè”, o verbo vai para a 3ª pessoa: “Vostè és…”, não “Vostè ets…”.",
+      "“Nosaltres” e “vosaltres” são as formas normais do plural: “Nosaltres som brasilers”.",
+      "“Bona nit” serve também para se despedir à noite; para chegar à noite, diz-se também “bon vespre”.",
     ],
     quiz: [
-      { question: "Como se diz «o senhor é de Girona?»", options: ["Vostè és de Girona?", "Vostè ets de Girona?", "Tu és de Girona?"], answer: "Vostè és de Girona?", explanation: "«Vostè» conjuga como a 3ª pessoa: és." },
-      { question: "Qual é o pronome catalão para «nós»?", options: ["nosaltres", "nosotros", "nós"], answer: "nosaltres", explanation: "Em catalão, «nosaltres»; «nosotros» é castelhano." },
-      { question: "São 11 da manhã. Como você cumprimenta?", options: ["Bon dia!", "Bona tarda!", "Bona nit!"], answer: "Bon dia!", explanation: "«Bon dia» vale até a hora do almoço." },
-      { question: "Você acaba de conhecer um colega de curso da sua idade. O mais natural é…", options: ["tu", "vostè", "vós"], answer: "tu", explanation: "Entre colegas, o «tu» é o normal." },
+      { question: "Como se diz “o senhor é de Girona?”", options: ["Vostè és de Girona?", "Vostè ets de Girona?", "Tu és de Girona?"], answer: "Vostè és de Girona?", explanation: "“Vostè” conjuga como a 3ª pessoa: és." },
+      { question: "Qual é o pronome catalão para “nós”?", options: ["nosaltres", "nosotros", "nós"], answer: "nosaltres", explanation: "Em catalão, “nosaltres”; “nosotros” é castelhano." },
+      { question: "São 11 da manhã. Como você cumprimenta?", options: ["Bon dia!", "Bona tarda!", "Bona nit!"], answer: "Bon dia!", explanation: "“Bon dia” vale até a hora do almoço." },
+      { question: "Você acaba de conhecer um colega de curso da sua idade. O mais natural é…", options: ["tu", "vostè", "vós"], answer: "tu", explanation: "Entre colegas, o “tu” é o normal." },
     ],
   },
   {
     id: "ca-g43",
     level: "A1.2",
-    title: "Contrações (al, del, pel), «can» e «hi ha»",
+    title: "Contrações (al, del, pel), “can” e “hi ha”",
     emoji: "🔗",
-    summary: "As preposições a, de e per se juntam com el e els: al, als, del, dels, pel, pels — como o nosso «ao», «do», «pelo». Com la, les e l' não há contração.",
+    summary: "As preposições a, de e per se juntam com el e els: al, als, del, dels, pel, pels — como o nosso “ao”, “do”, “pelo”. Com la, les e l' não há contração.",
     sections: [
       {
-        text: "A contração é obrigatória: «Vaig al cinema». Mas diante de l' não há contração: «Vaig a l'hotel», «la porta de l'escola».",
+        text: "A contração é obrigatória: “Vaig al cinema”. Mas diante de l' não há contração: “Vaig a l'hotel”, “la porta de l'escola”.",
         table: {
           head: ["", "+ el", "+ els", "+ la / l'", "+ les"],
           rows: [
@@ -2705,12 +2705,12 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: "Can: a casa de",
-        text: "«Can» vem de «ca» (casa) + «en»: «can Joan» é a casa do Joan; com mulheres, «ca la Maria». Muitos restaurantes, masias e bairros têm nome com «Can», porque eram a casa de alguma família.",
+        text: "“Can” vem de “ca” (casa) + “en”: “can Joan” é a casa do Joan; com mulheres, “ca la Maria”. Muitos restaurantes, masias e bairros têm nome com “Can”, porque eram a casa de alguma família.",
         examples: [["Sopem a can Pere?", "Vamos jantar na casa do Pere?"]],
       },
       {
         heading: "Hi ha: há, tem",
-        text: "«Hi ha» corresponde ao nosso «há» ou «tem» (de existência) e, na língua padrão, não muda no plural: «Hi ha un bar», «Hi ha dos bars». No passado, «hi havia»; no futuro, «hi haurà». Na fala de várias regiões se ouve «hi han» no plural, mas a norma culta prefere «hi ha».",
+        text: "“Hi ha” corresponde ao nosso “há” ou “tem” (de existência) e, na língua padrão, não muda no plural: “Hi ha un bar”, “Hi ha dos bars”. No passado, “hi havia”; no futuro, “hi haurà”. Na fala de várias regiões se ouve “hi han” no plural, mas a norma culta prefere “hi ha”.",
         examples: [
           ["Hi ha una farmàcia a prop?", "Tem uma farmácia perto?"],
           ["Ahir hi havia molta gent a la plaça.", "Ontem havia muita gente na praça."],
@@ -2718,15 +2718,15 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Contraia sempre: «al», «del», «pel» — «a el» e «de el» estão errados.",
-      "Mas não contraia com l': «a l'hotel», «de l'aigua».",
-      "«Hi ha» fica igual no plural na norma: «hi ha dues botigues».",
+      "Contraia sempre: “al”, “del”, “pel” — “a el” e “de el” estão errados.",
+      "Mas não contraia com l': “a l'hotel”, “de l'aigua”.",
+      "“Hi ha” fica igual no plural na norma: “hi ha dues botigues”.",
     ],
     quiz: [
-      { question: "Complete: «Anem ___ cinema.»", options: ["al", "a la", "als"], answer: "al", explanation: "a + el = al." },
-      { question: "Complete: «La porta ___ escola.»", options: ["de l'", "del", "dels"], answer: "de l'", explanation: "Com l' não há contração." },
-      { question: "«Tem dois bancos na praça» fica…", options: ["Hi ha dos bancs a la plaça.", "Són dos bancs a la plaça.", "Té dos bancs a la plaça."], answer: "Hi ha dos bancs a la plaça.", explanation: "Para existência: hi ha, que não muda no plural." },
-      { question: "O que é «can Pere»?", options: ["a casa do Pere", "o cachorro do Pere", "o carro do Pere"], answer: "a casa do Pere", explanation: "«can» = ca (casa) + en." },
+      { question: "Complete: “Anem ___ cinema.”", options: ["al", "a la", "als"], answer: "al", explanation: "a + el = al." },
+      { question: "Complete: “La porta ___ escola.”", options: ["de l'", "del", "dels"], answer: "de l'", explanation: "Com l' não há contração." },
+      { question: "“Tem dois bancos na praça” fica…", options: ["Hi ha dos bancs a la plaça.", "Són dos bancs a la plaça.", "Té dos bancs a la plaça."], answer: "Hi ha dos bancs a la plaça.", explanation: "Para existência: hi ha, que não muda no plural." },
+      { question: "O que é “can Pere”?", options: ["a casa do Pere", "o cachorro do Pere", "o carro do Pere"], answer: "a casa do Pere", explanation: "“can” = ca (casa) + en." },
     ],
   },
   {
@@ -2734,7 +2734,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     level: "B2.2",
     title: "Registro formal: cartas, e-mails e documentos",
     emoji: "✉️",
-    summary: "A carta formal em catalão tem fórmulas fixas: «Benvolgut senyor» para começar, «Atentament» para terminar, e o tratamento de «vostè» (ou «vosaltres», quando se escreve a uma instituição). Datas, abreviações e endereços também seguem convenções próprias.",
+    summary: "A carta formal em catalão tem fórmulas fixas: “Benvolgut senyor” para começar, “Atentament” para terminar, e o tratamento de “vostè” (ou “vosaltres”, quando se escreve a uma instituição). Datas, abreviações e endereços também seguem convenções próprias.",
     sections: [
       {
         heading: "A estrutura da carta",
@@ -2749,7 +2749,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
             ["despedida", "Atentament, / Cordialment,", "Atenciosamente / Cordialmente"],
           ],
         },
-        text: "Escrevendo a uma empresa ou instituição (e não a uma pessoa), é comum o plural «vosaltres»: «Us escric per…», «Us agrairia que…». Com uma pessoa, «vostè»: «Li escric per…».",
+        text: "Escrevendo a uma empresa ou instituição (e não a uma pessoa), é comum o plural “vosaltres”: “Us escric per…”, “Us agrairia que…”. Com uma pessoa, “vostè”: “Li escric per…”.",
       },
       {
         heading: "Abreviações e convenções",
@@ -2765,7 +2765,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
             ["a/e", "adreça electrònica (e-mail)"],
           ],
         },
-        text: "Nas datas, «de» antes do mês e do ano: «el 5 de maig de 2024». As horas se escrevem «a les 10 h» ou «a les 10.30 h». E o vocabulário dos trâmites: sol·licitud (requerimento), termini (prazo), expedient (processo), certificat (certidão), empadronament (registro de residência).",
+        text: "Nas datas, “de” antes do mês e do ano: “el 5 de maig de 2024”. As horas se escrevem “a les 10 h” ou “a les 10.30 h”. E o vocabulário dos trâmites: sol·licitud (requerimento), termini (prazo), expedient (processo), certificat (certidão), empadronament (registro de residência).",
         examples: [
           ["Benvolguda senyora Soler, li escric per demanar-li una cita.", "Prezada senhora Soler, escrevo para pedir-lhe um horário."],
           ["Us agrairíem que ens enviéssiu el certificat abans del 15 de juny.", "Agradeceríamos se vocês nos enviassem a certidão antes de 15 de junho."],
@@ -2774,15 +2774,15 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Numa carta formal, nada de «Hola»: comece com «Benvolgut/Benvolguda».",
-      "Não misture tratamentos: se começou com «vostè» (li escric), não passe para «tu» (et demano).",
-      "Data com «de»: «3 de març de 2025», não «3 març 2025».",
+      "Numa carta formal, nada de “Hola”: comece com “Benvolgut/Benvolguda”.",
+      "Não misture tratamentos: se começou com “vostè” (li escric), não passe para “tu” (et demano).",
+      "Data com “de”: “3 de març de 2025”, não “3 març 2025”.",
     ],
     quiz: [
       { question: "Como começar uma carta formal a um senhor?", options: ["Benvolgut senyor,", "Hola, senyor!", "Estimat amic,"], answer: "Benvolgut senyor,", explanation: "Saudação formal: Benvolgut / Benvolguda." },
       { question: "Uma despedida formal é…", options: ["Atentament,", "Petons,", "Fins aviat!"], answer: "Atentament,", explanation: "Atentament ou Cordialment." },
-      { question: "O que significa «c/ Major, 12»?", options: ["carrer Major, 12", "casa Major, 12", "carta Major, 12"], answer: "carrer Major, 12", explanation: "c/ = carrer (rua)." },
-      { question: "Escrevendo a uma pessoa com «vostè», o pedido educado é…", options: ["Li agrairia que em respongués.", "T'agrairia que em responguessis.", "Us agraeixo que respongueu ja."], answer: "Li agrairia que em respongués.", explanation: "vostè = 3ª pessoa (li), condicional + imperfeito do subjuntivo." },
+      { question: "O que significa “c/ Major, 12”?", options: ["carrer Major, 12", "casa Major, 12", "carta Major, 12"], answer: "carrer Major, 12", explanation: "c/ = carrer (rua)." },
+      { question: "Escrevendo a uma pessoa com “vostè”, o pedido educado é…", options: ["Li agrairia que em respongués.", "T'agrairia que em responguessis.", "Us agraeixo que respongueu ja."], answer: "Li agrairia que em respongués.", explanation: "vostè = 3ª pessoa (li), condicional + imperfeito do subjuntivo." },
     ],
   },
   {
@@ -2790,7 +2790,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     level: "B2.3",
     title: "Gerúndio e particípio: os usos certos e os errados",
     emoji: "🏃",
-    summary: "O gerúndio (parlant, bevent, dormint) indica ação em curso ou o modo, como no português. Mas há usos copiados do castelhano que a norma evita, como o gerúndio de consequência («va caure, trencant-se el braç»). O particípio concorda como adjetivo e forma frases curtas: «Acabada la feina, vam sortir».",
+    summary: "O gerúndio (parlant, bevent, dormint) indica ação em curso ou o modo, como no português. Mas há usos copiados do castelhano que a norma evita, como o gerúndio de consequência (“va caure, trencant-se el braç”). O particípio concorda como adjetivo e forma frases curtas: “Acabada la feina, vam sortir”.",
     sections: [
       {
         heading: "As formas do gerúndio",
@@ -2807,7 +2807,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: "Usos certos e usos a evitar",
-        text: "Certos: ação em curso (Estic llegint), modo (Va arribar corrent), simultaneidade (Caminant pel carrer, vaig veure la Rosa) e progressão com «anar» (La cosa va millorant). A evitar: o gerúndio de consequência posterior («Va caure, trencant-se el braç» → «Va caure i es va trencar el braç») e o gerúndio como adjetivo («una caixa contenint llibres» → «una caixa que conté llibres»).",
+        text: "Certos: ação em curso (Estic llegint), modo (Va arribar corrent), simultaneidade (Caminant pel carrer, vaig veure la Rosa) e progressão com “anar” (La cosa va millorant). A evitar: o gerúndio de consequência posterior (“Va caure, trencant-se el braç” → “Va caure i es va trencar el braç”) e o gerúndio como adjetivo (“una caixa contenint llibres” → “una caixa que conté llibres”).",
         examples: [
           ["Estic escrivint un correu.", "Estou escrevendo um e-mail."],
           ["Va entrar cantant.", "Entrou cantando."],
@@ -2816,7 +2816,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: "O particípio",
-        text: "Como adjetivo, concorda: «les portes obertes», «la feina acabada». Com haver, não concorda com o sujeito, mas pode concordar com os pronomes la e les: «Les he vistes» ou «Les he vist». Numa construção absoluta, resume uma ação anterior: «Acabat el sopar, vam sortir» (terminado o jantar, saímos).",
+        text: "Como adjetivo, concorda: “les portes obertes”, “la feina acabada”. Com haver, não concorda com o sujeito, mas pode concordar com os pronomes la e les: “Les he vistes” ou “Les he vist”. Numa construção absoluta, resume uma ação anterior: “Acabat el sopar, vam sortir” (terminado o jantar, saímos).",
         examples: [
           ["Un cop acabada la reunió, anirem a dinar.", "Depois de terminada a reunião, iremos almoçar."],
           ["La finestra està oberta.", "A janela está aberta."],
@@ -2824,15 +2824,15 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Nada de gerúndio para consequência posterior: «Va caure i es va trencar el braç».",
-      "Nada de gerúndio como adjetivo: «un sobre que conté documents».",
-      "Para o tempo decorrido, prefira «fa … que»: «Fa dues hores que t'espero».",
+      "Nada de gerúndio para consequência posterior: “Va caure i es va trencar el braç”.",
+      "Nada de gerúndio como adjetivo: “un sobre que conté documents”.",
+      "Para o tempo decorrido, prefira “fa … que”: “Fa dues hores que t'espero”.",
     ],
     quiz: [
-      { question: "Gerúndio de «fer»:", options: ["fent", "fant", "fient"], answer: "fent", explanation: "fer → fent." },
-      { question: "Qual frase segue a norma?", options: ["Va caure i es va fer mal al peu.", "Va caure, fent-se mal al peu.", "Va caure fent-se després mal al peu."], answer: "Va caure i es va fer mal al peu.", explanation: "A consequência posterior se liga com «i», não com gerúndio." },
-      { question: "Complete: «Tenim les finestres ___.» (obrir)", options: ["obertes", "obert", "obrint"], answer: "obertes", explanation: "Particípio como adjetivo, concordando: obertes." },
-      { question: "Qual frase segue a norma?", options: ["Tinc una capsa que conté fotos.", "Tinc una capsa contenint fotos.", "Tinc una capsa continguent fotos."], answer: "Tinc una capsa que conté fotos.", explanation: "Gerúndio como adjetivo se evita: use uma oração com «que»." },
+      { question: "Gerúndio de “fer”:", options: ["fent", "fant", "fient"], answer: "fent", explanation: "fer → fent." },
+      { question: "Qual frase segue a norma?", options: ["Va caure i es va fer mal al peu.", "Va caure, fent-se mal al peu.", "Va caure fent-se després mal al peu."], answer: "Va caure i es va fer mal al peu.", explanation: "A consequência posterior se liga com “i”, não com gerúndio." },
+      { question: "Complete: “Tenim les finestres ___.” (obrir)", options: ["obertes", "obert", "obrint"], answer: "obertes", explanation: "Particípio como adjetivo, concordando: obertes." },
+      { question: "Qual frase segue a norma?", options: ["Tinc una capsa que conté fotos.", "Tinc una capsa contenint fotos.", "Tinc una capsa continguent fotos."], answer: "Tinc una capsa que conté fotos.", explanation: "Gerúndio como adjetivo se evita: use uma oração com “que”." },
     ],
   },
   {
@@ -2840,7 +2840,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     level: "B2.3",
     title: "Expressões idiomáticas",
     emoji: "🌧️",
-    summary: "As expressões idiomáticas dão cor à língua e muitas não se traduzem ao pé da letra: «ploure a bots i barrals» é chover canivetes, e «fer campana» é matar aula. Conhecê-las ajuda a entender a conversa do dia a dia.",
+    summary: "As expressões idiomáticas dão cor à língua e muitas não se traduzem ao pé da letra: “ploure a bots i barrals” é chover canivetes, e “fer campana” é matar aula. Conhecê-las ajuda a entender a conversa do dia a dia.",
     sections: [
       {
         heading: "Expressões do dia a dia",
@@ -2871,20 +2871,20 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: "Interjeições",
-        text: "Algumas palavras curtas resumem uma reação: «Ostres!» (puxa!), «Déu n'hi do!» (nossa, e como!), «Mare de Déu!» (minha nossa!), «Au!» (vamos!), «Apa!» (vamos!, olha só!), «Vinga!» (vamos!, anda!). «Home!» e «Dona!» servem para chamar a atenção, como o nosso «cara!».",
+        text: "Algumas palavras curtas resumem uma reação: “Ostres!” (puxa!), “Déu n'hi do!” (nossa, e como!), “Mare de Déu!” (minha nossa!), “Au!” (vamos!), “Apa!” (vamos!, olha só!), “Vinga!” (vamos!, anda!). “Home!” e “Dona!” servem para chamar a atenção, como o nosso “cara!”.",
         examples: [["Déu n'hi do, quina calor que fa!", "Nossa, que calor que está fazendo!"]],
       },
     ],
     pitfalls: [
-      "Não traduza ao pé da letra: «tocar el dos» não tem nada a ver com o número dois.",
+      "Não traduza ao pé da letra: “tocar el dos” não tem nada a ver com o número dois.",
       "Muitas expressões são informais: evite-as numa carta formal.",
-      "«Fer dissabte» (faxina) não quer dizer «fazer algo no sábado».",
+      "“Fer dissabte” (faxina) não quer dizer “fazer algo no sábado”.",
     ],
     quiz: [
-      { question: "O que quer dizer «fer campana»?", options: ["matar aula", "tocar o sino", "fazer festa"], answer: "matar aula", explanation: "Fer campana = faltar à aula sem motivo." },
-      { question: "«Estou morto de cansaço» fica…", options: ["Estic fet pols.", "Estic fet pa.", "Estic a la lluna."], answer: "Estic fet pols.", explanation: "Estar fet pols = estar exausto." },
-      { question: "O que quer dizer «tallar el bacallà»?", options: ["mandar, dar as cartas", "cozinhar peixe", "cortar gastos"], answer: "mandar, dar as cartas", explanation: "Quem talla el bacallà é quem decide." },
-      { question: "«Chover canivetes» em catalão é…", options: ["ploure a bots i barrals", "ploure ganivets", "fer campana"], answer: "ploure a bots i barrals", explanation: "Bots e barrals são odres e barris." },
+      { question: "O que quer dizer “fer campana”?", options: ["matar aula", "tocar o sino", "fazer festa"], answer: "matar aula", explanation: "Fer campana = faltar à aula sem motivo." },
+      { question: "“Estou morto de cansaço” fica…", options: ["Estic fet pols.", "Estic fet pa.", "Estic a la lluna."], answer: "Estic fet pols.", explanation: "Estar fet pols = estar exausto." },
+      { question: "O que quer dizer “tallar el bacallà”?", options: ["mandar, dar as cartas", "cozinhar peixe", "cortar gastos"], answer: "mandar, dar as cartas", explanation: "Quem talla el bacallà é quem decide." },
+      { question: "“Chover canivetes” em catalão é…", options: ["ploure a bots i barrals", "ploure ganivets", "fer campana"], answer: "ploure a bots i barrals", explanation: "Bots e barrals são odres e barris." },
     ],
   },
   {
@@ -2892,7 +2892,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     level: "B2.3",
     title: "Barbarismos: as formas do padrão",
     emoji: "🧹",
-    summary: "Toda língua em contato com outra empresta palavras e construções. A norma do catalão registra, para vários empréstimos recentes do castelhano, qual é a forma do padrão: «haver de» em vez de «tenir que», «adonar-se» em vez de «donar-se compte». Na fala informal eles aparecem; em textos, prefere-se a forma catalã.",
+    summary: "Toda língua em contato com outra empresta palavras e construções. A norma do catalão registra, para vários empréstimos recentes do castelhano, qual é a forma do padrão: “haver de” em vez de “tenir que”, “adonar-se” em vez de “donar-se compte”. Na fala informal eles aparecem; em textos, prefere-se a forma catalã.",
     sections: [
       {
         heading: "As trocas mais comuns",
@@ -2916,7 +2916,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: "Nem tudo que parece castelhano é barbarismo",
-        text: "Muitas palavras são iguais nas duas línguas porque vêm do mesmo latim: «buscar», «enfadar-se», «mercat» estão corretas. Na dúvida, os dicionários do IEC e da AVL e o serviço de consultas Optimot mostram a forma recomendada.",
+        text: "Muitas palavras são iguais nas duas línguas porque vêm do mesmo latim: “buscar”, “enfadar-se”, “mercat” estão corretas. Na dúvida, os dicionários do IEC e da AVL e o serviço de consultas Optimot mostram a forma recomendada.",
         examples: [
           ["He d'acabar aquest informe avui.", "Tenho que terminar este relatório hoje."],
           ["No m'havia adonat que era tan tard.", "Eu não tinha percebido que era tão tarde."],
@@ -2925,15 +2925,15 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "«Tenir que» → «haver de»: «He de marxar».",
-      "«Hi ha que» → «cal»: «Cal esperar».",
+      "“Tenir que” → “haver de”: “He de marxar”.",
+      "“Hi ha que” → “cal”: “Cal esperar”.",
       "Na conversa informal essas formas se ouvem muito; em textos, na escola e na imprensa, use a do padrão.",
     ],
     quiz: [
-      { question: "Forma do padrão para «tenho que estudar»:", options: ["He d'estudiar.", "Tinc que estudiar.", "Hi ha que estudiar."], answer: "He d'estudiar.", explanation: "Obrigação: haver de." },
-      { question: "Forma do padrão para «perceber»:", options: ["adonar-se", "donar-se compte", "enterar-se"], answer: "adonar-se", explanation: "adonar-se: «No me n'havia adonat»." },
-      { question: "Forma do padrão para «é claro»:", options: ["per descomptat", "per suposat", "per supost"], answer: "per descomptat", explanation: "per descomptat (ou és clar)." },
-      { question: "Qual destas palavras é catalã padrão?", options: ["buscar", "enterar-se", "desde"], answer: "buscar", explanation: "«buscar» é catalão correto; as outras têm forma própria (assabentar-se, des de)." },
+      { question: "Forma do padrão para “tenho que estudar”:", options: ["He d'estudiar.", "Tinc que estudiar.", "Hi ha que estudiar."], answer: "He d'estudiar.", explanation: "Obrigação: haver de." },
+      { question: "Forma do padrão para “perceber”:", options: ["adonar-se", "donar-se compte", "enterar-se"], answer: "adonar-se", explanation: "adonar-se: “No me n'havia adonat”." },
+      { question: "Forma do padrão para “é claro”:", options: ["per descomptat", "per suposat", "per supost"], answer: "per descomptat", explanation: "per descomptat (ou és clar)." },
+      { question: "Qual destas palavras é catalã padrão?", options: ["buscar", "enterar-se", "desde"], answer: "buscar", explanation: "“buscar” é catalão correto; as outras têm forma própria (assabentar-se, des de)." },
     ],
   },
   {
@@ -2945,7 +2945,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     sections: [
       {
         heading: "As vogais",
-        text: "No oriental, o «a» e o «e» átonos se fundem num [ə] («pare» [ˈpaɾə]); no central, o «o» átono soa [u] («poma» e «cosí» [kuˈzi]). No ocidental, as vogais átonas continuam distintas: «pare» [ˈpaɾe], «cosí» [koˈzi]. O maiorquino tem ainda um [ə] tônico que os outros não têm.",
+        text: "No oriental, o “a” e o “e” átonos se fundem num [ə] (“pare” [ˈpaɾə]); no central, o “o” átono soa [u] (“poma” e “cosí” [kuˈzi]). No ocidental, as vogais átonas continuam distintas: “pare” [ˈpaɾe], “cosí” [koˈzi]. O maiorquino tem ainda um [ə] tônico que os outros não têm.",
         table: {
           head: ["Palavra", "Central (Barcelona)", "Valenciano (Valência)", "Nord-occidental (Lleida)"],
           rows: [
@@ -2966,22 +2966,22 @@ export const GRAMMAR_CA: GrammarTopic[] = [
             ["sair", "sortir", "eixir / sortir", "eixir", "sortir"],
           ],
         },
-        text: "No nord-occidental ainda se ouve o artigo antigo «lo» (lo pare, lo gos), o mesmo de «Tirant lo Blanc». Todas essas formas são corretas na sua região; a língua padrão escolhe umas para a escrita comum, sem torná-las «mais certas» que as outras.",
+        text: "No nord-occidental ainda se ouve o artigo antigo “lo” (lo pare, lo gos), o mesmo de “Tirant lo Blanc”. Todas essas formas são corretas na sua região; a língua padrão escolhe umas para a escrita comum, sem torná-las “mais certas” que as outras.",
         examples: [
           ["Jo parlo català (Barcelona). Jo parle valencià (València).", "Eu falo catalão. Eu falo valenciano."],
-          ["Lo meu germà viu a Lleida.", "O meu irmão mora em Lleida (com o artigo «lo» da região)."],
+          ["Lo meu germà viu a Lleida.", "O meu irmão mora em Lleida (com o artigo “lo” da região)."],
         ],
       },
     ],
     pitfalls: [
-      "Não trate as variedades como «erradas»: «parle» é a forma normal em Valência.",
+      "Não trate as variedades como “erradas”: “parle” é a forma normal em Valência.",
       "A divisão em oriental e ocidental é uma classificação dos linguistas; a língua é uma só.",
-      "O [ə] das vogais átonas é típico do oriental; no valenciano o «e» átono soa [e].",
+      "O [ə] das vogais átonas é típico do oriental; no valenciano o “e” átono soa [e].",
     ],
     quiz: [
-      { question: "Como se diz «eu falo» em Valência?", options: ["parle", "parlo", "parl"], answer: "parle", explanation: "No valenciano, a 1ª pessoa do presente termina em -e." },
+      { question: "Como se diz “eu falo” em Valência?", options: ["parle", "parlo", "parl"], answer: "parle", explanation: "No valenciano, a 1ª pessoa do presente termina em -e." },
       { question: "E em Maiorca?", options: ["parl", "parle", "parli"], answer: "parl", explanation: "No balear, a 1ª pessoa não tem terminação: parl, cant." },
-      { question: "«Hoje» no valenciano é…", options: ["hui", "avui", "ahir"], answer: "hui", explanation: "Valenciano: hui; central: avui." },
+      { question: "“Hoje” no valenciano é…", options: ["hui", "avui", "ahir"], answer: "hui", explanation: "Valenciano: hui; central: avui." },
       { question: "Qual destes dialetos é ocidental?", options: ["valencià", "balear", "rossellonès"], answer: "valencià", explanation: "Ocidental: nord-occidental e valenciano." },
     ],
   },
@@ -2990,11 +2990,11 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     level: "C1.1",
     title: "O valenciano e as duas academias",
     emoji: "🍊",
-    summary: "Na Comunidade Valenciana, o nome oficial da língua é «valencià», e a norma é cuidada pela Acadèmia Valenciana de la Llengua (AVL), criada por lei em 1998. No resto do território, a referência é o Institut d'Estudis Catalans (IEC), fundado em 1907. As duas normas são muito próximas e aceitam formas uma da outra.",
+    summary: "Na Comunidade Valenciana, o nome oficial da língua é “valencià”, e a norma é cuidada pela Acadèmia Valenciana de la Llengua (AVL), criada por lei em 1998. No resto do território, a referência é o Institut d'Estudis Catalans (IEC), fundado em 1907. As duas normas são muito próximas e aceitam formas uma da outra.",
     sections: [
       {
         heading: "Uma história de normas",
-        text: "Em 1913 o IEC publicou as Normes ortogràfiques, preparadas por Pompeu Fabra. Em 1932, escritores e instituições valencianas assinaram em Castelló as «Normes de Castelló», que adaptavam essa ortografia ao valenciano. Em 2005, um parecer da AVL afirmou que a língua própria dos valencianos é a mesma que se fala na Catalunha, nas Ilhas Baleares e em Andorra — por isso o app ensina tudo como uma língua só, mostrando as variantes. Na sociedade valenciana o nome e a identidade da língua ainda geram debate, e muitos falantes preferem dizer que falam valenciano.",
+        text: "Em 1913 o IEC publicou as Normes ortogràfiques, preparadas por Pompeu Fabra. Em 1932, escritores e instituições valencianas assinaram em Castelló as “Normes de Castelló”, que adaptavam essa ortografia ao valenciano. Em 2005, um parecer da AVL afirmou que a língua própria dos valencianos é a mesma que se fala na Catalunha, nas Ilhas Baleares e em Andorra — por isso o app ensina tudo como uma língua só, mostrando as variantes. Na sociedade valenciana o nome e a identidade da língua ainda geram debate, e muitos falantes preferem dizer que falam valenciano.",
       },
       {
         heading: "Formas próprias do padrão valenciano",
@@ -3019,15 +3019,15 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "«Este» e «meua» não são erros: são as formas do padrão valenciano.",
-      "O acento de «anglés» (AVL) e «anglès» (IEC) mostra a pronúncia de cada região; as duas grafias são normativas.",
-      "Sobre o nome da língua, siga o costume do lugar: em Valência, «valencià».",
+      "“Este” e “meua” não são erros: são as formas do padrão valenciano.",
+      "O acento de “anglés” (AVL) e “anglès” (IEC) mostra a pronúncia de cada região; as duas grafias são normativas.",
+      "Sobre o nome da língua, siga o costume do lugar: em Valência, “valencià”.",
     ],
     quiz: [
       { question: "Quem cuida da norma na Comunidade Valenciana?", options: ["a AVL", "o IEC", "a RAE"], answer: "a AVL", explanation: "A Acadèmia Valenciana de la Llengua, criada por lei em 1998." },
-      { question: "«A minha casa» no padrão valenciano é…", options: ["la meua casa", "la mia casa", "la meva casa de"], answer: "la meua casa", explanation: "Possessivo valenciano: meua, teua, seua." },
+      { question: "“A minha casa” no padrão valenciano é…", options: ["la meua casa", "la mia casa", "la meva casa de"], answer: "la meua casa", explanation: "Possessivo valenciano: meua, teua, seua." },
       { question: "Em que ano foram assinadas as Normes de Castelló?", options: ["1932", "1913", "1998"], answer: "1932", explanation: "1913: normas do IEC; 1932: Castelló; 1998: lei da AVL." },
-      { question: "«Xiquet» quer dizer…", options: ["nen", "xic", "gos"], answer: "nen", explanation: "Xiquet = nen (menino, criança)." },
+      { question: "“Xiquet” quer dizer…", options: ["nen", "xic", "gos"], answer: "nen", explanation: "Xiquet = nen (menino, criança)." },
     ],
   },
   {
@@ -3035,11 +3035,11 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     level: "C1.1",
     title: "Baleares, Alguer e Rossilhão; e o aranês, uma língua vizinha",
     emoji: "🏝️",
-    summary: "O balear tem o artigo «salat» (es, sa), o alguerês é falado numa cidade da Sardenha desde o século XIV e o rossellonês convive com o francês desde 1659. No Vale de Aran, dentro da Catalunha, fala-se aranês, que não é catalão: é uma variedade do occitano.",
+    summary: "O balear tem o artigo “salat” (es, sa), o alguerês é falado numa cidade da Sardenha desde o século XIV e o rossellonês convive com o francês desde 1659. No Vale de Aran, dentro da Catalunha, fala-se aranês, que não é catalão: é uma variedade do occitano.",
     sections: [
       {
         heading: "O balear",
-        text: "O artigo vem do latim «ipse»: es, sa, ses (es cotxe, sa casa, ses cases); antes de vogal, s' (s'aigua). Há também o artigo pessoal «en» e «na» (en Joan, na Maria). A 1ª pessoa do presente não tem terminação (jo cant, jo parl), e muitas palavras são próprias: al·lot (menino), moix (gato), ca (cachorro), horabaixa (fim de tarde), idò (então). Restos do artigo salat existem também em alguns pontos da Costa Brava.",
+        text: "O artigo vem do latim “ipse”: es, sa, ses (es cotxe, sa casa, ses cases); antes de vogal, s' (s'aigua). Há também o artigo pessoal “en” e “na” (en Joan, na Maria). A 1ª pessoa do presente não tem terminação (jo cant, jo parl), e muitas palavras são próprias: al·lot (menino), moix (gato), ca (cachorro), horabaixa (fim de tarde), idò (então). Restos do artigo salat existem também em alguns pontos da Costa Brava.",
         examples: [
           ["Idò, anam a sa platja?", "Então, vamos à praia? (maiorquino)"],
           ["S'al·lot juga amb es moix.", "O menino brinca com o gato. (maiorquino)"],
@@ -3047,23 +3047,23 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: "O alguerês e o rossellonês",
-        text: "Em Alghero (em catalão, l'Alguer), na Sardenha, o catalão chegou com colonos no século XIV e sobreviveu até hoje, cercado pelo sardo e pelo italiano; a lei italiana de 1999 sobre minorias linguísticas o reconhece. Tem traços próprios, como o l entre vogais que pode soar como r. No Rossilhão, a Catalunha do Norte, que passou à França com o Tratado dos Pireneus (1659), o catalão convive com o francês e usa muito a negação com «pas»: «No ho sé pas».",
+        text: "Em Alghero (em catalão, l'Alguer), na Sardenha, o catalão chegou com colonos no século XIV e sobreviveu até hoje, cercado pelo sardo e pelo italiano; a lei italiana de 1999 sobre minorias linguísticas o reconhece. Tem traços próprios, como o l entre vogais que pode soar como r. No Rossilhão, a Catalunha do Norte, que passou à França com o Tratado dos Pireneus (1659), o catalão convive com o francês e usa muito a negação com “pas”: “No ho sé pas”.",
       },
       {
         heading: "O aranês",
-        text: "No Vale de Aran, nos Pireneus, fala-se aranês, uma variedade do gascão, que é um dialeto do occitano — a língua dos trovadores medievais do sul da França. Desde o Estatuto de 2006, o occitano (aranês em Aran) é língua oficial na Catalunha, ao lado do catalão e do castelhano. Parece catalão em muitas palavras, mas tem gramática e ortografia próprias: «obrigado» é «mercés».",
+        text: "No Vale de Aran, nos Pireneus, fala-se aranês, uma variedade do gascão, que é um dialeto do occitano — a língua dos trovadores medievais do sul da França. Desde o Estatuto de 2006, o occitano (aranês em Aran) é língua oficial na Catalunha, ao lado do catalão e do castelhano. Parece catalão em muitas palavras, mas tem gramática e ortografia próprias: “obrigado” é “mercés”.",
       },
     ],
     pitfalls: [
-      "«Es» e «sa» no balear são artigos, não pronomes: «sa platja» é «a praia».",
+      "“Es” e “sa” no balear são artigos, não pronomes: “sa platja” é “a praia”.",
       "O aranês não é um dialeto do catalão, e sim do occitano.",
-      "No Rossilhão, o «pas» da negação é normal, não um erro.",
+      "No Rossilhão, o “pas” da negação é normal, não um erro.",
     ],
     quiz: [
-      { question: "O que quer dizer «sa casa» em maiorquino?", options: ["la casa", "la seva casa", "aquesta casa"], answer: "la casa", explanation: "Artigo salat: sa = la." },
+      { question: "O que quer dizer “sa casa” em maiorquino?", options: ["la casa", "la seva casa", "aquesta casa"], answer: "la casa", explanation: "Artigo salat: sa = la." },
       { question: "O aranês é uma variedade de qual língua?", options: ["occità", "català", "basc"], answer: "occità", explanation: "Aranês = gascão, dialeto do occitano." },
       { question: "Em que ano o Rossilhão passou à França?", options: ["1659", "1714", "1492"], answer: "1659", explanation: "Tratado dos Pireneus, 1659." },
-      { question: "«Moix» em maiorquino é…", options: ["gat", "gos", "noi"], answer: "gat", explanation: "Moix = gato; ca = cachorro." },
+      { question: "“Moix” em maiorquino é…", options: ["gat", "gos", "noi"], answer: "gat", explanation: "Moix = gato; ca = cachorro." },
     ],
   },
   {
@@ -3071,7 +3071,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     level: "C1.2",
     title: "A nominalização e o estilo científico",
     emoji: "🔬",
-    summary: "Os textos científicos e técnicos preferem substantivos a verbos (la reducció del consum em vez de «reduir el consum»), a passiva pronominal (s'observa, es constata) e uma terminologia própria, coordenada pelo TERMCAT.",
+    summary: "Os textos científicos e técnicos preferem substantivos a verbos (la reducció del consum em vez de “reduir el consum”), a passiva pronominal (s'observa, es constata) e uma terminologia própria, coordenada pelo TERMCAT.",
     sections: [
       {
         heading: "Do verbo ao substantivo",
@@ -3094,7 +3094,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: "Termos, números e cautela",
-        text: "O TERMCAT propõe termos catalães para conceitos novos: maquinari (hardware), programari (software), correu brossa (spam), en línia (on-line). Os números usam vírgula decimal e o símbolo de porcentagem separado por espaço: «el 12,5 %», ou por extenso, «un 12,5 per cent». E o texto científico evita certezas absolutas: «sembla que», «les dades indiquen», «podria explicar».",
+        text: "O TERMCAT propõe termos catalães para conceitos novos: maquinari (hardware), programari (software), correu brossa (spam), en línia (on-line). Os números usam vírgula decimal e o símbolo de porcentagem separado por espaço: “el 12,5 %”, ou por extenso, “un 12,5 per cent”. E o texto científico evita certezas absolutas: “sembla que”, “les dades indiquen”, “podria explicar”.",
         examples: [
           ["Segons les dades, el fenomen podria estar relacionat amb el clima.", "Segundo os dados, o fenômeno poderia estar relacionado com o clima."],
           ["Cal instal·lar el programari abans de connectar el maquinari.", "É preciso instalar o software antes de conectar o hardware."],
@@ -3102,15 +3102,15 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "«L'anàlisi» é feminino: «una anàlisi detallada».",
-      "Porcentagem com espaço: «12 %».",
-      "Prefira o termo catalão quando existe: «programari», «en línia».",
+      "“L'anàlisi” é feminino: “una anàlisi detallada”.",
+      "Porcentagem com espaço: “12 %”.",
+      "Prefira o termo catalão quando existe: “programari”, “en línia”.",
     ],
     quiz: [
-      { question: "Substantivo de «créixer»:", options: ["el creixement", "la creixença", "el crescut"], answer: "el creixement", explanation: "créixer → el creixement." },
-      { question: "Complete: «Es va fer ___ anàlisi molt detallada.»", options: ["una", "un", "uns"], answer: "una", explanation: "anàlisi é feminino." },
-      { question: "«Software» em catalão padrão é…", options: ["programari", "maquinari", "programació"], answer: "programari", explanation: "programari = software; maquinari = hardware." },
-      { question: "Complete: «___ un augment de la temperatura.»", options: ["S'observa", "Observa", "Se observa"], answer: "S'observa", explanation: "Passiva pronominal: s'observa." },
+      { question: "Substantivo de “créixer”:", options: ["el creixement", "la creixença", "el crescut"], answer: "el creixement", explanation: "créixer → el creixement." },
+      { question: "Complete: “Es va fer ___ anàlisi molt detallada.”", options: ["una", "un", "uns"], answer: "una", explanation: "anàlisi é feminino." },
+      { question: "“Software” em catalão padrão é…", options: ["programari", "maquinari", "programació"], answer: "programari", explanation: "programari = software; maquinari = hardware." },
+      { question: "Complete: “___ un augment de la temperatura.”", options: ["S'observa", "Observa", "Se observa"], answer: "S'observa", explanation: "Passiva pronominal: s'observa." },
     ],
   },
   {
@@ -3118,11 +3118,11 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     level: "C1.2",
     title: "Estilo jornalístico e administrativo",
     emoji: "📰",
-    summary: "A notícia vai direto ao fato, com manchete no presente e as fontes citadas. O texto administrativo segue fórmulas fixas, como a «instància» com as partes EXPOSO e SOL·LICITO, e evita expressões vagas como «a nivell de» ou «en base a».",
+    summary: "A notícia vai direto ao fato, com manchete no presente e as fontes citadas. O texto administrativo segue fórmulas fixas, como a “instància” com as partes EXPOSO e SOL·LICITO, e evita expressões vagas como “a nivell de” ou “en base a”.",
     sections: [
       {
         heading: "A notícia",
-        text: "Manchetes no presente e sem artigos desnecessários: «El Parlament aprova la llei de residus». O primeiro parágrafo responde qui, què, quan, on i per què. As declarações se atribuem com verbos variados: ha declarat, ha explicat, ha afirmat, segons fonts de…",
+        text: "Manchetes no presente e sem artigos desnecessários: “El Parlament aprova la llei de residus”. O primeiro parágrafo responde qui, què, quan, on i per què. As declarações se atribuem com verbos variados: ha declarat, ha explicat, ha afirmat, segons fonts de…",
         examples: [
           ["L'Ajuntament de Girona obre una nova biblioteca al barri de Sant Narcís.", "A Prefeitura de Girona abre uma nova biblioteca no bairro de Sant Narcís."],
           ["Segons ha explicat la directora, el centre obrirà cada dia.", "Segundo explicou a diretora, o centro abrirá todos os dias."],
@@ -3130,7 +3130,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: "A instância",
-        text: "O requerimento formal à administração tem partes fixas: os dados de quem pede; EXPOSO (os fatos, em frases numeradas: «Que vaig presentar la sol·licitud el dia…»); SOL·LICITO (o pedido: «Que se'm concedeixi…»); lugar, data e assinatura; e o órgão a quem se dirige.",
+        text: "O requerimento formal à administração tem partes fixas: os dados de quem pede; EXPOSO (os fatos, em frases numeradas: “Que vaig presentar la sol·licitud el dia…”); SOL·LICITO (o pedido: “Que se'm concedeixi…”); lugar, data e assinatura; e o órgão a quem se dirige.",
         table: {
           head: ["Evite", "Use", "Português"],
           rows: [
@@ -3145,15 +3145,15 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Manchete no presente: «El Govern presenta…», não «El Govern ha presentat…».",
+      "Manchete no presente: “El Govern presenta…”, não “El Govern ha presentat…”.",
       "Na instância, EXPOSO (fatos) vem antes de SOL·LICITO (pedido).",
-      "Troque «a nivell de» por «pel que fa a».",
+      "Troque “a nivell de” por “pel que fa a”.",
     ],
     quiz: [
       { question: "Na instância, qual parte traz o pedido?", options: ["Sol·licito", "Exposo", "Atentament"], answer: "Sol·licito", explanation: "Exposo = fatos; Sol·licito = pedido." },
-      { question: "Forma recomendada no lugar de «en base a»:", options: ["a partir de", "a nivell de", "de cara a"], answer: "a partir de", explanation: "«en base a» se troca por «a partir de» ou «sobre la base de»." },
+      { question: "Forma recomendada no lugar de “en base a”:", options: ["a partir de", "a nivell de", "de cara a"], answer: "a partir de", explanation: "“en base a” se troca por “a partir de” ou “sobre la base de”." },
       { question: "Qual manchete segue o estilo jornalístico?", options: ["El Parlament aprova la llei.", "El Parlament ha aprovat la llei ahir.", "El Parlament aprovarà ahir la llei."], answer: "El Parlament aprova la llei.", explanation: "Manchete no presente, curta." },
-      { question: "Forma recomendada no lugar de «a nivell de salut»:", options: ["pel que fa a la salut", "de cara a la salut", "en base a la salut"], answer: "pel que fa a la salut", explanation: "«a nivell de» só se usa para níveis de verdade (a nivell del mar)." },
+      { question: "Forma recomendada no lugar de “a nivell de salut”:", options: ["pel que fa a la salut", "de cara a la salut", "en base a la salut"], answer: "pel que fa a la salut", explanation: "“a nivell de” só se usa para níveis de verdade (a nivell del mar)." },
     ],
   },
   {
@@ -3161,36 +3161,36 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     level: "C2",
     title: "Os clássicos: de Llull a Maragall",
     emoji: "✒️",
-    summary: "A literatura catalã tem oito séculos. Três momentos para conhecer: a Idade Média de Ramon Llull, o «Segle d'Or» valenciano do século XV (Ausiàs March, «Tirant lo Blanc») e a Renaixença do século XIX (Verdaguer, e depois Maragall).",
+    summary: "A literatura catalã tem oito séculos. Três momentos para conhecer: a Idade Média de Ramon Llull, o “Segle d'Or” valenciano do século XV (Ausiàs March, “Tirant lo Blanc”) e a Renaixença do século XIX (Verdaguer, e depois Maragall).",
     sections: [
       {
         heading: "Idade Média e Segle d'Or",
-        text: "Ramon Llull (c. 1232–1316), de Maiorca, escreveu em catalão, latim e árabe; o «Blanquerna» e o «Llibre de meravelles» usam o catalão para a filosofia e para o romance. No século XV, Valência viveu o seu «Segle d'Or». Ausiàs March renovou a poesia amorosa e moral; Joanot Martorell escreveu «Tirant lo Blanc», publicado em Valência em 1490, que Cervantes, no «Dom Quixote», fez um personagem chamar de o melhor livro do mundo no seu estilo. Um verso de March muito citado:",
+        text: "Ramon Llull (c. 1232–1316), de Maiorca, escreveu em catalão, latim e árabe; o “Blanquerna” e o “Llibre de meravelles” usam o catalão para a filosofia e para o romance. No século XV, Valência viveu o seu “Segle d'Or”. Ausiàs March renovou a poesia amorosa e moral; Joanot Martorell escreveu “Tirant lo Blanc”, publicado em Valência em 1490, que Cervantes, no “Dom Quixote”, fez um personagem chamar de o melhor livro do mundo no seu estilo. Um verso de March muito citado:",
         examples: [
           ["Veles e vents han mos desigs complir, / faent camins dubtosos per la mar.", "Velas e ventos hão de cumprir os meus desejos, / fazendo caminhos incertos pelo mar. (Ausiàs March, século XV)"],
         ],
       },
       {
         heading: "Renaixença e Modernisme",
-        text: "Depois de séculos em que a literatura culta se escreveu sobretudo em castelhano, a Renaixença do século XIX recuperou o catalão literário. Os Jocs Florals, restaurados em Barcelona em 1859, premiaram Jacint Verdaguer, autor dos poemas épicos «L'Atlàntida» (1877) e «Canigó» (1886). Joan Maragall (1860–1911) defendeu a «paraula viva», a poesia próxima da fala; «La vaca cega» começa assim:",
+        text: "Depois de séculos em que a literatura culta se escreveu sobretudo em castelhano, a Renaixença do século XIX recuperou o catalão literário. Os Jocs Florals, restaurados em Barcelona em 1859, premiaram Jacint Verdaguer, autor dos poemas épicos “L'Atlàntida” (1877) e “Canigó” (1886). Joan Maragall (1860–1911) defendeu a “paraula viva”, a poesia próxima da fala; “La vaca cega” começa assim:",
         examples: [
           ["Topant de cap en una i altra soca, / avançant d'esma pel camí de l'aigua, / se'n ve la vaca tota sola. És cega.", "Batendo a cabeça num e noutro tronco, / avançando por instinto pelo caminho da água, / vem a vaca sozinha. É cega. (Joan Maragall)"],
         ],
       },
       {
         heading: "Século XX",
-        text: "No século XX, a literatura catalã seguiu viva apesar das proibições do franquismo. Um romance muito traduzido é «La plaça del Diamant» (1962), de Mercè Rodoreda, sobre a vida de uma mulher em Barcelona antes, durante e depois da Guerra Civil.",
+        text: "No século XX, a literatura catalã seguiu viva apesar das proibições do franquismo. Um romance muito traduzido é “La plaça del Diamant” (1962), de Mercè Rodoreda, sobre a vida de uma mulher em Barcelona antes, durante e depois da Guerra Civil.",
       },
     ],
     pitfalls: [
-      "Os textos medievais têm ortografia antiga («e» por «i», «mos» por «els meus»): leia em edição anotada.",
-      "«Tirant lo Blanc» usa o artigo antigo «lo», ainda vivo em Lleida.",
+      "Os textos medievais têm ortografia antiga (“e” por “i”, “mos” por “els meus”): leia em edição anotada.",
+      "“Tirant lo Blanc” usa o artigo antigo “lo”, ainda vivo em Lleida.",
       "Verdaguer e Maragall são do século XIX; Llull, do XIII; March e Martorell, do XV.",
     ],
     quiz: [
-      { question: "Quem escreveu «Tirant lo Blanc»?", options: ["Joanot Martorell", "Ramon Llull", "Jacint Verdaguer"], answer: "Joanot Martorell", explanation: "Publicado em Valência em 1490." },
+      { question: "Quem escreveu “Tirant lo Blanc”?", options: ["Joanot Martorell", "Ramon Llull", "Jacint Verdaguer"], answer: "Joanot Martorell", explanation: "Publicado em Valência em 1490." },
       { question: "Em que século viveu Ausiàs March?", options: ["segle XV", "segle XIII", "segle XIX"], answer: "segle XV", explanation: "O Segle d'Or valenciano." },
-      { question: "Quem escreveu «Canigó»?", options: ["Jacint Verdaguer", "Joan Maragall", "Ausiàs March"], answer: "Jacint Verdaguer", explanation: "Canigó, 1886." },
+      { question: "Quem escreveu “Canigó”?", options: ["Jacint Verdaguer", "Joan Maragall", "Ausiàs March"], answer: "Jacint Verdaguer", explanation: "Canigó, 1886." },
       { question: "O que defendia Maragall?", options: ["la paraula viva", "l'article salat", "les Normes de Castelló"], answer: "la paraula viva", explanation: "A poesia próxima da fala." },
     ],
   },
@@ -3199,7 +3199,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     level: "C2",
     title: "Provérbios e o catalão antigo",
     emoji: "🏺",
-    summary: "Os provérbios («refranys») guardam a sabedoria do campo e do mar, e o catalão antigo aparece em textos desde o século XII, como as Homilies d'Organyà. Conhecer os dois ajuda a ler literatura e a entender as conversas dos mais velhos.",
+    summary: "Os provérbios (“refranys”) guardam a sabedoria do campo e do mar, e o catalão antigo aparece em textos desde o século XII, como as Homilies d'Organyà. Conhecer os dois ajuda a ler literatura e a entender as conversas dos mais velhos.",
     sections: [
       {
         heading: "Refranys",
@@ -3219,7 +3219,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: "O catalão antigo",
-        text: "As Homilies d'Organyà, sermões do fim do século XII encontrados em 1904 na casa paroquial de Organyà, estão entre os textos mais antigos inteiramente em catalão. No século XIII, o rei Jaume I ditou o «Llibre dels fets», a primeira das quatro grandes crônicas medievais. No catalão antigo, «e» era a conjunção «i», o artigo masculino era muitas vezes «lo» e havia formas como «mos» (os meus) e «llur» (deles).",
+        text: "As Homilies d'Organyà, sermões do fim do século XII encontrados em 1904 na casa paroquial de Organyà, estão entre os textos mais antigos inteiramente em catalão. No século XIII, o rei Jaume I ditou o “Llibre dels fets”, a primeira das quatro grandes crônicas medievais. No catalão antigo, “e” era a conjunção “i”, o artigo masculino era muitas vezes “lo” e havia formas como “mos” (os meus) e “llur” (deles).",
         examples: [
           ["Qui no vulgui pols, que no vagi a l'era.", "Quem não quer poeira que não vá à eira."],
           ["Qui matina, fa farina.", "Quem madruga faz farinha."],
@@ -3228,14 +3228,14 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     ],
     pitfalls: [
       "Os refranys não se traduzem palavra por palavra: procure o equivalente.",
-      "«Era» no provérbio é a eira (lugar de debulhar), não o verbo ser.",
-      "No catalão antigo, «e» = «i» (e); não confunda com o «e» átono de hoje.",
+      "“Era” no provérbio é a eira (lugar de debulhar), não o verbo ser.",
+      "No catalão antigo, “e” = “i” (e); não confunda com o “e” átono de hoje.",
     ],
     quiz: [
-      { question: "Qual refrany corresponde a «Deus ajuda quem cedo madruga»?", options: ["Qui matina, fa farina.", "On menja un, mengen dos.", "Qui dia passa, any empeny."], answer: "Qui matina, fa farina.", explanation: "Matinar = madrugar." },
+      { question: "Qual refrany corresponde a “Deus ajuda quem cedo madruga”?", options: ["Qui matina, fa farina.", "On menja un, mengen dos.", "Qui dia passa, any empeny."], answer: "Qui matina, fa farina.", explanation: "Matinar = madrugar." },
       { question: "As Homilies d'Organyà são do…", options: ["segle XII", "segle XV", "segle XIX"], answer: "segle XII", explanation: "Fim do século XII; encontradas em 1904." },
-      { question: "Quem ditou o «Llibre dels fets»?", options: ["Jaume I", "Ramon Llull", "Ausiàs March"], answer: "Jaume I", explanation: "O rei Jaume I, no século XIII." },
-      { question: "Complete: «De mica en mica s'omple la ___.»", options: ["pica", "casa", "boca"], answer: "pica", explanation: "A pica é a pia (de pedra)." },
+      { question: "Quem ditou o “Llibre dels fets”?", options: ["Jaume I", "Ramon Llull", "Ausiàs March"], answer: "Jaume I", explanation: "O rei Jaume I, no século XIII." },
+      { question: "Complete: “De mica en mica s'omple la ___.”", options: ["pica", "casa", "boca"], answer: "pica", explanation: "A pica é a pia (de pedra)." },
     ],
   },
   {
@@ -3248,13 +3248,13 @@ export const GRAMMAR_CA: GrammarTopic[] = [
     sections: [
       {
         heading: 'Numerais cardinais, concordância e o hífen',
-        text: "Os numerais em catalão concordam em gênero no «2» (dos/dues) e nas centenas (dos-cents/dues-centes). O hífen aparece em dois lugares: entre dezena e unidade («trenta-quatre»; só o «vint» usa «-i-»: «vint-i-dos») e entre unidade e centena, para formar a própria centena («dos-cents», «cinc-centes»). Mas depois do bloco da centena, antes da dezena/unidade seguinte, fica um espaço, não hífen: «dos-cents quaranta-tres», não «dos-cents-quaranta-tres».",
+        text: "Os numerais em catalão concordam em gênero no “2” (dos/dues) e nas centenas (dos-cents/dues-centes). O hífen aparece em dois lugares: entre dezena e unidade (“trenta-quatre”; só o “vint” usa “-i-”: “vint-i-dos”) e entre unidade e centena, para formar a própria centena (“dos-cents”, “cinc-centes”). Mas depois do bloco da centena, antes da dezena/unidade seguinte, fica um espaço, não hífen: “dos-cents quaranta-tres”, não “dos-cents-quaranta-tres”.",
         table: {
           head: ['Numeral/regra', 'Exemplo em catalão', 'Explicação'],
           rows: [
-            ['Concordância de gênero (2)', 'dos homes / dues dones', 'usam-se «dos» (masc.) e «dues» (fem.)'],
+            ['Concordância de gênero (2)', 'dos homes / dues dones', 'usam-se “dos” (masc.) e “dues” (fem.)'],
             ['Concordância nas centenas', 'dos-cents euros / dues-centes pàgines', 'a centena flexiona em gênero, com hífen interno'],
-            ['Hífen entre dezena e unidade', 'vint-i-dos / trenta-quatre', 'hífen sempre; só «vint» leva «-i-»'],
+            ['Hífen entre dezena e unidade', 'vint-i-dos / trenta-quatre', 'hífen sempre; só “vint” leva “-i-”'],
             ['Espaço entre centena e o resto', 'dos-cents quaranta-tres', 'depois do bloco da centena vem um espaço, não hífen'],
           ],
         },
@@ -3265,7 +3265,7 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: 'A hora: o sistema tradicional de quartos ("sistema de quarts")',
-        text: 'O catalão tem um sistema tradicional, muito usado na fala e na mídia, que conta quantos quartos de hora já passaram a caminho da PRÓXIMA hora: [quantidade de quartos] + «de» + [hora seguinte]. Para os minutos que não caem exatamente num quarto, soma-se «i cinc» ou «i deu» (sempre somando, nunca subtraindo).',
+        text: 'O catalão tem um sistema tradicional, muito usado na fala e na mídia, que conta quantos quartos de hora já passaram a caminho da PRÓXIMA hora: [quantidade de quartos] + “de” + [hora seguinte]. Para os minutos que não caem exatamente num quarto, soma-se “i cinc” ou “i deu” (sempre somando, nunca subtraindo).',
         table: {
           head: ['Hora', 'Sistema de quarts', 'Lógica'],
           rows: [
@@ -3283,11 +3283,11 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
       {
         heading: 'Datas, dias da semana e anos',
-        text: 'O ano não leva «en» (isso é castelhano): usa-se o artigo, «el 2026», ou «l\'any 2026». Nas datas completas, «el» + dia + «de» + mês. Para um dia específico da semana, artigo no singular («el dilluns»); para algo que se repete toda semana, artigo no plural («els dissabtes»).',
+        text: 'O ano não leva “en” (isso é castelhano): usa-se o artigo, “el 2026”, ou “l\'any 2026”. Nas datas completas, “el” + dia + “de” + mês. Para um dia específico da semana, artigo no singular (“el dilluns”); para algo que se repete toda semana, artigo no plural (“els dissabtes”).',
         table: {
           head: ['Elemento', 'Exemplo em catalão', 'Tradução'],
           rows: [
-            ['Ano (sem «en»)', "El concert serà el 2026 (ou l'any 2026).", 'O show será em 2026.'],
+            ['Ano (sem “en”)', "El concert serà el 2026 (ou l'any 2026).", 'O show será em 2026.'],
             ['Data completa', 'Avui és el 28 de setembre.', 'Hoje é 28 de setembro.'],
             ['Dia específico', 'El dilluns tinc examen de català.', 'Na segunda-feira tenho prova de catalão.'],
             ['Recorrência', 'Els dissabtes faig esport.', 'Aos sábados faço esporte.'],
@@ -3300,22 +3300,22 @@ export const GRAMMAR_CA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Nada de «en» antes do ano: «el 2026» ou «l\'any 2026», nunca «en 2026».',
-      "«Dos» é masculino: nas horas, sempre feminino, «són les dues», nunca «són les dos».",
-      "Entre o bloco da centena e o que vem depois é espaço, não hífen: «dos-cents quaranta-tres», não «dos-cents-quaranta-tres».",
+      'Nada de “en” antes do ano: “el 2026” ou “l\'any 2026”, nunca “en 2026”.',
+      "“Dos” é masculino: nas horas, sempre feminino, “són les dues”, nunca “són les dos”.",
+      "Entre o bloco da centena e o que vem depois é espaço, não hífen: “dos-cents quaranta-tres”, não “dos-cents-quaranta-tres”.",
     ],
     quiz: [
       {
         question: 'Como se diz 07:30 no sistema tradicional de quartos?',
         options: ['dos quarts de vuit', "dos quarts d'vuit", 'set i mitja'],
         answer: 'dos quarts de vuit',
-        explanation: '07:30 é «dois quartos a caminho das oito». «Vuit» começa com consoante (som [b]), então não há elisão: «de vuit», não «d\'vuit».',
+        explanation: '07:30 é “dois quartos a caminho das oito”. “Vuit” começa com consoante (som [b]), então não há elisão: “de vuit”, não “d\'vuit”.',
       },
       {
-        question: 'Como se diz corretamente «faremos a viagem em 2025»?',
+        question: 'Como se diz corretamente “faremos a viagem em 2025”?',
         options: ['Farem el viatge en 2025.', 'Farem el viatge el 2025.', 'Farem el viatge a 2025.'],
         answer: 'Farem el viatge el 2025.',
-        explanation: 'Catalão não usa «en» com anos isolados: «el 2025» ou «l\'any 2025».',
+        explanation: 'Catalão não usa “en” com anos isolados: “el 2025” ou “l\'any 2025”.',
       },
     ],
   },

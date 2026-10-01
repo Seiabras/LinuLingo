@@ -93,7 +93,7 @@ export default function ResourcesScreen() {
           {res.exams.length === 0 && (
             <Card>
               <Text className="leading-6 text-slate-700 dark:text-slate-200">
-                O {nomeIdioma(lang.name)} ainda não tem uma prova de proficiência internacional padronizada. Veja na aba «💡 Dicas» como comprovar e medir o seu nível.
+                O {nomeIdioma(lang.name)} ainda não tem uma prova de proficiência internacional padronizada. Veja na aba “💡 Dicas” como comprovar e medir o seu nível.
               </Text>
             </Card>
           )}

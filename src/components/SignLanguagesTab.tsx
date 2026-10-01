@@ -106,7 +106,7 @@ function Structure() {
       <Card className="gap-2">
         <Text className="text-lg font-extrabold text-slate-900 dark:text-white">Os cinco parâmetros</Text>
         <Text className="text-base leading-6 text-slate-700 dark:text-slate-300">
-          Nas línguas faladas, as palavras são feitas de sons (fonemas); trocar um som troca a palavra: «pato» × «bato». Nas línguas de sinais, os sinais são feitos de cinco parâmetros, e trocar um deles também troca o sinal. Por isso a fonologia estuda as duas modalidades. William Stokoe, que descreveu a ASL em 1960, chamou essas unidades de «queremas» (do grego «mão»); hoje se diz fonologia mesmo.
+          Nas línguas faladas, as palavras são feitas de sons (fonemas); trocar um som troca a palavra: “pato” × “bato”. Nas línguas de sinais, os sinais são feitos de cinco parâmetros, e trocar um deles também troca o sinal. Por isso a fonologia estuda as duas modalidades. William Stokoe, que descreveu a ASL em 1960, chamou essas unidades de “queremas” (do grego “mão”); hoje se diz fonologia mesmo.
         </Text>
       </Card>
       {PARAMETERS.map((p) => {

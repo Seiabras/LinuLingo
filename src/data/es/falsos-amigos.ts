@@ -21,11 +21,11 @@ export const FALSE_FRIENDS_ES: FalseFriend[] = [
   },
   {
     word: 'ano',
-    means: 'ânus (cuidado: sem o til do ñ, «año» vira isto!)',
+    means: 'ânus (cuidado: sem o til do ñ, “año” vira isto!)',
     looksLike: 'ano (do calendário)',
     forThat: 'año',
     emoji: '⚠️',
-    example: ['¡Feliz año nuevo! Se escribe con eñe, no «ano».', 'Feliz ano novo! Escreve-se com eñe, não «ano».'],
+    example: ['¡Feliz año nuevo! Se escribe con eñe, no “ano”.', 'Feliz ano novo! Escreve-se com eñe, não “ano”.'],
   },
   {
     word: 'oficina',
@@ -89,7 +89,7 @@ export const FALSE_FRIENDS_ES: FalseFriend[] = [
     looksLike: 'sobrenome',
     forThat: 'apellido',
     emoji: '🏷️',
-    example: ['En la escuela le pusieron el sobrenombre de «el Flaco».', 'Na escola deram a ele o apelido de «o Magrelo».'],
+    example: ['En la escuela le pusieron el sobrenombre de “el Flaco”.', 'Na escola deram a ele o apelido de “o Magrelo”.'],
   },
   {
     word: 'borracha',
@@ -117,7 +117,7 @@ export const FALSE_FRIENDS_ES: FalseFriend[] = [
   },
   {
     word: 'apenas',
-    means: 'mal, quase não; também «assim que»',
+    means: 'mal, quase não; também “assim que”',
     looksLike: 'apenas (somente)',
     forThat: 'solo, solamente',
     emoji: '🤏',
@@ -157,7 +157,7 @@ export const FALSE_FRIENDS_ES: FalseFriend[] = [
   },
   {
     word: 'pelado',
-    means: 'de cabelo raspado, careca; também descascado; em vários países, «sem dinheiro»',
+    means: 'de cabelo raspado, careca; também descascado; em vários países, “sem dinheiro”',
     looksLike: 'pelado (nu)',
     forThat: 'desnudo',
     emoji: '👨‍🦲',
@@ -189,7 +189,7 @@ export const FALSE_FRIENDS_ES: FalseFriend[] = [
   },
   {
     word: 'firma',
-    means: 'assinatura (também «firma, empresa», mas bem menos)',
+    means: 'assinatura (também “firma, empresa”, mas bem menos)',
     looksLike: 'firma (empresa)',
     forThat: 'empresa',
     emoji: '✍️',
@@ -221,7 +221,7 @@ export const FALSE_FRIENDS_ES: FalseFriend[] = [
   },
   {
     word: 'pastel',
-    means: 'bolo, torta doce (no Rio da Prata, «torta»)',
+    means: 'bolo, torta doce (no Rio da Prata, “torta”)',
     looksLike: 'pastel (de feira)',
     forThat: 'empanada frita',
     emoji: '🎂',
@@ -285,7 +285,7 @@ export const FALSE_FRIENDS_ES: FalseFriend[] = [
   },
   {
     word: 'aceite',
-    means: 'óleo (de cozinha, de motor); «aceite de oliva» é o azeite',
+    means: 'óleo (de cozinha, de motor); “aceite de oliva” é o azeite',
     looksLike: 'azeite (só o de oliva)',
     forThat: 'aceite de oliva',
     emoji: '🫗',
@@ -325,7 +325,7 @@ export const FALSE_FRIENDS_ES: FalseFriend[] = [
   },
   {
     word: 'esposas',
-    means: 'algemas (além de «esposas», mulheres casadas)',
+    means: 'algemas (além de “esposas”, mulheres casadas)',
     looksLike: 'esposas (só as mulheres casadas)',
     forThat: 'esposas, mujeres',
     emoji: '🔗',
@@ -341,7 +341,7 @@ export const FALSE_FRIENDS_ES: FalseFriend[] = [
   },
   {
     word: 'ligar',
-    means: 'paquerar, «ficar» (sobretudo na Espanha); também atar, unir',
+    means: 'paquerar, “ficar” (sobretudo na Espanha); também atar, unir',
     looksLike: 'ligar (telefonar; ligar aparelho)',
     forThat: 'llamar; prender, encender',
     emoji: '😉',
@@ -497,7 +497,7 @@ export const FALSE_FRIENDS_ES: FalseFriend[] = [
     looksLike: 'novela (de TV)',
     forThat: 'telenovela',
     emoji: '📖',
-    example: ['«Cien años de soledad» es una novela de García Márquez.', '«Cem anos de solidão» é um romance de García Márquez.'],
+    example: ['“Cien años de soledad” es una novela de García Márquez.', '“Cem anos de solidão” é um romance de García Márquez.'],
   },
   {
     word: 'romance',
@@ -669,7 +669,7 @@ export const FALSE_FRIENDS_ES: FalseFriend[] = [
   },
   {
     word: 'mala',
-    means: 'má, ruim (feminino de «malo»)',
+    means: 'má, ruim (feminino de “malo”)',
     looksLike: 'mala (de viagem)',
     forThat: 'maleta; valija (Río de la Plata)',
     emoji: '👎',

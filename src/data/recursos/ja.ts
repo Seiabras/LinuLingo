@@ -136,7 +136,7 @@ export const RECURSOS_JA: LanguageResources = {
       by: 'Hirokazu Kore-eda',
       year: '2018',
       level: 'B2',
-      why: 'Palma de Ouro: uma «família» que vive de pequenos furtos em Tóquio. Fala natural, cheia das contrações do japonês do dia a dia.',
+      why: 'Palma de Ouro: uma “família” que vive de pequenos furtos em Tóquio. Fala natural, cheia das contrações do japonês do dia a dia.',
     },
     // séries
     {
@@ -193,7 +193,7 @@ export const RECURSOS_JA: LanguageResources = {
       by: 'Banana Yoshimoto',
       year: '1988',
       level: 'B1',
-      why: 'Novela curta sobre luto e amizade, em linguagem simples e coloquial — um dos primeiros livros «de verdade» que muitos estudantes conseguem ler.',
+      why: 'Novela curta sobre luto e amizade, em linguagem simples e coloquial — um dos primeiros livros “de verdade” que muitos estudantes conseguem ler.',
     },
     {
       kind: 'livro',
@@ -240,7 +240,7 @@ export const RECURSOS_JA: LanguageResources = {
       by: 'Kyu Sakamoto',
       year: '1961',
       level: 'A2',
-      why: 'Chegou ao 1º lugar nos Estados Unidos em 1963, lá rebatizada de «Sukiyaki»; letra lenta e repetitiva, perfeita para começar.',
+      why: 'Chegou ao 1º lugar nos Estados Unidos em 1963, lá rebatizada de “Sukiyaki”; letra lenta e repetitiva, perfeita para começar.',
     },
     {
       kind: 'musica',
@@ -265,7 +265,7 @@ export const RECURSOS_JA: LanguageResources = {
       by: 'Kenshi Yonezu',
       year: '2018',
       level: 'B1',
-      why: 'Tema do dorama «Unnatural» e um dos maiores sucessos da era do streaming no Japão: letra poética sobre perda, cantada com dicção clara.',
+      why: 'Tema do dorama “Unnatural” e um dos maiores sucessos da era do streaming no Japão: letra poética sobre perda, cantada com dicção clara.',
     },
     {
       kind: 'musica',
@@ -274,7 +274,7 @@ export const RECURSOS_JA: LanguageResources = {
       by: 'YOASOBI',
       year: '2023',
       level: 'B2',
-      why: 'Abertura do anime «Oshi no Ko» e sucesso mundial; o rap rapidíssimo é um desafio de escuta — acompanhe com a letra.',
+      why: 'Abertura do anime “Oshi no Ko” e sucesso mundial; o rap rapidíssimo é um desafio de escuta — acompanhe com a letra.',
     },
     // podcasts e vídeo
     {
@@ -340,8 +340,8 @@ export const RECURSOS_JA: LanguageResources = {
   ],
   tips: [
     'Comece pelo hiragana e pelo katakana (46 sinais básicos cada): em uma ou duas semanas você lê tudo o que tem furigana. Largue a romanização o quanto antes.',
-    'Aprenda kanji dentro de palavras, não isolados: 学生 (gakusei, «estudante») ensina 学 e 生 de uma vez. Um app de revisão espaçada, como o Anki, ajuda a manter o ritmo de alguns por dia.',
-    'Brasileiro tem vantagem na pronúncia: as cinco vogais japonesas são quase as nossas. O cuidado é com a duração — おばさん (obasan, «tia») × おばあさん (obāsan, «avó»), きて (kite, «venha») × きって (kitte, «selo»).',
+    'Aprenda kanji dentro de palavras, não isolados: 学生 (gakusei, “estudante”) ensina 学 e 生 de uma vez. Um app de revisão espaçada, como o Anki, ajuda a manter o ritmo de alguns por dia.',
+    'Brasileiro tem vantagem na pronúncia: as cinco vogais japonesas são quase as nossas. O cuidado é com a duração — おばさん (obasan, “tia”) × おばあさん (obāsan, “avó”), きて (kite, “venha”) × きって (kitte, “selo”).',
     'Aprenda desde cedo a forma educada (です/ます) e a simples (だ, dicionário): anime e mangá usam muito a simples, mas com desconhecidos e no trabalho você precisa da educada.',
     'A comunidade nikkei do Brasil, a maior fora do Japão, é um recurso: a Liberdade, em São Paulo, os kaikan (associações culturais) espalhados pelo país, o Bunkyo e os cursos da Fundação Japão oferecem aulas, eventos e gente para conversar.',
   ],

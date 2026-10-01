@@ -17,8 +17,8 @@ async function db0() {
 
 test('caderno: o mesmo item errado de novo soma, não duplica', async () => {
   const db = await db0();
-  await logMistake(db, { language: 'es', source: 'falsos-amigos', key: 'exquisito', prompt: 'O que quer dizer «exquisito»?', expected: 'delicioso', given: 'esquisito' });
-  await logMistake(db, { language: 'es', source: 'falsos-amigos', key: 'exquisito', prompt: 'O que quer dizer «exquisito»?', expected: 'delicioso', given: 'estranho' });
+  await logMistake(db, { language: 'es', source: 'falsos-amigos', key: 'exquisito', prompt: 'O que quer dizer “exquisito”?', expected: 'delicioso', given: 'esquisito' });
+  await logMistake(db, { language: 'es', source: 'falsos-amigos', key: 'exquisito', prompt: 'O que quer dizer “exquisito”?', expected: 'delicioso', given: 'estranho' });
   await logMistake(db, { language: 'es', source: 'escuta', key: 'perro', prompt: 'Qual palavra você ouviu?', expected: 'perro', given: 'pero', speak: 'perro', byEar: true, options: ['pero', 'perro', 'peor', 'pera'] });
   await logMistake(db, { language: 'ro', source: 'palacio', key: 'casă', prompt: 'casă', expected: 'feminino', given: 'neutro' });
   const es = await listMistakes(db, 'es');
@@ -72,7 +72,7 @@ test('caderno: a revisão usa as opções originais, ou a certa, a errada e outr
   assert.deepEqual(alone.options, [], 'sem opções: a pessoa diz se lembrou');
 });
 
-test('caderno: entra na cópia do progresso e sai no «apagar progresso»', async () => {
+test('caderno: entra na cópia do progresso e sai no “apagar progresso”', async () => {
   const db = await db0();
   await logMistake(db, { language: 'ro', source: 'palacio', key: 'casă', prompt: 'casă', expected: 'feminino', given: 'neutro' });
   const other = await db0();
@@ -133,8 +133,8 @@ test('caderno ↔ SRS: a revisão do sprint já aplica o SM-2 (sem penalidade do
   const db = await db0();
   await ensurePack(db, 'es');
   const id = await vocabIdForMistake(db, { language: 'es', key: 'perro' });
-  await logMistake(db, { language: 'es', source: 'revisao', key: id!, prompt: 'O que é «perro»?', expected: 'cachorro', speak: 'perro' });
+  await logMistake(db, { language: 'es', source: 'revisao', key: id!, prompt: 'O que é “perro”?', expected: 'cachorro', speak: 'perro' });
   assert.equal((await db.getFirstAsync<{ n: number }>('SELECT COUNT(*) AS n FROM User_SRS_State'))?.n, 0);
-  await logMistake(db, { language: 'es', source: 'gramatica', key: '¿Cuál es el plural de «luz»?', prompt: '?', expected: 'luces' });
+  await logMistake(db, { language: 'es', source: 'gramatica', key: '¿Cuál es el plural de “luz”?', prompt: '?', expected: 'luces' });
   assert.equal((await db.getFirstAsync<{ n: number }>('SELECT COUNT(*) AS n FROM User_SRS_State'))?.n, 0);
 });

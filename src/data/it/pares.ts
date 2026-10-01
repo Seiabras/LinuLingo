@@ -16,13 +16,13 @@ export const PARES_IT: MinimalPairs = {
       id: 'n-gn',
       name: 'n × gn',
       sounds: ['n', 'ɲː'],
-      tip: 'O «gn» é o nosso «nh» (e em italiano sempre um pouco longo): campana (sino) × campagna (campo).',
+      tip: 'O “gn” é o nosso “nh” (e em italiano sempre um pouco longo): campana (sino) × campagna (campo).',
     },
     {
       id: 'l-gli',
       name: 'l × gli',
       sounds: ['l', 'ʎː'],
-      tip: 'O «gli» é o nosso «lh»: fili (fios) × figli (filhos). O «i» depois de «gl» não se pronuncia quando vem outra vogal (moglie = «molhe»).',
+      tip: 'O “gli” é o nosso “lh”: fili (fios) × figli (filhos). O “i” depois de “gl” não se pronuncia quando vem outra vogal (moglie = “molhe”).',
     },
   ],
   pairs: [

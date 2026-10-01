@@ -27,7 +27,7 @@ export const STORIES_LLD: StorySeed[] = [
         emoji: '😊',
         choices: [
           { text: 'Iö sun da São Paulo.', translation: 'Sou de São Paulo.', next: 'final_bun' },
-          { text: 'Iö bëri ega.', translation: 'Eu bebo água.', wrong: 'Isso não responde de onde você é. Use «Iö sun da…».' },
+          { text: 'Iö bëri ega.', translation: 'Eu bebo água.', wrong: 'Isso não responde de onde você é. Use “Iö sun da…”.' },
         ],
       },
       final_bun: {
@@ -51,7 +51,7 @@ export const STORIES_LLD: StorySeed[] = [
     title: 'Aste pa fredesc?',
     emoji: '👪',
     summary: 'Tone, um amigo do vale de Badia, pergunta pela sua família e convida você para comer com a família dele no domingo.',
-    cultural_context: 'Em badiot, «da nos» quer dizer «na nossa casa», como o italiano «da noi»; e «ion» (com prazer) é um jeito simpático de aceitar um convite.',
+    cultural_context: 'Em badiot, “da nos” quer dizer “na nossa casa”, como o italiano “da noi”; e “ion” (com prazer) é um jeito simpático de aceitar um convite.',
     start: 'inicio',
     nodes: {
       inicio: {
@@ -60,7 +60,7 @@ export const STORIES_LLD: StorySeed[] = [
         emoji: '📱',
         choices: [
           { text: 'Sce, iö á n fre y na so.', translation: 'Sim, tenho um irmão e uma irmã.', next: 'frars' },
-          { text: 'Mia ciasa é picera.', translation: 'A minha casa é pequena.', wrong: 'Isso não responde se você tem irmãos. Use «iö á…».' },
+          { text: 'Mia ciasa é picera.', translation: 'A minha casa é pequena.', wrong: 'Isso não responde se você tem irmãos. Use “iö á…”.' },
         ],
       },
       frars: {
@@ -69,7 +69,7 @@ export const STORIES_LLD: StorySeed[] = [
         emoji: '🍽️',
         choices: [
           { text: 'Sce, ion! Dilan!', translation: 'Sim, com prazer! Obrigado!', next: 'final_bun' },
-          { text: 'Iö sun da São Paulo.', translation: 'Sou de São Paulo.', wrong: 'Tone fez um convite: responda com «sce, ion!» ou «no, dilan».' },
+          { text: 'Iö sun da São Paulo.', translation: 'Sou de São Paulo.', wrong: 'Tone fez um convite: responda com “sce, ion!” ou “no, dilan”.' },
         ],
       },
       final_bun: {

@@ -33,7 +33,7 @@ export const SCENARIOS_BG: ScenarioSeed[] = [
     cefr: 'A1',
     register: 'informal',
     persona: 'Мари́я, прия́телка от ку́рса по бъ́лгарски',
-    description: 'Maria convida você para um café no centro de Sófia. É uma conversa entre amigos: use «ти».',
+    description: 'Maria convida você para um café no centro de Sófia. É uma conversa entre amigos: use “ти”.',
     turns: [
       {
         bot: 'Здраве́й! Какво́ ще пи́еш?',
@@ -58,7 +58,7 @@ export const ETYMOLOGY_BG: EtymologySeed[] = [
     root_word: '*bratrъ',
     origin_language: 'Protoeslavo',
     cognates: c(['la', 'frater'], ['en', 'brother'], ['ru', 'брат'], ['pt', 'frade, fraterno']),
-    evolution_note: 'A mesma palavra indo-europeia deu «frater» em latim (daí «fraterno» e «frade») e «brother» em inglês.',
+    evolution_note: 'A mesma palavra indo-europeia deu “frater” em latim (daí “fraterno” e “frade”) e “brother” em inglês.',
     transparent: false,
   },
   {
@@ -66,7 +66,7 @@ export const ETYMOLOGY_BG: EtymologySeed[] = [
     root_word: '*sestra',
     origin_language: 'Protoeslavo',
     cognates: c(['la', 'soror'], ['en', 'sister'], ['de', 'Schwester'], ['pt', 'sororidade']),
-    evolution_note: 'Vem da palavra indo-europeia para «irmã», a mesma do latim «soror» e do inglês «sister». O português a guardou em palavras cultas, como «sororidade».',
+    evolution_note: 'Vem da palavra indo-europeia para “irmã”, a mesma do latim “soror” e do inglês “sister”. O português a guardou em palavras cultas, como “sororidade”.',
     transparent: false,
   },
   {
@@ -74,7 +74,7 @@ export const ETYMOLOGY_BG: EtymologySeed[] = [
     root_word: '*voda',
     origin_language: 'Protoeslavo',
     cognates: c(['ru', 'вода'], ['en', 'water'], ['de', 'Wasser'], ['pt', 'hidro- (do grego hýdōr)']),
-    evolution_note: 'Vem da mesma raiz indo-europeia do inglês «water» e do grego «hýdōr», que o português conhece em «hidráulica» e «hidratar».',
+    evolution_note: 'Vem da mesma raiz indo-europeia do inglês “water” e do grego “hýdōr”, que o português conhece em “hidráulica” e “hidratar”.',
     transparent: false,
   },
   {
@@ -82,7 +82,7 @@ export const ETYMOLOGY_BG: EtymologySeed[] = [
     root_word: '*tri',
     origin_language: 'Protoeslavo',
     cognates: c(['pt', 'três'], ['la', 'tres'], ['ru', 'три'], ['en', 'three']),
-    evolution_note: 'Os números baixos são dos parentescos mais fáceis de ver: «три», «três» e «three» vêm todos do indo-europeu.',
+    evolution_note: 'Os números baixos são dos parentescos mais fáceis de ver: “три”, “três” e “three” vêm todos do indo-europeu.',
     transparent: true,
   },
   {
@@ -90,7 +90,7 @@ export const ETYMOLOGY_BG: EtymologySeed[] = [
     root_word: 'kahve',
     origin_language: 'Turco',
     cognates: c(['pt', 'café'], ['tr', 'kahve'], ['ar', 'qahwa']),
-    evolution_note: 'O búlgaro recebeu muitas palavras do turco durante os séculos de domínio otomano nos Bálcãs, e «кафе́» é uma delas. A origem mais antiga é o árabe «qahwa», a mesma do português «café».',
+    evolution_note: 'O búlgaro recebeu muitas palavras do turco durante os séculos de domínio otomano nos Bálcãs, e “кафе́” é uma delas. A origem mais antiga é o árabe “qahwa”, a mesma do português “café”.',
     transparent: true,
   },
 ];

@@ -29,7 +29,7 @@ export const GRAMMAR_SC: GrammarTopic[] = [
       },
       {
         heading: 'tz: um som que o português não tem sozinho',
-        text: 'O dígrafo "tz" soa como "ts" ou "dz", parecido com o z de "pizza" em português. Aparece em palavras comuns como «gràtzias» (obrigado) e «tzitade» (cidade).',
+        text: 'O dígrafo "tz" soa como "ts" ou "dz", parecido com o z de "pizza" em português. Aparece em palavras comuns como “gràtzias” (obrigado) e “tzitade” (cidade).',
       },
     ],
     pitfalls: [
@@ -37,7 +37,7 @@ export const GRAMMAR_SC: GrammarTopic[] = [
       'Ler "ch" antes de e/i como em português (som de "x"): em sardo é sempre um k duro, nunca "tch" nem "x".',
     ],
     quiz: [
-      { question: 'Como soa o "ch" em «chelu» (céu)?', options: ['K duro, como em "quilo"', 'Como o "x" do português', 'Como "tch"'], answer: 'K duro, como em "quilo"', explanation: 'O sardo manteve o k duro do latim diante de e/i, onde o italiano, o espanhol e o francês mudaram esse som.' },
+      { question: 'Como soa o "ch" em “chelu” (céu)?', options: ['K duro, como em "quilo"', 'Como o "x" do português', 'Como "tch"'], answer: 'K duro, como em "quilo"', explanation: 'O sardo manteve o k duro do latim diante de e/i, onde o italiano, o espanhol e o francês mudaram esse som.' },
       { question: 'O sardo é...', options: ['Uma língua própria, não um dialeto do italiano', 'Um dialeto regional do italiano', 'Uma mistura de italiano e espanhol'], answer: 'Uma língua própria, não um dialeto do italiano', explanation: 'O sardo tem gramática e sons próprios e é reconhecido pela lei italiana de 1999 sobre as minorias linguísticas.' },
     ],
   },
@@ -46,10 +46,10 @@ export const GRAMMAR_SC: GrammarTopic[] = [
     level: 'A1.1',
     title: 'Os pronomes e o verbo èssere',
     emoji: '🙋',
-    summary: 'Seis pronomes de sujeito, quase sempre dispensáveis porque o verbo já diz quem fala; o verbo «èssere» (ser) conjugado no presente.',
+    summary: 'Seis pronomes de sujeito, quase sempre dispensáveis porque o verbo já diz quem fala; o verbo “èssere” (ser) conjugado no presente.',
     sections: [
       {
-        text: 'Como em português, o pronome de sujeito costuma sumir: «so de Casteddu» já é «(eu) sou de Casteddu». Usa-se o pronome só para dar ênfase ou evitar ambiguidade.',
+        text: 'Como em português, o pronome de sujeito costuma sumir: “so de Casteddu” já é “(eu) sou de Casteddu”. Usa-se o pronome só para dar ênfase ou evitar ambiguidade.',
         table: {
           head: ['Pronome', 'Tradução', 'èssere (presente)'],
           rows: [
@@ -67,8 +67,8 @@ export const GRAMMAR_SC: GrammarTopic[] = [
         ],
       },
     ],
-    pitfalls: ['Traduzir «bois» por um "vós" arcaico do português: em sardo é o "vocês" normal do dia a dia, tal como o galego e o português de Portugal ainda usam.'],
-    quiz: [{ question: 'Como se diz "vocês são" em sardo?', options: ['bois seis', 'bois ses', 'nois seis'], answer: 'bois seis', explanation: '«Bois» é a segunda pessoa do plural, com a forma «seis» do verbo èssere.' }],
+    pitfalls: ['Traduzir “bois” por um "vós" arcaico do português: em sardo é o "vocês" normal do dia a dia, tal como o galego e o português de Portugal ainda usam.'],
+    quiz: [{ question: 'Como se diz "vocês são" em sardo?', options: ['bois seis', 'bois ses', 'nois seis'], answer: 'bois seis', explanation: '“Bois” é a segunda pessoa do plural, com a forma “seis” do verbo èssere.' }],
   },
   {
     id: 'sc-g3',
@@ -85,7 +85,7 @@ export const GRAMMAR_SC: GrammarTopic[] = [
             ['Plural', 'sos fizos', 'sas fizas'],
           ],
         },
-        text: 'A maioria dos substantivos terminados em -u é masculina, e em -a, feminina — igual ao português. O possessivo (meu, teu…) vem depois do substantivo: «sa domo mea» é, literalmente, «a casa minha».',
+        text: 'A maioria dos substantivos terminados em -u é masculina, e em -a, feminina — igual ao português. O possessivo (meu, teu…) vem depois do substantivo: “sa domo mea” é, literalmente, “a casa minha”.',
         examples: [
           ['Sa familia mea est manna.', 'A minha família é grande.'],
           ['Apo unu fizu e una fiza.', 'Tenho um filho e uma filha.'],
@@ -100,10 +100,10 @@ export const GRAMMAR_SC: GrammarTopic[] = [
     level: 'A1.2',
     title: 'Èssere × istare × praghere',
     emoji: '🧭',
-    summary: 'O sardo, como o português, tem dois verbos "ser/estar" separados — èssere para o permanente, istare para o temporário — e o verbo «praghere» funciona ao contrário do português: quem gosta vira objeto.',
+    summary: 'O sardo, como o português, tem dois verbos "ser/estar" separados — èssere para o permanente, istare para o temporário — e o verbo “praghere” funciona ao contrário do português: quem gosta vira objeto.',
     sections: [
       {
-        text: 'Èssere: origem, identidade, característica permanente. Istare: localização e estados temporários (a mesma raiz do português "estar", do latim "stare"). «Comente istas?» (como você está?) usa istare, não èssere.',
+        text: 'Èssere: origem, identidade, característica permanente. Istare: localização e estados temporários (a mesma raiz do português "estar", do latim "stare"). “Comente istas?” (como você está?) usa istare, não èssere.',
         examples: [
           ['So de Nùgoro.', 'Sou de Nuoro. (origem, èssere)'],
           ['Isto in Casteddu oe.', 'Estou em Cagliari hoje. (lugar, istare)'],
@@ -111,14 +111,14 @@ export const GRAMMAR_SC: GrammarTopic[] = [
       },
       {
         heading: 'O verbo praghere',
-        text: '«Praghere» funciona como o "agradar" do português: o que se gosta é o sujeito da frase, e quem gosta leva um pronome (mi, ti, li…). «Mi praghet su binu» é, literalmente, «o vinho agrada-me».',
+        text: '“Praghere” funciona como o "agradar" do português: o que se gosta é o sujeito da frase, e quem gosta leva um pronome (mi, ti, li…). “Mi praghet su binu” é, literalmente, “o vinho agrada-me”.',
         examples: [
           ['Mi praghet su binu sardu.', 'Eu gosto do vinho sardo. (literalmente: o vinho sardo agrada-me)'],
           ['Nos praghet su casu.', 'Nós gostamos de queijo.'],
         ],
       },
     ],
-    pitfalls: ['Conjugar «praghere» como em português («eu gosto de vinho»): em sardo o vinho é o sujeito, então o verbo concorda com ele: «mi praghet su binu», «mi praghent sos binos».'],
-    quiz: [{ question: 'Como se diz "eu gosto deste vinho" em sardo?', options: ['mi praghet custu binu', 'praghjo custu binu', 'deo praghet binu'], answer: 'mi praghet custu binu', explanation: 'Em «praghere», a coisa que agrada é o sujeito: «custu binu» concorda com «praghet».' }],
+    pitfalls: ['Conjugar “praghere” como em português (“eu gosto de vinho”): em sardo o vinho é o sujeito, então o verbo concorda com ele: “mi praghet su binu”, “mi praghent sos binos”.'],
+    quiz: [{ question: 'Como se diz "eu gosto deste vinho" em sardo?', options: ['mi praghet custu binu', 'praghjo custu binu', 'deo praghet binu'], answer: 'mi praghet custu binu', explanation: 'Em “praghere”, a coisa que agrada é o sujeito: “custu binu” concorda com “praghet”.' }],
   },
 ];

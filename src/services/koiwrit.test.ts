@@ -6,7 +6,7 @@ test('koiwrit: 40 sinais, cada traço (1–10) em 4 tamanhos, letras únicas', (
   assert.equal(KOI_ALPHABET.length, 40);
   assert.equal(new Set(KOI_ALPHABET.map((l) => l.letter)).size, 40);
   assert.equal(new Set(KOI_ALPHABET.map((l) => `${l.shape}-${l.size}`)).size, 40);
-  assert.equal(KOI_ALPHABET.find((l) => l.letter === 'a')?.size, 4, '«a» é o círculo inteiro');
+  assert.equal(KOI_ALPHABET.find((l) => l.letter === 'a')?.size, 4, '“a” é o círculo inteiro');
   assert.equal(KOI_ALPHABET.find((l) => l.letter === 'r')?.shape, 10);
 });
 

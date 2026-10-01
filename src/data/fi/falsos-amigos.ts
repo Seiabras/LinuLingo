@@ -17,7 +17,7 @@ export const FALSE_FRIENDS_FI: FalseFriend[] = [
   },
   {
     word: 'mato',
-    means: 'minhoca, verme (o tapete é «matto», com tt)',
+    means: 'minhoca, verme (o tapete é “matto”, com tt)',
     looksLike: 'mato (o matagal, a erva daninha)',
     forThat: 'pusikko; rikkaruoho',
     emoji: '🪱',
@@ -105,7 +105,7 @@ export const FALSE_FRIENDS_FI: FalseFriend[] = [
   },
   {
     word: 'pula',
-    means: 'falta, escassez; apuro («olla pulassa», estar em apuros)',
+    means: 'falta, escassez; apuro (“olla pulassa”, estar em apuros)',
     looksLike: 'pula (do verbo pular)',
     forThat: 'hyppy; hypätä',
     emoji: '😬',
@@ -113,7 +113,7 @@ export const FALSE_FRIENDS_FI: FalseFriend[] = [
   },
   {
     word: 'pois',
-    means: 'embora, fora (afastando-se): «mennä pois», ir embora',
+    means: 'embora, fora (afastando-se): “mennä pois”, ir embora',
     looksLike: 'pois (porque; então)',
     forThat: 'sillä; koska',
     emoji: '🚪',
@@ -129,7 +129,7 @@ export const FALSE_FRIENDS_FI: FalseFriend[] = [
   },
   {
     word: 'nuora',
-    means: 'corda fina, cordão; varal («pyykkinuora»)',
+    means: 'corda fina, cordão; varal (“pyykkinuora”)',
     looksLike: 'nora (a mulher do filho)',
     forThat: 'miniä',
     emoji: '🧺',
@@ -169,7 +169,7 @@ export const FALSE_FRIENDS_FI: FalseFriend[] = [
   },
   {
     word: 'tosi',
-    means: 'verdadeiro; na fala, «muito» («tosi hyvä», muito bom)',
+    means: 'verdadeiro; na fala, “muito” (“tosi hyvä”, muito bom)',
     looksLike: 'tosse',
     forThat: 'yskä',
     emoji: '🔥',
@@ -177,7 +177,7 @@ export const FALSE_FRIENDS_FI: FalseFriend[] = [
   },
   {
     word: 'koko',
-    means: 'tamanho; inteiro, todo («koko päivän», o dia inteiro)',
+    means: 'tamanho; inteiro, todo (“koko päivän”, o dia inteiro)',
     looksLike: 'coco',
     forThat: 'kookospähkinä',
     emoji: '📏',
@@ -185,7 +185,7 @@ export const FALSE_FRIENDS_FI: FalseFriend[] = [
   },
   {
     word: 'papu',
-    means: 'feijão; grão (de café: «kahvipapu»)',
+    means: 'feijão; grão (de café: “kahvipapu”)',
     looksLike: 'papo (conversa)',
     forThat: 'juttelu; rupattelu',
     emoji: '🫘',
@@ -217,7 +217,7 @@ export const FALSE_FRIENDS_FI: FalseFriend[] = [
   },
   {
     word: 'kulta',
-    means: 'ouro; «kulta» também é «querido, querida»',
+    means: 'ouro; “kulta” também é “querido, querida”',
     looksLike: 'culto (a missa, a celebração)',
     forThat: 'jumalanpalvelus',
     emoji: '🥇',
@@ -233,7 +233,7 @@ export const FALSE_FRIENDS_FI: FalseFriend[] = [
   },
   {
     word: 'vaali',
-    means: 'eleição (quase sempre no plural: «vaalit»)',
+    means: 'eleição (quase sempre no plural: “vaalit”)',
     looksLike: 'vale (entre montanhas; ou o vale-presente)',
     forThat: 'laakso; lahjakortti',
     emoji: '🗳️',

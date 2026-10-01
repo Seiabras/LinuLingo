@@ -17,7 +17,7 @@ export function StatusHeader({ cefr }: { cefr: string }) {
         className="mr-2 shrink flex-row items-center gap-1.5 rounded-full bg-white px-3 py-1.5 active:opacity-70 dark:bg-slate-900"
       >
         <Text className="text-lg">{pack.flag}</Text>
-        {/* nomes longos («Português de Portugal») encolhem com reticências em vez de empurrar o perfil para fora */}
+        {/* nomes longos (“Português de Portugal”) encolhem com reticências em vez de empurrar o perfil para fora */}
         <Text numberOfLines={1} className="shrink font-bold text-slate-800 dark:text-slate-100">
           {pack.name}
         </Text>

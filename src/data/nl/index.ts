@@ -14,7 +14,7 @@ export const NEERLANDES: LanguagePack = {
     family: 'Indo-europeu',
     branches: ['Germânico', 'Germânico ocidental', 'Baixo-franconiano'],
     region: 'Países Baixos, Flandres (Bélgica) e Suriname',
-    writing: 'Alfabeto latino, na ortografia oficial da Nederlandse Taalunie (Woordenlijst, o «Groene Boekje»)',
+    writing: 'Alfabeto latino, na ortografia oficial da Nederlandse Taalunie (Woordenlijst, o “Groene Boekje”)',
   },
   speechLocale: 'nl-NL',
   available: true,
@@ -40,5 +40,5 @@ export const NEERLANDES: LanguagePack = {
   phrases: { hi: 'Hallo!', thanks: 'Dank je!', letsStart: ['We beginnen!', 'Vamos começar!'] },
   formalMarkers: 'u (em vez de jij), alstublieft, dank u wel, pardon',
   cognateNote:
-    'O neerlandês é uma língua germânica que fica entre o alemão e o inglês: huis (casa) lembra o alemão «Haus» e o inglês «house», water (água) é igual ao inglês. Do latim e do francês vieram muitas palavras que o brasileiro reconhece (familie, station, kaas de «caseus»).',
+    'O neerlandês é uma língua germânica que fica entre o alemão e o inglês: huis (casa) lembra o alemão “Haus” e o inglês “house”, water (água) é igual ao inglês. Do latim e do francês vieram muitas palavras que o brasileiro reconhece (familie, station, kaas de “caseus”).',
 };

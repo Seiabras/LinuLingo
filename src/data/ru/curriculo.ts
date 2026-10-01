@@ -19,9 +19,9 @@ export const UNITS_RU: UnitSeed[] = [
       history:
         'Em 863, os irmãos Cirilo e Metódio, monges de Tessalônica, foram enviados à Grande Morávia para pregar em língua eslava. Para isso, Cirilo criou o glagolítico, o primeiro alfabeto eslavo. Pouco depois, discípulos dos dois irmãos, no Primeiro Império Búlgaro do fim do século IX, montaram um alfabeto mais simples a partir das letras gregas, com letras extras para os sons eslavos, e o batizaram em homenagem ao mestre: cirílico. A escrita chegou à Rus de Kiev com o cristianismo, no fim do século X. A reforma ortográfica de 1917–1918 tirou letras antigas como ѣ, e hoje o russo usa 33 letras.',
       culture_tip:
-        '«Приве́т» é o «oi» entre amigos. Com desconhecidos, pessoas mais velhas e no trabalho, use «Здра́вствуйте» e trate a pessoa por «вы» (o senhor / a senhora). Um detalhe de pronúncia: o primeiro в de «здра́вствуйте» não se pronuncia, e a palavra soa como «zdrástvuitie».',
+        '“Приве́т” é o “oi” entre amigos. Com desconhecidos, pessoas mais velhas e no trabalho, use “Здра́вствуйте” e trate a pessoa por “вы” (o senhor / a senhora). Um detalhe de pronúncia: o primeiro в de “здра́вствуйте” não se pronuncia, e a palavra soa como “zdrástvuitie”.',
       grammar_why:
-        'Por que «Я студе́нт» e não «Eu sou estudante»? No presente, o russo simplesmente omite o verbo «ser / estar»: diz-se «eu estudante», «ela médica». Na escrita, quando os dois lados são substantivos, um travessão marca o lugar do verbo: «Москва́ — столи́ца». O verbo быть aparece no passado e no futuro, mas no presente ele fica calado. Também não há artigos: «студе́нт» é «um estudante» ou «o estudante», conforme o contexto. Para apontar algo, «э́то» funciona como «isto é / isso é».',
+        'Por que “Я студе́нт” e não “Eu sou estudante”? No presente, o russo simplesmente omite o verbo “ser / estar”: diz-se “eu estudante”, “ela médica”. Na escrita, quando os dois lados são substantivos, um travessão marca o lugar do verbo: “Москва́ — столи́ца”. O verbo быть aparece no passado e no futuro, mas no presente ele fica calado. Também não há artigos: “студе́нт” é “um estudante” ou “o estudante”, conforme o contexto. Para apontar algo, “э́то” funciona como “isto é / isso é”.',
       grammar_examples: [
         ['Я студе́нт.', 'Eu sou estudante.'],
         ['Она́ врач.', 'Ela é médica.'],
@@ -29,20 +29,20 @@ export const UNITS_RU: UnitSeed[] = [
         ['Москва́ — столи́ца Росси́и.', 'Moscou é a capital da Rússia.'],
       ],
       character_guide: [
-        ['Р, В, Н, С', 'falsos amigos visuais: Р = «r», В = «v», Н = «n», С = «s»', 'рестора́н, вино́'],
-        ['У', '«u» de «uva» (não é y!)', 'суп'],
-        ['Х', '«rr» raspado na garganta, como o «r» carioca de «carro»', 'хлеб'],
-        ['Ы', '«i» dito com a língua recuada, sem sorrir', 'сыр'],
-        ['Ж', '«j» de «já»', 'жена́'],
-        ['Ш', '«ch» de «chá»', 'шко́ла'],
-        ['Щ', '«ch» mais longo e macio, como um «chiii» sussurrado', 'щи'],
-        ['Ц', '«ts» de «tsunami»', 'у́лица'],
-        ['Ч', '«tch» de «tchau»', 'чай'],
-        ['Я, Ю', 'Я = «iá», Ю = «iú»', 'я́блоко, ю́бка'],
-        ['Ё', '«iô», e é sempre tônico', 'ёлка'],
-        ['Э', '«é» aberto, como em «café»', 'э́то'],
-        ['И, Й', 'И = «i» de «ilha»; Й = «i» curto de «pai»', 'и́мя, чай'],
-        ['Ь', 'sinal brando: não tem som, deixa a consoante anterior «macia», com um leve toque de «i»', 'мать'],
+        ['Р, В, Н, С', 'falsos amigos visuais: Р = “r”, В = “v”, Н = “n”, С = “s”', 'рестора́н, вино́'],
+        ['У', '“u” de “uva” (não é y!)', 'суп'],
+        ['Х', '“rr” raspado na garganta, como o “r” carioca de “carro”', 'хлеб'],
+        ['Ы', '“i” dito com a língua recuada, sem sorrir', 'сыр'],
+        ['Ж', '“j” de “já”', 'жена́'],
+        ['Ш', '“ch” de “chá”', 'шко́ла'],
+        ['Щ', '“ch” mais longo e macio, como um “chiii” sussurrado', 'щи'],
+        ['Ц', '“ts” de “tsunami”', 'у́лица'],
+        ['Ч', '“tch” de “tchau”', 'чай'],
+        ['Я, Ю', 'Я = “iá”, Ю = “iú”', 'я́блоко, ю́бка'],
+        ['Ё', '“iô”, e é sempre tônico', 'ёлка'],
+        ['Э', '“é” aberto, como em “café”', 'э́то'],
+        ['И, Й', 'И = “i” de “ilha”; Й = “i” curto de “pai”', 'и́мя, чай'],
+        ['Ь', 'sinal brando: não tem som, deixa a consoante anterior “macia”, com um leve toque de “i”', 'мать'],
         ['Ъ', 'sinal duro: não tem som, marca uma pausa curta antes de я, е, ё, ю', 'подъе́зд'],
       ],
     },
@@ -66,7 +66,7 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'Приве́т! Как дела́?',
           botTranslation: 'Oi! Tudo bem?',
           expected: ['Хорошо́, спаси́бо! А у тебя́?', 'хорошо́', 'спаси́бо', 'норма́льно'],
-          hint: 'Diga que está bem e agradeça: «Хорошо́, спаси́бо!».',
+          hint: 'Diga que está bem e agradeça: “Хорошо́, спаси́бо!”.',
         },
         communityPrompt: 'Cumprimente um amigo (приве́т) e uma professora (здра́вствуйте) e pergunte como eles estão.',
       },
@@ -89,9 +89,9 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'Как тебя́ зову́т?',
           botTranslation: 'Como você se chama?',
           expected: ['Меня́ зову́т А́нна. Я студе́нтка.', 'меня́ зову́т', 'я студе́нт', 'я студе́нтка'],
-          hint: 'Comece com «Меня́ зову́т…» e diga sua ocupação sem o verbo «ser»: «Я студе́нт».',
+          hint: 'Comece com “Меня́ зову́т…” e diga sua ocupação sem o verbo “ser”: “Я студе́нт”.',
         },
-        communityPrompt: 'Apresente-se sem o verbo «ser»: nome e profissão. Exemplo: «Я Мари́я. Я врач».',
+        communityPrompt: 'Apresente-se sem o verbo “ser”: nome e profissão. Exemplo: “Я Мари́я. Я врач”.',
       },
       {
         id: 'ru-u1-l3',
@@ -107,9 +107,9 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'Э́то ваш па́спорт?',
           botTranslation: 'Este é o seu passaporte?',
           expected: ['Да, э́то мой па́спорт.', 'да', 'э́то мой', 'нет'],
-          hint: 'Responda «Да, э́то мой па́спорт», sem verbo «ser».',
+          hint: 'Responda “Да, э́то мой па́спорт”, sem verbo “ser”.',
         },
-        communityPrompt: 'Grave-se dizendo «Я не понима́ю. Повтори́те, пожа́луйста» e mais uma frase com «э́то».',
+        communityPrompt: 'Grave-se dizendo “Я не понима́ю. Повтори́те, пожа́луйста” e mais uma frase com “э́то”.',
       },
       {
         id: 'ru-u1-p',
@@ -121,9 +121,9 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'Здра́вствуйте! Как вас зову́т? Вы тури́ст?',
           botTranslation: 'Olá! Como o senhor se chama? O senhor é turista?',
           expected: ['Меня́ зову́т Пе́дро. Да, я тури́ст из Брази́лии.', 'меня́ зову́т', 'я тури́ст', 'я тури́стка', 'из Брази́лии'],
-          hint: 'Diga seu nome («Меня́ зову́т…») e responda sem o verbo «ser»: «Да, я тури́ст».',
+          hint: 'Diga seu nome (“Меня́ зову́т…”) e responda sem o verbo “ser”: “Да, я тури́ст”.',
         },
-        communityPrompt: 'Escreva uma apresentação completa: saudação formal, nome, profissão (sem «ser»), de onde você é e despedida.',
+        communityPrompt: 'Escreva uma apresentação completa: saudação formal, nome, profissão (sem “ser”), de onde você é e despedida.',
       },
     ],
   },
@@ -138,11 +138,11 @@ export const UNITS_RU: UnitSeed[] = [
       title: 'Chá, samovar e conversa comprida',
       emoji: '☕',
       history:
-        'O chá chegou à corte russa em 1638, quando um embaixador trouxe de presente ao czar Miguel Romanov folhas de chá enviadas por um cã mongol. Nos séculos XVIII e XIX, caravanas traziam o chá da China por terra, atravessando a Sibéria, e a bebida se espalhou por todas as camadas da sociedade. A partir do fim do século XVIII, a cidade de Tula virou o grande centro de fabricação de samovares, uma grande chaleira de metal que mantém a água quente por horas. O nome diz tudo: самова́р vem de «сам» (sozinho) e «вари́ть» (ferver), ou seja, «o que ferve sozinho». O chá também é o centro da mesa no Cazaquistão, no Quirguistão e em outros países onde se fala russo.',
+        'O chá chegou à corte russa em 1638, quando um embaixador trouxe de presente ao czar Miguel Romanov folhas de chá enviadas por um cã mongol. Nos séculos XVIII e XIX, caravanas traziam o chá da China por terra, atravessando a Sibéria, e a bebida se espalhou por todas as camadas da sociedade. A partir do fim do século XVIII, a cidade de Tula virou o grande centro de fabricação de samovares, uma grande chaleira de metal que mantém a água quente por horas. O nome diz tudo: самова́р vem de “сам” (sozinho) e “вари́ть” (ferver), ou seja, “o que ferve sozinho”. O chá também é o centro da mesa no Cazaquistão, no Quirguistão e em outros países onde se fala russo.',
       culture_tip:
-        'Na casa de alguém, o chá é quase obrigatório: aceite com «Спаси́бо, с удово́льствием!» (obrigado, com prazer). Ele costuma vir com limão, mel ou варе́нье (uma geleia caseira com frutas inteiras). No café, chame o garçom com «Извини́те!» e peça a conta com «Счёт, пожа́луйста». Uma gorjeta em torno de 10% é comum.',
+        'Na casa de alguém, o chá é quase obrigatório: aceite com “Спаси́бо, с удово́льствием!” (obrigado, com prazer). Ele costuma vir com limão, mel ou варе́нье (uma geleia caseira com frutas inteiras). No café, chame o garçom com “Извини́те!” e peça a conta com “Счёт, пожа́луйста”. Uma gorjeta em torno de 10% é comum.',
       grammar_why:
-        'Todo substantivo russo tem gênero, e quase sempre o final entrega: consoante é masculino (чай, сок), -а / -я é feminino (ча́шка), -о / -е é neutro (молоко́). Atenção à exceção: ко́фе é masculino. O plural mais comum troca ou acrescenta -ы / -и: блин → блины́, ча́шка → ча́шки. Os verbos têm duas conjugações no presente: a 1ª tem -ешь, -ет (чита́ть: я чита́ю, ты чита́ешь) e a 2ª tem -ишь, -ит (говори́ть: я говорю́, ты говори́шь). E para dizer «eu tenho» o russo usa «у меня́ есть», literalmente «junto de mim existe».',
+        'Todo substantivo russo tem gênero, e quase sempre o final entrega: consoante é masculino (чай, сок), -а / -я é feminino (ча́шка), -о / -е é neutro (молоко́). Atenção à exceção: ко́фе é masculino. O plural mais comum troca ou acrescenta -ы / -и: блин → блины́, ча́шка → ча́шки. Os verbos têm duas conjugações no presente: a 1ª tem -ешь, -ет (чита́ть: я чита́ю, ты чита́ешь) e a 2ª tem -ишь, -ит (говори́ть: я говорю́, ты говори́шь). E para dizer “eu tenho” o russo usa “у меня́ есть”, literalmente “junto de mim existe”.',
       grammar_examples: [
         ['чай, ча́шка, молоко́', 'chá (m), xícara (f), leite (n)'],
         ['блин → блины́', 'panqueca → panquecas'],
@@ -166,9 +166,9 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'Здра́вствуйте! Что вы бу́дете пить?',
           botTranslation: 'Olá! O que o senhor vai beber?',
           expected: ['Чай, пожа́луйста.', 'чай', 'ко́фе', 'пожа́луйста'],
-          hint: 'Peça uma bebida e diga «por favor»: «Чай, пожа́луйста».',
+          hint: 'Peça uma bebida e diga “por favor”: “Чай, пожа́луйста”.',
         },
-        communityPrompt: 'Escreva o que há na sua mesa agora, com o possessivo no gênero certo: «мой чай», «моя́ ча́шка», «моё молоко́».',
+        communityPrompt: 'Escreva o que há na sua mesa agora, com o possessivo no gênero certo: “мой чай”, “моя́ ча́шка”, “моё молоко́”.',
       },
       {
         id: 'ru-u2-l2',
@@ -184,9 +184,9 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'У вас есть самова́р до́ма?',
           botTranslation: 'Você tem samovar em casa?',
           expected: ['Нет, но у меня́ есть ча́йник.', 'у меня́ есть', 'нет', 'ча́йник'],
-          hint: 'Responda com «У меня́ есть…» ou comece com «Нет…».',
+          hint: 'Responda com “У меня́ есть…” ou comece com “Нет…”.',
         },
-        communityPrompt: 'Escreva 3 frases com «У меня́ есть…» sobre coisas da sua cozinha, e pelo menos uma palavra no plural.',
+        communityPrompt: 'Escreva 3 frases com “У меня́ есть…” sobre coisas da sua cozinha, e pelo menos uma palavra no plural.',
       },
       {
         id: 'ru-u2-l3',
@@ -202,7 +202,7 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'Что вы лю́бите: чай и́ли ко́фе?',
           botTranslation: 'Do que você gosta: chá ou café?',
           expected: ['Я люблю́ чай, а мой друг лю́бит ко́фе.', 'я люблю́', 'чай', 'ко́фе'],
-          hint: 'Use «люблю́» para você e «лю́бит» para outra pessoa.',
+          hint: 'Use “люблю́” para você e “лю́бит” para outra pessoa.',
         },
         communityPrompt: 'Grave-se conjugando говори́ть e чита́ть no presente: я, ты, он, мы, вы, они́.',
       },
@@ -216,7 +216,7 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'Добро́ пожа́ловать! Что вы хоти́те: чай и́ли ко́фе? У нас есть блины́ и пироги́.',
           botTranslation: 'Bem-vindo! O que o senhor quer: chá ou café? Temos blinis e tortas.',
           expected: ['Я хочу́ чай с лимо́ном и блины́, пожа́луйста.', 'чай', 'ко́фе', 'блины́', 'пожа́луйста'],
-          hint: 'Escolha a bebida, peça um prato no plural e termine com «пожа́луйста».',
+          hint: 'Escolha a bebida, peça um prato no plural e termine com “пожа́луйста”.',
         },
         communityPrompt: 'Escreva um pequeno diálogo no café: peça uma bebida e um prato, conte o que você tem em casa (у меня́ есть…) e peça a conta.',
       },
@@ -233,14 +233,14 @@ export const UNITS_RU: UnitSeed[] = [
       title: 'Palácios debaixo da terra',
       emoji: '🏛️',
       history:
-        'O metrô de Moscou foi inaugurado em 15 de maio de 1935, com uma primeira linha de cerca de 11 quilômetros. Muitas estações foram pensadas como «palácios para o povo», com mármore, mosaicos, esculturas e lustres, como a Komsomólskaia e a Maiakóvskaia. O metrô de São Petersburgo, aberto em 1955, tem estações muito profundas por causa do terreno úmido da cidade. Outras cidades onde se fala russo também têm metrô, como Tashkent (1977) e Minsk (1984).',
+        'O metrô de Moscou foi inaugurado em 15 de maio de 1935, com uma primeira linha de cerca de 11 quilômetros. Muitas estações foram pensadas como “palácios para o povo”, com mármore, mosaicos, esculturas e lustres, como a Komsomólskaia e a Maiakóvskaia. O metrô de São Petersburgo, aberto em 1955, tem estações muito profundas por causa do terreno úmido da cidade. Outras cidades onde se fala russo também têm metrô, como Tashkent (1977) e Minsk (1984).',
       culture_tip:
-        'Na escada rolante do metrô, fique à direita e deixe a esquerda livre para quem anda. Nos endereços, «ул.» é rua, «д.» é o número do prédio e «кв.» é o apartamento. Para pedir ajuda na rua, comece com «Извини́те, где…?» (com licença, onde fica…?).',
+        'Na escada rolante do metrô, fique à direita e deixe a esquerda livre para quem anda. Nos endereços, “ул.” é rua, “д.” é o número do prédio e “кв.” é o apartamento. Para pedir ajuda na rua, comece com “Извини́те, где…?” (com licença, onde fica…?).',
       grammar_why:
-        'O russo tem seis casos: a palavra muda o final conforme a função na frase. Para dizer ONDE algo está, usa-se в ou на + caso preposicional, quase sempre com final -е: Москва́ → в Москве́, парк → в па́рке. Em geral, в é «dentro» (в па́рке, в музе́е) e на é «sobre» ou lugar aberto (на у́лице, на пло́щади, на ста́нции). O acusativo marca o objeto direto: femininos em -а trocam para -у (Я ищу́ ка́рту), e masculinos de coisas não mudam (Я ви́жу парк). Os possessivos concordam como adjetivos: мой (m), моя́ (f), моё (n), мои́ (pl). Palavras estrangeiras como метро́ e кафе́ nunca mudam.',
+        'O russo tem seis casos: a palavra muda o final conforme a função na frase. Para dizer ONDE algo está, usa-se в ou на + caso preposicional, quase sempre com final -е: Москва́ → в Москве́, парк → в па́рке. Em geral, в é “dentro” (в па́рке, в музе́е) e на é “sobre” ou lugar aberto (на у́лице, на пло́щади, на ста́нции). O acusativo marca o objeto direto: femininos em -а trocam para -у (Я ищу́ ка́рту), e masculinos de coisas não mudam (Я ви́жу парк). Os possessivos concordam como adjetivos: мой (m), моя́ (f), моё (n), мои́ (pl). Palavras estrangeiras como метро́ e кафе́ nunca mudam.',
       grammar_examples: [
         ['Я живу́ в Москве́.', 'Eu moro em Moscou.'],
-        ['Мы на ста́нции «Арба́тская».', 'Estamos na estação Arbátskaia.'],
+        ['Мы на ста́нции “Арба́тская”.', 'Estamos na estação Arbátskaia.'],
         ['Я ищу́ ка́рту метро́.', 'Estou procurando o mapa do metrô.'],
         ['Э́то моя́ у́лица, а э́то мой дом.', 'Esta é a minha rua, e este é o meu prédio.'],
       ],
@@ -254,7 +254,7 @@ export const UNITS_RU: UnitSeed[] = [
         words: ['метро́', 'ста́нция', 'биле́т', 'ка́рта', 'ваго́н', 'вы́ход'],
         cloze: [
           {
-            sentence: 'Мы ждём тебя́ на ___ «Пу́шкинская».',
+            sentence: 'Мы ждём тебя́ на ___ “Пу́шкинская”.',
             answer: 'ста́нции',
             options: ['ста́нции', 'ста́нция', 'ста́нцию'],
             translation: 'A gente te espera na estação Púchkinskaia.',
@@ -263,12 +263,12 @@ export const UNITS_RU: UnitSeed[] = [
           { sentence: 'Я ищу́ ___ метро́.', answer: 'ка́рту', options: ['ка́рту', 'ка́рта', 'ка́рте'], translation: 'Estou procurando o mapa do metrô.' },
         ],
         voice: {
-          bot: 'Извини́те, где ста́нция «Театра́льная»?',
+          bot: 'Извини́те, где ста́нция “Театра́льная”?',
           botTranslation: 'Com licença, onde fica a estação Teatrálnaia?',
           expected: ['Иди́те пря́мо, пото́м напра́во.', 'пря́мо', 'напра́во', 'нале́во'],
-          hint: 'Indique o caminho: «пря́мо» (reto), «напра́во» (à direita), «нале́во» (à esquerda).',
+          hint: 'Indique o caminho: “пря́мо” (reto), “напра́во” (à direita), “нале́во” (à esquerda).',
         },
-        communityPrompt: 'Escreva 3 frases sobre o metrô da sua cidade usando «на ста́нции» e «в ваго́не».',
+        communityPrompt: 'Escreva 3 frases sobre o metrô da sua cidade usando “на ста́нции” e “в ваго́не”.',
       },
       {
         id: 'ru-u3-l2',
@@ -289,7 +289,7 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'Како́й у вас а́дрес?',
           botTranslation: 'Qual é o seu endereço?',
           expected: ['Я живу́ на у́лице Пу́шкина, дом пять, кварти́ра три.', 'я живу́ на у́лице', 'дом', 'кварти́ра'],
-          hint: 'Diga a rua no preposicional («на у́лице…»), o número do prédio e o do apartamento.',
+          hint: 'Diga a rua no preposicional (“на у́лице…”), o número do prédio e o do apartamento.',
         },
         communityPrompt: 'Descreva onde você mora: cidade (в…), rua (на у́лице…), andar (на … этаже́) e o que tem perto.',
       },
@@ -307,9 +307,9 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'Где ты сейча́с?',
           botTranslation: 'Onde você está agora?',
           expected: ['Я в па́рке. Я ви́жу теа́тр.', 'в па́рке', 'в музе́е', 'в теа́тре', 'на у́лице'],
-          hint: 'Responda com в / на + preposicional: «Я в па́рке», «Я на у́лице».',
+          hint: 'Responda com в / на + preposicional: “Я в па́рке”, “Я на у́лице”.',
         },
-        communityPrompt: 'Grave-se dizendo onde você está e o que está vendo, com o objeto no acusativo: «Я в па́рке. Я ви́жу теа́тр».',
+        communityPrompt: 'Grave-se dizendo onde você está e o que está vendo, com o objeto no acusativo: “Я в па́рке. Я ви́жу теа́тр”.',
       },
       {
         id: 'ru-u3-p',
@@ -321,7 +321,7 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'Приве́т! Где ты живёшь и где твоя́ рабо́та?',
           botTranslation: 'Oi! Onde você mora e onde fica o seu trabalho?',
           expected: ['Я живу́ в Москве́, на Арба́те, а моя́ рабо́та в це́нтре.', 'я живу́ в', 'на у́лице', 'моя́ рабо́та'],
-          hint: 'Use в / на + preposicional para os lugares e o possessivo certo: «моя́ рабо́та», «мой дом».',
+          hint: 'Use в / на + preposicional para os lugares e o possessivo certo: “моя́ рабо́та”, “мой дом”.',
         },
         communityPrompt:
           'Explique a um amigo como chegar à sua casa: a estação de metrô (на ста́нции…), a rua, o número, o andar e o que ele vai ver no caminho (acusativo).',
@@ -339,11 +339,11 @@ export const UNITS_RU: UnitSeed[] = [
       title: 'Dacha: a casa de campo russa',
       emoji: '🌻',
       history:
-        'A palavra да́ча vem do verbo дать (dar): no começo eram terras que o tsar concedia a nobres e servidores. No século XIX, casas de veraneio perto de Moscou e de São Petersburgo viraram moda entre as famílias da cidade. Em «O jardim das cerejeiras», de Tchékhov, o comerciante Lopakhin propõe lotear a velha propriedade em terrenos para veranistas. Na época soviética, milhões de famílias receberam pequenos lotes onde plantavam batata, legumes e frutinhas.',
+        'A palavra да́ча vem do verbo дать (dar): no começo eram terras que o tsar concedia a nobres e servidores. No século XIX, casas de veraneio perto de Moscou e de São Petersburgo viraram moda entre as famílias da cidade. Em “O jardim das cerejeiras”, de Tchékhov, o comerciante Lopakhin propõe lotear a velha propriedade em terrenos para veranistas. Na época soviética, milhões de famílias receberam pequenos lotes onde plantavam batata, legumes e frutinhas.',
       culture_tip:
         'Se for convidado para a dacha de alguém, leve alguma coisa: um bolo, frutas ou uma garrafa de vinho. Ao entrar em casa, tire os sapatos; muitas vezes o anfitrião oferece chinelos (та́почки). E prepare-se para ajudar: colher frutinhas ou regar a horta faz parte do passeio.',
       grammar_why:
-        'O passado russo não muda com a pessoa, e sim com o gênero e o número: он рабо́тал, она́ рабо́тала, они́ рабо́тали. Por isso uma mulher diz «я была́» e um homem diz «я был». O futuro tem dois caminhos: бу́ду + infinitivo imperfectivo (ação em andamento, como «vou ficar trabalhando») ou o verbo perfectivo conjugado no presente, que já vale como futuro (прочита́ю = vou ler até o fim). Já o genitivo aparece depois de нет («não há») e de palavras de quantidade como мно́го e ма́ло, algo como o «de» em «um monte de».',
+        'O passado russo não muda com a pessoa, e sim com o gênero e o número: он рабо́тал, она́ рабо́тала, они́ рабо́тали. Por isso uma mulher diz “я была́” e um homem diz “я был”. O futuro tem dois caminhos: бу́ду + infinitivo imperfectivo (ação em andamento, como “vou ficar trabalhando”) ou o verbo perfectivo conjugado no presente, que já vale como futuro (прочита́ю = vou ler até o fim). Já o genitivo aparece depois de нет (“não há”) e de palavras de quantidade como мно́го e ма́ло, algo como o “de” em “um monte de”.',
       grammar_examples: [
         ['Па́па рабо́тал в саду́, а ма́ма отдыха́ла.', 'O papai trabalhava no jardim, e a mamãe descansava.'],
         ['За́втра мы бу́дем собира́ть грибы́.', 'Amanhã vamos colher cogumelos.'],
@@ -382,9 +382,9 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'У тебя́ есть бра́тья и сёстры?',
           botTranslation: 'Você tem irmãos e irmãs?',
           expected: ['Нет, у меня́ нет бра́та, но есть сестра́.', 'у меня́ нет', 'есть сестра́', 'есть брат'],
-          hint: 'Use «у меня́ нет» + genitivo (бра́та, сестры́) ou «у меня́ есть» + nominativo.',
+          hint: 'Use “у меня́ нет” + genitivo (бра́та, сестры́) ou “у меня́ есть” + nominativo.',
         },
-        communityPrompt: 'Descreva sua família em 3 frases: quem você tem e quem você não tem (use «у меня́ нет» + genitivo).',
+        communityPrompt: 'Descreva sua família em 3 frases: quem você tem e quem você não tem (use “у меня́ нет” + genitivo).',
       },
       {
         id: 'ru-u4-l2',
@@ -448,7 +448,7 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'Что ты де́лал в суббо́ту?',
           botTranslation: 'O que você fez no sábado?',
           expected: ['В суббо́ту я был на да́че и собира́л я́годы.', 'был на да́че', 'была́ на да́че', 'я́годы', 'отдыха́л'],
-          hint: 'Homem diz «я был… собира́л»; mulher diz «я была́… собира́ла».',
+          hint: 'Homem diz “я был… собира́л”; mulher diz “я была́… собира́ла”.',
         },
         communityPrompt: 'Grave-se contando o seu sábado em 3 frases no passado, com atenção à terminação do gênero (-л / -ла).',
       },
@@ -484,7 +484,7 @@ export const UNITS_RU: UnitSeed[] = [
       culture_tip:
         'Flores de presente vão sempre em número ímpar: buquês com número par são levados a velórios. Muita gente acha que dá azar comemorar o aniversário antes da data, então deixe os parabéns para o dia certo. No trabalho, é comum o próprio aniversariante levar bolo e doces para os colegas.',
       grammar_why:
-        'Quase todo verbo russo vem em par: o imperfectivo fala do processo ou do hábito (покупа́ть, «ir comprando», «comprar sempre») e o perfectivo fala de uma ação única e concluída (купи́ть, «comprar e pronto»). Para dizer que gosta de algo, o russo inverte a frase, como o nosso «agradar»: мне нра́вится шарф = «o cachecol me agrada»; quem gosta vai para o dativo, e o verbo concorda com a coisa. O dativo também marca para quem vai o presente: подари́ть ма́ме. O imperativo pede ou manda: покажи́ (para ты), покажи́те (para вы ou por educação).',
+        'Quase todo verbo russo vem em par: o imperfectivo fala do processo ou do hábito (покупа́ть, “ir comprando”, “comprar sempre”) e o perfectivo fala de uma ação única e concluída (купи́ть, “comprar e pronto”). Para dizer que gosta de algo, o russo inverte a frase, como o nosso “agradar”: мне нра́вится шарф = “o cachecol me agrada”; quem gosta vai para o dativo, e o verbo concorda com a coisa. O dativo também marca para quem vai o presente: подари́ть ма́ме. O imperativo pede ou manda: покажи́ (para ты), покажи́те (para вы ou por educação).',
       grammar_examples: [
         ['Я ча́сто покупа́ю цветы́, а вчера́ купи́л торт.', 'Eu compro flores com frequência, e ontem comprei um bolo.'],
         ['Мне нра́вится э́тот шарф.', 'Eu gosto deste cachecol.'],
@@ -523,7 +523,7 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'Здра́вствуйте! Вам помо́чь?',
           botTranslation: 'Olá! Posso ajudar?',
           expected: ['Да, покажи́те, пожа́луйста, э́ту ку́ртку. Есть ски́дка?', 'покажи́те', 'ку́ртку', 'ски́дка', 'разме́р'],
-          hint: 'Peça com o imperativo educado: «Покажи́те, пожа́луйста…».',
+          hint: 'Peça com o imperativo educado: “Покажи́те, пожа́луйста…”.',
         },
         communityPrompt:
           'Escreva 3 frases: uma coisa que você compra sempre (imperfectivo), uma que comprou ontem (perfectivo) e um pedido ao vendedor (imperativo).',
@@ -559,7 +559,7 @@ export const UNITS_RU: UnitSeed[] = [
           expected: ['Я подарю́ сестре́ кни́гу, она́ лю́бит чита́ть.', 'подарю́', 'сестре́', 'кни́гу'],
           hint: 'Use o perfectivo no futuro (подарю́) e a pessoa no dativo (сестре́).',
         },
-        communityPrompt: 'Escolha presentes para 3 pessoas e explique: «Я подарю́ ма́ме…, потому́ что ей нра́вится…» (dativo duas vezes).',
+        communityPrompt: 'Escolha presentes para 3 pessoas e explique: “Я подарю́ ма́ме…, потому́ что ей нра́вится…” (dativo duas vezes).',
       },
       {
         id: 'ru-u5-l3',
@@ -590,9 +590,9 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'У меня́ сего́дня день рожде́ния!',
           botTranslation: 'Hoje é meu aniversário!',
           expected: ['С днём рожде́ния! Жела́ю тебе́ сча́стья и здоро́вья!', 'с днём рожде́ния', 'поздравля́ю', 'жела́ю тебе́'],
-          hint: 'Dê os parabéns e faça um voto: «Жела́ю тебе́…» + genitivo.',
+          hint: 'Dê os parabéns e faça um voto: “Жела́ю тебе́…” + genitivo.',
         },
-        communityPrompt: 'Grave uma mensagem de aniversário para um amigo: parabéns, dois votos com «жела́ю тебе́» e um convite no imperativo.',
+        communityPrompt: 'Grave uma mensagem de aniversário para um amigo: parabéns, dois votos com “жела́ю тебе́” e um convite no imperativo.',
       },
       {
         id: 'ru-u5-p',
@@ -604,7 +604,7 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'До́брый день! И́щете пода́рок? Кому́?',
           botTranslation: 'Boa tarde! Está procurando um presente? Para quem?',
           expected: ['Да, я ищу́ пода́рок па́пе. Ему́ нра́вится му́зыка. Покажи́те, пожа́луйста, нау́шники.', 'пода́рок па́пе', 'ему́ нра́вится', 'покажи́те'],
-          hint: 'Diga para quem é (dativo), do que a pessoa gosta (ему́ / ей нра́вится) e peça com «Покажи́те…».',
+          hint: 'Diga para quem é (dativo), do que a pessoa gosta (ему́ / ей нра́вится) e peça com “Покажи́те…”.',
         },
         communityPrompt:
           'Escreva um diálogo curto numa loja (6 falas): você procura um presente para alguém (dativo), diz do que essa pessoa gosta (нра́вится), pede para ver produtos (imperativo) e no fim conta o que comprou (perfectivo).',
@@ -626,7 +626,7 @@ export const UNITS_RU: UnitSeed[] = [
       culture_tip:
         'Em cada vagão há um comissário, o проводни́к (ou a проводни́ца), que confere as passagens e cuida da caldeira de água quente para o chá. Nas viagens longas, os passageiros vestem roupa confortável, dividem comida e conversam por horas com os vizinhos de cabine. Nas paradas mais longas, dá para descer à plataforma e comprar comida caseira.',
       grammar_why:
-        'O russo tem dois verbos para cada tipo de movimento. идти́ / е́хать falam de um trajeto numa direção só, agora (я е́ду в Ирку́тск = estou indo); ходи́ть / е́здить falam de idas e voltas ou de hábito (я ча́сто е́зжу = costumo ir). Os prefixos acrescentam a direção: при- (chegar), у- (ir embora), вы- (sair), в- (entrar). O instrumental responde «com quem?» (с дру́гом), «como?» (по́ездом, de trem) e «como o quê?» (рабо́тать проводнико́м), um pouco como o nosso «de» e «como».',
+        'O russo tem dois verbos para cada tipo de movimento. идти́ / е́хать falam de um trajeto numa direção só, agora (я е́ду в Ирку́тск = estou indo); ходи́ть / е́здить falam de idas e voltas ou de hábito (я ча́сто е́зжу = costumo ir). Os prefixos acrescentam a direção: при- (chegar), у- (ir embora), вы- (sair), в- (entrar). O instrumental responde “com quem?” (с дру́гом), “como?” (по́ездом, de trem) e “como o quê?” (рабо́тать проводнико́м), um pouco como o nosso “de” e “como”.',
       grammar_examples: [
         ['Сейча́с мы е́дем в Ирку́тск.', 'Agora estamos indo para Irkutsk.'],
         ['Ка́ждое ле́то я е́зжу к ба́бушке.', 'Todo verão eu vou à casa da vovó.'],
@@ -665,7 +665,7 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'Куда́ вы е́дете?',
           botTranslation: 'Para onde o senhor / a senhora vai?',
           expected: ['Я е́ду во Владивосто́к. Оди́н биле́т, пожа́луйста.', 'е́ду', 'во Владивосто́к', 'биле́т'],
-          hint: 'Use «Я е́ду в…» + acusativo e peça a passagem.',
+          hint: 'Use “Я е́ду в…” + acusativo e peça a passagem.',
         },
         communityPrompt: 'Escreva 3 frases: aonde você vai agora (е́ду), aonde costuma ir (е́зжу) e como vai viajar (instrumental: по́ездом, самолётом).',
       },
@@ -698,7 +698,7 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'Вы до како́й ста́нции е́дете?',
           botTranslation: 'O senhor / a senhora vai até qual estação?',
           expected: ['Я е́ду до Ирку́тска, а пото́м пое́ду на Байка́л.', 'до Ирку́тска', 'е́ду', 'пое́ду'],
-          hint: 'Responda com «до» + genitivo: «Я е́ду до…».',
+          hint: 'Responda com “до” + genitivo: “Я е́ду до…”.',
         },
         communityPrompt: 'Conte uma viagem que você fez: quando saiu (уе́хал / уе́хала), quando chegou (прие́хал / прие́хала) e com quem foi (с + instrumental).',
       },
@@ -760,14 +760,14 @@ export const UNITS_RU: UnitSeed[] = [
     emoji: '💼',
     card: {
       id: 'ru-c7',
-      title: 'Nome, patronímico e «вы» no trabalho',
+      title: 'Nome, patronímico e “вы” no trabalho',
       emoji: '🤝',
       history:
         'Na Rússia, a jornada padrão é de 40 horas semanais, em geral em cinco dias. O 1º de maio é feriado: a Festa da Primavera e do Trabalho (Пра́здник Весны́ и Труда́). A трудова́я кни́жка, uma carteira de trabalho em papel, vem da época soviética e hoje convive com a versão eletrônica. No Cazaquistão, no Quirguistão e em Belarus, o russo também é uma língua comum no mundo do trabalho.',
       culture_tip:
-        'No escritório, chefes e colegas mais velhos são tratados pelo nome e patronímico, com «вы»: «Ири́на Петро́вна, не могли́ бы вы…?». Passar para «ты» costuma ser um convite explícito: «Дава́йте перейдём на ты». Um pedido seco, sem «пожа́луйста» nem forma suave, soa ríspido.',
+        'No escritório, chefes e colegas mais velhos são tratados pelo nome e patronímico, com “вы”: “Ири́на Петро́вна, не могли́ бы вы…?”. Passar para “ты” costuma ser um convite explícito: “Дава́йте перейдём на ты”. Um pedido seco, sem “пожа́луйста” nem forma suave, soa ríspido.',
       grammar_why:
-        'Para suavizar um pedido, o russo usa бы com o verbo no passado: «Я бы хоте́л…» equivale ao nosso «eu gostaria…», e «Не могли́ бы вы…?» a «o senhor poderia…?». A mesma construção forma o condicional: «Е́сли бы у меня́ бы́ло вре́мя, я бы пошёл» serve para «se eu tivesse tempo, iria» e também para «se eu tivesse tido tempo, teria ido», porque passado + бы não marca o tempo. No discurso indireto, o russo mantém o tempo da fala original: «Он сказа́л, что рабо́тает» (ele disse que trabalha), sem o recuo de tempo que fazemos em português («que trabalhava»). Para perguntas de sim ou não, use ли logo depois da palavra em foco: «Она́ спроси́ла, гото́в ли отчёт» (ela perguntou se o relatório está pronto).',
+        'Para suavizar um pedido, o russo usa бы com o verbo no passado: “Я бы хоте́л…” equivale ao nosso “eu gostaria…”, e “Не могли́ бы вы…?” a “o senhor poderia…?”. A mesma construção forma o condicional: “Е́сли бы у меня́ бы́ло вре́мя, я бы пошёл” serve para “se eu tivesse tempo, iria” e também para “se eu tivesse tido tempo, teria ido”, porque passado + бы não marca o tempo. No discurso indireto, o russo mantém o tempo da fala original: “Он сказа́л, что рабо́тает” (ele disse que trabalha), sem o recuo de tempo que fazemos em português (“que trabalhava”). Para perguntas de sim ou não, use ли logo depois da palavra em foco: “Она́ спроси́ла, гото́в ли отчёт” (ela perguntou se o relatório está pronto).',
       grammar_examples: [
         ['Я бы хоте́л взять о́тпуск в ма́е.', 'Eu gostaria de tirar férias em maio.'],
         ['Не могли́ бы вы присла́ть отчёт сего́дня?', 'O senhor poderia mandar o relatório hoje?'],
@@ -801,9 +801,9 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'Здра́вствуйте! Вы хоте́ли со мной поговори́ть?',
           botTranslation: 'Olá! O senhor queria falar comigo?',
           expected: ['Да, я бы хоте́л взять выходно́й в пя́тницу.', 'я бы хоте́л', 'я бы хоте́ла', 'не могли́ бы вы'],
-          hint: 'Faça um pedido educado com «Я бы хоте́л(а)…».',
+          hint: 'Faça um pedido educado com “Я бы хоте́л(а)…”.',
         },
-        communityPrompt: 'Escreva 2 pedidos educados a um chefe, um com «Я бы хоте́л(а)…» e outro com «Не могли́ бы вы…?».',
+        communityPrompt: 'Escreva 2 pedidos educados a um chefe, um com “Я бы хоте́л(а)…” e outro com “Не могли́ бы вы…?”.',
       },
       {
         id: 'ru-u7-l2',
@@ -834,9 +834,9 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'Почему́ вы хоти́те рабо́тать в на́шей компа́нии?',
           botTranslation: 'Por que o senhor quer trabalhar na nossa empresa?',
           expected: ['Я бы хоте́л разви́вать карье́ру в большо́й компа́нии.', 'я бы хоте́л', 'я бы хоте́ла', 'карье́ру'],
-          hint: 'Responda com «Я бы хоте́л(а)…» e fale da sua carreira.',
+          hint: 'Responda com “Я бы хоте́л(а)…” e fale da sua carreira.',
         },
-        communityPrompt: 'Conte o que o entrevistador perguntou e disse, em discurso indireto: «Он спроси́л, … ли …» e «Он сказа́л, что…».',
+        communityPrompt: 'Conte o que o entrevistador perguntou e disse, em discurso indireto: “Он спроси́л, … ли …” e “Он сказа́л, что…”.',
       },
       {
         id: 'ru-u7-l3',
@@ -867,9 +867,9 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'Нача́льник на собра́нии. Что ему́ переда́ть?',
           botTranslation: 'O chefe está em reunião. O que devo dizer a ele?',
           expected: ['Переда́йте, пожа́луйста, что я присла́л результа́ты по электро́нной по́чте.', 'переда́йте', 'что я присла́л', 'по электро́нной по́чте'],
-          hint: 'Deixe um recado com «Переда́йте, пожа́луйста, что…».',
+          hint: 'Deixe um recado com “Переда́йте, пожа́луйста, что…”.',
         },
-        communityPrompt: 'Grave um recado educado: peça algo com «Не могли́ бы вы…?» e conte o que outra pessoa disse com «Она́ сказа́ла, что…».',
+        communityPrompt: 'Grave um recado educado: peça algo com “Не могли́ бы вы…?” e conte o que outra pessoa disse com “Она́ сказа́ла, что…”.',
       },
       {
         id: 'ru-u7-p',
@@ -881,10 +881,10 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'Мы гото́вы предложи́ть вам рабо́ту. Каки́е у вас вопро́сы?',
           botTranslation: 'Estamos prontos para lhe oferecer o emprego. Que perguntas o senhor tem?',
           expected: ['Не могли́ бы вы сказа́ть, кака́я бу́дет зарпла́та и мо́жно ли рабо́тать из до́ма?', 'не могли́ бы вы', 'зарпла́та', 'мо́жно ли'],
-          hint: 'Faça duas perguntas educadas: uma com «Не могли́ бы вы…?» e outra indireta com «ли».',
+          hint: 'Faça duas perguntas educadas: uma com “Не могли́ бы вы…?” e outra indireta com “ли”.',
         },
         communityPrompt:
-          'Escreva um e-mail curto para um futuro chefe: um pedido com «бы», uma pergunta indireta com «ли» e o que o recrutador disse, com «что».',
+          'Escreva um e-mail curto para um futuro chefe: um pedido com “бы”, uma pergunta indireta com “ли” e o que o recrutador disse, com “что”.',
       },
     ],
   },
@@ -901,9 +901,9 @@ export const UNITS_RU: UnitSeed[] = [
       history:
         'A partir de 1918, o governo soviético montou um sistema público de saúde organizado por Nikolai Semachko, o primeiro comissário do povo para a Saúde. Dessa época vem a поликли́ника, o posto de saúde ao qual cada morador fica vinculado pelo endereço, com clínicos gerais e especialistas no mesmo prédio. Na Rússia, a ambulância (ско́рая по́мощь) atende pelo número 103, e o 112 é o número geral de emergência.',
       culture_tip:
-        'Quando alguém espirra, diga «Будь здоро́в!» (para uma mulher, «Будь здоро́ва!»; com «вы», «Бу́дьте здоро́вы!»). Contra o resfriado, muita gente recorre a chá com geleia de framboesa (мали́новое варе́нье) e mel. Quem falta ao trabalho por doença precisa do больни́чный, o atestado dado pelo médico.',
+        'Quando alguém espirra, diga “Будь здоро́в!” (para uma mulher, “Будь здоро́ва!”; com “вы”, “Бу́дьте здоро́вы!”). Contra o resfriado, muita gente recorre a chá com geleia de framboesa (мали́новое варе́нье) e mel. Quem falta ao trabalho por doença precisa do больни́чный, o atestado dado pelo médico.',
       grammar_why:
-        'No plural, cada caso tem terminação própria: genitivo (табле́ток, враче́й), dativo em -ам/-ям (врача́м), instrumental em -ами/-ями (с врача́ми) e preposicional em -ах/-ях (в апте́ках). Os números também mandam no caso: depois de 1 vem o nominativo (одна́ табле́тка), de 2 a 4 o genitivo singular (две табле́тки) e de 5 em diante o genitivo plural (пять табле́ток). Já o relativo кото́рый, ao contrário do nosso «que» invariável, concorda em gênero e número com o substantivo a que se refere, mas o caso vem da função dele dentro da oração: «врач, кото́рого я зна́ю» (o médico que eu conheço).',
+        'No plural, cada caso tem terminação própria: genitivo (табле́ток, враче́й), dativo em -ам/-ям (врача́м), instrumental em -ами/-ями (с врача́ми) e preposicional em -ах/-ях (в апте́ках). Os números também mandam no caso: depois de 1 vem o nominativo (одна́ табле́тка), de 2 a 4 o genitivo singular (две табле́тки) e de 5 em diante o genitivo plural (пять табле́ток). Já o relativo кото́рый, ao contrário do nosso “que” invariável, concorda em gênero e número com o substantivo a que se refere, mas o caso vem da função dele dentro da oração: “врач, кото́рого я зна́ю” (o médico que eu conheço).',
       grammar_examples: [
         ['Принима́йте две табле́тки в день.', 'Tome dois comprimidos por dia.'],
         ['Врач, кото́рый меня́ лечи́л, о́чень о́пытный.', 'O médico que me tratou é muito experiente.'],
@@ -942,7 +942,7 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'Что вас беспоко́ит?',
           botTranslation: 'O que o está incomodando?',
           expected: ['У меня́ боли́т голова́, и уже́ три дня жар.', 'боли́т голова́', 'три дня', 'жар'],
-          hint: 'Diga o que dói e há quantos dias: «три дня», «пять дней».',
+          hint: 'Diga o que dói e há quantos dias: “три дня”, “пять дней”.',
         },
         communityPrompt: 'Descreva seus sintomas ao médico usando números com o caso certo (два дня, пять дней).',
       },
@@ -975,7 +975,7 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'Ско́лько упако́вок вам ну́жно?',
           botTranslation: 'De quantas caixas o senhor precisa?',
           expected: ['Две упако́вки, пожа́луйста.', 'две упако́вки', 'три упако́вки', 'пять упако́вок'],
-          hint: 'Responda com número e caso certo: «две упако́вки», «пять упако́вок».',
+          hint: 'Responda com número e caso certo: “две упако́вки”, “пять упако́вок”.',
         },
         communityPrompt: 'Escreva um diálogo curto na farmácia com três quantidades diferentes (1, 3 e 5 de alguma coisa).',
       },
@@ -1008,9 +1008,9 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'Поликли́ника, регистрату́ра. Слу́шаю вас.',
           botTranslation: 'Posto de saúde, recepção. Pois não?',
           expected: ['Здра́вствуйте! Я хоте́л бы записа́ться к врачу́, у меня́ просту́да.', 'записа́ться', 'к врачу́', 'просту́да'],
-          hint: 'Peça para marcar consulta: «Я хоте́л(а) бы записа́ться к врачу́…».',
+          hint: 'Peça para marcar consulta: “Я хоте́л(а) бы записа́ться к врачу́…”.',
         },
-        communityPrompt: 'Grave-se marcando uma consulta: diga o que sente, há quantos dias e com qual médico, usando «кото́рый».',
+        communityPrompt: 'Grave-se marcando uma consulta: diga o que sente, há quantos dias e com qual médico, usando “кото́рый”.',
       },
       {
         id: 'ru-u8-p',
@@ -1022,10 +1022,10 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'Ну, расска́зывайте. Что случи́лось и как вы лечи́лись?',
           botTranslation: 'Então, conte. O que aconteceu e como o senhor se tratou?',
           expected: ['Три дня у меня́ был жар, и я принима́л табле́тки, кото́рые купи́л в апте́ке.', 'три дня', 'табле́тки', 'кото́рые'],
-          hint: 'Junte tudo: sintomas, número de dias e um remédio com «кото́рый».',
+          hint: 'Junte tudo: sintomas, número de dias e um remédio com “кото́рый”.',
         },
         communityPrompt:
-          'Escreva um relato de uma gripe: sintomas, quantos dias durou (numerais com caso), que remédios tomou (com «кото́рый») e o que o médico disse.',
+          'Escreva um relato de uma gripe: sintomas, quantos dias durou (numerais com caso), que remédios tomou (com “кото́рый”) e o que o médico disse.',
       },
     ],
   },
@@ -1037,14 +1037,14 @@ export const UNITS_RU: UnitSeed[] = [
     emoji: '🚀',
     card: {
       id: 'ru-c9',
-      title: '«Пое́хали!»: a largada da era espacial',
+      title: '“Пое́хали!”: a largada da era espacial',
       emoji: '🛰️',
       history:
-        'Em 4 de outubro de 1957, a URSS lançou o Sputnik 1, o primeiro satélite artificial da Terra. Em 12 de abril de 1961, Iuri Gagárin se tornou o primeiro ser humano no espaço, a bordo da nave Vostok 1, e deu uma volta completa ao redor da Terra. Em 1963, a URSS levou ao espaço a primeira mulher. A palavra спу́тник quer dizer «companheiro de viagem» e entrou em muitas línguas.',
+        'Em 4 de outubro de 1957, a URSS lançou o Sputnik 1, o primeiro satélite artificial da Terra. Em 12 de abril de 1961, Iuri Gagárin se tornou o primeiro ser humano no espaço, a bordo da nave Vostok 1, e deu uma volta completa ao redor da Terra. Em 1963, a URSS levou ao espaço a primeira mulher. A palavra спу́тник quer dizer “companheiro de viagem” e entrou em muitas línguas.',
       culture_tip:
-        'Em 12 de abril a Rússia comemora o Dia da Cosmonáutica (День космона́втики). A frase de Gagárin na decolagem, «Пое́хали!» («Vamos lá!»), virou expressão comum para começar qualquer coisa. O cosmódromo de Baikonur, de onde ele partiu, fica no Cazaquistão.',
+        'Em 12 de abril a Rússia comemora o Dia da Cosmonáutica (День космона́втики). A frase de Gagárin na decolagem, “Пое́хали!” (“Vamos lá!”), virou expressão comum para começar qualquer coisa. O cosmódromo de Baikonur, de onde ele partiu, fica no Cazaquistão.',
       grammar_why:
-        'Os particípios são formas verbais que funcionam como adjetivos e concordam em gênero, número e caso. O russo tem quatro: ativo presente (рабо́тающий, «que trabalha»), ativo passado (полете́вший, «que voou»), passivo presente (называ́емый, «chamado») e passivo passado (запу́щенный, «lançado»). O português só tem o último; para os outros, usamos «que…». Em russo, eles deixam o texto escrito, científico e jornalístico mais compacto. Os conectores ligam as ideias: одна́ко (porém), поэ́тому (por isso), хотя́ (embora).',
+        'Os particípios são formas verbais que funcionam como adjetivos e concordam em gênero, número e caso. O russo tem quatro: ativo presente (рабо́тающий, “que trabalha”), ativo passado (полете́вший, “que voou”), passivo presente (называ́емый, “chamado”) e passivo passado (запу́щенный, “lançado”). O português só tem o último; para os outros, usamos “que…”. Em russo, eles deixam o texto escrito, científico e jornalístico mais compacto. Os conectores ligam as ideias: одна́ко (porém), поэ́тому (por isso), хотя́ (embora).',
       grammar_examples: [
         [
           'Пе́рвый спу́тник, запу́щенный в 1957 году́, передава́л просты́е радиосигна́лы.',
@@ -1086,7 +1086,7 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'Ты зна́ешь, кто был пе́рвым челове́ком в ко́смосе?',
           botTranslation: 'Você sabe quem foi o primeiro ser humano no espaço?',
           expected: ['Да, э́то был Ю́рий Гага́рин, полете́вший в ко́смос в 1961 году́.', 'Гага́рин', 'Ю́рий Гага́рин', 'в 1961 году́'],
-          hint: 'Responda com o nome e, se puder, com um particípio: «полете́вший в ко́смос…».',
+          hint: 'Responda com o nome e, se puder, com um particípio: “полете́вший в ко́смос…”.',
         },
         communityPrompt: 'Escreva 2 frases sobre o Sputnik ou sobre Gagárin usando um particípio (запу́щенный, полете́вший) e um conector (одна́ко, поэ́тому).',
       },
@@ -1119,9 +1119,9 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'Чем занима́ется ва́ша лаборато́рия?',
           botTranslation: 'Com o que o seu laboratório trabalha?',
           expected: ['Мы изуча́ем хи́мию, поэ́тому прово́дим мно́го экспериме́нтов.', 'хи́мию', 'экспериме́нт', 'поэ́тому'],
-          hint: 'Explique o trabalho e use um conector: «поэ́тому», «одна́ко» ou «хотя́».',
+          hint: 'Explique o trabalho e use um conector: “поэ́тому”, “одна́ко” ou “хотя́”.',
         },
-        communityPrompt: 'Descreva um cientista que você admira usando um particípio ativo (рабо́тающий, созда́вший) e o conector «хотя́».',
+        communityPrompt: 'Descreva um cientista que você admira usando um particípio ativo (рабо́тающий, созда́вший) e o conector “хотя́”.',
       },
       {
         id: 'ru-u9-l3',
@@ -1152,9 +1152,9 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'Что ты ви́дел вчера́ в телеско́п?',
           botTranslation: 'O que você viu ontem pelo telescópio?',
           expected: ['Я ви́дел Луну́ и Сату́рн, поэ́тому я о́чень дово́лен.', 'я ви́дел', 'Луну́', 'поэ́тому'],
-          hint: 'Conte o que viu e ligue as ideias com «поэ́тому» ou «хотя́».',
+          hint: 'Conte o que viu e ligue as ideias com “поэ́тому” ou “хотя́”.',
         },
-        communityPrompt: 'Grave-se descrevendo o céu à noite com um particípio (por exemplo, «враща́ющиеся плане́ты») e um conector.',
+        communityPrompt: 'Grave-se descrevendo o céu à noite com um particípio (por exemplo, “враща́ющиеся плане́ты”) e um conector.',
       },
       {
         id: 'ru-u9-p',
@@ -1181,14 +1181,14 @@ export const UNITS_RU: UnitSeed[] = [
     emoji: '📄',
     card: {
       id: 'ru-c10',
-      title: 'Carimbos, filas e «Уважа́емый»',
+      title: 'Carimbos, filas e “Уважа́емый”',
       emoji: '🗂️',
       history:
-        'Na Rússia, todo cidadão recebe aos 14 anos um passaporte interno, o documento de identidade usado dentro do país; para viajar ao exterior existe um passaporte à parte, o «загранпа́спорт». Na época soviética vigorava a «пропи́ска», o registro obrigatório do local de moradia; depois dos anos 1990 ela deu lugar ao registro (регистра́ция) no endereço de residência. O escritor Korney Tchukóvski criou, nos anos 1960, a palavra «канцеляри́т» para criticar o jargão burocrático que invade a fala comum.',
+        'Na Rússia, todo cidadão recebe aos 14 anos um passaporte interno, o documento de identidade usado dentro do país; para viajar ao exterior existe um passaporte à parte, o “загранпа́спорт”. Na época soviética vigorava a “пропи́ска”, o registro obrigatório do local de moradia; depois dos anos 1990 ela deu lugar ao registro (регистра́ция) no endereço de residência. O escritor Korney Tchukóvski criou, nos anos 1960, a palavra “канцеляри́т” para criticar o jargão burocrático que invade a fala comum.',
       culture_tip:
-        'Em repartições, bancos e empresas, trate todos por «вы». Num e-mail formal, comece com «Уважа́емый» ou «Уважа́емая» + nome e patronímico (Уважа́емая О́льга Петро́вна) e termine com «С уваже́нием» e seu nome completo. Leve sempre o passaporte: na Rússia ele é pedido para quase tudo, de comprar passagem de trem a habilitar um chip de celular.',
+        'Em repartições, bancos e empresas, trate todos por “вы”. Num e-mail formal, comece com “Уважа́емый” ou “Уважа́емая” + nome e patronímico (Уважа́емая О́льга Петро́вна) e termine com “С уваже́нием” e seu nome completo. Leve sempre o passaporte: na Rússia ele é pedido para quase tudo, de comprar passagem de trem a habilitar um chip de celular.',
       grammar_why:
-        'O russo formal usa muito três ferramentas. 1) Gerúndio (дееприча́стие): o imperfectivo indica ação simultânea e sai do presente com -я/-а (чита́ть → чита́я, стоя́ть → стоя́); o perfectivo indica ação anterior e sai do passado com -в (прочита́ть → прочита́в), como o nosso «tendo lido». O sujeito do gerúndio precisa ser o mesmo do verbo principal. 2) Passiva: com imperfectivos basta o -ся (Докуме́нты принима́ются = os documentos são recebidos); com perfectivos usa-se o particípio curto, que concorda com o sujeito: догово́р подпи́сан, спра́вка подпи́сана, докуме́нты подпи́саны. 3) Registro formal: sempre вы, nome e patronímico e fórmulas fixas como «Уважа́емый…» e «С уваже́нием».',
+        'O russo formal usa muito três ferramentas. 1) Gerúndio (дееприча́стие): o imperfectivo indica ação simultânea e sai do presente com -я/-а (чита́ть → чита́я, стоя́ть → стоя́); o perfectivo indica ação anterior e sai do passado com -в (прочита́ть → прочита́в), como o nosso “tendo lido”. O sujeito do gerúndio precisa ser o mesmo do verbo principal. 2) Passiva: com imperfectivos basta o -ся (Докуме́нты принима́ются = os documentos são recebidos); com perfectivos usa-se o particípio curto, que concorda com o sujeito: догово́р подпи́сан, спра́вка подпи́сана, докуме́нты подпи́саны. 3) Registro formal: sempre вы, nome e patronímico e fórmulas fixas como “Уважа́емый…” e “С уваже́нием”.',
       grammar_examples: [
         ['Запо́лнив анке́ту, отда́йте её в окно́ но́мер три.', 'Depois de preencher o formulário, entregue-o no guichê número três.'],
         ['Докуме́нты принима́ются с девяти́ до пяти́.', 'Os documentos são recebidos das nove às cinco.'],
@@ -1296,7 +1296,7 @@ export const UNITS_RU: UnitSeed[] = [
           expected: ['Да, я отпра́вил его́ вчера́ по электро́нной по́чте.', 'отпра́вил', 'по электро́нной по́чте', 'вчера́'],
           hint: 'Confirme o envio com o perfectivo отпра́вил e diga quando e como.',
         },
-        communityPrompt: 'Escreva um e-mail formal curto a uma instituição: saudação com «Уважа́емый/Уважа́емая…», um pedido educado e o fecho «С уваже́нием».',
+        communityPrompt: 'Escreva um e-mail formal curto a uma instituição: saudação com “Уважа́емый/Уважа́емая…”, um pedido educado e o fecho “С уваже́нием”.',
       },
       {
         id: 'ru-u10-p',
@@ -1308,10 +1308,10 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'Здра́вствуйте. Чем могу́ помо́чь? Ва́ши докуме́нты уже́ прове́рены?',
           botTranslation: 'Olá. Em que posso ajudar? Seus documentos já foram conferidos?',
           expected: ['Да, они́ прове́рены. Прочита́в догово́р, я хоте́л бы его́ подписа́ть.', 'прове́рены', 'прочита́в', 'подписа́ть'],
-          hint: 'Use o particípio curto (прове́рены), um gerúndio perfectivo e um pedido formal com «хоте́л бы».',
+          hint: 'Use o particípio curto (прове́рены), um gerúndio perfectivo e um pedido formal com “хоте́л бы”.',
         },
         communityPrompt:
-          'Escreva um e-mail formal completo (5–6 frases) pedindo a segunda via de um documento: use «Уважа́емый…», um gerúndio, uma passiva e «С уваже́нием».',
+          'Escreva um e-mail formal completo (5–6 frases) pedindo a segunda via de um documento: use “Уважа́емый…”, um gerúndio, uma passiva e “С уваже́нием”.',
       },
     ],
   },
@@ -1330,12 +1330,12 @@ export const UNITS_RU: UnitSeed[] = [
       culture_tip:
         'Na taiga, a regra de ouro é nunca alimentar ursos e fazer barulho ao andar pela mata, para não surpreender nenhum bicho. No fim do verão, colher frutas silvestres (я́годы) e cogumelos é quase um esporte nacional. No inverno, o gelo do Baikal fica tão transparente que dá para ver o fundo perto da margem, mas só se anda sobre ele com orientação de quem conhece o lugar.',
       grammar_why:
-        'Os verbos de movimento ganham sentidos precisos com prefixos. Com идти́, o perfectivo prefixado termina em -йти: пере- é atravessar (перейти́ ре́ку), об- é contornar (обойти́ ка́мень), до- é chegar até um ponto e pede до + genitivo (дойти́ до о́зера), под- é aproximar-se e pede к + dativo (подойти́ к до́му), от- é afastar-se (отойти́ от), с- é sair de um caminho ou descer (сойти́ с тропы́). Os mesmos prefixos servem para плыть, бежа́ть e лете́ть: переплы́ть, перебежа́ть, подлете́ть. Em português usamos verbos diferentes (atravessar, contornar, aproximar-se); o russo monta tudo sobre o mesmo verbo-base. A natureza também rende expressões idiomáticas: «медве́жья услу́га» é um favor que atrapalha, e «медве́жий у́гол» é um fim de mundo.',
+        'Os verbos de movimento ganham sentidos precisos com prefixos. Com идти́, o perfectivo prefixado termina em -йти: пере- é atravessar (перейти́ ре́ку), об- é contornar (обойти́ ка́мень), до- é chegar até um ponto e pede до + genitivo (дойти́ до о́зера), под- é aproximar-se e pede к + dativo (подойти́ к до́му), от- é afastar-se (отойти́ от), с- é sair de um caminho ou descer (сойти́ с тропы́). Os mesmos prefixos servem para плыть, бежа́ть e лете́ть: переплы́ть, перебежа́ть, подлете́ть. Em português usamos verbos diferentes (atravessar, contornar, aproximar-se); o russo monta tudo sobre o mesmo verbo-base. A natureza também rende expressões idiomáticas: “медве́жья услу́га” é um favor que atrapalha, e “медве́жий у́гол” é um fim de mundo.',
       grammar_examples: [
         ['Мы перешли́ ре́ку по льду.', 'Atravessamos o rio pelo gelo.'],
         ['Медве́дя лу́чше обойти́ стороно́й.', 'É melhor contornar o urso de longe.'],
         ['Мы дошли́ до о́зера то́лько к ве́черу.', 'Só chegamos ao lago ao anoitecer.'],
-        ['Оказа́ть медве́жью услу́гу', 'Prestar um «favor de urso» (ajudar atrapalhando)'],
+        ['Оказа́ть медве́жью услу́гу', 'Prestar um “favor de urso” (ajudar atrapalhando)'],
       ],
       character_guide: null,
     },
@@ -1395,7 +1395,7 @@ export const UNITS_RU: UnitSeed[] = [
             sentence: 'Ты хоте́л помо́чь, но оказа́л мне ___ услу́гу.',
             answer: 'медве́жью',
             options: ['медве́жью', 'во́лчью', 'ли́сью'],
-            translation: 'Você quis ajudar, mas me prestou um «favor de urso».',
+            translation: 'Você quis ajudar, mas me prestou um “favor de urso”.',
           },
         ],
         voice: {
@@ -1435,7 +1435,7 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'Мне стра́шно идти́ в тайгу́ зимо́й: моро́з, во́лки…',
           botTranslation: 'Tenho medo de ir à taiga no inverno: frio, lobos…',
           expected: ['Волко́в боя́ться — в лес не ходи́ть! Пойдём вме́сте, я зна́ю доро́гу.', 'волко́в боя́ться', 'в лес не ходи́ть', 'пойдём'],
-          hint: 'Responda com o provérbio «Волко́в боя́ться — в лес не ходи́ть» e convide para ir junto.',
+          hint: 'Responda com o provérbio “Волко́в боя́ться — в лес не ходи́ть” e convide para ir junto.',
         },
         communityPrompt: 'Use duas expressões idiomáticas com animais (медве́жья услу́га, медве́жий у́гол…) numa pequena história.',
       },
@@ -1466,11 +1466,11 @@ export const UNITS_RU: UnitSeed[] = [
       title: 'A arte de discordar à mesa da cozinha',
       emoji: '🗣️',
       history:
-        'Cerca de três quartos da população da Rússia vivem em cidades, mas o laço com o campo continua forte. A да́ча, casa de campo com horta, virou fenômeno de massa na época soviética, e muitas famílias urbanas ainda passam os fins de semana de verão plantando batata, pepino e frutas. A literatura russa também pesou os dois lados: em «Anna Kariênina», Tolstói contrapõe a vida de Liévin no campo à sociedade de Moscou e São Petersburgo.',
+        'Cerca de três quartos da população da Rússia vivem em cidades, mas o laço com o campo continua forte. A да́ча, casa de campo com horta, virou fenômeno de massa na época soviética, e muitas famílias urbanas ainda passam os fins de semana de verão plantando batata, pepino e frutas. A literatura russa também pesou os dois lados: em “Anna Kariênina”, Tolstói contrapõe a vida de Liévin no campo à sociedade de Moscou e São Petersburgo.',
       culture_tip:
-        'Entre russos, discordar abertamente não é falta de educação: as longas «conversas de cozinha», com chá e argumentos, são uma tradição. Para suavizar uma crítica, use «Мне ка́жется…» ou «Я не совсе́м согла́сен (согла́сна)…». Com quem você acabou de conhecer, porém, prefira temas como cidade, natureza e tecnologia a política.',
+        'Entre russos, discordar abertamente não é falta de educação: as longas “conversas de cozinha”, com chá e argumentos, são uma tradição. Para suavizar uma crítica, use “Мне ка́жется…” ou “Я не совсе́м согла́сен (согла́сна)…”. Com quem você acabou de conhecer, porém, prefira temas como cidade, natureza e tecnologia a política.',
       grammar_why:
-        'Para opinar, o russo tem fórmulas prontas: «по-мо́ему» (na minha opinião, com hífen), «я счита́ю, что…» (eu considero que…) e «мне ка́жется, что…» (me parece que…), esta com o dativo мне, como no nosso «me parece». Para pesar os dois lados: «с одно́й стороны́… с друго́й стороны́…», igual ao «por um lado… por outro». Para enumerar e contrapor: «во-пе́рвых, во-вторы́х», «одна́ко» (no entanto), «тем не ме́нее» (mesmo assim) e «зато́» (em compensação). Concordar é «я согла́сен / я согла́сна с + instrumental» (согла́сна с тобо́й): um adjetivo curto que muda com o gênero de quem fala.',
+        'Para opinar, o russo tem fórmulas prontas: “по-мо́ему” (na minha opinião, com hífen), “я счита́ю, что…” (eu considero que…) e “мне ка́жется, что…” (me parece que…), esta com o dativo мне, como no nosso “me parece”. Para pesar os dois lados: “с одно́й стороны́… с друго́й стороны́…”, igual ao “por um lado… por outro”. Para enumerar e contrapor: “во-пе́рвых, во-вторы́х”, “одна́ко” (no entanto), “тем не ме́нее” (mesmo assim) e “зато́” (em compensação). Concordar é “я согла́сен / я согла́сна с + instrumental” (согла́сна с тобо́й): um adjetivo curto que muda com o gênero de quem fala.',
       grammar_examples: [
         ['По-мо́ему, в го́роде бо́льше возмо́жностей.', 'Na minha opinião, na cidade há mais oportunidades.'],
         ['С одно́й стороны́, в дере́вне ти́хо, с друго́й стороны́, там ма́ло рабо́ты.', 'Por um lado, no interior é tranquilo; por outro, há pouco trabalho lá.'],
@@ -1514,9 +1514,9 @@ export const UNITS_RU: UnitSeed[] = [
             'с одно́й стороны́',
             'с друго́й стороны́',
           ],
-          hint: 'Dê sua opinião com «По-мо́ему…» e pese os dois lados.',
+          hint: 'Dê sua opinião com “По-мо́ему…” e pese os dois lados.',
         },
-        communityPrompt: 'Escreva 3–4 frases comparando cidade e campo com «с одно́й стороны́… с друго́й стороны́» e dê sua conclusão.',
+        communityPrompt: 'Escreva 3–4 frases comparando cidade e campo com “с одно́й стороны́… с друго́й стороны́” e dê sua conclusão.',
       },
       {
         id: 'ru-u12-l2',
@@ -1552,10 +1552,10 @@ export const UNITS_RU: UnitSeed[] = [
             'согла́сна',
             'с одно́й стороны́',
           ],
-          hint: 'Concorde em parte («Отча́сти согла́сен/согла́сна») e mostre os dois lados.',
+          hint: 'Concorde em parte (“Отча́сти согла́сен/согла́сна”) e mostre os dois lados.',
         },
         communityPrompt:
-          'Escreva um parágrafo sobre um aplicativo ou sobre a inteligência artificial: um argumento a favor, um contra e sua opinião com «Я счита́ю, что…».',
+          'Escreva um parágrafo sobre um aplicativo ou sobre a inteligência artificial: um argumento a favor, um contra e sua opinião com “Я счита́ю, что…”.',
       },
       {
         id: 'ru-u12-l3',
@@ -1586,7 +1586,7 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'Я счита́ю, что в дере́вне молодёжи де́лать не́чего. Вы согла́сны?',
           botTranslation: 'Acho que no interior os jovens não têm o que fazer. O senhor concorda?',
           expected: ['Не совсе́м. Во-пе́рвых, там мо́жно рабо́тать удалённо, а во-вторы́х, приро́да там прекра́сная.', 'не совсе́м', 'во-пе́рвых', 'во-вторы́х'],
-          hint: 'Discorde com educação («Не совсе́м…») e enumere argumentos com во-пе́рвых, во-вторы́х.',
+          hint: 'Discorde com educação (“Не совсе́м…”) e enumere argumentos com во-пе́рвых, во-вторы́х.',
         },
         communityPrompt:
           'Escolha um lado (cidade ou campo; a favor ou contra a IA) e escreva um minidiscurso de 4 frases com во-пе́рвых, во-вторы́х, тем не ме́нее e uma conclusão.',
@@ -1607,7 +1607,7 @@ export const UNITS_RU: UnitSeed[] = [
             'по-мо́ему',
             'зави́сит',
           ],
-          hint: 'Pese os dois lados e termine com sua opinião («По-мо́ему, всё зави́сит от…»).',
+          hint: 'Pese os dois lados e termine com sua opinião (“По-мо́ему, всё зави́сит от…”).',
         },
         communityPrompt:
           'Escreva um texto argumentativo de 6–8 frases sobre cidade × campo ou tecnologia: argumentos dos dois lados, pelo menos três conectores (во-пе́рвых, одна́ко, тем не ме́нее…) e uma conclusão com sua opinião.',
@@ -1622,14 +1622,14 @@ export const UNITS_RU: UnitSeed[] = [
     emoji: '😄',
     card: {
       id: 'ru-c13',
-      title: 'Anedotas, ironia e o peso de «ты» e «вы»',
+      title: 'Anedotas, ironia e o peso de “ты” e “вы”',
       emoji: '🎭',
       history:
-        'O анекдо́т é a piada curta russa: uma pequena cena, quase sempre com diálogo, que termina numa frase que vira tudo do avesso. A palavra vem do grego anékdota, «coisas não publicadas». No século XIX ainda designava uma historinha curiosa sobre gente famosa; só depois passou a significar sobretudo «piada». Há ciclos inteiros de anedotas com personagens fixos, como os bichos da floresta (o urso, a lebre, o lobo), e o gênero circula por todo o mundo de língua russa, da Rússia a Belarus, ao Cazaquistão e ao Quirguistão.',
+        'O анекдо́т é a piada curta russa: uma pequena cena, quase sempre com diálogo, que termina numa frase que vira tudo do avesso. A palavra vem do grego anékdota, “coisas não publicadas”. No século XIX ainda designava uma historinha curiosa sobre gente famosa; só depois passou a significar sobretudo “piada”. Há ciclos inteiros de anedotas com personagens fixos, como os bichos da floresta (o urso, a lebre, o lobo), e o gênero circula por todo o mundo de língua russa, da Rússia a Belarus, ao Cazaquistão e ao Quirguistão.',
       culture_tip:
-        'Anedota boa brinca com situações e com o próprio contador, nunca com povos, religiões ou aparência: isso soa grosseiro em qualquer língua. A abertura clássica é «Встреча́ются как-то…» ou «Прихо́дит как-то…». Passar de вы para ты é um passo social: em geral quem é mais velho ou tem posição mais alta propõe («Дава́йте перейдём на ты?»). Usar ты cedo demais com um desconhecido soa íntimo ou grosseiro.',
+        'Anedota boa brinca com situações e com o próprio contador, nunca com povos, religiões ou aparência: isso soa grosseiro em qualquer língua. A abertura clássica é “Встреча́ются как-то…” ou “Прихо́дит как-то…”. Passar de вы para ты é um passo social: em geral quem é mais velho ou tem posição mais alta propõe (“Дава́йте перейдём на ты?”). Usar ты cedo demais com um desconhecido soa íntimo ou grosseiro.',
       grammar_why:
-        'No C1 o desafio é o tom. Os diminutivos (-ик, -очка, -еньк-) mostram carinho ou ironia: «Хоти́те ча́йку?» é hospitalidade, mas «Рабо́тничек!» dito a um colega que não fez nada é deboche. As partículas mudam a atitude sem mudar o conteúdo: же insiste no óbvio («Я же говори́л!»), ведь apela ao que o outro já sabe, -то destaca o tema ou faz concessão («Смешно́-то смешно́, но…»), ну hesita, apressa ou ironiza, вот aponta ou conclui. Em português fazemos o mesmo com «né», «ué», «afinal» e «pois é». A ironia russa costuma ser seca: um elogio exagerado dito com cara neutra, como «Ну, спаси́бо тебе́ большо́е!» para quem acabou de atrapalhar.',
+        'No C1 o desafio é o tom. Os diminutivos (-ик, -очка, -еньк-) mostram carinho ou ironia: “Хоти́те ча́йку?” é hospitalidade, mas “Рабо́тничек!” dito a um colega que não fez nada é deboche. As partículas mudam a atitude sem mudar o conteúdo: же insiste no óbvio (“Я же говори́л!”), ведь apela ao que o outro já sabe, -то destaca o tema ou faz concessão (“Смешно́-то смешно́, но…”), ну hesita, apressa ou ironiza, вот aponta ou conclui. Em português fazemos o mesmo com “né”, “ué”, “afinal” e “pois é”. A ironia russa costuma ser seca: um elogio exagerado dito com cara neutra, como “Ну, спаси́бо тебе́ большо́е!” para quem acabou de atrapalhar.',
       grammar_examples: [
         ['Я же тебе́ говори́л!', 'Eu não te falei?!'],
         ['Ведь сего́дня пра́здник.', 'Afinal, hoje é feriado.'],
@@ -1663,10 +1663,10 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'Ну, расскажи́ анекдо́т! Ты же у нас гла́вный шутни́к.',
           botTranslation: 'Vai, conta uma piada aí! Você é o piadista da turma, né.',
           expected: ['Ла́дно, слу́шай: встреча́ются как-то медве́дь и за́яц в лесу́…', 'слу́шай', 'встреча́ются как-то', 'анекдо́т', 'ла́дно'],
-          hint: 'Aceite com «Ла́дно, слу́шай…» e abra com a fórmula clássica «Встреча́ются как-то…».',
+          hint: 'Aceite com “Ла́дно, слу́шай…” e abra com a fórmula clássica “Встреча́ются как-то…”.',
         },
         communityPrompt:
-          'Escreva em russo uma anedota curta e inofensiva (com bichos ou sobre você mesmo) usando «как-то» e pelo menos uma partícula (же, ведь, ну).',
+          'Escreva em russo uma anedota curta e inofensiva (com bichos ou sobre você mesmo) usando “как-то” e pelo menos uma partícula (же, ведь, ну).',
       },
       {
         id: 'ru-u13-l2',
@@ -1690,14 +1690,14 @@ export const UNITS_RU: UnitSeed[] = [
             sentence: 'Мы давно́ знако́мы, дава́й ___ на ты!',
             answer: 'перейдём',
             options: ['перейдём', 'перешли́', 'перейти́'],
-            translation: 'A gente já se conhece há tempos, vamos passar a nos tratar por «ты»!',
+            translation: 'A gente já se conhece há tempos, vamos passar a nos tratar por “ты”!',
           },
         ],
         voice: {
           bot: 'Здра́вствуйте! Я ваш но́вый сосе́д, Андре́й. Мо́жно про́сто на ты, мы же почти́ одного́ во́зраста.',
-          botTranslation: 'Olá! Sou seu novo vizinho, Andrei. Pode me tratar por «ты», afinal temos quase a mesma idade.',
+          botTranslation: 'Olá! Sou seu novo vizinho, Andrei. Pode me tratar por “ты”, afinal temos quase a mesma idade.',
           expected: ['О́чень прия́тно, Андре́й! Дава́й на ты. Меня́ зову́т А́на.', 'о́чень прия́тно', 'дава́й на ты', 'меня́ зову́т'],
-          hint: 'Aceite o «ты» com «Дава́й на ты» e se apresente.',
+          hint: 'Aceite o “ты” com “Дава́й на ты” e se apresente.',
         },
         communityPrompt:
           'Escreva duas mensagens em russo pedindo a mesma coisa (um livro emprestado): uma com вы para um professor e outra com ты para um amigo, com um diminutivo afetivo na segunda.',
@@ -1731,7 +1731,7 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'Ой, я опя́ть забы́л твой день рожде́ния… Ты ведь не се́рдишься?',
           botTranslation: 'Ai, esqueci seu aniversário de novo… Você não está bravo, né?',
           expected: ['Ну что ты, коне́чно не сержу́сь! Я же привы́к.', 'коне́чно', 'не сержу́сь', 'привы́к', 'ну что ты'],
-          hint: 'Responda com ironia leve: «Ну что ты, коне́чно не сержу́сь…» e uma partícula como же.',
+          hint: 'Responda com ironia leve: “Ну что ты, коне́чно не сержу́сь…” e uma partícula como же.',
         },
         communityPrompt: 'Grave uma resposta irônica e gentil para um amigo que chegou uma hora atrasado, usando ну, же ou вот.',
       },
@@ -1745,7 +1745,7 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'Скажи́те, а как в Брази́лии шу́тят? Расскажи́те нам что-нибудь смешно́е, то́лько без оби́д.',
           botTranslation: 'Diga, como é o humor no Brasil? Conte algo engraçado para nós, só que sem ofender ninguém.',
           expected: ['У нас лю́бят шути́ть над собо́й. Вот, наприме́р, тако́й анекдо́т…', 'шути́ть', 'анекдо́т', 'наприме́р', 'над собо́й'],
-          hint: 'Diga como os brasileiros brincam, trate quem pergunta por вы e introduza a piada com «Вот, наприме́р…».',
+          hint: 'Diga como os brasileiros brincam, trate quem pergunta por вы e introduza a piada com “Вот, наприме́р…”.',
         },
         communityPrompt:
           'Escreva um pequeno diálogo em russo (6 falas) em que dois colegas passam de вы para ты; inclua uma anedota inofensiva, um diminutivo e pelo menos três partículas diferentes.',
@@ -1763,14 +1763,14 @@ export const UNITS_RU: UnitSeed[] = [
       title: 'Do Lago dos Cisnes ao tabuleiro',
       emoji: '♟️',
       history:
-        'Piotr Tchaikóvski (1840–1893) compôs a música de «O Lago dos Cisnes», que estreou em 1877 no Teatro Bolshoi, em Moscou. A primeira montagem não fez grande sucesso; a versão coreografada por Marius Petipa e Lev Ivanov em São Petersburgo, em 1895, é a base das montagens clássicas até hoje. Tchaikóvski escreveu ainda «A Bela Adormecida» e «O Quebra-Nozes». No xadrez, Mikhail Botvínnik conquistou o título mundial em 1948, e jogadores soviéticos mantiveram o título durante décadas.',
+        'Piotr Tchaikóvski (1840–1893) compôs a música de “O Lago dos Cisnes”, que estreou em 1877 no Teatro Bolshoi, em Moscou. A primeira montagem não fez grande sucesso; a versão coreografada por Marius Petipa e Lev Ivanov em São Petersburgo, em 1895, é a base das montagens clássicas até hoje. Tchaikóvski escreveu ainda “A Bela Adormecida” e “O Quebra-Nozes”. No xadrez, Mikhail Botvínnik conquistou o título mundial em 1948, e jogadores soviéticos mantiveram o título durante décadas.',
       culture_tip:
         'No teatro, o casaco fica no гардеро́б (chapelaria): entrar de casaco na plateia é malvisto. No fim, é comum levar flores para os artistas e aplaudir de pé, às vezes com palmas ritmadas. O intervalo (антра́кт) é a hora do bufê do teatro, que faz parte do programa. Num clube de xadrez, aperta-se a mão antes e depois da partida, e conversar durante o jogo é falta de educação.',
       grammar_why:
-        'O estilo especializado (crítica, ciência, textos oficiais) prefere substantivos a verbos: em vez de «когда́ поста́вили бале́т», escreve-se «постано́вка бале́та» (a montagem do balé). Os sufixos -ние/-ание, -ция e -ость transformam ações e qualidades em nomes: исполня́ть → исполне́ние, развива́ть → разви́тие. Daí nascem cadeias de genitivos, cada nome dependendo do anterior: «исто́рия созда́ния бале́та», a história da criação do balé. Em português empilhamos «de… do… da…»; o russo faz o mesmo só com as terminações, sem preposição. Para ler, avance da esquerda para a direita perguntando «de quê?» a cada palavra.',
+        'O estilo especializado (crítica, ciência, textos oficiais) prefere substantivos a verbos: em vez de “когда́ поста́вили бале́т”, escreve-se “постано́вка бале́та” (a montagem do balé). Os sufixos -ние/-ание, -ция e -ость transformam ações e qualidades em nomes: исполня́ть → исполне́ние, развива́ть → разви́тие. Daí nascem cadeias de genitivos, cada nome dependendo do anterior: “исто́рия созда́ния бале́та”, a história da criação do balé. Em português empilhamos “de… do… da…”; o russo faz o mesmo só com as terminações, sem preposição. Para ler, avance da esquerda para a direita perguntando “de quê?” a cada palavra.',
       grammar_examples: [
         ['пе́рвая постано́вка бале́та', 'a primeira montagem do balé'],
-        ['исто́рия созда́ния «Лебеди́ного о́зера»', 'a história da criação de «O Lago dos Cisnes»'],
+        ['исто́рия созда́ния “Лебеди́ного о́зера”', 'a história da criação de “O Lago dos Cisnes”'],
         ['разви́тие шахма́тной шко́лы страны́', 'o desenvolvimento da escola de xadrez do país'],
         ['повыше́ние у́ровня игры́ шахмати́стов', 'a elevação do nível de jogo dos enxadristas'],
       ],
@@ -1784,10 +1784,10 @@ export const UNITS_RU: UnitSeed[] = [
         words: ['бале́т', 'му́зыка', 'теа́тр', 'та́нец', 'конце́рт', 'скри́пка'],
         cloze: [
           {
-            sentence: 'Премье́ра ___ «Лебеди́ное о́зеро» состоя́лась в 1877 году́.',
+            sentence: 'Премье́ра ___ “Лебеди́ное о́зеро” состоя́лась в 1877 году́.',
             answer: 'бале́та',
             options: ['бале́та', 'бале́т', 'бале́том'],
-            translation: 'A estreia do balé «O Lago dos Cisnes» aconteceu em 1877.',
+            translation: 'A estreia do balé “O Lago dos Cisnes” aconteceu em 1877.',
           },
           {
             sentence: 'По́сле ___ спекта́кля зри́тели до́лго аплоди́ровали.',
@@ -1796,23 +1796,23 @@ export const UNITS_RU: UnitSeed[] = [
             translation: 'Depois do fim do espetáculo, a plateia aplaudiu por muito tempo.',
           },
           {
-            sentence: 'Чайко́вский написа́л му́зыку к трём ___: «Лебеди́ное о́зеро», «Спя́щая краса́вица» и «Щелку́нчик».',
+            sentence: 'Чайко́вский написа́л му́зыку к трём ___: “Лебеди́ное о́зеро”, “Спя́щая краса́вица” и “Щелку́нчик”.',
             answer: 'бале́там',
             options: ['бале́там', 'бале́тов', 'бале́ты'],
-            translation: 'Tchaikóvski compôs a música de três balés: «O Lago dos Cisnes», «A Bela Adormecida» e «O Quebra-Nozes».',
+            translation: 'Tchaikóvski compôs a música de três balés: “O Lago dos Cisnes”, “A Bela Adormecida” e “O Quebra-Nozes”.',
           },
         ],
         voice: {
           bot: 'Вы бы́ли в Большо́м теа́тре? Что вам бо́льше всего́ запо́мнилось?',
           botTranslation: 'O senhor já foi ao Bolshoi? O que mais ficou na sua memória?',
           expected: [
-            'Да, я ви́дел «Лебеди́ное о́зеро». Бо́льше всего́ мне запо́мнилось исполне́ние гла́вной па́ртии.',
+            'Да, я ви́дел “Лебеди́ное о́зеро”. Бо́льше всего́ мне запо́мнилось исполне́ние гла́вной па́ртии.',
             'Лебеди́ное о́зеро',
             'запо́мнилось',
             'исполне́ние',
             'му́зыка',
           ],
-          hint: 'Use um substantivo abstrato: «исполне́ние гла́вной па́ртии», «постано́вка», «му́зыка Чайко́вского».',
+          hint: 'Use um substantivo abstrato: “исполне́ние гла́вной па́ртии”, “постано́вка”, “му́зыка Чайко́вского”.',
         },
         communityPrompt:
           'Escreva 3 frases em russo, em estilo de crítica, sobre um espetáculo que você viu, com pelo menos duas nominalizações (постано́вка, исполне́ние, оконча́ние…).',
@@ -1846,10 +1846,10 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'Ты игра́ешь в ша́хматы? Дава́й сыгра́ем па́ртию!',
           botTranslation: 'Você joga xadrez? Vamos jogar uma partida!',
           expected: ['С удово́льствием! То́лько предупрежда́ю: я игра́ю не о́чень хорошо́.', 'с удово́льствием', 'дава́й', 'сыгра́ем', 'игра́ю'],
-          hint: 'Aceite com «С удово́льствием!» e comente seu nível de jogo.',
+          hint: 'Aceite com “С удово́льствием!” e comente seu nível de jogo.',
         },
         communityPrompt:
-          'Descreva em russo uma partida (de xadrez ou de outro jogo) como um comentarista, usando uma cadeia de genitivos (ex.: «нача́ло па́ртии чемпио́на»).',
+          'Descreva em russo uma partida (de xadrez ou de outro jogo) como um comentarista, usando uma cadeia de genitivos (ex.: “нача́ло па́ртии чемпио́на”).',
       },
       {
         id: 'ru-u14-l3',
@@ -1880,7 +1880,7 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'Расскажи́те, пожа́луйста, о це́ли ва́шего прое́кта в о́бласти иску́сства.',
           botTranslation: 'Fale, por favor, sobre o objetivo do seu projeto na área das artes.',
           expected: ['Цель прое́кта — популяриза́ция ру́сской культу́ры среди́ молодёжи.', 'цель прое́кта', 'популяриза́ция', 'культу́ры', 'молодёжи'],
-          hint: 'Responda no estilo formal: «Цель прое́кта — …» e um substantivo em -ция ou -ние.',
+          hint: 'Responda no estilo formal: “Цель прое́кта — …” e um substantivo em -ция ou -ние.',
         },
         communityPrompt: 'Grave um anúncio oficial de 3 frases para um concerto ou uma exposição, usando nominalizações e genitivos em cadeia.',
       },
@@ -1894,10 +1894,10 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'Как вы счита́ете, почему́ ру́сский бале́т и ру́сская шахма́тная шко́ла так изве́стны в ми́ре?',
           botTranslation: 'Na sua opinião, por que o balé russo e a escola russa de xadrez são tão conhecidos no mundo?',
           expected: ['Я счита́ю, что причи́на — в систе́ме подгото́вки и в высо́ком у́ровне преподава́ния.', 'подгото́вки', 'у́ровне', 'преподава́ния', 'я счита́ю'],
-          hint: 'Argumente em estilo especializado: «систе́ма подгото́вки», «у́ровень преподава́ния», «разви́тие тради́ции».',
+          hint: 'Argumente em estilo especializado: “систе́ма подгото́вки”, “у́ровень преподава́ния”, “разви́тие тради́ции”.',
         },
         communityPrompt:
-          'Escreva um parágrafo de enciclopédia (5–6 frases) em russo sobre «O Lago dos Cisnes» ou sobre o xadrez na Rússia, com nominalizações e pelo menos duas cadeias de genitivo.',
+          'Escreva um parágrafo de enciclopédia (5–6 frases) em russo sobre “O Lago dos Cisnes” ou sobre o xadrez na Rússia, com nominalizações e pelo menos duas cadeias de genitivo.',
       },
     ],
   },
@@ -1912,11 +1912,11 @@ export const UNITS_RU: UnitSeed[] = [
       title: 'Púchkin, Tolstói, Tchekhov e a sabedoria dos provérbios',
       emoji: '🪶',
       history:
-        'Aleksandr Púchkin (1799–1837) é visto como o criador da língua literária russa moderna; seu romance em versos «Evguéni Oniéguin» mistura a fala culta e a do dia a dia. Liev Tolstói (1828–1910) escreveu «Guerra e Paz» e «Anna Kariênina», que abre com a frase famosa: «Todas as famílias felizes se parecem; cada família infeliz é infeliz à sua maneira». Anton Tchekhov (1860–1904), médico de formação, renovou o conto e o teatro com peças como «A Gaivota» e «O Jardim das Cerejeiras». Os provérbios (посло́вицы) guardam a mesma sabedoria em poucas palavras, muitas vezes rimadas.',
+        'Aleksandr Púchkin (1799–1837) é visto como o criador da língua literária russa moderna; seu romance em versos “Evguéni Oniéguin” mistura a fala culta e a do dia a dia. Liev Tolstói (1828–1910) escreveu “Guerra e Paz” e “Anna Kariênina”, que abre com a frase famosa: “Todas as famílias felizes se parecem; cada família infeliz é infeliz à sua maneira”. Anton Tchekhov (1860–1904), médico de formação, renovou o conto e o teatro com peças como “A Gaivota” e “O Jardim das Cerejeiras”. Os provérbios (посло́вицы) guardam a mesma sabedoria em poucas palavras, muitas vezes rimadas.',
       culture_tip:
         'Citar Púchkin ou um provérbio na hora certa é sinal de cultura e costuma arrancar um sorriso; muita gente sabe de cor versos aprendidos na escola. Mas provérbio demais soa pedante: um por conversa basta. Em 6 de junho, aniversário de Púchkin, comemora-se o Dia da Língua Russa.',
       grammar_why:
-        'No estilo literário, a ordem das palavras vira instrumento. Na fala neutra o dado novo vem no fim; a literatura mexe nisso para dar ênfase e ritmo, pondo o adjetivo depois do nome ou o verbo antes do sujeito: «Я па́мятник себе́ воздви́г нерукотво́рный», de Púchkin. Os provérbios economizam: cortam verbos e conjunções, usam o infinitivo ou a 2ª pessoa com sentido genérico («você» = qualquer um) e muitas vezes rimam. Também aparecem arcaísmos poéticos, como о́чи (olhos) e уста́ (lábios) no lugar de глаза́ e гу́бы. É como o nosso «Mais vale um pássaro na mão…»: forma fixa, sentido figurado.',
+        'No estilo literário, a ordem das palavras vira instrumento. Na fala neutra o dado novo vem no fim; a literatura mexe nisso para dar ênfase e ritmo, pondo o adjetivo depois do nome ou o verbo antes do sujeito: “Я па́мятник себе́ воздви́г нерукотво́рный”, de Púchkin. Os provérbios economizam: cortam verbos e conjunções, usam o infinitivo ou a 2ª pessoa com sentido genérico (“você” = qualquer um) e muitas vezes rimam. Também aparecem arcaísmos poéticos, como о́чи (olhos) e уста́ (lábios) no lugar de глаза́ e гу́бы. É como o nosso “Mais vale um pássaro na mão…”: forma fixa, sentido figurado.',
       grammar_examples: [
         ['Не име́й сто рубле́й, а име́й сто друзе́й.', 'Não tenha cem rublos, tenha cem amigos.'],
         ['Ти́ше е́дешь — да́льше бу́дешь.', 'Devagar se vai ao longe.'],
@@ -1945,20 +1945,20 @@ export const UNITS_RU: UnitSeed[] = [
             translation: 'Meu tio, homem dos mais honestos princípios…',
           },
           {
-            sentence: 'Пу́шкина ___ «со́лнцем ру́сской поэ́зии».',
+            sentence: 'Пу́шкина ___ “со́лнцем ру́сской поэ́зии”.',
             answer: 'называ́ют',
             options: ['называ́ют', 'называ́ет', 'назва́ть'],
-            translation: 'Púchkin é chamado de «o sol da poesia russa».',
+            translation: 'Púchkin é chamado de “o sol da poesia russa”.',
           },
         ],
         voice: {
           bot: 'Каки́е стихи́ Пу́шкина вы зна́ете наизу́сть? Прочита́йте хотя́ бы стро́чку!',
           botTranslation: 'Que poemas de Púchkin o senhor sabe de cor? Recite pelo menos um verso!',
-          expected: ['«Я вас люби́л: любо́вь ещё, быть мо́жет, в душе́ мое́й уга́сла не совсе́м…»', 'я вас люби́л', 'любо́вь', 'я па́мятник себе́ воздви́г'],
-          hint: 'Recite o começo de «Я вас люби́л…» ou de «Я па́мятник себе́ воздви́г…».',
+          expected: ['“Я вас люби́л: любо́вь ещё, быть мо́жет, в душе́ мое́й уга́сла не совсе́м…”', 'я вас люби́л', 'любо́вь', 'я па́мятник себе́ воздви́г'],
+          hint: 'Recite o começo de “Я вас люби́л…” ou de “Я па́мятник себе́ воздви́г…”.',
         },
         communityPrompt:
-          'Escreva 3 frases em russo sobre um escritor que você admira, invertendo a ordem neutra em pelo menos uma delas para dar ênfase (ex.: «Люби́л он…»).',
+          'Escreva 3 frases em russo sobre um escritor que você admira, invertendo a ordem neutra em pelo menos uma delas para dar ênfase (ex.: “Люби́л он…”).',
       },
       {
         id: 'ru-u15-l2',
@@ -1979,17 +1979,17 @@ export const UNITS_RU: UnitSeed[] = [
             translation: 'Tchekhov, médico de formação, escrevia contos e peças.',
           },
           {
-            sentence: 'В 1904 году́ в Моско́вском Худо́жественном теа́тре ___ пье́су «Вишнёвый сад».',
+            sentence: 'В 1904 году́ в Моско́вском Худо́жественном теа́тре ___ пье́су “Вишнёвый сад”.',
             answer: 'поста́вили',
             options: ['поста́вили', 'поста́вил', 'ста́вят'],
-            translation: 'Em 1904, a peça «O Jardim das Cerejeiras» foi encenada no Teatro de Arte de Moscou.',
+            translation: 'Em 1904, a peça “O Jardim das Cerejeiras” foi encenada no Teatro de Arte de Moscou.',
           },
         ],
         voice: {
           bot: 'Кого́ вы бо́льше лю́бите: Толсто́го и́ли Че́хова? И почему́?',
           botTranslation: 'De quem o senhor gosta mais: de Tolstói ou de Tchekhov? E por quê?',
           expected: ['Мне бли́же Че́хов: в его́ пье́сах за просты́ми слова́ми скрыва́ется больша́я грусть.', 'Че́хов', 'Толсто́й', 'мне бли́же', 'потому́ что'],
-          hint: 'Comece com «Мне бли́же…» e justifique com uma imagem literária.',
+          hint: 'Comece com “Мне бли́же…” e justifique com uma imagem literária.',
         },
         communityPrompt:
           'Escreva um parágrafo em russo comparando uma personagem de Tolstói ou de Tchekhov com alguém da vida real, com ordem expressiva em pelo menos uma frase.',
@@ -2037,10 +2037,10 @@ export const UNITS_RU: UnitSeed[] = [
           bot: 'Говоря́т, что литерату́ра — э́то па́мять наро́да. Согла́сны ли вы с э́тим? Приведи́те приме́р.',
           botTranslation: 'Dizem que a literatura é a memória de um povo. O senhor concorda? Dê um exemplo.',
           expected: ['Согла́сен. Уже́ почти́ два ве́ка мы чита́ем Пу́шкина, а его́ стро́ки звуча́т по-но́вому.', 'согла́сен', 'согла́сна', 'Пу́шкина', 'приме́р'],
-          hint: 'Concorde ou discorde com «Я счита́ю, что…», cite um autor e feche com um provérbio.',
+          hint: 'Concorde ou discorde com “Я счита́ю, что…”, cite um autor e feche com um provérbio.',
         },
         communityPrompt:
-          'Escreva um pequeno ensaio em russo (6–8 frases) sobre «A literatura como memória de um povo», com uma citação de Púchkin, Tolstói ou Tchekhov, um provérbio e pelo menos uma frase em ordem expressiva.',
+          'Escreva um pequeno ensaio em russo (6–8 frases) sobre “A literatura como memória de um povo”, com uma citação de Púchkin, Tolstói ou Tchekhov, um provérbio e pelo menos uma frase em ordem expressiva.',
       },
     ],
   },

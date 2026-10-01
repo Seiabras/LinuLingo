@@ -79,7 +79,7 @@ export const RECURSOS_BN: LanguageResources = {
       by: 'Zahir Raihan',
       year: '1970',
       level: 'B2',
-      why: 'Uma sátira familiar que é, na verdade, uma alegoria política às vésperas da independência de Bangladesh; traz «Amar Shonar Bangla», que depois virou o hino nacional.',
+      why: 'Uma sátira familiar que é, na verdade, uma alegoria política às vésperas da independência de Bangladesh; traz “Amar Shonar Bangla”, que depois virou o hino nacional.',
       accent: 'bengali de Bangladesh',
     },
     {
@@ -139,7 +139,7 @@ export const RECURSOS_BN: LanguageResources = {
       by: 'Anirban Bhattacharya',
       year: '2021',
       level: 'C1',
-      why: '«Macbeth» transportado para uma vila de pescadores do litoral bengali, falado num dialeto carregado: desafio para quem já está avançado.',
+      why: '“Macbeth” transportado para uma vila de pescadores do litoral bengali, falado num dialeto carregado: desafio para quem já está avançado.',
       accent: 'dialeto do litoral de Bengala Ocidental',
     },
     {
@@ -167,7 +167,7 @@ export const RECURSOS_BN: LanguageResources = {
       by: 'Kazi Nazrul Islam',
       year: '1922',
       level: 'C1',
-      why: '«O Rebelde», o poema que fez de Nazrul o «poeta rebelde» e, mais tarde, poeta nacional de Bangladesh; ritmo forte, ótimo para ler em voz alta.',
+      why: '“O Rebelde”, o poema que fez de Nazrul o “poeta rebelde” e, mais tarde, poeta nacional de Bangladesh; ritmo forte, ótimo para ler em voz alta.',
     },
     {
       kind: 'livro',
@@ -213,7 +213,7 @@ export const RECURSOS_BN: LanguageResources = {
       by: 'Rabindranath Tagore',
       year: '1905',
       level: 'A2',
-      why: '«Se ninguém responder ao seu chamado, siga sozinho»: canção de Tagore que Gandhi adorava e que ainda se canta em toda Bengala.',
+      why: '“Se ninguém responder ao seu chamado, siga sozinho”: canção de Tagore que Gandhi adorava e que ainda se canta em toda Bengala.',
     },
     {
       kind: 'musica',
@@ -222,7 +222,7 @@ export const RECURSOS_BN: LanguageResources = {
       by: 'Kazi Nazrul Islam',
       year: '1931',
       level: 'B1',
-      why: 'A canção de Eid mais famosa em bengali, tocada em todo fim de Ramadã em Bangladesh: um exemplo do «Nazrul Geeti», as canções de Nazrul.',
+      why: 'A canção de Eid mais famosa em bengali, tocada em todo fim de Ramadã em Bangladesh: um exemplo do “Nazrul Geeti”, as canções de Nazrul.',
       accent: 'bengali de Bangladesh',
     },
     {
@@ -231,7 +231,7 @@ export const RECURSOS_BN: LanguageResources = {
       original: 'খাঁচার ভিতর অচিন পাখি',
       by: 'Lalon Fakir',
       level: 'B2',
-      why: 'Canção baul do místico do século XIX sobre o «pássaro desconhecido» dentro da gaiola, a alma: poesia popular com imagens simples.',
+      why: 'Canção baul do místico do século XIX sobre o “pássaro desconhecido” dentro da gaiola, a alma: poesia popular com imagens simples.',
     },
     {
       kind: 'musica',
@@ -288,7 +288,7 @@ export const RECURSOS_BN: LanguageResources = {
       title: 'Forvo',
       by: 'Forvo',
       level: 'A1',
-      why: 'Palavras gravadas por falantes nativos de Bangladesh e da Índia: bom para ouvir a vogal «ó» embutida e as consoantes com sopro.',
+      why: 'Palavras gravadas por falantes nativos de Bangladesh e da Índia: bom para ouvir a vogal “ó” embutida e as consoantes com sopro.',
     },
     {
       kind: 'hq',
@@ -301,11 +301,11 @@ export const RECURSOS_BN: LanguageResources = {
     },
   ],
   tips: [
-    'O alfabeto bengali é da mesma família do devanágari: cada consoante traz uma vogal embutida, as outras vogais são sinais em volta, e quase todas as letras ficam penduradas numa linha em cima. Mas a vogal embutida soa como um «ó» aberto, não como «a»: ক se lê «kó».',
-    'Consoantes em sequência se fundem em letras compostas (যুক্তাক্ষর), às vezes irreconhecíveis: ক + ষ = ক্ষ, que se lê «kkh». Não tente decorar todas de uma vez; aprenda as mais comuns à medida que aparecem.',
+    'O alfabeto bengali é da mesma família do devanágari: cada consoante traz uma vogal embutida, as outras vogais são sinais em volta, e quase todas as letras ficam penduradas numa linha em cima. Mas a vogal embutida soa como um “ó” aberto, não como “a”: ক se lê “kó”.',
+    'Consoantes em sequência se fundem em letras compostas (যুক্তাক্ষর), às vezes irreconhecíveis: ক + ষ = ক্ষ, que se lê “kkh”. Não tente decorar todas de uma vez; aprenda as mais comuns à medida que aparecem.',
     'Boa notícia: o bengali não tem gênero gramatical, e o verbo não muda para homem ou mulher. Ele muda por pessoa e pelo grau de formalidade: তুই (tui, íntimo), তুমি (tumi, familiar) e আপনি (apni, respeitoso). A ordem é sujeito–objeto–verbo, com posposições.',
-    'Bangladesh e o estado indiano de Bengala Ocidental falam a mesma língua, com diferenças de vocabulário e de costume: em Bangladesh, de maioria muçulmana, é comum dizer পানি (pani) para «água» e cumprimentar com «assalamu alaikum»; em Calcutá, জল (jol) e «nomoshkar». Todo mundo entende as duas formas.',
-    'Textos antigos usam muitas vezes o sadhu bhasha, registro literário com formas verbais mais longas (করিয়াছি em vez de করেছি, «fiz»). O bengali de hoje, dos livros, jornais e da TV, é o cholito bhasha: comece por ele e deixe o sadhu para depois.',
+    'Bangladesh e o estado indiano de Bengala Ocidental falam a mesma língua, com diferenças de vocabulário e de costume: em Bangladesh, de maioria muçulmana, é comum dizer পানি (pani) para “água” e cumprimentar com “assalamu alaikum”; em Calcutá, জল (jol) e “nomoshkar”. Todo mundo entende as duas formas.',
+    'Textos antigos usam muitas vezes o sadhu bhasha, registro literário com formas verbais mais longas (করিয়াছি em vez de করেছি, “fiz”). O bengali de hoje, dos livros, jornais e da TV, é o cholito bhasha: comece por ele e deixe o sadhu para depois.',
     'Não existe uma prova internacional padronizada de bengali além do ACTFL OPI. Para estudar com certificado, o Instituto de Línguas Modernas da Universidade de Daca tem cursos de bangla só para estrangeiros, em quatro níveis. E vale saber: o Dia Internacional da Língua Materna (21 de fevereiro), da UNESCO, lembra os estudantes mortos em Daca em 1952 defendendo o bengali.',
   ],
 };

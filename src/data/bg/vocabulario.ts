@@ -10,7 +10,7 @@ import { buildVocab, type VocabRow } from '../types';
  */
 export const ROWS: VocabRow[] = [
   // ── Expressões ──
-  ['здраве́й', 'oi, olá (informal; para várias pessoas ou com respeito, «здраве́йте»)', 'interjeição', 'Expressões', '👋', 'Здраве́й! Как си?'],
+  ['здраве́й', 'oi, olá (informal; para várias pessoas ou com respeito, “здраве́йте”)', 'interjeição', 'Expressões', '👋', 'Здраве́й! Как си?'],
   ['до́бър ден', 'bom dia; boa tarde (durante o dia)', 'interjeição', 'Expressões', '🌅', 'До́бър ден! Как сте?'],
   ['до́бър ве́чер', 'boa noite (ao chegar)', 'interjeição', 'Expressões', '🌇', 'До́бър ве́чер! Как сте?'],
   ['ле́ка нощ', 'boa noite (ao se despedir ou ir dormir)', 'interjeição', 'Expressões', '🌙', 'Ле́ка нощ, ма́мо!'],
@@ -74,7 +74,7 @@ export const ROWS: VocabRow[] = [
   ['вода́', 'água', 'substantivo', 'Alimentação e Restaurantes', '💧', 'Вода́, мо́ля.', 'f'],
   ['хляб', 'pão', 'substantivo', 'Alimentação e Restaurantes', '🍞', 'Хля́бът е пре́сен.', 'm'],
   ['мля́ко', 'leite', 'substantivo', 'Alimentação e Restaurantes', '🥛', 'Мля́кото е бя́ло.', 'n'],
-  ['си́рене', 'queijo (o queijo branco típico; o amarelo é «кашкава́л»)', 'substantivo', 'Alimentação e Restaurantes', '🧀', 'Харе́свам си́рене.', 'n'],
+  ['си́рене', 'queijo (o queijo branco típico; o amarelo é “кашкава́л”)', 'substantivo', 'Alimentação e Restaurantes', '🧀', 'Харе́свам си́рене.', 'n'],
   ['кафе́', 'café', 'substantivo', 'Alimentação e Restaurantes', '☕', 'Едно́ кафе́, мо́ля.', 'n'],
   ['ви́но', 'vinho', 'substantivo', 'Alimentação e Restaurantes', '🍷', 'Черве́но ви́но, мо́ля.', 'n'],
   // ── Números ──

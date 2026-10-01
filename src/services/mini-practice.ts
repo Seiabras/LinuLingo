@@ -47,8 +47,8 @@ export function lessonPractice(course: MiniCourse, lesson: MiniLesson, max = 6):
       q = question('Que letra é esta?', it.term, others.filter(isCell).map((o) => o.term), seed, { braille: it.braille, why: it.how });
     else if (course.kind === 'sinais' && it.how)
       q = question(`Qual sinal é feito assim? ${it.how}`, it.term, others.map((o) => o.term), seed, { why: `${it.term}: ${it.meaning}.` });
-    else if (i % 2 === 0) q = question(`O que quer dizer «${it.term}»?`, it.meaning, others.map((o) => o.meaning), seed, { why: it.how });
-    else q = question(`Como se diz «${it.meaning}»?`, it.term, others.map((o) => o.term), seed, { why: it.how });
+    else if (i % 2 === 0) q = question(`O que quer dizer “${it.term}”?`, it.meaning, others.map((o) => o.meaning), seed, { why: it.how });
+    else q = question(`Como se diz “${it.meaning}”?`, it.term, others.map((o) => o.term), seed, { why: it.how });
     if (q) out.push(q);
   });
   return out;

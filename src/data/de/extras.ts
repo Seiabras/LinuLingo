@@ -33,7 +33,7 @@ export const SCENARIOS_DE: ScenarioSeed[] = [
     cefr: 'A1',
     register: 'informal',
     persona: 'Anna, eine Kollegin aus dem Deutschkurs',
-    description: 'Anna, colega do curso de alemão, convida você para um café num café tradicional de Viena. É uma conversa entre colegas: use «du».',
+    description: 'Anna, colega do curso de alemão, convida você para um café num café tradicional de Viena. É uma conversa entre colegas: use “du”.',
     turns: [
       {
         bot: 'Hallo! Was möchtest du trinken?',
@@ -58,7 +58,7 @@ export const ETYMOLOGY_DE: EtymologySeed[] = [
     root_word: '*watōr',
     origin_language: 'Protogermânico',
     cognates: c(['en', 'water'], ['nl', 'water'], ['sv', 'vatten']),
-    evolution_note: 'No alemão, o t germânico depois de vogal virou «ss» (a segunda mutação consonantal, que separou o alto-alemão das outras línguas germânicas): o inglês e o neerlandês ficaram com «water», o alemão foi para «Wasser».',
+    evolution_note: 'No alemão, o t germânico depois de vogal virou “ss” (a segunda mutação consonantal, que separou o alto-alemão das outras línguas germânicas): o inglês e o neerlandês ficaram com “water”, o alemão foi para “Wasser”.',
     transparent: false,
   },
   {
@@ -66,7 +66,7 @@ export const ETYMOLOGY_DE: EtymologySeed[] = [
     root_word: '*hūsą',
     origin_language: 'Protogermânico',
     cognates: c(['en', 'house'], ['nl', 'huis'], ['sv', 'hus']),
-    evolution_note: 'O u longo antigo virou o ditongo «au» no alemão (hūs → Haus), assim como virou «ou» no inglês (house).',
+    evolution_note: 'O u longo antigo virou o ditongo “au” no alemão (hūs → Haus), assim como virou “ou” no inglês (house).',
     transparent: false,
   },
   {
@@ -74,7 +74,7 @@ export const ETYMOLOGY_DE: EtymologySeed[] = [
     root_word: '*fadēr',
     origin_language: 'Protogermânico',
     cognates: c(['en', 'father'], ['la', 'pater'], ['pt', 'pai, paterno']),
-    evolution_note: 'O p indo-europeu virou f nas línguas germânicas (lei de Grimm): o latim «pater», que deu «pai» e «paterno», corresponde ao germânico «fadēr», de onde vêm «Vater» (lido com f) e «father».',
+    evolution_note: 'O p indo-europeu virou f nas línguas germânicas (lei de Grimm): o latim “pater”, que deu “pai” e “paterno”, corresponde ao germânico “fadēr”, de onde vêm “Vater” (lido com f) e “father”.',
     transparent: false,
   },
   {
@@ -82,7 +82,7 @@ export const ETYMOLOGY_DE: EtymologySeed[] = [
     root_word: 'caseus',
     origin_language: 'Latim',
     cognates: c(['pt', 'queijo'], ['es', 'queso'], ['en', 'cheese'], ['nl', 'kaas']),
-    evolution_note: 'Os povos germânicos tomaram emprestada a palavra latina «caseus» (queijo) ainda na Antiguidade, junto com a técnica romana de fazer queijo. O mesmo «caseus» deu «queijo» em português.',
+    evolution_note: 'Os povos germânicos tomaram emprestada a palavra latina “caseus” (queijo) ainda na Antiguidade, junto com a técnica romana de fazer queijo. O mesmo “caseus” deu “queijo” em português.',
     transparent: false,
   },
   {
@@ -90,7 +90,7 @@ export const ETYMOLOGY_DE: EtymologySeed[] = [
     root_word: 'vinum',
     origin_language: 'Latim',
     cognates: c(['pt', 'vinho'], ['it', 'vino'], ['en', 'wine'], ['nl', 'wijn']),
-    evolution_note: 'O vinho chegou às terras germânicas com os romanos, e a palavra veio junto: o latim «vinum» deu «Wein» no alemão (o w alemão soa como o nosso v).',
+    evolution_note: 'O vinho chegou às terras germânicas com os romanos, e a palavra veio junto: o latim “vinum” deu “Wein” no alemão (o w alemão soa como o nosso v).',
     transparent: true,
   },
 ];

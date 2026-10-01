@@ -20,15 +20,15 @@ export const ACCENTS_ET: Accent[] = [
     emoji: '🏰',
     summary: 'A fala da capital e do norte, a mais próxima do estoniano padrão, que nasceu dos dialetos do norte. É a que se ouve no rádio, na TV e nos cursos, e a referência de pronúncia do app.',
     features: [
-      'As três quantidades bem nítidas: «sada» (cem), «saada!» (mande!) e «saada» (receber).',
+      'As três quantidades bem nítidas: “sada” (cem), “saada!” (mande!) e “saada” (receber).',
       'A tônica sempre na primeira sílaba, com as sílabas seguintes mais fracas.',
-      'No dia a dia, os pronomes curtos: «ma», «sa», «ta» no lugar de «mina», «sina», «tema».',
-      'Gírias jovens: «äge» (irado, incrível), «lahe» (legal), «tšau» (oi e tchau), e empréstimos do inglês, como «okei» e «sorri».',
+      'No dia a dia, os pronomes curtos: “ma”, “sa”, “ta” no lugar de “mina”, “sina”, “tema”.',
+      'Gírias jovens: “äge” (irado, incrível), “lahe” (legal), “tšau” (oi e tchau), e empréstimos do inglês, como “okei” e “sorri”.',
     ],
     examples: [
-      ['See on nii äge!', 'Isso é irado!', 'gíria jovem: «äge» = incrível'],
-      ['Tšau, kuidas läheb?', 'Oi, tudo bem?', '«tšau» serve para chegar e para ir embora'],
-      ['Ma ei tea.', 'Eu não sei.', 'forma curta «ma» no lugar de «mina»'],
+      ['See on nii äge!', 'Isso é irado!', 'gíria jovem: “äge” = incrível'],
+      ['Tšau, kuidas läheb?', 'Oi, tudo bem?', '“tšau” serve para chegar e para ir embora'],
+      ['Ma ei tea.', 'Eu não sei.', 'forma curta “ma” no lugar de “mina”'],
     ],
     words: [
       ['äge', 'irado, incrível (gíria)'],
@@ -50,12 +50,12 @@ export const ACCENTS_ET: Accent[] = [
     summary: 'No sul, mesmo quem fala o padrão deixa escapar palavras e a melodia das variedades do estoniano do sul (lõunaeesti), como o võro e o mulgi. Tartu, a cidade universitária, é o coração da região.',
     features: [
       'O estoniano do sul já foi uma língua escrita à parte: o Novo Testamento saiu nele em 1686, antes da Bíblia completa no estoniano do norte (1739).',
-      'Palavras do sul entram na fala do dia a dia, como «ummamuudu» (do seu próprio jeito; no padrão, «omamoodi»).',
-      'Tartu se orgulha do «Tartu vaim» (o espírito de Tartu): a fama de cidade de estudantes, de livros e de ideias. A universidade é de 1632.',
+      'Palavras do sul entram na fala do dia a dia, como “ummamuudu” (do seu próprio jeito; no padrão, “omamoodi”).',
+      'Tartu se orgulha do “Tartu vaim” (o espírito de Tartu): a fama de cidade de estudantes, de livros e de ideias. A universidade é de 1632.',
     ],
     examples: [
       ['Tere tulemast Tartusse!', 'Bem-vindo a Tartu!', 'padrão; no sul, é comum misturar palavras locais'],
-      ['Aitümma!', 'Obrigado!', 'forma do sul (võro e seto); no padrão, «Aitäh!»'],
+      ['Aitümma!', 'Obrigado!', 'forma do sul (võro e seto); no padrão, “Aitäh!”'],
     ],
     words: [
       ['ummamuudu', 'do seu próprio jeito (do võro)'],
@@ -75,14 +75,14 @@ export const ACCENTS_ET: Accent[] = [
     emoji: '🗣️',
     summary: 'O estoniano de quem tem o russo como língua materna, muito ouvido no nordeste e em Tallinn. É um sotaque como qualquer outro: muita gente aprende o estoniano na escola ou no trabalho e o usa todo dia.',
     features: [
-      'O «õ» costuma soar como o «ы» russo: parecido, mas com a língua mais alta.',
-      'O «ö» e o «ü» podem virar «jo» e «ju», como nas letras russas «ё» e «ю».',
+      'O “õ” costuma soar como o “ы” russo: parecido, mas com a língua mais alta.',
+      'O “ö” e o “ü” podem virar “jo” e “ju”, como nas letras russas “ё” e “ю”.',
       'As três quantidades se confundem: a sobrelonga às vezes fica igual à longa.',
       'A tônica pode escapar da primeira sílaba, porque no russo ela é móvel.',
     ],
     examples: [
-      ['Mul on hea sõber.', 'Eu tenho um bom amigo.', 'o «õ» de «sõber» pode soar como o «ы» russo'],
-      ['Ma töötan Narvas.', 'Eu trabalho em Narva.', 'o «ö» de «töötan» pode soar quase «jo»'],
+      ['Mul on hea sõber.', 'Eu tenho um bom amigo.', 'o “õ” de “sõber” pode soar como o “ы” russo'],
+      ['Ma töötan Narvas.', 'Eu trabalho em Narva.', 'o “ö” de “töötan” pode soar quase “jo”'],
       ['Kas te räägite eesti keelt?', 'O senhor fala estoniano?', 'a tônica às vezes escorrega para o meio da palavra'],
     ],
   },
@@ -97,16 +97,16 @@ export const ACCENTS_ET: Accent[] = [
     variant: 'et-EE',
     speechLocale: 'et-EE',
     emoji: '🏝️',
-    summary: 'Os dialetos das ilhas do oeste soam «cantados» para o resto do país e ficaram famosos por um detalhe: em Saaremaa, o «õ» quase não existe.',
+    summary: 'Os dialetos das ilhas do oeste soam “cantados” para o resto do país e ficaram famosos por um detalhe: em Saaremaa, o “õ” quase não existe.',
     features: [
-      'No lugar do «õ» se diz «ö» (às vezes «e»): «sõber» vira «söber», «õhtu» vira «öhtu».',
+      'No lugar do “õ” se diz “ö” (às vezes “e”): “sõber” vira “söber”, “õhtu” vira “öhtu”.',
       'Melodia mais subida e cantada, que os estonianos do continente reconhecem de longe.',
       'Muitas palavras do mar e da pesca, e empréstimos antigos do sueco e do alemão.',
-      'Cada ilha tem seu gentílico e sua fama: os «saarlased» de Saaremaa, os «muhulased» de Muhu e os «hiidlased» de Hiiumaa, conhecidos pelos causos cheios de humor.',
+      'Cada ilha tem seu gentílico e sua fama: os “saarlased” de Saaremaa, os “muhulased” de Muhu e os “hiidlased” de Hiiumaa, conhecidos pelos causos cheios de humor.',
     ],
     examples: [
-      ['Tere, söber!', 'Oi, amigo!', 'padrão: «Tere, sõber!»'],
-      ['Head öhtut!', 'Boa noite!', 'padrão: «Head õhtut!»'],
+      ['Tere, söber!', 'Oi, amigo!', 'padrão: “Tere, sõber!”'],
+      ['Head öhtut!', 'Boa noite!', 'padrão: “Head õhtut!”'],
     ],
     words: [
       ['saarlane', 'pessoa de Saaremaa'],
@@ -126,14 +126,14 @@ export const ACCENTS_ET: Accent[] = [
     summary: 'A variedade mais viva do estoniano do sul, com escrita, jornal, literatura e aulas próprias. O Estado a trata como variedade regional do estoniano; muitos falantes e linguistas a consideram uma língua à parte.',
     features: [
       'Harmonia vocálica, como no finlandês: as vogais de uma palavra combinam entre si (as de trás com as de trás, as da frente com as da frente).',
-      'A oclusiva glotal, uma «travinha» na garganta, se escreve com «q»: «kalaq» (peixes).',
-      'A letra «y» marca uma vogal que o padrão não tem, parecida com um «õ» mais fechado.',
-      'Palavras próprias: «kõnõlõma» (falar; no padrão, «rääkima»), «mõts» (floresta; no padrão, «mets»).',
+      'A oclusiva glotal, uma “travinha” na garganta, se escreve com “q”: “kalaq” (peixes).',
+      'A letra “y” marca uma vogal que o padrão não tem, parecida com um “õ” mais fechado.',
+      'Palavras próprias: “kõnõlõma” (falar; no padrão, “rääkima”), “mõts” (floresta; no padrão, “mets”).',
     ],
     examples: [
       ['Tere!', 'Oi!', 'igual ao padrão'],
-      ['Aitümma!', 'Obrigado!', 'padrão: «Aitäh!»'],
-      ['Kuis lätt?', 'Como vai?', 'padrão: «Kuidas läheb?»'],
+      ['Aitümma!', 'Obrigado!', 'padrão: “Aitäh!”'],
+      ['Kuis lätt?', 'Como vai?', 'padrão: “Kuidas läheb?”'],
     ],
     words: [
       ['kiil', 'língua (padrão: keel)'],
@@ -154,10 +154,10 @@ export const ACCENTS_ET: Accent[] = [
       'No leelo, uma cantora puxa os versos, muitas vezes improvisados, e o coro responde em várias vozes.',
       'Todo ano, no começo de agosto, a festa do Reino Seto (Seto Kuningriigi päev) escolhe, de brincadeira e a sério, quem representa o rei mítico Peko.',
       'Parte da Setomaa histórica fica do outro lado da fronteira, na Rússia.',
-      'Como no võro, há harmonia vocálica e a oclusiva glotal escrita com «q».',
+      'Como no võro, há harmonia vocálica e a oclusiva glotal escrita com “q”.',
     ],
     examples: [
-      ['Aitümma!', 'Obrigado!', 'padrão: «Aitäh!»'],
+      ['Aitümma!', 'Obrigado!', 'padrão: “Aitäh!”'],
       ['Seto leelo', 'o canto seto', 'patrimônio imaterial da UNESCO'],
     ],
     words: [

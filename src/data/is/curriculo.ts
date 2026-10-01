@@ -13,11 +13,11 @@ export const UNITS_IS: UnitSeed[] = [
       title: 'A língua que quase não mudou',
       emoji: '🗣️',
       history:
-        'O islandês é uma língua germânica do norte: descende do nórdico antigo trazido pelos colonos, na maioria noruegueses, que povoaram a ilha a partir de cerca de 870. Isolada no meio do Atlântico Norte, a língua mudou muito pouco na gramática e na escrita, e um islandês de hoje consegue ler as sagas medievais, escritas no século XIII, sem tradução. O alfabeto tem 32 letras e guarda duas que o inglês antigo também usava e depois perdeu: o þ (chamado «þorn») e o ð (chamado «eð»). Para completar, os islandeses preferem criar palavras novas com raízes da própria língua a importar estrangeirismos: o telefone é «sími», de uma palavra antiga para «fio», e o computador é «tölva».',
+        'O islandês é uma língua germânica do norte: descende do nórdico antigo trazido pelos colonos, na maioria noruegueses, que povoaram a ilha a partir de cerca de 870. Isolada no meio do Atlântico Norte, a língua mudou muito pouco na gramática e na escrita, e um islandês de hoje consegue ler as sagas medievais, escritas no século XIII, sem tradução. O alfabeto tem 32 letras e guarda duas que o inglês antigo também usava e depois perdeu: o þ (chamado “þorn”) e o ð (chamado “eð”). Para completar, os islandeses preferem criar palavras novas com raízes da própria língua a importar estrangeirismos: o telefone é “sími”, de uma palavra antiga para “fio”, e o computador é “tölva”.',
       culture_tip:
-        'A Islândia é o país do primeiro nome: todo mundo trata todo mundo pelo nome, inclusive a médica, o professor e o presidente, e a lista telefônica é organizada pelo primeiro nome. Isso porque o sobrenome, em geral, não é de família: é o nome do pai (ou da mãe) mais «-son» (filho) ou «-dóttir» (filha). Assim, o filho de um Jón é Jónsson, e a filha dele é Jónsdóttir. Para cumprimentar, «hæ» e «halló» são informais, e «góðan daginn» é o bom-dia educado; para agradecer, «takk» ou «takk fyrir»; e para se despedir, «bless», muitas vezes dobrado: «bless bless!».',
+        'A Islândia é o país do primeiro nome: todo mundo trata todo mundo pelo nome, inclusive a médica, o professor e o presidente, e a lista telefônica é organizada pelo primeiro nome. Isso porque o sobrenome, em geral, não é de família: é o nome do pai (ou da mãe) mais “-son” (filho) ou “-dóttir” (filha). Assim, o filho de um Jón é Jónsson, e a filha dele é Jónsdóttir. Para cumprimentar, “hæ” e “halló” são informais, e “góðan daginn” é o bom-dia educado; para agradecer, “takk” ou “takk fyrir”; e para se despedir, “bless”, muitas vezes dobrado: “bless bless!”.',
       grammar_why:
-        'Os pronomes pessoais são ég (eu), þú (você), hann (ele), hún (ela) e það (para coisas de gênero neutro); no plural, við (nós), þið (vocês) e três formas de «eles»: þeir (só homens), þær (só mulheres) e þau (grupo misto). O verbo «vera» (ser, estar) muda com a pessoa, como em português: ég er, þú ert, hann/hún/það er, við erum, þið eruð, þeir/þær/þau eru. Assim como em português, «vera» serve para «ser» e para «estar»: «Ég er frá Brasilíu» (sou do Brasil) e «Ég er þreyttur» (estou cansado). A idade vem com «vera» e a palavra «ára» (de anos): «Ég er tuttugu ára». Atenção aos números: de 1 a 4 eles concordam com o gênero, como o nosso «um/uma, dois/duas», só que com três formas: einn, ein, eitt (1); tveir, tvær, tvö (2); þrír, þrjár, þrjú (3); fjórir, fjórar, fjögur (4). Do 5 em diante (fimm, sex, sjö…), a forma não muda. E a tônica é sempre na primeira sílaba: RÊI-kia-vik, A-ku-rei-ri.',
+        'Os pronomes pessoais são ég (eu), þú (você), hann (ele), hún (ela) e það (para coisas de gênero neutro); no plural, við (nós), þið (vocês) e três formas de “eles”: þeir (só homens), þær (só mulheres) e þau (grupo misto). O verbo “vera” (ser, estar) muda com a pessoa, como em português: ég er, þú ert, hann/hún/það er, við erum, þið eruð, þeir/þær/þau eru. Assim como em português, “vera” serve para “ser” e para “estar”: “Ég er frá Brasilíu” (sou do Brasil) e “Ég er þreyttur” (estou cansado). A idade vem com “vera” e a palavra “ára” (de anos): “Ég er tuttugu ára”. Atenção aos números: de 1 a 4 eles concordam com o gênero, como o nosso “um/uma, dois/duas”, só que com três formas: einn, ein, eitt (1); tveir, tvær, tvö (2); þrír, þrjár, þrjú (3); fjórir, fjórar, fjögur (4). Do 5 em diante (fimm, sex, sjö…), a forma não muda. E a tônica é sempre na primeira sílaba: RÊI-kia-vik, A-ku-rei-ri.',
       grammar_examples: [
         ['Ég er frá Brasilíu.', 'Eu sou do Brasil.'],
         ['Hún er í Reykjavík í dag.', 'Ela está em Reykjavík hoje.'],
@@ -25,30 +25,30 @@ export const UNITS_IS: UnitSeed[] = [
         ['Hér eru tveir strákar og tvær stelpur.', 'Aqui estão dois meninos e duas meninas.'],
       ],
       character_guide: [
-        ['á', '«au» de «mau»', 'já, á, bátur'],
-        ['é', '«iê» com o e aberto, como em «ié»', 'ég, fé, sér'],
-        ['í e ý', 'as duas soam igual: o «i» longo de «vi»', 'ís, líf, ýsa, býr'],
-        ['i e y', 'as duas soam igual: um «i» curto e frouxo, quase «ê»', 'fiskur, vinur, systir'],
-        ['ó', '«ou» com o u bem audível, como «vou» dito devagar', 'jól, bók, góður'],
-        ['ú', '«u» de «uva»', 'hús, þú, úti'],
-        ['u', 'sem acento, soa como o «u» francês: faça bico e diga «i»', 'hundur, sumar, hún'],
-        ['æ', '«ai» de «pai»', 'hæ, sæll, æfa'],
-        ['ö', 'faça a boca de «ó» e diga «é»: o «eu» do francês', 'sjö, köttur, jökull'],
-        ['au', 'não é «au»! Soa como um «ö» seguido de um «i» de lábios em bico, algo entre «ôi» e «êi»', 'laug, sauður, auga'],
-        ['ei e ey', 'as duas soam «ei» de «lei»', 'nei, ein, eyja'],
-        ['þ', 'o «th» do inglês «think»: a língua entre os dentes, sem voz; só aparece no começo da palavra', 'þú, þrír, Þingvellir'],
-        ['ð', 'o «th» do inglês «this»: a língua entre os dentes, com a voz ligada; nunca começa palavra', 'við, góður, Guðrún'],
-        ['ll', 'quase sempre soa «tl», com o l soprado, sem voz', 'fjall («fiatl»), bolli, jökull'],
-        ['nn e rn', 'depois de vogal longa ou ditongo, «nn» soa «tn»; e «rn» soa «rtn»', 'einn («eitn»), steinn, barn («bartn»)'],
-        ['pré-aspiração', 'pp, tt e kk (e p, t, k antes de l ou n) ganham um sopro ANTES da consoante, como um «h» rápido', 'takk («tahk»), kappi, vatn («vahtn»)'],
+        ['á', '“au” de “mau”', 'já, á, bátur'],
+        ['é', '“iê” com o e aberto, como em “ié”', 'ég, fé, sér'],
+        ['í e ý', 'as duas soam igual: o “i” longo de “vi”', 'ís, líf, ýsa, býr'],
+        ['i e y', 'as duas soam igual: um “i” curto e frouxo, quase “ê”', 'fiskur, vinur, systir'],
+        ['ó', '“ou” com o u bem audível, como “vou” dito devagar', 'jól, bók, góður'],
+        ['ú', '“u” de “uva”', 'hús, þú, úti'],
+        ['u', 'sem acento, soa como o “u” francês: faça bico e diga “i”', 'hundur, sumar, hún'],
+        ['æ', '“ai” de “pai”', 'hæ, sæll, æfa'],
+        ['ö', 'faça a boca de “ó” e diga “é”: o “eu” do francês', 'sjö, köttur, jökull'],
+        ['au', 'não é “au”! Soa como um “ö” seguido de um “i” de lábios em bico, algo entre “ôi” e “êi”', 'laug, sauður, auga'],
+        ['ei e ey', 'as duas soam “ei” de “lei”', 'nei, ein, eyja'],
+        ['þ', 'o “th” do inglês “think”: a língua entre os dentes, sem voz; só aparece no começo da palavra', 'þú, þrír, Þingvellir'],
+        ['ð', 'o “th” do inglês “this”: a língua entre os dentes, com a voz ligada; nunca começa palavra', 'við, góður, Guðrún'],
+        ['ll', 'quase sempre soa “tl”, com o l soprado, sem voz', 'fjall (“fiatl”), bolli, jökull'],
+        ['nn e rn', 'depois de vogal longa ou ditongo, “nn” soa “tn”; e “rn” soa “rtn”', 'einn (“eitn”), steinn, barn (“bartn”)'],
+        ['pré-aspiração', 'pp, tt e kk (e p, t, k antes de l ou n) ganham um sopro ANTES da consoante, como um “h” rápido', 'takk (“tahk”), kappi, vatn (“vahtn”)'],
         ['b, d, g no começo', 'sem voz: soam como p, t, k, mas sem o sopro', 'bless, dagur, góður'],
         ['p, t, k no começo', 'soltos com um sopro forte de ar', 'takk, kaffi, póstur'],
-        ['hv', 'soa «kv»', 'hvað («kvath»), hvar, hvalur'],
-        ['f', 'no começo, «f»; entre vogais e no fim, «v»; antes de l ou n, «p»', 'fara; hafa, haf; nafn («napn»)'],
+        ['hv', 'soa “kv”', 'hvað (“kvath”), hvar, hvalur'],
+        ['f', 'no começo, “f”; entre vogais e no fim, “v”; antes de l ou n, “p”', 'fara; hafa, haf; nafn (“napn”)'],
         ['g no meio e no fim', 'um som suave e soprado no fundo da boca, sem fechar', 'dagur, saga, ég'],
-        ['j', '«i» antes de vogal, como em «iate»', 'já, jökull, jól'],
-        ['r', 'vibrado com a ponta da língua, como o «r» de «caro», às vezes rolado', 'rós, fara, tveir'],
-        ['s', 'sempre «s» de «sapo», nunca «z», nem entre vogais', 'hús, lesa, ís'],
+        ['j', '“i” antes de vogal, como em “iate”', 'já, jökull, jól'],
+        ['r', 'vibrado com a ponta da língua, como o “r” de “caro”, às vezes rolado', 'rós, fara, tveir'],
+        ['s', 'sempre “s” de “sapo”, nunca “z”, nem entre vogais', 'hús, lesa, ís'],
         ['tônica', 'sempre na primeira sílaba, em qualquer palavra', 'REYK-ja-vík, A-kur-ey-ri, ÍS-lens-ka'],
       ],
     },
@@ -67,9 +67,9 @@ export const UNITS_IS: UnitSeed[] = [
           bot: 'Hæ! Hvað segirðu?',
           botTranslation: 'Oi! E aí, como vai?',
           expected: ['Allt gott, takk! En þú?', 'allt gott', 'takk', 'en þú'],
-          hint: 'Responda que está tudo bem e devolva a pergunta: «Allt gott, takk! En þú?». No «takk», o kk tem pré-aspiração, um sopro antes do k: soa quase «tahk». E o «þ» de «þú» é o «th» do inglês «think».',
+          hint: 'Responda que está tudo bem e devolva a pergunta: “Allt gott, takk! En þú?”. No “takk”, o kk tem pré-aspiração, um sopro antes do k: soa quase “tahk”. E o “þ” de “þú” é o “th” do inglês “think”.',
         },
-        communityPrompt: 'Escreva dois cumprimentos em islandês: um de manhã, para uma vizinha («Góðan daginn…»), e um à noite, para um amigo («Gott kvöld…»). Termine um deles com «Bless!».',
+        communityPrompt: 'Escreva dois cumprimentos em islandês: um de manhã, para uma vizinha (“Góðan daginn…”), e um à noite, para um amigo (“Gott kvöld…”). Termine um deles com “Bless!”.',
       },
       {
         id: 'is-u1-l2',
@@ -85,9 +85,9 @@ export const UNITS_IS: UnitSeed[] = [
           bot: 'Hæ! Ég heiti Jón og ég er frá Húsavík. En þú?',
           botTranslation: 'Oi! Eu me chamo Jón e sou de Húsavík. E você?',
           expected: ['Hæ, Jón! Ég heiti Ana og ég er frá Brasilíu.', 'ég heiti', 'ég er frá', 'Brasilíu'],
-          hint: 'Diga o nome com «Ég heiti…» e a origem com «Ég er frá…». Depois de «frá», o nome do país muda: Brasilía vira «Brasilíu». O «é» de «ég» soa «iê», e o g final é um som suave e soprado, que quase some.',
+          hint: 'Diga o nome com “Ég heiti…” e a origem com “Ég er frá…”. Depois de “frá”, o nome do país muda: Brasilía vira “Brasilíu”. O “é” de “ég” soa “iê”, e o g final é um som suave e soprado, que quase some.',
         },
-        communityPrompt: 'Apresente três pessoas em islandês, uma frase para cada, com o verbo «vera»: você («Ég er…»), um amigo («Hann er…») e um casal de amigos («Þau eru…»).',
+        communityPrompt: 'Apresente três pessoas em islandês, uma frase para cada, com o verbo “vera”: você (“Ég er…”), um amigo (“Hann er…”) e um casal de amigos (“Þau eru…”).',
       },
       {
         id: 'is-u1-l3',
@@ -103,9 +103,9 @@ export const UNITS_IS: UnitSeed[] = [
           bot: 'Hæ, ég heiti Guðrún. Hvað heitirðu? Og hvaðan ertu?',
           botTranslation: 'Oi, eu me chamo Guðrún. Como você se chama? E de onde você é?',
           expected: ['Hæ, Guðrún! Ég heiti Pedro og ég er frá Brasilíu. Gaman að kynnast þér!', 'ég heiti', 'frá Brasilíu', 'gaman að kynnast þér'],
-          hint: '«Gaman að kynnast þér» é o nosso «prazer em conhecer você». O ð de «Guðrún» e de «að» é o «th» do inglês «this», com a voz ligada; o þ de «þér» se faz no mesmo lugar, mas sem voz, como o «th» de «think». E «hvaðan» começa com «kv»: «KVA-than».',
+          hint: '“Gaman að kynnast þér” é o nosso “prazer em conhecer você”. O ð de “Guðrún” e de “að” é o “th” do inglês “this”, com a voz ligada; o þ de “þér” se faz no mesmo lugar, mas sem voz, como o “th” de “think”. E “hvaðan” começa com “kv”: “KVA-than”.',
         },
-        communityPrompt: 'Escreva um diálogo curto em que duas pessoas se apresentam, dizem de onde são e a idade com «Ég er … ára» (por exemplo, «Ég er tuttugu ára») e terminam com «Gaman að kynnast þér!».',
+        communityPrompt: 'Escreva um diálogo curto em que duas pessoas se apresentam, dizem de onde são e a idade com “Ég er … ára” (por exemplo, “Ég er tuttugu ára”) e terminam com “Gaman að kynnast þér!”.',
       },
       {
         id: 'is-u1-p',
@@ -123,9 +123,9 @@ export const UNITS_IS: UnitSeed[] = [
             'ég er frá',
             'gaman að kynnast þér',
           ],
-          hint: 'Devolva o cumprimento («Góðan daginn!»), diga o nome com «Ég heiti…», a origem com «Ég er frá…», a idade com «Ég er … ára» e feche com «Gaman að kynnast þér!». Lembre: a tônica vai sempre na primeira sílaba.',
+          hint: 'Devolva o cumprimento (“Góðan daginn!”), diga o nome com “Ég heiti…”, a origem com “Ég er frá…”, a idade com “Ég er … ára” e feche com “Gaman að kynnast þér!”. Lembre: a tônica vai sempre na primeira sílaba.',
         },
-        communityPrompt: 'Escreva uma apresentação completa em islandês: cumprimento, nome, de onde você é, a sua idade, duas pessoas da sua vida com «hann er» / «hún er», uma frase com «þau eru» e uma despedida.',
+        communityPrompt: 'Escreva uma apresentação completa em islandês: cumprimento, nome, de onde você é, a sua idade, duas pessoas da sua vida com “hann er” / “hún er”, uma frase com “þau eru” e uma despedida.',
       },
     ],
   },
@@ -140,11 +140,11 @@ export const UNITS_IS: UnitSeed[] = [
       title: 'O artigo que vai grudado no fim',
       emoji: '🍞',
       history:
-        'O skyr acompanha os islandeses desde a Idade Média e aparece até nas sagas: é feito de leite desnatado coalhado e escorrido, tão espesso que parece iogurte, embora tecnicamente seja um queijo fresco. O peixe sempre foi a base da mesa, com o bacalhau (þorskur), o hadoque (ýsa) e o salmão (lax), e no inverno aparece a kjötsúpa, a sopa de carne de cordeiro com legumes. Perto das fontes termais, como em Laugarvatn e no lago Mývatn, ainda se assa um pão de centeio escuro e adocicado, o rúgbrauð, enterrado numa panela no chão quente por quase um dia inteiro. E o lanche nacional é a pylsa, o cachorro-quente de carne de cordeiro misturada com porco e boi: pedir «eina með öllu» é pedir com tudo, ou seja, cebola crua e frita, ketchup, mostarda doce e molho remolada.',
+        'O skyr acompanha os islandeses desde a Idade Média e aparece até nas sagas: é feito de leite desnatado coalhado e escorrido, tão espesso que parece iogurte, embora tecnicamente seja um queijo fresco. O peixe sempre foi a base da mesa, com o bacalhau (þorskur), o hadoque (ýsa) e o salmão (lax), e no inverno aparece a kjötsúpa, a sopa de carne de cordeiro com legumes. Perto das fontes termais, como em Laugarvatn e no lago Mývatn, ainda se assa um pão de centeio escuro e adocicado, o rúgbrauð, enterrado numa panela no chão quente por quase um dia inteiro. E o lanche nacional é a pylsa, o cachorro-quente de carne de cordeiro misturada com porco e boi: pedir “eina með öllu” é pedir com tudo, ou seja, cebola crua e frita, ketchup, mostarda doce e molho remolada.',
       culture_tip:
-        'Ao aceitar algo, diga «já takk»; para recusar com educação, «nei takk». Depois de comer na casa de alguém, agradeça com «takk fyrir matinn» (obrigado pela comida); o anfitrião responde «verði þér að góðu» (bom proveito). O café é oferecido a qualquer visita, a qualquer hora do dia, e é normal aceitar a segunda xícara. E a água da torneira é excelente: peça «vatn» sem medo em qualquer restaurante.',
+        'Ao aceitar algo, diga “já takk”; para recusar com educação, “nei takk”. Depois de comer na casa de alguém, agradeça com “takk fyrir matinn” (obrigado pela comida); o anfitrião responde “verði þér að góðu” (bom proveito). O café é oferecido a qualquer visita, a qualquer hora do dia, e é normal aceitar a segunda xícara. E a água da torneira é excelente: peça “vatn” sem medo em qualquer restaurante.',
       grammar_why:
-        'Todo substantivo islandês tem um de três gêneros: masculino, feminino ou neutro. O gênero nem sempre bate com o português: «ostur» (queijo) é masculino, «mjólk» (leite) é feminina e «brauð» (pão) é neutro. Não existe artigo indefinido: «ostur» já é «um queijo». Já o artigo definido (o, a) vai grudado no FIM da palavra, com uma forma para cada gênero: -inn no masculino (osturinn, o queijo), -in no feminino (mjólkin, o leite) e -ið no neutro (brauðið, o pão); se a palavra termina em vogal, cai o i: súpa → súpan, kaffi → kaffið. Para retomar uma coisa, use o pronome do gênero dela: «Osturinn? Hann er góður» (ele, porque ostur é masculino). No plural, o masculino costuma ganhar -ar (fiskar), o feminino -ur (pylsur) e o neutro muitas vezes não muda (brauð). No presente, os verbos como «borða» (comer) ficam assim: ég borða, þú borðar, hann borðar, við borðum, þið borðið, þau borða. E para dizer que algo está num lugar, use «það er»: «Það er skyr í ísskápnum» (tem skyr na geladeira).',
+        'Todo substantivo islandês tem um de três gêneros: masculino, feminino ou neutro. O gênero nem sempre bate com o português: “ostur” (queijo) é masculino, “mjólk” (leite) é feminina e “brauð” (pão) é neutro. Não existe artigo indefinido: “ostur” já é “um queijo”. Já o artigo definido (o, a) vai grudado no FIM da palavra, com uma forma para cada gênero: -inn no masculino (osturinn, o queijo), -in no feminino (mjólkin, o leite) e -ið no neutro (brauðið, o pão); se a palavra termina em vogal, cai o i: súpa → súpan, kaffi → kaffið. Para retomar uma coisa, use o pronome do gênero dela: “Osturinn? Hann er góður” (ele, porque ostur é masculino). No plural, o masculino costuma ganhar -ar (fiskar), o feminino -ur (pylsur) e o neutro muitas vezes não muda (brauð). No presente, os verbos como “borða” (comer) ficam assim: ég borða, þú borðar, hann borðar, við borðum, þið borðið, þau borða. E para dizer que algo está num lugar, use “það er”: “Það er skyr í ísskápnum” (tem skyr na geladeira).',
       grammar_examples: [
         ['Osturinn er góður.', 'O queijo é bom.'],
         ['Mjólkin er köld.', 'O leite está gelado.'],
@@ -168,9 +168,9 @@ export const UNITS_IS: UnitSeed[] = [
           bot: 'Góðan daginn! Viltu kaffi eða te?',
           botTranslation: 'Bom dia! Você quer café ou chá?',
           expected: ['Kaffi, takk! Með mjólk.', 'kaffi', 'takk', 'mjólk'],
-          hint: 'Escolha e agradeça: «Kaffi, takk! Með mjólk.». Em «kaffi», o ff entre vogais soa mesmo «f», e o k inicial vem com sopro. O ó de «mjólk» soa «ou»: «mióulk».',
+          hint: 'Escolha e agradeça: “Kaffi, takk! Með mjólk.”. Em “kaffi”, o ff entre vogais soa mesmo “f”, e o k inicial vem com sopro. O ó de “mjólk” soa “ou”: “mióulk”.',
         },
-        communityPrompt: 'Descreva o seu café da manhã em islandês com três frases no presente («Ég borða…», «Ég drekk…») e uma com o artigo no fim («Kaffið er gott», «Brauðið er nýtt»).',
+        communityPrompt: 'Descreva o seu café da manhã em islandês com três frases no presente (“Ég borða…”, “Ég drekk…”) e uma com o artigo no fim (“Kaffið er gott”, “Brauðið er nýtt”).',
       },
       {
         id: 'is-u2-l2',
@@ -186,9 +186,9 @@ export const UNITS_IS: UnitSeed[] = [
           bot: 'Hæ! Hvað viltu borða í dag? Við erum með kjötsúpu og fisk.',
           botTranslation: 'Oi! O que você quer comer hoje? Temos sopa de carne e peixe.',
           expected: ['Ég ætla að fá kjötsúpu, takk.', 'kjötsúpu', 'takk', 'fisk'],
-          hint: 'Para pedir, use «Ég ætla að fá…» (eu vou querer…). Depois de «fá», kjötsúpa vira «kjötsúpu» e fiskur vira «fisk»: é o acusativo, que você vai ver na próxima unidade. O ö de «kjöt» se faz com a boca de «ó» dizendo «é».',
+          hint: 'Para pedir, use “Ég ætla að fá…” (eu vou querer…). Depois de “fá”, kjötsúpa vira “kjötsúpu” e fiskur vira “fisk”: é o acusativo, que você vai ver na próxima unidade. O ö de “kjöt” se faz com a boca de “ó” dizendo “é”.',
         },
-        communityPrompt: 'Escreva três frases em islandês sobre o que você e outras pessoas comem, conjugando «borða»: «Ég borða…», «Hann borðar…» e «Við borðum…».',
+        communityPrompt: 'Escreva três frases em islandês sobre o que você e outras pessoas comem, conjugando “borða”: “Ég borða…”, “Hann borðar…” e “Við borðum…”.',
       },
       {
         id: 'is-u2-l3',
@@ -204,9 +204,9 @@ export const UNITS_IS: UnitSeed[] = [
           bot: 'Gott kvöld! Hvað má bjóða þér?',
           botTranslation: 'Boa noite! O que eu posso lhe oferecer?',
           expected: ['Ég ætla að fá te og köku, takk.', 'te', 'köku', 'takk'],
-          hint: 'Peça com «Ég ætla að fá…»: kaka vira «köku» depois de «fá». Se quiser água, «vatn» tem pré-aspiração: soa quase «vahtn». E «bolli» soa «botli», com o ll de «fjall».',
+          hint: 'Peça com “Ég ætla að fá…”: kaka vira “köku” depois de “fá”. Se quiser água, “vatn” tem pré-aspiração: soa quase “vahtn”. E “bolli” soa “botli”, com o ll de “fjall”.',
         },
-        communityPrompt: 'Escreva um pedido completo num café de Reykjavík: cumprimento, duas coisas no plural («tvær kleinur», «tvö kaffi»), uma frase com «Það er…» e o agradecimento.',
+        communityPrompt: 'Escreva um pedido completo num café de Reykjavík: cumprimento, duas coisas no plural (“tvær kleinur”, “tvö kaffi”), uma frase com “Það er…” e o agradecimento.',
       },
       {
         id: 'is-u2-p',
@@ -224,9 +224,9 @@ export const UNITS_IS: UnitSeed[] = [
             'kaffi',
             'takk',
           ],
-          hint: 'Cumprimente, peça com «Ég ætla að fá…», diga como quer o café («með mjólk») e elogie usando o artigo no fim: skyr é neutro, então «Skyrið er gott».',
+          hint: 'Cumprimente, peça com “Ég ætla að fá…”, diga como quer o café (“með mjólk”) e elogie usando o artigo no fim: skyr é neutro, então “Skyrið er gott”.',
         },
-        communityPrompt: 'Descreva a mesa de um café da manhã islandês com cinco frases: use os três gêneros com o artigo no fim (osturinn, mjólkin, brauðið), um plural e uma frase com «Það er…».',
+        communityPrompt: 'Descreva a mesa de um café da manhã islandês com cinco frases: use os três gêneros com o artigo no fim (osturinn, mjólkin, brauðið), um plural e uma frase com “Það er…”.',
       },
     ],
   },
@@ -241,11 +241,11 @@ export const UNITS_IS: UnitSeed[] = [
       title: 'Onde e para onde: os casos',
       emoji: '🧭',
       history:
-        'O Círculo Dourado («Gullni hringurinn») é o passeio mais famoso a partir de Reykjavík. Em Þingvellir se reunia o Alþingi, a assembleia fundada em 930, uma das mais antigas do mundo, num vale aberto pelo afastamento das placas tectônicas da América do Norte e da Eurásia. Em Geysir fica o gêiser que deu nome a todos os outros do planeta; hoje quem jorra com regularidade é o vizinho Strokkur, a cada poucos minutos. E Gullfoss, a «cachoeira dourada», despenca em dois degraus para dentro de um cânion do rio Hvítá.',
+        'O Círculo Dourado (“Gullni hringurinn”) é o passeio mais famoso a partir de Reykjavík. Em Þingvellir se reunia o Alþingi, a assembleia fundada em 930, uma das mais antigas do mundo, num vale aberto pelo afastamento das placas tectônicas da América do Norte e da Eurásia. Em Geysir fica o gêiser que deu nome a todos os outros do planeta; hoje quem jorra com regularidade é o vizinho Strokkur, a cada poucos minutos. E Gullfoss, a “cachoeira dourada”, despenca em dois degraus para dentro de um cânion do rio Hvítá.',
       culture_tip:
-        'Em Reykjavík, o ônibus urbano é o «strætó», apelido de «strætisvagn». Fora da capital, as distâncias enganam: o tempo muda depressa, e no inverno as estradas podem fechar de uma hora para outra, por isso os islandeses conferem a previsão e as condições das estradas antes de sair. Para pedir informação, comece com «Afsakið» (com licença) e vá direto ao ponto: «Afsakið, hvar er stoppistöðin?». As pessoas costumam responder de bom grado, e muitas vezes em inglês, mas ficam contentes quando o estrangeiro tenta o islandês.',
+        'Em Reykjavík, o ônibus urbano é o “strætó”, apelido de “strætisvagn”. Fora da capital, as distâncias enganam: o tempo muda depressa, e no inverno as estradas podem fechar de uma hora para outra, por isso os islandeses conferem a previsão e as condições das estradas antes de sair. Para pedir informação, comece com “Afsakið” (com licença) e vá direto ao ponto: “Afsakið, hvar er stoppistöðin?”. As pessoas costumam responder de bom grado, e muitas vezes em inglês, mas ficam contentes quando o estrangeiro tenta o islandês.',
       grammar_why:
-        'O islandês tem quatro casos, e o substantivo, o artigo e o adjetivo mudam de forma conforme o papel na frase. O nominativo é o do sujeito (Flugvöllurinn er stór); o acusativo, o do objeto direto (Ég kaupi miða). As preposições «í» (em, dentro) e «á» (em, sobre) têm uma regra de ouro: com dativo indicam ONDE (Ég er á flugvellinum, estou no aeroporto); com acusativo, PARA ONDE (Ég fer á flugvöllinn, vou para o aeroporto). «Frá» (de) pede sempre dativo, e «til» (para, até) pede genitivo: frá Akureyri til Reykjavíkur. O verbo fica sempre na segunda posição (V2): se a frase começa por outra coisa, o sujeito passa para depois do verbo: «Í dag förum við til Akureyrar» (hoje vamos para Akureyri). Nas perguntas sem pronome interrogativo, o verbo vem primeiro, como no inglês: «Fer strætóinn í miðbæinn?». E há três perguntas de lugar: hvar (onde), hvert (para onde) e hvaðan (de onde).',
+        'O islandês tem quatro casos, e o substantivo, o artigo e o adjetivo mudam de forma conforme o papel na frase. O nominativo é o do sujeito (Flugvöllurinn er stór); o acusativo, o do objeto direto (Ég kaupi miða). As preposições “í” (em, dentro) e “á” (em, sobre) têm uma regra de ouro: com dativo indicam ONDE (Ég er á flugvellinum, estou no aeroporto); com acusativo, PARA ONDE (Ég fer á flugvöllinn, vou para o aeroporto). “Frá” (de) pede sempre dativo, e “til” (para, até) pede genitivo: frá Akureyri til Reykjavíkur. O verbo fica sempre na segunda posição (V2): se a frase começa por outra coisa, o sujeito passa para depois do verbo: “Í dag förum við til Akureyrar” (hoje vamos para Akureyri). Nas perguntas sem pronome interrogativo, o verbo vem primeiro, como no inglês: “Fer strætóinn í miðbæinn?”. E há três perguntas de lugar: hvar (onde), hvert (para onde) e hvaðan (de onde).',
       grammar_examples: [
         ['Ég er á flugvellinum.', 'Estou no aeroporto.'],
         ['Ég fer á flugvöllinn.', 'Vou para o aeroporto.'],
@@ -269,9 +269,9 @@ export const UNITS_IS: UnitSeed[] = [
           bot: 'Góðan daginn! Hvert ertu að fara?',
           botTranslation: 'Bom dia! Para onde você está indo?',
           expected: ['Ég er að fara á flugvöllinn.', 'á flugvöllinn', 'ég er að fara', 'flugvöllinn'],
-          hint: '«Hvert» pergunta «para onde», então a resposta leva «á» com acusativo: «á flugvöllinn». Se a pergunta fosse «hvar» (onde), viria o dativo: «á flugvellinum». O ll de «flugvöllinn» soa «tl».',
+          hint: '“Hvert” pergunta “para onde”, então a resposta leva “á” com acusativo: “á flugvöllinn”. Se a pergunta fosse “hvar” (onde), viria o dativo: “á flugvellinum”. O ll de “flugvöllinn” soa “tl”.',
         },
-        communityPrompt: 'Escreva três frases em islandês sobre um dia na cidade usando «í» ou «á»: duas com dativo (onde você está) e uma com acusativo (para onde você vai).',
+        communityPrompt: 'Escreva três frases em islandês sobre um dia na cidade usando “í” ou “á”: duas com dativo (onde você está) e uma com acusativo (para onde você vai).',
       },
       {
         id: 'is-u3-l2',
@@ -287,9 +287,9 @@ export const UNITS_IS: UnitSeed[] = [
           bot: 'Hvert viltu fara á morgun: að Gullfossi eða upp á jökul?',
           botTranslation: 'Para onde você quer ir amanhã: até Gullfoss ou subir a geleira?',
           expected: ['Ég vil fara upp á jökul!', 'upp á jökul', 'að Gullfossi', 'ég vil fara'],
-          hint: '«Að» pede dativo: Gullfoss vira «Gullfossi». «Upp á», com movimento, pede acusativo: jökull vira «jökul». Em «jökull», o ö se faz com a boca de «ó» dizendo «é», e o ll final soa «tl».',
+          hint: '“Að” pede dativo: Gullfoss vira “Gullfossi”. “Upp á”, com movimento, pede acusativo: jökull vira “jökul”. Em “jökull”, o ö se faz com a boca de “ó” dizendo “é”, e o ll final soa “tl”.',
         },
-        communityPrompt: 'Monte em islandês um roteiro de um dia pelo Círculo Dourado com quatro frases: use «til» com genitivo (til Geysis), «að» com dativo (að Gullfossi) e comece uma frase por um advérbio para praticar o V2 («Fyrst förum við…»).',
+        communityPrompt: 'Monte em islandês um roteiro de um dia pelo Círculo Dourado com quatro frases: use “til” com genitivo (til Geysis), “að” com dativo (að Gullfossi) e comece uma frase por um advérbio para praticar o V2 (“Fyrst förum við…”).',
       },
       {
         id: 'is-u3-l3',
@@ -305,9 +305,9 @@ export const UNITS_IS: UnitSeed[] = [
           bot: 'Góðan daginn! Get ég hjálpað þér?',
           botTranslation: 'Bom dia! Posso ajudar você?',
           expected: ['Já, takk! Hvar er stoppistöðin? Ég ætla í miðbæinn.', 'hvar er', 'stoppistöðin', 'í miðbæinn'],
-          hint: 'Pergunte com «Hvar er…?» e diga para onde vai com «í» e o acusativo: «í miðbæinn». Se fosse onde você está, seria o dativo: «í miðbænum». O «hv» de «hvar» soa «kv».',
+          hint: 'Pergunte com “Hvar er…?” e diga para onde vai com “í” e o acusativo: “í miðbæinn”. Se fosse onde você está, seria o dativo: “í miðbænum”. O “hv” de “hvar” soa “kv”.',
         },
-        communityPrompt: 'Escreva em islandês o caminho do seu hotel até o ponto de ônibus, usando «beint áfram», «til hægri» e «til vinstri», e termine com uma pergunta com o verbo em primeiro lugar («Fer strætóinn…?»).',
+        communityPrompt: 'Escreva em islandês o caminho do seu hotel até o ponto de ônibus, usando “beint áfram”, “til hægri” e “til vinstri”, e termine com uma pergunta com o verbo em primeiro lugar (“Fer strætóinn…?”).',
       },
       {
         id: 'is-u3-p',
@@ -325,7 +325,7 @@ export const UNITS_IS: UnitSeed[] = [
             'fyrst fer ég',
             'að Gullfossi',
           ],
-          hint: 'Use «frá» com dativo (frá Brasilíu), «til» com genitivo (til Akureyrar, til Þingvalla) e «að» com dativo (að Gullfossi). E lembre do V2: «Fyrst fer ég…», «Á morgun fer ég…», com o verbo antes do sujeito.',
+          hint: 'Use “frá” com dativo (frá Brasilíu), “til” com genitivo (til Akureyrar, til Þingvalla) e “að” com dativo (að Gullfossi). E lembre do V2: “Fyrst fer ég…”, “Á morgun fer ég…”, com o verbo antes do sujeito.',
         },
         communityPrompt: 'Escreva em islandês um plano de viagem de três dias pela Islândia: cada dia começa por um advérbio (Fyrst, Svo, Á morgun) e usa pelo menos uma preposição com o caso certo (í, á, frá, til, að).',
       },
@@ -342,11 +342,11 @@ export const UNITS_IS: UnitSeed[] = [
       title: 'O que aconteceu: passado e adjetivos',
       emoji: '🐑',
       history:
-        'O cavalo islandês chegou com os primeiros colonos, há mais de mil anos: é baixinho, forte e peludo. Além do passo, do trote e do galope, ele tem o «tölt», uma marcha macia em quatro tempos, e muitos têm também o «skeið», uma andadura rápida. Para proteger a raça de doenças, nenhum cavalo pode entrar no país, e o cavalo islandês que sai da Islândia não pode mais voltar. No outono, os fazendeiros recolhem as ovelhas que passaram o verão soltas nas montanhas, nas «réttir», um mutirão que vira festa. E no verão os papagaios-do-mar fazem ninho aos milhões nos penhascos, como em Vestmannaeyjar, enquanto as baleias aparecem na baía de Húsavík.',
+        'O cavalo islandês chegou com os primeiros colonos, há mais de mil anos: é baixinho, forte e peludo. Além do passo, do trote e do galope, ele tem o “tölt”, uma marcha macia em quatro tempos, e muitos têm também o “skeið”, uma andadura rápida. Para proteger a raça de doenças, nenhum cavalo pode entrar no país, e o cavalo islandês que sai da Islândia não pode mais voltar. No outono, os fazendeiros recolhem as ovelhas que passaram o verão soltas nas montanhas, nas “réttir”, um mutirão que vira festa. E no verão os papagaios-do-mar fazem ninho aos milhões nos penhascos, como em Vestmannaeyjar, enquanto as baleias aparecem na baía de Húsavík.',
       culture_tip:
-        'Nunca chame um cavalo islandês de pônei na frente de um islandês, por menor que ele seja: é «hestur», e pronto. Na estrada, não pare no acostamento para fotografar os cavalos nem dê comida a eles sem falar com o dono. E prepare-se para uma pergunta que todo visitante ouve: «Hvernig líkar þér á Íslandi?» (o que você está achando da Islândia?); os islandeses adoram saber o que você viu e fez.',
+        'Nunca chame um cavalo islandês de pônei na frente de um islandês, por menor que ele seja: é “hestur”, e pronto. Na estrada, não pare no acostamento para fotografar os cavalos nem dê comida a eles sem falar com o dono. E prepare-se para uma pergunta que todo visitante ouve: “Hvernig líkar þér á Íslandi?” (o que você está achando da Islândia?); os islandeses adoram saber o que você viu e fez.',
       grammar_why:
-        'O passado tem dois tipos de verbo. Os fracos ganham uma terminação com -ð-, -d- ou -t-: borða → borðaði (comi), tala → talaði (falei), horfa → horfði (olhei), kaupa → keypti (comprei). Os fortes mudam a vogal, como o nosso «fazer → fiz»: fara → fór (fui), sjá → sá (vi), koma → kom (vim), drekka → drakk (bebi), e o próprio «vera» vira «var» (fui, estava). Os adjetivos também têm duas formas. A forte aparece sem artigo e concorda nos três gêneros: fallegur hestur (m), falleg kind (f), fallegt hús (n). A fraca aparece quando o substantivo tem o artigo no fim: fallegi hesturinn, fallega kindin, fallega húsið. Os possessivos concordam com a coisa possuída e em geral vêm DEPOIS dela, com o artigo: hesturinn minn (meu cavalo), kindin mín (minha ovelha), húsið mitt (minha casa), e o mesmo com «þinn, þín, þitt» (seu, de você).',
+        'O passado tem dois tipos de verbo. Os fracos ganham uma terminação com -ð-, -d- ou -t-: borða → borðaði (comi), tala → talaði (falei), horfa → horfði (olhei), kaupa → keypti (comprei). Os fortes mudam a vogal, como o nosso “fazer → fiz”: fara → fór (fui), sjá → sá (vi), koma → kom (vim), drekka → drakk (bebi), e o próprio “vera” vira “var” (fui, estava). Os adjetivos também têm duas formas. A forte aparece sem artigo e concorda nos três gêneros: fallegur hestur (m), falleg kind (f), fallegt hús (n). A fraca aparece quando o substantivo tem o artigo no fim: fallegi hesturinn, fallega kindin, fallega húsið. Os possessivos concordam com a coisa possuída e em geral vêm DEPOIS dela, com o artigo: hesturinn minn (meu cavalo), kindin mín (minha ovelha), húsið mitt (minha casa), e o mesmo com “þinn, þín, þitt” (seu, de você).',
       grammar_examples: [
         ['Við fórum til Húsavíkur og sáum hval.', 'Nós fomos a Húsavík e vimos uma baleia.'],
         ['Þetta er fallegur hestur.', 'Este é um cavalo bonito.'],
@@ -370,7 +370,7 @@ export const UNITS_IS: UnitSeed[] = [
           bot: 'Hæ! Hvað gerðirðu um helgina?',
           botTranslation: 'Oi! O que você fez no fim de semana?',
           expected: ['Ég fór á hestbak og sá lunda!', 'ég fór', 'hestbak', 'sá'],
-          hint: '«Fara» e «sjá» são fortes: no passado viram «fór» e «sá». Em «hestbak», a tônica cai no começo: «HEST-bak». E «hvalur» começa com «kv».',
+          hint: '“Fara” e “sjá” são fortes: no passado viram “fór” e “sá”. Em “hestbak”, a tônica cai no começo: “HEST-bak”. E “hvalur” começa com “kv”.',
         },
         communityPrompt: 'Conte em islandês, com quatro frases no passado, uma visita a uma fazenda: use dois verbos fortes (fór, sá) e dois fracos (talaði, borðaði).',
       },
@@ -388,9 +388,9 @@ export const UNITS_IS: UnitSeed[] = [
           bot: 'Áttu hund eða kött?',
           botTranslation: 'Você tem cachorro ou gato?',
           expected: ['Já, ég á lítinn hund. Hundurinn minn heitir Bóbó.', 'ég á', 'hundurinn minn', 'lítinn hund'],
-          hint: 'Depois de «ég á» (eu tenho) vem o acusativo, e o adjetivo acompanha: lítill vira «lítinn hund». Com o artigo no fim, o possessivo vem depois: «hundurinn minn».',
+          hint: 'Depois de “ég á” (eu tenho) vem o acusativo, e o adjetivo acompanha: lítill vira “lítinn hund”. Com o artigo no fim, o possessivo vem depois: “hundurinn minn”.',
         },
-        communityPrompt: 'Descreva em islandês um bicho seu (ou um que você gostaria de ter) com três frases: um adjetivo forte («Ég á gamlan kött»), um fraco com artigo («Gamli kötturinn…») e um possessivo («kötturinn minn»).',
+        communityPrompt: 'Descreva em islandês um bicho seu (ou um que você gostaria de ter) com três frases: um adjetivo forte (“Ég á gamlan kött”), um fraco com artigo (“Gamli kötturinn…”) e um possessivo (“kötturinn minn”).',
       },
       {
         id: 'is-u4-l3',
@@ -406,9 +406,9 @@ export const UNITS_IS: UnitSeed[] = [
           bot: 'Hvernig var helgin? Gerðirðu eitthvað skemmtilegt?',
           botTranslation: 'Como foi o fim de semana? Você fez alguma coisa divertida?',
           expected: ['Helgin var frábær! Á laugardaginn fór ég í sund og á sunnudaginn hitti ég vini mína.', 'helgin var', 'á laugardaginn', 'fór ég'],
-          hint: 'Comece com «Helgin var…» e conte dia por dia. Quando a frase começa pelo dia, o verbo vem antes do sujeito (V2): «Á laugardaginn fór ég…». «Laugardagur», o sábado, quer dizer «dia do banho».',
+          hint: 'Comece com “Helgin var…” e conte dia por dia. Quando a frase começa pelo dia, o verbo vem antes do sujeito (V2): “Á laugardaginn fór ég…”. “Laugardagur”, o sábado, quer dizer “dia do banho”.',
         },
-        communityPrompt: 'Conte o seu último fim de semana em islandês com cinco frases no passado: comece três delas por uma expressão de tempo («Í gær…», «Á laugardaginn…») e use um possessivo («vinir mínir», «sumarfríið mitt»).',
+        communityPrompt: 'Conte o seu último fim de semana em islandês com cinco frases no passado: comece três delas por uma expressão de tempo (“Í gær…”, “Á laugardaginn…”) e use um possessivo (“vinir mínir”, “sumarfríið mitt”).',
       },
       {
         id: 'is-u4-p',
@@ -426,7 +426,7 @@ export const UNITS_IS: UnitSeed[] = [
             'stóran hval',
             'hesturinn var',
           ],
-          hint: 'Use o passado dos verbos fortes (fór, sá, var) e adjetivos que concordam: «stóran hval» (acusativo), «á gömlum hesti» (dativo), «hesturinn var lítill».',
+          hint: 'Use o passado dos verbos fortes (fór, sá, var) e adjetivos que concordam: “stóran hval” (acusativo), “á gömlum hesti” (dativo), “hesturinn var lítill”.',
         },
         communityPrompt: 'Escreva em islandês um cartão-postal de uma viagem pela Islândia: seis frases no passado, com verbos fortes e fracos, dois adjetivos fortes, um fraco com artigo e dois possessivos.',
       },
@@ -443,11 +443,11 @@ export const UNITS_IS: UnitSeed[] = [
       title: 'Planos, deveres e conselhos',
       emoji: '📅',
       history:
-        'A Islândia fica em cima da dorsal mesoatlântica, onde as placas tectônicas se afastam, e também sobre um ponto quente do manto; por isso tem cerca de trinta sistemas vulcânicos ativos. Em 2010, a erupção sob a geleira Eyjafjallajökull soltou uma nuvem de cinzas que fechou boa parte do espaço aéreo da Europa por vários dias. Desde 2021, a península de Reykjanes, perto de Reykjavík, voltou a ter erupções depois de uns oito séculos de calma. No inverno, as noites longas do «skammdegi» são a melhor época para ver a aurora boreal, de setembro a abril, longe das luzes da cidade; no verão acontece o contrário, e perto do solstício o sol mal se põe.',
+        'A Islândia fica em cima da dorsal mesoatlântica, onde as placas tectônicas se afastam, e também sobre um ponto quente do manto; por isso tem cerca de trinta sistemas vulcânicos ativos. Em 2010, a erupção sob a geleira Eyjafjallajökull soltou uma nuvem de cinzas que fechou boa parte do espaço aéreo da Europa por vários dias. Desde 2021, a península de Reykjanes, perto de Reykjavík, voltou a ter erupções depois de uns oito séculos de calma. No inverno, as noites longas do “skammdegi” são a melhor época para ver a aurora boreal, de setembro a abril, longe das luzes da cidade; no verão acontece o contrário, e perto do solstício o sol mal se põe.',
       culture_tip:
-        'O lema nacional não oficial é «þetta reddast» (vai dar tudo certo), mas com a natureza ninguém brinca. Antes de uma trilha ou de uma viagem pelo interior, os islandeses conferem a previsão do tempo e as condições das estradas, e é comum deixar o plano de viagem registrado com o serviço de resgate, formado por voluntários. As estradas das terras altas, marcadas com a letra F, só abrem no verão e exigem um carro com tração nas quatro rodas. E ninguém sobe numa geleira sem guia e sem equipamento.',
+        'O lema nacional não oficial é “þetta reddast” (vai dar tudo certo), mas com a natureza ninguém brinca. Antes de uma trilha ou de uma viagem pelo interior, os islandeses conferem a previsão do tempo e as condições das estradas, e é comum deixar o plano de viagem registrado com o serviço de resgate, formado por voluntários. As estradas das terras altas, marcadas com a letra F, só abrem no verão e exigem um carro com tração nas quatro rodas. E ninguém sobe numa geleira sem guia e sem equipamento.',
       grammar_why:
-        'O genitivo indica posse e vem DEPOIS do substantivo: «höfuðborg Íslands» (a capital da Islândia), «bíll mannsins» (o carro do homem). Muitos masculinos e neutros ganham -s (Íslands, hestsins), e muitos femininos -ar (Reykjavíkur, gönguleiðarinnar); preposições como «til», «án» (sem) e «vegna» (por causa de) também pedem genitivo. Os modais funcionam como em português: «vilja» (querer), «mega» (poder, ter permissão), «þurfa að» (precisar), «verða að» (ter que); atenção a dois detalhes: alguns pedem «að» antes do infinitivo (þarf að fara, verð að fara) e outros não (vil fara, má fara), e «geta» (poder, conseguir) vem com o supino, uma forma especial do verbo: «Ég get séð» (consigo ver), «Ég get komið» (posso vir). Para o futuro, «ætla að» expressa intenção (Ég ætla að fara, vou/pretendo ir) e «munu» expressa previsão (Það mun snjóa, vai nevar); no dia a dia, o presente também serve: «Ég fer á morgun». O imperativo é a raiz do verbo com o «þú» grudado e reduzido: farðu (vá), komdu (venha), sjáðu (veja), bíddu (espere), taktu (pegue); para várias pessoas: farið, komið.',
+        'O genitivo indica posse e vem DEPOIS do substantivo: “höfuðborg Íslands” (a capital da Islândia), “bíll mannsins” (o carro do homem). Muitos masculinos e neutros ganham -s (Íslands, hestsins), e muitos femininos -ar (Reykjavíkur, gönguleiðarinnar); preposições como “til”, “án” (sem) e “vegna” (por causa de) também pedem genitivo. Os modais funcionam como em português: “vilja” (querer), “mega” (poder, ter permissão), “þurfa að” (precisar), “verða að” (ter que); atenção a dois detalhes: alguns pedem “að” antes do infinitivo (þarf að fara, verð að fara) e outros não (vil fara, má fara), e “geta” (poder, conseguir) vem com o supino, uma forma especial do verbo: “Ég get séð” (consigo ver), “Ég get komið” (posso vir). Para o futuro, “ætla að” expressa intenção (Ég ætla að fara, vou/pretendo ir) e “munu” expressa previsão (Það mun snjóa, vai nevar); no dia a dia, o presente também serve: “Ég fer á morgun”. O imperativo é a raiz do verbo com o “þú” grudado e reduzido: farðu (vá), komdu (venha), sjáðu (veja), bíddu (espere), taktu (pegue); para várias pessoas: farið, komið.',
       grammar_examples: [
         ['Höfuðborg Íslands er Reykjavík.', 'A capital da Islândia é Reykjavík.'],
         ['Það mun snjóa á morgun.', 'Vai nevar amanhã.'],
@@ -471,9 +471,9 @@ export const UNITS_IS: UnitSeed[] = [
           bot: 'Hvaða árstíð finnst þér best á Íslandi?',
           botTranslation: 'Qual estação você acha a melhor na Islândia?',
           expected: ['Mér finnst sumarið best, vegna miðnætursólarinnar.', 'sumarið', 'vegna', 'mér finnst'],
-          hint: 'Responda com «Mér finnst… best» (eu acho… o melhor) e explique com «vegna», que pede genitivo: miðnætursólin vira «miðnætursólarinnar». Em «skammdegi», o mm é longo e o g entre e e i quase vira um «i»: «SKAM-dei-i».',
+          hint: 'Responda com “Mér finnst… best” (eu acho… o melhor) e explique com “vegna”, que pede genitivo: miðnætursólin vira “miðnætursólarinnar”. Em “skammdegi”, o mm é longo e o g entre e e i quase vira um “i”: “SKAM-dei-i”.',
         },
-        communityPrompt: 'Escreva em islandês três frases sobre as estações: uma com genitivo («í byrjun vetrar», «vegna…»), uma com «ætla að» e uma previsão com «mun».',
+        communityPrompt: 'Escreva em islandês três frases sobre as estações: uma com genitivo (“í byrjun vetrar”, “vegna…”), uma com “ætla að” e uma previsão com “mun”.',
       },
       {
         id: 'is-u5-l2',
@@ -489,9 +489,9 @@ export const UNITS_IS: UnitSeed[] = [
           bot: 'Viltu koma með okkur að skoða eldgosið á morgun?',
           botTranslation: 'Você quer vir com a gente ver a erupção amanhã?',
           expected: ['Já, ég vil koma! En ég verð að kaupa góða skó fyrst.', 'ég vil', 'ég verð að', 'koma'],
-          hint: '«Vilja» vem direto com o infinitivo («ég vil koma»), mas «verða» pede «að» («ég verð að kaupa»). Em «eldgos», a tônica fica no «ELD», e o «ld» soa quase «lt».',
+          hint: '“Vilja” vem direto com o infinitivo (“ég vil koma”), mas “verða” pede “að” (“ég verð að kaupa”). Em “eldgos”, a tônica fica no “ELD”, e o “ld” soa quase “lt”.',
         },
-        communityPrompt: 'Planeje em islandês uma visita a um parque nacional com quatro frases: use «ætla að», «verða að», «geta» com o supino («Við getum séð…») e um genitivo.',
+        communityPrompt: 'Planeje em islandês uma visita a um parque nacional com quatro frases: use “ætla að”, “verða að”, “geta” com o supino (“Við getum séð…”) e um genitivo.',
       },
       {
         id: 'is-u5-l3',
@@ -507,9 +507,9 @@ export const UNITS_IS: UnitSeed[] = [
           bot: 'Ég ætla að keyra upp á hálendið á morgun á litlum bíl. Er það í lagi?',
           botTranslation: 'Vou dirigir até as terras altas amanhã num carro pequeno. Tudo bem?',
           expected: ['Nei, þú verður að taka jeppa! Og farðu varlega.', 'jeppa', 'farðu varlega', 'þú verður að'],
-          hint: 'Dê o conselho com «Þú verður að…» e feche com um imperativo: «Farðu varlega!». Em «hálendi», o á soa «au»: «HAU-len-di».',
+          hint: 'Dê o conselho com “Þú verður að…” e feche com um imperativo: “Farðu varlega!”. Em “hálendi”, o á soa “au”: “HAU-len-di”.',
         },
-        communityPrompt: 'Escreva em islandês cinco conselhos para um turista no inverno, com imperativos («farðu», «taktu», «passaðu þig á…») e pelo menos uma frase com «verða að».',
+        communityPrompt: 'Escreva em islandês cinco conselhos para um turista no inverno, com imperativos (“farðu”, “taktu”, “passaðu þig á…”) e pelo menos uma frase com “verða að”.',
       },
       {
         id: 'is-u5-p',
@@ -527,9 +527,9 @@ export const UNITS_IS: UnitSeed[] = [
             'þið verðið að',
             'hálka',
           ],
-          hint: 'Fale com o grupo no plural: «Þið verðið að…» e o imperativo plural «Farið varlega!». «Geta» vem com o supino: «það getur verið hálka».',
+          hint: 'Fale com o grupo no plural: “Þið verðið að…” e o imperativo plural “Farið varlega!”. “Geta” vem com o supino: “það getur verið hálka”.',
         },
-        communityPrompt: 'Escreva em islandês um plano para uma noite de caça à aurora boreal: o que vocês vão fazer («Við ætlum að…»), o que precisam levar («Við þurfum að…»), uma previsão («Það mun…»), dois conselhos no imperativo e um genitivo.',
+        communityPrompt: 'Escreva em islandês um plano para uma noite de caça à aurora boreal: o que vocês vão fazer (“Við ætlum að…”), o que precisam levar (“Við þurfum að…”), uma previsão (“Það mun…”), dois conselhos no imperativo e um genitivo.',
       },
     ],
   },
@@ -544,11 +544,11 @@ export const UNITS_IS: UnitSeed[] = [
       title: 'A piscina é a praça da Islândia',
       emoji: '🏊',
       history:
-        'O calor geotérmico aquece a maioria das casas da Islândia e também as piscinas públicas, quase todas ao ar livre e abertas o ano inteiro, mesmo com neve. Reykjavík deve o nome, «baía das fumaças», ao vapor das fontes termais que os primeiros colonos viram. No vale de Laugardalur, na capital, as mulheres lavavam roupa nas fontes quentes; hoje fica lá a Laugardalslaug, a maior piscina da cidade. Na escola, a natação é matéria obrigatória, e quase toda cidadezinha tem a sua sundlaug.',
+        'O calor geotérmico aquece a maioria das casas da Islândia e também as piscinas públicas, quase todas ao ar livre e abertas o ano inteiro, mesmo com neve. Reykjavík deve o nome, “baía das fumaças”, ao vapor das fontes termais que os primeiros colonos viram. No vale de Laugardalur, na capital, as mulheres lavavam roupa nas fontes quentes; hoje fica lá a Laugardalslaug, a maior piscina da cidade. Na escola, a natação é matéria obrigatória, e quase toda cidadezinha tem a sua sundlaug.',
       culture_tip:
-        'Antes de entrar na piscina, é obrigatório tomar banho sem roupa de banho, com sabonete, no vestiário: há cartazes mostrando as partes do corpo que devem ser lavadas, e os funcionários ficam de olho. Os sapatos ficam na entrada do vestiário. No heitur pottur, os islandeses conversam sobre tudo, do tempo à política: é o lugar mais fácil para puxar conversa. E se alguém perguntar «Er þér kalt?», responda com o dativo: «Já, mér er kalt!».',
+        'Antes de entrar na piscina, é obrigatório tomar banho sem roupa de banho, com sabonete, no vestiário: há cartazes mostrando as partes do corpo que devem ser lavadas, e os funcionários ficam de olho. Os sapatos ficam na entrada do vestiário. No heitur pottur, os islandeses conversam sobre tudo, do tempo à política: é o lugar mais fácil para puxar conversa. E se alguém perguntar “Er þér kalt?”, responda com o dativo: “Já, mér er kalt!”.',
       grammar_why:
-        'Em islandês, muitos verbos não pedem sujeito no nominativo. Com sensações e sentimentos, a pessoa vai para o dativo: «mér er kalt» (literalmente «a mim está frio»), «mér leiðist» (fico entediado), «mér finnst» (eu acho); com outros, vai para o acusativo: «mig langar» (eu quero), «mig vantar» (eu preciso). Também há verbos que regem dativo, como «hjálpa», «gleyma», «treysta» e «svara» («Ég gleymdi handklæðinu»), e outros que regem genitivo, como «sakna» e «njóta» («Ég sakna sundlaugarinnar»). Nas subordinadas (að, af því að, þegar, ef), o islandês mantém o verbo antes do «ekki», diferente do dinamarquês e do sueco: «af því að mér er ekki kalt». E quando a subordinada abre a frase, a principal inverte por causa do V2: «Þegar mér er kalt, fer ég í pottinn».',
+        'Em islandês, muitos verbos não pedem sujeito no nominativo. Com sensações e sentimentos, a pessoa vai para o dativo: “mér er kalt” (literalmente “a mim está frio”), “mér leiðist” (fico entediado), “mér finnst” (eu acho); com outros, vai para o acusativo: “mig langar” (eu quero), “mig vantar” (eu preciso). Também há verbos que regem dativo, como “hjálpa”, “gleyma”, “treysta” e “svara” (“Ég gleymdi handklæðinu”), e outros que regem genitivo, como “sakna” e “njóta” (“Ég sakna sundlaugarinnar”). Nas subordinadas (að, af því að, þegar, ef), o islandês mantém o verbo antes do “ekki”, diferente do dinamarquês e do sueco: “af því að mér er ekki kalt”. E quando a subordinada abre a frase, a principal inverte por causa do V2: “Þegar mér er kalt, fer ég í pottinn”.',
       grammar_examples: [
         ['Mér er kalt, en mig langar samt í heita pottinn.', 'Estou com frio, mas mesmo assim quero ir para o ofurô.'],
         ['Ég sakna sundlaugarinnar þegar ég er í útlöndum.', 'Sinto falta da piscina quando estou no exterior.'],
@@ -595,7 +595,7 @@ export const UNITS_IS: UnitSeed[] = [
           hint: 'Diga que já tomou banho e use um sujeito no dativo ou no acusativo (mér er kalt, mig langar).',
         },
         communityPrompt:
-          'Escreva em islandês 4 frases sobre uma ida à piscina: use «mér er kalt» ou «mér finnst», «mig langar», um verbo que pede dativo (gleyma, hjálpa) e uma oração com «af því að» ou «þegar».',
+          'Escreva em islandês 4 frases sobre uma ida à piscina: use “mér er kalt” ou “mér finnst”, “mig langar”, um verbo que pede dativo (gleyma, hjálpa) e uma oração com “af því að” ou “þegar”.',
       },
       {
         id: 'is-u6-l2',
@@ -631,7 +631,7 @@ export const UNITS_IS: UnitSeed[] = [
             'af því að',
             'mér er',
           ],
-          hint: 'Diga que roupas vai usar (fara í + acusativo) e explique com «af því að».',
+          hint: 'Diga que roupas vai usar (fara í + acusativo) e explique com “af því að”.',
         },
         communityPrompt:
           'Escreva em islandês um conselho para um amigo brasileiro que vai à Islândia no inverno: o que vestir (fara í + acusativo), por quê (af því að) e duas frases com sujeito no dativo (mér er kalt, mér líður vel).',
@@ -670,7 +670,7 @@ export const UNITS_IS: UnitSeed[] = [
             'mér er kalt',
             'mig langar',
           ],
-          hint: 'Para dizer «sim» a uma pergunta negativa, o islandês usa «jú».',
+          hint: 'Para dizer “sim” a uma pergunta negativa, o islandês usa “jú”.',
         },
         communityPrompt:
           'Descreva em islandês um dia de skammdegi: como você se sente (mér líður, mér leiðist, mér finnst), o que te dá vontade de fazer (mig langar) e o que acontece quando o tempo muda (þegar…).',
@@ -690,7 +690,7 @@ export const UNITS_IS: UnitSeed[] = [
             'þegar mér er kalt',
             'heita pottinn',
           ],
-          hint: 'Dê sua opinião com «mér finnst» e use uma oração com «þegar»; lembre que, depois dela, o verbo vem antes do sujeito.',
+          hint: 'Dê sua opinião com “mér finnst” e use uma oração com “þegar”; lembre que, depois dela, o verbo vem antes do sujeito.',
         },
         communityPrompt:
           'Escreva em islandês um pequeno relato (5–6 frases) de uma tarde numa piscina islandesa: use pelo menos dois sujeitos no dativo ou acusativo, dois verbos que pedem dativo ou genitivo (hjálpa, gleyma, sakna, njóta) e duas subordinadas (af því að, þegar, ef, að).',
@@ -710,9 +710,9 @@ export const UNITS_IS: UnitSeed[] = [
       history:
         'A Islândia fica sobre a Dorsal Mesoatlântica, onde as placas da América do Norte e da Eurásia se afastam, e sobre um ponto quente: por isso tem dezenas de vulcões ativos. Em 23 de janeiro de 1973, uma fissura se abriu na ilha de Heimaey, em Vestmannaeyjar, e quase todos os moradores foram levados para o continente numa só noite, a maioria em barcos de pesca; a lava foi resfriada com água do mar bombeada, o que ajudou a salvar o porto. Em 2010, as cinzas do Eyjafjallajökull pararam boa parte do tráfego aéreo da Europa por vários dias. E a erupção do Laki, em 1783 e 1784, envenenou pastos e rebanhos e trouxe uma fome que matou cerca de um quinto da população.',
       culture_tip:
-        'Em áreas geotérmicas como Hverir, perto do Mývatn, ou Haukadalur, onde ficam o Geysir e o Strokkur, ande sempre dentro das trilhas marcadas: o chão pode ser uma crosta fina sobre lama fervendo. O Strokkur jorra a cada poucos minutos; espere com paciência e fique do lado de onde vem o vento, porque ele traz a água quente. A palavra «gêiser», usada no mundo inteiro, vem do nome do Geysir islandês, da mesma família do verbo «gjósa», jorrar.',
+        'Em áreas geotérmicas como Hverir, perto do Mývatn, ou Haukadalur, onde ficam o Geysir e o Strokkur, ande sempre dentro das trilhas marcadas: o chão pode ser uma crosta fina sobre lama fervendo. O Strokkur jorra a cada poucos minutos; espere com paciência e fique do lado de onde vem o vento, porque ele traz a água quente. A palavra “gêiser”, usada no mundo inteiro, vem do nome do Geysir islandês, da mesma família do verbo “gjósa”, jorrar.',
       grammar_why:
-        'A voz média termina em -st e tem vários usos: recíproco («Við hittumst» = a gente se encontra), reflexivo ou de mudança sem agente («Sprungan opnaðist» = a fissura se abriu), e verbos que só existem assim, como «óttast» (temer), «nálgast» (aproximar-se) e «hefjast» (começar). A passiva se faz com «vera» ou «verða» + particípio, e o particípio concorda em gênero, número e caso com o sujeito, como no português «foi construído / foi construída»: «Bærinn var rýmdur», «Eyjan var rýmd», «Húsin voru grafin í ösku». «Vera» descreve a ação ou o estado; «verða» destaca o acontecimento, a mudança: «Margir urðu hræddir» (muitos ficaram com medo). Com verbos que regem dativo, a passiva mantém o dativo: «Flugi var aflýst» (o voo foi cancelado).',
+        'A voz média termina em -st e tem vários usos: recíproco (“Við hittumst” = a gente se encontra), reflexivo ou de mudança sem agente (“Sprungan opnaðist” = a fissura se abriu), e verbos que só existem assim, como “óttast” (temer), “nálgast” (aproximar-se) e “hefjast” (começar). A passiva se faz com “vera” ou “verða” + particípio, e o particípio concorda em gênero, número e caso com o sujeito, como no português “foi construído / foi construída”: “Bærinn var rýmdur”, “Eyjan var rýmd”, “Húsin voru grafin í ösku”. “Vera” descreve a ação ou o estado; “verða” destaca o acontecimento, a mudança: “Margir urðu hræddir” (muitos ficaram com medo). Com verbos que regem dativo, a passiva mantém o dativo: “Flugi var aflýst” (o voo foi cancelado).',
       grammar_examples: [
         ['Eyjan var rýmd á einni nóttu.', 'A ilha foi evacuada em uma só noite.'],
         ['Mörg hús grófust undir hrauni og ösku.', 'Muitas casas ficaram soterradas debaixo da lava e da cinza.'],
@@ -756,10 +756,10 @@ export const UNITS_IS: UnitSeed[] = [
             'var rýmd',
             'árið 1973',
           ],
-          hint: 'Conte o que aconteceu usando a voz média (hófst) e a passiva com «var» + particípio.',
+          hint: 'Conte o que aconteceu usando a voz média (hófst) e a passiva com “var” + particípio.',
         },
         communityPrompt:
-          'Escreva em islandês 4 frases sobre uma erupção (real ou imaginada): use duas passivas com «vera» ou «verða» + particípio, concordando com o sujeito, e um verbo em -st (hefjast, nálgast, óttast).',
+          'Escreva em islandês 4 frases sobre uma erupção (real ou imaginada): use duas passivas com “vera” ou “verða” + particípio, concordando com o sujeito, e um verbo em -st (hefjast, nálgast, óttast).',
       },
       {
         id: 'is-u7-l2',
@@ -834,7 +834,7 @@ export const UNITS_IS: UnitSeed[] = [
             'er hitað',
             'brennisteinn',
           ],
-          hint: 'Explique com a passiva: a água (vatnið, neutro) «er hitað»; «fylgja» pede dativo.',
+          hint: 'Explique com a passiva: a água (vatnið, neutro) “er hitað”; “fylgja” pede dativo.',
         },
         communityPrompt:
           'Explique em islandês, em 4 frases, como funciona a hitaveita: use a passiva (vatnið er hitað, er leitt) e um particípio como adjetivo (heitt vatn, hitað hús).',
@@ -855,7 +855,7 @@ export const UNITS_IS: UnitSeed[] = [
             'var rýmdur',
             'vegna ösku',
           ],
-          hint: 'Junte fatos da unidade usando a passiva; «aflýsa» pede dativo mesmo na passiva: «flugi var aflýst».',
+          hint: 'Junte fatos da unidade usando a passiva; “aflýsa” pede dativo mesmo na passiva: “flugi var aflýst”.',
         },
         communityPrompt:
           'Escreva em islandês uma notícia curta (5–6 frases) sobre uma erupção: quando começou (hófst), o que foi fechado, evacuado ou destruído (passiva com vera ou verða), como as pessoas se sentiram e um particípio usado como adjetivo.',
@@ -877,7 +877,7 @@ export const UNITS_IS: UnitSeed[] = [
       culture_tip:
         'Nunca suba num iceberg nem fique na beira da água na praia de Jökulsárlón: blocos de gelo viram e ondas fortes chegam sem aviso. Para andar numa geleira ou entrar numa caverna de gelo, vá sempre com um guia: as fendas ficam escondidas debaixo da neve. Nas cachoeiras, como o Gullfoss, respeite as cordas, porque a pedra molhada escorrega. E pergunte a previsão antes de sair: no alto, o tempo muda em minutos.',
       grammar_why:
-        'O comparativo e o superlativo islandeses mudam de forma. Os regulares ganham -ari e -astur: «kaldur → kaldari → kaldastur». Os mais comuns são irregulares, muitos com mudança de vogal: «stór → stærri → stærstur», «hár → hærri → hæstur», «góður → betri → bestur», «mikill → meiri → mestur». O comparativo quase não muda (stærri; no neutro, stærra), mas o superlativo concorda com o substantivo: «stærsti jökullinn», «stærsta laugin», «stærsta vatnið». O «do que» da comparação é «en»: «Dettifoss er kraftmeiri en Gullfoss». O pronome relativo não se declina: «sem» (o mais usado) ou «er» (mais literário): «fossinn sem ég sá», «konan sem ég talaði við». No discurso indireto, o «que» é «að», e o verbo costuma ir para o subjuntivo: «Leiðsögumaðurinn sagði að jökullinn væri að minnka» (o guia disse que a geleira estava diminuindo) — assunto que você aprofunda no B2.1.',
+        'O comparativo e o superlativo islandeses mudam de forma. Os regulares ganham -ari e -astur: “kaldur → kaldari → kaldastur”. Os mais comuns são irregulares, muitos com mudança de vogal: “stór → stærri → stærstur”, “hár → hærri → hæstur”, “góður → betri → bestur”, “mikill → meiri → mestur”. O comparativo quase não muda (stærri; no neutro, stærra), mas o superlativo concorda com o substantivo: “stærsti jökullinn”, “stærsta laugin”, “stærsta vatnið”. O “do que” da comparação é “en”: “Dettifoss er kraftmeiri en Gullfoss”. O pronome relativo não se declina: “sem” (o mais usado) ou “er” (mais literário): “fossinn sem ég sá”, “konan sem ég talaði við”. No discurso indireto, o “que” é “að”, e o verbo costuma ir para o subjuntivo: “Leiðsögumaðurinn sagði að jökullinn væri að minnka” (o guia disse que a geleira estava diminuindo) — assunto que você aprofunda no B2.1.',
       grammar_examples: [
         ['Vatnajökull er stærsti jökull Íslands.', 'O Vatnajökull é a maior geleira da Islândia.'],
         ['Dettifoss er kraftmeiri en Gullfoss.', 'O Dettifoss é mais potente do que o Gullfoss.'],
@@ -921,10 +921,10 @@ export const UNITS_IS: UnitSeed[] = [
             'stærri',
             'kraftmeiri en',
           ],
-          hint: 'Compare as duas com o comparativo e «en» (do que). «Foss» é masculino: retome com «hann».',
+          hint: 'Compare as duas com o comparativo e “en” (do que). “Foss” é masculino: retome com “hann”.',
         },
         communityPrompt:
-          'Compare em islandês duas paisagens que você conhece, uma no Brasil e outra na Islândia: use dois comparativos com «en», um superlativo concordando com o substantivo e uma oração com «sem».',
+          'Compare em islandês duas paisagens que você conhece, uma no Brasil e outra na Islândia: use dois comparativos com “en”, um superlativo concordando com o substantivo e uma oração com “sem”.',
       },
       {
         id: 'is-u8-l2',
@@ -960,7 +960,7 @@ export const UNITS_IS: UnitSeed[] = [
             'jöklinum',
             'stærri en',
           ],
-          hint: 'Repita o que o guia disse com «sagði að» e compare com «stærri en».',
+          hint: 'Repita o que o guia disse com “sagði að” e compare com “stærri en”.',
         },
         communityPrompt:
           'Conte em islandês o que um guia te explicou em Jökulsárlón, usando o discurso indireto (hann sagði að…) duas vezes, e escreva uma frase com o superlativo (stærsti, fallegasta, elsti).',
@@ -999,10 +999,10 @@ export const UNITS_IS: UnitSeed[] = [
             'sem landið á',
             'hraðar en',
           ],
-          hint: 'Use um superlativo com «sem» (o mais… que…) e um comparativo com «en».',
+          hint: 'Use um superlativo com “sem” (o mais… que…) e um comparativo com “en”.',
         },
         communityPrompt:
-          'Escreva em islandês 4 frases sobre as geleiras que estão diminuindo: use um comparativo, um superlativo, uma oração com «sem» e uma frase no discurso indireto (vísindamenn segja að…).',
+          'Escreva em islandês 4 frases sobre as geleiras que estão diminuindo: use um comparativo, um superlativo, uma oração com “sem” e uma frase no discurso indireto (vísindamenn segja að…).',
       },
       {
         id: 'is-u8-p',
@@ -1020,10 +1020,10 @@ export const UNITS_IS: UnitSeed[] = [
             'sagði að',
             'hraðar en',
           ],
-          hint: 'Junte superlativo, «sem», comparativo e discurso indireto numa resposta só.',
+          hint: 'Junte superlativo, “sem”, comparativo e discurso indireto numa resposta só.',
         },
         communityPrompt:
-          'Escreva em islandês um relato de viagem (5–6 frases) pelo sul da Islândia: compare dois lugares (en), diga qual foi o mais impressionante (superlativo), use «sem» duas vezes e conte o que alguém te disse (sagði að…).',
+          'Escreva em islandês um relato de viagem (5–6 frases) pelo sul da Islândia: compare dois lugares (en), diga qual foi o mais impressionante (superlativo), use “sem” duas vezes e conte o que alguém te disse (sagði að…).',
       },
     ],
   },
@@ -1038,11 +1038,11 @@ export const UNITS_IS: UnitSeed[] = [
       title: 'Um parlamento ao ar livre desde 930',
       emoji: '⚖️',
       history:
-        'Por volta de 930, os chefes da Islândia criaram o Alþingi, que se reunia todo verão ao ar livre em Þingvellir; do Lögberg, a «rocha da lei», o lögsögumaður recitava as leis de cor. Foi ali que, por volta do ano 1000, se decidiu que a Islândia seria cristã. Þingvellir fica num vale de falhas onde as placas da América do Norte e da Eurásia se afastam, e a fenda Almannagjá é o paredão mais famoso. Em 17 de junho de 1944, a república foi proclamada ali, e o lugar é Patrimônio Mundial da UNESCO desde 2004. As sagas foram escritas nos séculos XIII e XIV; muitos dos manuscritos foram parar em Copenhague e começaram a voltar para a Islândia em 1971.',
+        'Por volta de 930, os chefes da Islândia criaram o Alþingi, que se reunia todo verão ao ar livre em Þingvellir; do Lögberg, a “rocha da lei”, o lögsögumaður recitava as leis de cor. Foi ali que, por volta do ano 1000, se decidiu que a Islândia seria cristã. Þingvellir fica num vale de falhas onde as placas da América do Norte e da Eurásia se afastam, e a fenda Almannagjá é o paredão mais famoso. Em 17 de junho de 1944, a república foi proclamada ali, e o lugar é Patrimônio Mundial da UNESCO desde 2004. As sagas foram escritas nos séculos XIII e XIV; muitos dos manuscritos foram parar em Copenhague e começaram a voltar para a Islândia em 1971.',
       culture_tip:
-        'O 17 de junho, dia nacional, é o aniversário de Jón Sigurðsson, o líder do movimento pela independência no século XIX: há desfiles, balões, bandeiras e a Fjallkonan, a «mulher da montanha», que recita um poema. Os islandeses conseguem ler as sagas medievais sem grande dificuldade, porque a língua escrita mudou pouco. Uma frase famosa da Njáls saga resume o espírito do Alþingi: «Með lögum skal land byggja», «com leis se deve construir o país».',
+        'O 17 de junho, dia nacional, é o aniversário de Jón Sigurðsson, o líder do movimento pela independência no século XIX: há desfiles, balões, bandeiras e a Fjallkonan, a “mulher da montanha”, que recita um poema. Os islandeses conseguem ler as sagas medievais sem grande dificuldade, porque a língua escrita mudou pouco. Uma frase famosa da Njáls saga resume o espírito do Alþingi: “Með lögum skal land byggja”, “com leis se deve construir o país”.',
       grammar_why:
-        'O subjuntivo (viðtengingarháttur) é bem vivo no islandês. O presente se forma a partir do infinitivo: «hann komi», «hún sé», «það fari». O passado vem do plural do pretérito, e nos verbos fortes a vogal costuma mudar: «komum → kæmi», «vorum → væri», «fórum → færi», «gátum → gæti». Ele aparece: 1) no discurso indireto: «Hún segir að þingið sé gamalt» / «Hún sagði að þingið væri gamalt»; 2) depois de desejos e dúvidas: «Ég vona að þú komir», «Ég efast um að hann viti það»; 3) no condicional, com o passado do subjuntivo nas duas partes, bem como o nosso «se eu fosse…, eu iria…»: «Ef ég væri víkingur, færi ég til Íslands». «Myndi» + infinitivo também faz o condicional, como o nosso futuro do pretérito: «Ég myndi fara». Repare que, depois da oração com «ef», a principal inverte o verbo (V2): «…, myndi ég…».',
+        'O subjuntivo (viðtengingarháttur) é bem vivo no islandês. O presente se forma a partir do infinitivo: “hann komi”, “hún sé”, “það fari”. O passado vem do plural do pretérito, e nos verbos fortes a vogal costuma mudar: “komum → kæmi”, “vorum → væri”, “fórum → færi”, “gátum → gæti”. Ele aparece: 1) no discurso indireto: “Hún segir að þingið sé gamalt” / “Hún sagði að þingið væri gamalt”; 2) depois de desejos e dúvidas: “Ég vona að þú komir”, “Ég efast um að hann viti það”; 3) no condicional, com o passado do subjuntivo nas duas partes, bem como o nosso “se eu fosse…, eu iria…”: “Ef ég væri víkingur, færi ég til Íslands”. “Myndi” + infinitivo também faz o condicional, como o nosso futuro do pretérito: “Ég myndi fara”. Repare que, depois da oração com “ef”, a principal inverte o verbo (V2): “…, myndi ég…”.',
       grammar_examples: [
         ['Ef ég væri á Alþingi árið 930, myndi ég hlusta á lögsögumanninn.', 'Se eu estivesse no Alþingi em 930, eu ouviria o lögsögumaður.'],
         ['Sagt er að Almannagjá breikki á hverju ári.', 'Dizem que a Almannagjá fica mais larga a cada ano.'],
@@ -1086,10 +1086,10 @@ export const UNITS_IS: UnitSeed[] = [
             'myndi ég',
             'hlusta',
           ],
-          hint: 'Responda com «Ef ég væri…, myndi ég…»: depois da oração com «ef», o verbo vem antes do sujeito.',
+          hint: 'Responda com “Ef ég væri…, myndi ég…”: depois da oração com “ef”, o verbo vem antes do sujeito.',
         },
         communityPrompt:
-          'Escreva em islandês 3 frases começando com «Ef ég væri…» sobre a Islândia da Era Viking e uma frase com «Ég vona að…» + o presente do subjuntivo.',
+          'Escreva em islandês 3 frases começando com “Ef ég væri…” sobre a Islândia da Era Viking e uma frase com “Ég vona að…” + o presente do subjuntivo.',
       },
       {
         id: 'is-u9-l2',
@@ -1125,7 +1125,7 @@ export const UNITS_IS: UnitSeed[] = [
             'Njáls sögu',
             'hún sé',
           ],
-          hint: 'Use «myndi» + infinitivo e repita o que te disseram com o subjuntivo (sé).',
+          hint: 'Use “myndi” + infinitivo e repita o que te disseram com o subjuntivo (sé).',
         },
         communityPrompt:
           'Imagine que você é um skáld na Islândia medieval. Escreva em islandês 4 frases: o que você faria se fosse rico (ef ég væri…), o que espera que aconteça (ég vona að…) e o que dizem de você (sagt er að…).',
@@ -1164,7 +1164,7 @@ export const UNITS_IS: UnitSeed[] = [
             'myndi ég',
             'fánanum',
           ],
-          hint: '«Veifa» (agitar, acenar com) pede dativo: «veifa fánanum».',
+          hint: '“Veifa” (agitar, acenar com) pede dativo: “veifa fánanum”.',
         },
         communityPrompt:
           'Escreva em islandês um convite para um amigo passar o 17 de junho com você: use o condicional (það væri gaman ef…), um desejo (ég vona að…) e uma frase no discurso indireto sobre a história do dia (sagt er að…).',
@@ -1202,11 +1202,11 @@ export const UNITS_IS: UnitSeed[] = [
       title: 'Todo mundo pelo primeiro nome',
       emoji: '🏷️',
       history:
-        'Na Islândia, quase ninguém tem sobrenome de família: o «sobrenome» é o nome do pai (às vezes, o da mãe) no genitivo mais -son (filho) ou -dóttir (filha). A filha de um Jón se chama, por exemplo, Guðrún Jónsdóttir, e o filho, Ari Jónsson; por isso, numa mesma família, pais e filhos têm «sobrenomes» diferentes. A lista telefônica sempre foi organizada pelo primeiro nome, e todo mundo, do vizinho ao presidente, é chamado pelo primeiro nome. Nomes que ainda não estão na lista oficial precisam ser aprovados pela Mannanafnanefnd, a comissão de nomes, criada em 1991. E cada pessoa tem uma kennitala, o número de identidade de dez dígitos que começa pela data de nascimento.',
+        'Na Islândia, quase ninguém tem sobrenome de família: o “sobrenome” é o nome do pai (às vezes, o da mãe) no genitivo mais -son (filho) ou -dóttir (filha). A filha de um Jón se chama, por exemplo, Guðrún Jónsdóttir, e o filho, Ari Jónsson; por isso, numa mesma família, pais e filhos têm “sobrenomes” diferentes. A lista telefônica sempre foi organizada pelo primeiro nome, e todo mundo, do vizinho ao presidente, é chamado pelo primeiro nome. Nomes que ainda não estão na lista oficial precisam ser aprovados pela Mannanafnanefnd, a comissão de nomes, criada em 1991. E cada pessoa tem uma kennitala, o número de identidade de dez dígitos que começa pela data de nascimento.',
       culture_tip:
-        'Num e-mail formal, comece com «Góðan dag» ou, se você sabe o nome, «Sæll» (para homem) ou «Sæl» (para mulher) + o primeiro nome, e termine com «Kær kveðja» ou, mais formal, «Virðingarfyllst». O tratamento «þér», o antigo «vós» de respeito, só aparece em textos muito solenes: com todo mundo se usa «þú». Nunca chame alguém só pelo patronímico, como «senhor Jónsson»: diga «Ari» ou o nome completo, «Ari Jónsson».',
+        'Num e-mail formal, comece com “Góðan dag” ou, se você sabe o nome, “Sæll” (para homem) ou “Sæl” (para mulher) + o primeiro nome, e termine com “Kær kveðja” ou, mais formal, “Virðingarfyllst”. O tratamento “þér”, o antigo “vós” de respeito, só aparece em textos muito solenes: com todo mundo se usa “þú”. Nunca chame alguém só pelo patronímico, como “senhor Jónsson”: diga “Ari” ou o nome completo, “Ari Jónsson”.',
       grammar_why:
-        'A formalidade islandesa não está nos pronomes (todos usam «þú»), mas nas fórmulas e na estrutura: saudação (Góðan dag / Sæll, Ari / Sæl, Guðrún), o motivo logo no começo (Ég skrifa vegna…), pedidos corteses com o subjuntivo ou com «vinsamlegast» («Gætir þú sent mér…?», «Ég væri þakklát ef…», «Vinsamlegast sendið umsóknina fyrir 1. maí») e a despedida (Með kveðju / Virðingarfyllst). Os patronímicos se declinam: o nome do pai vai para o genitivo (Jón → Jóns-son, Magnús → Magnúsar-dóttir), e o próprio -son/-dóttir muda de caso na frase: «Ég talaði við Ara Jónsson» (acusativo), «Ég sendi Guðrúnu Jónsdóttur tölvupóst» (dativo). Nos cumprimentos, «sæll/sæl» concorda com a pessoa, como o nosso «caro/cara».',
+        'A formalidade islandesa não está nos pronomes (todos usam “þú”), mas nas fórmulas e na estrutura: saudação (Góðan dag / Sæll, Ari / Sæl, Guðrún), o motivo logo no começo (Ég skrifa vegna…), pedidos corteses com o subjuntivo ou com “vinsamlegast” (“Gætir þú sent mér…?”, “Ég væri þakklát ef…”, “Vinsamlegast sendið umsóknina fyrir 1. maí”) e a despedida (Með kveðju / Virðingarfyllst). Os patronímicos se declinam: o nome do pai vai para o genitivo (Jón → Jóns-son, Magnús → Magnúsar-dóttir), e o próprio -son/-dóttir muda de caso na frase: “Ég talaði við Ara Jónsson” (acusativo), “Ég sendi Guðrúnu Jónsdóttur tölvupóst” (dativo). Nos cumprimentos, “sæll/sæl” concorda com a pessoa, como o nosso “caro/cara”.',
       grammar_examples: [
         ['Sæl Guðrún, ég skrifa vegna starfsins sem var auglýst.', 'Olá, Guðrún, escrevo por causa da vaga que foi anunciada.'],
         ['Gætir þú sent mér dagskrá fundarins?', 'Você poderia me mandar a pauta da reunião?'],
@@ -1289,7 +1289,7 @@ export const UNITS_IS: UnitSeed[] = [
             'kennitölu',
             'skilríkin',
           ],
-          hint: 'Diga seu nome com «ég heiti» e mostre um documento (skilríki, que só se usa no plural).',
+          hint: 'Diga seu nome com “ég heiti” e mostre um documento (skilríki, que só se usa no plural).',
         },
         communityPrompt:
           'Explique em islandês, em 4 frases, como seria o seu nome se você fosse islandês: o nome do seu pai ou da sua mãe no genitivo + -son ou -dóttir. Use esse nome em pelo menos dois casos (o nominativo e o acusativo ou o dativo).',
@@ -1328,7 +1328,7 @@ export const UNITS_IS: UnitSeed[] = [
             'kemst ég ekki',
             'gætir þú',
           ],
-          hint: 'Recuse com cortesia (því miður) e faça um pedido com «gætir þú».',
+          hint: 'Recuse com cortesia (því miður) e faça um pedido com “gætir þú”.',
         },
         communityPrompt:
           'Escreva em islandês um e-mail formal ao seu vinnuveitandi pedindo mais prazo (frestur) para entregar um relatório: saudação, motivo, um pedido no subjuntivo (Gæti ég…? / Ég væri þakklát ef…) e a despedida.',
@@ -1367,11 +1367,11 @@ export const UNITS_IS: UnitSeed[] = [
       title: 'Palavras feitas em casa',
       emoji: '🔨',
       history:
-        'Enquanto o português costuma pegar palavras emprestadas (computador, do inglês; telefone, do grego), o islandês prefere criar as suas com raízes antigas. O movimento purista ganhou força no século XIX, quando poetas e estudiosos quiseram tirar da língua as muitas palavras dinamarquesas, e até hoje uma comissão oficial, a Íslensk málnefnd, fundada em 1964, ajuda a pensar termos novos. O exemplo mais famoso é «tölva» (computador), proposta pelo professor Sigurður Nordal nos anos 1960: junta «tala» (número) e «völva» (profetisa), ou seja, a «profetisa dos números». «Sími» (telefone) é uma palavra antiga que significava «fio», e «þyrla» (helicóptero) vem do verbo «þyrla», fazer rodopiar.',
+        'Enquanto o português costuma pegar palavras emprestadas (computador, do inglês; telefone, do grego), o islandês prefere criar as suas com raízes antigas. O movimento purista ganhou força no século XIX, quando poetas e estudiosos quiseram tirar da língua as muitas palavras dinamarquesas, e até hoje uma comissão oficial, a Íslensk málnefnd, fundada em 1964, ajuda a pensar termos novos. O exemplo mais famoso é “tölva” (computador), proposta pelo professor Sigurður Nordal nos anos 1960: junta “tala” (número) e “völva” (profetisa), ou seja, a “profetisa dos números”. “Sími” (telefone) é uma palavra antiga que significava “fio”, e “þyrla” (helicóptero) vem do verbo “þyrla”, fazer rodopiar.',
       culture_tip:
-        'Quando algo dá errado, o islandês diz «Þetta reddast» (vai dar tudo certo, a gente dá um jeito), quase um lema nacional diante do tempo instável e dos vulcões. Curiosamente, «redda» vem do dinamarquês «redde» (salvar): até o lema do otimismo tem sotaque estrangeiro. Na conversa, os jovens usam muita palavra inglesa («ókei», «næs»), mas na escrita, no jornal e na escola vale a palavra islandesa: escreva «tölvupóstur», e não «e-mail».',
+        'Quando algo dá errado, o islandês diz “Þetta reddast” (vai dar tudo certo, a gente dá um jeito), quase um lema nacional diante do tempo instável e dos vulcões. Curiosamente, “redda” vem do dinamarquês “redde” (salvar): até o lema do otimismo tem sotaque estrangeiro. Na conversa, os jovens usam muita palavra inglesa (“ókei”, “næs”), mas na escrita, no jornal e na escola vale a palavra islandesa: escreva “tölvupóstur”, e não “e-mail”.',
       grammar_why:
-        'As expressões idiomáticas islandesas vêm com casos e preposições fixos, então aprenda-as em bloco, como aprendemos «pisar na bola» ou «chutar o balde». «Vera eins og álfur út úr hól» (ser como um elfo saído do morro) é estar perdido, deslocado; «leggja höfuðið í bleyti» (pôr a cabeça de molho) é quebrar a cabeça; «það er ekki hundrað í hættunni» (não há cem em perigo) é «não é nada grave». Já os neologismos se comportam como qualquer palavra antiga: têm gênero e se declinam por completo. «Tölva» é feminina fraca (tölvu no acusativo, dativo e genitivo; «í tölvunni», no computador) e «sími» é masculino fraco («símann», «í símanum»). Em português, «o mouse» não muda; em islandês, «tölvumús» ganha até plural irregular: tölvumýs.',
+        'As expressões idiomáticas islandesas vêm com casos e preposições fixos, então aprenda-as em bloco, como aprendemos “pisar na bola” ou “chutar o balde”. “Vera eins og álfur út úr hól” (ser como um elfo saído do morro) é estar perdido, deslocado; “leggja höfuðið í bleyti” (pôr a cabeça de molho) é quebrar a cabeça; “það er ekki hundrað í hættunni” (não há cem em perigo) é “não é nada grave”. Já os neologismos se comportam como qualquer palavra antiga: têm gênero e se declinam por completo. “Tölva” é feminina fraca (tölvu no acusativo, dativo e genitivo; “í tölvunni”, no computador) e “sími” é masculino fraco (“símann”, “í símanum”). Em português, “o mouse” não muda; em islandês, “tölvumús” ganha até plural irregular: tölvumýs.',
       grammar_examples: [
         ['Ég er alveg eins og álfur út úr hól hérna.', 'Estou completamente perdido aqui (lit. como um elfo saído do morro).'],
         ['Við þurfum að leggja höfuðið í bleyti.', 'Precisamos quebrar a cabeça (lit. pôr a cabeça de molho).'],
@@ -1389,15 +1389,15 @@ export const UNITS_IS: UnitSeed[] = [
         cloze: [
           { sentence: 'Ég vinn allan daginn við ___.', answer: 'tölvuna', options: ['tölvuna', 'tölvan', 'tölvunni'], translation: 'Trabalho o dia inteiro no computador.' },
           { sentence: 'Ég finn ekki ___ minn! Hefurðu séð hann?', answer: 'símann', options: ['símann', 'síminn', 'símanum'], translation: 'Não acho o meu celular! Você viu?' },
-          { sentence: 'Orðið «tölva» er búið til úr orðunum «tala» og «___».', answer: 'völva', options: ['völva', 'vala', 'velta'], translation: 'A palavra «tölva» foi formada com as palavras «tala» e «völva».' },
+          { sentence: 'Orðið “tölva” er búið til úr orðunum “tala” og “___”.', answer: 'völva', options: ['völva', 'vala', 'velta'], translation: 'A palavra “tölva” foi formada com as palavras “tala” e “völva”.' },
         ],
         voice: {
-          bot: 'Veistu hvaðan orðið «tölva» kemur?',
-          botTranslation: 'Você sabe de onde vem a palavra «tölva»?',
-          expected: ['Já, orðið er búið til úr «tala» og «völva», svo að tölva er eins konar spákona talnanna.', 'tala', 'völva', 'búið til úr'],
-          hint: 'Explique a formação com «Orðið er búið til úr…» (a palavra foi formada de…). «Spákona talnanna» é «a vidente dos números»: talnanna é o genitivo plural definido de «tala». Tônica sempre na primeira sílaba: TÖL-va, VÖL-va.',
+          bot: 'Veistu hvaðan orðið “tölva” kemur?',
+          botTranslation: 'Você sabe de onde vem a palavra “tölva”?',
+          expected: ['Já, orðið er búið til úr “tala” og “völva”, svo að tölva er eins konar spákona talnanna.', 'tala', 'völva', 'búið til úr'],
+          hint: 'Explique a formação com “Orðið er búið til úr…” (a palavra foi formada de…). “Spákona talnanna” é “a vidente dos números”: talnanna é o genitivo plural definido de “tala”. Tônica sempre na primeira sílaba: TÖL-va, VÖL-va.',
         },
-        communityPrompt: 'Invente um neologismo islandês para algo moderno (por exemplo, um patinete elétrico) juntando duas palavras antigas, e explique em islandês, com «Orðið er búið til úr…», de onde vem cada parte.',
+        communityPrompt: 'Invente um neologismo islandês para algo moderno (por exemplo, um patinete elétrico) juntando duas palavras antigas, e explique em islandês, com “Orðið er búið til úr…”, de onde vem cada parte.',
       },
       {
         id: 'is-u11-l2',
@@ -1413,9 +1413,9 @@ export const UNITS_IS: UnitSeed[] = [
           bot: 'Æ, fluginu mínu til Akureyrar var aflýst vegna veðurs!',
           botTranslation: 'Ai, meu voo para Akureyri foi cancelado por causa do tempo!',
           expected: ['Engar áhyggjur, þetta reddast! Þú getur tekið rútuna eða flogið á morgun.', 'þetta reddast', 'engar áhyggjur', 'á morgun'],
-          hint: 'Console com «Engar áhyggjur, þetta reddast!» e proponha uma saída. Repare que «reddast» é voz média (-st): a coisa «se ajeita» sozinha. No «rr» de «reddast» não há rr carioca: é um r vibrado com a ponta da língua.',
+          hint: 'Console com “Engar áhyggjur, þetta reddast!” e proponha uma saída. Repare que “reddast” é voz média (-st): a coisa “se ajeita” sozinha. No “rr” de “reddast” não há rr carioca: é um r vibrado com a ponta da língua.',
         },
-        communityPrompt: 'Conte em islandês um pequeno perrengue (um voo cancelado, uma chave perdida) em 3–4 frases e use pelo menos duas expressões da lição, como «allt í einu», «þetta reddast» ou «það kemur í ljós».',
+        communityPrompt: 'Conte em islandês um pequeno perrengue (um voo cancelado, uma chave perdida) em 3–4 frases e use pelo menos duas expressões da lição, como “allt í einu”, “þetta reddast” ou “það kemur í ljós”.',
       },
       {
         id: 'is-u11-l3',
@@ -1423,7 +1423,7 @@ export const UNITS_IS: UnitSeed[] = [
         kind: 'voz',
         words: ['sjónvarp', 'gervitungl', 'eldflaug', 'tækni', 'snjallsími', 'lyklaborð'],
         cloze: [
-          { sentence: 'Á Íslandi segir maður ekki «television», heldur «___».', answer: 'sjónvarp', options: ['sjónvarp', 'útvarp', 'sími'], translation: 'Na Islândia não se diz «television», e sim «sjónvarp».' },
+          { sentence: 'Á Íslandi segir maður ekki “television”, heldur “___”.', answer: 'sjónvarp', options: ['sjónvarp', 'útvarp', 'sími'], translation: 'Na Islândia não se diz “television”, e sim “sjónvarp”.' },
           { sentence: 'Mig langar í nýjan ___.', answer: 'snjallsíma', options: ['snjallsíma', 'snjallsími', 'snjallsímann'], translation: 'Estou com vontade de ter um smartphone novo.' },
           { sentence: 'Það er erfitt að skrifa þ og ð á erlendu ___.', answer: 'lyklaborði', options: ['lyklaborði', 'lyklaborð', 'lyklaborðs'], translation: 'É difícil escrever þ e ð num teclado estrangeiro.' },
         ],
@@ -1431,9 +1431,9 @@ export const UNITS_IS: UnitSeed[] = [
           bot: 'Hvaða íslensk orð þekkirðu yfir nýja tækni?',
           botTranslation: 'Que palavras islandesas você conhece para a tecnologia nova?',
           expected: ['Ég þekki til dæmis tölvu, síma, sjónvarp, gervitungl og eldflaug.', 'tölvu', 'gervitungl', 'eldflaug'],
-          hint: 'Depois de «þekki», tudo vai para o acusativo: tölva → tölvu, sími → síma (sjónvarp, gervitungl e eldflaug não mudam). A tônica fica sempre na primeira sílaba: GER-vi-tungl, ELD-flaug, SJÓN-varp.',
+          hint: 'Depois de “þekki”, tudo vai para o acusativo: tölva → tölvu, sími → síma (sjónvarp, gervitungl e eldflaug não mudam). A tônica fica sempre na primeira sílaba: GER-vi-tungl, ELD-flaug, SJÓN-varp.',
         },
-        communityPrompt: 'Escolha cinco palavras de tecnologia e compare em islandês com o português, no modelo «Á portúgölsku segir maður computador, en á íslensku tölva.». Diga qual delas você acha mais bonita e por quê.',
+        communityPrompt: 'Escolha cinco palavras de tecnologia e compare em islandês com o português, no modelo “Á portúgölsku segir maður computador, en á íslensku tölva.”. Diga qual delas você acha mais bonita e por quê.',
       },
       {
         id: 'is-u11-p',
@@ -1445,13 +1445,13 @@ export const UNITS_IS: UnitSeed[] = [
           bot: 'Góðan daginn! Ég er að skrifa grein um nýyrði. Hvaða íslenska orð finnst þér skemmtilegast, og af hverju?',
           botTranslation: 'Bom dia! Estou escrevendo um artigo sobre neologismos. Que palavra islandesa você acha mais divertida, e por quê?',
           expected: [
-            'Mér finnst «tölva» skemmtilegast, af því að það er búið til úr «tala» og «völva». Íslendingar búa frekar til ný orð en að taka þau úr ensku, og það finnst mér frábært.',
+            'Mér finnst “tölva” skemmtilegast, af því að það er búið til úr “tala” og “völva”. Íslendingar búa frekar til ný orð en að taka þau úr ensku, og það finnst mér frábært.',
             'mér finnst',
             'tölva',
             'af því að',
             'ný orð',
           ],
-          hint: 'Dê a opinião com «Mér finnst…» (o sujeito lógico vai para o dativo), justifique com «af því að…» e explique a formação da palavra. Se quiser, feche com uma expressão da unidade.',
+          hint: 'Dê a opinião com “Mér finnst…” (o sujeito lógico vai para o dativo), justifique com “af því að…” e explique a formação da palavra. Se quiser, feche com uma expressão da unidade.',
         },
         communityPrompt: 'Escreva um parágrafo em islandês (5–6 frases) sobre o purismo: dê dois exemplos de neologismos, explique como foram formados e termine com uma expressão idiomática da unidade.',
       },
@@ -1468,11 +1468,11 @@ export const UNITS_IS: UnitSeed[] = [
       title: 'Debater à islandesa',
       emoji: '🗣️',
       history:
-        'A Islândia tem uma das tradições de debate público mais antigas da Europa: o Alþingi, a assembleia reunida ao ar livre em Þingvellir a partir de 930, era o lugar onde se discutiam as leis e se resolviam disputas entre famílias. O «lögsögumaður», o orador da lei, recitava as leis de memória do alto do Lögberg, a Rocha da Lei, porque durante muito tempo nada estava escrito. Hoje o Alþingi se reúne em Reykjavík, e os islandeses continuam gostando de uma boa discussão: na televisão, nos jornais e nas piscinas públicas, onde se debate política sentado na banheira quente, o «heiti potturinn».',
+        'A Islândia tem uma das tradições de debate público mais antigas da Europa: o Alþingi, a assembleia reunida ao ar livre em Þingvellir a partir de 930, era o lugar onde se discutiam as leis e se resolviam disputas entre famílias. O “lögsögumaður”, o orador da lei, recitava as leis de memória do alto do Lögberg, a Rocha da Lei, porque durante muito tempo nada estava escrito. Hoje o Alþingi se reúne em Reykjavík, e os islandeses continuam gostando de uma boa discussão: na televisão, nos jornais e nas piscinas públicas, onde se debate política sentado na banheira quente, o “heiti potturinn”.',
       culture_tip:
-        'Os islandeses discutem com franqueza, mas sem gritaria: dizer diretamente «Ég er ósammála» (discordo) não é falta de educação. Na escrita, repare nas aspas: o islandês usa „assim“, a primeira embaixo e a segunda em cima, e a vírgula decimal, como no Brasil (3,5). Num debate formal, começa-se com «Í fyrsta lagi…» e fecha-se com «Að lokum…» (por fim) ou «Í stuttu máli…» (em resumo).',
+        'Os islandeses discutem com franqueza, mas sem gritaria: dizer diretamente “Ég er ósammála” (discordo) não é falta de educação. Na escrita, repare nas aspas: o islandês usa „assim“, a primeira embaixo e a segunda em cima, e a vírgula decimal, como no Brasil (3,5). Num debate formal, começa-se com ‘Í fyrsta lagi…’ e fecha-se com ‘Að lokum…’ (por fim) ou ‘Í stuttu máli…’ (em resumo).',
       grammar_why:
-        'Argumentar em islandês é, antes de tudo, respeitar o V2: quando um conector adverbial abre a frase, o verbo vem logo depois dele e o sujeito passa para trás. Em português dizemos «Por isso eu concordo»; em islandês, «Þess vegna er ég sammála», nunca «Þess vegna ég er». O mesmo vale para «í fyrsta lagi», «hins vegar» (por outro lado), «auk þess» (além disso) e «samt» (mesmo assim). Já as conjunções «og», «en», «því að» e «af því að» não mexem na ordem: «…af því að ég er þreyttur». E atenção a «þó að» (embora): como no português, pede o subjuntivo, «þó að það sé dýrt» (embora seja caro).',
+        'Argumentar em islandês é, antes de tudo, respeitar o V2: quando um conector adverbial abre a frase, o verbo vem logo depois dele e o sujeito passa para trás. Em português dizemos “Por isso eu concordo”; em islandês, “Þess vegna er ég sammála”, nunca “Þess vegna ég er”. O mesmo vale para “í fyrsta lagi”, “hins vegar” (por outro lado), “auk þess” (além disso) e “samt” (mesmo assim). Já as conjunções “og”, “en”, “því að” e “af því að” não mexem na ordem: “…af því að ég er þreyttur”. E atenção a “þó að” (embora): como no português, pede o subjuntivo, “þó að það sé dýrt” (embora seja caro).',
       grammar_examples: [
         ['Í fyrsta lagi er þetta allt of dýrt.', 'Em primeiro lugar, isso é caro demais.'],
         ['Þess vegna er ég ósammála þér.', 'Por isso eu discordo de você.'],
@@ -1496,9 +1496,9 @@ export const UNITS_IS: UnitSeed[] = [
           bot: 'Mér finnst að það ætti að banna bíla í miðbæ Reykjavíkur. Ertu sammála?',
           botTranslation: 'Acho que deviam proibir carros no centro de Reykjavík. Você concorda?',
           expected: ['Ég er að hluta sammála þér, en það fer eftir því hvernig strætó virkar.', 'sammála', 'það fer eftir', 'en'],
-          hint: '«Sammála» e «ósammála» pedem dativo: sammála þér, ósammála honum. E «það fer eftir» (depende de) também: það fer eftir veðrinu, það fer eftir því hvernig…',
+          hint: '“Sammála” e “ósammála” pedem dativo: sammála þér, ósammála honum. E “það fer eftir” (depende de) também: það fer eftir veðrinu, það fer eftir því hvernig…',
         },
-        communityPrompt: 'Dê a sua opinião em islandês sobre a frase «Það á að banna farsíma í skólum»: diga se concorda ou discorda e justifique com «af því að…» e «það fer eftir…».',
+        communityPrompt: 'Dê a sua opinião em islandês sobre a frase “Það á að banna farsíma í skólum”: diga se concorda ou discorda e justifique com “af því að…” e “það fer eftir…”.',
       },
       {
         id: 'is-u12-l2',
@@ -1514,9 +1514,9 @@ export const UNITS_IS: UnitSeed[] = [
           bot: 'Hvers vegna ættu ferðamenn að heimsækja Ísland á veturna?',
           botTranslation: 'Por que os turistas deveriam visitar a Islândia no inverno?',
           expected: ['Í fyrsta lagi er hægt að sjá norðurljósin. Í öðru lagi eru færri ferðamenn, og þess vegna er allt rólegra.', 'í fyrsta lagi', 'norðurljósin', 'þess vegna'],
-          hint: 'Enumere com «Í fyrsta lagi… Í öðru lagi…» e conclua com «þess vegna». Depois de cada um, o verbo vem logo em seguida: «Í fyrsta lagi ER hægt…», «þess vegna ER allt rólegra».',
+          hint: 'Enumere com “Í fyrsta lagi… Í öðru lagi…” e conclua com “þess vegna”. Depois de cada um, o verbo vem logo em seguida: “Í fyrsta lagi ER hægt…”, “þess vegna ER allt rólegra”.',
         },
-        communityPrompt: 'Escreva um parágrafo de 4 frases em islandês defendendo uma ideia com a sequência «Í fyrsta lagi… Í öðru lagi… Þess vegna…». Atenção: depois do conector, o verbo vem logo em seguida!',
+        communityPrompt: 'Escreva um parágrafo de 4 frases em islandês defendendo uma ideia com a sequência “Í fyrsta lagi… Í öðru lagi… Þess vegna…”. Atenção: depois do conector, o verbo vem logo em seguida!',
       },
       {
         id: 'is-u12-l3',
@@ -1532,9 +1532,9 @@ export const UNITS_IS: UnitSeed[] = [
           bot: 'Hvað finnst þér um umræðuna um ferðamenn á Íslandi?',
           botTranslation: 'O que você acha do debate sobre os turistas na Islândia?',
           expected: ['Mér finnst umræðan mikilvæg. Ferðamenn skapa störf, en hins vegar þarf að vernda náttúruna.', 'mér finnst', 'hins vegar', 'náttúruna'],
-          hint: 'Mostre os dois lados: um argumento a favor e outro com «hins vegar» (por outro lado). Depois de «hins vegar», verbo logo em seguida: «hins vegar ÞARF að vernda…». Em «náttúruna», a tônica fica no NÁ.',
+          hint: 'Mostre os dois lados: um argumento a favor e outro com “hins vegar” (por outro lado). Depois de “hins vegar”, verbo logo em seguida: “hins vegar ÞARF að vernda…”. Em “náttúruna”, a tônica fica no NÁ.',
         },
-        communityPrompt: 'Escreva em islandês um diálogo curto de debate com três falas, usando as aspas islandesas „…“, pelo menos uma pergunta com ponto de interrogação e os conectores «hins vegar» e «þess vegna».',
+        communityPrompt: 'Escreva em islandês um diálogo curto de debate com três falas, usando as aspas islandesas „…“, pelo menos uma pergunta com ponto de interrogação e os conectores ‘hins vegar’ e ‘þess vegna’.',
       },
       {
         id: 'is-u12-p',
@@ -1552,9 +1552,9 @@ export const UNITS_IS: UnitSeed[] = [
             'þó að',
             'sammála',
           ],
-          hint: 'Organize a resposta: um argumento com «Í fyrsta lagi», o outro lado com «Hins vegar», e a conclusão com «Þó að…» + subjuntivo. Repare na inversão depois da oração com «þó að»: «…, ER ÉG sammála».',
+          hint: 'Organize a resposta: um argumento com “Í fyrsta lagi”, o outro lado com “Hins vegar”, e a conclusão com “Þó að…” + subjuntivo. Repare na inversão depois da oração com “þó að”: “…, ER ÉG sammála”.',
         },
-        communityPrompt: 'Escreva um pequeno artigo de opinião em islandês (6–8 frases) com introdução, dois argumentos, um contra-argumento com «hins vegar» e uma conclusão com «Að lokum…». Use pelo menos uma vez «þó að» com o subjuntivo.',
+        communityPrompt: 'Escreva um pequeno artigo de opinião em islandês (6–8 frases) com introdução, dois argumentos, um contra-argumento com “hins vegar” e uma conclusão com “Að lokum…”. Use pelo menos uma vez “þó að” com o subjuntivo.',
       },
     ],
   },
@@ -1569,11 +1569,11 @@ export const UNITS_IS: UnitSeed[] = [
       title: 'Uma língua quase sem dialetos',
       emoji: '🗺️',
       history:
-        'O islandês é famoso pela uniformidade: não há dialetos regionais marcados como no Brasil, e quem mora nos fiordes do oeste entende sem esforço alguém de Vík. Mesmo assim, há diferenças de pronúncia. No norte, sobretudo em Akureyri e arredores, ouve-se o «harðmæli» (fala dura), em que p, t, k depois de vogal longa soam com sopro, e o «raddaður framburður» (pronúncia sonora), em que l, m, n antes de p, t, k mantêm a voz, enquanto no sul ficam surdos. Entre os parentes, o feroês é o mais próximo na escrita, mas na fala islandeses e feroeses custam a se entender. Já os textos em nórdico antigo, a língua das sagas, um islandês de hoje consegue ler com relativa facilidade, algo que nenhum outro povo nórdico faz com a sua literatura medieval.',
+        'O islandês é famoso pela uniformidade: não há dialetos regionais marcados como no Brasil, e quem mora nos fiordes do oeste entende sem esforço alguém de Vík. Mesmo assim, há diferenças de pronúncia. No norte, sobretudo em Akureyri e arredores, ouve-se o “harðmæli” (fala dura), em que p, t, k depois de vogal longa soam com sopro, e o “raddaður framburður” (pronúncia sonora), em que l, m, n antes de p, t, k mantêm a voz, enquanto no sul ficam surdos. Entre os parentes, o feroês é o mais próximo na escrita, mas na fala islandeses e feroeses custam a se entender. Já os textos em nórdico antigo, a língua das sagas, um islandês de hoje consegue ler com relativa facilidade, algo que nenhum outro povo nórdico faz com a sua literatura medieval.',
       culture_tip:
-        'Por causa da longa união com a Dinamarca, o dinamarquês foi por muito tempo a língua estrangeira obrigatória nas escolas islandesas, e ainda hoje é ensinado; alguns alunos podem estudar norueguês ou sueco no lugar. Numa reunião nórdica, cada um costuma falar a sua língua escandinava, mas o islandês, conservador demais, quase ninguém entende: os islandeses recorrem ao dinamarquês da escola ou ao inglês. E não chame a pronúncia do norte de «errada»: em Akureyri, ela é motivo de orgulho.',
+        'Por causa da longa união com a Dinamarca, o dinamarquês foi por muito tempo a língua estrangeira obrigatória nas escolas islandesas, e ainda hoje é ensinado; alguns alunos podem estudar norueguês ou sueco no lugar. Numa reunião nórdica, cada um costuma falar a sua língua escandinava, mas o islandês, conservador demais, quase ninguém entende: os islandeses recorrem ao dinamarquês da escola ou ao inglês. E não chame a pronúncia do norte de “errada”: em Akureyri, ela é motivo de orgulho.',
       grammar_why:
-        'Comparar o islandês com o nórdico antigo mostra como a língua mudou pouco: a gramática é praticamente a mesma, com os quatro casos e os três gêneros, e o que mudou foi sobretudo a pronúncia e alguns detalhes de grafia. O nominativo masculino terminava em -r sem vogal: «hestr» virou «hestur» por volta de 1300, quando se inseriu um u; «ek» virou «ég» e «mjök» virou «mjög». O feroês guardou os casos, mas perdeu quase todo o genitivo na fala, e o dinamarquês perdeu a declinação dos substantivos: «hesten» serve para qualquer função na frase. Já a variação entre norte e sul não aparece na escrita: «gata» se escreve igual em todo o país, mas soa [ˈkaːtʰa] no norte e [ˈkaːta] no sul. Para o brasileiro, é como o «r» de «porta», que muda de região para região sem mudar a ortografia.',
+        'Comparar o islandês com o nórdico antigo mostra como a língua mudou pouco: a gramática é praticamente a mesma, com os quatro casos e os três gêneros, e o que mudou foi sobretudo a pronúncia e alguns detalhes de grafia. O nominativo masculino terminava em -r sem vogal: “hestr” virou “hestur” por volta de 1300, quando se inseriu um u; “ek” virou “ég” e “mjök” virou “mjög”. O feroês guardou os casos, mas perdeu quase todo o genitivo na fala, e o dinamarquês perdeu a declinação dos substantivos: “hesten” serve para qualquer função na frase. Já a variação entre norte e sul não aparece na escrita: “gata” se escreve igual em todo o país, mas soa [ˈkaːtʰa] no norte e [ˈkaːta] no sul. Para o brasileiro, é como o “r” de “porta”, que muda de região para região sem mudar a ortografia.',
       grammar_examples: [
         ['hestr → hestur', 'cavalo: o -r do nórdico antigo ganhou um u por volta de 1300'],
         ['ek → ég', 'eu: nórdico antigo × islandês moderno'],
@@ -1596,10 +1596,10 @@ export const UNITS_IS: UnitSeed[] = [
         voice: {
           bot: 'Heyrirðu muninn á framburðinum fyrir norðan og fyrir sunnan?',
           botTranslation: 'Você ouve a diferença entre a pronúncia do norte e a do sul?',
-          expected: ['Já, fyrir norðan segja margir «gata» með hörðu t-i, en fyrir sunnan er það mýkra.', 'fyrir norðan', 'fyrir sunnan', 'mýkra'],
-          hint: 'As direções mudam de forma: «norður» é para onde se vai, «fyrir norðan» é onde se está e «að norðan» é de onde se vem (o mesmo com suður, fyrir sunnan, að sunnan). Em «gata», o t do norte vem com sopro, [ˈkaːtʰa]; no sul, sem sopro, [ˈkaːta].',
+          expected: ['Já, fyrir norðan segja margir “gata” með hörðu t-i, en fyrir sunnan er það mýkra.', 'fyrir norðan', 'fyrir sunnan', 'mýkra'],
+          hint: 'As direções mudam de forma: “norður” é para onde se vai, “fyrir norðan” é onde se está e “að norðan” é de onde se vem (o mesmo com suður, fyrir sunnan, að sunnan). Em “gata”, o t do norte vem com sopro, [ˈkaːtʰa]; no sul, sem sopro, [ˈkaːta].',
         },
-        communityPrompt: 'Escreva em islandês três frases com «norður», «fyrir norðan» e «að norðan» (por exemplo, sobre uma viagem a Akureyri) e explique em português a diferença entre elas.',
+        communityPrompt: 'Escreva em islandês três frases com “norður”, “fyrir norðan” e “að norðan” (por exemplo, sobre uma viagem a Akureyri) e explique em português a diferença entre elas.',
       },
       {
         id: 'is-u13-l2',
@@ -1615,9 +1615,9 @@ export const UNITS_IS: UnitSeed[] = [
           bot: 'Skilurðu dönsku, norsku eða sænsku?',
           botTranslation: 'Você entende dinamarquês, norueguês ou sueco?',
           expected: ['Ég skil smá dönsku, en íslenska er miklu líkari færeysku og fornnorrænu.', 'dönsku', 'færeysku', 'líkari'],
-          hint: 'Nomes de línguas são femininos fracos: danska → dönsku no acusativo e no dativo. «Líkari» (mais parecido) pede dativo: líkari færeysku, líkari fornnorrænu.',
+          hint: 'Nomes de línguas são femininos fracos: danska → dönsku no acusativo e no dativo. “Líkari” (mais parecido) pede dativo: líkari færeysku, líkari fornnorrænu.',
         },
-        communityPrompt: 'Compare em islandês (4–5 frases) o islandês com outra língua nórdica: o que é parecido, o que é diferente e por que o islandês mudou tão pouco desde a época do «landnám».',
+        communityPrompt: 'Compare em islandês (4–5 frases) o islandês com outra língua nórdica: o que é parecido, o que é diferente e por que o islandês mudou tão pouco desde a época do “landnám”.',
       },
       {
         id: 'is-u13-l3',
@@ -1633,9 +1633,9 @@ export const UNITS_IS: UnitSeed[] = [
           bot: 'Geta Íslendingar í alvöru lesið fornsögurnar?',
           botTranslation: 'Os islandeses conseguem mesmo ler as sagas antigas?',
           expected: ['Já, flestir geta lesið þær með nútímastafsetningu, þótt sum orð séu gamaldags.', 'lesið', 'stafsetningu', 'þótt'],
-          hint: '«Þótt» (embora), como «þó að», pede subjuntivo: þótt sum orð SÉU gamaldags. Em «fjörður», o dativo muda de vogal: í firði, sem o ö.',
+          hint: '“Þótt” (embora), como “þó að”, pede subjuntivo: þótt sum orð SÉU gamaldags. Em “fjörður”, o dativo muda de vogal: í firði, sem o ö.',
         },
-        communityPrompt: 'Escreva em islandês (4 frases) sobre alguém que cresceu no interior, num fiorde ou numa ilha, e diga se a fala dessa pessoa é diferente da de Reykjavík. Use «á landsbyggðinni», «í firði» e «á eyju».',
+        communityPrompt: 'Escreva em islandês (4 frases) sobre alguém que cresceu no interior, num fiorde ou numa ilha, e diga se a fala dessa pessoa é diferente da de Reykjavík. Use “á landsbyggðinni”, “í firði” e “á eyju”.',
       },
       {
         id: 'is-u13-p',
@@ -1653,7 +1653,7 @@ export const UNITS_IS: UnitSeed[] = [
             'harðmæli',
             'munurinn',
           ],
-          hint: 'Responda às duas perguntas: primeiro a relação com o nórdico antigo (a gramática quase igual, a pronúncia diferente), depois a variação regional, com os termos «harðmæli» e «raddaður framburður».',
+          hint: 'Responda às duas perguntas: primeiro a relação com o nórdico antigo (a gramática quase igual, a pronúncia diferente), depois a variação regional, com os termos “harðmæli” e “raddaður framburður”.',
         },
         communityPrompt: 'Escreva um texto em islandês (6–8 frases) sobre a variação do islandês: as diferenças entre norte e sul, a relação com o feroês e com o nórdico antigo e o papel do dinamarquês na escola.',
       },
@@ -1670,11 +1670,11 @@ export const UNITS_IS: UnitSeed[] = [
       title: 'O estilo impessoal da imprensa e da ciência',
       emoji: '🎓',
       history:
-        'A Universidade da Islândia (Háskóli Íslands) foi fundada em 1911, num 17 de junho, no centenário do nascimento de Jón Sigurðsson, o líder da luta pela independência. Hoje se pesquisa e se escreve ciência em islandês em quase todas as áreas, com vocabulário próprio: a física é «eðlisfræði» (o estudo da natureza das coisas) e a química é «efnafræði» (o estudo das substâncias). Os islandeses também leem muito: o país está entre os que mais publicam livros por habitante, e boa parte deles sai no «jólabókaflóð», a enxurrada de livros antes do Natal.',
+        'A Universidade da Islândia (Háskóli Íslands) foi fundada em 1911, num 17 de junho, no centenário do nascimento de Jón Sigurðsson, o líder da luta pela independência. Hoje se pesquisa e se escreve ciência em islandês em quase todas as áreas, com vocabulário próprio: a física é “eðlisfræði” (o estudo da natureza das coisas) e a química é “efnafræði” (o estudo das substâncias). Os islandeses também leem muito: o país está entre os que mais publicam livros por habitante, e boa parte deles sai no “jólabókaflóð”, a enxurrada de livros antes do Natal.',
       culture_tip:
-        'Na imprensa islandesa, as pessoas aparecem com o primeiro nome e o patronímico, e na segunda menção só com o primeiro nome, até ministros e reitores. Em textos acadêmicos, evite o excesso de substantivos, o «nafnorðastíll»: os manuais de estilo islandeses preferem verbos claros. E cuide das fontes: «heimild» é a fonte, e «samkvæmt heimildum» (segundo fontes) é fórmula comum no jornalismo.',
+        'Na imprensa islandesa, as pessoas aparecem com o primeiro nome e o patronímico, e na segunda menção só com o primeiro nome, até ministros e reitores. Em textos acadêmicos, evite o excesso de substantivos, o “nafnorðastíll”: os manuais de estilo islandeses preferem verbos claros. E cuide das fontes: “heimild” é a fonte, e “samkvæmt heimildum” (segundo fontes) é fórmula comum no jornalismo.',
       grammar_why:
-        'A linguagem de jornal e de universidade gosta de construções impessoais, como o nosso «acredita-se que» ou «segundo a polícia». Em islandês, as principais são «talið er að…» (acredita-se que), «greint var frá því að…» (foi noticiado que), «að sögn lögreglu…» (segundo a polícia) e «samkvæmt…» + dativo (de acordo com). A passiva com «vera» concorda com o sujeito: «rannsóknin var gerð» (feminino), «fyrirlesturinn var haldinn» (masculino). E existe a passiva impessoal, sem sujeito nenhum, que conserva o caso do verbo: «Veginum var lokað» (fecharam a estrada; loka pede dativo) e «Rætt var við íbúa» (moradores foram entrevistados). Muitos verbos acadêmicos pedem genitivo: «geta heimilda» (citar as fontes), «krefjast» (exigir), «afla gagna» (coletar dados).',
+        'A linguagem de jornal e de universidade gosta de construções impessoais, como o nosso “acredita-se que” ou “segundo a polícia”. Em islandês, as principais são “talið er að…” (acredita-se que), “greint var frá því að…” (foi noticiado que), “að sögn lögreglu…” (segundo a polícia) e “samkvæmt…” + dativo (de acordo com). A passiva com “vera” concorda com o sujeito: “rannsóknin var gerð” (feminino), “fyrirlesturinn var haldinn” (masculino). E existe a passiva impessoal, sem sujeito nenhum, que conserva o caso do verbo: “Veginum var lokað” (fecharam a estrada; loka pede dativo) e “Rætt var við íbúa” (moradores foram entrevistados). Muitos verbos acadêmicos pedem genitivo: “geta heimilda” (citar as fontes), “krefjast” (exigir), “afla gagna” (coletar dados).',
       grammar_examples: [
         ['Talið er að ferðamönnum fjölgi á næsta ári.', 'Acredita-se que o número de turistas aumente no próximo ano.'],
         ['Rannsóknin var gerð við Háskóla Íslands.', 'A pesquisa foi feita na Universidade da Islândia.'],
@@ -1698,9 +1698,9 @@ export const UNITS_IS: UnitSeed[] = [
           bot: 'Hvað segja fréttirnar í dag?',
           botTranslation: 'O que dizem as notícias hoje?',
           expected: ['Samkvæmt fréttum er von á stormi í kvöld, og fólk er beðið um að vera heima.', 'samkvæmt fréttum', 'í kvöld', 'beðið um'],
-          hint: 'Comece com «Samkvæmt fréttum…» (segundo as notícias; samkvæmt pede dativo) e use a passiva impessoal: «fólk er beðið um að…» (pede-se às pessoas que…). «Von á» + dativo é «espera-se»: von á stormi.',
+          hint: 'Comece com “Samkvæmt fréttum…” (segundo as notícias; samkvæmt pede dativo) e use a passiva impessoal: “fólk er beðið um að…” (pede-se às pessoas que…). “Von á” + dativo é “espera-se”: von á stormi.',
         },
-        communityPrompt: 'Escreva em islandês uma notícia curta (4–5 frases) sobre um acontecimento inventado em Húsavík ou em Vík, com manchete e pelo menos duas fórmulas impessoais: «talið er að», «samkvæmt…», «að sögn…».',
+        communityPrompt: 'Escreva em islandês uma notícia curta (4–5 frases) sobre um acontecimento inventado em Húsavík ou em Vík, com manchete e pelo menos duas fórmulas impessoais: “talið er að”, “samkvæmt…”, “að sögn…”.',
       },
       {
         id: 'is-u14-l2',
@@ -1716,9 +1716,9 @@ export const UNITS_IS: UnitSeed[] = [
           bot: 'Um hvað fjallar ritgerðin þín?',
           botTranslation: 'Sobre o que é o seu trabalho?',
           expected: ['Hún fjallar um ferðamennsku á Íslandi, og gögnin benda til þess að ferðamönnum fjölgi á hverju ári.', 'fjallar um', 'gögnin', 'benda til þess'],
-          hint: '«Fjalla um» + acusativo é «tratar de»: ritgerðin fjallar um… «Gögn» (dados) só existe no plural, por isso o verbo vai para o plural: gögnin BENDA til þess að… + subjuntivo.',
+          hint: '“Fjalla um” + acusativo é “tratar de”: ritgerðin fjallar um… “Gögn” (dados) só existe no plural, por isso o verbo vai para o plural: gögnin BENDA til þess að… + subjuntivo.',
         },
-        communityPrompt: 'Escreva em islandês o resumo (útdráttur) de um trabalho acadêmico inventado, em 4–5 frases: tema («Ritgerðin fjallar um…»), método, dados e conclusão («Niðurstöðurnar benda til þess að…»).',
+        communityPrompt: 'Escreva em islandês o resumo (útdráttur) de um trabalho acadêmico inventado, em 4–5 frases: tema (“Ritgerðin fjallar um…”), método, dados e conclusão (“Niðurstöðurnar benda til þess að…”).',
       },
       {
         id: 'is-u14-l3',
@@ -1734,9 +1734,9 @@ export const UNITS_IS: UnitSeed[] = [
           bot: 'Gætirðu sagt okkur stuttlega frá rannsókninni þinni?',
           botTranslation: 'Você poderia nos falar brevemente da sua pesquisa?',
           expected: ['Já, ég rannsaka hvernig jöklarnir hafa minnkað. Samkvæmt gögnunum hefur Vatnajökull minnkað mikið síðustu áratugi.', 'rannsaka', 'samkvæmt', 'jöklarnir'],
-          hint: 'Apresente o tema com «Ég rannsaka…» e cite os dados com «Samkvæmt gögnunum…» (dativo plural definido). Depois de «samkvæmt gögnunum», o verbo vem em seguida: «…HEFUR Vatnajökull minnkað».',
+          hint: 'Apresente o tema com “Ég rannsaka…” e cite os dados com “Samkvæmt gögnunum…” (dativo plural definido). Depois de “samkvæmt gögnunum”, o verbo vem em seguida: “…HEFUR Vatnajökull minnkað”.',
         },
-        communityPrompt: 'Prepare em islandês a abertura de uma palestra (4–5 frases): cumprimente o público com formalidade («Góðir gestir»), apresente o tema, cite um dado com «Samkvæmt…» e diga o que vai mostrar.',
+        communityPrompt: 'Prepare em islandês a abertura de uma palestra (4–5 frases): cumprimente o público com formalidade (“Góðir gestir”), apresente o tema, cite um dado com “Samkvæmt…” e diga o que vai mostrar.',
       },
       {
         id: 'is-u14-p',
@@ -1753,9 +1753,9 @@ export const UNITS_IS: UnitSeed[] = [
             'talið er að',
             'rannsókna er þörf',
           ],
-          hint: 'Use o registro de entrevista: o resultado («Rannsóknin sýnir að…»), a interpretação com cautela («Talið er að…» + subjuntivo) e a ressalva acadêmica «frekari rannsókna er þörf» (são necessárias mais pesquisas; «þörf» pede genitivo).',
+          hint: 'Use o registro de entrevista: o resultado (“Rannsóknin sýnir að…”), a interpretação com cautela (“Talið er að…” + subjuntivo) e a ressalva acadêmica “frekari rannsókna er þörf” (são necessárias mais pesquisas; “þörf” pede genitivo).',
         },
-        communityPrompt: 'Escreva um texto em registro jornalístico ou acadêmico (7–8 frases) sobre um tema islandês (geleiras, turismo, leitura): use a passiva, pelo menos duas fórmulas impessoais e um verbo que rege genitivo, como «geta heimilda» ou «krefjast».',
+        communityPrompt: 'Escreva um texto em registro jornalístico ou acadêmico (7–8 frases) sobre um tema islandês (geleiras, turismo, leitura): use a passiva, pelo menos duas fórmulas impessoais e um verbo que rege genitivo, como “geta heimilda” ou “krefjast”.',
       },
     ],
   },
@@ -1770,11 +1770,11 @@ export const UNITS_IS: UnitSeed[] = [
       title: 'A língua que guardou as sagas',
       emoji: '🪶',
       history:
-        'Entre os séculos XII e XIV, os islandeses puseram por escrito as sagas dos islandeses (Íslendingasögur), narrativas em prosa sobre as famílias da época do povoamento, e reuniram os poemas sobre deuses e heróis que hoje chamamos de Edda poética; um deles é o Hávamál, os «Ditos do Altíssimo», conselhos atribuídos a Odin. Muitos manuscritos foram levados para Copenhague, sobretudo pelo colecionador Árni Magnússon, e só voltaram depois de um longo debate: em 21 de abril de 1971, o Codex Regius da Edda (Konungsbók eddukvæða) e a Flateyjarbók chegaram a Reykjavík diante de uma multidão. No século XIX, o poeta Jónas Hallgrímsson (1807–1845) renovou a língua poética e ajudou a despertar o sentimento nacional; o dia do seu nascimento, 16 de novembro, é hoje o Dia da Língua Islandesa (Dagur íslenskrar tungu).',
+        'Entre os séculos XII e XIV, os islandeses puseram por escrito as sagas dos islandeses (Íslendingasögur), narrativas em prosa sobre as famílias da época do povoamento, e reuniram os poemas sobre deuses e heróis que hoje chamamos de Edda poética; um deles é o Hávamál, os “Ditos do Altíssimo”, conselhos atribuídos a Odin. Muitos manuscritos foram levados para Copenhague, sobretudo pelo colecionador Árni Magnússon, e só voltaram depois de um longo debate: em 21 de abril de 1971, o Codex Regius da Edda (Konungsbók eddukvæða) e a Flateyjarbók chegaram a Reykjavík diante de uma multidão. No século XIX, o poeta Jónas Hallgrímsson (1807–1845) renovou a língua poética e ajudou a despertar o sentimento nacional; o dia do seu nascimento, 16 de novembro, é hoje o Dia da Língua Islandesa (Dagur íslenskrar tungu).',
       culture_tip:
-        'Citar as sagas e o Hávamál ainda faz parte da vida: um verso antigo aparece num discurso, numa manchete ou num brinde. Os islandeses costumam ler as sagas em ortografia moderna, mas as edições acadêmicas usam a grafia normalizada do nórdico antigo, com formas como «ek» (eu) e «maðr» (homem). E os provérbios (málshættir) são tão queridos que vêm impressos num papelzinho dentro dos ovos de Páscoa de chocolate.',
+        'Citar as sagas e o Hávamál ainda faz parte da vida: um verso antigo aparece num discurso, numa manchete ou num brinde. Os islandeses costumam ler as sagas em ortografia moderna, mas as edições acadêmicas usam a grafia normalizada do nórdico antigo, com formas como “ek” (eu) e “maðr” (homem). E os provérbios (málshættir) são tão queridos que vêm impressos num papelzinho dentro dos ovos de Páscoa de chocolate.',
       grammar_why:
-        'Para ler os textos antigos, três coisas ajudam. Primeiro, a grafia do nórdico antigo: o nominativo masculino termina em -r sem vogal (maðr, sjálfr, orðstírr), «ek» é «ég» e «aldregi» é «aldrei». Segundo, a ordem das palavras, bem mais livre na poesia e nos provérbios: o adjetivo pode abrir a frase com o verbo logo atrás, «Blindur er bóklaus maður», como no português poético «Bela é a encosta». Terceiro, as kenningar, metáforas feitas quase sempre com um genitivo: o ouro é «tár Freyju» (as lágrimas de Freyja, que chorava ouro), a poesia é «drykkur Óðins» (a bebida de Odin). Sem dominar o genitivo, não se decifra a poesia escáldica.',
+        'Para ler os textos antigos, três coisas ajudam. Primeiro, a grafia do nórdico antigo: o nominativo masculino termina em -r sem vogal (maðr, sjálfr, orðstírr), “ek” é “ég” e “aldregi” é “aldrei”. Segundo, a ordem das palavras, bem mais livre na poesia e nos provérbios: o adjetivo pode abrir a frase com o verbo logo atrás, “Blindur er bóklaus maður”, como no português poético “Bela é a encosta”. Terceiro, as kenningar, metáforas feitas quase sempre com um genitivo: o ouro é “tár Freyju” (as lágrimas de Freyja, que chorava ouro), a poesia é “drykkur Óðins” (a bebida de Odin). Sem dominar o genitivo, não se decifra a poesia escáldica.',
       grammar_examples: [
         ['Deyr fé, deyja frændr.', 'Morre o gado, morrem os parentes. (Hávamál, estrofes 76 e 77)'],
         ['Maðr er manns gaman.', 'O homem é a alegria do homem. (Hávamál, estrofe 47)'],
@@ -1798,7 +1798,7 @@ export const UNITS_IS: UnitSeed[] = [
           bot: 'Hávamál segja að orðstírinn deyi aldrei. Hvað þýðir það fyrir þig?',
           botTranslation: 'O Hávamál diz que a fama nunca morre. O que isso significa para você?',
           expected: ['Það þýðir að fólk man eftir því sem við gerum, jafnvel eftir að við deyjum. Góður orðstír lifir lengur en fé.', 'orðstír', 'deyjum', 'lifir'],
-          hint: '«Orðstír» (renome, boa fama) é masculino: góður orðstír. Na resposta, use o islandês moderno, e não a grafia antiga: «aldrei», e não «aldregi». Em «deyjum», o ey soa como o «ei» de «lei».',
+          hint: '“Orðstír” (renome, boa fama) é masculino: góður orðstír. Na resposta, use o islandês moderno, e não a grafia antiga: “aldrei”, e não “aldregi”. Em “deyjum”, o ey soa como o “ei” de “lei”.',
         },
         communityPrompt: 'Escolha um verso do Hávamál desta lição, copie-o em islandês e escreva 3–4 frases em islandês moderno explicando o que ele quer dizer e se você concorda.',
       },
@@ -1808,17 +1808,17 @@ export const UNITS_IS: UnitSeed[] = [
         kind: 'licao',
         words: ['skáld', 'hetja', 'bókmenntir', 'bók', 'skip', 'hestur'],
         cloze: [
-          { sentence: '«Blindur er ___ maður», segir málshátturinn.', answer: 'bóklaus', options: ['bóklaus', 'bóklausan', 'bóklausum'], translation: '«Cego é o homem sem livros», diz o provérbio.' },
-          { sentence: 'Gunnar á Hlíðarenda leit til baka og sagði: «Fögur er ___.»', answer: 'hlíðin', options: ['hlíðin', 'hlíðina', 'hlíðinni'], translation: 'Gunnar de Hlíðarendi olhou para trás e disse: «Bela é a encosta.»' },
-          { sentence: 'Orðin «Með lögum skal land ___» koma úr Njáls sögu.', answer: 'byggja', options: ['byggja', 'byggir', 'byggt'], translation: 'As palavras «Com leis se deve construir o país» vêm da Saga de Njáll.' },
+          { sentence: '“Blindur er ___ maður”, segir málshátturinn.', answer: 'bóklaus', options: ['bóklaus', 'bóklausan', 'bóklausum'], translation: '“Cego é o homem sem livros”, diz o provérbio.' },
+          { sentence: 'Gunnar á Hlíðarenda leit til baka og sagði: “Fögur er ___.”', answer: 'hlíðin', options: ['hlíðin', 'hlíðina', 'hlíðinni'], translation: 'Gunnar de Hlíðarendi olhou para trás e disse: “Bela é a encosta.”' },
+          { sentence: 'Orðin “Með lögum skal land ___” koma úr Njáls sögu.', answer: 'byggja', options: ['byggja', 'byggir', 'byggt'], translation: 'As palavras “Com leis se deve construir o país” vêm da Saga de Njáll.' },
         ],
         voice: {
           bot: 'Hvaða Íslendingasögu hefur þú lesið, og hver er uppáhaldshetjan þín?',
           botTranslation: 'Que saga dos islandeses você leu, e qual é o seu herói favorito?',
           expected: ['Ég hef lesið Njáls sögu. Uppáhaldshetjan mín er Gunnar á Hlíðarenda, því að hann vildi frekar deyja heima en yfirgefa landið.', 'Njáls sögu', 'Gunnar', 'því að'],
-          hint: 'O título da saga vai para o acusativo depois de «hef lesið»: Njáls saga → Njáls sögu, Laxdæla saga → Laxdæla sögu. Gunnar, condenado ao exílio, voltou para casa ao olhar a encosta e acabou morto ali.',
+          hint: 'O título da saga vai para o acusativo depois de “hef lesið”: Njáls saga → Njáls sögu, Laxdæla saga → Laxdæla sögu. Gunnar, condenado ao exílio, voltou para casa ao olhar a encosta e acabou morto ali.',
         },
-        communityPrompt: 'Escreva em islandês um «provérbio» seu no estilo antigo, com o adjetivo na frente, como em «Blindur er bóklaus maður», e explique em 2–3 frases em islandês o que ele quer dizer.',
+        communityPrompt: 'Escreva em islandês um “provérbio” seu no estilo antigo, com o adjetivo na frente, como em “Blindur er bóklaus maður”, e explique em 2–3 frases em islandês o que ele quer dizer.',
       },
       {
         id: 'is-u15-l3',
@@ -1826,17 +1826,17 @@ export const UNITS_IS: UnitSeed[] = [
         kind: 'voz',
         words: ['ljóð', 'sól', 'jökull', 'haf', 'hrafn', 'gull'],
         cloze: [
-          { sentence: '«Ísland! farsælda frón og hagsælda, hrímhvíta ___!»', answer: 'móðir', options: ['móðir', 'móður', 'mæður'], translation: '«Islândia! terra de fortuna e de prosperidade, mãe branca de geada!» (Jónas Hallgrímsson)' },
-          { sentence: '«Nú andar suðrið sæla vindum ___.»', answer: 'þýðum', options: ['þýðum', 'þýðir', 'þýða'], translation: '«Agora o ditoso sul sopra ventos suaves.» (Jónas Hallgrímsson, «Ég bið að heilsa»)' },
-          { sentence: 'Í fornum skáldskap er gull stundum kallað «tár ___».', answer: 'Freyju', options: ['Freyju', 'Freyja', 'Freyjur'], translation: 'Na poesia antiga, o ouro às vezes é chamado de «lágrimas de Freyja».' },
+          { sentence: '“Ísland! farsælda frón og hagsælda, hrímhvíta ___!”', answer: 'móðir', options: ['móðir', 'móður', 'mæður'], translation: '“Islândia! terra de fortuna e de prosperidade, mãe branca de geada!” (Jónas Hallgrímsson)' },
+          { sentence: '“Nú andar suðrið sæla vindum ___.”', answer: 'þýðum', options: ['þýðum', 'þýðir', 'þýða'], translation: '“Agora o ditoso sul sopra ventos suaves.” (Jónas Hallgrímsson, “Ég bið að heilsa”)' },
+          { sentence: 'Í fornum skáldskap er gull stundum kallað “tár ___”.', answer: 'Freyju', options: ['Freyju', 'Freyja', 'Freyjur'], translation: 'Na poesia antiga, o ouro às vezes é chamado de “lágrimas de Freyja”.' },
         ],
         voice: {
-          bot: 'Jónas Hallgrímsson orti «Ég bið að heilsa». Geturðu farið með fyrstu línuna?',
-          botTranslation: 'Jónas Hallgrímsson escreveu «Ég bið að heilsa» (Mande lembranças). Você consegue recitar o primeiro verso?',
+          bot: 'Jónas Hallgrímsson orti “Ég bið að heilsa”. Geturðu farið með fyrstu línuna?',
+          botTranslation: 'Jónas Hallgrímsson escreveu “Ég bið að heilsa” (Mande lembranças). Você consegue recitar o primeiro verso?',
           expected: ['Nú andar suðrið sæla vindum þýðum.', 'nú andar', 'suðrið', 'vindum þýðum'],
-          hint: 'É um soneto, considerado o primeiro escrito em islandês. Em «suðrið», o ð soa como o th de «this»; «þýðum» começa com o þ de «think». Tônica sempre na primeira sílaba: AN-dar, SUÐ-rið, VIN-dum, ÞÝ-ðum.',
+          hint: 'É um soneto, considerado o primeiro escrito em islandês. Em “suðrið”, o ð soa como o th de “this”; “þýðum” começa com o þ de “think”. Tônica sempre na primeira sílaba: AN-dar, SUÐ-rið, VIN-dum, ÞÝ-ðum.',
         },
-        communityPrompt: 'Invente três kenningar em islandês, no estilo das antigas (por exemplo, «hestur hafsins» para um navio): uma para o mar, uma para o sol e uma para o computador. Use sempre o genitivo!',
+        communityPrompt: 'Invente três kenningar em islandês, no estilo das antigas (por exemplo, “hestur hafsins” para um navio): uma para o mar, uma para o sol e uma para o computador. Use sempre o genitivo!',
       },
       {
         id: 'is-u15-p',
@@ -1848,13 +1848,13 @@ export const UNITS_IS: UnitSeed[] = [
           bot: 'Í dag er dagur íslenskrar tungu. Segðu okkur í fáum orðum hvers vegna sögurnar og ljóðin skipta enn máli.',
           botTranslation: 'Hoje é o Dia da Língua Islandesa. Diga-nos em poucas palavras por que as sagas e os poemas ainda importam.',
           expected: [
-            'Sögurnar og ljóðin eru arfur okkar allra. Eins og segir í Hávamálum: «Deyr fé, deyja frændr», en orðstírinn lifir. Jónas Hallgrímsson kenndi okkur að elska málið og landið.',
+            'Sögurnar og ljóðin eru arfur okkar allra. Eins og segir í Hávamálum: “Deyr fé, deyja frændr”, en orðstírinn lifir. Jónas Hallgrímsson kenndi okkur að elska málið og landið.',
             'Hávamálum',
             'deyr fé',
             'Jónas',
             'arfur',
           ],
-          hint: 'Faça um mini discurso: diga o que as sagas são para os islandeses, cite um verso com «Eins og segir í Hávamálum…» (dativo plural) e mencione Jónas Hallgrímsson, cujo aniversário é o próprio Dia da Língua Islandesa.',
+          hint: 'Faça um mini discurso: diga o que as sagas são para os islandeses, cite um verso com “Eins og segir í Hávamálum…” (dativo plural) e mencione Jónas Hallgrímsson, cujo aniversário é o próprio Dia da Língua Islandesa.',
         },
         communityPrompt: 'Escreva um pequeno discurso em islandês (8–10 frases) para o Dia da Língua Islandesa: cite corretamente um verso do Hávamál ou de Jónas Hallgrímsson, use um provérbio e crie uma kenning sua.',
       },

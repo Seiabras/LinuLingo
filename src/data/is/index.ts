@@ -52,5 +52,5 @@ export const ISLANDES: LanguagePack = {
   phrases: { hi: 'Halló!', thanks: 'Takk!', letsStart: ['Byrjum!', 'Vamos lá!'] },
   formalMarkers: 'gæti ég fengið…?, kærar þakkir, afsakið',
   cognateNote:
-    'O islandês é a língua nórdica que menos mudou desde a Idade Média: um islandês de hoje lê as sagas do século XIII. Muitas palavras básicas lembram o inglês (hús = house, vatn = water), mas, em vez de pegar palavras estrangeiras, o islandês cria as suas (sími = telefone, tölva = computador). Atenção aos falsos amigos: «fín» é fino, bonito, e «gift» é casado.',
+    'O islandês é a língua nórdica que menos mudou desde a Idade Média: um islandês de hoje lê as sagas do século XIII. Muitas palavras básicas lembram o inglês (hús = house, vatn = water), mas, em vez de pegar palavras estrangeiras, o islandês cria as suas (sími = telefone, tölva = computador). Atenção aos falsos amigos: “fín” é fino, bonito, e “gift” é casado.',
 };

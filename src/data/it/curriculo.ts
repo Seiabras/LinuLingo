@@ -13,11 +13,11 @@ export const UNITS_IT: UnitSeed[] = [
       title: 'Parece português, mas não é',
       emoji: '🗣️',
       history:
-        'O italiano padrão nasceu do florentino escrito do século XIV, a língua de Dante, Petrarca e Boccaccio. Quando a Itália se unificou, em 1861, só uma pequena parte da população falava italiano no dia a dia: quase todos falavam o dialeto da sua região. A escola, o serviço militar e, a partir de 1954, a televisão espalharam a língua comum pelo país inteiro. O «tchau» brasileiro vem do italiano «ciao», que nasceu do veneziano «s-ciavo», algo como «seu servo, às ordens», e chegou ao Brasil com os imigrantes italianos do fim do século XIX.',
+        'O italiano padrão nasceu do florentino escrito do século XIV, a língua de Dante, Petrarca e Boccaccio. Quando a Itália se unificou, em 1861, só uma pequena parte da população falava italiano no dia a dia: quase todos falavam o dialeto da sua região. A escola, o serviço militar e, a partir de 1954, a televisão espalharam a língua comum pelo país inteiro. O “tchau” brasileiro vem do italiano “ciao”, que nasceu do veneziano “s-ciavo”, algo como “seu servo, às ordens”, e chegou ao Brasil com os imigrantes italianos do fim do século XIX.',
       culture_tip:
-        '«Ciao» é só para quem você trata por «tu»: amigos, família, crianças. Com desconhecidos, numa loja ou num balcão, diga «Buongiorno» até o começo da tarde e «Buonasera» depois; «Salve» é um meio-termo que serve para os dois casos. «Buonanotte» é só para se despedir à noite ou ir dormir: ao chegar num restaurante às nove da noite, diga «Buonasera». E «prego» não é prego: quer dizer «de nada» ou «fique à vontade».',
+        '“Ciao” é só para quem você trata por “tu”: amigos, família, crianças. Com desconhecidos, numa loja ou num balcão, diga “Buongiorno” até o começo da tarde e “Buonasera” depois; “Salve” é um meio-termo que serve para os dois casos. “Buonanotte” é só para se despedir à noite ou ir dormir: ao chegar num restaurante às nove da noite, diga “Buonasera”. E “prego” não é prego: quer dizer “de nada” ou “fique à vontade”.',
       grammar_why:
-        'O verbo «essere» (ser / estar) é irregular: io sono, tu sei, lui / lei / Lei è, noi siamo, voi siete, loro sono; repare que «sono» vale para «eu sou» e para «eles são». O «Lei» com maiúscula é o tratamento formal (o senhor / a senhora) e usa o verbo na 3ª pessoa, como o nosso «você»: «Lei è italiano?». Não confunda «è» (é, com acento grave) com «e» (e): «Marco è alto e simpatico». Os artigos são mais numerosos que em português: «il» e «i» antes de consoante; «lo» e «gli» antes de s + consoante, z, gn e ps (lo zio, gli studenti); «l’» antes de vogal; e «la», «le» no feminino. Nos números, as consoantes duplas contam: «otto», «sette», «diciassette».',
+        'O verbo “essere” (ser / estar) é irregular: io sono, tu sei, lui / lei / Lei è, noi siamo, voi siete, loro sono; repare que “sono” vale para “eu sou” e para “eles são”. O “Lei” com maiúscula é o tratamento formal (o senhor / a senhora) e usa o verbo na 3ª pessoa, como o nosso “você”: “Lei è italiano?”. Não confunda “è” (é, com acento grave) com “e” (e): “Marco è alto e simpatico”. Os artigos são mais numerosos que em português: “il” e “i” antes de consoante; “lo” e “gli” antes de s + consoante, z, gn e ps (lo zio, gli studenti); “l’” antes de vogal; e “la”, “le” no feminino. Nos números, as consoantes duplas contam: “otto”, “sette”, “diciassette”.',
       grammar_examples: [
         ['Io sono brasiliana, di Salvador.', 'Eu sou brasileira, de Salvador.'],
         ['Lei è il professore d’italiano?', 'O senhor é o professor de italiano?'],
@@ -25,21 +25,21 @@ export const UNITS_IT: UnitSeed[] = [
         ['Gli amici di Marco sono simpatici.', 'Os amigos do Marco são simpáticos.'],
       ],
       character_guide: [
-        ['c + a, o, u / ch + e, i', 'som de «k»: antes de «e» e «i», o «h» mantém o «k» («chi» soa «qui»)', 'casa, chiesa, chi'],
-        ['c + e, i', '«tch» de «tchau»', 'ciao, cena, cinque'],
-        ['g + e, i', '«dj» de «adjetivo»', 'gelato, giorno'],
-        ['gh + e, i', '«gu» de «guerra», com o «u» mudo', 'spaghetti, ghiaccio'],
-        ['gn', '«nh» de «banho»', 'gnocchi, bagno, signora'],
-        ['gli', '«lh» de «filho», bem molhado', 'figlio, famiglia, gli'],
-        ['sc + e, i', '«ch» de «chá»', 'pesce, uscire, scena'],
-        ['sch + e, i', '«sk», com o «h» só para manter o «k»', 'scherzo, schiena'],
-        ['z, zz', '«ts» de «tsunami» ou «dz», conforme a palavra', 'pizza, zio (ts); zero (dz)'],
+        ['c + a, o, u / ch + e, i', 'som de “k”: antes de “e” e “i”, o “h” mantém o “k” (“chi” soa “qui”)', 'casa, chiesa, chi'],
+        ['c + e, i', '“tch” de “tchau”', 'ciao, cena, cinque'],
+        ['g + e, i', '“dj” de “adjetivo”', 'gelato, giorno'],
+        ['gh + e, i', '“gu” de “guerra”, com o “u” mudo', 'spaghetti, ghiaccio'],
+        ['gn', '“nh” de “banho”', 'gnocchi, bagno, signora'],
+        ['gli', '“lh” de “filho”, bem molhado', 'figlio, famiglia, gli'],
+        ['sc + e, i', '“ch” de “chá”', 'pesce, uscire, scena'],
+        ['sch + e, i', '“sk”, com o “h” só para manter o “k”', 'scherzo, schiena'],
+        ['z, zz', '“ts” de “tsunami” ou “dz”, conforme a palavra', 'pizza, zio (ts); zero (dz)'],
         ['consoantes duplas', 'segure a consoante um instante a mais: muda o sentido da palavra', 'caro × carro, nono × nonno, pala × palla'],
-        ['h', 'muda, sempre; só aparece em «ho, hai, ha, hanno» e para dar som de «k» e «g» duro (ch, gh)', 'ho (soa «ó»), hanno'],
-        ['r', 'vibrado com a ponta da língua, nunca raspado na garganta como o «r» carioca', 'Roma, rosso, carro'],
-        ['t, d + i', 'sempre «t» e «d» secos: nunca viram «tchi» e «dji»', 'tipo, dieci, notte'],
-        ['e, o finais', 'nunca viram «i» e «u»: «latte» termina em «e», «vino» em «o»', 'latte, vino, sette'],
-        ['è × é', '«è» (grave) é aberto, como em «café», e é o verbo «é»; «é» (agudo) é fechado, como em «você», e aparece em perché, né, ventitré', 'è, caffè; perché'],
+        ['h', 'muda, sempre; só aparece em “ho, hai, ha, hanno” e para dar som de “k” e “g” duro (ch, gh)', 'ho (soa “ó”), hanno'],
+        ['r', 'vibrado com a ponta da língua, nunca raspado na garganta como o “r” carioca', 'Roma, rosso, carro'],
+        ['t, d + i', 'sempre “t” e “d” secos: nunca viram “tchi” e “dji”', 'tipo, dieci, notte'],
+        ['e, o finais', 'nunca viram “i” e “u”: “latte” termina em “e”, “vino” em “o”', 'latte, vino, sette'],
+        ['è × é', '“è” (grave) é aberto, como em “café”, e é o verbo “é”; “é” (agudo) é fechado, como em “você”, e aparece em perché, né, ventitré', 'è, caffè; perché'],
       ],
     },
     lessons: [
@@ -51,15 +51,15 @@ export const UNITS_IT: UnitSeed[] = [
         cloze: [
           { sentence: 'Ciao, Giulia! Come ___? — Tutto bene!', answer: 'va', options: ['va', 'vai', 'vado'], translation: 'Oi, Giulia! Como vai? — Tudo bem!' },
           { sentence: 'Buongiorno, professore! Come ___?', answer: 'sta', options: ['sta', 'stai', 'sto'], translation: 'Bom dia, professor! Como o senhor está?' },
-          { sentence: 'Sono le nove di sera ed entro in un ristorante: «___!»', answer: 'Buonasera', options: ['Buonasera', 'Buonanotte', 'Buongiorno'], translation: 'São nove da noite e eu entro num restaurante: «Boa noite!»' },
+          { sentence: 'Sono le nove di sera ed entro in un ristorante: “___!”', answer: 'Buonasera', options: ['Buonasera', 'Buonanotte', 'Buongiorno'], translation: 'São nove da noite e eu entro num restaurante: “Boa noite!”' },
         ],
         voice: {
           bot: 'Ciao! Come va?',
           botTranslation: 'Oi! Como vai?',
           expected: ['Bene, grazie! E tu?', 'bene', 'grazie', 'e tu', 'tutto bene'],
-          hint: 'Diga que está bem e devolva a pergunta: «Bene, grazie! E tu?». O «ci» de «ciao» soa como o «tchau» brasileiro.',
+          hint: 'Diga que está bem e devolva a pergunta: “Bene, grazie! E tu?”. O “ci” de “ciao” soa como o “tchau” brasileiro.',
         },
-        communityPrompt: 'Escreva dois cumprimentos: um para um amigo («Ciao! Come va?») e outro para uma vizinha idosa, com «Buongiorno» ou «Buonasera» e «Come sta?».',
+        communityPrompt: 'Escreva dois cumprimentos: um para um amigo (“Ciao! Come va?”) e outro para uma vizinha idosa, com “Buongiorno” ou “Buonasera” e “Come sta?”.',
       },
       {
         id: 'it-u1-l2',
@@ -75,9 +75,9 @@ export const UNITS_IT: UnitSeed[] = [
           bot: 'Ciao! Io sono Luca. Come ti chiami? Di dove sei?',
           botTranslation: 'Oi! Eu sou o Luca. Como você se chama? De onde você é?',
           expected: ['Ciao, Luca! Mi chiamo Ana e sono brasiliana, di Porto Alegre.', 'mi chiamo', 'sono brasiliano', 'sono brasiliana', 'sono di'],
-          hint: 'Diga o nome com «Mi chiamo…» (o «ch» soa como «k») e a origem com «Sono brasiliano / brasiliana» ou «Sono di» + cidade.',
+          hint: 'Diga o nome com “Mi chiamo…” (o “ch” soa como “k”) e a origem com “Sono brasiliano / brasiliana” ou “Sono di” + cidade.',
         },
-        communityPrompt: 'Apresente-se («Mi chiamo… Sono di…») e apresente duas pessoas: um amigo («Lui è…») e uma amiga («Lei è…»).',
+        communityPrompt: 'Apresente-se (“Mi chiamo… Sono di…”) e apresente duas pessoas: um amigo (“Lui è…”) e uma amiga (“Lei è…”).',
       },
       {
         id: 'it-u1-l3',
@@ -93,9 +93,9 @@ export const UNITS_IT: UnitSeed[] = [
           bot: 'Buongiorno, sono Paolo Ferri. E Lei come si chiama?',
           botTranslation: 'Bom dia, eu sou Paolo Ferri. E o senhor / a senhora, como se chama?',
           expected: ['Piacere, mi chiamo Carla Souza.', 'piacere', 'mi chiamo', 'sono'],
-          hint: 'O «Lei» pede uma resposta educada: comece com «Piacere» (muito prazer). Os dois «r» de «Ferri» vibram mais tempo que um só: é consoante dupla.',
+          hint: 'O “Lei” pede uma resposta educada: comece com “Piacere” (muito prazer). Os dois “r” de “Ferri” vibram mais tempo que um só: é consoante dupla.',
         },
-        communityPrompt: 'Escreva um diálogo curto: alguém dita um número de telefone com números de 11 a 20, você não entende e pede «Mi scusi, può ripetere?».',
+        communityPrompt: 'Escreva um diálogo curto: alguém dita um número de telefone com números de 11 a 20, você não entende e pede “Mi scusi, può ripetere?”.',
       },
       {
         id: 'it-u1-p',
@@ -114,7 +114,7 @@ export const UNITS_IT: UnitSeed[] = [
             'mi chiamo',
             'piacere',
           ],
-          hint: 'Responda no mesmo tom formal: cumprimente com «Buonasera», confirme com «Sì, sono…», diga a cidade com «di» e termine com «Piacere!».',
+          hint: 'Responda no mesmo tom formal: cumprimente com “Buonasera”, confirme com “Sì, sono…”, diga a cidade com “di” e termine com “Piacere!”.',
         },
         communityPrompt: 'Escreva uma apresentação completa: cumprimento certo para a hora, nome, de onde você é, quem são duas pessoas da sua família (lui è… / lei è…, com o artigo certo: lo zio, la nonna) e uma despedida.',
       },
@@ -131,11 +131,11 @@ export const UNITS_IT: UnitSeed[] = [
       title: 'O burro que é manteiga',
       emoji: '🧈',
       history:
-        'O tomate chegou à Europa vindo da América no século XVI, e o italiano o batizou de «pomodoro», o «pomo d’oro» (fruto de ouro). Por muito tempo ele foi visto mais como curiosidade do que como comida; só depois virou a base dos molhos do Sul. Em Veneza, o mercado de Rialto vende peixe, frutas e verduras perto da ponte de mesmo nome há séculos, e em Palermo os mercados de Ballarò e da Vucciria ainda lembram os souks árabes. Com os imigrantes, a massa, a polenta e o queijo entraram na comida brasileira, do Bixiga, em São Paulo, à Serra Gaúcha.',
+        'O tomate chegou à Europa vindo da América no século XVI, e o italiano o batizou de “pomodoro”, o “pomo d’oro” (fruto de ouro). Por muito tempo ele foi visto mais como curiosidade do que como comida; só depois virou a base dos molhos do Sul. Em Veneza, o mercado de Rialto vende peixe, frutas e verduras perto da ponte de mesmo nome há séculos, e em Palermo os mercados de Ballarò e da Vucciria ainda lembram os souks árabes. Com os imigrantes, a massa, a polenta e o queijo entraram na comida brasileira, do Bixiga, em São Paulo, à Serra Gaúcha.',
       culture_tip:
-        'Na feira italiana, não pegue as frutas com a mão: peça ao vendedor, que escolhe e pesa para você; no supermercado, use as luvas de plástico que ficam ao lado da balança. Frios e queijos se pedem em «etti»: «un etto» são 100 gramas. E cuidado com os falsos amigos: «burro» é manteiga, «caldo» é quente e «squisito» quer dizer delicioso.',
+        'Na feira italiana, não pegue as frutas com a mão: peça ao vendedor, que escolhe e pesa para você; no supermercado, use as luvas de plástico que ficam ao lado da balança. Frios e queijos se pedem em “etti”: “un etto” são 100 gramas. E cuidado com os falsos amigos: “burro” é manteiga, “caldo” é quente e “squisito” quer dizer delicioso.',
       grammar_why:
-        'No presente, os verbos regulares têm três grupos: -are (parlo, parli, parla, parliamo, parlate, parlano), -ere (prendo, prendi, prende…) e -ire (dormo, dormi, dorme…); muitos verbos em -ire ganham -isc-: capisco, capisci, capisce, capiamo, capite, capiscono. O «noi» termina sempre em -iamo: «compriamo», nunca «compramo». «Avere» se conjuga ho, hai, ha, abbiamo, avete, hanno, com h mudo, e serve para fome, sede e idade: «ho fame», «ho vent’anni». Para dizer que existe algo, use «c’è» (singular) e «ci sono» (plural), nunca «ha»: «c’è il pane» é «tem pão». «Piacere» funciona como «agradar»: a coisa é o sujeito, então «mi piace la pizza», mas «mi piacciono le pesche». No plural, -o vira -i, -a vira -e e -e vira -i: la mela → le mele, il limone → i limoni.',
+        'No presente, os verbos regulares têm três grupos: -are (parlo, parli, parla, parliamo, parlate, parlano), -ere (prendo, prendi, prende…) e -ire (dormo, dormi, dorme…); muitos verbos em -ire ganham -isc-: capisco, capisci, capisce, capiamo, capite, capiscono. O “noi” termina sempre em -iamo: “compriamo”, nunca “compramo”. “Avere” se conjuga ho, hai, ha, abbiamo, avete, hanno, com h mudo, e serve para fome, sede e idade: “ho fame”, “ho vent’anni”. Para dizer que existe algo, use “c’è” (singular) e “ci sono” (plural), nunca “ha”: “c’è il pane” é “tem pão”. “Piacere” funciona como “agradar”: a coisa é o sujeito, então “mi piace la pizza”, mas “mi piacciono le pesche”. No plural, -o vira -i, -a vira -e e -e vira -i: la mela → le mele, il limone → i limoni.',
       grammar_examples: [
         ['Compro il pane e Luca prende il latte.', 'Eu compro o pão e o Luca pega o leite.'],
         ['Al mercato ci sono le pesche, ma non c’è l’uva.', 'Na feira tem pêssego, mas não tem uva.'],
@@ -159,9 +159,9 @@ export const UNITS_IT: UnitSeed[] = [
           bot: 'Buongiorno! Che cosa desidera oggi?',
           botTranslation: 'Bom dia! O que o senhor / a senhora deseja hoje?',
           expected: ['Buongiorno! Vorrei un chilo di pomodori e due mele, per favore.', 'vorrei', 'un chilo di', 'per favore', 'pomodori'],
-          hint: 'Peça com «Vorrei…» (eu queria), a forma educada. No plural, «pomodoro» vira «pomodori» e «mela» vira «mele».',
+          hint: 'Peça com “Vorrei…” (eu queria), a forma educada. No plural, “pomodoro” vira “pomodori” e “mela” vira “mele”.',
         },
-        communityPrompt: 'Escreva a sua lista da feira em italiano com cinco itens no plural (due mele, tre pomodori…), uma frase com «c’è» e outra com «ci sono».',
+        communityPrompt: 'Escreva a sua lista da feira em italiano com cinco itens no plural (due mele, tre pomodori…), uma frase com “c’è” e outra com “ci sono”.',
       },
       {
         id: 'it-u2-l2',
@@ -177,9 +177,9 @@ export const UNITS_IT: UnitSeed[] = [
           bot: 'Che cosa mangi a colazione? Ti piace il caffè?',
           botTranslation: 'O que você come no café da manhã? Você gosta de café?',
           expected: ['A colazione mangio pane e burro e bevo il caffè: mi piace molto!', 'mangio', 'bevo', 'mi piace', 'pane e burro'],
-          hint: 'Use o presente: «mangio», «bevo» («bere» é irregular: bevo, bevi, beve). E lembre: «burro» é manteiga!',
+          hint: 'Use o presente: “mangio”, “bevo” (“bere” é irregular: bevo, bevi, beve). E lembre: “burro” é manteiga!',
         },
-        communityPrompt: 'Descreva o seu café da manhã com três verbos no presente (mangio, bevo, prendo) e diga do que você gosta e do que não gosta, com «mi piace» e «mi piacciono».',
+        communityPrompt: 'Descreva o seu café da manhã com três verbos no presente (mangio, bevo, prendo) e diga do que você gosta e do que não gosta, com “mi piace” e “mi piacciono”.',
       },
       {
         id: 'it-u2-l3',
@@ -195,7 +195,7 @@ export const UNITS_IT: UnitSeed[] = [
           bot: 'Hai fame? C’è la pizza, ci sono i panini e c’è anche il gelato!',
           botTranslation: 'Está com fome? Tem pizza, tem sanduíche e tem sorvete também!',
           expected: ['Sì, ho fame! Mi piace la pizza e mi piacciono i panini.', 'ho fame', 'mi piace', 'mi piacciono', 'ho sete'],
-          hint: 'Fome e sede vêm com «avere»: «ho fame», nunca «sono fame». O «h» de «ho» é mudo: diga só «ó». E «pizza» tem zz, um «ts» longo.',
+          hint: 'Fome e sede vêm com “avere”: “ho fame”, nunca “sono fame”. O “h” de “ho” é mudo: diga só “ó”. E “pizza” tem zz, um “ts” longo.',
         },
         communityPrompt: 'Escreva um bilhete para um amigo italiano: diga que você está com fome e com sede, o que tem na sua geladeira (c’è / ci sono) e o que você gosta de comer.',
       },
@@ -215,9 +215,9 @@ export const UNITS_IT: UnitSeed[] = [
             'un chilo',
             'per favore',
           ],
-          hint: 'Diga do que gosta («mi piacciono» + plural), peça com «vorrei» e diga a quantidade: «un chilo», «mezzo chilo», «un etto».',
+          hint: 'Diga do que gosta (“mi piacciono” + plural), peça com “vorrei” e diga a quantidade: “un chilo”, “mezzo chilo”, “un etto”.',
         },
-        communityPrompt: 'Escreva um diálogo na feira: você pergunta o que tem hoje, o vendedor responde com «c’è» e «ci sono», você diz do que gosta e pede as quantidades com verbos no presente.',
+        communityPrompt: 'Escreva um diálogo na feira: você pergunta o que tem hoje, o vendedor responde com “c’è” e “ci sono”, você diz do que gosta e pede as quantidades com verbos no presente.',
       },
     ],
   },
@@ -229,14 +229,14 @@ export const UNITS_IT: UnitSeed[] = [
     emoji: '🚆',
     card: {
       id: 'it-c3',
-      title: 'Sono andato: quando o auxiliar é «essere»',
+      title: 'Sono andato: quando o auxiliar é “essere”',
       emoji: '🧳',
       history:
-        'A primeira ferrovia da península italiana foi inaugurada em 1839, entre Nápoles e Portici, no Reino das Duas Sicílias. Muito antes dos trens, os romanos já ligavam o país com estradas de pedra: a Via Ápia, começada em 312 a.C., saía de Roma rumo ao sul e mais tarde chegou a Brindisi, na Puglia. Hoje os trens de alta velocidade ligam Turim, Milão, Bolonha, Florença, Roma e Nápoles em poucas horas, enquanto os trens regionais param em cada cidadezinha. Para as ilhas, como a Sardenha e a Sicília, a viagem muitas vezes começa numa balsa, o «traghetto».',
+        'A primeira ferrovia da península italiana foi inaugurada em 1839, entre Nápoles e Portici, no Reino das Duas Sicílias. Muito antes dos trens, os romanos já ligavam o país com estradas de pedra: a Via Ápia, começada em 312 a.C., saía de Roma rumo ao sul e mais tarde chegou a Brindisi, na Puglia. Hoje os trens de alta velocidade ligam Turim, Milão, Bolonha, Florença, Roma e Nápoles em poucas horas, enquanto os trens regionais param em cada cidadezinha. Para as ilhas, como a Sardenha e a Sicília, a viagem muitas vezes começa numa balsa, o “traghetto”.',
       culture_tip:
-        'O bilhete de papel dos trens regionais precisa ser validado na maquininha da plataforma antes de embarcar: é o «obliterare» (ou «convalidare»), e quem esquece pode levar multa. A plataforma se chama «binario», e «coincidenza» não é coincidência: é a conexão com o próximo trem. Se o trem atrasar, o alto-falante avisa: «Il treno è in ritardo di dieci minuti».',
+        'O bilhete de papel dos trens regionais precisa ser validado na maquininha da plataforma antes de embarcar: é o “obliterare” (ou “convalidare”), e quem esquece pode levar multa. A plataforma se chama “binario”, e “coincidenza” não é coincidência: é a conexão com o próximo trem. Se o trem atrasar, o alto-falante avisa: “Il treno è in ritardo di dieci minuti”.',
       grammar_why:
-        'As preposições «di, a, da, in, su» se juntam ao artigo, como o nosso «do, no, pelo», mas com mais formas: del, della, dei, degli; al, allo, alla; dal, dall’, dalle; nel, nella, negli; sul, sulla, sui. No passato prossimo, a maioria dos verbos usa «avere» (ho comprato, abbiamo mangiato), mas os verbos de movimento e de mudança de estado usam «essere»: sono andato, è partita, siamo arrivati. O português não faz essa troca, e o erro clássico do brasileiro é «ho andato». Com «essere», o particípio concorda com o sujeito como um adjetivo: «Marco è arrivato», «Anna è arrivata», «le ragazze sono partite»; com «avere», fica invariável: «Anna ha mangiato». Irregulares frequentes: fare → fatto, vedere → visto, venire → venuto; «andare» faz vado, vai, va, andiamo, andate, vanno; e «dovere, potere, volere» (devo, posso, voglio) vêm com o infinitivo: «Devo partire».',
+        'As preposições “di, a, da, in, su” se juntam ao artigo, como o nosso “do, no, pelo”, mas com mais formas: del, della, dei, degli; al, allo, alla; dal, dall’, dalle; nel, nella, negli; sul, sulla, sui. No passato prossimo, a maioria dos verbos usa “avere” (ho comprato, abbiamo mangiato), mas os verbos de movimento e de mudança de estado usam “essere”: sono andato, è partita, siamo arrivati. O português não faz essa troca, e o erro clássico do brasileiro é “ho andato”. Com “essere”, o particípio concorda com o sujeito como um adjetivo: “Marco è arrivato”, “Anna è arrivata”, “le ragazze sono partite”; com “avere”, fica invariável: “Anna ha mangiato”. Irregulares frequentes: fare → fatto, vedere → visto, venire → venuto; “andare” faz vado, vai, va, andiamo, andate, vanno; e “dovere, potere, volere” (devo, posso, voglio) vêm com o infinitivo: “Devo partire”.',
       grammar_examples: [
         ['Sono andata a Napoli in treno.', 'Eu fui a Nápoles de trem.'],
         ['Il treno parte dal binario tre alle otto.', 'O trem sai da plataforma três às oito.'],
@@ -260,7 +260,7 @@ export const UNITS_IT: UnitSeed[] = [
           bot: 'Buongiorno! Dove va? Solo andata o andata e ritorno?',
           botTranslation: 'Bom dia! Aonde o senhor / a senhora vai? Só ida ou ida e volta?',
           expected: ['Vado a Verona. Vorrei un biglietto di andata e ritorno, per favore.', 'vado a', 'andata e ritorno', 'un biglietto', 'solo andata'],
-          hint: 'Use «vado a» + cidade (andare: vado, vai, va) e peça com «vorrei un biglietto di…». Depois de comprar, não esqueça de validar o bilhete!',
+          hint: 'Use “vado a” + cidade (andare: vado, vai, va) e peça com “vorrei un biglietto di…”. Depois de comprar, não esqueça de validar o bilhete!',
         },
         communityPrompt: 'Escreva instruções para um amigo pegar o trem em Bolonha: de que plataforma ele sai (dal binario…), onde está o bilhete (nella…) e a que horas chega à estação (alla stazione di…).',
       },
@@ -278,9 +278,9 @@ export const UNITS_IT: UnitSeed[] = [
           bot: 'Allora, com’è andato il viaggio? Che cosa avete fatto?',
           botTranslation: 'E aí, como foi a viagem? O que vocês fizeram?',
           expected: ['Siamo andati a Napoli, abbiamo visitato il centro e abbiamo mangiato la pizza.', 'siamo andati', 'siamo andate', 'abbiamo visitato', 'abbiamo mangiato'],
-          hint: 'Movimento com «essere» (siamo andati, siamo arrivati); o resto com «avere» (abbiamo visitato, abbiamo mangiato). Com «essere», o particípio concorda: «siamo andate» se forem só mulheres.',
+          hint: 'Movimento com “essere” (siamo andati, siamo arrivati); o resto com “avere” (abbiamo visitato, abbiamo mangiato). Com “essere”, o particípio concorda: “siamo andate” se forem só mulheres.',
         },
-        communityPrompt: 'Conte num cartão-postal um fim de semana de viagem: dois verbos com «essere» (sono arrivato/a, sono uscito/a), dois com «avere» (ho visto, ho mangiato) e pelo menos uma preposição articulada (nel, sul, dal).',
+        communityPrompt: 'Conte num cartão-postal um fim de semana de viagem: dois verbos com “essere” (sono arrivato/a, sono uscito/a), dois com “avere” (ho visto, ho mangiato) e pelo menos uma preposição articulada (nel, sul, dal).',
       },
       {
         id: 'it-u3-l3',
@@ -296,7 +296,7 @@ export const UNITS_IT: UnitSeed[] = [
           bot: 'Buongiorno. Passaporto, per favore. Dove va?',
           botTranslation: 'Bom dia. Passaporte, por favor. Aonde o senhor / a senhora vai?',
           expected: ['Ecco il passaporto. Vado a Cagliari, ma il volo è in ritardo.', 'ecco', 'vado a', 'in ritardo', 'il passaporto'],
-          hint: 'Entregue com «Ecco…» (aqui está) e diga o destino com «vado a». «Uscita» é o portão de embarque, e o voo atrasado está «in ritardo».',
+          hint: 'Entregue com “Ecco…” (aqui está) e diga o destino com “vado a”. “Uscita” é o portão de embarque, e o voo atrasado está “in ritardo”.',
         },
         communityPrompt: 'Escreva uma mensagem para a família: o voo está atrasado, o que você deve fazer, o que pode fazer enquanto espera e aonde quer ir primeiro (devo, posso, voglio + infinitivo).',
       },
@@ -317,9 +317,9 @@ export const UNITS_IT: UnitSeed[] = [
             'sono partito',
             'sono partita',
           ],
-          hint: 'Use «essere» com andare, partire, arrivare e tornare (e faça o particípio concordar com você: andato ou andata) e «avere» com visitare, vedere e mangiare. Com região, use «in» (in Toscana); com cidade, «a» (a Roma).',
+          hint: 'Use “essere” com andare, partire, arrivare e tornare (e faça o particípio concordar com você: andato ou andata) e “avere” com visitare, vedere e mangiare. Com região, use “in” (in Toscana); com cidade, “a” (a Roma).',
         },
-        communityPrompt: 'Escreva um relato de viagem de cinco frases pela Itália: de onde você partiu, aonde foi, o que viu e comeu e quando voltou, alternando «essere» e «avere» e usando preposições articuladas (dal, nel, sul).',
+        communityPrompt: 'Escreva um relato de viagem de cinco frases pela Itália: de onde você partiu, aonde foi, o que viu e comeu e quando voltou, alternando “essere” e “avere” e usando preposições articuladas (dal, nel, sul).',
       },
     ],
   },
@@ -334,11 +334,11 @@ export const UNITS_IT: UnitSeed[] = [
       title: 'Da piccolo: a infância no imperfetto',
       emoji: '🧸',
       history:
-        'A partir de 1875, milhares de famílias do Vêneto, da Lombardia e do Trentino se instalaram na Serra Gaúcha, em colônias que deram origem a cidades como Caxias do Sul, Bento Gonçalves e Garibaldi. Longe da Itália, os dialetos que elas falavam se misturaram e formaram o «talian», uma língua de base vêneta com palavras do português. O talian foi reconhecido em 2014 como referência cultural brasileira e ainda se ouve nas conversas de família e nas rádios da região. Muitas lembranças desses imigrantes, da polenta no almoço às histórias contadas pelos avós, chegaram até nós no tom do imperfetto: «quando ero piccolo…».',
+        'A partir de 1875, milhares de famílias do Vêneto, da Lombardia e do Trentino se instalaram na Serra Gaúcha, em colônias que deram origem a cidades como Caxias do Sul, Bento Gonçalves e Garibaldi. Longe da Itália, os dialetos que elas falavam se misturaram e formaram o “talian”, uma língua de base vêneta com palavras do português. O talian foi reconhecido em 2014 como referência cultural brasileira e ainda se ouve nas conversas de família e nas rádios da região. Muitas lembranças desses imigrantes, da polenta no almoço às histórias contadas pelos avós, chegaram até nós no tom do imperfetto: “quando ero piccolo…”.',
       culture_tip:
-        'Na Itália, o café da manhã costuma ser doce e rápido: um cappuccino e um «cornetto» em pé, no balcão do bar. O almoço de domingo com os avós é quase sagrado e pode durar a tarde toda. E atenção aos falsos amigos da casa: «camera» é quarto, «stanza» é cômodo e «sveglia» é o despertador.',
+        'Na Itália, o café da manhã costuma ser doce e rápido: um cappuccino e um “cornetto” em pé, no balcão do bar. O almoço de domingo com os avós é quase sagrado e pode durar a tarde toda. E atenção aos falsos amigos da casa: “camera” é quarto, “stanza” é cômodo e “sveglia” é o despertador.',
       grammar_why:
-        'Os verbos reflexivos se conjugam com o pronome antes: mi alzo, ti alzi, si alza, ci alziamo, vi alzate, si alzano; no passato prossimo eles sempre usam «essere», e o particípio concorda: «Giulia si è alzata tardi». O imperfetto descreve hábitos e cenários do passado, como o nosso «eu brincava»: giocavo, giocavi, giocava, giocavamo, giocavate, giocavano; «essere» é irregular: ero, eri, era, eravamo, eravate, erano. A divisão de trabalho é a mesma do português: o imperfetto pinta o fundo e o passato prossimo conta o fato: «Dormivo quando è arrivato Marco». Os pronomes diretos lo, la, li, le vêm antes do verbo, e no passato prossimo o particípio concorda com eles: «La torta? L’ho mangiata». Diante de «ho», «lo» e «la» viram «l’», mas «li» e «le» não: «li ho visti», «le ho comprate».',
+        'Os verbos reflexivos se conjugam com o pronome antes: mi alzo, ti alzi, si alza, ci alziamo, vi alzate, si alzano; no passato prossimo eles sempre usam “essere”, e o particípio concorda: “Giulia si è alzata tardi”. O imperfetto descreve hábitos e cenários do passado, como o nosso “eu brincava”: giocavo, giocavi, giocava, giocavamo, giocavate, giocavano; “essere” é irregular: ero, eri, era, eravamo, eravate, erano. A divisão de trabalho é a mesma do português: o imperfetto pinta o fundo e o passato prossimo conta o fato: “Dormivo quando è arrivato Marco”. Os pronomes diretos lo, la, li, le vêm antes do verbo, e no passato prossimo o particípio concorda com eles: “La torta? L’ho mangiata”. Diante de “ho”, “lo” e “la” viram “l’”, mas “li” e “le” não: “li ho visti”, “le ho comprate”.',
       grammar_examples: [
         ['Mi sveglio alle sette e mi vesto in fretta.', 'Eu acordo às sete e me visto correndo.'],
         ['Da bambina passavo le estati in campagna dai nonni.', 'Quando criança, eu passava os verões no campo, na casa dos avós.'],
@@ -362,7 +362,7 @@ export const UNITS_IT: UnitSeed[] = [
           bot: 'A che ora ti alzi la mattina? E che cosa fai prima di uscire?',
           botTranslation: 'A que horas você se levanta de manhã? E o que você faz antes de sair?',
           expected: ['Mi alzo alle sette, faccio la doccia, mi vesto e faccio colazione.', 'mi alzo', 'mi sveglio', 'mi vesto', 'faccio colazione'],
-          hint: 'Os reflexivos levam o pronome antes: «mi alzo», «mi vesto». Já «fare la doccia» e «fare colazione» não são reflexivos: «faccio la doccia».',
+          hint: 'Os reflexivos levam o pronome antes: “mi alzo”, “mi vesto”. Já “fare la doccia” e “fare colazione” não são reflexivos: “faccio la doccia”.',
         },
         communityPrompt: 'Descreva a sua manhã com quatro verbos reflexivos no presente (mi sveglio, mi alzo…) e conte, no passato prossimo, a que horas você se levantou ontem (mi sono alzato/a).',
       },
@@ -380,9 +380,9 @@ export const UNITS_IT: UnitSeed[] = [
           bot: 'Com’era la tua infanzia? Dove abitavi e con chi giocavi?',
           botTranslation: 'Como era a sua infância? Onde você morava e com quem brincava?',
           expected: ['Da piccolo abitavo in campagna e giocavo sempre con i miei cugini.', 'abitavo', 'giocavo', 'da piccolo', 'da piccola'],
-          hint: 'Hábitos e descrições do passado vão no imperfetto: «abitavo», «giocavo», «ero». «Da piccolo / da piccola» é o nosso «quando criança».',
+          hint: 'Hábitos e descrições do passado vão no imperfetto: “abitavo”, “giocavo”, “ero”. “Da piccolo / da piccola” é o nosso “quando criança”.',
         },
-        communityPrompt: 'Escreva cinco frases sobre a sua infância no imperfetto (onde você morava, do que brincava, como era a sua casa) e termine com um fato único no passato prossimo («Un giorno…»).',
+        communityPrompt: 'Escreva cinco frases sobre a sua infância no imperfetto (onde você morava, do que brincava, como era a sua casa) e termine com um fato único no passato prossimo (“Un giorno…”).',
       },
       {
         id: 'it-u4-l3',
@@ -419,7 +419,7 @@ export const UNITS_IT: UnitSeed[] = [
             'mi sono alzato',
             'mi sono alzata',
           ],
-          hint: 'Na primeira parte, hábitos no imperfetto (mi svegliavo, andavo); na segunda, fatos de ontem no passato prossimo, com «essere» nos reflexivos (mi sono alzato/a, sono uscito/a).',
+          hint: 'Na primeira parte, hábitos no imperfetto (mi svegliavo, andavo); na segunda, fatos de ontem no passato prossimo, com “essere” nos reflexivos (mi sono alzato/a, sono uscito/a).',
         },
         communityPrompt: 'Compare um dia da sua infância com o dia de ontem: pelo menos três verbos no imperfetto, três no passato prossimo (dois reflexivos) e um pronome direto com o particípio concordando.',
       },
@@ -436,11 +436,11 @@ export const UNITS_IT: UnitSeed[] = [
       title: 'Te lo do io: ci, ne e o imperativo',
       emoji: '🍅',
       history:
-        'Em 1891, o comerciante Pellegrino Artusi publicou «La scienza in cucina e l’arte di mangiar bene», um livro com receitas de várias regiões escrito num italiano simples, que ajudou a formar uma cozinha nacional num país unificado havia pouco. Com a grande emigração, essas receitas cruzaram o oceano: em São Paulo, o Bixiga ficou famoso pelas cantinas, e na Argentina muita gente ainda come nhoque no dia 29 de cada mês, os «ñoquis del 29». Na própria Itália, cada região defende a sua especialidade: o pesto é da Ligúria, o ragù de Bolonha é da Emília-Romanha e as orecchiette são da Puglia.',
+        'Em 1891, o comerciante Pellegrino Artusi publicou “La scienza in cucina e l’arte di mangiar bene”, um livro com receitas de várias regiões escrito num italiano simples, que ajudou a formar uma cozinha nacional num país unificado havia pouco. Com a grande emigração, essas receitas cruzaram o oceano: em São Paulo, o Bixiga ficou famoso pelas cantinas, e na Argentina muita gente ainda come nhoque no dia 29 de cada mês, os “ñoquis del 29”. Na própria Itália, cada região defende a sua especialidade: o pesto é da Ligúria, o ragù de Bolonha é da Emília-Romanha e as orecchiette são da Puglia.',
       culture_tip:
-        'Na mesa italiana, a massa vem al dente, e o parmesão não costuma ir por cima de massas com peixe ou frutos do mar. O cappuccino é coisa da manhã: depois do almoço se pede um espresso, que no bar se chama só «un caffè». Limpar o molho do prato com pão tem nome, «fare la scarpetta»: em casa é um elogio à cozinheira; num jantar formal, melhor evitar. E, no bar, «una pasta» não é macarrão: é um docinho de confeitaria.',
+        'Na mesa italiana, a massa vem al dente, e o parmesão não costuma ir por cima de massas com peixe ou frutos do mar. O cappuccino é coisa da manhã: depois do almoço se pede um espresso, que no bar se chama só “un caffè”. Limpar o molho do prato com pão tem nome, “fare la scarpetta”: em casa é um elogio à cozinheira; num jantar formal, melhor evitar. E, no bar, “una pasta” não é macarrão: é um docinho de confeitaria.',
       grammar_why:
-        'O imperativo de «tu» termina em -a nos verbos em -are (mangia!, assaggia!) e em -i nos outros (prendi!, senti!); «noi» e «voi» usam as formas do presente (mangiamo!, prendete!); o negativo de «tu» é «non» + infinitivo: «non mangiare!». O «Lei» usa a forma do congiuntivo: «prenda», «senta», «assaggi». Os pronomes se colam no fim do imperativo de tu, noi e voi (mangialo!, diteci), mas ficam antes com «Lei» (lo assaggi!); e depois de da’, di’, fa’, sta’, va’ a consoante dobra: dammi, dimmi, fallo. Os indiretos são mi, ti, gli (a ele), le (a ela), Le (ao senhor / à senhora); combinados com lo, la, li, le, ne, viram me lo, te la, glielo (a ele, a ela e ao senhor), sempre com o indireto primeiro: «Il sale? Te lo passo». Por fim, «ne» retoma uma quantidade («Quante uova? — Ne metto tre») e «ci» retoma um lugar («Al mercato? Ci vado domani»): o português simplesmente omite essas palavras, e o italiano não.',
+        'O imperativo de “tu” termina em -a nos verbos em -are (mangia!, assaggia!) e em -i nos outros (prendi!, senti!); “noi” e “voi” usam as formas do presente (mangiamo!, prendete!); o negativo de “tu” é “non” + infinitivo: “non mangiare!”. O “Lei” usa a forma do congiuntivo: “prenda”, “senta”, “assaggi”. Os pronomes se colam no fim do imperativo de tu, noi e voi (mangialo!, diteci), mas ficam antes com “Lei” (lo assaggi!); e depois de da’, di’, fa’, sta’, va’ a consoante dobra: dammi, dimmi, fallo. Os indiretos são mi, ti, gli (a ele), le (a ela), Le (ao senhor / à senhora); combinados com lo, la, li, le, ne, viram me lo, te la, glielo (a ele, a ela e ao senhor), sempre com o indireto primeiro: “Il sale? Te lo passo”. Por fim, “ne” retoma uma quantidade (“Quante uova? — Ne metto tre”) e “ci” retoma um lugar (“Al mercato? Ci vado domani”): o português simplesmente omite essas palavras, e o italiano não.',
       grammar_examples: [
         ['Prendi tre uova e sbattile bene.', 'Pegue três ovos e bata bem.'],
         ['Il sugo? Te lo preparo io.', 'O molho? Eu preparo para você.'],
@@ -464,9 +464,9 @@ export const UNITS_IT: UnitSeed[] = [
           bot: 'Stasera voglio fare la pasta al pomodoro, ma non so cucinare! Mi spieghi la ricetta?',
           botTranslation: 'Hoje à noite eu quero fazer macarrão ao sugo, mas não sei cozinhar! Você me explica a receita?',
           expected: ['Metti l’acqua nella pentola, aggiungi il sale e cuoci la pasta. Poi prepara il sugo con il pomodoro e il basilico.', 'metti', 'aggiungi', 'cuoci', 'prepara'],
-          hint: 'Instruções para um amigo usam o imperativo de «tu»: -are → -a (prepara); -ere e -ire → -i (metti, cuoci, aggiungi).',
+          hint: 'Instruções para um amigo usam o imperativo de “tu”: -are → -a (prepara); -ere e -ire → -i (metti, cuoci, aggiungi).',
         },
-        communityPrompt: 'Escreva a receita de um prato brasileiro para um amigo italiano, com cinco verbos no imperativo de «tu» e um conselho no negativo (non + infinitivo).',
+        communityPrompt: 'Escreva a receita de um prato brasileiro para um amigo italiano, com cinco verbos no imperativo de “tu” e um conselho no negativo (non + infinitivo).',
       },
       {
         id: 'it-u5-l2',
@@ -482,9 +482,9 @@ export const UNITS_IT: UnitSeed[] = [
           bot: 'Scusa, mi passi il bicchiere? E il coltello, lo dai a Marco?',
           botTranslation: 'Desculpa, você me passa o copo? E a faca, você dá para o Marco?',
           expected: ['Certo, te lo passo subito! E il coltello glielo do io.', 'te lo passo', 'glielo do', 'certo'],
-          hint: 'Junte os dois pronomes, com o indireto primeiro: mi + lo = me lo, ti + lo = te lo, gli + lo = glielo (numa palavra só). E «coltello» é masculino: il coltello.',
+          hint: 'Junte os dois pronomes, com o indireto primeiro: mi + lo = me lo, ti + lo = te lo, gli + lo = glielo (numa palavra só). E “coltello” é masculino: il coltello.',
         },
-        communityPrompt: 'Escreva um diálogo à mesa em que as pessoas pedem e passam talheres e pratos: use «me lo», «te lo» e «glielo» pelo menos uma vez cada.',
+        communityPrompt: 'Escreva um diálogo à mesa em que as pessoas pedem e passam talheres e pratos: use “me lo”, “te lo” e “glielo” pelo menos uma vez cada.',
       },
       {
         id: 'it-u5-l3',
@@ -500,9 +500,9 @@ export const UNITS_IT: UnitSeed[] = [
           bot: 'Buongiorno! Quanto prosciutto vuole? E l’olio, lo prende?',
           botTranslation: 'Bom dia! Quanto presunto o senhor / a senhora quer? E o azeite, vai levar?',
           expected: ['Ne vorrei due etti, grazie. E sì, l’olio lo prendo: me ne dia una bottiglia.', 'ne vorrei', 'due etti', 'me ne dia', 'lo prendo'],
-          hint: 'Para não repetir «prosciutto», use «ne» + quantidade: «ne vorrei due etti». Com «Lei», o pronome vem antes do imperativo: «me ne dia». Na cozinha, «olio» sem mais nada costuma ser o azeite de oliva.',
+          hint: 'Para não repetir “prosciutto”, use “ne” + quantidade: “ne vorrei due etti”. Com “Lei”, o pronome vem antes do imperativo: “me ne dia”. Na cozinha, “olio” sem mais nada costuma ser o azeite de oliva.',
         },
-        communityPrompt: 'Escreva uma lista de compras falada: para cada item, responda «quanto?» com «ne» (ne prendo due chili…) e diga aonde você vai comprar com «ci» (ci vado…).',
+        communityPrompt: 'Escreva uma lista de compras falada: para cada item, responda “quanto?” com “ne” (ne prendo due chili…) e diga aonde você vai comprar com “ci” (ci vado…).',
       },
       {
         id: 'it-u5-p',
@@ -520,9 +520,9 @@ export const UNITS_IT: UnitSeed[] = [
             'fai',
             'compra',
           ],
-          hint: 'Dê conselhos no imperativo de «tu» (fai, compra, prepara), use «ne» para a quantidade (prendine due chili) e responda sobre a receita com um pronome combinado: «te la scrivo».',
+          hint: 'Dê conselhos no imperativo de “tu” (fai, compra, prepara), use “ne” para a quantidade (prendine due chili) e responda sobre a receita com um pronome combinado: “te la scrivo”.',
         },
-        communityPrompt: 'Escreva uma mensagem com conselhos para o almoço de domingo: três imperativos (um deles negativo), um «ne» de quantidade, um «ci» de lugar e um pronome combinado (te lo, glielo).',
+        communityPrompt: 'Escreva uma mensagem com conselhos para o almoço de domingo: três imperativos (um deles negativo), um “ne” de quantidade, um “ci” de lugar e um pronome combinado (te lo, glielo).',
       },
     ],
   },
@@ -537,11 +537,11 @@ export const UNITS_IT: UnitSeed[] = [
       title: 'De trem, de balsa e de carro: a Itália em movimento',
       emoji: '🗺️',
       history:
-        'A primeira ferrovia da península italiana foi inaugurada em 3 de outubro de 1839, entre Nápoles e Portici, no Reino das Duas Sicílias. Em 1964 ficou pronta a Autostrada del Sole (A1), que liga Milão a Nápoles e virou símbolo do «milagre econômico» italiano. Para chegar à Sicília de trem, os vagões ainda hoje embarcam em balsas (traghetti) que atravessam o Estreito de Messina. E o grande feriado do verão, o Ferragosto (15 de agosto), vem das «Feriae Augusti», os dias de descanso criados pelo imperador Augusto.',
+        'A primeira ferrovia da península italiana foi inaugurada em 3 de outubro de 1839, entre Nápoles e Portici, no Reino das Duas Sicílias. Em 1964 ficou pronta a Autostrada del Sole (A1), que liga Milão a Nápoles e virou símbolo do “milagre econômico” italiano. Para chegar à Sicília de trem, os vagões ainda hoje embarcam em balsas (traghetti) que atravessam o Estreito de Messina. E o grande feriado do verão, o Ferragosto (15 de agosto), vem das “Feriae Augusti”, os dias de descanso criados pelo imperador Augusto.',
       culture_tip:
-        'O bilhete de papel do trem regional ou do ônibus precisa ser validado (obliterare) na maquininha antes de embarcar; sem isso, o fiscal (il controllore) pode aplicar multa mesmo que você tenha pagado. Em agosto, sobretudo perto do Ferragosto, muitas lojas e restaurantes das cidades fecham para as férias, e as praias e estradas lotam: reserve cedo. E não confunda: «vacanza» é a viagem de férias; «ferie» são as férias do trabalho.',
+        'O bilhete de papel do trem regional ou do ônibus precisa ser validado (obliterare) na maquininha antes de embarcar; sem isso, o fiscal (il controllore) pode aplicar multa mesmo que você tenha pagado. Em agosto, sobretudo perto do Ferragosto, muitas lojas e restaurantes das cidades fecham para as férias, e as praias e estradas lotam: reserve cedo. E não confunda: “vacanza” é a viagem de férias; “ferie” são as férias do trabalho.',
       grammar_why:
-        'O italiano usa o futuro simples muito mais do que o Brasil: «domani partirò» é o normal, e «andare a + infinitivo» NÃO é futuro: «vado a mangiare» quer dizer «vou (a algum lugar) comer». Depois de «quando» e «se», onde o português usa o futuro do subjuntivo («quando eu chegar»), o italiano usa o futuro do indicativo: «quando arriverò»; e o futuro anteriore diz o que estará concluído: «quando sarò arrivato, ti chiamerò». O futuro também faz suposição, como o nosso «deve ser»: «saranno le dieci» = devem ser umas dez horas. O condizionale é o tempo da cortesia: «vorrei un biglietto», «potrebbe aiutarmi?». Para a ação em andamento, «stare + gerundio» («sto partendo»); para o que está prestes a acontecer, «stare per + infinitivo» («il treno sta per partire»).',
+        'O italiano usa o futuro simples muito mais do que o Brasil: “domani partirò” é o normal, e “andare a + infinitivo” NÃO é futuro: “vado a mangiare” quer dizer “vou (a algum lugar) comer”. Depois de “quando” e “se”, onde o português usa o futuro do subjuntivo (“quando eu chegar”), o italiano usa o futuro do indicativo: “quando arriverò”; e o futuro anteriore diz o que estará concluído: “quando sarò arrivato, ti chiamerò”. O futuro também faz suposição, como o nosso “deve ser”: “saranno le dieci” = devem ser umas dez horas. O condizionale é o tempo da cortesia: “vorrei un biglietto”, “potrebbe aiutarmi?”. Para a ação em andamento, “stare + gerundio” (“sto partendo”); para o que está prestes a acontecer, “stare per + infinitivo” (“il treno sta per partire”).',
       grammar_examples: [
         ['Domani prenderemo il traghetto per la Sicilia.', 'Amanhã vamos pegar a balsa para a Sicília.'],
         ['Non vedo il controllore: sarà nell’altra carrozza.', 'Não vejo o fiscal: deve estar no outro vagão.'],
@@ -586,10 +586,10 @@ export const UNITS_IT: UnitSeed[] = [
             'prenderò',
             'visiterò',
           ],
-          hint: 'Responda no futuro: «arriverò», «farò», «visiterò». Depois de «quando» não existe futuro do subjuntivo: o italiano usa o futuro.',
+          hint: 'Responda no futuro: “arriverò”, “farò”, “visiterò”. Depois de “quando” não existe futuro do subjuntivo: o italiano usa o futuro.',
         },
         communityPrompt:
-          'Escreva 3 frases sobre uma viagem de trem que você fará (futuro) e uma pergunta educada na bilheteria com «vorrei» ou «potrebbe».',
+          'Escreva 3 frases sobre uma viagem de trem que você fará (futuro) e uma pergunta educada na bilheteria com “vorrei” ou “potrebbe”.',
       },
       {
         id: 'it-u6-l2',
@@ -625,7 +625,7 @@ export const UNITS_IT: UnitSeed[] = [
             'sta per partire',
             'traghetto',
           ],
-          hint: 'Use «stare + gerundio» para o que está acontecendo e «stare per» para o que vai acontecer já.',
+          hint: 'Use “stare + gerundio” para o que está acontecendo e “stare per” para o que vai acontecer já.',
         },
         communityPrompt:
           'Escreva 3 frases sobre o que você e sua família estão fazendo agora (stare + gerundio) e uma sobre algo que está prestes a acontecer (stare per).',
@@ -664,10 +664,10 @@ export const UNITS_IT: UnitSeed[] = [
             'arriverò',
             'ecco',
           ],
-          hint: 'Responda no futuro («farò scalo a…», «arriverò…») e com educação.',
+          hint: 'Responda no futuro (“farò scalo a…”, “arriverò…”) e com educação.',
         },
         communityPrompt:
-          'Grave-se pedindo ajuda no aeroporto com o condizionale («vorrei», «potrebbe», «mi saprebbe dire…») e dizendo a que horas o voo vai decolar.',
+          'Grave-se pedindo ajuda no aeroporto com o condizionale (“vorrei”, “potrebbe”, “mi saprebbe dire…”) e dizendo a que horas o voo vai decolar.',
       },
       {
         id: 'it-u6-p',
@@ -685,10 +685,10 @@ export const UNITS_IT: UnitSeed[] = [
             'mi piacerebbe',
             'vorrei',
           ],
-          hint: 'Misture o futuro (andrò, viaggerò) com o condizionale (mi piacerebbe, vorrei). Lembre: «salire» é subir.',
+          hint: 'Misture o futuro (andrò, viaggerò) com o condizionale (mi piacerebbe, vorrei). Lembre: “salire” é subir.',
         },
         communityPrompt:
-          'Escreva 5 frases sobre uma viagem pela Itália: o roteiro no futuro, uma suposição com o futuro de probabilidade («sarà…»), um pedido educado no condizionale, uma ação em andamento (stare + gerundio) e uma prestes a acontecer (stare per).',
+          'Escreva 5 frases sobre uma viagem pela Itália: o roteiro no futuro, uma suposição com o futuro de probabilidade (“sarà…”), um pedido educado no condizionale, uma ação em andamento (stare + gerundio) e uma prestes a acontecer (stare per).',
       },
     ],
   },
@@ -703,11 +703,11 @@ export const UNITS_IT: UnitSeed[] = [
       title: 'Da Escola de Salerno ao médico de família',
       emoji: '⚕️',
       history:
-        'A Escola Médica Salernitana, em Salerno (Campânia), é considerada a primeira escola de medicina da Europa medieval: já funcionava por volta do século X e reunia saberes gregos, latinos, árabes e judaicos. Em 1377, Ragusa (hoje Dubrovnik, na Dalmácia) impôs um isolamento de 30 dias aos navios suspeitos de trazer a peste; Veneza depois o estendeu para quaranta giorni, quarenta dias, e daí vem a palavra «quarentena». Em 1978 nasceu o Servizio Sanitario Nazionale, o sistema público e universal de saúde da Itália. Cada residente escolhe um «medico di famiglia», a porta de entrada do sistema.',
+        'A Escola Médica Salernitana, em Salerno (Campânia), é considerada a primeira escola de medicina da Europa medieval: já funcionava por volta do século X e reunia saberes gregos, latinos, árabes e judaicos. Em 1377, Ragusa (hoje Dubrovnik, na Dalmácia) impôs um isolamento de 30 dias aos navios suspeitos de trazer a peste; Veneza depois o estendeu para quaranta giorni, quarenta dias, e daí vem a palavra “quarentena”. Em 1978 nasceu o Servizio Sanitario Nazionale, o sistema público e universal de saúde da Itália. Cada residente escolhe um “medico di famiglia”, a porta de entrada do sistema.',
       culture_tip:
-        'Na Itália, a farmácia é indicada por uma cruz verde e o farmacista costuma dar bons conselhos para males leves; antibióticos só são vendidos com receita (ricetta). À noite e nos feriados, quando o médico de família não atende, procura-se a guardia medica; em emergência, o pronto soccorso. Quando alguém espirra, diz-se «Salute!». E cuidado com dois falsos amigos: «palestra» é academia e «influenza» é gripe.',
+        'Na Itália, a farmácia é indicada por uma cruz verde e o farmacista costuma dar bons conselhos para males leves; antibióticos só são vendidos com receita (ricetta). À noite e nos feriados, quando o médico de família não atende, procura-se a guardia medica; em emergência, o pronto soccorso. Quando alguém espirra, diz-se “Salute!”. E cuidado com dois falsos amigos: “palestra” é academia e “influenza” é gripe.',
       grammar_why:
-        'O congiuntivo é o nosso subjuntivo, mas o italiano o usa em mais lugares. A grande diferença: depois de verbos de opinião, o português usa o indicativo («acho que ele está doente»), e o italiano, o congiuntivo: «penso che sia malato», «credo che abbia la febbre». Nas vontades e nos sentimentos os dois idiomas concordam: «voglio che tu vada dal medico» (quero que você vá), «spero che guarisca presto» (espero que ele sare logo). Também pedem congiuntivo «benché» (embora), «prima che» (antes que) e «affinché» (para que). O congiuntivo passato (abbia/sia + particípio) fala do passado: «spero che tu abbia dormito bene» (espero que você tenha dormido bem).',
+        'O congiuntivo é o nosso subjuntivo, mas o italiano o usa em mais lugares. A grande diferença: depois de verbos de opinião, o português usa o indicativo (“acho que ele está doente”), e o italiano, o congiuntivo: “penso che sia malato”, “credo che abbia la febbre”. Nas vontades e nos sentimentos os dois idiomas concordam: “voglio che tu vada dal medico” (quero que você vá), “spero che guarisca presto” (espero que ele sare logo). Também pedem congiuntivo “benché” (embora), “prima che” (antes que) e “affinché” (para que). O congiuntivo passato (abbia/sia + particípio) fala do passado: “spero che tu abbia dormito bene” (espero que você tenha dormido bem).',
       grammar_examples: [
         ['Penso che sia solo un raffreddore.', 'Acho que é só um resfriado.'],
         ['Il medico vuole che io prenda lo sciroppo tre volte al giorno.', 'O médico quer que eu tome o xarope três vezes por dia.'],
@@ -752,9 +752,9 @@ export const UNITS_IT: UnitSeed[] = [
             'penso che sia',
             'febbre',
           ],
-          hint: 'Descreva os sintomas com «ho…» e dê sua opinião com «penso che sia…» (congiuntivo!).',
+          hint: 'Descreva os sintomas com “ho…” e dê sua opinião com “penso che sia…” (congiuntivo!).',
         },
-        communityPrompt: 'Escreva 3 frases sobre um amigo doente com «penso che…», «credo che…» e «spero che…» + congiuntivo.',
+        communityPrompt: 'Escreva 3 frases sobre um amigo doente com “penso che…”, “credo che…” e “spero che…” + congiuntivo.',
       },
       {
         id: 'it-u7-l2',
@@ -790,9 +790,9 @@ export const UNITS_IT: UnitSeed[] = [
             'vuole che',
             'sciroppo',
           ],
-          hint: 'Explique com «il medico vuole che…» + congiuntivo e peça algo com educação.',
+          hint: 'Explique com “il medico vuole che…” + congiuntivo e peça algo com educação.',
         },
-        communityPrompt: 'Escreva 3 conselhos de farmacêutico com «è importante che…», «è meglio che…» e «affinché…».',
+        communityPrompt: 'Escreva 3 conselhos de farmacêutico com “è importante che…”, “è meglio che…” e “affinché…”.',
       },
       {
         id: 'it-u7-l3',
@@ -828,10 +828,10 @@ export const UNITS_IT: UnitSeed[] = [
             'è meglio che',
             'ti riposi',
           ],
-          hint: 'Aconselhe com «penso che tu debba…» e «è meglio che tu…» + congiuntivo.',
+          hint: 'Aconselhe com “penso che tu debba…” e “è meglio che tu…” + congiuntivo.',
         },
         communityPrompt:
-          'Grave-se dando três conselhos de saúde a um amigo com «è meglio che», «bisogna che» e «prima che» + congiuntivo.',
+          'Grave-se dando três conselhos de saúde a um amigo com “è meglio che”, “bisogna che” e “prima che” + congiuntivo.',
       },
       {
         id: 'it-u7-p',
@@ -849,7 +849,7 @@ export const UNITS_IT: UnitSeed[] = [
             'voglio che',
             'ti riposi',
           ],
-          hint: 'Use o congiuntivo passato («spero che non sia stato niente di grave») e o presente («voglio che tu mi chiami»).',
+          hint: 'Use o congiuntivo passato (“spero che non sia stato niente di grave”) e o presente (“voglio che tu mi chiami”).',
         },
         communityPrompt:
           'Escreva 5 frases para um amigo doente: uma opinião (penso che), um desejo (spero che), um pedido (voglio che), uma concessão (benché) e uma frase com o congiuntivo passato.',
@@ -869,9 +869,9 @@ export const UNITS_IT: UnitSeed[] = [
       history:
         'Entre o fim do século XIX e o começo do XX, mais de um milhão de italianos emigraram para o Brasil, fugindo da pobreza no campo. A partir de 1875, famílias vindas sobretudo do Vêneto, da Lombardia e do Trentino ocuparam as colônias da Serra Gaúcha, onde nasceram cidades como Caxias do Sul e Bento Gonçalves, e plantaram uva para fazer vinho. Em São Paulo, muitos imigrantes passaram pela Hospedaria dos Imigrantes, no Brás, antes de seguir para as fazendas de café. Da mistura dos dialetos vênetos com o português nasceu o talian, reconhecido em 2014 como referência cultural brasileira.',
       culture_tip:
-        'Nas colônias, os imigrantes mantiveram o «filò», o serão das noites de inverno em que as famílias se reuniam para conversar, rezar, cantar e contar histórias, um costume trazido do Vêneto. Quem procura os antepassados costuma começar pelos registros da paróquia e pelo «comune» (a prefeitura) da cidade de origem. E atenção ao sobrenome: muitos foram escritos errado na chegada, por isso vale conferir as variações.',
+        'Nas colônias, os imigrantes mantiveram o “filò”, o serão das noites de inverno em que as famílias se reuniam para conversar, rezar, cantar e contar histórias, um costume trazido do Vêneto. Quem procura os antepassados costuma começar pelos registros da paróquia e pelo “comune” (a prefeitura) da cidade de origem. E atenção ao sobrenome: muitos foram escritos errado na chegada, por isso vale conferir as variações.',
       grammar_why:
-        'Para contar histórias, o trapassato prossimo (avere/essere no imperfetto + particípio) corresponde ao nosso «tinha feito»: «quando arrivarono, avevano già venduto tutto». Os relativos: «che» (que), «cui» depois de preposição («la nave su cui viaggiarono» = o navio em que viajaram), «il quale / la quale» nos textos formais e «chi» = quem, aquele que («chi emigrava perdeva tutto»). No discurso indireto, o futuro visto do passado vira condizionale PASSATO: «disse che sarebbe tornato», onde o português diz «voltaria»; «disse che tornerebbe» é um erro típico de brasileiro. Nos livros de história e na fala de parte do Sul, o passato remoto (partì, arrivarono, ebbe, fu) é o tempo da narração: por ora basta reconhecê-lo, pois equivale ao nosso pretérito perfeito.',
+        'Para contar histórias, o trapassato prossimo (avere/essere no imperfetto + particípio) corresponde ao nosso “tinha feito”: “quando arrivarono, avevano già venduto tutto”. Os relativos: “che” (que), “cui” depois de preposição (“la nave su cui viaggiarono” = o navio em que viajaram), “il quale / la quale” nos textos formais e “chi” = quem, aquele que (“chi emigrava perdeva tutto”). No discurso indireto, o futuro visto do passado vira condizionale PASSATO: “disse che sarebbe tornato”, onde o português diz “voltaria”; “disse che tornerebbe” é um erro típico de brasileiro. Nos livros de história e na fala de parte do Sul, o passato remoto (partì, arrivarono, ebbe, fu) é o tempo da narração: por ora basta reconhecê-lo, pois equivale ao nosso pretérito perfeito.',
       grammar_examples: [
         ['Quando arrivarono a Caxias, avevano già viaggiato per un mese.', 'Quando chegaram a Caxias, já tinham viajado por um mês.'],
         ['Questa è la nave su cui è partito mio bisnonno.', 'Este é o navio em que meu bisavô partiu.'],
@@ -915,10 +915,10 @@ export const UNITS_IT: UnitSeed[] = [
             'aveva perso',
             'era rimasto',
           ],
-          hint: 'Explique com o imperfetto e o trapassato prossimo («aveva perso», «era rimasto senza…»). A pergunta vem no passato remoto: «lasciò» = deixou.',
+          hint: 'Explique com o imperfetto e o trapassato prossimo (“aveva perso”, “era rimasto senza…”). A pergunta vem no passato remoto: “lasciò” = deixou.',
         },
         communityPrompt:
-          'Escreva 3 frases sobre a viagem de um antepassado (real ou inventado) usando o trapassato prossimo e um relativo com «cui».',
+          'Escreva 3 frases sobre a viagem de um antepassado (real ou inventado) usando o trapassato prossimo e um relativo com “cui”.',
       },
       {
         id: 'it-u8-l2',
@@ -955,10 +955,10 @@ export const UNITS_IT: UnitSeed[] = [
             'polenta',
             'dialetto',
           ],
-          hint: 'Relate com «mi raccontava che…» ou «mi diceva che…» e use o imperfetto.',
+          hint: 'Relate com “mi raccontava che…” ou “mi diceva che…” e use o imperfetto.',
         },
         communityPrompt:
-          'Escreva 3 frases em discurso indireto sobre o que um parente mais velho te contou («mi ha detto che…», «mi raccontava che…»).',
+          'Escreva 3 frases em discurso indireto sobre o que um parente mais velho te contou (“mi ha detto che…”, “mi raccontava che…”).',
       },
       {
         id: 'it-u8-l3',
@@ -995,10 +995,10 @@ export const UNITS_IT: UnitSeed[] = [
             'cittadinanza',
             'vorrei',
           ],
-          hint: 'Explique com um relativo («che era nato a…») e o trapassato; faça o pedido com «vorrei».',
+          hint: 'Explique com um relativo (“che era nato a…”) e o trapassato; faça o pedido com “vorrei”.',
         },
         communityPrompt:
-          'Grave-se contando a história de alguém que emigrou: use o trapassato prossimo, um relativo (che, cui ou chi) e uma frase em discurso indireto («disse che sarebbe…»).',
+          'Grave-se contando a história de alguém que emigrou: use o trapassato prossimo, um relativo (che, cui ou chi) e uma frase em discurso indireto (“disse che sarebbe…”).',
       },
       {
         id: 'it-u8-p',
@@ -1016,7 +1016,7 @@ export const UNITS_IT: UnitSeed[] = [
             'mi ha detto che',
             'sarebbero',
           ],
-          hint: 'Use um relativo, o trapassato prossimo («avevano sofferto») e o discurso indireto com condizionale passato («che non sarebbero tornati»).',
+          hint: 'Use um relativo, o trapassato prossimo (“avevano sofferto”) e o discurso indireto com condizionale passato (“che non sarebbero tornati”).',
         },
         communityPrompt:
           'Escreva um parágrafo de 5 frases sobre uma família de imigrantes: um fato no passato remoto (como nos livros), o trapassato prossimo, dois relativos (che e cui) e uma frase em discurso indireto.',
@@ -1034,11 +1034,11 @@ export const UNITS_IT: UnitSeed[] = [
       title: 'Vulcões, geleiras e a água alta de Veneza',
       emoji: '🌊',
       history:
-        'A Itália tem vulcões ativos famosos: o Vesúvio, cuja erupção de 79 d.C. soterrou Pompeia e Herculano, e o Etna, na Sicília, o vulcão ativo mais alto da Europa fora do Cáucaso. Em 4 de novembro de 1966, uma enchente do Arno inundou Florença, e milhares de voluntários, os «angeli del fango» (anjos da lama), salvaram livros e obras de arte; no mesmo dia, Veneza sofreu uma das piores «acque alte» da sua história. Para proteger a lagoa foi construído o MOSE, um sistema de comportas móveis que se ergueu pela primeira vez em outubro de 2020. Nos Alpes, as geleiras vêm encolhendo depressa com o aquecimento global.',
+        'A Itália tem vulcões ativos famosos: o Vesúvio, cuja erupção de 79 d.C. soterrou Pompeia e Herculano, e o Etna, na Sicília, o vulcão ativo mais alto da Europa fora do Cáucaso. Em 4 de novembro de 1966, uma enchente do Arno inundou Florença, e milhares de voluntários, os “angeli del fango” (anjos da lama), salvaram livros e obras de arte; no mesmo dia, Veneza sofreu uma das piores “acque alte” da sua história. Para proteger a lagoa foi construído o MOSE, um sistema de comportas móveis que se ergueu pela primeira vez em outubro de 2020. Nos Alpes, as geleiras vêm encolhendo depressa com o aquecimento global.',
       culture_tip:
         'Na Itália, a coleta seletiva (raccolta differenziata) é levada a sério: cada comune tem suas regras e seu calendário, e muitas vezes o lixo orgânico, o papel, o plástico e o vidro saem em dias diferentes. Em Veneza, quando a água alta chega, sirenes avisam e passarelas elevadas são montadas nas ruas mais baixas: basta seguir por elas. Nas trilhas das montanhas, o lixo que você leva na mochila volta com você.',
       grammar_why:
-        'O período hipotético do italiano funciona como o nosso: «se avessi tempo, salirei sull’Etna» = se eu tivesse tempo, subiria o Etna (congiuntivo imperfetto + condizionale presente). O erro clássico é pôr o condizionale depois do «se»: «se avrei» está errado, sempre. Para o passado que não aconteceu, congiuntivo trapassato + condizionale passato: «se fossimo partiti prima, avremmo visto l’eruzione» (se tivéssemos partido antes, teríamos visto a erupção). O congiuntivo imperfetto também vem depois de verbo no passado ou no condizionale: «vorrei che tu venissi» (eu queria que você viesse). E uma diferença importante: o italiano não tem futuro do subjuntivo, então «se eu tiver tempo» vira «se ho tempo» ou «se avrò tempo».',
+        'O período hipotético do italiano funciona como o nosso: “se avessi tempo, salirei sull’Etna” = se eu tivesse tempo, subiria o Etna (congiuntivo imperfetto + condizionale presente). O erro clássico é pôr o condizionale depois do “se”: “se avrei” está errado, sempre. Para o passado que não aconteceu, congiuntivo trapassato + condizionale passato: “se fossimo partiti prima, avremmo visto l’eruzione” (se tivéssemos partido antes, teríamos visto a erupção). O congiuntivo imperfetto também vem depois de verbo no passado ou no condizionale: “vorrei che tu venissi” (eu queria que você viesse). E uma diferença importante: o italiano não tem futuro do subjuntivo, então “se eu tiver tempo” vira “se ho tempo” ou “se avrò tempo”.',
       grammar_examples: [
         ['Se avessi più tempo, salirei sull’Etna.', 'Se eu tivesse mais tempo, subiria o Etna.'],
         ['Se fossimo partiti prima, avremmo visto l’eruzione.', 'Se tivéssemos partido antes, teríamos visto a erupção.'],
@@ -1082,10 +1082,10 @@ export const UNITS_IT: UnitSeed[] = [
             'visiterei',
             'vorrei',
           ],
-          hint: 'Responda com «se + congiuntivo imperfetto» e o condizionale: «Se potessi, visiterei…».',
+          hint: 'Responda com “se + congiuntivo imperfetto” e o condizionale: “Se potessi, visiterei…”.',
         },
         communityPrompt:
-          'Escreva 3 frases hipotéticas sobre a natureza: «Se vivessi vicino a un vulcano…», «Se fossi una guida di montagna…», «Se avessi un mese libero…».',
+          'Escreva 3 frases hipotéticas sobre a natureza: “Se vivessi vicino a un vulcano…”, “Se fossi una guida di montagna…”, “Se avessi un mese libero…”.',
       },
       {
         id: 'it-u9-l2',
@@ -1122,10 +1122,10 @@ export const UNITS_IT: UnitSeed[] = [
             'farei',
             'limiterei',
           ],
-          hint: 'Comece com «Se fossi il sindaco…» e continue no condizionale presente.',
+          hint: 'Comece com “Se fossi il sindaco…” e continue no condizionale presente.',
         },
         communityPrompt:
-          'Escreva 3 frases sobre o clima: uma hipótese no presente (se + congiuntivo imperfetto), uma no passado (se + congiuntivo trapassato + condizionale passato) e um desejo com «vorrei che…».',
+          'Escreva 3 frases sobre o clima: uma hipótese no presente (se + congiuntivo imperfetto), uma no passado (se + congiuntivo trapassato + condizionale passato) e um desejo com “vorrei che…”.',
       },
       {
         id: 'it-u9-l3',
@@ -1161,7 +1161,7 @@ export const UNITS_IT: UnitSeed[] = [
             'ci sarebbero',
             'sprecheremmo',
           ],
-          hint: 'Use «se + congiuntivo imperfetto» e o condizionale: «ci sarebbero…», «sprecheremmo…».',
+          hint: 'Use “se + congiuntivo imperfetto” e o condizionale: “ci sarebbero…”, “sprecheremmo…”.',
         },
         communityPrompt:
           'Grave-se explicando o que você faria para viver de forma mais sustentável se tivesse mais tempo ou dinheiro, e uma coisa que teria feito diferente no passado.',
@@ -1185,7 +1185,7 @@ export const UNITS_IT: UnitSeed[] = [
           hint: 'Passado: se + congiuntivo trapassato + condizionale passato. Presente: se + congiuntivo imperfetto + condizionale presente.',
         },
         communityPrompt:
-          'Escreva 5 frases sobre natureza e meio ambiente: duas hipóteses no presente, uma no passado, uma mista («se avessi… oggi sarei…») e um desejo com «vorrei che…».',
+          'Escreva 5 frases sobre natureza e meio ambiente: duas hipóteses no presente, uma no passado, uma mista (“se avessi… oggi sarei…”) e um desejo com “vorrei che…”.',
       },
     ],
   },
@@ -1200,11 +1200,11 @@ export const UNITS_IT: UnitSeed[] = [
       title: 'Uma república fundada no trabalho',
       emoji: '💼',
       history:
-        'O artigo 1 da Constituição italiana, em vigor desde 1º de janeiro de 1948, diz: «L’Italia è una Repubblica democratica, fondata sul lavoro». Muitos produtos típicos nascem em distritos de tradição secular: em 1291, a República de Veneza transferiu os fornos de vidro para a ilha de Murano, por medo de incêndios na cidade; o mármore de Carrara, na Toscana, é extraído desde a época romana; e Como, na Lombardia, é há séculos um centro da seda. Hoje as pequenas e médias empresas, muitas delas familiares, são a espinha dorsal da economia italiana.',
+        'O artigo 1 da Constituição italiana, em vigor desde 1º de janeiro de 1948, diz: “L’Italia è una Repubblica democratica, fondata sul lavoro”. Muitos produtos típicos nascem em distritos de tradição secular: em 1291, a República de Veneza transferiu os fornos de vidro para a ilha de Murano, por medo de incêndios na cidade; o mármore de Carrara, na Toscana, é extraído desde a época romana; e Como, na Lombardia, é há séculos um centro da seda. Hoje as pequenas e médias empresas, muitas delas familiares, são a espinha dorsal da economia italiana.',
       culture_tip:
-        'Num e-mail formal, abre-se com «Gentile dottoressa Rossi» ou «Egregio signor Bianchi» e fecha-se com «Cordiali saluti» ou «Distinti saluti», sempre tratando a pessoa por Lei, muitas vezes com maiúscula nos textos mais formais («La ringrazio»). Na Itália, «dottore/dottoressa» é o título de qualquer pessoa formada na universidade, não só de médicos, e se usa bastante no trabalho. Numa entrevista de emprego, comece pelo Lei e espere que o outro proponha o tu.',
+        'Num e-mail formal, abre-se com “Gentile dottoressa Rossi” ou “Egregio signor Bianchi” e fecha-se com “Cordiali saluti” ou “Distinti saluti”, sempre tratando a pessoa por Lei, muitas vezes com maiúscula nos textos mais formais (“La ringrazio”). Na Itália, “dottore/dottoressa” é o título de qualquer pessoa formada na universidade, não só de médicos, e se usa bastante no trabalho. Numa entrevista de emprego, comece pelo Lei e espere que o outro proponha o tu.',
       grammar_why:
-        'A passiva com «essere» existe como no português («il vetro è prodotto a Murano»), mas o italiano tem mais duas: com «venire», que destaca a ação e só se usa nos tempos simples («il marmo viene estratto a Carrara»; no passado composto, só «è stato estratto»), e com «andare», que indica obrigação («il modulo va firmato» = o formulário deve ser assinado). O «si passivante» concorda com o objeto, como no português escrito («si vendono case» = vendem-se casas), e o italiano respeita essa concordância também na fala: nada de «si vende case». O «si impersonale» equivale ao nosso «a gente» ou ao sujeito indeterminado: «in Italia si lavora molto»; com verbo reflexivo vira «ci si»: «ci si alza presto». E o registro formal pede Lei, o condizionale de cortesia e fórmulas fixas.',
+        'A passiva com “essere” existe como no português (“il vetro è prodotto a Murano”), mas o italiano tem mais duas: com “venire”, que destaca a ação e só se usa nos tempos simples (“il marmo viene estratto a Carrara”; no passado composto, só “è stato estratto”), e com “andare”, que indica obrigação (“il modulo va firmato” = o formulário deve ser assinado). O “si passivante” concorda com o objeto, como no português escrito (“si vendono case” = vendem-se casas), e o italiano respeita essa concordância também na fala: nada de “si vende case”. O “si impersonale” equivale ao nosso “a gente” ou ao sujeito indeterminado: “in Italia si lavora molto”; com verbo reflexivo vira “ci si”: “ci si alza presto”. E o registro formal pede Lei, o condizionale de cortesia e fórmulas fixas.',
       grammar_examples: [
         ['Il vetro viene lavorato a Murano da secoli.', 'O vidro é trabalhado em Murano há séculos.'],
         ['Il modulo va compilato e firmato entro venerdì.', 'O formulário deve ser preenchido e assinado até sexta.'],
@@ -1249,7 +1249,7 @@ export const UNITS_IT: UnitSeed[] = [
             'viene prodotto',
             'viene coltivato',
           ],
-          hint: 'Use o «si passivante» (si produce / si producono) e a passiva com «venire».',
+          hint: 'Use o “si passivante” (si produce / si producono) e a passiva com “venire”.',
         },
         communityPrompt:
           'Escreva 3 frases sobre um produto da sua cidade ou região: como ele é feito (venire + particípio), onde se vende (si passivante) e o que deve ser feito (andare + particípio).',
@@ -1288,10 +1288,10 @@ export const UNITS_IT: UnitSeed[] = [
             'firmato',
             'glielo invio',
           ],
-          hint: 'Responda com a passiva no passado («è stato firmato») e com o Lei («glielo invio» = envio-o ao senhor).',
+          hint: 'Responda com a passiva no passado (“è stato firmato”) e com o Lei (“glielo invio” = envio-o ao senhor).',
         },
         communityPrompt:
-          'Escreva um e-mail formal curto (4 frases) para uma empresa italiana: saudação (Gentile…), um documento enviado em anexo, algo que «va firmato» e a despedida (Cordiali saluti).',
+          'Escreva um e-mail formal curto (4 frases) para uma empresa italiana: saudação (Gentile…), um documento enviado em anexo, algo que “va firmato” e a despedida (Cordiali saluti).',
       },
       {
         id: 'it-u10-l3',
@@ -1328,10 +1328,10 @@ export const UNITS_IT: UnitSeed[] = [
             'sono stato assunto',
             'esperienza',
           ],
-          hint: 'Fale de você com a passiva («sono stato/a assunto/a») e mantenha o registro formal. Lembre: «assumere» é contratar.',
+          hint: 'Fale de você com a passiva (“sono stato/a assunto/a”) e mantenha o registro formal. Lembre: “assumere” é contratar.',
         },
         communityPrompt:
-          'Grave-se numa entrevista de emprego: apresente-se em registro formal, conte uma coisa que «è stata fatta» por você e pergunte educadamente como il candidato «verrà scelto».',
+          'Grave-se numa entrevista de emprego: apresente-se em registro formal, conte uma coisa que “è stata fatta” por você e pergunte educadamente como il candidato “verrà scelto”.',
       },
       {
         id: 'it-u10-p',
@@ -1352,7 +1352,7 @@ export const UNITS_IT: UnitSeed[] = [
           hint: 'Junte as passivas com essere, venire e andare, o si impersonale e o registro formal.',
         },
         communityPrompt:
-          'Escreva uma carta formal de 5 frases candidatando-se a uma vaga na Itália: saudação e despedida formais, uma passiva com venire, uma com andare («il curriculum va…»), um si impersonale ou passivante e um pedido no condizionale de cortesia.',
+          'Escreva uma carta formal de 5 frases candidatando-se a uma vaga na Itália: saudação e despedida formais, uma passiva com venire, uma com andare (“il curriculum va…”), um si impersonale ou passivante e um pedido no condizionale de cortesia.',
       },
     ],
   },
@@ -1367,11 +1367,11 @@ export const UNITS_IT: UnitSeed[] = [
       title: 'In bocca al lupo!',
       emoji: '🐺',
       history:
-        'A Accademia della Crusca, fundada em Florença em 1583, é uma das academias linguísticas mais antigas da Europa e publicou a primeira edição do seu Vocabolario em 1612. O nome vem de «crusca», o farelo: a ideia era separar a boa farinha da língua do farelo, e por isso o símbolo da academia é uma peneira. Boa parte das expressões idiomáticas italianas nasce da comida e da vida no campo: «tutto fumo e niente arrosto» (muita fumaça e nenhum assado) é quem promete muito e entrega pouco, e «essere una buona forchetta» (ser um bom garfo) é gostar de comer. Outras vêm do dinheiro, sempre curto: «essere al verde» é estar sem um tostão.',
+        'A Accademia della Crusca, fundada em Florença em 1583, é uma das academias linguísticas mais antigas da Europa e publicou a primeira edição do seu Vocabolario em 1612. O nome vem de “crusca”, o farelo: a ideia era separar a boa farinha da língua do farelo, e por isso o símbolo da academia é uma peneira. Boa parte das expressões idiomáticas italianas nasce da comida e da vida no campo: “tutto fumo e niente arrosto” (muita fumaça e nenhum assado) é quem promete muito e entrega pouco, e “essere una buona forchetta” (ser um bom garfo) é gostar de comer. Outras vêm do dinheiro, sempre curto: “essere al verde” é estar sem um tostão.',
       culture_tip:
-        '«In bocca al lupo» (na boca do lobo) é o jeito italiano de desejar boa sorte antes de uma prova ou de uma entrevista, e a resposta tradicional é «crepi!» (que o lobo morra), não «grazie». Cuidado com as expressões que parecem transparentes: «prendere in giro» é zoar alguém, e «cadere dalle nuvole» é ficar pasmo com uma notícia que todo mundo já sabia. Usar uma expressão no momento certo agrada muito; exagerar nelas soa artificial.',
+        '“In bocca al lupo” (na boca do lobo) é o jeito italiano de desejar boa sorte antes de uma prova ou de uma entrevista, e a resposta tradicional é “crepi!” (que o lobo morra), não “grazie”. Cuidado com as expressões que parecem transparentes: “prendere in giro” é zoar alguém, e “cadere dalle nuvole” é ficar pasmo com uma notícia que todo mundo já sabia. Usar uma expressão no momento certo agrada muito; exagerar nelas soa artificial.',
       grammar_why:
-        'Os verbos pronominais juntam ao infinitivo partículas que mudam o sentido: farcela (conseguir, dar conta), cavarsela (se virar), andarsene (ir embora), prendersela (ficar chateado, levar para o lado pessoal), metterci (levar tempo). Conjugados, as partículas vão para antes do verbo: ce la faccio, me la cavo, me ne vado, te la prendi, ci metto un’ora. No passato prossimo, farcela e metterci usam avere, cavarsela, andarsene e prendersela usam essere, e o particípio concorda com o «la»: ce l’ho fatta, me la sono cavata, se l’è presa. O gerundio e o participio assoluti resumem uma oração inteira, como no português culto: «Finita la cena» (terminado o jantar), «Essendo tardi» (como era tarde). No particípio absoluto a concordância é com o objeto: «Finita la cena», «Finiti i compiti».',
+        'Os verbos pronominais juntam ao infinitivo partículas que mudam o sentido: farcela (conseguir, dar conta), cavarsela (se virar), andarsene (ir embora), prendersela (ficar chateado, levar para o lado pessoal), metterci (levar tempo). Conjugados, as partículas vão para antes do verbo: ce la faccio, me la cavo, me ne vado, te la prendi, ci metto un’ora. No passato prossimo, farcela e metterci usam avere, cavarsela, andarsene e prendersela usam essere, e o particípio concorda com o “la”: ce l’ho fatta, me la sono cavata, se l’è presa. O gerundio e o participio assoluti resumem uma oração inteira, como no português culto: “Finita la cena” (terminado o jantar), “Essendo tardi” (como era tarde). No particípio absoluto a concordância é com o objeto: “Finita la cena”, “Finiti i compiti”.',
       grammar_examples: [
         ['Non ce la faccio più: me ne vado.', 'Não aguento mais: vou embora.'],
         ['Se l’è presa perché nessuno l’ha invitata.', 'Ela ficou chateada porque ninguém a convidou.'],
@@ -1415,9 +1415,9 @@ export const UNITS_IT: UnitSeed[] = [
             'me la prendo',
             'me ne lamento',
           ],
-          hint: 'Responda com «ci metto» + tempo e use «me la prendo» para dizer que fica irritado.',
+          hint: 'Responda com “ci metto” + tempo e use “me la prendo” para dizer que fica irritado.',
         },
-        communityPrompt: 'Conte, em 3 ou 4 frases, uma situação difícil de que você deu conta, usando «ce l’ho fatta», «me la sono cavata» e «me ne sono andato/a».',
+        communityPrompt: 'Conte, em 3 ou 4 frases, uma situação difícil de que você deu conta, usando “ce l’ho fatta”, “me la sono cavata” e “me ne sono andato/a”.',
       },
       {
         id: 'it-u11-l2',
@@ -1453,9 +1453,9 @@ export const UNITS_IT: UnitSeed[] = [
             'speriamo',
             'al verde',
           ],
-          hint: 'Responda com «crepi!» (nunca «grazie») e diga que está sem dinheiro com «essere al verde».',
+          hint: 'Responda com “crepi!” (nunca “grazie”) e diga que está sem dinheiro com “essere al verde”.',
         },
-        communityPrompt: 'Descreva em 3 frases um amigo que «ha le mani bucate», com pelo menos um gerundio assoluto («Avendo…», «Essendo…»).',
+        communityPrompt: 'Descreva em 3 frases um amigo que “ha le mani bucate”, com pelo menos um gerundio assoluto (“Avendo…”, “Essendo…”).',
       },
       {
         id: 'it-u11-l3',
@@ -1491,9 +1491,9 @@ export const UNITS_IT: UnitSeed[] = [
             'l’idea mi piace',
             'figuraccia',
           ],
-          hint: 'Comece com o particípio absoluto «Detto sinceramente» e avise do risco de «fare una figuraccia».',
+          hint: 'Comece com o particípio absoluto “Detto sinceramente” e avise do risco de “fare una figuraccia”.',
         },
-        communityPrompt: 'Escreva um mini-diálogo em que alguém «cade dalle nuvole» ao descobrir um segredo, com duas expressões desta lição e um particípio absoluto («Scoperta la verità…»).',
+        communityPrompt: 'Escreva um mini-diálogo em que alguém “cade dalle nuvole” ao descobrir um segredo, com duas expressões desta lição e um particípio absoluto (“Scoperta la verità…”).',
       },
       {
         id: 'it-u11-p',
@@ -1510,7 +1510,7 @@ export const UNITS_IT: UnitSeed[] = [
             'me la sono cavata',
             'me ne sono andato',
           ],
-          hint: 'Abra com um particípio absoluto («Arrivato…») e use «me la sono cavata» e «me ne sono andato/a».',
+          hint: 'Abra com um particípio absoluto (“Arrivato…”) e use “me la sono cavata” e “me ne sono andato/a”.',
         },
         communityPrompt: 'Escreva uma crônica de 5 ou 6 frases sobre um dia em que tudo deu errado, com pelo menos três verbos pronominais no passato prossimo (farcela, cavarsela, andarsene, prendersela), um gerundio ou participio assoluto e duas expressões idiomáticas.',
       },
@@ -1527,11 +1527,11 @@ export const UNITS_IT: UnitSeed[] = [
       title: 'Veneza contra a maré',
       emoji: '🛶',
       history:
-        'Veneza foi construída sobre mais de cem ilhas numa laguna do mar Adriático, e as marés altas de outono e inverno, a «acqua alta», inundam a cidade há séculos. Em 4 de novembro de 1966 a água chegou a 194 centímetros acima do nível de referência, o recorde registrado; em novembro de 2019 chegou a 187. Para defender a cidade construiu-se o MOSE, um sistema de comportas móveis nas três bocas que ligam a laguna ao mar, acionado pela primeira vez em outubro de 2020. Custos, turismo e proteção do ambiente seguem no centro do debate público.',
+        'Veneza foi construída sobre mais de cem ilhas numa laguna do mar Adriático, e as marés altas de outono e inverno, a “acqua alta”, inundam a cidade há séculos. Em 4 de novembro de 1966 a água chegou a 194 centímetros acima do nível de referência, o recorde registrado; em novembro de 2019 chegou a 187. Para defender a cidade construiu-se o MOSE, um sistema de comportas móveis nas três bocas que ligam a laguna ao mar, acionado pela primeira vez em outubro de 2020. Custos, turismo e proteção do ambiente seguem no centro do debate público.',
       culture_tip:
-        'Nos debates, os italianos costumam abrir com «secondo me», «a mio avviso» ou «personalmente credo che…», e marcam a concordância parcial com «hai ragione, però…». Na escrita formal, «tuttavia», «pertanto» e «inoltre» organizam o argumento; na conversa, «però» e «quindi» fazem o mesmo papel. Na vida prática, a separação do lixo (la raccolta differenziata) muda de município para município, e em muitos lugares o lixo é recolhido porta a porta em dias fixos.',
+        'Nos debates, os italianos costumam abrir com “secondo me”, “a mio avviso” ou “personalmente credo che…”, e marcam a concordância parcial com “hai ragione, però…”. Na escrita formal, “tuttavia”, “pertanto” e “inoltre” organizam o argumento; na conversa, “però” e “quindi” fazem o mesmo papel. Na vida prática, a separação do lixo (la raccolta differenziata) muda de município para município, e em muitos lugares o lixo é recolhido porta a porta em dias fixos.',
       grammar_why:
-        'Verbos de opinião e de dúvida (credo che, penso che, ritengo che, mi sembra che, non è vero che) pedem congiuntivo: «credo che sia», onde o português diz «acho que é». Alguns conectores também: sebbene e benché (embora), purché e a patto che (desde que); já tuttavia, pertanto e quindi pedem indicativo. A concordanza dei tempi liga os dois verbos: com a principal no presente, o congiuntivo fica no presente (credo che sia); com a principal no passado ou no condicional, passa ao imperfetto (credevo che fosse, vorrei che fosse). Se o fato é anterior, usa-se o passato ou o trapassato: credo che sia stato, credevo che fosse stato. No português dizemos «eu achava que era»; o italiano exige «credevo che fosse».',
+        'Verbos de opinião e de dúvida (credo che, penso che, ritengo che, mi sembra che, non è vero che) pedem congiuntivo: “credo che sia”, onde o português diz “acho que é”. Alguns conectores também: sebbene e benché (embora), purché e a patto che (desde que); já tuttavia, pertanto e quindi pedem indicativo. A concordanza dei tempi liga os dois verbos: com a principal no presente, o congiuntivo fica no presente (credo che sia); com a principal no passado ou no condicional, passa ao imperfetto (credevo che fosse, vorrei che fosse). Se o fato é anterior, usa-se o passato ou o trapassato: credo che sia stato, credevo che fosse stato. No português dizemos “eu achava que era”; o italiano exige “credevo che fosse”.',
       grammar_examples: [
         ['Credo che il turismo di massa sia un problema per Venezia.', 'Acho que o turismo de massa é um problema para Veneza.'],
         ['Pensavo che il MOSE fosse in funzione da molti anni.', 'Eu achava que o MOSE funcionava havia muitos anos.'],
@@ -1575,9 +1575,9 @@ export const UNITS_IT: UnitSeed[] = [
             'purché',
             'tuttavia',
           ],
-          hint: 'Dê a opinião com «credo che» + congiuntivo, ponha uma condição com «purché» e uma ressalva com «tuttavia».',
+          hint: 'Dê a opinião com “credo che” + congiuntivo, ponha uma condição com “purché” e uma ressalva com “tuttavia”.',
         },
-        communityPrompt: 'Dê sua opinião sobre uma tendência atual (trabalho remoto, redes sociais, carro elétrico) em 4 frases, usando «credo che», «sebbene» e «pertanto».',
+        communityPrompt: 'Dê sua opinião sobre uma tendência atual (trabalho remoto, redes sociais, carro elétrico) em 4 frases, usando “credo che”, “sebbene” e “pertanto”.',
       },
       {
         id: 'it-u12-l2',
@@ -1613,9 +1613,9 @@ export const UNITS_IT: UnitSeed[] = [
             'a patto che',
             'rifiuti',
           ],
-          hint: 'Use «penso che serva» e ponha uma condição com «a patto che» + congiuntivo.',
+          hint: 'Use “penso che serva” e ponha uma condição com “a patto che” + congiuntivo.',
         },
-        communityPrompt: 'Escreva uma carta curta ao prefeito da sua cidade, tratando-o por «Lei», propondo uma medida sustentável, com «vorrei che» + congiuntivo imperfetto e «purché».',
+        communityPrompt: 'Escreva uma carta curta ao prefeito da sua cidade, tratando-o por “Lei”, propondo uma medida sustentável, com “vorrei che” + congiuntivo imperfetto e “purché”.',
       },
       {
         id: 'it-u12-l3',
@@ -1651,9 +1651,9 @@ export const UNITS_IT: UnitSeed[] = [
             'sebbene',
             'tuttavia',
           ],
-          hint: 'Opine com «penso che sia», reconheça o outro lado com «sebbene» + congiuntivo e conclua com «tuttavia».',
+          hint: 'Opine com “penso che sia”, reconheça o outro lado com “sebbene” + congiuntivo e conclua com “tuttavia”.',
         },
-        communityPrompt: 'Em 4 frases, com concordanza dei tempi, conte o que você pensava de Veneza antes de conhecer o problema da acqua alta e o que pensa agora («Pensavo che… Ora credo che…»).',
+        communityPrompt: 'Em 4 frases, com concordanza dei tempi, conte o que você pensava de Veneza antes de conhecer o problema da acqua alta e o que pensa agora (“Pensavo che… Ora credo che…”).',
       },
       {
         id: 'it-u12-p',
@@ -1671,9 +1671,9 @@ export const UNITS_IT: UnitSeed[] = [
             'pertanto',
             'vorrei che',
           ],
-          hint: 'Tese com «ritengo che» + congiuntivo presente, condição com «purché» e conclusão com «pertanto vorrei che» + congiuntivo imperfetto.',
+          hint: 'Tese com “ritengo che” + congiuntivo presente, condição com “purché” e conclusão com “pertanto vorrei che” + congiuntivo imperfetto.',
         },
-        communityPrompt: 'Escreva um texto argumentativo de 6 frases sobre um tema ambiental italiano (acqua alta, secas no rio Pó, coleta seletiva): tese, dois argumentos, uma concessão com «sebbene» e a conclusão com «pertanto».',
+        communityPrompt: 'Escreva um texto argumentativo de 6 frases sobre um tema ambiental italiano (acqua alta, secas no rio Pó, coleta seletiva): tese, dois argumentos, uma concessão com “sebbene” e a conclusão com “pertanto”.',
       },
     ],
   },
@@ -1688,11 +1688,11 @@ export const UNITS_IT: UnitSeed[] = [
       title: 'Uma língua, muitas falas',
       emoji: '🗺️',
       history:
-        'Os dialetos italianos não são «italiano errado»: napolitano, siciliano, vêneto, milanês e tantos outros descendem diretamente do latim, irmãos do florentino que deu origem ao italiano padrão. Quando a Itália se unificou, em 1861, só uma pequena minoria da população usava o italiano no dia a dia; a escola, o serviço militar, as migrações internas e, a partir de 1954, a televisão espalharam a língua comum. A lei 482 de 1999 protege doze línguas minoritárias históricas, entre elas o sardo, o friulano e o ladino. No Brasil, o talian, nascido sobretudo dos dialetos vênetos dos imigrantes que chegaram à Serra Gaúcha a partir de 1875, foi reconhecido em 2014 como referência cultural brasileira.',
+        'Os dialetos italianos não são “italiano errado”: napolitano, siciliano, vêneto, milanês e tantos outros descendem diretamente do latim, irmãos do florentino que deu origem ao italiano padrão. Quando a Itália se unificou, em 1861, só uma pequena minoria da população usava o italiano no dia a dia; a escola, o serviço militar, as migrações internas e, a partir de 1954, a televisão espalharam a língua comum. A lei 482 de 1999 protege doze línguas minoritárias históricas, entre elas o sardo, o friulano e o ladino. No Brasil, o talian, nascido sobretudo dos dialetos vênetos dos imigrantes que chegaram à Serra Gaúcha a partir de 1875, foi reconhecido em 2014 como referência cultural brasileira.',
       culture_tip:
-        'Na Itália, «tu» vale para amigos, colegas e jovens; «Lei», para desconhecidos, clientes e pessoas mais velhas. No Sul, sobretudo entre os mais velhos, ainda se ouve o «voi» de respeito («Voi siete di qua?»), um uso regional legítimo, e não um erro. A ironia costuma vir com a cara séria: um «Bravo, complimenti!» depois de uma trapalhada não é elogio. E gírias como «che figata» ou «boh» são ótimas entre amigos, mas ficam fora de um e-mail ao chefe.',
+        'Na Itália, “tu” vale para amigos, colegas e jovens; “Lei”, para desconhecidos, clientes e pessoas mais velhas. No Sul, sobretudo entre os mais velhos, ainda se ouve o “voi” de respeito (“Voi siete di qua?”), um uso regional legítimo, e não um erro. A ironia costuma vir com a cara séria: um “Bravo, complimenti!” depois de uma trapalhada não é elogio. E gírias como “che figata” ou “boh” são ótimas entre amigos, mas ficam fora de um e-mail ao chefe.',
       grammar_why:
-        'Mesmo sem falar dialeto, o italiano muda de região para região: é o italiano regionale. No Norte, o passato prossimo domina até para fatos distantes («l’anno scorso sono andato»), enquanto em partes do Sul, sobretudo na Sicília, o passato remoto segue vivo na fala («l’anno scorso andai»). Na Toscana é comum «noi si va» no lugar de «noi andiamo». O registro também muda a gramática: no informal aparecem «cosa?» por «che cosa?», o «che» polivalente («Vieni che ti spiego») e o imperativo com tu; no formal, Lei com verbo e pronomes na 3ª pessoa («La ringrazio», «Si accomodi»). No C1 a meta é reconhecer todas essas variantes e escolher, você mesmo, o registro certo para cada situação.',
+        'Mesmo sem falar dialeto, o italiano muda de região para região: é o italiano regionale. No Norte, o passato prossimo domina até para fatos distantes (“l’anno scorso sono andato”), enquanto em partes do Sul, sobretudo na Sicília, o passato remoto segue vivo na fala (“l’anno scorso andai”). Na Toscana é comum “noi si va” no lugar de “noi andiamo”. O registro também muda a gramática: no informal aparecem “cosa?” por “che cosa?”, o “che” polivalente (“Vieni che ti spiego”) e o imperativo com tu; no formal, Lei com verbo e pronomes na 3ª pessoa (“La ringrazio”, “Si accomodi”). No C1 a meta é reconhecer todas essas variantes e escolher, você mesmo, o registro certo para cada situação.',
       grammar_examples: [
         ['Si accomodi, La prego: il direttore La riceve subito.', 'Sente-se, por favor: o diretor já vai recebê-lo.'],
         ['Noi si va al mare domani, e voi?', 'A gente vai à praia amanhã, e vocês? (uso toscano)'],
@@ -1747,10 +1747,10 @@ export const UNITS_IT: UnitSeed[] = [
         words: ['figurati', 'si figuri', 'si accomodi', 'che figata', 'boh', 'esagerato'],
         cloze: [
           {
-            sentence: '«Signora, grazie mille per l’aiuto!» «Ma ___, è stato un piacere!»',
+            sentence: '“Signora, grazie mille per l’aiuto!” “Ma ___, è stato un piacere!”',
             answer: 'si figuri',
             options: ['si figuri', 'figurati', 'figuratevi'],
-            translation: '«Senhora, muito obrigado pela ajuda!» «Imagine, foi um prazer!»',
+            translation: '“Senhora, muito obrigado pela ajuda!” “Imagine, foi um prazer!”',
           },
           {
             sentence: 'Signor Rossi, ___ pure: il dottore arriva tra poco.',
@@ -1769,7 +1769,7 @@ export const UNITS_IT: UnitSeed[] = [
           bot: 'Sabato andiamo a un concerto sulla spiaggia a Rimini: ti va di venire?',
           botTranslation: 'Sábado a gente vai a um show na praia em Rimini: está a fim de ir?',
           expected: ['Che figata! Certo che vengo, ci vediamo sabato.', 'che figata', 'certo che vengo', 'ci vediamo'],
-          hint: 'É um amigo: responda com «tu», com entusiasmo e gíria («che figata»).',
+          hint: 'É um amigo: responda com “tu”, com entusiasmo e gíria (“che figata”).',
         },
         communityPrompt: 'Escreva a mesma mensagem duas vezes, pedindo uma informação a um amigo (tu) e à diretora de uma escola (Lei). Depois aponte tudo o que mudou: verbos, pronomes, cumprimento e despedida.',
       },
@@ -1802,7 +1802,7 @@ export const UNITS_IT: UnitSeed[] = [
           bot: 'Ho saputo che hai vinto un viaggio in Sicilia… Stai scherzando o dici sul serio?',
           botTranslation: 'Fiquei sabendo que você ganhou uma viagem para a Sicília… Está brincando ou falando sério?',
           expected: ['Dico sul serio! Non sto scherzando: parto la settimana prossima.', 'sul serio', 'non sto scherzando', 'parto'],
-          hint: 'Confirme com «dico sul serio» e «non sto scherzando».',
+          hint: 'Confirme com “dico sul serio” e “non sto scherzando”.',
         },
         communityPrompt: 'Escreva duas frases irônicas em italiano (elogios que na verdade são críticas) e explique em português o que cada uma quer dizer de verdade.',
       },
@@ -1821,7 +1821,7 @@ export const UNITS_IT: UnitSeed[] = [
             'lingue sorelle',
             'meritino rispetto',
           ],
-          hint: 'O interlocutor usa «Lei»: mantenha o registro formal, opine com «penso che» + congiuntivo e trate os dialetos como línguas irmãs.',
+          hint: 'O interlocutor usa “Lei”: mantenha o registro formal, opine com “penso che” + congiuntivo e trate os dialetos como línguas irmãs.',
         },
         communityPrompt: 'Escreva um post de 6 frases para um fórum italiano sobre o talian ou outro falar da imigração italiana no Brasil, com um trecho formal (Lei), um informal (tu) e uma frase irônica.',
       },
@@ -1835,14 +1835,14 @@ export const UNITS_IT: UnitSeed[] = [
     emoji: '📑',
     card: {
       id: 'it-c14',
-      title: 'De Galileu ao «burocratese»',
+      title: 'De Galileu ao “burocratese”',
       emoji: '🔭',
       history:
-        'Galileu Galilei publicou em Florença, em 1632, o «Dialogo sopra i due massimi sistemi del mondo», escrito em italiano e não em latim, para que mais leitores pudessem acompanhar a discussão sobre o sistema copernicano. Alessandro Volta apresentou a pilha elétrica em 1800, e é em sua homenagem que a unidade de tensão se chama volt. Guglielmo Marconi dividiu o Nobel de Física de 1909 com Karl Ferdinand Braun pelo desenvolvimento da telegrafia sem fio, e Enrico Fermi recebeu o de 1938. Já o «burocratese», a língua cheia de fórmulas das repartições públicas, é criticado há décadas, e desde os anos 1990 o próprio Estado publica guias para simplificar a escrita administrativa.',
+        'Galileu Galilei publicou em Florença, em 1632, o “Dialogo sopra i due massimi sistemi del mondo”, escrito em italiano e não em latim, para que mais leitores pudessem acompanhar a discussão sobre o sistema copernicano. Alessandro Volta apresentou a pilha elétrica em 1800, e é em sua homenagem que a unidade de tensão se chama volt. Guglielmo Marconi dividiu o Nobel de Física de 1909 com Karl Ferdinand Braun pelo desenvolvimento da telegrafia sem fio, e Enrico Fermi recebeu o de 1938. Já o “burocratese”, a língua cheia de fórmulas das repartições públicas, é criticado há décadas, e desde os anos 1990 o próprio Estado publica guias para simplificar a escrita administrativa.',
       culture_tip:
-        'A vida prática na Itália passa por muitos papéis: o «codice fiscale», parecido com o nosso CPF, é pedido para abrir conta, alugar casa ou ir ao médico, e vários trâmites exigem a «marca da bollo», um selo fiscal. Nos avisos oficiais, «si prega di» significa «pede-se que» e «entro e non oltre» quer dizer «até, no máximo». Nos jornais, os títulos cortam verbos e artigos: «Roma, via libera al nuovo piano traffico».',
+        'A vida prática na Itália passa por muitos papéis: o “codice fiscale”, parecido com o nosso CPF, é pedido para abrir conta, alugar casa ou ir ao médico, e vários trâmites exigem a “marca da bollo”, um selo fiscal. Nos avisos oficiais, “si prega di” significa “pede-se que” e “entro e non oltre” quer dizer “até, no máximo”. Nos jornais, os títulos cortam verbos e artigos: “Roma, via libera al nuovo piano traffico”.',
       grammar_why:
-        'Nos textos especializados, o verbo vira substantivo: em vez de «quando si presenta la domanda», escreve-se «all’atto della presentazione della domanda». É a nominalização, que deixa o texto mais denso e impessoal. O burocratês soma a isso fórmulas fixas («si prega di», «in data odierna», «il sottoscritto»), o particípio presente como adjetivo ou substantivo («la normativa vigente», «il richiedente») e a passiva com «andare», que indica obrigação («la domanda va presentata» = deve ser apresentada). O jornalismo prefere títulos nominais e o presente histórico; o texto acadêmico, o «si» impessoal e conectores como «ne consegue che» e «alla luce di». O português tem os mesmos vícios («vimos por meio desta»), por isso é fácil reconhecê-los; o desafio é usá-los só quando o gênero de texto pede.',
+        'Nos textos especializados, o verbo vira substantivo: em vez de “quando si presenta la domanda”, escreve-se “all’atto della presentazione della domanda”. É a nominalização, que deixa o texto mais denso e impessoal. O burocratês soma a isso fórmulas fixas (“si prega di”, “in data odierna”, “il sottoscritto”), o particípio presente como adjetivo ou substantivo (“la normativa vigente”, “il richiedente”) e a passiva com “andare”, que indica obrigação (“la domanda va presentata” = deve ser apresentada). O jornalismo prefere títulos nominais e o presente histórico; o texto acadêmico, o “si” impessoal e conectores como “ne consegue che” e “alla luce di”. O português tem os mesmos vícios (“vimos por meio desta”), por isso é fácil reconhecê-los; o desafio é usá-los só quando o gênero de texto pede.',
       grammar_examples: [
         ['La domanda va presentata entro e non oltre il 30 giugno.', 'O requerimento deve ser apresentado até, no máximo, 30 de junho.'],
         ['Il sottoscritto chiede il rilascio del certificato di residenza.', 'O abaixo-assinado solicita a emissão do atestado de residência.'],
@@ -1886,9 +1886,9 @@ export const UNITS_IT: UnitSeed[] = [
             'entro quando',
             'va consegnato',
           ],
-          hint: 'Entregue o documento com «ecco…» e pergunte o prazo usando a passiva com «andare» («va consegnato»).',
+          hint: 'Entregue o documento com “ecco…” e pergunte o prazo usando a passiva com “andare” (“va consegnato”).',
         },
-        communityPrompt: 'Reescreva em italiano simples este aviso: «Si prega la gentile utenza di voler provvedere alla compilazione del modulo entro e non oltre la data di scadenza». Depois diga, em português, o que você cortou e por quê.',
+        communityPrompt: 'Reescreva em italiano simples este aviso: “Si prega la gentile utenza di voler provvedere alla compilazione del modulo entro e non oltre la data di scadenza”. Depois diga, em português, o que você cortou e por quê.',
       },
       {
         id: 'it-u14-l2',
@@ -1897,10 +1897,10 @@ export const UNITS_IT: UnitSeed[] = [
         words: ['notizia', 'giornale', 'telegiornale', 'stampa', 'articolo', 'intervista'],
         cloze: [
           {
-            sentence: 'Titolo del giornale: «Napoli, ___ del nuovo museo del mare».',
+            sentence: 'Titolo del giornale: “Napoli, ___ del nuovo museo del mare”.',
             answer: 'inaugurazione',
             options: ['inaugurazione', 'inaugurare', 'inaugurato'],
-            translation: 'Título do jornal: «Nápoles, inauguração do novo museu do mar».',
+            translation: 'Título do jornal: “Nápoles, inauguração do novo museu do mar”.',
           },
           {
             sentence: 'Secondo quanto ___ dalla stampa locale, il ponte riaprirà a maggio.',
@@ -1924,7 +1924,7 @@ export const UNITS_IT: UnitSeed[] = [
             'biblioteca',
             'apertura al pubblico',
           ],
-          hint: 'Use o estilo de manchete: lugar, particípio sem auxiliar («inaugurata») e um substantivo no lugar do verbo («apertura»).',
+          hint: 'Use o estilo de manchete: lugar, particípio sem auxiliar (“inaugurata”) e um substantivo no lugar do verbo (“apertura”).',
         },
         communityPrompt: 'Transforme uma notícia da sua cidade num título de jornal italiano em estilo nominal (sem verbo conjugado) e escreva um lead de 2 frases no presente histórico.',
       },
@@ -1962,9 +1962,9 @@ export const UNITS_IT: UnitSeed[] = [
             'invenzione della pila',
             '1800',
           ],
-          hint: 'Comece com «A Volta si deve…» e use uma nominalização («l’invenzione della pila»).',
+          hint: 'Comece com “A Volta si deve…” e use uma nominalização (“l’invenzione della pila”).',
         },
-        communityPrompt: 'Escreva o resumo (abstract) de uma pesquisa imaginária em 4 frases, com nominalizações («l’analisi dei dati», «la raccolta dei campioni») e o «si» impessoal.',
+        communityPrompt: 'Escreva o resumo (abstract) de uma pesquisa imaginária em 4 frases, com nominalizações (“l’analisi dei dati”, “la raccolta dei campioni”) e o “si” impessoal.',
       },
       {
         id: 'it-u14-p',
@@ -1973,15 +1973,15 @@ export const UNITS_IT: UnitSeed[] = [
         words: [],
         cloze: [],
         voice: {
-          bot: 'Ha appena ricevuto questa comunicazione: «Si prega di voler provvedere al rinnovo del permesso di soggiorno entro e non oltre il 15 marzo». Me la può spiegare con parole semplici?',
-          botTranslation: 'O senhor acaba de receber este comunicado: «Pede-se que providencie a renovação da autorização de residência até, no máximo, 15 de março». Pode me explicar com palavras simples?',
+          bot: 'Ha appena ricevuto questa comunicazione: “Si prega di voler provvedere al rinnovo del permesso di soggiorno entro e non oltre il 15 marzo”. Me la può spiegare con parole semplici?',
+          botTranslation: 'O senhor acaba de receber este comunicado: “Pede-se que providencie a renovação da autorização de residência até, no máximo, 15 de março”. Pode me explicar com palavras simples?',
           expected: [
             'Vuol dire che devo rinnovare il permesso di soggiorno entro il 15 marzo, non un giorno dopo.',
             'vuol dire che',
             'devo rinnovare',
             'entro il 15 marzo',
           ],
-          hint: 'Desfaça a nominalização: «il rinnovo» vira «devo rinnovare»; «entro e non oltre» vira só «entro».',
+          hint: 'Desfaça a nominalização: “il rinnovo” vira “devo rinnovare”; “entro e non oltre” vira só “entro”.',
         },
         communityPrompt: 'Escreva dois textos de 4 frases sobre o mesmo fato imaginário, a abertura de um laboratório em Pisa: uma notícia com título nominal e um e-mail formal de convite com fórmulas do burocratês.',
       },
@@ -1998,11 +1998,11 @@ export const UNITS_IT: UnitSeed[] = [
       title: 'De Dante a Pirandello',
       emoji: '🪶',
       history:
-        'Dante Alighieri escreveu a Commedia no início do século XIV, em vulgar florentino, e morreu em Ravena em 1321; o adjetivo «Divina» foi acrescentado depois, e Boccaccio já a chamava assim. Petrarca levou o soneto à perfeição no Canzoniere, e Boccaccio reuniu no Decameron cem novelas contadas por dez jovens que se refugiam no campo para fugir da peste de 1348 em Florença. Alessandro Manzoni revisou «I promessi sposi» para aproximar a língua do florentino falado, na edição de 1840–1842. Giacomo Leopardi compôs «L’infinito» em Recanati, nas Marcas, em 1819, e Luigi Pirandello recebeu o Nobel de Literatura em 1934.',
+        'Dante Alighieri escreveu a Commedia no início do século XIV, em vulgar florentino, e morreu em Ravena em 1321; o adjetivo “Divina” foi acrescentado depois, e Boccaccio já a chamava assim. Petrarca levou o soneto à perfeição no Canzoniere, e Boccaccio reuniu no Decameron cem novelas contadas por dez jovens que se refugiam no campo para fugir da peste de 1348 em Florença. Alessandro Manzoni revisou “I promessi sposi” para aproximar a língua do florentino falado, na edição de 1840–1842. Giacomo Leopardi compôs “L’infinito” em Recanati, nas Marcas, em 1819, e Luigi Pirandello recebeu o Nobel de Literatura em 1934.',
       culture_tip:
-        'Muitos italianos sabem de cor o primeiro terceto do Inferno, e versos de Dante viraram expressões do dia a dia, como «galeotto fu il libro» (o livro foi o alcoviteiro), sobre Paolo e Francesca. Os provérbios também circulam muito, e às vezes basta dizer a primeira metade, «Chi dorme…», para o outro completar. Alguns coincidem com os nossos: «l’abito non fa il monaco» é o «o hábito não faz o monge».',
+        'Muitos italianos sabem de cor o primeiro terceto do Inferno, e versos de Dante viraram expressões do dia a dia, como “galeotto fu il libro” (o livro foi o alcoviteiro), sobre Paolo e Francesca. Os provérbios também circulam muito, e às vezes basta dizer a primeira metade, “Chi dorme…”, para o outro completar. Alguns coincidem com os nossos: “l’abito non fa il monaco” é o “o hábito não faz o monge”.',
       grammar_why:
-        'O passato remoto é o tempo da narração literária: «Dante morì», «la sventurata rispose». Muitos verbos são irregulares só na 1ª e na 3ª pessoa do singular e na 3ª do plural, a regra «1-3-3»: ebbi, ebbe, ebbero; scrissi, scrisse, scrissero; venni, venne, vennero; as outras pessoas seguem o infinitivo (avesti, scrivemmo). Nos textos antigos aparecem ainda o «ché» com valor de «porque», a queda da vogal final («cammin», «cuor»), o vocabulário poético («ermo» = solitário, «guardo» = olhar) e os pronomes presos ao verbo («dicesi», «vendesi»). Os provérbios guardam formas antigas: em «chi dorme non piglia pesci», «pigliare» é o «prendere» de hoje. Como no português literário, o passado narrativo dá distância ao relato; mas no Norte da Itália o passato remoto quase sumiu da fala e virou marca de escrita.',
+        'O passato remoto é o tempo da narração literária: “Dante morì”, “la sventurata rispose”. Muitos verbos são irregulares só na 1ª e na 3ª pessoa do singular e na 3ª do plural, a regra “1-3-3”: ebbi, ebbe, ebbero; scrissi, scrisse, scrissero; venni, venne, vennero; as outras pessoas seguem o infinitivo (avesti, scrivemmo). Nos textos antigos aparecem ainda o “ché” com valor de “porque”, a queda da vogal final (“cammin”, “cuor”), o vocabulário poético (“ermo” = solitário, “guardo” = olhar) e os pronomes presos ao verbo (“dicesi”, “vendesi”). Os provérbios guardam formas antigas: em “chi dorme non piglia pesci”, “pigliare” é o “prendere” de hoje. Como no português literário, o passado narrativo dá distância ao relato; mas no Norte da Itália o passato remoto quase sumiu da fala e virou marca de escrita.',
       grammar_examples: [
         ['Nel mezzo del cammin di nostra vita / mi ritrovai per una selva oscura.', 'No meio do caminho da nossa vida / me encontrei numa selva escura. (Dante)'],
         ['La sventurata rispose.', 'A desventurada respondeu. (Manzoni)'],
@@ -2038,10 +2038,10 @@ export const UNITS_IT: UnitSeed[] = [
             translation: 'Perdeu o trem, mas no seguinte conheceu a futura esposa: há males que vêm para bem.',
           },
           {
-            sentence: 'Quando il nonno ___ la patente a settant’anni, tutti dissero: «Meglio tardi che mai!»',
+            sentence: 'Quando il nonno ___ la patente a settant’anni, tutti dissero: “Meglio tardi che mai!”',
             answer: 'prese',
             options: ['prese', 'prendé', 'presse'],
-            translation: 'Quando o avô tirou a carteira de motorista aos setenta anos, todos disseram: «Antes tarde do que nunca!»',
+            translation: 'Quando o avô tirou a carteira de motorista aos setenta anos, todos disseram: “Antes tarde do que nunca!”',
           },
         ],
         voice: {
@@ -2053,7 +2053,7 @@ export const UNITS_IT: UnitSeed[] = [
             'non si deve giudicare',
             'come in portoghese',
           ],
-          hint: 'Diga o provérbio, explique-o com «vuol dire che» e compare com o português.',
+          hint: 'Diga o provérbio, explique-o com “vuol dire che” e compare com o português.',
         },
         communityPrompt: 'Escolha um provérbio desta lição e conte, no passato remoto, uma pequena história de 4 frases que termine com ele.',
       },
@@ -2083,15 +2083,15 @@ export const UNITS_IT: UnitSeed[] = [
           },
         ],
         voice: {
-          bot: 'Chi sono le «tre corone» della letteratura italiana, e perché sono così importanti?',
-          botTranslation: 'Quem são as «três coroas» da literatura italiana, e por que são tão importantes?',
+          bot: 'Chi sono le “tre corone” della letteratura italiana, e perché sono così importanti?',
+          botTranslation: 'Quem são as “três coroas” da literatura italiana, e por que são tão importantes?',
           expected: [
             'Sono Dante, Petrarca e Boccaccio, i tre grandi scrittori toscani del Trecento che diedero prestigio al volgare.',
             'Dante, Petrarca e Boccaccio',
             'Trecento',
             'volgare',
           ],
-          hint: 'Cite os três autores, o século (il Trecento) e o que fizeram pelo vulgar, com um verbo no passato remoto («diedero»).',
+          hint: 'Cite os três autores, o século (il Trecento) e o que fizeram pelo vulgar, com um verbo no passato remoto (“diedero”).',
         },
         communityPrompt: 'Escreva 4 frases no passato remoto sobre a vida de um autor desta unidade: onde nasceu, o que escreveu, onde viveu e quando morreu.',
       },
@@ -2108,16 +2108,16 @@ export const UNITS_IT: UnitSeed[] = [
             translation: 'Sempre me foi cara esta colina solitária.',
           },
           {
-            sentence: '«Quel ramo del ___ di Como, che volge a mezzogiorno…» è l’inizio dei Promessi sposi.',
+            sentence: '“Quel ramo del ___ di Como, che volge a mezzogiorno…” è l’inizio dei Promessi sposi.',
             answer: 'lago',
             options: ['lago', 'mare', 'fiume'],
-            translation: '«Aquele braço do lago de Como, que se volta para o sul…» é o começo de Os noivos.',
+            translation: '“Aquele braço do lago de Como, que se volta para o sul…” é o começo de Os noivos.',
           },
           {
-            sentence: 'Dante chiude la Commedia con «l’amor che move il sole e l’altre ___».',
+            sentence: 'Dante chiude la Commedia con “l’amor che move il sole e l’altre ___”.',
             answer: 'stelle',
             options: ['stelle', 'stella', 'luci'],
-            translation: 'Dante fecha a Comédia com «o amor que move o sol e as outras estrelas».',
+            translation: 'Dante fecha a Comédia com “o amor que move o sol e as outras estrelas”.',
           },
         ],
         voice: {
@@ -2129,9 +2129,9 @@ export const UNITS_IT: UnitSeed[] = [
             'selva oscura',
             'diritta via',
           ],
-          hint: 'Recite o primeiro terceto: «Nel mezzo del cammin di nostra vita…». Repare no passato remoto «mi ritrovai».',
+          hint: 'Recite o primeiro terceto: “Nel mezzo del cammin di nostra vita…”. Repare no passato remoto “mi ritrovai”.',
         },
-        communityPrompt: 'Leia «L’infinito» de Leopardi e escreva 4 frases sobre o que o poema provoca em você, contando a primeira leitura no passato remoto («lo lessi», «sentii», «pensai»).',
+        communityPrompt: 'Leia “L’infinito” de Leopardi e escreva 4 frases sobre o que o poema provoca em você, contando a primeira leitura no passato remoto (“lo lessi”, “sentii”, “pensai”).',
       },
       {
         id: 'it-u15-p',
@@ -2143,12 +2143,12 @@ export const UNITS_IT: UnitSeed[] = [
           bot: 'Per chiudere il corso: se potesse incontrare uno scrittore del passato, Dante, Boccaccio, Manzoni, Leopardi o Pirandello, chi sceglierebbe e perché?',
           botTranslation: 'Para fechar o curso: se pudesse encontrar um escritor do passado, Dante, Boccaccio, Manzoni, Leopardi ou Pirandello, quem escolheria e por quê?',
           expected: [
-            'Sceglierei Leopardi, perché vorrei che mi raccontasse come nacque «L’infinito» a Recanati.',
+            'Sceglierei Leopardi, perché vorrei che mi raccontasse come nacque “L’infinito” a Recanati.',
             'sceglierei',
             'vorrei che',
             'nacque',
           ],
-          hint: 'Responda com «sceglierei…», justifique com «vorrei che» + congiuntivo imperfetto e use um passato remoto («nacque», «scrisse»).',
+          hint: 'Responda com “sceglierei…”, justifique com “vorrei che” + congiuntivo imperfetto e use um passato remoto (“nacque”, “scrisse”).',
         },
         communityPrompt: 'Escreva um pequeno ensaio de 6 a 8 frases sobre um autor italiano desta unidade, com pelo menos um provérbio, três verbos no passato remoto e uma citação curta da obra.',
       },

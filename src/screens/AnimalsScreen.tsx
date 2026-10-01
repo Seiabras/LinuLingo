@@ -51,7 +51,7 @@ export default function AnimalsScreen() {
   const label = (q: AnimalQuestion, o: string) => (q.kind === 'que-bicho' ? `${byId.get(o)?.emoji} ${byId.get(o)?.animal}` : o);
   const promptOf = (q: AnimalQuestion) =>
     q.kind === 'que-bicho'
-      ? `Que bicho faz «${q.a.sound}» em ${nomeIdioma(pack.name)}?`
+      ? `Que bicho faz “${q.a.sound}” em ${nomeIdioma(pack.name)}?`
       : q.kind === 'como-faz'
         ? `Como faz ${BICHOS_PT[q.a.id] ? `${BICHOS_PT[q.a.id].art} ${BICHOS_PT[q.a.id].name}` : q.a.animal} em ${nomeIdioma(pack.name)}?`
         : `Complete: ${q.blank}`;
@@ -72,7 +72,7 @@ export default function AnimalsScreen() {
         prompt: promptOf(q),
         expected: label(q, q.answer),
         given: label(q, opt),
-        note: `${q.a.emoji} ${q.a.animal}: «${q.a.sound}» · ${q.a.verb} (${q.a.translation})`,
+        note: `${q.a.emoji} ${q.a.animal}: “${q.a.sound}” · ${q.a.verb} (${q.a.translation})`,
         speak: q.kind === 'verbo' ? q.a.verb : q.a.sound,
         options: q.options.map((o) => label(q, o)),
       });
@@ -141,8 +141,8 @@ export default function AnimalsScreen() {
                   {game.answer === q.answer
                     ? 'Isso!'
                     : q.kind === 'como-faz' && game.answer === q.trap
-                      ? `Esse é o som em português! Em ${nomeIdioma(pack.name)} é «${q.answer}».`
-                      : `Era «${label(q, q.answer)}».`}
+                      ? `Esse é o som em português! Em ${nomeIdioma(pack.name)} é “${q.answer}”.`
+                      : `Era “${label(q, q.answer)}”.`}
                 </Text>
                 <View className="flex-row items-center gap-2">
                   <SpeakButton text={q.a.verb} locale={locale} />
@@ -170,7 +170,7 @@ export default function AnimalsScreen() {
       </View>
       <View className="mt-4 flex-row items-end gap-2">
         <Linu mood="falando" size={64} />
-        <SpeechBubble className="mb-5">{`Em ${nomeIdioma(pack.name)}, o cachorro não faz «au-au»! Cada língua escuta os bichos do seu jeito. E o verbo de cada som é vocabulário que aparece em livros e conversas.`}</SpeechBubble>
+        <SpeechBubble className="mb-5">{`Em ${nomeIdioma(pack.name)}, o cachorro não faz “au-au”! Cada língua escuta os bichos do seu jeito. E o verbo de cada som é vocabulário que aparece em livros e conversas.`}</SpeechBubble>
       </View>
       <ProgressBar value={known / list.length} />
       <Text className="mt-1 text-xs text-slate-500 dark:text-slate-400">
@@ -192,7 +192,7 @@ export default function AnimalsScreen() {
                     <Text className="text-sm text-slate-500 dark:text-slate-400">({pt?.name})</Text>
                   </View>
                   <Pressable accessibilityRole="button" accessibilityLabel={`Ouvir: ${a.sound}`} onPress={() => speak(a.sound, locale)} className="flex-row items-center gap-2 self-start">
-                    <Text className="text-xl font-extrabold text-conecta">«{a.sound}»</Text>
+                    <Text className="text-xl font-extrabold text-conecta">“{a.sound}”</Text>
                     {pt && <Text className="text-sm text-slate-500 dark:text-slate-400">em português: {pt.sound}</Text>}
                   </Pressable>
                 </View>
@@ -223,7 +223,7 @@ export default function AnimalsScreen() {
           );
         })}
       </View>
-      <Text className="mt-3 text-xs text-slate-400">A voz do aparelho lê as onomatopeias como se fossem palavras: vale pelo jeito de escrever e de falar de cada língua. O 🐾 toca o som de verdade do bicho (Wikimedia Commons), e o «🔊 Adivinhe o som» vira jogo.</Text>
+      <Text className="mt-3 text-xs text-slate-400">A voz do aparelho lê as onomatopeias como se fossem palavras: vale pelo jeito de escrever e de falar de cada língua. O 🐾 toca o som de verdade do bicho (Wikimedia Commons), e o “🔊 Adivinhe o som” vira jogo.</Text>
     </Screen>
   );
 }

@@ -103,7 +103,7 @@ export const AMIGOS_LINU: AmigoLinu[] = [
     hi: 'Repare no meu penacho! Foi por causa dele que ganhei esse nome.',
     facts: [
       'Tem um penacho de penas amarelo-alaranjadas que sai do meio da testa.',
-      'O nome vem dos «macaronis», rapazes ingleses do século XVIII famosos pelos penteados e roupas exagerados.',
+      'O nome vem dos “macaronis”, rapazes ingleses do século XVIII famosos pelos penteados e roupas exagerados.',
       'O bico é grosso e laranja-avermelhado.',
     ],
   },

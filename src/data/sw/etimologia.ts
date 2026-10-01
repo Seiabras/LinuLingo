@@ -15,7 +15,7 @@ export const ETYMOLOGY_SW: EtymologySeed[] = [
     root_word: '*-ntʊ̀',
     origin_language: 'Protobanto',
     cognates: c(['zu', 'umuntu'], ['ln', 'moto'], ['kmb', 'mutu']),
-    evolution_note: 'A palavra banta para «pessoa», com o prefixo da classe dos seres humanos (m-/wa-): mtu, watu. Da mesma raiz vem o zulu «ubuntu», a ideia de que uma pessoa se faz pessoa por meio das outras.',
+    evolution_note: 'A palavra banta para “pessoa”, com o prefixo da classe dos seres humanos (m-/wa-): mtu, watu. Da mesma raiz vem o zulu “ubuntu”, a ideia de que uma pessoa se faz pessoa por meio das outras.',
     transparent: false,
   },
   {
@@ -23,7 +23,7 @@ export const ETYMOLOGY_SW: EtymologySeed[] = [
     root_word: '*-jánà',
     origin_language: 'Protobanto',
     cognates: c(['ln', 'mwana'], ['kmb', 'mona']),
-    evolution_note: '«Filho, filha, criança» em quase toda a família banta. Aparece em muitos compostos: mwanafunzi (aluno, «filho do aprender»), mwananchi (cidadão, «filho do país»).',
+    evolution_note: '“Filho, filha, criança” em quase toda a família banta. Aparece em muitos compostos: mwanafunzi (aluno, “filho do aprender”), mwananchi (cidadão, “filho do país”).',
     transparent: false,
   },
   {
@@ -39,7 +39,7 @@ export const ETYMOLOGY_SW: EtymologySeed[] = [
     root_word: '*-jókà',
     origin_language: 'Protobanto',
     cognates: c(['zu', 'inyoka'], ['ln', 'nyoka']),
-    evolution_note: 'A «cobra» é quase igual de Mombasa a Joanesburgo: nyoka em suaíli e em lingala, inyoka em zulu, com o prefixo da classe de cada língua.',
+    evolution_note: 'A “cobra” é quase igual de Mombasa a Joanesburgo: nyoka em suaíli e em lingala, inyoka em zulu, com o prefixo da classe de cada língua.',
     transparent: false,
   },
   {
@@ -47,7 +47,7 @@ export const ETYMOLOGY_SW: EtymologySeed[] = [
     root_word: '*-jíjà',
     origin_language: 'Protobanto',
     cognates: c(['zu', 'amanzi']),
-    evolution_note: '«Água» é da classe ma-, que reúne líquidos e coisas que não se contam: maji, maziwa (leite), mafuta (óleo). O zulu amanzi tem o mesmo prefixo ma-.',
+    evolution_note: '“Água” é da classe ma-, que reúne líquidos e coisas que não se contam: maji, maziwa (leite), mafuta (óleo). O zulu amanzi tem o mesmo prefixo ma-.',
     transparent: false,
   },
   {
@@ -55,7 +55,7 @@ export const ETYMOLOGY_SW: EtymologySeed[] = [
     root_word: '*-tí',
     origin_language: 'Protobanto',
     cognates: c(['zu', 'umuthi (árvore; remédio)']),
-    evolution_note: 'A «árvore» dá o nome à classe m-/mi- das plantas (mti, miti). Em zulu, umuthi é ao mesmo tempo árvore e remédio, lembrança do tempo em que os remédios vinham das plantas.',
+    evolution_note: 'A “árvore” dá o nome à classe m-/mi- das plantas (mti, miti). Em zulu, umuthi é ao mesmo tempo árvore e remédio, lembrança do tempo em que os remédios vinham das plantas.',
     transparent: false,
   },
   {
@@ -63,7 +63,7 @@ export const ETYMOLOGY_SW: EtymologySeed[] = [
     root_word: '*-gòmà',
     origin_language: 'Protobanto',
     cognates: c(['ln', 'ngoma'], ['kmb', 'ngoma']),
-    evolution_note: '«Tambor», e também a dança e a festa ao som dele. A palavra existe em muitas línguas bantas, inclusive as de Angola, e o nome aparece em tambores de tradições afro-brasileiras de origem angolana.',
+    evolution_note: '“Tambor”, e também a dança e a festa ao som dele. A palavra existe em muitas línguas bantas, inclusive as de Angola, e o nome aparece em tambores de tradições afro-brasileiras de origem angolana.',
     transparent: false,
   },
   {
@@ -71,7 +71,7 @@ export const ETYMOLOGY_SW: EtymologySeed[] = [
     root_word: '*-gòmbè',
     origin_language: 'Protobanto',
     cognates: c(['zu', 'inkomo']),
-    evolution_note: 'O gado é riqueza em muitos povos bantos, e a palavra para «vaca, boi» é antiga na família. O apóstrofo mostra que o «ng» é um som só, o do inglês «sing».',
+    evolution_note: 'O gado é riqueza em muitos povos bantos, e a palavra para “vaca, boi” é antiga na família. O apóstrofo mostra que o “ng” é um som só, o do inglês “sing”.',
     transparent: false,
   },
   // ——— do árabe ———
@@ -80,7 +80,7 @@ export const ETYMOLOGY_SW: EtymologySeed[] = [
     root_word: 'كتاب (kitāb)',
     origin_language: 'Árabe',
     cognates: c(['ar', 'كتاب (kitāb)']),
-    evolution_note: 'Veio do árabe kitāb (livro). Como começava por «ki-», a palavra entrou na classe ki-/vi-, e o plural virou vitabu: o suaíli tratou a primeira sílaba como se fosse um prefixo banto.',
+    evolution_note: 'Veio do árabe kitāb (livro). Como começava por “ki-”, a palavra entrou na classe ki-/vi-, e o plural virou vitabu: o suaíli tratou a primeira sílaba como se fosse um prefixo banto.',
     transparent: false,
   },
   {
@@ -96,7 +96,7 @@ export const ETYMOLOGY_SW: EtymologySeed[] = [
     root_word: 'خبر (khabar)',
     origin_language: 'Árabe',
     cognates: c(['ar', 'خبر (khabar, notícia)'], ['hi', 'khabar']),
-    evolution_note: 'Notícia. «Habari?» (notícias?) virou o cumprimento mais comum da África Oriental, e se responde «nzuri» (boas).',
+    evolution_note: 'Notícia. “Habari?” (notícias?) virou o cumprimento mais comum da África Oriental, e se responde “nzuri” (boas).',
     transparent: false,
   },
   {
@@ -104,7 +104,7 @@ export const ETYMOLOGY_SW: EtymologySeed[] = [
     root_word: 'سفر (safar)',
     origin_language: 'Árabe',
     cognates: c(['ar', 'سفر (safar, viagem)'], ['en', 'safari'], ['pt', 'safári']),
-    evolution_note: 'Em suaíli, safari é qualquer viagem: «safari njema!» (boa viagem!). O inglês pegou a palavra do suaíli no século XIX para as expedições de caça e observação de bichos, e daí ela chegou ao português.',
+    evolution_note: 'Em suaíli, safari é qualquer viagem: “safari njema!” (boa viagem!). O inglês pegou a palavra do suaíli no século XIX para as expedições de caça e observação de bichos, e daí ela chegou ao português.',
     transparent: true,
   },
   {
@@ -152,7 +152,7 @@ export const ETYMOLOGY_SW: EtymologySeed[] = [
     root_word: 'دواء (dawāʾ)',
     origin_language: 'Árabe',
     cognates: c(['ar', 'دواء (dawāʾ)'], ['hi', 'davā']),
-    evolution_note: 'Remédio. «Duka la dawa» é a farmácia, a «loja de remédios»; e «dawa ya meno» é a pasta de dente, o «remédio dos dentes».',
+    evolution_note: 'Remédio. “Duka la dawa” é a farmácia, a “loja de remédios”; e “dawa ya meno” é a pasta de dente, o “remédio dos dentes”.',
     transparent: false,
   },
   {
@@ -176,7 +176,7 @@ export const ETYMOLOGY_SW: EtymologySeed[] = [
     root_word: 'حق (ḥaqq)',
     origin_language: 'Árabe',
     cognates: c(['ar', 'حق (ḥaqq, direito, verdade)']),
-    evolution_note: 'Direito, justiça. «Haki za binadamu» são os direitos humanos; e «haki ya Mungu!» é uma forma forte de jurar que se diz a verdade.',
+    evolution_note: 'Direito, justiça. “Haki za binadamu” são os direitos humanos; e “haki ya Mungu!” é uma forma forte de jurar que se diz a verdade.',
     transparent: false,
   },
   {
@@ -192,7 +192,7 @@ export const ETYMOLOGY_SW: EtymologySeed[] = [
     root_word: 'سكر (sukkar)',
     origin_language: 'Árabe (do sânscrito)',
     cognates: c(['ar', 'سكر (sukkar)'], ['hi', 'śakkar'], ['pt', 'açúcar']),
-    evolution_note: 'O «açúcar» português e a sukari suaíli são a mesma palavra: do sânscrito ao persa, do persa ao árabe sukkar, e do árabe para os dois lados do mundo.',
+    evolution_note: 'O “açúcar” português e a sukari suaíli são a mesma palavra: do sânscrito ao persa, do persa ao árabe sukkar, e do árabe para os dois lados do mundo.',
     transparent: true,
   },
   {
@@ -200,7 +200,7 @@ export const ETYMOLOGY_SW: EtymologySeed[] = [
     root_word: 'ذهب (dhahab)',
     origin_language: 'Árabe',
     cognates: c(['ar', 'ذهب (dhahab)']),
-    evolution_note: 'O ouro, que por séculos saiu do interior da África pelos portos da costa, como Kilwa e Sofala. O som «dh» (o «th» de «this» em inglês) é uma marca dos empréstimos árabes.',
+    evolution_note: 'O ouro, que por séculos saiu do interior da África pelos portos da costa, como Kilwa e Sofala. O som “dh” (o “th” de “this” em inglês) é uma marca dos empréstimos árabes.',
     transparent: false,
   },
   {
@@ -208,7 +208,7 @@ export const ETYMOLOGY_SW: EtymologySeed[] = [
     root_word: 'فضة (fiḍḍa)',
     origin_language: 'Árabe',
     cognates: c(['ar', 'فضة (fiḍḍa, prata)']),
-    evolution_note: 'Em árabe, prata; em suaíli, tanto a prata quanto o dinheiro, como o francês «argent». Hoje também se diz pesa (do hindi) e hela (do alemão).',
+    evolution_note: 'Em árabe, prata; em suaíli, tanto a prata quanto o dinheiro, como o francês “argent”. Hoje também se diz pesa (do hindi) e hela (do alemão).',
     transparent: false,
   },
   {
@@ -232,7 +232,7 @@ export const ETYMOLOGY_SW: EtymologySeed[] = [
     root_word: 'مدة (mudda)',
     origin_language: 'Árabe',
     cognates: c(['ar', 'مدة (mudda, período)']),
-    evolution_note: 'Tempo, período. «Muda mrefu» é muito tempo; «kwa muda» é por um tempo, provisoriamente.',
+    evolution_note: 'Tempo, período. “Muda mrefu” é muito tempo; “kwa muda” é por um tempo, provisoriamente.',
     transparent: false,
   },
   // ——— do persa e do hindi ———
@@ -241,7 +241,7 @@ export const ETYMOLOGY_SW: EtymologySeed[] = [
     root_word: 'بندر (bandar)',
     origin_language: 'Persa',
     cognates: c(['fa', 'بندر (bandar, porto)'], ['hi', 'bandargāh']),
-    evolution_note: 'O porto. A palavra persa viajou pelo Índico com os mercadores; «bandari ya Dar es Salaam» é o porto da maior cidade da Tanzânia.',
+    evolution_note: 'O porto. A palavra persa viajou pelo Índico com os mercadores; “bandari ya Dar es Salaam” é o porto da maior cidade da Tanzânia.',
     transparent: false,
   },
   {
@@ -249,7 +249,7 @@ export const ETYMOLOGY_SW: EtymologySeed[] = [
     root_word: 'سرکار (sarkār)',
     origin_language: 'Persa (pelo hindustâni)',
     cognates: c(['fa', 'سرکار (sarkār)'], ['hi', 'sarkār']),
-    evolution_note: 'O governo. Veio do persa sarkār, «chefe, autoridade», que no norte da Índia também quer dizer governo, e chegou à costa africana pelos comerciantes indianos.',
+    evolution_note: 'O governo. Veio do persa sarkār, “chefe, autoridade”, que no norte da Índia também quer dizer governo, e chegou à costa africana pelos comerciantes indianos.',
     transparent: false,
   },
   {
@@ -257,7 +257,7 @@ export const ETYMOLOGY_SW: EtymologySeed[] = [
     root_word: 'چای (chāy)',
     origin_language: 'Persa e hindi (do chinês chá)',
     cognates: c(['hi', 'chāy'], ['fa', 'چای (chāy)'], ['zh', '茶 (chá)'], ['pt', 'chá']),
-    evolution_note: 'O chá: a palavra chinesa chá foi por terra para a Pérsia e a Índia, e daí pelo mar para a África Oriental. O português «chá» veio da mesma palavra chinesa, pelo porto de Macau.',
+    evolution_note: 'O chá: a palavra chinesa chá foi por terra para a Pérsia e a Índia, e daí pelo mar para a África Oriental. O português “chá” veio da mesma palavra chinesa, pelo porto de Macau.',
     transparent: true,
   },
   {
@@ -273,7 +273,7 @@ export const ETYMOLOGY_SW: EtymologySeed[] = [
     root_word: 'गाड़ी (gāṛī)',
     origin_language: 'Hindi',
     cognates: c(['hi', 'गाड़ी (gāṛī, carroça)']),
-    evolution_note: 'No hindi, gāṛī é qualquer veículo com rodas, da carroça ao trem. Em suaíli virou o carro: gari la moshi («o carro de fumaça») é o nome antigo do trem.',
+    evolution_note: 'No hindi, gāṛī é qualquer veículo com rodas, da carroça ao trem. Em suaíli virou o carro: gari la moshi (“o carro de fumaça”) é o nome antigo do trem.',
     transparent: false,
   },
   // ——— do português ———
@@ -290,7 +290,7 @@ export const ETYMOLOGY_SW: EtymologySeed[] = [
     root_word: 'igreja',
     origin_language: 'Português',
     cognates: c(['pt', 'igreja']),
-    evolution_note: 'Em suaíli, gereza é a prisão. A explicação mais aceita é que a palavra portuguesa «igreja» passou a designar as construções fortificadas dos portugueses, e daí o sentido de cadeia.',
+    evolution_note: 'Em suaíli, gereza é a prisão. A explicação mais aceita é que a palavra portuguesa “igreja” passou a designar as construções fortificadas dos portugueses, e daí o sentido de cadeia.',
     transparent: false,
   },
   {
@@ -322,7 +322,7 @@ export const ETYMOLOGY_SW: EtymologySeed[] = [
     root_word: 'caixa',
     origin_language: 'Português',
     cognates: c(['pt', 'caixa']),
-    evolution_note: 'Caixa, baú. O «x» português, com som de «ch», virou o «sh» suaíli, que não tem a letra x.',
+    evolution_note: 'Caixa, baú. O “x” português, com som de “ch”, virou o “sh” suaíli, que não tem a letra x.',
     transparent: false,
   },
   {
@@ -395,7 +395,7 @@ export const ETYMOLOGY_SW: EtymologySeed[] = [
     root_word: 'du vin',
     origin_language: 'Francês',
     cognates: c(['fr', 'du vin'], ['pt', 'vinho']),
-    evolution_note: 'O vinho: a expressão francesa «du vin» (vinho, um pouco de vinho) virou uma palavra só, divai, provavelmente pelo contato com missionários e comerciantes de fala francesa.',
+    evolution_note: 'O vinho: a expressão francesa “du vin” (vinho, um pouco de vinho) virou uma palavra só, divai, provavelmente pelo contato com missionários e comerciantes de fala francesa.',
     transparent: false,
   },
 ];

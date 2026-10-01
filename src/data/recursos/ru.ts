@@ -118,7 +118,7 @@ export const RECURSOS_RU: LanguageResources = {
       by: 'Vyacheslav Kotyonochkin (Soyuzmultfilm)',
       year: '1969–1986',
       level: 'A1',
-      why: 'Desenho soviético clássico do lobo que persegue a lebre, quase sem diálogo; o grito do lobo, «Ну, заяц, погоди!» (Espera só, lebre!), todo russo conhece.',
+      why: 'Desenho soviético clássico do lobo que persegue a lebre, quase sem diálogo; o grito do lobo, “Ну, заяц, погоди!” (Espera só, lebre!), todo russo conhece.',
     },
     {
       kind: 'serie',
@@ -162,7 +162,7 @@ export const RECURSOS_RU: LanguageResources = {
       by: 'Arkadi e Boris Strugatski',
       year: '1972',
       level: 'B2',
-      why: 'Ficção científica sobre as «Zonas» deixadas por uma visita alienígena, a obra que inspirou «Stalker»; diálogos com gíria e muita ação.',
+      why: 'Ficção científica sobre as “Zonas” deixadas por uma visita alienígena, a obra que inspirou “Stalker”; diálogos com gíria e muita ação.',
     },
     {
       kind: 'livro',
@@ -180,7 +180,7 @@ export const RECURSOS_RU: LanguageResources = {
       by: 'Mikhail Bulgákov',
       year: '1967',
       level: 'C1',
-      why: 'O diabo visita a Moscou dos anos 30: sátira, humor e fantasia, com frases que viraram provérbios, como «рукописи не горят» (manuscritos não ardem).',
+      why: 'O diabo visita a Moscou dos anos 30: sátira, humor e fantasia, com frases que viraram provérbios, como “рукописи не горят” (manuscritos não ardem).',
     },
     {
       kind: 'livro',
@@ -282,7 +282,7 @@ export const RECURSOS_RU: LanguageResources = {
       original: 'Союзмультфильм',
       by: 'Soyuzmultfilm',
       level: 'A2',
-      why: 'O canal oficial do grande estúdio de animação soviético, com clássicos como «Винни-Пух» e «Ну, погоди!»: frases curtas e vozes muito expressivas.',
+      why: 'O canal oficial do grande estúdio de animação soviético, com clássicos como “Винни-Пух” e “Ну, погоди!”: frases curtas e vozes muito expressivas.',
     },
     {
       kind: 'ferramenta',
@@ -301,9 +301,9 @@ export const RECURSOS_RU: LanguageResources = {
     },
   ],
   tips: [
-    'Aprenda o alfabeto cirílico na primeira semana. Cuidado com as letras que parecem latinas mas soam diferente: «В» é v, «Н» é n, «Р» é r, «С» é s e «Х» é um r aspirado, como o «rr» carioca.',
-    'A sílaba tônica não aparece na escrita e muda o som das vogais: o «о» sem acento soa como «a» (молоко́, «malakó»). Use materiais para estrangeiros, que marcam o acento, e confira no OpenRussian.',
-    'Os seis casos assustam menos se você decorar frases prontas antes das tabelas: «в Москве» (em Moscou), «из Бразилии» (do Brasil), «с другом» (com um amigo), «у меня есть» (eu tenho).',
+    'Aprenda o alfabeto cirílico na primeira semana. Cuidado com as letras que parecem latinas mas soam diferente: “В” é v, “Н” é n, “Р” é r, “С” é s e “Х” é um r aspirado, como o “rr” carioca.',
+    'A sílaba tônica não aparece na escrita e muda o som das vogais: o “о” sem acento soa como “a” (молоко́, “malakó”). Use materiais para estrangeiros, que marcam o acento, e confira no OpenRussian.',
+    'Os seis casos assustam menos se você decorar frases prontas antes das tabelas: “в Москве” (em Moscou), “из Бразилии” (do Brasil), “с другом” (com um amigo), “у меня есть” (eu tenho).',
     'Quase todo verbo vem em par: o imperfectivo, para ações em andamento ou repetidas, e o perfectivo, para ações concluídas (делать / сделать, fazer; читать / прочитать, ler). Aprenda os dois juntos.',
     'Na Rússia, filmes e séries estrangeiros são dublados: assista em russo a filmes que você já conhece de cor, e a história ajuda a entender as falas.',
     'Instale o teclado russo no celular e no computador logo no começo: digitar em cirílico fixa as letras muito mais rápido do que só ler.',

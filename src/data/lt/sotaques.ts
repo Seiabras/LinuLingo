@@ -23,12 +23,12 @@ export const ACCENTS_LT: Accent[] = [
     features: [
       'Os dois tons das sílabas longas (o agudo, que cai, e o circunflexo, que sobe) quase não se distinguem na fala rápida da cidade; a tônica livre continua firme.',
       'No começo do século XX, o lituano era minoria na cidade, ao lado do polonês, do iídiche e do russo; hoje é a língua da maioria dos moradores.',
-      'Na fala informal entram muletas como «nu» (então, bom) e «tipo» (tipo, assim), e a gíria «faina» (legal).',
-      'O «jo» (é, aham) substitui o «taip» (sim) entre amigos.',
+      'Na fala informal entram muletas como “nu” (então, bom) e “tipo” (tipo, assim), e a gíria “faina” (legal).',
+      'O “jo” (é, aham) substitui o “taip” (sim) entre amigos.',
     ],
     examples: [
       ['Labas! Kaip sekasi?', 'Oi! Como vai?', 'a saudação de todo dia'],
-      ['Jo, faina!', 'É, legal!', 'informal: «jo» = sim; «faina» = legal'],
+      ['Jo, faina!', 'É, legal!', 'informal: “jo” = sim; “faina” = legal'],
       ['Nu, tipo, nežinau.', 'Bom, tipo, não sei.', 'muletas da fala jovem'],
     ],
     words: [
@@ -52,13 +52,13 @@ export const ACCENTS_LT: Accent[] = [
     features: [
       'Em São Paulo, a Vila Zelina, na Zona Leste, virou o bairro dos lituanos, com paróquia, grupos de dança folclórica e aulas de língua para os descendentes.',
       'Quem saiu há muito tempo guarda palavras e expressões que na Lituânia já soam antigas.',
-      'Palavras do país novo entram na fala com terminações lituanas: nos EUA ficaram famosas «karas» (carro) e «džiabas» (emprego), do inglês «car» e «job».',
+      'Palavras do país novo entram na fala com terminações lituanas: nos EUA ficaram famosas “karas” (carro) e “džiabas” (emprego), do inglês “car” e “job”.',
       'Depois de 2004, com a entrada da Lituânia na União Europeia, uma nova onda de emigração levou o lituano ao Reino Unido, à Irlanda e à Noruega.',
     ],
     examples: [
       ['Aš esu lietuvių kilmės.', 'Eu sou de origem lituana.', 'frase comum entre descendentes'],
       ['Mano seneliai atvyko į Braziliją.', 'Meus avós vieram para o Brasil.', 'lituano padrão'],
-      ['Važiuoju karu į džiabą.', 'Vou de carro para o trabalho.', 'lituano dos EUA; no padrão: «Važiuoju mašina į darbą.»'],
+      ['Važiuoju karu į džiabą.', 'Vou de carro para o trabalho.', 'lituano dos EUA; no padrão: “Važiuoju mašina į darbą.”'],
     ],
     words: [
       ['išeivija', 'a emigração, a diáspora'],
@@ -88,8 +88,8 @@ export const ACCENTS_LT: Accent[] = [
     ],
     examples: [
       ['Kaip gyveni?', 'Como vai a vida?', 'soa quase igual ao padrão'],
-      ['Labas vakaras!', 'Boa noite!', 'igual ao padrão, com o primeiro «a» longo'],
-      ['Važiuojam į Kauną.', 'Vamos para Kaunas.', 'na fala de todo o país, o «-e» de «važiuojame» cai'],
+      ['Labas vakaras!', 'Boa noite!', 'igual ao padrão, com o primeiro “a” longo'],
+      ['Važiuojam į Kauną.', 'Vamos para Kaunas.', 'na fala de todo o país, o “-e” de “važiuojame” cai'],
     ],
     words: [
       ['suvalkietis', 'pessoa da Suvalkija'],
@@ -108,16 +108,16 @@ export const ACCENTS_LT: Accent[] = [
     variant: 'lt-LT',
     speechLocale: 'lt-LT',
     emoji: '🌲',
-    summary: 'A fala da Aukštaitija, terra de lagos e pinheirais. O traço mais conhecido é o «an» e o «en» que viram «un» e «in»: «ranka» (mão) soa «runka».',
+    summary: 'A fala da Aukštaitija, terra de lagos e pinheirais. O traço mais conhecido é o “an” e o “en” que viram “un” e “in”: “ranka” (mão) soa “runka”.',
     features: [
-      'As sílabas «an, am» viram «un, um», e «en, em» viram «in, im»: «ranka» → «runka», «penki» (cinco) → «pinki».',
+      'As sílabas “an, am” viram “un, um”, e “en, em” viram “in, im”: “ranka” → “runka”, “penki” (cinco) → “pinki”.',
       'Divide-se em várias falas menores, conhecidas pelo nome das cidades, como a dos uteniškiai (de Utena) e a dos anykštėnai (de Anykščiai).',
-      'A região de Anykščiai é a terra de escritores clássicos, como Antanas Baranauskas, o autor do poema «Anykščių šilelis» (O pinheiral de Anykščiai), e Jonas Biliūnas.',
+      'A região de Anykščiai é a terra de escritores clássicos, como Antanas Baranauskas, o autor do poema “Anykščių šilelis” (O pinheiral de Anykščiai), e Jonas Biliūnas.',
       'É ali que fica o Parque Nacional da Aukštaitija, com mais de cem lagos.',
     ],
     examples: [
-      ['Mano runka šalta.', 'Minha mão está fria.', 'no padrão: «Mano ranka šalta.»'],
-      ['Turiu pinkis obuolius.', 'Tenho cinco maçãs.', 'no padrão: «Turiu penkis obuolius.»'],
+      ['Mano runka šalta.', 'Minha mão está fria.', 'no padrão: “Mano ranka šalta.”'],
+      ['Turiu pinkis obuolius.', 'Tenho cinco maçãs.', 'no padrão: “Turiu penkis obuolius.”'],
       ['Labas rytas!', 'Bom dia!', 'saudação da manhã, igual ao padrão'],
     ],
     words: [
@@ -137,17 +137,17 @@ export const ACCENTS_LT: Accent[] = [
     variant: 'lt-LT',
     speechLocale: 'lt-LT',
     emoji: '🍄',
-    summary: 'A fala dos dzūkai, famosa pelo «dz» e pelo «c»: onde o padrão tem «d» e «t» antes de «i» e «e», eles dizem «dz» e «c». Diz-se que o próprio apelido «dzūkas» vem desse jeito de falar.',
+    summary: 'A fala dos dzūkai, famosa pelo “dz” e pelo “c”: onde o padrão tem “d” e “t” antes de “i” e “e”, eles dizem “dz” e “c”. Diz-se que o próprio apelido “dzūkas” vem desse jeito de falar.',
     features: [
-      'O «d» mole vira «dz» e o «t» mole vira «c» [ts]: «diena» (dia) → «dziena», «tik» (só) → «cik». Os lituanos chamam isso de «dzūkavimas».',
+      'O “d” mole vira “dz” e o “t” mole vira “c” [ts]: “diena” (dia) → “dziena”, “tik” (só) → “cik”. Os lituanos chamam isso de “dzūkavimas”.',
       'É uma fala cantada, e a Dzūkija é conhecida pelas canções populares (dainos).',
-      'As florestas de pinheiros da região, como as de Varėna, são o paraíso de quem colhe cogumelos: «grybauti» é quase um esporte nacional ali.',
+      'As florestas de pinheiros da região, como as de Varėna, são o paraíso de quem colhe cogumelos: “grybauti” é quase um esporte nacional ali.',
       'Druskininkai, na beira do rio Nemunas, é uma estância de águas termais desde o século XIX.',
     ],
     examples: [
-      ['Laba dziena!', 'Bom dia!', 'no padrão: «Laba diena!»'],
-      ['Ar cikrai?', 'Sério mesmo?', 'no padrão: «Ar tikrai?»'],
-      ['Cėvas dzirba.', 'O pai trabalha.', 'no padrão: «Tėvas dirba.»'],
+      ['Laba dziena!', 'Bom dia!', 'no padrão: “Laba diena!”'],
+      ['Ar cikrai?', 'Sério mesmo?', 'no padrão: “Ar tikrai?”'],
+      ['Cėvas dzirba.', 'O pai trabalha.', 'no padrão: “Tėvas dirba.”'],
     ],
     words: [
       ['dzūkas', 'pessoa da Dzūkija'],
@@ -168,15 +168,15 @@ export const ACCENTS_LT: Accent[] = [
     emoji: '🐻',
     summary: 'Os linguistas lituanos o tratam como um dos dois grandes grupos de dialetos do lituano, mas muitos samogicianos o defendem como língua própria; o debate continua. Tem grafia própria, com letras como ē, ī e ō, e a sua própria Wikipédia.',
     features: [
-      'As falas samogicianas se classificam pelo jeito de dizer «duona» (pão): há os dounininkai («douna»), os dūnininkai («dūna») e os donininkai («dona»).',
-      'Encurta as terminações: onde o padrão diz «vyras» (homem), muitos dizem algo como «vīrs».',
+      'As falas samogicianas se classificam pelo jeito de dizer “duona” (pão): há os dounininkai (“douna”), os dūnininkai (“dūna”) e os donininkai (“dona”).',
+      'Encurta as terminações: onde o padrão diz “vyras” (homem), muitos dizem algo como “vīrs”.',
       'A tônica tende a recuar para o começo da palavra, ao contrário do padrão, onde ela pode cair em qualquer sílaba.',
       'Um lituano de Vilnius costuma ter dificuldade de entender um samogiciano falando a fala da aldeia, e isso alimenta o argumento de quem o chama de língua.',
     ],
     examples: [
-      ['Svēks!', 'Olá!', 'samogiciano; no padrão: «Sveikas!»'],
-      ['douna', 'pão', 'samogiciano do norte; no padrão: «duona»'],
-      ['Žemaitėjė', 'a Samogícia', 'samogiciano; no padrão: «Žemaitija»'],
+      ['Svēks!', 'Olá!', 'samogiciano; no padrão: “Sveikas!”'],
+      ['douna', 'pão', 'samogiciano do norte; no padrão: “duona”'],
+      ['Žemaitėjė', 'a Samogícia', 'samogiciano; no padrão: “Žemaitija”'],
     ],
     words: [
       ['žemaitis', 'samogiciano (a pessoa)'],
@@ -196,19 +196,19 @@ export const ACCENTS_LT: Accent[] = [
     summary: 'A maior minoria do país: no censo de 2021, perto de 6,5% dos moradores se declararam poloneses. No distrito de Šalčininkai, eles são a maioria.',
     features: [
       'O polonês da região de Vilnius tem sotaque próprio, com influência do bielorrusso e do lituano, e é reconhecível na Polônia.',
-      'Nas aldeias, muita gente fala a «mowa prosta», ou «po prostu» («simplesmente»): uma fala do dia a dia mais próxima do bielorrusso, que mistura polonês e russo.',
+      'Nas aldeias, muita gente fala a “mowa prosta”, ou “po prostu” (“simplesmente”): uma fala do dia a dia mais próxima do bielorrusso, que mistura polonês e russo.',
       'Há escolas com ensino em polonês, e muitos são bilíngues ou trilíngues (polonês, lituano e russo).',
       'Entre 1920 e 1939, a região de Vilnius ficou sob a Polônia; é uma memória que lituanos e poloneses ainda contam de jeitos diferentes.',
     ],
     examples: [
       ['Dzień dobry!', 'Bom dia!', 'polonês'],
       ['Jak się masz?', 'Como vai?', 'polonês'],
-      ['Rozmawiamy po prostu.', 'Falamos «po prostu» (o jeito simples, da aldeia).', 'como muitos chamam a própria fala mista'],
+      ['Rozmawiamy po prostu.', 'Falamos “po prostu” (o jeito simples, da aldeia).', 'como muitos chamam a própria fala mista'],
     ],
     words: [
       ['Wilno', 'Vilnius, em polonês'],
       ['wilnianin', 'pessoa de Vilnius, em polonês'],
-      ['tutejszy', '«daqui», como muitos se diziam antigamente'],
+      ['tutejszy', '“daqui”, como muitos se diziam antigamente'],
       ['po prostu', 'simplesmente; a fala local'],
     ],
   },
@@ -225,7 +225,7 @@ export const ACCENTS_LT: Accent[] = [
     features: [
       'A usina de Ignalina foi desligada em 2009, como condição da entrada da Lituânia na União Europeia, e Visaginas perdeu boa parte dos empregos.',
       'Os mais velhos aprenderam o lituano tarde ou pouco; os jovens estudam lituano na escola e costumam ser bilíngues.',
-      'Nomes lituanos de lugares e de repartições entram na fala russa com a declinação do russo: «в Висагинасе» (em Visaginas).',
+      'Nomes lituanos de lugares e de repartições entram na fala russa com a declinação do russo: “в Висагинасе” (em Visaginas).',
       'Até 1990, o russo era a língua da administração soviética; depois da independência, o lituano passou a ser a única língua oficial.',
     ],
     examples: [

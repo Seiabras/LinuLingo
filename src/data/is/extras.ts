@@ -58,7 +58,7 @@ export const SCENARIOS_IS: ScenarioSeed[] = [
     cefr: 'A1',
     register: 'informal',
     persona: 'Sigga, colega do curso de islandês',
-    description: 'Uma colega do curso chama você para um café no centro de Reykjavík. Entre amigos, tudo leve e informal: nada de «vinsamlegast» nem de linguagem de ofício.',
+    description: 'Uma colega do curso chama você para um café no centro de Reykjavík. Entre amigos, tudo leve e informal: nada de “vinsamlegast” nem de linguagem de ofício.',
     turns: [
       {
         bot: 'Hæ! Hvað segirðu gott? Eigum við að fá okkur kaffi?',
@@ -69,7 +69,7 @@ export const SCENARIOS_IS: ScenarioSeed[] = [
       },
       {
         bot: 'Hvað viltu fá? Ég ætla að fá kaffi og kanilsnúð.',
-        botTranslation: 'O que você vai querer? Eu vou pedir um café e um «kanilsnúður» (o rolinho de canela).',
+        botTranslation: 'O que você vai querer? Eu vou pedir um café e um “kanilsnúður” (o rolinho de canela).',
         keywords: ['ég ætla', 'líka', 'te', 'kaffi', 'kanilsnúð', 'kleinu'],
         suggestions: ['Ég ætla líka að fá kanilsnúð.', 'Ég ætla að fá te og kleinu, takk.'],
         registerBreakers: INFORMAL_BREAKERS,
@@ -104,7 +104,7 @@ export const SCENARIOS_IS: ScenarioSeed[] = [
     cefr: 'A2',
     register: 'formal',
     persona: 'Recepcionista de um hotel no centro de Akureyri',
-    description: 'Você chega à noite a um hotel em Akureyri, a capital do norte. O recepcionista trata você por «þú», como todo mundo na Islândia, mas o tom é de atendimento: frases completas e sem gíria.',
+    description: 'Você chega à noite a um hotel em Akureyri, a capital do norte. O recepcionista trata você por “þú”, como todo mundo na Islândia, mas o tom é de atendimento: frases completas e sem gíria.',
     turns: [
       {
         bot: 'Gott kvöld og velkomin! Ertu með bókun?',
@@ -196,7 +196,7 @@ export const SCENARIOS_IS: ScenarioSeed[] = [
     cefr: 'B1',
     register: 'formal',
     persona: 'Atendente da bilheteria de passeios no porto de Húsavík',
-    description: 'Húsavík, no norte, é a cidade das baleias. Você vai à bilheteria do porto comprar um passeio: atendimento cordial, com «þú», mas frases completas e sem gíria.',
+    description: 'Húsavík, no norte, é a cidade das baleias. Você vai à bilheteria do porto comprar um passeio: atendimento cordial, com “þú”, mas frases completas e sem gíria.',
     turns: [
       {
         bot: 'Góðan daginn! Hvernig get ég aðstoðað þig?',
@@ -242,7 +242,7 @@ export const SCENARIOS_IS: ScenarioSeed[] = [
     cefr: 'B1',
     register: 'informal',
     persona: 'Gunna, amiga que adora trilhas',
-    description: 'Uma amiga convida você para acampar na península de Snæfellsnes, a oeste de Reykjavík, aos pés da geleira Snæfellsjökull. Papo de amigos: pode usar «geggjað» e «snilld» à vontade.',
+    description: 'Uma amiga convida você para acampar na península de Snæfellsnes, a oeste de Reykjavík, aos pés da geleira Snæfellsjökull. Papo de amigos: pode usar “geggjað” e “snilld” à vontade.',
     turns: [
       {
         bot: 'Hvað segirðu um að fara á Snæfellsnes um helgina?',
@@ -288,7 +288,7 @@ export const SCENARIOS_IS: ScenarioSeed[] = [
     cefr: 'B2',
     register: 'formal',
     persona: 'Gerente de recursos humanos de uma empresa de turismo',
-    description: 'Você faz uma entrevista para uma vaga numa empresa de turismo em Reykjavík. Mesmo aqui, todos se tratam por «þú» e pelo primeiro nome; a formalidade está no vocabulário cuidado, no condicional e na ausência de gíria.',
+    description: 'Você faz uma entrevista para uma vaga numa empresa de turismo em Reykjavík. Mesmo aqui, todos se tratam por “þú” e pelo primeiro nome; a formalidade está no vocabulário cuidado, no condicional e na ausência de gíria.',
     turns: [
       {
         bot: 'Góðan dag og velkomin í viðtalið. Gætirðu sagt mér aðeins frá þér og bakgrunni þínum?',
@@ -338,7 +338,7 @@ export const JOURNAL_PROMPTS_IS: [string, string][] = [
   ['Hvað ætlar þú að gera um helgina?', 'O que você vai fazer no fim de semana?'],
   ['Lýstu heimilinu þínu.', 'Descreva a sua casa.'],
   ['Segðu frá besta vini þínum eða bestu vinkonu þinni.', 'Fale do seu melhor amigo ou da sua melhor amiga.'],
-  ['Hvað þýðir «þetta reddast» fyrir þig? Nefndu dæmi.', 'O que «þetta reddast» («no fim, dá tudo certo») quer dizer para você? Dê um exemplo.'],
+  ['Hvað þýðir “þetta reddast” fyrir þig? Nefndu dæmi.', 'O que “þetta reddast” (“no fim, dá tudo certo”) quer dizer para você? Dê um exemplo.'],
   ['Hvaða stað á Íslandi langar þig að heimsækja? Af hverju?', 'Que lugar da Islândia você gostaria de visitar? Por quê?'],
   ['Hvað gerðir þú um síðustu helgi?', 'O que você fez no fim de semana passado?'],
   ['Segðu frá fjölskyldunni þinni.', 'Fale da sua família.'],
@@ -380,7 +380,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'hús',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'house'], ['de', 'Haus'], ['sv', 'hus'], ['da', 'hus']),
-    evolution_note: 'A palavra se escreve igual há mil anos. O inglês «husband» vem do nórdico «húsbóndi», o dono da casa, e «hustings» vem de «húsþing», a assembleia da casa.',
+    evolution_note: 'A palavra se escreve igual há mil anos. O inglês “husband” vem do nórdico “húsbóndi”, o dono da casa, e “hustings” vem de “húsþing”, a assembleia da casa.',
     transparent: false,
   },
   {
@@ -388,7 +388,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'vatn',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'water'], ['de', 'Wasser'], ['sv', 'vatten'], ['el', 'hýdor (hidro-)']),
-    evolution_note: 'O islandês guarda a forma do nórdico antigo sem mudar uma letra. «Vatn» também quer dizer lago: Mývatn é o «lago dos mosquitos». A raiz indo-europeia é a mesma do grego «hýdor», de hidratar.',
+    evolution_note: 'O islandês guarda a forma do nórdico antigo sem mudar uma letra. “Vatn” também quer dizer lago: Mývatn é o “lago dos mosquitos”. A raiz indo-europeia é a mesma do grego “hýdor”, de hidratar.',
     transparent: false,
   },
   {
@@ -396,7 +396,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'mjólk',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'milk'], ['de', 'Milch'], ['sv', 'mjölk'], ['da', 'mælk']),
-    evolution_note: 'O islandês manteve o «j» e o «ó» do nórdico antigo; o dinamarquês os perdeu («mælk»). O latim «lac» (lácteo) não é parente.',
+    evolution_note: 'O islandês manteve o “j” e o “ó” do nórdico antigo; o dinamarquês os perdeu (“mælk”). O latim “lac” (lácteo) não é parente.',
     transparent: false,
   },
   {
@@ -404,7 +404,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'brauð',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'bread'], ['de', 'Brot'], ['sv', 'bröd'], ['da', 'brød']),
-    evolution_note: 'O ditongo «au» e o «ð» final são os mesmos da Idade Média. O sueco e o dinamarquês trocaram o ditongo por uma vogal só (bröd, brød).',
+    evolution_note: 'O ditongo “au” e o “ð” final são os mesmos da Idade Média. O sueco e o dinamarquês trocaram o ditongo por uma vogal só (bröd, brød).',
     transparent: false,
   },
   {
@@ -412,7 +412,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'hestr',
     origin_language: 'Nórdico antigo',
     cognates: c(['de', 'Hengst (garanhão)'], ['sv', 'häst'], ['da', 'hest'], ['nb', 'hest']),
-    evolution_note: 'No nórdico antigo era «hestr»; por volta de 1300 os islandeses começaram a pôr um «u» antes do «-r» final, e daí o «-ur» de hestur, dagur e fiskur. Em alemão, a mesma raiz ficou só para o garanhão.',
+    evolution_note: 'No nórdico antigo era “hestr”; por volta de 1300 os islandeses começaram a pôr um “u” antes do “-r” final, e daí o “-ur” de hestur, dagur e fiskur. Em alemão, a mesma raiz ficou só para o garanhão.',
     transparent: false,
   },
   {
@@ -420,7 +420,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'kýr',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'cow'], ['de', 'Kuh'], ['sv', 'ko'], ['da', 'ko']),
-    evolution_note: 'Uma das palavras mais irregulares da língua: o plural também é «kýr», e o acusativo e o dativo do singular são «kú».',
+    evolution_note: 'Uma das palavras mais irregulares da língua: o plural também é “kýr”, e o acusativo e o dativo do singular são “kú”.',
     transparent: false,
   },
   {
@@ -428,7 +428,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'kind',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'kind (tipo) / kin'], ['de', 'Kind (criança)'], ['la', 'genus']),
-    evolution_note: 'No nórdico antigo, «kind» era linhagem, espécie. Na Islândia, onde a ovelha era o bicho por excelência, a palavra passou a querer dizer ovelha. A mesma raiz virou «kind» (tipo) em inglês e «Kind» (criança) em alemão.',
+    evolution_note: 'No nórdico antigo, “kind” era linhagem, espécie. Na Islândia, onde a ovelha era o bicho por excelência, a palavra passou a querer dizer ovelha. A mesma raiz virou “kind” (tipo) em inglês e “Kind” (criança) em alemão.',
     transparent: false,
   },
   {
@@ -436,7 +436,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'fé',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'fee'], ['de', 'Vieh (gado)'], ['la', 'pecus (gado) → pecunia'], ['pt', 'pecuniário']),
-    evolution_note: 'Quer dizer ao mesmo tempo rebanho de ovelhas e dinheiro, porque o gado era a riqueza. O latim fez o mesmo caminho: de «pecus» (gado) veio «pecunia» (dinheiro), e daí o nosso pecuniário. As duas palavras vêm da mesma raiz indo-europeia.',
+    evolution_note: 'Quer dizer ao mesmo tempo rebanho de ovelhas e dinheiro, porque o gado era a riqueza. O latim fez o mesmo caminho: de “pecus” (gado) veio “pecunia” (dinheiro), e daí o nosso pecuniário. As duas palavras vêm da mesma raiz indo-europeia.',
     transparent: false,
   },
   {
@@ -444,7 +444,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'fiskr',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'fish'], ['de', 'Fisch'], ['la', 'piscis'], ['pt', 'peixe']),
-    evolution_note: 'O germânico trocou o «p» indo-europeu por «f» (piscis → fisk), a mesma troca de «pater» → «father» e «pés» → «fótur». Por volta de 1300, o «-r» final ganhou o «u»: fiskr → fiskur.',
+    evolution_note: 'O germânico trocou o “p” indo-europeu por “f” (piscis → fisk), a mesma troca de “pater” → “father” e “pés” → “fótur”. Por volta de 1300, o “-r” final ganhou o “u”: fiskr → fiskur.',
     transparent: false,
   },
   {
@@ -452,15 +452,15 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'fjall',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'fell (morro, no norte da Inglaterra)'], ['sv', 'fjäll'], ['nb', 'fjell']),
-    evolution_note: 'Os vikings levaram a palavra para o norte da Inglaterra, onde os morros ainda se chamam «fells». Em islandês, o «ll» soa [tl̥]: fjall [ˈfjatl̥].',
+    evolution_note: 'Os vikings levaram a palavra para o norte da Inglaterra, onde os morros ainda se chamam “fells”. Em islandês, o “ll” soa [tl̥]: fjall [ˈfjatl̥].',
     transparent: false,
   },
   {
     word: 'jökull',
     root_word: 'jökull',
     origin_language: 'Nórdico antigo',
-    cognates: c(['en', 'icicle (o «-icle» é a mesma palavra)'], ['nb', 'jøkul']),
-    evolution_note: 'Diminutivo de «jaki», pedaço de gelo. O inglês «icicle» (pingente de gelo) junta «ice» a um parente de «jökull». A geologia do mundo inteiro usa o islandês «jökulhlaup» para a enchente que sai de baixo de uma geleira.',
+    cognates: c(['en', 'icicle (o “-icle” é a mesma palavra)'], ['nb', 'jøkul']),
+    evolution_note: 'Diminutivo de “jaki”, pedaço de gelo. O inglês “icicle” (pingente de gelo) junta “ice” a um parente de “jökull”. A geologia do mundo inteiro usa o islandês “jökulhlaup” para a enchente que sai de baixo de uma geleira.',
     transparent: false,
   },
   {
@@ -468,7 +468,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'fjörðr',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'fjord / firth'], ['nb', 'fjord'], ['sv', 'fjärd'], ['pt', 'fiorde']),
-    evolution_note: 'O mundo aprendeu «fjord» pelo norueguês; o escocês «firth» (estuário) veio direto do nórdico dos vikings. Os fiordes do oeste da Islândia se chamam Vestfirðir.',
+    evolution_note: 'O mundo aprendeu “fjord” pelo norueguês; o escocês “firth” (estuário) veio direto do nórdico dos vikings. Os fiordes do oeste da Islândia se chamam Vestfirðir.',
     transparent: false,
   },
   {
@@ -476,7 +476,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'fors',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'force (cachoeira, no norte da Inglaterra)'], ['sv', 'fors'], ['nb', 'foss']),
-    evolution_note: 'O «rs» do nórdico antigo virou «ss». Gullfoss é a «cachoeira de ouro»; no norte da Inglaterra, onde os vikings se instalaram, várias cachoeiras ainda se chamam «force».',
+    evolution_note: 'O “rs” do nórdico antigo virou “ss”. Gullfoss é a “cachoeira de ouro”; no norte da Inglaterra, onde os vikings se instalaram, várias cachoeiras ainda se chamam “force”.',
     transparent: false,
   },
   {
@@ -484,7 +484,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'á',
     origin_language: 'Nórdico antigo',
     cognates: c(['la', 'aqua'], ['pt', 'água'], ['sv', 'å'], ['da', 'å']),
-    evolution_note: 'O rio de uma letra só é o que sobrou do germânico «ahwō», da mesma raiz do latim «aqua». Aparece em mil nomes de lugar: Laxá (rio do salmão), Jökulsá (rio da geleira).',
+    evolution_note: 'O rio de uma letra só é o que sobrou do germânico “ahwō”, da mesma raiz do latim “aqua”. Aparece em mil nomes de lugar: Laxá (rio do salmão), Jökulsá (rio da geleira).',
     transparent: false,
   },
   {
@@ -492,7 +492,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'sandr',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'sand / sandur (termo de geologia)'], ['de', 'Sand'], ['sv', 'sand']),
-    evolution_note: 'Os geólogos do mundo usam «sandur» para as planícies de areia e cascalho deixadas pelos rios das geleiras, como o Skeiðarársandur, no sul da Islândia.',
+    evolution_note: 'Os geólogos do mundo usam “sandur” para as planícies de areia e cascalho deixadas pelos rios das geleiras, como o Skeiðarársandur, no sul da Islândia.',
     transparent: false,
   },
   {
@@ -500,7 +500,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'ey',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', '-ey (Orkney, Anglesey)'], ['sv', 'ö'], ['da', 'ø']),
-    evolution_note: 'Ilha: Vestmannaeyjar são as «ilhas dos homens do oeste» (os irlandeses), e Eyjafjallajökull é a «geleira das montanhas das ilhas». Nomes britânicos como Orkney guardam o «ey» dos vikings.',
+    evolution_note: 'Ilha: Vestmannaeyjar são as “ilhas dos homens do oeste” (os irlandeses), e Eyjafjallajökull é a “geleira das montanhas das ilhas”. Nomes britânicos como Orkney guardam o “ey” dos vikings.',
     transparent: false,
   },
   {
@@ -508,15 +508,15 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'vík',
     origin_language: 'Nórdico antigo',
     cognates: c(['sv', 'vik'], ['nb', 'vik'], ['en', '-wick (em alguns nomes de lugar)']),
-    evolution_note: 'Baía, enseada. Reykjavík é a «baía das fumaças»: o vapor das fontes quentes que os primeiros colonos viram. Uma das hipóteses para «víkingur» é «homem das baías», mas a origem é discutida.',
+    evolution_note: 'Baía, enseada. Reykjavík é a “baía das fumaças”: o vapor das fontes quentes que os primeiros colonos viram. Uma das hipóteses para “víkingur” é “homem das baías”, mas a origem é discutida.',
     transparent: false,
   },
   {
     word: 'hver',
-    root_word: 'hverr (caldeirão); Geysir, de «geysa» (jorrar)',
+    root_word: 'hverr (caldeirão); Geysir, de “geysa” (jorrar)',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'geyser'], ['de', 'Geysir'], ['pt', 'gêiser']),
-    evolution_note: '«Hver» é a fonte quente, literalmente «caldeirão». A mais famosa, no sul do país, se chama Geysir, «o que jorra», do verbo «geysa»; o nome próprio virou palavra comum no mundo todo: gêiser.',
+    evolution_note: '“Hver” é a fonte quente, literalmente “caldeirão”. A mais famosa, no sul do país, se chama Geysir, “o que jorra”, do verbo “geysa”; o nome próprio virou palavra comum no mundo todo: gêiser.',
     transparent: false,
   },
   {
@@ -524,7 +524,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'eldur + fjall',
     origin_language: 'Islandês (composto)',
     cognates: c(['sv', 'eld (fogo) + fjäll'], ['la', 'Vulcanus (vulcão)']),
-    evolution_note: '«Montanha de fogo». Onde o português foi buscar o deus romano Vulcano, o islandês descreveu o que via. A erupção é «eldgos», o «jorro de fogo».',
+    evolution_note: '“Montanha de fogo”. Onde o português foi buscar o deus romano Vulcano, o islandês descreveu o que via. A erupção é “eldgos”, o “jorro de fogo”.',
     transparent: false,
   },
   {
@@ -532,7 +532,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'hreindýri',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'reindeer'], ['de', 'Rentier'], ['sv', 'ren']),
-    evolution_note: 'O inglês «reindeer» vem do nórdico «hreindýri». O «dýr» é bicho em geral, como o alemão «Tier»; o inglês «deer» encolheu para cervo. As renas foram levadas da Noruega para a Islândia no século XVIII e vivem no leste.',
+    evolution_note: 'O inglês “reindeer” vem do nórdico “hreindýri”. O “dýr” é bicho em geral, como o alemão “Tier”; o inglês “deer” encolheu para cervo. As renas foram levadas da Noruega para a Islândia no século XVIII e vivem no leste.',
     transparent: false,
   },
   {
@@ -540,7 +540,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'lax',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'lox (via iídiche)'], ['de', 'Lachs'], ['sv', 'lax'], ['da', 'laks']),
-    evolution_note: 'Palavra germânica antiga; o salmão defumado dos bagels de Nova York, o «lox», chegou ao inglês pelo iídiche. Na Islândia, vários rios se chamam Laxá, o rio do salmão.',
+    evolution_note: 'Palavra germânica antiga; o salmão defumado dos bagels de Nova York, o “lox”, chegou ao inglês pelo iídiche. Na Islândia, vários rios se chamam Laxá, o rio do salmão.',
     transparent: false,
   },
   {
@@ -548,7 +548,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'hvalr',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'whale'], ['de', 'Wal'], ['sv', 'val'], ['nb', 'hval']),
-    evolution_note: 'O «hv» se escrevia assim em inglês antigo também («hwæl»). Uma baleia encalhada era um presente para a fazenda: daí «hvalreki», sorte grande, golpe de sorte.',
+    evolution_note: 'O “hv” se escrevia assim em inglês antigo também (“hwæl”). Uma baleia encalhada era um presente para a fazenda: daí “hvalreki”, sorte grande, golpe de sorte.',
     transparent: false,
   },
   {
@@ -556,7 +556,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'lundi',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'Lundy (ilha)'], ['nb', 'lunde'], ['da', 'lunde']),
-    evolution_note: 'O papagaio-do-mar. A ilha inglesa de Lundy tem nome nórdico: «lundey», a ilha dos papagaios-do-mar. Em Vestmannaeyjar vive uma das maiores colônias do mundo.',
+    evolution_note: 'O papagaio-do-mar. A ilha inglesa de Lundy tem nome nórdico: “lundey”, a ilha dos papagaios-do-mar. Em Vestmannaeyjar vive uma das maiores colônias do mundo.',
     transparent: false,
   },
   {
@@ -564,7 +564,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'hrafn',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'raven'], ['de', 'Rabe'], ['da', 'ravn']),
-    evolution_note: 'Odin tinha dois corvos, Huginn e Muninn (pensamento e memória). O «Livro da Colonização» conta que Flóki soltava corvos para achar terra: ficou conhecido como Hrafna-Flóki, o Flóki dos Corvos.',
+    evolution_note: 'Odin tinha dois corvos, Huginn e Muninn (pensamento e memória). O “Livro da Colonização” conta que Flóki soltava corvos para achar terra: ficou conhecido como Hrafna-Flóki, o Flóki dos Corvos.',
     transparent: false,
   },
   {
@@ -572,7 +572,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'úlfr',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'wolf'], ['de', 'Wolf'], ['la', 'lupus'], ['pt', 'lobo']),
-    evolution_note: 'O nórdico perdeu o «w» antes de vogal arredondada: «wolf» → úlfr, «word» → orð, «wool» → ull. A raiz indo-europeia é a mesma do latim «lupus».',
+    evolution_note: 'O nórdico perdeu o “w” antes de vogal arredondada: “wolf” → úlfr, “word” → orð, “wool” → ull. A raiz indo-europeia é a mesma do latim “lupus”.',
     transparent: false,
   },
   {
@@ -580,7 +580,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'ull',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'wool'], ['de', 'Wolle'], ['la', 'lana'], ['pt', 'lã']),
-    evolution_note: 'Mesma queda do «w» de «úlfur». A lã da ovelha islandesa virou o «lopi», o fio da «lopapeysa», o suéter típico com a gola estampada.',
+    evolution_note: 'Mesma queda do “w” de “úlfur”. A lã da ovelha islandesa virou o “lopi”, o fio da “lopapeysa”, o suéter típico com a gola estampada.',
     transparent: false,
   },
   {
@@ -588,7 +588,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'hundr',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'hound'], ['de', 'Hund'], ['la', 'canis'], ['pt', 'cão']),
-    evolution_note: 'Por mais estranho que pareça, «hundur» e «cão» vêm da mesma raiz indo-europeia: o germânico trocou o «k» por «h», como em «hjarta» × coração.',
+    evolution_note: 'Por mais estranho que pareça, “hundur” e “cão” vêm da mesma raiz indo-europeia: o germânico trocou o “k” por “h”, como em “hjarta” × coração.',
     transparent: false,
   },
   {
@@ -596,7 +596,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'köttr',
     origin_language: 'Nórdico antigo (do latim tardio cattus)',
     cognates: c(['en', 'cat'], ['de', 'Katze'], ['la', 'cattus'], ['pt', 'gato']),
-    evolution_note: 'O gato doméstico e o seu nome chegaram tarde à Europa do norte, vindos do latim do fim do Império. O «ö» é um «a» arredondado pelo «u» antigo da terminação.',
+    evolution_note: 'O gato doméstico e o seu nome chegaram tarde à Europa do norte, vindos do latim do fim do Império. O “ö” é um “a” arredondado pelo “u” antigo da terminação.',
     transparent: false,
   },
   {
@@ -604,7 +604,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'egg',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'egg'], ['de', 'Ei'], ['sv', 'ägg']),
-    evolution_note: 'O inglês pegou «egg» do nórdico e abandonou a palavra antiga, «ey». No fim do século XV, o impressor William Caxton contou a história de uma dona de casa que não entendia «eggys» e só conhecia «eyren».',
+    evolution_note: 'O inglês pegou “egg” do nórdico e abandonou a palavra antiga, “ey”. No fim do século XV, o impressor William Caxton contou a história de uma dona de casa que não entendia “eggys” e só conhecia “eyren”.',
     transparent: false,
   },
   {
@@ -612,7 +612,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'smjör',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'smear (untar)'], ['de', 'Schmer (gordura)'], ['sv', 'smör'], ['da', 'smør']),
-    evolution_note: 'A manteiga é «o que se passa»: a raiz é a mesma do inglês «smear», untar, espalhar.',
+    evolution_note: 'A manteiga é “o que se passa”: a raiz é a mesma do inglês “smear”, untar, espalhar.',
     transparent: false,
   },
   {
@@ -628,7 +628,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'lýsi (de ljós, luz)',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'light'], ['la', 'lux'], ['pt', 'luz']),
-    evolution_note: 'O óleo de fígado de bacalhau, que as crianças islandesas tomam de colher, é o «óleo de luz»: antes da eletricidade, era ele que queimava nas lamparinas. Vem da mesma família de «ljós» (luz) e «lýsa» (iluminar).',
+    evolution_note: 'O óleo de fígado de bacalhau, que as crianças islandesas tomam de colher, é o “óleo de luz”: antes da eletricidade, era ele que queimava nas lamparinas. Vem da mesma família de “ljós” (luz) e “lýsa” (iluminar).',
     transparent: false,
   },
   {
@@ -636,7 +636,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'ostr',
     origin_language: 'Nórdico antigo',
     cognates: c(['sv', 'ost'], ['da', 'ost'], ['nb', 'ost']),
-    evolution_note: 'Os nórdicos guardaram a palavra própria. O latim «caseus» deu o alemão «Käse», o inglês «cheese» e o nosso «queijo», mas não chegou ao norte.',
+    evolution_note: 'Os nórdicos guardaram a palavra própria. O latim “caseus” deu o alemão “Käse”, o inglês “cheese” e o nosso “queijo”, mas não chegou ao norte.',
     transparent: false,
   },
   {
@@ -644,7 +644,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'kaka',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'cake'], ['de', 'Kuchen'], ['sv', 'kaka']),
-    evolution_note: 'O inglês «cake» é empréstimo do nórdico dos vikings. No começo era um pão chato e redondo; o bolo doce veio depois.',
+    evolution_note: 'O inglês “cake” é empréstimo do nórdico dos vikings. No começo era um pão chato e redondo; o bolo doce veio depois.',
     transparent: false,
   },
   {
@@ -652,7 +652,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'steik',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'steak'], ['sv', 'stek'], ['da', 'steg']),
-    evolution_note: 'De «steikja», assar no espeto. O inglês «steak» veio do nórdico, e o bife voltou ao português pelo inglês «beefsteak».',
+    evolution_note: 'De “steikja”, assar no espeto. O inglês “steak” veio do nórdico, e o bife voltou ao português pelo inglês “beefsteak”.',
     transparent: false,
   },
   {
@@ -660,7 +660,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'bjórr',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'beer'], ['de', 'Bier'], ['nl', 'bier']),
-    evolution_note: 'Palavra antiga, mas a bebida teve uma história curiosa: a cerveja forte ficou proibida na Islândia de 1915 até 1 de março de 1989, o «bjórdagurinn», o dia da cerveja, que ainda se comemora.',
+    evolution_note: 'Palavra antiga, mas a bebida teve uma história curiosa: a cerveja forte ficou proibida na Islândia de 1915 até 1 de março de 1989, o “bjórdagurinn”, o dia da cerveja, que ainda se comemora.',
     transparent: false,
   },
   {
@@ -668,7 +668,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'skál',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'scale (prato da balança)'], ['sv', 'skål'], ['da', 'skål']),
-    evolution_note: 'Tigela: e é com ela que se brinda, «Skál!». Os pratos da balança eram tigelas, e o inglês «scale» (balança) veio da palavra nórdica.',
+    evolution_note: 'Tigela: e é com ela que se brinda, “Skál!”. Os pratos da balança eram tigelas, e o inglês “scale” (balança) veio da palavra nórdica.',
     transparent: false,
   },
   {
@@ -676,7 +676,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'taka',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'take'], ['sv', 'ta / taga'], ['da', 'tage']),
-    evolution_note: 'O inglês «take» é empréstimo do nórdico e tomou o lugar do verbo antigo, «niman» (o alemão «nehmen»). Um verbo forte: tók, tókum, tekið.',
+    evolution_note: 'O inglês “take” é empréstimo do nórdico e tomou o lugar do verbo antigo, “niman” (o alemão “nehmen”). Um verbo forte: tók, tókum, tekið.',
     transparent: false,
   },
   {
@@ -684,7 +684,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'kalla',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'call'], ['sv', 'kalla'], ['da', 'kalde']),
-    evolution_note: 'Outro verbo do dia a dia que o inglês recebeu dos vikings. Em islandês, o «ll» soa [tl̥]: kalla [ˈkʰatla].',
+    evolution_note: 'Outro verbo do dia a dia que o inglês recebeu dos vikings. Em islandês, o “ll” soa [tl̥]: kalla [ˈkʰatla].',
     transparent: false,
   },
   {
@@ -692,7 +692,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'deyja',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'die'], ['sv', 'dö'], ['da', 'dø']),
-    evolution_note: 'O inglês «die» provavelmente veio do nórdico: o inglês antigo preferia «steorfan» (o alemão «sterben»), que encolheu para «starve», morrer de fome.',
+    evolution_note: 'O inglês “die” provavelmente veio do nórdico: o inglês antigo preferia “steorfan” (o alemão “sterben”), que encolheu para “starve”, morrer de fome.',
     transparent: false,
   },
   {
@@ -700,7 +700,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'lög (plural de lag, camada)',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'law / by-law'], ['sv', 'lag'], ['da', 'lov']),
-    evolution_note: 'A lei é «o que foi deposto», da família de «leggja», pôr. O inglês «law» veio do nórdico dos vikings, e «by-law» (regulamento) é a lei da «bý», a aldeia.',
+    evolution_note: 'A lei é “o que foi deposto”, da família de “leggja”, pôr. O inglês “law” veio do nórdico dos vikings, e “by-law” (regulamento) é a lei da “bý”, a aldeia.',
     transparent: false,
   },
   {
@@ -708,7 +708,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'þing',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'thing'], ['de', 'Ding'], ['nb', 'Storting'], ['da', 'Folketing']),
-    evolution_note: 'Era a assembleia onde se discutiam os assuntos; o inglês «thing» e o alemão «Ding» ficaram com o assunto. O Alþingi, fundado em 930 em Þingvellir, é o nome do parlamento islandês até hoje.',
+    evolution_note: 'Era a assembleia onde se discutiam os assuntos; o inglês “thing” e o alemão “Ding” ficaram com o assunto. O Alþingi, fundado em 930 em Þingvellir, é o nome do parlamento islandês até hoje.',
     transparent: false,
   },
   {
@@ -716,7 +716,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'víkingr',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'viking'], ['de', 'Wikinger'], ['pt', 'viking']),
-    evolution_note: 'Em nórdico antigo, «víking» era a expedição, e «víkingr», quem saía nela. A origem é discutida («vík», baía, é uma das hipóteses). O mundo usa a palavra desde o século XIX.',
+    evolution_note: 'Em nórdico antigo, “víking” era a expedição, e “víkingr”, quem saía nela. A origem é discutida (“vík”, baía, é uma das hipóteses). O mundo usa a palavra desde o século XIX.',
     transparent: true,
   },
   {
@@ -724,7 +724,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'saga (de segja, dizer)',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'saga / saw (ditado)'], ['de', 'Sage (lenda)'], ['sv', 'saga'], ['pt', 'saga']),
-    evolution_note: 'A saga é «o que se diz», da família de «segja». As Íslendingasögur deram a palavra ao mundo. Em islandês, «saga» também é a história como matéria de escola: sagnfræði é a ciência histórica.',
+    evolution_note: 'A saga é “o que se diz”, da família de “segja”. As Íslendingasögur deram a palavra ao mundo. Em islandês, “saga” também é a história como matéria de escola: sagnfræði é a ciência histórica.',
     transparent: true,
   },
   {
@@ -732,7 +732,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'skáld',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'skald'], ['sv', 'skald'], ['da', 'skjald']),
-    evolution_note: 'O poeta das cortes nórdicas, que compunha com kenningar e aliterações. Muitos skálds famosos eram islandeses. Hoje «skáld» é qualquer poeta ou escritor; «skáldsaga» é o romance.',
+    evolution_note: 'O poeta das cortes nórdicas, que compunha com kenningar e aliterações. Muitos skálds famosos eram islandeses. Hoje “skáld” é qualquer poeta ou escritor; “skáldsaga” é o romance.',
     transparent: false,
   },
   {
@@ -740,7 +740,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'ljóð',
     origin_language: 'Nórdico antigo',
     cognates: c(['de', 'Lied (canção)'], ['nl', 'lied']),
-    evolution_note: 'Poema. É a mesma palavra do alemão «Lied», a canção dos compositores românticos. Jónas Hallgrímsson publicou os seus «Ljóðmæli», poesias.',
+    evolution_note: 'Poema. É a mesma palavra do alemão “Lied”, a canção dos compositores românticos. Jónas Hallgrímsson publicou os seus “Ljóðmæli”, poesias.',
     transparent: false,
   },
   {
@@ -756,7 +756,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'goð / guð',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'god'], ['de', 'Gott'], ['sv', 'gud']),
-    evolution_note: 'No tempo pagão, «goð» era neutro e quase sempre plural: os deuses. Com o cristianismo, «guð» virou masculino e singular. O «goði» era o chefe local, que também cuidava do culto.',
+    evolution_note: 'No tempo pagão, “goð” era neutro e quase sempre plural: os deuses. Com o cristianismo, “guð” virou masculino e singular. O “goði” era o chefe local, que também cuidava do culto.',
     transparent: false,
   },
   {
@@ -764,7 +764,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'kona',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'queen'], ['el', 'gyné (gineco-)'], ['sv', 'kvinna']),
-    evolution_note: 'Mulher. O inglês «queen» é a mesma palavra, que subiu de posto. A raiz indo-europeia é a do grego «gyné», de ginecologista.',
+    evolution_note: 'Mulher. O inglês “queen” é a mesma palavra, que subiu de posto. A raiz indo-europeia é a do grego “gyné”, de ginecologista.',
     transparent: false,
   },
   {
@@ -772,7 +772,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'maðr (de mannr)',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'man'], ['de', 'Mann'], ['sv', 'man']),
-    evolution_note: 'O «nn» virou «ð» no nominativo, mas volta nas outras formas: mann, manni, manns, menn. Quer dizer homem e também pessoa: «mannkyn» é a humanidade.',
+    evolution_note: 'O “nn” virou “ð” no nominativo, mas volta nas outras formas: mann, manni, manns, menn. Quer dizer homem e também pessoa: “mannkyn” é a humanidade.',
     transparent: false,
   },
   {
@@ -780,7 +780,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'barn',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'bairn (escocês)'], ['sv', 'barn'], ['da', 'barn']),
-    evolution_note: 'Criança, da família de «bera», carregar: é «o que foi carregado». No escocês, criança ainda é «bairn».',
+    evolution_note: 'Criança, da família de “bera”, carregar: é “o que foi carregado”. No escocês, criança ainda é “bairn”.',
     transparent: false,
   },
   {
@@ -788,7 +788,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'dagr',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'day'], ['de', 'Tag'], ['sv', 'dag']),
-    evolution_note: 'Mais um «-r» que virou «-ur». No acusativo e no dativo aparece «dag» e «degi»: «góðan daginn» (bom dia) está no acusativo.',
+    evolution_note: 'Mais um “-r” que virou “-ur”. No acusativo e no dativo aparece “dag” e “degi”: “góðan daginn” (bom dia) está no acusativo.',
     transparent: false,
   },
   {
@@ -796,7 +796,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'nótt',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'night'], ['de', 'Nacht'], ['la', 'nox'], ['pt', 'noite']),
-    evolution_note: 'Da mesma raiz indo-europeia do latim «nox, noctis», de onde vêm «noite» e «noturno». O «ó» longo é islandês; o nórdico antigo tinha «nótt» e «nátt».',
+    evolution_note: 'Da mesma raiz indo-europeia do latim “nox, noctis”, de onde vêm “noite” e “noturno”. O “ó” longo é islandês; o nórdico antigo tinha “nótt” e “nátt”.',
     transparent: false,
   },
   {
@@ -804,7 +804,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'sól',
     origin_language: 'Nórdico antigo',
     cognates: c(['la', 'sol'], ['pt', 'sol'], ['en', 'sun'], ['sv', 'sol']),
-    evolution_note: 'A mesma raiz indo-europeia do latim «sol»: o brasileiro reconhece na hora. Em islandês é feminina: «sólin», o sol.',
+    evolution_note: 'A mesma raiz indo-europeia do latim “sol”: o brasileiro reconhece na hora. Em islandês é feminina: “sólin”, o sol.',
     transparent: true,
   },
   {
@@ -812,7 +812,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'stjarna',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'star'], ['de', 'Stern'], ['la', 'stella'], ['pt', 'estrela']),
-    evolution_note: 'Parente distante do latim «stella». O «ja» é uma quebra de vogal típica do nórdico, a mesma de «fjall» e «hjarta».',
+    evolution_note: 'Parente distante do latim “stella”. O “ja” é uma quebra de vogal típica do nórdico, a mesma de “fjall” e “hjarta”.',
     transparent: false,
   },
   {
@@ -820,7 +820,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'ár',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'year'], ['de', 'Jahr'], ['el', 'hóra'], ['pt', 'hora']),
-    evolution_note: 'O nórdico perdeu o «j» do começo da palavra: o que em alemão é «Jahr», em islandês é «ár». A raiz é a mesma do grego «hóra», estação, de onde vem a nossa «hora».',
+    evolution_note: 'O nórdico perdeu o “j” do começo da palavra: o que em alemão é “Jahr”, em islandês é “ár”. A raiz é a mesma do grego “hóra”, estação, de onde vem a nossa “hora”.',
     transparent: false,
   },
   {
@@ -828,7 +828,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'ungr',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'young'], ['de', 'jung'], ['la', 'iuvenis'], ['pt', 'jovem']),
-    evolution_note: 'Mesma queda do «j» inicial de «ár»: «jung» → ungr. A raiz indo-europeia é a do latim «iuvenis», de jovem e juventude.',
+    evolution_note: 'Mesma queda do “j” inicial de “ár”: “jung” → ungr. A raiz indo-europeia é a do latim “iuvenis”, de jovem e juventude.',
     transparent: false,
   },
   {
@@ -836,7 +836,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'rauðr',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'red'], ['de', 'rot'], ['la', 'ruber'], ['pt', 'rubro']),
-    evolution_note: 'Da raiz indo-europeia do latim «ruber», de rubro e rubi. Érico, o Vermelho, que partiu da Islândia para a Groenlândia, era «Eiríkur rauði».',
+    evolution_note: 'Da raiz indo-europeia do latim “ruber”, de rubro e rubi. Érico, o Vermelho, que partiu da Islândia para a Groenlândia, era “Eiríkur rauði”.',
     transparent: false,
   },
   // ——— os dias da semana: o bispo que tirou os deuses do calendário ———
@@ -845,7 +845,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'mánadagr (de máni, lua)',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'Monday'], ['de', 'Montag'], ['sv', 'måndag']),
-    evolution_note: 'O dia da lua. «Máni» hoje é palavra poética; a lua do dia a dia é «tungl». A reforma que tirou os deuses pagãos do calendário deixou em paz o dia do sol e o da lua.',
+    evolution_note: 'O dia da lua. “Máni” hoje é palavra poética; a lua do dia a dia é “tungl”. A reforma que tirou os deuses pagãos do calendário deixou em paz o dia do sol e o da lua.',
     transparent: false,
   },
   {
@@ -853,7 +853,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'þriði + dagr (antes: týsdagr)',
     origin_language: 'Islandês (reforma medieval)',
     cognates: c(['en', 'Tuesday (dia de Týr)'], ['sv', 'tisdag'], ['pt', 'terça-feira']),
-    evolution_note: 'O «terceiro dia». No começo do século XII, o bispo Jón Ögmundsson, de Hólar, trocou o dia de Týr, o de Odin, o de Thor e o de Frigg por números e costumes cristãos. É o mesmo que se atribui a São Martinho de Dume em português: terça-feira.',
+    evolution_note: 'O “terceiro dia”. No começo do século XII, o bispo Jón Ögmundsson, de Hólar, trocou o dia de Týr, o de Odin, o de Thor e o de Frigg por números e costumes cristãos. É o mesmo que se atribui a São Martinho de Dume em português: terça-feira.',
     transparent: false,
   },
   {
@@ -861,7 +861,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'mið + vika + dagr (antes: óðinsdagr)',
     origin_language: 'Islandês (reforma medieval)',
     cognates: c(['de', 'Mittwoch'], ['en', 'Wednesday (dia de Odin)'], ['sv', 'onsdag']),
-    evolution_note: 'O «meio da semana», como o alemão «Mittwoch». O sueco e o inglês ainda guardam Odin (onsdag, Wednesday); o islandês o tirou do calendário.',
+    evolution_note: 'O “meio da semana”, como o alemão “Mittwoch”. O sueco e o inglês ainda guardam Odin (onsdag, Wednesday); o islandês o tirou do calendário.',
     transparent: false,
   },
   {
@@ -877,7 +877,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'laug + dagr',
     origin_language: 'Nórdico antigo',
     cognates: c(['sv', 'lördag'], ['da', 'lørdag'], ['en', 'Saturday (Saturno)']),
-    evolution_note: 'O «dia do banho»: «laug» é banho, fonte quente, e hoje também piscina («sundlaug»). O sueco e o dinamarquês têm o mesmo sábado do banho.',
+    evolution_note: 'O “dia do banho”: “laug” é banho, fonte quente, e hoje também piscina (“sundlaug”). O sueco e o dinamarquês têm o mesmo sábado do banho.',
     transparent: false,
   },
   {
@@ -885,7 +885,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'jól',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'yule'], ['sv', 'jul'], ['fi', 'joulu']),
-    evolution_note: 'Uma festa pagã do meio do inverno que o cristianismo transformou em Natal sem trocar o nome. O finlandês pegou a palavra emprestada do nórdico: «joulu». É plural em islandês: «gleðileg jól», feliz Natal.',
+    evolution_note: 'Uma festa pagã do meio do inverno que o cristianismo transformou em Natal sem trocar o nome. O finlandês pegou a palavra emprestada do nórdico: “joulu”. É plural em islandês: “gleðileg jól”, feliz Natal.',
     transparent: false,
   },
   // ——— empréstimos antigos do latim, pela Igreja e pelo comércio ———
@@ -894,7 +894,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'pascha',
     origin_language: 'Latim (do hebraico pesach)',
     cognates: c(['la', 'pascha'], ['pt', 'Páscoa'], ['da', 'påske']),
-    evolution_note: 'Chegou com o cristianismo, no ano 1000. Do hebraico «pesach» passou ao grego e ao latim, e daí ao islandês e ao português. Em islandês é plural: «gleðilega páska».',
+    evolution_note: 'Chegou com o cristianismo, no ano 1000. Do hebraico “pesach” passou ao grego e ao latim, e daí ao islandês e ao português. Em islandês é plural: “gleðilega páska”.',
     transparent: false,
   },
   {
@@ -902,7 +902,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'cirice (inglês antigo), do grego kyriakón',
     origin_language: 'Grego, via inglês antigo',
     cognates: c(['en', 'church'], ['de', 'Kirche'], ['el', 'kyriakón (do Senhor)']),
-    evolution_note: 'A «casa do Senhor» em grego. A palavra chegou ao nórdico provavelmente por missionários ingleses, antes da conversão da Islândia no ano 1000.',
+    evolution_note: 'A “casa do Senhor” em grego. A palavra chegou ao nórdico provavelmente por missionários ingleses, antes da conversão da Islândia no ano 1000.',
     transparent: false,
   },
   {
@@ -910,7 +910,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'presbyter',
     origin_language: 'Latim (do grego)',
     cognates: c(['la', 'presbyter'], ['pt', 'presbítero / padre'], ['en', 'priest']),
-    evolution_note: 'O grego «presbýteros» era o mais velho da comunidade. Encurtou no caminho: «prestr» em nórdico, «priest» em inglês.',
+    evolution_note: 'O grego “presbýteros” era o mais velho da comunidade. Encurtou no caminho: “prestr” em nórdico, “priest” em inglês.',
     transparent: false,
   },
   {
@@ -918,7 +918,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'missa',
     origin_language: 'Latim',
     cognates: c(['la', 'missa'], ['pt', 'missa'], ['de', 'Messe']),
-    evolution_note: 'Do latim «missa», da despedida «Ite, missa est». O brasileiro reconhece fácil. Também dá nome às festas dos santos: «Jónsmessa», a noite de São João.',
+    evolution_note: 'Do latim “missa”, da despedida “Ite, missa est”. O brasileiro reconhece fácil. Também dá nome às festas dos santos: “Jónsmessa”, a noite de São João.',
     transparent: true,
   },
   {
@@ -926,7 +926,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'schola',
     origin_language: 'Latim (do grego)',
     cognates: c(['la', 'schola'], ['pt', 'escola'], ['el', 'scholḗ (lazer)'], ['en', 'school']),
-    evolution_note: 'Em grego, «scholḗ» era o tempo livre, usado para estudar. As primeiras escolas islandesas ficavam junto das sés de Skálholt e Hólar.',
+    evolution_note: 'Em grego, “scholḗ” era o tempo livre, usado para estudar. As primeiras escolas islandesas ficavam junto das sés de Skálholt e Hólar.',
     transparent: true,
   },
   {
@@ -934,7 +934,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'scribere',
     origin_language: 'Latim',
     cognates: c(['la', 'scribere'], ['pt', 'escrever'], ['de', 'schreiben']),
-    evolution_note: 'Veio com a escrita em pergaminho, trazida pela Igreja. Antes, os nórdicos só gravavam runas; para isso tinham o verbo próprio «rísta», riscar.',
+    evolution_note: 'Veio com a escrita em pergaminho, trazida pela Igreja. Antes, os nórdicos só gravavam runas; para isso tinham o verbo próprio “rísta”, riscar.',
     transparent: false,
   },
   {
@@ -942,7 +942,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'lesa',
     origin_language: 'Nórdico antigo',
     cognates: c(['de', 'lesen'], ['la', 'legere'], ['sv', 'läsa']),
-    evolution_note: 'Primeiro quis dizer recolher, catar; depois ler, que é «recolher» as letras. O latim «legere» fez o mesmo caminho, e o alemão ainda chama a vindima de «Weinlese».',
+    evolution_note: 'Primeiro quis dizer recolher, catar; depois ler, que é “recolher” as letras. O latim “legere” fez o mesmo caminho, e o alemão ainda chama a vindima de “Weinlese”.',
     transparent: false,
   },
   {
@@ -950,7 +950,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'tabula',
     origin_language: 'Latim',
     cognates: c(['la', 'tabula'], ['pt', 'tábua / tabela'], ['de', 'Tafel']),
-    evolution_note: 'O quadro-negro, o comprimido e a tabela. O latim «tabula» já tinha chegado aos vikings como «tafl», o tabuleiro dos seus jogos de estratégia, como o «hnefatafl».',
+    evolution_note: 'O quadro-negro, o comprimido e a tabela. O latim “tabula” já tinha chegado aos vikings como “tafl”, o tabuleiro dos seus jogos de estratégia, como o “hnefatafl”.',
     transparent: false,
   },
   {
@@ -958,7 +958,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'clocca',
     origin_language: 'Latim medieval (de origem celta)',
     cognates: c(['en', 'clock'], ['de', 'Glocke (sino)'], ['fr', 'cloche (sino)']),
-    evolution_note: 'Primeiro foi o sino da igreja, que marcava as horas; depois, o relógio. Por isso «hvað er klukkan?» (que horas são?) pergunta pelo sino.',
+    evolution_note: 'Primeiro foi o sino da igreja, que marcava as horas; depois, o relógio. Por isso “hvað er klukkan?” (que horas são?) pergunta pelo sino.',
     transparent: false,
   },
   {
@@ -966,7 +966,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'konungr',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'king'], ['de', 'König'], ['sv', 'konung']),
-    evolution_note: 'O rei é «o da linhagem», da família de «kyn», estirpe. A Islândia medieval não tinha rei: era governada pelo Alþingi até se submeter ao rei da Noruega, em 1262–1264.',
+    evolution_note: 'O rei é “o da linhagem”, da família de “kyn”, estirpe. A Islândia medieval não tinha rei: era governada pelo Alþingi até se submeter ao rei da Noruega, em 1262–1264.',
     transparent: false,
   },
   {
@@ -974,7 +974,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'kaupa',
     origin_language: 'Nórdico antigo (do latim caupo)',
     cognates: c(['la', 'caupo (taberneiro)'], ['de', 'kaufen'], ['en', 'cheap'], ['sv', 'köpa']),
-    evolution_note: 'Os germânicos aprenderam a comprar com os vendedores romanos, os «caupones». Daí também «Kaupmannahöfn», o porto dos mercadores: Copenhague.',
+    evolution_note: 'Os germânicos aprenderam a comprar com os vendedores romanos, os “caupones”. Daí também “Kaupmannahöfn”, o porto dos mercadores: Copenhague.',
     transparent: false,
   },
   {
@@ -982,7 +982,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'gata',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', '-gate (ruas de York)'], ['de', 'Gasse (viela)'], ['sv', 'gata']),
-    evolution_note: 'Rua. Em York, cidade viking, as ruas ainda se chamam «-gate» (Micklegate, Coppergate) por causa dessa palavra, e não do inglês «gate», portão.',
+    evolution_note: 'Rua. Em York, cidade viking, as ruas ainda se chamam “-gate” (Micklegate, Coppergate) por causa dessa palavra, e não do inglês “gate”, portão.',
     transparent: false,
   },
   {
@@ -990,7 +990,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'þorp',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', '-thorpe (nomes de lugar)'], ['de', 'Dorf'], ['nl', 'dorp']),
-    evolution_note: 'Aldeia, vilarejo. Na Inglaterra dos vikings, vários lugares terminam em «-thorpe»; em alemão, a mesma palavra é «Dorf».',
+    evolution_note: 'Aldeia, vilarejo. Na Inglaterra dos vikings, vários lugares terminam em “-thorpe”; em alemão, a mesma palavra é “Dorf”.',
     transparent: false,
   },
   {
@@ -998,7 +998,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'búandi (de búa, morar, cultivar)',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'husband'], ['sv', 'bonde'], ['da', 'bonde']),
-    evolution_note: 'O fazendeiro é «o que mora e cultiva». O «húsbóndi», dono da casa, virou o inglês «husband», marido.',
+    evolution_note: 'O fazendeiro é “o que mora e cultiva”. O “húsbóndi”, dono da casa, virou o inglês “husband”, marido.',
     transparent: false,
   },
   {
@@ -1006,7 +1006,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'knífr',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'knife'], ['sv', 'kniv'], ['da', 'kniv']),
-    evolution_note: 'O inglês «knife» veio do nórdico, e é por isso que tem o «k» mudo. No islandês, o «kn» antigo virou «hn» na escrita.',
+    evolution_note: 'O inglês “knife” veio do nórdico, e é por isso que tem o “k” mudo. No islandês, o “kn” antigo virou “hn” na escrita.',
     transparent: false,
   },
   {
@@ -1014,7 +1014,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'gluggr',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'window (do nórdico vindauga)'], ['nb', 'glugg']),
-    evolution_note: 'O islandês chama a janela de «gluggi», uma abertura. O inglês «window» também veio do nórdico, mas de outra palavra: «vindauga», o «olho do vento».',
+    evolution_note: 'O islandês chama a janela de “gluggi”, uma abertura. O inglês “window” também veio do nórdico, mas de outra palavra: “vindauga”, o “olho do vento”.',
     transparent: false,
   },
   {
@@ -1022,7 +1022,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'borð',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'board'], ['de', 'Bord'], ['sv', 'bord']),
-    evolution_note: 'Primeiro foi a tábua; depois a mesa, feita de tábuas, e o costado do navio: «um borð» é a bordo, e o nosso «a bordo» vem da mesma palavra germânica.',
+    evolution_note: 'Primeiro foi a tábua; depois a mesa, feita de tábuas, e o costado do navio: “um borð” é a bordo, e o nosso “a bordo” vem da mesma palavra germânica.',
     transparent: false,
   },
   {
@@ -1030,7 +1030,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'skíð',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'ski'], ['de', 'Scheit (acha de lenha)'], ['nb', 'ski'], ['pt', 'esqui']),
-    evolution_note: 'Uma acha de madeira rachada. O mundo aprendeu a palavra pelo norueguês «ski» no século XIX; o português fez «esqui».',
+    evolution_note: 'Uma acha de madeira rachada. O mundo aprendeu a palavra pelo norueguês “ski” no século XIX; o português fez “esqui”.',
     transparent: false,
   },
   {
@@ -1038,7 +1038,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'land + nám (tomada)',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'land + take'], ['de', 'Landnahme']),
-    evolution_note: 'A «tomada da terra»: a colonização da Islândia, a partir de cerca de 870. O «Landnámabók» registra os primeiros colonos e as suas terras.',
+    evolution_note: 'A “tomada da terra”: a colonização da Islândia, a partir de cerca de 870. O “Landnámabók” registra os primeiros colonos e as suas terras.',
     transparent: false,
   },
   // ——— o dinamarquês e o comércio: empréstimos modernos ———
@@ -1047,7 +1047,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'bil (dinamarquês), de automobil',
     origin_language: 'Dinamarquês',
     cognates: c(['da', 'bil'], ['sv', 'bil'], ['pt', 'automóvel']),
-    evolution_note: 'O dinamarquês cortou «automobil» e ficou com o fim; o islandês adaptou para «bíll». A palavra purista, «bifreið» («veículo que se move»), ficou para os documentos.',
+    evolution_note: 'O dinamarquês cortou “automobil” e ficou com o fim; o islandês adaptou para “bíll”. A palavra purista, “bifreið” (“veículo que se move”), ficou para os documentos.',
     transparent: false,
   },
   {
@@ -1055,7 +1055,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'kaffe (dinamarquês), do turco kahve',
     origin_language: 'Árabe, via turco e dinamarquês',
     cognates: c(['da', 'kaffe'], ['ar', 'qahwa'], ['pt', 'café']),
-    evolution_note: 'O café chegou pelo comércio dinamarquês, que teve o monopólio da Islândia de 1602 a 1787. O islandês pôs o «-i» final e fez da palavra um neutro: «kaffið».',
+    evolution_note: 'O café chegou pelo comércio dinamarquês, que teve o monopólio da Islândia de 1602 a 1787. O islandês pôs o “-i” final e fez da palavra um neutro: “kaffið”.',
     transparent: true,
   },
   {
@@ -1063,7 +1063,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'kartoffel (dinamarquês)',
     origin_language: 'Alemão (do italiano), via dinamarquês',
     cognates: c(['de', 'Kartoffel'], ['da', 'kartoffel'], ['it', 'tartufolo (trufa)']),
-    evolution_note: 'A batata foi comparada à trufa, «tartufolo» em italiano; o alemão fez «Kartoffel», e o dinamarquês a passou ao islandês no século XVIII.',
+    evolution_note: 'A batata foi comparada à trufa, “tartufolo” em italiano; o alemão fez “Kartoffel”, e o dinamarquês a passou ao islandês no século XVIII.',
     transparent: false,
   },
   {
@@ -1071,7 +1071,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'appelsin (dinamarquês)',
     origin_language: 'Holandês, via dinamarquês',
     cognates: c(['da', 'appelsin'], ['nl', 'appelsien'], ['de', 'Apfelsine']),
-    evolution_note: 'A «maçã da China» (Sina): a laranja doce chegou à Europa pelo comércio com o Oriente, no qual os portugueses tiveram um papel grande.',
+    evolution_note: 'A “maçã da China” (Sina): a laranja doce chegou à Europa pelo comércio com o Oriente, no qual os portugueses tiveram um papel grande.',
     transparent: false,
   },
   {
@@ -1079,7 +1079,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'apotek (dinamarquês)',
     origin_language: 'Grego, via latim e dinamarquês',
     cognates: c(['el', 'apothḗkē (depósito)'], ['pt', 'botica / adega'], ['de', 'Apotheke']),
-    evolution_note: 'O grego «apothḗkē» era um depósito. No português, deu «botica» e «adega»; no norte, a farmácia.',
+    evolution_note: 'O grego “apothḗkē” era um depósito. No português, deu “botica” e “adega”; no norte, a farmácia.',
     transparent: true,
   },
   {
@@ -1087,7 +1087,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'strætisvagn (stræti + vagn)',
     origin_language: 'Islandês (encurtamento)',
     cognates: c(['la', 'strata (via)'], ['en', 'street'], ['pt', 'estrada']),
-    evolution_note: 'O ônibus da cidade é o «carro da rua», «strætisvagn», que o povo encurtou para «strætó». O «stræti» veio do latim «strata», como o nosso «estrada».',
+    evolution_note: 'O ônibus da cidade é o “carro da rua”, “strætisvagn”, que o povo encurtou para “strætó”. O “stræti” veio do latim “strata”, como o nosso “estrada”.',
     transparent: false,
   },
   {
@@ -1095,7 +1095,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'skák',
     origin_language: 'Persa, via latim medieval',
     cognates: c(['pt', 'xeque / xadrez'], ['en', 'check / chess'], ['fa', 'šāh (rei)']),
-    evolution_note: 'O «xeque» é o grito de «rei!» em persa, e deu nome ao jogo no norte da Europa. Em 1972, Reykjavík sediou o famoso duelo pelo título mundial entre Fischer e Spassky.',
+    evolution_note: 'O “xeque” é o grito de “rei!” em persa, e deu nome ao jogo no norte da Europa. Em 1972, Reykjavík sediou o famoso duelo pelo título mundial entre Fischer e Spassky.',
     transparent: false,
   },
   // ——— o purismo: palavras feitas em casa ———
@@ -1104,7 +1104,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'sími (fio, linha)',
     origin_language: 'Islandês (palavra antiga reaproveitada)',
     cognates: c(['el', 'tēle + phōnḗ (telefone)'], ['pt', 'telefone']),
-    evolution_note: 'Em vez de adaptar «telefone», o islandês recuperou uma palavra antiga e rara para «fio», no começo do século XX. Hoje o celular é «farsími» e o smartphone, «snjallsími».',
+    evolution_note: 'Em vez de adaptar “telefone”, o islandês recuperou uma palavra antiga e rara para “fio”, no começo do século XX. Hoje o celular é “farsími” e o smartphone, “snjallsími”.',
     transparent: false,
   },
   {
@@ -1112,7 +1112,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'tala (número) + völva (vidente)',
     origin_language: 'Islandês (neologismo)',
     cognates: c(['en', 'computer'], ['pt', 'computador']),
-    evolution_note: 'Proposta nos anos 1960 pelo filólogo Sigurður Nordal: «tala», número, com o jeito de «völva», a vidente da mitologia. O computador é a «vidente dos números», e declina como feminino: tölvu, tölvur.',
+    evolution_note: 'Proposta nos anos 1960 pelo filólogo Sigurður Nordal: “tala”, número, com o jeito de “völva”, a vidente da mitologia. O computador é a “vidente dos números”, e declina como feminino: tölvu, tölvur.',
     transparent: false,
   },
   {
@@ -1120,7 +1120,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'sjón (visão) + varp (lançamento)',
     origin_language: 'Islandês (neologismo)',
     cognates: c(['el', 'tēle (longe)'], ['la', 'visio'], ['pt', 'televisão']),
-    evolution_note: 'A «transmissão da visão», feita no molde de «útvarp». A TV islandesa começou em 1966 e, até 1987, não transmitia às quintas-feiras.',
+    evolution_note: 'A “transmissão da visão”, feita no molde de “útvarp”. A TV islandesa começou em 1966 e, até 1987, não transmitia às quintas-feiras.',
     transparent: false,
   },
   {
@@ -1128,7 +1128,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'út (para fora) + varp (lançamento)',
     origin_language: 'Islandês (neologismo)',
     cognates: c(['en', 'broadcast'], ['pt', 'rádio']),
-    evolution_note: '«Lançar para fora», como o inglês «broadcast», semear a lanço. A rádio nacional começou em 1930, e o nome virou molde para «sjónvarp».',
+    evolution_note: '“Lançar para fora”, como o inglês “broadcast”, semear a lanço. A rádio nacional começou em 1930, e o nome virou molde para “sjónvarp”.',
     transparent: false,
   },
   {
@@ -1136,7 +1136,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'þyrla (rodopiar)',
     origin_language: 'Islandês (neologismo)',
     cognates: c(['el', 'hélix + pterón (helicóptero)'], ['en', 'whirl']),
-    evolution_note: 'O helicóptero é «a que rodopia», do verbo «þyrla», levantar num redemoinho (þyrla upp ryki, levantar poeira).',
+    evolution_note: 'O helicóptero é “a que rodopia”, do verbo “þyrla”, levantar num redemoinho (þyrla upp ryki, levantar poeira).',
     transparent: false,
   },
   {
@@ -1144,7 +1144,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'raf (âmbar) + magn (força)',
     origin_language: 'Islandês (neologismo)',
     cognates: c(['el', 'élektron (âmbar)'], ['pt', 'eletricidade']),
-    evolution_note: 'Uma tradução perfeita: «eletricidade» vem do grego «élektron», âmbar, que atrai coisas quando esfregado. O islandês fez a «força do âmbar».',
+    evolution_note: 'Uma tradução perfeita: “eletricidade” vem do grego “élektron”, âmbar, que atrai coisas quando esfregado. O islandês fez a “força do âmbar”.',
     transparent: false,
   },
   {
@@ -1152,7 +1152,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'frum (primeiro) + eind (unidade)',
     origin_language: 'Islandês (neologismo)',
     cognates: c(['el', 'átomos (indivisível)'], ['pt', 'átomo']),
-    evolution_note: 'O átomo é a «unidade primeira». O grego pensou em «indivisível»; o islandês, em «de onde tudo começa».',
+    evolution_note: 'O átomo é a “unidade primeira”. O grego pensou em “indivisível”; o islandês, em “de onde tudo começa”.',
     transparent: false,
   },
   {
@@ -1160,7 +1160,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'vís (sábio) + -indi',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'wise / wisdom'], ['de', 'Wissen'], ['la', 'videre']),
-    evolution_note: 'Na Idade Média era saber, sabedoria; hoje é a ciência. A raiz indo-europeia é a do latim «videre», ver: saber é ter visto.',
+    evolution_note: 'Na Idade Média era saber, sabedoria; hoje é a ciência. A raiz indo-europeia é a do latim “videre”, ver: saber é ter visto.',
     transparent: false,
   },
   {
@@ -1168,7 +1168,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'eðli (natureza) + fræði (saber)',
     origin_language: 'Islandês (decalque)',
     cognates: c(['el', 'phýsis (natureza)'], ['pt', 'física']),
-    evolution_note: 'O «saber da natureza»: tradução exata do grego «physikḗ», de «phýsis». O «-fræði» faz o papel do nosso «-logia»: líffræði (biologia), jarðfræði (geologia).',
+    evolution_note: 'O “saber da natureza”: tradução exata do grego “physikḗ”, de “phýsis”. O “-fræði” faz o papel do nosso “-logia”: líffræði (biologia), jarðfræði (geologia).',
     transparent: false,
   },
   {
@@ -1176,7 +1176,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'stærð (grandeza) + fræði (saber)',
     origin_language: 'Islandês (neologismo)',
     cognates: c(['pt', 'matemática'], ['en', 'mathematics']),
-    evolution_note: 'A matemática é o «saber das grandezas». «Stærð» vem de «stór», grande, o mesmo adjetivo de «stærri» e «stærstur».',
+    evolution_note: 'A matemática é o “saber das grandezas”. “Stærð” vem de “stór”, grande, o mesmo adjetivo de “stærri” e “stærstur”.',
     transparent: false,
   },
   {
@@ -1184,7 +1184,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'bók (livro) + safn (coleção)',
     origin_language: 'Islandês (composto)',
     cognates: c(['el', 'bibliothḗkē'], ['pt', 'biblioteca']),
-    evolution_note: 'A «coleção de livros». «Safn» também é museu: «listasafn», museu de arte; «Þjóðminjasafn», o Museu Nacional.',
+    evolution_note: 'A “coleção de livros”. “Safn” também é museu: “listasafn”, museu de arte; “Þjóðminjasafn”, o Museu Nacional.',
     transparent: false,
   },
   {
@@ -1192,7 +1192,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'lög (lei) + regla (regra)',
     origin_language: 'Islandês (composto)',
     cognates: c(['en', 'law + rule'], ['la', 'regula'], ['pt', 'polícia']),
-    evolution_note: 'A polícia é a «regra da lei». Enquanto o sueco e o dinamarquês usam «polis» e «politi», o islandês fez a palavra em casa.',
+    evolution_note: 'A polícia é a “regra da lei”. Enquanto o sueco e o dinamarquês usam “polis” e “politi”, o islandês fez a palavra em casa.',
     transparent: false,
   },
   {
@@ -1200,7 +1200,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'flug (voo) + vél (máquina)',
     origin_language: 'Islandês (neologismo)',
     cognates: c(['en', 'flight'], ['de', 'Flugzeug'], ['pt', 'avião']),
-    evolution_note: 'A «máquina de voar». O alemão fez parecido, «Flugzeug», o «apetrecho de voar». «Vél» é máquina em qualquer composto: þvottavél, lava-roupa.',
+    evolution_note: 'A “máquina de voar”. O alemão fez parecido, “Flugzeug”, o “apetrecho de voar”. “Vél” é máquina em qualquer composto: þvottavél, lava-roupa.',
     transparent: false,
   },
   {
@@ -1208,7 +1208,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'gervi (artificial) + hnöttur (globo)',
     origin_language: 'Islandês (neologismo)',
     cognates: c(['la', 'satelles (guarda-costas)'], ['pt', 'satélite']),
-    evolution_note: 'O «globo artificial». «Gervi-» é o prefixo do falso e do artificial: gervigreind, inteligência artificial.',
+    evolution_note: 'O “globo artificial”. “Gervi-” é o prefixo do falso e do artificial: gervigreind, inteligência artificial.',
     transparent: false,
   },
   {
@@ -1216,7 +1216,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'smár (pequeno) + sjá (ver)',
     origin_language: 'Islandês (decalque)',
     cognates: c(['el', 'mikrós + skopeîn'], ['pt', 'microscópio']),
-    evolution_note: 'Tradução peça por peça do grego: «micro» é «smá», pequeno, e «scópio» é «sjá», ver.',
+    evolution_note: 'Tradução peça por peça do grego: “micro” é “smá”, pequeno, e “scópio” é “sjá”, ver.',
     transparent: false,
   },
   {
@@ -1224,7 +1224,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'krabbi (caranguejo) + mein (mal)',
     origin_language: 'Islandês (decalque)',
     cognates: c(['la', 'cancer (caranguejo)'], ['el', 'karkínos'], ['pt', 'câncer']),
-    evolution_note: 'O câncer é o «mal do caranguejo», decalque do latim «cancer» e do grego «karkínos»: os médicos antigos comparavam o tumor às patas do bicho.',
+    evolution_note: 'O câncer é o “mal do caranguejo”, decalque do latim “cancer” e do grego “karkínos”: os médicos antigos comparavam o tumor às patas do bicho.',
     transparent: false,
   },
   {
@@ -1232,7 +1232,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'gler (vidro) + augu (olhos)',
     origin_language: 'Islandês (composto)',
     cognates: c(['en', 'glass + eye'], ['de', 'Glas + Augen']),
-    evolution_note: 'Os óculos são «olhos de vidro». Como «augu» é plural, a palavra também é: «gleraugun mín», os meus óculos.',
+    evolution_note: 'Os óculos são “olhos de vidro”. Como “augu” é plural, a palavra também é: “gleraugun mín”, os meus óculos.',
     transparent: false,
   },
   {
@@ -1240,7 +1240,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'ryk (pó) + suga (sugar)',
     origin_language: 'Islandês (neologismo)',
     cognates: c(['en', 'suck'], ['de', 'Staubsauger'], ['pt', 'aspirador']),
-    evolution_note: 'A «chupa-pó», formada exatamente como o alemão «Staubsauger». Também é verbo: «ryksuga», passar o aspirador.',
+    evolution_note: 'A “chupa-pó”, formada exatamente como o alemão “Staubsauger”. Também é verbo: “ryksuga”, passar o aspirador.',
     transparent: false,
   },
   {
@@ -1248,7 +1248,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'hugur (mente) + búnaður (equipamento)',
     origin_language: 'Islandês (neologismo)',
     cognates: c(['en', 'software'], ['pt', 'software']),
-    evolution_note: 'O software é o «equipamento da mente»; o hardware, o «vélbúnaður», equipamento de máquina. Onde o português usa a palavra inglesa, o islandês criou um par.',
+    evolution_note: 'O software é o “equipamento da mente”; o hardware, o “vélbúnaður”, equipamento de máquina. Onde o português usa a palavra inglesa, o islandês criou um par.',
     transparent: false,
   },
   {
@@ -1256,15 +1256,15 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'vefr (tecido)',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'web / weave'], ['de', 'weben'], ['sv', 'väv']),
-    evolution_note: 'O tecido do tear virou a web: «vefsíða» é página da internet, «vefa», tecer. O inglês fez o mesmo com «web».',
+    evolution_note: 'O tecido do tear virou a web: “vefsíða” é página da internet, “vefa”, tecer. O inglês fez o mesmo com “web”.',
     transparent: false,
   },
   {
     word: 'kvikmynd',
     root_word: 'kvikur (vivo) + mynd (imagem)',
     origin_language: 'Islandês (neologismo)',
-    cognates: c(['en', 'quick (vivo, em «the quick and the dead»)'], ['el', 'kínēma (movimento)'], ['pt', 'cinema']),
-    evolution_note: 'O filme é a «imagem viva». «Kvikur» é o antigo «vivo» do inglês «quick»; o grego pensou em movimento, «kínēma». Na fala, o cinema é «bíó».',
+    cognates: c(['en', 'quick (vivo, em “the quick and the dead”)'], ['el', 'kínēma (movimento)'], ['pt', 'cinema']),
+    evolution_note: 'O filme é a “imagem viva”. “Kvikur” é o antigo “vivo” do inglês “quick”; o grego pensou em movimento, “kínēma”. Na fala, o cinema é “bíó”.',
     transparent: false,
   },
   {
@@ -1272,7 +1272,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'ljós (luz) + mynd (imagem)',
     origin_language: 'Islandês (decalque)',
     cognates: c(['el', 'phōs + graphḗ'], ['pt', 'fotografia']),
-    evolution_note: 'A «imagem de luz», tradução do grego «foto-grafia». O fotógrafo é «ljósmyndari».',
+    evolution_note: 'A “imagem de luz”, tradução do grego “foto-grafia”. O fotógrafo é “ljósmyndari”.',
     transparent: false,
   },
   {
@@ -1280,7 +1280,7 @@ export const ETYMOLOGY_IS: EtymologySeed[] = [
     root_word: 'íþrótt',
     origin_language: 'Nórdico antigo',
     cognates: c(['sv', 'idrott'], ['nb', 'idrett'], ['pt', 'esporte']),
-    evolution_note: 'Nas sagas, «íþrótt» era qualquer habilidade: poesia, luta, xadrez. Hoje é o esporte, e o sueco e o norueguês usam a mesma palavra.',
+    evolution_note: 'Nas sagas, “íþrótt” era qualquer habilidade: poesia, luta, xadrez. Hoje é o esporte, e o sueco e o norueguês usam a mesma palavra.',
     transparent: false,
   },
 ];

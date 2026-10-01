@@ -33,7 +33,7 @@ export const SCENARIOS_CS: ScenarioSeed[] = [
     cefr: 'A1',
     register: 'informal',
     persona: 'Tereza, spolužačka z kurzu češtiny',
-    description: 'Tereza convida você para um café no centro de Praga. É uma conversa entre colegas: use «ty».',
+    description: 'Tereza convida você para um café no centro de Praga. É uma conversa entre colegas: use “ty”.',
     turns: [
       {
         bot: 'Ahoj! Co si dáš?',
@@ -58,7 +58,7 @@ export const ETYMOLOGY_CS: EtymologySeed[] = [
     root_word: '*bratrъ',
     origin_language: 'Protoeslavo',
     cognates: c(['la', 'frater'], ['en', 'brother'], ['ru', 'брат'], ['pt', 'frade, fraterno']),
-    evolution_note: 'A mesma palavra indo-europeia deu «frater» em latim (daí «fraterno» e «frade») e «brother» em inglês. O tcheco guardou o grupo «tr» do fim, que o russo e o polonês perderam.',
+    evolution_note: 'A mesma palavra indo-europeia deu “frater” em latim (daí “fraterno” e “frade”) e “brother” em inglês. O tcheco guardou o grupo “tr” do fim, que o russo e o polonês perderam.',
     transparent: false,
   },
   {
@@ -66,7 +66,7 @@ export const ETYMOLOGY_CS: EtymologySeed[] = [
     root_word: '*sestra',
     origin_language: 'Protoeslavo',
     cognates: c(['la', 'soror'], ['en', 'sister'], ['de', 'Schwester'], ['pt', 'sororidade']),
-    evolution_note: 'Vem da palavra indo-europeia para «irmã», a mesma do latim «soror» e do inglês «sister». O português a guardou em palavras cultas, como «sororidade».',
+    evolution_note: 'Vem da palavra indo-europeia para “irmã”, a mesma do latim “soror” e do inglês “sister”. O português a guardou em palavras cultas, como “sororidade”.',
     transparent: false,
   },
   {
@@ -74,7 +74,7 @@ export const ETYMOLOGY_CS: EtymologySeed[] = [
     root_word: '*voda',
     origin_language: 'Protoeslavo',
     cognates: c(['ru', 'вода'], ['en', 'water'], ['de', 'Wasser'], ['pt', 'hidro- (do grego hýdōr)']),
-    evolution_note: 'Vem da mesma raiz indo-europeia do inglês «water» e do grego «hýdōr», que o português conhece em «hidráulica» e «hidratar».',
+    evolution_note: 'Vem da mesma raiz indo-europeia do inglês “water” e do grego “hýdōr”, que o português conhece em “hidráulica” e “hidratar”.',
     transparent: false,
   },
   {
@@ -82,7 +82,7 @@ export const ETYMOLOGY_CS: EtymologySeed[] = [
     root_word: '*domъ',
     origin_language: 'Protoeslavo',
     cognates: c(['ru', 'дом'], ['la', 'domus'], ['pt', 'doméstico']),
-    evolution_note: 'Irmã do latim «domus» (casa), que o português guardou em «doméstico» e «domicílio». O «ů» do tcheco vem de um «ó» longo antigo: *dóm → dům.',
+    evolution_note: 'Irmã do latim “domus” (casa), que o português guardou em “doméstico” e “domicílio”. O “ů” do tcheco vem de um “ó” longo antigo: *dóm → dům.',
     transparent: false,
   },
   {
@@ -90,7 +90,7 @@ export const ETYMOLOGY_CS: EtymologySeed[] = [
     root_word: '*tri',
     origin_language: 'Protoeslavo',
     cognates: c(['pt', 'três'], ['la', 'tres'], ['ru', 'три'], ['en', 'three']),
-    evolution_note: 'Os números baixos são dos parentescos mais fáceis de ver: «tři», «três» e «three» vêm todos do indo-europeu. No tcheco, o r diante de i virou o famoso «ř».',
+    evolution_note: 'Os números baixos são dos parentescos mais fáceis de ver: “tři”, “três” e “three” vêm todos do indo-europeu. No tcheco, o r diante de i virou o famoso “ř”.',
     transparent: true,
   },
 ];

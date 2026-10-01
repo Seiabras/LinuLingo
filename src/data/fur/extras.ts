@@ -33,7 +33,7 @@ export const SCENARIOS_FUR: ScenarioSeed[] = [
     cefr: 'A1',
     register: 'informal',
     persona: 'Marie, une compagne dal cors di furlan',
-    description: 'Marie convida você para um café no centro de Udine. É uma conversa entre colegas: use «tu».',
+    description: 'Marie convida você para um café no centro de Udine. É uma conversa entre colegas: use “tu”.',
     turns: [
       {
         bot: 'Mandi! Ce vuelistu bevi?',
@@ -58,7 +58,7 @@ export const ETYMOLOGY_FUR: EtymologySeed[] = [
     root_word: 'casa',
     origin_language: 'Latim',
     cognates: c(['pt', 'casa'], ['it', 'casa'], ['fr', 'chez']),
-    evolution_note: 'O c latino diante de a ficou «molhado» (cj), como no romanche «chasa»: um traço comum das línguas reto-românicas.',
+    evolution_note: 'O c latino diante de a ficou “molhado” (cj), como no romanche “chasa”: um traço comum das línguas reto-românicas.',
     transparent: true,
   },
   {
@@ -66,7 +66,7 @@ export const ETYMOLOGY_FUR: EtymologySeed[] = [
     root_word: 'formaticum',
     origin_language: 'Latim',
     cognates: c(['it', 'formaggio'], ['fr', 'fromage'], ['ca', 'formatge']),
-    evolution_note: 'Do latim tardio «(caseus) formaticus», o queijo feito na fôrma. O português e o espanhol preferiram o outro nome latino, «caseus» (queijo, queso).',
+    evolution_note: 'Do latim tardio “(caseus) formaticus”, o queijo feito na fôrma. O português e o espanhol preferiram o outro nome latino, “caseus” (queijo, queso).',
     transparent: false,
   },
   {
@@ -74,7 +74,7 @@ export const ETYMOLOGY_FUR: EtymologySeed[] = [
     root_word: 'frater',
     origin_language: 'Latim',
     cognates: c(['pt', 'frade, fraterno'], ['it', 'fratello'], ['fr', 'frère'], ['ro', 'frate']),
-    evolution_note: 'O friulano guardou o latim «frater» para irmão; o português usa «germanus» (irmão) e deixou «frater» só em «frade» e «fraterno».',
+    evolution_note: 'O friulano guardou o latim “frater” para irmão; o português usa “germanus” (irmão) e deixou “frater” só em “frade” e “fraterno”.',
     transparent: false,
   },
   {
@@ -82,7 +82,7 @@ export const ETYMOLOGY_FUR: EtymologySeed[] = [
     root_word: 'aqua',
     origin_language: 'Latim',
     cognates: c(['pt', 'água'], ['it', 'acqua'], ['es', 'agua'], ['fr', 'eau']),
-    evolution_note: 'Do latim «aqua»; o -a final dos femininos virou -e no friulano central (aghe, cjase, famee).',
+    evolution_note: 'Do latim “aqua”; o -a final dos femininos virou -e no friulano central (aghe, cjase, famee).',
     transparent: true,
   },
   {
@@ -90,7 +90,7 @@ export const ETYMOLOGY_FUR: EtymologySeed[] = [
     root_word: 'lacte(m)',
     origin_language: 'Latim',
     cognates: c(['pt', 'leite'], ['it', 'latte'], ['fr', 'lait'], ['es', 'leche']),
-    evolution_note: 'Do latim «lacte», que perdeu a vogal final, como o francês «lait»: o friulano corta muitas vogais finais que o italiano mantém.',
+    evolution_note: 'Do latim “lacte”, que perdeu a vogal final, como o francês “lait”: o friulano corta muitas vogais finais que o italiano mantém.',
     transparent: true,
   },
 ];

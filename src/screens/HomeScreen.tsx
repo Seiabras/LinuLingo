@@ -35,7 +35,7 @@ export default function HomeScreen() {
   const dogSound = pack.animalSounds?.find((a) => a.id === 'cao')?.sound;
   const SOUNDS_PRACTICE = { route: '/sons' as const, emoji: '🔊', title: 'Adivinhe o som', text: 'Bichos e instrumentos de verdade' };
   const MAP_GAME_PRACTICE = { route: '/mapa-jogo' as const, emoji: '🗺️', title: 'Jogo do mapa', text: 'Onde se fala cada língua' };
-  const ANIMALS_PRACTICE = dogSound ? { route: '/bichos' as const, emoji: '🐶', title: 'Como faz o bicho?', text: `O cachorro faz «${dogSound}»` } : null;
+  const ANIMALS_PRACTICE = dogSound ? { route: '/bichos' as const, emoji: '🐶', title: 'Como faz o bicho?', text: `O cachorro faz “${dogSound}”` } : null;
   const [path, setPath] = useState<PathLesson[]>([]);
   const [due, setDue] = useState(0);
   const [peers, setPeers] = useState(0);

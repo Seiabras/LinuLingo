@@ -27,7 +27,7 @@ export const STORIES_AF: StorySeed[] = [
         emoji: '😊',
         choices: [
           { text: 'Ek kom van São Paulo af.', translation: 'Sou de São Paulo.', next: 'final_goed' },
-          { text: 'Ek drink water.', translation: 'Eu bebo água.', wrong: 'Isso não responde de onde você é. Use «Ek kom van … af».' },
+          { text: 'Ek drink water.', translation: 'Eu bebo água.', wrong: 'Isso não responde de onde você é. Use “Ek kom van … af”.' },
         ],
       },
       final_goed: {
@@ -60,7 +60,7 @@ export const STORIES_AF: StorySeed[] = [
         emoji: '📱',
         choices: [
           { text: "Ja, ek het 'n broer en 'n suster.", translation: 'Sim, tenho um irmão e uma irmã.', next: 'broers' },
-          { text: 'My huis is groot.', translation: 'A minha casa é grande.', wrong: 'Isso não responde se você tem irmãos. Use «Ek het…».' },
+          { text: 'My huis is groot.', translation: 'A minha casa é grande.', wrong: 'Isso não responde se você tem irmãos. Use “Ek het…”.' },
         ],
       },
       broers: {
@@ -69,7 +69,7 @@ export const STORIES_AF: StorySeed[] = [
         emoji: '🔥',
         choices: [
           { text: 'Ja, baie dankie!', translation: 'Sim, muito obrigado!', next: 'final_goed' },
-          { text: 'Ek kom van São Paulo af.', translation: 'Sou de São Paulo.', wrong: 'Pieter fez um convite: responda com «Ja, baie dankie!» ou «Nee, dankie».' },
+          { text: 'Ek kom van São Paulo af.', translation: 'Sou de São Paulo.', wrong: 'Pieter fez um convite: responda com “Ja, baie dankie!” ou “Nee, dankie”.' },
         ],
       },
       final_goed: {

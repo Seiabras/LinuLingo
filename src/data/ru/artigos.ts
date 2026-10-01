@@ -38,11 +38,11 @@ export const ARTIGOS_RU: ArticleSeed[] = [
     emoji: '🥞',
     paragraphs: [
       'Ма́сленица — э́то весёлый пра́здник в конце́ зимы́. Всю неде́лю лю́ди едя́т блины́: с мёдом, со смета́ной, с икро́й.',
-      'Блин кру́глый и горя́чий, как со́лнце. В после́дний день лю́ди сжига́ют большу́ю ку́клу — Ма́сленицу — и говоря́т зиме́: «До свида́ния!»',
+      'Блин кру́глый и горя́чий, как со́лнце. В после́дний день лю́ди сжига́ют большу́ю ку́клу — Ма́сленицу — и говоря́т зиме́: “До свида́ния!”',
     ],
     translation: [
       'A Máslenitsa é uma festa alegre no fim do inverno. A semana toda as pessoas comem blinis (panquecas finas): com mel, com smetana (creme azedo), com caviar.',
-      'O blini é redondo e quente, como o sol. No último dia, as pessoas queimam uma grande boneca — a Máslenitsa — e dizem ao inverno: «Até logo!»',
+      'O blini é redondo e quente, como o sol. No último dia, as pessoas queimam uma grande boneca — a Máslenitsa — e dizem ao inverno: “Até logo!”',
     ],
     glossary: [
       ['неде́лю', 'a semana'],
@@ -136,23 +136,23 @@ export const ARTIGOS_RU: ArticleSeed[] = [
     title: 'Пу́шкин и День ру́сского языка́',
     emoji: '🪶',
     paragraphs: [
-      'Поэ́та Алекса́ндра Серге́евича Пу́шкина (1799–1837) в Росси́и называ́ют «на́шим всем». Он писа́л стихи́ и про́зу, но гла́вное — созда́л тот литерату́рный язы́к, на кото́ром по́сле него́ писа́ла вся литерату́ра Росси́и.',
-      'Его́ рома́н в стиха́х «Евге́ний Оне́гин» Бели́нский назва́л «энциклопе́дией ру́сской жи́зни». Поэ́т поги́б в три́дцать семь лет, смерте́льно ра́ненный на дуэ́ли офице́ром Жорже́м Данте́сом.',
+      'Поэ́та Алекса́ндра Серге́евича Пу́шкина (1799–1837) в Росси́и называ́ют “на́шим всем”. Он писа́л стихи́ и про́зу, но гла́вное — созда́л тот литерату́рный язы́к, на кото́ром по́сле него́ писа́ла вся литерату́ра Росси́и.',
+      'Его́ рома́н в стиха́х “Евге́ний Оне́гин” Бели́нский назва́л “энциклопе́дией ру́сской жи́зни”. Поэ́т поги́б в три́дцать семь лет, смерте́льно ра́ненный на дуэ́ли офице́ром Жорже́м Данте́сом.',
       'С 2011 го́да день его́ рожде́ния, 6 ию́ня, отмеча́ется в Росси́и как День ру́сского языка́; в тот же день его́ отмеча́ет и ООН.',
     ],
     translation: [
-      'O poeta Aleksandr Serguéievitch Púchkin (1799–1837) é chamado na Rússia de «o nosso tudo». Escreveu poemas e prosa, mas o principal: criou a língua literária em que, depois dele, escreveu toda a literatura da Rússia.',
-      'Seu romance em versos «Ievguêni Oniéguin» foi chamado pelo crítico Belínski de «enciclopédia da vida russa». O poeta morreu aos trinta e sete anos, ferido de morte num duelo pelo oficial Georges d’Anthès.',
+      'O poeta Aleksandr Serguéievitch Púchkin (1799–1837) é chamado na Rússia de “o nosso tudo”. Escreveu poemas e prosa, mas o principal: criou a língua literária em que, depois dele, escreveu toda a literatura da Rússia.',
+      'Seu romance em versos “Ievguêni Oniéguin” foi chamado pelo crítico Belínski de “enciclopédia da vida russa”. O poeta morreu aos trinta e sete anos, ferido de morte num duelo pelo oficial Georges d’Anthès.',
       'Desde 2011, o dia do seu nascimento, 6 de junho, é comemorado na Rússia como o Dia da Língua Russa; no mesmo dia a ONU também o comemora.',
     ],
     glossary: [
       ['энциклопе́дией', 'enciclopédia (instrumental)'],
-      ['ру́сской / ру́сского', 'russa / russo (formas de «русский»)'],
+      ['ру́сской / ру́сского', 'russa / russo (formas de “русский”)'],
       ['поги́б', 'morreu (de forma violenta)'],
       ['дуэ́ли', 'duelo'],
     ],
     questions: [
-      { q: 'Como os russos chamam Púchkin?', options: ['«O nosso tudo»', '«O pai da pátria»', '«O último czar»'], answer: 0 },
+      { q: 'Como os russos chamam Púchkin?', options: ['“O nosso tudo”', '“O pai da pátria”', '“O último czar”'], answer: 0 },
       { q: 'Como Púchkin morreu?', options: ['De doença', 'Ferido num duelo', 'Num naufrágio'], answer: 1 },
       { q: 'O que se comemora em 6 de junho?', options: ['O Dia da Língua Russa', 'O Dia da Vitória', 'O Ano-Novo'], answer: 0 },
     ],

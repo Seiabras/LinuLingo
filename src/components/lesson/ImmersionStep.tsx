@@ -65,7 +65,7 @@ export function ImmersionStep({ words, pool, locale, onDone }: { words: VocabWit
         language: pack.code,
         source: 'imersao',
         key: word.id,
-        prompt: `O que é «${word.word_target}»?`,
+        prompt: `O que é “${word.word_target}”?`,
         expected: word.word_native,
         given: wrong?.word_native ?? null,
         note: word.emoji ?? null,

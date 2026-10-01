@@ -44,7 +44,7 @@ export const RECURSOS_SW: LanguageResources = {
     {
       kind: 'filme',
       title: 'Nairobi Half Life',
-      by: 'David «Tosh» Gitonga',
+      by: 'David “Tosh” Gitonga',
       year: '2012',
       level: 'B2',
       why: 'Um jovem do interior tenta a vida de ator em Nairobi e cai no mundo do crime; muito suaíli de rua misturado com sheng e inglês.',
@@ -132,7 +132,7 @@ export const RECURSOS_SW: LanguageResources = {
       title: 'Malaika',
       by: 'Canção tradicional da África Oriental',
       level: 'A2',
-      why: 'Canção de amor lenta («Malaika, nakupenda malaika» — anjo, eu te amo, anjo), gravada por muitos artistas; letra curta e clara.',
+      why: 'Canção de amor lenta (“Malaika, nakupenda malaika” — anjo, eu te amo, anjo), gravada por muitos artistas; letra curta e clara.',
     },
     {
       kind: 'musica',
@@ -182,9 +182,9 @@ export const RECURSOS_SW: LanguageResources = {
   ],
   tips: [
     'Decore cada substantivo com o plural (mtoto, watoto; kitabu, vitabu): o par mostra a classe, e a classe comanda a concordância da frase inteira.',
-    'A tônica cai quase sempre na penúltima sílaba, e todas as vogais soam inteiras: nada de reduzir o «e» e o «o» finais como no português.',
+    'A tônica cai quase sempre na penúltima sílaba, e todas as vogais soam inteiras: nada de reduzir o “e” e o “o” finais como no português.',
     'Na hora suaíli, o dia começa às seis da manhã: some seis horas para chegar ao relógio europeu (saa moja asubuhi = sete da manhã).',
-    'Cumprimente sempre antes de pedir qualquer coisa, e use «shikamoo» com os mais velhos.',
+    'Cumprimente sempre antes de pedir qualquer coisa, e use “shikamoo” com os mais velhos.',
     'O português do Brasil já tem palavras bantas, vindas do quimbundo e de outras línguas de Angola e do Congo: caçula, cafuné, moleque, quitanda. O suaíli é da mesma grande família, e essa gramática de prefixos vai ficar familiar mais rápido do que parece.',
   ],
 };

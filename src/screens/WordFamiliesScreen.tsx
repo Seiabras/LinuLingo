@@ -44,7 +44,7 @@ export default function WordFamiliesScreen() {
       <View className="mt-4 flex-row items-end gap-2">
         <Linu mood="pensando" size={64} />
         <SpeechBubble className="mb-5">
-          Palavras de línguas diferentes que vêm da mesma raiz. Reconhecer o parentesco ajuda a lembrar — e a desconfiar: «day» parece «dia» e não é parente; «день» não parece e é.
+          Palavras de línguas diferentes que vêm da mesma raiz. Reconhecer o parentesco ajuda a lembrar — e a desconfiar: “day” parece “dia” e não é parente; “день” não parece e é.
         </SpeechBubble>
       </View>
 
@@ -52,7 +52,7 @@ export default function WordFamiliesScreen() {
         <Card className="mb-3 gap-2">
           <Text className="font-bold text-slate-800 dark:text-slate-100">🌍 Outra família</Text>
           <Text className="text-sm text-slate-600 dark:text-slate-400">
-            O {nomeIdioma(pack.name)} não é indo-europeu: é da família urálica, como o finlandês, o estoniano e o húngaro. Por isso quase nenhuma palavra dele é irmã do português — compare nas árvores abaixo, na linha «Fínico».
+            O {nomeIdioma(pack.name)} não é indo-europeu: é da família urálica, como o finlandês, o estoniano e o húngaro. Por isso quase nenhuma palavra dele é irmã do português — compare nas árvores abaixo, na linha “Fínico”.
           </Text>
         </Card>
       )}
@@ -62,7 +62,7 @@ export default function WordFamiliesScreen() {
           <Text className="text-sm text-slate-600 dark:text-slate-400">
             Uma palavra do {nomeIdioma(pack.name)} e três do português: ache a que vem da mesma raiz. +{XP_PER_HIT} XP por acerto.
           </Text>
-          {quiz ? <SiblingQuiz lang={studied} locale={pack.speechLocale} onEnd={() => setQuiz(false)} onHit={async () => { await awardXp(db, XP_PER_HIT, 'irmas'); refresh(); }} onMiss={(f, picked) => logMistake(db, { language: pack.code, source: 'irmas', key: f.id, prompt: `Qual palavra do português é irmã de «${wordIn(f, studied)!.word}»?`, expected: wordIn(f, 'pt')!.word, given: picked, note: f.note ?? null, speak: wordIn(f, studied)!.word })} /> : <Button title="Jogar (5 perguntas)" onPress={() => setQuiz(true)} />}
+          {quiz ? <SiblingQuiz lang={studied} locale={pack.speechLocale} onEnd={() => setQuiz(false)} onHit={async () => { await awardXp(db, XP_PER_HIT, 'irmas'); refresh(); }} onMiss={(f, picked) => logMistake(db, { language: pack.code, source: 'irmas', key: f.id, prompt: `Qual palavra do português é irmã de “${wordIn(f, studied)!.word}”?`, expected: wordIn(f, 'pt')!.word, given: picked, note: f.note ?? null, speak: wordIn(f, studied)!.word })} /> : <Button title="Jogar (5 perguntas)" onPress={() => setQuiz(true)} />}
         </Card>
       )}
 
@@ -75,7 +75,7 @@ export default function WordFamiliesScreen() {
               <Pressable
                 accessibilityRole="button"
                 accessibilityState={{ expanded }}
-                accessibilityLabel={`Família de «${f.meaning}»`}
+                accessibilityLabel={`Família de “${f.meaning}”`}
                 onPress={() => setOpen(expanded ? null : f.id)}
                 className="flex-row items-center gap-3 p-3 active:opacity-80"
               >
@@ -234,7 +234,7 @@ function SiblingQuiz({ lang, locale, onEnd, onHit, onMiss }: { lang: KinLang; lo
       {picked !== null && (
         <>
           <Text className="text-sm leading-5 text-slate-700 dark:text-slate-300">
-            {picked === right ? 'Isso!' : `Era «${right}».`} As duas vêm de {(q.f.root ?? wordIn(q.f, lang)!.group.label).replace(/^Indo-europeu /, 'indo-europeu ').replace(/^Latim /, 'latim ')}. {q.f.note ?? ''}
+            {picked === right ? 'Isso!' : `Era “${right}”.`} As duas vêm de {(q.f.root ?? wordIn(q.f, lang)!.group.label).replace(/^Indo-europeu /, 'indo-europeu ').replace(/^Latim /, 'latim ')}. {q.f.note ?? ''}
           </Text>
           <Button
             title="Próxima"

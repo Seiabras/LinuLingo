@@ -9,7 +9,7 @@ export const STORIES_LB: StorySeed[] = [
     title: 'Moien op der Gare',
     emoji: '👋',
     summary: 'Você conhece Anna na estação de trem da cidade de Luxemburgo e faz a sua primeira conversa em luxemburguês.',
-    cultural_context: 'A capital tem o mesmo nome do país; em luxemburguês ela é chamada simplesmente de «d\'Stad», a cidade.',
+    cultural_context: 'A capital tem o mesmo nome do país; em luxemburguês ela é chamada simplesmente de “d\'Stad”, a cidade.',
     start: 'inicio',
     nodes: {
       inicio: {
@@ -27,7 +27,7 @@ export const STORIES_LB: StorySeed[] = [
         emoji: '😊',
         choices: [
           { text: 'Ech komme vu São Paulo.', translation: 'Sou de São Paulo.', next: 'final_gutt' },
-          { text: 'Ech drénke Waasser.', translation: 'Eu bebo água.', wrong: 'Isso não responde de onde você é. Use «Ech komme vu…».' },
+          { text: 'Ech drénke Waasser.', translation: 'Eu bebo água.', wrong: 'Isso não responde de onde você é. Use “Ech komme vu…”.' },
         ],
       },
       final_gutt: {
@@ -60,7 +60,7 @@ export const STORIES_LB: StorySeed[] = [
         emoji: '📱',
         choices: [
           { text: 'Jo, ech hunn e Brudder an eng Schwëster.', translation: 'Sim, tenho um irmão e uma irmã.', next: 'famill' },
-          { text: 'Mäin Haus ass grouss.', translation: 'A minha casa é grande.', wrong: 'Isso não responde se você tem irmãos. Use «Ech hunn…».' },
+          { text: 'Mäin Haus ass grouss.', translation: 'A minha casa é grande.', wrong: 'Isso não responde se você tem irmãos. Use “Ech hunn…”.' },
         ],
       },
       famill: {
@@ -69,7 +69,7 @@ export const STORIES_LB: StorySeed[] = [
         emoji: '🍽️',
         choices: [
           { text: 'Jo, gär! Villmools Merci!', translation: 'Sim, com prazer! Muito obrigado!', next: 'final_gutt' },
-          { text: 'Ech komme vu São Paulo.', translation: 'Sou de São Paulo.', wrong: 'Tom fez um convite: responda com «Jo, gär!» ou «Nee, merci».' },
+          { text: 'Ech komme vu São Paulo.', translation: 'Sou de São Paulo.', wrong: 'Tom fez um convite: responda com “Jo, gär!” ou “Nee, merci”.' },
         ],
       },
       final_gutt: {

@@ -16,7 +16,7 @@ export const RECURSOS_HA: LanguageResources = {
       flag: '🇳🇬',
       main: true,
       levels:
-        'Uma prova só, sem níveis: as notas vão de A1 (excelente) a F9 (reprovado), e de C6 para cima conta como «credit», a nota que as universidades nigerianas pedem. Não há tabela oficial com o QECR: a faixa indicada é uma estimativa, porque a prova é feita para quem tem o hauçá como língua materna',
+        'Uma prova só, sem níveis: as notas vão de A1 (excelente) a F9 (reprovado), e de C6 para cima conta como “credit”, a nota que as universidades nigerianas pedem. Não há tabela oficial com o QECR: a faixa indicada é uma estimativa, porque a prova é feita para quem tem o hauçá como língua materna',
       cefr: ['B2', 'C1'],
       format: [
         'Prova objetiva: questões de múltipla escolha sobre a língua (pronúncia, gramática e vocabulário), a literatura e os costumes hauçás',
@@ -25,8 +25,8 @@ export const RECURSOS_HA: LanguageResources = {
       validity: 'Não expira',
       usedFor: ['conclusão do ensino médio na Nigéria', 'ingresso em universidades nigerianas, junto com o exame UTME, da JAMB'],
       where:
-        'Só na Nigéria, em escolas e centros credenciados pela WAEC; não há aplicação no Brasil. Quem não estuda numa escola nigeriana se inscreve na edição para candidatos externos («private candidates»), que acontece em outra época do ano.',
-      tip: 'Não é uma prova para estrangeiros: os textos, os livros e as perguntas de cultura são os mesmos que os alunos nigerianos estudam na escola. Mesmo sem fazer a prova, o programa (syllabus) publicado pela WAEC é um bom roteiro para quem já passou do intermediário, e os livros de questões antigas («past questions»), vendidos na Nigéria, servem de simulado.',
+        'Só na Nigéria, em escolas e centros credenciados pela WAEC; não há aplicação no Brasil. Quem não estuda numa escola nigeriana se inscreve na edição para candidatos externos (“private candidates”), que acontece em outra época do ano.',
+      tip: 'Não é uma prova para estrangeiros: os textos, os livros e as perguntas de cultura são os mesmos que os alunos nigerianos estudam na escola. Mesmo sem fazer a prova, o programa (syllabus) publicado pela WAEC é um bom roteiro para quem já passou do intermediário, e os livros de questões antigas (“past questions”), vendidos na Nigéria, servem de simulado.',
       url: 'https://www.waecnigeria.org',
     },
     {
@@ -36,7 +36,7 @@ export const RECURSOS_HA: LanguageResources = {
       org: 'National Examinations Council (NECO), órgão do governo federal da Nigéria',
       flag: '🇳🇬',
       levels:
-        'Uma prova só, sem níveis, com a mesma escala do WASSCE: de A1 (excelente) a F9 (reprovado), com «credit» de C6 para cima. A faixa do QECR é uma estimativa, porque a prova é feita para falantes nativos',
+        'Uma prova só, sem níveis, com a mesma escala do WASSCE: de A1 (excelente) a F9 (reprovado), com “credit” de C6 para cima. A faixa do QECR é uma estimativa, porque a prova é feita para falantes nativos',
       cefr: ['B2', 'C1'],
       format: [
         'Prova objetiva: questões de múltipla escolha sobre língua, literatura e cultura hauçás',
@@ -45,7 +45,7 @@ export const RECURSOS_HA: LanguageResources = {
       validity: 'Não expira',
       usedFor: ['conclusão do ensino médio na Nigéria, com o mesmo valor do WASSCE', 'ingresso em universidades nigerianas'],
       where: 'Só na Nigéria. Há a edição interna, para alunos das escolas, e a externa, para candidatos particulares; não há aplicação no Brasil.',
-      tip: 'Muitos alunos nigerianos fazem o WASSCE e o NECO no mesmo ano, para ter duas chances de tirar «credit». Para quem estuda de fora, vale o mesmo conselho do WASSCE: use o programa e as questões antigas como material de estudo, não como meta.',
+      tip: 'Muitos alunos nigerianos fazem o WASSCE e o NECO no mesmo ano, para ter duas chances de tirar “credit”. Para quem estuda de fora, vale o mesmo conselho do WASSCE: use o programa e as questões antigas como material de estudo, não como meta.',
       url: 'https://www.neco.gov.ng',
     },
   ],
@@ -98,7 +98,7 @@ export const RECURSOS_HA: LanguageResources = {
       by: 'Abubakar Imam',
       year: '1937–1939',
       level: 'B2',
-      why: 'Três volumes de contos que misturam histórias hauçás com outras adaptadas de tradições como as «Mil e Uma Noites». O título quer dizer «a palavra é riqueza», e o livro é lido até hoje nas escolas.',
+      why: 'Três volumes de contos que misturam histórias hauçás com outras adaptadas de tradições como as “Mil e Uma Noites”. O título quer dizer “a palavra é riqueza”, e o livro é lido até hoje nas escolas.',
     },
     {
       kind: 'livro',
@@ -113,7 +113,7 @@ export const RECURSOS_HA: LanguageResources = {
       title: 'Alhaki Kwikwiyo Ne',
       by: 'Balaraba Ramat Yakubu',
       level: 'B2',
-      why: 'Romance sobre casamento e família da «literatura de mercado» de Kano (os littattafan soyayya, «livros de amor»), escrito por uma das primeiras autoras do gênero. Saiu em inglês como «Sin Is a Puppy That Follows You Home».',
+      why: 'Romance sobre casamento e família da “literatura de mercado” de Kano (os littattafan soyayya, “livros de amor”), escrito por uma das primeiras autoras do gênero. Saiu em inglês como “Sin Is a Puppy That Follows You Home”.',
       accent: 'hauçá de Kano',
     },
     {
@@ -128,7 +128,7 @@ export const RECURSOS_HA: LanguageResources = {
       title: 'Canções de Dan Maraya Jos',
       by: 'Dan Maraya Jos',
       level: 'B2',
-      why: 'Mestre do kuntigi, um alaúde de uma corda só, que cantava com humor a vida de gente comum, como motoristas e comerciantes. O nome artístico quer dizer «o órfão».',
+      why: 'Mestre do kuntigi, um alaúde de uma corda só, que cantava com humor a vida de gente comum, como motoristas e comerciantes. O nome artístico quer dizer “o órfão”.',
     },
     {
       kind: 'musica',
@@ -209,9 +209,9 @@ export const RECURSOS_HA: LanguageResources = {
   tips: [
     'Não existe prova de hauçá para estrangeiros: o WASSCE e o NECO são as provas de fim do ensino médio da Nigéria, feitas para falantes nativos. Para comprovar o nível, o caminho são cursos de universidades com estudos africanos, na Nigéria (como a Universidade Bayero, de Kano), na Europa e nos EUA, que dão certificado de conclusão. Se precisar de um certificado de fala para trabalho, pergunte à Language Testing International, que aplica a entrevista oral da ACTFL, se há avaliador de hauçá.',
     'O hauçá tem tons (alto, baixo e descendente) e vogais curtas e longas, e a escrita do dia a dia não marca nada disso. Aprenda cada palavra ouvindo e confira num dicionário que marque tom e duração, como o de Paul Newman; os livros didáticos costumam usar acentos para isso.',
-    "Há letras que não existem em português: «ɓ» e «ɗ» (ditas puxando o ar para dentro), «ƙ» (um «k» com um estalo na garganta) e «'y». Elas mudam o sentido: «baki» é boca, e «baƙi», preto. No celular, ative um teclado de hauçá para escrevê-las.",
-    'O hauçá distingue masculino e feminino até no «você»: «kai» para um homem, «ke» para uma mulher e «ku» no plural. E os plurais são imprevisíveis — «gida» (casa) vira «gidaje», «yaro» (menino) vira «yara» —, então aprenda cada substantivo já com o plural.',
-    'Cumprimentar bem abre portas: «Sannu» (olá), «Ina kwana?» (bom dia; literalmente, «como foi a noite?») e «Ina gajiya?» («e o cansaço?», para quem está trabalhando). As respostas mais comuns são «Lafiya lau» (tudo bem) e «Ba gajiya» (cansaço nenhum).',
-    'O hauçá tem história no Brasil: muitos africanos escravizados levados para a Bahia eram hauçás («haussás»), em boa parte muçulmanos que sabiam ler e escrever em árabe. Eles lideraram revoltas no começo do século XIX e participaram da Revolta dos Malês, em Salvador, em 1835, contada no livro «Rebelião Escrava no Brasil», de João José Reis.',
+    "Há letras que não existem em português: “ɓ” e “ɗ” (ditas puxando o ar para dentro), “ƙ” (um “k” com um estalo na garganta) e “'y”. Elas mudam o sentido: “baki” é boca, e “baƙi”, preto. No celular, ative um teclado de hauçá para escrevê-las.",
+    'O hauçá distingue masculino e feminino até no “você”: “kai” para um homem, “ke” para uma mulher e “ku” no plural. E os plurais são imprevisíveis — “gida” (casa) vira “gidaje”, “yaro” (menino) vira “yara” —, então aprenda cada substantivo já com o plural.',
+    'Cumprimentar bem abre portas: “Sannu” (olá), “Ina kwana?” (bom dia; literalmente, “como foi a noite?”) e “Ina gajiya?” (“e o cansaço?”, para quem está trabalhando). As respostas mais comuns são “Lafiya lau” (tudo bem) e “Ba gajiya” (cansaço nenhum).',
+    'O hauçá tem história no Brasil: muitos africanos escravizados levados para a Bahia eram hauçás (“haussás”), em boa parte muçulmanos que sabiam ler e escrever em árabe. Eles lideraram revoltas no começo do século XIX e participaram da Revolta dos Malês, em Salvador, em 1835, contada no livro “Rebelião Escrava no Brasil”, de João José Reis.',
   ],
 };

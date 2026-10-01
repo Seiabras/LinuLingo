@@ -47,13 +47,13 @@ export const RECURSOS_TR: LanguageResources = {
       ],
       validity: 'O documento não traz prazo de validade, mas cada universidade ou órgão decide até que data aceita.',
       usedFor: [
-        'admissão em cursos dados em turco nas universidades da Turquia, onde o «TÖMER C1» é o documento mais pedido',
+        'admissão em cursos dados em turco nas universidades da Turquia, onde o “TÖMER C1” é o documento mais pedido',
         'dispensa do ano preparatório de turco',
         'bolsistas da Türkiye Bursları, que costumam fazer um ano de turco num centro TÖMER antes da graduação',
       ],
       where:
         'Na Turquia, no TÖMER da Universidade de Ancara e nos centros de língua de outras universidades. Do Brasil, dá para fazer a ETS-Türkçe, a versão online; antes, confira se a instituição que vai receber o documento aceita essa versão.',
-      tip: 'Se o objetivo é estudar na Turquia, leia no edital da universidade qual documento ela aceita: muitas pedem exatamente «TÖMER C1» ou o TYS. Os livros didáticos do próprio TÖMER da Universidade de Ancara seguem os mesmos níveis da prova.',
+      tip: 'Se o objetivo é estudar na Turquia, leia no edital da universidade qual documento ela aceita: muitas pedem exatamente “TÖMER C1” ou o TYS. Os livros didáticos do próprio TÖMER da Universidade de Ancara seguem os mesmos níveis da prova.',
       url: 'https://tomer.ankara.edu.tr/',
     },
     {
@@ -77,7 +77,7 @@ export const RECURSOS_TR: LanguageResources = {
       ],
       where:
         'Online: você se inscreve no site da Language Testing International e marca a entrevista com hora, com supervisão a distância. Dá para fazer do Brasil.',
-      tip: 'Serve bem para quem precisa comprovar a fala sem viajar. Treine contar histórias no passado com o sufixo «-dı» e o «-mış» do ouvi dizer, e defender opiniões sem parar para procurar palavras.',
+      tip: 'Serve bem para quem precisa comprovar a fala sem viajar. Treine contar histórias no passado com o sufixo “-dı” e o “-mış” do ouvi dizer, e defender opiniões sem parar para procurar palavras.',
       url: 'https://www.actfl.org/assessments/postsecondary-assessments/opi',
     },
   ],
@@ -159,7 +159,7 @@ export const RECURSOS_TR: LanguageResources = {
       by: 'Meral Okay (roteiro)',
       year: '2011–2014',
       level: 'C1',
-      why: 'Novela de época («O Século Magnífico») sobre o sultão Solimão e Hürrem, sucesso em dezenas de países. Turco com palavras do otomano da corte — boa para quem já tem base.',
+      why: 'Novela de época (“O Século Magnífico”) sobre o sultão Solimão e Hürrem, sucesso em dezenas de países. Turco com palavras do otomano da corte — boa para quem já tem base.',
       accent: 'turco de época, com vocabulário otomano',
     },
     {
@@ -237,7 +237,7 @@ export const RECURSOS_TR: LanguageResources = {
       by: 'Elif Şafak',
       year: '2009',
       level: 'B1',
-      why: 'Uma dona de casa americana lê um romance sobre o poeta Rumi e o dervixe Shams de Tabriz, e a vida dela muda. Elif Şafak escreveu o original em inglês («The Forty Rules of Love»), mas a tradução turca virou fenômeno de vendas; leitura leve.',
+      why: 'Uma dona de casa americana lê um romance sobre o poeta Rumi e o dervixe Shams de Tabriz, e a vida dela muda. Elif Şafak escreveu o original em inglês (“The Forty Rules of Love”), mas a tradução turca virou fenômeno de vendas; leitura leve.',
     },
     {
       kind: 'musica',
@@ -245,7 +245,7 @@ export const RECURSOS_TR: LanguageResources = {
       by: 'Sezen Aksu',
       year: '1991',
       level: 'B1',
-      why: 'Da «minik serçe» (pardalzinho), a cantora e compositora que moldou o pop turco por décadas. Letra poética e dicção clara.',
+      why: 'Da “minik serçe” (pardalzinho), a cantora e compositora que moldou o pop turco por décadas. Letra poética e dicção clara.',
     },
     {
       kind: 'musica',
@@ -253,7 +253,7 @@ export const RECURSOS_TR: LanguageResources = {
       by: 'Tarkan',
       year: '1997',
       level: 'A2',
-      why: 'O hit dos beijos estalados que rodou o mundo; o título quer dizer «mimada». Refrão fácil e letra curta.',
+      why: 'O hit dos beijos estalados que rodou o mundo; o título quer dizer “mimada”. Refrão fácil e letra curta.',
     },
     {
       kind: 'musica',
@@ -316,7 +316,7 @@ export const RECURSOS_TR: LanguageResources = {
       title: 'Uykusuz',
       by: 'Uykusuz',
       level: 'B2',
-      why: 'Revista semanal de humor em quadrinhos, na tradição de «Gırgır» e «LeMan». Piadas sobre política e cotidiano, com muita gíria.',
+      why: 'Revista semanal de humor em quadrinhos, na tradição de “Gırgır” e “LeMan”. Piadas sobre política e cotidiano, com muita gíria.',
     },
     {
       kind: 'jogo',
@@ -328,11 +328,11 @@ export const RECURSOS_TR: LanguageResources = {
     },
   ],
   tips: [
-    'Harmonia vocálica: os sufixos mudam de vogal para combinar com a palavra. O plural é «-ler» ou «-lar» («evler», casas; «kitaplar», livros) e o «em» é «-de» ou «-da» («evde», em casa; «okulda», na escola). Aprenda os sufixos em pares e em quartetos («-i, -ı, -u, -ü»), em vez de decorar cada forma.',
-    'Uma palavra pode ser uma frase: «evlerimizden» quer dizer «das nossas casas» (ev-ler-imiz-den: casa + plural + nosso + de). Para ler, desmonte da esquerda para a direita: a raiz vem primeiro, depois plural, possessivo e caso.',
-    'O verbo vai no fim («Ben her gün Türkçe çalışıyorum» — literalmente «eu todo dia turco estudo»), e no lugar das preposições há posposições: «senin için», para você. Ler bastante ajuda a ficar à vontade com essa ordem.',
-    'O alfabeto latino foi adotado em 1928 e é quase fonético: «c» soa «dj» («cami», mesquita), «ç» soa «tch», «ş» soa «ch», o «ı» sem pingo é um «i» dito com os lábios relaxados, mais no fundo da boca, e o «ğ» não se pronuncia: só alonga a vogal anterior («dağ», montanha).',
-    'Muitas palavras vieram do francês e se reconhecem de ouvido: «otobüs», «kuaför», «pantolon», «istasyon», «asansör». O caminho contrário também existe: «quiosque» vem do turco «köşk», via francês.',
+    'Harmonia vocálica: os sufixos mudam de vogal para combinar com a palavra. O plural é “-ler” ou “-lar” (“evler”, casas; “kitaplar”, livros) e o “em” é “-de” ou “-da” (“evde”, em casa; “okulda”, na escola). Aprenda os sufixos em pares e em quartetos (“-i, -ı, -u, -ü”), em vez de decorar cada forma.',
+    'Uma palavra pode ser uma frase: “evlerimizden” quer dizer “das nossas casas” (ev-ler-imiz-den: casa + plural + nosso + de). Para ler, desmonte da esquerda para a direita: a raiz vem primeiro, depois plural, possessivo e caso.',
+    'O verbo vai no fim (“Ben her gün Türkçe çalışıyorum” — literalmente “eu todo dia turco estudo”), e no lugar das preposições há posposições: “senin için”, para você. Ler bastante ajuda a ficar à vontade com essa ordem.',
+    'O alfabeto latino foi adotado em 1928 e é quase fonético: “c” soa “dj” (“cami”, mesquita), “ç” soa “tch”, “ş” soa “ch”, o “ı” sem pingo é um “i” dito com os lábios relaxados, mais no fundo da boca, e o “ğ” não se pronuncia: só alonga a vogal anterior (“dağ”, montanha).',
+    'Muitas palavras vieram do francês e se reconhecem de ouvido: “otobüs”, “kuaför”, “pantolon”, “istasyon”, “asansör”. O caminho contrário também existe: “quiosque” vem do turco “köşk”, via francês.',
     'O Instituto Yunus Emre já ofereceu turmas online gratuitas de turco para brasileiros e, desde maio de 2026, tem um centro cultural em São Paulo. Para o ouvido, as novelas turcas ajudam: muitas têm episódios completos nos canais oficiais do YouTube.',
   ],
 };

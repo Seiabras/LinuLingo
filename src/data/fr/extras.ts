@@ -53,7 +53,7 @@ export const SCENARIOS_FR: ScenarioSeed[] = [
     cefr: 'A1',
     register: 'informal',
     persona: 'Chloé, amiga lionesa',
-    description: "Uma amiga convida você para um café numa praça de Lyon. Entre amigos, «tu», e «on» no lugar de «nous» (on prend = a gente pede): nada de «excusez-moi» ou «s'il vous plaît», que são do «vous».",
+    description: "Uma amiga convida você para um café numa praça de Lyon. Entre amigos, “tu”, e “on” no lugar de “nous” (on prend = a gente pede): nada de “excusez-moi” ou “s'il vous plaît”, que são do “vous”.",
     turns: [
       {
         bot: 'Salut ! Ça va ? On prend un café ?',
@@ -99,7 +99,7 @@ export const SCENARIOS_FR: ScenarioSeed[] = [
     cefr: 'A1',
     register: 'formal',
     persona: 'Madame Lefèvre, padeira',
-    description: 'Compre o pão do dia numa padaria de bairro em Paris. Com quem atende, «vous» e sempre «bonjour» antes de pedir: entrar sem cumprimentar soa grosseiro na França.',
+    description: 'Compre o pão do dia numa padaria de bairro em Paris. Com quem atende, “vous” e sempre “bonjour” antes de pedir: entrar sem cumprimentar soa grosseiro na França.',
     turns: [
       {
         bot: "Bonjour ! Qu'est-ce que je vous sers ?",
@@ -145,7 +145,7 @@ export const SCENARIOS_FR: ScenarioSeed[] = [
     cefr: 'A2',
     register: 'formal',
     persona: 'Madame Tremblay, recepcionista',
-    description: 'Faça o check-in num hotel da cidade velha de Quebec, à beira do rio São Lourenço. Registro formal: «vous». Repare que no Quebec o café da manhã se chama «déjeuner» (na França, «petit-déjeuner») e o estacionamento, «stationnement».',
+    description: 'Faça o check-in num hotel da cidade velha de Quebec, à beira do rio São Lourenço. Registro formal: “vous”. Repare que no Quebec o café da manhã se chama “déjeuner” (na França, “petit-déjeuner”) e o estacionamento, “stationnement”.',
     turns: [
       {
         bot: 'Bonsoir et bienvenue ! Vous avez une réservation ?',
@@ -191,7 +191,7 @@ export const SCENARIOS_FR: ScenarioSeed[] = [
     cefr: 'B1',
     register: 'formal',
     persona: 'Monsieur Rochat, responsável pela seleção',
-    description: 'Uma entrevista numa empresa internacional em Genebra, na Suíça. Registro formal: «vous» do começo ao fim. Se falarem de números, lembre que na Suíça se diz «septante» (70) e «nonante» (90).',
+    description: 'Uma entrevista numa empresa internacional em Genebra, na Suíça. Registro formal: “vous” do começo ao fim. Se falarem de números, lembre que na Suíça se diz “septante” (70) e “nonante” (90).',
     turns: [
       {
         bot: 'Bonjour, asseyez-vous. Pouvez-vous vous présenter en quelques mots ?',
@@ -237,7 +237,7 @@ export const SCENARIOS_FR: ScenarioSeed[] = [
     cefr: 'A2',
     register: 'informal',
     persona: 'Karim, amigo marselhês',
-    description: "Um amigo de Marselha convida você para nadar nas calanques, as enseadas de pedra branca entre Marselha e Cassis. Entre amigos, «tu» e «on»: nada de «s'il vous plaît» ou «excusez-moi».",
+    description: "Um amigo de Marselha convida você para nadar nas calanques, as enseadas de pedra branca entre Marselha e Cassis. Entre amigos, “tu” e “on”: nada de “s'il vous plaît” ou “excusez-moi”.",
     turns: [
       {
         bot: "Salut ! Qu'est-ce que tu fais ce week-end ?",
@@ -283,7 +283,7 @@ export const SCENARIOS_FR: ScenarioSeed[] = [
     cefr: 'B1',
     register: 'formal',
     persona: 'Docteur Martin, clínico geral',
-    description: 'Você está com febre e vai ao médico em Bordeaux. Registro formal: «vous», e o médico se chama de «docteur». Cuidado: resfriado é «rhume» (être enrhumé); «constipé» quer dizer com prisão de ventre!',
+    description: 'Você está com febre e vai ao médico em Bordeaux. Registro formal: “vous”, e o médico se chama de “docteur”. Cuidado: resfriado é “rhume” (être enrhumé); “constipé” quer dizer com prisão de ventre!',
     turns: [
       {
         bot: "Bonjour, asseyez-vous. Qu'est-ce qui ne va pas ?",
@@ -373,7 +373,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'aqua',
     origin_language: 'Latim',
     cognates: c(['pt', 'água / aquático'], ['es', 'agua'], ['it', 'acqua'], ['ro', 'apă']),
-    evolution_note: 'De «aqua» sobrou quase nada: aqua → aigue → eau, pronunciado só [o]. A raiz inteira continua nas palavras eruditas: aquatique, aquarium.',
+    evolution_note: 'De “aqua” sobrou quase nada: aqua → aigue → eau, pronunciado só [o]. A raiz inteira continua nas palavras eruditas: aquatique, aquarium.',
     transparent: false,
   },
   {
@@ -381,7 +381,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'noctem',
     origin_language: 'Latim',
     cognates: c(['pt', 'noite / noturno'], ['es', 'noche'], ['it', 'notte'], ['ro', 'noapte']),
-    evolution_note: 'O grupo latino «ct» virou «it» em francês (noctem → nuit, factum → fait), como virou «it» em português (noite, feito).',
+    evolution_note: 'O grupo latino “ct” virou “it” em francês (noctem → nuit, factum → fait), como virou “it” em português (noite, feito).',
     transparent: false,
   },
   {
@@ -389,7 +389,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'lactem',
     origin_language: 'Latim',
     cognates: c(['pt', 'leite / lácteo'], ['es', 'leche'], ['it', 'latte'], ['ro', 'lapte']),
-    evolution_note: 'Mesmo caminho de «nuit»: o «ct» de «lactem» virou «it» — em português, «leite».',
+    evolution_note: 'Mesmo caminho de “nuit”: o “ct” de “lactem” virou “it” — em português, “leite”.',
     transparent: true,
   },
   {
@@ -397,7 +397,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'canem',
     origin_language: 'Latim',
     cognates: c(['pt', 'cão / canino'], ['es', 'can'], ['it', 'cane'], ['ro', 'câine']),
-    evolution_note: 'No francês, o «c» latino antes de «a» virou «ch» [ʃ]: canem → chien, cantare → chanter, caballus → cheval, capra → chèvre. Em português, o «c» ficou: cão, cantar, cavalo, cabra.',
+    evolution_note: 'No francês, o “c” latino antes de “a” virou “ch” [ʃ]: canem → chien, cantare → chanter, caballus → cheval, capra → chèvre. Em português, o “c” ficou: cão, cantar, cavalo, cabra.',
     transparent: false,
   },
   {
@@ -405,7 +405,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'cantare',
     origin_language: 'Latim',
     cognates: c(['pt', 'cantar'], ['es', 'cantar'], ['it', 'cantare'], ['ro', 'cânta']),
-    evolution_note: 'Mais um «ca» que virou «cha»: cantare → chanter. Compare: canção × chanson.',
+    evolution_note: 'Mais um “ca” que virou “cha”: cantare → chanter. Compare: canção × chanson.',
     transparent: false,
   },
   {
@@ -413,7 +413,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'caballus',
     origin_language: 'Latim',
     cognates: c(['pt', 'cavalo'], ['es', 'caballo'], ['it', 'cavallo'], ['ro', 'cal']),
-    evolution_note: '«Caballus» era o cavalo de trabalho, o pangaré, no latim popular; a palavra culta era «equus», que sobrou em «équitation» e em «equino».',
+    evolution_note: '“Caballus” era o cavalo de trabalho, o pangaré, no latim popular; a palavra culta era “equus”, que sobrou em “équitation” e em “equino”.',
     transparent: false,
   },
   {
@@ -421,7 +421,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'capra',
     origin_language: 'Latim',
     cognates: c(['pt', 'cabra'], ['es', 'cabra'], ['it', 'capra'], ['ro', 'capră']),
-    evolution_note: '«ca» → «chè», e o «p» entre vogais virou «v»: capra → chèvre. O mesmo aconteceu em «ripa» → rive (margem).',
+    evolution_note: '“ca” → “chè”, e o “p” entre vogais virou “v”: capra → chèvre. O mesmo aconteceu em “ripa” → rive (margem).',
     transparent: false,
   },
   {
@@ -429,7 +429,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'campus',
     origin_language: 'Latim',
     cognates: c(['pt', 'campo'], ['es', 'campo'], ['it', 'campo']),
-    evolution_note: '«Campus» → champ. A mesma palavra, sem mudar, voltou ao francês moderno para a universidade: le campus.',
+    evolution_note: '“Campus” → champ. A mesma palavra, sem mudar, voltou ao francês moderno para a universidade: le campus.',
     transparent: false,
   },
   {
@@ -437,7 +437,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'schola',
     origin_language: 'Latim (do grego)',
     cognates: c(['pt', 'escola'], ['es', 'escuela'], ['it', 'scuola'], ['ro', 'școală']),
-    evolution_note: 'O latim popular pôs um «e» antes do «s» inicial (schola → escole), como o português (escola); depois o «s» caiu e virou o acento de «é»: école. Mesmo caminho: étoile, état, étude.',
+    evolution_note: 'O latim popular pôs um “e” antes do “s” inicial (schola → escole), como o português (escola); depois o “s” caiu e virou o acento de “é”: école. Mesmo caminho: étoile, état, étude.',
     transparent: true,
   },
   {
@@ -445,7 +445,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'stella',
     origin_language: 'Latim',
     cognates: c(['pt', 'estrela / estelar'], ['es', 'estrella'], ['it', 'stella'], ['ro', 'stea']),
-    evolution_note: 'stella → estoile → étoile: o «e» de apoio e o «s» que cai, como em «école».',
+    evolution_note: 'stella → estoile → étoile: o “e” de apoio e o “s” que cai, como em “école”.',
     transparent: false,
   },
   {
@@ -453,7 +453,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'hospitalem',
     origin_language: 'Latim',
     cognates: c(['pt', 'hospital'], ['es', 'hospital'], ['it', 'ospedale']),
-    evolution_note: 'O acento circunflexo marca um «s» que se perdeu: hospital → hôpital. Por isso ele «devolve» o s em palavras parentes: hospitalier, hospitalité.',
+    evolution_note: 'O acento circunflexo marca um “s” que se perdeu: hospital → hôpital. Por isso ele “devolve” o s em palavras parentes: hospitalier, hospitalité.',
     transparent: true,
   },
   {
@@ -461,7 +461,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'festa',
     origin_language: 'Latim',
     cognates: c(['pt', 'festa / festivo'], ['es', 'fiesta'], ['it', 'festa']),
-    evolution_note: 'Mais um circunflexo no lugar do «s» antigo: feste → fête. Compare: festival, festin.',
+    evolution_note: 'Mais um circunflexo no lugar do “s” antigo: feste → fête. Compare: festival, festin.',
     transparent: true,
   },
   {
@@ -469,7 +469,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'forestis',
     origin_language: 'Latim medieval',
     cognates: c(['pt', 'floresta'], ['it', 'foresta'], ['en', 'forest']),
-    evolution_note: 'O «s» de «forest» caiu e virou circunflexo: forêt. O inglês pegou a palavra do francês antigo antes da queda do «s»: forest.',
+    evolution_note: 'O “s” de “forest” caiu e virou circunflexo: forêt. O inglês pegou a palavra do francês antigo antes da queda do “s”: forest.',
     transparent: true,
   },
   {
@@ -477,7 +477,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'testa',
     origin_language: 'Latim',
     cognates: c(['pt', 'testa'], ['it', 'testa'], ['ro', 'țeastă (crânio)']),
-    evolution_note: 'No latim, «testa» era um pote de barro; no latim popular virou, de brincadeira, a cabeça — como dizemos «cuca» ou «coco». O «s» caiu e virou circunflexo.',
+    evolution_note: 'No latim, “testa” era um pote de barro; no latim popular virou, de brincadeira, a cabeça — como dizemos “cuca” ou “coco”. O “s” caiu e virou circunflexo.',
     transparent: false,
   },
   {
@@ -485,7 +485,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'formaticum',
     origin_language: 'Latim',
     cognates: c(['pt', 'fôrma'], ['it', 'formaggio'], ['ca', 'formatge']),
-    evolution_note: '«Caseus formaticus» era o queijo feito na fôrma; o francês e o italiano ficaram com «formaticum», e o português e o espanhol, com «caseus» (queijo, queso). O «or» virou «ro» no francês.',
+    evolution_note: '“Caseus formaticus” era o queijo feito na fôrma; o francês e o italiano ficaram com “formaticum”, e o português e o espanhol, com “caseus” (queijo, queso). O “or” virou “ro” no francês.',
     transparent: false,
   },
   {
@@ -493,7 +493,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'manducare',
     origin_language: 'Latim',
     cognates: c(['pt', 'manjar'], ['it', 'mangiare']),
-    evolution_note: '«Manducare» era mastigar, comer com gosto, na fala popular; o português e o espanhol ficaram com «comedere» (comer), e o português guardou «manjar» para uma comida deliciosa.',
+    evolution_note: '“Manducare” era mastigar, comer com gosto, na fala popular; o português e o espanhol ficaram com “comedere” (comer), e o português guardou “manjar” para uma comida deliciosa.',
     transparent: false,
   },
   {
@@ -501,7 +501,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'parabolare',
     origin_language: 'Latim (do grego)',
     cognates: c(['pt', 'palavra / parábola'], ['es', 'palabra'], ['it', 'parlare']),
-    evolution_note: 'Vem de «parabola», a comparação que se usava no sermão; daí «falar». O português pegou o substantivo (palavra), o francês e o italiano, o verbo.',
+    evolution_note: 'Vem de “parabola”, a comparação que se usava no sermão; daí “falar”. O português pegou o substantivo (palavra), o francês e o italiano, o verbo.',
     transparent: false,
   },
   {
@@ -509,7 +509,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'essere',
     origin_language: 'Latim popular',
     cognates: c(['pt', 'ser'], ['es', 'ser'], ['it', 'essere']),
-    evolution_note: '«Esse» virou «essere» no latim popular, e daí «estre» → être, com o circunflexo no lugar do «s».',
+    evolution_note: '“Esse” virou “essere” no latim popular, e daí “estre” → être, com o circunflexo no lugar do “s”.',
     transparent: false,
   },
   {
@@ -517,7 +517,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'habere',
     origin_language: 'Latim',
     cognates: c(['pt', 'haver'], ['es', 'haber'], ['it', 'avere'], ['ro', 'avea']),
-    evolution_note: "O francês usa «avoir» onde o português usa «ter» (que vem de «tenere»): «j'ai faim» = tenho fome. O «haver» português ficou mais formal.",
+    evolution_note: "O francês usa “avoir” onde o português usa “ter” (que vem de “tenere”): “j'ai faim” = tenho fome. O “haver” português ficou mais formal.",
     transparent: false,
   },
   {
@@ -533,7 +533,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'dicere',
     origin_language: 'Latim',
     cognates: c(['pt', 'dizer / dicção'], ['es', 'decir'], ['it', 'dire'], ['ro', 'zice']),
-    evolution_note: '«Dicere» → dire; a raiz inteira vive em «diction», «dictionnaire», «dicter».',
+    evolution_note: '“Dicere” → dire; a raiz inteira vive em “diction”, “dictionnaire”, “dicter”.',
     transparent: false,
   },
   {
@@ -541,7 +541,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'videre',
     origin_language: 'Latim',
     cognates: c(['pt', 'ver / vídeo'], ['es', 'ver'], ['it', 'vedere'], ['ro', 'vedea']),
-    evolution_note: '«Videre» → veoir → voir. O latim «video» (eu vejo) voltou em «la vidéo».',
+    evolution_note: '“Videre” → veoir → voir. O latim “video” (eu vejo) voltou em “la vidéo”.',
     transparent: false,
   },
   {
@@ -549,7 +549,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'matrem',
     origin_language: 'Latim',
     cognates: c(['pt', 'mãe / materno'], ['es', 'madre'], ['it', 'madre']),
-    evolution_note: '«Matrem» → mère: o «t» entre vogais sumiu no francês, como em «patrem» → père e «fratrem» → frère.',
+    evolution_note: '“Matrem” → mère: o “t” entre vogais sumiu no francês, como em “patrem” → père e “fratrem” → frère.',
     transparent: false,
   },
   {
@@ -557,7 +557,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'patrem',
     origin_language: 'Latim',
     cognates: c(['pt', 'pai / paterno'], ['es', 'padre'], ['it', 'padre']),
-    evolution_note: '«Patrem» → père; a raiz completa ficou em «paternel», «patrie», «patron».',
+    evolution_note: '“Patrem” → père; a raiz completa ficou em “paternel”, “patrie”, “patron”.',
     transparent: false,
   },
   {
@@ -565,7 +565,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'fratrem',
     origin_language: 'Latim',
     cognates: c(['pt', 'frade / fraterno'], ['es', 'fray'], ['it', 'fratello']),
-    evolution_note: 'O português tem a mesma palavra em «frade» (irmão de ordem religiosa); o irmão de sangue vem de «germanus» (irmão). Em francês, «frère» serve para os dois.',
+    evolution_note: 'O português tem a mesma palavra em “frade” (irmão de ordem religiosa); o irmão de sangue vem de “germanus” (irmão). Em francês, “frère” serve para os dois.',
     transparent: false,
   },
   {
@@ -573,7 +573,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'soror',
     origin_language: 'Latim',
     cognates: c(['pt', 'sóror / sororidade'], ['it', 'sorella']),
-    evolution_note: '«Soror» → sœur. O português guardou «sóror» para freiras e «sororidade»; a irmã comum é «irmã», de «germana».',
+    evolution_note: '“Soror” → sœur. O português guardou “sóror” para freiras e “sororidade”; a irmã comum é “irmã”, de “germana”.',
     transparent: false,
   },
   {
@@ -581,7 +581,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'septimana',
     origin_language: 'Latim',
     cognates: c(['pt', 'semana'], ['es', 'semana'], ['it', 'settimana'], ['ro', 'săptămână']),
-    evolution_note: '«Septimana» era o conjunto de sete (dias). O «pt» caiu no francês: semaine.',
+    evolution_note: '“Septimana” era o conjunto de sete (dias). O “pt” caiu no francês: semaine.',
     transparent: true,
   },
   {
@@ -589,7 +589,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'dies dominicus',
     origin_language: 'Latim',
     cognates: c(['pt', 'domingo'], ['es', 'domingo'], ['it', 'domenica'], ['ro', 'duminică']),
-    evolution_note: 'O «dia do Senhor». Os outros dias do francês guardam os deuses romanos: lundi (Lua), mardi (Marte), mercredi (Mercúrio), jeudi (Júpiter), vendredi (Vênus); o português trocou tudo por «segunda-feira», «terça-feira»…',
+    evolution_note: 'O “dia do Senhor”. Os outros dias do francês guardam os deuses romanos: lundi (Lua), mardi (Marte), mercredi (Mercúrio), jeudi (Júpiter), vendredi (Vênus); o português trocou tudo por “segunda-feira”, “terça-feira”…',
     transparent: false,
   },
   {
@@ -597,7 +597,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'lunae dies',
     origin_language: 'Latim',
     cognates: c(['es', 'lunes'], ['it', 'lunedì'], ['ro', 'luni']),
-    evolution_note: '«O dia da Lua». Português é a única grande língua românica que numerou os dias da semana: segunda-feira, terça-feira…',
+    evolution_note: '“O dia da Lua”. Português é a única grande língua românica que numerou os dias da semana: segunda-feira, terça-feira…',
     transparent: false,
   },
   {
@@ -605,7 +605,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'sambati dies',
     origin_language: 'Latim popular (do hebraico)',
     cognates: c(['pt', 'sábado'], ['es', 'sábado'], ['it', 'sabato']),
-    evolution_note: 'Do hebraico «shabat», o dia de descanso, pelo grego e pelo latim popular «sambatum».',
+    evolution_note: 'Do hebraico “shabat”, o dia de descanso, pelo grego e pelo latim popular “sambatum”.',
     transparent: false,
   },
   {
@@ -613,7 +613,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'fenestra',
     origin_language: 'Latim',
     cognates: c(['pt', 'fresta / defenestrar'], ['it', 'finestra'], ['ro', 'fereastră']),
-    evolution_note: 'O português usa «janela» (de «ianuella», portinha), mas guardou «fenestra» em «fresta» e no verbo culto «defenestrar» (jogar pela janela).',
+    evolution_note: 'O português usa “janela” (de “ianuella”, portinha), mas guardou “fenestra” em “fresta” e no verbo culto “defenestrar” (jogar pela janela).',
     transparent: false,
   },
   {
@@ -621,7 +621,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'auricula',
     origin_language: 'Latim',
     cognates: c(['pt', 'orelha / auricular'], ['es', 'oreja'], ['it', 'orecchio'], ['ro', 'ureche']),
-    evolution_note: '«Auricula» era «orelhinha», diminutivo de «auris»: o latim popular gostava de diminutivos, e eles ficaram como a palavra normal.',
+    evolution_note: '“Auricula” era “orelhinha”, diminutivo de “auris”: o latim popular gostava de diminutivos, e eles ficaram como a palavra normal.',
     transparent: true,
   },
   {
@@ -629,7 +629,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'genuculum',
     origin_language: 'Latim',
     cognates: c(['pt', 'joelho / genuflexão'], ['it', 'ginocchio'], ['ro', 'genunchi']),
-    evolution_note: 'Outro diminutivo: «genuculum», joelhinho, de «genu». O português «joelho» vem da mesma palavra.',
+    evolution_note: 'Outro diminutivo: “genuculum”, joelhinho, de “genu”. O português “joelho” vem da mesma palavra.',
     transparent: false,
   },
   {
@@ -637,7 +637,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'soliculus',
     origin_language: 'Latim popular',
     cognates: c(['pt', 'sol / solar'], ['es', 'sol'], ['it', 'sole'], ['ro', 'soare']),
-    evolution_note: 'Mais um diminutivo: «soliculus», solzinho, de «sol».',
+    evolution_note: 'Mais um diminutivo: “soliculus”, solzinho, de “sol”.',
     transparent: false,
   },
   {
@@ -645,7 +645,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'apicula',
     origin_language: 'Latim',
     cognates: c(['pt', 'abelha / apicultura'], ['es', 'abeja'], ['it', 'ape']),
-    evolution_note: '«Apicula», abelhinha, de «apis». A raiz está em «apiculture».',
+    evolution_note: '“Apicula”, abelhinha, de “apis”. A raiz está em “apiculture”.',
     transparent: true,
   },
   {
@@ -653,7 +653,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'vetulus',
     origin_language: 'Latim',
     cognates: c(['pt', 'velho'], ['es', 'viejo'], ['it', 'vecchio'], ['ro', 'vechi']),
-    evolution_note: '«Vetulus», velhinho, diminutivo de «vetus» (que sobrou em «vétéran» e «vétuste»).',
+    evolution_note: '“Vetulus”, velhinho, diminutivo de “vetus” (que sobrou em “vétéran” e “vétuste”).',
     transparent: false,
   },
   {
@@ -661,7 +661,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: '*werra',
     origin_language: 'Frâncico (germânico)',
     cognates: c(['pt', 'guerra'], ['es', 'guerra'], ['it', 'guerra'], ['en', 'war']),
-    evolution_note: 'Os francos trouxeram a palavra, e o «w» germânico virou «gu» nas línguas românicas: werra → guerre. O latim «bellum» ficou em «belliqueux» e «bélico».',
+    evolution_note: 'Os francos trouxeram a palavra, e o “w” germânico virou “gu” nas línguas românicas: werra → guerre. O latim “bellum” ficou em “belliqueux” e “bélico”.',
     transparent: true,
   },
   {
@@ -669,7 +669,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: '*wardōn',
     origin_language: 'Frâncico (germânico)',
     cognates: c(['pt', 'guardar'], ['es', 'guardar'], ['it', 'guardare'], ['en', 'ward / guard']),
-    evolution_note: 'Mesmo «w» → «gu»: wardōn → garder. Em italiano, «guardare» acabou virando «olhar».',
+    evolution_note: 'Mesmo “w” → “gu”: wardōn → garder. Em italiano, “guardare” acabou virando “olhar”.',
     transparent: true,
   },
   {
@@ -677,7 +677,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: '*blank',
     origin_language: 'Frâncico (germânico)',
     cognates: c(['pt', 'branco'], ['es', 'blanco'], ['it', 'bianco']),
-    evolution_note: 'O latim tinha «albus» e «candidus»; a palavra germânica dos francos, que queria dizer «brilhante», ganhou nas línguas românicas.',
+    evolution_note: 'O latim tinha “albus” e “candidus”; a palavra germânica dos francos, que queria dizer “brilhante”, ganhou nas línguas românicas.',
     transparent: true,
   },
   {
@@ -685,7 +685,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: '*gard',
     origin_language: 'Frâncico (germânico)',
     cognates: c(['pt', 'jardim'], ['es', 'jardín'], ['it', 'giardino'], ['en', 'garden / yard']),
-    evolution_note: '«Gard» era um terreno cercado; o francês antigo fez «jardin», que o português e o espanhol tomaram emprestado.',
+    evolution_note: '“Gard” era um terreno cercado; o francês antigo fez “jardin”, que o português e o espanhol tomaram emprestado.',
     transparent: true,
   },
   {
@@ -693,7 +693,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: '*rīki',
     origin_language: 'Frâncico (germânico)',
     cognates: c(['pt', 'rico'], ['es', 'rico'], ['it', 'ricco'], ['de', 'reich']),
-    evolution_note: 'Era «poderoso» em germânico (o mesmo «reich» do alemão); passou a «rico» nas línguas românicas.',
+    evolution_note: 'Era “poderoso” em germânico (o mesmo “reich” do alemão); passou a “rico” nas línguas românicas.',
     transparent: true,
   },
   {
@@ -701,7 +701,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: '*blāo',
     origin_language: 'Frâncico (germânico)',
     cognates: c(['it', 'blu'], ['en', 'blue']),
-    evolution_note: 'O azul francês é germânico; o português «azul» vem do árabe e do persa (lāzaward, a pedra lápis-lazúli).',
+    evolution_note: 'O azul francês é germânico; o português “azul” vem do árabe e do persa (lāzaward, a pedra lápis-lazúli).',
     transparent: false,
   },
   {
@@ -709,7 +709,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: '*multo',
     origin_language: 'Gaulês (celta)',
     cognates: c(['en', 'mutton']),
-    evolution_note: 'Uma das poucas palavras do gaulês, a língua celta falada na Gália antes dos romanos. O inglês pegou do francês: «mutton» é a carne de carneiro.',
+    evolution_note: 'Uma das poucas palavras do gaulês, a língua celta falada na Gália antes dos romanos. O inglês pegou do francês: “mutton” é a carne de carneiro.',
     transparent: false,
   },
   {
@@ -717,7 +717,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: '*cassanos',
     origin_language: 'Gaulês (celta)',
     cognates: c(),
-    evolution_note: 'O carvalho francês vem do gaulês; o português «carvalho» tem outra origem. As palavras gaulesas que sobraram são quase todas do campo: chêne, bouleau, mouton, charrue, alouette.',
+    evolution_note: 'O carvalho francês vem do gaulês; o português “carvalho” tem outra origem. As palavras gaulesas que sobraram são quase todas do campo: chêne, bouleau, mouton, charrue, alouette.',
     transparent: false,
   },
   {
@@ -725,7 +725,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'qahwa',
     origin_language: 'Árabe (pelo turco e pelo italiano)',
     cognates: c(['pt', 'café'], ['es', 'café'], ['it', 'caffè'], ['en', 'coffee']),
-    evolution_note: 'Do árabe «qahwa», pelo turco «kahve» e pelo italiano; em francês, «café» é também o lugar onde se toma café.',
+    evolution_note: 'Do árabe “qahwa”, pelo turco “kahve” e pelo italiano; em francês, “café” é também o lugar onde se toma café.',
     transparent: true,
   },
   {
@@ -741,7 +741,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'nāranj',
     origin_language: 'Árabe (do persa)',
     cognates: c(['pt', 'laranja'], ['es', 'naranja'], ['it', 'arancia']),
-    evolution_note: 'Do persa «nārang», pelo árabe. O francês perdeu o «n» inicial (une narange → une orange) e aproximou a palavra de «or» (ouro), pela cor.',
+    evolution_note: 'Do persa “nārang”, pelo árabe. O francês perdeu o “n” inicial (une narange → une orange) e aproximou a palavra de “or” (ouro), pela cor.',
     transparent: false,
   },
   {
@@ -749,7 +749,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'ṣifr',
     origin_language: 'Árabe (pelo latim medieval)',
     cognates: c(['pt', 'cifra / zero'], ['it', 'cifra'], ['en', 'cipher']),
-    evolution_note: '«Ṣifr» era o zero, o vazio; em francês virou o algarismo em geral. «Zéro» vem da mesma palavra, pelo italiano.',
+    evolution_note: '“Ṣifr” era o zero, o vazio; em francês virou o algarismo em geral. “Zéro” vem da mesma palavra, pelo italiano.',
     transparent: false,
   },
   {
@@ -757,7 +757,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'weekend',
     origin_language: 'Inglês',
     cognates: c(['en', 'weekend']),
-    evolution_note: 'Anglicismo do começo do século XX. No Quebec, prefere-se «la fin de semaine», como em português.',
+    evolution_note: 'Anglicismo do começo do século XX. No Quebec, prefere-se “la fin de semaine”, como em português.',
     transparent: true,
   },
   {
@@ -765,7 +765,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'parking',
     origin_language: 'Inglês (falso anglicismo)',
     cognates: c(['en', 'car park / parking lot']),
-    evolution_note: 'Parece inglês, mas em inglês «parking» é o ato de estacionar; o lugar é «car park» ou «parking lot». Em francês, «le parking» é o estacionamento.',
+    evolution_note: 'Parece inglês, mas em inglês “parking” é o ato de estacionar; o lugar é “car park” ou “parking lot”. Em francês, “le parking” é o estacionamento.',
     transparent: true,
   },
   {
@@ -781,7 +781,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'banca',
     origin_language: 'Italiano',
     cognates: c(['pt', 'banco'], ['es', 'banco'], ['it', 'banca']),
-    evolution_note: 'Os cambistas italianos da Idade Média trabalhavam num banco, uma mesa: «banca». Daí o banco das finanças.',
+    evolution_note: 'Os cambistas italianos da Idade Média trabalhavam num banco, uma mesa: “banca”. Daí o banco das finanças.',
     transparent: true,
   },
   {
@@ -789,7 +789,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'balcone',
     origin_language: 'Italiano',
     cognates: c(['pt', 'balcão / sacada'], ['es', 'balcón']),
-    evolution_note: 'Do italiano; em francês é a sacada. O «balcão» da loja em francês é «le comptoir».',
+    evolution_note: 'Do italiano; em francês é a sacada. O “balcão” da loja em francês é “le comptoir”.',
     transparent: true,
   },
   {
@@ -797,7 +797,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'naná',
     origin_language: 'Tupi-guarani (pelo português)',
     cognates: c(['pt', 'ananás'], ['es', 'ananá']),
-    evolution_note: 'O francês pegou a palavra dos portugueses, que a aprenderam do tupi-guarani no Brasil. Em Portugal, «ananás»; no Brasil, «abacaxi».',
+    evolution_note: 'O francês pegou a palavra dos portugueses, que a aprenderam do tupi-guarani no Brasil. Em Portugal, “ananás”; no Brasil, “abacaxi”.',
     transparent: true,
   },
   {
@@ -821,7 +821,7 @@ export const ETYMOLOGY_FR: EtymologySeed[] = [
     root_word: 'ṣifr',
     origin_language: 'Árabe (pelo italiano)',
     cognates: c(['pt', 'zero'], ['es', 'cero'], ['it', 'zero']),
-    evolution_note: 'O mesmo «ṣifr» de «chiffre», pelo latim medieval «zephirum» e pelo italiano «zero».',
+    evolution_note: 'O mesmo “ṣifr” de “chiffre”, pelo latim medieval “zephirum” e pelo italiano “zero”.',
     transparent: true,
   },
 ];

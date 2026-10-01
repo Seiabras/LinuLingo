@@ -53,7 +53,7 @@ export const ROWS: VocabRow[] = [
   ['lâ', 'ir (o voi)', 'verbo', 'Verbos-chave', '🚶', 'O voi a cjase.'],
   ['mangjâ', 'comer (o mangji)', 'verbo', 'Verbos-chave', '🍽️', 'O mangji pan e formadi.'],
   ['bevi', 'beber (o bêf)', 'verbo', 'Verbos-chave', '🥤', 'O bêf aghe.'],
-  ['plasê', 'agradar («mi plâs» = eu gosto)', 'verbo', 'Verbos-chave', '❤️', 'Mi plâs il furlan.'],
+  ['plasê', 'agradar (“mi plâs” = eu gosto)', 'verbo', 'Verbos-chave', '❤️', 'Mi plâs il furlan.'],
   ['savê', 'saber (o sai)', 'verbo', 'Verbos-chave', '🧠', 'No sai.'],
   ['volê', 'querer (o vuei)', 'verbo', 'Verbos-chave', '💭', 'O vuei imparâ il furlan.'],
   ['imparâ', 'aprender', 'verbo', 'Verbos-chave', '📚', 'O imparìn il furlan.'],
@@ -82,7 +82,7 @@ export const ROWS: VocabRow[] = [
   ['siet', 'sete', 'numeral', 'Números', '7️⃣', 'La setemane e à siet dîs.'],
   ['vot', 'oito', 'numeral', 'Números', '8️⃣', 'Vot oris.'],
   ['nûf', 'nove', 'numeral', 'Números', '9️⃣', 'Nûf agns.'],
-  ['dîs', 'dez; dias (o plural de «dì»)', 'numeral', 'Números', '🔟', 'Dîs euros.'],
+  ['dîs', 'dez; dias (o plural de “dì”)', 'numeral', 'Números', '🔟', 'Dîs euros.'],
   // ── Tempo ──
   ['vuê', 'hoje', 'advérbio', 'Tempo', '📅', 'Vuê al è lunis.'],
   ['doman', 'amanhã', 'advérbio', 'Tempo', '📅', 'Mandi, a doman!'],

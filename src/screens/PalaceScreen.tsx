@@ -60,7 +60,7 @@ export default function PalaceScreen() {
         language: pack.code,
         source: 'palacio',
         key: noun.id,
-        prompt: `Em que sala mora «${noun.word_target}» (${noun.word_native})?`,
+        prompt: `Em que sala mora “${noun.word_target}” (${noun.word_native})?`,
         expected: pack.genderNames?.[noun.gender] ?? GENDER_NAME[noun.gender],
         given: pack.genderNames?.[g] ?? GENDER_NAME[g],
         note: genderTip(noun.word_target, noun.gender, pack.code),

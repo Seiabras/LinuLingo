@@ -12,7 +12,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     sections: [
       {
         heading: 'O bloco silábico: letras empilhadas',
-        text: 'O hangul, criado em 1443 pelo rei Sejong, é um alfabeto de verdade: 14 consoantes e 10 vogais básicas, mais as combinadas. A diferença é que as letras não vão em fila, e sim empilhadas num quadradinho, um por sílaba. Todo bloco começa com uma consoante; quando a sílaba começa com vogal, entra o ㅇ, que no começo é mudo (아 = «a»). Se a vogal é vertical (ㅏ ㅓ ㅣ), a consoante fica à esquerda: 가. Se é horizontal (ㅗ ㅜ ㅡ), fica em cima: 고. A consoante final, quando existe, vai embaixo e se chama 받침 (batchim, «apoio»): 강 = ㄱ + ㅏ + ㅇ. No fim do bloco, o ㅇ soa [ŋ], o «ng» do inglês «sing».',
+        text: 'O hangul, criado em 1443 pelo rei Sejong, é um alfabeto de verdade: 14 consoantes e 10 vogais básicas, mais as combinadas. A diferença é que as letras não vão em fila, e sim empilhadas num quadradinho, um por sílaba. Todo bloco começa com uma consoante; quando a sílaba começa com vogal, entra o ㅇ, que no começo é mudo (아 = “a”). Se a vogal é vertical (ㅏ ㅓ ㅣ), a consoante fica à esquerda: 가. Se é horizontal (ㅗ ㅜ ㅡ), fica em cima: 고. A consoante final, quando existe, vai embaixo e se chama 받침 (batchim, “apoio”): 강 = ㄱ + ㅏ + ㅇ. No fim do bloco, o ㅇ soa [ŋ], o “ng” do inglês “sing”.',
         table: {
           head: ['Bloco', 'Letras', 'IPA', 'Português'],
           rows: [
@@ -32,18 +32,18 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'As vogais: puras, e duas novas',
-        text: 'As vogais coreanas não se reduzem no fim da palavra como as nossas: o 오 de 오이 é sempre «ô», nunca vira «u». Duas pedem treino. O ㅓ [ʌ] é um «ó» dito sem arredondar os lábios, quase um «a» abafado; o ㅗ é um «ô» fechado, com os lábios em bico. Trocar um pelo outro muda a palavra: 거기 (ali) × 고기 (carne). O ㅡ [ɯ] é um «u» com os lábios esticados, como num sorriso. Um tracinho a mais vira «i» na frente: ㅏ → ㅑ (ya), ㅓ → ㅕ (yeo), ㅗ → ㅛ (yo), ㅜ → ㅠ (yu). O ㅐ e o ㅔ eram «é» e «ê», mas em Seul hoje soam quase iguais: 개 (cachorro) e 게 (caranguejo) se distinguem mais pela escrita e pelo contexto.',
+        text: 'As vogais coreanas não se reduzem no fim da palavra como as nossas: o 오 de 오이 é sempre “ô”, nunca vira “u”. Duas pedem treino. O ㅓ [ʌ] é um “ó” dito sem arredondar os lábios, quase um “a” abafado; o ㅗ é um “ô” fechado, com os lábios em bico. Trocar um pelo outro muda a palavra: 거기 (ali) × 고기 (carne). O ㅡ [ɯ] é um “u” com os lábios esticados, como num sorriso. Um tracinho a mais vira “i” na frente: ㅏ → ㅑ (ya), ㅓ → ㅕ (yeo), ㅗ → ㅛ (yo), ㅜ → ㅠ (yu). O ㅐ e o ㅔ eram “é” e “ê”, mas em Seul hoje soam quase iguais: 개 (cachorro) e 게 (caranguejo) se distinguem mais pela escrita e pelo contexto.',
         table: {
           head: ['Letra', 'Som', 'Exemplo', 'IPA', 'Português'],
           rows: [
-            ['ㅏ', '[a], como o nosso «a»', '아이', '[ai]', 'criança'],
-            ['ㅓ', '[ʌ], «ó» sem bico', '어머니', '[ʌmʌni]', 'mãe'],
-            ['ㅗ', '[o], «ô» com bico', '오이', '[oi]', 'pepino'],
+            ['ㅏ', '[a], como o nosso “a”', '아이', '[ai]', 'criança'],
+            ['ㅓ', '[ʌ], “ó” sem bico', '어머니', '[ʌmʌni]', 'mãe'],
+            ['ㅗ', '[o], “ô” com bico', '오이', '[oi]', 'pepino'],
             ['ㅜ', '[u]', '우유', '[uju]', 'leite'],
-            ['ㅡ', '[ɯ], «u» sorrindo', '크다', '[kʰɯda]', 'ser grande'],
+            ['ㅡ', '[ɯ], “u” sorrindo', '크다', '[kʰɯda]', 'ser grande'],
             ['ㅣ', '[i]', '이', '[i]', 'dente; dois'],
             ['ㅐ / ㅔ', '[ɛ] / [e], hoje quase iguais', '개 / 게', '[kɛ] / [ke]', 'cachorro / caranguejo'],
-            ['ㅑ ㅕ ㅛ ㅠ', 'com «i» na frente', '야구 / 여우 / 요리', '[jaɡu] / [jʌu] / [joɾi]', 'beisebol / raposa / culinária'],
+            ['ㅑ ㅕ ㅛ ㅠ', 'com “i” na frente', '야구 / 여우 / 요리', '[jaɡu] / [jʌu] / [joɾi]', 'beisebol / raposa / culinária'],
           ],
         },
         examples: [
@@ -54,7 +54,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'A série tripla: suave, aspirada e tensa',
-        text: 'Este é o grande segredo do coreano. Onde o português tem dois sons (p × b, t × d, k × g), o coreano tem três, e nenhum é exatamente o nosso. A suave (ㄱ ㄷ ㅂ ㅈ) sai com um sopro leve; no começo da palavra fica entre «k» e «g», e entre vogais vira sonora: 가방 soa [kabaŋ]. A aspirada (ㅋ ㅌ ㅍ ㅊ) sai com um jato de ar forte, como o «k» do inglês «key»: ponha a mão na frente da boca e sinta o sopro. A tensa (ㄲ ㄸ ㅃ ㅉ ㅆ), escrita com a letra dobrada, sai com a garganta apertada e sem sopro nenhum: lembra o nosso «c» de «cá» dito com força. Um detalhe que os nativos usam sem perceber: depois da suave, a vogal começa num tom mais baixo; depois da aspirada e da tensa, num tom mais alto.',
+        text: 'Este é o grande segredo do coreano. Onde o português tem dois sons (p × b, t × d, k × g), o coreano tem três, e nenhum é exatamente o nosso. A suave (ㄱ ㄷ ㅂ ㅈ) sai com um sopro leve; no começo da palavra fica entre “k” e “g”, e entre vogais vira sonora: 가방 soa [kabaŋ]. A aspirada (ㅋ ㅌ ㅍ ㅊ) sai com um jato de ar forte, como o “k” do inglês “key”: ponha a mão na frente da boca e sinta o sopro. A tensa (ㄲ ㄸ ㅃ ㅉ ㅆ), escrita com a letra dobrada, sai com a garganta apertada e sem sopro nenhum: lembra o nosso “c” de “cá” dito com força. Um detalhe que os nativos usam sem perceber: depois da suave, a vogal começa num tom mais baixo; depois da aspirada e da tensa, num tom mais alto.',
         table: {
           head: ['Suave', 'Aspirada', 'Tensa', 'Português'],
           rows: [
@@ -68,12 +68,12 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         examples: [
           ['달, 탈, 딸', 'lua, máscara, filha: suave, aspirada e tensa.'],
           ['불, 풀, 뿔', 'fogo, grama, chifre.'],
-          ['이거 싸요?', 'Isto é barato? (com ㅆ tenso; 사요, com ㅅ, seria «eu compro»)'],
+          ['이거 싸요?', 'Isto é barato? (com ㅆ tenso; 사요, com ㅅ, seria “eu compro”)'],
         ],
       },
       {
         heading: 'As finais: sete sons, sem soltar o ar',
-        text: 'Muitas letras podem ficar embaixo do bloco, mas no fim da sílaba só se ouvem sete sons: [k̚ n t̚ l m p̚ ŋ]. O sinal [̚] quer dizer que a consoante não se solta: a boca fecha na posição e fica ali, sem estourar. Por isso 옷 (roupa), 낮 (dia) e 낯 (rosto) terminam todos em [t̚]. Duas armadilhas para o brasileiro: não acrescente um «i» ou um «u» depois da consoante (밥 não é «bápi», 책 não é «tchéqui»), e não transforme o ㄹ final em «u», como fazemos em «Brasil»: 서울 termina num «l» de verdade, com a língua encostada. E as três nasais finais não viram vogal nasal: 반 (ponta da língua nos dentes), 밤 (lábios fechados) e 방 (fundo da língua) são três palavras.',
+        text: 'Muitas letras podem ficar embaixo do bloco, mas no fim da sílaba só se ouvem sete sons: [k̚ n t̚ l m p̚ ŋ]. O sinal [̚] quer dizer que a consoante não se solta: a boca fecha na posição e fica ali, sem estourar. Por isso 옷 (roupa), 낮 (dia) e 낯 (rosto) terminam todos em [t̚]. Duas armadilhas para o brasileiro: não acrescente um “i” ou um “u” depois da consoante (밥 não é “bápi”, 책 não é “tchéqui”), e não transforme o ㄹ final em “u”, como fazemos em “Brasil”: 서울 termina num “l” de verdade, com a língua encostada. E as três nasais finais não viram vogal nasal: 반 (ponta da língua nos dentes), 밤 (lábios fechados) e 방 (fundo da língua) são três palavras.',
         table: {
           head: ['Final escrita', 'Som', 'Exemplo', 'IPA', 'Português'],
           rows: [
@@ -87,14 +87,14 @@ export const GRAMMAR_KO: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['물 주세요.', 'Água, por favor. (o ㄹ final é um «l», nada de «muu»)'],
+          ['물 주세요.', 'Água, por favor. (o ㄹ final é um “l”, nada de “muu”)'],
           ['반, 밤, 방', 'metade, noite, quarto: três nasais finais diferentes.'],
           ['옷, 낮, 낯', 'roupa, dia, rosto: grafias diferentes, o mesmo [t̚] no fim.'],
         ],
       },
       {
         heading: 'A final que pula para a frente: 한국어 soa [한구거]',
-        text: 'Quando uma sílaba termina em consoante e a seguinte começa com o ㅇ mudo, a consoante «pula» para a sílaba de trás e é pronunciada inteira. É a ligação (연음, yeoneum), a mais comum das mudanças de som: 한국어 soa [한구거], 음악 soa [으막], 이름이 soa [이르미]. A escrita guarda a palavra original, e a fala faz a ligação. É por isso que a romanização oficial de 한국어 é «hangugeo». O app mostra a pronúncia embaixo de cada frase; as outras mudanças de som (비음화, 경음화…) aparecem no B1.2.',
+        text: 'Quando uma sílaba termina em consoante e a seguinte começa com o ㅇ mudo, a consoante “pula” para a sílaba de trás e é pronunciada inteira. É a ligação (연음, yeoneum), a mais comum das mudanças de som: 한국어 soa [한구거], 음악 soa [으막], 이름이 soa [이르미]. A escrita guarda a palavra original, e a fala faz a ligação. É por isso que a romanização oficial de 한국어 é “hangugeo”. O app mostra a pronúncia embaixo de cada frase; as outras mudanças de som (비음화, 경음화…) aparecem no B1.2.',
         examples: [
           ['한국어를 공부해요.', 'Estudo coreano. (한국어 soa [한구거])'],
           ['음악을 좋아해요.', 'Gosto de música. (음악을 soa [으마글])'],
@@ -103,13 +103,13 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Acrescentar «i» ou «u» depois da consoante final: 밥 é [pap̚], com os lábios fechados no fim, e não «bápi»; 책 não é «tchéqui».',
-      'Transformar o ㄹ final em «u» como em «Brasil»: 서울 termina num «l» com a língua encostada, e 물 não é «muu».',
-      'Confundir ㅓ e ㅗ: 거기 (ali) tem o «ó» sem bico, 고기 (carne) tem o «ô» com bico. Pedir 거기 no restaurante não traz churrasco.',
-      'Ler o ㅡ como «u»: é um «u» com os lábios esticados; 그 e 구 são sílabas diferentes.',
+      'Acrescentar “i” ou “u” depois da consoante final: 밥 é [pap̚], com os lábios fechados no fim, e não “bápi”; 책 não é “tchéqui”.',
+      'Transformar o ㄹ final em “u” como em “Brasil”: 서울 termina num “l” com a língua encostada, e 물 não é “muu”.',
+      'Confundir ㅓ e ㅗ: 거기 (ali) tem o “ó” sem bico, 고기 (carne) tem o “ô” com bico. Pedir 거기 no restaurante não traz churrasco.',
+      'Ler o ㅡ como “u”: é um “u” com os lábios esticados; 그 e 구 são sílabas diferentes.',
       'Achar que ㄲ ㄸ ㅃ ㅉ ㅆ são consoantes dobradas, ditas duas vezes: são tensas, com a garganta apertada e sem sopro.',
-      'Pronunciar o ㅇ do começo do bloco: ali ele é mudo (아이 = «ai»); só no fim soa [ŋ].',
-      'Fundir 반, 밤 e 방 numa vogal nasal «bã»: feche a boca no ㅁ, encoste a língua nos dentes no ㄴ e levante o fundo da língua no ㅇ.',
+      'Pronunciar o ㅇ do começo do bloco: ali ele é mudo (아이 = “ai”); só no fim soa [ŋ].',
+      'Fundir 반, 밤 e 방 numa vogal nasal “bã”: feche a boca no ㅁ, encoste a língua nos dentes no ㄴ e levante o fundo da língua no ㅇ.',
     ],
     quiz: [
       {
@@ -126,15 +126,15 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         question: 'Como soa o ㅇ no fim de 강 (rio)?',
-        options: ['Como o «ng» do inglês «sing», [ŋ]', 'É mudo', 'Como um «n» comum', 'Como a vogal nasal de «lã»'],
-        answer: 'Como o «ng» do inglês «sing», [ŋ]',
+        options: ['Como o “ng” do inglês “sing”, [ŋ]', 'É mudo', 'Como um “n” comum', 'Como a vogal nasal de “lã”'],
+        answer: 'Como o “ng” do inglês “sing”, [ŋ]',
         explanation: 'No começo do bloco o ㅇ é mudo; no fim, é [ŋ], com o fundo da língua fechando a passagem: 강 [kaŋ].',
       },
       {
-        question: 'Qual destas palavras quer dizer «ser barato»?',
+        question: 'Qual destas palavras quer dizer “ser barato”?',
         options: ['싸다', '사다', '차다'],
         answer: '싸다',
-        explanation: '싸다 [s͈ada], com ㅆ tenso, é «ser barato»; 사다 [sada] é «comprar»; 차다 é «chutar» ou «ser frio».',
+        explanation: '싸다 [s͈ada], com ㅆ tenso, é “ser barato”; 사다 [sada] é “comprar”; 차다 é “chutar” ou “ser frio”.',
       },
       {
         question: 'Quantos sons diferentes uma consoante final (받침) pode ter?',
@@ -146,7 +146,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         question: 'Como soa, na fala, 한국어 (a língua coreana)?',
         options: ['한구거', '한국거', '하눅어'],
         answer: '한구거',
-        explanation: 'É a ligação (연음): o ㄱ final de 국 pula para a sílaba 어, que começa com ㅇ mudo. Daí «hangugeo».',
+        explanation: 'É a ligação (연음): o ㄱ final de 국 pula para a sílaba 어, que começa com ㅇ mudo. Daí “hangugeo”.',
       },
     ],
   },
@@ -155,11 +155,11 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     level: 'A1.1',
     title: '저는 학생이에요: 이에요/예요 e 이/가 아니에요',
     emoji: '🙋',
-    summary: 'Para dizer «sou», «é» ou «são», o coreano não usa um verbo separado: o final 이에요/예요 gruda no substantivo. Depois de consoante, 이에요 (학생이에요); depois de vogal, 예요 (의사예요). Para negar, 이/가 아니에요: 학생이 아니에요. E quem fala marca o assunto com 은/는: 저는 브라질 사람이에요.',
+    summary: 'Para dizer “sou”, “é” ou “são”, o coreano não usa um verbo separado: o final 이에요/예요 gruda no substantivo. Depois de consoante, 이에요 (학생이에요); depois de vogal, 예요 (의사예요). Para negar, 이/가 아니에요: 학생이 아니에요. E quem fala marca o assunto com 은/는: 저는 브라질 사람이에요.',
     sections: [
       {
         heading: 'Ser = substantivo + 이에요/예요',
-        text: 'Em português dizemos «eu sou estudante». Em coreano, o «ser» é um final que se cola no substantivo, sem espaço: 학생이에요. A escolha depende só da última letra da palavra: se o bloco termina em consoante (tem 받침), 이에요; se termina em vogal, 예요. Não há gênero, artigo nem plural obrigatório: 학생이에요 pode ser «sou estudante», «é o estudante» ou «são estudantes», e o contexto resolve. A pergunta tem a mesma forma, só com a entonação subindo no fim: 학생이에요? Na fala, 예요 soa quase [에요].',
+        text: 'Em português dizemos “eu sou estudante”. Em coreano, o “ser” é um final que se cola no substantivo, sem espaço: 학생이에요. A escolha depende só da última letra da palavra: se o bloco termina em consoante (tem 받침), 이에요; se termina em vogal, 예요. Não há gênero, artigo nem plural obrigatório: 학생이에요 pode ser “sou estudante”, “é o estudante” ou “são estudantes”, e o contexto resolve. A pergunta tem a mesma forma, só com a entonação subindo no fim: 학생이에요? Na fala, 예요 soa quase [에요].',
         table: {
           head: ['A palavra termina em', 'Final', 'Exemplo', 'Português'],
           rows: [
@@ -180,16 +180,16 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'Eu, você e o assunto marcado com 은/는',
-        text: 'O «eu» educado é 저; entre amigos, 나. Para dizer do que se está falando, o coreano põe depois da palavra a partícula de tópico: 은 depois de consoante, 는 depois de vogal (저는, 선생님은). Ela equivale mais ou menos a «quanto a…»: 저는 학생이에요 = «quanto a mim, sou estudante». E o «você»? O coreano evita pronomes para a segunda pessoa: 당신 soa distante (ou romântico, entre casais), e 너 é só para íntimos. O jeito seguro é usar o nome com 씨 (민수 씨) ou o cargo (선생님, professor). Se o sujeito está claro, ele simplesmente some: 학생이에요? já quer dizer «você é estudante?».',
+        text: 'O “eu” educado é 저; entre amigos, 나. Para dizer do que se está falando, o coreano põe depois da palavra a partícula de tópico: 은 depois de consoante, 는 depois de vogal (저는, 선생님은). Ela equivale mais ou menos a “quanto a…”: 저는 학생이에요 = “quanto a mim, sou estudante”. E o “você”? O coreano evita pronomes para a segunda pessoa: 당신 soa distante (ou romântico, entre casais), e 너 é só para íntimos. O jeito seguro é usar o nome com 씨 (민수 씨) ou o cargo (선생님, professor). Se o sujeito está claro, ele simplesmente some: 학생이에요? já quer dizer “você é estudante?”.',
         table: {
           head: ['Quem', 'Forma', 'Com 은/는', 'Quando usar'],
           rows: [
             ['eu (polido)', '저', '저는', 'com quem não é íntimo'],
             ['eu (íntimo)', '나', '나는', 'com amigos e família'],
-            ['meu (polido)', '제', '제 이름은', '«meu nome é…»'],
+            ['meu (polido)', '제', '제 이름은', '“meu nome é…”'],
             ['você', '민수 씨', '민수 씨는', 'nome + 씨: o jeito seguro'],
-            ['o senhor, a professora', '선생님', '선생님은', 'o cargo no lugar do «você»'],
-            ['ele, ela', '그 사람', '그 사람은', '«essa pessoa»'],
+            ['o senhor, a professora', '선생님', '선생님은', 'o cargo no lugar do “você”'],
+            ['ele, ela', '그 사람', '그 사람은', '“essa pessoa”'],
           ],
         },
         examples: [
@@ -200,7 +200,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'Não sou: 이/가 아니에요',
-        text: 'A negação de 이에요/예요 é 아니에요, e antes dela a palavra ganha a partícula de sujeito: 이 depois de consoante, 가 depois de vogal. 학생이에요 → 학생이 아니에요; 의사예요 → 의사가 아니에요. Para responder: 네 (sim) e 아니요 (não). Na conversa rápida o 이/가 às vezes cai (학생 아니에요), mas aprenda a forma completa. Atenção: o «sim» e o «não» coreanos confirmam ou negam o que o outro disse. À pergunta «você não é estudante?», quem não é estudante responde 네 («isso mesmo, não sou»).',
+        text: 'A negação de 이에요/예요 é 아니에요, e antes dela a palavra ganha a partícula de sujeito: 이 depois de consoante, 가 depois de vogal. 학생이에요 → 학생이 아니에요; 의사예요 → 의사가 아니에요. Para responder: 네 (sim) e 아니요 (não). Na conversa rápida o 이/가 às vezes cai (학생 아니에요), mas aprenda a forma completa. Atenção: o “sim” e o “não” coreanos confirmam ou negam o que o outro disse. À pergunta “você não é estudante?”, quem não é estudante responde 네 (“isso mesmo, não sou”).',
         table: {
           head: ['Afirmativo', 'Negativo', 'Português'],
           rows: [
@@ -227,19 +227,19 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Procurar um verbo «ser» separado: 이에요/예요 se cola no substantivo, sem espaço. É 학생이에요, nunca «학생 이에요».',
+      'Procurar um verbo “ser” separado: 이에요/예요 se cola no substantivo, sem espaço. É 학생이에요, nunca “학생 이에요”.',
       'Escolher 이에요 ou 예요 pelo gênero: a regra é só a última letra. Consoante → 이에요; vogal → 예요.',
-      'Escrever «이예요»: essa forma não existe no padrão. Depois de vogal é 예요 (의사예요), depois de consoante é 이에요.',
-      'Chamar a si mesmo com 씨: «저는 마리아 씨예요» soa estranho; o 씨 é só para os outros.',
-      'Usar 당신 como «você»: soa distante, de casal ou até agressivo numa discussão. Use o nome + 씨 ou o cargo (선생님).',
-      'Responder 아니요 à pergunta negativa quando concorda: a «você não é estudante?», quem não é estudante responde 네.',
+      'Escrever “이예요”: essa forma não existe no padrão. Depois de vogal é 예요 (의사예요), depois de consoante é 이에요.',
+      'Chamar a si mesmo com 씨: “저는 마리아 씨예요” soa estranho; o 씨 é só para os outros.',
+      'Usar 당신 como “você”: soa distante, de casal ou até agressivo numa discussão. Use o nome + 씨 ou o cargo (선생님).',
+      'Responder 아니요 à pergunta negativa quando concorda: a “você não é estudante?”, quem não é estudante responde 네.',
     ],
     quiz: [
       {
         question: 'Complete: 저는 의사___.',
         options: ['예요', '이에요', '이예요'],
         answer: '예요',
-        explanation: '의사 termina em vogal (사), então leva 예요: 의사예요. «이예요» não existe no padrão.',
+        explanation: '의사 termina em vogal (사), então leva 예요: 의사예요. “이예요” não existe no padrão.',
       },
       {
         question: 'Complete: 제 이름은 라파엘___.',
@@ -248,13 +248,13 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         explanation: '라파엘 termina em ㄹ, uma consoante, então leva 이에요.',
       },
       {
-        question: 'Como se diz «Não sou estudante»?',
+        question: 'Como se diz “Não sou estudante”?',
         options: ['저는 학생이 아니에요.', '저는 학생가 아니에요.', '저는 학생 아니요.'],
         answer: '저는 학생이 아니에요.',
-        explanation: '학생 termina em consoante, então pede 이 antes de 아니에요. 아니요 sozinho é só a resposta «não».',
+        explanation: '학생 termina em consoante, então pede 이 antes de 아니에요. 아니요 sozinho é só a resposta “não”.',
       },
       {
-        question: 'Qual é o jeito mais natural de dizer «você» ao falar com o Minsu, um colega novo?',
+        question: 'Qual é o jeito mais natural de dizer “você” ao falar com o Minsu, um colega novo?',
         options: ['민수 씨', '당신', '너'],
         answer: '민수 씨',
         explanation: 'O coreano evita pronomes de segunda pessoa: nome + 씨 é o tratamento seguro. 당신 soa distante e 너 é só para íntimos.',
@@ -272,11 +272,11 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     level: 'A1.1',
     title: '이거 뭐예요?: 이, 그, 저, 어느 e 여기, 거기, 저기',
     emoji: '👉',
-    summary: 'O coreano tem três distâncias, como o nosso «este, esse, aquele»: 이 (perto de quem fala), 그 (perto de quem ouve, ou já mencionado) e 저 (longe dos dois). Com 것 (coisa) formam 이것, 그것, 저것, que na fala viram 이거, 그거, 저거. A mesma lógica dá 여기, 거기, 저기 (aqui, aí, ali). Para perguntar: 어느 (qual), 뭐 (o quê), 어디 (onde).',
+    summary: 'O coreano tem três distâncias, como o nosso “este, esse, aquele”: 이 (perto de quem fala), 그 (perto de quem ouve, ou já mencionado) e 저 (longe dos dois). Com 것 (coisa) formam 이것, 그것, 저것, que na fala viram 이거, 그거, 저거. A mesma lógica dá 여기, 거기, 저기 (aqui, aí, ali). Para perguntar: 어느 (qual), 뭐 (o quê), 어디 (onde).',
     sections: [
       {
         heading: 'Três distâncias: 이, 그, 저',
-        text: '이, 그 e 저 vêm sempre antes de um substantivo, como adjetivos: 이 책 (este livro), 그 사람 (essa pessoa), 저 건물 (aquele prédio). A divisão é quase a do português: 이 é o que está perto de mim; 그, o que está perto de você; 저, o que está longe de nós dois, mas à vista. O 그 tem um uso a mais: aponta para algo que já apareceu na conversa, mesmo que não esteja ali. «Sabe aquele filme que eu te falei?» é 그 영화, não 저 영화. Para perguntar «qual?» dentro de um grupo, use 어느: 어느 나라 (que país?).',
+        text: '이, 그 e 저 vêm sempre antes de um substantivo, como adjetivos: 이 책 (este livro), 그 사람 (essa pessoa), 저 건물 (aquele prédio). A divisão é quase a do português: 이 é o que está perto de mim; 그, o que está perto de você; 저, o que está longe de nós dois, mas à vista. O 그 tem um uso a mais: aponta para algo que já apareceu na conversa, mesmo que não esteja ali. “Sabe aquele filme que eu te falei?” é 그 영화, não 저 영화. Para perguntar “qual?” dentro de um grupo, use 어느: 어느 나라 (que país?).',
         table: {
           head: ['Palavra', 'Distância', 'Exemplo', 'Português'],
           rows: [
@@ -295,7 +295,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'Isto, isso, aquilo: 이거, 그거, 저거',
-        text: 'Para dizer «isto» sem substantivo, junte 것 (coisa): 이것, 그것, 저것. Na fala, o 것 vira 거: 이거, 그거, 저거. E com as partículas as formas encolhem mais: 이것은 → 이건, 이것이 → 이게. Você vai ouvir 이게 뭐예요? (o que é isto?) o tempo todo. O 것 também aparece em 제 거 (o meu) e 어느 거 (qual deles).',
+        text: 'Para dizer “isto” sem substantivo, junte 것 (coisa): 이것, 그것, 저것. Na fala, o 것 vira 거: 이거, 그거, 저거. E com as partículas as formas encolhem mais: 이것은 → 이건, 이것이 → 이게. Você vai ouvir 이게 뭐예요? (o que é isto?) o tempo todo. O 것 também aparece em 제 거 (o meu) e 어느 거 (qual deles).',
         table: {
           head: ['Escrito', 'Falado', 'Com 은/는', 'Com 이/가', 'Português'],
           rows: [
@@ -314,7 +314,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'Aqui, aí, ali: 여기, 거기, 저기',
-        text: 'Os lugares seguem a mesma lógica: 여기 (aqui), 거기 (aí, ou «lá», o lugar de que se falou), 저기 (ali, lá longe) e 어디 (onde). Uma expressão de sobrevivência: 저기요! é o «com licença!» para chamar a atenção de um desconhecido ou do garçom; 여기요! também serve, principalmente no restaurante.',
+        text: 'Os lugares seguem a mesma lógica: 여기 (aqui), 거기 (aí, ou “lá”, o lugar de que se falou), 저기 (ali, lá longe) e 어디 (onde). Uma expressão de sobrevivência: 저기요! é o “com licença!” para chamar a atenção de um desconhecido ou do garçom; 여기요! também serve, principalmente no restaurante.',
         table: {
           head: ['Palavra', 'Português', 'Exemplo', 'Tradução'],
           rows: [
@@ -332,7 +332,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'As palavras de pergunta ficam no lugar da resposta',
-        text: 'Em coreano, a pergunta não muda a ordem da frase. A palavra interrogativa entra exatamente onde entraria a resposta: 이게 뭐예요? (isto é o quê?) → 이게 김치예요 (isto é kimchi). Basta trocar 뭐 pela resposta. Nada de inversão como no inglês, nem de «é que» como no português falado.',
+        text: 'Em coreano, a pergunta não muda a ordem da frase. A palavra interrogativa entra exatamente onde entraria a resposta: 이게 뭐예요? (isto é o quê?) → 이게 김치예요 (isto é kimchi). Basta trocar 뭐 pela resposta. Nada de inversão como no inglês, nem de “é que” como no português falado.',
         table: {
           head: ['Palavra', 'Português', 'Pergunta', 'Tradução'],
           rows: [
@@ -351,15 +351,15 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar 이, 그, 저 sozinhos como «isto»: sozinhos eles só acompanham um substantivo (이 책). O pronome é 이거 (ou 이것).',
-      'Confundir 저 (aquele) com 저 (eu, polido): são palavras diferentes com a mesma forma. 저 사람 é «aquela pessoa»; 저는 é «eu».',
-      'Usar 저 para algo já citado que não está à vista: «aquele filme de que falamos» é 그 영화.',
-      'Inverter a ordem na pergunta: a palavra interrogativa fica no lugar da resposta (이게 뭐예요?, «isto é o quê?»).',
+      'Usar 이, 그, 저 sozinhos como “isto”: sozinhos eles só acompanham um substantivo (이 책). O pronome é 이거 (ou 이것).',
+      'Confundir 저 (aquele) com 저 (eu, polido): são palavras diferentes com a mesma forma. 저 사람 é “aquela pessoa”; 저는 é “eu”.',
+      'Usar 저 para algo já citado que não está à vista: “aquele filme de que falamos” é 그 영화.',
+      'Inverter a ordem na pergunta: a palavra interrogativa fica no lugar da resposta (이게 뭐예요?, “isto é o quê?”).',
       'Escrever 이거 e 뭐 separados das partículas e do final: 이게, 이건 e 뭐예요 são colados.',
     ],
     quiz: [
       {
-        question: 'Seu amigo está segurando um objeto. Como você pergunta «o que é isso?»',
+        question: 'Seu amigo está segurando um objeto. Como você pergunta “o que é isso?”',
         options: ['그거 뭐예요?', '이거 뭐예요?', '저거 뭐예요?'],
         answer: '그거 뭐예요?',
         explanation: 'O objeto está perto de quem ouve, então é 그거. 이거 seria algo na sua mão; 저거, algo longe dos dois.',
@@ -368,13 +368,13 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         question: 'Como se chama o garçom num restaurante?',
         options: ['저기요!', '저거요!', '저는요!'],
         answer: '저기요!',
-        explanation: '저기요! (literalmente «ali!») é o «com licença!» para chamar alguém. 여기요! também é comum no restaurante.',
+        explanation: '저기요! (literalmente “ali!”) é o “com licença!” para chamar alguém. 여기요! também é comum no restaurante.',
       },
       {
         question: 'Complete: 화장실이 ___예요?',
         options: ['어디', '누구', '뭐'],
         answer: '어디',
-        explanation: '화장실이 어디예요? = «Onde é o banheiro?». 어디 é «onde».',
+        explanation: '화장실이 어디예요? = “Onde é o banheiro?”. 어디 é “onde”.',
       },
       {
         question: 'Qual é a forma falada de 이것 (isto), sem partícula?',
@@ -383,10 +383,10 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         explanation: '이것 → 이거. 이게 já traz a partícula 이/가 (이것이) e 이건 traz 은/는 (이것은).',
       },
       {
-        question: 'Em «저 사람은 누구예요?», o que quer dizer 저?',
+        question: 'Em “저 사람은 누구예요?”, o que quer dizer 저?',
         options: ['aquele', 'eu', 'este'],
         answer: 'aquele',
-        explanation: 'Antes de um substantivo, 저 é «aquele»: «Quem é aquela pessoa?». O 저 de «eu» vem com partícula (저는).',
+        explanation: 'Antes de um substantivo, 저 é “aquele”: “Quem é aquela pessoa?”. O 저 de “eu” vem com partícula (저는).',
       },
     ],
   },
@@ -400,7 +400,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     sections: [
       {
         heading: 'O dicionário: radical + 다',
-        text: 'Todo verbo e todo adjetivo coreano aparece no dicionário terminado em -다. O que sobra sem o -다 é o radical, a base de todas as conjugações: 가다 → 가, 먹다 → 먹. Uma surpresa boa: em coreano, os adjetivos se conjugam como verbos. 좋다 não é «bom», é «ser bom»; por isso 좋아요 já é uma frase completa («é bom», «está bom»), sem 이에요. O verbo não muda com a pessoa: 가요 serve para eu, você, ele, nós e eles.',
+        text: 'Todo verbo e todo adjetivo coreano aparece no dicionário terminado em -다. O que sobra sem o -다 é o radical, a base de todas as conjugações: 가다 → 가, 먹다 → 먹. Uma surpresa boa: em coreano, os adjetivos se conjugam como verbos. 좋다 não é “bom”, é “ser bom”; por isso 좋아요 já é uma frase completa (“é bom”, “está bom”), sem 이에요. O verbo não muda com a pessoa: 가요 serve para eu, você, ele, nós e eles.',
         table: {
           head: ['Dicionário', 'Radical', 'Português'],
           rows: [
@@ -413,14 +413,14 @@ export const GRAMMAR_KO: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['좋아요!', 'Está bom! / Ótimo! (좋다, «ser bom», já é o verbo)'],
+          ['좋아요!', 'Está bom! / Ótimo! (좋다, “ser bom”, já é o verbo)'],
           ['저는 가요. 민수 씨도 가요.', 'Eu vou. O Minsu também vai. (a mesma forma para todos)'],
           ['이 가방 커요.', 'Esta bolsa é grande.'],
         ],
       },
       {
         heading: 'A regra das vogais: ㅏ e ㅗ pedem 아요',
-        text: 'Olhe a última vogal do radical. Se for ㅏ ou ㅗ (as vogais «claras», 양성 모음), o final é -아요. Com qualquer outra vogal, -어요. E todo verbo em 하다, que é a família mais numerosa (공부하다, 일하다, 좋아하다), vira 해요. Essa harmonia entre vogais claras e escuras é uma herança antiga da língua, que também aparece nas onomatopeias (반짝반짝 × 번쩍번쩍).',
+        text: 'Olhe a última vogal do radical. Se for ㅏ ou ㅗ (as vogais “claras”, 양성 모음), o final é -아요. Com qualquer outra vogal, -어요. E todo verbo em 하다, que é a família mais numerosa (공부하다, 일하다, 좋아하다), vira 해요. Essa harmonia entre vogais claras e escuras é uma herança antiga da língua, que também aparece nas onomatopeias (반짝반짝 × 번쩍번쩍).',
         table: {
           head: ['Última vogal', 'Final', 'Dicionário', '해요체', 'Português'],
           rows: [
@@ -468,7 +468,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'Uma forma, quatro funções',
-        text: 'O 해요체 é o registro polido do dia a dia: serve com desconhecidos, no comércio, com colegas e com gente mais velha em situações comuns. E a mesma forma faz quatro papéis, conforme a entonação e o contexto: afirmação (가요 ↘, «vou»), pergunta (가요? ↗, «vai?»), convite (같이 가요!, «vamos juntos!») e pedido suave (천천히 먹어요, «coma com calma»). O presente também cobre o hábito e o futuro próximo: 내일 가요 é «vou amanhã».',
+        text: 'O 해요체 é o registro polido do dia a dia: serve com desconhecidos, no comércio, com colegas e com gente mais velha em situações comuns. E a mesma forma faz quatro papéis, conforme a entonação e o contexto: afirmação (가요 ↘, “vou”), pergunta (가요? ↗, “vai?”), convite (같이 가요!, “vamos juntos!”) e pedido suave (천천히 먹어요, “coma com calma”). O presente também cobre o hábito e o futuro próximo: 내일 가요 é “vou amanhã”.',
         table: {
           head: ['Frase', 'Entonação', 'Sentido'],
           rows: [
@@ -489,9 +489,9 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     pitfalls: [
       'Usar a forma de dicionário na conversa: 먹다 e 가다 são só a entrada do dicionário. Na fala polida é 먹어요, 가요.',
       'Olhar a vogal errada: vale a última vogal do radical. 앉다 → 앉아요 (ㅏ), 먹다 → 먹어요 (ㅓ), 배우다 → 배워요 (ㅜ).',
-      'Esquecer as fusões: «가아요» não existe, e ninguém fala «배우어요» nem «오아요»: é 가요, 배워요, 와요.',
-      'Pôr 이에요 depois de adjetivo: o adjetivo coreano já é verbo. É 좋아요 e 커요, não «좋이에요».',
-      'Traduzir 좋아요 como «eu gosto»: 좋아요 é «é bom, está bom, ok»; «gostar de» é 좋아하다: 김치를 좋아해요.',
+      'Esquecer as fusões: “가아요” não existe, e ninguém fala “배우어요” nem “오아요”: é 가요, 배워요, 와요.',
+      'Pôr 이에요 depois de adjetivo: o adjetivo coreano já é verbo. É 좋아요 e 커요, não “좋이에요”.',
+      'Traduzir 좋아요 como “eu gosto”: 좋아요 é “é bom, está bom, ok”; “gostar de” é 좋아하다: 김치를 좋아해요.',
       'Achar que o 해요체 é informal: é o polido do dia a dia. O informal (반말) é outro, sem o 요.',
     ],
     quiz: [
@@ -514,16 +514,16 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         explanation: 'ㅣ + 어 se fundem em ㅕ: 마시 + 어요 → 마셔요.',
       },
       {
-        question: 'Como se diz «Eu gosto de café»?',
+        question: 'Como se diz “Eu gosto de café”?',
         options: ['저는 커피를 좋아해요.', '저는 커피를 좋아요.', '저는 커피 좋이에요.'],
         answer: '저는 커피를 좋아해요.',
-        explanation: '«Gostar de» é 좋아하다, que leva objeto (커피를). 좋아요 sozinho é «é bom».',
+        explanation: '“Gostar de” é 좋아하다, que leva objeto (커피를). 좋아요 sozinho é “é bom”.',
       },
       {
         question: 'O que quer dizer 같이 가요! dito com animação?',
         options: ['Vamos juntos!', 'Ele foi junto.', 'Vá sozinho!'],
         answer: 'Vamos juntos!',
-        explanation: 'O 해요체 também faz convite: com 같이 (juntos) e a entonação animada, é «vamos!».',
+        explanation: 'O 해요체 também faz convite: com 같이 (juntos) e a entonação animada, é “vamos!”.',
       },
       {
         question: 'Qual é o 해요체 de 공부하다 (estudar)?',
@@ -538,11 +538,11 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     level: 'A1.2',
     title: '밥을 먹어요: o objeto com 을/를 e o verbo no fim',
     emoji: '🍚',
-    summary: 'Em coreano o verbo vem sempre no fim da frase: 저는 커피를 마셔요 é, palavra por palavra, «eu café bebo». O objeto direto ganha a partícula 을 (depois de consoante) ou 를 (depois de vogal). Como as partículas dizem quem faz o quê, a ordem do meio pode mudar, mas o verbo não sai do lugar.',
+    summary: 'Em coreano o verbo vem sempre no fim da frase: 저는 커피를 마셔요 é, palavra por palavra, “eu café bebo”. O objeto direto ganha a partícula 을 (depois de consoante) ou 를 (depois de vogal). Como as partículas dizem quem faz o quê, a ordem do meio pode mudar, mas o verbo não sai do lugar.',
     sections: [
       {
         heading: 'Sujeito, objeto, verbo',
-        text: 'O português é SVO: sujeito, verbo, objeto («eu bebo café»). O coreano é SOV: o verbo espera o fim da frase. Isso muda o jeito de ouvir: em coreano você só sabe o que aconteceu com o café no último instante. A mesma lógica vale para tudo que acompanha o verbo: o que em português vem depois (objeto, lugar, tempo) em coreano vem antes.',
+        text: 'O português é SVO: sujeito, verbo, objeto (“eu bebo café”). O coreano é SOV: o verbo espera o fim da frase. Isso muda o jeito de ouvir: em coreano você só sabe o que aconteceu com o café no último instante. A mesma lógica vale para tudo que acompanha o verbo: o que em português vem depois (objeto, lugar, tempo) em coreano vem antes.',
         table: {
           head: ['Português', 'Coreano', 'Palavra por palavra'],
           rows: [
@@ -573,14 +573,14 @@ export const GRAMMAR_KO: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['저는 김치를 좋아해요.', 'Eu gosto de kimchi. (좋아하다 pede 을/를, sem «de»)'],
+          ['저는 김치를 좋아해요.', 'Eu gosto de kimchi. (좋아하다 pede 을/를, sem “de”)'],
           ['주말에 친구를 만나요.', 'No fim de semana encontro um amigo.'],
           ['민수 씨는 한국어를 잘해요.', 'O Minsu é bom em coreano.'],
         ],
       },
       {
         heading: 'O meio é flexível, o fim é do verbo',
-        text: 'As partículas carregam a função de cada palavra, então a ordem do meio pode variar sem mudar o sentido. A ordem mais neutra é: quando, quem, onde, o quê, verbo. Mas 커피를 저는 마셔요 continua sendo «eu bebo café», com um destaque no café. O que não muda é o verbo no fim: frases com o verbo no meio soam como poesia ou como fala atropelada.',
+        text: 'As partículas carregam a função de cada palavra, então a ordem do meio pode variar sem mudar o sentido. A ordem mais neutra é: quando, quem, onde, o quê, verbo. Mas 커피를 저는 마셔요 continua sendo “eu bebo café”, com um destaque no café. O que não muda é o verbo no fim: frases com o verbo no meio soam como poesia ou como fala atropelada.',
         table: {
           head: ['Quando', 'Quem', 'Onde', 'O quê', 'Verbo'],
           rows: [
@@ -597,20 +597,20 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'O que está claro, some',
-        text: 'Em coreano não é preciso repetir o que já está claro: o sujeito e o objeto somem com naturalidade, e não existe um «ele», «isso» obrigatório. A: 커피 마셔요? B: 네, 마셔요 («sim, [eu] tomo [café]»). Na fala do dia a dia, as próprias partículas 을/를 também caem com frequência (커피 마셔요?), mas escrevendo ou falando com cuidado, mantenha.',
+        text: 'Em coreano não é preciso repetir o que já está claro: o sujeito e o objeto somem com naturalidade, e não existe um “ele”, “isso” obrigatório. A: 커피 마셔요? B: 네, 마셔요 (“sim, [eu] tomo [café]”). Na fala do dia a dia, as próprias partículas 을/를 também caem com frequência (커피 마셔요?), mas escrevendo ou falando com cuidado, mantenha.',
         examples: [
-          ['뭐 먹어요?', 'O que você vai comer? (sem «você», sem partícula)'],
+          ['뭐 먹어요?', 'O que você vai comer? (sem “você”, sem partícula)'],
           ['비빔밥 먹어요.', 'Vou comer bibimbap.'],
           ['김치 좋아해요? 네, 좋아해요.', 'Você gosta de kimchi? Sim, gosto.'],
         ],
       },
     ],
     pitfalls: [
-      'Pôr o verbo no meio como em português: «저는 마셔요 커피를» soa estranho. O verbo vai no fim.',
+      'Pôr o verbo no meio como em português: “저는 마셔요 커피를” soa estranho. O verbo vai no fim.',
       'Trocar 을 e 를: depois de consoante é 을 (밥을), depois de vogal é 를 (커피를).',
-      'Traduzir o «de» de «gostar de» ou o «com» de «encontrar com»: em coreano é objeto direto, 김치를 좋아해요, 친구를 만나요.',
-      'Pôr 을/를 antes de 이에요: 학생이에요 não tem objeto; «학생을 이에요» não existe.',
-      'Procurar um «ele» ou «isso» para o objeto óbvio: o coreano simplesmente o omite (네, 좋아해요).',
+      'Traduzir o “de” de “gostar de” ou o “com” de “encontrar com”: em coreano é objeto direto, 김치를 좋아해요, 친구를 만나요.',
+      'Pôr 을/를 antes de 이에요: 학생이에요 não tem objeto; “학생을 이에요” não existe.',
+      'Procurar um “ele” ou “isso” para o objeto óbvio: o coreano simplesmente o omite (네, 좋아해요).',
     ],
     quiz: [
       {
@@ -632,13 +632,13 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         explanation: 'Sujeito, objeto e o verbo no fim (SOV).',
       },
       {
-        question: 'Como se diz «Gosto de música»?',
+        question: 'Como se diz “Gosto de música”?',
         options: ['음악을 좋아해요.', '음악에 좋아해요.', '음악이 좋아해요.'],
         answer: '음악을 좋아해요.',
-        explanation: '좋아하다 pede objeto direto: 음악을 좋아해요. Não se traduz o «de».',
+        explanation: '좋아하다 pede objeto direto: 음악을 좋아해요. Não se traduz o “de”.',
       },
       {
-        question: 'Na resposta «네, 마셔요.» à pergunta «커피 마셔요?», o que aconteceu com «eu» e com «café»?',
+        question: 'Na resposta “네, 마셔요.” à pergunta “커피 마셔요?”, o que aconteceu com “eu” e com “café”?',
         options: ['Foram omitidos, porque estão claros', 'Estão escondidos dentro do verbo', 'A frase está errada'],
         answer: 'Foram omitidos, porque estão claros',
         explanation: 'O verbo coreano não muda com a pessoa; o que está claro no contexto simplesmente some.',
@@ -650,7 +650,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     level: 'A1.2',
     title: '합니다체: -습니다/-ㅂ니다, 입니다 e -습니까?',
     emoji: '🎙️',
-    summary: 'O 합니다체 é o estilo mais formal da língua viva: apresentações, reuniões, noticiário, avisos do metrô, atendimento e exército. Radical terminado em consoante leva -습니다 (먹습니다); terminado em vogal, -ㅂ니다 (갑니다). A pergunta troca o 다 por 까 (먹습니까?), e o «ser» vira 입니다 (학생입니다).',
+    summary: 'O 합니다체 é o estilo mais formal da língua viva: apresentações, reuniões, noticiário, avisos do metrô, atendimento e exército. Radical terminado em consoante leva -습니다 (먹습니다); terminado em vogal, -ㅂ니다 (갑니다). A pergunta troca o 다 por 까 (먹습니까?), e o “ser” vira 입니다 (학생입니다).',
     sections: [
       {
         heading: 'Quando se fala assim',
@@ -674,7 +674,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'Como formar',
-        text: 'Tire o -다. Se o radical termina em consoante, ponha -습니다; se termina em vogal, o ㅂ entra embaixo do último bloco e depois vem 니다: 가 → 갑니다. Os radicais em ㄹ perdem o ㄹ e seguem a regra da vogal: 살다 → 삽니다. Na pergunta, 다 vira 까: 먹습니까?, 갑니까? O «ser» (이다) vira 입니다, e o «não ser», 아닙니다. Na pronúncia, o ㅂ antes de ㄴ vira [ㅁ]: -습니다 soa [슴니다], e 감사합니다 soa [감사함니다].',
+        text: 'Tire o -다. Se o radical termina em consoante, ponha -습니다; se termina em vogal, o ㅂ entra embaixo do último bloco e depois vem 니다: 가 → 갑니다. Os radicais em ㄹ perdem o ㄹ e seguem a regra da vogal: 살다 → 삽니다. Na pergunta, 다 vira 까: 먹습니까?, 갑니까? O “ser” (이다) vira 입니다, e o “não ser”, 아닙니다. Na pronúncia, o ㅂ antes de ㄴ vira [ㅁ]: -습니다 soa [슴니다], e 감사합니다 soa [감사함니다].',
         table: {
           head: ['Dicionário', 'Regra', 'Afirmação', 'Pergunta'],
           rows: [
@@ -696,7 +696,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'Apresentar-se: o 자기소개',
-        text: 'Na primeira aula, no primeiro dia de trabalho ou numa entrevista, o coreano faz um 자기소개 (autoapresentação) curto e formal: cumprimento, nome, de onde vem, o que faz, e o fecho 잘 부탁드립니다. Essa última frase não tem tradução exata: é algo como «conto com vocês», «peço sua boa vontade». Não esqueça dela: sem ela, a apresentação parece incompleta. Com colegas, depois do primeiro contato, o mesmo conteúdo passa para o 해요체.',
+        text: 'Na primeira aula, no primeiro dia de trabalho ou numa entrevista, o coreano faz um 자기소개 (autoapresentação) curto e formal: cumprimento, nome, de onde vem, o que faz, e o fecho 잘 부탁드립니다. Essa última frase não tem tradução exata: é algo como “conto com vocês”, “peço sua boa vontade”. Não esqueça dela: sem ela, a apresentação parece incompleta. Com colegas, depois do primeiro contato, o mesmo conteúdo passa para o 해요체.',
         table: {
           head: ['합니다체', '해요체', 'Português'],
           rows: [
@@ -717,8 +717,8 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     ],
     pitfalls: [
       'Achar que o 합니다체 é antiquado: ele vive em apresentações, reuniões, notícias, atendimento e avisos. Soa respeitoso, não velho.',
-      'Misturar as regras: consoante leva 습니다 (먹습니다); vogal leva o ㅂ embaixo do bloco (갑니다). «가습니다» e «먹읍니다» não existem.',
-      'Esquecer que o ㄹ cai: 살다 → 삽니다, 만들다 → 만듭니다, e não «살습니다».',
+      'Misturar as regras: consoante leva 습니다 (먹습니다); vogal leva o ㅂ embaixo do bloco (갑니다). “가습니다” e “먹읍니다” não existem.',
+      'Esquecer que o ㄹ cai: 살다 → 삽니다, 만들다 → 만듭니다, e não “살습니다”.',
       'Pronunciar -습니다 como se escreve: soa [슴니다]. 감사합니다 é [감사함니다] (gamsahamnida).',
       'Perguntar com -습니다?: no 합니다체 a pergunta troca a letra, 다 → 까 (먹습니까?).',
       'Usar 합니다체 com amigos íntimos: soa frio, engraçado ou irônico.',
@@ -740,10 +740,10 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         question: 'Numa apresentação formal: 저는 학생___.',
         options: ['입니다', '습니다', '합니다'],
         answer: '입니다',
-        explanation: 'O «ser» (이다) no 합니다체 é 입니다: 학생입니다.',
+        explanation: 'O “ser” (이다) no 합니다체 é 입니다: 학생입니다.',
       },
       {
-        question: 'Como se pergunta, em 합니다체, «O senhor mora em Seul?»',
+        question: 'Como se pergunta, em 합니다체, “O senhor mora em Seul?”',
         options: ['서울에 삽니까?', '서울에 살습니까?', '서울에 삽니다?'],
         answer: '서울에 삽니까?',
         explanation: '살다 perde o ㄹ (삽-), e a pergunta troca 다 por 까: 삽니까?',
@@ -762,11 +762,11 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     level: 'A2.1',
     title: '은/는 × 이/가: o tópico e o sujeito',
     emoji: '🎯',
-    summary: 'As duas partículas aparecem depois do que o português chama de sujeito, e a tradução é a mesma, mas o papel é outro. 은/는 marca o tópico: aquilo de que se está falando, já conhecido, ou um contraste («quanto a…»). 이/가 marca o sujeito com foco: a informação nova, a resposta a «quem?» ou «o quê?», o que se vê acontecendo.',
+    summary: 'As duas partículas aparecem depois do que o português chama de sujeito, e a tradução é a mesma, mas o papel é outro. 은/는 marca o tópico: aquilo de que se está falando, já conhecido, ou um contraste (“quanto a…”). 이/가 marca o sujeito com foco: a informação nova, a resposta a “quem?” ou “o quê?”, o que se vê acontecendo.',
     sections: [
       {
         heading: 'As formas, e os pronomes que mudam',
-        text: 'Depois de consoante, 은 e 이; depois de vogal, 는 e 가. Com 이/가, quatro palavras mudam de forma e precisam ser decoradas: 저 → 제가, 나 → 내가, 너 → 네가 (que na fala soa [니가], para não confundir com 내가), 누구 → 누가. Nunca se diz «저가» ou «누구가».',
+        text: 'Depois de consoante, 은 e 이; depois de vogal, 는 e 가. Com 이/가, quatro palavras mudam de forma e precisam ser decoradas: 저 → 제가, 나 → 내가, 너 → 네가 (que na fala soa [니가], para não confundir com 내가), 누구 → 누가. Nunca se diz “저가” ou “누구가”.',
         table: {
           head: ['Palavra', 'Com 은/는', 'Com 이/가', 'Português'],
           rows: [
@@ -785,8 +785,8 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         ],
       },
       {
-        heading: '은/는: o tópico, «quanto a…»',
-        text: 'O 은/는 anuncia o assunto: «falando de X, …». Por isso aparece na apresentação (저는 루카스예요), em afirmações gerais (고양이는 귀여워요, gatos são fofos) e quando se retoma algo já conhecido. O resto da frase é o comentário sobre esse tópico, e é ali que está a novidade. Um bom teste é trocar mentalmente por «quanto a»: 저는 학생이에요 = «quanto a mim, sou estudante».',
+        heading: '은/는: o tópico, “quanto a…”',
+        text: 'O 은/는 anuncia o assunto: “falando de X, …”. Por isso aparece na apresentação (저는 루카스예요), em afirmações gerais (고양이는 귀여워요, gatos são fofos) e quando se retoma algo já conhecido. O resto da frase é o comentário sobre esse tópico, e é ali que está a novidade. Um bom teste é trocar mentalmente por “quanto a”: 저는 학생이에요 = “quanto a mim, sou estudante”.',
         examples: [
           ['저는 브라질 사람이에요.', 'Eu sou brasileiro. (quanto a mim…)'],
           ['고양이는 귀여워요.', 'Gatos são fofos. (afirmação geral)'],
@@ -795,13 +795,13 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: '이/가: o foco, a informação nova',
-        text: 'O 이/가 põe o holofote no sujeito. Ele responde a «quem?» e «o quê?» (e as palavras de pergunta sempre levam 이/가: 누가, 뭐가, 어디가). Também descreve o que se vê ou sente naquele momento, sem tópico prévio: 비가 와요 (está chovendo), 꽃이 예뻐요 (as flores estão lindas). Compare: 민수 씨는 학생이에요 fala do Minsu e informa que ele é estudante; 민수 씨가 학생이에요 responde «quem é o estudante?»: é o Minsu.',
+        text: 'O 이/가 põe o holofote no sujeito. Ele responde a “quem?” e “o quê?” (e as palavras de pergunta sempre levam 이/가: 누가, 뭐가, 어디가). Também descreve o que se vê ou sente naquele momento, sem tópico prévio: 비가 와요 (está chovendo), 꽃이 예뻐요 (as flores estão lindas). Compare: 민수 씨는 학생이에요 fala do Minsu e informa que ele é estudante; 민수 씨가 학생이에요 responde “quem é o estudante?”: é o Minsu.',
         table: {
           head: ['Pergunta', 'Resposta', 'Por quê'],
           rows: [
-            ['누가 학생이에요?', '민수 씨가 학생이에요.', 'responde a «quem?»: foco no Minsu'],
-            ['뭐가 맛있어요?', '이게 맛있어요.', 'responde a «o quê?»'],
-            ['민수 씨는 뭐 해요?', '민수 씨는 학생이에요.', 'o Minsu é o tópico; a novidade é «학생»'],
+            ['누가 학생이에요?', '민수 씨가 학생이에요.', 'responde a “quem?”: foco no Minsu'],
+            ['뭐가 맛있어요?', '이게 맛있어요.', 'responde a “o quê?”'],
+            ['민수 씨는 뭐 해요?', '민수 씨는 학생이에요.', 'o Minsu é o tópico; a novidade é “학생”'],
             ['밖에 어때요?', '비가 와요.', 'o que se vê agora'],
           ],
         },
@@ -812,8 +812,8 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'Contraste: «este sim, aquele não»',
-        text: 'O 은/는 também contrasta, e aí pode aparecer até no objeto ou no tempo, no lugar de 을/를: 커피는 마셔요 = «café eu tomo (outras coisas, não)». Por isso duas frases com 은/는 em paralelo soam como uma comparação: 저는 커피는 마셔요. 그런데 술은 안 마셔요. E o 오늘은 de «오늘은 바빠요» sugere «hoje estou ocupado (nos outros dias, não)».',
+        heading: 'Contraste: “este sim, aquele não”',
+        text: 'O 은/는 também contrasta, e aí pode aparecer até no objeto ou no tempo, no lugar de 을/를: 커피는 마셔요 = “café eu tomo (outras coisas, não)”. Por isso duas frases com 은/는 em paralelo soam como uma comparação: 저는 커피는 마셔요. 그런데 술은 안 마셔요. E o 오늘은 de “오늘은 바빠요” sugere “hoje estou ocupado (nos outros dias, não)”.',
         examples: [
           ['저는 커피는 마셔요. 그런데 술은 안 마셔요.', 'Café eu tomo. Mas bebida alcoólica, não.'],
           ['오늘은 바빠요.', 'Hoje estou ocupado. (diferente dos outros dias)'],
@@ -822,7 +822,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'Os dois juntos: 코끼리는 코가 길어요',
-        text: 'Uma frase coreana pode ter um tópico e um sujeito ao mesmo tempo: primeiro o assunto com 은/는, depois a parte com 이/가, e o predicado no fim. O exemplo clássico: 코끼리는 코가 길어요, «quanto ao elefante, a tromba é comprida». É assim que o coreano diz ter uma característica, sentir dor ou ter algo: 저는 머리가 아파요 (estou com dor de cabeça), 저는 시간이 없어요 (não tenho tempo). Em português, a tradução natural tem um sujeito só.',
+        text: 'Uma frase coreana pode ter um tópico e um sujeito ao mesmo tempo: primeiro o assunto com 은/는, depois a parte com 이/가, e o predicado no fim. O exemplo clássico: 코끼리는 코가 길어요, “quanto ao elefante, a tromba é comprida”. É assim que o coreano diz ter uma característica, sentir dor ou ter algo: 저는 머리가 아파요 (estou com dor de cabeça), 저는 시간이 없어요 (não tenho tempo). Em português, a tradução natural tem um sujeito só.',
         table: {
           head: ['Frase', 'Palavra por palavra', 'Português'],
           rows: [
@@ -840,11 +840,11 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pôr 은/는 na palavra de pergunta: é 누가 왔어요?, 뭐가 좋아요?, e nunca «누구는» nem «뭐는».',
-      'Responder a «누가…?» com 은/는: a resposta a «quem?» leva 이/가 (민수 씨가요).',
-      'Achar que um é certo e o outro é errado: muitas vezes os dois servem, mas mudam a ênfase. 저는 학생이에요 é apresentação; 제가 학생이에요 é «o estudante sou EU».',
-      'Dizer «저가», «나가» ou «누구가»: as formas são 제가, 내가, 누가.',
-      'Traduzir 저는 머리가 아파요 com dois sujeitos: em português é só «estou com dor de cabeça».',
+      'Pôr 은/는 na palavra de pergunta: é 누가 왔어요?, 뭐가 좋아요?, e nunca “누구는” nem “뭐는”.',
+      'Responder a “누가…?” com 은/는: a resposta a “quem?” leva 이/가 (민수 씨가요).',
+      'Achar que um é certo e o outro é errado: muitas vezes os dois servem, mas mudam a ênfase. 저는 학생이에요 é apresentação; 제가 학생이에요 é “o estudante sou EU”.',
+      'Dizer “저가”, “나가” ou “누구가”: as formas são 제가, 내가, 누가.',
+      'Traduzir 저는 머리가 아파요 com dois sujeitos: em português é só “estou com dor de cabeça”.',
     ],
     quiz: [
       {
@@ -854,25 +854,25 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         explanation: 'Palavra de pergunta leva 이/가, e 누구 + 가 vira 누가.',
       },
       {
-        question: 'Qual é a resposta natural a «누가 학생이에요?»',
+        question: 'Qual é a resposta natural a “누가 학생이에요?”',
         options: ['민수 씨가 학생이에요.', '민수 씨는 학생이에요.', '민수 씨를 학생이에요.'],
         answer: '민수 씨가 학생이에요.',
-        explanation: 'A resposta a «quem?» é a informação nova, com foco: 이/가.',
+        explanation: 'A resposta a “quem?” é a informação nova, com foco: 이/가.',
       },
       {
         question: 'Você está se apresentando: ___ 브라질 사람이에요.',
         options: ['저는', '제가', '저가'],
         answer: '저는',
-        explanation: 'Na apresentação, você é o tópico: 저는 («quanto a mim»). «저가» não existe.',
+        explanation: 'Na apresentação, você é o tópico: 저는 (“quanto a mim”). “저가” não existe.',
       },
       {
         question: 'O que quer dizer 코끼리는 코가 길어요?',
         options: ['O elefante tem a tromba comprida.', 'O nariz do elefante é curto.', 'O elefante é comprido.'],
         answer: 'O elefante tem a tromba comprida.',
-        explanation: 'Tópico (코끼리는) + sujeito (코가) + predicado (길어요): «quanto ao elefante, a tromba é comprida».',
+        explanation: 'Tópico (코끼리는) + sujeito (코가) + predicado (길어요): “quanto ao elefante, a tromba é comprida”.',
       },
       {
-        question: 'Em «커피는 마셔요. 그런데 술은 안 마셔요.», para que serve o 는/은?',
+        question: 'Em “커피는 마셔요. 그런데 술은 안 마셔요.”, para que serve o 는/은?',
         options: ['Para contrastar café e bebida alcoólica', 'Para marcar o objeto direto comum', 'Para fazer uma pergunta'],
         answer: 'Para contrastar café e bebida alcoólica',
         explanation: 'O 은/는 no lugar de 을/를 contrasta: café sim, álcool não.',
@@ -884,11 +884,11 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     level: 'A2.1',
     title: '있어요/없어요: haver, ter e estar em algum lugar',
     emoji: '📍',
-    summary: '있다 é um verbo curinga: quer dizer «haver», «ter» e «estar (em algum lugar)». O contrário é 없다: «não há», «não tenho». O que se tem é sujeito, com 이/가 (시간이 있어요), e o lugar leva 에 (집에 있어요). Com eles se formam palavras do dia a dia: 맛있다 (gostoso), 재미없다 (chato).',
+    summary: '있다 é um verbo curinga: quer dizer “haver”, “ter” e “estar (em algum lugar)”. O contrário é 없다: “não há”, “não tenho”. O que se tem é sujeito, com 이/가 (시간이 있어요), e o lugar leva 에 (집에 있어요). Com eles se formam palavras do dia a dia: 맛있다 (gostoso), 재미없다 (chato).',
     sections: [
       {
         heading: 'Um verbo, três sentidos',
-        text: 'O português usa três verbos onde o coreano usa um: «tenho dinheiro», «há um banco aqui?» e «o Minsu está em casa» são todos 있어요. Para negar, não se usa 안: existe um verbo próprio, 없다. Um detalhe importante: na posse, a coisa possuída é sujeito (이/가), e não objeto. 저는 동생이 있어요 é, ao pé da letra, «quanto a mim, um irmão mais novo existe».',
+        text: 'O português usa três verbos onde o coreano usa um: “tenho dinheiro”, “há um banco aqui?” e “o Minsu está em casa” são todos 있어요. Para negar, não se usa 안: existe um verbo próprio, 없다. Um detalhe importante: na posse, a coisa possuída é sujeito (이/가), e não objeto. 저는 동생이 있어요 é, ao pé da letra, “quanto a mim, um irmão mais novo existe”.',
         table: {
           head: ['Frase', 'Sentido', 'Português'],
           rows: [
@@ -907,7 +907,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'Onde: 에 e as palavras de posição',
-        text: 'O lugar onde algo está leva a partícula 에: 집에, 학교에, 서울에. Para dizer «em cima», «dentro», «ao lado», o coreano usa substantivos de posição depois da referência, e só então o 에. A ordem é o contrário da nossa: «em cima da mesa» vira 책상 위에 (mesa + cima + 에). Pense em «na parte de cima da mesa».',
+        text: 'O lugar onde algo está leva a partícula 에: 집에, 학교에, 서울에. Para dizer “em cima”, “dentro”, “ao lado”, o coreano usa substantivos de posição depois da referência, e só então o 에. A ordem é o contrário da nossa: “em cima da mesa” vira 책상 위에 (mesa + cima + 에). Pense em “na parte de cima da mesa”.',
         table: {
           head: ['Posição', 'Coreano', 'Exemplo', 'Português'],
           rows: [
@@ -929,7 +929,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'Palavras feitas com 있다 e 없다',
-        text: 'Várias palavras muito usadas nascem de «substantivo + 있다/없다». 맛있다 é «ter sabor», ou seja, gostoso; 재미있다 é «ter graça», divertido ou interessante; 멋있다 é «ter estilo». O contrário troca 있다 por 없다. Na pronúncia, a consoante final passa para a sílaba seguinte: 맛있어요 soa [마시써요], e 맛없어요, [마덥써요].',
+        text: 'Várias palavras muito usadas nascem de “substantivo + 있다/없다”. 맛있다 é “ter sabor”, ou seja, gostoso; 재미있다 é “ter graça”, divertido ou interessante; 멋있다 é “ter estilo”. O contrário troca 있다 por 없다. Na pronúncia, a consoante final passa para a sílaba seguinte: 맛있어요 soa [마시써요], e 맛없어요, [마덥써요].',
         table: {
           head: ['Palavra', 'Ao pé da letra', 'Português'],
           rows: [
@@ -959,15 +959,15 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar 을/를 com 있다: o que se tem é sujeito. É 동생이 있어요, e não «동생을 있어요».',
-      'Negar com 안: «안 있어요» não se usa; o contrário de 있다 é 없다.',
-      'Esquecer o 에 do lugar: 집 있어요 soa como «tenho casa»; 집에 있어요 é «estou em casa».',
-      'Inverter a posição: «em cima da mesa» é 책상 위에 (referência + posição + 에), não «위 책상에».',
+      'Usar 을/를 com 있다: o que se tem é sujeito. É 동생이 있어요, e não “동생을 있어요”.',
+      'Negar com 안: “안 있어요” não se usa; o contrário de 있다 é 없다.',
+      'Esquecer o 에 do lugar: 집 있어요 soa como “tenho casa”; 집에 있어요 é “estou em casa”.',
+      'Inverter a posição: “em cima da mesa” é 책상 위에 (referência + posição + 에), não “위 책상에”.',
       'Pronunciar 맛있어요 separando as sílabas: soa [마시써요], com o ㅅ passando para a frente e ficando tenso.',
     ],
     quiz: [
       {
-        question: 'Como se diz «Eu tenho um irmão mais novo»?',
+        question: 'Como se diz “Eu tenho um irmão mais novo”?',
         options: ['저는 동생이 있어요.', '저는 동생을 있어요.', '저는 동생에 있어요.'],
         answer: '저는 동생이 있어요.',
         explanation: 'Com 있다, o que se tem é sujeito: 동생이 있어요.',
@@ -976,22 +976,22 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         question: 'Complete: 고양이가 의자 ___에 있어요. (embaixo da cadeira)',
         options: ['밑', '위', '옆'],
         answer: '밑',
-        explanation: '밑 (ou 아래) é «embaixo»; 위 é «em cima» e 옆, «ao lado».',
+        explanation: '밑 (ou 아래) é “embaixo”; 위 é “em cima” e 옆, “ao lado”.',
       },
       {
         question: 'O que quer dizer 재미없어요?',
         options: ['É chato.', 'É gostoso.', 'Não tenho tempo.'],
         answer: 'É chato.',
-        explanation: '재미 (graça) + 없다 (não haver): «não tem graça», é chato.',
+        explanation: '재미 (graça) + 없다 (não haver): “não tem graça”, é chato.',
       },
       {
-        question: 'Como se pergunta «Tem água?» numa loja?',
+        question: 'Como se pergunta “Tem água?” numa loja?',
         options: ['물 있어요?', '물이에요?', '물을 있어요?'],
         answer: '물 있어요?',
-        explanation: 'Substantivo + 있어요? com a entonação subindo. 물이에요? seria «é água?».',
+        explanation: 'Substantivo + 있어요? com a entonação subindo. 물이에요? seria “é água?”.',
       },
       {
-        question: 'Como se diz «O Minsu está na escola»?',
+        question: 'Como se diz “O Minsu está na escola”?',
         options: ['민수 씨는 학교에 있어요.', '민수 씨는 학교가 있어요.', '민수 씨는 학교예요.'],
         answer: '민수 씨는 학교에 있어요.',
         explanation: 'Estar num lugar: lugar + 에 + 있어요.',
@@ -1035,15 +1035,15 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'Dinheiro, datas e telefone: o sino-coreano',
-        text: 'O sino-coreano cuida de tudo que é «número de sistema»: preço, data, ano, andar, telefone, número de ônibus. Nos números grandes, a grande diferença: o coreano agrupa de dez mil em dez mil (만), e não de mil em mil. 10.000 é 만 (sem 일 na frente), 100.000 é 십만 («dez dez-mil»), 1.000.000 é 백만, e 100.000.000 tem nome próprio, 억. A maior nota é a de 오만 원 (cinquenta mil wons). Dois meses são irregulares: junho é 유월 e outubro é 시월. No telefone, o zero é 공, e o hífen se lê [에].',
+        text: 'O sino-coreano cuida de tudo que é “número de sistema”: preço, data, ano, andar, telefone, número de ônibus. Nos números grandes, a grande diferença: o coreano agrupa de dez mil em dez mil (만), e não de mil em mil. 10.000 é 만 (sem 일 na frente), 100.000 é 십만 (“dez dez-mil”), 1.000.000 é 백만, e 100.000.000 tem nome próprio, 억. A maior nota é a de 오만 원 (cinquenta mil wons). Dois meses são irregulares: junho é 유월 e outubro é 시월. No telefone, o zero é 공, e o hífen se lê [에].',
         table: {
           head: ['Número', 'Coreano', 'Pense assim'],
           rows: [
             ['1.000', '천', 'mil'],
-            ['10.000', '만', 'um «dez-mil»'],
-            ['50.000', '오만', 'cinco «dez-mil»'],
-            ['100.000', '십만', 'dez «dez-mil»'],
-            ['1.000.000', '백만', 'cem «dez-mil»'],
+            ['10.000', '만', 'um “dez-mil”'],
+            ['50.000', '오만', 'cinco “dez-mil”'],
+            ['100.000', '십만', 'dez “dez-mil”'],
+            ['1.000.000', '백만', 'cem “dez-mil”'],
             ['100.000.000', '억', 'cem milhões'],
           ],
         },
@@ -1055,7 +1055,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'Os contadores: sapato número, copo, cabeça…',
-        text: 'Como no «dois pés de alface» ou «três cabeças de gado» do português, o coreano usa uma palavra de medida depois do número, só que sempre. A ordem natural é substantivo + número + contador: 커피 두 잔 (café, dois copos). Com os contadores do dia a dia, o número é nativo. 개 é o contador curinga para objetos; na dúvida, ele salva. O 번 tem dois usos: com nativo, é «vezes» (세 번, três vezes); com sino-coreano, é «número» (칠 번 버스, o ônibus número sete).',
+        text: 'Como no “dois pés de alface” ou “três cabeças de gado” do português, o coreano usa uma palavra de medida depois do número, só que sempre. A ordem natural é substantivo + número + contador: 커피 두 잔 (café, dois copos). Com os contadores do dia a dia, o número é nativo. 개 é o contador curinga para objetos; na dúvida, ele salva. O 번 tem dois usos: com nativo, é “vezes” (세 번, três vezes); com sino-coreano, é “número” (칠 번 버스, o ônibus número sete).',
         table: {
           head: ['Contador', 'Para', 'Exemplo', 'Português'],
           rows: [
@@ -1081,7 +1081,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'As horas: nativo para a hora, sino-coreano para os minutos',
-        text: 'A hora mistura os dois sistemas: a hora é nativa (세 시) e os minutos são sino-coreanos (이십 분). «E meia» é 반. Para a parte do dia: 오전 (antes do meio-dia) e 오후 (depois), ou 아침 (manhã), 점심 (meio-dia), 저녁 (fim da tarde, noite) e 밤 (noite). Tudo que é tempo vem antes: 오후 세 시. Para perguntar quantidade, 몇: 몇 시? (que horas?), 몇 명? (quantas pessoas?), 몇 살? (quantos anos?).',
+        text: 'A hora mistura os dois sistemas: a hora é nativa (세 시) e os minutos são sino-coreanos (이십 분). “E meia” é 반. Para a parte do dia: 오전 (antes do meio-dia) e 오후 (depois), ou 아침 (manhã), 점심 (meio-dia), 저녁 (fim da tarde, noite) e 밤 (noite). Tudo que é tempo vem antes: 오후 세 시. Para perguntar quantidade, 몇: 몇 시? (que horas?), 몇 명? (quantas pessoas?), 몇 살? (quantos anos?).',
         table: {
           head: ['Hora', 'Coreano'],
           rows: [
@@ -1100,8 +1100,8 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'A idade e o «ano coreano»',
-        text: 'Até pouco tempo, os coreanos tinham três idades. Na «idade coreana» (세는 나이), o bebê nascia com um ano e todo mundo ganhava mais um no Ano-Novo; um bebê nascido em dezembro fazia «dois anos» dias depois. Desde junho de 2023, a lei adota a idade internacional (만 나이) nos documentos, mas a idade coreana ainda aparece na conversa. Perguntar a idade é comum, porque ela define quem é mais velho e, com isso, o tratamento. Com colegas da mesma faixa, 몇 살이에요?; com alguém mais velho, a forma respeitosa 나이가 어떻게 되세요?',
+        heading: 'A idade e o “ano coreano”',
+        text: 'Até pouco tempo, os coreanos tinham três idades. Na “idade coreana” (세는 나이), o bebê nascia com um ano e todo mundo ganhava mais um no Ano-Novo; um bebê nascido em dezembro fazia “dois anos” dias depois. Desde junho de 2023, a lei adota a idade internacional (만 나이) nos documentos, mas a idade coreana ainda aparece na conversa. Perguntar a idade é comum, porque ela define quem é mais velho e, com isso, o tratamento. Com colegas da mesma faixa, 몇 살이에요?; com alguém mais velho, a forma respeitosa 나이가 어떻게 되세요?',
         examples: [
           ['몇 살이에요?', 'Quantos anos você tem?'],
           ['나이가 어떻게 되세요?', 'Qual é a sua idade? (respeitoso)'],
@@ -1110,16 +1110,16 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Contar coisas com o sino-coreano: «사과 이 개» está errado. Objetos e pessoas pedem o nativo: 사과 두 개.',
-      'Usar o nativo para minutos ou dinheiro: 다섯 분 é «cinco pessoas» (respeitoso); cinco minutos é 오 분.',
-      'Esquecer a forma curta antes do contador: 한 개, 두 명, 세 시, 스무 살, e não «하나 개», «둘 명», «스물 살».',
-      'Agrupar os números grandes de mil em mil: 100.000 não é «백천», é 십만 («dez dez-mil»).',
-      'Dizer «육월» e «십월»: junho é 유월 e outubro é 시월.',
-      'Pôr o número antes do substantivo, como em português: o natural é 커피 두 잔, «café, dois copos».',
+      'Contar coisas com o sino-coreano: “사과 이 개” está errado. Objetos e pessoas pedem o nativo: 사과 두 개.',
+      'Usar o nativo para minutos ou dinheiro: 다섯 분 é “cinco pessoas” (respeitoso); cinco minutos é 오 분.',
+      'Esquecer a forma curta antes do contador: 한 개, 두 명, 세 시, 스무 살, e não “하나 개”, “둘 명”, “스물 살”.',
+      'Agrupar os números grandes de mil em mil: 100.000 não é “백천”, é 십만 (“dez dez-mil”).',
+      'Dizer “육월” e “십월”: junho é 유월 e outubro é 시월.',
+      'Pôr o número antes do substantivo, como em português: o natural é 커피 두 잔, “café, dois copos”.',
     ],
     quiz: [
       {
-        question: 'Como se diz «três alunos»?',
+        question: 'Como se diz “três alunos”?',
         options: ['학생 세 명', '학생 삼 명', '세 학생 명'],
         answer: '학생 세 명',
         explanation: 'Pessoas se contam com o nativo e o contador 명: 학생 세 명.',
@@ -1166,7 +1166,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     sections: [
       {
         heading: '에: onde está, para onde vai, quando',
-        text: 'O 에 é um ponto no mapa ou no relógio. Com 있다 e 없다, marca onde algo está; com 가다, 오다 e 다니다, marca o destino; com horas, dias e datas, marca o momento. Só as palavras de tempo que já funcionam como advérbio dispensam o 에: 오늘, 내일, 어제, 지금, 매일. Nada de «오늘에».',
+        text: 'O 에 é um ponto no mapa ou no relógio. Com 있다 e 없다, marca onde algo está; com 가다, 오다 e 다니다, marca o destino; com horas, dias e datas, marca o momento. Só as palavras de tempo que já funcionam como advérbio dispensam o 에: 오늘, 내일, 어제, 지금, 매일. Nada de “오늘에”.',
         table: {
           head: ['Uso', 'Exemplo', 'Português'],
           rows: [
@@ -1185,7 +1185,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: '에서: onde acontece, de onde vem',
-        text: 'O 에서 é o palco da ação: se alguém faz algo num lugar (estudar, comer, trabalhar, encontrar), o lugar leva 에서. Ele também marca a origem, «de onde»: 브라질에서 왔어요. Compare: 집에 있어요 (estou em casa: estado) × 집에서 쉬어요 (descanso em casa: ação). Um caso especial: com 살다 (morar), os dois servem, 서울에 살아요 e 서울에서 살아요.',
+        text: 'O 에서 é o palco da ação: se alguém faz algo num lugar (estudar, comer, trabalhar, encontrar), o lugar leva 에서. Ele também marca a origem, “de onde”: 브라질에서 왔어요. Compare: 집에 있어요 (estou em casa: estado) × 집에서 쉬어요 (descanso em casa: ação). Um caso especial: com 살다 (morar), os dois servem, 서울에 살아요 e 서울에서 살아요.',
         table: {
           head: ['Uso', 'Exemplo', 'Português'],
           rows: [
@@ -1204,7 +1204,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: '까지 e (으)로: até, para, de, em',
-        text: '까지 é «até», no espaço e no tempo. Para dizer «de… até», use 에서…까지 com lugares e 부터…까지 com tempo. O (으)로 aponta uma direção («para a direita») ou um meio («de metrô», «em coreano», «com a mão»). A forma é 로 depois de vogal ou de ㄹ (버스로, 지하철로) e 으로 depois de outras consoantes (손으로).',
+        text: '까지 é “até”, no espaço e no tempo. Para dizer “de… até”, use 에서…까지 com lugares e 부터…까지 com tempo. O (으)로 aponta uma direção (“para a direita”) ou um meio (“de metrô”, “em coreano”, “com a mão”). A forma é 로 depois de vogal ou de ㄹ (버스로, 지하철로) e 으로 depois de outras consoantes (손으로).',
         table: {
           head: ['Partícula', 'Uso', 'Exemplo', 'Português'],
           rows: [
@@ -1224,7 +1224,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: '-(으)러 가다: ir fazer alguma coisa',
-        text: 'Para dizer o objetivo de um deslocamento («vou comer», «vim estudar»), junte -(으)러 ao radical e ponha depois um verbo de movimento: 가다, 오다 ou 다니다. Depois de vogal ou de ㄹ, -러 (보러, 놀러); depois de consoante, -으러 (먹으러). O destino, se houver, leva 에: 한국에 공부하러 왔어요.',
+        text: 'Para dizer o objetivo de um deslocamento (“vou comer”, “vim estudar”), junte -(으)러 ao radical e ponha depois um verbo de movimento: 가다, 오다 ou 다니다. Depois de vogal ou de ㄹ, -러 (보러, 놀러); depois de consoante, -으러 (먹으러). O destino, se houver, leva 에: 한국에 공부하러 왔어요.',
         table: {
           head: ['Dicionário', 'Com -(으)러', 'Exemplo', 'Português'],
           rows: [
@@ -1243,11 +1243,11 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar 에 com verbo de ação: «도서관에 공부해요» → 도서관에서 공부해요. Ação num lugar pede 에서.',
-      'Usar 에서 com 있다: «집에서 있어요» → 집에 있어요.',
+      'Usar 에 com verbo de ação: “도서관에 공부해요” → 도서관에서 공부해요. Ação num lugar pede 에서.',
+      'Usar 에서 com 있다: “집에서 있어요” → 집에 있어요.',
       'Pôr 에 em 오늘, 내일, 어제, 지금: essas palavras já são advérbios.',
-      'Usar -(으)러 com verbos que não são de movimento: ele só aparece antes de 가다, 오다, 다니다. «Estudo para passar» é outra estrutura (-(으)려고, no B2.1).',
-      'Escrever «지하철으로»: depois de ㄹ é 로, como depois de vogal: 지하철로, 연필로.',
+      'Usar -(으)러 com verbos que não são de movimento: ele só aparece antes de 가다, 오다, 다니다. “Estudo para passar” é outra estrutura (-(으)려고, no B2.1).',
+      'Escrever “지하철으로”: depois de ㄹ é 로, como depois de vogal: 지하철로, 연필로.',
     ],
     quiz: [
       {
@@ -1263,10 +1263,10 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         explanation: 'Com 있다 (estar), o lugar leva 에.',
       },
       {
-        question: 'Como se diz «Vim do Brasil»?',
+        question: 'Como se diz “Vim do Brasil”?',
         options: ['브라질에서 왔어요.', '브라질에 왔어요.', '브라질로 왔어요.'],
         answer: '브라질에서 왔어요.',
-        explanation: 'A origem leva 에서. 브라질에 왔어요 seria «vim para o Brasil».',
+        explanation: 'A origem leva 에서. 브라질에 왔어요 seria “vim para o Brasil”.',
       },
       {
         question: 'Complete: 영화 ___ 가요. (vou ver um filme)',
@@ -1275,7 +1275,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         explanation: '보다 tem radical em vogal: 보 + 러 = 보러.',
       },
       {
-        question: 'Como se diz «Vou de metrô»?',
+        question: 'Como se diz “Vou de metrô”?',
         options: ['지하철로 가요.', '지하철으로 가요.', '지하철에서 가요.'],
         answer: '지하철로 가요.',
         explanation: '지하철 termina em ㄹ, e depois de ㄹ o meio é 로.',
@@ -1284,7 +1284,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         question: 'Complete: 아홉 시___ 여섯 시까지 일해요.',
         options: ['부터', '에서', '에'],
         answer: '부터',
-        explanation: 'Com tempo, «de… até» é 부터…까지. Com lugares, 에서…까지.',
+        explanation: 'Com tempo, “de… até” é 부터…까지. Com lugares, 에서…까지.',
       },
     ],
   },
@@ -1297,7 +1297,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     sections: [
       {
         heading: 'O passado: do presente para o passado',
-        text: 'O truque mais fácil: pegue o 해요체, tire o 요 e acrescente ㅆ어요. 가요 → 가 → 갔어요; 먹어요 → 먹어 → 먹었어요; 해요 → 해 → 했어요. Todas as fusões de vogal do presente continuam valendo (와요 → 왔어요, 마셔요 → 마셨어요). O «ser» fica 이었어요 depois de consoante e 였어요 depois de vogal. Um só passado coreano cobre o nosso pretérito perfeito e o imperfeito: 서울에 살았어요 é «morei» e também «morava» em Seul.',
+        text: 'O truque mais fácil: pegue o 해요체, tire o 요 e acrescente ㅆ어요. 가요 → 가 → 갔어요; 먹어요 → 먹어 → 먹었어요; 해요 → 해 → 했어요. Todas as fusões de vogal do presente continuam valendo (와요 → 왔어요, 마셔요 → 마셨어요). O “ser” fica 이었어요 depois de consoante e 였어요 depois de vogal. Um só passado coreano cobre o nosso pretérito perfeito e o imperfeito: 서울에 살았어요 é “morei” e também “morava” em Seul.',
         table: {
           head: ['Dicionário', 'Presente', 'Passado', 'Português'],
           rows: [
@@ -1320,7 +1320,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'O passado que descreve um estado',
-        text: 'Alguns verbos no passado descrevem um estado atual, o resultado de uma mudança que já aconteceu. O brasileiro traduz no presente: 결혼했어요 é «sou casado» (casei e continuo); 늦었어요 é «estou atrasado». Por isso, 결혼해요 no presente quer dizer «vou me casar». Outros casos comuns: 잘생겼어요 (ele é bonito, ao pé da letra «nasceu bem-feito»), 닮았어요 (é parecido), 늙었어요 (está velho).',
+        text: 'Alguns verbos no passado descrevem um estado atual, o resultado de uma mudança que já aconteceu. O brasileiro traduz no presente: 결혼했어요 é “sou casado” (casei e continuo); 늦었어요 é “estou atrasado”. Por isso, 결혼해요 no presente quer dizer “vou me casar”. Outros casos comuns: 잘생겼어요 (ele é bonito, ao pé da letra “nasceu bem-feito”), 닮았어요 (é parecido), 늙었어요 (está velho).',
         examples: [
           ['저는 결혼했어요.', 'Sou casado(a).'],
           ['죄송해요, 제가 늦었어요.', 'Desculpe, estou atrasado.'],
@@ -1329,7 +1329,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'O futuro: -(으)ㄹ 거예요',
-        text: 'Radical terminado em vogal ganha ㄹ embaixo do bloco + 거예요 (갈 거예요, 할 거예요); em consoante, 을 거예요 (먹을 거예요); e os radicais em ㄹ ficam como estão (살 거예요, 만들 거예요). Na pronúncia, o 거 fica tenso: [갈 꺼예요]. Com «eu» e «nós», é plano ou intenção; com os outros e com o tempo, é suposição: 비가 올 거예요 (vai chover, deve chover), 민수 씨는 집에 있을 거예요 (o Minsu deve estar em casa). Para compromissos já marcados, o presente simples também serve: 내일 가요.',
+        text: 'Radical terminado em vogal ganha ㄹ embaixo do bloco + 거예요 (갈 거예요, 할 거예요); em consoante, 을 거예요 (먹을 거예요); e os radicais em ㄹ ficam como estão (살 거예요, 만들 거예요). Na pronúncia, o 거 fica tenso: [갈 꺼예요]. Com “eu” e “nós”, é plano ou intenção; com os outros e com o tempo, é suposição: 비가 올 거예요 (vai chover, deve chover), 민수 씨는 집에 있을 거예요 (o Minsu deve estar em casa). Para compromissos já marcados, o presente simples também serve: 내일 가요.',
         table: {
           head: ['Dicionário', 'Futuro', 'Português'],
           rows: [
@@ -1370,12 +1370,12 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Achar que -았/었- é só o pretérito perfeito: ele também faz o imperfeito. «Eu morava» é 살았어요.',
-      'Traduzir estados ao pé da letra: «sou casado» é 결혼했어요; 결혼해요 é «vou me casar».',
-      'Errar as fusões: 오다 → 왔어요, 마시다 → 마셨어요, 하다 → 했어요. «오았어요» e «하았어요» não existem.',
-      'Escrever «갈 거에요»: a forma padrão é 거예요 (거 + 예요). «거에요» é um erro comum até entre nativos.',
-      'Ler -(으)ㄹ 거예요 sempre como «vou»: com a terceira pessoa ou o tempo, costuma ser suposição (비가 올 거예요, «deve chover»).',
-      'Pôr 에 em 어제, 오늘, 내일: 어제 갔어요, e não «어제에 갔어요».',
+      'Achar que -았/었- é só o pretérito perfeito: ele também faz o imperfeito. “Eu morava” é 살았어요.',
+      'Traduzir estados ao pé da letra: “sou casado” é 결혼했어요; 결혼해요 é “vou me casar”.',
+      'Errar as fusões: 오다 → 왔어요, 마시다 → 마셨어요, 하다 → 했어요. “오았어요” e “하았어요” não existem.',
+      'Escrever “갈 거에요”: a forma padrão é 거예요 (거 + 예요). “거에요” é um erro comum até entre nativos.',
+      'Ler -(으)ㄹ 거예요 sempre como “vou”: com a terceira pessoa ou o tempo, costuma ser suposição (비가 올 거예요, “deve chover”).',
+      'Pôr 에 em 어제, 오늘, 내일: 어제 갔어요, e não “어제에 갔어요”.',
     ],
     quiz: [
       {
@@ -1403,10 +1403,10 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         explanation: 'Com o tempo (e com a terceira pessoa), -(으)ㄹ 거예요 é uma previsão ou suposição.',
       },
       {
-        question: 'Como se diz «Eu sou casado»?',
+        question: 'Como se diz “Eu sou casado”?',
         options: ['결혼했어요.', '결혼해요.', '결혼할 거예요.'],
         answer: '결혼했어요.',
-        explanation: 'O estado resulta de algo que já aconteceu, então vai no passado. 결혼해요 é «vou me casar».',
+        explanation: 'O estado resulta de algo que já aconteceu, então vai no passado. 결혼해요 é “vou me casar”.',
       },
       {
         question: 'Qual é a grafia padrão?',
@@ -1421,11 +1421,11 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     level: 'A2.2',
     title: '반말: falar com amigos (-아/어, 이야/야, 응, 아니)',
     emoji: '🤙',
-    summary: 'Entre amigos da mesma idade, com irmãos mais novos e com crianças, o coreano tira o 요 e fala 반말 («meia fala»): 가요 → 가, 먹었어요 → 먹었어, 학생이에요 → 학생이야. É o registro da intimidade, como passar do «o senhor» para o «você», só que marcado em cada verbo. Usar 반말 sem convite é falta de educação: o normal é esperar a proposta 말 놓을까요?',
+    summary: 'Entre amigos da mesma idade, com irmãos mais novos e com crianças, o coreano tira o 요 e fala 반말 (“meia fala”): 가요 → 가, 먹었어요 → 먹었어, 학생이에요 → 학생이야. É o registro da intimidade, como passar do “o senhor” para o “você”, só que marcado em cada verbo. Usar 반말 sem convite é falta de educação: o normal é esperar a proposta 말 놓을까요?',
     sections: [
       {
         heading: 'Tirar o 요',
-        text: 'O 반말 do dia a dia (o 해체) é o 해요체 sem o 요: 가요 → 가, 먹어요 → 먹어, 했어요 → 했어, 갈 거예요 → 갈 거야. Só o «ser» muda de forma: 이에요/예요 viram 이야/야 (학생이야, 친구야), e 아니에요 vira 아니야. O «sim» é 응 (ou 어), e o «não», 아니. Para convidar («vamos…!»), o 반말 usa -자: 가자!, 먹자!',
+        text: 'O 반말 do dia a dia (o 해체) é o 해요체 sem o 요: 가요 → 가, 먹어요 → 먹어, 했어요 → 했어, 갈 거예요 → 갈 거야. Só o “ser” muda de forma: 이에요/예요 viram 이야/야 (학생이야, 친구야), e 아니에요 vira 아니야. O “sim” é 응 (ou 어), e o “não”, 아니. Para convidar (“vamos…!”), o 반말 usa -자: 가자!, 먹자!',
         table: {
           head: ['해요체', '반말', 'Português'],
           rows: [
@@ -1449,7 +1449,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'Os pronomes e o chamamento',
-        text: 'No 반말, o «eu» é 나 (내가, 내), e aparece o «você» íntimo, 너 (네가, 네). Como 내 e 네 soam iguais em Seul, na fala 네가 vira [니가] e 네 vira [니]. Para chamar um amigo pelo nome, acrescente 아 depois de consoante e 야 depois de vogal: 민수야!, 지은아! E alguém um pouco mais velho, mesmo íntimo, não é chamado de 너: usam-se as palavras de família, que dependem de quem fala. Um homem chama o amigo mais velho de 형 e a amiga mais velha de 누나; uma mulher diz 오빠 e 언니.',
+        text: 'No 반말, o “eu” é 나 (내가, 내), e aparece o “você” íntimo, 너 (네가, 네). Como 내 e 네 soam iguais em Seul, na fala 네가 vira [니가] e 네 vira [니]. Para chamar um amigo pelo nome, acrescente 아 depois de consoante e 야 depois de vogal: 민수야!, 지은아! E alguém um pouco mais velho, mesmo íntimo, não é chamado de 너: usam-se as palavras de família, que dependem de quem fala. Um homem chama o amigo mais velho de 형 e a amiga mais velha de 누나; uma mulher diz 오빠 e 언니.',
         table: {
           head: ['Polido', '반말', 'Português'],
           rows: [
@@ -1470,7 +1470,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'Quem pode falar 반말 com quem',
-        text: 'Na Coreia, a idade organiza as relações, e até um ano de diferença conta. Amigos da mesma idade (동갑) passam logo para o 반말; entre pessoas de idades diferentes, quem é mais velho costuma propor: 말 편하게 하세요 («fale à vontade comigo»), ou alguém sugere 우리 말 놓을까요? («vamos tirar a cerimônia?»). Os pais falam 반말 com os filhos, e muitos filhos também com os pais. Com desconhecidos, colegas novos, vendedores e gente mais velha, o 반말 sem convite soa grosseiro, como tratar o chefe por «meu chapa».',
+        text: 'Na Coreia, a idade organiza as relações, e até um ano de diferença conta. Amigos da mesma idade (동갑) passam logo para o 반말; entre pessoas de idades diferentes, quem é mais velho costuma propor: 말 편하게 하세요 (“fale à vontade comigo”), ou alguém sugere 우리 말 놓을까요? (“vamos tirar a cerimônia?”). Os pais falam 반말 com os filhos, e muitos filhos também com os pais. Com desconhecidos, colegas novos, vendedores e gente mais velha, o 반말 sem convite soa grosseiro, como tratar o chefe por “meu chapa”.',
         table: {
           head: ['Com quem', 'O normal'],
           rows: [
@@ -1503,24 +1503,24 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     ],
     pitfalls: [
       'Usar 반말 com desconhecidos ou com gente mais velha: soa grosseiro. Espere o convite (말 놓을까요?, 편하게 말해).',
-      'Misturar 저 com 반말: 저 é o «eu» humilde; no 반말, o «eu» é 나. «저는 학생이야» soa desencontrado.',
-      'Esquecer o 이야/야: no 반말, «é estudante» é 학생이야, e «친구» sozinho não fecha a frase.',
+      'Misturar 저 com 반말: 저 é o “eu” humilde; no 반말, o “eu” é 나. “저는 학생이야” soa desencontrado.',
+      'Esquecer o 이야/야: no 반말, “é estudante” é 학생이야, e “친구” sozinho não fecha a frase.',
       'Chamar um amigo mais velho de 너: use 형, 오빠, 누나 ou 언니, conforme o seu gênero e o dele.',
       'Chamar pelo nome sem o 아/야 ou com o errado: 민수야 (vogal) e 지은아 (consoante).',
-      'Achar que 반말 é «falar errado»: é um registro de intimidade, perfeitamente correto entre as pessoas certas.',
+      'Achar que 반말 é “falar errado”: é um registro de intimidade, perfeitamente correto entre as pessoas certas.',
     ],
     quiz: [
       {
-        question: 'Qual é o 반말 de «뭐 해요?»',
+        question: 'Qual é o 반말 de “뭐 해요?”',
         options: ['뭐 해?', '뭐 해요?', '뭐 합니까?'],
         answer: '뭐 해?',
         explanation: 'O 반말 é o 해요체 sem o 요: 뭐 해?',
       },
       {
-        question: 'Qual é o 반말 de «학생이에요»?',
+        question: 'Qual é o 반말 de “학생이에요”?',
         options: ['학생이야.', '학생이.', '학생이요.'],
         answer: '학생이야.',
-        explanation: 'O «ser» no 반말 é 이야 depois de consoante e 야 depois de vogal.',
+        explanation: 'O “ser” no 반말 é 이야 depois de consoante e 야 depois de vogal.',
       },
       {
         question: 'Como você chama a sua amiga 지은 em 반말?',
@@ -1541,7 +1541,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         explanation: 'Mulher chama a mais velha de 언니; homem diria 누나. 형 é o que um homem diz a um homem mais velho.',
       },
       {
-        question: 'Como se diz «vamos comer!» em 반말?',
+        question: 'Como se diz “vamos comer!” em 반말?',
         options: ['먹자!', '먹어요!', '먹습니다!'],
         answer: '먹자!',
         explanation: 'O convite em 반말 usa -자: 가자!, 먹자!, 보자!',
@@ -1554,11 +1554,11 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     level: 'B1.1',
     title: '도, 만, 와/과·하고·(이)랑 e 의: também, só, e, com, de',
     emoji: '🧩',
-    summary: 'Partículas pequenas que aparecem em toda frase. 도 é «também» e toma o lugar de 은/는, 이/가 e 을/를 (저도, 커피도); 만 é «só». Para «e» entre substantivos e para «com», há três opções que mudam de registro: 와/과 (escrita), 하고 (fala neutra) e (이)랑 (fala íntima). E 의 é o nosso «de» de posse, com a ordem invertida: 친구의 책 (o livro do amigo).',
+    summary: 'Partículas pequenas que aparecem em toda frase. 도 é “também” e toma o lugar de 은/는, 이/가 e 을/를 (저도, 커피도); 만 é “só”. Para “e” entre substantivos e para “com”, há três opções que mudam de registro: 와/과 (escrita), 하고 (fala neutra) e (이)랑 (fala íntima). E 의 é o nosso “de” de posse, com a ordem invertida: 친구의 책 (o livro do amigo).',
     sections: [
       {
-        heading: '도: também (e «também não»)',
-        text: 'O 도 substitui as partículas 은/는, 이/가 e 을/를: 저는 → 저도, 커피를 → 커피도. Com 에, 에서 e as outras partículas de lugar, ele se soma no fim: 학교에도, 집에서도. Numa frase negativa, vira «também não»: 저도 안 가요. E com 아무 (qualquer), forma «ninguém» e «nada»: 아무도 없어요, 아무것도 안 먹었어요. A resposta 저도요! («eu também!») é das mais úteis da língua.',
+        heading: '도: também (e “também não”)',
+        text: 'O 도 substitui as partículas 은/는, 이/가 e 을/를: 저는 → 저도, 커피를 → 커피도. Com 에, 에서 e as outras partículas de lugar, ele se soma no fim: 학교에도, 집에서도. Numa frase negativa, vira “também não”: 저도 안 가요. E com 아무 (qualquer), forma “ninguém” e “nada”: 아무도 없어요, 아무것도 안 먹었어요. A resposta 저도요! (“eu também!”) é das mais úteis da língua.',
         table: {
           head: ['Sem 도', 'Com 도', 'Português'],
           rows: [
@@ -1578,7 +1578,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: '만: só, apenas',
-        text: 'O 만 funciona como o 도: toma o lugar de 은/는, 이/가 e 을/를 (커피만 마셔요) e se soma às partículas de lugar (집에서만). É o «só» de «só um», «só eu», «só em casa». Numa loja, 하나만 주세요 é «me dá só um»; e 잠깐만요! é «só um instante!».',
+        text: 'O 만 funciona como o 도: toma o lugar de 은/는, 이/가 e 을/를 (커피만 마셔요) e se soma às partículas de lugar (집에서만). É o “só” de “só um”, “só eu”, “só em casa”. Numa loja, 하나만 주세요 é “me dá só um”; e 잠깐만요! é “só um instante!”.',
         examples: [
           ['하나만 주세요.', 'Me dá só um, por favor.'],
           ['저는 주말에만 운동해요.', 'Só faço exercício no fim de semana.'],
@@ -1586,8 +1586,8 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         ],
       },
       {
-        heading: '«e» e «com»: 와/과, 하고, (이)랑',
-        text: 'As três partículas ligam substantivos («pão e leite») e também dizem «com quem» (친구하고 가요, vou com um amigo; muitas vezes reforçado por 같이 ou 함께, juntos). O sentido é o mesmo; muda o registro. 와/과 é da escrita e da fala formal; atenção, é 와 depois de vogal e 과 depois de consoante. 하고 é o neutro da conversa, igual depois de qualquer letra. (이)랑 é o mais íntimo e carinhoso: 이랑 depois de consoante, 랑 depois de vogal. Elas ligam só substantivos; para ligar verbos, use -고 (próximo tópico).',
+        heading: '“e” e “com”: 와/과, 하고, (이)랑',
+        text: 'As três partículas ligam substantivos (“pão e leite”) e também dizem “com quem” (친구하고 가요, vou com um amigo; muitas vezes reforçado por 같이 ou 함께, juntos). O sentido é o mesmo; muda o registro. 와/과 é da escrita e da fala formal; atenção, é 와 depois de vogal e 과 depois de consoante. 하고 é o neutro da conversa, igual depois de qualquer letra. (이)랑 é o mais íntimo e carinhoso: 이랑 depois de consoante, 랑 depois de vogal. Elas ligam só substantivos; para ligar verbos, use -고 (próximo tópico).',
         table: {
           head: ['Partícula', 'Depois de vogal', 'Depois de consoante', 'Registro', 'Exemplo'],
           rows: [
@@ -1604,8 +1604,8 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         ],
       },
       {
-        heading: '의: o «de» da posse, com a ordem invertida',
-        text: 'Em português, a coisa vem antes do dono («o livro do amigo»); em coreano, o dono vem primeiro, com 의: 친구의 책. Na fala, o 의 de posse soa [에] e muitas vezes some: 친구 책. Os pronomes se contraem: 저의 → 제, 나의 → 내, 너의 → 네 (que na fala vira [니] para não soar como 내). E o coreano adora o 우리 (nosso) onde nós diríamos «meu»: 우리 엄마, 우리 집, 우리 나라. Não quer dizer que a mãe é de todo mundo: é o jeito coletivo e afetuoso de falar do que é da família e do grupo.',
+        heading: '의: o “de” da posse, com a ordem invertida',
+        text: 'Em português, a coisa vem antes do dono (“o livro do amigo”); em coreano, o dono vem primeiro, com 의: 친구의 책. Na fala, o 의 de posse soa [에] e muitas vezes some: 친구 책. Os pronomes se contraem: 저의 → 제, 나의 → 내, 너의 → 네 (que na fala vira [니] para não soar como 내). E o coreano adora o 우리 (nosso) onde nós diríamos “meu”: 우리 엄마, 우리 집, 우리 나라. Não quer dizer que a mãe é de todo mundo: é o jeito coletivo e afetuoso de falar do que é da família e do grupo.',
         table: {
           head: ['Português', 'Escrito', 'Falado'],
           rows: [
@@ -1625,12 +1625,12 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Somar 도 ou 만 a 은/는, 이/가 ou 을/를: «저는도» e «커피를도» não existem; 도 e 만 tomam o lugar delas. Com 에 e 에서 eles se somam: 학교에도.',
+      'Somar 도 ou 만 a 은/는, 이/가 ou 을/를: “저는도” e “커피를도” não existem; 도 e 만 tomam o lugar delas. Com 에 e 에서 eles se somam: 학교에도.',
       'Trocar 와 e 과: 와 depois de vogal (우유와), 과 depois de consoante (빵과). É o contrário do que muita gente espera.',
       'Usar 와/과 numa conversa descontraída: soa como texto escrito. Na fala, 하고 ou (이)랑.',
-      'Ligar verbos com 하고: «먹어요 하고 마셔요» não existe; entre verbos é -고 (먹고 마셔요).',
+      'Ligar verbos com 하고: “먹어요 하고 마셔요” não existe; entre verbos é -고 (먹고 마셔요).',
       'Pronunciar o 의 de posse como [의]: na fala é [에] (친구의 [친구에]).',
-      'Estranhar o 우리: 우리 엄마 é simplesmente «minha mãe», dito de um jeito coletivo e carinhoso.',
+      'Estranhar o 우리: 우리 엄마 é simplesmente “minha mãe”, dito de um jeito coletivo e carinhoso.',
     ],
     quiz: [
       {
@@ -1646,7 +1646,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         explanation: '빵 termina em consoante (ㅇ), então é 과. 와 vem depois de vogal, e 랑 é da fala íntima.',
       },
       {
-        question: 'Numa conversa entre amigos, como se diz «tteokbokki e kimbap»?',
+        question: 'Numa conversa entre amigos, como se diz “tteokbokki e kimbap”?',
         options: ['떡볶이랑 김밥', '떡볶이과 김밥', '떡볶이의 김밥'],
         answer: '떡볶이랑 김밥',
         explanation: '떡볶이 termina em vogal, então (이)랑 vira 랑. 과 só vem depois de consoante, e 의 é posse.',
@@ -1655,19 +1655,19 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         question: 'Qual é a forma contraída de 저의 (meu, polido)?',
         options: ['제', '내', '네'],
         answer: '제',
-        explanation: '저의 → 제 (polido). 내 é «meu» íntimo, e 네 é «seu» íntimo.',
+        explanation: '저의 → 제 (polido). 내 é “meu” íntimo, e 네 é “seu” íntimo.',
       },
       {
-        question: 'Como se diz «Não tem ninguém»?',
+        question: 'Como se diz “Não tem ninguém”?',
         options: ['아무도 없어요.', '누구도 있어요.', '아무 없어요.'],
         answer: '아무도 없어요.',
-        explanation: '아무 + 도 com um verbo negativo: 아무도 없어요, «ninguém está».',
+        explanation: '아무 + 도 com um verbo negativo: 아무도 없어요, “ninguém está”.',
       },
       {
         question: 'Numa loja: ___ 주세요. (Me dá só um.)',
         options: ['하나만', '하나도', '하나랑'],
         answer: '하나만',
-        explanation: '만 é «só»: 하나만 주세요.',
+        explanation: '만 é “só”: 하나만 주세요.',
       },
     ],
   },
@@ -1676,11 +1676,11 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     level: 'B1.1',
     title: 'A família do -고: -고 (e), -고 싶다 (querer) e -고 있다 (estar fazendo)',
     emoji: '🔗',
-    summary: 'O -고 é uma das terminações mais úteis do coreano, e não tem regra de vogal: é só radical + 고. Sozinho, liga ações e qualidades («e», «e depois»: 싸고 맛있어요). Com 싶다, forma o desejo (먹고 싶어요, quero comer). Com 있다, o progressivo (먹고 있어요, estou comendo). E 보고 싶어요 é a «saudade» coreana.',
+    summary: 'O -고 é uma das terminações mais úteis do coreano, e não tem regra de vogal: é só radical + 고. Sozinho, liga ações e qualidades (“e”, “e depois”: 싸고 맛있어요). Com 싶다, forma o desejo (먹고 싶어요, quero comer). Com 있다, o progressivo (먹고 있어요, estou comendo). E 보고 싶어요 é a “saudade” coreana.',
     sections: [
       {
-        heading: '-고: «e» entre verbos e adjetivos',
-        text: 'Para ligar duas ações ou duas qualidades, ponha -고 no radical do primeiro verbo: 싸고 맛있어요 (é barato e gostoso). Com ações, muitas vezes indica sequência: 밥을 먹고 커피를 마셨어요 (comi e depois tomei café). O tempo verbal fica só no último verbo, que fecha a frase. Com o «ser», fica (이)고: 저는 학생이고 동생은 회사원이에요. Lembre: 하고, 와/과 e (이)랑 ligam substantivos; -고 liga verbos.',
+        heading: '-고: “e” entre verbos e adjetivos',
+        text: 'Para ligar duas ações ou duas qualidades, ponha -고 no radical do primeiro verbo: 싸고 맛있어요 (é barato e gostoso). Com ações, muitas vezes indica sequência: 밥을 먹고 커피를 마셨어요 (comi e depois tomei café). O tempo verbal fica só no último verbo, que fecha a frase. Com o “ser”, fica (이)고: 저는 학생이고 동생은 회사원이에요. Lembre: 하고, 와/과 e (이)랑 ligam substantivos; -고 liga verbos.',
         table: {
           head: ['Dicionário', 'Com -고', 'Exemplo', 'Português'],
           rows: [
@@ -1699,7 +1699,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: '-고 싶다: querer fazer',
-        text: 'Radical + 고 싶다 é «querer fazer», e o 싶다 se conjuga normalmente: 싶어요, 싶었어요. O objeto pode levar 을/를 ou, com mais ênfase no desejo, 이/가 (물이 마시고 싶어요). Duas particularidades. Primeiro, o coreano evita afirmar o que outra pessoa sente por dentro: para ele, ela, eles, usa -고 싶어 하다 (민수 씨는 쉬고 싶어 해요). Segundo, -고 싶다 só vai com verbo: para querer uma coisa, diga o que quer fazer com ela (커피 마시고 싶어요) ou use 갖고 싶다 (querer ter). E 보고 싶어요, «quero ver», dito a uma pessoa, é a nossa «estou com saudade».',
+        text: 'Radical + 고 싶다 é “querer fazer”, e o 싶다 se conjuga normalmente: 싶어요, 싶었어요. O objeto pode levar 을/를 ou, com mais ênfase no desejo, 이/가 (물이 마시고 싶어요). Duas particularidades. Primeiro, o coreano evita afirmar o que outra pessoa sente por dentro: para ele, ela, eles, usa -고 싶어 하다 (민수 씨는 쉬고 싶어 해요). Segundo, -고 싶다 só vai com verbo: para querer uma coisa, diga o que quer fazer com ela (커피 마시고 싶어요) ou use 갖고 싶다 (querer ter). E 보고 싶어요, “quero ver”, dito a uma pessoa, é a nossa “estou com saudade”.',
         table: {
           head: ['Uso', 'Forma', 'Exemplo', 'Português'],
           rows: [
@@ -1718,7 +1718,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: '-고 있다: estar fazendo',
-        text: 'Radical + 고 있다 é o progressivo: 먹고 있어요 (estou comendo). Também descreve uma situação em curso nesta fase da vida: 요즘 한국어를 배우고 있어요. Com verbos de vestir (입다, 쓰다, 신다), indica o estado de estar vestido: 안경을 쓰고 있어요 (está de óculos). O presente simples muitas vezes já basta (뭐 해요? = o que você está fazendo?); o -고 있다 enfatiza o «neste momento». Não use com adjetivos: uma qualidade não está «em andamento».',
+        text: 'Radical + 고 있다 é o progressivo: 먹고 있어요 (estou comendo). Também descreve uma situação em curso nesta fase da vida: 요즘 한국어를 배우고 있어요. Com verbos de vestir (입다, 쓰다, 신다), indica o estado de estar vestido: 안경을 쓰고 있어요 (está de óculos). O presente simples muitas vezes já basta (뭐 해요? = o que você está fazendo?); o -고 있다 enfatiza o “neste momento”. Não use com adjetivos: uma qualidade não está “em andamento”.',
         table: {
           head: ['Frase', 'Português'],
           rows: [
@@ -1737,28 +1737,28 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Ligar verbos com a partícula 하고: «먹어요 하고 마셔요» não existe. Entre verbos é -고: 먹고 마셔요.',
+      'Ligar verbos com a partícula 하고: “먹어요 하고 마셔요” não existe. Entre verbos é -고: 먹고 마셔요.',
       'Pôr passado no primeiro verbo de uma sequência: 어제 밥을 먹고 잤어요. O tempo fica no último verbo.',
       'Afirmar o desejo dos outros com -고 싶어요: sobre ele ou ela, diga -고 싶어 해요 (민수 씨는 가고 싶어 해요).',
-      'Usar -고 싶다 com substantivo: «커피 싶어요» não existe. Diga 커피 마시고 싶어요, ou 커피 주세요.',
-      'Usar -고 있다 com adjetivo: «예쁘고 있어요» está errado.',
-      'Traduzir 보고 싶어요 só como «quero ver»: dito a uma pessoa, é «estou com saudade».',
+      'Usar -고 싶다 com substantivo: “커피 싶어요” não existe. Diga 커피 마시고 싶어요, ou 커피 주세요.',
+      'Usar -고 있다 com adjetivo: “예쁘고 있어요” está errado.',
+      'Traduzir 보고 싶어요 só como “quero ver”: dito a uma pessoa, é “estou com saudade”.',
     ],
     quiz: [
       {
         question: 'Complete: 이 식당은 싸___ 맛있어요.',
         options: ['고', '하고', '와'],
         answer: '고',
-        explanation: 'Entre adjetivos (verbos) o «e» é -고. 하고 e 와 ligam substantivos.',
+        explanation: 'Entre adjetivos (verbos) o “e” é -고. 하고 e 와 ligam substantivos.',
       },
       {
-        question: 'Como se diz «Quero ir à Coreia»?',
+        question: 'Como se diz “Quero ir à Coreia”?',
         options: ['한국에 가고 싶어요.', '한국에 가요 싶어요.', '한국에 가고 있어요.'],
         answer: '한국에 가고 싶어요.',
-        explanation: 'Radical + 고 싶다. 가고 있어요 seria «estou indo».',
+        explanation: 'Radical + 고 싶다. 가고 있어요 seria “estou indo”.',
       },
       {
-        question: 'Como se diz «O Minsu quer descansar»?',
+        question: 'Como se diz “O Minsu quer descansar”?',
         options: ['민수 씨는 쉬고 싶어 해요.', '민수 씨는 쉬고 싶어요.', '민수 씨는 쉬고 있어요.'],
         answer: '민수 씨는 쉬고 싶어 해요.',
         explanation: 'Para o desejo de outra pessoa, o coreano usa -고 싶어 하다.',
@@ -1767,7 +1767,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         question: 'O que quer dizer 보고 싶어요, dito a um amigo que mora longe?',
         options: ['Estou com saudade de você.', 'Quero ver um filme.', 'Estou vendo você.'],
         answer: 'Estou com saudade de você.',
-        explanation: '«Quero te ver» é o jeito coreano de dizer saudade.',
+        explanation: '“Quero te ver” é o jeito coreano de dizer saudade.',
       },
       {
         question: 'Complete: 지금 비가 오___ 있어요.',
@@ -1782,7 +1782,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     level: 'B1.1',
     title: 'Negação: 안 e 못, -지 않다 e -지 못하다, -지 마세요',
     emoji: '🙅',
-    summary: 'O coreano tem duas negações. 안 é o «não» da escolha ou do fato (안 가요, não vou); 못 é o «não consigo, não pude» (못 가요, não posso ir). Cada uma tem uma forma curta, antes do verbo (안 먹어요, 못 먹어요), e uma longa, depois (먹지 않아요, 먹지 못해요). Para mandar não fazer, -지 마세요: 걱정하지 마세요.',
+    summary: 'O coreano tem duas negações. 안 é o “não” da escolha ou do fato (안 가요, não vou); 못 é o “não consigo, não pude” (못 가요, não posso ir). Cada uma tem uma forma curta, antes do verbo (안 먹어요, 못 먹어요), e uma longa, depois (먹지 않아요, 먹지 못해요). Para mandar não fazer, -지 마세요: 걱정하지 마세요.',
     sections: [
       {
         heading: '안: não',
@@ -1808,7 +1808,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: '못: não consigo, não posso',
-        text: 'O 못 diz que a ação não acontece porque algo impede: falta de capacidade, de tempo, de condição. 안 가요 é «não vou» (decidi); 못 가요 é «não posso ir» (queria, mas não dá). Por isso, para recusar um convite, 못 é muito mais gentil: a culpa não é sua. Na pronúncia, o ㅅ final de 못 mexe com a vizinha: 못 가요 [몯까요], 못 먹어요 [몬머거요], 못 해요 [모태요]. Quando a falta é de habilidade, o coreano usa o verbo 못하다, junto: 노래를 못해요 (canto mal), 한국어를 잘 못해요 (não sou bom em coreano).',
+        text: 'O 못 diz que a ação não acontece porque algo impede: falta de capacidade, de tempo, de condição. 안 가요 é “não vou” (decidi); 못 가요 é “não posso ir” (queria, mas não dá). Por isso, para recusar um convite, 못 é muito mais gentil: a culpa não é sua. Na pronúncia, o ㅅ final de 못 mexe com a vizinha: 못 가요 [몯까요], 못 먹어요 [몬머거요], 못 해요 [모태요]. Quando a falta é de habilidade, o coreano usa o verbo 못하다, junto: 노래를 못해요 (canto mal), 한국어를 잘 못해요 (não sou bom em coreano).',
         table: {
           head: ['Com 안', 'Com 못', 'A diferença'],
           rows: [
@@ -1827,7 +1827,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'As formas longas: -지 않다 e -지 못하다',
-        text: 'As duas negações têm uma versão longa, depois do verbo: radical + 지 않다 e radical + 지 못하다. O sentido é o mesmo; a forma longa é mais comum na escrita, no 합니다체 e com palavras compridas, que soam mal com 안 na frente (아름답지 않아요, e não «안 아름다워요»). Nas notícias e nos avisos, é quase sempre a longa: 가지 않습니다, 가지 못합니다.',
+        text: 'As duas negações têm uma versão longa, depois do verbo: radical + 지 않다 e radical + 지 못하다. O sentido é o mesmo; a forma longa é mais comum na escrita, no 합니다체 e com palavras compridas, que soam mal com 안 na frente (아름답지 않아요, e não “안 아름다워요”). Nas notícias e nos avisos, é quase sempre a longa: 가지 않습니다, 가지 못합니다.',
         table: {
           head: ['Curta', 'Longa', 'Português'],
           rows: [
@@ -1846,7 +1846,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'Não faça: -지 마세요',
-        text: 'Para mandar ou pedir que alguém não faça algo, use radical + 지 마세요 (polido) ou 지 마 (반말). Nunca «안 + imperativo». É a frase das placas (사진을 찍지 마세요, não tire fotos) e dos consolos (걱정하지 마세요, não se preocupe). O -지 말고 liga com a alternativa: «não faça isso, faça aquilo».',
+        text: 'Para mandar ou pedir que alguém não faça algo, use radical + 지 마세요 (polido) ou 지 마 (반말). Nunca “안 + imperativo”. É a frase das placas (사진을 찍지 마세요, não tire fotos) e dos consolos (걱정하지 마세요, não se preocupe). O -지 말고 liga com a alternativa: “não faça isso, faça aquilo”.',
         examples: [
           ['걱정하지 마세요.', 'Não se preocupe.'],
           ['여기에서 사진을 찍지 마세요.', 'Não tire fotos aqui.'],
@@ -1856,16 +1856,16 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pôr o 안 antes do substantivo em verbos com 하다: «안 공부해요» → 공부 안 해요. Mas 좋아하다 é palavra inteira: 안 좋아해요.',
+      'Pôr o 안 antes do substantivo em verbos com 하다: “안 공부해요” → 공부 안 해요. Mas 좋아하다 é palavra inteira: 안 좋아해요.',
       'Negar 있다, 알다 e 이다 com 안: use 없다, 모르다 e 아니다.',
-      'Recusar convite com 안 가요: soa «não quero ir». 못 가요 (não posso) é o jeito educado.',
-      'Usar 못 com adjetivo: «못 비싸요» não existe. Adjetivo se nega com 안 ou -지 않다.',
-      'Fazer ordem negativa com 안: «안 가세요» não é «não vá»; é 가지 마세요.',
+      'Recusar convite com 안 가요: soa “não quero ir”. 못 가요 (não posso) é o jeito educado.',
+      'Usar 못 com adjetivo: “못 비싸요” não existe. Adjetivo se nega com 안 ou -지 않다.',
+      'Fazer ordem negativa com 안: “안 가세요” não é “não vá”; é 가지 마세요.',
       'Confundir 잘 못해요 (não sou bom nisso) com 잘못해요 (errei, fiz errado): o espaço muda o sentido.',
     ],
     quiz: [
       {
-        question: 'Como se diz «Não estudo»?',
+        question: 'Como se diz “Não estudo”?',
         options: ['공부 안 해요.', '안 공부해요.', '공부 아니에요.'],
         answer: '공부 안 해요.',
         explanation: 'Nos verbos substantivo + 하다, o 안 entra no meio: 공부 안 해요.',
@@ -1874,7 +1874,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         question: 'Um amigo te convida para uma festa, mas você tem prova. A resposta mais gentil é…',
         options: ['미안해요, 못 가요.', '미안해요, 안 가요.', '미안해요, 가지 마세요.'],
         answer: '미안해요, 못 가요.',
-        explanation: '못 diz que algo impede; 안 soaria como «não quero ir». 가지 마세요 é «não vá».',
+        explanation: '못 diz que algo impede; 안 soaria como “não quero ir”. 가지 마세요 é “não vá”.',
       },
       {
         question: 'Qual é a negação de 알아요 (sei)?',
@@ -1883,10 +1883,10 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         explanation: '알다 tem negativo próprio: 모르다 → 몰라요.',
       },
       {
-        question: 'Como se diz «Não se preocupe»?',
+        question: 'Como se diz “Não se preocupe”?',
         options: ['걱정하지 마세요.', '걱정 안 하세요.', '걱정 못 해요.'],
         answer: '걱정하지 마세요.',
-        explanation: 'Ordem negativa é -지 마세요. 걱정 못 해요 seria «não consigo me preocupar».',
+        explanation: 'Ordem negativa é -지 마세요. 걱정 못 해요 seria “não consigo me preocupar”.',
       },
       {
         question: 'Qual é a forma longa de 안 비싸요?',
@@ -1948,7 +1948,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'ㄷ vira ㄹ, e o ㅅ cai',
-        text: 'No irregular em ㄷ, o ㄷ vira ㄹ antes de vogal: 듣다 → 들어요, 걷다 → 걸어요, 묻다 (perguntar) → 물어요. Mas 받다 (receber), 닫다 (fechar) e 믿다 (acreditar) são regulares. No irregular em ㅅ, o ㅅ desaparece, e as vogais não se fundem: 낫다 → 나아요 (e não «나요»), 짓다 (construir) → 지어요, 붓다 (inchar) → 부어요. Mas 웃다 (rir), 씻다 (lavar) e 벗다 (tirar a roupa) são regulares.',
+        text: 'No irregular em ㄷ, o ㄷ vira ㄹ antes de vogal: 듣다 → 들어요, 걷다 → 걸어요, 묻다 (perguntar) → 물어요. Mas 받다 (receber), 닫다 (fechar) e 믿다 (acreditar) são regulares. No irregular em ㅅ, o ㅅ desaparece, e as vogais não se fundem: 낫다 → 나아요 (e não “나요”), 짓다 (construir) → 지어요, 붓다 (inchar) → 부어요. Mas 웃다 (rir), 씻다 (lavar) e 벗다 (tirar a roupa) são regulares.',
         table: {
           head: ['Dicionário', '해요체', 'Regular parecida', 'Português'],
           rows: [
@@ -1967,7 +1967,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: '르 vira ㄹㄹ, e o ㅎ cai',
-        text: 'Quase todo radical terminado em 르 dobra o ㄹ antes de vogal: 모르다 → 몰라요, 빠르다 → 빨라요, 다르다 → 달라요, 부르다 → 불러요, 고르다 → 골라요. A vogal antes do 르 decide entre 라 e 러. O irregular em ㅎ atinge os adjetivos de cor e os de «assim»: o ㅎ cai e a vogal vira ㅐ (ou ㅒ depois de ㅑ): 빨갛다 → 빨개요, 하얗다 → 하얘요, 어떻다 → 어때요, 그렇다 → 그래요. Os verbos com ㅎ são regulares: 좋다 → 좋아요, 놓다 → 놓아요.',
+        text: 'Quase todo radical terminado em 르 dobra o ㄹ antes de vogal: 모르다 → 몰라요, 빠르다 → 빨라요, 다르다 → 달라요, 부르다 → 불러요, 고르다 → 골라요. A vogal antes do 르 decide entre 라 e 러. O irregular em ㅎ atinge os adjetivos de cor e os de “assim”: o ㅎ cai e a vogal vira ㅐ (ou ㅒ depois de ㅑ): 빨갛다 → 빨개요, 하얗다 → 하얘요, 어떻다 → 어때요, 그렇다 → 그래요. Os verbos com ㅎ são regulares: 좋다 → 좋아요, 놓다 → 놓아요.',
         table: {
           head: ['Dicionário', '해요체', 'Português'],
           rows: [
@@ -2012,12 +2012,12 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Conjugar o irregular como regular: «덥어요», «듣어요», «모르어요» e «빨갛아요» não existem.',
+      'Conjugar o irregular como regular: “덥어요”, “듣어요”, “모르어요” e “빨갛아요” não existem.',
       'Aplicar a irregularidade às regulares parecidas: 입다 → 입어요, 받다 → 받아요, 웃다 → 웃어요, 좋다 → 좋아요.',
-      'Fundir as vogais no irregular em ㅅ: 낫다 → 나아요, e não «나요».',
+      'Fundir as vogais no irregular em ㅅ: 낫다 → 나아요, e não “나요”.',
       'Mudar o radical antes de consoante: a irregularidade só aparece antes de vogal. 덥고, 듣지, 모르고 ficam como no dicionário.',
-      'Esquecer que 돕다 faz 도와요, com 와: «도워요» está errado.',
-      'Manter o ㄹ antes de ㄴ, ㅂ, ㅅ: é 사세요 e 아세요, e não «살으세요» nem «알으세요».',
+      'Esquecer que 돕다 faz 도와요, com 와: “도워요” está errado.',
+      'Manter o ㄹ antes de ㄴ, ㅂ, ㅅ: é 사세요 e 아세요, e não “살으세요” nem “알으세요”.',
     ],
     quiz: [
       {
@@ -2069,7 +2069,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     level: 'B1.2',
     title: 'As mudanças de som: 연음, 비음화, 경음화, 구개음화 e o ㅎ',
     emoji: '🎧',
-    summary: 'O hangul escreve a palavra como ela é «por dentro», e a fala ajusta os sons que se encostam. Cinco regras explicam quase tudo: a ligação (한국어 [한구거]), a nasalização (합니다 [함니다]), o endurecimento (학교 [학꾜]), a palatalização (같이 [가치]) e o ㅎ que cai ou sopra (좋아요 [조아요], 좋다 [조타]). Os dicionários coreanos mostram a pronúncia entre colchetes, em hangul.',
+    summary: 'O hangul escreve a palavra como ela é “por dentro”, e a fala ajusta os sons que se encostam. Cinco regras explicam quase tudo: a ligação (한국어 [한구거]), a nasalização (합니다 [함니다]), o endurecimento (학교 [학꾜]), a palatalização (같이 [가치]) e o ㅎ que cai ou sopra (좋아요 [조아요], 좋다 [조타]). Os dicionários coreanos mostram a pronúncia entre colchetes, em hangul.',
     sections: [
       {
         heading: 'Por que a escrita não acompanha a fala',
@@ -2164,7 +2164,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Ler letra por letra: 합니다 não é «hap-ni-da», é [함니다]; 국물 é [궁물].',
+      'Ler letra por letra: 합니다 não é “hap-ni-da”, é [함니다]; 국물 é [궁물].',
       'Achar que a escrita está errada: ela guarda a raiz da palavra, e a pronúncia segue regras fixas.',
       'Esquecer o endurecimento: 학교 é [학꾜], 식당 é [식땅]. Sem ele, o sotaque estrangeiro aparece na hora.',
       'Pronunciar o ㅎ de 좋아요 e 괜찮아요: diante de vogal, ele cai.',
@@ -2200,12 +2200,12 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         question: 'Como se pronuncia 신라, o antigo reino?',
         options: ['실라', '신나', '신라'],
         answer: '실라',
-        explanation: 'Lateralização: ㄴ + ㄹ vira [ㄹㄹ]. Por isso a romanização é «Silla».',
+        explanation: 'Lateralização: ㄴ + ㄹ vira [ㄹㄹ]. Por isso a romanização é “Silla”.',
       },
       {
-        question: 'Por que 합니다 soa como «ham-ni-da»?',
-        options: ['Porque o «p» final vira «m» antes de «n»', 'Porque é uma exceção decorada', 'Porque o «h» cai entre vogais'],
-        answer: 'Porque o «p» final vira «m» antes de «n»',
+        question: 'Por que 합니다 soa como “ham-ni-da”?',
+        options: ['Porque o “p” final vira “m” antes de “n”', 'Porque é uma exceção decorada', 'Porque o “h” cai entre vogais'],
+        answer: 'Porque o “p” final vira “m” antes de “n”',
         explanation: 'É a nasalização: [p̚] diante de ㄴ vira [m]. Vale para todo -습니다/-ㅂ니다.',
       },
     ],
@@ -2215,11 +2215,11 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     level: 'B1.2',
     title: 'Poder, dever e permissão: -(으)ㄹ 수 있다, -아/어야 하다, -아/어도 되다',
     emoji: '🚦',
-    summary: '-(으)ㄹ 수 있다 é «poder, conseguir» (할 수 있어요), e o contrário é -(으)ㄹ 수 없다. -아/어야 하다 (ou 되다) é «ter que» (가야 해요). Para pedir licença, -아/어도 돼요? (앉아도 돼요?, posso sentar?); para proibir, -(으)면 안 돼요 (찍으면 안 돼요, não pode fotografar). E para «não precisa», 안 -아/어도 돼요.',
+    summary: '-(으)ㄹ 수 있다 é “poder, conseguir” (할 수 있어요), e o contrário é -(으)ㄹ 수 없다. -아/어야 하다 (ou 되다) é “ter que” (가야 해요). Para pedir licença, -아/어도 돼요? (앉아도 돼요?, posso sentar?); para proibir, -(으)면 안 돼요 (찍으면 안 돼요, não pode fotografar). E para “não precisa”, 안 -아/어도 돼요.',
     sections: [
       {
         heading: '-(으)ㄹ 수 있다/없다: poder, conseguir',
-        text: 'O 수 é «meio, jeito»: 갈 수 있어요 é, ao pé da letra, «existe um jeito de eu ir». Radical com vogal ganha ㄹ (갈 수), com consoante, 을 (먹을 수), e o radical em ㄹ fica como está (만들 수). Serve para capacidade e para possibilidade. 갈 수 없어요 equivale a 못 가요. Na pronúncia, o 수 fica tenso: [할 쑤 이써요]. Para habilidade aprendida («saber nadar», «saber dirigir»), também se usa -(으)ㄹ 줄 알다/모르다: 수영할 줄 알아요.',
+        text: 'O 수 é “meio, jeito”: 갈 수 있어요 é, ao pé da letra, “existe um jeito de eu ir”. Radical com vogal ganha ㄹ (갈 수), com consoante, 을 (먹을 수), e o radical em ㄹ fica como está (만들 수). Serve para capacidade e para possibilidade. 갈 수 없어요 equivale a 못 가요. Na pronúncia, o 수 fica tenso: [할 쑤 이써요]. Para habilidade aprendida (“saber nadar”, “saber dirigir”), também se usa -(으)ㄹ 줄 알다/모르다: 수영할 줄 알아요.',
         table: {
           head: ['Dicionário', 'Pode', 'Não pode', 'Português'],
           rows: [
@@ -2238,7 +2238,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: '-아/어야 하다: ter que',
-        text: 'O «ter que» se forma com a mesma escolha de vogal do 해요체: 가야 해요, 먹어야 해요, 공부해야 해요. Na fala, 되다 é tão comum quanto 하다: 가야 돼요. O passado vai no fim: 가야 했어요 (tive que ir). E «não precisa» é 안 -아/어도 되다 ou -지 않아도 되다: 안 가도 돼요, 가지 않아도 돼요.',
+        text: 'O “ter que” se forma com a mesma escolha de vogal do 해요체: 가야 해요, 먹어야 해요, 공부해야 해요. Na fala, 되다 é tão comum quanto 하다: 가야 돼요. O passado vai no fim: 가야 했어요 (tive que ir). E “não precisa” é 안 -아/어도 되다 ou -지 않아도 되다: 안 가도 돼요, 가지 않아도 돼요.',
         table: {
           head: ['Dicionário', 'Tem que', 'Não precisa', 'Português'],
           rows: [
@@ -2256,7 +2256,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'Pedir licença e proibir: -아/어도 되다, -(으)면 안 되다',
-        text: '-아/어도 돼요? é o «posso?» de permissão: 앉아도 돼요? (posso sentar?). A resposta positiva repete a forma, ou convida (네, 앉으세요); a negativa usa -(으)면 안 돼요, «se fizer, não pode»: 사진 찍으면 안 돼요. Não confunda com -(으)ㄹ 수 있어요?, que pergunta se é possível, não se é permitido.',
+        text: '-아/어도 돼요? é o “posso?” de permissão: 앉아도 돼요? (posso sentar?). A resposta positiva repete a forma, ou convida (네, 앉으세요); a negativa usa -(으)면 안 돼요, “se fizer, não pode”: 사진 찍으면 안 돼요. Não confunda com -(으)ㄹ 수 있어요?, que pergunta se é possível, não se é permitido.',
         table: {
           head: ['Pergunta', 'Sim', 'Não'],
           rows: [
@@ -2274,24 +2274,24 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Juntar tudo sem espaço: é 할 수 있어요, três palavras, e não «할수있어요».',
-      'Pedir permissão com -(으)ㄹ 수 있어요?: 먹을 수 있어요? pergunta se dá para comer; «posso comer (tenho permissão)?» é 먹어도 돼요?',
-      'Confundir «não precisa» com «não pode»: 안 가도 돼요 (não precisa ir) × 가면 안 돼요 (não pode ir).',
+      'Juntar tudo sem espaço: é 할 수 있어요, três palavras, e não “할수있어요”.',
+      'Pedir permissão com -(으)ㄹ 수 있어요?: 먹을 수 있어요? pergunta se dá para comer; “posso comer (tenho permissão)?” é 먹어도 돼요?',
+      'Confundir “não precisa” com “não pode”: 안 가도 돼요 (não precisa ir) × 가면 안 돼요 (não pode ir).',
       'Errar a vogal: 가야 해요 (ㅏ), 먹어야 해요 (ㅓ), 해야 해요 (하다).',
       'Pronunciar 수 como está escrito: depois de -(으)ㄹ ele fica tenso, [쑤].',
     ],
     quiz: [
       {
-        question: 'Como se diz «Consigo comer comida apimentada»?',
+        question: 'Como se diz “Consigo comer comida apimentada”?',
         options: ['매운 음식을 먹을 수 있어요.', '매운 음식을 먹을 수 해요.', '매운 음식을 먹어 수 있어요.'],
         answer: '매운 음식을 먹을 수 있어요.',
         explanation: 'Radical com consoante + 을 수 있다: 먹을 수 있어요.',
       },
       {
-        question: 'Como se diz «Amanhã tenho que acordar cedo»? 내일 일찍 ___.',
+        question: 'Como se diz “Amanhã tenho que acordar cedo”? 내일 일찍 ___.',
         options: ['일어나야 해요', '일어나어야 해요', '일어나도 돼요'],
         answer: '일어나야 해요',
-        explanation: '일어나 + 아야 → 일어나야 (as vogais se fundem). 일어나도 돼요 é «pode acordar».',
+        explanation: '일어나 + 아야 → 일어나야 (as vogais se fundem). 일어나도 돼요 é “pode acordar”.',
       },
       {
         question: 'Você quer saber se pode sentar numa cadeira vazia. O que pergunta?',
@@ -2303,7 +2303,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         question: 'O que quer dizer 안 가도 돼요?',
         options: ['Não precisa ir.', 'Não pode ir.', 'Não quero ir.'],
         answer: 'Não precisa ir.',
-        explanation: '안 + -아/어도 되다 = «mesmo não fazendo, tudo bem»: não precisa.',
+        explanation: '안 + -아/어도 되다 = “mesmo não fazendo, tudo bem”: não precisa.',
       },
       {
         question: 'Complete: 여기서 사진을 찍___ 안 돼요.',
@@ -2319,11 +2319,11 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     level: 'B1.3',
     title: 'Ligar frases: -지만, -아/어서 e -(으)니까',
     emoji: '🪢',
-    summary: '-지만 é «mas» (비싸지만 맛있어요). -아/어서 dá a causa ou liga duas ações encadeadas (바빠서 못 가요; 가서 먹어요). -(으)니까 também é «porque», mas soa como justificativa e é o único que aceita um pedido ou convite depois: 추우니까 창문을 닫아 주세요. E para pedir desculpas, sempre -아/어서: 늦어서 죄송해요.',
+    summary: '-지만 é “mas” (비싸지만 맛있어요). -아/어서 dá a causa ou liga duas ações encadeadas (바빠서 못 가요; 가서 먹어요). -(으)니까 também é “porque”, mas soa como justificativa e é o único que aceita um pedido ou convite depois: 추우니까 창문을 닫아 주세요. E para pedir desculpas, sempre -아/어서: 늦어서 죄송해요.',
     sections: [
       {
         heading: '-지만: mas',
-        text: 'Radical + 지만, sem regra de vogal: 비싸지만, 어렵지만, e no passado 먹었지만. Com substantivo, (이)지만: 학생이지만, 의사지만. Duas expressões com -지만 abrem pedidos educados, como o nosso «desculpe incomodar, mas…»: 죄송하지만 e 실례지만.',
+        text: 'Radical + 지만, sem regra de vogal: 비싸지만, 어렵지만, e no passado 먹었지만. Com substantivo, (이)지만: 학생이지만, 의사지만. Duas expressões com -지만 abrem pedidos educados, como o nosso “desculpe incomodar, mas…”: 죄송하지만 e 실례지만.',
         table: {
           head: ['Dicionário', 'Com -지만', 'Exemplo', 'Português'],
           rows: [
@@ -2362,7 +2362,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: '-(으)니까: porque (então faça isso)',
-        text: 'O -(으)니까 é 니까 depois de vogal e de ㄹ (가니까, e o ㄹ cai: 사니까) e 으니까 depois de consoante (먹으니까). Ele soa como justificativa, «já que…», e por isso combina com pedidos, ordens e convites: 추우니까 창문 닫아 주세요. Aceita passado (갔으니까) e, sozinho no fim, vira resposta: 왜요? 배가 안 고프니까요. Um segundo uso é a descoberta: «quando fiz X, percebi Y» (집에 가니까 아무도 없었어요). Justamente por soar como argumento, não serve para pedir desculpas: «늦었으니까 죄송해요» parece «já que me atrasei, desculpa aí».',
+        text: 'O -(으)니까 é 니까 depois de vogal e de ㄹ (가니까, e o ㄹ cai: 사니까) e 으니까 depois de consoante (먹으니까). Ele soa como justificativa, “já que…”, e por isso combina com pedidos, ordens e convites: 추우니까 창문 닫아 주세요. Aceita passado (갔으니까) e, sozinho no fim, vira resposta: 왜요? 배가 안 고프니까요. Um segundo uso é a descoberta: “quando fiz X, percebi Y” (집에 가니까 아무도 없었어요). Justamente por soar como argumento, não serve para pedir desculpas: “늦었으니까 죄송해요” parece “já que me atrasei, desculpa aí”.',
         table: {
           head: ['Critério', '-아/어서', '-(으)니까'],
           rows: [
@@ -2381,7 +2381,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'No começo da frase: 그리고, 그래서, 그런데…',
-        text: 'Cada terminação tem um primo que abre a frase seguinte. Eles são muito usados na fala, e 그런데 (na fala rápida, 근데) serve também para mudar de assunto, como o nosso «aliás» ou «e aí».',
+        text: 'Cada terminação tem um primo que abre a frase seguinte. Eles são muito usados na fala, e 그런데 (na fala rápida, 근데) serve também para mudar de assunto, como o nosso “aliás” ou “e aí”.',
         table: {
           head: ['Palavra', 'Português', 'Parente de'],
           rows: [
@@ -2400,8 +2400,8 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pôr passado antes de -아/어서: «늦었어서» não existe. O tempo vai no fim: 늦어서 죄송해요.',
-      'Pedir ou convidar depois de -아/어서: «비가 와서 우산 가져가세요» soa errado. Use 비가 오니까.',
+      'Pôr passado antes de -아/어서: “늦었어서” não existe. O tempo vai no fim: 늦어서 죄송해요.',
+      'Pedir ou convidar depois de -아/어서: “비가 와서 우산 가져가세요” soa errado. Use 비가 오니까.',
       'Pedir desculpas com -(으)니까: soa como justificativa. Desculpa é sempre com -아/어서.',
       'Trocar -고 e -아/어서 na sequência: 가서 먹어요 (vou lá e como lá) não é o mesmo que 가고 먹어요 (vou, e também como).',
       'Esquecer que o ㄹ cai antes de -니까: 살다 → 사니까, 알다 → 아니까.',
@@ -2412,10 +2412,10 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         question: 'Complete: 이 식당은 비싸___ 맛있어요.',
         options: ['지만', '아서', '니까'],
         answer: '지만',
-        explanation: 'Contraste («é caro, mas é gostoso»): -지만.',
+        explanation: 'Contraste (“é caro, mas é gostoso”): -지만.',
       },
       {
-        question: 'Como se diz «Desculpe pelo atraso»?',
+        question: 'Como se diz “Desculpe pelo atraso”?',
         options: ['늦어서 죄송해요.', '늦었으니까 죄송해요.', '늦었어서 죄송해요.'],
         answer: '늦어서 죄송해요.',
         explanation: 'Desculpas usam -아/어서, sem passado antes. Com -(으)니까, soaria como justificativa.',
@@ -2427,7 +2427,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         explanation: 'Depois vem um pedido (가져가세요), então só -(으)니까 serve.',
       },
       {
-        question: 'Qual frase quer dizer «Fui à escola e lá encontrei um amigo»?',
+        question: 'Qual frase quer dizer “Fui à escola e lá encontrei um amigo”?',
         options: ['학교에 가서 친구를 만났어요.', '학교에 가고 친구를 만났어요.', '학교에 갔지만 친구를 만났어요.'],
         answer: '학교에 가서 친구를 만났어요.',
         explanation: '-아/어서 liga ações encadeadas: o encontro aconteceu na escola.',
@@ -2436,7 +2436,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         question: 'O que quer dizer 만나서 반가워요?',
         options: ['Prazer em conhecer.', 'Vamos nos encontrar.', 'Encontrei e fiquei triste.'],
         answer: 'Prazer em conhecer.',
-        explanation: 'Literalmente: «por ter te encontrado, estou contente». O -아/어서 dá a causa.',
+        explanation: 'Literalmente: “por ter te encontrado, estou contente”. O -아/어서 dá a causa.',
       },
     ],
   },
@@ -2469,7 +2469,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'Verbos com forma própria',
-        text: 'Alguns verbos do dia a dia não recebem simplesmente -(으)시-: trocam de palavra. 드시다 é comer e beber; 계시다 é estar (para pessoas); 주무시다 é dormir; 말씀하시다 é dizer. Atenção à diferença: «o professor está na sala» é 선생님이 교실에 계세요, mas «o senhor tem tempo?» é 시간 있으세요? (ter usa 있으시다). E as despedidas: quem vai embora diz 안녕히 계세요 («fique bem», para quem fica); quem fica diz 안녕히 가세요 («vá bem»).',
+        text: 'Alguns verbos do dia a dia não recebem simplesmente -(으)시-: trocam de palavra. 드시다 é comer e beber; 계시다 é estar (para pessoas); 주무시다 é dormir; 말씀하시다 é dizer. Atenção à diferença: “o professor está na sala” é 선생님이 교실에 계세요, mas “o senhor tem tempo?” é 시간 있으세요? (ter usa 있으시다). E as despedidas: quem vai embora diz 안녕히 계세요 (“fique bem”, para quem fica); quem fica diz 안녕히 가세요 (“vá bem”).',
         table: {
           head: ['Comum', 'Honorífico', 'Português'],
           rows: [
@@ -2491,7 +2491,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'Partículas e substantivos que se curvam',
-        text: 'O sujeito honrado leva 께서 no lugar de 이/가 (e 께서는 no lugar de 은/는); o destinatário honrado leva 께 no lugar de 에게/한테 («para»). Na conversa, 께서 é formal e aparece pouco; 께 é mais comum. E alguns substantivos têm versão respeitosa: você pergunta o 성함 (nome) e a 연세 (idade) de um senhor, e fala da 댁 (casa) dele.',
+        text: 'O sujeito honrado leva 께서 no lugar de 이/가 (e 께서는 no lugar de 은/는); o destinatário honrado leva 께 no lugar de 에게/한테 (“para”). Na conversa, 께서 é formal e aparece pouco; 께 é mais comum. E alguns substantivos têm versão respeitosa: você pergunta o 성함 (nome) e a 연세 (idade) de um senhor, e fala da 댁 (casa) dele.',
         table: {
           head: ['Comum', 'Honorífico', 'Português'],
           rows: [
@@ -2514,7 +2514,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'Humildade: falar de si para baixo',
-        text: 'O outro lado da moeda: quando você faz algo para um superior, o verbo se abaixa. 드리다 no lugar de 주다 (dar), 여쭤보다 no lugar de 물어보다 (perguntar), 뵙다 no lugar de 만나다 (ver, encontrar), 모시다 (acompanhar, levar alguém respeitado). E o próprio «eu» vira 저, e «nós», 저희. Esse sistema de humildade se aprofunda no C1.2.',
+        text: 'O outro lado da moeda: quando você faz algo para um superior, o verbo se abaixa. 드리다 no lugar de 주다 (dar), 여쭤보다 no lugar de 물어보다 (perguntar), 뵙다 no lugar de 만나다 (ver, encontrar), 모시다 (acompanhar, levar alguém respeitado). E o próprio “eu” vira 저, e “nós”, 저희. Esse sistema de humildade se aprofunda no C1.2.',
         table: {
           head: ['Comum', 'Humilde', 'Português'],
           rows: [
@@ -2533,11 +2533,11 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Honrar a si mesmo: «제가 가실게요» está errado. O -(으)시- é só para os outros.',
-      'Falar dos próprios pais e avós sem honorífico: em coreano se diz 할머니가 주무세요, e não «할머니가 자요».',
+      'Honrar a si mesmo: “제가 가실게요” está errado. O -(으)시- é só para os outros.',
+      'Falar dos próprios pais e avós sem honorífico: em coreano se diz 할머니가 주무세요, e não “할머니가 자요”.',
       'Confundir 계시다 e 있으시다: a pessoa está → 계세요; a pessoa tem → 있으세요 (시간 있으세요?).',
       'Trocar as despedidas: quem sai diz 안녕히 계세요; quem fica diz 안녕히 가세요.',
-      'Honrar objetos: «커피 나오셨습니다» (o café saiu, com honorífico) se ouve muito em lojas, mas é considerado erro; o respeito vai para pessoas: 커피 나왔습니다.',
+      'Honrar objetos: “커피 나오셨습니다” (o café saiu, com honorífico) se ouve muito em lojas, mas é considerado erro; o respeito vai para pessoas: 커피 나왔습니다.',
       'Usar 께서 o tempo todo na conversa: é formal; no dia a dia, 이/가 com o verbo honorífico já basta.',
     ],
     quiz: [
@@ -2557,19 +2557,19 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         question: 'Você está saindo da loja, e o dono fica. O que você diz?',
         options: ['안녕히 계세요.', '안녕히 가세요.', '안녕히 주무세요.'],
         answer: '안녕히 계세요.',
-        explanation: 'Quem sai deseja que o outro «fique bem»: 안녕히 계세요.',
+        explanation: 'Quem sai deseja que o outro “fique bem”: 안녕히 계세요.',
       },
       {
         question: 'Como se pergunta o nome de um senhor mais velho?',
         options: ['성함이 어떻게 되세요?', '이름이 뭐야?', '너 이름이 뭐예요?'],
         answer: '성함이 어떻게 되세요?',
-        explanation: '성함 é o «nome» respeitoso, e 어떻게 되세요? é o jeito educado de perguntar dados pessoais.',
+        explanation: '성함 é o “nome” respeitoso, e 어떻게 되세요? é o jeito educado de perguntar dados pessoais.',
       },
       {
         question: 'Complete: 어머니___ 꽃을 드렸어요. (Dei flores à minha mãe.)',
         options: ['께', '께서', '에서'],
         answer: '께',
-        explanation: '께 é o «para» honorífico (no lugar de 에게/한테). 께서 marca o sujeito.',
+        explanation: '께 é o “para” honorífico (no lugar de 에게/한테). 께서 marca o sujeito.',
       },
       {
         question: 'Qual frase está errada?',
@@ -2584,11 +2584,11 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     level: 'B1.3',
     title: '-아/어 주다 e -아/어 드리다: fazer algo por alguém',
     emoji: '🎁',
-    summary: 'Quando alguém faz algo em benefício de outro, o coreano acrescenta o verbo «dar»: 사 주다 (comprar para alguém), 읽어 주다 (ler para alguém). O pedido educado de todo dia é -아/어 주세요 (천천히 말해 주세요). Quando o beneficiado é superior, 드리다 (도와 드릴게요); quando é o superior quem faz o favor, 주시다 (가르쳐 주셨어요).',
+    summary: 'Quando alguém faz algo em benefício de outro, o coreano acrescenta o verbo “dar”: 사 주다 (comprar para alguém), 읽어 주다 (ler para alguém). O pedido educado de todo dia é -아/어 주세요 (천천히 말해 주세요). Quando o beneficiado é superior, 드리다 (도와 드릴게요); quando é o superior quem faz o favor, 주시다 (가르쳐 주셨어요).',
     sections: [
       {
         heading: 'O favor dentro do verbo',
-        text: 'O português diz «comprei um presente para o meu irmão»; o coreano pode dizer 동생한테 선물을 사 줬어요, e o 주다 deixa claro que foi um favor, um gesto para alguém. Quem recebe leva 에게 ou, na fala, 한테. Na escrita padrão, o 주다 fica separado (사 주다, 읽어 주다), mas 도와주다 (ajudar) já virou uma palavra só.',
+        text: 'O português diz “comprei um presente para o meu irmão”; o coreano pode dizer 동생한테 선물을 사 줬어요, e o 주다 deixa claro que foi um favor, um gesto para alguém. Quem recebe leva 에게 ou, na fala, 한테. Na escrita padrão, o 주다 fica separado (사 주다, 읽어 주다), mas 도와주다 (ajudar) já virou uma palavra só.',
         table: {
           head: ['Sem 주다', 'Com 주다', 'Português'],
           rows: [
@@ -2607,7 +2607,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: '-아/어 주세요: o pedido educado',
-        text: 'É o padrão mais útil para quem viaja: verbo no -아/어 + 주세요. O 좀 («um pouco») antes do verbo suaviza, como um «por favor». Para ser ainda mais cortês, -아/어 주시겠어요? ou -아/어 주실 수 있어요?. E 주세요 sozinho, depois de um substantivo, é «me dá, por favor»: 물 주세요.',
+        text: 'É o padrão mais útil para quem viaja: verbo no -아/어 + 주세요. O 좀 (“um pouco”) antes do verbo suaviza, como um “por favor”. Para ser ainda mais cortês, -아/어 주시겠어요? ou -아/어 주실 수 있어요?. E 주세요 sozinho, depois de um substantivo, é “me dá, por favor”: 물 주세요.',
         table: {
           head: ['Pedido', 'Português'],
           rows: [
@@ -2646,7 +2646,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'Quem paga a conta',
-        text: 'Na Coreia, é comum uma pessoa pagar a conta de todos, muitas vezes a mais velha ou a de posição mais alta. Da próxima vez, quem foi convidado retribui: 다음에는 제가 살게요 (da próxima, pago eu). Por isso os mais novos brincam com os veteranos: 선배님, 밥 사 주세요! (me paga um almoço!). Entre jovens, dividir a conta ficou comum, e tem até nome: 더치페이 (do inglês «Dutch pay») ou 각자 내기 (cada um paga o seu).',
+        text: 'Na Coreia, é comum uma pessoa pagar a conta de todos, muitas vezes a mais velha ou a de posição mais alta. Da próxima vez, quem foi convidado retribui: 다음에는 제가 살게요 (da próxima, pago eu). Por isso os mais novos brincam com os veteranos: 선배님, 밥 사 주세요! (me paga um almoço!). Entre jovens, dividir a conta ficou comum, e tem até nome: 더치페이 (do inglês “Dutch pay”) ou 각자 내기 (cada um paga o seu).',
         examples: [
           ['오늘은 제가 살게요.', 'Hoje eu pago.'],
           ['선배님, 밥 사 주세요!', 'Veterano, me paga um almoço! (em tom de brincadeira)'],
@@ -2659,11 +2659,11 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       'Usar 주다 quando o beneficiado é superior: para o avô é 드리다 (할아버지께 사 드렸어요).',
       'Esquecer o 주시다 quando o superior faz o favor: 선생님이 가르쳐 주셨어요.',
       'Oferecer ajuda a um mais velho com 도와줄게요: soa íntimo demais; diga 도와 드릴게요.',
-      'Traduzir 제가 살게요 como «eu vou morar»: no restaurante, é «eu pago» (사다, comprar, no futuro de intenção).',
+      'Traduzir 제가 살게요 como “eu vou morar”: no restaurante, é “eu pago” (사다, comprar, no futuro de intenção).',
     ],
     quiz: [
       {
-        question: 'Como se pede «Fale devagar, por favor»?',
+        question: 'Como se pede “Fale devagar, por favor”?',
         options: ['천천히 말해 주세요.', '천천히 말해요 주세요.', '천천히 말하세요 줘요.'],
         answer: '천천히 말해 주세요.',
         explanation: 'Verbo em -아/어 (말해) + 주세요.',
@@ -2681,7 +2681,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         explanation: 'Quem fez o favor é o professor, superior: 주다 + -시- = 주셨어요.',
       },
       {
-        question: 'No táxi, como se diz «Pare aqui, por favor»?',
+        question: 'No táxi, como se diz “Pare aqui, por favor”?',
         options: ['여기서 세워 주세요.', '여기서 세워요 주세요.', '여기서 주세요 세워.'],
         answer: '여기서 세워 주세요.',
         explanation: '세우다 (parar o carro) → 세워 + 주세요.',
@@ -2690,7 +2690,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         question: 'No fim do jantar, alguém diz 오늘은 제가 살게요. O que quer dizer?',
         options: ['Hoje eu pago.', 'Hoje eu vou morar aqui.', 'Hoje eu compro depois.'],
         answer: 'Hoje eu pago.',
-        explanation: '사다 (comprar) é também «pagar para alguém». É costume retribuir da próxima vez.',
+        explanation: '사다 (comprar) é também “pagar para alguém”. É costume retribuir da próxima vez.',
       },
     ],
   },
@@ -2700,11 +2700,11 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     level: 'B1.4',
     title: '-(으)면, -(으)ㄹ 때 e -는데: condição, tempo e pano de fundo',
     emoji: '🌦️',
-    summary: '-(으)면 é «se» e «quando (sempre que)»: 시간이 있으면 가요. -(으)ㄹ 때 é «na hora em que»: 어렸을 때 (quando eu era criança). E -는데 apresenta o pano de fundo do que vem depois: 지금 마트에 가는데 뭐 필요해요? (estou indo ao mercado; precisa de algo?). No fim da frase, -는데요 deixa uma reticência educada, muito coreana.',
+    summary: '-(으)면 é “se” e “quando (sempre que)”: 시간이 있으면 가요. -(으)ㄹ 때 é “na hora em que”: 어렸을 때 (quando eu era criança). E -는데 apresenta o pano de fundo do que vem depois: 지금 마트에 가는데 뭐 필요해요? (estou indo ao mercado; precisa de algo?). No fim da frase, -는데요 deixa uma reticência educada, muito coreana.',
     sections: [
       {
         heading: '-(으)면: se, sempre que',
-        text: 'Radical com vogal ou ㄹ + 면 (가면, 살면); com consoante, 으면 (먹으면). Os irregulares mudam: 추우면, 들으면, 모르면. Serve para condição («se chover») e para o que sempre acontece («quando chega a primavera»). Para reforçar a hipótese, 만약 no começo: 만약 비가 오면…',
+        text: 'Radical com vogal ou ㄹ + 면 (가면, 살면); com consoante, 으면 (먹으면). Os irregulares mudam: 추우면, 들으면, 모르면. Serve para condição (“se chover”) e para o que sempre acontece (“quando chega a primavera”). Para reforçar a hipótese, 만약 no começo: 만약 비가 오면…',
         table: {
           head: ['Dicionário', 'Com -(으)면', 'Exemplo', 'Português'],
           rows: [
@@ -2723,7 +2723,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: '-았/었으면 좋겠다: tomara que',
-        text: 'Com o passado e 좋겠다 («seria bom»), o -(으)면 vira desejo: 날씨가 좋았으면 좋겠어요 (tomara que faça tempo bom). É o jeito mais comum de dizer «eu queria que…», «tomara». Também se ouve sem o passado (좋으면 좋겠어요), com o mesmo sentido.',
+        text: 'Com o passado e 좋겠다 (“seria bom”), o -(으)면 vira desejo: 날씨가 좋았으면 좋겠어요 (tomara que faça tempo bom). É o jeito mais comum de dizer “eu queria que…”, “tomara”. Também se ouve sem o passado (좋으면 좋겠어요), com o mesmo sentido.',
         examples: [
           ['주말에 날씨가 좋았으면 좋겠어요.', 'Tomara que faça tempo bom no fim de semana.'],
           ['한국어를 빨리 잘했으면 좋겠어요.', 'Queria falar coreano bem logo.'],
@@ -2732,7 +2732,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: '-(으)ㄹ 때: na hora em que',
-        text: 'Para «quando» num momento determinado, sem condição, use -(으)ㄹ 때: 밥 먹을 때 (na hora de comer), 한국에 갈 때 (quando eu for à Coreia). No passado, -았/었을 때: 어렸을 때 (quando eu era criança), 처음 만났을 때 (quando nos conhecemos). Com substantivos, só 때: 방학 때 (nas férias), 점심 때 (na hora do almoço). -(으)면 é «se/sempre que»; -(으)ㄹ 때 é «na ocasião em que».',
+        text: 'Para “quando” num momento determinado, sem condição, use -(으)ㄹ 때: 밥 먹을 때 (na hora de comer), 한국에 갈 때 (quando eu for à Coreia). No passado, -았/었을 때: 어렸을 때 (quando eu era criança), 처음 만났을 때 (quando nos conhecemos). Com substantivos, só 때: 방학 때 (nas férias), 점심 때 (na hora do almoço). -(으)면 é “se/sempre que”; -(으)ㄹ 때 é “na ocasião em que”.',
         examples: [
           ['어렸을 때 부산에 살았어요.', 'Quando eu era criança, morava em Busan.'],
           ['밥 먹을 때 휴대폰 보지 마.', 'Não fica olhando o celular na hora de comer. (반말)'],
@@ -2741,7 +2741,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: '-는데: o pano de fundo',
-        text: 'O -는데 apresenta uma situação para então dizer o que importa: uma pergunta, um pedido, um contraste. «Estou indo ao mercado (e aí), precisa de alguma coisa?» A forma depende da palavra: verbos e 있다/없다 levam -는데 (가는데, 맛있는데); adjetivos, -(으)ㄴ데 (비싼데, 좋은데, 추운데); substantivos, 인데 (학생인데); o passado, -았/었는데 (갔는데). Às vezes é contraste, mais suave que -지만: 이 옷은 예쁜데 좀 비싸요.',
+        text: 'O -는데 apresenta uma situação para então dizer o que importa: uma pergunta, um pedido, um contraste. “Estou indo ao mercado (e aí), precisa de alguma coisa?” A forma depende da palavra: verbos e 있다/없다 levam -는데 (가는데, 맛있는데); adjetivos, -(으)ㄴ데 (비싼데, 좋은데, 추운데); substantivos, 인데 (학생인데); o passado, -았/었는데 (갔는데). Às vezes é contraste, mais suave que -지만: 이 옷은 예쁜데 좀 비싸요.',
         table: {
           head: ['Tipo', 'Forma', 'Exemplo'],
           rows: [
@@ -2762,7 +2762,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: '-는데요: a reticência educada',
-        text: 'No fim da frase, -는데요 deixa o resto no ar, e o ouvinte completa. É um jeito educado de discordar, recusar ou dar uma notícia chata sem ser direto: ao telefone, 지금 안 계시는데요 («ele não está no momento…», fica implícito «quer deixar recado?»). Também mostra surpresa: 와, 맛있는데요! («nossa, até que é gostoso!»). Esse gosto por deixar as coisas subentendidas tem nome na cultura coreana, 눈치: a arte de perceber o que não foi dito.',
+        text: 'No fim da frase, -는데요 deixa o resto no ar, e o ouvinte completa. É um jeito educado de discordar, recusar ou dar uma notícia chata sem ser direto: ao telefone, 지금 안 계시는데요 (“ele não está no momento…”, fica implícito “quer deixar recado?”). Também mostra surpresa: 와, 맛있는데요! (“nossa, até que é gostoso!”). Esse gosto por deixar as coisas subentendidas tem nome na cultura coreana, 눈치: a arte de perceber o que não foi dito.',
         examples: [
           ['저는 잘 모르겠는데요.', 'Eu não sei bem…'],
           ['죄송한데요, 그건 제 자리인데요.', 'Desculpe, mas esse é o meu lugar…'],
@@ -2771,11 +2771,11 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar -(으)면 para um momento passado específico: «어렸으면 부산에 살았어요» está errado; é 어렸을 때.',
-      'Errar a forma do -는데: verbo → 는데 (가는데); adjetivo → (으)ㄴ데 (비싼데). «비싸는데» não existe, mas 있다/없다 levam 는데 (맛있는데).',
-      'Traduzir -는데 sempre como «mas»: muitas vezes é só o pano de fundo, um «e aí».',
+      'Usar -(으)면 para um momento passado específico: “어렸으면 부산에 살았어요” está errado; é 어렸을 때.',
+      'Errar a forma do -는데: verbo → 는데 (가는데); adjetivo → (으)ㄴ데 (비싼데). “비싸는데” não existe, mas 있다/없다 levam 는데 (맛있는데).',
+      'Traduzir -는데 sempre como “mas”: muitas vezes é só o pano de fundo, um “e aí”.',
       'Esquecer os irregulares: 추우면, 추운데; 들으면; 모르면.',
-      'Dizer «학생이는데»: com substantivo é 인데 (학생인데).',
+      'Dizer “학생이는데”: com substantivo é 인데 (학생인데).',
       'Achar que -는데요 no fim é frase cortada ou grosseira: é uma reticência educada, das mais usadas.',
     ],
     quiz: [
@@ -2789,7 +2789,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         question: 'Complete: 이 가방은 ___ 좀 비싸요. (É bonita, mas…)',
         options: ['예쁜데', '예쁘는데', '예쁘면'],
         answer: '예쁜데',
-        explanation: '예쁘다 é adjetivo: -ㄴ데. «예쁘는데» não existe.',
+        explanation: '예쁘다 é adjetivo: -ㄴ데. “예쁘는데” não existe.',
       },
       {
         question: 'Complete: 지금 마트에 가___ 뭐 필요해요?',
@@ -2798,16 +2798,16 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         explanation: '가다 é verbo: -는데 apresenta a situação antes da pergunta.',
       },
       {
-        question: 'Como se diz «Tomara que amanhã faça tempo bom»?',
+        question: 'Como se diz “Tomara que amanhã faça tempo bom”?',
         options: ['내일 날씨가 좋았으면 좋겠어요.', '내일 날씨가 좋으면 좋았어요.', '내일 날씨가 좋는데 좋겠어요.'],
         answer: '내일 날씨가 좋았으면 좋겠어요.',
-        explanation: '-았/었으면 좋겠다 é o «tomara que».',
+        explanation: '-았/었으면 좋겠다 é o “tomara que”.',
       },
       {
         question: 'Ao telefone alguém diz 지금 안 계시는데요. Qual é o tom?',
         options: ['Educado, deixando a frase em aberto', 'Grosseiro, porque a frase não terminou', 'É uma pergunta'],
         answer: 'Educado, deixando a frase em aberto',
-        explanation: 'O -는데요 no fim suaviza e deixa o ouvinte completar («quer deixar recado?»).',
+        explanation: 'O -는데요 no fim suaviza e deixa o ouvinte completar (“quer deixar recado?”).',
       },
       {
         question: 'Complete: 어렸___ 부산에 살았어요. (Quando eu era criança…)',
@@ -2822,11 +2822,11 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     level: 'B1.4',
     title: 'Modificadores: -는, -(으)ㄴ, -(으)ㄹ (a pessoa que come, o livro que li)',
     emoji: '🏷️',
-    summary: 'O coreano não tem um «que» relativo: a oração inteira vira um adjetivo e vem antes do substantivo. 먹는 사람 (a pessoa que come), 먹은 사람 (que comeu), 먹을 사람 (que vai comer). Os adjetivos usam -(으)ㄴ: 예쁜 꽃, 작은 집. E o modificador está por trás de muitas expressões: -(으)ㄹ 때, -(으)ㄴ 후에, -(으)ㄴ 적이 있다.',
+    summary: 'O coreano não tem um “que” relativo: a oração inteira vira um adjetivo e vem antes do substantivo. 먹는 사람 (a pessoa que come), 먹은 사람 (que comeu), 먹을 사람 (que vai comer). Os adjetivos usam -(으)ㄴ: 예쁜 꽃, 작은 집. E o modificador está por trás de muitas expressões: -(으)ㄹ 때, -(으)ㄴ 후에, -(으)ㄴ 적이 있다.',
     sections: [
       {
-        heading: 'Tudo antes do substantivo, sem «que»',
-        text: 'Em português, a informação vem depois: «o livro que eu li ontem». Em coreano, vem antes, e sem pronome relativo: 어제 제가 읽은 책 (ontem, eu, li → livro). O verbo da oração ganha uma terminação de modificador e encosta no substantivo. Dentro dessa oração, o sujeito usa 이/가, e não 은/는: 제가 만든 음식 (a comida que eu fiz).',
+        heading: 'Tudo antes do substantivo, sem “que”',
+        text: 'Em português, a informação vem depois: “o livro que eu li ontem”. Em coreano, vem antes, e sem pronome relativo: 어제 제가 읽은 책 (ontem, eu, li → livro). O verbo da oração ganha uma terminação de modificador e encosta no substantivo. Dentro dessa oração, o sujeito usa 이/가, e não 은/는: 제가 만든 음식 (a comida que eu fiz).',
         table: {
           head: ['Português', 'Coreano', 'Palavra por palavra'],
           rows: [
@@ -2865,7 +2865,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'Adjetivos: -(으)ㄴ',
-        text: 'Os adjetivos no presente usam -(으)ㄴ: 큰 집, 작은 가방. Os irregulares mudam do jeito de sempre (춥다 → 추운, 빨갛다 → 빨간, 길다 → 긴). A exceção importante: as palavras com 있다 e 없다 se comportam como verbos e levam -는: 맛있는 음식, 재미없는 영화. E o «ser» vira 인: 한국 사람인 친구 (um amigo que é coreano).',
+        text: 'Os adjetivos no presente usam -(으)ㄴ: 큰 집, 작은 가방. Os irregulares mudam do jeito de sempre (춥다 → 추운, 빨갛다 → 빨간, 길다 → 긴). A exceção importante: as palavras com 있다 e 없다 se comportam como verbos e levam -는: 맛있는 음식, 재미없는 영화. E o “ser” vira 인: 한국 사람인 친구 (um amigo que é coreano).',
         table: {
           head: ['Dicionário', 'Modificador', 'Exemplo', 'Português'],
           rows: [
@@ -2905,16 +2905,16 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pôr o modificador depois do substantivo, como em português: é 예쁜 꽃, e não «꽃 예쁜».',
-      'Procurar um «que» relativo: ele não existe. 제가 산 책 é «o livro que eu comprei».',
-      'Usar -는 com adjetivo: «예쁘는 꽃» está errado (é 예쁜 꽃). Mas 있다 e 없다 levam -는: 맛있는, 재미없는.',
+      'Pôr o modificador depois do substantivo, como em português: é 예쁜 꽃, e não “꽃 예쁜”.',
+      'Procurar um “que” relativo: ele não existe. 제가 산 책 é “o livro que eu comprei”.',
+      'Usar -는 com adjetivo: “예쁘는 꽃” está errado (é 예쁜 꽃). Mas 있다 e 없다 levam -는: 맛있는, 재미없는.',
       'Confundir os tempos: 가는 (que vai), 간 (que foi), 갈 (que irá). O tempo está no modificador.',
       'Esquecer os irregulares e o ㄹ: 춥다 → 추운, 듣다 → 들은, 길다 → 긴, 살다 → 사는.',
-      'Usar 은/는 no sujeito da oração que modifica: é 제가 만든 음식, e não «저는 만든 음식».',
+      'Usar 은/는 no sujeito da oração que modifica: é 제가 만든 음식, e não “저는 만든 음식”.',
     ],
     quiz: [
       {
-        question: 'Como se diz «o livro que li ontem»?',
+        question: 'Como se diz “o livro que li ontem”?',
         options: ['어제 읽은 책', '책 어제 읽은', '어제 읽는 책'],
         answer: '어제 읽은 책',
         explanation: 'Oração antes do substantivo, com o passado -(으)ㄴ: 읽은 책.',
@@ -2932,10 +2932,10 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         explanation: '만들다 perde o ㄹ antes de ㄴ: 만든.',
       },
       {
-        question: 'Qual é a forma certa de «comida gostosa»?',
+        question: 'Qual é a forma certa de “comida gostosa”?',
         options: ['맛있는 음식', '맛있은 음식', '맛있 음식'],
         answer: '맛있는 음식',
-        explanation: 'Palavras com 있다/없다 levam -는, mesmo sendo «adjetivos».',
+        explanation: 'Palavras com 있다/없다 levam -는, mesmo sendo “adjetivos”.',
       },
       {
         question: 'O que quer dizer 내일 볼 영화?',
@@ -2947,7 +2947,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         question: 'Complete: 한국에 가 본 ___이 있어요? (Você já foi à Coreia?)',
         options: ['적', '때', '후'],
         answer: '적',
-        explanation: '-아/어 본 적이 있다 = «já ter feito». 때 é «quando» e 후, «depois».',
+        explanation: '-아/어 본 적이 있다 = “já ter feito”. 때 é “quando” e 후, “depois”.',
       },
     ],
   },
@@ -2978,7 +2978,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: '해라체: o nível plano',
-        text: 'Verbos no presente levam -ㄴ다/-는다 (간다, 먹는다); adjetivos, só -다 (좋다, 예쁘다); o «ser», -(이)다 (학생이다); o passado, -았/었다 (갔다). A pergunta é -니? (suave, de adulto para criança) ou -냐? (seca, entre íntimos); a ordem, -아/어라; o convite, -자. Na fala, aparece dos pais para os filhos, entre amigos próximos e nas exclamações que a gente diz para si mesmo (와, 맛있다!). Na escrita, é o nível de diários, livros, jornais e redações, e ele volta no B2.4.',
+        text: 'Verbos no presente levam -ㄴ다/-는다 (간다, 먹는다); adjetivos, só -다 (좋다, 예쁘다); o “ser”, -(이)다 (학생이다); o passado, -았/었다 (갔다). A pergunta é -니? (suave, de adulto para criança) ou -냐? (seca, entre íntimos); a ordem, -아/어라; o convite, -자. Na fala, aparece dos pais para os filhos, entre amigos próximos e nas exclamações que a gente diz para si mesmo (와, 맛있다!). Na escrita, é o nível de diários, livros, jornais e redações, e ele volta no B2.4.',
         table: {
           head: ['Frase', 'Português', 'Onde'],
           rows: [
@@ -2997,7 +2997,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'Como escolher',
-        text: 'A escolha depende de idade, posição, intimidade e situação. A mesma pessoa pode usar níveis diferentes com o mesmo colega: 합쇼체 na reunião, 해요체 no café. No exército, os soldados falam só em 합쇼체, o famoso «다나까» (frases terminadas em -다 e -까). Trocar de nível de repente é um recado: descer sem convite soa desrespeitoso, e subir com um amigo soa frio, como se ele tivesse feito algo errado.',
+        text: 'A escolha depende de idade, posição, intimidade e situação. A mesma pessoa pode usar níveis diferentes com o mesmo colega: 합쇼체 na reunião, 해요체 no café. No exército, os soldados falam só em 합쇼체, o famoso “다나까” (frases terminadas em -다 e -까). Trocar de nível de repente é um recado: descer sem convite soa desrespeitoso, e subir com um amigo soa frio, como se ele tivesse feito algo errado.',
         table: {
           head: ['Situação', 'Nível'],
           rows: [
@@ -3033,7 +3033,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     ],
     quiz: [
       {
-        question: 'Qual é o convite do 합쇼체 com 가다 («vamos»)?',
+        question: 'Qual é o convite do 합쇼체 com 가다 (“vamos”)?',
         options: ['갑시다', '가자', '가요'],
         answer: '갑시다',
         explanation: '-ㅂ시다 é o convite formal. 가자 é 반말, e 가요 é 해요체.',
@@ -3070,11 +3070,11 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     level: 'B2.1',
     title: '-(으)려고 e -기 위해서: intenção e finalidade (e a diferença para -(으)러)',
     emoji: '🎯',
-    summary: '-(으)려고 é «para, com a intenção de»: 살을 빼려고 운동해요. -(으)려고 하다 é «pretender» ou «estar para»: 내년에 유학 가려고 해요. -기 위해서 é o «a fim de» do texto formal. E a diferença para o -(으)러 do A2.2: ele só anda com verbos de movimento, enquanto -(으)려고 aceita qualquer verbo, mas não tolera pedido nem convite depois.',
+    summary: '-(으)려고 é “para, com a intenção de”: 살을 빼려고 운동해요. -(으)려고 하다 é “pretender” ou “estar para”: 내년에 유학 가려고 해요. -기 위해서 é o “a fim de” do texto formal. E a diferença para o -(으)러 do A2.2: ele só anda com verbos de movimento, enquanto -(으)려고 aceita qualquer verbo, mas não tolera pedido nem convite depois.',
     sections: [
       {
         heading: '-(으)려고: para, com a intenção de',
-        text: 'Radical com vogal + 려고 (가려고); com consoante, 으려고 (먹으려고). Aqui o ㄹ não cai: 만들려고, 놀려고. Os irregulares fazem o de sempre: 들으려고, 도우려고. As duas orações têm o mesmo sujeito: eu faço exercício para eu emagrecer. Na fala se ouve muito «갈려고», com um ㄹ a mais, mas a forma padrão é 가려고.',
+        text: 'Radical com vogal + 려고 (가려고); com consoante, 으려고 (먹으려고). Aqui o ㄹ não cai: 만들려고, 놀려고. Os irregulares fazem o de sempre: 들으려고, 도우려고. As duas orações têm o mesmo sujeito: eu faço exercício para eu emagrecer. Na fala se ouve muito “갈려고”, com um ㄹ a mais, mas a forma padrão é 가려고.',
         table: {
           head: ['Dicionário', 'Com -(으)려고', 'Exemplo', 'Português'],
           rows: [
@@ -3120,11 +3120,11 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar -(으)러 com verbo que não é de movimento: «살을 빼러 운동해요» está errado; é 빼려고.',
-      'Pôr pedido ou convite depois de -(으)려고: «밥 먹으려고 가세요» está errado; é 밥 먹으러 가세요.',
-      'Escrever «갈려고» e «할려고»: é comum na fala, mas o padrão é 가려고, 하려고.',
-      'Deixar o ㄹ cair: com -(으)려고 ele fica. 만들려고, e não «만드려고».',
-      'Usar -(으)려고 com sujeitos diferentes: «para que o bebê durma» é outra estrutura (아기가 잘 수 있도록).',
+      'Usar -(으)러 com verbo que não é de movimento: “살을 빼러 운동해요” está errado; é 빼려고.',
+      'Pôr pedido ou convite depois de -(으)려고: “밥 먹으려고 가세요” está errado; é 밥 먹으러 가세요.',
+      'Escrever “갈려고” e “할려고”: é comum na fala, mas o padrão é 가려고, 하려고.',
+      'Deixar o ㄹ cair: com -(으)려고 ele fica. 만들려고, e não “만드려고”.',
+      'Usar -(으)려고 com sujeitos diferentes: “para que o bebê durma” é outra estrutura (아기가 잘 수 있도록).',
     ],
     quiz: [
       {
@@ -3143,7 +3143,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         question: 'Qual é a forma padrão?',
         options: ['가려고 해요', '갈려고 해요', '가을려고 해요'],
         answer: '가려고 해요',
-        explanation: '«갈려고» se ouve muito, mas o padrão é 가 + 려고.',
+        explanation: '“갈려고” se ouve muito, mas o padrão é 가 + 려고.',
       },
       {
         question: 'Complete: 케이크를 ___ 달걀을 샀어요. (para fazer um bolo)',
@@ -3155,7 +3155,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         question: 'Qual opção soa mais formal, de texto escrito?',
         options: ['건강을 지키기 위해서', '건강을 지키려고', '건강을 지키러'],
         answer: '건강을 지키기 위해서',
-        explanation: '-기 위해서 é o «a fim de» dos textos formais e dos discursos.',
+        explanation: '-기 위해서 é o “a fim de” dos textos formais e dos discursos.',
       },
     ],
   },
@@ -3164,11 +3164,11 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     level: 'B2.1',
     title: 'Nominalizadores: -는 것, -기 e -(으)ㅁ',
     emoji: '📦',
-    summary: 'Para transformar um verbo em substantivo («cozinhar» → «o cozinhar»), o coreano tem três ferramentas. -는 것 (na fala, -는 거) é a mais geral: 요리하는 것을 좋아해요. -기 é a da ação em si e de muitas expressões feitas (-기 전에, -기 쉽다, -기 때문에). -(으)ㅁ é a do fato, própria de avisos, bilhetes e textos formais: 회의 없음.',
+    summary: 'Para transformar um verbo em substantivo (“cozinhar” → “o cozinhar”), o coreano tem três ferramentas. -는 것 (na fala, -는 거) é a mais geral: 요리하는 것을 좋아해요. -기 é a da ação em si e de muitas expressões feitas (-기 전에, -기 쉽다, -기 때문에). -(으)ㅁ é a do fato, própria de avisos, bilhetes e textos formais: 회의 없음.',
     sections: [
       {
         heading: '-는 것: o ato, o fato',
-        text: 'O 것 é «coisa»: 먹는 것 é «a coisa de comer», «o comer». O modificador carrega o tempo: -는 것 (presente), -(으)ㄴ 것 (passado), -(으)ㄹ 것 (futuro). Na fala, 것 vira 거, e com as partículas se contrai: 거 + 이 = 게, 거 + 을 = 걸. E como 것 é mesmo «coisa», 매운 것 pode ser simplesmente «coisas apimentadas».',
+        text: 'O 것 é “coisa”: 먹는 것 é “a coisa de comer”, “o comer”. O modificador carrega o tempo: -는 것 (presente), -(으)ㄴ 것 (passado), -(으)ㄹ 것 (futuro). Na fala, 것 vira 거, e com as partículas se contrai: 거 + 이 = 게, 거 + 을 = 걸. E como 것 é mesmo “coisa”, 매운 것 pode ser simplesmente “coisas apimentadas”.',
         table: {
           head: ['Frase', 'Português'],
           rows: [
@@ -3249,15 +3249,15 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar o verbo do dicionário como substantivo: «요리하다를 좋아해요» está errado. É 요리하는 것을 (ou 요리하기를) 좋아해요.',
-      'Usar -기 com 알다 e 모르다: «그가 오기를 알았어요» está errado; é 그가 온 것을 알았어요.',
+      'Usar o verbo do dicionário como substantivo: “요리하다를 좋아해요” está errado. É 요리하는 것을 (ou 요리하기를) 좋아해요.',
+      'Usar -기 com 알다 e 모르다: “그가 오기를 알았어요” está errado; é 그가 온 것을 알았어요.',
       'Estranhar as formas faladas: 먹는 게 = 먹는 것이, 먹는 걸 = 먹는 것을.',
       'Tirar o ㄹ no -(으)ㅁ: 살다 → 삶, 만들다 → 만듦 (o ㄹ fica, formando ㄻ).',
       'Terminar frases de conversa em -(으)ㅁ: soa como bilhete ou brincadeira de internet.',
     ],
     quiz: [
       {
-        question: 'Como se diz «Gosto de cozinhar»?',
+        question: 'Como se diz “Gosto de cozinhar”?',
         options: ['요리하는 것을 좋아해요.', '요리하다를 좋아해요.', '요리한 을 좋아해요.'],
         answer: '요리하는 것을 좋아해요.',
         explanation: 'O verbo vira substantivo com -는 것: 요리하는 것.',
@@ -3266,13 +3266,13 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         question: 'Complete: 자___ 전에 이를 닦아요.',
         options: ['기', '는 것', '음'],
         answer: '기',
-        explanation: '«Antes de» é a expressão fixa -기 전에.',
+        explanation: '“Antes de” é a expressão fixa -기 전에.',
       },
       {
         question: 'Qual é o substantivo de 살다 (viver)?',
         options: ['삶', '살음', '사기'],
         answer: '삶',
-        explanation: 'Radical em ㄹ + ㅁ = ㄻ: 삶, «a vida».',
+        explanation: 'Radical em ㄹ + ㅁ = ㄻ: 삶, “a vida”.',
       },
       {
         question: 'Onde você mais vê frases como 회의 없음?',
@@ -3316,7 +3316,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'Perguntas, ordens e convites',
-        text: 'A pergunta vira -냐고 (가냐고, 먹냐고; com adjetivo, tradicionalmente -(으)냐고, e hoje também -냐고), em geral com 묻다 ou 물어보다. A ordem vira -(으)라고 (가라고, 먹으라고). O convite vira -자고 (가자고). Um caso especial: «me dê» vira 달라고 quando quem pede é quem vai receber (물 좀 달라고 했어요), e 주라고 quando é para outra pessoa (동생한테 물 주라고 했어요).',
+        text: 'A pergunta vira -냐고 (가냐고, 먹냐고; com adjetivo, tradicionalmente -(으)냐고, e hoje também -냐고), em geral com 묻다 ou 물어보다. A ordem vira -(으)라고 (가라고, 먹으라고). O convite vira -자고 (가자고). Um caso especial: “me dê” vira 달라고 quando quem pede é quem vai receber (물 좀 달라고 했어요), e 주라고 quando é para outra pessoa (동생한테 물 주라고 했어요).',
         table: {
           head: ['Tipo', 'Original', 'Indireto', 'Português'],
           rows: [
@@ -3336,7 +3336,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'As contrações da fala: 간대요, 가래요, 가재요',
-        text: 'Na conversa, -다고 해요 vira -대요, -라고 해요 vira -래요, -자고 해요 vira -재요 e -냐고 해요 vira -냬요. Você vai ouvir isso o tempo todo, com o sentido de «dizem que», «ele falou que»: 내일 비가 온대요. Cuidado para não confundir -대요 (dizem que) com -데요 (eu vi que, eu percebi), que aparece no B2.3.',
+        text: 'Na conversa, -다고 해요 vira -대요, -라고 해요 vira -래요, -자고 해요 vira -재요 e -냐고 해요 vira -냬요. Você vai ouvir isso o tempo todo, com o sentido de “dizem que”, “ele falou que”: 내일 비가 온대요. Cuidado para não confundir -대요 (dizem que) com -데요 (eu vi que, eu percebi), que aparece no B2.3.',
         table: {
           head: ['Completo', 'Contraído', 'Português'],
           rows: [
@@ -3356,25 +3356,25 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'A citação direta e o 라고 do nome',
-        text: 'Para citar palavra por palavra, ponha a frase entre aspas e cole 라고 depois, seja qual for o final: "사랑해"라고 했어요. O mesmo 라고 aparece em duas frases essenciais: a apresentação formal (저는 루카스라고 합니다, «eu me chamo Lucas») e a pergunta de quem aprende uma língua: 이건 한국어로 뭐라고 해요? E 뭐라고요? é «o quê? como é?», quando não se ouviu ou não se acreditou no que se ouviu.',
+        text: 'Para citar palavra por palavra, ponha a frase entre aspas e cole 라고 depois, seja qual for o final: "사랑해"라고 했어요. O mesmo 라고 aparece em duas frases essenciais: a apresentação formal (저는 루카스라고 합니다, “eu me chamo Lucas”) e a pergunta de quem aprende uma língua: 이건 한국어로 뭐라고 해요? E 뭐라고요? é “o quê? como é?”, quando não se ouviu ou não se acreditou no que se ouviu.',
         examples: [
           ['저는 루카스라고 합니다.', 'Eu me chamo Lucas. (apresentação formal)'],
           ['이건 한국어로 뭐라고 해요?', 'Como se diz isto em coreano?'],
-          ['친구가 "생일 축하해!"라고 했어요.', 'Meu amigo disse: «Feliz aniversário!»'],
+          ['친구가 "생일 축하해!"라고 했어요.', 'Meu amigo disse: “Feliz aniversário!”'],
           ['뭐라고요? 다시 말해 주세요.', 'Como é? Fale de novo, por favor.'],
         ],
       },
     ],
     pitfalls: [
-      'Citar sem passar para o 해라체: «비가 와요고 했어요» está errado; é 비가 온다고 했어요.',
-      'Tratar adjetivo como verbo: 좋다고 (adjetivo) × 간다고 (verbo). «좋는다고» não existe.',
-      'Usar 주라고 quando o pedido era para quem falou: «ele pediu água (para ele)» é 물을 달라고 했어요.',
-      'Confundir -대요 (dizem que) com -데요 (eu percebi que): 맛있대요 é «dizem que é gostoso».',
+      'Citar sem passar para o 해라체: “비가 와요고 했어요” está errado; é 비가 온다고 했어요.',
+      'Tratar adjetivo como verbo: 좋다고 (adjetivo) × 간다고 (verbo). “좋는다고” não existe.',
+      'Usar 주라고 quando o pedido era para quem falou: “ele pediu água (para ele)” é 물을 달라고 했어요.',
+      'Confundir -대요 (dizem que) com -데요 (eu percebi que): 맛있대요 é “dizem que é gostoso”.',
       'Esquecer o 이 com substantivo terminado em consoante: 학생이라고, mas 의사라고.',
     ],
     quiz: [
       {
-        question: 'O Minsu disse: «비가 와요.» Como você conta isso?',
+        question: 'O Minsu disse: “비가 와요.” Como você conta isso?',
         options: ['민수 씨가 비가 온다고 했어요.', '민수 씨가 비가 와요고 했어요.', '민수 씨가 비가 오냐고 했어요.'],
         answer: '민수 씨가 비가 온다고 했어요.',
         explanation: 'Afirmação: 해라체 (온다) + 고 하다. -냐고 seria pergunta.',
@@ -3389,19 +3389,19 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         question: 'O que quer dizer 내일 비가 온대요?',
         options: ['Dizem que amanhã vai chover.', 'Amanhã choveu.', 'Vamos ver se chove amanhã.'],
         answer: 'Dizem que amanhã vai chover.',
-        explanation: '-대요 é a contração de -다고 해요: «dizem que».',
+        explanation: '-대요 é a contração de -다고 해요: “dizem que”.',
       },
       {
-        question: 'O cliente disse: «물 좀 주세요.» Como contar?',
+        question: 'O cliente disse: “물 좀 주세요.” Como contar?',
         options: ['물 좀 달라고 했어요.', '물 좀 주라고 했어요.', '물 좀 주자고 했어요.'],
         answer: '물 좀 달라고 했어요.',
         explanation: 'Quem pediu é quem vai receber, então 주다 vira 달라고.',
       },
       {
-        question: 'Como se pergunta «Como se diz isto em coreano?»',
+        question: 'Como se pergunta “Como se diz isto em coreano?”',
         options: ['이건 한국어로 뭐라고 해요?', '이건 한국어로 뭐다고 해요?', '이건 한국어를 뭐라고 해요?'],
         answer: '이건 한국어로 뭐라고 해요?',
-        explanation: '«Em coreano» é 한국어로, e «o que» citado é 뭐라고.',
+        explanation: '“Em coreano” é 한국어로, e “o que” citado é 뭐라고.',
       },
     ],
   },
@@ -3415,7 +3415,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     sections: [
       {
         heading: 'A passiva: 이, 히, 리, 기',
-        text: 'Qual dos quatro sufixos um verbo usa não tem regra segura: aprende-se com a palavra. O agente, quando aparece, leva 에게 ou 한테 (pessoas e animais) ou 에 (coisas): 비에 젖었어요 (molhei-me na chuva). O coreano prefere a voz ativa; a passiva aparece sobretudo para o que acontece «sozinho» (문이 열렸어요, a porta se abriu) e para o que se percebe sem querer: 산이 보여요 (dá para ver a montanha), 음악 소리가 들려요 (dá para ouvir música). O «se» do português costuma ser a melhor tradução.',
+        text: 'Qual dos quatro sufixos um verbo usa não tem regra segura: aprende-se com a palavra. O agente, quando aparece, leva 에게 ou 한테 (pessoas e animais) ou 에 (coisas): 비에 젖었어요 (molhei-me na chuva). O coreano prefere a voz ativa; a passiva aparece sobretudo para o que acontece “sozinho” (문이 열렸어요, a porta se abriu) e para o que se percebe sem querer: 산이 보여요 (dá para ver a montanha), 음악 소리가 들려요 (dá para ouvir música). O “se” do português costuma ser a melhor tradução.',
         table: {
           head: ['Ativo', 'Passivo', 'Exemplo', 'Português'],
           rows: [
@@ -3438,7 +3438,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: '-아/어지다 e 되다: a passiva sem sufixo',
-        text: 'Muitos verbos não têm sufixo de passiva. Para eles há -아/어지다: 만들다 → 만들어지다 (ser feito), 알리다 → 알려지다 (tornar-se conhecido). Com adjetivos, o mesmo -아/어지다 é «ficar, tornar-se»: 추워지다 (esfriar), 예뻐지다 (ficar bonito). E os verbos em 하다 trocam 하다 por 되다: 취소하다 → 취소되다, 사용하다 → 사용되다, 발견하다 → 발견되다. É a passiva mais comum dos jornais.',
+        text: 'Muitos verbos não têm sufixo de passiva. Para eles há -아/어지다: 만들다 → 만들어지다 (ser feito), 알리다 → 알려지다 (tornar-se conhecido). Com adjetivos, o mesmo -아/어지다 é “ficar, tornar-se”: 추워지다 (esfriar), 예뻐지다 (ficar bonito). E os verbos em 하다 trocam 하다 por 되다: 취소하다 → 취소되다, 사용하다 → 사용되다, 발견하다 → 발견되다. É a passiva mais comum dos jornais.',
         table: {
           head: ['Base', 'Passiva', 'Exemplo', 'Português'],
           rows: [
@@ -3458,7 +3458,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'A causativa: 이, 히, 리, 기, 우, 구, 추',
-        text: 'A causativa diz que alguém faz outro fazer algo, ou provoca um estado: 먹이다 (dar de comer), 입히다 (vestir alguém), 재우다 (pôr para dormir), 웃기다 (fazer rir, ou seja, ser engraçado). Cuidado com 보이다, que é passivo e causativo: 산이 보여요 (a montanha aparece) × 사진을 보여 주세요 (me mostre a foto). Várias causativas viraram palavras do dia a dia: 알리다 (avisar, «fazer saber»), 태우다 (dar carona), 깨우다 (acordar alguém).',
+        text: 'A causativa diz que alguém faz outro fazer algo, ou provoca um estado: 먹이다 (dar de comer), 입히다 (vestir alguém), 재우다 (pôr para dormir), 웃기다 (fazer rir, ou seja, ser engraçado). Cuidado com 보이다, que é passivo e causativo: 산이 보여요 (a montanha aparece) × 사진을 보여 주세요 (me mostre a foto). Várias causativas viraram palavras do dia a dia: 알리다 (avisar, “fazer saber”), 태우다 (dar carona), 깨우다 (acordar alguém).',
         table: {
           head: ['Base', 'Causativo', 'Exemplo', 'Português'],
           rows: [
@@ -3482,7 +3482,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: '-게 하다 e -게 되다',
-        text: 'Para qualquer verbo, a causativa produtiva é -게 하다: 아이를 일찍 자게 했어요 (fiz a criança dormir cedo). Ela aparece numa frase que todo mundo precisa: 기다리게 해서 죄송합니다 (desculpe tê-lo feito esperar). O primo -게 되다 diz que algo aconteceu pelas circunstâncias, não por decisão: 한국에서 일하게 되었어요 (acabei vindo trabalhar na Coreia; «surgiu a oportunidade»). É uma forma modesta de dar boas notícias.',
+        text: 'Para qualquer verbo, a causativa produtiva é -게 하다: 아이를 일찍 자게 했어요 (fiz a criança dormir cedo). Ela aparece numa frase que todo mundo precisa: 기다리게 해서 죄송합니다 (desculpe tê-lo feito esperar). O primo -게 되다 diz que algo aconteceu pelas circunstâncias, não por decisão: 한국에서 일하게 되었어요 (acabei vindo trabalhar na Coreia; “surgiu a oportunidade”). É uma forma modesta de dar boas notícias.',
         examples: [
           ['오래 기다리게 해서 죄송합니다.', 'Desculpe tê-lo feito esperar tanto.'],
           ['선생님이 학생들에게 매일 일기를 쓰게 하셨어요.', 'O professor fazia os alunos escreverem um diário todo dia.'],
@@ -3492,24 +3492,24 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     ],
     pitfalls: [
       'Tentar adivinhar o sufixo: cada verbo tem o seu (열리다, 잡히다, 안기다, 먹이다). Aprenda junto com a palavra.',
-      'Esquecer que 하다 vira 되다 na passiva: 취소되다, 사용되다. «취소해지다» não se usa.',
-      'Traduzir 보여요 sempre como «é visto»: o sentido comum é «dá para ver», «aparece».',
+      'Esquecer que 하다 vira 되다 na passiva: 취소되다, 사용되다. “취소해지다” não se usa.',
+      'Traduzir 보여요 sempre como “é visto”: o sentido comum é “dá para ver”, “aparece”.',
       'Confundir o 보이다 passivo com o causativo: 산이 보여요 (a montanha aparece) × 사진을 보여 줘요 (mostro a foto).',
-      'Abusar da passiva: «o livro foi lido por mim» soa estranho em coreano; diga 제가 그 책을 읽었어요.',
-      'Ler 웃겨요 como «ri»: é «é engraçado» (faz rir).',
+      'Abusar da passiva: “o livro foi lido por mim” soa estranho em coreano; diga 제가 그 책을 읽었어요.',
+      'Ler 웃겨요 como “ri”: é “é engraçado” (faz rir).',
     ],
     quiz: [
       {
         question: 'Qual é a passiva de 열다 (abrir)?',
         options: ['열리다', '열히다', '열기다'],
         answer: '열리다',
-        explanation: '열다 usa o sufixo 리: 열리다, «abrir-se».',
+        explanation: '열다 usa o sufixo 리: 열리다, “abrir-se”.',
       },
       {
         question: 'O que quer dizer 창문으로 산이 보여요?',
         options: ['Dá para ver a montanha da janela.', 'Eu mostro a montanha pela janela.', 'A montanha olha pela janela.'],
         answer: 'Dá para ver a montanha da janela.',
-        explanation: '보이다 passivo: «ser visto», «aparecer».',
+        explanation: '보이다 passivo: “ser visto”, “aparecer”.',
       },
       {
         question: 'Complete: 아기에게 우유를 ___. (Dou leite ao bebê.)',
@@ -3518,7 +3518,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         explanation: '먹이다 é a causativa (fazer comer). 먹히다 é a passiva (ser comido).',
       },
       {
-        question: 'Como se diz «Desculpe tê-lo feito esperar»?',
+        question: 'Como se diz “Desculpe tê-lo feito esperar”?',
         options: ['기다리게 해서 죄송합니다.', '기다려져서 죄송합니다.', '기다리기 해서 죄송합니다.'],
         answer: '기다리게 해서 죄송합니다.',
         explanation: 'Causativa produtiva: -게 하다. E o pedido de desculpas com -아/어서.',
@@ -3533,7 +3533,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         question: 'O que quer dizer 그 사람 정말 웃겨요?',
         options: ['Ele é muito engraçado.', 'Ele ri muito.', 'Riram muito dele.'],
         answer: 'Ele é muito engraçado.',
-        explanation: '웃기다 é a causativa de 웃다: «fazer rir», ou seja, ser engraçado.',
+        explanation: '웃기다 é a causativa de 웃다: “fazer rir”, ou seja, ser engraçado.',
       },
     ],
   },
@@ -3542,11 +3542,11 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     level: 'B2.2',
     title: '-거든요 e -잖아요: explicar e lembrar',
     emoji: '💡',
-    summary: 'Duas terminações que dão vida à conversa. -거든요 explica com uma informação que o ouvinte não tinha, como o nosso «é que…»: 아까 먹었거든요. -잖아요 lembra algo que o ouvinte já sabe, ou deveria saber: «você sabe que…», «ué, porque…»: 제가 말했잖아요. Bem usadas, deixam a fala natural; mal usadas, soam como bronca.',
+    summary: 'Duas terminações que dão vida à conversa. -거든요 explica com uma informação que o ouvinte não tinha, como o nosso “é que…”: 아까 먹었거든요. -잖아요 lembra algo que o ouvinte já sabe, ou deveria saber: “você sabe que…”, “ué, porque…”: 제가 말했잖아요. Bem usadas, deixam a fala natural; mal usadas, soam como bronca.',
     sections: [
       {
-        heading: '-거든요: «é que…»',
-        text: 'Radical + 거든요, sem regra de vogal: 가거든요, 먹거든요, 갔거든요; com substantivo, (이)거든요. Dois usos. O primeiro é explicar o motivo de algo, trazendo uma informação nova: 왜 안 먹어요? — 아까 먹었거든요 (é que eu comi há pouco). O segundo é preparar uma história, como quem diz «então, olha só»: 제가 어제 명동에 갔거든요. 그런데… Entre amigos, sem o 요: 나 오늘 바쁘거든.',
+        heading: '-거든요: “é que…”',
+        text: 'Radical + 거든요, sem regra de vogal: 가거든요, 먹거든요, 갔거든요; com substantivo, (이)거든요. Dois usos. O primeiro é explicar o motivo de algo, trazendo uma informação nova: 왜 안 먹어요? — 아까 먹었거든요 (é que eu comi há pouco). O segundo é preparar uma história, como quem diz “então, olha só”: 제가 어제 명동에 갔거든요. 그런데… Entre amigos, sem o 요: 나 오늘 바쁘거든.',
         table: {
           head: ['Pergunta', 'Resposta com -거든요', 'Português'],
           rows: [
@@ -3563,8 +3563,8 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         ],
       },
       {
-        heading: '-잖아요: «você sabe que…»',
-        text: '-잖아요 vem de -지 않아요 («não é?») e aponta para o que é sabido pelos dois. Serve para lembrar (제가 말했잖아요, eu te falei, lembra?), para justificar com o óbvio (왜 코트 입었어요? — 춥잖아요!, ué, está frio!) e para criar cumplicidade (오늘 금요일이잖아요!, hoje é sexta, né!). Com substantivo, (이)잖아요: 친구잖아요. E 있잖아요 no começo da frase é o nosso «sabe…?», «então…», para puxar um assunto.',
+        heading: '-잖아요: “você sabe que…”',
+        text: '-잖아요 vem de -지 않아요 (“não é?”) e aponta para o que é sabido pelos dois. Serve para lembrar (제가 말했잖아요, eu te falei, lembra?), para justificar com o óbvio (왜 코트 입었어요? — 춥잖아요!, ué, está frio!) e para criar cumplicidade (오늘 금요일이잖아요!, hoje é sexta, né!). Com substantivo, (이)잖아요: 친구잖아요. E 있잖아요 no começo da frase é o nosso “sabe…?”, “então…”, para puxar um assunto.',
         table: {
           head: ['Frase', 'Português', 'Tom'],
           rows: [
@@ -3583,7 +3583,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: '-거든요, -잖아요 ou -아/어서요?',
-        text: 'As três servem para dar um motivo, mas com tons diferentes. -거든요 traz novidade, em tom de conversa. -잖아요 aponta o que o outro já sabe e, com um superior ou um cliente, pode soar como «o senhor devia saber». -아/어서요 é a resposta neutra e segura, boa para o trabalho.',
+        text: 'As três servem para dar um motivo, mas com tons diferentes. -거든요 traz novidade, em tom de conversa. -잖아요 aponta o que o outro já sabe e, com um superior ou um cliente, pode soar como “o senhor devia saber”. -아/어서요 é a resposta neutra e segura, boa para o trabalho.',
         table: {
           head: ['Terminação', 'O ouvinte já sabia?', 'Tom', 'Exemplo'],
           rows: [
@@ -3604,7 +3604,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       'Usar -거든요 para algo que o ouvinte já sabe: aí o certo é -잖아요.',
       'Usar -잖아요 com o chefe ou com um cliente: pode soar como cobrança. Prefira -아/어서요.',
       'Usar -거든요 e -잖아요 na escrita formal: são da conversa.',
-      'Escrever «-쟎아요»: a forma padrão é 잖 (de -지 않아요): 춥잖아요.',
+      'Escrever “-쟎아요”: a forma padrão é 잖 (de -지 않아요): 춥잖아요.',
       'Confundir o -거든요 do fim da frase com o -거든 no meio, que é condicional literário: 도착하거든 연락해 (quando chegar, me avise).',
     ],
     quiz: [
@@ -3612,13 +3612,13 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         question: 'Seu amigo pergunta por que você não está comendo. Você explica com uma informação nova:',
         options: ['아까 먹었거든요.', '아까 먹었잖아요.', '아까 먹을 거예요.'],
         answer: '아까 먹었거든요.',
-        explanation: '-거든요 explica com uma informação que o ouvinte não tinha: «é que comi há pouco».',
+        explanation: '-거든요 explica com uma informação que o ouvinte não tinha: “é que comi há pouco”.',
       },
       {
         question: 'Qual frase lembra algo que o ouvinte já sabe?',
         options: ['제가 말했잖아요.', '제가 말했거든요.', '제가 말할 거예요.'],
         answer: '제가 말했잖아요.',
-        explanation: '-잖아요 aponta para o que é conhecido pelos dois: «eu te falei, lembra?».',
+        explanation: '-잖아요 aponta para o que é conhecido pelos dois: “eu te falei, lembra?”.',
       },
       {
         question: 'Qual é a grafia padrão?',
@@ -3634,8 +3634,8 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         question: 'Para que serve o 있잖아요 no começo de uma frase?',
-        options: ['Para puxar um assunto, como «sabe…?»', 'Para dizer que alguma coisa existe', 'Para encerrar a conversa'],
-        answer: 'Para puxar um assunto, como «sabe…?»',
+        options: ['Para puxar um assunto, como “sabe…?”', 'Para dizer que alguma coisa existe', 'Para encerrar a conversa'],
+        answer: 'Para puxar um assunto, como “sabe…?”',
         explanation: '있잖아요 (ou 있잖아) chama a atenção antes de contar algo.',
       },
     ],
@@ -3646,11 +3646,11 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     level: 'B2.3',
     title: '-더라고요, -데요 e -던: o que eu vi e o que era',
     emoji: '👁️',
-    summary: 'O coreano tem uma marca para o que você mesmo presenciou: o retrospectivo -더-. -더라고요 conta uma impressão ou descoberta pessoal (그 식당 맛있더라고요, «fui lá e vi que é gostoso»). -던 modifica um substantivo com uma ação habitual ou interrompida do passado: 자주 가던 카페 (o café aonde eu costumava ir), 먹던 빵 (o pão que eu estava comendo).',
+    summary: 'O coreano tem uma marca para o que você mesmo presenciou: o retrospectivo -더-. -더라고요 conta uma impressão ou descoberta pessoal (그 식당 맛있더라고요, “fui lá e vi que é gostoso”). -던 modifica um substantivo com uma ação habitual ou interrompida do passado: 자주 가던 카페 (o café aonde eu costumava ir), 먹던 빵 (o pão que eu estava comendo).',
     sections: [
       {
-        heading: '-더라고요: «eu vi, eu percebi»',
-        text: 'Radical + 더라고요, sem regra de vogal: 가더라고요, 맛있더라고요; com substantivo, (이)더라고요. A forma diz que a informação vem da sua própria experiência: você esteve lá, viu, provou, sentiu. Por isso ela fala dos outros e das coisas, e não das suas ações voluntárias: «저는 어제 공부하더라고요» soa como se você se observasse de fora. A exceção são as reações que escapam ao controle: 저도 모르게 눈물이 나더라고요 (as lágrimas vieram sem eu perceber). Entre amigos, -더라.',
+        heading: '-더라고요: “eu vi, eu percebi”',
+        text: 'Radical + 더라고요, sem regra de vogal: 가더라고요, 맛있더라고요; com substantivo, (이)더라고요. A forma diz que a informação vem da sua própria experiência: você esteve lá, viu, provou, sentiu. Por isso ela fala dos outros e das coisas, e não das suas ações voluntárias: “저는 어제 공부하더라고요” soa como se você se observasse de fora. A exceção são as reações que escapam ao controle: 저도 모르게 눈물이 나더라고요 (as lágrimas vieram sem eu perceber). Entre amigos, -더라.',
         table: {
           head: ['Frase', 'Português', 'O que indica'],
           rows: [
@@ -3669,7 +3669,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: '-데요 × -대요: vi ou ouvi dizer?',
-        text: 'Na fala, -더라고요 tem um primo mais curto, -데요 (그 영화 재미있데요, «eu vi, achei bom»). Ele soa quase igual a -대요, a contração do discurso indireto (그 영화 재미있대요, «dizem que é bom»). A diferença é a fonte: com ㅔ, você presenciou; com ㅐ, você ouviu de alguém. Na escrita, não troque; na fala, o contexto ajuda.',
+        text: 'Na fala, -더라고요 tem um primo mais curto, -데요 (그 영화 재미있데요, “eu vi, achei bom”). Ele soa quase igual a -대요, a contração do discurso indireto (그 영화 재미있대요, “dizem que é bom”). A diferença é a fonte: com ㅔ, você presenciou; com ㅐ, você ouviu de alguém. Na escrita, não troque; na fala, o contexto ajuda.',
         table: {
           head: ['Forma', 'Fonte', 'Exemplo', 'Português'],
           rows: [
@@ -3705,7 +3705,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar -더라고요 para as próprias ações voluntárias: «저는 어제 공부하더라고요» está errado. Ele é para o que você observou.',
+      'Usar -더라고요 para as próprias ações voluntárias: “저는 어제 공부하더라고요” está errado. Ele é para o que você observou.',
       'Usar -더라고요 para o que ouviu dizer: aí é -대요 (discurso indireto).',
       'Confundir 먹은 빵 (acabou) com 먹던 빵 (ficou pela metade).',
       'Trocar -데요 e -대요 na escrita: 재미있데요 (eu vi) × 재미있대요 (dizem).',
@@ -3716,7 +3716,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         question: 'Você foi a um restaurante e achou ótimo. Como conta isso a um colega?',
         options: ['그 식당 정말 맛있더라고요.', '그 식당 정말 맛있대요.', '그 식당 정말 맛있을 거예요.'],
         answer: '그 식당 정말 맛있더라고요.',
-        explanation: '-더라고요 conta a sua própria experiência. -대요 seria «dizem que».',
+        explanation: '-더라고요 conta a sua própria experiência. -대요 seria “dizem que”.',
       },
       {
         question: 'O que quer dizer 그 영화 재미있대요?',
@@ -3737,7 +3737,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         explanation: '-더라고요 relata o que se observou; não serve para a própria ação voluntária.',
       },
       {
-        question: 'Como se diz «o café aonde eu costumava ir»?',
+        question: 'Como se diz “o café aonde eu costumava ir”?',
         options: ['자주 가던 카페', '자주 간 카페', '자주 갈 카페'],
         answer: '자주 가던 카페',
         explanation: '-던 marca o hábito passado.',
@@ -3749,11 +3749,11 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     level: 'B2.3',
     title: 'Supor com nuance: -(으)ㄹ 것 같다, -나 보다 e -(으)ㄹ 텐데',
     emoji: '🤔',
-    summary: 'O coreano tem várias formas de supor. -(으)ㄹ 것 같다 é o «acho que» mais comum (비가 올 것 같아요). -나 보다 e -(으)ㄴ가 보다 deduzem pelo que se vê (배가 고픈가 봐요, pelo jeito ele está com fome). E -(으)ㄹ 텐데 junta suposição com preocupação, gentileza ou pesar: 바쁘실 텐데 와 주셔서 감사합니다 (sei que o senhor deve estar ocupado; obrigado por vir).',
+    summary: 'O coreano tem várias formas de supor. -(으)ㄹ 것 같다 é o “acho que” mais comum (비가 올 것 같아요). -나 보다 e -(으)ㄴ가 보다 deduzem pelo que se vê (배가 고픈가 봐요, pelo jeito ele está com fome). E -(으)ㄹ 텐데 junta suposição com preocupação, gentileza ou pesar: 바쁘실 텐데 와 주셔서 감사합니다 (sei que o senhor deve estar ocupado; obrigado por vir).',
     sections: [
       {
         heading: '-것 같다: acho que, parece que',
-        text: 'O 것 같다 («parece a coisa») vem depois de um modificador, que carrega o tempo: -(으)ㄹ 것 같다 para o futuro ou o palpite, -는 것 같다 para o que parece estar acontecendo, -(으)ㄴ 것 같다 para o passado dos verbos e para o presente dos adjetivos. Os coreanos também usam 것 같아요 para suavizar opiniões (이게 더 좋은 것 같아요, acho que este é melhor). Mas usar para os próprios sentimentos (맛있는 것 같아요, dito de boca cheia) soa indeciso, e é um vício de linguagem criticado na Coreia.',
+        text: 'O 것 같다 (“parece a coisa”) vem depois de um modificador, que carrega o tempo: -(으)ㄹ 것 같다 para o futuro ou o palpite, -는 것 같다 para o que parece estar acontecendo, -(으)ㄴ 것 같다 para o passado dos verbos e para o presente dos adjetivos. Os coreanos também usam 것 같아요 para suavizar opiniões (이게 더 좋은 것 같아요, acho que este é melhor). Mas usar para os próprios sentimentos (맛있는 것 같아요, dito de boca cheia) soa indeciso, e é um vício de linguagem criticado na Coreia.',
         table: {
           head: ['Forma', 'Tempo', 'Exemplo', 'Português'],
           rows: [
@@ -3781,7 +3781,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: '-(으)ㄹ 텐데: deve ser assim, e então…',
-        text: 'O 텐데 junta a expectativa (터) com o pano de fundo do -ㄴ데: «imagino que seja assim, e por isso…». É a gramática da consideração. Mostra cuidado com o outro (배고플 텐데 먼저 드세요, você deve estar com fome, coma primeiro) e aparece numa frase feita de agradecimento (바쁘실 텐데 와 주셔서 감사합니다). No fim da frase, é um aviso suave (밖에 추울 텐데요, lá fora deve estar frio, hein). Com hipóteses irreais, é o desejo e o arrependimento: 시간이 있으면 좋을 텐데 (quem me dera ter tempo), 일찍 왔으면 만날 수 있었을 텐데 (se tivesse vindo cedo, teria encontrado). O parente -(으)ㄹ 테니까 anuncia uma intenção e pede algo: 제가 할 테니까 쉬세요 (deixa que eu faço; descanse).',
+        text: 'O 텐데 junta a expectativa (터) com o pano de fundo do -ㄴ데: “imagino que seja assim, e por isso…”. É a gramática da consideração. Mostra cuidado com o outro (배고플 텐데 먼저 드세요, você deve estar com fome, coma primeiro) e aparece numa frase feita de agradecimento (바쁘실 텐데 와 주셔서 감사합니다). No fim da frase, é um aviso suave (밖에 추울 텐데요, lá fora deve estar frio, hein). Com hipóteses irreais, é o desejo e o arrependimento: 시간이 있으면 좋을 텐데 (quem me dera ter tempo), 일찍 왔으면 만날 수 있었을 텐데 (se tivesse vindo cedo, teria encontrado). O parente -(으)ㄹ 테니까 anuncia uma intenção e pede algo: 제가 할 테니까 쉬세요 (deixa que eu faço; descanse).',
         table: {
           head: ['Uso', 'Exemplo', 'Português'],
           rows: [
@@ -3801,21 +3801,21 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar 것 같아요 para os próprios sentimentos: «맛있는 것 같아요», dito de boca cheia, soa indeciso. Diga 맛있어요.',
+      'Usar 것 같아요 para os próprios sentimentos: “맛있는 것 같아요”, dito de boca cheia, soa indeciso. Diga 맛있어요.',
       'Usar -나 보다 sobre si mesmo: é dedução sobre os outros ou sobre as coisas, a partir de pistas.',
       'Trocar -(으)ㄴ 것 같다 e -(으)ㄹ 것 같다: 간 것 같아요 (parece que já foi) × 갈 것 같아요 (acho que vai).',
-      'Escrever «할텐데» junto: 텐데 é uma palavra à parte (터 + 인데), então 할 텐데.',
-      'Usar -(으)ㄹ 텐데 como simples futuro: ele pede uma continuação ou deixa uma implícita («…então cuidado»).',
+      'Escrever “할텐데” junto: 텐데 é uma palavra à parte (터 + 인데), então 할 텐데.',
+      'Usar -(으)ㄹ 텐데 como simples futuro: ele pede uma continuação ou deixa uma implícita (“…então cuidado”).',
     ],
     quiz: [
       {
-        question: 'O céu está escuro. Como se diz «Acho que vai chover»?',
+        question: 'O céu está escuro. Como se diz “Acho que vai chover”?',
         options: ['비가 올 것 같아요.', '비가 온 것 같아요.', '비가 오나 봐요.'],
         answer: '비가 올 것 같아요.',
-        explanation: 'Palpite sobre o futuro: -(으)ㄹ 것 같다. 온 것 같아요 seria «parece que choveu».',
+        explanation: 'Palpite sobre o futuro: -(으)ㄹ 것 같다. 온 것 같아요 seria “parece que choveu”.',
       },
       {
-        question: 'A rua está molhada. Como dizer «Pelo jeito, choveu»?',
+        question: 'A rua está molhada. Como dizer “Pelo jeito, choveu”?',
         options: ['비가 왔나 봐요.', '비가 올 텐데요.', '비가 오고 싶어요.'],
         answer: '비가 왔나 봐요.',
         explanation: 'Dedução a partir de uma pista: -았/었나 보다.',
@@ -3824,7 +3824,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         question: 'Como agradecer a presença de alguém muito ocupado?',
         options: ['바쁘실 텐데 와 주셔서 감사합니다.', '바쁘니까 와 주셔서 감사합니다.', '바빠서 와 주셨어요 감사합니다.'],
         answer: '바쁘실 텐데 와 주셔서 감사합니다.',
-        explanation: 'A fórmula de consideração: «o senhor deve estar ocupado, e mesmo assim veio».',
+        explanation: 'A fórmula de consideração: “o senhor deve estar ocupado, e mesmo assim veio”.',
       },
       {
         question: 'Qual é a grafia padrão?',
@@ -3850,7 +3850,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     sections: [
       {
         heading: 'As terminações do texto',
-        text: 'Verbos no presente levam -ㄴ다 depois de vogal ou de ㄹ (간다, 산다) e -는다 depois de consoante (먹는다); adjetivos e 있다/없다 ficam só com -다 (좋다, 있다); o «ser» é -(이)다. Passado: -았/었다. Futuro e suposição: -(으)ㄹ 것이다 (nunca o 거 da fala). Na escrita formal, muitas contrações se desfazem: 했다 vira 하였다, 됐다 vira 되었다.',
+        text: 'Verbos no presente levam -ㄴ다 depois de vogal ou de ㄹ (간다, 산다) e -는다 depois de consoante (먹는다); adjetivos e 있다/없다 ficam só com -다 (좋다, 있다); o “ser” é -(이)다. Passado: -았/었다. Futuro e suposição: -(으)ㄹ 것이다 (nunca o 거 da fala). Na escrita formal, muitas contrações se desfazem: 했다 vira 하였다, 됐다 vira 되었다.',
         table: {
           head: ['Tipo', 'Presente', 'Passado', 'Futuro'],
           rows: [
@@ -3890,7 +3890,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'Os conectivos da escrita',
-        text: 'Cada conectivo da conversa tem um equivalente mais formal. -(으)며 é o «e» escrito (e também «enquanto»); -(으)나 é o «porém»; -(으)므로 é o «visto que»; -고자 é o «a fim de»; 및 liga itens de uma lista, como o nosso «e» em documentos. No começo das frases, 따라서 (portanto), 또한 (além disso), 즉 (ou seja) e 한편 (por outro lado) organizam o argumento.',
+        text: 'Cada conectivo da conversa tem um equivalente mais formal. -(으)며 é o “e” escrito (e também “enquanto”); -(으)나 é o “porém”; -(으)므로 é o “visto que”; -고자 é o “a fim de”; 및 liga itens de uma lista, como o nosso “e” em documentos. No começo das frases, 따라서 (portanto), 또한 (além disso), 즉 (ou seja) e 한편 (por outro lado) organizam o argumento.',
         table: {
           head: ['Fala', 'Escrita', 'Português'],
           rows: [
@@ -3911,7 +3911,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'Diário, carta e e-mail',
-        text: 'O diário é escrito em 해라체, para si mesmo. Já a carta e o e-mail têm destinatário, então voltam ao 해요체 ou ao 합니다체. A carta abre com o nome e 에게 (ou 께, para alguém respeitado) e fecha com a assinatura seguida de 드림 ou 올림 («oferece», com humildade). O e-mail de trabalho começa quase sempre com 안녕하세요 e uma apresentação: 김민수입니다.',
+        text: 'O diário é escrito em 해라체, para si mesmo. Já a carta e o e-mail têm destinatário, então voltam ao 해요체 ou ao 합니다체. A carta abre com o nome e 에게 (ou 께, para alguém respeitado) e fecha com a assinatura seguida de 드림 ou 올림 (“oferece”, com humildade). O e-mail de trabalho começa quase sempre com 안녕하세요 e uma apresentação: 김민수입니다.',
         examples: [
           ['오늘은 날씨가 맑았다. 친구와 한강에서 자전거를 탔다.', 'Hoje o tempo estava limpo. Andei de bicicleta no rio Han com um amigo. (diário)'],
           ['사랑하는 엄마에게', 'Para a minha querida mãe, (abertura de carta)'],
@@ -3922,8 +3922,8 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     ],
     pitfalls: [
       'Misturar 요 e -다 no mesmo texto: a redação inteira fica no 해라체.',
-      'Usar a forma do dicionário como frase: «나는 매일 공부하다» está errado; é 공부한다.',
-      'Pôr -는다 em adjetivo: «좋는다» está errado; adjetivo fica só com -다 (좋다).',
+      'Usar a forma do dicionário como frase: “나는 매일 공부하다” está errado; é 공부한다.',
+      'Pôr -는다 em adjetivo: “좋는다” está errado; adjetivo fica só com -다 (좋다).',
       'Levar para a redação as palavras da fala: 진짜, 되게, 근데, 이거, 거 → 매우, 그런데, 이것, 것.',
       'Escrever uma carta ao professor em 해라체: carta e e-mail têm destinatário, então 해요체 ou 합니다체.',
     ],
@@ -3944,7 +3944,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         question: 'Qual conectivo equivale a -지만 na escrita formal?',
         options: ['-(으)나', '-(으)며', '-고자'],
         answer: '-(으)나',
-        explanation: '-(으)나 é o «porém» escrito; -(으)며 é «e», e -고자, «a fim de».',
+        explanation: '-(으)나 é o “porém” escrito; -(으)며 é “e”, e -고자, “a fim de”.',
       },
       {
         question: 'Qual palavra não combina com uma redação?',
@@ -3965,11 +3965,11 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     level: 'B2.4',
     title: 'Conectivos avançados: -다가, -느라고, -는 바람에, -더니, -는 김에',
     emoji: '🧵',
-    summary: 'No B2, a fala ganha nuance. -다가 interrompe ou troca uma ação (가다가 돌아왔어요). -느라고 dá a atividade que tomou o tempo (공부하느라고 못 잤어요). -는 바람에 dá a causa imprevista e chata (버스를 놓치는 바람에 늦었어요). -더니 liga o que se observou ao que veio depois. E -는 김에 é o «já que, aproveitando».',
+    summary: 'No B2, a fala ganha nuance. -다가 interrompe ou troca uma ação (가다가 돌아왔어요). -느라고 dá a atividade que tomou o tempo (공부하느라고 못 잤어요). -는 바람에 dá a causa imprevista e chata (버스를 놓치는 바람에 늦었어요). -더니 liga o que se observou ao que veio depois. E -는 김에 é o “já que, aproveitando”.',
     sections: [
       {
         heading: '-다가: no meio de uma ação',
-        text: '-다가 (na fala, muitas vezes só -다) diz que uma ação foi interrompida ou deu lugar a outra: 학교에 가다가 친구를 만났어요 (indo para a escola, encontrei um amigo), 공부하다가 잠이 들었어요 (estudando, peguei no sono). Com o passado, -았/었다가, a primeira ação se completou e depois veio outra, muitas vezes o contrário: 불을 켰다가 껐어요 (acendi e apaguei), 학교에 갔다가 왔어요 (fui à escola e voltei). E -다(가) 보면 é «de tanto fazer»: 계속 연습하다 보면 잘하게 될 거예요.',
+        text: '-다가 (na fala, muitas vezes só -다) diz que uma ação foi interrompida ou deu lugar a outra: 학교에 가다가 친구를 만났어요 (indo para a escola, encontrei um amigo), 공부하다가 잠이 들었어요 (estudando, peguei no sono). Com o passado, -았/었다가, a primeira ação se completou e depois veio outra, muitas vezes o contrário: 불을 켰다가 껐어요 (acendi e apaguei), 학교에 갔다가 왔어요 (fui à escola e voltei). E -다(가) 보면 é “de tanto fazer”: 계속 연습하다 보면 잘하게 될 거예요.',
         table: {
           head: ['Forma', 'Exemplo', 'Português'],
           rows: [
@@ -4005,7 +4005,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: '-더니 e -는 김에',
-        text: '-더니 liga o que você observou em alguém ao que aconteceu depois, com um tom de relato: 민수 씨가 열심히 공부하더니 시험에 합격했어요 (o Minsu estudou muito, e então passou). Também contrasta estados: 아침에는 날씨가 좋더니 오후에 비가 왔어요. Com «eu», vira -았/었더니: 약을 먹었더니 괜찮아졌어요 (tomei o remédio e melhorei). Já -(으)ㄴ/는 김에 é o «já que você vai…, aproveita e…»: 시장에 가는 김에 우유도 사 와.',
+        text: '-더니 liga o que você observou em alguém ao que aconteceu depois, com um tom de relato: 민수 씨가 열심히 공부하더니 시험에 합격했어요 (o Minsu estudou muito, e então passou). Também contrasta estados: 아침에는 날씨가 좋더니 오후에 비가 왔어요. Com “eu”, vira -았/었더니: 약을 먹었더니 괜찮아졌어요 (tomei o remédio e melhorei). Já -(으)ㄴ/는 김에 é o “já que você vai…, aproveita e…”: 시장에 가는 김에 우유도 사 와.',
         examples: [
           ['민수 씨가 열심히 공부하더니 시험에 합격했어요.', 'O Minsu estudou muito, e então passou na prova.'],
           ['아침에는 날씨가 좋더니 오후에 비가 왔어요.', 'De manhã o tempo estava bom, mas à tarde choveu.'],
@@ -4016,10 +4016,10 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar -느라고 com adjetivo ou com sujeitos diferentes: «바쁘느라고» está errado; é 바빠서.',
+      'Usar -느라고 com adjetivo ou com sujeitos diferentes: “바쁘느라고” está errado; é 바빠서.',
       'Usar -는 바람에 com resultado bom: ele é para imprevistos que atrapalharam.',
       'Confundir 가다가 (no caminho, interrompido) com 갔다가 (fui, e depois voltei ou mudei).',
-      'Usar -더니 com «eu» sem o passado: é 먹었더니, e não «제가 먹더니».',
+      'Usar -더니 com “eu” sem o passado: é 먹었더니, e não “제가 먹더니”.',
       'Pôr passado antes de -느라고 ou -는 바람에: o tempo fica no último verbo.',
     ],
     quiz: [
@@ -4051,7 +4051,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         question: 'Complete: 시장에 가는 ___ 우유도 사 와.',
         options: ['김에', '바람에', '다가'],
         answer: '김에',
-        explanation: '-는 김에: «já que vai, aproveita e…».',
+        explanation: '-는 김에: “já que vai, aproveita e…”.',
       },
       {
         question: 'Complete: 약을 먹었___ 괜찮아졌어요.',
@@ -4084,7 +4084,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         examples: [
           ['정부, 새 교육 정책 발표', 'Governo anuncia nova política educacional.'],
           ['한국 축구, 월드컵 본선 진출', 'Futebol coreano garante vaga na Copa.'],
-          ['장관 "청년 일자리 문제 해결에 최선"', 'Ministro: «Faremos o possível para resolver o desemprego jovem».'],
+          ['장관 "청년 일자리 문제 해결에 최선"', 'Ministro: “Faremos o possível para resolver o desemprego jovem”.'],
         ],
       },
       {
@@ -4108,7 +4108,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'A frase acadêmica',
-        text: 'O texto acadêmico empilha substantivos: nominaliza verbos (-는 것, -(으)ㅁ, -기), usa verbos sino-coreanos com 하다 e 되다 e liga as ideias com expressões fixas. O autor quase nunca diz «eu»: fala em 본 연구 (este estudo) ou 본고 (este artigo), e conclui com prudência, -다고 볼 수 있다 (pode-se considerar que).',
+        text: 'O texto acadêmico empilha substantivos: nominaliza verbos (-는 것, -(으)ㅁ, -기), usa verbos sino-coreanos com 하다 e 되다 e liga as ideias com expressões fixas. O autor quase nunca diz “eu”: fala em 본 연구 (este estudo) ou 본고 (este artigo), e conclui com prudência, -다고 볼 수 있다 (pode-se considerar que).',
         table: {
           head: ['Expressão', 'Português', 'Exemplo'],
           rows: [
@@ -4128,7 +4128,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'O -겠- da previsão e da formalidade',
-        text: 'O sufixo -겠- aparece em toda fala pública. No boletim do tempo, é a previsão: 비가 내리겠습니다. No trem e no avião, é o anúncio do que vai acontecer: 잠시 후 도착하겠습니다. E em frases feitas, é modéstia: 알겠습니다 (entendido) e 모르겠습니다 (não sei) soam mais educados que 알아요 e 몰라요, porque «suavizam» a certeza. O mesmo -겠- está em 처음 뵙겠습니다 e em 잘 먹겠습니다, dito antes de comer.',
+        text: 'O sufixo -겠- aparece em toda fala pública. No boletim do tempo, é a previsão: 비가 내리겠습니다. No trem e no avião, é o anúncio do que vai acontecer: 잠시 후 도착하겠습니다. E em frases feitas, é modéstia: 알겠습니다 (entendido) e 모르겠습니다 (não sei) soam mais educados que 알아요 e 몰라요, porque “suavizam” a certeza. O mesmo -겠- está em 처음 뵙겠습니다 e em 잘 먹겠습니다, dito antes de comer.',
         examples: [
           ['내일은 전국에 비가 내리겠습니다.', 'Amanhã choverá em todo o país. (previsão do tempo)'],
           ['이 열차는 잠시 후 서울역에 도착하겠습니다.', 'Este trem chegará em instantes à estação de Seul.'],
@@ -4138,8 +4138,8 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     ],
     pitfalls: [
       'Ler a manchete como frase quebrada: a vírgula substitui o sujeito, e o verbo ficou implícito no substantivo final.',
-      'Traduzir -는 것으로 나타났다 ao pé da letra: é «constatou-se que», «o levantamento mostrou que».',
-      'Levar o estilo de jornal para a conversa: ninguém diz «밝혔어요» sobre o que um amigo contou.',
+      'Traduzir -는 것으로 나타났다 ao pé da letra: é “constatou-se que”, “o levantamento mostrou que”.',
+      'Levar o estilo de jornal para a conversa: ninguém diz “밝혔어요” sobre o que um amigo contou.',
       'Confundir -(으)로 인해 (devido a, formal) com o -(으)로 de meio (버스로, de ônibus).',
       'Achar que -겠- é só futuro: ele também faz previsões e dá modéstia (알겠습니다, 모르겠습니다).',
     ],
@@ -4154,25 +4154,25 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         question: 'Complete: 기상청___ 내일 눈이 올 것으로 보인다.',
         options: ['에 따르면', '에 대한', '에 비해'],
         answer: '에 따르면',
-        explanation: '-에 따르면 = «segundo» (a fonte).',
+        explanation: '-에 따르면 = “segundo” (a fonte).',
       },
       {
         question: 'O que expressa -(으)ㄹ 것으로 보인다 numa notícia?',
         options: ['Uma previsão cautelosa', 'Uma ordem', 'Uma lembrança pessoal'],
         answer: 'Uma previsão cautelosa',
-        explanation: '«Prevê-se que», «deve»: o jornal não se compromete.',
+        explanation: '“Prevê-se que”, “deve”: o jornal não se compromete.',
       },
       {
         question: 'Complete: 도시 인구는 증가한 ___ 농촌 인구는 감소하였다.',
         options: ['반면', '김에', '바람에'],
         answer: '반면',
-        explanation: '-(으)ㄴ 반면 = «ao passo que», o contraste do texto formal.',
+        explanation: '-(으)ㄴ 반면 = “ao passo que”, o contraste do texto formal.',
       },
       {
         question: 'No boletim do tempo, em 비가 내리겠습니다, o -겠- serve para…',
         options: ['fazer uma previsão', 'expressar o desejo do locutor', 'contar algo que já aconteceu'],
         answer: 'fazer uma previsão',
-        explanation: 'O -겠- da previsão: «choverá».',
+        explanation: 'O -겠- da previsão: “choverá”.',
       },
     ],
   },
@@ -4185,7 +4185,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     sections: [
       {
         heading: 'Uma sílaba, um sentido',
-        text: 'Durante séculos, a língua culta da Coreia foi escrita em caracteres chineses (한자, hanja), lidos à coreana. Cada caractere tem uma leitura e um «nome» que diz o sentido: 學 se chama 배울 학, «o 학 de aprender». Hoje o hanja quase sumiu do dia a dia: aparece em nomes próprios, diplomas, alguns títulos de jornal e, entre parênteses, para desfazer ambiguidades. Mas as palavras ficaram, e montá-las é como montar «tele-fone» ou «biblio-teca»: 전화 é 電 (eletricidade) + 話 (fala), «fala elétrica».',
+        text: 'Durante séculos, a língua culta da Coreia foi escrita em caracteres chineses (한자, hanja), lidos à coreana. Cada caractere tem uma leitura e um “nome” que diz o sentido: 學 se chama 배울 학, “o 학 de aprender”. Hoje o hanja quase sumiu do dia a dia: aparece em nomes próprios, diplomas, alguns títulos de jornal e, entre parênteses, para desfazer ambiguidades. Mas as palavras ficaram, e montá-las é como montar “tele-fone” ou “biblio-teca”: 전화 é 電 (eletricidade) + 話 (fala), “fala elétrica”.',
         table: {
           head: ['Palavra', 'Partes (hanja)', 'Ao pé da letra', 'Português'],
           rows: [
@@ -4205,7 +4205,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'As raízes mais produtivas',
-        text: 'Algumas sílabas aparecem em centenas de palavras. Aprender o sentido delas é o atalho para o vocabulário do nível avançado: quem sabe que 가 (家) é «casa, especialista» entende de primeira 작가 (escritor), 화가 (pintor) e 전문가 (especialista).',
+        text: 'Algumas sílabas aparecem em centenas de palavras. Aprender o sentido delas é o atalho para o vocabulário do nível avançado: quem sabe que 가 (家) é “casa, especialista” entende de primeira 작가 (escritor), 화가 (pintor) e 전문가 (especialista).',
         table: {
           head: ['Raiz', 'Hanja', 'Sentido', 'Palavras'],
           rows: [
@@ -4247,7 +4247,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'A semana dos cinco elementos (e de Marte)',
-        text: 'Os dias da semana são sino-coreanos: lua e sol, e os cinco elementos da filosofia chinesa (fogo, água, madeira, metal, terra). E há uma surpresa: esses elementos dão nome aos planetas no Leste Asiático (火星 é Marte, 水星 é Mercúrio), então a semana coreana segue o mesmo sistema planetário da semana latina, que o espanhol manteve e o português trocou pelas «feiras». 화요일 é o dia de Marte, como o martes espanhol; 금요일, o de Vênus, como o viernes.',
+        text: 'Os dias da semana são sino-coreanos: lua e sol, e os cinco elementos da filosofia chinesa (fogo, água, madeira, metal, terra). E há uma surpresa: esses elementos dão nome aos planetas no Leste Asiático (火星 é Marte, 水星 é Mercúrio), então a semana coreana segue o mesmo sistema planetário da semana latina, que o espanhol manteve e o português trocou pelas “feiras”. 화요일 é o dia de Marte, como o martes espanhol; 금요일, o de Vênus, como o viernes.',
         table: {
           head: ['Dia', 'Hanja', 'Elemento', 'Astro', 'Português'],
           rows: [
@@ -4268,18 +4268,18 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Achar que o coreano é «chinês com outro alfabeto»: a gramática é totalmente diferente; o que veio do chinês foi sobretudo o vocabulário culto.',
+      'Achar que o coreano é “chinês com outro alfabeto”: a gramática é totalmente diferente; o que veio do chinês foi sobretudo o vocabulário culto.',
       'Escrever hanja no coreano do dia a dia: hoje quase ninguém escreve; ele fica para nomes, documentos, dicionários e textos especializados.',
       'Adivinhar o sentido só pelo som: 수 pode ser água (水), número (數) ou mão (手). O contexto decide.',
-      'Ignorar o par nativo × sino-coreano: 이 (dente, nativo) × 치아 (dente, formal), como «dente» × «odontológico». A palavra nativa é a do dia a dia.',
+      'Ignorar o par nativo × sino-coreano: 이 (dente, nativo) × 치아 (dente, formal), como “dente” × “odontológico”. A palavra nativa é a do dia a dia.',
       'Confiar na escrita para a pronúncia: muitas sino-coreanas endurecem sem aviso: 여권 [여꿘], 사건 [사껀], 문법 [문뻡].',
     ],
     quiz: [
       {
-        question: 'Qual sílaba das palavras 학생, 학교, 대학 e 과학 quer dizer «estudar»?',
+        question: 'Qual sílaba das palavras 학생, 학교, 대학 e 과학 quer dizer “estudar”?',
         options: ['학', '생', '교'],
         answer: '학',
-        explanation: '학 (學) é «estudar»: 학생 (estudante), 학교 (escola), 대학 (universidade), 과학 (ciência).',
+        explanation: '학 (學) é “estudar”: 학생 (estudante), 학교 (escola), 대학 (universidade), 과학 (ciência).',
       },
       {
         question: 'Qual é o dia da semana do fogo (火), o dia de Marte?',
@@ -4288,19 +4288,19 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         explanation: '화 (火) é fogo, e 화성 é Marte: 화요일 é terça-feira, como o martes espanhol.',
       },
       {
-        question: 'Em «어제 교통사고가 났어요», o que quer dizer 사고?',
+        question: 'Em “어제 교통사고가 났어요”, o que quer dizer 사고?',
         options: ['acidente', 'pensamento', 'compra'],
         answer: 'acidente',
         explanation: '사고 (事故) é acidente; o homônimo 사고 (思考) é pensamento. O contexto (교통, trânsito) decide.',
       },
       {
-        question: 'Qual palavra quer dizer «biblioteca», o «prédio dos livros»?',
+        question: 'Qual palavra quer dizer “biblioteca”, o “prédio dos livros”?',
         options: ['도서관', '대사관', '식당'],
         answer: '도서관',
         explanation: '도서 (livros) + 관 (館, prédio). 대사관 é embaixada, e 식당, restaurante.',
       },
       {
-        question: 'Sabendo que 식 (食) é «comer, comida», o que quer dizer 한식?',
+        question: 'Sabendo que 식 (食) é “comer, comida”, o que quer dizer 한식?',
         options: ['comida coreana', 'restaurante japonês', 'sala de estar'],
         answer: 'comida coreana',
         explanation: '한 (韓, coreano) + 식 (食, comida). Do mesmo jeito: 양식 (comida ocidental), 일식 (comida japonesa).',
@@ -4312,11 +4312,11 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     level: 'C1.1',
     title: 'Onomatopeias e mímesis: 의성어 e 의태어 (반짝반짝, 두근두근)',
     emoji: '✨',
-    summary: 'O coreano tem milhares de palavras que imitam sons (의성어: 멍멍, 똑똑, 콜록콜록) e, o que mais surpreende o brasileiro, que «imitam» movimentos, sensações e estados (의태어: 반짝반짝, brilhando; 두근두근, o coração acelerado; 엉금엉금, rastejando). Elas se repetem, brincam com vogais claras e escuras e com as consoantes da série tripla, e estão em toda parte: na conversa, na comida, nos 웹툰 e na poesia.',
+    summary: 'O coreano tem milhares de palavras que imitam sons (의성어: 멍멍, 똑똑, 콜록콜록) e, o que mais surpreende o brasileiro, que “imitam” movimentos, sensações e estados (의태어: 반짝반짝, brilhando; 두근두근, o coração acelerado; 엉금엉금, rastejando). Elas se repetem, brincam com vogais claras e escuras e com as consoantes da série tripla, e estão em toda parte: na conversa, na comida, nos 웹툰 e na poesia.',
     sections: [
       {
         heading: 'Sons e jeitos',
-        text: 'O português tem onomatopeias (au-au, toc-toc), mas o coreano vai muito além: tem palavras para o jeito de andar, de brilhar, de sorrir, para a textura da comida. Quase sempre vêm dobradas (반짝반짝, 엉금엉금) e funcionam como advérbios, antes do verbo: 별이 반짝반짝 빛나요. Muitas não têm tradução direta; em português, viram um advérbio («devagarinho»), um verbo mais preciso («cintilar») ou simplesmente somem.',
+        text: 'O português tem onomatopeias (au-au, toc-toc), mas o coreano vai muito além: tem palavras para o jeito de andar, de brilhar, de sorrir, para a textura da comida. Quase sempre vêm dobradas (반짝반짝, 엉금엉금) e funcionam como advérbios, antes do verbo: 별이 반짝반짝 빛나요. Muitas não têm tradução direta; em português, viram um advérbio (“devagarinho”), um verbo mais preciso (“cintilar”) ou simplesmente somem.',
         table: {
           head: ['Palavra', 'Tipo', 'O que evoca', 'Exemplo'],
           rows: [
@@ -4357,7 +4357,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'Da mímese ao verbo, e ao prato',
-        text: 'Muitas mímesis viram verbos e adjetivos com -하다, -거리다 ou -이다: 두근거리다 (palpitar), 반짝이다 (brilhar), 끄덕이다 (balançar a cabeça). É assim que o coreano descreve a comida com tanta precisão: 바삭하다 (crocante), 쫄깃하다 (elástico, «no dente», o elogio máximo do tteok e do macarrão), 말랑하다 (macio). E nos 웹툰, os efeitos sonoros (효과음) enchem os quadros: 쾅! (bum!), 휙 (vuush), 두둥 (o «tchan tchan tchan» da revelação).',
+        text: 'Muitas mímesis viram verbos e adjetivos com -하다, -거리다 ou -이다: 두근거리다 (palpitar), 반짝이다 (brilhar), 끄덕이다 (balançar a cabeça). É assim que o coreano descreve a comida com tanta precisão: 바삭하다 (crocante), 쫄깃하다 (elástico, “no dente”, o elogio máximo do tteok e do macarrão), 말랑하다 (macio). E nos 웹툰, os efeitos sonoros (효과음) enchem os quadros: 쾅! (bum!), 휙 (vuush), 두둥 (o “tchan tchan tchan” da revelação).',
         table: {
           head: ['Mímese', 'Verbo ou adjetivo', 'Exemplo', 'Português'],
           rows: [
@@ -4380,7 +4380,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       'Traduzir cada mímese ao pé da letra: muitas viram um advérbio ou um verbo mais preciso em português, ou somem na tradução.',
       'Trocar claro e escuro sem querer: 퐁당 é uma pedrinha; 풍덩 é alguém pulando na água.',
       'Usar mímesis em texto formal: são da fala, da literatura e dos quadrinhos; relatórios evitam.',
-      'Usar a mímese como verbo sem 하다 ou 거리다: «가슴이 두근두근요» está errado; é 두근두근해요 ou 두근거려요.',
+      'Usar a mímese como verbo sem 하다 ou 거리다: “가슴이 두근두근요” está errado; é 두근두근해요 ou 두근거려요.',
       'Achar que são linguagem de criança: adultos usam o tempo todo, principalmente para comida, sensações e emoções.',
     ],
     quiz: [
@@ -4388,7 +4388,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         question: 'O que evoca 반짝반짝?',
         options: ['Um brilho que pisca', 'Um latido', 'Passos pesados'],
         answer: 'Um brilho que pisca',
-        explanation: '반짝반짝 é o cintilar das estrelas, de «brilha, brilha, estrelinha».',
+        explanation: '반짝반짝 é o cintilar das estrelas, de “brilha, brilha, estrelinha”.',
       },
       {
         question: 'Uma pedrinha cai na água. Qual palavra combina?',
@@ -4397,7 +4397,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         explanation: 'Vogal clara (ㅗ), imagem pequena: 퐁당. 풍덩 seria um corpo, e 쾅, uma batida forte.',
       },
       {
-        question: 'Como se diz «Meu coração está acelerado»?',
+        question: 'Como se diz “Meu coração está acelerado”?',
         options: ['가슴이 두근거려요.', '가슴이 두근두근요.', '가슴이 두근해요거려요.'],
         answer: '가슴이 두근거려요.',
         explanation: 'A mímese vira verbo com -거리다 (ou 두근두근해요).',
@@ -4420,9 +4420,9 @@ export const GRAMMAR_KO: GrammarTopic[] = [
   {
     id: 'ko-g-humildade',
     level: 'C1.2',
-    title: 'A etiqueta avançada: 겸양어, 저희, 압존법, palavras-almofada e o «não» indireto',
+    title: 'A etiqueta avançada: 겸양어, 저희, 압존법, palavras-almofada e o “não” indireto',
     emoji: '🎎',
-    summary: 'No C1, o respeito vai além do -(으)시-. Há as palavras humildes para o que você faz pelo outro (뵙다, 여쭙다, 드리다, 모시다), o 저희 que rebaixa o próprio grupo, a velha regra do 압존법 (não honrar alguém diante de alguém ainda mais alto), as «palavras-almofada» (쿠션어) que amaciam pedidos e o jeito coreano de recusar sem dizer «não».',
+    summary: 'No C1, o respeito vai além do -(으)시-. Há as palavras humildes para o que você faz pelo outro (뵙다, 여쭙다, 드리다, 모시다), o 저희 que rebaixa o próprio grupo, a velha regra do 압존법 (não honrar alguém diante de alguém ainda mais alto), as “palavras-almofada” (쿠션어) que amaciam pedidos e o jeito coreano de recusar sem dizer “não”.',
     sections: [
       {
         heading: 'Elevar o outro, abaixar a si',
@@ -4445,7 +4445,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         ],
       },
       {
-        heading: '우리나라, e não «저희 나라»',
+        heading: '우리나라, e não “저희 나라”',
         text: 'Uma regra fina: diante de um estrangeiro, o coreano diz 우리나라 (o nosso país), e não 저희 나라. O humilde 저희 abaixa o grupo de quem fala, e não se rebaixa a própria nação diante de outra. O mesmo vale para 우리말 (a nossa língua). Já 저희 회사, 저희 가족, 저희 학교 são perfeitamente educados.',
         examples: [
           ['우리나라에는 사계절이 뚜렷해요.', 'No nosso país, as quatro estações são bem marcadas.'],
@@ -4455,7 +4455,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: '압존법: quando não honrar',
-        text: 'A regra tradicional do 압존법 diz: ao falar de alguém superior a você com alguém ainda mais alto, não se honra o do meio. Diante do avô, o neto diz 아버지가 아직 안 왔습니다, sem o -시-, porque o pai é «menor» que o avô. Nas famílias tradicionais ainda se ouve; mas nas empresas, o padrão atual de etiqueta aceita honrar o colega superior mesmo diante do chefe (김 부장님은 회의 중이십니다), e até o exército deixou de exigir essa regra.',
+        text: 'A regra tradicional do 압존법 diz: ao falar de alguém superior a você com alguém ainda mais alto, não se honra o do meio. Diante do avô, o neto diz 아버지가 아직 안 왔습니다, sem o -시-, porque o pai é “menor” que o avô. Nas famílias tradicionais ainda se ouve; mas nas empresas, o padrão atual de etiqueta aceita honrar o colega superior mesmo diante do chefe (김 부장님은 회의 중이십니다), e até o exército deixou de exigir essa regra.',
         examples: [
           ['할아버지, 아버지가 아직 안 왔습니다.', 'Vovô, o papai ainda não chegou. (diante do avô, sem honrar o pai)'],
           ['사장님, 김 부장님은 지금 회의 중이십니다.', 'Senhor presidente, o diretor Kim está em reunião. (uso atual nas empresas)'],
@@ -4479,8 +4479,8 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'Recusar sem dizer «não»',
-        text: 'Com superiores, clientes e convites, o «não» direto (아니요, 싫어요) é raro. A recusa vem embrulhada, e cabe ao ouvinte perceber com 눈치. Aprenda a reconhecer: muitas dessas frases querem dizer exatamente o contrário do que parecem.',
+        heading: 'Recusar sem dizer “não”',
+        text: 'Com superiores, clientes e convites, o “não” direto (아니요, 싫어요) é raro. A recusa vem embrulhada, e cabe ao ouvinte perceber com 눈치. Aprenda a reconhecer: muitas dessas frases querem dizer exatamente o contrário do que parecem.',
         table: {
           head: ['Frase', 'Ao pé da letra', 'O que costuma querer dizer'],
           rows: [
@@ -4499,19 +4499,19 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Trocar os lados: «선생님이 저를 뵈었어요» e «제가 말씀하셨어요» estão errados. O humilde é para você; o honorífico, para o outro.',
+      'Trocar os lados: “선생님이 저를 뵈었어요” e “제가 말씀하셨어요” estão errados. O humilde é para você; o honorífico, para o outro.',
       'Dizer 저희 나라 a um estrangeiro: o certo é 우리나라, porque não se rebaixa o próprio país diante de outro.',
       'Levar ao pé da letra o 생각해 볼게요: muitas vezes é um não educado.',
-      'Ler 괜찮아요 sempre como «sim, pode ser»: diante de uma oferta, costuma ser «não, obrigado».',
+      'Ler 괜찮아요 sempre como “sim, pode ser”: diante de uma oferta, costuma ser “não, obrigado”.',
       'Aplicar o 압존법 no escritório moderno: hoje soa antiquado; honre o colega superior mesmo diante do chefe.',
       'Encher de almofadas a conversa com amigos: soa distante ou irônico.',
     ],
     quiz: [
       {
-        question: 'Qual é o verbo humilde para «perguntar» a um superior?',
+        question: 'Qual é o verbo humilde para “perguntar” a um superior?',
         options: ['여쭤보다', '물으시다', '말씀하시다'],
         answer: '여쭤보다',
-        explanation: '여쭙다/여쭤보다 é o humilde. 물으시다 honra quem pergunta, e 말씀하시다 é «dizer» honorífico.',
+        explanation: '여쭙다/여쭤보다 é o humilde. 물으시다 honra quem pergunta, e 말씀하시다 é “dizer” honorífico.',
       },
       {
         question: 'Falando com um estrangeiro sobre a Coreia, qual é o certo?',
@@ -4523,7 +4523,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         question: 'Um colega responde ao seu convite com 좀 어려울 것 같아요. O que ele quer dizer?',
         options: ['Que não vai poder ir', 'Que o caminho é difícil', 'Que vai pensar e depois ir'],
         answer: 'Que não vai poder ir',
-        explanation: 'É a recusa indireta típica: «vai ser um pouco difícil» = não.',
+        explanation: 'É a recusa indireta típica: “vai ser um pouco difícil” = não.',
       },
       {
         question: 'Qual pedido soa mais cortês?',
@@ -4541,7 +4541,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         question: 'Complete, com humildade: 내일 찾아___. (Amanhã irei visitá-lo.)',
         options: ['뵙겠습니다', '보시겠습니다', '보겠어요'],
         answer: '뵙겠습니다',
-        explanation: '뵙다 é o «ver, encontrar» humilde.',
+        explanation: '뵙다 é o “ver, encontrar” humilde.',
       },
     ],
   },
@@ -4550,11 +4550,11 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     level: 'C1.2',
     title: '속담: os provérbios coreanos',
     emoji: '🐅',
-    summary: 'Os provérbios (속담) guardam a sabedoria de um povo agrícola, confucionista e bem-humorado: tigres, bois, baleias, tteok e vizinhos. Muitos têm par em português: 호랑이도 제 말 하면 온다 («falando do tigre, ele aparece») é o nosso «falando no diabo». Eles vivem na conversa, na TV e nas provas, citados com -다고, -(이)라고 e -다더니.',
+    summary: 'Os provérbios (속담) guardam a sabedoria de um povo agrícola, confucionista e bem-humorado: tigres, bois, baleias, tteok e vizinhos. Muitos têm par em português: 호랑이도 제 말 하면 온다 (“falando do tigre, ele aparece”) é o nosso “falando no diabo”. Eles vivem na conversa, na TV e nas provas, citados com -다고, -(이)라고 e -다더니.',
     sections: [
       {
         heading: 'Os provérbios que você vai ouvir',
-        text: 'Os provérbios costumam estar no 해라체 (-ㄴ다, -다) ou terminar num substantivo (누워서 떡 먹기, «comer tteok deitado»). Repare no trocadilho de 발 없는 말이 천 리 간다: 말 é «palavra» e também «cavalo». O 리 é uma antiga medida de distância (cerca de 400 metros), então mil 리 é «muito longe».',
+        text: 'Os provérbios costumam estar no 해라체 (-ㄴ다, -다) ou terminar num substantivo (누워서 떡 먹기, “comer tteok deitado”). Repare no trocadilho de 발 없는 말이 천 리 간다: 말 é “palavra” e também “cavalo”. O 리 é uma antiga medida de distância (cerca de 400 metros), então mil 리 é “muito longe”.',
         table: {
           head: ['Provérbio', 'Ao pé da letra', 'Equivalente em português'],
           rows: [
@@ -4578,7 +4578,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'Bichos, comida e a vida no campo',
-        text: 'O tigre, rei das montanhas coreanas e personagem de mil contos, aparece em muitos provérbios; o tteok, a comida das festas, em outros tantos. Alguns ganharam força política: 고래 싸움에 새우 등 터진다 («na briga das baleias, o camarão racha as costas») é usado para falar de um país pequeno entre potências. E 김칫국부터 마신다 lembra um costume antigo: tomava-se o caldo de kimchi para ajudar a descer o tteok, então tomá-lo antes de ganhar o tteok é contar com o ovo antes da galinha.',
+        text: 'O tigre, rei das montanhas coreanas e personagem de mil contos, aparece em muitos provérbios; o tteok, a comida das festas, em outros tantos. Alguns ganharam força política: 고래 싸움에 새우 등 터진다 (“na briga das baleias, o camarão racha as costas”) é usado para falar de um país pequeno entre potências. E 김칫국부터 마신다 lembra um costume antigo: tomava-se o caldo de kimchi para ajudar a descer o tteok, então tomá-lo antes de ganhar o tteok é contar com o ovo antes da galinha.',
         table: {
           head: ['Provérbio', 'Ao pé da letra', 'Sentido'],
           rows: [
@@ -4598,7 +4598,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'Como usar um provérbio na conversa',
-        text: 'O provérbio se cita como está e se amarra à frase com o discurso indireto: -다고 ou -(이)라고 («como diz o ditado, …»), -다더니 («como dizem, e não é que…») ou -(이)라는 말이 있잖아요 («tem aquele ditado, né»). O tom é de sabedoria compartilhada, mas com um superior, cuidado para não soar como sermão.',
+        text: 'O provérbio se cita como está e se amarra à frase com o discurso indireto: -다고 ou -(이)라고 (“como diz o ditado, …”), -다더니 (“como dizem, e não é que…”) ou -(이)라는 말이 있잖아요 (“tem aquele ditado, né”). O tom é de sabedoria compartilhada, mas com um superior, cuidado para não soar como sermão.',
         examples: [
           ['호랑이도 제 말 하면 온다더니, 마침 민수 씨가 왔네요!', 'Falando no diabo… olha o Minsu aí!'],
           ['그 시험이요? 누워서 떡 먹기였어요.', 'Aquela prova? Foi moleza.'],
@@ -4612,32 +4612,32 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       'Passar o provérbio para o 해요체: ele se cita como está e se liga com -다고, -(이)라고 ou -다더니.',
       'Perder o trocadilho de 말 (palavra e cavalo) em 발 없는 말이 천 리 간다.',
       'Usar provérbios com superiores em tom de lição: soa como sermão.',
-      'Ler 천 리 como mil quilômetros: o 리 tem uns 400 metros, e a expressão só quer dizer «muito longe».',
+      'Ler 천 리 como mil quilômetros: o 리 tem uns 400 metros, e a expressão só quer dizer “muito longe”.',
     ],
     quiz: [
       {
         question: 'Complete: 호랑이도 제 말 하면 ___.',
         options: ['온다', '간다', '먹는다'],
         answer: '온다',
-        explanation: '«Até o tigre, se falam dele, aparece»: falando no diabo…',
+        explanation: '“Até o tigre, se falam dele, aparece”: falando no diabo…',
       },
       {
         question: 'O que quer dizer 누워서 떡 먹기?',
         options: ['Uma coisa facílima', 'Uma pessoa preguiçosa', 'Um banquete'],
         answer: 'Uma coisa facílima',
-        explanation: '«Comer tteok deitado» é o nosso «moleza».',
+        explanation: '“Comer tteok deitado” é o nosso “moleza”.',
       },
       {
-        question: 'Qual provérbio corresponde a «casa roubada, trancas à porta»?',
+        question: 'Qual provérbio corresponde a “casa roubada, trancas à porta”?',
         options: ['소 잃고 외양간 고친다.', '티끌 모아 태산.', '그림의 떡.'],
         answer: '소 잃고 외양간 고친다.',
-        explanation: '«Perde o boi e conserta o curral»: a providência que chega tarde.',
+        explanation: '“Perde o boi e conserta o curral”: a providência que chega tarde.',
       },
       {
         question: 'Em 발 없는 말이 천 리 간다, a palavra 말 quer dizer…',
-        options: ['Palavra, com trocadilho com «cavalo»', 'Só cavalo', 'Pé'],
-        answer: 'Palavra, com trocadilho com «cavalo»',
-        explanation: '말 é «palavra» e «cavalo»: a palavra, que não tem pés, corre mais que um cavalo.',
+        options: ['Palavra, com trocadilho com “cavalo”', 'Só cavalo', 'Pé'],
+        answer: 'Palavra, com trocadilho com “cavalo”',
+        explanation: '말 é “palavra” e “cavalo”: a palavra, que não tem pés, corre mais que um cavalo.',
       },
       {
         question: 'Complete: 금강산도 ___이라고, 밥부터 먹읍시다.',
@@ -4657,7 +4657,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     sections: [
       {
         heading: 'Quatro sílabas, uma imagem',
-        text: 'Cada 사자성어 é uma palavra só, escrita sem espaço, e funciona como substantivo. Muitos têm um equivalente exato num ditado português; outros trazem uma imagem nova, como 금상첨화 («flor sobre a seda») e o seu oposto, 설상가상 («geada sobre a neve»).',
+        text: 'Cada 사자성어 é uma palavra só, escrita sem espaço, e funciona como substantivo. Muitos têm um equivalente exato num ditado português; outros trazem uma imagem nova, como 금상첨화 (“flor sobre a seda”) e o seu oposto, 설상가상 (“geada sobre a neve”).',
         table: {
           head: ['Expressão', 'Hanja', 'Ao pé da letra', 'Sentido'],
           rows: [
@@ -4681,7 +4681,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'As histórias por trás',
-        text: 'Muitas expressões são 고사성어, «ditos de histórias antigas», e só fazem sentido com a história. 새옹지마 (塞翁之馬): o cavalo de um velho da fronteira fugiu (azar), voltou com outro cavalo (sorte), o filho caiu dele e quebrou a perna (azar) e, por isso, escapou da guerra (sorte). A lição: não se sabe o que é sorte e o que é azar. 사면초가 (四面楚歌): o general Xiang Yu, cercado, ouve canções da sua terra, Chu, vindas de todos os lados, e entende que seu povo se rendeu; hoje, é estar encurralado. 형설지공 (螢雪之功) lembra dois estudantes pobres que liam à luz de vaga-lumes e do reflexo da neve: é o mérito do estudo esforçado.',
+        text: 'Muitas expressões são 고사성어, “ditos de histórias antigas”, e só fazem sentido com a história. 새옹지마 (塞翁之馬): o cavalo de um velho da fronteira fugiu (azar), voltou com outro cavalo (sorte), o filho caiu dele e quebrou a perna (azar) e, por isso, escapou da guerra (sorte). A lição: não se sabe o que é sorte e o que é azar. 사면초가 (四面楚歌): o general Xiang Yu, cercado, ouve canções da sua terra, Chu, vindas de todos os lados, e entende que seu povo se rendeu; hoje, é estar encurralado. 형설지공 (螢雪之功) lembra dois estudantes pobres que liam à luz de vaga-lumes e do reflexo da neve: é o mérito do estudo esforçado.',
         table: {
           head: ['Expressão', 'Hanja', 'A história', 'Sentido hoje'],
           rows: [
@@ -4717,15 +4717,15 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Escrever o 사자성어 com espaço: é uma palavra só (일석이조, e não «일석 이조»).',
+      'Escrever o 사자성어 com espaço: é uma palavra só (일석이조, e não “일석 이조”).',
       'Adivinhar o sentido pelas sílabas sem conhecer a história: 새옹지마 não fala de cavalos, e sim da sorte que muda.',
       'Encher a conversa informal de 사자성어: soa pedante. Eles brilham em discursos, redações e editoriais.',
-      'Confundir 설상가상 (piorou) com 금상첨화 (melhorou): as duas são «algo sobre algo», mas geada sobre neve é ruim, e flor sobre seda é bom.',
+      'Confundir 설상가상 (piorou) com 금상첨화 (melhorou): as duas são “algo sobre algo”, mas geada sobre neve é ruim, e flor sobre seda é bom.',
       'Achar que todo 사자성어 é chinês moderno: muitos são usados só na Coreia, e o sentido pode ter mudado.',
     ],
     quiz: [
       {
-        question: 'Qual expressão equivale a «matar dois coelhos com uma cajadada só»?',
+        question: 'Qual expressão equivale a “matar dois coelhos com uma cajadada só”?',
         options: ['일석이조', '작심삼일', '동문서답'],
         answer: '일석이조',
         explanation: '일석이조 (一石二鳥): uma pedra, dois pássaros.',
@@ -4765,7 +4765,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     sections: [
       {
         heading: 'O prefácio do 훈민정음 (1446)',
-        text: 'O documento que apresentou o hangul, 훈민정음 («os sons corretos para instruir o povo»), abre com um prefácio do rei Sejong que todo coreano estuda na escola. No original, ele usa letras que sumiram (como o ㆍ, o «ponto» de uma vogal antiga) e uma grafia de quase 600 anos atrás; abaixo, o trecho em coreano moderno. O dia da promulgação é feriado nacional: 한글날, 9 de outubro.',
+        text: 'O documento que apresentou o hangul, 훈민정음 (“os sons corretos para instruir o povo”), abre com um prefácio do rei Sejong que todo coreano estuda na escola. No original, ele usa letras que sumiram (como o ㆍ, o “ponto” de uma vogal antiga) e uma grafia de quase 600 anos atrás; abaixo, o trecho em coreano moderno. O dia da promulgação é feriado nacional: 한글날, 9 de outubro.',
         examples: [
           ['나라의 말이 중국과 달라 문자와 서로 통하지 아니하므로', 'Como a língua do país difere da China e não se comunica com a escrita [chinesa],'],
           ['어리석은 백성이 이르고자 하는 바가 있어도 끝내 제 뜻을 펴지 못하는 사람이 많으니라.', 'muitos do povo simples, mesmo tendo o que dizer, não conseguem expressar o que pensam.'],
@@ -4775,14 +4775,14 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'O 시조 e o duelo de 1392',
-        text: 'O 시조 é o poema curto clássico: três versos, cada um com quatro grupos de três ou quatro sílabas, e o terceiro verso abre com uma virada de três sílabas. O par mais famoso é um duelo político. Em 1392, 이방원, filho do fundador da nova dinastia Joseon, tenta atrair o ministro 정몽주, fiel à dinastia Goryeo, com o 하여가: «que importa isto ou aquilo? enrosquemo-nos como as trepadeiras». 정몽주 responde com o 단심가, o «canto do coração leal», e foi assassinado pouco depois na ponte 선죽교. Repare nas formas antigas: -리 e -(으)랴 perguntam para negar («que importa?», «haveria de mudar?»), e -리라 promete.',
+        text: 'O 시조 é o poema curto clássico: três versos, cada um com quatro grupos de três ou quatro sílabas, e o terceiro verso abre com uma virada de três sílabas. O par mais famoso é um duelo político. Em 1392, 이방원, filho do fundador da nova dinastia Joseon, tenta atrair o ministro 정몽주, fiel à dinastia Goryeo, com o 하여가: “que importa isto ou aquilo? enrosquemo-nos como as trepadeiras”. 정몽주 responde com o 단심가, o “canto do coração leal”, e foi assassinado pouco depois na ponte 선죽교. Repare nas formas antigas: -리 e -(으)랴 perguntam para negar (“que importa?”, “haveria de mudar?”), e -리라 promete.',
         table: {
           head: ['Forma antiga', 'Hoje', 'No poema'],
           rows: [
             ['-(으)리', '-겠는가 (pergunta retórica)', '어떠하리 = que importa?'],
             ['-(으)랴', '-겠느냐 (pergunta que nega)', '있으랴 = haveria? (não há)'],
             ['-(으)리라', '-겠다 (promessa, previsão)', '누리리라 = desfrutaremos'],
-            ['-(이)야', 'ênfase: «quanto a»', '일편단심이야 = quanto ao coração leal'],
+            ['-(이)야', 'ênfase: “quanto a”', '일편단심이야 = quanto ao coração leal'],
           ],
         },
         examples: [
@@ -4794,7 +4794,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: '김소월, 진달래꽃 (1925): o 한 em versos simples',
-        text: 'O poema mais amado da Coreia moderna é uma despedida: a pessoa amada vai embora, farta de quem fala, e quem fala promete espalhar azaleias pelo caminho e não chorar. A língua é simples e musical, com formas de humildade antigas: -우리다 (드리우리다, «hei de oferecer») e -옵소서, o pedido mais respeitoso (가시옵소서, «vá, eu lhe peço»). O último verso usa a negação antiga, 아니 antes do verbo, e diz o contrário do que sente: «nem morrendo derramarei lágrimas». Essa dor contida, que não se queixa, é o 한.',
+        text: 'O poema mais amado da Coreia moderna é uma despedida: a pessoa amada vai embora, farta de quem fala, e quem fala promete espalhar azaleias pelo caminho e não chorar. A língua é simples e musical, com formas de humildade antigas: -우리다 (드리우리다, “hei de oferecer”) e -옵소서, o pedido mais respeitoso (가시옵소서, “vá, eu lhe peço”). O último verso usa a negação antiga, 아니 antes do verbo, e diz o contrário do que sente: “nem morrendo derramarei lágrimas”. Essa dor contida, que não se queixa, é o 한.',
         examples: [
           ['나 보기가 역겨워 가실 때에는 말없이 고이 보내 드리우리다.', 'Quando, farto(a) de me ver, você partir, eu o(a) deixarei ir em silêncio, com carinho.'],
           ['영변에 약산 진달래꽃 아름 따다 가실 길에 뿌리우리다.', 'Colherei braçadas de azaleias do monte Yak, em Yeongbyeon, e as espalharei no seu caminho.'],
@@ -4804,7 +4804,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: '윤동주, 서시 (1941): a consciência limpa',
-        text: '윤동주 escreveu sob a ocupação japonesa, quando o coreano era proibido nas escolas, e morreu numa prisão em Fukuoka em 1945, aos 27 anos. Seus poemas saíram depois da libertação, em 하늘과 바람과 별과 시 (Céu, vento, estrelas e poesia). O 서시 (Prefácio) é uma prece de integridade. A gramática é moderna e cheia de nuance: -기를 é um desejo (부끄럼이 없기를, «que não haja vergonha»), -아야지 é uma resolução dita a si mesmo, e -아야겠다, uma decisão firme. O último verso, sozinho, usa 스치운다, uma forma poética de 스친다 (roça).',
+        text: '윤동주 escreveu sob a ocupação japonesa, quando o coreano era proibido nas escolas, e morreu numa prisão em Fukuoka em 1945, aos 27 anos. Seus poemas saíram depois da libertação, em 하늘과 바람과 별과 시 (Céu, vento, estrelas e poesia). O 서시 (Prefácio) é uma prece de integridade. A gramática é moderna e cheia de nuance: -기를 é um desejo (부끄럼이 없기를, “que não haja vergonha”), -아야지 é uma resolução dita a si mesmo, e -아야겠다, uma decisão firme. O último verso, sozinho, usa 스치운다, uma forma poética de 스친다 (roça).',
         examples: [
           ['죽는 날까지 하늘을 우러러 한 점 부끄럼이 없기를,', 'Que até o dia em que eu morrer, olhando o céu, não haja em mim uma só mancha de vergonha;'],
           ['잎새에 이는 바람에도 나는 괴로워했다.', 'até com o vento que se levanta nas folhas eu sofri.'],
@@ -4815,7 +4815,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
       },
       {
         heading: 'Formas antigas que ainda aparecem',
-        text: 'Essas terminações não se usam na conversa, mas vivem em poemas, orações, hinos, placas e nas novelas de época (사극), onde os ministros respondem ao rei com 황공하옵니다. Às vezes voltam de brincadeira: a tradução coreana de «Veni, vidi, vici» é 왔노라, 보았노라, 이겼노라.',
+        text: 'Essas terminações não se usam na conversa, mas vivem em poemas, orações, hinos, placas e nas novelas de época (사극), onde os ministros respondem ao rei com 황공하옵니다. Às vezes voltam de brincadeira: a tradução coreana de “Veni, vidi, vici” é 왔노라, 보았노라, 이겼노라.',
         table: {
           head: ['Forma', 'Valor', 'Onde aparece', 'Exemplo'],
           rows: [
@@ -4837,16 +4837,16 @@ export const GRAMMAR_KO: GrammarTopic[] = [
     ],
     pitfalls: [
       'Ler -리라 e -(으)랴 como erros: são formas antigas vivas na poesia. -리라 promete; -(으)랴 pergunta para negar.',
-      'Levar ao pé da letra o fim de 진달래꽃: «nem morrendo derramarei lágrimas» é a dor contida que diz o contrário.',
+      'Levar ao pé da letra o fim de 진달래꽃: “nem morrendo derramarei lágrimas” é a dor contida que diz o contrário.',
       'Imitar as formas antigas na conversa: soa como novela de época. Serve para brincadeira, não para o dia a dia.',
-      'Traduzir 한 como «ódio»: é uma mistura de mágoa, saudade e resignação, um sentimento que os coreanos veem como parte da sua história.',
+      'Traduzir 한 como “ódio”: é uma mistura de mágoa, saudade e resignação, um sentimento que os coreanos veem como parte da sua história.',
       'Esquecer que as antologias modernizam a ortografia: os originais têm grafias e letras antigas.',
     ],
     quiz: [
       {
-        question: 'Em «가실 줄이 있으랴», o que faz o -(으)랴?',
-        options: ['Faz uma pergunta retórica que nega: «haveria?», ou seja, não há', 'Faz um pedido educado', 'Marca o futuro simples'],
-        answer: 'Faz uma pergunta retórica que nega: «haveria?», ou seja, não há',
+        question: 'Em “가실 줄이 있으랴”, o que faz o -(으)랴?',
+        options: ['Faz uma pergunta retórica que nega: “haveria?”, ou seja, não há', 'Faz um pedido educado', 'Marca o futuro simples'],
+        answer: 'Faz uma pergunta retórica que nega: “haveria?”, ou seja, não há',
         explanation: 'É a pergunta do 단심가: o coração leal haveria de mudar? Nunca.',
       },
       {
@@ -4859,7 +4859,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         question: 'O que quer dizer 왔노라, 보았노라, 이겼노라?',
         options: ['Vim, vi, venci.', 'Venha, veja, vença.', 'Virei, verei, vencerei.'],
         answer: 'Vim, vi, venci.',
-        explanation: 'O -노라 solene, com o passado -았/었-: a tradução clássica de «Veni, vidi, vici».',
+        explanation: 'O -노라 solene, com o passado -았/었-: a tradução clássica de “Veni, vidi, vici”.',
       },
       {
         question: 'Quantos versos tem um 시조?',
@@ -4868,7 +4868,7 @@ export const GRAMMAR_KO: GrammarTopic[] = [
         explanation: 'Três versos de quatro grupos rítmicos, com a virada no começo do terceiro.',
       },
       {
-        question: 'No 서시, «한 점 부끄럼이 없기를» expressa…',
+        question: 'No 서시, “한 점 부끄럼이 없기를” expressa…',
         options: ['Um desejo: que não haja nenhuma vergonha', 'Uma ordem ao leitor', 'Um fato do passado'],
         answer: 'Um desejo: que não haja nenhuma vergonha',
         explanation: '-기를 no fim, sem o 바라다, é um desejo, uma prece.',

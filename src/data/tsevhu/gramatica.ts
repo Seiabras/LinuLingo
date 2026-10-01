@@ -27,7 +27,7 @@ export const TOPICS: TsevhuTopic[] = [
     summary: 'As letras do Tsevhu, o som de cada uma (em IPA) e as regras que mudam a pronúncia sem mudar a escrita.',
     sections: [
       {
-        text: "O Tsevhu é escrito com letras latinas e vários dígrafos (duas letras para um som só), como ph, vh, kh, sh, ch e ts. O apóstrofo (') não é enfeite: ele é uma consoante, a parada glotal /ʔ/, aquele «corte» de voz que existe no meio de «uh-oh». Entre barras vem o som em IPA.",
+        text: "O Tsevhu é escrito com letras latinas e vários dígrafos (duas letras para um som só), como ph, vh, kh, sh, ch e ts. O apóstrofo (') não é enfeite: ele é uma consoante, a parada glotal /ʔ/, aquele “corte” de voz que existe no meio de “uh-oh”. Entre barras vem o som em IPA.",
       },
       {
         heading: 'Consoantes',
@@ -35,25 +35,25 @@ export const TOPICS: TsevhuTopic[] = [
           head: ['Escrita', 'Som', 'Tipo', 'Dica'],
           rows: [
             ['p, b', '/p/, /b/', 'oclusivas bilabiais', 'como em português'],
-            ['t, d', '/t/, /d/', 'oclusivas alveolares', 't e d sempre «duros», nunca «tchi/dji»'],
+            ['t, d', '/t/, /d/', 'oclusivas alveolares', 't e d sempre “duros”, nunca “tchi/dji”'],
             ['k, kh, g', '/k/, /kʰ/, /g/', 'oclusivas velares', 'kh é um k com sopro de ar'],
             ['q', '/q/', 'oclusiva uvular', 'um k feito bem no fundo da garganta'],
-            ["'", '/ʔ/', 'oclusiva glotal', 'corte de voz, como em «uh-oh»'],
-            ['ts, (tz)', '/ts/, (/dz/)', 'africadas alveolares', 'ts como em «tsunami»'],
-            ['ch, (dj; tj)', '/tʃ/, (/dʒ/)', 'africadas pós-alveolares', 'ch como «tch» em «tchau»'],
+            ["'", '/ʔ/', 'oclusiva glotal', 'corte de voz, como em “uh-oh”'],
+            ['ts, (tz)', '/ts/, (/dz/)', 'africadas alveolares', 'ts como em “tsunami”'],
+            ['ch, (dj; tj)', '/tʃ/, (/dʒ/)', 'africadas pós-alveolares', 'ch como “tch” em “tchau”'],
             ['ph, vh', '/ɸ/, /β/', 'fricativas bilabiais', 'f e v feitos só com os lábios, sem os dentes'],
             ['f, v', '/f/, /v/', 'fricativas labiodentais', 'como em português'],
-            ['th', '/θ/', 'fricativa dental', 'como o th de «think» em inglês'],
-            ['s, z', '/s/, /z/', 'fricativas alveolares', 's sempre como em «sapo», mesmo entre vogais'],
-            ['sh, j', '/ʃ/, /ʒ/', 'fricativas pós-alveolares', 'sh como «ch» de «chá»; j como em «já»'],
-            ['c', '/ç/', 'fricativa palatal', 'um chiado suave, como o ch de «ich» em alemão'],
-            ['x', '/x/', 'fricativa velar', 'como o «rr» carioca de «carro»'],
-            ['h', '/h/', 'fricativa glotal', 'aspirado, como o h do inglês «house»'],
+            ['th', '/θ/', 'fricativa dental', 'como o th de “think” em inglês'],
+            ['s, z', '/s/, /z/', 'fricativas alveolares', 's sempre como em “sapo”, mesmo entre vogais'],
+            ['sh, j', '/ʃ/, /ʒ/', 'fricativas pós-alveolares', 'sh como “ch” de “chá”; j como em “já”'],
+            ['c', '/ç/', 'fricativa palatal', 'um chiado suave, como o ch de “ich” em alemão'],
+            ['x', '/x/', 'fricativa velar', 'como o “rr” carioca de “carro”'],
+            ['h', '/h/', 'fricativa glotal', 'aspirado, como o h do inglês “house”'],
             ['m, n', '/m/, /n/', 'nasais', 'como em português'],
-            ['w', '/w/', 'aproximante', 'como o u de «quase»'],
+            ['w', '/w/', 'aproximante', 'como o u de “quase”'],
             ['l', '/l/', 'lateral', 'l claro, também no fim da palavra'],
-            ['r, (rh)', '/ɾ/, (/ɾʰ; r̥/)', 'vibrante simples', 'r como em «caro»; rh é o mesmo r sem voz'],
-            ['y (antes de vogal)', '/j/', 'aproximante palatal', 'como o i de «iate»'],
+            ['r, (rh)', '/ɾ/, (/ɾʰ; r̥/)', 'vibrante simples', 'r como em “caro”; rh é o mesmo r sem voz'],
+            ['y (antes de vogal)', '/j/', 'aproximante palatal', 'como o i de “iate”'],
           ],
         },
       },
@@ -65,19 +65,19 @@ export const TOPICS: TsevhuTopic[] = [
         table: {
           head: ['Escrita', 'Som', 'Dica'],
           rows: [
-            ['i', '/i/', 'como em «vi»'],
-            ['ii', '/ɪ/', 'um i mais aberto e curto, como em «bit» do inglês'],
-            ['ae', '/e/', 'e fechado, como em «vê»'],
-            ['e', '/ɛ/', 'e aberto, como em «pé»'],
-            ['eu', '/œ/', 'e aberto com lábios arredondados, como no francês «peur»'],
+            ['i', '/i/', 'como em “vi”'],
+            ['ii', '/ɪ/', 'um i mais aberto e curto, como em “bit” do inglês'],
+            ['ae', '/e/', 'e fechado, como em “vê”'],
+            ['e', '/ɛ/', 'e aberto, como em “pé”'],
+            ['eu', '/œ/', 'e aberto com lábios arredondados, como no francês “peur”'],
             ['y (entre consoantes)', '/ə/', 'vogal neutra, como o e final do português de Portugal'],
             ['a', '/ɑ/', 'a aberto e no fundo da boca'],
-            ['o', '/o/', 'o fechado, como em «avô»'],
-            ['u', '/u/', 'como em «tu»'],
+            ['o', '/o/', 'o fechado, como em “avô”'],
+            ['u', '/u/', 'como em “tu”'],
             ['w (como vogal)', '/ʍu/', 'u com um sopro antes'],
-            ['au', '/aʊ/', 'como em «mau»'],
-            ['ai', '/ai/', 'como em «pai»'],
-            ['oi', '/ɔi/', 'como em «herói»'],
+            ['au', '/aʊ/', 'como em “mau”'],
+            ['ai', '/ai/', 'como em “pai”'],
+            ['oi', '/ɔi/', 'como em “herói”'],
             ['(ie), (io)', '/ijɛ/, /ijo/', 'i + y + vogal'],
             ['(ue), (oe)', '/uwɛ/, /owɛ/', 'vogal + w + e'],
           ],
@@ -112,11 +112,11 @@ export const TOPICS: TsevhuTopic[] = [
           rows: [
             ['w → ʍ / C_C, #_C', 'w entre consoantes, ou no começo da palavra antes de consoante, soa ʍ (muitas vezes quase ɸ)'],
             ['j → ə / C_C, C_#, #_C', 'o y entre consoantes, depois de consoante no fim da palavra ou no começo antes de consoante vira a vogal neutra ə'],
-            ['j → ʲ / C_V', 'o y entre consoante e vogal só «amacia» a consoante (palatalização)'],
+            ['j → ʲ / C_V', 'o y entre consoante e vogal só “amacia” a consoante (palatalização)'],
             ['w → ʷ / C_V', 'o w entre consoante e vogal só arredonda a consoante'],
             ['ɪ → i / _r', 'antes de r, i e ii soam igual (a qualidade fica colorida pelo r)'],
             ['CC → CəC', 'dá para pôr um ə entre duas consoantes, conforme a preferência de quem fala'],
-            ['n → ŋ / _[velar]', 'n antes de k, g etc. soa como o n de «banco»'],
+            ['n → ŋ / _[velar]', 'n antes de k, g etc. soa como o n de “banco”'],
             ['q/k/kʰ → g / _g', 'ex.: tbɑkʰgi → tbɑggi'],
             ['ç → s / _s', 'ex.: gɛçsɛt → gɛssɛt'],
             ['V[frente]V → VjV; senão VV → VwV; œV → œɥV', 'entre duas vogais aparece um y (vogais da frente) ou um w (as demais); depois de eu aparece ɥ (escrito eujV quando for o caso)'],
@@ -132,7 +132,7 @@ export const TOPICS: TsevhuTopic[] = [
             ['V¹V¹ → V¹wV¹', 'duas vogais iguais seguidas ganham um w no meio (também vale para sequências que poderiam ser confundidas com um dígrafo). O autor marca esta regra como incerta.'],
             ['i → ii / Cy_', 'depois de consoante + y, escreve-se ii'],
             ['vh → v / _v, v_', 'vh vira v ao lado de outro v'],
-            ['C¹(l/b)C¹ → (l/b)C¹C¹', 'nos verbos, o l ou b «pula» para antes da consoante dobrada: geclcet → gelccet'],
+            ['C¹(l/b)C¹ → (l/b)C¹C¹', 'nos verbos, o l ou b “pula” para antes da consoante dobrada: geclcet → gelccet'],
             ['Vː = Vh', 'vogal longa se escreve com h depois (só convenção de escrita)'],
             ['jdj → jd', 'ʒdʒ se simplifica'],
             ['tsts → tts', 'ts dobrado se escreve tts'],
@@ -206,22 +206,22 @@ export const TOPICS: TsevhuTopic[] = [
     id: 'mundo',
     emoji: '🐟',
     title: 'O mundo e a história da língua',
-    summary: 'Onope, os Tsavhe, Vhuteya, a «língua antiga», os dialetos e as duas escritas: o Koiwrit, desenhado sobre um peixe koi, e o Shorthand.',
+    summary: 'Onope, os Tsavhe, Vhuteya, a “língua antiga”, os dialetos e as duas escritas: o Koiwrit, desenhado sobre um peixe koi, e o Shorthand.',
     sections: [
       {
-        text: 'O Tsevhu é uma língua artificial criada por Koa Vhukva («koallary») e sua comunidade. No mundo da ficção, ela é falada pelos Tsavhe no planeta Onope. No dicionário, a própria palavra tsevhu aparece como «o nome da conlang».',
+        text: 'O Tsevhu é uma língua artificial criada por Koa Vhukva (“koallary”) e sua comunidade. No mundo da ficção, ela é falada pelos Tsavhe no planeta Onope. No dicionário, a própria palavra tsevhu aparece como “o nome da conlang”.',
       },
       {
         heading: 'Lugares e povos',
         table: {
           head: ['Nome', 'O que é (segundo o dicionário)'],
           rows: [
-            ['Vhuteya', 'a «terra dos koi»; o país de origem do Tsevhu e dos Tsavhe'],
-            ["'Eunae", 'o «mar de estrelas», a galáxia de Onope'],
-            ["Vhi'ol", 'o par de luas (literalmente, «dança das luas»)'],
-            ["Vhe'a", 'a segunda lua, a menor («laranjinha»)'],
+            ['Vhuteya', 'a “terra dos koi”; o país de origem do Tsevhu e dos Tsavhe'],
+            ["'Eunae", 'o “mar de estrelas”, a galáxia de Onope'],
+            ["Vhi'ol", 'o par de luas (literalmente, “dança das luas”)'],
+            ["Vhe'a", 'a segunda lua, a menor (“laranjinha”)'],
             ['Tkalevk', 'tribo associada aos leviatãs; tida como a de falantes originais do Tsevhu'],
-            ['Riiseuk', 'os humanos («tribo pálida»)'],
+            ['Riiseuk', 'os humanos (“tribo pálida”)'],
             ['Tsiacar', 'o país dos invasores de Vhuteya, que provocaram a revolução cultural do Hatsavhe'],
             ['Suon Kiin', 'o deserto de ferrugem'],
             ['Kith Kilan', 'a floresta tropical verdejante'],
@@ -230,18 +230,18 @@ export const TOPICS: TsevhuTopic[] = [
       },
       {
         heading: 'Um pouco de história',
-        text: "Na'okau («língua velha») é o Tsevhu antigo, falado muito antes; ele estava morrendo pouco antes do Hatsavhe e foi revivido nessa época. O Hatsavhe foi uma revolução clandestina marcada pelo uso do Tsevhu como código e por uma grande expansão da cultura Tsavhe. Nela era muito importante o kiryka, «a pessoa que codifica»: se fosse pego, o golpe podia fracassar. Hoje o termo se aplica a pessoas respeitadas, muitas vezes ligadas às runas.",
+        text: "Na'okau (“língua velha”) é o Tsevhu antigo, falado muito antes; ele estava morrendo pouco antes do Hatsavhe e foi revivido nessa época. O Hatsavhe foi uma revolução clandestina marcada pelo uso do Tsevhu como código e por uma grande expansão da cultura Tsavhe. Nela era muito importante o kiryka, “a pessoa que codifica”: se fosse pego, o golpe podia fracassar. Hoje o termo se aplica a pessoas respeitadas, muitas vezes ligadas às runas.",
       },
       {
         heading: 'Dialetos',
-        text: "A palavra para «dialeto» é kau'a. O dicionário registra várias formas dialetais, e a gramática menciona variação de dialeto e registro, por exemplo, em qual palavra vai o sufixo -yp.",
+        text: "A palavra para “dialeto” é kau'a. O dicionário registra várias formas dialetais, e a gramática menciona variação de dialeto e registro, por exemplo, em qual palavra vai o sufixo -yp.",
         examples: [
-          ['liis → liisn', '«dia» (forma dialetal)'],
-          ['toliis → toliisn', '«hoje» (forma dialetal)'],
-          ['mbe → mba', '«boca» (também dialetal)'],
-          ['hkiiri → kiri', '«cereja» (forma dialetal)'],
-          ['jamaits → jamai', '«sopa» (forma dialetal)'],
-          ['saryn → pasar', '«quanto; quantos» (forma dialetal)'],
+          ['liis → liisn', '“dia” (forma dialetal)'],
+          ['toliis → toliisn', '“hoje” (forma dialetal)'],
+          ['mbe → mba', '“boca” (também dialetal)'],
+          ['hkiiri → kiri', '“cereja” (forma dialetal)'],
+          ['jamaits → jamai', '“sopa” (forma dialetal)'],
+          ['saryn → pasar', '“quanto; quantos” (forma dialetal)'],
         ],
       },
       {
@@ -250,14 +250,14 @@ export const TOPICS: TsevhuTopic[] = [
           head: ['Nome', 'Como é'],
           rows: [
             ['Koiwrit (Luvhte Tenyeo; também Luvhten, Luvhyeo, Luvvhu)', 'escrita não linear e caligráfica: a frase é desenhada como um peixe koi cercado de ondulações (círculos)'],
-            ['Neshet (Shorthand)', 'o jeito mais rápido e linear de escrever o Tsevhu (literalmente, «palavra lisa»)'],
+            ['Neshet (Shorthand)', 'o jeito mais rápido e linear de escrever o Tsevhu (literalmente, “palavra lisa”)'],
             ['Reneshet (Rineshet, Rene)', 'outra escrita rápida, com aparência parecida com a chinesa ou a japonesa'],
           ],
         },
       },
       {
         heading: 'Como funciona o Koiwrit',
-        text: 'Cada som tem uma «ondulação» (ripple), um traço curvo; segundo os diagramas, cada uma das 4 variantes de ondulação se baseia num círculo dividido em quatro. As ondulações se encaixam em posições em volta do koi: o participante ativo e o estativo ficam no corpo do peixe, os oblíquos se arrumam num arco à frente dele (ligados por trilhas de bolhas), e o aspecto (contínuo, perfectivo, prospectivo, retrospectivo) e o modo (declarativo, imperativo, interrogativo) também têm lugar próprio. Orações subordinadas viram um koi menor. A direção para onde o koi aponta marca o tempo verbal (veja o tópico de tempos).',
+        text: 'Cada som tem uma “ondulação” (ripple), um traço curvo; segundo os diagramas, cada uma das 4 variantes de ondulação se baseia num círculo dividido em quatro. As ondulações se encaixam em posições em volta do koi: o participante ativo e o estativo ficam no corpo do peixe, os oblíquos se arrumam num arco à frente dele (ligados por trilhas de bolhas), e o aspecto (contínuo, perfectivo, prospectivo, retrospectivo) e o modo (declarativo, imperativo, interrogativo) também têm lugar próprio. Orações subordinadas viram um koi menor. A direção para onde o koi aponta marca o tempo verbal (veja o tópico de tempos).',
       },
       {
         heading: 'Não é a única: outras escritas circulares e espaciais',
@@ -283,12 +283,12 @@ export const TOPICS: TsevhuTopic[] = [
             [
               'Hieróglifos maias',
               'Mesoamérica, de uns 300 a.C. até a conquista espanhola',
-              'Misturam sinais logográficos e silábicos comprimidos dentro de um mesmo bloco, lido em pares de colunas; nomes de governantes ficavam encaixados dentro de uma moldura (o «cartucho»), parecido com um monograma.',
+              'Misturam sinais logográficos e silábicos comprimidos dentro de um mesmo bloco, lido em pares de colunas; nomes de governantes ficavam encaixados dentro de uma moldura (o “cartucho”), parecido com um monograma.',
             ],
             [
               'Tughra otomana',
               'Caligrafia oficial dos sultões otomanos, desde o século XIV',
-              'O nome e os títulos do sultão, mais a fórmula «sempre vitorioso», se dobram numa única caligrafia ornamental em árabe, com laços e curvas — não se lê em linha reta, e sim como um emblema.',
+              'O nome e os títulos do sultão, mais a fórmula “sempre vitorioso”, se dobram numa única caligrafia ornamental em árabe, com laços e curvas — não se lê em linha reta, e sim como um emblema.',
             ],
           ],
         },
@@ -308,7 +308,7 @@ export const TOPICS: TsevhuTopic[] = [
     summary: 'O coração da gramática: a mesma pessoa muda de forma conforme faz algo por vontade própria (ativo) ou sem querer (estativo).',
     sections: [
       {
-        text: 'Em Tsevhu, o que importa não é tanto «quem é o sujeito», e sim se a ação é voluntária ou involuntária. Quem age por vontade própria vai no caso ativo (.a); quem passa por algo sem querer vai no caso estativo (.s). O verbo concorda: tem terminação ativa ou estativa.',
+        text: 'Em Tsevhu, o que importa não é tanto “quem é o sujeito”, e sim se a ação é voluntária ou involuntária. Quem age por vontade própria vai no caso ativo (.a); quem passa por algo sem querer vai no caso estativo (.s). O verbo concorda: tem terminação ativa ou estativa.',
       },
       {
         heading: 'O exemplo-chave',
@@ -318,23 +318,23 @@ export const TOPICS: TsevhuTopic[] = [
             ['I.a eat.a', 'eu.a como.a', 'eu como porque quero (voluntário)'],
             ['I.s eat.s', 'eu.s como.s', 'eu como sem querer, sem controle (involuntário)'],
             ['I.a eat.a ice cream.s', 'eu.a como.a sorvete.s', 'eu tomo sorvete por vontade própria'],
-            ['I.s eat.s ice cream.a', 'eu.s como.s sorvete.a', 'eu tomo sorvete sem querer; o sorvete é que «contribui» para a ação'],
+            ['I.s eat.s ice cream.a', 'eu.s como.s sorvete.a', 'eu tomo sorvete sem querer; o sorvete é que “contribui” para a ação'],
           ],
         },
       },
       {
-        heading: 'Na prática: «eu» ativo e «eu» estativo',
-        text: 'O pronome «eu» neutro é nsa no ativo e tsa no estativo. Compare nas frases comuns: saber é algo que se faz ativamente; entender, perceber e estar indeciso são coisas que «acontecem» com a gente.',
+        heading: 'Na prática: “eu” ativo e “eu” estativo',
+        text: 'O pronome “eu” neutro é nsa no ativo e tsa no estativo. Compare nas frases comuns: saber é algo que se faz ativamente; entender, perceber e estar indeciso são coisas que “acontecem” com a gente.',
         examples: [
           ['nsa kimyo', 'eu sei (nsa ativo + kimyo, verbo de classe 1 com a terminação ativa mental -yo)'],
-          ['tsa kimvh', 'eu entendo (tsa estativo + kimvh, «a ficha cair»)'],
+          ['tsa kimvh', 'eu entendo (tsa estativo + kimvh, “a ficha cair”)'],
           ["tsa mbae'en", "não tenho certeza (tsa estativo + terminação estativa -'en)"],
           ['nsa non sayo', 'sinto sua falta'],
         ],
       },
       {
         heading: 'As quatro classes de verbo',
-        text: 'Todo verbo pertence a uma de quatro classes, conforme dois traços: se ele muda o estado das coisas (resultativo) e se tem um ponto final (télico). No ativo, há uma terminação de «corpo» (movimento físico) e outra de «mente» (intenção mental). No estativo, as classes 1 e 2 usam a mesma terminação para corpo e mente; as classes 3 e 4 têm duas.',
+        text: 'Todo verbo pertence a uma de quatro classes, conforme dois traços: se ele muda o estado das coisas (resultativo) e se tem um ponto final (télico). No ativo, há uma terminação de “corpo” (movimento físico) e outra de “mente” (intenção mental). No estativo, as classes 1 e 2 usam a mesma terminação para corpo e mente; as classes 3 e 4 têm duas.',
         table: {
           head: ['Classe', 'Tipo', 'Ativo: corpo', 'Ativo: mente', 'Estativo: corpo', 'Estativo: mente'],
           rows: [
@@ -351,7 +351,7 @@ export const TOPICS: TsevhuTopic[] = [
           ['kimyo', 'saber (classe 1)'],
           ['kimse', 'saber por prática, por experiência (classe 2)'],
           ['kimman', 'entender (classe 3)'],
-          ['kimvh', 'perceber de repente, «a ficha cair» (classe 3)'],
+          ['kimvh', 'perceber de repente, “a ficha cair” (classe 3)'],
           ['kimda', 'compreender (classe 4)'],
         ],
       },
@@ -376,11 +376,11 @@ export const TOPICS: TsevhuTopic[] = [
             ['qat', 'dá volição a algo inanimado ou tira de algo animado (neste caso, como insulto)', 'soem qat (o sol animado)'],
           ],
         },
-        text: 'Por padrão, seres animados têm volição e coisas inanimadas não têm. É por isso que em soem qat vuvha, «o sol queima», o qat trata o sol como um ser que age.',
+        text: 'Por padrão, seres animados têm volição e coisas inanimadas não têm. É por isso que em soem qat vuvha, “o sol queima”, o qat trata o sol como um ser que age.',
       },
       {
-        heading: 'Volição e o verbo «ser»',
-        text: 'Na cópula (o «ser»), a volição padrão é involuntária. Se o tópico vai para o ativo, ela vira voluntária: «doctor.a he.s» quer dizer que ele se tornou médico por vontade própria.',
+        heading: 'Volição e o verbo “ser”',
+        text: 'Na cópula (o “ser”), a volição padrão é involuntária. Se o tópico vai para o ativo, ela vira voluntária: “doctor.a he.s” quer dizer que ele se tornou médico por vontade própria.',
       },
     ],
   },
@@ -393,30 +393,30 @@ export const TOPICS: TsevhuTopic[] = [
     summary: 'Pronomes pessoais e possessivos por pessoa, número, gênero (neutro, masculino, feminino) e animacidade, cada um com forma ativa e estativa.',
     sections: [
       {
-        text: 'Cada pronome tem três formas: a base do Koiwrit, a ativa e a estativa. A marca (a) ou (s) depois da forma do Koiwrit diz se ela coincide com a ativa ou com a estativa. Na 2ª e 3ª pessoas há ainda a distinção entre animado (gente, bicho) e inanimado («você/ele» para uma coisa).',
+        text: 'Cada pronome tem três formas: a base do Koiwrit, a ativa e a estativa. A marca (a) ou (s) depois da forma do Koiwrit diz se ela coincide com a ativa ou com a estativa. Na 2ª e 3ª pessoas há ainda a distinção entre animado (gente, bicho) e inanimado (“você/ele” para uma coisa).',
       },
       {
         heading: 'Pronomes pessoais: singular',
         table: {
           head: ['Pessoa', 'Koiwrit (base)', 'Ativo', 'Estativo'],
           rows: [
-            ['1ª, neutro («eu»)', 'tsa /ʦɑ/ (s)', 'nsa /nsɑ/', 'tsa /ʦɑ/'],
+            ['1ª, neutro (“eu”)', 'tsa /ʦɑ/ (s)', 'nsa /nsɑ/', 'tsa /ʦɑ/'],
             ['1ª, masculino', 'tsaej /ʦeʒ/ (s)', 'nsae /nse/', 'tsaej /ʦeʒ/'],
             ['1ª, feminino', 'tsij /ʦij/ (s)', 'nsi /nsi/', 'tsij /ʦiʒ/'],
-            ['2ª, neutro animado («você»)', 'no /no/ (a)', 'no /no/', 'non /non/'],
+            ['2ª, neutro animado (“você”)', 'no /no/ (a)', 'no /no/', 'non /non/'],
             ['2ª, neutro inanimado', 'nu /nu/ (a)', 'nu /nu/', 'nun /nun/'],
             ['2ª, masculino', 'ne /nɛ/ (a)', 'ne /nɛ/', 'naen /nen/'],
             ['2ª, feminino', 'nii /nɪ/ (a)', 'nii /nɪ/', 'nin /nin/'],
-            ['3ª, neutro animado («ele/ela»)', 'aev /ev/ (s)', 'aej /eʒ/', 'aev /ev/'],
-            ['3ª, neutro inanimado («isso»)', 'va /vɑ/ (a)', 'va /vɑ/', 'veu /vœ/'],
-            ['3ª, masculino («ele»)', 'kej /kɛʒ/ (a)', 'kej /kɛʒ/', 'kje /kʒɛ/'],
-            ['3ª, feminino («ela»)', 'ksi /ksi/ (a)', 'ksi /ksi/', 'ksik /ksik/'],
+            ['3ª, neutro animado (“ele/ela”)', 'aev /ev/ (s)', 'aej /eʒ/', 'aev /ev/'],
+            ['3ª, neutro inanimado (“isso”)', 'va /vɑ/ (a)', 'va /vɑ/', 'veu /vœ/'],
+            ['3ª, masculino (“ele”)', 'kej /kɛʒ/ (a)', 'kej /kɛʒ/', 'kje /kʒɛ/'],
+            ['3ª, feminino (“ela”)', 'ksi /ksi/ (a)', 'ksi /ksi/', 'ksik /ksik/'],
           ],
         },
       },
       {
         heading: 'Pronomes pessoais: plural',
-        text: 'Na 1ª do plural há «nós» inclusivo (inclui você, ouvinte) e exclusivo (não inclui você).',
+        text: 'Na 1ª do plural há “nós” inclusivo (inclui você, ouvinte) e exclusivo (não inclui você).',
         table: {
           head: ['Pessoa', 'Koiwrit (base)', 'Ativo', 'Estativo'],
           rows: [
@@ -426,11 +426,11 @@ export const TOPICS: TsevhuTopic[] = [
             ['1ª excl., neutro', 'ite /ˈitɛ/ (a)', 'ite /ˈitɛ/', 'tev /ˈtɛv/'],
             ['1ª excl., masculino', 'tav /tɑv/ (s)', 'ita /itɑ/', 'tav /tɑv/'],
             ['1ª excl., feminino', 'itiiv /itɪv/ (s)', 'itii /itɪ/', 'itiiv /itɪv/'],
-            ['2ª, neutro animado («vocês»)', 'do /do/ (a)', 'do /do/', 'wdo /ʍdo/'],
+            ['2ª, neutro animado (“vocês”)', 'do /do/ (a)', 'do /do/', 'wdo /ʍdo/'],
             ['2ª, neutro inanimado', 'wda /ʍdɑ/ (s)', 'da /dɑ/', 'wda /ʍdɑ/'],
             ['2ª, masculino', 'de /dɛ/ (a)', 'de /dɛ/', 'wde /ʍdɛ/'],
             ['2ª, feminino', 'dii /dɪ/ (a)', 'dii /dɪ/', 'wdii /ʍdɪ/'],
-            ['3ª, neutro animado («eles»)', 'aeph /eɸ/ (a)', 'aeph /eɸ/', 'evm /ɛvm; vɛm; vm̩/'],
+            ['3ª, neutro animado (“eles”)', 'aeph /eɸ/ (a)', 'aeph /eɸ/', 'evm /ɛvm; vɛm; vm̩/'],
             ['3ª, neutro inanimado', 'hve /hvɛ/ (a)', 'hve /hvɛ/', 'hvik /hvik/'],
             ['3ª, masculino', 'kik /kik/ (s)', 'keg /kɛg/', 'kik /kik/'],
             ['3ª, feminino', 'suk /suk/ (s)', 'kus /kus/', 'suk /suk/'],
@@ -442,15 +442,15 @@ export const TOPICS: TsevhuTopic[] = [
         table: {
           head: ['Pessoa', 'Koiwrit (base)', 'Ativo', 'Estativo'],
           rows: [
-            ['1ª, neutro («meu»)', 'tso /ʦo/ (s)', 'cho /tʃo/', 'tso /ʦo/'],
+            ['1ª, neutro (“meu”)', 'tso /ʦo/ (s)', 'cho /tʃo/', 'tso /ʦo/'],
             ['1ª, masculino', 'chy /tʃə/ (s)', 'chae /tʃe/', 'chy /tʃə/'],
             ['1ª, feminino', 'tsy /tsə/ (s)', 'chi /tʃi/', 'tsy /tsə/'],
-            ['2ª, neutro animado («seu»)', 'ny /nə/ (a)', 'ny /nə/', 'nav /nɑv/'],
+            ['2ª, neutro animado (“seu”)', 'ny /nə/ (a)', 'ny /nə/', 'nav /nɑv/'],
             ['2ª, neutro inanimado', 'nuwu /nuwu/ (a)', 'nuwu /nuwu/', 'nuk /nuk/'],
             ['2ª, masculino', 'neye /nɛjɛ/ (a)', 'neye /nɛjɛ/', 'naeg /neg/'],
             ['2ª, feminino', 'niyii /nijɪ/ (a)', 'niyii /nijɪ/', 'nik /nik/'],
-            ['3ª, neutro animado («dele/dela»)', 'an /an/ (s)', 'ath /ɑθ/', 'an /an/'],
-            ['3ª, neutro inanimado («disso»)', 'voj /voʒ/ (a)', 'voj /voʒ/', 'vog /vog/'],
+            ['3ª, neutro animado (“dele/dela”)', 'an /an/ (s)', 'ath /ɑθ/', 'an /an/'],
+            ['3ª, neutro inanimado (“disso”)', 'voj /voʒ/ (a)', 'voj /voʒ/', 'vog /vog/'],
             ['3ª, masculino', 'koj /koʒ/ (a)', 'koj /koʒ/', 'kov /kov/'],
             ['3ª, feminino', 'kviin /kvɪn/ (a)', 'kviin /kvɪn/', 'kviik /kvɪk/'],
           ],
@@ -461,17 +461,17 @@ export const TOPICS: TsevhuTopic[] = [
         table: {
           head: ['Pessoa', 'Koiwrit (base)', 'Ativo', 'Estativo'],
           rows: [
-            ['1ª incl., neutro («nosso»)', 'yii /jɪ/ (a)', 'yii /jɪ/', 'yev /jɛv/'],
+            ['1ª incl., neutro (“nosso”)', 'yii /jɪ/ (a)', 'yii /jɪ/', 'yev /jɛv/'],
             ['1ª incl., masculino', 'by /bə/ (a)', 'by /bə/', 'bu /bu/'],
             ['1ª incl., feminino', 'iby /ibə/ (a)', 'iby /ibə/', 'ibu /ibu/'],
             ['1ª excl., neutro', 'vy /və/ (a)', 'vy /və/', 'yu /ju/'],
             ['1ª excl., masculino', 'tu /tu/ (s)', 'ty /tə/', 'tu /tu/'],
             ['1ª excl., feminino', 'itu /itu/ (s)', 'ity /ɪtə/', 'itu /itu/'],
-            ['2ª, neutro animado («de vocês»)', 'po /po/ (a)', 'po /po/', 'wpo /ʍpo/'],
+            ['2ª, neutro animado (“de vocês”)', 'po /po/ (a)', 'po /po/', 'wpo /ʍpo/'],
             ['2ª, neutro inanimado', 'wpa /ʍpɑ/ (s)', 'pa /pɑ/', 'wpa /ʍpɑ/'],
             ['2ª, masculino', 'pe /pɛ/ (a)', 'pe /pɛ/', 'wpe /ʍpɛ/'],
             ['2ª, feminino', 'pii /pɪ/ (a)', 'pii /pɪ/', 'wpii /ʍpɪ/'],
-            ['3ª, neutro animado («deles»)', 'avha /ˈɑβɑ/ (a)', 'avha /ˈɑβɑ/', 'ev /ɛv/'],
+            ['3ª, neutro animado (“deles”)', 'avha /ˈɑβɑ/ (a)', 'avha /ˈɑβɑ/', 'ev /ɛv/'],
             ['3ª, neutro inanimado', 'hviin /hvɪn/ (a)', 'hviin /hvɪn/', 'hvog /hvog/'],
             ['3ª, masculino', 'kog /kog/ (s)', 'kovh /koβ/', 'kog /kog/'],
             ['3ª, feminino', 'vhuk /βuk/ (s)', 'kuvh /kuβ/', 'vhuk /βuk/'],
@@ -480,7 +480,7 @@ export const TOPICS: TsevhuTopic[] = [
       },
       {
         heading: 'O gênero é de quem fala',
-        text: 'Nas frases comuns, várias expressões mudam conforme o gênero do pronome. «De nada» na versão neutra usa tso (meu, neutro); a forma curta tem uma versão para cada gênero.',
+        text: 'Nas frases comuns, várias expressões mudam conforme o gênero do pronome. “De nada” na versão neutra usa tso (meu, neutro); a forma curta tem uma versão para cada gênero.',
         examples: [
           ["tso'iir mai", 'de nada (neutro)'],
           ["tsy'iir mai", 'de nada (feminino)'],
@@ -490,8 +490,8 @@ export const TOPICS: TsevhuTopic[] = [
         ],
       },
       {
-        heading: 'Reflexivo e «meu próprio»',
-        text: 'O sufixo -el («eu mesmo, si mesmo») vai no pronome comum: «nós vimos a nós mesmos» usa o pronome + -el. No possessivo, -el quer dizer «meu próprio» (tsoel tovh, «o meu próprio pão»), ou «o meu» quando aparece sozinho. Também dá para usar a palavra el com prefixo de caso: veu oel muvh, «isso se matou».',
+        heading: 'Reflexivo e “meu próprio”',
+        text: 'O sufixo -el (“eu mesmo, si mesmo”) vai no pronome comum: “nós vimos a nós mesmos” usa o pronome + -el. No possessivo, -el quer dizer “meu próprio” (tsoel tovh, “o meu próprio pão”), ou “o meu” quando aparece sozinho. Também dá para usar a palavra el com prefixo de caso: veu oel muvh, “isso se matou”.',
         examples: [
           ['tsoel tovh', 'o meu próprio pão'],
           ['veu oel muvh', 'isso matou a si mesmo'],
@@ -513,7 +513,7 @@ export const TOPICS: TsevhuTopic[] = [
     id: 'artigos',
     emoji: '👉',
     title: 'Artigos e demonstrativos',
-    summary: 'Artigos definidos e indefinidos e os três graus de «este / esse / aquele», todos com forma ativa e estativa.',
+    summary: 'Artigos definidos e indefinidos e os três graus de “este / esse / aquele”, todos com forma ativa e estativa.',
     sections: [
       {
         text: 'Como os pronomes, os artigos também concordam com a volição: há uma forma ativa, uma estativa e a forma base do Koiwrit. O artigo definido singular ativo é zero (nada), ou mn na forma antiga.',
@@ -530,7 +530,7 @@ export const TOPICS: TsevhuTopic[] = [
         },
       },
       {
-        text: 'O indefinido plural também pode indicar uma parte indefinida de um grupo. Com pa- antes, ele indica um grupo grande («muitos»).',
+        text: 'O indefinido plural também pode indicar uma parte indefinida de um grupo. Com pa- antes, ele indica um grupo grande (“muitos”).',
         examples: [
           ['wn kiim', 'o cachorro (estativo)'],
           ['vu xujyt', 'um bando de gatos'],
@@ -551,11 +551,11 @@ export const TOPICS: TsevhuTopic[] = [
         },
       },
       {
-        text: "Quando o demonstrativo é usado sozinho, sem substantivo depois (como em «eu gosto disto»), pode receber -'i, que significa «coisa».",
+        text: "Quando o demonstrativo é usado sozinho, sem substantivo depois (como em “eu gosto disto”), pode receber -'i, que significa “coisa”.",
       },
       {
         heading: 'Artigos que levam papéis',
-        text: "O artigo pode receber sufixos que indicam o papel do nome na frase, como -'iir («com»). Assim, m'iir é «com» dentro do ativo, e wn'iir é «com» dentro do estativo. Veja mais no tópico de casos.",
+        text: "O artigo pode receber sufixos que indicam o papel do nome na frase, como -'iir (“com”). Assim, m'iir é “com” dentro do ativo, e wn'iir é “com” dentro do estativo. Veja mais no tópico de casos.",
         examples: [
           ["essl'en (rui) m'iir wynsyuncae", 'você está ferrado (lit. vai ser pego sem lanterna)'],
           ["m'uk 'iis hidon", 'em primeiro lugar (lit. com a ondulação original)'],
@@ -598,7 +598,7 @@ export const TOPICS: TsevhuTopic[] = [
       },
       {
         heading: 'Prefixos de caso',
-        text: 'Adjetivos, números, advérbios, pronomes sem caso (e talvez nomes próprios) recebem prefixos que mostram a que parte da frase se ligam. Também servem para o complemento de «ser» quando é adjetivo, e para nomes de massa.',
+        text: 'Adjetivos, números, advérbios, pronomes sem caso (e talvez nomes próprios) recebem prefixos que mostram a que parte da frase se ligam. Também servem para o complemento de “ser” quando é adjetivo, e para nomes de massa.',
         table: {
           head: ['Caso', 'Referente ativo', 'Referente estativo'],
           rows: [
@@ -625,13 +625,13 @@ export const TOPICS: TsevhuTopic[] = [
             ['Recipiente', '(m)-ro', 'a alguém'],
             ['Instrumental', "(m)-'or", 'usando algo'],
             ['Comitativo', "(m)-'iir", 'com alguém ou algo'],
-            ['Atributivo', "(m)-'uk", 'por meio de, com (ex. «com graça»)'],
+            ['Atributivo', "(m)-'uk", 'por meio de, com (ex. “com graça”)'],
             ['Assunto / propósito', "(m)-'ia", 'sobre, a respeito de, por causa de'],
           ],
         },
         examples: [
           ['nonre aurilvh', 'parabéns (lit. fico feliz em seu benefício)'],
-          ['amiinmt(a) va tsaro', 'me dá isso (tsa + -ro, «a mim»)'],
+          ['amiinmt(a) va tsaro', 'me dá isso (tsa + -ro, “a mim”)'],
           ["nav'or genmecae", 'sem a sua ajuda'],
           ["veu gelccet tso'iir mai", 'de nada (lit. isso vem com o meu coração)'],
           ["nsa'ia", 'o que tem a ver comigo é que eu...'],
@@ -639,14 +639,14 @@ export const TOPICS: TsevhuTopic[] = [
       },
       {
         heading: 'Oblíquos com posposição',
-        text: 'Em frases com posposição, o pronome recebe -d ou -t (ex.: ksid /ksid/). Para trazer de volta o agente numa passiva (o «por quem»), o oblíquo causativo usa -dn nos pronomes e -ty nos artigos e demonstrativos.',
+        text: 'Em frases com posposição, o pronome recebe -d ou -t (ex.: ksid /ksid/). Para trazer de volta o agente numa passiva (o “por quem”), o oblíquo causativo usa -dn nos pronomes e -ty nos artigos e demonstrativos.',
       },
       {
         heading: 'Três tipos de genitivo',
         table: {
           head: ['Genitivo', 'Forma', 'Exemplo', 'Tradução'],
           rows: [
-            ['Posse («de»)', 'phoi / -h(o) (forma curta)', 'wn kiim tso zisi phoi', 'o cachorro da minha filha'],
+            ['Posse (“de”)', 'phoi / -h(o) (forma curta)', 'wn kiim tso zisi phoi', 'o cachorro da minha filha'],
             ['', '', 'wn kiim tso zisih', 'o cachorro da minha filha (forma curta)'],
             ['Feito de', '-yp (plural -yyp)', 'wpo naec tiimnyp', 'a casa de cartas de vocês'],
             ['', '', 'qiinaetelyyp syun', 'raios de luz'],
@@ -654,19 +654,19 @@ export const TOPICS: TsevhuTopic[] = [
             ['Parte de um grupo', '-yl (plural -yyl; -yle quando o possuidor está implícito)', 'wteyl xujyt', 'o peixe que faz parte do bando de gatos'],
           ],
         },
-        text: 'No -yp, há variação de dialeto e registro: às vezes ele vai no possuidor, às vezes no possuído. Nas frases comuns aparece -ype em vu tvyype, «cheio de enguias».',
+        text: 'No -yp, há variação de dialeto e registro: às vezes ele vai no possuidor, às vezes no possuído. Nas frases comuns aparece -ype em vu tvyype, “cheio de enguias”.',
       },
       {
         heading: 'Outros sufixos e prefixos do nome',
         table: {
           head: ['Afixo', 'Função'],
           rows: [
-            ['-ka', 'agente animado («-dor»)'],
+            ['-ka', 'agente animado (“-dor”)'],
             ['-no', 'agente inanimado (ferramenta)'],
             ['-nna', 'agente em nome próprio'],
             ['-el', 'próprio, pessoal'],
             ['-me / -te', 'transforma verbo em substantivo (-me mantém a terminação do verbo; -te a tira)'],
-            ['-jo /-ʒo/', 'transforma adjetivo em substantivo («-ez, -dade»)'],
+            ['-jo /-ʒo/', 'transforma adjetivo em substantivo (“-ez, -dade”)'],
             ["-'a ; ii'-", 'diminutivo (pequenino ; filhote)'],
             ['-vo/-bo ; sa-', 'aumentativo (grande ; importante, muito)'],
             ['xa-', 'pejorativo (desaprovação; muito usado em insultos)'],
@@ -674,13 +674,13 @@ export const TOPICS: TsevhuTopic[] = [
             ['-ok', 'sarcasmo ou ironia'],
             ['-gi', 'exclamativo, dá ênfase (como itálico)'],
             ['tye-', 'intensificador (incrivelmente)'],
-            ['-(a)gri', '«tão ... que»'],
+            ['-(a)gri', '“tão ... que”'],
           ],
         },
         examples: [
-          ['kambaeka', 'mineiro (lit. «quebrador de pedra», com -ka)'],
+          ['kambaeka', 'mineiro (lit. “quebrador de pedra”, com -ka)'],
           ['kambaeno', 'picareta (com -no)'],
-          ["Ro'a", 'nome próprio: «pedrinha»'],
+          ["Ro'a", 'nome próprio: “pedrinha”'],
         ],
       },
     ],
@@ -694,7 +694,7 @@ export const TOPICS: TsevhuTopic[] = [
     summary: 'Partículas soltas marcam o tempo, e no Koiwrit o tempo é a direção do koi. Os modos são partículas com h- (hmae, hmo, hma, hvu, hde, hku, hsen).',
     sections: [
       {
-        text: 'O Tsevhu marca o tempo com uma palavra separada, uma partícula, e não com terminação no verbo. Há três passados, três futuros, o presente e o não-finito («sempre verdade»). A ordem no sintagma verbal é: tempo → verbo → modo (com certa flexibilidade).',
+        text: 'O Tsevhu marca o tempo com uma palavra separada, uma partícula, e não com terminação no verbo. Há três passados, três futuros, o presente e o não-finito (“sempre verdade”). A ordem no sintagma verbal é: tempo → verbo → modo (com certa flexibilidade).',
       },
       {
         heading: 'As partículas de tempo e o koi',
@@ -722,7 +722,7 @@ export const TOPICS: TsevhuTopic[] = [
       },
       {
         heading: 'Da vida de quem?',
-        text: 'O «dentro da sua vida» pode ser medido pela vida de pessoas diferentes. Sem marca, é a vida do tópico. Com tz(a)- é a vida de quem fala; com tl(o)-, a de quem ouve; com tn(e), a de uma terceira pessoa. Funciona também com os modos. O autor marca este recurso como experimental.',
+        text: 'O “dentro da sua vida” pode ser medido pela vida de pessoas diferentes. Sem marca, é a vida do tópico. Com tz(a)- é a vida de quem fala; com tl(o)-, a de quem ouve; com tn(e), a de uma terceira pessoa. Funciona também com os modos. O autor marca este recurso como experimental.',
         examples: [
           ['Ksi vhut en', 'Ela falou depois do tempo dela.'],
           ['Ksi wbae en', 'Ela falou antes do tempo dela.'],
@@ -747,7 +747,7 @@ export const TOPICS: TsevhuTopic[] = [
         },
       },
       {
-        text: 'Para juntar dois modos do mesmo par, usa-se -ci; de pares diferentes, cai o segundo h-. A ordem muda o sentido: hmoci (inevitavelmente querer) × hmoici (querer fazer algo inevitavelmente). A palavra wri, «talvez», também serve para o especulativo, com um tom de dúvida um pouco mais negativo.',
+        text: 'Para juntar dois modos do mesmo par, usa-se -ci; de pares diferentes, cai o segundo h-. A ordem muda o sentido: hmoci (inevitavelmente querer) × hmoici (querer fazer algo inevitavelmente). A palavra wri, “talvez”, também serve para o especulativo, com um tom de dúvida um pouco mais negativo.',
         examples: [
           ['no mihse ysgyo okuo li hmoi', 'você promete que vai ser verdadeiro'],
           ['wri', 'talvez'],
@@ -762,7 +762,7 @@ export const TOPICS: TsevhuTopic[] = [
             ['Interrogativo (pergunta)', 'y- ... -n(i)', 'yvausen /əvaʊˈsɛn/', 'Abre?'],
           ],
         },
-        text: 'Os dois vêm do verbo vause, «abrir». O imperativo usa a forma não-finita ou o presente, mas pode indicar o tempo. Nas frases comuns há ainda ii- ... -a, sobretudo com palavras interrogativas (sar → iisara non, «como vai você?»); o próprio autor diz que ainda não sabe bem o que essa forma faz.',
+        text: 'Os dois vêm do verbo vause, “abrir”. O imperativo usa a forma não-finita ou o presente, mas pode indicar o tempo. Nas frases comuns há ainda ii- ... -a, sobretudo com palavras interrogativas (sar → iisara non, “como vai você?”); o próprio autor diz que ainda não sabe bem o que essa forma faz.',
         examples: [
           ['avaecset', 'escute!'],
           ['aniemset nav teumyth', 'segure a língua! (lit. aquiete seus lábios)'],
@@ -771,8 +771,8 @@ export const TOPICS: TsevhuTopic[] = [
         ],
       },
       {
-        heading: 'Perguntas com «está» × «faz»',
-        text: 'Perguntar «está fazendo?» ou «faz?» depende do aspecto do verbo: contínuo × perfectivo.',
+        heading: 'Perguntas com “está” × “faz”',
+        text: 'Perguntar “está fazendo?” ou “faz?” depende do aspecto do verbo: contínuo × perfectivo.',
         examples: [
           ["Non yky'enni", 'Você está vendo?'],
           ["Non hma yky'enni", 'Você consegue ver?'],
@@ -791,14 +791,14 @@ export const TOPICS: TsevhuTopic[] = [
     sections: [
       {
         heading: 'Aspecto',
-        text: 'A forma básica do verbo já é o contínuo («estar fazendo»). Os outros aspectos são prefixos, e vários mudam conforme o verbo começa por vogal ou consoante.',
+        text: 'A forma básica do verbo já é o contínuo (“estar fazendo”). Os outros aspectos são prefixos, e vários mudam conforme o verbo começa por vogal ou consoante.',
         table: {
           head: ['Aspecto', 'Começa com vogal', 'Começa com consoante', 'Sentido'],
           rows: [
             ['Contínuo', 'forma básica', 'forma básica', 'estar fazendo'],
             ['Prospectivo', 'th-', 'vii-', 'estar prestes a, ir fazer'],
             ['Retrospectivo (perfeito)', 'tj-', "o'-", 'ter feito (com relevância para o momento)'],
-            ['Perfectivo', 'sy-', 'sy-', 'ação completa («-ou»)'],
+            ['Perfectivo', 'sy-', 'sy-', 'ação completa (“-ou”)'],
             ['Retrospectivo perfectivo', 'otj-', 'osy-', 'ter + ação completa'],
             ['Prospectivo perfectivo', 'iith-', 'iisy-', 'prestes a + ação completa'],
           ],
@@ -833,7 +833,7 @@ export const TOPICS: TsevhuTopic[] = [
             ['-go', 'refazer uma vez (de novo, re-)'],
             ['-hu', 'desfazer'],
             ['-yr', 'com mais frequência'],
-            ['-raxa / syn-', 'continuar, retomar (syn-: «para sempre», mais com adjetivos)'],
+            ['-raxa / syn-', 'continuar, retomar (syn-: “para sempre”, mais com adjetivos)'],
             ['-mik', 'completamente'],
           ],
         },
@@ -844,8 +844,8 @@ export const TOPICS: TsevhuTopic[] = [
         table: {
           head: ['Forma', 'Uso'],
           rows: [
-            ['raiz + l + terminação', 'inacusativo e passiva («o navio afunda»)'],
-            ['raiz + b + terminação', 'excesso («comer demais»)'],
+            ['raiz + l + terminação', 'inacusativo e passiva (“o navio afunda”)'],
+            ['raiz + b + terminação', 'excesso (“comer demais”)'],
             ['raiz + m + terminação', 'undativo: troca quem dá e quem recebe'],
             ['raiz + g + terminação', 'verbo adicional para o mesmo participante (mesmo tempo, modo e aspecto do primeiro)'],
             ['raiz + terminação + toi', 'para verbos que são ativos e estativos ao mesmo tempo (toi é partícula, não afixo)'],
@@ -911,11 +911,11 @@ export const TOPICS: TsevhuTopic[] = [
       },
       {
         heading: 'Passiva × queda do participante',
-        text: 'Na queda do participante principal, o agente implícito tem a volição oposta. Na passiva verdadeira, com -l- no verbo, agente e paciente têm a mesma volição. O -l- aparece, por exemplo, em miinlak, «ser privado de».',
+        text: 'Na queda do participante principal, o agente implícito tem a volição oposta. Na passiva verdadeira, com -l- no verbo, agente e paciente têm a mesma volição. O -l- aparece, por exemplo, em miinlak, “ser privado de”.',
       },
       {
         heading: 'Cadeias causativas: o efeito borboleta',
-        text: "Para «eu fiz com que ele fizesse com que ela...», usa-se a metáfora vhu'iis («efeito borboleta», literalmente «ondulação do koi») mais o genitivo -yp. A ordem é ao contrário do português, e a volição é sempre involuntária.",
+        text: "Para “eu fiz com que ele fizesse com que ela...”, usa-se a metáfora vhu'iis (“efeito borboleta”, literalmente “ondulação do koi”) mais o genitivo -yp. A ordem é ao contrário do português, e a volição é sempre involuntária.",
         examples: [
           ["hivantso nsi kviind vhu'iis kojdyp chidyp", 'Eu fiz com que ele fizesse com que ela fizesse com que eu ganhasse.'],
         ],
@@ -925,17 +925,17 @@ export const TOPICS: TsevhuTopic[] = [
         table: {
           head: ['Construção', 'Esquema', 'Exemplo (glosa)'],
           rows: [
-            ['Dois participantes principais (precisa de «com» ou conjunção)', 'agent.a verb.a agent.a.comitative', 'She.a with-I.a eat.a'],
+            ['Dois participantes principais (precisa de “com” ou conjunção)', 'agent.a verb.a agent.a.comitative', 'She.a with-I.a eat.a'],
             ['Dois participantes secundários', 'agent.a patient.s verb.a patient.s', 'You.a tripped.a She.s (and) I.s'],
             ['Volições alternadas (com mou)', 'agent.a patient.s verb.a patient.s mou', 'You.a hugged.a She.s (and) I.s'],
             ['Dois verbos, mesmo participante (-g-)', 'agent.a verb verb-g-sfx', 'I.a eat.a sleep-and-.s'],
             ['Duas orações com participantes diferentes', 'agent.a verb.a c.conj agent.a verb.a', 'I.a eat.a c.and you.a sleep.a'],
           ],
         },
-        text: 'Há três tipos de conjunção: a nominal junta dois nomes num participante composto; a verbal («bloqueio suave») junta dois verbos sob o mesmo participante; a oracional («bloqueio duro») mantém as orações separadas.',
+        text: 'Há três tipos de conjunção: a nominal junta dois nomes num participante composto; a verbal (“bloqueio suave”) junta dois verbos sob o mesmo participante; a oracional (“bloqueio duro”) mantém as orações separadas.',
       },
       {
-        heading: 'O verbo «ser» (cópula)',
+        heading: 'O verbo “ser” (cópula)',
         table: {
           head: ['Tipo', 'Esquema', 'Exemplo (glosa)'],
           rows: [
@@ -946,7 +946,7 @@ export const TOPICS: TsevhuTopic[] = [
             ['Negação', 'agent.a neg-patient.s', 'that.a not-the fox.s (aquilo não é a raposa)'],
           ],
         },
-        text: 'Para «existir, haver» usa-se li: «thunder.a exists.a» = «está trovejando»; «rain.a exists.a» = «está chovendo». Equações matemáticas usam o formato da cópula.',
+        text: 'Para “existir, haver” usa-se li: “thunder.a exists.a” = “está trovejando”; “rain.a exists.a” = “está chovendo”. Equações matemáticas usam o formato da cópula.',
       },
       {
         heading: 'Ordem dentro dos sintagmas',
@@ -964,7 +964,7 @@ export const TOPICS: TsevhuTopic[] = [
         ],
       },
       {
-        heading: 'Marcadores de oração («que», «o qual»)',
+        heading: 'Marcadores de oração (“que”, “o qual”)',
         text: 'Concordam com o participante que modificam. Dentro das orações, a ordem troca de OV para VO.',
         table: {
           head: ['Marcador', 'Uso'],
@@ -980,7 +980,7 @@ export const TOPICS: TsevhuTopic[] = [
       },
       {
         heading: 'Comparações',
-        text: 'Para «mais» usa-se -yr; para «menos», -xwr. O superlativo é sri- e o «menos de todos», xri-. «Do que» é vra.',
+        text: 'Para “mais” usa-se -yr; para “menos”, -xwr. O superlativo é sri- e o “menos de todos”, xri-. “Do que” é vra.',
         examples: [
           ['nsa chesyr nond vra', 'eu como mais do que você'],
           ['kaunyr chese vu tovhyu', 'mais pessoas comem pão'],
@@ -1097,7 +1097,7 @@ export const TOPICS: TsevhuTopic[] = [
       },
       {
         heading: 'Meses (Ajenvel)',
-        text: 'Todos terminam em -vel, de avel, «mês». Cada mês tem um nome e um tema.',
+        text: 'Todos terminam em -vel, de avel, “mês”. Cada mês tem um nome e um tema.',
         table: {
           head: ['Mês', 'Tsevhu', 'Tema'],
           rows: [
@@ -1118,7 +1118,7 @@ export const TOPICS: TsevhuTopic[] = [
       },
       {
         heading: 'Dias da semana (Kheskviliis)',
-        text: 'A semana tem oito dias. Todos terminam em -liis, «dia».',
+        text: 'A semana tem oito dias. Todos terminam em -liis, “dia”.',
         table: {
           head: ['Dia', 'Tsevhu', 'Tema'],
           rows: [
@@ -1145,7 +1145,7 @@ export const TOPICS: TsevhuTopic[] = [
             ['Bemyua', 'estação quente (primavera)'],
             ["(ii'bemyua)", 'primavera pequena (a cada 10 anos)'],
             ['Tsulua', 'inverno pequeno'],
-            ['Tsanua', "inverno longo (a cada 10 anos); 'Atsanua é o «inverno estranho»"],
+            ['Tsanua', "inverno longo (a cada 10 anos); 'Atsanua é o “inverno estranho”"],
             ['Khoqua', 'estação das tempestades / monções (em geral durante o verão)'],
             ['Leqeua', 'estação da colheita (outono)'],
             ['Saubua', 'estação das cheias (início da primavera)'],
@@ -1162,7 +1162,7 @@ export const TOPICS: TsevhuTopic[] = [
     id: 'negacao-cortesia',
     emoji: '🙏',
     title: 'Negação, cortesia e expressões',
-    summary: 'O prefixo cy- nega qualquer palavra; ap- quer dizer «tudo menos». Mais: como pedir por favor, agradecer e as expressões idiomáticas.',
+    summary: 'O prefixo cy- nega qualquer palavra; ap- quer dizer “tudo menos”. Mais: como pedir por favor, agradecer e as expressões idiomáticas.',
     sections: [
       {
         heading: 'Negação: cy-',
@@ -1175,7 +1175,7 @@ export const TOPICS: TsevhuTopic[] = [
       },
       {
         heading: 'Negação de sentido: ap-',
-        text: "ap- quer dizer «tudo menos». Por isso apmbae'en é «estou tudo, menos inseguro», ou seja, «tenho certeza».",
+        text: "ap- quer dizer “tudo menos”. Por isso apmbae'en é “estou tudo, menos inseguro”, ou seja, “tenho certeza”.",
         examples: [
           ["tsa mbae'en", 'não tenho certeza'],
           ["cytsa mbae'en / cymbae'en / apmbae'en", 'tenho certeza'],
@@ -1184,7 +1184,7 @@ export const TOPICS: TsevhuTopic[] = [
       },
       {
         heading: 'Sem: -cae',
-        text: "O sufixo -cae é o «sem», «-less» ou «des-» (nos particípios é -n). Com o instrumental, forma uma frase: nav'or genmecae, «sem a sua ajuda». -ma é «-ável», e -ma + -cae = -mcae.",
+        text: "O sufixo -cae é o “sem”, “-less” ou “des-” (nos particípios é -n). Com o instrumental, forma uma frase: nav'or genmecae, “sem a sua ajuda”. -ma é “-ável”, e -ma + -cae = -mcae.",
         examples: [["essl'en (rui) m'iir wynsyuncae", 'você está ferrado (lit. vai ser pego sem lanterna)']],
       },
       {
@@ -1202,7 +1202,7 @@ export const TOPICS: TsevhuTopic[] = [
       },
       {
         heading: 'Cortesia',
-        text: 'O Tsevhu tem palavras próprias para gentileza e prefixos que marcam proximidade (rhu-) ou formalidade (il(y)-). No modo, hvu dá permissão e hvui faz sugestões. Usar o imperativo com «eu» para dizer o que se pretende fazer soa um pouco rude, como se ignorasse o que o outro quer.',
+        text: 'O Tsevhu tem palavras próprias para gentileza e prefixos que marcam proximidade (rhu-) ou formalidade (il(y)-). No modo, hvu dá permissão e hvui faz sugestões. Usar o imperativo com “eu” para dizer o que se pretende fazer soa um pouco rude, como se ignorasse o que o outro quer.',
         examples: [
           ['sanu', 'por favor'],
           ['awent sanu vaeyr', 'fale mais devagar, por favor'],
@@ -1219,7 +1219,7 @@ export const TOPICS: TsevhuTopic[] = [
         table: {
           head: ['Afixo', 'Sentido'],
           rows: [
-            ['-gi', 'ênfase («!»), na palavra mais importante'],
+            ['-gi', 'ênfase (“!”), na palavra mais importante'],
             ['tye-', 'incrivelmente (espanto)'],
             ['xa-', 'desaprovação (insultos)'],
             ['mi-', 'aprovação'],

@@ -33,7 +33,7 @@ export const SCENARIOS_RM: ScenarioSeed[] = [
     cefr: 'A1',
     register: 'informal',
     persona: 'Anna, ina collega dal curs da rumantsch',
-    description: 'Anna convida você para um café no centro antigo de Chur. É uma conversa entre colegas: use «ti».',
+    description: 'Anna convida você para um café no centro antigo de Chur. É uma conversa entre colegas: use “ti”.',
     turns: [
       {
         bot: 'Allegra! Tge vuls ti baiver?',
@@ -58,7 +58,7 @@ export const ETYMOLOGY_RM: EtymologySeed[] = [
     root_word: 'casa',
     origin_language: 'Latim',
     cognates: c(['pt', 'casa'], ['it', 'casa'], ['fr', 'chez']),
-    evolution_note: 'O c latino diante de a virou um som «molhado» (ch), como aconteceu no francês: «casa» deu «chasa» no romanche e a preposição «chez» (na casa de) no francês.',
+    evolution_note: 'O c latino diante de a virou um som “molhado” (ch), como aconteceu no francês: “casa” deu “chasa” no romanche e a preposição “chez” (na casa de) no francês.',
     transparent: true,
   },
   {
@@ -66,7 +66,7 @@ export const ETYMOLOGY_RM: EtymologySeed[] = [
     root_word: 'lacte(m)',
     origin_language: 'Latim',
     cognates: c(['pt', 'leite'], ['it', 'latte'], ['fr', 'lait'], ['es', 'leche']),
-    evolution_note: 'O grupo latino -ct- virou o som «tg» no romanche, assim como virou -it- em português (leite) e -ch- em espanhol (leche). O mesmo aconteceu em «notg» (noite, de «nocte») e «otg» (oito, de «octo»).',
+    evolution_note: 'O grupo latino -ct- virou o som “tg” no romanche, assim como virou -it- em português (leite) e -ch- em espanhol (leche). O mesmo aconteceu em “notg” (noite, de “nocte”) e “otg” (oito, de “octo”).',
     transparent: true,
   },
   {
@@ -74,7 +74,7 @@ export const ETYMOLOGY_RM: EtymologySeed[] = [
     root_word: 'panis',
     origin_language: 'Latim',
     cognates: c(['pt', 'pão'], ['it', 'pane'], ['fr', 'pain'], ['es', 'pan']),
-    evolution_note: 'O a latino antes de n virou o ditongo «au»: panis → paun.',
+    evolution_note: 'O a latino antes de n virou o ditongo “au”: panis → paun.',
     transparent: true,
   },
   {
@@ -82,7 +82,7 @@ export const ETYMOLOGY_RM: EtymologySeed[] = [
     root_word: 'aqua',
     origin_language: 'Latim',
     cognates: c(['pt', 'água'], ['it', 'acqua'], ['fr', 'eau'], ['es', 'agua']),
-    evolution_note: 'Do latim «aqua», com o -qu- enfraquecido até sumir quase por completo, como no francês «eau».',
+    evolution_note: 'Do latim “aqua”, com o -qu- enfraquecido até sumir quase por completo, como no francês “eau”.',
     transparent: true,
   },
   {
@@ -90,7 +90,7 @@ export const ETYMOLOGY_RM: EtymologySeed[] = [
     root_word: 'frater',
     origin_language: 'Latim',
     cognates: c(['pt', 'frade, fraterno'], ['it', 'fratello'], ['fr', 'frère'], ['ro', 'frate']),
-    evolution_note: 'O romanche guardou o latim «frater» para «irmão», como o francês e o romeno; o português e o espanhol preferiram «germanus» (irmão, hermano) e deixaram «frater» só em «frade» e «fraterno».',
+    evolution_note: 'O romanche guardou o latim “frater” para “irmão”, como o francês e o romeno; o português e o espanhol preferiram “germanus” (irmão, hermano) e deixaram “frater” só em “frade” e “fraterno”.',
     transparent: false,
   },
 ];

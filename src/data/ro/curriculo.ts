@@ -19,22 +19,22 @@ export const UNITS_RO: UnitSeed[] = [
       history:
         'Em 106 d.C. o imperador Trajano conquistou a Dácia. O latim falado por colonos e soldados se misturou ao falar local e deu origem ao romeno, a única grande língua românica do Leste Europeu, cercada por línguas eslavas, pelo húngaro e pelo grego. Por isso apă, pâine e casă soam tão familiares a quem fala português.',
       culture_tip:
-        '«Bună!» é o «oi» do dia a dia. Com desconhecidos e pessoas mais velhas, use «Bună ziua» (bom dia / boa tarde). Para se despedir, «La revedere»; entre amigos, «Pa!».',
+        '“Bună!” é o “oi” do dia a dia. Com desconhecidos e pessoas mais velhas, use “Bună ziua” (bom dia / boa tarde). Para se despedir, “La revedere”; entre amigos, “Pa!”.',
       grammar_why:
-        'Por que «Bună» e não «Bun»? A saudação vem de «bună ziua», e zi (dia) é feminino, então o adjetivo concorda: bun (m) → bună (f). É o mesmo mecanismo do português: bom dia, mas boa tarde.',
+        'Por que “Bună” e não “Bun”? A saudação vem de “bună ziua”, e zi (dia) é feminino, então o adjetivo concorda: bun (m) → bună (f). É o mesmo mecanismo do português: bom dia, mas boa tarde.',
       grammar_examples: [
         ['Bună ziua!', 'Bom dia! / Boa tarde!'],
         ['Bună seara!', 'Boa noite! (ao chegar)'],
         ['Noapte bună!', 'Boa noite! (ao dormir)'],
       ],
       character_guide: [
-        ['ă', 'vogal neutra, como o «a» átono de «casa»', 'casă'],
-        ['â / î', '«i» dito com a língua recuada, sem arredondar os lábios', 'mâine, în'],
-        ['ș', '«ch» de «chave»', 'școală'],
-        ['ț', '«ts» de «tsunami»', 'țară'],
-        ['ce / ci', '«tche» / «tchi», como em «tchau»', 'ce, cinci'],
-        ['che / chi', '«que» / «qui» (som de k)', 'cheie'],
-        ['ge / gi', '«dje» / «dji»', 'a merge'],
+        ['ă', 'vogal neutra, como o “a” átono de “casa”', 'casă'],
+        ['â / î', '“i” dito com a língua recuada, sem arredondar os lábios', 'mâine, în'],
+        ['ș', '“ch” de “chave”', 'școală'],
+        ['ț', '“ts” de “tsunami”', 'țară'],
+        ['ce / ci', '“tche” / “tchi”, como em “tchau”', 'ce, cinci'],
+        ['che / chi', '“que” / “qui” (som de k)', 'cheie'],
+        ['ge / gi', '“dje” / “dji”', 'a merge'],
       ],
     },
     lessons: [
@@ -70,7 +70,7 @@ export const UNITS_RO: UnitSeed[] = [
           bot: 'Cum te numești?',
           botTranslation: 'Como você se chama?',
           expected: ['Mă numesc Ana.', 'mă numesc', 'numele meu este', 'sunt'],
-          hint: 'Comece com «Mă numesc…» (Eu me chamo…).',
+          hint: 'Comece com “Mă numesc…” (Eu me chamo…).',
         },
         communityPrompt: 'Apresente-se: nome, de onde você é e onde mora.',
       },
@@ -91,16 +91,16 @@ export const UNITS_RO: UnitSeed[] = [
             sentence: 'Cum se ___ „obrigado” în română?',
             answer: 'spune',
             options: ['spune', 'bea', 'vede'],
-            translation: 'Como se diz «obrigado» em romeno?',
+            translation: 'Como se diz “obrigado” em romeno?',
           },
         ],
         voice: {
           bot: 'Vorbești română?',
           botTranslation: 'Você fala romeno?',
           expected: ['Da, puțin!', 'puțin', 'vorbesc', 'da', 'nu'],
-          hint: 'Responda «Da, puțin!» (Sim, um pouco!).',
+          hint: 'Responda “Da, puțin!” (Sim, um pouco!).',
         },
-        communityPrompt: 'Grave-se dizendo «Vorbesc puțin română» e mais uma frase sua.',
+        communityPrompt: 'Grave-se dizendo “Vorbesc puțin română” e mais uma frase sua.',
       },
       {
         id: 'ro-u1-p',
@@ -112,7 +112,7 @@ export const UNITS_RO: UnitSeed[] = [
           bot: 'Bună ziua! De unde sunteți?',
           botTranslation: 'Bom dia! De onde o(a) senhor(a) é?',
           expected: ['Sunt din Brazilia.', 'sunt din', 'din'],
-          hint: 'Diga de onde você é: «Sunt din…».',
+          hint: 'Diga de onde você é: “Sunt din…”.',
         },
         communityPrompt: 'Escreva uma pequena apresentação completa: saudação, nome, origem e despedida.',
       },
@@ -126,14 +126,14 @@ export const UNITS_RO: UnitSeed[] = [
     emoji: '🍽️',
     card: {
       id: 'ro-c2',
-      title: 'Mesa romena: mămăligă, sarmale e «Poftă bună!»',
+      title: 'Mesa romena: mămăligă, sarmale e “Poftă bună!”',
       emoji: '🥘',
       history:
-        'A cozinha romena é um mapa de influências. A mămăligă (polenta de milho) se espalhou com o milho vindo das Américas e virou o «pão» do camponês. As sarmale vêm da cozinha otomana (turco sarma, «enrolado»). A ciorbă, sopa azedada com borș (farelo fermentado) ou limão, também tem nome de origem turca.',
+        'A cozinha romena é um mapa de influências. A mămăligă (polenta de milho) se espalhou com o milho vindo das Américas e virou o “pão” do camponês. As sarmale vêm da cozinha otomana (turco sarma, “enrolado”). A ciorbă, sopa azedada com borș (farelo fermentado) ou limão, também tem nome de origem turca.',
       culture_tip:
-        'Antes de comer, deseje «Poftă bună!» (bom apetite). No brinde, olhe nos olhos e diga «Noroc!» (sorte / saúde). Para chamar o garçom, levante a mão e diga «Scuzați!». Estalar os dedos é falta de educação. A gorjeta costuma ficar em torno de 10%.',
+        'Antes de comer, deseje “Poftă bună!” (bom apetite). No brinde, olhe nos olhos e diga “Noroc!” (sorte / saúde). Para chamar o garçom, levante a mão e diga “Scuzați!”. Estalar os dedos é falta de educação. A gorjeta costuma ficar em torno de 10%.',
       grammar_why:
-        'Por que «vinul» e «cafeaua»? Em romeno o artigo definido vem colado no FIM da palavra: vin → vinul (o vinho), masă → masa (a mesa). O artigo indefinido continua antes: un vin, o cafea. Essa posição final é um traço balcânico, e o búlgaro e o albanês fazem o mesmo.',
+        'Por que “vinul” e “cafeaua”? Em romeno o artigo definido vem colado no FIM da palavra: vin → vinul (o vinho), masă → masa (a mesa). O artigo indefinido continua antes: un vin, o cafea. Essa posição final é um traço balcânico, e o búlgaro e o albanês fazem o mesmo.',
       grammar_examples: [
         ['un vin → vinul', 'um vinho → o vinho'],
         ['o masă → masa', 'uma mesa → a mesa'],
@@ -156,7 +156,7 @@ export const UNITS_RO: UnitSeed[] = [
           bot: 'Bună ziua! Ce doriți să beți?',
           botTranslation: 'Boa tarde! O que deseja beber?',
           expected: ['O cafea, vă rog.', 'cafea', 'ceai', 'bere', 'apă', 'vin'],
-          hint: 'Peça uma bebida e termine com «vă rog».',
+          hint: 'Peça uma bebida e termine com “vă rog”.',
         },
         communityPrompt: 'Peça sua bebida favorita num café de Bucareste.',
       },
@@ -179,7 +179,7 @@ export const UNITS_RO: UnitSeed[] = [
           bot: 'Ce doriți să mâncați?',
           botTranslation: 'O que deseja comer?',
           expected: ['Aș dori sarmale, vă rog.', 'sarmale', 'ciorbă', 'mămăligă', 'carne', 'pește', 'aș dori', 'vreau'],
-          hint: '«Aș dori…» = «Eu gostaria de…».',
+          hint: '“Aș dori…” = “Eu gostaria de…”.',
         },
         communityPrompt: 'Descreva seu prato favorito em romeno (2 ou 3 frases).',
       },
@@ -225,14 +225,14 @@ export const UNITS_RO: UnitSeed[] = [
     emoji: '✈️',
     card: {
       id: 'ro-c3',
-      title: '«Dumneavoastră»: o senhor que virou pronome',
+      title: '“Dumneavoastră”: o senhor que virou pronome',
       emoji: '🎩',
       history:
-        'O tratamento formal «dumneavoastră» vem do latim «domina vostra» (vossa senhoria), a mesma ideia do nosso «Vossa Mercê», que virou «você». Em português ele ficou informal, mas em romeno continua plenamente formal.',
+        'O tratamento formal “dumneavoastră” vem do latim “domina vostra” (vossa senhoria), a mesma ideia do nosso “Vossa Mercê”, que virou “você”. Em português ele ficou informal, mas em romeno continua plenamente formal.',
       culture_tip:
-        'Na recepção, no aeroporto e com pessoas mais velhas, use o registro formal: «vă rog» em vez de «te rog» e o verbo no plural («aveți», «puteți»). Tratar um desconhecido por «tu» soa íntimo demais.',
+        'Na recepção, no aeroporto e com pessoas mais velhas, use o registro formal: “vă rog” em vez de “te rog” e o verbo no plural (“aveți”, “puteți”). Tratar um desconhecido por “tu” soa íntimo demais.',
       grammar_why:
-        'Por que «aveți» e não «ai»? O tratamento formal usa o verbo na 2ª pessoa do plural, como o «vous» do francês: tu ai (você tem, informal) → dumneavoastră aveți (o senhor tem). O mesmo vale para «te rog» (informal) → «vă rog» (formal).',
+        'Por que “aveți” e não “ai”? O tratamento formal usa o verbo na 2ª pessoa do plural, como o “vous” do francês: tu ai (você tem, informal) → dumneavoastră aveți (o senhor tem). O mesmo vale para “te rog” (informal) → “vă rog” (formal).',
       grammar_examples: [
         ['Ai o rezervare?', 'Você tem uma reserva? (informal)'],
         ['Aveți o rezervare?', 'O senhor tem uma reserva? (formal)'],
@@ -260,7 +260,7 @@ export const UNITS_RO: UnitSeed[] = [
           bot: 'Bună ziua! Pașaportul, vă rog.',
           botTranslation: 'Bom dia! O passaporte, por favor.',
           expected: ['Poftiți!', 'poftiți', 'poftim', 'da'],
-          hint: '«Poftiți!» = «Aqui está!» (formal).',
+          hint: '“Poftiți!” = “Aqui está!” (formal).',
         },
         communityPrompt: 'Conte em 2 frases para onde você viajaria na Romênia e por quê.',
       },
@@ -283,7 +283,7 @@ export const UNITS_RO: UnitSeed[] = [
           bot: 'Bună seara! Cu ce vă pot ajuta?',
           botTranslation: 'Boa noite! Como posso ajudá-lo?',
           expected: ['Am o rezervare pe numele Silva.', 'rezervare', 'cameră'],
-          hint: '«Am o rezervare pe numele…» = «Tenho uma reserva em nome de…».',
+          hint: '“Am o rezervare pe numele…” = “Tenho uma reserva em nome de…”.',
         },
         communityPrompt: 'Escreva uma mensagem curta e formal pedindo um quarto para duas noites.',
       },
@@ -301,7 +301,7 @@ export const UNITS_RO: UnitSeed[] = [
           bot: 'Un bilet pentru Brașov? Dus sau dus-întors?',
           botTranslation: 'Uma passagem para Brașov? Só ida ou ida e volta?',
           expected: ['Dus-întors, vă rog.', 'dus-întors', 'dus', 'întors'],
-          hint: '«Dus» = só ida; «dus-întors» = ida e volta.',
+          hint: '“Dus” = só ida; “dus-întors” = ida e volta.',
         },
         communityPrompt: 'Descreva como você vai do aeroporto até o hotel.',
       },
@@ -315,7 +315,7 @@ export const UNITS_RO: UnitSeed[] = [
           bot: 'La ce oră pleacă trenul?',
           botTranslation: 'A que horas sai o trem?',
           expected: ['La ora zece.', 'la ora', 'ora'],
-          hint: '«La ora…» = «Às … horas».',
+          hint: '“La ora…” = “Às … horas”.',
         },
         communityPrompt: 'Escreva um diálogo curto de check-in em registro formal.',
       },
@@ -329,14 +329,14 @@ export const UNITS_RO: UnitSeed[] = [
     emoji: '❤️',
     card: {
       id: 'ro-c4',
-      title: '«Dor»: a saudade romena',
+      title: '“Dor”: a saudade romena',
       emoji: '🥺',
       history:
-        '«Dor» vem do latim tardio dolus (dor, sofrimento), a mesma origem do nosso «dor», mas em romeno virou a palavra da saudade: «Mi-e dor de tine» = «Tenho saudade de você». A doina, canto melancólico tradicional, é o canto do dor por excelência e foi reconhecida pela UNESCO como Patrimônio Imaterial.',
+        '“Dor” vem do latim tardio dolus (dor, sofrimento), a mesma origem do nosso “dor”, mas em romeno virou a palavra da saudade: “Mi-e dor de tine” = “Tenho saudade de você”. A doina, canto melancólico tradicional, é o canto do dor por excelência e foi reconhecida pela UNESCO como Patrimônio Imaterial.',
       culture_tip:
         'A família estendida é central: o almoço de domingo na casa da bunica (avó) é quase sagrado. Ao visitar alguém, leve flores em número ímpar, porque número par é para funerais.',
       grammar_why:
-        'Por que «mama mea» e não «mea mamă»? O possessivo vem depois do substantivo com artigo: mamă → mama (a mãe) → mama mea (literalmente «a mãe minha»). E o romeno tem 3 gêneros: além de masculino e feminino, há o NEUTRO, com palavras masculinas no singular e femininas no plural (un tren, două trenuri).',
+        'Por que “mama mea” e não “mea mamă”? O possessivo vem depois do substantivo com artigo: mamă → mama (a mãe) → mama mea (literalmente “a mãe minha”). E o romeno tem 3 gêneros: além de masculino e feminino, há o NEUTRO, com palavras masculinas no singular e femininas no plural (un tren, două trenuri).',
       grammar_examples: [
         ['mama mea', 'minha mãe'],
         ['tatăl meu', 'meu pai'],
@@ -364,7 +364,7 @@ export const UNITS_RO: UnitSeed[] = [
           bot: 'Ai frați sau surori?',
           botTranslation: 'Você tem irmãos ou irmãs?',
           expected: ['Am un frate și o soră.', 'am', 'nu am', 'frate', 'soră'],
-          hint: '«Am un frate» = «Tenho um irmão»; «o soră» = «uma irmã».',
+          hint: '“Am un frate” = “Tenho um irmão”; “o soră” = “uma irmã”.',
         },
         communityPrompt: 'Apresente sua família em 3 frases.',
       },
@@ -382,7 +382,7 @@ export const UNITS_RO: UnitSeed[] = [
           bot: 'Cum te simți azi?',
           botTranslation: 'Como você se sente hoje?',
           expected: ['Sunt fericit!', 'fericit', 'fericită', 'obosit', 'obosită', 'trist', 'tristă', 'bine'],
-          hint: '«Sunt fericit» (masc.) / «Sunt fericită» (fem.).',
+          hint: '“Sunt fericit” (masc.) / “Sunt fericită” (fem.).',
         },
         communityPrompt: 'Escreva uma mensagem curta dizendo que sente saudade de alguém.',
       },
@@ -400,7 +400,7 @@ export const UNITS_RO: UnitSeed[] = [
           bot: 'Cine este în fotografie?',
           botTranslation: 'Quem está na foto?',
           expected: ['Este mama mea.', 'este', 'mama', 'tata', 'fratele', 'sora', 'prietenul', 'bunica'],
-          hint: '«Este…» = «É…».',
+          hint: '“Este…” = “É…”.',
         },
         communityPrompt: 'Descreva uma foto de família ou de amigos.',
       },
@@ -414,7 +414,7 @@ export const UNITS_RO: UnitSeed[] = [
           bot: 'Mi-e dor de tine!',
           botTranslation: 'Tenho saudade de você!',
           expected: ['Și mie mi-e dor de tine!', 'și mie', 'și eu', 'dor'],
-          hint: '«Și mie…» = «Eu também…».',
+          hint: '“Și mie…” = “Eu também…”.',
         },
         communityPrompt: 'Escreva um bilhete carinhoso para alguém da sua família.',
       },
@@ -431,11 +431,11 @@ export const UNITS_RO: UnitSeed[] = [
       title: 'Castelo de Bran: Drácula, mito e história',
       emoji: '🦇',
       history:
-        'O Castelo de Bran, na Transilvânia, ficou famoso como «castelo do Drácula», mas Bram Stoker nunca esteve na Romênia. O personagem se inspira de leve em Vlad III, o Empalador (séc. XV), príncipe da Valáquia, lembrado no país como governante duro que resistiu aos otomanos, e não como vampiro. Bucareste, por sua vez, ganhou no entreguerras o apelido de «Pequena Paris».',
+        'O Castelo de Bran, na Transilvânia, ficou famoso como “castelo do Drácula”, mas Bram Stoker nunca esteve na Romênia. O personagem se inspira de leve em Vlad III, o Empalador (séc. XV), príncipe da Valáquia, lembrado no país como governante duro que resistiu aos otomanos, e não como vampiro. Bucareste, por sua vez, ganhou no entreguerras o apelido de “Pequena Paris”.',
       culture_tip:
-        'Para pedir direções, comece com «Scuzați…» e use o formal. As indicações costumam usar pontos de referência («după biserică», depois da igreja). No dia 1º de março se dá o mărțișor, um amuleto de fio vermelho e branco que celebra a chegada da primavera.',
+        'Para pedir direções, comece com “Scuzați…” e use o formal. As indicações costumam usar pontos de referência (“după biserică”, depois da igreja). No dia 1º de março se dá o mărțișor, um amuleto de fio vermelho e branco que celebra a chegada da primavera.',
       grammar_why:
-        'Por que «Muzeul Satului» (Museu da Aldeia)? O romeno conservou casos do latim, e o genitivo marca a posse com uma terminação própria: sat (aldeia) → satul (a aldeia) → satului (da aldeia). É por isso que placas e nomes de ruas mudam o fim das palavras: «Strada Florilor» = Rua das Flores (flori → florilor).',
+        'Por que “Muzeul Satului” (Museu da Aldeia)? O romeno conservou casos do latim, e o genitivo marca a posse com uma terminação própria: sat (aldeia) → satul (a aldeia) → satului (da aldeia). É por isso que placas e nomes de ruas mudam o fim das palavras: “Strada Florilor” = Rua das Flores (flori → florilor).',
       grammar_examples: [
         ['Muzeul Satului', 'Museu da Aldeia'],
         ['Strada Florilor', 'Rua das Flores'],
@@ -468,7 +468,7 @@ export const UNITS_RO: UnitSeed[] = [
           bot: 'Vă pot ajuta cu ceva?',
           botTranslation: 'Posso ajudá-lo em algo?',
           expected: ['Da, unde este muzeul?', 'unde este', 'caut', 'da'],
-          hint: 'Pergunte onde fica um lugar: «Unde este…?».',
+          hint: 'Pergunte onde fica um lugar: “Unde este…?”.',
         },
         communityPrompt: 'Explique como chegar da sua casa até a padaria mais próxima.',
       },
@@ -486,7 +486,7 @@ export const UNITS_RO: UnitSeed[] = [
           bot: 'Ce ați vrea să vizitați în România?',
           botTranslation: 'O que o senhor gostaria de visitar na Romênia?',
           expected: ['Aș vrea să vizitez Castelul Bran.', 'aș vrea', 'vreau', 'castel', 'bran', 'munte', 'mare', 'muzeu', 'bucurești'],
-          hint: '«Aș vrea să vizitez…» = «Eu gostaria de visitar…».',
+          hint: '“Aș vrea să vizitez…” = “Eu gostaria de visitar…”.',
         },
         communityPrompt: 'Monte um roteiro de 2 dias na Romênia em 3 frases.',
       },
@@ -509,7 +509,7 @@ export const UNITS_RO: UnitSeed[] = [
           bot: 'Bună ziua! Ce vă pot oferi?',
           botTranslation: 'Bom dia! O que posso lhe oferecer?',
           expected: ['Cât costă mărțișorul acesta?', 'cât costă', 'aș vrea', 'vreau', 'caut'],
-          hint: 'Pergunte o preço: «Cât costă…?».',
+          hint: 'Pergunte o preço: “Cât costă…?”.',
         },
         communityPrompt: 'Escreva um diálogo de compra numa feira de artesanato.',
       },
@@ -523,7 +523,7 @@ export const UNITS_RO: UnitSeed[] = [
           bot: 'Vă place Bucureștiul?',
           botTranslation: 'O senhor gosta de Bucareste?',
           expected: ['Da, îmi place foarte mult!', 'îmi place', 'da', 'frumos'],
-          hint: '«Îmi place» = «Eu gosto».',
+          hint: '“Îmi place” = “Eu gosto”.',
         },
         communityPrompt: 'Escreva um cartão-postal de Bucareste para um amigo.',
       },
@@ -542,9 +542,9 @@ export const UNITS_RO: UnitSeed[] = [
       history:
         'Até hoje quase metade dos romenos vive em áreas rurais, e muitas famílias da cidade ainda têm raízes numa aldeia. Nas noites de inverno, as mulheres se reuniam na șezătoare para fiar, bordar e contar histórias. No Natal, grupos de rapazes e crianças iam de casa em casa cantando colinde e ganhavam nozes, maçãs e cozonac; o colindat em grupo de homens, da Romênia e da Moldávia, foi reconhecido pela UNESCO em 2013. Em Bucareste, o Museu da Aldeia, aberto em 1936, reúne casas camponesas trazidas de todas as regiões do país.',
       culture_tip:
-        'Passar as férias de verão «la bunici, la țară» (na casa dos avós, no interior) é uma lembrança comum a gerações de romenos. Ao visitar uma casa na aldeia, aceite o que lhe oferecerem: recusar comida pode soar como desfeita. Tire os sapatos na entrada e, no fim da refeição, agradeça com «Mulțumesc, a fost foarte bun!».',
+        'Passar as férias de verão “la bunici, la țară” (na casa dos avós, no interior) é uma lembrança comum a gerações de romenos. Ao visitar uma casa na aldeia, aceite o que lhe oferecerem: recusar comida pode soar como desfeita. Tire os sapatos na entrada e, no fim da refeição, agradeça com “Mulțumesc, a fost foarte bun!”.',
       grammar_why:
-        'O imperfeito romeno funciona quase como o pretérito imperfeito do português: descreve hábitos e cenários do passado («eu ia», «ela fazia»). As terminações são regulares: -am, -ai, -a, -am, -ați, -au (mergeam, mergeai, mergea…); a fi fica eram, erai, era, eram, erați, erau. Atenção: a 1ª pessoa do singular e a do plural são iguais (mergeam = eu ia / nós íamos), e o contexto decide. Já o perfect compus (am mers, am mâncat) marca um fato único e concluído, como o nosso pretérito perfeito. Juntos, um faz o cenário e o outro o acontecimento: «Mâncam când a sunat telefonul» = «Eu estava comendo quando o telefone tocou».',
+        'O imperfeito romeno funciona quase como o pretérito imperfeito do português: descreve hábitos e cenários do passado (“eu ia”, “ela fazia”). As terminações são regulares: -am, -ai, -a, -am, -ați, -au (mergeam, mergeai, mergea…); a fi fica eram, erai, era, eram, erați, erau. Atenção: a 1ª pessoa do singular e a do plural são iguais (mergeam = eu ia / nós íamos), e o contexto decide. Já o perfect compus (am mers, am mâncat) marca um fato único e concluído, como o nosso pretérito perfeito. Juntos, um faz o cenário e o outro o acontecimento: “Mâncam când a sunat telefonul” = “Eu estava comendo quando o telefone tocou”.',
       grammar_examples: [
         ['În fiecare vară mergeam la bunici.', 'Todo verão eu ia para a casa dos avós.'],
         ['Bunica făcea plăcinte duminica.', 'A avó fazia tortas aos domingos.'],
@@ -583,7 +583,7 @@ export const UNITS_RO: UnitSeed[] = [
           bot: 'Unde îți petreceai verile când erai copil?',
           botTranslation: 'Onde você passava os verões quando era criança?',
           expected: ['Îmi petreceam verile la bunici, la țară.', 'îmi petreceam', 'mergeam', 'la bunici', 'la țară'],
-          hint: 'Use o imperfeito: «Îmi petreceam verile…» ou «Mergeam la…».',
+          hint: 'Use o imperfeito: “Îmi petreceam verile…” ou “Mergeam la…”.',
         },
         communityPrompt: 'Descreva, em 3 frases no imperfeito, como era a casa dos seus avós (ou de um parente) quando você era criança.',
       },
@@ -616,7 +616,7 @@ export const UNITS_RO: UnitSeed[] = [
           bot: 'Cum sărbătorea familia ta Crăciunul?',
           botTranslation: 'Como a sua família comemorava o Natal?',
           expected: ['Ne adunam toți la masă și cântam colinde.', 'ne adunam', 'cântam', 'mâncam', 'colinde'],
-          hint: 'Descreva o costume no imperfeito: «ne adunam», «mâncam», «cântam».',
+          hint: 'Descreva o costume no imperfeito: “ne adunam”, “mâncam”, “cântam”.',
         },
         communityPrompt:
           'Conte como sua família comemorava uma festa (Natal, São João, aniversários) quando você era criança. Use pelo menos 3 verbos no imperfeito.',
@@ -650,7 +650,7 @@ export const UNITS_RO: UnitSeed[] = [
           bot: 'Ce îți aduci aminte despre satul bunicilor?',
           botTranslation: 'Do que você se lembra da aldeia dos seus avós?',
           expected: ['Îmi aduc aminte că bunica avea o vacă și multe găini.', 'îmi aduc aminte', 'avea', 'era', 'mergeam'],
-          hint: 'Comece com «Îmi aduc aminte că…» e continue no imperfeito (avea, era, mergeam).',
+          hint: 'Comece com “Îmi aduc aminte că…” e continue no imperfeito (avea, era, mergeam).',
         },
         communityPrompt: 'Grave-se descrevendo um lugar da sua infância: como era, o que havia lá e o que você fazia (tudo no imperfeito).',
       },
@@ -685,14 +685,14 @@ export const UNITS_RO: UnitSeed[] = [
     emoji: '💼',
     card: {
       id: 'ro-c7',
-      title: 'Escritório romeno: «Aș vrea…» e «Vă rog frumos»',
+      title: 'Escritório romeno: “Aș vrea…” e “Vă rog frumos”',
       emoji: '🤝',
       history:
         'Na Romênia as relações de trabalho são regidas pelo Código do Trabalho (Codul muncii), de 2003. A jornada normal é de 8 horas por dia e 40 por semana, e todo empregado tem direito a pelo menos 20 dias úteis de férias remuneradas por ano. Em 2011 a antiga carteira de trabalho de papel (carnetul de muncă) foi substituída por um registro eletrônico. Cidades como Bucareste, Cluj-Napoca e Iași se tornaram polos de tecnologia e de serviços.',
       culture_tip:
-        'Em entrevistas e no escritório, use o tratamento formal (dumneavoastră, verbo na 2ª pessoa do plural) e «domnule / doamnă» + sobrenome, até que proponham o «tu». Para pedir algo, suavize com «Aș vrea…», «Ați putea…» e «vă rog frumos». Chegue alguns minutos antes: em entrevista, pontualidade conta muito.',
+        'Em entrevistas e no escritório, use o tratamento formal (dumneavoastră, verbo na 2ª pessoa do plural) e “domnule / doamnă” + sobrenome, até que proponham o “tu”. Para pedir algo, suavize com “Aș vrea…”, “Ați putea…” e “vă rog frumos”. Chegue alguns minutos antes: em entrevista, pontualidade conta muito.',
       grammar_why:
-        'O condicional romeno equivale ao nosso futuro do pretérito («eu gostaria», «o senhor poderia»). Forma-se com um auxiliar curto + infinitivo sem «a»: aș, ai, ar, am, ați, ar + vrea / putea / avea. Em pedidos, ele suaviza o tom: «Ați putea…?» soa mais educado que «Puteți…?». Diferente do português, depois de «dacă» (se) também vem o condicional: «Dacă aș avea timp, aș veni» = «Se eu tivesse tempo, eu viria». No discurso indireto, «a spus că…» mantém o tempo da fala original: «Vin mâine» → «A spus că vine mâine» (disse que vinha amanhã).',
+        'O condicional romeno equivale ao nosso futuro do pretérito (“eu gostaria”, “o senhor poderia”). Forma-se com um auxiliar curto + infinitivo sem “a”: aș, ai, ar, am, ați, ar + vrea / putea / avea. Em pedidos, ele suaviza o tom: “Ați putea…?” soa mais educado que “Puteți…?”. Diferente do português, depois de “dacă” (se) também vem o condicional: “Dacă aș avea timp, aș veni” = “Se eu tivesse tempo, eu viria”. No discurso indireto, “a spus că…” mantém o tempo da fala original: “Vin mâine” → “A spus că vine mâine” (disse que vinha amanhã).',
       grammar_examples: [
         ['Aș vrea să vorbesc cu doamna director.', 'Eu gostaria de falar com a diretora.'],
         ['Ați putea să-mi trimiteți contractul?', 'O senhor poderia me enviar o contrato?'],
@@ -731,9 +731,9 @@ export const UNITS_RO: UnitSeed[] = [
           bot: 'De ce ați vrea să lucrați la firma noastră?',
           botTranslation: 'Por que o senhor gostaria de trabalhar na nossa empresa?',
           expected: ['Aș vrea să lucrez aici pentru că aș putea să învăț multe și să cresc profesional.', 'aș vrea', 'aș putea', 'pentru că', 'să lucrez'],
-          hint: 'Responda com «Aș vrea să lucrez aici pentru că…».',
+          hint: 'Responda com “Aș vrea să lucrez aici pentru că…”.',
         },
-        communityPrompt: 'Escreva 3 frases para uma entrevista dizendo o que você gostaria de fazer no cargo, usando «aș vrea», «aș putea» e «dacă aș…».',
+        communityPrompt: 'Escreva 3 frases para uma entrevista dizendo o que você gostaria de fazer no cargo, usando “aș vrea”, “aș putea” e “dacă aș…”.',
       },
       {
         id: 'ro-u7-l2',
@@ -764,9 +764,9 @@ export const UNITS_RO: UnitSeed[] = [
           bot: 'Ședința de mâine se mută la ora trei. Aveți vreo problemă?',
           botTranslation: 'A reunião de amanhã passou para as três. O senhor tem algum problema com isso?',
           expected: ['Nicio problemă, dar ați putea să-mi trimiteți ordinea de zi, vă rog?', 'nicio problemă', 'ați putea', 'vă rog'],
-          hint: 'Aceite e faça um pedido educado: «Ați putea…, vă rog?».',
+          hint: 'Aceite e faça um pedido educado: “Ați putea…, vă rog?”.',
         },
-        communityPrompt: 'Escreva um e-mail curto ao chefe pedindo mais prazo para um relatório, com «Aș vrea…», «Ați putea…» e uma frase com «dacă aș…».',
+        communityPrompt: 'Escreva um e-mail curto ao chefe pedindo mais prazo para um relatório, com “Aș vrea…”, “Ați putea…” e uma frase com “dacă aș…”.',
       },
       {
         id: 'ro-u7-l3',
@@ -797,9 +797,9 @@ export const UNITS_RO: UnitSeed[] = [
           bot: 'Domnul director nu este în birou. Doriți să-i las un mesaj?',
           botTranslation: 'O diretor não está no escritório. O senhor quer que eu deixe um recado para ele?',
           expected: ['Da, vă rog. Spuneți-i că aș vrea să programăm o întâlnire săptămâna viitoare.', 'spuneți-i că', 'aș vrea', 'o întâlnire', 'vă rog'],
-          hint: 'Peça que transmitam o recado: «Spuneți-i că aș vrea…».',
+          hint: 'Peça que transmitam o recado: “Spuneți-i că aș vrea…”.',
         },
-        communityPrompt: 'Grave um recado de voz para um colega: conte o que o chefe disse («a spus că…») e faça um pedido com «ați putea».',
+        communityPrompt: 'Grave um recado de voz para um colega: conte o que o chefe disse (“a spus că…”) e faça um pedido com “ați putea”.',
       },
       {
         id: 'ro-u7-p',
@@ -817,10 +817,10 @@ export const UNITS_RO: UnitSeed[] = [
             'aș schimba',
             'dacă mi-ați oferi',
           ],
-          hint: 'Responda às duas perguntas no condicional: «Aș putea începe…», «Aș schimba…».',
+          hint: 'Responda às duas perguntas no condicional: “Aș putea începe…”, “Aș schimba…”.',
         },
         communityPrompt:
-          'Escreva um e-mail de 5–6 frases a um amigo contando a entrevista: o que o entrevistador disse («a spus că…», «m-a întrebat dacă…») e o que você faria se conseguisse a vaga.',
+          'Escreva um e-mail de 5–6 frases a um amigo contando a entrevista: o que o entrevistador disse (“a spus că…”, “m-a întrebat dacă…”) e o que você faria se conseguisse a vaga.',
       },
     ],
   },
@@ -832,14 +832,14 @@ export const UNITS_RO: UnitSeed[] = [
     emoji: '🩺',
     card: {
       id: 'ro-c8',
-      title: '«Sănătate!»: saúde à romena',
+      title: '“Sănătate!”: saúde à romena',
       emoji: '💊',
       history:
         'Em 1888, o médico romeno Victor Babeș descreveu no sangue do gado os parasitas que hoje formam o gênero Babesia, batizado em sua homenagem. Em 1921, o fisiologista Nicolae Paulescu publicou estudos sobre um extrato de pâncreas, que chamou de pancreina, capaz de baixar o açúcar no sangue. Em 1974, Emil Palade, nascido em Iași, dividiu o Nobel de Medicina por suas descobertas sobre a organização interna da célula.',
       culture_tip:
-        'Quando alguém espirra, os romenos dizem «Sănătate!» (saúde!), e a resposta é «Mulțumesc!». No sistema público, a porta de entrada é o medic de familie, que dá a trimitere (encaminhamento) para especialistas. Antibióticos só são vendidos com rețetă (receita). Em emergência, ligue 112.',
+        'Quando alguém espirra, os romenos dizem “Sănătate!” (saúde!), e a resposta é “Mulțumesc!”. No sistema público, a porta de entrada é o medic de familie, que dá a trimitere (encaminhamento) para especialistas. Antibióticos só são vendidos com rețetă (receita). Em emergência, ligue 112.',
       grammar_why:
-        'O genitivo (de quem?) e o dativo (a quem?) têm a mesma forma em romeno e se juntam ao artigo no fim da palavra: medicul → medicului, capul → capului, rețeta → rețetei, mama → mamei; no plural, -lor (medicilor). Onde o português usa «do/da» ou «ao/à», o romeno muda a terminação: rețeta medicului = a receita do médico. Com o dativo, o romeno costuma repetir o pronome átono: i-am dat pacientului = (lhe) dei ao paciente. Nas relativas, «care» é sujeito e «pe care» é objeto direto, com clítico (pe care l-am luat). «Al cărui / a cărei» é o nosso «cujo/cuja»: al/a concorda com a coisa possuída, e cărui/cărei com o dono.',
+        'O genitivo (de quem?) e o dativo (a quem?) têm a mesma forma em romeno e se juntam ao artigo no fim da palavra: medicul → medicului, capul → capului, rețeta → rețetei, mama → mamei; no plural, -lor (medicilor). Onde o português usa “do/da” ou “ao/à”, o romeno muda a terminação: rețeta medicului = a receita do médico. Com o dativo, o romeno costuma repetir o pronome átono: i-am dat pacientului = (lhe) dei ao paciente. Nas relativas, “care” é sujeito e “pe care” é objeto direto, com clítico (pe care l-am luat). “Al cărui / a cărei” é o nosso “cujo/cuja”: al/a concorda com a coisa possuída, e cărui/cărei com o dono.',
       grammar_examples: [
         ['Rețeta medicului e pe masă.', 'A receita do médico está na mesa.'],
         ['I-am dat pacientului un calmant.', 'Dei um analgésico ao paciente.'],
@@ -878,10 +878,10 @@ export const UNITS_RO: UnitSeed[] = [
           bot: 'Bună ziua! Luați loc. Ce simptome aveți?',
           botTranslation: 'Bom dia! Sente-se. Que sintomas o(a) senhor(a) tem?',
           expected: ['Am febră, tuse și o durere de cap de două zile.', 'febră', 'tuse', 'durere de cap', 'amețeală'],
-          hint: 'Liste seus sintomas com «Am…» e diga há quanto tempo: «de două zile».',
+          hint: 'Liste seus sintomas com “Am…” e diga há quanto tempo: “de două zile”.',
         },
         communityPrompt:
-          'Descreva ao médico os sintomas de alguém da sua família usando um genitivo (ex.: «tusea fratelui meu…») e um dativo com clítico (ex.: «i-am dat…»).',
+          'Descreva ao médico os sintomas de alguém da sua família usando um genitivo (ex.: “tusea fratelui meu…”) e um dativo com clítico (ex.: “i-am dat…”).',
       },
       {
         id: 'ro-u8-l2',
@@ -912,9 +912,9 @@ export const UNITS_RO: UnitSeed[] = [
           bot: 'Bună ziua! Aveți rețetă pentru antibiotic?',
           botTranslation: 'Bom dia! O(a) senhor(a) tem receita para o antibiótico?',
           expected: ['Da, poftiți rețeta medicului de familie.', 'rețeta', 'medicului', 'poftiți', 'da'],
-          hint: 'Diga que sim e entregue «a receita do médico» usando o genitivo: rețeta medicului.',
+          hint: 'Diga que sim e entregue “a receita do médico” usando o genitivo: rețeta medicului.',
         },
-        communityPrompt: 'Escreva um bilhete explicando a alguém como tomar um remédio, com uma relativa com «pe care» e um dativo (ex.: «Dă-i copilului…»).',
+        communityPrompt: 'Escreva um bilhete explicando a alguém como tomar um remédio, com uma relativa com “pe care” e um dativo (ex.: “Dă-i copilului…”).',
       },
       {
         id: 'ro-u8-l3',
@@ -945,9 +945,9 @@ export const UNITS_RO: UnitSeed[] = [
           bot: 'Policlinica, bună ziua. Pentru ce doriți o programare?',
           botTranslation: 'Policlínica, bom dia. Para que o(a) senhor(a) deseja marcar uma consulta?',
           expected: ['Aș dori o programare la medicul de familie, pentru că mă doare urechea.', 'programare', 'mă doare', 'medicul de familie', 'urechea'],
-          hint: 'Peça a consulta com «Aș dori o programare…» e diga o que dói: «mă doare…».',
+          hint: 'Peça a consulta com “Aș dori o programare…” e diga o que dói: “mă doare…”.',
         },
-        communityPrompt: 'Descreva uma dor ou um machucado usando «care» ou «al cărui / a cărei» (ex.: «Am un prieten al cărui picior…»).',
+        communityPrompt: 'Descreva uma dor ou um machucado usando “care” ou “al cărui / a cărei” (ex.: “Am un prieten al cărui picior…”).',
       },
       {
         id: 'ro-u8-p',
@@ -959,10 +959,10 @@ export const UNITS_RO: UnitSeed[] = [
           bot: 'Deci aveți febră de trei zile. Ce medicament ați luat și cine vi l-a recomandat?',
           botTranslation: 'Então o(a) senhor(a) está com febre há três dias. Que remédio tomou e quem o recomendou?',
           expected: ['Am luat un calmant pe care mi l-a recomandat farmacista.', 'pe care', 'mi l-a recomandat', 'calmant', 'farmacista'],
-          hint: 'Diga o remédio e use uma relativa: «…pe care mi l-a recomandat…».',
+          hint: 'Diga o remédio e use uma relativa: “…pe care mi l-a recomandat…”.',
         },
         communityPrompt:
-          'Conte uma ida ao médico e à farmácia (5–6 frases), com pelo menos dois genitivos, um dativo com clítico («i-am spus medicului…») e duas relativas («pe care», «al cărui / a cărei»).',
+          'Conte uma ida ao médico e à farmácia (5–6 frases), com pelo menos dois genitivos, um dativo com clítico (“i-am spus medicului…”) e duas relativas (“pe care”, “al cărui / a cărei”).',
       },
     ],
   },
@@ -981,7 +981,7 @@ export const UNITS_RO: UnitSeed[] = [
       culture_tip:
         'No 1º de dezembro há desfile militar em Bucareste, sob o Arco do Triunfo, e festa em Alba Iulia; é tradição comer fasole cu cârnați (feijão com linguiça). A antiga Piața Palatului, onde ocorreu o último comício de Ceaușescu, hoje se chama Piața Revoluției. Ao falar de 1989, lembre que muitas famílias viveram aqueles dias de perto: ouça mais do que opine.',
       grammar_why:
-        'O mais-que-perfeito (plecasem = eu tinha partido, eu partira) marca uma ação anterior a outra já passada. O português tem a forma simples «partira», mas no Brasil usamos quase só «tinha partido»; o romeno usa a forma simples também na fala. Tira-se o -t do particípio (plecat → pleca-) e acrescenta-se -sem, -seși, -se, -serăm, -serăți, -seră; particípios em -s ganham um -e-: ajuns → ajunsesem, ajunseseră. Os conectores organizam o texto: deși (embora — atenção: com indicativo, não com subjuntivo como em português), totuși (mesmo assim), prin urmare (portanto), în schimb (em compensação, já).',
+        'O mais-que-perfeito (plecasem = eu tinha partido, eu partira) marca uma ação anterior a outra já passada. O português tem a forma simples “partira”, mas no Brasil usamos quase só “tinha partido”; o romeno usa a forma simples também na fala. Tira-se o -t do particípio (plecat → pleca-) e acrescenta-se -sem, -seși, -se, -serăm, -serăți, -seră; particípios em -s ganham um -e-: ajuns → ajunsesem, ajunseseră. Os conectores organizam o texto: deși (embora — atenção: com indicativo, não com subjuntivo como em português), totuși (mesmo assim), prin urmare (portanto), în schimb (em compensação, já).',
       grammar_examples: [
         ['Când am ajuns la gară, trenul plecase deja.', 'Quando cheguei à estação, o trem já tinha partido.'],
         ['Delegații ajunseseră la Alba Iulia din toată Transilvania.', 'Os delegados tinham chegado a Alba Iulia de toda a Transilvânia.'],
@@ -1020,7 +1020,7 @@ export const UNITS_RO: UnitSeed[] = [
           bot: 'Pe 1 decembrie 1918, ce alte provincii se uniseră deja cu România?',
           botTranslation: 'Em 1º de dezembro de 1918, que outras províncias já tinham se unido à Romênia?',
           expected: ['Basarabia și Bucovina se uniseră deja cu România.', 'Basarabia', 'Bucovina', 'se uniseră', 'deja'],
-          hint: 'Cite as duas províncias e use o mais-que-perfeito: «se uniseră deja».',
+          hint: 'Cite as duas províncias e use o mais-que-perfeito: “se uniseră deja”.',
         },
         communityPrompt: 'Escreva 3 frases sobre a Grande União usando o mais-que-perfeito para o que já tinha acontecido antes de 1º de dezembro de 1918.',
       },
@@ -1053,7 +1053,7 @@ export const UNITS_RO: UnitSeed[] = [
           bot: 'Unde și când începuseră protestele din decembrie 1989?',
           botTranslation: 'Onde e quando tinham começado os protestos de dezembro de 1989?',
           expected: ['Protestele începuseră la Timișoara, pe 16 decembrie.', 'Timișoara', 'începuseră', '16 decembrie'],
-          hint: 'Responda com o mais-que-perfeito: «Protestele începuseră la…».',
+          hint: 'Responda com o mais-que-perfeito: “Protestele începuseră la…”.',
         },
         communityPrompt:
           'Conte, em 3–4 frases e em tom neutro, a sequência de 16 a 22 de dezembro de 1989, usando o mais-que-perfeito e pelo menos um conector (deși, totuși, prin urmare).',
@@ -1087,9 +1087,9 @@ export const UNITS_RO: UnitSeed[] = [
           bot: 'Ce sărbătoresc românii pe 1 decembrie?',
           botTranslation: 'O que os romenos comemoram em 1º de dezembro?',
           expected: ['Pe 1 decembrie românii sărbătoresc Marea Unire din 1918.', 'Marea Unire', '1918', 'Ziua Națională', 'unirea'],
-          hint: 'Diga o nome do acontecimento e o ano: «Marea Unire din…».',
+          hint: 'Diga o nome do acontecimento e o ano: “Marea Unire din…”.',
         },
-        communityPrompt: 'Compare as duas datas (1918 e 1989) em 3–4 frases, usando «în schimb» e «deși».',
+        communityPrompt: 'Compare as duas datas (1918 e 1989) em 3–4 frases, usando “în schimb” e “deși”.',
       },
       {
         id: 'ro-u9-p',
@@ -1108,7 +1108,7 @@ export const UNITS_RO: UnitSeed[] = [
             'București',
             'deși',
           ],
-          hint: 'Use o mais-que-perfeito (începuseră, ajunseseră) e abra com «Deși…».',
+          hint: 'Use o mais-que-perfeito (începuseră, ajunseseră) e abra com “Deși…”.',
         },
         communityPrompt:
           'Escreva um texto neutro e factual (6–8 frases) ligando 1918 e 1989, com o mais-que-perfeito pelo menos três vezes e os quatro conectores: totuși, deși, prin urmare, în schimb.',
@@ -1126,11 +1126,11 @@ export const UNITS_RO: UnitSeed[] = [
       title: 'Primăria, buletinul e o leu',
       emoji: '📑',
       history:
-        'A Romênia se divide em 41 condados (județe) mais o município de Bucareste, e cada cidade ou comuna tem a sua primărie, chefiada por um prefeito (primar) eleito. O documento de identidade oficial se chama carte de identitate, mas todo mundo ainda o chama de «buletin», herança do antigo «buletin de identitate». O país entrou na União Europeia em 2007, mas manteve a própria moeda, o leu. Em 2005 o leu foi redenominado: 10.000 lei antigos passaram a valer 1 leu novo.',
+        'A Romênia se divide em 41 condados (județe) mais o município de Bucareste, e cada cidade ou comuna tem a sua primărie, chefiada por um prefeito (primar) eleito. O documento de identidade oficial se chama carte de identitate, mas todo mundo ainda o chama de “buletin”, herança do antigo “buletin de identitate”. O país entrou na União Europeia em 2007, mas manteve a própria moeda, o leu. Em 2005 o leu foi redenominado: 10.000 lei antigos passaram a valer 1 leu novo.',
       culture_tip:
-        'Num e-mail ou carta formal, comece com «Stimate domnule…» ou «Stimată doamnă…» e termine com «Cu stimă» ou «Cu respect». Trate o destinatário sempre por «dumneavoastră». Ao ir a um guichê, leve cópias de todos os documentos: pedir «o copie xerox» ainda é muito comum.',
+        'Num e-mail ou carta formal, comece com “Stimate domnule…” ou “Stimată doamnă…” e termine com “Cu stimă” ou “Cu respect”. Trate o destinatário sempre por “dumneavoastră”. Ao ir a um guichê, leve cópias de todos os documentos: pedir “o copie xerox” ainda é muito comum.',
       grammar_why:
-        'A voz passiva romena funciona como a do português: a fi + particípio, e o particípio concorda com o sujeito. Como cerere é feminino, diz-se «Cererea a fost aprobată», assim como dizemos «a solicitação foi aprovada»; no neutro plural, «actele au fost aprobate». O agente vem com «de» ou, no registro formal, «de către». O «se» passivo também é igual ao nosso: «Se completează formularul» = «Preenche-se o formulário». Em textos formais, os pedidos vêm com «Vă rugăm să…» + subjuntivo, como «Pedimos que…».',
+        'A voz passiva romena funciona como a do português: a fi + particípio, e o particípio concorda com o sujeito. Como cerere é feminino, diz-se “Cererea a fost aprobată”, assim como dizemos “a solicitação foi aprovada”; no neutro plural, “actele au fost aprobate”. O agente vem com “de” ou, no registro formal, “de către”. O “se” passivo também é igual ao nosso: “Se completează formularul” = “Preenche-se o formulário”. Em textos formais, os pedidos vêm com “Vă rugăm să…” + subjuntivo, como “Pedimos que…”.',
       grammar_examples: [
         ['Cererea a fost aprobată de către primărie.', 'O pedido foi aprovado pela prefeitura.'],
         ['Formularul se completează cu majuscule.', 'O formulário é preenchido em letras maiúsculas.'],
@@ -1169,9 +1169,9 @@ export const UNITS_RO: UnitSeed[] = [
           bot: 'Bună ziua! Pentru certificatul de naștere trebuie completat acest formular. Aveți actul de identitate la dumneavoastră?',
           botTranslation: 'Bom dia! Para a certidão de nascimento é preciso preencher este formulário. O senhor está com o documento de identidade?',
           expected: ['Da, poftiți buletinul. Unde se completează formularul?', 'poftiți', 'buletinul', 'actul de identitate', 'se completează'],
-          hint: 'Entregue o documento («Poftiți…») e pergunte onde se preenche o formulário, com o «se» passivo.',
+          hint: 'Entregue o documento (“Poftiți…”) e pergunte onde se preenche o formulário, com o “se” passivo.',
         },
-        communityPrompt: 'Descreva em 3 frases como se tira um documento no Brasil usando o «se» passivo (se completează, se plătește, se depune).',
+        communityPrompt: 'Descreva em 3 frases como se tira um documento no Brasil usando o “se” passivo (se completează, se plătește, se depune).',
       },
       {
         id: 'ro-u10-l2',
@@ -1202,9 +1202,9 @@ export const UNITS_RO: UnitSeed[] = [
           bot: 'Bună ziua, am primit e-mailul dumneavoastră. Doriți să vă confirmăm programarea prin e-mail sau prin telefon?',
           botTranslation: 'Bom dia, recebemos o seu e-mail. O senhor deseja que confirmemos o agendamento por e-mail ou por telefone?',
           expected: ['Vă rog să mi-o confirmați prin e-mail. Vă mulțumesc!', 'prin e-mail', 'vă rog să', 'confirmați', 'vă mulțumesc'],
-          hint: 'Responda no registro formal: «Vă rog să…» + subjuntivo terminado em -ți.',
+          hint: 'Responda no registro formal: “Vă rog să…” + subjuntivo terminado em -ți.',
         },
-        communityPrompt: 'Escreva um e-mail formal curto à prefeitura (Stimate domnule… / Stimată doamnă… — Cu stimă) pedindo um documento com «Vă rog să…».',
+        communityPrompt: 'Escreva um e-mail formal curto à prefeitura (Stimate domnule… / Stimată doamnă… — Cu stimă) pedindo um documento com “Vă rog să…”.',
       },
       {
         id: 'ro-u10-l3',
@@ -1236,10 +1236,10 @@ export const UNITS_RO: UnitSeed[] = [
           botTranslation:
             'Bom dia! Para abrir uma conta bancária precisamos do seu documento de identidade e da sua assinatura aqui. O senhor deseja também um cartão?',
           expected: ['Da, vă rog. În cât timp va fi trimis cardul?', 'da, vă rog', 'va fi trimis', 'cardul', 'în cât timp'],
-          hint: 'Aceite e pergunte o prazo com a passiva: «În cât timp va fi trimis cardul?».',
+          hint: 'Aceite e pergunte o prazo com a passiva: “În cât timp va fi trimis cardul?”.',
         },
         communityPrompt:
-          'Escreva 3 frases sobre o que acontece quando alguém abre uma conta: use a passiva com «a fi» (este verificat, va fi trimis) e o «se» passivo.',
+          'Escreva 3 frases sobre o que acontece quando alguém abre uma conta: use a passiva com “a fi” (este verificat, va fi trimis) e o “se” passivo.',
       },
       {
         id: 'ro-u10-p',
@@ -1259,10 +1259,10 @@ export const UNITS_RO: UnitSeed[] = [
             'să fie analizat',
             'din nou',
           ],
-          hint: 'Peça o prazo no registro formal e use a passiva: «…trebuie depusă», «…să fie analizat».',
+          hint: 'Peça o prazo no registro formal e use a passiva: “…trebuie depusă”, “…să fie analizat”.',
         },
         communityPrompt:
-          'Escreva um e-mail formal completo ao banco ou à prefeitura: saudação, pedido com «Vă rugăm să…», uma frase na voz passiva, uma com o «se» passivo e o fecho «Cu stimă».',
+          'Escreva um e-mail formal completo ao banco ou à prefeitura: saudação, pedido com “Vă rugăm să…”, uma frase na voz passiva, uma com o “se” passivo e o fecho “Cu stimă”.',
       },
     ],
   },
@@ -1281,7 +1281,7 @@ export const UNITS_RO: UnitSeed[] = [
       culture_tip:
         'As trilhas de montanha são sinalizadas com marcas coloridas (faixa, cruz, triângulo ou ponto em vermelho, azul ou amarelo). Em área de urso, nunca deixe comida exposta, faça barulho ao caminhar e jamais alimente os animais. Em emergência, ligue 112, que aciona o resgate de montanha (Salvamont).',
       grammar_why:
-        'O gerúndio romeno termina em -ând ou -ind: merge → mergând (andando), privi → privind (olhando). Ele indica como ou quando algo acontece, como o nosso: «Mergând pe potecă…» = «Andando pela trilha…». Diferença importante: o romeno NÃO usa gerúndio para a ação em curso; «estou andando» é só «merg». Os pronomes se colam no fim com hífen: văzându-l (vendo-o). Já o particípio, usado como adjetivo, concorda em gênero e número: o zonă protejată, urși speriați. E as expressões idiomáticas mudam o sentido das palavras: a da de (topar com), a-și face griji (preocupar-se), a o lua la sănătoasa (dar no pé).',
+        'O gerúndio romeno termina em -ând ou -ind: merge → mergând (andando), privi → privind (olhando). Ele indica como ou quando algo acontece, como o nosso: “Mergând pe potecă…” = “Andando pela trilha…”. Diferença importante: o romeno NÃO usa gerúndio para a ação em curso; “estou andando” é só “merg”. Os pronomes se colam no fim com hífen: văzându-l (vendo-o). Já o particípio, usado como adjetivo, concorda em gênero e número: o zonă protejată, urși speriați. E as expressões idiomáticas mudam o sentido das palavras: a da de (topar com), a-și face griji (preocupar-se), a o lua la sănătoasa (dar no pé).',
       grammar_examples: [
         ['Mergând pe potecă, am dat de un urs.', 'Andando pela trilha, dei de cara com um urso.'],
         ['Privind pelicanii, am uitat de oboseală.', 'Olhando os pelicanos, esqueci o cansaço.'],
@@ -1320,7 +1320,7 @@ export const UNITS_RO: UnitSeed[] = [
           bot: 'Mâine urcăm pe Vârful Moldoveanu. Ce ai pus în rucsac?',
           botTranslation: 'Amanhã subimos o Pico Moldoveanu. O que você colocou na mochila?',
           expected: ['Am pus apă, mâncare și o hartă. Mergând încet, ajungem sus până la prânz.', 'am pus', 'hartă', 'mergând', 'apă', 'cortul'],
-          hint: 'Diga o que levou e acrescente um gerúndio: «Mergând încet…».',
+          hint: 'Diga o que levou e acrescente um gerúndio: “Mergând încet…”.',
         },
         communityPrompt: 'Conte em 3 frases uma trilha que você fez, usando pelo menos dois gerúndios (mergând, urcând, privind).',
       },
@@ -1353,10 +1353,10 @@ export const UNITS_RO: UnitSeed[] = [
           bot: 'Am auzit că în munții aceștia sunt mulți urși. Nu ți-e frică?',
           botTranslation: 'Ouvi dizer que nestas montanhas há muitos ursos. Você não tem medo?',
           expected: ['Nu-mi fac griji. Făcând zgomot pe traseu, îi țin pe urși departe.', 'nu-mi fac griji', 'făcând zgomot', 'nu mi-e frică', 'zgomot'],
-          hint: 'Tranquilize com «Nu-mi fac griji» e explique com um gerúndio: «Făcând zgomot…».',
+          hint: 'Tranquilize com “Nu-mi fac griji” e explique com um gerúndio: “Făcând zgomot…”.',
         },
         communityPrompt:
-          'Escreva o que fazer se você der de cara com um animal selvagem: use «a da de», um gerúndio e um particípio como adjetivo (speriat, rătăcit).',
+          'Escreva o que fazer se você der de cara com um animal selvagem: use “a da de”, um gerúndio e um particípio como adjetivo (speriat, rătăcit).',
       },
       {
         id: 'ro-u11-l3',
@@ -1394,7 +1394,7 @@ export const UNITS_RO: UnitSeed[] = [
             'zburând',
             'barca',
           ],
-          hint: 'Conte o passeio com gerúndios: «plimbându-mă cu barca…», «…zburând».',
+          hint: 'Conte o passeio com gerúndios: “plimbându-mă cu barca…”, “…zburând”.',
         },
         communityPrompt: 'Descreva um passeio de barco pelo Delta em 3–4 frases, com dois gerúndios e um particípio como adjetivo (ex.: o zonă protejată).',
       },
@@ -1436,9 +1436,9 @@ export const UNITS_RO: UnitSeed[] = [
       history:
         'A Romênia entrou na União Europeia em 1º de janeiro de 2007, e os últimos países do bloco retiraram as restrições ao trabalho de romenos em 2014. Desde então, milhões de romenos vivem no exterior, e a diáspora romena está entre as maiores da Europa; entre as comunidades mais numerosas estão as da Itália, da Espanha e da Alemanha. Ao mesmo tempo, cidades como Cluj-Napoca e Bucareste se tornaram polos de tecnologia da informação. E quase metade da população ainda vive no meio rural, o que mantém vivo o debate sobre cidade × campo.',
       culture_tip:
-        'Romenos adoram discutir à mesa, e todo mundo «își dă cu părerea» (dá seu pitaco). Para discordar sem ofender, reconheça antes o outro lado: «Aveți dreptate într-o privință, totuși…». Emigração é um tema pessoal: quase toda família tem alguém «afară» (no exterior), então evite rótulos pejorativos e generalizações.',
+        'Romenos adoram discutir à mesa, e todo mundo “își dă cu părerea” (dá seu pitaco). Para discordar sem ofender, reconheça antes o outro lado: “Aveți dreptate într-o privință, totuși…”. Emigração é um tema pessoal: quase toda família tem alguém “afară” (no exterior), então evite rótulos pejorativos e generalizações.',
       grammar_why:
-        'Para dar opinião, use «consider că», «cred că» ou «din punctul meu de vedere» + indicativo; ao contrário do português («não acho que SEJA»), o romeno normalmente mantém o indicativo mesmo na negação: «nu cred că e». Já depois de expressões impessoais (e important, e necesar, e posibil, e bine) vem «să» + subjuntivo, onde o português usa «que» + subjuntivo ou infinitivo. Se o sujeito aparece antes do verbo, entra «ca … să»: «e important ca tinerii să rămână». Na 3ª pessoa o subjuntivo troca a vogal final: pleacă → să plece, lucrează → să lucreze, are → să aibă, este → să fie. Os conectores organizam o argumento: pe de o parte… pe de altă parte, în primul rând, totuși, în schimb, prin urmare.',
+        'Para dar opinião, use “consider că”, “cred că” ou “din punctul meu de vedere” + indicativo; ao contrário do português (“não acho que SEJA”), o romeno normalmente mantém o indicativo mesmo na negação: “nu cred că e”. Já depois de expressões impessoais (e important, e necesar, e posibil, e bine) vem “să” + subjuntivo, onde o português usa “que” + subjuntivo ou infinitivo. Se o sujeito aparece antes do verbo, entra “ca … să”: “e important ca tinerii să rămână”. Na 3ª pessoa o subjuntivo troca a vogal final: pleacă → să plece, lucrează → să lucreze, are → să aibă, este → să fie. Os conectores organizam o argumento: pe de o parte… pe de altă parte, în primul rând, totuși, în schimb, prin urmare.',
       grammar_examples: [
         ['Consider că munca de acasă are multe avantaje.', 'Considero que o trabalho remoto tem muitas vantagens.'],
         ['E important ca tinerii să aibă oportunități în țară.', 'É importante que os jovens tenham oportunidades no país.'],
@@ -1486,9 +1486,9 @@ export const UNITS_RO: UnitSeed[] = [
             'pe de altă parte',
             'consider că',
           ],
-          hint: 'Mostre os dois lados com «pe de o parte… pe de altă parte» e diga sua opinião.',
+          hint: 'Mostre os dois lados com “pe de o parte… pe de altă parte” e diga sua opinião.',
         },
-        communityPrompt: 'Escreva 3–4 frases sobre emigração usando «pe de o parte… pe de altă parte» e uma frase com «e important ca… să…».',
+        communityPrompt: 'Escreva 3–4 frases sobre emigração usando “pe de o parte… pe de altă parte” e uma frase com “e important ca… să…”.',
       },
       {
         id: 'ro-u12-l2',
@@ -1525,10 +1525,10 @@ export const UNITS_RO: UnitSeed[] = [
             'consider că',
             'e important',
           ],
-          hint: 'Concorde ou discorde («sunt / nu sunt de acord») e justifique com «consider că…».',
+          hint: 'Concorde ou discorde (“sunt / nu sunt de acord”) e justifique com “consider că…”.',
         },
         communityPrompt:
-          'Dê sua opinião sobre redes sociais para adolescentes: use «consider că», um conector de contraste (totuși, în schimb) e «e necesar ca… să…».',
+          'Dê sua opinião sobre redes sociais para adolescentes: use “consider că”, um conector de contraste (totuși, în schimb) e “e necesar ca… să…”.',
       },
       {
         id: 'ro-u12-l3',
@@ -1565,9 +1565,9 @@ export const UNITS_RO: UnitSeed[] = [
             'totuși',
             'e important',
           ],
-          hint: 'Escolha um lado, dê dois motivos («în primul rând… în al doilea rând») e faça uma ressalva com «totuși».',
+          hint: 'Escolha um lado, dê dois motivos (“în primul rând… în al doilea rând”) e faça uma ressalva com “totuși”.',
         },
-        communityPrompt: 'Defenda o lado oposto ao seu no debate cidade × campo em 3 frases, usando «nu sunt de acord că…» e «e posibil ca… să…».',
+        communityPrompt: 'Defenda o lado oposto ao seu no debate cidade × campo em 3 frases, usando “nu sunt de acord că…” e “e posibil ca… să…”.',
       },
       {
         id: 'ro-u12-p',
@@ -1576,9 +1576,9 @@ export const UNITS_RO: UnitSeed[] = [
         words: [],
         cloze: [],
         voice: {
-          bot: 'Suntem în direct la radio, la o dezbatere. Tema de azi: «Ar trebui tinerii să rămână în țară?» Aveți un minut: prezentați ambele părți și apoi concluzia dumneavoastră.',
+          bot: 'Suntem în direct la radio, la o dezbatere. Tema de azi: “Ar trebui tinerii să rămână în țară?” Aveți un minut: prezentați ambele părți și apoi concluzia dumneavoastră.',
           botTranslation:
-            'Estamos ao vivo no rádio, num debate. O tema de hoje: «Os jovens deveriam ficar no país?» O senhor tem um minuto: apresente os dois lados e depois a sua conclusão.',
+            'Estamos ao vivo no rádio, num debate. O tema de hoje: “Os jovens deveriam ficar no país?” O senhor tem um minuto: apresente os dois lados e depois a sua conclusão.',
           expected: [
             'Pe de o parte, e firesc ca tinerii să caute salarii mai mari în străinătate; pe de altă parte, țara are nevoie de ei. Din punctul meu de vedere, e important ca statul să le ofere motive să rămână.',
             'pe de o parte',
@@ -1586,10 +1586,10 @@ export const UNITS_RO: UnitSeed[] = [
             'din punctul meu de vedere',
             'e important ca',
           ],
-          hint: 'Apresente os dois lados, conclua com sua opinião e use pelo menos um «e important ca… să…».',
+          hint: 'Apresente os dois lados, conclua com sua opinião e use pelo menos um “e important ca… să…”.',
         },
         communityPrompt:
-          'Escreva um pequeno artigo de opinião (5–6 frases) sobre emigração, tecnologia ou cidade × campo, com argumentos dos dois lados, conectores (în primul rând, totuși, prin urmare) e uma conclusão com «consider că».',
+          'Escreva um pequeno artigo de opinião (5–6 frases) sobre emigração, tecnologia ou cidade × campo, com argumentos dos dois lados, conectores (în primul rând, totuși, prin urmare) e uma conclusão com “consider că”.',
       },
     ],
   },
@@ -1604,11 +1604,11 @@ export const UNITS_RO: UnitSeed[] = [
       title: 'Bulă, bancuri e a arte da ironia',
       emoji: '😏',
       history:
-        'O «banc» é a piada curta que corre de boca em boca, e o personagem mais famoso delas é Bulă, o aluno trapalhão e malandro que tira a professora do sério, parente próximo do nosso Joãozinho. Durante o regime comunista, as piadas políticas circulavam em voz baixa e funcionavam como uma válvula de escape, porque contá-las em público podia trazer problemas. Muito antes disso, o folclore já tinha Păcală, o esperto que engana todo mundo, e Tândală, seu companheiro ingênuo, reunidos em versos por Petre Dulfu em «Isprăvile lui Păcală». Esse gosto pela autoironia continua forte no humor romeno de hoje.',
+        'O “banc” é a piada curta que corre de boca em boca, e o personagem mais famoso delas é Bulă, o aluno trapalhão e malandro que tira a professora do sério, parente próximo do nosso Joãozinho. Durante o regime comunista, as piadas políticas circulavam em voz baixa e funcionavam como uma válvula de escape, porque contá-las em público podia trazer problemas. Muito antes disso, o folclore já tinha Păcală, o esperto que engana todo mundo, e Tândală, seu companheiro ingênuo, reunidos em versos por Petre Dulfu em “Isprăvile lui Păcală”. Esse gosto pela autoironia continua forte no humor romeno de hoje.',
       culture_tip:
-        'O humor romeno é seco e cheio de autoironia; a frase «Las’ că merge și așa» («deixa, assim mesmo já serve») virou símbolo do jeitinho local. Por escrito, a ironia é traiçoeira: um «Bravo!» ou «Super, mersi!» sem contexto pode soar sarcástico. Com pessoas mais velhas, não passe para o «tu» antes de ser convidado, e cuidado com «dumneata»: dito por um jovem, pode soar condescendente.',
+        'O humor romeno é seco e cheio de autoironia; a frase “Las’ că merge și așa” (“deixa, assim mesmo já serve”) virou símbolo do jeitinho local. Por escrito, a ironia é traiçoeira: um “Bravo!” ou “Super, mersi!” sem contexto pode soar sarcástico. Com pessoas mais velhas, não passe para o “tu” antes de ser convidado, e cuidado com “dumneata”: dito por um jovem, pode soar condescendente.',
       grammar_why:
-        'O romeno tem três degraus de tratamento. «Tu» é íntimo, como o nosso «você» entre amigos. «Dumneavoastră» é o formal, «o senhor / a senhora», com o verbo na 2ª pessoa do plural: «Dumneavoastră ce credeți?». No meio fica «dumneata», com verbo na 2ª do singular («Dumneata ce crezi?»): respeitoso mas familiar, típico de gente mais velha ou do interior. A fala coloquial se apoia em partículas: «păi» (ué, bom…, abre respostas óbvias), «ia» (anda, vai: «Ia zi!»), «cică» (dizem que, parece que, o «diz que» do português) e «las’ că» (deixa estar, para consolar ou ameaçar de brincadeira). Os diminutivos (-uț, -el, -ică, -iță) dão carinho, «cafeluță», «băiețel», mas, ditos com o tom certo, viram ironia pura, como o nosso «espertinho».',
+        'O romeno tem três degraus de tratamento. “Tu” é íntimo, como o nosso “você” entre amigos. “Dumneavoastră” é o formal, “o senhor / a senhora”, com o verbo na 2ª pessoa do plural: “Dumneavoastră ce credeți?”. No meio fica “dumneata”, com verbo na 2ª do singular (“Dumneata ce crezi?”): respeitoso mas familiar, típico de gente mais velha ou do interior. A fala coloquial se apoia em partículas: “păi” (ué, bom…, abre respostas óbvias), “ia” (anda, vai: “Ia zi!”), “cică” (dizem que, parece que, o “diz que” do português) e “las’ că” (deixa estar, para consolar ou ameaçar de brincadeira). Os diminutivos (-uț, -el, -ică, -iță) dão carinho, “cafeluță”, “băiețel”, mas, ditos com o tom certo, viram ironia pura, como o nosso “espertinho”.',
       grammar_examples: [
         ['Tu vii? / Dumneata vii? / Dumneavoastră veniți?', 'Você vem? / O senhor vem? (familiar) / O senhor vem? (formal)'],
         ['Ia zi, ce s-a întâmplat?', 'Anda, conta: o que aconteceu?'],
@@ -1642,15 +1642,15 @@ export const UNITS_RO: UnitSeed[] = [
           bot: 'Ia zi, știi vreun banc bun cu Bulă? Că azi am chef de râs.',
           botTranslation: 'Anda, você sabe alguma piada boa do Bulă? Porque hoje estou a fim de rir.',
           expected: [
-            'Păi, știu unul! Învățătoarea îl întreabă pe Bulă: «Cât fac doi și cu doi?» Bulă: «Depinde, doamnă: cumpărăm sau vindem?»',
+            'Păi, știu unul! Învățătoarea îl întreabă pe Bulă: “Cât fac doi și cu doi?” Bulă: “Depinde, doamnă: cumpărăm sau vindem?”',
             'păi',
             'știu unul',
             'Bulă',
             'banc',
           ],
-          hint: 'Comece com «Păi, știu unul!» e conte uma piada curta com diálogo.',
+          hint: 'Comece com “Păi, știu unul!” e conte uma piada curta com diálogo.',
         },
-        communityPrompt: 'Conte (ou invente) um banc curto com o Bulă, começando com «Păi…» ou «Cică…».',
+        communityPrompt: 'Conte (ou invente) um banc curto com o Bulă, começando com “Păi…” ou “Cică…”.',
       },
       {
         id: 'ro-u13-l2',
@@ -1674,12 +1674,12 @@ export const UNITS_RO: UnitSeed[] = [
             sentence: 'Îmi cer scuze, n-am vrut să vă ___.',
             answer: 'tutuiesc',
             options: ['tutuiesc', 'tutuiești', 'tutuiască'],
-            translation: 'Desculpe, não quis tratar o senhor por «tu».',
+            translation: 'Desculpe, não quis tratar o senhor por “tu”.',
           },
         ],
         voice: {
           bot: 'Auzi, tinere, de când ne tutuim noi doi? Eu am vârsta bunicii tale!',
-          botTranslation: 'Escuta, rapaz, desde quando a gente se trata por «tu»? Eu tenho a idade da sua avó!',
+          botTranslation: 'Escuta, rapaz, desde quando a gente se trata por “tu”? Eu tenho a idade da sua avó!',
           expected: [
             'Sărut mâna, doamnă, îmi cer scuze! N-am vrut să fiu nepoliticos. Dumneavoastră cum vă simțiți azi?',
             'îmi cer scuze',
@@ -1687,9 +1687,9 @@ export const UNITS_RO: UnitSeed[] = [
             'dumneavoastră',
             'vă rog să mă scuzați',
           ],
-          hint: 'Peça desculpas com «Sărut mâna» e «îmi cer scuze» e passe para «dumneavoastră».',
+          hint: 'Peça desculpas com “Sărut mâna” e “îmi cer scuze” e passe para “dumneavoastră”.',
         },
-        communityPrompt: 'Escreva a mesma pergunta («Você quer um café?») em três registros, com tu, dumneata e dumneavoastră, e diga a quem diria cada uma.',
+        communityPrompt: 'Escreva a mesma pergunta (“Você quer um café?”) em três registros, com tu, dumneata e dumneavoastră, e diga a quem diria cada uma.',
       },
       {
         id: 'ro-u13-l3',
@@ -1717,8 +1717,8 @@ export const UNITS_RO: UnitSeed[] = [
           },
         ],
         voice: {
-          bot: 'Ți-am scris «Super, mersi mult!» și tu te-ai supărat. Chiar ai crezut că eram ironic?',
-          botTranslation: 'Eu te escrevi «Super, valeu mesmo!» e você ficou chateado. Você achou mesmo que eu estava sendo irônico?',
+          bot: 'Ți-am scris “Super, mersi mult!” și tu te-ai supărat. Chiar ai crezut că eram ironic?',
+          botTranslation: 'Eu te escrevi “Super, valeu mesmo!” e você ficou chateado. Você achou mesmo que eu estava sendo irônico?',
           expected: [
             'Păi, da! În mesaj părea ironic. Las’ că nu-i nimic, poate am făcut din țânțar armăsar.',
             'păi',
@@ -1726,7 +1726,7 @@ export const UNITS_RO: UnitSeed[] = [
             'nu-i nimic',
             'din țânțar armăsar',
           ],
-          hint: 'Explique o mal-entendido com «păi» e ponha panos quentes com «las’ că nu-i nimic».',
+          hint: 'Explique o mal-entendido com “păi” e ponha panos quentes com “las’ că nu-i nimic”.',
         },
         communityPrompt: 'Escreva uma mensagem que poderia soar irônica em romeno e depois reescreva-a sem deixar dúvida, usando um diminutivo afetivo.',
       },
@@ -1746,7 +1746,7 @@ export const UNITS_RO: UnitSeed[] = [
             'las’ că',
             'dumneavoastră',
           ],
-          hint: 'Responda com humor e sem ofender: desfaça o «cică» com «Păi, nu chiar…» e trate o senhor por «dumneavoastră».',
+          hint: 'Responda com humor e sem ofender: desfaça o “cică” com “Păi, nu chiar…” e trate o senhor por “dumneavoastră”.',
         },
         communityPrompt:
           'Escreva um diálogo curto em dois registros: primeiro entre amigos (tu, păi, ia, um diminutivo), depois com um desconhecido mais velho (dumneavoastră), mantendo a mesma piada.',
@@ -1764,11 +1764,11 @@ export const UNITS_RO: UnitSeed[] = [
       title: 'De Vuia a Paulescu: a Romênia no laboratório',
       emoji: '🧪',
       history:
-        'Em 1906, perto de Paris, Traian Vuia fez voar por cerca de 12 metros um monoplano que decolou por meios próprios, sem catapulta. Henri Coandă apresentou no Salão Aeronáutico de Paris de 1910 o Coandă-1910, um avião experimental sem hélice, e deu nome ao efeito Coandă: a tendência de um jato de fluido acompanhar uma superfície curva próxima. O principal aeroporto de Bucareste leva o nome dele. Em 1921, o fisiologista Nicolae Paulescu publicou seus resultados com a «pancreína», um extrato de pâncreas que baixava o açúcar no sangue de cães diabéticos; o Nobel de 1923 pela insulina, porém, foi para Banting e Macleod. Victor Babeș, um dos pioneiros da bacteriologia, é lembrado no gênero de parasitas Babesia e no nome da Universidade Babeș-Bolyai, em Cluj.',
+        'Em 1906, perto de Paris, Traian Vuia fez voar por cerca de 12 metros um monoplano que decolou por meios próprios, sem catapulta. Henri Coandă apresentou no Salão Aeronáutico de Paris de 1910 o Coandă-1910, um avião experimental sem hélice, e deu nome ao efeito Coandă: a tendência de um jato de fluido acompanhar uma superfície curva próxima. O principal aeroporto de Bucareste leva o nome dele. Em 1921, o fisiologista Nicolae Paulescu publicou seus resultados com a “pancreína”, um extrato de pâncreas que baixava o açúcar no sangue de cães diabéticos; o Nobel de 1923 pela insulina, porém, foi para Banting e Macleod. Victor Babeș, um dos pioneiros da bacteriologia, é lembrado no gênero de parasitas Babesia e no nome da Universidade Babeș-Bolyai, em Cluj.',
       culture_tip:
-        'Em artigos e relatórios romenos, a primeira pessoa quase some: prefere-se «se observă că», «s-a constatat» ou o «noi» de modéstia («considerăm că»). Em e-mails a professores e pesquisadores, abra com «Stimate domnule profesor» ou «Stimată doamnă doctor» e feche com «Cu stimă». Títulos acadêmicos pesam: chamar um doutor de «domnule doctor» é sinal de respeito.',
+        'Em artigos e relatórios romenos, a primeira pessoa quase some: prefere-se “se observă că”, “s-a constatat” ou o “noi” de modéstia (“considerăm că”). Em e-mails a professores e pesquisadores, abra com “Stimate domnule profesor” ou “Stimată doamnă doctor” e feche com “Cu stimă”. Títulos acadêmicos pesam: chamar um doutor de “domnule doctor” é sinal de respeito.',
       grammar_why:
-        'O texto técnico romeno se apoia em três ferramentas. A primeira é a nominalização: o infinitivo longo em -are, -ere, -ire vira substantivo feminino (a dezvolta → dezvoltarea, a cerceta → cercetarea, a descoperi → descoperirea), como o nosso «desenvolvimento» ou «pesquisa». A segunda é a voz passiva e impessoal: «a fost descoperită» (foi descoberta, com o particípio concordando) ou o «se» passivo, «se consideră», «s-a demonstrat», igual ao «considera-se» do português formal. A terceira é o genitivo em cadeia: cada possuidor leva -ului, -ei ou -ilor, e quando ele não vem colado a um substantivo com artigo entra o artigo possessivo al/a/ai/ale. Assim, «rezultatele cercetării echipei» são «os resultados da pesquisa da equipe», e «o descoperire a lui Paulescu» é «uma descoberta de Paulescu».',
+        'O texto técnico romeno se apoia em três ferramentas. A primeira é a nominalização: o infinitivo longo em -are, -ere, -ire vira substantivo feminino (a dezvolta → dezvoltarea, a cerceta → cercetarea, a descoperi → descoperirea), como o nosso “desenvolvimento” ou “pesquisa”. A segunda é a voz passiva e impessoal: “a fost descoperită” (foi descoberta, com o particípio concordando) ou o “se” passivo, “se consideră”, “s-a demonstrat”, igual ao “considera-se” do português formal. A terceira é o genitivo em cadeia: cada possuidor leva -ului, -ei ou -ilor, e quando ele não vem colado a um substantivo com artigo entra o artigo possessivo al/a/ai/ale. Assim, “rezultatele cercetării echipei” são “os resultados da pesquisa da equipe”, e “o descoperire a lui Paulescu” é “uma descoberta de Paulescu”.',
       grammar_examples: [
         ['Dezvoltarea industriei aeronautice a țării', 'O desenvolvimento da indústria aeronáutica do país'],
         ['Insulina a fost descoperită în anii 1920.', 'A insulina foi descoberta nos anos 1920.'],
@@ -1791,10 +1791,10 @@ export const UNITS_RO: UnitSeed[] = [
             translation: 'O primeiro avião de Traian Vuia foi construído na França.',
           },
           {
-            sentence: 'Tendința unui jet de fluid de a urma o suprafață curbă ___ «efectul Coandă».',
+            sentence: 'Tendința unui jet de fluid de a urma o suprafață curbă ___ “efectul Coandă”.',
             answer: 'se numește',
             options: ['se numește', 'se numesc', 'numește'],
-            translation: 'A tendência de um jato de fluido de acompanhar uma superfície curva se chama «efeito Coandă».',
+            translation: 'A tendência de um jato de fluido de acompanhar uma superfície curva se chama “efeito Coandă”.',
           },
           {
             sentence: 'Zborul din 1906 ___ lui Traian Vuia a intrat în istoria aviației.',
@@ -1813,7 +1813,7 @@ export const UNITS_RO: UnitSeed[] = [
             'suprafață curbă',
             'jet',
           ],
-          hint: 'Comece com «Efectul Coandă constă în…» e use uma nominalização como «tendința».',
+          hint: 'Comece com “Efectul Coandă constă în…” e use uma nominalização como “tendința”.',
         },
         communityPrompt:
           'Escreva 3–4 frases em romeno, em estilo de enciclopédia, sobre Vuia ou Coandă, com pelo menos uma passiva (a fost + particípio) e uma nominalização em -are/-ere/-ire.',
@@ -1853,10 +1853,10 @@ export const UNITS_RO: UnitSeed[] = [
             'contribuția',
             'recunoscută',
           ],
-          hint: 'Use a passiva («au fost publicate», «a fost acordat») e um genitivo («contribuția lui Paulescu»).',
+          hint: 'Use a passiva (“au fost publicate”, “a fost acordat”) e um genitivo (“contribuția lui Paulescu”).',
         },
         communityPrompt:
-          'Resuma em 4 frases a história da descoberta da insulina, com um genitivo em cadeia (ex.: «rezultatele cercetărilor lui Paulescu») e a construção «se consideră că».',
+          'Resuma em 4 frases a história da descoberta da insulina, com um genitivo em cadeia (ex.: “rezultatele cercetărilor lui Paulescu”) e a construção “se consideră că”.',
       },
       {
         id: 'ro-u14-l3',
@@ -1893,7 +1893,7 @@ export const UNITS_RO: UnitSeed[] = [
             'creștere',
             'dezvoltarea',
           ],
-          hint: 'Fale sem «eu»: «Din raport reiese că…», «s-a înregistrat…», «se recomandă…».',
+          hint: 'Fale sem “eu”: “Din raport reiese că…”, “s-a înregistrat…”, “se recomandă…”.',
         },
         communityPrompt:
           'Escreva o parágrafo de conclusão de um relatório técnico fictício sobre inovação usando só construções impessoais (se constată, s-a înregistrat, se recomandă).',
@@ -1915,10 +1915,10 @@ export const UNITS_RO: UnitSeed[] = [
             'descoperirea',
             'cercetărilor',
           ],
-          hint: 'Junte tudo: nominalização («descoperirea»), passiva («a fost testat») e genitivo em cadeia.',
+          hint: 'Junte tudo: nominalização (“descoperirea”), passiva (“a fost testat”) e genitivo em cadeia.',
         },
         communityPrompt:
-          'Escreva um resumo acadêmico (abstract) de 6–8 frases sobre um cientista romeno à sua escolha, combinando nominalizações, passiva, construções com «se» e ao menos dois genitivos em cadeia.',
+          'Escreva um resumo acadêmico (abstract) de 6–8 frases sobre um cientista romeno à sua escolha, combinando nominalizações, passiva, construções com “se” e ao menos dois genitivos em cadeia.',
       },
     ],
   },
@@ -1933,14 +1933,14 @@ export const UNITS_RO: UnitSeed[] = [
       title: 'Eminescu, Creangă e a voz do povo',
       emoji: '🪶',
       history:
-        'Mihai Eminescu (1850–1889) é considerado o poeta nacional da Romênia; o longo poema «Luceafărul» (1883) é um marco da língua literária, e o dia do seu nascimento, 15 de janeiro, é o Dia da Cultura Nacional. Seu amigo Ion Creangă (1837–1889), de Humulești, foi diácono e professor primário e escreveu «Amintiri din copilărie» (Memórias da infância) e contos como «Capra cu trei iezi», num romeno moldavo saboroso e cheio de ditados. A balada popular «Miorița», recolhida e publicada por Vasile Alecsandri no século XIX, conta a história de um pastor moldavo avisado por sua ovelhinha de que os outros dois pastores planejam matá-lo. Em vez de fugir, ele pede para ser enterrado perto do rebanho e pede à ovelhinha que conte ao rebanho que ele se casou com uma rainha, «a noiva do mundo» (a morte), e à mãe, que se casou com uma filha de rei.',
+        'Mihai Eminescu (1850–1889) é considerado o poeta nacional da Romênia; o longo poema “Luceafărul” (1883) é um marco da língua literária, e o dia do seu nascimento, 15 de janeiro, é o Dia da Cultura Nacional. Seu amigo Ion Creangă (1837–1889), de Humulești, foi diácono e professor primário e escreveu “Amintiri din copilărie” (Memórias da infância) e contos como “Capra cu trei iezi”, num romeno moldavo saboroso e cheio de ditados. A balada popular “Miorița”, recolhida e publicada por Vasile Alecsandri no século XIX, conta a história de um pastor moldavo avisado por sua ovelhinha de que os outros dois pastores planejam matá-lo. Em vez de fugir, ele pede para ser enterrado perto do rebanho e pede à ovelhinha que conte ao rebanho que ele se casou com uma rainha, “a noiva do mundo” (a morte), e à mãe, que se casou com uma filha de rei.',
       culture_tip:
-        'Os romenos citam provérbios o tempo todo, e um provérbio bem colocado impressiona. Atenção aos regionalismos: na Transilvânia, «no» é uma interjeição («No, hai!» = «Bom, vamos!») e o pão pode ser «pită»; na Moldávia, a melancia é «harbuz»; no Banat, o tomate é «paradaisă». Imitar o sotaque de uma região pode soar como deboche; perguntar com curiosidade soa como carinho.',
+        'Os romenos citam provérbios o tempo todo, e um provérbio bem colocado impressiona. Atenção aos regionalismos: na Transilvânia, “no” é uma interjeição (“No, hai!” = “Bom, vamos!”) e o pão pode ser “pită”; na Moldávia, a melancia é “harbuz”; no Banat, o tomate é “paradaisă”. Imitar o sotaque de uma região pode soar como deboche; perguntar com curiosidade soa como carinho.',
       grammar_why:
-        'O perfeito simples (perfectul simplu) é um passado de uma palavra só, como o nosso «partiu», «disse», «vieram»: plecă, zise, veniră. No romeno padrão falado ele foi substituído pelo perfeito composto (a plecat, a zis), mas continua vivo na narrativa literária, nos contos de fadas e na fala da Oltênia. Na 3ª pessoa do singular, os verbos em -a terminam em -ă tônico (plecă, cântă), os em -i terminam em -i (veni, dormi) e muitos outros em -u ou -se (făcu, fu, zise, spuse); no plural acrescenta-se -ră (plecară, veniră, ziseră, făcură). Na 1ª pessoa do singular, a forma termina em -i: plecai, venii, făcui, zisei (e, na Oltênia, «mă dusei»). Quem lê Creangă ou contos populares precisa reconhecer essas formas, assim como um brasileiro reconhece o «fizera» e o «dissera» dos romances antigos.',
+        'O perfeito simples (perfectul simplu) é um passado de uma palavra só, como o nosso “partiu”, “disse”, “vieram”: plecă, zise, veniră. No romeno padrão falado ele foi substituído pelo perfeito composto (a plecat, a zis), mas continua vivo na narrativa literária, nos contos de fadas e na fala da Oltênia. Na 3ª pessoa do singular, os verbos em -a terminam em -ă tônico (plecă, cântă), os em -i terminam em -i (veni, dormi) e muitos outros em -u ou -se (făcu, fu, zise, spuse); no plural acrescenta-se -ră (plecară, veniră, ziseră, făcură). Na 1ª pessoa do singular, a forma termina em -i: plecai, venii, făcui, zisei (e, na Oltênia, “mă dusei”). Quem lê Creangă ou contos populares precisa reconhecer essas formas, assim como um brasileiro reconhece o “fizera” e o “dissera” dos romances antigos.',
       grammar_examples: [
         ['Împăratul se sculă, plecă la vânătoare și nu se mai întoarse.', 'O imperador se levantou, partiu para a caça e não voltou mais.'],
-        ['Atunci ciobanul zise mioriței: «Spune-mi ce te doare.»', 'Então o pastor disse à ovelhinha: «Me diz o que te dói.»'],
+        ['Atunci ciobanul zise mioriței: “Spune-mi ce te doare.”', 'Então o pastor disse à ovelhinha: “Me diz o que te dói.”'],
         ['Veniră oaspeții și se așezară la masă.', 'Vieram os convidados e se sentaram à mesa.'],
         ['Și fu o nuntă mare, cum nu se mai văzuse.', 'E houve um grande casamento, como nunca se vira.'],
       ],
@@ -1966,15 +1966,15 @@ export const UNITS_RO: UnitSeed[] = [
             translation: 'As estrelas surgiram no céu, e a floresta se calou.',
           },
           {
-            sentence: 'Eminescu ___ «Luceafărul» în 1883, într-un almanah de la Viena.',
+            sentence: 'Eminescu ___ “Luceafărul” în 1883, într-un almanah de la Viena.',
             answer: 'publică',
             options: ['publică', 'publicară', 'publicai'],
-            translation: 'Eminescu publicou «Luceafărul» em 1883, num almanaque de Viena.',
+            translation: 'Eminescu publicou “Luceafărul” em 1883, num almanaque de Viena.',
           },
         ],
         voice: {
-          bot: 'Continuați povestea în stil literar, la perfectul simplu: «Într-o seară de vară, tânărul poet ieși din sat și…»',
-          botTranslation: 'Continue a história em estilo literário, no perfeito simples: «Numa noite de verão, o jovem poeta saiu da aldeia e…»',
+          bot: 'Continuați povestea în stil literar, la perfectul simplu: “Într-o seară de vară, tânărul poet ieși din sat și…”',
+          botTranslation: 'Continue a história em estilo literário, no perfeito simples: “Numa noite de verão, o jovem poeta saiu da aldeia e…”',
           expected: [
             'Într-o seară de vară, tânărul poet ieși din sat, se opri lângă lac și privi îndelung stelele care răsăriră deasupra codrului.',
             'se opri',
@@ -1982,7 +1982,7 @@ export const UNITS_RO: UnitSeed[] = [
             'răsăriră',
             'lângă lac',
           ],
-          hint: 'Encadeie verbos no perfeito simples: «se opri», «privi», «ascultă».',
+          hint: 'Encadeie verbos no perfeito simples: “se opri”, “privi”, “ascultă”.',
         },
         communityPrompt:
           'Escreva 4–6 linhas de prosa poética em romeno à maneira de Eminescu (lago, tílias, estrelas, floresta), narrando com o perfeito simples (ex.: se opri, privi, tăcu).',
@@ -2022,9 +2022,9 @@ export const UNITS_RO: UnitSeed[] = [
             'îngropat',
             'fată de crai',
           ],
-          hint: 'Narre no perfeito simples: «Miorița îi spuse…», «el ceru…».',
+          hint: 'Narre no perfeito simples: “Miorița îi spuse…”, “el ceru…”.',
         },
-        communityPrompt: 'Reconte a balada «Miorița» em 5 frases no perfeito simples, como um contador de histórias de aldeia (plecă, află, zise, ceru…).',
+        communityPrompt: 'Reconte a balada “Miorița” em 5 frases no perfeito simples, como um contador de histórias de aldeia (plecă, află, zise, ceru…).',
       },
       {
         id: 'ro-u15-l3',
@@ -2045,23 +2045,23 @@ export const UNITS_RO: UnitSeed[] = [
             translation: 'Mais vale um pardal na mão do que uma gralha na cerca. (Mais vale um pássaro na mão do que dois voando.)',
           },
           {
-            sentence: 'Un bătrân din Oltenia povestea: «Ieri mă ___ la târg și cumpărai o vacă.»',
+            sentence: 'Un bătrân din Oltenia povestea: “Ieri mă ___ la târg și cumpărai o vacă.”',
             answer: 'dusei',
             options: ['dusei', 'duse', 'duseră'],
-            translation: 'Um velho da Oltênia contava: «Ontem fui à feira e comprei uma vaca.»',
+            translation: 'Um velho da Oltênia contava: “Ontem fui à feira e comprei uma vaca.”',
           },
         ],
         voice: {
           bot: 'No, ce zici, dragă? Știi vreo vorbă din bătrâni despre tăcere?',
           botTranslation: 'Bom, o que me diz, querido(a)? Conhece algum ditado dos antigos sobre o silêncio?',
           expected: [
-            'Știu una: «Vorba e de argint, tăcerea e de aur.» Adică uneori e mai înțelept să taci decât să vorbești.',
+            'Știu una: “Vorba e de argint, tăcerea e de aur.” Adică uneori e mai înțelept să taci decât să vorbești.',
             'tăcerea e de aur',
             'vorba',
             'argint',
             'să taci',
           ],
-          hint: 'Cite um provérbio sobre o silêncio e explique-o. «No» é o «bom / então» da Transilvânia.',
+          hint: 'Cite um provérbio sobre o silêncio e explique-o. “No” é o “bom / então” da Transilvânia.',
         },
         communityPrompt:
           'Escolha dois provérbios romenos, explique o sentido de cada um em romeno e dê o equivalente brasileiro. Bônus: use numa frase uma palavra regional (pită, harbuz ou paradaisă).',
@@ -2077,16 +2077,16 @@ export const UNITS_RO: UnitSeed[] = [
           botTranslation:
             'O senhor está num círculo literário. Conte, no perfeito simples, uma lenda curta inventada pelo senhor e termine com um provérbio adequado.',
           expected: [
-            'A fost odată un cioban care se grăbi să treacă muntele înainte de noapte; nu-și numără oile și pierdu jumătate din turmă. De atunci se zice: «Graba strică treaba.»',
+            'A fost odată un cioban care se grăbi să treacă muntele înainte de noapte; nu-și numără oile și pierdu jumătate din turmă. De atunci se zice: “Graba strică treaba.”',
             'a fost odată',
             'se zice',
             'de atunci',
             'pierdu',
           ],
-          hint: 'Abra com «A fost odată…», narre no perfeito simples e feche com «De atunci se zice: …».',
+          hint: 'Abra com “A fost odată…”, narre no perfeito simples e feche com “De atunci se zice: …”.',
         },
         communityPrompt:
-          'Escreva um conto curto (8–10 frases) em estilo de basm, todo no perfeito simples, com uma fala de personagem entre « », uma palavra regional explicada e um provérbio no final.',
+          'Escreva um conto curto (8–10 frases) em estilo de basm, todo no perfeito simples, com uma fala de personagem entre “ ”, uma palavra regional explicada e um provérbio no final.',
       },
     ],
   },

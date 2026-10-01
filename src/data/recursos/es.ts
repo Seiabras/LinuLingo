@@ -11,7 +11,7 @@ export const RECURSOS_ES: LanguageResources = {
       flag: '🇪🇸',
       main: true,
       levels:
-        'Um exame por nível, do A1 ao C2. O resultado é «apto» ou «no apto»: no B2, por exemplo, é preciso fazer 60 de 100 pontos, com pelo menos 30 em cada um dos dois grupos de provas',
+        'Um exame por nível, do A1 ao C2. O resultado é “apto” ou “no apto”: no B2, por exemplo, é preciso fazer 60 de 100 pontos, com pelo menos 30 em cada um dos dois grupos de provas',
       cefr: ['A1', 'C2'],
       format: [
         'Compreensão de leitura: textos variados com perguntas de múltipla escolha (70 min no B2)',
@@ -75,7 +75,7 @@ export const RECURSOS_ES: LanguageResources = {
       by: 'Juan José Campanella',
       year: '2009',
       level: 'B2',
-      why: 'Suspense premiado com o Oscar, com o «vos» e a entonação de Buenos Aires em diálogos longos e bem escritos.',
+      why: 'Suspense premiado com o Oscar, com o “vos” e a entonação de Buenos Aires em diálogos longos e bem escritos.',
       accent: 'espanhol rio-platense',
     },
     {
@@ -124,7 +124,7 @@ export const RECURSOS_ES: LanguageResources = {
       by: 'Fernando Gaitán',
       year: '1999–2001',
       level: 'B1',
-      why: 'Novela de escritório com fala clara e o tratamento por «usted» até entre amigos, típico de Bogotá.',
+      why: 'Novela de escritório com fala clara e o tratamento por “usted” até entre amigos, típico de Bogotá.',
       accent: 'espanhol da Colômbia',
     },
     {
@@ -217,7 +217,7 @@ export const RECURSOS_ES: LanguageResources = {
       by: 'Quino',
       year: '1964–1973',
       level: 'B1',
-      why: 'Tiras curtas e muito conhecidas no Brasil, com o «vos» argentino e humor sobre política e família.',
+      why: 'Tiras curtas e muito conhecidas no Brasil, com o “vos” argentino e humor sobre política e família.',
       accent: 'espanhol rio-platense',
     },
     {
@@ -253,7 +253,7 @@ export const RECURSOS_ES: LanguageResources = {
       by: 'Bad Bunny',
       year: '2025',
       level: 'C1',
-      why: 'Álbum sobre Porto Rico, sua música e sua história, com o espanhol caribenho rápido, que engole o «s» e troca o «r» pelo «l».',
+      why: 'Álbum sobre Porto Rico, sua música e sua história, com o espanhol caribenho rápido, que engole o “s” e troca o “r” pelo “l”.',
       accent: 'espanhol de Porto Rico',
     },
     {
@@ -317,10 +317,10 @@ export const RECURSOS_ES: LanguageResources = {
     },
   ],
   tips: [
-    'A semelhança ajuda a entender, mas atrapalha a falar: anote os falsos amigos que aparecerem, como «exquisito» (delicioso), «embarazada» (grávida), «oficina» (escritório), «polvo» (poeira), «rato» (um momento) e «largo» (comprido).',
-    'O espanhol tem só cinco vogais, sem as nossas nasais nem o «é» e o «ó» abertos. E o «j» (e o «g» antes de «e» e «i») soa como um «rr» carioca forte, não como o nosso «j».',
-    'Escolha uma variedade e seja coerente: na maior parte da Espanha se usa «vosotros» e o «z» soa como o «th» do inglês; na América Latina, «ustedes» e «s»; na Argentina e no Uruguai, «vos» no lugar de «tú».',
-    'Atenção aos gêneros trocados: «la leche», «la sal», «la nariz», «el puente», «el origen». Aprenda o substantivo sempre com o artigo.',
-    'O verbo «gustar» concorda com o que agrada, não com quem gosta: «me gusta el libro», «me gustan los libros». E não existe «gustar de»: nada de «me gusta de ti».',
+    'A semelhança ajuda a entender, mas atrapalha a falar: anote os falsos amigos que aparecerem, como “exquisito” (delicioso), “embarazada” (grávida), “oficina” (escritório), “polvo” (poeira), “rato” (um momento) e “largo” (comprido).',
+    'O espanhol tem só cinco vogais, sem as nossas nasais nem o “é” e o “ó” abertos. E o “j” (e o “g” antes de “e” e “i”) soa como um “rr” carioca forte, não como o nosso “j”.',
+    'Escolha uma variedade e seja coerente: na maior parte da Espanha se usa “vosotros” e o “z” soa como o “th” do inglês; na América Latina, “ustedes” e “s”; na Argentina e no Uruguai, “vos” no lugar de “tú”.',
+    'Atenção aos gêneros trocados: “la leche”, “la sal”, “la nariz”, “el puente”, “el origen”. Aprenda o substantivo sempre com o artigo.',
+    'O verbo “gustar” concorda com o que agrada, não com quem gosta: “me gusta el libro”, “me gustan los libros”. E não existe “gustar de”: nada de “me gusta de ti”.',
   ],
 };

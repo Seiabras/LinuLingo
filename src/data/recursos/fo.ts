@@ -94,7 +94,7 @@ export const RECURSOS_FO: LanguageResources = {
       by: 'Týr (banda)',
       year: 'desde 1998',
       level: 'B2',
-      why: 'Banda de metal que grava baladas tradicionais em feroês, como «Ormurin langi»; a letra antiga ganha guitarra.',
+      why: 'Banda de metal que grava baladas tradicionais em feroês, como “Ormurin langi”; a letra antiga ganha guitarra.',
     },
     // vídeo e ferramentas
     {
@@ -115,7 +115,7 @@ export const RECURSOS_FO: LanguageResources = {
   tips: [
     'Não há uma prova internacional de proficiência em feroês como as do inglês ou do espanhol. Para estudar a sério, procure os cursos de feroês como segunda língua da Universidade das Ilhas Faroé (Fróðskaparsetur Føroya).',
     'A escrita é etimológica, fixada por V. U. Hammershaimb no século XIX: o ð quase nunca se pronuncia e as vogais mudam muito entre a escrita e a fala. Aprenda cada palavra ouvindo.',
-    'Todo feroês também fala dinamarquês e, muitas vezes, inglês. Peça: «Kanst tú tosa føroyskt við meg?» («Você pode falar feroês comigo?»).',
+    'Todo feroês também fala dinamarquês e, muitas vezes, inglês. Peça: “Kanst tú tosa føroyskt við meg?” (“Você pode falar feroês comigo?”).',
     'Quem já estudou islandês ou norueguês reconhece muitas palavras e boa parte da gramática; os três casos e os três gêneros lembram o islandês.',
   ],
 };

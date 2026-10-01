@@ -15,9 +15,9 @@ export const UNITS_NB: UnitSeed[] = [
       history:
         'O norueguês é uma língua germânica do norte: descende do nórdico antigo, a língua dos vikings, e é prima próxima do sueco e do dinamarquês, tanto que noruegueses, suecos e dinamarqueses muitas vezes se entendem cada um falando a sua língua. Por mais de quatro séculos, até 1814, a Noruega esteve unida à Dinamarca, e a língua escrita do país era o dinamarquês. Dessa herança nasceram as duas escritas oficiais de hoje: o bokmål, que adaptou a escrita dinamarquesa à fala norueguesa e é usado por cerca de 85 a 90% das pessoas, e o nynorsk, criado no século XIX por Ivar Aasen a partir dos dialetos do país, forte no oeste, na região dos fiordes. O alfabeto tem 29 letras: depois do z vêm æ, ø e å, e é nessa ordem que elas aparecem no dicionário. Não existe uma pronúncia oficial; aqui usamos como referência a fala do leste, a de Oslo.',
       culture_tip:
-        '«Hei» serve para todo mundo, a qualquer hora: para a vizinha, para o chefe, para a médica. Os noruegueses tratam quase todos por «du» (você); o «De» de cortesia hoje soa antiquado. «Takk» aparece o tempo todo: ao receber o troco, ao sair da mesa («takk for maten») e até ao rever alguém com quem você esteve na última vez («takk for sist»). Cuidado com o falso amigo: em norueguês, «oi!» é um susto, não um cumprimento. Ao ser apresentado, dê um aperto de mão firme, olhe nos olhos e diga o seu nome.',
+        '“Hei” serve para todo mundo, a qualquer hora: para a vizinha, para o chefe, para a médica. Os noruegueses tratam quase todos por “du” (você); o “De” de cortesia hoje soa antiquado. “Takk” aparece o tempo todo: ao receber o troco, ao sair da mesa (“takk for maten”) e até ao rever alguém com quem você esteve na última vez (“takk for sist”). Cuidado com o falso amigo: em norueguês, “oi!” é um susto, não um cumprimento. Ao ser apresentado, dê um aperto de mão firme, olhe nos olhos e diga o seu nome.',
       grammar_why:
-        'Boa notícia: o verbo norueguês não muda com a pessoa. Em português dizemos «eu sou, você é, nós somos, eles são»; em norueguês é «er» para todo mundo: jeg er, du er, han er, hun er, vi er, dere er, de er. Os pronomes são jeg (eu, pronuncia-se «jæi»), du (você), han (ele), hun (ela), vi (nós), dere (vocês) e de (eles, elas), que se pronuncia «di». Na pronúncia, duas coisas mudam o sentido: a duração da vogal (tak, teto, tem o «a» longo; takk, obrigado, tem o «a» curto e o k segura um instante) e o tom: «bønder» (fazendeiros) tem o tom 1, uma melodia simples, e «bønner» (feijões) tem o tom 2, que desce e volta a subir, como se cantasse. Nos números, repare nos sons novos: sju (7) começa com o «sj» de «chá», e tjue (20) com um «ch» soprado, o mesmo do «kj».',
+        'Boa notícia: o verbo norueguês não muda com a pessoa. Em português dizemos “eu sou, você é, nós somos, eles são”; em norueguês é “er” para todo mundo: jeg er, du er, han er, hun er, vi er, dere er, de er. Os pronomes são jeg (eu, pronuncia-se “jæi”), du (você), han (ele), hun (ela), vi (nós), dere (vocês) e de (eles, elas), que se pronuncia “di”. Na pronúncia, duas coisas mudam o sentido: a duração da vogal (tak, teto, tem o “a” longo; takk, obrigado, tem o “a” curto e o k segura um instante) e o tom: “bønder” (fazendeiros) tem o tom 1, uma melodia simples, e “bønner” (feijões) tem o tom 2, que desce e volta a subir, como se cantasse. Nos números, repare nos sons novos: sju (7) começa com o “sj” de “chá”, e tjue (20) com um “ch” soprado, o mesmo do “kj”.',
       grammar_examples: [
         ['Jeg er fra Brasil.', 'Eu sou do Brasil.'],
         ['Hun er i Bergen i dag.', 'Ela está em Bergen hoje.'],
@@ -25,21 +25,21 @@ export const UNITS_NB: UnitSeed[] = [
         ['De er fra Tromsø, og dere?', 'Eles são de Tromsø, e vocês?'],
       ],
       character_guide: [
-        ['æ', '«é» aberto de «café»; antes de r fica ainda mais aberto, quase um «a»', 'lære, været, bær'],
-        ['ø', 'faça a boca de «ô» e diga «ê»: o som de «eu» do francês ou do «ö» alemão', 'øl, søster, brød'],
-        ['å', '«ô» fechado de «avô» quando é longo; «ó» aberto de «avó» quando é curto', 'år, båt (longo); hånd, gått (curto)'],
-        ['o', 'muitas vezes soa «u» de «uva»; às vezes, sobretudo quando é curto, soa «ó»', 'bok, god, to («u»); komme, godt («ó»)'],
-        ['u', 'som que não existe em português: lábios em bico bem apertado e a língua lá na frente; nunca o «u» de «uva»', 'du, hus, ut'],
-        ['y', 'diga «i» com os lábios em bico, como o «u» do francês', 'ny, by, sytten'],
-        ['ei, øy, au', 'ditongos: «ei» soa quase «éi»; «øy» junta o «ø» com um «i»; «au» soa quase «æu»', 'hei, øy, sau'],
+        ['æ', '“é” aberto de “café”; antes de r fica ainda mais aberto, quase um “a”', 'lære, været, bær'],
+        ['ø', 'faça a boca de “ô” e diga “ê”: o som de “eu” do francês ou do “ö” alemão', 'øl, søster, brød'],
+        ['å', '“ô” fechado de “avô” quando é longo; “ó” aberto de “avó” quando é curto', 'år, båt (longo); hånd, gått (curto)'],
+        ['o', 'muitas vezes soa “u” de “uva”; às vezes, sobretudo quando é curto, soa “ó”', 'bok, god, to (“u”); komme, godt (“ó”)'],
+        ['u', 'som que não existe em português: lábios em bico bem apertado e a língua lá na frente; nunca o “u” de “uva”', 'du, hus, ut'],
+        ['y', 'diga “i” com os lábios em bico, como o “u” do francês', 'ny, by, sytten'],
+        ['ei, øy, au', 'ditongos: “ei” soa quase “éi”; “øy” junta o “ø” com um “i”; “au” soa quase “æu”', 'hei, øy, sau'],
         ['vogal longa × curta', 'a vogal é longa antes de uma consoante só e curta antes de consoante dupla, que então segura um instante', 'tak (teto) × takk (obrigado); hat (ódio) × hatt (chapéu)'],
-        ['kj, tj, k + i, y, ei', '[ç]: um «ch» soprado e suave, com o meio da língua subindo, como o «ch» do alemão «ich»', 'kjøre, tjue, kino, kirke'],
-        ['sj, skj, sk + i, y, øy', '[ʃ]: o «ch» de «chá»', 'sju, skje, ski, skyer'],
-        ['rs, rt, rd, rn, rl', 'no leste, o r some e a ponta da língua dobra para trás (som retroflexo); «rs» soa quase como «ch»', 'norsk, kart, barn, ferdig'],
-        ['ng', 'um n feito no fundo da boca, sem soar o g, como no inglês «sing»', 'ung, lang, penger'],
-        ['j, gj, hj, lj, g + i, y, ei', 'soam [j], como o «i» de «iate»: o g, o h e o l ficam mudos', 'ja, gjest, hjelp, gi, geit'],
+        ['kj, tj, k + i, y, ei', '[ç]: um “ch” soprado e suave, com o meio da língua subindo, como o “ch” do alemão “ich”', 'kjøre, tjue, kino, kirke'],
+        ['sj, skj, sk + i, y, øy', '[ʃ]: o “ch” de “chá”', 'sju, skje, ski, skyer'],
+        ['rs, rt, rd, rn, rl', 'no leste, o r some e a ponta da língua dobra para trás (som retroflexo); “rs” soa quase como “ch”', 'norsk, kart, barn, ferdig'],
+        ['ng', 'um n feito no fundo da boca, sem soar o g, como no inglês “sing”', 'ung, lang, penger'],
+        ['j, gj, hj, lj, g + i, y, ei', 'soam [j], como o “i” de “iate”: o g, o h e o l ficam mudos', 'ja, gjest, hjelp, gi, geit'],
         ['d no fim', 'depois de vogal longa, o d final quase sempre é mudo', 'god, rød, med'],
-        ['r', 'em Oslo, batido com a ponta da língua, como o «r» de «caro»; no oeste e no sul (Bergen, Stavanger, Kristiansand), raspado na garganta', 'rød, tre, fire'],
+        ['r', 'em Oslo, batido com a ponta da língua, como o “r” de “caro”; no oeste e no sul (Bergen, Stavanger, Kristiansand), raspado na garganta', 'rød, tre, fire'],
         ['tom 1 × tom 2', 'palavras de duas sílabas podem ter duas melodias: o tom 1 é uma subida simples; o tom 2 desce e volta a subir, como se cantasse', 'bønder (fazendeiros, 1) × bønner (feijões, 2); tanken (o tanque, 1) × tanken (o pensamento, 2)'],
       ],
     },
@@ -58,9 +58,9 @@ export const UNITS_NB: UnitSeed[] = [
           bot: 'Hei! Hvordan går det?',
           botTranslation: 'Oi! Como vai?',
           expected: ['Bra, takk! Og du?', 'bra', 'takk', 'og du'],
-          hint: 'Responda que está bem e devolva a pergunta: «Bra, takk! Og du?». O «og» se pronuncia «å», e o «u» de «du» é aquele de bico apertado.',
+          hint: 'Responda que está bem e devolva a pergunta: “Bra, takk! Og du?”. O “og” se pronuncia “å”, e o “u” de “du” é aquele de bico apertado.',
         },
-        communityPrompt: 'Escreva dois cumprimentos em norueguês: um de manhã, para uma vizinha («God morgen…»), e um de despedida para um amigo («Ha det bra…»). Use «Hvordan går det?» em um deles.',
+        communityPrompt: 'Escreva dois cumprimentos em norueguês: um de manhã, para uma vizinha (“God morgen…”), e um de despedida para um amigo (“Ha det bra…”). Use “Hvordan går det?” em um deles.',
       },
       {
         id: 'nb-u1-l2',
@@ -76,9 +76,9 @@ export const UNITS_NB: UnitSeed[] = [
           bot: 'Hei! Jeg heter Ola, og jeg er fra Bergen. Og du?',
           botTranslation: 'Oi! Eu me chamo Ola e sou de Bergen. E você?',
           expected: ['Hei, Ola! Jeg heter Ana, og jeg er fra Brasil.', 'jeg heter', 'jeg er fra', 'Brasil'],
-          hint: 'Diga o seu nome com «Jeg heter…» e a origem com «Jeg er fra…». O «jeg» se pronuncia «jæi».',
+          hint: 'Diga o seu nome com “Jeg heter…” e a origem com “Jeg er fra…”. O “jeg” se pronuncia “jæi”.',
         },
-        communityPrompt: 'Apresente três pessoas em norueguês, uma frase para cada, usando «er»: você («Jeg er…»), um amigo («Han er…») e uma amiga («Hun er…»). Repare que o verbo não muda!',
+        communityPrompt: 'Apresente três pessoas em norueguês, uma frase para cada, usando “er”: você (“Jeg er…”), um amigo (“Han er…”) e uma amiga (“Hun er…”). Repare que o verbo não muda!',
       },
       {
         id: 'nb-u1-l3',
@@ -94,9 +94,9 @@ export const UNITS_NB: UnitSeed[] = [
           bot: 'Hei, jeg heter Silje. Hva heter du? Hvor gammel er du?',
           botTranslation: 'Oi, eu me chamo Silje. Como você se chama? Quantos anos você tem?',
           expected: ['Hei, Silje! Jeg heter Paulo, og jeg er tjue år. Hyggelig å treffe deg!', 'jeg heter', 'år', 'hyggelig å treffe deg'],
-          hint: 'A idade vem com «er»: «Jeg er tjue år» (eu tenho vinte anos). O «tj» de «tjue» é um «ch» soprado; o «sj» de «sju» é o «ch» de «chá».',
+          hint: 'A idade vem com “er”: “Jeg er tjue år” (eu tenho vinte anos). O “tj” de “tjue” é um “ch” soprado; o “sj” de “sju” é o “ch” de “chá”.',
         },
-        communityPrompt: 'Escreva um diálogo curto em que duas pessoas se apresentam, dizem a idade com números até 20 («Jeg er sytten år») e terminam com «Hyggelig å treffe deg!».',
+        communityPrompt: 'Escreva um diálogo curto em que duas pessoas se apresentam, dizem a idade com números até 20 (“Jeg er sytten år”) e terminam com “Hyggelig å treffe deg!”.',
       },
       {
         id: 'nb-u1-p',
@@ -114,9 +114,9 @@ export const UNITS_NB: UnitSeed[] = [
             'jeg kommer fra',
             'hyggelig å treffe deg',
           ],
-          hint: 'Devolva o cumprimento («God morgen!»), diga o nome com «Jeg heter…», a origem com «Jeg kommer fra…» e feche com «Hyggelig å treffe deg!».',
+          hint: 'Devolva o cumprimento (“God morgen!”), diga o nome com “Jeg heter…”, a origem com “Jeg kommer fra…” e feche com “Hyggelig å treffe deg!”.',
         },
-        communityPrompt: 'Escreva uma apresentação completa em norueguês: cumprimento, nome, de onde você é, a sua idade, duas pessoas da sua vida com «han er» / «hun er» e uma despedida.',
+        communityPrompt: 'Escreva uma apresentação completa em norueguês: cumprimento, nome, de onde você é, a sua idade, duas pessoas da sua vida com “han er” / “hun er” e uma despedida.',
       },
     ],
   },
@@ -131,11 +131,11 @@ export const UNITS_NB: UnitSeed[] = [
       title: 'O artigo que vai no fim',
       emoji: '🥪',
       history:
-        'Na Noruega, o pão com alguma coisa em cima, o «pålegg», aparece em três refeições do dia: no café da manhã, na matpakke do almoço e no «kveldsmat», o lanche da noite; a refeição quente, a «middag», é cedo, por volta das quatro ou cinco da tarde. O brunost, o queijo marrom, é feito com o soro do leite fervido por horas, até o açúcar caramelizar, o que lhe dá a cor e o gosto adocicado. No século XIX, a leiteira Anne Hov, do vale de Gudbrandsdalen, teve a ideia de juntar creme ao soro e criou a versão mais cremosa. Para cortá-lo em fatias finíssimas, usa-se o «ostehøvel», o fatiador de queijo patenteado em 1925 por Thor Bjørklund, de Lillehammer.',
+        'Na Noruega, o pão com alguma coisa em cima, o “pålegg”, aparece em três refeições do dia: no café da manhã, na matpakke do almoço e no “kveldsmat”, o lanche da noite; a refeição quente, a “middag”, é cedo, por volta das quatro ou cinco da tarde. O brunost, o queijo marrom, é feito com o soro do leite fervido por horas, até o açúcar caramelizar, o que lhe dá a cor e o gosto adocicado. No século XIX, a leiteira Anne Hov, do vale de Gudbrandsdalen, teve a ideia de juntar creme ao soro e criou a versão mais cremosa. Para cortá-lo em fatias finíssimas, usa-se o “ostehøvel”, o fatiador de queijo patenteado em 1925 por Thor Bjørklund, de Lillehammer.',
       culture_tip:
-        'A matpakke é o lanche que quase todo norueguês leva de casa para a escola ou o trabalho: fatias de pão com pålegg, embrulhadas em papel e separadas por uma folhinha para não grudar. Ao se levantar da mesa, agradeça sempre com «takk for maten» (obrigado pela comida); o anfitrião responde «vel bekomme». E, se alguém disser «forsyn deg», é para você se servir à vontade.',
+        'A matpakke é o lanche que quase todo norueguês leva de casa para a escola ou o trabalho: fatias de pão com pålegg, embrulhadas em papel e separadas por uma folhinha para não grudar. Ao se levantar da mesa, agradeça sempre com “takk for maten” (obrigado pela comida); o anfitrião responde “vel bekomme”. E, se alguém disser “forsyn deg”, é para você se servir à vontade.',
       grammar_why:
-        'Todo substantivo norueguês tem um gênero: masculino (en), feminino (ei) ou neutro (et): en ost (um queijo), ei skive (uma fatia), et brød (um pão). No bokmål, as femininas também podem usar «en» (en bok ou ei bok), mas aqui usamos «ei». A grande surpresa para brasileiros: o artigo definido (o, a) não vem antes, e sim grudado no fim da palavra: osten (o queijo), boka (o livro), brødet (o pão). No plural, a maioria ganha -er (en ost → oster), mas os neutros de uma sílaba não mudam (et egg → egg); no plural definido, todos terminam em -ene: ostene, eggene, brødene. No presente, o verbo tem uma forma só, terminada em -r: jeg spiser, du spiser, vi spiser. Para dizer que algo existe, use «det finnes»; para dizer que gosta, «jeg liker», sem preposição: jeg liker kaffe (eu gosto de café).',
+        'Todo substantivo norueguês tem um gênero: masculino (en), feminino (ei) ou neutro (et): en ost (um queijo), ei skive (uma fatia), et brød (um pão). No bokmål, as femininas também podem usar “en” (en bok ou ei bok), mas aqui usamos “ei”. A grande surpresa para brasileiros: o artigo definido (o, a) não vem antes, e sim grudado no fim da palavra: osten (o queijo), boka (o livro), brødet (o pão). No plural, a maioria ganha -er (en ost → oster), mas os neutros de uma sílaba não mudam (et egg → egg); no plural definido, todos terminam em -ene: ostene, eggene, brødene. No presente, o verbo tem uma forma só, terminada em -r: jeg spiser, du spiser, vi spiser. Para dizer que algo existe, use “det finnes”; para dizer que gosta, “jeg liker”, sem preposição: jeg liker kaffe (eu gosto de café).',
       grammar_examples: [
         ['Vi har et brød. Brødet er ferskt.', 'Nós temos um pão. O pão está fresco.'],
         ['Hun leser ei bok, og boka er norsk.', 'Ela lê um livro, e o livro é norueguês.'],
@@ -159,9 +159,9 @@ export const UNITS_NB: UnitSeed[] = [
           bot: 'God morgen! Liker du ost eller brunost på brødskiva?',
           botTranslation: 'Bom dia! Você gosta de queijo comum ou de queijo marrom no pão?',
           expected: ['Jeg liker brunost! Brunosten er søt og god.', 'jeg liker', 'brunost', 'ost'],
-          hint: 'Responda com «Jeg liker…», sem preposição. Se quiser falar do queijo de novo, use a forma definida: brunost → brunosten.',
+          hint: 'Responda com “Jeg liker…”, sem preposição. Se quiser falar do queijo de novo, use a forma definida: brunost → brunosten.',
         },
-        communityPrompt: 'Escreva três frases sobre o seu café da manhã: o que você come («Jeg spiser…»), o que você bebe («Jeg drikker…») e uma coisa de que você não gosta («Jeg liker ikke…»).',
+        communityPrompt: 'Escreva três frases sobre o seu café da manhã: o que você come (“Jeg spiser…”), o que você bebe (“Jeg drikker…”) e uma coisa de que você não gosta (“Jeg liker ikke…”).',
       },
       {
         id: 'nb-u2-l2',
@@ -177,7 +177,7 @@ export const UNITS_NB: UnitSeed[] = [
           bot: 'Hei! Hva har du i matpakka i dag?',
           botTranslation: 'Oi! O que você tem na marmita hoje?',
           expected: ['Jeg har to brødskiver med ost og et eple.', 'brødskiver', 'jeg har', 'med ost'],
-          hint: 'Comece com «Jeg har…» e lembre o plural: ei brødskive → to brødskiver. «Med» (com) liga o pão ao pålegg.',
+          hint: 'Comece com “Jeg har…” e lembre o plural: ei brødskive → to brødskiver. “Med” (com) liga o pão ao pålegg.',
         },
         communityPrompt: 'Monte a sua matpakke ideal em norueguês: diga quantas fatias de pão você leva, o que vai em cima de cada uma e o que você bebe. Use pelo menos um plural (brødskiver, epler…).',
       },
@@ -195,7 +195,7 @@ export const UNITS_NB: UnitSeed[] = [
           bot: 'Hei, hei! Hva kan jeg gi deg i dag?',
           botTranslation: 'Oi, oi! O que eu posso te servir hoje?',
           expected: ['Kan jeg få en vaffel med syltetøy og en kopp te, takk?', 'kan jeg få', 'vaffel', 'takk'],
-          hint: 'Para pedir, «Kan jeg få…?» (me vê…?) é o jeito mais natural. «En vaffel» é masculino; «en kopp te» é uma xícara de chá. Termine com «takk».',
+          hint: 'Para pedir, “Kan jeg få…?” (me vê…?) é o jeito mais natural. “En vaffel” é masculino; “en kopp te” é uma xícara de chá. Termine com “takk”.',
         },
         communityPrompt: 'Escreva um pedido num café norueguês: peça duas coisas de comer e uma de beber, com os artigos certos (en, ei ou et), e agradeça no final.',
       },
@@ -214,9 +214,9 @@ export const UNITS_NB: UnitSeed[] = [
             'brød',
             'jeg drikker',
           ],
-          hint: 'Use «Jeg liker…» para o que você gosta e «Jeg drikker…» para a bebida. Se falar de uma coisa já conhecida, use a forma definida: osten, brødet, kaka.',
+          hint: 'Use “Jeg liker…” para o que você gosta e “Jeg drikker…” para a bebida. Se falar de uma coisa já conhecida, use a forma definida: osten, brødet, kaka.',
         },
-        communityPrompt: 'Descreva uma mesa de café da manhã norueguesa em 5 frases: o que existe na mesa («Det er…», «Det finnes…»), com pelo menos duas palavras na forma definida (brødet, osten…) e dois plurais.',
+        communityPrompt: 'Descreva uma mesa de café da manhã norueguesa em 5 frases: o que existe na mesa (“Det er…”, “Det finnes…”), com pelo menos duas palavras na forma definida (brødet, osten…) e dois plurais.',
       },
     ],
   },
@@ -231,11 +231,11 @@ export const UNITS_NB: UnitSeed[] = [
       title: 'O verbo em segundo lugar',
       emoji: '🏔️',
       history:
-        'A ferrovia de Bergen, a «Bergensbanen», foi inaugurada em 1909 e liga Oslo a Bergen em cerca de sete horas de viagem, atravessando o planalto de Hardangervidda. No caminho fica Finse, a 1.222 metros de altitude, a estação mais alta da rede ferroviária norueguesa, cercada de neve boa parte do ano. Em Myrdal sai um ramal, a «Flåmsbana», que desce a montanha até Flåm, na beira de um braço do Sognefjord, o fiorde mais longo e profundo da Noruega. No fim da linha está Bergen, a segunda maior cidade do país, que foi um importante porto da Liga Hanseática: o cais de Bryggen, com as suas casas de madeira coloridas, é Patrimônio Mundial da UNESCO desde 1979.',
+        'A ferrovia de Bergen, a “Bergensbanen”, foi inaugurada em 1909 e liga Oslo a Bergen em cerca de sete horas de viagem, atravessando o planalto de Hardangervidda. No caminho fica Finse, a 1.222 metros de altitude, a estação mais alta da rede ferroviária norueguesa, cercada de neve boa parte do ano. Em Myrdal sai um ramal, a “Flåmsbana”, que desce a montanha até Flåm, na beira de um braço do Sognefjord, o fiorde mais longo e profundo da Noruega. No fim da linha está Bergen, a segunda maior cidade do país, que foi um importante porto da Liga Hanseática: o cais de Bryggen, com as suas casas de madeira coloridas, é Patrimônio Mundial da UNESCO desde 1979.',
       culture_tip:
         'Compre a passagem antes de embarcar: nos trens noruegueses se viaja com bilhete já comprado, quase sempre pelo celular. No transporte público, os noruegueses falam baixo e não costumam se sentar ao lado de um desconhecido se houver um banco duplo vazio: não é antipatia, é respeito ao espaço de cada um. E leve um guarda-chuva para Bergen: é uma das cidades mais chuvosas da Europa.',
       grammar_why:
-        'A regra de ouro do norueguês é a ordem V2: na oração principal, o verbo fica sempre em segundo lugar. Se a frase começa com outra coisa (um tempo, um lugar), o sujeito passa para depois do verbo: «I dag reiser vi til Bergen» (hoje viajamos para Bergen), nunca «I dag vi reiser». Nas perguntas de sim ou não, o verbo vem primeiro: «Reiser du med tog?»; com palavra interrogativa, ela vem antes do verbo: «Når går toget?». As preposições mais comuns: «i» para cidades, países e lugares fechados (i Bergen, i Norge, i bilen), «på» para superfícies, ilhas e muitos lugares públicos (på stasjonen, på toget, på Finse), «til» (para) e «fra» (de). O adjetivo concorda com o substantivo: sem nada com masculino e feminino (en stor by), com -t no neutro (et stort fjell) e com -e no plural (store fjell).',
+        'A regra de ouro do norueguês é a ordem V2: na oração principal, o verbo fica sempre em segundo lugar. Se a frase começa com outra coisa (um tempo, um lugar), o sujeito passa para depois do verbo: “I dag reiser vi til Bergen” (hoje viajamos para Bergen), nunca “I dag vi reiser”. Nas perguntas de sim ou não, o verbo vem primeiro: “Reiser du med tog?”; com palavra interrogativa, ela vem antes do verbo: “Når går toget?”. As preposições mais comuns: “i” para cidades, países e lugares fechados (i Bergen, i Norge, i bilen), “på” para superfícies, ilhas e muitos lugares públicos (på stasjonen, på toget, på Finse), “til” (para) e “fra” (de). O adjetivo concorda com o substantivo: sem nada com masculino e feminino (en stor by), com -t no neutro (et stort fjell) e com -e no plural (store fjell).',
       grammar_examples: [
         ['I morgen reiser vi til Bergen med tog.', 'Amanhã nós viajamos para Bergen de trem.'],
         ['Når går toget fra Oslo?', 'Quando sai o trem de Oslo?'],
@@ -259,9 +259,9 @@ export const UNITS_NB: UnitSeed[] = [
           bot: 'Hei! Hva kan jeg hjelpe deg med?',
           botTranslation: 'Oi! Em que posso ajudar?',
           expected: ['Jeg vil gjerne ha en billett til Bergen. Når går toget?', 'billett', 'til Bergen', 'når går toget'],
-          hint: 'Peça a passagem com «Jeg vil gjerne ha en billett til…» e pergunte o horário com «Når går toget?»: a palavra interrogativa vem primeiro, e logo depois o verbo.',
+          hint: 'Peça a passagem com “Jeg vil gjerne ha en billett til…” e pergunte o horário com “Når går toget?”: a palavra interrogativa vem primeiro, e logo depois o verbo.',
         },
-        communityPrompt: 'Escreva três perguntas que você faria na estação de trem: uma de sim ou não (verbo primeiro: «Går toget…?»), uma com «når» e uma com «hvor».',
+        communityPrompt: 'Escreva três perguntas que você faria na estação de trem: uma de sim ou não (verbo primeiro: “Går toget…?”), uma com “når” e uma com “hvor”.',
       },
       {
         id: 'nb-u3-l2',
@@ -295,7 +295,7 @@ export const UNITS_NB: UnitSeed[] = [
           bot: 'Velkommen til Bergen! Hva vil du se i byen?',
           botTranslation: 'Bem-vindo a Bergen! O que você quer ver na cidade?',
           expected: ['I dag vil jeg se Bryggen og fisketorget. Har du et kart?', 'i dag vil jeg', 'Bryggen', 'kart'],
-          hint: 'Comece com o tempo e mantenha o verbo em segundo lugar: «I dag vil jeg se…». Depois peça um mapa com uma pergunta de sim ou não: «Har du et kart?».',
+          hint: 'Comece com o tempo e mantenha o verbo em segundo lugar: “I dag vil jeg se…”. Depois peça um mapa com uma pergunta de sim ou não: “Har du et kart?”.',
         },
         communityPrompt: 'Planeje um dia em Bergen em 4 frases, cada uma começando com uma expressão de tempo (Først, Etter frokost, I ettermiddag, I kveld) e com o verbo logo em seguida.',
       },
@@ -314,7 +314,7 @@ export const UNITS_NB: UnitSeed[] = [
             'med tog',
             'fjorden',
           ],
-          hint: 'Comece com «I morgen» e ponha o verbo antes do sujeito: «I morgen reiser jeg…». Use «til» para o destino, «med» para o transporte e um adjetivo concordando.',
+          hint: 'Comece com “I morgen” e ponha o verbo antes do sujeito: “I morgen reiser jeg…”. Use “til” para o destino, “med” para o transporte e um adjetivo concordando.',
         },
         communityPrompt: 'Escreva um pequeno roteiro de viagem pela Noruega: de onde você sai, para onde vai, com que transporte e o que vê no caminho. Comece pelo menos duas frases com tempo ou lugar (V2!) e use três adjetivos concordando.',
       },
@@ -331,11 +331,11 @@ export const UNITS_NB: UnitSeed[] = [
       title: 'O que aconteceu no dia 17',
       emoji: '🎉',
       history:
-        'O 17 de maio, «syttende mai», é o dia nacional da Noruega: lembra a Constituição assinada em Eidsvoll em 17 de maio de 1814, uma das constituições escritas mais antigas do mundo ainda em vigor. A festa não tem desfile militar: quem desfila são as crianças, no «barnetog», com bandeirinhas, as bandas escolares, os «korps», e muitos gritos de «hurra!». O primeiro desfile das crianças em Oslo, que então se chamava Christiania, aconteceu em 1870. Em Oslo, o desfile passa diante do palácio real, e a família real acena da sacada; muita gente veste o «bunad», o traje típico da sua região, com bordados e enfeites de prata.',
+        'O 17 de maio, “syttende mai”, é o dia nacional da Noruega: lembra a Constituição assinada em Eidsvoll em 17 de maio de 1814, uma das constituições escritas mais antigas do mundo ainda em vigor. A festa não tem desfile militar: quem desfila são as crianças, no “barnetog”, com bandeirinhas, as bandas escolares, os “korps”, e muitos gritos de “hurra!”. O primeiro desfile das crianças em Oslo, que então se chamava Christiania, aconteceu em 1870. Em Oslo, o desfile passa diante do palácio real, e a família real acena da sacada; muita gente veste o “bunad”, o traje típico da sua região, com bordados e enfeites de prata.',
       culture_tip:
-        'No 17 de maio, diga «Gratulerer med dagen!» (parabéns pelo dia) a todo mundo, como se fosse o aniversário do país. As pessoas se vestem com a melhor roupa ou o bunad, tomam café da manhã festivo com os amigos e, no resto do dia, as crianças comem quantos sorvetes e cachorros-quentes quiserem. Se for convidado, leve algo pequeno para a casa e pergunte se deve tirar os sapatos na porta.',
+        'No 17 de maio, diga “Gratulerer med dagen!” (parabéns pelo dia) a todo mundo, como se fosse o aniversário do país. As pessoas se vestem com a melhor roupa ou o bunad, tomam café da manhã festivo com os amigos e, no resto do dia, as crianças comem quantos sorvetes e cachorros-quentes quiserem. Se for convidado, leve algo pequeno para a casa e pergunte se deve tirar os sapatos na porta.',
       grammar_why:
-        'O pretérito dos verbos fracos ganha -et, -te, -de ou -dde: snakke → snakket, spise → spiste, leve → levde, bo → bodde. Os verbos fortes mudam a vogal, como os nossos irregulares: gå → gikk, se → så, komme → kom, være → var. O perfeito é «har» + particípio (har snakket, har spist, har gått, har sett) e serve para o que ainda vale agora ou para experiências: «Jeg har vært i Bergen» (já estive em Bergen); para um momento terminado, com «i går» ou «i fjor», use o pretérito. Com «den, det, de» antes do adjetivo, a palavra fica duas vezes definida e o adjetivo ganha -e: den store bunaden, det store flagget, de store flaggene. O possessivo costuma vir DEPOIS do substantivo, que fica na forma definida: bilen min, boka mi, huset mitt, barna mine. E «sin» é o possessivo que volta ao sujeito: «Ola tar med søsteren sin» (a irmã do próprio Ola), mas «Ola tar med søsteren hans» (a irmã de outro homem).',
+        'O pretérito dos verbos fracos ganha -et, -te, -de ou -dde: snakke → snakket, spise → spiste, leve → levde, bo → bodde. Os verbos fortes mudam a vogal, como os nossos irregulares: gå → gikk, se → så, komme → kom, være → var. O perfeito é “har” + particípio (har snakket, har spist, har gått, har sett) e serve para o que ainda vale agora ou para experiências: “Jeg har vært i Bergen” (já estive em Bergen); para um momento terminado, com “i går” ou “i fjor”, use o pretérito. Com “den, det, de” antes do adjetivo, a palavra fica duas vezes definida e o adjetivo ganha -e: den store bunaden, det store flagget, de store flaggene. O possessivo costuma vir DEPOIS do substantivo, que fica na forma definida: bilen min, boka mi, huset mitt, barna mine. E “sin” é o possessivo que volta ao sujeito: “Ola tar med søsteren sin” (a irmã do próprio Ola), mas “Ola tar med søsteren hans” (a irmã de outro homem).',
       grammar_examples: [
         ['I går gikk barna i barnetoget med flagg.', 'Ontem as crianças desfilaram no desfile infantil com bandeiras.'],
         ['Har du spist is i dag? — Ja, jeg har spist tre!', 'Você já tomou sorvete hoje? — Já, tomei três!'],
@@ -377,9 +377,9 @@ export const UNITS_NB: UnitSeed[] = [
           bot: 'Gratulerer med dagen! Hva har du gjort i dag?',
           botTranslation: 'Parabéns pelo dia! O que você fez hoje?',
           expected: ['Gratulerer med dagen! Jeg har sett barnetoget og hørt korpset.', 'gratulerer med dagen', 'har sett', 'barnetoget'],
-          hint: 'Devolva o cumprimento e responda no perfeito, porque o dia ainda não acabou: «Jeg har sett…», «Jeg har hørt…», «Jeg har spist…».',
+          hint: 'Devolva o cumprimento e responda no perfeito, porque o dia ainda não acabou: “Jeg har sett…”, “Jeg har hørt…”, “Jeg har spist…”.',
         },
-        communityPrompt: 'Escreva 4 frases sobre um feriado de que você gosta no Brasil, comparando com o 17 de maio: o que você fez no último (pretérito) e o que você já fez alguma vez na vida (perfeito, «Jeg har…»).',
+        communityPrompt: 'Escreva 4 frases sobre um feriado de que você gosta no Brasil, comparando com o 17 de maio: o que você fez no último (pretérito) e o que você já fez alguma vez na vida (perfeito, “Jeg har…”).',
       },
       {
         id: 'nb-u4-l3',
@@ -395,9 +395,9 @@ export const UNITS_NB: UnitSeed[] = [
           bot: 'Hei! Hvordan var 17. mai? Hva gjorde dere?',
           botTranslation: 'Oi! Como foi o 17 de maio? O que vocês fizeram?',
           expected: ['Det var kjempegøy! Vi gikk i barnetoget, spiste pølser og is og ropte hurra.', 'vi gikk', 'spiste', 'hurra'],
-          hint: 'O dia já passou, então use o pretérito: var, gikk (de «gå», forte), spiste, ropte. Uma dica: «det var kjempegøy» (foi superdivertido).',
+          hint: 'O dia já passou, então use o pretérito: var, gikk (de “gå”, forte), spiste, ropte. Uma dica: “det var kjempegøy” (foi superdivertido).',
         },
-        communityPrompt: 'Conte, em 5 frases no pretérito, uma festa de família que você viveu: quem estava lá (onkelen min, tanten min…), o que vocês comeram e o que cada um fez. Use «sin» pelo menos uma vez.',
+        communityPrompt: 'Conte, em 5 frases no pretérito, uma festa de família que você viveu: quem estava lá (onkelen min, tanten min…), o que vocês comeram e o que cada um fez. Use “sin” pelo menos uma vez.',
       },
       {
         id: 'nb-u4-p',
@@ -414,9 +414,9 @@ export const UNITS_NB: UnitSeed[] = [
             'feiret',
             'broren min',
           ],
-          hint: 'Apresente a família com o possessivo depois do substantivo (familien min, søsteren min) e conte o dia no pretérito: feiret, så, spiste, gikk. Se quiser, use a dupla definição: «den fine dagen».',
+          hint: 'Apresente a família com o possessivo depois do substantivo (familien min, søsteren min) e conte o dia no pretérito: feiret, så, spiste, gikk. Se quiser, use a dupla definição: “den fine dagen”.',
         },
-        communityPrompt: 'Escreva um pequeno relato (6 a 8 frases) de um dia especial com a sua família: use o pretérito para o que aconteceu, o perfeito para uma experiência («Vi har aldri…»), dois possessivos depois do substantivo, um «sin» e uma dupla definição (den store…).',
+        communityPrompt: 'Escreva um pequeno relato (6 a 8 frases) de um dia especial com a sua família: use o pretérito para o que aconteceu, o perfeito para uma experiência (“Vi har aldri…”), dois possessivos depois do substantivo, um “sin” e uma dupla definição (den store…).',
       },
     ],
   },
@@ -431,11 +431,11 @@ export const UNITS_NB: UnitSeed[] = [
       title: 'Pode, deve, vai: os verbos modais',
       emoji: '🧭',
       history:
-        'A palavra «friluftsliv», a vida ao ar livre, ficou conhecida graças a Henrik Ibsen, que a usou no poema «Paa Vidderne» («Nos planaltos»), de 1859; hoje ela resume uma paixão nacional. A «allemannsretten», o direito de todos, permite caminhar, esquiar e acampar até em terra alheia, fora das áreas cultivadas, e foi posta em lei em 1957, na lei da vida ao ar livre, a «friluftsloven». Na Páscoa, muitos noruegueses sobem para a montanha para esquiar, e foi depois de vários acidentes nessas férias que surgiram, em 1952, as «fjellvettreglene», as regras de bom senso na montanha, que todo norueguês conhece. A montanha mais alta do país é o Galdhøpiggen, com 2.469 metros, no maciço de Jotunheimen.',
+        'A palavra “friluftsliv”, a vida ao ar livre, ficou conhecida graças a Henrik Ibsen, que a usou no poema “Paa Vidderne” (“Nos planaltos”), de 1859; hoje ela resume uma paixão nacional. A “allemannsretten”, o direito de todos, permite caminhar, esquiar e acampar até em terra alheia, fora das áreas cultivadas, e foi posta em lei em 1957, na lei da vida ao ar livre, a “friluftsloven”. Na Páscoa, muitos noruegueses sobem para a montanha para esquiar, e foi depois de vários acidentes nessas férias que surgiram, em 1952, as “fjellvettreglene”, as regras de bom senso na montanha, que todo norueguês conhece. A montanha mais alta do país é o Galdhøpiggen, com 2.469 metros, no maciço de Jotunheimen.',
       culture_tip:
-        'Pela allemannsretten, você pode montar a barraca por até duas noites no mesmo lugar sem pedir licença, desde que fique a pelo menos 150 metros da casa ou cabana habitada mais próxima. Leve todo o lixo de volta e respeite a proibição de fogueira na floresta, que vale de 15 de abril a 15 de setembro. Na trilha, é costume cumprimentar quem passa com um «hei»; e, na mochila, não pode faltar a matpakke, uma garrafa térmica e uma laranja.',
+        'Pela allemannsretten, você pode montar a barraca por até duas noites no mesmo lugar sem pedir licença, desde que fique a pelo menos 150 metros da casa ou cabana habitada mais próxima. Leve todo o lixo de volta e respeite a proibição de fogueira na floresta, que vale de 15 de abril a 15 de setembro. Na trilha, é costume cumprimentar quem passa com um “hei”; e, na mochila, não pode faltar a matpakke, uma garrafa térmica e uma laranja.',
       grammar_why:
-        'Os verbos modais vêm seguidos do infinitivo SEM «å»: jeg kan svømme, du må gå, vi vil telte. «Kan» é poder ou saber; «må» é ter de; «vil» é querer; «skal» é o que está combinado ou planejado; «bør» é o conselho («você deveria»). Atenção à armadilha: «du må ikke» é proibição (você não pode), e «não precisa» é «du trenger ikke». Para o futuro, «skal» expressa plano ou decisão («I morgen skal vi gå på tur»), e «kommer til å» expressa previsão («Det kommer til å regne»). O imperativo é o infinitivo sem o -e final: gå! (vá), ta med! (leve), kle deg! (vista-se); «komme» perde também um m: kom! Os reflexivos mudam o pronome como em português («eu me visto, você se veste»): jeg kler på meg, du kler på deg, han kler på seg, vi kler på oss, dere kler på dere, de kler på seg.',
+        'Os verbos modais vêm seguidos do infinitivo SEM “å”: jeg kan svømme, du må gå, vi vil telte. “Kan” é poder ou saber; “må” é ter de; “vil” é querer; “skal” é o que está combinado ou planejado; “bør” é o conselho (“você deveria”). Atenção à armadilha: “du må ikke” é proibição (você não pode), e “não precisa” é “du trenger ikke”. Para o futuro, “skal” expressa plano ou decisão (“I morgen skal vi gå på tur”), e “kommer til å” expressa previsão (“Det kommer til å regne”). O imperativo é o infinitivo sem o -e final: gå! (vá), ta med! (leve), kle deg! (vista-se); “komme” perde também um m: kom! Os reflexivos mudam o pronome como em português (“eu me visto, você se veste”): jeg kler på meg, du kler på deg, han kler på seg, vi kler på oss, dere kler på dere, de kler på seg.',
       grammar_examples: [
         ['Du bør ta med kart og kompass.', 'Você deveria levar mapa e bússola.'],
         ['Vi skal gå til toppen i morgen, men det kommer til å snø.', 'Nós vamos subir até o topo amanhã, mas vai nevar.'],
@@ -459,9 +459,9 @@ export const UNITS_NB: UnitSeed[] = [
           bot: 'Vi skal gå til Galdhøpiggen i morgen. Hva må vi ta med?',
           botTranslation: 'Nós vamos subir o Galdhøpiggen amanhã. O que precisamos levar?',
           expected: ['Vi må ta med kart, kompass, vann og varme klær. Vi bør også ha mat i sekken.', 'vi må ta med', 'kart', 'bør'],
-          hint: 'Use «må» para o que é obrigatório e «bør» para o que é aconselhável, sempre com o infinitivo sem «å»: «Vi må ta med…», «Vi bør ha…».',
+          hint: 'Use “må” para o que é obrigatório e “bør” para o que é aconselhável, sempre com o infinitivo sem “å”: “Vi må ta med…”, “Vi bør ha…”.',
         },
-        communityPrompt: 'Escreva uma lista de 5 conselhos para uma trilha na montanha, cada um com um modal diferente ou com «trenger ikke»: «Du må…», «Du bør…», «Du kan…», «Du må ikke…», «Du trenger ikke…».',
+        communityPrompt: 'Escreva uma lista de 5 conselhos para uma trilha na montanha, cada um com um modal diferente ou com “trenger ikke”: “Du må…”, “Du bør…”, “Du kan…”, “Du må ikke…”, “Du trenger ikke…”.',
       },
       {
         id: 'nb-u5-l2',
@@ -477,7 +477,7 @@ export const UNITS_NB: UnitSeed[] = [
           bot: 'Vinden er sterk, og tåka kommer. Hva gjør vi nå?',
           botTranslation: 'O vento está forte, e a neblina está chegando. O que fazemos agora?',
           expected: ['Vi må snu nå. Kle deg godt og ta på deg lua! Vi kan gå til toppen en annen dag.', 'vi må snu', 'kle deg', 'lua'],
-          hint: 'Decida com um modal («Vi må snu») e dê ordens no imperativo com o reflexivo: «Kle deg godt!», «Ta på deg vottene!».',
+          hint: 'Decida com um modal (“Vi må snu”) e dê ordens no imperativo com o reflexivo: “Kle deg godt!”, “Ta på deg vottene!”.',
         },
         communityPrompt: 'Imagine que o tempo virou no meio da trilha. Escreva 4 ordens no imperativo para o seu grupo, pelo menos duas com verbo reflexivo (kle deg, skynd dere, sett dere…).',
       },
@@ -495,9 +495,9 @@ export const UNITS_NB: UnitSeed[] = [
           bot: 'Hei! Kan vi sette opp teltet her? Hva sier allemannsretten?',
           botTranslation: 'Oi! Podemos montar a barraca aqui? O que diz o direito de livre acesso?',
           expected: ['Ja, vi kan telte her, men teltet må stå minst 150 meter fra nærmeste hus.', 'vi kan', 'må', '150 meter'],
-          hint: 'Responda com «kan» para a permissão e «må» para a condição: a barraca precisa ficar a pelo menos 150 metros da casa mais próxima.',
+          hint: 'Responda com “kan” para a permissão e “må” para a condição: a barraca precisa ficar a pelo menos 150 metros da casa mais próxima.',
         },
-        communityPrompt: 'Escreva o plano de um acampamento de fim de semana: o que vocês vão fazer («Vi skal…»), uma previsão do tempo («Det kommer til å…») e duas frases com «glede seg» ou «grue seg» em pessoas diferentes.',
+        communityPrompt: 'Escreva o plano de um acampamento de fim de semana: o que vocês vão fazer (“Vi skal…”), uma previsão do tempo (“Det kommer til å…”) e duas frases com “glede seg” ou “grue seg” em pessoas diferentes.',
       },
       {
         id: 'nb-u5-p',
@@ -515,9 +515,9 @@ export const UNITS_NB: UnitSeed[] = [
             'kle deg',
             'vend i tide',
           ],
-          hint: 'Misture modais («du bør», «du må», «du kan»), imperativos («si fra», «vend i tide», «ta med») e um reflexivo («kle deg godt»). Se quiser, faça uma previsão: «Det kommer til å bli kaldt».',
+          hint: 'Misture modais (“du bør”, “du må”, “du kan”), imperativos (“si fra”, “vend i tide”, “ta med”) e um reflexivo (“kle deg godt”). Se quiser, faça uma previsão: “Det kommer til å bli kaldt”.',
         },
-        communityPrompt: 'Escreva as suas próprias «regras de ouro» para um passeio na natureza no Brasil (praia, serra ou trilha), em 6 frases: use pelo menos três modais diferentes, dois imperativos, um reflexivo e uma previsão com «kommer til å».',
+        communityPrompt: 'Escreva as suas próprias “regras de ouro” para um passeio na natureza no Brasil (praia, serra ou trilha), em 6 frases: use pelo menos três modais diferentes, dois imperativos, um reflexivo e uma previsão com “kommer til å”.',
       },
     ],
   },
@@ -532,11 +532,11 @@ export const UNITS_NB: UnitSeed[] = [
       title: 'A vida ao ar livre e o direito de andar por aí',
       emoji: '🏕️',
       history:
-        'A palavra «friluftsliv» (vida ao ar livre) aparece num poema de Henrik Ibsen, «Paa Vidderne», do fim da década de 1850, e virou quase um valor nacional. A allemannsretten, o direito de todos de caminhar, acampar e colher frutinhas na natureza não cultivada, é um costume antigo que entrou na lei de vida ao ar livre, a friluftsloven, em 1957. O pico mais alto da Noruega e do norte da Europa é o Galdhøpiggen, com 2469 metros, no maciço de Jotunheimen. Nas montanhas, as trilhas são marcadas com um T vermelho pintado nas pedras e com vardene, os montes de pedra empilhada.',
+        'A palavra “friluftsliv” (vida ao ar livre) aparece num poema de Henrik Ibsen, “Paa Vidderne”, do fim da década de 1850, e virou quase um valor nacional. A allemannsretten, o direito de todos de caminhar, acampar e colher frutinhas na natureza não cultivada, é um costume antigo que entrou na lei de vida ao ar livre, a friluftsloven, em 1957. O pico mais alto da Noruega e do norte da Europa é o Galdhøpiggen, com 2469 metros, no maciço de Jotunheimen. Nas montanhas, as trilhas são marcadas com um T vermelho pintado nas pedras e com vardene, os montes de pedra empilhada.',
       culture_tip:
-        'Pela allemannsretten, você pode armar a barraca por até duas noites no mesmo lugar, desde que fique a pelo menos 150 metros da casa habitada mais próxima e não deixe lixo. Fazer fogueira na mata ou perto dela é proibido de 15 de abril a 15 de setembro. Os noruegueses saem para caminhar com chuva, neve ou vento, e repetem: «Det finnes ikke dårlig vær, bare dårlige klær» (não existe tempo ruim, só roupa ruim). No domingo, a «søndagstur» é quase um ritual.',
+        'Pela allemannsretten, você pode armar a barraca por até duas noites no mesmo lugar, desde que fique a pelo menos 150 metros da casa habitada mais próxima e não deixe lixo. Fazer fogueira na mata ou perto dela é proibido de 15 de abril a 15 de setembro. Os noruegueses saem para caminhar com chuva, neve ou vento, e repetem: “Det finnes ikke dårlig vær, bare dårlige klær” (não existe tempo ruim, só roupa ruim). No domingo, a “søndagstur” é quase um ritual.',
       grammar_why:
-        'Na oração principal, o «ikke» vem depois do verbo: «Jeg har ikke tid». Mas na subordinada (depois de at, fordi, når, om, hvis, selv om) o «ikke» e advérbios como «aldri» e «alltid» vêm ANTES do verbo: «fordi jeg ikke har tid». É a mesma ordem do português («porque eu não tenho tempo»), por isso ajuda pensar no português. Se a subordinada abre a frase, a principal inverte por causa do V2: «Når det regner, tar vi på regntøy». Atenção: «når» é para o presente e para o que se repete, «da» para uma vez só no passado; «om» é «se» de pergunta indireta («Jeg vet ikke om…»), «hvis» é «se» de condição. O mais-que-perfeito é «hadde» + particípio, como o «tinha feito»: «Vi hadde gått i fem timer da vi kom fram».',
+        'Na oração principal, o “ikke” vem depois do verbo: “Jeg har ikke tid”. Mas na subordinada (depois de at, fordi, når, om, hvis, selv om) o “ikke” e advérbios como “aldri” e “alltid” vêm ANTES do verbo: “fordi jeg ikke har tid”. É a mesma ordem do português (“porque eu não tenho tempo”), por isso ajuda pensar no português. Se a subordinada abre a frase, a principal inverte por causa do V2: “Når det regner, tar vi på regntøy”. Atenção: “når” é para o presente e para o que se repete, “da” para uma vez só no passado; “om” é “se” de pergunta indireta (“Jeg vet ikke om…”), “hvis” é “se” de condição. O mais-que-perfeito é “hadde” + particípio, como o “tinha feito”: “Vi hadde gått i fem timer da vi kom fram”.',
       grammar_examples: [
         ['Vi går på tur selv om det regner.', 'A gente sai para caminhar mesmo que esteja chovendo.'],
         ['Hun sier at hun ikke har vært på Galdhøpiggen.', 'Ela diz que não foi ao Galdhøpiggen.'],
@@ -580,10 +580,10 @@ export const UNITS_NB: UnitSeed[] = [
             'går sakte',
             'har gått',
           ],
-          hint: 'Explique com «fordi» e lembre: na subordinada o «ikke» vem antes do verbo (fordi jeg ikke har…).',
+          hint: 'Explique com “fordi” e lembre: na subordinada o “ikke” vem antes do verbo (fordi jeg ikke har…).',
         },
         communityPrompt:
-          'Descreva uma trilha que você fez ou gostaria de fazer em 3 frases: uma com «fordi … ikke», uma com «når» e uma no mais-que-perfeito (hadde + particípio).',
+          'Descreva uma trilha que você fez ou gostaria de fazer em 3 frases: uma com “fordi … ikke”, uma com “når” e uma no mais-que-perfeito (hadde + particípio).',
       },
       {
         id: 'nb-u6-l2',
@@ -619,10 +619,10 @@ export const UNITS_NB: UnitSeed[] = [
             'så lenge',
             'ikke står',
           ],
-          hint: 'Responda com «så lenge» (desde que) e ponha o «ikke» antes do verbo da subordinada.',
+          hint: 'Responda com “så lenge” (desde que) e ponha o “ikke” antes do verbo da subordinada.',
         },
         communityPrompt:
-          'Escreva 3 regras da allemannsretten para um amigo brasileiro, cada uma com uma subordinada (hvis, så lenge, selv om) e pelo menos um «ikke» na posição certa.',
+          'Escreva 3 regras da allemannsretten para um amigo brasileiro, cada uma com uma subordinada (hvis, så lenge, selv om) e pelo menos um “ikke” na posição certa.',
       },
       {
         id: 'nb-u6-l3',
@@ -658,10 +658,10 @@ export const UNITS_NB: UnitSeed[] = [
             'går videre',
             'dårlige klær',
           ],
-          hint: 'Use «selv om» (mesmo que) e feche com o ditado sobre o tempo e a roupa.',
+          hint: 'Use “selv om” (mesmo que) e feche com o ditado sobre o tempo e a roupa.',
         },
         communityPrompt:
-          'Grave-se contando um passeio em que o tempo mudou: o que vocês tinham feito antes (hadde + particípio), o que aconteceu «da…» e por que vocês continuaram «selv om…».',
+          'Grave-se contando um passeio em que o tempo mudou: o que vocês tinham feito antes (hadde + particípio), o que aconteceu “da…” e por que vocês continuaram “selv om…”.',
       },
       {
         id: 'nb-u6-p',
@@ -679,10 +679,10 @@ export const UNITS_NB: UnitSeed[] = [
             'selv om',
             'fordi vi ikke',
           ],
-          hint: 'Junte o mais-que-perfeito (hadde gått), «da» para o passado e uma subordinada com «ikke» antes do verbo.',
+          hint: 'Junte o mais-que-perfeito (hadde gått), “da” para o passado e uma subordinada com “ikke” antes do verbo.',
         },
         communityPrompt:
-          'Escreva um relato de 5 frases de um dia de friluftsliv: use at, når ou da, fordi, selv om e hvis, com pelo menos dois «ikke» em subordinadas e um verbo no mais-que-perfeito.',
+          'Escreva um relato de 5 frases de um dia de friluftsliv: use at, når ou da, fordi, selv om e hvis, com pelo menos dois “ikke” em subordinadas e um verbo no mais-que-perfeito.',
       },
     ],
   },
@@ -699,9 +699,9 @@ export const UNITS_NB: UnitSeed[] = [
       history:
         'O Rikshospitalet, o hospital nacional em Oslo, abriu as portas em 1826. Desde 2001, todo morador da Noruega tem direito a um fastlege, um médico de família fixo, que é a porta de entrada do sistema: é ele quem manda para o especialista com uma henvisning (encaminhamento). À noite e nos fins de semana, quem atende é a legevakt, pelo número 116 117; em emergência, o número da ambulância é o 113. O paciente paga uma parte das consultas, a egenandel, até um teto anual; depois disso recebe o frikort e não paga mais pelo resto do ano.',
       culture_tip:
-        'Com febre ou resfriado, o conselho costuma ser ficar em casa, beber água e descansar: antibiótico não se receita à toa. Para faltar poucos dias ao trabalho, basta a egenmelding, uma autodeclaração, sem atestado. No inverno escuro, muita gente toma tran, o óleo de fígado de bacalhau, por causa da vitamina D. E, para desejar melhoras, diga «God bedring!».',
+        'Com febre ou resfriado, o conselho costuma ser ficar em casa, beber água e descansar: antibiótico não se receita à toa. Para faltar poucos dias ao trabalho, basta a egenmelding, uma autodeclaração, sem atestado. No inverno escuro, muita gente toma tran, o óleo de fígado de bacalhau, por causa da vitamina D. E, para desejar melhoras, diga “God bedring!”.',
       grammar_why:
-        'O norueguês tem muitos verbos com partícula, como o inglês: a partícula (av, opp, ut, over, på) é tônica e muda o sentido. «Ta» é pegar, mas «ta av» é tirar e «ta vare på» é cuidar; «skrive» é escrever, e «skrive ut» é receitar (ou imprimir); «gå over» é passar («hodepinen går over»); «kaste opp» é vomitar. A voz passiva tem duas formas. O -s colado ao infinitivo ou ao presente é típico de regras, rotinas e bulas: «Tablettene skal tas med vann», «Blodprøver tas om morgenen». No passado, o bokmål quase sempre usa «bli + particípio»: «Han ble operert i går» (ele foi operado ontem) — diferente do sueco, o «skrevs» soa estranho no norueguês falado. O particípio funciona como adjetivo: en forstuet ankel, et brukket bein.',
+        'O norueguês tem muitos verbos com partícula, como o inglês: a partícula (av, opp, ut, over, på) é tônica e muda o sentido. “Ta” é pegar, mas “ta av” é tirar e “ta vare på” é cuidar; “skrive” é escrever, e “skrive ut” é receitar (ou imprimir); “gå over” é passar (“hodepinen går over”); “kaste opp” é vomitar. A voz passiva tem duas formas. O -s colado ao infinitivo ou ao presente é típico de regras, rotinas e bulas: “Tablettene skal tas med vann”, “Blodprøver tas om morgenen”. No passado, o bokmål quase sempre usa “bli + particípio”: “Han ble operert i går” (ele foi operado ontem) — diferente do sueco, o “skrevs” soa estranho no norueguês falado. O particípio funciona como adjetivo: en forstuet ankel, et brukket bein.',
       grammar_examples: [
         ['Legen skrev ut en resept til meg.', 'O médico me passou uma receita.'],
         ['Blodprøver tas om morgenen.', 'Os exames de sangue são colhidos de manhã.'],
@@ -745,7 +745,7 @@ export const UNITS_NB: UnitSeed[] = [
             'går ikke over',
             'vil gjerne',
           ],
-          hint: 'Explique o problema com um verbo de partícula: «gå over» (passar).',
+          hint: 'Explique o problema com um verbo de partícula: “gå over” (passar).',
         },
         communityPrompt:
           'Escreva uma mensagem ao consultório marcando consulta, com dois verbos de partícula (gå over, kaste opp, ta vare på…) e uma passiva com -s.',
@@ -784,10 +784,10 @@ export const UNITS_NB: UnitSeed[] = [
             'smertestillende',
             'bivirkninger',
           ],
-          hint: 'Diga o que você sente («ha vondt i») e pergunte pelos efeitos colaterais («bivirkninger»).',
+          hint: 'Diga o que você sente (“ha vondt i”) e pergunte pelos efeitos colaterais (“bivirkninger”).',
         },
         communityPrompt:
-          'Imagine a bula de um remédio: escreva 3 instruções na passiva com -s («Tabletten tas med vann», «Salven skal smøres…») e um aviso com «bli + particípio».',
+          'Imagine a bula de um remédio: escreva 3 instruções na passiva com -s (“Tabletten tas med vann”, “Salven skal smøres…”) e um aviso com “bli + particípio”.',
       },
       {
         id: 'nb-u7-l3',
@@ -823,7 +823,7 @@ export const UNITS_NB: UnitSeed[] = [
             'på isen',
             'røntges',
           ],
-          hint: 'Conte o acidente no pretérito e use a passiva: «den må røntges» (precisa ser radiografado).',
+          hint: 'Conte o acidente no pretérito e use a passiva: “den må røntges” (precisa ser radiografado).',
         },
         communityPrompt:
           'Grave-se contando uma ida à legevakt: o que aconteceu, o que foi feito com você (passiva com -s ou bli + particípio) e como você está agora.',
@@ -844,10 +844,10 @@ export const UNITS_NB: UnitSeed[] = [
             'resept',
             'tar vare på',
           ],
-          hint: 'Use «bli + particípio» (ble undersøkt) e verbos de partícula (gå over, ta vare på).',
+          hint: 'Use “bli + particípio” (ble undersøkt) e verbos de partícula (gå over, ta vare på).',
         },
         communityPrompt:
-          'Escreva 5 frases sobre uma semana doente: dois verbos de partícula, uma passiva com -s, uma com «bli + particípio» e um particípio usado como adjetivo (en forstuet ankel, et brukket bein).',
+          'Escreva 5 frases sobre uma semana doente: dois verbos de partícula, uma passiva com -s, uma com “bli + particípio” e um particípio usado como adjetivo (en forstuet ankel, et brukket bein).',
       },
     ],
   },
@@ -864,9 +864,9 @@ export const UNITS_NB: UnitSeed[] = [
       history:
         'Em 1888, Fridtjof Nansen liderou a primeira travessia da calota de gelo da Groenlândia, de esqui. Entre 1893 e 1896, o navio Fram ficou preso no gelo do Ártico de propósito, à deriva, para provar que o gelo se movia de leste para oeste; o casco arredondado fazia o gelo empurrar o navio para cima em vez de esmagá-lo. Roald Amundsen foi o primeiro a atravessar a Passagem do Noroeste (1903–1906) e chegou ao Polo Sul em 14 de dezembro de 1911, cerca de cinco semanas antes da equipe do britânico Robert Scott. Nansen recebeu o Nobel da Paz em 1922 pelo trabalho com refugiados, e o Fram hoje fica num museu na península de Bygdøy, em Oslo.',
       culture_tip:
-        'Os noruegueses dizem que nascem «med ski på beina» (com esquis nos pés), e as histórias de Nansen e Amundsen são contadas nas escolas como aventuras nacionais. Mesmo assim, contar vantagem pega mal: a chamada «janteloven», do romance de Aksel Sandemose (1933), resume a regra não escrita de não se achar melhor que os outros. Ao comparar, prefira o tom modesto: «Jeg er ikke så flink, men…».',
+        'Os noruegueses dizem que nascem “med ski på beina” (com esquis nos pés), e as histórias de Nansen e Amundsen são contadas nas escolas como aventuras nacionais. Mesmo assim, contar vantagem pega mal: a chamada “janteloven”, do romance de Aksel Sandemose (1933), resume a regra não escrita de não se achar melhor que os outros. Ao comparar, prefira o tom modesto: “Jeg er ikke så flink, men…”.',
       grammar_why:
-        'O comparativo se faz com -ere e o superlativo com -est: kald, kaldere, kaldest. Alguns são irregulares, como no português (bom, melhor, o melhor): god, bedre, best; stor, større, størst; liten, mindre, minst; gammel, eldre, eldst; lang, lengre, lengst. Adjetivos longos usam «mer» e «mest»: mer interessant, mest interessant. «Do que» é «enn»: «Grønland er større enn Norge». O superlativo com artigo leva a dupla definição: «den lengste turen». O pronome relativo é «som» (que), invariável; «hvis» (cujo) existe, mas é formal. No discurso indireto, depois de «sa at», o tempo recua e o «ikke» vem antes do verbo: «Han sa at han ikke hadde sett isbjørn».',
+        'O comparativo se faz com -ere e o superlativo com -est: kald, kaldere, kaldest. Alguns são irregulares, como no português (bom, melhor, o melhor): god, bedre, best; stor, større, størst; liten, mindre, minst; gammel, eldre, eldst; lang, lengre, lengst. Adjetivos longos usam “mer” e “mest”: mer interessant, mest interessant. “Do que” é “enn”: “Grønland er større enn Norge”. O superlativo com artigo leva a dupla definição: “den lengste turen”. O pronome relativo é “som” (que), invariável; “hvis” (cujo) existe, mas é formal. No discurso indireto, depois de “sa at”, o tempo recua e o “ikke” vem antes do verbo: “Han sa at han ikke hadde sett isbjørn”.',
       grammar_examples: [
         ['Amundsen kom fram til Sørpolen fem uker før Scott.', 'Amundsen chegou ao Polo Sul cinco semanas antes de Scott.'],
         ['Grønland er mye større enn Norge.', 'A Groenlândia é muito maior que a Noruega.'],
@@ -910,10 +910,10 @@ export const UNITS_NB: UnitSeed[] = [
             'bedre enn',
             'utforske',
           ],
-          hint: 'Use uma oração com «som» e um comparativo com «enn» (bedre enn).',
+          hint: 'Use uma oração com “som” e um comparativo com “enn” (bedre enn).',
         },
         communityPrompt:
-          'Compare dois lugares frios que você conhece (ou imagina) em 3 frases: um comparativo com «enn», um superlativo com «den … -este» e uma oração com «som».',
+          'Compare dois lugares frios que você conhece (ou imagina) em 3 frases: um comparativo com “enn”, um superlativo com “den … -este” e uma oração com “som”.',
       },
       {
         id: 'nb-u8-l2',
@@ -949,10 +949,10 @@ export const UNITS_NB: UnitSeed[] = [
             'observasjoner',
             'som skulle',
           ],
-          hint: 'Ligue as ideias com «som» (que) e conte o objetivo com «bevise at…».',
+          hint: 'Ligue as ideias com “som” (que) e conte o objetivo com “bevise at…”.',
         },
         communityPrompt:
-          'Conte em discurso indireto o que um cientista disse sobre uma descoberta: «Hun sa at…», «Han forklarte at…», com o tempo recuado e um «ikke» antes do verbo.',
+          'Conte em discurso indireto o que um cientista disse sobre uma descoberta: “Hun sa at…”, “Han forklarte at…”, com o tempo recuado e um “ikke” antes do verbo.',
       },
       {
         id: 'nb-u8-l3',
@@ -988,10 +988,10 @@ export const UNITS_NB: UnitSeed[] = [
             'enn Scott',
             'hunder',
           ],
-          hint: 'Compare com «bedre … enn» e justifique com «fordi».',
+          hint: 'Compare com “bedre … enn” e justifique com “fordi”.',
         },
         communityPrompt:
-          'Grave-se comparando as duas expedições ao Polo Sul: um comparativo, um superlativo e uma frase em discurso indireto («Jeg har lest at…»).',
+          'Grave-se comparando as duas expedições ao Polo Sul: um comparativo, um superlativo e uma frase em discurso indireto (“Jeg har lest at…”).',
       },
       {
         id: 'nb-u8-p',
@@ -1009,10 +1009,10 @@ export const UNITS_NB: UnitSeed[] = [
             'hadde vært',
             'den mest interessante',
           ],
-          hint: 'Junte discurso indireto (sa at … hadde), uma oração com «som» e um superlativo com «mest».',
+          hint: 'Junte discurso indireto (sa at … hadde), uma oração com “som” e um superlativo com “mest”.',
         },
         communityPrompt:
-          'Escreva 5 frases sobre um explorador ou cientista norueguês: dois comparativos (um irregular: bedre, større, eldre…), um superlativo, uma oração com «som» e uma frase em discurso indireto.',
+          'Escreva 5 frases sobre um explorador ou cientista norueguês: dois comparativos (um irregular: bedre, større, eldre…), um superlativo, uma oração com “som” e uma frase em discurso indireto.',
       },
     ],
   },
@@ -1027,11 +1027,11 @@ export const UNITS_NB: UnitSeed[] = [
       title: 'A aventura do petróleo',
       emoji: '🌊',
       history:
-        'No fim de 1969, foi encontrado o campo de Ekofisk, no mar do Norte, e a produção começou em 1971; os noruegueses chamam esse período de «oljeeventyret», a aventura (ou o conto de fadas) do petróleo. Em 1990, o Parlamento criou um fundo para guardar a renda do petróleo, que recebeu o primeiro dinheiro em 1996 e hoje se chama Statens pensjonsfond utland, mais conhecido como Oljefondet; ele é um dos maiores fundos soberanos do mundo. Uma regra fiscal de 2001, a handlingsregelen, limita quanto o governo pode tirar do fundo por ano (hoje, em torno de 3% do valor). Curiosamente, quase toda a eletricidade do país vem de usinas hidrelétricas, e a Noruega tem a maior proporção de carros elétricos entre os carros novos do mundo.',
+        'No fim de 1969, foi encontrado o campo de Ekofisk, no mar do Norte, e a produção começou em 1971; os noruegueses chamam esse período de “oljeeventyret”, a aventura (ou o conto de fadas) do petróleo. Em 1990, o Parlamento criou um fundo para guardar a renda do petróleo, que recebeu o primeiro dinheiro em 1996 e hoje se chama Statens pensjonsfond utland, mais conhecido como Oljefondet; ele é um dos maiores fundos soberanos do mundo. Uma regra fiscal de 2001, a handlingsregelen, limita quanto o governo pode tirar do fundo por ano (hoje, em torno de 3% do valor). Curiosamente, quase toda a eletricidade do país vem de usinas hidrelétricas, e a Noruega tem a maior proporção de carros elétricos entre os carros novos do mundo.',
       culture_tip:
-        'Os noruegueses gostam de pedir e oferecer com o condicional, que soa mais gentil: «Jeg skulle gjerne hatt en kaffe» (eu queria um café), «Kunne du hjulpet meg?» (você poderia me ajudar?). Falar de dinheiro pessoal pode ser delicado, mas a renda e o imposto de cada pessoa são públicos na Noruega e podem ser consultados. Em conversa, discutir «hva hvis vi ikke hadde funnet olje?» é um clássico, e rende opiniões bem diferentes.',
+        'Os noruegueses gostam de pedir e oferecer com o condicional, que soa mais gentil: “Jeg skulle gjerne hatt en kaffe” (eu queria um café), “Kunne du hjulpet meg?” (você poderia me ajudar?). Falar de dinheiro pessoal pode ser delicado, mas a renda e o imposto de cada pessoa são públicos na Noruega e podem ser consultados. Em conversa, discutir “hva hvis vi ikke hadde funnet olje?” é um clássico, e rende opiniões bem diferentes.',
       grammar_why:
-        'O condicional se faz com «ville» + infinitivo, como o nosso futuro do pretérito: «Jeg ville reise» (eu viajaria). Para uma hipótese no presente, a oração com «hvis» vai para o pretérito, igual ao imperfeito do subjuntivo em português: «Hvis jeg hadde tid, ville jeg lære meg å seile» (se eu tivesse tempo, aprenderia a velejar). Para o passado que não aconteceu, use «hadde» + particípio e «ville ha» + particípio: «Hvis jeg hadde visst det, ville jeg ha kommet» (se eu soubesse, teria vindo). Dá para tirar o «hvis» e inverter: «Hadde jeg visst det, ville jeg ha kommet». Na fala é muito comum cortar o «ha» e dizer «ville kommet», e «skulle» aparece em pedidos e desejos: «Jeg skulle gjerne hatt…».',
+        'O condicional se faz com “ville” + infinitivo, como o nosso futuro do pretérito: “Jeg ville reise” (eu viajaria). Para uma hipótese no presente, a oração com “hvis” vai para o pretérito, igual ao imperfeito do subjuntivo em português: “Hvis jeg hadde tid, ville jeg lære meg å seile” (se eu tivesse tempo, aprenderia a velejar). Para o passado que não aconteceu, use “hadde” + particípio e “ville ha” + particípio: “Hvis jeg hadde visst det, ville jeg ha kommet” (se eu soubesse, teria vindo). Dá para tirar o “hvis” e inverter: “Hadde jeg visst det, ville jeg ha kommet”. Na fala é muito comum cortar o “ha” e dizer “ville kommet”, e “skulle” aparece em pedidos e desejos: “Jeg skulle gjerne hatt…”.',
       grammar_examples: [
         ['Hvis jeg hadde mer tid, ville jeg lære meg å seile.', 'Se eu tivesse mais tempo, aprenderia a velejar.'],
         ['Hvis Norge ikke hadde funnet olje, ville landet ha vært fattigere i dag.', 'Se a Noruega não tivesse encontrado petróleo, o país seria mais pobre hoje.'],
@@ -1075,10 +1075,10 @@ export const UNITS_NB: UnitSeed[] = [
             'ville jeg',
             'reist',
           ],
-          hint: 'Comece com «Hvis jeg fikk…» (pretérito) e continue com «ville jeg…».',
+          hint: 'Comece com “Hvis jeg fikk…” (pretérito) e continue com “ville jeg…”.',
         },
         communityPrompt:
-          'Escreva 3 frases sobre o que você faria com o dinheiro de um fundo como o Oljefondet: uma com «hvis» + pretérito, uma com «ville ha» + particípio e uma com a inversão «Hadde jeg…».',
+          'Escreva 3 frases sobre o que você faria com o dinheiro de um fundo como o Oljefondet: uma com “hvis” + pretérito, uma com “ville ha” + particípio e uma com a inversão “Hadde jeg…”.',
       },
       {
         id: 'nb-u9-l2',
@@ -1114,10 +1114,10 @@ export const UNITS_NB: UnitSeed[] = [
             'ville jeg',
             'fornybar',
           ],
-          hint: 'Repita a estrutura da pergunta: «hvis jeg bodde…, ville jeg…», e dê um motivo com «fordi».',
+          hint: 'Repita a estrutura da pergunta: “hvis jeg bodde…, ville jeg…”, e dê um motivo com “fordi”.',
         },
         communityPrompt:
-          'Escreva o que mudaria na sua cidade se ela funcionasse como Oslo: 3 frases com «hvis» + pretérito e «ville» + infinitivo, sobre transporte, energia e trânsito.',
+          'Escreva o que mudaria na sua cidade se ela funcionasse como Oslo: 3 frases com “hvis” + pretérito e “ville” + infinitivo, sobre transporte, energia e trânsito.',
       },
       {
         id: 'nb-u9-l3',
@@ -1153,7 +1153,7 @@ export const UNITS_NB: UnitSeed[] = [
             'ville jeg ha savnet',
             'ikke ha angret',
           ],
-          hint: 'Hipótese no passado: «hvis jeg hadde + particípio», depois «ville jeg ha + particípio».',
+          hint: 'Hipótese no passado: “hvis jeg hadde + particípio”, depois “ville jeg ha + particípio”.',
         },
         communityPrompt:
           'Grave-se imaginando sua vida em Bergen ou Tromsø: do que você sentiria falta, o que faria no inverno escuro e se você se arrependeria (ville ha angret).',
@@ -1173,10 +1173,10 @@ export const UNITS_NB: UnitSeed[] = [
             'ville jeg ha',
             'hadde jeg vokst opp',
           ],
-          hint: 'Misture as três formas: «hvis» + pretérito, «ville ha» + particípio e a inversão sem «hvis» (hadde jeg…).',
+          hint: 'Misture as três formas: “hvis” + pretérito, “ville ha” + particípio e a inversão sem “hvis” (hadde jeg…).',
         },
         communityPrompt:
-          'Escreva 5 frases sobre «e se a Noruega nunca tivesse encontrado petróleo?»: duas com «hvis … hadde», uma com a inversão «Hadde …», uma com «ville ha» + particípio e um pedido gentil com «skulle gjerne».',
+          'Escreva 5 frases sobre “e se a Noruega nunca tivesse encontrado petróleo?”: duas com “hvis … hadde”, uma com a inversão “Hadde …”, uma com “ville ha” + particípio e um pedido gentil com “skulle gjerne”.',
       },
     ],
   },
@@ -1193,9 +1193,9 @@ export const UNITS_NB: UnitSeed[] = [
       history:
         'O fødselsnummer, o número de identidade de onze dígitos (seis da data de nascimento e cinco de controle), existe desde 1964 e aparece em quase tudo: banco, médico, imposto, aluguel. Estrangeiros que ficam pouco tempo recebem um D-nummer no lugar dele. Em 2006, os serviços de emprego, de previdência e parte da assistência social foram juntados num só órgão, a NAV. A declaração de imposto, a skattemelding, já chega preenchida na primavera, e quem precisa corrigir algo costuma ter até 30 de abril.',
       culture_tip:
-        'Na Noruega, até cartas oficiais tratam o leitor por «du»: o «De» de cortesia caiu em desuso com a chamada «du-reformen», nos anos 1970, e hoje soa antiquado ou irônico. Um e-mail formal pode começar só com «Hei,» ou «Hei, Kari,» e termina quase sempre com «Med vennlig hilsen» (atenciosamente), muitas vezes abreviado «mvh». Não se usam títulos como «doutor» ou «senhor»: o formal está na clareza, nas fórmulas fixas e no respeito aos prazos (frister).',
+        'Na Noruega, até cartas oficiais tratam o leitor por “du”: o “De” de cortesia caiu em desuso com a chamada “du-reformen”, nos anos 1970, e hoje soa antiquado ou irônico. Um e-mail formal pode começar só com “Hei,” ou “Hei, Kari,” e termina quase sempre com “Med vennlig hilsen” (atenciosamente), muitas vezes abreviado “mvh”. Não se usam títulos como “doutor” ou “senhor”: o formal está na clareza, nas fórmulas fixas e no respeito aos prazos (frister).',
       grammar_why:
-        'O registro formal norueguês não muda o pronome, e sim as fórmulas e as construções. Algumas fixas: «Jeg viser til…» (refiro-me a…), «Vedlagt følger…» (segue em anexo…), «Jeg ber om…» (solicito…), «Ta gjerne kontakt» (fique à vontade para entrar em contato), «Jeg ser fram til å høre fra deg» (aguardo seu retorno). A passiva com -s é muito usada em instruções oficiais: «Skjemaet må fylles ut» (o formulário deve ser preenchido), «Søknaden sendes innen fristen». «Vennligst» + imperativo é o «favor» dos avisos: «Vennligst skriv under». Em textos antigos você ainda vai ver o «De» com maiúscula e o possessivo «Deres»: «Har De mottatt vårt brev?».',
+        'O registro formal norueguês não muda o pronome, e sim as fórmulas e as construções. Algumas fixas: “Jeg viser til…” (refiro-me a…), “Vedlagt følger…” (segue em anexo…), “Jeg ber om…” (solicito…), “Ta gjerne kontakt” (fique à vontade para entrar em contato), “Jeg ser fram til å høre fra deg” (aguardo seu retorno). A passiva com -s é muito usada em instruções oficiais: “Skjemaet må fylles ut” (o formulário deve ser preenchido), “Søknaden sendes innen fristen”. “Vennligst” + imperativo é o “favor” dos avisos: “Vennligst skriv under”. Em textos antigos você ainda vai ver o “De” com maiúscula e o possessivo “Deres”: “Har De mottatt vårt brev?”.',
       grammar_examples: [
         ['Jeg viser til brevet deres av 3. mars.', 'Refiro-me à carta de vocês de 3 de março.'],
         ['Vedlagt følger en kopi av arbeidskontrakten.', 'Segue em anexo uma cópia do contrato de trabalho.'],
@@ -1239,10 +1239,10 @@ export const UNITS_NB: UnitSeed[] = [
             'bekrefte',
             'passer',
           ],
-          hint: 'Peça desculpas com «Beklager at…» e confirme com «Jeg kan bekrefte at…».',
+          hint: 'Peça desculpas com “Beklager at…” e confirme com “Jeg kan bekrefte at…”.',
         },
         communityPrompt:
-          'Escreva um e-mail curto a um colega adiando uma reunião: comece com «Jeg viser til…», use uma passiva com -s e termine com «Med vennlig hilsen».',
+          'Escreva um e-mail curto a um colega adiando uma reunião: comece com “Jeg viser til…”, use uma passiva com -s e termine com “Med vennlig hilsen”.',
       },
       {
         id: 'nb-u10-l2',
@@ -1278,10 +1278,10 @@ export const UNITS_NB: UnitSeed[] = [
             'fødselsnummer',
             'ennå',
           ],
-          hint: 'Explique que ainda («ennå») não tem fødselsnummer e mostre o D-nummer.',
+          hint: 'Explique que ainda (“ennå”) não tem fødselsnummer e mostre o D-nummer.',
         },
         communityPrompt:
-          'Escreva 3 instruções de um formulário oficial na passiva com -s («Skjemaet fylles ut…», «Dokumentene sendes…») e um aviso com «Vennligst» + imperativo.',
+          'Escreva 3 instruções de um formulário oficial na passiva com -s (“Skjemaet fylles ut…”, “Dokumentene sendes…”) e um aviso com “Vennligst” + imperativo.',
       },
       {
         id: 'nb-u10-l3',
@@ -1317,10 +1317,10 @@ export const UNITS_NB: UnitSeed[] = [
             'forklare',
             'trenger plassen',
           ],
-          hint: 'Use «klage på vedtaket» (recorrer da decisão) e explique o motivo com «forklare hvorfor…».',
+          hint: 'Use “klage på vedtaket” (recorrer da decisão) e explique o motivo com “forklare hvorfor…”.',
         },
         communityPrompt:
-          'Grave-se lendo uma reclamação formal ao município: «Jeg viser til…», o motivo, uma passiva com -s ou «bli» e o fecho com «Med vennlig hilsen».',
+          'Grave-se lendo uma reclamação formal ao município: “Jeg viser til…”, o motivo, uma passiva com -s ou “bli” e o fecho com “Med vennlig hilsen”.',
       },
       {
         id: 'nb-u10-p',
@@ -1338,10 +1338,10 @@ export const UNITS_NB: UnitSeed[] = [
             'ser fram til',
             'med vennlig hilsen',
           ],
-          hint: 'Use as fórmulas fixas: «Jeg viser til…», «Vedlagt følger…», «Jeg ser fram til…» e «Med vennlig hilsen».',
+          hint: 'Use as fórmulas fixas: “Jeg viser til…”, “Vedlagt følger…”, “Jeg ser fram til…” e “Med vennlig hilsen”.',
         },
         communityPrompt:
-          'Escreva um e-mail formal completo à NAV ou ao município (6 a 8 frases): fórmula de abertura, referência a um documento, pedido com «Jeg ber om…», uma passiva com -s, anexo com «Vedlagt følger…» e fecho.',
+          'Escreva um e-mail formal completo à NAV ou ao município (6 a 8 frases): fórmula de abertura, referência a um documento, pedido com “Jeg ber om…”, uma passiva com -s, anexo com “Vedlagt følger…” e fecho.',
       },
     ],
   },
@@ -1357,11 +1357,11 @@ export const UNITS_NB: UnitSeed[] = [
       title: 'Ha is i magen: o norueguês figurado',
       emoji: '🐱',
       history:
-        'O norueguês junta palavras sem espaço para criar compostos quase infinitos: «skjerm» + «tid» dá «skjermtid», e «arbeid» + «miljø» dá «arbeidsmiljø», com um -s- de ligação. Separar o composto (særskriving) é um erro clássico e às vezes engraçado: «røykfritt» quer dizer «livre de fumaça, proibido fumar», mas «røyk fritt» parece um convite para fumar à vontade. Desde os anos 1990, nos bairros multiculturais do leste de Oslo, os jovens criaram um jeito próprio de falar, que a imprensa apelidou de «kebabnorsk»; os linguistas preferem o termo «multietnoleto». Palavras dessa fala, como «wallah» (juro) e «jalla» (vamos, anda), vindas do árabe, se espalharam por todo o país.',
+        'O norueguês junta palavras sem espaço para criar compostos quase infinitos: “skjerm” + “tid” dá “skjermtid”, e “arbeid” + “miljø” dá “arbeidsmiljø”, com um -s- de ligação. Separar o composto (særskriving) é um erro clássico e às vezes engraçado: “røykfritt” quer dizer “livre de fumaça, proibido fumar”, mas “røyk fritt” parece um convite para fumar à vontade. Desde os anos 1990, nos bairros multiculturais do leste de Oslo, os jovens criaram um jeito próprio de falar, que a imprensa apelidou de “kebabnorsk”; os linguistas preferem o termo “multietnoleto”. Palavras dessa fala, como “wallah” (juro) e “jalla” (vamos, anda), vindas do árabe, se espalharam por todo o país.',
       culture_tip:
-        'Use a gíria só com quem você conhece e nunca imite sotaque, porque pode soar como deboche. Os idiomas, ao contrário, estão em toda parte: no jornal, no trabalho, na TV. «Det er ingen ku på isen» («não tem vaca no gelo») quer dizer «não há problema nenhum», e «det er ikke mitt bord» («não é a minha mesa») quer dizer «não é problema meu».',
+        'Use a gíria só com quem você conhece e nunca imite sotaque, porque pode soar como deboche. Os idiomas, ao contrário, estão em toda parte: no jornal, no trabalho, na TV. “Det er ingen ku på isen” (“não tem vaca no gelo”) quer dizer “não há problema nenhum”, e “det er ikke mitt bord” (“não é a minha mesa”) quer dizer “não é problema meu”.',
       grammar_why:
-        'No composto norueguês, a última palavra manda: ela dá o sentido principal e o gênero. «Et miljø» faz «et arbeidsmiljø»; «ei/en tid» faz «skjermtida/skjermtiden». Entre as partes pode aparecer um -s- ou um -e- de ligação (arbeidsplass, barnehage), e tudo se escreve junto, sem espaço nem hífen. A tônica costuma cair na primeira parte, o contrário do português, em que «guarda-chuva» tem a tônica no fim. Os idiomas são blocos fixos: não se troca «katta» por «katten» em «kjøpe katta i sekken», mas o verbo se conjuga normalmente (han kjøpte katta i sekken).',
+        'No composto norueguês, a última palavra manda: ela dá o sentido principal e o gênero. “Et miljø” faz “et arbeidsmiljø”; “ei/en tid” faz “skjermtida/skjermtiden”. Entre as partes pode aparecer um -s- ou um -e- de ligação (arbeidsplass, barnehage), e tudo se escreve junto, sem espaço nem hífen. A tônica costuma cair na primeira parte, o contrário do português, em que “guarda-chuva” tem a tônica no fim. Os idiomas são blocos fixos: não se troca “katta” por “katten” em “kjøpe katta i sekken”, mas o verbo se conjuga normalmente (han kjøpte katta i sekken).',
       grammar_examples: [
         ['Hun hadde is i magen under hele eksamen.', 'Ela manteve a calma durante a prova inteira.'],
         ['Han kjøpte katta i sekken da han kjøpte den gamle bilen.', 'Ele comprou gato por lebre quando comprou o carro velho.'],
@@ -1405,9 +1405,9 @@ export const UNITS_NB: UnitSeed[] = [
             'rolig',
             'gikk bra',
           ],
-          hint: 'Use «ha is i magen» no passado (hadde is i magen) e conte com calma como foi a entrevista.',
+          hint: 'Use “ha is i magen” no passado (hadde is i magen) e conte com calma como foi a entrevista.',
         },
-        communityPrompt: 'Escreva 4 frases em norueguês contando uma situação em que você «kjøpte katta i sekken» ou «slo to fluer i en smekk». Conjugue o verbo do idioma no passado.',
+        communityPrompt: 'Escreva 4 frases em norueguês contando uma situação em que você “kjøpte katta i sekken” ou “slo to fluer i en smekk”. Conjugue o verbo do idioma no passado.',
       },
       {
         id: 'nb-u11-l2',
@@ -1438,14 +1438,14 @@ export const UNITS_NB: UnitSeed[] = [
           bot: 'Du har bodd i Norge en stund nå. Hvilke norske ord synes du er morsomme eller rare?',
           botTranslation: 'Você já mora na Noruega há um tempo. Que palavras norueguesas você acha engraçadas ou esquisitas?',
           expected: [
-            'Jeg synes de sammensatte ordene er morsomme, for eksempel «kildesortering» og «strømmetjeneste». Man setter bare ordene sammen, og så har man et nytt ord!',
+            'Jeg synes de sammensatte ordene er morsomme, for eksempel “kildesortering” og “strømmetjeneste”. Man setter bare ordene sammen, og så har man et nytt ord!',
             'kildesortering',
             'strømmetjeneste',
             'setter sammen',
           ],
           hint: 'Dê dois exemplos de compostos e explique como eles se formam; lembre que se escrevem juntos, sem espaço.',
         },
-        communityPrompt: 'Invente 3 compostos noruegueses com palavras que você já conhece (ex.: «kaffe» + «kopp») e escreva uma frase com cada um, usando a forma definida com o gênero da última palavra.',
+        communityPrompt: 'Invente 3 compostos noruegueses com palavras que você já conhece (ex.: “kaffe” + “kopp”) e escreva uma frase com cada um, usando a forma definida com o gênero da última palavra.',
       },
       {
         id: 'nb-u11-l3',
@@ -1483,7 +1483,7 @@ export const UNITS_NB: UnitSeed[] = [
           ],
           hint: 'Responda no mesmo tom descontraído, com duas gírias da lição, sem exagerar nem imitar sotaque.',
         },
-        communityPrompt: 'Reescreva em norueguês padrão a mensagem «Jalla, konserten var sykt digg, wallah!» e explique em português, em 2 frases, quando cada versão é adequada.',
+        communityPrompt: 'Reescreva em norueguês padrão a mensagem “Jalla, konserten var sykt digg, wallah!” e explique em português, em 2 frases, quando cada versão é adequada.',
       },
       {
         id: 'nb-u11-p',
@@ -1495,7 +1495,7 @@ export const UNITS_NB: UnitSeed[] = [
           bot: 'Jeg skriver en artikkel om hvordan ungdom i Oslo snakker. Hva tenker du om slang og nye ord i norsk?',
           botTranslation: 'Estou escrevendo um artigo sobre como os jovens de Oslo falam. O que você pensa sobre gíria e palavras novas no norueguês?',
           expected: [
-            'Jeg synes det er spennende. Språket forandrer seg hele tiden, og ord som «jalla» og «digg» viser at mange kulturer har påvirket norsk. Men på jobben og på skolen er det lurt å bruke et mer nøytralt språk.',
+            'Jeg synes det er spennende. Språket forandrer seg hele tiden, og ord som “jalla” og “digg” viser at mange kulturer har påvirket norsk. Men på jobben og på skolen er det lurt å bruke et mer nøytralt språk.',
             'forandrer seg',
             'kulturer',
             'på jobben',
@@ -1519,11 +1519,11 @@ export const UNITS_NB: UnitSeed[] = [
       title: 'Debater à norueguesa',
       emoji: '⚖️',
       history:
-        'A liberdade de expressão está garantida no artigo 100 da Constituição norueguesa, a Grunnloven de 1814, uma das constituições escritas mais antigas do mundo ainda em vigor. O debate público (samfunnsdebatt) é levado a sério: os jornais publicam muitos artigos de opinião de leitores, e na escola os alunos treinam o texto argumentativo, o «drøftende tekst», em que é preciso pesar os dois lados antes de concluir. Um tema clássico é o fundo do petróleo: criado em 1990, recebeu o primeiro depósito em 1996 e se tornou um dos maiores fundos soberanos do mundo; uma regra fiscal (handlingsregelen) limita quanto do dinheiro o governo pode gastar por ano.',
+        'A liberdade de expressão está garantida no artigo 100 da Constituição norueguesa, a Grunnloven de 1814, uma das constituições escritas mais antigas do mundo ainda em vigor. O debate público (samfunnsdebatt) é levado a sério: os jornais publicam muitos artigos de opinião de leitores, e na escola os alunos treinam o texto argumentativo, o “drøftende tekst”, em que é preciso pesar os dois lados antes de concluir. Um tema clássico é o fundo do petróleo: criado em 1990, recebeu o primeiro depósito em 1996 e se tornou um dos maiores fundos soberanos do mundo; uma regra fiscal (handlingsregelen) limita quanto do dinheiro o governo pode gastar por ano.',
       culture_tip:
-        'Os noruegueses discordam de forma calma e objetiva: levantar a voz ou interromper pega mal. É comum começar reconhecendo o outro lado («Jeg skjønner hva du mener, men…»). E depois da discussão ninguém fica de mal: o consenso é um valor forte, e o objetivo costuma ser chegar a um acordo.',
+        'Os noruegueses discordam de forma calma e objetiva: levantar a voz ou interromper pega mal. É comum começar reconhecendo o outro lado (“Jeg skjønner hva du mener, men…”). E depois da discussão ninguém fica de mal: o consenso é um valor forte, e o objetivo costuma ser chegar a um acordo.',
       grammar_why:
-        'Os conectores dão estrutura ao argumento: «dessuten» (além disso) soma, «derimot» (por outro lado, já) contrasta, «likevel» (mesmo assim) concede, e «altså» (ou seja, portanto) conclui. Quando um deles abre a frase, vale a regra V2: o verbo vem logo em seguida e o sujeito depois dele — «Dessuten er det dyrt», nunca «Dessuten det er dyrt». «Derimot» e «likevel» também podem vir depois do verbo: «I Lofoten er det derimot rolig». Na pontuação, o norueguês pede vírgula depois de uma oração subordinada que abre a frase (Hvis det regner, blir vi hjemme) e antes de «men», mas nunca antes de «at» (Jeg mener at…). «Etter min mening» e «på den ene siden» também contam como primeiro elemento: «Etter min mening bør vi spare».',
+        'Os conectores dão estrutura ao argumento: “dessuten” (além disso) soma, “derimot” (por outro lado, já) contrasta, “likevel” (mesmo assim) concede, e “altså” (ou seja, portanto) conclui. Quando um deles abre a frase, vale a regra V2: o verbo vem logo em seguida e o sujeito depois dele — “Dessuten er det dyrt”, nunca “Dessuten det er dyrt”. “Derimot” e “likevel” também podem vir depois do verbo: “I Lofoten er det derimot rolig”. Na pontuação, o norueguês pede vírgula depois de uma oração subordinada que abre a frase (Hvis det regner, blir vi hjemme) e antes de “men”, mas nunca antes de “at” (Jeg mener at…). “Etter min mening” e “på den ene siden” também contam como primeiro elemento: “Etter min mening bør vi spare”.',
       grammar_examples: [
         ['Bilen er praktisk. Dessuten bor vi langt fra byen.', 'O carro é prático. Além disso, moramos longe da cidade.'],
         ['Det regnet hele dagen. Likevel gikk vi på tur.', 'Choveu o dia inteiro. Mesmo assim, fomos fazer trilha.'],
@@ -1568,9 +1568,9 @@ export const UNITS_NB: UnitSeed[] = [
             'skeptisk',
             'dessuten',
           ],
-          hint: 'Dê sua posição com «etter min mening» e a inversão (bør elevene), mostre uma ressalva com «skeptisk til» e some um argumento com «dessuten».',
+          hint: 'Dê sua posição com “etter min mening” e a inversão (bør elevene), mostre uma ressalva com “skeptisk til” e some um argumento com “dessuten”.',
         },
-        communityPrompt: 'Escreva em norueguês um comentário de 5 frases para a seção de leitores de um jornal sobre a semana de quatro dias de trabalho, usando «etter min mening», «dessuten» e «likevel», sempre com o verbo na segunda posição.',
+        communityPrompt: 'Escreva em norueguês um comentário de 5 frases para a seção de leitores de um jornal sobre a semana de quatro dias de trabalho, usando “etter min mening”, “dessuten” e “likevel”, sempre com o verbo na segunda posição.',
       },
       {
         id: 'nb-u12-l2',
@@ -1606,7 +1606,7 @@ export const UNITS_NB: UnitSeed[] = [
             'på den andre siden',
             'dessuten',
           ],
-          hint: 'Pese os dois lados com «på den ene siden… på den andre siden…» e lembre da inversão: o verbo vem logo depois do conector.',
+          hint: 'Pese os dois lados com “på den ene siden… på den andre siden…” e lembre da inversão: o verbo vem logo depois do conector.',
         },
         communityPrompt: 'Escreva em norueguês 4 frases que comecem com uma oração subordinada (Hvis…, Når…, Selv om…, Fordi…) e ponha a vírgula no lugar certo; depois explique em português por que o verbo vem antes do sujeito na segunda parte.',
       },
@@ -1644,7 +1644,7 @@ export const UNITS_NB: UnitSeed[] = [
             'derfor',
             'likevel',
           ],
-          hint: 'Defenda uma posição, justifique com «derfor» (e a inversão) e faça uma concessão com «likevel».',
+          hint: 'Defenda uma posição, justifique com “derfor” (e a inversão) e faça uma concessão com “likevel”.',
         },
         communityPrompt: 'Escreva em norueguês um artigo de leitor (leserinnlegg) de 6 frases sobre um tema da sua cidade, com tese, dois argumentos (dessuten), um contra-argumento (likevel) e uma conclusão (altså).',
       },
@@ -1666,7 +1666,7 @@ export const UNITS_NB: UnitSeed[] = [
           ],
           hint: 'Estruture: os dois lados, um argumento a mais, a sua posição com concessão e a conclusão. Cuide da inversão depois de cada conector.',
         },
-        communityPrompt: 'Escreva em norueguês um texto argumentativo (drøftende tekst) de 8 frases sobre o fundo do petróleo ou outro tema, com todos estes conectores: på den ene siden, på den andre siden, dessuten, derimot, likevel, altså. Revise as vírgulas: depois de subordinada inicial, antes de «men» e nunca antes de «at».',
+        communityPrompt: 'Escreva em norueguês um texto argumentativo (drøftende tekst) de 8 frases sobre o fundo do petróleo ou outro tema, com todos estes conectores: på den ene siden, på den andre siden, dessuten, derimot, likevel, altså. Revise as vírgulas: depois de subordinada inicial, antes de “men” e nunca antes de “at”.',
       },
     ],
   },
@@ -1683,11 +1683,11 @@ export const UNITS_NB: UnitSeed[] = [
       title: 'Bokmål, nynorsk, dialetos e sámi',
       emoji: '🏔️',
       history:
-        'Durante a união com a Dinamarca, que terminou em 1814, a língua escrita da Noruega era o dinamarquês. No século XIX surgiram dois caminhos: Knud Knudsen quis «norueguesar» aos poucos o dinamarquês escrito, o que deu origem ao riksmål e, mais tarde, ao bokmål; Ivar Aasen, filho de agricultores de Ørsta, em Sunnmøre, percorreu o país estudando os dialetos e criou o landsmål, com uma gramática publicada em 1848 e um dicionário em 1850. Em 1885, o Storting deu ao landsmål o mesmo status da língua escrita oficial, e em 1929 os nomes mudaram para «bokmål» e «nynorsk». Hoje pouco mais de 10% dos alunos têm o nynorsk como escrita principal, sobretudo no oeste, e todos estudam a outra forma como «sidemål». No norte vivem os sámi, o povo indígena da Noruega, cujo parlamento, o Sametinget, foi inaugurado em 1989 em Karasjok; o kven, língua próxima do finlandês falada no norte, é reconhecido como língua minoritária desde 2005.',
+        'Durante a união com a Dinamarca, que terminou em 1814, a língua escrita da Noruega era o dinamarquês. No século XIX surgiram dois caminhos: Knud Knudsen quis “norueguesar” aos poucos o dinamarquês escrito, o que deu origem ao riksmål e, mais tarde, ao bokmål; Ivar Aasen, filho de agricultores de Ørsta, em Sunnmøre, percorreu o país estudando os dialetos e criou o landsmål, com uma gramática publicada em 1848 e um dicionário em 1850. Em 1885, o Storting deu ao landsmål o mesmo status da língua escrita oficial, e em 1929 os nomes mudaram para “bokmål” e “nynorsk”. Hoje pouco mais de 10% dos alunos têm o nynorsk como escrita principal, sobretudo no oeste, e todos estudam a outra forma como “sidemål”. No norte vivem os sámi, o povo indígena da Noruega, cujo parlamento, o Sametinget, foi inaugurado em 1989 em Karasjok; o kven, língua próxima do finlandês falada no norte, é reconhecido como língua minoritária desde 2005.',
       culture_tip:
-        'Na Noruega, falar dialeto é normal em qualquer lugar: no telejornal, no Storting, na universidade. Não existe uma pronúncia oficial, e pedir a alguém que «fale direito» é falta de educação; neste app, a pronúncia de referência é o norueguês oriental de Oslo. Ao falar dos sámi, use «samer» e «samisk»: o termo antigo «lapp» é considerado ofensivo. O dia nacional sámi é 6 de fevereiro.',
+        'Na Noruega, falar dialeto é normal em qualquer lugar: no telejornal, no Storting, na universidade. Não existe uma pronúncia oficial, e pedir a alguém que “fale direito” é falta de educação; neste app, a pronúncia de referência é o norueguês oriental de Oslo. Ao falar dos sámi, use “samer” e “samisk”: o termo antigo “lapp” é considerado ofensivo. O dia nacional sámi é 6 de fevereiro.',
       grammar_why:
-        'Bokmål e nynorsk são duas normas escritas da mesma língua e se leem sem esforço; as diferenças estão em palavras frequentes e em algumas terminações. Compare: «jeg / eg», «ikke / ikkje», «hva / kva», «hun / ho», «hjemme / heime», «bare / berre», «mye / mykje». No nynorsk, muitos verbos fazem o presente em -ar (snakkar, kastar), e o feminino é obrigatório (ei bok, boka), enquanto o bokmål aceita também «en bok, boken». Na fala, os dialetos vão além: em Bergen não existe o gênero feminino, em Trøndelag se diz «itj» por «ikke», e em boa parte do norte se diz «æ» por «jeg». Entre as línguas escandinavas a intercompreensão é alta: o bokmål escrito é muito parecido com o dinamarquês, e a fala norueguesa costuma ser a mais fácil de entender para suecos e dinamarqueses.',
+        'Bokmål e nynorsk são duas normas escritas da mesma língua e se leem sem esforço; as diferenças estão em palavras frequentes e em algumas terminações. Compare: “jeg / eg”, “ikke / ikkje”, “hva / kva”, “hun / ho”, “hjemme / heime”, “bare / berre”, “mye / mykje”. No nynorsk, muitos verbos fazem o presente em -ar (snakkar, kastar), e o feminino é obrigatório (ei bok, boka), enquanto o bokmål aceita também “en bok, boken”. Na fala, os dialetos vão além: em Bergen não existe o gênero feminino, em Trøndelag se diz “itj” por “ikke”, e em boa parte do norte se diz “æ” por “jeg”. Entre as línguas escandinavas a intercompreensão é alta: o bokmål escrito é muito parecido com o dinamarquês, e a fala norueguesa costuma ser a mais fácil de entender para suecos e dinamarqueses.',
       grammar_examples: [
         ['Eg bur i Førde og skriv nynorsk.', 'Eu moro em Førde e escrevo nynorsk. (nynorsk; em bokmål: Jeg bor i Førde og skriver nynorsk.)'],
         ['Kva heiter du? – Hva heter du?', 'Como você se chama? (nynorsk – bokmål)'],
@@ -1719,7 +1719,7 @@ export const UNITS_NB: UnitSeed[] = [
             sentence: 'Knud Knudsen ville fornorske den danske ___ steg for steg.',
             answer: 'rettskrivingen',
             options: ['rettskrivingen', 'rettskriving', 'rettskrivinger'],
-            translation: 'Knud Knudsen queria «norueguesar» a ortografia dinamarquesa passo a passo.',
+            translation: 'Knud Knudsen queria “norueguesar” a ortografia dinamarquesa passo a passo.',
           },
         ],
         voice: {
@@ -1733,7 +1733,7 @@ export const UNITS_NB: UnitSeed[] = [
           ],
           hint: 'Explique a origem das duas escritas: o dinamarquês, Aasen e os dialetos, e o caminho que levou ao bokmål.',
         },
-        communityPrompt: 'Escreva em norueguês 4 frases resumindo a história das duas escritas, com os anos 1814, 1885 e 1929, usando o pretérito e a passiva com «ble».',
+        communityPrompt: 'Escreva em norueguês 4 frases resumindo a história das duas escritas, com os anos 1814, 1885 e 1929, usando o pretérito e a passiva com “ble”.',
       },
       {
         id: 'nb-u13-l2',
@@ -1742,10 +1742,10 @@ export const UNITS_NB: UnitSeed[] = [
         words: ['uttale', 'ligne', 'uforståelig', 'tolk', 'oversette', 'stolt'],
         cloze: [
           {
-            sentence: 'I Bergen sier man «boken» og ikke «boka», fordi dialekten ikke har ___.',
+            sentence: 'I Bergen sier man “boken” og ikke “boka”, fordi dialekten ikke har ___.',
             answer: 'hunkjønn',
             options: ['hunkjønn', 'hankjønn', 'intetkjønn'],
-            translation: 'Em Bergen se diz «boken», e não «boka», porque o dialeto não tem gênero feminino.',
+            translation: 'Em Bergen se diz “boken”, e não “boka”, porque o dialeto não tem gênero feminino.',
           },
           {
             sentence: 'Norsk ___ på svensk, men dansk uttale er vanskeligere å forstå.',
@@ -1795,19 +1795,19 @@ export const UNITS_NB: UnitSeed[] = [
             sentence: 'En ___ er ikke en sang om noen: man joiker en person, et dyr eller et sted.',
             answer: 'joik',
             options: ['joik', 'joiken', 'joike'],
-            translation: 'Um joik não é uma canção sobre alguém: a gente «joika» uma pessoa, um animal ou um lugar.',
+            translation: 'Um joik não é uma canção sobre alguém: a gente “joika” uma pessoa, um animal ou um lugar.',
           },
         ],
         voice: {
-          bot: 'Buorre beaivi! Det betyr «god dag» på nordsamisk. Hva vet du om samene?',
-          botTranslation: 'Buorre beaivi! Isso quer dizer «bom dia» em sámi do norte. O que você sabe sobre os sámi?',
+          bot: 'Buorre beaivi! Det betyr “god dag” på nordsamisk. Hva vet du om samene?',
+          botTranslation: 'Buorre beaivi! Isso quer dizer “bom dia” em sámi do norte. O que você sabe sobre os sámi?',
           expected: [
             'Samene er et urfolk som bor i Norge, Sverige, Finland og Russland. I Norge har de sitt eget folkevalgte organ, Sametinget, og joik og reindrift er viktige deler av kulturen.',
             'urfolk',
             'Sametinget',
             'reindrift',
           ],
-          hint: 'Use «samene», «samisk» e «urfolk», com respeito, e cite pelo menos um traço da cultura (a língua, o joik, a criação de renas).',
+          hint: 'Use “samene”, “samisk” e “urfolk”, com respeito, e cite pelo menos um traço da cultura (a língua, o joik, a criação de renas).',
         },
         communityPrompt: 'Escreva em norueguês 4 frases sobre uma minoria linguística da Noruega (os sámi ou os kvener): onde vive, que língua fala e como o país protege essa língua.',
       },
@@ -1846,11 +1846,11 @@ export const UNITS_NB: UnitSeed[] = [
       title: 'Do byråkratspråk ao klarspråk',
       emoji: '🏛️',
       history:
-        'Por muito tempo, os órgãos públicos noruegueses escreveram num estilo pesado, cheio de substantivos e passivas. A partir de 2009, o Språkrådet e a agência estatal de gestão pública conduziram um grande programa de linguagem clara no Estado, e a Lei da Língua (språklova), em vigor desde 2022, determina que os órgãos públicos usem uma linguagem clara, correta e adaptada ao leitor. A imprensa norueguesa segue desde 1936 um código de ética, a «Vær Varsom-plakaten» («o cartaz do tenha cuidado»), e a lei de acesso à informação (offentleglova) dá a qualquer pessoa o direito de ver documentos públicos. Nas universidades, o doutorado termina numa defesa pública, a «disputas», em que dois oponentes questionam a tese diante da plateia.',
+        'Por muito tempo, os órgãos públicos noruegueses escreveram num estilo pesado, cheio de substantivos e passivas. A partir de 2009, o Språkrådet e a agência estatal de gestão pública conduziram um grande programa de linguagem clara no Estado, e a Lei da Língua (språklova), em vigor desde 2022, determina que os órgãos públicos usem uma linguagem clara, correta e adaptada ao leitor. A imprensa norueguesa segue desde 1936 um código de ética, a “Vær Varsom-plakaten” (“o cartaz do tenha cuidado”), e a lei de acesso à informação (offentleglova) dá a qualquer pessoa o direito de ver documentos públicos. Nas universidades, o doutorado termina numa defesa pública, a “disputas”, em que dois oponentes questionam a tese diante da plateia.',
       culture_tip:
-        'Se uma carta do NAV, da Receita (Skatteetaten) ou do município parecer difícil, ligue e peça explicação: os funcionários estão acostumados, e muitos órgãos têm textos em linguagem simples e em outras línguas. No trabalho, prefira o estilo claro também nos seus e-mails: frases curtas, verbos no lugar de substantivos e «du» no lugar de «søkeren».',
+        'Se uma carta do NAV, da Receita (Skatteetaten) ou do município parecer difícil, ligue e peça explicação: os funcionários estão acostumados, e muitos órgãos têm textos em linguagem simples e em outras línguas. No trabalho, prefira o estilo claro também nos seus e-mails: frases curtas, verbos no lugar de substantivos e “du” no lugar de “søkeren”.',
       grammar_why:
-        'A nominalização transforma verbos em substantivos: «vedta» vira «vedtak», «søke» vira «søknad», «behandle» vira «behandling», «gjennomføre» vira «gjennomføring». O texto fica compacto e impessoal, mas pesado: «Etter gjennomført behandling av søknaden er det fattet vedtak om avslag» é puro byråkratspråk; em klarspråk fica «Vi har behandlet søknaden din, men du får dessverre ikke tillatelse». Repare nas marcas desse estilo: particípio antes do substantivo (gjennomført behandling), passiva com -s (søknaden behandles), «det» formal como sujeito (det er fattet vedtak) e verbos vazios como «foreta» e «fatte». No jornalismo, o essencial vem primeiro (a pirâmide invertida), e as fontes aparecem com «sier», «opplyser» e «ifølge»; no texto acadêmico, dominam a passiva ou o «vi» e fórmulas como «Formålet med denne studien er å…» — note que, diferente do sueco, o «denne» norueguês pede a forma definida.',
+        'A nominalização transforma verbos em substantivos: “vedta” vira “vedtak”, “søke” vira “søknad”, “behandle” vira “behandling”, “gjennomføre” vira “gjennomføring”. O texto fica compacto e impessoal, mas pesado: “Etter gjennomført behandling av søknaden er det fattet vedtak om avslag” é puro byråkratspråk; em klarspråk fica “Vi har behandlet søknaden din, men du får dessverre ikke tillatelse”. Repare nas marcas desse estilo: particípio antes do substantivo (gjennomført behandling), passiva com -s (søknaden behandles), “det” formal como sujeito (det er fattet vedtak) e verbos vazios como “foreta” e “fatte”. No jornalismo, o essencial vem primeiro (a pirâmide invertida), e as fontes aparecem com “sier”, “opplyser” e “ifølge”; no texto acadêmico, dominam a passiva ou o “vi” e fórmulas como “Formålet med denne studien er å…” — note que, diferente do sueco, o “denne” norueguês pede a forma definida.',
       grammar_examples: [
         ['Søknaden må være mottatt innen 1. mars.', 'O requerimento precisa ter sido recebido até 1º de março. (estilo burocrático)'],
         ['Send søknaden innen 1. mars.', 'Mande o requerimento até 1º de março. (klarspråk)'],
@@ -1886,17 +1886,17 @@ export const UNITS_NB: UnitSeed[] = [
           },
         ],
         voice: {
-          bot: 'Jeg fikk et brev fra kommunen: «Det er fattet vedtak om avslag på Deres søknad om utvidet åpningstid.» Hva betyr det egentlig?',
-          botTranslation: 'Recebi uma carta do município: «Foi tomada decisão de indeferimento do seu requerimento de ampliação do horário de funcionamento.» O que isso quer dizer, afinal?',
+          bot: 'Jeg fikk et brev fra kommunen: “Det er fattet vedtak om avslag på Deres søknad om utvidet åpningstid.” Hva betyr det egentlig?',
+          botTranslation: 'Recebi uma carta do município: “Foi tomada decisão de indeferimento do seu requerimento de ampliação do horário de funcionamento.” O que isso quer dizer, afinal?',
           expected: [
-            'Det betyr at kommunen har sagt nei. Du får ikke lov til å ha åpent lenger. Sagt på klart språk: «Vi har behandlet søknaden din, men svaret er nei.»',
+            'Det betyr at kommunen har sagt nei. Du får ikke lov til å ha åpent lenger. Sagt på klart språk: “Vi har behandlet søknaden din, men svaret er nei.”',
             'sagt nei',
             'søknaden din',
             'klart språk',
           ],
-          hint: 'Traduza o byråkratspråk para frases curtas, com verbos e «du»; repare no «Deres», o tratamento formal antigo.',
+          hint: 'Traduza o byråkratspråk para frases curtas, com verbos e “du”; repare no “Deres”, o tratamento formal antigo.',
         },
-        communityPrompt: 'Reescreva em klarspråk, em norueguês, esta frase burocrática: «Det foretas en vurdering av hvorvidt vilkårene for innvilgelse er oppfylt.» Depois explique em português quais substantivos você trocou por verbos.',
+        communityPrompt: 'Reescreva em klarspråk, em norueguês, esta frase burocrática: “Det foretas en vurdering av hvorvidt vilkårene for innvilgelse er oppfylt.” Depois explique em português quais substantivos você trocou por verbos.',
       },
       {
         id: 'nb-u14-l2',
@@ -1932,9 +1932,9 @@ export const UNITS_NB: UnitSeed[] = [
             'ble ingen skadet',
             'opplyser',
           ],
-          hint: 'Comece pelo mais importante (o quê, onde, quando), cite a fonte com «ifølge» ou «opplyser» e use a passiva.',
+          hint: 'Comece pelo mais importante (o quê, onde, quando), cite a fonte com “ifølge” ou “opplyser” e use a passiva.',
         },
-        communityPrompt: 'Escreva em norueguês uma notícia curta (5 frases) sobre um acontecimento da sua cidade, na ordem da pirâmide invertida, com uma fonte citada por «ifølge» e uma fala com «sier».',
+        communityPrompt: 'Escreva em norueguês uma notícia curta (5 frases) sobre um acontecimento da sua cidade, na ordem da pirâmide invertida, com uma fonte citada por “ifølge” e uma fala com “sier”.',
       },
       {
         id: 'nb-u14-l3',
@@ -1972,7 +1972,7 @@ export const UNITS_NB: UnitSeed[] = [
           ],
           hint: 'Responda em registro acadêmico: conclusão, base empírica e uma ressalva sobre os limites do estudo.',
         },
-        communityPrompt: 'Escreva em norueguês um resumo acadêmico de 5 frases sobre uma pesquisa imaginária, com «Formålet med denne studien er å…», uma passiva com -s e uma conclusão com ressalva.',
+        communityPrompt: 'Escreva em norueguês um resumo acadêmico de 5 frases sobre uma pesquisa imaginária, com “Formålet med denne studien er å…”, uma passiva com -s e uma conclusão com ressalva.',
       },
       {
         id: 'nb-u14-p',
@@ -1981,15 +1981,15 @@ export const UNITS_NB: UnitSeed[] = [
         words: [],
         cloze: [],
         voice: {
-          bot: 'Du jobber i kommunen og skal skrive om et brev. Originalen lyder: «Ved manglende innbetaling innen fristens utløp vil saken bli oversendt til inkasso.» Hvordan skriver du det på klarspråk, og hvorfor?',
-          botTranslation: 'Você trabalha no município e precisa reescrever uma carta. O original diz: «Em caso de ausência de pagamento até o término do prazo, o caso será encaminhado para cobrança.» Como você escreve isso em linguagem clara, e por quê?',
+          bot: 'Du jobber i kommunen og skal skrive om et brev. Originalen lyder: “Ved manglende innbetaling innen fristens utløp vil saken bli oversendt til inkasso.” Hvordan skriver du det på klarspråk, og hvorfor?',
+          botTranslation: 'Você trabalha no município e precisa reescrever uma carta. O original diz: “Em caso de ausência de pagamento até o término do prazo, o caso será encaminhado para cobrança.” Como você escreve isso em linguagem clara, e por quê?',
           expected: [
-            'Jeg ville skrive: «Hvis du ikke betaler innen fristen, sender vi saken til inkasso.» Det er bedre fordi setningen er kortere, bruker verb i stedet for substantiver og snakker direkte til leseren.',
+            'Jeg ville skrive: “Hvis du ikke betaler innen fristen, sender vi saken til inkasso.” Det er bedre fordi setningen er kortere, bruker verb i stedet for substantiver og snakker direkte til leseren.',
             'hvis du ikke betaler',
             'verb',
             'direkte',
           ],
-          hint: 'Transforme os substantivos em verbos, use «du» e «vi» e explique as mudanças com «fordi».',
+          hint: 'Transforme os substantivos em verbos, use “du” e “vi” e explique as mudanças com “fordi”.',
         },
         communityPrompt: 'Escreva em norueguês três versões da mesma informação (por exemplo, o fechamento de uma estrada ou uma regra nova): uma em byråkratspråk, uma em klarspråk e uma como notícia de jornal. Depois explique em português, em 2 frases, as diferenças de estilo.',
       },
@@ -2008,14 +2008,14 @@ export const UNITS_NB: UnitSeed[] = [
       title: 'O norueguês da literatura',
       emoji: '🪶',
       history:
-        'Henrik Ibsen (1828–1906), nascido em Skien, é um dos dramaturgos mais encenados do mundo: «Et dukkehjem» (1879), em que Nora deixa o marido e os filhos no fim, causou escândalo em toda a Europa, e «Peer Gynt» (1867) ganhou música de Edvard Grieg. Bjørnstjerne Bjørnson (1832–1910) escreveu contos camponeses como «Synnøve Solbakken» (1857) e a letra do hino nacional, «Ja, vi elsker dette landet», e em 1903 foi o primeiro norueguês a receber o Prêmio Nobel de Literatura. Sigrid Undset (1882–1949) recebeu o Nobel em 1928; sua trilogia «Kristin Lavransdatter» (1920–1922) se passa na Noruega do século XIV, e ela viveu em Bjerkebæk, em Lillehammer. Ibsen e Bjørnson escreviam num dinamarquês-norueguês: a reforma de 1907 trocou as consoantes brandas pelas duras (bog → bok, gade → gate), e em 1917 o «aa» deu lugar ao «å».',
+        'Henrik Ibsen (1828–1906), nascido em Skien, é um dos dramaturgos mais encenados do mundo: “Et dukkehjem” (1879), em que Nora deixa o marido e os filhos no fim, causou escândalo em toda a Europa, e “Peer Gynt” (1867) ganhou música de Edvard Grieg. Bjørnstjerne Bjørnson (1832–1910) escreveu contos camponeses como “Synnøve Solbakken” (1857) e a letra do hino nacional, “Ja, vi elsker dette landet”, e em 1903 foi o primeiro norueguês a receber o Prêmio Nobel de Literatura. Sigrid Undset (1882–1949) recebeu o Nobel em 1928; sua trilogia “Kristin Lavransdatter” (1920–1922) se passa na Noruega do século XIV, e ela viveu em Bjerkebæk, em Lillehammer. Ibsen e Bjørnson escreviam num dinamarquês-norueguês: a reforma de 1907 trocou as consoantes brandas pelas duras (bog → bok, gade → gate), e em 1917 o “aa” deu lugar ao “å”.',
       culture_tip:
-        'Os provérbios (ordtak) aparecem na conversa do dia a dia, muitas vezes com um sorriso: «borte bra, men hjemme best» na volta de uma viagem, «bedre sent enn aldri» para quem chega atrasado. Nomes de pessoas e lugares ainda guardam a grafia antiga, como o próprio «Aasen». E o hino de Bjørnson é cantado em todo 17 de maio, o dia da Constituição.',
+        'Os provérbios (ordtak) aparecem na conversa do dia a dia, muitas vezes com um sorriso: “borte bra, men hjemme best” na volta de uma viagem, “bedre sent enn aldri” para quem chega atrasado. Nomes de pessoas e lugares ainda guardam a grafia antiga, como o próprio “Aasen”. E o hino de Bjørnson é cantado em todo 17 de maio, o dia da Constituição.',
       grammar_why:
-        'Até o começo do século XX, o norueguês escrito era quase dinamarquês: consoantes brandas depois de vogal longa (bog, gade, kage, løbe), «aa» no lugar de «å», «efter» por «etter» e grafias como «mand» e «stærk». Ibsen escrevia assim, e as edições modernas costumam atualizar a grafia. Nos diálogos antigos, o tratamento de cortesia é «De» (objeto «Dem», possessivo «Deres»), que hoje soa solene ou distante. Os provérbios guardam uma sintaxe enxuta e imagens do campo: «Liten tue kan velte stort lass» dispensa os artigos, e «Borte bra, men hjemme best» dispensa o verbo. Para ler os clássicos, vale reconhecer essas formas sem usá-las na escrita de hoje.',
+        'Até o começo do século XX, o norueguês escrito era quase dinamarquês: consoantes brandas depois de vogal longa (bog, gade, kage, løbe), “aa” no lugar de “å”, “efter” por “etter” e grafias como “mand” e “stærk”. Ibsen escrevia assim, e as edições modernas costumam atualizar a grafia. Nos diálogos antigos, o tratamento de cortesia é “De” (objeto “Dem”, possessivo “Deres”), que hoje soa solene ou distante. Os provérbios guardam uma sintaxe enxuta e imagens do campo: “Liten tue kan velte stort lass” dispensa os artigos, e “Borte bra, men hjemme best” dispensa o verbo. Para ler os clássicos, vale reconhecer essas formas sem usá-las na escrita de hoje.',
       grammar_examples: [
-        ['Peer, du lyver!', 'Peer, você está mentindo! (a primeira fala de «Peer Gynt», dita por Åse, a mãe)'],
-        ['Tar De livsløgnen fra et gjennomsnittsmenneske, så tar De lykken fra ham med det samme.', 'Se o senhor tira a mentira vital de uma pessoa comum, tira dela a felicidade ao mesmo tempo. (Ibsen, «Vildanden», grafia atualizada)'],
+        ['Peer, du lyver!', 'Peer, você está mentindo! (a primeira fala de “Peer Gynt”, dita por Åse, a mãe)'],
+        ['Tar De livsløgnen fra et gjennomsnittsmenneske, så tar De lykken fra ham med det samme.', 'Se o senhor tira a mentira vital de uma pessoa comum, tira dela a felicidade ao mesmo tempo. (Ibsen, “Vildanden”, grafia atualizada)'],
         ['Ja, vi elsker dette landet, som det stiger frem.', 'Sim, nós amamos esta terra, tal como ela se ergue. (Bjørnson, o hino nacional)'],
         ['Liten tue kan velte stort lass.', 'Um pequeno torrão pode virar uma grande carga. (coisas pequenas podem ter grandes efeitos)'],
       ],
@@ -2029,10 +2029,10 @@ export const UNITS_NB: UnitSeed[] = [
         words: ['teater', 'skuespiller', 'forestilling', 'lyve', 'hemmelighet', 'sannhet'],
         cloze: [
           {
-            sentence: '«Peer, du ___!» sier Åse i den første scenen.',
+            sentence: '“Peer, du ___!” sier Åse i den første scenen.',
             answer: 'lyver',
             options: ['lyver', 'løy', 'lyve'],
-            translation: '«Peer, você está mentindo!», diz Åse na primeira cena.',
+            translation: '“Peer, você está mentindo!”, diz Åse na primeira cena.',
           },
           {
             sentence: 'Nora har en ___ som hun skjuler for mannen sin.',
@@ -2041,24 +2041,24 @@ export const UNITS_NB: UnitSeed[] = [
             translation: 'Nora tem um segredo que ela esconde do marido.',
           },
           {
-            sentence: 'Ibsen skrev «efter», men i dag skriver vi «___».',
+            sentence: 'Ibsen skrev “efter”, men i dag skriver vi “___”.',
             answer: 'etter',
             options: ['etter', 'efter', 'eter'],
-            translation: 'Ibsen escrevia «efter», mas hoje escrevemos «etter» (depois).',
+            translation: 'Ibsen escrevia “efter”, mas hoje escrevemos “etter” (depois).',
           },
         ],
         voice: {
-          bot: 'Vi har akkurat sett «Et dukkehjem» på Nationaltheatret. Hva syntes du om slutten, da Nora går?',
-          botTranslation: 'Acabamos de ver «Casa de Bonecas» no Teatro Nacional. O que você achou do final, quando a Nora vai embora?',
+          bot: 'Vi har akkurat sett “Et dukkehjem” på Nationaltheatret. Hva syntes du om slutten, da Nora går?',
+          botTranslation: 'Acabamos de ver “Casa de Bonecas” no Teatro Nacional. O que você achou do final, quando a Nora vai embora?',
           expected: [
             'Jeg syntes slutten var sterk. Nora forlater hjemmet fordi hun vil finne sannheten om seg selv, og det må ha vært sjokkerende for publikum i 1879.',
             'sannheten',
             'forlater',
             'må ha vært',
           ],
-          hint: 'Dê a sua opinião no passado (syntes), explique a decisão da Nora com «fordi» e pense no público da época com «det må ha vært».',
+          hint: 'Dê a sua opinião no passado (syntes), explique a decisão da Nora com “fordi” e pense no público da época com “det må ha vært”.',
         },
-        communityPrompt: 'Escreva em norueguês 5 frases sobre uma peça ou um filme que você viu, usando o pretérito, uma subordinada com «fordi» e um modal no passado («det må ha vært…»).',
+        communityPrompt: 'Escreva em norueguês 5 frases sobre uma peça ou um filme que você viu, usando o pretérito, uma subordinada com “fordi” e um modal no passado (“det må ha vært…”).',
       },
       {
         id: 'nb-u15-l2',
@@ -2079,24 +2079,24 @@ export const UNITS_NB: UnitSeed[] = [
             translation: 'O hino nacional de Bjørnson é cantado no país inteiro no dia nacional.',
           },
           {
-            sentence: '«Kristin Lavransdatter» handler om ___, tro og skyld i middelalderen.',
+            sentence: '“Kristin Lavransdatter” handler om ___, tro og skyld i middelalderen.',
             answer: 'kjærlighet',
             options: ['kjærlighet', 'kjærlig', 'elske'],
-            translation: '«Kristin Lavransdatter» fala de amor, fé e culpa na Idade Média.',
+            translation: '“Kristin Lavransdatter” fala de amor, fé e culpa na Idade Média.',
           },
         ],
         voice: {
           bot: 'Hvem av de norske klassikerne ville du lese først, og hvorfor?',
           botTranslation: 'Qual dos clássicos noruegueses você leria primeiro, e por quê?',
           expected: [
-            'Jeg ville lese Sigrid Undset først, fordi «Kristin Lavransdatter» handler om kjærlighet og slekt i middelalderen. Dessuten fikk hun nobelprisen i 1928.',
+            'Jeg ville lese Sigrid Undset først, fordi “Kristin Lavransdatter” handler om kjærlighet og slekt i middelalderen. Dessuten fikk hun nobelprisen i 1928.',
             'Sigrid Undset',
             'fordi',
             'nobelprisen',
           ],
-          hint: 'Escolha um autor, justifique com «fordi» e acrescente um fato com «dessuten» (e a inversão).',
+          hint: 'Escolha um autor, justifique com “fordi” e acrescente um fato com “dessuten” (e a inversão).',
         },
-        communityPrompt: 'Escreva em norueguês 5 frases comparando Bjørnson e Undset: época, temas e prêmios. Use pelo menos um comparativo e uma oração relativa com «som».',
+        communityPrompt: 'Escreva em norueguês 5 frases comparando Bjørnson e Undset: época, temas e prêmios. Use pelo menos um comparativo e uma oração relativa com “som”.',
       },
       {
         id: 'nb-u15-l3',
@@ -2105,10 +2105,10 @@ export const UNITS_NB: UnitSeed[] = [
         words: ['borte bra, men hjemme best', 'bedre sent enn aldri', 'ingen røyk uten ild', 'det finnes ikke dårlig vær, bare dårlige klær', 'gammeldags', 'stave'],
         cloze: [
           {
-            sentence: 'Før 1907 skrev man «bog»; i dag skriver vi «___».',
+            sentence: 'Før 1907 skrev man “bog”; i dag skriver vi “___”.',
             answer: 'bok',
             options: ['bok', 'bog', 'bokk'],
-            translation: 'Antes de 1907 se escrevia «bog»; hoje escrevemos «bok» (livro).',
+            translation: 'Antes de 1907 se escrevia “bog”; hoje escrevemos “bok” (livro).',
           },
           {
             sentence: 'Du kom for sent, men bedre sent enn ___!',
@@ -2127,7 +2127,7 @@ export const UNITS_NB: UnitSeed[] = [
           bot: 'Du kom en time for sent til middagen, men du tok med kake! Har du et norsk ordtak for det?',
           botTranslation: 'Você chegou uma hora atrasado para o jantar, mas trouxe bolo! Tem algum provérbio norueguês para isso?',
           expected: [
-            'Bedre sent enn aldri! Og nå skjønner jeg hvorfor folk sier «borte bra, men hjemme best»: her er det så koselig.',
+            'Bedre sent enn aldri! Og nå skjønner jeg hvorfor folk sier “borte bra, men hjemme best”: her er det så koselig.',
             'bedre sent enn aldri',
             'borte bra',
             'koselig',
@@ -2146,7 +2146,7 @@ export const UNITS_NB: UnitSeed[] = [
           bot: 'Du skal holde en kort tale om norsk litteratur på 17. mai. Hvordan begynner du?',
           botTranslation: 'Você vai fazer um discurso curto sobre literatura norueguesa no 17 de maio. Como você começa?',
           expected: [
-            'Kjære alle sammen! I dag feirer vi Grunnloven, og da passer det å minnes Bjørnson, som skrev «Ja, vi elsker dette landet». Ibsen lærte oss å stille spørsmål, og Sigrid Undset førte oss tilbake til middelalderen. Litteraturen har formet språket vårt, helt fra «bog» til «bok».',
+            'Kjære alle sammen! I dag feirer vi Grunnloven, og da passer det å minnes Bjørnson, som skrev “Ja, vi elsker dette landet”. Ibsen lærte oss å stille spørsmål, og Sigrid Undset førte oss tilbake til middelalderen. Litteraturen har formet språket vårt, helt fra “bog” til “bok”.',
             'Bjørnson',
             'Ibsen',
             'Sigrid Undset',

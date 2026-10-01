@@ -26,7 +26,7 @@ export const ROWS: VocabRow[] = [
   ['baiskeli', 'bicicleta', 'substantivo', 'Viagens e Transporte', '🚲', 'Ninakwenda kazini kwa baiskeli.'],
   ['pikipiki', 'moto, motocicleta', 'substantivo', 'Viagens e Transporte', '🏍️', 'Pikipiki yake ni mpya.'],
   ['bodaboda', 'mototáxi', 'substantivo', 'Viagens e Transporte', '🏍️', 'Tulipanda bodaboda mpaka sokoni.'],
-  ['bajaji', 'triciclo motorizado de aluguel (o «tuk-tuk»)', 'substantivo', 'Viagens e Transporte', '🛺', 'Bajaji ni rahisi kuliko teksi.'],
+  ['bajaji', 'triciclo motorizado de aluguel (o “tuk-tuk”)', 'substantivo', 'Viagens e Transporte', '🛺', 'Bajaji ni rahisi kuliko teksi.'],
   ['matatu', 'micro-ônibus coletivo (Quênia)', 'substantivo', 'Viagens e Transporte', '🚐', 'Matatu ilikuwa imejaa watu.'],
   ['mashua', 'barco (pl. mashua)', 'substantivo', 'Viagens e Transporte', '⛵', 'Tulivuka kwa mashua kwenda kisiwani.'],
   ['boti', 'bote, lancha', 'substantivo', 'Viagens e Transporte', '🚤', 'Boti ya Zanzibar inaondoka saa tatu.'],

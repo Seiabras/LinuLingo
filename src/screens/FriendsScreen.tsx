@@ -59,7 +59,7 @@ function FriendCard({ a }: { a: AmigoLinu }) {
         </View>
       </View>
       <View className="rounded-xl bg-sky-50 px-3 py-2 dark:bg-sky-950/40">
-        <Text className="text-sm leading-5 text-slate-800 dark:text-slate-200">«{a.hi}»</Text>
+        <Text className="text-sm leading-5 text-slate-800 dark:text-slate-200">“{a.hi}”</Text>
       </View>
       <View className="flex-row flex-wrap gap-1.5">
         <Chip label={`📏 ${a.size}`} tone="blue" />

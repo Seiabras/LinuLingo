@@ -52,7 +52,7 @@ export const ETYMOLOGY_ID: EtymologySeed[] = [
     root_word: 'qahwa (árabe) → koffie (holandês)',
     origin_language: 'Árabe, via holandês',
     cognates: c(['pt', 'café'], ['en', 'coffee'], ['nl', 'koffie']),
-    evolution_note: 'Assim como o português «café», o indonésio «kopi» vem, por outro caminho, da mesma raiz árabe «qahwa» — nesse caso via o holandês «koffie», herança do período colonial neerlandês na Indonésia.',
+    evolution_note: 'Assim como o português “café”, o indonésio “kopi” vem, por outro caminho, da mesma raiz árabe “qahwa” — nesse caso via o holandês “koffie”, herança do período colonial neerlandês na Indonésia.',
     transparent: true,
   },
   {
@@ -60,7 +60,7 @@ export const ETYMOLOGY_ID: EtymologySeed[] = [
     root_word: 'angur (persa)',
     origin_language: 'Persa',
     cognates: c(['pt', 'uva/vinho (sem cognato direto)']),
-    evolution_note: 'Do persa «angur» (uva), «anggur» chegou ao malaio/indonésio pelas rotas de comércio do Oceano Índico e hoje significa tanto «uva» quanto «vinho».',
+    evolution_note: 'Do persa “angur” (uva), “anggur” chegou ao malaio/indonésio pelas rotas de comércio do Oceano Índico e hoje significa tanto “uva” quanto “vinho”.',
     transparent: false,
   },
 ];

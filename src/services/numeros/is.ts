@@ -289,7 +289,7 @@ function ordinalIs(n: number, antes: string, depois: string): string {
   const prep = prepBefore(antes);
   if (w && MONTHS.includes(w)) {
     // a data é nominativa no começo e depois de «er», «var»…; como adjunto, acusativo (stofnað 17. júní)
-    const nominativa = /^[\s«"(]*$|[.!?:]\s*$/.test(antes) || /^(er|var|eru|voru|verður|verða|væri|sé)$/.test(prep);
+    const nominativa = /^[\s“"(]*$|[.!?:]\s*$/.test(antes) || /^(er|var|eru|voru|verður|verða|væri|sé)$/.test(prep);
     const c: Case = nominativa ? 'nom' : GEN_PREP.has(prep) ? 'gen' : DAT_PREP.has(prep) ? 'dat' : 'acc';
     return icelandicOrdinal(n, { g: 'm', c });
   }

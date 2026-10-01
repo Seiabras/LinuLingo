@@ -17,11 +17,11 @@ export const UNITS_ES: UnitSeed[] = [
       title: 'Parece português, mas não é',
       emoji: '🗣️',
       history:
-        'Espanhol e português são primos, e o brasileiro entende muita coisa logo de cara. O perigo está no que parece igual: «exquisito» quer dizer delicioso, «embarazada» quer dizer grávida e «oficina» quer dizer escritório. As duas línguas vêm do latim falado na Península Ibérica; o castelhano nasceu no norte, no reino de Castela, e se espalhou para o sul e, depois de 1492, para a América. Nesse mesmo ano, Antonio de Nebrija publicou a «Gramática castellana», uma das primeiras gramáticas de uma língua europeia moderna. Hoje o espanhol é língua oficial em cerca de 20 países, e o México é o país com mais falantes.',
+        'Espanhol e português são primos, e o brasileiro entende muita coisa logo de cara. O perigo está no que parece igual: “exquisito” quer dizer delicioso, “embarazada” quer dizer grávida e “oficina” quer dizer escritório. As duas línguas vêm do latim falado na Península Ibérica; o castelhano nasceu no norte, no reino de Castela, e se espalhou para o sul e, depois de 1492, para a América. Nesse mesmo ano, Antonio de Nebrija publicou a “Gramática castellana”, uma das primeiras gramáticas de uma língua europeia moderna. Hoje o espanhol é língua oficial em cerca de 20 países, e o México é o país com mais falantes.',
       culture_tip:
-        'Para cumprimentar, «¡Hola!» serve para quase tudo, e «¡Buenos días!», «¡Buenas tardes!» e «¡Buenas noches!» soam mais educados. Em boa parte da América Latina, entre conhecidos, o cumprimento é um beijo só no rosto; na Espanha são dois. Com pessoas mais velhas e desconhecidos, use «usted»; e, para falar com um grupo, a América Latina usa «ustedes», seja com amigos ou com estranhos.',
+        'Para cumprimentar, “¡Hola!” serve para quase tudo, e “¡Buenos días!”, “¡Buenas tardes!” e “¡Buenas noches!” soam mais educados. Em boa parte da América Latina, entre conhecidos, o cumprimento é um beijo só no rosto; na Espanha são dois. Com pessoas mais velhas e desconhecidos, use “usted”; e, para falar com um grupo, a América Latina usa “ustedes”, seja com amigos ou com estranhos.',
       grammar_why:
-        'O verbo «ser» se conjuga quase como em português, mas com formas próprias: yo soy, tú eres, él / ella / usted es. «Usted» (o senhor / a senhora) usa o verbo na 3ª pessoa, como o nosso «você». Os artigos são el, la, los, las, e o acento muda o sentido: «él» é o pronome ele, «el» é o artigo o. Outra diferença: o nome do país vem sem artigo, então se diz «Soy de Brasil», e não «Soy del Brasil». E cuidado com o «tú» com acento (você) e o «tu» sem acento (seu, teu).',
+        'O verbo “ser” se conjuga quase como em português, mas com formas próprias: yo soy, tú eres, él / ella / usted es. “Usted” (o senhor / a senhora) usa o verbo na 3ª pessoa, como o nosso “você”. Os artigos são el, la, los, las, e o acento muda o sentido: “él” é o pronome ele, “el” é o artigo o. Outra diferença: o nome do país vem sem artigo, então se diz “Soy de Brasil”, e não “Soy del Brasil”. E cuidado com o “tú” com acento (você) e o “tu” sem acento (seu, teu).',
       grammar_examples: [
         ['Yo soy de Brasil.', 'Eu sou do Brasil.'],
         ['¿Tú eres de Chile?', 'Você é do Chile?'],
@@ -29,20 +29,20 @@ export const UNITS_ES: UnitSeed[] = [
         ['Él es el hermano de Ana.', 'Ele é o irmão da Ana.'],
       ],
       character_guide: [
-        ['ll, y', 'na maior parte da América Latina, um «i» forte, quase o «dj» de «adjetivo»; no Rio da Prata, soa como o «ch» de «chá» ou o «j» de «já»', 'llave, yo, playa'],
-        ['ñ', '«nh» de «banho»', 'niño, año, mañana'],
-        ['j', 'som raspado na garganta, como o «r» de «rato» no sotaque carioca; nunca o «j» de «já»', 'jugo, joven, ojo'],
-        ['g + e, i', 'o mesmo som raspado do j; já «gue» e «gui» soam como em português', 'gente, girar'],
+        ['ll, y', 'na maior parte da América Latina, um “i” forte, quase o “dj” de “adjetivo”; no Rio da Prata, soa como o “ch” de “chá” ou o “j” de “já”', 'llave, yo, playa'],
+        ['ñ', '“nh” de “banho”', 'niño, año, mañana'],
+        ['j', 'som raspado na garganta, como o “r” de “rato” no sotaque carioca; nunca o “j” de “já”', 'jugo, joven, ojo'],
+        ['g + e, i', 'o mesmo som raspado do j; já “gue” e “gui” soam como em português', 'gente, girar'],
         ['h', 'muda, sempre: nunca se pronuncia', 'hola, hombre, huevo'],
-        ['b, v', 'o mesmo som, um «b»; entre vogais, bem suave, sem fechar os lábios de todo', 'vaca, vaso, beber'],
-        ['z, c + e, i', 'na América Latina, «s» (o seseo); na Espanha, a ponta da língua entre os dentes, como o «th» do inglês «think»', 'zapato, cena, cine'],
-        ['rr, r inicial', '«r» vibrante: a ponta da língua treme várias vezes; nunca raspado na garganta', 'perro, carro, rico'],
-        ['r entre vogais', '«r» fraco de «caro»: um toque só da língua («caro» e «carro» são palavras diferentes)', 'pero, caro'],
-        ['ch', '«tch» de «tchau»', 'mucho, noche'],
-        ['s', 'sempre o «s» de «sapo», mesmo entre vogais: «casa» soa como «cassa»', 'casa, mesa'],
-        ['e, o finais', 'nunca viram «i» e «u» como no português: «noche» termina em «e», «como» termina em «o»', 'noche, como'],
-        ['á é í ó ú', 'o único acento gráfico é o agudo e marca a sílaba tônica; não há ^ nem ~. As vogais são só cinco, sem «é» aberto nem «ó» aberto', 'café, está, lápiz'],
-        ['él, tú, sí', 'o acento também separa palavras: «él» (ele) × «el» (o), «tú» (você) × «tu» (seu), «sí» (sim) × «si» (se)', 'Sí, él es mi amigo.'],
+        ['b, v', 'o mesmo som, um “b”; entre vogais, bem suave, sem fechar os lábios de todo', 'vaca, vaso, beber'],
+        ['z, c + e, i', 'na América Latina, “s” (o seseo); na Espanha, a ponta da língua entre os dentes, como o “th” do inglês “think”', 'zapato, cena, cine'],
+        ['rr, r inicial', '“r” vibrante: a ponta da língua treme várias vezes; nunca raspado na garganta', 'perro, carro, rico'],
+        ['r entre vogais', '“r” fraco de “caro”: um toque só da língua (“caro” e “carro” são palavras diferentes)', 'pero, caro'],
+        ['ch', '“tch” de “tchau”', 'mucho, noche'],
+        ['s', 'sempre o “s” de “sapo”, mesmo entre vogais: “casa” soa como “cassa”', 'casa, mesa'],
+        ['e, o finais', 'nunca viram “i” e “u” como no português: “noche” termina em “e”, “como” termina em “o”', 'noche, como'],
+        ['á é í ó ú', 'o único acento gráfico é o agudo e marca a sílaba tônica; não há ^ nem ~. As vogais são só cinco, sem “é” aberto nem “ó” aberto', 'café, está, lápiz'],
+        ['él, tú, sí', 'o acento também separa palavras: “él” (ele) × “el” (o), “tú” (você) × “tu” (seu), “sí” (sim) × “si” (se)', 'Sí, él es mi amigo.'],
       ],
     },
     lessons: [
@@ -60,9 +60,9 @@ export const UNITS_ES: UnitSeed[] = [
           bot: '¡Hola! ¿Qué tal?',
           botTranslation: 'Oi! Tudo bem?',
           expected: ['¡Muy bien, gracias! ¿Y tú?', 'muy bien', 'gracias', 'bien'],
-          hint: 'Diga que está bem e agradeça: «¡Muy bien, gracias!». Lembre que o «h» de «hola» é mudo.',
+          hint: 'Diga que está bem e agradeça: “¡Muy bien, gracias!”. Lembre que o “h” de “hola” é mudo.',
         },
-        communityPrompt: 'Cumprimente um amigo com «¡Hola! ¿Qué tal?» e uma senhora com «¡Buenas tardes!», cada um de acordo com a hora do dia.',
+        communityPrompt: 'Cumprimente um amigo com “¡Hola! ¿Qué tal?” e uma senhora com “¡Buenas tardes!”, cada um de acordo com a hora do dia.',
       },
       {
         id: 'es-u1-l2',
@@ -78,9 +78,9 @@ export const UNITS_ES: UnitSeed[] = [
           bot: '¿Cómo te llamas? ¿De dónde eres?',
           botTranslation: 'Como você se chama? De onde você é?',
           expected: ['Me llamo Ana y soy de Brasil.', 'me llamo', 'soy de Brasil', 'soy brasileño', 'soy brasileña'],
-          hint: 'Comece com «Me llamo…» e diga «Soy de Brasil», sem artigo antes do país.',
+          hint: 'Comece com “Me llamo…” e diga “Soy de Brasil”, sem artigo antes do país.',
         },
-        communityPrompt: 'Apresente-se com «Me llamo… Soy de…» e apresente um amigo com «Él es…» ou «Ella es…».',
+        communityPrompt: 'Apresente-se com “Me llamo… Soy de…” e apresente um amigo com “Él es…” ou “Ella es…”.',
       },
       {
         id: 'es-u1-l3',
@@ -96,9 +96,9 @@ export const UNITS_ES: UnitSeed[] = [
           bot: 'Hola, me llamo Diego. ¡Mucho gusto!',
           botTranslation: 'Oi, eu me chamo Diego. Muito prazer!',
           expected: ['¡Mucho gusto, Diego! Me llamo Paula.', 'mucho gusto', 'encantado', 'encantada', 'me llamo'],
-          hint: 'O «ch» de «mucho» é o «tch» de «tchau», e o «ll» de «llamo» é um «i» forte. O «o» final fica «o», sem virar «u».',
+          hint: 'O “ch” de “mucho” é o “tch” de “tchau”, e o “ll” de “llamo” é um “i” forte. O “o” final fica “o”, sem virar “u”.',
         },
-        communityPrompt: 'Escreva um diálogo curto: alguém se apresenta, você não entende e pede «¿Puede repetir?», e no fim diz «Mucho gusto».',
+        communityPrompt: 'Escreva um diálogo curto: alguém se apresenta, você não entende e pede “¿Puede repetir?”, e no fim diz “Mucho gusto”.',
       },
       {
         id: 'es-u1-p',
@@ -116,7 +116,7 @@ export const UNITS_ES: UnitSeed[] = [
             'soy de Brasil',
             'mucho gusto',
           ],
-          hint: 'Cumprimente, diga seu nome com «Me llamo…», negue com «No, no soy de…» e diga de onde você é.',
+          hint: 'Cumprimente, diga seu nome com “Me llamo…”, negue com “No, no soy de…” e diga de onde você é.',
         },
         communityPrompt: 'Escreva uma apresentação completa: cumprimento de acordo com a hora, nome, de onde você é, de onde é um amigo seu (él / ella es…) e despedida.',
       },
@@ -133,11 +133,11 @@ export const UNITS_ES: UnitSeed[] = [
       title: 'La leche, la sal, la miel: o gênero que engana',
       emoji: '🍯',
       history:
-        'Muitos alimentos que hoje estão em toda cozinha nasceram nas Américas: o tomate, o milho, a batata, o cacau e o abacate. Várias dessas palavras entraram no espanhol a partir de línguas indígenas: «tomate» vem do náhuatl «tomatl», «aguacate» do náhuatl «ahuacatl», e «papa» (batata) do quíchua. Os cronistas espanhóis do século XVI se impressionaram com o tamanho do mercado de Tlatelolco, na capital asteca. Até hoje, no México, a feira de rua se chama «tianguis», palavra que também vem do náhuatl.',
+        'Muitos alimentos que hoje estão em toda cozinha nasceram nas Américas: o tomate, o milho, a batata, o cacau e o abacate. Várias dessas palavras entraram no espanhol a partir de línguas indígenas: “tomate” vem do náhuatl “tomatl”, “aguacate” do náhuatl “ahuacatl”, e “papa” (batata) do quíchua. Os cronistas espanhóis do século XVI se impressionaram com o tamanho do mercado de Tlatelolco, na capital asteca. Até hoje, no México, a feira de rua se chama “tianguis”, palavra que também vem do náhuatl.',
       culture_tip:
-        'No mercado, peça com «¿Me da un kilo de tomates, por favor?» e pergunte o preço com «¿Cuánto cuesta?». Nos Andes e em partes da Argentina, o vendedor às vezes dá um pouquinho a mais de brinde: é a «yapa», palavra de origem quíchua; na Colômbia e na Venezuela, se diz «ñapa». E, se você disser que a comida é «exquisita», é elogio: quer dizer deliciosa.',
+        'No mercado, peça com “¿Me da un kilo de tomates, por favor?” e pergunte o preço com “¿Cuánto cuesta?”. Nos Andes e em partes da Argentina, o vendedor às vezes dá um pouquinho a mais de brinde: é a “yapa”, palavra de origem quíchua; na Colômbia e na Venezuela, se diz “ñapa”. E, se você disser que a comida é “exquisita”, é elogio: quer dizer deliciosa.',
       grammar_why:
-        'O presente regular tem três grupos: -ar (compro, compras, compra), -er (como, comes, come) e -ir (vivo, vives, vive); no plural, «nosotros compramos, comemos, vivimos», e nada de «vivemos». Alguns substantivos mudam de gênero em relação ao português: la leche, la sal, la miel, mas el árbol; e o adjetivo acompanha: «la leche fría», «la miel rica». Para dizer que existe algo, use «hay», nunca «tiene»: «Hay pan» é «Tem pão». «Tener» serve para posse e também para fome e sede: «tengo hambre» é «estou com fome». E «gustar» funciona ao contrário: a coisa é o sujeito, então «me gusta el pan», mas «me gustan las frutas».',
+        'O presente regular tem três grupos: -ar (compro, compras, compra), -er (como, comes, come) e -ir (vivo, vives, vive); no plural, “nosotros compramos, comemos, vivimos”, e nada de “vivemos”. Alguns substantivos mudam de gênero em relação ao português: la leche, la sal, la miel, mas el árbol; e o adjetivo acompanha: “la leche fría”, “la miel rica”. Para dizer que existe algo, use “hay”, nunca “tiene”: “Hay pan” é “Tem pão”. “Tener” serve para posse e também para fome e sede: “tengo hambre” é “estou com fome”. E “gustar” funciona ao contrário: a coisa é o sujeito, então “me gusta el pan”, mas “me gustan las frutas”.',
       grammar_examples: [
         ['Compro la leche, la sal y la miel en el mercado.', 'Compro o leite, o sal e o mel no mercado.'],
         ['Me gusta el pan, pero me gustan más las frutas.', 'Gosto de pão, mas gosto mais de frutas.'],
@@ -161,9 +161,9 @@ export const UNITS_ES: UnitSeed[] = [
           bot: '¡Buenos días! ¿Qué necesita?',
           botTranslation: 'Bom dia! Do que o senhor precisa?',
           expected: ['Un kilo de tomates y dos manzanas, por favor.', 'un kilo de', 'por favor', 'manzanas', 'tomates'],
-          hint: 'Peça a quantidade com «un kilo de…» e termine com «por favor».',
+          hint: 'Peça a quantidade com “un kilo de…” e termine com “por favor”.',
         },
-        communityPrompt: 'Escreva sua lista da feira com «hay» e «no hay»: o que tem e o que falta em casa.',
+        communityPrompt: 'Escreva sua lista da feira com “hay” e “no hay”: o que tem e o que falta em casa.',
       },
       {
         id: 'es-u2-l2',
@@ -179,9 +179,9 @@ export const UNITS_ES: UnitSeed[] = [
           bot: '¿Qué desayunas normalmente?',
           botTranslation: 'O que você costuma tomar no café da manhã?',
           expected: ['Desayuno pan con miel y café con leche.', 'desayuno', 'pan', 'café con leche', 'huevos'],
-          hint: 'Comece com «Desayuno…» (presente regular) e cuidado: «la miel», «la leche».',
+          hint: 'Comece com “Desayuno…” (presente regular) e cuidado: “la miel”, “la leche”.',
         },
-        communityPrompt: 'Escreva 3 frases com «la leche», «la sal» e «la miel», cada uma com um adjetivo no feminino.',
+        communityPrompt: 'Escreva 3 frases com “la leche”, “la sal” e “la miel”, cada uma com um adjetivo no feminino.',
       },
       {
         id: 'es-u2-l3',
@@ -197,9 +197,9 @@ export const UNITS_ES: UnitSeed[] = [
           bot: '¿Qué te gusta comer? ¿Cocinas en casa?',
           botTranslation: 'O que você gosta de comer? Você cozinha em casa?',
           expected: ['Me gusta mucho el arroz con pollo y cocino en casa.', 'me gusta', 'me gustan', 'cocino'],
-          hint: 'Use «me gusta» com singular e «me gustan» com plural; para cozinhar, «cocino».',
+          hint: 'Use “me gusta” com singular e “me gustan” com plural; para cozinhar, “cocino”.',
         },
-        communityPrompt: 'Escreva do que você gosta e do que não gosta de comer, com pelo menos um «me gusta» e um «me gustan».',
+        communityPrompt: 'Escreva do que você gosta e do que não gosta de comer, com pelo menos um “me gusta” e um “me gustan”.',
       },
       {
         id: 'es-u2-p',
@@ -217,7 +217,7 @@ export const UNITS_ES: UnitSeed[] = [
             'me gusta',
             'me gustan',
           ],
-          hint: 'Diga o que existe com «hay» (e o que falta com «no hay») e do que você gosta com «me gusta / me gustan».',
+          hint: 'Diga o que existe com “hay” (e o que falta com “no hay”) e do que você gosta com “me gusta / me gustan”.',
         },
         communityPrompt: 'Descreva uma refeição na sua casa: o que tem (hay), quem cozinha (presente regular), do que cada um gosta e se alguém tem fome.',
       },
@@ -234,11 +234,11 @@ export const UNITS_ES: UnitSeed[] = [
       title: 'Bogotá: calles, carreras e 2.600 metros de altitude',
       emoji: '🏙️',
       history:
-        'Bogotá foi fundada em 1538 por Gonzalo Jiménez de Quesada e fica num planalto dos Andes, a cerca de 2.600 metros de altitude, por isso faz frio o ano inteiro. O centro histórico é o bairro de La Candelaria, com casas coloniais, a Plaza de Bolívar e o Museo del Oro, que guarda milhares de peças de ourivesaria pré-hispânica. A leste da cidade fica o cerro de Monserrate, a mais de 3.100 metros, com uma igreja no topo e uma vista de toda a cidade. Desde 1974, aos domingos e feriados, várias avenidas fecham para os carros e viram a «Ciclovía», cheia de bicicletas e pedestres.',
+        'Bogotá foi fundada em 1538 por Gonzalo Jiménez de Quesada e fica num planalto dos Andes, a cerca de 2.600 metros de altitude, por isso faz frio o ano inteiro. O centro histórico é o bairro de La Candelaria, com casas coloniais, a Plaza de Bolívar e o Museo del Oro, que guarda milhares de peças de ourivesaria pré-hispânica. A leste da cidade fica o cerro de Monserrate, a mais de 3.100 metros, com uma igreja no topo e uma vista de toda a cidade. Desde 1974, aos domingos e feriados, várias avenidas fecham para os carros e viram a “Ciclovía”, cheia de bicicletas e pedestres.',
       culture_tip:
-        'Em Bogotá, as «calles» cortam a cidade de leste a oeste e as «carreras» de norte a sul, e o endereço já diz onde fica o lugar: «Carrera 7 # 22-10» é na Carrera 7, perto da Calle 22. Para pedir alguma coisa, os colombianos dizem «¿Me regala un café?», e isso não é pedir de graça: é só um jeito educado de pedir. Muitos bogotanos tratam por «usted» até amigos e parentes.',
+        'Em Bogotá, as “calles” cortam a cidade de leste a oeste e as “carreras” de norte a sul, e o endereço já diz onde fica o lugar: “Carrera 7 # 22-10” é na Carrera 7, perto da Calle 22. Para pedir alguma coisa, os colombianos dizem “¿Me regala un café?”, e isso não é pedir de graça: é só um jeito educado de pedir. Muitos bogotanos tratam por “usted” até amigos e parentes.',
       grammar_why:
-        '«Ser» é para o que a coisa é: identidade, origem, característica («Bogotá es grande»). «Estar» é para estados e para onde algo fica: «el museo está en el centro», onde o português diria «fica». No presente irregular, a vogal da raiz muda quando é tônica: e>ie (quiero), o>ue (puedo, cuesta), e>i (sigo, pido); e alguns verbos só mudam no «yo»: hago, salgo, conozco, sé. O pretérito perfecto se forma com «haber» + particípio: «he visitado», «has subido»; nunca com «tener», porque «tengo visitado» não existe em espanhol. Na América Latina ele aparece sobretudo para experiências e para o que ainda está em aberto: «¿Has estado en Bogotá?», «Todavía no he visto la catedral».',
+        '“Ser” é para o que a coisa é: identidade, origem, característica (“Bogotá es grande”). “Estar” é para estados e para onde algo fica: “el museo está en el centro”, onde o português diria “fica”. No presente irregular, a vogal da raiz muda quando é tônica: e>ie (quiero), o>ue (puedo, cuesta), e>i (sigo, pido); e alguns verbos só mudam no “yo”: hago, salgo, conozco, sé. O pretérito perfecto se forma com “haber” + particípio: “he visitado”, “has subido”; nunca com “tener”, porque “tengo visitado” não existe em espanhol. Na América Latina ele aparece sobretudo para experiências e para o que ainda está em aberto: “¿Has estado en Bogotá?”, “Todavía no he visto la catedral”.',
       grammar_examples: [
         ['La Candelaria es un barrio antiguo y está en el centro.', 'La Candelaria é um bairro antigo e fica no centro.'],
         ['Hoy estoy cansado, pero Bogotá es muy bonita.', 'Hoje estou cansado, mas Bogotá é muito bonita.'],
@@ -262,9 +262,9 @@ export const UNITS_ES: UnitSeed[] = [
           bot: '¿Cómo es tu barrio? ¿Dónde está?',
           botTranslation: 'Como é o seu bairro? Onde ele fica?',
           expected: ['Mi barrio es tranquilo y está cerca del centro.', 'es tranquilo', 'está cerca', 'está lejos', 'mi barrio es'],
-          hint: 'Use «ser» para como o bairro é e «estar» para onde ele fica: «es tranquilo», «está cerca del centro».',
+          hint: 'Use “ser” para como o bairro é e “estar” para onde ele fica: “es tranquilo”, “está cerca del centro”.',
         },
-        communityPrompt: 'Descreva o seu bairro em 3 frases: uma com «es», uma com «está en / está cerca de» e uma com «hoy está…».',
+        communityPrompt: 'Descreva o seu bairro em 3 frases: uma com “es”, uma com “está en / está cerca de” e uma com “hoy está…”.',
       },
       {
         id: 'es-u3-l2',
@@ -280,9 +280,9 @@ export const UNITS_ES: UnitSeed[] = [
           bot: 'Disculpe, ¿dónde está la Plaza de Bolívar?',
           botTranslation: 'Com licença, onde fica a Plaza de Bolívar?',
           expected: ['Sigue derecho tres cuadras y dobla a la derecha en la esquina.', 'sigue derecho', 'dobla a la derecha', 'dobla a la izquierda', 'cuadras'],
-          hint: 'Dê a direção no presente, tratando por «usted»: «Sigue derecho… y dobla a la derecha».',
+          hint: 'Dê a direção no presente, tratando por “usted”: “Sigue derecho… y dobla a la derecha”.',
         },
-        communityPrompt: 'Explique o caminho da sua casa até a padaria mais próxima, no presente: «Salgo de casa, sigo derecho, doblo…».',
+        communityPrompt: 'Explique o caminho da sua casa até a padaria mais próxima, no presente: “Salgo de casa, sigo derecho, doblo…”.',
       },
       {
         id: 'es-u3-l3',
@@ -298,9 +298,9 @@ export const UNITS_ES: UnitSeed[] = [
           bot: '¿Qué has visitado hoy en Bogotá?',
           botTranslation: 'O que você visitou hoje em Bogotá?',
           expected: ['Hoy he visitado el Museo del Oro y he subido a Monserrate.', 'he visitado', 'he subido', 'he visto', 'hemos visitado'],
-          hint: 'Responda com «he» + particípio: «he visitado», «he subido», «he visto».',
+          hint: 'Responda com “he” + particípio: “he visitado”, “he subido”, “he visto”.',
         },
-        communityPrompt: 'Conte 3 coisas que você já fez na sua cidade esta semana e 1 que ainda não fez, com o pretérito perfecto («he…», «todavía no he…»).',
+        communityPrompt: 'Conte 3 coisas que você já fez na sua cidade esta semana e 1 que ainda não fez, com o pretérito perfecto (“he…”, “todavía no he…”).',
       },
       {
         id: 'es-u3-p',
@@ -319,7 +319,7 @@ export const UNITS_ES: UnitSeed[] = [
             'estoy cansada',
             'quiero ir',
           ],
-          hint: 'Junte tudo: o que você já visitou («he visitado»), como a cidade é («es») e como você está («estoy»), e aonde quer ir («quiero ir»).',
+          hint: 'Junte tudo: o que você já visitou (“he visitado”), como a cidade é (“es”) e como você está (“estoy”), e aonde quer ir (“quiero ir”).',
         },
         communityPrompt: 'Escreva um cartão-postal de uma cidade latino-americana: o que você já visitou (pretérito perfecto), como a cidade é e onde ficam os lugares (ser × estar) e o que quer fazer amanhã (quiero, puedo).',
       },
@@ -340,7 +340,7 @@ export const UNITS_ES: UnitSeed[] = [
       culture_tip:
         'Não é um dia triste: é reencontro de família, com comida, música e histórias dos que já se foram. Se alguém te mostrar a ofrenda de casa, elogie e não pegue nada dela: a comida é dos visitantes do além. Nos cemitérios, muitas famílias passam a noite junto aos túmulos, limpando, enfeitando e conversando.',
       grammar_why:
-        'Para contar a festa do ano passado, o espanhol usa o pretérito indefinido, bem parecido com o nosso: comí (comi), fui (fui), hicimos (fizemos); na América Latina ele vale até para «hoje»: «Hoy comí mucho». Para o futuro próximo, «ir a + infinitivo» — e aqui está a armadilha do brasileiro: o «a» é obrigatório, «voy a cocinar», nunca «voy cocinar». Nas comparações: «más… que», «menos… que», «tan… como» (tão… quanto), e os irregulares mejor, peor, mayor, menor. Por fim, o objeto direto: onde o Brasil diz «vi ela», o espanhol usa lo/la antes do verbo conjugado («la vi») ou grudado no infinitivo («voy a verla»); «vi ella» não existe.',
+        'Para contar a festa do ano passado, o espanhol usa o pretérito indefinido, bem parecido com o nosso: comí (comi), fui (fui), hicimos (fizemos); na América Latina ele vale até para “hoje”: “Hoy comí mucho”. Para o futuro próximo, “ir a + infinitivo” — e aqui está a armadilha do brasileiro: o “a” é obrigatório, “voy a cocinar”, nunca “voy cocinar”. Nas comparações: “más… que”, “menos… que”, “tan… como” (tão… quanto), e os irregulares mejor, peor, mayor, menor. Por fim, o objeto direto: onde o Brasil diz “vi ela”, o espanhol usa lo/la antes do verbo conjugado (“la vi”) ou grudado no infinitivo (“voy a verla”); “vi ella” não existe.',
       grammar_examples: [
         ['El año pasado fuimos a Oaxaca para el Día de Muertos.', 'No ano passado fomos a Oaxaca no Dia dos Mortos.'],
         ['Mañana vamos a poner la ofrenda.', 'Amanhã vamos montar a oferenda.'],
@@ -379,7 +379,7 @@ export const UNITS_ES: UnitSeed[] = [
           bot: '¿Con quién pasaste el Día de Muertos?',
           botTranslation: 'Com quem você passou o Dia dos Mortos?',
           expected: ['Lo pasé con mi familia en casa de mis abuelos.', 'lo pasé', 'con mi familia', 'mis abuelos'],
-          hint: 'Comece com «Lo pasé con…» (Passei com…): o «lo» retoma o dia.',
+          hint: 'Comece com “Lo pasé con…” (Passei com…): o “lo” retoma o dia.',
         },
         communityPrompt: 'Conte em 3 frases o que sua família fez na última festa, usando o indefinido (fuimos, comimos, cantamos…).',
       },
@@ -412,9 +412,9 @@ export const UNITS_ES: UnitSeed[] = [
           bot: '¿Qué vas a poner en la ofrenda?',
           botTranslation: 'O que você vai colocar na oferenda?',
           expected: ['Voy a poner flores, velas y una foto de mi abuelo.', 'voy a poner', 'flores', 'velas', 'una foto'],
-          hint: 'Responda com «Voy a poner…» e não esqueça o «a» depois de «voy».',
+          hint: 'Responda com “Voy a poner…” e não esqueça o “a” depois de “voy”.',
         },
-        communityPrompt: 'Descreva em 3 frases a oferenda que você montaria para alguém querido, com «voy a…» e um pronome lo/la.',
+        communityPrompt: 'Descreva em 3 frases a oferenda que você montaria para alguém querido, com “voy a…” e um pronome lo/la.',
       },
       {
         id: 'es-u4-l3',
@@ -465,10 +465,10 @@ export const UNITS_ES: UnitSeed[] = [
             'voy a',
             'mis primos',
           ],
-          hint: 'Junte o indefinido (comí, fui, bailé) com «voy a + infinitivo».',
+          hint: 'Junte o indefinido (comí, fui, bailé) com “voy a + infinitivo”.',
         },
         communityPrompt:
-          'Compare duas festas da sua família (qual foi maior, mais divertida, melhor) em 4 ou 5 frases, usando o indefinido, «voy a…», um comparativo e um pronome lo/la.',
+          'Compare duas festas da sua família (qual foi maior, mais divertida, melhor) em 4 ou 5 frases, usando o indefinido, “voy a…”, um comparativo e um pronome lo/la.',
       },
     ],
   },
@@ -485,9 +485,9 @@ export const UNITS_ES: UnitSeed[] = [
       history:
         'Cusco foi a capital do Império Inca, o Tawantinsuyu, e fica a cerca de 3.400 metros de altitude. Machu Picchu foi construída no século XV, provavelmente como propriedade do inca Pachacútec, numa crista a uns 2.400 metros entre dois picos. Não há registro de que os espanhóis a tenham encontrado; ela ficou famosa no mundo em 1911, quando o explorador Hiram Bingham chegou lá guiado por camponeses da região. É Patrimônio Mundial da UNESCO desde 1983. O quéchua, língua dos incas, ainda é falado por milhões de pessoas e é cooficial no Peru.',
       culture_tip:
-        'O soroche (mal de altitude) é comum em Cusco: nos primeiros dias, ande devagar, beba bastante água e experimente o mate de coca, legal no Peru e servido em muitos hotéis. Os ingressos para Machu Picchu são limitados e têm horário marcado, então compre com antecedência. E atenção ao falso amigo: no Peru, «papa» é batata, e o país tem milhares de variedades.',
+        'O soroche (mal de altitude) é comum em Cusco: nos primeiros dias, ande devagar, beba bastante água e experimente o mate de coca, legal no Peru e servido em muitos hotéis. Os ingressos para Machu Picchu são limitados e têm horário marcado, então compre com antecedência. E atenção ao falso amigo: no Peru, “papa” é batata, e o país tem milhares de variedades.',
       grammar_why:
-        'Indefinido × imperfecto funciona quase como no português: o imperfecto pinta o cenário e o hábito («hacía frío», «había llamas»), o indefinido conta o fato que aconteceu («llegamos», «subimos»). Os pronomes combinados são a grande novidade: o indireto vem antes do direto, e «le/les» vira «se» antes de lo/la/los/las, então «le lo di» não existe, o certo é «se lo di». Onde o brasileiro diz «dei pra ele», o espanhol diz «se lo di». No imperativo afirmativo, os pronomes grudam no fim do verbo e muitas vezes pedem acento: «muéstramelo», «cómpralo». A forma de «tú» é igual à 3ª pessoa do presente, como no nosso «compra isso!».',
+        'Indefinido × imperfecto funciona quase como no português: o imperfecto pinta o cenário e o hábito (“hacía frío”, “había llamas”), o indefinido conta o fato que aconteceu (“llegamos”, “subimos”). Os pronomes combinados são a grande novidade: o indireto vem antes do direto, e “le/les” vira “se” antes de lo/la/los/las, então “le lo di” não existe, o certo é “se lo di”. Onde o brasileiro diz “dei pra ele”, o espanhol diz “se lo di”. No imperativo afirmativo, os pronomes grudam no fim do verbo e muitas vezes pedem acento: “muéstramelo”, “cómpralo”. A forma de “tú” é igual à 3ª pessoa do presente, como no nosso “compra isso!”.',
       grammar_examples: [
         ['Hacía frío cuando llegamos a Cusco.', 'Fazia frio quando chegamos a Cusco.'],
         ['¿El boleto? Ya se lo di al guía.', 'A passagem? Já dei para o guia.'],
@@ -526,13 +526,13 @@ export const UNITS_ES: UnitSeed[] = [
           bot: '¿Qué tal el viaje? ¿Cómo era el paisaje?',
           botTranslation: 'Como foi a viagem? Como era a paisagem?',
           expected: ['El paisaje era precioso: había montañas, llamas y mucho sol.', 'era', 'había', 'montañas', 'llamas'],
-          hint: 'Descreva com o imperfecto: «era», «había», «hacía».',
+          hint: 'Descreva com o imperfecto: “era”, “había”, “hacía”.',
         },
         communityPrompt: 'Descreva em 3 frases uma paisagem que você viu numa viagem (imperfecto) e uma coisa que aconteceu lá (indefinido).',
       },
       {
         id: 'es-u5-l2',
-        title: 'Documentos e lembranças: «se lo»',
+        title: 'Documentos e lembranças: “se lo”',
         kind: 'licao',
         words: ['guía', 'boleto', 'pasaporte', 'mostrar', 'regalar', 'recuerdo'],
         cloze: [
@@ -559,7 +559,7 @@ export const UNITS_ES: UnitSeed[] = [
           bot: 'Señor, ¿me muestra su boleto y su pasaporte, por favor?',
           botTranslation: 'Senhor, pode me mostrar sua passagem e seu passaporte, por favor?',
           expected: ['Claro, aquí se los muestro.', 'se los muestro', 'aquí los tiene', 'claro'],
-          hint: 'Use «se los muestro» (mostro para o senhor): «le» vira «se» antes de «los».',
+          hint: 'Use “se los muestro” (mostro para o senhor): “le” vira “se” antes de “los”.',
         },
         communityPrompt: 'Escreva 3 frases sobre lembranças de viagem: o que você trouxe e para quem (use se lo, se la ou se los).',
       },
@@ -592,7 +592,7 @@ export const UNITS_ES: UnitSeed[] = [
           bot: '¿Qué me recomiendas para la caminata a Machu Picchu?',
           botTranslation: 'O que você me recomenda para a caminhada até Machu Picchu?',
           expected: ['Lleva agua, camina despacio y sube temprano al mirador.', 'lleva agua', 'camina despacio', 'sube', 'toma agua'],
-          hint: 'Dê conselhos no imperativo: «lleva…», «camina…», «sube…».',
+          hint: 'Dê conselhos no imperativo: “lleva…”, “camina…”, “sube…”.',
         },
         communityPrompt: 'Grave-se dando 3 conselhos a um amigo que vai a Machu Picchu, no imperativo (lleva, sube, toma…).',
       },
@@ -615,7 +615,7 @@ export const UNITS_ES: UnitSeed[] = [
           hint: 'Misture o indefinido (llegamos, fue), o imperfecto (llovía, era) e termine com um conselho no imperativo.',
         },
         communityPrompt:
-          'Escreva um relato de viagem de 5 frases: o cenário no imperfecto, as ações no indefinido, um presente dado com «se lo» e um conselho no imperativo.',
+          'Escreva um relato de viagem de 5 frases: o cenário no imperfecto, as ações no indefinido, um presente dado com “se lo” e um conselho no imperativo.',
       },
     ],
   },
@@ -630,11 +630,11 @@ export const UNITS_ES: UnitSeed[] = [
       title: 'Do Río de la Plata ao Caribe: três ritmos',
       emoji: '🎶',
       history:
-        'O tango nasceu no fim do século XIX nos bairros portuários de Buenos Aires e Montevidéu, misturando ritmos africanos e crioulos com a música dos imigrantes europeus; desde 2009 é Patrimônio Cultural Imaterial da UNESCO, numa candidatura conjunta de Argentina e Uruguai. O bandoneón, a «sanfona» do tango, veio da Alemanha. A cumbia surgiu na costa caribenha da Colômbia, do encontro de tambores africanos, flautas indígenas e versos espanhóis, e hoje tem versões próprias no Peru, no México e na Argentina. A salsa ganhou esse nome em Nova York, nos anos 1960 e 1970, entre músicos cubanos e porto-riquenhos, e tem raízes no son cubano.',
+        'O tango nasceu no fim do século XIX nos bairros portuários de Buenos Aires e Montevidéu, misturando ritmos africanos e crioulos com a música dos imigrantes europeus; desde 2009 é Patrimônio Cultural Imaterial da UNESCO, numa candidatura conjunta de Argentina e Uruguai. O bandoneón, a “sanfona” do tango, veio da Alemanha. A cumbia surgiu na costa caribenha da Colômbia, do encontro de tambores africanos, flautas indígenas e versos espanhóis, e hoje tem versões próprias no Peru, no México e na Argentina. A salsa ganhou esse nome em Nova York, nos anos 1960 e 1970, entre músicos cubanos e porto-riquenhos, e tem raízes no son cubano.',
       culture_tip:
-        'Numa milonga (baile de tango), o convite é feito com o olhar: o «cabeceo», um leve aceno de cabeça de longe, e quem aceita responde com outro aceno. As músicas vêm em blocos, as «tandas», e é costume dançar o bloco inteiro com o mesmo par. E um falso amigo para a pista: fora da música, «salsa» é molho; salsinha é «perejil».',
+        'Numa milonga (baile de tango), o convite é feito com o olhar: o “cabeceo”, um leve aceno de cabeça de longe, e quem aceita responde com outro aceno. As músicas vêm em blocos, as “tandas”, e é costume dançar o bloco inteiro com o mesmo par. E um falso amigo para a pista: fora da música, “salsa” é molho; salsinha é “perejil”.',
       grammar_why:
-        'O futuro simples é vivo no espanhol: «bailaré» é tão comum quanto «voy a bailar», enquanto no Brasil «dançarei» soa formal. Ele também faz suposição: «serán las diez» = devem ser dez horas. O condicional suaviza pedidos e desejos: «me gustaría», «¿podrías…?»; os irregulares são os mesmos nos dois tempos (tendré/tendría, saldré, haré, diré, podré). Nas perífrases, cuidado com a preposição: «acabar de» (acabei de), «volver a» (de novo) e «seguir + gerúndio» (continuar fazendo), sem preposição nenhuma. Por × para: «para» é finalidade, destino e prazo («para ti», «para bailar»); «por» é causa, troca, meio e passagem («gracias por», «veinte dólares por entrada»).',
+        'O futuro simples é vivo no espanhol: “bailaré” é tão comum quanto “voy a bailar”, enquanto no Brasil “dançarei” soa formal. Ele também faz suposição: “serán las diez” = devem ser dez horas. O condicional suaviza pedidos e desejos: “me gustaría”, “¿podrías…?”; os irregulares são os mesmos nos dois tempos (tendré/tendría, saldré, haré, diré, podré). Nas perífrases, cuidado com a preposição: “acabar de” (acabei de), “volver a” (de novo) e “seguir + gerúndio” (continuar fazendo), sem preposição nenhuma. Por × para: “para” é finalidade, destino e prazo (“para ti”, “para bailar”); “por” é causa, troca, meio e passagem (“gracias por”, “veinte dólares por entrada”).',
       grammar_examples: [
         ['El sábado bailaremos tango en una milonga.', 'No sábado vamos dançar tango numa milonga.'],
         ['Me gustaría aprender salsa.', 'Eu gostaria de aprender salsa.'],
@@ -673,7 +673,7 @@ export const UNITS_ES: UnitSeed[] = [
           bot: '¿Qué harás este sábado por la noche?',
           botTranslation: 'O que você vai fazer neste sábado à noite?',
           expected: ['Iré a una milonga y bailaré tango con mis amigos.', 'iré', 'bailaré', 'milonga', 'tango'],
-          hint: 'Responda no futuro: «iré», «bailaré», «saldré».',
+          hint: 'Responda no futuro: “iré”, “bailaré”, “saldré”.',
         },
         communityPrompt: 'Escreva 3 frases sobre o que você fará no próximo fim de semana (futuro) e uma coisa que gostaria de fazer (condicional).',
       },
@@ -706,9 +706,9 @@ export const UNITS_ES: UnitSeed[] = [
           bot: '¿Sigues tomando clases de salsa?',
           botTranslation: 'Você continua fazendo aulas de salsa?',
           expected: ['Sí, sigo tomando clases y acabo de aprender un paso nuevo.', 'sigo tomando', 'acabo de', 'volví a'],
-          hint: 'Use «sigo + gerúndio» e «acabo de + infinitivo». Aula se «toma», não se «hace».',
+          hint: 'Use “sigo + gerúndio” e “acabo de + infinitivo”. Aula se “toma”, não se “hace”.',
         },
-        communityPrompt: 'Escreva 3 frases sobre um hobby seu usando «acabo de…», «volví a…» e «sigo + gerúndio».',
+        communityPrompt: 'Escreva 3 frases sobre um hobby seu usando “acabo de…”, “volví a…” e “sigo + gerúndio”.',
       },
       {
         id: 'es-u6-l3',
@@ -739,9 +739,9 @@ export const UNITS_ES: UnitSeed[] = [
           bot: '¿Te gustaría ir conmigo al concierto de salsa el sábado?',
           botTranslation: 'Você gostaria de ir comigo ao show de salsa no sábado?',
           expected: ['¡Me encantaría! ¿Pasarás por mí a las ocho?', 'me encantaría', 'me gustaría', 'claro', 'pasarás por mí'],
-          hint: 'Aceite com o condicional («Me encantaría…») e combine o horário.',
+          hint: 'Aceite com o condicional (“Me encantaría…”) e combine o horário.',
         },
-        communityPrompt: 'Grave-se convidando alguém para dançar com «¿Te gustaría…?» e dizendo por que e para que (por × para).',
+        communityPrompt: 'Grave-se convidando alguém para dançar com “¿Te gustaría…?” e dizendo por que e para que (por × para).',
       },
       {
         id: 'es-u6-p',
@@ -759,10 +759,10 @@ export const UNITS_ES: UnitSeed[] = [
             'haría',
             'aprendería',
           ],
-          hint: 'Use o condicional (iría, haría, bailaría) e «para + infinitivo» para dizer a finalidade.',
+          hint: 'Use o condicional (iría, haría, bailaría) e “para + infinitivo” para dizer a finalidade.',
         },
         communityPrompt:
-          'Escreva 5 frases sobre seus planos musicais: o que você fará (futuro), o que gostaria de fazer (condicional), uma perífrase (acabar de, volver a ou seguir + gerúndio) e pelo menos um «por» e um «para».',
+          'Escreva 5 frases sobre seus planos musicais: o que você fará (futuro), o que gostaria de fazer (condicional), uma perífrase (acabar de, volver a ou seguir + gerúndio) e pelo menos um “por” e um “para”.',
       },
     ],
   },
@@ -777,11 +777,11 @@ export const UNITS_ES: UnitSeed[] = [
       title: 'La oficina é o escritório: o trabalho em espanhol',
       emoji: '🏢',
       history:
-        'Em novembro de 1915, o Uruguai aprovou uma lei que limitava a jornada de trabalho a oito horas por dia, uma das primeiras do mundo. Dois anos depois, a Constituição mexicana de 1917 incluiu no artigo 123 a jornada máxima de oito horas e outros direitos trabalhistas. Na Espanha, a jornada de oito horas veio por decreto em abril de 1919, logo depois da grande greve da companhia elétrica La Canadiense, em Barcelona. Por isso, em muitos países hispânicos, a «jornada» continua sendo a palavra do dia a dia para o expediente.',
+        'Em novembro de 1915, o Uruguai aprovou uma lei que limitava a jornada de trabalho a oito horas por dia, uma das primeiras do mundo. Dois anos depois, a Constituição mexicana de 1917 incluiu no artigo 123 a jornada máxima de oito horas e outros direitos trabalhistas. Na Espanha, a jornada de oito horas veio por decreto em abril de 1919, logo depois da grande greve da companhia elétrica La Canadiense, em Barcelona. Por isso, em muitos países hispânicos, a “jornada” continua sendo a palavra do dia a dia para o expediente.',
       culture_tip:
-        'Em boa parte da América Latina, colegas se cumprimentam com um beijo no rosto (um só; na Espanha são dois) e sempre com um «buenos días» ao chegar. Com o chefe e com clientes, comece por «usted» até que lhe digam «tutéame». No México, é comum chamar quem tem diploma universitário de «licenciado» ou «licenciada». E atenção ao falso amigo: «la oficina» é o escritório; a oficina mecânica é «el taller», e «el escritorio» é a mesa de trabalho.',
+        'Em boa parte da América Latina, colegas se cumprimentam com um beijo no rosto (um só; na Espanha são dois) e sempre com um “buenos días” ao chegar. Com o chefe e com clientes, comece por “usted” até que lhe digam “tutéame”. No México, é comum chamar quem tem diploma universitário de “licenciado” ou “licenciada”. E atenção ao falso amigo: “la oficina” é o escritório; a oficina mecânica é “el taller”, e “el escritorio” é a mesa de trabalho.',
       grammar_why:
-        'O presente do subjuntivo espanhol se forma quase como o português: pegue o «yo» do presente, tire o -o e troque a vogal (-ar vira -e; -er e -ir viram -a): hablo → hable, tengo → tenga, pido → pida. Ele aparece depois de vontade e pedido (quiero que, necesito que), de desejo (ojalá) e de finalidade (para que). A armadilha do brasileiro é o «quando»: em português usamos o futuro do subjuntivo («quando eu chegar»), que o espanhol de hoje não usa; diga «cuando llegue», nunca «cuando llegaré». O imperativo negativo também é subjuntivo: «habla» vira «no hables», e o pronome passa para antes do verbo: «dímelo» vira «no me lo digas». No Brasil se diz «não fala assim», mas em espanhol «no habla así» está errado: o certo é «no hables así».',
+        'O presente do subjuntivo espanhol se forma quase como o português: pegue o “yo” do presente, tire o -o e troque a vogal (-ar vira -e; -er e -ir viram -a): hablo → hable, tengo → tenga, pido → pida. Ele aparece depois de vontade e pedido (quiero que, necesito que), de desejo (ojalá) e de finalidade (para que). A armadilha do brasileiro é o “quando”: em português usamos o futuro do subjuntivo (“quando eu chegar”), que o espanhol de hoje não usa; diga “cuando llegue”, nunca “cuando llegaré”. O imperativo negativo também é subjuntivo: “habla” vira “no hables”, e o pronome passa para antes do verbo: “dímelo” vira “no me lo digas”. No Brasil se diz “não fala assim”, mas em espanhol “no habla así” está errado: o certo é “no hables así”.',
       grammar_examples: [
         ['Quiero que llegues temprano mañana.', 'Quero que você chegue cedo amanhã.'],
         ['Ojalá tengamos la reunión por la tarde.', 'Tomara que a reunião seja à tarde.'],
@@ -825,10 +825,10 @@ export const UNITS_ES: UnitSeed[] = [
             'me presente',
             'me explique',
           ],
-          hint: 'Peça com «quiero que» + subjuntivo. Com a chefe, use usted: «que me explique el horario».',
+          hint: 'Peça com “quiero que” + subjuntivo. Com a chefe, use usted: “que me explique el horario”.',
         },
         communityPrompt:
-          'Escreva três regras para um colega novo no escritório com o imperativo negativo: «No llegues tarde», «No…», «No…».',
+          'Escreva três regras para um colega novo no escritório com o imperativo negativo: “No llegues tarde”, “No…”, “No…”.',
       },
       {
         id: 'es-u7-l2',
@@ -864,10 +864,10 @@ export const UNITS_ES: UnitSeed[] = [
             'me mandes',
             'para que pueda',
           ],
-          hint: 'Use «necesito que» + subjuntivo e explique o motivo com «para que»: «para que pueda terminar».',
+          hint: 'Use “necesito que” + subjuntivo e explique o motivo com “para que”: “para que pueda terminar”.',
         },
         communityPrompt:
-          'Escreva um e-mail curto a um colega pedindo três coisas, com «necesito que», «para que» e «antes de que».',
+          'Escreva um e-mail curto a um colega pedindo três coisas, com “necesito que”, “para que” e “antes de que”.',
       },
       {
         id: 'es-u7-l3',
@@ -903,9 +903,9 @@ export const UNITS_ES: UnitSeed[] = [
             'ojalá',
             'sea posible',
           ],
-          hint: 'Peça com educação («quería pedirle…») e termine com um desejo: «Ojalá sea posible».',
+          hint: 'Peça com educação (“quería pedirle…”) e termine com um desejo: “Ojalá sea posible”.',
         },
-        communityPrompt: 'Escreva três desejos para o seu trabalho com «ojalá» + subjuntivo (aumento, férias, um colega…).',
+        communityPrompt: 'Escreva três desejos para o seu trabalho com “ojalá” + subjuntivo (aumento, férias, um colega…).',
       },
       {
         id: 'es-u7-p',
@@ -922,10 +922,10 @@ export const UNITS_ES: UnitSeed[] = [
             'no olvides',
             'cuando tengas',
           ],
-          hint: 'Junte tudo: «te recomiendo que» + subjuntivo, um «no» + subjuntivo e um «cuando» + subjuntivo.',
+          hint: 'Junte tudo: “te recomiendo que” + subjuntivo, um “no” + subjuntivo e um “cuando” + subjuntivo.',
         },
         communityPrompt:
-          'Um estagiário começa amanhã no seu escritório. Escreva um bilhete para ele com um pedido (quiero que), dois conselhos negativos (no + subjuntivo), um «cuando» + subjuntivo e um «ojalá».',
+          'Um estagiário começa amanhã no seu escritório. Escreva um bilhete para ele com um pedido (quiero que), dois conselhos negativos (no + subjuntivo), um “cuando” + subjuntivo e um “ojalá”.',
       },
     ],
   },
@@ -942,9 +942,9 @@ export const UNITS_ES: UnitSeed[] = [
       history:
         'Em novembro de 1803, partiu da Corunha, na Espanha, a Real Expedição Filantrópica da Vacina, dirigida pelo médico Francisco Javier Balmis. Como não havia geladeira, a vacina contra a varíola atravessou o oceano no corpo de crianças órfãs, vacinadas em cadeia, de braço em braço, durante a viagem. Isabel Zendal, reitora do orfanato de onde saíram as crianças, cuidou delas a bordo. A vacina chegou a Porto Rico, à Venezuela, a Cuba e ao México, e depois às Filipinas. Décadas mais tarde, em 1881, o médico cubano Carlos Finlay propôs que a febre amarela era transmitida por um mosquito, ideia confirmada em 1900.',
       culture_tip:
-        'Em boa parte da América Latina, o farmacêutico dá conselhos e vende muitos remédios simples sem receita, mas em vários países antibiótico só sai com receita. À noite e nos feriados, procure a «farmacia de turno» (na Espanha, «de guardia»). Para marcar consulta, diga «sacar una cita» (na Espanha, «pedir cita»). E cuidado: «estoy embarazada» é «estou grávida»; para dizer que está envergonhado, use «me da vergüenza» ou «tengo vergüenza».',
+        'Em boa parte da América Latina, o farmacêutico dá conselhos e vende muitos remédios simples sem receita, mas em vários países antibiótico só sai com receita. À noite e nos feriados, procure a “farmacia de turno” (na Espanha, “de guardia”). Para marcar consulta, diga “sacar una cita” (na Espanha, “pedir cita”). E cuidado: “estoy embarazada” é “estou grávida”; para dizer que está envergonhado, use “me da vergüenza” ou “tengo vergüenza”.',
       grammar_why:
-        'O pluscuamperfecto é o nosso «tinha feito»: «había» + particípio, e o particípio não muda: «ya había tomado la pastilla». Nas relativas, «que» serve para quase tudo; «quien» é só para pessoas e aparece depois de preposição ou entre vírgulas («la doctora con quien hablé»), nunca como sujeito logo depois do nome («el médico quien me atendió» está errado). «El cual / la cual» é mais formal e brilha depois de preposição; «donde» indica lugar; e «cuyo» é o nosso «cujo», que concorda com a coisa possuída: «el farmacéutico cuya hija…». No estilo indireto, o verbo recua como em português: «Tengo fiebre» vira «Dijo que tenía fiebre», e «Tomé el jarabe» vira «Dijo que había tomado el jarabe». Dois falsos amigos da consulta: «embarazada» é grávida, e na Espanha «constipado» é resfriado, não preso do intestino (isso é «estreñido»).',
+        'O pluscuamperfecto é o nosso “tinha feito”: “había” + particípio, e o particípio não muda: “ya había tomado la pastilla”. Nas relativas, “que” serve para quase tudo; “quien” é só para pessoas e aparece depois de preposição ou entre vírgulas (“la doctora con quien hablé”), nunca como sujeito logo depois do nome (“el médico quien me atendió” está errado). “El cual / la cual” é mais formal e brilha depois de preposição; “donde” indica lugar; e “cuyo” é o nosso “cujo”, que concorda com a coisa possuída: “el farmacéutico cuya hija…”. No estilo indireto, o verbo recua como em português: “Tengo fiebre” vira “Dijo que tenía fiebre”, e “Tomé el jarabe” vira “Dijo que había tomado el jarabe”. Dois falsos amigos da consulta: “embarazada” é grávida, e na Espanha “constipado” é resfriado, não preso do intestino (isso é “estreñido”).',
       grammar_examples: [
         ['Cuando llegué a la farmacia, ya había cerrado.', 'Quando cheguei à farmácia, ela já tinha fechado.'],
         ['La doctora con quien hablé es muy amable.', 'A médica com quem falei é muito simpática.'],
@@ -988,10 +988,10 @@ export const UNITS_ES: UnitSeed[] = [
             'tos',
             'había tenido',
           ],
-          hint: 'Diga os sintomas («tengo fiebre y tos») e o que já tinha sentido antes: «ya había tenido…».',
+          hint: 'Diga os sintomas (“tengo fiebre y tos”) e o que já tinha sentido antes: “ya había tenido…”.',
         },
         communityPrompt:
-          'Conte uma ida ao médico usando o pluscuamperfecto: o que você já tinha sentido («ya había tenido…») antes de marcar a consulta («sacar una cita»).',
+          'Conte uma ida ao médico usando o pluscuamperfecto: o que você já tinha sentido (“ya había tenido…”) antes de marcar a consulta (“sacar una cita”).',
       },
       {
         id: 'es-u8-l2',
@@ -1027,9 +1027,9 @@ export const UNITS_ES: UnitSeed[] = [
             'me dijo que',
             'jarabe',
           ],
-          hint: 'Conte o que o médico disse em estilo indireto: «me dijo que necesitaba…».',
+          hint: 'Conte o que o médico disse em estilo indireto: “me dijo que necesitaba…”.',
         },
-        communityPrompt: 'Descreva a farmácia do seu bairro com três relativas: uma com «donde», uma com «que» e uma com «cuyo» ou «cuya».',
+        communityPrompt: 'Descreva a farmácia do seu bairro com três relativas: uma com “donde”, uma com “que” e uma com “cuyo” ou “cuya”.',
       },
       {
         id: 'es-u8-l3',
@@ -1065,10 +1065,10 @@ export const UNITS_ES: UnitSeed[] = [
             'estaba',
             'guardar cama',
           ],
-          hint: 'Reconte em estilo indireto, com o verbo no passado: «Me dijo que estaba…» e «que tenía que…».',
+          hint: 'Reconte em estilo indireto, com o verbo no passado: “Me dijo que estaba…” e “que tenía que…”.',
         },
         communityPrompt:
-          'Um amigo espanhol escreveu «Estoy constipado» e uma amiga escreveu «Estoy embarazada». Explique em português o que cada um quis dizer e reconte as duas frases em estilo indireto («Me dijo que…»).',
+          'Um amigo espanhol escreveu “Estoy constipado” e uma amiga escreveu “Estoy embarazada”. Explique em português o que cada um quis dizer e reconte as duas frases em estilo indireto (“Me dijo que…”).',
       },
       {
         id: 'es-u8-p',
@@ -1085,10 +1085,10 @@ export const UNITS_ES: UnitSeed[] = [
             'me dijo que',
             'que me atendió',
           ],
-          hint: 'Use as três peças: um pluscuamperfecto («ya había tenido»), uma relativa («el médico que me atendió») e o estilo indireto («me dijo que era…»).',
+          hint: 'Use as três peças: um pluscuamperfecto (“ya había tenido”), uma relativa (“el médico que me atendió”) e o estilo indireto (“me dijo que era…”).',
         },
         communityPrompt:
-          'Escreva um relato de 5 ou 6 frases sobre uma ida ao pronto-socorro («urgencias») com um pluscuamperfecto, duas relativas (uma com «cuyo» ou «donde») e uma fala do médico em estilo indireto.',
+          'Escreva um relato de 5 ou 6 frases sobre uma ida ao pronto-socorro (“urgencias”) com um pluscuamperfecto, duas relativas (uma com “cuyo” ou “donde”) e uma fala do médico em estilo indireto.',
       },
     ],
   },
@@ -1103,11 +1103,11 @@ export const UNITS_ES: UnitSeed[] = [
       title: 'Galápagos e Amazônia: laboratórios vivos',
       emoji: '🌿',
       history:
-        'O navio britânico HMS Beagle chegou às ilhas Galápagos em setembro de 1835, com o jovem naturalista Charles Darwin a bordo, que passou cerca de cinco semanas no arquipélago. Darwin percebeu que os sabiás locais (os «cucuves» ou «sinsontes») mudavam de uma ilha para outra e ouviu do vice-governador das ilhas que era possível saber de que ilha vinha cada tartaruga-gigante pelo formato do casco; já na Inglaterra, o ornitólogo John Gould mostrou que os tentilhões que ele trouxera, hoje chamados «pinzones de Darwin», eram espécies aparentadas. Essas observações ajudaram Darwin a formular a teoria da evolução por seleção natural, publicada em 1859 em «A Origem das Espécies». As ilhas pertencem ao Equador desde 1832, e o nome vem das tartarugas: «galápago» é uma palavra espanhola para tartaruga. Na Amazônia, o espanhol Francisco de Orellana desceu o grande rio entre 1541 e 1542, e o nome «Amazonas» veio do relato de mulheres guerreiras que lembraram aos europeus as amazonas da mitologia grega.',
+        'O navio britânico HMS Beagle chegou às ilhas Galápagos em setembro de 1835, com o jovem naturalista Charles Darwin a bordo, que passou cerca de cinco semanas no arquipélago. Darwin percebeu que os sabiás locais (os “cucuves” ou “sinsontes”) mudavam de uma ilha para outra e ouviu do vice-governador das ilhas que era possível saber de que ilha vinha cada tartaruga-gigante pelo formato do casco; já na Inglaterra, o ornitólogo John Gould mostrou que os tentilhões que ele trouxera, hoje chamados “pinzones de Darwin”, eram espécies aparentadas. Essas observações ajudaram Darwin a formular a teoria da evolução por seleção natural, publicada em 1859 em “A Origem das Espécies”. As ilhas pertencem ao Equador desde 1832, e o nome vem das tartarugas: “galápago” é uma palavra espanhola para tartaruga. Na Amazônia, o espanhol Francisco de Orellana desceu o grande rio entre 1541 e 1542, e o nome “Amazonas” veio do relato de mulheres guerreiras que lembraram aos europeus as amazonas da mitologia grega.',
       culture_tip:
         'As Galápagos são parque nacional do Equador desde 1959 e, em 1978, estiveram entre os primeiros lugares declarados Patrimônio Mundial pela UNESCO: os visitantes andam com guias credenciados, seguem trilhas marcadas e mantêm distância dos animais, que quase não têm medo de gente. A floresta amazônica se estende por oito países e pela Guiana Francesa; em Iquitos, no Peru, uma cidade grande aonde não se chega por estrada, só de barco ou de avião, a vida gira em torno do rio.',
       grammar_why:
-        'O imperfecto de subjuntivo é o nosso «se eu tivesse». Ele se forma a partir da 3ª pessoa do plural do indefinido: tuvieron → tuviera, fueron → fuera, pudieron → pudiera. Existe também a forma em -se (tuviese), parecida com a do português, mas na América Latina a forma em -ra é a mais comum. Na condicional hipotética, a dupla é «si + imperfecto de subjuntivo» e condicional na outra parte: «Si tuviera tiempo, iría a las Galápagos». O erro clássico é pôr o condicional depois de «si»: nunca «si tendría». Para ligar as ideias, use conectores: «aunque» (embora, ainda que), «sin embargo» (no entanto), «por lo tanto» (portanto) e «además» (além disso).',
+        'O imperfecto de subjuntivo é o nosso “se eu tivesse”. Ele se forma a partir da 3ª pessoa do plural do indefinido: tuvieron → tuviera, fueron → fuera, pudieron → pudiera. Existe também a forma em -se (tuviese), parecida com a do português, mas na América Latina a forma em -ra é a mais comum. Na condicional hipotética, a dupla é “si + imperfecto de subjuntivo” e condicional na outra parte: “Si tuviera tiempo, iría a las Galápagos”. O erro clássico é pôr o condicional depois de “si”: nunca “si tendría”. Para ligar as ideias, use conectores: “aunque” (embora, ainda que), “sin embargo” (no entanto), “por lo tanto” (portanto) e “además” (além disso).',
       grammar_examples: [
         ['Si viviera en Ecuador, visitaría las Galápagos.', 'Se eu morasse no Equador, visitaria as Galápagos.'],
         ['Si pudiera, estudiaría la selva amazónica.', 'Se eu pudesse, estudaria a floresta amazônica.'],
@@ -1151,9 +1151,9 @@ export const UNITS_ES: UnitSeed[] = [
             'vería',
             'tortugas',
           ],
-          hint: 'Comece com «Si pudiera…» e continue no condicional: «subiría», «vería», «nadaría».',
+          hint: 'Comece com “Si pudiera…” e continue no condicional: “subiría”, “vería”, “nadaría”.',
         },
-        communityPrompt: 'Escreva três frases começando por «Si fuera un animal de las Galápagos…» e termine cada uma no condicional (sería, viviría, comería).',
+        communityPrompt: 'Escreva três frases começando por “Si fuera un animal de las Galápagos…” e termine cada uma no condicional (sería, viviría, comería).',
       },
       {
         id: 'es-u9-l2',
@@ -1189,9 +1189,9 @@ export const UNITS_ES: UnitSeed[] = [
             'reduciría',
             'además',
           ],
-          hint: 'Faça uma hipótese com «si pudiera» + condicional e acrescente outra ideia com «además».',
+          hint: 'Faça uma hipótese com “si pudiera” + condicional e acrescente outra ideia com “además”.',
         },
-        communityPrompt: 'Escreva um parágrafo curto sobre a Amazônia usando «aunque», «sin embargo» e «por lo tanto».',
+        communityPrompt: 'Escreva um parágrafo curto sobre a Amazônia usando “aunque”, “sin embargo” e “por lo tanto”.',
       },
       {
         id: 'es-u9-l3',
@@ -1227,9 +1227,9 @@ export const UNITS_ES: UnitSeed[] = [
             'investigaría',
             'ecosistema',
           ],
-          hint: 'Use «Si fuera científico / científica…» e dois verbos no condicional: «investigaría», «protegería».',
+          hint: 'Use “Si fuera científico / científica…” e dois verbos no condicional: “investigaría”, “protegería”.',
         },
-        communityPrompt: 'Imagine que você fosse o Darwin a bordo do Beagle. Escreva três frases com «si + imperfecto de subjuntivo» sobre o que faria nas ilhas.',
+        communityPrompt: 'Imagine que você fosse o Darwin a bordo do Beagle. Escreva três frases com “si + imperfecto de subjuntivo” sobre o que faria nas ilhas.',
       },
       {
         id: 'es-u9-p',
@@ -1247,10 +1247,10 @@ export const UNITS_ES: UnitSeed[] = [
             'si los perdiéramos',
             'perderíamos',
           ],
-          hint: 'Encadeie os conectores («aunque», «por lo tanto») e feche com uma condicional: «si los perdiéramos, perderíamos…».',
+          hint: 'Encadeie os conectores (“aunque”, “por lo tanto”) e feche com uma condicional: “si los perdiéramos, perderíamos…”.',
         },
         communityPrompt:
-          'Escreva um texto de 5 ou 6 frases sobre Darwin e as Galápagos ou sobre a Amazônia com duas condicionais «si + imperfecto de subjuntivo» e os conectores «sin embargo», «aunque» e «por lo tanto».',
+          'Escreva um texto de 5 ou 6 frases sobre Darwin e as Galápagos ou sobre a Amazônia com duas condicionais “si + imperfecto de subjuntivo” e os conectores “sin embargo”, “aunque” e “por lo tanto”.',
       },
     ],
   },
@@ -1262,14 +1262,14 @@ export const UNITS_ES: UnitSeed[] = [
     emoji: '📨',
     card: {
       id: 'es-c10',
-      title: 'De «vuestra merced» a «usted»',
+      title: 'De “vuestra merced” a “usted”',
       emoji: '🏛️',
       history:
-        'O pronome «usted» nasceu de uma fórmula de cortesia: «vuestra merced», algo como «vossa mercê». De tanto ser repetida nos séculos XVI e XVII, a expressão foi encolhendo na fala até virar «usted», e por isso ela leva o verbo na 3ª pessoa. O português fez um caminho parecido: «vossa mercê» virou «você». A burocracia do império espanhol produziu montanhas de papel: o Archivo General de Indias, criado em Sevilha em 1785, guarda dezenas de milhões de páginas sobre a administração das Américas e das Filipinas. Hoje o arquivo é Patrimônio Mundial da UNESCO.',
+        'O pronome “usted” nasceu de uma fórmula de cortesia: “vuestra merced”, algo como “vossa mercê”. De tanto ser repetida nos séculos XVI e XVII, a expressão foi encolhendo na fala até virar “usted”, e por isso ela leva o verbo na 3ª pessoa. O português fez um caminho parecido: “vossa mercê” virou “você”. A burocracia do império espanhol produziu montanhas de papel: o Archivo General de Indias, criado em Sevilha em 1785, guarda dezenas de milhões de páginas sobre a administração das Américas e das Filipinas. Hoje o arquivo é Patrimônio Mundial da UNESCO.',
       culture_tip:
-        'Na carta formal em espanhol, a saudação termina com dois-pontos, não com vírgula: «Estimada señora López:». Para fechar, use «Atentamente» ou «Saludos cordiales», seguido do nome. No México, é comum tratar quem tem diploma universitário por «licenciado» ou «licenciada» («Lic. Pérez»), e isso não é exagero: é a cortesia esperada. A data costuma vir no alto, à direita, com a cidade: «Lima, 3 de marzo de 2026».',
+        'Na carta formal em espanhol, a saudação termina com dois-pontos, não com vírgula: “Estimada señora López:”. Para fechar, use “Atentamente” ou “Saludos cordiales”, seguido do nome. No México, é comum tratar quem tem diploma universitário por “licenciado” ou “licenciada” (“Lic. Pérez”), e isso não é exagero: é a cortesia esperada. A data costuma vir no alto, à direita, com a cidade: “Lima, 3 de marzo de 2026”.',
       grammar_why:
-        'O espanhol tem a passiva com «ser» («El contrato fue firmado por la directora»), mas ela soa mais escrita e oficial do que no português. No dia a dia, prefere-se o «se» passivo: «Se venden casas», «Se reciben solicitudes». Atenção: aqui o verbo concorda com a coisa, sempre. No Brasil se ouve «vende-se casas», mas em espanhol «se vende casas» é erro. Quando o alvo é pessoa, com «a», o «se» é impessoal e o verbo fica no singular: «Se atiende a los clientes». E «usted» funciona como o nosso «você»: verbo na 3ª pessoa e possessivo «su» («¿Trae usted su pasaporte?»), nunca «usted tienes».',
+        'O espanhol tem a passiva com “ser” (“El contrato fue firmado por la directora”), mas ela soa mais escrita e oficial do que no português. No dia a dia, prefere-se o “se” passivo: “Se venden casas”, “Se reciben solicitudes”. Atenção: aqui o verbo concorda com a coisa, sempre. No Brasil se ouve “vende-se casas”, mas em espanhol “se vende casas” é erro. Quando o alvo é pessoa, com “a”, o “se” é impessoal e o verbo fica no singular: “Se atiende a los clientes”. E “usted” funciona como o nosso “você”: verbo na 3ª pessoa e possessivo “su” (“¿Trae usted su pasaporte?”), nunca “usted tienes”.',
       grammar_examples: [
         ['Se venden departamentos en el centro.', 'Vendem-se apartamentos no centro.'],
         ['Aquí se habla español e inglés.', 'Aqui se fala espanhol e inglês.'],
@@ -1308,9 +1308,9 @@ export const UNITS_ES: UnitSeed[] = [
           bot: 'Buenos días. ¿Qué trámite desea hacer?',
           botTranslation: 'Bom dia. Que procedimento o senhor deseja fazer?',
           expected: ['Buenos días. Quisiera entregar esta solicitud. ¿Hasta cuándo es el plazo?', 'quisiera', 'solicitud', 'plazo', 'formulario'],
-          hint: 'Peça com cortesia usando «quisiera» e pergunte pelo prazo: «¿Hasta cuándo es el plazo?».',
+          hint: 'Peça com cortesia usando “quisiera” e pergunte pelo prazo: “¿Hasta cuándo es el plazo?”.',
         },
-        communityPrompt: 'Escreva três avisos de uma repartição usando o «se» passivo, com o verbo concordando: «Se reciben…», «Se firma…», «Se piden…».',
+        communityPrompt: 'Escreva três avisos de uma repartição usando o “se” passivo, com o verbo concordando: “Se reciben…”, “Se firma…”, “Se piden…”.',
       },
       {
         id: 'es-u10-l2',
@@ -1341,9 +1341,9 @@ export const UNITS_ES: UnitSeed[] = [
           bot: 'Señora, a su documento le falta el sello. ¿Puede volver mañana?',
           botTranslation: 'Senhora, falta o carimbo no seu documento. A senhora pode voltar amanhã?',
           expected: ['Entiendo. ¿Dónde se pide el sello? Vuelvo mañana sin falta.', 'dónde se pide', 'vuelvo mañana', 'sello'],
-          hint: 'Pergunte com «se» impessoal onde se pede o carimbo: «¿Dónde se pide el sello?».',
+          hint: 'Pergunte com “se” impessoal onde se pede o carimbo: “¿Dónde se pide el sello?”.',
         },
-        communityPrompt: 'Escreva uma reclamação formal curta a uma prefeitura, tratando o destinatário por «usted», com uma passiva com «ser» e outra com «se».',
+        communityPrompt: 'Escreva uma reclamação formal curta a uma prefeitura, tratando o destinatário por “usted”, com uma passiva com “ser” e outra com “se”.',
       },
       {
         id: 'es-u10-l3',
@@ -1374,9 +1374,9 @@ export const UNITS_ES: UnitSeed[] = [
           bot: 'Buenas tardes. ¿En qué puedo ayudarle?',
           botTranslation: 'Boa tarde. Em que posso ajudar?',
           expected: ['Buenas tardes. Tengo una cita para la visa. ¿Me podría decir qué documentos se necesitan?', 'tengo una cita', 'visa', 'se necesitan', 'documentos'],
-          hint: 'Diga que tem horário marcado («Tengo una cita») e pergunte quais documentos «se necesitan», no plural.',
+          hint: 'Diga que tem horário marcado (“Tengo una cita”) e pergunte quais documentos “se necesitan”, no plural.',
         },
-        communityPrompt: 'Grave-se pedindo informações no guichê de uma embaixada: trate o funcionário por «usted» e use «se necesita» e «se necesitan».',
+        communityPrompt: 'Grave-se pedindo informações no guichê de uma embaixada: trate o funcionário por “usted” e use “se necesita” e “se necesitan”.',
       },
       {
         id: 'es-u10-p',
@@ -1394,10 +1394,10 @@ export const UNITS_ES: UnitSeed[] = [
             'por supuesto',
             'documentos',
           ],
-          hint: 'Responda com cortesia, prometa o envio com a passiva («serán enviados») e pergunte com «se» se dá para mandar por e-mail.',
+          hint: 'Responda com cortesia, prometa o envio com a passiva (“serán enviados”) e pergunte com “se” se dá para mandar por e-mail.',
         },
         communityPrompt:
-          'Escreva uma carta formal completa pedindo a renovação de um documento: data com cidade, saudação com dois-pontos, tratamento por «usted» e despedida com «Atentamente». Use pelo menos uma passiva com «ser» e duas com «se».',
+          'Escreva uma carta formal completa pedindo a renovação de um documento: data com cidade, saudação com dois-pontos, tratamento por “usted” e despedida com “Atentamente”. Use pelo menos uma passiva com “ser” e duas com “se”.',
       },
     ],
   },
@@ -1412,11 +1412,11 @@ export const UNITS_ES: UnitSeed[] = [
       title: 'Idas e vindas pelo Atlântico',
       emoji: '🚢',
       history:
-        'Entre o fim do século XIX e as primeiras décadas do século XX, milhões de espanhóis cruzaram o Atlântico rumo à Argentina, a Cuba, ao Uruguai e também ao Brasil. Tantos vinham da Galícia que, na Argentina e no Uruguai, «gallego» virou apelido para qualquer espanhol. Na segunda metade do século XX, o fluxo se inverteu em parte: muitos latino-americanos emigraram para a Espanha e para os Estados Unidos. Hoje, mais de 40 milhões de pessoas falam espanhol em casa nos Estados Unidos.',
+        'Entre o fim do século XIX e as primeiras décadas do século XX, milhões de espanhóis cruzaram o Atlântico rumo à Argentina, a Cuba, ao Uruguai e também ao Brasil. Tantos vinham da Galícia que, na Argentina e no Uruguai, “gallego” virou apelido para qualquer espanhol. Na segunda metade do século XX, o fluxo se inverteu em parte: muitos latino-americanos emigraram para a Espanha e para os Estados Unidos. Hoje, mais de 40 milhões de pessoas falam espanhol em casa nos Estados Unidos.',
       culture_tip:
-        'Quem se muda para um país hispânico aprende logo duas palavras-armadilha: «mudarse» é mudar de casa ou de país, e «cambiar» é mudar ou trocar alguma coisa. Para a saudade, na América Latina se diz «extrañar» («Extraño a mi familia»); na Espanha, é mais comum «echar de menos». E cuidado com «extrañar»: não é «estranhar», é sentir falta!',
+        'Quem se muda para um país hispânico aprende logo duas palavras-armadilha: “mudarse” é mudar de casa ou de país, e “cambiar” é mudar ou trocar alguma coisa. Para a saudade, na América Latina se diz “extrañar” (“Extraño a mi familia”); na Espanha, é mais comum “echar de menos”. E cuidado com “extrañar”: não é “estranhar”, é sentir falta!',
       grammar_why:
-        'O português resolve quase tudo com «ficar»: ficar nervoso, ficar rico, ficar cego, ficar sozinho. O espanhol divide o trabalho. «Ponerse» é mudança passageira, de emoção ou aparência: «Me puse rojo». «Volverse» é mudança profunda, de caráter, muitas vezes inesperada: «Se volvió desconfiado». «Hacerse» é mudança buscada ou por processo, com profissão, religião, riqueza, amizade: «Se hizo médico». «Quedarse» é o estado que resta, muitas vezes uma perda: «Se quedó sin trabajo», «Se quedó sola». Por isso dizer «me quedé nervioso» no lugar de «me puse nervioso» soa estranho.',
+        'O português resolve quase tudo com “ficar”: ficar nervoso, ficar rico, ficar cego, ficar sozinho. O espanhol divide o trabalho. “Ponerse” é mudança passageira, de emoção ou aparência: “Me puse rojo”. “Volverse” é mudança profunda, de caráter, muitas vezes inesperada: “Se volvió desconfiado”. “Hacerse” é mudança buscada ou por processo, com profissão, religião, riqueza, amizade: “Se hizo médico”. “Quedarse” é o estado que resta, muitas vezes uma perda: “Se quedó sin trabajo”, “Se quedó sola”. Por isso dizer “me quedé nervioso” no lugar de “me puse nervioso” soa estranho.',
       grammar_examples: [
         ['Me puse nerviosa en la entrevista.', 'Fiquei nervosa na entrevista.'],
         ['Con los años, se volvió más paciente.', 'Com os anos, ele ficou mais paciente.'],
@@ -1455,9 +1455,9 @@ export const UNITS_ES: UnitSeed[] = [
           bot: '¿Y por qué decidiste mudarte al extranjero?',
           botTranslation: 'E por que você decidiu se mudar para o exterior?',
           expected: ['Porque me quedé sin trabajo y quería empezar de nuevo en otro país.', 'me quedé sin trabajo', 'empezar de nuevo', 'otro país'],
-          hint: 'Use «quedarse» para a perda que motivou a decisão: «Me quedé sin trabajo…».',
+          hint: 'Use “quedarse” para a perda que motivou a decisão: “Me quedé sin trabajo…”.',
         },
-        communityPrompt: 'Conte, em 3 ou 4 frases, a mudança de alguém para outro país (real ou inventada), usando «hacerse» e «quedarse».',
+        communityPrompt: 'Conte, em 3 ou 4 frases, a mudança de alguém para outro país (real ou inventada), usando “hacerse” e “quedarse”.',
       },
       {
         id: 'es-u11-l2',
@@ -1488,9 +1488,9 @@ export const UNITS_ES: UnitSeed[] = [
           bot: '¿Cómo te sentiste el primer día en el nuevo trabajo?',
           botTranslation: 'Como você se sentiu no primeiro dia no emprego novo?',
           expected: ['Me puse muy nervioso, pero al final me quedé tranquilo y orgulloso.', 'me puse nervioso', 'me puse nerviosa', 'orgulloso', 'orgullosa'],
-          hint: 'Emoção do momento pede «ponerse»: «Me puse nervioso». O estado final pode vir com «quedarse»: «me quedé tranquilo».',
+          hint: 'Emoção do momento pede “ponerse”: “Me puse nervioso”. O estado final pode vir com “quedarse”: “me quedé tranquilo”.',
         },
-        communityPrompt: 'Descreva como você mudou nos últimos anos: uma frase com «volverse» (caráter) e outra com «ponerse» (emoção do momento). Ex.: «Me volví más paciente».',
+        communityPrompt: 'Descreva como você mudou nos últimos anos: uma frase com “volverse” (caráter) e outra com “ponerse” (emoção do momento). Ex.: “Me volví más paciente”.',
       },
       {
         id: 'es-u11-l3',
@@ -1521,9 +1521,9 @@ export const UNITS_ES: UnitSeed[] = [
           bot: 'Me contaron que al principio fue muy difícil para ti. ¿Pensaste en volver?',
           botTranslation: 'Me contaram que no começo foi muito difícil para você. Você pensou em voltar?',
           expected: ['Sí, pero no tiré la toalla. Me puse las pilas y ahora estoy como pez en el agua.', 'no tiré la toalla', 'me puse las pilas', 'como pez en el agua'],
-          hint: 'Encadeie expressões: «no tiré la toalla», «me puse las pilas», «estoy como pez en el agua».',
+          hint: 'Encadeie expressões: “no tiré la toalla”, “me puse las pilas”, “estoy como pez en el agua”.',
         },
-        communityPrompt: 'Grave um relato curto de um recomeço usando duas expressões da lição, por exemplo «me di cuenta de que…» e «no hay mal que por bien no venga».',
+        communityPrompt: 'Grave um relato curto de um recomeço usando duas expressões da lição, por exemplo “me di cuenta de que…” e “no hay mal que por bien no venga”.',
       },
       {
         id: 'es-u11-p',
@@ -1542,10 +1542,10 @@ export const UNITS_ES: UnitSeed[] = [
             'me ponía triste',
             'no tiré la toalla',
           ],
-          hint: 'Use um verbo de mudança para cada coisa: «volverse» (caráter), «hacerse» (amizades), «ponerse» (emoções), e feche com uma expressão.',
+          hint: 'Use um verbo de mudança para cada coisa: “volverse” (caráter), “hacerse” (amizades), “ponerse” (emoções), e feche com uma expressão.',
         },
         communityPrompt:
-          'Escreva um parágrafo sobre uma grande mudança de vida (sua ou de um personagem) usando «ponerse», «volverse», «hacerse» e «quedarse», uma perífrase («llevar + tempo», «seguir + gerúndio» ou «ponerse a») e uma expressão idiomática.',
+          'Escreva um parágrafo sobre uma grande mudança de vida (sua ou de um personagem) usando “ponerse”, “volverse”, “hacerse” e “quedarse”, uma perífrase (“llevar + tempo”, “seguir + gerúndio” ou “ponerse a”) e uma expressão idiomática.',
       },
     ],
   },
@@ -1562,9 +1562,9 @@ export const UNITS_ES: UnitSeed[] = [
       history:
         'A Espanha está entre os países mais visitados do mundo e recebeu mais de 90 milhões de turistas estrangeiros em 2024. O turismo gera empregos e renda, mas em cidades como Barcelona e Palma de Maiorca moradores protestaram contra aluguéis caros e ruas lotadas. Na América Latina, destinos frágeis adotaram limites: Machu Picchu, no Peru, tem cota diária de visitantes, e o Equador cobra uma taxa de entrada nas ilhas Galápagos. A Costa Rica protege cerca de um quarto do seu território em áreas de conservação e fez do ecoturismo uma marca do país.',
       culture_tip:
-        'Numa discussão em espanhol, discordar com elegância faz diferença. Fórmulas que suavizam: «Entiendo tu punto, pero…», «Con todo respeto, no creo que…», «En parte tienes razón». Na Espanha, interromper e falar por cima é mais tolerado do que em boa parte da América Latina, onde uma discordância direta demais pode soar agressiva.',
+        'Numa discussão em espanhol, discordar com elegância faz diferença. Fórmulas que suavizam: “Entiendo tu punto, pero…”, “Con todo respeto, no creo que…”, “En parte tienes razón”. Na Espanha, interromper e falar por cima é mais tolerado do que em boa parte da América Latina, onde uma discordância direta demais pode soar agressiva.',
       grammar_why:
-        'Opinião afirmativa vai no indicativo: «Creo que el turismo crea empleo». Negada, a dúvida pede subjuntivo: «No creo que el turismo sea el problema». O português culto faz igual («não acho que seja»), mas no Brasil se ouve muito «não acho que é», e esse hábito escapa no espanhol. O mesmo vale para «pienso que / no pienso que», «es verdad que / no es verdad que». Já «es importante que», «es necesario que» pedem subjuntivo sempre. Nos conectores, cuidado com os falsos amigos: «sin embargo» é «no entanto», e «en cambio» é «já, por outro lado», não «em troca».',
+        'Opinião afirmativa vai no indicativo: “Creo que el turismo crea empleo”. Negada, a dúvida pede subjuntivo: “No creo que el turismo sea el problema”. O português culto faz igual (“não acho que seja”), mas no Brasil se ouve muito “não acho que é”, e esse hábito escapa no espanhol. O mesmo vale para “pienso que / no pienso que”, “es verdad que / no es verdad que”. Já “es importante que”, “es necesario que” pedem subjuntivo sempre. Nos conectores, cuidado com os falsos amigos: “sin embargo” é “no entanto”, e “en cambio” é “já, por outro lado”, não “em troca”.',
       grammar_examples: [
         ['Creo que el turismo crea empleo.', 'Acho que o turismo gera emprego.'],
         ['No creo que el turismo sea el único problema.', 'Não acho que o turismo seja o único problema.'],
@@ -1603,9 +1603,9 @@ export const UNITS_ES: UnitSeed[] = [
           bot: '¿Crees que hay demasiados turistas en el centro de tu ciudad?',
           botTranslation: 'Você acha que há turistas demais no centro da sua cidade?',
           expected: ['Por un lado, creo que el turismo da empleo; por otro, no creo que sea bueno para la vivienda.', 'creo que', 'no creo que', 'por un lado', 'por otro'],
-          hint: 'Mostre os dois lados: «por un lado, creo que…» (indicativo); «por otro, no creo que…» (subjuntivo).',
+          hint: 'Mostre os dois lados: “por un lado, creo que…” (indicativo); “por otro, no creo que…” (subjuntivo).',
         },
-        communityPrompt: 'Dê sua opinião sobre o turismo na sua cidade: uma frase com «creo que» + indicativo e outra com «no creo que» + subjuntivo.',
+        communityPrompt: 'Dê sua opinião sobre o turismo na sua cidade: uma frase com “creo que” + indicativo e outra com “no creo que” + subjuntivo.',
       },
       {
         id: 'es-u12-l2',
@@ -1636,9 +1636,9 @@ export const UNITS_ES: UnitSeed[] = [
           bot: '¿Qué debería hacer tu ciudad contra el cambio climático?',
           botTranslation: 'O que a sua cidade deveria fazer contra a mudança climática?',
           expected: ['En primer lugar, creo que debería invertir en transporte público. Además, es necesario que se recicle más.', 'en primer lugar', 'creo que', 'además', 'es necesario que'],
-          hint: 'Organize a resposta com «en primer lugar» e «además», e lembre que «es necesario que» pede subjuntivo.',
+          hint: 'Organize a resposta com “en primer lugar” e “además”, e lembre que “es necesario que” pede subjuntivo.',
         },
-        communityPrompt: 'Proponha duas medidas para deixar sua cidade mais sustentável, ligando as ideias com «en primer lugar», «además» e «por lo tanto».',
+        communityPrompt: 'Proponha duas medidas para deixar sua cidade mais sustentável, ligando as ideias com “en primer lugar”, “además” e “por lo tanto”.',
       },
       {
         id: 'es-u12-l3',
@@ -1669,9 +1669,9 @@ export const UNITS_ES: UnitSeed[] = [
           bot: 'Algunos dicen que habría que cobrar una tasa a cada turista. ¿Estás de acuerdo?',
           botTranslation: 'Alguns dizem que seria preciso cobrar uma taxa de cada turista. Você concorda?',
           expected: ['En parte sí. Creo que la tasa puede ayudar; sin embargo, no creo que resuelva todos los problemas.', 'creo que', 'no creo que', 'sin embargo', 'en parte'],
-          hint: 'Concorde em parte e ponha um limite: «creo que… ; sin embargo, no creo que» + subjuntivo.',
+          hint: 'Concorde em parte e ponha um limite: “creo que… ; sin embargo, no creo que” + subjuntivo.',
         },
-        communityPrompt: 'Grave-se defendendo primeiro um lado e depois o outro sobre a taxa turística, com «en primer lugar», «sin duda» e «en resumen».',
+        communityPrompt: 'Grave-se defendendo primeiro um lado e depois o outro sobre a taxa turística, com “en primer lugar”, “sin duda” e “en resumen”.',
       },
       {
         id: 'es-u12-p',
@@ -1689,10 +1689,10 @@ export const UNITS_ES: UnitSeed[] = [
             'sin embargo',
             'en resumen',
           ],
-          hint: 'Estruture: abertura («en primer lugar»), contraponto («sin embargo, no creo que» + subjuntivo) e conclusão («en resumen, es necesario que…»).',
+          hint: 'Estruture: abertura (“en primer lugar”), contraponto (“sin embargo, no creo que” + subjuntivo) e conclusão (“en resumen, es necesario que…”).',
         },
         communityPrompt:
-          'Escreva um parágrafo argumentativo de 5 ou 6 frases sobre turismo ou meio ambiente, apresentando os dois lados com equilíbrio. Use «creo que» + indicativo, «no creo que» + subjuntivo, «es necesario que» e pelo menos três conectores (sin embargo, en cambio, por lo tanto, además, en resumen).',
+          'Escreva um parágrafo argumentativo de 5 ou 6 frases sobre turismo ou meio ambiente, apresentando os dois lados com equilíbrio. Use “creo que” + indicativo, “no creo que” + subjuntivo, “es necesario que” e pelo menos três conectores (sin embargo, en cambio, por lo tanto, además, en resumen).',
       },
     ],
   },
@@ -1704,14 +1704,14 @@ export const UNITS_ES: UnitSeed[] = [
     emoji: '🗣️',
     card: {
       id: 'es-c13',
-      title: 'Um só idioma, mil maneiras de dizer «você»',
+      title: 'Um só idioma, mil maneiras de dizer “você”',
       emoji: '🌎',
       history:
-        'No espanhol medieval, «vos» era uma forma de respeito. Com o tempo perdeu prestígio na Espanha e cedeu lugar a «tú» e a «vuestra merced», que acabou virando «usted», o mesmo caminho do nosso «vossa mercê» → «você». Nas regiões mais distantes dos centros vice-reinais de Lima e do México, como o Rio da Prata e a América Central, o «vos» sobreviveu e hoje é a forma normal de intimidade na Argentina, no Uruguai, no Paraguai e em boa parte da América Central. Já «vosotros», o plural íntimo, só se usa na Espanha; em toda a América Latina, «ustedes» serve para qualquer grupo.',
+        'No espanhol medieval, “vos” era uma forma de respeito. Com o tempo perdeu prestígio na Espanha e cedeu lugar a “tú” e a “vuestra merced”, que acabou virando “usted”, o mesmo caminho do nosso “vossa mercê” → “você”. Nas regiões mais distantes dos centros vice-reinais de Lima e do México, como o Rio da Prata e a América Central, o “vos” sobreviveu e hoje é a forma normal de intimidade na Argentina, no Uruguai, no Paraguai e em boa parte da América Central. Já “vosotros”, o plural íntimo, só se usa na Espanha; em toda a América Latina, “ustedes” serve para qualquer grupo.',
       culture_tip:
-        'Na dúvida, comece com «usted» e espere o outro propor o «tú» («puedes tutearme»). Na Costa Rica e em partes da Colômbia, «usted» aparece até entre amigos e na família, como sinal de carinho, não de distância. E a ironia hispânica costuma vir em tom seco: um «¡Qué puntual!» para quem chegou atrasado ou um «¡Qué va!» significam exatamente o contrário do que parecem.',
+        'Na dúvida, comece com “usted” e espere o outro propor o “tú” (“puedes tutearme”). Na Costa Rica e em partes da Colômbia, “usted” aparece até entre amigos e na família, como sinal de carinho, não de distância. E a ironia hispânica costuma vir em tom seco: um “¡Qué puntual!” para quem chegou atrasado ou um “¡Qué va!” significam exatamente o contrário do que parecem.',
       grammar_why:
-        'O voseo muda o verbo no presente e no imperativo: a tônica vai para o fim e o ditongo some. «Tú tienes» vira «vos tenés», «tú eres» vira «vos sos», «tú puedes» vira «vos podés»; no imperativo, «ven» vira «vení» e «di» vira «decí». Os átonos continuam os do «tú» («vos te llamás», «tu casa»), mas depois de preposição fica «vos»: «para vos», «con vos». Já «vosotros» tem formas próprias (tenéis, sois, venid) e o pronome «os» («os espero»). A armadilha para o brasileiro é achar que «vos» é o nosso «vós» solene: no Prata, é o jeito mais íntimo de falar.',
+        'O voseo muda o verbo no presente e no imperativo: a tônica vai para o fim e o ditongo some. “Tú tienes” vira “vos tenés”, “tú eres” vira “vos sos”, “tú puedes” vira “vos podés”; no imperativo, “ven” vira “vení” e “di” vira “decí”. Os átonos continuam os do “tú” (“vos te llamás”, “tu casa”), mas depois de preposição fica “vos”: “para vos”, “con vos”. Já “vosotros” tem formas próprias (tenéis, sois, venid) e o pronome “os” (“os espero”). A armadilha para o brasileiro é achar que “vos” é o nosso “vós” solene: no Prata, é o jeito mais íntimo de falar.',
       grammar_examples: [
         ['Vos tenés razón.', 'Você tem razão. (Rio da Prata)'],
         ['¿Vos sos de Montevideo?', 'Você é de Montevidéu?'],
@@ -1750,9 +1750,9 @@ export const UNITS_ES: UnitSeed[] = [
           bot: 'Che, ¿de dónde sos? Tenés un acento que no reconozco.',
           botTranslation: 'Ei, de onde você é? Você tem um sotaque que eu não reconheço.',
           expected: ['Soy de Brasil, pero hace un año que vivo en Buenos Aires. ¿Y vos?', 'soy de Brasil', 'vivo en', 'hace un año', 'y vos'],
-          hint: 'Diga de onde você é e há quanto tempo mora aí; devolva a pergunta com «¿Y vos?».',
+          hint: 'Diga de onde você é e há quanto tempo mora aí; devolva a pergunta com “¿Y vos?”.',
         },
-        communityPrompt: 'Escreva o mesmo convite para jantar três vezes: com «tú», com «usted» e com «vos». Ajuste verbos e pronomes em cada versão.',
+        communityPrompt: 'Escreva o mesmo convite para jantar três vezes: com “tú”, com “usted” e com “vos”. Ajuste verbos e pronomes em cada versão.',
       },
       {
         id: 'es-u13-l2',
@@ -1780,9 +1780,9 @@ export const UNITS_ES: UnitSeed[] = [
           },
         ],
         voice: {
-          bot: '¡Qué padre que hayas venido! Oye, ¿y en Brasil cómo se dice «¡qué padre!»?',
-          botTranslation: 'Que legal que você veio! Escuta, e no Brasil como se diz «¡qué padre!»?',
-          expected: ['Decimos «que legal». En Colombia o en Venezuela dirían «¡qué chévere!».', 'que legal', 'chévere', 'decimos'],
+          bot: '¡Qué padre que hayas venido! Oye, ¿y en Brasil cómo se dice “¡qué padre!”?',
+          botTranslation: 'Que legal que você veio! Escuta, e no Brasil como se diz “¡qué padre!”?',
+          expected: ['Decimos “que legal”. En Colombia o en Venezuela dirían “¡qué chévere!”.', 'que legal', 'chévere', 'decimos'],
           hint: 'Dê o equivalente em português e cite como se diria em outro país hispânico.',
         },
         communityPrompt: 'Conte uma cena do dia a dia (pegar ônibus, falar de dinheiro, elogiar alguém) como diria um mexicano e depois como diria um argentino ou um cubano.',
@@ -1818,7 +1818,7 @@ export const UNITS_ES: UnitSeed[] = [
           expected: ['Ya sé, ya sé, perdón. El tráfico estaba imposible, pero no volverá a pasar.', 'perdón', 'ya sé', 'el tráfico', 'no volverá a pasar'],
           hint: 'Perceba a ironia: não é um elogio. Peça desculpas com bom humor e explique o atraso.',
         },
-        communityPrompt: 'Escreva um diálogo curto em que alguém usa ironia («¡Qué puntual!», «¡Qué va!») e o outro percebe e responde com humor.',
+        communityPrompt: 'Escreva um diálogo curto em que alguém usa ironia (“¡Qué puntual!”, “¡Qué va!”) e o outro percebe e responde com humor.',
       },
       {
         id: 'es-u13-p',
@@ -1855,9 +1855,9 @@ export const UNITS_ES: UnitSeed[] = [
       history:
         'O espanhol Santiago Ramón y Cajal mostrou que o sistema nervoso é formado por células independentes, os neurônios, e dividiu o Nobel de Medicina de 1906 com Camillo Golgi. Na Argentina, Bernardo Houssay estudou o papel da hipófise no metabolismo do açúcar e recebeu o Nobel de Medicina de 1947, o primeiro de um latino-americano nas ciências. Severo Ochoa, nascido na Espanha, dividiu o Nobel de 1959 com Arthur Kornberg por pesquisas sobre a síntese do RNA e do DNA. E Luis Federico Leloir, discípulo de Houssay, ganhou o Nobel de Química de 1970 ao descobrir os nucleotídeos de açúcar e seu papel na produção de carboidratos.',
       culture_tip:
-        'O texto científico em espanhol prefere a impessoalidade: «se observó», «se ha demostrado», «los resultados sugieren». Atenção aos detalhes que enganam o brasileiro: «el análisis» é masculino, «la muestra» é a amostra e as siglas mudam de ordem: DNA é «ADN» e RNA é «ARN». Em congressos, «usted» é o registro padrão com quem você não conhece.',
+        'O texto científico em espanhol prefere a impessoalidade: “se observó”, “se ha demostrado”, “los resultados sugieren”. Atenção aos detalhes que enganam o brasileiro: “el análisis” é masculino, “la muestra” é a amostra e as siglas mudam de ordem: DNA é “ADN” e RNA é “ARN”. Em congressos, “usted” é o registro padrão com quem você não conhece.',
       grammar_why:
-        'Dois traços marcam o estilo acadêmico. O primeiro é a nominalização: em vez de «descubrieron que las neuronas son independientes», escreve-se «el descubrimiento de la independencia de las neuronas»; o verbo vira substantivo e a frase ganha densidade. O segundo é o subjuntivo em orações complexas: depois de «el hecho de que», «sin que», «a no ser que», «de ahí que» e em relativas sobre algo ainda hipotético («buscamos un método que permita…»). Uma diferença importante: o espanhol não tem infinitivo pessoal. Onde dizemos «para os pesquisadores poderem repetir», o espanhol exige «para que los investigadores puedan repetir».',
+        'Dois traços marcam o estilo acadêmico. O primeiro é a nominalização: em vez de “descubrieron que las neuronas son independientes”, escreve-se “el descubrimiento de la independencia de las neuronas”; o verbo vira substantivo e a frase ganha densidade. O segundo é o subjuntivo em orações complexas: depois de “el hecho de que”, “sin que”, “a no ser que”, “de ahí que” e em relativas sobre algo ainda hipotético (“buscamos un método que permita…”). Uma diferença importante: o espanhol não tem infinitivo pessoal. Onde dizemos “para os pesquisadores poderem repetir”, o espanhol exige “para que los investigadores puedan repetir”.',
       grammar_examples: [
         ['El descubrimiento de la neurona cambió la medicina.', 'A descoberta do neurônio mudou a medicina.'],
         ['El hecho de que el experimento fallara no invalida la teoría.', 'O fato de o experimento ter falhado não invalida a teoria.'],
@@ -1901,9 +1901,9 @@ export const UNITS_ES: UnitSeed[] = [
             'puedan repetirlo',
             'los resultados sean',
           ],
-          hint: 'Use «hace falta que» + subjuntivo e fale de repetição e de resultados.',
+          hint: 'Use “hace falta que” + subjuntivo e fale de repetição e de resultados.',
         },
-        communityPrompt: 'Reescreva em estilo acadêmico, com nominalizações: «Los científicos midieron la temperatura y descubrieron que el agua se calentaba más rápido». Depois acrescente uma frase com «sin que» + subjuntivo.',
+        communityPrompt: 'Reescreva em estilo acadêmico, com nominalizações: “Los científicos midieron la temperatura y descubrieron que el agua se calentaba más rápido”. Depois acrescente uma frase com “sin que” + subjuntivo.',
       },
       {
         id: 'es-u14-l2',
@@ -1940,9 +1940,9 @@ export const UNITS_ES: UnitSeed[] = [
             '1959',
             'Kornberg',
           ],
-          hint: 'Use uma nominalização («la síntesis del ARN») e cite o ano e o colega com quem ele dividiu o prêmio.',
+          hint: 'Use uma nominalização (“la síntesis del ARN”) e cite o ano e o colega com quem ele dividiu o prêmio.',
         },
-        communityPrompt: 'Escreva um parágrafo de divulgação sobre Ramón y Cajal ou Houssay com pelo menos duas nominalizações e uma oração com «de ahí que» + subjuntivo.',
+        communityPrompt: 'Escreva um parágrafo de divulgação sobre Ramón y Cajal ou Houssay com pelo menos duas nominalizações e uma oração com “de ahí que” + subjuntivo.',
       },
       {
         id: 'es-u14-l3',
@@ -1978,9 +1978,9 @@ export const UNITS_ES: UnitSeed[] = [
             'siempre que haya',
             'es posible',
           ],
-          hint: 'Opine com «no creo que» + subjuntivo e ponha uma condição com «siempre que» + subjuntivo.',
+          hint: 'Opine com “no creo que” + subjuntivo e ponha uma condição com “siempre que” + subjuntivo.',
         },
-        communityPrompt: 'Escreva o resumo (abstract) de um experimento imaginário em 4 frases, objetivo, método, resultado e conclusão, usando a voz impessoal com «se».',
+        communityPrompt: 'Escreva o resumo (abstract) de um experimento imaginário em 4 frases, objetivo, método, resultado e conclusão, usando a voz impessoal com “se”.',
       },
       {
         id: 'es-u14-p',
@@ -1998,7 +1998,7 @@ export const UNITS_ES: UnitSeed[] = [
             'investigación',
             'Ramón y Cajal',
           ],
-          hint: 'Cite um ou dois cientistas e feche com «de ahí que» + subjuntivo.',
+          hint: 'Cite um ou dois cientistas e feche com “de ahí que” + subjuntivo.',
         },
         communityPrompt: 'Escreva uma nota jornalística de 5 frases sobre um avanço científico imaginário num país hispânico, com nominalizações, voz impessoal e pelo menos duas orações com subjuntivo.',
       },
@@ -2015,11 +2015,11 @@ export const UNITS_ES: UnitSeed[] = [
       title: 'Do Quixote a Macondo',
       emoji: '🪶',
       history:
-        'Miguel de Cervantes publicou a primeira parte do Dom Quixote em 1605 e a segunda em 1615; Sancho Pança enfileira refranes a cada conversa, e o livro virou um tesouro da sabedoria popular. No século XX, a chilena Gabriela Mistral foi a primeira pessoa da América Latina a receber o Nobel de Literatura, em 1945. Pablo Neruda, também chileno, recebeu o seu em 1971, e o colombiano Gabriel García Márquez, em 1982, quinze anos depois de «Cem anos de solidão». O argentino Jorge Luis Borges nunca ganhou o Nobel, mas contos como «La biblioteca de Babel» e «El Aleph» fizeram dele um dos autores mais lidos do mundo.',
+        'Miguel de Cervantes publicou a primeira parte do Dom Quixote em 1605 e a segunda em 1615; Sancho Pança enfileira refranes a cada conversa, e o livro virou um tesouro da sabedoria popular. No século XX, a chilena Gabriela Mistral foi a primeira pessoa da América Latina a receber o Nobel de Literatura, em 1945. Pablo Neruda, também chileno, recebeu o seu em 1971, e o colombiano Gabriel García Márquez, em 1982, quinze anos depois de “Cem anos de solidão”. O argentino Jorge Luis Borges nunca ganhou o Nobel, mas contos como “La biblioteca de Babel” e “El Aleph” fizeram dele um dos autores mais lidos do mundo.',
       culture_tip:
-        'Um refrán bem colocado vale mais que um argumento longo, e muita gente os usa no dia a dia, sobretudo os mais velhos. Muitas vezes basta dizer a primeira metade, «A quien madruga…», e o outro completa. Às vezes a imagem coincide com a do português («en boca cerrada no entran moscas»), às vezes muda: «estar entre la espada y la pared» é o nosso «estar entre a cruz e a espada».',
+        'Um refrán bem colocado vale mais que um argumento longo, e muita gente os usa no dia a dia, sobretudo os mais velhos. Muitas vezes basta dizer a primeira metade, “A quien madruga…”, e o outro completa. Às vezes a imagem coincide com a do português (“en boca cerrada no entran moscas”), às vezes muda: “estar entre la espada y la pared” é o nosso “estar entre a cruz e a espada”.',
       grammar_why:
-        'O pluscuamperfecto de subjuntivo (hubiera/hubiese + particípio) expressa hipóteses sobre o passado: «Si Cervantes no hubiera escrito el Quijote…». As formas «hubiera» e «hubiese» são equivalentes; a segunda soa mais literária. Na oração principal vem o condicional composto («habría cambiado»). Já o futuro de subjuntivo (quisiere, fuere, hubiere) quase desapareceu da fala, mas sobrevive em leis, regulamentos e refranes: «Adonde fueres, haz lo que vieres». Para o brasileiro é uma curiosidade: o nosso futuro do subjuntivo («se eu quiser», «quando for») está vivíssimo, mas em espanhol se diz «si quiero» (presente do indicativo) e «cuando vaya» (presente do subjuntivo).',
+        'O pluscuamperfecto de subjuntivo (hubiera/hubiese + particípio) expressa hipóteses sobre o passado: “Si Cervantes no hubiera escrito el Quijote…”. As formas “hubiera” e “hubiese” são equivalentes; a segunda soa mais literária. Na oração principal vem o condicional composto (“habría cambiado”). Já o futuro de subjuntivo (quisiere, fuere, hubiere) quase desapareceu da fala, mas sobrevive em leis, regulamentos e refranes: “Adonde fueres, haz lo que vieres”. Para o brasileiro é uma curiosidade: o nosso futuro do subjuntivo (“se eu quiser”, “quando for”) está vivíssimo, mas em espanhol se diz “si quiero” (presente do indicativo) e “cuando vaya” (presente do subjuntivo).',
       grammar_examples: [
         ['Si hubiera leído el libro, habría entendido la película.', 'Se eu tivesse lido o livro, teria entendido o filme.'],
         ['Ojalá Borges hubiese recibido el Nobel.', 'Quem dera Borges tivesse recebido o Nobel.'],
@@ -2058,9 +2058,9 @@ export const UNITS_ES: UnitSeed[] = [
           bot: '¿Conoce usted el comienzo del Quijote? Dicen que muchos hispanohablantes lo saben de memoria.',
           botTranslation: 'O senhor conhece o começo do Quixote? Dizem que muitos falantes de espanhol o sabem de cor.',
           expected: ['En un lugar de la Mancha, de cuyo nombre no quiero acordarme…', 'en un lugar de la Mancha', 'de cuyo nombre', 'no quiero acordarme'],
-          hint: 'Recite a primeira frase do livro: «En un lugar de la Mancha…». Repare: «de cor» em espanhol é «de memoria».',
+          hint: 'Recite a primeira frase do livro: “En un lugar de la Mancha…”. Repare: “de cor” em espanhol é “de memoria”.',
         },
-        communityPrompt: 'Escolha um refrán (por exemplo, «más vale tarde que nunca») e descreva uma situação em que alguém o usaria, com uma frase no pluscuamperfecto de subjuntivo («si hubiera…»).',
+        communityPrompt: 'Escolha um refrán (por exemplo, “más vale tarde que nunca”) e descreva uma situação em que alguém o usaria, com uma frase no pluscuamperfecto de subjuntivo (“si hubiera…”).',
       },
       {
         id: 'es-u15-l2',
@@ -2069,10 +2069,10 @@ export const UNITS_ES: UnitSeed[] = [
         words: ['ternura', 'soñar', 'amor', 'esperanza', 'premio', 'novela'],
         cloze: [
           {
-            sentence: 'Neruda escribió: «Puedo escribir los versos más ___ esta noche».',
+            sentence: 'Neruda escribió: “Puedo escribir los versos más ___ esta noche”.',
             answer: 'tristes',
             options: ['tristes', 'tiernos', 'largos'],
-            translation: 'Neruda escreveu: «Posso escrever os versos mais tristes esta noite».',
+            translation: 'Neruda escreveu: “Posso escrever os versos mais tristes esta noite”.',
           },
           {
             sentence: 'Ojalá Gabriela Mistral ___ conocido el cariño con que hoy se leen sus poemas.',
@@ -2096,7 +2096,7 @@ export const UNITS_ES: UnitSeed[] = [
             'no habría conocido',
             'Macondo',
           ],
-          hint: 'Responda com «si no la hubiera escrito» + condicional composto («no habría…»).',
+          hint: 'Responda com “si no la hubiera escrito” + condicional composto (“no habría…”).',
         },
         communityPrompt: 'Escreva 3 ou 4 frases sobre um livro que marcou você, imaginando o que teria acontecido se você não o tivesse lido (hubiera/hubiese + particípio).',
       },
@@ -2126,12 +2126,12 @@ export const UNITS_ES: UnitSeed[] = [
           },
         ],
         voice: {
-          bot: 'Usted que es del área jurídica: explíqueme con palabras de hoy qué significa «el que firmare este contrato se obliga a cumplirlo».',
-          botTranslation: 'O senhor, que é da área jurídica: explique com palavras de hoje o que significa «quem assinar este contrato se obriga a cumpri-lo».',
+          bot: 'Usted que es del área jurídica: explíqueme con palabras de hoy qué significa “el que firmare este contrato se obliga a cumplirlo”.',
+          botTranslation: 'O senhor, que é da área jurídica: explique com palavras de hoje o que significa “quem assinar este contrato se obriga a cumpri-lo”.',
           expected: ['Significa que quien firme este contrato tiene la obligación de cumplirlo.', 'quien firme', 'tiene la obligación', 'cumplirlo'],
-          hint: 'Troque o futuro de subjuntivo («firmare») pelo presente de subjuntivo («firme»).',
+          hint: 'Troque o futuro de subjuntivo (“firmare”) pelo presente de subjuntivo (“firme”).',
         },
-        communityPrompt: 'Escreva duas cláusulas de um regulamento imaginário de biblioteca em estilo jurídico, com futuro de subjuntivo («el usuario que…»), e depois reescreva-as em espanhol cotidiano.',
+        communityPrompt: 'Escreva duas cláusulas de um regulamento imaginário de biblioteca em estilo jurídico, com futuro de subjuntivo (“el usuario que…”), e depois reescreva-as em espanhol cotidiano.',
       },
       {
         id: 'es-u15-p',
@@ -2148,7 +2148,7 @@ export const UNITS_ES: UnitSeed[] = [
             'porque',
             'me habría encantado',
           ],
-          hint: 'Responda com «habría elegido a…» e justifique com «me habría encantado que» + imperfeito do subjuntivo.',
+          hint: 'Responda com “habría elegido a…” e justifique com “me habría encantado que” + imperfeito do subjuntivo.',
         },
         communityPrompt: 'Escreva um pequeno ensaio (6 a 8 frases) sobre um autor hispânico, com pelo menos um refrán, uma frase no pluscuamperfecto de subjuntivo e uma citação curta ou paráfrase de sua obra.',
       },

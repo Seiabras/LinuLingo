@@ -23,7 +23,7 @@ test('quiz de sotaque: toda região dá para adivinhar com as respostas típicas
   for (const r of GUESS_REGIONS) assert.equal(guessAccent(typical(r.id))[0].region.id, r.id, r.id);
 });
 
-test('quiz de sotaque: «maneiro», «aipim», «sinal», «sacolé» e o «s» chiado dão carioca', () => {
+test('quiz de sotaque: “maneiro”, “aipim”, “sinal”, “sacolé” e o “s” chiado dão carioca', () => {
   const pick = (q: string, label: string) => [q, GUESS_QUESTIONS.find((x) => x.id === q)!.options.findIndex((o) => o.label.startsWith(label))] as const;
   const answers = Object.fromEntries([pick('legal', 'maneiro'), pick('mandioca', 'aipim'), pick('semaforo', 'sinal'), pick('sacole', 'sacolé'), pick('s', 'chiado')]);
   for (const v of Object.values(answers)) assert.ok(v >= 0);

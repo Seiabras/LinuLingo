@@ -20,11 +20,11 @@ export const GRAMMAR_RO: GrammarTopic[] = [
         table: {
           head: ['Letra', 'IPA', 'Som aproximado', 'Exemplo'],
           rows: [
-            ['ă', '[ə]', 'o «a» fraco de «cama» no fim', 'casă [kasə]'],
-            ['â / î', '[ɨ]', '«i» com a língua recuada, sem sorrir', 'mâine [mɨjne], în [ɨn]'],
-            ['ș', '[ʃ]', '«ch» de «chave»', 'școală [ʃko̯alə]'],
-            ['ț', '[t͡s]', '«ts» de «tsunami»', 'țară [t͡sarə]'],
-            ['j', '[ʒ]', '«j» do português', 'joi [ʒoj]'],
+            ['ă', '[ə]', 'o “a” fraco de “cama” no fim', 'casă [kasə]'],
+            ['â / î', '[ɨ]', '“i” com a língua recuada, sem sorrir', 'mâine [mɨjne], în [ɨn]'],
+            ['ș', '[ʃ]', '“ch” de “chave”', 'școală [ʃko̯alə]'],
+            ['ț', '[t͡s]', '“ts” de “tsunami”', 'țară [t͡sarə]'],
+            ['j', '[ʒ]', '“j” do português', 'joi [ʒoj]'],
           ],
         },
         text: 'â e î são o mesmo som. Escreve-se î no começo e no fim da palavra (în, a urî) e â no meio (mâine, România).',
@@ -34,11 +34,11 @@ export const GRAMMAR_RO: GrammarTopic[] = [
         table: {
           head: ['Escrita', 'IPA', 'Soa como', 'Exemplo'],
           rows: [
-            ['ce, ci', '[t͡ʃe], [t͡ʃi]', '«tche», «tchi»', 'ce [t͡ʃe], cinci [t͡ʃint͡ʃʲ]'],
-            ['ge, gi', '[d͡ʒe], [d͡ʒi]', '«dje», «dji»', 'merge [merd͡ʒe]'],
-            ['che, chi', '[ke], [ki]', '«que», «qui»', 'cheie [keje], chiar [kjar]'],
-            ['ghe, ghi', '[ge], [gi]', '«gue», «gui»', 'ghid [ɡid]'],
-            ['ca, co, cu', '[k]', '«k»', 'cafea [kafe̯a]'],
+            ['ce, ci', '[t͡ʃe], [t͡ʃi]', '“tche”, “tchi”', 'ce [t͡ʃe], cinci [t͡ʃint͡ʃʲ]'],
+            ['ge, gi', '[d͡ʒe], [d͡ʒi]', '“dje”, “dji”', 'merge [merd͡ʒe]'],
+            ['che, chi', '[ke], [ki]', '“que”, “qui”', 'cheie [keje], chiar [kjar]'],
+            ['ghe, ghi', '[ge], [gi]', '“gue”, “gui”', 'ghid [ɡid]'],
+            ['ca, co, cu', '[k]', '“k”', 'cafea [kafe̯a]'],
           ],
         },
         examples: [
@@ -48,17 +48,17 @@ export const GRAMMAR_RO: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'O «i» final quase mudo',
-        text: 'Depois de consoante, o -i no fim da palavra quase não soa: ele só «amacia» a consoante anterior. É o que acontece nos plurais e na 2ª pessoa dos verbos. Em IPA isso se marca com [ʲ].',
+        heading: 'O “i” final quase mudo',
+        text: 'Depois de consoante, o -i no fim da palavra quase não soa: ele só “amacia” a consoante anterior. É o que acontece nos plurais e na 2ª pessoa dos verbos. Em IPA isso se marca com [ʲ].',
         examples: [
-          ['faci', 'você faz: [fat͡ʃʲ], quase «fatch»'],
+          ['faci', 'você faz: [fat͡ʃʲ], quase “fatch”'],
           ['pomi', 'árvores: [pomʲ]'],
           ['ești', 'você é: [jeʃtʲ]'],
         ],
       },
       {
-        heading: 'Ditongos e o «e» que vira «ie»',
-        text: 'ea e oa são ditongos: dimineața [dimine̯at͡sa], școală [ʃko̯alə]. E as formas do verbo «a fi» e os pronomes que começam com e- soam com um «i» na frente: este [jeste], el [jel], ea [ja], eu [jew].',
+        heading: 'Ditongos e o “e” que vira “ie”',
+        text: 'ea e oa são ditongos: dimineața [dimine̯at͡sa], școală [ʃko̯alə]. E as formas do verbo “a fi” e os pronomes que começam com e- soam com um “i” na frente: este [jeste], el [jel], ea [ja], eu [jew].',
         examples: [
           ['Ea este aici.', 'Ela está aqui.'],
           ['noapte', 'noite: [no̯apte]'],
@@ -66,17 +66,17 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Ler «ce» e «ci» como no português («se», «si»): em romeno é sempre «tche», «tchi».',
-      'Pronunciar o -i final de «faci», «ești», «pomi» como um «i» cheio.',
-      'Confundir «ș» (ch) com «s», e «ț» (ts) com «t».',
+      'Ler “ce” e “ci” como no português (“se”, “si”): em romeno é sempre “tche”, “tchi”.',
+      'Pronunciar o -i final de “faci”, “ești”, “pomi” como um “i” cheio.',
+      'Confundir “ș” (ch) com “s”, e “ț” (ts) com “t”.',
     ],
     quiz: [
-      { question: 'Como soa «ce» em «Ce faci?»', options: ['[se]', '[t͡ʃe]', '[ke]'], answer: '[t͡ʃe]', explanation: 'C antes de E ou I soa «tch».' },
+      { question: 'Como soa “ce” em “Ce faci?”', options: ['[se]', '[t͡ʃe]', '[ke]'], answer: '[t͡ʃe]', explanation: 'C antes de E ou I soa “tch”.' },
       {
         question: 'Qual palavra tem o som [k]?',
         options: ['cinci', 'cheie', 'ceai'],
         answer: 'cheie',
-        explanation: 'O «h» depois de c trava o som em [k]: che, chi.',
+        explanation: 'O “h” depois de c trava o som em [k]: che, chi.',
       },
       {
         question: 'â e î representam…',
@@ -89,12 +89,12 @@ export const GRAMMAR_RO: GrammarTopic[] = [
   {
     id: 'ro-g-a-fi',
     level: 'A1.1',
-    title: 'O verbo «a fi» (ser e estar)',
+    title: 'O verbo “a fi” (ser e estar)',
     emoji: '🧍',
-    summary: 'Um verbo só para «ser» e «estar». É o verbo mais usado do romeno.',
+    summary: 'Um verbo só para “ser” e “estar”. É o verbo mais usado do romeno.',
     sections: [
       {
-        text: 'O português separa «ser» e «estar»; o romeno usa um verbo só, «a fi». Sou brasileiro, estou cansado, estou em casa: tudo com «a fi».',
+        text: 'O português separa “ser” e “estar”; o romeno usa um verbo só, “a fi”. Sou brasileiro, estou cansado, estou em casa: tudo com “a fi”.',
       },
       {
         heading: 'Presente',
@@ -109,11 +109,11 @@ export const GRAMMAR_RO: GrammarTopic[] = [
             ['ei, ele', 'sunt', '[sunt]', 'são / estão'],
           ],
         },
-        text: '«e» é a forma curta e muito comum de «este» na fala: «E frig» (Está frio).',
+        text: '“e” é a forma curta e muito comum de “este” na fala: “E frig” (Está frio).',
       },
       {
         heading: 'Negativa e pergunta',
-        text: 'Para negar, coloque «nu» antes do verbo. Para perguntar, basta a entonação: a voz sobe no fim, sem mudar a ordem das palavras.',
+        text: 'Para negar, coloque “nu” antes do verbo. Para perguntar, basta a entonação: a voz sobe no fim, sem mudar a ordem das palavras.',
         examples: [
           ['Sunt din Brazilia.', 'Sou do Brasil.'],
           ['Nu sunt obosit.', 'Não estou cansado.'],
@@ -123,22 +123,22 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
       {
         heading: 'Pronome pode sumir',
-        text: 'Como a forma do verbo já mostra a pessoa, o pronome costuma cair: «Sunt Ana» é mais natural que «Eu sunt Ana». Use o pronome para dar ênfase: «Eu sunt Ana, nu ea».',
+        text: 'Como a forma do verbo já mostra a pessoa, o pronome costuma cair: “Sunt Ana” é mais natural que “Eu sunt Ana”. Use o pronome para dar ênfase: “Eu sunt Ana, nu ea”.',
       },
     ],
     pitfalls: [
-      'Dizer «eu este»: com «eu» a forma é «sunt».',
-      '«Sunt» serve para eu e para eles: o contexto (ou o pronome) desfaz a dúvida.',
-      'Usar «a fi» para idade: em romeno a idade se «tem», «am 20 de ani».',
+      'Dizer “eu este”: com “eu” a forma é “sunt”.',
+      '“Sunt” serve para eu e para eles: o contexto (ou o pronome) desfaz a dúvida.',
+      'Usar “a fi” para idade: em romeno a idade se “tem”, “am 20 de ani”.',
     ],
     quiz: [
-      { question: 'Tu ___ din Portugalia?', options: ['este', 'ești', 'sunt'], answer: 'ești', explanation: 'Com «tu», a forma é «ești».' },
-      { question: 'Noi ___ studenți.', options: ['suntem', 'sunteți', 'sunt'], answer: 'suntem', explanation: '«noi» → «suntem».' },
+      { question: 'Tu ___ din Portugalia?', options: ['este', 'ești', 'sunt'], answer: 'ești', explanation: 'Com “tu”, a forma é “ești”.' },
+      { question: 'Noi ___ studenți.', options: ['suntem', 'sunteți', 'sunt'], answer: 'suntem', explanation: '“noi” → “suntem”.' },
       {
-        question: 'Como se diz «Tenho 30 anos»?',
+        question: 'Como se diz “Tenho 30 anos”?',
         options: ['Sunt 30 de ani.', 'Am 30 de ani.', 'Este 30 de ani.'],
         answer: 'Am 30 de ani.',
-        explanation: 'Idade usa «a avea» (ter): «am … de ani».',
+        explanation: 'Idade usa “a avea” (ter): “am … de ani”.',
       },
     ],
   },
@@ -168,11 +168,11 @@ export const GRAMMAR_RO: GrammarTopic[] = [
             ['formal', 'dumneavoastră', '[dumne̯avo̯astrə]', 'o senhor, a senhora, os senhores'],
           ],
         },
-        text: 'Repare no «i» que aparece na pronúncia de eu, el, ea, ei, ele: [jew], [jel], [ja]. «Ei» vale para grupos só de homens ou mistos; «ele» só para grupos inteiramente femininos.',
+        text: 'Repare no “i” que aparece na pronúncia de eu, el, ea, ei, ele: [jew], [jel], [ja]. “Ei” vale para grupos só de homens ou mistos; “ele” só para grupos inteiramente femininos.',
       },
       {
         heading: 'Tu, voi e dumneavoastră',
-        text: '«Tu» é o tratamento normal entre amigos, família e colegas, como o «você» do Brasil. «Voi» é o «vocês» do dia a dia, nada arcaico como o nosso «vós». Com desconhecidos, clientes, pessoas mais velhas e autoridades use «dumneavoastră», que leva o verbo na 2ª pessoa do plural, mesmo falando com uma pessoa só: «Dumneavoastră sunteți…». Existe ainda «dumneata», um meio-termo hoje pouco usado.',
+        text: '“Tu” é o tratamento normal entre amigos, família e colegas, como o “você” do Brasil. “Voi” é o “vocês” do dia a dia, nada arcaico como o nosso “vós”. Com desconhecidos, clientes, pessoas mais velhas e autoridades use “dumneavoastră”, que leva o verbo na 2ª pessoa do plural, mesmo falando com uma pessoa só: “Dumneavoastră sunteți…”. Existe ainda “dumneata”, um meio-termo hoje pouco usado.',
         examples: [
           ['Tu ești Ana?', 'Você é a Ana? (informal)'],
           ['Dumneavoastră sunteți domnul Popescu?', 'O senhor é o sr. Popescu?'],
@@ -181,7 +181,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
       {
         heading: 'Quando omitir',
-        text: 'Na frase neutra, deixe o pronome cair: «Sunt obosit» é mais natural que «Eu sunt obosit». Mantenha o pronome para dar ênfase ou contrastar pessoas, e na 3ª pessoa quando o contexto não deixar claro de quem se fala.',
+        text: 'Na frase neutra, deixe o pronome cair: “Sunt obosit” é mais natural que “Eu sunt obosit”. Mantenha o pronome para dar ênfase ou contrastar pessoas, e na 3ª pessoa quando o contexto não deixar claro de quem se fala.',
         examples: [
           ['Sunt din Brazilia.', 'Sou do Brasil.'],
           ['Eu sunt profesor, el e student.', 'Eu sou professor, ele é estudante.'],
@@ -191,24 +191,24 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pronunciar eu, el, ea sem o «i» inicial: soam [jew], [jel], [ja].',
-      'Chamar um desconhecido de «tu»: use «dumneavoastră» com o verbo na 2ª pessoa do plural.',
-      'Achar que «voi» é formal ou arcaico como «vós»: é o «vocês» de todo dia.',
-      'Usar «ele» para grupo misto: basta um homem no grupo para ser «ei».',
+      'Pronunciar eu, el, ea sem o “i” inicial: soam [jew], [jel], [ja].',
+      'Chamar um desconhecido de “tu”: use “dumneavoastră” com o verbo na 2ª pessoa do plural.',
+      'Achar que “voi” é formal ou arcaico como “vós”: é o “vocês” de todo dia.',
+      'Usar “ele” para grupo misto: basta um homem no grupo para ser “ei”.',
     ],
     quiz: [
-      { question: 'Três mulheres e um homem: qual pronome?', options: ['ei', 'ele', 'voi'], answer: 'ei', explanation: 'Grupo misto usa o masculino «ei».' },
+      { question: 'Três mulheres e um homem: qual pronome?', options: ['ei', 'ele', 'voi'], answer: 'ei', explanation: 'Grupo misto usa o masculino “ei”.' },
       {
-        question: 'Falando com o seu professor: «___ sunteți din Cluj?»',
+        question: 'Falando com o seu professor: “___ sunteți din Cluj?”',
         options: ['Tu', 'Dumneavoastră', 'El'],
         answer: 'Dumneavoastră',
-        explanation: 'Tratamento formal: «dumneavoastră» + verbo na 2ª do plural.',
+        explanation: 'Tratamento formal: “dumneavoastră” + verbo na 2ª do plural.',
       },
       {
         question: 'Qual frase é a mais natural, sem ênfase?',
         options: ['Eu sunt obosit.', 'Sunt obosit.', 'Obosit eu sunt.'],
         answer: 'Sunt obosit.',
-        explanation: 'O verbo «sunt» já indica a pessoa; o pronome fica para a ênfase.',
+        explanation: 'O verbo “sunt” já indica a pessoa; o pronome fica para a ênfase.',
       },
     ],
   },
@@ -217,11 +217,11 @@ export const GRAMMAR_RO: GrammarTopic[] = [
     level: 'A1.1',
     title: 'Negação e perguntas',
     emoji: '❓',
-    summary: '«Nu» antes do verbo, as palavras interrogativas e a entonação que transforma qualquer frase em pergunta.',
+    summary: '“Nu” antes do verbo, as palavras interrogativas e a entonação que transforma qualquer frase em pergunta.',
     sections: [
       {
-        heading: 'Negar com «nu»',
-        text: 'Para negar, coloque «nu» [nu] logo antes do verbo, como o «não» do português. Na fala, «nu» se junta a verbos que começam por vogal: «nu am» vira «n-am», «nu e» vira «nu-i» ou «nu e». Palavras como nimic (nada), nimeni (ninguém) e niciodată (nunca) exigem o «nu» mesmo assim: é dupla negação obrigatória.',
+        heading: 'Negar com “nu”',
+        text: 'Para negar, coloque “nu” [nu] logo antes do verbo, como o “não” do português. Na fala, “nu” se junta a verbos que começam por vogal: “nu am” vira “n-am”, “nu e” vira “nu-i” ou “nu e”. Palavras como nimic (nada), nimeni (ninguém) e niciodată (nunca) exigem o “nu” mesmo assim: é dupla negação obrigatória.',
         examples: [
           ['Nu vorbesc românește.', 'Não falo romeno.'],
           ['N-am timp.', 'Não tenho tempo.'],
@@ -244,7 +244,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
             ['care', '[kare]', 'qual, quais', 'Care e numele tău?'],
           ],
         },
-        text: '«Cât» concorda com o substantivo: câtă apă (quanta água), câți ani (quantos anos), câte zile (quantos dias). «De ce» pergunta; a resposta vem com «pentru că» (porque). «Ce» pergunta de modo aberto; «care» escolhe entre opções: «Ce carte citești?» (que livro você lê?) × «Care carte e a ta?» (qual livro é o seu?).',
+        text: '“Cât” concorda com o substantivo: câtă apă (quanta água), câți ani (quantos anos), câte zile (quantos dias). “De ce” pergunta; a resposta vem com “pentru că” (porque). “Ce” pergunta de modo aberto; “care” escolhe entre opções: “Ce carte citești?” (que livro você lê?) × “Care carte e a ta?” (qual livro é o seu?).',
       },
       {
         heading: 'Entonação',
@@ -257,16 +257,16 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Esquecer o «nu» com nimic, nimeni, niciodată: «Văd nimic» está errado; o certo é «Nu văd nimic».',
-      'Pôr a negação no fim, como no «Sei não» do Brasil: em romeno o «nu» vem sempre antes do verbo.',
-      'Responder «de ce?» com «de ce»: a resposta é «pentru că».',
-      'Ler «ce» e «cine» como «se», «sine»: soam [t͡ʃe], [t͡ʃine].',
+      'Esquecer o “nu” com nimic, nimeni, niciodată: “Văd nimic” está errado; o certo é “Nu văd nimic”.',
+      'Pôr a negação no fim, como no “Sei não” do Brasil: em romeno o “nu” vem sempre antes do verbo.',
+      'Responder “de ce?” com “de ce”: a resposta é “pentru că”.',
+      'Ler “ce” e “cine” como “se”, “sine”: soam [t͡ʃe], [t͡ʃine].',
     ],
     quiz: [
-      { question: 'Complete: «___ văd nimic.»', options: ['Nu', 'Ne', 'Nici'], answer: 'Nu', explanation: 'Com «nimic» o «nu» antes do verbo é obrigatório.' },
-      { question: 'Como se diz «onde»?', options: ['unde', 'când', 'cum'], answer: 'unde', explanation: 'unde = onde; când = quando; cum = como.' },
+      { question: 'Complete: “___ văd nimic.”', options: ['Nu', 'Ne', 'Nici'], answer: 'Nu', explanation: 'Com “nimic” o “nu” antes do verbo é obrigatório.' },
+      { question: 'Como se diz “onde”?', options: ['unde', 'când', 'cum'], answer: 'unde', explanation: 'unde = onde; când = quando; cum = como.' },
       {
-        question: 'Como transformar «Ai timp.» em pergunta?',
+        question: 'Como transformar “Ai timp.” em pergunta?',
         options: ['Ai timp? (com a voz subindo)', 'Timp ai tu?', 'Este ai timp?'],
         answer: 'Ai timp? (com a voz subindo)',
         explanation: 'Pergunta de sim ou não: mesma ordem, só a entonação muda.',
@@ -296,8 +296,8 @@ export const GRAMMAR_RO: GrammarTopic[] = [
         text: 'Terminação em -ă quase sempre é feminina; em consoante é masculino ou neutro. O -e é ambíguo: carte (f.), frate (m.), nume (n.).',
       },
       {
-        heading: 'O teste «un / două»',
-        text: 'Para descobrir o gênero, diga a palavra com «un» ou «o» no singular e com «doi» ou «două» no plural. Se for «un» no singular e «două» no plural, é neutro.',
+        heading: 'O teste “un / două”',
+        text: 'Para descobrir o gênero, diga a palavra com “un” ou “o” no singular e com “doi” ou “două” no plural. Se for “un” no singular e “două” no plural, é neutro.',
         examples: [
           ['un pom — doi pomi', 'uma árvore — duas árvores (masculino)'],
           ['o casă — două case', 'uma casa — duas casas (feminino)'],
@@ -312,17 +312,17 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Copiar o gênero do português: «mașină» (carro) é feminino e «oraș» (cidade) é neutro.',
-      'Esquecer que o neutro vira feminino no plural: «două trenuri», nunca «doi trenuri».',
+      'Copiar o gênero do português: “mașină” (carro) é feminino e “oraș” (cidade) é neutro.',
+      'Esquecer que o neutro vira feminino no plural: “două trenuri”, nunca “doi trenuri”.',
       'Achar que todo -e é feminino: carte é feminino, mas frate é masculino e nume é neutro.',
-      'Tratar «tată» como feminino por causa do -ă: é masculino, «un tată».',
+      'Tratar “tată” como feminino por causa do -ă: é masculino, “un tată”.',
     ],
     quiz: [
       {
-        question: 'Qual o gênero de «tren» (un tren, două trenuri)?',
+        question: 'Qual o gênero de “tren” (un tren, două trenuri)?',
         options: ['masculino', 'feminino', 'neutro'],
         answer: 'neutro',
-        explanation: '«un» no singular e «două» no plural: neutro.',
+        explanation: '“un” no singular e “două” no plural: neutro.',
       },
       {
         question: 'No plural, o neutro se comporta como…',
@@ -343,10 +343,10 @@ export const GRAMMAR_RO: GrammarTopic[] = [
     level: 'A1.2',
     title: 'Artigo indefinido: un, o, niște',
     emoji: '☝️',
-    summary: '«un» para masculino e neutro, «o» para feminino e «niște» para todo plural.',
+    summary: '“un” para masculino e neutro, “o” para feminino e “niște” para todo plural.',
     sections: [
       {
-        text: 'O artigo indefinido vem antes do substantivo, como em português. Só três formas para aprender, mas atenção: o «o» romeno significa «uma».',
+        text: 'O artigo indefinido vem antes do substantivo, como em português. Só três formas para aprender, mas atenção: o “o” romeno significa “uma”.',
         table: {
           head: ['', 'Masculino', 'Feminino', 'Neutro'],
           rows: [
@@ -357,7 +357,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
       {
         heading: 'un e o',
-        text: 'O neutro usa «un» no singular, como o masculino: un băiat, un tren. Todo feminino usa «o»: o fată, o cafea. Na contagem, sem substantivo, o número é «unu» ou «una»: «Câte cafele? — Una.»',
+        text: 'O neutro usa “un” no singular, como o masculino: un băiat, un tren. Todo feminino usa “o”: o fată, o cafea. Na contagem, sem substantivo, o número é “unu” ou “una”: “Câte cafele? — Una.”',
         examples: [
           ['Am un frate și o soră.', 'Tenho um irmão e uma irmã.'],
           ['Vreau o cafea, vă rog.', 'Quero um café, por favor. (cafea é feminino)'],
@@ -366,7 +366,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
       {
         heading: 'niște',
-        text: '«Niște» corresponde a «uns, umas, alguns» e também a «um pouco de» com coisas incontáveis. Muitas vezes pode ser omitido no plural, como em português.',
+        text: '“Niște” corresponde a “uns, umas, alguns” e também a “um pouco de” com coisas incontáveis. Muitas vezes pode ser omitido no plural, como em português.',
         examples: [
           ['Cumpăr niște mere.', 'Compro umas maçãs.'],
           ['Mai vreau niște apă.', 'Quero mais um pouco de água.'],
@@ -375,23 +375,23 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
       {
         heading: 'Sem artigo',
-        text: 'Profissão, nacionalidade e religião depois de «a fi» vão sem artigo, como em português: «Sunt medic» (sou médico). Com adjetivo, o artigo volta: «E un medic bun».',
+        text: 'Profissão, nacionalidade e religião depois de “a fi” vão sem artigo, como em português: “Sunt medic” (sou médico). Com adjetivo, o artigo volta: “E un medic bun”.',
       },
     ],
     pitfalls: [
-      'Ler o «o» romeno como o artigo definido português: «o casă» é «uma casa».',
-      'Usar «un» com feminino: «un cafea» → «o cafea».',
-      'Inventar um plural «uni» ou «unii» para «uns»: o artigo indefinido plural é «niște».',
-      'Pôr artigo antes da profissão: «Sunt un profesor» soa estranho; diga «Sunt profesor».',
+      'Ler o “o” romeno como o artigo definido português: “o casă” é “uma casa”.',
+      'Usar “un” com feminino: “un cafea” → “o cafea”.',
+      'Inventar um plural “uni” ou “unii” para “uns”: o artigo indefinido plural é “niște”.',
+      'Pôr artigo antes da profissão: “Sunt un profesor” soa estranho; diga “Sunt profesor”.',
     ],
     quiz: [
-      { question: '___ casă', options: ['un', 'o', 'niște'], answer: 'o', explanation: 'casă é feminino singular → «o».' },
-      { question: '___ scaun', options: ['un', 'o', 'una'], answer: 'un', explanation: 'scaun é neutro; no singular o neutro usa «un».' },
+      { question: '___ casă', options: ['un', 'o', 'niște'], answer: 'o', explanation: 'casă é feminino singular → “o”.' },
+      { question: '___ scaun', options: ['un', 'o', 'una'], answer: 'un', explanation: 'scaun é neutro; no singular o neutro usa “un”.' },
       {
         question: 'Vreau ___ apă. (um pouco de água)',
         options: ['un', 'o', 'niște'],
         answer: 'niște',
-        explanation: 'Com incontável, «um pouco de» é «niște».',
+        explanation: 'Com incontável, “um pouco de” é “niște”.',
       },
     ],
   },
@@ -400,7 +400,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
     level: 'A1.2',
     title: 'Artigo definido enclítico',
     emoji: '🔗',
-    summary: 'Em romeno, «o/a/os/as» não vem antes: gruda no fim da palavra. casă = casa; casa = a casa.',
+    summary: 'Em romeno, “o/a/os/as” não vem antes: gruda no fim da palavra. casă = casa; casa = a casa.',
     sections: [
       {
         text: 'O artigo definido romeno é um sufixo: băiat (menino) → băiatul (o menino). A forma depende do gênero e da terminação da palavra.',
@@ -435,7 +435,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
       {
         heading: 'Depois de preposição',
-        text: 'Depois de pe, la, în, sub, prin, o substantivo sem outro determinante perde o artigo: «pe masă» (na mesa), «la școală» (na escola). Se houver adjetivo ou complemento, o artigo volta: «pe masa mare». A exceção é «cu», que mantém o artigo: «cu trenul» (de trem).',
+        text: 'Depois de pe, la, în, sub, prin, o substantivo sem outro determinante perde o artigo: “pe masă” (na mesa), “la școală” (na escola). Se houver adjetivo ou complemento, o artigo volta: “pe masa mare”. A exceção é “cu”, que mantém o artigo: “cu trenul” (de trem).',
         examples: [
           ['Băiatul citește.', 'O menino lê.'],
           ['Casa este mare.', 'A casa é grande.'],
@@ -448,14 +448,14 @@ export const GRAMMAR_RO: GrammarTopic[] = [
     ],
     pitfalls: [
       'Procurar o artigo antes do nome: ele vem colado no fim (casa = a casa).',
-      'Confundir «casă» (casa, uma casa) com «casa» (a casa): só muda ă → a.',
-      'Manter o artigo depois de pe, la, în sem adjetivo: «pe masa» → «pe masă». Com «cu» ele fica: «cu mașina».',
-      'Esquecer o -i extra do masculino plural: «copiii», «băieții».',
+      'Confundir “casă” (casa, uma casa) com “casa” (a casa): só muda ă → a.',
+      'Manter o artigo depois de pe, la, în sem adjetivo: “pe masa” → “pe masă”. Com “cu” ele fica: “cu mașina”.',
+      'Esquecer o -i extra do masculino plural: “copiii”, “băieții”.',
     ],
     quiz: [
-      { question: 'Forma definida de «băiat»:', options: ['băiatul', 'băiata', 'ul băiat'], answer: 'băiatul', explanation: 'Masculino em consoante: + -ul.' },
-      { question: 'Forma definida de «cafea»:', options: ['cafeaua', 'cafeala', 'cafeaul'], answer: 'cafeaua', explanation: 'Feminino em -ea tônico: + -ua.' },
-      { question: 'Plural definido de «case»:', options: ['casele', 'caseile', 'casei'], answer: 'casele', explanation: 'Feminino e neutro plural: + -le.' },
+      { question: 'Forma definida de “băiat”:', options: ['băiatul', 'băiata', 'ul băiat'], answer: 'băiatul', explanation: 'Masculino em consoante: + -ul.' },
+      { question: 'Forma definida de “cafea”:', options: ['cafeaua', 'cafeala', 'cafeaul'], answer: 'cafeaua', explanation: 'Feminino em -ea tônico: + -ua.' },
+      { question: 'Plural definido de “case”:', options: ['casele', 'caseile', 'casei'], answer: 'casele', explanation: 'Feminino e neutro plural: + -le.' },
     ],
   },
   {
@@ -466,7 +466,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
     summary: 'Quatro conjugações pelo infinitivo (-a, -ea, -e, -i/-î) e os sufixos -ez e -esc, que você aprende junto com o verbo.',
     sections: [
       {
-        text: 'O infinitivo romeno vem com a partícula «a» na frente: a vorbi (falar), a merge (ir). Pela terminação, os verbos se dividem em quatro conjugações. O presente serve também para ação em curso: «Citesc» é «leio» e «estou lendo».',
+        text: 'O infinitivo romeno vem com a partícula “a” na frente: a vorbi (falar), a merge (ir). Pela terminação, os verbos se dividem em quatro conjugações. O presente serve também para ação em curso: “Citesc” é “leio” e “estou lendo”.',
       },
       {
         heading: 'As quatro conjugações',
@@ -481,7 +481,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
             ['ei, ele', 'cântă', 'tac', 'merg', 'fug'],
           ],
         },
-        text: 'Na II o acento cai na terminação (tăcem [təˈt͡ʃem]); na III, no radical (mergem [ˈmerd͡ʒem]). Na 1ª conjugação, «ei» é igual a «el» (cântă); nas outras, «ei» é igual a «eu» (merg). Na 2ª do singular a consoante final pode mudar diante do -i: t → ț (cânt → cânți), d → z (văd → vezi), s → ș (ies → ieși).',
+        text: 'Na II o acento cai na terminação (tăcem [təˈt͡ʃem]); na III, no radical (mergem [ˈmerd͡ʒem]). Na 1ª conjugação, “ei” é igual a “el” (cântă); nas outras, “ei” é igual a “eu” (merg). Na 2ª do singular a consoante final pode mudar diante do -i: t → ț (cânt → cânți), d → z (văd → vezi), s → ș (ies → ieși).',
       },
       {
         heading: 'Os sufixos -ez e -esc',
@@ -511,17 +511,17 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Procurar um gerúndio para «estou lendo»: o presente simples já cobre, «Citesc».',
-      'Esquecer o sufixo: «eu lucru», «eu vorbi» → «lucrez», «vorbesc».',
-      'Achar que «cântă» é só singular: na 1ª conjugação serve para «ele» e «eles».',
-      'Pôr -ez/-esc em noi e voi: «lucrăm», «vorbim», nunca «lucrezăm».',
+      'Procurar um gerúndio para “estou lendo”: o presente simples já cobre, “Citesc”.',
+      'Esquecer o sufixo: “eu lucru”, “eu vorbi” → “lucrez”, “vorbesc”.',
+      'Achar que “cântă” é só singular: na 1ª conjugação serve para “ele” e “eles”.',
+      'Pôr -ez/-esc em noi e voi: “lucrăm”, “vorbim”, nunca “lucrezăm”.',
     ],
     quiz: [
       {
         question: 'Eu ___ aici. (a lucra)',
         options: ['lucru', 'lucrez', 'lucrează'],
         answer: 'lucrez',
-        explanation: '«a lucra» leva -ez: lucrez, lucrezi, lucrează…',
+        explanation: '“a lucra” leva -ez: lucrez, lucrezi, lucrează…',
       },
       {
         question: 'Tu ___ repede. (a vorbi)',
@@ -533,16 +533,16 @@ export const GRAMMAR_RO: GrammarTopic[] = [
         question: 'Ei ___ acasă. (a merge)',
         options: ['merge', 'merg', 'mergem'],
         answer: 'merg',
-        explanation: 'Na 3ª conjugação, «ei» tem a mesma forma que «eu».',
+        explanation: 'Na 3ª conjugação, “ei” tem a mesma forma que “eu”.',
       },
     ],
   },
   {
     id: 'ro-g-a-avea',
     level: 'A1.2',
-    title: 'O verbo «a avea» (ter)',
+    title: 'O verbo “a avea” (ter)',
     emoji: '🎒',
-    summary: 'O verbo «ter», usado também para idade, necessidade e razão, e base do passado composto.',
+    summary: 'O verbo “ter”, usado também para idade, necessidade e razão, e base do passado composto.',
     sections: [
       {
         heading: 'Presente',
@@ -557,10 +557,10 @@ export const GRAMMAR_RO: GrammarTopic[] = [
             ['ei, ele', 'au', '[aw]', 'têm'],
           ],
         },
-        text: 'Na negativa, a fala junta «nu» e «am»: «n-am» (não tenho). Mais tarde você vai reencontrar estas formas, levemente mudadas, no passado composto: am lucrat, ai lucrat, a lucrat.',
+        text: 'Na negativa, a fala junta “nu” e “am”: “n-am” (não tenho). Mais tarde você vai reencontrar estas formas, levemente mudadas, no passado composto: am lucrat, ai lucrat, a lucrat.',
       },
       {
-        heading: 'Expressões com «a avea»',
+        heading: 'Expressões com “a avea”',
         table: {
           head: ['Romeno', 'Português'],
           rows: [
@@ -573,7 +573,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
             ['am răbdare', 'tenho paciência'],
           ],
         },
-        text: 'Na idade, a partir de 20 entra «de»: «am 12 ani», mas «am 25 de ani». Fome, frio, calor e sono não usam «a avea»: «mi-e foame», «mi-e frig», «mi-e cald», «mi-e somn».',
+        text: 'Na idade, a partir de 20 entra “de”: “am 12 ani”, mas “am 25 de ani”. Fome, frio, calor e sono não usam “a avea”: “mi-e foame”, “mi-e frig”, “mi-e cald”, “mi-e somn”.',
       },
       {
         heading: 'Exemplos',
@@ -588,23 +588,23 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar «a avea» no sentido de «há», como o «tem» do Brasil: «Aqui tem um mercado» é «Aici e un magazin».',
-      'Dizer «am foame», «am frig»: o certo é «mi-e foame», «mi-e frig».',
-      'Esquecer o «de» na idade a partir de 20: «am 30 de ani», mas «am 15 ani».',
+      'Usar “a avea” no sentido de “há”, como o “tem” do Brasil: “Aqui tem um mercado” é “Aici e un magazin”.',
+      'Dizer “am foame”, “am frig”: o certo é “mi-e foame”, “mi-e frig”.',
+      'Esquecer o “de” na idade a partir de 20: “am 30 de ani”, mas “am 15 ani”.',
     ],
     quiz: [
-      { question: 'Noi ___ o casă mică.', options: ['avem', 'aveți', 'au'], answer: 'avem', explanation: '«noi» → «avem».' },
+      { question: 'Noi ___ o casă mică.', options: ['avem', 'aveți', 'au'], answer: 'avem', explanation: '“noi” → “avem”.' },
       {
-        question: '«Preciso de um táxi» é…',
+        question: '“Preciso de um táxi” é…',
         options: ['Am nevoie de un taxi.', 'Sunt nevoie de un taxi.', 'Am dreptate de un taxi.'],
         answer: 'Am nevoie de un taxi.',
-        explanation: '«precisar de» = «a avea nevoie de».',
+        explanation: '“precisar de” = “a avea nevoie de”.',
       },
       {
-        question: '«Estou com frio» é…',
+        question: '“Estou com frio” é…',
         options: ['Am frig.', 'Mi-e frig.', 'Sunt frig.'],
         answer: 'Mi-e frig.',
-        explanation: 'Sensações físicas usam «mi-e»: mi-e frig, mi-e foame.',
+        explanation: 'Sensações físicas usam “mi-e”: mi-e frig, mi-e foame.',
       },
     ],
   },
@@ -663,14 +663,14 @@ export const GRAMMAR_RO: GrammarTopic[] = [
     ],
     pitfalls: [
       'Procurar um -s de plural: ele não existe em romeno.',
-      'Esquecer a consoante que muda: «studenți», não «studenti»; «brazi», não «bradi».',
-      'Esquecer a vogal que muda: «fete», não «fate»; «flori», não «floari».',
+      'Esquecer a consoante que muda: “studenți”, não “studenti”; “brazi”, não “bradi”.',
+      'Esquecer a vogal que muda: “fete”, não “fate”; “flori”, não “floari”.',
       'Deduzir o plural pelo português: aprenda sempre o par singular–plural.',
     ],
     quiz: [
-      { question: 'Plural de «fată»:', options: ['fate', 'fete', 'fatei'], answer: 'fete', explanation: '-ă → -e, com a → e no radical.' },
-      { question: 'Plural de «oraș»:', options: ['orași', 'orașe', 'orașuri'], answer: 'orașe', explanation: 'Neutro com plural em -e.' },
-      { question: 'Plural de «băiat»:', options: ['băiați', 'băieți', 'băiate'], answer: 'băieți', explanation: 'Duas alternâncias: a → e e t → ț.' },
+      { question: 'Plural de “fată”:', options: ['fate', 'fete', 'fatei'], answer: 'fete', explanation: '-ă → -e, com a → e no radical.' },
+      { question: 'Plural de “oraș”:', options: ['orași', 'orașe', 'orașuri'], answer: 'orașe', explanation: 'Neutro com plural em -e.' },
+      { question: 'Plural de “băiat”:', options: ['băiați', 'băieți', 'băiate'], answer: 'băieți', explanation: 'Duas alternâncias: a → e e t → ț.' },
     ],
   },
   {
@@ -678,10 +678,10 @@ export const GRAMMAR_RO: GrammarTopic[] = [
     level: 'A2.1',
     title: 'Passado composto (perfectul compus)',
     emoji: '⏪',
-    summary: 'O passado do dia a dia: auxiliar «a avea» + particípio que nunca muda.',
+    summary: 'O passado do dia a dia: auxiliar “a avea” + particípio que nunca muda.',
     sections: [
       {
-        text: 'O perfectul compus é o passado comum da conversa e cobre o nosso pretérito perfeito: «am lucrat» = trabalhei. Forma-se com um auxiliar derivado de «a avea» e o particípio, que é invariável.',
+        text: 'O perfectul compus é o passado comum da conversa e cobre o nosso pretérito perfeito: “am lucrat” = trabalhei. Forma-se com um auxiliar derivado de “a avea” e o particípio, que é invariável.',
       },
       {
         heading: 'Auxiliar + particípio',
@@ -696,7 +696,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
             ['ei, ele', 'au', 'au lucrat', 'au văzut', 'au mers', 'au vorbit'],
           ],
         },
-        text: 'Atenção: o auxiliar é «a» (não «are») e «ați» (não «aveți»). Todos os verbos usam «a avea», inclusive os de movimento: am venit, am plecat.',
+        text: 'Atenção: o auxiliar é “a” (não “are”) e “ați” (não “aveți”). Todos os verbos usam “a avea”, inclusive os de movimento: am venit, am plecat.',
       },
       {
         heading: 'Formação do particípio',
@@ -733,7 +733,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
       {
         heading: 'Negação e exemplos',
-        text: '«Nu» vem antes do auxiliar e, na fala, se funde com ele: «nu am» → «n-am», «nu a» → «n-a».',
+        text: '“Nu” vem antes do auxiliar e, na fala, se funde com ele: “nu am” → “n-am”, “nu a” → “n-a”.',
         examples: [
           ['Ieri am lucrat până târziu.', 'Ontem trabalhei até tarde.'],
           ['Ai văzut filmul?', 'Você viu o filme?'],
@@ -745,15 +745,15 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar «are» e «aveți» como auxiliar: é «a lucrat», «ați lucrat».',
-      'Concordar o particípio com o sujeito: ele não muda, «ea a mers», «ei au mers».',
-      'Ler «am lucrat» como «tenho trabalhado»: significa simplesmente «trabalhei».',
-      'Regularizar particípios: «scriut», «spunut» → «scris», «spus».',
+      'Usar “are” e “aveți” como auxiliar: é “a lucrat”, “ați lucrat”.',
+      'Concordar o particípio com o sujeito: ele não muda, “ea a mers”, “ei au mers”.',
+      'Ler “am lucrat” como “tenho trabalhado”: significa simplesmente “trabalhei”.',
+      'Regularizar particípios: “scriut”, “spunut” → “scris”, “spus”.',
     ],
     quiz: [
-      { question: 'Ea ___ plecat ieri.', options: ['are', 'a', 'ai'], answer: 'a', explanation: 'Na 3ª do singular o auxiliar é «a».' },
-      { question: 'Particípio de «a scrie»:', options: ['scriut', 'scris', 'scrit'], answer: 'scris', explanation: 'Particípio em -s: a scrie → scris.' },
-      { question: 'Voi ___ mâncat?', options: ['aveți', 'ați', 'au'], answer: 'ați', explanation: 'O auxiliar de «voi» é «ați».' },
+      { question: 'Ea ___ plecat ieri.', options: ['are', 'a', 'ai'], answer: 'a', explanation: 'Na 3ª do singular o auxiliar é “a”.' },
+      { question: 'Particípio de “a scrie”:', options: ['scriut', 'scris', 'scrit'], answer: 'scris', explanation: 'Particípio em -s: a scrie → scris.' },
+      { question: 'Voi ___ mâncat?', options: ['aveți', 'ați', 'au'], answer: 'ați', explanation: 'O auxiliar de “voi” é “ați”.' },
     ],
   },
   {
@@ -785,7 +785,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
       {
         heading: 'al, a, ai, ale',
-        text: 'Quando o possessivo não vem logo depois de um nome com artigo definido, entra na frente dele o artigo possessivo, que também concorda com a coisa possuída: al (masc. sg.), a (fem. sg.), ai (masc. pl.), ale (fem./neutro pl.). Isso acontece depois de «a fi», depois de um nome com artigo indefinido e quando o possessivo aparece sozinho.',
+        text: 'Quando o possessivo não vem logo depois de um nome com artigo definido, entra na frente dele o artigo possessivo, que também concorda com a coisa possuída: al (masc. sg.), a (fem. sg.), ai (masc. pl.), ale (fem./neutro pl.). Isso acontece depois de “a fi”, depois de um nome com artigo indefinido e quando o possessivo aparece sozinho.',
         examples: [
           ['Cartea e a mea.', 'O livro é meu.'],
           ['Un coleg al meu vorbește portugheză.', 'Um colega meu fala português.'],
@@ -804,24 +804,24 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pôr o possessivo antes do nome: «meu prieten» → «prietenul meu».',
-      'Esquecer o artigo no nome: «casă mea» → «casa mea».',
-      'Concordar lui, ei, lor com a coisa: são invariáveis, «mașina lui», «copiii lui».',
-      'Omitir o al/a/ai/ale: «Cartea e mea» → «Cartea e a mea».',
+      'Pôr o possessivo antes do nome: “meu prieten” → “prietenul meu”.',
+      'Esquecer o artigo no nome: “casă mea” → “casa mea”.',
+      'Concordar lui, ei, lor com a coisa: são invariáveis, “mașina lui”, “copiii lui”.',
+      'Omitir o al/a/ai/ale: “Cartea e mea” → “Cartea e a mea”.',
     ],
     quiz: [
-      { question: 'Unde sunt pantofii ___? (meus)', options: ['mei', 'mele', 'meu'], answer: 'mei', explanation: 'pantofi é masculino plural → «mei».' },
+      { question: 'Unde sunt pantofii ___? (meus)', options: ['mei', 'mele', 'meu'], answer: 'mei', explanation: 'pantofi é masculino plural → “mei”.' },
       {
         question: 'Cartea asta e ___ mea.',
         options: ['al', 'a', 'ale'],
         answer: 'a',
-        explanation: 'Depois de «e», com coisa feminina singular (carte): «a mea».',
+        explanation: 'Depois de “e”, com coisa feminina singular (carte): “a mea”.',
       },
       {
-        question: '«O carro dele»:',
+        question: '“O carro dele”:',
         options: ['mașina lui', 'mașina ei', 'mașina lor'],
         answer: 'mașina lui',
-        explanation: '«lui» = dele; «ei» = dela; «lor» = deles.',
+        explanation: '“lui” = dele; “ei” = dela; “lor” = deles.',
       },
     ],
   },
@@ -864,9 +864,9 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pôr o neutro plural no masculino: «orașe frumoși» → «orașe frumoase».',
-      'Pôr o artigo no adjetivo na ordem normal: «casă marea» → «casa mare».',
-      'Esquecer as alternâncias: «frumoși», «verzi», não «frumosi», «verdi».',
+      'Pôr o neutro plural no masculino: “orașe frumoși” → “orașe frumoase”.',
+      'Pôr o artigo no adjetivo na ordem normal: “casă marea” → “casa mare”.',
+      'Esquecer as alternâncias: “frumoși”, “verzi”, não “frumosi”, “verdi”.',
     ],
     quiz: [
       { question: 'o fată ___ (frumos)', options: ['frumos', 'frumoasă', 'frumoase'], answer: 'frumoasă', explanation: 'Feminino singular: frumoasă.' },
@@ -880,7 +880,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
         question: 'Onde o adjetivo fica normalmente?',
         options: ['antes do substantivo', 'depois do substantivo', 'sempre no fim da frase'],
         answer: 'depois do substantivo',
-        explanation: 'Ordem neutra: substantivo + adjetivo, como «o casă mare».',
+        explanation: 'Ordem neutra: substantivo + adjetivo, como “o casă mare”.',
       },
     ],
   },
@@ -892,7 +892,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
     summary: 'Três maneiras: voi + infinitivo (formal), o să + conjuntivo (a mais falada) e am să + conjuntivo.',
     sections: [
       {
-        text: 'O romeno tem três formas de futuro com o mesmo sentido; a diferença é de registro. E, como em português, o presente também serve para futuro próximo: «Mâine plec» (amanhã eu vou embora).',
+        text: 'O romeno tem três formas de futuro com o mesmo sentido; a diferença é de registro. E, como em português, o presente também serve para futuro próximo: “Mâine plec” (amanhã eu vou embora).',
       },
       {
         heading: 'As três formas',
@@ -907,11 +907,11 @@ export const GRAMMAR_RO: GrammarTopic[] = [
             ['ei, ele', 'vor lucra', 'o să lucreze', 'au să lucreze'],
           ],
         },
-        text: '«voi, vei, va, vom, veți, vor» + infinitivo sem «a» é a forma da escrita e da fala cuidada. «o să» é a mais comum na conversa: o «o» nunca muda. «am să» é coloquial e soa como intenção pessoal.',
+        text: '“voi, vei, va, vom, veți, vor” + infinitivo sem “a” é a forma da escrita e da fala cuidada. “o să” é a mais comum na conversa: o “o” nunca muda. “am să” é coloquial e soa como intenção pessoal.',
       },
       {
         heading: 'O conjuntivo',
-        text: 'Depois de «să», o verbo fica igual ao presente, menos na 3ª pessoa (singular e plural), que tem forma própria. Alguns verbos muito usados são irregulares.',
+        text: 'Depois de “să”, o verbo fica igual ao presente, menos na 3ª pessoa (singular e plural), que tem forma própria. Alguns verbos muito usados são irregulares.',
         table: {
           head: ['Infinitivo', 'Presente (el)', 'Conjuntivo (el, ei)'],
           rows: [
@@ -927,7 +927,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
       {
         heading: 'Exemplos',
-        text: 'Negação: «nu voi merge», «n-o să merg», «n-am să merg».',
+        text: 'Negação: “nu voi merge”, “n-o să merg”, “n-am să merg”.',
         examples: [
           ['Mâine voi pleca la Iași.', 'Amanhã partirei para Iași.'],
           ['O să plouă diseară.', 'Vai chover hoje à noite.'],
@@ -939,23 +939,23 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Confundir «voi» auxiliar (eu + futuro) com «voi» pronome (vocês): «Eu voi merge» × «Voi mergeți».',
-      'Usar a 3ª pessoa do presente depois de «o să»: «o să vine» → «o să vină»; «o să este» → «o să fie».',
-      'Traduzir «vou comer» por «merg să mănânc»: isso é «vou (até lá) comer». O futuro é «o să mănânc».',
+      'Confundir “voi” auxiliar (eu + futuro) com “voi” pronome (vocês): “Eu voi merge” × “Voi mergeți”.',
+      'Usar a 3ª pessoa do presente depois de “o să”: “o să vine” → “o să vină”; “o să este” → “o să fie”.',
+      'Traduzir “vou comer” por “merg să mănânc”: isso é “vou (até lá) comer”. O futuro é “o să mănânc”.',
     ],
     quiz: [
-      { question: 'Mâine ___ merge la munte. (noi)', options: ['vom', 'vor', 'veți'], answer: 'vom', explanation: '«noi» → «vom» + infinitivo.' },
+      { question: 'Mâine ___ merge la munte. (noi)', options: ['vom', 'vor', 'veți'], answer: 'vom', explanation: '“noi” → “vom” + infinitivo.' },
       {
         question: 'Ea o să ___ acasă. (a veni)',
         options: ['vine', 'vină', 'venit'],
         answer: 'vină',
-        explanation: 'Depois de «să», 3ª pessoa no conjuntivo: să vină.',
+        explanation: 'Depois de “să”, 3ª pessoa no conjuntivo: să vină.',
       },
       {
         question: 'Qual forma é a mais comum na conversa?',
         options: ['voi + infinitivo', 'o să + conjuntivo', 'perfect compus'],
         answer: 'o să + conjuntivo',
-        explanation: '«o să» domina a fala; «voi» + infinitivo é mais formal.',
+        explanation: '“o să” domina a fala; “voi” + infinitivo é mais formal.',
       },
     ],
   },
@@ -964,15 +964,15 @@ export const GRAMMAR_RO: GrammarTopic[] = [
     level: 'A2.2',
     title: 'Imperativo',
     emoji: '👉',
-    summary: 'Ordens e pedidos: formas afirmativas, o negativo com «nu» + infinitivo e o imperativo formal.',
+    summary: 'Ordens e pedidos: formas afirmativas, o negativo com “nu” + infinitivo e o imperativo formal.',
     sections: [
       {
         heading: 'Tu: afirmativo',
-        text: 'Na 1ª conjugação e nos verbos em -esc, o imperativo de «tu» é igual à 3ª pessoa do presente: lucrează!, intră!, vorbește!, citește!. Nos outros verbos costuma ser igual à 2ª pessoa: dormi!, mergi!, taci!. Alguns muito frequentes são irregulares: vino! (vem), fă! (faz), zi! (diz), du! (leva), fii! (sê), ia! (pega), dă! (dá), stai! (espera, fica).',
+        text: 'Na 1ª conjugação e nos verbos em -esc, o imperativo de “tu” é igual à 3ª pessoa do presente: lucrează!, intră!, vorbește!, citește!. Nos outros verbos costuma ser igual à 2ª pessoa: dormi!, mergi!, taci!. Alguns muito frequentes são irregulares: vino! (vem), fă! (faz), zi! (diz), du! (leva), fii! (sê), ia! (pega), dă! (dá), stai! (espera, fica).',
       },
       {
         heading: 'Negativo e plural',
-        text: 'O negativo de «tu» é «nu» + infinitivo sem «a»: nu vorbi!, nu fi!. Para «voi», afirmativo e negativo usam a 2ª pessoa do plural do presente: vorbiți!, nu vorbiți!.',
+        text: 'O negativo de “tu” é “nu” + infinitivo sem “a”: nu vorbi!, nu fi!. Para “voi”, afirmativo e negativo usam a 2ª pessoa do plural do presente: vorbiți!, nu vorbiți!.',
         table: {
           head: ['Verbo', 'tu', 'tu (neg.)', 'voi / formal', 'voi / formal (neg.)'],
           rows: [
@@ -989,7 +989,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
       {
         heading: 'Formal',
-        text: 'Com «dumneavoastră», use a forma de «voi», mesmo para uma pessoa só: «Intrați, vă rog!». Para suavizar, «vă rog să» + conjuntivo: «Vă rog să așteptați» (por favor, aguarde).',
+        text: 'Com “dumneavoastră”, use a forma de “voi”, mesmo para uma pessoa só: “Intrați, vă rog!”. Para suavizar, “vă rog să” + conjuntivo: “Vă rog să așteptați” (por favor, aguarde).',
       },
       {
         heading: 'Pronomes no imperativo',
@@ -1005,25 +1005,25 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Negar a forma afirmativa: «Nu vorbește!» → «Nu vorbi!».',
-      'Usar a forma de «tu» com desconhecidos: com eles, «Poftiți!», «Luați loc!».',
-      'Pôr o pronome antes no afirmativo: «Mă ajută» é «ele me ajuda»; o pedido é «Ajută-mă!».',
+      'Negar a forma afirmativa: “Nu vorbește!” → “Nu vorbi!”.',
+      'Usar a forma de “tu” com desconhecidos: com eles, “Poftiți!”, “Luați loc!”.',
+      'Pôr o pronome antes no afirmativo: “Mă ajută” é “ele me ajuda”; o pedido é “Ajută-mă!”.',
     ],
     quiz: [
       {
-        question: '«Não fala!» (para tu)',
+        question: '“Não fala!” (para tu)',
         options: ['Nu vorbește!', 'Nu vorbi!', 'Nu vorbesc!'],
         answer: 'Nu vorbi!',
-        explanation: 'Negativo de «tu»: nu + infinitivo.',
+        explanation: 'Negativo de “tu”: nu + infinitivo.',
       },
       {
-        question: '«Vem aqui!» (para tu)',
+        question: '“Vem aqui!” (para tu)',
         options: ['Vino aici!', 'Vine aici!', 'Venit aici!'],
         answer: 'Vino aici!',
-        explanation: '«a veni» tem imperativo irregular: vino!',
+        explanation: '“a veni” tem imperativo irregular: vino!',
       },
       {
-        question: 'Ao garçom, formal: «___ meniul, vă rog.»',
+        question: 'Ao garçom, formal: “___ meniul, vă rog.”',
         options: ['Adu-mi', 'Aduceți-mi', 'Aduce-mi'],
         answer: 'Aduceți-mi',
         explanation: 'Formal usa a 2ª do plural: aduceți-mi.',
@@ -1035,7 +1035,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
     level: 'A2.2',
     title: 'Comparação',
     emoji: '⚖️',
-    summary: 'mai … decât / ca, la fel de … ca, cel mai e foarte. Sem formas especiais como «melhor» e «pior».',
+    summary: 'mai … decât / ca, la fel de … ca, cel mai e foarte. Sem formas especiais como “melhor” e “pior”.',
     sections: [
       {
         heading: 'Os graus',
@@ -1052,11 +1052,11 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
       {
         heading: 'decât ou ca',
-        text: 'No comparativo, «decât» e «ca» são aceitos; «ca» é frequente na fala antes de nomes e pronomes («mai înalt ca mine»). Antes de uma oração, só «decât»: «mai bine decât credeam» (melhor do que eu pensava). Na igualdade, sempre «ca».',
+        text: 'No comparativo, “decât” e “ca” são aceitos; “ca” é frequente na fala antes de nomes e pronomes (“mai înalt ca mine”). Antes de uma oração, só “decât”: “mai bine decât credeam” (melhor do que eu pensava). Na igualdade, sempre “ca”.',
       },
       {
         heading: 'O superlativo',
-        text: '«cel» concorda com o substantivo: cel mai bun hotel, cea mai frumoasă fată, cei mai buni prieteni, cele mai bune cărți. O «de» português vira «din»: «cel mai mare oraș din țară». Não há formas irregulares: bun → mai bun (melhor), rău → mai rău (pior), bine → mai bine.',
+        text: '“cel” concorda com o substantivo: cel mai bun hotel, cea mai frumoasă fată, cei mai buni prieteni, cele mai bune cărți. O “de” português vira “din”: “cel mai mare oraș din țară”. Não há formas irregulares: bun → mai bun (melhor), rău → mai rău (pior), bine → mai bine.',
         examples: [
           ['Ana e mai înaltă decât Maria.', 'A Ana é mais alta do que a Maria.'],
           ['Trenul e mai lent ca avionul.', 'O trem é mais lento que o avião.'],
@@ -1068,15 +1068,15 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Procurar uma palavra para «melhor» ou «pior»: é «mai bun», «mai rău», «cel mai bun».',
-      'Esquecer de concordar «cel»: «cea mai frumoasă fată», «cele mai bune cărți».',
-      'Usar «decât» na igualdade: «la fel de mare ca», não «decât».',
-      'Traduzir «muito» antes de adjetivo por «mult»: o certo é «foarte bun»; «mult» vai com substantivos e verbos.',
+      'Procurar uma palavra para “melhor” ou “pior”: é “mai bun”, “mai rău”, “cel mai bun”.',
+      'Esquecer de concordar “cel”: “cea mai frumoasă fată”, “cele mai bune cărți”.',
+      'Usar “decât” na igualdade: “la fel de mare ca”, não “decât”.',
+      'Traduzir “muito” antes de adjetivo por “mult”: o certo é “foarte bun”; “mult” vai com substantivos e verbos.',
     ],
     quiz: [
       { question: 'Maria e ___ înaltă decât Ion.', options: ['mai', 'foarte', 'cel'], answer: 'mai', explanation: 'Comparativo: mai + adjetivo + decât.' },
       {
-        question: '«A cidade mais bonita» (oraș é neutro):',
+        question: '“A cidade mais bonita” (oraș é neutro):',
         options: ['cea mai frumoasă oraș', 'cel mai frumos oraș', 'cel mai frumoasă oraș'],
         answer: 'cel mai frumos oraș',
         explanation: 'Neutro singular concorda como masculino: cel mai frumos.',
@@ -1089,7 +1089,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
     level: 'A2.2',
     title: 'Números e horas',
     emoji: '🕒',
-    summary: 'Contar, concordar um e dois com o gênero, o «de» a partir de 20 e dizer as horas.',
+    summary: 'Contar, concordar um e dois com o gênero, o “de” a partir de 20 e dizer as horas.',
     sections: [
       {
         heading: 'De 0 a 10',
@@ -1112,15 +1112,15 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
       {
         heading: 'Dezenas e centenas',
-        text: 'De 11 a 19: número + «spre» + «zece»: unsprezece, doisprezece / douăsprezece, treisprezece, paisprezece (14), cincisprezece, șaisprezece (16), șaptesprezece, optsprezece, nouăsprezece. Na fala se encurtam: unșpe, doișpe, paișpe. Dezenas: douăzeci (20), treizeci, patruzeci, cincizeci, șaizeci, șaptezeci, optzeci, nouăzeci; 21 = douăzeci și unu. Depois: o sută (100), două sute (200), o mie (1000), două mii (2000), un milion.',
+        text: 'De 11 a 19: número + “spre” + “zece”: unsprezece, doisprezece / douăsprezece, treisprezece, paisprezece (14), cincisprezece, șaisprezece (16), șaptesprezece, optsprezece, nouăsprezece. Na fala se encurtam: unșpe, doișpe, paișpe. Dezenas: douăzeci (20), treizeci, patruzeci, cincizeci, șaizeci, șaptezeci, optzeci, nouăzeci; 21 = douăzeci și unu. Depois: o sută (100), două sute (200), o mie (1000), două mii (2000), un milion.',
       },
       {
         heading: 'Gênero: un/o, doi/două',
-        text: 'Antes do substantivo, «um» é un (masc./neutro) ou o (fem.); unu e una ficam para contar ou quando o número aparece sozinho. «Dois» é doi com masculino e două com feminino e neutro (o neutro é feminino no plural). O mesmo vale em 12, 22, 32…: doisprezece băieți, douăsprezece fete, douăzeci și două de trenuri.',
+        text: 'Antes do substantivo, “um” é un (masc./neutro) ou o (fem.); unu e una ficam para contar ou quando o número aparece sozinho. “Dois” é doi com masculino e două com feminino e neutro (o neutro é feminino no plural). O mesmo vale em 12, 22, 32…: doisprezece băieți, douăsprezece fete, douăzeci și două de trenuri.',
       },
       {
-        heading: 'O «de» a partir de 20',
-        text: 'Quando o número termina em 20–99 ou em 00, entre ele e o substantivo entra «de»: 20 de lei, 25 de ani, 100 de lei. De 1 a 19, e nos números terminados em 01–19 (101, 115), não há «de»: 15 lei, 101 lei.',
+        heading: 'O “de” a partir de 20',
+        text: 'Quando o número termina em 20–99 ou em 00, entre ele e o substantivo entra “de”: 20 de lei, 25 de ani, 100 de lei. De 1 a 19, e nos números terminados em 01–19 (101, 115), não há “de”: 15 lei, 101 lei.',
         examples: [
           ['Am douăzeci și doi de ani.', 'Tenho vinte e dois anos.'],
           ['Costă cincisprezece lei.', 'Custa quinze lei.'],
@@ -1130,7 +1130,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
       {
         heading: 'As horas',
-        text: 'Pergunte «Cât e ceasul?» ou «Ce oră e?». Como «ora» é feminino, as horas usam a forma feminina (ora două, ora douăsprezece), mas uma hora é «ora unu». Para «às», use «la»: la ora opt. Em horários oficiais usa-se o relógio de 24 horas: ora 14.',
+        text: 'Pergunte “Cât e ceasul?” ou “Ce oră e?”. Como “ora” é feminino, as horas usam a forma feminina (ora două, ora douăsprezece), mas uma hora é “ora unu”. Para “às”, use “la”: la ora opt. Em horários oficiais usa-se o relógio de 24 horas: ora 14.',
         table: {
           head: ['Hora', 'Romeno', 'Português'],
           rows: [
@@ -1151,36 +1151,36 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Esquecer o «de» a partir de 20: «20 de lei», «50 de ani»; mas «15 lei», «19 ani».',
-      'Usar «doi» com feminino ou neutro: «două fete», «două trenuri».',
-      'Dizer «ora una»: o certo é «ora unu», embora se diga «ora două».',
-      'Dizer «unu băiat»: antes do substantivo é «un» ou «o».',
+      'Esquecer o “de” a partir de 20: “20 de lei”, “50 de ani”; mas “15 lei”, “19 ani”.',
+      'Usar “doi” com feminino ou neutro: “două fete”, “două trenuri”.',
+      'Dizer “ora una”: o certo é “ora unu”, embora se diga “ora două”.',
+      'Dizer “unu băiat”: antes do substantivo é “un” ou “o”.',
     ],
     quiz: [
-      { question: 'Am 25 ___ ani.', options: ['de', 'cu', 'și'], answer: 'de', explanation: 'A partir de 20, entra «de» antes do substantivo.' },
+      { question: 'Am 25 ___ ani.', options: ['de', 'cu', 'și'], answer: 'de', explanation: 'A partir de 20, entra “de” antes do substantivo.' },
       {
-        question: '«Duas casas»:',
+        question: '“Duas casas”:',
         options: ['doi case', 'două case', 'două casă'],
         answer: 'două case',
-        explanation: 'Feminino → «două», e o substantivo no plural.',
+        explanation: 'Feminino → “două”, e o substantivo no plural.',
       },
       {
-        question: '«São três e meia»:',
+        question: '“São três e meia”:',
         options: ['E trei și jumătate.', 'E trei și un sfert.', 'E patru fără jumătate.'],
         answer: 'E trei și jumătate.',
-        explanation: '«și jumătate» = e meia; «și un sfert» = e quinze.',
+        explanation: '“și jumătate” = e meia; “și un sfert” = e quinze.',
       },
     ],
   },
   {
     id: 'ro-g-conjuntiv',
     level: 'B1.1',
-    title: 'O conjuntivo com «să»',
+    title: 'O conjuntivo com “să”',
     emoji: '🔗',
-    summary: 'Onde o português usa infinitivo ou subjuntivo depois de outro verbo, o romeno usa «să» + verbo conjugado.',
+    summary: 'Onde o português usa infinitivo ou subjuntivo depois de outro verbo, o romeno usa “să” + verbo conjugado.',
     sections: [
       {
-        text: 'Em português dizemos «quero ir», «preciso trabalhar», «quero que você venha». O romeno quase não usa o infinitivo nesses casos: ele usa o conjuntivo, formado por «să» [sə] + o verbo conjugado. «Vreau să merg» é literalmente «quero que eu vá». A boa notícia: o conjuntivo é igual ao presente em quase todas as pessoas.',
+        text: 'Em português dizemos “quero ir”, “preciso trabalhar”, “quero que você venha”. O romeno quase não usa o infinitivo nesses casos: ele usa o conjuntivo, formado por “să” [sə] + o verbo conjugado. “Vreau să merg” é literalmente “quero que eu vá”. A boa notícia: o conjuntivo é igual ao presente em quase todas as pessoas.',
       },
       {
         heading: 'Formas: só a 3ª pessoa muda',
@@ -1199,7 +1199,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
       {
         heading: 'Depois de a vrea, a trebui, a putea, a începe…',
-        text: 'O conjuntivo aparece depois de verbos de vontade, necessidade, capacidade e início: a vrea (querer), a trebui (precisar, ter que), a putea (poder), a începe (começar), a încerca (tentar), a ști (saber fazer), a-i plăcea (gostar). «Trebuie» fica sempre igual: quem muda é o verbo depois de «să». Com «a putea», a forma com infinitivo também existe: «Pot veni» = «Pot să vin».',
+        text: 'O conjuntivo aparece depois de verbos de vontade, necessidade, capacidade e início: a vrea (querer), a trebui (precisar, ter que), a putea (poder), a începe (começar), a încerca (tentar), a ști (saber fazer), a-i plăcea (gostar). “Trebuie” fica sempre igual: quem muda é o verbo depois de “să”. Com “a putea”, a forma com infinitivo também existe: “Pot veni” = “Pot să vin”.',
         examples: [
           ['Vreau să merg la mare.', 'Quero ir para a praia.'],
           ['Trebuie să plec acum.', 'Preciso ir embora agora.'],
@@ -1211,7 +1211,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
       {
         heading: 'Sujeito diferente, negação e convite',
-        text: 'Quando o sujeito muda, a estrutura é a mesma: «Vreau să vii» (Quero que você venha). Se o sujeito aparece antes do verbo, usa-se «ca … să»: «Vreau ca Ana să vină». A negação fica entre «să» e o verbo: «să nu». Sozinho, «să» serve para convites e ordens suaves: «Să mergem!» (Vamos!).',
+        text: 'Quando o sujeito muda, a estrutura é a mesma: “Vreau să vii” (Quero que você venha). Se o sujeito aparece antes do verbo, usa-se “ca … să”: “Vreau ca Ana să vină”. A negação fica entre “să” e o verbo: “să nu”. Sozinho, “să” serve para convites e ordens suaves: “Să mergem!” (Vamos!).',
         examples: [
           ['Vreau ca Ana să vină la petrecere.', 'Quero que a Ana venha à festa.'],
           ['Să nu uiți cheile!', 'Não esqueça as chaves!'],
@@ -1220,23 +1220,23 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Traduzir «quero ir» ao pé da letra com infinitivo: «vreau a merge» não se usa; o certo é «vreau să merg».',
-      'Esquecer a mudança da 3ª pessoa: «el trebuie să vine» está errado; o certo é «el trebuie să vină».',
-      'Conjugar «trebuie»: «eu trebuiesc» não existe na fala padrão; diga «trebuie să…» e conjugue o verbo seguinte.',
-      'Confundir «să» com o «se» condicional do português: «se» (condição) em romeno é «dacă».',
+      'Traduzir “quero ir” ao pé da letra com infinitivo: “vreau a merge” não se usa; o certo é “vreau să merg”.',
+      'Esquecer a mudança da 3ª pessoa: “el trebuie să vine” está errado; o certo é “el trebuie să vină”.',
+      'Conjugar “trebuie”: “eu trebuiesc” não existe na fala padrão; diga “trebuie să…” e conjugue o verbo seguinte.',
+      'Confundir “să” com o “se” condicional do português: “se” (condição) em romeno é “dacă”.',
     ],
     quiz: [
       {
         question: 'Vreau ___ la mare.',
         options: ['merg', 'să merg', 'a merge'],
         answer: 'să merg',
-        explanation: 'Depois de «a vrea» vem o conjuntivo: «să» + verbo conjugado.',
+        explanation: 'Depois de “a vrea” vem o conjuntivo: “să” + verbo conjugado.',
       },
       {
         question: 'Ea trebuie să ___ acasă la opt.',
         options: ['este', 'fie', 'fi'],
         answer: 'fie',
-        explanation: 'O conjuntivo de «a fi» na 3ª pessoa é «să fie».',
+        explanation: 'O conjuntivo de “a fi” na 3ª pessoa é “să fie”.',
       },
       {
         question: 'Vreau ca Mihai să ___ mâine.',
@@ -1254,7 +1254,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
     summary: 'Os pronomes curtos de objeto direto e indireto, as formas com hífen e a duplicação do objeto.',
     sections: [
       {
-        text: 'Como no português, o romeno tem pronomes curtos (átonos) que ficam grudados no verbo: «Te văd» (Te vejo), «Îmi place» (Me agrada). Há duas séries: o acusativo (objeto direto: ver alguém) e o dativo (objeto indireto: dar algo a alguém). Em geral eles vêm antes do verbo conjugado, como no português do Brasil.',
+        text: 'Como no português, o romeno tem pronomes curtos (átonos) que ficam grudados no verbo: “Te văd” (Te vejo), “Îmi place” (Me agrada). Há duas séries: o acusativo (objeto direto: ver alguém) e o dativo (objeto indireto: dar algo a alguém). Em geral eles vêm antes do verbo conjugado, como no português do Brasil.',
       },
       {
         heading: 'As duas séries',
@@ -1271,11 +1271,11 @@ export const GRAMMAR_RO: GrammarTopic[] = [
             ['ele', 'le', 'le-', 'le', 'le-'],
           ],
         },
-        text: 'Repare que «îi» aparece duas vezes: acusativo plural masculino («Îi văd» = Eu os vejo) e dativo singular («Îi dau» = Eu lhe dou). O contexto decide.',
+        text: 'Repare que “îi” aparece duas vezes: acusativo plural masculino (“Îi văd” = Eu os vejo) e dativo singular (“Îi dau” = Eu lhe dou). O contexto decide.',
       },
       {
         heading: 'Formas com hífen',
-        text: 'Diante de vogal (principalmente o auxiliar do perfect compus: am, ai, a, au) o pronome perde o «î» ou o «ă» e se liga com hífen: l-am, m-a, i-am, v-am. O feminino «o» é diferente: no perfect compus ele vai depois do particípio: «am văzut-o». Também há hífen depois de «nu» (nu-l văd) e depois do imperativo afirmativo (Spune-mi!, Ajută-mă!). «Mi-e» é a forma curta de «îmi este» e aparece em expressões de sensação: mi-e foame, mi-e frig, mi-e dor.',
+        text: 'Diante de vogal (principalmente o auxiliar do perfect compus: am, ai, a, au) o pronome perde o “î” ou o “ă” e se liga com hífen: l-am, m-a, i-am, v-am. O feminino “o” é diferente: no perfect compus ele vai depois do particípio: “am văzut-o”. Também há hífen depois de “nu” (nu-l văd) e depois do imperativo afirmativo (Spune-mi!, Ajută-mă!). “Mi-e” é a forma curta de “îmi este” e aparece em expressões de sensação: mi-e foame, mi-e frig, mi-e dor.',
         examples: [
           ['L-am văzut ieri.', 'Eu o vi ontem (ele).'],
           ['Am văzut-o la teatru.', 'Eu a vi no teatro.'],
@@ -1287,7 +1287,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
       {
         heading: 'Duplicação do objeto',
-        text: 'Quando o objeto direto é uma pessoa definida introduzida por «pe», o romeno repete o pronome átono: «O văd pe Ana» ou «Pe Ana o văd» (literalmente «a vejo a Ana»). Com o dativo a repetição também é a regra na fala: «Îi dau lui Ion o carte». Em português isso soaria redundante; em romeno, sem o pronome, a frase soa incompleta.',
+        text: 'Quando o objeto direto é uma pessoa definida introduzida por “pe”, o romeno repete o pronome átono: “O văd pe Ana” ou “Pe Ana o văd” (literalmente “a vejo a Ana”). Com o dativo a repetição também é a regra na fala: “Îi dau lui Ion o carte”. Em português isso soaria redundante; em romeno, sem o pronome, a frase soa incompleta.',
         examples: [
           ['Pe Ana o cunosc de mult.', 'A Ana eu conheço há muito tempo.'],
           ['Îl aștept pe Radu.', 'Estou esperando o Radu.'],
@@ -1296,24 +1296,24 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Esquecer o pronome na duplicação: «Văd pe Ana» soa errado; o natural é «O văd pe Ana».',
-      'Pôr o feminino «o» antes do auxiliar: «o am văzut» está errado; diga «am văzut-o».',
-      'Confundir «îi» acusativo plural (os) com «îi» dativo singular (lhe): «Îi văd» = eu os vejo; «Îi scriu» = eu lhe escrevo.',
-      'Dizer «sunt foame» (literalmente «sou fome»): sensações usam o dativo, «mi-e foame».',
+      'Esquecer o pronome na duplicação: “Văd pe Ana” soa errado; o natural é “O văd pe Ana”.',
+      'Pôr o feminino “o” antes do auxiliar: “o am văzut” está errado; diga “am văzut-o”.',
+      'Confundir “îi” acusativo plural (os) com “îi” dativo singular (lhe): “Îi văd” = eu os vejo; “Îi scriu” = eu lhe escrevo.',
+      'Dizer “sunt foame” (literalmente “sou fome”): sensações usam o dativo, “mi-e foame”.',
     ],
     quiz: [
       {
-        question: 'Como se diz «Eu a vi» (ela)?',
+        question: 'Como se diz “Eu a vi” (ela)?',
         options: ['O am văzut.', 'Am văzut-o.', 'L-am văzut.'],
         answer: 'Am văzut-o.',
-        explanation: 'No perfect compus o feminino «o» vai depois do particípio, com hífen.',
+        explanation: 'No perfect compus o feminino “o” vai depois do particípio, com hífen.',
       },
-      { question: '___ dau cartea lui Ion.', options: ['Îl', 'Îi', 'Le'], answer: 'Îi', explanation: 'Dar algo «a Ion» pede o dativo singular «îi».' },
+      { question: '___ dau cartea lui Ion.', options: ['Îl', 'Îi', 'Le'], answer: 'Îi', explanation: 'Dar algo “a Ion” pede o dativo singular “îi”.' },
       {
         question: 'Pe Maria ___ cunosc.',
         options: ['o', 'îl', 'îi'],
         answer: 'o',
-        explanation: 'Objeto direto feminino singular: «o», que retoma «pe Maria».',
+        explanation: 'Objeto direto feminino singular: “o”, que retoma “pe Maria”.',
       },
     ],
   },
@@ -1325,7 +1325,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
     summary: 'Verbos com pronome reflexivo, que pode ser acusativo (mă, te, se) ou dativo (îmi, îți, își).',
     sections: [
       {
-        text: 'Como em «eu me lavo», o romeno tem verbos com pronome reflexivo. No dicionário eles aparecem com «se» ou «și»: a se spăla (lavar-se), a-și aminti (lembrar-se). O «se» indica reflexivo acusativo; o «și» indica reflexivo dativo. Essa diferença decide qual pronome você usa.',
+        text: 'Como em “eu me lavo”, o romeno tem verbos com pronome reflexivo. No dicionário eles aparecem com “se” ou “și”: a se spăla (lavar-se), a-și aminti (lembrar-se). O “se” indica reflexivo acusativo; o “și” indica reflexivo dativo. Essa diferença decide qual pronome você usa.',
       },
       {
         heading: 'Acusativo vs dativo',
@@ -1340,11 +1340,11 @@ export const GRAMMAR_RO: GrammarTopic[] = [
             ['ei, ele', 'se spală', 'își amintesc'],
           ],
         },
-        text: 'Só a 3ª pessoa tem forma própria: «se» (acusativo) e «își» (dativo). Nas outras pessoas o reflexivo é igual aos pronomes átonos comuns.',
+        text: 'Só a 3ª pessoa tem forma própria: “se” (acusativo) e “își” (dativo). Nas outras pessoas o reflexivo é igual aos pronomes átonos comuns.',
       },
       {
         heading: 'Quais verbos são reflexivos',
-        text: 'Acusativos comuns: a se trezi (acordar), a se îmbrăca (vestir-se), a se numi (chamar-se), a se simți (sentir-se), a se întâmpla (acontecer), a se uita (olhar), a se plimba (passear), a se juca (brincar). Dativos comuns: a-și aminti (lembrar-se), a-și dori (desejar), a-și imagina (imaginar), a-și face griji (preocupar-se). O dativo também aparece com partes do corpo e objetos pessoais, no lugar do possessivo: «Îmi spăl mâinile» (Lavo as mãos).',
+        text: 'Acusativos comuns: a se trezi (acordar), a se îmbrăca (vestir-se), a se numi (chamar-se), a se simți (sentir-se), a se întâmpla (acontecer), a se uita (olhar), a se plimba (passear), a se juca (brincar). Dativos comuns: a-și aminti (lembrar-se), a-și dori (desejar), a-și imagina (imaginar), a-și face griji (preocupar-se). O dativo também aparece com partes do corpo e objetos pessoais, no lugar do possessivo: “Îmi spăl mâinile” (Lavo as mãos).',
         examples: [
           ['Mă numesc Ana.', 'Eu me chamo Ana.'],
           ['Mă uit la televizor.', 'Estou vendo televisão.'],
@@ -1356,7 +1356,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
       {
         heading: 'No perfect compus',
-        text: 'O pronome se liga ao auxiliar com hífen. Acusativo: m-am, te-ai, s-a, ne-am, v-ați, s-au (m-am trezit = acordei). Dativo: mi-am, ți-ai, și-a, ne-am, v-ați, și-au (și-a amintit = ele se lembrou). O «se» também faz frases impessoais: «Aici se vorbește română» (Aqui se fala romeno).',
+        text: 'O pronome se liga ao auxiliar com hífen. Acusativo: m-am, te-ai, s-a, ne-am, v-ați, s-au (m-am trezit = acordei). Dativo: mi-am, ți-ai, și-a, ne-am, v-ați, și-au (și-a amintit = ele se lembrou). O “se” também faz frases impessoais: “Aici se vorbește română” (Aqui se fala romeno).',
         examples: [
           ['M-am trezit la șapte.', 'Acordei às sete.'],
           ['Și-a uitat cheile acasă.', 'Ela esqueceu as chaves em casa.'],
@@ -1364,26 +1364,26 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Esquecer o pronome em verbos que não são reflexivos no português: «Mă uit», «Mă plimb», «Mă joc».',
-      'Misturar as séries: «Mă amintesc» está errado; «a-și aminti» é dativo, «Îmi amintesc».',
-      'Usar possessivo com partes do corpo: «Spăl mâinile mele» soa estranho; diga «Îmi spăl mâinile».',
-      'Na 3ª pessoa trocar «se» por «își»: «El își amintește», mas «El se spală».',
+      'Esquecer o pronome em verbos que não são reflexivos no português: “Mă uit”, “Mă plimb”, “Mă joc”.',
+      'Misturar as séries: “Mă amintesc” está errado; “a-și aminti” é dativo, “Îmi amintesc”.',
+      'Usar possessivo com partes do corpo: “Spăl mâinile mele” soa estranho; diga “Îmi spăl mâinile”.',
+      'Na 3ª pessoa trocar “se” por “își”: “El își amintește”, mas “El se spală”.',
     ],
     quiz: [
       {
-        question: 'Como se diz «Eu me lembro»?',
+        question: 'Como se diz “Eu me lembro”?',
         options: ['Mă amintesc.', 'Îmi amintesc.', 'Se amintesc.'],
         answer: 'Îmi amintesc.',
-        explanation: '«a-și aminti» é reflexivo dativo: îmi, îți, își…',
+        explanation: '“a-și aminti” é reflexivo dativo: îmi, îți, își…',
       },
       {
         question: 'Ieri (eu) ___ trezit la șapte.',
         options: ['m-am', 'mi-am', 's-a'],
         answer: 'm-am',
-        explanation: '«a se trezi» é acusativo; na 1ª pessoa do perfect compus: m-am.',
+        explanation: '“a se trezi” é acusativo; na 1ª pessoa do perfect compus: m-am.',
       },
       {
-        question: 'Como se diz «Lavo as mãos»?',
+        question: 'Como se diz “Lavo as mãos”?',
         options: ['Îmi spăl mâinile.', 'Mă spăl mâinile mele.', 'Spăl mâinile mele.'],
         answer: 'Îmi spăl mâinile.',
         explanation: 'Com partes do corpo o romeno usa o dativo reflexivo no lugar do possessivo.',
@@ -1398,7 +1398,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
     summary: 'O passado de hábitos, descrições e ações em andamento, em oposição ao perfect compus.',
     sections: [
       {
-        text: 'O imperfect romeno corresponde bem ao pretérito imperfeito do português: «eu trabalhava», «eu ia», «era». Ele descreve o pano de fundo e o que se repetia; o perfect compus (am lucrat, am mers) conta o que aconteceu e terminou.',
+        text: 'O imperfect romeno corresponde bem ao pretérito imperfeito do português: “eu trabalhava”, “eu ia”, “era”. Ele descreve o pano de fundo e o que se repetia; o perfect compus (am lucrat, am mers) conta o que aconteceu e terminou.',
       },
       {
         heading: 'Formas',
@@ -1413,7 +1413,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
             ['ei, ele', 'erau', 'lucrau', 'mergeau', 'făceau'],
           ],
         },
-        text: 'Verbos em -a e em -î levam -am, -ai, -a, -am, -ați, -au (lucram, coboram). Os demais levam -eam, -eai, -ea, -eam, -eați, -eau (vedeam, dormeam, citeam, veneam). «a avea» → aveam; «a vrea» → voiam; «a da» → dădeam; «a sta» → stăteam. A 1ª pessoa do singular e a do plural são iguais: «eram» = eu era / nós éramos.',
+        text: 'Verbos em -a e em -î levam -am, -ai, -a, -am, -ați, -au (lucram, coboram). Os demais levam -eam, -eai, -ea, -eam, -eați, -eau (vedeam, dormeam, citeam, veneam). “a avea” → aveam; “a vrea” → voiam; “a da” → dădeam; “a sta” → stăteam. A 1ª pessoa do singular e a do plural são iguais: “eram” = eu era / nós éramos.',
       },
       {
         heading: 'Imperfect vs perfect compus',
@@ -1429,9 +1429,9 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Confundir «lucram» (eu trabalhava / nós trabalhávamos) com «lucrăm» (nós trabalhamos, presente): só o «ă» muda.',
-      'Usar o imperfect para um fato único e concluído: «Ieri mergeam la cinema» soa como «ontem eu ia ao cinema»; para contar o que aconteceu diga «Ieri am mers la cinema».',
-      'Levar para o romeno o imperfeito hipotético do português falado («se eu pudesse, eu ia»): para hipóteses no presente use o condicional, «aș merge».',
+      'Confundir “lucram” (eu trabalhava / nós trabalhávamos) com “lucrăm” (nós trabalhamos, presente): só o “ă” muda.',
+      'Usar o imperfect para um fato único e concluído: “Ieri mergeam la cinema” soa como “ontem eu ia ao cinema”; para contar o que aconteceu diga “Ieri am mers la cinema”.',
+      'Levar para o romeno o imperfeito hipotético do português falado (“se eu pudesse, eu ia”): para hipóteses no presente use o condicional, “aș merge”.',
     ],
     quiz: [
       {
@@ -1447,10 +1447,10 @@ export const GRAMMAR_RO: GrammarTopic[] = [
         explanation: 'Fato pontual e concluído: perfect compus.',
       },
       {
-        question: '«lucram» (sem ă) significa…',
+        question: '“lucram” (sem ă) significa…',
         options: ['trabalhamos (presente)', 'eu trabalhava / nós trabalhávamos', 'trabalhei'],
         answer: 'eu trabalhava / nós trabalhávamos',
-        explanation: 'É o imperfect; o presente de «noi» é «lucrăm», com ă.',
+        explanation: 'É o imperfect; o presente de “noi” é “lucrăm”, com ă.',
       },
     ],
   },
@@ -1459,10 +1459,10 @@ export const GRAMMAR_RO: GrammarTopic[] = [
     level: 'B1.2',
     title: 'Preposições principais',
     emoji: '📍',
-    summary: 'la, în, pe, cu, de, din, pentru, spre, până la, fără: usos, o «pe» de pessoa e o caso depois da preposição.',
+    summary: 'la, în, pe, cu, de, din, pentru, spre, până la, fără: usos, o “pe” de pessoa e o caso depois da preposição.',
     sections: [
       {
-        text: 'As preposições romenas são parecidas com as portuguesas, mas não se correspondem uma a uma. O «em» português, por exemplo, se divide entre «la», «în» e «pe». Aprenda cada preposição com exemplos prontos.',
+        text: 'As preposições romenas são parecidas com as portuguesas, mas não se correspondem uma a uma. O “em” português, por exemplo, se divide entre “la”, “în” e “pe”. Aprenda cada preposição com exemplos prontos.',
       },
       {
         heading: 'As mais usadas',
@@ -1481,11 +1481,11 @@ export const GRAMMAR_RO: GrammarTopic[] = [
             ['fără [ˈfərə]', 'sem', 'fără zahăr', 'sem açúcar'],
           ],
         },
-        text: '«de la» indica origem de um lugar com «la» ou de uma pessoa: «Vin de la serviciu» (Venho do trabalho), «un cadou de la Ana» (um presente da Ana).',
+        text: '“de la” indica origem de um lugar com “la” ou de uma pessoa: “Vin de la serviciu” (Venho do trabalho), “un cadou de la Ana” (um presente da Ana).',
       },
       {
-        heading: '«pe» com objeto de pessoa',
-        text: 'Além de «sobre», «pe» marca o objeto direto quando ele é uma pessoa definida (nome, pronome, «cine»). Não se traduz, e costuma vir junto com o pronome átono: «O caut pe Maria» (Procuro a Maria), «Pe cine aștepți?» (Quem você está esperando?). Com coisas não se usa: «Caut cheile».',
+        heading: '“pe” com objeto de pessoa',
+        text: 'Além de “sobre”, “pe” marca o objeto direto quando ele é uma pessoa definida (nome, pronome, “cine”). Não se traduz, e costuma vir junto com o pronome átono: “O caut pe Maria” (Procuro a Maria), “Pe cine aștepți?” (Quem você está esperando?). Com coisas não se usa: “Caut cheile”.',
         examples: [
           ['O caut pe Maria.', 'Estou procurando a Maria.'],
           ['Pe cine aștepți?', 'Quem você está esperando?'],
@@ -1494,7 +1494,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
       {
         heading: 'Caso e artigo depois da preposição',
-        text: 'A maioria das preposições pede o acusativo, que para substantivos tem a mesma forma do nominativo; com pronomes use a forma tônica: pentru mine, cu tine, fără el. Detalhe importante: depois de preposição o substantivo sozinho perde o artigo definido («pe masă», «în casă»), mas o recupera quando tem complemento («pe masa din bucătărie», «în casa mea»). «cu» é a exceção e mantém o artigo: «cu trenul», «cu mașina». Algumas locuções pedem genitivo (în fața casei, deasupra mesei) e outras dativo (datorită ajutorului tău).',
+        text: 'A maioria das preposições pede o acusativo, que para substantivos tem a mesma forma do nominativo; com pronomes use a forma tônica: pentru mine, cu tine, fără el. Detalhe importante: depois de preposição o substantivo sozinho perde o artigo definido (“pe masă”, “în casă”), mas o recupera quando tem complemento (“pe masa din bucătărie”, “în casa mea”). “cu” é a exceção e mantém o artigo: “cu trenul”, “cu mașina”. Algumas locuções pedem genitivo (în fața casei, deasupra mesei) e outras dativo (datorită ajutorului tău).',
         examples: [
           ['Cartea e pe masă.', 'O livro está na mesa.'],
           ['Cartea e pe masa din bucătărie.', 'O livro está na mesa da cozinha.'],
@@ -1504,19 +1504,19 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Traduzir todo «em» por «în»: pontos e eventos usam «la» (la școală, la cinema, la mare).',
-      'Dizer «Sunt de Brazilia»: a origem é com «din», «Sunt din Brazilia».',
-      'Esquecer o «pe» com pessoa: «Caut Maria» → «O caut pe Maria».',
-      'Usar o artigo sem complemento depois de preposição: «pe masa» sozinho é erro; o certo é «pe masă» (mas «cu trenul»).',
+      'Traduzir todo “em” por “în”: pontos e eventos usam “la” (la școală, la cinema, la mare).',
+      'Dizer “Sunt de Brazilia”: a origem é com “din”, “Sunt din Brazilia”.',
+      'Esquecer o “pe” com pessoa: “Caut Maria” → “O caut pe Maria”.',
+      'Usar o artigo sem complemento depois de preposição: “pe masa” sozinho é erro; o certo é “pe masă” (mas “cu trenul”).',
     ],
     quiz: [
-      { question: 'Mâine merg ___ cinema.', options: ['în', 'la', 'pe'], answer: 'la', explanation: 'Eventos e pontos de destino usam «la».' },
-      { question: 'Sunt ___ Brazilia.', options: ['de', 'din', 'la'], answer: 'din', explanation: 'Origem de país ou cidade: «din».' },
+      { question: 'Mâine merg ___ cinema.', options: ['în', 'la', 'pe'], answer: 'la', explanation: 'Eventos e pontos de destino usam “la”.' },
+      { question: 'Sunt ___ Brazilia.', options: ['de', 'din', 'la'], answer: 'din', explanation: 'Origem de país ou cidade: “din”.' },
       {
         question: 'Qual frase está correta?',
         options: ['Cartea e pe masă.', 'Cartea e pe masa.', 'Cartea e în masa.'],
         answer: 'Cartea e pe masă.',
-        explanation: 'Depois de preposição o substantivo sem complemento perde o artigo; superfície pede «pe».',
+        explanation: 'Depois de preposição o substantivo sem complemento perde o artigo; superfície pede “pe”.',
       },
     ],
   },
@@ -1528,7 +1528,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
     summary: 'aș, ai, ar, am, ați, ar + infinitivo: hipóteses, desejos e pedidos educados.',
     sections: [
       {
-        text: 'O condicional corresponde ao futuro do pretérito do português («eu iria», «você faria»). Ele se forma com um auxiliar curto + o infinitivo sem «a»: «aș merge» (eu iria). O verbo principal não muda; só o auxiliar indica a pessoa.',
+        text: 'O condicional corresponde ao futuro do pretérito do português (“eu iria”, “você faria”). Ele se forma com um auxiliar curto + o infinitivo sem “a”: “aș merge” (eu iria). O verbo principal não muda; só o auxiliar indica a pessoa.',
       },
       {
         heading: 'Formas',
@@ -1543,11 +1543,11 @@ export const GRAMMAR_RO: GrammarTopic[] = [
             ['ei, ele', 'ar', '[ar]', 'ar merge', 'ar vrea'],
           ],
         },
-        text: 'Negação: «n-aș merge» ou «nu aș merge». Os pronomes átonos se ligam com hífen: m-aș bucura, ți-aș spune, l-aș cumpăra. O passado é com «fi» + particípio: «aș fi mers» (eu teria ido).',
+        text: 'Negação: “n-aș merge” ou “nu aș merge”. Os pronomes átonos se ligam com hífen: m-aș bucura, ți-aș spune, l-aș cumpăra. O passado é com “fi” + particípio: “aș fi mers” (eu teria ido).',
       },
       {
         heading: 'Pedidos educados',
-        text: 'Como no português, o condicional suaviza pedidos: «Aș vrea…» (Eu queria / gostaria…), «Ați putea…?» (O senhor poderia…?), «Mi-ar plăcea…» (Eu gostaria…), «Ar trebui să…» (Deveria…).',
+        text: 'Como no português, o condicional suaviza pedidos: “Aș vrea…” (Eu queria / gostaria…), “Ați putea…?” (O senhor poderia…?), “Mi-ar plăcea…” (Eu gostaria…), “Ar trebui să…” (Deveria…).',
         examples: [
           ['Aș vrea un bilet pentru Cluj, vă rog.', 'Eu queria uma passagem para Cluj, por favor.'],
           ['Ați putea să vorbiți mai rar?', 'O senhor poderia falar mais devagar?'],
@@ -1556,8 +1556,8 @@ export const GRAMMAR_RO: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'Hipóteses com «dacă»',
-        text: 'Em romeno o condicional aparece nas duas partes da frase: «Dacă aș avea timp, aș veni». O português usa o imperfeito do subjuntivo depois de «se» («se eu tivesse»), mas o romeno não tem esse tempo: repete o condicional.',
+        heading: 'Hipóteses com “dacă”',
+        text: 'Em romeno o condicional aparece nas duas partes da frase: “Dacă aș avea timp, aș veni”. O português usa o imperfeito do subjuntivo depois de “se” (“se eu tivesse”), mas o romeno não tem esse tempo: repete o condicional.',
         examples: [
           ['Dacă aș avea bani, aș călători mai mult.', 'Se eu tivesse dinheiro, viajaria mais.'],
           ['Ce ai face în locul meu?', 'O que você faria no meu lugar?'],
@@ -1565,28 +1565,28 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Procurar um «subjuntivo imperfeito» depois de «dacă»: use o condicional, «dacă aș putea».',
-      'Confundir «am merge» (nós iríamos) com «am mers» (eu fui / nós fomos): o infinitivo indica condicional, o particípio indica passado.',
-      'Colocar «a» antes do infinitivo: «aș a merge» está errado; é «aș merge».',
+      'Procurar um “subjuntivo imperfeito” depois de “dacă”: use o condicional, “dacă aș putea”.',
+      'Confundir “am merge” (nós iríamos) com “am mers” (eu fui / nós fomos): o infinitivo indica condicional, o particípio indica passado.',
+      'Colocar “a” antes do infinitivo: “aș a merge” está errado; é “aș merge”.',
     ],
     quiz: [
       {
-        question: 'Como se diz «Eu gostaria de um chá»?',
+        question: 'Como se diz “Eu gostaria de um chá”?',
         options: ['Vreau un ceai.', 'Aș vrea un ceai.', 'Am vrut un ceai.'],
         answer: 'Aș vrea un ceai.',
-        explanation: 'O pedido educado usa o condicional «aș vrea».',
+        explanation: 'O pedido educado usa o condicional “aș vrea”.',
       },
       {
         question: 'Dacă ___ timp, aș veni.',
         options: ['aș avea', 'am avut', 'voi avea'],
         answer: 'aș avea',
-        explanation: 'Depois de «dacă», na hipótese do presente, também vai o condicional.',
+        explanation: 'Depois de “dacă”, na hipótese do presente, também vai o condicional.',
       },
       {
-        question: '«Noi am merge» significa…',
+        question: '“Noi am merge” significa…',
         options: ['nós fomos', 'nós iríamos', 'nós vamos'],
         answer: 'nós iríamos',
-        explanation: '«am» + infinitivo é condicional; «am mers» seria passado.',
+        explanation: '“am” + infinitivo é condicional; “am mers” seria passado.',
       },
     ],
   },
@@ -1598,27 +1598,27 @@ export const GRAMMAR_RO: GrammarTopic[] = [
     summary: 'Contar o que alguém disse ou perguntou, mantendo o tempo verbal original.',
     sections: [
       {
-        text: 'Para relatar falas, o romeno usa «că» (que) para afirmações, «dacă» (se) para perguntas de sim ou não, a própria palavra interrogativa (unde, ce, când…) para as outras perguntas e «să» + conjuntivo para ordens e pedidos. A grande diferença em relação ao português: o romeno não faz correlação de tempos. O verbo fica no tempo em que a frase foi dita.',
+        text: 'Para relatar falas, o romeno usa “că” (que) para afirmações, “dacă” (se) para perguntas de sim ou não, a própria palavra interrogativa (unde, ce, când…) para as outras perguntas e “să” + conjuntivo para ordens e pedidos. A grande diferença em relação ao português: o romeno não faz correlação de tempos. O verbo fica no tempo em que a frase foi dita.',
       },
       {
         heading: 'O tempo não muda',
         table: {
           head: ['Discurso direto', 'Indireto em romeno', 'Português'],
           rows: [
-            ['«Sunt ocupat.»', 'A zis că e ocupat.', 'Disse que estava ocupado.'],
-            ['«Plec mâine.»', 'A spus că pleacă mâine.', 'Disse que ia embora amanhã.'],
-            ['«Am mâncat.»', 'A spus că a mâncat.', 'Disse que tinha comido.'],
-            ['«O să plouă.»', 'A spus că o să plouă.', 'Disse que ia chover.'],
-            ['«Vii?»', 'M-a întrebat dacă vin.', 'Me perguntou se eu ia.'],
-            ['«Unde locuiești?»', 'M-a întrebat unde locuiesc.', 'Me perguntou onde eu morava.'],
-            ['«Închide ușa!»', 'Mi-a spus să închid ușa.', 'Me disse para fechar a porta.'],
+            ['“Sunt ocupat.”', 'A zis că e ocupat.', 'Disse que estava ocupado.'],
+            ['“Plec mâine.”', 'A spus că pleacă mâine.', 'Disse que ia embora amanhã.'],
+            ['“Am mâncat.”', 'A spus că a mâncat.', 'Disse que tinha comido.'],
+            ['“O să plouă.”', 'A spus că o să plouă.', 'Disse que ia chover.'],
+            ['“Vii?”', 'M-a întrebat dacă vin.', 'Me perguntou se eu ia.'],
+            ['“Unde locuiești?”', 'M-a întrebat unde locuiesc.', 'Me perguntou onde eu morava.'],
+            ['“Închide ușa!”', 'Mi-a spus să închid ușa.', 'Me disse para fechar a porta.'],
           ],
         },
         text: 'Só mudam as pessoas (eu → el, tu → eu), como em português. Advérbios de tempo podem mudar se o contexto pedir (mâine → a doua zi).',
       },
       {
         heading: 'Verbos e conectores',
-        text: 'Os verbos mais comuns são a spune e a zice (dizer), a întreba (perguntar), a răspunde (responder), a explica (explicar), a cere (pedir) e a ruga (pedir por favor). Depois de a cere e a ruga vem sempre «să».',
+        text: 'Os verbos mais comuns são a spune e a zice (dizer), a întreba (perguntar), a răspunde (responder), a explica (explicar), a cere (pedir) e a ruga (pedir por favor). Depois de a cere e a ruga vem sempre “să”.',
         examples: [
           ['Ana a spus că e obosită.', 'A Ana disse que estava cansada.'],
           ['M-a întrebat dacă vreau cafea.', 'Ele me perguntou se eu queria café.'],
@@ -1629,23 +1629,23 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Aplicar a correlação do português: «A spus că era obosită» sugere que o cansaço era anterior à fala; para «disse que estava cansada» o normal é «a spus că e obosită».',
-      'Traduzir o «se» interrogativo por «să»: pergunta indireta de sim ou não é com «dacă».',
-      'Relatar ordens com «că»: «Mi-a spus că vin» = disse que eu venho; a ordem é «Mi-a spus să vin».',
+      'Aplicar a correlação do português: “A spus că era obosită” sugere que o cansaço era anterior à fala; para “disse que estava cansada” o normal é “a spus că e obosită”.',
+      'Traduzir o “se” interrogativo por “să”: pergunta indireta de sim ou não é com “dacă”.',
+      'Relatar ordens com “că”: “Mi-a spus că vin” = disse que eu venho; a ordem é “Mi-a spus să vin”.',
     ],
     quiz: [
       {
-        question: 'Ana: «Sunt bolnavă.» → Ana a spus că ___ bolnavă.',
+        question: 'Ana: “Sunt bolnavă.” → Ana a spus că ___ bolnavă.',
         options: ['era', 'este', 'fusese'],
         answer: 'este',
         explanation: 'O romeno mantém o tempo da fala original.',
       },
-      { question: 'M-a întrebat ___ vreau cafea.', options: ['că', 'dacă', 'să'], answer: 'dacă', explanation: 'Pergunta indireta de sim ou não usa «dacă».' },
+      { question: 'M-a întrebat ___ vreau cafea.', options: ['că', 'dacă', 'să'], answer: 'dacă', explanation: 'Pergunta indireta de sim ou não usa “dacă”.' },
       {
-        question: '«Sună-mă!» → Mi-a cerut ___.',
+        question: '“Sună-mă!” → Mi-a cerut ___.',
         options: ['că o sun', 'să o sun', 'dacă o sun'],
         answer: 'să o sun',
-        explanation: 'Ordens e pedidos relatados usam «să» + conjuntivo.',
+        explanation: 'Ordens e pedidos relatados usam “să” + conjuntivo.',
       },
     ],
   },
@@ -1654,10 +1654,10 @@ export const GRAMMAR_RO: GrammarTopic[] = [
     level: 'B1.4',
     title: 'Genitivo-dativo (-ului, -ei, -lor)',
     emoji: '🏷️',
-    summary: 'O caso que expressa posse («de») e objeto indireto («a, para»), com o artigo possessivo al/a/ai/ale.',
+    summary: 'O caso que expressa posse (“de”) e objeto indireto (“a, para”), com o artigo possessivo al/a/ai/ale.',
     sections: [
       {
-        text: 'O romeno tem um caso com a mesma forma para duas funções: genitivo (posse: «a casa do menino») e dativo (objeto indireto: «dou ao menino»). Em vez de usar a preposição «de», a terminação do substantivo muda: casa băiatului (a casa do menino), dau băiatului (dou ao menino).',
+        text: 'O romeno tem um caso com a mesma forma para duas funções: genitivo (posse: “a casa do menino”) e dativo (objeto indireto: “dou ao menino”). Em vez de usar a preposição “de”, a terminação do substantivo muda: casa băiatului (a casa do menino), dau băiatului (dou ao menino).',
       },
       {
         heading: 'Formas com artigo definido',
@@ -1673,7 +1673,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
             ['nomes próprios', 'Ion, Maria', 'lui Ion, Mariei', '[luj], [maˈriej]'],
           ],
         },
-        text: 'Dica para o feminino singular: parta do plural sem artigo e acrescente -i (case → casei, fete → fetei, cărți → cărții, mașini → mașinii). Nomes masculinos e nomes femininos que não terminam em -a levam «lui» na frente: lui Ion, lui Carmen. Femininos em -a mudam como substantivos: Ana → Anei.',
+        text: 'Dica para o feminino singular: parta do plural sem artigo e acrescente -i (case → casei, fete → fetei, cărți → cărții, mașini → mașinii). Nomes masculinos e nomes femininos que não terminam em -a levam “lui” na frente: lui Ion, lui Carmen. Femininos em -a mudam como substantivos: Ana → Anei.',
       },
       {
         heading: 'O artigo possessivo al, a, ai, ale',
@@ -1686,7 +1686,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
             ['fem./neutro plural', 'ale', 'două case ale Mariei'],
           ],
         },
-        text: 'Depois de um substantivo com artigo definido o genitivo vem direto: «casa Mariei». Nos outros casos (substantivo indefinido, depois de «a fi», com adjetivo no meio) entra o artigo possessivo, que concorda com a coisa possuída, não com o dono. É o mesmo artigo de «al meu, a mea, ai mei, ale mele».',
+        text: 'Depois de um substantivo com artigo definido o genitivo vem direto: “casa Mariei”. Nos outros casos (substantivo indefinido, depois de “a fi”, com adjetivo no meio) entra o artigo possessivo, que concorda com a coisa possuída, não com o dono. É o mesmo artigo de “al meu, a mea, ai mei, ale mele”.',
         examples: [
           ['Mașina fratelui meu e nouă.', 'O carro do meu irmão é novo.'],
           ['Cartea asta e a Mariei.', 'Este livro é da Maria.'],
@@ -1698,14 +1698,14 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Traduzir o «de» da posse: «casa de Maria» está errado; o certo é «casa Mariei».',
-      'Concordar al/a com o dono: «un prieten a Mariei» está errado; «prieten» é masculino, então «al Mariei».',
-      'Usar «lui» com nome feminino em -a: «lui Maria» é coloquial; na norma é «Mariei».',
-      'Marcar o dativo com preposição: «dau la Ion» → «îi dau lui Ion».',
+      'Traduzir o “de” da posse: “casa de Maria” está errado; o certo é “casa Mariei”.',
+      'Concordar al/a com o dono: “un prieten a Mariei” está errado; “prieten” é masculino, então “al Mariei”.',
+      'Usar “lui” com nome feminino em -a: “lui Maria” é coloquial; na norma é “Mariei”.',
+      'Marcar o dativo com preposição: “dau la Ion” → “îi dau lui Ion”.',
     ],
     quiz: [
       {
-        question: 'Como se diz «a casa da Ana»?',
+        question: 'Como se diz “a casa da Ana”?',
         options: ['casa de Ana', 'casa Anei', 'casa lui Ana'],
         answer: 'casa Anei',
         explanation: 'Feminino em -a: Ana → Anei, sem preposição.',
@@ -1714,10 +1714,10 @@ export const GRAMMAR_RO: GrammarTopic[] = [
         question: 'Acesta este un prieten ___ Mariei.',
         options: ['al', 'a', 'ale'],
         answer: 'al',
-        explanation: 'O artigo concorda com «prieten» (masc. sing.): al.',
+        explanation: 'O artigo concorda com “prieten” (masc. sing.): al.',
       },
       {
-        question: 'Genitivo-dativo de «băieții»:',
+        question: 'Genitivo-dativo de “băieții”:',
         options: ['băiatului', 'băieților', 'băieții'],
         answer: 'băieților',
         explanation: 'No plural a terminação é sempre -lor.',
@@ -1732,11 +1732,11 @@ export const GRAMMAR_RO: GrammarTopic[] = [
     summary: 'care, pe care, căruia/căreia/cărora, al cărui/a cărei e ce: como ligar orações.',
     sections: [
       {
-        text: 'O «que» relativo do português se divide em romeno conforme a função: «care» é o relativo básico (para pessoas e coisas), «pe care» para objeto direto, formas de genitivo-dativo para «a quem» e «cujo», e «ce» para «o que».',
+        text: 'O “que” relativo do português se divide em romeno conforme a função: “care” é o relativo básico (para pessoas e coisas), “pe care” para objeto direto, formas de genitivo-dativo para “a quem” e “cujo”, e “ce” para “o que”.',
       },
       {
         heading: 'care e pe care',
-        text: '«care» [ˈkare] não varia e funciona como sujeito: «Omul care vorbește» (O homem que fala). Como objeto direto vira «pe care», e o verbo recebe o pronome átono de retomada: «Filmul pe care l-am văzut» (O filme que eu vi). Depois de outras preposições: cu care, despre care, în care, la care.',
+        text: '“care” [ˈkare] não varia e funciona como sujeito: “Omul care vorbește” (O homem que fala). Como objeto direto vira “pe care”, e o verbo recebe o pronome átono de retomada: “Filmul pe care l-am văzut” (O filme que eu vi). Depois de outras preposições: cu care, despre care, în care, la care.',
         examples: [
           ['Omul care vorbește e profesorul meu.', 'O homem que está falando é meu professor.'],
           ['Cartea pe care am citit-o e bună.', 'O livro que eu li é bom.'],
@@ -1754,7 +1754,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
             ['plural', 'cărora', '[ˈkərora]', 'copiii cărora le-am vorbit'],
           ],
         },
-        text: 'Equivale a «a quem» / «ao qual». O verbo também recebe o pronome dativo de retomada (i-am, le-am).',
+        text: 'Equivale a “a quem” / “ao qual”. O verbo também recebe o pronome dativo de retomada (i-am, le-am).',
       },
       {
         heading: 'Genitivo: al cărui, a cărei… (cujo)',
@@ -1766,7 +1766,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
             ['plural', 'al căror', 'a căror', 'ai căror', 'ale căror'],
           ],
         },
-        text: 'Concordância dupla: «cărui/cărei/căror» concorda com o dono (antecedente); al/a/ai/ale concorda com a coisa possuída, que vem logo depois. «Băiatul a cărui mamă e medic» (O menino cuja mãe é médica): dono masculino → cărui; mamă feminino → a.',
+        text: 'Concordância dupla: “cărui/cărei/căror” concorda com o dono (antecedente); al/a/ai/ale concorda com a coisa possuída, que vem logo depois. “Băiatul a cărui mamă e medic” (O menino cuja mãe é médica): dono masculino → cărui; mamă feminino → a.',
         examples: [
           ['Scriitorul a cărui carte am citit-o e român.', 'O escritor cujo livro eu li é romeno.'],
           ['Fata al cărei frate lucrează aici e studentă.', 'A moça cujo irmão trabalha aqui é estudante.'],
@@ -1774,7 +1774,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
       {
         heading: 'ce e ceea ce',
-        text: '«ce» é «o que» sem antecedente: «Fă ce vrei» (Faça o que quiser), «Tot ce am» (Tudo o que tenho). Na língua cuidada, «o que» retomando uma frase é «ceea ce»: «Nu înțeleg ceea ce spui». Depois de substantivo, «ce» como relativo existe, mas soa literário ou coloquial; prefira «care».',
+        text: '“ce” é “o que” sem antecedente: “Fă ce vrei” (Faça o que quiser), “Tot ce am” (Tudo o que tenho). Na língua cuidada, “o que” retomando uma frase é “ceea ce”: “Nu înțeleg ceea ce spui”. Depois de substantivo, “ce” como relativo existe, mas soa literário ou coloquial; prefira “care”.',
         examples: [
           ['Fă ce vrei.', 'Faça o que você quiser.'],
           ['Nu înțeleg ceea ce spui.', 'Não entendo o que você está dizendo.'],
@@ -1782,17 +1782,17 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar «ce» como o «que» universal do português: «Omul ce vorbește» soa literário; o padrão é «Omul care vorbește».',
-      'Esquecer o «pe» e o pronome de retomada no objeto direto: «Cartea care am citit» → «Cartea pe care am citit-o».',
-      'Concordar «al cărui» só com o dono: o artigo (al/a/ai/ale) concorda com a coisa possuída: «fata al cărei frate».',
-      'Omitir o pronome dativo: «Omul căruia am dat cheia» → «Omul căruia i-am dat cheia».',
+      'Usar “ce” como o “que” universal do português: “Omul ce vorbește” soa literário; o padrão é “Omul care vorbește”.',
+      'Esquecer o “pe” e o pronome de retomada no objeto direto: “Cartea care am citit” → “Cartea pe care am citit-o”.',
+      'Concordar “al cărui” só com o dono: o artigo (al/a/ai/ale) concorda com a coisa possuída: “fata al cărei frate”.',
+      'Omitir o pronome dativo: “Omul căruia am dat cheia” → “Omul căruia i-am dat cheia”.',
     ],
     quiz: [
       {
         question: 'Filmul ___ l-am văzut e bun.',
         options: ['care', 'pe care', 'ce'],
         answer: 'pe care',
-        explanation: 'Objeto direto: «pe care», retomado por «l-».',
+        explanation: 'Objeto direto: “pe care”, retomado por “l-”.',
       },
       {
         question: 'Femeia ___ i-am scris e profesoară.',
@@ -1816,7 +1816,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
     summary: 'Este, esse e aquele em romeno: formas padrão, formas coloquiais e a posição em relação ao substantivo.',
     sections: [
       {
-        text: 'O português tem três graus (este, esse, aquele); o romeno tem só dois: «acest» (perto: este ou esse) e «acel» (longe: aquele). Cada um tem uma forma curta, que vem antes do substantivo, e uma forma com -a, que vem depois do substantivo ou funciona como pronome. Na fala do dia a dia dominam as formas coloquiais «ăsta» e «ăla».',
+        text: 'O português tem três graus (este, esse, aquele); o romeno tem só dois: “acest” (perto: este ou esse) e “acel” (longe: aquele). Cada um tem uma forma curta, que vem antes do substantivo, e uma forma com -a, que vem depois do substantivo ou funciona como pronome. Na fala do dia a dia dominam as formas coloquiais “ăsta” e “ăla”.',
       },
       {
         heading: 'Tabela de formas',
@@ -1835,7 +1835,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
       {
         heading: 'Posição e artigo',
-        text: 'Antes do substantivo: forma curta e substantivo sem artigo («acest băiat»). Depois do substantivo: forma com -a (ou coloquial) e substantivo com artigo («băiatul acesta», «băiatul ăsta»). As três frases dizem a mesma coisa; a posição depois do substantivo é a mais comum na fala. As formas coloquiais só vão depois do substantivo ou sozinhas. «asta» também é o neutro «isto»: «Ce e asta?».',
+        text: 'Antes do substantivo: forma curta e substantivo sem artigo (“acest băiat”). Depois do substantivo: forma com -a (ou coloquial) e substantivo com artigo (“băiatul acesta”, “băiatul ăsta”). As três frases dizem a mesma coisa; a posição depois do substantivo é a mais comum na fala. As formas coloquiais só vão depois do substantivo ou sozinhas. “asta” também é o neutro “isto”: “Ce e asta?”.',
         examples: [
           ['Această carte e interesantă.', 'Este livro é interessante.'],
           ['Cartea asta e interesantă.', 'Esse livro é interessante (coloquial).'],
@@ -1847,21 +1847,21 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
       {
         heading: 'No genitivo-dativo',
-        text: 'Os demonstrativos também têm formas de genitivo-dativo: acestui, acestei, acestor; acelui, acelei, acelor (coloquial: ăstuia, ăsteia, ăstora; ăluia, ăleia, ălora). Ex.: «Numele acestui oraș» (O nome desta cidade).',
+        text: 'Os demonstrativos também têm formas de genitivo-dativo: acestui, acestei, acestor; acelui, acelei, acelor (coloquial: ăstuia, ăsteia, ăstora; ăluia, ăleia, ălora). Ex.: “Numele acestui oraș” (O nome desta cidade).',
       },
     ],
     pitfalls: [
-      'Pôr artigo depois da forma curta: «acest băiatul» está errado; diga «acest băiat» ou «băiatul acesta».',
-      'Procurar um terceiro grau para «esse»: o romeno usa «acesta/ăsta» para este e esse, e «acela/ăla» para aquele.',
-      'Usar «ăsta» e «ăla» em texto formal: na escrita cuidada prefira «acesta» e «acela».',
-      'Confundir «acea» (antes do substantivo: acea zi) com «aceea» (depois ou sozinho: ziua aceea).',
+      'Pôr artigo depois da forma curta: “acest băiatul” está errado; diga “acest băiat” ou “băiatul acesta”.',
+      'Procurar um terceiro grau para “esse”: o romeno usa “acesta/ăsta” para este e esse, e “acela/ăla” para aquele.',
+      'Usar “ăsta” e “ăla” em texto formal: na escrita cuidada prefira “acesta” e “acela”.',
+      'Confundir “acea” (antes do substantivo: acea zi) com “aceea” (depois ou sozinho: ziua aceea).',
     ],
     quiz: [
       {
         question: '___ casă e nouă.',
         options: ['Acest', 'Această', 'Aceasta'],
         answer: 'Această',
-        explanation: 'Antes de substantivo feminino singular: «această», com o substantivo sem artigo.',
+        explanation: 'Antes de substantivo feminino singular: “această”, com o substantivo sem artigo.',
       },
       {
         question: 'Qual forma está correta?',
@@ -1869,7 +1869,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
         answer: 'băiatul acesta',
         explanation: 'Depois do substantivo, o demonstrativo tem -a e o substantivo leva artigo.',
       },
-      { question: 'Qual é a forma coloquial de «aceea»?', options: ['asta', 'aia', 'ăla'], answer: 'aia', explanation: '«aceea» (aquela) → coloquial «aia».' },
+      { question: 'Qual é a forma coloquial de “aceea”?', options: ['asta', 'aia', 'ăla'], answer: 'aia', explanation: '“aceea” (aquela) → coloquial “aia”.' },
     ],
   },
   {
@@ -1877,10 +1877,10 @@ export const GRAMMAR_RO: GrammarTopic[] = [
     level: 'B2.1',
     title: 'Mais-que-perfeito (mai mult ca perfectul)',
     emoji: '⏪',
-    summary: 'O «tinha feito» do romeno é um tempo simples: plecasem, făcuserăm. Serve para o passado anterior a outro passado.',
+    summary: 'O “tinha feito” do romeno é um tempo simples: plecasem, făcuserăm. Serve para o passado anterior a outro passado.',
     sections: [
       {
-        text: 'Quando contamos uma história no passado e precisamos voltar ainda mais atrás, o português usa «tinha saído» ou, na escrita, «saíra». O romeno usa um tempo simples, sem verbo auxiliar: «mai mult ca perfectul» (literalmente «mais que o perfeito»). Ex.: «Când am ajuns, trenul plecase» (Quando cheguei, o trem tinha saído).',
+        text: 'Quando contamos uma história no passado e precisamos voltar ainda mais atrás, o português usa “tinha saído” ou, na escrita, “saíra”. O romeno usa um tempo simples, sem verbo auxiliar: “mai mult ca perfectul” (literalmente “mais que o perfeito”). Ex.: “Când am ajuns, trenul plecase” (Quando cheguei, o trem tinha saído).',
       },
       {
         heading: 'Terminações',
@@ -1922,9 +1922,9 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Traduzir «tinha saído» por «aveam plecat»: essa construção não existe. O romeno usa um tempo simples: «plecasem».',
+      'Traduzir “tinha saído” por “aveam plecat”: essa construção não existe. O romeno usa um tempo simples: “plecasem”.',
       'Acentuar o fim da palavra: o acento fica antes de -se- (plecásem, făcúsem), nunca em -sem.',
-      'Esquecer a forma de verbos com particípio em -s: é «scrisesem», não «scrissem».',
+      'Esquecer a forma de verbos com particípio em -s: é “scrisesem”, não “scrissem”.',
     ],
     quiz: [
       {
@@ -1934,13 +1934,13 @@ export const GRAMMAR_RO: GrammarTopic[] = [
         explanation: 'Ação anterior a outra no passado: mais-que-perfeito, 3ª pessoa do plural.',
       },
       {
-        question: 'Qual é a forma de «noi» do mais-que-perfeito de «a face», segundo a norma atual?',
+        question: 'Qual é a forma de “noi” do mais-que-perfeito de “a face”, segundo a norma atual?',
         options: ['făcusem', 'făcuserăm', 'făcurăm'],
         answer: 'făcuserăm',
-        explanation: 'Norma atual: noi făcuserăm. «făcurăm» é perfeito simples.',
+        explanation: 'Norma atual: noi făcuserăm. “făcurăm” é perfeito simples.',
       },
       {
-        question: '«a scrie» → eu ___',
+        question: '“a scrie” → eu ___',
         options: ['scrisem', 'scrisesem', 'scriasem'],
         answer: 'scrisesem',
         explanation: 'Particípio em -s (scris): acrescenta-se -esem.',
@@ -1955,15 +1955,15 @@ export const GRAMMAR_RO: GrammarTopic[] = [
     summary: 'Totuși, deși, însă, iar, prin urmare: as palavras que ligam ideias e dão cara de texto maduro.',
     sections: [
       {
-        text: 'No B2 não basta ligar frases com «și» e «dar». Os conectores abaixo mostram contraste, concessão e conclusão. Eles são muito frequentes em textos, e-mails e argumentação oral.',
+        text: 'No B2 não basta ligar frases com “și” e “dar”. Os conectores abaixo mostram contraste, concessão e conclusão. Eles são muito frequentes em textos, e-mails e argumentação oral.',
       },
       {
         heading: 'Contraste e concessão',
         table: {
           head: ['Conector', 'IPA', 'Sentido', 'Observação'],
           rows: [
-            ['însă', '[ɨnsə]', 'mas, porém', 'pode vir depois da 1ª palavra: «Eu, însă, nu cred.»'],
-            ['totuși', '[totuʃʲ]', 'mesmo assim, no entanto', 'muito comum sozinho: «Și totuși…»'],
+            ['însă', '[ɨnsə]', 'mas, porém', 'pode vir depois da 1ª palavra: “Eu, însă, nu cred.”'],
+            ['totuși', '[totuʃʲ]', 'mesmo assim, no entanto', 'muito comum sozinho: “Și totuși…”'],
             ['deși', '[deʃʲ]', 'embora', 'seguido de INDICATIVO'],
             ['cu toate că', '[ku to̯ate kə]', 'embora, apesar de que', 'também com indicativo'],
             ['iar', '[jar]', 'e (contrastivo), enquanto', 'contrasta dois sujeitos'],
@@ -1996,29 +1996,29 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar conjuntivo depois de «deși» por influência do «embora + subjuntivo»: o certo é «deși e frig», não «deși să fie frig».',
-      'Confundir «iar» conector (e, enquanto) com «iar» advérbio (de novo): «A plecat iar» = Saiu de novo.',
-      'Traduzir «în schimb» sempre como «em troca»: como conector, significa «em compensação, por outro lado».',
-      'Colocar «însă» só no começo, como «mas»: ele soa mais natural depois do primeiro termo da frase («El, însă, a refuzat»).',
+      'Usar conjuntivo depois de “deși” por influência do “embora + subjuntivo”: o certo é “deși e frig”, não “deși să fie frig”.',
+      'Confundir “iar” conector (e, enquanto) com “iar” advérbio (de novo): “A plecat iar” = Saiu de novo.',
+      'Traduzir “în schimb” sempre como “em troca”: como conector, significa “em compensação, por outro lado”.',
+      'Colocar “însă” só no começo, como “mas”: ele soa mais natural depois do primeiro termo da frase (“El, însă, a refuzat”).',
     ],
     quiz: [
       {
         question: '___ plouă, mergem la meci.',
         options: ['Deși', 'Prin urmare', 'Iar'],
         answer: 'Deși',
-        explanation: 'Concessão (embora) → «deși», com indicativo.',
+        explanation: 'Concessão (embora) → “deși”, com indicativo.',
       },
       {
         question: 'Ana citește, ___ Mihai se uită la televizor.',
         options: ['iar', 'deși', 'așadar'],
         answer: 'iar',
-        explanation: '«iar» contrasta dois sujeitos: e/enquanto.',
+        explanation: '“iar” contrasta dois sujeitos: e/enquanto.',
       },
       {
         question: 'Qual conector introduz uma conclusão formal?',
         options: ['în schimb', 'prin urmare', 'totuși'],
         answer: 'prin urmare',
-        explanation: '«prin urmare» = por conseguinte.',
+        explanation: '“prin urmare” = por conseguinte.',
       },
     ],
   },
@@ -2027,14 +2027,14 @@ export const GRAMMAR_RO: GrammarTopic[] = [
     level: 'B2.2',
     title: 'Voz passiva',
     emoji: '🔄',
-    summary: 'Duas passivas: «a fi + particípio» (a fost construită) e a passiva com «se» (se vinde, se spune).',
+    summary: 'Duas passivas: “a fi + particípio” (a fost construită) e a passiva com “se” (se vinde, se spune).',
     sections: [
       {
-        text: 'Como no português, a passiva põe o objeto em destaque: «A casa foi construída». O romeno tem dois caminhos: o verbo «a fi» + particípio, e a construção com «se», parecida com o «vende-se» do português.',
+        text: 'Como no português, a passiva põe o objeto em destaque: “A casa foi construída”. O romeno tem dois caminhos: o verbo “a fi” + particípio, e a construção com “se”, parecida com o “vende-se” do português.',
       },
       {
         heading: 'a fi + particípio (com concordância)',
-        text: 'O particípio concorda em gênero e número com o sujeito, como um adjetivo. O tempo fica no verbo «a fi».',
+        text: 'O particípio concorda em gênero e número com o sujeito, como um adjetivo. O tempo fica no verbo “a fi”.',
         table: {
           head: ['Sujeito', 'Romeno', 'Português'],
           rows: [
@@ -2048,15 +2048,15 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
       {
         heading: 'O agente: de / de către',
-        text: 'Quem faz a ação entra com «de» (neutro) ou «de către» (mais formal, típico de textos oficiais e jornais).',
+        text: 'Quem faz a ação entra com “de” (neutro) ou “de către” (mais formal, típico de textos oficiais e jornais).',
         examples: [
-          ['«Luceafărul» a fost scris de Mihai Eminescu.', '«Luceafărul» foi escrito por Mihai Eminescu.'],
+          ['“Luceafărul” a fost scris de Mihai Eminescu.', '“Luceafărul” foi escrito por Mihai Eminescu.'],
           ['Legea a fost adoptată de către Parlament.', 'A lei foi aprovada pelo Parlamento.'],
         ],
       },
       {
-        heading: 'Passiva reflexiva com «se»',
-        text: 'Muito usada quando o agente não importa. O verbo concorda com o sujeito: «se vinde» (singular), «se vând» (plural). No perfect compus: «s-a vândut», «s-au vândut».',
+        heading: 'Passiva reflexiva com “se”',
+        text: 'Muito usada quando o agente não importa. O verbo concorda com o sujeito: “se vinde” (singular), “se vând” (plural). No perfect compus: “s-a vândut”, “s-au vândut”.',
         examples: [
           ['Aici se vinde pâine proaspătă.', 'Aqui se vende pão fresco.'],
           ['Se vând apartamente.', 'Vendem-se apartamentos.'],
@@ -2066,28 +2066,28 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Deixar o particípio sem concordância: é «casa a fost construită», não «casa a fost construit».',
-      'Usar o singular com sujeito plural, como no «vende-se casas» coloquial: em romeno é sempre «se vând case».',
-      'Usar «de către» na conversa informal: soa burocrático. No dia a dia basta «de».',
+      'Deixar o particípio sem concordância: é “casa a fost construită”, não “casa a fost construit”.',
+      'Usar o singular com sujeito plural, como no “vende-se casas” coloquial: em romeno é sempre “se vând case”.',
+      'Usar “de către” na conversa informal: soa burocrático. No dia a dia basta “de”.',
     ],
     quiz: [
       {
         question: 'Ferestrele au fost ___ ieri.',
         options: ['reparat', 'reparate', 'reparată'],
         answer: 'reparate',
-        explanation: '«ferestrele» é feminino plural → «reparate».',
+        explanation: '“ferestrele” é feminino plural → “reparate”.',
       },
       {
         question: 'Aici se ___ cărți vechi.',
         options: ['vinde', 'vând', 'vindem'],
         answer: 'vând',
-        explanation: 'Sujeito plural («cărți») → verbo no plural: «se vând».',
+        explanation: 'Sujeito plural (“cărți”) → verbo no plural: “se vând”.',
       },
       {
         question: 'Qual preposição introduz o agente num texto oficial?',
         options: ['de către', 'pentru', 'prin'],
         answer: 'de către',
-        explanation: '«de către» é a forma formal do agente; «de» é a neutra.',
+        explanation: '“de către” é a forma formal do agente; “de” é a neutra.',
       },
     ],
   },
@@ -2099,7 +2099,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
     summary: 'Dumneavoastră, dumneata, dânsul: os graus de respeito, e como escrever cartas e e-mails formais.',
     sections: [
       {
-        text: 'O romeno tem uma escala de tratamento mais rica que o «você / o senhor» do Brasil. Escolher mal soa frio demais ou íntimo demais, então vale conhecer cada degrau.',
+        text: 'O romeno tem uma escala de tratamento mais rica que o “você / o senhor” do Brasil. Escolher mal soa frio demais ou íntimo demais, então vale conhecer cada degrau.',
       },
       {
         heading: 'Os graus de tratamento',
@@ -2113,7 +2113,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
             ['dumnealui / dumneaei', '[dumne̯alui] / [dumne̯aje̯i]', '3ª sing.', 'também respeitoso, um pouco mais coloquial que dânsul'],
           ],
         },
-        text: 'Com «dumneavoastră» o verbo vai para a 2ª do plural mesmo falando com uma pessoa só, mas adjetivos e particípios concordam com a pessoa real: «Dumneavoastră sunteți mulțumit?» (a um homem), «…mulțumită?» (a uma mulher). Os pronomes átonos são os de «voi»: vă rog, vă mulțumesc.',
+        text: 'Com “dumneavoastră” o verbo vai para a 2ª do plural mesmo falando com uma pessoa só, mas adjetivos e particípios concordam com a pessoa real: “Dumneavoastră sunteți mulțumit?” (a um homem), “…mulțumită?” (a uma mulher). Os pronomes átonos são os de “voi”: vă rog, vă mulțumesc.',
         examples: [
           ['Ce doriți să comandați?', 'O que o senhor / a senhora deseja pedir?'],
           ['Vă rog să luați loc.', 'Por favor, sente-se.'],
@@ -2137,33 +2137,33 @@ export const GRAMMAR_RO: GrammarTopic[] = [
             ['Fecho muito formal', 'Cu deosebită considerație,', 'Com os melhores cumprimentos,'],
           ],
         },
-        text: 'Repare no vocativo: «Stimate domnule» (masculino) e «Stimată doamnă» (feminino). «Cu drag» (com carinho) e «Toate cele bune» (tudo de bom) são para quem você já conhece.',
+        text: 'Repare no vocativo: “Stimate domnule” (masculino) e “Stimată doamnă” (feminino). “Cu drag” (com carinho) e “Toate cele bune” (tudo de bom) são para quem você já conhece.',
       },
     ],
     pitfalls: [
-      'Tratar um desconhecido por «tu» porque no Brasil o «você» é neutro: em romeno, com adultos desconhecidos, o padrão é «dumneavoastră».',
-      'Usar o verbo no singular com «dumneavoastră»: é «dumneavoastră sunteți», nunca «dumneavoastră este».',
-      'Achar que «dumneata» é o grau mais respeitoso: ele fica no meio da escala e pode soar paternalista.',
-      'Escrever «Stimat domnule» ou «Stimate doamnă»: a forma concorda com o destinatário (Stimate domnule / Stimată doamnă).',
+      'Tratar um desconhecido por “tu” porque no Brasil o “você” é neutro: em romeno, com adultos desconhecidos, o padrão é “dumneavoastră”.',
+      'Usar o verbo no singular com “dumneavoastră”: é “dumneavoastră sunteți”, nunca “dumneavoastră este”.',
+      'Achar que “dumneata” é o grau mais respeitoso: ele fica no meio da escala e pode soar paternalista.',
+      'Escrever “Stimat domnule” ou “Stimate doamnă”: a forma concorda com o destinatário (Stimate domnule / Stimată doamnă).',
     ],
     quiz: [
       {
         question: 'Doamnă, ___ timp să vorbim?',
         options: ['ai', 'aveți', 'are'],
         answer: 'aveți',
-        explanation: 'Com «dumneavoastră» (implícito), o verbo vai para a 2ª do plural.',
+        explanation: 'Com “dumneavoastră” (implícito), o verbo vai para a 2ª do plural.',
       },
       {
         question: 'Como abrir um e-mail formal para a Sra. Ionescu?',
         options: ['Stimate doamnă Ionescu,', 'Stimată doamnă Ionescu,', 'Dragă Ionescu,'],
         answer: 'Stimată doamnă Ionescu,',
-        explanation: 'Feminino: «Stimată doamnă».',
+        explanation: 'Feminino: “Stimată doamnă”.',
       },
       {
         question: 'Qual pronome serve para falar DE uma terceira pessoa com respeito?',
         options: ['dânsul', 'dumneata', 'ăsta'],
         answer: 'dânsul',
-        explanation: '«dânsul / dânsa» = ele / ela, com respeito.',
+        explanation: '“dânsul / dânsa” = ele / ela, com respeito.',
       },
     ],
   },
@@ -2172,10 +2172,10 @@ export const GRAMMAR_RO: GrammarTopic[] = [
     level: 'B2.3',
     title: 'Gerúndio (-ând / -ind)',
     emoji: '🏃',
-    summary: 'Mergând, citind, văzându-l: o gerúndio romeno expressa modo, tempo e causa, mas NÃO forma o «estou fazendo».',
+    summary: 'Mergând, citind, văzându-l: o gerúndio romeno expressa modo, tempo e causa, mas NÃO forma o “estou fazendo”.',
     sections: [
       {
-        text: 'O gerúndio romeno termina em -ând ou -ind e é invariável. Ele parece o «-ndo» do português, mas com uma diferença enorme: não existe «sunt citind». O «estou lendo» é simplesmente o presente: «citesc (acum)».',
+        text: 'O gerúndio romeno termina em -ând ou -ind e é invariável. Ele parece o “-ndo” do português, mas com uma diferença enorme: não existe “sunt citind”. O “estou lendo” é simplesmente o presente: “citesc (acum)”.',
       },
       {
         heading: 'Formação',
@@ -2194,7 +2194,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
       {
         heading: 'Com pronomes átonos',
-        text: 'Os pronomes vão DEPOIS do gerúndio, ligados por hífen, com um -u- de apoio: văzându-l, spunându-i, plimbându-mă. A exceção é «o» (a ela), que dispensa o -u-: văzând-o.',
+        text: 'Os pronomes vão DEPOIS do gerúndio, ligados por hífen, com um -u- de apoio: văzându-l, spunându-i, plimbându-mă. A exceção é “o” (a ela), que dispensa o -u-: văzând-o.',
         table: {
           head: ['Gerúndio + pronome', 'Português'],
           rows: [
@@ -2218,13 +2218,13 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Traduzir «estou lendo» por «sunt citind»: não existe. Use o presente, «citesc», se quiser com «acum».',
-      'Colocar o pronome antes do gerúndio («îl văzând»): o certo é «văzându-l».',
-      'Esquecer o -u- de ligação («văzândl») ou pô-lo antes de «o» («văzându-o»): é «văzându-l», mas «văzând-o».',
+      'Traduzir “estou lendo” por “sunt citind”: não existe. Use o presente, “citesc”, se quiser com “acum”.',
+      'Colocar o pronome antes do gerúndio (“îl văzând”): o certo é “văzându-l”.',
+      'Esquecer o -u- de ligação (“văzândl”) ou pô-lo antes de “o” (“văzându-o”): é “văzându-l”, mas “văzând-o”.',
     ],
     quiz: [
       {
-        question: 'Como se diz «Estou lendo um livro»?',
+        question: 'Como se diz “Estou lendo um livro”?',
         options: ['Sunt citind o carte.', 'Citesc o carte.', 'Citind o carte.'],
         answer: 'Citesc o carte.',
         explanation: 'O romeno não tem perífrase progressiva: usa o presente.',
@@ -2236,7 +2236,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
         explanation: 'Pronome depois do gerúndio, com -u- de ligação.',
       },
       {
-        question: 'Qual é o gerúndio de «a dormi»?',
+        question: 'Qual é o gerúndio de “a dormi”?',
         options: ['dormând', 'dormind', 'dormiind'],
         answer: 'dormind',
         explanation: 'Verbos em -i fazem o gerúndio em -ind.',
@@ -2248,10 +2248,10 @@ export const GRAMMAR_RO: GrammarTopic[] = [
     level: 'B2.3',
     title: 'Particípio e supino',
     emoji: '🧩',
-    summary: 'O particípio vira adjetivo (ușa deschisă); o supino, «de + particípio», é um modo que o português não tem: am de lucrat, mașină de spălat.',
+    summary: 'O particípio vira adjetivo (ușa deschisă); o supino, “de + particípio”, é um modo que o português não tem: am de lucrat, mașină de spălat.',
     sections: [
       {
-        text: 'O particípio romeno (lucrat, făcut, scris) aparece no perfect compus e na passiva. Além disso, ele funciona como adjetivo e serve de base para o supino, uma forma invariável com «de» que corresponde ao nosso «a fazer», «de fazer» ou «para fazer».',
+        text: 'O particípio romeno (lucrat, făcut, scris) aparece no perfect compus e na passiva. Além disso, ele funciona como adjetivo e serve de base para o supino, uma forma invariável com “de” que corresponde ao nosso “a fazer”, “de fazer” ou “para fazer”.',
       },
       {
         heading: 'Particípio como adjetivo',
@@ -2272,7 +2272,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
       {
         heading: 'O supino: de + particípio invariável',
-        text: 'O supino tem a forma do particípio masculino singular, precedido de «de», e NÃO concorda nunca. Ele indica finalidade, obrigação ou aquilo que ainda precisa ser feito.',
+        text: 'O supino tem a forma do particípio masculino singular, precedido de “de”, e NÃO concorda nunca. Ele indica finalidade, obrigação ou aquilo que ainda precisa ser feito.',
         table: {
           head: ['Uso', 'Romeno', 'Português'],
           rows: [
@@ -2291,14 +2291,14 @@ export const GRAMMAR_RO: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'E «am de lucru»?',
-        text: '«Am de lucru» (tenho trabalho a fazer) é uma expressão muito comum, mas ali «lucru» é substantivo (coisa, trabalho). O supino correspondente é «am de lucrat». As duas são naturais e dizem praticamente o mesmo.',
+        heading: 'E “am de lucru”?',
+        text: '“Am de lucru” (tenho trabalho a fazer) é uma expressão muito comum, mas ali “lucru” é substantivo (coisa, trabalho). O supino correspondente é “am de lucrat”. As duas são naturais e dizem praticamente o mesmo.',
       },
     ],
     pitfalls: [
-      'Fazer o supino concordar: é «cărțile sunt de citit», nunca «de citite».',
-      'Usar o infinitivo depois de «de» como no português («greu de a spune»): o romeno usa o supino, «greu de spus».',
-      'Esquecer a concordância do particípio adjetivo: «fereastra deschisă», «ferestrele deschise».',
+      'Fazer o supino concordar: é “cărțile sunt de citit”, nunca “de citite”.',
+      'Usar o infinitivo depois de “de” como no português (“greu de a spune”): o romeno usa o supino, “greu de spus”.',
+      'Esquecer a concordância do particípio adjetivo: “fereastra deschisă”, “ferestrele deschise”.',
     ],
     quiz: [
       {
@@ -2317,7 +2317,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
         question: 'Masa e ___ (posta, arrumada).',
         options: ['pus', 'pusă', 'puse'],
         answer: 'pusă',
-        explanation: 'Particípio adjetivo concorda: «masa» é feminino singular.',
+        explanation: 'Particípio adjetivo concorda: “masa” é feminino singular.',
       },
     ],
   },
@@ -2329,7 +2329,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
     summary: 'S-ar putea să, e posibil să, trebuie să fi…: como expressar certeza, dúvida e opinião com nuance.',
     sections: [
       {
-        text: 'Para falar como um B2, você precisa graduar a certeza: «com certeza», «provavelmente», «pode ser que», «deve ter…». O romeno faz isso com expressões fixas seguidas de «să» + conjuntivo, ou de «că» + indicativo.',
+        text: 'Para falar como um B2, você precisa graduar a certeza: “com certeza”, “provavelmente”, “pode ser que”, “deve ter…”. O romeno faz isso com expressões fixas seguidas de “să” + conjuntivo, ou de “că” + indicativo.',
       },
       {
         heading: 'Possibilidade e probabilidade',
@@ -2353,7 +2353,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
       {
         heading: 'Dedução sobre o passado: trebuie să fi + particípio',
-        text: '«Trebuie» é invariável e, com «să fi + particípio» (o conjuntivo perfeito, que não muda com a pessoa), significa «deve ter feito». O mesmo «să fi» aparece com outras expressões: «e posibil să fi greșit» (é possível que eu tenha errado).',
+        text: '“Trebuie” é invariável e, com “să fi + particípio” (o conjuntivo perfeito, que não muda com a pessoa), significa “deve ter feito”. O mesmo “să fi” aparece com outras expressões: “e posibil să fi greșit” (é possível que eu tenha errado).',
         examples: [
           ['Trebuie să fi uitat telefonul în taxi.', 'Devo ter esquecido o celular no táxi.'],
           ['Ei trebuie să fi ajuns deja.', 'Eles devem ter chegado já.'],
@@ -2362,7 +2362,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
       {
         heading: 'Opinião: cred că / nu cred că / nu cred să',
-        text: 'Aqui o romeno difere do português. «Cred că» pede indicativo, como «acho que». Na negação, o português passa ao subjuntivo («não acho que venha»), mas o romeno mantém o indicativo com «că» («nu cred că vine») ou troca «că» por «să» + conjuntivo («nu cred să vină»), que soa um pouco mais cético. Nunca se junta «că» com «să».',
+        text: 'Aqui o romeno difere do português. “Cred că” pede indicativo, como “acho que”. Na negação, o português passa ao subjuntivo (“não acho que venha”), mas o romeno mantém o indicativo com “că” (“nu cred că vine”) ou troca “că” por “să” + conjuntivo (“nu cred să vină”), que soa um pouco mais cético. Nunca se junta “că” com “să”.',
         table: {
           head: ['Romeno', 'Português'],
           rows: [
@@ -2378,16 +2378,16 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Juntar «că» e «să» por influência do subjuntivo português («nu cred că să vină»): é «nu cred că vine» ou «nu cred să vină».',
-      'Conjugar «trebuie» («trebuiesc să…»): em sentido modal ele é invariável: «eu trebuie să», «ei trebuie să».',
-      'Pôr indicativo depois de «să»: é «s-ar putea să plouă», «e posibil să vină», nunca «să plouă» trocado por «să ploua» ou «să vine».',
+      'Juntar “că” e “să” por influência do subjuntivo português (“nu cred că să vină”): é “nu cred că vine” ou “nu cred să vină”.',
+      'Conjugar “trebuie” (“trebuiesc să…”): em sentido modal ele é invariável: “eu trebuie să”, “ei trebuie să”.',
+      'Pôr indicativo depois de “să”: é “s-ar putea să plouă”, “e posibil să vină”, nunca “să plouă” trocado por “să ploua” ou “să vine”.',
     ],
     quiz: [
       {
         question: 'Pode ser que ele não saiba = ___ să nu știe.',
         options: ['S-ar putea', 'Cred că', 'Sigur'],
         answer: 'S-ar putea',
-        explanation: '«s-ar putea să» + conjuntivo = pode ser que.',
+        explanation: '“s-ar putea să” + conjuntivo = pode ser que.',
       },
       {
         question: 'Ele deve ter perdido o ônibus = Trebuie să ___ autobuzul.',
@@ -2399,7 +2399,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
         question: 'Qual frase está correta?',
         options: ['Nu cred că să vină.', 'Nu cred să vină.', 'Nu cred că vină.'],
         answer: 'Nu cred să vină.',
-        explanation: 'Ou «nu cred că vine» (indicativo), ou «nu cred să vină» (conjuntivo).',
+        explanation: 'Ou “nu cred că vine” (indicativo), ou “nu cred să vină” (conjuntivo).',
       },
     ],
   },
@@ -2411,7 +2411,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
     summary: 'Ioane!, domnule!, Mario!, prietenilor!: chamar alguém muda a palavra. E os diminutivos (-el, -uț, -ică, -ișor) trazem carinho… ou ironia.',
     sections: [
       {
-        text: 'O romeno conservou o vocativo do latim: a forma que se usa para chamar ou se dirigir a alguém. Ele aparece o tempo todo, das cartas formais («Stimate domnule») à rua («Măi, Ioane!»).',
+        text: 'O romeno conservou o vocativo do latim: a forma que se usa para chamar ou se dirigir a alguém. Ele aparece o tempo todo, das cartas formais (“Stimate domnule”) à rua (“Măi, Ioane!”).',
       },
       {
         heading: 'Terminações do vocativo',
@@ -2431,7 +2431,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
           ['Ioane, vino încoace!', 'Ion, vem cá!'],
           ['Copiilor, la masă!', 'Crianças, pra mesa!'],
         ],
-        text: 'O vocativo feminino em -o (Mario!, Ano!) é íntimo ou popular: entre família funciona, mas com quem você não conhece pode soar rude. Em situação neutra, diga o nome como está: «Maria, …».',
+        text: 'O vocativo feminino em -o (Mario!, Ano!) é íntimo ou popular: entre família funciona, mas com quem você não conhece pode soar rude. Em situação neutra, diga o nome como está: “Maria, …”.',
       },
       {
         heading: 'Diminutivos',
@@ -2445,11 +2445,11 @@ export const GRAMMAR_RO: GrammarTopic[] = [
             ['-iță / -aș', 'fată, copil', 'fetiță, copilaș', 'menininha, criancinha'],
           ],
         },
-        text: 'Os diminutivos são tão frequentes quanto no português do Brasil: «o cafeluță», «un păhărel de vin». Em adjetivos e advérbios eles atenuam: «binișor» (mais ou menos bem), «frumușel» (bonitinho).',
+        text: 'Os diminutivos são tão frequentes quanto no português do Brasil: “o cafeluță”, “un păhărel de vin”. Em adjetivos e advérbios eles atenuam: “binișor” (mais ou menos bem), “frumușel” (bonitinho).',
       },
       {
         heading: 'Afetividade e ironia',
-        text: 'Como no português, o diminutivo e o vocativo também servem à ironia. «O problemuță» pode esconder um problemão; «o sumușoară» é uma quantia bem considerável. E o vocativo de um adjetivo elogioso vira insulto leve pelo tom: «Bravo, deșteptule!» (Parabéns, espertinho!).',
+        text: 'Como no português, o diminutivo e o vocativo também servem à ironia. “O problemuță” pode esconder um problemão; “o sumușoară” é uma quantia bem considerável. E o vocativo de um adjetivo elogioso vira insulto leve pelo tom: “Bravo, deșteptule!” (Parabéns, espertinho!).',
         examples: [
           ['Am o problemuță cu mașina…', 'Tenho um probleminha com o carro… (e talvez não seja pequeno)'],
           ['A costat o sumușoară.', 'Custou uma bela grana.'],
@@ -2458,24 +2458,24 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Chamar um senhor desconhecido de «domnul!»: no vocativo é «domnule!».',
+      'Chamar um senhor desconhecido de “domnul!”: no vocativo é “domnule!”.',
       'Usar o vocativo em -o (Mario!, fato!) com estranhos: soa popular e pode ser grosseiro.',
       'Pensar que todo diminutivo é carinhoso: pelo contexto e pelo tom, ele pode ser irônico ou atenuar uma crítica.',
     ],
     quiz: [
       {
-        question: 'Vocativo de «domn» num contexto formal:',
+        question: 'Vocativo de “domn” num contexto formal:',
         options: ['domnul!', 'domnule!', 'domno!'],
         answer: 'domnule!',
         explanation: 'Masculino com artigo: -ule.',
       },
       {
-        question: 'Como se chamam «amigos» (plural) no vocativo?',
+        question: 'Como se chamam “amigos” (plural) no vocativo?',
         options: ['prietenii!', 'prietene!', 'prietenilor!'],
         answer: 'prietenilor!',
         explanation: 'Plural: -lor.',
       },
-      { question: 'Qual é o diminutivo de «casă»?', options: ['căsuță', 'casel', 'casică'], answer: 'căsuță', explanation: 'casă → căsuță (-uță).' },
+      { question: 'Qual é o diminutivo de “casă”?', options: ['căsuță', 'casel', 'casică'], answer: 'căsuță', explanation: 'casă → căsuță (-uță).' },
     ],
   },
   {
@@ -2486,7 +2486,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
     summary: 'Ăsta, ăla, mișto, nașpa, măi, bă: o romeno da rua, e quando ele passa do ponto.',
     sections: [
       {
-        text: 'Os livros ensinam «acesta» e «acela», mas na rua você vai ouvir «ăsta» e «ăla» o tempo todo. Entender o registro coloquial é essencial no C1; usá-lo bem é questão de saber com quem se está falando.',
+        text: 'Os livros ensinam “acesta” e “acela”, mas na rua você vai ouvir “ăsta” e “ăla” o tempo todo. Entender o registro coloquial é essencial no C1; usá-lo bem é questão de saber com quem se está falando.',
       },
       {
         heading: 'Demonstrativos da fala',
@@ -2499,7 +2499,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
             ['aceia / acelea', 'ăia / alea', '[əja] / [ale̯a]', 'aqueles / aquelas'],
           ],
         },
-        text: 'Depois do substantivo, «ăsta» é normal até em registro neutro: «omul ăsta» (este homem). Sozinho, apontando uma pessoa («Ăsta cine e?»), pode soar desrespeitoso: prefira «dânsul» ou «domnul».',
+        text: 'Depois do substantivo, “ăsta” é normal até em registro neutro: “omul ăsta” (este homem). Sozinho, apontando uma pessoa (“Ăsta cine e?”), pode soar desrespeitoso: prefira “dânsul” ou “domnul”.',
       },
       {
         heading: 'Gírias comuns',
@@ -2509,7 +2509,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
             ['mișto', '[miʃto]', 'legal, bacana', 'informal, muito comum'],
             ['nașpa', '[naʃpa]', 'chato, ruim', 'informal'],
             ['nasol', '[nasol]', 'ruim, feio, desagradável', 'informal'],
-            ['tare', '[tare]', 'demais, muito bom', 'informal («E tare!»)'],
+            ['tare', '[tare]', 'demais, muito bom', 'informal (“E tare!”)'],
             ['mersi', '[mersi]', 'valeu, obrigado', 'informal-neutro'],
             ['hai', '[haj]', 'vamos!, vai!', 'neutro'],
             ['las-o baltă', '[laso baltə]', 'deixa pra lá', 'informal'],
@@ -2518,7 +2518,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
       {
         heading: 'Măi e bă: cuidado com o tom',
-        text: '«Măi» (ou «mă») chama atenção ou expressa surpresa: «Măi, ce frumos!», «Măi Ioane, vino!». Entre amigos e família é normal; dirigido a um estranho, soa condescendente. «Bă» é bem mais rude: entre amigos jovens (sobretudo homens) é camaradagem, mas dito a um desconhecido ou a um superior é ofensivo. O equivalente feminino «fă» é considerado vulgar. Na dúvida, não use.',
+        text: '“Măi” (ou “mă”) chama atenção ou expressa surpresa: “Măi, ce frumos!”, “Măi Ioane, vino!”. Entre amigos e família é normal; dirigido a um estranho, soa condescendente. “Bă” é bem mais rude: entre amigos jovens (sobretudo homens) é camaradagem, mas dito a um desconhecido ou a um superior é ofensivo. O equivalente feminino “fă” é considerado vulgar. Na dúvida, não use.',
         examples: [
           ['Măi, ce surpriză!', 'Nossa, que surpresa!'],
           ['Bă, vii sau nu?', 'Pô, cara, você vem ou não? (só entre amigos íntimos)'],
@@ -2546,24 +2546,24 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar «bă» achando que é como «cara» ou «mano»: fora de um grupo de amigos íntimos, soa agressivo.',
-      'Escrever «ăsta», «ăla» em e-mail formal: na escrita cuidada use «acesta», «acela».',
-      'Apontar alguém com «ăsta» ou «ăla» na frente da pessoa: soa desrespeitoso.',
+      'Usar “bă” achando que é como “cara” ou “mano”: fora de um grupo de amigos íntimos, soa agressivo.',
+      'Escrever “ăsta”, “ăla” em e-mail formal: na escrita cuidada use “acesta”, “acela”.',
+      'Apontar alguém com “ăsta” ou “ăla” na frente da pessoa: soa desrespeitoso.',
     ],
     quiz: [
       {
-        question: 'Forma coloquial de «aceasta»:',
+        question: 'Forma coloquial de “aceasta”:',
         options: ['asta', 'ăsta', 'aia'],
         answer: 'asta',
-        explanation: '«aceasta» (feminino) → «asta»; «ăsta» é masculino.',
+        explanation: '“aceasta” (feminino) → “asta”; “ăsta” é masculino.',
       },
       {
         question: 'Qual interjeição é a mais rude para dirigir-se a um estranho?',
         options: ['măi', 'bă', 'hai'],
         answer: 'bă',
-        explanation: '«bă» só funciona entre amigos íntimos.',
+        explanation: '“bă” só funciona entre amigos íntimos.',
       },
-      { question: '«Nașpa» significa…', options: ['legal', 'chato, ruim', 'depressa'], answer: 'chato, ruim', explanation: '«nașpa» é o oposto de «mișto».' },
+      { question: '“Nașpa” significa…', options: ['legal', 'chato, ruim', 'depressa'], answer: 'chato, ruim', explanation: '“nașpa” é o oposto de “mișto”.' },
     ],
   },
   {
@@ -2574,11 +2574,11 @@ export const GRAMMAR_RO: GrammarTopic[] = [
     summary: 'Plecarea, citirea, efectuarea plății: o romeno formal transforma verbos em substantivos e prefere construções impessoais.',
     sections: [
       {
-        text: 'Textos administrativos, acadêmicos e jornalísticos em romeno são cheios de substantivos derivados de verbos. É o equivalente ao nosso «a realização do pagamento» em vez de «pagar». Reconhecer e produzir essas formas é a marca do C1.',
+        text: 'Textos administrativos, acadêmicos e jornalísticos em romeno são cheios de substantivos derivados de verbos. É o equivalente ao nosso “a realização do pagamento” em vez de “pagar”. Reconhecer e produzir essas formas é a marca do C1.',
       },
       {
         heading: 'O infinitivo longo',
-        text: 'O romeno tem um «infinitivo longo» que hoje funciona como substantivo feminino: infinitivo + -re. Ele recebe artigo, genitivo e plural.',
+        text: 'O romeno tem um “infinitivo longo” que hoje funciona como substantivo feminino: infinitivo + -re. Ele recebe artigo, genitivo e plural.',
         table: {
           head: ['Verbo', 'Substantivo', 'Com artigo', 'Português'],
           rows: [
@@ -2607,7 +2607,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
       {
         heading: 'Construções impessoais',
-        text: 'Em vez de «nós recomendamos» ou «vocês devem», o estilo formal usa «se» impessoal ou «este + adjetivo + ca … să». Com «este necesar / important / obligatoriu ca», o sujeito fica entre «ca» e «să»: «ca studenții să…».',
+        text: 'Em vez de “nós recomendamos” ou “vocês devem”, o estilo formal usa “se” impessoal ou “este + adjetivo + ca … să”. Com “este necesar / important / obligatoriu ca”, o sujeito fica entre “ca” e “să”: “ca studenții să…”.',
         table: {
           head: ['Romeno', 'Português'],
           rows: [
@@ -2620,13 +2620,13 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Esquecer o genitivo depois de substantivos verbais: é «plata facturii», «obținerea vizei», não «obținerea viza».',
+      'Esquecer o genitivo depois de substantivos verbais: é “plata facturii”, “obținerea vizei”, não “obținerea viza”.',
       'Encher a fala do dia a dia de nominalizações: na conversa soa burocrático; use o verbo.',
-      'Omitir «ca» ou colocar o sujeito depois de «să» em «este necesar ca … să»: o sujeito vai entre os dois.',
+      'Omitir “ca” ou colocar o sujeito depois de “să” em “este necesar ca … să”: o sujeito vai entre os dois.',
     ],
     quiz: [
       {
-        question: 'Substantivo de «a hotărî»:',
+        question: 'Substantivo de “a hotărî”:',
         options: ['hotărâre', 'hotărâtură', 'hotărât'],
         answer: 'hotărâre',
         explanation: 'Infinitivo longo: hotărî + -re → hotărâre.',
@@ -2635,13 +2635,13 @@ export const GRAMMAR_RO: GrammarTopic[] = [
         question: 'Plata ___ se face online.',
         options: ['factura', 'facturii', 'facturi'],
         answer: 'facturii',
-        explanation: 'Depois do substantivo, genitivo: «plata facturii».',
+        explanation: 'Depois do substantivo, genitivo: “plata facturii”.',
       },
       {
         question: 'Este necesar ___ candidații să aducă buletinul.',
         options: ['că', 'ca', 'de'],
         answer: 'ca',
-        explanation: '«este necesar ca + sujeito + să».',
+        explanation: '“este necesar ca + sujeito + să”.',
       },
     ],
   },
@@ -2653,7 +2653,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
     summary: 'Plecai, făcu, ziseră: o passado simples da literatura e da fala da Oltênia, e o mais-que-perfeito na narração.',
     sections: [
       {
-        text: 'O romeno padrão falado usa o perfect compus (am plecat) para quase todo passado. Mas existe um passado simples, o «perfect simplu», parecido com o nosso «saí, fez, disseram». Hoje ele vive em dois lugares: na literatura (contos, romances, narração) e na fala cotidiana da Oltênia e de partes da Muntênia.',
+        text: 'O romeno padrão falado usa o perfect compus (am plecat) para quase todo passado. Mas existe um passado simples, o “perfect simplu”, parecido com o nosso “saí, fez, disseram”. Hoje ele vive em dois lugares: na literatura (contos, romances, narração) e na fala cotidiana da Oltênia e de partes da Muntênia.',
       },
       {
         heading: 'Terminações',
@@ -2668,13 +2668,13 @@ export const GRAMMAR_RO: GrammarTopic[] = [
             ['ei, ele', 'plecară', 'făcură', 'ziseră', 'fură'],
           ],
         },
-        text: 'Atenção ao acento na 3ª pessoa do singular dos verbos em -a: «plecă» [pleˈkə] (saiu) é oxítona, enquanto o presente «pleacă» [ˈple̯akə] (sai) é paroxítona. Em «cântă» a escrita é a mesma: só o acento distingue [kɨnˈtə] (cantou) de [ˈkɨntə] (canta).',
+        text: 'Atenção ao acento na 3ª pessoa do singular dos verbos em -a: “plecă” [pleˈkə] (saiu) é oxítona, enquanto o presente “pleacă” [ˈple̯akə] (sai) é paroxítona. Em “cântă” a escrita é a mesma: só o acento distingue [kɨnˈtə] (cantou) de [ˈkɨntə] (canta).',
       },
       {
         heading: 'Na literatura',
         text: 'Na narração literária o perfeito simples marca a sequência dos acontecimentos, e o mais-que-perfeito (fusese, plecase) volta ao passado anterior. É o estilo dos contos de fadas e de muitos romances clássicos.',
         examples: [
-          ['Împăratul se întoarse și zise: «Să vină fiul meu!»', 'O imperador virou-se e disse: «Que venha o meu filho!»'],
+          ['Împăratul se întoarse și zise: “Să vină fiul meu!”', 'O imperador virou-se e disse: “Que venha o meu filho!”'],
           ['Fata deschise ușa și văzu că oaspeții plecaseră.', 'A moça abriu a porta e viu que os hóspedes tinham partido.'],
           ['Se făcu liniște în sală.', 'Fez-se silêncio na sala.'],
         ],
@@ -2689,22 +2689,22 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar o perfeito simples na conversa padrão achando que soa como o nosso «fiz»: fora da Oltênia ele soa literário ou regional. Na fala, use o perfect compus.',
-      'Confundir «plecă» (saiu) com «pleacă» (sai), e «cântă» passado com «cântă» presente: o acento decide.',
-      'Confundir «făcurăm» (perfeito simples) com «făcuserăm» (mais-que-perfeito).',
+      'Usar o perfeito simples na conversa padrão achando que soa como o nosso “fiz”: fora da Oltênia ele soa literário ou regional. Na fala, use o perfect compus.',
+      'Confundir “plecă” (saiu) com “pleacă” (sai), e “cântă” passado com “cântă” presente: o acento decide.',
+      'Confundir “făcurăm” (perfeito simples) com “făcuserăm” (mais-que-perfeito).',
     ],
     quiz: [
       {
-        question: '«El zise» corresponde, no romeno padrão falado, a…',
+        question: '“El zise” corresponde, no romeno padrão falado, a…',
         options: ['a zis', 'zicea', 'zisese'],
         answer: 'a zis',
         explanation: 'Perfeito simples → perfect compus na fala padrão.',
       },
       {
-        question: 'Qual é a 3ª pessoa do plural do perfeito simples de «a face»?',
+        question: 'Qual é a 3ª pessoa do plural do perfeito simples de “a face”?',
         options: ['făcuseră', 'făcură', 'fac'],
         answer: 'făcură',
-        explanation: '«făcuseră» seria o mais-que-perfeito.',
+        explanation: '“făcuseră” seria o mais-que-perfeito.',
       },
       {
         question: 'Em que região o perfeito simples é comum na fala do dia a dia?',
@@ -2726,7 +2726,7 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
       {
         heading: 'Moldova (nordeste)',
-        text: 'Traço mais famoso: as consoantes labiais antes de -i/-e ficam palatalizadas, e o -e final pode soar como -i. Assim «bine» vira «ghini» [ɡʲini] e «piatră» vira «chiatră». Também é comum «îs» no lugar de «sunt» e o auxiliar «o» no lugar de «a»: «o fost» (foi).',
+        text: 'Traço mais famoso: as consoantes labiais antes de -i/-e ficam palatalizadas, e o -e final pode soar como -i. Assim “bine” vira “ghini” [ɡʲini] e “piatră” vira “chiatră”. Também é comum “îs” no lugar de “sunt” e o auxiliar “o” no lugar de “a”: “o fost” (foi).',
         table: {
           head: ['Padrão', 'Moldova', 'Português'],
           rows: [
@@ -2757,36 +2757,36 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
       {
         heading: 'Banat (oeste)',
-        text: 'O Banat compartilha várias palavras com a Transilvânia («fain», «pită», «io») e tem uma pronúncia própria, com consoantes palatalizadas que um ouvido treinado reconhece logo. A interjeição familiar «mă» («Ce faci, mă?») aparece na fala de todo o país; não é exclusiva de uma região.',
+        text: 'O Banat compartilha várias palavras com a Transilvânia (“fain”, “pită”, “io”) e tem uma pronúncia própria, com consoantes palatalizadas que um ouvido treinado reconhece logo. A interjeição familiar “mă” (“Ce faci, mă?”) aparece na fala de todo o país; não é exclusiva de uma região.',
       },
       {
         heading: 'Oltênia (sudoeste)',
-        text: 'A marca principal é o uso do perfeito simples na conversa, sobretudo para o que aconteceu hoje: «Ce făcuși?», «Mâncai și plecai». Veja o tópico sobre o perfeito simples.',
+        text: 'A marca principal é o uso do perfeito simples na conversa, sobretudo para o que aconteceu hoje: “Ce făcuși?”, “Mâncai și plecai”. Veja o tópico sobre o perfeito simples.',
       },
     ],
     pitfalls: [
       'Imitar sotaques regionais para ser simpático: pode soar como deboche. Fale o padrão e aprecie as variantes.',
-      'Achar que «no» transilvano é negação: é uma interjeição de transição (então, bom). O «não» continua sendo «nu».',
-      'Estranhar «o fost» ou «îs» e achar que é erro: são formas regionais normais, só não pertencem ao padrão escrito.',
+      'Achar que “no” transilvano é negação: é uma interjeição de transição (então, bom). O “não” continua sendo “nu”.',
+      'Estranhar “o fost” ou “îs” e achar que é erro: são formas regionais normais, só não pertencem ao padrão escrito.',
     ],
     quiz: [
       {
-        question: 'Um moldavo diz «ghini». No padrão, isso é…',
+        question: 'Um moldavo diz “ghini”. No padrão, isso é…',
         options: ['bine', 'gheață', 'ghinion'],
         answer: 'bine',
-        explanation: 'Palatalização do «b» antes de «i»: bine → ghini.',
+        explanation: 'Palatalização do “b” antes de “i”: bine → ghini.',
       },
       {
-        question: 'Na Transilvânia, «No, hai!» significa…',
+        question: 'Na Transilvânia, “No, hai!” significa…',
         options: ['Não, vai!', 'Então, vamos!', 'Agora não!'],
         answer: 'Então, vamos!',
-        explanation: '«no» é interjeição de transição, não negação.',
+        explanation: '“no” é interjeição de transição, não negação.',
       },
       {
         question: 'O que caracteriza a fala da Oltênia?',
-        options: ['o perfeito simples na conversa', 'o «ghini»', 'a palavra «pită»'],
+        options: ['o perfeito simples na conversa', 'o “ghini”', 'a palavra “pită”'],
         answer: 'o perfeito simples na conversa',
-        explanation: 'Os oltenos usam «făcuși», «plecai» no dia a dia.',
+        explanation: 'Os oltenos usam “făcuși”, “plecai” no dia a dia.',
       },
     ],
   },
@@ -2846,25 +2846,25 @@ export const GRAMMAR_RO: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Traduzir expressões palavra por palavra: «a tăia frunză la câini» não tem nada a ver com cães; significa ficar à toa.',
-      'Esquecer de conjugar o reflexivo das expressões: «îmi pun pofta în cui», «și-a pus pofta în cui».',
+      'Traduzir expressões palavra por palavra: “a tăia frunză la câini” não tem nada a ver com cães; significa ficar à toa.',
+      'Esquecer de conjugar o reflexivo das expressões: “îmi pun pofta în cui”, “și-a pus pofta în cui”.',
       'Usar provérbios em excesso: um bem colocado impressiona; vários seguidos soam artificiais.',
     ],
     quiz: [
       {
-        question: 'Equivalente de «Graba strică treaba»:',
+        question: 'Equivalente de “Graba strică treaba”:',
         options: ['A pressa é inimiga da perfeição.', 'Deus ajuda quem cedo madruga.', 'Quem espera sempre alcança.'],
         answer: 'A pressa é inimiga da perfeição.',
         explanation: 'Literalmente: a pressa estraga o trabalho.',
       },
       {
-        question: 'Quem «taie frunză la câini»…',
+        question: 'Quem “taie frunză la câini”…',
         options: ['trabalha muito', 'fica à toa', 'cuida de animais'],
         answer: 'fica à toa',
-        explanation: '«a tăia frunză la câini» = matar tempo.',
+        explanation: '“a tăia frunză la câini” = matar tempo.',
       },
       {
-        question: '«A face din țânțar armăsar» corresponde a…',
+        question: '“A face din țânțar armăsar” corresponde a…',
         options: ['ter culpa no cartório', 'fazer tempestade em copo d’água', 'desistir de algo'],
         answer: 'fazer tempestade em copo d’água',
         explanation: 'Exagerar um problema pequeno.',

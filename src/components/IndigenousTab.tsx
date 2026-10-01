@@ -214,7 +214,7 @@ export function IndigenousTab() {
 
           {level !== null && (
             <View className="flex-row items-center gap-2">
-              <Chip label={`Só «${RISK_LEVELS[level].label}»`} tone="slate" />
+              <Chip label={`Só “${RISK_LEVELS[level].label}”`} tone="slate" />
               <Pressable accessibilityRole="button" onPress={() => setLevel(null)}>
                 <Text className="text-sm font-semibold text-conecta">Ver todas</Text>
               </Pressable>

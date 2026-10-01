@@ -46,10 +46,10 @@ export default function FalseFriendsScreen() {
         language: pack.code,
         source: 'falsos-amigos',
         key: `${cur.kind}:${cur.ff.word}`,
-        prompt: cur.kind === 'significa' ? `O que quer dizer «${cur.ff.word}»?` : `Como se diz «${cur.ff.looksLike.split(/[/;,(]/)[0].trim()}» em ${nomeIdioma(pack.name)}?`,
+        prompt: cur.kind === 'significa' ? `O que quer dizer “${cur.ff.word}”?` : `Como se diz “${cur.ff.looksLike.split(/[/;,(]/)[0].trim()}” em ${nomeIdioma(pack.name)}?`,
         expected: cur.answer,
         given: opt,
-        note: `${cur.ff.word} = ${cur.ff.means}; parece «${cur.ff.looksLike}», que se diz «${cur.ff.forThat}».`,
+        note: `${cur.ff.word} = ${cur.ff.means}; parece “${cur.ff.looksLike}”, que se diz “${cur.ff.forThat}”.`,
         speak: cur.kind === 'significa' ? cur.ff.word : null,
         options: cur.options,
       });
@@ -95,7 +95,7 @@ export default function FalseFriendsScreen() {
                 {cur.kind === 'significa' ? `O que quer dizer em ${nomeIdioma(pack.name)}?` : `Como se diz em ${nomeIdioma(pack.name)}?`}
               </Text>
               <Text accessibilityLabel={`Pergunta: ${cur.kind === 'significa' ? cur.ff.word : cur.ff.looksLike}`} className="text-center text-4xl font-extrabold text-slate-900 dark:text-white">
-                {cur.kind === 'significa' ? cur.ff.word : `«${cur.ff.looksLike.split(/[/;,(]/)[0].trim()}»`}
+                {cur.kind === 'significa' ? cur.ff.word : `“${cur.ff.looksLike.split(/[/;,(]/)[0].trim()}”`}
               </Text>
             </Card>
             <View className="gap-2">
@@ -118,7 +118,7 @@ export default function FalseFriendsScreen() {
             {game.answer && (
               <Card className="gap-2">
                 <Text className={`text-lg font-extrabold ${game.answer === cur.answer ? 'text-conquista' : 'text-rose-600'}`}>
-                  {game.answer === cur.answer ? 'Isso!' : game.answer === cur.trap ? 'Caiu na armadilha! 🪤' : `Era «${cur.answer}».`}
+                  {game.answer === cur.answer ? 'Isso!' : game.answer === cur.trap ? 'Caiu na armadilha! 🪤' : `Era “${cur.answer}”.`}
                 </Text>
                 <FFInfo ff={cur.ff} locale={pack.speechLocale} />
                 <Button title="Continuar" variant="success" onPress={nextQ} />
@@ -187,7 +187,7 @@ function FFInfo({ ff, locale }: { ff: FalseFriend; locale: string }) {
   return (
     <View className="gap-1">
       <Text className="text-base text-slate-700 dark:text-slate-300">
-        <Text className="font-bold">{ff.word}</Text> = {ff.means}. Para dizer «{ff.looksLike}», use <Text className="font-bold">{ff.forThat}</Text>.
+        <Text className="font-bold">{ff.word}</Text> = {ff.means}. Para dizer “{ff.looksLike}”, use <Text className="font-bold">{ff.forThat}</Text>.
       </Text>
       <View className="flex-row items-center gap-2">
         <SpeakButton text={ff.example[0]} locale={locale} size={14} />

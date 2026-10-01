@@ -33,7 +33,7 @@ export const SCENARIOS_LA: ScenarioSeed[] = [
     cefr: 'A1',
     register: 'informal',
     persona: 'Marcus, um amigo romano',
-    description: 'Marcus te convida para conversar no Foro Romano. É informal: os romanos falavam de «tu» com quase todo mundo, sem uma forma equivalente ao "você" formal do português.',
+    description: 'Marcus te convida para conversar no Foro Romano. É informal: os romanos falavam de “tu” com quase todo mundo, sem uma forma equivalente ao "você" formal do português.',
     turns: [
       {
         bot: 'Salve! Quid vis bibere?',
@@ -62,7 +62,7 @@ export const ETYMOLOGY_LA: EtymologySeed[] = [
     root_word: 'aqua',
     origin_language: 'Latim',
     cognates: c(['pt', 'água'], ['es', 'agua'], ['it', 'acqua'], ['fr', 'eau']),
-    evolution_note: 'O latim «aqua» é a própria raiz: o português «água» vem quase sem mudanças, só trocando o grupo -qu- por -gu- e ganhando o acento gráfico.',
+    evolution_note: 'O latim “aqua” é a própria raiz: o português “água” vem quase sem mudanças, só trocando o grupo -qu- por -gu- e ganhando o acento gráfico.',
     transparent: true,
   },
   {
@@ -70,7 +70,7 @@ export const ETYMOLOGY_LA: EtymologySeed[] = [
     root_word: 'familia',
     origin_language: 'Latim',
     cognates: c(['pt', 'família'], ['es', 'familia'], ['it', 'famiglia'], ['fr', 'famille']),
-    evolution_note: '«Familia» passou para o português como «família» quase sem mudança nenhuma — só ganhou o acento gráfico na primeira sílaba tônica.',
+    evolution_note: '“Familia” passou para o português como “família” quase sem mudança nenhuma — só ganhou o acento gráfico na primeira sílaba tônica.',
     transparent: true,
   },
   {
@@ -78,7 +78,7 @@ export const ETYMOLOGY_LA: EtymologySeed[] = [
     root_word: 'pater',
     origin_language: 'Latim',
     cognates: c(['pt', 'pai'], ['es', 'padre'], ['it', 'padre'], ['fr', 'père']),
-    evolution_note: 'O português «pai» vem de «pater», mas perdeu o -t- entre vogais e depois toda a terminação -ter — um caminho bem mais curto do que o do espanhol e do italiano, que mantiveram o -d-/-t- (padre).',
+    evolution_note: 'O português “pai” vem de “pater”, mas perdeu o -t- entre vogais e depois toda a terminação -ter — um caminho bem mais curto do que o do espanhol e do italiano, que mantiveram o -d-/-t- (padre).',
     transparent: false,
   },
 ];

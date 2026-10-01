@@ -33,7 +33,7 @@ export const SCENARIOS_LLD: ScenarioSeed[] = [
     cefr: 'A1',
     register: 'informal',
     persona: 'Ana, na compagna dl curs de ladin',
-    description: 'Ana, uma colega do curso de ladino, convida você para um café. É uma conversa entre colegas: use «tö».',
+    description: 'Ana, uma colega do curso de ladino, convida você para um café. É uma conversa entre colegas: use “tö”.',
     turns: [
       {
         bot: 'Ciao! Oste te bëre valch?',
@@ -58,7 +58,7 @@ export const ETYMOLOGY_LLD: EtymologySeed[] = [
     root_word: 'casa',
     origin_language: 'Latim',
     cognates: c(['pt', 'casa'], ['it', 'casa'], ['rm', 'chasa'], ['fr', 'chez']),
-    evolution_note: 'O c latino diante de a virou o som «tch» (escrito «ci»), como aconteceu no romanche e no francês: «casa» deu «ciasa» no badiot, «chasa» no romanche e a preposição «chez» (na casa de) no francês.',
+    evolution_note: 'O c latino diante de a virou o som “tch” (escrito “ci”), como aconteceu no romanche e no francês: “casa” deu “ciasa” no badiot, “chasa” no romanche e a preposição “chez” (na casa de) no francês.',
     transparent: true,
   },
   {
@@ -66,7 +66,7 @@ export const ETYMOLOGY_LLD: EtymologySeed[] = [
     root_word: 'canis',
     origin_language: 'Latim',
     cognates: c(['pt', 'cão'], ['it', 'cane'], ['fr', 'chien'], ['rm', 'chaun']),
-    evolution_note: 'A mesma mudança de «casa» → «ciasa»: o c de «canis» virou «tch». O português ficou com «cão» para o animal e usa «cachorro» no dia a dia.',
+    evolution_note: 'A mesma mudança de “casa” → “ciasa”: o c de “canis” virou “tch”. O português ficou com “cão” para o animal e usa “cachorro” no dia a dia.',
     transparent: true,
   },
   {
@@ -74,7 +74,7 @@ export const ETYMOLOGY_LLD: EtymologySeed[] = [
     root_word: 'lacte(m)',
     origin_language: 'Latim',
     cognates: c(['pt', 'leite'], ['it', 'latte'], ['fr', 'lait'], ['es', 'leche']),
-    evolution_note: 'O grupo latino -ct- se reduziu a «t» no fim da palavra: «lacte» deu «lat», assim como «nocte» deu «nöt» (noite) e «octo» deu «ot» (oito).',
+    evolution_note: 'O grupo latino -ct- se reduziu a “t” no fim da palavra: “lacte” deu “lat”, assim como “nocte” deu “nöt” (noite) e “octo” deu “ot” (oito).',
     transparent: true,
   },
   {
@@ -82,7 +82,7 @@ export const ETYMOLOGY_LLD: EtymologySeed[] = [
     root_word: 'aqua',
     origin_language: 'Latim',
     cognates: c(['pt', 'água'], ['it', 'acqua'], ['fur', 'aghe'], ['es', 'agua']),
-    evolution_note: 'O -qu- de «aqua» virou «g», como no português e no espanhol «água/agua» e no friulano «aghe».',
+    evolution_note: 'O -qu- de “aqua” virou “g”, como no português e no espanhol “água/agua” e no friulano “aghe”.',
     transparent: true,
   },
   {
@@ -90,7 +90,7 @@ export const ETYMOLOGY_LLD: EtymologySeed[] = [
     root_word: 'frater',
     origin_language: 'Latim',
     cognates: c(['pt', 'frade, fraterno'], ['it', 'fratello'], ['fr', 'frère'], ['rm', 'frar']),
-    evolution_note: 'O badiot guardou o latim «frater» para «irmão», como o francês e o romanche; o português e o espanhol preferiram «germanus» (irmão, hermano) e deixaram «frater» só em «frade» e «fraterno». O plural é irregular: «fredesc».',
+    evolution_note: 'O badiot guardou o latim “frater” para “irmão”, como o francês e o romanche; o português e o espanhol preferiram “germanus” (irmão, hermano) e deixaram “frater” só em “frade” e “fraterno”. O plural é irregular: “fredesc”.',
     transparent: false,
   },
 ];

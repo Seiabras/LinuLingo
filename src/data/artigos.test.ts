@@ -26,7 +26,7 @@ test('artigos: tradução por parágrafo, glossário que aparece no texto, pergu
       ids.add(a.id);
       assert.equal(a.translation.length, a.paragraphs.length, `${a.id}: tradução`);
       const text = fold(a.paragraphs.join(' '));
-      for (const [w, t] of a.glossary) assert.ok(w.split(' / ').every((alt) => text.includes(fold(alt))) && t.length > 0, `${a.id}: «${w}» não aparece no texto`);
+      for (const [w, t] of a.glossary) assert.ok(w.split(' / ').every((alt) => text.includes(fold(alt))) && t.length > 0, `${a.id}: “${w}” não aparece no texto`);
       assert.ok(a.questions.length >= 2, `${a.id}: poucas perguntas`);
       for (const q of a.questions) assert.ok(q.answer >= 0 && q.answer < q.options.length && new Set(q.options).size === q.options.length, `${a.id}: ${q.q}`);
     }

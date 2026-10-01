@@ -60,7 +60,7 @@ test('comunidade: avaliar colega com emoji e guardar a resposta que voltou por l
   assert.equal(await applyReply(db, { v: 1, t: 'resposta', id: 'nao-existe', reaction: 'quase', from: 'Bia' }), null);
   // a resposta não pode mexer no texto de um colega (só nos seus envios)
   assert.equal(await applyReply(db, { v: 1, t: 'resposta', id: peers[1]?.id ?? peers[0].id, reaction: 'quase', from: 'Bia' }), null);
-  const got = await applyReply(db, { v: 1, t: 'resposta', id, reaction: 'quase', suggestion: 'Bună ziua! (o «ă» é mais fechado)', from: 'Bia' });
+  const got = await applyReply(db, { v: 1, t: 'resposta', id, reaction: 'quase', suggestion: 'Bună ziua! (o “ă” é mais fechado)', from: 'Bia' });
   assert.equal(got?.reply_reaction, 'quase');
   assert.equal(got?.reply_from, 'Bia');
   assert.equal(got?.kind, 'audio');

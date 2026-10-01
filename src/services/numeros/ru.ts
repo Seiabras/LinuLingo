@@ -288,7 +288,7 @@ const norm = (w: string) =>
     .replace(/ё/g, 'е');
 const VOWEL = /[аеёиоуыэюя]$/;
 const SIBILANT = /[жшщч]$/;
-const SPIKY = /[кгхжшщч]$/; // pedem «и» em vez de «ы»
+const SPIKY = /[кгхжшщч]$/; // pedem “и” em vez de “ы”
 
 /** As formas de um substantivo do vocabulário, pelas declinações regulares. */
 function declineLemma(lemma: string, g: Gender): [string, Case, boolean, boolean][] {
@@ -645,7 +645,7 @@ function prepCase(p: string | null, n: number): Case {
 
 /** A preposição logo antes do número, se houver (sem acento, minúscula). */
 function prepBefore(before: string): string | null {
-  const m = /([а-яё\u0301-]+)[\s\u00A0]+(?:[«("]\s*)?$/iu.exec(before);
+  const m = /([а-яё\u0301-]+)[\s\u00A0]+(?:[“("]\s*)?$/iu.exec(before);
   if (!m) return null;
   const w = norm(m[1]);
   return w in PREP ? w : null;
@@ -690,7 +690,7 @@ const NUMBER = new RegExp(
     // 15.03.2020
     `(?<date>(?<dd>\\d{1,2})\\.(?<mm>\\d{1,2})\\.(?<yy>\\d{4}))`,
     // 14:30 (e 14.30 depois de preposição de tempo)
-    `(?<time>(?<hh>\\d{1,2})(?::|(?<=(?:^|[\\s(«])(?:[вВсС]|до|к|после|около|от|по)${SPACE}\\d{1,2})\\.)(?<mi>\\d{2}))`,
+    `(?<time>(?<hh>\\d{1,2})(?::|(?<=(?:^|[\\s(“])(?:[вВсС]|до|к|после|около|от|по)${SPACE}\\d{1,2})\\.)(?<mi>\\d{2}))`,
     // $10, €5
     `(?<pre>[$€])${SPACE}?(?<pnum>\\d{1,3}(?:${SPACE}\\d{3})+(?:,\\d+)?|\\d+(?:,\\d+)?)`,
     // 1 500 000; 2,5; 5-й; 10%, 500 ₽, 5 млн (o símbolo é o substantivo)
@@ -817,7 +817,7 @@ function suffixForm(suf: string, n: number, p: string | null, noun: { readings: 
 }
 
 /** Antes da data, «сего́дня» / «за́втра» pedem o nominativo: Сего́дня пя́тое ма́я. */
-const DATE_NOM = /(?:^|[\s«(])(сегодня|завтра|вчера|сейчас)(?:[\s\u00A0]+(был|было|будет))?[\s\u00A0,—–-]*$/iu;
+const DATE_NOM = /(?:^|[\s“(])(сегодня|завтра|вчера|сейчас)(?:[\s\u00A0]+(был|было|будет))?[\s\u00A0,—–-]*$/iu;
 
 function dateCase(before: string, p: string | null): Case {
   if (p) {
@@ -945,7 +945,7 @@ function spellNumber(n: number, raw: string, g: Record<string, string | undefine
       if (!c && /[–—-]\s*$/.test(before) && /\(\s*\d{4}\s*[–—-]\s*$/.test(before)) c = 'nom';
       if (!c && afterMonth(before)) c = 'gen';
       // «в 2014,»: sem «году́», mas é ano
-      if (!c && p && /^\s*([.,;:!?)»—–]|$)/.test(after)) c = p === 'в' || p === 'во' ? 'pre' : prepCase(p, n);
+      if (!c && p && /^\s*([.,;:!?)”—–]|$)/.test(after)) c = p === 'в' || p === 'во' ? 'pre' : prepCase(p, n);
     }
     if (c) return russianOrdinal(n, 'm', c);
   }

@@ -137,7 +137,7 @@ function OwnLanguageCard({
               ))}
             </View>
           )}
-          {levels.length === 1 && <Text className="text-xs leading-5 text-slate-500 dark:text-slate-400">«{RISK_LEVELS[levels[0].level].label}»: {RISK_LEVELS[levels[0].level].text}</Text>}
+          {levels.length === 1 && <Text className="text-xs leading-5 text-slate-500 dark:text-slate-400">“{RISK_LEVELS[levels[0].level].label}”: {RISK_LEVELS[levels[0].level].text}</Text>}
           <View className="gap-1.5">
             {a.features.map((f) => (
               <Text key={f} className="text-sm leading-5 text-slate-700 dark:text-slate-300">

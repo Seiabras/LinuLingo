@@ -16,7 +16,7 @@ test('linha do tempo: todo país citado existe no mapa, e cada etapa só cresce 
   }
 });
 
-test('linha do tempo: o «hoje» vem dos dados do mapa (onde a família é oficial)', () => {
+test('linha do tempo: o “hoje” vem dos dados do mapa (onde a família é oficial)', () => {
   assert.ok(officialToday('Românico').includes('BRA'));
   assert.ok(officialToday('Eslavo').includes('RUS'));
   assert.ok(officialToday('Germânico').includes('ISL'));

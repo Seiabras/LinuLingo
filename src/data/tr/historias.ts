@@ -27,7 +27,7 @@ export const STORIES_TR: StorySeed[] = [
         emoji: '😊',
         choices: [
           { text: "São Paulo'luyum.", translation: 'Sou de São Paulo.', next: 'final_bom' },
-          { text: 'Su içiyorum.', translation: 'Estou bebendo água.', wrong: 'Isso não responde de onde você é. Use «…lıyım / …luyum».' },
+          { text: 'Su içiyorum.', translation: 'Estou bebendo água.', wrong: 'Isso não responde de onde você é. Use “…lıyım / …luyum”.' },
         ],
       },
       final_bom: {
@@ -60,7 +60,7 @@ export const STORIES_TR: StorySeed[] = [
         emoji: '📱',
         choices: [
           { text: 'Evet, bir erkek kardeşim var.', translation: 'Sim, tenho um irmão.', next: 'davet' },
-          { text: 'Evim küçük.', translation: 'A minha casa é pequena.', wrong: 'Isso não responde se você tem irmãos. Use «… var» ou «… yok».' },
+          { text: 'Evim küçük.', translation: 'A minha casa é pequena.', wrong: 'Isso não responde se você tem irmãos. Use “… var” ou “… yok”.' },
         ],
       },
       davet: {
@@ -69,7 +69,7 @@ export const STORIES_TR: StorySeed[] = [
         emoji: '🍵',
         choices: [
           { text: 'Evet, teşekkür ederim!', translation: 'Sim, obrigado!', next: 'final_bom' },
-          { text: "São Paulo'luyum.", translation: 'Sou de São Paulo.', wrong: 'Mehmet fez um convite: responda com «evet» (sim) ou «hayır, teşekkürler».' },
+          { text: "São Paulo'luyum.", translation: 'Sou de São Paulo.', wrong: 'Mehmet fez um convite: responda com “evet” (sim) ou “hayır, teşekkürler”.' },
         ],
       },
       final_bom: {

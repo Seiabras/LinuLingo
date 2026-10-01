@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { romanianNumber, romanianOrdinal, spellRomanianNumbers } from '@/services/numeros/ro';
 
-test('números em romeno: unu/una, doi/două, e o «de» dentro do número', () => {
+test('números em romeno: unu/una, doi/două, e o “de” dentro do número', () => {
   const cases: [number, string][] = [
     [0, 'zero'],
     [1, 'unu'],
@@ -47,7 +47,7 @@ test('números em romeno: concordam com o substantivo que vem depois', () => {
   assert.equal(spellRomanianNumbers('22 de fete, 21 de zile'), 'douăzeci și două de fete, douăzeci și una de zile');
   assert.equal(spellRomanianNumbers('12 luni, 12 băieți'), 'douăsprezece luni, doisprezece băieți');
   assert.equal(spellRomanianNumbers('Covrigul costă 2 lei.'), 'Covrigul costă doi lei.');
-  assert.equal(spellRomanianNumbers('«Document rar, 1917 – 2.000 de lei»'), '«Document rar, o mie nouă sute șaptesprezece – două mii de lei»');
+  assert.equal(spellRomanianNumbers('“Document rar, 1917 – 2.000 de lei”'), '“Document rar, o mie nouă sute șaptesprezece – două mii de lei”');
   assert.equal(spellRomanianNumbers('la 2.042 de metri'), 'la două mii patruzeci și doi de metri');
   // sem substantivo, a forma de contar
   assert.equal(spellRomanianNumbers('Coboară la etajul 2.'), 'Coboară la etajul doi.');

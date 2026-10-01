@@ -68,7 +68,7 @@ export default function ScenarioScreen() {
 
     if (hits === 0) {
       haptics.error();
-      out.push({ from: 'linu', tone: 'retry', text: `Hmm, acho que a pessoa não vai entender. Tente algo como: «${current.suggestions[0]}»` });
+      out.push({ from: 'linu', tone: 'retry', text: `Hmm, acho que a pessoa não vai entender. Tente algo como: “${current.suggestions[0]}”` });
       setMsgs((m) => [...m, ...out]);
       return;
     }
@@ -81,8 +81,8 @@ export default function ScenarioScreen() {
         from: 'linu',
         tone: 'warn',
         text: formal
-          ? `Entendido, mas cuidado com o tom: «${breaks.join('», «')}» soa íntimo demais aqui. Com ${scenario.persona.split(',')[0]} use o formal (${pack.formalMarkers}).`
-          : `Entendido! Só que «${breaks.join('», «')}» soa formal demais entre amigos. Relaxa! 😄`,
+          ? `Entendido, mas cuidado com o tom: “${breaks.join('”, “')}” soa íntimo demais aqui. Com ${scenario.persona.split(',')[0]} use o formal (${pack.formalMarkers}).`
+          : `Entendido! Só que “${breaks.join('”, “')}” soa formal demais entre amigos. Relaxa! 😄`,
       });
     } else {
       setPolite((n) => n + 1);

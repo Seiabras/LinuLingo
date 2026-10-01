@@ -6,11 +6,11 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
   {
     area: 'fonetica',
     summary:
-      'O feroês se escreve quase como o nórdico antigo e se fala de outro jeito: o «ð» não soa («góður» [ˈkɔuːwʊɹ]), o «á» soa [ɔa], o «ó» [ɔu], o «ei» [ai], o «hv» [kv], o «ll» [tl] e o «rn» [tn]. A tônica cai sempre na primeira sílaba, e o acento agudo marca outra vogal, não a sílaba forte.',
+      'O feroês se escreve quase como o nórdico antigo e se fala de outro jeito: o “ð” não soa (“góður” [ˈkɔuːwʊɹ]), o “á” soa [ɔa], o “ó” [ɔu], o “ei” [ai], o “hv” [kv], o “ll” [tl] e o “rn” [tn]. A tônica cai sempre na primeira sílaba, e o acento agudo marca outra vogal, não a sílaba forte.',
     sections: [
       {
         heading: 'As vogais: a mesma letra, dois sons',
-        text: 'Toda vogal tônica é longa antes de uma consoante só ou no fim da palavra, e curta antes de duas consoantes. O detalhe que confunde o brasileiro: a longa e a curta muitas vezes são sons diferentes. O «a» longo é o ditongo [ɛa] («dagur» [ˈtɛaːvʊɹ]), e o curto é o nosso «a» («takk» [tʰaʰk]). O «á» longo é [ɔa], como um «óa» («bátur» [ˈpɔaːtʊɹ]). O «í» e o «ý» soam igual, [ʊi], quase um «ui»: «ís» [ʊiːs]. O «ó» longo é [ɔu], e o «ú» longo é [ʉu], um «u» com os lábios de «i» no começo: «hús» [hʉuːs]. O «ei» é [ai], como no nosso «pai»: «nei» [naiː].',
+        text: 'Toda vogal tônica é longa antes de uma consoante só ou no fim da palavra, e curta antes de duas consoantes. O detalhe que confunde o brasileiro: a longa e a curta muitas vezes são sons diferentes. O “a” longo é o ditongo [ɛa] (“dagur” [ˈtɛaːvʊɹ]), e o curto é o nosso “a” (“takk” [tʰaʰk]). O “á” longo é [ɔa], como um “óa” (“bátur” [ˈpɔaːtʊɹ]). O “í” e o “ý” soam igual, [ʊi], quase um “ui”: “ís” [ʊiːs]. O “ó” longo é [ɔu], e o “ú” longo é [ʉu], um “u” com os lábios de “i” no começo: “hús” [hʉuːs]. O “ei” é [ai], como no nosso “pai”: “nei” [naiː].',
         table: {
           head: ['Letra', 'Longa (IPA)', 'Exemplo', 'Curta (IPA)', 'Exemplo'],
           rows: [
@@ -34,8 +34,8 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
         ],
       },
       {
-        heading: 'O «ð» que não soa e os sons de ponte',
-        text: 'O «ð» está na escrita porque estava no nórdico antigo, mas o feroês não o pronuncia (o islandês pronuncia). No fim da palavra, ele simplesmente some: «tað» [tʰɛaː]. Entre duas vogais, some e deixa no lugar um som de ponte, um glide: [j] depois de i, í, ei, ey e oy; [w] ou [v] depois de u, ú, ó e o; e depois de «a», o glide depende da vogal seguinte. O «g» entre vogais faz o mesmo: «dagur» [ˈtɛaːvʊɹ]. No começo da palavra, o «g» nunca some: «góður» [ˈkɔuːwʊɹ].',
+        heading: 'O “ð” que não soa e os sons de ponte',
+        text: 'O “ð” está na escrita porque estava no nórdico antigo, mas o feroês não o pronuncia (o islandês pronuncia). No fim da palavra, ele simplesmente some: “tað” [tʰɛaː]. Entre duas vogais, some e deixa no lugar um som de ponte, um glide: [j] depois de i, í, ei, ey e oy; [w] ou [v] depois de u, ú, ó e o; e depois de “a”, o glide depende da vogal seguinte. O “g” entre vogais faz o mesmo: “dagur” [ˈtɛaːvʊɹ]. No começo da palavra, o “g” nunca some: “góður” [ˈkɔuːwʊɹ].',
         table: {
           head: ['Palavra', 'IPA', 'O que aconteceu', 'Português'],
           rows: [
@@ -54,8 +54,8 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
         ],
       },
       {
-        heading: 'Consoantes: o sopro, o «hv» e o «ll» [tl]',
-        text: 'O «b», o «d» e o «g» soam como «p», «t» e «k» sem sopro; o «p», o «t» e o «k» levam um sopro forte, [pʰ tʰ kʰ]. Para o brasileiro, «bátur» soa quase «póatur». Depois de vogal curta, o sopro vem ANTES da consoante dobrada, a pré-aspiração: «takk» [tʰaʰk], «átta» [ˈɔʰta]. O «k» e o «g» antes de e, i, y e ey viram [tʃʰ] e [tʃ]: «kenna» [ˈtʃʰɛnːa], «gera» [ˈtʃeːɹa]. O «sk» nessa posição e o «sj» soam [ʃ]: «skip» [ʃiːp]. O «hv» soa [kv], o «hj» soa [tʃ], o «ll» soa [tl] e o «rn» soa [tn]. O «r» é o [ɹ] do inglês, parecido com o «r» caipira.',
+        heading: 'Consoantes: o sopro, o “hv” e o “ll” [tl]',
+        text: 'O “b”, o “d” e o “g” soam como “p”, “t” e “k” sem sopro; o “p”, o “t” e o “k” levam um sopro forte, [pʰ tʰ kʰ]. Para o brasileiro, “bátur” soa quase “póatur”. Depois de vogal curta, o sopro vem ANTES da consoante dobrada, a pré-aspiração: “takk” [tʰaʰk], “átta” [ˈɔʰta]. O “k” e o “g” antes de e, i, y e ey viram [tʃʰ] e [tʃ]: “kenna” [ˈtʃʰɛnːa], “gera” [ˈtʃeːɹa]. O “sk” nessa posição e o “sj” soam [ʃ]: “skip” [ʃiːp]. O “hv” soa [kv], o “hj” soa [tʃ], o “ll” soa [tl] e o “rn” soa [tn]. O “r” é o [ɹ] do inglês, parecido com o “r” caipira.',
         table: {
           head: ['Escrita', 'Som', 'Exemplo', 'Português'],
           rows: [
@@ -76,8 +76,8 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
         ],
       },
       {
-        heading: 'A «skerping»: quando o «ú» vira [ɪkv]',
-        text: 'Antes de «gg», «ggj» e «gv», algumas vogais longas viram um som curto bem diferente. Os feroeses chamam isso de «skerping», a afiação. O «ggj» soa [tʃː], e as vogais que vêm antes dele mudam: «oyggj» (ilha) soa [ɔtʃː], «nýggjur» (novo) [ˈnʊtʃːʊɹ]. Antes de «gv», o «ú» vira [ɪ] e o «ó» vira [ɛ]: «kúgv» (vaca) soa [kʰɪkv], «sjógvur» (mar) [ˈʃɛkvʊɹ]. É um dos lugares onde a escrita mais esconde a fala.',
+        heading: 'A “skerping”: quando o “ú” vira [ɪkv]',
+        text: 'Antes de “gg”, “ggj” e “gv”, algumas vogais longas viram um som curto bem diferente. Os feroeses chamam isso de “skerping”, a afiação. O “ggj” soa [tʃː], e as vogais que vêm antes dele mudam: “oyggj” (ilha) soa [ɔtʃː], “nýggjur” (novo) [ˈnʊtʃːʊɹ]. Antes de “gv”, o “ú” vira [ɪ] e o “ó” vira [ɛ]: “kúgv” (vaca) soa [kʰɪkv], “sjógvur” (mar) [ˈʃɛkvʊɹ]. É um dos lugares onde a escrita mais esconde a fala.',
         table: {
           head: ['Palavra', 'IPA', 'Português'],
           rows: [
@@ -98,34 +98,34 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
     topics: ['fo-g1'],
     quiz: [
       {
-        question: 'Como soa o «ð» de «góður»?',
-        options: ['[ð], como o inglês «this»', 'Não soa: entra um glide [w]', '[d], como o nosso d', '[θ], como o inglês «think»'],
+        question: 'Como soa o “ð” de “góður”?',
+        options: ['[ð], como o inglês “this”', 'Não soa: entra um glide [w]', '[d], como o nosso d', '[θ], como o inglês “think”'],
         answer: 'Não soa: entra um glide [w]',
-        explanation: 'O feroês não pronuncia o ð: «góður» soa [ˈkɔuːwʊɹ]. Quem pronuncia o ð é o islandês.',
+        explanation: 'O feroês não pronuncia o ð: “góður” soa [ˈkɔuːwʊɹ]. Quem pronuncia o ð é o islandês.',
       },
       {
-        question: 'Como soa o «á» longo de «bátur»?',
-        options: ['[aː], um a forte', '[ɔa], um «óa»', '[au]', '[ɛ]'],
-        answer: '[ɔa], um «óa»',
-        explanation: 'O acento agudo marca outra vogal, não a tônica: «bátur» soa [ˈpɔaːtʊɹ].',
+        question: 'Como soa o “á” longo de “bátur”?',
+        options: ['[aː], um a forte', '[ɔa], um “óa”', '[au]', '[ɛ]'],
+        answer: '[ɔa], um “óa”',
+        explanation: 'O acento agudo marca outra vogal, não a tônica: “bátur” soa [ˈpɔaːtʊɹ].',
       },
       {
-        question: 'Como soa o «hv» de «hvat»?',
+        question: 'Como soa o “hv” de “hvat”?',
         options: ['[v]', '[kv]', '[hw]', '[f]'],
         answer: '[kv]',
-        explanation: '«hvat» soa [kvɛaːt], como «kveat». O mesmo vale para «hvar», «hvussu» e «hvør».',
+        explanation: '“hvat” soa [kvɛaːt], como “kveat”. O mesmo vale para “hvar”, “hvussu” e “hvør”.',
       },
       {
-        question: 'Como soa o «ll» de «fjall»?',
-        options: ['[ʎ], como o «lh»', '[lː], um l longo', '[tl], com um t antes do l', '[j]'],
+        question: 'Como soa o “ll” de “fjall”?',
+        options: ['[ʎ], como o “lh”', '[lː], um l longo', '[tl], com um t antes do l', '[j]'],
         answer: '[tl], com um t antes do l',
-        explanation: '«fjall» soa [fjatl]. Do mesmo jeito, o «rn» de «barn» soa [tn]: [patn].',
+        explanation: '“fjall” soa [fjatl]. Do mesmo jeito, o “rn” de “barn” soa [tn]: [patn].',
       },
       {
-        question: 'O que é a «skerping»?',
-        options: ['O acento na primeira sílaba', 'A mudança de vogal antes de «gg», «ggj» e «gv»', 'A queda do «ð»', 'O sopro antes do «kk»'],
-        answer: 'A mudança de vogal antes de «gg», «ggj» e «gv»',
-        explanation: 'Antes desses grupos, vogais longas viram sons curtos diferentes: «kúgv» [kʰɪkv], «oyggj» [ɔtʃː].',
+        question: 'O que é a “skerping”?',
+        options: ['O acento na primeira sílaba', 'A mudança de vogal antes de “gg”, “ggj” e “gv”', 'A queda do “ð”', 'O sopro antes do “kk”'],
+        answer: 'A mudança de vogal antes de “gg”, “ggj” e “gv”',
+        explanation: 'Antes desses grupos, vogais longas viram sons curtos diferentes: “kúgv” [kʰɪkv], “oyggj” [ɔtʃː].',
       },
     ],
   },
@@ -133,11 +133,11 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
   {
     area: 'fonologia',
     summary:
-      'A fonologia feroesa é a distância entre a escrita etimológica de 1846 e a fala: a vogal é longa ou curta conforme as consoantes que vêm depois, o «ð» e o «g» somem entre vogais, as ilhas pronunciam a mesma escrita de jeitos diferentes, e o feroês se afastou do islandês na fala muito mais do que na escrita.',
+      'A fonologia feroesa é a distância entre a escrita etimológica de 1846 e a fala: a vogal é longa ou curta conforme as consoantes que vêm depois, o “ð” e o “g” somem entre vogais, as ilhas pronunciam a mesma escrita de jeitos diferentes, e o feroês se afastou do islandês na fala muito mais do que na escrita.',
     sections: [
       {
         heading: 'Longa ou curta: a regra das consoantes',
-        text: 'No feroês, a duração da vogal não é livre: ela depende do que vem depois. Vogal tônica antes de uma consoante só, ou no fim da palavra, é longa; antes de duas ou mais consoantes, é curta. Por isso o mesmo adjetivo muda de som no feminino e no neutro: «stór» [stɔuːɹ] (grande, feminino), com «ó» longo, e «stórt» [stœɹt], com «ó» curto e outro timbre. Como no islandês, antes de grupos como «pr», «tr» e «kr» a vogal costuma continuar longa.',
+        text: 'No feroês, a duração da vogal não é livre: ela depende do que vem depois. Vogal tônica antes de uma consoante só, ou no fim da palavra, é longa; antes de duas ou mais consoantes, é curta. Por isso o mesmo adjetivo muda de som no feminino e no neutro: “stór” [stɔuːɹ] (grande, feminino), com “ó” longo, e “stórt” [stœɹt], com “ó” curto e outro timbre. Como no islandês, antes de grupos como “pr”, “tr” e “kr” a vogal costuma continuar longa.',
         table: {
           head: ['Forma', 'IPA', 'Vogal', 'Português'],
           rows: [
@@ -157,7 +157,7 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
       },
       {
         heading: 'Uma escrita, muitas falas',
-        text: 'A ortografia que V. U. Hammershaimb publicou em 1846 não segue nenhuma ilha: ela olha para o nórdico antigo e para o islandês. A vantagem é que todo mundo escreve igual; o preço é que cada região lê a mesma palavra do seu jeito. O falar de Tórshavn, o «havnarmál», é o mais ouvido na mídia. O de Suðuroy, no sul, é o mais fácil de reconhecer, com vogais e melodia bem marcadas. O do norte (Klaksvík e as Norðoyggjar) tem vogais longas próprias. As diferenças estão sobretudo nas vogais; todos se entendem sem esforço.',
+        text: 'A ortografia que V. U. Hammershaimb publicou em 1846 não segue nenhuma ilha: ela olha para o nórdico antigo e para o islandês. A vantagem é que todo mundo escreve igual; o preço é que cada região lê a mesma palavra do seu jeito. O falar de Tórshavn, o “havnarmál”, é o mais ouvido na mídia. O de Suðuroy, no sul, é o mais fácil de reconhecer, com vogais e melodia bem marcadas. O do norte (Klaksvík e as Norðoyggjar) tem vogais longas próprias. As diferenças estão sobretudo nas vogais; todos se entendem sem esforço.',
         table: {
           head: ['Região', 'Onde', 'O que chama a atenção'],
           rows: [
@@ -174,7 +174,7 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
       },
       {
         heading: 'Por que a escrita parece islandês',
-        text: 'Na Idade Média, o feroês e o islandês eram quase a mesma língua. Na fala, o feroês mudou muito: os ditongos novos, a queda do «ð», a «skerping», o «þ» que virou «t». Na escrita, Hammershaimb recolocou as letras antigas para mostrar o parentesco: por isso um islandês lê um jornal feroês com alguma facilidade, mas entende pouco da conversa. Com o norueguês ocidental acontece o contrário em alguns pontos: palavras como «eg» (eu) e «tysdag» (terça) são mais parecidas na fala.',
+        text: 'Na Idade Média, o feroês e o islandês eram quase a mesma língua. Na fala, o feroês mudou muito: os ditongos novos, a queda do “ð”, a “skerping”, o “þ” que virou “t”. Na escrita, Hammershaimb recolocou as letras antigas para mostrar o parentesco: por isso um islandês lê um jornal feroês com alguma facilidade, mas entende pouco da conversa. Com o norueguês ocidental acontece o contrário em alguns pontos: palavras como “eg” (eu) e “tysdag” (terça) são mais parecidas na fala.',
         table: {
           head: ['Feroês', 'IPA', 'Islandês', 'Português'],
           rows: [
@@ -194,10 +194,10 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
     topics: ['fo-g30'],
     quiz: [
       {
-        question: 'Em «stórt» [stœɹt], por que o «ó» é curto?',
+        question: 'Em “stórt” [stœɹt], por que o “ó” é curto?',
         options: ['Porque está no fim da frase', 'Porque vem antes de duas consoantes', 'Porque é neutro', 'Por acaso'],
         answer: 'Porque vem antes de duas consoantes',
-        explanation: 'Vogal tônica antes de duas consoantes é curta: «stór» [stɔuːɹ], mas «stórt» [stœɹt].',
+        explanation: 'Vogal tônica antes de duas consoantes é curta: “stór” [stɔuːɹ], mas “stórt” [stœɹt].',
       },
       {
         question: 'Em que se baseou a ortografia de Hammershaimb (1846)?',
@@ -206,10 +206,10 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
         explanation: 'É uma escrita etimológica, igual para todas as ilhas, que mostra o parentesco com o islandês.',
       },
       {
-        question: 'O que é o «havnarmál»?',
+        question: 'O que é o “havnarmál”?',
         options: ['O falar de Tórshavn', 'A língua das baladas', 'O dinamarquês das Faroé', 'O falar de Suðuroy'],
         answer: 'O falar de Tórshavn',
-        explanation: '«Havn» é o nome curto de Tórshavn, e o «havnarmál» é o falar mais ouvido na mídia.',
+        explanation: '“Havn” é o nome curto de Tórshavn, e o “havnarmál” é o falar mais ouvido na mídia.',
       },
       {
         question: 'Um islandês entende melhor o feroês…',
@@ -218,10 +218,10 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
         explanation: 'A escrita guarda as letras antigas; a fala feroesa mudou muito mais que a islandesa.',
       },
       {
-        question: 'Em «dagur» [ˈtɛaːvʊɹ], o que aconteceu com o «g»?',
+        question: 'Em “dagur” [ˈtɛaːvʊɹ], o que aconteceu com o “g”?',
         options: ['Soou [ɣ]', 'Sumiu e deixou um glide [v]', 'Virou [k]', 'Virou [tʃ]'],
         answer: 'Sumiu e deixou um glide [v]',
-        explanation: 'Entre vogais, o «g» e o «ð» costumam sumir, e um som de ponte ocupa o lugar.',
+        explanation: 'Entre vogais, o “g” e o “ð” costumam sumir, e um som de ponte ocupa o lugar.',
       },
     ],
   },
@@ -233,7 +233,7 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
     sections: [
       {
         heading: 'Três gêneros e o artigo no fim',
-        text: 'Todo substantivo é masculino, feminino ou neutro, e muitas vezes a terminação ajuda: «-ur» costuma ser masculino (bátur), «-a» feminino (kona) e a palavra sem terminação, neutro (hús). O artigo definido não vem antes, vem grudado no fim: «bátur» → «báturin» (o barco), «kona» → «konan» (a mulher), «hús» → «húsið» (a casa). No plural: «bátarnir», «konurnar», «húsini». O indefinido vem antes e concorda: «ein bátur», «ein kona», «eitt hús».',
+        text: 'Todo substantivo é masculino, feminino ou neutro, e muitas vezes a terminação ajuda: “-ur” costuma ser masculino (bátur), “-a” feminino (kona) e a palavra sem terminação, neutro (hús). O artigo definido não vem antes, vem grudado no fim: “bátur” → “báturin” (o barco), “kona” → “konan” (a mulher), “hús” → “húsið” (a casa). No plural: “bátarnir”, “konurnar”, “húsini”. O indefinido vem antes e concorda: “ein bátur”, “ein kona”, “eitt hús”.',
         table: {
           head: ['Gênero', 'Indefinido', 'Definido', 'Plural definido'],
           rows: [
@@ -250,7 +250,7 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
       },
       {
         heading: 'Os casos no nome e no artigo',
-        text: 'O nome muda conforme a função: nominativo (sujeito), acusativo (objeto direto e depois de certas preposições), dativo (objeto indireto, lugar, depois de muitas preposições) e genitivo, que a fala troca quase sempre por «hjá» ou por preposições. O artigo pospositivo muda junto, e é nele que o caso mais aparece.',
+        text: 'O nome muda conforme a função: nominativo (sujeito), acusativo (objeto direto e depois de certas preposições), dativo (objeto indireto, lugar, depois de muitas preposições) e genitivo, que a fala troca quase sempre por “hjá” ou por preposições. O artigo pospositivo muda junto, e é nele que o caso mais aparece.',
         table: {
           head: ['Caso', 'Masculino', 'Feminino', 'Neutro'],
           rows: [
@@ -268,7 +268,7 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
       },
       {
         heading: 'Adjetivos fortes e fracos',
-        text: 'O adjetivo tem duas séries de terminações. Com o indefinido ou sem artigo, usa a forte, que muda por gênero: «ein stórur bátur», «ein stór kona», «eitt stórt hús». Com o definido, o adjetivo pede o artigo solto «tann/tað/tey» na frente e passa para a fraca: «tann stóri báturin», «tann stóra konan», «tað stóra húsið». O comparativo termina em «-ari» ou «-ri» e o superlativo em «-astur» ou «-stur»; alguns são irregulares: «góður, betri, bestur».',
+        text: 'O adjetivo tem duas séries de terminações. Com o indefinido ou sem artigo, usa a forte, que muda por gênero: “ein stórur bátur”, “ein stór kona”, “eitt stórt hús”. Com o definido, o adjetivo pede o artigo solto “tann/tað/tey” na frente e passa para a fraca: “tann stóri báturin”, “tann stóra konan”, “tað stóra húsið”. O comparativo termina em “-ari” ou “-ri” e o superlativo em “-astur” ou “-stur”; alguns são irregulares: “góður, betri, bestur”.',
         table: {
           head: ['', 'Masculino', 'Feminino', 'Neutro'],
           rows: [
@@ -285,7 +285,7 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
       },
       {
         heading: 'Verbos fortes, fracos e as pessoas',
-        text: 'O verbo muda conforme a pessoa no presente: «eg tosi, tú tosar, hann tosar, vit tosa». O plural tem uma forma só para todas as pessoas. Os verbos fracos fazem o passado com «-aði», «-di» ou «-ti» («tosaði», «hoyrdi», «keypti»); os fortes mudam a vogal, como o inglês «sing, sang»: «fara, fór», «koma, kom», «síggja, sá». O perfeito usa «hava» + supino: «eg havi verið», «hon hevur tosað». O particípio passado concorda como adjetivo: «húsið er bygt», «báturin er bygdur».',
+        text: 'O verbo muda conforme a pessoa no presente: “eg tosi, tú tosar, hann tosar, vit tosa”. O plural tem uma forma só para todas as pessoas. Os verbos fracos fazem o passado com “-aði”, “-di” ou “-ti” (“tosaði”, “hoyrdi”, “keypti”); os fortes mudam a vogal, como o inglês “sing, sang”: “fara, fór”, “koma, kom”, “síggja, sá”. O perfeito usa “hava” + supino: “eg havi verið”, “hon hevur tosað”. O particípio passado concorda como adjetivo: “húsið er bygt”, “báturin er bygdur”.',
         table: {
           head: ['Verbo', 'Presente (eg / hann)', 'Passado', 'Supino'],
           rows: [
@@ -304,7 +304,7 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
       },
       {
         heading: 'Compostos: tudo junto e o gênero do fim',
-        text: 'O feroês junta palavras numa só, e o último elemento manda no gênero e no sentido: «sjúkrahús» (sjúkur + hús, neutro, o hospital), «fótbóltur» (masculino), «teldupostur» (o e-mail). Entre as partes muitas vezes aparece uma letra de ligação, que é um resto do genitivo: «landsstýri» (governo, com «-s-»), «teldupostur» (com «-u-», de «teldu»). É por esse caminho que o purismo cria palavras novas com peças antigas.',
+        text: 'O feroês junta palavras numa só, e o último elemento manda no gênero e no sentido: “sjúkrahús” (sjúkur + hús, neutro, o hospital), “fótbóltur” (masculino), “teldupostur” (o e-mail). Entre as partes muitas vezes aparece uma letra de ligação, que é um resto do genitivo: “landsstýri” (governo, com “-s-”), “teldupostur” (com “-u-”, de “teldu”). É por esse caminho que o purismo cria palavras novas com peças antigas.',
         table: {
           head: ['Composto', 'Partes', 'Gênero', 'Português'],
           rows: [
@@ -324,34 +324,34 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
     topics: ['fo-g3', 'fo-g5', 'fo-g6', 'fo-g9', 'fo-g10', 'fo-g11', 'fo-g17', 'fo-g18', 'fo-g19', 'fo-g27'],
     quiz: [
       {
-        question: 'Qual é a forma definida de «hús» (casa)?',
+        question: 'Qual é a forma definida de “hús” (casa)?',
         options: ['hin hús', 'húsin', 'húsið', 'húsan'],
         answer: 'húsið',
-        explanation: 'Neutro leva «-ið» no fim: «húsið». Masculino «báturin», feminino «konan».',
+        explanation: 'Neutro leva “-ið” no fim: “húsið”. Masculino “báturin”, feminino “konan”.',
       },
       {
-        question: 'Como fica «grande» em «tann ___ báturin»?',
+        question: 'Como fica “grande” em “tann ___ báturin”?',
         options: ['stórur', 'stóri', 'stórt', 'stór'],
         answer: 'stóri',
-        explanation: 'Com o definido, o adjetivo vai para a forma fraca: «tann stóri báturin».',
+        explanation: 'Com o definido, o adjetivo vai para a forma fraca: “tann stóri báturin”.',
       },
       {
-        question: 'Qual é o passado de «fara» (ir)?',
+        question: 'Qual é o passado de “fara” (ir)?',
         options: ['faraði', 'fór', 'fardi', 'fer'],
         answer: 'fór',
-        explanation: '«fara» é verbo forte: muda a vogal no passado, «eg fór», «vit fóru».',
+        explanation: '“fara” é verbo forte: muda a vogal no passado, “eg fór”, “vit fóru”.',
       },
       {
-        question: 'Em «Vit eru í húsinum», em que caso está «húsinum»?',
+        question: 'Em “Vit eru í húsinum”, em que caso está “húsinum”?',
         options: ['Nominativo', 'Acusativo', 'Dativo', 'Genitivo'],
         answer: 'Dativo',
-        explanation: '«í» com ideia de lugar (sem movimento) pede dativo: «í húsinum».',
+        explanation: '“í” com ideia de lugar (sem movimento) pede dativo: “í húsinum”.',
       },
       {
-        question: 'Em «sjúkrahús», o que decide o gênero?',
+        question: 'Em “sjúkrahús”, o que decide o gênero?',
         options: ['A primeira parte', 'A última parte', 'A letra de ligação', 'O plural'],
         answer: 'A última parte',
-        explanation: '«hús» é neutro, então «sjúkrahús» também é: «sjúkrahúsið».',
+        explanation: '“hús” é neutro, então “sjúkrahús” também é: “sjúkrahúsið”.',
       },
     ],
   },
@@ -359,11 +359,11 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
   {
     area: 'sintaxe',
     summary:
-      'A frase feroesa segue o V2 (o verbo em segundo lugar: «Í dag fari eg…»), põe o «ikki» depois do verbo na principal e muitas vezes antes dele na subordinada, faz o futuro com «fara at» ou «skal», a passiva com «verða» e a voz média com «-st».',
+      'A frase feroesa segue o V2 (o verbo em segundo lugar: “Í dag fari eg…”), põe o “ikki” depois do verbo na principal e muitas vezes antes dele na subordinada, faz o futuro com “fara at” ou “skal”, a passiva com “verða” e a voz média com “-st”.',
     sections: [
       {
         heading: 'V2: o verbo sempre em segundo',
-        text: 'Na oração principal, o verbo conjugado ocupa a segunda posição. Se a frase começa com outra coisa que não o sujeito (um advérbio, um objeto, uma oração), o sujeito vai para depois do verbo. O brasileiro tende a dizer «Í dag eg fari», que está errado: o certo é «Í dag fari eg». Nas perguntas sem palavra interrogativa, o verbo vem primeiro: «Kemur tú?».',
+        text: 'Na oração principal, o verbo conjugado ocupa a segunda posição. Se a frase começa com outra coisa que não o sujeito (um advérbio, um objeto, uma oração), o sujeito vai para depois do verbo. O brasileiro tende a dizer “Í dag eg fari”, que está errado: o certo é “Í dag fari eg”. Nas perguntas sem palavra interrogativa, o verbo vem primeiro: “Kemur tú?”.',
         table: {
           head: ['Posição 1', 'Verbo', 'Sujeito', 'Resto'],
           rows: [
@@ -380,8 +380,8 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
         ],
       },
       {
-        heading: 'O «ikki» na principal e na subordinada',
-        text: 'Na principal, «ikki» vem depois do verbo: «Hann kemur ikki». Na subordinada (depois de «at», «um», «tí», «sum»), o padrão escrito põe o «ikki» ANTES do verbo: «Eg veit, at hann ikki kemur». Na fala, a ordem «at hann kemur ikki» também se ouve. Advérbios como «altíð» e «ongantíð» fazem o mesmo caminho.',
+        heading: 'O “ikki” na principal e na subordinada',
+        text: 'Na principal, “ikki” vem depois do verbo: “Hann kemur ikki”. Na subordinada (depois de “at”, “um”, “tí”, “sum”), o padrão escrito põe o “ikki” ANTES do verbo: “Eg veit, at hann ikki kemur”. Na fala, a ordem “at hann kemur ikki” também se ouve. Advérbios como “altíð” e “ongantíð” fazem o mesmo caminho.',
         table: {
           head: ['Tipo', 'Ordem', 'Exemplo'],
           rows: [
@@ -398,7 +398,7 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
       },
       {
         heading: 'Preposições e casos: parado ou em movimento',
-        text: 'Algumas preposições pedem sempre o mesmo caso: «til» pede genitivo, mesmo na fala («til Tórshavnar», «til lækna»); «frá», «hjá» e «úr» pedem dativo; «um» pede acusativo. Outras mudam conforme o sentido: «í» e «á» levam acusativo com movimento (para onde?) e dativo sem movimento (onde?). Alguns verbos pedem dativo no objeto, como «hjálpa»: «Eg hjálpi honum». E «dáma» (gostar) tem o sujeito lógico no dativo: «Mær dámar…».',
+        text: 'Algumas preposições pedem sempre o mesmo caso: “til” pede genitivo, mesmo na fala (“til Tórshavnar”, “til lækna”); “frá”, “hjá” e “úr” pedem dativo; “um” pede acusativo. Outras mudam conforme o sentido: “í” e “á” levam acusativo com movimento (para onde?) e dativo sem movimento (onde?). Alguns verbos pedem dativo no objeto, como “hjálpa”: “Eg hjálpi honum”. E “dáma” (gostar) tem o sujeito lógico no dativo: “Mær dámar…”.',
         table: {
           head: ['Pergunta', 'Caso', 'Exemplo', 'Português'],
           rows: [
@@ -416,7 +416,7 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
       },
       {
         heading: 'Futuro, passiva e voz média',
-        text: 'Para o futuro, o feroês usa o presente com um advérbio de tempo, ou «fara at» + infinitivo («Eg fari at lesa»), ou «skal» para plano e obrigação. A passiva se faz com «verða» + particípio (a ação: «Húsið varð bygt í fjør») ou «vera» + particípio (o resultado: «Húsið er bygt»). A voz média com «-st» expressa reciprocidade («Vit síggjast!», a gente se vê) ou vem fixa no verbo («minnast», lembrar-se).',
+        text: 'Para o futuro, o feroês usa o presente com um advérbio de tempo, ou “fara at” + infinitivo (“Eg fari at lesa”), ou “skal” para plano e obrigação. A passiva se faz com “verða” + particípio (a ação: “Húsið varð bygt í fjør”) ou “vera” + particípio (o resultado: “Húsið er bygt”). A voz média com “-st” expressa reciprocidade (“Vit síggjast!”, a gente se vê) ou vem fixa no verbo (“minnast”, lembrar-se).',
         table: {
           head: ['Construção', 'Exemplo', 'Português'],
           rows: [
@@ -434,13 +434,13 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
       },
       {
         heading: 'Condicional e subjuntivo',
-        text: 'Para hipóteses, o feroês usa o passado: «Um eg hevði pening, keypti eg ein bát». Para o irreal no passado, «hevði» + supino: «Um eg hevði vitað tað, hevði eg komið». A condição pode vir sem «um», com o verbo na frente: «Hevði eg vitað tað…». O subjuntivo antigo sobrevive em fórmulas e orações, como «Komi ríki títt» (venha a nós o vosso reino) no Pai-Nosso.',
+        text: 'Para hipóteses, o feroês usa o passado: “Um eg hevði pening, keypti eg ein bát”. Para o irreal no passado, “hevði” + supino: “Um eg hevði vitað tað, hevði eg komið”. A condição pode vir sem “um”, com o verbo na frente: “Hevði eg vitað tað…”. O subjuntivo antigo sobrevive em fórmulas e orações, como “Komi ríki títt” (venha a nós o vosso reino) no Pai-Nosso.',
         table: {
           head: ['Tipo', 'Exemplo', 'Português'],
           rows: [
             ['hipótese', 'Um eg hevði tíð, fór eg við.', 'Se eu tivesse tempo, eu iria junto.'],
             ['irreal passado', 'Um eg hevði vitað tað, hevði eg komið.', 'Se eu soubesse, eu teria vindo.'],
-            ['sem «um»', 'Hevði eg vitað tað, hevði eg komið.', 'Tivesse eu sabido, teria vindo.'],
+            ['sem “um”', 'Hevði eg vitað tað, hevði eg komið.', 'Tivesse eu sabido, teria vindo.'],
             ['subjuntivo fixo', 'Komi ríki títt.', 'Venha o teu reino.'],
           ],
         },
@@ -457,31 +457,31 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
         question: 'Qual frase respeita o V2?',
         options: ['Í dag eg fari til Klaksvíkar.', 'Í dag fari eg til Klaksvíkar.', 'Eg í dag fari til Klaksvíkar.', 'Fari í dag eg til Klaksvíkar.'],
         answer: 'Í dag fari eg til Klaksvíkar.',
-        explanation: 'Começou com «Í dag», então o verbo vem em segundo e o sujeito vai para depois dele.',
+        explanation: 'Começou com “Í dag”, então o verbo vem em segundo e o sujeito vai para depois dele.',
       },
       {
-        question: 'Onde fica o «ikki» na subordinada, no padrão escrito?',
-        options: ['Depois do verbo', 'Antes do verbo', 'No fim da frase', 'Antes do «at»'],
+        question: 'Onde fica o “ikki” na subordinada, no padrão escrito?',
+        options: ['Depois do verbo', 'Antes do verbo', 'No fim da frase', 'Antes do “at”'],
         answer: 'Antes do verbo',
-        explanation: '«Eg veit, at hann ikki kemur.» Na principal, ao contrário: «Hann kemur ikki».',
+        explanation: '“Eg veit, at hann ikki kemur.” Na principal, ao contrário: “Hann kemur ikki”.',
       },
       {
-        question: 'Qual caso vem depois de «til»?',
+        question: 'Qual caso vem depois de “til”?',
         options: ['Nominativo', 'Acusativo', 'Dativo', 'Genitivo'],
         answer: 'Genitivo',
-        explanation: '«til» pede genitivo mesmo na fala: «til Tórshavnar», «til Føroya», «til lækna».',
+        explanation: '“til” pede genitivo mesmo na fala: “til Tórshavnar”, “til Føroya”, “til lækna”.',
       },
       {
-        question: 'O que quer dizer «Vit síggjast!»?',
+        question: 'O que quer dizer “Vit síggjast!”?',
         options: ['Nós vemos.', 'A gente se vê!', 'Nós fomos vistos.', 'Vejam!'],
         answer: 'A gente se vê!',
-        explanation: 'O «-st» da voz média aqui é recíproco: um vê o outro.',
+        explanation: 'O “-st” da voz média aqui é recíproco: um vê o outro.',
       },
       {
-        question: 'Como se diz «Eu estou na cidade»?',
+        question: 'Como se diz “Eu estou na cidade”?',
         options: ['Eg eri í býin.', 'Eg eri í býnum.', 'Eg eri í býsins.', 'Eg eri í býur.'],
         answer: 'Eg eri í býnum.',
-        explanation: 'Sem movimento, «í» pede dativo: «í býnum». Com movimento, acusativo: «Eg fari í býin».',
+        explanation: 'Sem movimento, “í” pede dativo: “í býnum”. Com movimento, acusativo: “Eg fari í býin”.',
       },
     ],
   },
@@ -493,7 +493,7 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
     sections: [
       {
         heading: 'O purismo: palavras feitas em casa',
-        text: 'Desde o século XIX, o movimento nacional tenta tirar os dinamarquismos e criar palavras com raízes nórdicas. Muitas deram certo: «telda» (computador, de «telja», contar), «tyrla» (helicóptero, a que gira), «sjónvarp» (televisão), «útvarp» (rádio), «flogfar» (avião), «alnet» (internet). Outras convivem com o dinamarquismo da fala: no dia a dia, muita gente ainda diz palavras dinamarquesas que a escola e a mídia evitam. O islandês faz o mesmo, e muitas vezes os dois criam a mesma palavra.',
+        text: 'Desde o século XIX, o movimento nacional tenta tirar os dinamarquismos e criar palavras com raízes nórdicas. Muitas deram certo: “telda” (computador, de “telja”, contar), “tyrla” (helicóptero, a que gira), “sjónvarp” (televisão), “útvarp” (rádio), “flogfar” (avião), “alnet” (internet). Outras convivem com o dinamarquismo da fala: no dia a dia, muita gente ainda diz palavras dinamarquesas que a escola e a mídia evitam. O islandês faz o mesmo, e muitas vezes os dois criam a mesma palavra.',
         table: {
           head: ['Feroês', 'Formação', 'Dinamarquês', 'Português'],
           rows: [
@@ -512,7 +512,7 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
       },
       {
         heading: 'Uma palavra, vários sentidos',
-        text: 'Algumas palavras básicas cobrem mais de um sentido, e o contexto decide. «Ferð» é viagem, vez e velocidade: «Góða ferð!» (boa viagem), «ein ferð» (uma vez), «á fullari ferð» (a toda velocidade). «Vatn» é água e lago. «Epli» é maçã, mas na fala é sobretudo a batata. E «vakur» quer dizer bonito, embora o islandês «vakur» seja alerta.',
+        text: 'Algumas palavras básicas cobrem mais de um sentido, e o contexto decide. “Ferð” é viagem, vez e velocidade: “Góða ferð!” (boa viagem), “ein ferð” (uma vez), “á fullari ferð” (a toda velocidade). “Vatn” é água e lago. “Epli” é maçã, mas na fala é sobretudo a batata. E “vakur” quer dizer bonito, embora o islandês “vakur” seja alerta.',
         table: {
           head: ['Palavra', 'Sentido 1', 'Sentido 2', 'Sentido 3'],
           rows: [
@@ -530,7 +530,7 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
       },
       {
         heading: 'Os nomes de lugar: ler a paisagem',
-        text: 'Quase todo nome de lugar nas Faroé é uma descrição da paisagem em nórdico antigo. Klaksvík tem «vík» (enseada); Gjógv é a fenda na rocha que serve de porto; Kirkjubøur é a «fazenda da igreja»; Tórshavn, o «porto de Thor»; Suðuroy, Eysturoy e Streymoy são a ilha do sul, a do leste e a da correnteza. Quem aprende essas peças lê o mapa como um texto.',
+        text: 'Quase todo nome de lugar nas Faroé é uma descrição da paisagem em nórdico antigo. Klaksvík tem “vík” (enseada); Gjógv é a fenda na rocha que serve de porto; Kirkjubøur é a “fazenda da igreja”; Tórshavn, o “porto de Thor”; Suðuroy, Eysturoy e Streymoy são a ilha do sul, a do leste e a da correnteza. Quem aprende essas peças lê o mapa como um texto.',
         table: {
           head: ['Peça', 'Sentido', 'Exemplo'],
           rows: [
@@ -549,7 +549,7 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
       },
       {
         heading: 'Expressões feitas',
-        text: 'Muitas expressões do dia a dia não se traduzem ao pé da letra. «Takk fyri seinast» é o obrigado pela última vez que nos vimos, dito ao reencontrar alguém. «Væl bekomi» é o bom proveito, dito depois da refeição, quando alguém agradece a comida. «Mær dámar» (eu gosto) tem quem gosta no dativo: literalmente, «a mim agrada».',
+        text: 'Muitas expressões do dia a dia não se traduzem ao pé da letra. “Takk fyri seinast” é o obrigado pela última vez que nos vimos, dito ao reencontrar alguém. “Væl bekomi” é o bom proveito, dito depois da refeição, quando alguém agradece a comida. “Mær dámar” (eu gosto) tem quem gosta no dativo: literalmente, “a mim agrada”.',
         table: {
           head: ['Expressão', 'Ao pé da letra', 'Quando se usa'],
           rows: [
@@ -569,34 +569,34 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
     topics: ['fo-g25', 'fo-g26', 'fo-g33', 'fo-g35'],
     quiz: [
       {
-        question: 'De onde vem «telda» (computador)?',
-        options: ['Do inglês «tell»', 'Do verbo «telja», contar', 'Do dinamarquês «computer»', 'Do latim'],
-        answer: 'Do verbo «telja», contar',
-        explanation: 'É uma criação purista com raiz nórdica, no lugar do dinamarquês «computer».',
+        question: 'De onde vem “telda” (computador)?',
+        options: ['Do inglês “tell”', 'Do verbo “telja”, contar', 'Do dinamarquês “computer”', 'Do latim'],
+        answer: 'Do verbo “telja”, contar',
+        explanation: 'É uma criação purista com raiz nórdica, no lugar do dinamarquês “computer”.',
       },
       {
-        question: 'O que quer dizer «ferð» em «eina ferð»?',
+        question: 'O que quer dizer “ferð” em “eina ferð”?',
         options: ['viagem', 'vez', 'velocidade', 'caminho'],
         answer: 'vez',
-        explanation: '«ferð» é viagem, vez e velocidade; «eina ferð» é «uma vez».',
+        explanation: '“ferð” é viagem, vez e velocidade; “eina ferð” é “uma vez”.',
       },
       {
-        question: 'O que é «Eysturoy»?',
+        question: 'O que é “Eysturoy”?',
         options: ['A ilha do sul', 'A ilha do leste', 'A ilha da correnteza', 'A ilha das ovelhas'],
         answer: 'A ilha do leste',
-        explanation: '«eystur» (leste) + «oy» (ilha). Suðuroy é a do sul; Streymoy, a da correnteza.',
+        explanation: '“eystur” (leste) + “oy” (ilha). Suðuroy é a do sul; Streymoy, a da correnteza.',
       },
       {
-        question: 'Quando se diz «Takk fyri seinast»?',
+        question: 'Quando se diz “Takk fyri seinast”?',
         options: ['Ao se despedir para sempre', 'Ao reencontrar alguém', 'Antes de comer', 'Ao pedir desculpa'],
         answer: 'Ao reencontrar alguém',
         explanation: 'Agradece a última vez em que as pessoas estiveram juntas.',
       },
       {
-        question: 'Em «Mær dámar kaffi», quem gosta está em que caso?',
+        question: 'Em “Mær dámar kaffi”, quem gosta está em que caso?',
         options: ['Nominativo', 'Acusativo', 'Dativo', 'Genitivo'],
         answer: 'Dativo',
-        explanation: '«mær» é o dativo de «eg»: literalmente, «a mim agrada café».',
+        explanation: '“mær” é o dativo de “eg”: literalmente, “a mim agrada café”.',
       },
     ],
   },
@@ -604,11 +604,11 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
   {
     area: 'pragmatica',
     summary:
-      'O feroês é uma língua de comunidade pequena: todo mundo se trata por «tú», o nome de batismo basta, a cortesia vem mais do tom e das perguntas («Kundi tú…?») do que de fórmulas, e o dinamarquês ainda aparece na escola, na igreja e em papéis oficiais.',
+      'O feroês é uma língua de comunidade pequena: todo mundo se trata por “tú”, o nome de batismo basta, a cortesia vem mais do tom e das perguntas (“Kundi tú…?”) do que de fórmulas, e o dinamarquês ainda aparece na escola, na igreja e em papéis oficiais.',
     sections: [
       {
-        heading: 'Saudações e o «tú» de todo mundo',
-        text: 'Numa comunidade de cerca de 50 mil pessoas, onde quase todos se conhecem, a língua é informal. «Tú» serve para todo mundo, inclusive para o médico e o chefe do governo, e as pessoas se chamam pelo primeiro nome. A forma de respeito «tygum» existe, mas soa antiga: aparece em textos formais e na fala de gente mais velha. «Hey!» é o oi de todo dia, «Góðan morgun» e «Góðan dag» são mais formais, e «Farvæl» é o adeus.',
+        heading: 'Saudações e o “tú” de todo mundo',
+        text: 'Numa comunidade de cerca de 50 mil pessoas, onde quase todos se conhecem, a língua é informal. “Tú” serve para todo mundo, inclusive para o médico e o chefe do governo, e as pessoas se chamam pelo primeiro nome. A forma de respeito “tygum” existe, mas soa antiga: aparece em textos formais e na fala de gente mais velha. “Hey!” é o oi de todo dia, “Góðan morgun” e “Góðan dag” são mais formais, e “Farvæl” é o adeus.',
         table: {
           head: ['Situação', 'Feroês', 'Português'],
           rows: [
@@ -626,7 +626,7 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
       },
       {
         heading: 'Pedir com jeito',
-        text: 'O feroês não tem uma palavra tão automática quanto o nosso «por favor». A cortesia está na pergunta e no tempo verbal: «Kanst tú hjálpa mær?» (pode me ajudar?) fica mais gentil como «Kundi tú hjálpa mær?» (poderia me ajudar?). Para oferecer, «Ver so góður» / «Ver so góð» (seja tão bom/boa). Para desculpar-se, «Orsaka!». E o «takk» aparece o tempo todo, inclusive depois da refeição: «Takk fyri matin!».',
+        text: 'O feroês não tem uma palavra tão automática quanto o nosso “por favor”. A cortesia está na pergunta e no tempo verbal: “Kanst tú hjálpa mær?” (pode me ajudar?) fica mais gentil como “Kundi tú hjálpa mær?” (poderia me ajudar?). Para oferecer, “Ver so góður” / “Ver so góð” (seja tão bom/boa). Para desculpar-se, “Orsaka!”. E o “takk” aparece o tempo todo, inclusive depois da refeição: “Takk fyri matin!”.',
         table: {
           head: ['Função', 'Feroês', 'Português'],
           rows: [
@@ -644,7 +644,7 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
       },
       {
         heading: 'Nas repartições e por escrito',
-        text: 'Nos e-mails e nas cartas, o tom também é direto: «Góðan dag» ou «Hey» na abertura, o assunto logo em seguida e «Vinarliga» (cordialmente) no fim. Na «kommunan» (a prefeitura), no médico ou no banco, o atendimento é por «tú», e o genitivo e as palavras longas aparecem mais nos formulários do que na fala.',
+        text: 'Nos e-mails e nas cartas, o tom também é direto: “Góðan dag” ou “Hey” na abertura, o assunto logo em seguida e “Vinarliga” (cordialmente) no fim. Na “kommunan” (a prefeitura), no médico ou no banco, o atendimento é por “tú”, e o genitivo e as palavras longas aparecem mais nos formulários do que na fala.',
         table: {
           head: ['Parte', 'Feroês', 'Português'],
           rows: [
@@ -661,7 +661,7 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
       },
       {
         heading: 'Dar opinião e discordar',
-        text: 'Para opinar, «Eg haldi, at…» (eu acho que…). Para concordar, «Eg eri samdur» (concordo; «samd» no feminino). Para discordar com cuidado, primeiro se reconhece o outro: «Tú hevur rætt, men…» (você tem razão, mas…). Em debate, o tom costuma ser calmo: numa sociedade pequena, os adversários de hoje são os vizinhos de amanhã.',
+        text: 'Para opinar, “Eg haldi, at…” (eu acho que…). Para concordar, “Eg eri samdur” (concordo; “samd” no feminino). Para discordar com cuidado, primeiro se reconhece o outro: “Tú hevur rætt, men…” (você tem razão, mas…). Em debate, o tom costuma ser calmo: numa sociedade pequena, os adversários de hoje são os vizinhos de amanhã.',
         table: {
           head: ['Função', 'Feroês', 'Português'],
           rows: [
@@ -678,7 +678,7 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
       },
       {
         heading: 'O dinamarquês nas Faroé',
-        text: 'Por séculos, o dinamarquês foi a língua da igreja, da escola e da administração, e o feroês ficou na fala e nas baladas. O feroês se tornou a língua principal do arquipélago com a autonomia de 1948, mas o dinamarquês continua obrigatório na escola, e os feroeses o leem com facilidade. O «gøtudanskt», o «dinamarquês de rua», é o dinamarquês falado com pronúncia feroesa. Na fala, muitas palavras dinamarquesas convivem com as feroesas: saber quando usar cada uma é parte da competência pragmática.',
+        text: 'Por séculos, o dinamarquês foi a língua da igreja, da escola e da administração, e o feroês ficou na fala e nas baladas. O feroês se tornou a língua principal do arquipélago com a autonomia de 1948, mas o dinamarquês continua obrigatório na escola, e os feroeses o leem com facilidade. O “gøtudanskt”, o “dinamarquês de rua”, é o dinamarquês falado com pronúncia feroesa. Na fala, muitas palavras dinamarquesas convivem com as feroesas: saber quando usar cada uma é parte da competência pragmática.',
         table: {
           head: ['Fala com dinamarquismo', 'Forma purista', 'Português'],
           rows: [
@@ -698,33 +698,33 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
     quiz: [
       {
         question: 'Como se trata o médico nas Faroé?',
-        options: ['Por «tygum»', 'Por «tú»', 'Pelo sobrenome', 'Por «hann»'],
-        answer: 'Por «tú»',
-        explanation: '«tú» serve para todo mundo; «tygum» soa antigo.',
+        options: ['Por “tygum”', 'Por “tú”', 'Pelo sobrenome', 'Por “hann”'],
+        answer: 'Por “tú”',
+        explanation: '“tú” serve para todo mundo; “tygum” soa antigo.',
       },
       {
         question: 'Qual é o pedido mais gentil?',
         options: ['Hjálp mær!', 'Kanst tú hjálpa mær?', 'Kundi tú hjálpa mær?', 'Tú hjálpir mær.'],
         answer: 'Kundi tú hjálpa mær?',
-        explanation: 'O passado do modal («kundi») suaviza o pedido, como o nosso «poderia».',
+        explanation: 'O passado do modal (“kundi”) suaviza o pedido, como o nosso “poderia”.',
       },
       {
         question: 'O que se diz depois da refeição a quem cozinhou?',
         options: ['Farvæl!', 'Takk fyri matin!', 'Orsaka!', 'Góða ferð!'],
         answer: 'Takk fyri matin!',
-        explanation: 'E quem cozinhou responde «Væl bekomi!».',
+        explanation: 'E quem cozinhou responde “Væl bekomi!”.',
       },
       {
-        question: 'O que é o «gøtudanskt»?',
+        question: 'O que é o “gøtudanskt”?',
         options: ['Um dialeto de Suðuroy', 'O dinamarquês falado com pronúncia feroesa', 'Uma balada', 'O feroês escrito'],
         answer: 'O dinamarquês falado com pronúncia feroesa',
-        explanation: 'Literalmente «dinamarquês de rua»: é o dinamarquês como os feroeses o falam.',
+        explanation: 'Literalmente “dinamarquês de rua”: é o dinamarquês como os feroeses o falam.',
       },
       {
         question: 'Como se discorda com cuidado?',
         options: ['Tú hevur rætt, men…', 'Eg eri samdur.', 'Takk fyri seinast.', 'Ver so góður.'],
         answer: 'Tú hevur rætt, men…',
-        explanation: 'Primeiro se reconhece o ponto do outro, depois vem o «men» (mas).',
+        explanation: 'Primeiro se reconhece o ponto do outro, depois vem o “men” (mas).',
       },
     ],
   },
@@ -736,7 +736,7 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
     sections: [
       {
         heading: 'As baladas e a dança em roda',
-        text: 'As «kvæði» são baladas longas, com dezenas ou centenas de estrofes, sobre heróis, reis e as sagas nórdicas. Elas se cantam na dança em roda: as pessoas dão as mãos, dão passos para a esquerda e para a direita, e um puxador, o «skipari», canta as estrofes, enquanto todos repetem o refrão, o «niðurlag». A mais famosa é «Ormurin langi» (A Serpente Longa), de Jens Christian Djurhuus, sobre a batalha naval do rei Olavo Tryggvason. Foi assim, cantando, que o feroês atravessou os séculos em que a escrita era dinamarquesa.',
+        text: 'As “kvæði” são baladas longas, com dezenas ou centenas de estrofes, sobre heróis, reis e as sagas nórdicas. Elas se cantam na dança em roda: as pessoas dão as mãos, dão passos para a esquerda e para a direita, e um puxador, o “skipari”, canta as estrofes, enquanto todos repetem o refrão, o “niðurlag”. A mais famosa é “Ormurin langi” (A Serpente Longa), de Jens Christian Djurhuus, sobre a batalha naval do rei Olavo Tryggvason. Foi assim, cantando, que o feroês atravessou os séculos em que a escrita era dinamarquesa.',
         table: {
           head: ['Termo', 'Sentido'],
           rows: [
@@ -747,14 +747,14 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
           ],
         },
         examples: [
-          ['Glymur dansur í høll, dans slá í ring.', 'Ressoa a dança no salão, formem a roda. (refrão de «Ormurin langi»)'],
+          ['Glymur dansur í høll, dans slá í ring.', 'Ressoa a dança no salão, formem a roda. (refrão de “Ormurin langi”)'],
           ['Á Ólavsøku dansa fólk í Havn.', 'Na Ólavsøka, o povo dança em Tórshavn.'],
           ['Skiparin kvøður, og øll taka undir.', 'O puxador canta e todos acompanham.'],
         ],
       },
       {
         heading: 'Svabo, Hammershaimb e a escrita',
-        text: 'Jens Christian Svabo (1746–1824) foi o primeiro a anotar as baladas e a fazer um dicionário do feroês, numa grafia que seguia a fala. V. U. Hammershaimb (1819–1909) criou em 1846 a ortografia atual, etimológica, que aproximou o feroês do islandês e deu a todas as ilhas uma escrita comum. No século XX veio a literatura moderna: Janus Djurhuus (1881–1948) publicou em 1914 «Yrkingar», o primeiro livro de poemas líricos em feroês.',
+        text: 'Jens Christian Svabo (1746–1824) foi o primeiro a anotar as baladas e a fazer um dicionário do feroês, numa grafia que seguia a fala. V. U. Hammershaimb (1819–1909) criou em 1846 a ortografia atual, etimológica, que aproximou o feroês do islandês e deu a todas as ilhas uma escrita comum. No século XX veio a literatura moderna: Janus Djurhuus (1881–1948) publicou em 1914 “Yrkingar”, o primeiro livro de poemas líricos em feroês.',
         table: {
           head: ['Nome', 'Datas', 'Contribuição'],
           rows: [
@@ -771,7 +771,7 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
       },
       {
         heading: 'O estilo nominal: relatórios, ciência e pesca',
-        text: 'Nos textos técnicos, o feroês prefere substantivos compostos e o genitivo, que quase some da fala: «fiskiveiðan» (a pesca), «landsstýrið» (o governo), «Føroya Løgting». A frase fica mais densa e impessoal, com passivas e «-st»: «Tað verður mett, at…» (estima-se que…). Os termos técnicos seguem o purismo: se pode, cria-se uma palavra com raiz feroesa.',
+        text: 'Nos textos técnicos, o feroês prefere substantivos compostos e o genitivo, que quase some da fala: “fiskiveiðan” (a pesca), “landsstýrið” (o governo), “Føroya Løgting”. A frase fica mais densa e impessoal, com passivas e “-st”: “Tað verður mett, at…” (estima-se que…). Os termos técnicos seguem o purismo: se pode, cria-se uma palavra com raiz feroesa.',
         table: {
           head: ['Fala', 'Estilo nominal', 'Português'],
           rows: [
@@ -788,7 +788,7 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
       },
       {
         heading: 'Conectores e provérbios',
-        text: 'Os conectores organizam a argumentação e, quando abrem a frase, puxam o verbo para a segunda posição: «Harafturat eru…» (além disso, há…), «Kortini fóru vit út» (mesmo assim, saímos), «Tessvegna eri eg trøttur» (por isso estou cansado). Os provérbios, «málshættir», guardam formas antigas, como o dativo e a ordem de palavras mais livre, e dão um toque de sabedoria popular ao texto.',
+        text: 'Os conectores organizam a argumentação e, quando abrem a frase, puxam o verbo para a segunda posição: “Harafturat eru…” (além disso, há…), “Kortini fóru vit út” (mesmo assim, saímos), “Tessvegna eri eg trøttur” (por isso estou cansado). Os provérbios, “málshættir”, guardam formas antigas, como o dativo e a ordem de palavras mais livre, e dão um toque de sabedoria popular ao texto.',
         table: {
           head: ['Conector', 'Função', 'Português'],
           rows: [
@@ -811,7 +811,7 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
         question: 'Quem canta as estrofes na dança em roda?',
         options: ['O niðurlag', 'O skipari', 'O kvæði', 'O løgmaður'],
         answer: 'O skipari',
-        explanation: 'O «skipari» puxa as estrofes; todos juntos cantam o refrão, o «niðurlag».',
+        explanation: 'O “skipari” puxa as estrofes; todos juntos cantam o refrão, o “niðurlag”.',
       },
       {
         question: 'Quem criou a ortografia feroesa atual, em 1846?',
@@ -829,7 +829,7 @@ export const LINGUISTICS_FO: LinguisticsArea[] = [
         question: 'Onde o genitivo aparece mais?',
         options: ['Na conversa em casa', 'Nos textos técnicos e oficiais', 'Nas saudações', 'Nas perguntas'],
         answer: 'Nos textos técnicos e oficiais',
-        explanation: 'Na fala ele é trocado por «hjá» e preposições; o estilo nominal o usa bastante.',
+        explanation: 'Na fala ele é trocado por “hjá” e preposições; o estilo nominal o usa bastante.',
       },
       {
         question: 'Por que as baladas foram importantes para a língua?',

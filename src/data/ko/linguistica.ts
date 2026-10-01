@@ -10,13 +10,13 @@ export const LINGUISTICS_KO: LinguisticsArea[] = [
     sections: [
       {
         heading: 'A série tripla: três sons onde temos dois',
-        text: 'O português opõe surdas e sonoras (p × b). O coreano ignora essa oposição e cria outra, de três termos, com a força do ar e a tensão da garganta. A suave (ㄱ ㄷ ㅂ ㅈ) sai com um sopro leve no começo da palavra e vira sonora entre vogais: 가방 soa [kabaŋ]. A aspirada (ㅋ ㅌ ㅍ ㅊ) sai com um jato de ar, como o «k» do inglês «key». A tensa (ㄲ ㄸ ㅃ ㅉ ㅆ) sai sem ar nenhum, com a glote contraída. Curiosamente, o nosso «p, t, k», sem sopro, soa aos coreanos mais perto das tensas. E há uma mudança em curso: entre os jovens de Seul, a diferença entre suave e aspirada está passando para o tom da vogal seguinte, baixo depois da suave e alto depois da aspirada. O coreano de Seul está criando tons, como o chinês criou há mil anos.',
+        text: 'O português opõe surdas e sonoras (p × b). O coreano ignora essa oposição e cria outra, de três termos, com a força do ar e a tensão da garganta. A suave (ㄱ ㄷ ㅂ ㅈ) sai com um sopro leve no começo da palavra e vira sonora entre vogais: 가방 soa [kabaŋ]. A aspirada (ㅋ ㅌ ㅍ ㅊ) sai com um jato de ar, como o “k” do inglês “key”. A tensa (ㄲ ㄸ ㅃ ㅉ ㅆ) sai sem ar nenhum, com a glote contraída. Curiosamente, o nosso “p, t, k”, sem sopro, soa aos coreanos mais perto das tensas. E há uma mudança em curso: entre os jovens de Seul, a diferença entre suave e aspirada está passando para o tom da vogal seguinte, baixo depois da suave e alto depois da aspirada. O coreano de Seul está criando tons, como o chinês criou há mil anos.',
         table: {
           head: ['Série', 'IPA', 'Como sai o ar', 'Parecido em português'],
           rows: [
-            ['suave: ㄱ ㄷ ㅂ ㅈ', '[k t p t͡ɕ], entre vogais [ɡ d b d͡ʑ]', 'sopro leve; vogal em tom baixo', 'entre «c» e «g»; vira «g» entre vogais'],
-            ['aspirada: ㅋ ㅌ ㅍ ㅊ', '[kʰ tʰ pʰ t͡ɕʰ]', 'jato de ar forte; tom alto', 'o «k» do inglês «key»'],
-            ['tensa: ㄲ ㄸ ㅃ ㅉ ㅆ', '[k͈ t͈ p͈ t͡ɕ͈ s͈]', 'sem ar, glote apertada; tom alto', 'o nosso «c» de «cá», com força'],
+            ['suave: ㄱ ㄷ ㅂ ㅈ', '[k t p t͡ɕ], entre vogais [ɡ d b d͡ʑ]', 'sopro leve; vogal em tom baixo', 'entre “c” e “g”; vira “g” entre vogais'],
+            ['aspirada: ㅋ ㅌ ㅍ ㅊ', '[kʰ tʰ pʰ t͡ɕʰ]', 'jato de ar forte; tom alto', 'o “k” do inglês “key”'],
+            ['tensa: ㄲ ㄸ ㅃ ㅉ ㅆ', '[k͈ t͈ p͈ t͡ɕ͈ s͈]', 'sem ar, glote apertada; tom alto', 'o nosso “c” de “cá”, com força'],
           ],
         },
         examples: [
@@ -27,12 +27,12 @@ export const LINGUISTICS_KO: LinguisticsArea[] = [
       },
       {
         heading: 'As vogais: o ㅓ, o ㅡ e as que se fundiram',
-        text: 'O coreano padrão descreve dez vogais simples, mas a fala de Seul hoje tem sete ou oito. O ㅓ [ʌ] é um «ó» sem arredondar os lábios; o ㅡ [ɯ], um «u» com os lábios esticados. O ㅐ e o ㅔ se fundiram num som só para a maioria dos jovens. O ㅚ e o ㅟ, que eram vogais arredondadas da frente (como o «ö» e o «ü» do alemão), viraram ditongos: [we] e [wi]. O ㅢ muda conforme o lugar: [ɰi] no começo da palavra, [i] depois de consoante (희망 [히망]) e [e] como partícula de posse. Havia também vogais longas que mudavam o sentido (눈, olho, curto × 눈, neve, longo; 말, cavalo × 말, palavra); os mais velhos ainda as fazem, os jovens quase não.',
+        text: 'O coreano padrão descreve dez vogais simples, mas a fala de Seul hoje tem sete ou oito. O ㅓ [ʌ] é um “ó” sem arredondar os lábios; o ㅡ [ɯ], um “u” com os lábios esticados. O ㅐ e o ㅔ se fundiram num som só para a maioria dos jovens. O ㅚ e o ㅟ, que eram vogais arredondadas da frente (como o “ö” e o “ü” do alemão), viraram ditongos: [we] e [wi]. O ㅢ muda conforme o lugar: [ɰi] no começo da palavra, [i] depois de consoante (희망 [히망]) e [e] como partícula de posse. Havia também vogais longas que mudavam o sentido (눈, olho, curto × 눈, neve, longo; 말, cavalo × 말, palavra); os mais velhos ainda as fazem, os jovens quase não.',
         table: {
           head: ['Letra', 'IPA', 'Nota'],
           rows: [
-            ['ㅓ', '[ʌ]', '«ó» sem bico; nos mais velhos, longo e mais fechado'],
-            ['ㅡ', '[ɯ]', '«u» com os lábios esticados'],
+            ['ㅓ', '[ʌ]', '“ó” sem bico; nos mais velhos, longo e mais fechado'],
+            ['ㅡ', '[ɯ]', '“u” com os lábios esticados'],
             ['ㅐ / ㅔ', '[ɛ] / [e] → [e]', 'fundidos na fala de Seul'],
             ['ㅚ', '[ø] → [we]', 'virou ditongo'],
             ['ㅟ', '[y] → [wi]', 'virou ditongo'],
@@ -47,14 +47,14 @@ export const LINGUISTICS_KO: LinguisticsArea[] = [
       },
       {
         heading: 'Sílabas iguais, finais presas e o ㅡ que desfaz grupos',
-        text: 'O coreano não tem acento de intensidade na palavra: as sílabas têm peso parecido, e a melodia é da frase, subindo no fim das perguntas e caindo nas afirmações. As consoantes finais não se soltam, e na pronúncia nunca há duas consoantes seguidas na mesma sílaba. Por isso as palavras estrangeiras ganham vogais: o coreano desfaz os grupos com ㅡ, como o português desfaz com «i». «Strike» vira 스트라이크, cinco sílabas; o brasileiro diria «is-trai-qui». Os dois idiomas fazem a mesma coisa, cada um com a sua vogal.',
+        text: 'O coreano não tem acento de intensidade na palavra: as sílabas têm peso parecido, e a melodia é da frase, subindo no fim das perguntas e caindo nas afirmações. As consoantes finais não se soltam, e na pronúncia nunca há duas consoantes seguidas na mesma sílaba. Por isso as palavras estrangeiras ganham vogais: o coreano desfaz os grupos com ㅡ, como o português desfaz com “i”. “Strike” vira 스트라이크, cinco sílabas; o brasileiro diria “is-trai-qui”. Os dois idiomas fazem a mesma coisa, cada um com a sua vogal.',
         table: {
           head: ['Inglês', 'Coreano', 'Sílabas', 'Como o brasileiro adapta'],
           rows: [
-            ['strike', '스트라이크', '5', '«is-trai-qui»'],
-            ['Christmas', '크리스마스', '5', '«cris-mas»'],
-            ['Starbucks', '스타벅스', '4', '«is-tar-ba-ques»'],
-            ['McDonald’s', '맥도날드', '4', '«mé-qui-dô-nalds»'],
+            ['strike', '스트라이크', '5', '“is-trai-qui”'],
+            ['Christmas', '크리스마스', '5', '“cris-mas”'],
+            ['Starbucks', '스타벅스', '4', '“is-tar-ba-ques”'],
+            ['McDonald’s', '맥도날드', '4', '“mé-qui-dô-nalds”'],
           ],
         },
         examples: [
@@ -79,7 +79,7 @@ export const LINGUISTICS_KO: LinguisticsArea[] = [
         explanation: 'As suaves (ㄱ ㄷ ㅂ ㅈ) são surdas no começo da palavra e sonoras entre sons sonoros.',
       },
       {
-        question: 'Como o coreano adapta «Christmas»?',
+        question: 'Como o coreano adapta “Christmas”?',
         options: ['크리스마스', '크리스머스', '크리스맛'],
         answer: '크리스마스',
         explanation: 'Cada consoante solta ganha um ㅡ: 크-리-스-마-스, cinco sílabas.',
@@ -148,7 +148,7 @@ export const LINGUISTICS_KO: LinguisticsArea[] = [
       },
       {
         heading: 'O ㄴ que aparece e o ㄹ que some do começo',
-        text: 'Duas regras mexem com o começo das palavras. Nos compostos, quando a segunda parte começa com 이, 야, 여, 요 ou 유, surge um ㄴ que não está escrito: 한여름 [한녀름] (pleno verão), 담요 [담뇨] (cobertor), 서울역 [서울력] (a estação de Seul, com o ㄴ depois virando ㄹ). E a «lei do som inicial» (두음 법칙) do padrão do Sul evita ㄹ no começo das palavras sino-coreanas e ㄴ antes de «i» e «y»: 李 é o sobrenome 이 (Lee), 女子 é 여자. No meio da palavra, o som original volta (남녀, homem e mulher). A Coreia do Norte não adota essa regra e escreve 리, 녀자, 로동, 랭면.',
+        text: 'Duas regras mexem com o começo das palavras. Nos compostos, quando a segunda parte começa com 이, 야, 여, 요 ou 유, surge um ㄴ que não está escrito: 한여름 [한녀름] (pleno verão), 담요 [담뇨] (cobertor), 서울역 [서울력] (a estação de Seul, com o ㄴ depois virando ㄹ). E a “lei do som inicial” (두음 법칙) do padrão do Sul evita ㄹ no começo das palavras sino-coreanas e ㄴ antes de “i” e “y”: 李 é o sobrenome 이 (Lee), 女子 é 여자. No meio da palavra, o som original volta (남녀, homem e mulher). A Coreia do Norte não adota essa regra e escreve 리, 녀자, 로동, 랭면.',
         table: {
           head: ['Hanja', 'Sul (padrão)', 'Norte', 'Português'],
           rows: [
@@ -208,7 +208,7 @@ export const LINGUISTICS_KO: LinguisticsArea[] = [
     sections: [
       {
         heading: 'Um verbo em camadas',
-        text: 'Em português, «iria» junta tempo, modo e pessoa num sufixo só. Em coreano, cada informação tem o seu sufixo, sempre na mesma ordem: raiz, voz (passiva ou causativa), honra (-시-), tempo (-았/었-), modalidade (-겠-, -더-) e, por fim, a terminação, que diz o nível de fala e o tipo de frase. Nada disso muda com a pessoa: 가요 serve para eu, você e eles. É como montar peças de Lego numa ordem fixa.',
+        text: 'Em português, “iria” junta tempo, modo e pessoa num sufixo só. Em coreano, cada informação tem o seu sufixo, sempre na mesma ordem: raiz, voz (passiva ou causativa), honra (-시-), tempo (-았/었-), modalidade (-겠-, -더-) e, por fim, a terminação, que diz o nível de fala e o tipo de frase. Nada disso muda com a pessoa: 가요 serve para eu, você e eles. É como montar peças de Lego numa ordem fixa.',
         table: {
           head: ['Camada', 'Sufixo', 'Função', 'Resultado'],
           rows: [
@@ -227,7 +227,7 @@ export const LINGUISTICS_KO: LinguisticsArea[] = [
       },
       {
         heading: 'Partículas: as preposições que vêm depois',
-        text: 'Onde o português põe preposição antes (em Seul, para o amigo), o coreano põe partícula depois (서울에서, 친구에게). Muitas têm duas formas, conforme a palavra termine em consoante ou vogal (이/가, 은/는, 을/를, 와/과), e elas se empilham, somando sentidos: 에게 + 만 = «só para», 에서 + 부터 = «desde». Na fala, as de sujeito e objeto caem com facilidade; as de lugar e as de sentido (도, 만, 부터) ficam.',
+        text: 'Onde o português põe preposição antes (em Seul, para o amigo), o coreano põe partícula depois (서울에서, 친구에게). Muitas têm duas formas, conforme a palavra termine em consoante ou vogal (이/가, 은/는, 을/를, 와/과), e elas se empilham, somando sentidos: 에게 + 만 = “só para”, 에서 + 부터 = “desde”. Na fala, as de sujeito e objeto caem com facilidade; as de lugar e as de sentido (도, 만, 부터) ficam.',
         table: {
           head: ['Partícula', 'Função', 'Exemplo'],
           rows: [
@@ -249,7 +249,7 @@ export const LINGUISTICS_KO: LinguisticsArea[] = [
       },
       {
         heading: 'A fábrica de palavras',
-        text: 'O coreano cria palavras de vários jeitos. Compõe palavras nativas (눈 + 물, «água do olho» = lágrima), monta sílabas sino-coreanas como peças (도서 + 관 = biblioteca), deriva com sufixos (-하다, -스럽다, -롭다) e prefixos (무-, «sem»; 비-, «não»), e toma emprestado sem cerimônia, muitas vezes encurtando: 셀카 (self camera, selfie), 에어컨 (ar-condicionado). A juventude cola pedaços de palavras: 치맥 é 치킨 + 맥주, o frango frito com cerveja, um programa nacional.',
+        text: 'O coreano cria palavras de vários jeitos. Compõe palavras nativas (눈 + 물, “água do olho” = lágrima), monta sílabas sino-coreanas como peças (도서 + 관 = biblioteca), deriva com sufixos (-하다, -스럽다, -롭다) e prefixos (무-, “sem”; 비-, “não”), e toma emprestado sem cerimônia, muitas vezes encurtando: 셀카 (self camera, selfie), 에어컨 (ar-condicionado). A juventude cola pedaços de palavras: 치맥 é 치킨 + 맥주, o frango frito com cerveja, um programa nacional.',
         table: {
           head: ['Processo', 'Exemplo', 'Partes', 'Português'],
           rows: [
@@ -276,7 +276,7 @@ export const LINGUISTICS_KO: LinguisticsArea[] = [
         question: 'Na forma 가셨어요, o que indica o -시-?',
         options: ['Respeito pelo sujeito', 'O passado', 'Uma pergunta', 'O plural'],
         answer: 'Respeito pelo sujeito',
-        explanation: '가 + 시 (honra) + 었 (passado) + 어요 (nível polido): «o senhor foi».',
+        explanation: '가 + 시 (honra) + 었 (passado) + 어요 (nível polido): “o senhor foi”.',
       },
       {
         question: 'Por que se diz que o coreano é aglutinante?',
@@ -285,16 +285,16 @@ export const LINGUISTICS_KO: LinguisticsArea[] = [
         explanation: 'Honra, tempo, modalidade e nível de fala são peças separadas, coladas em ordem fixa.',
       },
       {
-        question: 'Qual combinação de partículas quer dizer «só para (alguém)»?',
+        question: 'Qual combinação de partículas quer dizer “só para (alguém)”?',
         options: ['에게만', '에서도', '까지만'],
         answer: '에게만',
-        explanation: '에게 (para) + 만 (só). 에서도 é «também em», e 까지만, «só até».',
+        explanation: '에게 (para) + 만 (só). 에서도 é “também em”, e 까지만, “só até”.',
       },
       {
         question: 'O que quer dizer 눈물, de 눈 (olho) + 물 (água)?',
         options: ['Lágrima', 'Chuva', 'Neve derretida', 'Colírio'],
         answer: 'Lágrima',
-        explanation: 'A «água do olho». (눈 também quer dizer neve, mas aqui é o olho.)',
+        explanation: 'A “água do olho”. (눈 também quer dizer neve, mas aqui é o olho.)',
       },
       {
         question: 'O que é 치맥?',
@@ -312,7 +312,7 @@ export const LINGUISTICS_KO: LinguisticsArea[] = [
     sections: [
       {
         heading: 'O núcleo no fim',
-        text: 'O português põe o núcleo primeiro: o verbo antes do objeto, a preposição antes do nome, o substantivo antes da oração que o descreve. O coreano faz tudo ao contrário, com uma coerência impressionante: objeto antes do verbo, posposição depois do nome, modificador antes do substantivo, auxiliar depois do verbo principal, «que» comparativo depois do termo comparado. Quem fala japonês ou turco reconhece o padrão, e é por isso que eles aprendem coreano tão depressa.',
+        text: 'O português põe o núcleo primeiro: o verbo antes do objeto, a preposição antes do nome, o substantivo antes da oração que o descreve. O coreano faz tudo ao contrário, com uma coerência impressionante: objeto antes do verbo, posposição depois do nome, modificador antes do substantivo, auxiliar depois do verbo principal, “que” comparativo depois do termo comparado. Quem fala japonês ou turco reconhece o padrão, e é por isso que eles aprendem coreano tão depressa.',
         table: {
           head: ['Estrutura', 'Português', 'Coreano'],
           rows: [
@@ -332,13 +332,13 @@ export const LINGUISTICS_KO: LinguisticsArea[] = [
       },
       {
         heading: 'Tópico, sujeito e o que fica subentendido',
-        text: 'O coreano é uma língua de tópico: primeiro se anuncia do que se fala (com 은/는), depois se comenta. Por isso cabem dois «sujeitos» numa frase, como em 코끼리는 코가 길다 (o elefante, a tromba é comprida). E o que o contexto já deixou claro simplesmente não aparece: sem sujeito, sem objeto, sem pronome de retomada. Numa conversa, uma frase inteira pode ser só o verbo.',
+        text: 'O coreano é uma língua de tópico: primeiro se anuncia do que se fala (com 은/는), depois se comenta. Por isso cabem dois “sujeitos” numa frase, como em 코끼리는 코가 길다 (o elefante, a tromba é comprida). E o que o contexto já deixou claro simplesmente não aparece: sem sujeito, sem objeto, sem pronome de retomada. Numa conversa, uma frase inteira pode ser só o verbo.',
         table: {
           head: ['Fala', 'Português', 'O que ficou subentendido'],
           rows: [
-            ['어제 그 영화 봤어요?', 'Você viu aquele filme ontem?', '«você»'],
-            ['네, 봤어요.', 'Vi, sim.', '«eu» e «o filme»'],
-            ['정말 재미있었어요.', 'Foi muito bom.', '«o filme»'],
+            ['어제 그 영화 봤어요?', 'Você viu aquele filme ontem?', '“você”'],
+            ['네, 봤어요.', 'Vi, sim.', '“eu” e “o filme”'],
+            ['정말 재미있었어요.', 'Foi muito bom.', '“o filme”'],
           ],
         },
         examples: [
@@ -375,7 +375,7 @@ export const LINGUISTICS_KO: LinguisticsArea[] = [
         explanation: '저는 커피를 마셔요: eu, café, bebo. O verbo fecha a frase.',
       },
       {
-        question: 'Onde fica o modificador («que eu li», «bonito») em relação ao substantivo?',
+        question: 'Onde fica o modificador (“que eu li”, “bonito”) em relação ao substantivo?',
         options: ['Antes do substantivo', 'Depois do substantivo', 'No fim da frase', 'Tanto faz'],
         answer: 'Antes do substantivo',
         explanation: '내가 읽은 책 (o livro que eu li), 예쁜 꽃 (a flor bonita).',
@@ -384,10 +384,10 @@ export const LINGUISTICS_KO: LinguisticsArea[] = [
         question: 'Na frase 코끼리는 코가 길다, o que marca o 는?',
         options: ['O tópico', 'O objeto', 'O lugar', 'A posse'],
         answer: 'O tópico',
-        explanation: '«Quanto ao elefante», e depois o sujeito com 가: «a tromba é comprida».',
+        explanation: '“Quanto ao elefante”, e depois o sujeito com 가: “a tromba é comprida”.',
       },
       {
-        question: 'Por que a resposta pode ser só 봤어요 («vi»)?',
+        question: 'Por que a resposta pode ser só 봤어요 (“vi”)?',
         options: ['Porque sujeito e objeto claros podem ser omitidos', 'Porque o verbo indica a pessoa', 'Porque é gíria', 'Porque é uma pergunta'],
         answer: 'Porque sujeito e objeto claros podem ser omitidos',
         explanation: 'O verbo coreano não muda com a pessoa; o contexto basta.',
@@ -396,7 +396,7 @@ export const LINGUISTICS_KO: LinguisticsArea[] = [
         question: 'Numa cadeia de orações, qual verbo carrega o tempo e o nível de fala?',
         options: ['O último', 'O primeiro', 'Todos, igualmente', 'Nenhum'],
         answer: 'O último',
-        explanation: 'Os conectivos ficam «neutros», e o verbo final dá o tempo e o nível para a frase inteira.',
+        explanation: 'Os conectivos ficam “neutros”, e o verbo final dá o tempo e o nível para a frase inteira.',
       },
     ],
   },
@@ -408,7 +408,7 @@ export const LINGUISTICS_KO: LinguisticsArea[] = [
     sections: [
       {
         heading: 'Três camadas de vocabulário',
-        text: 'O léxico coreano tem três andares. As palavras nativas (고유어) são as do dia a dia, do corpo e da casa. As sino-coreanas (한자어), mais da metade do dicionário, são as da escola, da ciência, da administração, e soam mais formais, como as nossas palavras latinas cultas ao lado das populares («dente» × «odontológico»). E as estrangeiras (외래어), sobretudo do inglês, não param de chegar. Algumas vieram de longe: 빵 (pão) veio do português, pelo japonês, e 아르바이트 (bico, trabalho temporário) veio do alemão «Arbeit».',
+        text: 'O léxico coreano tem três andares. As palavras nativas (고유어) são as do dia a dia, do corpo e da casa. As sino-coreanas (한자어), mais da metade do dicionário, são as da escola, da ciência, da administração, e soam mais formais, como as nossas palavras latinas cultas ao lado das populares (“dente” × “odontológico”). E as estrangeiras (외래어), sobretudo do inglês, não param de chegar. Algumas vieram de longe: 빵 (pão) veio do português, pelo japonês, e 아르바이트 (bico, trabalho temporário) veio do alemão “Arbeit”.',
         table: {
           head: ['Conceito', 'Nativo', 'Sino-coreano', 'Estrangeiro'],
           rows: [
@@ -428,7 +428,7 @@ export const LINGUISTICS_KO: LinguisticsArea[] = [
       },
       {
         heading: 'Família: quem fala muda a palavra',
-        text: 'O parentesco coreano distingue o que o português junta. «Irmão mais velho» depende de quem fala: um homem diz 형, uma mulher diz 오빠; «irmã mais velha» é 누나 para ele e 언니 para ela. Os avós maternos levam 외 («de fora»), herança de uma sociedade que contava a família pelo lado do pai. E as tias têm nomes diferentes conforme o lado. Essas palavras também saem da família: a senhora do restaurante é 이모, a atendente da loja é 언니, e 오빠 pode ser o namorado.',
+        text: 'O parentesco coreano distingue o que o português junta. “Irmão mais velho” depende de quem fala: um homem diz 형, uma mulher diz 오빠; “irmã mais velha” é 누나 para ele e 언니 para ela. Os avós maternos levam 외 (“de fora”), herança de uma sociedade que contava a família pelo lado do pai. E as tias têm nomes diferentes conforme o lado. Essas palavras também saem da família: a senhora do restaurante é 이모, a atendente da loja é 언니, e 오빠 pode ser o namorado.',
         table: {
           head: ['Português', 'Coreano', 'Detalhe'],
           rows: [
@@ -436,7 +436,7 @@ export const LINGUISTICS_KO: LinguisticsArea[] = [
             ['irmã mais velha', '누나 / 언니', 'homem diz 누나; mulher diz 언니'],
             ['irmão ou irmã mais novos', '남동생 / 여동생', '동생 serve para os dois'],
             ['avós paternos', '할아버지, 할머니', '—'],
-            ['avós maternos', '외할아버지, 외할머니', '외 = «de fora»'],
+            ['avós maternos', '외할아버지, 외할머니', '외 = “de fora”'],
             ['tia (irmã da mãe)', '이모', 'também a senhora do restaurante'],
             ['tia (irmã do pai)', '고모', '—'],
             ['tio (irmão da mãe)', '외삼촌', '—'],
@@ -450,7 +450,7 @@ export const LINGUISTICS_KO: LinguisticsArea[] = [
       },
       {
         heading: 'A fonte da informação: vi, ouvi, suponho',
-        text: 'O português diz «está chovendo» e pronto. O coreano costuma dizer também de onde veio a informação: se você está descobrindo agora (-네요), se viu antes (-더라고요), se ouviu dizer (-대요), se deduz por pistas (-나 봐요) ou se supõe (-겠어요). Essa marcação de evidência muda o sentido e a cortesia: afirmar como certo o que só se ouviu soa leviano.',
+        text: 'O português diz “está chovendo” e pronto. O coreano costuma dizer também de onde veio a informação: se você está descobrindo agora (-네요), se viu antes (-더라고요), se ouviu dizer (-대요), se deduz por pistas (-나 봐요) ou se supõe (-겠어요). Essa marcação de evidência muda o sentido e a cortesia: afirmar como certo o que só se ouviu soa leviano.',
         table: {
           head: ['Forma', 'Fonte', 'Exemplo', 'Português'],
           rows: [
@@ -473,7 +473,7 @@ export const LINGUISTICS_KO: LinguisticsArea[] = [
     quiz: [
       {
         question: 'De onde vem a palavra 빵 (pão)?',
-        options: ['Do português, via japonês', 'Do chinês clássico', 'Do inglês «bun»', 'Do francês «pain»'],
+        options: ['Do português, via japonês', 'Do chinês clássico', 'Do inglês “bun”', 'Do francês “pain”'],
         answer: 'Do português, via japonês',
         explanation: 'Os portugueses levaram o pão ao Japão no século XVI (パン), e a palavra passou ao coreano.',
       },
@@ -487,13 +487,13 @@ export const LINGUISTICS_KO: LinguisticsArea[] = [
         question: 'O que indica o 외 em 외할머니?',
         options: ['O lado da mãe', 'O lado do pai', 'Uma avó estrangeira', 'Uma avó falecida'],
         answer: 'O lado da mãe',
-        explanation: '외 é «de fora»: na família patrilinear, a família da mãe era a «de fora».',
+        explanation: '외 é “de fora”: na família patrilinear, a família da mãe era a “de fora”.',
       },
       {
         question: 'Qual forma diz que você acabou de descobrir algo?',
         options: ['비가 오네요.', '비가 온대요.', '비가 오잖아요.'],
         answer: '비가 오네요.',
-        explanation: '-네요 marca a descoberta no momento. -대요 é «dizem que», e -잖아요, «você sabe que».',
+        explanation: '-네요 marca a descoberta no momento. -대요 é “dizem que”, e -잖아요, “você sabe que”.',
       },
       {
         question: 'Qual é a diferença entre 밥 먹었어요? e 식사하셨어요?',
@@ -507,7 +507,7 @@ export const LINGUISTICS_KO: LinguisticsArea[] = [
   {
     area: 'pragmatica',
     summary:
-      'Falar coreano é escolher, a cada frase, a relação com o outro: idade, posição e intimidade decidem o nível de fala, o honorífico e até o tratamento, já que o «você» quase sempre some. A cortesia é indireta, o elogio se recusa, o «não» vem embrulhado, e a arte de perceber o que não foi dito tem nome: 눈치.',
+      'Falar coreano é escolher, a cada frase, a relação com o outro: idade, posição e intimidade decidem o nível de fala, o honorífico e até o tratamento, já que o “você” quase sempre some. A cortesia é indireta, o elogio se recusa, o “não” vem embrulhado, e a arte de perceber o que não foi dito tem nome: 눈치.',
     sections: [
       {
         heading: 'Duas escalas de respeito, e a idade no centro',
@@ -530,16 +530,16 @@ export const LINGUISTICS_KO: LinguisticsArea[] = [
       },
       {
         heading: '눈치: ler o ar',
-        text: '눈치 (literalmente, «a medida dos olhos») é perceber o clima, o que o outro sente e não diz. Quem tem 눈치 빠르다 é perspicaz; quem 눈치가 없다 não se toca. Muitas frases coreanas são rituais, e levá-las ao pé da letra é falta de 눈치. 밥 먹었어요? é um cumprimento, não uma pergunta sobre o almoço; 어디 가세요? é um «olá», não curiosidade; e 언제 밥 한번 먹어요 é o nosso «aparece lá em casa»: gentil, mas nem sempre um convite marcado.',
+        text: '눈치 (literalmente, “a medida dos olhos”) é perceber o clima, o que o outro sente e não diz. Quem tem 눈치 빠르다 é perspicaz; quem 눈치가 없다 não se toca. Muitas frases coreanas são rituais, e levá-las ao pé da letra é falta de 눈치. 밥 먹었어요? é um cumprimento, não uma pergunta sobre o almoço; 어디 가세요? é um “olá”, não curiosidade; e 언제 밥 한번 먹어요 é o nosso “aparece lá em casa”: gentil, mas nem sempre um convite marcado.',
         table: {
           head: ['Frase', 'Ao pé da letra', 'Função'],
           rows: [
             ['밥 먹었어요?', 'Já comeu?', 'cumprimento, cuidado'],
             ['어디 가세요?', 'Aonde vai?', 'cumprimento, não é curiosidade'],
-            ['언제 밥 한번 먹어요.', 'Vamos comer juntos um dia.', 'gentileza, como «aparece lá em casa»'],
-            ['수고하셨습니다.', 'O senhor se esforçou.', '«bom trabalho», no fim do expediente'],
+            ['언제 밥 한번 먹어요.', 'Vamos comer juntos um dia.', 'gentileza, como “aparece lá em casa”'],
+            ['수고하셨습니다.', 'O senhor se esforçou.', '“bom trabalho”, no fim do expediente'],
             ['잘 먹겠습니다.', 'Vou comer bem.', 'antes de comer, agradecendo'],
-            ['들어가세요.', 'Entre (em casa).', '«vá com cuidado», na despedida'],
+            ['들어가세요.', 'Entre (em casa).', '“vá com cuidado”, na despedida'],
           ],
         },
         examples: [
@@ -549,8 +549,8 @@ export const LINGUISTICS_KO: LinguisticsArea[] = [
         ],
       },
       {
-        heading: 'Sem «você», sem «não», e o elogio recusado',
-        text: 'A cortesia coreana contorna o que é direto. Para chamar alguém, nada de pronome: 저기요!, o cargo (사장님, mesmo para o dono de uma lanchonete) ou um termo de família (이모, 언니). Para recusar, a frase fica pela metade (그날은 좀…) e o outro entende. Para opinar, suaviza-se com 좀 e -(으)ㄹ 것 같다. E o elogio não se aceita de cara: diante de «você fala coreano muito bem!», o esperado é 아직 멀었어요 («ainda estou longe»).',
+        heading: 'Sem “você”, sem “não”, e o elogio recusado',
+        text: 'A cortesia coreana contorna o que é direto. Para chamar alguém, nada de pronome: 저기요!, o cargo (사장님, mesmo para o dono de uma lanchonete) ou um termo de família (이모, 언니). Para recusar, a frase fica pela metade (그날은 좀…) e o outro entende. Para opinar, suaviza-se com 좀 e -(으)ㄹ 것 같다. E o elogio não se aceita de cara: diante de “você fala coreano muito bem!”, o esperado é 아직 멀었어요 (“ainda estou longe”).',
         table: {
           head: ['Situação', 'Estratégia', 'Exemplo'],
           rows: [
@@ -574,19 +574,19 @@ export const LINGUISTICS_KO: LinguisticsArea[] = [
         question: 'Um colega diz 언제 밥 한번 먹어요. O que isso costuma ser?',
         options: ['Uma gentileza, nem sempre um convite marcado', 'Um convite para hoje', 'Uma cobrança', 'Um pedido de dinheiro'],
         answer: 'Uma gentileza, nem sempre um convite marcado',
-        explanation: 'É como o nosso «aparece lá em casa». Se quiser marcar de verdade, proponha um dia.',
+        explanation: 'É como o nosso “aparece lá em casa”. Se quiser marcar de verdade, proponha um dia.',
       },
       {
         question: 'Alguém elogia o seu coreano. Qual resposta soa mais natural?',
         options: ['아니에요, 아직 멀었어요.', '네, 저는 잘해요.', '당연하죠.'],
         answer: '아니에요, 아직 멀었어요.',
-        explanation: 'O elogio se recusa com modéstia: «imagina, ainda estou longe».',
+        explanation: 'O elogio se recusa com modéstia: “imagina, ainda estou longe”.',
       },
       {
         question: 'O que é 눈치?',
         options: ['A habilidade de perceber o que não foi dito', 'Um prato típico', 'O nível de fala mais formal', 'Um tipo de honorífico'],
         answer: 'A habilidade de perceber o que não foi dito',
-        explanation: '눈치 é «ler o ar»: o clima, o que o outro sente, o sentido por trás das frases feitas.',
+        explanation: '눈치 é “ler o ar”: o clima, o que o outro sente, o sentido por trás das frases feitas.',
       },
       {
         question: 'Em 반말 com um amigo, falando da avó dele, qual frase está mais adequada?',
@@ -598,7 +598,7 @@ export const LINGUISTICS_KO: LinguisticsArea[] = [
         question: 'Num restaurante, como se costuma chamar o dono?',
         options: ['사장님', '당신', '너'],
         answer: '사장님',
-        explanation: '사장님 («senhor presidente») é o tratamento generoso e comum para donos de estabelecimento.',
+        explanation: '사장님 (“senhor presidente”) é o tratamento generoso e comum para donos de estabelecimento.',
       },
     ],
   },
@@ -624,13 +624,13 @@ export const LINGUISTICS_KO: LinguisticsArea[] = [
         },
         examples: [
           ['한글', 'hangul, o alfabeto coreano: 한 (grande, ou coreano) + 글 (escrita).'],
-          ['훈민정음', '«Os sons corretos para instruir o povo», o nome original (1446).'],
+          ['훈민정음', '“Os sons corretos para instruir o povo”, o nome original (1446).'],
           ['세종대왕', 'Sejong, o Grande, o rei que criou o hangul.'],
         ],
       },
       {
         heading: 'Registros: do bate-papo ao editorial',
-        text: 'O mesmo conteúdo muda de forma conforme o lugar. Nas mensagens, os jovens escrevem só com consoantes (ㅋㅋㅋ é a risada, como o nosso «kkkk», que também vem do som «k») e inventam palavras sem parar (혼밥, comer sozinho; 소확행, a «pequena felicidade garantida»). Na conversa polida, o 해요체; no discurso, o 합쇼체; no livro e no jornal, o 해라체 escrito; na academia, o vocabulário sino-coreano e a frase nominal; na poesia, as formas antigas.',
+        text: 'O mesmo conteúdo muda de forma conforme o lugar. Nas mensagens, os jovens escrevem só com consoantes (ㅋㅋㅋ é a risada, como o nosso “kkkk”, que também vem do som “k”) e inventam palavras sem parar (혼밥, comer sozinho; 소확행, a “pequena felicidade garantida”). Na conversa polida, o 해요체; no discurso, o 합쇼체; no livro e no jornal, o 해라체 escrito; na academia, o vocabulário sino-coreano e a frase nominal; na poesia, as formas antigas.',
         table: {
           head: ['Registro', 'Exemplo', 'Onde'],
           rows: [
@@ -644,7 +644,7 @@ export const LINGUISTICS_KO: LinguisticsArea[] = [
           ],
         },
         examples: [
-          ['ㅋㅋㅋ', 'kkkk: a risada escrita, do som 크크 (o brasileiro também ri com «k»).'],
+          ['ㅋㅋㅋ', 'kkkk: a risada escrita, do som 크크 (o brasileiro também ri com “k”).'],
           ['오늘은 혼밥 했어요.', 'Hoje comi sozinho. (혼밥 = 혼자 + 밥)'],
           ['소확행이 뭐예요? 작지만 확실한 행복이요.', 'O que é 소확행? Uma felicidade pequena, mas garantida.'],
         ],
@@ -664,7 +664,7 @@ export const LINGUISTICS_KO: LinguisticsArea[] = [
           ],
         },
         examples: [
-          ['세상에서 가장 뜨거운 과일은? 천도복숭아!', 'Qual é a fruta mais quente do mundo? A nectarina! (천도: «mil graus» e também o nome da fruta)'],
+          ['세상에서 가장 뜨거운 과일은? 천도복숭아!', 'Qual é a fruta mais quente do mundo? A nectarina! (천도: “mil graus” e também o nome da fruta)'],
           ['정말 예쁘다, 이 꽃.', 'Que linda, esta flor. (a inversão põe a emoção na frente)'],
           ['반짝반짝 작은 별, 아름답게 비치네.', 'Brilha, brilha, estrelinha, que lindo o seu brilhar.'],
         ],
@@ -686,12 +686,12 @@ export const LINGUISTICS_KO: LinguisticsArea[] = [
       },
       {
         question: 'O que quer dizer ㅋㅋㅋ numa mensagem?',
-        options: ['Risada, como o nosso «kkkk»', 'Tristeza', 'Tchau', 'Pressa'],
-        answer: 'Risada, como o nosso «kkkk»',
-        explanation: 'Vem de 크크, o som da risada. Coreanos e brasileiros riem por escrito com «k».',
+        options: ['Risada, como o nosso “kkkk”', 'Tristeza', 'Tchau', 'Pressa'],
+        answer: 'Risada, como o nosso “kkkk”',
+        explanation: 'Vem de 크크, o som da risada. Coreanos e brasileiros riem por escrito com “k”.',
       },
       {
-        question: 'Em que registro aparece «본 연구는 자료를 분석하였다»?',
+        question: 'Em que registro aparece “본 연구는 자료를 분석하였다”?',
         options: ['Texto acadêmico', 'Mensagem entre amigos', 'Novela de época', 'Conversa no restaurante'],
         answer: 'Texto acadêmico',
         explanation: '본 연구 (este estudo), vocabulário sino-coreano e -하였다 sem contração: é o estilo dos artigos.',

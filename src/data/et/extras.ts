@@ -57,7 +57,7 @@ export const SCENARIOS_ET: ScenarioSeed[] = [
     cefr: 'A1',
     register: 'informal',
     persona: 'Kadri, colega do curso de estoniano',
-    description: 'Uma colega do curso chama você para um café na cidade velha de Tallinn. Entre amigos, tudo leve e informal, de «sina»: nada de «härra», «proua» nem «Teie».',
+    description: 'Uma colega do curso chama você para um café na cidade velha de Tallinn. Entre amigos, tudo leve e informal, de “sina”: nada de “härra”, “proua” nem “Teie”.',
     turns: [
       {
         bot: 'Tere! Kuidas läheb? Kas lähme kohvi jooma?',
@@ -102,8 +102,8 @@ export const SCENARIOS_ET: ScenarioSeed[] = [
     emoji: '🏨',
     cefr: 'A2',
     register: 'formal',
-    persona: 'Recepcionista de um hotel de Pärnu, a «capital de verão» da Estônia',
-    description: 'No hotel, trate a recepcionista por «Teie», com o verbo no plural, e responda com calma e cortesia: nada de «tšau», «lahe» nem «sa».',
+    persona: 'Recepcionista de um hotel de Pärnu, a “capital de verão” da Estônia',
+    description: 'No hotel, trate a recepcionista por “Teie”, com o verbo no plural, e responda com calma e cortesia: nada de “tšau”, “lahe” nem “sa”.',
     turns: [
       {
         bot: 'Tere päevast! Kuidas ma saan Teid aidata?',
@@ -144,12 +144,12 @@ export const SCENARIOS_ET: ScenarioSeed[] = [
   },
   {
     id: 'et-s3',
-    title: 'De canoa na «quinta estação» de Soomaa',
+    title: 'De canoa na “quinta estação” de Soomaa',
     emoji: '🛶',
     cefr: 'A2',
     register: 'informal',
     persona: 'Martin, um amigo de Viljandi',
-    description: 'Na primavera, as enchentes de Soomaa cobrem estradas e campos: é a «quinta estação» (viies aastaaeg), e o jeito de passear é de canoa. Um amigo de Viljandi chama você; tudo informal.',
+    description: 'Na primavera, as enchentes de Soomaa cobrem estradas e campos: é a “quinta estação” (viies aastaaeg), e o jeito de passear é de canoa. Um amigo de Viljandi chama você; tudo informal.',
     turns: [
       {
         bot: 'Tšau! Laupäeval lähen Soomaale kanuuga sõitma. Kas tuled kaasa?',
@@ -195,7 +195,7 @@ export const SCENARIOS_ET: ScenarioSeed[] = [
     cefr: 'B1',
     register: 'formal',
     persona: 'O médico de família (perearst)',
-    description: 'No consultório, fale com o médico de «Teie», em frases completas. Descreva os sintomas com calma; nada de gíria.',
+    description: 'No consultório, fale com o médico de “Teie”, em frases completas. Descreva os sintomas com calma; nada de gíria.',
     turns: [
       {
         bot: 'Tere! Mis Teid täna vaevab?',
@@ -219,8 +219,8 @@ export const SCENARIOS_ET: ScenarioSeed[] = [
         registerBreakers: FORMAL_BREAKERS,
       },
       {
-        bot: 'Palun avage suu ja öelge «aaa».',
-        botTranslation: 'Por favor, abra a boca e diga «aaa».',
+        bot: 'Palun avage suu ja öelge “aaa”.',
+        botTranslation: 'Por favor, abra a boca e diga “aaa”.',
         keywords: ['aaa', 'jah', 'hästi', 'olgu'],
         suggestions: ['Olgu. Aaa!', 'Hästi. Aaa…'],
         registerBreakers: FORMAL_BREAKERS,
@@ -287,7 +287,7 @@ export const SCENARIOS_ET: ScenarioSeed[] = [
     cefr: 'B2',
     register: 'formal',
     persona: 'Kristiina, gerente de recursos humanos de uma empresa de tecnologia de Tallinn',
-    description: 'Numa entrevista de emprego, use «Teie», frases completas e tom profissional. Gíria («äge», «lahe») e o «sa» quebram o tom.',
+    description: 'Numa entrevista de emprego, use “Teie”, frases completas e tom profissional. Gíria (“äge”, “lahe”) e o “sa” quebram o tom.',
     turns: [
       {
         bot: 'Tere tulemast! Palun rääkige natuke endast.',
@@ -386,7 +386,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*kala',
     origin_language: 'Protourálico',
     cognates: c(['fi', 'kala'], ['hu', 'hal'], ['se', 'guolli']),
-    evolution_note: 'Uma das palavras mais estáveis da família: o estoniano e o finlandês a guardam igualzinha. No húngaro, o «k» antes de vogal de trás virou «h»: kala → hal.',
+    evolution_note: 'Uma das palavras mais estáveis da família: o estoniano e o finlandês a guardam igualzinha. No húngaro, o “k” antes de vogal de trás virou “h”: kala → hal.',
     transparent: false,
   },
   {
@@ -394,7 +394,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*käte',
     origin_language: 'Protourálico',
     cognates: c(['fi', 'käsi'], ['hu', 'kéz'], ['se', 'giehta']),
-    evolution_note: 'O «t» antigo virou «s» diante do «i» final (käte → käsi). Nas outras formas ele volta ou some: kätt (partitivo), käe (genitivo, onde o «t» caiu pela gradação). No finlandês: käsi, käden, kättä.',
+    evolution_note: 'O “t” antigo virou “s” diante do “i” final (käte → käsi). Nas outras formas ele volta ou some: kätt (partitivo), käe (genitivo, onde o “t” caiu pela gradação). No finlandês: käsi, käden, kättä.',
     transparent: false,
   },
   {
@@ -410,7 +410,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*wire',
     origin_language: 'Protourálico',
     cognates: c(['fi', 'veri'], ['hu', 'vér'], ['se', 'varra']),
-    evolution_note: 'Igual no estoniano e no finlandês. No estoniano o genitivo é «vere» e o partitivo «verd»: o «e» antigo da raiz aparece nas formas flexionadas.',
+    evolution_note: 'Igual no estoniano e no finlandês. No estoniano o genitivo é “vere” e o partitivo “verd”: o “e” antigo da raiz aparece nas formas flexionadas.',
     transparent: false,
   },
   {
@@ -418,7 +418,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*wete',
     origin_language: 'Protourálico',
     cognates: c(['fi', 'vesi'], ['hu', 'víz'], ['se', 'čáhci']),
-    evolution_note: 'Como em «käsi», o «t» virou «s» diante do «i». O «t» antigo reaparece no partitivo «vett», e no genitivo «vee» ele sumiu de vez (no finlandês ficou «veden», com gradação t → d).',
+    evolution_note: 'Como em “käsi”, o “t” virou “s” diante do “i”. O “t” antigo reaparece no partitivo “vett”, e no genitivo “vee” ele sumiu de vez (no finlandês ficou “veden”, com gradação t → d).',
     transparent: false,
   },
   {
@@ -426,7 +426,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*nime',
     origin_language: 'Protourálico',
     cognates: c(['fi', 'nimi'], ['hu', 'név'], ['se', 'namma']),
-    evolution_note: 'A semelhança com o latim «nomen» e o português «nome» chama a atenção, mas não há parentesco comprovado: pode ser coincidência ou um contato antiquíssimo. No genitivo aparece o «e» antigo: nime.',
+    evolution_note: 'A semelhança com o latim “nomen” e o português “nome” chama a atenção, mas não há parentesco comprovado: pode ser coincidência ou um contato antiquíssimo. No genitivo aparece o “e” antigo: nime.',
     transparent: false,
   },
   {
@@ -434,7 +434,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*kiwe',
     origin_language: 'Protourálico',
     cognates: c(['fi', 'kivi'], ['hu', 'kő']),
-    evolution_note: 'Pedra é «kivi» nos dois primos fínicos. No húngaro, o «k» se manteve antes de vogal de frente e a palavra encolheu até «kő». No estoniano, genitivo e partitivo ficam iguais ao nominativo: kivi.',
+    evolution_note: 'Pedra é “kivi” nos dois primos fínicos. No húngaro, o “k” se manteve antes de vogal de frente e a palavra encolheu até “kő”. No estoniano, genitivo e partitivo ficam iguais ao nominativo: kivi.',
     transparent: false,
   },
   {
@@ -442,7 +442,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*pesä',
     origin_language: 'Protourálico',
     cognates: c(['fi', 'pesä'], ['hu', 'fészek']),
-    evolution_note: 'O ninho é quase igual ao finlandês, só que o «ä» da segunda sílaba virou «a»: no estoniano do norte, o «ä» ficou só na primeira sílaba. No húngaro, o «p» inicial virou «f», como em pea × fej.',
+    evolution_note: 'O ninho é quase igual ao finlandês, só que o “ä” da segunda sílaba virou “a”: no estoniano do norte, o “ä” ficou só na primeira sílaba. No húngaro, o “p” inicial virou “f”, como em pea × fej.',
     transparent: false,
   },
   {
@@ -450,7 +450,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*puwe',
     origin_language: 'Protourálico',
     cognates: c(['fi', 'puu'], ['hu', 'fa']),
-    evolution_note: 'Árvore e madeira na mesma palavra, nos dois primos fínicos. No húngaro, o «p» virou «f»: puu × fa.',
+    evolution_note: 'Árvore e madeira na mesma palavra, nos dois primos fínicos. No húngaro, o “p” virou “f”: puu × fa.',
     transparent: false,
   },
   {
@@ -458,7 +458,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*śiδä',
     origin_language: 'Protourálico',
     cognates: c(['fi', 'sydän'], ['hu', 'szív']),
-    evolution_note: 'O finlandês guarda o «n» no fim (sydän), o estoniano o perdeu no nominativo, mas ele volta como «m» nas outras formas: südame (genitivo), südant (partitivo). Daí «südamlik», cordial.',
+    evolution_note: 'O finlandês guarda o “n” no fim (sydän), o estoniano o perdeu no nominativo, mas ele volta como “m” nas outras formas: südame (genitivo), südant (partitivo). Daí “südamlik”, cordial.',
     transparent: false,
   },
   {
@@ -466,7 +466,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*jäŋe',
     origin_language: 'Protourálico',
     cognates: c(['fi', 'jää'], ['hu', 'jég'], ['se', 'jiekŋa']),
-    evolution_note: 'O som «ng» antigo sumiu no estoniano e no finlandês, deixando a vogal longa: jää. No húngaro ele virou «g»: jég.',
+    evolution_note: 'O som “ng” antigo sumiu no estoniano e no finlandês, deixando a vogal longa: jää. No húngaro ele virou “g”: jég.',
     transparent: false,
   },
   {
@@ -474,7 +474,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*tälwä',
     origin_language: 'Protourálico',
     cognates: c(['fi', 'talvi'], ['hu', 'tél'], ['se', 'dálvi']),
-    evolution_note: 'O finlandês tem «talvi», o estoniano cortou a vogal final: talv. Ela volta no genitivo «talve» e em «talvel» (no inverno).',
+    evolution_note: 'O finlandês tem “talvi”, o estoniano cortou a vogal final: talv. Ela volta no genitivo “talve” e em “talvel” (no inverno).',
     transparent: false,
   },
   {
@@ -482,7 +482,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*eje',
     origin_language: 'Protourálico',
     cognates: c(['fi', 'yö'], ['hu', 'éj'], ['se', 'idja']),
-    evolution_note: 'O ditongo finlandês «yö» virou vogal longa no estoniano: öö. É uma troca regular entre os primos: fi syödä × et sööma, fi tuoda × et tooma, fi nuori × et noor.',
+    evolution_note: 'O ditongo finlandês “yö” virou vogal longa no estoniano: öö. É uma troca regular entre os primos: fi syödä × et sööma, fi tuoda × et tooma, fi nuori × et noor.',
     transparent: false,
   },
   {
@@ -490,7 +490,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*kuŋe',
     origin_language: 'Protourálico',
     cognates: c(['fi', 'kuu'], ['hu', 'hó']),
-    evolution_note: 'A lua e o mês são a mesma palavra, porque o mês se contava pelas luas. No húngaro sobrou só o sentido de «mês» (hó, hoje mais em «hónap»).',
+    evolution_note: 'A lua e o mês são a mesma palavra, porque o mês se contava pelas luas. No húngaro sobrou só o sentido de “mês” (hó, hoje mais em “hónap”).',
     transparent: false,
   },
   {
@@ -498,7 +498,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*mëksa',
     origin_language: 'Protourálico',
     cognates: c(['fi', 'maksa'], ['hu', 'máj']),
-    evolution_note: 'O fígado é «maksa» no finlandês e «maks» no estoniano, que cortou a vogal final. No húngaro o grupo «ks» se desfez: máj.',
+    evolution_note: 'O fígado é “maksa” no finlandês e “maks” no estoniano, que cortou a vogal final. No húngaro o grupo “ks” se desfez: máj.',
     transparent: false,
   },
   {
@@ -506,7 +506,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*päŋe',
     origin_language: 'Protourálico',
     cognates: c(['fi', 'pää'], ['hu', 'fej']),
-    evolution_note: 'O «ää» longo virou o ditongo «ea» no estoniano do norte (pää → pea); os dialetos do sul ainda dizem «pää». O húngaro trocou o «p» por «f»: fej.',
+    evolution_note: 'O “ää” longo virou o ditongo “ea” no estoniano do norte (pää → pea); os dialetos do sul ainda dizem “pää”. O húngaro trocou o “p” por “f”: fej.',
     transparent: false,
   },
   {
@@ -514,7 +514,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*uwe',
     origin_language: 'Protourálico',
     cognates: c(['fi', 'uusi'], ['hu', 'új']),
-    evolution_note: 'O finlandês tem «uusi», com o «t» antigo virado «s» diante do «i»; o estoniano cortou o «i» e ficou com «uus». O «t» reaparece no partitivo «uut» e no «uut aastat» (feliz ano-novo!).',
+    evolution_note: 'O finlandês tem “uusi”, com o “t” antigo virado “s” diante do “i”; o estoniano cortou o “i” e ficou com “uus”. O “t” reaparece no partitivo “uut” e no “uut aastat” (feliz ano-novo!).',
     transparent: false,
   },
   {
@@ -522,7 +522,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*minä',
     origin_language: 'Protourálico',
     cognates: c(['fi', 'minä'], ['hu', 'én'], ['se', 'mun']),
-    evolution_note: 'O «eu» urálico começava por «m», como em várias línguas da Eurásia (o latim «me», o português «mim»), sem que isso prove parentesco. No estoniano o «ä» da segunda sílaba virou «a»: minä → mina, e a forma curta é «ma».',
+    evolution_note: 'O “eu” urálico começava por “m”, como em várias línguas da Eurásia (o latim “me”, o português “mim”), sem que isso prove parentesco. No estoniano o “ä” da segunda sílaba virou “a”: minä → mina, e a forma curta é “ma”.',
     transparent: false,
   },
   {
@@ -530,7 +530,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*kakta',
     origin_language: 'Protourálico',
     cognates: c(['fi', 'kaksi'], ['hu', 'kettő'], ['se', 'guokte']),
-    evolution_note: 'O grupo «kt» antigo virou «ks» nos fínicos: kakta → kaksi → kaks. No genitivo o «ks» vira «h»: kahe, como no finlandês «kahden».',
+    evolution_note: 'O grupo “kt” antigo virou “ks” nos fínicos: kakta → kaksi → kaks. No genitivo o “ks” vira “h”: kahe, como no finlandês “kahden”.',
     transparent: false,
   },
   {
@@ -538,7 +538,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*kolme',
     origin_language: 'Protourálico',
     cognates: c(['fi', 'kolme'], ['hu', 'három'], ['se', 'golbma']),
-    evolution_note: 'Um dos números mais seguros da família: kolm, kolme, golbma, e no húngaro, com o «k» virado «h», három.',
+    evolution_note: 'Um dos números mais seguros da família: kolm, kolme, golbma, e no húngaro, com o “k” virado “h”, három.',
     transparent: false,
   },
   {
@@ -546,7 +546,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*neljä',
     origin_language: 'Protourálico',
     cognates: c(['fi', 'neljä'], ['hu', 'négy'], ['se', 'njeallje']),
-    evolution_note: 'O finlandês guarda o «ä» final (neljä); o estoniano simplificou para «neli», mas o «j» volta no genitivo: nelja.',
+    evolution_note: 'O finlandês guarda o “ä” final (neljä); o estoniano simplificou para “neli”, mas o “j” volta no genitivo: nelja.',
     transparent: false,
   },
   {
@@ -554,7 +554,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*kutte',
     origin_language: 'Protourálico',
     cognates: c(['fi', 'kuusi'], ['hu', 'hat'], ['se', 'guhtta']),
-    evolution_note: 'Por coincidência, «kuus» também é o abeto, nos dois primos (fi kuusi). Mas os genitivos se separam: kuue (do seis) × kuuse (do abeto).',
+    evolution_note: 'Por coincidência, “kuus” também é o abeto, nos dois primos (fi kuusi). Mas os genitivos se separam: kuue (do seis) × kuuse (do abeto).',
     transparent: false,
   },
   {
@@ -562,7 +562,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*elä-',
     origin_language: 'Protourálico',
     cognates: c(['fi', 'elää'], ['hu', 'él'], ['se', 'eallit']),
-    evolution_note: 'Viver: elama (supino), elada (infinitivo), elan (eu vivo). Da mesma raiz vêm «elu» (vida) e «elanik» (morador). No húngaro, «él».',
+    evolution_note: 'Viver: elama (supino), elada (infinitivo), elan (eu vivo). Da mesma raiz vêm “elu” (vida) e “elanik” (morador). No húngaro, “él”.',
     transparent: false,
   },
   {
@@ -570,7 +570,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*mene-',
     origin_language: 'Protourálico',
     cognates: c(['fi', 'mennä'], ['hu', 'menni'], ['se', 'mannat']),
-    evolution_note: 'O verbo «ir» é irregular: o supino «minema» e o infinitivo «minna» vêm da raiz urálica, mas o presente «lähen» (eu vou) vem de outro verbo, «lähtema» (partir).',
+    evolution_note: 'O verbo “ir” é irregular: o supino “minema” e o infinitivo “minna” vêm da raiz urálica, mas o presente “lähen” (eu vou) vem de outro verbo, “lähtema” (partir).',
     transparent: false,
   },
   {
@@ -578,7 +578,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*kuwle-',
     origin_language: 'Protourálico',
     cognates: c(['fi', 'kuulla'], ['hu', 'hall'], ['se', 'gullat']),
-    evolution_note: 'Ouvir: kuulma, kuulda, kuulen. O «k» inicial virou «h» no húngaro (hall), como em kala × hal.',
+    evolution_note: 'Ouvir: kuulma, kuulda, kuulen. O “k” inicial virou “h” no húngaro (hall), como em kala × hal.',
     transparent: false,
   },
   {
@@ -586,7 +586,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*näke-',
     origin_language: 'Protourálico',
     cognates: c(['fi', 'nähdä'], ['hu', 'néz']),
-    evolution_note: 'Ver: nägema, näha, näen. O «k» antigo se abrandou para «g» entre vogais (nägema) e sumiu em «näen», um bom exemplo da gradação estoniana.',
+    evolution_note: 'Ver: nägema, näha, näen. O “k” antigo se abrandou para “g” entre vogais (nägema) e sumiu em “näen”, um bom exemplo da gradação estoniana.',
     transparent: false,
   },
   {
@@ -594,7 +594,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*juke-',
     origin_language: 'Protourálico',
     cognates: c(['fi', 'juoda'], ['hu', 'iszik'], ['se', 'juhkat']),
-    evolution_note: 'O ditongo finlandês «uo» virou «oo» no estoniano: juoda × jooma, como em tuoda × tooma. Beber: jooma, juua, joon.',
+    evolution_note: 'O ditongo finlandês “uo” virou “oo” no estoniano: juoda × jooma, como em tuoda × tooma. Beber: jooma, juua, joon.',
     transparent: false,
   },
   {
@@ -602,7 +602,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*teke-',
     origin_language: 'Protourálico',
     cognates: c(['fi', 'tehdä'], ['hu', 'tesz'], ['se', 'dahkat']),
-    evolution_note: 'Fazer: tegema, teha, teen. O «k» antigo virou «g» no supino e sumiu no presente «teen», gradação pura. No finlandês: tehdä, teen.',
+    evolution_note: 'Fazer: tegema, teha, teen. O “k” antigo virou “g” no supino e sumiu no presente “teen”, gradação pura. No finlandês: tehdä, teen.',
     transparent: false,
   },
   // ——— o fundo fínico: palavras comuns com o finlandês (e alguns falsos amigos entre os primos) ———
@@ -611,7 +611,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*keeli',
     origin_language: 'Protofínico',
     cognates: c(['fi', 'kieli'], ['se', 'giella']),
-    evolution_note: 'Língua (o órgão e o idioma), como no português. O «ee» estoniano corresponde ao ditongo «ie» finlandês: keel × kieli, tee × tie (caminho).',
+    evolution_note: 'Língua (o órgão e o idioma), como no português. O “ee” estoniano corresponde ao ditongo “ie” finlandês: keel × kieli, tee × tie (caminho).',
     transparent: false,
   },
   {
@@ -619,7 +619,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*lumi',
     origin_language: 'Protofínico',
     cognates: c(['fi', 'lumi'], ['se', 'muohta']),
-    evolution_note: 'Igualzinho no estoniano e no finlandês. No estoniano: lume (genitivo), lund (partitivo), e «lumi sajab», está nevando.',
+    evolution_note: 'Igualzinho no estoniano e no finlandês. No estoniano: lume (genitivo), lund (partitivo), e “lumi sajab”, está nevando.',
     transparent: false,
   },
   {
@@ -627,7 +627,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*emä',
     origin_language: 'Protofínico',
     cognates: c(['fi', 'emä']),
-    evolution_note: 'Falso amigo entre os primos: no estoniano «ema» é a mãe, mas no finlandês «emä» é a mãe de bicho, a fêmea. A mãe de gente, no finlandês, é «äiti».',
+    evolution_note: 'Falso amigo entre os primos: no estoniano “ema” é a mãe, mas no finlandês “emä” é a mãe de bicho, a fêmea. A mãe de gente, no finlandês, é “äiti”.',
     transparent: false,
   },
   {
@@ -635,7 +635,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*isä',
     origin_language: 'Protofínico',
     cognates: c(['fi', 'isä']),
-    evolution_note: 'O «ä» da segunda sílaba virou «a» no estoniano do norte: isä → isa. Daí «isamaa», a pátria (literalmente, a terra do pai).',
+    evolution_note: 'O “ä” da segunda sílaba virou “a” no estoniano do norte: isä → isa. Daí “isamaa”, a pátria (literalmente, a terra do pai).',
     transparent: false,
   },
   {
@@ -643,7 +643,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*ole-',
     origin_language: 'Protofínico',
     cognates: c(['fi', 'olla']),
-    evolution_note: 'Ser, estar e, com o adessivo, ter: «mul on» (eu tenho). Formas: olema, olla, olen, on. O finlandês usa a mesma construção: minulla on.',
+    evolution_note: 'Ser, estar e, com o adessivo, ter: “mul on” (eu tenho). Formas: olema, olla, olen, on. O finlandês usa a mesma construção: minulla on.',
     transparent: false,
   },
   {
@@ -651,7 +651,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*tule-',
     origin_language: 'Protofínico',
     cognates: c(['fi', 'tulla']),
-    evolution_note: 'Vir, nos dois primos. Mas o estoniano deu a «tuleb» o sentido de «é preciso»: «Sul tuleb oodata» (você tem de esperar). O finlandês diz isso com outro verbo (täytyy).',
+    evolution_note: 'Vir, nos dois primos. Mas o estoniano deu a “tuleb” o sentido de “é preciso”: “Sul tuleb oodata” (você tem de esperar). O finlandês diz isso com outro verbo (täytyy).',
     transparent: false,
   },
   {
@@ -659,7 +659,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*linna',
     origin_language: 'Protofínico',
     cognates: c(['fi', 'linna']),
-    evolution_note: 'No começo era a fortaleza, o lugar cercado. O finlandês guardou esse sentido (linna = castelo); no estoniano a fortaleza virou cidade. Tallinn vem provavelmente de «Taani linn», a fortaleza dos dinamarqueses.',
+    evolution_note: 'No começo era a fortaleza, o lugar cercado. O finlandês guardou esse sentido (linna = castelo); no estoniano a fortaleza virou cidade. Tallinn vem provavelmente de “Taani linn”, a fortaleza dos dinamarqueses.',
     transparent: false,
   },
   {
@@ -667,7 +667,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*aita',
     origin_language: 'Protofínico',
     cognates: c(['fi', 'aita']),
-    evolution_note: 'No finlandês «aita» é a cerca; no estoniano «aed» é tanto a cerca quanto o que ela protege, o jardim ou a horta. Genitivo: aia (o «t» sumiu pela gradação).',
+    evolution_note: 'No finlandês “aita” é a cerca; no estoniano “aed” é tanto a cerca quanto o que ela protege, o jardim ou a horta. Genitivo: aia (o “t” sumiu pela gradação).',
     transparent: false,
   },
   {
@@ -675,7 +675,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*mäki',
     origin_language: 'Protofínico',
     cognates: c(['fi', 'mäki']),
-    evolution_note: 'No finlandês «mäki» é colina, ladeira; no estoniano, numa terra quase plana, «mägi» é o monte. O mais alto do país, Suur Munamägi, tem só 318 metros.',
+    evolution_note: 'No finlandês “mäki” é colina, ladeira; no estoniano, numa terra quase plana, “mägi” é o monte. O mais alto do país, Suur Munamägi, tem só 318 metros.',
     transparent: false,
   },
   {
@@ -683,7 +683,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*järvi',
     origin_language: 'Protofínico',
     cognates: c(['fi', 'järvi'], ['se', 'jávri']),
-    evolution_note: 'O finlandês guarda o «i» final (järvi), o estoniano o cortou: järv. O maior lago todo estoniano é o Võrtsjärv; o Peipsi, ainda maior, é dividido com a Rússia.',
+    evolution_note: 'O finlandês guarda o “i” final (järvi), o estoniano o cortou: järv. O maior lago todo estoniano é o Võrtsjärv; o Peipsi, ainda maior, é dividido com a Rússia.',
     transparent: false,
   },
   {
@@ -691,7 +691,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*ilma',
     origin_language: 'Protofínico',
     cognates: c(['fi', 'ilma']),
-    evolution_note: 'No finlandês «ilma» é o ar e o tempo; no estoniano «ilm» é o tempo (o clima do dia) e o mundo, como em «maailm» (literalmente, terra e mundo). O ar, no estoniano, é «õhk».',
+    evolution_note: 'No finlandês “ilma” é o ar e o tempo; no estoniano “ilm” é o tempo (o clima do dia) e o mundo, como em “maailm” (literalmente, terra e mundo). O ar, no estoniano, é “õhk”.',
     transparent: false,
   },
   {
@@ -699,7 +699,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*sauna',
     origin_language: 'Protofínico',
     cognates: c(['fi', 'sauna'], ['pt', 'sauna'], ['en', 'sauna']),
-    evolution_note: 'Palavra fínica antiga para a casinha de banho a vapor. O estoniano cortou o «a» final (saun, genitivo sauna); a forma finlandesa, «sauna», correu o mundo.',
+    evolution_note: 'Palavra fínica antiga para a casinha de banho a vapor. O estoniano cortou o “a” final (saun, genitivo sauna); a forma finlandesa, “sauna”, correu o mundo.',
     transparent: true,
   },
   {
@@ -707,7 +707,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*hüvä',
     origin_language: 'Protofínico',
     cognates: c(['fi', 'hyvä']),
-    evolution_note: 'O «v» entre vogais caiu e as vogais se fundiram: hüvä → hea. A forma antiga ainda aparece em «hüvasti» (adeus) e em «hüve» (o bem, o proveito).',
+    evolution_note: 'O “v” entre vogais caiu e as vogais se fundiram: hüvä → hea. A forma antiga ainda aparece em “hüvasti” (adeus) e em “hüve” (o bem, o proveito).',
     transparent: false,
   },
   {
@@ -715,7 +715,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*jalka',
     origin_language: 'Protofínico',
     cognates: c(['fi', 'jalka'], ['se', 'juolgi']),
-    evolution_note: 'O finlandês tem «jalka», o estoniano cortou a vogal final e abrandou o «k» para «g»: jalg. Genitivo «jala»: o «g» sumiu pela gradação.',
+    evolution_note: 'O finlandês tem “jalka”, o estoniano cortou a vogal final e abrandou o “k” para “g”: jalg. Genitivo “jala”: o “g” sumiu pela gradação.',
     transparent: false,
   },
   {
@@ -723,7 +723,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*petra',
     origin_language: 'Protofínico',
     cognates: c(['fi', 'peura']),
-    evolution_note: 'O mesmo bicho grande da floresta mudou de espécie: no estoniano «põder» é o alce; no finlandês «peura» é a rena selvagem ou o cervo. O «e» virou o «õ» típico do estoniano.',
+    evolution_note: 'O mesmo bicho grande da floresta mudou de espécie: no estoniano “põder” é o alce; no finlandês “peura” é a rena selvagem ou o cervo. O “e” virou o “õ” típico do estoniano.',
     transparent: false,
   },
   {
@@ -731,7 +731,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*koira',
     origin_language: 'Protofínico',
     cognates: c(['fi', 'koira']),
-    evolution_note: 'O ditongo «oi» finlandês corresponde ao «oe» estoniano: koira × koer. O «a» volta no genitivo: koera.',
+    evolution_note: 'O ditongo “oi” finlandês corresponde ao “oe” estoniano: koira × koer. O “a” volta no genitivo: koera.',
     transparent: false,
   },
   {
@@ -739,7 +739,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*metsä',
     origin_language: 'Protofínico',
     cognates: c(['fi', 'metsä']),
-    evolution_note: 'A floresta cobre metade da Estônia e está na mesma palavra dos dois primos. O estoniano cortou o «ä» final: metsä → mets, genitivo «metsa».',
+    evolution_note: 'A floresta cobre metade da Estônia e está na mesma palavra dos dois primos. O estoniano cortou o “ä” final: metsä → mets, genitivo “metsa”.',
     transparent: false,
   },
   {
@@ -747,7 +747,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*söö-',
     origin_language: 'Protofínico',
     cognates: c(['fi', 'syödä']),
-    evolution_note: 'O ditongo finlandês «yö» virou «öö» no estoniano, como em yö × öö. Comer: sööma, süüa, söön.',
+    evolution_note: 'O ditongo finlandês “yö” virou “öö” no estoniano, como em yö × öö. Comer: sööma, süüa, söön.',
     transparent: false,
   },
   // ——— indo-iranianos: empréstimos de mais de 4 mil anos, do tempo em que a língua-mãe vivia perto das estepes ———
@@ -756,7 +756,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*ćata',
     origin_language: 'Proto-indo-iraniano',
     cognates: c(['fi', 'sata'], ['hu', 'száz'], ['sa', 'śata']),
-    evolution_note: 'O «cem» veio de povos indo-iranianos, parentes dos antigos indianos e persas. É da mesma raiz indo-europeia do latim «centum» (daí «cento» e «centena»), mas por outro caminho.',
+    evolution_note: 'O “cem” veio de povos indo-iranianos, parentes dos antigos indianos e persas. É da mesma raiz indo-europeia do latim “centum” (daí “cento” e “centena”), mas por outro caminho.',
     transparent: false,
   },
   {
@@ -764,7 +764,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*mete',
     origin_language: 'Proto-indo-iraniano (via protofino-úgrico)',
     cognates: c(['fi', 'mesi'], ['hu', 'méz'], ['sa', 'madhu']),
-    evolution_note: 'O mel foi emprestado de povos indo-iranianos há milênios; é da mesma raiz do grego «méthy» (vinho) e do inglês «mead» (hidromel). Da mesma palavra vem «mesilane», a abelha: a que faz o mel.',
+    evolution_note: 'O mel foi emprestado de povos indo-iranianos há milênios; é da mesma raiz do grego “méthy” (vinho) e do inglês “mead” (hidromel). Da mesma palavra vem “mesilane”, a abelha: a que faz o mel.',
     transparent: false,
   },
   {
@@ -772,7 +772,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*porćas',
     origin_language: 'Proto-indo-iraniano',
     cognates: c(['fi', 'porsas'], ['la', 'porcus'], ['pt', 'porco']),
-    evolution_note: 'O leitão veio dos indo-iranianos, e a raiz indo-europeia é a mesma do latim «porcus», o nosso «porco». O «o» virou «õ» no estoniano.',
+    evolution_note: 'O leitão veio dos indo-iranianos, e a raiz indo-europeia é a mesma do latim “porcus”, o nosso “porco”. O “o” virou “õ” no estoniano.',
     transparent: false,
   },
   {
@@ -780,7 +780,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*ćarwa',
     origin_language: 'Proto-indo-iraniano',
     cognates: c(['fi', 'sarvi'], ['ae', 'srū']),
-    evolution_note: 'O chifre veio dos indo-iranianos (no avéstico, a língua antiga do Irã, «srū»). O estoniano cortou a vogal final: sarvi → sarv.',
+    evolution_note: 'O chifre veio dos indo-iranianos (no avéstico, a língua antiga do Irã, “srū”). O estoniano cortou a vogal final: sarvi → sarv.',
     transparent: false,
   },
   // ——— bálticos: empréstimos antigos dos ancestrais dos lituanos e letões ———
@@ -789,7 +789,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*žambas',
     origin_language: 'Protobáltico',
     cognates: c(['fi', 'hammas'], ['lt', 'žambas']),
-    evolution_note: 'O dente veio do báltico, onde «žambas» era a borda, a quina. É uma das provas de que os fínicos viveram séculos lado a lado com os bálticos. Genitivo: hamba.',
+    evolution_note: 'O dente veio do báltico, onde “žambas” era a borda, a quina. É uma das provas de que os fínicos viveram séculos lado a lado com os bálticos. Genitivo: hamba.',
     transparent: false,
   },
   {
@@ -797,7 +797,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*duktē',
     origin_language: 'Protobáltico',
     cognates: c(['fi', 'tytär'], ['lt', 'duktė'], ['en', 'daughter']),
-    evolution_note: 'A filha veio do báltico, e a raiz indo-europeia é a mesma do inglês «daughter» e do alemão «Tochter». Já o filho, «poeg», é palavra fínica.',
+    evolution_note: 'A filha veio do báltico, e a raiz indo-europeia é a mesma do inglês “daughter” e do alemão “Tochter”. Já o filho, “poeg”, é palavra fínica.',
     transparent: false,
   },
   {
@@ -805,7 +805,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*šienas',
     origin_language: 'Protobáltico',
     cognates: c(['fi', 'heinä'], ['lt', 'šienas']),
-    evolution_note: 'O feno veio do báltico junto com a lavoura e a criação de gado. O «š» báltico virou «h» nos fínicos, como em hammas.',
+    evolution_note: 'O feno veio do báltico junto com a lavoura e a criação de gado. O “š” báltico virou “h” nos fínicos, como em hammas.',
     transparent: false,
   },
   {
@@ -813,7 +813,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*rugis',
     origin_language: 'Protobáltico',
     cognates: c(['fi', 'ruis'], ['lt', 'rugys'], ['en', 'rye']),
-    evolution_note: 'O centeio, grão do pão preto estoniano, veio do báltico. O pão de centeio é «rukkileib», e o rukis ainda guarda o «k» que o finlandês perdeu (ruis).',
+    evolution_note: 'O centeio, grão do pão preto estoniano, veio do báltico. O pão de centeio é “rukkileib”, e o rukis ainda guarda o “k” que o finlandês perdeu (ruis).',
     transparent: false,
   },
   {
@@ -821,7 +821,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*deivas',
     origin_language: 'Protobáltico',
     cognates: c(['fi', 'taivas'], ['lt', 'dievas'], ['la', 'deus']),
-    evolution_note: 'Nos bálticos a palavra é «deus» (lituano «dievas»); os fínicos a tomaram para o céu. A raiz indo-europeia é a mesma do latim «deus», o nosso «deus». O «ai» virou «ae» no estoniano: taivas → taevas.',
+    evolution_note: 'Nos bálticos a palavra é “deus” (lituano “dievas”); os fínicos a tomaram para o céu. A raiz indo-europeia é a mesma do latim “deus”, o nosso “deus”. O “ai” virou “ae” no estoniano: taivas → taevas.',
     transparent: false,
   },
   {
@@ -829,7 +829,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*žirnis',
     origin_language: 'Protobáltico',
     cognates: c(['fi', 'herne'], ['lt', 'žirnis']),
-    evolution_note: 'A ervilha veio do báltico, com o «ž» virado «h», como em hein e hammas. É parente distante do latim «granum», o nosso «grão».',
+    evolution_note: 'A ervilha veio do báltico, com o “ž” virado “h”, como em hein e hammas. É parente distante do latim “granum”, o nosso “grão”.',
     transparent: false,
   },
   // ——— germânicos antigos: empréstimos de 2 mil anos, que muitas vezes guardam formas que o próprio germânico perdeu ———
@@ -838,7 +838,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*kuningaz',
     origin_language: 'Protogermânico',
     cognates: c(['fi', 'kuningas'], ['de', 'König'], ['en', 'king'], ['sv', 'kung']),
-    evolution_note: 'O estoniano e o finlandês guardam a palavra germânica quase como ela era há dois mil anos, com o «-as» que corresponde ao «-az» antigo. As línguas germânicas de hoje a encolheram: König, king, kung.',
+    evolution_note: 'O estoniano e o finlandês guardam a palavra germânica quase como ela era há dois mil anos, com o “-as” que corresponde ao “-az” antigo. As línguas germânicas de hoje a encolheram: König, king, kung.',
     transparent: false,
   },
   {
@@ -846,7 +846,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*hlaibaz',
     origin_language: 'Protogermânico',
     cognates: c(['fi', 'leipä'], ['got', 'hlaifs'], ['de', 'Laib'], ['en', 'loaf']),
-    evolution_note: 'O pão veio dos germânicos, quando o «h» inicial já se calava. No estoniano, «leib» é sobretudo o pão preto de centeio; o pão branco é «sai».',
+    evolution_note: 'O pão veio dos germânicos, quando o “h” inicial já se calava. No estoniano, “leib” é sobretudo o pão preto de centeio; o pão branco é “sai”.',
     transparent: false,
   },
   {
@@ -854,7 +854,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*lambaz',
     origin_language: 'Protogermânico',
     cognates: c(['fi', 'lammas'], ['de', 'Lamm'], ['en', 'lamb']),
-    evolution_note: 'O germânico «lambaz» era o cordeiro; o estoniano e o finlandês fizeram dele a ovelha. O «mb» virou «mm»: genitivo «lamba» guarda o «b».',
+    evolution_note: 'O germânico “lambaz” era o cordeiro; o estoniano e o finlandês fizeram dele a ovelha. O “mb” virou “mm”: genitivo “lamba” guarda o “b”.',
     transparent: false,
   },
   {
@@ -862,7 +862,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*skauniz',
     origin_language: 'Protogermânico',
     cognates: c(['fi', 'kaunis'], ['de', 'schön'], ['sv', 'skön']),
-    evolution_note: 'Bonito, belo: veio do germânico sem o «s» inicial: o fínico antigo não começava palavra com duas consoantes. É parente do alemão «schön».',
+    evolution_note: 'Bonito, belo: veio do germânico sem o “s” inicial: o fínico antigo não começava palavra com duas consoantes. É parente do alemão “schön”.',
     transparent: false,
   },
   {
@@ -870,7 +870,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*rīkaz',
     origin_language: 'Protogermânico',
     cognates: c(['fi', 'rikas'], ['de', 'reich'], ['en', 'rich'], ['sv', 'rik']),
-    evolution_note: 'Rico e poderoso: o germânico «rīkaz» veio do celta e tem a mesma raiz do latim «rex», rei. O português «rico» também é germânico, do gótico.',
+    evolution_note: 'Rico e poderoso: o germânico “rīkaz” veio do celta e tem a mesma raiz do latim “rex”, rei. O português “rico” também é germânico, do gótico.',
     transparent: false,
   },
   {
@@ -878,7 +878,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*kaupą',
     origin_language: 'Protogermânico',
     cognates: c(['fi', 'kauppa'], ['de', 'kaufen'], ['sv', 'köpa']),
-    evolution_note: 'O comércio e a mercadoria vieram com os mercadores germânicos. Daí «kaubamaja» (loja de departamentos) e «kaupmees» (comerciante). O germânico, por sua vez, tomou a ideia do latim «caupo», taberneiro.',
+    evolution_note: 'O comércio e a mercadoria vieram com os mercadores germânicos. Daí “kaubamaja” (loja de departamentos) e “kaupmees” (comerciante). O germânico, por sua vez, tomou a ideia do latim “caupo”, taberneiro.',
     transparent: false,
   },
   {
@@ -886,7 +886,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: '*alu',
     origin_language: 'Protogermânico',
     cognates: c(['fi', 'olut'], ['en', 'ale'], ['sv', 'öl']),
-    evolution_note: 'A cerveja veio dos germânicos em tempos antiquíssimos. O «a» virou «õ» no estoniano. Em inglês a palavra sobrevive como «ale».',
+    evolution_note: 'A cerveja veio dos germânicos em tempos antiquíssimos. O “a” virou “õ” no estoniano. Em inglês a palavra sobrevive como “ale”.',
     transparent: false,
   },
   // ——— nórdico antigo: o que chegou pelo mar Báltico ———
@@ -895,7 +895,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'jól',
     origin_language: 'Nórdico antigo',
     cognates: c(['fi', 'joulu'], ['sv', 'jul'], ['is', 'jól'], ['en', 'yule']),
-    evolution_note: 'O Natal estoniano tem o nome da festa nórdica pagã do meio do inverno, anterior ao cristianismo. No estoniano a palavra é plural: jõulud, «häid jõule!» (feliz Natal!).',
+    evolution_note: 'O Natal estoniano tem o nome da festa nórdica pagã do meio do inverno, anterior ao cristianismo. No estoniano a palavra é plural: jõulud, “häid jõule!” (feliz Natal!).',
     transparent: false,
   },
   {
@@ -903,7 +903,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'róðr',
     origin_language: 'Nórdico antigo',
     cognates: c(['fi', 'Ruotsi'], ['sv', 'smörgåsbord']),
-    evolution_note: '«Rootsi» (a Suécia) vem, pelo fínico «Ruotsi», do nórdico antigo «róðr», o ato de remar: eram os remadores que vinham do outro lado do mar. Com «laud» (mesa), virou o nome do bufê: a mesa à sueca.',
+    evolution_note: '“Rootsi” (a Suécia) vem, pelo fínico “Ruotsi”, do nórdico antigo “róðr”, o ato de remar: eram os remadores que vinham do outro lado do mar. Com “laud” (mesa), virou o nome do bufê: a mesa à sueca.',
     transparent: false,
   },
   // ——— russo antigo e russo: palavras da vizinhança do leste, desde os tempos de Novgorod e Pskov ———
@@ -920,7 +920,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'търгъ',
     origin_language: 'Russo antigo',
     cognates: c(['fi', 'tori'], ['ru', 'торг'], ['sv', 'torg']),
-    evolution_note: 'A praça do mercado veio do eslavo antigo, e a mesma palavra chegou também ao sueco (torg) e, dali, ao finlandês (tori). Em Tallinn, «Raekoja plats» é a praça, e o mercado é «turg».',
+    evolution_note: 'A praça do mercado veio do eslavo antigo, e a mesma palavra chegou também ao sueco (torg) e, dali, ao finlandês (tori). Em Tallinn, “Raekoja plats” é a praça, e o mercado é “turg”.',
     transparent: false,
   },
   {
@@ -928,7 +928,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'сапогъ',
     origin_language: 'Russo antigo',
     cognates: c(['fi', 'saapas'], ['ru', 'сапог']),
-    evolution_note: 'A bota veio do russo antigo. O «p» entre vogais se abrandou para «b»: sapog → saabas. Plural: saapad.',
+    evolution_note: 'A bota veio do russo antigo. O “p” entre vogais se abrandou para “b”: sapog → saabas. Plural: saapad.',
     transparent: false,
   },
   {
@@ -936,7 +936,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'лъжька',
     origin_language: 'Russo antigo',
     cognates: c(['fi', 'lusikka'], ['ru', 'ложка']),
-    evolution_note: 'A colher veio do russo antigo, numa forma mais velha que o russo moderno «ложка». O «-as» final é a terminação que o estoniano deu a vários empréstimos.',
+    evolution_note: 'A colher veio do russo antigo, numa forma mais velha que o russo moderno “ложка”. O “-as” final é a terminação que o estoniano deu a vários empréstimos.',
     transparent: false,
   },
   {
@@ -944,7 +944,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'недѣля',
     origin_language: 'Russo antigo',
     cognates: c(['ru', 'неделя']),
-    evolution_note: 'No russo, «неделя» significava o domingo, o dia em que não se faz nada (не делать), e depois passou à semana inteira. O estoniano pegou o sentido de semana. O finlandês diz «viikko», do sueco.',
+    evolution_note: 'No russo, “неделя” significava o domingo, o dia em que não se faz nada (не делать), e depois passou à semana inteira. O estoniano pegou o sentido de semana. O finlandês diz “viikko”, do sueco.',
     transparent: false,
   },
   {
@@ -952,7 +952,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'крьстити',
     origin_language: 'Russo antigo',
     cognates: c(['fi', 'ristiä'], ['ru', 'крестить']),
-    evolution_note: 'A cruz, «rist», e o batismo, «ristima», chegaram do leste ortodoxo antes da conquista alemã. O grupo «kr» inicial foi simplificado: krĭstŭ → rist, porque o estoniano antigo não começava palavra com duas consoantes.',
+    evolution_note: 'A cruz, “rist”, e o batismo, “ristima”, chegaram do leste ortodoxo antes da conquista alemã. O grupo “kr” inicial foi simplificado: krĭstŭ → rist, porque o estoniano antigo não começava palavra com duas consoantes.',
     transparent: false,
   },
   {
@@ -960,7 +960,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'сябръ',
     origin_language: 'Russo antigo',
     cognates: c(['ru', 'сябр']),
-    evolution_note: 'O amigo veio do russo antigo, onde a palavra designava o vizinho, o companheiro de trabalho da aldeia. O finlandês usa outra palavra: «ystävä». Genitivo: sõbra.',
+    evolution_note: 'O amigo veio do russo antigo, onde a palavra designava o vizinho, o companheiro de trabalho da aldeia. O finlandês usa outra palavra: “ystävä”. Genitivo: sõbra.',
     transparent: false,
   },
   {
@@ -976,7 +976,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'кожухъ',
     origin_language: 'Russo antigo',
     cognates: c(['ru', 'кожух']),
-    evolution_note: 'O casaco de pele de carneiro veio do russo antigo «kožuh», de «кожа», couro. O «-as» final foi dado pelo estoniano. O finlandês diz «turkki».',
+    evolution_note: 'O casaco de pele de carneiro veio do russo antigo “kožuh”, de “кожа”, couro. O “-as” final foi dado pelo estoniano. O finlandês diz “turkki”.',
     transparent: false,
   },
   {
@@ -984,7 +984,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'капуста',
     origin_language: 'Russo',
     cognates: c(['ru', 'капуста']),
-    evolution_note: 'O repolho veio do russo «капуста». O finlandês diz «kaali», do sueco. Do repolho azedo, «hapukapsas», sai o prato de Natal com a morcela.',
+    evolution_note: 'O repolho veio do russo “капуста”. O finlandês diz “kaali”, do sueco. Do repolho azedo, “hapukapsas”, sai o prato de Natal com a morcela.',
     transparent: false,
   },
   {
@@ -992,7 +992,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'пирог',
     origin_language: 'Russo',
     cognates: c(['fi', 'piirakka'], ['ru', 'пирог']),
-    evolution_note: 'O pastel assado, recheado de carne, repolho ou arroz, veio do russo «pirog», com a terminação estoniana «-kas». O finlandês fez «piirakka».',
+    evolution_note: 'O pastel assado, recheado de carne, repolho ou arroz, veio do russo “pirog”, com a terminação estoniana “-kas”. O finlandês fez “piirakka”.',
     transparent: false,
   },
   {
@@ -1000,7 +1000,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'ям',
     origin_language: 'Russo',
     cognates: c(['ru', 'ям']),
-    evolution_note: 'No russo antigo, «ям» era a estação de muda dos cavalos do correio (palavra que o russo tomou do tártaro). No estoniano, virou toda estação: raudteejaam (ferroviária), bussijaam (rodoviária).',
+    evolution_note: 'No russo antigo, “ям” era a estação de muda dos cavalos do correio (palavra que o russo tomou do tártaro). No estoniano, virou toda estação: raudteejaam (ferroviária), bussijaam (rodoviária).',
     transparent: false,
   },
   {
@@ -1008,7 +1008,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'плита',
     origin_language: 'Russo',
     cognates: c(['ru', 'плита']),
-    evolution_note: 'O fogão de cozinha veio do russo «плита», que significa placa, chapa: a chapa de ferro sobre o fogo. Daí «gaasipliit» (fogão a gás) e «elektripliit».',
+    evolution_note: 'O fogão de cozinha veio do russo “плита”, que significa placa, chapa: a chapa de ferro sobre o fogo. Daí “gaasipliit” (fogão a gás) e “elektripliit”.',
     transparent: false,
   },
   // ——— baixo-alemão e alemão: sete séculos de mercadores hanseáticos e senhores alemães ———
@@ -1017,7 +1017,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'stunde',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'Stunde']),
-    evolution_note: 'A hora e a aula. O «s» inicial caiu, porque o estoniano antigo não começava palavra com duas consoantes: stunde → tund. O mesmo aconteceu com tool, torn e peegel.',
+    evolution_note: 'A hora e a aula. O “s” inicial caiu, porque o estoniano antigo não começava palavra com duas consoantes: stunde → tund. O mesmo aconteceu com tool, torn e peegel.',
     transparent: false,
   },
   {
@@ -1025,7 +1025,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'stōl',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'Stuhl'], ['sv', 'stol'], ['en', 'stool']),
-    evolution_note: 'A cadeira. Como em «tund», o «s» inicial caiu: stōl → tool. O finlandês a pegou do sueco e fez «tuoli».',
+    evolution_note: 'A cadeira. Como em “tund”, o “s” inicial caiu: stōl → tool. O finlandês a pegou do sueco e fez “tuoli”.',
     transparent: false,
   },
   {
@@ -1033,7 +1033,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'torn',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'Turm'], ['la', 'turris'], ['pt', 'torre']),
-    evolution_note: 'A torre. A palavra germânica vem do latim «turris», a nossa «torre». A cidade velha de Tallinn ainda tem cerca de vinte tornid na muralha, como a «Paks Margareeta» (Margarida Gorda).',
+    evolution_note: 'A torre. A palavra germânica vem do latim “turris”, a nossa “torre”. A cidade velha de Tallinn ainda tem cerca de vinte tornid na muralha, como a “Paks Margareeta” (Margarida Gorda).',
     transparent: false,
   },
   {
@@ -1041,7 +1041,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'spēgel',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'Spiegel'], ['la', 'speculum'], ['pt', 'espelho']),
-    evolution_note: 'O espelho. O baixo-alemão tomou a palavra do latim «speculum», o mesmo que deu «espelho»; o estoniano derrubou o «s» inicial: spēgel → peegel.',
+    evolution_note: 'O espelho. O baixo-alemão tomou a palavra do latim “speculum”, o mesmo que deu “espelho”; o estoniano derrubou o “s” inicial: spēgel → peegel.',
     transparent: false,
   },
   {
@@ -1049,7 +1049,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'schōle',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'Schule'], ['la', 'schola'], ['pt', 'escola']),
-    evolution_note: 'A escola veio do baixo-alemão, que a tinha do latim «schola», a mesma origem do português «escola». O grupo «sch» inicial ficou reduzido a «k».',
+    evolution_note: 'A escola veio do baixo-alemão, que a tinha do latim “schola”, a mesma origem do português “escola”. O grupo “sch” inicial ficou reduzido a “k”.',
     transparent: false,
   },
   {
@@ -1057,7 +1057,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'kȫke',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'Küche'], ['la', 'coquina'], ['pt', 'cozinha']),
-    evolution_note: 'A cozinha veio do baixo-alemão, que a recebeu do latim «coquina», a mesma raiz de «cozinha». O «ö» longo guarda o som da vogal alemã.',
+    evolution_note: 'A cozinha veio do baixo-alemão, que a recebeu do latim “coquina”, a mesma raiz de “cozinha”. O “ö” longo guarda o som da vogal alemã.',
     transparent: false,
   },
   {
@@ -1065,7 +1065,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'kōke',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'Kuchen'], ['en', 'cake']),
-    evolution_note: 'O bolo veio do baixo-alemão «kōke». Cuidado para não confundir com «kokk» (o cozinheiro) e «köök» (a cozinha): três palavras vizinhas.',
+    evolution_note: 'O bolo veio do baixo-alemão “kōke”. Cuidado para não confundir com “kokk” (o cozinheiro) e “köök” (a cozinha): três palavras vizinhas.',
     transparent: false,
   },
   {
@@ -1073,7 +1073,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'worst',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'Wurst'], ['nl', 'worst']),
-    evolution_note: 'A linguiça e a salsicha vieram com a cozinha alemã. Nas festas de Natal, «verivorst» (a morcela, linguiça de sangue) com chucrute é prato obrigatório.',
+    evolution_note: 'A linguiça e a salsicha vieram com a cozinha alemã. Nas festas de Natal, “verivorst” (a morcela, linguiça de sangue) com chucrute é prato obrigatório.',
     transparent: false,
   },
   {
@@ -1081,7 +1081,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'schinke',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'Schinken']),
-    evolution_note: 'O presunto. O «sch» alemão virou «s», como em «seep». Genitivo: singi (gradação k → g).',
+    evolution_note: 'O presunto. O “sch” alemão virou “s”, como em “seep”. Genitivo: singi (gradação k → g).',
     transparent: false,
   },
   {
@@ -1089,7 +1089,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'Kartoffel',
     origin_language: 'Alemão',
     cognates: c(['de', 'Kartoffel'], ['it', 'tartufolo']),
-    evolution_note: 'A batata chegou à Estônia no século XVIII, e com ela o nome alemão, que o estoniano encurtou: Kartoffel → kartul. O alemão, por sua vez, o tirou do italiano «tartufolo», trufa.',
+    evolution_note: 'A batata chegou à Estônia no século XVIII, e com ela o nome alemão, que o estoniano encurtou: Kartoffel → kartul. O alemão, por sua vez, o tirou do italiano “tartufolo”, trufa.',
     transparent: false,
   },
   {
@@ -1097,7 +1097,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'glas',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'Glas'], ['en', 'glass']),
-    evolution_note: 'O vidro e o copo. O estoniano antigo não tinha «g» no começo de palavra e o trocou por «k»: glas → klaas. «Klaas vett» é um copo de água.',
+    evolution_note: 'O vidro e o copo. O estoniano antigo não tinha “g” no começo de palavra e o trocou por “k”: glas → klaas. “Klaas vett” é um copo de água.',
     transparent: false,
   },
   {
@@ -1105,7 +1105,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'Tasse',
     origin_language: 'Alemão',
     cognates: c(['de', 'Tasse'], ['fr', 'tasse'], ['pt', 'taça'], ['ar', 'طاس']),
-    evolution_note: 'A xícara veio do alemão, que a tinha do francês, que por sua vez a tirou do árabe «ṭās», tigela. É prima da nossa «taça».',
+    evolution_note: 'A xícara veio do alemão, que a tinha do francês, que por sua vez a tirou do árabe “ṭās”, tigela. É prima da nossa “taça”.',
     transparent: true,
   },
   {
@@ -1113,7 +1113,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'gaffel',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'Gabel'], ['sv', 'gaffel']),
-    evolution_note: 'O garfo. Como em «klaas», o «g» inicial virou «k»: gaffel → kahvel. O finlandês diz «haarukka», palavra fínica.',
+    evolution_note: 'O garfo. Como em “klaas”, o “g” inicial virou “k”: gaffel → kahvel. O finlandês diz “haarukka”, palavra fínica.',
     transparent: false,
   },
   {
@@ -1121,7 +1121,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'tallōr',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'Teller'], ['it', 'tagliere']),
-    evolution_note: 'O prato veio do baixo-alemão, que o tomou do italiano «tagliere», a tábua de cortar a carne. A ideia era a mesma: onde se corta a comida.',
+    evolution_note: 'O prato veio do baixo-alemão, que o tomou do italiano “tagliere”, a tábua de cortar a carne. A ideia era a mesma: onde se corta a comida.',
     transparent: false,
   },
   {
@@ -1129,7 +1129,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'pot',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'Pott'], ['en', 'pot'], ['pt', 'pote']),
-    evolution_note: 'A panela e o pote. A palavra germânica corre pelo norte da Europa e chegou ao português como «pote».',
+    evolution_note: 'A panela e o pote. A palavra germânica corre pelo norte da Europa e chegou ao português como “pote”.',
     transparent: true,
   },
   {
@@ -1137,7 +1137,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'buddel',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'Buddel'], ['fr', 'bouteille'], ['pt', 'botelha']),
-    evolution_note: 'A garrafa. O «b» inicial virou «p», como em pruut e prillid: o estoniano antigo não começava palavra com «b». A raiz é a do francês «bouteille».',
+    evolution_note: 'A garrafa. O “b” inicial virou “p”, como em pruut e prillid: o estoniano antigo não começava palavra com “b”. A raiz é a do francês “bouteille”.',
     transparent: false,
   },
   {
@@ -1145,7 +1145,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'sucker',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'Zucker'], ['ar', 'سكر'], ['pt', 'açúcar']),
-    evolution_note: 'O açúcar fez uma longa viagem: do sânscrito ao persa, ao árabe «sukkar», ao latim medieval e ao alemão. O português «açúcar» vem do mesmo árabe, com o artigo «al-».',
+    evolution_note: 'O açúcar fez uma longa viagem: do sânscrito ao persa, ao árabe “sukkar”, ao latim medieval e ao alemão. O português “açúcar” vem do mesmo árabe, com o artigo “al-”.',
     transparent: false,
   },
   {
@@ -1153,7 +1153,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'zipolle',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'Zwiebel'], ['la', 'cepulla'], ['pt', 'cebola']),
-    evolution_note: 'A cebola veio do baixo-alemão, que a tinha do latim «cepulla», a mesma origem da nossa «cebola».',
+    evolution_note: 'A cebola veio do baixo-alemão, que a tinha do latim “cepulla”, a mesma origem da nossa “cebola”.',
     transparent: false,
   },
   {
@@ -1161,7 +1161,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'kerse',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'Kirsche'], ['la', 'ceresia'], ['pt', 'cereja']),
-    evolution_note: 'A cereja veio do baixo-alemão, que a tinha do latim popular «ceresia», a mesma origem de «cereja».',
+    evolution_note: 'A cereja veio do baixo-alemão, que a tinha do latim popular “ceresia”, a mesma origem de “cereja”.',
     transparent: false,
   },
   {
@@ -1169,7 +1169,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'sēpe',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'Seife'], ['en', 'soap']),
-    evolution_note: 'O sabão veio com os comerciantes hanseáticos. O finlandês diz «saippua», do sueco. Genitivo estoniano: seebi.',
+    evolution_note: 'O sabão veio com os comerciantes hanseáticos. O finlandês diz “saippua”, do sueco. Genitivo estoniano: seebi.',
     transparent: false,
   },
   {
@@ -1177,7 +1177,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'kringel',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'Kringel']),
-    evolution_note: 'O pão doce trançado em forma de laço, com cardamomo, que não falta nos aniversários estonianos. O nome alemão quer dizer «argolinha».',
+    evolution_note: 'O pão doce trançado em forma de laço, com cardamomo, que não falta nos aniversários estonianos. O nome alemão quer dizer “argolinha”.',
     transparent: false,
   },
   {
@@ -1185,7 +1185,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'brāde',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'Braten']),
-    evolution_note: 'O assado, e por extensão o prato principal. O «b» inicial virou «p»: brāde → praad. «Seapraad» é o porco assado das festas.',
+    evolution_note: 'O assado, e por extensão o prato principal. O “b” inicial virou “p”: brāde → praad. “Seapraad” é o porco assado das festas.',
     transparent: false,
   },
   {
@@ -1193,7 +1193,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'brūt',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'Braut'], ['en', 'bride']),
-    evolution_note: 'A noiva. O «b» virou «p», como em praad e pudel. O noivo é «peigmees», palavra estoniana.',
+    evolution_note: 'A noiva. O “b” virou “p”, como em praad e pudel. O noivo é “peigmees”, palavra estoniana.',
     transparent: false,
   },
   {
@@ -1201,7 +1201,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'brille',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'Brille'], ['la', 'beryllus']),
-    evolution_note: 'Os óculos, sempre no plural. O alemão «Brille» vem do berilo, a pedra transparente com que se faziam as primeiras lentes.',
+    evolution_note: 'Os óculos, sempre no plural. O alemão “Brille” vem do berilo, a pedra transparente com que se faziam as primeiras lentes.',
     transparent: false,
   },
   {
@@ -1209,7 +1209,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'mütze',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'Mütze']),
-    evolution_note: 'O gorro e o chapéu. O «ü» guarda o som da vogal alemã. No inverno estoniano, «müts» é peça obrigatória.',
+    evolution_note: 'O gorro e o chapéu. O “ü” guarda o som da vogal alemã. No inverno estoniano, “müts” é peça obrigatória.',
     transparent: false,
   },
   {
@@ -1217,7 +1217,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'treppe',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'Treppe']),
-    evolution_note: 'A escada. O «pp» dobrado se pronuncia longo, na terceira quantidade: trepp, genitivo «trepi».',
+    evolution_note: 'A escada. O “pp” dobrado se pronuncia longo, na terceira quantidade: trepp, genitivo “trepi”.',
     transparent: false,
   },
   {
@@ -1225,7 +1225,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'kelder',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'Keller'], ['la', 'cellarium'], ['pt', 'celeiro']),
-    evolution_note: 'O porão. O germânico tomou a palavra do latim «cellarium», despensa, que no português deu «celeiro».',
+    evolution_note: 'O porão. O germânico tomou a palavra do latim “cellarium”, despensa, que no português deu “celeiro”.',
     transparent: false,
   },
   {
@@ -1233,7 +1233,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'böninge',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'Boden']),
-    evolution_note: 'O sótão. O «b» virou «p» e o «ö» guardou a vogal alemã: böninge → pööning.',
+    evolution_note: 'O sótão. O “b” virou “p” e o “ö” guardou a vogal alemã: böninge → pööning.',
     transparent: false,
   },
   {
@@ -1241,7 +1241,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'tafel',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'Tafel'], ['la', 'tabula'], ['pt', 'tábua']),
-    evolution_note: 'O quadro (da escola) e a placa. Do latim «tabula», a mesma origem de «tábua» e «tabela».',
+    evolution_note: 'O quadro (da escola) e a placa. Do latim “tabula”, a mesma origem de “tábua” e “tabela”.',
     transparent: false,
   },
   {
@@ -1249,7 +1249,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'arste',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'Arzt'], ['el', 'ἀρχίατρος']),
-    evolution_note: 'O médico veio do baixo-alemão, que encurtou o latim medieval «archiater», do grego «arkhíatros», o médico-chefe.',
+    evolution_note: 'O médico veio do baixo-alemão, que encurtou o latim medieval “archiater”, do grego “arkhíatros”, o médico-chefe.',
     transparent: false,
   },
   {
@@ -1257,7 +1257,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'herre',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'Herr']),
-    evolution_note: 'O senhor, a palavra dos donos das terras alemães. Hoje é o tratamento formal: «härra Tamm», senhor Tamm.',
+    evolution_note: 'O senhor, a palavra dos donos das terras alemães. Hoje é o tratamento formal: “härra Tamm”, senhor Tamm.',
     transparent: false,
   },
   {
@@ -1265,7 +1265,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'vrouwe',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'Frau'], ['nl', 'vrouw']),
-    evolution_note: 'A senhora, a dona da casa. O «v» baixo-alemão virou «p»: vrouwe → proua. Hoje é o tratamento formal: «proua Tamm».',
+    evolution_note: 'A senhora, a dona da casa. O “v” baixo-alemão virou “p”: vrouwe → proua. Hoje é o tratamento formal: “proua Tamm”.',
     transparent: false,
   },
   {
@@ -1273,7 +1273,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'bōde',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'Bude']),
-    evolution_note: 'A loja veio da barraca de feira, a «bōde». O «b» virou «p», e o genitivo encolheu por gradação: poe.',
+    evolution_note: 'A loja veio da barraca de feira, a “bōde”. O “b” virou “p”, e o genitivo encolheu por gradação: poe.',
     transparent: false,
   },
   {
@@ -1281,7 +1281,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'slot',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'Schloss'], ['nl', 'slot']),
-    evolution_note: 'O castelo e o palácio. O «s» inicial caiu: slot → loss. O palácio de Kadriorg, em Tallinn, é «Kadrioru loss».',
+    evolution_note: 'O castelo e o palácio. O “s” inicial caiu: slot → loss. O palácio de Kadriorg, em Tallinn, é “Kadrioru loss”.',
     transparent: false,
   },
   {
@@ -1289,7 +1289,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'Bank',
     origin_language: 'Alemão',
     cognates: c(['de', 'Bank'], ['it', 'banca'], ['pt', 'banco']),
-    evolution_note: 'O banco (de dinheiro) chegou pelo alemão, que o tomou do italiano «banca», a mesa dos cambistas. O «b» inicial virou «p», como sempre nos empréstimos antigos.',
+    evolution_note: 'O banco (de dinheiro) chegou pelo alemão, que o tomou do italiano “banca”, a mesa dos cambistas. O “b” inicial virou “p”, como sempre nos empréstimos antigos.',
     transparent: true,
   },
   {
@@ -1297,7 +1297,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'Koffer',
     origin_language: 'Alemão',
     cognates: c(['de', 'Koffer'], ['fr', 'coffre'], ['pt', 'cofre']),
-    evolution_note: 'A mala de viagem veio do alemão, que a tinha do francês «coffre», o nosso «cofre».',
+    evolution_note: 'A mala de viagem veio do alemão, que a tinha do francês “coffre”, o nosso “cofre”.',
     transparent: false,
   },
   // ——— Johannes Aavik e a renovação da língua: palavras criadas ou importadas no começo do século XX ———
@@ -1314,7 +1314,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'veenma',
     origin_language: 'Estoniano (criação de Johannes Aavik)',
     cognates: [],
-    evolution_note: 'Convencer: outra criação livre de Aavik, que queria substituir construções pesadas por um verbo curto. Daí vieram «veenev» (convincente) e «veendumus» (convicção).',
+    evolution_note: 'Convencer: outra criação livre de Aavik, que queria substituir construções pesadas por um verbo curto. Daí vieram “veenev” (convincente) e “veendumus” (convicção).',
     transparent: false,
   },
   {
@@ -1322,7 +1322,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'solvama',
     origin_language: 'Estoniano (criação de Johannes Aavik)',
     cognates: [],
-    evolution_note: 'Ofender: palavra inventada por Aavik. Dela nasceu «solvang», a ofensa.',
+    evolution_note: 'Ofender: palavra inventada por Aavik. Dela nasceu “solvang”, a ofensa.',
     transparent: false,
   },
   {
@@ -1330,7 +1330,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'naasma',
     origin_language: 'Estoniano (criação de Johannes Aavik)',
     cognates: [],
-    evolution_note: 'Retornar: criação de Aavik, mais curta e mais elegante que «tagasi tulema» (voltar). É palavra de registro mais escrito: «Ta naasis koju».',
+    evolution_note: 'Retornar: criação de Aavik, mais curta e mais elegante que “tagasi tulema” (voltar). É palavra de registro mais escrito: “Ta naasis koju”.',
     transparent: false,
   },
   {
@@ -1338,7 +1338,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'range',
     origin_language: 'Estoniano (criação de Johannes Aavik)',
     cognates: [],
-    evolution_note: 'Rigoroso, severo: mais uma das palavras de Aavik. Parece o inglês «range», mas não tem nada a ver com ele.',
+    evolution_note: 'Rigoroso, severo: mais uma das palavras de Aavik. Parece o inglês “range”, mas não tem nada a ver com ele.',
     transparent: false,
   },
   {
@@ -1346,7 +1346,7 @@ export const ETYMOLOGY_ET: EtymologySeed[] = [
     root_word: 'huvi',
     origin_language: 'Finlandês',
     cognates: c(['fi', 'huvi']),
-    evolution_note: 'O interesse foi trazido do finlandês no começo do século XX, na onda da renovação da língua, que preferia buscar palavras no primo do norte a pegá-las do alemão. Falso amigo: no finlandês de hoje, «huvi» é mais diversão, prazer.',
+    evolution_note: 'O interesse foi trazido do finlandês no começo do século XX, na onda da renovação da língua, que preferia buscar palavras no primo do norte a pegá-las do alemão. Falso amigo: no finlandês de hoje, “huvi” é mais diversão, prazer.',
     transparent: false,
   },
 ];

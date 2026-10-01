@@ -217,7 +217,7 @@ function AudioSubmit({ phrase, onSaved }: { phrase: string; onSaved: (content: s
     <Card className="mt-3 gap-3">
       <Text className="font-bold text-slate-800 dark:text-slate-100">🎙️ 10 segundos de áudio</Text>
       <Text className="text-sm text-slate-600 dark:text-slate-400">Leia em voz alta (ou diga algo seu):</Text>
-      <Text className="text-lg font-semibold text-slate-900 dark:text-white">«{phrase}»</Text>
+      <Text className="text-lg font-semibold text-slate-900 dark:text-white">“{phrase}”</Text>
       {!rec.supported ? (
         <Text className="text-sm text-slate-500 dark:text-slate-400">Gravar para a comunidade funciona pelo site, num navegador com microfone.</Text>
       ) : rec.recording ? (
@@ -273,7 +273,7 @@ function MineCard({ item, langCode, langName, from }: { item: CommunityRow; lang
   return (
     <Card className="gap-2">
       <Text className="text-xs font-bold text-slate-500">{item.prompt}</Text>
-      <Text className="text-lg text-slate-900 dark:text-white">{item.kind === 'audio' ? `🎙️ «${item.content}»` : item.content}</Text>
+      <Text className="text-lg text-slate-900 dark:text-white">{item.kind === 'audio' ? `🎙️ “${item.content}”` : item.content}</Text>
       {item.audio && <Button title="▶ Ouvir meu áudio" variant="ghost" onPress={() => playDataUri(item.audio!)} />}
       {item.reply_reaction ? (
         <View className="gap-1 rounded-xl bg-green-50 p-3 dark:bg-green-950/40">

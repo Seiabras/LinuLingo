@@ -15,7 +15,7 @@ export const RECURSOS_TE: LanguageResources = {
       by: 'S. S. Rajamouli',
       year: '2015–2017',
       level: 'B1',
-      why: 'Épico de fantasia em duas partes («O Início» e «A Conclusão») sobre um reino e dois primos rivais, filmado ao mesmo tempo em télugo e em tâmil. Os diálogos solenes repetem muito as mesmas palavras de honra, dever e guerra.',
+      why: 'Épico de fantasia em duas partes (“O Início” e “A Conclusão”) sobre um reino e dois primos rivais, filmado ao mesmo tempo em télugo e em tâmil. Os diálogos solenes repetem muito as mesmas palavras de honra, dever e guerra.',
     },
     {
       kind: 'filme',
@@ -24,7 +24,7 @@ export const RECURSOS_TE: LanguageResources = {
       by: 'S. S. Rajamouli',
       year: '2022',
       level: 'B1',
-      why: 'Dois revolucionários contra o domínio britânico na Índia dos anos 1920 — o título em télugo quer dizer «fúria, guerra, sangue». Tem «Naatu Naatu», a primeira canção de um filme indiano a ganhar o Oscar de canção original. Escolha o áudio original em télugo.',
+      why: 'Dois revolucionários contra o domínio britânico na Índia dos anos 1920 — o título em télugo quer dizer “fúria, guerra, sangue”. Tem “Naatu Naatu”, a primeira canção de um filme indiano a ganhar o Oscar de canção original. Escolha o áudio original em télugo.',
     },
     {
       kind: 'filme',
@@ -33,7 +33,7 @@ export const RECURSOS_TE: LanguageResources = {
       by: 'S. S. Rajamouli',
       year: '2012',
       level: 'A2',
-      why: 'Um homem assassinado renasce como mosca («eega») para se vingar. Divertido e muito visual, com pouca fala: bom para começar a ouvir télugo sem se perder.',
+      why: 'Um homem assassinado renasce como mosca (“eega”) para se vingar. Divertido e muito visual, com pouca fala: bom para começar a ouvir télugo sem se perder.',
     },
     {
       kind: 'filme',
@@ -42,7 +42,7 @@ export const RECURSOS_TE: LanguageResources = {
       by: 'Nag Ashwin',
       year: '2018',
       level: 'B2',
-      why: 'A vida de Savitri, estrela do cinema télugo e tâmil dos anos 1950 e 60 — o título quer dizer «a grande atriz». Um passeio pela história de Tollywood, com fala mais formal.',
+      why: 'A vida de Savitri, estrela do cinema télugo e tâmil dos anos 1950 e 60 — o título quer dizer “a grande atriz”. Um passeio pela história de Tollywood, com fala mais formal.',
     },
     {
       kind: 'filme',
@@ -140,7 +140,7 @@ export const RECURSOS_TE: LanguageResources = {
       original: 'వేమన పద్యాలు',
       by: 'Vemana',
       level: 'B2',
-      why: 'Quadras curtas e irônicas sobre a vida, que as crianças decoram na escola e que terminam sempre com «viśvadābhirāma vinura vēma». Ótimas para memorizar.',
+      why: 'Quadras curtas e irônicas sobre a vida, que as crianças decoram na escola e que terminam sempre com “viśvadābhirāma vinura vēma”. Ótimas para memorizar.',
     },
     {
       kind: 'livro',
@@ -158,7 +158,7 @@ export const RECURSOS_TE: LanguageResources = {
       by: 'M. M. Keeravani (música), Chandrabose (letra), Rahul Sipligunj e Kaala Bhairava (vozes)',
       year: '2022',
       level: 'A2',
-      why: 'A canção de «RRR» que ganhou o Oscar de melhor canção original. Ritmo frenético e refrão repetido: acompanhar a letra na escrita télugo é um ótimo exercício de leitura.',
+      why: 'A canção de “RRR” que ganhou o Oscar de melhor canção original. Ritmo frenético e refrão repetido: acompanhar a letra na escrita télugo é um ótimo exercício de leitura.',
     },
     {
       kind: 'musica',
@@ -167,7 +167,7 @@ export const RECURSOS_TE: LanguageResources = {
       by: 'S. Thaman (música), Sirivennela Seetharama Sastry (letra), Sid Sriram (voz)',
       year: '2020',
       level: 'B1',
-      why: 'Canção romântica do filme «Ala Vaikunthapurramuloo», uma das mais ouvidas da década. Melodia lenta e dicção clara.',
+      why: 'Canção romântica do filme “Ala Vaikunthapurramuloo”, uma das mais ouvidas da década. Melodia lenta e dicção clara.',
     },
     {
       kind: 'musica',
@@ -234,10 +234,10 @@ export const RECURSOS_TE: LanguageResources = {
   ],
   tips: [
     'Não existe prova padronizada de télugo para estrangeiros. Para ter um certificado, o caminho são cursos: a SiliconAndhra ManaBadi dá aulas online com provas da Potti Sreeramulu Telugu University, de Hyderabad (pensadas para filhos de imigrantes), e o American Institute of Indian Studies oferece télugo intensivo em Hyderabad e online (voltado sobretudo a estudantes de universidades americanas).',
-    'O télugo tem escrita própria, redonda e silábica, prima da escrita do canarês: cada consoante já traz um «a», as outras vogais entram como sinais grudados nela, e os encontros de consoantes se empilham. Aprenda primeiro vogais e consoantes soltas, depois os sinais, e treine lendo títulos de filmes e letras de música.',
-    'É uma língua dravídica, sem parentesco com o híndi, mas com muito vocabulário do sânscrito. A frase termina no verbo, e sufixos fazem o papel das preposições: «ఇంటికి» (iṇṭiki, para casa), «ఇంట్లో» (iṇṭlō, em casa).',
-    'Use «మీరు» (mīru) para «você» com desconhecidos e pessoas mais velhas — é também o plural — e deixe «నువ్వు» (nuvvu) para amigos e crianças. O verbo muda junto.',
-    'Quase toda palavra termina em vogal, e por isso o télugo ganhou o apelido de «italiano do Oriente». Cuidado com as vogais longas e curtas e com as consoantes retroflexas (ట, డ, ణ, ళ), ditas com a ponta da língua virada para trás: elas mudam o sentido.',
-    'O télugo dos livros e do noticiário segue o padrão do litoral de Andhra; em Hyderabad e no resto de Telangana a fala tem outro ritmo e palavras do urdu, e em Rayalaseema há outro sotaque ainda. «Balagam» (Telangana) e «Pushpa» (Chittoor) mostram bem essas diferenças.',
+    'O télugo tem escrita própria, redonda e silábica, prima da escrita do canarês: cada consoante já traz um “a”, as outras vogais entram como sinais grudados nela, e os encontros de consoantes se empilham. Aprenda primeiro vogais e consoantes soltas, depois os sinais, e treine lendo títulos de filmes e letras de música.',
+    'É uma língua dravídica, sem parentesco com o híndi, mas com muito vocabulário do sânscrito. A frase termina no verbo, e sufixos fazem o papel das preposições: “ఇంటికి” (iṇṭiki, para casa), “ఇంట్లో” (iṇṭlō, em casa).',
+    'Use “మీరు” (mīru) para “você” com desconhecidos e pessoas mais velhas — é também o plural — e deixe “నువ్వు” (nuvvu) para amigos e crianças. O verbo muda junto.',
+    'Quase toda palavra termina em vogal, e por isso o télugo ganhou o apelido de “italiano do Oriente”. Cuidado com as vogais longas e curtas e com as consoantes retroflexas (ట, డ, ణ, ళ), ditas com a ponta da língua virada para trás: elas mudam o sentido.',
+    'O télugo dos livros e do noticiário segue o padrão do litoral de Andhra; em Hyderabad e no resto de Telangana a fala tem outro ritmo e palavras do urdu, e em Rayalaseema há outro sotaque ainda. “Balagam” (Telangana) e “Pushpa” (Chittoor) mostram bem essas diferenças.',
   ],
 };

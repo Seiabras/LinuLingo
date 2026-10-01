@@ -43,7 +43,7 @@ export const ROWS: VocabRow[] = [
   ['ona', 'ela', 'pronome', 'Pessoas', '👩', 'Ona jest z Gdańska.'],
   ['my', 'nós', 'pronome', 'Pessoas', '🙌', 'My mówimy po polsku.'],
   ['wy', 'vocês', 'pronome', 'Pessoas', '🫵', 'Skąd wy jesteście?'],
-  ['oni', 'eles (homens ou grupo misto; «one» para os outros casos)', 'pronome', 'Pessoas', '👥', 'Oni mieszkają w Warszawie.'],
+  ['oni', 'eles (homens ou grupo misto; “one” para os outros casos)', 'pronome', 'Pessoas', '👥', 'Oni mieszkają w Warszawie.'],
   ['pan', 'o senhor (tratamento formal, com o verbo na 3ª pessoa)', 'pronome', 'Pessoas', '🤵', 'Jak się pan nazywa?'],
   ['pani', 'a senhora (tratamento formal, com o verbo na 3ª pessoa)', 'pronome', 'Pessoas', '👩‍💼', 'Czy pani mówi po angielsku?'],
   ['imię', 'nome', 'substantivo', 'Pessoas', '🏷️', 'Mam na imię Linu.', 'n'],

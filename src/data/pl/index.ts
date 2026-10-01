@@ -39,5 +39,5 @@ export const POLONES: LanguagePack = {
   phrases: { hi: 'Cześć!', thanks: 'Dziękuję!', letsStart: ['Zaczynamy!', 'Vamos começar!'] },
   formalMarkers: 'pan / pani (com o verbo na 3ª pessoa), proszę, przepraszam',
   cognateNote:
-    'O polonês é uma língua eslava ocidental, prima distante do português: os dois vêm do indo-europeu. Por isso «trzy» lembra «três» e «dom» lembra «doméstico». Cada palavra mostra a raiz e os parentes em outras línguas.',
+    'O polonês é uma língua eslava ocidental, prima distante do português: os dois vêm do indo-europeu. Por isso “trzy” lembra “três” e “dom” lembra “doméstico”. Cada palavra mostra a raiz e os parentes em outras línguas.',
 };

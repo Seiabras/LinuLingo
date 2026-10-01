@@ -16,7 +16,7 @@ export const RECURSOS_YO: LanguageResources = {
       flag: '🇳🇬',
       main: true,
       levels:
-        'Uma prova só, sem níveis: as notas vão de A1 (excelente) a F9 (reprovado), e de C6 para cima conta como «credit», a nota que as universidades nigerianas pedem. Não há tabela oficial com o QECR: a faixa indicada é uma estimativa, porque a prova é feita para quem tem o iorubá como língua materna',
+        'Uma prova só, sem níveis: as notas vão de A1 (excelente) a F9 (reprovado), e de C6 para cima conta como “credit”, a nota que as universidades nigerianas pedem. Não há tabela oficial com o QECR: a faixa indicada é uma estimativa, porque a prova é feita para quem tem o iorubá como língua materna',
       cefr: ['B2', 'C1'],
       format: [
         'Prova objetiva: questões de múltipla escolha sobre a língua (sons, tons, gramática e vocabulário), a literatura e a cultura iorubás',
@@ -25,8 +25,8 @@ export const RECURSOS_YO: LanguageResources = {
       validity: 'Não expira',
       usedFor: ['conclusão do ensino médio na Nigéria', 'ingresso em universidades nigerianas, junto com o exame UTME, da JAMB'],
       where:
-        'Só na Nigéria, em escolas e centros credenciados pela WAEC; não há aplicação no Brasil. Quem não estuda numa escola nigeriana se inscreve na edição para candidatos externos («private candidates»), que acontece em outra época do ano.',
-      tip: 'Não é uma prova para estrangeiros: os textos, os livros e as perguntas de cultura são os mesmos que os alunos nigerianos estudam na escola. Mesmo sem fazer a prova, o programa (syllabus) publicado pela WAEC é um bom roteiro para quem já passou do intermediário, e os livros de questões antigas («past questions»), vendidos na Nigéria, servem de simulado.',
+        'Só na Nigéria, em escolas e centros credenciados pela WAEC; não há aplicação no Brasil. Quem não estuda numa escola nigeriana se inscreve na edição para candidatos externos (“private candidates”), que acontece em outra época do ano.',
+      tip: 'Não é uma prova para estrangeiros: os textos, os livros e as perguntas de cultura são os mesmos que os alunos nigerianos estudam na escola. Mesmo sem fazer a prova, o programa (syllabus) publicado pela WAEC é um bom roteiro para quem já passou do intermediário, e os livros de questões antigas (“past questions”), vendidos na Nigéria, servem de simulado.',
       url: 'https://www.waecnigeria.org',
     },
     {
@@ -36,7 +36,7 @@ export const RECURSOS_YO: LanguageResources = {
       org: 'National Examinations Council (NECO), órgão do governo federal da Nigéria',
       flag: '🇳🇬',
       levels:
-        'Uma prova só, sem níveis, com a mesma escala do WASSCE: de A1 (excelente) a F9 (reprovado), com «credit» de C6 para cima. A faixa do QECR é uma estimativa, porque a prova é feita para falantes nativos',
+        'Uma prova só, sem níveis, com a mesma escala do WASSCE: de A1 (excelente) a F9 (reprovado), com “credit” de C6 para cima. A faixa do QECR é uma estimativa, porque a prova é feita para falantes nativos',
       cefr: ['B2', 'C1'],
       format: [
         'Prova objetiva: questões de múltipla escolha sobre língua, literatura e cultura iorubás',
@@ -45,7 +45,7 @@ export const RECURSOS_YO: LanguageResources = {
       validity: 'Não expira',
       usedFor: ['conclusão do ensino médio na Nigéria, com o mesmo valor do WASSCE', 'ingresso em universidades nigerianas'],
       where: 'Só na Nigéria. Há a edição interna, para alunos das escolas, e a externa, para candidatos particulares; não há aplicação no Brasil.',
-      tip: 'Muitos alunos nigerianos fazem o WASSCE e o NECO no mesmo ano, para ter duas chances de tirar «credit». Para quem estuda de fora, vale o mesmo conselho do WASSCE: use o programa e as questões antigas como material de estudo, não como meta.',
+      tip: 'Muitos alunos nigerianos fazem o WASSCE e o NECO no mesmo ano, para ter duas chances de tirar “credit”. Para quem estuda de fora, vale o mesmo conselho do WASSCE: use o programa e as questões antigas como material de estudo, não como meta.',
       url: 'https://www.neco.gov.ng',
     },
   ],
@@ -66,7 +66,7 @@ export const RECURSOS_YO: LanguageResources = {
       by: 'Biyi Bandele',
       year: '2022',
       level: 'B2',
-      why: 'Versão falada em iorubá da peça «Death and the King’s Horseman», de Wole Soyinka (Nobel de 1986): em Oyo, nos anos 1940, o cavaleiro do rei morto deve segui-lo na morte, e o governo colonial tenta impedir o ritual.',
+      why: 'Versão falada em iorubá da peça “Death and the King’s Horseman”, de Wole Soyinka (Nobel de 1986): em Oyo, nos anos 1940, o cavaleiro do rei morto deve segui-lo na morte, e o governo colonial tenta impedir o ritual.',
       accent: 'iorubá poético, com cantos e louvores',
     },
     {
@@ -108,7 +108,7 @@ export const RECURSOS_YO: LanguageResources = {
       by: 'D. O. Fagunwa',
       year: '1938',
       level: 'B2',
-      why: 'O primeiro romance escrito em iorubá: as aventuras de um caçador numa floresta de espíritos e monstros, contadas com humor e provérbios. Wole Soyinka o traduziu para o inglês como «The Forest of a Thousand Daemons».',
+      why: 'O primeiro romance escrito em iorubá: as aventuras de um caçador numa floresta de espíritos e monstros, contadas com humor e provérbios. Wole Soyinka o traduziu para o inglês como “The Forest of a Thousand Daemons”.',
     },
     {
       kind: 'livro',
@@ -178,7 +178,7 @@ export const RECURSOS_YO: LanguageResources = {
       by: 'Angélique Kidjo',
       year: '1998',
       level: 'B1',
-      why: 'A cantora do Benin, onde o iorubá também é falado, mistura iorubá, fom e inglês. O título quer dizer «meu amigo» em iorubá.',
+      why: 'A cantora do Benin, onde o iorubá também é falado, mistura iorubá, fom e inglês. O título quer dizer “meu amigo” em iorubá.',
       accent: 'iorubá, fom e inglês',
     },
     {
@@ -230,10 +230,10 @@ export const RECURSOS_YO: LanguageResources = {
   ],
   tips: [
     'As únicas provas padronizadas de iorubá são as de fim do ensino médio da Nigéria (WASSCE e NECO), feitas para falantes nativos. Para ter um certificado, o caminho são cursos: no Brasil, o Centro de Estudos Afro-Orientais (CEAO) da UFBA, em Salvador, tem tradição no ensino de iorubá, e universidades com estudos africanos dão certificado de conclusão. Se precisar de um certificado de fala, pergunte à Language Testing International, que aplica a entrevista oral da ACTFL, se há avaliador de iorubá.',
-    'O iorubá tem três tons — alto (´), médio (sem acento) e baixo (`) — e eles mudam o sentido: «ọkọ» é marido, «ọkọ̀» é veículo e «ọkọ́» é enxada. Muita gente escreve sem acentos nas redes sociais; estude com textos acentuados e com áudio.',
-    'Os pontinhos embaixo das letras são fáceis para brasileiros: «ẹ» é o nosso «é» aberto, «ọ» é o «ó» aberto e «ṣ» soa como «x». Por isso o candomblé escreve com «x» nomes como Xangô (Ṣàngó), Oxum (Ọ̀ṣun) e orixá (òrìṣà). Já «gb» e «p» se pronunciam fechando os lábios e o fundo da boca ao mesmo tempo, um som que o português não tem.',
+    'O iorubá tem três tons — alto (´), médio (sem acento) e baixo (`) — e eles mudam o sentido: “ọkọ” é marido, “ọkọ̀” é veículo e “ọkọ́” é enxada. Muita gente escreve sem acentos nas redes sociais; estude com textos acentuados e com áudio.',
+    'Os pontinhos embaixo das letras são fáceis para brasileiros: “ẹ” é o nosso “é” aberto, “ọ” é o “ó” aberto e “ṣ” soa como “x”. Por isso o candomblé escreve com “x” nomes como Xangô (Ṣàngó), Oxum (Ọ̀ṣun) e orixá (òrìṣà). Já “gb” e “p” se pronunciam fechando os lábios e o fundo da boca ao mesmo tempo, um som que o português não tem.',
     'Muitas palavras do português do Brasil vêm do iorubá, sobretudo pela Bahia: axé (àṣẹ), acarajé (de àkàrà), Iemanjá (Yemọja), Ogum (Ògún). Mas o iorubá do candomblé é uma língua de rezas e cantigas, antiga e cantada sem os tons da fala: ajuda no vocabulário, mas não substitui o iorubá falado hoje na Nigéria e no Benin.',
-    'A ponte também tem o caminho de volta: no século XIX, africanos libertos e seus descendentes voltaram do Brasil para a costa da África e formaram as comunidades de «agudás», ou «brasileiros», em Lagos, Uidá e Porto Novo. Em Lagos, o bairro de Popo Aguda ainda guarda casas no estilo afro-brasileiro e famílias com sobrenomes como Da Rocha e Da Silva.',
-    'Respeito se mostra na gramática: com pessoas mais velhas ou que você não conhece, use «ẹ» (o «vocês» de respeito) no lugar de «o»: «Ẹ káàárọ̀» (bom dia), «Ẹ ṣé» (obrigado). Entre amigos da mesma idade, «Káàárọ̀» e «O ṣé» bastam.',
+    'A ponte também tem o caminho de volta: no século XIX, africanos libertos e seus descendentes voltaram do Brasil para a costa da África e formaram as comunidades de “agudás”, ou “brasileiros”, em Lagos, Uidá e Porto Novo. Em Lagos, o bairro de Popo Aguda ainda guarda casas no estilo afro-brasileiro e famílias com sobrenomes como Da Rocha e Da Silva.',
+    'Respeito se mostra na gramática: com pessoas mais velhas ou que você não conhece, use “ẹ” (o “vocês” de respeito) no lugar de “o”: “Ẹ káàárọ̀” (bom dia), “Ẹ ṣé” (obrigado). Entre amigos da mesma idade, “Káàárọ̀” e “O ṣé” bastam.',
   ],
 };

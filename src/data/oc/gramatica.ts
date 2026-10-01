@@ -43,10 +43,10 @@ export const GRAMMAR_OC: GrammarTopic[] = [
     level: 'A1.1',
     title: 'Os pronomes e o verbo èsser',
     emoji: '🙋',
-    summary: 'Sete pronomes de sujeito, quase sempre dispensáveis porque o verbo já diz quem fala; o verbo «èsser» (ser) conjugado no presente.',
+    summary: 'Sete pronomes de sujeito, quase sempre dispensáveis porque o verbo já diz quem fala; o verbo “èsser” (ser) conjugado no presente.',
     sections: [
       {
-        text: 'Como no português, o pronome de sujeito costuma sumir: «soi de Brasil» já é «(eu) sou do Brasil». Usa-se o pronome sobretudo para dar ênfase ou evitar ambiguidade.',
+        text: 'Como no português, o pronome de sujeito costuma sumir: “soi de Brasil” já é “(eu) sou do Brasil”. Usa-se o pronome sobretudo para dar ênfase ou evitar ambiguidade.',
         table: {
           head: ['Pronome', 'Tradução', 'èsser (presente)'],
           rows: [
@@ -91,7 +91,7 @@ export const GRAMMAR_OC: GrammarTopic[] = [
       },
       {
         heading: 'Os possessivos',
-        text: 'O possessivo concorda com o substantivo que vem depois, não com o gênero de quem fala: «mon paire» (meu pai) mas «ma maire» (minha mãe) — o "meu"/"minha" muda com "pai"/"mãe", não com quem é o dono.',
+        text: 'O possessivo concorda com o substantivo que vem depois, não com o gênero de quem fala: “mon paire” (meu pai) mas “ma maire” (minha mãe) — o "meu"/"minha" muda com "pai"/"mãe", não com quem é o dono.',
         table: {
           head: ['Possuidor', 'Masculino', 'Feminino'],
           rows: [
@@ -116,7 +116,7 @@ export const GRAMMAR_OC: GrammarTopic[] = [
     level: 'A1.2',
     title: 'Aver e os verbos regulares em -ar',
     emoji: '🧭',
-    summary: 'O verbo «aver» (ter) no presente, e o padrão dos verbos regulares em -ar, como «parlar» (falar) e «aimar» (gostar).',
+    summary: 'O verbo “aver” (ter) no presente, e o padrão dos verbos regulares em -ar, como “parlar” (falar) e “aimar” (gostar).',
     sections: [
       {
         text: 'Os verbos terminados em -ar seguem, no presente, o padrão -i, -as, -a, -am, -atz, -an.',
@@ -138,7 +138,7 @@ export const GRAMMAR_OC: GrammarTopic[] = [
       },
       {
         heading: 'O verbo aver',
-        text: '«Aver» (ter) é irregular, mas muito usado — funciona como o português "ter", direto, sem a construção invertida de outras línguas vizinhas.',
+        text: '“Aver” (ter) é irregular, mas muito usado — funciona como o português "ter", direto, sem a construção invertida de outras línguas vizinhas.',
         table: {
           head: ['Pronome', 'aver (presente)'],
           rows: [

@@ -59,7 +59,7 @@ export const STORIES_OC: StorySeed[] = [
         emoji: '📱',
         choices: [
           { text: 'Òc, ai un fraire e una sòrre.', translation: 'Sim, tenho um irmão e uma irmã.', next: 'fraires' },
-          { text: 'Mon ostal es gran.', translation: 'Minha casa é grande.', wrong: 'Isso não responde se você tem irmãos. Use «ai» ou «non ai».' },
+          { text: 'Mon ostal es gran.', translation: 'Minha casa é grande.', wrong: 'Isso não responde se você tem irmãos. Use “ai” ou “non ai”.' },
         ],
       },
       fraires: {
@@ -68,7 +68,7 @@ export const STORIES_OC: StorySeed[] = [
         emoji: '🏠',
         choices: [
           { text: 'Mon ostal es pichon.', translation: 'Minha casa é pequena.', next: 'final_bo' },
-          { text: 'Ai vint ans.', translation: 'Tenho vinte anos.', wrong: 'Isso não descreve sua casa. Fale sobre ela: «mon ostal es…».' },
+          { text: 'Ai vint ans.', translation: 'Tenho vinte anos.', wrong: 'Isso não descreve sua casa. Fale sobre ela: “mon ostal es…”.' },
         ],
       },
       final_bo: {

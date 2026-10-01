@@ -8,12 +8,12 @@ export const ASL_MAIS: MiniLesson[] = [
     id: 'cores',
     title: 'Cores',
     emoji: '🎨',
-    intro: ['Várias cores da ASL usam a letra inicial do nome em inglês, sacudida no ar: B de «blue», G de «green», Y de «yellow». É um empréstimo da escrita, como a datilologia.'],
+    intro: ['Várias cores da ASL usam a letra inicial do nome em inglês, sacudida no ar: B de “blue”, G de “green”, Y de “yellow”. É um empréstimo da escrita, como a datilologia.'],
     items: [
       { term: 'RED', meaning: 'vermelho', how: 'O indicador passa de cima para baixo sobre os lábios, duas vezes.' },
-      { term: 'BLUE', meaning: 'azul', how: 'A mão em «B» (dedos juntos e esticados) sacode de leve, girando o punho.' },
-      { term: 'GREEN', meaning: 'verde', how: 'A mão em «G» sacode de leve, girando o punho.' },
-      { term: 'YELLOW', meaning: 'amarelo', how: 'A mão em «Y» (polegar e mínimo esticados) sacode de leve.' },
+      { term: 'BLUE', meaning: 'azul', how: 'A mão em “B” (dedos juntos e esticados) sacode de leve, girando o punho.' },
+      { term: 'GREEN', meaning: 'verde', how: 'A mão em “G” sacode de leve, girando o punho.' },
+      { term: 'YELLOW', meaning: 'amarelo', how: 'A mão em “Y” (polegar e mínimo esticados) sacode de leve.' },
       { term: 'BLACK', meaning: 'preto', how: 'O indicador passa de um lado para o outro na testa.' },
       { term: 'WHITE', meaning: 'branco', how: 'A mão aberta no peito se afasta fechando as pontas dos dedos.' },
     ],
@@ -30,7 +30,7 @@ export const ASL_MAIS: MiniLesson[] = [
     items: [
       { term: 'WHERE', meaning: 'onde', how: 'O indicador para cima balança de um lado para o outro.' },
       { term: 'WHEN', meaning: 'quando', how: 'O indicador faz um círculo em volta do indicador da outra mão e pousa na ponta dele.' },
-      { term: 'WHY', meaning: 'por quê', how: 'Os dedos tocam a testa e a mão se afasta virando um «Y».' },
+      { term: 'WHY', meaning: 'por quê', how: 'Os dedos tocam a testa e a mão se afasta virando um “Y”.' },
       { term: 'HOW', meaning: 'como', how: 'As duas mãos curvadas, juntas pelos nós dos dedos, giram para a frente e se abrem.' },
     ],
     quiz: [
@@ -49,11 +49,11 @@ export const TATIL_MAIS: MiniLesson[] = [
       'Agora junte as celas. As palavras são escritas letra por letra, com uma cela vazia entre elas; a maiúscula ganha o sinal de maiúscula (pontos 4-6) antes.',
       'Quem lê Braille com fluência passa os dedos das duas mãos pela linha e chega a mais de 100 palavras por minuto.',
     ],
-    items: ['casa', 'sol', 'mar', 'café', 'Brasil', 'Linu'].map((w) => ({ term: w, meaning: `a palavra «${w}»`, braille: brailleOf(w), how: `${brailleOf(w).split(' ').length} celas` })),
+    items: ['casa', 'sol', 'mar', 'café', 'Brasil', 'Linu'].map((w) => ({ term: w, meaning: `a palavra “${w}”`, braille: brailleOf(w), how: `${brailleOf(w).split(' ').length} celas` })),
     quiz: [
       { q: 'Que palavra é esta?', braille: brailleOf('sol'), options: ['sol', 'sal', 'mar'], answer: 0 },
       { q: 'Que palavra é esta?', braille: brailleOf('Brasil'), options: ['Brasil', 'brasa', 'Bahia'], answer: 0 },
-      { q: 'Quantas celas tem «Linu» (com maiúscula)?', options: ['4', '5', '6'], answer: 1, why: 'O sinal de maiúscula mais as 4 letras.' },
+      { q: 'Quantas celas tem “Linu” (com maiúscula)?', options: ['4', '5', '6'], answer: 1, why: 'O sinal de maiúscula mais as 4 letras.' },
     ],
   },
   {
@@ -74,7 +74,7 @@ export const ESPERANTO_MAIS: MiniLesson[] = [
     id: 'numeros',
     title: 'Números',
     emoji: '🔢',
-    intro: ['Com doze palavras (unu a naŭ, dek, cent e mil) você conta até mil: os números se juntam como no chinês. «dek du» é 12 (dez-dois), «dudek» é 20 (dois-dez). Com -a viram ordinais: unua (primeiro), dua (segundo).'],
+    intro: ['Com doze palavras (unu a naŭ, dek, cent e mil) você conta até mil: os números se juntam como no chinês. “dek du” é 12 (dez-dois), “dudek” é 20 (dois-dez). Com -a viram ordinais: unua (primeiro), dua (segundo).'],
     items: [
       { term: 'unu, du, tri', meaning: 'um, dois, três' },
       { term: 'kvar, kvin, ses', meaning: 'quatro, cinco, seis' },
@@ -86,8 +86,8 @@ export const ESPERANTO_MAIS: MiniLesson[] = [
     ],
     quiz: [
       { q: 'Como se diz 30?', options: ['tridek', 'dektri', 'trient'], answer: 0 },
-      { q: '«dek kvin» é…', options: ['15', '50', '45'], answer: 0 },
-      { q: 'Como se forma «terceiro»?', options: ['tria', 'trio', 'trie'], answer: 0, why: 'Ordinal é adjetivo: termina em -a.' },
+      { q: '“dek kvin” é…', options: ['15', '50', '45'], answer: 0 },
+      { q: 'Como se forma “terceiro”?', options: ['tria', 'trio', 'trie'], answer: 0, why: 'Ordinal é adjetivo: termina em -a.' },
     ],
   },
   {
@@ -104,15 +104,15 @@ export const ESPERANTO_MAIS: MiniLesson[] = [
       { term: 'familio', meaning: 'família' },
     ],
     quiz: [
-      { q: 'O que são «geavoj»?', options: ['Os avós (avô e avó)', 'Só as avós', 'Os bisavós'], answer: 0 },
-      { q: 'Como se diz «filha»?', options: ['filino', 'fila', 'malfilo'], answer: 0 },
+      { q: 'O que são “geavoj”?', options: ['Os avós (avô e avó)', 'Só as avós', 'Os bisavós'], answer: 0 },
+      { q: 'Como se diz “filha”?', options: ['filino', 'fila', 'malfilo'], answer: 0 },
     ],
   },
   {
     id: 'tempo',
     title: 'Dias e tempo',
     emoji: '📅',
-    intro: ['Os dias da semana terminam em -o, como todo substantivo. Com -n (ou com o -e de advérbio) viram «quando»: lundon ou lunde — na segunda-feira.'],
+    intro: ['Os dias da semana terminam em -o, como todo substantivo. Com -n (ou com o -e de advérbio) viram “quando”: lundon ou lunde — na segunda-feira.'],
     items: [
       { term: 'lundo, mardo, merkredo', meaning: 'segunda, terça, quarta' },
       { term: 'ĵaŭdo, vendredo', meaning: 'quinta, sexta' },
@@ -121,8 +121,8 @@ export const ESPERANTO_MAIS: MiniLesson[] = [
       { term: 'tago, semajno, monato, jaro', meaning: 'dia, semana, mês, ano' },
     ],
     quiz: [
-      { q: '«Mi venos morgaŭ» quer dizer…', options: ['Eu virei amanhã', 'Eu vim ontem', 'Eu venho hoje'], answer: 0 },
-      { q: 'Como se diz «no domingo» com o -n?', options: ['dimanĉon', 'dimanĉa', 'dimanĉoj'], answer: 0, why: 'Também se diz «dimanĉe», com o -e de advérbio.' },
+      { q: '“Mi venos morgaŭ” quer dizer…', options: ['Eu virei amanhã', 'Eu vim ontem', 'Eu venho hoje'], answer: 0 },
+      { q: 'Como se diz “no domingo” com o -n?', options: ['dimanĉon', 'dimanĉa', 'dimanĉoj'], answer: 0, why: 'Também se diz “dimanĉe”, com o -e de advérbio.' },
     ],
   },
   {
@@ -138,8 +138,8 @@ export const ESPERANTO_MAIS: MiniLesson[] = [
       { term: 'nova / malnova', meaning: 'novo / velho' },
     ],
     quiz: [
-      { q: 'Como fica «flores azuis»?', options: ['bluaj floroj', 'blua floroj', 'bluoj floraj'], answer: 0 },
-      { q: 'O contrário de «nova» é…', options: ['malnova', 'nenova', 'novega'], answer: 0 },
+      { q: 'Como fica “flores azuis”?', options: ['bluaj floroj', 'blua floroj', 'bluoj floraj'], answer: 0 },
+      { q: 'O contrário de “nova” é…', options: ['malnova', 'nenova', 'novega'], answer: 0 },
     ],
   },
   {
@@ -155,15 +155,15 @@ export const ESPERANTO_MAIS: MiniLesson[] = [
       { term: 'tranĉilo', meaning: 'faca (instrumento de cortar)' },
     ],
     quiz: [
-      { q: 'O que é «trinkejo»?', options: ['Um bar (lugar de beber)', 'Uma bebida', 'Um copo'], answer: 0 },
-      { q: '«Mi manĝas panon» quer dizer…', options: ['Eu como pão', 'O pão me come', 'Eu comi pão'], answer: 0 },
+      { q: 'O que é “trinkejo”?', options: ['Um bar (lugar de beber)', 'Uma bebida', 'Um copo'], answer: 0 },
+      { q: '“Mi manĝas panon” quer dizer…', options: ['Eu como pão', 'O pão me come', 'Eu comi pão'], answer: 0 },
     ],
   },
   {
     id: 'preposicoes',
     title: 'Preposições e direção',
     emoji: '🧭',
-    intro: ['Depois de preposição, o substantivo fica sem -n. Mas o -n volta para mostrar direção: «en la domo» (dentro da casa) × «en la domon» (para dentro da casa).'],
+    intro: ['Depois de preposição, o substantivo fica sem -n. Mas o -n volta para mostrar direção: “en la domo” (dentro da casa) × “en la domon” (para dentro da casa).'],
     items: [
       { term: 'en, sur, sub', meaning: 'em (dentro), sobre, sob' },
       { term: 'al, de', meaning: 'para, de' },
@@ -172,8 +172,8 @@ export const ESPERANTO_MAIS: MiniLesson[] = [
       { term: 'en la domon', meaning: 'para dentro da casa (para onde vai)' },
     ],
     quiz: [
-      { q: '«La kato saltas sur la tablon» quer dizer…', options: ['O gato pula para cima da mesa', 'O gato pula em cima da mesa (sem sair dela)'], answer: 0, why: 'O -n depois de «sur» mostra direção.' },
-      { q: 'Como se diz «café sem açúcar»?', options: ['kafo sen sukero', 'kafo kun sukero', 'kafo sur sukero'], answer: 0 },
+      { q: '“La kato saltas sur la tablon” quer dizer…', options: ['O gato pula para cima da mesa', 'O gato pula em cima da mesa (sem sair dela)'], answer: 0, why: 'O -n depois de “sur” mostra direção.' },
+      { q: 'Como se diz “café sem açúcar”?', options: ['kafo sen sukero', 'kafo kun sukero', 'kafo sur sukero'], answer: 0 },
     ],
   },
 ];
@@ -183,7 +183,7 @@ export const TOKI_PONA_MAIS: MiniLesson[] = [
     id: 'natureza',
     title: 'Bichos e natureza',
     emoji: '🌿',
-    intro: ['Os bichos se dividem em poucos grupos: soweli (mamífero terrestre), waso (ave), kala (peixe e bicho da água), pipi (inseto). Um gato é «soweli lili», um bicho pequeno — ou «soweli» mesmo, se o contexto ajudar.'],
+    intro: ['Os bichos se dividem em poucos grupos: soweli (mamífero terrestre), waso (ave), kala (peixe e bicho da água), pipi (inseto). Um gato é “soweli lili”, um bicho pequeno — ou “soweli” mesmo, se o contexto ajudar.'],
     items: [
       { term: 'soweli', meaning: 'mamífero, bicho de terra' },
       { term: 'waso', meaning: 'ave, pássaro' },
@@ -195,15 +195,15 @@ export const TOKI_PONA_MAIS: MiniLesson[] = [
       { term: 'ma', meaning: 'terra, lugar, país' },
     ],
     quiz: [
-      { q: 'Como se diz «peixe»?', options: ['kala', 'waso', 'soweli'], answer: 0 },
-      { q: 'O que é «kasi suli»?', options: ['Uma árvore (planta grande)', 'Um bicho grande', 'Um país grande'], answer: 0 },
+      { q: 'Como se diz “peixe”?', options: ['kala', 'waso', 'soweli'], answer: 0 },
+      { q: 'O que é “kasi suli”?', options: ['Uma árvore (planta grande)', 'Um bicho grande', 'Um país grande'], answer: 0 },
     ],
   },
   {
     id: 'cores',
     title: 'Cinco cores',
     emoji: '🎨',
-    intro: ['O toki pona tem cinco palavras de cor, e «laso» cobre o azul e o verde. Para mais precisão, combina-se: «laso kasi» (azul-planta) é verde; «loje jelo», laranja.'],
+    intro: ['O toki pona tem cinco palavras de cor, e “laso” cobre o azul e o verde. Para mais precisão, combina-se: “laso kasi” (azul-planta) é verde; “loje jelo”, laranja.'],
     items: [
       { term: 'loje', meaning: 'vermelho' },
       { term: 'jelo', meaning: 'amarelo' },
@@ -214,14 +214,14 @@ export const TOKI_PONA_MAIS: MiniLesson[] = [
     ],
     quiz: [
       { q: 'Quantas palavras de cor o toki pona tem?', options: ['5', '11', '2'], answer: 0 },
-      { q: 'Como dizer «laranja»?', options: ['loje jelo', 'laso walo', 'pimeja'], answer: 0 },
+      { q: 'Como dizer “laranja”?', options: ['loje jelo', 'laso walo', 'pimeja'], answer: 0 },
     ],
   },
   {
     id: 'corpo',
     title: 'Corpo e pessoas',
     emoji: '🧍',
-    intro: ['As partes do corpo também são verbos: «lukin» é olho e ver; «kute», orelha e ouvir.'],
+    intro: ['As partes do corpo também são verbos: “lukin” é olho e ver; “kute”, orelha e ouvir.'],
     items: [
       { term: 'lawa', meaning: 'cabeça; chefe, principal' },
       { term: 'luka', meaning: 'mão, braço; cinco' },
@@ -233,15 +233,15 @@ export const TOKI_PONA_MAIS: MiniLesson[] = [
       { term: 'meli / mije', meaning: 'mulher / homem' },
     ],
     quiz: [
-      { q: '«jan lawa» é…', options: ['o chefe (pessoa-cabeça)', 'uma cabeça', 'um médico'], answer: 0 },
-      { q: '«mi kute e kalama» quer dizer…', options: ['Eu ouço um som', 'Eu vejo um som', 'Eu faço um som'], answer: 0 },
+      { q: '“jan lawa” é…', options: ['o chefe (pessoa-cabeça)', 'uma cabeça', 'um médico'], answer: 0 },
+      { q: '“mi kute e kalama” quer dizer…', options: ['Eu ouço um som', 'Eu vejo um som', 'Eu faço um som'], answer: 0 },
     ],
   },
   {
     id: 'numeros',
     title: 'Contar com poucas palavras',
     emoji: '🔢',
-    intro: ['O jeito mais simples de contar usa só «wan» (1), «tu» (2) e «mute» (muitos). No sistema do livro oficial, somam-se as palavras: «luka» (a mão) vale 5, «mute» vale 20 e «ale» vale 100 — «tu tu» é 4, «luka wan» é 6.'],
+    intro: ['O jeito mais simples de contar usa só “wan” (1), “tu” (2) e “mute” (muitos). No sistema do livro oficial, somam-se as palavras: “luka” (a mão) vale 5, “mute” vale 20 e “ale” vale 100 — “tu tu” é 4, “luka wan” é 6.'],
     items: [
       { term: 'ala', meaning: 'nenhum, zero' },
       { term: 'wan', meaning: 'um' },
@@ -251,15 +251,15 @@ export const TOKI_PONA_MAIS: MiniLesson[] = [
       { term: 'ale', meaning: 'tudo, todos (ou 100, no sistema com luka)' },
     ],
     quiz: [
-      { q: 'Quanto é «luka tu»?', options: ['7', '3', '10'], answer: 0 },
-      { q: 'Como se diz «três»?', options: ['tu wan', 'wan wan wan wan', 'mute'], answer: 0 },
+      { q: 'Quanto é “luka tu”?', options: ['7', '3', '10'], answer: 0 },
+      { q: 'Como se diz “três”?', options: ['tu wan', 'wan wan wan wan', 'mute'], answer: 0 },
     ],
   },
   {
     id: 'acoes',
     title: 'Ações e lugares',
     emoji: '🏃',
-    intro: ['«lon» é estar em, existir: «mi lon tomo» — estou em casa. A cidade é «ma tomo», o lugar de casas.'],
+    intro: ['“lon” é estar em, existir: “mi lon tomo” — estou em casa. A cidade é “ma tomo”, o lugar de casas.'],
     items: [
       { term: 'lon', meaning: 'estar em, existir; em' },
       { term: 'kama', meaning: 'vir; tornar-se' },
@@ -271,8 +271,8 @@ export const TOKI_PONA_MAIS: MiniLesson[] = [
       { term: 'ma tomo', meaning: 'cidade' },
     ],
     quiz: [
-      { q: '«mi wile lape» quer dizer…', options: ['Eu quero dormir', 'Eu durmo muito', 'Eu sei dormir'], answer: 0 },
-      { q: 'O que é «ma tomo»?', options: ['Cidade', 'Casa', 'País'], answer: 0 },
+      { q: '“mi wile lape” quer dizer…', options: ['Eu quero dormir', 'Eu durmo muito', 'Eu sei dormir'], answer: 0 },
+      { q: 'O que é “ma tomo”?', options: ['Cidade', 'Casa', 'País'], answer: 0 },
     ],
   },
   {
@@ -280,8 +280,8 @@ export const TOKI_PONA_MAIS: MiniLesson[] = [
     title: 'Juntando: en e anu',
     emoji: '🔗',
     intro: [
-      '«en» junta vários sujeitos numa frase só: «jan en soweli li moku» — a pessoa e o bicho comem.',
-      '«anu» oferece uma alternativa, o «ou»: «sina wile e telo anu kili?» — você quer água ou fruta? (Vale saber: os limites exatos de uso do «anu» são um dos cantos menos consensuais da gramática — até gente da comunidade debate isso.)',
+      '“en” junta vários sujeitos numa frase só: “jan en soweli li moku” — a pessoa e o bicho comem.',
+      '“anu” oferece uma alternativa, o “ou”: “sina wile e telo anu kili?” — você quer água ou fruta? (Vale saber: os limites exatos de uso do “anu” são um dos cantos menos consensuais da gramática — até gente da comunidade debate isso.)',
     ],
     items: [
       { term: 'jan en soweli li moku.', meaning: 'A pessoa e o bicho comem.' },
@@ -291,7 +291,7 @@ export const TOKI_PONA_MAIS: MiniLesson[] = [
     ],
     quiz: [
       { q: 'Qual partícula junta dois sujeitos na mesma frase?', options: ['en', 'anu', 'pi'], answer: 0 },
-      { q: '«mi wile e moku anu telo» pergunta sobre…', options: ['comida ou água', 'comida e água', 'se você tem fome'], answer: 0 },
+      { q: '“mi wile e moku anu telo” pergunta sobre…', options: ['comida ou água', 'comida e água', 'se você tem fome'], answer: 0 },
     ],
   },
   {
@@ -299,18 +299,18 @@ export const TOKI_PONA_MAIS: MiniLesson[] = [
     title: 'A filosofia da simplicidade',
     emoji: '🧘',
     intro: [
-      'Sonja Lang criou o toki pona por volta de 2001: queria uma língua que «mapeasse a própria mente no papel» e simplificasse o pensamento. A palavra «pona» já mostra a ideia: quer dizer «bom» e «simples» ao mesmo tempo — no toki pona, simplificar é uma forma de bondade.',
-      'A língua reduz o vocabulário ao osso: em vez de uma palavra para cada veículo, «tawa» (ir, mover-se) serve para carro, ônibus e avião — o que muda é o modificador («tomo tawa», casa que anda, é carro).',
-      'Por anos, o toki pona foi chamado de «língua taoísta», porque Sonja Lang citou o Tao Te Ching como uma das inspirações no seu livro de 2014. Mas em dezembro de 2024 ela mesma disse que esse rótulo pegou pesado demais: a ligação começou como um comentário solto, não como um projeto de trazer o taoísmo para a língua.',
+      'Sonja Lang criou o toki pona por volta de 2001: queria uma língua que “mapeasse a própria mente no papel” e simplificasse o pensamento. A palavra “pona” já mostra a ideia: quer dizer “bom” e “simples” ao mesmo tempo — no toki pona, simplificar é uma forma de bondade.',
+      'A língua reduz o vocabulário ao osso: em vez de uma palavra para cada veículo, “tawa” (ir, mover-se) serve para carro, ônibus e avião — o que muda é o modificador (“tomo tawa”, casa que anda, é carro).',
+      'Por anos, o toki pona foi chamado de “língua taoísta”, porque Sonja Lang citou o Tao Te Ching como uma das inspirações no seu livro de 2014. Mas em dezembro de 2024 ela mesma disse que esse rótulo pegou pesado demais: a ligação começou como um comentário solto, não como um projeto de trazer o taoísmo para a língua.',
     ],
     items: [
       { term: 'pona', meaning: 'bom E simples ao mesmo tempo — a mesma palavra' },
-      { term: 'tawa', meaning: 'ir, mover-se; para (uma das palavras «coringa» da língua)' },
+      { term: 'tawa', meaning: 'ir, mover-se; para (uma das palavras “coringa” da língua)' },
       { term: '2001', meaning: 'ano em que Sonja Lang começou a criar o toki pona' },
     ],
     quiz: [
-      { q: 'Por que «pona» é uma palavra-chave da filosofia do toki pona?', options: ['Porque significa «bom» e «simples» ao mesmo tempo', 'Porque é a primeira palavra do dicionário', 'Porque só ela tem acento'], answer: 0 },
-      { q: 'O que Sonja Lang disse em dezembro de 2024 sobre o rótulo «língua taoísta»?', options: ['Que foi exagerado, veio de um comentário solto', 'Que é o objetivo central da língua', 'Que nunca leu o Tao Te Ching'], answer: 0 },
+      { q: 'Por que “pona” é uma palavra-chave da filosofia do toki pona?', options: ['Porque significa “bom” e “simples” ao mesmo tempo', 'Porque é a primeira palavra do dicionário', 'Porque só ela tem acento'], answer: 0 },
+      { q: 'O que Sonja Lang disse em dezembro de 2024 sobre o rótulo “língua taoísta”?', options: ['Que foi exagerado, veio de um comentário solto', 'Que é o objetivo central da língua', 'Que nunca leu o Tao Te Ching'], answer: 0 },
     ],
   },
   {
@@ -318,8 +318,8 @@ export const TOKI_PONA_MAIS: MiniLesson[] = [
     title: 'De pu a nimi sin: o vocabulário muda',
     emoji: '📖',
     intro: [
-      'O toki pona tem «camadas» de palavras, conforme a fonte: as do livro oficial de 2014 (chamado «pu»), as do Dicionário Oficial de 2021 («ku», que Sonja Lang escreveu ouvindo a comunidade), e as mais novas ainda, criadas pela comunidade depois disso e chamadas de «nimi sin» (palavras novas).',
-      'Isso gera debate de verdade: «tonsi» (para pessoas não-binárias), uma «nimi sin», já teve apoio da maioria numa pesquisa informal da comunidade, mesmo sem ser «oficial». Parte da comunidade acha que cada palavra nova ajuda a língua a crescer; outra parte acha que fugir das ~120 palavras originais trai a ideia de simplicidade do projeto.',
+      'O toki pona tem “camadas” de palavras, conforme a fonte: as do livro oficial de 2014 (chamado “pu”), as do Dicionário Oficial de 2021 (“ku”, que Sonja Lang escreveu ouvindo a comunidade), e as mais novas ainda, criadas pela comunidade depois disso e chamadas de “nimi sin” (palavras novas).',
+      'Isso gera debate de verdade: “tonsi” (para pessoas não-binárias), uma “nimi sin”, já teve apoio da maioria numa pesquisa informal da comunidade, mesmo sem ser “oficial”. Parte da comunidade acha que cada palavra nova ajuda a língua a crescer; outra parte acha que fugir das ~120 palavras originais trai a ideia de simplicidade do projeto.',
       'Desde o dicionário de 2021, a própria Sonja Lang passou a bola pra frente: disse que os livros dela são só um retrato do jeito que ela fala, e convidou a comunidade a continuar desenvolvendo a língua por conta própria.',
     ],
     items: [
@@ -329,7 +329,7 @@ export const TOKI_PONA_MAIS: MiniLesson[] = [
       { term: 'tonsi', meaning: 'pessoa não-binária (nimi sin, ainda debatida)' },
     ],
     quiz: [
-      { q: 'O que são «nimi sin»?', options: ['Palavras novas criadas pela comunidade depois dos livros oficiais', 'Erros de ortografia', 'Palavras do livro de 2014'], answer: 0 },
+      { q: 'O que são “nimi sin”?', options: ['Palavras novas criadas pela comunidade depois dos livros oficiais', 'Erros de ortografia', 'Palavras do livro de 2014'], answer: 0 },
       { q: 'Por que existe debate sobre aceitar palavras novas no toki pona?', options: ['Porque parte da comunidade acha que foge da ideia original de simplicidade', 'Porque são proibidas por lei', 'Porque Sonja Lang nunca comentou sobre isso'], answer: 0 },
     ],
   },
@@ -339,12 +339,12 @@ export const TOKI_PONA_MAIS: MiniLesson[] = [
     emoji: '💬',
     intro: [
       'O toki pona não parou nos livros: cresceu muito depois de 2014, puxado por vídeo-aulas e por comunidades no Discord — a própria Sonja Lang aponta esse período como uma virada importante para a língua.',
-      'Hoje o maior servidor de Discord da língua, o «ma pona pi toki pona», passa de 16 mil membros. Em pesquisas recentes com a comunidade, cerca de 80% dizem que sabem toki pona e mais da metade diz ter nível de conversação — números que vêm crescendo ano a ano.',
+      'Hoje o maior servidor de Discord da língua, o “ma pona pi toki pona”, passa de 16 mil membros. Em pesquisas recentes com a comunidade, cerca de 80% dizem que sabem toki pona e mais da metade diz ter nível de conversação — números que vêm crescendo ano a ano.',
       'Não é só conversa: a comunidade já traduziu partes da Bíblia para o toki pona e tocou um projeto de tradução do musical Hamilton, com mais de 60 pessoas envolvidas.',
     ],
     items: [
       { term: 'ma pona pi toki pona', meaning: 'o maior servidor de Discord da comunidade (16 mil+ membros)' },
-      { term: 'lipu pu', meaning: 'o livro oficial de 2014, «Toki Pona: The Language of Good»' },
+      { term: 'lipu pu', meaning: 'o livro oficial de 2014, “Toki Pona: The Language of Good”' },
       { term: 'lipu ku', meaning: 'o Dicionário Oficial de 2021' },
     ],
     quiz: [
@@ -357,8 +357,8 @@ export const TOKI_PONA_MAIS: MiniLesson[] = [
     title: 'Antes do verbo: os pré-verbos',
     emoji: '⏳',
     intro: [
-      'O toki pona não conjuga verbo — não tem sufixo de passado, futuro ou «estar fazendo». Em vez disso, usa palavrinhas soltas antes do verbo principal, os pré-verbos, para marcar começo, continuação, capacidade e vontade.',
-      '«mi kama sona e toki pona» é «eu estou aprendendo toki pona» (literalmente, «eu venho a saber toki pona») — «kama» marca que a ação está em processo. «mi ken pali» é «eu posso trabalhar» — «ken» marca capacidade ou permissão. Dois pré-verbos podem se juntar: «mi wile lukin e tomo» é «eu quero olhar a casa».',
+      'O toki pona não conjuga verbo — não tem sufixo de passado, futuro ou “estar fazendo”. Em vez disso, usa palavrinhas soltas antes do verbo principal, os pré-verbos, para marcar começo, continuação, capacidade e vontade.',
+      '“mi kama sona e toki pona” é “eu estou aprendendo toki pona” (literalmente, “eu venho a saber toki pona”) — “kama” marca que a ação está em processo. “mi ken pali” é “eu posso trabalhar” — “ken” marca capacidade ou permissão. Dois pré-verbos podem se juntar: “mi wile lukin e tomo” é “eu quero olhar a casa”.',
     ],
     items: [
       { term: 'awen', meaning: 'continuar (fazendo algo); ficar' },
@@ -371,8 +371,8 @@ export const TOKI_PONA_MAIS: MiniLesson[] = [
       { term: 'mi ken pali.', meaning: 'Eu posso trabalhar.' },
     ],
     quiz: [
-      { q: 'Como o toki pona marca que uma ação está «em processo de acontecer»?', options: ['Com o pré-verbo «kama» antes do verbo principal', 'Com um sufixo no verbo', 'Não dá para marcar isso'], answer: 0 },
-      { q: '«mi wile lukin e tomo» quer dizer…', options: ['Eu quero olhar a casa', 'Eu odeio a casa', 'Eu moro na casa'], answer: 0, why: '«wile» (querer) + «lukin» (olhar) juntos.' },
+      { q: 'Como o toki pona marca que uma ação está “em processo de acontecer”?', options: ['Com o pré-verbo “kama” antes do verbo principal', 'Com um sufixo no verbo', 'Não dá para marcar isso'], answer: 0 },
+      { q: '“mi wile lukin e tomo” quer dizer…', options: ['Eu quero olhar a casa', 'Eu odeio a casa', 'Eu moro na casa'], answer: 0, why: '“wile” (querer) + “lukin” (olhar) juntos.' },
     ],
   },
   {
@@ -393,9 +393,9 @@ export const TOKI_PONA_MAIS: MiniLesson[] = [
       { term: 'utala', meaning: 'briga, guerra, competição' },
     ],
     quiz: [
-      { q: '«ilo» quer dizer…', options: ['Ferramenta, instrumento', 'Amor', 'Erro'], answer: 0 },
-      { q: '«mi pilin pona» quer dizer…', options: ['Eu me sinto bem', 'Eu trabalho bem', 'Eu falo bem'], answer: 0 },
-      { q: 'O que é «nasin»?', options: ['Caminho, jeito de fazer as coisas', 'Uma ferramenta', 'Um sentimento'], answer: 0 },
+      { q: '“ilo” quer dizer…', options: ['Ferramenta, instrumento', 'Amor', 'Erro'], answer: 0 },
+      { q: '“mi pilin pona” quer dizer…', options: ['Eu me sinto bem', 'Eu trabalho bem', 'Eu falo bem'], answer: 0 },
+      { q: 'O que é “nasin”?', options: ['Caminho, jeito de fazer as coisas', 'Uma ferramenta', 'Um sentimento'], answer: 0 },
     ],
   },
   {
@@ -404,7 +404,7 @@ export const TOKI_PONA_MAIS: MiniLesson[] = [
     emoji: '⚖️',
     intro: [
       'Uma língua com tão poucas palavras tem um preço: no começo, a própria filosofia do toki pona reconhecia que ele não serviria bem para escrita técnica, sem perder um bocado de precisão. Falantes de hoje contestam esse limite e tentam mostrar que dá, sim, para discutir ciência e tecnologia em toki pona — só que de um jeito mais indireto.',
-      'A partícula «anu» (ou) também tem um cantinho polêmico: até onde uma alternativa introduzida por ela vale dentro da frase é uma das coisas em que a própria comunidade ainda debate os limites exatos.',
+      'A partícula “anu” (ou) também tem um cantinho polêmico: até onde uma alternativa introduzida por ela vale dentro da frase é uma das coisas em que a própria comunidade ainda debate os limites exatos.',
       'E o vocabulário vive uma tensão de três tempos: palavras de antes de 2014 que caíram em desuso (pré-pu), as do livro oficial de 2014 (pu) e as criadas depois pela comunidade (pós-pu, os nimi sin). As três convivem, e falantes diferentes escolhem lados diferentes sobre quanto aceitar do pós-pu.',
     ],
     items: [
@@ -414,7 +414,7 @@ export const TOKI_PONA_MAIS: MiniLesson[] = [
     ],
     quiz: [
       { q: 'O que a própria filosofia original do toki pona reconhecia como limite da língua?', options: ['Que ela não seria boa para escrita técnica sem perder precisão', 'Que ninguém conseguiria aprender', 'Que só serve para poesia'], answer: 0 },
-      { q: 'Por que existe tensão entre pré-pu, pu e pós-pu?', options: ['Porque são três «camadas» de vocabulário de épocas diferentes, e nem todo falante aceita a mais nova', 'Porque são três línguas diferentes', 'Porque «pu» significa «errado»'], answer: 0 },
+      { q: 'Por que existe tensão entre pré-pu, pu e pós-pu?', options: ['Porque são três “camadas” de vocabulário de épocas diferentes, e nem todo falante aceita a mais nova', 'Porque são três línguas diferentes', 'Porque “pu” significa “errado”'], answer: 0 },
     ],
   },
   {
@@ -422,7 +422,7 @@ export const TOKI_PONA_MAIS: MiniLesson[] = [
     title: 'Uma comunidade cheia de cantinhos',
     emoji: '🧩',
     intro: [
-      'Dentro da comunidade grande, existem grupos menores para interesses específicos: «ma nanpa» reúne quem gosta de ciências e matemática (STEM) falando em toki pona, «ma sewi» junta quem quer discutir religião e espiritualidade na língua, e a zine comunitária «lipu tenpo» tem mais de 400 pessoas no próprio Discord.',
+      'Dentro da comunidade grande, existem grupos menores para interesses específicos: “ma nanpa” reúne quem gosta de ciências e matemática (STEM) falando em toki pona, “ma sewi” junta quem quer discutir religião e espiritualidade na língua, e a zine comunitária “lipu tenpo” tem mais de 400 pessoas no próprio Discord.',
       'A adoção do sitelen pona (a escrita própria) também disparou: pesquisas com a comunidade mostram salto de 61% em 2021 para 85% em 2024 — cada vez mais gente escrevendo com os símbolos, não só com o alfabeto latino.',
     ],
     items: [
@@ -431,7 +431,7 @@ export const TOKI_PONA_MAIS: MiniLesson[] = [
       { term: 'lipu tenpo', meaning: 'zine (revista) feita pela comunidade, 400+ membros' },
     ],
     quiz: [
-      { q: 'O que é «ma nanpa»?', options: ['Uma comunidade de ciências e matemática em toki pona', 'Um livro de gramática', 'Uma cidade fictícia'], answer: 0 },
+      { q: 'O que é “ma nanpa”?', options: ['Uma comunidade de ciências e matemática em toki pona', 'Um livro de gramática', 'Uma cidade fictícia'], answer: 0 },
       { q: 'O que aconteceu com o uso do sitelen pona entre 2021 e 2024, segundo pesquisas da comunidade?', options: ['Saltou de 61% para 85% de adoção', 'Caiu pela metade', 'Ficou igual'], answer: 0 },
     ],
   },
@@ -440,12 +440,12 @@ export const TOKI_PONA_MAIS: MiniLesson[] = [
     title: 'sitelen pona: escrever com desenhos',
     emoji: '🖼️',
     intro: [
-      'Além do alfabeto latino, o toki pona tem uma escrita própria: o sitelen pona («desenho simples»), criada pela própria Sonja Lang e publicada em 2014. Cada palavra vira um único símbolo — não letras soltas, e sim um desenho por ideia.',
+      'Além do alfabeto latino, o toki pona tem uma escrita própria: o sitelen pona (“desenho simples”), criada pela própria Sonja Lang e publicada em 2014. Cada palavra vira um único símbolo — não letras soltas, e sim um desenho por ideia.',
       'Em dezembro de 2021, Sonja Lang liberou os desenhos originais do sitelen pona em licença CC0: são de domínio público, sem restrição nenhuma de uso — a comunidade já usou isso para criar fontes de computador com eles.',
-      'Por enquanto, o sitelen pona ainda não tem um lugar oficial dentro do Unicode (o padrão internacional de caracteres de computador): por isso, cada fonte usa uma área «privada» de códigos, e é preciso instalar a fonte certa para os símbolos aparecerem.',
+      'Por enquanto, o sitelen pona ainda não tem um lugar oficial dentro do Unicode (o padrão internacional de caracteres de computador): por isso, cada fonte usa uma área “privada” de códigos, e é preciso instalar a fonte certa para os símbolos aparecerem.',
     ],
     items: [
-      { term: 'sitelen pona', meaning: '«desenho simples»: a escrita logográfica do toki pona' },
+      { term: 'sitelen pona', meaning: '“desenho simples”: a escrita logográfica do toki pona' },
       { term: 'CC0 (2021)', meaning: 'a licença que Sonja Lang deu aos desenhos originais: domínio público' },
     ],
     quiz: [
@@ -469,15 +469,15 @@ export const INTERLINGUA_MAIS: MiniLesson[] = [
       { term: 'filio / filia', meaning: 'filho / filha' },
     ],
     quiz: [
-      { q: '«soror» quer dizer…', options: ['irmã', 'sogra', 'sorriso'], answer: 0 },
-      { q: 'Como se diz «oito»?', options: ['octo', 'otto', 'ocho'], answer: 0 },
+      { q: '“soror” quer dizer…', options: ['irmã', 'sogra', 'sorriso'], answer: 0 },
+      { q: 'Como se diz “oito”?', options: ['octo', 'otto', 'ocho'], answer: 0 },
     ],
   },
   {
     id: 'perguntas',
     title: 'Perguntas',
     emoji: '❓',
-    intro: ['As palavras de pergunta também são quase as do português: «Ubi es le station?» — onde fica a estação?'],
+    intro: ['As palavras de pergunta também são quase as do português: “Ubi es le station?” — onde fica a estação?'],
     items: [
       { term: 'que', meaning: 'o que' },
       { term: 'qui', meaning: 'quem' },
@@ -485,7 +485,7 @@ export const INTERLINGUA_MAIS: MiniLesson[] = [
       { term: 'quando', meaning: 'quando' },
       { term: 'proque', meaning: 'por que' },
     ],
-    quiz: [{ q: '«Qui es illa?» quer dizer…', options: ['Quem é ela?', 'O que é isso?', 'Onde ela está?'], answer: 0 }],
+    quiz: [{ q: '“Qui es illa?” quer dizer…', options: ['Quem é ela?', 'O que é isso?', 'Onde ela está?'], answer: 0 }],
   },
 ];
 
@@ -494,7 +494,7 @@ export const LOJBAN_MAIS: MiniLesson[] = [
     id: 'perguntas',
     title: 'Perguntas: xu e ma',
     emoji: '❓',
-    intro: ['«xu» no começo transforma a frase em pergunta de sim ou não: «xu do klama?» — você vai? «ma» fica no lugar do que se pergunta: «do klama ma?» — você vai aonde?'],
+    intro: ['“xu” no começo transforma a frase em pergunta de sim ou não: “xu do klama?” — você vai? “ma” fica no lugar do que se pergunta: “do klama ma?” — você vai aonde?'],
     items: [
       { term: 'xu do klama?', meaning: 'Você vai?' },
       { term: 'do klama ma?', meaning: 'Você vai aonde? (ma no lugar do destino)' },
@@ -502,15 +502,15 @@ export const LOJBAN_MAIS: MiniLesson[] = [
       { term: 'na go’i', meaning: 'não' },
     ],
     quiz: [
-      { q: 'Onde fica «ma» na pergunta?', options: ['No lugar da resposta', 'Sempre no começo', 'No fim'], answer: 0 },
-      { q: 'Como se responde «sim»?', options: ['go’i', 'coi', '.ui'], answer: 0 },
+      { q: 'Onde fica “ma” na pergunta?', options: ['No lugar da resposta', 'Sempre no começo', 'No fim'], answer: 0 },
+      { q: 'Como se responde “sim”?', options: ['go’i', 'coi', '.ui'], answer: 0 },
     ],
   },
   {
     id: 'tempo-numeros',
     title: 'Tempo e números',
     emoji: '⏱️',
-    intro: ['O tempo é opcional, com partículas: «pu» (antes), «ca» (agora), «ba» (depois). «mi pu klama» — eu fui. Os algarismos têm uma sílaba cada: «pa re ci» é 123.'],
+    intro: ['O tempo é opcional, com partículas: “pu” (antes), “ca” (agora), “ba” (depois). “mi pu klama” — eu fui. Os algarismos têm uma sílaba cada: “pa re ci” é 123.'],
     items: [
       { term: 'pu / ca / ba', meaning: 'passado / presente / futuro' },
       { term: 'mi ba klama', meaning: 'eu vou (depois)' },
@@ -518,8 +518,8 @@ export const LOJBAN_MAIS: MiniLesson[] = [
       { term: 'mu, xa, ze, bi, so', meaning: '5, 6, 7, 8, 9' },
     ],
     quiz: [
-      { q: '«mi pu citka» (citka = comer) quer dizer…', options: ['Eu comi', 'Eu vou comer', 'Eu como agora'], answer: 0 },
-      { q: 'Quanto é «re no»?', options: ['20', '2', '12'], answer: 0 },
+      { q: '“mi pu citka” (citka = comer) quer dizer…', options: ['Eu comi', 'Eu vou comer', 'Eu como agora'], answer: 0 },
+      { q: 'Quanto é “re no”?', options: ['20', '2', '12'], answer: 0 },
     ],
   },
 ];
@@ -529,7 +529,7 @@ export const KLINGON_MAIS: MiniLesson[] = [
     id: 'numeros',
     title: 'Contar como um klingon',
     emoji: '🔢',
-    intro: ['Os números vão de wa’ a Hut, e as dezenas se formam com «maH»: wa’maH é 10, cha’maH é 20.'],
+    intro: ['Os números vão de wa’ a Hut, e as dezenas se formam com “maH”: wa’maH é 10, cha’maH é 20.'],
     items: [
       { term: 'wa’, cha’, wej', meaning: 'um, dois, três' },
       { term: 'loS, vagh, jav', meaning: 'quatro, cinco, seis' },
@@ -537,8 +537,8 @@ export const KLINGON_MAIS: MiniLesson[] = [
       { term: 'wa’maH', meaning: 'dez' },
     ],
     quiz: [
-      { q: 'Como se diz «três»?', options: ['wej', 'loS', 'cha’'], answer: 0 },
-      { q: '«cha’maH» é…', options: ['20', '12', '2'], answer: 0 },
+      { q: 'Como se diz “três”?', options: ['wej', 'loS', 'cha’'], answer: 0 },
+      { q: '“cha’maH” é…', options: ['20', '12', '2'], answer: 0 },
     ],
   },
 ];
@@ -548,7 +548,7 @@ export const NAVI_MAIS: MiniLesson[] = [
     id: 'numeros',
     title: 'Contar de oito em oito',
     emoji: '🖐️',
-    intro: ['Os na’vi têm quatro dedos em cada mão, e por isso contam de oito em oito (base octal): «vol» é 8, o número de dedos das duas mãos.'],
+    intro: ['Os na’vi têm quatro dedos em cada mão, e por isso contam de oito em oito (base octal): “vol” é 8, o número de dedos das duas mãos.'],
     items: [
       { term: '’aw, mune, pxey', meaning: 'um, dois, três' },
       { term: 'tsìng, mrr', meaning: 'quatro, cinco' },
@@ -557,7 +557,7 @@ export const NAVI_MAIS: MiniLesson[] = [
     ],
     quiz: [
       { q: 'Por que os na’vi contam de oito em oito?', options: ['Têm quatro dedos em cada mão', 'Por causa das luas de Pandora', 'Por acaso'], answer: 0 },
-      { q: 'Como se diz «três»?', options: ['pxey', 'mune', 'vol'], answer: 0 },
+      { q: 'Como se diz “três”?', options: ['pxey', 'mune', 'vol'], answer: 0 },
     ],
   },
 ];
@@ -567,7 +567,7 @@ export const VALIRIANO_MAIS: MiniLesson[] = [
     id: 'palavras',
     title: 'Palavras de Valíria',
     emoji: '👑',
-    intro: ['O plural de «vala» (homem) é «valar», o mesmo de «Valar morghulis». O alto valiriano é, em Westeros, o que o latim foi na Europa: a língua dos livros e dos nobres.'],
+    intro: ['O plural de “vala” (homem) é “valar”, o mesmo de “Valar morghulis”. O alto valiriano é, em Westeros, o que o latim foi na Europa: a língua dos livros e dos nobres.'],
     items: [
       { term: 'vala / valar', meaning: 'homem / homens' },
       { term: 'ābra', meaning: 'mulher' },
@@ -575,7 +575,7 @@ export const VALIRIANO_MAIS: MiniLesson[] = [
       { term: 'zaldrīzes', meaning: 'dragão' },
     ],
     quiz: [
-      { q: 'Em «Valar morghulis», «valar» é…', options: ['homens (plural de vala)', 'dragões', 'reis'], answer: 0 },
+      { q: 'Em “Valar morghulis”, “valar” é…', options: ['homens (plural de vala)', 'dragões', 'reis'], answer: 0 },
       { q: 'O alto valiriano é para Westeros o que…', options: ['o latim foi para a Europa', 'o inglês é hoje'], answer: 0 },
     ],
   },
@@ -597,8 +597,8 @@ export const SOLRESOL_MAIS: MiniLesson[] = [
       { term: 'si = 7', meaning: 'violeta' },
     ],
     quiz: [
-      { q: '«si» (sim) se escreve com a cor…', options: ['violeta', 'vermelha', 'verde'], answer: 0 },
-      { q: 'Como se escreve «solresol» com números?', options: ['5-2-5', '1-2-3', '7-7-7'], answer: 0 },
+      { q: '“si” (sim) se escreve com a cor…', options: ['violeta', 'vermelha', 'verde'], answer: 0 },
+      { q: 'Como se escreve “solresol” com números?', options: ['5-2-5', '1-2-3', '7-7-7'], answer: 0 },
     ],
   },
   {
@@ -616,7 +616,7 @@ export const SOLRESOL_MAIS: MiniLesson[] = [
     ],
     quiz: [
       { q: 'Uma palavra de três sílabas com uma sílaba repetida costuma ser…', options: ['um número, dia da semana ou mês', 'um verbo', 'uma cor'], answer: 0 },
-      { q: '«solsolredo» segue o padrão de quatro sílabas repetidas, que indica…', options: ['uma doença', 'uma cor', 'um número'], answer: 0 },
+      { q: '“solsolredo” segue o padrão de quatro sílabas repetidas, que indica…', options: ['uma doença', 'uma cor', 'um número'], answer: 0 },
     ],
   },
   {
@@ -625,7 +625,7 @@ export const SOLRESOL_MAIS: MiniLesson[] = [
     emoji: '✏️',
     intro: [
       'Sudre não quis inventar sufixos: fez os acentos carregarem a gramática. O acento agudo marca o plural, e um sinal embaixo da letra marca o feminino.',
-      'Numa palavra de quatro sílabas, o lugar do acento circunflexo diz a classe gramatical. Veja a mesma raiz, «midofa», mudando de infinitivo a substantivo, adjetivo e advérbio só pela posição do acento.',
+      'Numa palavra de quatro sílabas, o lugar do acento circunflexo diz a classe gramatical. Veja a mesma raiz, “midofa”, mudando de infinitivo a substantivo, adjetivo e advérbio só pela posição do acento.',
     ],
     items: [
       { term: 'midofa', meaning: 'preferir (infinitivo, sem circunflexo)' },
@@ -635,7 +635,7 @@ export const SOLRESOL_MAIS: MiniLesson[] = [
     ],
     quiz: [
       { q: 'O que o acento agudo marca no solresol?', options: ['o plural', 'o feminino', 'um advérbio'], answer: 0 },
-      { q: 'Em «midofâ», o circunflexo na última sílaba marca…', options: ['um advérbio', 'um substantivo', 'o plural'], answer: 0 },
+      { q: 'Em “midofâ”, o circunflexo na última sílaba marca…', options: ['um advérbio', 'um substantivo', 'o plural'], answer: 0 },
     ],
   },
   {
@@ -649,10 +649,10 @@ export const SOLRESOL_MAIS: MiniLesson[] = [
     items: [
       { term: 'gesto de mão', meaning: 'um sinal para cada nota, parecido com os sinais de solfejo' },
       { term: 'bandeira', meaning: 'uma bandeira colorida para cada nota, como a sinalização naval' },
-      { term: 'instrumento', meaning: 'qualquer instrumento musical também «fala» solresol, tocando as notas' },
+      { term: 'instrumento', meaning: 'qualquer instrumento musical também “fala” solresol, tocando as notas' },
     ],
     quiz: [
-      { q: 'Além da voz, de que outro jeito dá para «falar» solresol de longe?', options: ['Com bandeiras, uma cor por nota', 'Não dá', 'Só por escrito'], answer: 0 },
+      { q: 'Além da voz, de que outro jeito dá para “falar” solresol de longe?', options: ['Com bandeiras, uma cor por nota', 'Não dá', 'Só por escrito'], answer: 0 },
       { q: 'Por que Sudre pensou o solresol em tantos meios (voz, cor, gesto, bandeira)?', options: ['Para qualquer pessoa poder se comunicar, mesmo sem ouvir ou ver', 'Só por estética', 'Para ser mais difícil de aprender'], answer: 0 },
     ],
   },
@@ -661,13 +661,13 @@ export const SOLRESOL_MAIS: MiniLesson[] = [
     title: 'De um sonho musical ao teclado de hoje',
     emoji: '📜',
     intro: [
-      'François Sudre (1787–1862) passou a vida inteira desenvolvendo o solresol a partir de 1827; o livro que fechou a língua, «Langue Musicale Universelle», só saiu em 1866, já depois de sua morte.',
+      'François Sudre (1787–1862) passou a vida inteira desenvolvendo o solresol a partir de 1827; o livro que fechou a língua, “Langue Musicale Universelle”, só saiu em 1866, já depois de sua morte.',
       'A língua fez sucesso no século 19: Victor Hugo, Lamartine, Alexander von Humboldt e o imperador Napoleão III elogiaram o projeto. Em 1902, o polonês Boleslas Gajewski publicou a gramática mais completa; ela só ganhou tradução para o inglês em 1997, feita por Stephen L. Rice.',
-      'Hoje o solresol não tem um código oficial da ISO — um pedido foi recusado em 2018 —, mas usa a marca informal «qso» ou «art-x-solresol». O linguista C. George Boeree criou uma variante mais fácil de pronunciar, chamada «Ses».',
+      'Hoje o solresol não tem um código oficial da ISO — um pedido foi recusado em 2018 —, mas usa a marca informal “qso” ou “art-x-solresol”. O linguista C. George Boeree criou uma variante mais fácil de pronunciar, chamada “Ses”.',
     ],
     items: [
       { term: '1827', meaning: 'ano em que Sudre começou a criar o solresol' },
-      { term: '1866', meaning: 'ano da publicação de «Langue Musicale Universelle», já depois da morte de Sudre' },
+      { term: '1866', meaning: 'ano da publicação de “Langue Musicale Universelle”, já depois da morte de Sudre' },
       { term: 'Boleslas Gajewski', meaning: 'autor da gramática de 1902, a mais completa do solresol' },
     ],
     quiz: [

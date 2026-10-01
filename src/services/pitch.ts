@@ -79,8 +79,8 @@ export function intonation(sentence: string, lang = 'ro'): Intonation {
   const s = sentence.trim();
   const wh = WH[lang] ?? WH.ro;
   if (!/[?？]$/.test(s)) return { contour: 'desce', tip: 'Afirmação: a voz desce no fim.' };
-  const bare = s.replace(/^[«"„¿¡]+/, '').replace(/\u0301/g, '');
-  if (wh.test(bare)) return { contour: 'desce', tip: lang === 'ru' ? 'Pergunta com «что, где, как…»: a voz desce no fim.' : lang === 'es' ? 'Pergunta com «qué, dónde, cómo…»: a voz desce no fim.' : lang === 'it' ? 'Pergunta com «che, dove, come…»: a voz desce no fim.' : lang === 'pt' ? 'Pergunta com «onde, como, quando…»: a voz desce no fim.' : 'Pergunta com «ce, unde, cum…»: a voz desce no fim.' };
+  const bare = s.replace(/^[“"„¿¡]+/, '').replace(/\u0301/g, '');
+  if (wh.test(bare)) return { contour: 'desce', tip: lang === 'ru' ? 'Pergunta com “что, где, как…”: a voz desce no fim.' : lang === 'es' ? 'Pergunta com “qué, dónde, cómo…”: a voz desce no fim.' : lang === 'it' ? 'Pergunta com “che, dove, come…”: a voz desce no fim.' : lang === 'pt' ? 'Pergunta com “onde, como, quando…”: a voz desce no fim.' : 'Pergunta com “ce, unde, cum…”: a voz desce no fim.' };
   if (lang === 'ru')
     return { contour: null, tip: 'Pergunta de sim/não em russo: a voz sobe forte na sílaba tônica da palavra-chave e cai logo depois (entonação IK-3). Imite o pico do modelo.' };
   return { contour: 'sobe', tip: 'Pergunta de sim/não: a voz sobe no fim.' };
@@ -201,7 +201,7 @@ export function melodySimilarity(user: (number | null)[], model: (number | null)
 /** O que a melodia ensina em cada idioma (o foco da sombra sonora). */
 export function melodyTip(lang: string): string {
   if (lang === 'sv' || lang === 'nb' || lang === 'nn')
-    return `No ${lang === 'sv' ? 'sueco' : 'norueguês'}, a melodia da palavra muda o sentido (acento tonal 1 × 2: ${lang === 'sv' ? '«anden», o pato × «anden», o espírito' : '«bønder», os fazendeiros × «bønner», os feijões'}). Siga os picos e vales da curva azul.`;
+    return `No ${lang === 'sv' ? 'sueco' : 'norueguês'}, a melodia da palavra muda o sentido (acento tonal 1 × 2: ${lang === 'sv' ? '“anden”, o pato × “anden”, o espírito' : '“bønder”, os fazendeiros × “bønner”, os feijões'}). Siga os picos e vales da curva azul.`;
   if (lang === 'ru') return 'No russo, a sílaba tônica é mais longa e mais alta que as outras: veja onde a curva azul sobe e suba junto.';
   if (lang === 'pt') return 'No português de Portugal as vogais átonas quase somem e a frase afirmativa desce no fim: acompanhe a curva azul.';
   return 'Acompanhe a curva azul: onde a voz do modelo sobe, suba junto; onde desce, desça.';

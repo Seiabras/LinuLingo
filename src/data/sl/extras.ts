@@ -33,7 +33,7 @@ export const SCENARIOS_SL: ScenarioSeed[] = [
     cefr: 'A1',
     register: 'informal',
     persona: 'Nina, sošolka s tečaja slovenščine',
-    description: 'Nina convida você para um café à beira do rio, em Liubliana. É uma conversa entre colegas: use «ti».',
+    description: 'Nina convida você para um café à beira do rio, em Liubliana. É uma conversa entre colegas: use “ti”.',
     turns: [
       {
         bot: 'Živjo! Kaj boš pil?',
@@ -58,7 +58,7 @@ export const ETYMOLOGY_SL: EtymologySeed[] = [
     root_word: '*bratrъ',
     origin_language: 'Protoeslavo',
     cognates: c(['la', 'frater'], ['en', 'brother'], ['ru', 'брат'], ['pt', 'frade, fraterno']),
-    evolution_note: 'A mesma palavra indo-europeia deu «frater» em latim (daí «fraterno» e «frade») e «brother» em inglês.',
+    evolution_note: 'A mesma palavra indo-europeia deu “frater” em latim (daí “fraterno” e “frade”) e “brother” em inglês.',
     transparent: false,
   },
   {
@@ -66,7 +66,7 @@ export const ETYMOLOGY_SL: EtymologySeed[] = [
     root_word: '*sestra',
     origin_language: 'Protoeslavo',
     cognates: c(['la', 'soror'], ['en', 'sister'], ['de', 'Schwester'], ['pt', 'sororidade']),
-    evolution_note: 'Vem da palavra indo-europeia para «irmã», a mesma do latim «soror» e do inglês «sister». O português a guardou em palavras cultas, como «sororidade».',
+    evolution_note: 'Vem da palavra indo-europeia para “irmã”, a mesma do latim “soror” e do inglês “sister”. O português a guardou em palavras cultas, como “sororidade”.',
     transparent: false,
   },
   {
@@ -74,7 +74,7 @@ export const ETYMOLOGY_SL: EtymologySeed[] = [
     root_word: '*voda',
     origin_language: 'Protoeslavo',
     cognates: c(['ru', 'вода'], ['en', 'water'], ['de', 'Wasser'], ['pt', 'hidro- (do grego hýdōr)']),
-    evolution_note: 'Vem da mesma raiz indo-europeia do inglês «water» e do grego «hýdōr», que o português conhece em «hidráulica» e «hidratar».',
+    evolution_note: 'Vem da mesma raiz indo-europeia do inglês “water” e do grego “hýdōr”, que o português conhece em “hidráulica” e “hidratar”.',
     transparent: false,
   },
   {
@@ -82,7 +82,7 @@ export const ETYMOLOGY_SL: EtymologySeed[] = [
     root_word: '*tri',
     origin_language: 'Protoeslavo',
     cognates: c(['pt', 'três'], ['la', 'tres'], ['ru', 'три'], ['en', 'three']),
-    evolution_note: 'Os números baixos são dos parentescos mais fáceis de ver: «tri», «três» e «three» vêm todos do indo-europeu.',
+    evolution_note: 'Os números baixos são dos parentescos mais fáceis de ver: “tri”, “três” e “three” vêm todos do indo-europeu.',
     transparent: true,
   },
   {
@@ -90,7 +90,7 @@ export const ETYMOLOGY_SL: EtymologySeed[] = [
     root_word: '*melko',
     origin_language: 'Protoeslavo',
     cognates: c(['ru', 'молоко'], ['pl', 'mleko'], ['cs', 'mléko']),
-    evolution_note: 'Nas línguas eslavas do sul e do oeste, o grupo antigo «el» entre consoantes virou «le» (mleko); nas do leste, virou «olo» (молоко́). É um dos jeitos mais fáceis de reconhecer de que ramo vem uma palavra eslava.',
+    evolution_note: 'Nas línguas eslavas do sul e do oeste, o grupo antigo “el” entre consoantes virou “le” (mleko); nas do leste, virou “olo” (молоко́). É um dos jeitos mais fáceis de reconhecer de que ramo vem uma palavra eslava.',
     transparent: false,
   },
 ];

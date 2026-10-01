@@ -11,7 +11,7 @@ export const RECURSOS_ID: LanguageResources = {
       flag: '🇮🇩',
       main: true,
       levels:
-        'Uma prova única, com nota até 800 em sete faixas: Terbatas, Marginal, Semenjana, Madya, Unggul, Sangat Unggul e Istimewa (de «limitado» a «excepcional»). Vale para nativos e estrangeiros; a equivalência com o QECR é aproximada.',
+        'Uma prova única, com nota até 800 em sete faixas: Terbatas, Marginal, Semenjana, Madya, Unggul, Sangat Unggul e Istimewa (de “limitado” a “excepcional”). Vale para nativos e estrangeiros; a equivalência com o QECR é aproximada.',
       cefr: ['A2', 'C2'],
       format: [
         'Mendengarkan (compreensão oral): diálogos e falas gravados, com questões de múltipla escolha — até 30 min',
@@ -134,7 +134,7 @@ export const RECURSOS_ID: LanguageResources = {
       by: 'Kamila Andini e Ifa Isfansyah',
       year: '2023',
       level: 'B2',
-      why: 'Minissérie de época da Netflix (em inglês, «Cigarette Girl») sobre a indústria do kretek, o cigarro de cravo, entre os anos 1960 e 2000. Baseada no romance de Ratih Kumala, com um indonésio cuidado e muito vocabulário de família e de ofício.',
+      why: 'Minissérie de época da Netflix (em inglês, “Cigarette Girl”) sobre a indústria do kretek, o cigarro de cravo, entre os anos 1960 e 2000. Baseada no romance de Ratih Kumala, com um indonésio cuidado e muito vocabulário de família e de ofício.',
     },
     {
       kind: 'livro',
@@ -166,7 +166,7 @@ export const RECURSOS_ID: LanguageResources = {
       by: 'Eka Kurniawan',
       year: '2002',
       level: 'C1',
-      why: 'Realismo mágico que atravessa o colonialismo, a ocupação japonesa e 1965 pela história de uma família (em inglês, «Beauty Is a Wound»). Eka é um dos autores indonésios mais traduzidos hoje.',
+      why: 'Realismo mágico que atravessa o colonialismo, a ocupação japonesa e 1965 pela história de uma família (em inglês, “Beauty Is a Wound”). Eka é um dos autores indonésios mais traduzidos hoje.',
     },
     {
       kind: 'livro',
@@ -182,14 +182,14 @@ export const RECURSOS_ID: LanguageResources = {
       by: 'Chairil Anwar',
       year: '1949',
       level: 'B2',
-      why: 'Poemas do maior nome da poesia moderna indonésia, como «Aku» («Eu»). Versos curtos, ótimos para ler em voz alta e decorar.',
+      why: 'Poemas do maior nome da poesia moderna indonésia, como “Aku” (“Eu”). Versos curtos, ótimos para ler em voz alta e decorar.',
     },
     {
       kind: 'musica',
       title: 'Begadang',
       by: 'Rhoma Irama',
       level: 'A2',
-      why: 'Do «rei do dangdut», o gênero que mistura música malaia, indiana e árabe e toca em toda festa. A letra repete muito e dá um conselho: não virar a noite acordado sem motivo.',
+      why: 'Do “rei do dangdut”, o gênero que mistura música malaia, indiana e árabe e toca em toda festa. A letra repete muito e dá um conselho: não virar a noite acordado sem motivo.',
     },
     {
       kind: 'musica',
@@ -242,7 +242,7 @@ export const RECURSOS_ID: LanguageResources = {
       title: 'Kok Bisa?',
       by: 'Kok Bisa?',
       level: 'B1',
-      why: 'Animações curtas que explicam ciência, história e sociedade num indonésio claro e padrão. O nome quer dizer «Como pode?».',
+      why: 'Animações curtas que explicam ciência, história e sociedade num indonésio claro e padrão. O nome quer dizer “Como pode?”.',
     },
     {
       kind: 'noticias',
@@ -263,21 +263,21 @@ export const RECURSOS_ID: LanguageResources = {
       title: 'KBBI Daring',
       by: 'Badan Bahasa',
       level: 'A1',
-      why: 'O dicionário oficial da língua, gratuito e online. As palavras derivadas ficam agrupadas pela raiz: «membaca» e «pembaca» aparecem junto de «baca».',
+      why: 'O dicionário oficial da língua, gratuito e online. As palavras derivadas ficam agrupadas pela raiz: “membaca” e “pembaca” aparecem junto de “baca”.',
     },
     {
       kind: 'ferramenta',
       title: 'BIPA Daring',
       by: 'Badan Bahasa',
       level: 'A1',
-      why: 'Portal gratuito do governo indonésio para quem aprende a língua, com cursos online e os livros didáticos «Sahabatku Indonesia».',
+      why: 'Portal gratuito do governo indonésio para quem aprende a língua, com cursos online e os livros didáticos “Sahabatku Indonesia”.',
     },
     {
       kind: 'ferramenta',
       title: 'Forvo',
       by: 'Forvo',
       level: 'A1',
-      why: 'Palavras gravadas por falantes nativos; útil para o «e» abafado e para os sons «ng» e «ny».',
+      why: 'Palavras gravadas por falantes nativos; útil para o “e” abafado e para os sons “ng” e “ny”.',
     },
     {
       kind: 'hq',
@@ -297,11 +297,11 @@ export const RECURSOS_ID: LanguageResources = {
     },
   ],
   tips: [
-    'O indonésio não conjuga verbos: «saya makan», «dia makan», «kami makan» — «makan» (comer) nunca muda. O tempo vem de palavras como «sudah» (já), «sedang» (fazendo agora), «akan» (vai) e «belum» (ainda não), ou só do contexto.',
-    'O trabalho está nos afixos: «baca» (ler) vira «membaca» (ler), «dibaca» (é lido), «bacaan» (leitura) e «pembaca» (leitor). Aprenda a achar a raiz — é por ela que o KBBI organiza as palavras.',
-    'Livro e jornal usam «saya», «tidak» e «sudah»; na rua de Jacarta você vai ouvir «gue» e «lo», «nggak» e «udah». Estude o padrão primeiro e use séries e canais para reconhecer o coloquial.',
-    'A escrita é quase fonética, mas o «c» soa «tch» («cinta» = «tchinta»), o «e» muitas vezes é um som abafado, como em «besar», e «ng» e «ny» são um som só. O plural costuma ser a palavra repetida («anak-anak», crianças) — ou nem aparece.',
-    'Você já conhece algumas palavras: o português deixou no indonésio «meja» (mesa), «sepatu» (sapato), «jendela» (janela), «bendera» (bandeira), «keju» (queijo), «gereja» (igreja) e «Minggu» (domingo), herança da presença portuguesa nas ilhas desde o século XVI.',
+    'O indonésio não conjuga verbos: “saya makan”, “dia makan”, “kami makan” — “makan” (comer) nunca muda. O tempo vem de palavras como “sudah” (já), “sedang” (fazendo agora), “akan” (vai) e “belum” (ainda não), ou só do contexto.',
+    'O trabalho está nos afixos: “baca” (ler) vira “membaca” (ler), “dibaca” (é lido), “bacaan” (leitura) e “pembaca” (leitor). Aprenda a achar a raiz — é por ela que o KBBI organiza as palavras.',
+    'Livro e jornal usam “saya”, “tidak” e “sudah”; na rua de Jacarta você vai ouvir “gue” e “lo”, “nggak” e “udah”. Estude o padrão primeiro e use séries e canais para reconhecer o coloquial.',
+    'A escrita é quase fonética, mas o “c” soa “tch” (“cinta” = “tchinta”), o “e” muitas vezes é um som abafado, como em “besar”, e “ng” e “ny” são um som só. O plural costuma ser a palavra repetida (“anak-anak”, crianças) — ou nem aparece.',
+    'Você já conhece algumas palavras: o português deixou no indonésio “meja” (mesa), “sepatu” (sapato), “jendela” (janela), “bendera” (bandeira), “keju” (queijo), “gereja” (igreja) e “Minggu” (domingo), herança da presença portuguesa nas ilhas desde o século XVI.',
     'Para estudar na Indonésia, a bolsa Darmasiswa, do governo indonésio, leva estrangeiros para um ano de língua e cultura em universidades do país; a Embaixada da Indonésia em Brasília informa sobre a seleção.',
   ],
 };

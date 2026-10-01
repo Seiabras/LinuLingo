@@ -39,5 +39,5 @@ export const ESLOVENO: LanguagePack = {
   phrases: { hi: 'Živjo!', thanks: 'Hvala!', letsStart: ['Začnimo!', 'Vamos começar!'] },
   formalMarkers: 'vi (com o verbo no plural, para uma pessoa só), prosim, oprostite',
   cognateNote:
-    'O esloveno é uma língua eslava meridional, prima distante do português: os dois vêm do indo-europeu. Por isso «tri» lembra «três». Cada palavra mostra a raiz e os parentes em outras línguas.',
+    'O esloveno é uma língua eslava meridional, prima distante do português: os dois vêm do indo-europeu. Por isso “tri” lembra “três”. Cada palavra mostra a raiz e os parentes em outras línguas.',
 };

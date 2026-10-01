@@ -41,7 +41,7 @@ function pieces(text: string, glossary: [string, string][]): Piece[] {
   if (last < paragraph.length) out.push({ text: paragraph.slice(last) });
   // a pontuação logo depois de uma palavra destacada vai junto dela (senão o ponto quebra sozinho de linha)
   for (let i = 0; i < out.length - 1; i++) {
-    const m = out[i].gloss && /^[.,;:!?»)…]+/.exec(out[i + 1].text);
+    const m = out[i].gloss && /^[.,;:!?”)…]+/.exec(out[i + 1].text);
     if (m) {
       out[i].tail = m[0];
       out[i + 1] = { text: out[i + 1].text.slice(m[0].length) };
@@ -130,7 +130,7 @@ export default function ArticleScreen() {
                 {pieces(p, article.glossary).map((pc, k) =>
                   pc.gloss ? (
                     <Text key={k}>
-                      {/* «link» vira um elemento em linha no navegador; «button» vira inline-block e deixa o ponto quebrar de linha */}
+                      {/* “link” vira um elemento em linha no navegador; “button” vira inline-block e deixa o ponto quebrar de linha */}
                       <Text
                         accessibilityRole="link"
                         accessibilityLabel={`Palavra nova: ${pc.text}`}

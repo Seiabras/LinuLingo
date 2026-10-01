@@ -45,5 +45,5 @@ export const UCRANIANO: LanguagePack = {
   phrases: { hi: 'Приві́т!', thanks: 'Дя́кую!', letsStart: ['Почина́ймо!', 'Vamos começar!'] },
   formalMarkers: 'ви (com o verbo no plural, para uma pessoa só), будь ла́ска, ви́бачте',
   cognateNote:
-    'O ucraniano é uma língua eslava oriental, prima distante do português: os dois vêm do indo-europeu. Por isso «три» lembra «três» e «дім» lembra «doméstico». Cada palavra mostra a raiz e os parentes em outras línguas.',
+    'O ucraniano é uma língua eslava oriental, prima distante do português: os dois vêm do indo-europeu. Por isso “три” lembra “três” e “дім” lembra “doméstico”. Cada palavra mostra a raiz e os parentes em outras línguas.',
 };

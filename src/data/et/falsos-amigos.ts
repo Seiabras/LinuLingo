@@ -8,7 +8,7 @@ export const FALSE_FRIENDS_ET: FalseFriend[] = [
   // ——— os pronomes e as palavrinhas: caem em qualquer frase ———
   {
     word: 'tema',
-    means: 'ele ou ela: o estoniano não tem gênero, e um pronome só serve para os dois (a forma curta é «ta»)',
+    means: 'ele ou ela: o estoniano não tem gênero, e um pronome só serve para os dois (a forma curta é “ta”)',
     looksLike: 'tema (assunto)',
     forThat: 'teema',
     emoji: '🧑',
@@ -16,7 +16,7 @@ export const FALSE_FRIENDS_ET: FalseFriend[] = [
   },
   {
     word: 'mina',
-    means: 'eu (a forma longa, de ênfase; a curta é «ma»)',
+    means: 'eu (a forma longa, de ênfase; a curta é “ma”)',
     looksLike: 'mina (de ouro, de carvão)',
     forThat: 'kaevandus',
     emoji: '🙋',
@@ -24,7 +24,7 @@ export const FALSE_FRIENDS_ET: FalseFriend[] = [
   },
   {
     word: 'sina',
-    means: 'você (a forma longa, de ênfase; a curta é «sa»)',
+    means: 'você (a forma longa, de ênfase; a curta é “sa”)',
     looksLike: 'sina (destino)',
     forThat: 'saatus',
     emoji: '👉',
@@ -32,7 +32,7 @@ export const FALSE_FRIENDS_ET: FalseFriend[] = [
   },
   {
     word: 'meie',
-    means: 'nós; e também «nosso, nossa», porque o genitivo tem a mesma forma',
+    means: 'nós; e também “nosso, nossa”, porque o genitivo tem a mesma forma',
     looksLike: 'meia',
     forThat: 'sokk',
     emoji: '👨‍👩‍👧',
@@ -40,8 +40,8 @@ export const FALSE_FRIENDS_ET: FalseFriend[] = [
   },
   {
     word: 'te',
-    means: 'vocês; e também o «senhor, a senhora» de cortesia (a forma longa é «teie»)',
-    looksLike: 'te (pronome: «eu te amo»)',
+    means: 'vocês; e também o “senhor, a senhora” de cortesia (a forma longa é “teie”)',
+    looksLike: 'te (pronome: “eu te amo”)',
     forThat: 'sind, sulle',
     emoji: '🎩',
     example: ['Kas te räägite inglise keelt?', 'O senhor fala inglês?'],
@@ -64,7 +64,7 @@ export const FALSE_FRIENDS_ET: FalseFriend[] = [
   },
   {
     word: 'ei',
-    means: 'não; é também a negação dos verbos, que nunca muda: «ma ei tea», «nad ei tea»',
+    means: 'não; é também a negação dos verbos, que nunca muda: “ma ei tea”, “nad ei tea”',
     looksLike: 'ei! (para chamar alguém)',
     forThat: 'hei!, kuule!',
     emoji: '🙅',
@@ -97,7 +97,7 @@ export const FALSE_FRIENDS_ET: FalseFriend[] = [
   {
     word: 'homme',
     means: 'amanhã',
-    looksLike: 'homem (e «homme», homem em francês)',
+    looksLike: 'homem (e “homme”, homem em francês)',
     forThat: 'mees',
     emoji: '📅',
     example: ['Homme läheme Pärnusse.', 'Amanhã a gente vai para Pärnu.'],
@@ -130,7 +130,7 @@ export const FALSE_FRIENDS_ET: FalseFriend[] = [
   },
   {
     word: 'sai',
-    means: 'pão branco, de trigo (o escuro, de centeio, é «leib»); e também «conseguiu», o passado de «saama»',
+    means: 'pão branco, de trigo (o escuro, de centeio, é “leib”); e também “conseguiu”, o passado de “saama”',
     looksLike: 'sai (do verbo sair)',
     forThat: 'läheb välja',
     emoji: '🍞',
@@ -146,7 +146,7 @@ export const FALSE_FRIENDS_ET: FalseFriend[] = [
   },
   {
     word: 'uba',
-    means: 'fava, feijão (no plural, «oad»)',
+    means: 'fava, feijão (no plural, “oad”)',
     looksLike: 'uva',
     forThat: 'viinamari',
     emoji: '🫘',
@@ -178,7 +178,7 @@ export const FALSE_FRIENDS_ET: FalseFriend[] = [
   },
   {
     word: 'viin',
-    means: 'vodca, aguardente (e, com maiúscula, «Viin» é Viena)',
+    means: 'vodca, aguardente (e, com maiúscula, “Viin” é Viena)',
     looksLike: 'vinho',
     forThat: 'vein',
     emoji: '🍸',
@@ -210,7 +210,7 @@ export const FALSE_FRIENDS_ET: FalseFriend[] = [
   },
   {
     word: 'kommi',
-    means: 'bala, docinho (no plural, «kommid»)',
+    means: 'bala, docinho (no plural, “kommid”)',
     looksLike: 'comi',
     forThat: 'sõin',
     emoji: '🍬',
@@ -228,7 +228,7 @@ export const FALSE_FRIENDS_ET: FalseFriend[] = [
   },
   {
     word: 'lammas',
-    means: 'ovelha, carneiro (no plural, «lambad»)',
+    means: 'ovelha, carneiro (no plural, “lambad”)',
     looksLike: 'lhamas',
     forThat: 'laamad',
     emoji: '🐑',
@@ -244,8 +244,8 @@ export const FALSE_FRIENDS_ET: FalseFriend[] = [
   },
   {
     word: 'part',
-    means: 'pato (no plural, «pardid»)',
-    looksLike: 'parte (e «part», em inglês)',
+    means: 'pato (no plural, “pardid”)',
+    looksLike: 'parte (e “part”, em inglês)',
     forThat: 'osa',
     emoji: '🦆',
     example: ['Pargi tiigis ujuvad pardid.', 'No lago do parque nadam patos.'],
@@ -269,14 +269,14 @@ export const FALSE_FRIENDS_ET: FalseFriend[] = [
   {
     word: 'ida',
     means: 'leste, oriente',
-    looksLike: 'ida (a de «ida e volta»)',
+    looksLike: 'ida (a de “ida e volta”)',
     forThat: 'minek',
     emoji: '🧭',
     example: ['Narva asub Eesti idapiiril.', 'Narva fica na fronteira leste da Estônia.'],
   },
   {
     word: 'soo',
-    means: 'pântano, brejo; daí o nome de Soomaa, «a terra dos pântanos»',
+    means: 'pântano, brejo; daí o nome de Soomaa, “a terra dos pântanos”',
     looksLike: 'só',
     forThat: 'ainult',
     emoji: '🌾',
@@ -334,7 +334,7 @@ export const FALSE_FRIENDS_ET: FalseFriend[] = [
   },
   {
     word: 'lava',
-    means: 'palco (o grande palco da festa da canção, em Tallinn, é o «laululava»)',
+    means: 'palco (o grande palco da festa da canção, em Tallinn, é o “laululava”)',
     looksLike: 'lava (de vulcão)',
     forThat: 'laava',
     emoji: '🎭',

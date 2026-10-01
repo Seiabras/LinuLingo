@@ -11,7 +11,7 @@ export const FALSE_FRIENDS_KO: FalseFriend[] = [
   {
     word: '파이팅',
     means: 'força!, vamos lá! (grito de incentivo)',
-    looksLike: 'briga, luta (o «fighting» do inglês)',
+    looksLike: 'briga, luta (o “fighting” do inglês)',
     forThat: '싸움; 격투',
     emoji: '💪',
     example: ['내일 시험이지? 파이팅!', 'A prova é amanhã, né? Força!'],
@@ -35,7 +35,7 @@ export const FALSE_FRIENDS_KO: FalseFriend[] = [
   {
     word: '커닝',
     means: 'cola (na prova)',
-    looksLike: 'esperteza, astúcia (o «cunning» do inglês)',
+    looksLike: 'esperteza, astúcia (o “cunning” do inglês)',
     forThat: '꾀; 잔꾀',
     emoji: '📝',
     example: ['시험 볼 때 커닝하면 안 돼요.', 'Não pode colar na prova.'],
@@ -43,7 +43,7 @@ export const FALSE_FRIENDS_KO: FalseFriend[] = [
   {
     word: '사인',
     means: 'autógrafo; assinatura',
-    looksLike: 'placa, letreiro (o «sign» do inglês)',
+    looksLike: 'placa, letreiro (o “sign” do inglês)',
     forThat: '간판; 표지판',
     emoji: '✍️',
     example: ['좋아하는 가수한테 사인을 받았어요!', 'Consegui o autógrafo do meu cantor favorito!'],
@@ -51,7 +51,7 @@ export const FALSE_FRIENDS_KO: FalseFriend[] = [
   {
     word: '스킨십',
     means: 'contato físico carinhoso (abraço, mão dada, beijo)',
-    looksLike: 'cuidados com a pele (o «skin» do inglês)',
+    looksLike: 'cuidados com a pele (o “skin” do inglês)',
     forThat: '피부 관리',
     emoji: '🤗',
     example: ['우리 가족은 스킨십이 많아요.', 'Na minha família a gente se abraça e se beija muito.'],
@@ -59,7 +59,7 @@ export const FALSE_FRIENDS_KO: FalseFriend[] = [
   {
     word: '콘센트',
     means: 'tomada (na parede)',
-    looksLike: 'consentimento (o «consent» do inglês)',
+    looksLike: 'consentimento (o “consent” do inglês)',
     forThat: '동의',
     emoji: '🔌',
     example: ['휴대폰 충전하게 콘센트 좀 써도 돼요?', 'Posso usar a tomada para carregar o celular?'],
@@ -75,7 +75,7 @@ export const FALSE_FRIENDS_KO: FalseFriend[] = [
   {
     word: '샤프',
     means: 'lapiseira',
-    looksLike: 'afiado, esperto (o «sharp» do inglês)',
+    looksLike: 'afiado, esperto (o “sharp” do inglês)',
     forThat: '날카롭다; 똑똑하다',
     emoji: '✏️',
     example: ['샤프심 있어요? 제 건 다 썼어요.', 'Você tem grafite de lapiseira? O meu acabou.'],
@@ -107,7 +107,7 @@ export const FALSE_FRIENDS_KO: FalseFriend[] = [
   {
     word: '핸들',
     means: 'volante (do carro); guidão (da bicicleta)',
-    looksLike: 'alça, maçaneta (o «handle» do inglês)',
+    looksLike: 'alça, maçaneta (o “handle” do inglês)',
     forThat: '손잡이',
     emoji: '🚗',
     example: ['운전할 때는 핸들을 두 손으로 잡으세요.', 'Ao dirigir, segure o volante com as duas mãos.'],
@@ -115,7 +115,7 @@ export const FALSE_FRIENDS_KO: FalseFriend[] = [
   {
     word: '헬스',
     means: 'academia, musculação',
-    looksLike: 'saúde (o «health» do inglês)',
+    looksLike: 'saúde (o “health” do inglês)',
     forThat: '건강',
     emoji: '🏋️',
     example: ['퇴근하고 헬스장에 가요.', 'Depois do trabalho, vou para a academia.'],
@@ -138,11 +138,11 @@ export const FALSE_FRIENDS_KO: FalseFriend[] = [
   },
   {
     word: '원샷',
-    means: 'virar o copo de uma vez («até o fundo!»)',
+    means: 'virar o copo de uma vez (“até o fundo!”)',
     looksLike: 'uma dose só, um shot',
     forThat: '한 잔',
     emoji: '🍻',
-    example: ['회식 때 부장님이 원샷을 외쳤어요.', 'No jantar da empresa, o gerente gritou: «Vira!».'],
+    example: ['회식 때 부장님이 원샷을 외쳤어요.', 'No jantar da empresa, o gerente gritou: “Vira!”.'],
   },
   {
     word: '쇼핑',
@@ -187,7 +187,7 @@ export const FALSE_FRIENDS_KO: FalseFriend[] = [
   {
     word: '오바이트',
     means: 'vômito, vomitar',
-    looksLike: 'comer demais (o «overeat» do inglês)',
+    looksLike: 'comer demais (o “overeat” do inglês)',
     forThat: '과식',
     emoji: '🤮',
     example: ['어제 술을 너무 많이 마셔서 오바이트했어요.', 'Ontem bebi demais e vomitei.'],
@@ -235,7 +235,7 @@ export const FALSE_FRIENDS_KO: FalseFriend[] = [
   // ——— na mesa: o nome é conhecido, a comida é outra ———
   {
     word: '핫도그',
-    means: 'salsicha empanada no palito (o «corn dog»)',
+    means: 'salsicha empanada no palito (o “corn dog”)',
     looksLike: 'cachorro-quente (pão com salsicha)',
     forThat: '미국식 핫도그',
     emoji: '🌭',
@@ -277,7 +277,7 @@ export const FALSE_FRIENDS_KO: FalseFriend[] = [
   {
     word: '빌라',
     means: 'predinho residencial de até quatro andares',
-    looksLike: 'casarão de luxo (a «villa»)',
+    looksLike: 'casarão de luxo (a “villa”)',
     forThat: '저택',
     emoji: '🏘️',
     example: ['우리 집은 사 층짜리 빌라예요.', 'Minha casa fica num predinho de quatro andares.'],

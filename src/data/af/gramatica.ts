@@ -14,12 +14,12 @@ export const GRAMMAR_AF: GrammarTopic[] = [
         table: {
           head: ['Escrita', 'Som', 'Exemplo'],
           rows: [
-            ['g', 'raspado na garganta, como o «r» carioca', 'goed (bom)'],
-            ['v', '«f»', 'vyf (cinco), vriend (amigo)'],
-            ['w', '«v»', 'water (água), wit (branco)'],
-            ['oe', '«u»', 'broer (irmão)'],
-            ['ie', '«i»', 'drie (três)'],
-            ['y / ei', 'parecido com «âi»', 'wyn (vinho), klein'],
+            ['g', 'raspado na garganta, como o “r” carioca', 'goed (bom)'],
+            ['v', '“f”', 'vyf (cinco), vriend (amigo)'],
+            ['w', '“v”', 'water (água), wit (branco)'],
+            ['oe', '“u”', 'broer (irmão)'],
+            ['ie', '“i”', 'drie (três)'],
+            ['y / ei', 'parecido com “âi”', 'wyn (vinho), klein'],
           ],
         },
         examples: [
@@ -28,10 +28,10 @@ export const GRAMMAR_AF: GrammarTopic[] = [
         ],
       },
     ],
-    pitfalls: ['Ler o «v» como o nosso «v»: «vyf» (cinco) começa com som de «f».', 'Ler o «y» como «i»: em «wyn» ele soa parecido com «âi».'],
+    pitfalls: ['Ler o “v” como o nosso “v”: “vyf” (cinco) começa com som de “f”.', 'Ler o “y” como “i”: em “wyn” ele soa parecido com “âi”.'],
     quiz: [
-      { question: 'Como começa o som de «vyf» (cinco)?', options: ['com «f»', 'com «v»', 'com «u»'], answer: 'com «f»', explanation: 'Em africâner, o «v» soa como o nosso «f».' },
-      { question: 'Como soa o «oe» de «broer»?', options: ['«u»', '«ô»', '«oê»'], answer: '«u»', explanation: '«oe» sempre soa como o nosso «u».' },
+      { question: 'Como começa o som de “vyf” (cinco)?', options: ['com “f”', 'com “v”', 'com “u”'], answer: 'com “f”', explanation: 'Em africâner, o “v” soa como o nosso “f”.' },
+      { question: 'Como soa o “oe” de “broer”?', options: ['“u”', '“ô”', '“oê”'], answer: '“u”', explanation: '“oe” sempre soa como o nosso “u”.' },
     ],
   },
   {
@@ -42,7 +42,7 @@ export const GRAMMAR_AF: GrammarTopic[] = [
     summary: 'Os pronomes pessoais e a grande facilidade do africâner: o verbo é igual para todas as pessoas.',
     sections: [
       {
-        text: 'Em africâner, o verbo não se conjuga pela pessoa. «Wees» (ser, estar) fica «is» no presente para todo mundo, e qualquer verbo segue a mesma ideia: «ek praat», «jy praat», «hulle praat». O pronome, por isso, é obrigatório.',
+        text: 'Em africâner, o verbo não se conjuga pela pessoa. “Wees” (ser, estar) fica “is” no presente para todo mundo, e qualquer verbo segue a mesma ideia: “ek praat”, “jy praat”, “hulle praat”. O pronome, por isso, é obrigatório.',
         table: {
           head: ['Pronome', 'Tradução', 'wees (presente)'],
           rows: [
@@ -60,21 +60,21 @@ export const GRAMMAR_AF: GrammarTopic[] = [
         ],
       },
     ],
-    pitfalls: ['Tentar conjugar como em português ou neerlandês («ek ben», «hy heeft»): em africâner é sempre «is» e «het».', 'Confundir «sy» (ela) com o «zij» neerlandês, que também quer dizer «eles».'],
+    pitfalls: ['Tentar conjugar como em português ou neerlandês (“ek ben”, “hy heeft”): em africâner é sempre “is” e “het”.', 'Confundir “sy” (ela) com o “zij” neerlandês, que também quer dizer “eles”.'],
     quiz: [
-      { question: 'Complete: «Ons ___ vriende.»', options: ['is', 'sind', 'zijn'], answer: 'is', explanation: 'No presente, «wees» é «is» para todas as pessoas.' },
-      { question: 'Qual pronome quer dizer «eles»?', options: ['hulle', 'julle', 'ons'], answer: 'hulle', explanation: '«hulle» = eles, elas; «julle» = vocês; «ons» = nós.' },
+      { question: 'Complete: “Ons ___ vriende.”', options: ['is', 'sind', 'zijn'], answer: 'is', explanation: 'No presente, “wees” é “is” para todas as pessoas.' },
+      { question: 'Qual pronome quer dizer “eles”?', options: ['hulle', 'julle', 'ons'], answer: 'hulle', explanation: '“hulle” = eles, elas; “julle” = vocês; “ons” = nós.' },
     ],
   },
   {
     id: 'af-g3',
     level: 'A1.2',
-    title: "Die, 'n e a posse com «se»",
+    title: "Die, 'n e a posse com “se”",
     emoji: '👪',
-    summary: 'Sem gênero gramatical: um artigo definido só, um indefinido só, e a posse com a palavrinha «se».',
+    summary: 'Sem gênero gramatical: um artigo definido só, um indefinido só, e a posse com a palavrinha “se”.',
     sections: [
       {
-        text: 'O africâner perdeu o gênero gramatical do neerlandês: tudo é «die» (o, a, os, as) e «\'n» (um, uma). O plural costuma acrescentar -e ou -s: hond → honde, broer → broers. Para dizer «de alguém», põe-se «se» entre o dono e a coisa: «my pa se huis», a casa do meu pai.',
+        text: 'O africâner perdeu o gênero gramatical do neerlandês: tudo é “die” (o, a, os, as) e “\'n” (um, uma). O plural costuma acrescentar -e ou -s: hond → honde, broer → broers. Para dizer “de alguém”, põe-se “se” entre o dono e a coisa: “my pa se huis”, a casa do meu pai.',
         table: {
           head: ['', 'singular', 'plural'],
           rows: [
@@ -89,21 +89,21 @@ export const GRAMMAR_AF: GrammarTopic[] = [
         ],
       },
     ],
-    pitfalls: ['Procurar o gênero da palavra: em africâner não existe; é sempre «die».', 'Traduzir palavra por palavra «o nome da minha mãe» («die naam van my ma»): o mais natural é «my ma se naam».'],
+    pitfalls: ['Procurar o gênero da palavra: em africâner não existe; é sempre “die”.', 'Traduzir palavra por palavra “o nome da minha mãe” (“die naam van my ma”): o mais natural é “my ma se naam”.'],
     quiz: [
-      { question: 'Qual é o artigo definido de «kat» (gato)?', options: ['die', 'het', 'de'], answer: 'die', explanation: 'Em africâner o artigo definido é sempre «die».' },
-      { question: 'Como se diz «a casa do meu pai»?', options: ['my pa se huis', 'my huis se pa', 'die pa huis'], answer: 'my pa se huis', explanation: 'O dono vem primeiro, depois «se» e depois a coisa possuída.' },
+      { question: 'Qual é o artigo definido de “kat” (gato)?', options: ['die', 'het', 'de'], answer: 'die', explanation: 'Em africâner o artigo definido é sempre “die”.' },
+      { question: 'Como se diz “a casa do meu pai”?', options: ['my pa se huis', 'my huis se pa', 'die pa huis'], answer: 'my pa se huis', explanation: 'O dono vem primeiro, depois “se” e depois a coisa possuída.' },
     ],
   },
   {
     id: 'af-g4',
     level: 'A1.2',
-    title: 'O verbo hê e a negação dupla «nie… nie»',
+    title: 'O verbo hê e a negação dupla “nie… nie”',
     emoji: '🚫',
-    summary: '«hê» (ter) vira «het» no presente, e a negação usa «nie» duas vezes.',
+    summary: '“hê” (ter) vira “het” no presente, e a negação usa “nie” duas vezes.',
     sections: [
       {
-        text: 'O africâner nega com dois «nie»: o primeiro depois do verbo, o segundo no fim da frase. Quando o verbo já está no fim, basta um: «Ek weet nie» (eu não sei). O verbo «hê» (ter) é «het» no presente, para todas as pessoas.',
+        text: 'O africâner nega com dois “nie”: o primeiro depois do verbo, o segundo no fim da frase. Quando o verbo já está no fim, basta um: “Ek weet nie” (eu não sei). O verbo “hê” (ter) é “het” no presente, para todas as pessoas.',
         table: {
           head: ['Afirmativa', 'Negativa', 'Tradução'],
           rows: [
@@ -119,10 +119,10 @@ export const GRAMMAR_AF: GrammarTopic[] = [
         ],
       },
     ],
-    pitfalls: ['Esquecer o segundo «nie» no fim da frase: «Ek praat nie Afrikaans» soa incompleto.', 'Usar «hê» no presente: o presente é «het» («ek het»); «hê» é o infinitivo.'],
+    pitfalls: ['Esquecer o segundo “nie” no fim da frase: “Ek praat nie Afrikaans” soa incompleto.', 'Usar “hê” no presente: o presente é “het” (“ek het”); “hê” é o infinitivo.'],
     quiz: [
-      { question: 'Como se diz «eu não falo africâner»?', options: ['Ek praat nie Afrikaans nie.', 'Ek nie praat Afrikaans.', 'Ek praat Afrikaans nie nie.'], answer: 'Ek praat nie Afrikaans nie.', explanation: 'O primeiro «nie» vem depois do verbo e o segundo fecha a frase.' },
-      { question: "Complete: «Hy ___ 'n broer.»", options: ['het', 'hê', 'is'], answer: 'het', explanation: 'No presente, «hê» é «het» para todas as pessoas.' },
+      { question: 'Como se diz “eu não falo africâner”?', options: ['Ek praat nie Afrikaans nie.', 'Ek nie praat Afrikaans.', 'Ek praat Afrikaans nie nie.'], answer: 'Ek praat nie Afrikaans nie.', explanation: 'O primeiro “nie” vem depois do verbo e o segundo fecha a frase.' },
+      { question: "Complete: “Hy ___ 'n broer.”", options: ['het', 'hê', 'is'], answer: 'het', explanation: 'No presente, “hê” é “het” para todas as pessoas.' },
     ],
   },
 ];

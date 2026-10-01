@@ -49,8 +49,8 @@ export const ROWS: VocabRow[] = [
   ['jullie', 'vocês', 'pronome', 'Pessoas', '👥', 'Waar komen jullie vandaan?'],
   ['u', 'o senhor, a senhora (formal)', 'pronome', 'Pessoas', '🤝', 'Hoe heet u?'],
   ['naam', 'nome (de naam)', 'substantivo', 'Pessoas', '🏷️', 'Mijn naam is Linu.', 'm'],
-  ['vriend', 'amigo (de vriend; também «namorado»)', 'substantivo', 'Pessoas', '🧑‍🤝‍🧑', 'Hij is mijn vriend.', 'm'],
-  ['vriendin', 'amiga (de vriendin; também «namorada»)', 'substantivo', 'Pessoas', '🧑‍🤝‍🧑', 'Zij is mijn vriendin.', 'm'],
+  ['vriend', 'amigo (de vriend; também “namorado”)', 'substantivo', 'Pessoas', '🧑‍🤝‍🧑', 'Hij is mijn vriend.', 'm'],
+  ['vriendin', 'amiga (de vriendin; também “namorada”)', 'substantivo', 'Pessoas', '🧑‍🤝‍🧑', 'Zij is mijn vriendin.', 'm'],
   // ── Verbos-chave ──
   ['zijn', 'ser, estar (ik ben, jij bent, hij is)', 'verbo', 'Verbos-chave', '🧑', 'Ik ben student.'],
   ['hebben', 'ter (ik heb, jij hebt, hij heeft)', 'verbo', 'Verbos-chave', '🤲', 'Ik heb een broer.'],
@@ -81,7 +81,7 @@ export const ROWS: VocabRow[] = [
   ['koffie', 'café (de koffie)', 'substantivo', 'Alimentação e Restaurantes', '☕', 'Een koffie, alsjeblieft.', 'm'],
   ['wijn', 'vinho (de wijn)', 'substantivo', 'Alimentação e Restaurantes', '🍷', 'Een glas wijn, alsjeblieft.', 'm'],
   // ── Números ──
-  ['één', 'um (com acento, para não confundir com o artigo «een»)', 'numeral', 'Números', '1️⃣', 'Eén, twee, drie!'],
+  ['één', 'um (com acento, para não confundir com o artigo “een”)', 'numeral', 'Números', '1️⃣', 'Eén, twee, drie!'],
   ['twee', 'dois', 'numeral', 'Números', '2️⃣', 'Twee koffie, alsjeblieft.'],
   ['drie', 'três', 'numeral', 'Números', '3️⃣', 'Ik heb drie broers.'],
   ['vier', 'quatro', 'numeral', 'Números', '4️⃣', 'De kat heeft vier poten.'],

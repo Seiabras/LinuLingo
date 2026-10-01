@@ -18,9 +18,9 @@ export const UNITS_OC: UnitSeed[] = [
       history:
         'O occitano nasceu do mesmo latim vulgar que deu origem às outras línguas românicas, na região que hoje corresponde ao sul da França. Entre os séculos XI e XIII, foi a língua dos trobadors, os poetas-cantores que criaram a lírica do amor cortês e influenciaram toda a poesia europeia posterior — inclusive os trovadores galego-portugueses. Chamado também de "lenga d\'òc" (a língua do "òc", a palavra occitana para "sim", em contraste com o "oïl" do francês antigo), o occitano foi perdendo espaço para o francês a partir da anexação da Occitânia ao reino da França, sobretudo depois da Revolução Francesa. Hoje tem cerca de 800 mil falantes, espalhados pelo sul da França, por vales do Piemonte italiano e pelo Val d\'Aran, na Espanha.',
       culture_tip:
-        'A saudação do dia a dia é «adieu» — um curioso falso amigo do francês, onde "adieu" só se usa para despedidas definitivas: em occitano, "adieu" serve tanto para dizer oi quanto tchau! «Bonjorn» é mais formal, usado sobretudo por escrito. Para agradecer, «mercé»; para pedir, «se vos plai». O tratamento com «tu» é a regra entre pessoas da mesma idade — não há, no dia a dia, o equivalente ao "vostede" tão cerimonioso de outras línguas vizinhas.',
+        'A saudação do dia a dia é “adieu” — um curioso falso amigo do francês, onde "adieu" só se usa para despedidas definitivas: em occitano, "adieu" serve tanto para dizer oi quanto tchau! “Bonjorn” é mais formal, usado sobretudo por escrito. Para agradecer, “mercé”; para pedir, “se vos plai”. O tratamento com “tu” é a regra entre pessoas da mesma idade — não há, no dia a dia, o equivalente ao "vostede" tão cerimonioso de outras línguas vizinhas.',
       grammar_why:
-        'Como o português, o occitano costuma dispensar o pronome de sujeito, porque a terminação do verbo já diz quem fala: «soi de Brasil» já é «eu sou do Brasil». O occitano tem sete pronomes de sujeito: ieu, tu, el, ela, nosautres, vosautres e eles/elas — repare como «nosautres» e «vosautres» lembram formas parecidas do espanhol («nosotros», «vosotros») e preservam, como o português europeu, uma segunda pessoa do plural bem viva.',
+        'Como o português, o occitano costuma dispensar o pronome de sujeito, porque a terminação do verbo já diz quem fala: “soi de Brasil” já é “eu sou do Brasil”. O occitano tem sete pronomes de sujeito: ieu, tu, el, ela, nosautres, vosautres e eles/elas — repare como “nosautres” e “vosautres” lembram formas parecidas do espanhol (“nosotros”, “vosotros”) e preservam, como o português europeu, uma segunda pessoa do plural bem viva.',
       grammar_examples: [
         ['Adieu! Soi Ana.', 'Oi! Sou a Ana.'],
         ['E tu, cossí t\'apèlas?', 'E você, como se chama?'],
@@ -28,7 +28,7 @@ export const UNITS_OC: UnitSeed[] = [
         ['Vosautres sètz plan amables.', 'Vocês são muito amáveis.'],
       ],
       character_guide: [
-        ['ò', 'som aberto, como o «ó» de "nó"', 'nòu (novo/nove)'],
+        ['ò', 'som aberto, como o “ó” de "nó"', 'nòu (novo/nove)'],
         ['lh', 'como o lh do português', 'filha (filha)'],
         ['nh', 'como o nh do português', 'montanha (montanha)'],
         ['ch', 'como o "tch" de "tchau"', 'nuèch (noite)'],
@@ -50,9 +50,9 @@ export const UNITS_OC: UnitSeed[] = [
           bot: 'Adieu! Cossí vas?',
           botTranslation: 'Oi! Como você está?',
           expected: ['Va plan, mercé! E tu?', 'plan', 'mercé'],
-          hint: 'Responda que vai bem e devolva a pergunta: «Va plan, mercé! E tu?».',
+          hint: 'Responda que vai bem e devolva a pergunta: “Va plan, mercé! E tu?”.',
         },
-        communityPrompt: 'Escreva três cumprimentos em occitano: um do dia («Bonjorn…»), um da noite («Bona nuèch…») e uma despedida com «A lèu» ou «Adieu».',
+        communityPrompt: 'Escreva três cumprimentos em occitano: um do dia (“Bonjorn…”), um da noite (“Bona nuèch…”) e uma despedida com “A lèu” ou “Adieu”.',
       },
       {
         id: 'oc-u1-l2',
@@ -68,9 +68,9 @@ export const UNITS_OC: UnitSeed[] = [
           bot: "Adieu! Cossí t'apèlas?",
           botTranslation: 'Oi! Como você se chama?',
           expected: ["M'apèli Ana. E tu?", "m'apèli", 'e tu'],
-          hint: 'Diga seu nome com «M\'apèli…» e devolva a pergunta com «E tu?».',
+          hint: 'Diga seu nome com “M\'apèli…” e devolva a pergunta com “E tu?”.',
         },
-        communityPrompt: 'Apresente-se em occitano: diga seu nome com «M\'apèli…» e pergunte o nome de outra pessoa com «E tu, cossí t\'apèlas?».',
+        communityPrompt: 'Apresente-se em occitano: diga seu nome com “M\'apèli…” e pergunte o nome de outra pessoa com “E tu, cossí t\'apèlas?”.',
       },
       {
         id: 'oc-u1-l3',
@@ -82,9 +82,9 @@ export const UNITS_OC: UnitSeed[] = [
           bot: "Adieu! M'apèli Joan. E tu, cossí t'apèlas, e d'ont siás?",
           botTranslation: 'Oi! Eu me chamo Joan. E você, como se chama, e de onde é?',
           expected: ["Adieu! M'apèli Lucia, e soi de Brasil.", "m'apèli", 'soi de', 'adieu'],
-          hint: 'Devolva o cumprimento («Adieu!»), diga seu nome com «M\'apèli…» e a origem com «Soi de…».',
+          hint: 'Devolva o cumprimento (“Adieu!”), diga seu nome com “M\'apèli…” e a origem com “Soi de…”.',
         },
-        communityPrompt: 'Escreva uma apresentação completa: cumprimento, nome com «M\'apèli…», origem com «Soi de…» e uma despedida.',
+        communityPrompt: 'Escreva uma apresentação completa: cumprimento, nome com “M\'apèli…”, origem com “Soi de…” e uma despedida.',
       },
     ],
   },
@@ -103,7 +103,7 @@ export const UNITS_OC: UnitSeed[] = [
       culture_tip:
         'A família estendida tem papel importante na vida social occitana, reunida sobretudo nas fèstas locais de cada vila. Hoje, boa parte da transmissão da língua às crianças acontece nas Calandretas, escolas associativas que dão aula em occitano desde a educação infantil — um esforço para manter viva uma língua que, segundo a UNESCO, está em risco de desaparecer.',
       grammar_why:
-        'O artigo definido concorda em gênero e número: lo (masculino singular), la (feminino singular), los (masculino plural), las (feminino plural) — muito parecido com o português. Os possessivos também mudam com o gênero do substantivo, não com quem fala: «mon paire» (meu pai, masculino) mas «ma maire» (minha mãe, feminino) — repare que "ma" não tem nada a ver com quem possui ser homem ou mulher, e sim com o substantivo que vem depois.',
+        'O artigo definido concorda em gênero e número: lo (masculino singular), la (feminino singular), los (masculino plural), las (feminino plural) — muito parecido com o português. Os possessivos também mudam com o gênero do substantivo, não com quem fala: “mon paire” (meu pai, masculino) mas “ma maire” (minha mãe, feminino) — repare que "ma" não tem nada a ver com quem possui ser homem ou mulher, e sim com o substantivo que vem depois.',
       grammar_examples: [
         ['Ma familha es granda.', 'Minha família é grande.'],
         ['Mon paire s\'apèla Guilhèm.', 'Meu pai se chama Guilherme.'],
@@ -131,7 +131,7 @@ export const UNITS_OC: UnitSeed[] = [
           bot: 'As de fraires?',
           botTranslation: 'Você tem irmãos?',
           expected: ['Òc, ai un fraire e una sòrre.', 'ai', 'fraire', 'sòrre'],
-          hint: 'Responda com «Ai…» e o tipo de irmãos, ou «Non ai fraires» se não tiver.',
+          hint: 'Responda com “Ai…” e o tipo de irmãos, ou “Non ai fraires” se não tiver.',
         },
         communityPrompt: 'Descreva sua família em occitano: quantos irmãos você tem, e como se chamam seus pais.',
       },
@@ -149,7 +149,7 @@ export const UNITS_OC: UnitSeed[] = [
           bot: 'Aimas lo cafè occitan?',
           botTranslation: 'Você gosta do café occitano?',
           expected: ['Òc, aimi fòrça lo cafè!', 'aimi', 'fòrça'],
-          hint: 'Use «aimi» (eu gosto) e «fòrça» (muito) para dizer que gosta bastante.',
+          hint: 'Use “aimi” (eu gosto) e “fòrça” (muito) para dizer que gosta bastante.',
         },
         communityPrompt: 'Descreva sua casa em duas ou três frases: se é grande ou pequena, e o que você gosta de beber nela.',
       },
@@ -163,7 +163,7 @@ export const UNITS_OC: UnitSeed[] = [
           bot: 'Cossí es ta familha, e cossí es ton ostal?',
           botTranslation: 'Como é sua família, e como é sua casa?',
           expected: ['Ma familha es pichona: ma maire, mon paire e ieu. Mon ostal es pichon.', 'ma familha', 'mon ostal'],
-          hint: 'Descreva sua família com «ma familha es…», cite os parentes e a casa com «mon ostal es…».',
+          hint: 'Descreva sua família com “ma familha es…”, cite os parentes e a casa com “mon ostal es…”.',
         },
         communityPrompt: 'Escreva um parágrafo curto apresentando sua família e sua casa, usando pelo menos três palavras desta unidade.',
       },

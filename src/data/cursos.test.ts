@@ -46,7 +46,7 @@ test('mini-cursos: exercícios gerados e prova final válidos e sempre iguais', 
     }
 });
 
-test('cursos: toda língua artificial com curso tem ficha na aba «Tipos de línguas»', async () => {
+test('cursos: toda língua artificial com curso tem ficha na aba “Tipos de línguas”', async () => {
   const { CONLANGS } = await import('./tipos-de-linguas');
   for (const c of MINI_COURSES.filter((x) => x.kind === 'artificial')) assert.ok(CONLANGS.some((l) => l.id === c.id), `${c.id} sem ficha`);
 });

@@ -399,10 +399,10 @@ export const PARAMETERS: Parameter[] = [
     name: 'Configuração da Mão',
     emoji: '✋',
     short: 'A forma que a mão assume ao fazer o sinal.',
-    text: 'Mão aberta, fechada, só o indicador esticado, os dedos em «C»… Cada língua de sinais usa um conjunto fechado de configurações, assim como cada língua falada usa só alguns sons. Os inventários da Libras listam de 46 a mais de 60 configurações. Muitas coincidem com letras do alfabeto manual, mas não todas.',
+    text: 'Mão aberta, fechada, só o indicador esticado, os dedos em “C”… Cada língua de sinais usa um conjunto fechado de configurações, assim como cada língua falada usa só alguns sons. Os inventários da Libras listam de 46 a mais de 60 configurações. Muitas coincidem com letras do alfabeto manual, mas não todas.',
     spoken: 'É como a diferença entre [p] e [b]: trocar só a configuração, mantendo o resto, pode criar outro sinal.',
     examples: [
-      { title: 'Par mínimo na Libras: PEDRA × QUEIJO', text: 'Os dois sinais têm o mesmo lugar e o mesmo movimento; o que muda é a configuração da mão. Trocar uma pela outra troca a palavra, como «pato» e «bato».' },
+      { title: 'Par mínimo na Libras: PEDRA × QUEIJO', text: 'Os dois sinais têm o mesmo lugar e o mesmo movimento; o que muda é a configuração da mão. Trocar uma pela outra troca a palavra, como “pato” e “bato”.' },
       { title: 'Nomes de lugares', text: 'Muitos sinais de cidades e estados usam a configuração da primeira letra do nome, feita num lugar ou com um movimento que lembra algo do lugar.' },
     ],
   },
@@ -426,7 +426,7 @@ export const PARAMETERS: Parameter[] = [
     spoken: 'É parecido com a duração e a entonação na fala, mas carrega muito mais significado.',
     examples: [
       { title: 'Substantivo × verbo na ASL: CHAIR × SIT', text: 'Na ASL, CADEIRA e SENTAR usam a mesma configuração no mesmo lugar; SENTAR tem um movimento só, CADEIRA um movimento curto e repetido. Pares assim existem em muitas línguas de sinais.' },
-      { title: 'Aspecto', text: 'Um verbo como ESPERAR, feito com movimento lento e circular repetido, vira «esperar muito tempo».' },
+      { title: 'Aspecto', text: 'Um verbo como ESPERAR, feito com movimento lento e circular repetido, vira “esperar muito tempo”.' },
     ],
   },
   {
@@ -444,10 +444,10 @@ export const PARAMETERS: Parameter[] = [
     emoji: '🤨',
     short: 'Rosto, olhos, boca, cabeça e tronco: o tom, o tipo de frase e a intensidade.',
     text: 'O rosto não é enfeite: é gramática. As sobrancelhas marcam o tipo de pergunta, balançar a cabeça faz a negação, a boca pode dizer se algo é pequeno ou enorme, e o olhar e o tronco mostram quem está falando numa história. Um sinal certo com a expressão errada pode virar outra frase.',
-    spoken: 'Faz o papel da entonação («Você vem.» × «Você vem?»), mas também de palavras inteiras, como o «não».',
+    spoken: 'Faz o papel da entonação (“Você vem.” × “Você vem?”), mas também de palavras inteiras, como o “não”.',
     examples: [
       { title: 'Perguntas na Libras', text: 'Pergunta de sim ou não: sobrancelhas levantadas. Pergunta com QUEM, ONDE, QUANDO, POR QUÊ: sobrancelhas franzidas. O sinal é o mesmo; a pergunta está no rosto.' },
-      { title: 'Intensidade', text: 'BONITO com o rosto neutro é «bonito»; com as bochechas cheias e os olhos arregalados, é «lindíssimo».' },
+      { title: 'Intensidade', text: 'BONITO com o rosto neutro é “bonito”; com as bochechas cheias e os olhos arregalados, é “lindíssimo”.' },
       { title: 'Negação', text: 'Em muitas línguas de sinais, balançar a cabeça enquanto se sinaliza já nega a frase, sem precisar do sinal NÃO.' },
     ],
   },
@@ -463,12 +463,12 @@ export const SIGN_FEATURES: { title: string; emoji: string; text: string }[] = [
   {
     title: 'O espaço é gramática',
     emoji: '🧭',
-    text: 'Quem sinaliza «coloca» pessoas e coisas em pontos do espaço à sua frente e depois aponta para eles, como pronomes. Se a Ana ficou à esquerda e o Beto à direita, apontar para a esquerda já quer dizer «ela».',
+    text: 'Quem sinaliza “coloca” pessoas e coisas em pontos do espaço à sua frente e depois aponta para eles, como pronomes. Se a Ana ficou à esquerda e o Beto à direita, apontar para a esquerda já quer dizer “ela”.',
   },
   {
     title: 'Verbos com direção',
     emoji: '➡️',
-    text: 'Verbos como DAR, AJUDAR e PERGUNTAR se movem de quem faz para quem recebe. «Eu te dou» vai do meu corpo para você; «você me dá» faz o caminho contrário. A direção faz o papel do sujeito e do objeto.',
+    text: 'Verbos como DAR, AJUDAR e PERGUNTAR se movem de quem faz para quem recebe. “Eu te dou” vai do meu corpo para você; “você me dá” faz o caminho contrário. A direção faz o papel do sujeito e do objeto.',
   },
   {
     title: 'Classificadores',
@@ -502,7 +502,7 @@ export const SIGN_MYTHS: { myth: string; truth: string }[] = [
   { myth: 'É mímica.', truth: 'Não. Tem vocabulário arbitrário, pares mínimos, morfologia e sintaxe. Quem não sabe a língua não entende a maior parte do que é dito.' },
   { myth: 'É o português (ou o inglês) feito com as mãos.', truth: 'Não. A Libras tem gramática própria, diferente da do português. O português sinalizado, palavra por palavra, existe na escola, mas não é a Libras.' },
   { myth: 'Cada país fala a língua de sinais da sua língua oral.', truth: 'Não. A Libras é parente da LSF, e não da portuguesa; a BSL e a ASL são de famílias diferentes, embora os dois países falem inglês.' },
-  { myth: 'O certo é «linguagem de sinais».', truth: 'O certo é «língua de sinais»: é uma língua, como o português, e não uma linguagem, como a da música ou a do corpo.' },
+  { myth: 'O certo é “linguagem de sinais”.', truth: 'O certo é “língua de sinais”: é uma língua, como o português, e não uma linguagem, como a da música ou a do corpo.' },
   { myth: 'Todo surdo lê lábios e escreve bem o português.', truth: 'A leitura labial é difícil e pega só uma parte da fala. E, para quem nasceu surdo, o português costuma ser uma segunda língua.' },
   { myth: 'Quem aprende a língua de sinais não aprende a falar.', truth: 'O contrário: crianças surdas que aprendem uma língua de sinais cedo aprendem melhor a ler e a escrever. O problema é ficar sem língua nenhuma nos primeiros anos.' },
 ];
@@ -518,7 +518,7 @@ export const SIGN_HISTORY: { year: string; text: string }[] = [
   { year: '1960', text: 'O linguista William Stokoe mostra que a ASL tem estrutura de língua: sinais formados por partes menores, como os sons das palavras.' },
   { year: '1974', text: 'Valerie Sutton cria o SignWriting, um sistema para escrever línguas de sinais.' },
   { year: '1977–1990', text: 'Na Nicarágua, crianças surdas reunidas pela primeira vez em escolas criam uma língua nova.' },
-  { year: '1988', text: 'Protesto «Deaf President Now» na Gallaudet: os estudantes exigem e conseguem o primeiro reitor surdo.' },
+  { year: '1988', text: 'Protesto “Deaf President Now” na Gallaudet: os estudantes exigem e conseguem o primeiro reitor surdo.' },
   { year: '2002', text: 'A Lei 10.436 reconhece a Libras no Brasil.' },
   { year: '2006', text: 'A Convenção da ONU sobre os Direitos das Pessoas com Deficiência reconhece as línguas de sinais como línguas.' },
   { year: '2018', text: 'Primeiro Dia Internacional das Línguas de Sinais, 23 de setembro, criado pela ONU.' },
@@ -533,9 +533,9 @@ export const SIGN_WRITING: { name: string; year: string; text: string }[] = [
 
 /** Mais: a comunidade e a cultura surda. */
 export const SIGN_CULTURE: { title: string; emoji: string; text: string }[] = [
-  { title: 'Surdo, e não «surdo-mudo»', emoji: '🗣️', text: 'A maioria das pessoas surdas pode usar a voz; «surdo-mudo» é um termo errado. E muitas preferem «surdo» a «deficiente auditivo»: se veem como uma minoria linguística, com língua e cultura próprias.' },
+  { title: 'Surdo, e não “surdo-mudo”', emoji: '🗣️', text: 'A maioria das pessoas surdas pode usar a voz; “surdo-mudo” é um termo errado. E muitas preferem “surdo” a “deficiente auditivo”: se veem como uma minoria linguística, com língua e cultura próprias.' },
   { title: 'Surdocegueira', emoji: '🤲', text: 'Pessoas surdocegas usam a língua de sinais tátil: sentem os sinais com as mãos sobre as mãos de quem sinaliza. Nos EUA, surdocegos criaram o Protactile, que usa o toque no corpo todo.' },
-  { title: 'Arte em sinais', emoji: '🎭', text: 'Poesia, teatro, humor e o «visual vernacular», uma arte que mistura sinais, classificadores e técnicas de cinema (close, câmera lenta). Há também o slam de poesia em Libras.' },
+  { title: 'Arte em sinais', emoji: '🎭', text: 'Poesia, teatro, humor e o “visual vernacular”, uma arte que mistura sinais, classificadores e técnicas de cinema (close, câmera lenta). Há também o slam de poesia em Libras.' },
   { title: 'CODA', emoji: '👨‍👩‍👧', text: 'Filhos ouvintes de pais surdos (Children of Deaf Adults) crescem bilíngues, e muitos viram intérpretes.' },
   { title: 'Intérprete de Libras', emoji: '🧑‍🏫', text: 'Uma profissão regulamentada no Brasil desde 2010. Interpretar não é traduzir palavra por palavra: é passar o sentido de uma língua para a outra.' },
 ];

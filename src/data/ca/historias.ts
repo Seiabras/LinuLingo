@@ -9,7 +9,7 @@ export const STORIES_CA: StorySeed[] = [
     title: "Bon dia, Barcelona!",
     emoji: "🥐",
     summary: "Numa padaria de Barcelona, o Linu cumprimenta em catalão e pede o seu primeiro café da manhã.",
-    cultural_context: "Em Barcelona, quase todo mundo fala catalão e castelhano, e muita gente fica contente quando um visitante tenta falar catalão. «Bon dia» vale até a hora do almoço, que na Catalunha é por volta das duas da tarde.",
+    cultural_context: "Em Barcelona, quase todo mundo fala catalão e castelhano, e muita gente fica contente quando um visitante tenta falar catalão. “Bon dia” vale até a hora do almoço, que na Catalunha é por volta das duas da tarde.",
     start: "start",
     glossary: [
       ["Bon dia!", "Bom dia!"],
@@ -26,17 +26,17 @@ export const STORIES_CA: StorySeed[] = [
         text: "Barcelona, al matí. Linu té gana. Hi ha una fleca.",
         translation: "Barcelona, de manhã. O Linu está com fome. Tem uma padaria.",
         choices: [
-          { text: "«Bon dia!»", translation: "«Bom dia!»", next: "fleca" },
-          { text: "«Bona nit!»", translation: "«Boa noite!»", wrong: "É de manhã («al matí»): o cumprimento certo é «Bon dia». «Bona nit» é para a noite." },
+          { text: "“Bon dia!”", translation: "“Bom dia!”", next: "fleca" },
+          { text: "“Bona nit!”", translation: "“Boa noite!”", wrong: "É de manhã (“al matí”): o cumprimento certo é “Bon dia”. “Bona nit” é para a noite." },
         ],
       },
       fleca: {
         emoji: "👩‍🍳",
-        text: "«Bon dia! Què vols?», diu la senyora.",
-        translation: "«Bom dia! O que você quer?», diz a senhora.",
+        text: "“Bon dia! Què vols?”, diu la senyora.",
+        translation: "“Bom dia! O que você quer?”, diz a senhora.",
         choices: [
-          { text: "«Un croissant, si us plau.»", translation: "«Um croissant, por favor.»", next: "beure" },
-          { text: "«Una coca, si us plau.»", translation: "«Uma coca (doce catalão), por favor.»", next: "coca" },
+          { text: "“Un croissant, si us plau.”", translation: "“Um croissant, por favor.”", next: "beure" },
+          { text: "“Una coca, si us plau.”", translation: "“Uma coca (doce catalão), por favor.”", next: "coca" },
         ],
       },
       coca: {
@@ -47,26 +47,26 @@ export const STORIES_CA: StorySeed[] = [
       },
       beure: {
         emoji: "🍊",
-        text: "«I per beure? Un cafè? Un suc?»",
-        translation: "«E para beber? Um café? Um suco?»",
+        text: "“I per beure? Un cafè? Un suc?”",
+        translation: "“E para beber? Um café? Um suco?”",
         choices: [
-          { text: "«Un suc de taronja, si us plau.»", translation: "«Um suco de laranja, por favor.»", next: "preu" },
-          { text: "«Un cafè amb llet, si us plau.»", translation: "«Um café com leite, por favor.»", next: "preu" },
+          { text: "“Un suc de taronja, si us plau.”", translation: "“Um suco de laranja, por favor.”", next: "preu" },
+          { text: "“Un cafè amb llet, si us plau.”", translation: "“Um café com leite, por favor.”", next: "preu" },
         ],
       },
       preu: {
         emoji: "🪙",
-        text: "«Són quatre euros.»",
-        translation: "«São quatro euros.»",
+        text: "“Són quatre euros.”",
+        translation: "“São quatro euros.”",
         choices: [
-          { text: "«Aquí té quatre euros. Gràcies!»", translation: "«Aqui estão quatro euros. Obrigado!»", next: "final_bom" },
-          { text: "«Aquí té catorze euros.»", translation: "«Aqui estão catorze euros.»", wrong: "A senhora disse «quatre» (quatro), não «catorze» (catorze)." },
+          { text: "“Aquí té quatre euros. Gràcies!”", translation: "“Aqui estão quatro euros. Obrigado!”", next: "final_bom" },
+          { text: "“Aquí té catorze euros.”", translation: "“Aqui estão catorze euros.”", wrong: "A senhora disse “quatre” (quatro), não “catorze” (catorze)." },
         ],
       },
       final_bom: {
         emoji: "🥐",
-        text: "«Gràcies a tu! Adéu!» Linu menja el croissant al carrer. Que bo!",
-        translation: "«Obrigada a você! Tchau!» O Linu come o croissant na rua. Que gostoso!",
+        text: "“Gràcies a tu! Adéu!” Linu menja el croissant al carrer. Que bo!",
+        translation: "“Obrigada a você! Tchau!” O Linu come o croissant na rua. Que gostoso!",
         ending: { tone: "bom", title: "O primeiro café da manhã catalão", message: "Você cumprimentou, pediu e pagou em catalão. Molt bé!" },
       },
     },
@@ -78,7 +78,7 @@ export const STORIES_CA: StorySeed[] = [
     title: "Fruita a la Boqueria",
     emoji: "🍎",
     summary: "No mercado da Boqueria, o Linu compra frutas e treina os números.",
-    cultural_context: "O Mercat de Sant Josep, conhecido como la Boqueria, fica na Rambla de Barcelona e é um dos mercados mais famosos da cidade. Nos mercados catalães, cada vendedor tem a sua banca, a «parada».",
+    cultural_context: "O Mercat de Sant Josep, conhecido como la Boqueria, fica na Rambla de Barcelona e é um dos mercados mais famosos da cidade. Nos mercados catalães, cada vendedor tem a sua banca, a “parada”.",
     start: "start",
     glossary: [
       ["la fruita", "a fruta"],
@@ -95,41 +95,41 @@ export const STORIES_CA: StorySeed[] = [
         text: "Linu és a la Boqueria. Hi ha molta fruita!",
         translation: "O Linu está na Boqueria. Tem muita fruta!",
         choices: [
-          { text: "«Hola! Bon dia!»", translation: "«Oi! Bom dia!»", next: "venedor" },
-          { text: "«Adéu!»", translation: "«Tchau!»", wrong: "O Linu acaba de chegar à banca: «Adéu» é para ir embora. Para chegar, «Hola» ou «Bon dia»." },
+          { text: "“Hola! Bon dia!”", translation: "“Oi! Bom dia!”", next: "venedor" },
+          { text: "“Adéu!”", translation: "“Tchau!”", wrong: "O Linu acaba de chegar à banca: “Adéu” é para ir embora. Para chegar, “Hola” ou “Bon dia”." },
         ],
       },
       venedor: {
         emoji: "👨‍🌾",
-        text: "«Hola! Vols pomes? Tinc pomes vermelles i verdes.»",
-        translation: "«Oi! Quer maçãs? Tenho maçãs vermelhas e verdes.»",
+        text: "“Hola! Vols pomes? Tinc pomes vermelles i verdes.”",
+        translation: "“Oi! Quer maçãs? Tenho maçãs vermelhas e verdes.”",
         choices: [
-          { text: "«Sí, vull cinc pomes vermelles.»", translation: "«Sim, quero cinco maçãs vermelhas.»", next: "pomes" },
-          { text: "«No, vull plàtans.»", translation: "«Não, quero bananas.»", next: "platans" },
+          { text: "“Sí, vull cinc pomes vermelles.”", translation: "“Sim, quero cinco maçãs vermelhas.”", next: "pomes" },
+          { text: "“No, vull plàtans.”", translation: "“Não, quero bananas.”", next: "platans" },
         ],
       },
       platans: {
         emoji: "🍌",
-        text: "«Plàtans de Canàries! Són molt bons.»",
-        translation: "«Bananas das Canárias! São muito boas.»",
-        choices: [{ text: "«Tres plàtans, si us plau.»", translation: "«Três bananas, por favor.»", next: "pagar" }],
+        text: "“Plàtans de Canàries! Són molt bons.”",
+        translation: "“Bananas das Canárias! São muito boas.”",
+        choices: [{ text: "“Tres plàtans, si us plau.”", translation: "“Três bananas, por favor.”", next: "pagar" }],
       },
       pomes: {
         emoji: "🍎",
-        text: "«Cinc pomes: tres euros.»",
-        translation: "«Cinco maçãs: três euros.»",
+        text: "“Cinc pomes: tres euros.”",
+        translation: "“Cinco maçãs: três euros.”",
         choices: [
-          { text: "«Tres euros? És barat! Gràcies.»", translation: "«Três euros? É barato! Obrigado.»", next: "pagar" },
-          { text: "«Tretze euros? És car!»", translation: "«Treze euros? É caro!»", wrong: "O vendedor disse «tres» (três), não «tretze» (treze)." },
+          { text: "“Tres euros? És barat! Gràcies.”", translation: "“Três euros? É barato! Obrigado.”", next: "pagar" },
+          { text: "“Tretze euros? És car!”", translation: "“Treze euros? É caro!”", wrong: "O vendedor disse “tres” (três), não “tretze” (treze)." },
         ],
       },
       pagar: {
         emoji: "💶",
-        text: "«Aquí tens. Vols una taronja? És un regal!»",
-        translation: "«Aqui está. Quer uma laranja? É um presente!»",
+        text: "“Aquí tens. Vols una taronja? És un regal!”",
+        translation: "“Aqui está. Quer uma laranja? É um presente!”",
         choices: [
-          { text: "«Moltes gràcies! Que amable!»", translation: "«Muito obrigado! Que gentil!»", next: "final_bom" },
-          { text: "«No, gràcies. Adéu!»", translation: "«Não, obrigado. Tchau!»", next: "final_neutre" },
+          { text: "“Moltes gràcies! Que amable!”", translation: "“Muito obrigado! Que gentil!”", next: "final_bom" },
+          { text: "“No, gràcies. Adéu!”", translation: "“Não, obrigado. Tchau!”", next: "final_neutre" },
         ],
       },
       final_bom: {
@@ -167,12 +167,12 @@ export const STORIES_CA: StorySeed[] = [
     nodes: {
       start: {
         emoji: "🏠",
-        text: "Un alberg a Andorra la Vella. Una noia diu: «Hola! Com et dius?»",
-        translation: "Um albergue em Andorra la Vella. Uma moça diz: «Oi! Como você se chama?»",
+        text: "Un alberg a Andorra la Vella. Una noia diu: “Hola! Com et dius?”",
+        translation: "Um albergue em Andorra la Vella. Uma moça diz: “Oi! Como você se chama?”",
         choices: [
-          { text: "«Hola! Em dic Linu.»", translation: "«Oi! Eu me chamo Linu.»", next: "origen" },
+          { text: "“Hola! Em dic Linu.”", translation: "“Oi! Eu me chamo Linu.”", next: "origen" },
           { text: "Linu té son i no diu res.", translation: "O Linu está com sono e não diz nada.", next: "dormir" },
-          { text: "«Hola! Tinc deu anys.»", translation: "«Oi! Tenho dez anos.»", wrong: "Ela perguntou o nome («Com et dius?»). Responda com «Em dic…»." },
+          { text: "“Hola! Tinc deu anys.”", translation: "“Oi! Tenho dez anos.”", wrong: "Ela perguntou o nome (“Com et dius?”). Responda com “Em dic…”." },
         ],
       },
       dormir: {
@@ -183,32 +183,32 @@ export const STORIES_CA: StorySeed[] = [
       },
       origen: {
         emoji: "👧",
-        text: "«Jo em dic Laia. D'on ets, Linu?»",
-        translation: "«Eu me chamo Laia. De onde você é, Linu?»",
+        text: "“Jo em dic Laia. D'on ets, Linu?”",
+        translation: "“Eu me chamo Laia. De onde você é, Linu?”",
         choices: [
-          { text: "«Soc del Brasil. I tu?»", translation: "«Sou do Brasil. E você?»", next: "laia" },
-          { text: "«Soc de l'Antàrtida!»", translation: "«Sou da Antártida!»", next: "antartida" },
+          { text: "“Soc del Brasil. I tu?”", translation: "“Sou do Brasil. E você?”", next: "laia" },
+          { text: "“Soc de l'Antàrtida!”", translation: "“Sou da Antártida!”", next: "antartida" },
         ],
       },
       antartida: {
         emoji: "🐧",
-        text: "«De l'Antàrtida? Ets un pingüí!» La Laia riu molt.",
-        translation: "«Da Antártida? Você é um pinguim!» A Laia ri muito.",
-        choices: [{ text: "«Sí! Però visc al Brasil.»", translation: "«Sim! Mas moro no Brasil.»", next: "laia" }],
+        text: "“De l'Antàrtida? Ets un pingüí!” La Laia riu molt.",
+        translation: "“Da Antártida? Você é um pinguim!” A Laia ri muito.",
+        choices: [{ text: "“Sí! Però visc al Brasil.”", translation: "“Sim! Mas moro no Brasil.”", next: "laia" }],
       },
       laia: {
         emoji: "🏔️",
-        text: "«Jo soc d'Andorra. Tinc vint anys. I tu, quants anys tens?»",
-        translation: "«Eu sou de Andorra. Tenho vinte anos. E você, quantos anos tem?»",
+        text: "“Jo soc d'Andorra. Tinc vint anys. I tu, quants anys tens?”",
+        translation: "“Eu sou de Andorra. Tenho vinte anos. E você, quantos anos tem?”",
         choices: [
-          { text: "«Tinc cinc anys. Soc un pingüí jove!»", translation: "«Tenho cinco anos. Sou um pinguim jovem!»", next: "final_bom" },
-          { text: "«Soc cinc anys.»", translation: "«Sou cinco anos.»", wrong: "A idade se diz com «tenir», como no português: «Tinc cinc anys» (tenho cinco anos)." },
+          { text: "“Tinc cinc anys. Soc un pingüí jove!”", translation: "“Tenho cinco anos. Sou um pinguim jovem!”", next: "final_bom" },
+          { text: "“Soc cinc anys.”", translation: "“Sou cinco anos.”", wrong: "A idade se diz com “tenir”, como no português: “Tinc cinc anys” (tenho cinco anos)." },
         ],
       },
       final_bom: {
         emoji: "🤝",
-        text: "«Encantada, Linu!» «Encantat, Laia!» Demà van junts a la muntanya.",
-        translation: "«Muito prazer, Linu!» «Muito prazer, Laia!» Amanhã eles vão juntos para a montanha.",
+        text: "“Encantada, Linu!” “Encantat, Laia!” Demà van junts a la muntanya.",
+        translation: "“Muito prazer, Linu!” “Muito prazer, Laia!” Amanhã eles vão juntos para a montanha.",
         ending: { tone: "bom", title: "Uma amiga em Andorra", message: "Você disse o nome, de onde é e a idade. Encantat!" },
       },
     },
@@ -221,7 +221,7 @@ export const STORIES_CA: StorySeed[] = [
     title: "Pa amb tomàquet a Girona",
     emoji: "🍅",
     summary: "Num bar de Girona, o Linu descobre o pão com tomate e diz do que gosta.",
-    cultural_context: "O «pa amb tomàquet» — pão esfregado com tomate maduro, com azeite e sal — é um dos pratos mais típicos da Catalunha. Em Girona, as casas coloridas à beira do rio Onyar são um dos cartões-postais da cidade.",
+    cultural_context: "O “pa amb tomàquet” — pão esfregado com tomate maduro, com azeite e sal — é um dos pratos mais típicos da Catalunha. Em Girona, as casas coloridas à beira do rio Onyar são um dos cartões-postais da cidade.",
     start: "start",
     glossary: [
       ["m'agrada / m'agraden", "eu gosto de"],
@@ -238,24 +238,24 @@ export const STORIES_CA: StorySeed[] = [
         text: "Girona. Linu passeja pel riu Onyar. Té gana i entra en un bar.",
         translation: "Girona. O Linu passeia pelo rio Onyar. Está com fome e entra num bar.",
         choices: [
-          { text: "«Bon dia! Teniu pa amb tomàquet?»", translation: "«Bom dia! Vocês têm pão com tomate?»", next: "cambrer" },
-          { text: "«Bon dia! Voldria una pizza.»", translation: "«Bom dia! Eu queria uma pizza.»", next: "pizza" },
+          { text: "“Bon dia! Teniu pa amb tomàquet?”", translation: "“Bom dia! Vocês têm pão com tomate?”", next: "cambrer" },
+          { text: "“Bon dia! Voldria una pizza.”", translation: "“Bom dia! Eu queria uma pizza.”", next: "pizza" },
         ],
       },
       pizza: {
         emoji: "🍕",
-        text: "«Una pizza? A les deu del matí? Aquí no fem pizza. Tenim pa amb tomàquet!»",
-        translation: "«Uma pizza? Às dez da manhã? Aqui não fazemos pizza. Temos pão com tomate!»",
-        choices: [{ text: "«D'acord, pa amb tomàquet!»", translation: "«Tá bom, pão com tomate!»", next: "cambrer" }],
+        text: "“Una pizza? A les deu del matí? Aquí no fem pizza. Tenim pa amb tomàquet!”",
+        translation: "“Uma pizza? Às dez da manhã? Aqui não fazemos pizza. Temos pão com tomate!”",
+        choices: [{ text: "“D'acord, pa amb tomàquet!”", translation: "“Tá bom, pão com tomate!”", next: "cambrer" }],
       },
       cambrer: {
         emoji: "🧑‍🍳",
-        text: "«I tant! Amb pernil o amb formatge?»",
-        translation: "«Claro! Com presunto ou com queijo?»",
+        text: "“I tant! Amb pernil o amb formatge?”",
+        translation: "“Claro! Com presunto ou com queijo?”",
         choices: [
-          { text: "«Amb formatge, si us plau. M'agrada molt el formatge.»", translation: "«Com queijo, por favor. Gosto muito de queijo.»", next: "taula" },
-          { text: "«Amb pernil, si us plau.»", translation: "«Com presunto, por favor.»", next: "taula" },
-          { text: "«Amb xocolata, si us plau.»", translation: "«Com chocolate, por favor.»", wrong: "O garçom ofereceu duas opções: «amb pernil» (com presunto) ou «amb formatge» (com queijo)." },
+          { text: "“Amb formatge, si us plau. M'agrada molt el formatge.”", translation: "“Com queijo, por favor. Gosto muito de queijo.”", next: "taula" },
+          { text: "“Amb pernil, si us plau.”", translation: "“Com presunto, por favor.”", next: "taula" },
+          { text: "“Amb xocolata, si us plau.”", translation: "“Com chocolate, por favor.”", wrong: "O garçom ofereceu duas opções: “amb pernil” (com presunto) ou “amb formatge” (com queijo)." },
         ],
       },
       taula: {
@@ -263,17 +263,17 @@ export const STORIES_CA: StorySeed[] = [
         text: "El cambrer porta el pa. El pa té tomàquet, oli i sal.",
         translation: "O garçom traz o pão. O pão tem tomate, azeite e sal.",
         choices: [
-          { text: "«Mmm! M'agrada molt!»", translation: "«Hum! Gosto muito!»", next: "compte" },
-          { text: "«No m'agrada el tomàquet…»", translation: "«Não gosto de tomate…»", next: "final_neutre" },
+          { text: "“Mmm! M'agrada molt!”", translation: "“Hum! Gosto muito!”", next: "compte" },
+          { text: "“No m'agrada el tomàquet…”", translation: "“Não gosto de tomate…”", next: "final_neutre" },
         ],
       },
       compte: {
         emoji: "🧾",
-        text: "«T'agrada? Vols un cafè?»",
-        translation: "«Você gosta? Quer um café?»",
+        text: "“T'agrada? Vols un cafè?”",
+        translation: "“Você gosta? Quer um café?”",
         choices: [
-          { text: "«Sí, un tallat. I el compte, si us plau.»", translation: "«Sim, um tallat. E a conta, por favor.»", next: "final_bom" },
-          { text: "«No, gràcies. El compte, si us plau.»", translation: "«Não, obrigado. A conta, por favor.»", next: "final_bom" },
+          { text: "“Sí, un tallat. I el compte, si us plau.”", translation: "“Sim, um tallat. E a conta, por favor.”", next: "final_bom" },
+          { text: "“No, gràcies. El compte, si us plau.”", translation: "“Não, obrigado. A conta, por favor.”", next: "final_bom" },
         ],
       },
       final_bom: {
@@ -284,8 +284,8 @@ export const STORIES_CA: StorySeed[] = [
       },
       final_neutre: {
         emoji: "🤷",
-        text: "Linu menja només el formatge. El cambrer riu: «El tomàquet és el millor!»",
-        translation: "O Linu come só o queijo. O garçom ri: «O tomate é o melhor!»",
+        text: "Linu menja només el formatge. El cambrer riu: “El tomàquet és el millor!”",
+        translation: "O Linu come só o queijo. O garçom ri: “O tomate é o melhor!”",
         ending: { tone: "neutro", title: "Nem todo mundo gosta de tomate", message: "Tudo bem não gostar, mas o pa amb tomàquet é quase obrigatório na Catalunha. Dê outra chance!" },
       },
     },
@@ -297,7 +297,7 @@ export const STORIES_CA: StorySeed[] = [
     title: "La casa de l'àvia",
     emoji: "🏡",
     summary: "Em Vic, o Linu visita a casa da avó de uma amiga e aprende as palavras da casa e da família.",
-    cultural_context: "Vic, no interior da Catalunha, é famosa pelos embutidos, como o «fuet» e a «llonganissa», e pela Plaça Major, uma das maiores praças da região, onde há mercado às terças e aos sábados.",
+    cultural_context: "Vic, no interior da Catalunha, é famosa pelos embutidos, como o “fuet” e a “llonganissa”, e pela Plaça Major, uma das maiores praças da região, onde há mercado às terças e aos sábados.",
     start: "start",
     glossary: [
       ["l'àvia / l'avi", "a avó / o avô"],
@@ -311,20 +311,20 @@ export const STORIES_CA: StorySeed[] = [
     nodes: {
       start: {
         emoji: "🏡",
-        text: "La Marta porta Linu a Vic. «Aquesta és la casa de la meva àvia!»",
-        translation: "A Marta leva o Linu a Vic. «Esta é a casa da minha avó!»",
+        text: "La Marta porta Linu a Vic. “Aquesta és la casa de la meva àvia!”",
+        translation: "A Marta leva o Linu a Vic. “Esta é a casa da minha avó!”",
         choices: [
-          { text: "«Que bonica! Hi ha jardí?»", translation: "«Que bonita! Tem jardim?»", next: "jardi" },
-          { text: "«On és la cuina?»", translation: "«Onde fica a cozinha?»", next: "cuina" },
+          { text: "“Que bonica! Hi ha jardí?”", translation: "“Que bonita! Tem jardim?”", next: "jardi" },
+          { text: "“On és la cuina?”", translation: "“Onde fica a cozinha?”", next: "cuina" },
         ],
       },
       jardi: {
         emoji: "🌳",
-        text: "«Sí, hi ha un jardí amb un arbre i dos gats.»",
-        translation: "«Sim, tem um jardim com uma árvore e dois gatos.»",
+        text: "“Sí, hi ha un jardí amb un arbre i dos gats.”",
+        translation: "“Sim, tem um jardim com uma árvore e dois gatos.”",
         choices: [
-          { text: "«Dos gats? M'agraden els gats!»", translation: "«Dois gatos? Eu gosto de gatos!»", next: "gats" },
-          { text: "«Dos arbres i un gat? Que bé!»", translation: "«Duas árvores e um gato? Que bom!»", wrong: "A Marta disse «un arbre i dos gats» (uma árvore e dois gatos), não o contrário." },
+          { text: "“Dos gats? M'agraden els gats!”", translation: "“Dois gatos? Eu gosto de gatos!”", next: "gats" },
+          { text: "“Dos arbres i un gat? Que bé!”", translation: "“Duas árvores e um gato? Que bom!”", wrong: "A Marta disse “un arbre i dos gats” (uma árvore e dois gatos), não o contrário." },
         ],
       },
       gats: {
@@ -337,15 +337,15 @@ export const STORIES_CA: StorySeed[] = [
         emoji: "🍲",
         text: "A la cuina hi ha l'àvia. Cuina escudella.",
         translation: "Na cozinha está a avó. Ela está cozinhando escudella.",
-        choices: [{ text: "«Bon dia, senyora! Quina bona olor!»", translation: "«Bom dia, senhora! Que cheiro bom!»", next: "avia" }],
+        choices: [{ text: "“Bon dia, senyora! Quina bona olor!”", translation: "“Bom dia, senhora! Que cheiro bom!”", next: "avia" }],
       },
       avia: {
         emoji: "👵",
-        text: "L'àvia diu: «Hola, Linu! Vols dinar amb nosaltres?»",
-        translation: "A avó diz: «Olá, Linu! Quer almoçar com a gente?»",
+        text: "L'àvia diu: “Hola, Linu! Vols dinar amb nosaltres?”",
+        translation: "A avó diz: “Olá, Linu! Quer almoçar com a gente?”",
         choices: [
-          { text: "«Sí, moltes gràcies!»", translation: "«Sim, muito obrigado!»", next: "final_bom" },
-          { text: "«No, gràcies, no tinc gana.»", translation: "«Não, obrigado, não estou com fome.»", next: "final_neutre" },
+          { text: "“Sí, moltes gràcies!”", translation: "“Sim, muito obrigado!”", next: "final_bom" },
+          { text: "“No, gràcies, no tinc gana.”", translation: "“Não, obrigado, não estou com fome.”", next: "final_neutre" },
         ],
       },
       final_bom: {
@@ -386,8 +386,8 @@ export const STORIES_CA: StorySeed[] = [
         text: "Dissabte. Linu i els amics arriben a la platja de Sitges. Fa sol!",
         translation: "Sábado. O Linu e os amigos chegam à praia de Sitges. Está sol!",
         choices: [
-          { text: "«Nedem?»", translation: "«Vamos nadar?»", next: "nedar" },
-          { text: "«Juguem a pilota?»", translation: "«Vamos jogar bola?»", next: "pilota" },
+          { text: "“Nedem?”", translation: "“Vamos nadar?”", next: "nedar" },
+          { text: "“Juguem a pilota?”", translation: "“Vamos jogar bola?”", next: "pilota" },
         ],
       },
       nedar: {
@@ -395,23 +395,23 @@ export const STORIES_CA: StorySeed[] = [
         text: "L'aigua és freda, però Linu és un pingüí: neda molt bé! Els amics el miren.",
         translation: "A água está fria, mas o Linu é um pinguim: nada muito bem! Os amigos olham para ele.",
         choices: [
-          { text: "«Veniu! L'aigua és bona!»", translation: "«Venham! A água está boa!»", next: "amics" },
-          { text: "«L'aigua és calenta!»", translation: "«A água está quente!»", wrong: "O texto diz que a água está «freda» (fria). Para um pinguim está ótima — mas não está quente!" },
+          { text: "“Veniu! L'aigua és bona!”", translation: "“Venham! A água está boa!”", next: "amics" },
+          { text: "“L'aigua és calenta!”", translation: "“A água está quente!”", wrong: "O texto diz que a água está “freda” (fria). Para um pinguim está ótima — mas não está quente!" },
         ],
       },
       pilota: {
         emoji: "🏐",
         text: "Juguen a pilota a la sorra. En Pau juga molt bé.",
         translation: "Eles jogam bola na areia. O Pau joga muito bem.",
-        choices: [{ text: "«Molt bé, Pau!»", translation: "«Muito bem, Pau!»", next: "amics" }],
+        choices: [{ text: "“Molt bé, Pau!”", translation: "“Muito bem, Pau!”", next: "amics" }],
       },
       amics: {
         emoji: "👫",
-        text: "A la una, la Júlia diu: «Tinc gana! Mengem?»",
-        translation: "À uma hora, a Júlia diz: «Estou com fome! Vamos comer?»",
+        text: "A la una, la Júlia diu: “Tinc gana! Mengem?”",
+        translation: "À uma hora, a Júlia diz: “Estou com fome! Vamos comer?”",
         choices: [
-          { text: "«Sí! Mengem uns entrepans.»", translation: "«Sim! Vamos comer uns sanduíches.»", next: "gelat" },
-          { text: "«No, gràcies. Jo nedo una mica més.»", translation: "«Não, obrigado. Vou nadar mais um pouco.»", next: "final_neutre" },
+          { text: "“Sí! Mengem uns entrepans.”", translation: "“Sim! Vamos comer uns sanduíches.”", next: "gelat" },
+          { text: "“No, gràcies. Jo nedo una mica més.”", translation: "“Não, obrigado. Vou nadar mais um pouco.”", next: "final_neutre" },
         ],
       },
       gelat: {
@@ -419,8 +419,8 @@ export const STORIES_CA: StorySeed[] = [
         text: "Després de dinar, compren gelats. Hi ha gelats de xocolata, de llimona i de maduixa.",
         translation: "Depois do almoço, eles compram sorvetes. Tem sorvete de chocolate, de limão e de morango.",
         choices: [
-          { text: "«Per a mi, de llimona!»", translation: "«Para mim, de limão!»", next: "final_bom" },
-          { text: "«Per a mi, de peix!»", translation: "«Para mim, de peixe!»", next: "final_riure" },
+          { text: "“Per a mi, de llimona!”", translation: "“Para mim, de limão!”", next: "final_bom" },
+          { text: "“Per a mi, de peix!”", translation: "“Para mim, de peixe!”", next: "final_riure" },
         ],
       },
       final_bom: {
@@ -431,8 +431,8 @@ export const STORIES_CA: StorySeed[] = [
       },
       final_riure: {
         emoji: "🐟",
-        text: "«De peix? No hi ha gelat de peix!» Tothom riu. Linu compra un gelat de llimona.",
-        translation: "«De peixe? Não tem sorvete de peixe!» Todo mundo ri. O Linu compra um sorvete de limão.",
+        text: "“De peix? No hi ha gelat de peix!” Tothom riu. Linu compra un gelat de llimona.",
+        translation: "“De peixe? Não tem sorvete de peixe!” Todo mundo ri. O Linu compra um sorvete de limão.",
         ending: { tone: "neutro", title: "Sorvete de peixe? Só na Antártida", message: "Pinguins têm gostos diferentes. Mas o de limão também é bom!" },
       },
       final_neutre: {
@@ -468,7 +468,7 @@ export const STORIES_CA: StorySeed[] = [
         text: "Linu és a l'amfiteatre romà de Tarragona. Vol anar a la catedral, però no sap on és.",
         translation: "O Linu está no anfiteatro romano de Tarragona. Quer ir à catedral, mas não sabe onde fica.",
         choices: [
-          { text: "Pregunta a una senyora: «Perdoni, on és la catedral?»", translation: "Pergunta a uma senhora: «Com licença, onde fica a catedral?»", next: "senyora" },
+          { text: "Pregunta a una senyora: “Perdoni, on és la catedral?”", translation: "Pergunta a uma senhora: “Com licença, onde fica a catedral?”", next: "senyora" },
           { text: "Mira el mòbil, però no té bateria.", translation: "Olha o celular, mas está sem bateria.", next: "bateria" },
         ],
       },
@@ -476,24 +476,24 @@ export const STORIES_CA: StorySeed[] = [
         emoji: "🔋",
         text: "El mòbil no funciona. No hi ha cap altra opció: cal preguntar!",
         translation: "O celular não funciona. Não há outra opção: é preciso perguntar!",
-        choices: [{ text: "«Perdoni, senyor, on és la catedral?»", translation: "«Com licença, senhor, onde fica a catedral?»", next: "senyor" }],
+        choices: [{ text: "“Perdoni, senyor, on és la catedral?”", translation: "“Com licença, senhor, onde fica a catedral?”", next: "senyor" }],
       },
       senyora: {
         emoji: "👵",
-        text: "«La catedral? És a dalt, a la part antiga. Puja per aquest carrer i després gira a la dreta.»",
-        translation: "«A catedral? Fica lá em cima, na parte antiga. Suba por esta rua e depois vire à direita.»",
+        text: "“La catedral? És a dalt, a la part antiga. Puja per aquest carrer i després gira a la dreta.”",
+        translation: "“A catedral? Fica lá em cima, na parte antiga. Suba por esta rua e depois vire à direita.”",
         choices: [
           { text: "Linu puja pel carrer i gira a la dreta.", translation: "O Linu sobe pela rua e vira à direita.", next: "catedral" },
-          { text: "Linu baixa cap al mar.", translation: "O Linu desce em direção ao mar.", wrong: "A senhora disse «puja» (suba) e «gira a la dreta» (vire à direita). Descer para o mar é o caminho oposto." },
+          { text: "Linu baixa cap al mar.", translation: "O Linu desce em direção ao mar.", wrong: "A senhora disse “puja” (suba) e “gira a la dreta” (vire à direita). Descer para o mar é o caminho oposto." },
         ],
       },
       senyor: {
         emoji: "👴",
-        text: "«És molt a prop: tot recte fins a les muralles i després a l'esquerra.»",
-        translation: "«É muito perto: sempre em frente até as muralhas e depois à esquerda.»",
+        text: "“És molt a prop: tot recte fins a les muralles i després a l'esquerra.”",
+        translation: "“É muito perto: sempre em frente até as muralhas e depois à esquerda.”",
         choices: [
           { text: "Linu va tot recte i, a les muralles, gira a l'esquerra.", translation: "O Linu vai em frente e, nas muralhas, vira à esquerda.", next: "catedral" },
-          { text: "Linu gira a la dreta de seguida.", translation: "O Linu vira à direita imediatamente.", wrong: "O senhor disse «tot recte» (sempre em frente) até as muralhas e depois «a l'esquerra» (à esquerda)." },
+          { text: "Linu gira a la dreta de seguida.", translation: "O Linu vira à direita imediatamente.", wrong: "O senhor disse “tot recte” (sempre em frente) até as muralhas e depois “a l'esquerra” (à esquerda)." },
         ],
       },
       catedral: {
@@ -526,7 +526,7 @@ export const STORIES_CA: StorySeed[] = [
     title: "Al mercat de Palma",
     emoji: "🐟",
     summary: "Em Palma de Maiorca, o Linu faz compras no mercado para um jantar com amigos.",
-    cultural_context: "O Mercat de l'Olivar é o maior mercado de Palma. Em Maiorca, dois sabores típicos são a «ensaïmada», um doce de massa em espiral, e o «pa amb oli», pão com azeite e tomate. As laranjas do vale de Sóller são famosas na ilha.",
+    cultural_context: "O Mercat de l'Olivar é o maior mercado de Palma. Em Maiorca, dois sabores típicos são a “ensaïmada”, um doce de massa em espiral, e o “pa amb oli”, pão com azeite e tomate. As laranjas do vale de Sóller são famosas na ilha.",
     start: "start",
     glossary: [
       ["Què vol?", "O que o senhor quer?"],
@@ -549,56 +549,56 @@ export const STORIES_CA: StorySeed[] = [
       },
       peix: {
         emoji: "🐟",
-        text: "«Bon dia! Què vol? Avui tenim sardines i llagostins.»",
-        translation: "«Bom dia! O que o senhor quer? Hoje temos sardinhas e camarões.»",
+        text: "“Bon dia! Què vol? Avui tenim sardines i llagostins.”",
+        translation: "“Bom dia! O que o senhor quer? Hoje temos sardinhas e camarões.”",
         choices: [
-          { text: "«Quant valen les sardines?»", translation: "«Quanto custam as sardinhas?»", next: "sardines" },
-          { text: "«Que teniu pingüins?»", translation: "«Vocês têm pinguins?»", next: "pinguins" },
+          { text: "“Quant valen les sardines?”", translation: "“Quanto custam as sardinhas?”", next: "sardines" },
+          { text: "“Que teniu pingüins?”", translation: "“Vocês têm pinguins?”", next: "pinguins" },
         ],
       },
       pinguins: {
         emoji: "🐧",
-        text: "El peixater riu: «Pingüins? No, aquí no venem mai pingüins!»",
-        translation: "O peixeiro ri: «Pinguins? Não, aqui nunca vendemos pinguins!»",
-        choices: [{ text: "«Uf, quina sort! Doncs, sardines.»", translation: "«Ufa, que sorte! Então, sardinhas.»", next: "sardines" }],
+        text: "El peixater riu: “Pingüins? No, aquí no venem mai pingüins!”",
+        translation: "O peixeiro ri: “Pinguins? Não, aqui nunca vendemos pinguins!”",
+        choices: [{ text: "“Uf, quina sort! Doncs, sardines.”", translation: "“Ufa, que sorte! Então, sardinhas.”", next: "sardines" }],
       },
       sardines: {
         emoji: "💶",
-        text: "«Són deu euros el quilo.»",
-        translation: "«São dez euros o quilo.»",
+        text: "“Són deu euros el quilo.”",
+        translation: "“São dez euros o quilo.”",
         choices: [
-          { text: "«Mig quilo, si us plau.»", translation: "«Meio quilo, por favor.»", next: "fruita" },
-          { text: "«Deu quilos, si us plau!»", translation: "«Dez quilos, por favor!»", wrong: "O peixeiro disse o preço: «deu euros el quilo» (dez euros o quilo). Dez quilos de sardinhas é demais para um jantar!" },
+          { text: "“Mig quilo, si us plau.”", translation: "“Meio quilo, por favor.”", next: "fruita" },
+          { text: "“Deu quilos, si us plau!”", translation: "“Dez quilos, por favor!”", wrong: "O peixeiro disse o preço: “deu euros el quilo” (dez euros o quilo). Dez quilos de sardinhas é demais para um jantar!" },
         ],
       },
       fruita: {
         emoji: "🍑",
-        text: "A la parada de la fruita no hi ha cap préssec. «Ho sento, avui no tenim préssecs.»",
-        translation: "Na banca de frutas não tem nenhum pêssego. «Sinto muito, hoje não temos pêssegos.»",
+        text: "A la parada de la fruita no hi ha cap préssec. “Ho sento, avui no tenim préssecs.”",
+        translation: "Na banca de frutas não tem nenhum pêssego. “Sinto muito, hoje não temos pêssegos.”",
         choices: [
-          { text: "«I què teniu de temporada?»", translation: "«E o que vocês têm da estação?»", next: "temporada" },
-          { text: "«D'acord, gràcies. Adéu!»", translation: "«Tá bom, obrigado. Tchau!»", next: "ensaimada" },
+          { text: "“I què teniu de temporada?”", translation: "“E o que vocês têm da estação?”", next: "temporada" },
+          { text: "“D'acord, gràcies. Adéu!”", translation: "“Tá bom, obrigado. Tchau!”", next: "ensaimada" },
         ],
       },
       temporada: {
         emoji: "🍊",
-        text: "«Tenim taronges de Sóller, molt dolces!»",
-        translation: "«Temos laranjas de Sóller, muito doces!»",
-        choices: [{ text: "«Perfecte! Un quilo de taronges.»", translation: "«Perfeito! Um quilo de laranjas.»", next: "ensaimada" }],
+        text: "“Tenim taronges de Sóller, molt dolces!”",
+        translation: "“Temos laranjas de Sóller, muito doces!”",
+        choices: [{ text: "“Perfecte! Un quilo de taronges.”", translation: "“Perfeito! Um quilo de laranjas.”", next: "ensaimada" }],
       },
       ensaimada: {
         emoji: "🥐",
         text: "Al final, Linu passa per un forn. Hi ha ensaïmades acabades de fer.",
         translation: "No fim, o Linu passa por uma padaria. Tem ensaïmadas saídas do forno.",
         choices: [
-          { text: "«Una ensaïmada gran, si us plau!»", translation: "«Uma ensaïmada grande, por favor!»", next: "final_bom" },
-          { text: "«No, gràcies, no m'agraden els dolços.»", translation: "«Não, obrigado, não gosto de doces.»", next: "final_neutre" },
+          { text: "“Una ensaïmada gran, si us plau!”", translation: "“Uma ensaïmada grande, por favor!”", next: "final_bom" },
+          { text: "“No, gràcies, no m'agraden els dolços.”", translation: "“Não, obrigado, não gosto de doces.”", next: "final_neutre" },
         ],
       },
       final_bom: {
         emoji: "🍽️",
-        text: "Al vespre, els amics mengen sardines, taronges i ensaïmada. «Linu, ets un gran cuiner!»",
-        translation: "À noite, os amigos comem sardinhas, laranjas e ensaïmada. «Linu, você é um grande cozinheiro!»",
+        text: "Al vespre, els amics mengen sardines, taronges i ensaïmada. “Linu, ets un gran cuiner!”",
+        translation: "À noite, os amigos comem sardinhas, laranjas e ensaïmada. “Linu, você é um grande cozinheiro!”",
         ending: { tone: "bom", title: "Jantar maiorquino", message: "Você perguntou preços, entendeu os números e montou um jantar completo. Molt bé!" },
       },
       final_neutre: {
@@ -616,7 +616,7 @@ export const STORIES_CA: StorySeed[] = [
     title: "Anem a Montserrat!",
     emoji: "⛰️",
     summary: "O Linu e uma amiga sobem a Montserrat de trem de cremalheira e decidem o que fazer lá em cima.",
-    cultural_context: "Montserrat, a uns 50 km de Barcelona, é uma montanha de rochas em forma de dedos com um mosteiro beneditino fundado no século XI. O coro de meninos do mosteiro, a Escolania, é um dos mais antigos da Europa. Os catalães dizem as horas com quartos: «dos quarts de nou» são 8h30.",
+    cultural_context: "Montserrat, a uns 50 km de Barcelona, é uma montanha de rochas em forma de dedos com um mosteiro beneditino fundado no século XI. O coro de meninos do mosteiro, a Escolania, é um dos mais antigos da Europa. Os catalães dizem as horas com quartos: “dos quarts de nou” são 8h30.",
     start: "start",
     glossary: [
       ["Véns?", "Você vem?"],
@@ -630,51 +630,51 @@ export const STORIES_CA: StorySeed[] = [
     nodes: {
       start: {
         emoji: "🚆",
-        text: "Diumenge al matí. La Clara truca a Linu: «Véns a Montserrat amb mi?»",
-        translation: "Domingo de manhã. A Clara liga para o Linu: «Você vem comigo a Montserrat?»",
+        text: "Diumenge al matí. La Clara truca a Linu: “Véns a Montserrat amb mi?”",
+        translation: "Domingo de manhã. A Clara liga para o Linu: “Você vem comigo a Montserrat?”",
         choices: [
-          { text: "«Sí, hi vinc! Com hi anem?»", translation: "«Sim, eu vou! Como vamos?»", next: "tren" },
-          { text: "«No puc, faig deures.»", translation: "«Não posso, estou fazendo a lição de casa.»", next: "final_casa" },
+          { text: "“Sí, hi vinc! Com hi anem?”", translation: "“Sim, eu vou! Como vamos?”", next: "tren" },
+          { text: "“No puc, faig deures.”", translation: "“Não posso, estou fazendo a lição de casa.”", next: "final_casa" },
         ],
       },
       tren: {
         emoji: "🚞",
-        text: "«Anem amb tren fins a Monistrol i després pugem amb el cremallera.»",
-        translation: "«Vamos de trem até Monistrol e depois subimos de cremalheira.»",
+        text: "“Anem amb tren fins a Monistrol i després pugem amb el cremallera.”",
+        translation: "“Vamos de trem até Monistrol e depois subimos de cremalheira.”",
         choices: [
-          { text: "«Perfecte! A quina hora surt el tren?»", translation: "«Perfeito! A que horas sai o trem?»", next: "sortida" },
-          { text: "«Anem a peu des de Barcelona?»", translation: "«Vamos a pé desde Barcelona?»", wrong: "A Clara disse que vão de trem («amb tren») e depois sobem de cremalheira. A pé seriam mais de 50 km!" },
+          { text: "“Perfecte! A quina hora surt el tren?”", translation: "“Perfeito! A que horas sai o trem?”", next: "sortida" },
+          { text: "“Anem a peu des de Barcelona?”", translation: "“Vamos a pé desde Barcelona?”", wrong: "A Clara disse que vão de trem (“amb tren”) e depois sobem de cremalheira. A pé seriam mais de 50 km!" },
         ],
       },
       sortida: {
         emoji: "🕘",
-        text: "«Surt a les nou. Ens veiem a la plaça d'Espanya a dos quarts de nou.»",
-        translation: "«Sai às nove. A gente se encontra na Plaça d'Espanya às oito e meia.»",
+        text: "“Surt a les nou. Ens veiem a la plaça d'Espanya a dos quarts de nou.”",
+        translation: "“Sai às nove. A gente se encontra na Plaça d'Espanya às oito e meia.”",
         choices: [
           { text: "Linu arriba a la plaça a les vuit i mitja.", translation: "O Linu chega à praça às oito e meia.", next: "cremallera" },
-          { text: "Linu arriba a la plaça a les nou i mitja.", translation: "O Linu chega à praça às nove e meia.", wrong: "«Dos quarts de nou» é o jeito catalão de dizer 8h30 (dois quartos a caminho das nove), não 9h30. E o trem sai às nove!" },
+          { text: "Linu arriba a la plaça a les nou i mitja.", translation: "O Linu chega à praça às nove e meia.", wrong: "“Dos quarts de nou” é o jeito catalão de dizer 8h30 (dois quartos a caminho das nove), não 9h30. E o trem sai às nove!" },
         ],
       },
       cremallera: {
         emoji: "⛰️",
         text: "El cremallera puja a poc a poc. Les muntanyes són altes i tenen formes estranyes.",
         translation: "O trem de cremalheira sobe devagar. As montanhas são altas e têm formas estranhas.",
-        choices: [{ text: "«Quines roques! Semblen dits!»", translation: "«Que rochas! Parecem dedos!»", next: "monestir" }],
+        choices: [{ text: "“Quines roques! Semblen dits!”", translation: "“Que rochas! Parecem dedos!”", next: "monestir" }],
       },
       monestir: {
         emoji: "🏛️",
-        text: "Arriben al monestir. La Clara diu: «Què fem? Anem a escoltar l'Escolania o fem una excursió?»",
-        translation: "Chegam ao mosteiro. A Clara diz: «O que fazemos? Vamos ouvir a Escolania ou fazemos uma trilha?»",
+        text: "Arriben al monestir. La Clara diu: “Què fem? Anem a escoltar l'Escolania o fem una excursió?”",
+        translation: "Chegam ao mosteiro. A Clara diz: “O que fazemos? Vamos ouvir a Escolania ou fazemos uma trilha?”",
         choices: [
-          { text: "«Anem a escoltar l'Escolania!»", translation: "«Vamos ouvir a Escolania!»", next: "final_bom" },
-          { text: "«Fem una excursió fins al cim!»", translation: "«Vamos fazer uma trilha até o cume!»", next: "excursio" },
+          { text: "“Anem a escoltar l'Escolania!”", translation: "“Vamos ouvir a Escolania!”", next: "final_bom" },
+          { text: "“Fem una excursió fins al cim!”", translation: "“Vamos fazer uma trilha até o cume!”", next: "excursio" },
         ],
       },
       excursio: {
         emoji: "🥾",
         text: "Caminen dues hores fins a Sant Jeroni, el cim més alt de la muntanya. Fa vent, però la vista és increïble.",
         translation: "Caminham duas horas até Sant Jeroni, o cume mais alto da montanha. Venta, mas a vista é incrível.",
-        choices: [{ text: "«Quina vista tan bonica!»", translation: "«Que vista bonita!»", next: "final_cim" }],
+        choices: [{ text: "“Quina vista tan bonica!”", translation: "“Que vista bonita!”", next: "final_cim" }],
       },
       final_bom: {
         emoji: "🎶",
@@ -718,59 +718,59 @@ export const STORIES_CA: StorySeed[] = [
     nodes: {
       start: {
         emoji: "☕",
-        text: "Dilluns. En Jordi pregunta a Linu: «Què vas fer ahir?»",
-        translation: "Segunda-feira. O Jordi pergunta ao Linu: «O que você fez ontem?»",
+        text: "Dilluns. En Jordi pregunta a Linu: “Què vas fer ahir?”",
+        translation: "Segunda-feira. O Jordi pergunta ao Linu: “O que você fez ontem?”",
         choices: [
-          { text: "«Ahir vaig anar a la Seu Vella.»", translation: "«Ontem fui à Seu Vella.»", next: "seu" },
-          { text: "«Ahir vaig a la Seu Vella.»", translation: "«Ontem vou à Seu Vella.»", wrong: "Para o passado, o catalão usa «vaig» + infinitivo: «vaig anar» (fui). «Vaig a…» sozinho é presente: «vou a…»." },
+          { text: "“Ahir vaig anar a la Seu Vella.”", translation: "“Ontem fui à Seu Vella.”", next: "seu" },
+          { text: "“Ahir vaig a la Seu Vella.”", translation: "“Ontem vou à Seu Vella.”", wrong: "Para o passado, o catalão usa “vaig” + infinitivo: “vaig anar” (fui). “Vaig a…” sozinho é presente: “vou a…”." },
         ],
       },
       seu: {
         emoji: "🏰",
-        text: "«A la Seu Vella? I què hi vas veure?»",
-        translation: "«À Seu Vella? E o que você viu lá?»",
-        choices: [{ text: "«Vaig veure el claustre i vaig pujar al campanar.»", translation: "«Vi o claustro e subi no campanário.»", next: "campanar" }],
+        text: "“A la Seu Vella? I què hi vas veure?”",
+        translation: "“À Seu Vella? E o que você viu lá?”",
+        choices: [{ text: "“Vaig veure el claustre i vaig pujar al campanar.”", translation: "“Vi o claustro e subi no campanário.”", next: "campanar" }],
       },
       campanar: {
         emoji: "🔔",
-        text: "«Molt bé! I després, què vas fer?»",
-        translation: "«Muito bem! E depois, o que você fez?»",
+        text: "“Molt bé! I després, què vas fer?”",
+        translation: "“Muito bem! E depois, o que você fez?”",
         choices: [
-          { text: "«Vaig menjar cargols a la llauna amb uns amics.»", translation: "«Comi caracóis na chapa com uns amigos.»", next: "cargols" },
-          { text: "«Vaig dormir tota la tarda.»", translation: "«Dormi a tarde toda.»", next: "dormir" },
+          { text: "“Vaig menjar cargols a la llauna amb uns amics.”", translation: "“Comi caracóis na chapa com uns amigos.”", next: "cargols" },
+          { text: "“Vaig dormir tota la tarda.”", translation: "“Dormi a tarde toda.”", next: "dormir" },
         ],
       },
       cargols: {
         emoji: "🐌",
-        text: "«Cargols! Et van agradar?»",
-        translation: "«Caracóis! Você gostou?»",
+        text: "“Cargols! Et van agradar?”",
+        translation: "“Caracóis! Você gostou?”",
         choices: [
-          { text: "«Sí, molt! Però en vaig menjar massa…»", translation: "«Sim, muito! Mas comi demais…»", next: "massa" },
-          { text: "«Els cargols van menjar molt.»", translation: "«Os caracóis comeram muito.»", wrong: "O Jordi perguntou se os caracóis agradaram a você («Et van agradar?»). Quem comeu foi o Linu, não os caracóis!" },
+          { text: "“Sí, molt! Però en vaig menjar massa…”", translation: "“Sim, muito! Mas comi demais…”", next: "massa" },
+          { text: "“Els cargols van menjar molt.”", translation: "“Os caracóis comeram muito.”", wrong: "O Jordi perguntou se os caracóis agradaram a você (“Et van agradar?”). Quem comeu foi o Linu, não os caracóis!" },
         ],
       },
       massa: {
         emoji: "😅",
-        text: "En Jordi riu: «Normal! Al maig hi ha l'Aplec del Caragol. Hi vindràs?»",
-        translation: "O Jordi ri: «Normal! Em maio tem o Aplec del Caragol. Você vem?»",
-        choices: [{ text: "«I tant!»", translation: "«Claro!»", next: "final_bom" }],
+        text: "En Jordi riu: “Normal! Al maig hi ha l'Aplec del Caragol. Hi vindràs?”",
+        translation: "O Jordi ri: “Normal! Em maio tem o Aplec del Caragol. Você vem?”",
+        choices: [{ text: "“I tant!”", translation: "“Claro!”", next: "final_bom" }],
       },
       dormir: {
         emoji: "😴",
-        text: "«Tota la tarda? I al vespre?»",
-        translation: "«A tarde toda? E à noite?»",
-        choices: [{ text: "«Al vespre vaig veure una pel·lícula.»", translation: "«À noite vi um filme.»", next: "final_neutre" }],
+        text: "“Tota la tarda? I al vespre?”",
+        translation: "“A tarde toda? E à noite?”",
+        choices: [{ text: "“Al vespre vaig veure una pel·lícula.”", translation: "“À noite vi um filme.”", next: "final_neutre" }],
       },
       final_bom: {
         emoji: "🎉",
-        text: "«Doncs al maig anem junts a menjar caragols!»",
-        translation: "«Então em maio vamos juntos comer caracóis!»",
+        text: "“Doncs al maig anem junts a menjar caragols!”",
+        translation: "“Então em maio vamos juntos comer caracóis!”",
         ending: { tone: "bom", title: "Caracóis e passado", message: "Você contou o seu domingo com o passado perifrástico: vaig anar, vaig veure, vaig menjar. Perfecte!" },
       },
       final_neutre: {
         emoji: "📺",
-        text: "«Una pel·lícula? Doncs la propera vegada vine a menjar cargols amb nosaltres!»",
-        translation: "«Um filme? Então da próxima vez venha comer caracóis com a gente!»",
+        text: "“Una pel·lícula? Doncs la propera vegada vine a menjar cargols amb nosaltres!”",
+        translation: "“Um filme? Então da próxima vez venha comer caracóis com a gente!”",
         ending: { tone: "neutro", title: "Um domingo tranquilo", message: "Nada de errado com um domingo de preguiça — mas Lleida tinha caracóis esperando!" },
       },
     },
@@ -782,7 +782,7 @@ export const STORIES_CA: StorySeed[] = [
     title: "Les Falles de València",
     emoji: "🔥",
     summary: "Em Valência, no dia 19 de março, o Linu vive o último dia das Falles e conta o que já viu.",
-    cultural_context: "As Falles de València enchem a cidade em março de monumentos gigantes de madeira e papelão, as «falles», que são queimados na noite de 19 de março, dia de São José. Ao meio-dia, a «mascletà» sacode a praça da prefeitura com rojões. A festa é Patrimônio Cultural Imaterial da UNESCO desde 2016.",
+    cultural_context: "As Falles de València enchem a cidade em março de monumentos gigantes de madeira e papelão, as “falles”, que são queimados na noite de 19 de março, dia de São José. Ao meio-dia, a “mascletà” sacode a praça da prefeitura com rojões. A festa é Patrimônio Cultural Imaterial da UNESCO desde 2016.",
     start: "start",
     glossary: [
       ["he vist", "vi (hoje)"],
@@ -796,53 +796,53 @@ export const STORIES_CA: StorySeed[] = [
     nodes: {
       start: {
         emoji: "🎆",
-        text: "València, 19 de març. Linu passeja amb la Mar, una amiga valenciana. «Què has fet avui, Linu?»",
-        translation: "Valência, 19 de março. O Linu passeia com a Mar, uma amiga valenciana. «O que você fez hoje, Linu?»",
+        text: "València, 19 de març. Linu passeja amb la Mar, una amiga valenciana. “Què has fet avui, Linu?”",
+        translation: "Valência, 19 de março. O Linu passeia com a Mar, uma amiga valenciana. “O que você fez hoje, Linu?”",
         choices: [
-          { text: "«He vist tres falles enormes!»", translation: "«Vi três falles enormes!»", next: "falles" },
-          { text: "«Vaig veure tres falles l'any 2010.»", translation: "«Vi três falles em 2010.»", wrong: "A Mar perguntou o que você fez hoje («avui»). Para um tempo que ainda não acabou, use o perfeito: «He vist…». E o Linu nem estava em Valência em 2010!" },
+          { text: "“He vist tres falles enormes!”", translation: "“Vi três falles enormes!”", next: "falles" },
+          { text: "“Vaig veure tres falles l'any 2010.”", translation: "“Vi três falles em 2010.”", wrong: "A Mar perguntou o que você fez hoje (“avui”). Para um tempo que ainda não acabou, use o perfeito: “He vist…”. E o Linu nem estava em Valência em 2010!" },
         ],
       },
       falles: {
         emoji: "🎭",
-        text: "«I has sentit la mascletà a la plaça de l'Ajuntament?»",
-        translation: "«E você ouviu a mascletà na praça da prefeitura?»",
+        text: "“I has sentit la mascletà a la plaça de l'Ajuntament?”",
+        translation: "“E você ouviu a mascletà na praça da prefeitura?”",
         choices: [
-          { text: "«Sí! He sentit molt de soroll!»", translation: "«Sim! Ouvi muito barulho!»", next: "soroll" },
-          { text: "«No, encara no l'he sentida.»", translation: "«Não, ainda não ouvi.»", next: "mascleta" },
+          { text: "“Sí! He sentit molt de soroll!”", translation: "“Sim! Ouvi muito barulho!”", next: "soroll" },
+          { text: "“No, encara no l'he sentida.”", translation: "“Não, ainda não ouvi.”", next: "mascleta" },
         ],
       },
       mascleta: {
         emoji: "💥",
-        text: "«És a les dues en punt. Encara hi som a temps!»",
-        translation: "«É às duas em ponto. Ainda dá tempo!»",
+        text: "“És a les dues en punt. Encara hi som a temps!”",
+        translation: "“É às duas em ponto. Ainda dá tempo!”",
         choices: [{ text: "Corren cap a la plaça.", translation: "Eles correm para a praça.", next: "soroll" }],
       },
       soroll: {
         emoji: "🔊",
-        text: "La terra tremola i hi ha fum per tot arreu. «Què t'ha semblat?»",
-        translation: "O chão treme e tem fumaça por todo lado. «O que você achou?»",
-        choices: [{ text: "«Increïble! M'ha agradat molt!»", translation: "«Incrível! Gostei muito!»", next: "paella" }],
+        text: "La terra tremola i hi ha fum per tot arreu. “Què t'ha semblat?”",
+        translation: "O chão treme e tem fumaça por todo lado. “O que você achou?”",
+        choices: [{ text: "“Increïble! M'ha agradat molt!”", translation: "“Incrível! Gostei muito!”", next: "paella" }],
       },
       paella: {
         emoji: "🥘",
-        text: "Dinen paella valenciana, amb pollastre, conill i mongetes. «Aquesta nit hi ha la cremà. Vols venir?»",
-        translation: "Almoçam paella valenciana, com frango, coelho e feijão. «Hoje à noite tem a cremà. Quer vir?»",
+        text: "Dinen paella valenciana, amb pollastre, conill i mongetes. “Aquesta nit hi ha la cremà. Vols venir?”",
+        translation: "Almoçam paella valenciana, com frango, coelho e feijão. “Hoje à noite tem a cremà. Quer vir?”",
         choices: [
-          { text: "«I tant! Vull veure com cremen les falles.»", translation: "«Claro! Quero ver como queimam as falles.»", next: "crema" },
-          { text: "«No, estic cansat. Me'n vaig a dormir.»", translation: "«Não, estou cansado. Vou dormir.»", next: "final_dormir" },
+          { text: "“I tant! Vull veure com cremen les falles.”", translation: "“Claro! Quero ver como queimam as falles.”", next: "crema" },
+          { text: "“No, estic cansat. Me'n vaig a dormir.”", translation: "“Não, estou cansado. Vou dormir.”", next: "final_dormir" },
         ],
       },
       crema: {
         emoji: "🔥",
         text: "A la nit, cremen la falla. Tothom mira el foc en silenci.",
         translation: "À noite, queimam a falla. Todo mundo olha o fogo em silêncio.",
-        choices: [{ text: "«És trist i bonic alhora…»", translation: "«É triste e bonito ao mesmo tempo…»", next: "final_bom" }],
+        choices: [{ text: "“És trist i bonic alhora…”", translation: "“É triste e bonito ao mesmo tempo…”", next: "final_bom" }],
       },
       final_bom: {
         emoji: "✨",
-        text: "La Mar somriu: «Cada any és igual. Ho cremem tot… i l'any que ve, tornem a començar!»",
-        translation: "A Mar sorri: «Todo ano é igual. Queimamos tudo… e no ano que vem, recomeçamos!»",
+        text: "La Mar somriu: “Cada any és igual. Ho cremem tot… i l'any que ve, tornem a començar!”",
+        translation: "A Mar sorri: “Todo ano é igual. Queimamos tudo… e no ano que vem, recomeçamos!”",
         ending: { tone: "bom", title: "A noite da cremà", message: "Você contou o seu dia com o perfeito (he vist, he sentit) e viveu as Falles até o fim. Molt bé!" },
       },
       final_dormir: {
@@ -860,7 +860,7 @@ export const STORIES_CA: StorySeed[] = [
     title: "El vermut de diumenge",
     emoji: "🫒",
     summary: "Em Reus, o Linu é convidado para o vermute de domingo e conhece a família de um amigo.",
-    cultural_context: "Reus, perto de Tarragona, é a cidade natal do arquiteto Antoni Gaudí e tem uma longa tradição de vermute: tomar um aperitivo antes do almoço de domingo, a «hora del vermut», é um costume muito catalão.",
+    cultural_context: "Reus, perto de Tarragona, é a cidade natal do arquiteto Antoni Gaudí e tem uma longa tradição de vermute: tomar um aperitivo antes do almoço de domingo, a “hora del vermut”, é um costume muito catalão.",
     start: "start",
     glossary: [
       ["el meu / la meva", "o meu / a minha"],
@@ -876,45 +876,45 @@ export const STORIES_CA: StorySeed[] = [
         emoji: "🍸",
         text: "Diumenge, a la una. L'Oriol convida Linu a fer el vermut amb la seva família.",
         translation: "Domingo, à uma hora. O Oriol convida o Linu para o vermute com a família dele.",
-        choices: [{ text: "«Gràcies! Qui ve?»", translation: "«Obrigado! Quem vem?»", next: "familia" }],
+        choices: [{ text: "“Gràcies! Qui ve?”", translation: "“Obrigado! Quem vem?”", next: "familia" }],
       },
       familia: {
         emoji: "👨‍👩‍👧‍👦",
-        text: "«Vénen els meus pares, el meu germà gran i la meva germana petita.»",
-        translation: "«Vêm os meus pais, o meu irmão mais velho e a minha irmã mais nova.»",
+        text: "“Vénen els meus pares, el meu germà gran i la meva germana petita.”",
+        translation: "“Vêm os meus pais, o meu irmão mais velho e a minha irmã mais nova.”",
         choices: [
-          { text: "«Quina família tan gran!»", translation: "«Que família grande!»", next: "pares" },
-          { text: "«Així, tens tres germans?»", translation: "«Então você tem três irmãos?»", wrong: "O Oriol falou de «el meu germà gran i la meva germana petita»: são dois irmãos (um mais velho e uma mais nova), não três." },
+          { text: "“Quina família tan gran!”", translation: "“Que família grande!”", next: "pares" },
+          { text: "“Així, tens tres germans?”", translation: "“Então você tem três irmãos?”", wrong: "O Oriol falou de “el meu germà gran i la meva germana petita”: são dois irmãos (um mais velho e uma mais nova), não três." },
         ],
       },
       pares: {
         emoji: "👋",
-        text: "Arriben els pares. La mare diu: «Encantada, Linu! Ets l'amic de l'Oriol?»",
-        translation: "Chegam os pais. A mãe diz: «Muito prazer, Linu! Você é o amigo do Oriol?»",
+        text: "Arriben els pares. La mare diu: “Encantada, Linu! Ets l'amic de l'Oriol?”",
+        translation: "Chegam os pais. A mãe diz: “Muito prazer, Linu! Você é o amigo do Oriol?”",
         choices: [
-          { text: "«Sí, soc el seu amic del curs de català.»", translation: "«Sim, sou o amigo dele do curso de catalão.»", next: "germans" },
-          { text: "«Sí, i vostè és la meva mare!»", translation: "«Sim, e a senhora é a minha mãe!»", wrong: "A mãe do Oriol perguntou se você é amigo do filho dela. «La meva mare» seria a SUA mãe! Ela é «la seva mare» (a mãe dele)." },
+          { text: "“Sí, soc el seu amic del curs de català.”", translation: "“Sim, sou o amigo dele do curso de catalão.”", next: "germans" },
+          { text: "“Sí, i vostè és la meva mare!”", translation: "“Sim, e a senhora é a minha mãe!”", wrong: "A mãe do Oriol perguntou se você é amigo do filho dela. “La meva mare” seria a SUA mãe! Ela é “la seva mare” (a mãe dele)." },
         ],
       },
       germans: {
         emoji: "🧒",
-        text: "La germana petita, la Núria, té vuit anys. Pregunta: «És veritat que ets un pingüí?»",
-        translation: "A irmã mais nova, a Núria, tem oito anos. Pergunta: «É verdade que você é um pinguim?»",
-        choices: [{ text: "«Sí! La meva família viu a l'Antàrtida.»", translation: "«Sim! A minha família mora na Antártida.»", next: "antartida" }],
+        text: "La germana petita, la Núria, té vuit anys. Pregunta: “És veritat que ets un pingüí?”",
+        translation: "A irmã mais nova, a Núria, tem oito anos. Pergunta: “É verdade que você é um pinguim?”",
+        choices: [{ text: "“Sí! La meva família viu a l'Antàrtida.”", translation: "“Sim! A minha família mora na Antártida.”", next: "antartida" }],
       },
       antartida: {
         emoji: "❄️",
-        text: "«I com és la teva casa? Hi fa fred?»",
-        translation: "«E como é a sua casa? Faz frio lá?»",
-        choices: [{ text: "«Molt de fred! La meva casa és de gel.»", translation: "«Muito frio! A minha casa é de gelo.»", next: "vermut" }],
+        text: "“I com és la teva casa? Hi fa fred?”",
+        translation: "“E como é a sua casa? Faz frio lá?”",
+        choices: [{ text: "“Molt de fred! La meva casa és de gel.”", translation: "“Muito frio! A minha casa é de gelo.”", next: "vermut" }],
       },
       vermut: {
         emoji: "🫒",
-        text: "Arriba el vermut amb olives i patates. El pare diu: «Salut! Vols dinar amb nosaltres?»",
-        translation: "Chega o vermute com azeitonas e batatinhas. O pai diz: «Saúde! Quer almoçar com a gente?»",
+        text: "Arriba el vermut amb olives i patates. El pare diu: “Salut! Vols dinar amb nosaltres?”",
+        translation: "Chega o vermute com azeitonas e batatinhas. O pai diz: “Saúde! Quer almoçar com a gente?”",
         choices: [
-          { text: "«Sí, moltes gràcies!»", translation: "«Sim, muito obrigado!»", next: "final_bom" },
-          { text: "«No puc, els meus amics m'esperen.»", translation: "«Não posso, os meus amigos estão me esperando.»", next: "final_neutre" },
+          { text: "“Sí, moltes gràcies!”", translation: "“Sim, muito obrigado!”", next: "final_bom" },
+          { text: "“No puc, els meus amics m'esperen.”", translation: "“Não posso, os meus amigos estão me esperando.”", next: "final_neutre" },
         ],
       },
       final_bom: {
@@ -1255,7 +1255,7 @@ export const STORIES_CA: StorySeed[] = [
     nodes: {
       start: {
         emoji: '🐧',
-        text: "En Linu va dir: «Demà aniré al Delta de l'Ebre, que és un parc natural on viuen molts ocells que són més alts que jo.» Quin mitjà de transport triarà per recórrer el parc?",
+        text: "En Linu va dir: “Demà aniré al Delta de l'Ebre, que és un parc natural on viuen molts ocells que són més alts que jo.” Quin mitjà de transport triarà per recórrer el parc?",
         translation: 'Linu disse: "Amanhã irei ao Delta do Ebro, que é um parque natural onde vivem muitos pássaros que são maiores do que eu." Qual meio de transporte ele escolherá para percorrer o parque?',
         choices: [
           { text: 'Llogar una bicicleta per fer la ruta plana dels canals.', translation: 'Alugar uma bicicleta para fazer a rota plana dos canais.', next: 'ruta_bicicleta' },
@@ -1268,7 +1268,7 @@ export const STORIES_CA: StorySeed[] = [
       },
       ruta_bicicleta: {
         emoji: '🌾',
-        text: "En Linu pedalava content. Pensava: «Aquest camí que creua els camps d'arròs serà més pla que la muntanya. Cap a quina llacuna aniré primer?»",
+        text: "En Linu pedalava content. Pensava: “Aquest camí que creua els camps d'arròs serà més pla que la muntanya. Cap a quina llacuna aniré primer?”",
         translation: 'Linu pedalava feliz. Pensava: "Este caminho que cruza os campos de arroz será mais plano que a montanha. Para qual lagoa irei primeiro?"',
         choices: [
           { text: "Anar cap al mirador de la llacuna de l'Encanyissada.", translation: 'Ir em direção ao mirante da lagoa de Encanyissada.', next: 'mirador_llacuna' },
@@ -1281,7 +1281,7 @@ export const STORIES_CA: StorySeed[] = [
       },
       mirador_llacuna: {
         emoji: '🔭',
-        text: "En Linu va pujar a la torre de fusta. «Des d'aquest mirador que és més alt que les acàcies, veuré les aus on descansen tranquil·les», va dir en Linu.",
+        text: "En Linu va pujar a la torre de fusta. “Des d'aquest mirador que és més alt que les acàcies, veuré les aus on descansen tranquil·les”, va dir en Linu.",
         translation: 'Linu subiu na torre de madeira. "Deste mirante que é mais alto do que as acácias, verei as aves onde descansam tranquilas", disse Linu.',
         choices: [
           { text: 'Usar els prismàtics en silenci per buscar els flamencs.', translation: 'Usar os binóculos em silêncio para procurar os flamingos.', next: 'veure_flamencs' },
@@ -1294,7 +1294,7 @@ export const STORIES_CA: StorySeed[] = [
       },
       veure_flamencs: {
         emoji: '🦩',
-        text: "A l'aigua, en Linu va veure centenars de flamencs rosa. Va exclamar: «Aquests ocells que mengen crustacis seran tan elegants com els agrons! On aniré ara?»",
+        text: "A l'aigua, en Linu va veure centenars de flamencs rosa. Va exclamar: “Aquests ocells que mengen crustacis seran tan elegants com els agrons! On aniré ara?”",
         translation: 'Na água, Linu viu centenas de flamingos rosa. Exclamou: "Estes pássaros que comem crustáceos serão tão elegantes quanto as garças! Para onde irei agora?"',
         choices: [
           { text: 'Continuar pedalant cap a la platja del Trabucador.', translation: 'Continuar pedalando em direção à praia de Trabucador.', next: 'platja_trabucador' },
@@ -1309,13 +1309,13 @@ export const STORIES_CA: StorySeed[] = [
       },
       platja_trabucador: {
         emoji: '🏖️',
-        text: 'Arribat al Trabucador, va mirar la llarga barra de sorra. «Aquest camí de sorra que separa la badia del mar serà tan bonic com únic. On dinaré avui?»',
+        text: 'Arribat al Trabucador, va mirar la llarga barra de sorra. “Aquest camí de sorra que separa la badia del mar serà tan bonic com únic. On dinaré avui?”',
         translation: 'Chegando a Trabucador, olhou a longa faixa de areia. "Este caminho de areia que separa a baía do mar será tão bonito quanto único. Onde almoçarei hoje?"',
         choices: [{ text: 'Anar a Poble Nou del Delta a buscar un restaurant tradicional.', translation: 'Ir a Poble Nou del Delta procurar um restaurante tradicional.', next: 'dinar_poblenou' }],
       },
       dinar_poblenou: {
         emoji: '🥘',
-        text: 'Al poble on les cases són ben blanques, en Linu va somriure: «Avui tastaré un arròs bomba que serà més gustós que el de ahir!»',
+        text: 'Al poble on les cases són ben blanques, en Linu va somriure: “Avui tastaré un arròs bomba que serà més gustós que el de ahir!”',
         translation: 'Na vila onde as casas são bem brancas, Linu sorriu: "Hoje provarei um arroz bomba que será mais saboroso do que o de ontem!"',
         choices: [{ text: "Demanar un arròs tradicional de les Terres de l'Ebre.", translation: "Pedir um arroz tradicional das Terres de l'Ebre.", next: 'final_bom' }],
       },
@@ -1355,7 +1355,7 @@ export const STORIES_CA: StorySeed[] = [
     nodes: {
       start: {
         emoji: '🚢',
-        text: 'En Linu va arribar a Menorca i va dir: «Demà aniré al poblat de Trepucó, on hi ha una taula que és més alta que un pi.» Quina decisió prendrà?',
+        text: 'En Linu va arribar a Menorca i va dir: “Demà aniré al poblat de Trepucó, on hi ha una taula que és més alta que un pi.” Quina decisió prendrà?',
         translation: 'Linu chegou a Menorca e disse: "Amanhã irei ao povoado de Trepucó, onde há uma taula que é mais alta do que um pinheiro." Qual decisão tomará?',
         choices: [
           { text: 'Agafar el camí que porta al poblat talaiòtic de Trepucó.', translation: 'Pegar o caminho que leva ao povoado talaiótico de Trepucó.', next: 'poblat_trepuco' },
@@ -1368,7 +1368,7 @@ export const STORIES_CA: StorySeed[] = [
       },
       poblat_trepuco: {
         emoji: '🏛️',
-        text: "Davant les torres de pedra, en Linu va pensar: «Aquest poblat que té tres mil anys d'història serà més fascinant que el museu tancat. Què faré ara?»",
+        text: "Davant les torres de pedra, en Linu va pensar: “Aquest poblat que té tres mil anys d'història serà més fascinant que el museu tancat. Què faré ara?”",
         translation: 'Diante das torres de pedra, Linu pensou: "Este povoado que tem três mil anos de história será mais fascinante do que o museu fechado. O que farei agora?"',
         choices: [
           { text: 'Examinar la gran taula en forma de T amb una arqueòloga.', translation: 'Examinar a grande taula em forma de T com uma arqueóloga.', next: 'mirar_taula' },
@@ -1381,7 +1381,7 @@ export const STORIES_CA: StorySeed[] = [
       },
       mirar_taula: {
         emoji: '🔎',
-        text: "L'arqueòloga li va dir: «Aquesta taula, que servia de santuari, serà tan misteriosa com la de Torralba d'en Salort.» Quina altra visita farà en Linu?",
+        text: "L'arqueòloga li va dir: “Aquesta taula, que servia de santuari, serà tan misteriosa com la de Torralba d'en Salort.” Quina altra visita farà en Linu?",
         translation: 'A arqueóloga lhe disse: "Esta taula, que servia de santuário, será tão misteriosa quanto a de Torralba d\'en Salort." Qual outra visita Linu fará?',
         choices: [
           { text: 'Anar cap a la Naveta des Tudons a prop de Ciutadella.', translation: 'Ir em direção à Naveta des Tudons perto de Ciutadella.', next: 'naveta_tudons' },
@@ -1396,7 +1396,7 @@ export const STORIES_CA: StorySeed[] = [
       },
       naveta_tudons: {
         emoji: '⛵',
-        text: 'Davant la Naveta des Tudons, en Linu va dir: «Aquesta naveta, que sembla un vaixell de cap per avall, serà una de les construccions cobertes més antigues d\'Europa!»',
+        text: 'Davant la Naveta des Tudons, en Linu va dir: “Aquesta naveta, que sembla un vaixell de cap per avall, serà una de les construccions cobertes més antigues d\'Europa!”',
         translation: 'Diante da Naveta des Tudons, Linu disse: "Esta naveta, que parece um barco de cabeça para baixo, será uma das construções cobertas mais antigas da Europa!"',
         choices: [{ text: 'Observar els blocs de pedra des del sender indicat.', translation: 'Observar os blocos de pedra a partir da trilha indicada.', next: 'aprendre_historia' }],
       },
@@ -1442,7 +1442,7 @@ export const STORIES_CA: StorySeed[] = [
     nodes: {
       start: {
         emoji: '🐧',
-        text: 'A l\'estació de Ribes de Freser, en Linu va pensar: «Aquest matí agafaré el tren de cremallera que puja fins a la vall, on les muntanyes són més altes que a la costa.»',
+        text: 'A l\'estació de Ribes de Freser, en Linu va pensar: “Aquest matí agafaré el tren de cremallera que puja fins a la vall, on les muntanyes són més altes que a la costa.”',
         translation: 'Na estação de Ribes de Freser, Linu pensou: "Esta manhã pegarei o trem de cremalheira que sobe até o vale, onde as montanhas são mais altas do que na costa."',
         choices: [
           { text: 'Comprar un bitllet i pujar al vagó del tren de cremallera.', translation: 'Comprar um bilhete e subir no vagão do trem de cremalheira.', next: 'pujar_cremallera' },
@@ -1455,7 +1455,7 @@ export const STORIES_CA: StorySeed[] = [
       },
       pujar_cremallera: {
         emoji: '🏔️',
-        text: "Durant el viatge, en Linu mirava la finestra: «El tren que travessa els túnels serà més lent que el tren d'alta velocitat, però les vistes seran tan espectaculars com un quadre!»",
+        text: "Durant el viatge, en Linu mirava la finestra: “El tren que travessa els túnels serà més lent que el tren d'alta velocitat, però les vistes seran tan espectaculars com un quadre!”",
         translation: 'Durante a viagem, Linu olhava pela janela: "O trem que atravessa os túneis será mais lento do que o trem de alta velocidade, mas as vistas serão tão espetaculares quanto um quadro!"',
         choices: [
           { text: 'Mirar el paisatge de les gorges de Núria per la finestra.', translation: 'Olhar a paisagem dos desfiladeiros de Núria pela janela.', next: 'arribada_santuari' },
@@ -1468,7 +1468,7 @@ export const STORIES_CA: StorySeed[] = [
       },
       arribada_santuari: {
         emoji: '⛪',
-        text: 'Arribat a dos mil metres d\'altitud, en Linu va respirar fort: «A la vall on hi ha el santuari històric, l\'aire serà més pur que a la ciutat. On aniré primer?»',
+        text: 'Arribat a dos mil metres d\'altitud, en Linu va respirar fort: “A la vall on hi ha el santuari històric, l\'aire serà més pur que a la ciutat. On aniré primer?”',
         translation: 'Chegando a dois mil metros de altitude, Linu respirou fundo: "No vale onde fica o santuário histórico, o ar será mais puro do que na cidade. Para onde irei primeiro?"',
         choices: [
           { text: 'Caminar pel sender que envolta el llac alpí.', translation: 'Caminhar pela trilha que envolve o lago alpino.', next: 'volta_llac' },
@@ -1483,13 +1483,13 @@ export const STORIES_CA: StorySeed[] = [
       },
       volta_llac: {
         emoji: '🌲',
-        text: "Bordejant l'aigua, en Linu va somriure: «El camí que envolta el llac serà tan tranquil com bonic. Ara agafaré el telefèric que em portarà al mirador del Pic de l'Àliga.»",
+        text: "Bordejant l'aigua, en Linu va somriure: “El camí que envolta el llac serà tan tranquil com bonic. Ara agafaré el telefèric que em portarà al mirador del Pic de l'Àliga.”",
         translation: 'Bordeando a água, Linu sorriu: "O caminho que envolve o lago será tão tranquilo quanto bonito. Agora pegarei o teleférico que me levará ao mirante do Pic de l\'Àliga."',
         choices: [{ text: "Pujar al telefèric del Pic de l'Àliga.", translation: "Subir no teleférico do Pic de l'Àliga.", next: 'telefèric_aliga' }],
       },
       telefèric_aliga: {
         emoji: '🚡',
-        text: 'Des de dalt de tot, es veia tota la vall. En Linu va exclamar: «Aquest mirador que és més alt que l\'alberg serà el millor lloc per fer fotos!»',
+        text: 'Des de dalt de tot, es veia tota la vall. En Linu va exclamar: “Aquest mirador que és més alt que l\'alberg serà el millor lloc per fer fotos!”',
         translation: 'Lá do alto, via-se todo o vale. Linu exclamou: "Este mirante que é mais alto do que o albergue será o melhor lugar para tirar fotos!"',
         choices: [{ text: "Visitar el museu del Santuari on es va redactar l'Estatut de 1931.", translation: 'Visitar o museu do Santuário onde foi redigido o Estatuto de 1931.', next: 'museu_santuari' }],
       },
@@ -1536,7 +1536,7 @@ export const STORIES_CA: StorySeed[] = [
     nodes: {
       start: {
         emoji: '🐧',
-        text: "En Linu volia viure a Barcelona durant una temporada. Pensava: «M'agradaria trobar un pis petit al barri de Gràcia perquè hi ha moltes placetes boniques i molta vida de barri.»",
+        text: "En Linu volia viure a Barcelona durant una temporada. Pensava: “M'agradaria trobar un pis petit al barri de Gràcia perquè hi ha moltes placetes boniques i molta vida de barri.”",
         translation: 'Linu queria morar em Barcelona por uma temporada. Pensava: "Eu gostaria de encontrar um apartamento pequeno no bairro de Gràcia porque há muitas pracinhas bonitas e muita vida de bairro."',
         choices: [
           { text: 'Cercar un pis de lloguer prop de la Plaça del Sol.', translation: 'Procurar um apartamento para alugar perto da Plaça del Sol.', next: 'lloguer_sol' },
@@ -1549,7 +1549,7 @@ export const STORIES_CA: StorySeed[] = [
       },
       lloguer_sol: {
         emoji: '🏢',
-        text: "A la Plaça del Sol, en Linu va veure un cartell de lloguer. Va dir: «Si en fos el llogater, m'agradaria tenir un balcó assolellat per posar-hi plantes.»",
+        text: "A la Plaça del Sol, en Linu va veure un cartell de lloguer. Va dir: “Si en fos el llogater, m'agradaria tenir un balcó assolellat per posar-hi plantes.”",
         translation: 'Na Plaça del Sol, Linu viu um cartaz de aluguel. Disse: "Se eu fosse o inquilino, gostaria de ter uma varanda ensolarada para colocar plantas nela."',
         choices: [
           { text: "Trucar a l'agència i demanar si se'n pot fer una visita.", translation: 'Ligar para a agência e perguntar se pode fazer uma visita.', next: 'visitar_pis' },
@@ -1562,7 +1562,7 @@ export const STORIES_CA: StorySeed[] = [
       },
       visitar_pis: {
         emoji: '🔑',
-        text: "L'agent immobiliari li va ensenyar el pis. En Linu mirava la cuina i deia: «Aquest pis és molt lluminós. Jo hi viuria molt de gust si el preu fos adequat!»",
+        text: "L'agent immobiliari li va ensenyar el pis. En Linu mirava la cuina i deia: “Aquest pis és molt lluminós. Jo hi viuria molt de gust si el preu fos adequat!”",
         translation: 'O corretor de imóveis lhe mostrou o apartamento. Linu olhava a cozinha e dizia: "Este apartamento é muito iluminado. Eu moraria aqui de bom grado se o preço fosse adequado!"',
         choices: [
           { text: 'Parlar amb el propietari per negociar les condicions del contracte.', translation: 'Falar com o proprietário para negociar as condições do contrato.', next: 'parlar_propietari' },
@@ -1571,7 +1571,7 @@ export const STORIES_CA: StorySeed[] = [
       },
       cami_cafe_gracia: {
         emoji: '☕',
-        text: "Assegut a la terrassa sota la torre del rellotge, en Linu pensava: «Se'n podrien trobar d'altres de pisos, però aquest d'aquí té molt encant.»",
+        text: "Assegut a la terrassa sota la torre del rellotge, en Linu pensava: “Se'n podrien trobar d'altres de pisos, però aquest d'aquí té molt encant.”",
         translation: 'Sentado na esplanada sob a torre do relógio, Linu pensava: "Poderiam ser encontrados outros apartamentos, mas este daqui tem muito charme."',
         choices: [
           { text: 'Tornar a la Plaça del Sol per parlar amb el propietari.', translation: 'Voltar à Plaça del Sol para falar com o proprietário.', next: 'parlar_propietari' },
@@ -1580,13 +1580,13 @@ export const STORIES_CA: StorySeed[] = [
       },
       parlar_propietari: {
         emoji: '🤝',
-        text: "En Linu va parlar amb el propietari. Va dir-li: «Voldria signar el contracte per un any. M'hi quedaria de bon grat si vostè n'acceptés les meves condicions.»",
+        text: "En Linu va parlar amb el propietari. Va dir-li: “Voldria signar el contracte per un any. M'hi quedaria de bon grat si vostè n'acceptés les meves condicions.”",
         translation: 'Linu falou com o proprietário. Disse-lhe: "Gostaria de assinar o contrato por um ano. Eu me mudaria para cá de bom grado se o senhor aceitasse minhas condições."',
         choices: [{ text: 'Acceptar les clàusules i signar el contracte de lloguer.', translation: 'Aceitar as cláusulas e assinar o contrato de aluguel.', next: 'contracte_lloguer' }],
       },
       contracte_lloguer: {
         emoji: '📜',
-        text: "Amb les claus a la mà, en Linu va exclamar: «Ja en tinc les claus! Ara hauria de comprar algun moble i posar-hi flors al balcó.»",
+        text: "Amb les claus a la mà, en Linu va exclamar: “Ja en tinc les claus! Ara hauria de comprar algun moble i posar-hi flors al balcó.”",
         translation: 'Com as chaves na mão, Linu exclamou: "Já tenho as chaves dele! Agora eu deveria comprar algum móvel e colocar flores na varanda."',
         choices: [{ text: 'Anar al Mercat de la Llibertat a comprar flors per al balcó.', translation: 'Ir ao Mercat de la Llibertat comprar flores para a varanda.', next: 'decorar_pis' }],
       },
@@ -1598,7 +1598,7 @@ export const STORIES_CA: StorySeed[] = [
       },
       festa_major: {
         emoji: '🎉',
-        text: 'En Linu va ajudar els veïns a decorar el carrer amb materials reciclats. Va dir: «Qui ho hauria dit! M\'agradaria viure sempre en aquest barri tan acollidor.»',
+        text: 'En Linu va ajudar els veïns a decorar el carrer amb materials reciclats. Va dir: “Qui ho hauria dit! M\'agradaria viure sempre en aquest barri tan acollidor.”',
         translation: 'Linu ajudou os vizinhos a decorar a rua com materiais reciclados. Disse: "Quem diria! Eu gostaria de morar para sempre neste bairro tão acolhedor."',
         choices: [{ text: 'Celebrar el primer premi del carrer guarnit amb tots els veïns.', translation: 'Celebrar o primeiro prêmio da rua decorada com todos os vizinhos.', next: 'final_bom' }],
       },
@@ -1638,7 +1638,7 @@ export const STORIES_CA: StorySeed[] = [
     nodes: {
       start: {
         emoji: '🌰',
-        text: "Era una vesprada de tardor i feia fred. En Linu passejava per la ciutat i va dir: «M'agradaria celebrar la Castanyada. Hauria de trobar una parada per comprar castanyes calentes!»",
+        text: "Era una vesprada de tardor i feia fred. En Linu passejava per la ciutat i va dir: “M'agradaria celebrar la Castanyada. Hauria de trobar una parada per comprar castanyes calentes!”",
         translation: 'Era uma tarde de outono e fazia frio. Linu passeava pela cidade e disse: "Gostaria de celebrar a Castanyada. Eu deveria encontrar uma banca para comprar castanhas quentes!"',
         choices: [
           { text: 'Apropar-se a la parada de la castanyera a la plaça.', translation: 'Aproximar-se da banca da vendedora de castanhas na praça.', next: 'parada_castanyera' },
@@ -1651,7 +1651,7 @@ export const STORIES_CA: StorySeed[] = [
       },
       parada_castanyera: {
         emoji: '🔥',
-        text: 'La castanyera, vestida amb el davantal tradicional, torrava castanyes al foc. En Linu li va dir: «Bon vespre! N\'agafaria una paperina ben calenta si me\'n pogués vendre una.»',
+        text: 'La castanyera, vestida amb el davantal tradicional, torrava castanyes al foc. En Linu li va dir: “Bon vespre! N\'agafaria una paperina ben calenta si me\'n pogués vendre una.”',
         translation: 'A castanyera, vestida com o avental tradicional, assava castanhas no fogo. Linu lhe disse: "Boa noite! Pegaria um cone bem quente se a senhora pudesse me vender um."',
         choices: [
           { text: 'Demanar una paperina de castanyes i un moniato torrat.', translation: 'Pedir um cone de castanhas e uma batata-doce assada.', next: 'paperina_castanyes' },
@@ -1664,7 +1664,7 @@ export const STORIES_CA: StorySeed[] = [
       },
       paperina_castanyes: {
         emoji: '🍠',
-        text: "En Linu tenia les mans ben calentes gràcies a la paperina. La castanyera li va dir: «Si t'agrada aquesta festa, hauries d'anar a fer panellets a la cuina de la iaia de la ciutat!»",
+        text: "En Linu tenia les mans ben calentes gràcies a la paperina. La castanyera li va dir: “Si t'agrada aquesta festa, hauries d'anar a fer panellets a la cuina de la iaia de la ciutat!”",
         translation: 'Linu tinha as mãos bem quentinhas graças ao cone de papel. A castanyera lhe disse: "Se você gosta desta festa, deveria ir fazer panellets na cozinha da vovó da cidade!"',
         choices: [
           { text: 'Anar a la cuina per aprendre la recepta dels panellets.', translation: 'Ir à cozinha para aprender a receita dos panellets.', next: 'taller_panellets' },
@@ -1673,7 +1673,7 @@ export const STORIES_CA: StorySeed[] = [
       },
       cami_iaia: {
         emoji: '🍁',
-        text: "En Linu va menjar les castanyes al parc. Pensava: «N'he menjat moltes, però m'agradaria tastar també els panellets de pinyons.»",
+        text: "En Linu va menjar les castanyes al parc. Pensava: “N'he menjat moltes, però m'agradaria tastar també els panellets de pinyons.”",
         translation: 'Linu comeu as castanhas no parque. Pensava: "Comi muitas delas, mas gostaria de provar também os panellets de pinhões."',
         choices: [
           { text: 'Decidir anar finalment a la cuina per fer la massa.', translation: 'Decidir ir finalmente à cozinha para fazer a massa.', next: 'taller_panellets' },
@@ -1682,25 +1682,25 @@ export const STORIES_CA: StorySeed[] = [
       },
       taller_panellets: {
         emoji: '🍪',
-        text: 'A la cuina, la iaia li va ensenyar els ingredients: «Per fer la massa de marzipà, n\'utilitzarem d\'ametlla ratllada, sucre i patata bullida. Com ho faries tu?»',
+        text: 'A la cuina, la iaia li va ensenyar els ingredients: “Per fer la massa de marzipà, n\'utilitzarem d\'ametlla ratllada, sucre i patata bullida. Com ho faries tu?”',
         translation: 'Na cozinha, a vovó lhe mostrou os ingredientes: "Para fazer a massa de maçapão, usaremos amêndoa ralada, açúcar e batata cozida. Como você faria?"',
         choices: [{ text: 'Barrejar bé els ingredients fins a obtenir una massa fina.', translation: 'Misturar bem os ingredientes até obter uma massa fina.', next: 'feta_massa' }],
       },
       feta_massa: {
         emoji: '🥜',
-        text: "En Linu va fer petites boletes de massa. Va dir: «Ara hi enganxaria els pinyons per fora. Com se'n farien d'altres de diferents?»",
+        text: "En Linu va fer petites boletes de massa. Va dir: “Ara hi enganxaria els pinyons per fora. Com se'n farien d'altres de diferents?”",
         translation: 'Linu fez pequenas bolinhas de massa. Disse: "Agora grudaria os pinhões por fora. Como se fariam outras diferentes?"',
         choices: [{ text: "Fer-ne algunes de coco i d'altres de xocolata per variar.", translation: 'Fazer algumas de coco e outras de chocolate para variar.', next: 'forn_panellets' }],
       },
       forn_panellets: {
         emoji: '⏲️',
-        text: 'En Linu va pintar els panellets amb rovell d\'ou. La iaia va dir: «Els posarem al forn deu minuts i se\'n couran fins que quedin ben daurats.»',
+        text: 'En Linu va pintar els panellets amb rovell d\'ou. La iaia va dir: “Els posarem al forn deu minuts i se\'n couran fins que quedin ben daurats.”',
         translation: 'Linu pintou os panellets com gema de ovo. A vovó disse: "Colocaremos no forno dez minutos e eles assarão até ficarem bem dourados."',
         choices: [{ text: 'Esperar que es refredin i parar la taula per al sopar.', translation: 'Esperar esfriarem e arrumar a mesa para o jantar.', next: 'sopar_castanyada' }],
       },
       sopar_castanyada: {
         emoji: '🍷',
-        text: 'A la taula hi havia castanyes, moniatos i una safata plena de panellets. En Linu exclamà: «Jo en menjaria deu de panellets de pinyó! Són els millors de tots!»',
+        text: 'A la taula hi havia castanyes, moniatos i una safata plena de panellets. En Linu exclamà: “Jo en menjaria deu de panellets de pinyó! Són els millors de tots!”',
         translation: 'Na mesa havia castanhas, batatas-doces e uma bandeja cheia de panellets. Linu exclamou: "Eu comeria dez panellets de pinhão! São os melhores de todos!"',
         choices: [{ text: 'Celebrar la festa tradicional amb tota la família.', translation: 'Celebrar a festa tradicional com toda a família.', next: 'final_bom' }],
       },
@@ -1740,7 +1740,7 @@ export const STORIES_CA: StorySeed[] = [
     nodes: {
       start: {
         emoji: '🚢',
-        text: "En Linu va baixar del vaixell al port d'Eivissa. Va mirar les grans muralles blanques de la ciutat alta i va dir: «M'agradaria pujar a Dalt Vila per veure-hi les vistes del mar.»",
+        text: "En Linu va baixar del vaixell al port d'Eivissa. Va mirar les grans muralles blanques de la ciutat alta i va dir: “M'agradaria pujar a Dalt Vila per veure-hi les vistes del mar.”",
         translation: 'Linu desceu do navio no porto de Ibiza. Olhou as grandes muralhas brancas da cidade alta e disse: "Gostaria de subir a Dalt Vila para ver de lá as vistas do mar."',
         choices: [
           { text: 'Entrar a la ciutadella pel Portal de ses Taules.', translation: 'Entrar na cidadela pelo Portal de ses Taules.', next: 'portal_taules' },
@@ -1753,7 +1753,7 @@ export const STORIES_CA: StorySeed[] = [
       },
       portal_taules: {
         emoji: '🏰',
-        text: 'Creuant el pont de fusta del Portal de ses Taules, en Linu va admirar les estàtues romanes. Va dir: «Jo pujaria pel carreró empedrat si n\'hi hagués un de menys en pendent.»',
+        text: 'Creuant el pont de fusta del Portal de ses Taules, en Linu va admirar les estàtues romanes. Va dir: “Jo pujaria pel carreró empedrat si n\'hi hagués un de menys en pendent.”',
         translation: 'Cruzando a ponte de madeira do Portal de ses Taules, Linu admirou as estátuas romanas. Disse: "Eu subiria pela viela de pedra se houvesse uma com menos inclinação."',
         choices: [
           { text: 'Pujar pel carreró inclinat cap al Baluard de Santa Llúcia.', translation: 'Subir pela viela inclinada em direção ao Baluard de Santa Llúcia.', next: 'baluard_santa_llucia' },
@@ -1766,7 +1766,7 @@ export const STORIES_CA: StorySeed[] = [
       },
       baluard_santa_llucia: {
         emoji: '💣',
-        text: "Arribat al baluard, en Linu va veure els vells canons de bronze que apuntaven al mar. Pensava: «Des d'aquí se n'observaven tots els vaixells pirates que s'hi apropaven!»",
+        text: "Arribat al baluard, en Linu va veure els vells canons de bronze que apuntaven al mar. Pensava: “Des d'aquí se n'observaven tots els vaixells pirates que s'hi apropaven!”",
         translation: 'Chegando ao baluarte, Linu viu os velhos canhões de bronze que apontavam para o mar. Pensava: "Daqui observavam-se todos os navios piratas que se aproximavam!"',
         choices: [
           { text: 'Escoltar les explicacions d\'un historiador sobre les muralles.', translation: 'Escutar as explicações de um historiador sobre as muralhas.', next: 'historia_pirates' },
@@ -1775,7 +1775,7 @@ export const STORIES_CA: StorySeed[] = [
       },
       cami_terrassa: {
         emoji: '🍹',
-        text: "En Linu va beure un suc de taronja. Va dir: «Hi restaria dues hores aquí, a la terrassa, però voldria veure la catedral abans que fos fosc.»",
+        text: "En Linu va beure un suc de taronja. Va dir: “Hi restaria dues hores aquí, a la terrassa, però voldria veure la catedral abans que fos fosc.”",
         translation: 'Linu bebeu um suco de laranja. Disse: "Ficaria duas horas aqui na esplanada, mas gostaria de ver a catedral antes que ficasse escuro."',
         choices: [
           { text: 'Reprendre la pujada cap al punt més alt de Dalt Vila.', translation: 'Retomar a subida em direção ao ponto mais alto de Dalt Vila.', next: 'historia_pirates' },
@@ -1784,19 +1784,19 @@ export const STORIES_CA: StorySeed[] = [
       },
       historia_pirates: {
         emoji: '📖',
-        text: "L'historiador li va explicar que les muralles van ser dissenyades al segle XVI. En Linu va exclamar: «M'interessaria molt conèixer com se'n van defensar la ciutat!»",
+        text: "L'historiador li va explicar que les muralles van ser dissenyades al segle XVI. En Linu va exclamar: “M'interessaria molt conèixer com se'n van defensar la ciutat!”",
         translation: 'O historiador lhe explicou que as muralhas foram projetadas no século XVI. Linu exclamou: "Interessar-me-ia muito saber como defenderam a cidade!"',
         choices: [{ text: 'Continuar fins a la plaça de la Catedral de Santa Maria.', translation: 'Continuar até a praça da Catedral de Santa Maria.', next: 'catedral_eivissa' }],
       },
       catedral_eivissa: {
         emoji: '⛪',
-        text: "Al capdamunt de la ciutadella, davant la catedral, en Linu mirava l'horitzó. Va dir: «Si el cel fos ben clar, se n'admiraria la línia de la costa de Formentera!»",
+        text: "Al capdamunt de la ciutadella, davant la catedral, en Linu mirava l'horitzó. Va dir: “Si el cel fos ben clar, se n'admiraria la línia de la costa de Formentera!”",
         translation: 'No topo da cidadela, em frente à catedral, Linu olhava o horizonte. Disse: "Se o céu estivesse bem limpo, admirar-se-ia a linha da costa de Formentera!"',
         choices: [{ text: 'Esperar al mirador per veure la posta de sol sobre el mar.', translation: 'Esperar no mirante para ver o pôr do sol sobre o mar.', next: 'posta_sol' }],
       },
       posta_sol: {
         emoji: '🌅',
-        text: 'El sol va començar a baixar tenyint de color taronja les parets de Dalt Vila i l\'aigua del port. En Linu va somriure: «Hi hauria d\'haver vingut molt abans! Quina meravella!»',
+        text: 'El sol va començar a baixar tenyint de color taronja les parets de Dalt Vila i l\'aigua del port. En Linu va somriure: “Hi hauria d\'haver vingut molt abans! Quina meravella!”',
         translation: 'O sol começou a baixar tingindo de cor laranja as paredes de Dalt Vila e a água do porto. Linu sorriu: "Eu deveria ter vindo aqui muito antes! Que maravilha!"',
         choices: [{ text: 'Fer fotos del paisatge i celebrar la visita a la ciutadella.', translation: 'Tirar fotos da paisagem e celebrar a visita à cidadela.', next: 'final_bom' }],
       },
@@ -1837,7 +1837,7 @@ export const STORIES_CA: StorySeed[] = [
     nodes: {
       start: {
         emoji: '🐧',
-        text: 'En Linu passejava pel Passeig de Gràcia de Barcelona. Va dir: «Vull que aquest Sant Jordi sigui inoblidable! Espero que trobem el llibre ideal i una rosa bonica. Tria on vols anar!»',
+        text: 'En Linu passejava pel Passeig de Gràcia de Barcelona. Va dir: “Vull que aquest Sant Jordi sigui inoblidable! Espero que trobem el llibre ideal i una rosa bonica. Tria on vols anar!”',
         translation: 'Linu passeava pelo Passeig de Gràcia de Barcelona. Disse: "Quero que este Sant Jordi seja inesquecível! Espero que encontremos o livro ideal e uma rosa bonita. Escolha onde quer ir!"',
         choices: [
           { text: 'Camina cap a les parades del Passeig de Gràcia.', translation: 'Caminhe em direção às bancas do Passeig de Gràcia.', next: 'passeig_gracia' },
@@ -1850,7 +1850,7 @@ export const STORIES_CA: StorySeed[] = [
       },
       passeig_gracia: {
         emoji: '📚',
-        text: "Entre la gent, en Linu va veure un escriptor conegut que signava exemplars. Un llibreter li va dir: «Espero que t'agradi la història del drac! Fes la cua si vols una dedicatòria.»",
+        text: "Entre la gent, en Linu va veure un escriptor conegut que signava exemplars. Un llibreter li va dir: “Espero que t'agradi la història del drac! Fes la cua si vols una dedicatòria.”",
         translation: 'Entre as pessoas, Linu viu um escritor famoso assinando exemplares. Um livreiro lhe disse: "Espero que você goste da história do dragão! Faça a fila se quiser uma dedicatória."',
         choices: [
           { text: "Fes la cua i demana a l'autor que et dediqui el llibre.", translation: 'Faça a fila e peça ao autor para autografar o livro para você.', next: 'signatura_llibre' },
@@ -1863,7 +1863,7 @@ export const STORIES_CA: StorySeed[] = [
       },
       signatura_llibre: {
         emoji: '✍️',
-        text: "L'escriptor li va escriure una dedicatòria molt amable. Va dir: «Vull que llegeixis aquesta llegenda amb atenció!» Ara en Linu necessitava trobar una rosa tradicional.",
+        text: "L'escriptor li va escriure una dedicatòria molt amable. Va dir: “Vull que llegeixis aquesta llegenda amb atenció!” Ara en Linu necessitava trobar una rosa tradicional.",
         translation: 'O escritor lhe escreveu uma dedicatória muito gentil. Disse: "Quero que você leia esta lenda com atenção!" Agora Linu precisava encontrar uma rosa tradicional.',
         choices: [
           { text: 'Vés cap a la parada de flors i busca la rosa perfecta.', translation: 'Vá em direção à banca de flores e procure a rosa perfeita.', next: 'parada_roses' },
@@ -1872,7 +1872,7 @@ export const STORIES_CA: StorySeed[] = [
       },
       cami_flor_plastic: {
         emoji: '🥀',
-        text: "En Linu va mirar la flor de plàstic. Un veí li va dir: «No compris flors artificials per Sant Jordi! És important que regalem una rosa natural amb l'espiga de blat.»",
+        text: "En Linu va mirar la flor de plàstic. Un veí li va dir: “No compris flors artificials per Sant Jordi! És important que regalem una rosa natural amb l'espiga de blat.”",
         translation: 'Linu olhou a flor de plástico. Um morador lhe disse: "Não compre flores artificiais em Sant Jordi! É importante que presenteemos com uma rosa natural com a espiga de trigo."',
         choices: [
           { text: 'Torna a la parada i tria una rosa vermella fresca.', translation: 'Volte à banca e escolha uma rosa vermelha fresca.', next: 'parada_roses' },
@@ -1881,19 +1881,19 @@ export const STORIES_CA: StorySeed[] = [
       },
       parada_roses: {
         emoji: '🌹',
-        text: 'La florista li va ensenyar les roses vermelles recents. Va dir: «Cal que triïs una rosa amb la fita de la senyera! Tria la més bonica de totes.»',
+        text: 'La florista li va ensenyar les roses vermelles recents. Va dir: “Cal que triïs una rosa amb la fita de la senyera! Tria la més bonica de totes.”',
         translation: 'A florista lhe mostrou as rosas vermelhas frescas. Disse: "É necessário que você escolha uma rosa com a fita da bandeira! Escolha a mais bonita de todas."',
         choices: [{ text: "Agafa la rosa vermella tradicional amb l'espiga.", translation: 'Pegue a rosa vermelha tradicional com a espiga.', next: 'triar_rosa_natural' }],
       },
       triar_rosa_natural: {
         emoji: '🏛️',
-        text: "Amb el llibre signat i la rosa vermella, en Linu va caminar cap a la Casa Batlló. Va dir: «Espero que la meva amiga Maria ja hagi arribat al punt de trobada!»",
+        text: "Amb el llibre signat i la rosa vermella, en Linu va caminar cap a la Casa Batlló. Va dir: “Espero que la meva amiga Maria ja hagi arribat al punt de trobada!”",
         translation: 'Com o livro autografado e a rosa vermelha, Linu caminhou em direção à Casa Batlló. Disse: "Espero que minha amiga Maria já tenha chegado ao ponto de encontro!"',
         choices: [{ text: "Apropa't a la façana de la Casa Batlló decorada amb roses.", translation: 'Aproxime-se da fachada da Casa Batlló decorada com rosas.', next: 'trobar_amiga' }],
       },
       trobar_amiga: {
         emoji: '🎁',
-        text: 'La Maria el va veure i va somriure. En Linu li va dir: «Vull que tinguis aquest regal especial de Sant Jordi!» I li va oferir el llibre i la rosa.',
+        text: 'La Maria el va veure i va somriure. En Linu li va dir: “Vull que tinguis aquest regal especial de Sant Jordi!” I li va oferir el llibre i la rosa.',
         translation: 'Maria o viu e sorriu. Linu lhe disse: "Quero que você tenha este presente especial de Sant Jordi!" E lhe ofereceu o livro e a rosa.',
         choices: [{ text: 'Ofereix el llibre i la rosa amb una gran abraçada.', translation: 'Ofereça o livro e a rosa com um grande abraço.', next: 'final_bom' }],
       },
@@ -1933,7 +1933,7 @@ export const STORIES_CA: StorySeed[] = [
     nodes: {
       start: {
         emoji: '🥁',
-        text: 'En Linu va arribar a Berga durant la festa de la Patum. El so del Tabal ressonava per tota la ciutat: «Pa-tum, pa-tum!» En Linu va dir: «Espero que no tinguis por del foc! Vés cap a la plaça!»',
+        text: 'En Linu va arribar a Berga durant la festa de la Patum. El so del Tabal ressonava per tota la ciutat: “Pa-tum, pa-tum!” En Linu va dir: “Espero que no tinguis por del foc! Vés cap a la plaça!”',
         translation: 'Linu chegou a Berga durante a festa da Patum. O som do Tabal ecoava por toda a cidade: "Pa-tum, pa-tum!" Linu disse: "Espero que você não tenha medo do fogo! Vá em direção à praça!"',
         choices: [
           { text: 'Entra a la Plaça de Sant Pere per sentir el ritme de la festa.', translation: 'Entre na Plaça de Sant Pere para sentir o ritmo da festa.', next: 'placa_sant_pere' },
@@ -1946,7 +1946,7 @@ export const STORIES_CA: StorySeed[] = [
       },
       placa_sant_pere: {
         emoji: '🐲',
-        text: "A la plaça, la multitud cantava. De sobte, va sortir la Guita Grossa llançant espurnes de foc per la boca. Un berguedà li va dir: «Cal que et posis un barret de cotó! No t'acostis sense protecció!»",
+        text: "A la plaça, la multitud cantava. De sobte, va sortir la Guita Grossa llançant espurnes de foc per la boca. Un berguedà li va dir: “Cal que et posis un barret de cotó! No t'acostis sense protecció!”",
         translation: 'Na praça, a multidão cantava. De repente, saiu a Guita Grossa soltando faíscas de fogo pela boca. Um morador de Berga lhe disse: "É necessário que você vista um chapéu de algodão! Não se aproxime sem proteção!"',
         choices: [
           { text: "Posa't el barret de cotó i el mocador per protegir-te.", translation: 'Coloque o chapéu de algodão e o lenço para se proteger.', next: 'equipar_proteccio' },
@@ -1955,7 +1955,7 @@ export const STORIES_CA: StorySeed[] = [
       },
       cami_lluny: {
         emoji: '🏃',
-        text: 'Des del fons del carreró, en Linu gairebé no veia els balls. Va dir: «Vull que sentim la festa de prop, però no puc anar-hi sense el barret de protecció.»',
+        text: 'Des del fons del carreró, en Linu gairebé no veia els balls. Va dir: “Vull que sentim la festa de prop, però no puc anar-hi sense el barret de protecció.”',
         translation: 'Do fundo da viela, Linu quase não via as danças. Disse: "Quero que sintamos a festa de perto, mas não posso ir até lá sem o chapéu de proteção."',
         choices: [
           { text: 'Aconsegueix un barret de cotó i torna al centre de la plaça.', translation: 'Consiga um chapéu de algodão e volte ao centro da praça.', next: 'equipar_proteccio' },
@@ -1964,7 +1964,7 @@ export const STORIES_CA: StorySeed[] = [
       },
       equipar_proteccio: {
         emoji: '🦅',
-        text: "Amb el barret de cotó ben posat, en Linu es va apropar. Ara començava el ball de l'Àliga. Un veí va dir: «És important que miris la dansa amb molt de respecte!»",
+        text: "Amb el barret de cotó ben posat, en Linu es va apropar. Ara començava el ball de l'Àliga. Un veí va dir: “És important que miris la dansa amb molt de respecte!”",
         translation: 'Com o chapéu de algodão bem colocado, Linu se aproximou. Agora começava a dança da Àliga. Um vizinho disse: "É importante que você olhe a dança com muito respeito!"',
         choices: [
           { text: "Observa en silenci el ball majestuós de l'Àliga.", translation: 'Observe em silêncio a dança majestosa da Àliga.', next: 'ball_aliga' },
@@ -1989,7 +1989,7 @@ export const STORIES_CA: StorySeed[] = [
       },
       salt_plens: {
         emoji: '✨',
-        text: 'En Linu va saltar amb els berguedans durant deu minuts màgics. Va dir: «Espero que aquesta nit de foc no s\'acabi mai! Quina festa tan increïble!»',
+        text: 'En Linu va saltar amb els berguedans durant deu minuts màgics. Va dir: “Espero que aquesta nit de foc no s\'acabi mai! Quina festa tan increïble!”',
         translation: 'Linu pulou com os moradores de Berga durante dez minutos mágicos. Disse: "Espero que esta noite de fogo não acabe nunca! Que festa tão incrível!"',
         choices: [{ text: 'Celebra el final de la Patum amb tota la gent de la plaça.', translation: 'Celebre o final da Patum com todas as pessoas da praça.', next: 'final_bom' }],
       },
@@ -2029,7 +2029,7 @@ export const STORIES_CA: StorySeed[] = [
     nodes: {
       start: {
         emoji: '🏛️',
-        text: 'En Linu era a la Plaça del Blat de Valls. Les dues colles castelleres portaven les seves camises tradicionals. En Linu va dir: «Espero que vegem un castell de nou pisos avui! Tria on vols anar.»',
+        text: 'En Linu era a la Plaça del Blat de Valls. Les dues colles castelleres portaven les seves camises tradicionals. En Linu va dir: “Espero que vegem un castell de nou pisos avui! Tria on vols anar.”',
         translation: 'Linu estava na Plaça del Blat de Valls. Os dois grupos castellers usavam suas camisas tradicionais. Linu disse: "Espero que vejamos uma torre humana de nove andares hoje! Escolha onde quer ir."',
         choices: [
           { text: "Apropa't al centre de la plaça on es formen les colles.", translation: 'Aproxime-se do centro da praça onde os grupos se formam.', next: 'placa_blat' },
@@ -2042,7 +2042,7 @@ export const STORIES_CA: StorySeed[] = [
       },
       placa_blat: {
         emoji: '👥',
-        text: "Un cap de colla va cridar: «Necessitem ajuda per fer la pinya! Vull que tothom s'enganxi fort per fer la base ben sòlida.» Què farà en Linu?",
+        text: "Un cap de colla va cridar: “Necessitem ajuda per fer la pinya! Vull que tothom s'enganxi fort per fer la base ben sòlida.” Què farà en Linu?",
         translation: 'Um líder do grupo gritou: "Precisamos de ajuda para fazer a base (pinya)! Quero que todos se juntem com força para fazer a base bem sólida." O que Linu fará?',
         choices: [
           { text: "Ajuda a la pinya empenyent amb el pit i l'espatlla.", translation: 'Ajude na base (pinya) empurrando com o peito e o ombro.', next: 'ajudar_pinya' },
@@ -2055,7 +2055,7 @@ export const STORIES_CA: StorySeed[] = [
       },
       ajudar_pinya: {
         emoji: '💪',
-        text: "En Linu es va posar a la pinya. El cap de colla li va dir: «Cal que t'agafis fort als braços dels companys i no et moguis durant el castell!»",
+        text: "En Linu es va posar a la pinya. El cap de colla li va dir: “Cal que t'agafis fort als braços dels companys i no et moguis durant el castell!”",
         translation: 'Linu colocou-se na base (pinya). O líder do grupo lhe disse: "É necessário que você segure firme nos braços dos companheiros e não se mova durante o castell!"',
         choices: [
           { text: 'Mantén la posició ferma a la pinya mentre el castell puja.', translation: 'Mantenha a posição firme na base enquanto o castell sobe.', next: 'tronc_castell' },
@@ -2064,7 +2064,7 @@ export const STORIES_CA: StorySeed[] = [
       },
       cami_fora_pinya: {
         emoji: '🪑',
-        text: "En Linu va sortir de la pinya i se'n va anar a la terrassa. Va dir: «Espero que des d'aquí puguem veure bé l'estructura dels castellers, tot i que no hi ajudo.»",
+        text: "En Linu va sortir de la pinya i se'n va anar a la terrassa. Va dir: “Espero que des d'aquí puguem veure bé l'estructura dels castellers, tot i que no hi ajudo.”",
         translation: 'Linu saiu da base e foi para a esplanada. Disse: "Espero que daqui possamos ver bem a estrutura de castellers, embora eu não esteja ajudando."',
         choices: [
           { text: 'Torna a la plaça per sentir la pinya de prop.', translation: 'Volte à praça para sentir a base de perto.', next: 'tronc_castell' },
@@ -2073,7 +2073,7 @@ export const STORIES_CA: StorySeed[] = [
       },
       tronc_castell: {
         emoji: '🪜',
-        text: 'El castell anava pujant pis a pis: terços, quarts, quints! La plaça va quedar en un silenci absolut. Un casteller va dir: «És necessari que tothom mantingui el silenci!»',
+        text: 'El castell anava pujant pis a pis: terços, quarts, quints! La plaça va quedar en un silenci absolut. Un casteller va dir: “És necessari que tothom mantingui el silenci!”',
         translation: 'O castell ia subindo andar por andar: terços, quarts, quints! A praça ficou em um silêncio absoluto. Um casteller disse: "É necessário que todos mantenham o silêncio!"',
         choices: [{ text: 'Escolta el silenci respectuós de la plaça mentre puja la canalla.', translation: 'Escute o silêncio respeitoso da praça enquanto as crianças sobem.', next: 'esperar_enxaneta' }],
       },
@@ -2091,7 +2091,7 @@ export const STORIES_CA: StorySeed[] = [
       },
       descarregar_castell: {
         emoji: '🎉',
-        text: 'Poc a poc, tots els castellers van baixar sans i estalvis. El castell va quedar descarregat amb èxit! En Linu va exclamar: «Vull que celebrem aquesta gran victòria castellera!»',
+        text: 'Poc a poc, tots els castellers van baixar sans i estalvis. El castell va quedar descarregat amb èxit! En Linu va exclamar: “Vull que celebrem aquesta gran victòria castellera!”',
         translation: 'Aos poucos, todos os castellers desceram sãos e salvos. O castell foi desmontado com sucesso! Linu exclamou: "Quero que celebremos esta grande vitória castellera!"',
         choices: [{ text: 'Abraça els companys de la colla i celebra el castell.', translation: 'Abrace os companheiros do grupo e celebre o castell.', next: 'final_bom' }],
       },
@@ -2131,8 +2131,8 @@ export const STORIES_CA: StorySeed[] = [
     nodes: {
       start: {
         emoji: '⛪',
-        text: "Linu arriba a Elx en ple agost per veure el famós Misteri d'Elx a la Basílica de Santa Maria. Ell ja havia llegit molt sobre aquest drama medieval. Pensava: «Si hagués arribat més tard, no hauria trobat cap seient lliure». A l'entrada, veu l'organitzador molt preocupat.",
-        translation: 'Linu chega a Elche em pleno agosto para ver o famoso Misteri d\'Elx na Basílica de Santa Maria. Ele já tinha lido muito sobre esse drama medieval. Pensava: «Se eu tivesse chegado mais tarde, não teria encontrado nenhum assento livre». Na entrada, vê o organizador muito preocupado.',
+        text: "Linu arriba a Elx en ple agost per veure el famós Misteri d'Elx a la Basílica de Santa Maria. Ell ja havia llegit molt sobre aquest drama medieval. Pensava: “Si hagués arribat més tard, no hauria trobat cap seient lliure”. A l'entrada, veu l'organitzador molt preocupat.",
+        translation: 'Linu chega a Elche em pleno agosto para ver o famoso Misteri d\'Elx na Basílica de Santa Maria. Ele já tinha lido muito sobre esse drama medieval. Pensava: “Se eu tivesse chegado mais tarde, não teria encontrado nenhum assento livre”. Na entrada, vê o organizador muito preocupado.',
         choices: [
           { text: "Parlar amb l'organitzador per saber què passa.", translation: 'Falar com o organizador para saber o que está acontecendo.', next: 'organitzador' },
           {
@@ -2144,8 +2144,8 @@ export const STORIES_CA: StorySeed[] = [
       },
       organitzador: {
         emoji: '📜',
-        text: "L'organitzador li explica: «Si haguessis vingut ahir, hauries vist l'assaig general. Ara tenim un problema: si no trobéssim la partitura antiga del Mestre de Capella, la música no sonaria igual!». Linu vol ajudar.",
-        translation: 'O organizador lhe explica: «Se você tivesse vindo ontem, teria visto o ensaio geral. Agora temos um problema: se não encontrássemos a partitura antiga do Mestre de Capela, a música não soaria igual!». Linu quer ajudar.',
+        text: "L'organitzador li explica: “Si haguessis vingut ahir, hauries vist l'assaig general. Ara tenim un problema: si no trobéssim la partitura antiga del Mestre de Capella, la música no sonaria igual!”. Linu vol ajudar.",
+        translation: 'O organizador lhe explica: “Se você tivesse vindo ontem, teria visto o ensaio geral. Agora temos um problema: se não encontrássemos a partitura antiga do Mestre de Capela, a música não soaria igual!”. Linu quer ajudar.',
         choices: [
           { text: 'Anar a buscar la partitura als arxius de la basílica.', translation: 'Ir procurar a partitura nos arquivos da basílica.', next: 'arxiu' },
           { text: 'Pujar a les tramolles per parlar amb els tècnics de la Mangrana.', translation: 'Subir aos maquinismos do teto para falar com os técnicos da Mangrana.', next: 'tramolles' },
@@ -2153,8 +2153,8 @@ export const STORIES_CA: StorySeed[] = [
       },
       arxiu: {
         emoji: '🗄️',
-        text: "Linu entra a l'arxiu històric. Molts documents s'havien acumulat durant segles. Linu es diu: «Si haguessin endreçat les caixes l'any passat, tot seria més fàcil». De sobte, veu un moble de fusta antiga.",
-        translation: 'Linu entra no arquivo histórico. Muitos documentos tinham se acumulado ao longo dos séculos. Linu diz a si mesmo: «Se tivessem arrumado as caixas no ano passado, tudo seria mais fácil». De repente, vê um móvel de madeira antiga.',
+        text: "Linu entra a l'arxiu històric. Molts documents s'havien acumulat durant segles. Linu es diu: “Si haguessin endreçat les caixes l'any passat, tot seria més fàcil”. De sobte, veu un moble de fusta antiga.",
+        translation: 'Linu entra no arquivo histórico. Muitos documentos tinham se acumulado ao longo dos séculos. Linu diz a si mesmo: “Se tivessem arrumado as caixas no ano passado, tudo seria mais fácil”. De repente, vê um móvel de madeira antiga.',
         choices: [
           { text: 'Examinar el moble de fusta i obrir el calaix secret.', translation: 'Examinar o móvel de madeira e abrir a gaveta secreta.', next: 'manuscrit' },
           {
@@ -2166,8 +2166,8 @@ export const STORIES_CA: StorySeed[] = [
       },
       tramolles: {
         emoji: '⚙️',
-        text: "Linu puja a les altures de la basílica, on hi ha els maquinistes. Ells havien revisat les cordes al matí. Un tècnic diu: «Si l'aparell de la Mangrana fallés, la Verge no podria baixar del cel fictici».",
-        translation: 'Linu sobe às alturas da basílica, onde estão os maquinistas. Eles tinham revisado as cordas de manhã. Um técnico diz: «Se o aparelho da Mangrana falhasse, a Virgem não poderia descer do céu fictício».',
+        text: "Linu puja a les altures de la basílica, on hi ha els maquinistes. Ells havien revisat les cordes al matí. Un tècnic diu: “Si l'aparell de la Mangrana fallés, la Verge no podria baixar del cel fictici”.",
+        translation: 'Linu sobe às alturas da basílica, onde estão os maquinistas. Eles tinham revisado as cordas de manhã. Um técnico diz: “Se o aparelho da Mangrana falhasse, a Virgem não poderia descer do céu fictício”.',
         choices: [
           { text: 'Ajudar a verificar les cordes i demanar informació sobre la partitura.', translation: 'Ajudar a verificar as cordas e pedir informações sobre a partitura.', next: 'director' },
           { text: "Baixar immediatament a l'arxiu per buscar el document.", translation: 'Descer imediatamente ao arquivo para procurar o documento.', next: 'arxiu' },
@@ -2190,8 +2190,8 @@ export const STORIES_CA: StorySeed[] = [
       },
       director: {
         emoji: '🎶',
-        text: 'El Mestre de Capella agafa el paper emocionalment: «Si no haguessis trobat aquesta partitura, la Festa no hauria sigut tan completa!». L\'obra comença i la Mangrana baixant des de les tramolles obre les seves portes daurades.',
-        translation: 'O Mestre de Capela pega o papel emocionado: «Se você não tivesse encontrado esta partitura, a Festa não teria sido tão completa!». A encenação começa e a Mangrana descendo das alturas abre suas portas douradas.',
+        text: 'El Mestre de Capella agafa el paper emocionalment: “Si no haguessis trobat aquesta partitura, la Festa no hauria sigut tan completa!”. L\'obra comença i la Mangrana baixant des de les tramolles obre les seves portes daurades.',
+        translation: 'O Mestre de Capela pega o papel emocionado: “Se você não tivesse encontrado esta partitura, a Festa não teria sido tão completa!”. A encenação começa e a Mangrana descendo das alturas abre suas portas douradas.',
         choices: [
           { text: "Seure a la nau central com a convidat d'honor de la basílica.", translation: 'Sentar-se na nave central como convidado de honra da basílica.', next: 'final_bom' },
           { text: 'Mirar l\'espectacle des de la porta exterior, de peus.', translation: 'Assistir ao espetáculo da porta externa, de pé.', next: 'final_neutre' },
@@ -2207,7 +2207,7 @@ export const STORIES_CA: StorySeed[] = [
         emoji: '🏛️',
         text: 'Linu veu l\'obra des de la porta. Tot i que havia ajudat a trobar la partitura, no va poder seure a la nau principal. Tanmateix, l\'experiència ha estat inoblidable.',
         translation: 'Linu vê a peça da porta. Embora tivesse ajudado a encontrar a partitura, não pôde sentar na nave principal. No entanto, a experiência foi inesquecível.',
-        ending: { tone: 'neutro', title: 'Final razoável', message: 'Você concluiu a história! Ajudou o festival, mas acompanhou o espetáculo de longe. Continue praticando o mais-que-perfeito e as frases com «si»!' },
+        ending: { tone: 'neutro', title: 'Final razoável', message: 'Você concluiu a história! Ajudou o festival, mas acompanhou o espetáculo de longe. Continue praticando o mais-que-perfeito e as frases com “si”!' },
       },
     },
   },
@@ -2232,8 +2232,8 @@ export const STORIES_CA: StorySeed[] = [
     nodes: {
       start: {
         emoji: '🌧️',
-        text: "Linu camina pel Parc Nacional d'Aigüestortes i Estany de Sant Maurici. El cel es fosca ràpidament. Linu ja havia consultat el temps al matí, però la tempesta havia avançat més ràpid del previst. Pensava: «Si hagués mirat el radar fa una hora, sabria que venia aquesta pluja».",
-        translation: 'Linu caminha pelo Parque Nacional de Aigüestortes e Lago de Sant Maurici. O céu escurece rapidamente. Linu já tinha consultado a previsão do tempo de manhã, mas a tempestade tinha avançado mais rápido do que o previsto. Pensava: «Se eu tivesse olhado o radar há uma hora, saberia que vinha essa chuva».',
+        text: "Linu camina pel Parc Nacional d'Aigüestortes i Estany de Sant Maurici. El cel es fosca ràpidament. Linu ja havia consultat el temps al matí, però la tempesta havia avançat més ràpid del previst. Pensava: “Si hagués mirat el radar fa una hora, sabria que venia aquesta pluja”.",
+        translation: 'Linu caminha pelo Parque Nacional de Aigüestortes e Lago de Sant Maurici. O céu escurece rapidamente. Linu já tinha consultado a previsão do tempo de manhã, mas a tempestade tinha avançado mais rápido do que o previsto. Pensava: “Se eu tivesse olhado o radar há uma hora, saberia que vinha essa chuva”.',
         choices: [
           { text: "Caminar cap al Refugi d'Amitges seguint el sender assenyalat.", translation: 'Caminhar em direção ao Refúgio de Amitges seguindo a trilha sinalizada.', next: 'refugi' },
           {
@@ -2245,8 +2245,8 @@ export const STORIES_CA: StorySeed[] = [
       },
       refugi: {
         emoji: '🌫️',
-        text: "Mentre camina, la boira ho cobreix tot. Linu troba un altre excursionista que s'havia desorientat. L'home diu: «Si tingués una brúixola millor, no m'hauria desviat del camí!».",
-        translation: 'Enquanto caminha, a neblina cobre tudo. Linu encontra outro caminhante que tinha se desorientado. O homem diz: «Se eu tivesse uma bússola melhor, não teria me desviado do caminho!».',
+        text: "Mentre camina, la boira ho cobreix tot. Linu troba un altre excursionista que s'havia desorientat. L'home diu: “Si tingués una brúixola millor, no m'hauria desviat del camí!”.",
+        translation: 'Enquanto caminha, a neblina cobre tudo. Linu encontra outro caminhante que tinha se desorientado. O homem diz: “Se eu tivesse uma bússola melhor, não teria me desviado do caminho!”.',
         choices: [
           { text: "Convidar l'excursionista a seguir junts les marques vermelles del GR-11.", translation: 'Convidar o caminhante a seguir juntos as marcas vermelhas da GR-11.', next: 'cami_junts' },
           {
@@ -2273,14 +2273,14 @@ export const STORIES_CA: StorySeed[] = [
       },
       carena: {
         emoji: '💨',
-        text: 'A la carena, el vent bufa amb molta força. Linu es diu: «Si no haguéssim pujat aquí, no passaríem tant de fred!». Decideixen recular immediatament cap a la vall.',
-        translation: 'Na crista, o vento sopra com muita força. Linu diz a si mesmo: «Se não tivéssemos subido aqui, não passaríamos tanto frio!». Decidem recuar imediatamente para o vale.',
+        text: 'A la carena, el vent bufa amb molta força. Linu es diu: “Si no haguéssim pujat aquí, no passaríem tant de fred!”. Decideixen recular immediatament cap a la vall.',
+        translation: 'Na crista, o vento sopra com muita força. Linu diz a si mesmo: “Se não tivéssemos subido aqui, não passaríamos tanto frio!”. Decidem recuar imediatamente para o vale.',
         choices: [{ text: 'Baixar ràpidament cap al camí de la vall.', translation: 'Descer rapidamente para o caminho do vale.', next: 'vall_protegida' }],
       },
       dins_refugi: {
         emoji: '☕',
-        text: 'El guarda del refugi els rep amb te calent. Ell havia preparat un gran sopar per als excursionistes atrapats. El guarda comenta: «Si la tempesta no parés demà, hauríem d\'esperar a l\'endemà per baixar a Sant Maurici».',
-        translation: 'O guardião do refúgio os recebe com chá quente. Ele tinha preparado um grande jantar para os caminhantes presos. O guardião comenta: «Se a tempestade não parar amanhã, teríamos que esperar o dia seguinte para descer a Sant Maurici».',
+        text: 'El guarda del refugi els rep amb te calent. Ell havia preparat un gran sopar per als excursionistes atrapats. El guarda comenta: “Si la tempesta no parés demà, hauríem d\'esperar a l\'endemà per baixar a Sant Maurici”.',
+        translation: 'O guardião do refúgio os recebe com chá quente. Ele tinha preparado um grande jantar para os caminhantes presos. O guardião comenta: “Se a tempestade não parar amanhã, teríamos que esperar o dia seguinte para descer a Sant Maurici”.',
         choices: [
           { text: 'Ajudar a encendre la llar de foc i compartir experiències de muntanya.', translation: 'Ajudar a acender a lareira e compartilhar experiências de montanha.', next: 'llar_foc' },
           { text: 'Anar a dormir directament sense eixugar la roba humida.', translation: 'Ir dormir diretamente sem secar as roupas úmidas.', next: 'dormir_humit' },
@@ -2333,8 +2333,8 @@ export const STORIES_CA: StorySeed[] = [
     nodes: {
       start: {
         emoji: '✉️',
-        text: "Linu troba un sobre groguenc entre els llibres de la família. L'avi havia escrit aquesta carta des de Girona l'any 1965. Pensava: «Si l'avi hagués guardat aquesta carta en un altre lloc, mai no l'hauria trobada».",
-        translation: 'Linu encontra um envelope amarelado entre os livros da família. O avô tinha escrito esta carta de Girona no ano de 1965. Pensava: «Se o avô tivesse guardado esta carta em outro lugar, eu nunca a teria encontrado».',
+        text: "Linu troba un sobre groguenc entre els llibres de la família. L'avi havia escrit aquesta carta des de Girona l'any 1965. Pensava: “Si l'avi hagués guardat aquesta carta en un altre lloc, mai no l'hauria trobada”.",
+        translation: 'Linu encontra um envelope amarelado entre os livros da família. O avô tinha escrito esta carta de Girona no ano de 1965. Pensava: “Se o avô tivesse guardado esta carta em outro lugar, eu nunca a teria encontrado”.',
         choices: [
           { text: "Obrir la carta i llegir el missatge de l'avi.", translation: 'Abrir a carta e ler a mensagem do avô.', next: 'llegir_carta' },
           {
@@ -2346,8 +2346,8 @@ export const STORIES_CA: StorySeed[] = [
       },
       llegir_carta: {
         emoji: '🔍',
-        text: "La carta deia: «Si jo fos jove de nou, tornaria al Pont de les Peixateries Velles de Girona. Allà havia amagat una clau petita prop del pilar de ferro». Linu decideix agafar el tren cap a Girona.",
-        translation: 'A carta dizia: «Se eu fosse jovem de novo, voltaria à Ponte das Peixarias Velhas de Girona. Lá tinha escondido uma chave pequena perto do pilar de ferro». Linu decide pegar o trem para Girona.',
+        text: "La carta deia: “Si jo fos jove de nou, tornaria al Pont de les Peixateries Velles de Girona. Allà havia amagat una clau petita prop del pilar de ferro”. Linu decideix agafar el tren cap a Girona.",
+        translation: 'A carta dizia: “Se eu fosse jovem de novo, voltaria à Ponte das Peixarias Velhas de Girona. Lá tinha escondido uma chave pequena perto do pilar de ferro”. Linu decide pegar o trem para Girona.',
         choices: [
           { text: 'Anar directament al riu Onyar per cercar el Pont de les Peixateries Velles.', translation: 'Ir diretamente ao rio Onyar para procurar a Ponte das Peixarias Velhas.', next: 'pont_eiffel' },
           { text: "Anar al Museu d'Història dels Jueus al Carrer de la Força.", translation: 'Ir ao Museu de História dos Judeus na Carrer de la Força.', next: 'museu_jueus' },
@@ -2368,8 +2368,8 @@ export const STORIES_CA: StorySeed[] = [
       },
       museu_jueus: {
         emoji: '🏛️',
-        text: "Al Museu d'Història dels Jueus, l'arxiver escolta la història de Linu. L'home diu: «Si el teu avi hagués viscut al Call Jueu, la seva casa hauria estat al Carrer de la Força».",
-        translation: 'No Museu de História dos Judeus, o arquivista escuta a história de Linu. O homem diz: «Se o seu avô tivesse vivido no Bairro Judeu, sua casa teria sido na Carrer de la Força».',
+        text: "Al Museu d'Història dels Jueus, l'arxiver escolta la història de Linu. L'home diu: “Si el teu avi hagués viscut al Call Jueu, la seva casa hauria estat al Carrer de la Força”.",
+        translation: 'No Museu de História dos Judeus, o arquivista escuta a história de Linu. O homem diz: “Se o seu avô tivesse vivido no Bairro Judeu, sua casa teria sido na Carrer de la Força”.',
         choices: [
           { text: 'Anar cap al pont de ferro per trobar la clau que falta.', translation: 'Ir em direção à ponte de ferro para encontrar a chave que falta.', next: 'pont_eiffel' },
           { text: 'Caminar directament pel Carrer de la Força sense la clau.', translation: 'Caminhar diretamente pela Carrer de la Força sem a chave.', next: 'carrer_forca_sense_clau' },
@@ -2424,7 +2424,7 @@ export const STORIES_CA: StorySeed[] = [
     title: "L'entrevista de feina",
     emoji: '💼',
     summary: 'Linu participa de uma entrevista de emprego formal em uma empresa de inovação no distrito 22@ em Barcelona.',
-    cultural_context: "O distrito 22@ Barcelona, criado no ano 2000 no histórico bairro industrial do Poblenou, é o principal polo de tecnologia e inovação da Catalunha. Em entrevistas de emprego formais em empresas catalãs, utiliza-se estritamente o tratamento de cortesia «vostè» e é comum valorizar certificados do Consorci per a la Normalització Lingüística (CPNL).",
+    cultural_context: "O distrito 22@ Barcelona, criado no ano 2000 no histórico bairro industrial do Poblenou, é o principal polo de tecnologia e inovação da Catalunha. Em entrevistas de emprego formais em empresas catalãs, utiliza-se estritamente o tratamento de cortesia “vostè” e é comum valorizar certificados do Consorci per a la Normalització Lingüística (CPNL).",
     start: 'start',
     glossary: [
       ["l'entrevista de feina", 'a entrevista de emprego'],
@@ -2442,21 +2442,21 @@ export const STORIES_CA: StorySeed[] = [
         translation: 'Linu chega ao edifício MediaTIC, no distrito 22@ de Barcelona, para uma entrevista de emprego. No mural publicam-se muitas ofertas para profissionais qualificados. Na recepção, Linu hesita sobre como se dirigir à equipe.',
         choices: [
           {
-            text: "«Bon dia. Vostè em pot indicar on es fa l'entrevista de selecció?»",
-            translation: '«Bom dia. O senhor/A senhora pode me indicar onde é feita a entrevista de seleção?»',
+            text: "“Bon dia. Vostè em pot indicar on es fa l'entrevista de selecció?”",
+            translation: '“Bom dia. O senhor/A senhora pode me indicar onde é feita a entrevista de seleção?”',
             next: 'recepcio',
           },
           {
-            text: '«Epa, tu! Com va això? On és el cap per parlar un moment?»',
-            translation: '«E aí, cara! Como vão as coisas? Onde está o chefe pra conversar um pouco?»',
-            wrong: 'Em um ambiente profissional formal na Catalunha, usa-se o tratamento de «vostè». O uso de linguagem demasiadamente informal («tu / epa») na recepção é inadequado.',
+            text: '“Epa, tu! Com va això? On és el cap per parlar un moment?”',
+            translation: '“E aí, cara! Como vão as coisas? Onde está o chefe pra conversar um pouco?”',
+            wrong: 'Em um ambiente profissional formal na Catalunha, usa-se o tratamento de “vostè”. O uso de linguagem demasiadamente informal (“tu / epa”) na recepção é inadequado.',
           },
         ],
       },
       recepcio: {
         emoji: '🛋️',
-        text: "La recepcionista li indica la sala d'espera: «Es prega que vostè s'assegui un moment. Se li demana que tingui preparat el seu currículum i la carta de presentació». Linu revisa la seva documentació.",
-        translation: 'A recepcionista lhe indica a sala de espera: «Pede-se que o senhor se sente um momento. Solicita-se que tenha preparado o seu currículo e a carta de apresentação». Linu revisa sua documentação.',
+        text: "La recepcionista li indica la sala d'espera: “Es prega que vostè s'assegui un moment. Se li demana que tingui preparat el seu currículum i la carta de presentació”. Linu revisa la seva documentació.",
+        translation: 'A recepcionista lhe indica a sala de espera: “Pede-se que o senhor se sente um momento. Solicita-se que tenha preparado o seu currículo e a carta de apresentação”. Linu revisa sua documentação.',
         choices: [
           { text: 'Comprovar els documents i esperar pacientment que es cridi el seu nom.', translation: 'Checar os documentos e esperar pacientemente que chamem seu nome.', next: 'despatx' },
           {
@@ -2468,43 +2468,43 @@ export const STORIES_CA: StorySeed[] = [
       },
       despatx: {
         emoji: '🤝',
-        text: "El director de recursos humans el rep al seu despatx: «Sigui benvingut, senyor Linu. A la nostra empresa es valora molt el domini lingüístic. Es requereix que vostè ens expliqui quines tasques es van realitzar en el seu darrer projecte».",
-        translation: 'O diretor de recursos humanos o recebe em sua sala: «Seja bem-vindo, senhor Linu. Em nossa empresa valoriza-se muito o domínio linguístico. Requer-se que o senhor nos explique quais tarefas foram realizadas em seu último projeto».',
+        text: "El director de recursos humans el rep al seu despatx: “Sigui benvingut, senyor Linu. A la nostra empresa es valora molt el domini lingüístic. Es requereix que vostè ens expliqui quines tasques es van realitzar en el seu darrer projecte”.",
+        translation: 'O diretor de recursos humanos o recebe em sua sala: “Seja bem-vindo, senhor Linu. Em nossa empresa valoriza-se muito o domínio linguístico. Requer-se que o senhor nos explique quais tarefas foram realizadas em seu último projeto”.',
         choices: [
-          { text: '«Es van organitzar tallers culturals i es van redactar informes oficials en català.»', translation: '«Organizaram-se oficinas culturais e redigiram-se relatórios oficiais em catalão.»', next: 'demostració' },
-          { text: '«Es va fer poca cosa perquè no em gaire agradava treballar al matí.»', translation: '«Fez-se pouca coisa porque eu não gostava muito de trabalhar de manhã.»', next: 'pregunta_formal' },
+          { text: '“Es van organitzar tallers culturals i es van redactar informes oficials en català.”', translation: '“Organizaram-se oficinas culturais e redigiram-se relatórios oficiais em catalão.”', next: 'demostració' },
+          { text: '“Es va fer poca cosa perquè no em gaire agradava treballar al matí.”', translation: '“Fez-se pouca coisa porque eu não gostava muito de trabalhar de manhã.”', next: 'pregunta_formal' },
         ],
       },
       demostració: {
         emoji: '📝',
-        text: "El director nodreix l'entrevista: «A la nostra corporació es demana una comunicació impecable. Com es redacta una notificació si vostè ha de convocar una reunió d'urgència?».",
-        translation: 'O diretor aprofunda a entrevista: «Em nossa corporação pede-se uma comunicação impecável. Como se redige uma notificação se o senhor precisa convocar uma reunião de emergência?».',
+        text: "El director nodreix l'entrevista: “A la nostra corporació es demana una comunicació impecable. Com es redacta una notificació si vostè ha de convocar una reunió d'urgència?”.",
+        translation: 'O diretor aprofunda a entrevista: “Em nossa corporação pede-se uma comunicação impecável. Como se redige uma notificação se o senhor precisa convocar uma reunião de emergência?”.',
         choices: [
-          { text: '«S\'utilitza l\'encapçalament formal «Benvolguts senyors» i s\'empra la passiva pronominal.»', translation: '«Utiliza-se o cabeçalho formal «Prezados senhores» e emprega-se a passiva pronominal.»', next: 'carta_presentacio' },
+          { text: '“S\'utilitza l\'encapçalament formal ‘Benvolguts senyors’ i s\'empra la passiva pronominal.”', translation: '“Utiliza-se o cabeçalho formal ‘Prezados senhores’ e emprega-se a passiva pronominal.”', next: 'carta_presentacio' },
           {
-            text: '«S\'envia un missatge dient «Hola a tothom, veniu ara mateix!» sense fórmules de cortesia.»',
-            translation: '«Envia-se uma mensagem dizendo «Olá a todos, venham agora mesmo!» sem fórmulas de cortesia.»',
+            text: '“S\'envia un missatge dient ‘Hola a tothom, veniu ara mateix!’ sense fórmules de cortesia.”',
+            translation: '“Envia-se uma mensagem dizendo ‘Olá a todos, venham agora mesmo!’ sem fórmulas de cortesia.”',
             wrong: 'Nas comunicações empresariais formais na Catalunha, exigem-se fórmulas de cortesia e estrutura corporativa adequada.',
           },
         ],
       },
       pregunta_formal: {
         emoji: '📊',
-        text: 'El director li fa una altra pregunta: «Com es van gestionar els recursos econòmics en la seva etapa anterior? Es van auditar els comptes degudament?».',
-        translation: 'O diretor lhe faz outra pergunta: «Como se geriram os recursos financeiros em sua etapa anterior? Auditaram-se as contas devidamente?».',
+        text: 'El director li fa una altra pregunta: “Com es van gestionar els recursos econòmics en la seva etapa anterior? Es van auditar els comptes degudament?”.',
+        translation: 'O diretor lhe faz outra pergunta: “Como se geriram os recursos financeiros em sua etapa anterior? Auditaram-se as contas devidamente?”.',
         choices: [
-          { text: '«Es van aprovar els comptes anuals i es va presentar un balanç equilibrat a la direcció.»', translation: '«Aprovaram-se as contas anuais e apresentou-se um balanço equilibrado à diretoria.»', next: 'carta_presentacio' },
+          { text: '“Es van aprovar els comptes anuals i es va presentar un balanç equilibrat a la direcció.”', translation: '“Aprovaram-se as contas anuais e apresentou-se um balanço equilibrado à diretoria.”', next: 'carta_presentacio' },
           {
-            text: '«No ho sé, els diners es van gastar sense cap control ni registre.»',
-            translation: '«Não sei, o dinheiro foi gasto sem nenhum controle nem registro.»',
+            text: '“No ho sé, els diners es van gastar sense cap control ni registre.”',
+            translation: '“Não sei, o dinheiro foi gasto sem nenhum controle nem registro.”',
             wrong: 'Admitir descontrole financeiro demonstra falta de responsabilidade em uma entrevista de nível profissional.',
           },
         ],
       },
       carta_presentacio: {
         emoji: '📜',
-        text: 'El director mostra la seva satisfacció: «Es veu clarament que vostè té una excel·lent formació. Se li demana una darrera verificació: disposa vostè del certificat oficial de llengua?».',
-        translation: 'O diretor mostra sua satisfação: «Vê-se claramente que o senhor tem uma excelente formação. Solicita-se uma última verificação: o senhor dispõe do certificado oficial de língua?».',
+        text: 'El director mostra la seva satisfacció: “Es veu clarament que vostè té una excel·lent formació. Se li demana una darrera verificació: disposa vostè del certificat oficial de llengua?”.',
+        translation: 'O diretor mostra sua satisfação: “Vê-se claramente que o senhor tem uma excelente formação. Solicita-se uma última verificação: o senhor dispõe do certificado oficial de língua?”.',
         choices: [
           { text: 'Mostrar el certificat acreditat pel Consorci per a la Normalització Lingüística.', translation: 'Mostrar o certificado acreditado pelo Consorci per a la Normalització Lingüística.', next: 'proposta' },
           { text: 'Dir que els títols oficials no serveixen de res en el món laboral.', translation: 'Dizer que os títulos oficiais não servem para nada no mundo do trabalho.', next: 'final_neutre' },
@@ -2512,18 +2512,18 @@ export const STORIES_CA: StorySeed[] = [
       },
       proposta: {
         emoji: '📑',
-        text: "El director somriu i estén la mà: «Se li ofereix la plaça de coordinació de projectes. Es signarà el contracte demà mateix si vostè hi està d'acord».",
-        translation: 'O diretor sorri e estende a mão: «Ofertam-lhe a vaga de coordenação de projetos. Assinar-se-á o contrato amanhã mesmo se o senhor estiver de acordo».',
+        text: "El director somriu i estén la mà: “Se li ofereix la plaça de coordinació de projectes. Es signarà el contracte demà mateix si vostè hi està d'acord”.",
+        translation: 'O diretor sorri e estende a mão: “Ofertam-lhe a vaga de coordenação de projetos. Assinar-se-á o contrato amanhã mesmo se o senhor estiver de acordo”.',
         choices: [
-          { text: '«Li agraeixo profundament aquesta oportunitat, senyor director. Resto a la seva disposició.»', translation: '«Agradeço-lhe profundamente esta oportunidade, senhor diretor. Fico à sua disposição.»', next: 'final_bom' },
-          { text: '«D\'acord, però ara mateix es va a canviar la meva jornada per treballar només dos dies.»', translation: '«De acordo, mas agora mesmo vai-se mudar minha jornada para trabalhar só dois dias.»', next: 'final_neutre' },
+          { text: '“Li agraeixo profundament aquesta oportunitat, senyor director. Resto a la seva disposició.”', translation: '“Agradeço-lhe profundamente esta oportunidade, senhor diretor. Fico à sua disposição.”', next: 'final_bom' },
+          { text: '“D\'acord, però ara mateix es va a canviar la meva jornada per treballar només dos dies.”', translation: '“De acordo, mas agora mesmo vai-se mudar minha jornada para trabalhar só dois dias.”', next: 'final_neutre' },
         ],
       },
       final_bom: {
         emoji: '🎉',
         text: 'Linu signa el seu contracte laboral al districte 22@. La seva actitud formal i el domini de la passiva pronominal i del registre de cortesia li han obert les portes del món professional a Barcelona.',
         translation: 'Linu assina seu contrato de trabalho no distrito 22@. Sua atitude formal e o domínio da passiva pronominal e do registro de cortesia abriram-lhe as portas do mundo profissional em Barcelona.',
-        ending: { tone: 'bom', title: 'Contratação de sucesso!', message: 'Parabéns! Você conquistou a vaga corporativa utilizando com precisão o registro formal com «vostè» e as estruturas da voz passiva pronominal em catalão.' },
+        ending: { tone: 'bom', title: 'Contratação de sucesso!', message: 'Parabéns! Você conquistou a vaga corporativa utilizando com precisão o registro formal com “vostè” e as estruturas da voz passiva pronominal em catalão.' },
       },
       final_neutre: {
         emoji: '📋',
@@ -2540,7 +2540,7 @@ export const STORIES_CA: StorySeed[] = [
     title: "Una queixa a l'Ajuntament",
     emoji: '🏛️',
     summary: "Linu comparece à Oficina d'Atenció Ciutadana para registrar uma queixa formal sobre a manutenção do parque do seu bairro.",
-    cultural_context: "Na Catalunha, o atendimento presencial e administrativo aos cidadãos centraliza-se na OAC (Oficina d'Atenció Ciutadana) de cada Ajuntament. Para apresentar petições ou reclamações formais, utiliza-se o procedimento da «instància genèrica», um requerimento público em que se expõem os fatos e se solicita formalmente a intervenção municipal.",
+    cultural_context: "Na Catalunha, o atendimento presencial e administrativo aos cidadãos centraliza-se na OAC (Oficina d'Atenció Ciutadana) de cada Ajuntament. Para apresentar petições ou reclamações formais, utiliza-se o procedimento da “instància genèrica”, um requerimento público em que se expõem os fatos e se solicita formalmente a intervenção municipal.",
     start: 'start',
     glossary: [
       ["l'Oficina d'Atenció Ciutadana (OAC)", 'o escritório de atendimento ao cidadão'],
@@ -2567,10 +2567,10 @@ export const STORIES_CA: StorySeed[] = [
       },
       oac_entrada: {
         emoji: '🗂️',
-        text: "El funcionari de la finestra li diu: «Bon dia, senyor Linu. Si vostè vol registrar una queixa formal, es requereix omplir el formulari d'instància genèrica». Linu agafa el document.",
-        translation: 'O funcionário do guichê lhe diz: «Bom dia, senhor Linu. Se o senhor quer registrar uma queixa formal, requer-se preencher o formulário de requerimento genérico». Linu pega o documento.',
+        text: "El funcionari de la finestra li diu: “Bon dia, senyor Linu. Si vostè vol registrar una queixa formal, es requereix omplir el formulari d'instància genèrica”. Linu agafa el document.",
+        translation: 'O funcionário do guichê lhe diz: “Bom dia, senhor Linu. Se o senhor quer registrar uma queixa formal, requer-se preencher o formulário de requerimento genérico”. Linu pega o documento.',
         choices: [
-          { text: '«Li agrairia que vostè m\'indiqués quines seccions s\'han de completar.»', translation: '«Agradeceria se o senhor me indicasse quais seções devem ser completadas.»', next: 'taula_atencio' },
+          { text: '“Li agrairia que vostè m\'indiqués quines seccions s\'han de completar.”', translation: '“Agradeceria se o senhor me indicasse quais seções devem ser completadas.”', next: 'taula_atencio' },
           {
             text: 'Escriure la reclamació en un grapat de xiclets i enganxar-lo al tauler.',
             translation: 'Escrever a reclamação em um punhado de chicletes e colá-lo no painel.',
@@ -2580,10 +2580,10 @@ export const STORIES_CA: StorySeed[] = [
       },
       taula_atencio: {
         emoji: '📄',
-        text: 'El funcionari li explica la primera part: «A la secció Exposo, es descriuen els fets de manera objectiva. Es van detectar altres danys a la zona verda del barri?».',
-        translation: 'O funcionário lhe explica a primeira parte: «Na seção Exponho, descrevem-se os fatos de maneira objetiva. Detectaram-se outros danos na área verde do bairro?».',
+        text: 'El funcionari li explica la primera part: “A la secció Exposo, es descriuen els fets de manera objectiva. Es van detectar altres danys a la zona verda del barri?”.',
+        translation: 'O funcionário lhe explica a primeira parte: “Na seção Exponho, descrevem-se os fatos de maneira objetiva. Detectaram-se outros danos na área verde do bairro?”.',
         choices: [
-          { text: '«Es van malmetre les tanques protectores i no es van reparar els fanals principals.»', translation: '«Danificaram-se as cercas protetoras e não se repararam os postes de luz principais.»', next: 'instancia_form' },
+          { text: '“Es van malmetre les tanques protectores i no es van reparar els fanals principals.”', translation: '“Danificaram-se as cercas protetoras e não se repararam os postes de luz principais.”', next: 'instancia_form' },
           {
             text: 'Inventar-se que es van veure alienígenes destruint els arbres del parc.',
             translation: 'Inventar que se viram alienígenas destruindo as árvores do parque.',
@@ -2593,10 +2593,10 @@ export const STORIES_CA: StorySeed[] = [
       },
       instancia_form: {
         emoji: '🖋️',
-        text: "El funcionari continua: «Ara passem a la secció Sol·licito. Quines mesures es demanen exactament als serveis municipals per part de vostè?». Linu redacta la secció.",
-        translation: 'O funcionário continua: «Agora passamos à seção Solicito. Quais medidas se pedem exatamente aos serviços municipais por parte do senhor?». Linu redige a seção.',
+        text: "El funcionari continua: “Ara passem a la secció Sol·licito. Quines mesures es demanen exactament als serveis municipals per part de vostè?”. Linu redacta la secció.",
+        translation: 'O funcionário continua: “Agora passamos à seção Solicito. Quais medidas se pedem exatamente aos serviços municipais por parte do senhor?”. Linu redige a seção.',
         choices: [
-          { text: '«Sol·licito que es revisi l\'estat del parc i es programin les obres de manteniment.»', translation: '«Solicito que se revise o estado do parque e se programem as obras de manutenção.»', next: 'redaccio_instancia' },
+          { text: '“Sol·licito que es revisi l\'estat del parc i es programin les obres de manteniment.”', translation: '“Solicito que se revise o estado do parque e se programem as obras de manutenção.”', next: 'redaccio_instancia' },
           {
             text: 'Redactar amenaces directes contra el personal de neteja de la ciutat.',
             translation: 'Redigir ameaças diretas contra a equipe de limpeza da cidade.',
@@ -2606,26 +2606,26 @@ export const STORIES_CA: StorySeed[] = [
       },
       redaccio_instancia: {
         emoji: '✉️',
-        text: 'La instància està gairebé enllestida. El funcionari li indica: «Es recomana concloure el text amb una fórmula de comiat adient. Com prefereix tancar la carta formal vostè?».',
-        translation: 'O requerimento está quase pronto. O funcionário lhe indica: «Recomenda-se concluir o texto com uma fórmula de despedida adequada. Como prefere encerrar a carta formal o senhor?».',
+        text: 'La instància està gairebé enllestida. El funcionari li indica: “Es recomana concloure el text amb una fórmula de comiat adient. Com prefereix tancar la carta formal vostè?”.',
+        translation: 'O requerimento está quase pronto. O funcionário lhe indica: “Recomenda-se concluir o texto com uma fórmula de despedida adequada. Como prefere encerrar a carta formal o senhor?”.',
         choices: [
-          { text: '«Atentament, resta a la seva disposició, Linu» i signar la llista.', translation: 'Redigir: «Atenciosamente, fica à sua disposição, Linu» e assinar a lista.', next: 'registre_entrada' },
-          { text: '«Apa, adéu!» i deixar la instància sense data ni signatura.', translation: 'Encerrar com um «Tchau, até mais!» e deixar o requerimento sem data nem assinatura.', next: 'entrevista_tecnic' },
+          { text: '“Atentament, resta a la seva disposició, Linu” i signar la llista.', translation: 'Redigir: “Atenciosamente, fica à sua disposição, Linu” e assinar a lista.', next: 'registre_entrada' },
+          { text: '“Apa, adéu!” i deixar la instància sense data ni signatura.', translation: 'Encerrar com um “Tchau, até mais!” e deixar o requerimento sem data nem assinatura.', next: 'entrevista_tecnic' },
         ],
       },
       registre_entrada: {
         emoji: '🏷️',
-        text: "El funcionari posa el segell oficial: «Es tramita la sol·licitud amb el número d'expedient 4052. Es va enviar una còpia al departament d'Urbanisme i Medi Ambient». Linu rep el comprovant.",
-        translation: 'O funcionário coloca o selo oficial: «Tramita-se a solicitação com o número de processo 4052. Enviou-se uma cópia ao departamento de Urbanismo e Meio Ambiente». Linu recebe o comprovante.',
+        text: "El funcionari posa el segell oficial: “Es tramita la sol·licitud amb el número d'expedient 4052. Es va enviar una còpia al departament d'Urbanisme i Medi Ambient”. Linu rep el comprovant.",
+        translation: 'O funcionário coloca o selo oficial: “Tramita-se a solicitação com o número de processo 4052. Enviou-se uma cópia ao departamento de Urbanismo e Meio Ambiente”. Linu recebe o comprovante.',
         choices: [
-          { text: '«Li agraeixo molt l\'atenció, senyor funcionari. Guardaré el número de registre.»', translation: '«Agradeço-lhe muito a atenção, senhor funcionário. Guardarei o número de protocolo.»', next: 'entrevista_tecnic' },
+          { text: '“Li agraeixo molt l\'atenció, senyor funcionari. Guardaré el número de registre.”', translation: '“Agradeço-lhe muito a atenção, senhor funcionário. Guardarei o número de protocolo.”', next: 'entrevista_tecnic' },
           { text: 'Llençar el comprovant de registre a la brossa de la sortida.', translation: 'Jogar o comprovante de protocolo no lixo da saída.', next: 'final_neutre' },
         ],
       },
       entrevista_tecnic: {
         emoji: '📬',
-        text: "Al cap de tres setmanes, Linu rep una notificació oficial de l'Ajuntament: «Se l'informa que es van aprovar les obres i es va contractar un equip de reparació per al parc».",
-        translation: 'Três semanas depois, Linu recebe uma notificação oficial da Prefeitura: «Informa-se-lhe que se aprovaram as obras e se contratou uma equipe de reparo para o parque».',
+        text: "Al cap de tres setmanes, Linu rep una notificació oficial de l'Ajuntament: “Se l'informa que es van aprovar les obres i es va contractar un equip de reparació per al parc”.",
+        translation: 'Três semanas depois, Linu recebe uma notificação oficial da Prefeitura: “Informa-se-lhe que se aprovaram as obras e se contratou uma equipe de reparo para o parque”.',
         choices: [
           { text: 'Anar al parc per comprovar que es van executar els treballs adequadament.', translation: 'Ir ao parque para comprovar que se executaram os trabalhos adequadamente.', next: 'final_bom' },
           { text: 'Ignorar la notificació municipal i no tornar a visitar la zona verda.', translation: 'Ignorar a notificação municipal e não voltar a visitar a área verde.', next: 'final_neutre' },
@@ -2635,7 +2635,7 @@ export const STORIES_CA: StorySeed[] = [
         emoji: '🌳',
         text: "Linu comprova que es van renovar els bancs i es van reparar les tanques del parc. Els veïns gaudeixen de l'espai gràcies a una instància genèrica redactada impecablement en registre formal.",
         translation: 'Linu comprova que se renovaram os bancos e se repararam as cercas do parque. Os moradores desfrutam do espaço graças a um requerimento genérico redigido impecavelmente em registro formal.',
-        ending: { tone: 'bom', title: 'Cidadania e manutenção ativa!', message: 'Excelente! Você concluiu a tramitação administrativa com sucesso, utilizando corretamente o requerimento formal, o tratamento com «vostè» e as estruturas passivas pronominais.' },
+        ending: { tone: 'bom', title: 'Cidadania e manutenção ativa!', message: 'Excelente! Você concluiu a tramitação administrativa com sucesso, utilizando corretamente o requerimento formal, o tratamento com “vostè” e as estruturas passivas pronominais.' },
       },
       final_neutre: {
         emoji: '📄',
@@ -2666,10 +2666,10 @@ export const STORIES_CA: StorySeed[] = [
     nodes: {
       start: {
         emoji: '🏛️',
-        text: "Linu arriba a Figueres per visitar el Teatre-Museu Dalí. Aquest recinte es va construir sobre l'antic teatre municipal. Un cartell a l'entrada recorda les normes: «Es prega que vostès mantinguin el silenci i no utilitzin flaix».",
-        translation: 'Linu chega a Figueres para visitar o Teatro-Museu Dalí. Este recinto construiu-se sobre o antigo teatro municipal. Um cartaz na entrada recorda as normas: «Pede-se que os senhores mantenham o silêncio e não utilizem flash».',
+        text: "Linu arriba a Figueres per visitar el Teatre-Museu Dalí. Aquest recinte es va construir sobre l'antic teatre municipal. Un cartell a l'entrada recorda les normes: “Es prega que vostès mantinguin el silenci i no utilitzin flaix”.",
+        translation: 'Linu chega a Figueres para visitar o Teatro-Museu Dalí. Este recinto construiu-se sobre o antigo teatro municipal. Um cartaz na entrada recorda as normas: “Pede-se que os senhores mantenham o silêncio e não utilizem flash”.',
         choices: [
-          { text: 'Comprar l\'entrada i adreçar-se al guia formalment: «Bon dia, com es distribueix la ruta?»', translation: 'Comprar o ingresso e dirigir-se ao guia formalmente: «Bom dia, como se distribui a rota?»', next: 'entrada_museu' },
+          { text: 'Comprar l\'entrada i adreçar-se al guia formalment: “Bon dia, com es distribueix la ruta?”', translation: 'Comprar o ingresso e dirigir-se ao guia formalmente: “Bom dia, como se distribui a rota?”', next: 'entrada_museu' },
           {
             text: 'Encendre un flaix fotogràfic potent davant del primer quadre de la sala.',
             translation: 'Acender um flash fotográfico potente diante do primeiro quadro da sala.',
@@ -2679,8 +2679,8 @@ export const STORIES_CA: StorySeed[] = [
       },
       entrada_museu: {
         emoji: '🎟️',
-        text: 'El guia de la institució es presenta: «Siguin benvinguts, estimats visitants. En aquest museu es conserven obres de totes les etapes de Salvador Dalí. Si vostès em segueixen, observarem el pati central».',
-        translation: 'O guia da instituição se apresenta: «Sejam bem-vindos, caros visitantes. Neste museu conservam-se obras de todas as etapas de Salvador Dalí. Se os senhores me seguirem, observaremos o pátio central».',
+        text: 'El guia de la institució es presenta: “Siguin benvinguts, estimats visitants. En aquest museu es conserven obres de totes les etapes de Salvador Dalí. Si vostès em segueixen, observarem el pati central”.',
+        translation: 'O guia da instituição se apresenta: “Sejam bem-vindos, caros visitantes. Neste museu conservam-se obras de todas as etapas de Salvador Dalí. Se os senhores me seguirem, observaremos o pátio central”.',
         choices: [
           { text: "Seguir el guia amb atenció i observar l'arquitectura del pati.", translation: 'Seguir o guia com atenção e observar a arquitetura do pátio.', next: 'patio_cadillac' },
           {
@@ -2692,10 +2692,10 @@ export const STORIES_CA: StorySeed[] = [
       },
       patio_cadillac: {
         emoji: '🚘',
-        text: 'Al pati central es troba el monument del «Cadillac plujós». El guia explica: «Si vostès observen el vehicle, es veu com plou a l\'interior quan s\'introdueix una moneda. Aquesta instal·lació es va concebre per impactar el públic».',
-        translation: 'No pátio central encontra-se o monumento do «Cadillac chuvoso». O guia explica: «Se os senhores observarem o veículo, vê-se como chove no interior quando se introduz uma moeda. Esta instalação concebeu-se para impactar o público».',
+        text: 'Al pati central es troba el monument del “Cadillac plujós”. El guia explica: “Si vostès observen el vehicle, es veu com plou a l\'interior quan s\'introdueix una moneda. Aquesta instal·lació es va concebre per impactar el públic”.',
+        translation: 'No pátio central encontra-se o monumento do “Cadillac chuvoso”. O guia explica: “Se os senhores observarem o veículo, vê-se como chove no interior quando se introduz uma moeda. Esta instalação concebeu-se para impactar o público”.',
         choices: [
-          { text: '«Senyor guia, com es va dissenyar la columna de pneumàtics que hi ha a sobre del cotxe?»', translation: '«Senhor guia, como se projetou a coluna de pneus que há em cima do carro?»', next: 'cupula_geodesica' },
+          { text: '“Senyor guia, com es va dissenyar la columna de pneumàtics que hi ha a sobre del cotxe?”', translation: '“Senhor guia, como se projetou a coluna de pneus que há em cima do carro?”', next: 'cupula_geodesica' },
           {
             text: 'Pujar al sostre del Cadillac per fer una foto estrambòtica.',
             translation: 'Subir no teto do Cadillac para tirar uma foto extravagante.',
@@ -2705,8 +2705,8 @@ export const STORIES_CA: StorySeed[] = [
       },
       cupula_geodesica: {
         emoji: '🌐',
-        text: 'El grup s\'atura sota la gran cúpula geodèsica. El guia comenta: «Aquesta estructura reticular va ser construïda el 1973 per l\'arquitecte Emilio Pérez Piñero. Es considera la icona urbana de Figueres. Li preguem, senyor Linu, que mireu el teló de fons».',
-        translation: 'O grupo para sob a grande cúpula geodésica. O guia comenta: «Esta estrutura reticular foi construída em 1973 pelo arquiteto Emilio Pérez Piñero. Considera-se o ícone urbano de Figueres. Pedimos-lhe, senhor Linu, que olhe o telão ao fundo».',
+        text: 'El grup s\'atura sota la gran cúpula geodèsica. El guia comenta: “Aquesta estructura reticular va ser construïda el 1973 per l\'arquitecte Emilio Pérez Piñero. Es considera la icona urbana de Figueres. Li preguem, senyor Linu, que mireu el teló de fons”.',
+        translation: 'O grupo para sob a grande cúpula geodésica. O guia comenta: “Esta estrutura reticular foi construída em 1973 pelo arquiteto Emilio Pérez Piñero. Considera-se o ícone urbano de Figueres. Pedimos-lhe, senhor Linu, que olhe o telão ao fundo”.',
         choices: [
           { text: "Contemplar l'enorme escenari teatral i formular una pregunta en registre formal.", translation: 'Contemplar o enorme cenário teatral e formular uma pergunta em registro formal.', next: 'sala_mae_west' },
           {
@@ -2718,8 +2718,8 @@ export const STORIES_CA: StorySeed[] = [
       },
       sala_mae_west: {
         emoji: '🛋️',
-        text: 'A la Sala Mae West, el guia mostra com es van combinar diferents mobles: «Aquí es va transformar el rostre d\'una actriu en un apartament. Si vostès pugen per l\'escala i miren per la lent, es veu la il·lusió òptica completa».',
-        translation: 'Na Sala Mae West, o guia mostra como se combinaram diferentes móveis: «Aqui transformou-se o rosto de uma atriz em um apartamento. Se os senhores subirem pela escada e olharem pela lente, vê-se a ilusão ótica completa».',
+        text: 'A la Sala Mae West, el guia mostra com es van combinar diferents mobles: “Aquí es va transformar el rostre d\'una actriu en un apartament. Si vostès pugen per l\'escala i miren per la lent, es veu la il·lusió òptica completa”.',
+        translation: 'Na Sala Mae West, o guia mostra como se combinaram diferentes móveis: “Aqui transformou-se o rosto de uma atriz em um apartamento. Se os senhores subirem pela escada e olharem pela lente, vê-se a ilusão ótica completa”.',
         choices: [
           { text: 'Pujar l\'escala amb ordre i admirar com es forma la cara femenina.', translation: 'Subir a escada com ordem e admirar como se forma a imagem da face feminina.', next: 'cripta_dali' },
           {
@@ -2731,8 +2731,8 @@ export const STORIES_CA: StorySeed[] = [
       },
       cripta_dali: {
         emoji: '🕯️',
-        text: 'El guia condueix el grup a la cripta: «En aquest espai subterrani es va sepultar el cos de Salvador Dalí el 1989. Es manté un ambient de màxim respecte. Li agraïm a vostè el seu silenci».',
-        translation: 'O guia conduz o grupo à cripta: «Neste espaço subterrâneo sepultou-se o corpo de Salvador Dalí em 1989. Mantém-se um ambiente de máximo respeito. Agradecemos ao senhor o seu silêncio».',
+        text: 'El guia condueix el grup a la cripta: “En aquest espai subterrani es va sepultar el cos de Salvador Dalí el 1989. Es manté un ambient de màxim respecte. Li agraïm a vostè el seu silenci”.',
+        translation: 'O guia conduz o grupo à cripta: “Neste espaço subterrâneo sepultou-se o corpo de Salvador Dalí em 1989. Mantém-se um ambiente de máximo respeito. Agradecemos ao senhor o seu silêncio”.',
         choices: [
           { text: 'Guardar un silenci de respecte davant de la làpida del mestre surrealista.', translation: 'Guardar um silêncio de respeito diante da lápide do mestre surrealista.', next: 'pregunta_guia' },
           { text: "Posar-se a cantar cançons pop a ple pulmó dins de la cripta.", translation: 'Começar a cantar canções pop a plenos pulmões dentro da cripta.', next: 'final_neutre' },
@@ -2740,10 +2740,10 @@ export const STORIES_CA: StorySeed[] = [
       },
       pregunta_guia: {
         emoji: '🗣️',
-        text: 'En acabar la ruta, Linu s\'acosta al guia: «Senyor guia, es va trigar molts anys a completar tot el museu?». El guia respon satisfet: «Se sap que Dalí hi va treballar durant més d\'una dècada».',
-        translation: 'Ao encerrar a rota, Linu aproxima-se do guia: «Senhor guia, demorou-se muitos anos para completar todo o museu?». O guia responde satisfeito: «Sabe-se que Dalí trabalhou nele durante mais de uma década».',
+        text: 'En acabar la ruta, Linu s\'acosta al guia: “Senyor guia, es va trigar molts anys a completar tot el museu?”. El guia respon satisfet: “Se sap que Dalí hi va treballar durant més d\'una dècada”.',
+        translation: 'Ao encerrar a rota, Linu aproxima-se do guia: “Senhor guia, demorou-se muitos anos para completar todo o museu?”. O guia responde satisfeito: “Sabe-se que Dalí trabalhou nele durante mais de uma década”.',
         choices: [
-          { text: '«Li estic molt agraït per les seves explicacions. Vostè ha fet una guia excel·lent.»', translation: '«Estou-lhe muito agradecido por suas explicações. O senhor fez uma guia excelente.»', next: 'final_bom' },
+          { text: '“Li estic molt agraït per les seves explicacions. Vostè ha fet una guia excel·lent.”', translation: '“Estou-lhe muito agradecido por suas explicações. O senhor fez uma guia excelente.”', next: 'final_bom' },
           { text: 'Exigir que li regalin un quadre original de Dalí com a record del viatge.', translation: 'Exigir que lhe presenteiem um quadro original de Dalí como recordação da viagem.', next: 'final_neutre' },
         ],
       },
@@ -2751,7 +2751,7 @@ export const STORIES_CA: StorySeed[] = [
         emoji: '🎨',
         text: 'Linu conclou la visita al Teatre-Museu Dalí fascinat pel surrealisme. Durant tota la jornada ha usat la passiva pronominal i les fórmules de tractament formal de manera impecable.',
         translation: 'Linu conclui a visita ao Teatro-Museu Dalí fascinado pelo surrealismo. Durante toda a jornada usou a passiva pronominal e as fórmulas de tratamento formal de maneira impecável.',
-        ending: { tone: 'bom', title: 'Imersão surrealista concluída!', message: 'Parabéns! Você explorou o Teatre-Museu Dalí em Figueres e dominou a voz passiva pronominal em catalão e o registro formal com «vostè».' },
+        ending: { tone: 'bom', title: 'Imersão surrealista concluída!', message: 'Parabéns! Você explorou o Teatre-Museu Dalí em Figueres e dominou a voz passiva pronominal em catalão e o registro formal com “vostè”.' },
       },
       final_neutre: {
         emoji: '🖼️',
@@ -2783,13 +2783,13 @@ export const STORIES_CA: StorySeed[] = [
     nodes: {
       start: {
         emoji: '⏰',
-        text: "Havent vist que l'hora passava, Linu s'adona que ha de fer la compra ràpidament per al sopar d'aquesta nit. Tot el grup d'amics ve a casa seva. Linu es diu: «Si vull tenir-ho tot a punt, he d'anar com un llamp al Mercat de la Boqueria».",
-        translation: 'Tendo visto que a hora estava passando, Linu percebe que tem de fazer as compras rapidamente para o jantar desta noite. Todo o grupo de amigos vem à sua casa. Linu diz a si mesmo: «Se quero ter tudo pronto, tenho de ir como um raio ao Mercado da Boqueria».',
+        text: "Havent vist que l'hora passava, Linu s'adona que ha de fer la compra ràpidament per al sopar d'aquesta nit. Tot el grup d'amics ve a casa seva. Linu es diu: “Si vull tenir-ho tot a punt, he d'anar com un llamp al Mercat de la Boqueria”.",
+        translation: 'Tendo visto que a hora estava passando, Linu percebe que tem de fazer as compras rapidamente para o jantar desta noite. Todo o grupo de amigos vem à sua casa. Linu diz a si mesmo: “Se quero ter tudo pronto, tenho de ir como um raio ao Mercado da Boqueria”.',
         choices: [
           { text: 'Caminar ràpidament cap a La Rambla per entrar al mercat.', translation: 'Caminhar rapidamente em direção à La Rambla para entrar no mercado.', next: 'anar_mercat' },
           {
-            text: 'Pensar: «Tinc que esperar un poc més abans de sortir».',
-            translation: 'Pensar: «Tenho que esperar um pouco mais antes de sair».',
+            text: 'Pensar: “Tinc que esperar un poc més abans de sortir”.',
+            translation: 'Pensar: “Tenho que esperar um pouco mais antes de sair”.',
             wrong: 'A expressão "tinc que" é um barbarismo em catalão (deve-se usar "he de" ou "cal que"). Além disso, se você atrasar, não encontrará produtos frescos!',
           },
         ],
@@ -2810,8 +2810,8 @@ export const STORIES_CA: StorySeed[] = [
         choices: [
           { text: 'Comprar les verdures ràpidament i agafar el metro cap a casa.', translation: 'Comprar os legumes rapidamente e pegar o metrô para casa.', next: 'cuina_casa' },
           {
-            text: 'Dir a la peixatera: «Tinc que agafar el peix sense pagar».',
-            translation: 'Dizer à peixeira: «Tenho que pegar o peixe sem pagar».',
+            text: 'Dir a la peixatera: “Tinc que agafar el peix sense pagar”.',
+            translation: 'Dizer à peixeira: “Tenho que pegar o peixe sem pagar”.',
             wrong: 'A estrutura "tinc que" é incorreta (use "he de"). Além disso, sair sem pagar é inaceitável!',
           },
         ],
@@ -2886,8 +2886,8 @@ export const STORIES_CA: StorySeed[] = [
         choices: [
           { text: 'Agafar una bicicleta pública i pedalar de pressa cap a Gràcia.', translation: 'Pegar uma bicicleta pública e pedalar rápido em direção a Gràcia.', next: 'agafar_bici' },
           {
-            text: 'Pensar: «Tinc que esperar que el metro funcioni altra vegada».',
-            translation: 'Pensar: «Tenho que esperar que o metrô funcione outra vez».',
+            text: 'Pensar: “Tinc que esperar que el metro funcioni altra vegada”.',
+            translation: 'Pensar: “Tenho que esperar que o metrô funcione outra vez”.',
             wrong: 'A forma "tinc que" é um barbarismo (use "he de"). Além disso, o metrô vai demorar horas para voltar a funcionar!',
           },
         ],
@@ -2912,8 +2912,8 @@ export const STORIES_CA: StorySeed[] = [
         choices: [
           { text: 'Cercar el camí cap a la Plaça del Sol entre els carrers de vianants.', translation: 'Procurar o caminho para a Plaça del Sol entre as ruas de pedestres.', next: 'cercar_carrer' },
           {
-            text: 'Dir a un veí: «Tinc que trobar la plaça ara mateix!».',
-            translation: 'Dizer a um vizinho: «Tenho que encontrar a praça agora mesmo!».',
+            text: 'Dir a un veí: “Tinc que trobar la plaça ara mateix!”.',
+            translation: 'Dizer a um vizinho: “Tenho que encontrar a praça agora mesmo!”.',
             wrong: 'Lembre-se de evitar "tinc que" (em catalão correto: "he de trobar").',
           },
         ],
@@ -2941,8 +2941,8 @@ export const STORIES_CA: StorySeed[] = [
       },
       cita_exit: {
         emoji: '🤝',
-        text: 'El soci somriu veient l\'esforç de Linu: «Havent arribat fins aquí a peu i en bici, veig que realment t\'interessa el projecte!». Tots dos signen l\'acord de col·laboració.',
-        translation: 'O sócio sorri vendo o esforço de Linu: «Tendo chegado até aqui a pé e de bike, vejo que realmente você se interessa pelo projeto!». Ambos assinam o acordo de colaboração.',
+        text: 'El soci somriu veient l\'esforç de Linu: “Havent arribat fins aquí a peu i en bici, veig que realment t\'interessa el projecte!”. Tots dos signen l\'acord de col·laboració.',
+        translation: 'O sócio sorri vendo o esforço de Linu: “Tendo chegado até aqui a pé e de bike, vejo que realmente você se interessa pelo projeto!”. Ambos assinam o acordo de colaboração.',
         choices: [{ text: 'Celebrar l\'èxit del projecte amb un suc natural a la plaça.', translation: 'Celebrar o sucesso do projeto com um suco natural na praça.', next: 'final_bom' }],
       },
       final_bom: {
@@ -2985,8 +2985,8 @@ export const STORIES_CA: StorySeed[] = [
         choices: [
           { text: "Posar-hi el coll i començar a carregar les taules amb els veïns.", translation: 'Dedicar-se ao máximo e começar a carregar as mesas com os vizinhos.', next: 'ajudar_muntatge' },
           {
-            text: 'Pensar: «Tinc que anar a prendre un cafè abans d\'ajudar».',
-            translation: 'Pensar: «Tenho que ir tomar um café antes de ajudar».',
+            text: 'Pensar: “Tinc que anar a prendre un cafè abans d\'ajudar”.',
+            translation: 'Pensar: “Tenho que ir tomar um café antes de ajudar”.',
             wrong: 'A expressão "tinc que" é um barbarismo em catalão (use "he de"). Além disso, a comissão de festas precisa de ajuda urgente!',
           },
         ],
@@ -3002,8 +3002,8 @@ export const STORIES_CA: StorySeed[] = [
       },
       provar_so: {
         emoji: '🔊',
-        text: "Havent connectat els cables de l'amplificador, el so es resol perfectament. El tècnic li diu a Linu: «Havent ajustat això, la música sonarà increïble durant el concert nocturn».",
-        translation: 'Tendo conectado os cabos do amplificador, o som se resolve perfeitamente. O técnico diz a Linu: «Tendo ajustado isso, a música soará incrível durante o show noturno».',
+        text: "Havent connectat els cables de l'amplificador, el so es resol perfectament. El tècnic li diu a Linu: “Havent ajustat això, la música sonarà increïble durant el concert nocturn”.",
+        translation: 'Tendo conectado os cabos do amplificador, o som se resolve perfeitamente. O técnico diz a Linu: “Tendo ajustado isso, a música soará incrível durante o show noturno”.',
         choices: [{ text: 'Unir-se a la plaça per veure la diada castellera.', translation: 'Juntar-se à praça para ver a apresentação dos castellers.', next: 'fer_pinya' }],
       },
       rebre_castellers: {
@@ -3013,8 +3013,8 @@ export const STORIES_CA: StorySeed[] = [
         choices: [
           { text: 'Entrar a la pinya amb fermesa mantenint els braços creuats.', translation: 'Entrar na pinya com firmeza mantendo os braços cruzados.', next: 'fer_pinya' },
           {
-            text: 'Cridar: «Tinc que ser l\'enxaneta i pujar a dalt de tot!».',
-            translation: 'Gritar: «Tenho que ser o enxaneta e subir ao topo de tudo!».',
+            text: 'Cridar: “Tinc que ser l\'enxaneta i pujar a dalt de tot!”.',
+            translation: 'Gritar: “Tenho que ser o enxaneta e subir ao topo de tudo!”.',
             wrong: 'O "enxaneta" é sempre uma criança treinada por razões de peso e agilidade. Além disso, evite o barbarismo "tinc que"!',
           },
         ],
@@ -3076,8 +3076,8 @@ export const STORIES_CA: StorySeed[] = [
     nodes: {
       start: {
         emoji: '🎙️',
-        text: 'Linu assisteix a un debat al Centre Cultural El Born sobre el futur del turisme a Barcelona. Molts veïns protesten per la massificació. Linu pensa: «No crec que el turisme sigui dolent en si mateix, però cal planificació. A més, cal escoltar totes les parts».',
-        translation: 'Linu assiste a um debate no Centro Cultural El Born sobre o futuro do turismo em Barcelona. Muitos moradores protestam contra a lotação de massa. Linu pensa: «Não acho que o turismo seja ruim em si mesmo, mas é preciso planejamento. Além disso, é necessário ouvir todas as partes».',
+        text: 'Linu assisteix a un debat al Centre Cultural El Born sobre el futur del turisme a Barcelona. Molts veïns protesten per la massificació. Linu pensa: “No crec que el turisme sigui dolent en si mateix, però cal planificació. A més, cal escoltar totes les parts”.',
+        translation: 'Linu assiste a um debate no Centro Cultural El Born sobre o futuro do turismo em Barcelona. Muitos moradores protestam contra a lotação de massa. Linu pensa: “Não acho que o turismo seja ruim em si mesmo, mas é preciso planejamento. Além disso, é necessário ouvir todas as partes”.',
         choices: [
           { text: 'Demanar el torn de paraula per exposar una visió equilibrada.', translation: 'Pedir a palavra para expor uma visão equilibrada.', next: 'debat_inici' },
           {
@@ -3089,8 +3089,8 @@ export const STORIES_CA: StorySeed[] = [
       },
       debat_inici: {
         emoji: '🗣️',
-        text: "Linu pren el micròfon: «Encara que el turisme aporti ingressos econòmics importants, genera pressió sobre els lloguers dels veïns. Per tant, necessitem mesures concretes per protegir l'habitatge».",
-        translation: 'Linu pega o microfone: «Embora o turismo traga receitas econômicas importantes, gera pressão sobre os aluguéis dos moradores. Portanto, precisamos de medidas concretas para proteger a moradia».',
+        text: "Linu pren el micròfon: “Encara que el turisme aporti ingressos econòmics importants, genera pressió sobre els lloguers dels veïns. Per tant, necessitem mesures concretes per protegir l'habitatge”.",
+        translation: 'Linu pega o microfone: “Embora o turismo traga receitas econômicas importantes, gera pressão sobre os aluguéis dos moradores. Portanto, precisamos de medidas concretas para proteger a moradia”.',
         choices: [
           { text: 'Proposar la regulació de pisos turístics mitjançant el PEUAT.', translation: 'Propor a regulamentação de apartamentos turísticos mediante o PEUAT.', next: 'proposta_regulacio' },
           {
@@ -3102,8 +3102,8 @@ export const STORIES_CA: StorySeed[] = [
       },
       proposta_regulacio: {
         emoji: '📋',
-        text: 'Un representant del sector hoteler respon: «No crec que limitar les llicències sigui la millor solució». Tanmateix, Linu replica que, si no es fixa un límit, la convivència als barris serà impossible.',
-        translation: 'Um representante do setor hoteleiro responde: «Não acho que limitar as licenças seja a melhor solução». No entanto, Linu replica que, se não for fixado um limite, a convivência nos bairros será impossível.',
+        text: 'Un representant del sector hoteler respon: “No crec que limitar les llicències sigui la millor solució”. Tanmateix, Linu replica que, si no es fixa un límit, la convivència als barris serà impossible.',
+        translation: 'Um representante do setor hoteleiro responde: “Não acho que limitar as licenças seja a melhor solução”. No entanto, Linu replica que, se não for fixado um limite, a convivência nos bairros será impossível.',
         choices: [
           { text: "Defensar la diversificació de l'economia i la descentralització de les visites.", translation: 'Defender a diversificação da economia e a descentralização das visitas.', next: 'visita_barri' },
           { text: 'Abandonar la sala immediatament per no discutir amb els hotelers.', translation: 'Abandonar a sala imediatamente para não discutir com os hoteleiros.', next: 'vots_finals' },
@@ -3111,14 +3111,14 @@ export const STORIES_CA: StorySeed[] = [
       },
       visita_barri: {
         emoji: '🚶‍♂️',
-        text: 'El debat es trasllada a una taula de treball a Ciutat Vella. Linu recorda: «A més de promoure el patrimoni cultural, hem de garantir que el comerç local subsisteixi. En canvi, si només hi ha botigues de records, el barri perd la seva identitat».',
-        translation: 'O debate se transfere para uma mesa de trabalho em Ciutat Vella. Linu lembra: «Além de promover o patrimônio cultural, devemos garantir que o comércio local subsista. Por outro lado, se só houver lojas de lembrancinhas, o bairro perde sua identidade».',
+        text: 'El debat es trasllada a una taula de treball a Ciutat Vella. Linu recorda: “A més de promoure el patrimoni cultural, hem de garantir que el comerç local subsisteixi. En canvi, si només hi ha botigues de records, el barri perd la seva identitat”.',
+        translation: 'O debate se transfere para uma mesa de trabalho em Ciutat Vella. Linu lembra: “Além de promover o patrimônio cultural, devemos garantir que o comércio local subsista. Por outro lado, se só houver lojas de lembrancinhas, o bairro perde sua identidade”.',
         choices: [{ text: 'Presentar una proposta de suport al comerç de proximitat.', translation: 'Apresentar uma proposta de apoio ao comércio de proximidade.', next: 'taula_rodona' }],
       },
       taula_rodona: {
         emoji: '🤝',
-        text: 'Els participants redacten un esborrany d\'acord. Linu afirma: «Encara que hi hagi diferències entre veïns i comerciants, no crec que sigui impossible trobar un punt mitjà. Per tant, aprovem aquest manifest conjunt».',
-        translation: 'Os participantes redigem um rascunho de acordo. Linu afirma: «Embora haja diferenças entre moradores e comerciantes, não acho que seja impossível encontrar um meio-termo. Portanto, aprovemos este manifesto conjunto».',
+        text: 'Els participants redacten un esborrany d\'acord. Linu afirma: “Encara que hi hagi diferències entre veïns i comerciants, no crec que sigui impossible trobar un punt mitjà. Per tant, aprovem aquest manifest conjunt”.',
+        translation: 'Os participantes redigem um rascunho de acordo. Linu afirma: “Embora haja diferenças entre moradores e comerciantes, não acho que seja impossível encontrar um meio-termo. Portanto, aprovemos este manifesto conjunto”.',
         choices: [{ text: 'Sotmetre el manifest a votació general a la sala.', translation: 'Submeter o manifesto a votação geral na sala.', next: 'vots_finals' }],
       },
       vots_finals: {
@@ -3165,8 +3165,8 @@ export const STORIES_CA: StorySeed[] = [
     nodes: {
       start: {
         emoji: '🦆',
-        text: 'Linu participa en una trobada de conservació al Parc Natural del Delta de l\'Ebre, prop de la llacuna de la Tancada. Pensa: «No crec que la situació sigui irreversible si actuem ara. A més, els científics tenen propostes molt clares».',
-        translation: 'Linu participa de um encontro de conservação no Parque Natural do Delta do Ebro, perto da lagoa da Tancada. Pensa: «Não acho que a situação seja irreversível se agirmos agora. Além disso, os cientistas têm propostas muito claras».',
+        text: 'Linu participa en una trobada de conservació al Parc Natural del Delta de l\'Ebre, prop de la llacuna de la Tancada. Pensa: “No crec que la situació sigui irreversible si actuem ara. A més, els científics tenen propostes molt clares”.',
+        translation: 'Linu participa de um encontro de conservação no Parque Natural do Delta do Ebro, perto da lagoa da Tancada. Pensa: “Não acho que a situação seja irreversível se agirmos agora. Além disso, os cientistas têm propostas muito claras”.',
         choices: [
           { text: "Escoltar la ponència dels tècnics sobre l'arribada de sediments.", translation: 'Ouvir a palestra dos técnicos sobre a chegada de sedimentos.', next: 'forum_ecologic' },
           {
@@ -3178,8 +3178,8 @@ export const STORIES_CA: StorySeed[] = [
       },
       forum_ecologic: {
         emoji: '🌱',
-        text: 'Un enginyer ambiental exposa la situació: «Encara que els embassaments retinguin la majoria de sediments del riu, podem gestionar millor els cabals d\'aigua. Per tant, cal una inversió estatal urgent».',
-        translation: 'Um engenheiro ambiental expõe a situação: «Embora as represas retenham a maioria dos sedimentos do rio, podemos gerenciar melhor as vazões de água. Portanto, é necessária uma intervenção estatal urgente».',
+        text: 'Un enginyer ambiental exposa la situació: “Encara que els embassaments retinguin la majoria de sediments del riu, podem gestionar millor els cabals d\'aigua. Per tant, cal una inversió estatal urgent”.',
+        translation: 'Um engenheiro ambiental expõe a situação: “Embora as represas retenham a maioria dos sedimentos do rio, podemos gerenciar melhor as vazões de água. Portanto, é necessária uma intervenção estatal urgente”.',
         choices: [
           { text: 'Defensar l\'aportació immediata de sediments per frenar el mar.', translation: 'Defender o aporte imediato de sedimentos para conter o mar.', next: 'debat_sediments' },
           {
@@ -3191,26 +3191,26 @@ export const STORIES_CA: StorySeed[] = [
       },
       debat_sediments: {
         emoji: '🌊',
-        text: 'Un portaveu de la zona comenta: «No crec que el pressupost actual sigui suficient per cobrir totes les obres». Tanmateix, Linu intervé per recordar que la inacció costarà molt més cara a llarg termini.',
-        translation: 'Um porta-voz da região comenta: «Não acho que o orçamento atual seja suficiente para cobrir todas as obras». No entanto, Linu intervém para lembrar que a inação custará muito mais caro a longo prazo.',
+        text: 'Un portaveu de la zona comenta: “No crec que el pressupost actual sigui suficient per cobrir totes les obres”. Tanmateix, Linu intervé per recordar que la inacció costarà molt més cara a llarg termini.',
+        translation: 'Um porta-voz da região comenta: “Não acho que o orçamento atual seja suficiente para cobrir todas as obras”. No entanto, Linu intervém para lembrar que a inação custará muito mais caro a longo prazo.',
         choices: [{ text: "Proposar una combinació de solucions naturals i gestió de l'aigua.", translation: 'Propor uma combinação de soluções naturais e gestão da água.', next: 'mesures_urgents' }],
       },
       mesures_urgents: {
         emoji: '🗺️',
-        text: 'Linu afegeix arguments: «A més de protegir la costa, hem de recolzar els agricultors de l\'arròs. En canvi, si els camps se salinitzen, l\'economia local patirà. Per tant, la protecció ambiental i l\'economia han d\'anar plegades».',
-        translation: 'Linu adiciona argumentos: «Além de proteger a costa, devemos apoiar os agricultores de arroz. Por outro lado, se os campos salinizarem, a economia local sofrerá. Portanto, a proteção ambiental e a economia devem ir juntas».',
+        text: 'Linu afegeix arguments: “A més de protegir la costa, hem de recolzar els agricultors de l\'arròs. En canvi, si els camps se salinitzen, l\'economia local patirà. Per tant, la protecció ambiental i l\'economia han d\'anar plegades”.',
+        translation: 'Linu adiciona argumentos: “Além de proteger a costa, devemos apoiar os agricultores de arroz. Por outro lado, se os campos salinizarem, a economia local sofrerá. Portanto, a proteção ambiental e a economia devem ir juntas”.',
         choices: [{ text: "Visitar una parcel·la d'arrossar per comprovar l'impacte de la salinitat.", translation: 'Visitar um lote de arrozal para comprovar o impacto da salinidade.', next: 'visita_llacuna' }],
       },
       visita_llacuna: {
         emoji: '🌾',
-        text: 'Als arrossars, els pagesos mostren els seus canals. Un d\'ells diu: «Encara que pugi el nivell del mar, no crec que haguem de rendir-nos». Linu els encoratja a presentar una resolució conjunta al fòrum.',
-        translation: 'Nos arrozais, os agricultores mostram seus canais. Um deles diz: «Embora o nível do mar suba, não acho que devamos nos render». Linu os encoraja a apresentar uma resolução conjunta ao fórum.',
+        text: 'Als arrossars, els pagesos mostren els seus canals. Un d\'ells diu: “Encara que pugi el nivell del mar, no crec que haguem de rendir-nos”. Linu els encoratja a presentar una resolució conjunta al fòrum.',
+        translation: 'Nos arrozais, os agricultores mostram seus canais. Um deles diz: “Embora o nível do mar suba, não acho que devamos nos render”. Linu os encoraja a apresentar uma resolução conjunta ao fórum.',
         choices: [{ text: 'Redactar el document de conclusions de la trobada ambiental.', translation: 'Redigir o documento de conclusões do encontro ambiental.', next: 'taula_tecnica' }],
       },
       taula_tecnica: {
         emoji: '📝',
-        text: 'De tornada a la sala, Linu llegeix les conclusions: «Així doncs, encara que hi hagi obstacles polítics, no crec que puguem esperar més. Per tant, sol·licitem l\'activació immediata del Pla de Protecció».',
-        translation: 'De volta à sala, Linu lê as conclusões: «Assim sendo, embora haja obstáculos políticos, não acho que possamos esperar mais. Portanto, solicitamos a ativação imediata do Plano de Proteção».',
+        text: 'De tornada a la sala, Linu llegeix les conclusions: “Així doncs, encara que hi hagi obstacles polítics, no crec que puguem esperar més. Per tant, sol·licitem l\'activació immediata del Pla de Protecció”.',
+        translation: 'De volta à sala, Linu lê as conclusões: “Assim sendo, embora haja obstáculos políticos, não acho que possamos esperar mais. Portanto, solicitamos a ativação imediata do Plano de Proteção”.',
         choices: [{ text: 'Aprovar la resolució per unanimitat de tots els assistents.', translation: 'Aprovar a resolução por unanimidade de todos os presentes.', next: 'resolucio_forum' }],
       },
       resolucio_forum: {
@@ -3257,8 +3257,8 @@ export const STORIES_CA: StorySeed[] = [
     nodes: {
       start: {
         emoji: '🎙️',
-        text: 'Linu és convidat a una taula rodona al Col·legi de Periodistes de Catalunya, a la Rambla de Catalunya de Barcelona. El tema és el contrast entre xarxes socials i periodisme. Linu pensa: «No crec que la premsa tradicional desaparegui, però s\'ha d\'adaptar».',
-        translation: 'Linu é convidado para uma mesa-redonda no Col·legi de Periodistes de Catalunya, na Rambla de Catalunya em Barcelona. O tema é o contraste entre redes sociais e jornalismo. Linu pensa: «Não acho que a imprensa tradicional vá desaparecer, mas precisa se adaptar».',
+        text: 'Linu és convidat a una taula rodona al Col·legi de Periodistes de Catalunya, a la Rambla de Catalunya de Barcelona. El tema és el contrast entre xarxes socials i periodisme. Linu pensa: “No crec que la premsa tradicional desaparegui, però s\'ha d\'adaptar”.',
+        translation: 'Linu é convidado para uma mesa-redonda no Col·legi de Periodistes de Catalunya, na Rambla de Catalunya em Barcelona. O tema é o contraste entre redes sociais e jornalismo. Linu pensa: “Não acho que a imprensa tradicional vá desaparecer, mas precisa se adaptar”.',
         choices: [
           { text: 'Prendre el micròfon per obrir el debat sobre el rigor informatiu.', translation: 'Pegar o microfone para abrir o debate sobre o rigor informativo.', next: 'colegi_periodistes' },
           {
@@ -3270,8 +3270,8 @@ export const STORIES_CA: StorySeed[] = [
       },
       colegi_periodistes: {
         emoji: '📱',
-        text: 'Un jove creador de contingut afirma: «Les xarxes socials són molt més ràpides que els diaris». Linu respon: «Encara que les xarxes vagin ràpides, sovint els falta verificació. Per tant, la velocitat no pot substituir el rigor».',
-        translation: 'Um jovem criador de conteúdo afirma: «As redes sociais são muito mais rápidas que os jornais». Linu responde: «Embora as redes sejam rápidas, frequentemente lhes falta checagem. Portanto, a velocidade não pode substituir o rigor».',
+        text: 'Un jove creador de contingut afirma: “Les xarxes socials són molt més ràpides que els diaris”. Linu respon: “Encara que les xarxes vagin ràpides, sovint els falta verificació. Per tant, la velocitat no pot substituir el rigor”.',
+        translation: 'Um jovem criador de conteúdo afirma: “As redes sociais são muito mais rápidas que os jornais”. Linu responde: “Embora as redes sejam rápidas, frequentemente lhes falta checagem. Portanto, a velocidade não pode substituir o rigor”.',
         choices: [
           { text: 'Explicar com la verificació de fets protegeix la ciutadania.', translation: 'Explicar como a checagem de fatos protege a cidadania.', next: 'debat_xarxes_diaris' },
           {
@@ -3283,32 +3283,32 @@ export const STORIES_CA: StorySeed[] = [
       },
       debat_xarxes_diaris: {
         emoji: '🕵️‍♂️',
-        text: 'Un periodista veterà afegeix: «A més, el Codi Deontològic ens obliga a contrastar les fonts amb dues vies independents». Linu coincideix: «Tanmateix, no crec que el públic jove llegeixi menys, sinó que llegeix en formats diferents».',
-        translation: 'Um jornalista veterano adiciona: «Além disso, o Código de Ética nos obriga a checar as fontes por duas vias independentes». Linu concorda: «No entanto, não acho que o público jovem leia menos, e sim que lê em formatos diferentes».',
+        text: 'Un periodista veterà afegeix: “A més, el Codi Deontològic ens obliga a contrastar les fonts amb dues vies independents”. Linu coincideix: “Tanmateix, no crec que el públic jove llegeixi menys, sinó que llegeix en formats diferents”.',
+        translation: 'Um jornalista veterano adiciona: “Além disso, o Código de Ética nos obriga a checar as fontes por duas vias independentes”. Linu concorda: “No entanto, não acho que o público jovem leia menos, e sim que lê em formatos diferentes”.',
         choices: [{ text: 'Analitzar un cas real de notícia falsa detectat recentment.', translation: 'Analisar um caso real de notícia falsa detectado recentemente.', next: 'cas_noticia_falsa' }],
       },
       cas_noticia_falsa: {
         emoji: '📊',
-        text: 'Linu presenta un exemple: «Encara que un rumor es faci viral en pocs minuts, no crec que sigui ètic publicar-lo sense confirmar-lo. En canvi, un mitjà seriós ha de prioritzar la veracitat sobre el clic fàcil».',
-        translation: 'Linu apresenta um exemplo: «Embora um rumor se torne viral em poucos minutos, não acho que seja ético publicá-lo sem confirmá-lo. Por outro lado, um veículo sério deve priorizar a veracidade sobre o clique fácil».',
+        text: 'Linu presenta un exemple: “Encara que un rumor es faci viral en pocs minuts, no crec que sigui ètic publicar-lo sense confirmar-lo. En canvi, un mitjà seriós ha de prioritzar la veracitat sobre el clic fàcil”.',
+        translation: 'Linu apresenta um exemplo: “Embora um rumor se torne viral em poucos minutos, não acho que seja ético publicá-lo sem confirmá-lo. Por outro lado, um veículo sério deve priorizar a veracidade sobre o clique fácil”.',
         choices: [{ text: 'Proposar eines digitals de verificació per als usuaris de xarxes.', translation: 'Propor ferramentas digitais de checagem para os usuários de redes.', next: 'verificacio_de_fets' }],
       },
       verificacio_de_fets: {
         emoji: '🔍',
-        text: 'Linu continua: «A més d\'educar la ciutadania en la lectura crítica, hem de demanar transparència als algorismes. Per tant, el periodisme i la tecnologia han de col·laborar».',
-        translation: 'Linu continua: «Além de educar a cidadania na leitura crítica, devemos pedir transparência aos algoritmos. Portanto, o jornalismo e a tecnologia devem colaborar».',
+        text: 'Linu continua: “A més d\'educar la ciutadania en la lectura crítica, hem de demanar transparència als algorismes. Per tant, el periodisme i la tecnologia han de col·laborar”.',
+        translation: 'Linu continua: “Além de educar a cidadania na leitura crítica, devemos pedir transparência aos algoritmos. Portanto, o jornalismo e a tecnologia devem colaborar”.',
         choices: [{ text: 'Sintetitzar les propostes en un manifest sobre el futur del periodisme.', translation: 'Sintetizar as propostas em um manifesto sobre o futuro do jornalismo.', next: 'taula_dialeg' }],
       },
       taula_dialeg: {
         emoji: '✍️',
-        text: 'El públic aplaudeix les idees. Linu redacta la conclusió: «Encara que la tecnologia canviï el suport, no crec que l\'ètica informativa hagi de canviar. Tanmateix, cal adaptar el llenguatge als nous temps».',
-        translation: 'O público aplaude as ideias. Linu redige a conclusão: «Embora a tecnologia mude o suporte, não acho que a ética informativa deva mudar. No entanto, é preciso adaptar a linguagem aos novos tempos».',
+        text: 'El públic aplaudeix les idees. Linu redacta la conclusió: “Encara que la tecnologia canviï el suport, no crec que l\'ètica informativa hagi de canviar. Tanmateix, cal adaptar el llenguatge als nous temps”.',
+        translation: 'O público aplaude as ideias. Linu redige a conclusão: “Embora a tecnologia mude o suporte, não acho que a ética informativa deva mudar. No entanto, é preciso adaptar a linguagem aos novos tempos”.',
         choices: [{ text: "Llegir el manifest davant l'assemblea del Col·legi.", translation: 'Ler o manifesto diante da assembleia do Colégio.', next: 'manifest_informatiu' }],
       },
       manifest_informatiu: {
         emoji: '📜',
-        text: 'El degà del Col·legi de Periodistes felicita Linu: «Aquest manifest recull l\'essència de la nostra professió. Per tant, el publicarem a la nostra web oficial».',
-        translation: 'O decano do Colégio de Jornalistas parabeniza Linu: «Este manifesto reúne a essência da nossa profissão. Portanto, vamos publicá-lo em nosso site oficial».',
+        text: 'El degà del Col·legi de Periodistes felicita Linu: “Aquest manifest recull l\'essència de la nostra professió. Per tant, el publicarem a la nostra web oficial”.',
+        translation: 'O decano do Colégio de Jornalistas parabeniza Linu: “Este manifesto reúne a essência da nossa profissão. Portanto, vamos publicá-lo em nosso site oficial”.',
         choices: [
           { text: 'Signar el document i atendre les preguntes de la premsa.', translation: 'Assinar o documento e responder às perguntas da imprensa.', next: 'final_bom' },
           { text: 'Marxar immediatament sense signar el text definitiu.', translation: 'Ir embora imediatamente sem assinar o texto definitivo.', next: 'final_neutre' },
@@ -3350,30 +3350,30 @@ export const STORIES_CA: StorySeed[] = [
     nodes: {
       start: {
         emoji: '🏞️',
-        text: "Linu arriba a Valldemossa per la tarda. En sortir del bus, un veí del poble el saluda cordialment: «Bona tarda! Si cerques es camí cap a sa muntanya, has d'agafar es carreró de sa dreta». Linu vol adaptar-se al parlar local sense perdre la formalitat quan calgui.",
-        translation: 'Linu chega a Valldemossa no fim da tarde. Ao sair do ônibus, um morador da vila o saúda cordialmente: «Boa tarde! Se você procura o caminho para a montanha, tem de pegar a ruela da direita». Linu quer se adaptar ao falar local sem perder a formalidade quando necessário.',
+        text: "Linu arriba a Valldemossa per la tarda. En sortir del bus, un veí del poble el saluda cordialment: “Bona tarda! Si cerques es camí cap a sa muntanya, has d'agafar es carreró de sa dreta”. Linu vol adaptar-se al parlar local sense perdre la formalitat quan calgui.",
+        translation: 'Linu chega a Valldemossa no fim da tarde. Ao sair do ônibus, um morador da vila o saúda cordialmente: “Boa tarde! Se você procura o caminho para a montanha, tem de pegar a ruela da direita”. Linu quer se adaptar ao falar local sem perder a formalidade quando necessário.',
         choices: [
           {
-            text: 'Respondre usant l\'article salat col·loquial: «Moltes gràcies! Vaig cap a sa plaça a cercar s\'horabaixa».',
-            translation: 'Responder usando o artigo salat coloquial: «Muito obrigado! Vou em direção à praça para buscar o entardecer».',
+            text: 'Respondre usant l\'article salat col·loquial: “Moltes gràcies! Vaig cap a sa plaça a cercar s\'horabaixa”.',
+            translation: 'Responder usando o artigo salat coloquial: “Muito obrigado! Vou em direção à praça para buscar o entardecer”.',
             next: 'caminar_valldemossa',
           },
           {
-            text: 'Utilitzar un barbarisme: «Gràcies, tinc que trobar el camí ràpidament».',
-            translation: 'Utilizar um barbarismo: «Obrigado, tenho que encontrar o caminho rapidamente».',
+            text: 'Utilitzar un barbarisme: “Gràcies, tinc que trobar el camí ràpidament”.',
+            translation: 'Utilizar um barbarismo: “Obrigado, tenho que encontrar o caminho rapidamente”.',
             wrong: 'L\'expressió "tinc que" és un barbarisme (s\'ha de dir "he de" o "cal que"). A més, no aprofita l\'oportunitat de practicar el mallorquí!',
           },
         ],
       },
       caminar_valldemossa: {
         emoji: '🥖',
-        text: 'Tot passejant per es carrerons de pedra, Linu s\'atura en un forn tradicional. Sa fornera li diu: «Vols tastar es pa de xeixa amb sobrassada o prefereixes ses galetes d\'oli?».',
-        translation: 'Passejando pelas ruelas de pedra, Linu para em uma padaria tradicional. A padeira lhe diz: «Quer provar o pão de xeixa com sobrasada ou prefere os biscoitos de azeite?».',
+        text: 'Tot passejant per es carrerons de pedra, Linu s\'atura en un forn tradicional. Sa fornera li diu: “Vols tastar es pa de xeixa amb sobrassada o prefereixes ses galetes d\'oli?”.',
+        translation: 'Passejando pelas ruelas de pedra, Linu para em uma padaria tradicional. A padeira lhe diz: “Quer provar o pão de xeixa com sobrasada ou prefere os biscoitos de azeite?”.',
         choices: [
-          { text: 'Demanar amb cortesia local: «Agafaré es pa amb sobrassada i un poc de formatge, si us plau».', translation: 'Pedir com cortesia local: «Vou pegar o pão com sobrasada e um pouco de queijo, por favor».', next: 'dinar_forn' },
+          { text: 'Demanar amb cortesia local: “Agafaré es pa amb sobrassada i un poc de formatge, si us plau”.', translation: 'Pedir com cortesia local: “Vou pegar o pão com sobrasada e um pouco de queijo, por favor”.', next: 'dinar_forn' },
           {
-            text: 'Exigir en un registre vulgar: «Dóna\'m el daixonses d\'allà sense parlar tant».',
-            translation: 'Exigir em um registro vulgar: «Me dá esse troço de lá sem falar tanto».',
+            text: 'Exigir en un registre vulgar: “Dóna\'m el daixonses d\'allà sense parlar tant”.',
+            translation: 'Exigir em um registro vulgar: “Me dá esse troço de lá sem falar tanto”.',
             wrong: 'L\'ús de "daixonses" de manera imperativa i rude és desatent i inadequat en un comerç tradicional.',
           },
         ],
@@ -3383,10 +3383,10 @@ export const STORIES_CA: StorySeed[] = [
         text: "Havent menjat es pa amb sobrassada, Linu es dirigeix a l'Ajuntament per a una reunió formal amb es batle sobre la protecció del paisatge de la Serra de Tramuntana.",
         translation: 'Tendo comido o pão com sobrasada, Linu se dirige à Prefeitura para uma reunião formal com o prefeito sobre a proteção da paisagem da Serra de Tramuntana.',
         choices: [
-          { text: 'Canviar al registre formal estàndard: «Senyor Batle, és un honor ser rebut per tractar la conservació del patrimoni».', translation: 'Mudar para o registro formal padrão: «Senhor Prefeito, é uma honra ser recebido para tratar da conservação do patrimônio».', next: 'reunió_batle' },
+          { text: 'Canviar al registre formal estàndard: “Senyor Batle, és un honor ser rebut per tractar la conservació del patrimoni”.', translation: 'Mudar para o registro formal padrão: “Senhor Prefeito, é uma honra ser recebido para tratar da conservação do patrimônio”.', next: 'reunió_batle' },
           {
-            text: 'Tractar el batle amb massa informalitat: «Iep, batle! Com va sa cosa per ací?».',
-            translation: 'Tratar o prefeito com informalidade excessiva: «E aí, prefeito! Como vai a coisa por aqui?».',
+            text: 'Tractar el batle amb massa informalitat: “Iep, batle! Com va sa cosa per ací?”.',
+            translation: 'Tratar o prefeito com informalidade excessiva: “E aí, prefeito! Como vai a coisa por aqui?”.',
             wrong: 'En una audiència institucional, s\'ha de mantenir el registre formal i el tractament de protocol adequat.',
           },
         ],
@@ -3395,17 +3395,17 @@ export const STORIES_CA: StorySeed[] = [
         emoji: '📜',
         text: 'Es batle agraeix el respecte i la formalitat de Linu. Després d\'exposar els projectes de restauració de ses parets de pedra en sec, li proposa visitar Deià i Sóller per veure les obres en directe.',
         translation: 'O prefeito agradece o respeito e a formalidade de Linu. Depois de expor os projetos de restauração dos muros de pedra seca, propõe-lhe visitar Deià e Sóller para ver as obras ao vivo.',
-        choices: [{ text: 'Acceptar la proposta: «Aniré a Deià per comprovar l\'estat de ses oliveres centenàries».', translation: 'Aceitar a proposta: «Irei a Deià para comprovar o estado das oliveiras centenárias».', next: 'visita_deia' }],
+        choices: [{ text: 'Acceptar la proposta: “Aniré a Deià per comprovar l\'estat de ses oliveres centenàries”.', translation: 'Aceitar a proposta: “Irei a Deià para comprovar o estado das oliveiras centenárias”.', next: 'visita_deia' }],
       },
       visita_deia: {
         emoji: '🌊',
-        text: 'Arribat a Deià vora mar, Linu conversa amb un mestre margener que restaura ses marjades. El margener li explica: «Per enllestir aquesta feina, cal conèixer ben bé sa pedra local».',
-        translation: 'Chegado a Deià à beira-mar, Linu conversa com um mestre construtor de pedra seca que restaura os terraços agrícolas. O mestre lhe explica: «Para terminar este trabalho, é preciso conhecer muito bem a pedra local».',
+        text: 'Arribat a Deià vora mar, Linu conversa amb un mestre margener que restaura ses marjades. El margener li explica: “Per enllestir aquesta feina, cal conèixer ben bé sa pedra local”.',
+        translation: 'Chegado a Deià à beira-mar, Linu conversa com um mestre construtor de pedra seca que restaura os terraços agrícolas. O mestre lhe explica: “Para terminar este trabalho, é preciso conhecer muito bem a pedra local”.',
         choices: [
-          { text: 'Demostrar interès per la feina tradicional: «És admirable com conservau sa tradició de ses marjades».', translation: 'Demonstrar interesse pelo trabalho tradicional: «É admirável como vocês conservam a tradição dos terraços».', next: 'final_bom' },
+          { text: 'Demostrar interès per la feina tradicional: “És admirable com conservau sa tradició de ses marjades”.', translation: 'Demonstrar interesse pelo trabalho tradicional: “É admirável como vocês conservam a tradição dos terraços”.', next: 'final_bom' },
           {
-            text: 'Menysprear la feina dient: «Això ho podrien fer amb ciment ràpid i acabar abans».',
-            translation: 'Desprezar o trabalho dizendo: «Isso poderia ser feito com cimento rápido e terminar antes».',
+            text: 'Menysprear la feina dient: “Això ho podrien fer amb ciment ràpid i acabar abans”.',
+            translation: 'Desprezar o trabalho dizendo: “Isso poderia ser feito com cimento rápido e terminar antes”.',
             wrong: 'La pedra en sec és la tècnica tradicional patrimoni de la UNESCO; suggerir ciment mostra desconeixement i falta de respecte cultural.',
           },
         ],
@@ -3439,26 +3439,26 @@ export const STORIES_CA: StorySeed[] = [
     nodes: {
       start: {
         emoji: '🏛️',
-        text: 'Linu arriba a la Plaça de la Mare de Déu a València. Un xicot local se li apropa i li diu: «Hola! Si vols eixir cap a l\'Albufera, esta vesprada eix un autobús des de la Porta de la Mar». Linu vol respondre emprant les formes pròpies del valencià.',
-        translation: 'Linu chega à Plaça de la Mare de Déu em Valência. Um rapaz local se aproxima e lhe diz: «Olá! Se você quer sair para a Albufera, esta tarde sai um ônibus da Porta de la Mar». Linu quer responder empregando as formas próprias do valenciano.',
+        text: 'Linu arriba a la Plaça de la Mare de Déu a València. Un xicot local se li apropa i li diu: “Hola! Si vols eixir cap a l\'Albufera, esta vesprada eix un autobús des de la Porta de la Mar”. Linu vol respondre emprant les formes pròpies del valencià.',
+        translation: 'Linu chega à Plaça de la Mare de Déu em Valência. Um rapaz local se aproxima e lhe diz: “Olá! Se você quer sair para a Albufera, esta tarde sai um ônibus da Porta de la Mar”. Linu quer responder empregando as formas próprias do valenciano.',
         choices: [
-          { text: 'Respondre en valencià col·loquial: «Moltes gràcies! Jo parle amb el meu amic i eixim cap allà esta vesprada».', translation: 'Responder em valenciano coloquial: «Muito obrigado! Eu falo com o meu amigo e saímos para lá esta tarde».', next: 'viatge_albufera' },
+          { text: 'Respondre en valencià col·loquial: “Moltes gràcies! Jo parle amb el meu amic i eixim cap allà esta vesprada”.', translation: 'Responder em valenciano coloquial: “Muito obrigado! Eu falo com o meu amigo e saímos para lá esta tarde”.', next: 'viatge_albufera' },
           {
-            text: 'Usar un barbarisme: «Gràcies, jo tinc que agafar este bus immediatament».',
-            translation: 'Usar um barbarismo: «Obrigado, eu tenho que pegar este ônibus imediatamente».',
+            text: 'Usar un barbarisme: “Gràcies, jo tinc que agafar este bus immediatament”.',
+            translation: 'Usar um barbarismo: “Obrigado, eu tenho que pegar este ônibus imediatamente”.',
             wrong: 'A forma "tinc que" é um barbarismo em catalão/valenciano (deve-se usar "he de" ou "cal que").',
           },
         ],
       },
       viatge_albufera: {
         emoji: '⛵',
-        text: 'Arribat al Palmar, al cor de l\'Albufera, un barquer li proposa un passeig en barca tradicional. El barquer li diu: «La meua barca està a punt. Vols vore els ocells de la llacuna?».',
-        translation: 'Chegado ao Palmar, no coração da Albufera, um barqueiro lhe propõe um passeio de barca tradicional. O barqueiro lhe diz: «A minha barca está pronta. Quer ver as aves da lagoa?».',
+        text: 'Arribat al Palmar, al cor de l\'Albufera, un barquer li proposa un passeig en barca tradicional. El barquer li diu: “La meua barca està a punt. Vols vore els ocells de la llacuna?”.',
+        translation: 'Chegado ao Palmar, no coração da Albufera, um barqueiro lhe propõe um passeio de barca tradicional. O barqueiro lhe diz: “A minha barca está pronta. Quer ver as aves da lagoa?”.',
         choices: [
-          { text: 'Acceptar amablement: «Sí, em faria molta il·lusió pujar a la teua barca i gaudir de la vesprada».', translation: 'Aceitar amavelmente: «Sim, eu ficaria muito feliz em subir na tua barca e desfrutar do fim da tarde».', next: 'passeig_barca' },
+          { text: 'Acceptar amablement: “Sí, em faria molta il·lusió pujar a la teua barca i gaudir de la vesprada”.', translation: 'Aceitar amavelmente: “Sim, eu ficaria muito feliz em subir na tua barca e desfrutar do fim da tarde”.', next: 'passeig_barca' },
           {
-            text: 'Gritar al barquer: «Dona\'m el daixonses del rem que jo sé conduir!».',
-            translation: 'Gritar com o barqueiro: «Me dá esse troço do remo que eu sei pilotar!».',
+            text: 'Gritar al barquer: “Dona\'m el daixonses del rem que jo sé conduir!”.',
+            translation: 'Gritar com o barqueiro: “Me dá esse troço do remo que eu sei pilotar!”.',
             wrong: 'Faltar ao respeito ao barqueiro local com exigências inadequadas estraga a experiência da viagem.',
           },
         ],
@@ -3468,10 +3468,10 @@ export const STORIES_CA: StorySeed[] = [
         text: "Mentre naveguen entre els canyars de l'Albufera, Linu es prepara per a la ponència formal davant la Conselleria d'Agricultura a l'Escola del Palmar sobre la protecció dels arrossars.",
         translation: 'Enquanto navegam entre os caniçais da Albufera, Linu se prepara para a palestra formal diante da Secretaria de Agricultura na Escola del Palmar sobre a proteção dos arrozais.',
         choices: [
-          { text: "Adoptar el registre formal adequat per a la Conselleria: «Honorable Consellera, estimats membres de la comunitat de regants...»", translation: 'Adotar o registro formal adequado para a Secretaria: «Honrada Secretária, estimados membros da comunidade de irrigantes...»', next: 'ponencia_conselleria' },
+          { text: "Adoptar el registre formal adequat per a la Conselleria: “Honorable Consellera, estimats membres de la comunitat de regants...”", translation: 'Adotar o registro formal adequado para a Secretaria: “Honrada Secretária, estimados membros da comunidade de irrigantes...”', next: 'ponencia_conselleria' },
           {
-            text: 'Començar la ponència formal de manera massa vulgar: «Iep, xicots! Anem a parlar de l\'arròs sense moltes filosofies».',
-            translation: 'Começar a palestra formal de maneira vulgar demais: «E aí, moços! Vamos falar de arroz sem muita filosofia».',
+            text: 'Començar la ponència formal de manera massa vulgar: “Iep, xicots! Anem a parlar de l\'arròs sense moltes filosofies”.',
+            translation: 'Começar a palestra formal de maneira vulgar demais: “E aí, moços! Vamos falar de arroz sem muita filosofia”.',
             wrong: 'Davant d\'autoritats institucionals i membres de la comunitat, cal mantenir el registre formal i respectuós.',
           },
         ],
@@ -3484,13 +3484,13 @@ export const STORIES_CA: StorySeed[] = [
       },
       dinar_paella: {
         emoji: '🥘',
-        text: 'Després de la reunió, els arrossers conviden Linu a tastar una paella tradicional de garrofó, conill i pollastre. Un agricultor li diu: «Així cuinem la paella a la meua terra!».',
-        translation: 'Depois da reunião, os produtores de arroz convidam Linu para provar uma paella tradicional de feijão garrofó, coelho e frango. Um agricultor lhe diz: «Assim cozinhamos a paella na minha terra!».',
+        text: 'Després de la reunió, els arrossers conviden Linu a tastar una paella tradicional de garrofó, conill i pollastre. Un agricultor li diu: “Així cuinem la paella a la meua terra!”.',
+        translation: 'Depois da reunião, os produtores de arroz convidam Linu para provar uma paella tradicional de feijão garrofó, coelho e frango. Um agricultor lhe diz: “Assim cozinhamos a paella na minha terra!”.',
         choices: [
-          { text: 'Agrair la hospitalitat en valencià col·loquial: «Està boníssima! És el millor arròs que he tastat mai».', translation: 'Agradecer a hospitalidade em valenciano coloquial: «Está uma delícia! É o melhor arroz que já provei».', next: 'final_bom' },
+          { text: 'Agrair la hospitalitat en valencià col·loquial: “Està boníssima! És el millor arròs que he tastat mai”.', translation: 'Agradecer a hospitalidade em valenciano coloquial: “Está uma delícia! É o melhor arroz que já provei”.', next: 'final_bom' },
           {
-            text: 'Criticar la recepta dient: «Jo prefereixo posar-hi xoriço i ceba com a Madrid».',
-            translation: 'Criticar a receita dizendo: «Eu prefiro colocar chouriço e cebola como em Madri».',
+            text: 'Criticar la recepta dient: “Jo prefereixo posar-hi xoriço i ceba com a Madrid”.',
+            translation: 'Criticar a receita dizendo: “Eu prefiro colocar chouriço e cebola como em Madri”.',
             wrong: 'Mencionar ingredientes alheios à receita tradicional valenciana diante dos arrossers da Albufera é uma gafe cultural monumental!',
           },
         ],
@@ -3524,26 +3524,26 @@ export const STORIES_CA: StorySeed[] = [
     nodes: {
       start: {
         emoji: '⚓',
-        text: 'Linu desembarca al port de l\'Alguer, la "Barceloneta de Sardenya". Un vell mariner alguerès el saluda vora la muralla: «Bona tarda, jove! Benvingut a lo nostre país. Cerques lo camí cap a la marina o cap a lo centre històric?».',
-        translation: 'Linu desembarca no porto de l\'Alguer, a "Barceloneta da Sardenha". Um velho marinheiro alguerês o saúda perto da muralha: «Boa tarde, jovem! Bem-vindo à nossa cidade. Procura o caminho para o porto ou para o centro histórico?».',
+        text: 'Linu desembarca al port de l\'Alguer, la "Barceloneta de Sardenya". Un vell mariner alguerès el saluda vora la muralla: “Bona tarda, jove! Benvingut a lo nostre país. Cerques lo camí cap a la marina o cap a lo centre històric?”.',
+        translation: 'Linu desembarca no porto de l\'Alguer, a "Barceloneta da Sardenha". Um velho marinheiro alguerês o saúda perto da muralha: “Boa tarde, jovem! Bem-vindo à nossa cidade. Procura o caminho para o porto ou para o centro histórico?”.',
         choices: [
-          { text: 'Respondre usant trets de l\'alguerès col·loquial: «Bona tarda! Vull caminar per los carrerons de lo centre històric».', translation: 'Responder usando traços do alguerês coloquial: «Boa tarde! Quero caminhar pelas ruelas do centro histórico».', next: 'caminar_centre' },
+          { text: 'Respondre usant trets de l\'alguerès col·loquial: “Bona tarda! Vull caminar per los carrerons de lo centre històric”.', translation: 'Responder usando traços do alguerês coloquial: “Boa tarde! Quero caminhar pelas ruelas do centro histórico”.', next: 'caminar_centre' },
           {
-            text: 'Usar un barbarisme incorrecte: «Hola, jo tinc que trobar el centre ràpidament».',
-            translation: 'Usar um barbarismo incorreto: «Olá, eu tenho que encontrar o centro rapidamente».',
+            text: 'Usar un barbarisme incorrecte: “Hola, jo tinc que trobar el centre ràpidament”.',
+            translation: 'Usar um barbarismo incorreto: “Olá, eu tenho que encontrar o centro rapidamente”.',
             wrong: 'La forma "tinc que" és un barbarisme en català. S\'ha de dir "he de" o "cal que".',
           },
         ],
       },
       caminar_centre: {
         emoji: '🍕',
-        text: 'Tot caminant per la Torre de Sant Jaume, Linu entra en un petit restaurant tradicional. El propietari li diu amb un somriure: «Tens fam? Ací tenim peix fresc de la marina assai bo per mangar!».',
-        translation: 'Caminhando pela Torre de São Tiago, Linu entra em um pequeno restaurante tradicional. O proprietário lhe diz com um sorriso: «Você tem fome? Aqui temos peixe fresco do mar muito bom para comer!».',
+        text: 'Tot caminant per la Torre de Sant Jaume, Linu entra en un petit restaurant tradicional. El propietari li diu amb un somriure: “Tens fam? Ací tenim peix fresc de la marina assai bo per mangar!”.',
+        translation: 'Caminhando pela Torre de São Tiago, Linu entra em um pequeno restaurante tradicional. O proprietário lhe diz com um sorriso: “Você tem fome? Aqui temos peixe fresco do mar muito bom para comer!”.',
         choices: [
-          { text: 'Demanar en alguerès col·loquial: «Sigur! Voldria mangar un poc de peix i beure un got de vi de la terra».', translation: 'Pedir em alguerês coloquial: «Com certeza! Gostaria de comer um pouco de peixe e beber um copo de vinho da terra».', next: 'dinar_alguer' },
+          { text: 'Demanar en alguerès col·loquial: “Sigur! Voldria mangar un poc de peix i beure un got de vi de la terra”.', translation: 'Pedir em alguerês coloquial: “Com certeza! Gostaria de comer um pouco de peixe e beber um copo de vinho da terra”.', next: 'dinar_alguer' },
           {
-            text: 'Respondre amb arrogància: «Això de "mangar" no és català correcte, parleu bé!».',
-            translation: 'Responder com arrogância: «Isso de "mangar" não é catalão correto, falem direito!».',
+            text: 'Respondre amb arrogància: “Això de "mangar" no és català correcte, parleu bé!”.',
+            translation: 'Responder com arrogância: “Isso de "mangar" não é catalão correto, falem direito!”.',
             wrong: 'Ignorar que "mangar" és una paraula genuïna i dialectal de l\'alguerès demostra falta de respecte i d\'erudició sociolingüística.',
           },
         ],
@@ -3553,10 +3553,10 @@ export const STORIES_CA: StorySeed[] = [
         text: "Havent acabat de mangar, Linu es dirigeix a la seu de l'Obra Cultural de l'Alguer per a una taula rodona formal amb filòlegs i autoritats sobre la revitalització de l'alguerès entre els joves.",
         translation: 'Tendo terminado de comer, Linu se dirige à sede da Obra Cultural de l\'Alguer para uma mesa-redonda formal com filólogos e autoridades sobre a revitalização do alguerês entre os jovens.',
         choices: [
-          { text: 'Emprar el registre formal acadèmic: «Senyors congressistes, és un honor participar en aquesta jornada per a la preservació del patrimoni lingüístic alguerès».', translation: 'Empregar o registro formal acadêmico: «Senhores congressistas, é uma honra participar desta jornada para a preservação do patrimônio linguístico alguerês».', next: 'reunio_obra_cultural' },
+          { text: 'Emprar el registre formal acadèmic: “Senyors congressistes, és un honor participar en aquesta jornada per a la preservació del patrimoni lingüístic alguerès”.', translation: 'Empregar o registro formal acadêmico: “Senhores congressistas, é uma honra participar desta jornada para a preservação do patrimônio linguístico alguerês”.', next: 'reunio_obra_cultural' },
           {
-            text: 'Començar la reunió formal en un registre excessivament vulgar: «Iep, gent! Anem a parlar de lo català d\'ací sense donar moltes voltes».',
-            translation: 'Começar a reunião formal em um registro excessivamente vulgar: «E aí, gente! Vamos falar do catalão daqui sem dar muitas voltas».',
+            text: 'Començar la reunió formal en un registre excessivament vulgar: “Iep, gent! Anem a parlar de lo català d\'ací sense donar moltes voltes”.',
+            translation: 'Começar a reunião formal em um registro excessivamente vulgar: “E aí, gente! Vamos falar do catalão daqui sem dar muitas voltas”.',
             wrong: 'En una ponència acadèmica i institucional cal emprar el registre formal corresponent.',
           },
         ],
@@ -3612,21 +3612,21 @@ export const STORIES_CA: StorySeed[] = [
     nodes: {
       start: {
         emoji: '⚓',
-        text: 'Linu assisteix a una conferència al Museu Marítim de Barcelona sobre la història de la navegació. El ponent explica: «La construcció de l\'Ictíneo per part de Narcís Monturiol es considera una fita científica extraordinària, la qual va canviar la visió de la submersió».',
-        translation: 'Linu assiste a uma conferência no Museu Marítimo de Barcelona sobre a história da navegação. O palestrante explica: «A construção do Ictíneo por Narcís Monturiol é considerada um marco científico extraordinário, o qual mudou a visão da submersão».',
+        text: 'Linu assisteix a una conferència al Museu Marítim de Barcelona sobre la història de la navegació. El ponent explica: “La construcció de l\'Ictíneo per part de Narcís Monturiol es considera una fita científica extraordinària, la qual va canviar la visió de la submersió”.',
+        translation: 'Linu assiste a uma conferência no Museu Marítimo de Barcelona sobre a história da navegação. O palestrante explica: “A construção do Ictíneo por Narcís Monturiol é considerada um marco científico extraordinário, o qual mudou a visão da submersão”.',
         choices: [
           { text: "Aprofundir en el disseny de l'Ictíneo I i el seu buc doble de fusta.", translation: 'Aprofundar no projeto do Ictíneo I e seu casco duplo de madeira.', next: 'disseny_ictineo' },
           {
-            text: 'Dir al ponent: «Monturiol va haver de demanar permís al rei abans de pensar l\'invent».',
-            translation: 'Dizer ao palestrante: «Monturiol teve que pedir permissão ao rei antes de pensar o invento».',
+            text: 'Dir al ponent: “Monturiol va haver de demanar permís al rei abans de pensar l\'invent”.',
+            translation: 'Dizer ao palestrante: “Monturiol teve que pedir permissão ao rei antes de pensar o invento”.',
             wrong: 'Monturiol era d\'ideologia republicana i va finançar el projecte de manera popular, no amb permís reial!',
           },
         ],
       },
       disseny_ictineo: {
         emoji: '⚙️',
-        text: "El ponent mostra els plànols: «Es va dissenyar un buc doble en el qual l'espai interior mantenia la pressió atmosfèrica. La propulsió inicial es feia manualment, per la qual cosa es requeria un gran esforç físic de la tripulació».",
-        translation: 'O palestrante mostra as plantas: «Projetou-se um casco duplo no qual o espaço interior mantinha a pressão atmosférica. A propulsão inicial era feita manualmente, motivo pelo qual se exigia um grande esforço físico da tripulação».',
+        text: "El ponent mostra els plànols: “Es va dissenyar un buc doble en el qual l'espai interior mantenia la pressió atmosfèrica. La propulsió inicial es feia manualment, per la qual cosa es requeria un gran esforç físic de la tripulació”.",
+        translation: 'O palestrante mostra as plantas: “Projetou-se um casco duplo no qual o espaço interior mantinha a pressão atmosférica. A propulsão inicial era feita manualmente, motivo pelo qual se exigia um grande esforço físico da tripulação”.',
         choices: [
           { text: "Investigar la transició cap a l'Ictíneo II i la invenció del motor anaeròbic.", translation: 'Investigar a transição para o Ictíneo II e a invenção do motor anaeróbico.', next: 'motor_anaerobic' },
           {
@@ -3638,14 +3638,14 @@ export const STORIES_CA: StorySeed[] = [
       },
       motor_anaerobic: {
         emoji: '🧪',
-        text: '«Amb l\'Ictíneo II es va aconseguir la integració d\'un motor de combustió especial, mitjançant el qual es generava escalfor i oxigen simultàniament. La producció d\'oxigen permetia la respiració dels mariners sense eixir a la superfície».',
-        translation: '«Com o Ictíneo II conseguiu-se a integração de um motor de combustão especial, mediante o qual se gerava calor e oxigênio simultaneamente. A produção de oxigênio permitia a respiração dos marinheiros sem sair à superfície».',
+        text: '“Amb l\'Ictíneo II es va aconseguir la integració d\'un motor de combustió especial, mitjançant el qual es generava escalfor i oxigen simultàniament. La producció d\'oxigen permetia la respiració dels mariners sense eixir a la superfície”.',
+        translation: '“Com o Ictíneo II conseguiu-se a integração de um motor de combustão especial, mediante o qual se gerava calor e oxigênio simultaneamente. A produção de oxigênio permitia a respiração dos marinheiros sem sair à superfície”.',
         choices: [{ text: 'Analitzar el finançament popular mitjançant subscripció ciutadana.', translation: 'Analisar o financiamento popular mediante subscrição cidadã.', next: 'financament_popular' }],
       },
       financament_popular: {
         emoji: '💰',
-        text: '«Davant la falta d\'ajuda estatal, es va organitzar una subscripció popular en la qual van participar milers de ciutadans de Catalunya i Espanya. Tanmateix, els problemes econòmics van conduir a la dissolució de la societat La Navegación Submarina».',
-        translation: '«Diante da falta de ajuda estatal, organizou-se uma subscrição popular na qual participaram milhares de cidadãos da Catalunha e da Espanha. Contudo, os problemas econômicos conduziram à dissolução da sociedade La Navegación Submarina».',
+        text: '“Davant la falta d\'ajuda estatal, es va organitzar una subscripció popular en la qual van participar milers de ciutadans de Catalunya i Espanya. Tanmateix, els problemes econòmics van conduir a la dissolució de la societat La Navegación Submarina”.',
+        translation: '“Diante da falta de ajuda estatal, organizou-se uma subscrição popular na qual participaram milhares de cidadãos da Catalunha e da Espanha. Contudo, os problemas econômicos conduziram à dissolução da sociedade La Navegación Submarina”.',
         choices: [
           {
             text: "Examinar les proves realitzades al port de Barcelona durant les quals es va demostrar l'èxit de la submersió.",
@@ -3656,8 +3656,8 @@ export const STORIES_CA: StorySeed[] = [
       },
       proves_port: {
         emoji: '🌊',
-        text: '«Es van realitzar desenes d\'immersions al port de Barcelona, durant les quals l\'Ictíneo va romandre diverses hores sota l\'aigua. L\'admiració de la comunitat científica va ser enorme, per bé que la falta de suport institucional va impedir la producció industrial».',
-        translation: '«Foram realizadas dezenas de imersões no porto de Barcelona, durante as quais o Ictíneo permaneceu diversas horas debaixo d\'água. A admiração da comunidade científica foi enorme, embora a falta de apoio institucional tenha impedido a produção industrial».',
+        text: '“Es van realitzar desenes d\'immersions al port de Barcelona, durant les quals l\'Ictíneo va romandre diverses hores sota l\'aigua. L\'admiració de la comunitat científica va ser enorme, per bé que la falta de suport institucional va impedir la producció industrial”.',
+        translation: '“Foram realizadas dezenas de imersões no porto de Barcelona, durante as quais o Ictíneo permaneceu diversas horas debaixo d\'água. A admiração da comunidade científica foi enorme, embora a falta de apoio institucional tenha impedido a produção industrial”.',
         choices: [
           { text: 'Concloure l\'estudi valorant el llegat tecnològic de Monturiol.', translation: 'Concluir o estudo valorizando o legado tecnológico de Monturiol.', next: 'final_bom' },
           {
@@ -3696,39 +3696,39 @@ export const STORIES_CA: StorySeed[] = [
     nodes: {
       start: {
         emoji: '🏞️',
-        text: 'Linu visita la Colònia Vidal, a Puig-reig, a la llera del riu Llobregat. La guia explica: «La industrialització de la Catalunya interior es va basar en l\'aprofitament de la força hidràulica dels rius, al llarg dels quals es van construir desenes de colònies tèxtils».',
-        translation: 'Linu visita a Colònia Vidal, em Puig-reig, às margens do rio Llobregat. A guia explica: «A industrialização da Catalunha interior baseou-se no aproveitamento da força hidráulica dos rios, ao longo dos quais se construíram dezenas de colônias têxteis».',
+        text: 'Linu visita la Colònia Vidal, a Puig-reig, a la llera del riu Llobregat. La guia explica: “La industrialització de la Catalunya interior es va basar en l\'aprofitament de la força hidràulica dels rius, al llarg dels quals es van construir desenes de colònies tèxtils”.',
+        translation: 'Linu visita a Colònia Vidal, em Puig-reig, às margens do rio Llobregat. A guia explica: “A industrialização da Catalunha interior baseou-se no aproveitamento da força hidráulica dos rios, ao longo dos quais se construíram dezenas de colônias têxteis”.',
         choices: [
           { text: "Entrar a la fàbrica per observar la resclosa i el canal per on circulava l'aigua.", translation: 'Entrar na fábrica para observar a eclusa/represa e o canal por onde circulava a água.', next: 'canal_aigua' },
           {
-            text: 'Dir a la guia: «Els amos van haver de demanar permís als obrers per fer el canal».',
-            translation: 'Dizer à guia: «Os donos tiveram que pedir permissão aos operários para fazer o canal».',
+            text: 'Dir a la guia: “Els amos van haver de demanar permís als obrers per fer el canal”.',
+            translation: 'Dizer à guia: “Os donos tiveram que pedir permissão aos operários para fazer o canal”.',
             wrong: 'El poder de decisió era exclusiu dels propietaris; els obrers no tenien cap veu en aquestes obres.',
           },
         ],
       },
       canal_aigua: {
         emoji: '🌊',
-        text: '«A la resclosa es desviava l\'aigua cap al canal, mitjançant el qual es movia la turbina de la fàbrica. La transformació de l\'energia hidràulica en energia mecànica permetia el funcionament ininterromput dels telers».',
-        translation: '«Na eclusa desviava-se a água para o canal, mediante o qual se movia a turbina da fábrica. A transformação da energia hidráulica em energia mecânica permitia o funcionamento ininterrupto dos telares».',
+        text: '“A la resclosa es desviava l\'aigua cap al canal, mitjançant el qual es movia la turbina de la fàbrica. La transformació de l\'energia hidràulica en energia mecànica permetia el funcionament ininterromput dels telers”.',
+        translation: '“Na eclusa desviava-se a água para o canal, mediante o qual se movia a turbina da fábrica. A transformação da energia hidráulica em energia mecânica permitia o funcionamento ininterrupto dos telares”.',
         choices: [{ text: 'Analitzar la nau dels telers, en la qual treballava la major part de la població femenina.', translation: 'Analisar o galpão dos telares, no qual trabalhava a maior parte da população feminina.', next: 'nau_telers' }],
       },
       nau_telers: {
         emoji: '🧵',
-        text: '«A la nau principal es teixien milers de metres de cotó diaris. La producció es destinava tant al mercat peninsular com a l\'exportació. Es treballava en condicions de gran soroll i pols de fil».',
-        translation: '«No galpão principal teciam-se milhares de metros de algodão diariamente. A produção destinava-se tanto ao mercado peninsular quanto à exportação. Trabalhava-se em condições de grande ruído e poeira de fio».',
+        text: '“A la nau principal es teixien milers de metres de cotó diaris. La producció es destinava tant al mercat peninsular com a l\'exportació. Es treballava en condicions de gran soroll i pols de fil”.',
+        translation: '“No galpão principal teciam-se milhares de metros de algodão diariamente. A produção destinava-se tanto ao mercado peninsular quanto à exportação. Trabalhava-se em condições de grande ruído e poeira de fio”.',
         choices: [{ text: 'Investigar el model de vida comunitari i el paternalisme industrial.', translation: 'Investigar o modelo de vida comunitário e o paternalismo industrial.', next: 'paternalisme_industrial' }],
       },
       paternalisme_industrial: {
         emoji: '🏘️',
-        text: '«Es va dissenyar un model de convivència en què l\'amo de la colònia oferia serveis com l\'escola, la guarderia, el teatre i l\'església. Tanmateix, mitjançant aquesta protecció es garantia el control social i s\'evitaven les vagues laborals».',
-        translation: '«Projetou-se um modelo de convivência em que o dono da colônia oferecia serviços como a escola, a creche, o teatro e a igreja. Contudo, mediante esta proteção garantia-se o controle social e evitavam-se as greves trabalhistas».',
+        text: '“Es va dissenyar un model de convivència en què l\'amo de la colònia oferia serveis com l\'escola, la guarderia, el teatre i l\'església. Tanmateix, mitjançant aquesta protecció es garantia el control social i s\'evitaven les vagues laborals”.',
+        translation: '“Projetou-se um modelo de convivência em que o dono da colônia oferecia serviços como a escola, a creche, o teatro e a igreja. Contudo, mediante esta proteção garantia-se o controle social e evitavam-se as greves trabalhistas”.',
         choices: [{ text: 'Visitar la Colònia Güell a Santa Coloma de Cervelló per comparar la seva arquitectura modernista.', translation: 'Visitar a Colònia Güell em Santa Coloma de Cervelló para comparar sua arquitetura modernista.', next: 'colonia_guell' }],
       },
       colonia_guell: {
         emoji: '⛪',
-        text: 'A la Colònia Güell, Linu admira la Cripta de Gaudí: «La construcció de la cripta, per la qual es van utilitzar materials naturals i arcs catenaris, es considera un pilar de l\'arquitectura de Gaudí».',
-        translation: 'Na Colònia Güell, Linu admira a Cripta de Gaudí: «A construção da cripta, para a qual se utilizaram materiais naturais e arcos catenários, é considerada um pilar da arquitetura de Gaudí».',
+        text: 'A la Colònia Güell, Linu admira la Cripta de Gaudí: “La construcció de la cripta, per la qual es van utilitzar materials naturals i arcs catenaris, es considera un pilar de l\'arquitectura de Gaudí”.',
+        translation: 'Na Colònia Güell, Linu admira a Cripta de Gaudí: “A construção da cripta, para a qual se utilizaram materiais naturais e arcos catenários, é considerada um pilar da arquitetura de Gaudí”.',
         choices: [
           { text: "Concloure la visita redactant una memòria sobre l'impacte històric de les colònies.", translation: 'Concluir a visita redigindo um relatório sobre o impacto histórico das colônias.', next: 'final_bom' },
           {
@@ -3767,33 +3767,33 @@ export const STORIES_CA: StorySeed[] = [
     nodes: {
       start: {
         emoji: '🌃',
-        text: "Linu puja a l'Observatori Fabra, situat a la muntanya del Tibidabo a 415 metres d'alçada. L'astrònom responsable declara: «L'edifici, des del qual s'observa el cel de Barcelona des de 1904, pertany a la Reial Acadèmia de Ciències i Arts, la qual en manté l'activitat científica».",
-        translation: 'Linu sobe ao Observatório Fabra, situado na montanha do Tibidabo a 415 metros de altitude. O astrônomo responsável declara: «O edifício, a partir do qual se observa o céu de Barcelona desde 1904, pertence à Reial Acadèmia de Ciències i Arts, a qual mantém sua atividade científica».',
+        text: "Linu puja a l'Observatori Fabra, situat a la muntanya del Tibidabo a 415 metres d'alçada. L'astrònom responsable declara: “L'edifici, des del qual s'observa el cel de Barcelona des de 1904, pertany a la Reial Acadèmia de Ciències i Arts, la qual en manté l'activitat científica”.",
+        translation: 'Linu sobe ao Observatório Fabra, situado na montanha do Tibidabo a 415 metros de altitude. O astrônomo responsável declara: “O edifício, a partir do qual se observa o céu de Barcelona desde 1904, pertence à Reial Acadèmia de Ciències i Arts, a qual mantém sua atividade científica”.',
         choices: [
           { text: 'Visitar la cúpula astronòmica per conèixer el telescopi gran equatorial.', translation: 'Visitar a cúpula astronômica para conhecer o grande telescópio equatorial.', next: 'cupula_astronomica' },
           {
-            text: 'Dir a l\'astrònom: «Vosaltres heu de canviar el telescopi per un de plàstic».',
-            translation: 'Dizer ao astrônomo: «Vocês têm que trocar o telescópio por um de plástico».',
+            text: 'Dir a l\'astrònom: “Vosaltres heu de canviar el telescopi per un de plàstic”.',
+            translation: 'Dizer ao astrônomo: “Vocês têm que trocar o telescópio por um de plástico”.',
             wrong: 'El telescopi de fusta i bronze de 1904 és una joia de la tecnologia òptica històrica, no una peça per substituir!',
           },
         ],
       },
       cupula_astronomica: {
         emoji: '🌕',
-        text: '«En aquesta cúpula es conserva el telescopi equatorial de 1904, mitjançant el qual es van descobrir asteroides tan importants com el 945 Barcelona i el cometa 32P/Comas Solà».',
-        translation: '«Nesta cúpula conserva-se o telescópio equatorial de 1904, mediante o qual se descobriram asteroides tão importantes como o 945 Barcelona e o cometa 32P/Comas Solà».',
+        text: '“En aquesta cúpula es conserva el telescopi equatorial de 1904, mitjançant el qual es van descobrir asteroides tan importants com el 945 Barcelona i el cometa 32P/Comas Solà”.',
+        translation: '“Nesta cúpula conserva-se o telescópio equatorial de 1904, mediante o qual se descobriram asteroides tão importantes como o 945 Barcelona e o cometa 32P/Comas Solà”.',
         choices: [{ text: 'Passar a la secció de meteorologia per revisar el registre de dades climàtiques.', translation: 'Passar para a seção de meteorologia para revisar o registro de dados climáticos.', next: 'seccio_meteorologia' }],
       },
       seccio_meteorologia: {
         emoji: '🌡️',
-        text: '«El mesurament de la temperatura, la pluja i el vent es realitza diàriament sense interrupció des de 1913. Es considera una de les sèries climàtiques més valuoses d\'Europa, per la qual cosa s\'utilitza en estudis sobre el canvi climàtic».',
-        translation: '«A medição da temperatura, da chuva e do vento realiza-se diariamente sem interrupção desde 1913. É considerada uma das séries climáticas mais valiosas da Europa, motivo pelo qual se utiliza em estudos sobre a mudança climática».',
+        text: '“El mesurament de la temperatura, la pluja i el vent es realitza diàriament sense interrupció des de 1913. Es considera una de les sèries climàtiques més valuoses d\'Europa, per la qual cosa s\'utilitza en estudis sobre el canvi climàtic”.',
+        translation: '“A medição da temperatura, da chuva e do vento realiza-se diariamente sem interrupção desde 1913. É considerada uma das séries climáticas mais valiosas da Europa, motivo pelo qual se utiliza em estudos sobre a mudança climática”.',
         choices: [{ text: 'Explorar la secció de sismologia on es detecten els moviments tel·lúrics.', translation: 'Explorar a seção de sismologia onde se detectam os movimentos telúricos.', next: 'seccio_sismologia' }],
       },
       seccio_sismologia: {
         emoji: '📉',
-        text: '«A la secció sismològica es registren els terratrèmols d\'arreu del món mitjançant sismògrafs d\'alta sensibilitat. La detecció dels sismes es fa en temps real, la qual cosa permet la col·laboració amb xarxes internacionals».',
-        translation: '«Na seção sismológica registram-se os terremotos de todo o mundo mediante sismógrafos de alta sensibilidade. A detecção dos sismos faz-se em tempo real, o que permite a colaboração com redes internacionais».',
+        text: '“A la secció sismològica es registren els terratrèmols d\'arreu del món mitjançant sismògrafs d\'alta sensibilitat. La detecció dels sismes es fa en temps real, la qual cosa permet la col·laboració amb xarxes internacionals”.',
+        translation: '“Na seção sismológica registram-se os terremotos de todo o mundo mediante sismógrafos de alta sensibilidade. A detecção dos sismos faz-se em tempo real, o que permite a colaboração com redes internacionais”.',
         choices: [{ text: "Participar en la cloenda del seminari i l'observació nocturna de les llunes de Júpiter.", translation: 'Participar do encerramento do seminário e da observação noturna das luas de Júpiter.', next: 'observacio_nocturna' }],
       },
       observacio_nocturna: {
@@ -3825,7 +3825,7 @@ export const STORIES_CA: StorySeed[] = [
     title: 'El cavaller de Bretanya i la glòria de Constantinoble',
     emoji: '⚔️',
     summary: "Linu s'endinsa en la lectura i recreació del Tirant lo Blanc de Joanot Martorell, revivint les gestes cavalleresques, els combats i la diplomàcia a l'Imperi Bizantí amb el domini del perfet simple i un estil literari clàssic.",
-    cultural_context: 'Tirant lo Blanc, escrita per Joanot Martorell i publicada a València el 1490, és una de les obres cabdals de la literatura catalana i de la novel·la cavalleresca europea. Celebrada per Miguel de Cervantes al Quixot com «el millor llibre del món», destaca pel seu realisme humanista, la varietat de registres i la descripció detallada de la cavalleria, la sensualitat i l\'estratègia militar.',
+    cultural_context: 'Tirant lo Blanc, escrita per Joanot Martorell i publicada a València el 1490, és una de les obres cabdals de la literatura catalana i de la novel·la cavalleresca europea. Celebrada per Miguel de Cervantes al Quixot com “el millor llibre del món”, destaca pel seu realisme humanista, la varietat de registres i la descripció detallada de la cavalleria, la sensualitat i l\'estratègia militar.',
     start: 'start',
     glossary: [
       ['el perfet simple', 'passat simple literari (parlà, fou, digué, anà, vingué)'],
@@ -3844,16 +3844,16 @@ export const STORIES_CA: StorySeed[] = [
         choices: [
           { text: "Seguir les passades de Tirant quan fou rebut per l'Emperador a la cort.", translation: 'Seguir os passos de Tirant quando foi recebido pelo Imperador na corte.', next: 'recepcio_emperador' },
           {
-            text: 'Pensar: «Tirant hagué de demanar permís abans de lluitar».',
-            translation: 'Pensar: «Tirant teve que pedir permissão antes de lutar».',
+            text: 'Pensar: “Tirant hagué de demanar permís abans de lluitar”.',
+            translation: 'Pensar: “Tirant teve que pedir permissão antes de lutar”.',
             wrong: 'En el registre literari C2 s\'utilitza preferentment el passat simple: la forma correcta és "hagué de", no "va tenir que" (barbarisme).',
           },
         ],
       },
       recepcio_emperador: {
         emoji: '👑',
-        text: 'L\'Emperador observà el jove cavaller amb admiració i li encomanà la direcció de l\'exèrcit. Tirant jurà fidelitat davant la corona i digué: «Senyor, la meva espasa defensarà la fe i la glòria d\'aquesta terra fins a l\'últim alè». Carmesina, la filla de l\'Emperador, el mirà amb un somriure discret.',
-        translation: 'O Imperador observou o jovem cavaleiro com admiração e encomendou-lhe a direção do exército. Tirant jurou fidelidade diante da coroa e disse: «Senhor, minha espada defenderá a fé e a glória desta terra até o último alento». Carmesina, a filha do Imperador, olhou-o com um sorriso discreto.',
+        text: 'L\'Emperador observà el jove cavaller amb admiració i li encomanà la direcció de l\'exèrcit. Tirant jurà fidelitat davant la corona i digué: “Senyor, la meva espasa defensarà la fe i la glòria d\'aquesta terra fins a l\'últim alè”. Carmesina, la filla de l\'Emperador, el mirà amb un somriure discret.',
+        translation: 'O Imperador observou o jovem cavaleiro com admiração e encomendou-lhe a direção do exército. Tirant jurou fidelidade diante da coroa e disse: “Senhor, minha espada defenderá a fé e a glória desta terra até o último alento”. Carmesina, a filha do Imperador, olhou-o com um sorriso discreto.',
         choices: [
           { text: 'Acompanyar Tirant a la batalla campal contra les tropes enemigues.', translation: 'Acompanhar Tirant na batalha campal contra as tropas inimigas.', next: 'batalla_campal' },
           {
@@ -3922,8 +3922,8 @@ export const STORIES_CA: StorySeed[] = [
         choices: [
           { text: 'Continuar l\'ascensió cap a la cabana on la llegenda situa el palau de Flordeneu.', translation: 'Continuar a ascensão em direção à cabana onde a lenda situa o palácio de Flordeneu.', next: 'ascensio_canigo' },
           {
-            text: 'Dir: «Verdaguer hagué d\'escriure el poema molt ràpidament».',
-            translation: 'Dizer: «Verdaguer teve que escrever o poema muito rapidamente».',
+            text: 'Dir: “Verdaguer hagué d\'escriure el poema molt ràpidament”.',
+            translation: 'Dizer: “Verdaguer teve que escrever o poema muito rapidamente”.',
             wrong: 'Verdaguer dedicà anys d\'investigació geogràfica i folklòrica a escriure el Canigó! La forma correcta al registre literari és "hagué de", no "va tenir que".',
           },
         ],
@@ -3987,8 +3987,8 @@ export const STORIES_CA: StorySeed[] = [
         choices: [
           { text: 'Travessar el Portal de Sant Jordi per entrar al recinte medieval.', translation: 'Atravessar o Portal de Sant Jordi para entrar no recinto medieval.', next: 'portal_sant_jordi' },
           {
-            text: 'Pensar: «Sant Jordi hagué de comprar una espasa nova al mercat».',
-            translation: 'Pensar: «Sant Jordi teve que comprar uma espada nova no mercado».',
+            text: 'Pensar: “Sant Jordi hagué de comprar una espasa nova al mercat”.',
+            translation: 'Pensar: “Sant Jordi teve que comprar uma espada nova no mercado”.',
             wrong: 'La llegenda clàssica descriu el cavaller amb les seves pròpies armes de fe i coratge! I la forma correcta és "hagué de", no "va tenir que".',
           },
         ],

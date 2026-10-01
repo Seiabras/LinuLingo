@@ -33,7 +33,7 @@ export const SCENARIOS_NL: ScenarioSeed[] = [
     cefr: 'A1',
     register: 'informal',
     persona: 'Anna, een klasgenoot van de cursus Nederlands',
-    description: 'Anna, colega do curso de neerlandês, convida você para um café perto dos canais de Utrecht. É uma conversa entre colegas: use «jij».',
+    description: 'Anna, colega do curso de neerlandês, convida você para um café perto dos canais de Utrecht. É uma conversa entre colegas: use “jij”.',
     turns: [
       {
         bot: 'Hoi! Wat wil je drinken?',
@@ -58,7 +58,7 @@ export const ETYMOLOGY_NL: EtymologySeed[] = [
     root_word: '*watōr',
     origin_language: 'Protogermânico',
     cognates: c(['en', 'water'], ['de', 'Wasser'], ['sv', 'vatten']),
-    evolution_note: 'O neerlandês e o inglês guardaram o t germânico («water»); o alemão o transformou em «ss» («Wasser»). É um bom exemplo de como o neerlandês fica no meio do caminho entre os dois.',
+    evolution_note: 'O neerlandês e o inglês guardaram o t germânico (“water”); o alemão o transformou em “ss” (“Wasser”). É um bom exemplo de como o neerlandês fica no meio do caminho entre os dois.',
     transparent: false,
   },
   {
@@ -66,7 +66,7 @@ export const ETYMOLOGY_NL: EtymologySeed[] = [
     root_word: '*hūsą',
     origin_language: 'Protogermânico',
     cognates: c(['en', 'house'], ['de', 'Haus'], ['sv', 'hus']),
-    evolution_note: 'O u longo antigo virou o ditongo «ui» no neerlandês, «au» no alemão e «ou» no inglês: huis, Haus, house.',
+    evolution_note: 'O u longo antigo virou o ditongo “ui” no neerlandês, “au” no alemão e “ou” no inglês: huis, Haus, house.',
     transparent: false,
   },
   {
@@ -74,7 +74,7 @@ export const ETYMOLOGY_NL: EtymologySeed[] = [
     root_word: '*meluks',
     origin_language: 'Protogermânico',
     cognates: c(['en', 'milk'], ['de', 'Milch'], ['sv', 'mjölk']),
-    evolution_note: 'Palavra herdada do germânico comum. O português «leite» vem de outra raiz, o latim «lac, lactis».',
+    evolution_note: 'Palavra herdada do germânico comum. O português “leite” vem de outra raiz, o latim “lac, lactis”.',
     transparent: false,
   },
   {
@@ -82,7 +82,7 @@ export const ETYMOLOGY_NL: EtymologySeed[] = [
     root_word: 'caseus',
     origin_language: 'Latim',
     cognates: c(['pt', 'queijo'], ['es', 'queso'], ['de', 'Käse'], ['en', 'cheese']),
-    evolution_note: 'Os povos germânicos tomaram emprestada a palavra latina «caseus» (queijo) ainda na Antiguidade. O mesmo «caseus» deu «queijo» em português.',
+    evolution_note: 'Os povos germânicos tomaram emprestada a palavra latina “caseus” (queijo) ainda na Antiguidade. O mesmo “caseus” deu “queijo” em português.',
     transparent: false,
   },
   {
@@ -90,7 +90,7 @@ export const ETYMOLOGY_NL: EtymologySeed[] = [
     root_word: 'vinum',
     origin_language: 'Latim',
     cognates: c(['pt', 'vinho'], ['it', 'vino'], ['de', 'Wein'], ['en', 'wine']),
-    evolution_note: 'O vinho chegou às terras germânicas com os romanos, e a palavra latina «vinum» veio junto; o i longo depois virou o ditongo escrito «ij».',
+    evolution_note: 'O vinho chegou às terras germânicas com os romanos, e a palavra latina “vinum” veio junto; o i longo depois virou o ditongo escrito “ij”.',
     transparent: true,
   },
 ];

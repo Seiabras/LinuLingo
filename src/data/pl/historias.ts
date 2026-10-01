@@ -27,7 +27,7 @@ export const STORIES_PL: StorySeed[] = [
         emoji: '😊',
         choices: [
           { text: 'Jestem z São Paulo.', translation: 'Sou de São Paulo.', next: 'final_dobry' },
-          { text: 'Piję wodę.', translation: 'Eu bebo água.', wrong: 'Isso não responde de onde você é. Use «Jestem z…».' },
+          { text: 'Piję wodę.', translation: 'Eu bebo água.', wrong: 'Isso não responde de onde você é. Use “Jestem z…”.' },
         ],
       },
       final_dobry: {
@@ -51,7 +51,7 @@ export const STORIES_PL: StorySeed[] = [
     title: 'Obiad z rodziną',
     emoji: '👪',
     summary: 'Tomek, um amigo de Gdańsk, pergunta pela sua família e convida você para almoçar com a família dele.',
-    cultural_context: 'Na Polônia, o «obiad» é a refeição principal do dia e costuma ser feito no começo da tarde; aos domingos, reúne a família.',
+    cultural_context: 'Na Polônia, o “obiad” é a refeição principal do dia e costuma ser feito no começo da tarde; aos domingos, reúne a família.',
     start: 'inicio',
     nodes: {
       inicio: {
@@ -60,7 +60,7 @@ export const STORIES_PL: StorySeed[] = [
         emoji: '📱',
         choices: [
           { text: 'Tak, mam brata i siostrę.', translation: 'Sim, tenho um irmão e uma irmã.', next: 'rodzina' },
-          { text: 'Mój dom jest duży.', translation: 'A minha casa é grande.', wrong: 'Isso não responde se você tem irmãos. Use «mam…».' },
+          { text: 'Mój dom jest duży.', translation: 'A minha casa é grande.', wrong: 'Isso não responde se você tem irmãos. Use “mam…”.' },
         ],
       },
       rodzina: {
@@ -69,7 +69,7 @@ export const STORIES_PL: StorySeed[] = [
         emoji: '🍽️',
         choices: [
           { text: 'Tak, dziękuję bardzo!', translation: 'Sim, muito obrigado!', next: 'final_dobry' },
-          { text: 'Jestem z São Paulo.', translation: 'Sou de São Paulo.', wrong: 'Tomek fez um convite: responda com «tak» ou «nie, dziękuję».' },
+          { text: 'Jestem z São Paulo.', translation: 'Sou de São Paulo.', wrong: 'Tomek fez um convite: responda com “tak” ou “nie, dziękuję”.' },
         ],
       },
       final_dobry: {

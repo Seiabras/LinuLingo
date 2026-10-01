@@ -96,15 +96,15 @@ const REGIONS = new Set([
  */
 export function isGrammarNote(inner: string, target?: string | null): boolean {
   const t = clean(inner).split(/[:;=]/)[0].trim();
-  if (!t || ABBREVIATION.test(t) || /[+≠«»"“”[\]]/.test(t)) return true;
-  if (/(^|\s)-\p{L}|\p{L}-(\s|,|$)/u.test(t)) return true; // «-se», «-isc-»
+  if (!t || ABBREVIATION.test(t) || /[+≠“”"“”[\]]/.test(t)) return true;
+  if (/(^|\s)-\p{L}|\p{L}-(\s|,|$)/u.test(t)) return true; // “-se”, “-isc-”
   if (LABELS.has(t)) return true;
   const words = t.split(/[\s,/.]+/).filter(Boolean);
   const content = words.filter((w) => !FUNCTION_WORDS.has(w));
   if (!content.length) return true;
   if (content.every((w) => REGIONS.has(w) || LABELS.has(w))) return true;
-  if (/\d/.test(t)) return false; // «(1/4)», «(4º)»: sentido
-  if (content.some((w) => w.length === 1)) return true; // «amigo (s)», «o s é mudo»
+  if (/\d/.test(t)) return false; // “(1/4)”, “(4º)”: sentido
+  if (content.some((w) => w.length === 1)) return true; // “amigo (s)”, “o s é mudo”
   if (target && content.some((w) => formOf(w, target))) return true;
   return content.some(foreignWord);
 }
@@ -115,7 +115,7 @@ export function withoutNotes(s: string, target?: string | null): string {
 }
 
 /** «olá!» → «olá»; «¿qué?» → «qué» */
-const trimPunctuation = (s: string) => s.replace(/^[¡¿«"'\s]+|[!?.…»"'\s]+$/g, '').trim();
+const trimPunctuation = (s: string) => s.replace(/^[¡¿“"'\s]+|[!?.…”"'\s]+$/g, '').trim();
 
 /** Divide em alternativas: «cachorro / cão» → cachorro, cão; «feliz, contente» → feliz, contente. */
 const split = (s: string) => s.split(/[/,;]/).map(trimPunctuation).filter(Boolean);

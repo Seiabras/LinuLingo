@@ -57,7 +57,7 @@ export const ROWS: VocabRow[] = [
   ['nyungunyungu', 'minhoca (pl. nyungunyungu)', 'substantivo', 'Animais', '🪱', 'Nyungunyungu wanafanya udongo kuwa mzuri.'],
   ['konokono', 'caracol, lesma (pl. konokono)', 'substantivo', 'Animais', '🐌', 'Konokono anatembea polepole sana.'],
   ['kaa', 'caranguejo (pl. kaa)', 'substantivo', 'Animais', '🦀', 'Kaa anatembea upande.'],
-  ['kamba', 'camarão, lagosta (pl. kamba); também «corda»', 'substantivo', 'Animais', '🦞', 'Tulikula kamba wa kukaanga.'],
+  ['kamba', 'camarão, lagosta (pl. kamba); também “corda”', 'substantivo', 'Animais', '🦞', 'Tulikula kamba wa kukaanga.'],
   ['pweza', 'polvo (pl. pweza)', 'substantivo', 'Animais', '🐙', 'Wavuvi wamevua pweza mkubwa.'],
   ['ngisi', 'lula (pl. ngisi)', 'substantivo', 'Animais', '🦑', 'Ngisi ana mikono mingi.'],
   ['chaza', 'ostra (pl. chaza)', 'substantivo', 'Animais', '🦪', 'Chaza hukaa kwenye miamba.'],

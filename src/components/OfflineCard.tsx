@@ -54,12 +54,12 @@ export function OfflineCard() {
       )}
       {install === 'ios' && (
         <Text className="text-sm leading-5 text-slate-700 dark:text-slate-300">
-          No iPhone e no iPad: no Safari, toque em Compartilhar (o quadrado com a seta para cima) e depois em «Adicionar à Tela de Início».
+          No iPhone e no iPad: no Safari, toque em Compartilhar (o quadrado com a seta para cima) e depois em “Adicionar à Tela de Início”.
         </Text>
       )}
       {install === 'manual' && (
         <Text className="text-sm leading-5 text-slate-700 dark:text-slate-300">
-          Para ter o ícone na tela inicial, procure no menu do navegador «Instalar app» ou «Adicionar à tela inicial» (Chrome, Edge, Samsung Internet e Safari têm; o Firefox do computador, não).
+          Para ter o ícone na tela inicial, procure no menu do navegador “Instalar app” ou “Adicionar à tela inicial” (Chrome, Edge, Samsung Internet e Safari têm; o Firefox do computador, não).
         </Text>
       )}
 

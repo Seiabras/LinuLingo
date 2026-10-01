@@ -12,13 +12,13 @@ export const ARTIGOS_FI: ArticleSeed[] = [
       'Perhe menee saunaan, ja sen jälkeen juodaan kylmää vettä.',
     ],
     translation: [
-      'A sauna é um cômodo quente, e na Finlândia ela é muito importante. Na sauna, a gente fica sentado e joga água nas pedras quentes do fogão («kiuas»).',
+      'A sauna é um cômodo quente, e na Finlândia ela é muito importante. Na sauna, a gente fica sentado e joga água nas pedras quentes do fogão (“kiuas”).',
       'A família vai à sauna, e depois bebe-se água gelada.',
     ],
     glossary: [
       ['sauna / saunassa / saunaan', 'sauna / na sauna / para a sauna'],
-      ['heitetään', 'joga-se (de «heittää», jogar)'],
-      ['kiukaalle', 'no fogão da sauna (de «kiuas»)'],
+      ['heitetään', 'joga-se (de “heittää”, jogar)'],
+      ['kiukaalle', 'no fogão da sauna (de “kiuas”)'],
     ],
     forms: [['vettä', 'vesi']],
     questions: [
@@ -38,15 +38,15 @@ export const ARTIGOS_FI: ArticleSeed[] = [
     ],
     translation: [
       'O juhannus é a grande festa do verão. É comemorado em junho, quando as noites são claras e o sol se põe só por um instante.',
-      'Muitos finlandeses vão para a casa de campo («mökki») no juhannus. Lá se nada, come-se linguiça e acende-se uma grande fogueira («kokko»).',
+      'Muitos finlandeses vão para a casa de campo (“mökki”) no juhannus. Lá se nada, come-se linguiça e acende-se uma grande fogueira (“kokko”).',
       'As cidades ficam silenciosas no juhannus, porque tanta gente foi embora.',
     ],
     glossary: [
       ['juhla', 'festa'],
       ['kesäkuussa', 'em junho'],
       ['aurinko', 'o sol'],
-      ['mökille', 'para a casa de campo (de «mökki»)'],
-      ['poltetaan', 'queima-se, acende-se (de «polttaa»)'],
+      ['mökille', 'para a casa de campo (de “mökki”)'],
+      ['poltetaan', 'queima-se, acende-se (de “polttaa”)'],
       ['kokko', 'fogueira grande'],
     ],
     questions: [
@@ -101,7 +101,7 @@ export const ARTIGOS_FI: ArticleSeed[] = [
       'A Kalevala deu autoestima aos finlandeses numa época em que a Finlândia pertencia à Rússia. Ela inspirou Jean Sibelius e Akseli Gallen-Kallela, e o Dia da Kalevala é comemorado todo ano em 28 de fevereiro.',
     ],
     glossary: [
-      ['luvulla', 'no século (em «1800-luvulla», no século XIX)'],
+      ['luvulla', 'no século (em “1800-luvulla”, no século XIX)'],
       ['salaperäinen', 'misterioso'],
       ['jolloin', 'em que, quando'],
       ['innoitti', 'inspirou'],
@@ -128,8 +128,8 @@ export const ARTIGOS_FI: ArticleSeed[] = [
       'Hoje, o dia da morte de Agricola, 9 de abril, é comemorado como o Dia da Língua Finlandesa, e nesse dia se hasteia a bandeira.',
     ],
     glossary: [
-      ['reformaation', 'da Reforma protestante (genitivo de «reformaatio»)'],
-      ['aapisensa', 'a cartilha dele (de «aapinen»)'],
+      ['reformaation', 'da Reforma protestante (genitivo de “reformaatio”)'],
+      ['aapisensa', 'a cartilha dele (de “aapinen”)'],
       ['kirjoitusasun', 'a forma escrita, a ortografia'],
       ['kuolinpäivää', 'o dia da morte'],
       ['liputetaan', 'hasteia-se a bandeira'],

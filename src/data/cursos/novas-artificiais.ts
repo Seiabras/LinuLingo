@@ -13,7 +13,7 @@ export const CURSO_IDO: MiniCourse = {
       title: 'O que muda em relação ao esperanto',
       emoji: '🔁',
       intro: [
-        'Uma comissão internacional reformou o esperanto em 1907. O nome quer dizer «descendente» em esperanto. As mudanças mais visíveis: nada de ĉ, ĝ, ŝ; o plural é -i em vez de -j; o adjetivo não concorda.',
+        'Uma comissão internacional reformou o esperanto em 1907. O nome quer dizer “descendente” em esperanto. As mudanças mais visíveis: nada de ĉ, ĝ, ŝ; o plural é -i em vez de -j; o adjetivo não concorda.',
         'O -n do objeto só aparece quando a ordem das palavras fica fora do normal.',
       ],
       items: [
@@ -23,8 +23,8 @@ export const CURSO_IDO: MiniCourse = {
         { term: 'ni, vi, li', meaning: 'nós, vocês, eles' },
       ],
       quiz: [
-        { q: 'Qual é o plural de «libro»?', options: ['libri', 'libroj', 'libros'], answer: 0 },
-        { q: 'O adjetivo concorda no plural?', options: ['Não: «bela domi»', 'Sim: «belaj domi»'], answer: 0 },
+        { q: 'Qual é o plural de “libro”?', options: ['libri', 'libroj', 'libros'], answer: 0 },
+        { q: 'O adjetivo concorda no plural?', options: ['Não: “bela domi”', 'Sim: “belaj domi”'], answer: 0 },
       ],
     },
     {
@@ -41,8 +41,8 @@ export const CURSO_IDO: MiniCourse = {
         { term: '-ez', meaning: 'imperativo: parolez! (fale!)' },
       ],
       quiz: [
-        { q: '«Il venis» quer dizer…', options: ['Ele veio', 'Ele vem', 'Ele virá'], answer: 0 },
-        { q: 'Qual é o imperativo de «manjar» (comer)?', options: ['manjez!', 'manju!', 'manjas!'], answer: 0 },
+        { q: '“Il venis” quer dizer…', options: ['Ele veio', 'Ele vem', 'Ele virá'], answer: 0 },
+        { q: 'Qual é o imperativo de “manjar” (comer)?', options: ['manjez!', 'manju!', 'manjas!'], answer: 0 },
       ],
     },
     {
@@ -57,7 +57,7 @@ export const CURSO_IDO: MiniCourse = {
         { term: 'Me esas Ana.', meaning: 'Eu sou a Ana.' },
         { term: 'yes / no', meaning: 'sim / não' },
       ],
-      quiz: [{ q: '«Me esas studento» quer dizer…', options: ['Eu sou estudante', 'Eu estudo', 'Eu estava estudando'], answer: 0 }],
+      quiz: [{ q: '“Me esas studento” quer dizer…', options: ['Eu sou estudante', 'Eu estudo', 'Eu estava estudando'], answer: 0 }],
     },
   ],
 };
@@ -75,7 +75,7 @@ export const CURSO_VOLAPUK: MiniCourse = {
       title: 'O nome e os casos',
       emoji: '🧩',
       intro: [
-        '«Volapük» é vol (mundo, de «world») + -a (a terminação do genitivo, «do») + pük (língua, de «speak»): a língua do mundo.',
+        '“Volapük” é vol (mundo, de “world”) + -a (a terminação do genitivo, “do”) + pük (língua, de “speak”): a língua do mundo.',
         'Os substantivos mudam a última vogal para dizer o caso: vol (o mundo), vola (do mundo), vole (ao mundo), voli (o mundo, como objeto). O plural é -s.',
       ],
       items: [
@@ -87,8 +87,8 @@ export const CURSO_VOLAPUK: MiniCourse = {
         { term: 'pük', meaning: 'língua' },
       ],
       quiz: [
-        { q: 'O que quer dizer «Volapük»?', options: ['Língua do mundo', 'Mundo novo', 'Fala simples'], answer: 0 },
-        { q: 'Qual é o plural de «pük»?', options: ['püks', 'püki', 'pükar'], answer: 0 },
+        { q: 'O que quer dizer “Volapük”?', options: ['Língua do mundo', 'Mundo novo', 'Fala simples'], answer: 0 },
+        { q: 'Qual é o plural de “pük”?', options: ['püks', 'püki', 'pükar'], answer: 0 },
       ],
     },
     {
@@ -108,7 +108,7 @@ export const CURSO_VOLAPUK: MiniCourse = {
         { term: 'olöfob', meaning: 'eu amarei (o- = futuro)' },
       ],
       quiz: [
-        { q: '«olöfof» quer dizer…', options: ['ela amará', 'ela amava', 'você ama'], answer: 0 },
+        { q: '“olöfof” quer dizer…', options: ['ela amará', 'ela amava', 'você ama'], answer: 0 },
         { q: 'Onde fica a marca de tempo?', options: ['No começo do verbo', 'No fim do verbo'], answer: 0 },
       ],
     },
@@ -124,8 +124,8 @@ export const CURSO_VOLAPUK: MiniCourse = {
         { term: 'jöl, zül, deg', meaning: 'oito, nove, dez' },
       ],
       quiz: [
-        { q: 'Como se diz «três»?', options: ['kil', 'tel', 'fol'], answer: 0 },
-        { q: '«deg» é…', options: ['dez', 'dois', 'dezoito'], answer: 0 },
+        { q: 'Como se diz “três”?', options: ['kil', 'tel', 'fol'], answer: 0 },
+        { q: '“deg” é…', options: ['dez', 'dois', 'dezoito'], answer: 0 },
       ],
     },
   ],
@@ -145,7 +145,7 @@ export const CURSO_ELEFEN: MiniCourse = {
       emoji: '🧩',
       intro: [
         'O psicólogo George Boeree começou a Lingua Franca Nova nos anos 1960 e a publicou em 1998, com o nome de uma língua de contato do Mediterrâneo. O vocabulário vem do português, do espanhol, do francês, do italiano e do catalão; a gramática, simples como a de um crioulo.',
-        'O artigo é «la» para tudo, o plural é -s (ou -es) e o verbo não muda nunca: me es, tu es, el es (eu sou, você é, ele/ela é).',
+        'O artigo é “la” para tudo, o plural é -s (ou -es) e o verbo não muda nunca: me es, tu es, el es (eu sou, você é, ele/ela é).',
       ],
       items: [
         { term: 'me, tu, el', meaning: 'eu, você, ele/ela' },
@@ -156,7 +156,7 @@ export const CURSO_ELEFEN: MiniCourse = {
         { term: 'Grasias!', meaning: 'Obrigado!' },
       ],
       quiz: [
-        { q: 'Como se diz «as casas»?', options: ['la casas', 'las casas', 'le casas'], answer: 0 },
+        { q: 'Como se diz “as casas”?', options: ['la casas', 'las casas', 'le casas'], answer: 0 },
         { q: 'O verbo muda com a pessoa?', options: ['Não: me es, tu es, el es', 'Sim, como no português'], answer: 0 },
       ],
     },
@@ -164,7 +164,7 @@ export const CURSO_ELEFEN: MiniCourse = {
       id: 'tempos',
       title: 'Passado e futuro com partículas',
       emoji: '⏱️',
-      intro: ['O tempo vem numa partícula antes do verbo: «ia» para o passado, «va» para o futuro. O «no» antes do verbo nega.'],
+      intro: ['O tempo vem numa partícula antes do verbo: “ia” para o passado, “va” para o futuro. O “no” antes do verbo nega.'],
       items: [
         { term: 'me come', meaning: 'eu como' },
         { term: 'me ia come', meaning: 'eu comi' },
@@ -172,8 +172,8 @@ export const CURSO_ELEFEN: MiniCourse = {
         { term: 'me no come', meaning: 'eu não como' },
       ],
       quiz: [
-        { q: '«el ia parla» quer dizer…', options: ['ele/ela falou', 'ele/ela vai falar', 'ele/ela fala'], answer: 0 },
-        { q: 'Como se diz «nós vamos ler» (leje = ler)?', options: ['nos va leje', 'nos ia leje', 'nos lejeremos'], answer: 0 },
+        { q: '“el ia parla” quer dizer…', options: ['ele/ela falou', 'ele/ela vai falar', 'ele/ela fala'], answer: 0 },
+        { q: 'Como se diz “nós vamos ler” (leje = ler)?', options: ['nos va leje', 'nos ia leje', 'nos lejeremos'], answer: 0 },
       ],
     },
   ],
@@ -192,17 +192,17 @@ export const CURSO_QUENYA: MiniCourse = {
       title: 'Pronúncia e escrita',
       emoji: '🔤',
       intro: [
-        'Tolkien deu ao quenya o som do finlandês com toques do latim. O «c» é sempre «k» (Calacirya soa «kala-kírya»), e o acento agudo marca vogal longa: «síla» tem o «i» comprido.',
+        'Tolkien deu ao quenya o som do finlandês com toques do latim. O “c” é sempre “k” (Calacirya soa “kala-kírya”), e o acento agudo marca vogal longa: “síla” tem o “i” comprido.',
         'Na Terra-média, o quenya se escreve com as tengwar, as letras que, na história, o elfo Fëanor inventou.',
       ],
       items: [
-        { term: 'c', meaning: 'sempre «k»' },
+        { term: 'c', meaning: 'sempre “k”' },
         { term: 'á, é, í, ó, ú', meaning: 'vogais longas' },
-        { term: 'ë', meaning: 'o «e» no fim da palavra, que se pronuncia (Namárië)' },
+        { term: 'ë', meaning: 'o “e” no fim da palavra, que se pronuncia (Namárië)' },
         { term: 'tengwar', meaning: 'as letras élficas de Fëanor' },
       ],
       quiz: [
-        { q: 'Como soa o «c» em quenya?', options: ['Sempre «k»', 'Como «s»', 'Como «tch»'], answer: 0 },
+        { q: 'Como soa o “c” em quenya?', options: ['Sempre “k”', 'Como “s”', 'Como “tch”'], answer: 0 },
         { q: 'O que o acento agudo indica?', options: ['Vogal longa', 'Sílaba tônica sempre', 'Nada'], answer: 0 },
       ],
     },
@@ -219,24 +219,24 @@ export const CURSO_QUENYA: MiniCourse = {
         { term: 'Quendë / Quendi', meaning: 'elfo / os elfos (o nome que eles davam a si mesmos)' },
       ],
       quiz: [
-        { q: 'Qual é o plural de «Elda»?', options: ['Eldar', 'Eldi', 'Eldas'], answer: 0 },
-        { q: '«Isil» é…', options: ['a Lua', 'o Sol', 'uma estrela'], answer: 0 },
+        { q: 'Qual é o plural de “Elda”?', options: ['Eldar', 'Eldi', 'Eldas'], answer: 0 },
+        { q: '“Isil” é…', options: ['a Lua', 'o Sol', 'uma estrela'], answer: 0 },
       ],
     },
     {
       id: 'frases',
       title: 'Saudar e se despedir',
       emoji: '👋',
-      intro: ['A canção de despedida de Galadriel, em O Senhor dos Anéis, é o texto mais longo em quenya que Tolkien publicou: «Namárië».'],
+      intro: ['A canção de despedida de Galadriel, em O Senhor dos Anéis, é o texto mais longo em quenya que Tolkien publicou: “Namárië”.'],
       items: [
         { term: 'Aiya!', meaning: 'Salve! (saudação)' },
         { term: 'Namárië!', meaning: 'Adeus!' },
         { term: 'Elen síla lúmenn’ omentielvo.', meaning: 'Uma estrela brilha sobre a hora do nosso encontro.' },
-        { term: 'nai', meaning: 'que seja (para desejos: «Nai hiruvalyë Valimar» — que tu encontres Valimar)' },
+        { term: 'nai', meaning: 'que seja (para desejos: “Nai hiruvalyë Valimar” — que tu encontres Valimar)' },
       ],
       quiz: [
-        { q: 'Como se diz «adeus»?', options: ['Namárië', 'Aiya', 'Elen'], answer: 0 },
-        { q: 'De quem é a canção «Namárië»?', options: ['Galadriel', 'Gandalf', 'Frodo'], answer: 0 },
+        { q: 'Como se diz “adeus”?', options: ['Namárië', 'Aiya', 'Elen'], answer: 0 },
+        { q: 'De quem é a canção “Namárië”?', options: ['Galadriel', 'Gandalf', 'Frodo'], answer: 0 },
       ],
     },
   ],

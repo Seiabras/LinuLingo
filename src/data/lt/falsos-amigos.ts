@@ -8,7 +8,7 @@ export const FALSE_FRIENDS_LT: FalseFriend[] = [
   // ——— palavrinhas que aparecem em toda frase ———
   {
     word: 'ir',
-    means: 'e (conjunção); também («ir aš», e eu também)',
+    means: 'e (conjunção); também (“ir aš”, e eu também)',
     looksLike: 'ir (o verbo)',
     forThat: 'eiti (a pé), važiuoti (de carro, de ônibus)',
     emoji: '➕',
@@ -32,7 +32,7 @@ export const FALSE_FRIENDS_LT: FalseFriend[] = [
   },
   {
     word: 'ne',
-    means: 'não (e, grudado no verbo, a negação: «nežinau», não sei)',
+    means: 'não (e, grudado no verbo, a negação: “nežinau”, não sei)',
     looksLike: 'né (não é?)',
     forThat: 'ar ne?, tiesa?',
     emoji: '🙅',
@@ -40,7 +40,7 @@ export const FALSE_FRIENDS_LT: FalseFriend[] = [
   },
   {
     word: 'o',
-    means: 'e, mas (conjunção de contraste: «isto, e aquilo outro»)',
+    means: 'e, mas (conjunção de contraste: “isto, e aquilo outro”)',
     looksLike: 'o (o artigo)',
     forThat: '— (o lituano dispensa artigos)',
     emoji: '↔️',
@@ -56,7 +56,7 @@ export const FALSE_FRIENDS_LT: FalseFriend[] = [
   },
   {
     word: 'man',
-    means: 'para mim, me (o dativo de «aš», eu)',
+    means: 'para mim, me (o dativo de “aš”, eu)',
     looksLike: 'man (homem, em inglês)',
     forThat: 'vyras',
     emoji: '🙋',
@@ -96,7 +96,7 @@ export const FALSE_FRIENDS_LT: FalseFriend[] = [
   },
   {
     word: 'ką',
-    means: 'o quê (o acusativo de «kas»); soa como «cá», com o «a» longo',
+    means: 'o quê (o acusativo de “kas”); soa como “cá”, com o “a” longo',
     looksLike: 'cá (aqui)',
     forThat: 'čia',
     emoji: '❓',
@@ -104,7 +104,7 @@ export const FALSE_FRIENDS_LT: FalseFriend[] = [
   },
   {
     word: 'yra',
-    means: 'é, está, fica; há, existe (a 3ª pessoa de «būti»)',
+    means: 'é, está, fica; há, existe (a 3ª pessoa de “būti”)',
     looksLike: 'ira (raiva)',
     forThat: 'pyktis',
     emoji: '📍',
@@ -153,7 +153,7 @@ export const FALSE_FRIENDS_LT: FalseFriend[] = [
   },
   {
     word: 'visas',
-    means: 'todo, inteiro (no plural, «visi», todos)',
+    means: 'todo, inteiro (no plural, “visi”, todos)',
     looksLike: 'visa (o visto do passaporte)',
     forThat: 'viza',
     emoji: '🌐',
@@ -161,7 +161,7 @@ export const FALSE_FRIENDS_LT: FalseFriend[] = [
   },
   {
     word: 'brangus',
-    means: 'caro; também querido («brangioji», minha querida)',
+    means: 'caro; também querido (“brangioji”, minha querida)',
     looksLike: 'branco',
     forThat: 'baltas',
     emoji: '💸',
@@ -227,7 +227,7 @@ export const FALSE_FRIENDS_LT: FalseFriend[] = [
   },
   {
     word: 'kopos',
-    means: 'dunas (no singular, «kopa»)',
+    means: 'dunas (no singular, “kopa”)',
     looksLike: 'copos',
     forThat: 'stiklinės',
     emoji: '🏜️',
@@ -235,8 +235,8 @@ export const FALSE_FRIENDS_LT: FalseFriend[] = [
   },
   {
     word: 'marios',
-    means: 'laguna, lagoa costeira; «Kuršių marios» é a Laguna da Curlândia',
-    looksLike: 'mares (e o russo «море», mar)',
+    means: 'laguna, lagoa costeira; “Kuršių marios” é a Laguna da Curlândia',
+    looksLike: 'mares (e o russo “море”, mar)',
     forThat: 'jūra',
     emoji: '🌊',
     example: ['Kuršių marios skiria Neringą nuo žemyno.', 'A Laguna da Curlândia separa Neringa do continente.'],
@@ -293,7 +293,7 @@ export const FALSE_FRIENDS_LT: FalseFriend[] = [
   {
     word: 'šokti',
     means: 'dançar; também pular',
-    looksLike: 'choque (e o inglês «shock»)',
+    looksLike: 'choque (e o inglês “shock”)',
     forThat: 'šokas (o susto), elektros smūgis (o choque elétrico)',
     emoji: '💃',
     example: ['Ar nori šokti?', 'Quer dançar?'],
@@ -302,7 +302,7 @@ export const FALSE_FRIENDS_LT: FalseFriend[] = [
     word: 'ačiū',
     means: 'obrigado, obrigada',
     looksLike: 'atchim (o espirro)',
-    forThat: 'apčiū (e quem ouve diz «Į sveikatą!», saúde!)',
+    forThat: 'apčiū (e quem ouve diz “Į sveikatą!”, saúde!)',
     emoji: '🙏',
     example: ['Ačiū už pagalbą!', 'Obrigado pela ajuda!'],
   },

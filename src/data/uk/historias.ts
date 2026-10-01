@@ -27,7 +27,7 @@ export const STORIES_UK: StorySeed[] = [
         emoji: '😊',
         choices: [
           { text: 'Я з Курити́би.', translation: 'Sou de Curitiba.', next: 'final_bom' },
-          { text: 'Я п’ю во́ду.', translation: 'Eu bebo água.', wrong: 'Isso não responde de onde você é. Use «Я з…».' },
+          { text: 'Я п’ю во́ду.', translation: 'Eu bebo água.', wrong: 'Isso não responde de onde você é. Use “Я з…”.' },
         ],
       },
       final_bom: {
@@ -60,7 +60,7 @@ export const STORIES_UK: StorySeed[] = [
         emoji: '📱',
         choices: [
           { text: 'Так, у ме́не є брат і сестра́.', translation: 'Sim, tenho um irmão e uma irmã.', next: 'simia' },
-          { text: 'Мій дім вели́кий.', translation: 'A minha casa é grande.', wrong: 'Isso não responde se você tem irmãos. Use «у ме́не є…».' },
+          { text: 'Мій дім вели́кий.', translation: 'A minha casa é grande.', wrong: 'Isso não responde se você tem irmãos. Use “у ме́не є…”.' },
         ],
       },
       simia: {
@@ -69,7 +69,7 @@ export const STORIES_UK: StorySeed[] = [
         emoji: '🍽️',
         choices: [
           { text: 'Так, ду́же дя́кую!', translation: 'Sim, muito obrigado!', next: 'final_bom' },
-          { text: 'Я з Курити́би.', translation: 'Sou de Curitiba.', wrong: 'Andrii fez um convite: responda com «так» ou «ні, дя́кую».' },
+          { text: 'Я з Курити́би.', translation: 'Sou de Curitiba.', wrong: 'Andrii fez um convite: responda com “так” ou “ні, дя́кую”.' },
         ],
       },
       final_bom: {

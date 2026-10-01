@@ -8,7 +8,7 @@ export const FALSE_FRIENDS_LV: FalseFriend[] = [
   // ——— os clássicos: caem em qualquer conversa ———
   {
     word: 'ola',
-    means: 'ovo (e o «o» soa como o ditongo «uo»: «uola»)',
+    means: 'ovo (e o “o” soa como o ditongo “uo”: “uola”)',
     looksLike: 'olá',
     forThat: 'sveiki; labdien',
     emoji: '🥚',
@@ -16,7 +16,7 @@ export const FALSE_FRIENDS_LV: FalseFriend[] = [
   },
   {
     word: 'ir',
-    means: 'é, está; há, existe (a 3ª pessoa de «būt», ser/estar)',
+    means: 'é, está; há, existe (a 3ª pessoa de “būt”, ser/estar)',
     looksLike: 'ir (o verbo de ir a algum lugar)',
     forThat: 'iet; braukt',
     emoji: '🟰',
@@ -24,7 +24,7 @@ export const FALSE_FRIENDS_LV: FalseFriend[] = [
   },
   {
     word: 'vai',
-    means: 'ou; e também a partícula que abre as perguntas de sim ou não («Tēju vai kafiju?» = chá ou café?)',
+    means: 'ou; e também a partícula que abre as perguntas de sim ou não (“Tēju vai kafiju?” = chá ou café?)',
     looksLike: 'vai (do verbo ir)',
     forThat: 'viņš iet',
     emoji: '❓',
@@ -49,7 +49,7 @@ export const FALSE_FRIENDS_LV: FalseFriend[] = [
   {
     word: 'nē',
     means: 'não (como resposta)',
-    looksLike: 'né? (o «não é?» do fim da frase)',
+    looksLike: 'né? (o “não é?” do fim da frase)',
     forThat: 'vai ne?',
     emoji: '🙅',
     example: ['— Vai tu esi no Rīgas? — Nē, es esmu no Brazīlijas.', '— Você é de Riga? — Não, eu sou do Brasil.'],
@@ -72,7 +72,7 @@ export const FALSE_FRIENDS_LV: FalseFriend[] = [
   },
   {
     word: 'viņa',
-    means: 'ela (o «ņ» soa como o nosso «nh»: «vinha»)',
+    means: 'ela (o “ņ” soa como o nosso “nh”: “vinha”)',
     looksLike: 'vinha (a plantação de uva)',
     forThat: 'vīna dārzs',
     emoji: '👩',
@@ -97,7 +97,7 @@ export const FALSE_FRIENDS_LV: FalseFriend[] = [
   },
   {
     word: 'kāzas',
-    means: 'casamento, a festa (só existe no plural); o «ā» longo é o que separa das «kazas», as cabras',
+    means: 'casamento, a festa (só existe no plural); o “ā” longo é o que separa das “kazas”, as cabras',
     looksLike: 'casas',
     forThat: 'mājas',
     emoji: '💒',
@@ -219,7 +219,7 @@ export const FALSE_FRIENDS_LV: FalseFriend[] = [
   {
     word: 'grāmata',
     means: 'livro',
-    looksLike: 'gramática (e, para quem sabe russo, «грамота», diploma, certificado)',
+    looksLike: 'gramática (e, para quem sabe russo, “грамота”, diploma, certificado)',
     forThat: 'gramatika',
     emoji: '📖',
     example: ['Es lasu grāmatu latviešu valodā.', 'Estou lendo um livro em letão.'],
@@ -268,7 +268,7 @@ export const FALSE_FRIENDS_LV: FalseFriend[] = [
   {
     word: 'sals',
     means: 'frio intenso, geada (abaixo de zero)',
-    looksLike: 'sal (o sal é «sāls», com o «ā» longo!)',
+    looksLike: 'sal (o sal é “sāls”, com o “ā” longo!)',
     forThat: 'sāls',
     emoji: '🥶',
     example: ['Naktī bija stiprs sals.', 'De noite fez um frio de rachar.'],
@@ -334,7 +334,7 @@ export const FALSE_FRIENDS_LV: FalseFriend[] = [
   {
     word: 'gods',
     means: 'honra',
-    looksLike: '«год» (ano, em russo) e gods (deuses, em inglês)',
+    looksLike: '“год” (ano, em russo) e gods (deuses, em inglês)',
     forThat: 'gads; dievi',
     emoji: '🎖️',
     example: ['Tas man ir liels gods.', 'Para mim é uma grande honra.'],
@@ -342,7 +342,7 @@ export const FALSE_FRIENDS_LV: FalseFriend[] = [
   {
     word: 'strādāt',
     means: 'trabalhar',
-    looksLike: '«страдать» (sofrer, em russo)',
+    looksLike: '“страдать” (sofrer, em russo)',
     forThat: 'ciest',
     emoji: '💼',
     example: ['Es strādāju skolā.', 'Eu trabalho numa escola.'],

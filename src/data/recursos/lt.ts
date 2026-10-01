@@ -216,7 +216,7 @@ export const RECURSOS_LT: LanguageResources = {
     'A tônica é livre e muda de lugar na declinação (rankà, mas rañką), e a escrita não a mostra. Aprenda cada palavra ouvindo e use o Kirčiuoklis para marcar a tônica dos textos que ler.',
     'Decore cada substantivo com o genitivo (namas, namo; knyga, knygos): é ele que diz a declinação e deixa você montar os outros casos.',
     'O lituano e o letão são primos, mas não se entendem sem estudo. Quem sabe russo ou polonês reconhece muitos empréstimos (knyga, stalas, ponas), mas a gramática é outra.',
-    'Em Vilnius muita gente passa para o inglês ao ouvir sotaque. Peça: «Kalbėkime lietuviškai, prašau!» («Vamos falar lituano, por favor!»).',
+    'Em Vilnius muita gente passa para o inglês ao ouvir sotaque. Peça: “Kalbėkime lietuviškai, prašau!” (“Vamos falar lituano, por favor!”).',
     'No Brasil, a comunidade lituana mais conhecida fica na Vila Zelina, em São Paulo, onde imigrantes chegaram a partir dos anos 1920.',
   ],
 };

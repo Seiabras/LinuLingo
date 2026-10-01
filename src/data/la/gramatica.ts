@@ -57,10 +57,10 @@ export const GRAMMAR_LA: GrammarTopic[] = [
     level: 'A1.1',
     title: 'Os pronomes e o verbo sum',
     emoji: '🙋',
-    summary: 'Seis pronomes de sujeito, quase sempre dispensáveis porque a terminação do verbo já diz quem fala; o verbo «sum» ("ser/estar") conjugado no presente.',
+    summary: 'Seis pronomes de sujeito, quase sempre dispensáveis porque a terminação do verbo já diz quem fala; o verbo “sum” ("ser/estar") conjugado no presente.',
     sections: [
       {
-        text: 'Como em português, o pronome de sujeito costuma sumir: «Romanus sum» já é «(eu) sou romano». Usa-se o pronome só para dar ênfase ou evitar ambiguidade.',
+        text: 'Como em português, o pronome de sujeito costuma sumir: “Romanus sum” já é “(eu) sou romano”. Usa-se o pronome só para dar ênfase ou evitar ambiguidade.',
         table: {
           head: ['Pronome', 'Tradução', 'sum (presente)'],
           rows: [
@@ -79,7 +79,7 @@ export const GRAMMAR_LA: GrammarTopic[] = [
       },
     ],
     pitfalls: ['Confundir "es" (tu és) com "est" (ele/ela é): são pessoas diferentes do mesmo verbo, mas se parecem bastante na escrita.'],
-    quiz: [{ question: 'Como se diz "vocês são" em latim?', options: ['vos estis', 'vos es', 'nos sumus'], answer: 'vos estis', explanation: '«Vos» é a segunda pessoa do plural, com a forma «estis» do verbo sum.' }],
+    quiz: [{ question: 'Como se diz "vocês são" em latim?', options: ['vos estis', 'vos es', 'nos sumus'], answer: 'vos estis', explanation: '“Vos” é a segunda pessoa do plural, com a forma “estis” do verbo sum.' }],
   },
   {
     id: 'la-g3',
@@ -97,7 +97,7 @@ export const GRAMMAR_LA: GrammarTopic[] = [
       },
       {
         heading: 'O possessivo meus/mea/meum concorda com a palavra',
-        text: 'Como os adjetivos em geral, «meus» ("meu/minha") muda de terminação para combinar com o gênero da palavra que acompanha: meus (masculino), mea (feminino), meum (neutro).',
+        text: 'Como os adjetivos em geral, “meus” ("meu/minha") muda de terminação para combinar com o gênero da palavra que acompanha: meus (masculino), mea (feminino), meum (neutro).',
         table: {
           head: ['Gênero', 'Meu/minha', 'Exemplo'],
           rows: [

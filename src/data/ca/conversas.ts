@@ -37,7 +37,7 @@ export const SCENARIOS_CA: ScenarioSeed[] = [
     cefr: 'A1',
     register: 'formal',
     persona: 'Montse, cambrera',
-    description: 'Demani una beguda i pagui el compte. Registre formal, amb «vostè».',
+    description: 'Demani una beguda i pagui el compte. Registre formal, amb “vostè”.',
     turns: [
       { bot: 'Bon dia! Què li poso?', botTranslation: 'Bom dia! O que lhe sirvo?', keywords: ['cafè', 'te', 'aigua', 'cervesa', 'vi', 'suc'], suggestions: ['Un cafè amb llet, si us plau.', 'Un te, si us plau.'], registerBreakers: ['tio', 'guai'] },
       { bot: 'Sol o amb gel?', botTranslation: 'Puro ou com gelo?', keywords: ['sol', 'gel', 'amb'], suggestions: ['Sol, si us plau.', 'Amb gel, si us plau.'] },
@@ -52,7 +52,7 @@ export const SCENARIOS_CA: ScenarioSeed[] = [
     cefr: 'A2',
     register: 'formal',
     persona: 'Jordi, recepcionista',
-    description: 'Faça o check-in e tire dúvidas na recepção. Registro formal, com «vostè».',
+    description: 'Faça o check-in e tire dúvidas na recepção. Registro formal, com “vostè”.',
     turns: [
       { bot: 'Bona nit! Benvingut. Té una reserva?', botTranslation: 'Boa noite! Bem-vindo. O senhor tem uma reserva?', keywords: ['sí', 'reserva', 'nom', 'no', 'habitació'], suggestions: ['Sí, tinc una reserva a nom de Silva.'], registerBreakers: ['tu', 'tens', 'si us plau tio'] },
       { bot: 'Perfecte. El passaport, si us plau.', botTranslation: 'Perfeito. O passaporte, por favor.', keywords: ['aquí', 'té', 'sí'], suggestions: ['Aquí el té.'] },
@@ -82,7 +82,7 @@ export const SCENARIOS_CA: ScenarioSeed[] = [
     cefr: 'B1',
     register: 'formal',
     persona: 'Senyora Puig, cap de recursos humans',
-    description: 'Apresente-se para uma vaga. Formalidade máxima, com «vostè».',
+    description: 'Apresente-se para uma vaga. Formalidade máxima, com “vostè”.',
     turns: [
       { bot: "Bon dia! Segui, si us plau. Parli'm una mica de vostè.", botTranslation: 'Bom dia! Sente-se, por favor. Fale-me um pouco sobre o senhor.', keywords: ['em dic', 'soc', 'treballo', 'tinc'], suggestions: ['Em dic Ana, soc del Brasil i treballo en màrqueting.'], registerBreakers: ['ei', 'tu', 'tio'] },
       { bot: 'Per què vol treballar a la nostra empresa?', botTranslation: 'Por que o senhor quer trabalhar na nossa empresa?', keywords: ['perquè', 'vull', "m'agrada", 'empresa', 'experiència'], suggestions: ["Perquè m'agrada l'empresa i vull aprendre."], registerBreakers: ['tu', 'tio'] },

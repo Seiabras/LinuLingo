@@ -20,8 +20,8 @@ export const CURSO_LIBRAS: MiniCourse = {
       emoji: '🔤',
       intro: [
         'A datilologia é o alfabeto feito com a mão: cada letra tem uma configuração. Ela serve para soletrar nomes próprios e palavras que ainda não têm sinal — não é a Libras em si, assim como soletrar não é falar português.',
-        'O alfabeto da Libras usa uma mão só, a dominante (a direita, para os destros), na frente do corpo, na altura do ombro. Algumas letras têm movimento: o «J» e o «Z» desenham a letra no ar, e o «H», o «K», o «X», o «Y» e o «Ç» também se mexem.',
-        'Toque em «Ver em Libras» para o avatar mostrar cada letra. Depois, tente soletrar o seu nome.',
+        'O alfabeto da Libras usa uma mão só, a dominante (a direita, para os destros), na frente do corpo, na altura do ombro. Algumas letras têm movimento: o “J” e o “Z” desenham a letra no ar, e o “H”, o “K”, o “X”, o “Y” e o “Ç” também se mexem.',
+        'Toque em “Ver em Libras” para o avatar mostrar cada letra. Depois, tente soletrar o seu nome.',
       ],
       items: [
         { term: 'A', meaning: 'letra A', vlibras: 'A' },
@@ -70,7 +70,7 @@ export const CURSO_LIBRAS: MiniCourse = {
       intro: [
         'Numa apresentação em Libras, depois do nome soletrado, costuma-se dizer se a pessoa é surda ou ouvinte e mostrar o sinal-nome, se tiver.',
         'O sinal-nome é dado por pessoas surdas, a partir de um traço físico, de um jeito de ser ou da letra do nome. Ninguém escolhe o próprio: ele é um presente da comunidade.',
-        'A ordem das palavras não é a do português: «Meu nome é Ana» costuma ser sinalizado como NOME MEU A-N-A.',
+        'A ordem das palavras não é a do português: “Meu nome é Ana” costuma ser sinalizado como NOME MEU A-N-A.',
       ],
       items: [
         { term: 'EU', meaning: 'eu (aponta para o próprio peito)', vlibras: 'eu' },
@@ -84,7 +84,7 @@ export const CURSO_LIBRAS: MiniCourse = {
       ],
       quiz: [
         { q: 'Quem dá o sinal-nome de uma pessoa?', options: ['Ela mesma', 'A comunidade surda', 'O cartório'], answer: 1 },
-        { q: 'Como se diz «eu» e «você» em Libras?', options: ['Apontando para si e para a pessoa', 'Soletrando E-U', 'Não se diz'], answer: 0, why: 'Os pronomes usam o espaço: apontar é gramática.' },
+        { q: 'Como se diz “eu” e “você” em Libras?', options: ['Apontando para si e para a pessoa', 'Soletrando E-U', 'Não se diz'], answer: 0, why: 'Os pronomes usam o espaço: apontar é gramática.' },
         { q: 'A ordem dos sinais segue sempre a do português?', options: ['Sim', 'Não: a Libras tem sintaxe própria'], answer: 1 },
       ],
     },
@@ -116,8 +116,8 @@ export const CURSO_LIBRAS: MiniCourse = {
       title: 'Números',
       emoji: '🔢',
       intro: [
-        'Na Libras, os números de 1 a 4 têm duas formas: uma para contar quantidade («dois livros») e outra para os números em si (códigos, telefone, documentos).',
-        'Idade, horas e dinheiro às vezes se juntam ao número num sinal só: a mão faz o número no lugar ou com o movimento do sinal de «anos» ou de «hora».',
+        'Na Libras, os números de 1 a 4 têm duas formas: uma para contar quantidade (“dois livros”) e outra para os números em si (códigos, telefone, documentos).',
+        'Idade, horas e dinheiro às vezes se juntam ao número num sinal só: a mão faz o número no lugar ou com o movimento do sinal de “anos” ou de “hora”.',
       ],
       items: [
         { term: '1', meaning: 'um', vlibras: '1' },
@@ -180,8 +180,8 @@ export const CURSO_LIBRAS: MiniCourse = {
       title: 'Sentimentos',
       emoji: '💛',
       intro: [
-        'A intensidade está no rosto e no movimento: FELIZ com um sorriso contido é «contente»; com o rosto aberto e o movimento maior, é «muito feliz».',
-        'Sinalizar TRISTE com um sorriso soa tão estranho quanto dizer «estou triste» rindo: a expressão tem de combinar com o sinal.',
+        'A intensidade está no rosto e no movimento: FELIZ com um sorriso contido é “contente”; com o rosto aberto e o movimento maior, é “muito feliz”.',
+        'Sinalizar TRISTE com um sorriso soa tão estranho quanto dizer “estou triste” rindo: a expressão tem de combinar com o sinal.',
       ],
       items: [
         { term: 'FELIZ', meaning: 'feliz', vlibras: 'feliz' },

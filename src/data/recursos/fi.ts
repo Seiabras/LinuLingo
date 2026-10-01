@@ -28,7 +28,7 @@ export const RECURSOS_FI: LanguageResources = {
       ],
       where:
         'Só na Finlândia, em várias cidades (Helsinque, Tampere, Turku, Oulu…), em datas fixas ao longo do ano. A inscrição é online, em yki.opintopolku.fi, e as vagas de finlandês intermediário esgotam rápido: fique de olho na abertura. Não há aplicação no Brasil nem pela internet',
-      tip: 'Estude o finlandês falado (puhekieli) junto com o escrito: nas partes de escuta e de fala, o «mä oon» aparece tanto quanto o «minä olen». A Yle tem um pacote de treino gratuito para o YKI, e o site da Opetushallitus traz tarefas de exemplo.',
+      tip: 'Estude o finlandês falado (puhekieli) junto com o escrito: nas partes de escuta e de fala, o “mä oon” aparece tanto quanto o “minä olen”. A Yle tem um pacote de treino gratuito para o YKI, e o site da Opetushallitus traz tarefas de exemplo.',
       url: 'https://www.oph.fi/en/national-certificates-language-proficiency-yki',
     },
     {
@@ -113,7 +113,7 @@ export const RECURSOS_FI: LanguageResources = {
       by: 'Rike Jokela',
       year: '2018–2021',
       level: 'B2',
-      why: 'Policial nórdico em Helsinque (lançado lá fora como «Deadwind»): vocabulário de investigação e finlandês falado de verdade.',
+      why: 'Policial nórdico em Helsinque (lançado lá fora como “Deadwind”): vocabulário de investigação e finlandês falado de verdade.',
     },
     {
       kind: 'serie',
@@ -121,7 +121,7 @@ export const RECURSOS_FI: LanguageResources = {
       by: 'Miikko Oikkonen',
       year: '2016–2020',
       level: 'B2',
-      why: 'Um detetive de Helsinque se muda para Lappeenranta, perto da fronteira russa (lançada lá fora como «Bordertown»); crimes, cidade pequena e muito diálogo.',
+      why: 'Um detetive de Helsinque se muda para Lappeenranta, perto da fronteira russa (lançada lá fora como “Bordertown”); crimes, cidade pequena e muito diálogo.',
     },
     {
       kind: 'serie',
@@ -226,28 +226,28 @@ export const RECURSOS_FI: LanguageResources = {
       by: 'Käärijä',
       year: '2023',
       level: 'B1',
-      why: 'Segundo lugar no Eurovision 2023 e fenômeno na Finlândia: rap e pop em puhekieli («mä», «sä») com refrão fácil de cantar.',
+      why: 'Segundo lugar no Eurovision 2023 e fenômeno na Finlândia: rap e pop em puhekieli (“mä”, “sä”) com refrão fácil de cantar.',
     },
     {
       kind: 'musica',
       title: 'Missä muruseni on',
       by: 'Jenni Vartiainen',
       level: 'A2',
-      why: 'Pop de letra simples e repetitiva, um dos maiores sucessos finlandeses dos anos 2010; bom para treinar perguntas com «missä».',
+      why: 'Pop de letra simples e repetitiva, um dos maiores sucessos finlandeses dos anos 2010; bom para treinar perguntas com “missä”.',
     },
     {
       kind: 'musica',
       title: 'Murheellisten laulujen maa',
       by: 'Eppu Normaali',
       level: 'B1',
-      why: 'Clássico do rock finlandês; o título, «a terra das canções tristes», virou apelido do próprio país.',
+      why: 'Clássico do rock finlandês; o título, “a terra das canções tristes”, virou apelido do próprio país.',
     },
     {
       kind: 'musica',
       title: 'Finlandia-hymni',
       by: 'Jean Sibelius (música) e V. A. Koskenniemi (letra)',
       level: 'B2',
-      why: 'O trecho coral de «Finlandia», cantado como um segundo hino nacional: letra solene e finlandês muito bem articulado.',
+      why: 'O trecho coral de “Finlandia”, cantado como um segundo hino nacional: letra solene e finlandês muito bem articulado.',
     },
     {
       kind: 'musica',
@@ -288,10 +288,10 @@ export const RECURSOS_FI: LanguageResources = {
     },
   ],
   tips: [
-    'O finlandês não é parente do português nem do sueco: é uma língua urálica, prima do estoniano. Pense em raiz + sufixos: talo («casa») → talossa («na casa») → taloissamme («nas nossas casas»).',
-    'Os 15 casos fazem o papel das nossas preposições. Comece pelos de lugar (talossa «na casa», talosta «da casa», taloon «para a casa») e pelo partitivo, que aparece o tempo todo.',
-    'Aprenda cedo a língua falada (puhekieli): «mä oon» em vez de «minä olen», «mennään» em vez de «menemme». Nas séries e na rua quase ninguém fala como o livro.',
-    'A pronúncia é fácil para brasileiros — lê-se como se escreve —, mas a duração muda o sentido: tuli («fogo»), tuuli («vento») e tulli («alfândega») são palavras diferentes.',
+    'O finlandês não é parente do português nem do sueco: é uma língua urálica, prima do estoniano. Pense em raiz + sufixos: talo (“casa”) → talossa (“na casa”) → taloissamme (“nas nossas casas”).',
+    'Os 15 casos fazem o papel das nossas preposições. Comece pelos de lugar (talossa “na casa”, talosta “da casa”, taloon “para a casa”) e pelo partitivo, que aparece o tempo todo.',
+    'Aprenda cedo a língua falada (puhekieli): “mä oon” em vez de “minä olen”, “mennään” em vez de “menemme”. Nas séries e na rua quase ninguém fala como o livro.',
+    'A pronúncia é fácil para brasileiros — lê-se como se escreve —, mas a duração muda o sentido: tuli (“fogo”), tuuli (“vento”) e tulli (“alfândega”) são palavras diferentes.',
     'Harmonia vocálica: a, o, u não se misturam com ä, ö, y na mesma palavra, e os sufixos se adaptam (talossa, mas metsässä).',
   ],
 };

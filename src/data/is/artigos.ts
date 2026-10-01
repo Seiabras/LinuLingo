@@ -12,19 +12,19 @@ export const ARTIGOS_IS: ArticleSeed[] = [
       'Pylsan er ódýr og góð. Maður kaupir pylsu í sjoppu og borðar hana þar.',
     ],
     translation: [
-      'O cachorro-quente é uma comida muito popular na Islândia. Muita gente come o cachorro-quente «com tudo»: com cebola, ketchup e mostarda.',
+      'O cachorro-quente é uma comida muito popular na Islândia. Muita gente come o cachorro-quente “com tudo”: com cebola, ketchup e mostarda.',
       'O cachorro-quente é barato e bom. A gente compra o cachorro-quente num quiosque e come ali mesmo.',
     ],
     glossary: [
-      ['öllu', 'tudo (em «með öllu», com tudo)'],
+      ['öllu', 'tudo (em “með öllu”, com tudo)'],
       ['lauk', 'cebola'],
       ['tómatsósu', 'ketchup'],
       ['sinnepi', 'mostarda'],
       ['ódýr', 'barato'],
-      ['sjoppu', 'quiosque, lanchonete (de «sjoppa»)'],
+      ['sjoppu', 'quiosque, lanchonete (de “sjoppa”)'],
     ],
     questions: [
-      { q: 'O que quer dizer «pylsa með öllu»?', options: ['Cachorro-quente com tudo', 'Cachorro-quente sem nada', 'Peixe com batata'], answer: 0 },
+      { q: 'O que quer dizer “pylsa með öllu”?', options: ['Cachorro-quente com tudo', 'Cachorro-quente sem nada', 'Peixe com batata'], answer: 0 },
       { q: 'Como é o cachorro-quente, segundo o texto?', options: ['Caro e raro', 'Barato e bom', 'Só para o verão'], answer: 1 },
     ],
   },
@@ -40,12 +40,12 @@ export const ARTIGOS_IS: ArticleSeed[] = [
     ],
     translation: [
       'Na Islândia há muitas piscinas. A água é quente, porque vem da terra. As pessoas vão nadar o ano inteiro, também quando está frio lá fora.',
-      'Nas banheiras quentes («heitir pottar»), as pessoas ficam sentadas conversando sobre o tempo, as notícias e a política. Muitos dizem que o «heiti potturinn» é como o café dos islandeses.',
+      'Nas banheiras quentes (“heitir pottar”), as pessoas ficam sentadas conversando sobre o tempo, as notícias e a política. Muitos dizem que o “heiti potturinn” é como o café dos islandeses.',
       'Antes de entrar na piscina, é preciso se lavar bem, sem roupa de banho.',
     ],
     glossary: [
       ['jörðinni', 'a terra, o chão'],
-      ['árið', 'o ano (em «allt árið», o ano inteiro)'],
+      ['árið', 'o ano (em “allt árið”, o ano inteiro)'],
       ['pottunum / potturinn', 'as banheiras / a banheira (quentes, ao ar livre)'],
       ['veðrið', 'o tempo (clima)'],
       ['sundfata', 'roupa de banho'],
@@ -53,7 +53,7 @@ export const ARTIGOS_IS: ArticleSeed[] = [
     forms: [['kemur', 'koma']],
     questions: [
       { q: 'Por que a água das piscinas é quente?', options: ['Porque vem da terra', 'Porque é aquecida a gás', 'Porque o sol esquenta'], answer: 0 },
-      { q: 'Do que se fala nos «heitir pottar»?', options: ['Só de esporte', 'Do tempo, das notícias e da política', 'Ninguém fala nada'], answer: 1 },
+      { q: 'Do que se fala nos “heitir pottar”?', options: ['Só de esporte', 'Do tempo, das notícias e da política', 'Ninguém fala nada'], answer: 1 },
       { q: 'O que é preciso fazer antes de entrar na piscina?', options: ['Pagar em dinheiro', 'Lavar-se bem, sem roupa de banho', 'Pôr uma touca'], answer: 1 },
     ],
   },
@@ -69,13 +69,13 @@ export const ARTIGOS_IS: ArticleSeed[] = [
       'Og svo er það jólakötturinn: hann étur börn sem fá ekkert nýtt til að fara í fyrir jólin.',
     ],
     translation: [
-      'Na Islândia, não há um «jólasveinn» (rapaz do Natal), e sim treze: uns trolls brincalhões, e não Papais Noéis. Eles moram lá em cima nas montanhas, com a Grýla, que devora crianças malcriadas.',
+      'Na Islândia, não há um “jólasveinn” (rapaz do Natal), e sim treze: uns trolls brincalhões, e não Papais Noéis. Eles moram lá em cima nas montanhas, com a Grýla, que devora crianças malcriadas.',
       'Em dezembro, chega um jólasveinn por dia. As crianças põem um sapato na janela e ganham doce ou alguma coisinha nele se foram boazinhas. Se foram malcriadas, ganham uma batata.',
       'Os jólasveinar têm nomes divertidos: Stúfur é o menor, Hurðaskellir bate as portas, Gluggagægir espia pelas janelas e Kertasníkir rouba velas.',
-      'E ainda tem o Gato de Natal («jólakötturinn»): ele devora as crianças que não ganham nada novo para vestir antes do Natal.',
+      'E ainda tem o Gato de Natal (“jólakötturinn”): ele devora as crianças que não ganham nada novo para vestir antes do Natal.',
     ],
     glossary: [
-      ['jólasveinarnir / jólasveinn', 'os rapazes do Natal / o rapaz do Natal (os «Papais Noéis» islandeses)'],
+      ['jólasveinarnir / jólasveinn', 'os rapazes do Natal / o rapaz do Natal (os “Papais Noéis” islandeses)'],
       ['fjöllunum', 'as montanhas'],
       ['óþekk', 'malcriadas, desobedientes'],
       ['desember', 'dezembro'],
@@ -114,12 +114,12 @@ export const ARTIGOS_IS: ArticleSeed[] = [
     ],
     translation: [
       'O Alþingi é um dos parlamentos mais antigos do mundo. Foi fundado no ano de 930 em Þingvellir, e ali os chefes do país se reuniam uma vez por ano, no verão.',
-      'Na assembleia, as leis eram recitadas e as disputas resolvidas. O «lögsögumaður» (o recitador da lei) sabia as leis de cor e as dizia em voz alta, porque naquela época não havia livros em islandês.',
+      'Na assembleia, as leis eram recitadas e as disputas resolvidas. O “lögsögumaður” (o recitador da lei) sabia as leis de cor e as dizia em voz alta, porque naquela época não havia livros em islandês.',
       'No ano 1000, o Alþingi decidiu que os islandeses adotariam o cristianismo. Quem quisesse, porém, ainda podia fazer sacrifícios aos deuses antigos às escondidas.',
       'Hoje o Alþingi fica em Reykjavík, mas Þingvellir é parque nacional e Patrimônio Mundial da UNESCO. Ali dá para ver onde as placas da América do Norte e da Eurásia se afastam uma da outra.',
     ],
     glossary: [
-      ['Alþingi', 'o Alþingi, o parlamento islandês («a assembleia de todos»)'],
+      ['Alþingi', 'o Alþingi, o parlamento islandês (“a assembleia de todos”)'],
       ['höfðingjar', 'chefes, líderes'],
       ['lögsögumaðurinn', 'o recitador da lei'],
       ['heimsminjaskrá', 'a lista do Patrimônio Mundial'],
@@ -153,7 +153,7 @@ export const ARTIGOS_IS: ArticleSeed[] = [
     ],
     glossary: [
       ['flestum', 'a maioria (de)'],
-      ['handritunum', 'os manuscritos (dativo de «handritin»)'],
+      ['handritunum', 'os manuscritos (dativo de “handritin”)'],
       ['kálfskinn', 'pele de bezerro, pergaminho'],
     ],
     forms: [

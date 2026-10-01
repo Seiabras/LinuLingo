@@ -14,11 +14,11 @@ export const ROWS: VocabRow[] = [
   // ── Expressões ──
   ['здраво', 'oi, olá (informal; também serve de tchau)', 'interjeição', 'Expressões', '👋', 'Здраво! Како си?'],
   ['добар ден', 'bom dia; boa tarde (durante o dia)', 'interjeição', 'Expressões', '🌅', 'Добар ден! Како сте?'],
-  ['добровечер', 'boa noite (ao chegar; também «добра вечер»)', 'interjeição', 'Expressões', '🌇', 'Добровечер! Како сте?'],
+  ['добровечер', 'boa noite (ao chegar; também “добра вечер”)', 'interjeição', 'Expressões', '🌇', 'Добровечер! Како сте?'],
   ['добра ноќ', 'boa noite (ao se despedir ou ir dormir)', 'interjeição', 'Expressões', '🌙', 'Добра ноќ, мамо!'],
   ['довидување', 'tchau, até logo', 'interjeição', 'Expressões', '👋', 'Довидување и благодарам!'],
   ['благодарам', 'obrigado', 'interjeição', 'Expressões', '🙏', 'Многу благодарам!'],
-  ['молам', 'por favor; de nada (com respeito: «Ве молам»)', 'interjeição', 'Expressões', '🙏', 'Едно кафе, молам.'],
+  ['молам', 'por favor; de nada (com respeito: “Ве молам”)', 'interjeição', 'Expressões', '🙏', 'Едно кафе, молам.'],
   ['извинете', 'com licença, desculpe (formal)', 'interjeição', 'Expressões', '🙏', 'Извинете, каде е станицата?'],
   ['како си?', 'como vai? (informal)', 'expressão', 'Expressões', '🙂', 'Здраво, Ана! Како си?'],
   // ── Essenciais ──
@@ -46,7 +46,7 @@ export const ROWS: VocabRow[] = [
   ['тој', 'ele', 'pronome', 'Pessoas', '👨', 'Тој е од Битола.'],
   ['таа', 'ela', 'pronome', 'Pessoas', '👩', 'Таа е од Скопје.'],
   ['ние', 'nós', 'pronome', 'Pessoas', '🙌', 'Ние зборуваме македонски.'],
-  ['вие', 'vocês; o senhor, a senhora (formal, escrito «Вие»)', 'pronome', 'Pessoas', '🫵', 'Од каде сте вие?'],
+  ['вие', 'vocês; o senhor, a senhora (formal, escrito “Вие”)', 'pronome', 'Pessoas', '🫵', 'Од каде сте вие?'],
   ['тие', 'eles, elas', 'pronome', 'Pessoas', '👥', 'Тие живеат во Скопје.'],
   ['име', 'nome', 'substantivo', 'Pessoas', '🏷️', 'Моето име е Лину.', 'n'],
   ['пријател', 'amigo', 'substantivo', 'Pessoas', '🧑‍🤝‍🧑', 'Ова е мојот пријател.', 'm'],
@@ -99,7 +99,7 @@ export const ROWS: VocabRow[] = [
   ['четврток', 'quinta-feira', 'substantivo', 'Tempo', '📅', 'Денес е четврток.', 'm'],
   ['петок', 'sexta-feira', 'substantivo', 'Tempo', '📅', 'Денес е петок.', 'm'],
   ['сабота', 'sábado', 'substantivo', 'Tempo', '📅', 'Денес е сабота.', 'f'],
-  ['недела', 'domingo (também «semana»)', 'substantivo', 'Tempo', '📅', 'Денес е недела.', 'f'],
+  ['недела', 'domingo (também “semana”)', 'substantivo', 'Tempo', '📅', 'Денес е недела.', 'f'],
   // ── Cores ──
   ['црвен', 'vermelho', 'adjetivo', 'Cores', '🔴', 'Јаболкото е црвено.'],
   ['син', 'azul', 'adjetivo', 'Cores', '🔵', 'Небото е сино.'],

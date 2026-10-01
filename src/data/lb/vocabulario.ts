@@ -23,7 +23,7 @@ export const ROWS: VocabRow[] = [
   ['jo', 'sim', 'advérbio', 'Essenciais', '👍', 'Jo, gär!'],
   ['nee', 'não (resposta)', 'advérbio', 'Essenciais', '👎', 'Nee, merci.'],
   ['net', 'não (nega o verbo ou um adjetivo)', 'advérbio', 'Essenciais', '🚫', 'Ech weess et net.'],
-  ['an', 'e (vira «a» antes da maioria das consoantes)', 'conjunção', 'Essenciais', null, 'Brout a Kéis.'],
+  ['an', 'e (vira “a” antes da maioria das consoantes)', 'conjunção', 'Essenciais', null, 'Brout a Kéis.'],
   ['oder', 'ou', 'conjunção', 'Essenciais', null, 'Kaffi oder Téi?'],
   ['vill', 'muito', 'advérbio', 'Essenciais', null, 'Ech drénken net vill Kaffi.'],
   ['och', 'também', 'advérbio', 'Essenciais', null, 'Ech schwätzen och Lëtzebuergesch.'],
@@ -43,7 +43,7 @@ export const ROWS: VocabRow[] = [
   // ── Pessoas ──
   ['ech', 'eu', 'pronome', 'Pessoas', '🙋', 'Ech heeschen Anna.'],
   ['du', 'tu, você (informal)', 'pronome', 'Pessoas', '🫵', 'An du, wéi heeschs du?'],
-  ['hien', 'ele (vira «hie» antes da maioria das consoantes)', 'pronome', 'Pessoas', '👨', 'Hien ass mäi Frënd.'],
+  ['hien', 'ele (vira “hie” antes da maioria das consoantes)', 'pronome', 'Pessoas', '👨', 'Hien ass mäi Frënd.'],
   ['si', 'ela; eles, elas', 'pronome', 'Pessoas', '👩', 'Si ass meng Frëndin.'],
   ['mir', 'nós', 'pronome', 'Pessoas', '🙌', 'Mir si Frënn.'],
   ['dir', 'vocês (com maiúscula, Dir = o senhor, a senhora)', 'pronome', 'Pessoas', '👥', 'Wou wunnt dir?'],

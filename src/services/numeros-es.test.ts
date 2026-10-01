@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { spanishNumber, spanishOrdinal, spellSpanishNumbers } from '@/services/numeros/es';
 
-test('números em espanhol: de 16 a 29 numa palavra, cien × ciento, «y» só nas dezenas', () => {
+test('números em espanhol: de 16 a 29 numa palavra, cien × ciento, “y” só nas dezenas', () => {
   const cases: [number, string][] = [
     [0, 'cero'],
     [1, 'uno'],

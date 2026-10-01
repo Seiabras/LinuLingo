@@ -17,7 +17,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: '*nókʷts',
     origin_language: 'Protoindo-europeu',
     cognates: c(['lt', 'naktis'], ['ru', 'ночь'], ['la', 'nox, noctis'], ['pt', 'noite'], ['de', 'Nacht'], ['en', 'night']),
-    evolution_note: 'A «noite» indo-europeia, reconhecível em quase toda a família. No letão, a palavra é feminina e pertence ao pequeno grupo de femininos em -s, como sirds (coração) e govs (vaca).',
+    evolution_note: 'A “noite” indo-europeia, reconhecível em quase toda a família. No letão, a palavra é feminina e pertence ao pequeno grupo de femininos em -s, como sirds (coração) e govs (vaca).',
     transparent: false,
   },
   {
@@ -25,7 +25,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: '*ḱḗr',
     origin_language: 'Protoindo-europeu',
     cognates: c(['lt', 'širdis'], ['ru', 'сердце'], ['la', 'cor, cordis'], ['pt', 'coração, cordial'], ['en', 'heart'], ['gr', 'kardía']),
-    evolution_note: 'O «coração» indo-europeu: o latim cor deu o nosso «coração» e «cordial», o grego kardía deu «cardíaco». No báltico e no eslavo a palavra ganhou um -d- (sirds, сердце).',
+    evolution_note: 'O “coração” indo-europeu: o latim cor deu o nosso “coração” e “cordial”, o grego kardía deu “cardíaco”. No báltico e no eslavo a palavra ganhou um -d- (sirds, сердце).',
     transparent: false,
   },
   {
@@ -33,7 +33,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: '*méh₂tēr',
     origin_language: 'Protoindo-europeu',
     cognates: c(['lt', 'motina'], ['ru', 'мать'], ['la', 'mater'], ['pt', 'mãe, materno'], ['en', 'mother'], ['sa', 'mātár-']),
-    evolution_note: 'A «mãe» da família indo-europeia. No dia a dia os letões dizem mais mamma e, com carinho, māmiņa; māte fica para o registro neutro e para a «mãe-terra» (Zemes māte) da mitologia.',
+    evolution_note: 'A “mãe” da família indo-europeia. No dia a dia os letões dizem mais mamma e, com carinho, māmiņa; māte fica para o registro neutro e para a “mãe-terra” (Zemes māte) da mitologia.',
     transparent: false,
   },
   {
@@ -41,7 +41,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: '*bʰréh₂tēr',
     origin_language: 'Protoindo-europeu',
     cognates: c(['lt', 'brolis'], ['ru', 'брат'], ['la', 'frater'], ['pt', 'frade, fraterno'], ['en', 'brother'], ['de', 'Bruder']),
-    evolution_note: 'O «irmão» indo-europeu. O latim frater deu em português «frade» e «fraterno»; o «irmão» português vem de outra palavra latina, germanus. No letão, o diminutivo brālītis é muito usado.',
+    evolution_note: 'O “irmão” indo-europeu. O latim frater deu em português “frade” e “fraterno”; o “irmão” português vem de outra palavra latina, germanus. No letão, o diminutivo brālītis é muito usado.',
     transparent: false,
   },
   {
@@ -49,7 +49,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: '*dʰeh₁- (mamar)',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'filius (da mesma raiz)'], ['pt', 'filho'], ['la', 'femina (a que amamenta)'], ['pt', 'fêmea']),
-    evolution_note: 'Vem de uma raiz que queria dizer «mamar»: o filho é «o que mama». Da mesma raiz o latim tirou filius (daí «filho») e femina («a que amamenta», daí «fêmea»). O lituano usa outra palavra, sūnus.',
+    evolution_note: 'Vem de uma raiz que queria dizer “mamar”: o filho é “o que mama”. Da mesma raiz o latim tirou filius (daí “filho”) e femina (“a que amamenta”, daí “fêmea”). O lituano usa outra palavra, sūnus.',
     transparent: false,
   },
   {
@@ -57,7 +57,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: '*wĺ̥kʷos',
     origin_language: 'Protoindo-europeu',
     cognates: c(['lt', 'vilkas'], ['ru', 'волк'], ['en', 'wolf'], ['la', 'lupus'], ['pt', 'lobo'], ['sa', 'vṛ́kaḥ']),
-    evolution_note: 'O «lobo» indo-europeu. No latim a palavra entrou por um dialeto vizinho e virou lupus, de onde vem o nosso «lobo». Nas dainas, o lobo é muitas vezes chamado de «Dieva suns», o cachorro de Deus.',
+    evolution_note: 'O “lobo” indo-europeu. No latim a palavra entrou por um dialeto vizinho e virou lupus, de onde vem o nosso “lobo”. Nas dainas, o lobo é muitas vezes chamado de “Dieva suns”, o cachorro de Deus.',
     transparent: false,
   },
   {
@@ -65,7 +65,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: '*méh₁n̥s',
     origin_language: 'Protoindo-europeu',
     cognates: c(['lt', 'mėnuo'], ['ru', 'месяц'], ['la', 'mensis'], ['pt', 'mês'], ['en', 'moon, month']),
-    evolution_note: 'A mesma palavra serviu para «lua» e para «mês», porque o mês se contava pela lua. O letão usa mēness para a lua e mēnesis para o mês; o latim mensis deu o nosso «mês».',
+    evolution_note: 'A mesma palavra serviu para “lua” e para “mês”, porque o mês se contava pela lua. O letão usa mēness para a lua e mēnesis para o mês; o latim mensis deu o nosso “mês”.',
     transparent: false,
   },
   {
@@ -73,7 +73,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: '*sóh₂wl̥',
     origin_language: 'Protoindo-europeu',
     cognates: c(['lt', 'saulė'], ['la', 'sol'], ['pt', 'sol'], ['en', 'sun'], ['gr', 'hḗlios']),
-    evolution_note: 'O «sol» indo-europeu. Na mitologia letã, Saule é uma deusa, e as dainas chamam o sol com carinho de saulīte, «solzinho».',
+    evolution_note: 'O “sol” indo-europeu. Na mitologia letã, Saule é uma deusa, e as dainas chamam o sol com carinho de saulīte, “solzinho”.',
     transparent: false,
   },
   {
@@ -81,7 +81,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: '*h₂weh₁-nt- (soprar)',
     origin_language: 'Protoindo-europeu',
     cognates: c(['lt', 'vėjas'], ['ru', 'ветер'], ['la', 'ventus'], ['pt', 'vento'], ['en', 'wind']),
-    evolution_note: 'Da raiz que queria dizer «soprar». O diminutivo vējiņš aparece na daina mais cantada da Letônia: «Pūt, vējiņi!» (sopra, ventinho!).',
+    evolution_note: 'Da raiz que queria dizer “soprar”. O diminutivo vējiņš aparece na daina mais cantada da Letônia: “Pūt, vējiņi!” (sopra, ventinho!).',
     transparent: false,
   },
   {
@@ -89,7 +89,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: '*snéygʷʰs',
     origin_language: 'Protoindo-europeu',
     cognates: c(['lt', 'sniegas'], ['ru', 'снег'], ['en', 'snow'], ['la', 'nix, nivis'], ['pt', 'neve']),
-    evolution_note: 'A «neve» indo-europeia: no latim o s- inicial caiu (nix, nivis), e daí veio o nosso «neve». O báltico, o eslavo e o germânico guardaram o sn-.',
+    evolution_note: 'A “neve” indo-europeia: no latim o s- inicial caiu (nix, nivis), e daí veio o nosso “neve”. O báltico, o eslavo e o germânico guardaram o sn-.',
     transparent: false,
   },
   {
@@ -97,7 +97,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: '*dʰéǵʰōm',
     origin_language: 'Protoindo-europeu',
     cognates: c(['lt', 'žemė'], ['ru', 'земля'], ['la', 'humus'], ['pt', 'húmus, humilde']),
-    evolution_note: 'A «terra» indo-europeia. O latim humus (terra, chão) deu «húmus» e «humilde» (o que está rente ao chão). No letão, zeme é também «país», e Zemes māte, a «mãe-terra», é uma figura da mitologia.',
+    evolution_note: 'A “terra” indo-europeia. O latim humus (terra, chão) deu “húmus” e “humilde” (o que está rente ao chão). No letão, zeme é também “país”, e Zemes māte, a “mãe-terra”, é uma figura da mitologia.',
     transparent: false,
   },
   {
@@ -105,7 +105,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: '*h₂yuh₁n̥ḱós',
     origin_language: 'Protoindo-europeu',
     cognates: c(['lt', 'jaunas'], ['ru', 'юный'], ['la', 'iuvenis'], ['pt', 'jovem, juvenil'], ['en', 'young']),
-    evolution_note: 'O «jovem» indo-europeu. No letão, jauns quer dizer tanto «jovem» quanto «novo»: jauns cilvēks (um jovem), jauna māja (uma casa nova).',
+    evolution_note: 'O “jovem” indo-europeu. No letão, jauns quer dizer tanto “jovem” quanto “novo”: jauns cilvēks (um jovem), jauna māja (uma casa nova).',
     transparent: false,
   },
   {
@@ -113,7 +113,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: '*wiHrós',
     origin_language: 'Protoindo-europeu',
     cognates: c(['lt', 'vyras'], ['la', 'vir'], ['pt', 'viril, virtude']),
-    evolution_note: 'O «homem» indo-europeu, que no latim virou vir, de onde vêm «viril» e «virtude» (a qualidade de um vir). Em letão, vīrs é também «marido»: mans vīrs.',
+    evolution_note: 'O “homem” indo-europeu, que no latim virou vir, de onde vêm “viril” e “virtude” (a qualidade de um vir). Em letão, vīrs é também “marido”: mans vīrs.',
     transparent: false,
   },
   {
@@ -121,7 +121,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: '*deywós',
     origin_language: 'Protoindo-europeu',
     cognates: c(['lt', 'dievas'], ['la', 'deus'], ['pt', 'deus, divino'], ['sa', 'devá-']),
-    evolution_note: 'A palavra indo-europeia para «ser celeste», a mesma do latim deus. Antes do cristianismo, Dievs era o deus do céu da mitologia báltica, que aparece nas dainas cavalgando pelas colinas; depois passou a nomear o Deus cristão.',
+    evolution_note: 'A palavra indo-europeia para “ser celeste”, a mesma do latim deus. Antes do cristianismo, Dievs era o deus do céu da mitologia báltica, que aparece nas dainas cavalgando pelas colinas; depois passou a nomear o Deus cristão.',
     transparent: true,
   },
   {
@@ -137,7 +137,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: '*déḱm̥t',
     origin_language: 'Protoindo-europeu',
     cognates: c(['lt', 'dešimt'], ['ru', 'десять'], ['la', 'decem'], ['pt', 'dez, década'], ['en', 'ten']),
-    evolution_note: 'O «dez» indo-europeu. O latim decem deu «dez», «década» e «dezembro» (o décimo mês do antigo calendário romano). Os números de 11 a 19 do letão juntam o número a -padsmit: vienpadsmit, divpadsmit.',
+    evolution_note: 'O “dez” indo-europeu. O latim decem deu “dez”, “década” e “dezembro” (o décimo mês do antigo calendário romano). Os números de 11 a 19 do letão juntam o número a -padsmit: vienpadsmit, divpadsmit.',
     transparent: false,
   },
   {
@@ -145,7 +145,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: '*deh₃- (dar)',
     origin_language: 'Protoindo-europeu',
     cognates: c(['lt', 'duoti'], ['ru', 'дать'], ['la', 'dare, donum'], ['pt', 'dar, doar, dom']),
-    evolution_note: 'O «dar» indo-europeu: o latim dare deu «dar», e donum deu «dom» e «doar». Da mesma raiz o letão tem dāvana (presente) e dāvināt (dar de presente).',
+    evolution_note: 'O “dar” indo-europeu: o latim dare deu “dar”, e donum deu “dom” e “doar”. Da mesma raiz o letão tem dāvana (presente) e dāvināt (dar de presente).',
     transparent: true,
   },
   {
@@ -153,7 +153,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: '*h₁ed- (comer)',
     origin_language: 'Protoindo-europeu',
     cognates: c(['lt', 'ėsti'], ['ru', 'есть'], ['la', 'edere'], ['pt', 'comestível'], ['en', 'eat']),
-    evolution_note: 'O «comer» indo-europeu, que no latim aparece em edere e comedere («comer tudo»), de onde vêm «comer» e «comestível». Da mesma raiz o letão tem ēdiens (comida).',
+    evolution_note: 'O “comer” indo-europeu, que no latim aparece em edere e comedere (“comer tudo”), de onde vêm “comer” e “comestível”. Da mesma raiz o letão tem ēdiens (comida).',
     transparent: false,
   },
   {
@@ -161,7 +161,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: '*sed- (sentar)',
     origin_language: 'Protoindo-europeu',
     cognates: c(['lt', 'sėdėti'], ['ru', 'сидеть'], ['la', 'sedere'], ['pt', 'sede, sessão, sedentário'], ['en', 'sit']),
-    evolution_note: 'Da raiz «sentar»: o latim sedere deu «sede», «sessão», «sedentário» e «presidir» (sentar na frente). Em letão, «sēdēt» é estar sentado e «sēsties» é o movimento de sentar-se.',
+    evolution_note: 'Da raiz “sentar”: o latim sedere deu “sede”, “sessão”, “sedentário” e “presidir” (sentar na frente). Em letão, “sēdēt” é estar sentado e “sēsties” é o movimento de sentar-se.',
     transparent: false,
   },
   {
@@ -169,7 +169,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: '*steh₂- (ficar de pé)',
     origin_language: 'Protoindo-europeu',
     cognates: c(['lt', 'stovėti'], ['ru', 'стоять'], ['la', 'stare'], ['pt', 'estar, estátua, estável'], ['en', 'stand']),
-    evolution_note: 'Da raiz «ficar de pé»: o latim stare deu o nosso «estar», além de «estátua» e «estável». Em letão, stāvēt é estar de pé ou parado: autobuss stāv pieturā.',
+    evolution_note: 'Da raiz “ficar de pé”: o latim stare deu o nosso “estar”, além de “estátua” e “estável”. Em letão, stāvēt é estar de pé ou parado: autobuss stāv pieturā.',
     transparent: false,
   },
   {
@@ -177,7 +177,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: '*ǵneh₃- (conhecer)',
     origin_language: 'Protoindo-europeu',
     cognates: c(['lt', 'žinoti'], ['ru', 'знать'], ['la', '(g)noscere'], ['pt', 'conhecer, noção, diagnóstico'], ['en', 'know']),
-    evolution_note: 'Da raiz «conhecer», que deu o latim (g)noscere («conhecer», «noção») e o grego gignṓskein («diagnóstico»). Da mesma raiz o letão tem zinātne (ciência) e zināšanas (conhecimento).',
+    evolution_note: 'Da raiz “conhecer”, que deu o latim (g)noscere (“conhecer”, “noção”) e o grego gignṓskein (“diagnóstico”). Da mesma raiz o letão tem zinātne (ciência) e zināšanas (conhecimento).',
     transparent: false,
   },
   {
@@ -185,7 +185,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: '*gʷeyh₃- (viver)',
     origin_language: 'Protoindo-europeu',
     cognates: c(['lt', 'gyventi'], ['ru', 'жить'], ['la', 'vivere, vita'], ['pt', 'viver, vida'], ['gr', 'bíos']),
-    evolution_note: 'Da raiz «viver»: o latim vivere e vita deram «viver» e «vida», e o grego bíos deu «biologia». Em letão, da mesma raiz vêm dzīve (a vida) e dzīvnieks (animal, «o que vive»).',
+    evolution_note: 'Da raiz “viver”: o latim vivere e vita deram “viver” e “vida”, e o grego bíos deu “biologia”. Em letão, da mesma raiz vêm dzīve (a vida) e dzīvnieks (animal, “o que vive”).',
     transparent: false,
   },
   {
@@ -193,7 +193,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: '*lokys',
     origin_language: 'Protobáltico',
     cognates: c(['lt', 'lokys'], ['pr', 'clokis (prussiano antigo)']),
-    evolution_note: 'Palavra só das línguas bálticas: o eslavo e o germânico chamam o urso por apelidos («o que come mel», «o marrom»), talvez por medo de dizer o nome verdadeiro. O herói nacional Lāčplēsis é «o que rasga ursos».',
+    evolution_note: 'Palavra só das línguas bálticas: o eslavo e o germânico chamam o urso por apelidos (“o que come mel”, “o marrom”), talvez por medo de dizer o nome verdadeiro. O herói nacional Lāčplēsis é “o que rasga ursos”.',
     transparent: false,
   },
   {
@@ -210,7 +210,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: 'грамота (gramota)',
     origin_language: 'Russo antigo',
     cognates: c(['ru', 'грамота (documento)'], ['gr', 'grámmata (letras)'], ['pt', 'gramática']),
-    evolution_note: 'Os letões pegaram do russo antigo a palavra para «documento escrito», que por sua vez vinha do grego grámmata, «letras». No letão virou «livro»; da mesma raiz grega vem a nossa «gramática».',
+    evolution_note: 'Os letões pegaram do russo antigo a palavra para “documento escrito”, que por sua vez vinha do grego grámmata, “letras”. No letão virou “livro”; da mesma raiz grega vem a nossa “gramática”.',
     transparent: false,
   },
   {
@@ -218,7 +218,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: 'божница (bojnitsa)',
     origin_language: 'Russo antigo',
     cognates: c(['ru', 'божница (oratório)'], ['ru', 'бог (deus)']),
-    evolution_note: 'Uma das palavras cristãs mais antigas do letão: veio do russo antigo, onde queria dizer «lugar de deus, oratório», antes da chegada dos cruzados alemães. Curiosamente, a maior parte das igrejas letãs acabou sendo luterana.',
+    evolution_note: 'Uma das palavras cristãs mais antigas do letão: veio do russo antigo, onde queria dizer “lugar de deus, oratório”, antes da chegada dos cruzados alemães. Curiosamente, a maior parte das igrejas letãs acabou sendo luterana.',
     transparent: false,
   },
   {
@@ -226,7 +226,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: 'търгъ (tŭrgŭ)',
     origin_language: 'Russo antigo',
     cognates: c(['ru', 'торг (comércio)'], ['sv', 'torg (praça)'], ['lt', 'turgus']),
-    evolution_note: 'A palavra de «mercado» circulou entre os povos do Báltico: está no russo (торг), no sueco (torg, praça) e no lituano (turgus). O Centrāltirgus de Riga é o «mercado central».',
+    evolution_note: 'A palavra de “mercado” circulou entre os povos do Báltico: está no russo (торг), no sueco (torg, praça) e no lituano (turgus). O Centrāltirgus de Riga é o “mercado central”.',
     transparent: false,
   },
   {
@@ -251,7 +251,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: 'stunde',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'Stunde'], ['nl', 'stonde']),
-    evolution_note: 'Durante séculos, os mercadores e senhores de terra da Letônia falavam alemão, e muitas palavras do dia a dia vieram deles. Stunda é tanto «hora» quanto «aula» (stunda skolā).',
+    evolution_note: 'Durante séculos, os mercadores e senhores de terra da Letônia falavam alemão, e muitas palavras do dia a dia vieram deles. Stunda é tanto “hora” quanto “aula” (stunda skolā).',
     transparent: false,
   },
   {
@@ -259,7 +259,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: 'schap',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['nl', 'schap (prateleira)'], ['lt', 'spinta (outra origem)']),
-    evolution_note: 'O «armário» veio do baixo-alemão schap, e no letão ganhou a terminação -is da 2ª declinação: skapis, genitivo skapja, com a alternância consonantal.',
+    evolution_note: 'O “armário” veio do baixo-alemão schap, e no letão ganhou a terminação -is da 2ª declinação: skapis, genitivo skapja, com a alternância consonantal.',
     transparent: false,
   },
   {
@@ -267,7 +267,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: 'büxe',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'Hose (alto-alemão); Büx (dialetal)'], ['nl', 'broek']),
-    evolution_note: 'A «calça» veio do baixo-alemão büxe; no letão, como em português, a palavra só existe no plural: bikses.',
+    evolution_note: 'A “calça” veio do baixo-alemão büxe; no letão, como em português, a palavra só existe no plural: bikses.',
     transparent: false,
   },
   {
@@ -275,7 +275,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: 'schōle',
     origin_language: 'Baixo-alemão médio (do latim schola)',
     cognates: c(['de', 'Schule'], ['la', 'schola'], ['pt', 'escola'], ['gr', 'scholḗ (tempo livre)']),
-    evolution_note: 'A «escola» chegou pelo alemão, que a tirou do latim schola, que por sua vez veio do grego scholḗ, «tempo livre» — o tempo que sobrava para estudar.',
+    evolution_note: 'A “escola” chegou pelo alemão, que a tirou do latim schola, que por sua vez veio do grego scholḗ, “tempo livre” — o tempo que sobrava para estudar.',
     transparent: true,
   },
   {
@@ -283,7 +283,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: 'spēgel',
     origin_language: 'Baixo-alemão médio (do latim speculum)',
     cognates: c(['de', 'Spiegel'], ['la', 'speculum'], ['pt', 'espelho, especular']),
-    evolution_note: 'O «espelho» veio do baixo-alemão spēgel, que vinha do latim speculum — o mesmo que deu o nosso «espelho».',
+    evolution_note: 'O “espelho” veio do baixo-alemão spēgel, que vinha do latim speculum — o mesmo que deu o nosso “espelho”.',
     transparent: false,
   },
   {
@@ -291,7 +291,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: 'sipolle',
     origin_language: 'Baixo-alemão médio (do latim cepulla)',
     cognates: c(['de', 'Zwiebel'], ['la', 'cepulla'], ['pt', 'cebola']),
-    evolution_note: 'A «cebola» letã e a portuguesa são a mesma palavra latina, cepulla («cebolinha»): uma chegou ao letão pelo alemão dos mercadores, a outra ao português direto do latim.',
+    evolution_note: 'A “cebola” letã e a portuguesa são a mesma palavra latina, cepulla (“cebolinha”): uma chegou ao letão pelo alemão dos mercadores, a outra ao português direto do latim.',
     transparent: false,
   },
   {
@@ -299,7 +299,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: 'kerse',
     origin_language: 'Baixo-alemão médio (do latim cerasus)',
     cognates: c(['de', 'Kirsche'], ['la', 'cerasus'], ['pt', 'cereja']),
-    evolution_note: 'A «cereja» viajou do grego ao latim cerasus, do latim ao alemão e do alemão ao letão; o c- duro do latim virou o ķ palatal do letão.',
+    evolution_note: 'A “cereja” viajou do grego ao latim cerasus, do latim ao alemão e do alemão ao letão; o c- duro do latim virou o ķ palatal do letão.',
     transparent: false,
   },
   {
@@ -307,7 +307,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: 'Kartoffel',
     origin_language: 'Alemão',
     cognates: c(['de', 'Kartoffel'], ['ru', 'картофель'], ['it', 'tartufolo (trufa)']),
-    evolution_note: 'A batata, trazida da América pelos europeus, chegou à Letônia pelo alemão Kartoffel, que vinha do italiano tartufolo, «trufa»: os primeiros europeus acharam a batata parecida com a trufa.',
+    evolution_note: 'A batata, trazida da América pelos europeus, chegou à Letônia pelo alemão Kartoffel, que vinha do italiano tartufolo, “trufa”: os primeiros europeus acharam a batata parecida com a trufa.',
     transparent: false,
   },
   {
@@ -315,7 +315,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: 'wīn',
     origin_language: 'Baixo-alemão médio (do latim vinum)',
     cognates: c(['de', 'Wein'], ['la', 'vinum'], ['pt', 'vinho']),
-    evolution_note: 'O «vinho» é uma palavra antiga do Mediterrâneo que o latim espalhou pela Europa. No letão chegou pelo alemão; o traço em ī mostra a vogal longa do alemão wīn.',
+    evolution_note: 'O “vinho” é uma palavra antiga do Mediterrâneo que o latim espalhou pela Europa. No letão chegou pelo alemão; o traço em ī mostra a vogal longa do alemão wīn.',
     transparent: true,
   },
   // ——— do livônio e de outras línguas fínicas ———
@@ -324,7 +324,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: 'poika (fínico)',
     origin_language: 'Línguas fínicas (livônio)',
     cognates: c(['fi', 'poika (menino, filho)'], ['et', 'poeg (filho)']),
-    evolution_note: 'O «menino» veio do livônio, língua fínica que se falava na costa da Letônia, parente do finlandês poika. Por isso puika é masculino mesmo terminando em -a.',
+    evolution_note: 'O “menino” veio do livônio, língua fínica que se falava na costa da Letônia, parente do finlandês poika. Por isso puika é masculino mesmo terminando em -a.',
     transparent: false,
   },
   {
@@ -332,7 +332,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: 'laiva (fínico)',
     origin_language: 'Línguas fínicas (livônio)',
     cognates: c(['fi', 'laiva (navio)'], ['et', 'laev (navio)']),
-    evolution_note: 'O «barco» veio das línguas fínicas da costa, que eram de povos pescadores e navegantes. Em finlandês, laiva é hoje o navio grande.',
+    evolution_note: 'O “barco” veio das línguas fínicas da costa, que eram de povos pescadores e navegantes. Em finlandês, laiva é hoje o navio grande.',
     transparent: false,
   },
   {
@@ -340,7 +340,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: 'maks-',
     origin_language: 'Línguas fínicas (livônio)',
     cognates: c(['fi', 'maksaa (pagar, custar)'], ['et', 'maksma']),
-    evolution_note: 'Até o «pagar» o letão tomou dos vizinhos fínicos: finlandês maksaa, estoniano maksma. Cik tas maksā? — quanto custa?',
+    evolution_note: 'Até o “pagar” o letão tomou dos vizinhos fínicos: finlandês maksaa, estoniano maksma. Cik tas maksā? — quanto custa?',
     transparent: false,
   },
   // ——— palavras internacionais ———
@@ -373,7 +373,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: 'tēle + phōnḗ',
     origin_language: 'Grego (palavra internacional)',
     cognates: c(['pt', 'telefone'], ['de', 'Telefon'], ['ru', 'телефон']),
-    evolution_note: 'Palavra criada no século XIX com o grego tēle («longe») e phōnḗ («voz»). O letão lhe dá a terminação masculina -s: telefons, telefona.',
+    evolution_note: 'Palavra criada no século XIX com o grego tēle (“longe”) e phōnḗ (“voz”). O letão lhe dá a terminação masculina -s: telefons, telefona.',
     transparent: true,
   },
   {
@@ -381,7 +381,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: 'universitas',
     origin_language: 'Latim',
     cognates: c(['pt', 'universidade'], ['de', 'Universität'], ['la', 'universitas (a totalidade)']),
-    evolution_note: 'Do latim universitas, «o conjunto, a comunidade» de mestres e alunos. O letão tomou a forma alemã Universität e lhe deu o -e feminino.',
+    evolution_note: 'Do latim universitas, “o conjunto, a comunidade” de mestres e alunos. O letão tomou a forma alemã Universität e lhe deu o -e feminino.',
     transparent: true,
   },
   // ——— criações letãs ———
@@ -390,7 +390,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: 'dati (dados)',
     origin_language: 'Criação letã',
     cognates: c(['la', 'datum (dado)'], ['pt', 'dado']),
-    evolution_note: 'Em vez de «kompjūters», os terminólogos letões criaram dators a partir de dati (dados), «o que trabalha com dados». A palavra pegou e hoje é a única usada.',
+    evolution_note: 'Em vez de “kompjūters”, os terminólogos letões criaram dators a partir de dati (dados), “o que trabalha com dados”. A palavra pegou e hoje é a única usada.',
     transparent: false,
   },
   {
@@ -398,7 +398,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: 'lietot (usar) + -tne',
     origin_language: 'Criação letã',
     cognates: c(['en', 'app (application)']),
-    evolution_note: 'Palavra criada no século XXI pela comissão de terminologia para «aplicativo», com o verbo lietot (usar) e o sufixo -tne, de lugares e instrumentos. Evitou o anglicismo «aplikācija» no uso comum.',
+    evolution_note: 'Palavra criada no século XXI pela comissão de terminologia para “aplicativo”, com o verbo lietot (usar) e o sufixo -tne, de lugares e instrumentos. Evitou o anglicismo “aplikācija” no uso comum.',
     transparent: false,
   },
   {
@@ -406,7 +406,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: 'lidot (voar) + mašīna',
     origin_language: 'Criação letã (composto)',
     cognates: c(['pt', 'máquina'], ['de', 'Flugzeug (voar + utensílio)']),
-    evolution_note: 'O «avião» é literalmente a «máquina de voar»: lidot + mašīna, como o alemão Flugzeug. Da mesma família vêm lidosta (aeroporto, «porto de voo») e lidot (voar).',
+    evolution_note: 'O “avião” é literalmente a “máquina de voar”: lidot + mašīna, como o alemão Flugzeug. Da mesma família vêm lidosta (aeroporto, “porto de voo”) e lidot (voar).',
     transparent: false,
   },
   {
@@ -414,7 +414,7 @@ export const ETYMOLOGY_LV: EtymologySeed[] = [
     root_word: 'lidot (voar) + osta (porto)',
     origin_language: 'Criação letã (composto)',
     cognates: c(['de', 'Flughafen (voar + porto)'], ['sv', 'flygplats']),
-    evolution_note: 'O «aeroporto» é o «porto de voo»: lidot + osta, do mesmo jeito que o alemão Flughafen. Osta, porto, é palavra antiga do letão.',
+    evolution_note: 'O “aeroporto” é o “porto de voo”: lidot + osta, do mesmo jeito que o alemão Flughafen. Osta, porto, é palavra antiga do letão.',
     transparent: false,
   },
 ];

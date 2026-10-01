@@ -120,7 +120,7 @@ export function MiniCourseScreen() {
         <Card className="mt-3 gap-1">
           <Text className="font-bold text-slate-900 dark:text-white">🤟 Os sinais aparecem no VLibras</Text>
           <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">
-            «Ver em Libras» abre, numa janela à parte, o avatar do VLibras (a ferramenta do governo federal que traduz português para Libras) sinalizando a palavra. Precisa de internet.
+            “Ver em Libras” abre, numa janela à parte, o avatar do VLibras (a ferramenta do governo federal que traduz português para Libras) sinalizando a palavra. Precisa de internet.
           </Text>
         </Card>
       )}

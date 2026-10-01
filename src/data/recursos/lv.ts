@@ -43,7 +43,7 @@ export const RECURSOS_LV: LanguageResources = {
       validity: 'A aprovação vale para o pedido de cidadania',
       usedFor: ['Pedido de cidadania letã por naturalização'],
       where: 'Só na Letônia, nos escritórios da PMLP',
-      tip: 'Decore o hino «Dievs, svētī Latviju!» e leia a Satversme em letão: o texto é curto e o vocabulário se repete.',
+      tip: 'Decore o hino “Dievs, svētī Latviju!” e leia a Satversme em letão: o texto é curto e o vocabulário se repete.',
       url: 'https://www.pmlp.gov.lv/',
     },
   ],
@@ -202,8 +202,8 @@ export const RECURSOS_LV: LanguageResources = {
   tips: [
     'A tônica fica quase sempre na primeira sílaba; o traço (ā, ē, ī, ū) só diz que a vogal é longa. Pronuncie a vogal longa de verdade: é ela que separa kazas (cabras) de kāzas (casamento).',
     'Decore cada substantivo com o genitivo (galds, galda; lācis, lāča): ele mostra a declinação e a alternância consonantal.',
-    'A escrita não mostra se o «e» é aberto ou fechado, nem que o «o» das palavras letãs soa «uo». Ouça as gravações do app e repita.',
+    'A escrita não mostra se o “e” é aberto ou fechado, nem que o “o” das palavras letãs soa “uo”. Ouça as gravações do app e repita.',
     'O letão e o lituano são primos, mas não se entendem sem estudo. Quem sabe alemão ou russo reconhece muitos empréstimos (stunda, skapis, grāmata).',
-    'No Brasil há descendentes de letões em Varpa (SP) e em Santa Catarina, onde os primeiros imigrantes chegaram no fim do século XIX. Em Riga, se alguém passar para o inglês, peça: «Runāsim latviski, lūdzu!»',
+    'No Brasil há descendentes de letões em Varpa (SP) e em Santa Catarina, onde os primeiros imigrantes chegaram no fim do século XIX. Em Riga, se alguém passar para o inglês, peça: “Runāsim latviski, lūdzu!”',
   ],
 };

@@ -18,9 +18,9 @@ export const UNITS_SK: UnitSeed[] = [
       history:
         'O eslovaco é uma língua eslava ocidental, tão próxima do tcheco que os dois povos se entendem sem estudar. Por muito tempo, na Eslováquia se escreveu em latim, em tcheco ou em húngaro. A primeira norma escrita do eslovaco foi proposta pelo padre Anton Bernolák em 1787; a norma que venceu foi a de Ľudovít Štúr, de 1843, baseada nos dialetos do centro do país e depois reformada. Hoje o eslovaco é a língua oficial da Eslováquia e uma das línguas oficiais da União Europeia.',
       culture_tip:
-        'Ao entrar numa loja ou num elevador, diga «Dobrý deň». «Ahoj» serve para oi e para tchau entre amigos. Com desconhecidos, usa-se «vy» com o verbo no plural, mesmo falando com uma pessoa só: «Ako sa máte?» (Como vai o senhor?).',
+        'Ao entrar numa loja ou num elevador, diga “Dobrý deň”. “Ahoj” serve para oi e para tchau entre amigos. Com desconhecidos, usa-se “vy” com o verbo no plural, mesmo falando com uma pessoa só: “Ako sa máte?” (Como vai o senhor?).',
       grammar_why:
-        'O eslovaco não tem artigos: «pes» é «o cachorro» ou «um cachorro». A terminação do verbo já mostra quem faz a ação, então o pronome costuma cair: «som» já é «eu sou». O nome se diz com um verbo reflexivo, como em português: «volám sa Anna» (eu me chamo Anna).',
+        'O eslovaco não tem artigos: “pes” é “o cachorro” ou “um cachorro”. A terminação do verbo já mostra quem faz a ação, então o pronome costuma cair: “som” já é “eu sou”. O nome se diz com um verbo reflexivo, como em português: “volám sa Anna” (eu me chamo Anna).',
       grammar_examples: [
         ['Ahoj! Volám sa Anna.', 'Oi! Eu me chamo Anna.'],
         ['Ako sa voláš?', 'Como você se chama?'],
@@ -28,12 +28,12 @@ export const UNITS_SK: UnitSeed[] = [
         ['Dobre, ďakujem. A ty?', 'Bem, obrigado. E você?'],
       ],
       character_guide: [
-        ['č / š / ž', '«tch» de «tchau» / «ch» de «chá» / «j» de «já»', 'čierny, šesť, žena'],
-        ['ď / ť / ň / ľ', 'versões macias de d, t, n, l («dj», «tj», «nh», «lh»)', 'ďakujem, päť, deň, veľmi'],
-        ['c', '«ts» de «tsunami»', 'otec (pai)'],
-        ['ch', '«rr» aspirado, como o «r» de «rato» no Rio', 'chlieb (pão)'],
-        ['ä', 'no padrão atual, soa como «é»', 'päť (cinco)'],
-        ['ô', '«uo», um ditongo', 'môj (meu)'],
+        ['č / š / ž', '“tch” de “tchau” / “ch” de “chá” / “j” de “já”', 'čierny, šesť, žena'],
+        ['ď / ť / ň / ľ', 'versões macias de d, t, n, l (“dj”, “tj”, “nh”, “lh”)', 'ďakujem, päť, deň, veľmi'],
+        ['c', '“ts” de “tsunami”', 'otec (pai)'],
+        ['ch', '“rr” aspirado, como o “r” de “rato” no Rio', 'chlieb (pão)'],
+        ['ä', 'no padrão atual, soa como “é”', 'päť (cinco)'],
+        ['ô', '“uo”, um ditongo', 'môj (meu)'],
         ['ia / ie / iu', 'ditongos, ditos numa sílaba só', 'piatok, chlieb'],
         ['á, é, í, ó, ú, ý', 'o acento agudo marca vogal longa, não a tônica', 'áno, kamarát'],
         ['acento', 'a tônica cai sempre na primeira sílaba', 'ĎA-ku-jem, KA-ma-rát'],
@@ -54,9 +54,9 @@ export const UNITS_SK: UnitSeed[] = [
           bot: 'Ahoj! Ako sa máš?',
           botTranslation: 'Oi! Como vai?',
           expected: ['Dobre, ďakujem! A ty?', 'dobre', 'ďakujem'],
-          hint: 'Responda que vai bem e devolva a pergunta: «Dobre, ďakujem! A ty?».',
+          hint: 'Responda que vai bem e devolva a pergunta: “Dobre, ďakujem! A ty?”.',
         },
-        communityPrompt: 'Escreva três cumprimentos em eslovaco: um de dia («Dobrý deň…»), um à noite («Dobrý večer…») e uma despedida («Dovidenia» ou «Dobrú noc»).',
+        communityPrompt: 'Escreva três cumprimentos em eslovaco: um de dia (“Dobrý deň…”), um à noite (“Dobrý večer…”) e uma despedida (“Dovidenia” ou “Dobrú noc”).',
       },
       {
         id: 'sk-u1-l2',
@@ -72,9 +72,9 @@ export const UNITS_SK: UnitSeed[] = [
           bot: 'Ahoj! Ako sa voláš?',
           botTranslation: 'Oi! Como você se chama?',
           expected: ['Volám sa Ana. A ty?', 'volám sa', 'a ty'],
-          hint: 'Diga o seu nome com «Volám sa…» e devolva a pergunta com «A ty?».',
+          hint: 'Diga o seu nome com “Volám sa…” e devolva a pergunta com “A ty?”.',
         },
-        communityPrompt: 'Apresente-se em eslovaco: diga o seu nome com «Volám sa…» e pergunte o nome de alguém com «Ako sa voláš?».',
+        communityPrompt: 'Apresente-se em eslovaco: diga o seu nome com “Volám sa…” e pergunte o nome de alguém com “Ako sa voláš?”.',
       },
       {
         id: 'sk-u1-l3',
@@ -86,9 +86,9 @@ export const UNITS_SK: UnitSeed[] = [
           bot: 'Ahoj! Volám sa Peter. Ako sa voláš a odkiaľ si?',
           botTranslation: 'Oi! Eu me chamo Peter. Como você se chama e de onde você é?',
           expected: ['Ahoj! Volám sa Lucia a som zo São Paula.', 'volám sa', 'som z', 'ahoj'],
-          hint: 'Devolva o cumprimento («Ahoj!»), diga o nome com «Volám sa…» e a cidade com «Som z…».',
+          hint: 'Devolva o cumprimento (“Ahoj!”), diga o nome com “Volám sa…” e a cidade com “Som z…”.',
         },
-        communityPrompt: 'Escreva uma apresentação completa: cumprimento, nome com «Volám sa…», cidade com «Som z…» e uma despedida.',
+        communityPrompt: 'Escreva uma apresentação completa: cumprimento, nome com “Volám sa…”, cidade com “Som z…” e uma despedida.',
       },
     ],
   },
@@ -100,14 +100,14 @@ export const UNITS_SK: UnitSeed[] = [
     emoji: '👪',
     card: {
       id: 'sk-c2',
-      title: 'Três gêneros, «môj / moja / moje» e o «ne-»',
+      title: 'Três gêneros, “môj / moja / moje” e o “ne-”',
       emoji: '🧭',
       history:
-        'O eslovaco tem seis casos: a terminação do substantivo muda conforme a função na frase. Você já viu isso sem perceber: «som z Bratislavy» (sou de Bratislava) usa o genitivo de «Bratislava», e «kávu, prosím» usa o acusativo de «káva». Uma regra só do eslovaco é a «lei do ritmo»: duas sílabas longas seguidas costumam não aparecer, e por isso se diz «krásne mesto», e não «krásné».',
+        'O eslovaco tem seis casos: a terminação do substantivo muda conforme a função na frase. Você já viu isso sem perceber: “som z Bratislavy” (sou de Bratislava) usa o genitivo de “Bratislava”, e “kávu, prosím” usa o acusativo de “káva”. Uma regra só do eslovaco é a “lei do ritmo”: duas sílabas longas seguidas costumam não aparecer, e por isso se diz “krásne mesto”, e não “krásné”.',
       culture_tip:
-        'Na Eslováquia, muita gente comemora o «meniny», o dia do nome: o calendário traz um nome para cada dia do ano, e quem tem aquele nome recebe parabéns quase como num aniversário.',
+        'Na Eslováquia, muita gente comemora o “meniny”, o dia do nome: o calendário traz um nome para cada dia do ano, e quem tem aquele nome recebe parabéns quase como num aniversário.',
       grammar_why:
-        'Os substantivos são masculinos, femininos ou neutros, e a terminação costuma mostrar qual: consoante → masculino (dom, brat), -a → feminino (mama, voda), -o → neutro (mlieko, víno). O possessivo concorda: «môj brat», «moja sestra», «moje mlieko». Para negar, o «ne-» se escreve grudado no verbo — «viem» (sei) → «neviem» (não sei) —, mas o verbo «byť» é exceção: «nie som» (não sou), separado.',
+        'Os substantivos são masculinos, femininos ou neutros, e a terminação costuma mostrar qual: consoante → masculino (dom, brat), -a → feminino (mama, voda), -o → neutro (mlieko, víno). O possessivo concorda: “môj brat”, “moja sestra”, “moje mlieko”. Para negar, o “ne-” se escreve grudado no verbo — “viem” (sei) → “neviem” (não sei) —, mas o verbo “byť” é exceção: “nie som” (não sou), separado.',
       grammar_examples: [
         ['Moja rodina je veľká.', 'A minha família é grande.'],
         ['Mám brata a sestru.', 'Tenho um irmão e uma irmã.'],
@@ -115,8 +115,8 @@ export const UNITS_SK: UnitSeed[] = [
         ['Neviem.', 'Eu não sei.'],
       ],
       character_guide: [
-        ['-a → -u', 'depois de «mám» (tenho), a palavra feminina muda: é o acusativo', 'sestra → mám sestru'],
-        ['ne- / nie', 'a negação vai junto do verbo, menos com «byť»', 'nemám (não tenho), nie som (não sou)'],
+        ['-a → -u', 'depois de “mám” (tenho), a palavra feminina muda: é o acusativo', 'sestra → mám sestru'],
+        ['ne- / nie', 'a negação vai junto do verbo, menos com “byť”', 'nemám (não tenho), nie som (não sou)'],
       ],
     },
     lessons: [
@@ -134,9 +134,9 @@ export const UNITS_SK: UnitSeed[] = [
           bot: 'Máš brata alebo sestru?',
           botTranslation: 'Você tem irmão ou irmã?',
           expected: ['Áno, mám brata a sestru.', 'mám', 'brata', 'sestru'],
-          hint: 'Responda com «Áno, mám…» ou «Nie, nemám…».',
+          hint: 'Responda com “Áno, mám…” ou “Nie, nemám…”.',
         },
-        communityPrompt: 'Descreva a sua família em eslovaco: se você tem irmão (brat) ou irmã (sestra) e como se chamam os seus pais («Moja mama sa volá…»).',
+        communityPrompt: 'Descreva a sua família em eslovaco: se você tem irmão (brat) ou irmã (sestra) e como se chamam os seus pais (“Moja mama sa volá…”).',
       },
       {
         id: 'sk-u2-l2',
@@ -152,9 +152,9 @@ export const UNITS_SK: UnitSeed[] = [
           bot: 'Čo ješ na raňajky?',
           botTranslation: 'O que você come no café da manhã?',
           expected: ['Jem chlieb a syr.', 'jem', 'chlieb', 'syr'],
-          hint: 'Diga o que come com «Jem…».',
+          hint: 'Diga o que come com “Jem…”.',
         },
-        communityPrompt: 'Escreva o que você come e bebe de manhã: «Jem…» e «Pijem…».',
+        communityPrompt: 'Escreva o que você come e bebe de manhã: “Jem…” e “Pijem…”.',
       },
       {
         id: 'sk-u2-l3',
@@ -166,9 +166,9 @@ export const UNITS_SK: UnitSeed[] = [
           bot: 'Porozprávaj o rodine: máš brata alebo sestru?',
           botTranslation: 'Conte da sua família: você tem irmão ou irmã?',
           expected: ['Áno, mám sestru. Volá sa Mária.', 'mám', 'volá sa'],
-          hint: 'Diga se tem irmãos («mám…») e o nome deles («volá sa…»).',
+          hint: 'Diga se tem irmãos (“mám…”) e o nome deles (“volá sa…”).',
         },
-        communityPrompt: 'Escreva cinco frases sobre a sua família e a sua casa, usando «mám», «volá sa» e «je».',
+        communityPrompt: 'Escreva cinco frases sobre a sua família e a sua casa, usando “mám”, “volá sa” e “je”.',
       },
     ],
   },

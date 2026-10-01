@@ -81,7 +81,7 @@ export const SCENARIOS_JA: ScenarioSeed[] = [
     cefr: 'A1',
     register: 'formal',
     persona: 'Atendente de uma konbini em Tóquio',
-    description: 'A konbini, a loja de conveniência aberta vinte e quatro horas, está em cada esquina do Japão. O atendente fala o japonês de balcão, cheio de fórmulas prontas e educadíssimas; você responde curto, com です/ます e «おねがいします». Um «だいじょうぶです» educado serve para recusar quase tudo.',
+    description: 'A konbini, a loja de conveniência aberta vinte e quatro horas, está em cada esquina do Japão. O atendente fala o japonês de balcão, cheio de fórmulas prontas e educadíssimas; você responde curto, com です/ます e “おねがいします”. Um “だいじょうぶです” educado serve para recusar quase tudo.',
     turns: [
       {
         bot: 'いらっしゃいませ！ポイントカードはお持ちですか？',
@@ -127,11 +127,11 @@ export const SCENARIOS_JA: ScenarioSeed[] = [
     cefr: 'A2',
     register: 'informal',
     persona: 'Haruka, amiga da faculdade',
-    description: 'Você encontra a Haruka, amiga da faculdade, no campus. Entre amigos, o japonês deixa de lado o です/ます: fica a forma simples (元気, 行く, 食べたい), com ね e よ no fim das frases e «うん» no lugar de «はい». Falar com keigo aqui soaria frio, como se vocês tivessem brigado.',
+    description: 'Você encontra a Haruka, amiga da faculdade, no campus. Entre amigos, o japonês deixa de lado o です/ます: fica a forma simples (元気, 行く, 食べたい), com ね e よ no fim das frases e “うん” no lugar de “はい”. Falar com keigo aqui soaria frio, como se vocês tivessem brigado.',
     turns: [
       {
         bot: 'あ、ひさしぶり！元気だった？',
-        botTranslation: 'Ah, quanto tempo! Tudo bem com você? (lit. «você estava bem?»)',
+        botTranslation: 'Ah, quanto tempo! Tudo bem com você? (lit. “você estava bem?”)',
         keywords: ['元気', 'げんき', 'うん', 'ひさしぶり', '久しぶり', 'まあまあ'],
         suggestions: ['うん、元気だよ！ハルカは？', 'ひさしぶり！まあまあかな。'],
         registerBreakers: INFORMAL_BREAKERS,
@@ -173,7 +173,7 @@ export const SCENARIOS_JA: ScenarioSeed[] = [
     cefr: 'A2',
     register: 'formal',
     persona: 'Senhora gentil que passa pela estação',
-    description: 'Shinjuku é a estação mais movimentada do mundo: mais de três milhões de passageiros por dia e mais de duzentas saídas. Você está perdido, e uma senhora se oferece para ajudar. Com desconhecidos, fale sempre com です/ます e comece com «すみません».',
+    description: 'Shinjuku é a estação mais movimentada do mundo: mais de três milhões de passageiros por dia e mais de duzentas saídas. Você está perdido, e uma senhora se oferece para ajudar. Com desconhecidos, fale sempre com です/ます e comece com “すみません”.',
     turns: [
       {
         bot: 'あの、大丈夫ですか？どうかしましたか？',
@@ -219,7 +219,7 @@ export const SCENARIOS_JA: ScenarioSeed[] = [
     cefr: 'A2',
     register: 'formal',
     persona: 'Okami-san, a dona do ryokan',
-    description: 'O ryokan é a pousada tradicional japonesa: quartos de tatame, futon, yukata e banho quente de água termal. Quem recebe é a okami-san, a dona, com o keigo mais caprichado do Japão. Você não precisa falar keigo: bastam です/ます, frases completas e muito «お願いします».',
+    description: 'O ryokan é a pousada tradicional japonesa: quartos de tatame, futon, yukata e banho quente de água termal. Quem recebe é a okami-san, a dona, com o keigo mais caprichado do Japão. Você não precisa falar keigo: bastam です/ます, frases completas e muito “お願いします”.',
     turns: [
       {
         bot: 'いらっしゃいませ。遠いところ、ようこそお越しくださいました。',
@@ -251,7 +251,7 @@ export const SCENARIOS_JA: ScenarioSeed[] = [
       },
       {
         bot: 'お部屋は三階の「さくら」でございます。どうぞごゆっくりお過ごしください。',
-        botTranslation: 'Seu quarto é o «Sakura», no san-kai: o terceiro andar contando o térreo (para nós, o segundo). Fique à vontade e descanse.',
+        botTranslation: 'Seu quarto é o “Sakura”, no san-kai: o terceiro andar contando o térreo (para nós, o segundo). Fique à vontade e descanse.',
         keywords: ['ありがとうございます', 'お世話になります', 'おせわになります', 'よろしくお願いします', 'よろしくおねがいします', 'どうも'],
         suggestions: ['ありがとうございます。お世話になります。', 'はい、よろしくお願いします。'],
         registerBreakers: FORMAL_BREAKERS,
@@ -269,7 +269,7 @@ export const SCENARIOS_JA: ScenarioSeed[] = [
     turns: [
       {
         bot: 'おつかれ！とりあえずビールでいい？',
-        botTranslation: 'Bom trabalho hoje! Pra começar, pode ser cerveja? («otsukare» é o cumprimento de fim de expediente; «toriaezu bīru», «por enquanto, cerveja», é o pedido clássico do izakaya.)',
+        botTranslation: 'Bom trabalho hoje! Pra começar, pode ser cerveja? (“otsukare” é o cumprimento de fim de expediente; “toriaezu bīru”, “por enquanto, cerveja”, é o pedido clássico do izakaya.)',
         keywords: ['いいよ', 'うん', 'ビール', 'ウーロン茶', 'ウーロンちゃ', 'おつかれ', 'お疲れ', '飲めない', 'のめない'],
         suggestions: ['おつかれ！うん、ビールでいいよ。', 'ごめん、お酒は飲めないから、ウーロン茶にする。'],
         registerBreakers: INFORMAL_BREAKERS,
@@ -322,7 +322,7 @@ export const SCENARIOS_JA: ScenarioSeed[] = [
       },
       {
         bot: 'いつからですか？熱は何度ありますか？',
-        botTranslation: 'Desde quando? A febre está em quantos graus? (Os décimos se dizem com «bu»: sanjūhachi-do go-bu é 38,5 °C.)',
+        botTranslation: 'Desde quando? A febre está em quantos graus? (Os décimos se dizem com “bu”: sanjūhachi-do go-bu é 38,5 °C.)',
         keywords: ['昨日', 'きのう', 'おととい', '度', '三十八', '三十九', '今朝', 'けさ', 'から'],
         suggestions: ['おとといからです。三十八度あります。', '昨日の夜からで、今朝は三十九度ありました。'],
         registerBreakers: FORMAL_BREAKERS,
@@ -403,7 +403,7 @@ export const SCENARIOS_JA: ScenarioSeed[] = [
     cefr: 'B2',
     register: 'formal',
     persona: 'Sra. Yamamoto, gerente de RH de uma agência de turismo em Tóquio',
-    description: 'Entrevista numa agência de turismo que atende brasileiros. No 面接 (mensetsu), o japonês pede keigo completo: 申します e おります para falar de si (謙譲語), 御社 para a empresa dela (ela diz 弊社 da própria). Nada de «僕», «すいません» ou «やっぱ»: aqui cada palavra conta.',
+    description: 'Entrevista numa agência de turismo que atende brasileiros. No 面接 (mensetsu), o japonês pede keigo completo: 申します e おります para falar de si (謙譲語), 御社 para a empresa dela (ela diz 弊社 da própria). Nada de “僕”, “すいません” ou “やっぱ”: aqui cada palavra conta.',
     turns: [
       {
         bot: 'それでは、簡単に自己紹介をお願いいたします。',
@@ -460,7 +460,7 @@ export const JOURNAL_PROMPTS_JA: [string, string][] = [
   ['最近うれしかったことは何ですか？', 'O que deixou você feliz recentemente?'],
   ['どの季節がいちばん好きですか？それはなぜですか？', 'Qual estação do ano você prefere? Por quê?'],
   ['ブラジルと日本の違いを一つ説明してください。', 'Explique uma diferença entre o Brasil e o Japão.'],
-  ['「もったいない」と思ったことはありますか？', 'Você já sentiu «mottainai», a pena de ver algo desperdiçado? Conte.'],
+  ['「もったいない」と思ったことはありますか？', 'Você já sentiu “mottainai”, a pena de ver algo desperdiçado? Conte.'],
   ['十年後、どんな生活をしていたいですか？', 'Que vida você quer levar daqui a dez anos?'],
 ];
 
@@ -471,14 +471,14 @@ export const JOURNAL_PROMPTS_JA: [string, string][] = [
  */
 export const SHADOWING_JA: [string, string][] = [
   ['はじめまして。アナです。ブラジルから来ました。', 'Muito prazer. Sou a Ana. Vim do Brasil.'],
-  ['よろしくお願いします。', 'Prazer em conhecer. (lit. «conto com a sua boa vontade»)'],
+  ['よろしくお願いします。', 'Prazer em conhecer. (lit. “conto com a sua boa vontade”)'],
   ['すみません、トイレはどこですか？', 'Com licença, onde fica o banheiro?'],
   ['これはいくらですか？', 'Quanto custa isto?'],
   ['コーヒーを一つください。', 'Um café, por favor.'],
   ['日本語が少しわかります。', 'Entendo um pouco de japonês.'],
   ['もう一度お願いします。', 'Mais uma vez, por favor.'],
   ['今、何時ですか？', 'Que horas são agora?'],
-  ['いただきます！', 'Bom apetite! (dito antes de comer, lit. «recebo com gratidão»)'],
+  ['いただきます！', 'Bom apetite! (dito antes de comer, lit. “recebo com gratidão”)'],
   ['ごちそうさまでした。', 'Obrigado pela refeição. (dito depois de comer)'],
   ['きのうは雨でしたね。', 'Ontem choveu, né?'],
   ['カードで払ってもいいですか？', 'Posso pagar com cartão?'],
@@ -499,8 +499,8 @@ export const SHADOWING_JA: [string, string][] = [
   ['彼が来るかどうか、まだわかりません。', 'Ainda não sei se ele vem ou não.'],
   ['言うまでもなく、健康は何よりも大切です。', 'Nem é preciso dizer: a saúde é mais importante que tudo.'],
   ['努力したからといって、必ず成功するとは限りません。', 'Não é só porque você se esforçou que vai ter sucesso, necessariamente.'],
-  ['石の上にも三年と言うように、あきらめずに続けることが大切です。', 'Como diz o ditado, «três anos sentado numa pedra» (até a pedra fria esquenta): o importante é não desistir e continuar.'],
-  ['一期一会の精神で、お客様一人ひとりを大切にしております。', 'Com o espírito do «ichigo ichie» (cada encontro é único), tratamos cada cliente com todo o cuidado.'],
+  ['石の上にも三年と言うように、あきらめずに続けることが大切です。', 'Como diz o ditado, “três anos sentado numa pedra” (até a pedra fria esquenta): o importante é não desistir e continuar.'],
+  ['一期一会の精神で、お客様一人ひとりを大切にしております。', 'Com o espírito do “ichigo ichie” (cada encontro é único), tratamos cada cliente com todo o cuidado.'],
 ];
 
 const c = (...pairs: [string, string][]) => pairs.map(([lang, word]) => ({ lang, word }));
@@ -520,7 +520,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: 'pão',
     origin_language: 'Português',
     cognates: c(['pt', 'pão'], ['es', 'pan'], ['fr', 'pain'], ['la', 'panis']),
-    evolution_note: 'Chegou com os portugueses, que aportaram em Tanegashima em 1543 e comerciaram com o Japão por quase um século. Com a expulsão deles (1639), o pão quase sumiu, mas a palavra ficou e voltou com força no século XIX. Hoje está em メロンパン, カレーパン e あんパン. Do mesmo «pão» português vem o «pav» de Mumbai, na Índia.',
+    evolution_note: 'Chegou com os portugueses, que aportaram em Tanegashima em 1543 e comerciaram com o Japão por quase um século. Com a expulsão deles (1639), o pão quase sumiu, mas a palavra ficou e voltou com força no século XIX. Hoje está em メロンパン, カレーパン e あんパン. Do mesmo “pão” português vem o “pav” de Mumbai, na Índia.',
     transparent: true,
   },
   {
@@ -536,7 +536,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: 'capa',
     origin_language: 'Português',
     cognates: c(['pt', 'capa'], ['es', 'capa'], ['la', 'cappa']),
-    evolution_note: 'A capa de chuva dos marinheiros e missionários portugueses virou 合羽 (kappa), com kanji escolhidos só pelo som (ateji). Não confunda com o 河童, o duende das águas do folclore japonês, que também se lê «kappa»: são palavras diferentes que só soam igual.',
+    evolution_note: 'A capa de chuva dos marinheiros e missionários portugueses virou 合羽 (kappa), com kanji escolhidos só pelo som (ateji). Não confunda com o 河童, o duende das águas do folclore japonês, que também se lê “kappa”: são palavras diferentes que só soam igual.',
     transparent: true,
   },
   {
@@ -544,7 +544,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: 'tabaco',
     origin_language: 'Português',
     cognates: c(['pt', 'tabaco'], ['es', 'tabaco'], ['en', 'tobacco']),
-    evolution_note: 'Os portugueses trouxeram a planta e o nome, que veio das Américas pelo espanhol. Em japonês, タバコ é sobretudo o cigarro: タバコを吸う, «fumar». A placa de proibido fumar diz 禁煙.',
+    evolution_note: 'Os portugueses trouxeram a planta e o nome, que veio das Américas pelo espanhol. Em japonês, タバコ é sobretudo o cigarro: タバコを吸う, “fumar”. A placa de proibido fumar diz 禁煙.',
     transparent: true,
   },
   {
@@ -552,7 +552,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: 'têmporas',
     origin_language: 'Português',
     cognates: c(['pt', 'têmporas'], ['pt', 'tempero'], ['pt', 'tempurá']),
-    evolution_note: 'A explicação mais citada são as «Quatro Têmporas», os dias de jejum do calendário católico em que os portugueses comiam peixe e legumes fritos no lugar da carne; outros ligam a palavra a «tempero». O kanji 天麩羅 veio depois, só pelo som. O prato foi e voltou: os imigrantes japoneses trouxeram o «tempurá» para o Brasil.',
+    evolution_note: 'A explicação mais citada são as “Quatro Têmporas”, os dias de jejum do calendário católico em que os portugueses comiam peixe e legumes fritos no lugar da carne; outros ligam a palavra a “tempero”. O kanji 天麩羅 veio depois, só pelo som. O prato foi e voltou: os imigrantes japoneses trouxeram o “tempurá” para o Brasil.',
     transparent: true,
   },
   {
@@ -568,7 +568,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: 'vidro',
     origin_language: 'Português',
     cognates: c(['pt', 'vidro'], ['es', 'vidrio'], ['la', 'vitrum']),
-    evolution_note: 'Era como se dizia «vidro» no Japão dos séculos XVI e XVII. Depois os holandeses trouxeram «glas», que virou ガラス, a palavra de hoje. ビードロ sobrevive num brinquedo de Nagasaki, uma garrafinha de vidro fino que estala quando se sopra, e numa gravura famosa de Utamaro, a moça soprando a ビードロ.',
+    evolution_note: 'Era como se dizia “vidro” no Japão dos séculos XVI e XVII. Depois os holandeses trouxeram “glas”, que virou ガラス, a palavra de hoje. ビードロ sobrevive num brinquedo de Nagasaki, uma garrafinha de vidro fino que estala quando se sopra, e numa gravura famosa de Utamaro, a moça soprando a ビードロ.',
     transparent: true,
   },
   {
@@ -584,7 +584,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: 'pão de Castela',
     origin_language: 'Português',
     cognates: c(['pt', 'pão de ló'], ['es', 'Castilla'], ['pt', 'Castela']),
-    evolution_note: 'O pão de ló, que os portugueses chamavam também de «pão de Castela», virou カステラ em Nagasaki, onde é especialidade até hoje. A versão japonesa é mais úmida, leva mel e vem em blocos retangulares, servidos em fatias.',
+    evolution_note: 'O pão de ló, que os portugueses chamavam também de “pão de Castela”, virou カステラ em Nagasaki, onde é especialidade até hoje. A versão japonesa é mais úmida, leva mel e vem em blocos retangulares, servidos em fatias.',
     transparent: true,
   },
   {
@@ -600,7 +600,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: 'jorro',
     origin_language: 'Português',
     cognates: c(['pt', 'jorro'], ['es', 'chorro']),
-    evolution_note: 'O regador tem o nome do jorro de água que sai dele: é a explicação mais aceita, embora haja quem aponte o «jarro». Às vezes se escreve 如雨露, «como chuva e orvalho», kanji escolhidos pelo som e pelo sentido.',
+    evolution_note: 'O regador tem o nome do jorro de água que sai dele: é a explicação mais aceita, embora haja quem aponte o “jarro”. Às vezes se escreve 如雨露, “como chuva e orvalho”, kanji escolhidos pelo som e pelo sentido.',
     transparent: false,
   },
   {
@@ -616,7 +616,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: 'balanço',
     origin_language: 'Português (provável)',
     cognates: c(['pt', 'balanço'], ['es', 'balanceo']),
-    evolution_note: 'O balanço do parquinho é ブランコ, e a explicação mais citada é o «balanço» português. Mas há quem defenda que a palavra é japonesa mesmo, de ぶらぶら, o som de algo pendurado balançando. Como tantas etimologias, fica a dúvida.',
+    evolution_note: 'O balanço do parquinho é ブランコ, e a explicação mais citada é o “balanço” português. Mas há quem defenda que a palavra é japonesa mesmo, de ぶらぶら, o som de algo pendurado balançando. Como tantas etimologias, fica a dúvida.',
     transparent: false,
   },
   {
@@ -632,7 +632,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: 'mirra',
     origin_language: 'Português',
     cognates: c(['pt', 'mirra'], ['es', 'mirra'], ['la', 'myrrha']),
-    evolution_note: 'Uma mudança de sentido curiosa: a mirra, a resina perfumada usada para embalsamar, chegou ao Japão como remédio, e as ideias se misturaram com o «pó de múmia», outro remédio da época. O resultado: em japonês, ミイラ é a própria múmia.',
+    evolution_note: 'Uma mudança de sentido curiosa: a mirra, a resina perfumada usada para embalsamar, chegou ao Japão como remédio, e as ideias se misturaram com o “pó de múmia”, outro remédio da época. O resultado: em japonês, ミイラ é a própria múmia.',
     transparent: false,
   },
   {
@@ -640,7 +640,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: 'veludo',
     origin_language: 'Português',
     cognates: c(['pt', 'veludo'], ['es', 'terciopelo'], ['it', 'velluto']),
-    evolution_note: 'O tecido macio chegou nos navios portugueses e guardou o nome: ビロード. Hoje concorre com ベルベット, do inglês «velvet», mas as duas palavras querem dizer o mesmo veludo.',
+    evolution_note: 'O tecido macio chegou nos navios portugueses e guardou o nome: ビロード. Hoje concorre com ベルベット, do inglês “velvet”, mas as duas palavras querem dizer o mesmo veludo.',
     transparent: false,
   },
   {
@@ -648,7 +648,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: 'Camboja',
     origin_language: 'Português',
     cognates: c(['pt', 'Camboja'], ['pt', 'abóbora']),
-    evolution_note: 'Os portugueses levaram ao Japão a abóbora que vinha do Camboja, e ela ficou com o nome do país: «Camboja» → かぼちゃ. É o mesmo caminho do nosso «peru», a ave que ganhou nome de lugar.',
+    evolution_note: 'Os portugueses levaram ao Japão a abóbora que vinha do Camboja, e ela ficou com o nome do país: “Camboja” → かぼちゃ. É o mesmo caminho do nosso “peru”, a ave que ganhou nome de lugar.',
     transparent: false,
   },
   {
@@ -656,7 +656,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: 'cristão',
     origin_language: 'Português',
     cognates: c(['pt', 'cristão'], ['es', 'cristiano'], ['la', 'christianus']),
-    evolution_note: 'O nome dos japoneses convertidos pelos jesuítas, a partir da chegada de Francisco Xavier, em 1549. Depois da proibição, os 隠れキリシタン, os «cristãos escondidos», rezaram em segredo por mais de dois séculos, com orações em latim e português que viraram fórmulas decoradas sem entender.',
+    evolution_note: 'O nome dos japoneses convertidos pelos jesuítas, a partir da chegada de Francisco Xavier, em 1549. Depois da proibição, os 隠れキリシタン, os “cristãos escondidos”, rezaram em segredo por mais de dois séculos, com orações em latim e português que viraram fórmulas decoradas sem entender.',
     transparent: false,
   },
   {
@@ -664,7 +664,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: 'inglês',
     origin_language: 'Português',
     cognates: c(['pt', 'inglês'], ['nl', 'Engelsch'], ['en', 'English']),
-    evolution_note: 'O Reino Unido é イギリス, do português «inglês» (ou do holandês «Engelsch»): os japoneses ouviram falar dos ingleses pela boca de portugueses e holandeses. Por isso o nome não se parece com «England» nem com «Britain».',
+    evolution_note: 'O Reino Unido é イギリス, do português “inglês” (ou do holandês “Engelsch”): os japoneses ouviram falar dos ingleses pela boca de portugueses e holandeses. Por isso o nome não se parece com “England” nem com “Britain”.',
     transparent: false,
   },
   {
@@ -672,7 +672,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: 'Holanda',
     origin_language: 'Português',
     cognates: c(['pt', 'Holanda'], ['es', 'Holanda'], ['nl', 'Holland']),
-    evolution_note: 'Os Países Baixos são オランダ, do português «Holanda». Os holandeses foram os únicos europeus autorizados a comerciar com o Japão durante o isolamento (1639–1853), na ilhota de Dejima, em Nagasaki. Por eles entraram a medicina e a ciência ocidentais: os 蘭学, os «estudos holandeses».',
+    evolution_note: 'Os Países Baixos são オランダ, do português “Holanda”. Os holandeses foram os únicos europeus autorizados a comerciar com o Japão durante o isolamento (1639–1853), na ilhota de Dejima, em Nagasaki. Por eles entraram a medicina e a ciência ocidentais: os 蘭学, os “estudos holandeses”.',
     transparent: true,
   },
   {
@@ -680,15 +680,15 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: 'copo',
     origin_language: 'Português ou holandês',
     cognates: c(['pt', 'copo'], ['nl', 'kop']),
-    evolution_note: 'O copo sem asa é コップ, e a origem se divide entre o português «copo» e o holandês «kop». Repare: a xícara com asa é カップ, do inglês «cup». Palavras irmãs que entraram por portas diferentes.',
+    evolution_note: 'O copo sem asa é コップ, e a origem se divide entre o português “copo” e o holandês “kop”. Repare: a xícara com asa é カップ, do inglês “cup”. Palavras irmãs que entraram por portas diferentes.',
     transparent: true,
   },
   {
     word: 'ありがとう',
-    root_word: '有り難い (ari-gatai, «difícil de existir»)',
+    root_word: '有り難い (ari-gatai, “difícil de existir”)',
     origin_language: 'Japonês nativo (wago)',
     cognates: c(['pt', 'obrigado (só coincidência)']),
-    evolution_note: 'Não vem de «obrigado»: é mito. O adjetivo ありがたし, «difícil de existir, raro», já aparece em textos do século XI, como o «Makura no Sōshi», cinco séculos antes da chegada dos portugueses. Do «raro, precioso» veio o «sou grato»: ありがたい → ありがとう. A semelhança com «obrigado» é pura coincidência.',
+    evolution_note: 'Não vem de “obrigado”: é mito. O adjetivo ありがたし, “difícil de existir, raro”, já aparece em textos do século XI, como o “Makura no Sōshi”, cinco séculos antes da chegada dos portugueses. Do “raro, precioso” veio o “sou grato”: ありがたい → ありがとう. A semelhança com “obrigado” é pura coincidência.',
     transparent: false,
   },
   // ——— do holandês, do alemão, do francês e do russo ———
@@ -705,7 +705,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: 'bier',
     origin_language: 'Holandês',
     cognates: c(['nl', 'bier'], ['de', 'Bier'], ['en', 'beer']),
-    evolution_note: 'Mais uma dos holandeses de Dejima. A indústria japonesa de cerveja nasceu no fim do século XIX, com marcas que existem até hoje. No izakaya, o pedido clássico é «とりあえずビール», «para começar, uma cerveja».',
+    evolution_note: 'Mais uma dos holandeses de Dejima. A indústria japonesa de cerveja nasceu no fim do século XIX, com marcas que existem até hoje. No izakaya, o pedido clássico é “とりあえずビール”, “para começar, uma cerveja”.',
     transparent: false,
   },
   {
@@ -713,7 +713,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: 'glas',
     origin_language: 'Holandês',
     cognates: c(['nl', 'glas'], ['de', 'Glas'], ['en', 'glass']),
-    evolution_note: 'Tomou o lugar da ビードロ portuguesa como a palavra para o vidro; em kanji, 硝子. Já a taça é グラス, do inglês «glass»: a mesma palavra germânica, emprestada duas vezes, por dois caminhos.',
+    evolution_note: 'Tomou o lugar da ビードロ portuguesa como a palavra para o vidro; em kanji, 硝子. Já a taça é グラス, do inglês “glass”: a mesma palavra germânica, emprestada duas vezes, por dois caminhos.',
     transparent: false,
   },
   {
@@ -729,7 +729,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: 'Arbeit',
     origin_language: 'Alemão',
     cognates: c(['de', 'Arbeit (trabalho)']),
-    evolution_note: 'Em alemão, «Arbeit» é o trabalho em geral; em japonês, アルバイト (ou só バイト) é o bico, o trabalho de meio período, como o do estudante na konbini. Veio da gíria dos universitários do fim do século XIX, quando o alemão era a língua estrangeira das faculdades.',
+    evolution_note: 'Em alemão, “Arbeit” é o trabalho em geral; em japonês, アルバイト (ou só バイト) é o bico, o trabalho de meio período, como o do estudante na konbini. Veio da gíria dos universitários do fim do século XIX, quando o alemão era a língua estrangeira das faculdades.',
     transparent: false,
   },
   {
@@ -737,7 +737,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: 'Karte',
     origin_language: 'Alemão',
     cognates: c(['de', 'Karte'], ['pt', 'carta'], ['la', 'charta']),
-    evolution_note: 'A medicina moderna japonesa aprendeu com a alemã no século XIX e trouxe palavras de lá: カルテ é o prontuário do paciente. É parente distante da nossa «carta», pelo latim «charta», papel.',
+    evolution_note: 'A medicina moderna japonesa aprendeu com a alemã no século XIX e trouxe palavras de lá: カルテ é o prontuário do paciente. É parente distante da nossa “carta”, pelo latim “charta”, papel.',
     transparent: false,
   },
   {
@@ -745,7 +745,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: 'enquête',
     origin_language: 'Francês',
     cognates: c(['fr', 'enquête'], ['pt', 'enquete']),
-    evolution_note: 'O questionário de opinião, aquele que se preenche depois de um serviço: お客様アンケート. Vem do francês «enquête», a mesma palavra que deu a nossa «enquete».',
+    evolution_note: 'O questionário de opinião, aquele que se preenche depois de um serviço: お客様アンケート. Vem do francês “enquête”, a mesma palavra que deu a nossa “enquete”.',
     transparent: true,
   },
   {
@@ -753,7 +753,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: 'jupon',
     origin_language: 'Francês',
     cognates: c(['fr', 'jupon (anágua)'], ['pt', 'gibão']),
-    evolution_note: 'A explicação mais aceita é o francês «jupon», a anágua, a saia de baixo; em japonês, ズボン virou a calça. O «jupon» vem do árabe «jubba», que também deu o nosso «gibão». Hoje ズボン concorre com パンツ, a palavra da moda.',
+    evolution_note: 'A explicação mais aceita é o francês “jupon”, a anágua, a saia de baixo; em japonês, ズボン virou a calça. O “jupon” vem do árabe “jubba”, que também deu o nosso “gibão”. Hoje ズボン concorre com パンツ, a palavra da moda.',
     transparent: false,
   },
   {
@@ -761,7 +761,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: 'икра (ikrá)',
     origin_language: 'Russo',
     cognates: c(['ru', 'икра (ova, caviar)']),
-    evolution_note: 'Em russo, «икра» é qualquer ova de peixe, inclusive o caviar; em japonês, イクラ são só as ovas de salmão, laranja e brilhantes, que o brasileiro conhece do sushi. Chegou pelo contato com os russos no norte do Japão, no começo do século XX.',
+    evolution_note: 'Em russo, “икра” é qualquer ova de peixe, inclusive o caviar; em japonês, イクラ são só as ovas de salmão, laranja e brilhantes, que o brasileiro conhece do sushi. Chegou pelo contato com os russos no norte do Japão, no começo do século XX.',
     transparent: true,
   },
   {
@@ -769,7 +769,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: 'норма (norma)',
     origin_language: 'Russo',
     cognates: c(['ru', 'норма'], ['pt', 'norma'], ['la', 'norma']),
-    evolution_note: 'Na União Soviética, a «norma» era a meta de produção que cada trabalhador tinha de cumprir. Os prisioneiros japoneses mandados para a Sibéria depois da Segunda Guerra trouxeram a palavra, e ノルマ virou a meta, a cota de vendas.',
+    evolution_note: 'Na União Soviética, a “norma” era a meta de produção que cada trabalhador tinha de cumprir. Os prisioneiros japoneses mandados para a Sibéria depois da Segunda Guerra trouxeram a palavra, e ノルマ virou a meta, a cota de vendas.',
     transparent: false,
   },
   // ——— inglês feito no Japão (和製英語, wasei-eigo) ———
@@ -778,7 +778,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: 'salary + man',
     origin_language: 'Inglês (montado no Japão)',
     cognates: c(['en', 'office worker'], ['pt', 'assalariado']),
-    evolution_note: 'O «wasei-eigo» é o inglês feito no Japão: palavras montadas com peças inglesas que nenhum falante de inglês usa. サラリーマン, o «homem do salário», é o funcionário de escritório de terno, símbolo do Japão do pós-guerra. O português também faz isso: «outdoor» e «home office» são criações nossas.',
+    evolution_note: 'O “wasei-eigo” é o inglês feito no Japão: palavras montadas com peças inglesas que nenhum falante de inglês usa. サラリーマン, o “homem do salário”, é o funcionário de escritório de terno, símbolo do Japão do pós-guerra. O português também faz isso: “outdoor” e “home office” são criações nossas.',
     transparent: false,
   },
   {
@@ -794,7 +794,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: 'notebook + personal computer',
     origin_language: 'Inglês (montado no Japão)',
     cognates: c(['en', 'laptop'], ['pt', 'notebook']),
-    evolution_note: 'Em inglês é «laptop»; o japonês montou ノートパソコン, o «computador-caderno», e o brasileiro teve a mesma ideia: aqui o portátil é o «notebook», que em inglês é só o caderno. Duas línguas, a mesma invenção.',
+    evolution_note: 'Em inglês é “laptop”; o japonês montou ノートパソコン, o “computador-caderno”, e o brasileiro teve a mesma ideia: aqui o portátil é o “notebook”, que em inglês é só o caderno. Duas línguas, a mesma invenção.',
     transparent: true,
   },
   {
@@ -810,7 +810,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: 'smartphone',
     origin_language: 'Inglês (encurtado no Japão)',
     cognates: c(['en', 'smartphone'], ['pt', 'celular']),
-    evolution_note: 'スマートフォン encurtado. Repare no ホ no lugar de フォ: a forma curta ficou com o som mais japonês. O celular antigo, de flip, é o ガラケー, a «Galápagos-keitai», que evoluiu isolado no Japão, como os bichos das ilhas Galápagos.',
+    evolution_note: 'スマートフォン encurtado. Repare no ホ no lugar de フォ: a forma curta ficou com o som mais japonês. O celular antigo, de flip, é o ガラケー, a “Galápagos-keitai”, que evoluiu isolado no Japão, como os bichos das ilhas Galápagos.',
     transparent: false,
   },
   {
@@ -818,7 +818,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: 'gasoline + stand',
     origin_language: 'Inglês (montado no Japão)',
     cognates: c(['en', 'gas station'], ['pt', 'posto de gasolina']),
-    evolution_note: 'Em inglês é «gas station»; o japonês juntou «gasoline» (gasolina) com «stand» (banca, barraca). Nos postos de atendimento completo, os frentistas guiam o carro na saída e se curvam em agradecimento.',
+    evolution_note: 'Em inglês é “gas station”; o japonês juntou “gasoline” (gasolina) com “stand” (banca, barraca). Nos postos de atendimento completo, os frentistas guiam o carro na saída e se curvam em agradecimento.',
     transparent: false,
   },
   {
@@ -826,7 +826,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: 'PET + bottle',
     origin_language: 'Inglês (montado no Japão)',
     cognates: c(['en', 'plastic bottle'], ['pt', 'garrafa PET']),
-    evolution_note: 'O PET é o plástico da garrafa; em inglês se diz «plastic bottle». O japonês e o português tiveram a mesma ideia: ペットボトル e «garrafa PET». Não tem nada a ver com «pet», o bicho de estimação.',
+    evolution_note: 'O PET é o plástico da garrafa; em inglês se diz “plastic bottle”. O japonês e o português tiveram a mesma ideia: ペットボトル e “garrafa PET”. Não tem nada a ver com “pet”, o bicho de estimação.',
     transparent: true,
   },
   {
@@ -834,7 +834,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: 'white shirt',
     origin_language: 'Inglês (montado no Japão)',
     cognates: c(['en', 'dress shirt'], ['pt', 'camisa social']),
-    evolution_note: 'A «white shirt» virou ワイシャツ e passou a ser qualquer camisa social, de botão e colarinho, mesmo colorida: 青いワイシャツ, «camisa social azul», não é contradição. A camiseta é outra coisa: ティーシャツ.',
+    evolution_note: 'A “white shirt” virou ワイシャツ e passou a ser qualquer camisa social, de botão e colarinho, mesmo colorida: 青いワイシャツ, “camisa social azul”, não é contradição. A camiseta é outra coisa: ティーシャツ.',
     transparent: false,
   },
   {
@@ -842,7 +842,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: 'don\'t mind',
     origin_language: 'Inglês (montado no Japão)',
     cognates: c(['en', 'never mind'], ['pt', 'não esquenta']),
-    evolution_note: 'Grita-se para o colega de time que errou: ドンマイ！, «não liga, acontece!». Vem de «don\'t mind», que em inglês não se usa assim. É o nosso «não esquenta» do futebol de fim de semana.',
+    evolution_note: 'Grita-se para o colega de time que errou: ドンマイ！, “não liga, acontece!”. Vem de “don\'t mind”, que em inglês não se usa assim. É o nosso “não esquenta” do futebol de fim de semana.',
     transparent: false,
   },
   // ——— palavras de kanji (漢語, kango): peças que se encaixam como raízes gregas e latinas ———
@@ -851,7 +851,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: '日 (sol) + 本 (origem)',
     origin_language: 'Sino-japonês',
     cognates: c(['zh', 'Rìběn'], ['ms', 'Jepang'], ['pt', 'Japão']),
-    evolution_note: 'A «origem do sol»: visto da China, o Japão fica a leste, onde o sol nasce. Lê-se にほん ou にっぽん. O nosso «Japão» veio de uma pronúncia chinesa antiga desse nome, que chegou aos portugueses pelo malaio «Jepang». Marco Polo, que nunca pisou lá, escreveu «Cipangu».',
+    evolution_note: 'A “origem do sol”: visto da China, o Japão fica a leste, onde o sol nasce. Lê-se にほん ou にっぽん. O nosso “Japão” veio de uma pronúncia chinesa antiga desse nome, que chegou aos portugueses pelo malaio “Jepang”. Marco Polo, que nunca pisou lá, escreveu “Cipangu”.',
     transparent: false,
   },
   {
@@ -859,7 +859,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: '電 (raio, eletricidade) + 話 (fala)',
     origin_language: 'Sino-japonês (criado no Japão)',
     cognates: c(['zh', 'diànhuà'], ['ko', '전화 (jeonhwa)'], ['pt', 'telefone']),
-    evolution_note: 'A «fala elétrica». Na era Meiji (1868–1912), o Japão precisou de nomes para milhares de coisas novas e os montou com kanji. Muitos seguiram para a China e a Coreia: 電話 é hoje «diànhuà» em chinês e «jeonhwa» em coreano. O mesmo 電 está em 電気 (eletricidade) e 電車 (trem elétrico).',
+    evolution_note: 'A “fala elétrica”. Na era Meiji (1868–1912), o Japão precisou de nomes para milhares de coisas novas e os montou com kanji. Muitos seguiram para a China e a Coreia: 電話 é hoje “diànhuà” em chinês e “jeonhwa” em coreano. O mesmo 電 está em 電気 (eletricidade) e 電車 (trem elétrico).',
     transparent: false,
   },
   {
@@ -867,7 +867,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: '自 (si mesmo) + 動 (mover) + 車 (veículo)',
     origin_language: 'Sino-japonês',
     cognates: c(['pt', 'automóvel'], ['el', 'autós (si mesmo)'], ['la', 'mobilis (que se move)']),
-    evolution_note: 'O «veículo que se move sozinho», peça por peça igual ao nosso «automóvel»: auto (grego, «si mesmo») + móvel (latim, «que se move»). No dia a dia, o japonês diz só 車 (kuruma).',
+    evolution_note: 'O “veículo que se move sozinho”, peça por peça igual ao nosso “automóvel”: auto (grego, “si mesmo”) + móvel (latim, “que se move”). No dia a dia, o japonês diz só 車 (kuruma).',
     transparent: false,
   },
   {
@@ -875,7 +875,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: '飛 (voar) + 行 (ir) + 機 (máquina)',
     origin_language: 'Sino-japonês',
     cognates: c(['zh', 'fēijī'], ['pt', 'avião']),
-    evolution_note: 'A «máquina que vai voando». O 機 (máquina) está em 機械 (máquina) e 洗濯機 (máquina de lavar); o 飛 está em 飛ぶ (voar). Quem aprende os kanji mais comuns começa a adivinhar palavras que nunca viu.',
+    evolution_note: 'A “máquina que vai voando”. O 機 (máquina) está em 機械 (máquina) e 洗濯機 (máquina de lavar); o 飛 está em 飛ぶ (voar). Quem aprende os kanji mais comuns começa a adivinhar palavras que nunca viu.',
     transparent: false,
   },
   {
@@ -883,7 +883,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: '新 (novo) + 聞く (ouvir)',
     origin_language: 'Sino-japonês',
     cognates: c(['zh', 'xīnwén (notícia)'], ['ko', '신문 (sinmun)'], ['pt', 'jornal']),
-    evolution_note: 'As «novidades que se ouvem». Em chinês, a mesma palavra (xīnwén) é a notícia; em japonês, a palavra passou a ser o papel em que as notícias vêm impressas, o jornal. Os maiores jornais japoneses vendem milhões de exemplares por dia.',
+    evolution_note: 'As “novidades que se ouvem”. Em chinês, a mesma palavra (xīnwén) é a notícia; em japonês, a palavra passou a ser o papel em que as notícias vêm impressas, o jornal. Os maiores jornais japoneses vendem milhões de exemplares por dia.',
     transparent: false,
   },
   {
@@ -891,7 +891,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: '先 (antes) + 生 (nascer)',
     origin_language: 'Sino-japonês',
     cognates: c(['zh', 'xiānsheng (senhor)'], ['pt', 'sensei'], ['pt', 'mestre']),
-    evolution_note: '«Quem nasceu antes»: o professor, e também o médico, o advogado, o político, qualquer mestre. O brasileiro conhece a palavra dos tatames de judô e caratê. Em chinês, o mesmo 先生 virou só «senhor».',
+    evolution_note: '“Quem nasceu antes”: o professor, e também o médico, o advogado, o político, qualquer mestre. O brasileiro conhece a palavra dos tatames de judô e caratê. Em chinês, o mesmo 先生 virou só “senhor”.',
     transparent: true,
   },
   {
@@ -899,7 +899,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: '経世済民 (governar o mundo e socorrer o povo)',
     origin_language: 'Sino-japonês (criado no Japão)',
     cognates: c(['zh', 'jīngjì'], ['ko', '경제 (gyeongje)'], ['pt', 'economia']),
-    evolution_note: 'Uma expressão chinesa antiga, «governar o mundo e socorrer o povo», foi encurtada no Japão do século XIX para traduzir «economia». A China e a Coreia adotaram a versão japonesa, como aconteceu com 社会 (sociedade) e 科学 (ciência).',
+    evolution_note: 'Uma expressão chinesa antiga, “governar o mundo e socorrer o povo”, foi encurtada no Japão do século XIX para traduzir “economia”. A China e a Coreia adotaram a versão japonesa, como aconteceu com 社会 (sociedade) e 科学 (ciência).',
     transparent: false,
   },
   {
@@ -907,7 +907,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: '哲 (sábio) + 学 (estudo)',
     origin_language: 'Sino-japonês (criado no Japão)',
     cognates: c(['zh', 'zhéxué'], ['el', 'philosophía'], ['pt', 'filosofia']),
-    evolution_note: 'Criada em 1874 pelo pensador Nishi Amane para traduzir a «filosofia», o «amor à sabedoria» dos gregos. Ele também cunhou ou espalhou palavras como 芸術 (arte) e 科学 (ciência), que o chinês e o coreano usam até hoje.',
+    evolution_note: 'Criada em 1874 pelo pensador Nishi Amane para traduzir a “filosofia”, o “amor à sabedoria” dos gregos. Ele também cunhou ou espalhou palavras como 芸術 (arte) e 科学 (ciência), que o chinês e o coreano usam até hoje.',
     transparent: false,
   },
   {
@@ -923,7 +923,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: '勉 (esforçar-se) + 強 (forçar)',
     origin_language: 'Sino-japonês',
     cognates: c(['zh', 'miǎnqiǎng (a contragosto)'], ['pt', 'estudar']),
-    evolution_note: 'Estudar é «esforçar-se à força». Em chinês, a mesma palavra (miǎnqiǎng) quer dizer «forçado, a contragosto»; e no japonês dos comerciantes, 勉強 era o desconto que o vendedor dava «se esforçando»: em Osaka ainda se ouve 勉強しときます, «vou fazer um precinho».',
+    evolution_note: 'Estudar é “esforçar-se à força”. Em chinês, a mesma palavra (miǎnqiǎng) quer dizer “forçado, a contragosto”; e no japonês dos comerciantes, 勉強 era o desconto que o vendedor dava “se esforçando”: em Osaka ainda se ouve 勉強しときます, “vou fazer um precinho”.',
     transparent: false,
   },
   {
@@ -931,7 +931,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: '大 (grande) + 丈夫 (homem feito)',
     origin_language: 'Sino-japonês',
     cognates: c(['zh', 'dàzhàngfu (homem de valor)'], ['pt', 'tudo bem']),
-    evolution_note: 'No chinês clássico, «um grande homem, um homem de valor». Do «homem firme, seguro» veio o «firme, sem perigo» e daí o «tudo bem»: 大丈夫ですか？, «tudo bem?». Hoje também recusa com educação: 大丈夫です, «não precisa, obrigado».',
+    evolution_note: 'No chinês clássico, “um grande homem, um homem de valor”. Do “homem firme, seguro” veio o “firme, sem perigo” e daí o “tudo bem”: 大丈夫ですか？, “tudo bem?”. Hoje também recusa com educação: 大丈夫です, “não precisa, obrigado”.',
     transparent: false,
   },
   {
@@ -939,7 +939,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: '元 (origem) + 気 (energia vital)',
     origin_language: 'Sino-japonês',
     cognates: c(['zh', 'yuánqì'], ['pt', 'ânimo']),
-    evolution_note: 'O 気 (ki) é a energia vital da filosofia chinesa, a mesma do 合気道 (aikidô) e do 天気 (o tempo, «a energia do céu»). 元気 é a energia de origem: saúde e ânimo. お元気ですか？ é o «como vai?».',
+    evolution_note: 'O 気 (ki) é a energia vital da filosofia chinesa, a mesma do 合気道 (aikidô) e do 天気 (o tempo, “a energia do céu”). 元気 é a energia de origem: saúde e ânimo. お元気ですか？ é o “como vai?”.',
     transparent: false,
   },
   // ——— palavras nativas (和語, wago): as de casa, sem kanji chinês por trás ———
@@ -948,7 +948,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: '頂く (pôr sobre a cabeça, receber de cima)',
     origin_language: 'Japonês nativo (wago)',
     cognates: c(['pt', 'bom apetite'], ['fr', 'bon appétit']),
-    evolution_note: 'Vem de 頂 (itadaki), o alto da cabeça: quem recebia algo de um superior o erguia acima da cabeça. Dito antes de comer, com as mãos juntas, agradece a quem cozinhou, a quem plantou e ao próprio alimento. Não é «bom apetite»: é «recebo com gratidão».',
+    evolution_note: 'Vem de 頂 (itadaki), o alto da cabeça: quem recebia algo de um superior o erguia acima da cabeça. Dito antes de comer, com as mãos juntas, agradece a quem cozinhou, a quem plantou e ao próprio alimento. Não é “bom apetite”: é “recebo com gratidão”.',
     transparent: false,
   },
   {
@@ -956,7 +956,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: '今日は (quanto ao dia de hoje…)',
     origin_language: 'Japonês nativo (wago)',
     cognates: c(['pt', 'boa tarde'], ['pt', 'olá']),
-    evolution_note: 'É o começo de uma frase antiga, «今日はご機嫌いかがですか», «quanto ao dia de hoje, como vai?», que perdeu o resto. Por isso termina com は, a partícula de tópico, lida «wa»: escrever こんにちわ é erro comum até entre japoneses.',
+    evolution_note: 'É o começo de uma frase antiga, “今日はご機嫌いかがですか”, “quanto ao dia de hoje, como vai?”, que perdeu o resto. Por isso termina com は, a partícula de tópico, lida “wa”: escrever こんにちわ é erro comum até entre japoneses.',
     transparent: false,
   },
   {
@@ -964,7 +964,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: '左様なら (se é assim…)',
     origin_language: 'Japonês nativo (wago)',
     cognates: c(['pt', 'adeus'], ['es', 'adiós']),
-    evolution_note: '«Se é assim, então…»: a despedida é uma conclusão pela metade. Soa definitiva, quase um «adeus». Entre amigos se diz じゃあね ou またね; no trabalho, ao sair antes dos colegas, お先に失礼します.',
+    evolution_note: '“Se é assim, então…”: a despedida é uma conclusão pela metade. Soa definitiva, quase um “adeus”. Entre amigos se diz じゃあね ou またね; no trabalho, ao sair antes dos colegas, お先に失礼します.',
     transparent: false,
   },
   {
@@ -972,7 +972,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: '済む (terminar, ficar resolvido) + ません',
     origin_language: 'Japonês nativo (wago)',
     cognates: c(['pt', 'com licença'], ['pt', 'desculpe'], ['pt', 'obrigado']),
-    evolution_note: '«Isto não termina», «não fica resolvido»: a dívida com o outro continua em aberto. Por isso a mesma palavra pede desculpas, chama o garçom e agradece um favor. É a palavra mais útil do Japão.',
+    evolution_note: '“Isto não termina”, “não fica resolvido”: a dívida com o outro continua em aberto. Por isso a mesma palavra pede desculpas, chama o garçom e agradece um favor. É a palavra mais útil do Japão.',
     transparent: false,
   },
   {
@@ -980,7 +980,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: '木 (árvore) + 漏れ (vazar) + 日 (sol)',
     origin_language: 'Japonês nativo (wago)',
     cognates: c(['pt', 'luz entre as folhas']),
-    evolution_note: 'A luz do sol que vaza por entre as folhas das árvores. O português precisa de uma frase; o japonês tem uma palavra. O filme «Dias Perfeitos» (2023), de Wim Wenders, rodado em Tóquio, termina explicando justamente o 木漏れ日.',
+    evolution_note: 'A luz do sol que vaza por entre as folhas das árvores. O português precisa de uma frase; o japonês tem uma palavra. O filme “Dias Perfeitos” (2023), de Wim Wenders, rodado em Tóquio, termina explicando justamente o 木漏れ日.',
     transparent: false,
   },
   {
@@ -996,7 +996,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: '花 (flor) + 火 (fogo)',
     origin_language: 'Japonês nativo (wago)',
     cognates: c(['pt', 'fogos de artifício']),
-    evolution_note: 'As «flores de fogo». No verão, os 花火大会, os festivais de fogos, reúnem multidões de yukata à beira dos rios. Lê-se com as leituras nativas: はな + ひ, e o ひ ganha tracinhos ao formar a palavra (rendaku): はなび.',
+    evolution_note: 'As “flores de fogo”. No verão, os 花火大会, os festivais de fogos, reúnem multidões de yukata à beira dos rios. Lê-se com as leituras nativas: はな + ひ, e o ひ ganha tracinhos ao formar a palavra (rendaku): はなび.',
     transparent: false,
   },
   // ——— do japonês para o português e o mundo ———
@@ -1005,7 +1005,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: '津 (porto) + 波 (onda)',
     origin_language: 'Japonês',
     cognates: c(['pt', 'tsunami'], ['en', 'tsunami'], ['es', 'tsunami']),
-    evolution_note: 'A «onda do porto»: em alto-mar, os pescadores nem percebiam a onda passar, e ao voltar encontravam o porto destruído. O Japão deu a palavra ao mundo por ser um dos países mais atingidos. Em português se escreve «tsunami», com o «ts» do つ.',
+    evolution_note: 'A “onda do porto”: em alto-mar, os pescadores nem percebiam a onda passar, e ao voltar encontravam o porto destruído. O Japão deu a palavra ao mundo por ser um dos países mais atingidos. Em português se escreve “tsunami”, com o “ts” do つ.',
     transparent: true,
   },
   {
@@ -1013,7 +1013,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: '空 (kara, vazio) + オーケストラ (orquestra)',
     origin_language: 'Japonês + inglês',
     cognates: c(['pt', 'karaokê'], ['en', 'karaoke']),
-    evolution_note: 'A «orquestra vazia»: a música sem a voz, para você cantar por cima. Metade japonesa, metade estrangeira. Nasceu nos bares da região de Kobe e Osaka nos anos 1970 e conquistou o mundo. No Japão, canta-se numa cabine fechada, só com os amigos: a カラオケボックス.',
+    evolution_note: 'A “orquestra vazia”: a música sem a voz, para você cantar por cima. Metade japonesa, metade estrangeira. Nasceu nos bares da região de Kobe e Osaka nos anos 1970 e conquistou o mundo. No Japão, canta-se numa cabine fechada, só com os amigos: a カラオケボックス.',
     transparent: true,
   },
   {
@@ -1021,7 +1021,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: '絵 (e, imagem) + 文字 (moji, letra)',
     origin_language: 'Japonês',
     cognates: c(['pt', 'emoji'], ['en', 'emoji']),
-    evolution_note: 'A «letra-desenho». Parece vir de «emoção», mas é coincidência: e + moji. Os primeiros 176 emojis foram criados por Shigetaka Kurita em 1999, para os celulares japoneses; hoje estão no acervo do MoMA, em Nova York.',
+    evolution_note: 'A “letra-desenho”. Parece vir de “emoção”, mas é coincidência: e + moji. Os primeiros 176 emojis foram criados por Shigetaka Kurita em 1999, para os celulares japoneses; hoje estão no acervo do MoMA, em Nova York.',
     transparent: true,
   },
   {
@@ -1029,7 +1029,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: '酸し (sushi, azedo)',
     origin_language: 'Japonês',
     cognates: c(['pt', 'sushi'], ['en', 'sushi']),
-    evolution_note: 'Vem do adjetivo antigo 酸し, «azedo»: no começo, o sushi era peixe conservado em arroz fermentado. Os kanji 寿司 («longevidade» + «administrar») foram escolhidos pelo som e pelo bom agouro. O peixe cru sobre arroz temperado nasceu em Edo, a antiga Tóquio, no século XIX, como comida rápida de rua.',
+    evolution_note: 'Vem do adjetivo antigo 酸し, “azedo”: no começo, o sushi era peixe conservado em arroz fermentado. Os kanji 寿司 (“longevidade” + “administrar”) foram escolhidos pelo som e pelo bom agouro. O peixe cru sobre arroz temperado nasceu em Edo, a antiga Tóquio, no século XIX, como comida rápida de rua.',
     transparent: true,
   },
   {
@@ -1037,7 +1037,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: '着る (vestir) + 物 (coisa)',
     origin_language: 'Japonês',
     cognates: c(['pt', 'quimono'], ['en', 'kimono']),
-    evolution_note: 'Ao pé da letra, «coisa de vestir», roupa. Com a chegada da roupa ocidental (洋服), 着物 passou a nomear só a tradicional, que o português escreve «quimono», com «qu».',
+    evolution_note: 'Ao pé da letra, “coisa de vestir”, roupa. Com a chegada da roupa ocidental (洋服), 着物 passou a nomear só a tradicional, que o português escreve “quimono”, com “qu”.',
     transparent: true,
   },
   {
@@ -1045,7 +1045,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: '空 (vazio) + 手 (mão)',
     origin_language: 'Japonês (de Okinawa)',
     cognates: c(['pt', 'caratê'], ['en', 'karate']),
-    evolution_note: 'Nasceu em Okinawa como 唐手 (tōde), a «mão chinesa» (唐 era a China da dinastia Tang). Nos anos 1930, trocou-se o kanji por 空, que se lê igual: a «mão vazia», a luta sem armas.',
+    evolution_note: 'Nasceu em Okinawa como 唐手 (tōde), a “mão chinesa” (唐 era a China da dinastia Tang). Nos anos 1930, trocou-se o kanji por 空, que se lê igual: a “mão vazia”, a luta sem armas.',
     transparent: true,
   },
   {
@@ -1053,7 +1053,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: '柔 (suave, flexível) + 道 (caminho)',
     origin_language: 'Japonês',
     cognates: c(['pt', 'judô'], ['en', 'judo']),
-    evolution_note: 'O «caminho da suavidade»: usar a força do adversário em vez de enfrentá-la. Criado por Kanō Jigorō em 1882. O Brasil é uma potência do judô, também graças aos imigrantes japoneses que abriram academias pelo país.',
+    evolution_note: 'O “caminho da suavidade”: usar a força do adversário em vez de enfrentá-la. Criado por Kanō Jigorō em 1882. O Brasil é uma potência do judô, também graças aos imigrantes japoneses que abriram academias pelo país.',
     transparent: true,
   },
   {
@@ -1061,7 +1061,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: '忍 (esconder-se, aguentar) + 者 (pessoa)',
     origin_language: 'Japonês',
     cognates: c(['pt', 'ninja'], ['en', 'ninja']),
-    evolution_note: 'O 忍 quer dizer ao mesmo tempo «esconder-se» e «aguentar calado». Na época, dizia-se mais 忍び (shinobi); a leitura にんじゃ se popularizou no século XX, com os romances e os filmes.',
+    evolution_note: 'O 忍 quer dizer ao mesmo tempo “esconder-se” e “aguentar calado”. Na época, dizia-se mais 忍び (shinobi); a leitura にんじゃ se popularizou no século XX, com os romances e os filmes.',
     transparent: true,
   },
   {
@@ -1069,15 +1069,15 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: 'さぶらう (servir, estar ao lado de um senhor)',
     origin_language: 'Japonês',
     cognates: c(['pt', 'samurai'], ['en', 'samurai']),
-    evolution_note: 'O samurai é, na origem, «quem serve»: vem do verbo antigo さぶらう, estar a serviço de um nobre (さぶらい → さむらい). A classe foi abolida na era Meiji, e em 1876 ficou proibido andar de espada na rua.',
+    evolution_note: 'O samurai é, na origem, “quem serve”: vem do verbo antigo さぶらう, estar a serviço de um nobre (さぶらい → さむらい). A classe foi abolida na era Meiji, e em 1876 ficou proibido andar de espada na rua.',
     transparent: true,
   },
   {
     word: '漫画',
-    root_word: '漫画 (man, «à toa» + ga, «desenho»)',
+    root_word: '漫画 (man, “à toa” + ga, “desenho”)',
     origin_language: 'Japonês',
     cognates: c(['pt', 'mangá'], ['en', 'manga']),
-    evolution_note: 'Os «desenhos à toa», sem compromisso. A palavra ficou famosa com o «Hokusai Manga» (1814), os cadernos de esboços do mesmo artista da «Grande Onda». No Brasil, o mangá chegou cedo, pelas livrarias do bairro da Liberdade, em São Paulo.',
+    evolution_note: 'Os “desenhos à toa”, sem compromisso. A palavra ficou famosa com o “Hokusai Manga” (1814), os cadernos de esboços do mesmo artista da “Grande Onda”. No Brasil, o mangá chegou cedo, pelas livrarias do bairro da Liberdade, em São Paulo.',
     transparent: true,
   },
   {
@@ -1085,7 +1085,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: 'animation',
     origin_language: 'Inglês (encurtado no Japão)',
     cognates: c(['en', 'animation'], ['pt', 'animação'], ['pt', 'anime']),
-    evolution_note: 'Ida e volta: o inglês «animation» virou アニメーション, o japonês encurtou para アニメ, e o mundo pegou a palavra de volta para falar do desenho animado japonês. No Japão, アニメ é qualquer desenho animado, até os da Disney.',
+    evolution_note: 'Ida e volta: o inglês “animation” virou アニメーション, o japonês encurtou para アニメ, e o mundo pegou a palavra de volta para falar do desenho animado japonês. No Japão, アニメ é qualquer desenho animado, até os da Disney.',
     transparent: true,
   },
   {
@@ -1093,7 +1093,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: '醤 (molho fermentado) + 油 (óleo)',
     origin_language: 'Japonês (do chinês)',
     cognates: c(['zh', 'jiàngyóu'], ['pt', 'shoyu'], ['en', 'soy sauce']),
-    evolution_note: 'O brasileiro diz «shoyu» por causa dos imigrantes japoneses; o inglês diz «soy sauce». E a própria «soja» vem de しょうゆ, pelo holandês: a planta ganhou o nome do molho. Hoje o Brasil é o maior produtor de soja do mundo.',
+    evolution_note: 'O brasileiro diz “shoyu” por causa dos imigrantes japoneses; o inglês diz “soy sauce”. E a própria “soja” vem de しょうゆ, pelo holandês: a planta ganhou o nome do molho. Hoje o Brasil é o maior produtor de soja do mundo.',
     transparent: true,
   },
   {
@@ -1101,7 +1101,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: 'さけ',
     origin_language: 'Japonês',
     cognates: c(['pt', 'saquê'], ['en', 'sake']),
-    evolution_note: 'Cuidado: em japonês, お酒 é qualquer bebida alcoólica, da cerveja ao uísque. O que chamamos de «saquê» é o 日本酒 (nihonshu), «a bebida do Japão», feito de arroz. Quem pergunta お酒は飲めますか？ quer saber se você bebe, não se gosta de saquê.',
+    evolution_note: 'Cuidado: em japonês, お酒 é qualquer bebida alcoólica, da cerveja ao uísque. O que chamamos de “saquê” é o 日本酒 (nihonshu), “a bebida do Japão”, feito de arroz. Quem pergunta お酒は飲めますか？ quer saber se você bebe, não se gosta de saquê.',
     transparent: true,
   },
   {
@@ -1117,7 +1117,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: 'かき',
     origin_language: 'Japonês',
     cognates: c(['pt', 'caqui'], ['en', 'kaki'], ['la', 'Diospyros kaki']),
-    evolution_note: 'O nosso «caqui» é a palavra japonesa かき, e o nome científico da árvore é «Diospyros kaki». No outono, os caquis secam pendurados nas varandas do interior japonês: são os 干し柿. O Brasil cultiva muito caqui graças aos imigrantes japoneses.',
+    evolution_note: 'O nosso “caqui” é a palavra japonesa かき, e o nome científico da árvore é “Diospyros kaki”. No outono, os caquis secam pendurados nas varandas do interior japonês: são os 干し柿. O Brasil cultiva muito caqui graças aos imigrantes japoneses.',
     transparent: true,
   },
   {
@@ -1125,7 +1125,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: '出る (sair) + 稼ぐ (ganhar a vida)',
     origin_language: 'Japonês',
     cognates: c(['pt', 'dekassegui']),
-    evolution_note: '«Sair para ganhar a vida»: era o camponês que passava o inverno trabalhando na cidade. A partir de 1990, dezenas de milhares de brasileiros descendentes de japoneses foram trabalhar nas fábricas do Japão, e a palavra entrou no português: «dekassegui». Hoje vivem no Japão uns duzentos mil brasileiros.',
+    evolution_note: '“Sair para ganhar a vida”: era o camponês que passava o inverno trabalhando na cidade. A partir de 1990, dezenas de milhares de brasileiros descendentes de japoneses foram trabalhar nas fábricas do Japão, e a palavra entrou no português: “dekassegui”. Hoje vivem no Japão uns duzentos mil brasileiros.',
     transparent: true,
   },
   {
@@ -1141,7 +1141,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: '俳諧 (haikai) + 句 (verso)',
     origin_language: 'Japonês',
     cognates: c(['pt', 'haicai'], ['en', 'haiku']),
-    evolution_note: 'O poema de 5, 7 e 5 batidas. 俳句 é o «verso de haikai», nome que o poeta Masaoka Shiki popularizou no fim do século XIX para o antigo 発句 (hokku). No Brasil, o haicai tem tradição forte, de Guilherme de Almeida a Paulo Leminski. O mais famoso é de Bashō: 古池や蛙飛び込む水の音.',
+    evolution_note: 'O poema de 5, 7 e 5 batidas. 俳句 é o “verso de haikai”, nome que o poeta Masaoka Shiki popularizou no fim do século XIX para o antigo 発句 (hokku). No Brasil, o haicai tem tradição forte, de Guilherme de Almeida a Paulo Leminski. O mais famoso é de Bashō: 古池や蛙飛び込む水の音.',
     transparent: true,
   },
   {
@@ -1149,7 +1149,7 @@ export const ETYMOLOGY_JA: EtymologySeed[] = [
     root_word: 'lāmiàn (macarrão puxado à mão)',
     origin_language: 'Chinês (pelo japonês)',
     cognates: c(['zh', 'lāmiàn'], ['pt', 'lámen'], ['pt', 'miojo']),
-    evolution_note: 'Chegou com os imigrantes chineses dos portos japoneses no fim do século XIX, com o nome de 中華そば, «soba chinês». A origem de ラーメン é discutida; a explicação mais citada é o chinês «lāmiàn», o macarrão puxado à mão. O instantâneo foi inventado no Japão por Momofuku Andō, em 1958: é o avô do nosso «miojo».',
+    evolution_note: 'Chegou com os imigrantes chineses dos portos japoneses no fim do século XIX, com o nome de 中華そば, “soba chinês”. A origem de ラーメン é discutida; a explicação mais citada é o chinês “lāmiàn”, o macarrão puxado à mão. O instantâneo foi inventado no Japão por Momofuku Andō, em 1958: é o avô do nosso “miojo”.',
     transparent: true,
   },
 ];

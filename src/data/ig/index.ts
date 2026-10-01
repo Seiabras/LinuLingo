@@ -49,5 +49,5 @@ export const IGBO: LanguagePack = {
   phrases: { hi: 'Ndewo!', thanks: 'Daalụ!', letsStart: ['Ka anyị bido!', 'Vamos começar!'] },
   formalMarkers: 'ndewo, biko, daalụ nke ukwuu',
   cognateNote:
-    'O igbo é uma língua do tronco Níger-Congo, tonal, com harmonia vocálica (as vogais de uma palavra combinam entre si: ị, ụ, ọ, a de um lado; i, u, o, e do outro). Não é parente do português. É a língua dos igbos do sudeste da Nigéria e de Chinua Achebe, que escreveu em inglês, mas encheu seus romances de provérbios igbos: «ilu bụ mmanụ e ji eri okwu» (os provérbios são o azeite com que se comem as palavras).',
+    'O igbo é uma língua do tronco Níger-Congo, tonal, com harmonia vocálica (as vogais de uma palavra combinam entre si: ị, ụ, ọ, a de um lado; i, u, o, e do outro). Não é parente do português. É a língua dos igbos do sudeste da Nigéria e de Chinua Achebe, que escreveu em inglês, mas encheu seus romances de provérbios igbos: “ilu bụ mmanụ e ji eri okwu” (os provérbios são o azeite com que se comem as palavras).',
 };

@@ -8,7 +8,7 @@ export const LIBRAS_MAIS: MiniLesson[] = [
     emoji: '🎨',
     intro: [
       'Na Libras, a característica costuma vir depois da coisa: CASA AZUL, CARRO VERMELHO — como no português, e ao contrário do inglês.',
-      'Quando a cor é importante na conversa, ela pode ser repetida ou reforçada pela expressão do rosto: «bem vermelho».',
+      'Quando a cor é importante na conversa, ela pode ser repetida ou reforçada pela expressão do rosto: “bem vermelho”.',
     ],
     items: [
       { term: 'VERMELHO', meaning: 'vermelho', vlibras: 'vermelho' },
@@ -22,7 +22,7 @@ export const LIBRAS_MAIS: MiniLesson[] = [
     ],
     quiz: [
       { q: 'Em Libras, onde costuma ficar a cor?', options: ['Depois da coisa: CASA AZUL', 'Antes da coisa: AZUL CASA', 'Em lugar nenhum'], answer: 0 },
-      { q: 'Como se reforça que algo é «bem vermelho»?', options: ['Com a expressão do rosto e o movimento', 'Soletrando', 'Não se reforça'], answer: 0 },
+      { q: 'Como se reforça que algo é “bem vermelho”?', options: ['Com a expressão do rosto e o movimento', 'Soletrando', 'Não se reforça'], answer: 0 },
     ],
   },
   {
@@ -107,7 +107,7 @@ export const LIBRAS_MAIS: MiniLesson[] = [
     ],
     quiz: [
       { q: 'Para onde vai o futuro na linha do tempo da Libras?', options: ['Para trás', 'Para a frente', 'Para cima'], answer: 1 },
-      { q: 'Como se diz «ontem eu estudei»?', options: ['ONTEM EU ESTUDAR: o tempo vai no começo', 'Com uma terminação no verbo', 'Não dá para dizer'], answer: 0 },
+      { q: 'Como se diz “ontem eu estudei”?', options: ['ONTEM EU ESTUDAR: o tempo vai no começo', 'Com uma terminação no verbo', 'Não dá para dizer'], answer: 0 },
     ],
   },
   {
@@ -115,8 +115,8 @@ export const LIBRAS_MAIS: MiniLesson[] = [
     title: 'Verbos com direção',
     emoji: '➡️',
     intro: [
-      'Alguns verbos se movem de quem faz para quem recebe. AJUDAR saindo de mim para você é «eu te ajudo»; saindo de você para mim, «você me ajuda». Não é preciso sinalizar EU e VOCÊ: a direção já diz.',
-      'Se a Ana foi colocada à esquerda na conversa, AJUDAR indo da esquerda para mim quer dizer «a Ana me ajuda».',
+      'Alguns verbos se movem de quem faz para quem recebe. AJUDAR saindo de mim para você é “eu te ajudo”; saindo de você para mim, “você me ajuda”. Não é preciso sinalizar EU e VOCÊ: a direção já diz.',
+      'Se a Ana foi colocada à esquerda na conversa, AJUDAR indo da esquerda para mim quer dizer “a Ana me ajuda”.',
     ],
     items: [
       { term: 'AJUDAR', meaning: 'ajudar', vlibras: 'ajudar' },
@@ -154,7 +154,7 @@ export const LIBRAS_MAIS: MiniLesson[] = [
     title: 'Primeiras frases',
     emoji: '💬',
     intro: [
-      'Para escrever Libras com letras do português, usa-se a glosa: cada sinal em MAIÚSCULAS, na ordem da Libras. «Qual é o seu nome?» vira NOME VOCÊ QUAL?',
+      'Para escrever Libras com letras do português, usa-se a glosa: cada sinal em MAIÚSCULAS, na ordem da Libras. “Qual é o seu nome?” vira NOME VOCÊ QUAL?',
       'O VLibras traduz do português, então mostra estas frases já na ordem da Libras. Compare a frase em português com o que o avatar faz.',
     ],
     items: [

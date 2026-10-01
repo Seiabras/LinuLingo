@@ -11,15 +11,15 @@ export const STORIES_LT: StorySeed[] = [
     emoji: '🏰',
     summary: 'Na praça da Catedral, em Vilnius, o Linu conhece a Rūta, uma guia, e sobe até a torre de Gediminas.',
     cultural_context:
-      'A praça da Catedral (Katedros aikštė) é o coração de Vilnius: a catedral branca tem a torre do sino (varpinė) separada, e no morro ao lado fica a torre de tijolos vermelhos do castelo de Gediminas. No chão da praça, um ladrilho com a palavra «Stebuklas» (milagre) marca uma das pontas da Via Báltica de 1989, a corrente humana que ligou Vilnius a Tallinn.',
+      'A praça da Catedral (Katedros aikštė) é o coração de Vilnius: a catedral branca tem a torre do sino (varpinė) separada, e no morro ao lado fica a torre de tijolos vermelhos do castelo de Gediminas. No chão da praça, um ladrilho com a palavra “Stebuklas” (milagre) marca uma das pontas da Via Báltica de 1989, a corrente humana que ligou Vilnius a Tallinn.',
     start: 'start',
     glossary: [
       ['Labas! / Viso gero!', 'Oi! / Tchau!'],
       ['Aš esu… / Kas tu?', 'Eu sou… / Quem é você?'],
-      ['yra', 'é, está, há (3ª pessoa de «būti», ser/estar)'],
-      ['ačiū', 'obrigado (o «č» soa como o «tch» de «tchau»)'],
+      ['yra', 'é, está, há (3ª pessoa de “būti”, ser/estar)'],
+      ['ačiū', 'obrigado (o “č” soa como o “tch” de “tchau”)'],
       ['taip / ne', 'sim / não'],
-      ['Man dvidešimt metų.', 'Eu tenho vinte anos. (ao pé da letra: «a mim, vinte anos»)'],
+      ['Man dvidešimt metų.', 'Eu tenho vinte anos. (ao pé da letra: “a mim, vinte anos”)'],
       ['gidė / gidas', 'guia (mulher) / guia (homem)'],
       ['dešimt', 'dez'],
     ],
@@ -47,37 +47,37 @@ export const STORIES_LT: StorySeed[] = [
       },
       rute: {
         emoji: '👩',
-        text: 'Čia yra mergina. «Labas! Aš esu Rūta. O kas tu?»',
-        translation: 'Aqui há uma moça. «Oi! Eu sou a Rūta. E quem é você?»',
+        text: 'Čia yra mergina. “Labas! Aš esu Rūta. O kas tu?”',
+        translation: 'Aqui há uma moça. “Oi! Eu sou a Rūta. E quem é você?”',
         choices: [
-          { text: '«Labas! Aš esu Linu.»', translation: '«Oi! Eu sou o Linu.»', next: 'metai' },
+          { text: '“Labas! Aš esu Linu.”', translation: '“Oi! Eu sou o Linu.”', next: 'metai' },
           {
-            text: '«Viso gero, Rūta!»',
-            translation: '«Tchau, Rūta!»',
-            wrong: 'A Rūta disse «Labas!» (Oi!) e perguntou «Kas tu?» (Quem é você?). «Viso gero» é «tchau»: o Linu nem se apresentou ainda! Responda «Aš esu Linu».',
+            text: '“Viso gero, Rūta!”',
+            translation: '“Tchau, Rūta!”',
+            wrong: 'A Rūta disse “Labas!” (Oi!) e perguntou “Kas tu?” (Quem é você?). “Viso gero” é “tchau”: o Linu nem se apresentou ainda! Responda “Aš esu Linu”.',
           },
         ],
       },
       metai: {
         emoji: '🎂',
-        text: '«Malonu, Linu! Man dvidešimt metų. O tau?»',
-        translation: '«Prazer, Linu! Eu tenho vinte anos. E você?»',
+        text: '“Malonu, Linu! Man dvidešimt metų. O tau?”',
+        translation: '“Prazer, Linu! Eu tenho vinte anos. E você?”',
         choices: [
-          { text: '«Man irgi dvidešimt!»', translation: '«Eu também tenho vinte!»', next: 'gide' },
-          { text: '«Man dešimt metų.»', translation: '«Eu tenho dez anos.»', next: 'gide' },
+          { text: '“Man irgi dvidešimt!”', translation: '“Eu também tenho vinte!”', next: 'gide' },
+          { text: '“Man dešimt metų.”', translation: '“Eu tenho dez anos.”', next: 'gide' },
         ],
       },
       gide: {
         emoji: '🗺️',
-        text: '«Aš esu gidė. Ten yra Gedimino bokštas. Eime?»',
-        translation: '«Eu sou guia. Lá está a torre de Gediminas. Vamos?»',
+        text: '“Aš esu gidė. Ten yra Gedimino bokštas. Eime?”',
+        translation: '“Eu sou guia. Lá está a torre de Gediminas. Vamos?”',
         choices: [
-          { text: '«Taip! Ačiū, Rūta!»', translation: '«Sim! Obrigado, Rūta!»', next: 'final_bom' },
-          { text: '«Ne, ačiū. Viso gero!»', translation: '«Não, obrigado. Tchau!»', next: 'final_neutro' },
+          { text: '“Taip! Ačiū, Rūta!”', translation: '“Sim! Obrigado, Rūta!”', next: 'final_bom' },
+          { text: '“Ne, ačiū. Viso gero!”', translation: '“Não, obrigado. Tchau!”', next: 'final_neutro' },
           {
-            text: '«Tu esi turistė?»',
-            translation: '«Você é turista?»',
-            wrong: 'A Rūta acabou de dizer «Aš esu gidė»: ela é guia, não turista. «Aš esu» é «eu sou»; o turista aqui é o Linu!',
+            text: '“Tu esi turistė?”',
+            translation: '“Você é turista?”',
+            wrong: 'A Rūta acabou de dizer “Aš esu gidė”: ela é guia, não turista. “Aš esu” é “eu sou”; o turista aqui é o Linu!',
           },
         ],
       },
@@ -91,7 +91,7 @@ export const STORIES_LT: StorySeed[] = [
         emoji: '🚶',
         text: 'Linu yra vienas. Rūta yra ten, prie bokšto.',
         translation: 'O Linu está sozinho. A Rūta está lá, perto da torre.',
-        ending: { tone: 'neutro', title: 'Turista solitário', message: 'O Linu disse «ne, ačiū» (não, obrigado) e perdeu o passeio. Tente de novo e responda «taip» (sim)!' },
+        ending: { tone: 'neutro', title: 'Turista solitário', message: 'O Linu disse “ne, ačiū” (não, obrigado) e perdeu o passeio. Tente de novo e responda “taip” (sim)!' },
       },
     },
   },
@@ -133,38 +133,38 @@ export const STORIES_LT: StorySeed[] = [
       },
       kavine: {
         emoji: '👨‍🍳',
-        text: '«Laba diena! Aš esu Tomas. Čia yra kibinai.»',
-        translation: '«Bom dia! Eu sou o Tomas. Aqui há kibinai.»',
+        text: '“Laba diena! Aš esu Tomas. Čia yra kibinai.”',
+        translation: '“Bom dia! Eu sou o Tomas. Aqui há kibinai.”',
         choices: [
-          { text: '«Laba diena! Aš esu Linu.»', translation: '«Bom dia! Eu sou o Linu.»', next: 'kiek' },
-          { text: '«Labas! Kibinai? Kas tai?»', translation: '«Oi! Kibinai? O que é isso?»', next: 'kas' },
+          { text: '“Laba diena! Aš esu Linu.”', translation: '“Bom dia! Eu sou o Linu.”', next: 'kiek' },
+          { text: '“Labas! Kibinai? Kas tai?”', translation: '“Oi! Kibinai? O que é isso?”', next: 'kas' },
         ],
       },
       kas: {
         emoji: '🥟',
-        text: '«Tai pyragėliai su mėsa. Labai skanu!»',
-        translation: '«São pasteizinhos com carne. Muito gostoso!»',
-        choices: [{ text: '«Gerai!»', translation: '«Está bem!»', next: 'kiek' }],
+        text: '“Tai pyragėliai su mėsa. Labai skanu!”',
+        translation: '“São pasteizinhos com carne. Muito gostoso!”',
+        choices: [{ text: '“Gerai!”', translation: '“Está bem!”', next: 'kiek' }],
       },
       kiek: {
         emoji: '💶',
-        text: '«Vienas kibinas – du eurai. Kiek?»',
-        translation: '«Um kibinas: dois euros. Quantos?»',
+        text: '“Vienas kibinas – du eurai. Kiek?”',
+        translation: '“Um kibinas: dois euros. Quantos?”',
         choices: [
-          { text: '«Du, prašau.»', translation: '«Dois, por favor.»', next: 'du' },
-          { text: '«Dešimt, prašau!»', translation: '«Dez, por favor!»', next: 'final_neutro' },
+          { text: '“Du, prašau.”', translation: '“Dois, por favor.”', next: 'du' },
+          { text: '“Dešimt, prašau!”', translation: '“Dez, por favor!”', next: 'final_neutro' },
           {
-            text: '«Vienas kibinas – dešimt eurų? Brangu!»',
-            translation: '«Um kibinas: dez euros? Caro!»',
-            wrong: 'O Tomas disse «du eurai»: dois euros, não dez (dešimt). Um kibinas é baratinho!',
+            text: '“Vienas kibinas – dešimt eurų? Brangu!”',
+            translation: '“Um kibinas: dez euros? Caro!”',
+            wrong: 'O Tomas disse “du eurai”: dois euros, não dez (dešimt). Um kibinas é baratinho!',
           },
         ],
       },
       du: {
         emoji: '🧾',
-        text: '«Du kibinai – keturi eurai. Ačiū!»',
-        translation: '«Dois kibinai: quatro euros. Obrigado!»',
-        choices: [{ text: '«Ačiū, Tomai!»', translation: '«Obrigado, Tomas!»', next: 'final_bom' }],
+        text: '“Du kibinai – keturi eurai. Ačiū!”',
+        translation: '“Dois kibinai: quatro euros. Obrigado!”',
+        choices: [{ text: '“Ačiū, Tomai!”', translation: '“Obrigado, Tomas!”', next: 'final_bom' }],
       },
       final_bom: {
         emoji: '😋',
@@ -176,7 +176,7 @@ export const STORIES_LT: StorySeed[] = [
         emoji: '💸',
         text: 'Dešimt kibinų – dvidešimt eurų! Linu sotus, bet piniginė tuščia.',
         translation: 'Dez kibinai: vinte euros! O Linu está cheio, mas a carteira está vazia.',
-        ending: { tone: 'neutro', title: 'Pinguim guloso', message: '«Dešimt» é dez! Um já era de bom tamanho… Tente de novo e peça «du» (dois).' },
+        ending: { tone: 'neutro', title: 'Pinguim guloso', message: '“Dešimt” é dez! Um já era de bom tamanho… Tente de novo e peça “du” (dois).' },
       },
     },
   },
@@ -195,7 +195,7 @@ export const STORIES_LT: StorySeed[] = [
       ['smėlis', 'areia'],
       ['tiltas', 'ponte; aqui, o píer de Palanga'],
       ['gintaras', 'âmbar'],
-      ['Man septyneri metai.', 'Eu tenho sete anos. (com «metai», que só existe no plural, usa-se o numeral coletivo: «septyneri»)'],
+      ['Man septyneri metai.', 'Eu tenho sete anos. (com “metai”, que só existe no plural, usa-se o numeral coletivo: “septyneri”)'],
       ['Žiūrėk!', 'Olha!'],
       ['tau', 'para você'],
     ],
@@ -217,31 +217,31 @@ export const STORIES_LT: StorySeed[] = [
       },
       smelis: {
         emoji: '👧',
-        text: 'Ten yra mergaitė. «Labas! Aš esu Ieva. Man septyneri metai.»',
-        translation: 'Lá está uma menina. «Oi! Eu sou a Ieva. Eu tenho sete anos.»',
+        text: 'Ten yra mergaitė. “Labas! Aš esu Ieva. Man septyneri metai.”',
+        translation: 'Lá está uma menina. “Oi! Eu sou a Ieva. Eu tenho sete anos.”',
         choices: [
-          { text: '«Labas, Ieva! Aš esu Linu.»', translation: '«Oi, Ieva! Eu sou o Linu.»', next: 'gintaras' },
+          { text: '“Labas, Ieva! Aš esu Linu.”', translation: '“Oi, Ieva! Eu sou o Linu.”', next: 'gintaras' },
           {
-            text: '«Tau septyniolika metų?»',
-            translation: '«Você tem dezessete anos?»',
-            wrong: 'A Ieva disse «septyneri»: sete anos, não dezessete (septyniolika). Ela é uma menininha!',
+            text: '“Tau septyniolika metų?”',
+            translation: '“Você tem dezessete anos?”',
+            wrong: 'A Ieva disse “septyneri”: sete anos, não dezessete (septyniolika). Ela é uma menininha!',
           },
         ],
       },
       gintaras: {
         emoji: '✨',
-        text: '«Žiūrėk! Čia gintaras! Vienas, du, trys!»',
-        translation: '«Olha! Aqui tem âmbar! Um, dois, três!»',
+        text: '“Žiūrėk! Čia gintaras! Vienas, du, trys!”',
+        translation: '“Olha! Aqui tem âmbar! Um, dois, três!”',
         choices: [
-          { text: '«Gintaras yra gražus!»', translation: '«O âmbar é bonito!»', next: 'dovana' },
-          { text: '«Tai tik akmuo.»', translation: '«Isso é só uma pedra.»', next: 'final_neutro' },
+          { text: '“Gintaras yra gražus!”', translation: '“O âmbar é bonito!”', next: 'dovana' },
+          { text: '“Tai tik akmuo.”', translation: '“Isso é só uma pedra.”', next: 'final_neutro' },
         ],
       },
       dovana: {
         emoji: '🎁',
-        text: '«Vienas – tau, Linu!»',
-        translation: '«Um é para você, Linu!»',
-        choices: [{ text: '«Ačiū, Ieva! Labai ačiū!»', translation: '«Obrigado, Ieva! Muito obrigado!»', next: 'final_bom' }],
+        text: '“Vienas – tau, Linu!”',
+        translation: '“Um é para você, Linu!”',
+        choices: [{ text: '“Ačiū, Ieva! Labai ačiū!”', translation: '“Obrigado, Ieva! Muito obrigado!”', next: 'final_bom' }],
       },
       final_bom: {
         emoji: '🌅',
@@ -251,9 +251,9 @@ export const STORIES_LT: StorySeed[] = [
       },
       final_neutro: {
         emoji: '😢',
-        text: '«Ne, tai ne akmuo! Tai gintaras!» Ieva liūdna.',
-        translation: '«Não, isso não é pedra! É âmbar!» A Ieva está triste.',
-        ending: { tone: 'neutro', title: 'Não é pedra!', message: 'O âmbar é o «ouro do Báltico». Tente de novo e diga que ele é «gražus» (bonito).' },
+        text: '“Ne, tai ne akmuo! Tai gintaras!” Ieva liūdna.',
+        translation: '“Não, isso não é pedra! É âmbar!” A Ieva está triste.',
+        ending: { tone: 'neutro', title: 'Não é pedra!', message: 'O âmbar é o “ouro do Báltico”. Tente de novo e diga que ele é “gražus” (bonito).' },
       },
     },
   },
@@ -272,7 +272,7 @@ export const STORIES_LT: StorySeed[] = [
       ['nori / noriu', 'quer / eu quero'],
       ['valgo / valgau', 'come / eu como'],
       ['turime cepelinus', 'temos cepelinai (o objeto vai no acusativo: cepelinai → cepelinus)'],
-      ['neturime šaltibarščių', 'não temos sopa fria de beterraba (depois do «ne-», o objeto passa para o genitivo)'],
+      ['neturime šaltibarščių', 'não temos sopa fria de beterraba (depois do “ne-”, o objeto passa para o genitivo)'],
       ['padavėja', 'garçonete'],
       ['su varške', 'com requeijão (varškė: um queijo fresco tipo ricota)'],
       ['Ar skanu?', 'Está gostoso?'],
@@ -295,31 +295,31 @@ export const STORIES_LT: StorySeed[] = [
       },
       restoranas: {
         emoji: '👩‍🍳',
-        text: 'Padavėja sako: «Laba diena! Šiandien turime cepelinus. Bet neturime šaltibarščių.»',
-        translation: 'A garçonete diz: «Boa tarde! Hoje temos cepelinai. Mas não temos sopa fria de beterraba.»',
+        text: 'Padavėja sako: “Laba diena! Šiandien turime cepelinus. Bet neturime šaltibarščių.”',
+        translation: 'A garçonete diz: “Boa tarde! Hoje temos cepelinai. Mas não temos sopa fria de beterraba.”',
         choices: [
-          { text: '«Du cepelinus, prašau.»', translation: '«Dois cepelinai, por favor.»', next: 'cepelinai' },
-          { text: '«Ačiū, bet aš nevalgau mėsos.»', translation: '«Obrigado, mas eu não como carne.»', next: 'varske' },
+          { text: '“Du cepelinus, prašau.”', translation: '“Dois cepelinai, por favor.”', next: 'cepelinai' },
+          { text: '“Ačiū, bet aš nevalgau mėsos.”', translation: '“Obrigado, mas eu não como carne.”', next: 'varske' },
           {
-            text: '«Tada šaltibarščius, prašau.»',
-            translation: '«Então a sopa fria de beterraba, por favor.»',
-            wrong: 'A garçonete disse «neturime šaltibarščių»: NÃO temos. O «ne-» grudado no verbo nega, e por isso a palavra foi para o genitivo (šaltibarščių). Hoje só tem cepelinai!',
+            text: '“Tada šaltibarščius, prašau.”',
+            translation: '“Então a sopa fria de beterraba, por favor.”',
+            wrong: 'A garçonete disse “neturime šaltibarščių”: NÃO temos. O “ne-” grudado no verbo nega, e por isso a palavra foi para o genitivo (šaltibarščių). Hoje só tem cepelinai!',
           },
         ],
       },
       varske: {
         emoji: '🧀',
-        text: 'Padavėja šypsosi: «Nieko tokio. Turime cepelinus su varške!»',
-        translation: 'A garçonete sorri: «Não tem problema. Temos cepelinai com requeijão!»',
-        choices: [{ text: '«Puiku! Du, prašau.»', translation: '«Ótimo! Dois, por favor.»', next: 'cepelinai' }],
+        text: 'Padavėja šypsosi: “Nieko tokio. Turime cepelinus su varške!”',
+        translation: 'A garçonete sorri: “Não tem problema. Temos cepelinai com requeijão!”',
+        choices: [{ text: '“Puiku! Du, prašau.”', translation: '“Ótimo! Dois, por favor.”', next: 'cepelinai' }],
       },
       cepelinai: {
         emoji: '🍽️',
-        text: 'Cepelinai dideli ir karšti. Linu valgo, o padavėja klausia: «Ar skanu?»',
-        translation: 'Os cepelinai são grandes e quentes. O Linu come, e a garçonete pergunta: «Está gostoso?»',
+        text: 'Cepelinai dideli ir karšti. Linu valgo, o padavėja klausia: “Ar skanu?”',
+        translation: 'Os cepelinai são grandes e quentes. O Linu come, e a garçonete pergunta: “Está gostoso?”',
         choices: [
-          { text: '«Labai skanu! Ačiū!»', translation: '«Muito gostoso! Obrigado!»', next: 'final_bom' },
-          { text: '«Skanu, bet labai sunku…»', translation: '«Gostoso, mas muito pesado…»', next: 'final_neutro' },
+          { text: '“Labai skanu! Ačiū!”', translation: '“Muito gostoso! Obrigado!”', next: 'final_bom' },
+          { text: '“Skanu, bet labai sunku…”', translation: '“Gostoso, mas muito pesado…”', next: 'final_neutro' },
         ],
       },
       final_bom: {
@@ -332,7 +332,7 @@ export const STORIES_LT: StorySeed[] = [
         emoji: '😴',
         text: 'Linu nebevalgo antro cepelino. Jis nori tik miegoti!',
         translation: 'O Linu não come mais o segundo cepelinas. Ele só quer dormir!',
-        ending: { tone: 'neutro', title: 'Soneca depois do almoço', message: 'Os cepelinai são pesados mesmo! Repare: «nebevalgo antro cepelino», com a negação, o objeto vai para o genitivo.' },
+        ending: { tone: 'neutro', title: 'Soneca depois do almoço', message: 'Os cepelinai são pesados mesmo! Repare: “nebevalgo antro cepelino”, com a negação, o objeto vai para o genitivo.' },
       },
     },
   },
@@ -349,7 +349,7 @@ export const STORIES_LT: StorySeed[] = [
     glossary: [
       ['keltas', 'balsa'],
       ['bilietas', 'passagem, bilhete'],
-      ['turi / neturi bilieto', 'tem / não tem passagem (com «ne-», bilietas vai para o genitivo: bilieto)'],
+      ['turi / neturi bilieto', 'tem / não tem passagem (com “ne-”, bilietas vai para o genitivo: bilieto)'],
       ['kasa', 'bilheteria, caixa'],
       ['kainuoja', 'custa'],
       ['mato', 'vê'],
@@ -368,20 +368,20 @@ export const STORIES_LT: StorySeed[] = [
       },
       kontrole: {
         emoji: '👮',
-        text: 'Kontrolierius klausia: «Kur jūsų bilietas?» Linu neturi bilieto.',
-        translation: 'O fiscal pergunta: «Onde está a sua passagem?» O Linu não tem passagem.',
-        choices: [{ text: '«Atsiprašau! Aš einu į kasą.»', translation: '«Desculpe! Eu vou à bilheteria.»', next: 'kasa' }],
+        text: 'Kontrolierius klausia: “Kur jūsų bilietas?” Linu neturi bilieto.',
+        translation: 'O fiscal pergunta: “Onde está a sua passagem?” O Linu não tem passagem.',
+        choices: [{ text: '“Atsiprašau! Aš einu į kasą.”', translation: '“Desculpe! Eu vou à bilheteria.”', next: 'kasa' }],
       },
       kasa: {
         emoji: '🎫',
-        text: 'Kasininkė sako: «Bilietas kainuoja vieną eurą.»',
-        translation: 'A caixa diz: «A passagem custa um euro.»',
+        text: 'Kasininkė sako: “Bilietas kainuoja vieną eurą.”',
+        translation: 'A caixa diz: “A passagem custa um euro.”',
         choices: [
-          { text: '«Prašau vieną bilietą.»', translation: '«Uma passagem, por favor.»', next: 'keltas' },
+          { text: '“Prašau vieną bilietą.”', translation: '“Uma passagem, por favor.”', next: 'keltas' },
           {
-            text: '«Dešimt eurų? Labai brangu!»',
-            translation: '«Dez euros? Muito caro!»',
-            wrong: 'A caixa disse «vieną eurą»: um euro («vienas» no acusativo, porque é o que a passagem custa). Não são dez!',
+            text: '“Dešimt eurų? Labai brangu!”',
+            translation: '“Dez euros? Muito caro!”',
+            wrong: 'A caixa disse “vieną eurą”: um euro (“vienas” no acusativo, porque é o que a passagem custa). Não são dez!',
           },
         ],
       },
@@ -399,11 +399,11 @@ export const STORIES_LT: StorySeed[] = [
         text: 'Jūrų muziejus turi pingvinus! Jie žiūri į Linu.',
         translation: 'O Museu Marítimo tem pinguins! Eles olham para o Linu.',
         choices: [
-          { text: '«Labas, broliai!»', translation: '«Oi, irmãos!»', next: 'final_bom' },
+          { text: '“Labas, broliai!”', translation: '“Oi, irmãos!”', next: 'final_bom' },
           {
-            text: '«Gaila, čia nėra pingvinų.»',
-            translation: '«Que pena, aqui não há pinguins.»',
-            wrong: 'O texto diz «muziejus turi pingvinus»: o museu TEM pinguins (pingvinus, no acusativo). E eles estão olhando para o Linu!',
+            text: '“Gaila, čia nėra pingvinų.”',
+            translation: '“Que pena, aqui não há pinguins.”',
+            wrong: 'O texto diz “muziejus turi pingvinus”: o museu TEM pinguins (pingvinus, no acusativo). E eles estão olhando para o Linu!',
           },
         ],
       },
@@ -417,7 +417,7 @@ export const STORIES_LT: StorySeed[] = [
         emoji: '😴',
         text: 'Linu guli ant smėlio ir miega. Muziejaus jis nemato.',
         translation: 'O Linu deita na areia e dorme. O museu, ele não vê.',
-        ending: { tone: 'neutro', title: 'Soneca na areia', message: 'A praia é boa, mas o Linu perdeu os pinguins do museu! Repare: «muziejaus nemato», o objeto negado vai para o genitivo.' },
+        ending: { tone: 'neutro', title: 'Soneca na areia', message: 'A praia é boa, mas o Linu perdeu os pinguins do museu! Repare: “muziejaus nemato”, o objeto negado vai para o genitivo.' },
       },
     },
   },
@@ -429,14 +429,14 @@ export const STORIES_LT: StorySeed[] = [
     emoji: '💧',
     summary: 'Em Druskininkai, a cidade das águas, o Linu prova a água mineral e vai ao parque aquático.',
     cultural_context:
-      'Druskininkai, perto da fronteira sul, é a estância termal mais famosa da Lituânia, à beira do rio Nemunas. O nome vem de «druska» (sal): as fontes de água mineral da cidade são salgadas, e ela tem hoje um grande parque aquático coberto.',
+      'Druskininkai, perto da fronteira sul, é a estância termal mais famosa da Lituânia, à beira do rio Nemunas. O nome vem de “druska” (sal): as fontes de água mineral da cidade são salgadas, e ela tem hoje um grande parque aquático coberto.',
     start: 'start',
     glossary: [
       ['vanduo', 'água (acusativo: vandenį)'],
       ['sūrus', 'salgado'],
       ['plaukti / plaukia', 'nadar / nada'],
       ['rankšluostis', 'toalha'],
-      ['neturiu rankšluosčio', 'não tenho toalha (genitivo depois do «ne-»)'],
+      ['neturiu rankšluosčio', 'não tenho toalha (genitivo depois do “ne-”)'],
       ['skaito laikraštį', 'lê o jornal'],
       ['senelis', 'avô, senhor idoso'],
     ],
@@ -452,24 +452,24 @@ export const STORIES_LT: StorySeed[] = [
       },
       saltinis: {
         emoji: '⛲',
-        text: 'Vanduo labai sūrus! Linu sako: «Kaip jūra!»',
-        translation: 'A água é muito salgada! O Linu diz: «Igual ao mar!»',
-        choices: [{ text: '«Dabar – į vandens parką!»', translation: '«Agora, ao parque aquático!»', next: 'parkas' }],
+        text: 'Vanduo labai sūrus! Linu sako: “Kaip jūra!”',
+        translation: 'A água é muito salgada! O Linu diz: “Igual ao mar!”',
+        choices: [{ text: '“Dabar – į vandens parką!”', translation: '“Agora, ao parque aquático!”', next: 'parkas' }],
       },
       parkas: {
         emoji: '🎟️',
-        text: 'Kasininkė klausia: «Ar turite rankšluostį?»',
-        translation: 'A caixa pergunta: «O senhor tem toalha?»',
+        text: 'Kasininkė klausia: “Ar turite rankšluostį?”',
+        translation: 'A caixa pergunta: “O senhor tem toalha?”',
         choices: [
-          { text: '«Taip, turiu rankšluostį.»', translation: '«Sim, tenho toalha.»', next: 'baseinas' },
-          { text: '«Ne, neturiu rankšluosčio.»', translation: '«Não, não tenho toalha.»', next: 'nuoma' },
+          { text: '“Taip, turiu rankšluostį.”', translation: '“Sim, tenho toalha.”', next: 'baseinas' },
+          { text: '“Ne, neturiu rankšluosčio.”', translation: '“Não, não tenho toalha.”', next: 'nuoma' },
         ],
       },
       nuoma: {
         emoji: '🧺',
-        text: '«Nieko tokio. Rankšluostis kainuoja tris eurus.»',
-        translation: '«Não tem problema. A toalha custa três euros.»',
-        choices: [{ text: '«Gerai, ačiū.»', translation: '«Está bem, obrigado.»', next: 'baseinas' }],
+        text: '“Nieko tokio. Rankšluostis kainuoja tris eurus.”',
+        translation: '“Não tem problema. A toalha custa três euros.”',
+        choices: [{ text: '“Gerai, ačiū.”', translation: '“Está bem, obrigado.”', next: 'baseinas' }],
       },
       baseinas: {
         emoji: '🏊',
@@ -479,23 +479,23 @@ export const STORIES_LT: StorySeed[] = [
           { text: 'Linu plaukia kaip žuvis.', translation: 'O Linu nada como um peixe.', next: 'final_bom' },
           { text: 'Linu irgi skaito laikraštį.', translation: 'O Linu também lê o jornal.', next: 'final_neutro' },
           {
-            text: '«Kodėl vaikai skaito laikraštį?»',
-            translation: '«Por que as crianças estão lendo jornal?»',
-            wrong: 'Quem lê o jornal é o «senelis» (o senhor idoso): «senelis skaito laikraštį». As crianças (vaikai) escorregam (čiuožia)!',
+            text: '“Kodėl vaikai skaito laikraštį?”',
+            translation: '“Por que as crianças estão lendo jornal?”',
+            wrong: 'Quem lê o jornal é o “senelis” (o senhor idoso): “senelis skaito laikraštį”. As crianças (vaikai) escorregam (čiuožia)!',
           },
         ],
       },
       final_bom: {
         emoji: '🐧',
-        text: 'Linu plaukia greitai. Vaikai šaukia: «Pingvinas!»',
-        translation: 'O Linu nada rápido. As crianças gritam: «Um pinguim!»',
+        text: 'Linu plaukia greitai. Vaikai šaukia: “Pingvinas!”',
+        translation: 'O Linu nada rápido. As crianças gritam: “Um pinguim!”',
         ending: { tone: 'bom', title: 'Estrela da piscina', message: 'Nadar é com o Linu mesmo! Ele virou a atração do parque aquático.' },
       },
       final_neutro: {
         emoji: '📰',
         text: 'Linu skaito, bet nesupranta žodžių. Jis užmiega.',
         translation: 'O Linu lê, mas não entende as palavras. Ele pega no sono.',
-        ending: { tone: 'neutro', title: 'Jornal de travesseiro', message: 'Veio nadar e dormiu lendo! Repare: «nesupranta žodžių», genitivo depois do «ne-».' },
+        ending: { tone: 'neutro', title: 'Jornal de travesseiro', message: 'Veio nadar e dormiu lendo! Repare: “nesupranta žodžių”, genitivo depois do “ne-”.' },
       },
     },
   },
@@ -511,11 +511,11 @@ export const STORIES_LT: StorySeed[] = [
       'O istmo da Curlândia (Kuršių nerija), uma faixa de areia entre o mar Báltico e a laguna (marios), é Patrimônio Mundial da UNESCO desde 2000; a Lituânia divide o istmo com a Rússia (a região de Kaliningrado), ao sul de Nida. No alto da duna de Parnidis há um grande relógio de sol, e os barcos dos pescadores levavam cataventos coloridos (vėtrungės) que indicavam a aldeia de cada barco.',
     start: 'start',
     glossary: [
-      ['Kuršių nerijoje', 'no istmo da Curlândia (locativo de «nerija»)'],
+      ['Kuršių nerijoje', 'no istmo da Curlândia (locativo de “nerija”)'],
       ['prie marių', 'junto à laguna (prie + genitivo)'],
       ['kopa / ant kopos', 'duna / em cima da duna (ant + genitivo)'],
       ['vėtrungė', 'catavento de barco de pesca'],
-      ['saulės laikrodis', 'relógio de sol (ao pé da letra: «relógio do sol», com o genitivo na frente)'],
+      ['saulės laikrodis', 'relógio de sol (ao pé da letra: “relógio do sol”, com o genitivo na frente)'],
       ['mediniu taku', 'pela passarela de madeira'],
       ['Ar…?', 'partícula que abre as perguntas de sim ou não'],
     ],
@@ -533,25 +533,25 @@ export const STORIES_LT: StorySeed[] = [
         emoji: '⛵',
         text: 'Uoste stovi seni mediniai laivai. Ant stiebų kabo spalvotos vėtrungės.',
         translation: 'No porto há barcos velhos de madeira. Nos mastros estão pendurados cataventos coloridos.',
-        choices: [{ text: '«Atsiprašau, ar šios vėtrungės labai senos?»', translation: '«Com licença, esses cataventos são muito antigos?»', next: 'zvejys' }],
+        choices: [{ text: '“Atsiprašau, ar šios vėtrungės labai senos?”', translation: '“Com licença, esses cataventos são muito antigos?”', next: 'zvejys' }],
       },
       zvejys: {
         emoji: '🎣',
-        text: 'Senas žvejys atsako: «Vėtrungė – tai laivo pasas. Ji rodo žvejo kaimą.»',
-        translation: 'Um pescador velho responde: «O catavento é o passaporte do barco. Ele mostra a aldeia do pescador.»',
-        choices: [{ text: '«Įdomu! Dabar einu į kopą.»', translation: '«Interessante! Agora vou à duna.»', next: 'kopa' }],
+        text: 'Senas žvejys atsako: “Vėtrungė – tai laivo pasas. Ji rodo žvejo kaimą.”',
+        translation: 'Um pescador velho responde: “O catavento é o passaporte do barco. Ele mostra a aldeia do pescador.”',
+        choices: [{ text: '“Įdomu! Dabar einu į kopą.”', translation: '“Interessante! Agora vou à duna.”', next: 'kopa' }],
       },
       kopa: {
         emoji: '☀️',
-        text: 'Parnidžio kopa yra aukšta ir smėlėta. Ant kopos stovi didelis saulės laikrodis. Prie tako yra ženklas: «Eiti tik mediniu taku!»',
-        translation: 'A duna de Parnidis é alta e arenosa. No alto da duna fica um grande relógio de sol. Perto do caminho há uma placa: «Andar só pela passarela de madeira!»',
+        text: 'Parnidžio kopa yra aukšta ir smėlėta. Ant kopos stovi didelis saulės laikrodis. Prie tako yra ženklas: “Eiti tik mediniu taku!”',
+        translation: 'A duna de Parnidis é alta e arenosa. No alto da duna fica um grande relógio de sol. Perto do caminho há uma placa: “Andar só pela passarela de madeira!”',
         choices: [
           { text: 'Linu eina mediniu taku.', translation: 'O Linu vai pela passarela de madeira.', next: 'virsus' },
           { text: 'Linu bėga per smėlį.', translation: 'O Linu corre pela areia.', next: 'final_neutro' },
           {
             text: 'Linu ieško saulės laikrodžio prie jūros.',
             translation: 'O Linu procura o relógio de sol perto do mar.',
-            wrong: 'O texto diz «ant kopos»: o relógio de sol fica EM CIMA da duna. «Ant» + genitivo (kopos) indica «em cima de».',
+            wrong: 'O texto diz “ant kopos”: o relógio de sol fica EM CIMA da duna. “Ant” + genitivo (kopos) indica “em cima de”.',
           },
         ],
       },
@@ -560,15 +560,15 @@ export const STORIES_LT: StorySeed[] = [
         text: 'Nuo kopos viršaus matyti marios ir jūra. Vėjas stiprus, o smėlis šiltas.',
         translation: 'Do alto da duna dá para ver a laguna e o mar. O vento está forte, e a areia está quente.',
         choices: [
-          { text: '«Ar čia dar Lietuva?»', translation: '«Aqui ainda é a Lituânia?»', next: 'pasienis' },
+          { text: '“Ar čia dar Lietuva?”', translation: '“Aqui ainda é a Lituânia?”', next: 'pasienis' },
           { text: 'Linu sėdi ir žiūri į jūrą.', translation: 'O Linu senta e olha para o mar.', next: 'final_bom' },
         ],
       },
       pasienis: {
         emoji: '🗺️',
-        text: 'Moteris šalia šypsosi: «Taip, mes esame Lietuvoje. Bet pietuose, netoli nuo čia, yra Rusijos siena.»',
-        translation: 'Uma mulher ao lado sorri: «Sim, estamos na Lituânia. Mas ao sul, pertinho daqui, fica a fronteira com a Rússia.»',
-        choices: [{ text: '«Ačiū! Dabar žinau.»', translation: '«Obrigado! Agora eu sei.»', next: 'final_bom' }],
+        text: 'Moteris šalia šypsosi: “Taip, mes esame Lietuvoje. Bet pietuose, netoli nuo čia, yra Rusijos siena.”',
+        translation: 'Uma mulher ao lado sorri: “Sim, estamos na Lituânia. Mas ao sul, pertinho daqui, fica a fronteira com a Rússia.”',
+        choices: [{ text: '“Ačiū! Dabar žinau.”', translation: '“Obrigado! Agora eu sei.”', next: 'final_bom' }],
       },
       final_bom: {
         emoji: '🌅',
@@ -578,9 +578,9 @@ export const STORIES_LT: StorySeed[] = [
       },
       final_neutro: {
         emoji: '🦺',
-        text: 'Prižiūrėtojas sustabdo Linu: «Kopos yra trapios! Prašom eiti taku.» Linu raudonuoja.',
-        translation: 'Um guarda-parque para o Linu: «As dunas são frágeis! Por favor, ande pela passarela.» O Linu fica vermelho.',
-        ending: { tone: 'neutro', title: 'Fora da trilha', message: 'A placa dizia «tik mediniu taku» (só pela passarela de madeira): as dunas se desfazem com os passos.' },
+        text: 'Prižiūrėtojas sustabdo Linu: “Kopos yra trapios! Prašom eiti taku.” Linu raudonuoja.',
+        translation: 'Um guarda-parque para o Linu: “As dunas são frágeis! Por favor, ande pela passarela.” O Linu fica vermelho.',
+        ending: { tone: 'neutro', title: 'Fora da trilha', message: 'A placa dizia “tik mediniu taku” (só pela passarela de madeira): as dunas se desfazem com os passos.' },
       },
     },
   },
@@ -596,7 +596,7 @@ export const STORIES_LT: StorySeed[] = [
     start: 'start',
     glossary: [
       ['Šiauliuose', 'em Šiauliai (locativo de um nome que só existe no plural)'],
-      ['autobusų stotyje', 'na rodoviária (ao pé da letra: «na estação dos ônibus»)'],
+      ['autobusų stotyje', 'na rodoviária (ao pé da letra: “na estação dos ônibus”)'],
       ['už dvylikos kilometrų', 'a doze quilômetros (už + genitivo)'],
       ['kito autobuso', 'de outro ônibus (genitivo)'],
       ['tūkstančiai kryžių', 'milhares de cruzes'],
@@ -609,26 +609,26 @@ export const STORIES_LT: StorySeed[] = [
         text: 'Linu yra Šiauliuose, autobusų stotyje. Jis nori važiuoti į Kryžių kalną.',
         translation: 'O Linu está em Šiauliai, na rodoviária. Ele quer ir à Colina das Cruzes.',
         choices: [
-          { text: '«Atsiprašau, ar šis autobusas važiuoja į Kryžių kalną?»', translation: '«Com licença, este ônibus vai à Colina das Cruzes?»', next: 'vairuotojas' },
+          { text: '“Atsiprašau, ar šis autobusas važiuoja į Kryžių kalną?”', translation: '“Com licença, este ônibus vai à Colina das Cruzes?”', next: 'vairuotojas' },
           { text: 'Linu eina į kavinę prie stoties.', translation: 'O Linu vai ao café perto da estação.', next: 'kavine' },
         ],
       },
       kavine: {
         emoji: '☕',
-        text: 'Kavinėje dirba jauna mergina. Ji sako: «Kalnas yra už dvylikos kilometrų nuo miesto. Važiuokite autobusu.»',
-        translation: 'No café trabalha uma moça. Ela diz: «A colina fica a doze quilômetros da cidade. Vá de ônibus.»',
-        choices: [{ text: '«Ačiū! Einu į stotį.»', translation: '«Obrigado! Vou à estação.»', next: 'vairuotojas' }],
+        text: 'Kavinėje dirba jauna mergina. Ji sako: “Kalnas yra už dvylikos kilometrų nuo miesto. Važiuokite autobusu.”',
+        translation: 'No café trabalha uma moça. Ela diz: “A colina fica a doze quilômetros da cidade. Vá de ônibus.”',
+        choices: [{ text: '“Ačiū! Einu į stotį.”', translation: '“Obrigado! Vou à estação.”', next: 'vairuotojas' }],
       },
       vairuotojas: {
         emoji: '🧔',
-        text: 'Vairuotojas atsako: «Ne, šis autobusas važiuoja į Kelmę. Jums reikia kito autobuso – jis stovi prie kiosko.»',
-        translation: 'O motorista responde: «Não, este ônibus vai para Kelmė. O senhor precisa de outro ônibus: ele está parado perto do quiosque.»',
+        text: 'Vairuotojas atsako: “Ne, šis autobusas važiuoja į Kelmę. Jums reikia kito autobuso – jis stovi prie kiosko.”',
+        translation: 'O motorista responde: “Não, este ônibus vai para Kelmė. O senhor precisa de outro ônibus: ele está parado perto do quiosque.”',
         choices: [
           { text: 'Linu eina prie kiosko.', translation: 'O Linu vai até o quiosque.', next: 'kitas' },
           {
             text: 'Linu lieka šiame autobuse.',
             translation: 'O Linu fica neste ônibus.',
-            wrong: 'O motorista disse «Ne» e «Jums reikia kito autobuso»: o senhor precisa de OUTRO ônibus, que está «prie kiosko» (perto do quiosque).',
+            wrong: 'O motorista disse “Ne” e “Jums reikia kito autobuso”: o senhor precisa de OUTRO ônibus, que está “prie kiosko” (perto do quiosque).',
           },
         ],
       },
@@ -645,19 +645,19 @@ export const STORIES_LT: StorySeed[] = [
         choices: [
           { text: 'Linu tyliai eina taku.', translation: 'O Linu anda em silêncio pelo caminho.', next: 'moteris' },
           {
-            text: '«Čia tik keli kryžiai.»',
-            translation: '«Aqui há só algumas cruzes.»',
-            wrong: '«Tūkstančiai kryžių» são MILHARES de cruzes: tūkstantis é «mil», e depois dele a palavra vai para o genitivo plural (kryžių).',
+            text: '“Čia tik keli kryžiai.”',
+            translation: '“Aqui há só algumas cruzes.”',
+            wrong: '“Tūkstančiai kryžių” são MILHARES de cruzes: tūkstantis é “mil”, e depois dele a palavra vai para o genitivo plural (kryžių).',
           },
         ],
       },
       moteris: {
         emoji: '👵',
-        text: 'Prie kalno sėdi sena moteris. Ji klausia: «Ar nori mažo kryžiaus? Jis kainuoja tris eurus.»',
-        translation: 'Perto da colina está sentada uma senhora. Ela pergunta: «Quer uma cruz pequena? Custa três euros.»',
+        text: 'Prie kalno sėdi sena moteris. Ji klausia: “Ar nori mažo kryžiaus? Jis kainuoja tris eurus.”',
+        translation: 'Perto da colina está sentada uma senhora. Ela pergunta: “Quer uma cruz pequena? Custa três euros.”',
         choices: [
-          { text: '«Taip, prašau. Noriu jį palikti čia.»', translation: '«Sim, por favor. Quero deixá-la aqui.»', next: 'final_bom' },
-          { text: '«Ne, ačiū. Aš tik žiūriu.»', translation: '«Não, obrigado. Só estou olhando.»', next: 'final_neutro' },
+          { text: '“Taip, prašau. Noriu jį palikti čia.”', translation: '“Sim, por favor. Quero deixá-la aqui.”', next: 'final_bom' },
+          { text: '“Ne, ačiū. Aš tik žiūriu.”', translation: '“Não, obrigado. Só estou olhando.”', next: 'final_neutro' },
         ],
       },
       final_bom: {
@@ -680,9 +680,9 @@ export const STORIES_LT: StorySeed[] = [
     cefr: 'A2',
     title: 'Užupio konstitucija',
     emoji: '👼',
-    summary: 'No bairro boêmio de Užupis, em Vilnius, o Linu procura a famosa «constituição» da república dos artistas.',
+    summary: 'No bairro boêmio de Užupis, em Vilnius, o Linu procura a famosa “constituição” da república dos artistas.',
     cultural_context:
-      'Užupis, bairro de artistas do outro lado do riozinho Vilnelė, declarou-se «república» de brincadeira em 1º de abril de 1997, com presidente, bandeira e hino. Sua constituição está pendurada numa parede da rua Paupio, em placas em várias línguas, com artigos como «Šuo turi teisę būti šunimi» (o cão tem o direito de ser cão). Na praça central, um anjo de bronze toca trombeta no alto de uma coluna.',
+      'Užupis, bairro de artistas do outro lado do riozinho Vilnelė, declarou-se “república” de brincadeira em 1º de abril de 1997, com presidente, bandeira e hino. Sua constituição está pendurada numa parede da rua Paupio, em placas em várias línguas, com artigos como “Šuo turi teisę būti šunimi” (o cão tem o direito de ser cão). Na praça central, um anjo de bronze toca trombeta no alto de uma coluna.',
     start: 'start',
     glossary: [
       ['per tiltą', 'pela ponte, atravessando a ponte'],
@@ -708,47 +708,47 @@ export const STORIES_LT: StorySeed[] = [
         emoji: '🔒',
         text: 'Ant tilto turėklų kabo daug spynų. Tai įsimylėjėlių spynos.',
         translation: 'No corrimão da ponte estão pendurados muitos cadeados. São cadeados de namorados.',
-        choices: [{ text: '«Gražu! Einu toliau.»', translation: '«Que bonito! Vou em frente.»', next: 'aikste' }],
+        choices: [{ text: '“Gražu! Einu toliau.”', translation: '“Que bonito! Vou em frente.”', next: 'aikste' }],
       },
       aikste: {
         emoji: '🎺',
         text: 'Aikštės viduryje stovi aukšta kolona. Ant kolonos stovi bronzinis angelas su trimitu.',
         translation: 'No meio da praça há uma coluna alta. Em cima da coluna há um anjo de bronze com uma trombeta.',
-        choices: [{ text: 'Linu klausia menininko: «Kur yra Užupio konstitucija?»', translation: 'O Linu pergunta a um artista: «Onde fica a constituição de Užupis?»', next: 'menininkas' }],
+        choices: [{ text: 'Linu klausia menininko: “Kur yra Užupio konstitucija?”', translation: 'O Linu pergunta a um artista: “Onde fica a constituição de Užupis?”', next: 'menininkas' }],
       },
       menininkas: {
         emoji: '🎨',
-        text: 'Menininkas Paulius šypsosi: «Konstitucija kabo ant sienos Paupio gatvėje, netoli nuo čia. Ar turi žemėlapį?»',
-        translation: 'O artista Paulius sorri: «A constituição está pendurada numa parede da rua Paupio, pertinho daqui. Você tem mapa?»',
+        text: 'Menininkas Paulius šypsosi: “Konstitucija kabo ant sienos Paupio gatvėje, netoli nuo čia. Ar turi žemėlapį?”',
+        translation: 'O artista Paulius sorri: “A constituição está pendurada numa parede da rua Paupio, pertinho daqui. Você tem mapa?”',
         choices: [
-          { text: '«Taip, turiu. Ačiū!»', translation: '«Sim, tenho. Obrigado!»', next: 'gatve' },
-          { text: '«Ne, neturiu žemėlapio.»', translation: '«Não, não tenho mapa.»', next: 'kartu' },
+          { text: '“Taip, turiu. Ačiū!”', translation: '“Sim, tenho. Obrigado!”', next: 'gatve' },
+          { text: '“Ne, neturiu žemėlapio.”', translation: '“Não, não tenho mapa.”', next: 'kartu' },
           {
             text: 'Linu ieško konstitucijos ant kolonos.',
             translation: 'O Linu procura a constituição na coluna.',
-            wrong: 'O Paulius disse «ant sienos Paupio gatvėje»: numa parede da rua Paupio. Na coluna só está o anjo!',
+            wrong: 'O Paulius disse “ant sienos Paupio gatvėje”: numa parede da rua Paupio. Na coluna só está o anjo!',
           },
         ],
       },
       kartu: {
         emoji: '🚶',
-        text: '«Nieko tokio, eime kartu!» Paulius ir Linu eina siaura gatve. Paulius pasakoja: Užupio respublika turi savo prezidentą, vėliavą ir himną.',
-        translation: '«Não tem problema, vamos juntos!» O Paulius e o Linu vão por uma rua estreita. O Paulius conta: a república de Užupis tem presidente, bandeira e hino próprios.',
-        choices: [{ text: '«Tikra respublika!»', translation: '«Uma república de verdade!»', next: 'gatve' }],
+        text: '“Nieko tokio, eime kartu!” Paulius ir Linu eina siaura gatve. Paulius pasakoja: Užupio respublika turi savo prezidentą, vėliavą ir himną.',
+        translation: '“Não tem problema, vamos juntos!” O Paulius e o Linu vão por uma rua estreita. O Paulius conta: a república de Užupis tem presidente, bandeira e hino próprios.',
+        choices: [{ text: '“Tikra respublika!”', translation: '“Uma república de verdade!”', next: 'gatve' }],
       },
       gatve: {
         emoji: '🪞',
-        text: 'Ant sienos kabo daug blizgančių lentelių įvairiomis kalbomis. Linu skaito lietuvišką tekstą: «Šuo turi teisę būti šunimi.»',
-        translation: 'Na parede há muitas placas brilhantes em várias línguas. O Linu lê o texto em lituano: «O cão tem o direito de ser cão.»',
+        text: 'Ant sienos kabo daug blizgančių lentelių įvairiomis kalbomis. Linu skaito lietuvišką tekstą: “Šuo turi teisę būti šunimi.”',
+        translation: 'Na parede há muitas placas brilhantes em várias línguas. O Linu lê o texto em lituano: “O cão tem o direito de ser cão.”',
         choices: [
-          { text: '«O pingvinas turi teisę būti pingvinu!»', translation: '«E o pinguim tem o direito de ser pinguim!»', next: 'final_bom' },
-          { text: '«Keista konstitucija. Einu namo.»', translation: '«Constituição esquisita. Vou para casa.»', next: 'final_neutro' },
+          { text: '“O pingvinas turi teisę būti pingvinu!”', translation: '“E o pinguim tem o direito de ser pinguim!”', next: 'final_bom' },
+          { text: '“Keista konstitucija. Einu namo.”', translation: '“Constituição esquisita. Vou para casa.”', next: 'final_neutro' },
         ],
       },
       final_bom: {
         emoji: '😄',
-        text: 'Praeivė juokiasi: «Teisingai! Kiekvienas turi teisę būti laimingas.» Linu Užupyje labai laimingas.',
-        translation: 'Uma passante ri: «Isso mesmo! Todo mundo tem o direito de ser feliz.» O Linu está muito feliz em Užupis.',
+        text: 'Praeivė juokiasi: “Teisingai! Kiekvienas turi teisę būti laimingas.” Linu Užupyje labai laimingas.',
+        translation: 'Uma passante ri: “Isso mesmo! Todo mundo tem o direito de ser feliz.” O Linu está muito feliz em Užupis.',
         ending: { tone: 'bom', title: 'Cidadão de Užupis', message: 'O Linu entendeu o espírito da república dos artistas e ganhou até um artigo novo para a constituição.' },
       },
       final_neutro: {
@@ -772,13 +772,13 @@ export const STORIES_LT: StorySeed[] = [
     start: 'start',
     glossary: [
       ['atvažiavo / buvo', 'chegou / foi, estava (passado)'],
-      ['su savo drauge', 'com a sua amiga (instrumental; «savo» remete ao sujeito)'],
+      ['su savo drauge', 'com a sua amiga (instrumental; “savo” remete ao sujeito)'],
       ['davė jiems', 'deu a eles (dativo)'],
       ['irklai', 'remos'],
       ['iki septynių', 'até as sete (horas)'],
-      ['pusė septynių', 'seis e meia (ao pé da letra: «metade da sétima»)'],
+      ['pusė septynių', 'seis e meia (ao pé da letra: “metade da sétima”)'],
       ['mano senelis', 'o meu avô'],
-      ['laiku', 'na hora certa (instrumental de «laikas», tempo)'],
+      ['laiku', 'na hora certa (instrumental de “laikas”, tempo)'],
     ],
     nodes: {
       start: {
@@ -792,20 +792,20 @@ export const STORIES_LT: StorySeed[] = [
       },
       miestelis: {
         emoji: '👺',
-        text: 'Miestelyje jie aplankė kaukių ekspoziciją. Gintarė parodė Linu seną velnio kaukę ir pasakė: «Mano brolis turi tokią pačią!»',
-        translation: 'No vilarejo eles visitaram uma exposição de máscaras. A Gintarė mostrou ao Linu uma velha máscara de diabo e disse: «O meu irmão tem uma igualzinha!»',
-        choices: [{ text: '«Dabar – prie ežero!»', translation: '«Agora, para o lago!»', next: 'valtis' }],
+        text: 'Miestelyje jie aplankė kaukių ekspoziciją. Gintarė parodė Linu seną velnio kaukę ir pasakė: “Mano brolis turi tokią pačią!”',
+        translation: 'No vilarejo eles visitaram uma exposição de máscaras. A Gintarė mostrou ao Linu uma velha máscara de diabo e disse: “O meu irmão tem uma igualzinha!”',
+        choices: [{ text: '“Dabar – prie ežero!”', translation: '“Agora, para o lago!”', next: 'valtis' }],
       },
       valtis: {
         emoji: '🛶',
-        text: 'Valčių nuomotojas davė jiems du irklus ir dvi gelbėjimosi liemenes. «Valtį reikia grąžinti iki septynių», – pasakė jis.',
-        translation: 'O homem que aluga os barcos deu a eles dois remos e dois coletes salva-vidas. «É preciso devolver o barco até as sete», disse ele.',
+        text: 'Valčių nuomotojas davė jiems du irklus ir dvi gelbėjimosi liemenes. “Valtį reikia grąžinti iki septynių”, – pasakė jis.',
+        translation: 'O homem que aluga os barcos deu a eles dois remos e dois coletes salva-vidas. “É preciso devolver o barco até as sete”, disse ele.',
         choices: [
           { text: 'Linu nuirklavo į Pilies salą.', translation: 'O Linu remou até a Ilha do Castelo.', next: 'sala' },
           {
             text: 'Jie galėjo plaukioti visą naktį.',
             translation: 'Eles podiam passear de barco a noite toda.',
-            wrong: 'O homem disse «iki septynių»: o barco tinha de voltar até as sete horas. Nada de passar a noite no lago!',
+            wrong: 'O homem disse “iki septynių”: o barco tinha de voltar até as sete horas. Nada de passar a noite no lago!',
           },
         ],
       },
@@ -814,15 +814,15 @@ export const STORIES_LT: StorySeed[] = [
         text: 'Pilies saloje augo seni medžiai. Jie sėdėjo ant kranto ir valgė sumuštinius, o Gintarė papasakojo Linu legendą apie seną pilį.',
         translation: 'Na Ilha do Castelo cresciam árvores velhas. Eles se sentaram na margem e comeram sanduíches, e a Gintarė contou ao Linu uma lenda sobre um castelo antigo.',
         choices: [
-          { text: 'Linu paklausė: «Ar tai tiesa?»', translation: 'O Linu perguntou: «Isso é verdade?»', next: 'legenda' },
+          { text: 'Linu paklausė: “Ar tai tiesa?”', translation: 'O Linu perguntou: “Isso é verdade?”', next: 'legenda' },
           { text: 'Linu nieko neklausė ir užsnūdo.', translation: 'O Linu não perguntou nada e cochilou.', next: 'vakaras' },
         ],
       },
       legenda: {
         emoji: '🔔',
-        text: 'Gintarė nusijuokė: «Mano senelis sakė, kad naktį iš ežero girdėti varpai. Bet aš jų niekada negirdėjau.»',
-        translation: 'A Gintarė riu: «O meu avô dizia que, à noite, dá para ouvir sinos saindo do lago. Mas eu nunca ouvi.»',
-        choices: [{ text: '«Gal ir gerai!»', translation: '«Talvez seja melhor assim!»', next: 'vakaras' }],
+        text: 'Gintarė nusijuokė: “Mano senelis sakė, kad naktį iš ežero girdėti varpai. Bet aš jų niekada negirdėjau.”',
+        translation: 'A Gintarė riu: “O meu avô dizia que, à noite, dá para ouvir sinos saindo do lago. Mas eu nunca ouvi.”',
+        choices: [{ text: '“Gal ir gerai!”', translation: '“Talvez seja melhor assim!”', next: 'vakaras' }],
       },
       vakaras: {
         emoji: '🕡',
@@ -832,9 +832,9 @@ export const STORIES_LT: StorySeed[] = [
           { text: 'Jie greitai irklavo atgal.', translation: 'Eles remaram depressa de volta.', next: 'final_bom' },
           { text: 'Jie liko saloje ir žiūrėjo į saulėlydį.', translation: 'Eles ficaram na ilha olhando o pôr do sol.', next: 'final_neutro' },
           {
-            text: '«Dar turime dvi valandas!»',
-            translation: '«Ainda temos duas horas!»',
-            wrong: '«Pusė septynių» é seis e meia (a metade da hora sete). O barco tinha de voltar às sete: sobrava só meia hora!',
+            text: '“Dar turime dvi valandas!”',
+            translation: '“Ainda temos duas horas!”',
+            wrong: '“Pusė septynių” é seis e meia (a metade da hora sete). O barco tinha de voltar às sete: sobrava só meia hora!',
           },
         ],
       },
@@ -848,7 +848,7 @@ export const STORIES_LT: StorySeed[] = [
         emoji: '😠',
         text: 'Jie grįžo tik aštuntą valandą. Nuomotojas buvo piktas, ir jiems reikėjo sumokėti baudą.',
         translation: 'Eles só voltaram às oito horas. O homem estava bravo, e eles tiveram de pagar multa.',
-        ending: { tone: 'neutro', title: 'Pôr do sol caro', message: 'A vista era linda, mas o combinado era «iki septynių» (até as sete). Tente de novo!' },
+        ending: { tone: 'neutro', title: 'Pôr do sol caro', message: 'A vista era linda, mas o combinado era “iki septynių” (até as sete). Tente de novo!' },
       },
     },
   },
@@ -879,13 +879,13 @@ export const STORIES_LT: StorySeed[] = [
         translation: 'Numa manhã de setembro, o Linu e o avô Vytautas saíram para a floresta. O avô levava dois cestos e uma faca.',
         choices: [
           { text: 'Linu paėmė vieną krepšį.', translation: 'O Linu pegou um cesto.', next: 'miskas' },
-          { text: 'Linu paklausė: «Kur mes einame?»', translation: 'O Linu perguntou: «Aonde nós vamos?»', next: 'kalnas' },
+          { text: 'Linu paklausė: “Kur mes einame?”', translation: 'O Linu perguntou: “Aonde nós vamos?”', next: 'kalnas' },
         ],
       },
       kalnas: {
         emoji: '⛰️',
-        text: 'Senelis atsakė: «Pirmiausia – ant Ladakalnio.» Nuo kalno jie pamatė mėlynus ežerus tarp miškų.',
-        translation: 'O avô respondeu: «Primeiro, ao Ladakalnis.» Do alto do morro eles viram lagos azuis entre as florestas.',
+        text: 'Senelis atsakė: “Pirmiausia – ant Ladakalnio.” Nuo kalno jie pamatė mėlynus ežerus tarp miškų.',
+        translation: 'O avô respondeu: “Primeiro, ao Ladakalnis.” Do alto do morro eles viram lagos azuis entre as florestas.',
         choices: [{ text: 'Paskui jie nuėjo į mišką.', translation: 'Depois eles foram para a floresta.', next: 'miskas' }],
       },
       miskas: {
@@ -899,21 +899,21 @@ export const STORIES_LT: StorySeed[] = [
       },
       musmire: {
         emoji: '⚠️',
-        text: 'Senelis sušuko: «Ne! Tai musmirė – ji nuodinga!» Linu greitai padėjo grybą ant žemės.',
-        translation: 'O avô gritou: «Não! Isso é uma amanita, ela é venenosa!» O Linu pôs depressa o cogumelo no chão.',
+        text: 'Senelis sušuko: “Ne! Tai musmirė – ji nuodinga!” Linu greitai padėjo grybą ant žemės.',
+        translation: 'O avô gritou: “Não! Isso é uma amanita, ela é venenosa!” O Linu pôs depressa o cogumelo no chão.',
         choices: [
           { text: 'Linu ieškojo toliau.', translation: 'O Linu continuou procurando.', next: 'baravykas' },
           {
             text: 'Linu įdėjo musmirę į savo krepšį.',
             translation: 'O Linu colocou a amanita no seu cesto.',
-            wrong: 'O avô disse «ji nuodinga» (ela é venenosa), e o Linu «padėjo grybą ant žemės»: pôs o cogumelo no chão. Nada de amanita no cesto!',
+            wrong: 'O avô disse “ji nuodinga” (ela é venenosa), e o Linu “padėjo grybą ant žemės”: pôs o cogumelo no chão. Nada de amanita no cesto!',
           },
         ],
       },
       baravykas: {
         emoji: '🤩',
-        text: 'Senelis apsidžiaugė: «Baravykas! Tai geriausias grybas.» Iki pietų jie pririnko pilnus krepšius.',
-        translation: 'O avô ficou contente: «Um boleto! É o melhor cogumelo.» Até a hora do almoço, eles encheram os cestos.',
+        text: 'Senelis apsidžiaugė: “Baravykas! Tai geriausias grybas.” Iki pietų jie pririnko pilnus krepšius.',
+        translation: 'O avô ficou contente: “Um boleto! É o melhor cogumelo.” Até a hora do almoço, eles encheram os cestos.',
         choices: [
           { text: 'Jie grįžo namo pas močiutę.', translation: 'Eles voltaram para casa, para a avó.', next: 'namai' },
           { text: 'Linu norėjo rinkti dar ilgiau ir nuėjo vienas.', translation: 'O Linu quis colher ainda mais e foi sozinho.', next: 'final_neutro' },
@@ -930,8 +930,8 @@ export const STORIES_LT: StorySeed[] = [
       },
       final_bom: {
         emoji: '🫙',
-        text: '«Ačiū jums už tokią dieną!» – pasakė Linu. Močiutė įdėjo jam stiklainį grybų kelionei.',
-        translation: '«Obrigado a vocês por um dia assim!», disse o Linu. A avó colocou para ele um pote de cogumelos para a viagem.',
+        text: '“Ačiū jums už tokią dieną!” – pasakė Linu. Močiutė įdėjo jam stiklainį grybų kelionei.',
+        translation: '“Obrigado a vocês por um dia assim!”, disse o Linu. A avó colocou para ele um pote de cogumelos para a viagem.',
         ending: { tone: 'bom', title: 'Cesto cheio', message: 'O Linu aprendeu a separar o boleto da amanita e voltou com cogumelos para o inverno.' },
       },
       final_neutro: {
@@ -950,7 +950,7 @@ export const STORIES_LT: StorySeed[] = [
     emoji: '🏹',
     summary: 'Em Kernavė, a antiga capital, o Linu vai a uma festa de arqueologia viva e experimenta ofícios medievais.',
     cultural_context:
-      'Kernavė, às margens do rio Neris, foi uma cidade importante do Grão-Ducado da Lituânia na Idade Média; seus cinco morros fortificados (piliakalniai) formam um sítio arqueológico que é Patrimônio Mundial da UNESCO desde 2004. Todo verão, a festa «Gyvosios archeologijos dienos» (dias da arqueologia viva) mostra ali ferreiros, oleiros e arqueiros com roupas de época.',
+      'Kernavė, às margens do rio Neris, foi uma cidade importante do Grão-Ducado da Lituânia na Idade Média; seus cinco morros fortificados (piliakalniai) formam um sítio arqueológico que é Patrimônio Mundial da UNESCO desde 2004. Todo verão, a festa “Gyvosios archeologijos dienos” (dias da arqueologia viva) mostra ali ferreiros, oleiros e arqueiros com roupas de época.',
     start: 'start',
     glossary: [
       ['piliakalnis', 'morro fortificado (onde havia um castelo de madeira)'],
@@ -986,8 +986,8 @@ export const STORIES_LT: StorySeed[] = [
       },
       puodininke: {
         emoji: '🏺',
-        text: 'Šalia sėdėjo puodininkė. Ji lipdė molinius puodus rankomis ir sakė vaikams: «Molis mėgsta kantrybę.»',
-        translation: 'Ao lado estava sentada uma oleira. Ela modelava potes de barro com as mãos e dizia às crianças: «O barro gosta de paciência.»',
+        text: 'Šalia sėdėjo puodininkė. Ji lipdė molinius puodus rankomis ir sakė vaikams: “Molis mėgsta kantrybę.”',
+        translation: 'Ao lado estava sentada uma oleira. Ela modelava potes de barro com as mãos e dizia às crianças: “O barro gosta de paciência.”',
         choices: [
           { text: 'Linu pabandė nulipdyti puodelį.', translation: 'O Linu tentou modelar uma canequinha.', next: 'puodelis' },
           { text: 'Linu nuėjo prie lankininkų.', translation: 'O Linu foi até os arqueiros.', next: 'lankai' },
@@ -995,14 +995,14 @@ export const STORIES_LT: StorySeed[] = [
       },
       puodelis: {
         emoji: '☕',
-        text: 'Puodelis išėjo kreivas, bet puodininkė pagyrė Linu: «Tavo pirmas puodelis – pats gražiausias!»',
-        translation: 'A canequinha saiu torta, mas a oleira elogiou o Linu: «A sua primeira canequinha é a mais bonita de todas!»',
+        text: 'Puodelis išėjo kreivas, bet puodininkė pagyrė Linu: “Tavo pirmas puodelis – pats gražiausias!”',
+        translation: 'A canequinha saiu torta, mas a oleira elogiou o Linu: “A sua primeira canequinha é a mais bonita de todas!”',
         choices: [
           { text: 'Linu įsidėjo savo puodelį į kuprinę.', translation: 'O Linu guardou a sua canequinha na mochila.', next: 'final_bom' },
           {
             text: 'Linu išmetė puodelį, nes puodininkė jį išbarė.',
             translation: 'O Linu jogou a canequinha fora, porque a oleira brigou com ele.',
-            wrong: 'A oleira «pagyrė Linu»: ELOGIOU o Linu. Ela disse que a primeira canequinha dele é a mais bonita!',
+            wrong: 'A oleira “pagyrė Linu”: ELOGIOU o Linu. Ela disse que a primeira canequinha dele é a mais bonita!',
           },
         ],
       },
@@ -1047,29 +1047,29 @@ export const STORIES_LT: StorySeed[] = [
       ['Laikykis šalia manęs!', 'Fique perto de mim!'],
       ['verba', 'ramo de flores secas da feira'],
       ['riestainis', 'rosquinha dura'],
-      ['Nupirk!', 'Compre! (imperativo de «nupirkti»)'],
+      ['Nupirk!', 'Compre! (imperativo de “nupirkti”)'],
       ['Išsirinkite!', 'Escolham! / Escolha! (imperativo de cortesia)'],
     ],
     nodes: {
       start: {
         emoji: '📱',
-        text: 'Kovo pradžia, Vilnius. Mindaugas skambina Linu: «Linu, rytoj eisime į Kaziuko mugę! Atsikelk anksti ir apsirenk šiltai.»',
-        translation: 'Começo de março, Vilnius. O Mindaugas liga para o Linu: «Linu, amanhã iremos à feira de São Casimiro! Levante cedo e vista-se bem quente.»',
+        text: 'Kovo pradžia, Vilnius. Mindaugas skambina Linu: “Linu, rytoj eisime į Kaziuko mugę! Atsikelk anksti ir apsirenk šiltai.”',
+        translation: 'Começo de março, Vilnius. O Mindaugas liga para o Linu: “Linu, amanhã iremos à feira de São Casimiro! Levante cedo e vista-se bem quente.”',
         choices: [
-          { text: '«Gerai, Mindaugai! Susitiksime prie Katedros devintą.»', translation: '«Está bem, Mindaugas! Nos encontramos na Catedral às nove.»', next: 'muge' },
-          { text: '«Aš dar pamiegosiu… Susitikime po pietų.»', translation: '«Eu vou dormir mais um pouco… Vamos nos encontrar depois do almoço.»', next: 'popiet' },
+          { text: '“Gerai, Mindaugai! Susitiksime prie Katedros devintą.”', translation: '“Está bem, Mindaugas! Nos encontramos na Catedral às nove.”', next: 'muge' },
+          { text: '“Aš dar pamiegosiu… Susitikime po pietų.”', translation: '“Eu vou dormir mais um pouco… Vamos nos encontrar depois do almoço.”', next: 'popiet' },
         ],
       },
       popiet: {
         emoji: '👥',
-        text: 'Po pietų mugėje – tūkstančiai žmonių. Linu vos randa Mindaugą. «Matai? Reikėjo keltis anksčiau!» – juokiasi Mindaugas.',
-        translation: 'Depois do almoço, a feira está com milhares de pessoas. O Linu mal consegue achar o Mindaugas. «Viu? Era para ter levantado mais cedo!», ri o Mindaugas.',
-        choices: [{ text: '«Atsiprašau! Eime prie verbų.»', translation: '«Desculpe! Vamos até os ramos.»', next: 'verbos' }],
+        text: 'Po pietų mugėje – tūkstančiai žmonių. Linu vos randa Mindaugą. “Matai? Reikėjo keltis anksčiau!” – juokiasi Mindaugas.',
+        translation: 'Depois do almoço, a feira está com milhares de pessoas. O Linu mal consegue achar o Mindaugas. “Viu? Era para ter levantado mais cedo!”, ri o Mindaugas.',
+        choices: [{ text: '“Atsiprašau! Eime prie verbų.”', translation: '“Desculpe! Vamos até os ramos.”', next: 'verbos' }],
       },
       muge: {
         emoji: '🎪',
-        text: 'Gedimino prospekte ir Senamiestyje stovi šimtai palapinių. Žmonės pardavinėja medinius šaukštus, pintines ir verbas. Mindaugas sako: «Laikykis šalia manęs ir nepasiklysk!»',
-        translation: 'Na avenida Gediminas e na Cidade Velha há centenas de barracas. As pessoas vendem colheres de madeira, cestos de vime e ramos secos. O Mindaugas diz: «Fique perto de mim e não se perca!»',
+        text: 'Gedimino prospekte ir Senamiestyje stovi šimtai palapinių. Žmonės pardavinėja medinius šaukštus, pintines ir verbas. Mindaugas sako: “Laikykis šalia manęs ir nepasiklysk!”',
+        translation: 'Na avenida Gediminas e na Cidade Velha há centenas de barracas. As pessoas vendem colheres de madeira, cestos de vime e ramos secos. O Mindaugas diz: “Fique perto de mim e não se perca!”',
         choices: [
           { text: 'Linu eina prie verbų.', translation: 'O Linu vai até os ramos.', next: 'verbos' },
           { text: 'Linu eina prie riestainių.', translation: 'O Linu vai até as rosquinhas.', next: 'riestainiai' },
@@ -1077,21 +1077,21 @@ export const STORIES_LT: StorySeed[] = [
       },
       verbos: {
         emoji: '💐',
-        text: 'Pardavėja rodo spalvingas verbas iš džiovintų gėlių. «Pasiimkite šitą, – sako ji. – Ji puoš jūsų namus iki Velykų.»',
-        translation: 'A vendedora mostra ramos coloridos de flores secas. «Leve este», diz ela. «Ele vai enfeitar a sua casa até a Páscoa.»',
+        text: 'Pardavėja rodo spalvingas verbas iš džiovintų gėlių. “Pasiimkite šitą, – sako ji. – Ji puoš jūsų namus iki Velykų.”',
+        translation: 'A vendedora mostra ramos coloridos de flores secas. “Leve este”, diz ela. “Ele vai enfeitar a sua casa até a Páscoa.”',
         choices: [
           { text: 'Linu nuperka mažą verbą.', translation: 'O Linu compra um ramo pequeno.', next: 'riestainiai' },
           {
-            text: '«Ar ji iš plastiko? Ar ji ilgai neišsilaikys?»',
-            translation: '«Ele é de plástico? Não vai durar muito?»',
-            wrong: 'A vendedora disse «iš džiovintų gėlių» (de flores secas) e «puoš jūsų namus iki Velykų»: vai enfeitar a casa até a Páscoa. «Puoš» é o futuro de «puošti» (enfeitar)!',
+            text: '“Ar ji iš plastiko? Ar ji ilgai neišsilaikys?”',
+            translation: '“Ele é de plástico? Não vai durar muito?”',
+            wrong: 'A vendedora disse “iš džiovintų gėlių” (de flores secas) e “puoš jūsų namus iki Velykų”: vai enfeitar a casa até a Páscoa. “Puoš” é o futuro de “puošti” (enfeitar)!',
           },
         ],
       },
       riestainiai: {
         emoji: '🥯',
-        text: 'Ant virvės kabo riestainiai. Mindaugas sako: «Nupirk du – vieną sau, o kitą mano sesei Rasai. Ji ateis vėliau.»',
-        translation: 'Num cordão estão penduradas as rosquinhas. O Mindaugas diz: «Compre duas: uma para você e a outra para a minha irmã Rasa. Ela vai chegar mais tarde.»',
+        text: 'Ant virvės kabo riestainiai. Mindaugas sako: “Nupirk du – vieną sau, o kitą mano sesei Rasai. Ji ateis vėliau.”',
+        translation: 'Num cordão estão penduradas as rosquinhas. O Mindaugas diz: “Compre duas: uma para você e a outra para a minha irmã Rasa. Ela vai chegar mais tarde.”',
         choices: [
           { text: 'Linu nuperka du riestainius.', translation: 'O Linu compra duas rosquinhas.', next: 'rasa' },
           { text: 'Linu nuperka vieną riestainį ir iš karto suvalgo.', translation: 'O Linu compra uma rosquinha e come na hora.', next: 'final_neutro' },
@@ -1099,34 +1099,34 @@ export const STORIES_LT: StorySeed[] = [
       },
       rasa: {
         emoji: '👧',
-        text: 'Ateina Rasa. «Labas, Linu! Ačiū už riestainį! Ar nueisime pažiūrėti medinių žaislų?»',
-        translation: 'Chega a Rasa. «Oi, Linu! Obrigada pela rosquinha! Vamos ver os brinquedos de madeira?»',
-        choices: [{ text: '«Žinoma, Rasa! Eime!»', translation: '«Claro, Rasa! Vamos!»', next: 'zaislai' }],
+        text: 'Ateina Rasa. “Labas, Linu! Ačiū už riestainį! Ar nueisime pažiūrėti medinių žaislų?”',
+        translation: 'Chega a Rasa. “Oi, Linu! Obrigada pela rosquinha! Vamos ver os brinquedos de madeira?”',
+        choices: [{ text: '“Žinoma, Rasa! Eime!”', translation: '“Claro, Rasa! Vamos!”', next: 'zaislai' }],
       },
       zaislai: {
         emoji: '🪵',
-        text: 'Prie medinių žaislų stovi senas meistras. Jis sako: «Išsirinkite bet kurį paukštį. Visus padariau pats.»',
-        translation: 'Junto aos brinquedos de madeira está um velho artesão. Ele diz: «Escolham qualquer passarinho. Todos eu mesmo fiz.»',
+        text: 'Prie medinių žaislų stovi senas meistras. Jis sako: “Išsirinkite bet kurį paukštį. Visus padariau pats.”',
+        translation: 'Junto aos brinquedos de madeira está um velho artesão. Ele diz: “Escolham qualquer passarinho. Todos eu mesmo fiz.”',
         choices: [
           { text: 'Linu išsirenka medinį pingviną.', translation: 'O Linu escolhe um pinguim de madeira.', next: 'final_bom' },
           {
-            text: '«Kas padarė šiuos žaislus? Gal fabrikas?»',
-            translation: '«Quem fez esses brinquedos? Uma fábrica, talvez?»',
-            wrong: 'O artesão disse «Visus padariau pats»: fui eu mesmo que fiz todos. Nada de fábrica!',
+            text: '“Kas padarė šiuos žaislus? Gal fabrikas?”',
+            translation: '“Quem fez esses brinquedos? Uma fábrica, talvez?”',
+            wrong: 'O artesão disse “Visus padariau pats”: fui eu mesmo que fiz todos. Nada de fábrica!',
           },
         ],
       },
       final_bom: {
         emoji: '🐧',
-        text: 'Meistras nusišypso: «Tegu šitas pingvinas saugo tavo namus.» Linu, Mindaugas ir Rasa eina namo su riestainiais ir mediniu pingvinu.',
-        translation: 'O artesão sorri: «Que este pinguim proteja a sua casa.» O Linu, o Mindaugas e a Rasa voltam para casa com rosquinhas e um pinguim de madeira.',
+        text: 'Meistras nusišypso: “Tegu šitas pingvinas saugo tavo namus.” Linu, Mindaugas ir Rasa eina namo su riestainiais ir mediniu pingvinu.',
+        translation: 'O artesão sorri: “Que este pinguim proteja a sua casa.” O Linu, o Mindaugas e a Rasa voltam para casa com rosquinhas e um pinguim de madeira.',
         ending: { tone: 'bom', title: 'Um pinguim de madeira', message: 'O Linu seguiu todos os conselhos do Mindaugas e voltou da feira com o melhor souvenir possível.' },
       },
       final_neutro: {
         emoji: '😳',
-        text: 'Ateina Rasa: «O kur mano riestainis?» Mindaugas atsidūsta: «Linu, kitą kartą klausykis, ką sakau!»',
-        translation: 'Chega a Rasa: «E cadê a minha rosquinha?» O Mindaugas suspira: «Linu, da próxima vez escute o que eu digo!»',
-        ending: { tone: 'neutro', title: 'A rosquinha da Rasa', message: 'O Mindaugas pediu duas: «vieną sau, o kitą mano sesei» (uma para você, a outra para a minha irmã). Tente de novo!' },
+        text: 'Ateina Rasa: “O kur mano riestainis?” Mindaugas atsidūsta: “Linu, kitą kartą klausykis, ką sakau!”',
+        translation: 'Chega a Rasa: “E cadê a minha rosquinha?” O Mindaugas suspira: “Linu, da próxima vez escute o que eu digo!”',
+        ending: { tone: 'neutro', title: 'A rosquinha da Rasa', message: 'O Mindaugas pediu duas: “vieną sau, o kitą mano sesei” (uma para você, a outra para a minha irmã). Tente de novo!' },
       },
     },
   },
@@ -1141,20 +1141,20 @@ export const STORIES_LT: StorySeed[] = [
       'As Užgavėnės são o carnaval lituano, na terça-feira antes da Quarta-Feira de Cinzas: gente mascarada de bode, diabo e bruxa, a luta entre o gordo Lašininis (o inverno) e o magro Kanapinis (a primavera), a queima de um boneco de palha, a Morė, e muitas panquecas (blynai). O museu a céu aberto de Rumšiškės, perto de Kaunas, com aldeias antigas remontadas, é um dos lugares onde a festa é mais animada.',
     start: 'start',
     glossary: [
-      ['Užsidėk kaukę!', 'Ponha uma máscara! (imperativo do reflexivo «užsidėti»)'],
+      ['Užsidėk kaukę!', 'Ponha uma máscara! (imperativo do reflexivo “užsidėti”)'],
       ['neįleisime', 'não deixaremos entrar (futuro)'],
-      ['Lašininis / Kanapinis', 'o Toucinhudo (inverno) / o Magricela (primavera), de «lašiniai» (toucinho) e «kanapės» (cânhamo)'],
-      ['pingvine!', 'ó pinguim! (vocativo de «pingvinas»)'],
-      ['Kanapini!', 'vocativo de «Kanapinis»'],
-      ['sudegins', 'vão queimar (futuro de «sudeginti»)'],
+      ['Lašininis / Kanapinis', 'o Toucinhudo (inverno) / o Magricela (primavera), de “lašiniai” (toucinho) e “kanapės” (cânhamo)'],
+      ['pingvine!', 'ó pinguim! (vocativo de “pingvinas”)'],
+      ['Kanapini!', 'vocativo de “Kanapinis”'],
+      ['sudegins', 'vão queimar (futuro de “sudeginti”)'],
       ['blynai', 'panquecas'],
       ['Valgyk!', 'Coma! (imperativo)'],
     ],
     nodes: {
       start: {
         emoji: '🛖',
-        text: 'Vasario pabaiga. Linu atvažiuoja į Rumšiškes. Draugė Aistė jam sako: «Linu, šiandien Užgavėnės! Užsidėk kaukę – kitaip tavęs neįleisime į šventę!»',
-        translation: 'Fim de fevereiro. O Linu chega a Rumšiškės. A amiga Aistė diz a ele: «Linu, hoje é Užgavėnės! Ponha uma máscara, senão não vamos deixar você entrar na festa!»',
+        text: 'Vasario pabaiga. Linu atvažiuoja į Rumšiškes. Draugė Aistė jam sako: “Linu, šiandien Užgavėnės! Užsidėk kaukę – kitaip tavęs neįleisime į šventę!”',
+        translation: 'Fim de fevereiro. O Linu chega a Rumšiškės. A amiga Aistė diz a ele: “Linu, hoje é Užgavėnės! Ponha uma máscara, senão não vamos deixar você entrar na festa!”',
         choices: [
           { text: 'Linu užsideda ožio kaukę.', translation: 'O Linu põe uma máscara de bode.', next: 'kauke' },
           { text: 'Linu užsideda velnio kaukę.', translation: 'O Linu põe uma máscara de diabo.', next: 'kauke' },
@@ -1162,23 +1162,23 @@ export const STORIES_LT: StorySeed[] = [
       },
       kauke: {
         emoji: '👹',
-        text: 'Kaime pilna kaukėtų žmonių: ožių, velnių, raganų. Staiga prie Linu prieina storas vyras. «Aš esu Lašininis! Stok į mano pusę, pingvine!»',
-        translation: 'A aldeia está cheia de gente mascarada: bodes, diabos, bruxas. De repente, um homem gordo se aproxima do Linu. «Eu sou o Lašininis! Fique do meu lado, pinguim!»',
+        text: 'Kaime pilna kaukėtų žmonių: ožių, velnių, raganų. Staiga prie Linu prieina storas vyras. “Aš esu Lašininis! Stok į mano pusę, pingvine!”',
+        translation: 'A aldeia está cheia de gente mascarada: bodes, diabos, bruxas. De repente, um homem gordo se aproxima do Linu. “Eu sou o Lašininis! Fique do meu lado, pinguim!”',
         choices: [
           { text: 'Linu stoja į Lašininio pusę.', translation: 'O Linu fica do lado do Lašininis.', next: 'lasininis' },
-          { text: 'Linu klausia Aistės: «Kas jis toks?»', translation: 'O Linu pergunta à Aistė: «Quem é esse aí?»', next: 'aiskina' },
+          { text: 'Linu klausia Aistės: “Kas jis toks?”', translation: 'O Linu pergunta à Aistė: “Quem é esse aí?”', next: 'aiskina' },
         ],
       },
       aiskina: {
         emoji: '🧑‍🏫',
-        text: 'Aistė paaiškina: «Lašininis – tai žiema, o Kanapinis – pavasaris. Jie kovos, ir Kanapinis laimės. Tada ateis pavasaris.»',
-        translation: 'A Aistė explica: «O Lašininis é o inverno, e o Kanapinis é a primavera. Eles vão lutar, e o Kanapinis vai ganhar. Aí a primavera vai chegar.»',
+        text: 'Aistė paaiškina: “Lašininis – tai žiema, o Kanapinis – pavasaris. Jie kovos, ir Kanapinis laimės. Tada ateis pavasaris.”',
+        translation: 'A Aistė explica: “O Lašininis é o inverno, e o Kanapinis é a primavera. Eles vão lutar, e o Kanapinis vai ganhar. Aí a primavera vai chegar.”',
         choices: [
           { text: 'Linu stoja į Kanapinio pusę.', translation: 'O Linu fica do lado do Kanapinis.', next: 'kanapinis' },
           {
-            text: '«Vadinasi, Lašininis atneš pavasarį?»',
-            translation: '«Então é o Lašininis que vai trazer a primavera?»',
-            wrong: 'A Aistė disse «Lašininis – tai žiema»: o Lašininis é o INVERNO. Quem vai ganhar (laimės, futuro) e trazer a primavera é o Kanapinis.',
+            text: '“Vadinasi, Lašininis atneš pavasarį?”',
+            translation: '“Então é o Lašininis que vai trazer a primavera?”',
+            wrong: 'A Aistė disse “Lašininis – tai žiema”: o Lašininis é o INVERNO. Quem vai ganhar (laimės, futuro) e trazer a primavera é o Kanapinis.',
           },
         ],
       },
@@ -1193,35 +1193,35 @@ export const STORIES_LT: StorySeed[] = [
       },
       kanapinis: {
         emoji: '🌱',
-        text: 'Kanapinis ir Lašininis kovoja su pagaliais. Žmonės šaukia: «Kanapini, laikykis!» Pagaliau Lašininis pasiduoda.',
-        translation: 'O Kanapinis e o Lašininis lutam com bastões. As pessoas gritam: «Kanapinis, aguenta firme!» Finalmente o Lašininis se rende.',
-        choices: [{ text: '«Valio! Pavasaris ateina!»', translation: '«Viva! A primavera está chegando!»', next: 'more' }],
+        text: 'Kanapinis ir Lašininis kovoja su pagaliais. Žmonės šaukia: “Kanapini, laikykis!” Pagaliau Lašininis pasiduoda.',
+        translation: 'O Kanapinis e o Lašininis lutam com bastões. As pessoas gritam: “Kanapinis, aguenta firme!” Finalmente o Lašininis se rende.',
+        choices: [{ text: '“Valio! Pavasaris ateina!”', translation: '“Viva! A primavera está chegando!”', next: 'more' }],
       },
       more: {
         emoji: '🔥',
-        text: 'Vidury aikštės stovi didelė šiaudinė lėlė – Morė. «Žiūrėk, Linu: dabar ją sudegins, ir žiema baigsis», – sako Aistė.',
-        translation: 'No meio da praça há uma grande boneca de palha, a Morė. «Olha, Linu: agora vão queimá-la, e o inverno vai acabar», diz a Aistė.',
+        text: 'Vidury aikštės stovi didelė šiaudinė lėlė – Morė. “Žiūrėk, Linu: dabar ją sudegins, ir žiema baigsis”, – sako Aistė.',
+        translation: 'No meio da praça há uma grande boneca de palha, a Morė. “Olha, Linu: agora vão queimá-la, e o inverno vai acabar”, diz a Aistė.',
         choices: [{ text: 'Linu žiūri, kaip dega Morė.', translation: 'O Linu olha a Morė queimar.', next: 'blynai' }],
       },
       blynai: {
         emoji: '🥞',
-        text: 'Po šventės Aistės močiutė kepa blynus. «Valgyk, Linu! Per Užgavėnes reikia valgyti daug kartų – tada visus metus būsi sotus.»',
-        translation: 'Depois da festa, a avó da Aistė faz panquecas. «Coma, Linu! No Užgavėnės é preciso comer muitas vezes: assim você vai ficar de barriga cheia o ano todo.»',
+        text: 'Po šventės Aistės močiutė kepa blynus. “Valgyk, Linu! Per Užgavėnes reikia valgyti daug kartų – tada visus metus būsi sotus.”',
+        translation: 'Depois da festa, a avó da Aistė faz panquecas. “Coma, Linu! No Užgavėnės é preciso comer muitas vezes: assim você vai ficar de barriga cheia o ano todo.”',
         choices: [
           { text: 'Linu suvalgo dvylika blynų.', translation: 'O Linu come doze panquecas.', next: 'final_bom' },
-          { text: 'Linu suvalgo vieną blyną ir sako: «Užteks.»', translation: 'O Linu come uma panqueca e diz: «Chega.»', next: 'final_vienas' },
+          { text: 'Linu suvalgo vieną blyną ir sako: “Užteks.”', translation: 'O Linu come uma panqueca e diz: “Chega.”', next: 'final_vienas' },
         ],
       },
       final_bom: {
         emoji: '😋',
-        text: 'Linu atsilošia ir šypsosi. «Aiste, ačiū! Kitais metais vėl atvažiuosiu.»',
-        translation: 'O Linu se recosta e sorri. «Aistė, obrigado! No ano que vem eu volto.»',
+        text: 'Linu atsilošia ir šypsosi. “Aiste, ačiū! Kitais metais vėl atvažiuosiu.”',
+        translation: 'O Linu se recosta e sorri. “Aistė, obrigado! No ano que vem eu volto.”',
         ending: { tone: 'bom', title: 'Adeus, inverno!', message: 'Máscara, luta, fogueira e doze panquecas: o Linu fez o Užgavėnės completinho.' },
       },
       final_vienas: {
         emoji: '👵',
-        text: 'Močiutė papurto galvą: «Tik vienas blynas? Pavasaris tave ras alkaną!»',
-        translation: 'A avó balança a cabeça: «Só uma panqueca? A primavera vai encontrar você com fome!»',
+        text: 'Močiutė papurto galvą: “Tik vienas blynas? Pavasaris tave ras alkaną!”',
+        translation: 'A avó balança a cabeça: “Só uma panqueca? A primavera vai encontrar você com fome!”',
         ending: { tone: 'neutro', title: 'Fome de primavera', message: 'No Užgavėnės a regra é comer muito! Volte e aceite mais blynai.' },
       },
       final_neutro: {
@@ -1244,28 +1244,28 @@ export const STORIES_LT: StorySeed[] = [
     start: 'start',
     glossary: [
       ['važiuosime / kopsime', 'iremos / subiremos (futuro, 1ª pessoa do plural)'],
-      ['Neatsilikite! / Laikykitės tako!', 'Não fiquem para trás! / Fiquem na trilha! (imperativo; «laikytis» é reflexivo)'],
+      ['Neatsilikite! / Laikykitės tako!', 'Não fiquem para trás! / Fiquem na trilha! (imperativo; “laikytis” é reflexivo)'],
       ['Egle!', 'Eglė! (vocativo: -ė vira -e)'],
-      ['Nesijuokite!', 'Não riam! (reflexivo negado: o -si- vai logo depois do «ne-»)'],
+      ['Nesijuokite!', 'Não riam! (reflexivo negado: o -si- vai logo depois do “ne-”)'],
       ['kaukas / kaukai', 'duende da casa na mitologia lituana'],
-      ['išsipildys', 'vai se realizar (futuro do reflexivo «išsipildyti»)'],
+      ['išsipildys', 'vai se realizar (futuro do reflexivo “išsipildyti”)'],
       ['ungurys', 'enguia'],
       ['garniai ir kormoranai', 'garças e corvos-marinhos'],
     ],
     nodes: {
       start: {
         emoji: '🌲',
-        text: 'Linu atvyko į Juodkrantę su turistų grupe. Gidė Eglė sako: «Rytoj važiuosime į Nidą, o šiandien kopsime į Raganų kalną. Neatsilikite ir laikykitės tako!»',
-        translation: 'O Linu chegou a Juodkrantė com um grupo de turistas. A guia Eglė diz: «Amanhã iremos a Nida, e hoje vamos subir o Morro das Bruxas. Não fiquem para trás e não saiam da trilha!»',
+        text: 'Linu atvyko į Juodkrantę su turistų grupe. Gidė Eglė sako: “Rytoj važiuosime į Nidą, o šiandien kopsime į Raganų kalną. Neatsilikite ir laikykitės tako!”',
+        translation: 'O Linu chegou a Juodkrantė com um grupo de turistas. A guia Eglė diz: “Amanhã iremos a Nida, e hoje vamos subir o Morro das Bruxas. Não fiquem para trás e não saiam da trilha!”',
         choices: [
-          { text: '«Gerai, Egle! Eisiu šalia jūsų.»', translation: '«Está bem, Eglė! Vou ficar do seu lado.»', next: 'takas' },
+          { text: '“Gerai, Egle! Eisiu šalia jūsų.”', translation: '“Está bem, Eglė! Vou ficar do seu lado.”', next: 'takas' },
           { text: 'Linu pirma nori nusipirkti rūkytos žuvies.', translation: 'O Linu quer primeiro comprar peixe defumado.', next: 'zuvis' },
         ],
       },
       zuvis: {
         emoji: '🐟',
-        text: 'Prie marių stovi rūkykla. Pardavėjas šaukia: «Paragauk ungurio, pingvine! Tokio nerasi niekur kitur!»',
-        translation: 'Na beira da laguna há uma defumaria. O vendedor grita: «Prove a enguia, pinguim! Igual a esta você não vai achar em lugar nenhum!»',
+        text: 'Prie marių stovi rūkykla. Pardavėjas šaukia: “Paragauk ungurio, pingvine! Tokio nerasi niekur kitur!”',
+        translation: 'Na beira da laguna há uma defumaria. O vendedor grita: “Prove a enguia, pinguim! Igual a esta você não vai achar em lugar nenhum!”',
         choices: [
           { text: 'Linu nusiperka ungurio ir bėga pas grupę.', translation: 'O Linu compra um pouco de enguia e corre atrás do grupo.', next: 'takas' },
           { text: 'Linu atsisėda prie marių ir valgo.', translation: 'O Linu se senta na beira da laguna e come.', next: 'final_neutro' },
@@ -1273,48 +1273,48 @@ export const STORIES_LT: StorySeed[] = [
       },
       takas: {
         emoji: '😈',
-        text: 'Miško take stovi daug medinių skulptūrų: raganos, velniai, kaukai. Eglė pasakoja: «Šitas velnias žiūri, ar vaikai gerai elgiasi. Nesijuokite iš jo!»',
-        translation: 'Na trilha da floresta há muitas esculturas de madeira: bruxas, diabos, duendes. A Eglė conta: «Este diabo vigia se as crianças se comportam bem. Não riam dele!»',
+        text: 'Miško take stovi daug medinių skulptūrų: raganos, velniai, kaukai. Eglė pasakoja: “Šitas velnias žiūri, ar vaikai gerai elgiasi. Nesijuokite iš jo!”',
+        translation: 'Na trilha da floresta há muitas esculturas de madeira: bruxas, diabos, duendes. A Eglė conta: “Este diabo vigia se as crianças se comportam bem. Não riam dele!”',
         choices: [
           { text: 'Linu rimtai žiūri į velnią ir eina toliau.', translation: 'O Linu olha sério para o diabo e segue em frente.', next: 'ragana' },
-          { text: 'Linu klausia: «Egle, kas tie kaukai?»', translation: 'O Linu pergunta: «Eglė, o que são esses kaukai?»', next: 'kaukai' },
+          { text: 'Linu klausia: “Egle, kas tie kaukai?”', translation: 'O Linu pergunta: “Eglė, o que são esses kaukai?”', next: 'kaukai' },
           {
             text: 'Linu garsiai juokiasi iš velnio.',
             translation: 'O Linu ri alto do diabo.',
-            wrong: 'A Eglė disse «Nesijuokite iš jo!»: NÃO riam dele. No imperativo negado do reflexivo «juoktis», o «-si-» vem logo depois do «ne-»: ne-si-juokite.',
+            wrong: 'A Eglė disse “Nesijuokite iš jo!”: NÃO riam dele. No imperativo negado do reflexivo “juoktis”, o “-si-” vem logo depois do “ne-”: ne-si-juokite.',
           },
         ],
       },
       kaukai: {
         emoji: '🧌',
-        text: 'Eglė paaiškina: «Kaukai – mažos namų dvasios. Jei juos gerai prižiūrėsi, jie atneš tau turtų.»',
-        translation: 'A Eglė explica: «Os kaukai são espíritos pequeninos da casa. Se você cuidar bem deles, vão trazer riqueza para você.»',
-        choices: [{ text: '«Tada pasiimsiu vieną namo!»', translation: '«Então vou levar um para casa!»', next: 'ragana' }],
+        text: 'Eglė paaiškina: “Kaukai – mažos namų dvasios. Jei juos gerai prižiūrėsi, jie atneš tau turtų.”',
+        translation: 'A Eglė explica: “Os kaukai são espíritos pequeninos da casa. Se você cuidar bem deles, vão trazer riqueza para você.”',
+        choices: [{ text: '“Tada pasiimsiu vieną namo!”', translation: '“Então vou levar um para casa!”', next: 'ragana' }],
       },
       ragana: {
         emoji: '🧹',
-        text: 'Toliau stovi didelė ragana su šluota. Eglė juokauja: «Atsisėskite šalia jos ir sugalvokite norą. Jis išsipildys – bet niekam nesakykite!»',
-        translation: 'Mais adiante há uma bruxa grande com uma vassoura. A Eglė brinca: «Sentem-se ao lado dela e pensem num desejo. Ele vai se realizar, mas não contem a ninguém!»',
+        text: 'Toliau stovi didelė ragana su šluota. Eglė juokauja: “Atsisėskite šalia jos ir sugalvokite norą. Jis išsipildys – bet niekam nesakykite!”',
+        translation: 'Mais adiante há uma bruxa grande com uma vassoura. A Eglė brinca: “Sentem-se ao lado dela e pensem num desejo. Ele vai se realizar, mas não contem a ninguém!”',
         choices: [
           { text: 'Linu atsisėda ir tyliai sugalvoja norą.', translation: 'O Linu se senta e pensa num desejo em silêncio.', next: 'noras' },
           {
-            text: 'Linu garsiai sako visai grupei: «Noriu skraidyti!»',
-            translation: 'O Linu diz alto para o grupo todo: «Quero voar!»',
-            wrong: 'A Eglė avisou: «niekam nesakykite» (não contem a ninguém). Desejo contado não se realiza!',
+            text: 'Linu garsiai sako visai grupei: “Noriu skraidyti!”',
+            translation: 'O Linu diz alto para o grupo todo: “Quero voar!”',
+            wrong: 'A Eglė avisou: “niekam nesakykite” (não contem a ninguém). Desejo contado não se realiza!',
           },
         ],
       },
       noras: {
         emoji: '🌊',
-        text: 'Eglė kviečia grupę: «Eikite su manimi prie marių. Ten pamatysite garnius ir kormoranus.»',
-        translation: 'A Eglė chama o grupo: «Venham comigo até a laguna. Lá vocês vão ver garças e corvos-marinhos.»',
+        text: 'Eglė kviečia grupę: “Eikite su manimi prie marių. Ten pamatysite garnius ir kormoranus.”',
+        translation: 'A Eglė chama o grupo: “Venham comigo até a laguna. Lá vocês vão ver garças e corvos-marinhos.”',
         choices: [{ text: 'Linu eina su grupe.', translation: 'O Linu vai com o grupo.', next: 'kolonija' }],
       },
       kolonija: {
         emoji: '🪶',
-        text: 'Aukštose pušyse – šimtai lizdų. Kormoranai klykia, o garniai tyliai stovi ant šakų. Eglė šnabžda: «Linu, ar tavo noras išsipildys?»',
-        translation: 'Nos pinheiros altos há centenas de ninhos. Os corvos-marinhos gritam, e as garças ficam quietas nos galhos. A Eglė cochicha: «Linu, o seu desejo vai se realizar?»',
-        choices: [{ text: '«Pamatysime, Egle!»', translation: '«Veremos, Eglė!»', next: 'final_bom' }],
+        text: 'Aukštose pušyse – šimtai lizdų. Kormoranai klykia, o garniai tyliai stovi ant šakų. Eglė šnabžda: “Linu, ar tavo noras išsipildys?”',
+        translation: 'Nos pinheiros altos há centenas de ninhos. Os corvos-marinhos gritam, e as garças ficam quietas nos galhos. A Eglė cochicha: “Linu, o seu desejo vai se realizar?”',
+        choices: [{ text: '“Pamatysime, Egle!”', translation: '“Veremos, Eglė!”', next: 'final_bom' }],
       },
       final_bom: {
         emoji: '✨',
@@ -1324,9 +1324,9 @@ export const STORIES_LT: StorySeed[] = [
       },
       final_neutro: {
         emoji: '😔',
-        text: 'Linu valgo žuvį ir žiūri į marias. Kai jis grįžta, grupės jau nėra. «Kitą kartą klausysiuosi gidės», – atsidūsta jis.',
-        translation: 'O Linu come o peixe e olha para a laguna. Quando ele volta, o grupo já não está lá. «Da próxima vez vou escutar a guia», suspira ele.',
-        ending: { tone: 'neutro', title: 'Perdeu as bruxas', message: 'A Eglė disse «Neatsilikite!» (não fiquem para trás). Volte e siga o grupo!' },
+        text: 'Linu valgo žuvį ir žiūri į marias. Kai jis grįžta, grupės jau nėra. “Kitą kartą klausysiuosi gidės”, – atsidūsta jis.',
+        translation: 'O Linu come o peixe e olha para a laguna. Quando ele volta, o grupo já não está lá. “Da próxima vez vou escutar a guia”, suspira ele.',
+        ending: { tone: 'neutro', title: 'Perdeu as bruxas', message: 'A Eglė disse “Neatsilikite!” (não fiquem para trás). Volte e siga o grupo!' },
       },
     },
   },
@@ -1339,7 +1339,7 @@ export const STORIES_LT: StorySeed[] = [
     emoji: '😈',
     summary: 'Em Kaunas, a amiga Rūta leva o Linu ao museu que ela visitava todo domingo com o avô: um museu cheio de diabos.',
     cultural_context:
-      'O Museu dos Diabos (Velnių muziejus), em Kaunas, nasceu da coleção do pintor Antanas Žmuidzinavičius (1876–1966) e hoje guarda mais de 3 mil figuras de diabos do mundo inteiro. Na mitologia lituana, o «velnias» é mais um espertalhão que dá para enganar do que um ser terrível. Perto dali, o funicular de Žaliakalnis sobe a colina desde 1931.',
+      'O Museu dos Diabos (Velnių muziejus), em Kaunas, nasceu da coleção do pintor Antanas Žmuidzinavičius (1876–1966) e hoje guarda mais de 3 mil figuras de diabos do mundo inteiro. Na mitologia lituana, o “velnias” é mais um espertalhão que dá para enganar do que um ser terrível. Perto dali, o funicular de Žaliakalnis sobe a colina desde 1931.',
     start: 'start',
     glossary: [
       ['eidavo', 'ia (sempre, costumava ir) — passado frequentativo em -davo'],
@@ -1368,9 +1368,9 @@ export const STORIES_LT: StorySeed[] = [
         choices: [
           { text: 'Paskui jie nuėjo į muziejų.', translation: 'Depois eles foram ao museu.', next: 'muziejus' },
           {
-            text: 'Linu pasakė: «Tavo senelis tau niekada nepirkdavo ledų, tiesa?»',
-            translation: 'O Linu disse: «Seu avô nunca comprava sorvete para você, né?»',
-            wrong: '«Nupirkdavo» é o passado frequentativo (-davo): o avô comprava sorvete para ela TODA VEZ (visada) depois do museu. Era um costume da infância, e não algo que nunca acontecia.',
+            text: 'Linu pasakė: “Tavo senelis tau niekada nepirkdavo ledų, tiesa?”',
+            translation: 'O Linu disse: “Seu avô nunca comprava sorvete para você, né?”',
+            wrong: '“Nupirkdavo” é o passado frequentativo (-davo): o avô comprava sorvete para ela TODA VEZ (visada) depois do museu. Era um costume da infância, e não algo que nunca acontecia.',
           },
         ],
       },
@@ -1382,9 +1382,9 @@ export const STORIES_LT: StorySeed[] = [
           { text: 'Linu nusprendė suskaičiuoti visus velnius.', translation: 'O Linu resolveu contar todos os diabos.', next: 'skaiciuoti' },
           { text: 'Linu paklausė darbuotojos, kiek čia iš viso yra velnių.', translation: 'O Linu perguntou à funcionária quantos diabos havia ali ao todo.', next: 'darbuotoja' },
           {
-            text: 'Linu pasakė: «Vadinasi, dailininkas visus velnius nusipirko pats.»',
-            translation: 'O Linu disse: «Então o pintor comprou todos os diabos sozinho.»',
-            wrong: 'O texto diz que os amigos «atveždavo» — COSTUMAVAM TRAZER — diabinhos para ele quando voltavam de viagem («kai grįždavo»). Muitas figuras chegaram de presente.',
+            text: 'Linu pasakė: “Vadinasi, dailininkas visus velnius nusipirko pats.”',
+            translation: 'O Linu disse: “Então o pintor comprou todos os diabos sozinho.”',
+            wrong: 'O texto diz que os amigos “atveždavo” — COSTUMAVAM TRAZER — diabinhos para ele quando voltavam de viagem (“kai grįždavo”). Muitas figuras chegaram de presente.',
           },
         ],
       },
@@ -1405,14 +1405,14 @@ export const STORIES_LT: StorySeed[] = [
       },
       saci: {
         emoji: '🎩',
-        text: 'Darbuotoja labai nudžiugo ir paklausė, kas tai per padaras. Linu papasakojo, kad Saci turi vieną koją, raudoną kepuraitę ir mėgsta krėsti pokštus. «Mūsų velniai irgi mėgdavo apgaudinėti žmones», – nusijuokė ji.',
-        translation: 'A funcionária ficou muito contente e perguntou que criatura era aquela. O Linu contou que o Saci tem uma perna só, um gorrinho vermelho e adora pregar peças. «Os nossos diabos também gostavam de enganar as pessoas», riu ela.',
+        text: 'Darbuotoja labai nudžiugo ir paklausė, kas tai per padaras. Linu papasakojo, kad Saci turi vieną koją, raudoną kepuraitę ir mėgsta krėsti pokštus. “Mūsų velniai irgi mėgdavo apgaudinėti žmones”, – nusijuokė ji.',
+        translation: 'A funcionária ficou muito contente e perguntou que criatura era aquela. O Linu contou que o Saci tem uma perna só, um gorrinho vermelho e adora pregar peças. “Os nossos diabos também gostavam de enganar as pessoas”, riu ela.',
         choices: [{ text: 'Linu padovanojo Saci muziejui.', translation: 'O Linu deu o Saci de presente ao museu.', next: 'final_bom' }],
       },
       final_bom: {
         emoji: '🚡',
-        text: 'Darbuotoja parašė kortelę «Saci, Brazilija» ir padėjo figūrėlę į vitriną. Paskui Rūta ir Linu nuėjo prie funikulieriaus ir pakilo į Žaliakalnį. Iš viršaus Rūta parodė visą miestą ir pasakė, kad senelis čia irgi mėgdavo stovėti.',
-        translation: 'A funcionária escreveu uma etiqueta, «Saci, Brasil», e colocou a figurinha na vitrine. Depois a Rūta e o Linu foram até o funicular e subiram a Žaliakalnis. Lá de cima, a Rūta mostrou a cidade inteira e disse que o avô também gostava de ficar ali.',
+        text: 'Darbuotoja parašė kortelę “Saci, Brazilija” ir padėjo figūrėlę į vitriną. Paskui Rūta ir Linu nuėjo prie funikulieriaus ir pakilo į Žaliakalnį. Iš viršaus Rūta parodė visą miestą ir pasakė, kad senelis čia irgi mėgdavo stovėti.',
+        translation: 'A funcionária escreveu uma etiqueta, “Saci, Brasil”, e colocou a figurinha na vitrine. Depois a Rūta e o Linu foram até o funicular e subiram a Žaliakalnis. Lá de cima, a Rūta mostrou a cidade inteira e disse que o avô também gostava de ficar ali.',
         ending: { tone: 'bom', title: 'Um saci entre os diabos', message: 'Agora o Museu dos Diabos de Kaunas tem um visitante brasileiro fixo, e a Rūta ganhou uma nova lembrança para juntar às do avô.' },
       },
       final_sau: {
@@ -1454,14 +1454,14 @@ export const STORIES_LT: StorySeed[] = [
           {
             text: 'Linu pagalvojo, kad Jonas gintaro ieškojo tik vieną kartą gyvenime.',
             translation: 'O Linu pensou que o Jonas tinha procurado âmbar uma única vez na vida.',
-            wrong: '«Keldavosi» e «eidavo» estão no passado frequentativo (-davo): depois de CADA tempestade (po kiekvienos audros), o Jonas se levantava cedo e ia catar âmbar. Era um hábito da juventude dele.',
+            wrong: '“Keldavosi” e “eidavo” estão no passado frequentativo (-davo): depois de CADA tempestade (po kiekvienos audros), o Jonas se levantava cedo e ia catar âmbar. Era um hábito da juventude dele.',
           },
         ],
       },
       patarimas: {
         emoji: '🪶',
-        text: 'Jonas paaiškino, kad gintaras yra daug lengvesnis už akmenį ir šiltas liečiant. Jis patarė ieškoti tarp jūros žolių, kurias audra išmeta į krantą. «Jeigu rasi, neparduok – pasilik atminimui», – pridūrė jis.',
-        translation: 'O Jonas explicou que o âmbar é muito mais leve que uma pedra e morno ao toque. Ele aconselhou procurar no meio das algas que a tempestade joga na praia. «Se achar, não venda: guarde de lembrança», acrescentou.',
+        text: 'Jonas paaiškino, kad gintaras yra daug lengvesnis už akmenį ir šiltas liečiant. Jis patarė ieškoti tarp jūros žolių, kurias audra išmeta į krantą. “Jeigu rasi, neparduok – pasilik atminimui”, – pridūrė jis.',
+        translation: 'O Jonas explicou que o âmbar é muito mais leve que uma pedra e morno ao toque. Ele aconselhou procurar no meio das algas que a tempestade joga na praia. “Se achar, não venda: guarde de lembrança”, acrescentou.',
         choices: [{ text: 'Linu padėkojo ir nuėjo prie jūros.', translation: 'O Linu agradeceu e foi até o mar.', next: 'pajuris' }],
       },
       pajuris: {
@@ -1482,14 +1482,14 @@ export const STORIES_LT: StorySeed[] = [
           {
             text: 'Linu nusprendė, kad rado didžiausią gintarą Palangoje.',
             translation: 'O Linu concluiu que tinha achado o maior âmbar de Palanga.',
-            wrong: 'O pescador disse que era «tik butelio stiklas», só vidro de garrafa. E o objeto era pesado e frio («sunkus, šaltas»), enquanto o âmbar é leve e morno.',
+            wrong: 'O pescador disse que era “tik butelio stiklas”, só vidro de garrafa. E o objeto era pesado e frio (“sunkus, šaltas”), enquanto o âmbar é leve e morno.',
           },
         ],
       },
       zoles: {
         emoji: '✨',
-        text: 'Tarp rudų jūros žolių kažkas sublizgo. Linu paėmė mažą geltoną gabalėlį: jis buvo lengvas ir šiltas. Šalia stovinti moteris pažiūrėjo ir pasakė: «Sveikinu, tai tikras gintaras!»',
-        translation: 'No meio das algas marrons, alguma coisa brilhou. O Linu pegou um pedacinho amarelo: era leve e morno. Uma mulher que estava ao lado olhou e disse: «Parabéns, isso é âmbar de verdade!»',
+        text: 'Tarp rudų jūros žolių kažkas sublizgo. Linu paėmė mažą geltoną gabalėlį: jis buvo lengvas ir šiltas. Šalia stovinti moteris pažiūrėjo ir pasakė: “Sveikinu, tai tikras gintaras!”',
+        translation: 'No meio das algas marrons, alguma coisa brilhou. O Linu pegou um pedacinho amarelo: era leve e morno. Uma mulher que estava ao lado olhou e disse: “Parabéns, isso é âmbar de verdade!”',
         choices: [{ text: 'Linu atsargiai įsidėjo gintarą į kišenę ir grįžo namo.', translation: 'O Linu guardou o âmbar no bolso com cuidado e voltou para casa.', next: 'gintaras' }],
       },
       gintaras: {
@@ -1515,8 +1515,8 @@ export const STORIES_LT: StorySeed[] = [
       },
       final_daugiau: {
         emoji: '🥶',
-        text: 'Linu visą popietę vaikščiojo paplūdimiu, bet daugiau nieko nerado. Vakare jis grįžo pavargęs ir sušalęs. Jonas nusišypsojo: «Jūra dovanoja tik tiems, kurie keliasi anksti.»',
-        translation: 'O Linu passou a tarde inteira andando pela praia, mas não achou mais nada. À noite, voltou cansado e com frio. O Jonas sorriu: «O mar só dá presentes para quem acorda cedo.»',
+        text: 'Linu visą popietę vaikščiojo paplūdimiu, bet daugiau nieko nerado. Vakare jis grįžo pavargęs ir sušalęs. Jonas nusišypsojo: “Jūra dovanoja tik tiems, kurie keliasi anksti.”',
+        translation: 'O Linu passou a tarde inteira andando pela praia, mas não achou mais nada. À noite, voltou cansado e com frio. O Jonas sorriu: “O mar só dá presentes para quem acorda cedo.”',
         ending: { tone: 'neutro', title: 'O mar já tinha dado', message: 'Um pedacinho de âmbar já é sorte. Da próxima vez, o museu pode ser um bom programa para a tarde.' },
       },
     },
@@ -1558,9 +1558,9 @@ export const STORIES_LT: StorySeed[] = [
         choices: [
           { text: 'Jie vėl sėdo į baidarę ir nuplaukė prie malūno.', translation: 'Eles voltaram para o caiaque e remaram até o moinho.', next: 'ezeras' },
           {
-            text: 'Linu paklausė: «Tai tavo močiutė čia buvo tik vieną kartą?»',
-            translation: 'O Linu perguntou: «Então a sua avó só esteve aqui uma vez?»',
-            wrong: '«Ateidavo» e «dainuodavo» estão no passado frequentativo (-davo): a avó vinha e cantava ali em TODAS as festas de São João (per kiekvienas Jonines). Era costume, não uma visita única.',
+            text: 'Linu paklausė: “Tai tavo močiutė čia buvo tik vieną kartą?”',
+            translation: 'O Linu perguntou: “Então a sua avó só esteve aqui uma vez?”',
+            wrong: '“Ateidavo” e “dainuodavo” estão no passado frequentativo (-davo): a avó vinha e cantava ali em TODAS as festas de São João (per kiekvienas Jonines). Era costume, não uma visita única.',
           },
         ],
       },
@@ -1586,9 +1586,9 @@ export const STORIES_LT: StorySeed[] = [
         choices: [
           { text: 'Linu paklausė, ką močiutė darydavo su miltais.', translation: 'O Linu perguntou o que a avó fazia com a farinha.', next: 'miltai' },
           {
-            text: 'Linu pasakė: «Vadinasi, močiutė pati maldavo grūdus.»',
-            translation: 'O Linu disse: «Então a avó moía os grãos ela mesma.»',
-            wrong: 'Quem moía era o moleiro: a avó «laukdavo, kol malūnininkas juos sumals», esperava ATÉ o moleiro terminar de moer. Enquanto isso, ela tricotava meias («megzdavo kojines»).',
+            text: 'Linu pasakė: “Vadinasi, močiutė pati maldavo grūdus.”',
+            translation: 'O Linu disse: “Então a avó moía os grãos ela mesma.”',
+            wrong: 'Quem moía era o moleiro: a avó “laukdavo, kol malūnininkas juos sumals”, esperava ATÉ o moleiro terminar de moer. Enquanto isso, ela tricotava meias (“megzdavo kojines”).',
           },
         ],
       },
@@ -1615,8 +1615,8 @@ export const STORIES_LT: StorySeed[] = [
       },
       final_slapi: {
         emoji: '💦',
-        text: 'Bangos buvo didelės, ir baidarė vos neapvirto. Jie pasiekė malūną visiškai šlapi, kai muziejus jau buvo uždarytas. Aistė tik atsiduso: «Močiutė visada sakydavo, kad ežeras nemėgsta skubančių.»',
-        translation: 'As ondas estavam grandes, e o caiaque quase virou. Eles chegaram ao moinho encharcados, quando o museu já estava fechado. A Aistė só suspirou: «A vovó sempre dizia que o lago não gosta de quem tem pressa.»',
+        text: 'Bangos buvo didelės, ir baidarė vos neapvirto. Jie pasiekė malūną visiškai šlapi, kai muziejus jau buvo uždarytas. Aistė tik atsiduso: “Močiutė visada sakydavo, kad ežeras nemėgsta skubančių.”',
+        translation: 'As ondas estavam grandes, e o caiaque quase virou. Eles chegaram ao moinho encharcados, quando o museu já estava fechado. A Aistė só suspirou: “A vovó sempre dizia que o lago não gosta de quem tem pressa.”',
         ending: { tone: 'neutro', title: 'O lago não gosta de pressa', message: 'Chegaram inteiros, mas molhados e tarde demais. A avó da Aistė tinha razão: melhor esperar as nuvens passarem.' },
       },
     },
@@ -1637,7 +1637,7 @@ export const STORIES_LT: StorySeed[] = [
       ['pastatytas', 'construído, erguido'],
       ['gimęs, gimusi', 'nascido, nascida (particípio ativo passado)'],
       ['atkurta', 'reconstruída, recriada'],
-      ['atidengta', 'inaugurada (um monumento: «descoberta»)'],
+      ['atidengta', 'inaugurada (um monumento: “descoberta”)'],
       ['jaunavedžiai', 'os recém-casados'],
       ['vyksiantis', 'que vai acontecer (particípio ativo futuro)'],
       ['krantinė', 'cais'],
@@ -1654,14 +1654,14 @@ export const STORIES_LT: StorySeed[] = [
       },
       meridianas: {
         emoji: '⚓',
-        text: 'Mantas paaiškino, kad tai «Meridianas» – burlaivis, pastatytas Suomijoje ir tapęs miesto simboliu. Ilgus metus jame mokydavosi būsimieji jūreiviai. Laivo nuotrauka puošia daugybę atvirukų, parduodamų senamiestyje.',
-        translation: 'O Mantas explicou que aquele era o «Meridianas», um veleiro construído na Finlândia que virou símbolo da cidade. Por muitos anos, futuros marinheiros estudaram a bordo dele. A foto do navio enfeita um monte de cartões-postais vendidos na cidade velha.',
+        text: 'Mantas paaiškino, kad tai “Meridianas” – burlaivis, pastatytas Suomijoje ir tapęs miesto simboliu. Ilgus metus jame mokydavosi būsimieji jūreiviai. Laivo nuotrauka puošia daugybę atvirukų, parduodamų senamiestyje.',
+        translation: 'O Mantas explicou que aquele era o “Meridianas”, um veleiro construído na Finlândia que virou símbolo da cidade. Por muitos anos, futuros marinheiros estudaram a bordo dele. A foto do navio enfeita um monte de cartões-postais vendidos na cidade velha.',
         choices: [
           { text: 'Paskui jie nuėjo į Teatro aikštę.', translation: 'Depois eles foram para a Praça do Teatro.', next: 'teatras' },
           {
-            text: 'Linu pasakė: «Vadinasi, šis laivas buvo pastatytas čia, Klaipėdoje.»',
-            translation: 'O Linu disse: «Então este navio foi construído aqui, em Klaipėda.»',
-            wrong: 'O Mantas disse «burlaivis, pastatytas Suomijoje»: um veleiro CONSTRUÍDO NA FINLÂNDIA. O particípio passivo «pastatytas» vem junto do lugar onde a ação aconteceu.',
+            text: 'Linu pasakė: “Vadinasi, šis laivas buvo pastatytas čia, Klaipėdoje.”',
+            translation: 'O Linu disse: “Então este navio foi construído aqui, em Klaipėda.”',
+            wrong: 'O Mantas disse “burlaivis, pastatytas Suomijoje”: um veleiro CONSTRUÍDO NA FINLÂNDIA. O particípio passivo “pastatytas” vem junto do lugar onde a ação aconteceu.',
           },
         ],
       },
@@ -1681,16 +1681,16 @@ export const STORIES_LT: StorySeed[] = [
         choices: [
           { text: 'Tuo metu Linu pastebėjo prie fontano susirinkusius žmones.', translation: 'Nesse momento, o Linu reparou nas pessoas reunidas perto da fonte.', next: 'zmones' },
           {
-            text: 'Linu sušuko: «Tai čia stovi ta pati skulptūra nuo 1912 metų!»',
-            translation: 'O Linu exclamou: «Então é a mesma estátua que está aqui desde 1912!»',
-            wrong: 'A estátua de 1912 «dingo», desapareceu. A de hoje «buvo atkurta… ir atidengta 1989 metais»: FOI RECONSTRUÍDA a partir de fotos antigas e inaugurada em 1989. É uma cópia.',
+            text: 'Linu sušuko: “Tai čia stovi ta pati skulptūra nuo 1912 metų!”',
+            translation: 'O Linu exclamou: “Então é a mesma estátua que está aqui desde 1912!”',
+            wrong: 'A estátua de 1912 “dingo”, desapareceu. A de hoje “buvo atkurta… ir atidengta 1989 metais”: FOI RECONSTRUÍDA a partir de fotos antigas e inaugurada em 1989. É uma cópia.',
           },
         ],
       },
       zmones: {
         emoji: '👰',
-        text: 'Prie fontano fotografavosi jaunavedžiai, apsupti draugų. Fotografas, pamatęs pingviną, paprašė Linu atsistoti šalia nuotakos. «Pingvinas vestuvių nuotraukoje – tai laimė!» – juokėsi jaunikis.',
-        translation: 'Perto da fonte, uns recém-casados tiravam fotos, rodeados de amigos. O fotógrafo, ao ver o pinguim, pediu ao Linu que ficasse ao lado da noiva. «Um pinguim na foto do casamento dá sorte!», ria o noivo.',
+        text: 'Prie fontano fotografavosi jaunavedžiai, apsupti draugų. Fotografas, pamatęs pingviną, paprašė Linu atsistoti šalia nuotakos. “Pingvinas vestuvių nuotraukoje – tai laimė!” – juokėsi jaunikis.',
+        translation: 'Perto da fonte, uns recém-casados tiravam fotos, rodeados de amigos. O fotógrafo, ao ver o pinguim, pediu ao Linu que ficasse ao lado da noiva. “Um pinguim na foto do casamento dá sorte!”, ria o noivo.',
         choices: [
           { text: 'Linu sutiko nusifotografuoti.', translation: 'O Linu topou tirar a foto.', next: 'nuotrauka' },
           { text: 'Linu mandagiai atsisakė, ir jie nuėjo toliau per senamiestį.', translation: 'O Linu recusou educadamente, e eles seguiram pela cidade velha.', next: 'gatves' },
@@ -1713,8 +1713,8 @@ export const STORIES_LT: StorySeed[] = [
       },
       final_bom: {
         emoji: '💃',
-        text: 'Vakarėlyje visi šoko ir dainavo lietuviškas dainas. Linu nemokėjo žodžių, bet šoko iki vidurnakčio. Kitą dieną jaunavedžiai atsiuntė jam nuotrauką, pavadintą «Mūsų laimingas pingvinas».',
-        translation: 'Na festa, todos dançaram e cantaram músicas lituanas. O Linu não sabia a letra, mas dançou até a meia-noite. No dia seguinte, os recém-casados mandaram para ele uma foto chamada «Nosso pinguim da sorte».',
+        text: 'Vakarėlyje visi šoko ir dainavo lietuviškas dainas. Linu nemokėjo žodžių, bet šoko iki vidurnakčio. Kitą dieną jaunavedžiai atsiuntė jam nuotrauką, pavadintą “Mūsų laimingas pingvinas”.',
+        translation: 'Na festa, todos dançaram e cantaram músicas lituanas. O Linu não sabia a letra, mas dançou até a meia-noite. No dia seguinte, os recém-casados mandaram para ele uma foto chamada “Nosso pinguim da sorte”.',
         ending: { tone: 'bom', title: 'O pinguim da sorte', message: 'Um veleiro, uma estátua que voltou do sumiço e um casamento de presente: o primeiro dia do Linu em Klaipėda não podia ter sido melhor.' },
       },
       final_uostas: {
@@ -1733,7 +1733,7 @@ export const STORIES_LT: StorySeed[] = [
     emoji: '🏰',
     summary: 'Em Trakai, a caraíta Sara mostra ao Linu o castelo da ilha, as casinhas de três janelas da rua dos caraítas e os kibinai recém-saídos do forno.',
     cultural_context:
-      'O castelo de Trakai, de tijolos vermelhos, fica numa ilha do lago Galvė; ficou em ruínas por séculos e foi reconstruído no século XX. Na cidade vivem os caraítas (karaimai), um povo de língua túrquica trazido da Crimeia pelo grão-duque Vytautas por volta de 1400; os «kibinai», pastéis assados recheados de carne, são a comida típica deles.',
+      'O castelo de Trakai, de tijolos vermelhos, fica numa ilha do lago Galvė; ficou em ruínas por séculos e foi reconstruído no século XX. Na cidade vivem os caraítas (karaimai), um povo de língua túrquica trazido da Crimeia pelo grão-duque Vytautas por volta de 1400; os “kibinai”, pastéis assados recheados de carne, são a comida típica deles.',
     start: 'start',
     glossary: [
       ['stovinti', 'que fica, situada (particípio ativo presente)'],
@@ -1774,9 +1774,9 @@ export const STORIES_LT: StorySeed[] = [
         choices: [
           { text: 'Linu paklausė, kaip karaimai atsirado Trakuose.', translation: 'O Linu perguntou como os caraítas chegaram a Trakai.', next: 'karaimai' },
           {
-            text: 'Linu pasakė: «Taigi ši pilis niekada nebuvo sugriauta.»',
-            translation: 'O Linu disse: «Então este castelo nunca foi destruído.»',
-            wrong: 'A Sara disse o contrário: «pilis buvo sugriauta» — o castelo FOI DESTRUÍDO nas guerras — e só no século XX «buvo atstatyta», foi reconstruído. Por isso parece novo.',
+            text: 'Linu pasakė: “Taigi ši pilis niekada nebuvo sugriauta.”',
+            translation: 'O Linu disse: “Então este castelo nunca foi destruído.”',
+            wrong: 'A Sara disse o contrário: “pilis buvo sugriauta” — o castelo FOI DESTRUÍDO nas guerras — e só no século XX “buvo atstatyta”, foi reconstruído. Por isso parece novo.',
           },
         ],
       },
@@ -1788,14 +1788,14 @@ export const STORIES_LT: StorySeed[] = [
       },
       namai: {
         emoji: '🏠',
-        text: 'Karaimų gatvėje stovėjo mediniai nameliai, atsukti į gatvę galu. Sara parodė, kad kiekvienas namas turi tris langus. «Sakoma, kad vienas langas skirtas Dievui, antras – Vytautui, o trečias – šeimai», – paaiškino ji.',
-        translation: 'Na rua dos Caraítas havia casinhas de madeira viradas para a rua pelo lado estreito. A Sara mostrou que cada casa tem três janelas. «Dizem que uma janela é dedicada a Deus, a segunda a Vytautas e a terceira à família», explicou ela.',
+        text: 'Karaimų gatvėje stovėjo mediniai nameliai, atsukti į gatvę galu. Sara parodė, kad kiekvienas namas turi tris langus. “Sakoma, kad vienas langas skirtas Dievui, antras – Vytautui, o trečias – šeimai”, – paaiškino ji.',
+        translation: 'Na rua dos Caraítas havia casinhas de madeira viradas para a rua pelo lado estreito. A Sara mostrou que cada casa tem três janelas. “Dizem que uma janela é dedicada a Deus, a segunda a Vytautas e a terceira à família”, explicou ela.',
         choices: [
           { text: 'Jie įėjo į Saros namus, iš kurių sklido skanus kvapas.', translation: 'Eles entraram na casa da Sara, de onde saía um cheiro gostoso.', next: 'kibinai' },
           {
-            text: 'Linu paklausė: «Ar trečias langas skirtas Vytautui?»',
-            translation: 'O Linu perguntou: «A terceira janela é dedicada a Vytautas?»',
-            wrong: 'A Sara disse que a janela de Vytautas é a «antras», a segunda. A terceira é «skirtas šeimai», dedicada à família. «Skirtas» é particípio passivo: «destinado, dedicado a».',
+            text: 'Linu paklausė: “Ar trečias langas skirtas Vytautui?”',
+            translation: 'O Linu perguntou: “A terceira janela é dedicada a Vytautas?”',
+            wrong: 'A Sara disse que a janela de Vytautas é a “antras”, a segunda. A terceira é “skirtas šeimai”, dedicada à família. “Skirtas” é particípio passivo: “destinado, dedicado a”.',
           },
         ],
       },
@@ -1855,7 +1855,7 @@ export const STORIES_LT: StorySeed[] = [
       dirbtuve: {
         emoji: '🔨',
         text: 'Dirbtuvėje kvepėjo ąžuolu, o ant sienų kabojo nebaigti kryžiai ir saulutės. Petras paaiškino, kad lietuviškų kryžių darymas įrašytas į UNESCO nematerialaus paveldo sąrašą. Kiekvienas ornamentas, išdrožtas medyje, kažką reiškia.',
-        translation: 'A oficina cheirava a carvalho, e nas paredes estavam penduradas cruzes inacabadas e «solzinhos». O Petras explicou que o artesanato lituano das cruzes está inscrito na lista do Patrimônio Imaterial da UNESCO. Cada ornamento entalhado na madeira quer dizer alguma coisa.',
+        translation: 'A oficina cheirava a carvalho, e nas paredes estavam penduradas cruzes inacabadas e “solzinhos”. O Petras explicou que o artesanato lituano das cruzes está inscrito na lista do Patrimônio Imaterial da UNESCO. Cada ornamento entalhado na madeira quer dizer alguma coisa.',
         choices: [{ text: 'Jie įkėlė kryžių į mašiną ir išvažiavo.', translation: 'Eles puseram a cruz no carro e partiram.', next: 'kelias' }],
       },
       kelias: {
@@ -1865,9 +1865,9 @@ export const STORIES_LT: StorySeed[] = [
         choices: [
           { text: 'Pagaliau jie privažiavo kalną.', translation: 'Finalmente eles chegaram à colina.', next: 'kalnas' },
           {
-            text: 'Linu pasakė: «Vadinasi, po pirmo karto žmonės nustojo nešti kryžius.»',
-            translation: 'O Linu disse: «Então, depois da primeira vez, as pessoas pararam de trazer cruzes.»',
-            wrong: 'Foi o contrário: a colina «buvo kelis kartus nugriauta» (foi derrubada VÁRIAS vezes), mas «kiekvieną kartą» — TODA VEZ — as pessoas «atnešdavo naujų kryžių», traziam cruzes novas.',
+            text: 'Linu pasakė: “Vadinasi, po pirmo karto žmonės nustojo nešti kryžius.”',
+            translation: 'O Linu disse: “Então, depois da primeira vez, as pessoas pararam de trazer cruzes.”',
+            wrong: 'Foi o contrário: a colina “buvo kelis kartus nugriauta” (foi derrubada VÁRIAS vezes), mas “kiekvieną kartą” — TODA VEZ — as pessoas “atnešdavo naujų kryžių”, traziam cruzes novas.',
           },
         ],
       },
@@ -1888,14 +1888,14 @@ export const STORIES_LT: StorySeed[] = [
       },
       vieta: {
         emoji: '🌿',
-        text: 'Jie rado laisvą vietą prie seno kryžiaus, apaugusio samanomis. Petras įkasė naująjį kryžių į žemę, o Linu laikė jį tiesiai. Ant kryžiaus buvo išdrožti šeimos narių vardai ir žodžiai «Už tuos, kurių nebėra».',
-        translation: 'Eles acharam um lugar livre ao lado de uma cruz velha, coberta de musgo. O Petras fincou a cruz nova na terra, e o Linu a segurava reta. Na cruz estavam entalhados os nomes da família e as palavras «Por aqueles que já não estão aqui».',
+        text: 'Jie rado laisvą vietą prie seno kryžiaus, apaugusio samanomis. Petras įkasė naująjį kryžių į žemę, o Linu laikė jį tiesiai. Ant kryžiaus buvo išdrožti šeimos narių vardai ir žodžiai “Už tuos, kurių nebėra”.',
+        translation: 'Eles acharam um lugar livre ao lado de uma cruz velha, coberta de musgo. O Petras fincou a cruz nova na terra, e o Linu a segurava reta. Na cruz estavam entalhados os nomes da família e as palavras “Por aqueles que já não estão aqui”.',
         choices: [
           { text: 'Petras nufotografavo kryžių šeimai.', translation: 'O Petras fotografou a cruz para a família.', next: 'nuotrauka' },
           {
-            text: 'Linu paklausė: «Ar šitą kryžių nupirkai parduotuvėje?»',
-            translation: 'O Linu perguntou: «Você comprou esta cruz numa loja?»',
-            wrong: 'Desde o começo o texto diz que o Petras «baigė drožti kryžių», acabou de ENTALHAR a cruz, encomendada («užsakytą») por uma família de Kaunas. Os nomes também foram «išdrožti», entalhados por ele.',
+            text: 'Linu paklausė: “Ar šitą kryžių nupirkai parduotuvėje?”',
+            translation: 'O Linu perguntou: “Você comprou esta cruz numa loja?”',
+            wrong: 'Desde o começo o texto diz que o Petras “baigė drožti kryžių”, acabou de ENTALHAR a cruz, encomendada (“užsakytą”) por uma família de Kaunas. Os nomes também foram “išdrožti”, entalhados por ele.',
           },
         ],
       },
@@ -1962,7 +1962,7 @@ export const STORIES_LT: StorySeed[] = [
           {
             text: 'Linu pasirinko marias, nes ten vanduo šaltesnis.',
             translation: 'O Linu escolheu a laguna, porque lá a água é mais fria.',
-            wrong: 'A Ieva disse que «marių vanduo šiltesnis»: a água da laguna é MAIS QUENTE (šiltas → šiltesnis). Para um pinguim que adora frio, a escolha certa é o mar.',
+            wrong: 'A Ieva disse que “marių vanduo šiltesnis”: a água da laguna é MAIS QUENTE (šiltas → šiltesnis). Para um pinguim que adora frio, a escolha certa é o mar.',
           },
         ],
       },
@@ -1999,7 +1999,7 @@ export const STORIES_LT: StorySeed[] = [
           {
             text: 'Linu paklausė, ar Thomas Mannas Nidoje gyveno visą gyvenimą.',
             translation: 'O Linu perguntou se Thomas Mann tinha morado em Nida a vida inteira.',
-            wrong: 'A guia disse que ele «praleido tris vasaras»: passou TRÊS VERÕES ali. Era a casa de veraneio dele — daí o verbo «vasaroti», passar o verão.',
+            wrong: 'A guia disse que ele “praleido tris vasaras”: passou TRÊS VERÕES ali. Era a casa de veraneio dele — daí o verbo “vasaroti”, passar o verão.',
           },
         ],
       },
@@ -2025,7 +2025,7 @@ export const STORIES_LT: StorySeed[] = [
     emoji: '🎹',
     summary: 'Num dia de chuva em Druskininkai, o Linu visita a casa-museu de Čiurlionis, o pintor que também era compositor, e quase perde um concerto no jardim.',
     cultural_context:
-      'Druskininkai, à beira do rio Nemunas, é uma estância termal famosa pelas águas minerais. Ali passou a infância Mikalojus Konstantinas Čiurlionis (1875–1911), pintor e compositor que deu a quadros nomes de peças musicais, como «Sonata do Mar»; a casa da família virou museu memorial, com concertos no jardim, e a maior parte dos quadros originais está no museu que leva o nome dele, em Kaunas.',
+      'Druskininkai, à beira do rio Nemunas, é uma estância termal famosa pelas águas minerais. Ali passou a infância Mikalojus Konstantinas Čiurlionis (1875–1911), pintor e compositor que deu a quadros nomes de peças musicais, como “Sonata do Mar”; a casa da família virou museu memorial, com concertos no jardim, e a maior parte dos quadros originais está no museu que leva o nome dele, em Kaunas.',
     start: 'start',
     glossary: [
       ['mažiau nei…', 'menos de…, menos que…'],
@@ -2060,9 +2060,9 @@ export const STORIES_LT: StorySeed[] = [
         choices: [
           { text: 'Linu klausėsi koncerto už tvoros.', translation: 'O Linu ouviu o concerto do lado de fora da cerca.', next: 'final_tvora' },
           {
-            text: 'Linu pasakė: «Bet jūs sakėte, kad bilietų yra daugiau nei šimtas!»',
-            translation: 'O Linu disse: «Mas a senhora disse que havia mais de cem ingressos!»',
-            wrong: 'Ela tinha dito «bilietų liko mažiau nei dešimt»: sobravam MENOS DE dez ingressos. «Mažiau nei» é menos que; «daugiau nei», mais que. Com tão poucos, era arriscado sair.',
+            text: 'Linu pasakė: “Bet jūs sakėte, kad bilietų yra daugiau nei šimtas!”',
+            translation: 'O Linu disse: “Mas a senhora disse que havia mais de cem ingressos!”',
+            wrong: 'Ela tinha dito “bilietų liko mažiau nei dešimt”: sobravam MENOS DE dez ingressos. “Mažiau nei” é menos que; “daugiau nei”, mais que. Com tão poucos, era arriscado sair.',
           },
         ],
       },
@@ -2077,8 +2077,8 @@ export const STORIES_LT: StorySeed[] = [
       },
       paveikslai: {
         emoji: '🌊',
-        text: 'Gidė atsakė, kad dauguma originalų saugoma Kaune, o čia kabo reprodukcijos. Ji parodė «Jūros sonatą», kurioje bangos atrodo kaip muzika. Linu pasakė, kad dar niekada nebuvo matęs paslaptingesnio paveikslo.',
-        translation: 'A guia respondeu que a maior parte dos originais fica guardada em Kaunas e que ali estão reproduções. Ela mostrou a «Sonata do Mar», na qual as ondas parecem música. O Linu disse que nunca tinha visto um quadro mais misterioso.',
+        text: 'Gidė atsakė, kad dauguma originalų saugoma Kaune, o čia kabo reprodukcijos. Ji parodė “Jūros sonatą”, kurioje bangos atrodo kaip muzika. Linu pasakė, kad dar niekada nebuvo matęs paslaptingesnio paveikslo.',
+        translation: 'A guia respondeu que a maior parte dos originais fica guardada em Kaunas e que ali estão reproduções. Ela mostrou a “Sonata do Mar”, na qual as ondas parecem música. O Linu disse que nunca tinha visto um quadro mais misterioso.',
         choices: [{ text: 'Tada kažkas pranešė, kad koncertas prasideda.', translation: 'Então alguém avisou que o concerto ia começar.', next: 'koncertas' }],
       },
       svarbiau: {
@@ -2088,9 +2088,9 @@ export const STORIES_LT: StorySeed[] = [
         choices: [
           { text: 'Tada kažkas pranešė, kad koncertas prasideda.', translation: 'Então alguém avisou que o concerto ia começar.', next: 'koncertas' },
           {
-            text: 'Linu pasakė: «Vadinasi, Čiurlionis gyveno labai ilgai.»',
-            translation: 'O Linu disse: «Então Čiurlionis viveu muito tempo.»',
-            wrong: 'A guia disse que ele «mirė labai jaunas, vos trisdešimt penkerių metų»: morreu muito JOVEM, com apenas 35 anos. O que ela comparou foi a obra: ele criou mais do que muitos numa vida longa.',
+            text: 'Linu pasakė: “Vadinasi, Čiurlionis gyveno labai ilgai.”',
+            translation: 'O Linu disse: “Então Čiurlionis viveu muito tempo.”',
+            wrong: 'A guia disse que ele “mirė labai jaunas, vos trisdešimt penkerių metų”: morreu muito JOVEM, com apenas 35 anos. O que ela comparou foi a obra: ele criou mais do que muitos numa vida longa.',
           },
         ],
       },
@@ -2129,9 +2129,9 @@ export const STORIES_LT: StorySeed[] = [
     cefr: 'B1',
     title: 'Teisė būti pingvinu',
     emoji: '👼',
-    summary: 'No dia 1º de abril, o Linu atravessa a ponte para a «república» de Užupis, em Vilnius, lê a constituição mais divertida do mundo e ajuda uma artista num quadro.',
+    summary: 'No dia 1º de abril, o Linu atravessa a ponte para a “república” de Užupis, em Vilnius, lê a constituição mais divertida do mundo e ajuda uma artista num quadro.',
     cultural_context:
-      'Užupis, bairro boêmio de Vilnius do outro lado do riozinho Vilnelė, se declarou em 1º de abril de 1997 uma «república» de artistas, com presidente, bandeira e hino, tudo por brincadeira. A «constituição» está em placas de metal na rua Paupio, em dezenas de línguas, com artigos como «Todos têm direito de ser felizes» e «Todos têm direito de ser infelizes». Na praça central fica, desde 2002, a estátua de um anjo tocando trombeta.',
+      'Užupis, bairro boêmio de Vilnius do outro lado do riozinho Vilnelė, se declarou em 1º de abril de 1997 uma “república” de artistas, com presidente, bandeira e hino, tudo por brincadeira. A “constituição” está em placas de metal na rua Paupio, em dezenas de línguas, com artigos como “Todos têm direito de ser felizes” e “Todos têm direito de ser infelizes”. Na praça central fica, desde 2002, a estátua de um anjo tocando trombeta.',
     start: 'start',
     glossary: [
       ['pasienietis', 'guarda de fronteira'],
@@ -2146,8 +2146,8 @@ export const STORIES_LT: StorySeed[] = [
     nodes: {
       start: {
         emoji: '🌉',
-        text: 'Balandžio pirmąją Linu atėjo prie tilto per Vilnelę. Ten stovėjo juokingi «pasieniečiai», kurie tikrino atvykstančiųjų pasus. Vienas jų pasakė, kad Užupio respublika mažesnė už bet kurią kitą, bet linksmesnė už visas.',
-        translation: 'No dia 1º de abril, o Linu chegou à ponte sobre o Vilnelė. Ali estavam uns «guardas de fronteira» engraçados, que conferiam os passaportes de quem chegava. Um deles disse que a república de Užupis é menor que qualquer outra, mas mais divertida que todas.',
+        text: 'Balandžio pirmąją Linu atėjo prie tilto per Vilnelę. Ten stovėjo juokingi “pasieniečiai”, kurie tikrino atvykstančiųjų pasus. Vienas jų pasakė, kad Užupio respublika mažesnė už bet kurią kitą, bet linksmesnė už visas.',
+        translation: 'No dia 1º de abril, o Linu chegou à ponte sobre o Vilnelė. Ali estavam uns “guardas de fronteira” engraçados, que conferiam os passaportes de quem chegava. Um deles disse que a república de Užupis é menor que qualquer outra, mas mais divertida que todas.',
         choices: [
           { text: 'Linu padavė savo pasą.', translation: 'O Linu entregou o passaporte.', next: 'pasas' },
           { text: 'Linu prisipažino, kad pasą paliko viešbutyje.', translation: 'O Linu confessou que tinha deixado o passaporte no hotel.', next: 'be_paso' },
@@ -2168,14 +2168,14 @@ export const STORIES_LT: StorySeed[] = [
           {
             text: 'Linu paklausė, ar respublika paskelbta tik šiandien.',
             translation: 'O Linu perguntou se a república tinha sido proclamada só hoje.',
-            wrong: 'O guarda disse «buvo paskelbta 1997 metais»: foi proclamada em 1997. Hoje, 1º de abril, é só o aniversário dela — por isso a festa na ponte.',
+            wrong: 'O guarda disse “buvo paskelbta 1997 metais”: foi proclamada em 1997. Hoje, 1º de abril, é só o aniversário dela — por isso a festa na ponte.',
           },
         ],
       },
       konstitucija: {
         emoji: '📜',
-        text: 'Paupio gatvėje ant sienos kabojo daugybė metalinių lentelių su Užupio konstitucija įvairiomis kalbomis. Greta paaiškino, kad visi straipsniai trumpi, bet kai kurie – labai rimti. Linu perskaitė: «Kiekvienas turi teisę būti laimingas» ir «Kiekvienas turi teisę būti nelaimingas».',
-        translation: 'Na rua Paupio, havia na parede um monte de placas de metal com a constituição de Užupis em várias línguas. A Greta explicou que todos os artigos são curtos, mas alguns são bem sérios. O Linu leu: «Todos têm direito de ser felizes» e «Todos têm direito de ser infelizes».',
+        text: 'Paupio gatvėje ant sienos kabojo daugybė metalinių lentelių su Užupio konstitucija įvairiomis kalbomis. Greta paaiškino, kad visi straipsniai trumpi, bet kai kurie – labai rimti. Linu perskaitė: “Kiekvienas turi teisę būti laimingas” ir “Kiekvienas turi teisę būti nelaimingas”.',
+        translation: 'Na rua Paupio, havia na parede um monte de placas de metal com a constituição de Užupis em várias línguas. A Greta explicou que todos os artigos são curtos, mas alguns são bem sérios. O Linu leu: “Todos têm direito de ser felizes” e “Todos têm direito de ser infelizes”.',
         choices: [
           { text: 'Linu paklausė, kuris straipsnis Gretai patinka labiausiai.', translation: 'O Linu perguntou de qual artigo a Greta gostava mais.', next: 'kate' },
           { text: 'Linu norėjo pamatyti Užupio angelą.', translation: 'O Linu quis ver o anjo de Užupis.', next: 'angelas' },
@@ -2188,9 +2188,9 @@ export const STORIES_LT: StorySeed[] = [
         choices: [
           { text: 'Paskui jie nuėjo prie angelo.', translation: 'Depois eles foram até o anjo.', next: 'angelas' },
           {
-            text: 'Linu pasakė: «Vadinasi, katė visada privalo mylėti savo šeimininką.»',
-            translation: 'O Linu disse: «Então o gato é sempre obrigado a amar o dono.»',
-            wrong: 'O artigo diz «katė NEprivalo mylėti savo šeimininko»: o gato NÃO É OBRIGADO a amar o dono (repare no genitivo da negação: «šeimininko»). A obrigação é só ajudar num momento difícil.',
+            text: 'Linu pasakė: “Vadinasi, katė visada privalo mylėti savo šeimininką.”',
+            translation: 'O Linu disse: “Então o gato é sempre obrigado a amar o dono.”',
+            wrong: 'O artigo diz “katė NEprivalo mylėti savo šeimininko”: o gato NÃO É OBRIGADO a amar o dono (repare no genitivo da negação: “šeimininko”). A obrigação é só ajudar num momento difícil.',
           },
         ],
       },
@@ -2211,8 +2211,8 @@ export const STORIES_LT: StorySeed[] = [
       },
       final_bom: {
         emoji: '🖌️',
-        text: 'Ant drobės liko mėlynas sparno atspaudas, panašus į bangą. Greta pavadino paveikslą «Kiekvienas turi teisę būti pingvinu». Ji pažadėjo, kad jis kabos jos dirbtuvės lange tol, kol Linu vėl grįš į Užupį.',
-        translation: 'Na tela ficou a marca azul da asa, parecida com uma onda. A Greta deu ao quadro o nome de «Todos têm direito de ser pinguins». Ela prometeu que ele ia ficar pendurado na vitrine do ateliê até o Linu voltar a Užupis.',
+        text: 'Ant drobės liko mėlynas sparno atspaudas, panašus į bangą. Greta pavadino paveikslą “Kiekvienas turi teisę būti pingvinu”. Ji pažadėjo, kad jis kabos jos dirbtuvės lange tol, kol Linu vėl grįš į Užupį.',
+        translation: 'Na tela ficou a marca azul da asa, parecida com uma onda. A Greta deu ao quadro o nome de “Todos têm direito de ser pinguins”. Ela prometeu que ele ia ficar pendurado na vitrine do ateliê até o Linu voltar a Užupis.',
         ending: { tone: 'bom', title: 'Um artigo novo', message: 'Carimbo no passaporte, constituição lida e uma obra de arte assinada com a asa: o Linu virou cidadão honorário de Užupis.' },
       },
       final_pietus: {
@@ -2247,8 +2247,8 @@ export const STORIES_LT: StorySeed[] = [
     nodes: {
       start: {
         emoji: '❄️',
-        text: 'Vasario pabaigoje Linu atvažiavo į Platelius švęsti Užgavėnių. Šeimininkė Danutė pasakė: «Jei neturėtum kaukės, tave visi atpažintų, o per Užgavėnes niekas neturėtų būti atpažintas.» Ji pasiūlė Linu išsirinkti kaukę iš senos skrynios.',
-        translation: 'No fim de fevereiro, o Linu foi a Plateliai para festejar o Užgavėnės. A dona da casa, Danutė, disse: «Se você não tivesse máscara, todo mundo te reconheceria, e no Užgavėnės ninguém deveria ser reconhecido.» Ela sugeriu que o Linu escolhesse uma máscara num velho baú.',
+        text: 'Vasario pabaigoje Linu atvažiavo į Platelius švęsti Užgavėnių. Šeimininkė Danutė pasakė: “Jei neturėtum kaukės, tave visi atpažintų, o per Užgavėnes niekas neturėtų būti atpažintas.” Ji pasiūlė Linu išsirinkti kaukę iš senos skrynios.',
+        translation: 'No fim de fevereiro, o Linu foi a Plateliai para festejar o Užgavėnės. A dona da casa, Danutė, disse: “Se você não tivesse máscara, todo mundo te reconheceria, e no Užgavėnės ninguém deveria ser reconhecido.” Ela sugeriu que o Linu escolhesse uma máscara num velho baú.',
         choices: [
           { text: 'Linu išsirinko velnio kaukę su ragais.', translation: 'O Linu escolheu uma máscara de diabo com chifres.', next: 'velnias' },
           { text: 'Linu išsirinko gervės kaukę su ilgu snapu.', translation: 'O Linu escolheu uma máscara de grou com um bico comprido.', next: 'gerve' },
@@ -2256,8 +2256,8 @@ export const STORIES_LT: StorySeed[] = [
       },
       velnias: {
         emoji: '😈',
-        text: 'Danutė nusijuokė ir pasakė, kad velnio kaukė Linu tinka geriau nei bet kuri kita. «Aš tavo vietoje dar pasiimčiau ir šluotą», – patarė ji. Su šluota ir ragais Linu atrodė tikrai baisiai.',
-        translation: 'A Danutė riu e disse que a máscara de diabo caía no Linu melhor do que qualquer outra. «Eu, no seu lugar, ainda levaria uma vassoura», aconselhou ela. Com vassoura e chifres, o Linu ficou assustador de verdade.',
+        text: 'Danutė nusijuokė ir pasakė, kad velnio kaukė Linu tinka geriau nei bet kuri kita. “Aš tavo vietoje dar pasiimčiau ir šluotą”, – patarė ji. Su šluota ir ragais Linu atrodė tikrai baisiai.',
+        translation: 'A Danutė riu e disse que a máscara de diabo caía no Linu melhor do que qualquer outra. “Eu, no seu lugar, ainda levaria uma vassoura”, aconselhou ela. Com vassoura e chifres, o Linu ficou assustador de verdade.',
         choices: [{ text: 'Jie išėjo į miestelio aikštę.', translation: 'Eles saíram para a praça da cidadezinha.', next: 'aikste' }],
       },
       gerve: {
@@ -2269,7 +2269,7 @@ export const STORIES_LT: StorySeed[] = [
           {
             text: 'Linu iškart nusiėmė kaukę, nes Danutė sakė, kad niekas nesijuoks.',
             translation: 'O Linu tirou a máscara na hora, porque a Danutė disse que ninguém ia rir.',
-            wrong: 'A Danutė disse o contrário: «jei jis nusiimtų kaukę per anksti, persirengėliai jį išjuoktų» — SE ele TIRASSE a máscara cedo, os mascarados CAÇOARIAM dele. O condicional (-tų) mostra o que aconteceria nessa hipótese.',
+            wrong: 'A Danutė disse o contrário: “jei jis nusiimtų kaukę per anksti, persirengėliai jį išjuoktų” — SE ele TIRASSE a máscara cedo, os mascarados CAÇOARIAM dele. O condicional (-tų) mostra o que aconteceria nessa hipótese.',
           },
         ],
       },
@@ -2291,14 +2291,14 @@ export const STORIES_LT: StorySeed[] = [
           {
             text: 'Linu atsisakė blynų, nes Danutė sakė, kad šiandien reikia pasninkauti.',
             translation: 'O Linu recusou as panquecas, porque a Danutė disse que hoje era preciso jejuar.',
-            wrong: 'A Danutė disse que no Užgavėnės «reikėtų valgyti daug kartų», deveria-se comer MUITAS vezes, e que quem comesse pouco («kas valgytų mažai») passaria fome o ano todo. O jejum só começa depois, na Quaresma.',
+            wrong: 'A Danutė disse que no Užgavėnės “reikėtų valgyti daug kartų”, deveria-se comer MUITAS vezes, e que quem comesse pouco (“kas valgytų mažai”) passaria fome o ano todo. O jejum só começa depois, na Quaresma.',
           },
         ],
       },
       kova: {
         emoji: '🤼',
-        text: 'Liesas Kanapinis ir storas Lašininis ilgai stumdėsi, o minia garsiai šaukė. Pagaliau Kanapinis parvertė Lašininį ant sniego. «Jei ne Kanapinis, pavasaris niekada neateitų!» – šaukė vaikai.',
-        translation: 'O magro Kanapinis e o gordo Lašininis se empurraram por muito tempo, e a multidão gritava alto. Finalmente o Kanapinis derrubou o Lašininis na neve. «Se não fosse o Kanapinis, a primavera nunca chegaria!», gritavam as crianças.',
+        text: 'Liesas Kanapinis ir storas Lašininis ilgai stumdėsi, o minia garsiai šaukė. Pagaliau Kanapinis parvertė Lašininį ant sniego. “Jei ne Kanapinis, pavasaris niekada neateitų!” – šaukė vaikai.',
+        translation: 'O magro Kanapinis e o gordo Lašininis se empurraram por muito tempo, e a multidão gritava alto. Finalmente o Kanapinis derrubou o Lašininis na neve. “Se não fosse o Kanapinis, a primavera nunca chegaria!”, gritavam as crianças.',
         choices: [{ text: 'Vakare visi nuėjo prie ežero deginti Morės.', translation: 'À noite, todos foram para o lago queimar a Morė.', next: 'more' }],
       },
       more: {
@@ -2306,7 +2306,7 @@ export const STORIES_LT: StorySeed[] = [
         text: 'Ant Platelių ežero kranto stovėjo didelė šiaudinė Morė. Kai ją uždegė, liepsnos pakilo aukščiau už medžius. Danutė paklausė, ką Linu norėtų, kad ugnis nusineštų kartu su žiema.',
         translation: 'Na margem do lago Plateliai havia uma grande Morė de palha. Quando a acenderam, as chamas subiram mais alto que as árvores. A Danutė perguntou o que o Linu gostaria que o fogo levasse embora junto com o inverno.',
         choices: [
-          { text: 'Linu atsakė: «Norėčiau, kad ugnis nusineštų mano baimę kalbėti lietuviškai.»', translation: 'O Linu respondeu: «Eu queria que o fogo levasse embora o meu medo de falar lituano.»', next: 'final_bom' },
+          { text: 'Linu atsakė: “Norėčiau, kad ugnis nusineštų mano baimę kalbėti lietuviškai.”', translation: 'O Linu respondeu: “Eu queria que o fogo levasse embora o meu medo de falar lituano.”', next: 'final_bom' },
           { text: 'Linu atsakė, kad jam žiema patinka ir jis norėtų, kad ji niekada nesibaigtų.', translation: 'O Linu respondeu que gosta do inverno e queria que ele nunca acabasse.', next: 'final_ziema' },
         ],
       },
@@ -2347,8 +2347,8 @@ export const STORIES_LT: StorySeed[] = [
     nodes: {
       start: {
         emoji: '🏡',
-        text: 'Rumšiškėse, Liaudies buities muziejuje, Linu dalyvavo edukacinėje programoje. Edukatorius Jurgis paklausė: «Jei gyventum XIX amžiaus kaime, kuo norėtum būti?» Jis pasakė, kad Linu galėtų pasirinkti vieną darbą visai dienai.',
-        translation: 'Em Rumšiškės, no museu etnográfico ao ar livre, o Linu participou de uma atividade educativa. O educador Jurgis perguntou: «Se você vivesse numa aldeia do século XIX, o que gostaria de ser?» Ele disse que o Linu poderia escolher um trabalho para o dia inteiro.',
+        text: 'Rumšiškėse, Liaudies buities muziejuje, Linu dalyvavo edukacinėje programoje. Edukatorius Jurgis paklausė: “Jei gyventum XIX amžiaus kaime, kuo norėtum būti?” Jis pasakė, kad Linu galėtų pasirinkti vieną darbą visai dienai.',
+        translation: 'Em Rumšiškės, no museu etnográfico ao ar livre, o Linu participou de uma atividade educativa. O educador Jurgis perguntou: “Se você vivesse numa aldeia do século XIX, o que gostaria de ser?” Ele disse que o Linu poderia escolher um trabalho para o dia inteiro.',
         choices: [
           { text: 'Linu atsakė, kad norėtų būti kalviu.', translation: 'O Linu respondeu que gostaria de ser ferreiro.', next: 'kalve' },
           { text: 'Linu atsakė, kad norėtų kepti duoną.', translation: 'O Linu respondeu que gostaria de assar pão.', next: 'duona' },
@@ -2361,9 +2361,9 @@ export const STORIES_LT: StorySeed[] = [
         choices: [
           { text: 'Linu pradėjo kalti.', translation: 'O Linu começou a martelar.', next: 'vinis' },
           {
-            text: 'Linu pasakė: «Vadinasi, kalvis kaime buvo nelabai reikalingas.»',
-            translation: 'O Linu disse: «Então o ferreiro não era muito necessário na aldeia.»',
-            wrong: 'O Jurgis disse que «be kalvio kaimas negalėtų gyventi»: SEM o ferreiro a aldeia NÃO CONSEGUIRIA viver, porque ninguém teria («neturėtų») ferraduras, arados nem pregos. O condicional descreve esse mundo sem ferreiro.',
+            text: 'Linu pasakė: “Vadinasi, kalvis kaime buvo nelabai reikalingas.”',
+            translation: 'O Linu disse: “Então o ferreiro não era muito necessário na aldeia.”',
+            wrong: 'O Jurgis disse que “be kalvio kaimas negalėtų gyventi”: SEM o ferreiro a aldeia NÃO CONSEGUIRIA viver, porque ninguém teria (“neturėtų”) ferraduras, arados nem pregos. O condicional descreve esse mundo sem ferreiro.',
           },
         ],
       },
@@ -2382,14 +2382,14 @@ export const STORIES_LT: StorySeed[] = [
           {
             text: 'Linu pasiūlė įkaitinti krosnį kuo labiau, kad duona iškeptų greičiau.',
             translation: 'O Linu sugeriu esquentar o forno ao máximo, para o pão assar mais rápido.',
-            wrong: 'A Ona tinha explicado que, «jei krosnis būtų per karšta, duona sudegtų»: SE o forno estivesse quente DEMAIS, o pão QUEIMARIA. O segredo é o calor certo, conferido com a mão.',
+            wrong: 'A Ona tinha explicado que, “jei krosnis būtų per karšta, duona sudegtų”: SE o forno estivesse quente DEMAIS, o pão QUEIMARIA. O segredo é o calor certo, conferido com a mão.',
           },
         ],
       },
       kepimas: {
         emoji: '🍞',
-        text: 'Kepalai buvo padėti ant klevo lapų ir pašauti į krosnį. Kol duona kepė, Ona pasakojo, kad jos senelių namai stovėjo senosiose Rumšiškėse, kurias užliejo Kauno marios. «Jei ne marios, gal ir dabar ten gyvenčiau», – atsiduso ji.',
-        translation: 'Os pães foram postos sobre folhas de bordo e empurrados para dentro do forno. Enquanto o pão assava, a Ona contou que a casa dos avós dela ficava na antiga Rumšiškės, que foi inundada pelo reservatório de Kaunas. «Se não fosse o reservatório, talvez eu ainda morasse lá», suspirou ela.',
+        text: 'Kepalai buvo padėti ant klevo lapų ir pašauti į krosnį. Kol duona kepė, Ona pasakojo, kad jos senelių namai stovėjo senosiose Rumšiškėse, kurias užliejo Kauno marios. “Jei ne marios, gal ir dabar ten gyvenčiau”, – atsiduso ji.',
+        translation: 'Os pães foram postos sobre folhas de bordo e empurrados para dentro do forno. Enquanto o pão assava, a Ona contou que a casa dos avós dela ficava na antiga Rumšiškės, que foi inundada pelo reservatório de Kaunas. “Se não fosse o reservatório, talvez eu ainda morasse lá”, suspirou ela.',
         choices: [{ text: 'Vidurdienį jie nuėjo pietauti.', translation: 'Ao meio-dia, eles foram almoçar.', next: 'pietus' }],
       },
       pietus: {
@@ -2403,8 +2403,8 @@ export const STORIES_LT: StorySeed[] = [
       },
       arklys: {
         emoji: '🐎',
-        text: 'Arklys buvo senas ir ramus, bet Linu vos pasiekė vadeles. Vos jam sušukus «Vio!», arklys pajudėjo, ir lankytojai ėmė ploti. Jurgis šypsojosi: jei visi mokiniai būtų tokie drąsūs, jo darbas būtų daug lengvesnis.',
-        translation: 'O cavalo era velho e calmo, mas o Linu mal alcançava as rédeas. Assim que ele gritou «Eia!», o cavalo andou, e os visitantes começaram a aplaudir. O Jurgis sorria: se todos os alunos fossem tão corajosos assim, o trabalho dele seria bem mais fácil.',
+        text: 'Arklys buvo senas ir ramus, bet Linu vos pasiekė vadeles. Vos jam sušukus “Vio!”, arklys pajudėjo, ir lankytojai ėmė ploti. Jurgis šypsojosi: jei visi mokiniai būtų tokie drąsūs, jo darbas būtų daug lengvesnis.',
+        translation: 'O cavalo era velho e calmo, mas o Linu mal alcançava as rédeas. Assim que ele gritou “Eia!”, o cavalo andou, e os visitantes começaram a aplaudir. O Jurgis sorria: se todos os alunos fossem tão corajosos assim, o trabalho dele seria bem mais fácil.',
         choices: [{ text: 'Linu apvažiavo visą aikštę ir sustojo prie bažnyčios.', translation: 'O Linu deu a volta na praça inteira e parou perto da igreja.', next: 'final_bom' }],
       },
       vezimas: {
@@ -2415,8 +2415,8 @@ export const STORIES_LT: StorySeed[] = [
       },
       final_bom: {
         emoji: '📜',
-        text: 'Dienos pabaigoje Jurgis įteikė Linu popierinį «kaimo meistro» pažymėjimą. Linu pagalvojo, kad jei gyventų XIX amžiuje, jam tikriausiai patiktų. Bet tik tuo atveju, jei vasaros būtų šaltesnės.',
-        translation: 'No fim do dia, o Jurgis entregou ao Linu um certificado de papel de «mestre da aldeia». O Linu pensou que, se vivesse no século XIX, provavelmente ia gostar. Mas só se os verões fossem mais frios.',
+        text: 'Dienos pabaigoje Jurgis įteikė Linu popierinį “kaimo meistro” pažymėjimą. Linu pagalvojo, kad jei gyventų XIX amžiuje, jam tikriausiai patiktų. Bet tik tuo atveju, jei vasaros būtų šaltesnės.',
+        translation: 'No fim do dia, o Jurgis entregou ao Linu um certificado de papel de “mestre da aldeia”. O Linu pensou que, se vivesse no século XIX, provavelmente ia gostar. Mas só se os verões fossem mais frios.',
         ending: { tone: 'bom', title: 'Mestre da aldeia', message: 'Trabalho de verdade, pão de forno a lenha e uma charrete na praça: o Linu viveu um dia inteiro como no século XIX.' },
       },
       final_keleivis: {
@@ -2450,8 +2450,8 @@ export const STORIES_LT: StorySeed[] = [
     nodes: {
       start: {
         emoji: '🌄',
-        text: 'Birželio 23-iosios vakarą Linu atvyko į Kernavę švęsti Rasų. Studentė archeologė Emilija parodė penkis piliakalnius prie Neries ir pasakė, kad čia kadaise stovėjo didelis miestas. «Jei galėtum pamatyti Kernavę prieš septynis šimtus metų, šio slėnio nepažintum», – pridūrė ji.',
-        translation: 'Na noite de 23 de junho, o Linu chegou a Kernavė para festejar a Rasos. A estudante de arqueologia Emilija mostrou os cinco morros-fortaleza à beira do Neris e disse que ali existiu uma grande cidade. «Se você pudesse ver Kernavė setecentos anos atrás, não reconheceria este vale», acrescentou ela.',
+        text: 'Birželio 23-iosios vakarą Linu atvyko į Kernavę švęsti Rasų. Studentė archeologė Emilija parodė penkis piliakalnius prie Neries ir pasakė, kad čia kadaise stovėjo didelis miestas. “Jei galėtum pamatyti Kernavę prieš septynis šimtus metų, šio slėnio nepažintum”, – pridūrė ji.',
+        translation: 'Na noite de 23 de junho, o Linu chegou a Kernavė para festejar a Rasos. A estudante de arqueologia Emilija mostrou os cinco morros-fortaleza à beira do Neris e disse que ali existiu uma grande cidade. “Se você pudesse ver Kernavė setecentos anos atrás, não reconheceria este vale”, acrescentou ela.',
         choices: [
           { text: 'Linu užlipo ant aukščiausio piliakalnio.', translation: 'O Linu subiu no morro-fortaleza mais alto.', next: 'piliakalnis' },
           { text: 'Linu nuėjo prie merginų, pinančių vainikus.', translation: 'O Linu foi até as moças que trançavam guirlandas.', next: 'vainikai' },
@@ -2459,14 +2459,14 @@ export const STORIES_LT: StorySeed[] = [
       },
       piliakalnis: {
         emoji: '⛰️',
-        text: 'Nuo viršaus matėsi upė, pievos ir laužai, kuriuos žmonės jau kūrė slėnyje. Emilija papasakojo, kad 1390 metais miestą sudegino kryžiuočiai ir jis daugiau nebuvo atstatytas. «Jei ne tas gaisras, gal čia ir dabar būtų didelis miestas», – sakė ji.',
-        translation: 'Lá de cima se viam o rio, os prados e as fogueiras que as pessoas já acendiam no vale. A Emilija contou que em 1390 os Cavaleiros Teutônicos incendiaram a cidade, e ela nunca mais foi reconstruída. «Se não fosse aquele incêndio, talvez ainda houvesse uma cidade grande aqui», disse ela.',
+        text: 'Nuo viršaus matėsi upė, pievos ir laužai, kuriuos žmonės jau kūrė slėnyje. Emilija papasakojo, kad 1390 metais miestą sudegino kryžiuočiai ir jis daugiau nebuvo atstatytas. “Jei ne tas gaisras, gal čia ir dabar būtų didelis miestas”, – sakė ji.',
+        translation: 'Lá de cima se viam o rio, os prados e as fogueiras que as pessoas já acendiam no vale. A Emilija contou que em 1390 os Cavaleiros Teutônicos incendiaram a cidade, e ela nunca mais foi reconstruída. “Se não fosse aquele incêndio, talvez ainda houvesse uma cidade grande aqui”, disse ela.',
         choices: [
           { text: 'Jie nusileido prie merginų, pinančių vainikus.', translation: 'Eles desceram até as moças que trançavam guirlandas.', next: 'vainikai' },
           {
-            text: 'Linu pasakė: «Vadinasi, Kernavė ir dabar yra didelis miestas.»',
-            translation: 'O Linu disse: «Então Kernavė ainda hoje é uma cidade grande.»',
-            wrong: '«Jei ne tas gaisras, gal… būtų didelis miestas» é uma hipótese irreal: SE NÃO FOSSE o incêndio, talvez HOUVESSE uma cidade grande. Ou seja, não há: a cidade foi incendiada em 1390 e nunca reconstruída.',
+            text: 'Linu pasakė: “Vadinasi, Kernavė ir dabar yra didelis miestas.”',
+            translation: 'O Linu disse: “Então Kernavė ainda hoje é uma cidade grande.”',
+            wrong: '“Jei ne tas gaisras, gal… būtų didelis miestas” é uma hipótese irreal: SE NÃO FOSSE o incêndio, talvez HOUVESSE uma cidade grande. Ou seja, não há: a cidade foi incendiada em 1390 e nunca reconstruída.',
           },
         ],
       },
@@ -2487,15 +2487,15 @@ export const STORIES_LT: StorySeed[] = [
       },
       lauzas: {
         emoji: '🌿',
-        text: 'Vidurnaktį jaunimas šokinėjo per laužą, o vyresni dainavo. Emilija papasakojo apie paparčio žiedą, kuris žydi tik vieną naktį per metus – šiąnakt. «Sakoma, kad jei jį rastum, suprastum paukščių ir žvėrių kalbą», – sakė ji.',
-        translation: 'À meia-noite, os jovens pulavam a fogueira, e os mais velhos cantavam. A Emilija falou da flor da samambaia, que floresce uma única noite por ano: esta. «Dizem que, se você a encontrasse, entenderia a língua dos pássaros e dos bichos», disse ela.',
+        text: 'Vidurnaktį jaunimas šokinėjo per laužą, o vyresni dainavo. Emilija papasakojo apie paparčio žiedą, kuris žydi tik vieną naktį per metus – šiąnakt. “Sakoma, kad jei jį rastum, suprastum paukščių ir žvėrių kalbą”, – sakė ji.',
+        translation: 'À meia-noite, os jovens pulavam a fogueira, e os mais velhos cantavam. A Emilija falou da flor da samambaia, que floresce uma única noite por ano: esta. “Dizem que, se você a encontrasse, entenderia a língua dos pássaros e dos bichos”, disse ela.',
         choices: [
           { text: 'Linu nusprendė eiti į mišką ieškoti paparčio žiedo.', translation: 'O Linu resolveu ir para a floresta procurar a flor da samambaia.', next: 'miskas' },
           { text: 'Linu nusprendė peršokti per laužą.', translation: 'O Linu resolveu pular a fogueira.', next: 'sokti' },
           {
             text: 'Linu pasakė, kad paparčio žiedo galima ieškoti bet kurią naktį.',
             translation: 'O Linu disse que dá para procurar a flor da samambaia em qualquer noite.',
-            wrong: 'A Emilija disse que a flor «žydi tik vieną naktį per metus – šiąnakt»: floresce UMA única noite por ano, justamente esta. Por isso a busca é na noite da Rasos.',
+            wrong: 'A Emilija disse que a flor “žydi tik vieną naktį per metus – šiąnakt”: floresce UMA única noite por ano, justamente esta. Por isso a busca é na noite da Rasos.',
           },
         ],
       },
@@ -2532,9 +2532,9 @@ export const STORIES_LT: StorySeed[] = [
     cefr: 'B2',
     title: 'Pagarbiai, Linu',
     emoji: '📨',
-    summary: 'Com um emprego novo em Panevėžys, o Linu precisa escrever à repartição de migração e descobre que «Labas, tudo bem?» não é o jeito certo de começar.',
+    summary: 'Com um emprego novo em Panevėžys, o Linu precisa escrever à repartição de migração e descobre que “Labas, tudo bem?” não é o jeito certo de começar.',
     cultural_context:
-      'Na correspondência formal lituana, trata-se o destinatário por «Jūs» com J maiúsculo, começa-se com «Laba diena» ou «Gerbiamasis pone / Gerbiamoji ponia» e termina-se com «Pagarbiai» (Atenciosamente). O condicional deixa os pedidos mais educados: «Būčiau dėkingas, jei galėtumėte…» (Eu ficaria grato se o senhor pudesse…). Panevėžys, no norte do país, é a quinta maior cidade da Lituânia.',
+      'Na correspondência formal lituana, trata-se o destinatário por “Jūs” com J maiúsculo, começa-se com “Laba diena” ou “Gerbiamasis pone / Gerbiamoji ponia” e termina-se com “Pagarbiai” (Atenciosamente). O condicional deixa os pedidos mais educados: “Būčiau dėkingas, jei galėtumėte…” (Eu ficaria grato se o senhor pudesse…). Panevėžys, no norte do país, é a quinta maior cidade da Lituânia.',
     start: 'start',
     glossary: [
       ['migracijos skyrius', 'setor de migração (repartição)'],
@@ -2549,8 +2549,8 @@ export const STORIES_LT: StorySeed[] = [
     nodes: {
       start: {
         emoji: '💼',
-        text: 'Linu gavo darbą Panevėžyje ir turėjo pateikti dokumentus migracijos skyriui. Jis parašė laišką, kuris prasidėjo žodžiais «Labas, kaip sekasi?». Draugė Rasa jį perskaitė ir išsigando.',
-        translation: 'O Linu conseguiu um emprego em Panevėžys e precisava apresentar documentos ao setor de migração. Ele escreveu uma carta que começava com as palavras «Oi, tudo bem?». A amiga Rasa leu e levou um susto.',
+        text: 'Linu gavo darbą Panevėžyje ir turėjo pateikti dokumentus migracijos skyriui. Jis parašė laišką, kuris prasidėjo žodžiais “Labas, kaip sekasi?”. Draugė Rasa jį perskaitė ir išsigando.',
+        translation: 'O Linu conseguiu um emprego em Panevėžys e precisava apresentar documentos ao setor de migração. Ele escreveu uma carta que começava com as palavras “Oi, tudo bem?”. A amiga Rasa leu e levou um susto.',
         choices: [
           { text: 'Linu paklausė Rasos, kas negerai.', translation: 'O Linu perguntou à Rasa o que havia de errado.', next: 'rasa' },
           { text: 'Linu vis tiek išsiuntė laišką.', translation: 'O Linu mandou a carta mesmo assim.', next: 'siuncia' },
@@ -2558,46 +2558,46 @@ export const STORIES_LT: StorySeed[] = [
       },
       siuncia: {
         emoji: '📭',
-        text: 'Po dviejų dienų atėjo trumpas atsakymas: «Gerbiamasis Linu, prašome kreiptis nustatyta forma ir nurodyti prašymo tikslą.» Linu nesuprato, ar tai reiškia «taip», ar «ne». Rasa paaiškino, kad jo laiškas buvo per daug draugiškas.',
-        translation: 'Dois dias depois, chegou uma resposta curta: «Prezado Linu, pedimos que se dirija a nós na forma estabelecida e indique o objetivo do requerimento.» O Linu não entendeu se aquilo queria dizer «sim» ou «não». A Rasa explicou que a carta dele tinha sido informal demais.',
+        text: 'Po dviejų dienų atėjo trumpas atsakymas: “Gerbiamasis Linu, prašome kreiptis nustatyta forma ir nurodyti prašymo tikslą.” Linu nesuprato, ar tai reiškia “taip”, ar “ne”. Rasa paaiškino, kad jo laiškas buvo per daug draugiškas.',
+        translation: 'Dois dias depois, chegou uma resposta curta: “Prezado Linu, pedimos que se dirija a nós na forma estabelecida e indique o objetivo do requerimento.” O Linu não entendeu se aquilo queria dizer “sim” ou “não”. A Rasa explicou que a carta dele tinha sido informal demais.',
         choices: [{ text: 'Linu paprašė Rasos padėti parašyti naują laišką.', translation: 'O Linu pediu à Rasa que o ajudasse a escrever uma carta nova.', next: 'rasa' }],
       },
       rasa: {
         emoji: '✍️',
-        text: 'Rasa paaiškino, kad oficialiame laiške nerašoma «labas» ir kad į adresatą kreipiamasi «Jūs» iš didžiosios raidės. Laišką reikėtų pradėti žodžiais «Laba diena» arba «Gerbiamoji ponia», o baigti – «Pagarbiai». Ji padėjo Linu parašyti naują laišką.',
-        translation: 'A Rasa explicou que numa carta oficial não se escreve «labas» (oi) e que o destinatário é tratado por «Jūs», com J maiúsculo. A carta deveria começar com «Laba diena» (Bom dia) ou «Prezada senhora» e terminar com «Atenciosamente». Ela ajudou o Linu a escrever uma carta nova.',
+        text: 'Rasa paaiškino, kad oficialiame laiške nerašoma “labas” ir kad į adresatą kreipiamasi “Jūs” iš didžiosios raidės. Laišką reikėtų pradėti žodžiais “Laba diena” arba “Gerbiamoji ponia”, o baigti – “Pagarbiai”. Ji padėjo Linu parašyti naują laišką.',
+        translation: 'A Rasa explicou que numa carta oficial não se escreve “labas” (oi) e que o destinatário é tratado por “Jūs”, com J maiúsculo. A carta deveria começar com “Laba diena” (Bom dia) ou “Prezada senhora” e terminar com “Atenciosamente”. Ela ajudou o Linu a escrever uma carta nova.',
         choices: [
           { text: 'Linu perskaitė naują laišką.', translation: 'O Linu leu a carta nova.', next: 'laiskas' },
           {
-            text: 'Linu pradėjo naują laišką žodžiu «Labas» ir baigė «Iki!».',
-            translation: 'O Linu começou a carta nova com «Oi» e terminou com «Tchau!».',
-            wrong: 'A Rasa acabou de explicar que «oficialiame laiške nerašoma „labas“»: numa carta oficial NÃO se escreve «labas». Começa-se com «Laba diena» ou «Gerbiamoji ponia» e termina-se com «Pagarbiai».',
+            text: 'Linu pradėjo naują laišką žodžiu “Labas” ir baigė “Iki!”.',
+            translation: 'O Linu começou a carta nova com “Oi” e terminou com “Tchau!”.',
+            wrong: 'A Rasa acabou de explicar que “oficialiame laiške nerašoma „labas‘’: numa carta oficial NÃO se escreve ‘labas’. Começa-se com ‘Laba diena’ ou ‘Gerbiamoji ponia’ e termina-se com ‘Pagarbiai’.',
           },
         ],
       },
       laiskas: {
         emoji: '📝',
-        text: 'Naujasis laiškas skambėjo taip: «Laba diena, norėčiau užsiregistruoti vizitui dėl leidimo gyventi Lietuvoje. Būčiau dėkingas, jei galėtumėte nurodyti, kokius dokumentus turėčiau pateikti. Pagarbiai, Linu.»',
-        translation: 'A carta nova dizia assim: «Bom dia, gostaria de agendar um atendimento referente à autorização de residência na Lituânia. Eu ficaria grato se a senhora pudesse indicar quais documentos devo apresentar. Atenciosamente, Linu.»',
+        text: 'Naujasis laiškas skambėjo taip: “Laba diena, norėčiau užsiregistruoti vizitui dėl leidimo gyventi Lietuvoje. Būčiau dėkingas, jei galėtumėte nurodyti, kokius dokumentus turėčiau pateikti. Pagarbiai, Linu.”',
+        translation: 'A carta nova dizia assim: “Bom dia, gostaria de agendar um atendimento referente à autorização de residência na Lituânia. Eu ficaria grato se a senhora pudesse indicar quais documentos devo apresentar. Atenciosamente, Linu.”',
         choices: [{ text: 'Linu išsiuntė laišką.', translation: 'O Linu mandou a carta.', next: 'atsakymas' }],
       },
       atsakymas: {
         emoji: '📬',
-        text: 'Kitą dieną atėjo atsakymas, pasirašytas specialistės Kazlauskienės. Jame buvo parašyta: «Maloniai prašome atvykti pirmadienį 10 val. su pasu, darbo sutartimi ir nuotrauka.» Rasa pasakė, kad dabar svarbiausia – nepavėluoti.',
-        translation: 'No dia seguinte chegou a resposta, assinada pela especialista Kazlauskienė. Nela estava escrito: «Pedimos gentilmente que compareça na segunda-feira às 10h, com passaporte, contrato de trabalho e foto.» A Rasa disse que agora o mais importante era não se atrasar.',
+        text: 'Kitą dieną atėjo atsakymas, pasirašytas specialistės Kazlauskienės. Jame buvo parašyta: “Maloniai prašome atvykti pirmadienį 10 val. su pasu, darbo sutartimi ir nuotrauka.” Rasa pasakė, kad dabar svarbiausia – nepavėluoti.',
+        translation: 'No dia seguinte chegou a resposta, assinada pela especialista Kazlauskienė. Nela estava escrito: “Pedimos gentilmente que compareça na segunda-feira às 10h, com passaporte, contrato de trabalho e foto.” A Rasa disse que agora o mais importante era não se atrasar.',
         choices: [
           { text: 'Pirmadienį Linu atvyko dešimt minučių anksčiau.', translation: 'Na segunda, o Linu chegou dez minutos adiantado.', next: 'vizitas' },
           {
             text: 'Linu nusprendė, kad nuotraukos nereikės.',
             translation: 'O Linu concluiu que a foto não seria necessária.',
-            wrong: 'A resposta pedia para ir «su pasu, darbo sutartimi ir nuotrauka»: COM passaporte, contrato de trabalho E FOTO. Os três estão no instrumental depois de «su» (com).',
+            wrong: 'A resposta pedia para ir “su pasu, darbo sutartimi ir nuotrauka”: COM passaporte, contrato de trabalho E FOTO. Os três estão no instrumental depois de “su” (com).',
           },
         ],
       },
       vizitas: {
         emoji: '🏢',
-        text: 'Specialistė pasisveikino: «Laba diena, prašom sėstis. Ar atsinešėte visus dokumentus?» Linu padavė pasą, sutartį ir nuotrauką. Tada ji paklausė, kur jis gyvens Panevėžyje.',
-        translation: 'A especialista cumprimentou: «Bom dia, sente-se, por favor. O senhor trouxe todos os documentos?» O Linu entregou o passaporte, o contrato e a foto. Então ela perguntou onde ele ia morar em Panevėžys.',
+        text: 'Specialistė pasisveikino: “Laba diena, prašom sėstis. Ar atsinešėte visus dokumentus?” Linu padavė pasą, sutartį ir nuotrauką. Tada ji paklausė, kur jis gyvens Panevėžyje.',
+        translation: 'A especialista cumprimentou: “Bom dia, sente-se, por favor. O senhor trouxe todos os documentos?” O Linu entregou o passaporte, o contrato e a foto. Então ela perguntou onde ele ia morar em Panevėžys.',
         choices: [
           { text: 'Linu padavė buto nuomos sutartį.', translation: 'O Linu entregou o contrato de aluguel do apartamento.', next: 'adresas' },
           { text: 'Linu prisipažino, kad adreso dar neturi.', translation: 'O Linu confessou que ainda não tinha endereço.', next: 'adreso_nera' },
@@ -2605,21 +2605,21 @@ export const STORIES_LT: StorySeed[] = [
       },
       adresas: {
         emoji: '✅',
-        text: 'Specialistė viską patikrino ir pasakė: «Jūsų prašymas priimtas. Sprendimą gausite elektroniniu paštu.» Ji palinkėjo Linu sėkmės naujame darbe.',
-        translation: 'A especialista conferiu tudo e disse: «O seu requerimento foi aceito. O senhor vai receber a decisão por e-mail.» Ela desejou ao Linu sucesso no trabalho novo.',
-        choices: [{ text: 'Linu padėkojo: «Labai ačiū, geros Jums dienos.»', translation: 'O Linu agradeceu: «Muito obrigado, tenha um bom dia.»', next: 'final_bom' }],
+        text: 'Specialistė viską patikrino ir pasakė: “Jūsų prašymas priimtas. Sprendimą gausite elektroniniu paštu.” Ji palinkėjo Linu sėkmės naujame darbe.',
+        translation: 'A especialista conferiu tudo e disse: “O seu requerimento foi aceito. O senhor vai receber a decisão por e-mail.” Ela desejou ao Linu sucesso no trabalho novo.',
+        choices: [{ text: 'Linu padėkojo: “Labai ačiū, geros Jums dienos.”', translation: 'O Linu agradeceu: “Muito obrigado, tenha um bom dia.”', next: 'final_bom' }],
       },
       adreso_nera: {
         emoji: '🏠',
-        text: 'Specialistė mandagiai paaiškino, kad be gyvenamosios vietos adreso prašymo priimti negalės. «Kai turėsite adresą, maloniai prašome užsiregistruoti iš naujo», – pasakė ji. Linu išėjo nusiminęs.',
-        translation: 'A especialista explicou com educação que, sem o endereço de residência, não poderia aceitar o requerimento. «Quando o senhor tiver um endereço, pedimos gentilmente que agende de novo», disse ela. O Linu saiu desanimado.',
+        text: 'Specialistė mandagiai paaiškino, kad be gyvenamosios vietos adreso prašymo priimti negalės. “Kai turėsite adresą, maloniai prašome užsiregistruoti iš naujo”, – pasakė ji. Linu išėjo nusiminęs.',
+        translation: 'A especialista explicou com educação que, sem o endereço de residência, não poderia aceitar o requerimento. “Quando o senhor tiver um endereço, pedimos gentilmente que agende de novo”, disse ela. O Linu saiu desanimado.',
         choices: [{ text: 'Linu grįžo namo ieškoti buto.', translation: 'O Linu voltou para casa para procurar apartamento.', next: 'final_butas' }],
       },
       final_bom: {
         emoji: '🎉',
-        text: 'Išėjęs Linu paskambino Rasai ir pasakė, kad viskas pavyko. Rasa juokėsi: «Matai, kaip veikia žodis „Pagarbiai“?» Tą vakarą Linu net draugams rašė labai mandagias žinutes.',
-        translation: 'Ao sair, o Linu ligou para a Rasa e disse que tinha dado tudo certo. A Rasa riu: «Viu como funciona a palavra „Atenciosamente“?» Naquela noite, o Linu escreveu mensagens superformais até para os amigos.',
-        ending: { tone: 'bom', title: 'Requerimento aceito', message: 'Com «Laba diena», «Jūs» e «Pagarbiai», o Linu passou pela burocracia sem tropeços.' },
+        text: 'Išėjęs Linu paskambino Rasai ir pasakė, kad viskas pavyko. Rasa juokėsi: “Matai, kaip veikia žodis „Pagarbiai‘?’ Tą vakarą Linu net draugams rašė labai mandagias žinutes.',
+        translation: 'Ao sair, o Linu ligou para a Rasa e disse que tinha dado tudo certo. A Rasa riu: “Viu como funciona a palavra „Atenciosamente‘?’ Naquela noite, o Linu escreveu mensagens superformais até para os amigos.',
+        ending: { tone: 'bom', title: 'Requerimento aceito', message: 'Com “Laba diena”, “Jūs” e “Pagarbiai”, o Linu passou pela burocracia sem tropeços.' },
       },
       final_butas: {
         emoji: '🗝️',
@@ -2637,7 +2637,7 @@ export const STORIES_LT: StorySeed[] = [
     emoji: '🌲',
     summary: 'O Linu se candidata a uma vaga de guia de verão na trilha nas copas das árvores de Anykščiai: currículo, carta de apresentação e uma entrevista em tom formal.',
     cultural_context:
-      'Anykščiai, no nordeste da Lituânia, é a terra do poema «Anykščių šilelis» (O pinhal de Anykščiai), escrito por Antanas Baranauskas em 1858–1859. Perto da cidade fica a pedra Puntukas, um dos maiores rochedos do país, com o relevo dos aviadores Darius e Girėnas, que morreram em 1933 ao tentar voar sem escalas de Nova York a Kaunas; segundo a lenda, foi o diabo que deixou a pedra cair quando ia esmagar a igreja da cidade. No parque regional há uma trilha suspensa entre as copas das árvores, com uma torre de observação sobre o vale do rio Šventoji.',
+      'Anykščiai, no nordeste da Lituânia, é a terra do poema “Anykščių šilelis” (O pinhal de Anykščiai), escrito por Antanas Baranauskas em 1858–1859. Perto da cidade fica a pedra Puntukas, um dos maiores rochedos do país, com o relevo dos aviadores Darius e Girėnas, que morreram em 1933 ao tentar voar sem escalas de Nova York a Kaunas; segundo a lenda, foi o diabo que deixou a pedra cair quando ia esmagar a igreja da cidade. No parque regional há uma trilha suspensa entre as copas das árvores, com uma torre de observação sobre o vale do rio Šventoji.',
     start: 'start',
     glossary: [
       ['skelbimas', 'anúncio'],
@@ -2661,71 +2661,71 @@ export const STORIES_LT: StorySeed[] = [
       },
       cv: {
         emoji: '📄',
-        text: 'Gyvenimo aprašyme Linu surašė savo išsilavinimą, darbo patirtį ir kalbas: portugalų, anglų ir lietuvių. Prie pomėgių jis parašė: «Plaukimas šaltame vandenyje». Kaimynė Irena patarė pridėti ir tai, kad jis nebijo aukščio.',
-        translation: 'No currículo, o Linu listou a formação, a experiência profissional e as línguas: português, inglês e lituano. Nos interesses, escreveu: «Natação em água fria». A vizinha Irena aconselhou acrescentar também que ele não tem medo de altura.',
+        text: 'Gyvenimo aprašyme Linu surašė savo išsilavinimą, darbo patirtį ir kalbas: portugalų, anglų ir lietuvių. Prie pomėgių jis parašė: “Plaukimas šaltame vandenyje”. Kaimynė Irena patarė pridėti ir tai, kad jis nebijo aukščio.',
+        translation: 'No currículo, o Linu listou a formação, a experiência profissional e as línguas: português, inglês e lituano. Nos interesses, escreveu: “Natação em água fria”. A vizinha Irena aconselhou acrescentar também que ele não tem medo de altura.',
         choices: [{ text: 'Tada Linu ėmėsi motyvacinio laiško.', translation: 'Então o Linu passou para a carta de apresentação.', next: 'motyvacinis' }],
       },
       motyvacinis: {
         emoji: '✉️',
-        text: 'Laiškas prasidėjo taip: «Gerbiamieji, norėčiau pateikti savo kandidatūrą į vasaros gido pareigas. Esu susipažinęs su Anykščių krašto istorija ir galėčiau vesti ekskursijas trimis kalbomis.» Irena perskaitė ir pasakė, kad laiškas geras, bet kai ko trūksta.',
-        translation: 'A carta começava assim: «Prezados, gostaria de apresentar a minha candidatura ao cargo de guia de verão. Conheço a história da região de Anykščiai e poderia conduzir visitas em três línguas.» A Irena leu e disse que a carta estava boa, mas faltava uma coisa.',
+        text: 'Laiškas prasidėjo taip: “Gerbiamieji, norėčiau pateikti savo kandidatūrą į vasaros gido pareigas. Esu susipažinęs su Anykščių krašto istorija ir galėčiau vesti ekskursijas trimis kalbomis.” Irena perskaitė ir pasakė, kad laiškas geras, bet kai ko trūksta.',
+        translation: 'A carta começava assim: “Prezados, gostaria de apresentar a minha candidatura ao cargo de guia de verão. Conheço a história da região de Anykščiai e poderia conduzir visitas em três línguas.” A Irena leu e disse que a carta estava boa, mas faltava uma coisa.',
         choices: [{ text: 'Linu paklausė, ko trūksta.', translation: 'O Linu perguntou o que faltava.', next: 'irena' }],
       },
       irena: {
         emoji: '💡',
-        text: 'Irena paaiškino, kad laiško pabaigoje reikėtų padėkoti už skirtą laiką ir parašyti «Pagarbiai». Be to, derėtų paminėti, kodėl jis nori dirbti būtent Anykščiuose. Linu pridūrė sakinį apie Antano Baranausko poemą «Anykščių šilelis».',
-        translation: 'A Irena explicou que, no fim da carta, seria bom agradecer pelo tempo dedicado e escrever «Atenciosamente». Além disso, conviria mencionar por que ele queria trabalhar justamente em Anykščiai. O Linu acrescentou uma frase sobre o poema «O pinhal de Anykščiai», de Antanas Baranauskas.',
+        text: 'Irena paaiškino, kad laiško pabaigoje reikėtų padėkoti už skirtą laiką ir parašyti “Pagarbiai”. Be to, derėtų paminėti, kodėl jis nori dirbti būtent Anykščiuose. Linu pridūrė sakinį apie Antano Baranausko poemą “Anykščių šilelis”.',
+        translation: 'A Irena explicou que, no fim da carta, seria bom agradecer pelo tempo dedicado e escrever “Atenciosamente”. Além disso, conviria mencionar por que ele queria trabalhar justamente em Anykščiai. O Linu acrescentou uma frase sobre o poema “O pinhal de Anykščiai”, de Antanas Baranauskas.',
         choices: [{ text: 'Linu išsiuntė laišką.', translation: 'O Linu mandou a carta.', next: 'kvietimas' }],
       },
       kvietimas: {
         emoji: '📩',
-        text: 'Po savaitės Linu gavo atsakymą: «Gerbiamasis Linu, dėkojame už Jūsų susidomėjimą. Kviečiame Jus į pokalbį ketvirtadienį, 14 val., lankytojų centre.» Linu iškart atsakė ir patvirtino, kad atvyks.',
-        translation: 'Uma semana depois, o Linu recebeu a resposta: «Prezado Linu, agradecemos o seu interesse. Convidamos o senhor para uma entrevista na quinta-feira, às 14h, no centro de visitantes.» O Linu respondeu na hora, confirmando que iria.',
+        text: 'Po savaitės Linu gavo atsakymą: “Gerbiamasis Linu, dėkojame už Jūsų susidomėjimą. Kviečiame Jus į pokalbį ketvirtadienį, 14 val., lankytojų centre.” Linu iškart atsakė ir patvirtino, kad atvyks.',
+        translation: 'Uma semana depois, o Linu recebeu a resposta: “Prezado Linu, agradecemos o seu interesse. Convidamos o senhor para uma entrevista na quinta-feira, às 14h, no centro de visitantes.” O Linu respondeu na hora, confirmando que iria.',
         choices: [
           { text: 'Ketvirtadienį Linu nuvyko į pokalbį.', translation: 'Na quinta-feira, o Linu foi à entrevista.', next: 'pokalbis' },
           {
             text: 'Linu atvyko į pokalbį pirmadienį, 10 val. ryto.',
             translation: 'O Linu foi à entrevista na segunda-feira, às 10h da manhã.',
-            wrong: 'O convite dizia «ketvirtadienį, 14 val.»: na QUINTA-FEIRA, às 14h. Numa situação formal, errar a data e a hora é o pior começo possível.',
+            wrong: 'O convite dizia “ketvirtadienį, 14 val.”: na QUINTA-FEIRA, às 14h. Numa situação formal, errar a data e a hora é o pior começo possível.',
           },
         ],
       },
       pokalbis: {
         emoji: '🧑‍💼',
-        text: 'Direktorė Petrauskienė paklausė: «Kaip Jūs pristatytumėte lankytojams šį taką?» Linu papasakojo, kad takas vingiuoja tarp medžių viršūnių, o nuo apžvalgos bokšto matyti Šventosios upės slėnis. Direktorė linktelėjo ir paklausė, ką jis žino apie Puntuką.',
-        translation: 'A diretora Petrauskienė perguntou: «Como o senhor apresentaria esta trilha aos visitantes?» O Linu contou que a trilha serpenteia entre as copas das árvores e que da torre de observação se vê o vale do rio Šventoji. A diretora acenou com a cabeça e perguntou o que ele sabia sobre a Puntukas.',
+        text: 'Direktorė Petrauskienė paklausė: “Kaip Jūs pristatytumėte lankytojams šį taką?” Linu papasakojo, kad takas vingiuoja tarp medžių viršūnių, o nuo apžvalgos bokšto matyti Šventosios upės slėnis. Direktorė linktelėjo ir paklausė, ką jis žino apie Puntuką.',
+        translation: 'A diretora Petrauskienė perguntou: “Como o senhor apresentaria esta trilha aos visitantes?” O Linu contou que a trilha serpenteia entre as copas das árvores e que da torre de observação se vê o vale do rio Šventoji. A diretora acenou com a cabeça e perguntou o que ele sabia sobre a Puntukas.',
         choices: [
           { text: 'Linu papasakojo apie Puntuko akmenį.', translation: 'O Linu falou sobre a pedra Puntukas.', next: 'puntukas' },
           { text: 'Linu prisipažino, kad apie Puntuką nieko nežino.', translation: 'O Linu confessou que não sabia nada sobre a Puntukas.', next: 'nezino' },
           {
-            text: 'Linu atsakė: «Sveika, na, takas labai kietas!»',
-            translation: 'O Linu respondeu: «E aí, então, a trilha é muito massa!»',
-            wrong: 'A diretora fala em registro formal («Kaip Jūs pristatytumėte…?», com o «Jūs» de cortesia). Numa entrevista, cumprimentos como «sveika» e gírias como «kietas» (massa, legal) soam desrespeitosos.',
+            text: 'Linu atsakė: “Sveika, na, takas labai kietas!”',
+            translation: 'O Linu respondeu: “E aí, então, a trilha é muito massa!”',
+            wrong: 'A diretora fala em registro formal (“Kaip Jūs pristatytumėte…?”, com o “Jūs” de cortesia). Numa entrevista, cumprimentos como “sveika” e gírias como “kietas” (massa, legal) soam desrespeitosos.',
           },
         ],
       },
       puntukas: {
         emoji: '🪨',
-        text: 'Linu paaiškino, kad Puntukas – vienas didžiausių akmenų Lietuvoje, o jame iškaltas lakūnų Dariaus ir Girėno bareljefas. Pasak legendos, velnias nešė akmenį sugriauti Anykščių bažnyčios, bet užgiedojus gaidžiui jį numetė. Direktorė nusišypsojo: «Matau, kad pasiruošėte.»',
-        translation: 'O Linu explicou que a Puntukas é uma das maiores pedras da Lituânia e que nela está esculpido o relevo dos aviadores Darius e Girėnas. Segundo a lenda, o diabo levava a pedra para destruir a igreja de Anykščiai, mas, quando o galo cantou, ele a deixou cair. A diretora sorriu: «Vejo que o senhor se preparou.»',
+        text: 'Linu paaiškino, kad Puntukas – vienas didžiausių akmenų Lietuvoje, o jame iškaltas lakūnų Dariaus ir Girėno bareljefas. Pasak legendos, velnias nešė akmenį sugriauti Anykščių bažnyčios, bet užgiedojus gaidžiui jį numetė. Direktorė nusišypsojo: “Matau, kad pasiruošėte.”',
+        translation: 'O Linu explicou que a Puntukas é uma das maiores pedras da Lituânia e que nela está esculpido o relevo dos aviadores Darius e Girėnas. Segundo a lenda, o diabo levava a pedra para destruir a igreja de Anykščiai, mas, quando o galo cantou, ele a deixou cair. A diretora sorriu: “Vejo que o senhor se preparou.”',
         choices: [{ text: 'Direktorė pasiūlė Linu pasirašyti sutartį.', translation: 'A diretora propôs ao Linu assinar o contrato.', next: 'final_bom' }],
       },
       nezino: {
         emoji: '😬',
-        text: 'Direktorė mandagiai paaiškino, kad Puntukas – vienas žinomiausių lankytinų objektų Anykščiuose ir kad gidas apie jį turėtų žinoti. «Dėkojame už pokalbį. Apie sprendimą informuosime Jus elektroniniu paštu», – pasakė ji. Linu suprato, kad reikėjo geriau pasiruošti.',
-        translation: 'A diretora explicou educadamente que a Puntukas é uma das atrações mais conhecidas de Anykščiai e que um guia deveria conhecê-la. «Agradecemos pela entrevista. Informaremos o senhor sobre a decisão por e-mail», disse ela. O Linu entendeu que devia ter se preparado melhor.',
+        text: 'Direktorė mandagiai paaiškino, kad Puntukas – vienas žinomiausių lankytinų objektų Anykščiuose ir kad gidas apie jį turėtų žinoti. “Dėkojame už pokalbį. Apie sprendimą informuosime Jus elektroniniu paštu”, – pasakė ji. Linu suprato, kad reikėjo geriau pasiruošti.',
+        translation: 'A diretora explicou educadamente que a Puntukas é uma das atrações mais conhecidas de Anykščiai e que um guia deveria conhecê-la. “Agradecemos pela entrevista. Informaremos o senhor sobre a decisão por e-mail”, disse ela. O Linu entendeu que devia ter se preparado melhor.',
         choices: [{ text: 'Linu grįžo namo laukti atsakymo.', translation: 'O Linu voltou para casa para esperar a resposta.', next: 'final_kitas' }],
       },
       final_bom: {
         emoji: '🌳',
-        text: 'Direktorė pasakė: «Mums būtų malonu, jei galėtumėte pradėti birželio pirmąją.» Linu padėkojo už galimybę ir pasirašė sutartį. Išėjęs jis užlipo į lajų taką ir pirmą kartą pažvelgė į slėnį kaip būsimas gidas.',
-        translation: 'A diretora disse: «Seria um prazer para nós se o senhor pudesse começar no dia 1º de junho.» O Linu agradeceu pela oportunidade e assinou o contrato. Ao sair, subiu na trilha das copas e olhou para o vale pela primeira vez como futuro guia.',
+        text: 'Direktorė pasakė: “Mums būtų malonu, jei galėtumėte pradėti birželio pirmąją.” Linu padėkojo už galimybę ir pasirašė sutartį. Išėjęs jis užlipo į lajų taką ir pirmą kartą pažvelgė į slėnį kaip būsimas gidas.',
+        translation: 'A diretora disse: “Seria um prazer para nós se o senhor pudesse começar no dia 1º de junho.” O Linu agradeceu pela oportunidade e assinou o contrato. Ao sair, subiu na trilha das copas e olhou para o vale pela primeira vez como futuro guia.',
         ending: { tone: 'bom', title: 'Guia entre as copas', message: 'Currículo, carta formal e uma entrevista bem preparada: o Linu conseguiu o emprego de verão em Anykščiai.' },
       },
       final_kitas: {
         emoji: '📚',
-        text: 'Po savaitės atėjo laiškas: «Deja, šį kartą pasirinkome kitą kandidatą. Linkime Jums sėkmės.» Linu nusiminė, bet nusprendė perskaityti viską apie Anykščių kraštą. Kitą vasarą jis bandys dar kartą.',
-        translation: 'Uma semana depois chegou uma carta: «Infelizmente, desta vez escolhemos outro candidato. Desejamos-lhe sucesso.» O Linu ficou desanimado, mas resolveu ler tudo sobre a região de Anykščiai. No próximo verão, ele vai tentar de novo.',
+        text: 'Po savaitės atėjo laiškas: “Deja, šį kartą pasirinkome kitą kandidatą. Linkime Jums sėkmės.” Linu nusiminė, bet nusprendė perskaityti viską apie Anykščių kraštą. Kitą vasarą jis bandys dar kartą.',
+        translation: 'Uma semana depois chegou uma carta: “Infelizmente, desta vez escolhemos outro candidato. Desejamos-lhe sucesso.” O Linu ficou desanimado, mas resolveu ler tudo sobre a região de Anykščiai. No próximo verão, ele vai tentar de novo.',
         ending: { tone: 'neutro', title: 'Fica para o ano que vem', message: 'A carta estava ótima, mas faltou estudar a região. Com a Puntukas na ponta da língua, a próxima entrevista vai ser outra história.' },
       },
     },
@@ -2762,47 +2762,47 @@ export const STORIES_LT: StorySeed[] = [
       },
       skambutis: {
         emoji: '📞',
-        text: 'Linu paskambino ir sušuko: «Sveiki, čia Linu! Mūsų sode – didžiulė skylė!» Specialistas mandagiai paprašė pateikti rašytinį pranešimą su adresu ir nuotraukomis. «Taip galėsime užregistruoti Jūsų kreipimąsi», – paaiškino jis.',
-        translation: 'O Linu ligou e gritou: «Oi, aqui é o Linu! Tem um buraco enorme no nosso quintal!» O funcionário pediu com educação que ele mandasse um comunicado por escrito, com endereço e fotos. «Assim poderemos registrar a sua solicitação», explicou.',
+        text: 'Linu paskambino ir sušuko: “Sveiki, čia Linu! Mūsų sode – didžiulė skylė!” Specialistas mandagiai paprašė pateikti rašytinį pranešimą su adresu ir nuotraukomis. “Taip galėsime užregistruoti Jūsų kreipimąsi”, – paaiškino jis.',
+        translation: 'O Linu ligou e gritou: “Oi, aqui é o Linu! Tem um buraco enorme no nosso quintal!” O funcionário pediu com educação que ele mandasse um comunicado por escrito, com endereço e fotos. “Assim poderemos registrar a sua solicitação”, explicou.',
         choices: [{ text: 'Linu sėdo rašyti pranešimo.', translation: 'O Linu sentou para escrever o comunicado.', next: 'pranesimas' }],
       },
       pranesimas: {
         emoji: '⌨️',
-        text: 'Linu parašė: «Gerbiamieji, informuojame, kad šiandien ryte mūsų sklype atsirado smegduobė. Jos skersmuo – apie du metrai. Prašytume atsiųsti specialistą, kuris galėtų ją įvertinti.»',
-        translation: 'O Linu escreveu: «Prezados, informamos que hoje de manhã surgiu uma dolina no nosso terreno. O diâmetro dela é de uns dois metros. Pediríamos que enviassem um especialista que pudesse avaliá-la.»',
+        text: 'Linu parašė: “Gerbiamieji, informuojame, kad šiandien ryte mūsų sklype atsirado smegduobė. Jos skersmuo – apie du metrai. Prašytume atsiųsti specialistą, kuris galėtų ją įvertinti.”',
+        translation: 'O Linu escreveu: “Prezados, informamos que hoje de manhã surgiu uma dolina no nosso terreno. O diâmetro dela é de uns dois metros. Pediríamos que enviassem um especialista que pudesse avaliá-la.”',
         choices: [{ text: 'Linu parodė laišką Algiui.', translation: 'O Linu mostrou a carta ao Algis.', next: 'algis' }],
       },
       algis: {
         emoji: '🧐',
-        text: 'Algis perskaitė ir pasakė, kad laiškas beveik tobulas. Tačiau jame trūksta sklypo adreso, nuotraukų ir kontaktinio telefono numerio. «Be adreso jie net nežinos, kur važiuoti», – nusijuokė jis.',
-        translation: 'O Algis leu e disse que a carta estava quase perfeita. Mas faltavam o endereço do terreno, as fotos e um telefone de contato. «Sem o endereço, eles nem vão saber para onde ir», riu ele.',
+        text: 'Algis perskaitė ir pasakė, kad laiškas beveik tobulas. Tačiau jame trūksta sklypo adreso, nuotraukų ir kontaktinio telefono numerio. “Be adreso jie net nežinos, kur važiuoti”, – nusijuokė jis.',
+        translation: 'O Algis leu e disse que a carta estava quase perfeita. Mas faltavam o endereço do terreno, as fotos e um telefone de contato. “Sem o endereço, eles nem vão saber para onde ir”, riu ele.',
         choices: [
           { text: 'Linu pridėjo adresą, telefoną bei nuotraukas ir išsiuntė laišką.', translation: 'O Linu acrescentou o endereço, o telefone e as fotos e mandou a carta.', next: 'atsakymas' },
           {
             text: 'Linu išsiuntė laišką nieko nepridėjęs, nes Algis sakė, kad jis tobulas.',
             translation: 'O Linu mandou a carta sem acrescentar nada, porque o Algis disse que ela estava perfeita.',
-            wrong: 'O Algis disse «beveik tobulas», QUASE perfeita, e logo explicou o que faltava («trūksta»): o endereço, as fotos e o telefone. Sem o endereço, ninguém sabe aonde ir.',
+            wrong: 'O Algis disse “beveik tobulas”, QUASE perfeita, e logo explicou o que faltava (“trūksta”): o endereço, as fotos e o telefone. Sem o endereço, ninguém sabe aonde ir.',
           },
         ],
       },
       atsakymas: {
         emoji: '📨',
-        text: 'Po valandos atėjo atsakymas: «Dėkojame už pranešimą, Jūsų kreipimasis užregistruotas. Rytoj 9 val. atvyks geologas. Iki jo atvykimo prašome prie smegduobės neprisiartinti ir ją aptverti.»',
-        translation: 'Uma hora depois chegou a resposta: «Agradecemos o comunicado; a sua solicitação foi registrada. Amanhã, às 9h, um geólogo irá ao local. Até a chegada dele, pedimos que não se aproximem da dolina e que a isolem.»',
+        text: 'Po valandos atėjo atsakymas: “Dėkojame už pranešimą, Jūsų kreipimasis užregistruotas. Rytoj 9 val. atvyks geologas. Iki jo atvykimo prašome prie smegduobės neprisiartinti ir ją aptverti.”',
+        translation: 'Uma hora depois chegou a resposta: “Agradecemos o comunicado; a sua solicitação foi registrada. Amanhã, às 9h, um geólogo irá ao local. Até a chegada dele, pedimos que não se aproximem da dolina e que a isolem.”',
         choices: [
           { text: 'Linu ir Algis aptvėrė duobę virve.', translation: 'O Linu e o Algis isolaram o buraco com uma corda.', next: 'geologe' },
           { text: 'Linu norėjo pažiūrėti į duobę iš arčiau.', translation: 'O Linu quis olhar o buraco mais de perto.', next: 'arciau' },
           {
             text: 'Linu nusprendė, kad geologas atvyks jau šį vakarą.',
             translation: 'O Linu concluiu que o geólogo viria já nesta noite.',
-            wrong: 'A resposta diz «rytoj 9 val.»: AMANHÃ, às 9h. «Rytoj» é amanhã; «šįvakar» seria esta noite.',
+            wrong: 'A resposta diz “rytoj 9 val.”: AMANHÃ, às 9h. “Rytoj” é amanhã; “šįvakar” seria esta noite.',
           },
         ],
       },
       arciau: {
         emoji: '⚠️',
-        text: 'Linu priėjo prie pat krašto, ir žemė po juo truputį įgriuvo. Algis spėjo sugriebti jį už sparno. «Juk aiškiai prašė neprisiartinti!» – supyko jis.',
-        translation: 'O Linu chegou bem na beirada, e a terra cedeu um pouco debaixo dele. O Algis conseguiu agarrá-lo pela asa a tempo. «Pediram claramente para não chegar perto!», se irritou ele.',
+        text: 'Linu priėjo prie pat krašto, ir žemė po juo truputį įgriuvo. Algis spėjo sugriebti jį už sparno. “Juk aiškiai prašė neprisiartinti!” – supyko jis.',
+        translation: 'O Linu chegou bem na beirada, e a terra cedeu um pouco debaixo dele. O Algis conseguiu agarrá-lo pela asa a tempo. “Pediram claramente para não chegar perto!”, se irritou ele.',
         choices: [{ text: 'Išsigandę jie aptvėrė duobę virve.', translation: 'Assustados, eles isolaram o buraco com uma corda.', next: 'geologe' }],
       },
       geologe: {
@@ -2813,8 +2813,8 @@ export const STORIES_LT: StorySeed[] = [
       },
       isvada: {
         emoji: '🏡',
-        text: 'Geologė atsakė: «Jūsų namui pavojaus nematau, tačiau rekomenduočiau smegduobės neužpilti bent mėnesį.» Ji pasakė, kad oficialią išvadą atsiųs raštu, ir paliko vizitinę kortelę. Algis padėkojo jai už greitą atvykimą.',
-        translation: 'A geóloga respondeu: «Não vejo perigo para a sua casa, mas eu recomendaria não aterrar a dolina durante pelo menos um mês.» Ela disse que mandaria o parecer oficial por escrito e deixou um cartão de visita. O Algis agradeceu pela vinda rápida.',
+        text: 'Geologė atsakė: “Jūsų namui pavojaus nematau, tačiau rekomenduočiau smegduobės neužpilti bent mėnesį.” Ji pasakė, kad oficialią išvadą atsiųs raštu, ir paliko vizitinę kortelę. Algis padėkojo jai už greitą atvykimą.',
+        translation: 'A geóloga respondeu: “Não vejo perigo para a sua casa, mas eu recomendaria não aterrar a dolina durante pelo menos um mês.” Ela disse que mandaria o parecer oficial por escrito e deixou um cartão de visita. O Algis agradeceu pela vinda rápida.',
         choices: [
           { text: 'Linu pasiūlė laukti, kaip patarė geologė.', translation: 'O Linu sugeriu esperar, como a geóloga aconselhou.', next: 'final_bom' },
           { text: 'Algis nusprendė duobę užpilti iš karto.', translation: 'O Algis resolveu aterrar o buraco de uma vez.', next: 'final_uzpilta' },
@@ -2841,25 +2841,25 @@ export const STORIES_LT: StorySeed[] = [
     cefr: 'B2',
     title: 'Meduolinė širdelė su svetimu vardu',
     emoji: '🥨',
-    summary: 'Na Feira de Kaziukas, em Vilnius, uma vendedora idosa trata o Linu com diminutivos carinhosos — e ele precisa entender que «arbatėlė» não quer dizer pouco chá.',
+    summary: 'Na Feira de Kaziukas, em Vilnius, uma vendedora idosa trata o Linu com diminutivos carinhosos — e ele precisa entender que “arbatėlė” não quer dizer pouco chá.',
     cultural_context:
-      'A Feira de Kaziukas (Kaziuko mugė) acontece em Vilnius no começo de março, em torno do dia de São Casimiro (4 de março), padroeiro da Lituânia; «Kaziukas» é o diminutivo carinhoso de «Kazimieras». Os símbolos da feira são as «verbos» de Vilnius, buquês de flores e ervas secas usados no Domingo de Ramos, e as rosquinhas «riestainiai», vendidas em cordões.',
+      'A Feira de Kaziukas (Kaziuko mugė) acontece em Vilnius no começo de março, em torno do dia de São Casimiro (4 de março), padroeiro da Lituânia; “Kaziukas” é o diminutivo carinhoso de “Kazimieras”. Os símbolos da feira são as “verbos” de Vilnius, buquês de flores e ervas secas usados no Domingo de Ramos, e as rosquinhas “riestainiai”, vendidas em cordões.',
     start: 'start',
     glossary: [
       ['Kaziuko mugė', 'a Feira de Kaziukas (São Casimiro), em março'],
-      ['verba', '«palmeira» de Vilnius: buquê de flores e ervas secas'],
+      ['verba', '“palmeira” de Vilnius: buquê de flores e ervas secas'],
       ['riestainis', 'rosquinha (parecida com um bagel)'],
       ['meduolinė širdelė', 'coraçãozinho de pão de mel'],
-      ['arbatėlė', 'chazinho (diminutivo carinhoso de «arbata»)'],
+      ['arbatėlė', 'chazinho (diminutivo carinhoso de “arbata”)'],
       ['vaikeli / paukšteli', 'meu filho / passarinho (vocativo carinhoso)'],
       ['aukso rankos', 'mãos de ouro (quem faz tudo bem)'],
     ],
     nodes: {
       start: {
         emoji: '🏙️',
-        text: 'Kovo pradžioje Vilniaus senamiestis virsta viena didele muge: prasideda Kaziuko mugė. Linu vaikšto tarp palapinių Pilies gatvėje, o pardavėjai šaukia: «Riestainiukai, šilti riestainiukai!» Prie vienos palapinės sėdi smulki senutė su languota skarele ir pardavinėja verbas. «Ateik, vaikeli, pažiūrėk», – kviečia ji, mostelėdama ranka.',
+        text: 'Kovo pradžioje Vilniaus senamiestis virsta viena didele muge: prasideda Kaziuko mugė. Linu vaikšto tarp palapinių Pilies gatvėje, o pardavėjai šaukia: “Riestainiukai, šilti riestainiukai!” Prie vienos palapinės sėdi smulki senutė su languota skarele ir pardavinėja verbas. “Ateik, vaikeli, pažiūrėk”, – kviečia ji, mostelėdama ranka.',
         translation:
-          'No começo de março, a Cidade Velha de Vilnius vira uma única grande feira: começa a Feira de Kaziukas. O Linu passeia entre as barracas da rua Pilies, e os vendedores gritam: «Rosquinhas, rosquinhas quentinhas!» Numa das barracas está sentada uma velhinha miúda, de lenço xadrez, vendendo «verbos». «Vem, meu filho, vem ver», chama ela, acenando com a mão.',
+          'No começo de março, a Cidade Velha de Vilnius vira uma única grande feira: começa a Feira de Kaziukas. O Linu passeia entre as barracas da rua Pilies, e os vendedores gritam: “Rosquinhas, rosquinhas quentinhas!” Numa das barracas está sentada uma velhinha miúda, de lenço xadrez, vendendo “verbos”. “Vem, meu filho, vem ver”, chama ela, acenando com a mão.',
         choices: [
           { text: 'Prieiti prie senutės palapinės.', translation: 'Ir até a barraca da velhinha.', next: 'verbos' },
           { text: 'Pirma nusipirkti riestainių virtinę.', translation: 'Primeiro comprar um cordão de rosquinhas.', next: 'riestainiai' },
@@ -2867,52 +2867,52 @@ export const STORIES_LT: StorySeed[] = [
       },
       riestainiai: {
         emoji: '🥯',
-        text: 'Linu nusiperka riestainių virtinę ir užsikabina ją ant kaklo, kaip daro vaikai aplink. Pardavėjas, jaunas vyrukas, juokiasi: «Na, dabar tu tikras vilnietis!» Jis pasakoja, kad mugė vyksta per šventą Kazimierą, Lietuvos globėją, kurio diena – kovo ketvirtoji. «Oficialiai jis Kazimieras, o liaudyje – tiesiog Kaziukas», – mirkteli vyrukas.',
+        text: 'Linu nusiperka riestainių virtinę ir užsikabina ją ant kaklo, kaip daro vaikai aplink. Pardavėjas, jaunas vyrukas, juokiasi: “Na, dabar tu tikras vilnietis!” Jis pasakoja, kad mugė vyksta per šventą Kazimierą, Lietuvos globėją, kurio diena – kovo ketvirtoji. “Oficialiai jis Kazimieras, o liaudyje – tiesiog Kaziukas”, – mirkteli vyrukas.',
         translation:
-          'O Linu compra um cordão de rosquinhas e pendura no pescoço, como fazem as crianças em volta. O vendedor, um rapaz jovem, ri: «Pronto, agora você é um vilniense de verdade!» Ele conta que a feira acontece pelo dia de São Casimiro, padroeiro da Lituânia, que é 4 de março. «Oficialmente ele é Kazimieras, mas para o povo é só Kaziukas», diz o rapaz, piscando.',
+          'O Linu compra um cordão de rosquinhas e pendura no pescoço, como fazem as crianças em volta. O vendedor, um rapaz jovem, ri: “Pronto, agora você é um vilniense de verdade!” Ele conta que a feira acontece pelo dia de São Casimiro, padroeiro da Lituânia, que é 4 de março. “Oficialmente ele é Kazimieras, mas para o povo é só Kaziukas”, diz o rapaz, piscando.',
         choices: [
-          { text: 'Grįžti prie senutės su verbomis.', translation: 'Voltar à velhinha das «verbos».', next: 'verbos' },
+          { text: 'Grįžti prie senutės su verbomis.', translation: 'Voltar à velhinha das “verbos”.', next: 'verbos' },
           {
             text: 'Paklausti, ar Kaziukas buvo labai mažo ūgio šventasis.',
             translation: 'Perguntar se Kaziukas foi um santo muito baixinho.',
-            wrong: 'O sufixo -ukas em «Kaziukas» não fala de tamanho: é um diminutivo de carinho, como «Zezinho» para José. O rapaz explicou que é só o jeito popular e afetuoso de chamar São Casimiro.',
+            wrong: 'O sufixo -ukas em “Kaziukas” não fala de tamanho: é um diminutivo de carinho, como “Zezinho” para José. O rapaz explicou que é só o jeito popular e afetuoso de chamar São Casimiro.',
           },
         ],
       },
       verbos: {
         emoji: '💐',
-        text: 'Senutė rodo spalvingas verbas, surištas iš džiovintų gėlių ir žolelių. «Čia Vilniaus verbos, – aiškina ji. – Jas rišu nuo rudens, kiekvieną žiedelį pati susirinkau pievoje.» Linu klausia, kiek kainuoja mažoji verba, o senutė nusišypso: «Tau, paukšteli, pigiau – tik penki eurai.» Ji priduria, kad verbą reikia parsinešti namo ir pasilaikyti iki Verbų sekmadienio.',
+        text: 'Senutė rodo spalvingas verbas, surištas iš džiovintų gėlių ir žolelių. “Čia Vilniaus verbos, – aiškina ji. – Jas rišu nuo rudens, kiekvieną žiedelį pati susirinkau pievoje.” Linu klausia, kiek kainuoja mažoji verba, o senutė nusišypso: “Tau, paukšteli, pigiau – tik penki eurai.” Ji priduria, kad verbą reikia parsinešti namo ir pasilaikyti iki Verbų sekmadienio.',
         translation:
-          'A velhinha mostra «verbos» coloridas, amarradas com flores e ervinhas secas. «Estas são as «verbos» de Vilnius», explica ela. «Venho amarrando desde o outono, cada florzinha eu mesma colhi no campo.» O Linu pergunta quanto custa a «verba» pequena, e a velhinha sorri: «Para você, passarinho, mais barato: só cinco euros.» Ela acrescenta que é preciso levar a «verba» para casa e guardar até o Domingo de Ramos.',
-        choices: [{ text: 'Nusipirkti mažąją verbą.', translation: 'Comprar a «verba» pequena.', next: 'arbata' }],
+          'A velhinha mostra “verbos” coloridas, amarradas com flores e ervinhas secas. “Estas são as ‘verbos’ de Vilnius”, explica ela. “Venho amarrando desde o outono, cada florzinha eu mesma colhi no campo.” O Linu pergunta quanto custa a “verba” pequena, e a velhinha sorri: “Para você, passarinho, mais barato: só cinco euros.” Ela acrescenta que é preciso levar a “verba” para casa e guardar até o Domingo de Ramos.',
+        choices: [{ text: 'Nusipirkti mažąją verbą.', translation: 'Comprar a “verba” pequena.', next: 'arbata' }],
       },
       arbata: {
         emoji: '🫖',
-        text: 'Senutė įvynioja verbą į laikraštį ir staiga paklausia: «O gal išgersi arbatėlės? Turiu termosą, liepžiedžių arbatėlė dar karšta.» Ji įpila į puodelį ir paduoda jį Linu kartu su meduoline širdele, ant kurios baltu glajumi parašyta «Aldona». «Čia mano vardas, – juokiasi ji. – Širdelių su tavo vardu neturiu, tai imk mano.»',
+        text: 'Senutė įvynioja verbą į laikraštį ir staiga paklausia: “O gal išgersi arbatėlės? Turiu termosą, liepžiedžių arbatėlė dar karšta.” Ji įpila į puodelį ir paduoda jį Linu kartu su meduoline širdele, ant kurios baltu glajumi parašyta “Aldona”. “Čia mano vardas, – juokiasi ji. – Širdelių su tavo vardu neturiu, tai imk mano.”',
         translation:
-          'A velhinha embrulha a «verba» em jornal e de repente pergunta: «E que tal um chazinho? Tenho uma garrafa térmica, o chazinho de flor de tília ainda está quente.» Ela serve numa caneca e entrega ao Linu junto com um coraçãozinho de pão de mel em que está escrito «Aldona» com glacê branco. «Esse é o meu nome», ri ela. «Coraçãozinho com o seu nome eu não tenho, então leva o meu.»',
+          'A velhinha embrulha a “verba” em jornal e de repente pergunta: “E que tal um chazinho? Tenho uma garrafa térmica, o chazinho de flor de tília ainda está quente.” Ela serve numa caneca e entrega ao Linu junto com um coraçãozinho de pão de mel em que está escrito “Aldona” com glacê branco. “Esse é o meu nome”, ri ela. “Coraçãozinho com o seu nome eu não tenho, então leva o meu.”',
         choices: [
-          { text: 'Padėkoti ir pasisiūlyti padėti jai pardavinėti verbas.', translation: 'Agradecer e se oferecer para ajudá-la a vender as «verbos».', next: 'padeda' },
+          { text: 'Padėkoti ir pasisiūlyti padėti jai pardavinėti verbas.', translation: 'Agradecer e se oferecer para ajudá-la a vender as “verbos”.', next: 'padeda' },
           { text: 'Padėkoti, pasiimti širdelę ir eiti toliau po mugę.', translation: 'Agradecer, pegar o coraçãozinho e seguir pela feira.', next: 'final_neutro' },
           {
-            text: 'Paprašyti didelio puodelio, nes «arbatėlė» reiškia labai mažai arbatos.',
-            translation: 'Pedir uma caneca grande, porque «arbatėlė» quer dizer pouquíssimo chá.',
-            wrong: 'O diminutivo «arbatėlė» (de «arbata», chá) aqui não fala de quantidade: é carinho, o jeito de avó oferecer «um chazinho». A dona Aldona já ia encher a caneca inteira.',
+            text: 'Paprašyti didelio puodelio, nes “arbatėlė” reiškia labai mažai arbatos.',
+            translation: 'Pedir uma caneca grande, porque “arbatėlė” quer dizer pouquíssimo chá.',
+            wrong: 'O diminutivo “arbatėlė” (de “arbata”, chá) aqui não fala de quantidade: é carinho, o jeito de avó oferecer “um chazinho”. A dona Aldona já ia encher a caneca inteira.',
           },
         ],
       },
       padeda: {
         emoji: '🛍️',
-        text: 'Visą popietę Linu stovi prie palapinės ir šaukia: «Verbos, gražiausios Vilniaus verbos!» Praeiviai sustoja, nes niekada nematė pingvino, pardavinėjančio verbas. Iki vakaro ant stalo lieka tik viena mažytė verbelė. «Na, tavo tai tikrai aukso rankos», – sako Aldona ir jį apkabina.',
+        text: 'Visą popietę Linu stovi prie palapinės ir šaukia: “Verbos, gražiausios Vilniaus verbos!” Praeiviai sustoja, nes niekada nematė pingvino, pardavinėjančio verbas. Iki vakaro ant stalo lieka tik viena mažytė verbelė. “Na, tavo tai tikrai aukso rankos”, – sako Aldona ir jį apkabina.',
         translation:
-          'A tarde inteira o Linu fica na barraca gritando: «Verbos, as mais lindas «verbos» de Vilnius!» Os passantes param, porque nunca tinham visto um pinguim vendendo «verbos». Até a noite, sobra na mesa só uma «verbinha» minúscula. «Olha, você tem mesmo mãos de ouro», diz a Aldona, e lhe dá um abraço.',
+          'A tarde inteira o Linu fica na barraca gritando: “Verbos, as mais lindas ‘verbos’ de Vilnius!” Os passantes param, porque nunca tinham visto um pinguim vendendo “verbos”. Até a noite, sobra na mesa só uma “verbinha” minúscula. “Olha, você tem mesmo mãos de ouro”, diz a Aldona, e lhe dá um abraço.',
         choices: [{ text: 'Pažadėti atvažiuoti ir kitais metais.', translation: 'Prometer voltar também no ano que vem.', next: 'final_bom' }],
       },
       final_bom: {
         emoji: '🎉',
-        text: 'Aldona įdeda paskutinę verbelę Linu į rankas ir nieko už ją neima. «Kitais metais lauksiu tavęs toje pačioje vietoje», – sako ji. Linu grįžta namo su riestainiais ant kaklo, verbele rankoje ir širdele kišenėje. Namie jis pastato verbelę į vazą ir nusprendžia, kad kitais metais pats išmoks jas rišti.',
+        text: 'Aldona įdeda paskutinę verbelę Linu į rankas ir nieko už ją neima. “Kitais metais lauksiu tavęs toje pačioje vietoje”, – sako ji. Linu grįžta namo su riestainiais ant kaklo, verbele rankoje ir širdele kišenėje. Namie jis pastato verbelę į vazą ir nusprendžia, kad kitais metais pats išmoks jas rišti.',
         translation:
-          'A Aldona põe a última «verbinha» nas mãos do Linu e não cobra nada. «No ano que vem vou te esperar no mesmo lugar», diz ela. O Linu volta para casa com rosquinhas no pescoço, a «verbinha» na mão e o coraçãozinho no bolso. Em casa, põe a «verbinha» num vaso e decide que no ano que vem vai aprender a amarrá-las ele mesmo.',
+          'A Aldona põe a última “verbinha” nas mãos do Linu e não cobra nada. “No ano que vem vou te esperar no mesmo lugar”, diz ela. O Linu volta para casa com rosquinhas no pescoço, a “verbinha” na mão e o coraçãozinho no bolso. Em casa, põe a “verbinha” num vaso e decide que no ano que vem vai aprender a amarrá-las ele mesmo.',
         ending: { tone: 'bom', title: 'Mãos de ouro', message: 'Você entendeu que os diminutivos da dona Aldona eram carinho — e ganhou uma amiga na Feira de Kaziukas.' },
       },
       final_neutro: {
@@ -2930,12 +2930,12 @@ export const STORIES_LT: StorySeed[] = [
     cefr: 'B2',
     title: 'Visiškos šakės ant Palangos tilto',
     emoji: '🌅',
-    summary: 'No píer de Palanga, dois adolescentes de Kaunas falam com o Linu cheios de gíria — e, quando cai um temporal, ele precisa entender que «šakės» não é ferramenta.',
+    summary: 'No píer de Palanga, dois adolescentes de Kaunas falam com o Linu cheios de gíria — e, quando cai um temporal, ele precisa entender que “šakės” não é ferramenta.',
     cultural_context:
-      'Palanga é a praia de veraneio mais famosa da Lituânia, e sua longa ponte-píer de madeira, que avança quase meio quilômetro mar adentro, é o ponto clássico para ver o sol se pôr no Báltico. Na gíria dos jovens lituanos, «šakės» (literalmente, «forcado») quer dizer «desastre», e «kietai» (de «kietas», duro) quer dizer «muito legal».',
+      'Palanga é a praia de veraneio mais famosa da Lituânia, e sua longa ponte-píer de madeira, que avança quase meio quilômetro mar adentro, é o ponto clássico para ver o sol se pôr no Báltico. Na gíria dos jovens lituanos, “šakės” (literalmente, “forcado”) quer dizer “desastre”, e “kietai” (de “kietas”, duro) quer dizer “muito legal”.',
     start: 'start',
     glossary: [
-      ['nufotkinti', 'tirar uma foto (gíria de «nufotografuoti»)'],
+      ['nufotkinti', 'tirar uma foto (gíria de “nufotografuoti”)'],
       ['kietai!', 'muito legal! (gíria)'],
       ['faina', 'bonito, bacana (gíria)'],
       ['šakės', 'forcado; na gíria: desastre, que furada'],
@@ -2946,69 +2946,69 @@ export const STORIES_LT: StorySeed[] = [
     nodes: {
       start: {
         emoji: '🌊',
-        text: 'Rugpjūčio vakarą Palangoje visi eina ta pačia kryptimi – į tiltą, žiūrėti saulėlydžio. Linu irgi žingsniuoja Basanavičiaus gatve, pro kavines ir ilgas eiles prie ledainių. Tilto gale prie turėklų stovi du paaugliai, Gabija ir Rokas, ir bando nusifotografuoti su saule. «Ei, gal gali mus nufotkinti?» – paprašo Gabija ir paduoda Linu telefoną.',
+        text: 'Rugpjūčio vakarą Palangoje visi eina ta pačia kryptimi – į tiltą, žiūrėti saulėlydžio. Linu irgi žingsniuoja Basanavičiaus gatve, pro kavines ir ilgas eiles prie ledainių. Tilto gale prie turėklų stovi du paaugliai, Gabija ir Rokas, ir bando nusifotografuoti su saule. “Ei, gal gali mus nufotkinti?” – paprašo Gabija ir paduoda Linu telefoną.',
         translation:
-          'Numa noite de agosto em Palanga, todo mundo vai na mesma direção: para a ponte-píer, ver o pôr do sol. O Linu também segue pela rua Basanavičius, passando por cafés e filas compridas nas sorveterias. Na ponta do píer, junto ao parapeito, dois adolescentes, a Gabija e o Rokas, tentam tirar uma selfie com o sol. «Ei, dá para tirar uma foto da gente?», pede a Gabija, entregando o celular ao Linu.',
+          'Numa noite de agosto em Palanga, todo mundo vai na mesma direção: para a ponte-píer, ver o pôr do sol. O Linu também segue pela rua Basanavičius, passando por cafés e filas compridas nas sorveterias. Na ponta do píer, junto ao parapeito, dois adolescentes, a Gabija e o Rokas, tentam tirar uma selfie com o sol. “Ei, dá para tirar uma foto da gente?”, pede a Gabija, entregando o celular ao Linu.',
         choices: [
           { text: 'Paimti telefoną ir juos nufotografuoti.', translation: 'Pegar o celular e fotografá-los.', next: 'foto' },
           {
             text: 'Parodyti jiems savo paties nuotraukas.',
             translation: 'Mostrar a eles as próprias fotos.',
-            wrong: '«Nufotkinti» é gíria de «nufotografuoti», fotografar. A Gabija pediu que você tirasse uma foto dela e do Rokas — por isso te deu o celular.',
+            wrong: '“Nufotkinti” é gíria de “nufotografuoti”, fotografar. A Gabija pediu que você tirasse uma foto dela e do Rokas — por isso te deu o celular.',
           },
         ],
       },
       foto: {
         emoji: '📸',
-        text: 'Linu padaro kelias nuotraukas, o Rokas jas peržiūri ir sušunka: «Kietai! Tu tikras profas.» Gabija pritaria: «Faina gavosi, saulė kaip tik tarp mūsų galvų.» Jie pasakoja, kad yra iš Kauno ir atvažiavo prie jūros visai savaitei. «Palanga vasarą – tai visa Lietuva viename kurorte», – juokiasi Rokas.',
+        text: 'Linu padaro kelias nuotraukas, o Rokas jas peržiūri ir sušunka: “Kietai! Tu tikras profas.” Gabija pritaria: “Faina gavosi, saulė kaip tik tarp mūsų galvų.” Jie pasakoja, kad yra iš Kauno ir atvažiavo prie jūros visai savaitei. “Palanga vasarą – tai visa Lietuva viename kurorte”, – juokiasi Rokas.',
         translation:
-          'O Linu tira algumas fotos, e o Rokas olha e exclama: «Muito massa! Você é fera.» A Gabija concorda: «Ficou lindo, o sol bem no meio das nossas cabeças.» Eles contam que são de Kaunas e vieram para o mar por uma semana inteira. «Palanga no verão é a Lituânia inteira numa praia só», ri o Rokas.',
+          'O Linu tira algumas fotos, e o Rokas olha e exclama: “Muito massa! Você é fera.” A Gabija concorda: “Ficou lindo, o sol bem no meio das nossas cabeças.” Eles contam que são de Kaunas e vieram para o mar por uma semana inteira. “Palanga no verão é a Lituânia inteira numa praia só”, ri o Rokas.',
         choices: [
-          { text: 'Paklausti, ką reiškia «kietai» ir «faina».', translation: 'Perguntar o que querem dizer «kietai» e «faina».', next: 'zodynas' },
+          { text: 'Paklausti, ką reiškia “kietai” ir “faina”.', translation: 'Perguntar o que querem dizer “kietai” e “faina”.', next: 'zodynas' },
           { text: 'Pasiūlyti kartu pažiūrėti saulėlydžio.', translation: 'Propor verem o pôr do sol juntos.', next: 'debesys' },
         ],
       },
       zodynas: {
         emoji: '📖',
-        text: '«Kietai – tai kaip labai gerai, super», – aiškina Gabija. Rokas priduria, kad «faina» reiškia gražu arba smagu, o «profas» – profesionalas. «O kai viskas blogai, sakome „šakės“», – sako Gabija. Linu nesupranta, kaip šakės, kuriomis kaime kraunamas šienas, gali būti kažkas blogo.',
+        text: '“Kietai – tai kaip labai gerai, super”, – aiškina Gabija. Rokas priduria, kad “faina” reiškia gražu arba smagu, o “profas” – profesionalas. “O kai viskas blogai, sakome „šakės‘’, – sako Gabija. Linu nesupranta, kaip šakės, kuriomis kaime kraunamas šienas, gali būti kažkas blogo.',
         translation:
-          '«Kietai é tipo muito bom, demais», explica a Gabija. O Rokas acrescenta que «faina» quer dizer bonito ou divertido, e «profas», profissional. «E quando tudo dá errado, a gente diz „šakės“», diz a Gabija. O Linu não entende como um forcado, com que se junta feno no campo, pode ser uma coisa ruim.',
+          '“Kietai é tipo muito bom, demais”, explica a Gabija. O Rokas acrescenta que “faina” quer dizer bonito ou divertido, e “profas”, profissional. “E quando tudo dá errado, a gente diz „šakės‘’, diz a Gabija. O Linu não entende como um forcado, com que se junta feno no campo, pode ser uma coisa ruim.',
         choices: [{ text: 'Atsisukti į jūrą ir laukti saulėlydžio.', translation: 'Virar para o mar e esperar o pôr do sol.', next: 'debesys' }],
       },
       debesys: {
         emoji: '⛈️',
-        text: 'Visi trys atsisuka į jūrą, bet staiga nuo horizonto atslenka tamsus debesis ir uždengia saulę. Po minutės ima lyti kaip iš kibiro, ir žmonės bėga nuo tilto į krantą. «Na, visiškos šakės!» – sušunka Rokas, užsidengdamas galvą kuprine. Gabija juokiasi, nors jos plaukai jau kiaurai šlapi.',
+        text: 'Visi trys atsisuka į jūrą, bet staiga nuo horizonto atslenka tamsus debesis ir uždengia saulę. Po minutės ima lyti kaip iš kibiro, ir žmonės bėga nuo tilto į krantą. “Na, visiškos šakės!” – sušunka Rokas, užsidengdamas galvą kuprine. Gabija juokiasi, nors jos plaukai jau kiaurai šlapi.',
         translation:
-          'Os três se viram para o mar, mas de repente uma nuvem escura chega do horizonte e cobre o sol. Um minuto depois começa a chover a cântaros, e as pessoas correm do píer para a praia. «Pronto, desastre total!», grita o Rokas, cobrindo a cabeça com a mochila. A Gabija ri, embora o cabelo já esteja encharcado.',
+          'Os três se viram para o mar, mas de repente uma nuvem escura chega do horizonte e cobre o sol. Um minuto depois começa a chover a cântaros, e as pessoas correm do píer para a praia. “Pronto, desastre total!”, grita o Rokas, cobrindo a cabeça com a mochila. A Gabija ri, embora o cabelo já esteja encharcado.',
         choices: [
           { text: 'Pasiūlyti pasislėpti nuo lietaus po kavinės skėčiu.', translation: 'Propor se abrigar da chuva debaixo do guarda-sol de um café.', next: 'kavine' },
           { text: 'Pasiūlyti bėgti į Birutės kalną, nes nuo ten viskas matyti kaip ant delno.', translation: 'Propor correr até o morro de Birutė, porque de lá se vê tudo como na palma da mão.', next: 'kalnas' },
           {
             text: 'Pasiūlyti nueiti į kaimą ir nupirkti Rokui naujas šakes.',
             translation: 'Propor ir a um vilarejo comprar um forcado novo para o Rokas.',
-            wrong: 'Na gíria, «šakės» (forcado) quer dizer «desastre, que furada». O Rokas não falou de ferramenta nenhuma: ele reclamou da chuva que estragou o pôr do sol.',
+            wrong: 'Na gíria, “šakės” (forcado) quer dizer “desastre, que furada”. O Rokas não falou de ferramenta nenhuma: ele reclamou da chuva que estragou o pôr do sol.',
           },
         ],
       },
       kavine: {
         emoji: '☕',
-        text: 'Jie trise sulenda po kavinės skėčiu ir užsisako karšto šokolado. Rokas tikina, kad Palangoje lietus niekada neužsibūna ilgai: «Pamatysi, po dešimties minučių vėl bus saulė.» Ir iš tiesų debesis nuslenka į šiaurę, o virš jūros vėl pasirodo raudonas saulės kraštelis. «Bėgam atgal!» – sušunka Gabija.',
+        text: 'Jie trise sulenda po kavinės skėčiu ir užsisako karšto šokolado. Rokas tikina, kad Palangoje lietus niekada neužsibūna ilgai: “Pamatysi, po dešimties minučių vėl bus saulė.” Ir iš tiesų debesis nuslenka į šiaurę, o virš jūros vėl pasirodo raudonas saulės kraštelis. “Bėgam atgal!” – sušunka Gabija.',
         translation:
-          'Os três se enfiam debaixo do guarda-sol de um café e pedem chocolate quente. O Rokas garante que em Palanga a chuva nunca demora: «Você vai ver, em dez minutos volta o sol.» E de fato a nuvem vai embora para o norte, e sobre o mar reaparece a pontinha vermelha do sol. «Bora voltar!», grita a Gabija.',
+          'Os três se enfiam debaixo do guarda-sol de um café e pedem chocolate quente. O Rokas garante que em Palanga a chuva nunca demora: “Você vai ver, em dez minutos volta o sol.” E de fato a nuvem vai embora para o norte, e sobre o mar reaparece a pontinha vermelha do sol. “Bora voltar!”, grita a Gabija.',
         choices: [{ text: 'Bėgti atgal į tiltą.', translation: 'Correr de volta para o píer.', next: 'final_bom' }],
       },
       final_bom: {
         emoji: '🌇',
-        text: 'Jie pasiekia tilto galą kaip tik tą akimirką, kai saulė paliečia vandenį. Keli žmonės ant tilto ima ploti, o Linu ploja garsiausiai. Gabija dar kartą paduoda jam telefoną: «Nufotkink mus, profe, tik dabar jau su savimi.» Nuotraukoje trys šlapi draugai šypsosi prieš raudoną jūrą.',
+        text: 'Jie pasiekia tilto galą kaip tik tą akimirką, kai saulė paliečia vandenį. Keli žmonės ant tilto ima ploti, o Linu ploja garsiausiai. Gabija dar kartą paduoda jam telefoną: “Nufotkink mus, profe, tik dabar jau su savimi.” Nuotraukoje trys šlapi draugai šypsosi prieš raudoną jūrą.',
         translation:
-          'Eles chegam à ponta do píer bem no instante em que o sol toca a água. Algumas pessoas no píer começam a aplaudir, e o Linu aplaude mais alto que todos. A Gabija lhe entrega o celular mais uma vez: «Tira uma foto da gente, fera, só que agora com você junto.» Na foto, três amigos encharcados sorriem diante do mar vermelho.',
-        ending: { tone: 'bom', title: 'Pôr do sol salvo', message: 'Você entendeu a gíria da Gabija e do Rokas — do «kietai» às «šakės» — e ganhou dois amigos e a foto mais bonita do verão.' },
+          'Eles chegam à ponta do píer bem no instante em que o sol toca a água. Algumas pessoas no píer começam a aplaudir, e o Linu aplaude mais alto que todos. A Gabija lhe entrega o celular mais uma vez: “Tira uma foto da gente, fera, só que agora com você junto.” Na foto, três amigos encharcados sorriem diante do mar vermelho.',
+        ending: { tone: 'bom', title: 'Pôr do sol salvo', message: 'Você entendeu a gíria da Gabija e do Rokas — do “kietai” às “šakės” — e ganhou dois amigos e a foto mais bonita do verão.' },
       },
       kalnas: {
         emoji: '⛰️',
-        text: 'Jie bėga į Birutės kalną, nes nuo jo viskas matyti kaip ant delno. Bet parko takai permirkę, ir pusiaukelėje Rokas paslysta į balą. Kol jie užlipa į viršų, lietus jau liaujasi, tačiau saulė jau yra nusileidusi už jūros. «Na, ką padarysi», – atsidūsta Gabija, gręždama šlapius plaukus.',
+        text: 'Jie bėga į Birutės kalną, nes nuo jo viskas matyti kaip ant delno. Bet parko takai permirkę, ir pusiaukelėje Rokas paslysta į balą. Kol jie užlipa į viršų, lietus jau liaujasi, tačiau saulė jau yra nusileidusi už jūros. “Na, ką padarysi”, – atsidūsta Gabija, gręždama šlapius plaukus.',
         translation:
-          'Eles correm para o morro de Birutė, porque de lá se vê tudo como na palma da mão. Mas as trilhas do parque estão encharcadas, e no meio do caminho o Rokas escorrega numa poça. Quando chegam lá em cima, a chuva já está parando, mas o sol já se pôs atrás do mar. «Fazer o quê», suspira a Gabija, torcendo o cabelo molhado.',
+          'Eles correm para o morro de Birutė, porque de lá se vê tudo como na palma da mão. Mas as trilhas do parque estão encharcadas, e no meio do caminho o Rokas escorrega numa poça. Quando chegam lá em cima, a chuva já está parando, mas o sol já se pôs atrás do mar. “Fazer o quê”, suspira a Gabija, torcendo o cabelo molhado.',
         ending: { tone: 'neutro', title: 'Chuva no morro', message: 'O passeio foi divertido, mas o pôr do sol ficou para outro dia — às vezes é melhor esperar a chuva passar.' },
       },
     },
@@ -3021,7 +3021,7 @@ export const STORIES_LT: StorySeed[] = [
     emoji: '🧖',
     summary: 'Num sítio da Aukštaitija, entre lagos e florestas, o Linu passa um sábado de sauna com o anfitrião Vytautas e um vizinho contador de lorotas — um fim de semana inteiro de expressões idiomáticas.',
     cultural_context:
-      'A «pirtis», a sauna tradicional lituana, é quase um ritual no campo: aquece-se com lenha, joga-se água nas pedras quentes e bate-se de leve no corpo com uma «vanta», um feixe de galhos de bétula, antes de pular no lago. O Parque Nacional de Aukštaitija, criado em 1974, foi o primeiro parque nacional da Lituânia e é famoso pela quantidade de lagos.',
+      'A “pirtis”, a sauna tradicional lituana, é quase um ritual no campo: aquece-se com lenha, joga-se água nas pedras quentes e bate-se de leve no corpo com uma “vanta”, um feixe de galhos de bétula, antes de pular no lago. O Parque Nacional de Aukštaitija, criado em 1974, foi o primeiro parque nacional da Lituânia e é famoso pela quantidade de lagos.',
     start: 'start',
     glossary: [
       ['ne kiškis – į mišką nepabėgs', 'não é lebre, não foge para o mato (calma, não tem pressa)'],
@@ -3035,30 +3035,30 @@ export const STORIES_LT: StorySeed[] = [
     nodes: {
       start: {
         emoji: '🌲',
-        text: 'Linu atvažiavo savaitgaliui į sodybą Aukštaitijoje, tarp miškų ir ežerų. Šeimininkas Vytautas, stambus žilas vyras, jau nuo ryto kūrena pirtį prie pat ežero. Linu nekantrauja ir kas penkias minutes klausia, ar pirtis jau paruošta. Vytautas tik nusijuokia: «Ramiau, ramiau. Pirtis ne kiškis – į mišką nepabėgs.»',
+        text: 'Linu atvažiavo savaitgaliui į sodybą Aukštaitijoje, tarp miškų ir ežerų. Šeimininkas Vytautas, stambus žilas vyras, jau nuo ryto kūrena pirtį prie pat ežero. Linu nekantrauja ir kas penkias minutes klausia, ar pirtis jau paruošta. Vytautas tik nusijuokia: “Ramiau, ramiau. Pirtis ne kiškis – į mišką nepabėgs.”',
         translation:
-          'O Linu veio passar o fim de semana num sítio da Aukštaitija, entre florestas e lagos. O dono, Vytautas, um homem grandalhão de cabelo branco, está desde cedo acendendo a sauna à beira do lago. O Linu está impaciente e a cada cinco minutos pergunta se a sauna já está pronta. O Vytautas só ri: «Calma, calma. A sauna não é lebre, não vai fugir para o mato.»',
+          'O Linu veio passar o fim de semana num sítio da Aukštaitija, entre florestas e lagos. O dono, Vytautas, um homem grandalhão de cabelo branco, está desde cedo acendendo a sauna à beira do lago. O Linu está impaciente e a cada cinco minutos pergunta se a sauna já está pronta. O Vytautas só ri: “Calma, calma. A sauna não é lebre, não vai fugir para o mato.”',
         choices: [
           { text: 'Palaukti ir padėti Vytautui prinešti malkų.', translation: 'Esperar e ajudar o Vytautas a trazer lenha.', next: 'malkos' },
           {
             text: 'Išsigąsti ir nueiti pažiūrėti, ar miške nėra kiškio.',
             translation: 'Assustar-se e ir ver se há uma lebre na floresta.',
-            wrong: '«Ne kiškis – į mišką nepabėgs» (não é lebre, não foge para o mato) quer dizer «calma, não tem pressa». O Vytautas só pediu paciência: não tem lebre nenhuma na história.',
+            wrong: '“Ne kiškis – į mišką nepabėgs” (não é lebre, não foge para o mato) quer dizer “calma, não tem pressa”. O Vytautas só pediu paciência: não tem lebre nenhuma na história.',
           },
         ],
       },
       malkos: {
         emoji: '🪵',
-        text: 'Linu neša glėbį beržinių malkų, bet pusiaukelėje jos visos išbyra ant tako. «Oi, tavo abi rankos kairės», – juokiasi Vytautas, bet padeda jas surinkti. Paskui jis parodo, kaip rišamos vantos: beržo šakelės surišamos į kuokštą, kad pirtyje gerai kvepėtų. «Vantą reikia pamerkti į karštą vandenį, tada ji minkšta kaip šilkas», – aiškina jis.',
+        text: 'Linu neša glėbį beržinių malkų, bet pusiaukelėje jos visos išbyra ant tako. “Oi, tavo abi rankos kairės”, – juokiasi Vytautas, bet padeda jas surinkti. Paskui jis parodo, kaip rišamos vantos: beržo šakelės surišamos į kuokštą, kad pirtyje gerai kvepėtų. “Vantą reikia pamerkti į karštą vandenį, tada ji minkšta kaip šilkas”, – aiškina jis.',
         translation:
-          'O Linu carrega uma braçada de lenha de bétula, mas no meio do caminho ela toda se espalha pela trilha. «Ai, você tem duas mãos esquerdas», ri o Vytautas, mas ajuda a recolher. Depois ele mostra como se amarram as «vantas»: os galhinhos de bétula são amarrados num feixe, para a sauna ficar bem cheirosa. «A vanta tem que ficar de molho em água quente, aí fica macia como seda», explica.',
+          'O Linu carrega uma braçada de lenha de bétula, mas no meio do caminho ela toda se espalha pela trilha. “Ai, você tem duas mãos esquerdas”, ri o Vytautas, mas ajuda a recolher. Depois ele mostra como se amarram as “vantas”: os galhinhos de bétula são amarrados num feixe, para a sauna ficar bem cheirosa. “A vanta tem que ficar de molho em água quente, aí fica macia como seda”, explica.',
         choices: [{ text: 'Eiti į pirtį.', translation: 'Entrar na sauna.', next: 'pirtis' }],
       },
       pirtis: {
         emoji: '♨️',
-        text: 'Viduje karšta ir prieblanda, kvepia beržu ir dūmais. Vytautas užpila ant akmenų vandens, ir garas pakyla taip staiga, kad Linu užgniaužia kvapą. Paskui šeimininkas švelniai pliekia jį vanta per nugarą ir niūniuoja kažkokią seną dainą. «Pirtyje nėra nei rūpesčių, nei skubos», – sako jis.',
+        text: 'Viduje karšta ir prieblanda, kvepia beržu ir dūmais. Vytautas užpila ant akmenų vandens, ir garas pakyla taip staiga, kad Linu užgniaužia kvapą. Paskui šeimininkas švelniai pliekia jį vanta per nugarą ir niūniuoja kažkokią seną dainą. “Pirtyje nėra nei rūpesčių, nei skubos”, – sako jis.',
         translation:
-          'Lá dentro está quente e na penumbra, com cheiro de bétula e fumaça. O Vytautas joga água nas pedras, e o vapor sobe tão de repente que o Linu perde o fôlego. Depois o anfitrião bate de leve nas costas dele com a «vanta» e cantarola uma canção antiga. «Na sauna não existem nem preocupações nem pressa», diz.',
+          'Lá dentro está quente e na penumbra, com cheiro de bétula e fumaça. O Vytautas joga água nas pedras, e o vapor sobe tão de repente que o Linu perde o fôlego. Depois o anfitrião bate de leve nas costas dele com a “vanta” e cantarola uma canção antiga. “Na sauna não existem nem preocupações nem pressa”, diz.',
         choices: [
           { text: 'Iššokti iš pirties ir nerti į ežerą.', translation: 'Sair correndo da sauna e mergulhar no lago.', next: 'ezeras' },
           { text: 'Užsilipti ant viršutinio suolo ir pasilikti ilgiau.', translation: 'Subir no banco mais alto e ficar mais tempo.', next: 'karsta' },
@@ -3066,30 +3066,30 @@ export const STORIES_LT: StorySeed[] = [
       },
       ezeras: {
         emoji: '🏊',
-        text: 'Linu iššoka pro duris ir su šūksniu neria į vėsų ežerą. Ant lieptelio jau sėdi kaimynas Petras, kuris pasakoja, kad šįryt pagavo lydeką, didesnę už savo valtį. Vytautas mirkteli Linu ir tyliai sako: «Neklausyk jo, jis visada pučia miglą į akis.» Petras įsižeidęs aiškina, kad lydeką jau suvalgė, todėl parodyti negali.',
+        text: 'Linu iššoka pro duris ir su šūksniu neria į vėsų ežerą. Ant lieptelio jau sėdi kaimynas Petras, kuris pasakoja, kad šįryt pagavo lydeką, didesnę už savo valtį. Vytautas mirkteli Linu ir tyliai sako: “Neklausyk jo, jis visada pučia miglą į akis.” Petras įsižeidęs aiškina, kad lydeką jau suvalgė, todėl parodyti negali.',
         translation:
-          'O Linu sai porta afora e, com um grito, mergulha no lago fresco. No pequeno píer já está sentado o vizinho Petras, contando que hoje de manhã pescou um lúcio maior que o próprio barco. O Vytautas pisca para o Linu e diz baixinho: «Não dá ouvidos, ele sempre conta lorota.» O Petras, ofendido, explica que já comeu o lúcio, por isso não pode mostrar.',
+          'O Linu sai porta afora e, com um grito, mergulha no lago fresco. No pequeno píer já está sentado o vizinho Petras, contando que hoje de manhã pescou um lúcio maior que o próprio barco. O Vytautas pisca para o Linu e diz baixinho: “Não dá ouvidos, ele sempre conta lorota.” O Petras, ofendido, explica que já comeu o lúcio, por isso não pode mostrar.',
         choices: [
           { text: 'Nusišypsoti ir paklausti Petro, kokio dydžio buvo lydeka.', translation: 'Sorrir e perguntar ao Petras de que tamanho era o lúcio.', next: 'lieptas' },
           {
             text: 'Pagirti Petrą, nes Vytautas patvirtino, kad jis sako tiesą.',
             translation: 'Elogiar o Petras, porque o Vytautas confirmou que ele diz a verdade.',
-            wrong: '«Pūsti miglą į akis» (soprar névoa nos olhos) é enganar, contar lorota. O Vytautas avisou que o Petras está inventando o peixe gigante — ele não confirmou nada.',
+            wrong: '“Pūsti miglą į akis” (soprar névoa nos olhos) é enganar, contar lorota. O Vytautas avisou que o Petras está inventando o peixe gigante — ele não confirmou nada.',
           },
         ],
       },
       lieptas: {
         emoji: '💦',
-        text: 'Petras nori parodyti, kokia buvo lydeka, plačiai išskečia rankas – ir pliumpt! – su visais drabužiais įkrenta į ežerą. Išlipęs jis šlapias kaip pelė. «Tik laikyk liežuvį už dantų, – maldauja jis Linu. – Jei Rasa sužinos, visas kaimas juoksis iki Kalėdų.» Linu pažada niekam nesakyti.',
+        text: 'Petras nori parodyti, kokia buvo lydeka, plačiai išskečia rankas – ir pliumpt! – su visais drabužiais įkrenta į ežerą. Išlipęs jis šlapias kaip pelė. “Tik laikyk liežuvį už dantų, – maldauja jis Linu. – Jei Rasa sužinos, visas kaimas juoksis iki Kalėdų.” Linu pažada niekam nesakyti.',
         translation:
-          'O Petras quer mostrar o tamanho do lúcio, abre bem os braços — e tchibum! — cai no lago de roupa e tudo. Quando sai, está encharcado como um pinto. «Só não abre o bico», implora ele ao Linu. «Se a Rasa souber, a vila inteira vai rir até o Natal.» O Linu promete não contar a ninguém.',
+          'O Petras quer mostrar o tamanho do lúcio, abre bem os braços — e tchibum! — cai no lago de roupa e tudo. Quando sai, está encharcado como um pinto. “Só não abre o bico”, implora ele ao Linu. “Se a Rasa souber, a vila inteira vai rir até o Natal.” O Linu promete não contar a ninguém.',
         choices: [{ text: 'Eiti vakarieniauti.', translation: 'Ir jantar.', next: 'vakariene' }],
       },
       vakariene: {
         emoji: '🍽️',
-        text: 'Vakare Vytauto žmona Rasa padeda ant stalo bulvių plokštainio ir grietinės. Ji pro langą pastebi Petro kelnes, kurios džiūsta ant tvoros, ir smalsiai paklausia: «Kas gi nutiko Petrui?» Vytautas ir Linu susižvalgo. Rasa laukia atsakymo, parėmusi smakrą ranka.',
+        text: 'Vakare Vytauto žmona Rasa padeda ant stalo bulvių plokštainio ir grietinės. Ji pro langą pastebi Petro kelnes, kurios džiūsta ant tvoros, ir smalsiai paklausia: “Kas gi nutiko Petrui?” Vytautas ir Linu susižvalgo. Rasa laukia atsakymo, parėmusi smakrą ranka.',
         translation:
-          'À noite, a esposa do Vytautas, Rasa, põe na mesa torta de batata e creme azedo. Pela janela ela nota as calças do Petras secando na cerca e pergunta, curiosa: «O que foi que aconteceu com o Petras?» O Vytautas e o Linu se entreolham. A Rasa espera a resposta, com o queixo apoiado na mão.',
+          'À noite, a esposa do Vytautas, Rasa, põe na mesa torta de batata e creme azedo. Pela janela ela nota as calças do Petras secando na cerca e pergunta, curiosa: “O que foi que aconteceu com o Petras?” O Vytautas e o Linu se entreolham. A Rasa espera a resposta, com o queixo apoiado na mão.',
         choices: [
           { text: 'Laikyti liežuvį už dantų ir pasakyti, kad Petras tiesiog maudėsi.', translation: 'Guardar segredo e dizer que o Petras só estava tomando banho de lago.', next: 'final_bom' },
           { text: 'Papasakoti viską apie lydeką ir kritimą į ežerą.', translation: 'Contar tudo sobre o lúcio e a queda no lago.', next: 'final_neutro' },
@@ -3097,23 +3097,23 @@ export const STORIES_LT: StorySeed[] = [
       },
       final_bom: {
         emoji: '🍄',
-        text: 'Rasa pakelia antakį, bet daugiau nieko neklausia. Kitą rytą Petras atneša į sodybą pilną krepšį baravykų. «Čia tau, už tai, kad moki laikyti liežuvį už dantų», – sako jis Linu. Vytautas juokiasi, kad per vieną savaitgalį Linu tapo tikru aukštaičiu.',
+        text: 'Rasa pakelia antakį, bet daugiau nieko neklausia. Kitą rytą Petras atneša į sodybą pilną krepšį baravykų. “Čia tau, už tai, kad moki laikyti liežuvį už dantų”, – sako jis Linu. Vytautas juokiasi, kad per vieną savaitgalį Linu tapo tikru aukštaičiu.',
         translation:
-          'A Rasa levanta uma sobrancelha, mas não pergunta mais nada. Na manhã seguinte o Petras traz ao sítio uma cesta cheia de cogumelos porcini. «Isto é para você, por saber guardar segredo», diz ele ao Linu. O Vytautas ri e diz que num único fim de semana o Linu virou um aukštaitis de verdade.',
+          'A Rasa levanta uma sobrancelha, mas não pergunta mais nada. Na manhã seguinte o Petras traz ao sítio uma cesta cheia de cogumelos porcini. “Isto é para você, por saber guardar segredo”, diz ele ao Linu. O Vytautas ri e diz que num único fim de semana o Linu virou um aukštaitis de verdade.',
         ending: { tone: 'bom', title: 'Boca de siri', message: 'Você entendeu cada expressão — da lebre que não foge à língua atrás dos dentes — e guardou o segredo do Petras.' },
       },
       final_neutro: {
         emoji: '😅',
-        text: 'Linu papasakoja viską, ir Rasa juokiasi taip, kad net ašaros rieda. Kitą dieną apie Petro lydeką ir jo maudynes su kelnėmis žino visas kaimas. Petras su Linu nesikalba iki pat jo išvažiavimo. «Visas kaimas iš adatos vežimą priskaldė», – bamba jis, nors istorija buvo visai tikra.',
+        text: 'Linu papasakoja viską, ir Rasa juokiasi taip, kad net ašaros rieda. Kitą dieną apie Petro lydeką ir jo maudynes su kelnėmis žino visas kaimas. Petras su Linu nesikalba iki pat jo išvažiavimo. “Visas kaimas iš adatos vežimą priskaldė”, – bamba jis, nors istorija buvo visai tikra.',
         translation:
-          'O Linu conta tudo, e a Rasa ri tanto que chega a chorar. No dia seguinte, a vila inteira já sabe do lúcio do Petras e do banho de calças. O Petras não fala com o Linu até o dia em que ele vai embora. «A vila inteira fez tempestade em copo d’água», resmunga ele, embora a história fosse bem verdadeira.',
+          'O Linu conta tudo, e a Rasa ri tanto que chega a chorar. No dia seguinte, a vila inteira já sabe do lúcio do Petras e do banho de calças. O Petras não fala com o Linu até o dia em que ele vai embora. “A vila inteira fez tempestade em copo d’água”, resmunga ele, embora a história fosse bem verdadeira.',
         ending: { tone: 'neutro', title: 'Segredo vazado', message: 'A história era boa demais para guardar — mas você tinha prometido segurar a língua atrás dos dentes.' },
       },
       karsta: {
         emoji: '🥵',
-        text: 'Linu nori parodyti, kad jam nekaršta, ir sėdi ant viršutinio suolo vis ilgiau. Galiausiai jam ima suktis galva, ir Vytautas išveda jį į lauką atsigulti ant žolės. «Pirtis – ne varžybos», – sako šeimininkas, paduodamas jam puodelį vėsios giros. Visą vakarą Linu guli po obelimi ir žiūri į debesis.',
+        text: 'Linu nori parodyti, kad jam nekaršta, ir sėdi ant viršutinio suolo vis ilgiau. Galiausiai jam ima suktis galva, ir Vytautas išveda jį į lauką atsigulti ant žolės. “Pirtis – ne varžybos”, – sako šeimininkas, paduodamas jam puodelį vėsios giros. Visą vakarą Linu guli po obelimi ir žiūri į debesis.',
         translation:
-          'O Linu quer mostrar que não está com calor e fica cada vez mais tempo no banco de cima. Por fim começa a ficar tonto, e o Vytautas o leva para fora para deitar na grama. «Sauna não é competição», diz o anfitrião, entregando-lhe uma caneca de gira (bebida de pão fermentado) geladinha. A noite inteira o Linu fica deitado debaixo da macieira, olhando as nuvens.',
+          'O Linu quer mostrar que não está com calor e fica cada vez mais tempo no banco de cima. Por fim começa a ficar tonto, e o Vytautas o leva para fora para deitar na grama. “Sauna não é competição”, diz o anfitrião, entregando-lhe uma caneca de gira (bebida de pão fermentado) geladinha. A noite inteira o Linu fica deitado debaixo da macieira, olhando as nuvens.',
         ending: { tone: 'neutro', title: 'Quente demais', message: 'Na pirtis não há pressa nem competição — o Vytautas avisou logo de manhã.' },
       },
     },
@@ -3127,7 +3127,7 @@ export const STORIES_LT: StorySeed[] = [
     emoji: '🎤',
     summary: 'Numa escola de Klaipėda, o Linu é jurado convidado de um debate sobre proibir celulares nas aulas — e precisa seguir os conectores para saber quem defende o quê.',
     cultural_context:
-      'Klaipėda é o único porto marítimo da Lituânia; na praça do Teatro fica a estátua de Ännchen von Tharau (Taravos Anikė), homenagem ao poeta Simon Dach, nascido na cidade. Na escrita lituana, antes de conectores que abrem oração, como «tačiau», «nes», «kad» e «todėl», vai vírgula.',
+      'Klaipėda é o único porto marítimo da Lituânia; na praça do Teatro fica a estátua de Ännchen von Tharau (Taravos Anikė), homenagem ao poeta Simon Dach, nascido na cidade. Na escrita lituana, antes de conectores que abrem oração, como “tačiau”, “nes”, “kad” e “todėl”, vai vírgula.',
     start: 'start',
     glossary: [
       ['tačiau', 'porém, no entanto'],
@@ -3142,9 +3142,9 @@ export const STORIES_LT: StorySeed[] = [
     nodes: {
       start: {
         emoji: '⚓',
-        text: 'Klaipėdoje pučia vėjas nuo marių, o Linu skuba per Teatro aikštę, pro Taravos Anikės skulptūrą, į vieną senamiesčio gimnaziją. Šiandien jis – svečias komisijos narys moksleivių debatų turnyre. Tema skamba paprastai, tačiau kelia daug aistrų: «Ar mokyklose reikėtų uždrausti mobiliuosius telefonus?» Salė pilna, o dvi komandos jau sėdi viena priešais kitą.',
+        text: 'Klaipėdoje pučia vėjas nuo marių, o Linu skuba per Teatro aikštę, pro Taravos Anikės skulptūrą, į vieną senamiesčio gimnaziją. Šiandien jis – svečias komisijos narys moksleivių debatų turnyre. Tema skamba paprastai, tačiau kelia daug aistrų: “Ar mokyklose reikėtų uždrausti mobiliuosius telefonus?” Salė pilna, o dvi komandos jau sėdi viena priešais kitą.',
         translation:
-          'Em Klaipėda sopra o vento da laguna, e o Linu atravessa depressa a praça do Teatro, passando pela estátua de Ännchen von Tharau, rumo a uma escola da cidade velha. Hoje ele é jurado convidado de um torneio de debates de estudantes. O tema parece simples, mas desperta muita paixão: «As escolas deveriam proibir os celulares?» O auditório está cheio, e os dois times já estão sentados frente a frente.',
+          'Em Klaipėda sopra o vento da laguna, e o Linu atravessa depressa a praça do Teatro, passando pela estátua de Ännchen von Tharau, rumo a uma escola da cidade velha. Hoje ele é jurado convidado de um torneio de debates de estudantes. O tema parece simples, mas desperta muita paixão: “As escolas deveriam proibir os celulares?” O auditório está cheio, e os dois times já estão sentados frente a frente.',
         choices: [
           { text: 'Užimti vietą prie komisijos stalo.', translation: 'Sentar-se à mesa dos jurados.', next: 'ieva' },
           { text: 'Pirma paklausti mokytojos apie taisykles.', translation: 'Primeiro perguntar à professora sobre as regras.', next: 'taisykles' },
@@ -3152,66 +3152,66 @@ export const STORIES_LT: StorySeed[] = [
       },
       taisykles: {
         emoji: '📋',
-        text: 'Mokytoja Daiva paaiškina, kad kiekviena komanda turi po tris minutes kalbai. Vertinami ne tik argumentai, bet ir tai, kaip jie sujungti: «Svarbu ne tik ką sakai, bet ir kaip jungi mintis – pirma, antra, be to, todėl.» Be to, komisijos narys turi pagrįsti savo sprendimą, o ne tik pasakyti, kas laimėjo. Linu viską užsirašo į sąsiuvinį.',
+        text: 'Mokytoja Daiva paaiškina, kad kiekviena komanda turi po tris minutes kalbai. Vertinami ne tik argumentai, bet ir tai, kaip jie sujungti: “Svarbu ne tik ką sakai, bet ir kaip jungi mintis – pirma, antra, be to, todėl.” Be to, komisijos narys turi pagrįsti savo sprendimą, o ne tik pasakyti, kas laimėjo. Linu viską užsirašo į sąsiuvinį.',
         translation:
-          'A professora Daiva explica que cada time tem três minutos para falar. Não se avaliam só os argumentos, mas também como eles estão ligados: «Importa não só o que você diz, mas como liga as ideias — primeiro, segundo, além disso, por isso.» Além do mais, o jurado precisa fundamentar a decisão, e não só dizer quem ganhou. O Linu anota tudo no caderno.',
+          'A professora Daiva explica que cada time tem três minutos para falar. Não se avaliam só os argumentos, mas também como eles estão ligados: “Importa não só o que você diz, mas como liga as ideias — primeiro, segundo, além disso, por isso.” Além do mais, o jurado precisa fundamentar a decisão, e não só dizer quem ganhou. O Linu anota tudo no caderno.',
         choices: [{ text: 'Užimti vietą prie komisijos stalo.', translation: 'Sentar-se à mesa dos jurados.', next: 'ieva' }],
       },
       ieva: {
         emoji: '🙋‍♀️',
-        text: 'Pirmoji kalba Ieva, teigiamos komandos kapitonė. «Pirma, telefonai blaško dėmesį per pamokas. Antra, per pertraukas mokiniai nebesikalba: užuot bendravę, jie spokso į ekranus. Be to, be telefonų mokiniams lengviau susikaupti, todėl siūlome juos palikti spintelėse iki pamokų pabaigos.»',
+        text: 'Pirmoji kalba Ieva, teigiamos komandos kapitonė. “Pirma, telefonai blaško dėmesį per pamokas. Antra, per pertraukas mokiniai nebesikalba: užuot bendravę, jie spokso į ekranus. Be to, be telefonų mokiniams lengviau susikaupti, todėl siūlome juos palikti spintelėse iki pamokų pabaigos.”',
         translation:
-          'A primeira a falar é a Ieva, capitã do time a favor. «Primeiro, os celulares distraem a atenção durante as aulas. Segundo, nos intervalos os alunos já não conversam: em vez de conviver, ficam vidrados nas telas. Além disso, sem celular os alunos se concentram com mais facilidade, por isso propomos deixá-los nos armários até o fim das aulas.»',
+          'A primeira a falar é a Ieva, capitã do time a favor. “Primeiro, os celulares distraem a atenção durante as aulas. Segundo, nos intervalos os alunos já não conversam: em vez de conviver, ficam vidrados nas telas. Além disso, sem celular os alunos se concentram com mais facilidade, por isso propomos deixá-los nos armários até o fim das aulas.”',
         choices: [
           { text: 'Išklausyti priešingos komandos atsakymą.', translation: 'Ouvir a resposta do time contrário.', next: 'mantas' },
           {
             text: 'Užsirašyti, kad Ieva nori, jog per pertraukas mokiniai daugiau žiūrėtų į ekranus.',
             translation: 'Anotar que a Ieva quer que os alunos olhem mais para as telas nos intervalos.',
-            wrong: '«Užuot bendravę» quer dizer «em vez de conviver»: a Ieva reclama justamente que os alunos olham para as telas EM VEZ de conversar. Ela quer menos tela, não mais.',
+            wrong: '“Užuot bendravę” quer dizer “em vez de conviver”: a Ieva reclama justamente que os alunos olham para as telas EM VEZ de conversar. Ela quer menos tela, não mais.',
           },
         ],
       },
       mantas: {
         emoji: '🙋‍♂️',
-        text: 'Tada atsistoja Mantas iš neigiamos komandos. «Sutinku, kad telefonai kartais blaško, tačiau draudimas – ne išeitis. Telefonas yra ir žodynas, ir skaičiuotuvas, ir žemėlapis, be to, tėvai nori galėti susisiekti su vaikais. Vis dėlto svarbiausia kita: jei mokykla viską draudžia, mokiniai niekada neišmoks patys valdyti savo laiko.»',
+        text: 'Tada atsistoja Mantas iš neigiamos komandos. “Sutinku, kad telefonai kartais blaško, tačiau draudimas – ne išeitis. Telefonas yra ir žodynas, ir skaičiuotuvas, ir žemėlapis, be to, tėvai nori galėti susisiekti su vaikais. Vis dėlto svarbiausia kita: jei mokykla viską draudžia, mokiniai niekada neišmoks patys valdyti savo laiko.”',
         translation:
-          'Então se levanta o Mantas, do time contra. «Concordo que os celulares às vezes distraem, porém proibir não é a saída. O celular é dicionário, calculadora e mapa ao mesmo tempo; além disso, os pais querem poder falar com os filhos. Mesmo assim, o mais importante é outra coisa: se a escola proíbe tudo, os alunos nunca vão aprender a administrar o próprio tempo.»',
+          'Então se levanta o Mantas, do time contra. “Concordo que os celulares às vezes distraem, porém proibir não é a saída. O celular é dicionário, calculadora e mapa ao mesmo tempo; além disso, os pais querem poder falar com os filhos. Mesmo assim, o mais importante é outra coisa: se a escola proíbe tudo, os alunos nunca vão aprender a administrar o próprio tempo.”',
         choices: [
           { text: 'Užduoti Mantui klausimą.', translation: 'Fazer uma pergunta ao Mantas.', next: 'klausimas' },
           {
-            text: 'Pažymėti, kad Mantas pritaria draudimui, nes jis pasakė «sutinku».',
-            translation: 'Marcar que o Mantas apoia a proibição, porque ele disse «concordo».',
-            wrong: 'O Mantas concorda só em parte («sutinku, kad…» — concordo que distraem), mas logo vem o «tačiau» (porém): para ele, proibir não é a saída. Ele é contra a proibição.',
+            text: 'Pažymėti, kad Mantas pritaria draudimui, nes jis pasakė “sutinku”.',
+            translation: 'Marcar que o Mantas apoia a proibição, porque ele disse “concordo”.',
+            wrong: 'O Mantas concorda só em parte (“sutinku, kad…” — concordo que distraem), mas logo vem o “tačiau” (porém): para ele, proibir não é a saída. Ele é contra a proibição.',
           },
         ],
       },
       klausimas: {
         emoji: '❓',
-        text: 'Linu paklausia: «O jeigu telefonus leistume naudoti tik per pertraukas, ar tai būtų kompromisas?» Mantas akimirką pagalvoja ir atsako, kad pertraukos tada taptų dar tylesnės, bet mokiniai bent jau išmoktų savidrausmės. Ieva iš savo vietos šūkteli: «Būtent todėl mes ir siūlome juos surinkti ryte!» Salėje kyla juokas, o mokytoja primena, kad kalbėti galima tik gavus žodį.',
+        text: 'Linu paklausia: “O jeigu telefonus leistume naudoti tik per pertraukas, ar tai būtų kompromisas?” Mantas akimirką pagalvoja ir atsako, kad pertraukos tada taptų dar tylesnės, bet mokiniai bent jau išmoktų savidrausmės. Ieva iš savo vietos šūkteli: “Būtent todėl mes ir siūlome juos surinkti ryte!” Salėje kyla juokas, o mokytoja primena, kad kalbėti galima tik gavus žodį.',
         translation:
-          'O Linu pergunta: «E se deixássemos usar o celular só nos intervalos, seria um meio-termo?» O Mantas pensa um instante e responde que aí os intervalos ficariam ainda mais silenciosos, mas os alunos pelo menos aprenderiam autodisciplina. A Ieva grita do seu lugar: «É justamente por isso que propomos recolhê-los de manhã!» O auditório cai na risada, e a professora lembra que só se pode falar quando se recebe a palavra.',
+          'O Linu pergunta: “E se deixássemos usar o celular só nos intervalos, seria um meio-termo?” O Mantas pensa um instante e responde que aí os intervalos ficariam ainda mais silenciosos, mas os alunos pelo menos aprenderiam autodisciplina. A Ieva grita do seu lugar: “É justamente por isso que propomos recolhê-los de manhã!” O auditório cai na risada, e a professora lembra que só se pode falar quando se recebe a palavra.',
         choices: [{ text: 'Pasiruošti komisijos vertinimui.', translation: 'Preparar-se para a avaliação dos jurados.', next: 'vertinimas' }],
       },
       vertinimas: {
         emoji: '⚖️',
-        text: 'Komisijos pirmininkė paprašo Linu ne tik pasakyti, kuri komanda laimėjo, bet ir pagrįsti savo nuomonę. «Mūsų turnyre svarbu ne tai, kuri pusė teisi, o tai, kuri geriau argumentavo», – priduria ji. Linu peržvelgia užrašus: Ieva kalbėjo aiškiai ir nuosekliai, tačiau Mantas geriau atsakė į klausimus. Dabar jis turi nuspręsti.',
+        text: 'Komisijos pirmininkė paprašo Linu ne tik pasakyti, kuri komanda laimėjo, bet ir pagrįsti savo nuomonę. “Mūsų turnyre svarbu ne tai, kuri pusė teisi, o tai, kuri geriau argumentavo”, – priduria ji. Linu peržvelgia užrašus: Ieva kalbėjo aiškiai ir nuosekliai, tačiau Mantas geriau atsakė į klausimus. Dabar jis turi nuspręsti.',
         translation:
-          'A presidente da banca pede ao Linu que não só diga qual time ganhou, mas também fundamente sua opinião. «No nosso torneio, o que importa não é qual lado tem razão, e sim qual argumentou melhor», acrescenta ela. O Linu revisa as anotações: a Ieva falou de forma clara e coerente, porém o Mantas respondeu melhor às perguntas. Agora ele precisa decidir.',
+          'A presidente da banca pede ao Linu que não só diga qual time ganhou, mas também fundamente sua opinião. “No nosso torneio, o que importa não é qual lado tem razão, e sim qual argumentou melhor”, acrescenta ela. O Linu revisa as anotações: a Ieva falou de forma clara e coerente, porém o Mantas respondeu melhor às perguntas. Agora ele precisa decidir.',
         choices: [
           {
-            text: '«Nors abi komandos buvo stiprios, laimi Mantas, nes jis ne tik gynė savo poziciją, bet ir atsakė į kritiką.»',
-            translation: '«Embora os dois times tenham sido fortes, o Mantas vence, porque não só defendeu sua posição como também respondeu às críticas.»',
+            text: '“Nors abi komandos buvo stiprios, laimi Mantas, nes jis ne tik gynė savo poziciją, bet ir atsakė į kritiką.”',
+            translation: '“Embora os dois times tenham sido fortes, o Mantas vence, porque não só defendeu sua posição como também respondeu às críticas.”',
             next: 'final_bom',
           },
-          { text: '«Laimi Ieva, nes aš irgi nemėgstu telefonų.»', translation: '«A Ieva vence, porque eu também não gosto de celulares.»', next: 'final_neutro' },
+          { text: '“Laimi Ieva, nes aš irgi nemėgstu telefonų.”', translation: '“A Ieva vence, porque eu também não gosto de celulares.”', next: 'final_neutro' },
         ],
       },
       final_bom: {
         emoji: '🏆',
-        text: 'Salė ploja, o Mantas paspaudžia Ievai ranką. Mokytoja pagiria Linu, kad jis vertino argumentus, o ne savo paties skonį. Po turnyro Ieva prieina prie jo ir prisipažįsta: «Tavo klausimas buvo sunkus, tačiau teisingas.» Išėjęs į lauką, Linu mato, kaip visi moksleiviai tuoj pat išsitraukia telefonus, ir nusijuokia.',
+        text: 'Salė ploja, o Mantas paspaudžia Ievai ranką. Mokytoja pagiria Linu, kad jis vertino argumentus, o ne savo paties skonį. Po turnyro Ieva prieina prie jo ir prisipažįsta: “Tavo klausimas buvo sunkus, tačiau teisingas.” Išėjęs į lauką, Linu mato, kaip visi moksleiviai tuoj pat išsitraukia telefonus, ir nusijuokia.',
         translation:
-          'O auditório aplaude, e o Mantas aperta a mão da Ieva. A professora elogia o Linu por ter avaliado os argumentos, e não o próprio gosto. Depois do torneio, a Ieva vem até ele e confessa: «Sua pergunta foi difícil, mas justa.» Ao sair, o Linu vê todos os estudantes tirando o celular do bolso na mesma hora, e cai na risada.',
-        ending: { tone: 'bom', title: 'Jurado de verdade', message: 'Você seguiu cada «tačiau», «be to» e «užuot» e julgou pelos argumentos — exatamente o que um debate pede.' },
+          'O auditório aplaude, e o Mantas aperta a mão da Ieva. A professora elogia o Linu por ter avaliado os argumentos, e não o próprio gosto. Depois do torneio, a Ieva vem até ele e confessa: “Sua pergunta foi difícil, mas justa.” Ao sair, o Linu vê todos os estudantes tirando o celular do bolso na mesma hora, e cai na risada.',
+        ending: { tone: 'bom', title: 'Jurado de verdade', message: 'Você seguiu cada “tačiau”, “be to” e “užuot” e julgou pelos argumentos — exatamente o que um debate pede.' },
       },
       final_neutro: {
         emoji: '😬',
@@ -3230,7 +3230,7 @@ export const STORIES_LT: StorySeed[] = [
     emoji: '✉️',
     summary: 'Em Druskininkai, a senhoria do Linu quer escrever ao jornal contra um hotel no pinhal à beira do Nemunas — e ele ajuda com os argumentos, o contra-argumento e as vírgulas.',
     cultural_context:
-      'Druskininkai, à beira do rio Nemunas, é a estância termal mais famosa da Lituânia, conhecida pelas águas minerais e pelos pinhais; o pintor e compositor M. K. Čiurlionis passou ali a infância. Na pontuação lituana, a vírgula antes de «kad» (que) e «nes» (porque), quando abrem uma oração subordinada, é obrigatória — e esquecê-la é um erro clássico.',
+      'Druskininkai, à beira do rio Nemunas, é a estância termal mais famosa da Lituânia, conhecida pelas águas minerais e pelos pinhais; o pintor e compositor M. K. Čiurlionis passou ali a infância. Na pontuação lituana, a vírgula antes de “kad” (que) e “nes” (porque), quando abrem uma oração subordinada, é obrigatória — e esquecê-la é um erro clássico.',
     start: 'start',
     glossary: [
       ['laiškas redakcijai', 'carta à redação (do jornal)'],
@@ -3245,9 +3245,9 @@ export const STORIES_LT: StorySeed[] = [
     nodes: {
       start: {
         emoji: '🌲',
-        text: 'Druskininkai garsėja mineraliniu vandeniu, pušynais ir ramybe, todėl čia ilsėtis ir gydytis atvažiuoja žmonės iš visos Lietuvos. Linu nuomojasi kambarėlį pas ponią Genovaitę, kuri kiekvieną rytą skaito vietinį laikraštį. Šįryt ji piktai trenkia laikraštį ant stalo: pušyne prie Nemuno planuojama statyti naują didžiulį viešbutį. «Reikia rašyti laišką redakcijai! – sako ji. – Tik mano rašyba... Gal padėsi?»',
+        text: 'Druskininkai garsėja mineraliniu vandeniu, pušynais ir ramybe, todėl čia ilsėtis ir gydytis atvažiuoja žmonės iš visos Lietuvos. Linu nuomojasi kambarėlį pas ponią Genovaitę, kuri kiekvieną rytą skaito vietinį laikraštį. Šįryt ji piktai trenkia laikraštį ant stalo: pušyne prie Nemuno planuojama statyti naują didžiulį viešbutį. “Reikia rašyti laišką redakcijai! – sako ji. – Tik mano rašyba... Gal padėsi?”',
         translation:
-          'Druskininkai é famosa pela água mineral, pelos pinhais e pelo sossego, por isso gente de toda a Lituânia vem aqui descansar e se tratar. O Linu aluga um quartinho na casa da dona Genovaitė, que toda manhã lê o jornal local. Hoje ela bate o jornal na mesa, brava: planejam construir um hotel enorme no pinhal à beira do Nemunas. «Tem que escrever uma carta para a redação!», diz ela. «Só que a minha ortografia... Você me ajuda?»',
+          'Druskininkai é famosa pela água mineral, pelos pinhais e pelo sossego, por isso gente de toda a Lituânia vem aqui descansar e se tratar. O Linu aluga um quartinho na casa da dona Genovaitė, que toda manhã lê o jornal local. Hoje ela bate o jornal na mesa, brava: planejam construir um hotel enorme no pinhal à beira do Nemunas. “Tem que escrever uma carta para a redação!”, diz ela. “Só que a minha ortografia... Você me ajuda?”',
         choices: [
           { text: 'Sutikti ir pirmiausia paklausti jos argumentų.', translation: 'Aceitar e primeiro perguntar quais são os argumentos dela.', next: 'argumentai' },
           { text: 'Pasiūlyti pirma nueiti pasižiūrėti į tą pušyną.', translation: 'Propor ir primeiro ver o tal pinhal.', next: 'pusynas' },
@@ -3255,23 +3255,23 @@ export const STORIES_LT: StorySeed[] = [
       },
       pusynas: {
         emoji: '🚶',
-        text: 'Jie eina takeliu palei Nemuną, kur tarp pušų stovi senas medinis suoliukas. Genovaitė pasakoja, kad vaikystėje čia rinkdavo grybus, o dabar čia vaikštinėja kurorto svečiai. Pakeliui jie sutinka kaimyną Algirdą, kuris mano visai kitaip: naujas viešbutis atneštų darbo vietų jaunimui, kuris dabar išvažiuoja į didmiesčius. «Kita vertus, jei iškirs pušyną, kas čia beatvažiuos?» – atkerta Genovaitė.',
+        text: 'Jie eina takeliu palei Nemuną, kur tarp pušų stovi senas medinis suoliukas. Genovaitė pasakoja, kad vaikystėje čia rinkdavo grybus, o dabar čia vaikštinėja kurorto svečiai. Pakeliui jie sutinka kaimyną Algirdą, kuris mano visai kitaip: naujas viešbutis atneštų darbo vietų jaunimui, kuris dabar išvažiuoja į didmiesčius. “Kita vertus, jei iškirs pušyną, kas čia beatvažiuos?” – atkerta Genovaitė.',
         translation:
-          'Eles seguem pela trilha ao longo do Nemunas, onde entre os pinheiros há um velho banco de madeira. A Genovaitė conta que na infância colhia cogumelos ali, e agora quem passeia por lá são os hóspedes da estância. No caminho encontram o vizinho Algirdas, que pensa bem diferente: o hotel novo traria empregos para os jovens, que hoje vão embora para as cidades grandes. «Por outro lado, se derrubarem o pinhal, quem é que ainda vai vir para cá?», rebate a Genovaitė.',
+          'Eles seguem pela trilha ao longo do Nemunas, onde entre os pinheiros há um velho banco de madeira. A Genovaitė conta que na infância colhia cogumelos ali, e agora quem passeia por lá são os hóspedes da estância. No caminho encontram o vizinho Algirdas, que pensa bem diferente: o hotel novo traria empregos para os jovens, que hoje vão embora para as cidades grandes. “Por outro lado, se derrubarem o pinhal, quem é que ainda vai vir para cá?”, rebate a Genovaitė.',
         choices: [
           { text: 'Grįžti namo ir sėsti rašyti.', translation: 'Voltar para casa e sentar para escrever.', next: 'argumentai' },
           {
             text: 'Nuspręsti, kad Algirdas nori iškirsti pušyną, nes nemėgsta medžių.',
             translation: 'Concluir que o Algirdas quer derrubar o pinhal porque não gosta de árvores.',
-            wrong: 'O Algirdas defende o hotel por causa dos empregos para os jovens que estão indo embora — não por não gostar de árvores. Quem diz «kita vertus» (por outro lado) é a Genovaitė, rebatendo o argumento dele.',
+            wrong: 'O Algirdas defende o hotel por causa dos empregos para os jovens que estão indo embora — não por não gostar de árvores. Quem diz “kita vertus” (por outro lado) é a Genovaitė, rebatendo o argumento dele.',
           },
         ],
       },
       argumentai: {
         emoji: '📝',
-        text: 'Genovaitė diktuoja, o Linu rašo. «Pirma, pušynas – tai miesto plaučiai. Antra, žmonės čia važiuoja būtent dėl ramybės, taigi didelis viešbutis ją sugadintų. Be to, mieste jau yra nemažai viešbučių, kurie ne sezono metu stovi pustuščiai.» Linu pastebi, kad ji nė žodžiu neužsiminė apie kaimyno argumentą dėl darbo vietų.',
+        text: 'Genovaitė diktuoja, o Linu rašo. “Pirma, pušynas – tai miesto plaučiai. Antra, žmonės čia važiuoja būtent dėl ramybės, taigi didelis viešbutis ją sugadintų. Be to, mieste jau yra nemažai viešbučių, kurie ne sezono metu stovi pustuščiai.” Linu pastebi, kad ji nė žodžiu neužsiminė apie kaimyno argumentą dėl darbo vietų.',
         translation:
-          'A Genovaitė dita, e o Linu escreve. «Primeiro, o pinhal é o pulmão da cidade. Segundo, as pessoas vêm aqui justamente pelo sossego, portanto um hotel grande o estragaria. Além disso, a cidade já tem bastantes hotéis, que fora da temporada ficam meio vazios.» O Linu percebe que ela não disse uma palavra sobre o argumento do vizinho a respeito dos empregos.',
+          'A Genovaitė dita, e o Linu escreve. “Primeiro, o pinhal é o pulmão da cidade. Segundo, as pessoas vêm aqui justamente pelo sossego, portanto um hotel grande o estragaria. Além disso, a cidade já tem bastantes hotéis, que fora da temporada ficam meio vazios.” O Linu percebe que ela não disse uma palavra sobre o argumento do vizinho a respeito dos empregos.',
         choices: [
           { text: 'Pasiūlyti laiške paminėti ir priešingą nuomonę.', translation: 'Sugerir mencionar na carta também a opinião contrária.', next: 'kita_vertus' },
           { text: 'Rašyti tik tai, ką ji diktuoja.', translation: 'Escrever só o que ela dita.', next: 'tik_savo' },
@@ -3279,31 +3279,31 @@ export const STORIES_LT: StorySeed[] = [
       },
       kita_vertus: {
         emoji: '🤝',
-        text: '«Laiškas bus stipresnis, jei parodysite, kad girdite ir kitą pusę», – sako Linu. Genovaitė iš pradžių susiraukia, tačiau paskui linkteli. Jie parašo: «Suprantame, kad miestui reikia darbo vietų. Vis dėlto, užuot kirtę pušyną, galėtume atnaujinti kurį nors seną, nenaudojamą pastatą mieste.»',
+        text: '“Laiškas bus stipresnis, jei parodysite, kad girdite ir kitą pusę”, – sako Linu. Genovaitė iš pradžių susiraukia, tačiau paskui linkteli. Jie parašo: “Suprantame, kad miestui reikia darbo vietų. Vis dėlto, užuot kirtę pušyną, galėtume atnaujinti kurį nors seną, nenaudojamą pastatą mieste.”',
         translation:
-          '«A carta vai ficar mais forte se a senhora mostrar que ouve também o outro lado», diz o Linu. A Genovaitė a princípio fecha a cara, mas depois concorda com a cabeça. Eles escrevem: «Entendemos que a cidade precisa de empregos. Ainda assim, em vez de derrubar o pinhal, poderíamos reformar algum prédio antigo e sem uso na cidade.»',
+          '“A carta vai ficar mais forte se a senhora mostrar que ouve também o outro lado”, diz o Linu. A Genovaitė a princípio fecha a cara, mas depois concorda com a cabeça. Eles escrevem: “Entendemos que a cidade precisa de empregos. Ainda assim, em vez de derrubar o pinhal, poderíamos reformar algum prédio antigo e sem uso na cidade.”',
         choices: [{ text: 'Patikrinti skyrybą.', translation: 'Conferir a pontuação.', next: 'kableliai' }],
       },
       kableliai: {
         emoji: '✏️',
-        text: 'Belieka patikrinti skyrybą. Genovaitė pati parašė paskutinį sakinį: «Mes nenorime kad pušyną iškirstų nes jis mums brangus.» Linu primena, kad lietuvių kalboje prieš «kad» ir «nes», kai jie pradeda šalutinį sakinį, rašomas kablelis. Genovaitė atsidūsta: «Mokykloje mane už tai bardavo, o dabar bara pingvinas.»',
+        text: 'Belieka patikrinti skyrybą. Genovaitė pati parašė paskutinį sakinį: “Mes nenorime kad pušyną iškirstų nes jis mums brangus.” Linu primena, kad lietuvių kalboje prieš “kad” ir “nes”, kai jie pradeda šalutinį sakinį, rašomas kablelis. Genovaitė atsidūsta: “Mokykloje mane už tai bardavo, o dabar bara pingvinas.”',
         translation:
-          'Só falta conferir a pontuação. A própria Genovaitė escreveu a última frase: «Mes nenorime kad pušyną iškirstų nes jis mums brangus» (não queremos que derrubem o pinhal porque ele nos é caro). O Linu lembra que em lituano, antes de «kad» e «nes», quando abrem uma oração subordinada, vai vírgula. A Genovaitė suspira: «Na escola me davam bronca por isso, e agora quem me dá bronca é um pinguim.»',
+          'Só falta conferir a pontuação. A própria Genovaitė escreveu a última frase: “Mes nenorime kad pušyną iškirstų nes jis mums brangus” (não queremos que derrubem o pinhal porque ele nos é caro). O Linu lembra que em lituano, antes de “kad” e “nes”, quando abrem uma oração subordinada, vai vírgula. A Genovaitė suspira: “Na escola me davam bronca por isso, e agora quem me dá bronca é um pinguim.”',
         choices: [
-          { text: 'Pataisyti: «Mes nenorime, kad pušyną iškirstų, nes jis mums brangus.»', translation: 'Corrigir: «Não queremos que derrubem o pinhal, porque ele nos é caro.»', next: 'final_bom' },
+          { text: 'Pataisyti: “Mes nenorime, kad pušyną iškirstų, nes jis mums brangus.”', translation: 'Corrigir: “Não queremos que derrubem o pinhal, porque ele nos é caro.”', next: 'final_bom' },
           {
-            text: 'Pataisyti: «Mes, nenorime kad pušyną, iškirstų nes jis mums brangus.»',
+            text: 'Pataisyti: “Mes, nenorime kad pušyną, iškirstų nes jis mums brangus.”',
             translation: 'Corrigir com vírgulas depois do sujeito e no meio do objeto.',
-            wrong: 'A vírgula lituana vem antes de «kad» (que) e de «nes» (porque), que abrem orações subordinadas — não depois do sujeito nem no meio da frase. O certo é «Mes nenorime, kad pušyną iškirstų, nes jis mums brangus».',
+            wrong: 'A vírgula lituana vem antes de “kad” (que) e de “nes” (porque), que abrem orações subordinadas — não depois do sujeito nem no meio da frase. O certo é “Mes nenorime, kad pušyną iškirstų, nes jis mums brangus”.',
           },
         ],
       },
       final_bom: {
         emoji: '📰',
-        text: 'Po savaitės laiškas išspausdinamas laikraštyje, ir Genovaitė garsiai jį perskaito visiems kaimynams. Net Algirdas pripažįsta, kad laiškas sąžiningas, nes jame paminėti ir jo argumentai. Savivaldybė pažada projektą dar kartą aptarti su gyventojais. «Na, bent jau kableliai savo vietose», – juokiasi Genovaitė.',
+        text: 'Po savaitės laiškas išspausdinamas laikraštyje, ir Genovaitė garsiai jį perskaito visiems kaimynams. Net Algirdas pripažįsta, kad laiškas sąžiningas, nes jame paminėti ir jo argumentai. Savivaldybė pažada projektą dar kartą aptarti su gyventojais. “Na, bent jau kableliai savo vietose”, – juokiasi Genovaitė.',
         translation:
-          'Uma semana depois, a carta sai no jornal, e a Genovaitė a lê em voz alta para todos os vizinhos. Até o Algirdas admite que a carta é honesta, porque menciona também os argumentos dele. A prefeitura promete discutir o projeto de novo com os moradores. «Bom, pelo menos as vírgulas estão no lugar», ri a Genovaitė.',
-        ending: { tone: 'bom', title: 'Carta com vírgulas no lugar', message: 'Você ajudou a montar uma argumentação honesta — com «kita vertus», «vis dėlto» e as vírgulas antes de «kad» e «nes».' },
+          'Uma semana depois, a carta sai no jornal, e a Genovaitė a lê em voz alta para todos os vizinhos. Até o Algirdas admite que a carta é honesta, porque menciona também os argumentos dele. A prefeitura promete discutir o projeto de novo com os moradores. “Bom, pelo menos as vírgulas estão no lugar”, ri a Genovaitė.',
+        ending: { tone: 'bom', title: 'Carta com vírgulas no lugar', message: 'Você ajudou a montar uma argumentação honesta — com “kita vertus”, “vis dėlto” e as vírgulas antes de “kad” e “nes”.' },
       },
       tik_savo: {
         emoji: '🗞️',
@@ -3322,7 +3322,7 @@ export const STORIES_LT: StorySeed[] = [
     emoji: '🚲',
     summary: 'Em Šiauliai, o Linu vai parar ao vivo num programa de rádio sobre trocar vagas de carro por uma ciclovia — e precisa ouvir os dois lados antes de dar a sua opinião.',
     cultural_context:
-      'Šiauliai, no norte da Lituânia, é apelidada «Cidade do Sol» (Saulės miestas): a tradição liga a cidade à Batalha do Sol (Saulės mūšis), de 1236, e no centro há uma praça com relógio de sol e a estátua dourada de um arqueiro. A cidade tem um museu da bicicleta, lembrança da grande fábrica de bicicletas que funcionou ali na época soviética.',
+      'Šiauliai, no norte da Lituânia, é apelidada “Cidade do Sol” (Saulės miestas): a tradição liga a cidade à Batalha do Sol (Saulės mūšis), de 1236, e no centro há uma praça com relógio de sol e a estátua dourada de um arqueiro. A cidade tem um museu da bicicleta, lembrança da grande fábrica de bicicletas que funcionou ali na época soviética.',
     start: 'start',
     glossary: [
       ['iš vienos pusės… iš kitos pusės…', 'por um lado… por outro…'],
@@ -3346,37 +3346,37 @@ export const STORIES_LT: StorySeed[] = [
       },
       skubota: {
         emoji: '📻',
-        text: '«Žinoma, takų reikia, ir viskas!» – sušunka Linu, vos užsidėjęs ausines. Vedėjas mandagiai nusišypso: «Nuomonė be argumentų – tik nuotaika. Pirmiausia išklausykime kitus svečius.» Linu nuraudęs linkteli ir pasiruošia klausytis. Vida jau pasilenkia prie mikrofono.',
+        text: '“Žinoma, takų reikia, ir viskas!” – sušunka Linu, vos užsidėjęs ausines. Vedėjas mandagiai nusišypso: “Nuomonė be argumentų – tik nuotaika. Pirmiausia išklausykime kitus svečius.” Linu nuraudęs linkteli ir pasiruošia klausytis. Vida jau pasilenkia prie mikrofono.',
         translation:
-          '«Claro que precisa de ciclovia, e pronto!», exclama o Linu, mal colocou os fones. O apresentador sorri com educação: «Opinião sem argumento é só humor do momento. Primeiro vamos ouvir os outros convidados.» O Linu, vermelho, concorda com a cabeça e se prepara para ouvir. A Vida já se inclina para o microfone.',
+          '“Claro que precisa de ciclovia, e pronto!”, exclama o Linu, mal colocou os fones. O apresentador sorri com educação: “Opinião sem argumento é só humor do momento. Primeiro vamos ouvir os outros convidados.” O Linu, vermelho, concorda com a cabeça e se prepara para ouvir. A Vida já se inclina para o microfone.',
         choices: [{ text: 'Išklausyti Vidą.', translation: 'Ouvir a Vida.', next: 'vida' }],
       },
       muziejus: {
         emoji: '🏛️',
-        text: 'Linu pasakoja, kad Šiauliuose yra Dviračių muziejus, kur galima pamatyti senovinių dviračių su milžinišku priekiniu ratu. «Taigi dviračiai čia turi ilgą istoriją», – šypsosi vedėjas. Tomas priduria, kad sovietmečiu Šiauliuose veikė didelė dviračių gamykla. Vida tik gūžteli pečiais: «Istorija istorija, tačiau mano klientai atvažiuoja automobiliais.»',
+        text: 'Linu pasakoja, kad Šiauliuose yra Dviračių muziejus, kur galima pamatyti senovinių dviračių su milžinišku priekiniu ratu. “Taigi dviračiai čia turi ilgą istoriją”, – šypsosi vedėjas. Tomas priduria, kad sovietmečiu Šiauliuose veikė didelė dviračių gamykla. Vida tik gūžteli pečiais: “Istorija istorija, tačiau mano klientai atvažiuoja automobiliais.”',
         translation:
-          'O Linu conta que Šiauliai tem um Museu da Bicicleta, onde dá para ver bicicletas antigas com uma roda dianteira gigante. «Então aqui a bicicleta tem uma longa história», sorri o apresentador. O Tomas acrescenta que na época soviética funcionava em Šiauliai uma grande fábrica de bicicletas. A Vida só dá de ombros: «História é história, mas os meus clientes chegam de carro.»',
+          'O Linu conta que Šiauliai tem um Museu da Bicicleta, onde dá para ver bicicletas antigas com uma roda dianteira gigante. “Então aqui a bicicleta tem uma longa história”, sorri o apresentador. O Tomas acrescenta que na época soviética funcionava em Šiauliai uma grande fábrica de bicicletas. A Vida só dá de ombros: “História é história, mas os meus clientes chegam de carro.”',
         choices: [{ text: 'Išklausyti Vidos argumentus.', translation: 'Ouvir os argumentos da Vida.', next: 'vida' }],
       },
       vida: {
         emoji: '🛒',
-        text: 'Vida kalba ramiai, bet tvirtai: «Iš vienos pusės, suprantu, kad važinėti dviračiu sveika ir ekologiška. Iš kitos pusės, jei panaikinsite stovėjimo vietas, pirkėjai tiesiog važiuos į prekybos centrą už miesto. Vadinasi, mažos parduotuvės užsidarys, o gatvė ištuštės.»',
+        text: 'Vida kalba ramiai, bet tvirtai: “Iš vienos pusės, suprantu, kad važinėti dviračiu sveika ir ekologiška. Iš kitos pusės, jei panaikinsite stovėjimo vietas, pirkėjai tiesiog važiuos į prekybos centrą už miesto. Vadinasi, mažos parduotuvės užsidarys, o gatvė ištuštės.”',
         translation:
-          'A Vida fala com calma, mas com firmeza: «Por um lado, entendo que a bicicleta é saudável e ecológica. Por outro, se vocês acabarem com as vagas, os clientes vão simplesmente ao shopping fora da cidade. Ou seja, as lojas pequenas vão fechar, e a rua vai se esvaziar.»',
+          'A Vida fala com calma, mas com firmeza: “Por um lado, entendo que a bicicleta é saudável e ecológica. Por outro, se vocês acabarem com as vagas, os clientes vão simplesmente ao shopping fora da cidade. Ou seja, as lojas pequenas vão fechar, e a rua vai se esvaziar.”',
         choices: [
           { text: 'Išklausyti Tomo atsakymą.', translation: 'Ouvir a resposta do Tomas.', next: 'tomas' },
           {
             text: 'Pasakyti, kad Vida apskritai prieš dviračius.',
             translation: 'Dizer que a Vida é contra a bicicleta em geral.',
-            wrong: 'A Vida diz «iš vienos pusės… iš kitos pusės» (por um lado… por outro): ela reconhece que a bicicleta é saudável e ecológica. O medo dela é outro — perder as vagas e, com elas, os clientes.',
+            wrong: 'A Vida diz “iš vienos pusės… iš kitos pusės” (por um lado… por outro): ela reconhece que a bicicleta é saudável e ecológica. O medo dela é outro — perder as vagas e, com elas, os clientes.',
           },
         ],
       },
       tomas: {
         emoji: '🎓',
-        text: 'Tomas atsako, kad daugelyje Europos miestų dviračių takai, jo žodžiais, atgaivino centrines gatves, nes dviratininkai dažniau sustoja ir užsuka į parduotuves. «Be to, – priduria jis, – dabar studentai į universitetą važiuoja tarp automobilių, o tai pavojinga.» Vida suraukia antakius, bet nieko neatsako. Vedėjas atsisuka į Linu: «O kokia jūsų nuomonė?»',
+        text: 'Tomas atsako, kad daugelyje Europos miestų dviračių takai, jo žodžiais, atgaivino centrines gatves, nes dviratininkai dažniau sustoja ir užsuka į parduotuves. “Be to, – priduria jis, – dabar studentai į universitetą važiuoja tarp automobilių, o tai pavojinga.” Vida suraukia antakius, bet nieko neatsako. Vedėjas atsisuka į Linu: “O kokia jūsų nuomonė?”',
         translation:
-          'O Tomas responde que em muitas cidades europeias as ciclovias, segundo ele, reavivaram as ruas centrais, porque os ciclistas param mais e entram nas lojas. «Além disso», acrescenta, «hoje os estudantes vão para a universidade pedalando no meio dos carros, e isso é perigoso.» A Vida franze a testa, mas não responde nada. O apresentador se vira para o Linu: «E qual é a sua opinião?»',
+          'O Tomas responde que em muitas cidades europeias as ciclovias, segundo ele, reavivaram as ruas centrais, porque os ciclistas param mais e entram nas lojas. “Além disso”, acrescenta, “hoje os estudantes vão para a universidade pedalando no meio dos carros, e isso é perigoso.” A Vida franze a testa, mas não responde nada. O apresentador se vira para o Linu: “E qual é a sua opinião?”',
         choices: [
           { text: 'Pasiūlyti kompromisą.', translation: 'Propor um meio-termo.', next: 'kompromisas' },
           { text: 'Palaikyti tik Tomą.', translation: 'Apoiar só o Tomas.', next: 'final_neutro' },
@@ -3384,9 +3384,9 @@ export const STORIES_LT: StorySeed[] = [
       },
       kompromisas: {
         emoji: '⚖️',
-        text: '«Mano nuomone, abu svečiai iš dalies teisūs, – sako Linu. – Todėl siūlyčiau taką įrengti, tačiau palikti kelias trumpalaikes stovėjimo vietas prie parduotuvių. Be to, būtų galima viską išbandyti vieną vasarą: jei pirkėjų sumažės, visada galima grįžti atgal.» Vida atsidūsta ir pripažįsta, kad bandomasis laikotarpis skamba protingai.',
+        text: '“Mano nuomone, abu svečiai iš dalies teisūs, – sako Linu. – Todėl siūlyčiau taką įrengti, tačiau palikti kelias trumpalaikes stovėjimo vietas prie parduotuvių. Be to, būtų galima viską išbandyti vieną vasarą: jei pirkėjų sumažės, visada galima grįžti atgal.” Vida atsidūsta ir pripažįsta, kad bandomasis laikotarpis skamba protingai.',
         translation:
-          '«Na minha opinião, os dois convidados têm razão em parte», diz o Linu. «Por isso eu proporia fazer a ciclovia, mas deixar algumas vagas rápidas perto das lojas. Além disso, daria para testar tudo durante um verão: se os clientes diminuírem, sempre dá para voltar atrás.» A Vida suspira e admite que um período de teste parece sensato.',
+          '“Na minha opinião, os dois convidados têm razão em parte”, diz o Linu. “Por isso eu proporia fazer a ciclovia, mas deixar algumas vagas rápidas perto das lojas. Além disso, daria para testar tudo durante um verão: se os clientes diminuírem, sempre dá para voltar atrás.” A Vida suspira e admite que um período de teste parece sensato.',
         choices: [{ text: 'Išklausyti klausytojų skambučius.', translation: 'Ouvir as ligações dos ouvintes.', next: 'final_bom' }],
       },
       final_bom: {
@@ -3394,7 +3394,7 @@ export const STORIES_LT: StorySeed[] = [
         text: 'Po laidos į studiją skambina klausytojai, ir daugelis jų palaiko bandomąjį variantą. Vida pažada Linu kavos puodelį savo parduotuvėje, jei jis kada nors užsuks dviračiu. Tomas juokauja, kad Linu galėtų kandidatuoti į miesto tarybą. Linu tik šypsosi ir dar kartą nuvažiuoja pažiūrėti į auksinį šaulį prieš saulėlydį.',
         translation:
           'Depois do programa os ouvintes ligam para o estúdio, e muitos apoiam a ideia do teste. A Vida promete ao Linu um cafezinho na loja dela, se algum dia ele passar por lá de bicicleta. O Tomas brinca que o Linu poderia se candidatar à câmara municipal. O Linu só sorri e vai mais uma vez ver o arqueiro dourado antes do pôr do sol.',
-        ending: { tone: 'bom', title: 'Meio-termo na rádio', message: 'Você ouviu os dois lados, usou «mano nuomone», «todėl» e «be to» — e transformou uma briga numa proposta.' },
+        ending: { tone: 'bom', title: 'Meio-termo na rádio', message: 'Você ouviu os dois lados, usou “mano nuomone”, “todėl” e “be to” — e transformou uma briga numa proposta.' },
       },
       final_neutro: {
         emoji: '🔇',
@@ -3422,30 +3422,30 @@ export const STORIES_LT: StorySeed[] = [
       ['tarmė', 'dialeto'],
       ['bendrinė kalba', 'língua padrão'],
       ['aukštaičiai', 'os aukštaičiai, o povo da Aukštaitija'],
-      ['persijungti', 'trocar de «chave», mudar de registro'],
+      ['persijungti', 'trocar de “chave”, mudar de registro'],
       ['Užgavėnės', 'o Carnaval lituano, com máscaras, antes da Quaresma'],
       ['irkluoti', 'remar'],
     ],
     nodes: {
       start: {
         emoji: '🛶',
-        text: 'Gegužę Platelių ežero vanduo blizga tarp miškų lyg sidabrinis indas. Linu nori išsinuomoti valtį iš seno žvejo, vardu Stasys, kuris jį pasitinka žodžiais, skambančiais maždaug kaip «lab dėina». Tačiau to, ką Stasys sako toliau, Linu beveik nesupranta: žodžiai trumpi, galūnės tarsi nukąstos, o balsiai visai kitokie nei vadovėlyje. Laimei, iš namo išbėga Stasio anūkė Austėja, studentė iš Vilniaus.',
+        text: 'Gegužę Platelių ežero vanduo blizga tarp miškų lyg sidabrinis indas. Linu nori išsinuomoti valtį iš seno žvejo, vardu Stasys, kuris jį pasitinka žodžiais, skambančiais maždaug kaip “lab dėina”. Tačiau to, ką Stasys sako toliau, Linu beveik nesupranta: žodžiai trumpi, galūnės tarsi nukąstos, o balsiai visai kitokie nei vadovėlyje. Laimei, iš namo išbėga Stasio anūkė Austėja, studentė iš Vilniaus.',
         translation:
-          'Em maio, a água do lago Plateliai brilha entre as florestas como uma travessa de prata. O Linu quer alugar um barco de um velho pescador chamado Stasys, que o recebe com palavras que soam mais ou menos como «lab dėina» (bom dia). Mas o que o Stasys diz em seguida o Linu quase não entende: palavras curtas, terminações como que mordidas e vogais bem diferentes das do livro. Por sorte, sai correndo de casa a neta do Stasys, Austėja, estudante em Vilnius.',
+          'Em maio, a água do lago Plateliai brilha entre as florestas como uma travessa de prata. O Linu quer alugar um barco de um velho pescador chamado Stasys, que o recebe com palavras que soam mais ou menos como “lab dėina” (bom dia). Mas o que o Stasys diz em seguida o Linu quase não entende: palavras curtas, terminações como que mordidas e vogais bem diferentes das do livro. Por sorte, sai correndo de casa a neta do Stasys, Austėja, estudante em Vilnius.',
         choices: [
           { text: 'Paprašyti Austėjos išversti.', translation: 'Pedir à Austėja que traduza.', next: 'austeja' },
           {
             text: 'Nuspręsti, kad Stasys kalba latviškai.',
             translation: 'Concluir que o Stasys está falando letão.',
-            wrong: 'O Stasys fala samogiciano (žemaitiškai), a fala da Žemaitija, no oeste da Lituânia — não letão. As terminações «mordidas» e as vogais diferentes que o Linu notou são marcas típicas do samogiciano.',
+            wrong: 'O Stasys fala samogiciano (žemaitiškai), a fala da Žemaitija, no oeste da Lituânia — não letão. As terminações “mordidas” e as vogais diferentes que o Linu notou são marcas típicas do samogiciano.',
           },
         ],
       },
       austeja: {
         emoji: '👩‍🎓',
-        text: '«Senelis kalba žemaitiškai, – juokiasi Austėja. – Jis klausia, ar mokate irkluoti ir ar nebijote vandens.» Ji paaiškina, kad žemaičiai dažnai tarsi „suvalgo“ žodžių galūnes, o vietoj bendrinės kalbos dvibalsių „ie“ ir „uo“ taria kitus garsus. Kalbininkai žemaičių kalbą paprastai laiko viena iš dviejų didžiųjų lietuvių kalbos tarmių, bet patys žemaičiai neretai sako, kad tai atskira kalba. «Vilniuje kalbu bendrine kalba, o čia, pas senelį, persijungiu per akimirką», – priduria ji.',
+        text: '“Senelis kalba žemaitiškai, – juokiasi Austėja. – Jis klausia, ar mokate irkluoti ir ar nebijote vandens.” Ji paaiškina, kad žemaičiai dažnai tarsi „suvalgo“ žodžių galūnes, o vietoj bendrinės kalbos dvibalsių „ie‘ ir „uo‘ taria kitus garsus. Kalbininkai žemaičių kalbą paprastai laiko viena iš dviejų didžiųjų lietuvių kalbos tarmių, bet patys žemaičiai neretai sako, kad tai atskira kalba. ‘Vilniuje kalbu bendrine kalba, o čia, pas senelį, persijungiu per akimirką’, – priduria ji.',
         translation:
-          '«O vovô fala samogiciano», ri a Austėja. «Ele está perguntando se você sabe remar e se não tem medo de água.» Ela explica que os samogicianos muitas vezes como que «engolem» as terminações das palavras e, no lugar dos ditongos «ie» e «uo» da língua padrão, pronunciam outros sons. Os linguistas costumam considerar o samogiciano um dos dois grandes dialetos do lituano, mas os próprios samogicianos muitas vezes dizem que é uma língua à parte. «Em Vilnius eu falo a língua padrão, e aqui, com o vovô, troco de chave num instante», acrescenta.',
+          '“O vovô fala samogiciano”, ri a Austėja. “Ele está perguntando se você sabe remar e se não tem medo de água.” Ela explica que os samogicianos muitas vezes como que “engolem” as terminações das palavras e, no lugar dos ditongos “ie” e “uo” da língua padrão, pronunciam outros sons. Os linguistas costumam considerar o samogiciano um dos dois grandes dialetos do lituano, mas os próprios samogicianos muitas vezes dizem que é uma língua à parte. “Em Vilnius eu falo a língua padrão, e aqui, com o vovô, troco de chave num instante”, acrescenta.',
         choices: [
           { text: 'Paklausti, ar žemaičiai turi savo raštą.', translation: 'Perguntar se os samogicianos têm escrita própria.', next: 'rastas' },
           { text: 'Išplaukti su Stasiu į ežerą.', translation: 'Sair de barco com o Stasys pelo lago.', next: 'ezeras' },
@@ -3453,18 +3453,18 @@ export const STORIES_LT: StorySeed[] = [
       },
       rastas: {
         emoji: '📚',
-        text: 'Austėja pasakoja, kad žemaičiai turi savo rašybą, kuria leidžiamos knygos ir rašomi eilėraščiai. Ji parodo lipduką ant senelio valties: juodą lokį, žemaičių herbo ženklą. Aukštaičiai mėgsta juokauti, kad žemaičiai užsispyrę ir išdidūs kaip tas lokys. «O žemaičiai apie aukštaičius juokauja dar smarkiau, tik jau žemaitiškai, kad šie nesuprastų», – mirkteli Austėja. Stasys, lyg supratęs, apie ką kalbama, kažką burbteli ir nusijuokia.',
+        text: 'Austėja pasakoja, kad žemaičiai turi savo rašybą, kuria leidžiamos knygos ir rašomi eilėraščiai. Ji parodo lipduką ant senelio valties: juodą lokį, žemaičių herbo ženklą. Aukštaičiai mėgsta juokauti, kad žemaičiai užsispyrę ir išdidūs kaip tas lokys. “O žemaičiai apie aukštaičius juokauja dar smarkiau, tik jau žemaitiškai, kad šie nesuprastų”, – mirkteli Austėja. Stasys, lyg supratęs, apie ką kalbama, kažką burbteli ir nusijuokia.',
         translation:
-          'A Austėja conta que os samogicianos têm ortografia própria, em que se publicam livros e se escrevem poemas. Ela mostra um adesivo no barco do avô: um urso preto, o símbolo do brasão da Žemaitija. Os aukštaičiai adoram brincar que os samogicianos são teimosos e orgulhosos como aquele urso. «E os samogicianos fazem piadas ainda piores sobre os aukštaičiai — só que em samogiciano, para eles não entenderem», pisca a Austėja. O Stasys, como se tivesse entendido do que falam, resmunga alguma coisa e ri.',
+          'A Austėja conta que os samogicianos têm ortografia própria, em que se publicam livros e se escrevem poemas. Ela mostra um adesivo no barco do avô: um urso preto, o símbolo do brasão da Žemaitija. Os aukštaičiai adoram brincar que os samogicianos são teimosos e orgulhosos como aquele urso. “E os samogicianos fazem piadas ainda piores sobre os aukštaičiai — só que em samogiciano, para eles não entenderem”, pisca a Austėja. O Stasys, como se tivesse entendido do que falam, resmunga alguma coisa e ri.',
         choices: [{ text: 'Išplaukti su Stasiu į ežerą.', translation: 'Sair de barco com o Stasys pelo lago.', next: 'ezeras' }],
       },
       ezeras: {
         emoji: '🏝️',
-        text: 'Stasys irkluoja lėtai ir kažką pasakoja, rodydamas į salą ežero viduryje. Austėja verčia: ežere yra kelios salos, o ant vienos jų, pasak senelio, kadaise stovėjusi pilis. Tada Stasys dar kažką priduria, ir Austėja parausta: «Jis sako, kad miestiečiai kaip jūs irkluoja taip, kad net žuvys juokiasi.» Stasio balsas griežtas, bet akys linksmos, o ūsai vos pastebimai krusteli. Linu jaučia, kad dabar visi laukia, ką jis atsakys.',
+        text: 'Stasys irkluoja lėtai ir kažką pasakoja, rodydamas į salą ežero viduryje. Austėja verčia: ežere yra kelios salos, o ant vienos jų, pasak senelio, kadaise stovėjusi pilis. Tada Stasys dar kažką priduria, ir Austėja parausta: “Jis sako, kad miestiečiai kaip jūs irkluoja taip, kad net žuvys juokiasi.” Stasio balsas griežtas, bet akys linksmos, o ūsai vos pastebimai krusteli. Linu jaučia, kad dabar visi laukia, ką jis atsakys.',
         translation:
-          'O Stasys rema devagar e vai contando alguma coisa, apontando para uma ilha no meio do lago. A Austėja traduz: no lago há várias ilhas, e numa delas, segundo o avô, teria existido um castelo. Então o Stasys acrescenta mais alguma coisa, e a Austėja fica vermelha: «Ele diz que gente da cidade como você rema de um jeito que até os peixes riem.» A voz do Stasys é dura, mas os olhos estão alegres, e o bigode mexe quase sem se notar. O Linu sente que agora todos esperam a resposta dele.',
+          'O Stasys rema devagar e vai contando alguma coisa, apontando para uma ilha no meio do lago. A Austėja traduz: no lago há várias ilhas, e numa delas, segundo o avô, teria existido um castelo. Então o Stasys acrescenta mais alguma coisa, e a Austėja fica vermelha: “Ele diz que gente da cidade como você rema de um jeito que até os peixes riem.” A voz do Stasys é dura, mas os olhos estão alegres, e o bigode mexe quase sem se notar. O Linu sente que agora todos esperam a resposta dele.',
         choices: [
-          { text: 'Atsakyti juokais: «Pasakykite jam, kad pingvinai irkluoja sparnais.»', translation: 'Responder na brincadeira: «Diga a ele que pinguins remam com as asas.»', next: 'juokas' },
+          { text: 'Atsakyti juokais: “Pasakykite jam, kad pingvinai irkluoja sparnais.”', translation: 'Responder na brincadeira: “Diga a ele que pinguins remam com as asas.”', next: 'juokas' },
           {
             text: 'Įsižeisti ir paprašyti grįžti į krantą, nes Stasys piktas.',
             translation: 'Ofender-se e pedir para voltar à margem, porque o Stasys está bravo.',
@@ -3474,9 +3474,9 @@ export const STORIES_LT: StorySeed[] = [
       },
       juokas: {
         emoji: '😄',
-        text: 'Austėja išverčia, ir Stasys taip nusijuokia, kad valtis net sulinguoja. Jis paduoda Linu irklus ir parodo, kaip irkluoti ramiai, be purslų, kaip žvejai irkluodavo jo jaunystėje. Grįžtant į krantą, jis pasakoja apie Užgavėnes Plateliuose: kasmet per jas miestelis prisipildo kaukių, o senajame dvaro svirne įrengta kaukių ekspozicija. «Jei atvažiuosite per Užgavėnes, pamatysite tikrą Žemaitiją», – verčia Austėja. Stasys dar kartą kažką sako ir, rodos, laukia Linu atsakymo.',
+        text: 'Austėja išverčia, ir Stasys taip nusijuokia, kad valtis net sulinguoja. Jis paduoda Linu irklus ir parodo, kaip irkluoti ramiai, be purslų, kaip žvejai irkluodavo jo jaunystėje. Grįžtant į krantą, jis pasakoja apie Užgavėnes Plateliuose: kasmet per jas miestelis prisipildo kaukių, o senajame dvaro svirne įrengta kaukių ekspozicija. “Jei atvažiuosite per Užgavėnes, pamatysite tikrą Žemaitiją”, – verčia Austėja. Stasys dar kartą kažką sako ir, rodos, laukia Linu atsakymo.',
         translation:
-          'A Austėja traduz, e o Stasys ri tanto que o barco chega a balançar. Ele passa os remos ao Linu e mostra como remar com calma, sem espirrar água, como os pescadores remavam na juventude dele. Na volta para a margem, conta sobre o Užgavėnės em Plateliai: todo ano a cidadezinha se enche de máscaras, e no velho celeiro da antiga propriedade senhorial há uma exposição de máscaras. «Se você vier no Užgavėnės, vai ver a verdadeira Žemaitija», traduz a Austėja. O Stasys diz mais alguma coisa e parece esperar a resposta do Linu.',
+          'A Austėja traduz, e o Stasys ri tanto que o barco chega a balançar. Ele passa os remos ao Linu e mostra como remar com calma, sem espirrar água, como os pescadores remavam na juventude dele. Na volta para a margem, conta sobre o Užgavėnės em Plateliai: todo ano a cidadezinha se enche de máscaras, e no velho celeiro da antiga propriedade senhorial há uma exposição de máscaras. “Se você vier no Užgavėnės, vai ver a verdadeira Žemaitija”, traduz a Austėja. O Stasys diz mais alguma coisa e parece esperar a resposta do Linu.',
         choices: [
           { text: 'Paprašyti Stasio išmokyti jį kelių žemaitiškų žodžių.', translation: 'Pedir ao Stasys que lhe ensine algumas palavras em samogiciano.', next: 'final_bom' },
           { text: 'Pasakyti, kad bendrinė kalba vis tiek gražesnė.', translation: 'Dizer que a língua padrão, de todo modo, é mais bonita.', next: 'final_neutro' },
@@ -3484,16 +3484,16 @@ export const STORIES_LT: StorySeed[] = [
       },
       final_bom: {
         emoji: '🎭',
-        text: 'Visą vakarą Stasys moko Linu tarti žemaitiškus žodžius, o Austėja juokiasi iš jų abiejų. Kai kurie žodžiai visiškai nepanašūs į bendrinės kalbos, ir Linu juos užsirašo į sąsiuvinį, pažymėdamas, kaip jie tariami. Atsisveikindamas Stasys ilgai spaudžia jam ranką ir pasako vieną ilgą sakinį. «Senelis sako, kad jūs pirmas miestietis, kuris norėjo išmokti žemaitiškai, užuot iš to juokęsis», – išverčia Austėja. Linu pažada grįžti per Užgavėnes, su kauke ir su sąsiuviniu.',
+        text: 'Visą vakarą Stasys moko Linu tarti žemaitiškus žodžius, o Austėja juokiasi iš jų abiejų. Kai kurie žodžiai visiškai nepanašūs į bendrinės kalbos, ir Linu juos užsirašo į sąsiuvinį, pažymėdamas, kaip jie tariami. Atsisveikindamas Stasys ilgai spaudžia jam ranką ir pasako vieną ilgą sakinį. “Senelis sako, kad jūs pirmas miestietis, kuris norėjo išmokti žemaitiškai, užuot iš to juokęsis”, – išverčia Austėja. Linu pažada grįžti per Užgavėnes, su kauke ir su sąsiuviniu.',
         translation:
-          'A noite inteira o Stasys ensina o Linu a pronunciar palavras samogicianas, e a Austėja ri dos dois. Algumas palavras não se parecem nada com as da língua padrão, e o Linu as anota no caderno, marcando como se pronunciam. Na despedida, o Stasys aperta a mão dele por um bom tempo e diz uma frase comprida. «O vovô diz que você é o primeiro da cidade que quis aprender samogiciano em vez de rir dele», traduz a Austėja. O Linu promete voltar no Užgavėnės, com máscara e com o caderno.',
+          'A noite inteira o Stasys ensina o Linu a pronunciar palavras samogicianas, e a Austėja ri dos dois. Algumas palavras não se parecem nada com as da língua padrão, e o Linu as anota no caderno, marcando como se pronunciam. Na despedida, o Stasys aperta a mão dele por um bom tempo e diz uma frase comprida. “O vovô diz que você é o primeiro da cidade que quis aprender samogiciano em vez de rir dele”, traduz a Austėja. O Linu promete voltar no Užgavėnės, com máscara e com o caderno.',
         ending: { tone: 'bom', title: 'Aluno do Stasys', message: 'Você entendeu o humor samogiciano e tratou o dialeto como riqueza, não como erro — e ganhou um professor.' },
       },
       final_neutro: {
         emoji: '🌫️',
-        text: 'Austėja išverčia, ir Stasys ilgai tyli, žiūrėdamas į ežerą. Paskui jis kažką trumpai atsako ir, nieko daugiau nelaukęs, nueina į namą. «Jis sako, kad bendrinė kalba gera Vilniuje, o čia – Žemaitija», – tyliai paaiškina Austėja. Linu nejaukiai pasijunta, tarsi būtų įžeidęs ne vieną žmogų, o visą kraštą. Grįždamas jis supranta, kad tarmė žmonėms – ne klaida, o namai.',
+        text: 'Austėja išverčia, ir Stasys ilgai tyli, žiūrėdamas į ežerą. Paskui jis kažką trumpai atsako ir, nieko daugiau nelaukęs, nueina į namą. “Jis sako, kad bendrinė kalba gera Vilniuje, o čia – Žemaitija”, – tyliai paaiškina Austėja. Linu nejaukiai pasijunta, tarsi būtų įžeidęs ne vieną žmogų, o visą kraštą. Grįždamas jis supranta, kad tarmė žmonėms – ne klaida, o namai.',
         translation:
-          'A Austėja traduz, e o Stasys fica muito tempo calado, olhando para o lago. Depois responde alguma coisa curta e, sem esperar mais nada, entra em casa. «Ele diz que a língua padrão é boa em Vilnius, mas aqui é a Žemaitija», explica a Austėja baixinho. O Linu se sente constrangido, como se tivesse ofendido não uma pessoa, mas uma região inteira. Na volta, entende que o dialeto, para as pessoas, não é erro: é casa.',
+          'A Austėja traduz, e o Stasys fica muito tempo calado, olhando para o lago. Depois responde alguma coisa curta e, sem esperar mais nada, entra em casa. “Ele diz que a língua padrão é boa em Vilnius, mas aqui é a Žemaitija”, explica a Austėja baixinho. O Linu se sente constrangido, como se tivesse ofendido não uma pessoa, mas uma região inteira. Na volta, entende que o dialeto, para as pessoas, não é erro: é casa.',
         ending: { tone: 'neutro', title: 'Lição de humildade', message: 'Você comparou o dialeto com a língua padrão como se fosse uma disputa — e um dialeto é identidade, não versão errada.' },
       },
     },
@@ -3504,9 +3504,9 @@ export const STORIES_LT: StorySeed[] = [
     cefr: 'C1',
     title: 'Ponia Ona iš Vila Zelinos',
     emoji: '⛪',
-    summary: 'Em Vila Zelina, em São Paulo, o Linu conhece a dona Ona, filha de imigrantes lituanos dos anos 1920, que fala um lituano antigo, cheio de «tamsta» e de palavras portuguesas.',
+    summary: 'Em Vila Zelina, em São Paulo, o Linu conhece a dona Ona, filha de imigrantes lituanos dos anos 1920, que fala um lituano antigo, cheio de “tamsta” e de palavras portuguesas.',
     cultural_context:
-      'Entre o fim dos anos 1920 e os anos 1930, dezenas de milhares de lituanos emigraram para o Brasil, e muitos se fixaram em São Paulo, sobretudo em Vila Zelina, na Zona Leste, que ainda guarda a memória da comunidade. «Tamsta», tratamento cortês antigo, sobrevive na fala dos mais velhos e da diáspora, enquanto na Lituânia de hoje o normal é «Jūs».',
+      'Entre o fim dos anos 1920 e os anos 1930, dezenas de milhares de lituanos emigraram para o Brasil, e muitos se fixaram em São Paulo, sobretudo em Vila Zelina, na Zona Leste, que ainda guarda a memória da comunidade. “Tamsta”, tratamento cortês antigo, sobrevive na fala dos mais velhos e da diáspora, enquanto na Lituânia de hoje o normal é “Jūs”.',
     start: 'start',
     glossary: [
       ['tamsta', 'o senhor, a senhora (tratamento cortês antigo)'],
@@ -3520,54 +3520,54 @@ export const STORIES_LT: StorySeed[] = [
     nodes: {
       start: {
         emoji: '🏘️',
-        text: 'Rytiniame São Paulo pakraštyje yra Vila Zelina – rajonas, kuriame praėjusio amžiaus trečiajame ir ketvirtajame dešimtmečiais apsigyveno daug lietuvių imigrantų. Linu atėjo čia sekmadienį, nes girdėjo, kad po mišių kai kurie žmonės dar kalbasi lietuviškai. Prie bažnyčios jį sustabdo smulki, gal devyniasdešimties metų ponia gėlėta suknele. «Laba diena, tamsta, – sako ji, atidžiai jį nužvelgusi. – Ar tamsta iš Lietuvos?»',
+        text: 'Rytiniame São Paulo pakraštyje yra Vila Zelina – rajonas, kuriame praėjusio amžiaus trečiajame ir ketvirtajame dešimtmečiais apsigyveno daug lietuvių imigrantų. Linu atėjo čia sekmadienį, nes girdėjo, kad po mišių kai kurie žmonės dar kalbasi lietuviškai. Prie bažnyčios jį sustabdo smulki, gal devyniasdešimties metų ponia gėlėta suknele. “Laba diena, tamsta, – sako ji, atidžiai jį nužvelgusi. – Ar tamsta iš Lietuvos?”',
         translation:
-          'Na ponta leste de São Paulo fica Vila Zelina, o bairro onde, nas décadas de 1920 e 1930, se instalaram muitos imigrantes lituanos. O Linu veio num domingo, porque ouviu dizer que depois da missa algumas pessoas ainda conversam em lituano. Perto da igreja, uma senhora miúda, de uns noventa anos, de vestido florido, o faz parar. «Bom dia, o senhor», diz ela, depois de examiná-lo com atenção. «O senhor é da Lituânia?»',
+          'Na ponta leste de São Paulo fica Vila Zelina, o bairro onde, nas décadas de 1920 e 1930, se instalaram muitos imigrantes lituanos. O Linu veio num domingo, porque ouviu dizer que depois da missa algumas pessoas ainda conversam em lituano. Perto da igreja, uma senhora miúda, de uns noventa anos, de vestido florido, o faz parar. “Bom dia, o senhor”, diz ela, depois de examiná-lo com atenção. “O senhor é da Lituânia?”',
         choices: [
           { text: 'Paaiškinti, kad jis ne iš Lietuvos, bet mokosi lietuvių kalbos.', translation: 'Explicar que não é da Lituânia, mas está aprendendo lituano.', next: 'ona' },
           {
             text: 'Pasakyti, kad jo vardas ne Tamsta, o Linu.',
             translation: 'Dizer que o nome dele não é Tamsta, e sim Linu.',
-            wrong: '«Tamsta» não é nome: é um tratamento antigo e cortês, algo como «o senhor» ou «vossa mercê». Hoje quase só os mais velhos e a diáspora o usam; na Lituânia atual, o normal é «Jūs».',
+            wrong: '“Tamsta” não é nome: é um tratamento antigo e cortês, algo como “o senhor” ou “vossa mercê”. Hoje quase só os mais velhos e a diáspora o usam; na Lituânia atual, o normal é “Jūs”.',
           },
         ],
       },
       ona: {
         emoji: '👵',
-        text: 'Ponia prisistato: ji Ona, jos tėvai atplaukė į Braziliją laivu 1927 metais iš kaimo netoli Kauno. «Namie kalbėjome tik lietuviškai, o gatvėje – portugališkai, – pasakoja ji. – Tai dabar mano lietuvių kalba sena kaip aš pati.» Ji kalba lėtai, šiek tiek dainingai, ir kartais įterpia portugališką žodį, pavyzdžiui, sako «vamos» vietoj «eime». Linu pastebi, kad kai kurie jos žodžiai skamba kaip iš senos knygos, kurios šiandien niekas nebeskaito.',
+        text: 'Ponia prisistato: ji Ona, jos tėvai atplaukė į Braziliją laivu 1927 metais iš kaimo netoli Kauno. “Namie kalbėjome tik lietuviškai, o gatvėje – portugališkai, – pasakoja ji. – Tai dabar mano lietuvių kalba sena kaip aš pati.” Ji kalba lėtai, šiek tiek dainingai, ir kartais įterpia portugališką žodį, pavyzdžiui, sako “vamos” vietoj “eime”. Linu pastebi, kad kai kurie jos žodžiai skamba kaip iš senos knygos, kurios šiandien niekas nebeskaito.',
         translation:
-          'A senhora se apresenta: é Ona, e os pais dela chegaram de navio ao Brasil em 1927, vindos de uma aldeia perto de Kaunas. «Em casa a gente só falava lituano, e na rua, português», conta ela. «Por isso hoje o meu lituano é velho como eu.» Ela fala devagar, meio cantado, e às vezes encaixa uma palavra em português, por exemplo diz «vamos» em vez de «eime». O Linu percebe que algumas palavras dela soam como tiradas de um livro antigo que hoje ninguém mais lê.',
+          'A senhora se apresenta: é Ona, e os pais dela chegaram de navio ao Brasil em 1927, vindos de uma aldeia perto de Kaunas. “Em casa a gente só falava lituano, e na rua, português”, conta ela. “Por isso hoje o meu lituano é velho como eu.” Ela fala devagar, meio cantado, e às vezes encaixa uma palavra em português, por exemplo diz “vamos” em vez de “eime”. O Linu percebe que algumas palavras dela soam como tiradas de um livro antigo que hoje ninguém mais lê.',
         choices: [
-          { text: 'Paklausti, kodėl ji sako «tamsta».', translation: 'Perguntar por que ela diz «tamsta».', next: 'tamsta' },
+          { text: 'Paklausti, kodėl ji sako “tamsta”.', translation: 'Perguntar por que ela diz “tamsta”.', next: 'tamsta' },
           { text: 'Paklausti, kaip čia gyveno lietuviai anksčiau.', translation: 'Perguntar como viviam os lituanos aqui antigamente.', next: 'praeitis' },
         ],
       },
       tamsta: {
         emoji: '🗣️',
-        text: 'Ona nusijuokia: «Taip kalbėjo mano tėvai, taip kalbu ir aš. Anūkai, kurie buvo nuvažiavę į Vilnių, sako, kad ten dabar visi sako „jūs“, o „tamsta“ skamba kaip iš senų filmų.» Ji pasakoja, kad jos pusseserė iš Čikagos kalba dar kitaip – į jos lietuvių kalbą prilindę angliškų žodžių, kaip į Onos – portugališkų. «Taigi, vaikeli, mūsų kalba išsibarsčiusi po visą pasaulį, ir kiekviename krašte ji truputį kitokia.» Linu supranta, kad ir tai – lietuvių kalbos istorija, tik parašyta ne vadovėliuose.',
+        text: 'Ona nusijuokia: “Taip kalbėjo mano tėvai, taip kalbu ir aš. Anūkai, kurie buvo nuvažiavę į Vilnių, sako, kad ten dabar visi sako „jūs‘, o „tamsta‘ skamba kaip iš senų filmų.’ Ji pasakoja, kad jos pusseserė iš Čikagos kalba dar kitaip – į jos lietuvių kalbą prilindę angliškų žodžių, kaip į Onos – portugališkų. ‘Taigi, vaikeli, mūsų kalba išsibarsčiusi po visą pasaulį, ir kiekviename krašte ji truputį kitokia.’ Linu supranta, kad ir tai – lietuvių kalbos istorija, tik parašyta ne vadovėliuose.',
         translation:
-          'A Ona ri: «Assim falavam os meus pais, e assim falo eu. Os netos, que foram a Vilnius, dizem que lá agora todo mundo diz „jūs“, e „tamsta“ soa como coisa de filme antigo.» Ela conta que a prima de Chicago fala de outro jeito ainda: no lituano dela entraram palavras inglesas, como no da Ona entraram portuguesas. «Pois é, meu filho, a nossa língua se espalhou pelo mundo inteiro, e em cada terra ela é um pouquinho diferente.» O Linu entende que isso também é história do lituano, só que não escrita nos livros didáticos.',
+          'A Ona ri: “Assim falavam os meus pais, e assim falo eu. Os netos, que foram a Vilnius, dizem que lá agora todo mundo diz „jūs‘, e „tamsta‘ soa como coisa de filme antigo.’ Ela conta que a prima de Chicago fala de outro jeito ainda: no lituano dela entraram palavras inglesas, como no da Ona entraram portuguesas. ‘Pois é, meu filho, a nossa língua se espalhou pelo mundo inteiro, e em cada terra ela é um pouquinho diferente.’ O Linu entende que isso também é história do lituano, só que não escrita nos livros didáticos.',
         choices: [{ text: 'Paklausti, kaip čia gyveno lietuviai anksčiau.', translation: 'Perguntar como viviam os lituanos aqui antigamente.', next: 'praeitis' }],
       },
       praeitis: {
         emoji: '🖼️',
-        text: 'Ona veda Linu į nedidelę salę, kur ant sienų kabo senos nuotraukos: vaikai tautiniais drabužiais, choras, šokėjai. «Kadaise čia skambėjo lietuviškos dainos, veikė lietuviškos draugijos, – pasakoja ji. – Dabar jaunimas lietuviškai beveik nebekalba, bet šoka tautinius šokius ir per šventes kepa šakočius.» Ji parodo nuotrauką, kurioje ji pati, dar jauna, dainuoja chore antroje eilėje. Jos balse girdėti ir pasididžiavimas, ir liūdesys.',
+        text: 'Ona veda Linu į nedidelę salę, kur ant sienų kabo senos nuotraukos: vaikai tautiniais drabužiais, choras, šokėjai. “Kadaise čia skambėjo lietuviškos dainos, veikė lietuviškos draugijos, – pasakoja ji. – Dabar jaunimas lietuviškai beveik nebekalba, bet šoka tautinius šokius ir per šventes kepa šakočius.” Ji parodo nuotrauką, kurioje ji pati, dar jauna, dainuoja chore antroje eilėje. Jos balse girdėti ir pasididžiavimas, ir liūdesys.',
         translation:
-          'A Ona leva o Linu a um pequeno salão onde há fotos antigas nas paredes: crianças com trajes típicos, um coral, dançarinos. «Antigamente aqui soavam canções lituanas, funcionavam associações lituanas», conta ela. «Hoje a juventude quase não fala mais lituano, mas dança as danças folclóricas e, nas festas, faz šakotis.» Ela mostra uma foto em que ela mesma, ainda jovem, canta no coral, na segunda fila. Na voz dela se ouvem orgulho e tristeza ao mesmo tempo.',
+          'A Ona leva o Linu a um pequeno salão onde há fotos antigas nas paredes: crianças com trajes típicos, um coral, dançarinos. “Antigamente aqui soavam canções lituanas, funcionavam associações lituanas”, conta ela. “Hoje a juventude quase não fala mais lituano, mas dança as danças folclóricas e, nas festas, faz šakotis.” Ela mostra uma foto em que ela mesma, ainda jovem, canta no coral, na segunda fila. Na voz dela se ouvem orgulho e tristeza ao mesmo tempo.',
         choices: [
           { text: 'Paklausti, ar ji norėtų, kad jaunimas vėl mokytųsi kalbos.', translation: 'Perguntar se ela gostaria que os jovens voltassem a aprender a língua.', next: 'noras' },
           {
             text: 'Pagirti ją, kad jos anūkai taip gerai kalba lietuviškai.',
             translation: 'Elogiá-la porque os netos dela falam lituano tão bem.',
-            wrong: 'A dona Ona disse o contrário: hoje os jovens quase não falam mais lituano («beveik nebekalba») — mas dançam as danças folclóricas e fazem šakotis nas festas. A língua se perdeu mais depressa que as tradições.',
+            wrong: 'A dona Ona disse o contrário: hoje os jovens quase não falam mais lituano (“beveik nebekalba”) — mas dançam as danças folclóricas e fazem šakotis nas festas. A língua se perdeu mais depressa que as tradições.',
           },
         ],
       },
       noras: {
         emoji: '💭',
-        text: 'Ona ilgai žiūri į nuotrauką. «Norėčiau, – sako ji tyliai. – Bet kalba gyva tik tol, kol ja kas nors kalba.» Paskui ji paklausia, ar Linu nenorėtų kartais ateiti ir pasikalbėti su jos proanūke Julija, kuri mokosi lietuvių kalbos internetu. «Jai bus smagiau mokytis, kai pamatys, kad net pingvinas moka», – mirkteli Ona. Ji jau ieško rankinėje popieriaus lapelio, kad užrašytų telefono numerį.',
+        text: 'Ona ilgai žiūri į nuotrauką. “Norėčiau, – sako ji tyliai. – Bet kalba gyva tik tol, kol ja kas nors kalba.” Paskui ji paklausia, ar Linu nenorėtų kartais ateiti ir pasikalbėti su jos proanūke Julija, kuri mokosi lietuvių kalbos internetu. “Jai bus smagiau mokytis, kai pamatys, kad net pingvinas moka”, – mirkteli Ona. Ji jau ieško rankinėje popieriaus lapelio, kad užrašytų telefono numerį.',
         translation:
-          'A Ona olha longamente para a foto. «Gostaria», diz ela baixinho. «Mas a língua só vive enquanto alguém a fala.» Depois pergunta se o Linu não gostaria de vir de vez em quando conversar com a bisneta dela, Julija, que está aprendendo lituano pela internet. «Vai ser mais divertido para ela quando vir que até um pinguim fala», pisca a Ona. Ela já está procurando na bolsa um pedaço de papel para anotar o telefone.',
+          'A Ona olha longamente para a foto. “Gostaria”, diz ela baixinho. “Mas a língua só vive enquanto alguém a fala.” Depois pergunta se o Linu não gostaria de vir de vez em quando conversar com a bisneta dela, Julija, que está aprendendo lituano pela internet. “Vai ser mais divertido para ela quando vir que até um pinguim fala”, pisca a Ona. Ela já está procurando na bolsa um pedaço de papel para anotar o telefone.',
         choices: [
           { text: 'Sutikti ir susitarti dėl kito sekmadienio.', translation: 'Aceitar e combinar para o domingo seguinte.', next: 'final_bom' },
           { text: 'Atsiprašyti, kad neturi laiko.', translation: 'Desculpar-se por não ter tempo.', next: 'final_neutro' },
@@ -3575,16 +3575,16 @@ export const STORIES_LT: StorySeed[] = [
       },
       final_bom: {
         emoji: '☕',
-        text: 'Kitą sekmadienį Linu, Ona ir Julija sėdi prie stalo su kava ir šakočio gabalėliais. Julija kalba lietuviškai su portugališku akcentu, Ona ją taiso senoviškais žodžiais, o Linu – vadovėlio žodžiais, ir visi trys juokiasi iš savo skirtumų. «Štai matai, – sako Ona, – trys kartos, trys lietuvių kalbos, ir visos gyvos.» Julija pažada per Kalėdas parašyti proprosenelių kaimui laišką lietuviškai. Linu pagalvoja, kad Lietuva kartais būna ir São Paulo priemiestyje.',
+        text: 'Kitą sekmadienį Linu, Ona ir Julija sėdi prie stalo su kava ir šakočio gabalėliais. Julija kalba lietuviškai su portugališku akcentu, Ona ją taiso senoviškais žodžiais, o Linu – vadovėlio žodžiais, ir visi trys juokiasi iš savo skirtumų. “Štai matai, – sako Ona, – trys kartos, trys lietuvių kalbos, ir visos gyvos.” Julija pažada per Kalėdas parašyti proprosenelių kaimui laišką lietuviškai. Linu pagalvoja, kad Lietuva kartais būna ir São Paulo priemiestyje.',
         translation:
-          'No domingo seguinte, o Linu, a Ona e a Julija estão à mesa com café e pedacinhos de šakotis. A Julija fala lituano com sotaque brasileiro, a Ona a corrige com palavras antigas, e o Linu, com palavras do livro didático — e os três riem das diferenças. «Está vendo», diz a Ona, «três gerações, três lituanos, e todos vivos.» A Julija promete escrever no Natal uma carta em lituano para a aldeia dos trisavós. O Linu pensa que às vezes a Lituânia fica também num bairro de São Paulo.',
-        ending: { tone: 'bom', title: 'Três gerações, uma língua', message: 'Você entendeu o lituano da diáspora — o «tamsta», as palavras emprestadas — e ajudou a mantê-lo vivo.' },
+          'No domingo seguinte, o Linu, a Ona e a Julija estão à mesa com café e pedacinhos de šakotis. A Julija fala lituano com sotaque brasileiro, a Ona a corrige com palavras antigas, e o Linu, com palavras do livro didático — e os três riem das diferenças. “Está vendo”, diz a Ona, “três gerações, três lituanos, e todos vivos.” A Julija promete escrever no Natal uma carta em lituano para a aldeia dos trisavós. O Linu pensa que às vezes a Lituânia fica também num bairro de São Paulo.',
+        ending: { tone: 'bom', title: 'Três gerações, uma língua', message: 'Você entendeu o lituano da diáspora — o “tamsta”, as palavras emprestadas — e ajudou a mantê-lo vivo.' },
       },
       final_neutro: {
         emoji: '🟠',
-        text: 'Ona nusišypso ir sako, kad supranta: jaunimas visada skuba. Ji įspraudžia Linu į delną mažą gintaro gabalėlį, kurį jos motina atsivežė iš Lietuvos. «Kai turėsi laiko, sugrįžk», – sako ji ir lėtai nueina gatve. Pakeliui namo Linu jaučia, kad gintaras delne šiltesnis, nei turėtų būti. Jis nusprendžia, kad laiko vis dėlto reikės surasti.',
+        text: 'Ona nusišypso ir sako, kad supranta: jaunimas visada skuba. Ji įspraudžia Linu į delną mažą gintaro gabalėlį, kurį jos motina atsivežė iš Lietuvos. “Kai turėsi laiko, sugrįžk”, – sako ji ir lėtai nueina gatve. Pakeliui namo Linu jaučia, kad gintaras delne šiltesnis, nei turėtų būti. Jis nusprendžia, kad laiko vis dėlto reikės surasti.',
         translation:
-          'A Ona sorri e diz que entende: os jovens estão sempre com pressa. Ela aperta na mão do Linu um pedacinho de âmbar que a mãe dela trouxe da Lituânia. «Quando tiver tempo, volte», diz, e vai embora devagar pela rua. No caminho de casa, o Linu sente que o âmbar na mão está mais quente do que deveria. Ele decide que, afinal, vai ter que arranjar tempo.',
+          'A Ona sorri e diz que entende: os jovens estão sempre com pressa. Ela aperta na mão do Linu um pedacinho de âmbar que a mãe dela trouxe da Lituânia. “Quando tiver tempo, volte”, diz, e vai embora devagar pela rua. No caminho de casa, o Linu sente que o âmbar na mão está mais quente do que deveria. Ele decide que, afinal, vai ter que arranjar tempo.',
         ending: { tone: 'neutro', title: 'Âmbar no bolso', message: 'Você ouviu a história da dona Ona, mas deixou passar a chance de ajudar a língua dela a continuar viva.' },
       },
     },
@@ -3607,14 +3607,14 @@ export const STORIES_LT: StorySeed[] = [
       ['kuršiai', 'curônios, antigo povo báltico'],
       ['prūsai', 'prussianos antigos, povo báltico'],
       ['išnykusi kalba', 'língua extinta'],
-      ['paldies (latv.)', 'obrigado (em letão; em lituano, «ačiū»)'],
+      ['paldies (latv.)', 'obrigado (em letão; em lituano, “ačiū”)'],
     ],
     nodes: {
       start: {
         emoji: '💨',
-        text: 'Nidoje, ant Parnidžio kopos, pučia toks vėjas, kad smėlis girgžda net tarp dantų. Iš vienos pusės matyti Kuršių marios, iš kitos – Baltijos jūra, o visai netoli į pietus prasideda Rusijos Kaliningrado sritis. Ant suoliuko sėdi mergina su kuprine ir garsiai kalba telefonu kalba, labai panašia į lietuvių, bet vis dėlto kitokia. Baigusi pokalbį, ji taisyklinga lietuvių kalba paklausia Linu: «Atsiprašau, ar nežinote, kiek laiko eiti iki Nidos centro?»',
+        text: 'Nidoje, ant Parnidžio kopos, pučia toks vėjas, kad smėlis girgžda net tarp dantų. Iš vienos pusės matyti Kuršių marios, iš kitos – Baltijos jūra, o visai netoli į pietus prasideda Rusijos Kaliningrado sritis. Ant suoliuko sėdi mergina su kuprine ir garsiai kalba telefonu kalba, labai panašia į lietuvių, bet vis dėlto kitokia. Baigusi pokalbį, ji taisyklinga lietuvių kalba paklausia Linu: “Atsiprašau, ar nežinote, kiek laiko eiti iki Nidos centro?”',
         translation:
-          'Em Nida, na duna de Parnidis, venta tanto que a areia range até entre os dentes. De um lado se vê a laguna da Curlândia, do outro o mar Báltico, e bem pertinho, ao sul, começa a região russa de Kaliningrado. Num banco está sentada uma moça de mochila, falando alto ao telefone numa língua muito parecida com o lituano, mas mesmo assim diferente. Ao terminar a ligação, ela pergunta ao Linu num lituano correto: «Com licença, o senhor sabe quanto tempo leva a pé até o centro de Nida?»',
+          'Em Nida, na duna de Parnidis, venta tanto que a areia range até entre os dentes. De um lado se vê a laguna da Curlândia, do outro o mar Báltico, e bem pertinho, ao sul, começa a região russa de Kaliningrado. Num banco está sentada uma moça de mochila, falando alto ao telefone numa língua muito parecida com o lituano, mas mesmo assim diferente. Ao terminar a ligação, ela pergunta ao Linu num lituano correto: “Com licença, o senhor sabe quanto tempo leva a pé até o centro de Nida?”',
         choices: [
           { text: 'Atsakyti ir paklausti, kokia kalba ji kalbėjo.', translation: 'Responder e perguntar que língua ela estava falando.', next: 'laima' },
           { text: 'Pasiūlyti kartu nusileisti nuo kopos.', translation: 'Propor descerem juntos da duna.', next: 'gidas' },
@@ -3622,30 +3622,30 @@ export const STORIES_LT: StorySeed[] = [
       },
       laima: {
         emoji: '🇱🇻',
-        text: 'Mergina prisistato: ji Laima iš Rygos, o telefonu kalbėjo latviškai su mama. «Lietuviškai išmokau studijuodama Vilniuje, – paaiškina ji. – Mes, latviai ir lietuviai, kalbame vienintelėmis gyvomis baltų kalbomis, bet be mokymosi susikalbėti beveik neįmanoma.» Pasak jos, daug žodžių panašūs: lietuvių «saulė» latviškai yra «saule», o «diena» – ir latviškai «diena». Tačiau duoną latviai vadina «maize», o vandenį – «ūdens».',
+        text: 'Mergina prisistato: ji Laima iš Rygos, o telefonu kalbėjo latviškai su mama. “Lietuviškai išmokau studijuodama Vilniuje, – paaiškina ji. – Mes, latviai ir lietuviai, kalbame vienintelėmis gyvomis baltų kalbomis, bet be mokymosi susikalbėti beveik neįmanoma.” Pasak jos, daug žodžių panašūs: lietuvių “saulė” latviškai yra “saule”, o “diena” – ir latviškai “diena”. Tačiau duoną latviai vadina “maize”, o vandenį – “ūdens”.',
         translation:
-          'A moça se apresenta: é Laima, de Riga, e ao telefone falava letão com a mãe. «Aprendi lituano quando estudei em Vilnius», explica ela. «Nós, letões e lituanos, falamos as únicas línguas bálticas vivas, mas sem estudar é quase impossível a gente se entender.» Segundo ela, muitas palavras são parecidas: o lituano «saulė» (sol) em letão é «saule», e «diena» (dia) em letão também é «diena». Mas o pão os letões chamam de «maize», e a água, de «ūdens».',
+          'A moça se apresenta: é Laima, de Riga, e ao telefone falava letão com a mãe. “Aprendi lituano quando estudei em Vilnius”, explica ela. “Nós, letões e lituanos, falamos as únicas línguas bálticas vivas, mas sem estudar é quase impossível a gente se entender.” Segundo ela, muitas palavras são parecidas: o lituano “saulė” (sol) em letão é “saule”, e “diena” (dia) em letão também é “diena”. Mas o pão os letões chamam de “maize”, e a água, de “ūdens”.',
         choices: [
-          { text: 'Paklausti, kaip latviškai «ačiū».', translation: 'Perguntar como se diz «obrigado» em letão.', next: 'aciu' },
+          { text: 'Paklausti, kaip latviškai “ačiū”.', translation: 'Perguntar como se diz “obrigado” em letão.', next: 'aciu' },
           {
             text: 'Nudžiugti, kad dabar galės be vargo skaityti latviškus laikraščius.',
             translation: 'Alegrar-se porque agora vai poder ler jornais letões sem esforço.',
-            wrong: 'A Laima disse justamente que, sem estudar, lituanos e letões quase não se entendem: há palavras parecidas («saulė» / «saule»), mas muitas bem diferentes, como «duona» × «maize» (pão). São línguas irmãs, não a mesma língua.',
+            wrong: 'A Laima disse justamente que, sem estudar, lituanos e letões quase não se entendem: há palavras parecidas (“saulė” / “saule”), mas muitas bem diferentes, como “duona” × “maize” (pão). São línguas irmãs, não a mesma língua.',
           },
         ],
       },
       aciu: {
         emoji: '🙏',
-        text: '«Paldies», – nusišypso Laima, ir Linu nusijuokia, nes žodis visai nepanašus į lietuvišką. Ji paaiškina dar vieną skirtumą: latvių kalboje kirtis beveik visada tenka pirmajam skiemeniui, o lietuvių kalboje jis laisvas ir net to paties žodžio formose gali šokinėti iš vienos vietos į kitą. «Todėl mums, latviams, lietuvių kalba skamba kaip daina, kurios melodija nuolat keičiasi», – sako ji. Linu prisipažįsta, kad jam kirčiai – didžiausias galvos skausmas. Laima juokiasi, kad ir jai lygiai taip pat.',
+        text: '“Paldies”, – nusišypso Laima, ir Linu nusijuokia, nes žodis visai nepanašus į lietuvišką. Ji paaiškina dar vieną skirtumą: latvių kalboje kirtis beveik visada tenka pirmajam skiemeniui, o lietuvių kalboje jis laisvas ir net to paties žodžio formose gali šokinėti iš vienos vietos į kitą. “Todėl mums, latviams, lietuvių kalba skamba kaip daina, kurios melodija nuolat keičiasi”, – sako ji. Linu prisipažįsta, kad jam kirčiai – didžiausias galvos skausmas. Laima juokiasi, kad ir jai lygiai taip pat.',
         translation:
-          '«Paldies», sorri a Laima, e o Linu cai na risada, porque a palavra não se parece nada com a lituana. Ela explica mais uma diferença: no letão a tônica cai quase sempre na primeira sílaba, enquanto no lituano ela é livre e, até nas formas de uma mesma palavra, pode pular de um lugar para outro. «Por isso, para nós, letões, o lituano soa como uma canção cuja melodia muda o tempo todo», diz ela. O Linu confessa que a tônica é a maior dor de cabeça dele. A Laima ri e diz que com ela é igualzinho.',
+          '“Paldies”, sorri a Laima, e o Linu cai na risada, porque a palavra não se parece nada com a lituana. Ela explica mais uma diferença: no letão a tônica cai quase sempre na primeira sílaba, enquanto no lituano ela é livre e, até nas formas de uma mesma palavra, pode pular de um lugar para outro. “Por isso, para nós, letões, o lituano soa como uma canção cuja melodia muda o tempo todo”, diz ela. O Linu confessa que a tônica é a maior dor de cabeça dele. A Laima ri e diz que com ela é igualzinho.',
         choices: [{ text: 'Pasiūlyti kartu nusileisti į Nidą.', translation: 'Propor descerem juntos até Nida.', next: 'gidas' }],
       },
       gidas: {
         emoji: '🧭',
-        text: 'Leisdamiesi nuo kopos, jie sutinka seną gidą su turistų grupe. Jis pasakoja, kad pusiasalis vadinamas Kuršių nerija nuo kuršių – baltų genties, kurios kalba seniai išnykusi. Dar toliau į pietus gyveno prūsai; jų kalba išnyko maždaug XVIII amžiaus pradžioje, o jų vardą perėmė vokiečių valstybė – Prūsija. «Prūsų kalbą šiandien pažįstame daugiausia iš kelių senų katekizmų ir žodynėlių», – priduria gidas. Laima tyliai sako Linu, kad kažkada baltų kalbų būta daug daugiau nei dvi.',
+        text: 'Leisdamiesi nuo kopos, jie sutinka seną gidą su turistų grupe. Jis pasakoja, kad pusiasalis vadinamas Kuršių nerija nuo kuršių – baltų genties, kurios kalba seniai išnykusi. Dar toliau į pietus gyveno prūsai; jų kalba išnyko maždaug XVIII amžiaus pradžioje, o jų vardą perėmė vokiečių valstybė – Prūsija. “Prūsų kalbą šiandien pažįstame daugiausia iš kelių senų katekizmų ir žodynėlių”, – priduria gidas. Laima tyliai sako Linu, kad kažkada baltų kalbų būta daug daugiau nei dvi.',
         translation:
-          'Descendo da duna, eles encontram um guia idoso com um grupo de turistas. Ele conta que a península se chama Kuršių nerija por causa dos curônios, uma tribo báltica cuja língua se extinguiu há muito tempo. Mais ao sul ainda viviam os prussianos; a língua deles desapareceu por volta do começo do século XVIII, e o nome deles foi herdado por um Estado alemão, a Prússia. «Hoje conhecemos o prussiano principalmente por alguns catecismos e vocabulários antigos», acrescenta o guia. A Laima comenta baixinho com o Linu que um dia as línguas bálticas foram muito mais que duas.',
+          'Descendo da duna, eles encontram um guia idoso com um grupo de turistas. Ele conta que a península se chama Kuršių nerija por causa dos curônios, uma tribo báltica cuja língua se extinguiu há muito tempo. Mais ao sul ainda viviam os prussianos; a língua deles desapareceu por volta do começo do século XVIII, e o nome deles foi herdado por um Estado alemão, a Prússia. “Hoje conhecemos o prussiano principalmente por alguns catecismos e vocabulários antigos”, acrescenta o guia. A Laima comenta baixinho com o Linu que um dia as línguas bálticas foram muito mais que duas.',
         choices: [
           { text: 'Paklausti Laimos, ar latviai jaučiasi lietuvių giminaičiais.', translation: 'Perguntar à Laima se os letões se sentem parentes dos lituanos.', next: 'gimines' },
           {
@@ -3657,9 +3657,9 @@ export const STORIES_LT: StorySeed[] = [
       },
       gimines: {
         emoji: '🤝',
-        text: 'Laima pagalvoja ir sako: «Mes kaip pusbroliai: kai susitinkame, džiaugiamės, bet kiekvienas turi savo namus.» Ji primena, kad 1989 metų rugpjūčio 23-iąją Baltijos kelyje rankomis susikibo lietuviai, latviai ir estai – nuo Vilniaus per Rygą iki Talino. «Estų kalba visai kitokia, finougrų, bet tą dieną visi buvome viena grandinė», – sako ji. Saulė leidžiasi virš marių, ir smėlis ant kopų atrodo auksinis. Laima pasižiūri į laikrodį ir klausia, kokie Linu planai vakarui.',
+        text: 'Laima pagalvoja ir sako: “Mes kaip pusbroliai: kai susitinkame, džiaugiamės, bet kiekvienas turi savo namus.” Ji primena, kad 1989 metų rugpjūčio 23-iąją Baltijos kelyje rankomis susikibo lietuviai, latviai ir estai – nuo Vilniaus per Rygą iki Talino. “Estų kalba visai kitokia, finougrų, bet tą dieną visi buvome viena grandinė”, – sako ji. Saulė leidžiasi virš marių, ir smėlis ant kopų atrodo auksinis. Laima pasižiūri į laikrodį ir klausia, kokie Linu planai vakarui.',
         translation:
-          'A Laima pensa e diz: «Somos como primos: quando nos encontramos, ficamos contentes, mas cada um tem sua casa.» Ela lembra que em 23 de agosto de 1989, na Via Báltica, lituanos, letões e estonianos deram as mãos, de Vilnius a Tallinn, passando por Riga. «O estoniano é bem diferente, é uma língua fino-úgrica, mas naquele dia éramos todos uma corrente só», diz ela. O sol se põe sobre a laguna, e a areia das dunas parece dourada. A Laima olha o relógio e pergunta quais são os planos do Linu para a noite.',
+          'A Laima pensa e diz: “Somos como primos: quando nos encontramos, ficamos contentes, mas cada um tem sua casa.” Ela lembra que em 23 de agosto de 1989, na Via Báltica, lituanos, letões e estonianos deram as mãos, de Vilnius a Tallinn, passando por Riga. “O estoniano é bem diferente, é uma língua fino-úgrica, mas naquele dia éramos todos uma corrente só”, diz ela. O sol se põe sobre a laguna, e a areia das dunas parece dourada. A Laima olha o relógio e pergunta quais são os planos do Linu para a noite.',
         choices: [
           { text: 'Pakviesti Laimą vakarienės ir pasimokyti vienas kito kalbos.', translation: 'Convidar a Laima para jantar e aprenderem a língua um do outro.', next: 'final_bom' },
           { text: 'Atsisveikinti ir skubėti į paskutinį autobusą.', translation: 'Despedir-se e correr para o último ônibus.', next: 'final_neutro' },
@@ -3667,17 +3667,17 @@ export const STORIES_LT: StorySeed[] = [
       },
       final_bom: {
         emoji: '🐟',
-        text: 'Vakare, restorane prie marių, jie užsisako rūkytos žuvies ir susitaria: kiekvienas žodis turi būti pasakytas dviem kalbomis. Laima moko Linu latviškų žodžių, o Linu jai parodo, kaip kirčiuoti lietuviškus «sūnus» ir «dievas» – žodžius tokius senus, kad primena sanskritą ir lotynų kalbą. Laima pastebi, kad latviai sūnų vadina visai kitaip, o dievą – beveik taip pat. Išsiskirdami jie abu sako tą patį, tik skirtingai: jis «ačiū», ji «paldies». Linu supranta, kad kalbų giminystė – tai ne vien panašumas, bet ir bendra istorija.',
+        text: 'Vakare, restorane prie marių, jie užsisako rūkytos žuvies ir susitaria: kiekvienas žodis turi būti pasakytas dviem kalbomis. Laima moko Linu latviškų žodžių, o Linu jai parodo, kaip kirčiuoti lietuviškus “sūnus” ir “dievas” – žodžius tokius senus, kad primena sanskritą ir lotynų kalbą. Laima pastebi, kad latviai sūnų vadina visai kitaip, o dievą – beveik taip pat. Išsiskirdami jie abu sako tą patį, tik skirtingai: jis “ačiū”, ji “paldies”. Linu supranta, kad kalbų giminystė – tai ne vien panašumas, bet ir bendra istorija.',
         translation:
-          'À noite, num restaurante à beira da laguna, eles pedem peixe defumado e combinam: cada palavra tem que ser dita nas duas línguas. A Laima ensina palavras letãs ao Linu, e o Linu mostra a ela como acentuar os lituanos «sūnus» (filho) e «dievas» (deus), palavras tão antigas que lembram o sânscrito e o latim. A Laima observa que os letões chamam o filho de um jeito bem diferente, mas deus quase igual. Na despedida, os dois dizem a mesma coisa, só que de jeitos diferentes: ele «ačiū», ela «paldies». O Linu entende que o parentesco das línguas não é só semelhança, mas também história em comum.',
+          'À noite, num restaurante à beira da laguna, eles pedem peixe defumado e combinam: cada palavra tem que ser dita nas duas línguas. A Laima ensina palavras letãs ao Linu, e o Linu mostra a ela como acentuar os lituanos “sūnus” (filho) e “dievas” (deus), palavras tão antigas que lembram o sânscrito e o latim. A Laima observa que os letões chamam o filho de um jeito bem diferente, mas deus quase igual. Na despedida, os dois dizem a mesma coisa, só que de jeitos diferentes: ele “ačiū”, ela “paldies”. O Linu entende que o parentesco das línguas não é só semelhança, mas também história em comum.',
         ending: { tone: 'bom', title: 'Primos bálticos', message: 'Você entendeu o que une e o que separa o lituano e o letão — e o que se perdeu com o prussiano e o curônio.' },
       },
       final_neutro: {
         emoji: '🚌',
-        text: 'Linu atsisveikina ir bėga į autobusą, nes nori spėti į keltą Smiltynėje. Autobuse jis bando prisiminti latviškus žodžius, bet atsimena tik «paldies». Pro langą jis mato, kaip saulė leidžiasi už kopų, ir pagalvoja apie Laimą, kuri tikriausiai dabar sėdi prie marių. Jis net nepaklausė, kaip latviškai «iki pasimatymo». Kitą kartą, nusprendžia jis, kalbai skirs daugiau laiko nei tvarkaraščiui.',
+        text: 'Linu atsisveikina ir bėga į autobusą, nes nori spėti į keltą Smiltynėje. Autobuse jis bando prisiminti latviškus žodžius, bet atsimena tik “paldies”. Pro langą jis mato, kaip saulė leidžiasi už kopų, ir pagalvoja apie Laimą, kuri tikriausiai dabar sėdi prie marių. Jis net nepaklausė, kaip latviškai “iki pasimatymo”. Kitą kartą, nusprendžia jis, kalbai skirs daugiau laiko nei tvarkaraščiui.',
         translation:
-          'O Linu se despede e corre para o ônibus, porque quer pegar a balsa em Smiltynė. No ônibus tenta lembrar as palavras letãs, mas só se lembra de «paldies». Pela janela vê o sol se pondo atrás das dunas e pensa na Laima, que agora provavelmente está sentada à beira da laguna. Ele nem perguntou como se diz «até logo» em letão. Da próxima vez, decide, vai dar mais tempo à língua do que ao horário do ônibus.',
-        ending: { tone: 'neutro', title: 'Só «paldies»', message: 'Você aprendeu as diferenças entre as línguas bálticas, mas trocou a conversa pelo horário do ônibus.' },
+          'O Linu se despede e corre para o ônibus, porque quer pegar a balsa em Smiltynė. No ônibus tenta lembrar as palavras letãs, mas só se lembra de “paldies”. Pela janela vê o sol se pondo atrás das dunas e pensa na Laima, que agora provavelmente está sentada à beira da laguna. Ele nem perguntou como se diz “até logo” em letão. Da próxima vez, decide, vai dar mais tempo à língua do que ao horário do ônibus.',
+        ending: { tone: 'neutro', title: 'Só “paldies”', message: 'Você aprendeu as diferenças entre as línguas bálticas, mas trocou a conversa pelo horário do ônibus.' },
       },
     },
   },
@@ -3705,23 +3705,23 @@ export const STORIES_LT: StorySeed[] = [
     nodes: {
       start: {
         emoji: '🏠',
-        text: 'Trakuose, Karaimų gatvėje, stovi mediniai namai, atsukę į gatvę po tris langus. Linu atėjo čia su muziejininke Rūta, kuri rengia straipsnį mokslo žurnalui. «Pasakojama, kad kiekvienas namas turėjęs tris langus: vieną Dievui, vieną Vytautui ir vieną šeimai», – skaito ji iš savo užrašų. Paskui ji paaiškina, kad žodis «turėjęs» čia labai svarbus: tai netiesioginė nuosaka, kuria perteikiama tai, ką sako kiti, bet ko autorius pats negali patvirtinti. Tokiu būdu, sako ji, mokslininkas gali papasakoti legendą, nemeluodamas skaitytojui.',
+        text: 'Trakuose, Karaimų gatvėje, stovi mediniai namai, atsukę į gatvę po tris langus. Linu atėjo čia su muziejininke Rūta, kuri rengia straipsnį mokslo žurnalui. “Pasakojama, kad kiekvienas namas turėjęs tris langus: vieną Dievui, vieną Vytautui ir vieną šeimai”, – skaito ji iš savo užrašų. Paskui ji paaiškina, kad žodis “turėjęs” čia labai svarbus: tai netiesioginė nuosaka, kuria perteikiama tai, ką sako kiti, bet ko autorius pats negali patvirtinti. Tokiu būdu, sako ji, mokslininkas gali papasakoti legendą, nemeluodamas skaitytojui.',
         translation:
-          'Em Trakai, na rua Karaimų, há casas de madeira que viram três janelas para a rua. O Linu veio com a museóloga Rūta, que está preparando um artigo para uma revista científica. «Conta-se que cada casa teria tido três janelas: uma para Deus, uma para Vytautas e uma para a família», lê ela nas anotações. Depois explica que a palavra «turėjęs» (teria tido) é muito importante aqui: é o modo relatado, com que se transmite o que os outros dizem, mas que o autor não pode confirmar por conta própria. Desse jeito, diz ela, o cientista consegue contar a lenda sem mentir para o leitor.',
+          'Em Trakai, na rua Karaimų, há casas de madeira que viram três janelas para a rua. O Linu veio com a museóloga Rūta, que está preparando um artigo para uma revista científica. “Conta-se que cada casa teria tido três janelas: uma para Deus, uma para Vytautas e uma para a família”, lê ela nas anotações. Depois explica que a palavra “turėjęs” (teria tido) é muito importante aqui: é o modo relatado, com que se transmite o que os outros dizem, mas que o autor não pode confirmar por conta própria. Desse jeito, diz ela, o cientista consegue contar a lenda sem mentir para o leitor.',
         choices: [
           { text: 'Paklausti, kas yra karaimai.', translation: 'Perguntar quem são os caraítas.', next: 'karaimai' },
           {
             text: 'Užsirašyti kaip įrodytą faktą, kad langai buvo skirti Dievui, Vytautui ir šeimai.',
             translation: 'Anotar como fato comprovado que as janelas eram para Deus, Vytautas e a família.',
-            wrong: 'O «turėjęs» (particípio no lugar do verbo conjugado) marca o modo relatado: «conta-se que teria tido». É lenda transmitida, não fato que a Rūta confirma. Anotar como fato comprovado seria errar justamente o que ela explicou.',
+            wrong: 'O “turėjęs” (particípio no lugar do verbo conjugado) marca o modo relatado: “conta-se que teria tido”. É lenda transmitida, não fato que a Rūta confirma. Anotar como fato comprovado seria errar justamente o que ela explicou.',
           },
         ],
       },
       karaimai: {
         emoji: '📜',
-        text: 'Rūta pasakoja, kad karaimai – nedidelė tiurkų kilmės bendruomenė, kurios protėvius XIV amžiaus pabaigoje, kaip manoma, iš Krymo į Lietuvą atsikvietė didysis kunigaikštis Vytautas. Jie išsaugojo savo tikėjimą, maldos namus, vadinamus kenesa, ir savo kalbą, kuria šiandien kalba labai nedaug žmonių. «Straipsnyje negaliu parašyti, kad karaimai saugojo pilį, jei šaltiniai to tiksliai nepatvirtina, – sako ji. – Galiu parašyti: „Karaimai, kaip teigiama, saugoję pilį“, arba nurodyti, kas tai teigia.» Linu stebisi, kiek tikslumo reikia vienam sakiniui.',
+        text: 'Rūta pasakoja, kad karaimai – nedidelė tiurkų kilmės bendruomenė, kurios protėvius XIV amžiaus pabaigoje, kaip manoma, iš Krymo į Lietuvą atsikvietė didysis kunigaikštis Vytautas. Jie išsaugojo savo tikėjimą, maldos namus, vadinamus kenesa, ir savo kalbą, kuria šiandien kalba labai nedaug žmonių. “Straipsnyje negaliu parašyti, kad karaimai saugojo pilį, jei šaltiniai to tiksliai nepatvirtina, – sako ji. – Galiu parašyti: „Karaimai, kaip teigiama, saugoję pilį‘, arba nurodyti, kas tai teigia.’ Linu stebisi, kiek tikslumo reikia vienam sakiniui.',
         translation:
-          'A Rūta conta que os caraítas são uma pequena comunidade de origem túrquica, cujos antepassados, pelo que se acredita, foram chamados da Crimeia para a Lituânia pelo grão-duque Vytautas no fim do século XIV. Eles preservaram a religião, a casa de oração, chamada kenesa, e a língua, que hoje pouquíssima gente fala. «No artigo não posso escrever que os caraítas guardavam o castelo se as fontes não confirmam isso com precisão», diz ela. «Posso escrever: „Os caraítas, segundo se afirma, teriam guardado o castelo“, ou indicar quem afirma isso.» O Linu se admira de quanta precisão uma única frase exige.',
+          'A Rūta conta que os caraítas são uma pequena comunidade de origem túrquica, cujos antepassados, pelo que se acredita, foram chamados da Crimeia para a Lituânia pelo grão-duque Vytautas no fim do século XIV. Eles preservaram a religião, a casa de oração, chamada kenesa, e a língua, que hoje pouquíssima gente fala. “No artigo não posso escrever que os caraítas guardavam o castelo se as fontes não confirmam isso com precisão”, diz ela. “Posso escrever: „Os caraítas, segundo se afirma, teriam guardado o castelo‘, ou indicar quem afirma isso.’ O Linu se admira de quanta precisão uma única frase exige.',
         choices: [
           { text: 'Užsukti į kavinę paragauti kibinų.', translation: 'Passar num café para provar kibinai.', next: 'kibinai' },
           { text: 'Nueiti prie salos pilies.', translation: 'Ir até o castelo da ilha.', next: 'pilis' },
@@ -3729,47 +3729,47 @@ export const STORIES_LT: StorySeed[] = [
       },
       kibinai: {
         emoji: '🥟',
-        text: 'Kavinėje jiems atneša karštų kibinų – pusmėnulio formos pyragėlių su aviena. Rūta aiškina, kad šiandien kibinai – vienas Trakų simbolių, o receptas atkeliavęs iš karaimų virtuvės. Ji parodo, kaip tą patį faktą parašytų skirtingi stiliai. Mokslo žurnale: «Kibinai laikomi tradiciniu karaimų patiekalu.» Laikraštyje – paprasčiau: «Kibinai – karaimų virtuvės pasididžiavimas.»',
+        text: 'Kavinėje jiems atneša karštų kibinų – pusmėnulio formos pyragėlių su aviena. Rūta aiškina, kad šiandien kibinai – vienas Trakų simbolių, o receptas atkeliavęs iš karaimų virtuvės. Ji parodo, kaip tą patį faktą parašytų skirtingi stiliai. Mokslo žurnale: “Kibinai laikomi tradiciniu karaimų patiekalu.” Laikraštyje – paprasčiau: “Kibinai – karaimų virtuvės pasididžiavimas.”',
         translation:
-          'No café trazem para eles kibinai quentinhos — pasteizinhos em forma de meia-lua recheados de carneiro. A Rūta explica que hoje os kibinai são um dos símbolos de Trakai, e que a receita teria vindo da cozinha caraíta. Ela mostra como estilos diferentes escreveriam o mesmo fato. Numa revista científica: «Os kibinai são considerados um prato tradicional caraíta.» Num jornal, mais simples: «Os kibinai são o orgulho da cozinha caraíta.»',
+          'No café trazem para eles kibinai quentinhos — pasteizinhos em forma de meia-lua recheados de carneiro. A Rūta explica que hoje os kibinai são um dos símbolos de Trakai, e que a receita teria vindo da cozinha caraíta. Ela mostra como estilos diferentes escreveriam o mesmo fato. Numa revista científica: “Os kibinai são considerados um prato tradicional caraíta.” Num jornal, mais simples: “Os kibinai são o orgulho da cozinha caraíta.”',
         choices: [{ text: 'Nueiti prie salos pilies.', translation: 'Ir até o castelo da ilha.', next: 'pilis' }],
       },
       pilis: {
         emoji: '🧱',
-        text: 'Jie eina mediniu tiltu į salos pilį – raudonų plytų gotikinę tvirtovę Galvės ežere. Ant suoliuko prie vandens Rūta perskaito savo straipsnio pradžią: «Pasak tradicijos, Vytautas Didysis gimęs Senuosiuose Trakuose, apie 1350 metus.» Ji paaiškina, kad tikslių to meto dokumentų apie Vytauto gimimą nėra, o datą ir vietą žinome iš vėlesnių šaltinių. Todėl ji ir pasirinko ne «gimė», o «gimęs». Ji klausia Linu, ar šis sakinys, jo nuomone, tinka moksliniam straipsniui, ar jį reikėtų keisti.',
+        text: 'Jie eina mediniu tiltu į salos pilį – raudonų plytų gotikinę tvirtovę Galvės ežere. Ant suoliuko prie vandens Rūta perskaito savo straipsnio pradžią: “Pasak tradicijos, Vytautas Didysis gimęs Senuosiuose Trakuose, apie 1350 metus.” Ji paaiškina, kad tikslių to meto dokumentų apie Vytauto gimimą nėra, o datą ir vietą žinome iš vėlesnių šaltinių. Todėl ji ir pasirinko ne “gimė”, o “gimęs”. Ji klausia Linu, ar šis sakinys, jo nuomone, tinka moksliniam straipsniui, ar jį reikėtų keisti.',
         translation:
-          'Eles atravessam a ponte de madeira até o castelo da ilha, uma fortaleza gótica de tijolos vermelhos no lago Galvė. Num banco à beira d’água, a Rūta lê o começo do artigo: «Segundo a tradição, Vytautas, o Grande, teria nascido em Senieji Trakai, por volta de 1350.» Ela explica que não há documentos exatos da época sobre o nascimento de Vytautas, e que a data e o lugar vêm de fontes posteriores. Por isso ela escolheu não «gimė» (nasceu), mas «gimęs» (teria nascido). Pergunta ao Linu se, na opinião dele, a frase serve para um artigo científico ou se deveria ser mudada.',
+          'Eles atravessam a ponte de madeira até o castelo da ilha, uma fortaleza gótica de tijolos vermelhos no lago Galvė. Num banco à beira d’água, a Rūta lê o começo do artigo: “Segundo a tradição, Vytautas, o Grande, teria nascido em Senieji Trakai, por volta de 1350.” Ela explica que não há documentos exatos da época sobre o nascimento de Vytautas, e que a data e o lugar vêm de fontes posteriores. Por isso ela escolheu não “gimė” (nasceu), mas “gimęs” (teria nascido). Pergunta ao Linu se, na opinião dele, a frase serve para um artigo científico ou se deveria ser mudada.',
         choices: [
-          { text: 'Pasakyti, kad sakinys tinka: «pasak tradicijos» ir netiesioginė nuosaka rodo, jog tai ne įrodytas faktas.', translation: 'Dizer que a frase serve: «segundo a tradição» e o modo relatado mostram que não é fato comprovado.', next: 'redagavimas' },
-          { text: 'Pasiūlyti parašyti tvirčiau: «Vytautas Didysis gimė Senuosiuose Trakuose 1350 metais.»', translation: 'Sugerir escrever de modo mais firme: «Vytautas, o Grande, nasceu em Senieji Trakai em 1350.»', next: 'final_neutro' },
+          { text: 'Pasakyti, kad sakinys tinka: “pasak tradicijos” ir netiesioginė nuosaka rodo, jog tai ne įrodytas faktas.', translation: 'Dizer que a frase serve: “segundo a tradição” e o modo relatado mostram que não é fato comprovado.', next: 'redagavimas' },
+          { text: 'Pasiūlyti parašyti tvirčiau: “Vytautas Didysis gimė Senuosiuose Trakuose 1350 metais.”', translation: 'Sugerir escrever de modo mais firme: “Vytautas, o Grande, nasceu em Senieji Trakai em 1350.”', next: 'final_neutro' },
         ],
       },
       redagavimas: {
         emoji: '🔍',
-        text: 'Rūta patenkinta ir paprašo padėti su kolegos tekstu. Jame parašyta: «Liudininkų teigimu, 1655 metais, per karą su Maskva, pilis buvusi smarkiai nuniokota.» Ji pabrėžia, kad šis sakinys sukonstruotas labai atsargiai: autorius remiasi kitų liudijimais ir pats neprisiima atsakomybės už kiekvieną detalę. «Studentai dažnai skaito tokius sakinius kaip paprastą pasakojimą, – atsidūsta ji. – O kaip jūs jį suprantate?» Linu dar kartą įdėmiai perskaito sakinį.',
+        text: 'Rūta patenkinta ir paprašo padėti su kolegos tekstu. Jame parašyta: “Liudininkų teigimu, 1655 metais, per karą su Maskva, pilis buvusi smarkiai nuniokota.” Ji pabrėžia, kad šis sakinys sukonstruotas labai atsargiai: autorius remiasi kitų liudijimais ir pats neprisiima atsakomybės už kiekvieną detalę. “Studentai dažnai skaito tokius sakinius kaip paprastą pasakojimą, – atsidūsta ji. – O kaip jūs jį suprantate?” Linu dar kartą įdėmiai perskaito sakinį.',
         translation:
-          'A Rūta fica satisfeita e pede ajuda com o texto de um colega. Nele está escrito: «Segundo testemunhas, em 1655, durante a guerra com Moscou, o castelo teria sido gravemente devastado.» Ela ressalta que a frase foi construída com muito cuidado: o autor se apoia no testemunho de outros e não assume por conta própria cada detalhe. «Os estudantes muitas vezes leem frases assim como um relato comum», suspira ela. «E você, como entende?» O Linu lê a frase mais uma vez com atenção.',
+          'A Rūta fica satisfeita e pede ajuda com o texto de um colega. Nele está escrito: “Segundo testemunhas, em 1655, durante a guerra com Moscou, o castelo teria sido gravemente devastado.” Ela ressalta que a frase foi construída com muito cuidado: o autor se apoia no testemunho de outros e não assume por conta própria cada detalhe. “Os estudantes muitas vezes leem frases assim como um relato comum”, suspira ela. “E você, como entende?” O Linu lê a frase mais uma vez com atenção.',
         choices: [
-          { text: '«Autorius perteikia kitų liudijimus ir pats jų nepatvirtina.»', translation: '«O autor transmite o testemunho de outros e não o confirma por conta própria.»', next: 'final_bom' },
+          { text: '“Autorius perteikia kitų liudijimus ir pats jų nepatvirtina.”', translation: '“O autor transmite o testemunho de outros e não o confirma por conta própria.”', next: 'final_bom' },
           {
-            text: '«Autorius pats matė, kaip pilis buvo nuniokota.»',
-            translation: '«O próprio autor viu o castelo ser devastado.»',
-            wrong: '«Liudininkų teigimu» (segundo testemunhas) + «buvusi» (particípio) é modo relatado: o autor repassa o que outros contaram, sem assumir como testemunho próprio. E nenhum autor de hoje viu o castelo em 1655!',
+            text: '“Autorius pats matė, kaip pilis buvo nuniokota.”',
+            translation: '“O próprio autor viu o castelo ser devastado.”',
+            wrong: '“Liudininkų teigimu” (segundo testemunhas) + “buvusi” (particípio) é modo relatado: o autor repassa o que outros contaram, sem assumir como testemunho próprio. E nenhum autor de hoje viu o castelo em 1655!',
           },
         ],
       },
       final_bom: {
         emoji: '📘',
-        text: 'Rūta šypsosi ir įrašo Linu vardą į straipsnio padėkas. Vakare jie sėdi ant kranto ir žiūri, kaip pilies bokštai atsispindi ramiame ežere. «Moksle svarbu ne tik tai, ką žinai, bet ir kaip tiksliai pasakai, ko nežinai», – sako ji. Linu pagalvoja, kad lietuvių kalba tam turi net atskirą nuosaką. Pakeliui į autobusą jis dar nusiperka kibinų – šįkart jau be jokių abejonių dėl jų skonio.',
+        text: 'Rūta šypsosi ir įrašo Linu vardą į straipsnio padėkas. Vakare jie sėdi ant kranto ir žiūri, kaip pilies bokštai atsispindi ramiame ežere. “Moksle svarbu ne tik tai, ką žinai, bet ir kaip tiksliai pasakai, ko nežinai”, – sako ji. Linu pagalvoja, kad lietuvių kalba tam turi net atskirą nuosaką. Pakeliui į autobusą jis dar nusiperka kibinų – šįkart jau be jokių abejonių dėl jų skonio.',
         translation:
-          'A Rūta sorri e põe o nome do Linu nos agradecimentos do artigo. À noite, eles se sentam à margem e olham as torres do castelo refletidas no lago tranquilo. «Na ciência, importa não só o que você sabe, mas com que precisão você diz o que não sabe», diz ela. O Linu pensa que o lituano tem até um modo verbal inteiro para isso. A caminho do ônibus, ele ainda compra kibinai — desta vez sem nenhuma dúvida quanto ao sabor.',
-        ending: { tone: 'bom', title: 'Nos agradecimentos', message: 'Você distinguiu o fato da lenda pelo modo relatado — «gimęs», «buvusi» — exatamente como um texto acadêmico exige.' },
+          'A Rūta sorri e põe o nome do Linu nos agradecimentos do artigo. À noite, eles se sentam à margem e olham as torres do castelo refletidas no lago tranquilo. “Na ciência, importa não só o que você sabe, mas com que precisão você diz o que não sabe”, diz ela. O Linu pensa que o lituano tem até um modo verbal inteiro para isso. A caminho do ônibus, ele ainda compra kibinai — desta vez sem nenhuma dúvida quanto ao sabor.',
+        ending: { tone: 'bom', title: 'Nos agradecimentos', message: 'Você distinguiu o fato da lenda pelo modo relatado — “gimęs”, “buvusi” — exatamente como um texto acadêmico exige.' },
       },
       final_neutro: {
         emoji: '✂️',
-        text: 'Rūta papurto galvą: toks sakinys skamba tvirtai, bet mokslininkas negali teigti to, ko šaltiniai tiksliai nepatvirtina. «Vytauto gimimo data ir vieta žinomos tik iš tradicijos ir vėlesnių šaltinių», – ramiai paaiškina ji. Ji grąžina sakinį į ankstesnį variantą ir padėkoja Linu už pagalbą, nors šiek tiek šaltokai. Grįždamas tiltu, Linu mato turistų gidą, garsiai pasakojantį, kad Vytautas «tikrai» gimė čia pat. Jis supranta, kad akademinėje kalboje atsargumas – ne silpnybė, o sąžiningumas.',
+        text: 'Rūta papurto galvą: toks sakinys skamba tvirtai, bet mokslininkas negali teigti to, ko šaltiniai tiksliai nepatvirtina. “Vytauto gimimo data ir vieta žinomos tik iš tradicijos ir vėlesnių šaltinių”, – ramiai paaiškina ji. Ji grąžina sakinį į ankstesnį variantą ir padėkoja Linu už pagalbą, nors šiek tiek šaltokai. Grįždamas tiltu, Linu mato turistų gidą, garsiai pasakojantį, kad Vytautas “tikrai” gimė čia pat. Jis supranta, kad akademinėje kalboje atsargumas – ne silpnybė, o sąžiningumas.',
         translation:
-          'A Rūta balança a cabeça: uma frase assim soa firme, mas o cientista não pode afirmar o que as fontes não confirmam com precisão. «A data e o lugar do nascimento de Vytautas só são conhecidos pela tradição e por fontes posteriores», explica ela com calma. Ela volta a frase à versão anterior e agradece ao Linu pela ajuda, embora meio friamente. Voltando pela ponte, o Linu vê um guia de turistas contando em voz alta que Vytautas «com certeza» nasceu ali mesmo. Ele entende que, na linguagem acadêmica, cautela não é fraqueza, e sim honestidade.',
+          'A Rūta balança a cabeça: uma frase assim soa firme, mas o cientista não pode afirmar o que as fontes não confirmam com precisão. “A data e o lugar do nascimento de Vytautas só são conhecidos pela tradição e por fontes posteriores”, explica ela com calma. Ela volta a frase à versão anterior e agradece ao Linu pela ajuda, embora meio friamente. Voltando pela ponte, o Linu vê um guia de turistas contando em voz alta que Vytautas “com certeza” nasceu ali mesmo. Ele entende que, na linguagem acadêmica, cautela não é fraqueza, e sim honestidade.',
         ending: { tone: 'neutro', title: 'Certeza demais', message: 'Você trocou o modo relatado por uma afirmação firme — e, na ciência, dizer mais do que as fontes permitem é um erro.' },
       },
     },
@@ -3797,23 +3797,23 @@ export const STORIES_LT: StorySeed[] = [
     nodes: {
       start: {
         emoji: '⛰️',
-        text: 'Kernavėje, virš Neries slėnio, stūkso penki žole apaugę piliakalniai, tarsi milžinų kepurės. Linu jau savaitę dirba savanoriu archeologinėje ekspedicijoje, kuriai vadovauja archeologė Jurgita. Šįryt jis teptuku atsargiai valo žemę kasinėjimų plote, kai staiga po teptuku kažkas sublizga. Jo širdis pradeda smarkiai plakti, o ranka pati tiesiasi prie daikto. «Nejudink! – šūkteli Jurgita iš tolo. – Pirmiausia nufotografuosime ir užfiksuosime radinio vietą.»',
+        text: 'Kernavėje, virš Neries slėnio, stūkso penki žole apaugę piliakalniai, tarsi milžinų kepurės. Linu jau savaitę dirba savanoriu archeologinėje ekspedicijoje, kuriai vadovauja archeologė Jurgita. Šįryt jis teptuku atsargiai valo žemę kasinėjimų plote, kai staiga po teptuku kažkas sublizga. Jo širdis pradeda smarkiai plakti, o ranka pati tiesiasi prie daikto. “Nejudink! – šūkteli Jurgita iš tolo. – Pirmiausia nufotografuosime ir užfiksuosime radinio vietą.”',
         translation:
-          'Em Kernavė, acima do vale do Neris, erguem-se cinco morros fortificados cobertos de grama, como chapéus de gigantes. Há uma semana o Linu trabalha como voluntário numa expedição arqueológica chefiada pela arqueóloga Jurgita. Hoje de manhã ele limpa a terra da área de escavação com um pincel, com cuidado, quando de repente algo brilha debaixo do pincel. O coração dele dispara, e a mão já se estica sozinha em direção ao objeto. «Não mexa!», grita a Jurgita de longe. «Primeiro vamos fotografar e registrar o local do achado.»',
+          'Em Kernavė, acima do vale do Neris, erguem-se cinco morros fortificados cobertos de grama, como chapéus de gigantes. Há uma semana o Linu trabalha como voluntário numa expedição arqueológica chefiada pela arqueóloga Jurgita. Hoje de manhã ele limpa a terra da área de escavação com um pincel, com cuidado, quando de repente algo brilha debaixo do pincel. O coração dele dispara, e a mão já se estica sozinha em direção ao objeto. “Não mexa!”, grita a Jurgita de longe. “Primeiro vamos fotografar e registrar o local do achado.”',
         choices: [
           { text: 'Palaukti, kol Jurgita užfiksuos radinį.', translation: 'Esperar a Jurgita registrar o achado.', next: 'radinys' },
           {
             text: 'Greitai paimti daiktą ir nunešti jį Jurgitai parodyti.',
             translation: 'Pegar o objeto depressa e levá-lo para mostrar à Jurgita.',
-            wrong: 'A Jurgita gritou «Nejudink!» (não mexa!): antes de tirar qualquer peça do chão, é preciso fotografar e registrar o local exato. Arrancar o achado apaga informações que a arqueologia não recupera mais.',
+            wrong: 'A Jurgita gritou “Nejudink!” (não mexa!): antes de tirar qualquer peça do chão, é preciso fotografar e registrar o local exato. Arrancar o achado apaga informações que a arqueologia não recupera mais.',
           },
         ],
       },
       radinys: {
         emoji: '🔎',
-        text: 'Jurgita išmatuoja gylį, nufotografuoja ir tik tada pincetu pakelia mažą žalvarinį papuošalą. «Tai, tikėtina, segė, – sako ji, apžiūrėdama jį per didinamąjį stiklą. – Panašios segės būdingos XIII–XIV amžiams, tačiau tiksliau datuoti galėsime tik laboratorijoje.» Ji paaiškina, kad tuo metu Kernavė buvo vienas svarbiausių Lietuvos centrų, todėl kartais net vadinama pirmąja sostine. Linu žiūri į žalią, laiko apgraužtą metalą ir negali patikėti, kad jį paskutinis lietė žmogus prieš septynis šimtus metų.',
+        text: 'Jurgita išmatuoja gylį, nufotografuoja ir tik tada pincetu pakelia mažą žalvarinį papuošalą. “Tai, tikėtina, segė, – sako ji, apžiūrėdama jį per didinamąjį stiklą. – Panašios segės būdingos XIII–XIV amžiams, tačiau tiksliau datuoti galėsime tik laboratorijoje.” Ji paaiškina, kad tuo metu Kernavė buvo vienas svarbiausių Lietuvos centrų, todėl kartais net vadinama pirmąja sostine. Linu žiūri į žalią, laiko apgraužtą metalą ir negali patikėti, kad jį paskutinis lietė žmogus prieš septynis šimtus metų.',
         translation:
-          'A Jurgita mede a profundidade, fotografa e só então ergue com uma pinça um pequeno enfeite de latão. «Isto provavelmente é um broche», diz ela, examinando-o com uma lupa. «Broches parecidos são típicos dos séculos XIII e XIV, mas uma datação mais precisa só vamos poder fazer no laboratório.» Ela explica que naquela época Kernavė era um dos centros mais importantes da Lituânia, e por isso às vezes é até chamada de primeira capital. O Linu olha para o metal esverdeado, roído pelo tempo, e não consegue acreditar que a última pessoa a tocá-lo viveu há setecentos anos.',
+          'A Jurgita mede a profundidade, fotografa e só então ergue com uma pinça um pequeno enfeite de latão. “Isto provavelmente é um broche”, diz ela, examinando-o com uma lupa. “Broches parecidos são típicos dos séculos XIII e XIV, mas uma datação mais precisa só vamos poder fazer no laboratório.” Ela explica que naquela época Kernavė era um dos centros mais importantes da Lituânia, e por isso às vezes é até chamada de primeira capital. O Linu olha para o metal esverdeado, roído pelo tempo, e não consegue acreditar que a última pessoa a tocá-lo viveu há setecentos anos.',
         choices: [
           { text: 'Padėti Jurgitai aprašyti radinį ekspedicijos dienyne.', translation: 'Ajudar a Jurgita a descrever o achado no diário da expedição.', next: 'dienynas' },
           { text: 'Paklausti, kodėl čia net penki piliakalniai.', translation: 'Perguntar por que aqui há cinco morros fortificados.', next: 'piliakalniai' },
@@ -3821,22 +3821,22 @@ export const STORIES_LT: StorySeed[] = [
       },
       piliakalniai: {
         emoji: '🏯',
-        text: '«Piliakalniai – tai kalvos, ant kurių kadaise stovėjo medinės pilys», – aiškina Jurgita. Kernavėje jie sudarė vieną gynybinę sistemą, o apačioje, slėnyje, buvo įsikūręs amatininkų ir pirklių miestas. 1390 metais miestą sudegino kryžiuočiai, ir jis niekada nebeatgavo buvusios reikšmės. Anot Jurgitos, būtent todėl po žole iki šiol glūdi beveik nepaliestas viduramžių miestas – archeologams tikras lobis. «Kitose vietose miestai buvo perstatinėjami šimtus kartų, o čia laikas tarsi sustojo», – sako ji.',
+        text: '“Piliakalniai – tai kalvos, ant kurių kadaise stovėjo medinės pilys”, – aiškina Jurgita. Kernavėje jie sudarė vieną gynybinę sistemą, o apačioje, slėnyje, buvo įsikūręs amatininkų ir pirklių miestas. 1390 metais miestą sudegino kryžiuočiai, ir jis niekada nebeatgavo buvusios reikšmės. Anot Jurgitos, būtent todėl po žole iki šiol glūdi beveik nepaliestas viduramžių miestas – archeologams tikras lobis. “Kitose vietose miestai buvo perstatinėjami šimtus kartų, o čia laikas tarsi sustojo”, – sako ji.',
         translation:
-          '«Piliakalniai são colinas onde antigamente ficavam castelos de madeira», explica a Jurgita. Em Kernavė eles formavam um único sistema de defesa, e embaixo, no vale, ficava uma cidade de artesãos e mercadores. Em 1390, os cavaleiros teutônicos incendiaram a cidade, e ela nunca mais recuperou a importância de antes. Segundo a Jurgita, é justamente por isso que debaixo da grama ainda jaz uma cidade medieval quase intocada — um verdadeiro tesouro para os arqueólogos. «Em outros lugares as cidades foram reconstruídas centenas de vezes, mas aqui o tempo como que parou», diz ela.',
+          '“Piliakalniai são colinas onde antigamente ficavam castelos de madeira”, explica a Jurgita. Em Kernavė eles formavam um único sistema de defesa, e embaixo, no vale, ficava uma cidade de artesãos e mercadores. Em 1390, os cavaleiros teutônicos incendiaram a cidade, e ela nunca mais recuperou a importância de antes. Segundo a Jurgita, é justamente por isso que debaixo da grama ainda jaz uma cidade medieval quase intocada — um verdadeiro tesouro para os arqueólogos. “Em outros lugares as cidades foram reconstruídas centenas de vezes, mas aqui o tempo como que parou”, diz ela.',
         choices: [{ text: 'Padėti aprašyti radinį dienyne.', translation: 'Ajudar a descrever o achado no diário.', next: 'dienynas' }],
       },
       dienynas: {
         emoji: '📓',
-        text: 'Jurgita diktuoja, o Linu rašo: «Kasinėjimų plote Nr. 3, 0,4 m gylyje, rasta žalvarinė segė. Radinys, tikėtina, datuotinas XIII–XIV a. Kultūrinis sluoksnis ties radimo vieta neišjudintas.» Linu nustemba, kaip sausai skamba mokslinis tekstas, lyginant su tuo, ką jis jautė prieš valandą. «Mokslo kalboje nėra vietos žodžiams „stebuklinga“ ar „nuostabu“, – juokiasi Jurgita. – Bet širdyje gali džiaugtis kiek tik nori.» Ji paprašo Linu pabaigti įrašą vienu sakiniu apie radinio amžių.',
+        text: 'Jurgita diktuoja, o Linu rašo: “Kasinėjimų plote Nr. 3, 0,4 m gylyje, rasta žalvarinė segė. Radinys, tikėtina, datuotinas XIII–XIV a. Kultūrinis sluoksnis ties radimo vieta neišjudintas.” Linu nustemba, kaip sausai skamba mokslinis tekstas, lyginant su tuo, ką jis jautė prieš valandą. “Mokslo kalboje nėra vietos žodžiams „stebuklinga‘ ar „nuostabu‘, – juokiasi Jurgita. – Bet širdyje gali džiaugtis kiek tik nori.’ Ji paprašo Linu pabaigti įrašą vienu sakiniu apie radinio amžių.',
         translation:
-          'A Jurgita dita, e o Linu escreve: «Na área de escavação n.º 3, a 0,4 m de profundidade, foi encontrado um broche de latão. O achado deve, provavelmente, ser datado dos séculos XIII–XIV. A camada arqueológica no local do achado não foi revolvida.» O Linu se espanta com o quanto o texto científico soa seco, comparado com o que ele sentiu uma hora antes. «Na linguagem científica não há lugar para palavras como „mágico“ ou „maravilhoso“», ri a Jurgita. «Mas no coração você pode se alegrar o quanto quiser.» Ela pede ao Linu que termine o registro com uma frase sobre a idade do achado.',
+          'A Jurgita dita, e o Linu escreve: “Na área de escavação n.º 3, a 0,4 m de profundidade, foi encontrado um broche de latão. O achado deve, provavelmente, ser datado dos séculos XIII–XIV. A camada arqueológica no local do achado não foi revolvida.” O Linu se espanta com o quanto o texto científico soa seco, comparado com o que ele sentiu uma hora antes. “Na linguagem científica não há lugar para palavras como „mágico‘ ou „maravilhoso‘’, ri a Jurgita. ‘Mas no coração você pode se alegrar o quanto quiser.’ Ela pede ao Linu que termine o registro com uma frase sobre a idade do achado.',
         choices: [
-          { text: 'Parašyti: «Tikslus datavimas bus atliktas laboratorijoje.»', translation: 'Escrever: «A datação exata será feita no laboratório.»', next: 'toliau' },
+          { text: 'Parašyti: “Tikslus datavimas bus atliktas laboratorijoje.”', translation: 'Escrever: “A datação exata será feita no laboratório.”', next: 'toliau' },
           {
-            text: 'Parašyti: «Segė neabejotinai pagaminta XIII amžiuje.»',
-            translation: 'Escrever: «O broche foi, sem dúvida, feito no século XIII.»',
-            wrong: 'O registro diz «tikėtina» (provavelmente) e «datuotinas XIII–XIV a.» — uma faixa de dois séculos, que só o laboratório vai poder precisar. Escrever «sem dúvida no século XIII» afirmaria o que ninguém sabe ainda.',
+            text: 'Parašyti: “Segė neabejotinai pagaminta XIII amžiuje.”',
+            translation: 'Escrever: “O broche foi, sem dúvida, feito no século XIII.”',
+            wrong: 'O registro diz “tikėtina” (provavelmente) e “datuotinas XIII–XIV a.” — uma faixa de dois séculos, que só o laboratório vai poder precisar. Escrever “sem dúvida no século XIII” afirmaria o que ninguém sabe ainda.',
           },
         ],
       },
@@ -3852,17 +3852,17 @@ export const STORIES_LT: StorySeed[] = [
       },
       final_bom: {
         emoji: '🌙',
-        text: 'Linu kalba trumpai ir tiksliai, o pabaigoje prisipažįsta, kad tai buvo pati įdomiausia jo gyvenimo akimirka. Studentai ploja, o Jurgita linkteli: «Tai buvo geriausias pranešimas šioje ekspedicijoje – ir moksliškas, ir žmogiškas.» Virš piliakalnių teka mėnulis, ir Linu galvoja apie tą nežinomą žmogų, kuris kadaise pametė segę. Galbūt jis irgi sėdėjo prie laužo ir žiūrėjo į tą patį slėnį. Tą naktį Linu užmiega su šypsena.',
+        text: 'Linu kalba trumpai ir tiksliai, o pabaigoje prisipažįsta, kad tai buvo pati įdomiausia jo gyvenimo akimirka. Studentai ploja, o Jurgita linkteli: “Tai buvo geriausias pranešimas šioje ekspedicijoje – ir moksliškas, ir žmogiškas.” Virš piliakalnių teka mėnulis, ir Linu galvoja apie tą nežinomą žmogų, kuris kadaise pametė segę. Galbūt jis irgi sėdėjo prie laužo ir žiūrėjo į tą patį slėnį. Tą naktį Linu užmiega su šypsena.',
         translation:
-          'O Linu fala de forma curta e precisa, e no fim confessa que foi o momento mais interessante da vida dele. Os estudantes aplaudem, e a Jurgita concorda com a cabeça: «Foi a melhor apresentação desta expedição — científica e humana ao mesmo tempo.» A lua nasce sobre os morros, e o Linu pensa naquela pessoa desconhecida que um dia perdeu o broche. Talvez ela também tenha se sentado junto a uma fogueira, olhando o mesmo vale. Naquela noite o Linu dorme sorrindo.',
-        ending: { tone: 'bom', title: 'Relatório exato', message: 'Você registrou o achado com a cautela da linguagem científica — «tikėtina», «datuotinas» — sem perder o encanto da descoberta.' },
+          'O Linu fala de forma curta e precisa, e no fim confessa que foi o momento mais interessante da vida dele. Os estudantes aplaudem, e a Jurgita concorda com a cabeça: “Foi a melhor apresentação desta expedição — científica e humana ao mesmo tempo.” A lua nasce sobre os morros, e o Linu pensa naquela pessoa desconhecida que um dia perdeu o broche. Talvez ela também tenha se sentado junto a uma fogueira, olhando o mesmo vale. Naquela noite o Linu dorme sorrindo.',
+        ending: { tone: 'bom', title: 'Relatório exato', message: 'Você registrou o achado com a cautela da linguagem científica — “tikėtina”, “datuotinas” — sem perder o encanto da descoberta.' },
       },
       final_neutro: {
         emoji: '👑',
-        text: 'Studentai susidomėję klausosi, bet Jurgita susiraukia. Ji ramiai paaiškina, kad nėra jokių duomenų, jog segė priklausė kunigaikštienei, o tokios istorijos greitai pasklinda ir virsta „faktais“. «Archeologas turi saugoti ne tik radinius, bet ir tiesą apie juos», – sako ji. Linu gėdingai linkteli, o kitą dieną kasinėja ypač atsargiai. Vakare jis dienyne pasibraukia vieną žodį: «tikėtina».',
+        text: 'Studentai susidomėję klausosi, bet Jurgita susiraukia. Ji ramiai paaiškina, kad nėra jokių duomenų, jog segė priklausė kunigaikštienei, o tokios istorijos greitai pasklinda ir virsta „faktais“. ‘Archeologas turi saugoti ne tik radinius, bet ir tiesą apie juos’, – sako ji. Linu gėdingai linkteli, o kitą dieną kasinėja ypač atsargiai. Vakare jis dienyne pasibraukia vieną žodį: ‘tikėtina’.',
         translation:
-          'Os estudantes ouvem interessados, mas a Jurgita franze a testa. Ela explica com calma que não há nenhum dado de que o broche tenha pertencido a uma grã-duquesa, e que histórias assim se espalham depressa e viram «fatos». «O arqueólogo tem que proteger não só os achados, mas também a verdade sobre eles», diz ela. O Linu concorda, envergonhado, e no dia seguinte escava com cuidado redobrado. À noite, sublinha uma palavra no diário: «tikėtina» (provavelmente).',
-        ending: { tone: 'neutro', title: 'A grã-duquesa que não existiu', message: 'O achado era real, mas a história que você contou não — na arqueologia, o «provavelmente» faz parte da verdade.' },
+          'Os estudantes ouvem interessados, mas a Jurgita franze a testa. Ela explica com calma que não há nenhum dado de que o broche tenha pertencido a uma grã-duquesa, e que histórias assim se espalham depressa e viram “fatos”. “O arqueólogo tem que proteger não só os achados, mas também a verdade sobre eles”, diz ela. O Linu concorda, envergonhado, e no dia seguinte escava com cuidado redobrado. À noite, sublinha uma palavra no diário: “tikėtina” (provavelmente).',
+        ending: { tone: 'neutro', title: 'A grã-duquesa que não existiu', message: 'O achado era real, mas a história que você contou não — na arqueologia, o “provavelmente” faz parte da verdade.' },
       },
     },
   },
@@ -3889,9 +3889,9 @@ export const STORIES_LT: StorySeed[] = [
     nodes: {
       start: {
         emoji: '🗞️',
-        text: 'Panevėžio laikraščio redakcijoje kvepia kava ir spaustuvės dažais. Linu čia atlieka praktiką, ir vyriausiasis redaktorius Laimutis jam paveda pirmą rimtą užduotį: parašyti straipsnį Baltijos kelio metinių proga. «1989 metų rugpjūčio 23-iąją žmonės susikibo rankomis nuo Vilniaus iki Talino, ir grandinė ėjo pro Panevėžį, – sako jis. – Surask liudininką ir parašyk taip, kad skaitytojas pajustų tą dieną, bet nepamirštų faktų.» Jis paduoda Linu užrašų knygutę ir diktofoną. Linu jaučia, kad nuo šios užduoties priklauso, ar jam bus patikėta daugiau.',
+        text: 'Panevėžio laikraščio redakcijoje kvepia kava ir spaustuvės dažais. Linu čia atlieka praktiką, ir vyriausiasis redaktorius Laimutis jam paveda pirmą rimtą užduotį: parašyti straipsnį Baltijos kelio metinių proga. “1989 metų rugpjūčio 23-iąją žmonės susikibo rankomis nuo Vilniaus iki Talino, ir grandinė ėjo pro Panevėžį, – sako jis. – Surask liudininką ir parašyk taip, kad skaitytojas pajustų tą dieną, bet nepamirštų faktų.” Jis paduoda Linu užrašų knygutę ir diktofoną. Linu jaučia, kad nuo šios užduoties priklauso, ar jam bus patikėta daugiau.',
         translation:
-          'Na redação do jornal de Panevėžys há cheiro de café e de tinta de gráfica. O Linu faz estágio aqui, e o editor-chefe, Laimutis, lhe passa a primeira tarefa séria: escrever uma reportagem pelo aniversário da Via Báltica. «Em 23 de agosto de 1989, as pessoas deram as mãos de Vilnius a Tallinn, e a corrente passava por Panevėžys», diz ele. «Encontre uma testemunha e escreva de um jeito que o leitor sinta aquele dia, mas não esqueça os fatos.» Ele entrega ao Linu um bloquinho e um gravador. O Linu sente que desta tarefa depende se vão lhe confiar mais coisas.',
+          'Na redação do jornal de Panevėžys há cheiro de café e de tinta de gráfica. O Linu faz estágio aqui, e o editor-chefe, Laimutis, lhe passa a primeira tarefa séria: escrever uma reportagem pelo aniversário da Via Báltica. “Em 23 de agosto de 1989, as pessoas deram as mãos de Vilnius a Tallinn, e a corrente passava por Panevėžys”, diz ele. “Encontre uma testemunha e escreva de um jeito que o leitor sinta aquele dia, mas não esqueça os fatos.” Ele entrega ao Linu um bloquinho e um gravador. O Linu sente que desta tarefa depende se vão lhe confiar mais coisas.',
         choices: [
           { text: 'Pirmiausia paskaityti archyvą.', translation: 'Primeiro ler o arquivo.', next: 'archyvas' },
           { text: 'Iš karto ieškoti liudininko.', translation: 'Ir logo atrás de uma testemunha.', next: 'birute' },
@@ -3899,30 +3899,30 @@ export const STORIES_LT: StorySeed[] = [
       },
       archyvas: {
         emoji: '🗄️',
-        text: 'Archyve Linu randa to meto laikraščių su nuotraukomis: ilgos žmonių eilės palei plentą, trispalvės, gėlės. Tuometiniuose straipsniuose rašoma, kad grandinėje stovėjo apie du milijonus žmonių, o jos ilgis siekė daugiau kaip šešis šimtus kilometrų. Linu pastebi, kad skirtingi šaltiniai skaičius pateikia šiek tiek skirtingai, todėl straipsnyje būtina nurodyti, iš kur jie paimti. Laimutis, pro šalį eidamas, pritaria: «Skaičius be šaltinio – tik gandas.» Paskui jis duoda Linu adresą moters, kuri tą dieną stovėjo prie pat miesto.',
+        text: 'Archyve Linu randa to meto laikraščių su nuotraukomis: ilgos žmonių eilės palei plentą, trispalvės, gėlės. Tuometiniuose straipsniuose rašoma, kad grandinėje stovėjo apie du milijonus žmonių, o jos ilgis siekė daugiau kaip šešis šimtus kilometrų. Linu pastebi, kad skirtingi šaltiniai skaičius pateikia šiek tiek skirtingai, todėl straipsnyje būtina nurodyti, iš kur jie paimti. Laimutis, pro šalį eidamas, pritaria: “Skaičius be šaltinio – tik gandas.” Paskui jis duoda Linu adresą moters, kuri tą dieną stovėjo prie pat miesto.',
         translation:
-          'No arquivo, o Linu encontra jornais da época com fotos: filas compridas de gente ao longo da estrada, bandeiras tricolores, flores. Nos artigos de então se lê que na corrente havia cerca de dois milhões de pessoas e que ela tinha mais de seiscentos quilômetros. O Linu percebe que fontes diferentes dão números um pouco diferentes, por isso na reportagem é obrigatório indicar de onde foram tirados. O Laimutis, passando por ali, concorda: «Número sem fonte é só boato.» Depois dá ao Linu o endereço de uma mulher que naquele dia estava bem perto da cidade.',
+          'No arquivo, o Linu encontra jornais da época com fotos: filas compridas de gente ao longo da estrada, bandeiras tricolores, flores. Nos artigos de então se lê que na corrente havia cerca de dois milhões de pessoas e que ela tinha mais de seiscentos quilômetros. O Linu percebe que fontes diferentes dão números um pouco diferentes, por isso na reportagem é obrigatório indicar de onde foram tirados. O Laimutis, passando por ali, concorda: “Número sem fonte é só boato.” Depois dá ao Linu o endereço de uma mulher que naquele dia estava bem perto da cidade.',
         choices: [{ text: 'Nuvažiuoti pas liudininkę.', translation: 'Ir até a testemunha.', next: 'birute' }],
       },
       birute: {
         emoji: '👵',
-        text: 'Liudininkė – pensininkė Birutė, gyvenanti prie pat kelio į Pasvalį. «Tą dieną su vyru ir vaikais stovėjome čia pat, prie šito plento, – pasakoja ji, rodydama pro langą. – Nieko nežinojome, ar pakaks žmonių, ir tik septintą valandą vakaro, kai visi susikibome rankomis, supratome, kad grandinė nenutrūko.» Ji nusišluosto akis ir sako, kad gražesnių penkiolikos minučių jos gyvenime nebuvo. Linu užrašo kiekvieną žodį, stengdamasis nepertraukti.',
+        text: 'Liudininkė – pensininkė Birutė, gyvenanti prie pat kelio į Pasvalį. “Tą dieną su vyru ir vaikais stovėjome čia pat, prie šito plento, – pasakoja ji, rodydama pro langą. – Nieko nežinojome, ar pakaks žmonių, ir tik septintą valandą vakaro, kai visi susikibome rankomis, supratome, kad grandinė nenutrūko.” Ji nusišluosto akis ir sako, kad gražesnių penkiolikos minučių jos gyvenime nebuvo. Linu užrašo kiekvieną žodį, stengdamasis nepertraukti.',
         translation:
-          'A testemunha é a aposentada Birutė, que mora bem na beira da estrada para Pasvalys. «Naquele dia, eu, meu marido e as crianças estávamos bem aqui, nesta estrada», conta ela, apontando pela janela. «A gente não sabia se ia ter gente suficiente, e só às sete da noite, quando todos demos as mãos, entendemos que a corrente não tinha se rompido.» Ela enxuga os olhos e diz que nunca teve na vida quinze minutos mais bonitos. O Linu anota cada palavra, tentando não interromper.',
+          'A testemunha é a aposentada Birutė, que mora bem na beira da estrada para Pasvalys. “Naquele dia, eu, meu marido e as crianças estávamos bem aqui, nesta estrada”, conta ela, apontando pela janela. “A gente não sabia se ia ter gente suficiente, e só às sete da noite, quando todos demos as mãos, entendemos que a corrente não tinha se rompido.” Ela enxuga os olhos e diz que nunca teve na vida quinze minutos mais bonitos. O Linu anota cada palavra, tentando não interromper.',
         choices: [
           { text: 'Grįžti į redakciją ir rašyti.', translation: 'Voltar à redação e escrever.', next: 'rasymas' },
           {
             text: 'Užsirašyti, kad Birutė iš anksto žinojo, jog žmonių pakaks.',
             translation: 'Anotar que a Birutė sabia de antemão que haveria gente suficiente.',
-            wrong: 'A Birutė disse o contrário: «Nieko nežinojome, ar pakaks žmonių» — não sabiam se haveria gente suficiente. Só às sete da noite, de mãos dadas, viram que a corrente não tinha se rompido.',
+            wrong: 'A Birutė disse o contrário: “Nieko nežinojome, ar pakaks žmonių” — não sabiam se haveria gente suficiente. Só às sete da noite, de mãos dadas, viram que a corrente não tinha se rompido.',
           },
         ],
       },
       rasymas: {
         emoji: '⌨️',
-        text: 'Linu pradeda straipsnį: «Prieš trisdešimt septynerius metus panevėžietė Birutė stovėjo prie Pasvalio plento, susikibusi rankomis su nepažįstamaisiais.» Laimutis perskaito ir pagiria įžangą, tačiau pastebi vieną dalyką. «Kai rašai tai, ką tau papasakojo, turi aiškiai parodyti, kad tai jos žodžiai: „pasak Birutės“, „kaip prisimena liudininkė“, – sako jis. – Galima ir netiesiogine nuosaka: „grandinė, pasak jos, nenutrūkusi“.» Be to, jis primena, kad laikraštis rašo pagarbiai ir be šūkių, net apie tokias jaudinančias dienas.',
+        text: 'Linu pradeda straipsnį: “Prieš trisdešimt septynerius metus panevėžietė Birutė stovėjo prie Pasvalio plento, susikibusi rankomis su nepažįstamaisiais.” Laimutis perskaito ir pagiria įžangą, tačiau pastebi vieną dalyką. “Kai rašai tai, ką tau papasakojo, turi aiškiai parodyti, kad tai jos žodžiai: „pasak Birutės‘, „kaip prisimena liudininkė‘, – sako jis. – Galima ir netiesiogine nuosaka: „grandinė, pasak jos, nenutrūkusi‘.’ Be to, jis primena, kad laikraštis rašo pagarbiai ir be šūkių, net apie tokias jaudinančias dienas.',
         translation:
-          'O Linu começa a reportagem: «Há trinta e sete anos, a panevezense Birutė estava na estrada de Pasvalys, de mãos dadas com desconhecidos.» O Laimutis lê e elogia a abertura, mas repara numa coisa. «Quando você escreve o que te contaram, tem que mostrar claramente que são palavras dela: „segundo Birutė“, „como lembra a testemunha“», diz ele. «Também dá para usar o modo relatado: „a corrente, segundo ela, não teria se rompido“.» Além disso, lembra que o jornal escreve com respeito e sem palavras de ordem, mesmo sobre dias tão emocionantes.',
+          'O Linu começa a reportagem: “Há trinta e sete anos, a panevezense Birutė estava na estrada de Pasvalys, de mãos dadas com desconhecidos.” O Laimutis lê e elogia a abertura, mas repara numa coisa. “Quando você escreve o que te contaram, tem que mostrar claramente que são palavras dela: „segundo Birutė‘, „como lembra a testemunha‘’, diz ele. ‘Também dá para usar o modo relatado: „a corrente, segundo ela, não teria se rompido‘.’ Além disso, lembra que o jornal escreve com respeito e sem palavras de ordem, mesmo sobre dias tão emocionantes.',
         choices: [{ text: 'Sugalvoti antraštę.', translation: 'Pensar na manchete.', next: 'antraste' }],
       },
       antraste: {
@@ -3931,8 +3931,8 @@ export const STORIES_LT: StorySeed[] = [
         translation:
           'Só falta pensar na manchete. O Laimutis diz que uma boa manchete tem que ser curta, exata e nunca mentir, mesmo que a mentira soasse mais bonita. O Linu anda pela redação, morde o lápis e escreve versões em papeizinhos. No fim, sobram duas. O Laimutis cruza os braços e espera.',
         choices: [
-          { text: '«Penkiolika minučių, kurių Birutė nepamiršo»', translation: '«Quinze minutos que a Birutė não esqueceu»', next: 'final_bom' },
-          { text: '«Tą dieną visa Lietuva verkė iš laimės»', translation: '«Naquele dia a Lituânia inteira chorou de felicidade»', next: 'final_neutro' },
+          { text: '“Penkiolika minučių, kurių Birutė nepamiršo”', translation: '“Quinze minutos que a Birutė não esqueceu”', next: 'final_bom' },
+          { text: '“Tą dieną visa Lietuva verkė iš laimės”', translation: '“Naquele dia a Lituânia inteira chorou de felicidade”', next: 'final_neutro' },
         ],
       },
       final_bom: {
@@ -3944,9 +3944,9 @@ export const STORIES_LT: StorySeed[] = [
       },
       final_neutro: {
         emoji: '✂️',
-        text: 'Laimutis papurto galvą: «Iš kur žinai, kad visa Lietuva verkė? Kalbi už du milijonus žmonių.» Jis paaiškina, kad tokia antraštė skamba gražiai, bet yra apibendrinimas, kurio neįmanoma patikrinti. Straipsnis išspausdinamas su redaktoriaus antrašte, o Linu vardas lieka tik mažomis raidėmis apačioje. Vakare jis įsirašo į užrašų knygutę: „Rašyk tik tai, ką gali įrodyti.“ Kitą kartą, nusprendžia jis, antraštę tikrins taip pat griežtai kaip skaičius.',
+        text: 'Laimutis papurto galvą: “Iš kur žinai, kad visa Lietuva verkė? Kalbi už du milijonus žmonių.” Jis paaiškina, kad tokia antraštė skamba gražiai, bet yra apibendrinimas, kurio neįmanoma patikrinti. Straipsnis išspausdinamas su redaktoriaus antrašte, o Linu vardas lieka tik mažomis raidėmis apačioje. Vakare jis įsirašo į užrašų knygutę: „Rašyk tik tai, ką gali įrodyti.“ Kitą kartą, nusprendžia jis, antraštę tikrins taip pat griežtai kaip skaičius.',
         translation:
-          'O Laimutis balança a cabeça: «Como você sabe que a Lituânia inteira chorou? Você está falando por dois milhões de pessoas.» Ele explica que uma manchete assim soa bonita, mas é uma generalização impossível de verificar. A reportagem sai com a manchete do editor, e o nome do Linu fica só em letrinhas miúdas lá embaixo. À noite, ele anota no bloquinho: «Escreva só o que você pode provar.» Da próxima vez, decide, vai checar a manchete com o mesmo rigor que os números.',
+          'O Laimutis balança a cabeça: “Como você sabe que a Lituânia inteira chorou? Você está falando por dois milhões de pessoas.” Ele explica que uma manchete assim soa bonita, mas é uma generalização impossível de verificar. A reportagem sai com a manchete do editor, e o nome do Linu fica só em letrinhas miúdas lá embaixo. À noite, ele anota no bloquinho: “Escreva só o que você pode provar.” Da próxima vez, decide, vai checar a manchete com o mesmo rigor que os números.',
         ending: { tone: 'neutro', title: 'Manchete do editor', message: 'A reportagem era boa, mas a manchete generalizou o que ninguém pode verificar — no jornalismo, emoção não substitui fato.' },
       },
     },
@@ -3960,7 +3960,7 @@ export const STORIES_LT: StorySeed[] = [
     emoji: '🪶',
     summary: 'Numa noite de chuva, no museu-casa de Maironis em Kaunas, uma guardiã idosa lê para o Linu os versos mais conhecidos do poeta e a balada de Jūratė e Kastytis.',
     cultural_context:
-      'Maironis, pseudônimo do padre Jonas Mačiulis (1862–1932), é o grande poeta do renascimento nacional lituano; seu livro «Pavasario balsai» (Vozes da primavera), de 1895, marcou gerações, e a casa onde viveu, na praça da Prefeitura de Kaunas, é hoje o museu da literatura lituana. Seus versos «Lietuva brangi, mano tėvyne» viraram canção com música de Juozas Naujalis, e ele está sepultado junto ao muro da catedral de Kaunas.',
+      'Maironis, pseudônimo do padre Jonas Mačiulis (1862–1932), é o grande poeta do renascimento nacional lituano; seu livro “Pavasario balsai” (Vozes da primavera), de 1895, marcou gerações, e a casa onde viveu, na praça da Prefeitura de Kaunas, é hoje o museu da literatura lituana. Seus versos “Lietuva brangi, mano tėvyne” viraram canção com música de Juozas Naujalis, e ele está sepultado junto ao muro da catedral de Kaunas.',
     start: 'start',
     glossary: [
       ['kapuos (= kapuose)', 'nos túmulos (locativo plural encurtado, poético)'],
@@ -3975,9 +3975,9 @@ export const STORIES_LT: StorySeed[] = [
     nodes: {
       start: {
         emoji: '🏛️',
-        text: 'Kauno senamiestyje, Rotušės aikštėje, stovi senas namas, kuriame kadaise gyveno kunigas ir poetas Jonas Mačiulis, visai Lietuvai žinomas Maironio vardu. Rudens vakarą Linu užsuka į muziejų paskutinis, kai prižiūrėtoja jau ruošiasi gesinti šviesas. Ji – žila, tiesios laikysenos moteris, vardu Teofilė, kuri, pamačiusi, kaip Linu žiūri į pageltusius rankraščius, nusprendžia muziejaus dar neuždaryti. «Užeikite, užeikite, – taria ji, – eilėraščiai nemėgsta skubos.» Ji atsiverčia seną knygą ir paklausia, ar Linu žino, kas buvo Maironis.',
+        text: 'Kauno senamiestyje, Rotušės aikštėje, stovi senas namas, kuriame kadaise gyveno kunigas ir poetas Jonas Mačiulis, visai Lietuvai žinomas Maironio vardu. Rudens vakarą Linu užsuka į muziejų paskutinis, kai prižiūrėtoja jau ruošiasi gesinti šviesas. Ji – žila, tiesios laikysenos moteris, vardu Teofilė, kuri, pamačiusi, kaip Linu žiūri į pageltusius rankraščius, nusprendžia muziejaus dar neuždaryti. “Užeikite, užeikite, – taria ji, – eilėraščiai nemėgsta skubos.” Ji atsiverčia seną knygą ir paklausia, ar Linu žino, kas buvo Maironis.',
         translation:
-          'Na cidade velha de Kaunas, na praça da Prefeitura, fica uma casa antiga onde outrora morou o padre e poeta Jonas Mačiulis, conhecido na Lituânia inteira pelo nome de Maironis. Numa noite de outono, o Linu entra no museu por último, quando a guardiã já se prepara para apagar as luzes. Ela é uma senhora de cabelos brancos e postura ereta, chamada Teofilė, que, ao ver como o Linu olha para os manuscritos amarelados, decide não fechar o museu ainda. «Entre, entre», diz ela, «poemas não gostam de pressa.» Ela abre um livro antigo e pergunta se o Linu sabe quem foi Maironis.',
+          'Na cidade velha de Kaunas, na praça da Prefeitura, fica uma casa antiga onde outrora morou o padre e poeta Jonas Mačiulis, conhecido na Lituânia inteira pelo nome de Maironis. Numa noite de outono, o Linu entra no museu por último, quando a guardiã já se prepara para apagar as luzes. Ela é uma senhora de cabelos brancos e postura ereta, chamada Teofilė, que, ao ver como o Linu olha para os manuscritos amarelados, decide não fechar o museu ainda. “Entre, entre”, diz ela, “poemas não gostam de pressa.” Ela abre um livro antigo e pergunta se o Linu sabe quem foi Maironis.',
         choices: [
           { text: 'Prisipažinti, kad žino tik vardą, ir paprašyti papasakoti.', translation: 'Confessar que só conhece o nome e pedir que ela conte.', next: 'poetas' },
           { text: 'Paprašyti jos paskaityti ką nors balsu.', translation: 'Pedir que ela leia algo em voz alta.', next: 'skaito' },
@@ -3985,30 +3985,30 @@ export const STORIES_LT: StorySeed[] = [
       },
       poetas: {
         emoji: '📜',
-        text: 'Teofilė pasakoja, kad Maironis gimė 1862 metais, o jo jaunystė prabėgo tais dešimtmečiais, kai lietuviškos knygos lotyniškomis raidėmis buvo draudžiamos. 1895 metais pasirodė jo rinkinys «Pavasario balsai», ir, anot jos, jaunimas tuos eilėraščius nusirašinėdavęs ranka ir mokydavęsis atmintinai. «Jis rašė apie Lietuvos praeitį, apie pilis ir kunigaikščius tada, kai pati Lietuva dar buvo tik svajonė, o ne valstybė žemėlapyje», – taria Teofilė. Ji priduria, kad poetas palaidotas prie Kauno katedros sienos, vos už kelių šimtų žingsnių nuo čia. Tada ji užsideda akinius ir atsiverčia knygą ten, kur įdėtas senas skirtukas.',
+        text: 'Teofilė pasakoja, kad Maironis gimė 1862 metais, o jo jaunystė prabėgo tais dešimtmečiais, kai lietuviškos knygos lotyniškomis raidėmis buvo draudžiamos. 1895 metais pasirodė jo rinkinys “Pavasario balsai”, ir, anot jos, jaunimas tuos eilėraščius nusirašinėdavęs ranka ir mokydavęsis atmintinai. “Jis rašė apie Lietuvos praeitį, apie pilis ir kunigaikščius tada, kai pati Lietuva dar buvo tik svajonė, o ne valstybė žemėlapyje”, – taria Teofilė. Ji priduria, kad poetas palaidotas prie Kauno katedros sienos, vos už kelių šimtų žingsnių nuo čia. Tada ji užsideda akinius ir atsiverčia knygą ten, kur įdėtas senas skirtukas.',
         translation:
-          'A Teofilė conta que Maironis nasceu em 1862 e que a juventude dele se passou nas décadas em que os livros lituanos em letras latinas eram proibidos. Em 1895 saiu a coletânea «Pavasario balsai», e, segundo ela, os jovens copiavam aqueles poemas à mão e os decoravam. «Ele escrevia sobre o passado da Lituânia, sobre castelos e grão-duques, numa época em que a própria Lituânia ainda era só um sonho, e não um Estado no mapa», diz a Teofilė. Ela acrescenta que o poeta está sepultado junto ao muro da catedral de Kaunas, a poucas centenas de passos dali. Então põe os óculos e abre o livro onde há um marcador antigo.',
+          'A Teofilė conta que Maironis nasceu em 1862 e que a juventude dele se passou nas décadas em que os livros lituanos em letras latinas eram proibidos. Em 1895 saiu a coletânea “Pavasario balsai”, e, segundo ela, os jovens copiavam aqueles poemas à mão e os decoravam. “Ele escrevia sobre o passado da Lituânia, sobre castelos e grão-duques, numa época em que a própria Lituânia ainda era só um sonho, e não um Estado no mapa”, diz a Teofilė. Ela acrescenta que o poeta está sepultado junto ao muro da catedral de Kaunas, a poucas centenas de passos dali. Então põe os óculos e abre o livro onde há um marcador antigo.',
         choices: [{ text: 'Klausytis, ką ji skaitys.', translation: 'Ouvir o que ela vai ler.', next: 'skaito' }],
       },
       skaito: {
         emoji: '🕯️',
-        text: 'Teofilė pakelia galvą ir, tarsi būtų tai kartojusi tūkstantį kartų, taria: «Lietuva brangi, mano tėvyne, šalis, kur miega kapuos didvyriai.» Jos balsas suvirpa ties paskutiniu žodžiu, ir tuščioje salėje pasidaro taip tylu, kad girdėti, kaip lietus barbena į langą. Ji paaiškina, kad šias eilutes kompozitorius Juozas Naujalis pavertė daina, kurią lietuviai iki šiol dainuoja per didžiąsias šventes. Tada ji atsisuka į Linu ir, lyg mokytoja per egzaminą, klausia, ar jis suprato, kur miega didvyriai. «Poezijoje žodžiai kartais sutrumpėja, kad tilptų į eilutę», – mįslingai priduria ji.',
+        text: 'Teofilė pakelia galvą ir, tarsi būtų tai kartojusi tūkstantį kartų, taria: “Lietuva brangi, mano tėvyne, šalis, kur miega kapuos didvyriai.” Jos balsas suvirpa ties paskutiniu žodžiu, ir tuščioje salėje pasidaro taip tylu, kad girdėti, kaip lietus barbena į langą. Ji paaiškina, kad šias eilutes kompozitorius Juozas Naujalis pavertė daina, kurią lietuviai iki šiol dainuoja per didžiąsias šventes. Tada ji atsisuka į Linu ir, lyg mokytoja per egzaminą, klausia, ar jis suprato, kur miega didvyriai. “Poezijoje žodžiai kartais sutrumpėja, kad tilptų į eilutę”, – mįslingai priduria ji.',
         translation:
-          'A Teofilė ergue a cabeça e, como se já tivesse repetido aquilo mil vezes, pronuncia: «Lituânia querida, minha pátria, terra onde dormem nos túmulos os heróis.» A voz dela treme na última palavra, e o salão vazio fica tão silencioso que se ouve a chuva batucando na janela. Ela explica que o compositor Juozas Naujalis transformou esses versos numa canção que os lituanos até hoje cantam nas grandes celebrações. Então se vira para o Linu e, como uma professora num exame, pergunta se ele entendeu onde dormem os heróis. «Na poesia, às vezes as palavras encolhem para caber no verso», acrescenta, enigmática.',
+          'A Teofilė ergue a cabeça e, como se já tivesse repetido aquilo mil vezes, pronuncia: “Lituânia querida, minha pátria, terra onde dormem nos túmulos os heróis.” A voz dela treme na última palavra, e o salão vazio fica tão silencioso que se ouve a chuva batucando na janela. Ela explica que o compositor Juozas Naujalis transformou esses versos numa canção que os lituanos até hoje cantam nas grandes celebrações. Então se vira para o Linu e, como uma professora num exame, pergunta se ele entendeu onde dormem os heróis. “Na poesia, às vezes as palavras encolhem para caber no verso”, acrescenta, enigmática.',
         choices: [
-          { text: '«Kapuose – tik žodis sutrumpintas iki „kapuos“.»', translation: '«Nos túmulos — a palavra só foi encurtada para „kapuos“.»', next: 'kapai' },
+          { text: '“Kapuose – tik žodis sutrumpintas iki „kapuos‘.’', translation: '‘Nos túmulos — a palavra só foi encurtada para „kapuos‘.’', next: 'kapai' },
           {
-            text: '«Kepurėse – nes „kapuos“ skamba panašiai kaip kepurė.»',
-            translation: '«Nos chapéus — porque „kapuos“ soa parecido com „kepurė“ (chapéu).»',
-            wrong: '«Kapuos» é a forma poética, encurtada, de «kapuose» (nos túmulos), locativo plural de «kapas». O poeta corta o -e final para caber no ritmo do verso: os heróis dormem nos túmulos — o chapéu («kepurė») não tem nada a ver.',
+            text: '“Kepurėse – nes „kapuos‘ skamba panašiai kaip kepurė.’',
+            translation: '“Nos chapéus — porque „kapuos‘ soa parecido com „kepurė‘ (chapéu).’',
+            wrong: '“Kapuos” é a forma poética, encurtada, de “kapuose” (nos túmulos), locativo plural de “kapas”. O poeta corta o -e final para caber no ritmo do verso: os heróis dormem nos túmulos — o chapéu (“kepurė”) não tem nada a ver.',
           },
         ],
       },
       kapai: {
         emoji: '📖',
-        text: 'Teofilė patenkinta linkteli: taip, «kapuos» – tai «kapuose», tik poetas nukirpo galūnę, kaip darydavo daugelis to meto rašytojų. Ji paaiškina, kad tokios trumpesnės vietininko formos – «namuos», «laukuos» – ir šiandien gyvos šnekamojoje kalboje, dainose ir tarmėse. «Maironis nesakė tiesiog „aš myliu Lietuvą“, jis ją piešė žodžiais – su Nemunu, piliakalniais ir Trakų pilimi», – sako ji, glostydama puslapį. Už lango lietus sustiprėja, bet nė vienas iš jų nė nemano eiti namo. Teofilė atsiverčia kitą puslapį – baladę «Jūratė ir Kastytis».',
+        text: 'Teofilė patenkinta linkteli: taip, “kapuos” – tai “kapuose”, tik poetas nukirpo galūnę, kaip darydavo daugelis to meto rašytojų. Ji paaiškina, kad tokios trumpesnės vietininko formos – “namuos”, “laukuos” – ir šiandien gyvos šnekamojoje kalboje, dainose ir tarmėse. “Maironis nesakė tiesiog „aš myliu Lietuvą‘, jis ją piešė žodžiais – su Nemunu, piliakalniais ir Trakų pilimi’, – sako ji, glostydama puslapį. Už lango lietus sustiprėja, bet nė vienas iš jų nė nemano eiti namo. Teofilė atsiverčia kitą puslapį – baladę ‘Jūratė ir Kastytis’.',
         translation:
-          'A Teofilė assente, satisfeita: sim, «kapuos» é «kapuose», só que o poeta cortou a terminação, como faziam muitos escritores da época. Ela explica que essas formas mais curtas do locativo — «namuos», «laukuos» — continuam vivas até hoje na fala coloquial, nas canções e nos dialetos. «Maironis não dizia simplesmente „eu amo a Lituânia“: ele a pintava com palavras — com o Nemunas, os morros fortificados e o castelo de Trakai», diz ela, alisando a página. Lá fora a chuva aperta, mas nenhum dos dois pensa em ir para casa. A Teofilė vira a página: a balada «Jūratė e Kastytis».',
+          'A Teofilė assente, satisfeita: sim, “kapuos” é “kapuose”, só que o poeta cortou a terminação, como faziam muitos escritores da época. Ela explica que essas formas mais curtas do locativo — “namuos”, “laukuos” — continuam vivas até hoje na fala coloquial, nas canções e nos dialetos. “Maironis não dizia simplesmente „eu amo a Lituânia‘: ele a pintava com palavras — com o Nemunas, os morros fortificados e o castelo de Trakai’, diz ela, alisando a página. Lá fora a chuva aperta, mas nenhum dos dois pensa em ir para casa. A Teofilė vira a página: a balada ‘Jūratė e Kastytis’.',
         choices: [
           { text: 'Paprašyti papasakoti baladės siužetą.', translation: 'Pedir que ela conte o enredo da balada.', next: 'jurate' },
           { text: 'Padėkoti ir paklausti, ar galima ateiti rytoj.', translation: 'Agradecer e perguntar se pode voltar amanhã.', next: 'final_neutro' },
@@ -4016,14 +4016,14 @@ export const STORIES_LT: StorySeed[] = [
       },
       jurate: {
         emoji: '🌊',
-        text: 'Teofilė pasakoja legendą, kurią Maironis apdainavo: jūrų deivė Jūratė gyveno gintaro rūmuose Baltijos dugne ir pamilo paprastą žveją Kastytį. Perkūnas, įtūžęs, kad nemirtinga deivė pamilo mirtingąjį, trenkė žaibu į rūmus, ir šie subyrėjo į šipulius. «Todėl, – baigia ji, – po audros pajūryje ir randame gintaro gabalėlių: tai Jūratės rūmų liekanos.» Ji tyliai priduria, kad per audrą jūra tarsi iki šiol dejuoja. Tada ji išsiima iš kišenės nedidelį gintaro gabalėlį, padeda jį Linu ant delno ir laukia, ką jis pasakys.',
+        text: 'Teofilė pasakoja legendą, kurią Maironis apdainavo: jūrų deivė Jūratė gyveno gintaro rūmuose Baltijos dugne ir pamilo paprastą žveją Kastytį. Perkūnas, įtūžęs, kad nemirtinga deivė pamilo mirtingąjį, trenkė žaibu į rūmus, ir šie subyrėjo į šipulius. “Todėl, – baigia ji, – po audros pajūryje ir randame gintaro gabalėlių: tai Jūratės rūmų liekanos.” Ji tyliai priduria, kad per audrą jūra tarsi iki šiol dejuoja. Tada ji išsiima iš kišenės nedidelį gintaro gabalėlį, padeda jį Linu ant delno ir laukia, ką jis pasakys.',
         translation:
-          'A Teofilė conta a lenda que Maironis cantou em versos: a deusa do mar Jūratė vivia num palácio de âmbar no fundo do Báltico e se apaixonou por um simples pescador, Kastytis. Perkūnas, furioso porque uma deusa imortal amou um mortal, lançou um raio no palácio, que se despedaçou em lascas. «Por isso», conclui ela, «depois das tempestades encontramos pedacinhos de âmbar na praia: são os restos do palácio de Jūratė.» Ela acrescenta baixinho que, nas tempestades, o mar parece gemer até hoje. Então tira do bolso um pedacinho de âmbar, põe na palma da mão do Linu e espera o que ele vai dizer.',
+          'A Teofilė conta a lenda que Maironis cantou em versos: a deusa do mar Jūratė vivia num palácio de âmbar no fundo do Báltico e se apaixonou por um simples pescador, Kastytis. Perkūnas, furioso porque uma deusa imortal amou um mortal, lançou um raio no palácio, que se despedaçou em lascas. “Por isso”, conclui ela, “depois das tempestades encontramos pedacinhos de âmbar na praia: são os restos do palácio de Jūratė.” Ela acrescenta baixinho que, nas tempestades, o mar parece gemer até hoje. Então tira do bolso um pedacinho de âmbar, põe na palma da mão do Linu e espera o que ele vai dizer.',
         choices: [
-          { text: '«Tai ne akmenėlis, o istorijos gabalėlis.»', translation: '«Isto não é uma pedrinha, é um pedacinho de história.»', next: 'final_bom' },
+          { text: '“Tai ne akmenėlis, o istorijos gabalėlis.”', translation: '“Isto não é uma pedrinha, é um pedacinho de história.”', next: 'final_bom' },
           {
-            text: '«Keista, kad Jūratė pati sudaužė savo rūmus.»',
-            translation: '«Que estranho que a própria Jūratė tenha destruído o palácio.»',
+            text: '“Keista, kad Jūratė pati sudaužė savo rūmus.”',
+            translation: '“Que estranho que a própria Jūratė tenha destruído o palácio.”',
             wrong: 'Na lenda, quem destrói o palácio de âmbar é Perkūnas, o deus do trovão, furioso porque uma deusa imortal amou um mortal. A Jūratė é a vítima, não a culpada.',
           },
         ],
@@ -4033,13 +4033,13 @@ export const STORIES_LT: StorySeed[] = [
         text: 'Teofilė nusišypso taip, kaip šypsomasi tik retam svečiui, ir sako, kad gintarą Linu gali pasilikti. Išėjęs į aikštę, jis mato, kad lietus liovėsi, o virš rotušės bokšto pro debesis spindi pilnatis. Pakeliui jis užsuka prie katedros ir ilgai stovi prie poeto kapo, nieko nesakydamas. Kišenėje gintaras šyla nuo jo delno, tarsi mažytė Jūratės rūmų šukė. Linu supranta, kad Maironio Lietuva gyva ne žemėlapyje, o žodžiuose, kuriuos žmonės nešiojasi širdyje.',
         translation:
           'A Teofilė sorri como só se sorri para um visitante raro e diz que o Linu pode ficar com o âmbar. Ao sair para a praça, ele vê que a chuva parou e que, sobre a torre da Prefeitura, a lua cheia brilha entre as nuvens. No caminho, ele passa pela catedral e fica muito tempo diante do túmulo do poeta, sem dizer nada. No bolso, o âmbar se aquece na mão dele, como um caquinho do palácio de Jūratė. O Linu entende que a Lituânia de Maironis vive não no mapa, mas nas palavras que as pessoas levam no coração.',
-        ending: { tone: 'bom', title: 'O âmbar de Jūratė', message: 'Você decifrou o «kapuos» do verso e a lenda de Jūratė — e ganhou uma noite de poesia que não estava no programa do museu.' },
+        ending: { tone: 'bom', title: 'O âmbar de Jūratė', message: 'Você decifrou o “kapuos” do verso e a lenda de Jūratė — e ganhou uma noite de poesia que não estava no programa do museu.' },
       },
       final_neutro: {
         emoji: '🌧️',
-        text: 'Teofilė linkteli, bet jos akyse šmėsteli nusivylimas: rytoj muziejuje budės kita prižiūrėtoja. Ji uždaro knygą, užgesina šviesas, ir Linu išeina į lietingą aikštę. Kitą dieną muziejus pilnas moksleivių ekskursijų, ir niekas nebeskaito eilėraščių balsu. Linu vaikšto tarp vitrinų ir galvoja, kad kartais geriausia pamoka būna ta, kuri pasiūloma tik vieną vakarą. Senas priežodis sako: «Ką gali padaryti šiandien, neatidėk rytojui.»',
+        text: 'Teofilė linkteli, bet jos akyse šmėsteli nusivylimas: rytoj muziejuje budės kita prižiūrėtoja. Ji uždaro knygą, užgesina šviesas, ir Linu išeina į lietingą aikštę. Kitą dieną muziejus pilnas moksleivių ekskursijų, ir niekas nebeskaito eilėraščių balsu. Linu vaikšto tarp vitrinų ir galvoja, kad kartais geriausia pamoka būna ta, kuri pasiūloma tik vieną vakarą. Senas priežodis sako: “Ką gali padaryti šiandien, neatidėk rytojui.”',
         translation:
-          'A Teofilė assente, mas nos olhos dela passa uma sombra de decepção: amanhã quem vai estar de plantão no museu é outra guardiã. Ela fecha o livro, apaga as luzes, e o Linu sai para a praça chuvosa. No dia seguinte o museu está cheio de excursões escolares, e ninguém mais lê poemas em voz alta. O Linu anda entre as vitrines e pensa que às vezes a melhor lição é aquela que só é oferecida numa noite. Diz o velho ditado: «Não deixe para amanhã o que você pode fazer hoje.»',
+          'A Teofilė assente, mas nos olhos dela passa uma sombra de decepção: amanhã quem vai estar de plantão no museu é outra guardiã. Ela fecha o livro, apaga as luzes, e o Linu sai para a praça chuvosa. No dia seguinte o museu está cheio de excursões escolares, e ninguém mais lê poemas em voz alta. O Linu anda entre as vitrines e pensa que às vezes a melhor lição é aquela que só é oferecida numa noite. Diz o velho ditado: “Não deixe para amanhã o que você pode fazer hoje.”',
         ending: { tone: 'neutro', title: 'Deixado para amanhã', message: 'Você entendeu o verso de Maironis, mas saiu antes da lenda — e certas leituras não se repetem.' },
       },
     },
@@ -4052,14 +4052,14 @@ export const STORIES_LT: StorySeed[] = [
     emoji: '📕',
     summary: 'Em Kudirkos Naumiestis, na antiga fronteira com a Prússia, um velho professor mostra ao Linu o livro de orações que o bisavô, um knygnešys, contrabandeou pelo rio — e lê com ele Donelaitis e o hino de Kudirka.',
     cultural_context:
-      'Depois da revolta de 1863, o Império Russo proibiu imprimir lituano em letras latinas (1864–1904); livros impressos na Prússia Oriental, sobretudo em Tilsit (Tilžė), cruzavam a fronteira escondidos pelos knygnešiai, os «carregadores de livros», hoje lembrados em 16 de março. Vincas Kudirka, autor do hino nacional, morreu em 1899 em Naumiestis, cidadezinha à beira do rio Šešupė que hoje leva o nome dele.',
+      'Depois da revolta de 1863, o Império Russo proibiu imprimir lituano em letras latinas (1864–1904); livros impressos na Prússia Oriental, sobretudo em Tilsit (Tilžė), cruzavam a fronteira escondidos pelos knygnešiai, os “carregadores de livros”, hoje lembrados em 16 de março. Vincas Kudirka, autor do hino nacional, morreu em 1899 em Naumiestis, cidadezinha à beira do rio Šešupė que hoje leva o nome dele.',
     start: 'start',
     glossary: [
       ['knygnešys', 'carregador de livros, contrabandista de livros lituanos'],
       ['spaudos draudimas', 'proibição da imprensa (1864–1904)'],
       ['lotyniškos raidės', 'letras latinas'],
       ['maldaknygė', 'livro de orações'],
-      ['svietas (sen.)', 'mundo (arcaico; hoje «pasaulis»)'],
+      ['svietas (sen.)', 'mundo (arcaico; hoje “pasaulis”)'],
       ['atkopti', 'subir de volta, escalar'],
       ['beraštis', 'analfabeto'],
       ['Kas skaito, rašo – duonos neprašo', 'Quem lê e escreve não pede pão'],
@@ -4067,9 +4067,9 @@ export const STORIES_LT: StorySeed[] = [
     nodes: {
       start: {
         emoji: '🌉',
-        text: 'Kudirkos Naumiestis – mažas miestelis prie Šešupės, kuri kadaise skyrė Rusijos imperiją nuo Prūsijos. Linu atvyko čia pas mokytoją pensininką Antaną, kurio prosenelis, kaip pasakojama šeimoje, buvęs knygnešys. Senasis mokytojas pasitinka jį prie vartų, pasiramsčiuodamas lazda, ir, dar nespėjęs pasisveikinti, ištiesia jam aptriušusią knygelę juodais viršeliais. «Štai ką prosenelis nešė per upę maiše su kitomis knygomis, – taria jis. – Už tokią knygelę tada galėjai atsidurti kalėjime ar net Sibire.» Ant titulinio lapo Linu įžiūri žodį «Tilžėje» ir metus – 1893.',
+        text: 'Kudirkos Naumiestis – mažas miestelis prie Šešupės, kuri kadaise skyrė Rusijos imperiją nuo Prūsijos. Linu atvyko čia pas mokytoją pensininką Antaną, kurio prosenelis, kaip pasakojama šeimoje, buvęs knygnešys. Senasis mokytojas pasitinka jį prie vartų, pasiramsčiuodamas lazda, ir, dar nespėjęs pasisveikinti, ištiesia jam aptriušusią knygelę juodais viršeliais. “Štai ką prosenelis nešė per upę maiše su kitomis knygomis, – taria jis. – Už tokią knygelę tada galėjai atsidurti kalėjime ar net Sibire.” Ant titulinio lapo Linu įžiūri žodį “Tilžėje” ir metus – 1893.',
         translation:
-          'Kudirkos Naumiestis é uma cidadezinha à beira do Šešupė, o rio que outrora separava o Império Russo da Prússia. O Linu veio visitar o professor aposentado Antanas, cujo bisavô, como se conta na família, teria sido um knygnešys. O velho professor o recebe no portão, apoiado numa bengala, e, antes mesmo de cumprimentar, estende a ele um livrinho gasto de capa preta. «Foi isto que o meu bisavô levou pelo rio, num saco com outros livros», diz ele. «Por um livrinho desses, naquela época, você podia ir parar na prisão ou até na Sibéria.» Na folha de rosto, o Linu distingue a palavra «Tilžėje» (em Tilsit) e o ano: 1893.',
+          'Kudirkos Naumiestis é uma cidadezinha à beira do Šešupė, o rio que outrora separava o Império Russo da Prússia. O Linu veio visitar o professor aposentado Antanas, cujo bisavô, como se conta na família, teria sido um knygnešys. O velho professor o recebe no portão, apoiado numa bengala, e, antes mesmo de cumprimentar, estende a ele um livrinho gasto de capa preta. “Foi isto que o meu bisavô levou pelo rio, num saco com outros livros”, diz ele. “Por um livrinho desses, naquela época, você podia ir parar na prisão ou até na Sibéria.” Na folha de rosto, o Linu distingue a palavra “Tilžėje” (em Tilsit) e o ano: 1893.',
         choices: [
           { text: 'Paklausti, kodėl tokios knygos buvo draudžiamos.', translation: 'Perguntar por que livros assim eram proibidos.', next: 'draudimas' },
           { text: 'Paklausti apie prosenelį.', translation: 'Perguntar sobre o bisavô.', next: 'prosenelis' },
@@ -4077,51 +4077,51 @@ export const STORIES_LT: StorySeed[] = [
       },
       draudimas: {
         emoji: '🚫',
-        text: 'Antanas atsisėda ant suoliuko po obelimi ir pradeda tarsi per pamoką. Po 1863 metų sukilimo carinė valdžia uždraudė spausdinti lietuviškas knygas lotyniškomis raidėmis; leista buvo spausdinti tik kirilica, bet žmonės tokių knygų nepirko ir nenorėjo. Keturiasdešimt metų, nuo 1864 iki 1904-ųjų, lietuviškos knygos buvo spausdinamos Prūsijoje, daugiausia Tilžėje, o paskui slapta gabenamos per sieną. «Uždrausta buvo ne kalba, o raidės, – pabrėžia Antanas, – bet be raidžių kalba lieka be knygų.» Ir, pasak jo, būtent knygnešiai tas raides išsaugojo savo nugaromis.',
+        text: 'Antanas atsisėda ant suoliuko po obelimi ir pradeda tarsi per pamoką. Po 1863 metų sukilimo carinė valdžia uždraudė spausdinti lietuviškas knygas lotyniškomis raidėmis; leista buvo spausdinti tik kirilica, bet žmonės tokių knygų nepirko ir nenorėjo. Keturiasdešimt metų, nuo 1864 iki 1904-ųjų, lietuviškos knygos buvo spausdinamos Prūsijoje, daugiausia Tilžėje, o paskui slapta gabenamos per sieną. “Uždrausta buvo ne kalba, o raidės, – pabrėžia Antanas, – bet be raidžių kalba lieka be knygų.” Ir, pasak jo, būtent knygnešiai tas raides išsaugojo savo nugaromis.',
         translation:
-          'O Antanas se senta num banquinho debaixo da macieira e começa como numa aula. Depois da revolta de 1863, o governo tsarista proibiu imprimir livros lituanos em letras latinas; só era permitido o cirílico, mas o povo não comprava nem queria esses livros. Durante quarenta anos, de 1864 a 1904, os livros lituanos foram impressos na Prússia, sobretudo em Tilsit, e depois levados às escondidas pela fronteira. «Proibidas não eram a língua, eram as letras», frisa o Antanas, «mas sem letras a língua fica sem livros.» E, segundo ele, foram justamente os knygnešiai que salvaram essas letras nas próprias costas.',
+          'O Antanas se senta num banquinho debaixo da macieira e começa como numa aula. Depois da revolta de 1863, o governo tsarista proibiu imprimir livros lituanos em letras latinas; só era permitido o cirílico, mas o povo não comprava nem queria esses livros. Durante quarenta anos, de 1864 a 1904, os livros lituanos foram impressos na Prússia, sobretudo em Tilsit, e depois levados às escondidas pela fronteira. “Proibidas não eram a língua, eram as letras”, frisa o Antanas, “mas sem letras a língua fica sem livros.” E, segundo ele, foram justamente os knygnešiai que salvaram essas letras nas próprias costas.',
         choices: [
           { text: 'Paklausti apie prosenelį.', translation: 'Perguntar sobre o bisavô.', next: 'prosenelis' },
           {
             text: 'Nustebti, kad tada lietuviškai apskritai buvo draudžiama kalbėti.',
             translation: 'Espantar-se porque naquela época era proibido até falar lituano.',
-            wrong: 'O Antanas frisou: «Uždrausta buvo ne kalba, o raidės» — proibido não era falar lituano, e sim imprimi-lo em letras latinas. O governo tsarista só permitia livros lituanos em cirílico, que o povo rejeitou.',
+            wrong: 'O Antanas frisou: “Uždrausta buvo ne kalba, o raidės” — proibido não era falar lituano, e sim imprimi-lo em letras latinas. O governo tsarista só permitia livros lituanos em cirílico, que o povo rejeitou.',
           },
         ],
       },
       prosenelis: {
         emoji: '🌙',
-        text: 'Antano prosenelis, pasakoja jis, buvęs paprastas ūkininkas, kuris naktimis brisdavęs per Šešupę ties seklia vieta, užsimetęs ant pečių maišą knygų. Kartą jį pagavę žandarai, knygas sudeginę, o jį patį įmetę į kalėjimą. «Bet vos išėjęs į laisvę, jis vėl ėjo per upę», – su pasididžiavimu sako Antanas, ir jo balsas, rodos, pajaunėja keliolika metų. Jis priduria, kad knygnešiai nešė ne tik maldaknyges, bet ir kalendorius, elementorius ir laikraščius, pavyzdžiui, «Varpą», kurį leido Vincas Kudirka. Paskui jis tyliai parodo lazda į miestelio aikštės pusę.',
+        text: 'Antano prosenelis, pasakoja jis, buvęs paprastas ūkininkas, kuris naktimis brisdavęs per Šešupę ties seklia vieta, užsimetęs ant pečių maišą knygų. Kartą jį pagavę žandarai, knygas sudeginę, o jį patį įmetę į kalėjimą. “Bet vos išėjęs į laisvę, jis vėl ėjo per upę”, – su pasididžiavimu sako Antanas, ir jo balsas, rodos, pajaunėja keliolika metų. Jis priduria, kad knygnešiai nešė ne tik maldaknyges, bet ir kalendorius, elementorius ir laikraščius, pavyzdžiui, “Varpą”, kurį leido Vincas Kudirka. Paskui jis tyliai parodo lazda į miestelio aikštės pusę.',
         translation:
-          'O bisavô do Antanas, conta ele, teria sido um simples lavrador que, à noite, costumava atravessar o Šešupė a vau num trecho raso, com um saco de livros nas costas. Certa vez os gendarmes o teriam pegado, queimado os livros e jogado ele na prisão. «Mas, mal saiu em liberdade, ele voltou a atravessar o rio», diz o Antanas com orgulho, e a voz dele parece rejuvenescer uns tantos anos. Ele acrescenta que os knygnešiai levavam não só livros de orações, mas também almanaques, cartilhas e jornais, como o «Varpas» (O Sino), que Vincas Kudirka publicava. Depois aponta em silêncio, com a bengala, para o lado da praça da cidade.',
+          'O bisavô do Antanas, conta ele, teria sido um simples lavrador que, à noite, costumava atravessar o Šešupė a vau num trecho raso, com um saco de livros nas costas. Certa vez os gendarmes o teriam pegado, queimado os livros e jogado ele na prisão. “Mas, mal saiu em liberdade, ele voltou a atravessar o rio”, diz o Antanas com orgulho, e a voz dele parece rejuvenescer uns tantos anos. Ele acrescenta que os knygnešiai levavam não só livros de orações, mas também almanaques, cartilhas e jornais, como o “Varpas” (O Sino), que Vincas Kudirka publicava. Depois aponta em silêncio, com a bengala, para o lado da praça da cidade.',
         choices: [{ text: 'Paklausti, kas buvo Vincas Kudirka.', translation: 'Perguntar quem foi Vincas Kudirka.', next: 'kudirka' }],
       },
       kudirka: {
         emoji: '🎼',
-        text: '«Kudirka buvo gydytojas, rašytojas ir mūsų himno autorius, – sako Antanas. – Jis mirė čia, Naumiestyje, 1899 metais, išsekintas džiovos, taip ir nesulaukęs spaudos draudimo panaikinimo.» Senasis mokytojas atsistoja, nusiima kepurę ir tyliai, beveik šnabždomis, pradeda: «Lietuva, Tėvyne mūsų, tu didvyrių žeme...» Linu, nors dar nemoka visų žodžių, atsistoja kartu su juo. Kai giesmė nutyla, Antanas dar ilgai stovi, žiūrėdamas į upę. Tada jis nueina į trobą ir grįžta su dar viena knyga.',
+        text: '“Kudirka buvo gydytojas, rašytojas ir mūsų himno autorius, – sako Antanas. – Jis mirė čia, Naumiestyje, 1899 metais, išsekintas džiovos, taip ir nesulaukęs spaudos draudimo panaikinimo.” Senasis mokytojas atsistoja, nusiima kepurę ir tyliai, beveik šnabždomis, pradeda: “Lietuva, Tėvyne mūsų, tu didvyrių žeme...” Linu, nors dar nemoka visų žodžių, atsistoja kartu su juo. Kai giesmė nutyla, Antanas dar ilgai stovi, žiūrėdamas į upę. Tada jis nueina į trobą ir grįžta su dar viena knyga.',
         translation:
-          '«Kudirka foi médico, escritor e autor do nosso hino», diz o Antanas. «Ele morreu aqui, em Naumiestis, em 1899, consumido pela tuberculose, sem chegar a ver o fim da proibição da imprensa.» O velho professor se levanta, tira o boné e começa, baixinho, quase num sussurro: «Lituânia, nossa pátria, tu, terra de heróis...» O Linu, embora ainda não saiba todas as palavras, se levanta junto com ele. Quando o canto silencia, o Antanas ainda fica muito tempo de pé, olhando para o rio. Então entra em casa e volta com mais um livro.',
+          '“Kudirka foi médico, escritor e autor do nosso hino”, diz o Antanas. “Ele morreu aqui, em Naumiestis, em 1899, consumido pela tuberculose, sem chegar a ver o fim da proibição da imprensa.” O velho professor se levanta, tira o boné e começa, baixinho, quase num sussurro: “Lituânia, nossa pátria, tu, terra de heróis...” O Linu, embora ainda não saiba todas as palavras, se levanta junto com ele. Quando o canto silencia, o Antanas ainda fica muito tempo de pé, olhando para o rio. Então entra em casa e volta com mais um livro.',
         choices: [{ text: 'Paklausti, kokia tai knyga.', translation: 'Perguntar que livro é aquele.', next: 'metai' }],
       },
       metai: {
         emoji: '🌅',
-        text: 'Tai Kristijono Donelaičio «Metai». Antanas paaiškina, kad šią poemą apie būrų gyvenimą Prūsų Lietuvoje Donelaitis parašė dar XVIII amžiuje, o išspausdinta ji buvo tik 1818 metais, kai autoriaus seniai nebebuvo gyvo. Senasis mokytojas perskaito pirmąją eilutę taip, kaip skaitoma malda: «Jau saulelė vėl atkopdama budino svietą.» Paskui jis klausia Linu, kas vyksta šioje eilutėje, nes, anot jo, joje sutilpęs visas lietuviškas pavasaris. «Svietas – senas žodis, šiandien sakytume „pasaulis“», – pamokomai priduria jis.',
+        text: 'Tai Kristijono Donelaičio “Metai”. Antanas paaiškina, kad šią poemą apie būrų gyvenimą Prūsų Lietuvoje Donelaitis parašė dar XVIII amžiuje, o išspausdinta ji buvo tik 1818 metais, kai autoriaus seniai nebebuvo gyvo. Senasis mokytojas perskaito pirmąją eilutę taip, kaip skaitoma malda: “Jau saulelė vėl atkopdama budino svietą.” Paskui jis klausia Linu, kas vyksta šioje eilutėje, nes, anot jo, joje sutilpęs visas lietuviškas pavasaris. “Svietas – senas žodis, šiandien sakytume „pasaulis‘’, – pamokomai priduria jis.',
         translation:
-          'São «As Estações» (Metai), de Kristijonas Donelaitis. O Antanas explica que Donelaitis escreveu esse poema sobre a vida dos camponeses na Lituânia prussiana ainda no século XVIII, mas ele só foi impresso em 1818, quando o autor já tinha morrido havia muito tempo. O velho professor lê o primeiro verso como quem reza: «Já o solzinho, subindo de novo, despertava o mundo.» Depois pergunta ao Linu o que acontece nesse verso, porque, segundo ele, nele cabe toda a primavera lituana. «„Svietas“ é palavra antiga; hoje diríamos „pasaulis“», acrescenta, em tom de professor.',
+          'São “As Estações” (Metai), de Kristijonas Donelaitis. O Antanas explica que Donelaitis escreveu esse poema sobre a vida dos camponeses na Lituânia prussiana ainda no século XVIII, mas ele só foi impresso em 1818, quando o autor já tinha morrido havia muito tempo. O velho professor lê o primeiro verso como quem reza: “Já o solzinho, subindo de novo, despertava o mundo.” Depois pergunta ao Linu o que acontece nesse verso, porque, segundo ele, nele cabe toda a primavera lituana. “„Svietas‘ é palavra antiga; hoje diríamos „pasaulis‘’, acrescenta, em tom de professor.',
         choices: [
-          { text: '«Pavasario saulė grįžta, kopia vis aukščiau ir žadina pasaulį.»', translation: '«O sol da primavera volta, sobe cada vez mais e acorda o mundo.»', next: 'patarle' },
+          { text: '“Pavasario saulė grįžta, kopia vis aukščiau ir žadina pasaulį.”', translation: '“O sol da primavera volta, sobe cada vez mais e acorda o mundo.”', next: 'patarle' },
           {
-            text: '«Saulė leidžiasi ir užmigdo pasaulį žiemai.»',
-            translation: '«O sol se põe e faz o mundo adormecer para o inverno.»',
-            wrong: '«Atkopdama» é «subindo de volta» (de «atkopti», escalar) e «budino» é «despertava». Donelaitis abre «As Estações» com o sol da primavera voltando a subir e acordando o mundo («svietas», palavra antiga para «pasaulis») — o contrário de se pôr e adormecer.',
+            text: '“Saulė leidžiasi ir užmigdo pasaulį žiemai.”',
+            translation: '“O sol se põe e faz o mundo adormecer para o inverno.”',
+            wrong: '“Atkopdama” é “subindo de volta” (de “atkopti”, escalar) e “budino” é “despertava”. Donelaitis abre “As Estações” com o sol da primavera voltando a subir e acordando o mundo (“svietas”, palavra antiga para “pasaulis”) — o contrário de se pôr e adormecer.',
           },
         ],
       },
       patarle: {
         emoji: '🍞',
-        text: 'Antanas užverčia knygą ir sako, kad jo prosenelis pats buvęs beraštis, bet savo vaikus išmokęs skaityti iš tų pačių kontrabandinių knygų. «Namuose jis mėgdavo kartoti: „Kas skaito, rašo – duonos neprašo“», – šypteli senasis mokytojas. Jis tyliai priduria, kad šiandien knygynai pilni knygų, o jaunimas jų vis mažiau skaito, ir kad tai jam skaudžiau už bet kokį draudimą. Tada jis pažvelgia į Linu ir paklausia, ar šis nenorėtų pasiimti maldaknygės, nes jo paties vaikai gyvena toli ir jos nesaugos. Linu jaučia, kad tai ne dovana, o prašymas.',
+        text: 'Antanas užverčia knygą ir sako, kad jo prosenelis pats buvęs beraštis, bet savo vaikus išmokęs skaityti iš tų pačių kontrabandinių knygų. “Namuose jis mėgdavo kartoti: „Kas skaito, rašo – duonos neprašo‘’, – šypteli senasis mokytojas. Jis tyliai priduria, kad šiandien knygynai pilni knygų, o jaunimas jų vis mažiau skaito, ir kad tai jam skaudžiau už bet kokį draudimą. Tada jis pažvelgia į Linu ir paklausia, ar šis nenorėtų pasiimti maldaknygės, nes jo paties vaikai gyvena toli ir jos nesaugos. Linu jaučia, kad tai ne dovana, o prašymas.',
         translation:
-          'O Antanas fecha o livro e diz que o bisavô era analfabeto, mas teria ensinado os filhos a ler com aqueles mesmos livros contrabandeados. «Em casa ele gostava de repetir: „Quem lê e escreve não pede pão“», sorri o velho professor. Ele acrescenta baixinho que hoje as livrarias estão cheias de livros, e os jovens leem cada vez menos, e que isso dói nele mais do que qualquer proibição. Então olha para o Linu e pergunta se ele não gostaria de levar o livro de orações, porque os filhos dele moram longe e não vão guardá-lo. O Linu sente que não é um presente, é um pedido.',
+          'O Antanas fecha o livro e diz que o bisavô era analfabeto, mas teria ensinado os filhos a ler com aqueles mesmos livros contrabandeados. “Em casa ele gostava de repetir: „Quem lê e escreve não pede pão‘’, sorri o velho professor. Ele acrescenta baixinho que hoje as livrarias estão cheias de livros, e os jovens leem cada vez menos, e que isso dói nele mais do que qualquer proibição. Então olha para o Linu e pergunta se ele não gostaria de levar o livro de orações, porque os filhos dele moram longe e não vão guardá-lo. O Linu sente que não é um presente, é um pedido.',
         choices: [
           { text: 'Pasiūlyti knygą perduoti miestelio bibliotekai, kad ją matytų visi.', translation: 'Propor entregar o livro à biblioteca da cidade, para que todos o vejam.', next: 'final_bom' },
           { text: 'Priimti knygą ir išsivežti ją su savimi.', translation: 'Aceitar o livro e levá-lo consigo.', next: 'final_neutro' },
@@ -4129,9 +4129,9 @@ export const STORIES_LT: StorySeed[] = [
       },
       final_bom: {
         emoji: '🏛️',
-        text: 'Antanas ilgai tyli, o paskui jo veidas nušvinta: apie tai jis niekada nebuvo pagalvojęs. Kitą savaitę jie kartu nuneša maldaknygę į biblioteką, ir bibliotekininkė pažada išstatyti ją vitrinoje kovo 16-ąją, Knygnešio dieną. Po stiklu padedama kortelė su prosenelio vardu ir užrašu: «Nešė per Šešupę». Antanas sako, kad dabar gali ramiai miegoti, nes knyga vėl keliauja pas žmones. Linu pagalvoja, kad knygnešio kelias baigiasi ne tada, kai knyga pasiekia namus, o tada, kai ją kas nors perskaito.',
+        text: 'Antanas ilgai tyli, o paskui jo veidas nušvinta: apie tai jis niekada nebuvo pagalvojęs. Kitą savaitę jie kartu nuneša maldaknygę į biblioteką, ir bibliotekininkė pažada išstatyti ją vitrinoje kovo 16-ąją, Knygnešio dieną. Po stiklu padedama kortelė su prosenelio vardu ir užrašu: “Nešė per Šešupę”. Antanas sako, kad dabar gali ramiai miegoti, nes knyga vėl keliauja pas žmones. Linu pagalvoja, kad knygnešio kelias baigiasi ne tada, kai knyga pasiekia namus, o tada, kai ją kas nors perskaito.',
         translation:
-          'O Antanas fica muito tempo calado, e depois o rosto dele se ilumina: nunca tinha pensado nisso. Na semana seguinte, os dois levam juntos o livro de orações à biblioteca, e a bibliotecária promete expô-lo numa vitrine no dia 16 de março, o Dia do Knygnešys. Sob o vidro vai um cartão com o nome do bisavô e a inscrição: «Levou-o pelo Šešupė». O Antanas diz que agora pode dormir tranquilo, porque o livro volta a viajar até as pessoas. O Linu pensa que o caminho de um knygnešys não termina quando o livro chega a uma casa, mas quando alguém o lê.',
+          'O Antanas fica muito tempo calado, e depois o rosto dele se ilumina: nunca tinha pensado nisso. Na semana seguinte, os dois levam juntos o livro de orações à biblioteca, e a bibliotecária promete expô-lo numa vitrine no dia 16 de março, o Dia do Knygnešys. Sob o vidro vai um cartão com o nome do bisavô e a inscrição: “Levou-o pelo Šešupė”. O Antanas diz que agora pode dormir tranquilo, porque o livro volta a viajar até as pessoas. O Linu pensa que o caminho de um knygnešys não termina quando o livro chega a uma casa, mas quando alguém o lê.',
         ending: { tone: 'bom', title: 'Dia do Knygnešys', message: 'Você entendeu que o proibido eram as letras, não a língua, leu Donelaitis no original — e devolveu o livro contrabandeado aos leitores.' },
       },
       final_neutro: {
@@ -4166,23 +4166,23 @@ export const STORIES_LT: StorySeed[] = [
     nodes: {
       start: {
         emoji: '🏡',
-        text: 'Rumšiškėse, didžiuliame liaudies buities muziejuje prie Kauno marių, sekmadienio popietę tvyro šieno ir dūmų kvapas. Tarp senųjų sodybų, perkeltų čia iš visų Lietuvos kraštų, Linu išgirsta keistą, lyg varpų gaudesį primenantį giedojimą. Prie klėties stovi trys moterys lininiais drabužiais ir gieda, bet kiekviena tarsi savo melodiją, o balsai susiduria taip, kad net ausyse suskamba. Vis kartojasi keistas žodis «sodauto», kurio Linu neranda jokiame žodyne. Kai giesmė baigiasi, vyriausioji moteris, vardu Uršulė, pamoja jam ranka.',
+        text: 'Rumšiškėse, didžiuliame liaudies buities muziejuje prie Kauno marių, sekmadienio popietę tvyro šieno ir dūmų kvapas. Tarp senųjų sodybų, perkeltų čia iš visų Lietuvos kraštų, Linu išgirsta keistą, lyg varpų gaudesį primenantį giedojimą. Prie klėties stovi trys moterys lininiais drabužiais ir gieda, bet kiekviena tarsi savo melodiją, o balsai susiduria taip, kad net ausyse suskamba. Vis kartojasi keistas žodis “sodauto”, kurio Linu neranda jokiame žodyne. Kai giesmė baigiasi, vyriausioji moteris, vardu Uršulė, pamoja jam ranka.',
         translation:
-          'Em Rumšiškės, o enorme museu ao ar livre à beira do reservatório de Kaunas, numa tarde de domingo paira um cheiro de feno e fumaça. Entre as antigas casas de fazenda, trazidas para cá de todas as regiões da Lituânia, o Linu ouve um canto estranho, que lembra o dobre de sinos. Junto a um celeiro, três mulheres em roupas de linho cantam, mas cada uma parece cantar a sua própria melodia, e as vozes se chocam de um jeito que chega a zumbir nos ouvidos. Repete-se sem parar uma palavra estranha, «sodauto», que o Linu não encontra em dicionário nenhum. Quando o canto termina, a mais velha, chamada Uršulė, acena para ele.',
+          'Em Rumšiškės, o enorme museu ao ar livre à beira do reservatório de Kaunas, numa tarde de domingo paira um cheiro de feno e fumaça. Entre as antigas casas de fazenda, trazidas para cá de todas as regiões da Lituânia, o Linu ouve um canto estranho, que lembra o dobre de sinos. Junto a um celeiro, três mulheres em roupas de linho cantam, mas cada uma parece cantar a sua própria melodia, e as vozes se chocam de um jeito que chega a zumbir nos ouvidos. Repete-se sem parar uma palavra estranha, “sodauto”, que o Linu não encontra em dicionário nenhum. Quando o canto termina, a mais velha, chamada Uršulė, acena para ele.',
         choices: [
           { text: 'Prieiti ir paklausti, kas čia buvo giedama.', translation: 'Aproximar-se e perguntar o que estavam cantando.', next: 'sutartines' },
           {
             text: 'Mandagiai pasakyti moterims, kad jos, rodos, susipainiojo ir gieda netaisyklingai.',
             translation: 'Dizer educadamente às mulheres que elas parecem ter se atrapalhado e estão cantando errado.',
-            wrong: 'Nas sutartinės as vozes se chocam de propósito, em intervalos «ásperos» que soam como sinos — foi isso que o Linu ouviu. Não é erro: é justamente a estética desse canto polifônico lituano, Patrimônio Imaterial da UNESCO.',
+            wrong: 'Nas sutartinės as vozes se chocam de propósito, em intervalos “ásperos” que soam como sinos — foi isso que o Linu ouviu. Não é erro: é justamente a estética desse canto polifônico lituano, Patrimônio Imaterial da UNESCO.',
           },
         ],
       },
       sutartines: {
         emoji: '🎵',
-        text: '«Tai sutartinė, – šypsosi Uršulė. – Žodis kilęs iš „sutarti“, tai yra sutikti, derėti, nors mūsų balsai, kaip girdėjai, lyg ir nesutaria.» Ji paaiškina, kad sutartinės giedamos dviem, trimis ar keturiais balsais, kurie vienas su kitu tarsi ginčijasi ir kartu susipina, o tokie žodžiai kaip «sodauto» ar «lylio» – tai priedainiai, kurių prasmė seniai pasimiršusi, o gal jos niekada ir nebuvo. Anot jos, sutartinės daugiausia išliko šiaurės rytų Aukštaitijoje, o 2010 metais jos buvo įrašytos į UNESCO nematerialaus kultūros paveldo sąrašą. «Senovėje jas giedodavo moterys, o vyrai sutartines grodavo ir skudučiais», – priduria ji. Paskui ji netikėtai paklausia, ar Linu nenorėtų pabandyti.',
+        text: '“Tai sutartinė, – šypsosi Uršulė. – Žodis kilęs iš „sutarti‘, tai yra sutikti, derėti, nors mūsų balsai, kaip girdėjai, lyg ir nesutaria.’ Ji paaiškina, kad sutartinės giedamos dviem, trimis ar keturiais balsais, kurie vienas su kitu tarsi ginčijasi ir kartu susipina, o tokie žodžiai kaip ‘sodauto’ ar ‘lylio’ – tai priedainiai, kurių prasmė seniai pasimiršusi, o gal jos niekada ir nebuvo. Anot jos, sutartinės daugiausia išliko šiaurės rytų Aukštaitijoje, o 2010 metais jos buvo įrašytos į UNESCO nematerialaus kultūros paveldo sąrašą. ‘Senovėje jas giedodavo moterys, o vyrai sutartines grodavo ir skudučiais’, – priduria ji. Paskui ji netikėtai paklausia, ar Linu nenorėtų pabandyti.',
         translation:
-          '«É uma sutartinė», sorri a Uršulė. «A palavra vem de „sutarti“, isto é, concordar, combinar — embora as nossas vozes, como você ouviu, pareçam não combinar.» Ela explica que as sutartinės se cantam a duas, três ou quatro vozes, que como que discutem entre si e ao mesmo tempo se entrelaçam, e que palavras como «sodauto» ou «lylio» são refrões cujo sentido se perdeu há muito tempo — ou que talvez nunca tenham tido sentido. Segundo ela, as sutartinės sobreviveram sobretudo no nordeste da Aukštaitija, e em 2010 entraram na lista do Patrimônio Cultural Imaterial da UNESCO. «Antigamente quem as cantava eram as mulheres, mas os homens também as tocavam nas flautas de pã, os skudučiai», acrescenta. Depois, de repente, pergunta se o Linu não gostaria de tentar.',
+          '“É uma sutartinė”, sorri a Uršulė. “A palavra vem de „sutarti‘, isto é, concordar, combinar — embora as nossas vozes, como você ouviu, pareçam não combinar.’ Ela explica que as sutartinės se cantam a duas, três ou quatro vozes, que como que discutem entre si e ao mesmo tempo se entrelaçam, e que palavras como ‘sodauto’ ou ‘lylio’ são refrões cujo sentido se perdeu há muito tempo — ou que talvez nunca tenham tido sentido. Segundo ela, as sutartinės sobreviveram sobretudo no nordeste da Aukštaitija, e em 2010 entraram na lista do Patrimônio Cultural Imaterial da UNESCO. ‘Antigamente quem as cantava eram as mulheres, mas os homens também as tocavam nas flautas de pã, os skudučiai’, acrescenta. Depois, de repente, pergunta se o Linu não gostaria de tentar.',
         choices: [
           { text: 'Sutikti ir pabandyti giedoti kartu.', translation: 'Aceitar e tentar cantar junto.', next: 'giedojimas' },
           { text: 'Nedrąsiai atsisakyti ir paprašyti geriau padainuoti paprastą dainą.', translation: 'Recusar, tímido, e pedir que cantem antes uma canção simples.', next: 'dainos' },
@@ -4190,30 +4190,30 @@ export const STORIES_LT: StorySeed[] = [
       },
       giedojimas: {
         emoji: '🔔',
-        text: 'Uršulė pastato Linu tarp savęs ir savo dukters Elzbietos ir liepia kartoti tik vieną trumpą frazę, nepaisant to, ką gieda kitos. Pirmą kartą jis nuslysta į kaimynės melodiją, antrą kartą nutyla vidury žodžio, bet trečią kartą jo balsas atsilaiko, ir staiga jis išgirsta tą patį varpų gaudesį, tik dabar – iš vidaus. «Matai, – sako Uršulė, – sutartinėje kiekvienas turi laikytis savo, bet klausytis kitų, antraip giesmė subyra.» Elzbieta, juokdamasi, priduria, kad tai tinka ne tik giedant, bet ir gyvenant. Linu šypsosi ir galvoja, kad niekada nebuvo taip arti kažko, kas senesnis už pačias pilis.',
+        text: 'Uršulė pastato Linu tarp savęs ir savo dukters Elzbietos ir liepia kartoti tik vieną trumpą frazę, nepaisant to, ką gieda kitos. Pirmą kartą jis nuslysta į kaimynės melodiją, antrą kartą nutyla vidury žodžio, bet trečią kartą jo balsas atsilaiko, ir staiga jis išgirsta tą patį varpų gaudesį, tik dabar – iš vidaus. “Matai, – sako Uršulė, – sutartinėje kiekvienas turi laikytis savo, bet klausytis kitų, antraip giesmė subyra.” Elzbieta, juokdamasi, priduria, kad tai tinka ne tik giedant, bet ir gyvenant. Linu šypsosi ir galvoja, kad niekada nebuvo taip arti kažko, kas senesnis už pačias pilis.',
         translation:
-          'A Uršulė põe o Linu entre ela e a filha, Elzbieta, e manda que ele repita só uma frase curta, sem ligar para o que as outras cantam. Na primeira vez ele escorrega para a melodia da vizinha; na segunda, se cala no meio da palavra; mas na terceira a voz dele se aguenta, e de repente ele ouve o mesmo dobre de sinos, só que agora de dentro. «Está vendo», diz a Uršulė, «na sutartinė cada um tem que se manter no seu, mas ouvir os outros, senão o canto desmorona.» A Elzbieta, rindo, acrescenta que isso vale não só para cantar, mas também para viver. O Linu sorri e pensa que nunca esteve tão perto de algo mais antigo que os próprios castelos.',
+          'A Uršulė põe o Linu entre ela e a filha, Elzbieta, e manda que ele repita só uma frase curta, sem ligar para o que as outras cantam. Na primeira vez ele escorrega para a melodia da vizinha; na segunda, se cala no meio da palavra; mas na terceira a voz dele se aguenta, e de repente ele ouve o mesmo dobre de sinos, só que agora de dentro. “Está vendo”, diz a Uršulė, “na sutartinė cada um tem que se manter no seu, mas ouvir os outros, senão o canto desmorona.” A Elzbieta, rindo, acrescenta que isso vale não só para cantar, mas também para viver. O Linu sorri e pensa que nunca esteve tão perto de algo mais antigo que os próprios castelos.',
         choices: [{ text: 'Paprašyti, kad jos padainuotų ir paprastą dainą.', translation: 'Pedir que cantem também uma canção simples.', next: 'dainos' }],
       },
       dainos: {
         emoji: '🌿',
-        text: 'Uršulė užtraukia lėtą dainą apie mergelę, kuri darželyje augina rūtas, ir kitos moterys tyliai pritaria. Ji paaiškina, kad rūta lietuvių dainose – mergystės ženklas, o rūtų vainikas nuimamas vestuvėse, kai jaunoji tampa marčia. Pasak jos, tautosakininkai užrašė dešimtis tūkstančių dainų, ir dauguma jų buvo dainuojamos ne scenoje, o prie darbo – ravint, pjaunant, audžiant. «Daina buvo ir laikraštis, ir laiškas, ir malda», – sako ji. Paskui, žiūrėdama į dukrą Elzbietą, kuri dainuoja lygiai taip pat kaip ji, ištaria patarlę: «Obuolys nuo obels netoli rieda.»',
+        text: 'Uršulė užtraukia lėtą dainą apie mergelę, kuri darželyje augina rūtas, ir kitos moterys tyliai pritaria. Ji paaiškina, kad rūta lietuvių dainose – mergystės ženklas, o rūtų vainikas nuimamas vestuvėse, kai jaunoji tampa marčia. Pasak jos, tautosakininkai užrašė dešimtis tūkstančių dainų, ir dauguma jų buvo dainuojamos ne scenoje, o prie darbo – ravint, pjaunant, audžiant. “Daina buvo ir laikraštis, ir laiškas, ir malda”, – sako ji. Paskui, žiūrėdama į dukrą Elzbietą, kuri dainuoja lygiai taip pat kaip ji, ištaria patarlę: “Obuolys nuo obels netoli rieda.”',
         translation:
-          'A Uršulė puxa uma canção lenta sobre uma mocinha que cultiva arruda no jardim, e as outras mulheres a acompanham baixinho. Ela explica que, nas canções lituanas, a arruda é o sinal da moça solteira, e a coroa de arruda é tirada no casamento, quando a noiva passa a ser nora. Segundo ela, os folcloristas registraram dezenas de milhares de canções, e a maioria delas era cantada não no palco, mas no trabalho: capinando, ceifando, tecendo. «A canção era jornal, carta e oração», diz ela. Depois, olhando para a filha, Elzbieta, que canta igualzinho a ela, solta um provérbio: «A maçã não rola longe da macieira.»',
+          'A Uršulė puxa uma canção lenta sobre uma mocinha que cultiva arruda no jardim, e as outras mulheres a acompanham baixinho. Ela explica que, nas canções lituanas, a arruda é o sinal da moça solteira, e a coroa de arruda é tirada no casamento, quando a noiva passa a ser nora. Segundo ela, os folcloristas registraram dezenas de milhares de canções, e a maioria delas era cantada não no palco, mas no trabalho: capinando, ceifando, tecendo. “A canção era jornal, carta e oração”, diz ela. Depois, olhando para a filha, Elzbieta, que canta igualzinho a ela, solta um provérbio: “A maçã não rola longe da macieira.”',
         choices: [
-          { text: '«Taigi dukra – kaip motina.»', translation: '«Ou seja, a filha é como a mãe.»', next: 'patarles' },
+          { text: '“Taigi dukra – kaip motina.”', translation: '“Ou seja, a filha é como a mãe.”', next: 'patarles' },
           {
-            text: '«Taigi šiemet obuolių derlius bus prastas.»',
-            translation: '«Ou seja, este ano a colheita de maçãs vai ser fraca.»',
-            wrong: '«Obuolys nuo obels netoli rieda» (a maçã não rola longe da macieira) é provérbio, não previsão de colheita: os filhos saem parecidos com os pais. A Uršulė falava da filha, que canta igualzinho a ela.',
+            text: '“Taigi šiemet obuolių derlius bus prastas.”',
+            translation: '“Ou seja, este ano a colheita de maçãs vai ser fraca.”',
+            wrong: '“Obuolys nuo obels netoli rieda” (a maçã não rola longe da macieira) é provérbio, não previsão de colheita: os filhos saem parecidos com os pais. A Uršulė falava da filha, que canta igualzinho a ela.',
           },
         ],
       },
       patarles: {
         emoji: '💬',
-        text: 'Uršulė juokiasi ir sako, kad lietuviai patarlėmis kalba tada, kai nori pasakyti daug, o žodžių sugaišti mažai. Ji pažeria dar kelias: «Tyli kiaulė gilią vagą knisa» – apie tuos, kurie tylomis daro savo, ir «Kas kitam duobę kasa, tas pats į ją įkrenta» – apie piktus darbus, kurie sugrįžta. Elzbieta priduria, kad jos močiutė be patarlės nepasakydavusi nė vieno sakinio. Saulė jau leidžiasi už senųjų klėčių, ir moterys ruošiasi paskutinei sutartinei. Uršulė ištiesia Linu ranką ir klausia, ar jis liks.',
+        text: 'Uršulė juokiasi ir sako, kad lietuviai patarlėmis kalba tada, kai nori pasakyti daug, o žodžių sugaišti mažai. Ji pažeria dar kelias: “Tyli kiaulė gilią vagą knisa” – apie tuos, kurie tylomis daro savo, ir “Kas kitam duobę kasa, tas pats į ją įkrenta” – apie piktus darbus, kurie sugrįžta. Elzbieta priduria, kad jos močiutė be patarlės nepasakydavusi nė vieno sakinio. Saulė jau leidžiasi už senųjų klėčių, ir moterys ruošiasi paskutinei sutartinei. Uršulė ištiesia Linu ranką ir klausia, ar jis liks.',
         translation:
-          'A Uršulė ri e diz que os lituanos falam por provérbios quando querem dizer muito gastando poucas palavras. Ela solta mais alguns: «O porco calado cava o sulco fundo» — sobre quem faz das suas em silêncio — e «Quem cava um buraco para o outro cai nele» — sobre as maldades que voltam. A Elzbieta acrescenta que a avó dela, pelo que contam, não dizia uma frase sequer sem provérbio. O sol já se põe atrás dos velhos celeiros, e as mulheres se preparam para a última sutartinė. A Uršulė estende a mão ao Linu e pergunta se ele vai ficar.',
+          'A Uršulė ri e diz que os lituanos falam por provérbios quando querem dizer muito gastando poucas palavras. Ela solta mais alguns: “O porco calado cava o sulco fundo” — sobre quem faz das suas em silêncio — e “Quem cava um buraco para o outro cai nele” — sobre as maldades que voltam. A Elzbieta acrescenta que a avó dela, pelo que contam, não dizia uma frase sequer sem provérbio. O sol já se põe atrás dos velhos celeiros, e as mulheres se preparam para a última sutartinė. A Uršulė estende a mão ao Linu e pergunta se ele vai ficar.',
         choices: [
           { text: 'Likti ir giedoti paskutinę sutartinę kartu.', translation: 'Ficar e cantar a última sutartinė junto.', next: 'final_bom' },
           { text: 'Atsisveikinti, nes jau eina paskutinis autobusas į Kauną.', translation: 'Despedir-se, porque o último ônibus para Kaunas já vai sair.', next: 'final_neutro' },
@@ -4221,9 +4221,9 @@ export const STORIES_LT: StorySeed[] = [
       },
       final_bom: {
         emoji: '🌾',
-        text: 'Keturi balsai susipina virš klėties stogo, ir Linu šįkart nė karto nesuklysta, tarsi jo balsas visada būtų žinojęs savo vietą. Kai giesmė baigiasi, prie tvoros sustoję keli užsieniečiai turistai ima ploti, o Uršulė juokiasi, kad dabar jos ansamblis tarptautinis. Atsisveikindama ji įdeda jam į delną rūtos šakelę ir sako: «Kad nepamirštum: kiekvienas balsas laikosi savo, bet gieda su kitais.» Pakeliui į autobusą Linu dar ilgai niūniuoja «sodauto», nors ir nežino, ką tas žodis reiškia. Galbūt, pagalvoja jis, kai kurie žodžiai tam ir yra, kad būtų giedami, o ne verčiami.',
+        text: 'Keturi balsai susipina virš klėties stogo, ir Linu šįkart nė karto nesuklysta, tarsi jo balsas visada būtų žinojęs savo vietą. Kai giesmė baigiasi, prie tvoros sustoję keli užsieniečiai turistai ima ploti, o Uršulė juokiasi, kad dabar jos ansamblis tarptautinis. Atsisveikindama ji įdeda jam į delną rūtos šakelę ir sako: “Kad nepamirštum: kiekvienas balsas laikosi savo, bet gieda su kitais.” Pakeliui į autobusą Linu dar ilgai niūniuoja “sodauto”, nors ir nežino, ką tas žodis reiškia. Galbūt, pagalvoja jis, kai kurie žodžiai tam ir yra, kad būtų giedami, o ne verčiami.',
         translation:
-          'Quatro vozes se entrelaçam sobre o telhado do celeiro, e desta vez o Linu não erra nenhuma vez, como se a voz dele sempre tivesse sabido o seu lugar. Quando o canto termina, alguns turistas estrangeiros parados junto à cerca começam a aplaudir, e a Uršulė ri, dizendo que agora o grupo dela é internacional. Na despedida, ela põe na mão dele um raminho de arruda e diz: «Para você não esquecer: cada voz se mantém no seu, mas canta com os outros.» A caminho do ônibus, o Linu passa muito tempo cantarolando «sodauto», embora não saiba o que a palavra quer dizer. Talvez, pensa ele, algumas palavras existam justamente para serem cantadas, e não traduzidas.',
+          'Quatro vozes se entrelaçam sobre o telhado do celeiro, e desta vez o Linu não erra nenhuma vez, como se a voz dele sempre tivesse sabido o seu lugar. Quando o canto termina, alguns turistas estrangeiros parados junto à cerca começam a aplaudir, e a Uršulė ri, dizendo que agora o grupo dela é internacional. Na despedida, ela põe na mão dele um raminho de arruda e diz: “Para você não esquecer: cada voz se mantém no seu, mas canta com os outros.” A caminho do ônibus, o Linu passa muito tempo cantarolando “sodauto”, embora não saiba o que a palavra quer dizer. Talvez, pensa ele, algumas palavras existam justamente para serem cantadas, e não traduzidas.',
         ending: { tone: 'bom', title: 'Uma voz no coro', message: 'Você entendeu que a dissonância da sutartinė é arte, decifrou os provérbios — e cantou com as guardiãs de uma tradição de séculos.' },
       },
       final_neutro: {

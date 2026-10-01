@@ -28,9 +28,9 @@ test('escuta: as opções parecem a certa, mas nenhuma soa igual (homófonos nã
   const hola = pool.find((i) => i.word === 'hola')!;
   const vaca = pool.find((i) => i.word === 'vaca')!;
   const d1 = distractors(hola, pool, 3, rnd, ipa);
-  assert.ok(!d1.includes('ola'), '«hola» e «ola» soam igual');
+  assert.ok(!d1.includes('ola'), '“hola” e “ola” soam igual');
   const d2 = distractors(vaca, pool, 3, rnd, ipa);
-  assert.ok(!d2.includes('baca'), '«vaca» e «baca» soam igual');
+  assert.ok(!d2.includes('baca'), '“vaca” e “baca” soam igual');
   assert.equal(d2.length, 3);
   // «casa» e «caza» soam igual no espanhol da América (seseo), não na Espanha
   const casa = pool.find((i) => i.word === 'casa')!;

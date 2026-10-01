@@ -33,7 +33,7 @@ export const SCENARIOS_OC: ScenarioSeed[] = [
     cefr: 'A1',
     register: 'informal',
     persona: 'Sabina, una amiga del cors d\'occitan',
-    description: 'Sabina te convida per un cafè a Tolosa. É informal, entre amigas: use «tu», nunca um tratamento formal.',
+    description: 'Sabina te convida per un cafè a Tolosa. É informal, entre amigas: use “tu”, nunca um tratamento formal.',
     turns: [
       {
         bot: 'Adieu! Qué vòles beure?',
@@ -59,7 +59,7 @@ export const ETYMOLOGY_OC: EtymologySeed[] = [
     root_word: 'aqua',
     origin_language: 'Latim',
     cognates: c(['pt', 'água'], ['es', 'agua'], ['ca', 'aigua'], ['it', 'acqua'], ['fr', 'eau']),
-    evolution_note: 'Do latim «aqua», o occitano perdeu o q e manteve o grupo -gu-, quase como o português antigo — e como o catalão «aigua», seu parente mais próximo.',
+    evolution_note: 'Do latim “aqua”, o occitano perdeu o q e manteve o grupo -gu-, quase como o português antigo — e como o catalão “aigua”, seu parente mais próximo.',
     transparent: true,
   },
   {
@@ -67,7 +67,7 @@ export const ETYMOLOGY_OC: EtymologySeed[] = [
     root_word: 'matrem',
     origin_language: 'Latim',
     cognates: c(['pt', 'mãe'], ['es', 'madre'], ['ca', 'mare'], ['it', 'madre']),
-    evolution_note: 'De «matrem», o occitano perdeu o -t- entre vogais, como o português, mas manteve a terminação -e, enquanto o português foi por outro caminho fonético até «mãe».',
+    evolution_note: 'De “matrem”, o occitano perdeu o -t- entre vogais, como o português, mas manteve a terminação -e, enquanto o português foi por outro caminho fonético até “mãe”.',
     transparent: false,
   },
   {
@@ -75,7 +75,7 @@ export const ETYMOLOGY_OC: EtymologySeed[] = [
     root_word: 'vinum',
     origin_language: 'Latim',
     cognates: c(['pt', 'vinho'], ['es', 'vino'], ['ca', 'vi'], ['it', 'vino'], ['fr', 'vin']),
-    evolution_note: 'De «vinum», quase idêntico ao francês «vin»; o português acrescentou o -ho final que o occitano nunca teve.',
+    evolution_note: 'De “vinum”, quase idêntico ao francês “vin”; o português acrescentou o -ho final que o occitano nunca teve.',
     transparent: true,
   },
 ];

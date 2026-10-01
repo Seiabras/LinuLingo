@@ -90,7 +90,7 @@ export const TIMELINES: LanguageFamilyTimeline[] = [
       {
         label: 'c. 100 d.C.',
         countries: ['DNK', 'SWE', 'NOR', 'DEU'],
-        text: 'Os povos germânicos vivem no sul da Escandinávia e no norte da atual Alemanha; o historiador romano Tácito escreve sobre eles na «Germânia», no ano 98.',
+        text: 'Os povos germânicos vivem no sul da Escandinávia e no norte da atual Alemanha; o historiador romano Tácito escreve sobre eles na “Germânia”, no ano 98.',
       },
       {
         label: 'c. 600',

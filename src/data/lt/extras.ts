@@ -58,7 +58,7 @@ export const SCENARIOS_LT: ScenarioSeed[] = [
     cefr: 'A1',
     register: 'informal',
     persona: 'Eglė, colega do curso de lituano',
-    description: 'Uma colega do curso chama você para um café na Cidade Velha de Vilnius. Entre amigos, tudo leve e com «tu»: nada de «jūs» nem de «ponia».',
+    description: 'Uma colega do curso chama você para um café na Cidade Velha de Vilnius. Entre amigos, tudo leve e com “tu”: nada de “jūs” nem de “ponia”.',
     turns: [
       {
         bot: 'Labas! Kaip sekasi? Einam išgerti kavos?',
@@ -104,7 +104,7 @@ export const SCENARIOS_LT: ScenarioSeed[] = [
     cefr: 'A2',
     register: 'formal',
     persona: 'Recepcionista de um hotel na Cidade Velha de Kaunas',
-    description: 'Você chega de noite a um hotel em Kaunas. A recepcionista trata você por «jūs», como se faz com todo cliente na Lituânia: responda no mesmo tom, sem «tu» e sem gíria.',
+    description: 'Você chega de noite a um hotel em Kaunas. A recepcionista trata você por “jūs”, como se faz com todo cliente na Lituânia: responda no mesmo tom, sem “tu” e sem gíria.',
     turns: [
       {
         bot: 'Laba diena! Sveiki atvykę. Ar turite rezervaciją?',
@@ -150,7 +150,7 @@ export const SCENARIOS_LT: ScenarioSeed[] = [
     cefr: 'A2',
     register: 'informal',
     persona: 'Tomas, um amigo lituano de Klaipėda',
-    description: 'Um amigo leva você de bicicleta pela Kuršių nerija, a faixa de areia e pinheiros entre a laguna e o mar Báltico, até Nida e as suas dunas. Conversa de amigos, com «tu».',
+    description: 'Um amigo leva você de bicicleta pela Kuršių nerija, a faixa de areia e pinheiros entre a laguna e o mar Báltico, até Nida e as suas dunas. Conversa de amigos, com “tu”.',
     turns: [
       {
         bot: 'Labas! Ar viskas paruošta? Šiandien važiuosim dviračiais iki Nidos.',
@@ -196,7 +196,7 @@ export const SCENARIOS_LT: ScenarioSeed[] = [
     cefr: 'B1',
     register: 'formal',
     persona: 'Médica de família numa clínica de Klaipėda',
-    description: 'Você está com febre e dor de garganta e vai à médica de família. Com o médico, sempre «jūs»: descreva os sintomas com frases completas.',
+    description: 'Você está com febre e dor de garganta e vai à médica de família. Com o médico, sempre “jūs”: descreva os sintomas com frases completas.',
     turns: [
       {
         bot: 'Laba diena. Prašom sėstis. Kas jus vargina?',
@@ -242,7 +242,7 @@ export const SCENARIOS_LT: ScenarioSeed[] = [
     cefr: 'B1',
     register: 'informal',
     persona: 'Jonas, o vizinho da casa de campo',
-    description: 'Na noite de 23 para 24 de junho, a Lituânia festeja as Joninės (ou Rasos), a noite mais curta do ano: fogueiras, coroas de flores e a procura da flor da samambaia. O vizinho convida você, e entre vizinhos se fala por «tu».',
+    description: 'Na noite de 23 para 24 de junho, a Lituânia festeja as Joninės (ou Rasos), a noite mais curta do ano: fogueiras, coroas de flores e a procura da flor da samambaia. O vizinho convida você, e entre vizinhos se fala por “tu”.',
     turns: [
       {
         bot: 'Labas, kaimyne! Ar važiuosi šiąnakt švęsti Joninių?',
@@ -288,7 +288,7 @@ export const SCENARIOS_LT: ScenarioSeed[] = [
     cefr: 'B2',
     register: 'formal',
     persona: 'Diretora de recursos humanos de uma empresa de tecnologia em Vilnius',
-    description: 'Você disputa uma vaga numa empresa de tecnologia em Vilnius. Numa entrevista, o «jūs» é obrigatório, e se usa muito o condicional para soar educado: «norėčiau», «galėčiau».',
+    description: 'Você disputa uma vaga numa empresa de tecnologia em Vilnius. Numa entrevista, o “jūs” é obrigatório, e se usa muito o condicional para soar educado: “norėčiau”, “galėčiau”.',
     turns: [
       {
         bot: 'Laba diena, malonu susipažinti. Papasakokite trumpai apie save.',
@@ -387,7 +387,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*wĺ̥kʷos',
     origin_language: 'Protoindo-europeu',
     cognates: c(['lv', 'vilks'], ['sa', 'vṛ́kaḥ'], ['ru', 'волк'], ['en', 'wolf'], ['la', 'lupus'], ['pt', 'lobo']),
-    evolution_note: 'O «lobo» indo-europeu. O lituano guarda até a terminação -as, muito parecida com o -aḥ do sânscrito vṛ́kaḥ. No latim a palavra entrou por um dialeto vizinho e virou lupus, de onde vem o nosso «lobo». O lobo de ferro (geležinis vilkas) que uivava no sonho do grão-duque Gediminas é a lenda de fundação de Vilnius.',
+    evolution_note: 'O “lobo” indo-europeu. O lituano guarda até a terminação -as, muito parecida com o -aḥ do sânscrito vṛ́kaḥ. No latim a palavra entrou por um dialeto vizinho e virou lupus, de onde vem o nosso “lobo”. O lobo de ferro (geležinis vilkas) que uivava no sonho do grão-duque Gediminas é a lenda de fundação de Vilnius.',
     transparent: false,
   },
   {
@@ -403,7 +403,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*h₂ówis',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'ovis'], ['sa', 'ávi-'], ['grc', 'óis'], ['en', 'ewe'], ['pt', 'ovino']),
-    evolution_note: 'Lituano avis, latim ovis e sânscrito ávis são praticamente a mesma palavra. O português «ovelha» vem do diminutivo latino ovicula («ovelhinha»); «ovino», direto de ovis. Não é à toa que o linguista August Schleicher, ao escrever em 1868 uma fábula no protoindo-europeu que ele reconstruía, começou por «a ovelha».',
+    evolution_note: 'Lituano avis, latim ovis e sânscrito ávis são praticamente a mesma palavra. O português “ovelha” vem do diminutivo latino ovicula (“ovelhinha”); “ovino”, direto de ovis. Não é à toa que o linguista August Schleicher, ao escrever em 1868 uma fábula no protoindo-europeu que ele reconstruía, começou por “a ovelha”.',
     transparent: false,
   },
   {
@@ -411,7 +411,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*ḱwṓ',
     origin_language: 'Protoindo-europeu',
     cognates: c(['sa', 'śvā́'], ['grc', 'kýōn'], ['la', 'canis'], ['pt', 'cão'], ['en', 'hound'], ['lv', 'suns']),
-    evolution_note: 'O «cão» indo-europeu. O lituano é língua satem: o *ḱ antigo virou «š», enquanto o latim e o grego guardaram o «k» (canis, kýōn). Nas outras formas aparece o n que o latim também tem: šuo, gen. šuns, pl. šunys.',
+    evolution_note: 'O “cão” indo-europeu. O lituano é língua satem: o *ḱ antigo virou “š”, enquanto o latim e o grego guardaram o “k” (canis, kýōn). Nas outras formas aparece o n que o latim também tem: šuo, gen. šuns, pl. šunys.',
     transparent: false,
   },
   {
@@ -419,7 +419,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*ḱm̥tóm',
     origin_language: 'Protoindo-europeu',
     cognates: c(['sa', 'śatám'], ['la', 'centum'], ['pt', 'cem'], ['ru', 'сто'], ['lv', 'simts']),
-    evolution_note: 'É a palavra que batizou as duas metades da família: as línguas «centum» (latim, grego, germânico, celta) guardaram o «k»; as línguas «satem» (indo-iraniano, eslavo, báltico) o transformaram num chiado. Šimtas é o lado satem, com o mesmo «š» do sânscrito śatám.',
+    evolution_note: 'É a palavra que batizou as duas metades da família: as línguas “centum” (latim, grego, germânico, celta) guardaram o “k”; as línguas “satem” (indo-iraniano, eslavo, báltico) o transformaram num chiado. Šimtas é o lado satem, com o mesmo “š” do sânscrito śatám.',
     transparent: false,
   },
   {
@@ -427,7 +427,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*déḱm̥t',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'decem'], ['pt', 'dez'], ['sa', 'dáśa'], ['ru', 'десять'], ['lv', 'desmit']),
-    evolution_note: 'De novo o *ḱ virou «š». O final -imt guarda o -m̥t da raiz, que o latim decem perdeu. Os números de 11 a 19 usam outro truque: vienuolika, dvylika…, onde -lika vem de likti (sobrar): «um que sobra» depois do dez.',
+    evolution_note: 'De novo o *ḱ virou “š”. O final -imt guarda o -m̥t da raiz, que o latim decem perdeu. Os números de 11 a 19 usam outro truque: vienuolika, dvylika…, onde -lika vem de likti (sobrar): “um que sobra” depois do dez.',
     transparent: false,
   },
   {
@@ -435,7 +435,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*dwóh₁',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'duo'], ['pt', 'dois'], ['en', 'two'], ['ru', 'два'], ['sa', 'dvā́']),
-    evolution_note: 'O lituano ainda conhece o dual, a forma para «exatamente dois» da gramática indo-europeia: du vilku (dois lobos). Na língua padrão o dual quase sumiu, mas vive nos dialetos e nas canções.',
+    evolution_note: 'O lituano ainda conhece o dual, a forma para “exatamente dois” da gramática indo-europeia: du vilku (dois lobos). Na língua padrão o dual quase sumiu, mas vive nos dialetos e nas canções.',
     transparent: false,
   },
   {
@@ -443,7 +443,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*tréyes',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'tres'], ['pt', 'três'], ['en', 'three'], ['ru', 'три'], ['sa', 'tráyaḥ']),
-    evolution_note: 'Um dos números mais estáveis da família. O «-ys» final é o plural dos substantivos em -is, como naktys (noites): trys se declina como eles (trijų, trims, tris).',
+    evolution_note: 'Um dos números mais estáveis da família. O “-ys” final é o plural dos substantivos em -is, como naktys (noites): trys se declina como eles (trijų, trims, tris).',
     transparent: false,
   },
   {
@@ -451,7 +451,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*kʷetwóres',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'quattuor'], ['pt', 'quatro'], ['sa', 'catvā́raḥ'], ['ru', 'четыре'], ['lv', 'četri']),
-    evolution_note: 'O *kʷ indo-europeu virou «qu» no latim, «č» no russo e no letão e ficou «k» no lituano. A forma lituana está entre as mais próximas da reconstrução.',
+    evolution_note: 'O *kʷ indo-europeu virou “qu” no latim, “č” no russo e no letão e ficou “k” no lituano. A forma lituana está entre as mais próximas da reconstrução.',
     transparent: false,
   },
   {
@@ -459,7 +459,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*pénkʷe',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'quinque'], ['pt', 'cinco'], ['grc', 'pénte'], ['sa', 'páñca'], ['lv', 'pieci']),
-    evolution_note: 'No latim o p inicial foi puxado pelo qu seguinte (*penkʷe → quinque, de onde vem «cinco»); o lituano guardou o p original, como o grego e o sânscrito.',
+    evolution_note: 'No latim o p inicial foi puxado pelo qu seguinte (*penkʷe → quinque, de onde vem “cinco”); o lituano guardou o p original, como o grego e o sânscrito.',
     transparent: false,
   },
   {
@@ -467,7 +467,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*swéḱs',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'sex'], ['pt', 'seis'], ['sa', 'ṣáṣ'], ['ru', 'шесть'], ['lv', 'seši']),
-    evolution_note: 'Satem outra vez: o *ḱ virou «š». O «š» do começo provavelmente veio por assimilação ao do fim (*seši → šeši); o letão guardou seši.',
+    evolution_note: 'Satem outra vez: o *ḱ virou “š”. O “š” do começo provavelmente veio por assimilação ao do fim (*seši → šeši); o letão guardou seši.',
     transparent: false,
   },
   {
@@ -475,7 +475,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*septḿ̥',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'septem'], ['pt', 'sete'], ['sa', 'saptá'], ['ru', 'семь'], ['lv', 'septiņi']),
-    evolution_note: 'O lituano guarda o grupo «pt» que o russo simplificou (sem’) e o português também (sete). O nosso «setembro» era o sétimo mês do calendário romano; em lituano setembro é rugsėjis, «a semeadura do centeio».',
+    evolution_note: 'O lituano guarda o grupo “pt” que o russo simplificou (sem’) e o português também (sete). O nosso “setembro” era o sétimo mês do calendário romano; em lituano setembro é rugsėjis, “a semeadura do centeio”.',
     transparent: false,
   },
   {
@@ -483,7 +483,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*h₃eḱtṓw',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'octo'], ['pt', 'oito'], ['sa', 'aṣṭáu'], ['grc', 'oktṓ'], ['lv', 'astoņi']),
-    evolution_note: 'O *ḱ virou «š» (aš-), como o «ṣ» do sânscrito aṣṭáu; no latim ficou «c» (octo → oito). O -uo- é a forma lituana de um o longo antigo.',
+    evolution_note: 'O *ḱ virou “š” (aš-), como o “ṣ” do sânscrito aṣṭáu; no latim ficou “c” (octo → oito). O -uo- é a forma lituana de um o longo antigo.',
     transparent: false,
   },
   {
@@ -499,7 +499,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*tūsantī',
     origin_language: 'Protobalto-eslavo',
     cognates: c(['ru', 'тысяча'], ['got', 'þūsundi'], ['en', 'thousand'], ['lv', 'tūkstotis']),
-    evolution_note: 'O «mil» não é indo-europeu comum: só o báltico, o eslavo e o germânico dividem esta palavra, sinal de contato antigo entre os três. A explicação mais aceita é «cem inchado», «a centena grande».',
+    evolution_note: 'O “mil” não é indo-europeu comum: só o báltico, o eslavo e o germânico dividem esta palavra, sinal de contato antigo entre os três. A explicação mais aceita é “cem inchado”, “a centena grande”.',
     transparent: false,
   },
   {
@@ -507,7 +507,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*néwyos',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'novus'], ['pt', 'novo'], ['sa', 'návya-'], ['ru', 'новый'], ['en', 'new']),
-    evolution_note: 'O «novo» indo-europeu, com o sufixo -yos que o sânscrito návya- também tem. Naujienos (notícias) são «as novas», como no português antigo.',
+    evolution_note: 'O “novo” indo-europeu, com o sufixo -yos que o sânscrito návya- também tem. Naujienos (notícias) são “as novas”, como no português antigo.',
     transparent: false,
   },
   {
@@ -515,7 +515,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*h₂yuHn̥ḱós',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'iuvenis'], ['pt', 'jovem'], ['sa', 'yúvan-'], ['en', 'young'], ['lv', 'jauns']),
-    evolution_note: 'O «jovem» da família. No letão, jauns quer dizer ao mesmo tempo «jovem» e «novo»; o lituano separa jaunas (jovem) de naujas (novo).',
+    evolution_note: 'O “jovem” da família. No letão, jauns quer dizer ao mesmo tempo “jovem” e “novo”; o lituano separa jaunas (jovem) de naujas (novo).',
     transparent: false,
   },
   {
@@ -523,7 +523,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*sénos',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'senex'], ['pt', 'senhor'], ['sa', 'sána-'], ['grc', 'hénos']),
-    evolution_note: 'A mesma raiz de «senhor», «senado» e «senil»: todos querem dizer, na origem, «o mais velho». Senelis e senelė (avô e avó) são «os velhinhos».',
+    evolution_note: 'A mesma raiz de “senhor”, “senado” e “senil”: todos querem dizer, na origem, “o mais velho”. Senelis e senelė (avô e avó) são “os velhinhos”.',
     transparent: false,
   },
   {
@@ -531,7 +531,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*gʷih₃wós',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'vivus'], ['pt', 'vivo'], ['sa', 'jīvá-'], ['ru', 'живой'], ['lv', 'dzīvs']),
-    evolution_note: 'O *gʷ virou «g» no lituano e «v» no latim. Daqui vêm gyventi (viver, morar), gyvenimas (vida), gyvūnas (animal, «o vivente») e gyvatė (cobra).',
+    evolution_note: 'O *gʷ virou “g” no lituano e “v” no latim. Daqui vêm gyventi (viver, morar), gyvenimas (vida), gyvūnas (animal, “o vivente”) e gyvatė (cobra).',
     transparent: false,
   },
   {
@@ -539,7 +539,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: 'gyvas + -atė',
     origin_language: 'Lituano',
     cognates: c(['la', 'vivus'], ['pt', 'vivo']),
-    evolution_note: 'Literalmente «a viva». A cobra tinha lugar especial na religião báltica: a cobra-d’água (žaltys) vivia nas casas como protetora. Na lenda de Eglė, a rainha das cobras, uma moça se casa com o rei-serpente Žilvinas.',
+    evolution_note: 'Literalmente “a viva”. A cobra tinha lugar especial na religião báltica: a cobra-d’água (žaltys) vivia nas casas como protetora. Na lenda de Eglė, a rainha das cobras, uma moça se casa com o rei-serpente Žilvinas.',
     transparent: false,
   },
   {
@@ -547,7 +547,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*nókʷts',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'nox, noctis'], ['pt', 'noite'], ['en', 'night'], ['de', 'Nacht'], ['ru', 'ночь'], ['sa', 'nákt-']),
-    evolution_note: 'Mesma raiz de «noite» e «noturno». O lituano pôs a palavra nos substantivos em -is: naktis, gen. nakties, pl. naktys. Labanakt (boa noite) é «laba naktis» encurtado.',
+    evolution_note: 'Mesma raiz de “noite” e “noturno”. O lituano pôs a palavra nos substantivos em -is: naktis, gen. nakties, pl. naktys. Labanakt (boa noite) é “laba naktis” encurtado.',
     transparent: false,
   },
   {
@@ -555,7 +555,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*deyn-',
     origin_language: 'Protoindo-europeu',
     cognates: c(['ru', 'день'], ['sa', 'dína-'], ['lv', 'diena'], ['la', 'dies'], ['pt', 'dia']),
-    evolution_note: 'Da raiz de «brilhar», a mesma do latim dies (dia) e de deus. Labą dieną (bom dia) é «bom dia» no acusativo; a saudação curta labas é só o «bom», que sobrou quando o dia caiu.',
+    evolution_note: 'Da raiz de “brilhar”, a mesma do latim dies (dia) e de deus. Labą dieną (bom dia) é “bom dia” no acusativo; a saudação curta labas é só o “bom”, que sobrou quando o dia caiu.',
     transparent: false,
   },
   {
@@ -563,7 +563,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*sóh₂wl̥',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'sol'], ['pt', 'sol'], ['grc', 'hḗlios'], ['got', 'sauil'], ['lv', 'saule']),
-    evolution_note: 'O «sol» indo-europeu. Saulė é também a deusa-sol da mitologia báltica, cantada em centenas de canções populares (dainos) ao lado de Mėnulis, a lua, que no lituano é masculina.',
+    evolution_note: 'O “sol” indo-europeu. Saulė é também a deusa-sol da mitologia báltica, cantada em centenas de canções populares (dainos) ao lado de Mėnulis, a lua, que no lituano é masculina.',
     transparent: false,
   },
   {
@@ -571,7 +571,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*mḗh₁n̥s',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'mensis'], ['pt', 'mês'], ['en', 'moon, month'], ['grc', 'mḗn'], ['lv', 'mēness']),
-    evolution_note: 'Como no inglês moon/month, a lua e o mês são a mesma palavra: os meses se contavam pelas luas. Mėnuo é «mês» (e «lua» na poesia); na fala do dia a dia, a lua é mėnulis.',
+    evolution_note: 'Como no inglês moon/month, a lua e o mês são a mesma palavra: os meses se contavam pelas luas. Mėnuo é “mês” (e “lua” na poesia); na fala do dia a dia, a lua é mėnulis.',
     transparent: false,
   },
   {
@@ -579,7 +579,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*dʰéǵʰōm',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'humus'], ['pt', 'húmus'], ['grc', 'khthṓn'], ['ru', 'земля'], ['lv', 'zeme']),
-    evolution_note: 'A terra, e também Žemyna, a deusa-terra báltica. Da mesma raiz vem žmogus (ser humano), «o terreno», exatamente como o latim homo veio de humus.',
+    evolution_note: 'A terra, e também Žemyna, a deusa-terra báltica. Da mesma raiz vem žmogus (ser humano), “o terreno”, exatamente como o latim homo veio de humus.',
     transparent: false,
   },
   {
@@ -587,7 +587,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*dʰǵʰm̥-',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'homo'], ['pt', 'homem'], ['got', 'guma']),
-    evolution_note: 'Ser humano, «o da terra» (de žemė), como o latim homo. O plural é irregular: žmonės (pessoas). Žmona (esposa) é da mesma família.',
+    evolution_note: 'Ser humano, “o da terra” (de žemė), como o latim homo. O plural é irregular: žmonės (pessoas). Žmona (esposa) é da mesma família.',
     transparent: false,
   },
   {
@@ -595,7 +595,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*wódr̥',
     origin_language: 'Protoindo-europeu',
     cognates: c(['en', 'water'], ['de', 'Wasser'], ['ru', 'вода'], ['grc', 'hýdōr'], ['la', 'unda'], ['pt', 'onda']),
-    evolution_note: 'A «água» indo-europeia, com um n enfiado no meio que aparece em todas as formas: vanduo, gen. vandens. O grego hýdōr deu o nosso prefixo «hidro-», e o latim unda, a «onda».',
+    evolution_note: 'A “água” indo-europeia, com um n enfiado no meio que aparece em todas as formas: vanduo, gen. vandens. O grego hýdōr deu o nosso prefixo “hidro-”, e o latim unda, a “onda”.',
     transparent: false,
   },
   {
@@ -603,7 +603,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*h₁n̥gʷnis',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'ignis'], ['pt', 'ignição'], ['sa', 'agní-'], ['ru', 'огонь'], ['lv', 'uguns']),
-    evolution_note: 'O fogo. Agni é o deus do fogo nos hinos védicos; ignis, o fogo latino, sobrevive em «ígneo» e «ignição». Os bálticos pagãos mantinham fogos sagrados que não podiam se apagar.',
+    evolution_note: 'O fogo. Agni é o deus do fogo nos hinos védicos; ignis, o fogo latino, sobrevive em “ígneo” e “ignição”. Os bálticos pagãos mantinham fogos sagrados que não podiam se apagar.',
     transparent: false,
   },
   {
@@ -611,7 +611,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*ḱḗr, *ḱr̥d-',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'cor, cordis'], ['pt', 'coração'], ['grc', 'kardía'], ['en', 'heart'], ['ru', 'сердце'], ['lv', 'sirds']),
-    evolution_note: 'O «coração» indo-europeu, com o *ḱ virando «š» como em šuo e šimtas. Do lado centum vêm cor (coração, cordial, recordar) e o grego kardía (cardíaco).',
+    evolution_note: 'O “coração” indo-europeu, com o *ḱ virando “š” como em šuo e šimtas. Do lado centum vêm cor (coração, cordial, recordar) e o grego kardía (cardíaco).',
     transparent: false,
   },
   {
@@ -619,7 +619,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*h₃ekʷ-',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'oculus'], ['pt', 'olho'], ['ru', 'око'], ['sa', 'ákṣi'], ['lv', 'acs']),
-    evolution_note: 'Mesma raiz de «olho», «óculos» e «ocular». O lituano guarda o k, que no latim virou «c» e no português se dissolveu em «lh».',
+    evolution_note: 'Mesma raiz de “olho”, “óculos” e “ocular”. O lituano guarda o k, que no latim virou “c” e no português se dissolveu em “lh”.',
     transparent: false,
   },
   {
@@ -627,7 +627,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*h₂éws-',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'auris'], ['pt', 'orelha'], ['en', 'ear'], ['got', 'auso'], ['ru', 'ухо'], ['lv', 'auss']),
-    evolution_note: 'O latim trocou o s entre vogais por r (*ausis → auris, de onde «orelha» e «auricular»); o lituano guardou o s original, como o gótico auso.',
+    evolution_note: 'O latim trocou o s entre vogais por r (*ausis → auris, de onde “orelha” e “auricular”); o lituano guardou o s original, como o gótico auso.',
     transparent: false,
   },
   {
@@ -635,7 +635,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*néh₂s-',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'nasus'], ['pt', 'nasal'], ['en', 'nose'], ['de', 'Nase'], ['ru', 'нос'], ['sa', 'nā́s-']),
-    evolution_note: 'O «nariz» indo-europeu: mesma raiz de «nasal». O português «nariz» vem de outra palavra latina da família, naris (narina).',
+    evolution_note: 'O “nariz” indo-europeu: mesma raiz de “nasal”. O português “nariz” vem de outra palavra latina da família, naris (narina).',
     transparent: false,
   },
   {
@@ -643,7 +643,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*h₃dónts',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'dens, dentis'], ['pt', 'dente'], ['sa', 'dán'], ['en', 'tooth'], ['grc', 'odoús']),
-    evolution_note: 'Provavelmente «o que come», particípio da raiz de «comer» (latim edere). Dantis e dente estão tão perto que o brasileiro às vezes acerta de primeira.',
+    evolution_note: 'Provavelmente “o que come”, particípio da raiz de “comer” (latim edere). Dantis e dente estão tão perto que o brasileiro às vezes acerta de primeira.',
     transparent: false,
   },
   {
@@ -651,7 +651,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*galwā́',
     origin_language: 'Protobalto-eslavo',
     cognates: c(['ru', 'голова'], ['pl', 'głowa'], ['lv', 'galva']),
-    evolution_note: 'A «cabeça» comum ao báltico e ao eslavo. O russo pôs um o entre as consoantes (golová), o polonês trocou a ordem (głowa); o lituano e o letão guardam a forma antiga, igualzinha nos dois.',
+    evolution_note: 'A “cabeça” comum ao báltico e ao eslavo. O russo pôs um o entre as consoantes (golová), o polonês trocou a ordem (głowa); o lituano e o letão guardam a forma antiga, igualzinha nos dois.',
     transparent: false,
   },
   {
@@ -659,7 +659,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*rankā́',
     origin_language: 'Protobalto-eslavo',
     cognates: c(['ru', 'рука'], ['pl', 'ręka'], ['lv', 'roka']),
-    evolution_note: 'A mão (e o braço inteiro). O polonês ręka guarda o som nasal que o lituano escreve «an» e que o russo perdeu. A explicação mais citada liga a palavra a rinkti (juntar, colher): a mão é «a que junta».',
+    evolution_note: 'A mão (e o braço inteiro). O polonês ręka guarda o som nasal que o lituano escreve “an” e que o russo perdeu. A explicação mais citada liga a palavra a rinkti (juntar, colher): a mão é “a que junta”.',
     transparent: false,
   },
   {
@@ -667,7 +667,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*médʰu',
     origin_language: 'Protoindo-europeu',
     cognates: c(['sa', 'mádhu'], ['grc', 'méthu'], ['en', 'mead'], ['ru', 'мёд'], ['lv', 'medus']),
-    evolution_note: 'O mel e a bebida de mel. Nas línguas vizinhas a mesma palavra deu o hidromel (inglês mead) e até o vinho (grego méthu). O lituano ainda faz midus, um hidromel tradicional; e o urso em russo, медведь, é «o que come mel».',
+    evolution_note: 'O mel e a bebida de mel. Nas línguas vizinhas a mesma palavra deu o hidromel (inglês mead) e até o vinho (grego méthu). O lituano ainda faz midus, um hidromel tradicional; e o urso em russo, медведь, é “o que come mel”.',
     transparent: false,
   },
   {
@@ -675,7 +675,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: 'sūrus',
     origin_language: 'Lituano',
     cognates: c(['ru', 'сыр'], ['lv', 'siers']),
-    evolution_note: 'O queijo é «o salgado», de sūrus (salgado). O russo сыр (queijo) e сырой (cru, úmido) vêm da mesma família. O queijo de coalho com cominho (kmynų sūris) é o petisco da festa de São João (Joninės).',
+    evolution_note: 'O queijo é “o salgado”, de sūrus (salgado). O russo сыр (queijo) e сырой (cru, úmido) vêm da mesma família. O queijo de coalho com cominho (kmynų sūris) é o petisco da festa de São João (Joninės).',
     transparent: false,
   },
   {
@@ -691,7 +691,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*bʰey-',
     origin_language: 'Protoindo-europeu',
     cognates: c(['en', 'bee'], ['de', 'Biene'], ['ru', 'пчела'], ['lv', 'bite']),
-    evolution_note: 'A abelha. A apicultura na floresta, em troncos ocos, era tão importante que o lituano tem uma palavra para os companheiros de colmeia: bičiuliai, os que dividiam as abelhas, hoje são «amigos do peito».',
+    evolution_note: 'A abelha. A apicultura na floresta, em troncos ocos, era tão importante que o lituano tem uma palavra para os companheiros de colmeia: bičiuliai, os que dividiam as abelhas, hoje são “amigos do peito”.',
     transparent: false,
   },
   {
@@ -699,7 +699,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*wr̥dʰh₁om',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'verbum'], ['pt', 'verbo'], ['en', 'word'], ['de', 'Wort'], ['lv', 'vārds'], ['pru', 'wirds']),
-    evolution_note: 'No lituano quer dizer «nome»; no letão, vārds é ao mesmo tempo «nome» e «palavra»; no latim, verbum é «palavra» (de onde «verbo»). Vardadienis é o dia do nome, festejado como um segundo aniversário.',
+    evolution_note: 'No lituano quer dizer “nome”; no letão, vārds é ao mesmo tempo “nome” e “palavra”; no latim, verbum é “palavra” (de onde “verbo”). Vardadienis é o dia do nome, festejado como um segundo aniversário.',
     transparent: false,
   },
   {
@@ -707,7 +707,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*méh₂tēr',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'mater'], ['pt', 'mãe'], ['sa', 'mātár-'], ['ru', 'мать'], ['lv', 'māte']),
-    evolution_note: 'A forma antiga era motė, gen. moters: com o r escondido que aparece nas outras formas, como no latim mater. Motė virou moteris (mulher), e para «mãe» ficou a forma derivada motina, ou o carinhoso mama.',
+    evolution_note: 'A forma antiga era motė, gen. moters: com o r escondido que aparece nas outras formas, como no latim mater. Motė virou moteris (mulher), e para “mãe” ficou a forma derivada motina, ou o carinhoso mama.',
     transparent: false,
   },
   {
@@ -715,7 +715,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*tēta-',
     origin_language: 'Balto-eslavo (fala infantil)',
     cognates: c(['lv', 'tēvs'], ['ru', 'тятя'], ['grc', 'tétta']),
-    evolution_note: 'O báltico não guardou o *ph₂tḗr (pater, pai) indo-europeu: usa uma palavra do tipo «papai», da fala das crianças, como o russo antigo тятя. Tėvynė (pátria) é «a terra do pai».',
+    evolution_note: 'O báltico não guardou o *ph₂tḗr (pater, pai) indo-europeu: usa uma palavra do tipo “papai”, da fala das crianças, como o russo antigo тятя. Tėvynė (pátria) é “a terra do pai”.',
     transparent: false,
   },
   {
@@ -723,7 +723,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*bʰréh₂tēr',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'frater'], ['pt', 'fraterno'], ['en', 'brother'], ['sa', 'bhrā́tar-'], ['ru', 'брат'], ['lv', 'brālis']),
-    evolution_note: 'O «irmão» indo-europeu. O latim frater deu «frade» e «fraterno»; o português «irmão» vem de outra palavra (germanus). Nas canções populares aparece o carinhoso brolelis.',
+    evolution_note: 'O “irmão” indo-europeu. O latim frater deu “frade” e “fraterno”; o português “irmão” vem de outra palavra (germanus). Nas canções populares aparece o carinhoso brolelis.',
     transparent: false,
   },
   {
@@ -739,7 +739,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*dʰugh₂tḗr',
     origin_language: 'Protoindo-europeu',
     cognates: c(['en', 'daughter'], ['de', 'Tochter'], ['grc', 'thygátēr'], ['sa', 'duhitár-'], ['ru', 'дочь']),
-    evolution_note: 'Como sesuo, esconde o r no nominativo: duktė, gen. dukters, pl. dukterys. O latim perdeu esta palavra (usava filia, de onde «filha»), mas o lituano a guarda.',
+    evolution_note: 'Como sesuo, esconde o r no nominativo: duktė, gen. dukters, pl. dukterys. O latim perdeu esta palavra (usava filia, de onde “filha”), mas o lituano a guarda.',
     transparent: false,
   },
   {
@@ -747,7 +747,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*wiHrós',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'vir'], ['pt', 'viril'], ['sa', 'vīrá-'], ['en', 'werewolf'], ['lv', 'vīrs']),
-    evolution_note: 'Homem e marido. O latim vir deu «viril» e «virtude» (a qualidade do homem de valor); o inglês antigo wer sobrevive em werewolf, «homem-lobo».',
+    evolution_note: 'Homem e marido. O latim vir deu “viril” e “virtude” (a qualidade do homem de valor); o inglês antigo wer sobrevive em werewolf, “homem-lobo”.',
     transparent: false,
   },
   {
@@ -755,7 +755,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*h₁ey-',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'ire'], ['pt', 'ir'], ['sa', 'éti'], ['grc', 'eîmi'], ['lv', 'iet']),
-    evolution_note: 'O «ir» indo-europeu, o mesmo do latim ire (ir, «iterar», «itinerário»). O presente eina (vai) e o passado ėjo mostram o jogo de vogais que a raiz sempre teve.',
+    evolution_note: 'O “ir” indo-europeu, o mesmo do latim ire (ir, “iterar”, “itinerário”). O presente eina (vai) e o passado ėjo mostram o jogo de vogais que a raiz sempre teve.',
     transparent: false,
   },
   {
@@ -763,7 +763,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*deh₃-',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'dare'], ['pt', 'dar'], ['sa', 'dádāti'], ['ru', 'дать'], ['lv', 'dot']),
-    evolution_note: 'O «dar» da família: mesma raiz de «doar», «dote» e «data» (o dia «dado» numa carta). O -uo- lituano corresponde a um o longo antigo.',
+    evolution_note: 'O “dar” da família: mesma raiz de “doar”, “dote” e “data” (o dia “dado” numa carta). O -uo- lituano corresponde a um o longo antigo.',
     transparent: false,
   },
   {
@@ -771,7 +771,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*sed-',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'sedere'], ['pt', 'sede'], ['en', 'sit'], ['ru', 'сидеть'], ['lv', 'sēdēt']),
-    evolution_note: 'Estar sentado. Do latim sedere vêm «sede», «sessão», «presidente» (o que se senta na frente) e, pelo latim popular, «sentar».',
+    evolution_note: 'Estar sentado. Do latim sedere vêm “sede”, “sessão”, “presidente” (o que se senta na frente) e, pelo latim popular, “sentar”.',
     transparent: false,
   },
   {
@@ -779,7 +779,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*steh₂-',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'stare'], ['pt', 'estar'], ['en', 'stand'], ['ru', 'стоять'], ['lv', 'stāvēt']),
-    evolution_note: 'Estar de pé. O latim stare deu o nosso «estar», «estátua» e «estação»; no lituano a mesma raiz dá stoti (pôr-se de pé, parar) e stotis (estação).',
+    evolution_note: 'Estar de pé. O latim stare deu o nosso “estar”, “estátua” e “estação”; no lituano a mesma raiz dá stoti (pôr-se de pé, parar) e stotis (estação).',
     transparent: false,
   },
   {
@@ -787,7 +787,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*ǵneh₃-',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'noscere'], ['pt', 'conhecer'], ['en', 'know'], ['ru', 'знать'], ['sa', 'jñā-'], ['lv', 'zināt']),
-    evolution_note: 'Saber. O *ǵ virou «ž», satem. Do lado latino vêm «conhecer», «noção» e «ignorar» (não saber). Žinios (notícias, o telejornal) são «os sabidos».',
+    evolution_note: 'Saber. O *ǵ virou “ž”, satem. Do lado latino vêm “conhecer”, “noção” e “ignorar” (não saber). Žinios (notícias, o telejornal) são “os sabidos”.',
     transparent: false,
   },
   {
@@ -795,7 +795,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*weǵʰ-',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'vehere'], ['pt', 'veículo'], ['en', 'way'], ['ru', 'везти'], ['lv', 'vest']),
-    evolution_note: 'Levar num veículo, transportar. Do latim vehere vêm «veículo» e «vetor»; do germânico, way (caminho) e wagon. Vežimas é a carroça.',
+    evolution_note: 'Levar num veículo, transportar. Do latim vehere vêm “veículo” e “vetor”; do germânico, way (caminho) e wagon. Vežimas é a carroça.',
     transparent: false,
   },
   {
@@ -803,7 +803,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*gʷerh₃-',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'vorare'], ['pt', 'devorar'], ['sa', 'giráti'], ['lv', 'dzert']),
-    evolution_note: 'Beber, da raiz de «engolir». O latim vorare deu «devorar» e «voraz»; o lituano ficou com o sentido de beber. Gėrimas é a bebida.',
+    evolution_note: 'Beber, da raiz de “engolir”. O latim vorare deu “devorar” e “voraz”; o lituano ficou com o sentido de beber. Gėrimas é a bebida.',
     transparent: false,
   },
   {
@@ -811,7 +811,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*h₂erh₃-',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'arare'], ['pt', 'arar'], ['grc', 'aróō'], ['lv', 'art']),
-    evolution_note: 'Arar a terra, com o mesmo verbo do latim arare. Daqui vêm arklas (o arado) e arklys (o cavalo, «o do arado»).',
+    evolution_note: 'Arar a terra, com o mesmo verbo do latim arare. Daqui vêm arklas (o arado) e arklys (o cavalo, “o do arado”).',
     transparent: false,
   },
   {
@@ -819,7 +819,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: 'arklas',
     origin_language: 'Lituano',
     cognates: c(['la', 'aratrum'], ['pt', 'arado']),
-    evolution_note: 'O cavalo é «o do arado» (arklas, de arti). A palavra indo-europeia para cavalo, *h₁éḱwos (latim equus, de onde «equino»), sobreviveu no lituano antigo só como ašva, «a égua».',
+    evolution_note: 'O cavalo é “o do arado” (arklas, de arti). A palavra indo-europeia para cavalo, *h₁éḱwos (latim equus, de onde “equino”), sobreviveu no lituano antigo só como ašva, “a égua”.',
     transparent: false,
   },
   {
@@ -827,7 +827,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*seh₁-',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'serere, semen'], ['pt', 'semente'], ['en', 'sow, seed'], ['ru', 'сеять'], ['lv', 'sēt']),
-    evolution_note: 'Semear. Sėkla (semente) é da mesma raiz de «semente» e «sêmen». O mês de setembro, rugsėjis, é «o tempo de semear o centeio» (rugiai + sėti).',
+    evolution_note: 'Semear. Sėkla (semente) é da mesma raiz de “semente” e “sêmen”. O mês de setembro, rugsėjis, é “o tempo de semear o centeio” (rugiai + sėti).',
     transparent: false,
   },
   {
@@ -843,7 +843,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*ǵʰeym-',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'hiems'], ['pt', 'hibernar'], ['ru', 'зима'], ['sa', 'himá-'], ['lv', 'ziema']),
-    evolution_note: 'O inverno. O nosso «inverno» vem do latim hibernum, da mesma raiz de hiems; o Himalaia é, em sânscrito, «a morada da neve».',
+    evolution_note: 'O inverno. O nosso “inverno” vem do latim hibernum, da mesma raiz de hiems; o Himalaia é, em sânscrito, “a morada da neve”.',
     transparent: false,
   },
   {
@@ -851,7 +851,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*wes-r̥',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'ver'], ['pt', 'verão'], ['ru', 'весна'], ['sa', 'vasantá-'], ['lv', 'vasara']),
-    evolution_note: 'Nas outras línguas a raiz deu a estação que chega depois do inverno: ver (primavera) em latim, весна em russo. No lituano, vasara é o verão, e pavasaris, «o antes do verão», a primavera. O nosso «verão» vem do latim veranum, da mesma raiz.',
+    evolution_note: 'Nas outras línguas a raiz deu a estação que chega depois do inverno: ver (primavera) em latim, весна em russo. No lituano, vasara é o verão, e pavasaris, “o antes do verão”, a primavera. O nosso “verão” vem do latim veranum, da mesma raiz.',
     transparent: false,
   },
   {
@@ -859,7 +859,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*snóygʷʰos',
     origin_language: 'Protoindo-europeu',
     cognates: c(['en', 'snow'], ['ru', 'снег'], ['la', 'nix, nivis'], ['pt', 'neve'], ['lv', 'sniegs']),
-    evolution_note: 'A neve. O latim perdeu o s inicial (nix, nivis → «neve»); o lituano, o russo e o inglês o mantiveram.',
+    evolution_note: 'A neve. O latim perdeu o s inicial (nix, nivis → “neve”); o lituano, o russo e o inglês o mantiveram.',
     transparent: false,
   },
   {
@@ -867,7 +867,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*h₂wéh₁yus',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'ventus'], ['pt', 'vento'], ['en', 'wind'], ['sa', 'vāyú-'], ['lv', 'vējš']),
-    evolution_note: 'Da raiz de «soprar». Vāyu é o deus do vento no sânscrito; o latim ventus deu «vento» e «ventilador». Vėjo malūnas é o moinho de vento.',
+    evolution_note: 'Da raiz de “soprar”. Vāyu é o deus do vento no sânscrito; o latim ventus deu “vento” e “ventilador”. Vėjo malūnas é o moinho de vento.',
     transparent: false,
   },
   {
@@ -875,7 +875,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: 'lieti',
     origin_language: 'Báltico',
     cognates: c(['lv', 'lietus']),
-    evolution_note: 'A chuva é «o que se derrama», de lieti (derramar, verter). Uma das hipóteses para o nome Lietuva o liga ao riacho Lietava, cujo nome viria deste mesmo verbo; outras hipóteses existem, e a questão segue aberta.',
+    evolution_note: 'A chuva é “o que se derrama”, de lieti (derramar, verter). Uma das hipóteses para o nome Lietuva o liga ao riacho Lietava, cujo nome viria deste mesmo verbo; outras hipóteses existem, e a questão segue aberta.',
     transparent: false,
   },
   {
@@ -883,7 +883,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*ledu-',
     origin_language: 'Protobalto-eslavo',
     cognates: c(['ru', 'лёд'], ['pl', 'lód'], ['lv', 'ledus']),
-    evolution_note: 'O gelo, palavra comum ao báltico e ao eslavo. Ledai no plural são os sorvetes: «os gelos».',
+    evolution_note: 'O gelo, palavra comum ao báltico e ao eslavo. Ledai no plural são os sorvetes: “os gelos”.',
     transparent: false,
   },
   {
@@ -891,7 +891,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*kel-',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'collis'], ['pt', 'colina'], ['en', 'hill'], ['lv', 'kalns']),
-    evolution_note: 'Da raiz de «elevar-se». Num país plano, onde o ponto mais alto não chega a 300 metros, kalnas cobre de «morro» a «montanha».',
+    evolution_note: 'Da raiz de “elevar-se”. Num país plano, onde o ponto mais alto não chega a 300 metros, kalnas cobre de “morro” a “montanha”.',
     transparent: false,
   },
   {
@@ -907,7 +907,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*h₂ep-',
     origin_language: 'Protoindo-europeu',
     cognates: c(['lv', 'upe'], ['pru', 'ape'], ['sa', 'ápaḥ']),
-    evolution_note: 'O rio, da raiz de «água corrente», a mesma do sânscrito ápaḥ (as águas). Muitos nomes de rios da Europa Oriental vêm de raízes bálticas, pistas de que os bálticos já ocuparam uma área bem maior.',
+    evolution_note: 'O rio, da raiz de “água corrente”, a mesma do sânscrito ápaḥ (as águas). Muitos nomes de rios da Europa Oriental vêm de raízes bálticas, pistas de que os bálticos já ocuparam uma área bem maior.',
     transparent: false,
   },
   {
@@ -915,7 +915,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*médʰyos',
     origin_language: 'Protoindo-europeu',
     cognates: c(['lv', 'mežs'], ['ru', 'межа'], ['la', 'medius'], ['pt', 'meio']),
-    evolution_note: 'No lituano é árvore (e madeira); no letão, mežs é floresta. A hipótese mais aceita liga a palavra a «meio» (latim medius): a mata era a faixa do meio, entre um povoado e outro. O russo межа (divisa) conservou esse sentido de limite.',
+    evolution_note: 'No lituano é árvore (e madeira); no letão, mežs é floresta. A hipótese mais aceita liga a palavra a “meio” (latim medius): a mata era a faixa do meio, entre um povoado e outro. O russo межа (divisa) conservou esse sentido de limite.',
     transparent: false,
   },
   {
@@ -923,7 +923,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*bʰerHǵos',
     origin_language: 'Protoindo-europeu',
     cognates: c(['en', 'birch'], ['de', 'Birke'], ['ru', 'берёза'], ['lv', 'bērzs']),
-    evolution_note: 'A bétula, provavelmente «a brilhante», pela casca branca. Na primavera se bebe a seiva da bétula, beržų sula.',
+    evolution_note: 'A bétula, provavelmente “a brilhante”, pela casca branca. Na primavera se bebe a seiva da bétula, beržų sula.',
     transparent: false,
   },
   {
@@ -947,7 +947,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*egl-',
     origin_language: 'Balto-eslavo',
     cognates: c(['lv', 'egle'], ['pru', 'addle'], ['ru', 'ель']),
-    evolution_note: 'O abeto. Eglė é também nome de mulher e o nome da heroína de «Eglė, a rainha das cobras», a lenda mais conhecida do país: casada com o rei-serpente, ela vira abeto no fim, e os filhos, outras árvores.',
+    evolution_note: 'O abeto. Eglė é também nome de mulher e o nome da heroína de “Eglė, a rainha das cobras”, a lenda mais conhecida do país: casada com o rei-serpente, ela vira abeto no fim, e os filhos, outras árvores.',
     transparent: false,
   },
   {
@@ -971,7 +971,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*bʰelH-',
     origin_language: 'Protoindo-europeu',
     cognates: c(['lv', 'balts'], ['ru', 'белый']),
-    evolution_note: 'Branco, da raiz de «brilhar». Uma das hipóteses para o nome do mar Báltico o liga a esta palavra, «o mar branco»; outra, a bala (pântano). O nome «línguas bálticas» veio do mar, cunhado em 1845 pelo linguista Georg Nesselmann.',
+    evolution_note: 'Branco, da raiz de “brilhar”. Uma das hipóteses para o nome do mar Báltico o liga a esta palavra, “o mar branco”; outra, a bala (pântano). O nome “línguas bálticas” veio do mar, cunhado em 1845 pelo linguista Georg Nesselmann.',
     transparent: false,
   },
   {
@@ -979,7 +979,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*h₁rowdʰ-',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'ruber, rufus'], ['pt', 'rubro, ruivo'], ['en', 'red'], ['ru', 'рудый']),
-    evolution_note: 'O vermelho indo-europeu, que deu «rubro», «ruivo», «rubi» e o inglês red. Rūda (minério) é da mesma família, pela cor do ferro.',
+    evolution_note: 'O vermelho indo-europeu, que deu “rubro”, “ruivo”, “rubi” e o inglês red. Rūda (minério) é da mesma família, pela cor do ferro.',
     transparent: false,
   },
   {
@@ -987,7 +987,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*ǵʰelh₃-',
     origin_language: 'Protoindo-europeu',
     cognates: c(['ru', 'зелёный'], ['grc', 'khlōrós'], ['pt', 'clorofila'], ['en', 'yellow'], ['lv', 'zaļš']),
-    evolution_note: 'Verde, e também cru (não maduro). A raiz de «verde-amarelo» deu o grego khlōrós (de onde «cloro» e «clorofila») e o inglês yellow. Žolė (grama) e geltonas (amarelo) são parentes.',
+    evolution_note: 'Verde, e também cru (não maduro). A raiz de “verde-amarelo” deu o grego khlōrós (de onde “cloro” e “clorofila”) e o inglês yellow. Žolė (grama) e geltonas (amarelo) são parentes.',
     transparent: false,
   },
   {
@@ -995,7 +995,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*ǵʰelh₃-',
     origin_language: 'Protoindo-europeu',
     cognates: c(['en', 'yellow, gold'], ['de', 'gelb'], ['lv', 'dzeltens']),
-    evolution_note: 'Amarelo, da mesma raiz de žalias (verde) e do inglês gold (ouro). As línguas antigas separavam pouco o verde do amarelo: era «a cor viva das plantas».',
+    evolution_note: 'Amarelo, da mesma raiz de žalias (verde) e do inglês gold (ouro). As línguas antigas separavam pouco o verde do amarelo: era “a cor viva das plantas”.',
     transparent: false,
   },
   {
@@ -1003,7 +1003,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*sal-',
     origin_language: 'Protoindo-europeu',
     cognates: c(['lv', 'salds'], ['ru', 'солод'], ['la', 'sal'], ['pt', 'sal']),
-    evolution_note: 'Doce. A explicação mais comum liga a palavra ao sal: primeiro «temperado, saboroso», depois «doce». O russo солод (malte) é da mesma família.',
+    evolution_note: 'Doce. A explicação mais comum liga a palavra ao sal: primeiro “temperado, saboroso”, depois “doce”. O russo солод (malte) é da mesma família.',
     transparent: false,
   },
   {
@@ -1011,7 +1011,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*rot-h₂-o-',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'rota'], ['pt', 'roda'], ['de', 'Rad'], ['sa', 'rátha-'], ['lv', 'rats']),
-    evolution_note: 'A roda, de uma raiz de «correr». O latim rota deu «roda», «rotação» e «rotina» (o caminho batido); no sânscrito, rátha é o carro de guerra. No lituano, ratai (plural) é a carroça.',
+    evolution_note: 'A roda, de uma raiz de “correr”. O latim rota deu “roda”, “rotação” e “rotina” (o caminho batido); no sânscrito, rátha é o carro de guerra. No lituano, ratai (plural) é a carroça.',
     transparent: false,
   },
   {
@@ -1019,7 +1019,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*dʰwer-',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'fores'], ['pt', 'forasteiro'], ['en', 'door'], ['de', 'Tür'], ['ru', 'дверь'], ['grc', 'thýra']),
-    evolution_note: 'A porta, que só existe no plural (durys, como «as folhas da porta»). Do latim fores (portas) e foris (lá fora) vêm «fora», «forasteiro» e «foro».',
+    evolution_note: 'A porta, que só existe no plural (durys, como “as folhas da porta”). Do latim fores (portas) e foris (lá fora) vêm “fora”, “forasteiro” e “foro”.',
     transparent: false,
   },
   {
@@ -1027,7 +1027,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*(s)teg-',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'tegere'], ['pt', 'telha, proteger'], ['grc', 'stégos'], ['de', 'Dach'], ['en', 'thatch']),
-    evolution_note: 'O telhado, da raiz de «cobrir». O latim tegere deu «proteger», «teto» e tegula (telha); o grego stégos, «estegossauro» (o lagarto de teto, pelas placas nas costas).',
+    evolution_note: 'O telhado, da raiz de “cobrir”. O latim tegere deu “proteger”, “teto” e tegula (telha); o grego stégos, “estegossauro” (o lagarto de teto, pelas placas nas costas).',
     transparent: false,
   },
   {
@@ -1035,7 +1035,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*ḱerh₂-',
     origin_language: 'Protoindo-europeu',
     cognates: c(['la', 'cervus'], ['pt', 'cervo'], ['ru', 'корова'], ['pl', 'krowa']),
-    evolution_note: 'Provavelmente «a de chifres», da raiz de chifre, como o latim cervus (o cervo) e o grego kéras.',
+    evolution_note: 'Provavelmente “a de chifres”, da raiz de chifre, como o latim cervus (o cervo) e o grego kéras.',
     transparent: false,
   },
   {
@@ -1059,7 +1059,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*tewteh₂',
     origin_language: 'Protoindo-europeu',
     cognates: c(['lv', 'tauta'], ['pru', 'tauto'], ['got', 'þiuda'], ['de', 'deutsch'], ['pt', 'teutônico']),
-    evolution_note: 'O povo, a nação. A mesma raiz deu no germânico o adjetivo «do povo», que virou deutsch (alemão) e o nosso «teutônico». Tautosaka (folclore) é «o que o povo conta».',
+    evolution_note: 'O povo, a nação. A mesma raiz deu no germânico o adjetivo “do povo”, que virou deutsch (alemão) e o nosso “teutônico”. Tautosaka (folclore) é “o que o povo conta”.',
     transparent: false,
   },
   {
@@ -1067,7 +1067,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*draugas',
     origin_language: 'Protobalto-eslavo',
     cognates: c(['ru', 'друг'], ['lv', 'draugs'], ['got', 'driugan']),
-    evolution_note: 'Amigo, na origem «companheiro de armas»: o gótico driugan queria dizer «servir no exército». Draugė é a amiga; draugystė, a amizade.',
+    evolution_note: 'Amigo, na origem “companheiro de armas”: o gótico driugan queria dizer “servir no exército”. Draugė é a amiga; draugystė, a amizade.',
     transparent: false,
   },
   {
@@ -1075,7 +1075,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: 'mielas',
     origin_language: 'Balto-eslavo',
     cognates: c(['ru', 'милый'], ['pl', 'miły'], ['lv', 'mīlestība']),
-    evolution_note: 'O amor, do adjetivo mielas (querido, amável), o mesmo de mylėti (amar) e do russo милый. «Mielas Tomai» é como começa uma carta: «Querido Tomas».',
+    evolution_note: 'O amor, do adjetivo mielas (querido, amável), o mesmo de mylėti (amar) e do russo милый. “Mielas Tomai” é como começa uma carta: “Querido Tomas”.',
     transparent: false,
   },
   {
@@ -1083,7 +1083,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*mesta-',
     origin_language: 'Eslavo',
     cognates: c(['ru', 'место'], ['pl', 'miasto'], ['lv', 'miests']),
-    evolution_note: 'A cidade. Na origem era «lugar», sentido que o russo место mantém; no polonês e no lituano passou a «cidade», o lugar por excelência.',
+    evolution_note: 'A cidade. Na origem era “lugar”, sentido que o russo место mantém; no polonês e no lituano passou a “cidade”, o lugar por excelência.',
     transparent: false,
   },
   {
@@ -1099,7 +1099,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*skait-',
     origin_language: 'Báltico',
     cognates: c(['lv', 'skaitīt']),
-    evolution_note: 'Ler vem de «contar»: skaičius é o número, e no letão skaitīt ainda quer dizer contar. É o mesmo caminho do português «contar» (números e histórias) e do inglês tell (dizer) e teller (caixa de banco).',
+    evolution_note: 'Ler vem de “contar”: skaičius é o número, e no letão skaitīt ainda quer dizer contar. É o mesmo caminho do português “contar” (números e histórias) e do inglês tell (dizer) e teller (caixa de banco).',
     transparent: false,
   },
   {
@@ -1107,7 +1107,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*sekʷ-',
     origin_language: 'Protoindo-europeu',
     cognates: c(['en', 'say'], ['de', 'sagen'], ['la', 'inseque']),
-    evolution_note: 'O conto de fadas, «o que se conta», de pasakyti (contar, dizer), e sakyti é parente do inglês say. Pasakos lituanas estão cheias de laumės (fadas), aitvarai (dragões domésticos) e diabos que perdem apostas.',
+    evolution_note: 'O conto de fadas, “o que se conta”, de pasakyti (contar, dizer), e sakyti é parente do inglês say. Pasakos lituanas estão cheias de laumės (fadas), aitvarai (dragões domésticos) e diabos que perdem apostas.',
     transparent: false,
   },
 
@@ -1117,7 +1117,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: 'mokyti + -ykla',
     origin_language: 'Lituano',
     cognates: c(['lv', 'mācīt']),
-    evolution_note: 'A escola é «o lugar de ensinar»: mokyti (ensinar) + o sufixo de lugar -ykla. Os puristas do início do século XX, como Jonas Jablonskis, preferiram criar palavras assim a usar empréstimos: skaitykla (sala de leitura), valgykla (refeitório), kirpykla (barbearia).',
+    evolution_note: 'A escola é “o lugar de ensinar”: mokyti (ensinar) + o sufixo de lugar -ykla. Os puristas do início do século XX, como Jonas Jablonskis, preferiram criar palavras assim a usar empréstimos: skaitykla (sala de leitura), valgykla (refeitório), kirpykla (barbearia).',
     transparent: false,
   },
   {
@@ -1125,7 +1125,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: 'traukti',
     origin_language: 'Lituano',
     cognates: c(),
-    evolution_note: 'O trem, de traukti (puxar): «o comboio puxado». O letão fez a mesma coisa com outro verbo de puxar, vilkt → vilciens.',
+    evolution_note: 'O trem, de traukti (puxar): “o comboio puxado”. O letão fez a mesma coisa com outro verbo de puxar, vilkt → vilciens.',
     transparent: false,
   },
   {
@@ -1133,7 +1133,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: 'lėkti',
     origin_language: 'Lituano',
     cognates: c(['lv', 'lēkt']),
-    evolution_note: 'O avião, de lėkti (voar, disparar): «o voador». Criada no século XX, tomou o lugar do internacional aeroplanas.',
+    evolution_note: 'O avião, de lėkti (voar, disparar): “o voador”. Criada no século XX, tomou o lugar do internacional aeroplanas.',
     transparent: false,
   },
   {
@@ -1141,7 +1141,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: 'stoti',
     origin_language: 'Lituano',
     cognates: c(['la', 'statio'], ['pt', 'estação']),
-    evolution_note: 'A estação é «onde se para», de stoti (pôr-se de pé, parar), da mesma raiz de stovėti. O latim statio, de stare, teve exatamente a mesma ideia.',
+    evolution_note: 'A estação é “onde se para”, de stoti (pôr-se de pé, parar), da mesma raiz de stovėti. O latim statio, de stare, teve exatamente a mesma ideia.',
     transparent: false,
   },
   {
@@ -1149,7 +1149,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: 'laikas + raštas',
     origin_language: 'Lituano',
     cognates: c(['de', 'Zeitschrift']),
-    evolution_note: 'O jornal: laikas (tempo) + raštas (escrito), «o escrito do tempo», formado como o alemão Zeitschrift (Zeit + Schrift).',
+    evolution_note: 'O jornal: laikas (tempo) + raštas (escrito), “o escrito do tempo”, formado como o alemão Zeitschrift (Zeit + Schrift).',
     transparent: false,
   },
 
@@ -1159,7 +1159,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: 'кънига',
     origin_language: 'Eslavo oriental antigo',
     cognates: c(['ru', 'книга'], ['pl', 'księga']),
-    evolution_note: 'Chegou do eslavo com os primeiros escritos cristãos. Knygnešiai, «os carregadores de livros», contrabandeavam livros em letras latinas durante a proibição russa (1864–1904); o dia 16 de março é o Dia dos Knygnešiai.',
+    evolution_note: 'Chegou do eslavo com os primeiros escritos cristãos. Knygnešiai, “os carregadores de livros”, contrabandeavam livros em letras latinas durante a proibição russa (1864–1904); o dia 16 de março é o Dia dos Knygnešiai.',
     transparent: false,
   },
   {
@@ -1167,7 +1167,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: 'божница',
     origin_language: 'Bielorrusso antigo',
     cognates: c(['ru', 'божница']),
-    evolution_note: 'A igreja, de uma palavra eslava que queria dizer «casa de Deus» (Bog). A Lituânia foi o último país da Europa a se cristianizar oficialmente, em 1387.',
+    evolution_note: 'A igreja, de uma palavra eslava que queria dizer “casa de Deus” (Bog). A Lituânia foi o último país da Europa a se cristianizar oficialmente, em 1387.',
     transparent: false,
   },
   {
@@ -1183,7 +1183,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: '*kuningaz',
     origin_language: 'Germânico',
     cognates: c(['en', 'king'], ['de', 'König'], ['fi', 'kuningas']),
-    evolution_note: 'A palavra germânica para «rei» virou «padre» no lituano. O título dos soberanos medievais, didysis kunigaikštis (grão-duque), vem da mesma raiz.',
+    evolution_note: 'A palavra germânica para “rei” virou “padre” no lituano. O título dos soberanos medievais, didysis kunigaikštis (grão-duque), vem da mesma raiz.',
     transparent: false,
   },
   {
@@ -1207,7 +1207,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: 'мыла',
     origin_language: 'Bielorrusso',
     cognates: c(['ru', 'мыло'], ['pl', 'mydło']),
-    evolution_note: 'O sabão, do eslavo, de uma raiz de «lavar».',
+    evolution_note: 'O sabão, do eslavo, de uma raiz de “lavar”.',
     transparent: false,
   },
   {
@@ -1231,7 +1231,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: 'стол',
     origin_language: 'Eslavo oriental',
     cognates: c(['ru', 'стол'], ['pl', 'stół']),
-    evolution_note: 'A mesa, do eslavo, onde também queria dizer «trono, assento do príncipe», daí o russo столица (capital).',
+    evolution_note: 'A mesa, do eslavo, onde também queria dizer “trono, assento do príncipe”, daí o russo столица (capital).',
     transparent: false,
   },
   {
@@ -1255,7 +1255,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: 'ágouros',
     origin_language: 'Grego (pelo polonês)',
     cognates: c(['pl', 'ogórek'], ['de', 'Gurke'], ['grc', 'ágouros']),
-    evolution_note: 'O pepino, do grego bizantino ágouros («verde, não maduro»), que atravessou a Europa até o alemão Gurke. Pepino em conserva com endro é presença certa na mesa.',
+    evolution_note: 'O pepino, do grego bizantino ágouros (“verde, não maduro”), que atravessou a Europa até o alemão Gurke. Pepino em conserva com endro é presença certa na mesa.',
     transparent: false,
   },
   {
@@ -1271,7 +1271,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: 'cukier',
     origin_language: 'Polonês',
     cognates: c(['pl', 'cukier'], ['de', 'Zucker'], ['ar', 'sukkar'], ['sa', 'śarkarā'], ['pt', 'açúcar']),
-    evolution_note: 'O açúcar viajou do sânscrito śarkarā ao árabe sukkar e daí para toda a Europa. O português «açúcar» leva o artigo árabe colado (as-sukkar); o lituano veio pelo polonês e pelo alemão.',
+    evolution_note: 'O açúcar viajou do sânscrito śarkarā ao árabe sukkar e daí para toda a Europa. O português “açúcar” leva o artigo árabe colado (as-sukkar); o lituano veio pelo polonês e pelo alemão.',
     transparent: false,
   },
   {
@@ -1279,7 +1279,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: 'herba thea',
     origin_language: 'Latim (pelo polonês)',
     cognates: c(['pl', 'herbata'], ['la', 'herba thea'], ['pt', 'erva']),
-    evolution_note: 'Chá é arbata por causa do polonês herbata, do latim herba thea, «erva chá». Por isso lituanos e poloneses dizem algo como «erva» onde o resto da Europa diz chá ou tea.',
+    evolution_note: 'Chá é arbata por causa do polonês herbata, do latim herba thea, “erva chá”. Por isso lituanos e poloneses dizem algo como “erva” onde o resto da Europa diz chá ou tea.',
     transparent: false,
   },
   {
@@ -1287,7 +1287,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: 'qahwa',
     origin_language: 'Árabe (pelo turco)',
     cognates: c(['tr', 'kahve'], ['ar', 'qahwa'], ['pt', 'café']),
-    evolution_note: 'O café, do árabe qahwa pelo turco kahve, a mesma viagem que deu o nosso «café». Kavinė é a cafeteria.',
+    evolution_note: 'O café, do árabe qahwa pelo turco kahve, a mesma viagem que deu o nosso “café”. Kavinė é a cafeteria.',
     transparent: false,
   },
   {
@@ -1303,7 +1303,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: 'vinum',
     origin_language: 'Latim (pelo eslavo)',
     cognates: c(['la', 'vinum'], ['pt', 'vinho'], ['ru', 'вино'], ['de', 'Wein']),
-    evolution_note: 'O vinho, do latim vinum, que viajou com a igreja e o comércio. Vynuogės (uvas) são literalmente «frutinhas de vinho».',
+    evolution_note: 'O vinho, do latim vinum, que viajou com a igreja e o comércio. Vynuogės (uvas) são literalmente “frutinhas de vinho”.',
     transparent: false,
   },
   {
@@ -1319,7 +1319,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: 'pomodoro',
     origin_language: 'Italiano (pelo polonês)',
     cognates: c(['it', 'pomodoro'], ['pl', 'pomidor'], ['ru', 'помидор']),
-    evolution_note: 'O tomate, do italiano pomodoro, «pomo de ouro», porque, segundo a explicação tradicional, os primeiros que chegaram à Itália eram amarelos. O Leste Europeu adotou o nome italiano, e o Oeste, o asteca (tomatl).',
+    evolution_note: 'O tomate, do italiano pomodoro, “pomo de ouro”, porque, segundo a explicação tradicional, os primeiros que chegaram à Itália eram amarelos. O Leste Europeu adotou o nome italiano, e o Oeste, o asteca (tomatl).',
     transparent: false,
   },
 
@@ -1337,7 +1337,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: 'xocolatl',
     origin_language: 'Náuatle (pelo espanhol)',
     cognates: c(['pt', 'chocolate'], ['es', 'chocolate'], ['de', 'Schokolade']),
-    evolution_note: 'Do náuatle dos astecas, pelo espanhol, até a terminação -as do lituano. O «š» é só a forma lituana de escrever o nosso «ch».',
+    evolution_note: 'Do náuatle dos astecas, pelo espanhol, até a terminação -as do lituano. O “š” é só a forma lituana de escrever o nosso “ch”.',
     transparent: true,
   },
   {
@@ -1345,7 +1345,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: 'universitas',
     origin_language: 'Latim',
     cognates: c(['la', 'universitas'], ['pt', 'universidade'], ['ru', 'университет']),
-    evolution_note: 'Do latim universitas, «a comunidade inteira» de mestres e alunos. A Universidade de Vilnius, fundada em 1579 pelos jesuítas, é das mais antigas da Europa Central e do Leste.',
+    evolution_note: 'Do latim universitas, “a comunidade inteira” de mestres e alunos. A Universidade de Vilnius, fundada em 1579 pelos jesuítas, é das mais antigas da Europa Central e do Leste.',
     transparent: true,
   },
   {
@@ -1361,7 +1361,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: 'théatron',
     origin_language: 'Grego (pelo latim)',
     cognates: c(['grc', 'théatron'], ['la', 'theatrum'], ['pt', 'teatro']),
-    evolution_note: 'O «lugar de olhar», em grego. O lituano só troca o -o final por -as, a terminação dos masculinos.',
+    evolution_note: 'O “lugar de olhar”, em grego. O lituano só troca o -o final por -as, a terminação dos masculinos.',
     transparent: true,
   },
   {
@@ -1377,7 +1377,7 @@ export const ETYMOLOGY_LT: EtymologySeed[] = [
     root_word: 'computer',
     origin_language: 'Inglês',
     cognates: c(['en', 'computer'], ['pt', 'computador'], ['la', 'computare']),
-    evolution_note: 'Do inglês computer, do latim computare (calcular). O «iu» mostra como o lituano escreve o som de «iu» do inglês, e -is é a terminação que o transforma num masculino declinável.',
+    evolution_note: 'Do inglês computer, do latim computare (calcular). O “iu” mostra como o lituano escreve o som de “iu” do inglês, e -is é a terminação que o transforma num masculino declinável.',
     transparent: true,
   },
 ];

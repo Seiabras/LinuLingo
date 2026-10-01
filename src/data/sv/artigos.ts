@@ -65,11 +65,11 @@ export const ARTIGOS_SV: ArticleSeed[] = [
     emoji: '⛺',
     paragraphs: [
       'I Sverige har alla rätt att röra sig fritt i naturen, också på mark som någon annan äger. Det kallas allemansrätten. Man får gå, cykla och tälta ett eller ett par dygn på samma plats, om man inte är för nära ett hus. Man får också plocka blommor, bär och svamp.',
-      'Men rätten kommer med ansvar. Regeln brukar sammanfattas så här: «inte störa – inte förstöra». Man ska inte skräpa ner, inte göra upp eld när det är torrt och inte störa djuren eller de människor som bor där.',
+      'Men rätten kommer med ansvar. Regeln brukar sammanfattas så här: “inte störa – inte förstöra”. Man ska inte skräpa ner, inte göra upp eld när det är torrt och inte störa djuren eller de människor som bor där.',
     ],
     translation: [
-      'Na Suécia, todos têm o direito de circular livremente pela natureza, até em terras que pertencem a outra pessoa. Isso se chama «allemansrätten», o direito de todos. Pode-se caminhar, pedalar e acampar um ou dois dias no mesmo lugar, se não for perto demais de uma casa. Também se pode colher flores, frutinhas e cogumelos.',
-      'Mas o direito vem com responsabilidade. A regra costuma ser resumida assim: «não perturbar — não destruir». Não se deve deixar lixo, nem acender fogo quando está seco, nem perturbar os animais ou as pessoas que moram ali.',
+      'Na Suécia, todos têm o direito de circular livremente pela natureza, até em terras que pertencem a outra pessoa. Isso se chama “allemansrätten”, o direito de todos. Pode-se caminhar, pedalar e acampar um ou dois dias no mesmo lugar, se não for perto demais de uma casa. Também se pode colher flores, frutinhas e cogumelos.',
+      'Mas o direito vem com responsabilidade. A regra costuma ser resumida assim: “não perturbar — não destruir”. Não se deve deixar lixo, nem acender fogo quando está seco, nem perturbar os animais ou as pessoas que moram ali.',
     ],
     glossary: [
       ['äger', 'é dono de'],
@@ -82,7 +82,7 @@ export const ARTIGOS_SV: ArticleSeed[] = [
     ],
     questions: [
       { q: 'O que o allemansrätten permite?', options: ['Circular e acampar pouco tempo na natureza, mesmo em terra alheia', 'Caçar em qualquer lugar', 'Construir uma casa no mato'], answer: 0 },
-      { q: 'Qual é a regra resumida?', options: ['«Primeiro a chegar, primeiro a ficar»', '«Não perturbar — não destruir»', '«Só com licença»'], answer: 1 },
+      { q: 'Qual é a regra resumida?', options: ['“Primeiro a chegar, primeiro a ficar”', '“Não perturbar — não destruir”', '“Só com licença”'], answer: 1 },
       { q: 'Quando não se deve acender fogo?', options: ['Quando está seco', 'À noite', 'No inverno'], answer: 0 },
     ],
   },

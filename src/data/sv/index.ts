@@ -52,5 +52,5 @@ export const SUECO: LanguagePack = {
   phrases: { hi: 'Hej!', thanks: 'Tack!', letsStart: ['Nu kör vi!', 'Vamos lá!'] },
   formalMarkers: 'skulle jag kunna…?, tack så mycket, ursäkta',
   cognateNote:
-    'O sueco é uma língua germânica, prima do inglês e do alemão: muitas palavras básicas lembram o inglês (hus = house, vatten = water). Do português, os parentes vêm do latim e do francês (station, restaurang, trottoar). Atenção aos falsos amigos: «god» é gostoso, «rolig» é divertido e «semester» é férias.',
+    'O sueco é uma língua germânica, prima do inglês e do alemão: muitas palavras básicas lembram o inglês (hus = house, vatten = water). Do português, os parentes vêm do latim e do francês (station, restaurang, trottoar). Atenção aos falsos amigos: “god” é gostoso, “rolig” é divertido e “semester” é férias.',
 };

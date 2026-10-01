@@ -33,7 +33,7 @@ export const SCENARIOS_LAD: ScenarioSeed[] = [
     cefr: 'A1',
     register: 'informal',
     persona: 'Rashel, una amiga del kurso de ladino',
-    description: 'Rashel convida você para um café perto da Torre de Gálata. É uma conversa entre amigas: use «tu».',
+    description: 'Rashel convida você para um café perto da Torre de Gálata. É uma conversa entre amigas: use “tu”.',
     turns: [
       {
         bot: 'Ke haber? Ke keres bever?',
@@ -56,9 +56,9 @@ export const ETYMOLOGY_LAD: EtymologySeed[] = [
   {
     word: 'avlar',
     root_word: 'fabulare',
-    origin_language: 'Latim (pelo castelhano antigo «fablar»)',
+    origin_language: 'Latim (pelo castelhano antigo “fablar”)',
     cognates: c(['pt', 'falar'], ['es', 'hablar']),
-    evolution_note: 'O castelhano antigo dizia «fablar»; o f- virou h- e depois sumiu. O ladino, levado da Espanha em 1492, escreve «avlar», e em algumas comunidades ainda se diz «favlar», com o f antigo.',
+    evolution_note: 'O castelhano antigo dizia “fablar”; o f- virou h- e depois sumiu. O ladino, levado da Espanha em 1492, escreve “avlar”, e em algumas comunidades ainda se diz “favlar”, com o f antigo.',
     transparent: true,
   },
   {
@@ -66,7 +66,7 @@ export const ETYMOLOGY_LAD: EtymologySeed[] = [
     root_word: 'preto',
     origin_language: 'Português',
     cognates: c(['pt', 'preto']),
-    evolution_note: 'Uma das palavras que o ladino recebeu dos judeus expulsos de Portugal: o espanhol diz «negro», o ladino diz «preto», como o português.',
+    evolution_note: 'Uma das palavras que o ladino recebeu dos judeus expulsos de Portugal: o espanhol diz “negro”, o ladino diz “preto”, como o português.',
     transparent: true,
   },
   {
@@ -74,7 +74,7 @@ export const ETYMOLOGY_LAD: EtymologySeed[] = [
     root_word: 'al-aḥad',
     origin_language: 'Árabe',
     cognates: c(['pt', 'domingo'], ['es', 'domingo']),
-    evolution_note: 'Do árabe «al-aḥad», «o primeiro» (dia da semana). Segundo a explicação mais citada, as comunidades sefarditas evitavam «domingo», palavra ligada a «Dominus» (o Senhor, no cristianismo).',
+    evolution_note: 'Do árabe “al-aḥad”, “o primeiro” (dia da semana). Segundo a explicação mais citada, as comunidades sefarditas evitavam “domingo”, palavra ligada a “Dominus” (o Senhor, no cristianismo).',
     transparent: false,
   },
   {

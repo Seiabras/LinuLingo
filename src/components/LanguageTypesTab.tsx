@@ -55,7 +55,7 @@ export function LanguageTypesTab() {
     <View className="gap-3">
       <View className="mt-2 flex-row items-end gap-2">
         <Linu mood="pensando" size={60} animate={false} />
-        <SpeechBubble className="mb-5">Nem toda língua nasceu sozinha na boca de um povo: umas foram inventadas, outras nasceram do encontro de povos, outras só as máquinas «falam».</SpeechBubble>
+        <SpeechBubble className="mb-5">Nem toda língua nasceu sozinha na boca de um povo: umas foram inventadas, outras nasceram do encontro de povos, outras só as máquinas “falam”.</SpeechBubble>
       </View>
       <HScroll label="as partes" contentContainerStyle={{ gap: 8 }}>
         {PARTS.map((p) => {

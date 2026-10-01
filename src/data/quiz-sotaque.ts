@@ -59,7 +59,7 @@ export const GUESS_QUESTIONS: GuessQuestion[] = [
   {
     id: 'legal',
     emoji: '😎',
-    question: 'Uma coisa muito boa. Como é «legal» no seu sotaque? «Esse filme é…»',
+    question: 'Uma coisa muito boa. Como é “legal” no seu sotaque? “Esse filme é…”',
     options: [
       { label: 'maneiro', weights: { carioca: 3 } },
       { label: 'da hora', weights: { paulistano: 3, caipira: 1 } },
@@ -160,7 +160,7 @@ export const GUESS_QUESTIONS: GuessQuestion[] = [
   {
     id: 'voce',
     emoji: '👉',
-    question: 'Como você pergunta a um amigo: «___ à praia amanhã?»',
+    question: 'Como você pergunta a um amigo: “___ à praia amanhã?”',
     options: [
       { label: 'Você vai', weights: { paulistano: 2, mineiro: 1, caipira: 2, 'centro-oeste': 2, baiano: 1 } },
       { label: 'Cê vai', weights: { mineiro: 3, caipira: 2, 'centro-oeste': 1 } },
@@ -171,29 +171,29 @@ export const GUESS_QUESTIONS: GuessQuestion[] = [
   {
     id: 's',
     emoji: '🐍',
-    question: 'Como soa o «s» de «festa» e de «mesmo» quando você fala?',
+    question: 'Como soa o “s” de “festa” e de “mesmo” quando você fala?',
     options: [
-      { label: 'chiado, como o «ch» de «chá» («fexta»)', weights: { carioca: 3, nortista: 2, catarinense: 2, portugal: 2, nordestino: 1 } },
-      { label: 'assobiado, como o «s» de «sapo»', weights: { paulistano: 2, caipira: 2, mineiro: 2, 'centro-oeste': 2, gaucho: 2, paranaense: 2, baiano: 1 } },
+      { label: 'chiado, como o “ch” de “chá” (“fexta”)', weights: { carioca: 3, nortista: 2, catarinense: 2, portugal: 2, nordestino: 1 } },
+      { label: 'assobiado, como o “s” de “sapo”', weights: { paulistano: 2, caipira: 2, mineiro: 2, 'centro-oeste': 2, gaucho: 2, paranaense: 2, baiano: 1 } },
     ],
   },
   {
     id: 'r',
     emoji: '🗣️',
-    question: 'E o «r» de «porta»?',
+    question: 'E o “r” de “porta”?',
     options: [
-      { label: 'puxado, com a língua dobrada para trás (o «r» caipira)', weights: { caipira: 3, 'centro-oeste': 2, paranaense: 1 } },
-      { label: 'aspirado, como um «h» («pohta»)', weights: { carioca: 2, mineiro: 2, nordestino: 2, baiano: 2, nortista: 2 } },
-      { label: 'batido, como o «r» de «caro»', weights: { paulistano: 2, gaucho: 2, paranaense: 1, portugal: 2 } },
+      { label: 'puxado, com a língua dobrada para trás (o “r” caipira)', weights: { caipira: 3, 'centro-oeste': 2, paranaense: 1 } },
+      { label: 'aspirado, como um “h” (“pohta”)', weights: { carioca: 2, mineiro: 2, nordestino: 2, baiano: 2, nortista: 2 } },
+      { label: 'batido, como o “r” de “caro”', weights: { paulistano: 2, gaucho: 2, paranaense: 1, portugal: 2 } },
     ],
   },
   {
     id: 'ti',
     emoji: '👵',
-    question: 'E o «t» de «tia» e o «d» de «dia»?',
+    question: 'E o “t” de “tia” e o “d” de “dia”?',
     options: [
-      { label: '«tchia», «djia»', weights: { carioca: 1, paulistano: 1, caipira: 1, mineiro: 1, 'centro-oeste': 1, baiano: 1, nortista: 1, paranaense: 1, catarinense: 1, gaucho: 1 } },
-      { label: '«tia», «dia», com o t e o d secos', weights: { nordestino: 3, portugal: 3, gaucho: 1 } },
+      { label: '“tchia”, “djia”', weights: { carioca: 1, paulistano: 1, caipira: 1, mineiro: 1, 'centro-oeste': 1, baiano: 1, nortista: 1, paranaense: 1, catarinense: 1, gaucho: 1 } },
+      { label: '“tia”, “dia”, com o t e o d secos', weights: { nordestino: 3, portugal: 3, gaucho: 1 } },
     ],
   },
 ];

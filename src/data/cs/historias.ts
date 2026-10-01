@@ -27,7 +27,7 @@ export const STORIES_CS: StorySeed[] = [
         emoji: '😊',
         choices: [
           { text: 'Jsem ze São Paula.', translation: 'Sou de São Paulo.', next: 'final_dobry' },
-          { text: 'Piju vodu.', translation: 'Eu bebo água.', wrong: 'Isso não responde de onde você é. Use «Jsem z…».' },
+          { text: 'Piju vodu.', translation: 'Eu bebo água.', wrong: 'Isso não responde de onde você é. Use “Jsem z…”.' },
         ],
       },
       final_dobry: {
@@ -40,7 +40,7 @@ export const STORIES_CS: StorySeed[] = [
     glossary: [
       ['ahoj', 'oi'],
       ['jak se máš?', 'como vai?'],
-      ['taky', 'também (forma do dia a dia de «také»)'],
+      ['taky', 'também (forma do dia a dia de “také”)'],
       ['vítej', 'bem-vindo'],
     ],
   },
@@ -60,7 +60,7 @@ export const STORIES_CS: StorySeed[] = [
         emoji: '📱',
         choices: [
           { text: 'Ano, mám bratra a sestru.', translation: 'Sim, tenho um irmão e uma irmã.', next: 'rodina' },
-          { text: 'Můj dům je velký.', translation: 'A minha casa é grande.', wrong: 'Isso não responde se você tem irmãos. Use «mám…».' },
+          { text: 'Můj dům je velký.', translation: 'A minha casa é grande.', wrong: 'Isso não responde se você tem irmãos. Use “mám…”.' },
         ],
       },
       rodina: {
@@ -69,7 +69,7 @@ export const STORIES_CS: StorySeed[] = [
         emoji: '🍽️',
         choices: [
           { text: 'Ano, děkuji moc!', translation: 'Sim, muito obrigado!', next: 'final_dobry' },
-          { text: 'Jsem ze São Paula.', translation: 'Sou de São Paulo.', wrong: 'Petr fez um convite: responda com «ano» ou «ne, děkuji».' },
+          { text: 'Jsem ze São Paula.', translation: 'Sou de São Paulo.', wrong: 'Petr fez um convite: responda com “ano” ou “ne, děkuji”.' },
         ],
       },
       final_dobry: {

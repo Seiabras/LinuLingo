@@ -36,7 +36,7 @@ export const ROWS: VocabRow[] = [
   ['èssere', 'ser', 'verbo', 'Verbos-chave', '🧑', 'So de Sardigna.'],
   ['istare', 'estar', 'verbo', 'Verbos-chave', '📍', 'Isto in Nùgoro.'],
   ['àere', 'ter', 'verbo', 'Verbos-chave', '🤲', 'Apo unu frade.'],
-  ['nàrrere', 'dizer; chamar-se («mi naro Sara» = me chamo Sara)', 'verbo', 'Verbos-chave', '🏷️', 'Mi naro Sara.'],
+  ['nàrrere', 'dizer; chamar-se (“mi naro Sara” = me chamo Sara)', 'verbo', 'Verbos-chave', '🏷️', 'Mi naro Sara.'],
   ['faeddare', 'falar', 'verbo', 'Verbos-chave', '🗣️', 'Faeddo unu pagu de sardu.'],
   ['andare', 'ir', 'verbo', 'Verbos-chave', '🚶', 'Ando a Casteddu.'],
   ['manigare', 'comer', 'verbo', 'Verbos-chave', '🍽️', 'Manigo pane e casu.'],

@@ -15,11 +15,11 @@ export const ACCENTS_CA: Accent[] = [
     country: 'ESP',
     subdivisions: ['ES-B', 'ES-GI', 'ES-T'],
     emoji: '🏙️',
-    summary: 'A base do catalão padrão: é a pronúncia que o app ensina. Bloco oriental: o «a» e o «e» átonos caem os dois no som neutro [ə], e o «o» átono soa [u].',
+    summary: 'A base do catalão padrão: é a pronúncia que o app ensina. Bloco oriental: o “a” e o “e” átonos caem os dois no som neutro [ə], e o “o” átono soa [u].',
     features: [
-      'Vocalisme àton reduzido: «pare» soa [ˈpaɾə], «Barcelona» soa [bərsəˈlonə].',
-      'Betacisme: «b» e «v» soam sempre igual, como o nosso «b» — «beu» e «veu» soam idênticos.',
-      'É a pronúncia de referência da televisão e das escolas, mas não é «mais correta» que as outras: é só a que o padrão escrito escolheu para servir de modelo.',
+      'Vocalisme àton reduzido: “pare” soa [ˈpaɾə], “Barcelona” soa [bərsəˈlonə].',
+      'Betacisme: “b” e “v” soam sempre igual, como o nosso “b” — “beu” e “veu” soam idênticos.',
+      'É a pronúncia de referência da televisão e das escolas, mas não é “mais correta” que as outras: é só a que o padrão escrito escolheu para servir de modelo.',
     ],
     examples: [
       ['Anem cap a la plaça.', 'Vamos para a praça.'],
@@ -34,11 +34,11 @@ export const ACCENTS_CA: Accent[] = [
     country: 'ESP',
     subdivisions: ['ES-L'],
     emoji: '🌾',
-    summary: 'Bloco ocidental: as vogais átonas continuam distintas (não caem em [ə]), e ainda se ouve o artigo antigo «lo», o mesmo de «Tirant lo Blanc».',
+    summary: 'Bloco ocidental: as vogais átonas continuam distintas (não caem em [ə]), e ainda se ouve o artigo antigo “lo”, o mesmo de “Tirant lo Blanc”.',
     features: [
-      '«pare» soa [ˈpaɾe], «cosí» soa [koˈzi] — sem a redução do bloco oriental.',
-      'O artigo «lo» (lo pare, lo gos) continua vivo na fala popular, ao lado de «el».',
-      'A 1ª pessoa do presente é igual à do central: «jo parlo».',
+      '“pare” soa [ˈpaɾe], “cosí” soa [koˈzi] — sem a redução do bloco oriental.',
+      'O artigo “lo” (lo pare, lo gos) continua vivo na fala popular, ao lado de “el”.',
+      'A 1ª pessoa do presente é igual à do central: “jo parlo”.',
     ],
     examples: [
       ['Lo meu germà viu a Lleida.', 'O meu irmão mora em Lleida.'],
@@ -55,8 +55,8 @@ export const ACCENTS_CA: Accent[] = [
     emoji: '🍊',
     summary: 'O nome oficial da língua na Comunidade Valenciana. A norma própria (Acadèmia Valenciana de la Llengua, 1998) convive com a do Institut d\'Estudis Catalans, com formas próprias bem conhecidas: parle, este, la meua, eixir.',
     features: [
-      '1ª pessoa do presente em «-e»: «jo parle», «jo cante» (o central diz «jo parlo»).',
-      'Demonstrativos «este/eixe/aquell» ao lado de «aquest/aqueix/aquell», e possessivos sem contração: «la meua», «la teua».',
+      '1ª pessoa do presente em “-e”: “jo parle”, “jo cante” (o central diz “jo parlo”).',
+      'Demonstrativos “este/eixe/aquell” ao lado de “aquest/aqueix/aquell”, e possessivos sem contração: “la meua”, “la teua”.',
       'Vocabulário próprio do dia a dia: xiquet (menino), eixir (sair), hui (hoje), espill (espelho).',
     ],
     examples: [
@@ -72,10 +72,10 @@ export const ACCENTS_CA: Accent[] = [
     country: 'ESP',
     subdivisions: ['ES-IB'],
     emoji: '🏝️',
-    summary: 'O falar das ilhas, com o famoso «article salat» (es, sa, ses), herdado do latim «ipse» em vez de «ille». A 1ª pessoa do presente não leva terminação: «jo cant», «jo parl».',
+    summary: 'O falar das ilhas, com o famoso “article salat” (es, sa, ses), herdado do latim “ipse” em vez de “ille”. A 1ª pessoa do presente não leva terminação: “jo cant”, “jo parl”.',
     features: [
       'Artigo salat: es cotxe, sa casa, ses cases; antes de vogal, s\' (s\'aigua). Existe também em pontos da Costa Brava.',
-      'Artigo pessoal «en/na»: en Joan, na Maria.',
+      'Artigo pessoal “en/na”: en Joan, na Maria.',
       'Palavras próprias: al·lot (menino), moix (gato), ca (cachorro), horabaixa (fim de tarde), idò (então).',
     ],
     examples: [
@@ -91,9 +91,9 @@ export const ACCENTS_CA: Accent[] = [
     country: 'FRA',
     subdivisions: ['FR-66'],
     emoji: '🇫🇷',
-    summary: 'O catalão que passou à França com o Tratado dos Pirenéus em 1659 e convive há séculos com o francês. Marca típica: a negação reforçada com «pas».',
+    summary: 'O catalão que passou à França com o Tratado dos Pirenéus em 1659 e convive há séculos com o francês. Marca típica: a negação reforçada com “pas”.',
     features: [
-      'Negação com «pas»: «No ho sé pas» (não sei mesmo/de jeito nenhum).',
+      'Negação com “pas”: “No ho sé pas” (não sei mesmo/de jeito nenhum).',
       'Muitos empréstimos do francês no vocabulário do dia a dia.',
       'Bloco oriental (como o central): mantém a redução das vogais átonas.',
     ],
@@ -111,7 +111,7 @@ export const ACCENTS_CA: Accent[] = [
     emoji: '🏛️',
     summary: 'Uma ilha linguística: catalão levado por colonos no século XIV, cercado pelo sardo e pelo italiano há mais de seiscentos anos. Reconhecido como minoria linguística pela lei italiana de 1999.',
     features: [
-      'Traços próprios de pronúncia, como o «l» entre vogais que pode soar como «r» (rotacismo).',
+      'Traços próprios de pronúncia, como o “l” entre vogais que pode soar como “r” (rotacismo).',
       'Vocabulário com empréstimos do italiano e do sardo.',
       'A Obra Cultural de l\'Alguer trabalha pela revitalização da língua entre os mais jovens.',
     ],
@@ -129,7 +129,7 @@ export const ACCENTS_CA: Accent[] = [
     summary: 'Não é um sotaque do catalão: é uma variedade do gascão, dialeto do occitano, a língua dos trovadores medievais do sul da França. Desde o Estatuto de 2006, é oficial na Catalunha ao lado do catalão e do castelhano.',
     features: [
       'Parece catalão em muitas palavras (as duas vêm do latim e são vizinhas), mas tem gramática e ortografia próprias.',
-      '«Obrigado» é «mercés», não «gràcies».',
+      '“Obrigado” é “mercés”, não “gràcies”.',
       'É ensinado nas escolas da Vall d\'Aran ao lado do catalão e do castelhano.',
     ],
     examples: [['Mercés plan!', 'Muito obrigado! (aranês, não catalão)']],

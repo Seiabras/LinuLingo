@@ -21,12 +21,12 @@ export function russianTextProblems(text: string): string[] {
   for (const tok of text.match(/[\p{L}\p{M}]+/gu) ?? []) {
     const cyr = /[Ѐ-ӿ]/.test(tok);
     if (!cyr) continue;
-    if (/[A-Za-z]/.test(tok)) out.push(`«${tok}»: letra latina misturada no cirílico`);
+    if (/[A-Za-z]/.test(tok)) out.push(`“${tok}”: letra latina misturada no cirílico`);
     // siglas em maiúsculas (СССР, МГУ) e partículas átonas coladas por hífen (что-нибудь, кто-либо) não levam marca
     if (tok === tok.toUpperCase() && tok.length <= 5) continue;
     if (ENCLITICS.has(tok.toLowerCase())) continue;
     const p = stressProblem(tok);
-    if (p) out.push(`«${tok}»: ${p}`);
+    if (p) out.push(`“${tok}”: ${p}`);
   }
   return out;
 }

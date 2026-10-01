@@ -14,10 +14,10 @@ export const ACCENTS_SW: Accent[] = [
     country: 'TZA',
     subdivisions: ['TZ-07', 'TZ-11', 'TZ-15'],
     emoji: '🏝️',
-    summary: 'O falar da cidade de Zanzibar, base do suaíli padrão. É considerado o suaíli «de referência», com pronúncia clara e muitas palavras de origem árabe.',
+    summary: 'O falar da cidade de Zanzibar, base do suaíli padrão. É considerado o suaíli “de referência”, com pronúncia clara e muitas palavras de origem árabe.',
     features: [
       'Foi escolhido como base da norma escrita entre o fim dos anos 1920 e os anos 1930, e por isso as gramáticas e os dicionários seguem o seu vocabulário.',
-      'Mantém bem os sons das palavras árabes, como o «dh» e o «th» (dhahabu, thelathini).',
+      'Mantém bem os sons das palavras árabes, como o “dh” e o “th” (dhahabu, thelathini).',
       'Na cidade velha, a língua convive com o árabe da religião e com o inglês do turismo.',
     ],
     examples: [
@@ -51,7 +51,7 @@ export const ACCENTS_SW: Accent[] = [
     ],
     words: [
       ['daladala', 'micro-ônibus urbano'],
-      ['bongo', 'Dar es Salaam, na gíria («cérebro», a cidade onde é preciso ser esperto)'],
+      ['bongo', 'Dar es Salaam, na gíria (“cérebro”, a cidade onde é preciso ser esperto)'],
     ],
   },
   {
@@ -107,7 +107,7 @@ export const ACCENTS_SW: Accent[] = [
     emoji: '🎧',
     summary: 'A gíria dos jovens de Nairobi, que mistura a gramática suaíli com palavras do inglês, das línguas quenianas e invenções que mudam a cada geração.',
     features: [
-      'O nome vem de «Swahili» e «English» embaralhados.',
+      'O nome vem de “Swahili” e “English” embaralhados.',
       'Nasceu nos bairros populares da capital e hoje está na música, no rádio e na publicidade.',
       'Não entra em cartas formais, provas nem noticiários, onde se usa o suaíli padrão.',
     ],

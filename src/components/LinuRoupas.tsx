@@ -152,7 +152,7 @@ export function BodyArt({ id }: { id: string }) {
       return (
         <G>
           <Path d={torso(92, 130, 6)} fill="#111827" />
-          {/* a pala branca com desenho, e os pontinhos («lus») */}
+          {/* a pala branca com desenho, e os pontinhos (“lus”) */}
           <Path d={band(92, 9)} fill="#F8FAFC" />
           <Path d="M22 97 L26 94 L30 97 L34 94 L38 97 L42 94 L46 97 L50 94 L54 97 L58 94 L62 97 L66 94 L70 97 L74 94 L78 97 L82 94 L86 97 L90 94 L94 97 L98 94" fill="none" stroke="#111827" strokeWidth="1.2" />
           {[106, 112, 118, 124].flatMap((y, r) =>

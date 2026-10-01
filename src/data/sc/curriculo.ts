@@ -18,9 +18,9 @@ export const UNITS_SC: UnitSeed[] = [
       history:
         'O sardo (sardu, ou limba sarda) é falado na ilha da Sardenha, na Itália, por cerca de um milhão de pessoas. Não é um dialeto do italiano: é uma língua própria, reconhecida pela lei italiana de 1999 sobre as minorias linguísticas. Com o isolamento da ilha, o sardo guardou traços do latim que o italiano, o português e o espanhol perderam: onde o italiano diz "cento" e "cielo" (com som de "tch"), o sardo logudorês diz "chentu" e "chelu", com o k duro do latim — por isso é considerado a mais conservadora das línguas românicas em vários pontos. Este curso usa a Limba Sarda Comuna (LSC), a norma escrita oficial adotada pela Região da Sardenha em 2006, baseada nas variedades logudoresa e nuoresa.',
       culture_tip:
-        'A saudação mais comum e formal é «bona die» (equivale a "bom dia/olá"); "salude" é a versão informal do dia a dia. Para agradecer, «gràtzias» (ou «gràtzias meda», muito obrigado); a resposta típica é «de nudda» (de nada). A palavra sarda mais famosa de todas é «ajò!» — uma interjeição de incentivo tipo "vamos!"/"vai logo!", usada por todo mundo na Sardenha, até por quem não fala sardo no dia a dia.',
+        'A saudação mais comum e formal é “bona die” (equivale a "bom dia/olá"); "salude" é a versão informal do dia a dia. Para agradecer, “gràtzias” (ou “gràtzias meda”, muito obrigado); a resposta típica é “de nudda” (de nada). A palavra sarda mais famosa de todas é “ajò!” — uma interjeição de incentivo tipo "vamos!"/"vai logo!", usada por todo mundo na Sardenha, até por quem não fala sardo no dia a dia.',
       grammar_why:
-        'Como no português, o pronome de sujeito costuma sumir, porque a terminação do verbo já diz quem fala: «so de Casteddu» já é «eu sou de Casteddu» (Casteddu é o nome sardo de Cagliari, a capital). Usa-se o pronome só para dar ênfase. O sardo tem seis pronomes: deo, tue, isse/issa, nois, bois e issos/issas — o «bois» de vocês, que o português do Brasil perdeu, o sardo mantém, tal como o galego e o português europeu.',
+        'Como no português, o pronome de sujeito costuma sumir, porque a terminação do verbo já diz quem fala: “so de Casteddu” já é “eu sou de Casteddu” (Casteddu é o nome sardo de Cagliari, a capital). Usa-se o pronome só para dar ênfase. O sardo tem seis pronomes: deo, tue, isse/issa, nois, bois e issos/issas — o “bois” de vocês, que o português do Brasil perdeu, o sardo mantém, tal como o galego e o português europeu.',
       grammar_examples: [
         ['Bona die! So Antoni.', 'Bom dia! Sou o Antoni.'],
         ['E tue, comente ti naras?', 'E você, como se chama?'],
@@ -30,7 +30,7 @@ export const UNITS_SC: UnitSeed[] = [
       character_guide: [
         ['ch, gh (antes de e, i)', 'som duro de k/g, como em "quilo": NUNCA vira "tch" ou "j" como no italiano', 'chelu ("KE-lu", céu), chèrrere ("KER-re-re", querer)'],
         ['tz', 'som de "ts" ou "dz", parecido com o z de "pizza"', 'gràtzias ("GRA-tsias"), tzitade ("tsi-TA-de", cidade)'],
-        ['j', 'som de «i» semivogal, como em «iogurte»', 'eja («É-ia», sim)'],
+        ['j', 'som de “i” semivogal, como em “iogurte”', 'eja (“É-ia”, sim)'],
         ['acento grave (à, è, ì, ò, ù)', 'marca a sílaba tônica quando ela foge da regra geral', 'gràtzias (GRÁ-tzias), mèrcuris (MÉR-curis)'],
       ],
     },
@@ -49,9 +49,9 @@ export const UNITS_SC: UnitSeed[] = [
           bot: 'Salude! Comente istas?',
           botTranslation: 'Oi! Como você está?',
           expected: ['Bene, gràtzias! E tue?', 'bene', 'gràtzias'],
-          hint: 'Responda que está bem com «bene» e devolva a pergunta: «Bene, gràtzias! E tue?».',
+          hint: 'Responda que está bem com “bene” e devolva a pergunta: “Bene, gràtzias! E tue?”.',
         },
-        communityPrompt: 'Escreva três cumprimentos em sardo: um formal («Bona die…»), um informal («Salude…») e uma despedida com «Adiosu».',
+        communityPrompt: 'Escreva três cumprimentos em sardo: um formal (“Bona die…”), um informal (“Salude…”) e uma despedida com “Adiosu”.',
       },
       {
         id: 'sc-u1-l2',
@@ -67,9 +67,9 @@ export const UNITS_SC: UnitSeed[] = [
           bot: 'Salude! Comente ti naras?',
           botTranslation: 'Oi! Como você se chama?',
           expected: ['Mi naro Ana. E tue?', 'mi naro', 'e tue'],
-          hint: 'Diga o seu nome com «Mi naro…» e devolva a pergunta com «E tue?».',
+          hint: 'Diga o seu nome com “Mi naro…” e devolva a pergunta com “E tue?”.',
         },
-        communityPrompt: 'Apresente-se em sardo: diga o seu nome com «Mi naro…» e pergunte o nome de outra pessoa com «E tue, comente ti naras?».',
+        communityPrompt: 'Apresente-se em sardo: diga o seu nome com “Mi naro…” e pergunte o nome de outra pessoa com “E tue, comente ti naras?”.',
       },
       {
         id: 'sc-u1-l3',
@@ -81,9 +81,9 @@ export const UNITS_SC: UnitSeed[] = [
           bot: 'Bona die! Mi naro Antoni. E tue, comente ti naras, e de inue ses?',
           botTranslation: 'Bom dia! Eu me chamo Antoni. E você, como se chama, e de onde é?',
           expected: ['Bona die! Mi naro Lucia, e so de su Brasile.', 'mi naro', 'so de', 'bona die'],
-          hint: 'Devolva o cumprimento («Bona die!»), diga o seu nome com «Mi naro…» e a origem com «So de…».',
+          hint: 'Devolva o cumprimento (“Bona die!”), diga o seu nome com “Mi naro…” e a origem com “So de…”.',
         },
-        communityPrompt: 'Escreva uma apresentação completa: cumprimento, nome com «Mi naro…», origem com «So de…» e uma despedida com «Adiosu».',
+        communityPrompt: 'Escreva uma apresentação completa: cumprimento, nome com “Mi naro…”, origem com “So de…” e uma despedida com “Adiosu”.',
       },
     ],
   },
@@ -95,14 +95,14 @@ export const UNITS_SC: UnitSeed[] = [
     emoji: '👪',
     card: {
       id: 'sc-c2',
-      title: 'Su, sa, sos, sas: o artigo que veio do latim «ipse»',
+      title: 'Su, sa, sos, sas: o artigo que veio do latim “ipse”',
       emoji: '🧭',
       history:
         'Quase todas as línguas românicas (português, espanhol, italiano, francês) formaram o artigo definido a partir do demonstrativo latino "ille/illa" (aquele/aquela): daí "o/a" em português, "il/la" em italiano. O sardo fez diferente: seus artigos — su (masculino singular), sa (feminino singular), sos (masculino plural), sas (feminino plural) — vêm de outro demonstrativo latino, "ipse/ipsa" (esse mesmo). É a mesma raiz dos raros artigos "salats" (es/sa) de parte das ilhas Baleares, no catalão. Isso torna o sardo reconhecível de longe: qualquer frase com "su" ou "sa" na frente de um substantivo é, quase certamente, sardo.',
       culture_tip:
         'A família estendida é central na cultura sarda, historicamente ligada à vida pastoril do interior da ilha (a criação de ovelhas e a produção de queijo, como o famoso casu, são parte da identidade sarda). Perguntar pela família de alguém é um gesto de cortesia comum. Cidades como Nùgoro (Nuoro, chamada de "a Atenas sarda" por sua tradição literária) e Casteddu (Cagliari, a capital) têm seus próprios nomes em sardo, diferentes dos nomes italianos.',
       grammar_why:
-        'O artigo concorda em gênero e número com o substantivo: su fizu (o filho), sa fiza (a filha), sos fizos (os filhos), sas fizas (as filhas). Os substantivos terminados em -u costumam ser masculinos e os terminados em -a, femininos — como em português. O possessivo (meu/minha, teu/tua) vem depois do substantivo, não antes: «sa domo mea» é, literalmente, «a casa minha».',
+        'O artigo concorda em gênero e número com o substantivo: su fizu (o filho), sa fiza (a filha), sos fizos (os filhos), sas fizas (as filhas). Os substantivos terminados em -u costumam ser masculinos e os terminados em -a, femininos — como em português. O possessivo (meu/minha, teu/tua) vem depois do substantivo, não antes: “sa domo mea” é, literalmente, “a casa minha”.',
       grammar_examples: [
         ['Sa familia mea est manna.', 'A minha família é grande.'],
         ['Su frade meu si narat Antoni.', 'O meu irmão se chama Antoni.'],
@@ -128,7 +128,7 @@ export const UNITS_SC: UnitSeed[] = [
           bot: 'As frades?',
           botTranslation: 'Você tem irmãos?',
           expected: ['Eja, apo unu frade e una sorre.', 'apo', 'frade', 'sorre'],
-          hint: 'Responda com «Apo…» e o número/tipo de irmãos, ou «No apo frades» se não tiver.',
+          hint: 'Responda com “Apo…” e o número/tipo de irmãos, ou “No apo frades” se não tiver.',
         },
         communityPrompt: 'Descreva a sua família em sardo: quantos irmãos você tem, e como se chamam os seus pais (mama e babbu).',
       },
@@ -146,9 +146,9 @@ export const UNITS_SC: UnitSeed[] = [
           bot: 'Praghet su binu sardu?',
           botTranslation: 'Você gosta do vinho sardo?',
           expected: ['Eja, mi praghet meda, est bonu!', 'mi praghet', 'bonu'],
-          hint: 'Use «mi praghet» (eu gosto) e o adjetivo «bonu/bona» para dizer que é bom.',
+          hint: 'Use “mi praghet” (eu gosto) e o adjetivo “bonu/bona” para dizer que é bom.',
         },
-        communityPrompt: 'Descreva a sua casa em duas ou três frases: se é grande («manna») ou pequena («minore»), e o que você gosta de beber nela.',
+        communityPrompt: 'Descreva a sua casa em duas ou três frases: se é grande (“manna”) ou pequena (“minore”), e o que você gosta de beber nela.',
       },
       {
         id: 'sc-u2-l3',
@@ -160,7 +160,7 @@ export const UNITS_SC: UnitSeed[] = [
           bot: 'Comente est sa familia tua, e sa domo tua?',
           botTranslation: 'Como é a sua família, e a sua casa?',
           expected: ['Sa familia mea est manna: mama, babbu, unu frade e deo. Sa domo mea est minore ma bella.', 'sa familia mea', 'sa domo mea'],
-          hint: 'Diga como é a sua família com «sa familia mea est…» e a casa com «sa domo mea est…».',
+          hint: 'Diga como é a sua família com “sa familia mea est…” e a casa com “sa domo mea est…”.',
         },
         communityPrompt: 'Escreva um parágrafo curto apresentando a sua família e a sua casa, usando pelo menos três palavras desta unidade.',
       },

@@ -52,5 +52,5 @@ export const NORUEGUES: LanguagePack = {
   phrases: { hi: 'Hei!', thanks: 'Takk!', letsStart: ['Nå kjører vi!', 'Vamos lá!'] },
   formalMarkers: 'kunne jeg få…?, tusen takk, unnskyld',
   cognateNote:
-    'O norueguês é uma língua germânica, prima do inglês e do alemão e irmã do sueco e do dinamarquês: muitas palavras básicas lembram o inglês (hus = house, vann = water). Do português, os parentes vêm do latim e do francês (stasjon, restaurant, fortau). Atenção aos falsos amigos: «rar» é estranho, «prate» é conversar e «sort» é preto.',
+    'O norueguês é uma língua germânica, prima do inglês e do alemão e irmã do sueco e do dinamarquês: muitas palavras básicas lembram o inglês (hus = house, vann = water). Do português, os parentes vêm do latim e do francês (stasjon, restaurant, fortau). Atenção aos falsos amigos: “rar” é estranho, “prate” é conversar e “sort” é preto.',
 };

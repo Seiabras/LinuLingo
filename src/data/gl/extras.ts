@@ -33,7 +33,7 @@ export const SCENARIOS_GL: ScenarioSeed[] = [
     cefr: 'A1',
     register: 'informal',
     persona: 'Sabela, unha colega do curso de galego',
-    description: 'Sabela convídate para un café perto da Praza do Obradoiro. É informal, entre amigas: use «ti», nunca «vostede».',
+    description: 'Sabela convídate para un café perto da Praza do Obradoiro. É informal, entre amigas: use “ti”, nunca “vostede”.',
     turns: [
       {
         bot: 'Ola! Que che apetece tomar?',
@@ -59,7 +59,7 @@ export const ETYMOLOGY_GL: EtymologySeed[] = [
     root_word: 'aqua',
     origin_language: 'Latín',
     cognates: c(['pt', 'água'], ['es', 'agua'], ['it', 'acqua'], ['fr', 'eau']),
-    evolution_note: 'Do latín «aqua», o galego perdeu o q e manteve o grupo -gu-, igual ao português antigo; a escrita moderna simplificou para «auga», sem o acento do português «água».',
+    evolution_note: 'Do latín “aqua”, o galego perdeu o q e manteve o grupo -gu-, igual ao português antigo; a escrita moderna simplificou para “auga”, sem o acento do português “água”.',
     transparent: true,
   },
   {
@@ -67,7 +67,7 @@ export const ETYMOLOGY_GL: EtymologySeed[] = [
     root_word: 'matre(m)',
     origin_language: 'Latín',
     cognates: c(['pt', 'mãe'], ['es', 'madre'], ['it', 'madre']),
-    evolution_note: 'De «matre(m)», o galego perdeu o -t- entre vogais (como o português) e simplificou até «nai», enquanto o português foi por outro caminho fonético até «mãe».',
+    evolution_note: 'De “matre(m)”, o galego perdeu o -t- entre vogais (como o português) e simplificou até “nai”, enquanto o português foi por outro caminho fonético até “mãe”.',
     transparent: false,
   },
   {
@@ -75,7 +75,7 @@ export const ETYMOLOGY_GL: EtymologySeed[] = [
     root_word: 'lacte(m)',
     origin_language: 'Latín',
     cognates: c(['pt', 'leite'], ['es', 'leche'], ['it', 'latte'], ['fr', 'lait']),
-    evolution_note: 'Do latín «lacte(m)», idêntico ao português «leite»: um dos muitos cognatos exatos entre as duas línguas irmãs.',
+    evolution_note: 'Do latín “lacte(m)”, idêntico ao português “leite”: um dos muitos cognatos exatos entre as duas línguas irmãs.',
     transparent: true,
   },
 ];

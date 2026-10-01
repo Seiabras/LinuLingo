@@ -33,7 +33,7 @@ export const SCENARIOS_LB: ScenarioSeed[] = [
     cefr: 'A1',
     register: 'informal',
     persona: 'Anna, eng Frëndin',
-    description: 'Anna, colega do curso de luxemburguês, convida você para um café no centro da cidade de Luxemburgo. É uma conversa entre colegas: use «du».',
+    description: 'Anna, colega do curso de luxemburguês, convida você para um café no centro da cidade de Luxemburgo. É uma conversa entre colegas: use “du”.',
     turns: [
       {
         bot: 'Moien! Wat drénks du?',
@@ -58,7 +58,7 @@ export const ETYMOLOGY_LB: EtymologySeed[] = [
     root_word: 'Moien (manhã)',
     origin_language: 'Luxemburguês',
     cognates: c(['de', 'Morgen'], ['nl', 'morgen'], ['en', 'morning']),
-    evolution_note: '«Moien» quer dizer «manhã» e é a forma encurtada de «Gudde Moien» (bom dia). Com o tempo, virou um cumprimento que vale a qualquer hora, como um «oi».',
+    evolution_note: '“Moien” quer dizer “manhã” e é a forma encurtada de “Gudde Moien” (bom dia). Com o tempo, virou um cumprimento que vale a qualquer hora, como um “oi”.',
     transparent: false,
   },
   {
@@ -66,7 +66,7 @@ export const ETYMOLOGY_LB: EtymologySeed[] = [
     root_word: 'merci',
     origin_language: 'Francês',
     cognates: c(['fr', 'merci'], ['pt', 'mercê'], ['la', 'merces']),
-    evolution_note: 'O luxemburguês agradece em francês, a língua que convive com ele há séculos no país. O francês «merci» vem do latim «merces» (recompensa, favor), o mesmo que deu «mercê» em português.',
+    evolution_note: 'O luxemburguês agradece em francês, a língua que convive com ele há séculos no país. O francês “merci” vem do latim “merces” (recompensa, favor), o mesmo que deu “mercê” em português.',
     transparent: false,
   },
   {
@@ -74,7 +74,7 @@ export const ETYMOLOGY_LB: EtymologySeed[] = [
     root_word: '*watōr',
     origin_language: 'Protogermânico',
     cognates: c(['de', 'Wasser'], ['nl', 'water'], ['en', 'water']),
-    evolution_note: 'Como no alemão, o t germânico virou «ss» (Waasser); a vogal dobrada marca o «a» longo.',
+    evolution_note: 'Como no alemão, o t germânico virou “ss” (Waasser); a vogal dobrada marca o “a” longo.',
     transparent: false,
   },
   {
@@ -82,7 +82,7 @@ export const ETYMOLOGY_LB: EtymologySeed[] = [
     root_word: 'caseus',
     origin_language: 'Latim',
     cognates: c(['pt', 'queijo'], ['de', 'Käse'], ['nl', 'kaas']),
-    evolution_note: 'Os povos germânicos tomaram emprestada a palavra latina «caseus» (queijo) ainda na Antiguidade. O mesmo «caseus» deu «queijo» em português.',
+    evolution_note: 'Os povos germânicos tomaram emprestada a palavra latina “caseus” (queijo) ainda na Antiguidade. O mesmo “caseus” deu “queijo” em português.',
     transparent: false,
   },
   {
@@ -90,7 +90,7 @@ export const ETYMOLOGY_LB: EtymologySeed[] = [
     root_word: 'vinum',
     origin_language: 'Latim',
     cognates: c(['pt', 'vinho'], ['de', 'Wein'], ['fr', 'vin']),
-    evolution_note: 'O vale do Mosela, na fronteira do Luxemburgo, produz vinho desde os tempos romanos, e a palavra latina «vinum» ficou: virou «Wäin» no luxemburguês.',
+    evolution_note: 'O vale do Mosela, na fronteira do Luxemburgo, produz vinho desde os tempos romanos, e a palavra latina “vinum” ficou: virou “Wäin” no luxemburguês.',
     transparent: true,
   },
 ];

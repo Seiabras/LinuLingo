@@ -40,14 +40,14 @@ export function roomsFor(lang: string): Record<Gender, Room> {
     };
   if (lang === 'sv')
     return {
-      m: { ...ROOMS.m, rule: 'Gênero comum (en-ord): cerca de 3 de cada 4 substantivos, com «en» e a forma definida em -en/-n (en bil → bilen). Pessoas, animais e quase todas em -a, -are, -het, -ing, -else.' },
+      m: { ...ROOMS.m, rule: 'Gênero comum (en-ord): cerca de 3 de cada 4 substantivos, com “en” e a forma definida em -en/-n (en bil → bilen). Pessoas, animais e quase todas em -a, -are, -het, -ing, -else.' },
       f: ROOMS.f,
       n: {
         ...ROOMS.n,
         name: 'O Jardim',
         emoji: '🌿',
         scene: 'Um jardim âmbar à beira de um lago sueco, com uma casinha vermelha de madeira.',
-        rule: 'Neutro (ett-ord): «ett» e a forma definida em -et/-t (ett hus → huset). Muitas em -eri, -um, -ment e os infinitivos que viram substantivo (ett leende).',
+        rule: 'Neutro (ett-ord): “ett” e a forma definida em -et/-t (ett hus → huset). Muitas em -eri, -um, -ment e os infinitivos que viram substantivo (ett leende).',
       },
     };
   if (lang === 'fo')
@@ -76,26 +76,26 @@ export function roomsFor(lang: string): Record<Gender, Room> {
     };
   if (lang === 'da')
     return {
-      m: { ...ROOMS.m, rule: 'Gênero comum (en): cerca de 3 de cada 4 substantivos, com «en» e a forma definida em -en (en bil → bilen). Pessoas, animais e quase todas em -hed, -else, -ing e -er.' },
+      m: { ...ROOMS.m, rule: 'Gênero comum (en): cerca de 3 de cada 4 substantivos, com “en” e a forma definida em -en (en bil → bilen). Pessoas, animais e quase todas em -hed, -else, -ing e -er.' },
       f: ROOMS.f,
       n: {
         ...ROOMS.n,
         name: 'O Jardim',
         emoji: '🌷',
         scene: 'Um jardim de casinhas coloridas à beira de um canal, como Nyhavn, em Copenhague.',
-        rule: 'Neutro (et): «et» e a forma definida em -et (et hus → huset). Muitas monossílabas e as em -eri, -um e -ment (et bageri, et museum, et dokument).',
+        rule: 'Neutro (et): “et” e a forma definida em -et (et hus → huset). Muitas monossílabas e as em -eri, -um e -ment (et bageri, et museum, et dokument).',
       },
     };
   if (lang === 'nb')
     return {
       m: { ...ROOMS.m, rule: 'Masculino (en): a maioria dos substantivos, com a forma definida em -en (en bil → bilen). Pessoas e quase todas em -er, -else e -dom (en lærer, en følelse, en sykdom).' },
-      f: { ...ROOMS.f, rule: 'Feminino (ei): «ei» e a forma definida em -a (ei bok → boka). No bokmål, dá para usar «en» também (en bok, boken). Muitas palavras do dia a dia: ei jente, ei dør, ei hytte, ei klokke.' },
+      f: { ...ROOMS.f, rule: 'Feminino (ei): “ei” e a forma definida em -a (ei bok → boka). No bokmål, dá para usar “en” também (en bok, boken). Muitas palavras do dia a dia: ei jente, ei dør, ei hytte, ei klokke.' },
       n: {
         ...ROOMS.n,
         name: 'O Jardim',
         emoji: '🌲',
         scene: 'Um jardim à beira de um fiorde, com uma casinha de madeira e grama no telhado.',
-        rule: 'Neutro (et): «et» e a forma definida em -et (et hus → huset). Muitas monossílabas e as em -eri, -um e -ment (et bakeri, et museum, et dokument).',
+        rule: 'Neutro (et): “et” e a forma definida em -et (et hus → huset). Muitas monossílabas e as em -eri, -um e -ment (et bakeri, et museum, et dokument).',
       },
     };
   if (lang === 'pt')
@@ -106,7 +106,7 @@ export function roomsFor(lang: string): Record<Gender, Room> {
     };
   if (lang === 'fr')
     return {
-      m: { ...ROOMS.m, rule: 'Masculino: muitas em -age (le voyage, le fromage), -ment (le moment), -eau (le bureau), -isme e -phone. Cuidado com as que mudam em relação ao português: le lait e le lit batem, mas «a dor» é la douleur.' },
+      m: { ...ROOMS.m, rule: 'Masculino: muitas em -age (le voyage, le fromage), -ment (le moment), -eau (le bureau), -isme e -phone. Cuidado com as que mudam em relação ao português: le lait e le lit batem, mas “a dor” é la douleur.' },
       f: { ...ROOMS.f, rule: 'Feminino: quase todas em -tion/-sion (la nation), -té (la liberté), -ette (la fourchette), -ure (la voiture) e -ance/-ence. Mudam em relação ao português: la mer (o mar), la dent (o dente), la fin (o fim).' },
       n: ROOMS.n,
     };
@@ -187,7 +187,7 @@ const HETERO_IT: Record<string, string> = {
   fiore: 'Atenção: il fiore é masculino (a flor).',
   carcere: 'Atenção: il carcere é masculino (a prisão, o cárcere).',
   pepe: 'Atenção: il pepe é masculino (a pimenta-do-reino).',
-  latte: 'Il latte é masculino, como «o leite» — igual ao português (no espanhol é feminino).',
+  latte: 'Il latte é masculino, como “o leite” — igual ao português (no espanhol é feminino).',
   mare: 'Il mare é masculino, como em português.',
   problema: 'Termina em -a, mas é masculino: il problema (plural: i problemi).',
   mano: 'Termina em -o, mas é feminina: la mano (plural: le mani).',
@@ -214,11 +214,11 @@ const HETERO_CA: Record<string, string> = {
 /** Texto do Linu na entrada do palácio. */
 export function palaceIntro(lang: string): string {
   if (lang === 'fi')
-    return 'Boa notícia: o finlandês não tem gênero gramatical! Não existe «o» nem «a», nem masculino e feminino: «hän» quer dizer ele e ela ao mesmo tempo. O palácio fica vazio, e a sua memória pode se concentrar nos casos e na harmonia das vogais (talossa, mas metsässä).';
+    return 'Boa notícia: o finlandês não tem gênero gramatical! Não existe “o” nem “a”, nem masculino e feminino: “hän” quer dizer ele e ela ao mesmo tempo. O palácio fica vazio, e a sua memória pode se concentrar nos casos e na harmonia das vogais (talossa, mas metsässä).';
   if (lang === 'ja')
-    return 'Boa notícia: o japonês não tem gênero gramatical nem artigos! «本» é livro, um livro e o livro, e 彼 (kare, ele) e 彼女 (kanojo, ela) quase não se usam na conversa: fala-se o nome da pessoa. O palácio fica vazio, e a sua memória pode se concentrar no kana, nos kanji e nos contadores (本, 枚, 匹…), que mudam conforme a forma da coisa.';
+    return 'Boa notícia: o japonês não tem gênero gramatical nem artigos! “本” é livro, um livro e o livro, e 彼 (kare, ele) e 彼女 (kanojo, ela) quase não se usam na conversa: fala-se o nome da pessoa. O palácio fica vazio, e a sua memória pode se concentrar no kana, nos kanji e nos contadores (本, 枚, 匹…), que mudam conforme a forma da coisa.';
   if (lang === 'ko')
-    return 'Boa notícia: o coreano não tem gênero gramatical nem artigos! «책» é livro, um livro e o livro. O palácio fica vazio, e a sua memória pode se concentrar no hangul, nas partículas (은/는, 이/가, 을/를) e nos dois sistemas de números, o nativo (하나, 둘) e o sino-coreano (일, 이).';
+    return 'Boa notícia: o coreano não tem gênero gramatical nem artigos! “책” é livro, um livro e o livro. O palácio fica vazio, e a sua memória pode se concentrar no hangul, nas partículas (은/는, 이/가, 을/를) e nos dois sistemas de números, o nativo (하나, 둘) e o sino-coreano (일, 이).';
   if (lang === 'ha')
     return 'O hauçá tem 2 gêneros, masculino e feminino, e o gênero aparece em quase toda frase: no pronome (shi, ita), no verbo (ya tafi, ta tafi) e na ligação com o dono (gidan Audu, motar Audu). A pista: quase toda feminina termina em -a. Guarde cada palavra na sala certa!';
   if (lang === 'am')
@@ -226,29 +226,29 @@ export function palaceIntro(lang: string): string {
   if (lang === 'om')
     return 'O oromo tem 2 gêneros, masculino e feminino. O gênero aparece no demonstrativo (kun × tun), nos pronomes (inni × isheen) e no verbo (deeme × deemte). A maioria das palavras é masculina; decore as femininas, como aduu (o sol). Guarde cada palavra na sala certa!';
   if (lang === 'sw')
-    return 'O suaíli não tem masculino nem feminino: «yeye» quer dizer ele e ela. No lugar do gênero, ele tem algo parecido e mais rico: as classes de substantivos, marcadas por prefixos (mtoto/watoto, kitabu/vitabu), que mudam o adjetivo, o possessivo e o verbo. O palácio fica vazio de masculinos e femininos, e a sua memória pode se concentrar em decorar cada palavra com o plural, que mostra a classe.';
+    return 'O suaíli não tem masculino nem feminino: “yeye” quer dizer ele e ela. No lugar do gênero, ele tem algo parecido e mais rico: as classes de substantivos, marcadas por prefixos (mtoto/watoto, kitabu/vitabu), que mudam o adjetivo, o possessivo e o verbo. O palácio fica vazio de masculinos e femininos, e a sua memória pode se concentrar em decorar cada palavra com o plural, que mostra a classe.';
   if (lang === 'yo')
-    return 'Boa notícia: o iorubá não tem gênero gramatical nem artigos! «Ó» quer dizer ele e ela, e «ọmọ» é filho e filha. O palácio fica vazio, e a sua memória pode se concentrar nos tons: ọkọ́ (enxada), ọkọ̀ (barco) e ọkọ (marido) só mudam pela melodia.';
+    return 'Boa notícia: o iorubá não tem gênero gramatical nem artigos! “Ó” quer dizer ele e ela, e “ọmọ” é filho e filha. O palácio fica vazio, e a sua memória pode se concentrar nos tons: ọkọ́ (enxada), ọkọ̀ (barco) e ọkọ (marido) só mudam pela melodia.';
   if (lang === 'ig')
-    return 'Boa notícia: o igbo não tem gênero gramatical nem artigos! «Ọ» quer dizer ele e ela ao mesmo tempo. O palácio fica vazio, e a sua memória pode se concentrar nos tons (ákwà, ovo; àkwà, cama; ákwá, choro) e na harmonia das vogais.';
+    return 'Boa notícia: o igbo não tem gênero gramatical nem artigos! “Ọ” quer dizer ele e ela ao mesmo tempo. O palácio fica vazio, e a sua memória pode se concentrar nos tons (ákwà, ovo; àkwà, cama; ákwá, choro) e na harmonia das vogais.';
   if (lang === 'et')
-    return 'Boa notícia: o estoniano não tem gênero gramatical nem artigos! «Tema» (ou «ta») quer dizer ele e ela ao mesmo tempo. O palácio fica vazio, e a sua memória pode se concentrar nos 14 casos e nas três durações dos sons.';
+    return 'Boa notícia: o estoniano não tem gênero gramatical nem artigos! “Tema” (ou “ta”) quer dizer ele e ela ao mesmo tempo. O palácio fica vazio, e a sua memória pode se concentrar nos 14 casos e nas três durações dos sons.';
   if (lang === 'sv')
-    return 'O sueco tem 2 gêneros, mas não são masculino e feminino: é o «en» (gênero comum) e o «ett» (neutro). Não dá para adivinhar pelo sentido, então decore cada palavra com o artigo: en bil, ett hus. Guarde cada uma na sala certa!';
+    return 'O sueco tem 2 gêneros, mas não são masculino e feminino: é o “en” (gênero comum) e o “ett” (neutro). Não dá para adivinhar pelo sentido, então decore cada palavra com o artigo: en bil, ett hus. Guarde cada uma na sala certa!';
   if (lang === 'fo')
     return 'O feroês tem 3 gêneros, como o islandês, e o artigo definido vai grudado no fim (maðurin, konan, húsið). O gênero muda os adjetivos e os números de 1 a 4. Guarde cada palavra na sala certa!';
   if (lang === 'is')
-    return 'O islandês tem 3 gêneros, como o latim e o alemão, e o gênero muda o artigo que vai grudado no fim (hesturinn, konan, húsið), os adjetivos e até os números de 1 a 4. Não existe artigo indefinido: «hús» já é «uma casa». Guarde cada palavra na sala certa!';
+    return 'O islandês tem 3 gêneros, como o latim e o alemão, e o gênero muda o artigo que vai grudado no fim (hesturinn, konan, húsið), os adjetivos e até os números de 1 a 4. Não existe artigo indefinido: “hús” já é “uma casa”. Guarde cada palavra na sala certa!';
   if (lang === 'da')
-    return 'O dinamarquês tem 2 gêneros, mas não são masculino e feminino: é o «en» (gênero comum) e o «et» (neutro), e o artigo definido vai grudado no fim: bilen, huset. Não dá para adivinhar pelo sentido, então decore cada palavra com o artigo e guarde-a na sala certa!';
+    return 'O dinamarquês tem 2 gêneros, mas não são masculino e feminino: é o “en” (gênero comum) e o “et” (neutro), e o artigo definido vai grudado no fim: bilen, huset. Não dá para adivinhar pelo sentido, então decore cada palavra com o artigo e guarde-a na sala certa!';
   if (lang === 'nb')
-    return 'O norueguês tem 3 gêneros: masculino (en), feminino (ei) e neutro (et), e o artigo definido vai grudado no fim: bilen, boka, huset. No bokmål, as femininas também aceitam o «en» (en bok, boken). Decore cada palavra com o artigo e guarde-a na sala certa!';
+    return 'O norueguês tem 3 gêneros: masculino (en), feminino (ei) e neutro (et), e o artigo definido vai grudado no fim: bilen, boka, huset. No bokmål, as femininas também aceitam o “en” (en bok, boken). Decore cada palavra com o artigo e guarde-a na sala certa!';
   if (lang === 'pt')
     return 'Você já sabe os gêneros do português! Aqui o desafio são as palavras de Portugal que você ainda não usa: o autocarro, o comboio, a casa de banho, o ecrã, a bica, o pequeno-almoço. Guarde cada uma na sala certa!';
   if (lang === 'fr')
-    return "O francês tem 2 gêneros, como o português, mas a terminação engana mais: -age é masculino (le fromage), -tion é feminino (la nation), e várias palavras trocam de gênero de uma língua para a outra: la mer, la dent, la fin, le lait. No plural, o artigo é «les» para os dois: por isso decore sempre com «le» ou «la» (ou «un», «une», quando vem «l'»). Guarde cada uma na sala certa!";
+    return "O francês tem 2 gêneros, como o português, mas a terminação engana mais: -age é masculino (le fromage), -tion é feminino (la nation), e várias palavras trocam de gênero de uma língua para a outra: la mer, la dent, la fin, le lait. No plural, o artigo é “les” para os dois: por isso decore sempre com “le” ou “la” (ou “un”, “une”, quando vem “l'”). Guarde cada uma na sala certa!";
   if (lang === 'ca')
-    return 'O catalão tem 2 gêneros, como o português, mas sem o -o final que ajuda a reconhecer o masculino no espanhol e no italiano: a maioria dos masculinos termina em consoante (el gat, el cel). E cuidado com as palavras em -or, como «la calor» e «la olor»: em catalão são femininas, ao contrário do português. Guarde cada uma na sala certa!';
+    return 'O catalão tem 2 gêneros, como o português, mas sem o -o final que ajuda a reconhecer o masculino no espanhol e no italiano: a maioria dos masculinos termina em consoante (el gat, el cel). E cuidado com as palavras em -or, como “la calor” e “la olor”: em catalão são femininas, ao contrário do português. Guarde cada uma na sala certa!';
   if (lang === 'lt')
     return 'O lituano tem 2 gêneros, masculino e feminino, e nenhum artigo. Quase sempre a terminação entrega: -as, -ys, -us masculino (namas), -a, -ė feminino (knyga, upė). O neutro sobrou só em adjetivos e pronomes (gera, gražu). Guarde cada palavra na sala certa!';
   if (lang === 'lv')
@@ -259,7 +259,7 @@ export function palaceIntro(lang: string): string {
     return 'O espanhol tem 2 gêneros, como o português, mas muitas palavras trocam de gênero de uma língua para a outra: el viaje, la leche, el árbol, la nariz. Guarde cada uma na sala certa!';
   return lang === 'ru'
     ? 'O russo tem 3 gêneros, e o gênero muda o adjetivo e o possessivo (мой дом, моя́ ма́ма, моё окно́). Imagine cada palavra morando numa sala do palácio!'
-    : 'O romeno tem 3 gêneros. Imagine cada palavra morando numa sala do palácio: fica muito mais fácil lembrar se é «un» ou «o»!';
+    : 'O romeno tem 3 gêneros. Imagine cada palavra morando numa sala do palácio: fica muito mais fácil lembrar se é “un” ou “o”!';
 }
 
 /** Dica específica para a palavra, a partir da terminação. */
@@ -284,14 +284,14 @@ export function genderTip(word: string, gender: Gender, lang = 'ro'): string {
   if (lang === 'pt') {
     if (w.endsWith('ção') || w.endsWith('são') || w.endsWith('agem')) return 'Terminou em -ção, -são ou -agem? Feminino, nos dois lados do Atlântico: a receção, a viagem.';
     if (gender === 'm' && /(ema|ama)$/.test(w)) return 'Palavra de origem grega em -ema/-ama: masculina, como o problema, o programa, o sistema.';
-    if (w === 'ecrã') return 'O ecrã (a tela, no Brasil) é masculino: «o ecrã do telemóvel».';
+    if (w === 'ecrã') return 'O ecrã (a tela, no Brasil) é masculino: “o ecrã do telemóvel”.';
     return roomsFor('pt')[gender].rule;
   }
   if (lang === 'ca') {
     if (HETERO_CA[w]) return HETERO_CA[w];
     if (w.endsWith('or') && gender === 'f') return 'Terminou em -or e é feminina: é o grupo de la calor, la olor, la suor, la resplendor — em português essas palavras são masculinas.';
     if (w.endsWith('a') && gender === 'f') return 'Terminou em -a? Quase sempre feminino, como a maioria das línguas românicas: la casa, la taula.';
-    if (gender === 'm') return 'Masculino: o catalão não tem um -o final como pista, então decore a palavra junto com «el» ou «un».';
+    if (gender === 'm') return 'Masculino: o catalão não tem um -o final como pista, então decore a palavra junto com “el” ou “un”.';
     return roomsFor('ca')[gender].rule;
   }
   if (lang === 'lt') {
@@ -301,13 +301,13 @@ export function genderTip(word: string, gender: Gender, lang = 'ro'): string {
     return roomsFor('lt')[gender].rule;
   }
   if (lang === 'lv') {
-    if (w === 'puika') return 'Exceção: termina em -a, mas é masculino — puika quer dizer «menino».';
+    if (w === 'puika') return 'Exceção: termina em -a, mas é masculino — puika quer dizer “menino”.';
     if (gender === 'f' && w.endsWith('s')) return 'Cuidado: termina em -s, mas é feminina! É o grupo de nakts, sirds, govs e acs. Decore com um adjetivo: tumša nakts.';
     return roomsFor('lv')[gender].rule;
   }
   if (lang === 'it') {
     if (HETERO_IT[w]) return HETERO_IT[w];
-    if (w.endsWith('zione') || w.endsWith('sione')) return 'Terminou em -zione/-sione? Feminino: la stazione, la televisione (como «a estação» em português).';
+    if (w.endsWith('zione') || w.endsWith('sione')) return 'Terminou em -zione/-sione? Feminino: la stazione, la televisione (como “a estação” em português).';
     if (/(tà|tù)$/.test(w)) return 'Terminou em -tà/-tù? Feminino e invariável no plural: la città → le città.';
     if (gender === 'm' && w.endsWith('ma')) return 'Palavra de origem grega em -ma: masculina, como il problema, il tema, il programma.';
     if (w.endsWith('e')) return gender === 'm' ? 'Termina em -e: pode ser dos dois gêneros. Esta é masculina (como il fiore, il pane). Decore com o artigo!' : 'Termina em -e: pode ser dos dois gêneros. Esta é feminina (como la notte, la chiave). Decore com o artigo!';
@@ -323,7 +323,7 @@ export function genderTip(word: string, gender: Gender, lang = 'ro'): string {
   }
   if (lang === 'ru') {
     const rooms = roomsFor('ru');
-    if (w.endsWith('ь')) return gender === 'f' ? 'Termina em -ь: esses se dividem entre masculino e feminino; esta é feminina (como ночь, дверь). As em -ость são sempre femininas.' : 'Termina em -ь: esses se dividem; esta é masculina (como день, слова́рь). Decore junto com um adjetivo: «но́вый день».';
+    if (w.endsWith('ь')) return gender === 'f' ? 'Termina em -ь: esses se dividem entre masculino e feminino; esta é feminina (como ночь, дверь). As em -ость são sempre femininas.' : 'Termina em -ь: esses se dividem; esta é masculina (como день, слова́рь). Decore junto com um adjetivo: “но́вый день”.';
     if (gender === 'm' && /[ая]$/.test(w)) return 'Cuidado: termina em -а/-я, mas é masculina porque designa um homem (па́па, дя́дя, мужчи́на).';
     if (gender === 'n' && w.endsWith('мя')) return 'As palavras em -мя (и́мя, вре́мя) são neutras, apesar do -я.';
     return rooms[gender].rule;
@@ -345,7 +345,7 @@ export function genderTip(word: string, gender: Gender, lang = 'ro'): string {
     if (w.endsWith('u')) return 'Palavras em -u costumam ser masculinas ou neutras; esta é masculina.';
     return ROOMS.m.rule;
   }
-  return 'Neutro: no singular usa «un» como o masculino, mas no plural vira feminino (un ou → două ouă).';
+  return 'Neutro: no singular usa “un” como o masculino, mas no plural vira feminino (un ou → două ouă).';
 }
 
 /** Mnemônico sugerido quando o aluno ainda não escreveu o dele. */

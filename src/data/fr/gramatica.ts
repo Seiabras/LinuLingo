@@ -6,12 +6,12 @@ export const GRAMMAR_FR: GrammarTopic[] = [
   {
     id: "fr-g1",
     level: "A1.1",
-    title: "Pronúncia: vogais orais e nasais, o [y], o e mudo, as letras mudas, a liaison e o «r»",
+    title: "Pronúncia: vogais orais e nasais, o [y], o e mudo, as letras mudas, a liaison e o “r”",
     emoji: "🔤",
-    summary: "O francês não se lê letra por letra: muitas letras finais não soam, «u» não é «u», «ou» é que é, e há vogais que o português não tem, como o [y] de «tu» e o [ø] de «peu». Em compensação, as regras são bem regulares: aprendidas, você lê qualquer palavra.",
+    summary: "O francês não se lê letra por letra: muitas letras finais não soam, “u” não é “u”, “ou” é que é, e há vogais que o português não tem, como o [y] de “tu” e o [ø] de “peu”. Em compensação, as regras são bem regulares: aprendidas, você lê qualquer palavra.",
     sections: [
       {
-        text: "Três ideias guiam tudo. Primeiro: a tônica cai sempre na última sílaba pronunciada (ca-FÉ, Pa-RIS, res-tau-RANT, bon-JOUR), e as outras sílabas são ditas por igual, sem enfraquecer. Segundo: as consoantes finais costumam ser mudas, e o «e» final também. Terceiro: o t e o d nunca viram «tch» e «dj»: «tu» é [ty], nunca «tchu»; «dire» é [diʁ], nunca «djire». E não se acrescenta «i» depois de consoante final: «sac» é [sak], não «saqui».",
+        text: "Três ideias guiam tudo. Primeiro: a tônica cai sempre na última sílaba pronunciada (ca-FÉ, Pa-RIS, res-tau-RANT, bon-JOUR), e as outras sílabas são ditas por igual, sem enfraquecer. Segundo: as consoantes finais costumam ser mudas, e o “e” final também. Terceiro: o t e o d nunca viram “tch” e “dj”: “tu” é [ty], nunca “tchu”; “dire” é [diʁ], nunca “djire”. E não se acrescenta “i” depois de consoante final: “sac” é [sak], não “saqui”.",
         table: {
           head: ["Palavra", "IPA", "Português", "O que acontece"],
           rows: [
@@ -31,26 +31,26 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "As vogais orais e as combinações de letras",
-        text: "Várias letras juntas dão um som só. O mais importante para o brasileiro: «ou» é o nosso «u», e a letra «u» sozinha é o [y], que não existe em português. Para fazer o [y], diga «i» e, sem mexer a língua, arredonde os lábios como para assobiar. Do mesmo jeito, [ø] é um «ê» com os lábios de «ô», e [œ] é um «é» com os lábios de «ó».",
+        text: "Várias letras juntas dão um som só. O mais importante para o brasileiro: “ou” é o nosso “u”, e a letra “u” sozinha é o [y], que não existe em português. Para fazer o [y], diga “i” e, sem mexer a língua, arredonde os lábios como para assobiar. Do mesmo jeito, [ø] é um “ê” com os lábios de “ô”, e [œ] é um “é” com os lábios de “ó”.",
         table: {
           head: ["Grafia", "IPA", "Como soa", "Exemplos"],
           rows: [
-            ["ou, où, oû", "[u]", "o «u» de «uva»", "vous [vu], rouge [ʁuʒ], jour [ʒuʁ]"],
-            ["u, û", "[y]", "«i» com lábios de «u»", "tu [ty], rue [ʁy], lune [lyn]"],
-            ["eu, œu (sílaba aberta)", "[ø]", "«ê» com lábios de «ô»", "peu [pø], deux [dø], bleu [blø]"],
-            ["eu, œu (+ consoante que soa)", "[œ]", "«é» com lábios de «ó»", "peur [pœʁ], sœur [sœʁ], fleur [flœʁ]"],
+            ["ou, où, oû", "[u]", "o “u” de “uva”", "vous [vu], rouge [ʁuʒ], jour [ʒuʁ]"],
+            ["u, û", "[y]", "“i” com lábios de “u”", "tu [ty], rue [ʁy], lune [lyn]"],
+            ["eu, œu (sílaba aberta)", "[ø]", "“ê” com lábios de “ô”", "peu [pø], deux [dø], bleu [blø]"],
+            ["eu, œu (+ consoante que soa)", "[œ]", "“é” com lábios de “ó”", "peur [pœʁ], sœur [sœʁ], fleur [flœʁ]"],
             ["e (sem acento, fim de sílaba)", "[ə]", "e mudo, fraco e curto", "le [lə], je [ʒə], demain [dəmɛ̃]"],
-            ["é, -er, -ez", "[e]", "«ê» fechado", "été [ete], café [kafe], parlez [paʁle]"],
-            ["è, ê, ai, ei", "[ɛ]", "«é» aberto", "mère [mɛʁ], fête [fɛt], lait [lɛ], neige [nɛʒ]"],
-            ["au, eau", "[o]", "«ô» fechado", "eau [o], beau [bo], aussi [osi]"],
-            ["o (+ consoante que soa)", "[ɔ]", "«ó» aberto", "homme [ɔm], école [ekɔl]"],
-            ["oi", "[wa]", "«uá»", "moi [mwa], trois [tʁwa], voiture [vwatyʁ]"],
+            ["é, -er, -ez", "[e]", "“ê” fechado", "été [ete], café [kafe], parlez [paʁle]"],
+            ["è, ê, ai, ei", "[ɛ]", "“é” aberto", "mère [mɛʁ], fête [fɛt], lait [lɛ], neige [nɛʒ]"],
+            ["au, eau", "[o]", "“ô” fechado", "eau [o], beau [bo], aussi [osi]"],
+            ["o (+ consoante que soa)", "[ɔ]", "“ó” aberto", "homme [ɔm], école [ekɔl]"],
+            ["oi", "[wa]", "“uá”", "moi [mwa], trois [tʁwa], voiture [vwatyʁ]"],
           ],
         },
       },
       {
         heading: "[y] × [u]: um par que muda o sentido",
-        text: "Trocar [y] por [u] muda a palavra. Se você disser «vous» querendo dizer «vu», o francês ouve outra coisa. Treine os pares abaixo em voz alta, sentindo só os lábios mudarem.",
+        text: "Trocar [y] por [u] muda a palavra. Se você disser “vous” querendo dizer “vu”, o francês ouve outra coisa. Treine os pares abaixo em voz alta, sentindo só os lábios mudarem.",
         table: {
           head: ["[y]", "Sentido", "[u]", "Sentido"],
           rows: [
@@ -69,7 +69,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "As vogais nasais: quatro, e sem fechar a boca",
-        text: "O português tem ã, ẽ, ĩ, õ, ũ; o francês tem quatro nasais, escritas com vogal + n ou m. A diferença principal: no francês a vogal nasal é pura, sem o «n» no fim. «Bon» é [bɔ̃], com a boca aberta até o fim, e não «bõn» nem «bôum». Em Paris, hoje, o [œ̃] de «un» costuma soar igual ao [ɛ̃] de «vin», mas os dicionários ainda registram os dois. Atenção: se depois do n ou m vem uma vogal ou outro n/m, a vogal deixa de ser nasal e o n passa a soar.",
+        text: "O português tem ã, ẽ, ĩ, õ, ũ; o francês tem quatro nasais, escritas com vogal + n ou m. A diferença principal: no francês a vogal nasal é pura, sem o “n” no fim. “Bon” é [bɔ̃], com a boca aberta até o fim, e não “bõn” nem “bôum”. Em Paris, hoje, o [œ̃] de “un” costuma soar igual ao [ɛ̃] de “vin”, mas os dicionários ainda registram os dois. Atenção: se depois do n ou m vem uma vogal ou outro n/m, a vogal deixa de ser nasal e o n passa a soar.",
         table: {
           head: ["Grafia", "IPA", "Exemplos", "Sem nasal (+ vogal ou nn)"],
           rows: [
@@ -87,7 +87,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "O e mudo e os acentos",
-        text: "O «e» sem acento no fim da palavra não soa (table [tabl], rue [ʁy]), mas faz soar a consoante antes dele. É assim que se ouve o feminino: petit [pəti] × petite [pətit], grand [ɡʁɑ̃] × grande [ɡʁɑ̃d], vert [vɛʁ] × verte [vɛʁt]. No meio da palavra, na fala corrente, o e mudo também costuma cair: samedi [samdi], «je ne sais pas» vira algo como [ʒənsɛpa]. Já os acentos mudam o som ou só a grafia:",
+        text: "O “e” sem acento no fim da palavra não soa (table [tabl], rue [ʁy]), mas faz soar a consoante antes dele. É assim que se ouve o feminino: petit [pəti] × petite [pətit], grand [ɡʁɑ̃] × grande [ɡʁɑ̃d], vert [vɛʁ] × verte [vɛʁt]. No meio da palavra, na fala corrente, o e mudo também costuma cair: samedi [samdi], “je ne sais pas” vira algo como [ʒənsɛpa]. Já os acentos mudam o som ou só a grafia:",
         table: {
           head: ["Sinal", "Exemplos", "O que faz"],
           rows: [
@@ -105,7 +105,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "As consoantes",
-        text: "A maioria soa como no português. As que enganam estão aqui. O h nunca soa; o s entre vogais soa [z], e ss soa [s], o que separa «poisson» (peixe) de «poison» (veneno).",
+        text: "A maioria soa como no português. As que enganam estão aqui. O h nunca soa; o s entre vogais soa [z], e ss soa [s], o que separa “poisson” (peixe) de “poison” (veneno).",
         table: {
           head: ["Grafia", "IPA", "Exemplos"],
           rows: [
@@ -123,7 +123,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Liaison e enchaînement",
-        text: "Na liaison, a consoante final muda volta a soar quando a palavra seguinte começa com vogal ou h mudo, e se junta a ela: «les amis» é [le.z‿a.mi]. O s e o x soam [z], o d soa [t], e o f de «neuf» vira [v] em «neuf ans». A liaison é obrigatória entre artigo e nome, entre pronome e verbo e depois de preposições curtas; é proibida depois de «et» e antes de h aspirado. E ela muda o sentido: «ils ont» [il.z‿ɔ̃] (eles têm) × «ils sont» [il sɔ̃] (eles são). No enchaînement, uma consoante que já soa se cola na vogal seguinte: «il a» soa [i.la], «elle est» soa [ɛ.lɛ].",
+        text: "Na liaison, a consoante final muda volta a soar quando a palavra seguinte começa com vogal ou h mudo, e se junta a ela: “les amis” é [le.z‿a.mi]. O s e o x soam [z], o d soa [t], e o f de “neuf” vira [v] em “neuf ans”. A liaison é obrigatória entre artigo e nome, entre pronome e verbo e depois de preposições curtas; é proibida depois de “et” e antes de h aspirado. E ela muda o sentido: “ils ont” [il.z‿ɔ̃] (eles têm) × “ils sont” [il sɔ̃] (eles são). No enchaînement, uma consoante que já soa se cola na vogal seguinte: “il a” soa [i.la], “elle est” soa [ɛ.lɛ].",
         table: {
           head: ["Frase", "IPA", "Tipo"],
           rows: [
@@ -146,8 +146,8 @@ export const GRAMMAR_FR: GrammarTopic[] = [
         ],
       },
       {
-        heading: "O «r» francês",
-        text: "O r de Paris é [ʁ]: sai do fundo da garganta, perto do «r» carioca de «rato», porém mais suave e com voz, quase um gargarejo leve. É o mesmo em qualquer posição: no começo (rouge [ʁuʒ]), depois de consoante (très [tʁɛ]), entre vogais (Paris [paʁi]) e no fim (mer [mɛʁ]). O brasileiro erra de dois jeitos: usando o r fraquinho de «caro» entre vogais, ou engolindo o r do fim, como em «falar» no Brasil. Em francês, o r final de «mer», «jour» e «sœur» soa sempre.",
+        heading: "O “r” francês",
+        text: "O r de Paris é [ʁ]: sai do fundo da garganta, perto do “r” carioca de “rato”, porém mais suave e com voz, quase um gargarejo leve. É o mesmo em qualquer posição: no começo (rouge [ʁuʒ]), depois de consoante (très [tʁɛ]), entre vogais (Paris [paʁi]) e no fim (mer [mɛʁ]). O brasileiro erra de dois jeitos: usando o r fraquinho de “caro” entre vogais, ou engolindo o r do fim, como em “falar” no Brasil. Em francês, o r final de “mer”, “jour” e “sœur” soa sempre.",
         examples: [
           ["Bonjour, Robert !", "Bom dia, Robert! [bɔ̃ʒuʁ ʁɔbɛʁ]"],
           ["Il fait très froid à Rouen.", "Faz muito frio em Rouen. [il fɛ tʁɛ fʁwa a ʁwɑ̃]"],
@@ -156,47 +156,47 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Ler «u» como [u]: «tu» dito como «tu» brasileiro soa «tout» (tudo). O [y] é um «i» com lábios de assobio.",
-      "Fechar a nasal com um n: «bon» não é «bõn», e «vin» não é «vĩn» com n no fim. A vogal nasal francesa termina aberta.",
-      "Pronunciar as letras finais: «ils parlent» não é «ils parlênt»; é [il paʁl], igual a «il parle».",
-      "Palatalizar t e d: «tu» vira «tchu», «dire» vira «djire». Em francês t e d nunca mudam: [ty], [diʁ].",
-      "Acrescentar um «i» depois de consoante final: «sac» vira «saqui», «neuf» vira «néfi». Termine seco: [sak], [nœf].",
-      "Esquecer a liaison obrigatória: sem o [z] de «ils‿ont», a frase vira «ils sont» (eles são).",
-      "Pôr a tônica no lugar do português: «Paris» e «restaurant» são oxítonas, e as sílabas anteriores não se reduzem.",
+      "Ler “u” como [u]: “tu” dito como “tu” brasileiro soa “tout” (tudo). O [y] é um “i” com lábios de assobio.",
+      "Fechar a nasal com um n: “bon” não é “bõn”, e “vin” não é “vĩn” com n no fim. A vogal nasal francesa termina aberta.",
+      "Pronunciar as letras finais: “ils parlent” não é “ils parlênt”; é [il paʁl], igual a “il parle”.",
+      "Palatalizar t e d: “tu” vira “tchu”, “dire” vira “djire”. Em francês t e d nunca mudam: [ty], [diʁ].",
+      "Acrescentar um “i” depois de consoante final: “sac” vira “saqui”, “neuf” vira “néfi”. Termine seco: [sak], [nœf].",
+      "Esquecer a liaison obrigatória: sem o [z] de “ils‿ont”, a frase vira “ils sont” (eles são).",
+      "Pôr a tônica no lugar do português: “Paris” e “restaurant” são oxítonas, e as sílabas anteriores não se reduzem.",
     ],
     quiz: [
       {
         question: "Qual palavra tem o som [y]?",
         options: ["tout", "tu", "toi"],
         answer: "tu",
-        explanation: "A letra «u» sozinha soa [y]: tu [ty]. «tout» tem «ou», que é [u]; «toi» tem «oi», que é [wa].",
+        explanation: "A letra “u” sozinha soa [y]: tu [ty]. “tout” tem “ou”, que é [u]; “toi” tem “oi”, que é [wa].",
       },
       {
-        question: "Como se pronuncia «ils ont» (eles têm)?",
+        question: "Como se pronuncia “ils ont” (eles têm)?",
         options: ["[il ɔ̃]", "[il.z‿ɔ̃]", "[il sɔ̃]"],
         answer: "[il.z‿ɔ̃]",
-        explanation: "A liaison entre pronome e verbo é obrigatória: o s soa [z]. [il sɔ̃] é «ils sont» (eles são).",
+        explanation: "A liaison entre pronome e verbo é obrigatória: o s soa [z]. [il sɔ̃] é “ils sont” (eles são).",
       },
       {
-        question: "Como soa o verbo em «ils parlent»?",
+        question: "Como soa o verbo em “ils parlent”?",
         options: ["[paʁl]", "[paʁlɑ̃]", "[paʁlɑ̃t]"],
         answer: "[paʁl]",
-        explanation: "O -ent da 3ª pessoa do plural é mudo: «ils parlent» soa como «il parle».",
+        explanation: "O -ent da 3ª pessoa do plural é mudo: “ils parlent” soa como “il parle”.",
       },
       {
         question: "Qual destas palavras tem vogal nasal?",
         options: ["bonne", "bon", "année"],
         answer: "bon",
-        explanation: "on no fim da palavra é nasal: [bɔ̃]. Em «bonne» [bɔn] e «année» [ane], o n dobrado desfaz a nasal.",
+        explanation: "on no fim da palavra é nasal: [bɔ̃]. Em “bonne” [bɔn] e “année” [ane], o n dobrado desfaz a nasal.",
       },
       {
-        question: "Onde cai a tônica de «restaurant»?",
+        question: "Onde cai a tônica de “restaurant”?",
         options: ["RES-tau-rant", "res-TAU-rant", "res-tau-RANT"],
         answer: "res-tau-RANT",
         explanation: "Em francês a tônica cai sempre na última sílaba pronunciada.",
       },
       {
-        question: "Qual palavra quer dizer «peixe»?",
+        question: "Qual palavra quer dizer “peixe”?",
         options: ["poisson", "poison", "poids"],
         answer: "poisson",
         explanation: "ss soa [s]: poisson [pwasɔ̃] é peixe. Com um s só, entre vogais, soa [z]: poison [pwazɔ̃] é veneno.",
@@ -208,11 +208,11 @@ export const GRAMMAR_FR: GrammarTopic[] = [
     level: "A1.1",
     title: "Saudações, pronomes pessoais e tu × vous",
     emoji: "👋",
-    summary: "Cumprimentar, se apresentar e escolher entre tu e vous. Em francês o pronome sujeito nunca cai, «on» é o nosso «a gente», e «vous» serve tanto para «o senhor» quanto para «vocês».",
+    summary: "Cumprimentar, se apresentar e escolher entre tu e vous. Em francês o pronome sujeito nunca cai, “on” é o nosso “a gente”, e “vous” serve tanto para “o senhor” quanto para “vocês”.",
     sections: [
       {
         heading: "Cumprimentar e se despedir",
-        text: "Na França, «bonjour» é quase uma senha: ao entrar numa loja, numa padaria ou num ônibus, diz-se «Bonjour, madame» ou «Bonjour, monsieur» antes de qualquer pedido. Pular o bonjour soa grosseiro. «Bonsoir» entra no fim da tarde, e «bonne nuit» é só para quem vai dormir.",
+        text: "Na França, “bonjour” é quase uma senha: ao entrar numa loja, numa padaria ou num ônibus, diz-se “Bonjour, madame” ou “Bonjour, monsieur” antes de qualquer pedido. Pular o bonjour soa grosseiro. “Bonsoir” entra no fim da tarde, e “bonne nuit” é só para quem vai dormir.",
         table: {
           head: ["Francês", "Quando", "Português"],
           rows: [
@@ -234,7 +234,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Os pronomes sujeito",
-        text: "Em português dá para dizer só «Sou de Recife». Em francês o pronome é obrigatório, até porque o verbo muitas vezes soa igual em várias pessoas (je parle, tu parles, il parle, ils parlent: tudo [paʁl]). «Je» vira «j'» antes de vogal ou h mudo: j'aime, j'habite. «On» é o «a gente»: muito usado na fala no lugar de «nous», sempre com o verbo na 3ª pessoa do singular. E «ils» vale para grupo só de homens ou misto; «elles», só para grupo de mulheres.",
+        text: "Em português dá para dizer só “Sou de Recife”. Em francês o pronome é obrigatório, até porque o verbo muitas vezes soa igual em várias pessoas (je parle, tu parles, il parle, ils parlent: tudo [paʁl]). “Je” vira “j'” antes de vogal ou h mudo: j'aime, j'habite. “On” é o “a gente”: muito usado na fala no lugar de “nous”, sempre com o verbo na 3ª pessoa do singular. E “ils” vale para grupo só de homens ou misto; “elles”, só para grupo de mulheres.",
         table: {
           head: ["Pronome", "Português", "Nota"],
           rows: [
@@ -255,7 +255,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Tu ou vous?",
-        text: "«Tu» é para família, amigos, crianças e, em geral, entre jovens e colegas próximos. «Vous» é para desconhecidos, clientes, funcionários, pessoas mais velhas e superiores: equivale ao nosso «o senhor, a senhora». O verbo com «vous» vai sempre para a 2ª pessoa do plural (vous êtes, vous parlez), mesmo falando com uma só pessoa; o adjetivo, porém, concorda com a pessoa real: «Vous êtes prête, madame ?». Passar do vous ao tu (tutoyer) é um passo que costuma ser proposto: «On peut se tutoyer ?». No Quebec, o tu é usado com mais facilidade do que na França.",
+        text: "“Tu” é para família, amigos, crianças e, em geral, entre jovens e colegas próximos. “Vous” é para desconhecidos, clientes, funcionários, pessoas mais velhas e superiores: equivale ao nosso “o senhor, a senhora”. O verbo com “vous” vai sempre para a 2ª pessoa do plural (vous êtes, vous parlez), mesmo falando com uma só pessoa; o adjetivo, porém, concorda com a pessoa real: “Vous êtes prête, madame ?”. Passar do vous ao tu (tutoyer) é um passo que costuma ser proposto: “On peut se tutoyer ?”. No Quebec, o tu é usado com mais facilidade do que na França.",
         table: {
           head: ["Informal (tu)", "Formal (vous)", "Português"],
           rows: [
@@ -273,7 +273,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Apresentar-se",
-        text: "Para dizer o nome, o francês usa o verbo pronominal «s'appeler» (chamar-se): je m'appelle, tu t'appelles, vous vous appelez. A nacionalidade concorda com quem fala e é escrita com minúscula: «je suis brésilien», «je suis brésilienne». Com maiúscula, só quando é substantivo: «les Brésiliens».",
+        text: "Para dizer o nome, o francês usa o verbo pronominal “s'appeler” (chamar-se): je m'appelle, tu t'appelles, vous vous appelez. A nacionalidade concorda com quem fala e é escrita com minúscula: “je suis brésilien”, “je suis brésilienne”. Com maiúscula, só quando é substantivo: “les Brésiliens”.",
         examples: [
           ["Bonjour ! Je m'appelle Ana, je suis brésilienne.", "Olá! Eu me chamo Ana, sou brasileira."],
           ["J'habite à Salvador, mais je suis de Belém.", "Moro em Salvador, mas sou de Belém."],
@@ -283,19 +283,19 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Omitir o pronome como no português: «Suis brésilien» está errado. Diga «Je suis brésilien».",
-      "Traduzir «você» sempre por «vous» ou sempre por «tu». Com um amigo, tu; com um desconhecido ou um cliente, vous; com um grupo, sempre vous.",
-      "Entrar numa loja e pedir direto, sem «Bonjour». Na França isso soa mal-educado.",
-      "Dizer «bonne nuit» ao chegar num lugar à noite. Chegando, é «bonsoir».",
-      "Escrever a nacionalidade com maiúscula: «je suis Brésilien». O adjetivo vai em minúscula: je suis brésilien.",
-      "Esquecer que «on» pede verbo no singular: «on allons» está errado; é «on va» (ou «nous allons»).",
+      "Omitir o pronome como no português: “Suis brésilien” está errado. Diga “Je suis brésilien”.",
+      "Traduzir “você” sempre por “vous” ou sempre por “tu”. Com um amigo, tu; com um desconhecido ou um cliente, vous; com um grupo, sempre vous.",
+      "Entrar numa loja e pedir direto, sem “Bonjour”. Na França isso soa mal-educado.",
+      "Dizer “bonne nuit” ao chegar num lugar à noite. Chegando, é “bonsoir”.",
+      "Escrever a nacionalidade com maiúscula: “je suis Brésilien”. O adjetivo vai em minúscula: je suis brésilien.",
+      "Esquecer que “on” pede verbo no singular: “on allons” está errado; é “on va” (ou “nous allons”).",
     ],
     quiz: [
       {
         question: "Você entra numa padaria às 10 da manhã. O que diz primeiro?",
         options: ["Salut !", "Bonjour, madame.", "Bonne journée !"],
         answer: "Bonjour, madame.",
-        explanation: "Com desconhecidos, o cumprimento neutro e educado é «Bonjour», de preferência com «madame» ou «monsieur». «Bonne journée» é para a despedida.",
+        explanation: "Com desconhecidos, o cumprimento neutro e educado é “Bonjour”, de preferência com “madame” ou “monsieur”. “Bonne journée” é para a despedida.",
       },
       {
         question: "Como perguntar o nome a uma senhora que você não conhece?",
@@ -304,16 +304,16 @@ export const GRAMMAR_FR: GrammarTopic[] = [
         explanation: "Com desconhecidos usa-se vous, com o verbo na 2ª do plural: vous vous appelez.",
       },
       {
-        question: "Complete: «Marie et moi, ___ va au cinéma ce soir.»",
+        question: "Complete: “Marie et moi, ___ va au cinéma ce soir.”",
         options: ["on", "nous", "ils"],
         answer: "on",
-        explanation: "O verbo «va» está na 3ª do singular: só «on» (a gente) combina. Com nous seria «nous allons».",
+        explanation: "O verbo “va” está na 3ª do singular: só “on” (a gente) combina. Com nous seria “nous allons”.",
       },
       {
         question: "Qual é a despedida certa às 23h, quando alguém vai dormir?",
         options: ["Bonsoir !", "Bonne nuit !", "Bonjour !"],
         answer: "Bonne nuit !",
-        explanation: "«Bonne nuit» é só para a hora de dormir. «Bonsoir» é o cumprimento de chegada à noite.",
+        explanation: "“Bonne nuit” é só para a hora de dormir. “Bonsoir” é o cumprimento de chegada à noite.",
       },
       {
         question: "Uma brasileira se apresenta. Qual frase está certa?",
@@ -328,11 +328,11 @@ export const GRAMMAR_FR: GrammarTopic[] = [
     level: "A1.1",
     title: "Être e avoir e os números de 1 a 20",
     emoji: "🔢",
-    summary: "Os dois verbos mais importantes do francês: être (ser e estar) e avoir (ter). O avoir aparece onde o português usa «estar com»: j'ai faim (estou com fome), j'ai froid (estou com frio). E os números de 1 a 20, com as mudanças de pronúncia de six, huit e dix.",
+    summary: "Os dois verbos mais importantes do francês: être (ser e estar) e avoir (ter). O avoir aparece onde o português usa “estar com”: j'ai faim (estou com fome), j'ai froid (estou com frio). E os números de 1 a 20, com as mudanças de pronúncia de six, huit e dix.",
     sections: [
       {
         heading: "Être: ser e estar",
-        text: "O francês não separa ser e estar: «être» cobre os dois. «Je suis brésilien» (sou brasileiro) e «Je suis fatigué» (estou cansado) usam o mesmo verbo. Repare na pronúncia: «tu es» e «il est» soam igual, [ɛ]; «ils sont» é [il sɔ̃], com [s], sem liaison.",
+        text: "O francês não separa ser e estar: “être” cobre os dois. “Je suis brésilien” (sou brasileiro) e “Je suis fatigué” (estou cansado) usam o mesmo verbo. Repare na pronúncia: “tu es” e “il est” soam igual, [ɛ]; “ils sont” é [il sɔ̃], com [s], sem liaison.",
         table: {
           head: ["Pronome", "être", "IPA", "Português"],
           rows: [
@@ -352,8 +352,8 @@ export const GRAMMAR_FR: GrammarTopic[] = [
         ],
       },
       {
-        heading: "Avoir: ter, e o «estar com» do português",
-        text: "«J'ai» soa [ʒe]. Com «nous», «vous» e «ils», a liaison é obrigatória: nous‿avons [nu.z‿avɔ̃], ils‿ont [il.z‿ɔ̃]. Como em português, a idade se diz com avoir: «J'ai vingt ans». E várias sensações que em português são «estar com» ou «ter» são avoir + substantivo, nunca être + adjetivo. Profissões depois de être ficam sem artigo: «Elle est médecin», não «une médecin».",
+        heading: "Avoir: ter, e o “estar com” do português",
+        text: "“J'ai” soa [ʒe]. Com “nous”, “vous” e “ils”, a liaison é obrigatória: nous‿avons [nu.z‿avɔ̃], ils‿ont [il.z‿ɔ̃]. Como em português, a idade se diz com avoir: “J'ai vingt ans”. E várias sensações que em português são “estar com” ou “ter” são avoir + substantivo, nunca être + adjetivo. Profissões depois de être ficam sem artigo: “Elle est médecin”, não “une médecin”.",
         table: {
           head: ["Pronome", "avoir", "Expressão", "Português"],
           rows: [
@@ -374,7 +374,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Os números de 1 a 20",
-        text: "De 17 a 19 o francês soma: dix-sept (dez-sete), dix-huit, dix-neuf, com hífen. «Un» concorda com o substantivo: un livre, une table. Alguns números mudam de pronúncia conforme o que vem depois: six e dix soam [sis] e [dis] sozinhos, [si] e [di] antes de consoante (six livres [si livʁ]) e [siz] e [diz] antes de vogal (six ans [si.z‿ɑ̃]). O t de «huit» cai antes de consoante (huit jours [ɥi ʒuʁ]), e o f de «neuf» vira [v] em «neuf ans» e «neuf heures». O t de «vingt» só soa em liaison: vingt ans [vɛ̃.t‿ɑ̃].",
+        text: "De 17 a 19 o francês soma: dix-sept (dez-sete), dix-huit, dix-neuf, com hífen. “Un” concorda com o substantivo: un livre, une table. Alguns números mudam de pronúncia conforme o que vem depois: six e dix soam [sis] e [dis] sozinhos, [si] e [di] antes de consoante (six livres [si livʁ]) e [siz] e [diz] antes de vogal (six ans [si.z‿ɑ̃]). O t de “huit” cai antes de consoante (huit jours [ɥi ʒuʁ]), e o f de “neuf” vira [v] em “neuf ans” e “neuf heures”. O t de “vingt” só soa em liaison: vingt ans [vɛ̃.t‿ɑ̃].",
         table: {
           head: ["Nº", "Francês", "IPA", "Nº", "Francês", "IPA"],
           rows: [
@@ -399,31 +399,31 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Traduzir «estou com fome» com être: «je suis faim» está errado. É «j'ai faim»; «j'ai froid», «j'ai peur».",
-      "Dizer a idade com être: «je suis vingt ans». Como em português: «j'ai vingt ans».",
-      "Pôr artigo antes da profissão: «il est un professeur». Depois de être fica sem artigo: il est professeur (mas «c'est un professeur»).",
-      "Confundir «ils ont» [il.z‿ɔ̃] (têm) com «ils sont» [il sɔ̃] (são). A diferença é só o [z] da liaison contra o [s].",
-      "Pronunciar o x de six e dix como «ks». É [s], [z] ou mudo, conforme o que vem depois.",
+      "Traduzir “estou com fome” com être: “je suis faim” está errado. É “j'ai faim”; “j'ai froid”, “j'ai peur”.",
+      "Dizer a idade com être: “je suis vingt ans”. Como em português: “j'ai vingt ans”.",
+      "Pôr artigo antes da profissão: “il est un professeur”. Depois de être fica sem artigo: il est professeur (mas “c'est un professeur”).",
+      "Confundir “ils ont” [il.z‿ɔ̃] (têm) com “ils sont” [il sɔ̃] (são). A diferença é só o [z] da liaison contra o [s].",
+      "Pronunciar o x de six e dix como “ks”. É [s], [z] ou mudo, conforme o que vem depois.",
       "Escrever dix-sept, dix-huit e dix-neuf sem hífen.",
     ],
     quiz: [
       {
-        question: "Como se diz «Estou com frio»?",
+        question: "Como se diz “Estou com frio”?",
         options: ["Je suis froid.", "J'ai froid.", "Je fais froid."],
         answer: "J'ai froid.",
         explanation: "Sensações como fome, sede, frio, calor e medo usam avoir + substantivo: j'ai froid.",
       },
       {
-        question: "Complete: «Nous ___ brésiliens.»",
+        question: "Complete: “Nous ___ brésiliens.”",
         options: ["sommes", "sont", "avons"],
         answer: "sommes",
-        explanation: "être com nous: nous sommes. «sont» é de ils/elles.",
+        explanation: "être com nous: nous sommes. “sont” é de ils/elles.",
       },
       {
-        question: "Como se diz «Ela tem quinze anos»?",
+        question: "Como se diz “Ela tem quinze anos”?",
         options: ["Elle est quinze ans.", "Elle a quinze ans.", "Elle a cinq ans."],
         answer: "Elle a quinze ans.",
-        explanation: "A idade se diz com avoir, e 15 é quinze. «cinq» é 5.",
+        explanation: "A idade se diz com avoir, e 15 é quinze. “cinq” é 5.",
       },
       {
         question: "Qual é o número 18?",
@@ -432,10 +432,10 @@ export const GRAMMAR_FR: GrammarTopic[] = [
         explanation: "De 17 a 19, dez + unidade, com hífen: dix-sept, dix-huit, dix-neuf.",
       },
       {
-        question: "Complete: «Paul et Marc ___ un appartement à Lille.»",
+        question: "Complete: “Paul et Marc ___ un appartement à Lille.”",
         options: ["sont", "ont", "a"],
         answer: "ont",
-        explanation: "«Ter um apartamento» é avoir, e com um sujeito plural (ils) fica «ont», pronunciado [ɔ̃], com liaison depois de ils.",
+        explanation: "“Ter um apartamento” é avoir, e com um sujeito plural (ils) fica “ont”, pronunciado [ɔ̃], com liaison depois de ils.",
       },
     ],
   },
@@ -445,10 +445,10 @@ export const GRAMMAR_FR: GrammarTopic[] = [
     level: "A1.2",
     title: "Artigos definidos e indefinidos, gênero e plural",
     emoji: "📚",
-    summary: "Em francês o substantivo quase nunca aparece sem artigo, e muitas vezes é o artigo que mostra, na fala, o gênero e o número: «le livre» [lə livʁ] e «les livres» [le livʁ] só se distinguem pelo artigo. Há dois gêneros, como em português, mas nem sempre o mesmo.",
+    summary: "Em francês o substantivo quase nunca aparece sem artigo, e muitas vezes é o artigo que mostra, na fala, o gênero e o número: “le livre” [lə livʁ] e “les livres” [le livʁ] só se distinguem pelo artigo. Há dois gêneros, como em português, mas nem sempre o mesmo.",
     sections: [
       {
-        text: "O definido tem três formas no singular: le (masculino), la (feminino) e l' (os dois, antes de vogal ou h mudo). No plural há uma só: les, que faz liaison antes de vogal (les‿amis). O indefinido é un, une e, no plural, des. Ao contrário do português, o «des» não pode sumir: «Tenho amigos em Lyon» é «J'ai des amis à Lyon». A frase sem artigo não existe em francês.",
+        text: "O definido tem três formas no singular: le (masculino), la (feminino) e l' (os dois, antes de vogal ou h mudo). No plural há uma só: les, que faz liaison antes de vogal (les‿amis). O indefinido é un, une e, no plural, des. Ao contrário do português, o “des” não pode sumir: “Tenho amigos em Lyon” é “J'ai des amis à Lyon”. A frase sem artigo não existe em francês.",
         table: {
           head: ["", "Masculino", "Feminino", "Antes de vogal / h mudo", "Plural"],
           rows: [
@@ -497,7 +497,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "O feminino dos substantivos",
-        text: "Para pessoas e muitos animais, o feminino se forma a partir do masculino. Muitas vezes a mudança se ouve: em «étudiant» o t é mudo, em «étudiante» ele soa.",
+        text: "Para pessoas e muitos animais, o feminino se forma a partir do masculino. Muitas vezes a mudança se ouve: em “étudiant” o t é mudo, em “étudiante” ele soa.",
         table: {
           head: ["Regra", "Masculino", "Feminino"],
           rows: [
@@ -512,7 +512,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "O plural",
-        text: "A regra geral é acrescentar um -s, que não se pronuncia: «le chat, les chats» soam [lə ʃa], [le ʃa]. Por isso o artigo é tão importante na fala. Palavras que já terminam em -s, -x ou -z não mudam. As terminações -eau e -eu levam -x, e -al vira -aux, este sim com som diferente.",
+        text: "A regra geral é acrescentar um -s, que não se pronuncia: “le chat, les chats” soam [lə ʃa], [le ʃa]. Por isso o artigo é tão importante na fala. Palavras que já terminam em -s, -x ou -z não mudam. As terminações -eau e -eu levam -x, e -al vira -aux, este sim com som diferente.",
         table: {
           head: ["Regra", "Singular", "Plural"],
           rows: [
@@ -531,34 +531,34 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Deixar o substantivo sem artigo como no português: «J'ai amis à Lyon». O certo é «J'ai des amis à Lyon».",
-      "Não fazer a elisão: «le ami», «la école». Antes de vogal ou h mudo, é sempre l'ami, l'école, l'hôtel.",
-      "Copiar o gênero do português: «le mer», «la voyage». Em francês é la mer e le voyage.",
-      "Pronunciar o -s do plural: «les chats» é [le ʃa], sem s. Quem mostra o plural é o artigo.",
-      "Fazer elisão antes de h aspirado: «l'héros». É le héros, e sem liaison no plural: les héros [le eʁo].",
-      "Esquecer o -x de -eau e -eu: «les gâteaus». O certo é les gâteaux, les jeux.",
+      "Deixar o substantivo sem artigo como no português: “J'ai amis à Lyon”. O certo é “J'ai des amis à Lyon”.",
+      "Não fazer a elisão: “le ami”, “la école”. Antes de vogal ou h mudo, é sempre l'ami, l'école, l'hôtel.",
+      "Copiar o gênero do português: “le mer”, “la voyage”. Em francês é la mer e le voyage.",
+      "Pronunciar o -s do plural: “les chats” é [le ʃa], sem s. Quem mostra o plural é o artigo.",
+      "Fazer elisão antes de h aspirado: “l'héros”. É le héros, e sem liaison no plural: les héros [le eʁo].",
+      "Esquecer o -x de -eau e -eu: “les gâteaus”. O certo é les gâteaux, les jeux.",
     ],
     quiz: [
       {
-        question: "Complete: «___ école est fermée aujourd'hui.»",
+        question: "Complete: “___ école est fermée aujourd'hui.”",
         options: ["La", "Le", "L'"],
         answer: "L'",
         explanation: "Antes de vogal, le e la viram l': l'école.",
       },
       {
-        question: "Qual está certo para «o mar»?",
+        question: "Qual está certo para “o mar”?",
         options: ["le mer", "la mer", "l'mer"],
         answer: "la mer",
-        explanation: "«Mer» é feminino em francês, ao contrário do português.",
+        explanation: "“Mer” é feminino em francês, ao contrário do português.",
       },
       {
-        question: "Como se diz «Tenho irmãs»?",
+        question: "Como se diz “Tenho irmãs”?",
         options: ["J'ai sœurs.", "J'ai des sœurs.", "J'ai les sœurs."],
         answer: "J'ai des sœurs.",
-        explanation: "O plural indefinido «des» é obrigatório: o francês não deixa o substantivo sem determinante.",
+        explanation: "O plural indefinido “des” é obrigatório: o francês não deixa o substantivo sem determinante.",
       },
       {
-        question: "Qual é o plural de «le journal»?",
+        question: "Qual é o plural de “le journal”?",
         options: ["les journals", "les journaux", "les journales"],
         answer: "les journaux",
         explanation: "As palavras em -al fazem o plural em -aux: journal, journaux; cheval, chevaux.",
@@ -567,7 +567,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
         question: "Qual forma está certa?",
         options: ["le héros", "l'héros", "la héros"],
         answer: "le héros",
-        explanation: "«Héros» começa com h aspirado: sem elisão, le héros.",
+        explanation: "“Héros” começa com h aspirado: sem elisão, le héros.",
       },
     ],
   },
@@ -576,10 +576,10 @@ export const GRAMMAR_FR: GrammarTopic[] = [
     level: "A1.2",
     title: "O partitivo: du pain, de la confiture, de l'eau",
     emoji: "🥖",
-    summary: "Em português dizemos «como pão», «bebo água», sem artigo. O francês precisa de um artigo até aí: o partitivo, que indica «uma quantidade de» algo que não se conta: je mange du pain, je bois de l'eau.",
+    summary: "Em português dizemos “como pão”, “bebo água”, sem artigo. O francês precisa de um artigo até aí: o partitivo, que indica “uma quantidade de” algo que não se conta: je mange du pain, je bois de l'eau.",
     sections: [
       {
-        text: "O partitivo se forma com de + o artigo definido. De + le vira «du», de + les vira «des»; «de la» e «de l'» ficam como estão. Ele aparece com o que não se conta um por um (pão, água, dinheiro, paciência) e com coisas no plural em quantidade indefinida.",
+        text: "O partitivo se forma com de + o artigo definido. De + le vira “du”, de + les vira “des”; “de la” e “de l'” ficam como estão. Ele aparece com o que não se conta um por um (pão, água, dinheiro, paciência) e com coisas no plural em quantidade indefinida.",
         table: {
           head: ["Antes de", "Partitivo", "Exemplo", "Português"],
           rows: [
@@ -614,8 +614,8 @@ export const GRAMMAR_FR: GrammarTopic[] = [
         ],
       },
       {
-        heading: "Na negação e nas quantidades: só «de»",
-        text: "Depois de uma negação (ne… pas, ne… plus, ne… jamais), o partitivo e o indefinido viram simplesmente «de», ou «d'» antes de vogal: je ne bois pas de café, je n'ai pas d'argent. A exceção é «être»: «Ce n'est pas du café, c'est du thé». Com expressões de quantidade também fica só «de»: beaucoup de, un peu de, assez de, trop de, un kilo de, une bouteille de, un verre de.",
+        heading: "Na negação e nas quantidades: só “de”",
+        text: "Depois de uma negação (ne… pas, ne… plus, ne… jamais), o partitivo e o indefinido viram simplesmente “de”, ou “d'” antes de vogal: je ne bois pas de café, je n'ai pas d'argent. A exceção é “être”: “Ce n'est pas du café, c'est du thé”. Com expressões de quantidade também fica só “de”: beaucoup de, un peu de, assez de, trop de, un kilo de, une bouteille de, un verre de.",
         table: {
           head: ["Afirmativa", "Negativa / quantidade", "Português"],
           rows: [
@@ -636,30 +636,30 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Omitir o artigo como no português: «Je mange pain». O certo é «Je mange du pain».",
-      "Usar o partitivo depois de verbos de gosto: «J'aime du café». Para gostos, o definido: «J'aime le café».",
-      "Manter o partitivo na negação: «Je n'ai pas du temps». Na negação fica só «de»: «Je n'ai pas de temps».",
-      "Pôr artigo depois de quantidade: «beaucoup des amis». É «beaucoup d'amis», «un peu de sucre».",
-      "Esquecer a elisão: «de la eau». Antes de vogal, sempre de l'eau, de l'huile.",
+      "Omitir o artigo como no português: “Je mange pain”. O certo é “Je mange du pain”.",
+      "Usar o partitivo depois de verbos de gosto: “J'aime du café”. Para gostos, o definido: “J'aime le café”.",
+      "Manter o partitivo na negação: “Je n'ai pas du temps”. Na negação fica só “de”: “Je n'ai pas de temps”.",
+      "Pôr artigo depois de quantidade: “beaucoup des amis”. É “beaucoup d'amis”, “un peu de sucre”.",
+      "Esquecer a elisão: “de la eau”. Antes de vogal, sempre de l'eau, de l'huile.",
     ],
     quiz: [
       {
-        question: "Complete: «Le matin, je bois ___ café.»",
+        question: "Complete: “Le matin, je bois ___ café.”",
         options: ["du", "le", "de la"],
         answer: "du",
-        explanation: "Beber uma porção de algo não contável pede o partitivo; «café» é masculino: du café.",
+        explanation: "Beber uma porção de algo não contável pede o partitivo; “café” é masculino: du café.",
       },
       {
-        question: "Complete: «Tu veux ___ eau ?»",
+        question: "Complete: “Tu veux ___ eau ?”",
         options: ["de l'", "du", "des"],
         answer: "de l'",
-        explanation: "«Eau» é feminino e começa com vogal: de l'eau.",
+        explanation: "“Eau” é feminino e começa com vogal: de l'eau.",
       },
       {
-        question: "Como se diz «Não tenho carro»?",
+        question: "Como se diz “Não tenho carro”?",
         options: ["Je n'ai pas une voiture.", "Je n'ai pas de voiture.", "Je n'ai pas la voiture."],
         answer: "Je n'ai pas de voiture.",
-        explanation: "Depois da negação, un, une, du, de la e des viram «de»: pas de voiture.",
+        explanation: "Depois da negação, un, une, du, de la e des viram “de”: pas de voiture.",
       },
       {
         question: "Qual frase fala de um gosto em geral?",
@@ -668,23 +668,23 @@ export const GRAMMAR_FR: GrammarTopic[] = [
         explanation: "Com aimer, adorer, détester e préférer usa-se o artigo definido.",
       },
       {
-        question: "Complete: «Il y a beaucoup ___ touristes à Chamonix en hiver.»",
+        question: "Complete: “Il y a beaucoup ___ touristes à Chamonix en hiver.”",
         options: ["de", "des", "les"],
         answer: "de",
-        explanation: "Depois de expressões de quantidade como «beaucoup», fica só «de».",
+        explanation: "Depois de expressões de quantidade como “beaucoup”, fica só “de”.",
       },
     ],
   },
   {
     id: "fr-g6",
     level: "A1.2",
-    title: "Presente dos verbos em -er, «il y a» e «j'aime»",
+    title: "Presente dos verbos em -er, “il y a” e “j'aime”",
     emoji: "💬",
-    summary: "Nove em cada dez verbos franceses terminam em -er e seguem o mesmo modelo, parler. Na fala, quatro das seis formas soam iguais. E duas estruturas do dia a dia: «il y a» (tem, há) e «j'aime» (gosto, amo).",
+    summary: "Nove em cada dez verbos franceses terminam em -er e seguem o mesmo modelo, parler. Na fala, quatro das seis formas soam iguais. E duas estruturas do dia a dia: “il y a” (tem, há) e “j'aime” (gosto, amo).",
     sections: [
       {
         heading: "O modelo parler",
-        text: "Tire o -er e acrescente as terminações. As formas de je, tu, il e ils se escrevem diferente, mas soam todas [paʁl]; só nous [paʁlɔ̃] e vous [paʁle] se distinguem. Por isso o pronome é obrigatório. Com verbo que começa por vogal ou h mudo, «je» vira «j'» e há liaison com nous, vous, ils: j'aime, nous‿aimons, ils‿habitent.",
+        text: "Tire o -er e acrescente as terminações. As formas de je, tu, il e ils se escrevem diferente, mas soam todas [paʁl]; só nous [paʁlɔ̃] e vous [paʁle] se distinguem. Por isso o pronome é obrigatório. Com verbo que começa por vogal ou h mudo, “je” vira “j'” e há liaison com nous, vous, ils: j'aime, nous‿aimons, ils‿habitent.",
         table: {
           head: ["Pronome", "parler", "IPA", "aimer", "habiter"],
           rows: [
@@ -705,7 +705,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Um presente para três sentidos",
-        text: "«Je mange» é «eu como» e também «estou comendo». O francês não tem gerúndio para isso: «je suis mangeant» não existe. Para insistir que a ação está em curso, usa-se «être en train de» + infinitivo: «Je suis en train de manger» (estou comendo agora mesmo).",
+        text: "“Je mange” é “eu como” e também “estou comendo”. O francês não tem gerúndio para isso: “je suis mangeant” não existe. Para insistir que a ação está em curso, usa-se “être en train de” + infinitivo: “Je suis en train de manger” (estou comendo agora mesmo).",
         examples: [
           ["Qu'est-ce que tu fais ? — Je regarde un film.", "O que você está fazendo? — Estou vendo um filme."],
           ["Chut, le bébé est en train de dormir.", "Psiu, o bebê está dormindo."],
@@ -732,7 +732,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "J'aime, j'adore, je déteste",
-        text: "Os verbos de gosto pedem o artigo definido com substantivo (j'aime le chocolat) e o infinitivo direto, sem preposição, com verbo: «j'aime danser» (gosto de dançar). Com pessoas, atenção: «Je t'aime» é «eu te amo»; «Je t'aime bien» é só «gosto de você», uma simpatia. E «aimer bien» com coisas é «gostar» sem exagero.",
+        text: "Os verbos de gosto pedem o artigo definido com substantivo (j'aime le chocolat) e o infinitivo direto, sem preposição, com verbo: “j'aime danser” (gosto de dançar). Com pessoas, atenção: “Je t'aime” é “eu te amo”; “Je t'aime bien” é só “gosto de você”, uma simpatia. E “aimer bien” com coisas é “gostar” sem exagero.",
         table: {
           head: ["Francês", "Português"],
           rows: [
@@ -752,7 +752,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Il y a: tem, há",
-        text: "No Brasil dizemos «tem um banco aqui?». O francês não usa avoir para isso, e sim a expressão fixa «il y a» [ilja], que não muda no plural: il y a un café, il y a deux cafés. Na negação: «il n'y a pas de…». Na pergunta: «Est-ce qu'il y a…?» ou «Il y a… ?». E «Qu'est-ce qu'il y a ?» quer dizer «O que foi? O que houve?».",
+        text: "No Brasil dizemos “tem um banco aqui?”. O francês não usa avoir para isso, e sim a expressão fixa “il y a” [ilja], que não muda no plural: il y a un café, il y a deux cafés. Na negação: “il n'y a pas de…”. Na pergunta: “Est-ce qu'il y a…?” ou “Il y a… ?”. E “Qu'est-ce qu'il y a ?” quer dizer “O que foi? O que houve?”.",
         examples: [
           ["Il y a une pharmacie près d'ici ?", "Tem uma farmácia aqui perto?"],
           ["Dans ma rue, il y a trois boulangeries.", "Na minha rua tem três padarias."],
@@ -762,34 +762,34 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Pronunciar o -ent de «ils parlent». É mudo: [il paʁl].",
-      "Traduzir o «estou fazendo» com gerúndio: «je suis parlant». Use o presente (je parle) ou «je suis en train de parler».",
-      "Usar avoir para existência, como o «tem» brasileiro: «Il a une banque ici ?». O certo é «Il y a une banque ici ?».",
-      "Pôr «il y a» no plural: «il y ont des…». A expressão é fixa: il y a des touristes.",
-      "Usar preposição antes do infinitivo: «j'aime de danser». É direto: j'aime danser.",
-      "Dizer «je t'aime» a um amigo querendo dizer que gosta dele. Para amizade: je t'aime bien.",
+      "Pronunciar o -ent de “ils parlent”. É mudo: [il paʁl].",
+      "Traduzir o “estou fazendo” com gerúndio: “je suis parlant”. Use o presente (je parle) ou “je suis en train de parler”.",
+      "Usar avoir para existência, como o “tem” brasileiro: “Il a une banque ici ?”. O certo é “Il y a une banque ici ?”.",
+      "Pôr “il y a” no plural: “il y ont des…”. A expressão é fixa: il y a des touristes.",
+      "Usar preposição antes do infinitivo: “j'aime de danser”. É direto: j'aime danser.",
+      "Dizer “je t'aime” a um amigo querendo dizer que gosta dele. Para amizade: je t'aime bien.",
     ],
     quiz: [
       {
-        question: "Complete: «Nous ___ français avec le professeur.»",
+        question: "Complete: “Nous ___ français avec le professeur.”",
         options: ["parlons", "parlez", "parlent"],
         answer: "parlons",
         explanation: "Com nous, a terminação é -ons: nous parlons.",
       },
       {
-        question: "Como se diz «Tem um restaurante na praça»?",
+        question: "Como se diz “Tem um restaurante na praça”?",
         options: ["Il a un restaurant sur la place.", "Il y a un restaurant sur la place.", "Il est un restaurant sur la place."],
         answer: "Il y a un restaurant sur la place.",
-        explanation: "Para dizer que algo existe num lugar, o francês usa «il y a».",
+        explanation: "Para dizer que algo existe num lugar, o francês usa “il y a”.",
       },
       {
-        question: "Complete: «Nous ___ à huit heures.» (manger)",
+        question: "Complete: “Nous ___ à huit heures.” (manger)",
         options: ["mangons", "mangeons", "mangez"],
         answer: "mangeons",
         explanation: "O e depois do g mantém o som [ʒ] antes do o: nous mangeons.",
       },
       {
-        question: "Como se diz «Gosto de viajar»?",
+        question: "Como se diz “Gosto de viajar”?",
         options: ["J'aime voyager.", "J'aime de voyager.", "J'aime le voyager."],
         answer: "J'aime voyager.",
         explanation: "Aimer + infinitivo, sem preposição, e com elisão: j'aime.",
@@ -798,7 +798,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
         question: "Qual forma soa diferente das outras?",
         options: ["je parle", "ils parlent", "vous parlez"],
         answer: "vous parlez",
-        explanation: "«Je parle» e «ils parlent» soam [paʁl]; «vous parlez» é [paʁle].",
+        explanation: "“Je parle” e “ils parlent” soam [paʁl]; “vous parlez” é [paʁle].",
       },
     ],
   },
@@ -808,11 +808,11 @@ export const GRAMMAR_FR: GrammarTopic[] = [
     level: "A2.1",
     title: "Negação ne… pas e as três maneiras de perguntar",
     emoji: "❓",
-    summary: "A negação francesa tem duas partes que abraçam o verbo: je NE parle PAS. Na fala, o «ne» costuma cair. E para perguntar há três registros: só a entonação (tu viens ?), «est-ce que» (est-ce que tu viens ?) e a inversão, mais formal (viens-tu ?).",
+    summary: "A negação francesa tem duas partes que abraçam o verbo: je NE parle PAS. Na fala, o “ne” costuma cair. E para perguntar há três registros: só a entonação (tu viens ?), “est-ce que” (est-ce que tu viens ?) e a inversão, mais formal (viens-tu ?).",
     sections: [
       {
         heading: "Ne… pas em volta do verbo",
-        text: "O «ne» vem antes do verbo conjugado e o «pas» logo depois. Antes de vogal ou h mudo, «ne» vira «n'»: je n'aime pas, il n'habite pas ici. Os pronomes átonos ficam dentro do abraço: je ne le sais pas. Com o infinitivo, as duas partes vêm juntas antes dele: «Je préfère ne pas sortir».",
+        text: "O “ne” vem antes do verbo conjugado e o “pas” logo depois. Antes de vogal ou h mudo, “ne” vira “n'”: je n'aime pas, il n'habite pas ici. Os pronomes átonos ficam dentro do abraço: je ne le sais pas. Com o infinitivo, as duas partes vêm juntas antes dele: “Je préfère ne pas sortir”.",
         examples: [
           ["Je ne parle pas allemand.", "Não falo alemão."],
           ["Elle n'habite pas à Nice, elle habite à Cannes.", "Ela não mora em Nice, mora em Cannes."],
@@ -822,7 +822,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Outras negações",
-        text: "O «pas» pode ser trocado por outras palavras que dão sentidos diferentes. «Ne… que» não é negação: quer dizer «só, apenas». E note que, ao contrário do português, não se junta «pas» com outra palavra negativa: «je ne vois personne» (não vejo ninguém), nunca «je ne vois pas personne».",
+        text: "O “pas” pode ser trocado por outras palavras que dão sentidos diferentes. “Ne… que” não é negação: quer dizer “só, apenas”. E note que, ao contrário do português, não se junta “pas” com outra palavra negativa: “je ne vois personne” (não vejo ninguém), nunca “je ne vois pas personne”.",
         table: {
           head: ["Estrutura", "Sentido", "Exemplo", "Português"],
           rows: [
@@ -837,8 +837,8 @@ export const GRAMMAR_FR: GrammarTopic[] = [
         },
       },
       {
-        heading: "A queda do «ne» na fala",
-        text: "Na conversa do dia a dia, quase todo mundo deixa o «ne» cair e fica só com o «pas»: «Je sais pas», «C'est pas grave», «J'ai pas le temps». É natural e você vai ouvir o tempo todo, mas na escrita e nas situações formais mantenha o «ne». Repare que no francês falado o «pas» é que carrega a negação: sem ele, a frase vira afirmativa.",
+        heading: "A queda do “ne” na fala",
+        text: "Na conversa do dia a dia, quase todo mundo deixa o “ne” cair e fica só com o “pas”: “Je sais pas”, “C'est pas grave”, “J'ai pas le temps”. É natural e você vai ouvir o tempo todo, mas na escrita e nas situações formais mantenha o “ne”. Repare que no francês falado o “pas” é que carrega a negação: sem ele, a frase vira afirmativa.",
         table: {
           head: ["Escrito, formal", "Falado, informal", "Português"],
           rows: [
@@ -850,8 +850,8 @@ export const GRAMMAR_FR: GrammarTopic[] = [
         },
       },
       {
-        heading: "Si: o «sim» que contradiz",
-        text: "Para responder «sim» a uma pergunta negativa, o francês não usa «oui», e sim «si». É o jeito de contradizer: «Tu ne viens pas ? — Si !» (Você não vem? — Venho sim!).",
+        heading: "Si: o “sim” que contradiz",
+        text: "Para responder “sim” a uma pergunta negativa, o francês não usa “oui”, e sim “si”. É o jeito de contradizer: “Tu ne viens pas ? — Si !” (Você não vem? — Venho sim!).",
         examples: [
           ["Tu n'aimes pas le fromage ? — Si, j'adore !", "Você não gosta de queijo? — Gosto sim, adoro!"],
           ["Vous n'avez pas de monnaie ? — Si, voilà.", "O senhor não tem trocado? — Tenho, aqui está."],
@@ -859,7 +859,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Três maneiras de perguntar",
-        text: "A pergunta de sim ou não pode ser feita de três jeitos. Pela entonação, subindo a voz no fim, como no português: é o mais comum na fala. Com «est-ce que» [ɛskə] no começo: neutro, serve sempre. Pela inversão do verbo e do pronome, ligados por hífen: formal e escrito. Na inversão com il, elle ou on, se o verbo termina em vogal, entra um -t- para evitar o choque: parle-t-il, a-t-elle, va-t-on.",
+        text: "A pergunta de sim ou não pode ser feita de três jeitos. Pela entonação, subindo a voz no fim, como no português: é o mais comum na fala. Com “est-ce que” [ɛskə] no começo: neutro, serve sempre. Pela inversão do verbo e do pronome, ligados por hífen: formal e escrito. Na inversão com il, elle ou on, se o verbo termina em vogal, entra um -t- para evitar o choque: parle-t-il, a-t-elle, va-t-on.",
         table: {
           head: ["Entonação (informal)", "Est-ce que (neutro)", "Inversão (formal)"],
           rows: [
@@ -872,7 +872,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "As palavras interrogativas",
-        text: "Com palavra interrogativa, os três registros continuam valendo. Na fala, é muito comum a palavra ir para o fim: «Tu vas où ?», «Tu fais quoi ?». «Que» vira «quoi» quando fica sozinho ou no fim da frase. «Quel» concorda com o substantivo: quel âge, quelle heure, quels livres, quelles villes (todos soam [kɛl]).",
+        text: "Com palavra interrogativa, os três registros continuam valendo. Na fala, é muito comum a palavra ir para o fim: “Tu vas où ?”, “Tu fais quoi ?”. “Que” vira “quoi” quando fica sozinho ou no fim da frase. “Quel” concorda com o substantivo: quel âge, quelle heure, quels livres, quelles villes (todos soam [kɛl]).",
         table: {
           head: ["Palavra", "Português", "Informal", "Neutro", "Formal"],
           rows: [
@@ -893,40 +893,40 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Esquecer o «pas» ao escrever: «Je ne parle français» não é negação completa. É «Je ne parle pas français».",
-      "Pôr o «pas» longe do verbo: «Je ne pas parle». O «pas» vem logo depois do verbo conjugado: je ne parle pas.",
-      "Juntar «pas» com outra negativa, como o português «não… nada»: «Je ne vois pas rien». O certo é «Je ne vois rien».",
-      "Responder «oui» a uma pergunta negativa para contradizer. Use «si»: «Tu n'as pas faim ? — Si !».",
-      "Fazer a inversão sem o -t-: «Parle-il ?». Entre vogais entra o -t-: parle-t-il, a-t-elle.",
-      "Misturar registros: «Où est-ce que vas-tu ?». Ou «Où est-ce que tu vas ?», ou «Où vas-tu ?».",
+      "Esquecer o “pas” ao escrever: “Je ne parle français” não é negação completa. É “Je ne parle pas français”.",
+      "Pôr o “pas” longe do verbo: “Je ne pas parle”. O “pas” vem logo depois do verbo conjugado: je ne parle pas.",
+      "Juntar “pas” com outra negativa, como o português “não… nada”: “Je ne vois pas rien”. O certo é “Je ne vois rien”.",
+      "Responder “oui” a uma pergunta negativa para contradizer. Use “si”: “Tu n'as pas faim ? — Si !”.",
+      "Fazer a inversão sem o -t-: “Parle-il ?”. Entre vogais entra o -t-: parle-t-il, a-t-elle.",
+      "Misturar registros: “Où est-ce que vas-tu ?”. Ou “Où est-ce que tu vas ?”, ou “Où vas-tu ?”.",
     ],
     quiz: [
       {
-        question: "Como se diz «Não moro mais em Paris»?",
+        question: "Como se diz “Não moro mais em Paris”?",
         options: ["Je n'habite plus à Paris.", "Je n'habite pas plus à Paris.", "Je ne plus habite à Paris."],
         answer: "Je n'habite plus à Paris.",
-        explanation: "«Não… mais» é ne… plus, em volta do verbo, sem «pas».",
+        explanation: "“Não… mais” é ne… plus, em volta do verbo, sem “pas”.",
       },
       {
-        question: "«Tu ne parles pas espagnol ?» Você fala. O que responde?",
+        question: "“Tu ne parles pas espagnol ?” Você fala. O que responde?",
         options: ["Oui, je parle espagnol.", "Si, je parle espagnol.", "Non, je parle espagnol."],
         answer: "Si, je parle espagnol.",
-        explanation: "Para contradizer uma pergunta negativa, o «sim» francês é «si».",
+        explanation: "Para contradizer uma pergunta negativa, o “sim” francês é “si”.",
       },
       {
-        question: "Qual é a inversão correta de «Est-ce qu'il a une voiture ?»?",
+        question: "Qual é a inversão correta de “Est-ce qu'il a une voiture ?”?",
         options: ["A-t-il une voiture ?", "A-il une voiture ?", "Il-a une voiture ?"],
         answer: "A-t-il une voiture ?",
         explanation: "O verbo termina em vogal e o pronome começa com vogal: entra o -t-.",
       },
       {
-        question: "Como se diz «Só tenho dois euros»?",
+        question: "Como se diz “Só tenho dois euros”?",
         options: ["Je n'ai pas deux euros.", "Je n'ai que deux euros.", "Je n'ai jamais deux euros."],
         answer: "Je n'ai que deux euros.",
-        explanation: "Ne… que não é negação: significa «só, apenas».",
+        explanation: "Ne… que não é negação: significa “só, apenas”.",
       },
       {
-        question: "Qual pergunta está no registro neutro, com «est-ce que»?",
+        question: "Qual pergunta está no registro neutro, com “est-ce que”?",
         options: ["Où tu habites ?", "Où est-ce que tu habites ?", "Où habites-tu ?"],
         answer: "Où est-ce que tu habites ?",
         explanation: "Palavra interrogativa + est-ce que + ordem normal (sujeito e verbo).",
@@ -938,11 +938,11 @@ export const GRAMMAR_FR: GrammarTopic[] = [
     level: "A2.1",
     title: "Preposições de lugar: à, en, au, aux, chez e as contrações",
     emoji: "🗺️",
-    summary: "Para dizer onde você está ou para onde vai, o francês escolhe a preposição pelo tipo de lugar: à para cidades, en para países femininos, au para os masculinos, aux para os plurais. E «chez» é a casa de alguém: chez moi, chez le médecin.",
+    summary: "Para dizer onde você está ou para onde vai, o francês escolhe a preposição pelo tipo de lugar: à para cidades, en para países femininos, au para os masculinos, aux para os plurais. E “chez” é a casa de alguém: chez moi, chez le médecin.",
     sections: [
       {
         heading: "Cidades, países e regiões",
-        text: "O mesmo «em» (ou «para») do português tem várias formas. Com cidades usa-se à. Com países e regiões, depende do gênero: os que terminam em -e costumam ser femininos e pedem en; os outros são masculinos e pedem au (à + le); os plurais pedem aux (à + les). Países masculinos que começam com vogal também pedem en, para evitar o choque de vogais. Exceções: le Mexique e le Cambodge terminam em -e, mas são masculinos. Cidades com artigo no nome contraem: le Havre → au Havre, le Caire → au Caire.",
+        text: "O mesmo “em” (ou “para”) do português tem várias formas. Com cidades usa-se à. Com países e regiões, depende do gênero: os que terminam em -e costumam ser femininos e pedem en; os outros são masculinos e pedem au (à + le); os plurais pedem aux (à + les). Países masculinos que começam com vogal também pedem en, para evitar o choque de vogais. Exceções: le Mexique e le Cambodge terminam em -e, mas são masculinos. Cidades com artigo no nome contraem: le Havre → au Havre, le Caire → au Caire.",
         table: {
           head: ["Tipo", "Preposição", "Exemplos"],
           rows: [
@@ -964,7 +964,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "De onde você vem: de, d', du, des",
-        text: "Para a origem, a lógica é a mesma, com «de»: de + cidade ou país feminino (de Lyon, de France, d'Italie), du com país masculino (du Brésil, du Canada), des com plural (des États-Unis).",
+        text: "Para a origem, a lógica é a mesma, com “de”: de + cidade ou país feminino (de Lyon, de France, d'Italie), du com país masculino (du Brésil, du Canada), des com plural (des États-Unis).",
         examples: [
           ["Je viens du Brésil, de Manaus.", "Venho do Brasil, de Manaus."],
           ["Elle est d'Algérie, mais elle habite à Lyon.", "Ela é da Argélia, mas mora em Lyon."],
@@ -974,7 +974,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "As contrações: au, aux, du, des",
-        text: "À e de se juntam com le e les, como o português junta «a + o» em «ao» e «de + o» em «do». Com la e l', nada muda.",
+        text: "À e de se juntam com le e les, como o português junta “a + o” em “ao” e “de + o” em “do”. Com la e l', nada muda.",
         table: {
           head: ["", "+ le", "+ la", "+ l'", "+ les"],
           rows: [
@@ -990,7 +990,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Chez: na casa de, no consultório de",
-        text: "«Chez» indica a casa ou o local de trabalho de uma pessoa, e vem sempre antes de pessoa, nunca de lugar: chez moi (na minha casa), chez Julie, chez le médecin, chez le coiffeur. Compare: «à la boulangerie» (o lugar) × «chez le boulanger» (a pessoa). «Chez nous» também pode querer dizer «no nosso país, na nossa terra».",
+        text: "“Chez” indica a casa ou o local de trabalho de uma pessoa, e vem sempre antes de pessoa, nunca de lugar: chez moi (na minha casa), chez Julie, chez le médecin, chez le coiffeur. Compare: “à la boulangerie” (o lugar) × “chez le boulanger” (a pessoa). “Chez nous” também pode querer dizer “no nosso país, na nossa terra”.",
         examples: [
           ["Je rentre chez moi.", "Vou para casa."],
           ["Ce soir, on dîne chez Julie.", "Hoje à noite a gente janta na casa da Julie."],
@@ -1000,7 +1000,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Onde fica: dentro, em cima, ao lado",
-        text: "As locuções com «de» fazem as contrações normalmente: à côté du musée, en face de la mairie, près de l'hôtel, loin des plages.",
+        text: "As locuções com “de” fazem as contrações normalmente: à côté du musée, en face de la mairie, près de l'hôtel, loin des plages.",
         table: {
           head: ["Francês", "Português", "Exemplo"],
           rows: [
@@ -1017,7 +1017,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Os meios de transporte",
-        text: "Dentro de um veículo usa-se «en»; em cima ou com o próprio corpo, «à»: en train, en voiture, en bus, en avion, en bateau; à pied, à vélo, à cheval.",
+        text: "Dentro de um veículo usa-se “en”; em cima ou com o próprio corpo, “à”: en train, en voiture, en bus, en avion, en bateau; à pied, à vélo, à cheval.",
         examples: [
           ["Je vais au travail à vélo.", "Vou para o trabalho de bicicleta."],
           ["On va à Strasbourg en train.", "A gente vai a Estrasburgo de trem."],
@@ -1025,39 +1025,39 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Usar «en» com cidade: «en Paris». Com cidade é sempre à: à Paris.",
-      "Dizer «en Brésil» ou «à le Brésil». Brasil é masculino: au Brésil (à + le).",
-      "Escrever «à le» e «de le». As contrações são obrigatórias: au, du; e no plural aux, des.",
-      "Usar «chez» com lugar: «chez la boulangerie». Chez é para pessoas: chez le boulanger, à la boulangerie.",
-      "Traduzir «de carro» por «de voiture». É en voiture; e «a pé» é à pied.",
+      "Usar “en” com cidade: “en Paris”. Com cidade é sempre à: à Paris.",
+      "Dizer “en Brésil” ou “à le Brésil”. Brasil é masculino: au Brésil (à + le).",
+      "Escrever “à le” e “de le”. As contrações são obrigatórias: au, du; e no plural aux, des.",
+      "Usar “chez” com lugar: “chez la boulangerie”. Chez é para pessoas: chez le boulanger, à la boulangerie.",
+      "Traduzir “de carro” por “de voiture”. É en voiture; e “a pé” é à pied.",
     ],
     quiz: [
       {
-        question: "Complete: «Je vais ___ Canada en juillet.»",
+        question: "Complete: “Je vais ___ Canada en juillet.”",
         options: ["en", "au", "à"],
         answer: "au",
         explanation: "Canada é masculino: à + le = au Canada.",
       },
       {
-        question: "Complete: «Mes parents habitent ___ Italie.»",
+        question: "Complete: “Mes parents habitent ___ Italie.”",
         options: ["en", "au", "à"],
         answer: "en",
         explanation: "Italie é feminino (termina em -e): en Italie.",
       },
       {
-        question: "Complete: «Ce soir, je dors ___ Marc.»",
+        question: "Complete: “Ce soir, je dors ___ Marc.”",
         options: ["à", "chez", "dans"],
         answer: "chez",
         explanation: "Na casa de uma pessoa: chez Marc.",
       },
       {
-        question: "Complete: «Nous allons ___ plage, puis ___ cinéma.»",
+        question: "Complete: “Nous allons ___ plage, puis ___ cinéma.”",
         options: ["à la / au", "au / à la", "à la / à le"],
         answer: "à la / au",
         explanation: "Plage é feminino (à la); cinéma é masculino, e à + le contrai em au.",
       },
       {
-        question: "Complete: «Il vient ___ États-Unis.»",
+        question: "Complete: “Il vient ___ États-Unis.”",
         options: ["des", "de", "du"],
         answer: "des",
         explanation: "País no plural: de + les = des États-Unis.",
@@ -1069,7 +1069,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
     level: "A2.1",
     title: "Verbos em -ir e -re; aller, venir e faire",
     emoji: "🚲",
-    summary: "Depois dos verbos em -er, os outros grupos: finir (com -iss-), partir (sem -iss-) e attendre. E três irregulares que aparecem em toda conversa: aller (ir), venir (vir) e faire (fazer), que também dá o tempo (il fait beau) e o passado recente com «venir de».",
+    summary: "Depois dos verbos em -er, os outros grupos: finir (com -iss-), partir (sem -iss-) e attendre. E três irregulares que aparecem em toda conversa: aller (ir), venir (vir) e faire (fazer), que também dá o tempo (il fait beau) e o passado recente com “venir de”.",
     sections: [
       {
         heading: "Verbos em -ir: dois modelos",
@@ -1094,7 +1094,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Verbos em -re: attendre e prendre",
-        text: "O modelo é attendre: o d fica mudo no singular (il attend [il atɑ̃]) e soa no plural (ils attendent [il.z‿atɑ̃d]). Assim vão vendre, répondre, entendre, perdre, descendre. Prendre é irregular no plural (nous prenons, ils prennent) e serve de modelo para apprendre e comprendre. Atenção: «attendre» é esperar, e «entendre» é ouvir; «entender» é «comprendre».",
+        text: "O modelo é attendre: o d fica mudo no singular (il attend [il atɑ̃]) e soa no plural (ils attendent [il.z‿atɑ̃d]). Assim vão vendre, répondre, entendre, perdre, descendre. Prendre é irregular no plural (nous prenons, ils prennent) e serve de modelo para apprendre e comprendre. Atenção: “attendre” é esperar, e “entendre” é ouvir; “entender” é “comprendre”.",
         table: {
           head: ["Pronome", "attendre", "répondre", "prendre", "comprendre"],
           rows: [
@@ -1115,7 +1115,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Aller, venir, faire",
-        text: "Os três são irregulares e precisam ser decorados. Repare em «ils vont» e «ils font», parecidos com «ils sont» e «ils ont». E em «nous faisons», o «ai» soa [ə]: [nu fəzɔ̃].",
+        text: "Os três são irregulares e precisam ser decorados. Repare em “ils vont” e “ils font”, parecidos com “ils sont” e “ils ont”. E em “nous faisons”, o “ai” soa [ə]: [nu fəzɔ̃].",
         table: {
           head: ["Pronome", "aller (ir)", "venir (vir)", "faire (fazer)"],
           rows: [
@@ -1135,7 +1135,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Os usos que o português não tem",
-        text: "Faire dá o tempo (il fait beau, il fait froid, il fait vingt degrés) e as atividades com o partitivo: faire du sport, faire du vélo, faire de la natation, faire les courses (fazer as compras). Aller dá o «tudo bem»: ça va, comment allez-vous. E «venir de» + infinitivo é o passado recente, o nosso «acabar de»: «Je viens de manger» (acabei de comer). Não confunda com «venir de» + lugar (vir de).",
+        text: "Faire dá o tempo (il fait beau, il fait froid, il fait vingt degrés) e as atividades com o partitivo: faire du sport, faire du vélo, faire de la natation, faire les courses (fazer as compras). Aller dá o “tudo bem”: ça va, comment allez-vous. E “venir de” + infinitivo é o passado recente, o nosso “acabar de”: “Je viens de manger” (acabei de comer). Não confunda com “venir de” + lugar (vir de).",
         table: {
           head: ["Francês", "Português"],
           rows: [
@@ -1155,39 +1155,39 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Esquecer o -iss- de finir no plural: «nous finons». O certo é nous finissons, ils finissent.",
-      "Confundir «entendre» com entender: «Je n'entends pas» é «não estou ouvindo». «Não entendo» é «je ne comprends pas».",
-      "Traduzir o tempo com «être»: «il est froid» fala de uma coisa fria. O tempo está frio: il fait froid.",
-      "Dizer «vous faisez». A forma é irregular: vous faites (como vous êtes, vous dites).",
-      "Traduzir «acabei de» por «j'ai fini de» quando é passado recente: «Je viens de manger» (acabei de comer agora há pouco).",
+      "Esquecer o -iss- de finir no plural: “nous finons”. O certo é nous finissons, ils finissent.",
+      "Confundir “entendre” com entender: “Je n'entends pas” é “não estou ouvindo”. “Não entendo” é “je ne comprends pas”.",
+      "Traduzir o tempo com “être”: “il est froid” fala de uma coisa fria. O tempo está frio: il fait froid.",
+      "Dizer “vous faisez”. A forma é irregular: vous faites (como vous êtes, vous dites).",
+      "Traduzir “acabei de” por “j'ai fini de” quando é passado recente: “Je viens de manger” (acabei de comer agora há pouco).",
     ],
     quiz: [
       {
-        question: "Complete: «Nous ___ le travail à six heures.» (finir)",
+        question: "Complete: “Nous ___ le travail à six heures.” (finir)",
         options: ["finons", "finissons", "finisons"],
         answer: "finissons",
         explanation: "Finir ganha -iss- no plural: nous finissons.",
       },
       {
-        question: "Como se diz «Está calor hoje»?",
+        question: "Como se diz “Está calor hoje”?",
         options: ["Il est chaud aujourd'hui.", "Il fait chaud aujourd'hui.", "Il a chaud aujourd'hui."],
         answer: "Il fait chaud aujourd'hui.",
-        explanation: "O tempo usa faire: il fait chaud. «Il a chaud» é «ele está com calor».",
+        explanation: "O tempo usa faire: il fait chaud. “Il a chaud” é “ele está com calor”.",
       },
       {
-        question: "Complete: «Vous ___ quoi ce week-end ?» (faire)",
+        question: "Complete: “Vous ___ quoi ce week-end ?” (faire)",
         options: ["faisez", "faites", "font"],
         answer: "faites",
         explanation: "Faire é irregular com vous: vous faites.",
       },
       {
-        question: "O que quer dizer «Elle vient de partir»?",
+        question: "O que quer dizer “Elle vient de partir”?",
         options: ["Ela vem partir.", "Ela acabou de sair.", "Ela vai sair."],
         answer: "Ela acabou de sair.",
         explanation: "Venir de + infinitivo é o passado recente: acabar de.",
       },
       {
-        question: "Complete: «Ils ___ le train pour Lyon.» (prendre)",
+        question: "Complete: “Ils ___ le train pour Lyon.” (prendre)",
         options: ["prendent", "prennent", "prenent"],
         answer: "prennent",
         explanation: "Prendre dobra o n na 3ª do plural: ils prennent.",
@@ -1200,11 +1200,11 @@ export const GRAMMAR_FR: GrammarTopic[] = [
     level: "A2.2",
     title: "Passé composé com avoir e com être",
     emoji: "⏪",
-    summary: "O passé composé é o passado do dia a dia: «j'ai mangé» (comi), «je suis allé» (fui). A maioria dos verbos usa avoir; um grupo de verbos de movimento e mudança, e todos os pronominais, usam être, e aí o particípio concorda com o sujeito: elle est allée, ils sont partis.",
+    summary: "O passé composé é o passado do dia a dia: “j'ai mangé” (comi), “je suis allé” (fui). A maioria dos verbos usa avoir; um grupo de verbos de movimento e mudança, e todos os pronominais, usam être, e aí o particípio concorda com o sujeito: elle est allée, ils sont partis.",
     sections: [
       {
         heading: "Avoir + particípio passado",
-        text: "O passé composé corresponde ao nosso pretérito perfeito: uma ação concluída no passado. Forma-se com o presente de avoir + o particípio. Os particípios regulares: -er → -é (parlé), -ir → -i (fini), -re → -u (vendu). Na fala, «j'ai parlé», «tu as parlé» e «il a parlé» se distinguem só pelo auxiliar.",
+        text: "O passé composé corresponde ao nosso pretérito perfeito: uma ação concluída no passado. Forma-se com o presente de avoir + o particípio. Os particípios regulares: -er → -é (parlé), -ir → -i (fini), -re → -u (vendu). Na fala, “j'ai parlé”, “tu as parlé” e “il a parlé” se distinguem só pelo auxiliar.",
         table: {
           head: ["Pronome", "parler", "finir", "attendre"],
           rows: [
@@ -1270,7 +1270,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Sortir, monter, descendre, passer: com avoir quando têm objeto",
-        text: "Alguns verbos da lista mudam de auxiliar quando têm objeto direto, e aí o sentido muda também: «Elle est sortie» (ela saiu) × «Elle a sorti le chien» (ela levou o cachorro para passear).",
+        text: "Alguns verbos da lista mudam de auxiliar quando têm objeto direto, e aí o sentido muda também: “Elle est sortie” (ela saiu) × “Elle a sorti le chien” (ela levou o cachorro para passear).",
         examples: [
           ["Je suis monté au troisième étage.", "Subi até o terceiro andar."],
           ["J'ai monté les valises.", "Subi com as malas."],
@@ -1290,39 +1290,39 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Usar avoir com os verbos de movimento: «j'ai allé», «il a venu». O certo é je suis allé, il est venu.",
-      "Esquecer a concordância com être: «Elle est arrivé». Com être, o particípio concorda: elle est arrivée, ils sont partis.",
-      "Fazer concordar o particípio com o sujeito quando o auxiliar é avoir: «Elle a mangée». Com avoir, nesse caso, não concorda: elle a mangé.",
-      "Pôr o «pas» depois do particípio: «Je n'ai mangé pas». O pas fica depois do auxiliar: je n'ai pas mangé.",
-      "Regularizar os particípios: «j'ai prendu», «il a faisé». São pris e fait.",
+      "Usar avoir com os verbos de movimento: “j'ai allé”, “il a venu”. O certo é je suis allé, il est venu.",
+      "Esquecer a concordância com être: “Elle est arrivé”. Com être, o particípio concorda: elle est arrivée, ils sont partis.",
+      "Fazer concordar o particípio com o sujeito quando o auxiliar é avoir: “Elle a mangée”. Com avoir, nesse caso, não concorda: elle a mangé.",
+      "Pôr o “pas” depois do particípio: “Je n'ai mangé pas”. O pas fica depois do auxiliar: je n'ai pas mangé.",
+      "Regularizar os particípios: “j'ai prendu”, “il a faisé”. São pris e fait.",
     ],
     quiz: [
       {
-        question: "Complete: «Hier, nous ___ au cinéma.» (aller)",
+        question: "Complete: “Hier, nous ___ au cinéma.” (aller)",
         options: ["avons allé", "sommes allés", "sommes allé"],
         answer: "sommes allés",
         explanation: "Aller usa être, e o particípio concorda com nous (masculino ou misto): allés.",
       },
       {
-        question: "Complete: «Claire ___ en retard ce matin.» (arriver)",
+        question: "Complete: “Claire ___ en retard ce matin.” (arriver)",
         options: ["est arrivée", "a arrivé", "est arrivé"],
         answer: "est arrivée",
         explanation: "Arriver usa être, e Claire é feminino: arrivée.",
       },
       {
-        question: "Qual é o particípio de «prendre»?",
+        question: "Qual é o particípio de “prendre”?",
         options: ["prendu", "pris", "prit"],
         answer: "pris",
         explanation: "Prendre e seus derivados (apprendre, comprendre) fazem o particípio em -is: pris, appris, compris.",
       },
       {
-        question: "Como se diz «Não vi o filme»?",
+        question: "Como se diz “Não vi o filme”?",
         options: ["Je n'ai pas vu le film.", "Je n'ai vu pas le film.", "Je ne vu pas le film."],
         answer: "Je n'ai pas vu le film.",
         explanation: "Ne… pas em volta do auxiliar, e o particípio depois: je n'ai pas vu.",
       },
       {
-        question: "Complete: «Elle ___ la poubelle.» (sortir, com objeto)",
+        question: "Complete: “Elle ___ la poubelle.” (sortir, com objeto)",
         options: ["est sortie", "a sorti", "a sortie"],
         answer: "a sorti",
         explanation: "Com objeto direto, sortir usa avoir (e sem concordância com o sujeito): elle a sorti la poubelle.",
@@ -1360,7 +1360,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "A posição: quase sempre depois",
-        text: "Como em português, a maioria dos adjetivos vem depois do substantivo: un vin français, une robe rouge, un film intéressant. Mas um grupo de adjetivos curtos e muito usados vem antes. Para lembrar, pense em beleza, idade, bondade e tamanho: beau, joli; jeune, vieux, nouveau; bon, mauvais; grand, petit, gros, long. Na escrita cuidada, «des» vira «de» antes de adjetivo anteposto no plural: de belles plages, de bons amis.",
+        text: "Como em português, a maioria dos adjetivos vem depois do substantivo: un vin français, une robe rouge, un film intéressant. Mas um grupo de adjetivos curtos e muito usados vem antes. Para lembrar, pense em beleza, idade, bondade e tamanho: beau, joli; jeune, vieux, nouveau; bon, mauvais; grand, petit, gros, long. Na escrita cuidada, “des” vira “de” antes de adjetivo anteposto no plural: de belles plages, de bons amis.",
         table: {
           head: ["Antes do nome", "Português", "Depois do nome", "Português"],
           rows: [
@@ -1373,7 +1373,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Quando a posição muda o sentido",
-        text: "Alguns adjetivos têm um sentido antes e outro depois do substantivo, parecido com o que acontece em português com «grande homem» × «homem grande».",
+        text: "Alguns adjetivos têm um sentido antes e outro depois do substantivo, parecido com o que acontece em português com “grande homem” × “homem grande”.",
         table: {
           head: ["Antes", "Sentido", "Depois", "Sentido"],
           rows: [
@@ -1404,7 +1404,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Os possessivos",
-        text: "O possessivo concorda com a coisa possuída, não com o dono. Por isso «son» e «sa» servem tanto para «dele» quanto para «dela»: «son frère» é o irmão dele ou dela; «sa voiture» é o carro dele ou dela. Antes de palavra feminina que começa com vogal ou h mudo, usa-se mon, ton, son: mon amie, ton école, son histoire. E, ao contrário do português, o possessivo não leva artigo: «ma maison», não «la ma maison».",
+        text: "O possessivo concorda com a coisa possuída, não com o dono. Por isso “son” e “sa” servem tanto para “dele” quanto para “dela”: “son frère” é o irmão dele ou dela; “sa voiture” é o carro dele ou dela. Antes de palavra feminina que começa com vogal ou h mudo, usa-se mon, ton, son: mon amie, ton école, son histoire. E, ao contrário do português, o possessivo não leva artigo: “ma maison”, não “la ma maison”.",
         table: {
           head: ["Dono", "Masculino", "Feminino", "Plural"],
           rows: [
@@ -1425,7 +1425,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "O futur proche: aller + infinitivo",
-        text: "Igualzinho ao português «vou fazer»: o presente de aller + o infinitivo. É o futuro mais usado na fala, sobretudo para planos e para o que está prestes a acontecer. Na negação, o ne… pas abraça o aller: je ne vais pas sortir.",
+        text: "Igualzinho ao português “vou fazer”: o presente de aller + o infinitivo. É o futuro mais usado na fala, sobretudo para planos e para o que está prestes a acontecer. Na negação, o ne… pas abraça o aller: je ne vais pas sortir.",
         examples: [
           ["Demain, on va visiter le château de Chambord.", "Amanhã a gente vai visitar o castelo de Chambord."],
           ["Regarde le ciel, il va pleuvoir.", "Olha o céu, vai chover."],
@@ -1436,27 +1436,27 @@ export const GRAMMAR_FR: GrammarTopic[] = [
     ],
     pitfalls: [
       "Pôr todos os adjetivos antes, ou todos depois. A maioria vai depois; beau, joli, jeune, vieux, nouveau, bon, mauvais, grand, petit, gros e long vão antes.",
-      "Dizer «un beau appartement» ou «un nouveau ami». Antes de vogal: un bel appartement, un nouvel ami, un vieil homme.",
-      "Escolher o possessivo pelo dono: «la voiture de Paul» não é «son voiture». É sa voiture, porque voiture é feminino.",
-      "Dizer «ma amie», «ma école». Antes de vogal, mesmo no feminino: mon amie, mon école.",
-      "Pôr artigo antes do possessivo, como no português: «la ma sœur». Em francês: ma sœur.",
-      "Negar o infinitivo no futur proche: «je vais ne pas sortir» é raro e enfático. O normal é je ne vais pas sortir.",
+      "Dizer “un beau appartement” ou “un nouveau ami”. Antes de vogal: un bel appartement, un nouvel ami, un vieil homme.",
+      "Escolher o possessivo pelo dono: “la voiture de Paul” não é “son voiture”. É sa voiture, porque voiture é feminino.",
+      "Dizer “ma amie”, “ma école”. Antes de vogal, mesmo no feminino: mon amie, mon école.",
+      "Pôr artigo antes do possessivo, como no português: “la ma sœur”. Em francês: ma sœur.",
+      "Negar o infinitivo no futur proche: “je vais ne pas sortir” é raro e enfático. O normal é je ne vais pas sortir.",
     ],
     quiz: [
       {
-        question: "Complete: «C'est un ___ hôtel.»",
+        question: "Complete: “C'est un ___ hôtel.”",
         options: ["beau", "bel", "belle"],
         answer: "bel",
-        explanation: "«Hôtel» é masculino e começa com h mudo: bel.",
+        explanation: "“Hôtel” é masculino e começa com h mudo: bel.",
       },
       {
-        question: "«A casa da Marie» com possessivo:",
+        question: "“A casa da Marie” com possessivo:",
         options: ["sa maison", "son maison", "la sa maison"],
         answer: "sa maison",
-        explanation: "O possessivo concorda com «maison» (feminino), não com a dona: sa maison.",
+        explanation: "O possessivo concorda com “maison” (feminino), não com a dona: sa maison.",
       },
       {
-        question: "Complete: «Je te présente ___ amie Sophie.»",
+        question: "Complete: “Je te présente ___ amie Sophie.”",
         options: ["ma", "mon", "mes"],
         answer: "mon",
         explanation: "Antes de vogal, mesmo no feminino, usa-se mon: mon amie.",
@@ -1468,16 +1468,16 @@ export const GRAMMAR_FR: GrammarTopic[] = [
         explanation: "Cor vai depois do substantivo: une voiture rouge.",
       },
       {
-        question: "Como se diz «Não vamos viajar este ano»?",
+        question: "Como se diz “Não vamos viajar este ano”?",
         options: ["Nous n'allons pas voyager cette année.", "Nous allons ne voyager pas cette année.", "Nous ne voyageons aller pas cette année."],
         answer: "Nous n'allons pas voyager cette année.",
         explanation: "No futur proche, o ne… pas fica em volta de aller: nous n'allons pas voyager.",
       },
       {
-        question: "O que quer dizer «mon ancien professeur»?",
+        question: "O que quer dizer “mon ancien professeur”?",
         options: ["meu professor idoso", "meu ex-professor", "meu professor famoso"],
         answer: "meu ex-professor",
-        explanation: "Antes do nome, «ancien» quer dizer «ex-»; depois (une maison ancienne), «antigo».",
+        explanation: "Antes do nome, “ancien” quer dizer “ex-”; depois (une maison ancienne), “antigo”.",
       },
     ],
   },
@@ -1490,7 +1490,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
     summary: "Boa notícia: a divisão é quase a mesma do português. O imparfait é o nosso imperfeito (fazia, era, estava fazendo): descreve, pinta o cenário, conta hábitos. O passé composé é o nosso perfeito (fiz, fui): conta os fatos, um depois do outro. E o imparfait tem só um verbo irregular.",
     sections: [
       {
-        heading: "A formação: o radical do «nous»",
+        heading: "A formação: o radical do “nous”",
         text: "Pegue o presente com nous, tire o -ons e acrescente -ais, -ais, -ait, -ions, -iez, -aient. Serve para todos os verbos, até os irregulares: nous faisons → je faisais [fəzɛ], nous prenons → je prenais, nous avons → j'avais. A única exceção é être: j'étais. Quatro das seis formas soam iguais, [ɛ]. Os verbos em -ger e -cer mantêm o e e a cedilha antes de a: je mangeais, je commençais (mas nous mangions, nous commencions).",
         table: {
           head: ["Pronome", "parler", "finir", "faire", "être"],
@@ -1506,7 +1506,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Quando usar cada um",
-        text: "Se em português você diria «fazia», «era», «estava fazendo», «costumava», use o imparfait. Se diria «fiz», «fui», «aconteceu», use o passé composé. Num relato, o imparfait é o pano de fundo (o tempo, o lugar, como as pessoas estavam) e o passé composé são os acontecimentos que fazem a história andar.",
+        text: "Se em português você diria “fazia”, “era”, “estava fazendo”, “costumava”, use o imparfait. Se diria “fiz”, “fui”, “aconteceu”, use o passé composé. Num relato, o imparfait é o pano de fundo (o tempo, o lugar, como as pessoas estavam) e o passé composé são os acontecimentos que fazem a história andar.",
         table: {
           head: ["Imparfait", "Passé composé"],
           rows: [
@@ -1535,8 +1535,8 @@ export const GRAMMAR_FR: GrammarTopic[] = [
         ],
       },
       {
-        heading: "Onde o português engana: «foi»",
-        text: "Para avaliar uma experiência passada, o português usa «foi» («Foi ótimo!»), mas o francês prefere o imparfait: «C'était génial !». Também existe «ça a été», mas «c'était» é bem mais comum. Da mesma forma, «havia» e «tinha» de descrição são «il y avait» e «j'avais».",
+        heading: "Onde o português engana: “foi”",
+        text: "Para avaliar uma experiência passada, o português usa “foi” (“Foi ótimo!”), mas o francês prefere o imparfait: “C'était génial !”. Também existe “ça a été”, mas “c'était” é bem mais comum. Da mesma forma, “havia” e “tinha” de descrição são “il y avait” e “j'avais”.",
         examples: [
           ["Tes vacances en Martinique ? — C'était génial !", "Suas férias na Martinica? — Foram incríveis!"],
           ["Il y avait beaucoup de touristes à Avignon.", "Tinha muitos turistas em Avignon."],
@@ -1545,7 +1545,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Dois usos especiais do imparfait",
-        text: "Para pedir algo com delicadeza: «Je voulais vous demander…» (Eu queria lhe pedir…), como o nosso «queria». E, depois de «si», para fazer uma sugestão: «Si on allait au cinéma ?» (E se a gente fosse ao cinema?).",
+        text: "Para pedir algo com delicadeza: “Je voulais vous demander…” (Eu queria lhe pedir…), como o nosso “queria”. E, depois de “si”, para fazer uma sugestão: “Si on allait au cinéma ?” (E se a gente fosse ao cinema?).",
         examples: [
           ["Bonjour, je voulais savoir si la pharmacie est ouverte dimanche.", "Bom dia, eu queria saber se a farmácia abre no domingo."],
           ["Si on allait voir la mer ?", "E se a gente fosse ver o mar?"],
@@ -1553,42 +1553,42 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Usar o passé composé para descrever: «Il a fait beau et la mer a été calme» soa como fatos pontuais. Na descrição: il faisait beau, la mer était calme.",
-      "Usar o imparfait para uma série de ações: «J'entrais, je regardais, j'achetais». Fatos em sequência vão no passé composé.",
-      "Traduzir «Foi ótimo!» por «Il a été super !». Para avaliar, o natural é «C'était super !».",
-      "Fazer o imparfait a partir do infinitivo: «je prendais», «je faiais». O radical vem do nous: prenions → je prenais; faisons → je faisais.",
-      "Esquecer o i em nous e vous: «nous parlons» é presente; o imparfait é nous parlions, vous parliez.",
+      "Usar o passé composé para descrever: “Il a fait beau et la mer a été calme” soa como fatos pontuais. Na descrição: il faisait beau, la mer était calme.",
+      "Usar o imparfait para uma série de ações: “J'entrais, je regardais, j'achetais”. Fatos em sequência vão no passé composé.",
+      "Traduzir “Foi ótimo!” por “Il a été super !”. Para avaliar, o natural é “C'était super !”.",
+      "Fazer o imparfait a partir do infinitivo: “je prendais”, “je faiais”. O radical vem do nous: prenions → je prenais; faisons → je faisais.",
+      "Esquecer o i em nous e vous: “nous parlons” é presente; o imparfait é nous parlions, vous parliez.",
     ],
     quiz: [
       {
-        question: "Complete: «Quand j'___ enfant, j'habitais à Lille.» (être)",
+        question: "Complete: “Quand j'___ enfant, j'habitais à Lille.” (être)",
         options: ["étais", "ai été", "étaient"],
         answer: "étais",
         explanation: "Descrição de um estado no passado: imparfait, j'étais.",
       },
       {
-        question: "Complete: «Je prenais une douche quand le téléphone ___.»",
+        question: "Complete: “Je prenais une douche quand le téléphone ___.”",
         options: ["sonnait", "a sonné", "sonne"],
         answer: "a sonné",
         explanation: "A ação em curso (je prenais) está no imparfait; o fato que interrompe vai no passé composé: a sonné.",
       },
       {
-        question: "Como se diz «A festa foi ótima!»?",
+        question: "Como se diz “A festa foi ótima!”?",
         options: ["La fête a été super !", "La fête était super !", "La fête est super !"],
         answer: "La fête était super !",
         explanation: "Para avaliar uma experiência passada, o francês prefere o imparfait: c'était, était.",
       },
       {
-        question: "Complete: «Tous les samedis, nous ___ au marché.» (aller)",
+        question: "Complete: “Tous les samedis, nous ___ au marché.” (aller)",
         options: ["sommes allés", "allions", "allons"],
         answer: "allions",
-        explanation: "«Todos os sábados» indica hábito no passado: imparfait, nous allions.",
+        explanation: "“Todos os sábados” indica hábito no passado: imparfait, nous allions.",
       },
       {
-        question: "Qual é o imparfait de «je fais»?",
+        question: "Qual é o imparfait de “je fais”?",
         options: ["je faisais", "je fairais", "je fais"],
         answer: "je faisais",
-        explanation: "Radical de «nous faisons» + -ais: je faisais, pronunciado [fəzɛ].",
+        explanation: "Radical de “nous faisons” + -ais: je faisais, pronunciado [fəzɛ].",
       },
     ],
   },
@@ -1597,11 +1597,11 @@ export const GRAMMAR_FR: GrammarTopic[] = [
     level: "B1.1",
     title: "Pronomes COD e COI, y e en, e o imperativo",
     emoji: "🎯",
-    summary: "No Brasil dizemos «vi ele», «liguei pra ela» ou só «comprei». O francês não deixa o objeto sumir: vira le, la, les (direto) ou lui, leur (indireto), antes do verbo. E há dois pronomes sem equivalente em português: y (lá, nisso) e en (disso, deles). No imperativo afirmativo, eles vão para depois do verbo: donne-le-moi.",
+    summary: "No Brasil dizemos “vi ele”, “liguei pra ela” ou só “comprei”. O francês não deixa o objeto sumir: vira le, la, les (direto) ou lui, leur (indireto), antes do verbo. E há dois pronomes sem equivalente em português: y (lá, nisso) e en (disso, deles). No imperativo afirmativo, eles vão para depois do verbo: donne-le-moi.",
     sections: [
       {
         heading: "COD e COI: direto e indireto",
-        text: "O objeto direto (COD) liga-se ao verbo sem preposição: je vois Marie → je la vois. O indireto (COI) vem com «à» + pessoa: je parle à Marie → je lui parle. «Lui» vale para ele e para ela; «leur», para eles e elas. O pronome fica antes do verbo conjugado. Com um infinitivo, fica antes do infinitivo: «Je vais le voir» (vou vê-lo), «Je peux lui parler».",
+        text: "O objeto direto (COD) liga-se ao verbo sem preposição: je vois Marie → je la vois. O indireto (COI) vem com “à” + pessoa: je parle à Marie → je lui parle. “Lui” vale para ele e para ela; “leur”, para eles e elas. O pronome fica antes do verbo conjugado. Com um infinitivo, fica antes do infinitivo: “Je vais le voir” (vou vê-lo), “Je peux lui parler”.",
         table: {
           head: ["Pessoa", "COD (direto)", "COI (indireto, à + pessoa)"],
           rows: [
@@ -1622,7 +1622,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Direto ou indireto? A regência nem sempre bate com o português",
-        text: "Verbos com «à» + pessoa pedem lui/leur: parler, dire, écrire, téléphoner, demander, répondre, donner, offrir, sourire à quelqu'un. Mas alguns verbos que em português têm preposição são diretos em francês: attendre quelqu'un (esperar por alguém), chercher (procurar), écouter (escutar), regarder (olhar para), aider (ajudar) e remercier (agradecer a). Com «penser à» e «s'intéresser à», a pessoa não vira lui: «Je pense à toi», «Je pense à elle».",
+        text: "Verbos com “à” + pessoa pedem lui/leur: parler, dire, écrire, téléphoner, demander, répondre, donner, offrir, sourire à quelqu'un. Mas alguns verbos que em português têm preposição são diretos em francês: attendre quelqu'un (esperar por alguém), chercher (procurar), écouter (escutar), regarder (olhar para), aider (ajudar) e remercier (agradecer a). Com “penser à” e “s'intéresser à”, a pessoa não vira lui: “Je pense à toi”, “Je pense à elle”.",
         table: {
           head: ["Verbo", "Regência", "Com pronome", "Português"],
           rows: [
@@ -1638,7 +1638,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "No passé composé: a concordância com o COD",
-        text: "O pronome vem antes do auxiliar: je l'ai vu, je lui ai parlé. E aqui aparece uma regra sem equivalente em português: quando o COD vem antes do verbo, o particípio com avoir concorda com ele. Com o COI (lui, leur), nada muda. Às vezes a concordância se ouve: «la lettre ? je l'ai écrite» [ekʁit], «les photos ? je les ai prises» [pʁiz].",
+        text: "O pronome vem antes do auxiliar: je l'ai vu, je lui ai parlé. E aqui aparece uma regra sem equivalente em português: quando o COD vem antes do verbo, o particípio com avoir concorda com ele. Com o COI (lui, leur), nada muda. Às vezes a concordância se ouve: “la lettre ? je l'ai écrite” [ekʁit], “les photos ? je les ai prises” [pʁiz].",
         examples: [
           ["La lettre ? Je l'ai écrite ce matin.", "A carta? Escrevi hoje de manhã."],
           ["Tes clés ? Je les ai mises sur la table.", "Suas chaves? Coloquei na mesa."],
@@ -1647,7 +1647,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Y: lá, nisso",
-        text: "«Y» substitui um lugar introduzido por à, en, chez, dans, sur (Tu vas à Lyon ? — Oui, j'y vais) e também «à + coisa» com verbos como penser à, réfléchir à, s'intéresser à (Tu penses à l'examen ? — Oui, j'y pense). Onde o português diz só «vou», o francês diz «j'y vais». Aparece em expressões fixas: il y a, on y va (vamos lá), ça y est (pronto, conseguimos).",
+        text: "“Y” substitui um lugar introduzido por à, en, chez, dans, sur (Tu vas à Lyon ? — Oui, j'y vais) e também “à + coisa” com verbos como penser à, réfléchir à, s'intéresser à (Tu penses à l'examen ? — Oui, j'y pense). Onde o português diz só “vou”, o francês diz “j'y vais”. Aparece em expressões fixas: il y a, on y va (vamos lá), ça y est (pronto, conseguimos).",
         examples: [
           ["Tu vas souvent à Nice ? — Oui, j'y vais chaque été.", "Você vai muito a Nice? — Vou, todo verão."],
           ["Tu as pensé à mon idée ? — J'y réfléchis.", "Você pensou na minha ideia? — Estou pensando."],
@@ -1656,7 +1656,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "En: disso, deles",
-        text: "«En» substitui «de» + coisa (parler de, avoir besoin de, venir de + lugar), o partitivo (du, de la, des) e o substantivo depois de um número ou de uma quantidade. Com números ele é obrigatório: à pergunta «Quantos irmãos você tem?», o brasileiro responde «Tenho dois»; o francês, «J'en ai deux».",
+        text: "“En” substitui “de” + coisa (parler de, avoir besoin de, venir de + lugar), o partitivo (du, de la, des) e o substantivo depois de um número ou de uma quantidade. Com números ele é obrigatório: à pergunta “Quantos irmãos você tem?”, o brasileiro responde “Tenho dois”; o francês, “J'en ai deux”.",
         table: {
           head: ["Uso", "Pergunta", "Resposta com en"],
           rows: [
@@ -1671,7 +1671,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "A ordem quando há dois pronomes",
-        text: "Quando dois pronomes se encontram, a ordem é fixa: me, te, nous, vous → le, la, les → lui, leur → y → en. Na prática, os mais comuns são: «Je te le donne», «Je le lui donne», «Il y en a».",
+        text: "Quando dois pronomes se encontram, a ordem é fixa: me, te, nous, vous → le, la, les → lui, leur → y → en. Na prática, os mais comuns são: “Je te le donne”, “Je le lui donne”, “Il y en a”.",
         examples: [
           ["Ton livre ? Je te le rends demain.", "Seu livro? Te devolvo amanhã."],
           ["La photo ? Je la lui ai montrée.", "A foto? Mostrei para ele."],
@@ -1717,50 +1717,50 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Omitir o objeto como no português falado: «Tu as acheté le pain ? — Oui, j'ai acheté.». O certo é «Oui, je l'ai acheté».",
-      "Usar «le» ou «la» com verbos de «à» + pessoa: «Je la téléphone». Téléphoner à é indireto: je lui téléphone.",
-      "Traduzir a preposição do português: «J'attends pour lui», «J'aide à lui». Attendre e aider são diretos: je l'attends, je l'aide.",
-      "Esquecer o «en» com números: «J'ai deux» fica manco. É «J'en ai deux».",
-      "Responder «Oui, je vais» sem o y. O natural é «Oui, j'y vais».",
-      "Esquecer a concordância com o COD anteposto: «La lettre ? Je l'ai écrit». É je l'ai écrite.",
-      "Pôr o pronome antes no imperativo afirmativo: «Me donne le livre !». O certo é «Donne-moi le livre !».",
+      "Omitir o objeto como no português falado: “Tu as acheté le pain ? — Oui, j'ai acheté.”. O certo é “Oui, je l'ai acheté”.",
+      "Usar “le” ou “la” com verbos de “à” + pessoa: “Je la téléphone”. Téléphoner à é indireto: je lui téléphone.",
+      "Traduzir a preposição do português: “J'attends pour lui”, “J'aide à lui”. Attendre e aider são diretos: je l'attends, je l'aide.",
+      "Esquecer o “en” com números: “J'ai deux” fica manco. É “J'en ai deux”.",
+      "Responder “Oui, je vais” sem o y. O natural é “Oui, j'y vais”.",
+      "Esquecer a concordância com o COD anteposto: “La lettre ? Je l'ai écrit”. É je l'ai écrite.",
+      "Pôr o pronome antes no imperativo afirmativo: “Me donne le livre !”. O certo é “Donne-moi le livre !”.",
     ],
     quiz: [
       {
-        question: "«Tu vois tes parents ce week-end ?» Qual é a resposta certa?",
+        question: "“Tu vois tes parents ce week-end ?” Qual é a resposta certa?",
         options: ["Oui, je les vois samedi.", "Oui, je leur vois samedi.", "Oui, je vois samedi."],
         answer: "Oui, je les vois samedi.",
-        explanation: "Voir quelqu'un é direto: les. «Leur» é indireto, e sem pronome a resposta fica incompleta.",
+        explanation: "Voir quelqu'un é direto: les. “Leur” é indireto, e sem pronome a resposta fica incompleta.",
       },
       {
-        question: "Complete: «Marie ? Je ___ téléphone ce soir.»",
+        question: "Complete: “Marie ? Je ___ téléphone ce soir.”",
         options: ["la", "lui", "le"],
         answer: "lui",
         explanation: "Téléphoner à quelqu'un é indireto: lui (serve para ele e para ela).",
       },
       {
-        question: "«Combien de sœurs as-tu ?» Qual é a resposta certa?",
+        question: "“Combien de sœurs as-tu ?” Qual é a resposta certa?",
         options: ["J'ai deux.", "J'en ai deux.", "J'y ai deux."],
         answer: "J'en ai deux.",
-        explanation: "Com número, o substantivo retomado vira «en», que é obrigatório.",
+        explanation: "Com número, o substantivo retomado vira “en”, que é obrigatório.",
       },
       {
-        question: "Complete: «Les photos ? Je les ai ___.» (prendre)",
+        question: "Complete: “Les photos ? Je les ai ___.” (prendre)",
         options: ["pris", "prises", "prise"],
         answer: "prises",
-        explanation: "O COD «les» (as fotos, feminino plural) vem antes de avoir: o particípio concorda, prises.",
+        explanation: "O COD “les” (as fotos, feminino plural) vem antes de avoir: o particípio concorda, prises.",
       },
       {
-        question: "Qual é o imperativo certo de «Me espere!» (tu)?",
+        question: "Qual é o imperativo certo de “Me espere!” (tu)?",
         options: ["Attends-moi !", "M'attends !", "Attends-me !"],
         answer: "Attends-moi !",
-        explanation: "No imperativo afirmativo, o pronome vai depois, com hífen, e «me» vira «moi».",
+        explanation: "No imperativo afirmativo, o pronome vai depois, com hífen, e “me” vira “moi”.",
       },
       {
-        question: "Complete: «Tu vas à la piscine ? — Oui, j'___ vais.»",
+        question: "Complete: “Tu vas à la piscine ? — Oui, j'___ vais.”",
         options: ["y", "en", "le"],
         answer: "y",
-        explanation: "«Y» retoma o lugar introduzido por à: j'y vais.",
+        explanation: "“Y” retoma o lugar introduzido por à: j'y vais.",
       },
     ],
   },
@@ -1770,7 +1770,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
     level: "B1.2",
     title: "Futur simple e futur antérieur",
     emoji: "🔮",
-    summary: "O futuro simples (je parlerai) é bem vivo no francês, ao lado do futur proche (je vais parler). E depois de «quand», onde o português usa o futuro do subjuntivo («quando eu chegar»), o francês usa o futuro: «quand j'arriverai».",
+    summary: "O futuro simples (je parlerai) é bem vivo no francês, ao lado do futur proche (je vais parler). E depois de “quand”, onde o português usa o futuro do subjuntivo (“quando eu chegar”), o francês usa o futuro: “quand j'arriverai”.",
     sections: [
       {
         text: "A formação é simples: pega-se o infinitivo e acrescentam-se as terminações -ai, -as, -a, -ons, -ez, -ont (que lembram o presente de avoir). Os verbos em -re perdem o e final: prendre → je prendrai. Na fala, as formas do singular e a do ils soam quase iguais: parlerai, parleras, parlera, parleront.",
@@ -1810,7 +1810,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Futur simple × futur proche",
-        text: "O futur proche (aller + infinitivo) é o preferido da conversa para o que está perto ou já decidido. O futur simple serve para o futuro mais distante ou incerto, para previsões, promessas e na escrita. Diferente do «falarei» brasileiro, ele não soa pedante: é comum na fala, sobretudo em promessas e previsões.",
+        text: "O futur proche (aller + infinitivo) é o preferido da conversa para o que está perto ou já decidido. O futur simple serve para o futuro mais distante ou incerto, para previsões, promessas e na escrita. Diferente do “falarei” brasileiro, ele não soa pedante: é comum na fala, sobretudo em promessas e previsões.",
         examples: [
           ["Attention, tu vas tomber !", "Cuidado, você vai cair!"],
           ["Un jour, je visiterai Tahiti.", "Um dia eu vou conhecer o Taiti."],
@@ -1820,7 +1820,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Quand + futuro, si + presente",
-        text: "O português usa o futuro do subjuntivo («quando eu chegar», «assim que você puder»), que o francês não tem. Depois de quand, lorsque, dès que, aussitôt que, o francês põe o verbo no futuro. Já depois do «si» de condição, NUNCA vai futuro: «si tu peux» (se você puder). O futur antérieur (avoir ou être no futuro + particípio) marca o que estará terminado antes de outro fato futuro.",
+        text: "O português usa o futuro do subjuntivo (“quando eu chegar”, “assim que você puder”), que o francês não tem. Depois de quand, lorsque, dès que, aussitôt que, o francês põe o verbo no futuro. Já depois do “si” de condição, NUNCA vai futuro: “si tu peux” (se você puder). O futur antérieur (avoir ou être no futuro + particípio) marca o que estará terminado antes de outro fato futuro.",
         table: {
           head: ["Português", "Francês"],
           rows: [
@@ -1839,42 +1839,42 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Pôr o futuro depois do «si» de condição: «Si tu viendras» está errado. É «Si tu viens, on ira au cinéma».",
-      "Usar o presente depois de «quand» para um fato futuro, calcando o «quando eu chegar»: na escrita e na fala cuidada, é «Quand j'arriverai, je t'appellerai».",
-      "Manter o e dos verbos em -re: «je prendreai», «je vendreai». O certo é je prendrai, je vendrai.",
-      "Inventar radicais regulares: «j'allerai», «je faisrai», «je pouverai». O certo é j'irai, je ferai, je pourrai.",
+      "Pôr o futuro depois do “si” de condição: “Si tu viendras” está errado. É “Si tu viens, on ira au cinéma”.",
+      "Usar o presente depois de “quand” para um fato futuro, calcando o “quando eu chegar”: na escrita e na fala cuidada, é “Quand j'arriverai, je t'appellerai”.",
+      "Manter o e dos verbos em -re: “je prendreai”, “je vendreai”. O certo é je prendrai, je vendrai.",
+      "Inventar radicais regulares: “j'allerai”, “je faisrai”, “je pouverai”. O certo é j'irai, je ferai, je pourrai.",
       "Confundir je serai (ser, estar) com je saurai (saber): mudam só uma letra e o sentido inteiro.",
     ],
     quiz: [
       {
-        question: "Qual é o futuro de «aller» para «je»?",
+        question: "Qual é o futuro de “aller” para “je”?",
         options: ["j'allerai", "j'irai", "je vais"],
         answer: "j'irai",
-        explanation: "Aller tem radical irregular no futuro: ir-. «Je vais» é o presente.",
+        explanation: "Aller tem radical irregular no futuro: ir-. “Je vais” é o presente.",
       },
       {
-        question: "Como se diz «Quando você chegar a Lyon, me liga»?",
+        question: "Como se diz “Quando você chegar a Lyon, me liga”?",
         options: ["Quand tu arriveras à Lyon, appelle-moi.", "Quand tu arriverais à Lyon, appelle-moi.", "Quand tu arrives à Lyon, tu m'appelleras demain."],
         answer: "Quand tu arriveras à Lyon, appelle-moi.",
-        explanation: "O francês não tem futuro do subjuntivo: depois de «quand», fato futuro vai no futur simple.",
+        explanation: "O francês não tem futuro do subjuntivo: depois de “quand”, fato futuro vai no futur simple.",
       },
       {
-        question: "Complete: «S'il ___ demain, on restera à la maison.» (pleuvoir)",
+        question: "Complete: “S'il ___ demain, on restera à la maison.” (pleuvoir)",
         options: ["pleut", "pleuvra", "pleuvrait"],
         answer: "pleut",
-        explanation: "Depois do «si» de condição vai o presente, nunca o futuro: «s'il pleut».",
+        explanation: "Depois do “si” de condição vai o presente, nunca o futuro: “s'il pleut”.",
       },
       {
-        question: "Qual é o futuro de «prendre» para «nous»?",
+        question: "Qual é o futuro de “prendre” para “nous”?",
         options: ["nous prendrons", "nous prenderons", "nous prendreons"],
         answer: "nous prendrons",
         explanation: "Nos verbos em -re, cai o e final do infinitivo: prendr- + -ons.",
       },
       {
-        question: "Complete: «Je t'appellerai dès que j'___ fini.»",
+        question: "Complete: “Je t'appellerai dès que j'___ fini.”",
         options: ["aurai", "ai", "aurais"],
         answer: "aurai",
-        explanation: "Ação futura concluída antes de outra: futur antérieur, «dès que j'aurai fini».",
+        explanation: "Ação futura concluída antes de outra: futur antérieur, “dès que j'aurai fini”.",
       },
     ],
   },
@@ -1883,11 +1883,11 @@ export const GRAMMAR_FR: GrammarTopic[] = [
     level: "B1.2",
     title: "Pronomes relativos: qui, que, où, dont",
     emoji: "🔗",
-    summary: "O brasileiro usa «que» para tudo; o francês separa: qui é sujeito, que é objeto, où serve para lugar e também para tempo («le jour où»), e dont substitui o «de» (la personne dont je parle, a pessoa de quem falo).",
+    summary: "O brasileiro usa “que” para tudo; o francês separa: qui é sujeito, que é objeto, où serve para lugar e também para tempo (“le jour où”), e dont substitui o “de” (la personne dont je parle, a pessoa de quem falo).",
     sections: [
       {
         heading: "Qui (sujeito) × que (objeto)",
-        text: "O teste é olhar o que vem depois. Se vem logo um verbo, o relativo é o sujeito dele: qui. Se vem um sujeito com verbo (je, tu, Paul…), o relativo é o objeto: que. «Que» sofre elisão (qu'il, qu'elle, qu'on); «qui» NUNCA: «l'ami qui arrive», «la femme qui a appelé».",
+        text: "O teste é olhar o que vem depois. Se vem logo um verbo, o relativo é o sujeito dele: qui. Se vem um sujeito com verbo (je, tu, Paul…), o relativo é o objeto: que. “Que” sofre elisão (qu'il, qu'elle, qu'on); “qui” NUNCA: “l'ami qui arrive”, “la femme qui a appelé”.",
         table: {
           head: ["Relativo", "Função", "Exemplo"],
           rows: [
@@ -1906,7 +1906,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Que e a concordância do particípio",
-        text: "Quando «que» retoma um objeto feminino ou plural e o verbo está no passé composé com avoir, o particípio concorda com esse objeto, que veio antes. Na fala quase nunca se ouve (pris × prises), mas na escrita conta, e às vezes se ouve: «la lettre qu'il a écrite».",
+        text: "Quando “que” retoma um objeto feminino ou plural e o verbo está no passé composé com avoir, o particípio concorda com esse objeto, que veio antes. Na fala quase nunca se ouve (pris × prises), mas na escrita conta, e às vezes se ouve: “la lettre qu'il a écrite”.",
         examples: [
           ["Les photos que j'ai prises à Chamonix sont superbes.", "As fotos que eu tirei em Chamonix estão lindas."],
           ["La lettre qu'il a écrite était très longue.", "A carta que ele escreveu era muito longa."],
@@ -1915,7 +1915,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Où: lugar e tempo",
-        text: "«Où» é o «onde» de lugar e também o «em que» de tempo: le jour où, l'année où, le moment où. Nada de «le jour que» nem «le jour en que».",
+        text: "“Où” é o “onde” de lugar e também o “em que” de tempo: le jour où, l'année où, le moment où. Nada de “le jour que” nem “le jour en que”.",
         examples: [
           ["La maison où j'ai grandi est en Normandie.", "A casa onde eu cresci fica na Normandia."],
           ["Le jour où je suis arrivé à Québec, il neigeait.", "No dia em que cheguei a Quebec, estava nevando."],
@@ -1923,8 +1923,8 @@ export const GRAMMAR_FR: GrammarTopic[] = [
         ],
       },
       {
-        heading: "Dont: o relativo do «de»",
-        text: "«Dont» substitui um complemento introduzido por de: parler de, avoir besoin de, se souvenir de, être fier de, avoir peur de. Também faz o papel do nosso «cujo», que o francês usa sem cerimônia na fala.",
+        heading: "Dont: o relativo do “de”",
+        text: "“Dont” substitui um complemento introduzido por de: parler de, avoir besoin de, se souvenir de, être fier de, avoir peur de. Também faz o papel do nosso “cujo”, que o francês usa sem cerimônia na fala.",
         table: {
           head: ["Construção", "Com dont", "Português"],
           rows: [
@@ -1941,8 +1941,8 @@ export const GRAMMAR_FR: GrammarTopic[] = [
         ],
       },
       {
-        heading: "Ce qui, ce que, ce dont: «o que»",
-        text: "Quando o «o que» não retoma nenhum substantivo, o francês põe «ce» antes do relativo, com a mesma lógica: ce qui (sujeito), ce que (objeto), ce dont (com de). Depois de preposição, usa-se qui para pessoas (avec qui) e lequel, laquelle, lesquels, lesquelles para coisas (sur laquelle).",
+        heading: "Ce qui, ce que, ce dont: “o que”",
+        text: "Quando o “o que” não retoma nenhum substantivo, o francês põe “ce” antes do relativo, com a mesma lógica: ce qui (sujeito), ce que (objeto), ce dont (com de). Depois de preposição, usa-se qui para pessoas (avec qui) e lequel, laquelle, lesquels, lesquelles para coisas (sur laquelle).",
         examples: [
           ["Ce qui m'intéresse, c'est l'histoire de la ville.", "O que me interessa é a história da cidade."],
           ["Dis-moi ce que tu veux.", "Me diz o que você quer."],
@@ -1953,42 +1953,42 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Usar «que» como sujeito, como no português: «l'homme que parle» está errado. É «l'homme qui parle».",
-      "Fazer elisão com qui: «l'ami qu'arrive» está errado. «Qui» nunca perde o i: «l'ami qui arrive».",
-      "Usar «que» onde cabe «dont»: «le film que je t'ai parlé» se ouve até de franceses, mas é erro. É «le film dont je t'ai parlé».",
-      "Traduzir «o dia em que» palavra por palavra: é «le jour où».",
-      "Esquecer o «ce» em «o que»: «Je ne sais pas que tu veux» está errado. É «Je ne sais pas ce que tu veux».",
+      "Usar “que” como sujeito, como no português: “l'homme que parle” está errado. É “l'homme qui parle”.",
+      "Fazer elisão com qui: “l'ami qu'arrive” está errado. “Qui” nunca perde o i: “l'ami qui arrive”.",
+      "Usar “que” onde cabe “dont”: “le film que je t'ai parlé” se ouve até de franceses, mas é erro. É “le film dont je t'ai parlé”.",
+      "Traduzir “o dia em que” palavra por palavra: é “le jour où”.",
+      "Esquecer o “ce” em “o que”: “Je ne sais pas que tu veux” está errado. É “Je ne sais pas ce que tu veux”.",
     ],
     quiz: [
       {
-        question: "Complete: «Le train ___ part à midi va à Bordeaux.»",
+        question: "Complete: “Le train ___ part à midi va à Bordeaux.”",
         options: ["qui", "que", "dont"],
         answer: "qui",
-        explanation: "Depois do relativo vem direto o verbo (part): ele é o sujeito, então é «qui».",
+        explanation: "Depois do relativo vem direto o verbo (part): ele é o sujeito, então é “qui”.",
       },
       {
-        question: "Complete: «Le gâteau ___ tu as fait est délicieux.»",
+        question: "Complete: “Le gâteau ___ tu as fait est délicieux.”",
         options: ["qui", "que", "où"],
         answer: "que",
-        explanation: "Depois vem um sujeito (tu): o relativo é o objeto de «faire», então é «que».",
+        explanation: "Depois vem um sujeito (tu): o relativo é o objeto de “faire”, então é “que”.",
       },
       {
-        question: "Como se diz «É o livro de que eu preciso»?",
+        question: "Como se diz “É o livro de que eu preciso”?",
         options: ["C'est le livre dont j'ai besoin.", "C'est le livre que j'ai besoin.", "C'est le livre où j'ai besoin."],
         answer: "C'est le livre dont j'ai besoin.",
-        explanation: "«Avoir besoin de» pede «dont», o relativo que substitui o complemento com de.",
+        explanation: "“Avoir besoin de” pede “dont”, o relativo que substitui o complemento com de.",
       },
       {
-        question: "Como se diz «no dia em que ela chegou»?",
+        question: "Como se diz “no dia em que ela chegou”?",
         options: ["le jour où elle est arrivée", "le jour qu'elle est arrivée", "le jour en qu'elle est arrivée"],
         answer: "le jour où elle est arrivée",
-        explanation: "Para tempo, o francês também usa «où»: le jour où, l'année où.",
+        explanation: "Para tempo, o francês também usa “où”: le jour où, l'année où.",
       },
       {
-        question: "Complete: «Explique-moi ___ s'est passé.»",
+        question: "Complete: “Explique-moi ___ s'est passé.”",
         options: ["ce qui", "ce que", "qui"],
         answer: "ce qui",
-        explanation: "«O que» sem antecedente leva «ce»; como é sujeito de «s'est passé», fica «ce qui».",
+        explanation: "“O que” sem antecedente leva “ce”; como é sujeito de “s'est passé”, fica “ce qui”.",
       },
     ],
   },
@@ -1997,11 +1997,11 @@ export const GRAMMAR_FR: GrammarTopic[] = [
     level: "B1.2",
     title: "Comparativo e superlativo: plus, moins, aussi, meilleur, mieux",
     emoji: "📏",
-    summary: "Plus… que, moins… que, aussi… que: a estrutura é a do português. O cuidado está nos irregulares (meilleur é o adjetivo, mieux é o advérbio), no «autant de» para quantidades e no artigo repetido do superlativo: «la ville la plus belle».",
+    summary: "Plus… que, moins… que, aussi… que: a estrutura é a do português. O cuidado está nos irregulares (meilleur é o adjetivo, mieux é o advérbio), no “autant de” para quantidades e no artigo repetido do superlativo: “la ville la plus belle”.",
     sections: [
       {
         heading: "Comparar adjetivos e advérbios",
-        text: "Plus (mais), moins (menos) e aussi (tão) vêm antes do adjetivo ou do advérbio, e o segundo termo entra com «que» (qu' antes de vogal). O adjetivo concorda normalmente. Com pronome, usa-se a forma tônica: plus grand que moi, que toi, que lui.",
+        text: "Plus (mais), moins (menos) e aussi (tão) vêm antes do adjetivo ou do advérbio, e o segundo termo entra com “que” (qu' antes de vogal). O adjetivo concorda normalmente. Com pronome, usa-se a forma tônica: plus grand que moi, que toi, que lui.",
         table: {
           head: ["Português", "Francês"],
           rows: [
@@ -2021,7 +2021,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Quantidades e verbos: autant de, plus de, moins de",
-        text: "Para comparar quantidades (com substantivo), o francês usa plus de, moins de, autant de, sem artigo depois. Com verbo, plus, moins e autant vêm depois dele: «il travaille plus que moi».",
+        text: "Para comparar quantidades (com substantivo), o francês usa plus de, moins de, autant de, sem artigo depois. Com verbo, plus, moins e autant vêm depois dele: “il travaille plus que moi”.",
         examples: [
           ["J'ai autant de travail que toi.", "Tenho tanto trabalho quanto você."],
           ["Il y a moins de touristes en novembre.", "Há menos turistas em novembro."],
@@ -2031,7 +2031,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Os irregulares: meilleur, mieux, pire",
-        text: "Assim como o português troca «mais bom» por «melhor», o francês troca «plus bon» por meilleur (adjetivo: concorda, meilleure, meilleurs) e «plus bien» por mieux (advérbio: invariável). Mauvais vira pire (ou plus mauvais). Uma dica: se em português cabe «bom», é meilleur; se cabe «bem», é mieux.",
+        text: "Assim como o português troca “mais bom” por “melhor”, o francês troca “plus bon” por meilleur (adjetivo: concorda, meilleure, meilleurs) e “plus bien” por mieux (advérbio: invariável). Mauvais vira pire (ou plus mauvais). Uma dica: se em português cabe “bom”, é meilleur; se cabe “bem”, é mieux.",
         table: {
           head: ["Base", "Comparativo", "Superlativo"],
           rows: [
@@ -2049,7 +2049,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "O superlativo: le plus, la plus, les plus",
-        text: "O superlativo é o artigo definido + plus/moins + adjetivo. Se o adjetivo vem depois do substantivo (a maioria), o artigo aparece DUAS vezes: «la ville la plus visitée». Se vem antes (beau, grand, petit, bon…), uma vez só: «la plus belle ville». O «de/em» do português vira sempre «de»: le plus grand musée du monde. E não existe «-íssimo»: para intensificar, use très, vraiment, extrêmement.",
+        text: "O superlativo é o artigo definido + plus/moins + adjetivo. Se o adjetivo vem depois do substantivo (a maioria), o artigo aparece DUAS vezes: “la ville la plus visitée”. Se vem antes (beau, grand, petit, bon…), uma vez só: “la plus belle ville”. O “de/em” do português vira sempre “de”: le plus grand musée du monde. E não existe “-íssimo”: para intensificar, use très, vraiment, extrêmement.",
         examples: [
           ["Le Louvre est le musée le plus visité du monde.", "O Louvre é o museu mais visitado do mundo."],
           ["Le mont Blanc est le plus haut sommet des Alpes.", "O Monte Branco é o pico mais alto dos Alpes."],
@@ -2060,33 +2060,33 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Dizer «plus bon»: o comparativo de bon é meilleur. E «plus bien» é mieux.",
-      "Trocar meilleur e mieux: «Il parle meilleur» está errado. Com verbo vai o advérbio: «Il parle mieux».",
-      "Usar «en» ou «dans» depois do superlativo, como no nosso «o maior do mundo/no Brasil»: é sempre de, «le plus grand du monde», «le plus beau de France».",
-      "Esquecer o segundo artigo: «la ville plus visitée» está errado. É «la ville la plus visitée».",
-      "Dizer «aussi de livres» para quantidade: com substantivo é «autant de livres».",
+      "Dizer “plus bon”: o comparativo de bon é meilleur. E “plus bien” é mieux.",
+      "Trocar meilleur e mieux: “Il parle meilleur” está errado. Com verbo vai o advérbio: “Il parle mieux”.",
+      "Usar “en” ou “dans” depois do superlativo, como no nosso “o maior do mundo/no Brasil”: é sempre de, “le plus grand du monde”, “le plus beau de France”.",
+      "Esquecer o segundo artigo: “la ville plus visitée” está errado. É “la ville la plus visitée”.",
+      "Dizer “aussi de livres” para quantidade: com substantivo é “autant de livres”.",
     ],
     quiz: [
       {
-        question: "Complete: «Ce vin est ___ que celui d'hier.» (bom)",
+        question: "Complete: “Ce vin est ___ que celui d'hier.” (bom)",
         options: ["plus bon", "meilleur", "mieux"],
         answer: "meilleur",
-        explanation: "O comparativo do adjetivo bon é meilleur. «Mieux» é o de bien (advérbio).",
+        explanation: "O comparativo do adjetivo bon é meilleur. “Mieux” é o de bien (advérbio).",
       },
       {
-        question: "Complete: «Tu danses ___ que moi.» (bem)",
+        question: "Complete: “Tu danses ___ que moi.” (bem)",
         options: ["meilleur", "mieux", "plus bien"],
         answer: "mieux",
         explanation: "Com verbo (danser), vai o advérbio: mieux, invariável.",
       },
       {
-        question: "Como se diz «É o museu mais visitado do mundo»?",
+        question: "Como se diz “É o museu mais visitado do mundo”?",
         options: ["C'est le musée le plus visité du monde.", "C'est le musée plus visité du monde.", "C'est le musée le plus visité dans le monde."],
         answer: "C'est le musée le plus visité du monde.",
         explanation: "Adjetivo depois do substantivo: o artigo se repete (le musée le plus…). E o complemento do superlativo leva de: du monde.",
       },
       {
-        question: "Como se diz «Tenho tantos livros quanto você»?",
+        question: "Como se diz “Tenho tantos livros quanto você”?",
         options: ["J'ai autant de livres que toi.", "J'ai aussi de livres que toi.", "J'ai autant des livres comme toi."],
         answer: "J'ai autant de livres que toi.",
         explanation: "Quantidade com substantivo: autant de… que, sem artigo depois de de.",
@@ -2103,13 +2103,13 @@ export const GRAMMAR_FR: GrammarTopic[] = [
   {
     id: "fr-g17",
     level: "B1.3",
-    title: "Conditionnel présent: pedidos educados e «si + imparfait»",
+    title: "Conditionnel présent: pedidos educados e “si + imparfait”",
     emoji: "☕",
-    summary: "«Je voudrais» é o pedido educado (o brasileiro diz «eu queria»). O conditionnel une o radical do futuro às terminações do imparfait. E onde o português diz «se eu tivesse», o francês usa o imparfait do indicativo: «si j'avais», nunca «si j'aurais».",
+    summary: "“Je voudrais” é o pedido educado (o brasileiro diz “eu queria”). O conditionnel une o radical do futuro às terminações do imparfait. E onde o português diz “se eu tivesse”, o francês usa o imparfait do indicativo: “si j'avais”, nunca “si j'aurais”.",
     sections: [
       {
         heading: "As formas",
-        text: "Radical do futuro (parler-, ser-, aur-, voudr-, pourr-, ir-, fer-…) + terminações do imparfait: -ais, -ais, -ait, -ions, -iez, -aient. Corresponde ao nosso futuro do pretérito («falaria»). Quem sabe o futuro já sabe o radical de todos os irregulares.",
+        text: "Radical do futuro (parler-, ser-, aur-, voudr-, pourr-, ir-, fer-…) + terminações do imparfait: -ais, -ais, -ait, -ions, -iez, -aient. Corresponde ao nosso futuro do pretérito (“falaria”). Quem sabe o futuro já sabe o radical de todos os irregulares.",
         table: {
           head: ["Pessoa", "parler", "vouloir", "pouvoir", "être", "avoir"],
           rows: [
@@ -2124,7 +2124,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Pedir, aconselhar, desejar",
-        text: "O conditionnel é o grande amaciante do francês. «Je voudrais», «pourriez-vous», «j'aimerais» tornam o pedido cortês; «je veux» no balcão soa brusco. Com devoir, dá conselho (tu devrais = você deveria); com «à ta place», também.",
+        text: "O conditionnel é o grande amaciante do francês. “Je voudrais”, “pourriez-vous”, “j'aimerais” tornam o pedido cortês; “je veux” no balcão soa brusco. Com devoir, dá conselho (tu devrais = você deveria); com “à ta place”, também.",
         examples: [
           ["Je voudrais un café et un croissant, s'il vous plaît.", "Eu queria um café e um croissant, por favor."],
           ["Pourriez-vous répéter, s'il vous plaît ?", "O senhor poderia repetir, por favor?"],
@@ -2136,7 +2136,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Hipóteses: si + imparfait → conditionnel",
-        text: "Para uma hipótese no presente ou no futuro, o português usa o imperfeito do subjuntivo («se eu tivesse»). O francês usa o imparfait do INDICATIVO depois de si, e o conditionnel na outra parte da frase. A ordem das partes pode inverter. O conditionnel nunca vai logo depois do si.",
+        text: "Para uma hipótese no presente ou no futuro, o português usa o imperfeito do subjuntivo (“se eu tivesse”). O francês usa o imparfait do INDICATIVO depois de si, e o conditionnel na outra parte da frase. A ordem das partes pode inverter. O conditionnel nunca vai logo depois do si.",
         table: {
           head: ["Português", "Francês"],
           rows: [
@@ -2155,7 +2155,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Notícia não confirmada e a pronúncia",
-        text: "Na imprensa, o conditionnel marca a informação que ainda não foi confirmada: «l'incendie serait accidentel» (o incêndio seria acidental, segundo as primeiras informações). Na pronúncia, «je parlerai» (futuro, [ʁe]) e «je parlerais» (conditionnel, [ʁɛ]) se distinguem pela abertura do e, mas muitos falantes os pronunciam igual; o contexto decide.",
+        text: "Na imprensa, o conditionnel marca a informação que ainda não foi confirmada: “l'incendie serait accidentel” (o incêndio seria acidental, segundo as primeiras informações). Na pronúncia, “je parlerai” (futuro, [ʁe]) e “je parlerais” (conditionnel, [ʁɛ]) se distinguem pela abertura do e, mas muitos falantes os pronunciam igual; o contexto decide.",
         examples: [
           ["Selon les premières informations, l'incendie serait accidentel.", "Segundo as primeiras informações, o incêndio seria acidental."],
           ["Le musée rouvrirait ses portes au printemps.", "O museu reabriria suas portas na primavera."],
@@ -2163,33 +2163,33 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Pôr o conditionnel depois de si: «si j'aurais le temps» é um erro clássico, até entre franceses. É «si j'avais le temps».",
-      "Usar o subjuntivo depois de si, calcando o «se eu tivesse»: o francês usa o imparfait do indicativo, «si j'avais», «si j'étais».",
-      "Pedir com «je veux» em loja ou restaurante: soa exigente. Use «je voudrais» ou «j'aimerais».",
-      "Esquecer que o radical é o do futuro: «je pouvrais», «je voulerais» não existem. É je pourrais, je voudrais.",
-      "Confundir «nous parlerions» (conditionnel) com «nous parlions» (imparfait): o r faz toda a diferença.",
+      "Pôr o conditionnel depois de si: “si j'aurais le temps” é um erro clássico, até entre franceses. É “si j'avais le temps”.",
+      "Usar o subjuntivo depois de si, calcando o “se eu tivesse”: o francês usa o imparfait do indicativo, “si j'avais”, “si j'étais”.",
+      "Pedir com “je veux” em loja ou restaurante: soa exigente. Use “je voudrais” ou “j'aimerais”.",
+      "Esquecer que o radical é o do futuro: “je pouvrais”, “je voulerais” não existem. É je pourrais, je voudrais.",
+      "Confundir “nous parlerions” (conditionnel) com “nous parlions” (imparfait): o r faz toda a diferença.",
     ],
     quiz: [
       {
         question: "Qual é o pedido educado na padaria?",
         options: ["Je veux une baguette.", "Je voudrais une baguette, s'il vous plaît.", "Je voudrai une baguette, s'il vous plaît."],
         answer: "Je voudrais une baguette, s'il vous plaît.",
-        explanation: "O conditionnel «je voudrais» é a forma cortês. «Je voudrai» (sem s) é o futuro.",
+        explanation: "O conditionnel “je voudrais” é a forma cortês. “Je voudrai” (sem s) é o futuro.",
       },
       {
-        question: "Complete: «Si j'___ riche, j'achèterais une maison en Provence.»",
+        question: "Complete: “Si j'___ riche, j'achèterais une maison en Provence.”",
         options: ["étais", "serais", "sois"],
         answer: "étais",
         explanation: "Depois de si, a hipótese vai no imparfait do indicativo; o conditionnel fica na outra parte.",
       },
       {
-        question: "Como se diz «Você deveria dormir mais»?",
+        question: "Como se diz “Você deveria dormir mais”?",
         options: ["Tu devrais dormir plus.", "Tu devais dormir plus.", "Tu devras dormir plus."],
         answer: "Tu devrais dormir plus.",
-        explanation: "Conselho: devoir no conditionnel, «tu devrais». «Devais» é o imparfait e «devras» o futuro.",
+        explanation: "Conselho: devoir no conditionnel, “tu devrais”. “Devais” é o imparfait e “devras” o futuro.",
       },
       {
-        question: "Qual é o conditionnel de «pouvoir» para «vous»?",
+        question: "Qual é o conditionnel de “pouvoir” para “vous”?",
         options: ["vous pourriez", "vous pouviez", "vous pourrez"],
         answer: "vous pourriez",
         explanation: "Radical do futuro (pourr-) + terminação do imparfait (-iez): pourriez.",
@@ -2207,11 +2207,11 @@ export const GRAMMAR_FR: GrammarTopic[] = [
     level: "B1.3",
     title: "Verbos pronominais: se lever, s'appeler, se souvenir",
     emoji: "🪞",
-    summary: "O francês usa muito mais verbos pronominais que o português do Brasil, e não deixa o pronome cair: «je me promène» (eu passeio), «je vais me coucher» (vou deitar). No passé composé, todos usam être.",
+    summary: "O francês usa muito mais verbos pronominais que o português do Brasil, e não deixa o pronome cair: “je me promène” (eu passeio), “je vais me coucher” (vou deitar). No passé composé, todos usam être.",
     sections: [
       {
         heading: "O presente e o pronome que acompanha o sujeito",
-        text: "O pronome reflexivo muda com a pessoa: me, te, se, nous, vous, se. Antes de vogal ou h mudo, me, te e se viram m', t', s'. No infinitivo, o pronome também concorda com o sujeito: «je vais me coucher», «nous allons nous promener».",
+        text: "O pronome reflexivo muda com a pessoa: me, te, se, nous, vous, se. Antes de vogal ou h mudo, me, te e se viram m', t', s'. No infinitivo, o pronome também concorda com o sujeito: “je vais me coucher”, “nous allons nous promener”.",
         table: {
           head: ["Pessoa", "se lever (levantar-se)", "s'appeler (chamar-se)", "s'habiller (vestir-se)"],
           rows: [
@@ -2231,7 +2231,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Pronominais no francês, não no português",
-        text: "Muitos verbos são pronominais em francês e simples no Brasil (ou perderam o pronome na nossa fala). Sem o pronome, alguns mudam de sentido: «promener le chien» é passear com o cachorro; «se promener» é você passear.",
+        text: "Muitos verbos são pronominais em francês e simples no Brasil (ou perderam o pronome na nossa fala). Sem o pronome, alguns mudam de sentido: “promener le chien” é passear com o cachorro; “se promener” é você passear.",
         table: {
           head: ["Francês", "Português do Brasil"],
           rows: [
@@ -2254,7 +2254,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Recíprocos, passivos, negação e imperativo",
-        text: "O pronome também marca a reciprocidade (ils s'aiment, on se voit demain) e um sentido passivo (ce vin se boit frais, ça ne se fait pas). Na negação, o pronome fica colado ao verbo: «je ne me lève pas». No imperativo afirmativo, vai depois, com hífen, e te vira toi: «lève-toi», «asseyez-vous». No negativo, volta para a frente: «ne te lève pas».",
+        text: "O pronome também marca a reciprocidade (ils s'aiment, on se voit demain) e um sentido passivo (ce vin se boit frais, ça ne se fait pas). Na negação, o pronome fica colado ao verbo: “je ne me lève pas”. No imperativo afirmativo, vai depois, com hífen, e te vira toi: “lève-toi”, “asseyez-vous”. No negativo, volta para a frente: “ne te lève pas”.",
         examples: [
           ["On se voit demain devant la gare ?", "A gente se vê amanhã na frente da estação?"],
           ["Ce vin se boit frais.", "Este vinho se bebe gelado."],
@@ -2265,7 +2265,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Passé composé: sempre com être",
-        text: "Todo verbo pronominal forma o passé composé com être, e o pronome vem antes do auxiliar: «je me suis levé». Em geral, o particípio concorda com o sujeito: «elle s'est levée», «ils se sont amusés». Duas exceções: se o objeto direto vem DEPOIS do verbo, não há concordância («elle s'est lavé les mains»); e se o pronome é objeto indireto (parler à, téléphoner à), também não («elles se sont parlé»).",
+        text: "Todo verbo pronominal forma o passé composé com être, e o pronome vem antes do auxiliar: “je me suis levé”. Em geral, o particípio concorda com o sujeito: “elle s'est levée”, “ils se sont amusés”. Duas exceções: se o objeto direto vem DEPOIS do verbo, não há concordância (“elle s'est lavé les mains”); e se o pronome é objeto indireto (parler à, téléphoner à), também não (“elles se sont parlé”).",
         examples: [
           ["Elle s'est levée tard dimanche.", "Ela se levantou tarde no domingo."],
           ["Nous nous sommes bien amusés à Lille.", "A gente se divertiu muito em Lille."],
@@ -2275,39 +2275,39 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Deixar o pronome cair, como no «vou deitar» brasileiro: «je vais coucher» está errado. É «je vais me coucher».",
-      "Usar «se» com qualquer pessoa no infinitivo: «nous allons se promener» está errado. É «nous allons nous promener».",
-      "Usar avoir no passé composé: «je m'ai levé» está errado. Pronominal pede être: «je me suis levé».",
-      "Esquecer a concordância com o sujeito feminino ou plural: «elle s'est levée», «ils se sont assis».",
-      "No imperativo afirmativo, usar te: «lève-te» está errado. É «lève-toi».",
+      "Deixar o pronome cair, como no “vou deitar” brasileiro: “je vais coucher” está errado. É “je vais me coucher”.",
+      "Usar “se” com qualquer pessoa no infinitivo: “nous allons se promener” está errado. É “nous allons nous promener”.",
+      "Usar avoir no passé composé: “je m'ai levé” está errado. Pronominal pede être: “je me suis levé”.",
+      "Esquecer a concordância com o sujeito feminino ou plural: “elle s'est levée”, “ils se sont assis”.",
+      "No imperativo afirmativo, usar te: “lève-te” está errado. É “lève-toi”.",
     ],
     quiz: [
       {
-        question: "Complete: «Demain, je vais ___ tôt.» (se lever)",
+        question: "Complete: “Demain, je vais ___ tôt.” (se lever)",
         options: ["me lever", "se lever", "lever"],
         answer: "me lever",
         explanation: "No infinitivo, o pronome concorda com o sujeito: je → me.",
       },
       {
-        question: "Qual é o passé composé de «elle se promène»?",
+        question: "Qual é o passé composé de “elle se promène”?",
         options: ["elle s'est promenée", "elle s'a promenée", "elle s'est promené"],
         answer: "elle s'est promenée",
         explanation: "Pronominal usa être, e o particípio concorda com o sujeito feminino.",
       },
       {
-        question: "Como se diz «Senta!» para um amigo?",
+        question: "Como se diz “Senta!” para um amigo?",
         options: ["Assieds-toi !", "Assieds-te !", "Te assieds !"],
         answer: "Assieds-toi !",
         explanation: "No imperativo afirmativo, o pronome vem depois com hífen, e te vira toi.",
       },
       {
-        question: "Complete: «Elle s'est ___ les dents.» (brosser)",
+        question: "Complete: “Elle s'est ___ les dents.” (brosser)",
         options: ["brossé", "brossée", "brossées"],
         answer: "brossé",
         explanation: "O objeto direto (les dents) vem depois do verbo: o particípio não concorda.",
       },
       {
-        question: "Como se diz «Eu não me lembro»?",
+        question: "Como se diz “Eu não me lembro”?",
         options: ["Je ne me souviens pas.", "Je me ne souviens pas.", "Je ne souviens pas."],
         answer: "Je ne me souviens pas.",
         explanation: "Na negação, o pronome fica colado ao verbo, dentro do ne… pas.",
@@ -2319,11 +2319,11 @@ export const GRAMMAR_FR: GrammarTopic[] = [
     level: "B1.3",
     title: "Depuis, il y a, pendant, en, dans: falar de tempo",
     emoji: "⏳",
-    summary: "O nosso «há» se divide em dois: «depuis» para o que ainda continua (j'habite ici depuis trois ans, moro aqui há três anos) e «il y a» para um ponto no passado (je suis arrivé il y a trois ans, cheguei há três anos). Pendant, en e dans completam o quadro.",
+    summary: "O nosso “há” se divide em dois: “depuis” para o que ainda continua (j'habite ici depuis trois ans, moro aqui há três anos) e “il y a” para um ponto no passado (je suis arrivé il y a trois ans, cheguei há três anos). Pendant, en e dans completam o quadro.",
     sections: [
       {
         heading: "Depuis + presente: o que começou e continua",
-        text: "Se a ação começou no passado e ainda está acontecendo, o francês usa o PRESENTE com depuis, como o nosso «moro aqui há três anos». Depuis aceita uma duração (depuis trois ans) ou um ponto de partida (depuis 2020, depuis lundi = desde). Na fala, também se diz «ça fait… que» ou «il y a… que».",
+        text: "Se a ação começou no passado e ainda está acontecendo, o francês usa o PRESENTE com depuis, como o nosso “moro aqui há três anos”. Depuis aceita uma duração (depuis trois ans) ou um ponto de partida (depuis 2020, depuis lundi = desde). Na fala, também se diz “ça fait… que” ou “il y a… que”.",
         examples: [
           ["J'habite à Lille depuis trois ans.", "Moro em Lille há três anos."],
           ["Il pleut depuis ce matin.", "Está chovendo desde hoje de manhã."],
@@ -2333,7 +2333,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Il y a + passado: um ponto no tempo",
-        text: "Para dizer quando algo aconteceu e acabou, usa-se «il y a» + duração, com o verbo no passado. Atenção: «il y a» vem depois do que aconteceu, como o «atrás» do português (três anos atrás).",
+        text: "Para dizer quando algo aconteceu e acabou, usa-se “il y a” + duração, com o verbo no passado. Atenção: “il y a” vem depois do que aconteceu, como o “atrás” do português (três anos atrás).",
         examples: [
           ["Je suis arrivé à Montréal il y a trois ans.", "Cheguei a Montreal há três anos."],
           ["Elle a appelé il y a dix minutes.", "Ela ligou há dez minutos."],
@@ -2364,39 +2364,39 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Usar o passé composé com depuis para algo que continua: «j'ai habité ici depuis trois ans» está errado. É «j'habite ici depuis trois ans».",
-      "Traduzir todo «há» por «il y a»: se a ação continua, é depuis. «Il y a» é para o que já acabou.",
-      "Usar depuis para uma duração encerrada: «j'ai vécu à Dakar depuis cinq ans» está errado. É «pendant cinq ans».",
-      "Confundir en e dans: «je pars en dix minutes» não quer dizer «daqui a dez minutos». É «dans dix minutes».",
-      "Achar que depuis nunca aceita o passé composé: na negação ele é normal, «je ne l'ai pas vu depuis des mois» (não o vejo há meses).",
+      "Usar o passé composé com depuis para algo que continua: “j'ai habité ici depuis trois ans” está errado. É “j'habite ici depuis trois ans”.",
+      "Traduzir todo “há” por “il y a”: se a ação continua, é depuis. “Il y a” é para o que já acabou.",
+      "Usar depuis para uma duração encerrada: “j'ai vécu à Dakar depuis cinq ans” está errado. É “pendant cinq ans”.",
+      "Confundir en e dans: “je pars en dix minutes” não quer dizer “daqui a dez minutos”. É “dans dix minutes”.",
+      "Achar que depuis nunca aceita o passé composé: na negação ele é normal, “je ne l'ai pas vu depuis des mois” (não o vejo há meses).",
     ],
     quiz: [
       {
-        question: "Como se diz «Estudo francês há dois anos» (e continuo estudando)?",
+        question: "Como se diz “Estudo francês há dois anos” (e continuo estudando)?",
         options: ["J'étudie le français depuis deux ans.", "J'ai étudié le français depuis deux ans.", "J'étudie le français il y a deux ans."],
         answer: "J'étudie le français depuis deux ans.",
         explanation: "Ação que continua: presente + depuis.",
       },
       {
-        question: "Como se diz «Ela chegou há uma hora»?",
+        question: "Como se diz “Ela chegou há uma hora”?",
         options: ["Elle est arrivée il y a une heure.", "Elle est arrivée depuis une heure.", "Elle arrive pendant une heure."],
         answer: "Elle est arrivée il y a une heure.",
         explanation: "Ponto no passado, ação encerrada: passé composé + il y a.",
       },
       {
-        question: "Complete: «Le film commence ___ cinq minutes.» (daqui a)",
+        question: "Complete: “Le film commence ___ cinq minutes.” (daqui a)",
         options: ["dans", "en", "depuis"],
         answer: "dans",
-        explanation: "«Daqui a» é dans. «En cinq minutes» seria o tempo gasto para fazer algo.",
+        explanation: "“Daqui a” é dans. “En cinq minutes” seria o tempo gasto para fazer algo.",
       },
       {
-        question: "Complete: «J'ai habité à Nantes ___ dix ans, puis je suis parti.»",
+        question: "Complete: “J'ai habité à Nantes ___ dix ans, puis je suis parti.”",
         options: ["pendant", "depuis", "dans"],
         answer: "pendant",
         explanation: "Duração com começo e fim no passado: pendant.",
       },
       {
-        question: "Complete: «Il a traversé la ville ___ vingt minutes.» (em vinte minutos, tempo gasto)",
+        question: "Complete: “Il a traversé la ville ___ vingt minutes.” (em vinte minutos, tempo gasto)",
         options: ["en", "dans", "pour"],
         answer: "en",
         explanation: "O tempo gasto para completar uma ação se diz com en.",
@@ -2409,7 +2409,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
     level: "B1.4",
     title: "Subjonctif présent: il faut que, vouloir que e as emoções",
     emoji: "🤔",
-    summary: "O subjonctif lembra muito o nosso subjuntivo («que eu fale» → que je parle) e aparece depois de necessidade, vontade e emoção. Mas há surpresas: «espérer que» pede indicativo (j'espère qu'il viendra) e «je pense que» também.",
+    summary: "O subjonctif lembra muito o nosso subjuntivo (“que eu fale” → que je parle) e aparece depois de necessidade, vontade e emoção. Mas há surpresas: “espérer que” pede indicativo (j'espère qu'il viendra) e “je pense que” também.",
     sections: [
       {
         heading: "Como se forma",
@@ -2444,7 +2444,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Quando usar: necessidade, vontade, emoção, dúvida",
-        text: "O subjonctif vem depois de «que» quando a oração principal exprime necessidade (il faut que, il est important que), vontade (vouloir que, préférer que, souhaiter que), emoção (être content que, avoir peur que, regretter que, c'est dommage que) ou dúvida (douter que, ne pas penser que). Os dois sujeitos precisam ser diferentes; se for o mesmo, usa-se o infinitivo: «je veux partir», e não «je veux que je parte».",
+        text: "O subjonctif vem depois de “que” quando a oração principal exprime necessidade (il faut que, il est important que), vontade (vouloir que, préférer que, souhaiter que), emoção (être content que, avoir peur que, regretter que, c'est dommage que) ou dúvida (douter que, ne pas penser que). Os dois sujeitos precisam ser diferentes; se for o mesmo, usa-se o infinitivo: “je veux partir”, e não “je veux que je parte”.",
         examples: [
           ["Il faut que tu viennes avec nous.", "Você precisa vir com a gente."],
           ["Je veux que vous soyez à l'heure.", "Quero que vocês cheguem na hora."],
@@ -2456,7 +2456,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "As surpresas: espérer, penser, croire",
-        text: "Aqui o francês se afasta do português. «Espérer que» pede INDICATIVO (geralmente futuro): «j'espère qu'il viendra» (espero que ele venha). «Penser que», «croire que» e «trouver que» afirmativos também pedem indicativo: «je pense qu'il est chez lui». Só na negação ou na pergunta com inversão é que costuma vir o subjonctif: «je ne pense pas qu'il soit chez lui».",
+        text: "Aqui o francês se afasta do português. “Espérer que” pede INDICATIVO (geralmente futuro): “j'espère qu'il viendra” (espero que ele venha). “Penser que”, “croire que” e “trouver que” afirmativos também pedem indicativo: “je pense qu'il est chez lui”. Só na negação ou na pergunta com inversão é que costuma vir o subjonctif: “je ne pense pas qu'il soit chez lui”.",
         table: {
           head: ["Português", "Francês"],
           rows: [
@@ -2474,39 +2474,39 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Usar o subjonctif depois de «espérer que», calcando o «espero que ele venha»: é «j'espère qu'il viendra».",
-      "Usar o subjonctif depois de «je pense que» afirmativo: «je pense qu'il soit là» está errado. É «je pense qu'il est là».",
-      "Usar «que» com o mesmo sujeito: «je veux que je parte» está errado. É «je veux partir».",
-      "Esquecer o y de nous e vous em être e avoir: é «que nous soyons», «que vous ayez» (sem i depois do y).",
-      "Confundir «que j'aie» (avoir) com «que j'aille» (aller): o ll muda o verbo.",
+      "Usar o subjonctif depois de “espérer que”, calcando o “espero que ele venha”: é “j'espère qu'il viendra”.",
+      "Usar o subjonctif depois de “je pense que” afirmativo: “je pense qu'il soit là” está errado. É “je pense qu'il est là”.",
+      "Usar “que” com o mesmo sujeito: “je veux que je parte” está errado. É “je veux partir”.",
+      "Esquecer o y de nous e vous em être e avoir: é “que nous soyons”, “que vous ayez” (sem i depois do y).",
+      "Confundir “que j'aie” (avoir) com “que j'aille” (aller): o ll muda o verbo.",
     ],
     quiz: [
       {
-        question: "Complete: «Il faut que tu ___ tes devoirs.» (faire)",
+        question: "Complete: “Il faut que tu ___ tes devoirs.” (faire)",
         options: ["fais", "fasses", "feras"],
         answer: "fasses",
-        explanation: "«Il faut que» pede subjonctif; faire é irregular: que tu fasses.",
+        explanation: "“Il faut que” pede subjonctif; faire é irregular: que tu fasses.",
       },
       {
-        question: "Como se diz «Espero que ele venha»?",
+        question: "Como se diz “Espero que ele venha”?",
         options: ["J'espère qu'il viendra.", "J'espère qu'il vienne.", "J'espère qu'il viendrait."],
         answer: "J'espère qu'il viendra.",
-        explanation: "Diferente do português, «espérer que» pede indicativo, em geral o futuro.",
+        explanation: "Diferente do português, “espérer que” pede indicativo, em geral o futuro.",
       },
       {
-        question: "Complete: «Je ne pense pas qu'il ___ raison.»",
+        question: "Complete: “Je ne pense pas qu'il ___ raison.”",
         options: ["a", "ait", "aura"],
         answer: "ait",
-        explanation: "«Penser que» na negação exprime dúvida e pede subjonctif: qu'il ait.",
+        explanation: "“Penser que” na negação exprime dúvida e pede subjonctif: qu'il ait.",
       },
       {
-        question: "Como se diz «Quero sair mais cedo» (eu mesmo)?",
+        question: "Como se diz “Quero sair mais cedo” (eu mesmo)?",
         options: ["Je veux partir plus tôt.", "Je veux que je parte plus tôt.", "Je veux que partir plus tôt."],
         answer: "Je veux partir plus tôt.",
-        explanation: "Mesmo sujeito nas duas partes: infinitivo, sem «que».",
+        explanation: "Mesmo sujeito nas duas partes: infinitivo, sem “que”.",
       },
       {
-        question: "Qual é o subjonctif de «être» para «nous»?",
+        question: "Qual é o subjonctif de “être” para “nous”?",
         options: ["que nous soyons", "que nous soyions", "que nous sommes"],
         answer: "que nous soyons",
         explanation: "Forma irregular: que nous soyons, sem i depois do y.",
@@ -2518,20 +2518,20 @@ export const GRAMMAR_FR: GrammarTopic[] = [
     level: "B1.4",
     title: "Discurso indireto no presente: il dit que, elle demande si",
     emoji: "💬",
-    summary: "Para contar o que alguém diz ou pergunta, o francês usa «dire que», «demander si» e «demander ce que». Com o verbo introdutor no presente, os tempos não mudam; mudam os pronomes, e as perguntas perdem a inversão e o «est-ce que».",
+    summary: "Para contar o que alguém diz ou pergunta, o francês usa “dire que”, “demander si” e “demander ce que”. Com o verbo introdutor no presente, os tempos não mudam; mudam os pronomes, e as perguntas perdem a inversão e o “est-ce que”.",
     sections: [
       {
         heading: "Afirmações: dire que",
-        text: "A frase citada vira uma oração com «que» (qu' antes de vogal), que não pode ser omitido como às vezes no inglês. Os pronomes e possessivos se ajustam a quem está contando: «je» vira «il» ou «elle», «mon» vira «son». Com o verbo introdutor no presente (dit, explique, répond, annonce), o tempo verbal fica o mesmo.",
+        text: "A frase citada vira uma oração com “que” (qu' antes de vogal), que não pode ser omitido como às vezes no inglês. Os pronomes e possessivos se ajustam a quem está contando: “je” vira “il” ou “elle”, “mon” vira “son”. Com o verbo introdutor no presente (dit, explique, répond, annonce), o tempo verbal fica o mesmo.",
         examples: [
-          ["Paul : « Je suis fatigué. » → Paul dit qu'il est fatigué.", "Paul: «Estou cansado.» → Paul diz que está cansado."],
-          ["Léa : « Mon train arrive à huit heures. » → Léa dit que son train arrive à huit heures.", "Léa: «Meu trem chega às oito.» → Léa diz que o trem dela chega às oito."],
+          ["Paul : “ Je suis fatigué. ” → Paul dit qu'il est fatigué.", "Paul: “Estou cansado.” → Paul diz que está cansado."],
+          ["Léa : “ Mon train arrive à huit heures. ” → Léa dit que son train arrive à huit heures.", "Léa: “Meu trem chega às oito.” → Léa diz que o trem dela chega às oito."],
           ["Il explique qu'il a raté le bus.", "Ele explica que perdeu o ônibus."],
         ],
       },
       {
         heading: "Perguntas: si, ce que, ce qui e as palavras interrogativas",
-        text: "Pergunta de sim ou não vira «si» (s'il antes de il e ils). «Qu'est-ce que» vira «ce que»; «qu'est-ce qui» vira «ce qui». Où, quand, comment, pourquoi, qui e combien continuam iguais. Em todos os casos, some a inversão e some o «est-ce que»: a ordem volta a ser sujeito + verbo.",
+        text: "Pergunta de sim ou não vira “si” (s'il antes de il e ils). “Qu'est-ce que” vira “ce que”; “qu'est-ce qui” vira “ce qui”. Où, quand, comment, pourquoi, qui e combien continuam iguais. Em todos os casos, some a inversão e some o “est-ce que”: a ordem volta a ser sujeito + verbo.",
         table: {
           head: ["Pergunta direta", "Discurso indireto"],
           rows: [
@@ -2551,51 +2551,51 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Ordens e pedidos: de + infinitivo",
-        text: "O imperativo vira «de + infinitivo» depois de dire, demander, conseiller: «Viens !» → «il me dit de venir». Na negação, ne pas vem junto, antes do infinitivo: «il me dit de ne pas attendre».",
+        text: "O imperativo vira “de + infinitivo” depois de dire, demander, conseiller: “Viens !” → “il me dit de venir”. Na negação, ne pas vem junto, antes do infinitivo: “il me dit de ne pas attendre”.",
         examples: [
-          ["« Attends-moi ! » → Elle me dit de l'attendre.", "«Me espera!» → Ela me diz para esperá-la."],
+          ["“ Attends-moi ! ” → Elle me dit de l'attendre.", "“Me espera!” → Ela me diz para esperá-la."],
           ["Le médecin me conseille de dormir davantage.", "O médico me aconselha a dormir mais."],
           ["Il nous demande de ne pas faire de bruit.", "Ele pede que a gente não faça barulho."],
         ],
       },
     ],
     pitfalls: [
-      "Manter a inversão: «il demande où habites-tu» está errado. É «il demande où tu habites».",
-      "Manter o «est-ce que»: «elle demande est-ce que tu viens» é comum na fala descuidada, mas é erro. É «elle demande si tu viens».",
-      "Usar «que» para traduzir o «o que» da pergunta: «il demande que tu veux» está errado. É «ce que tu veux».",
-      "Esquecer a elisão de si: «si il» não existe; é «s'il», «s'ils». Mas «si elle» fica como está.",
-      "Traduzir «pedir para fazer» com «pour»: «il me demande pour venir» está errado. É «il me demande de venir».",
+      "Manter a inversão: “il demande où habites-tu” está errado. É “il demande où tu habites”.",
+      "Manter o “est-ce que”: “elle demande est-ce que tu viens” é comum na fala descuidada, mas é erro. É “elle demande si tu viens”.",
+      "Usar “que” para traduzir o “o que” da pergunta: “il demande que tu veux” está errado. É “ce que tu veux”.",
+      "Esquecer a elisão de si: “si il” não existe; é “s'il”, “s'ils”. Mas “si elle” fica como está.",
+      "Traduzir “pedir para fazer” com “pour”: “il me demande pour venir” está errado. É “il me demande de venir”.",
     ],
     quiz: [
       {
-        question: "«Tu as faim ?» Em discurso indireto: «Elle demande ___ tu as faim.»",
+        question: "“Tu as faim ?” Em discurso indireto: “Elle demande ___ tu as faim.”",
         options: ["si", "que", "est-ce que"],
         answer: "si",
-        explanation: "Pergunta de sim ou não vira «si» no discurso indireto.",
+        explanation: "Pergunta de sim ou não vira “si” no discurso indireto.",
       },
       {
-        question: "«Qu'est-ce que tu cherches ?» → «Il demande ___»",
+        question: "“Qu'est-ce que tu cherches ?” → “Il demande ___”",
         options: ["ce que tu cherches.", "qu'est-ce que tu cherches.", "que tu cherches."],
         answer: "ce que tu cherches.",
-        explanation: "«Qu'est-ce que» vira «ce que» no discurso indireto.",
+        explanation: "“Qu'est-ce que” vira “ce que” no discurso indireto.",
       },
       {
         question: "Qual frase está correta?",
         options: ["Je me demande où il habite.", "Je me demande où habite-t-il.", "Je me demande où est-ce qu'il habite."],
         answer: "Je me demande où il habite.",
-        explanation: "No discurso indireto não há inversão nem «est-ce que»: sujeito + verbo.",
+        explanation: "No discurso indireto não há inversão nem “est-ce que”: sujeito + verbo.",
       },
       {
-        question: "«Fermez la porte !» → «Il nous dit ___ la porte.»",
+        question: "“Fermez la porte !” → “Il nous dit ___ la porte.”",
         options: ["de fermer", "que fermer", "fermer"],
         answer: "de fermer",
-        explanation: "O imperativo vira «de + infinitivo» no discurso indireto.",
+        explanation: "O imperativo vira “de + infinitivo” no discurso indireto.",
       },
       {
-        question: "«Il pleut ?» → «Il demande ___»",
+        question: "“Il pleut ?” → “Il demande ___”",
         options: ["s'il pleut.", "qu'il pleut.", "ce qu'il pleut."],
         answer: "s'il pleut.",
-        explanation: "Pergunta de sim ou não vira «si», que perde o i antes de il e ils: s'il pleut.",
+        explanation: "Pergunta de sim ou não vira “si”, que perde o i antes de il e ils: s'il pleut.",
       },
     ],
   },
@@ -2605,11 +2605,11 @@ export const GRAMMAR_FR: GrammarTopic[] = [
     level: "B2.1",
     title: "Plus-que-parfait e a concordância dos tempos no discurso indireto",
     emoji: "⏪",
-    summary: "O plus-que-parfait (j'avais mangé, elle était partie) é o nosso «tinha comido»: o passado antes do passado. Ele é peça-chave do discurso indireto no passado, onde os tempos «recuam» um degrau: «il a dit qu'il était malade».",
+    summary: "O plus-que-parfait (j'avais mangé, elle était partie) é o nosso “tinha comido”: o passado antes do passado. Ele é peça-chave do discurso indireto no passado, onde os tempos “recuam” um degrau: “il a dit qu'il était malade”.",
     sections: [
       {
         heading: "Formação e uso",
-        text: "Auxiliar no imparfait (avais, étais…) + particípio passado. Os verbos que usam être no passé composé usam être aqui também, com a mesma concordância. Serve para uma ação terminada antes de outro momento do passado, exatamente como o «tinha feito» do português.",
+        text: "Auxiliar no imparfait (avais, étais…) + particípio passado. Os verbos que usam être no passé composé usam être aqui também, com a mesma concordância. Serve para uma ação terminada antes de outro momento do passado, exatamente como o “tinha feito” do português.",
         table: {
           head: ["Pessoa", "manger (avoir)", "partir (être)", "se lever (être)"],
           rows: [
@@ -2630,15 +2630,15 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "A concordância dos tempos",
-        text: "Quando o verbo introdutor está no passado (a dit, a demandé, expliquait, répondit), os tempos da frase citada recuam: o presente vira imparfait, o passé composé vira plus-que-parfait, o futuro vira conditionnel présent e o futur antérieur vira conditionnel passé. O imparfait, o plus-que-parfait e o conditionnel não mudam. O português faz algo parecido («ele disse que estava doente»), então a lógica é familiar.",
+        text: "Quando o verbo introdutor está no passado (a dit, a demandé, expliquait, répondit), os tempos da frase citada recuam: o presente vira imparfait, o passé composé vira plus-que-parfait, o futuro vira conditionnel présent e o futur antérieur vira conditionnel passé. O imparfait, o plus-que-parfait e o conditionnel não mudam. O português faz algo parecido (“ele disse que estava doente”), então a lógica é familiar.",
         table: {
-          head: ["Frase original", "Tempo", "Depois de «il a dit que…»", "Tempo"],
+          head: ["Frase original", "Tempo", "Depois de “il a dit que…”", "Tempo"],
           rows: [
-            ["« Je suis malade. »", "présent", "qu'il était malade", "imparfait"],
-            ["« J'ai perdu mes clés. »", "passé composé", "qu'il avait perdu ses clés", "plus-que-parfait"],
-            ["« Je viendrai. »", "futur simple", "qu'il viendrait", "conditionnel présent"],
-            ["« J'aurai fini à midi. »", "futur antérieur", "qu'il aurait fini à midi", "conditionnel passé"],
-            ["« J'étais fatigué. »", "imparfait", "qu'il était fatigué", "imparfait"],
+            ["“ Je suis malade. ”", "présent", "qu'il était malade", "imparfait"],
+            ["“ J'ai perdu mes clés. ”", "passé composé", "qu'il avait perdu ses clés", "plus-que-parfait"],
+            ["“ Je viendrai. ”", "futur simple", "qu'il viendrait", "conditionnel présent"],
+            ["“ J'aurai fini à midi. ”", "futur antérieur", "qu'il aurait fini à midi", "conditionnel passé"],
+            ["“ J'étais fatigué. ”", "imparfait", "qu'il était fatigué", "imparfait"],
           ],
         },
         examples: [
@@ -2650,7 +2650,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Os marcadores de tempo e lugar também mudam",
-        text: "Contando depois, de outro lugar, as referências mudam, como no português culto («no dia seguinte», «na véspera»).",
+        text: "Contando depois, de outro lugar, as referências mudam, como no português culto (“no dia seguinte”, “na véspera”).",
         table: {
           head: ["Na hora", "Contado depois"],
           rows: [
@@ -2664,45 +2664,45 @@ export const GRAMMAR_FR: GrammarTopic[] = [
           ],
         },
         examples: [
-          ["« Je pars demain. » → Il a dit qu'il partait le lendemain.", "«Viajo amanhã.» → Ele disse que viajava no dia seguinte."],
-          ["« Je suis arrivée hier. » → Elle a dit qu'elle était arrivée la veille.", "«Cheguei ontem.» → Ela disse que tinha chegado na véspera."],
+          ["“ Je pars demain. ” → Il a dit qu'il partait le lendemain.", "“Viajo amanhã.” → Ele disse que viajava no dia seguinte."],
+          ["“ Je suis arrivée hier. ” → Elle a dit qu'elle était arrivée la veille.", "“Cheguei ontem.” → Ela disse que tinha chegado na véspera."],
         ],
       },
     ],
     pitfalls: [
-      "Usar o passé composé onde vai o plus-que-parfait: «quand je suis arrivé, le train est parti» diz que o trem saiu na hora da chegada. Para «já tinha saído»: «était déjà parti».",
-      "Esquecer de recuar o futuro: «il a dit qu'il viendra» se ouve na fala, mas a forma padrão é «il a dit qu'il viendrait».",
-      "Trocar o auxiliar: verbos com être no passé composé mantêm être: «elle était partie», e não «elle avait parti».",
-      "Esquecer a concordância com être: «elles étaient arrivées», com -es.",
-      "Manter «demain» e «hier» ao contar dias depois: a referência vira «le lendemain» e «la veille».",
+      "Usar o passé composé onde vai o plus-que-parfait: “quand je suis arrivé, le train est parti” diz que o trem saiu na hora da chegada. Para “já tinha saído”: “était déjà parti”.",
+      "Esquecer de recuar o futuro: “il a dit qu'il viendra” se ouve na fala, mas a forma padrão é “il a dit qu'il viendrait”.",
+      "Trocar o auxiliar: verbos com être no passé composé mantêm être: “elle était partie”, e não “elle avait parti”.",
+      "Esquecer a concordância com être: “elles étaient arrivées”, com -es.",
+      "Manter “demain” e “hier” ao contar dias depois: a referência vira “le lendemain” e “la veille”.",
     ],
     quiz: [
       {
-        question: "Como se diz «Quando cheguei, eles já tinham jantado»?",
+        question: "Como se diz “Quando cheguei, eles já tinham jantado”?",
         options: ["Quand je suis arrivé, ils avaient déjà dîné.", "Quand je suis arrivé, ils ont déjà dîné.", "Quand je suis arrivé, ils dînaient déjà."],
         answer: "Quand je suis arrivé, ils avaient déjà dîné.",
         explanation: "Ação terminada antes de outra no passado: plus-que-parfait (avaient dîné).",
       },
       {
-        question: "«Je viendrai.» → «Elle a dit qu'elle ___.»",
+        question: "“Je viendrai.” → “Elle a dit qu'elle ___.”",
         options: ["viendrait", "viendra", "venait"],
         answer: "viendrait",
         explanation: "Com o introdutor no passado, o futuro vira conditionnel présent.",
       },
       {
-        question: "«J'ai oublié mon parapluie.» → «Il a expliqué qu'il ___ son parapluie.»",
+        question: "“J'ai oublié mon parapluie.” → “Il a expliqué qu'il ___ son parapluie.”",
         options: ["avait oublié", "a oublié", "oubliait"],
         answer: "avait oublié",
         explanation: "O passé composé recua para o plus-que-parfait.",
       },
       {
-        question: "Complete: «Elle ___ déjà partie quand tu as appelé.»",
+        question: "Complete: “Elle ___ déjà partie quand tu as appelé.”",
         options: ["était", "avait", "est"],
         answer: "était",
         explanation: "Partir usa être; o passado anterior pede o imparfait do auxiliar: était partie.",
       },
       {
-        question: "«Je pars demain.» contado uma semana depois: «Il a dit qu'il partait ___.»",
+        question: "“Je pars demain.” contado uma semana depois: “Il a dit qu'il partait ___.”",
         options: ["le lendemain", "demain", "la veille"],
         answer: "le lendemain",
         explanation: "Demain vira le lendemain (o dia seguinte) quando se conta depois.",
@@ -2714,11 +2714,11 @@ export const GRAMMAR_FR: GrammarTopic[] = [
     level: "B2.1",
     title: "Conditionnel passé e as frases com si",
     emoji: "🔀",
-    summary: "«J'aurais aimé», «tu aurais dû», «si j'avais su, je ne serais pas venu»: o conditionnel passé fala do que poderia ter sido. O francês organiza as hipóteses em três tipos bem fixos, e o brasileiro se sai bem porque o português faz quase igual.",
+    summary: "“J'aurais aimé”, “tu aurais dû”, “si j'avais su, je ne serais pas venu”: o conditionnel passé fala do que poderia ter sido. O francês organiza as hipóteses em três tipos bem fixos, e o brasileiro se sai bem porque o português faz quase igual.",
     sections: [
       {
         heading: "Formação",
-        text: "Auxiliar no conditionnel présent (aurais, serais…) + particípio passado. Os verbos com être mantêm a concordância. É o nosso «teria feito».",
+        text: "Auxiliar no conditionnel présent (aurais, serais…) + particípio passado. Os verbos com être mantêm a concordância. É o nosso “teria feito”.",
         table: {
           head: ["Pessoa", "aimer (avoir)", "venir (être)", "devoir (avoir)"],
           rows: [
@@ -2733,7 +2733,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Arrependimento, crítica e notícia não confirmada",
-        text: "Com devoir e pouvoir, o conditionnel passé faz o papel do nosso «devia ter» e «podia ter»: «j'aurais dû partir» (eu devia ter saído), «tu aurais pu me prévenir» (você podia ter me avisado). Com aimer e vouloir, exprime desejo não realizado. Na imprensa, anuncia um fato passado ainda não confirmado.",
+        text: "Com devoir e pouvoir, o conditionnel passé faz o papel do nosso “devia ter” e “podia ter”: “j'aurais dû partir” (eu devia ter saído), “tu aurais pu me prévenir” (você podia ter me avisado). Com aimer e vouloir, exprime desejo não realizado. Na imprensa, anuncia um fato passado ainda não confirmado.",
         examples: [
           ["J'aurais dû partir plus tôt.", "Eu devia ter saído mais cedo."],
           ["Tu aurais pu me prévenir !", "Você podia ter me avisado!"],
@@ -2761,26 +2761,26 @@ export const GRAMMAR_FR: GrammarTopic[] = [
         ],
       },
       {
-        heading: "«Si j'aurais su…»",
-        text: "O erro «si j'aurais su, j'aurais pas venu» ficou famoso como fala de um menino no filme «La Guerre des boutons» (1962), justamente por ser errado de um jeito engraçado: tem o conditionnel depois de si e o auxiliar errado em venir. A forma correta é «si j'avais su, je ne serais pas venu».",
+        heading: "“Si j'aurais su…”",
+        text: "O erro “si j'aurais su, j'aurais pas venu” ficou famoso como fala de um menino no filme “La Guerre des boutons” (1962), justamente por ser errado de um jeito engraçado: tem o conditionnel depois de si e o auxiliar errado em venir. A forma correta é “si j'avais su, je ne serais pas venu”.",
       },
     ],
     pitfalls: [
-      "Pôr o conditionnel depois de si: «si j'aurais su» é o erro mais conhecido do francês. É «si j'avais su».",
-      "Traduzir «eu devia ter feito» com o imparfait de devoir: «je devais faire» é «eu tinha que fazer». O arrependimento é «j'aurais dû faire».",
-      "Trocar o auxiliar: «j'aurais venu» está errado; venir usa être: «je serais venu».",
-      "Confundir «j'aurais» (conditionnel) com «j'aurai» (futuro): o s final muda o sentido.",
-      "Usar o subjuntivo depois de si, calcando o «se eu tivesse sabido»: é o plus-que-parfait do indicativo, «si j'avais su».",
+      "Pôr o conditionnel depois de si: “si j'aurais su” é o erro mais conhecido do francês. É “si j'avais su”.",
+      "Traduzir “eu devia ter feito” com o imparfait de devoir: “je devais faire” é “eu tinha que fazer”. O arrependimento é “j'aurais dû faire”.",
+      "Trocar o auxiliar: “j'aurais venu” está errado; venir usa être: “je serais venu”.",
+      "Confundir “j'aurais” (conditionnel) com “j'aurai” (futuro): o s final muda o sentido.",
+      "Usar o subjuntivo depois de si, calcando o “se eu tivesse sabido”: é o plus-que-parfait do indicativo, “si j'avais su”.",
     ],
     quiz: [
       {
-        question: "Complete: «Si tu m'avais écouté, tu ___ ce problème.»",
+        question: "Complete: “Si tu m'avais écouté, tu ___ ce problème.”",
         options: ["n'aurais pas eu", "n'avais pas eu", "n'auras pas eu"],
         answer: "n'aurais pas eu",
         explanation: "Si + plus-que-parfait pede conditionnel passé na consequência.",
       },
       {
-        question: "Como se diz «Eu devia ter estudado mais»?",
+        question: "Como se diz “Eu devia ter estudado mais”?",
         options: ["J'aurais dû étudier plus.", "Je devais étudier plus.", "J'ai dû étudier plus."],
         answer: "J'aurais dû étudier plus.",
         explanation: "Arrependimento: devoir no conditionnel passé + infinitivo.",
@@ -2792,13 +2792,13 @@ export const GRAMMAR_FR: GrammarTopic[] = [
         explanation: "Plus-que-parfait depois de si; venir forma os tempos compostos com être.",
       },
       {
-        question: "Complete: «Elle ___ venir, mais elle était malade.» (teria gostado)",
+        question: "Complete: “Elle ___ venir, mais elle était malade.” (teria gostado)",
         options: ["aurait aimé", "aurait aimée", "serait aimé"],
         answer: "aurait aimé",
         explanation: "Aimer usa avoir; sem objeto direto anteposto, o particípio não concorda.",
       },
       {
-        question: "Complete: «Si nous avions acheté les billets, nous ___ au concert ce soir.» (estaríamos)",
+        question: "Complete: “Si nous avions acheté les billets, nous ___ au concert ce soir.” (estaríamos)",
         options: ["serions", "serons", "aurions été"],
         answer: "serions",
         explanation: "Hipótese mista: condição no passado (plus-que-parfait), consequência no presente (conditionnel présent).",
@@ -2811,7 +2811,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
     level: "B2.2",
     title: "Voz passiva e as alternativas: on, se faire, pronominal passivo",
     emoji: "🏛️",
-    summary: "A passiva francesa é igual à nossa: être + particípio concordado + par. Mas o francês a usa menos que o português escrito e prefere muitas vezes o «on» («on m'a volé mon vélo»), o pronominal («ça se mange froid») ou o «se faire» («il s'est fait voler»).",
+    summary: "A passiva francesa é igual à nossa: être + particípio concordado + par. Mas o francês a usa menos que o português escrito e prefere muitas vezes o “on” (“on m'a volé mon vélo”), o pronominal (“ça se mange froid”) ou o “se faire” (“il s'est fait voler”).",
     sections: [
       {
         heading: "Être + particípio + par",
@@ -2834,7 +2834,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Par ou de?",
-        text: "Com verbos de sentimento e de estado, o agente costuma vir com de: aimé de, respecté de, connu de, entouré de, couvert de, rempli de. É como o nosso «coberto de neve», «cercado de montanhas».",
+        text: "Com verbos de sentimento e de estado, o agente costuma vir com de: aimé de, respecté de, connu de, entouré de, couvert de, rempli de. É como o nosso “coberto de neve”, “cercado de montanhas”.",
         examples: [
           ["Ce professeur est respecté de tous ses élèves.", "Esse professor é respeitado por todos os alunos."],
           ["Le village est entouré de montagnes.", "O vilarejo é cercado de montanhas."],
@@ -2843,7 +2843,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "As alternativas que o francês prefere",
-        text: "Na fala, e muitas vezes na escrita, o francês evita a passiva. O «on» faz o papel do nosso sujeito indeterminado («roubaram minha bicicleta»). O pronominal passivo serve para regras e costumes («ça ne se dit pas»). E «se faire + infinitivo» indica algo que acontece COM o sujeito, em geral algo ruim: «il s'est fait voler son portefeuille» (ele teve a carteira roubada).",
+        text: "Na fala, e muitas vezes na escrita, o francês evita a passiva. O “on” faz o papel do nosso sujeito indeterminado (“roubaram minha bicicleta”). O pronominal passivo serve para regras e costumes (“ça ne se dit pas”). E “se faire + infinitivo” indica algo que acontece COM o sujeito, em geral algo ruim: “il s'est fait voler son portefeuille” (ele teve a carteira roubada).",
         examples: [
           ["On m'a volé mon vélo.", "Roubaram minha bicicleta."],
           ["Le français se parle aussi à Dakar et à Kinshasa.", "O francês também é falado em Dacar e Kinshasa."],
@@ -2855,7 +2855,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Quando a passiva não é possível",
-        text: "Verbos com objeto indireto (dire à, demander à, téléphoner à, répondre à) não vão para a passiva em francês. O «fui informado» ou «me pediram» se resolve com on: «on m'a dit», «on m'a demandé».",
+        text: "Verbos com objeto indireto (dire à, demander à, téléphoner à, répondre à) não vão para a passiva em francês. O “fui informado” ou “me pediram” se resolve com on: “on m'a dit”, “on m'a demandé”.",
         examples: [
           ["On m'a demandé de remplir ce formulaire.", "Me pediram para preencher este formulário."],
           ["On nous a dit que le magasin était fermé.", "Disseram para a gente que a loja estava fechada."],
@@ -2863,39 +2863,39 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Esquecer a concordância do particípio: «la tour a été construit» está errado. É «construite».",
-      "Pôr passiva em verbo com objeto indireto: «j'ai été demandé de venir» está errado. É «on m'a demandé de venir».",
-      "Abusar da passiva onde o francês usa on: «ma voiture a été volée» é correto, mas na conversa soa mais natural «on m'a volé ma voiture».",
-      "Esquecer que «se faire + infinitivo» não concorda o particípio: «elle s'est fait voler», nunca «elle s'est faite voler».",
-      "Usar par com verbos de sentimento e estado quando o uso pede de: «couvert de neige», «entouré d'amis».",
+      "Esquecer a concordância do particípio: “la tour a été construit” está errado. É “construite”.",
+      "Pôr passiva em verbo com objeto indireto: “j'ai été demandé de venir” está errado. É “on m'a demandé de venir”.",
+      "Abusar da passiva onde o francês usa on: “ma voiture a été volée” é correto, mas na conversa soa mais natural “on m'a volé ma voiture”.",
+      "Esquecer que “se faire + infinitivo” não concorda o particípio: “elle s'est fait voler”, nunca “elle s'est faite voler”.",
+      "Usar par com verbos de sentimento e estado quando o uso pede de: “couvert de neige”, “entouré d'amis”.",
     ],
     quiz: [
       {
-        question: "Coloque na passiva: «Victor Hugo a écrit ce roman.»",
+        question: "Coloque na passiva: “Victor Hugo a écrit ce roman.”",
         options: ["Ce roman a été écrit par Victor Hugo.", "Ce roman est écrit de Victor Hugo.", "Ce roman a écrit par Victor Hugo."],
         answer: "Ce roman a été écrit par Victor Hugo.",
         explanation: "Passé composé na passiva: a été + particípio, com o agente introduzido por par.",
       },
       {
-        question: "Como se diz de forma natural «Roubaram minha carteira»?",
+        question: "Como se diz de forma natural “Roubaram minha carteira”?",
         options: ["On m'a volé mon portefeuille.", "Mon portefeuille m'a volé.", "J'ai été volé mon portefeuille."],
         answer: "On m'a volé mon portefeuille.",
-        explanation: "O sujeito indeterminado do português vira «on» em francês.",
+        explanation: "O sujeito indeterminado do português vira “on” em francês.",
       },
       {
-        question: "Complete: «Les montagnes sont couvertes ___ neige.»",
+        question: "Complete: “Les montagnes sont couvertes ___ neige.”",
         options: ["de", "par", "avec"],
         answer: "de",
         explanation: "Com verbos de estado como couvrir, o complemento vem com de.",
       },
       {
-        question: "Como se diz «Me pediram para esperar»?",
+        question: "Como se diz “Me pediram para esperar”?",
         options: ["On m'a demandé d'attendre.", "J'ai été demandé d'attendre.", "Je me suis demandé d'attendre."],
         answer: "On m'a demandé d'attendre.",
-        explanation: "«Demander à quelqu'un» tem objeto indireto: não vai para a passiva; usa-se on.",
+        explanation: "“Demander à quelqu'un” tem objeto indireto: não vai para a passiva; usa-se on.",
       },
       {
-        question: "Complete: «Les billets ___ vendus en ligne à partir de lundi.»",
+        question: "Complete: “Les billets ___ vendus en ligne à partir de lundi.”",
         options: ["seront", "auront", "se seront"],
         answer: "seront",
         explanation: "Passiva no futuro: être no futuro (seront) + particípio concordado (vendus).",
@@ -2907,11 +2907,11 @@ export const GRAMMAR_FR: GrammarTopic[] = [
     level: "B2.2",
     title: "Registro formal: cartas, e-mails e a administração francesa",
     emoji: "✉️",
-    summary: "A carta formal francesa tem fórmulas fixas que parecem exageradas para o brasileiro («Je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées»), mas faltar com elas soa rude. E para lidar com a mairie, a préfecture e a CAF, é preciso conhecer o vocabulário da «paperasse».",
+    summary: "A carta formal francesa tem fórmulas fixas que parecem exageradas para o brasileiro (“Je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées”), mas faltar com elas soa rude. E para lidar com a mairie, a préfecture e a CAF, é preciso conhecer o vocabulário da “paperasse”.",
     sections: [
       {
         heading: "A abertura",
-        text: "Para um desconhecido: «Madame,» ou «Monsieur,» (sem o nome), ou «Madame, Monsieur,» quando não se sabe quem vai ler. Com cargo: «Madame la Directrice,». «Cher Monsieur» é para quem já se conhece. Em e-mails de trabalho, «Bonjour Madame Martin,» é comum e aceito. Abreviações: M. (Monsieur), Mme (Madame); «Mr» é inglês.",
+        text: "Para um desconhecido: “Madame,” ou “Monsieur,” (sem o nome), ou “Madame, Monsieur,” quando não se sabe quem vai ler. Com cargo: “Madame la Directrice,”. “Cher Monsieur” é para quem já se conhece. Em e-mails de trabalho, “Bonjour Madame Martin,” é comum e aceito. Abreviações: M. (Monsieur), Mme (Madame); “Mr” é inglês.",
         table: {
           head: ["Situação", "Abertura"],
           rows: [
@@ -2925,7 +2925,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "O corpo da carta",
-        text: "Frases feitas ajudam a manter o tom. Sempre vous. O conditionnel suaviza os pedidos. «Suite à» se vê muito em textos administrativos, mas a forma considerada mais correta é «à la suite de».",
+        text: "Frases feitas ajudam a manter o tom. Sempre vous. O conditionnel suaviza os pedidos. “Suite à” se vê muito em textos administrativos, mas a forma considerada mais correta é “à la suite de”.",
         examples: [
           ["Je me permets de vous écrire afin de solliciter un rendez-vous.", "Tomo a liberdade de lhe escrever para solicitar um horário."],
           ["À la suite de notre conversation téléphonique, je vous envoie le dossier.", "Após nossa conversa por telefone, envio-lhe a documentação."],
@@ -2936,7 +2936,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "O fecho",
-        text: "Na carta, a fórmula final repete a abertura entre vírgulas. No e-mail, o fecho é bem mais curto. «Bisous» e «Bises» só entre amigos e família.",
+        text: "Na carta, a fórmula final repete a abertura entre vírgulas. No e-mail, o fecho é bem mais curto. “Bisous” e “Bises” só entre amigos e família.",
         table: {
           head: ["Contexto", "Fecho"],
           rows: [
@@ -2950,7 +2950,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "A administração francesa",
-        text: "Morar na França exige montar muitos «dossiers». A mairie (prefeitura) cuida de registro civil e casamentos; a préfecture emite o titre de séjour (autorização de residência) de estrangeiros; a CAF (Caisse d'allocations familiales) paga auxílios, como a ajuda para o aluguel; a Assurance maladie cuida da saúde pública e emite a carte Vitale; France Travail (antigo Pôle emploi) cuida do emprego. Quase tudo pede um justificatif de domicile (comprovante de residência) e um RIB (dados bancários).",
+        text: "Morar na França exige montar muitos “dossiers”. A mairie (prefeitura) cuida de registro civil e casamentos; a préfecture emite o titre de séjour (autorização de residência) de estrangeiros; a CAF (Caisse d'allocations familiales) paga auxílios, como a ajuda para o aluguel; a Assurance maladie cuida da saúde pública e emite a carte Vitale; France Travail (antigo Pôle emploi) cuida do emprego. Quase tudo pede um justificatif de domicile (comprovante de residência) e um RIB (dados bancários).",
         table: {
           head: ["Francês", "Português"],
           rows: [
@@ -2972,9 +2972,9 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Começar com «Cher Monsieur Dupont» um primeiro contato: soa íntimo demais. Use «Monsieur,».",
-      "Abreviar Monsieur como «Mr» ou «Sr.»: em francês é «M.», e Madame é «Mme».",
-      "Terminar uma carta formal só com «Salutations»: soa seco. Use a fórmula completa ou, no e-mail, «Cordialement».",
+      "Começar com “Cher Monsieur Dupont” um primeiro contato: soa íntimo demais. Use “Monsieur,”.",
+      "Abreviar Monsieur como “Mr” ou “Sr.”: em francês é “M.”, e Madame é “Mme”.",
+      "Terminar uma carta formal só com “Salutations”: soa seco. Use a fórmula completa ou, no e-mail, “Cordialement”.",
       "Passar para o tu ao ganhar confiança por e-mail: com a administração e com desconhecidos, é sempre vous.",
       "Confundir mairie (prefeitura da cidade) com préfecture (representação do Estado no departamento): o nome engana o brasileiro.",
     ],
@@ -2989,13 +2989,13 @@ export const GRAMMAR_FR: GrammarTopic[] = [
         question: "Qual é o fecho adequado a um e-mail formal?",
         options: ["Cordialement,", "Bisous,", "Ciao,"],
         answer: "Cordialement,",
-        explanation: "«Cordialement» é o fecho neutro e formal dos e-mails. «Bisous» é íntimo.",
+        explanation: "“Cordialement” é o fecho neutro e formal dos e-mails. “Bisous” é íntimo.",
       },
       {
-        question: "Complete: «Veuillez trouver ___ mon curriculum vitae.»",
+        question: "Complete: “Veuillez trouver ___ mon curriculum vitae.”",
         options: ["ci-joint", "en joint", "joint ici"],
         answer: "ci-joint",
-        explanation: "«Ci-joint» é a expressão fixa para «em anexo».",
+        explanation: "“Ci-joint” é a expressão fixa para “em anexo”.",
       },
       {
         question: "Onde um estrangeiro pede o titre de séjour?",
@@ -3007,7 +3007,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
         question: "Qual pedido soa mais cortês?",
         options: ["Je vous serais reconnaissant de bien vouloir me répondre.", "Répondez-moi vite.", "Je veux une réponse."],
         answer: "Je vous serais reconnaissant de bien vouloir me répondre.",
-        explanation: "O conditionnel e a fórmula «bien vouloir» suavizam o pedido no registro formal.",
+        explanation: "O conditionnel e a fórmula “bien vouloir” suavizam o pedido no registro formal.",
       },
     ],
   },
@@ -3017,7 +3017,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
     level: "B2.3",
     title: "Expressões idiomáticas",
     emoji: "🎭",
-    summary: "Algumas expressões francesas são quase iguais às nossas («coûter les yeux de la tête», custar os olhos da cara); outras só fazem sentido quando se conhece a imagem: um coelho que dá bolo, uma barata que dá tristeza, maçãs onde se desmaia.",
+    summary: "Algumas expressões francesas são quase iguais às nossas (“coûter les yeux de la tête”, custar os olhos da cara); outras só fazem sentido quando se conhece a imagem: um coelho que dá bolo, uma barata que dá tristeza, maçãs onde se desmaia.",
     sections: [
       {
         heading: "Quase iguais ao português",
@@ -3105,39 +3105,39 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Traduzir as nossas expressões ao pé da letra: «il pleut des couteaux» não existe. É «il pleut des cordes».",
-      "Usar «poser un lapin» ao contrário: quem pose le lapin é quem falta, não quem espera.",
-      "Levar para o registro formal: «j'en ai marre», «avoir la flemme» e «casser les pieds» são familiares.",
-      "Confundir «avoir le cafard» (estar na fossa) com ter medo de barata: o sentido é só a tristeza.",
-      "Mudar o artigo ou o número: é «dans les pommes» (plural), «les yeux de la tête» (e não «de la figure»).",
+      "Traduzir as nossas expressões ao pé da letra: “il pleut des couteaux” não existe. É “il pleut des cordes”.",
+      "Usar “poser un lapin” ao contrário: quem pose le lapin é quem falta, não quem espera.",
+      "Levar para o registro formal: “j'en ai marre”, “avoir la flemme” e “casser les pieds” são familiares.",
+      "Confundir “avoir le cafard” (estar na fossa) com ter medo de barata: o sentido é só a tristeza.",
+      "Mudar o artigo ou o número: é “dans les pommes” (plural), “les yeux de la tête” (e não “de la figure”).",
     ],
     quiz: [
       {
-        question: "Como se diz «Ele me deu um bolo»?",
+        question: "Como se diz “Ele me deu um bolo”?",
         options: ["Il m'a posé un lapin.", "Il m'a donné un gâteau.", "Il m'a mis un lapin."],
         answer: "Il m'a posé un lapin.",
-        explanation: "«Poser un lapin à quelqu'un» é faltar a um encontro combinado.",
+        explanation: "“Poser un lapin à quelqu'un” é faltar a um encontro combinado.",
       },
       {
-        question: "«Elle est tombée dans les pommes» quer dizer que ela…",
+        question: "“Elle est tombée dans les pommes” quer dizer que ela…",
         options: ["s'est évanouie", "a fait les courses", "s'est trompée"],
         answer: "s'est évanouie",
-        explanation: "«Tomber dans les pommes» é desmaiar (s'évanouir).",
+        explanation: "“Tomber dans les pommes” é desmaiar (s'évanouir).",
       },
       {
-        question: "Como se diz «Está chovendo canivete»?",
+        question: "Como se diz “Está chovendo canivete”?",
         options: ["Il pleut des cordes.", "Il pleut des couteaux.", "Il pleut des pierres."],
         answer: "Il pleut des cordes.",
-        explanation: "Em francês chovem cordas: «il pleut des cordes».",
+        explanation: "Em francês chovem cordas: “il pleut des cordes”.",
       },
       {
-        question: "Qual expressão significa «estar de saco cheio»?",
+        question: "Qual expressão significa “estar de saco cheio”?",
         options: ["en avoir marre", "avoir le coup de foudre", "être aux anges"],
         answer: "en avoir marre",
-        explanation: "«J'en ai marre» = estou de saco cheio. As outras falam de paixão e de felicidade.",
+        explanation: "“J'en ai marre” = estou de saco cheio. As outras falam de paixão e de felicidade.",
       },
       {
-        question: "«Revenons à nos moutons» serve para…",
+        question: "“Revenons à nos moutons” serve para…",
         options: ["reprendre le sujet", "parler d'un troupeau", "quitter la campagne"],
         answer: "reprendre le sujet",
         explanation: "A expressão retoma o tema da conversa depois de um desvio.",
@@ -3149,11 +3149,11 @@ export const GRAMMAR_FR: GrammarTopic[] = [
     level: "B2.3",
     title: "A língua falada: on, a queda do ne, t'as, gíria e verlan",
     emoji: "🗣️",
-    summary: "O francês das ruas é bem diferente do francês dos livros: «on» no lugar de «nous», o «ne» que some («je sais pas»), «t'as», «y a», perguntas só com a entonação, gírias como «mec» e «boulot» e o verlan, que inverte as sílabas: «femme» → «meuf», «louche» → «chelou».",
+    summary: "O francês das ruas é bem diferente do francês dos livros: “on” no lugar de “nous”, o “ne” que some (“je sais pas”), “t'as”, “y a”, perguntas só com a entonação, gírias como “mec” e “boulot” e o verlan, que inverte as sílabas: “femme” → “meuf”, “louche” → “chelou”.",
     sections: [
       {
         heading: "On no lugar de nous",
-        text: "Na conversa, «on» substitui «nous» quase sempre, como o nosso «a gente». O verbo fica na 3ª pessoa do singular, mas adjetivos e particípios com être costumam concordar com o grupo: «on est allés», «on est contentes».",
+        text: "Na conversa, “on” substitui “nous” quase sempre, como o nosso “a gente”. O verbo fica na 3ª pessoa do singular, mas adjetivos e particípios com être costumam concordar com o grupo: “on est allés”, “on est contentes”.",
         examples: [
           ["On y va ?", "Vamos?"],
           ["On est allés au cinéma hier soir.", "A gente foi ao cinema ontem à noite."],
@@ -3162,7 +3162,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "A queda do ne e as reduções",
-        text: "Na fala, o «ne» da negação quase sempre cai; o «pas», «rien», «jamais» ficam. Várias palavras se encurtam: tu as → t'as, tu es → t'es, il y a → y a, je ne sais pas → chais pas [ʃɛpa]. Na escrita formal, tudo isso volta à forma completa.",
+        text: "Na fala, o “ne” da negação quase sempre cai; o “pas”, “rien”, “jamais” ficam. Várias palavras se encurtam: tu as → t'as, tu es → t'es, il y a → y a, je ne sais pas → chais pas [ʃɛpa]. Na escrita formal, tudo isso volta à forma completa.",
         table: {
           head: ["Escrita padrão", "Fala espontânea"],
           rows: [
@@ -3182,7 +3182,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Perguntas e deslocamentos",
-        text: "Na fala, a pergunta se faz só com a entonação, e a palavra interrogativa muitas vezes vai para o fim: «tu fais quoi ?», «c'est quoi, ça ?», «tu pars quand ?». Também é comum destacar um elemento no começo ou no fim da frase e retomá-lo com pronome: «Moi, je trouve que…», «Il est bien, ce film».",
+        text: "Na fala, a pergunta se faz só com a entonação, e a palavra interrogativa muitas vezes vai para o fim: “tu fais quoi ?”, “c'est quoi, ça ?”, “tu pars quand ?”. Também é comum destacar um elemento no começo ou no fim da frase e retomá-lo com pronome: “Moi, je trouve que…”, “Il est bien, ce film”.",
         examples: [
           ["Tu fais quoi ce soir ?", "O que você vai fazer hoje à noite?"],
           ["C'est quoi, ce truc ?", "Que troço é esse?"],
@@ -3192,7 +3192,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Gíria do dia a dia",
-        text: "O «argot» familiar é usado por todo mundo entre amigos. Não é vulgar, mas não cabe numa entrevista de emprego.",
+        text: "O “argot” familiar é usado por todo mundo entre amigos. Não é vulgar, mas não cabe numa entrevista de emprego.",
         table: {
           head: ["Gíria", "Padrão", "Português"],
           rows: [
@@ -3216,7 +3216,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "O verlan",
-        text: "Verlan é «l'envers» (o avesso) com as sílabas invertidas. Nasceu na gíria popular e muitas palavras entraram na fala de todo mundo, sobretudo dos jovens. A palavra verlanizada muitas vezes ganha um som de «eu» no fim: femme → meuf, flic → keuf.",
+        text: "Verlan é “l'envers” (o avesso) com as sílabas invertidas. Nasceu na gíria popular e muitas palavras entraram na fala de todo mundo, sobretudo dos jovens. A palavra verlanizada muitas vezes ganha um som de “eu” no fim: femme → meuf, flic → keuf.",
         table: {
           head: ["Palavra", "Verlan", "Sentido"],
           rows: [
@@ -3239,39 +3239,39 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Tirar o «ne» na escrita formal: numa carta ou redação, é «je ne sais pas», «ce n'est pas».",
-      "Conjugar o on no plural: «on sommes» não existe. O verbo fica no singular: «on est».",
-      "Usar gíria e verlan com desconhecidos, professores ou no trabalho: «meuf», «keuf» e «relou» são bem familiares, e «keuf» pode ofender.",
-      "Achar que «t'as» e «t'es» servem para escrever qualquer coisa: fora de mensagens entre amigos, escreva «tu as», «tu es».",
-      "Confundir «mec» (cara) com um termo ofensivo: é neutro e familiar; já «meuf» pode soar desrespeitoso dependendo do tom.",
+      "Tirar o “ne” na escrita formal: numa carta ou redação, é “je ne sais pas”, “ce n'est pas”.",
+      "Conjugar o on no plural: “on sommes” não existe. O verbo fica no singular: “on est”.",
+      "Usar gíria e verlan com desconhecidos, professores ou no trabalho: “meuf”, “keuf” e “relou” são bem familiares, e “keuf” pode ofender.",
+      "Achar que “t'as” e “t'es” servem para escrever qualquer coisa: fora de mensagens entre amigos, escreva “tu as”, “tu es”.",
+      "Confundir “mec” (cara) com um termo ofensivo: é neutro e familiar; já “meuf” pode soar desrespeitoso dependendo do tom.",
     ],
     quiz: [
       {
-        question: "Qual é a forma escrita padrão de «Chais pas»?",
+        question: "Qual é a forma escrita padrão de “Chais pas”?",
         options: ["Je ne sais pas.", "Je sais pas.", "Je ne le sais."],
         answer: "Je ne sais pas.",
-        explanation: "Na escrita padrão, o «ne» volta e as palavras não se encurtam.",
+        explanation: "Na escrita padrão, o “ne” volta e as palavras não se encurtam.",
       },
       {
-        question: "«C'est ouf !» quer dizer…",
+        question: "“C'est ouf !” quer dizer…",
         options: ["C'est fou !", "C'est fini !", "C'est lourd !"],
         answer: "C'est fou !",
-        explanation: "«Ouf» é o verlan de «fou»: incrível, louco.",
+        explanation: "“Ouf” é o verlan de “fou”: incrível, louco.",
       },
       {
-        question: "Complete na fala: «Hier, ___ allés à la plage.» (a gente)",
+        question: "Complete na fala: “Hier, ___ allés à la plage.” (a gente)",
         options: ["on est", "on sont", "on sommes"],
         answer: "on est",
         explanation: "Com on, o verbo fica na 3ª pessoa do singular; o particípio pode concordar com o grupo.",
       },
       {
-        question: "Qual é o verlan de «louche» (suspeito)?",
+        question: "Qual é o verlan de “louche” (suspeito)?",
         options: ["chelou", "relou", "zarbi"],
         answer: "chelou",
-        explanation: "Lou-che → che-lou. «Relou» vem de lourd e «zarbi» de bizarre.",
+        explanation: "Lou-che → che-lou. “Relou” vem de lourd e “zarbi” de bizarre.",
       },
       {
-        question: "Como se diz, em francês padrão, «Mon pote bosse beaucoup»?",
+        question: "Como se diz, em francês padrão, “Mon pote bosse beaucoup”?",
         options: ["Mon ami travaille beaucoup.", "Mon mec travaille beaucoup.", "Mon ami boit beaucoup."],
         answer: "Mon ami travaille beaucoup.",
         explanation: "Pote = ami e bosser = travailler.",
@@ -3284,11 +3284,11 @@ export const GRAMMAR_FR: GrammarTopic[] = [
     level: "B2.4",
     title: "Argumentação e conectores: cependant, néanmoins, en revanche, d'ailleurs",
     emoji: "⚖️",
-    summary: "Para argumentar em francês, os conectores são tudo. Vários enganam o brasileiro: «pourtant» é «no entanto» (e não «portanto»), «d'ailleurs» é «aliás» e «en revanche» é «em compensação», sem nenhuma vingança.",
+    summary: "Para argumentar em francês, os conectores são tudo. Vários enganam o brasileiro: “pourtant” é “no entanto” (e não “portanto”), “d'ailleurs” é “aliás” e “en revanche” é “em compensação”, sem nenhuma vingança.",
     sections: [
       {
         heading: "Os conectores por função",
-        text: "Organizar as ideias por função ajuda a variar o texto e a não repetir «mais» e «donc». Os mais formais (néanmoins, toutefois, en outre, par conséquent) são típicos da escrita; na fala, dominam mais, par contre, du coup e en plus.",
+        text: "Organizar as ideias por função ajuda a variar o texto e a não repetir “mais” e “donc”. Os mais formais (néanmoins, toutefois, en outre, par conséquent) são típicos da escrita; na fala, dominam mais, par contre, du coup e en plus.",
         table: {
           head: ["Função", "Conectores", "Português"],
           rows: [
@@ -3305,7 +3305,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Os falsos amigos",
-        text: "Estes conectores parecem palavras do português e querem dizer outra coisa. «Pourtant» é o mais perigoso: parece «portanto», mas indica oposição. O «portanto» francês é «donc». «Finalement» é «no fim das contas», e não «finalmente» no sentido de «até que enfim» (que é «enfin»).",
+        text: "Estes conectores parecem palavras do português e querem dizer outra coisa. “Pourtant” é o mais perigoso: parece “portanto”, mas indica oposição. O “portanto” francês é “donc”. “Finalement” é “no fim das contas”, e não “finalmente” no sentido de “até que enfim” (que é “enfin”).",
         table: {
           head: ["Francês", "Parece", "Quer dizer"],
           rows: [
@@ -3326,7 +3326,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Car, parce que, puisque, comme",
-        text: "Parce que responde a um «pourquoi ?» e apresenta uma causa nova. Car é mais escrito e vem sempre no meio da frase, nunca no começo. Puisque apresenta uma causa que o ouvinte já conhece (já que). Comme abre a frase com a causa: «Comme il pleuvait, …».",
+        text: "Parce que responde a um “pourquoi ?” e apresenta uma causa nova. Car é mais escrito e vem sempre no meio da frase, nunca no começo. Puisque apresenta uma causa que o ouvinte já conhece (já que). Comme abre a frase com a causa: “Comme il pleuvait, …”.",
         examples: [
           ["Pourquoi tu pars ? — Parce que je suis fatigué.", "Por que você vai embora? — Porque estou cansado."],
           ["Il faut réserver, car le restaurant est souvent complet.", "É preciso reservar, pois o restaurante vive lotado."],
@@ -3336,7 +3336,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Dar opinião e estruturar",
-        text: "Para uma dissertação ou um debate, o francês gosta de estruturas em duas partes (d'un côté… de l'autre, certes… mais) e de fórmulas de opinião. «Je pense que» pede indicativo; na negação, subjonctif.",
+        text: "Para uma dissertação ou um debate, o francês gosta de estruturas em duas partes (d'un côté… de l'autre, certes… mais) e de fórmulas de opinião. “Je pense que” pede indicativo; na negação, subjonctif.",
         examples: [
           ["À mon avis, le télétravail présente plus d'avantages que d'inconvénients.", "Na minha opinião, o trabalho remoto tem mais vantagens que desvantagens."],
           ["Certes, le train est plus cher, mais il est beaucoup plus confortable.", "É verdade que o trem é mais caro, mas é muito mais confortável."],
@@ -3347,42 +3347,42 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Usar «pourtant» como «portanto»: ele indica oposição. Para concluir, use «donc» ou «par conséquent».",
-      "Começar uma frase com «car»: «Car il pleut, je reste» está errado. Use «Comme il pleut, je reste».",
-      "Traduzir «aliás» por «d'autre part» ou «en plus» sempre: o equivalente mais próximo é «d'ailleurs».",
-      "Abusar de «du coup» num texto formal: é muito comum na fala, mas na escrita cuidada prefira «donc» ou «par conséquent».",
-      "Usar «par contre» numa redação formal: é aceito, mas muita gente o evita na escrita; «en revanche» é a escolha segura.",
+      "Usar “pourtant” como “portanto”: ele indica oposição. Para concluir, use “donc” ou “par conséquent”.",
+      "Começar uma frase com “car”: “Car il pleut, je reste” está errado. Use “Comme il pleut, je reste”.",
+      "Traduzir “aliás” por “d'autre part” ou “en plus” sempre: o equivalente mais próximo é “d'ailleurs”.",
+      "Abusar de “du coup” num texto formal: é muito comum na fala, mas na escrita cuidada prefira “donc” ou “par conséquent”.",
+      "Usar “par contre” numa redação formal: é aceito, mas muita gente o evita na escrita; “en revanche” é a escolha segura.",
     ],
     quiz: [
       {
-        question: "Complete: «Il fait froid ; ___, les terrasses sont pleines.» (no entanto)",
+        question: "Complete: “Il fait froid ; ___, les terrasses sont pleines.” (no entanto)",
         options: ["pourtant", "donc", "car"],
         answer: "pourtant",
-        explanation: "«Pourtant» indica oposição: no entanto. «Donc» é portanto.",
+        explanation: "“Pourtant” indica oposição: no entanto. “Donc” é portanto.",
       },
       {
-        question: "Qual conector equivale a «aliás»?",
+        question: "Qual conector equivale a “aliás”?",
         options: ["d'ailleurs", "ailleurs", "en revanche"],
         answer: "d'ailleurs",
-        explanation: "«D'ailleurs» acrescenta um dado que reforça o que se disse: aliás. «Ailleurs» sozinho é «em outro lugar».",
+        explanation: "“D'ailleurs” acrescenta um dado que reforça o que se disse: aliás. “Ailleurs” sozinho é “em outro lugar”.",
       },
       {
         question: "Qual frase está correta?",
         options: ["Comme il était tard, nous sommes rentrés.", "Car il était tard, nous sommes rentrés.", "Donc il était tard, nous sommes rentrés."],
         answer: "Comme il était tard, nous sommes rentrés.",
-        explanation: "«Comme» abre a frase com a causa. «Car» nunca começa a frase, e «donc» indica consequência, não causa.",
+        explanation: "“Comme” abre a frase com a causa. “Car” nunca começa a frase, e “donc” indica consequência, não causa.",
       },
       {
-        question: "Complete: «La ville est bruyante ; ___, la campagne est calme.» (em compensação)",
+        question: "Complete: “La ville est bruyante ; ___, la campagne est calme.” (em compensação)",
         options: ["en revanche", "de plus", "donc"],
         answer: "en revanche",
-        explanation: "«En revanche» marca contraste: em compensação, por outro lado.",
+        explanation: "“En revanche” marca contraste: em compensação, por outro lado.",
       },
       {
         question: "Qual conector é o mais adequado numa redação formal para concluir uma consequência?",
         options: ["par conséquent", "du coup", "bref"],
         answer: "par conséquent",
-        explanation: "«Par conséquent» é formal; «du coup» é da fala e «bref» resume.",
+        explanation: "“Par conséquent” é formal; “du coup” é da fala e “bref” resume.",
       },
     ],
   },
@@ -3391,11 +3391,11 @@ export const GRAMMAR_FR: GrammarTopic[] = [
     level: "B2.4",
     title: "Subjonctif depois de conjunções e a pontuação francesa",
     emoji: "✍️",
-    summary: "Bien que, pour que, avant que, jusqu'à ce que e à moins que pedem subjonctif, como no português; mas «après que» e «même si» pedem indicativo. E a pontuação francesa tem regras próprias: espaço antes de ; : ? !, aspas « » e nada de maiúscula nos meses.",
+    summary: "Bien que, pour que, avant que, jusqu'à ce que e à moins que pedem subjonctif, como no português; mas “après que” e “même si” pedem indicativo. E a pontuação francesa tem regras próprias: espaço antes de ; : ? !, aspas “ ” e nada de maiúscula nos meses.",
     sections: [
       {
         heading: "Conjunções com subjonctif",
-        text: "Estas conjunções pedem sempre o subjonctif, e a maioria corresponde a conjunções que também pedem subjuntivo em português. Depois de avant que, à moins que e de peur que, a língua cuidada acrescenta um «ne» sem valor negativo (ne explétif): «avant qu'il ne parte». Ele é opcional e não nega nada.",
+        text: "Estas conjunções pedem sempre o subjonctif, e a maioria corresponde a conjunções que também pedem subjuntivo em português. Depois de avant que, à moins que e de peur que, a língua cuidada acrescenta um “ne” sem valor negativo (ne explétif): “avant qu'il ne parte”. Ele é opcional e não nega nada.",
         table: {
           head: ["Conjunção", "Português", "Exemplo"],
           rows: [
@@ -3419,7 +3419,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Conjunções com indicativo e o mesmo sujeito",
-        text: "Après que, même si, parce que, pendant que, alors que, dès que e depuis que pedem indicativo. «Après que» com subjonctif se ouve muito, mas a norma pede indicativo. Se o sujeito das duas orações é o mesmo, a conjunção vira preposição + infinitivo: pour partir, avant de partir, sans dire, afin de, à condition de.",
+        text: "Après que, même si, parce que, pendant que, alors que, dès que e depuis que pedem indicativo. “Après que” com subjonctif se ouve muito, mas a norma pede indicativo. Se o sujeito das duas orações é o mesmo, a conjunção vira preposição + infinitivo: pour partir, avant de partir, sans dire, afin de, à condition de.",
         table: {
           head: ["Sujeitos diferentes", "Mesmo sujeito"],
           rows: [
@@ -3438,12 +3438,12 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "A pontuação francesa",
-        text: "Na França, põe-se um espaço (de preferência um espaço fino inseparável) antes dos sinais duplos: ponto e vírgula, dois-pontos, ponto de interrogação e de exclamação, e também dentro das aspas angulares « ». No diálogo, usa-se o travessão, como no português. Os números usam vírgula decimal e espaço nos milhares; as horas levam «h».",
+        text: "Na França, põe-se um espaço (de preferência um espaço fino inseparável) antes dos sinais duplos: ponto e vírgula, dois-pontos, ponto de interrogação e de exclamação, e também dentro das aspas angulares “ ”. No diálogo, usa-se o travessão, como no português. Os números usam vírgula decimal e espaço nos milhares; as horas levam “h”.",
         table: {
           head: ["Regra", "Francês", "Português"],
           rows: [
             ["espaço antes de ? ! ; :", "Tu viens ? Oui !", "Você vem? Sim!"],
-            ["aspas angulares com espaço", "« Bonjour »", "«Bom dia»"],
+            ["aspas angulares com espaço", "“ Bonjour ”", "“Bom dia”"],
             ["milhares e decimais", "1 000 000 ; 3,5", "1.000.000; 3,5"],
             ["horas", "14 h 30", "14h30"],
             ["meses e dias em minúscula", "lundi 3 mars", "segunda, 3 de março"],
@@ -3453,7 +3453,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
           ],
         },
         examples: [
-          ["Il m'a dit : « Je reviens dans cinq minutes. »", "Ele me disse: «Volto em cinco minutos.»"],
+          ["Il m'a dit : “ Je reviens dans cinq minutes. ”", "Ele me disse: “Volto em cinco minutos.”"],
           ["Le musée ouvre à 9 h 30 le mardi 2 avril.", "O museu abre às 9h30 na terça-feira, 2 de abril."],
           ["Les Français boivent beaucoup de café.", "Os franceses bebem muito café."],
           ["Victor Hugo est un écrivain du XIXe siècle.", "Victor Hugo é um escritor do século XIX."],
@@ -3461,27 +3461,27 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Usar indicativo depois de «bien que»: «bien qu'il est tard» está errado. É «bien qu'il soit tard».",
-      "Usar subjonctif depois de «même si», calcando o «mesmo que chova»: é «même s'il pleut», no indicativo.",
-      "Achar que o «ne» de «avant qu'il ne parte» nega a frase: é um ne explétif, sem valor negativo.",
-      "Usar «que» com o mesmo sujeito: «je travaille pour que je gagne ma vie» está errado. É «pour gagner ma vie».",
-      "Escrever os meses, os dias e os adjetivos de nacionalidade com maiúscula: é «en janvier», «le lundi», «la cuisine française». Só o habitante leva maiúscula: «un Français».",
+      "Usar indicativo depois de “bien que”: “bien qu'il est tard” está errado. É “bien qu'il soit tard”.",
+      "Usar subjonctif depois de “même si”, calcando o “mesmo que chova”: é “même s'il pleut”, no indicativo.",
+      "Achar que o “ne” de “avant qu'il ne parte” nega a frase: é um ne explétif, sem valor negativo.",
+      "Usar “que” com o mesmo sujeito: “je travaille pour que je gagne ma vie” está errado. É “pour gagner ma vie”.",
+      "Escrever os meses, os dias e os adjetivos de nacionalidade com maiúscula: é “en janvier”, “le lundi”, “la cuisine française”. Só o habitante leva maiúscula: “un Français”.",
     ],
     quiz: [
       {
-        question: "Complete: «Bien qu'il ___ malade, il continue à travailler.»",
+        question: "Complete: “Bien qu'il ___ malade, il continue à travailler.”",
         options: ["soit", "est", "sera"],
         answer: "soit",
-        explanation: "«Bien que» pede sempre o subjonctif.",
+        explanation: "“Bien que” pede sempre o subjonctif.",
       },
       {
-        question: "Complete: «Même s'il ___, on sortira.»",
+        question: "Complete: “Même s'il ___, on sortira.”",
         options: ["pleut", "pleuve", "pleuvrait"],
         answer: "pleut",
-        explanation: "«Même si» funciona como «si»: pede indicativo, sem futuro nem conditionnel.",
+        explanation: "“Même si” funciona como “si”: pede indicativo, sem futuro nem conditionnel.",
       },
       {
-        question: "Como se diz «Liga antes de vir» (o mesmo sujeito)?",
+        question: "Como se diz “Liga antes de vir” (o mesmo sujeito)?",
         options: ["Appelle avant de venir.", "Appelle avant que tu viennes.", "Appelle avant venir."],
         answer: "Appelle avant de venir.",
         explanation: "Mesmo sujeito: avant de + infinitivo.",
@@ -3506,14 +3506,14 @@ export const GRAMMAR_FR: GrammarTopic[] = [
     level: "C1.1",
     title: "O francês do Quebec",
     emoji: "🍁",
-    summary: "Mais de 7 milhões de quebequenses têm o francês como língua materna. Ele tem vogais e palavras próprias, o «tu» das perguntas, os «sacres» e uma política firme contra o anglicismo que deu ao mundo o «courriel».",
+    summary: "Mais de 7 milhões de quebequenses têm o francês como língua materna. Ele tem vogais e palavras próprias, o “tu” das perguntas, os “sacres” e uma política firme contra o anglicismo que deu ao mundo o “courriel”.",
     sections: [
       {
-        text: "O francês chegou à América do Norte no século XVII com colonos vindos sobretudo do oeste e do norte da França (Normandia, Perche, Poitou, região de Paris). Depois de 1763, quando a Nova França passou à Coroa britânica, o francês do Quebec se desenvolveu longe da França e cercado pelo inglês. Ele conservou palavras e pronúncias que a França abandonou e criou outras. Não é um francês «antigo» nem «errado»: é a variedade padrão de um país francófono, com norma própria, ensinada nas escolas e usada na imprensa, na lei e na literatura.",
+        text: "O francês chegou à América do Norte no século XVII com colonos vindos sobretudo do oeste e do norte da França (Normandia, Perche, Poitou, região de Paris). Depois de 1763, quando a Nova França passou à Coroa britânica, o francês do Quebec se desenvolveu longe da França e cercado pelo inglês. Ele conservou palavras e pronúncias que a França abandonou e criou outras. Não é um francês “antigo” nem “errado”: é a variedade padrão de um país francófono, com norma própria, ensinada nas escolas e usada na imprensa, na lei e na literatura.",
       },
       {
-        heading: "A lei 101 e o «courriel»",
-        text: "Em 1977, a Charte de la langue française (a «loi 101») fez do francês a única língua oficial da província: é a língua do trabalho, do comércio, das placas e da escola pública para os filhos de imigrantes. O Office québécois de la langue française (OQLF) propõe palavras francesas no lugar dos anglicismos. Foi no Quebec que nasceu «courriel» (de «courrier électronique»), depois adotado oficialmente na França. Curiosamente, em muitos pontos a França aceita mais anglicismos do que o Quebec: os franceses dizem «le week-end», «le parking» e «faire du shopping»; os quebequenses, «la fin de semaine», «le stationnement» e «magasiner». Nas placas de trânsito, o «STOP» da França vira «ARRÊT».",
+        heading: "A lei 101 e o “courriel”",
+        text: "Em 1977, a Charte de la langue française (a “loi 101”) fez do francês a única língua oficial da província: é a língua do trabalho, do comércio, das placas e da escola pública para os filhos de imigrantes. O Office québécois de la langue française (OQLF) propõe palavras francesas no lugar dos anglicismos. Foi no Quebec que nasceu “courriel” (de “courrier électronique”), depois adotado oficialmente na França. Curiosamente, em muitos pontos a França aceita mais anglicismos do que o Quebec: os franceses dizem “le week-end”, “le parking” e “faire du shopping”; os quebequenses, “la fin de semaine”, “le stationnement” e “magasiner”. Nas placas de trânsito, o “STOP” da França vira “ARRÊT”.",
         table: {
           head: ["Coisa", "França", "Quebec", "Português"],
           rows: [
@@ -3551,8 +3551,8 @@ export const GRAMMAR_FR: GrammarTopic[] = [
         ],
       },
       {
-        heading: "O «tu» das perguntas",
-        text: "Na fala informal, o quebequense forma perguntas de sim ou não com uma partícula «-tu» depois do verbo, qualquer que seja a pessoa: «Tu viens-tu ?», «C'est-tu loin ?», «Ça marche-tu ?». Esse «tu» não é o pronome: é a antiga partícula «-ti» do francês popular (de «dit-il», «va-t-il»), que em francês da França sobreviveu só em algumas regiões e virou «tu» no Quebec. Na escrita formal, usa-se «est-ce que» ou a inversão, como na França.",
+        heading: "O “tu” das perguntas",
+        text: "Na fala informal, o quebequense forma perguntas de sim ou não com uma partícula “-tu” depois do verbo, qualquer que seja a pessoa: “Tu viens-tu ?”, “C'est-tu loin ?”, “Ça marche-tu ?”. Esse “tu” não é o pronome: é a antiga partícula “-ti” do francês popular (de “dit-il”, “va-t-il”), que em francês da França sobreviveu só em algumas regiões e virou “tu” no Quebec. Na escrita formal, usa-se “est-ce que” ou a inversão, como na França.",
         examples: [
           ["Tu veux-tu un café ?", "Você quer um café? (França: Tu veux un café ?)"],
           ["C'est-tu loin, Chicoutimi ?", "É longe, Chicoutimi?"],
@@ -3561,51 +3561,51 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Pronúncia",
-        text: "Quatro traços se ouvem logo. O t e o d antes de i e u viram quase «ts» e «dz»: «tu» soa [tsy], «dire» soa [dziʁ], parecido com o «tia» e o «dia» de muitos brasileiros. O i, o u e o ou ficam mais abertos em sílaba fechada: «petite» soa [pətsɪt]. As vogais longas viram ditongos: «père» soa quase «paère», «fête» quase «faète». E a distinção entre «brin» e «brun», «patte» e «pâte» continua viva, ao contrário de Paris.",
+        text: "Quatro traços se ouvem logo. O t e o d antes de i e u viram quase “ts” e “dz”: “tu” soa [tsy], “dire” soa [dziʁ], parecido com o “tia” e o “dia” de muitos brasileiros. O i, o u e o ou ficam mais abertos em sílaba fechada: “petite” soa [pətsɪt]. As vogais longas viram ditongos: “père” soa quase “paère”, “fête” quase “faète”. E a distinção entre “brin” e “brun”, “patte” e “pâte” continua viva, ao contrário de Paris.",
       },
       {
-        heading: "Os «sacres»",
-        text: "Os palavrões mais fortes do Quebec vêm do vocabulário da missa: «tabarnak» (tabernáculo), «câlice» (cálice), «hostie» (hóstia), «calvaire», «ciboire». Nasceram numa sociedade em que a Igreja católica tinha enorme peso, e xingar com o sagrado era a maior transgressão possível. Para suavizar, existem formas «de fantasia», como «tabarouette», «câline» e «mautadit». Entenda-os quando ouvir num filme ou num show de humor, mas não os use: são vulgares, e na boca de um estrangeiro soam ainda piores.",
+        heading: "Os “sacres”",
+        text: "Os palavrões mais fortes do Quebec vêm do vocabulário da missa: “tabarnak” (tabernáculo), “câlice” (cálice), “hostie” (hóstia), “calvaire”, “ciboire”. Nasceram numa sociedade em que a Igreja católica tinha enorme peso, e xingar com o sagrado era a maior transgressão possível. Para suavizar, existem formas “de fantasia”, como “tabarouette”, “câline” e “mautadit”. Entenda-os quando ouvir num filme ou num show de humor, mas não os use: são vulgares, e na boca de um estrangeiro soam ainda piores.",
       },
       {
         heading: "Acádia e o resto do Canadá",
-        text: "Além do Quebec, fala-se francês no Novo Brunswick (a única província oficialmente bilíngue do Canadá), onde vivem os acadianos, e em comunidades de Ontário e do Manitoba. Os acadianos descendem de colonos que chegaram no século XVII; muitos foram deportados pelos britânicos a partir de 1755, o «Grand Dérangement», e parte deles foi parar na Louisiana, onde deram origem aos «cajuns». No sudeste do Novo Brunswick, fala-se o «chiac», uma mistura de francês acadiano e inglês.",
+        text: "Além do Quebec, fala-se francês no Novo Brunswick (a única província oficialmente bilíngue do Canadá), onde vivem os acadianos, e em comunidades de Ontário e do Manitoba. Os acadianos descendem de colonos que chegaram no século XVII; muitos foram deportados pelos britânicos a partir de 1755, o “Grand Dérangement”, e parte deles foi parar na Louisiana, onde deram origem aos “cajuns”. No sudeste do Novo Brunswick, fala-se o “chiac”, uma mistura de francês acadiano e inglês.",
       },
     ],
     pitfalls: [
-      "Achar que o francês do Quebec é francês «antigo» ou «malfalado». Ele tem norma própria, e um quebequense culto fala e escreve um francês impecável.",
-      "Responder «Bienvenue» a um «merci» na França: lá soa como «bem-vindo». Diga «de rien» ou «je vous en prie».",
-      "Confundir as refeições: no Quebec (e na Bélgica e na Suíça), «le dîner» é o almoço e «le souper» é o jantar.",
-      "Usar os «sacres» para parecer à vontade. Para um estrangeiro, soam agressivos; fique no «tabarouette», se quiser brincar.",
-      "Escrever «Tu viens-tu ?» num texto formal. A partícula «-tu» é da fala informal; na escrita, use «Est-ce que tu viens ?» ou «Viens-tu ?».",
+      "Achar que o francês do Quebec é francês “antigo” ou “malfalado”. Ele tem norma própria, e um quebequense culto fala e escreve um francês impecável.",
+      "Responder “Bienvenue” a um “merci” na França: lá soa como “bem-vindo”. Diga “de rien” ou “je vous en prie”.",
+      "Confundir as refeições: no Quebec (e na Bélgica e na Suíça), “le dîner” é o almoço e “le souper” é o jantar.",
+      "Usar os “sacres” para parecer à vontade. Para um estrangeiro, soam agressivos; fique no “tabarouette”, se quiser brincar.",
+      "Escrever “Tu viens-tu ?” num texto formal. A partícula “-tu” é da fala informal; na escrita, use “Est-ce que tu viens ?” ou “Viens-tu ?”.",
     ],
     quiz: [
       {
-        question: "Qual palavra nasceu no Quebec para substituir «e-mail»?",
+        question: "Qual palavra nasceu no Quebec para substituir “e-mail”?",
         options: ["courriel", "pourriel", "clavardage"],
         answer: "courriel",
-        explanation: "«Courriel» vem de «courrier électronique». «Pourriel» é o spam e «clavardage», o bate-papo.",
+        explanation: "“Courriel” vem de “courrier électronique”. “Pourriel” é o spam e “clavardage”, o bate-papo.",
       },
       {
-        question: "No Quebec, «Tu viens-tu ?» quer dizer…",
+        question: "No Quebec, “Tu viens-tu ?” quer dizer…",
         options: ["Est-ce que tu viens ?", "Tu viens avec toi ?", "Viens, toi !"],
         answer: "Est-ce que tu viens ?",
-        explanation: "O «-tu» depois do verbo é uma partícula de pergunta de sim ou não, não um pronome.",
+        explanation: "O “-tu” depois do verbo é uma partícula de pergunta de sim ou não, não um pronome.",
       },
       {
-        question: "Um quebequense diz «Je vais souper». O que ele vai fazer?",
+        question: "Um quebequense diz “Je vais souper”. O que ele vai fazer?",
         options: ["dîner (le soir)", "déjeuner (à midi)", "prendre le petit-déjeuner"],
         answer: "dîner (le soir)",
         explanation: "No Quebec: déjeuner = café da manhã, dîner = almoço, souper = jantar.",
       },
       {
-        question: "Como se diz «fazer compras» no Quebec?",
+        question: "Como se diz “fazer compras” no Quebec?",
         options: ["magasiner", "faire du shopping", "shopper"],
         answer: "magasiner",
-        explanation: "O Quebec prefere «magasiner»; na França, é comum «faire du shopping» ou «faire les magasins».",
+        explanation: "O Quebec prefere “magasiner”; na França, é comum “faire du shopping” ou “faire les magasins”.",
       },
       {
-        question: "De onde vêm os «sacres» como «tabarnak» e «câlice»?",
+        question: "De onde vêm os “sacres” como “tabarnak” e “câlice”?",
         options: ["du vocabulaire religieux", "de l'anglais", "des langues autochtones"],
         answer: "du vocabulaire religieux",
         explanation: "Tabernáculo, cálice, hóstia: xingar com o sagrado era a maior transgressão numa sociedade muito católica.",
@@ -3617,14 +3617,14 @@ export const GRAMMAR_FR: GrammarTopic[] = [
     level: "C1.1",
     title: "Bélgica, Suíça e vizinhos: septante e nonante",
     emoji: "🇧🇪",
-    summary: "Em Bruxelas e em Genebra, 70 é «septante» e 90 é «nonante»; o almoço é «le dîner»; e cada país tem palavras que um parisiense estranha. Mais o francês de Luxemburgo e de Mônaco.",
+    summary: "Em Bruxelas e em Genebra, 70 é “septante” e 90 é “nonante”; o almoço é “le dîner”; e cada país tem palavras que um parisiense estranha. Mais o francês de Luxemburgo e de Mônaco.",
     sections: [
       {
         text: "Na Europa, o francês é língua oficial em cinco países: França, Bélgica, Suíça, Luxemburgo e Mônaco (além do Vale de Aosta, na Itália). Na Bélgica, ele é uma das três línguas oficiais, ao lado do neerlandês e do alemão, e domina na Valônia e em Bruxelas. Na Suíça, é uma das quatro línguas nacionais e se fala na Romandia (Genebra, Vaud, Neuchâtel, Jura e partes de Friburgo, do Valais e de Berna). O francês escrito é praticamente o mesmo nos dois países; as diferenças estão nos números, em palavras do cotidiano e na melodia da fala.",
       },
       {
         heading: "Os números",
-        text: "O francês da França conta 70 como «soixante-dix» (sessenta e dez), 80 como «quatre-vingts» (quatro vintes) e 90 como «quatre-vingt-dix». Na Bélgica e na Suíça, a conta é bem mais lógica: «septante» e «nonante». O 80 da Bélgica e de Genebra é «quatre-vingts», como na França; nos cantões de Vaud, do Valais e de Friburgo, diz-se «huitante». A forma «octante» existiu, mas hoje está fora de uso.",
+        text: "O francês da França conta 70 como “soixante-dix” (sessenta e dez), 80 como “quatre-vingts” (quatro vintes) e 90 como “quatre-vingt-dix”. Na Bélgica e na Suíça, a conta é bem mais lógica: “septante” e “nonante”. O 80 da Bélgica e de Genebra é “quatre-vingts”, como na França; nos cantões de Vaud, do Valais e de Friburgo, diz-se “huitante”. A forma “octante” existiu, mas hoje está fora de uso.",
         table: {
           head: ["Número", "França", "Bélgica", "Suíça (Vaud)"],
           rows: [
@@ -3643,7 +3643,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "O francês da Bélgica",
-        text: "Alguns belgicismos são tão comuns que viraram símbolos. O verbo «savoir» também quer dizer «poder, ser capaz»: «Tu sais me passer le sel ?». Ao entregar alguma coisa, o belga diz «s'il vous plaît» (ou «s'il te plaît»), onde o francês diria «voilà» ou «tenez». «À tantôt» é «até mais tarde». E «Non, peut-être !», dito com ironia, quer dizer «é claro que sim!». O neerlandês e o valão (uma língua regional românica) deixaram marcas no vocabulário.",
+        text: "Alguns belgicismos são tão comuns que viraram símbolos. O verbo “savoir” também quer dizer “poder, ser capaz”: “Tu sais me passer le sel ?”. Ao entregar alguma coisa, o belga diz “s'il vous plaît” (ou “s'il te plaît”), onde o francês diria “voilà” ou “tenez”. “À tantôt” é “até mais tarde”. E “Non, peut-être !”, dito com ironia, quer dizer “é claro que sim!”. O neerlandês e o valão (uma língua regional românica) deixaram marcas no vocabulário.",
         table: {
           head: ["Bélgica", "França", "Português"],
           rows: [
@@ -3658,14 +3658,14 @@ export const GRAMMAR_FR: GrammarTopic[] = [
         },
         examples: [
           ["Tu sais venir demain ?", "Você pode vir amanhã? (Bélgica)"],
-          ["S'il vous plaît, votre café !", "Aqui está o seu café! (Bélgica; na França: «Voilà votre café !»)"],
+          ["S'il vous plaît, votre café !", "Aqui está o seu café! (Bélgica; na França: “Voilà votre café !”)"],
           ["Prends ton parapluie, il drache !", "Leva o guarda-chuva, está caindo um toró!"],
           ["À tantôt !", "Até mais tarde!"],
         ],
       },
       {
         heading: "O francês da Suíça",
-        text: "O francês da Romandia é conhecido pelo ritmo mais calmo e por palavras de origem franco-provençal e alemã. «Ça joue ?» quer dizer «tudo certo?, dá para você?». Para agradecer um «merci», é comum ouvir «Service !» (de nada). No Valais e em Vaud, «adieu» serve também como cumprimento na chegada. E a vida política deixou palavras próprias: «une votation» é um plebiscito, algo que os suíços fazem várias vezes por ano.",
+        text: "O francês da Romandia é conhecido pelo ritmo mais calmo e por palavras de origem franco-provençal e alemã. “Ça joue ?” quer dizer “tudo certo?, dá para você?”. Para agradecer um “merci”, é comum ouvir “Service !” (de nada). No Valais e em Vaud, “adieu” serve também como cumprimento na chegada. E a vida política deixou palavras próprias: “une votation” é um plebiscito, algo que os suíços fazem várias vezes por ano.",
         table: {
           head: ["Suíça", "França", "Português"],
           rows: [
@@ -3686,7 +3686,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "As refeições",
-        text: "Bélgica, Suíça e Quebec conservam os nomes antigos das refeições, que eram os da França até o século XIX: «déjeuner» de manhã, «dîner» ao meio-dia, «souper» à noite. Em Paris, o almoço passou a ser «le déjeuner» e o jantar, «le dîner». Num convite para «dîner» em Bruxelas ou em Lausanne, confirme o horário.",
+        text: "Bélgica, Suíça e Quebec conservam os nomes antigos das refeições, que eram os da França até o século XIX: “déjeuner” de manhã, “dîner” ao meio-dia, “souper” à noite. Em Paris, o almoço passou a ser “le déjeuner” e o jantar, “le dîner”. Num convite para “dîner” em Bruxelas ou em Lausanne, confirme o horário.",
       },
       {
         heading: "Luxemburgo e Mônaco",
@@ -3694,36 +3694,36 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Achar que «septante» e «nonante» são erro ou gíria. Na Bélgica e na Suíça, são os números oficiais, usados em bancos, escolas e jornais.",
-      "Usar «huitante» em Bruxelas ou em Genebra: ali o 80 é «quatre-vingts». «Huitante» é de Vaud, do Valais e de Friburgo.",
-      "Entender «Tu sais venir ?» como «Você sabe vir?». Na Bélgica, «savoir» aqui é «poder».",
-      "Chegar à noite num convite para «dîner» na Suíça: provavelmente era para o almoço.",
-      "Chamar um belga ou um suíço de «francês». São belgas e suíços que falam francês, com orgulho das suas diferenças.",
+      "Achar que “septante” e “nonante” são erro ou gíria. Na Bélgica e na Suíça, são os números oficiais, usados em bancos, escolas e jornais.",
+      "Usar “huitante” em Bruxelas ou em Genebra: ali o 80 é “quatre-vingts”. “Huitante” é de Vaud, do Valais e de Friburgo.",
+      "Entender “Tu sais venir ?” como “Você sabe vir?”. Na Bélgica, “savoir” aqui é “poder”.",
+      "Chegar à noite num convite para “dîner” na Suíça: provavelmente era para o almoço.",
+      "Chamar um belga ou um suíço de “francês”. São belgas e suíços que falam francês, com orgulho das suas diferenças.",
     ],
     quiz: [
       {
         question: "Como se diz 90 na Bélgica e na Suíça?",
         options: ["nonante", "quatre-vingt-dix", "neufante"],
         answer: "nonante",
-        explanation: "Belgas e suíços dizem «septante» (70) e «nonante» (90).",
+        explanation: "Belgas e suíços dizem “septante” (70) e “nonante” (90).",
       },
       {
-        question: "Em qual lugar se diz «huitante» para 80?",
+        question: "Em qual lugar se diz “huitante” para 80?",
         options: ["dans le canton de Vaud", "à Bruxelles", "à Paris"],
         answer: "dans le canton de Vaud",
-        explanation: "«Huitante» é usado em Vaud, no Valais e em Friburgo. Bruxelas e Genebra dizem «quatre-vingts».",
+        explanation: "“Huitante” é usado em Vaud, no Valais e em Friburgo. Bruxelas e Genebra dizem “quatre-vingts”.",
       },
       {
-        question: "Na Bélgica, «Tu sais me passer le sel ?» quer dizer…",
+        question: "Na Bélgica, “Tu sais me passer le sel ?” quer dizer…",
         options: ["Tu peux me passer le sel ?", "Tu connais le sel ?", "Tu as du sel ?"],
         answer: "Tu peux me passer le sel ?",
-        explanation: "No belgicismo, «savoir» equivale a «pouvoir» (ser capaz de).",
+        explanation: "No belgicismo, “savoir” equivale a “pouvoir” (ser capaz de).",
       },
       {
-        question: "O que é «un cornet» na Suíça?",
+        question: "O que é “un cornet” na Suíça?",
         options: ["un sac", "une glace", "un téléphone"],
         answer: "un sac",
-        explanation: "Na Suíça, «cornet» é a sacola de plástico ou de papel.",
+        explanation: "Na Suíça, “cornet” é a sacola de plástico ou de papel.",
       },
       {
         question: "Quais são as três línguas oficiais de Luxemburgo?",
@@ -3770,7 +3770,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Nouchi e camfranglais",
-        text: "Nas grandes cidades, os jovens criaram falares mistos. O nouchi de Abidjan mistura francês, dioula e outras línguas marfinenses, com palavras que se espalharam pela música: «une go» (uma garota), «s'enjailler», «Y a pas drap !» (sem problema). Nos Camarões, o camfranglais mistura francês, inglês e línguas locais. Como a gíria de qualquer lugar, mudam depressa e marcam identidade.",
+        text: "Nas grandes cidades, os jovens criaram falares mistos. O nouchi de Abidjan mistura francês, dioula e outras línguas marfinenses, com palavras que se espalharam pela música: “une go” (uma garota), “s'enjailler”, “Y a pas drap !” (sem problema). Nos Camarões, o camfranglais mistura francês, inglês e línguas locais. Como a gíria de qualquer lugar, mudam depressa e marcam identidade.",
       },
       {
         heading: "Os crioulos: línguas novas",
@@ -3780,9 +3780,9 @@ export const GRAMMAR_FR: GrammarTopic[] = [
           rows: [
             ["liv la / liv yo", "le livre / les livres", "o livro / os livros", "o artigo vem depois do substantivo"],
             ["Mwen manje.", "Je mange. / J'ai mangé.", "Eu como. / Eu comi.", "o verbo não se conjuga"],
-            ["M ap manje.", "Je suis en train de manger.", "Estou comendo.", "«ap» marca a ação em curso"],
-            ["Mwen te manje.", "J'avais mangé. / J'ai mangé.", "Eu tinha comido. / Eu comi.", "«te» marca o passado"],
-            ["M pral manje.", "Je vais manger.", "Vou comer.", "«pral» marca o futuro"],
+            ["M ap manje.", "Je suis en train de manger.", "Estou comendo.", "“ap” marca a ação em curso"],
+            ["Mwen te manje.", "J'avais mangé. / J'ai mangé.", "Eu tinha comido. / Eu comi.", "“te” marca o passado"],
+            ["M pral manje.", "Je vais manger.", "Vou comer.", "“pral” marca o futuro"],
             ["li", "il, elle", "ele, ela", "sem gênero gramatical"],
           ],
         },
@@ -3799,24 +3799,24 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Tratar o francês da África como «francês errado». É uma variedade viva, com norma escrita igual à de Paris e um vocabulário próprio e criativo.",
-      "Chamar o crioulo de «francês mal falado» ou de dialeto do francês. É outra língua, com gramática própria, nascida do contato entre línguas.",
+      "Tratar o francês da África como “francês errado”. É uma variedade viva, com norma escrita igual à de Paris e um vocabulário próprio e criativo.",
+      "Chamar o crioulo de “francês mal falado” ou de dialeto do francês. É outra língua, com gramática própria, nascida do contato entre línguas.",
       "Imitar um sotaque africano ou antilhano para fazer graça: soa como deboche. Perguntar o sentido de uma expressão costuma ser muito bem recebido.",
-      "Entender «C'est gâté» como «está mimado». No francês africano, é «está quebrado, não funciona».",
+      "Entender “C'est gâté” como “está mimado”. No francês africano, é “está quebrado, não funciona”.",
       "Achar que o francês é a primeira língua da maioria dos africanos francófonos. Em geral, é a segunda ou terceira, aprendida na escola.",
     ],
     quiz: [
       {
-        question: "O que é «une essencerie» no Senegal?",
+        question: "O que é “une essencerie” no Senegal?",
         options: ["une station-service", "une parfumerie", "une épicerie"],
         answer: "une station-service",
-        explanation: "De «essence» (gasolina): o posto de gasolina.",
+        explanation: "De “essence” (gasolina): o posto de gasolina.",
       },
       {
-        question: "No francês da África, «Il m'a cadeauté un livre» quer dizer…",
+        question: "No francês da África, “Il m'a cadeauté un livre” quer dizer…",
         options: ["Il m'a offert un livre.", "Il m'a vendu un livre.", "Il m'a prêté un livre."],
         answer: "Il m'a offert un livre.",
-        explanation: "«Cadeauter» = dar de presente, de «cadeau».",
+        explanation: "“Cadeauter” = dar de presente, de “cadeau”.",
       },
       {
         question: "Desde quando o crioulo haitiano é língua oficial do Haiti, ao lado do francês?",
@@ -3825,16 +3825,16 @@ export const GRAMMAR_FR: GrammarTopic[] = [
         explanation: "A Constituição de 1987 tornou o crioulo e o francês as duas línguas oficiais.",
       },
       {
-        question: "Em crioulo haitiano, «liv yo» quer dizer…",
+        question: "Em crioulo haitiano, “liv yo” quer dizer…",
         options: ["les livres", "le livre", "ton livre"],
         answer: "les livres",
-        explanation: "O artigo vem depois: «liv la» é o livro; «liv yo», os livros.",
+        explanation: "O artigo vem depois: “liv la” é o livro; “liv yo”, os livros.",
       },
       {
-        question: "Na Costa do Marfim, «s'enjailler» quer dizer…",
+        question: "Na Costa do Marfim, “s'enjailler” quer dizer…",
         options: ["s'amuser", "s'enfuir", "s'ennuyer"],
         answer: "s'amuser",
-        explanation: "Do inglês «enjoy»: curtir, se divertir.",
+        explanation: "Do inglês “enjoy”: curtir, se divertir.",
       },
     ],
   },
@@ -3850,7 +3850,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Oc e oïl",
-        text: "Na Idade Média, as línguas da Gália se dividiam pela maneira de dizer «sim». No norte, «oïl» (do latim «hoc ille»), que deu o «oui» moderno; no sul, «oc» (do latim «hoc»). Daí «langue d'oïl» e «langue d'oc», e o nome da região do Languedoc. O occitano foi a língua dos trovadores, a primeira grande poesia lírica em língua românica, nos séculos XI a XIII, e influenciou a poesia galego-portuguesa.",
+        text: "Na Idade Média, as línguas da Gália se dividiam pela maneira de dizer “sim”. No norte, “oïl” (do latim “hoc ille”), que deu o “oui” moderno; no sul, “oc” (do latim “hoc”). Daí “langue d'oïl” e “langue d'oc”, e o nome da região do Languedoc. O occitano foi a língua dos trovadores, a primeira grande poesia lírica em língua românica, nos séculos XI a XIII, e influenciou a poesia galego-portuguesa.",
       },
       {
         heading: "As principais línguas regionais",
@@ -3867,7 +3867,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
             ["franco-provençal", "Lyon, Savoia, Suíça, Vale de Aosta", "românica", "Bonjor !"],
           ],
         },
-        text: "Nenhuma delas é um «patois» do francês: as românicas são irmãs dele, filhas do latim, e as outras nem são da mesma família. O basco é uma das línguas mais antigas da Europa, sem parentesco conhecido. O bretão chegou com povos vindos da Grã-Bretanha entre os séculos V e VII. Hoje, há escolas de imersão em bretão, basco, occitano, catalão e alsaciano, placas bilíngues em muitas cidades e música e literatura nessas línguas, mas o número de falantes nativos diminuiu muito ao longo do século XX.",
+        text: "Nenhuma delas é um “patois” do francês: as românicas são irmãs dele, filhas do latim, e as outras nem são da mesma família. O basco é uma das línguas mais antigas da Europa, sem parentesco conhecido. O bretão chegou com povos vindos da Grã-Bretanha entre os séculos V e VII. Hoje, há escolas de imersão em bretão, basco, occitano, catalão e alsaciano, placas bilíngues em muitas cidades e música e literatura nessas línguas, mas o número de falantes nativos diminuiu muito ao longo do século XX.",
       },
       {
         heading: "O Estado e a língua",
@@ -3875,11 +3875,11 @@ export const GRAMMAR_FR: GrammarTopic[] = [
           head: ["Ano", "Fato", "O que diz"],
           rows: [
             ["1539", "ordonnance de Villers-Cotterêts", "os atos da justiça e da administração passam a ser redigidos em francês, e não em latim"],
-            ["1635", "fundação da Académie française", "40 membros vitalícios, «les Immortels», encarregados do dicionário e da norma"],
-            ["1794", "relatório do abade Grégoire", "propõe «aniquilar os patoás» e universalizar o francês"],
-            ["1992", "artigo 2 da Constituição", "«La langue de la République est le français.»"],
+            ["1635", "fundação da Académie française", "40 membros vitalícios, “les Immortels”, encarregados do dicionário e da norma"],
+            ["1794", "relatório do abade Grégoire", "propõe “aniquilar os patoás” e universalizar o francês"],
+            ["1992", "artigo 2 da Constituição", "“La langue de la République est le français.”"],
             ["1994", "lei Toubon", "o francês é obrigatório no trabalho, no comércio, na publicidade e nos serviços públicos"],
-            ["2008", "artigo 75-1 da Constituição", "«Les langues régionales appartiennent au patrimoine de la France.»"],
+            ["2008", "artigo 75-1 da Constituição", "“Les langues régionales appartiennent au patrimoine de la France.”"],
           ],
         },
         examples: [
@@ -3891,10 +3891,10 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "A Academia Francesa",
-        text: "Fundada em 1635 pelo cardeal Richelieu, a Académie française reúne 40 escritores, cientistas e intelectuais eleitos para toda a vida, com fardão verde e espada. Ela publica o «Dictionnaire de l'Académie française», cuja nona edição foi concluída em 2024, e dá pareceres sobre o uso. Seu papel é sobretudo simbólico: ela não tem poder para impor nada. Quem cria oficialmente palavras francesas para os termos técnicos é outra instituição, a Commission d'enrichissement de la langue française, que propôs, por exemplo, «courriel» (vindo do Quebec), «mot-dièse» (hashtag) e «logiciel» (software).",
+        text: "Fundada em 1635 pelo cardeal Richelieu, a Académie française reúne 40 escritores, cientistas e intelectuais eleitos para toda a vida, com fardão verde e espada. Ela publica o “Dictionnaire de l'Académie française”, cuja nona edição foi concluída em 2024, e dá pareceres sobre o uso. Seu papel é sobretudo simbólico: ela não tem poder para impor nada. Quem cria oficialmente palavras francesas para os termos técnicos é outra instituição, a Commission d'enrichissement de la langue française, que propôs, por exemplo, “courriel” (vindo do Quebec), “mot-dièse” (hashtag) e “logiciel” (software).",
         examples: [
           ["Elle a été élue à l'Académie française.", "Ela foi eleita para a Academia Francesa."],
-          ["On dit « courriel » plutôt que « mail » dans les textes officiels.", "Nos textos oficiais, diz-se «courriel» em vez de «mail»."],
+          ["On dit “ courriel ” plutôt que “ mail ” dans les textes officiels.", "Nos textos oficiais, diz-se “courriel” em vez de “mail”."],
         ],
       },
       {
@@ -3903,18 +3903,18 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Chamar o bretão, o occitano ou o basco de «patois» ou «dialeto do francês». São línguas próprias; o basco e o bretão nem são da mesma família.",
-      "Achar que a Academia Francesa «manda» na língua. Ela dá recomendações e faz o dicionário; os termos oficiais saem de uma comissão do governo, e o uso decide o resto.",
-      "Dizer «langue d'oc» para todo o francês antigo. Oc é o sul (occitano); oïl é o norte, de onde vem o francês.",
+      "Chamar o bretão, o occitano ou o basco de “patois” ou “dialeto do francês”. São línguas próprias; o basco e o bretão nem são da mesma família.",
+      "Achar que a Academia Francesa “manda” na língua. Ela dá recomendações e faz o dicionário; os termos oficiais saem de uma comissão do governo, e o uso decide o resto.",
+      "Dizer “langue d'oc” para todo o francês antigo. Oc é o sul (occitano); oïl é o norte, de onde vem o francês.",
       "Pensar que a lei Toubon proíbe o inglês. Ela exige que o francês esteja presente; o inglês pode vir junto, traduzido.",
       "Supor que a França reconhece oficialmente as línguas regionais nas repartições. A Constituição as reconhece como patrimônio, mas a única língua oficial é o francês.",
     ],
     quiz: [
       {
-        question: "De onde vem o «oui» do francês moderno?",
-        options: ["de l'ancien « oïl »", "de l'ancien « oc »", "du latin « ita »"],
-        answer: "de l'ancien « oïl »",
-        explanation: "«Oïl» (do latim «hoc ille») deu «oui». «Oc» era o «sim» do sul.",
+        question: "De onde vem o “oui” do francês moderno?",
+        options: ["de l'ancien “ oïl ”", "de l'ancien “ oc ”", "du latin “ ita ”"],
+        answer: "de l'ancien “ oïl ”",
+        explanation: "“Oïl” (do latim “hoc ille”) deu “oui”. “Oc” era o “sim” do sul.",
       },
       {
         question: "A que família pertence o bretão?",
@@ -3926,13 +3926,13 @@ export const GRAMMAR_FR: GrammarTopic[] = [
         question: "O que determinou a ordonnance de Villers-Cotterêts, em 1539?",
         options: ["le français remplace le latin dans les actes officiels", "la création de l'Académie française", "l'interdiction des langues régionales à l'école"],
         answer: "le français remplace le latin dans les actes officiels",
-        explanation: "Os atos da justiça e da administração passaram a ser redigidos «en langage maternel françois».",
+        explanation: "Os atos da justiça e da administração passaram a ser redigidos “en langage maternel françois”.",
       },
       {
         question: "Quantos membros tem a Académie française?",
         options: ["quarante", "cent", "douze"],
         answer: "quarante",
-        explanation: "São 40 membros vitalícios, os «Immortels».",
+        explanation: "São 40 membros vitalícios, os “Immortels”.",
       },
       {
         question: "Um anúncio na França traz um slogan em inglês. O que a lei Toubon exige?",
@@ -3949,10 +3949,10 @@ export const GRAMMAR_FR: GrammarTopic[] = [
     level: "C1.2",
     title: "A nominalização: o estilo nominal",
     emoji: "🧱",
-    summary: "«Les prix ont augmenté» vira «la hausse des prix». Transformar verbos e adjetivos em substantivos é a marca dos títulos, dos relatórios e dos textos acadêmicos. Os sufixos, os gêneros traiçoeiros e o jeito de montar a frase.",
+    summary: "“Les prix ont augmenté” vira “la hausse des prix”. Transformar verbos e adjetivos em substantivos é a marca dos títulos, dos relatórios e dos textos acadêmicos. Os sufixos, os gêneros traiçoeiros e o jeito de montar a frase.",
     sections: [
       {
-        text: "Nominalizar é transformar um verbo ou um adjetivo num substantivo: «construire» → «la construction», «rapide» → «la rapidité». O francês escrito formal adora esse recurso, ainda mais que o português: ele permite condensar uma frase inteira num grupo nominal, que pode virar título, sujeito ou item de lista. «Le gouvernement a décidé de réformer les retraites» vira «la décision du gouvernement de réformer les retraites» ou simplesmente «la réforme des retraites».",
+        text: "Nominalizar é transformar um verbo ou um adjetivo num substantivo: “construire” → “la construction”, “rapide” → “la rapidité”. O francês escrito formal adora esse recurso, ainda mais que o português: ele permite condensar uma frase inteira num grupo nominal, que pode virar título, sujeito ou item de lista. “Le gouvernement a décidé de réformer les retraites” vira “la décision du gouvernement de réformer les retraites” ou simplesmente “la réforme des retraites”.",
         examples: [
           ["Les prix ont augmenté. → La hausse des prix", "Os preços subiram. → A alta dos preços"],
           ["Le train arrive à 18 h. → L'arrivée du train à 18 h", "O trem chega às 18h. → A chegada do trem às 18h"],
@@ -3962,7 +3962,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Os sufixos e o gênero",
-        text: "Cada sufixo tem, em geral, um gênero fixo, e isso ajuda muito, porque nem sempre é o do português. Atenção especial a -age (masculino em francês, feminino em português: «le voyage», «a viagem») e a -eur vindo de adjetivo (feminino em francês: «la chaleur», «o calor»).",
+        text: "Cada sufixo tem, em geral, um gênero fixo, e isso ajuda muito, porque nem sempre é o do português. Atenção especial a -age (masculino em francês, feminino em português: “le voyage”, “a viagem”) e a -eur vindo de adjetivo (feminino em francês: “la chaleur”, “o calor”).",
         table: {
           head: ["Sufixo", "Gênero", "Exemplos"],
           rows: [
@@ -3982,7 +3982,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Montando o grupo nominal",
-        text: "O sujeito e o objeto do verbo passam a complementos com «de»: «Le ministre annonce la réforme» → «l'annonce de la réforme par le ministre». Quando há dois complementos, o objeto fica com «de» e o agente vem com «par» (ou vira possessivo: «son annonce»). Advérbios viram adjetivos: «Les prix ont fortement augmenté» → «la forte hausse des prix». E a negação vira um substantivo ou um prefixo: «ne pas respecter la loi» → «le non-respect de la loi».",
+        text: "O sujeito e o objeto do verbo passam a complementos com “de”: “Le ministre annonce la réforme” → “l'annonce de la réforme par le ministre”. Quando há dois complementos, o objeto fica com “de” e o agente vem com “par” (ou vira possessivo: “son annonce”). Advérbios viram adjetivos: “Les prix ont fortement augmenté” → “la forte hausse des prix”. E a negação vira um substantivo ou um prefixo: “ne pas respecter la loi” → “le non-respect de la loi”.",
         examples: [
           ["Les prix ont fortement augmenté. → La forte hausse des prix", "Os preços subiram muito. → A forte alta dos preços"],
           ["Il n'a pas respecté les règles. → Le non-respect des règles", "Ele não respeitou as regras. → O desrespeito às regras"],
@@ -3992,7 +3992,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Quando usar e quando evitar",
-        text: "O estilo nominal é ideal para títulos, cronogramas, atas, slides, relatórios e resumos: ele é curto e impessoal. No texto corrido, porém, o excesso deixa tudo pesado e abstrato, cheio de «de la… des… du…». Os manuais de redação franceses recomendam alternar: nominalizar para condensar, e voltar aos verbos para contar e explicar. Compare: «À la suite de la constatation de l'insuffisance de la mise en œuvre des mesures…» e «Nous avons constaté que les mesures étaient mal appliquées…».",
+        text: "O estilo nominal é ideal para títulos, cronogramas, atas, slides, relatórios e resumos: ele é curto e impessoal. No texto corrido, porém, o excesso deixa tudo pesado e abstrato, cheio de “de la… des… du…”. Os manuais de redação franceses recomendam alternar: nominalizar para condensar, e voltar aos verbos para contar e explicar. Compare: “À la suite de la constatation de l'insuffisance de la mise en œuvre des mesures…” e “Nous avons constaté que les mesures étaient mal appliquées…”.",
         examples: [
           ["Ordre du jour : présentation du budget, élection du bureau, questions diverses.", "Pauta: apresentação do orçamento, eleição da diretoria, assuntos gerais."],
           ["Suppression de 200 postes à Toulouse", "Corte de 200 vagas em Toulouse"],
@@ -4001,39 +4001,39 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Dizer «la voyage», «la message» ou «la fromage». Os substantivos em -age derivados de verbo são masculinos: «le voyage», «le message», «le passage». (Exceções que não vêm de verbo: la page, la plage, l'image, la cage, la rage.)",
-      "Dizer «le chaleur» ou «le douleur» por causa do português «o calor». Os nomes abstratos em -eur são femininos: la chaleur, la couleur, la peur, la douleur. (Exceções: le bonheur, le malheur, l'honneur.)",
-      "Inventar «l'arrivement» ou «la fermation». Cada verbo tem o seu substantivo consagrado: l'arrivée, la fermeture. Confira no dicionário.",
-      "Encadear quatro ou cinco «de» seguidos. «L'analyse de l'évolution de la répartition des recettes» cansa; prefira um verbo.",
-      "Esquecer que o complemento de um nome não leva preposição de verbo: «l'intérêt pour la musique», «la participation à la réunion», e não «la participation de la réunion».",
+      "Dizer “la voyage”, “la message” ou “la fromage”. Os substantivos em -age derivados de verbo são masculinos: “le voyage”, “le message”, “le passage”. (Exceções que não vêm de verbo: la page, la plage, l'image, la cage, la rage.)",
+      "Dizer “le chaleur” ou “le douleur” por causa do português “o calor”. Os nomes abstratos em -eur são femininos: la chaleur, la couleur, la peur, la douleur. (Exceções: le bonheur, le malheur, l'honneur.)",
+      "Inventar “l'arrivement” ou “la fermation”. Cada verbo tem o seu substantivo consagrado: l'arrivée, la fermeture. Confira no dicionário.",
+      "Encadear quatro ou cinco “de” seguidos. “L'analyse de l'évolution de la répartition des recettes” cansa; prefira um verbo.",
+      "Esquecer que o complemento de um nome não leva preposição de verbo: “l'intérêt pour la musique”, “la participation à la réunion”, e não “la participation de la réunion”.",
     ],
     quiz: [
       {
-        question: "Qual é o substantivo de «arriver»?",
+        question: "Qual é o substantivo de “arriver”?",
         options: ["l'arrivée", "l'arrivement", "l'arrivage"],
         answer: "l'arrivée",
-        explanation: "«L'arrivée» é a chegada. («L'arrivage» existe, mas é a chegada de mercadorias.)",
+        explanation: "“L'arrivée” é a chegada. (“L'arrivage” existe, mas é a chegada de mercadorias.)",
       },
       {
         question: "Qual é o gênero correto?",
         options: ["le voyage", "la voyage"],
         answer: "le voyage",
-        explanation: "Os nomes em -age vindos de verbo são masculinos em francês, ao contrário de «a viagem».",
+        explanation: "Os nomes em -age vindos de verbo são masculinos em francês, ao contrário de “a viagem”.",
       },
       {
-        question: "Nominalize: «Les salaires ont légèrement baissé.»",
+        question: "Nominalize: “Les salaires ont légèrement baissé.”",
         options: ["la légère baisse des salaires", "le baissement léger des salaires", "la baisse légèrement des salaires"],
         answer: "la légère baisse des salaires",
-        explanation: "O advérbio «légèrement» vira o adjetivo «légère», e «baisser» dá «la baisse».",
+        explanation: "O advérbio “légèrement” vira o adjetivo “légère”, e “baisser” dá “la baisse”.",
       },
       {
-        question: "Complete: «___ de l'usine a été annoncée hier.»",
+        question: "Complete: “___ de l'usine a été annoncée hier.”",
         options: ["La fermeture", "Le fermement", "La fermation"],
         answer: "La fermeture",
-        explanation: "«Fermer» → «la fermeture» (sufixo -ure, feminino).",
+        explanation: "“Fermer” → “la fermeture” (sufixo -ure, feminino).",
       },
       {
-        question: "Qual é o gênero de «chaleur»?",
+        question: "Qual é o gênero de “chaleur”?",
         options: ["la chaleur", "le chaleur"],
         answer: "la chaleur",
         explanation: "Os nomes abstratos em -eur são femininos: la chaleur, la douleur, la couleur.",
@@ -4045,11 +4045,11 @@ export const GRAMMAR_FR: GrammarTopic[] = [
     level: "C1.2",
     title: "Estilo jornalístico e acadêmico",
     emoji: "📰",
-    summary: "O condicional que protege o jornalista («le suspect aurait pris la fuite»), os títulos sem verbo, os verbos para citar; e, na universidade, o «nous» do autor, o «il convient de» e o plano em três partes da dissertação.",
+    summary: "O condicional que protege o jornalista (“le suspect aurait pris la fuite”), os títulos sem verbo, os verbos para citar; e, na universidade, o “nous” do autor, o “il convient de” e o plano em três partes da dissertação.",
     sections: [
       {
         heading: "O condicional da informação não confirmada",
-        text: "Este é o traço mais importante da imprensa francesa. Quando uma informação ainda não foi confirmada, o jornalista usa o condicional: presente para o presente, passado para o passado. Em português, dizemos «teria fugido» ou «segundo informações, fugiu». É o «conditionnel journalistique»: ele não expressa hipótese nem cortesia, mas distância em relação à fonte.",
+        text: "Este é o traço mais importante da imprensa francesa. Quando uma informação ainda não foi confirmada, o jornalista usa o condicional: presente para o presente, passado para o passado. Em português, dizemos “teria fugido” ou “segundo informações, fugiu”. É o “conditionnel journalistique”: ele não expressa hipótese nem cortesia, mas distância em relação à fonte.",
         examples: [
           ["Le suspect aurait pris la fuite vers la Belgique.", "O suspeito teria fugido para a Bélgica."],
           ["L'incendie serait d'origine criminelle.", "O incêndio seria criminoso."],
@@ -4069,7 +4069,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Verbos para citar",
-        text: "Para não repetir «dire», o jornalista escolhe um verbo que já mostra a intenção de quem fala. Essa escolha nunca é neutra: «prétendre» sugere que a afirmação é duvidosa; «reconnaître», que a pessoa admitiu algo contra si mesma. Na frase, a citação costuma vir primeiro, e o verbo vem depois dela, com o sujeito invertido («…», a déclaré le maire).",
+        text: "Para não repetir “dire”, o jornalista escolhe um verbo que já mostra a intenção de quem fala. Essa escolha nunca é neutra: “prétendre” sugere que a afirmação é duvidosa; “reconnaître”, que a pessoa admitiu algo contra si mesma. Na frase, a citação costuma vir primeiro, e o verbo vem depois dela, com o sujeito invertido (“…”, a déclaré le maire).",
         table: {
           head: ["Verbo", "Nuance", "Português"],
           rows: [
@@ -4084,14 +4084,14 @@ export const GRAMMAR_FR: GrammarTopic[] = [
           ],
         },
         examples: [
-          ["« Nous ne fermerons pas l'hôpital », a assuré la directrice.", "«Não vamos fechar o hospital», garantiu a diretora."],
+          ["“ Nous ne fermerons pas l'hôpital ”, a assuré la directrice.", "“Não vamos fechar o hospital”, garantiu a diretora."],
           ["Le porte-parole a démenti toute négociation secrète.", "O porta-voz desmentiu qualquer negociação secreta."],
           ["L'entreprise reconnaît des erreurs de gestion.", "A empresa reconhece erros de gestão."],
         ],
       },
       {
         heading: "O texto acadêmico",
-        text: "Na universidade francesa, a escrita é impessoal e muito codificada. Em vez de «je», usa-se o «nous» de modéstia (o autor sozinho escreve «nous»), com o adjetivo e o particípio no singular: «nous sommes convaincu». Usa-se também o «on» e fórmulas impessoais como «il convient de» (convém), «il s'agit de» (trata-se de), «force est de constater que» (é forçoso reconhecer que). As ideias se encadeiam com conectores explícitos: «dans un premier temps», «dans un second temps», «en outre», «en revanche», «ainsi», «en définitive».",
+        text: "Na universidade francesa, a escrita é impessoal e muito codificada. Em vez de “je”, usa-se o “nous” de modéstia (o autor sozinho escreve “nous”), com o adjetivo e o particípio no singular: “nous sommes convaincu”. Usa-se também o “on” e fórmulas impessoais como “il convient de” (convém), “il s'agit de” (trata-se de), “force est de constater que” (é forçoso reconhecer que). As ideias se encadeiam com conectores explícitos: “dans un premier temps”, “dans un second temps”, “en outre”, “en revanche”, “ainsi”, “en définitive”.",
         examples: [
           ["Il convient de distinguer deux périodes.", "Convém distinguir dois períodos."],
           ["Force est de constater que les résultats sont décevants.", "É forçoso reconhecer que os resultados são decepcionantes."],
@@ -4101,7 +4101,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "A dissertação e o plano",
-        text: "A «dissertation», exercício-rei da escola e da universidade na França, tem uma estrutura quase fixa. A introdução traz uma «accroche» (frase de abertura), define os termos, apresenta a «problématique» (a pergunta central) e anuncia o plano. O desenvolvimento segue em geral um plano em duas ou três partes, muitas vezes dialético: «thèse, antithèse, synthèse». A conclusão responde à pergunta e termina com uma «ouverture», que abre para outra questão. No «commentaire de texte», analisa-se um trecho em vez de discutir uma pergunta.",
+        text: "A “dissertation”, exercício-rei da escola e da universidade na França, tem uma estrutura quase fixa. A introdução traz uma “accroche” (frase de abertura), define os termos, apresenta a “problématique” (a pergunta central) e anuncia o plano. O desenvolvimento segue em geral um plano em duas ou três partes, muitas vezes dialético: “thèse, antithèse, synthèse”. A conclusão responde à pergunta e termina com uma “ouverture”, que abre para outra questão. No “commentaire de texte”, analisa-se um trecho em vez de discutir uma pergunta.",
         table: {
           head: ["Parte", "O que faz", "Fórmula típica"],
           rows: [
@@ -4115,15 +4115,15 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Ler o condicional jornalístico como hipótese. «Le suspect aurait pris la fuite» não é «teria fugido se…»: é «fugiu, segundo fontes ainda não confirmadas».",
-      "Escrever «je pense que» numa dissertação. No texto acadêmico francês, prefira «nous», «on» ou uma fórmula impessoal.",
-      "Pôr o adjetivo no plural com o «nous» de modéstia: o autor sozinho escreve «nous sommes convaincu», não «convaincus».",
-      "Usar «prétendre» como sinônimo neutro de «afirmar». Ele sugere que o jornalista duvida da afirmação; e não quer dizer «pretender» (que é «avoir l'intention de»).",
+      "Ler o condicional jornalístico como hipótese. “Le suspect aurait pris la fuite” não é “teria fugido se…”: é “fugiu, segundo fontes ainda não confirmadas”.",
+      "Escrever “je pense que” numa dissertação. No texto acadêmico francês, prefira “nous”, “on” ou uma fórmula impessoal.",
+      "Pôr o adjetivo no plural com o “nous” de modéstia: o autor sozinho escreve “nous sommes convaincu”, não “convaincus”.",
+      "Usar “prétendre” como sinônimo neutro de “afirmar”. Ele sugere que o jornalista duvida da afirmação; e não quer dizer “pretender” (que é “avoir l'intention de”).",
       "Esquecer o anúncio do plano na introdução. Na França, o leitor espera saber, desde o início, por onde o texto vai passar.",
     ],
     quiz: [
       {
-        question: "Numa notícia, «Le ministre aurait menti» quer dizer…",
+        question: "Numa notícia, “Le ministre aurait menti” quer dizer…",
         options: ["selon certaines sources, le ministre a menti", "le ministre ment toujours", "si c'était nécessaire, le ministre mentirait"],
         answer: "selon certaines sources, le ministre a menti",
         explanation: "O condicional jornalístico apresenta uma informação não confirmada.",
@@ -4132,19 +4132,19 @@ export const GRAMMAR_FR: GrammarTopic[] = [
         question: "Qual verbo mostra que o jornalista duvida da declaração?",
         options: ["prétendre", "affirmer", "déclarer"],
         answer: "prétendre",
-        explanation: "«Il prétend être innocent» = ele alega ser inocente (mas o jornalista não garante).",
+        explanation: "“Il prétend être innocent” = ele alega ser inocente (mas o jornalista não garante).",
       },
       {
         question: "Uma pesquisadora escreve sozinha o artigo. Qual forma é a correta?",
         options: ["Nous sommes convaincue que…", "Nous sommes convaincues que…", "Je suis convaincu que…"],
         answer: "Nous sommes convaincue que…",
-        explanation: "Com o «nous» de modéstia, o adjetivo concorda com a pessoa real: uma só, no feminino.",
+        explanation: "Com o “nous” de modéstia, o adjetivo concorda com a pessoa real: uma só, no feminino.",
       },
       {
-        question: "Complete: «___ de constater que la réforme a échoué.»",
+        question: "Complete: “___ de constater que la réforme a échoué.”",
         options: ["Force est", "Il convient", "Il s'agit"],
         answer: "Force est",
-        explanation: "«Force est de constater que…» = é forçoso reconhecer que…",
+        explanation: "“Force est de constater que…” = é forçoso reconhecer que…",
       },
       {
         question: "Qual é o plano dialético clássico da dissertação?",
@@ -4159,11 +4159,11 @@ export const GRAMMAR_FR: GrammarTopic[] = [
     level: "C1.2",
     title: "A língua jurídica e a escrita inclusiva",
     emoji: "⚖️",
-    summary: "Contratos e leis têm um francês próprio: o presente que obriga, «ledit», «le cas échéant», «nonobstant». E um debate que divide a França: a escrita inclusiva, com o ponto mediano, os duplos e os femininos das profissões.",
+    summary: "Contratos e leis têm um francês próprio: o presente que obriga, “ledit”, “le cas échéant”, “nonobstant”. E um debate que divide a França: a escrita inclusiva, com o ponto mediano, os duplos e os femininos das profissões.",
     sections: [
       {
         heading: "O presente que obriga",
-        text: "Na lei e no contrato, o presente do indicativo não descreve: ele manda. «Le locataire paie le loyer» significa «o locatário deve pagar o aluguel». Os textos jurídicos também usam muito «être tenu de» (ser obrigado a), «s'engager à» (comprometer-se a), «il est interdit de» e o futuro com valor de ordem. O Código Civil francês, de 1804, foi admirado pelo estilo claro, e muitos artigos são citados de cor.",
+        text: "Na lei e no contrato, o presente do indicativo não descreve: ele manda. “Le locataire paie le loyer” significa “o locatário deve pagar o aluguel”. Os textos jurídicos também usam muito “être tenu de” (ser obrigado a), “s'engager à” (comprometer-se a), “il est interdit de” e o futuro com valor de ordem. O Código Civil francês, de 1804, foi admirado pelo estilo claro, e muitos artigos são citados de cor.",
         examples: [
           ["Les hommes naissent et demeurent libres et égaux en droits.", "Os homens nascem e permanecem livres e iguais em direitos. (Declaração dos Direitos do Homem e do Cidadão, 1789, art. 1)"],
           ["Tout fait quelconque de l'homme, qui cause à autrui un dommage, oblige celui par la faute duquel il est arrivé à le réparer.", "Todo ato do homem que cause dano a outrem obriga aquele por cuja culpa ele aconteceu a repará-lo. (Código Civil, art. 1240)"],
@@ -4177,7 +4177,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
           head: ["Expressão", "Sentido", "Português"],
           rows: [
             ["le présent contrat", "este contrato", "o presente contrato"],
-            ["ci-après dénommé « le Bailleur »", "doravante chamado", "doravante denominado «o Locador»"],
+            ["ci-après dénommé “ le Bailleur ”", "doravante chamado", "doravante denominado “o Locador”"],
             ["ledit, ladite, lesdits", "o mencionado", "o referido, a referida"],
             ["susmentionné, précité", "citado acima", "supracitado"],
             ["le cas échéant", "se for o caso", "se for o caso, eventualmente"],
@@ -4197,7 +4197,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "A escrita inclusiva: o que é",
-        text: "Em francês, o masculino plural serve tradicionalmente para grupos mistos («les étudiants», mesmo com 30 moças e 2 rapazes), e a escola ensinava que «le masculin l'emporte sur le féminin». A «écriture inclusive» reúne várias técnicas para tornar as mulheres visíveis na língua. Algumas são consensuais, outras muito debatidas.",
+        text: "Em francês, o masculino plural serve tradicionalmente para grupos mistos (“les étudiants”, mesmo com 30 moças e 2 rapazes), e a escola ensinava que “le masculin l'emporte sur le féminin”. A “écriture inclusive” reúne várias técnicas para tornar as mulheres visíveis na língua. Algumas são consensuais, outras muito debatidas.",
         table: {
           head: ["Técnica", "Exemplo", "Situação"],
           rows: [
@@ -4218,28 +4218,28 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Os argumentos e as regras oficiais",
-        text: "Quem defende a escrita inclusiva argumenta que o masculino genérico não é tão neutro quanto parece (pesquisas mostram que ele faz o leitor pensar primeiro em homens), que a língua reflete e reforça as desigualdades, e que os femininos de profissões sempre existiram no francês antigo. Quem a critica argumenta que o ponto mediano dificulta a leitura, não se pronuncia, atrapalha leitores de tela usados por cegos e pessoas com dislexia, e complica o aprendizado da língua. A Académie française chamou a escrita inclusiva de «péril mortel» em 2017, mas aceitou a feminização dos nomes de profissões em 2019. Uma circular do governo de 2017 afastou o ponto mediano dos textos oficiais publicados no Journal officiel, mantendo os títulos no feminino, e uma circular do Ministério da Educação de 2021 o afastou do ensino. Fora dessas esferas, cada instituição, jornal ou empresa escolhe. No Quebec, na Bélgica e na Suíça, a feminização dos títulos começou bem antes da França.",
+        text: "Quem defende a escrita inclusiva argumenta que o masculino genérico não é tão neutro quanto parece (pesquisas mostram que ele faz o leitor pensar primeiro em homens), que a língua reflete e reforça as desigualdades, e que os femininos de profissões sempre existiram no francês antigo. Quem a critica argumenta que o ponto mediano dificulta a leitura, não se pronuncia, atrapalha leitores de tela usados por cegos e pessoas com dislexia, e complica o aprendizado da língua. A Académie française chamou a escrita inclusiva de “péril mortel” em 2017, mas aceitou a feminização dos nomes de profissões em 2019. Uma circular do governo de 2017 afastou o ponto mediano dos textos oficiais publicados no Journal officiel, mantendo os títulos no feminino, e uma circular do Ministério da Educação de 2021 o afastou do ensino. Fora dessas esferas, cada instituição, jornal ou empresa escolhe. No Quebec, na Bélgica e na Suíça, a feminização dos títulos começou bem antes da França.",
       },
     ],
     pitfalls: [
-      "Ler «Le locataire paie le loyer» num contrato como mera descrição. No texto jurídico, o presente tem valor de obrigação.",
-      "Confundir «le cas échéant» com «caso contrário». «Le cas échéant» = «se for o caso»; «caso contrário» é «dans le cas contraire» ou «à défaut».",
-      "Dizer «la mairesse» para a prefeita: tradicionalmente era a esposa do prefeito. Hoje diz-se «la maire».",
-      "Usar o ponto mediano num documento oficial francês ou num exame. Nesses contextos, prefira os duplos («les candidates et les candidats») ou as palavras coletivas.",
+      "Ler “Le locataire paie le loyer” num contrato como mera descrição. No texto jurídico, o presente tem valor de obrigação.",
+      "Confundir “le cas échéant” com “caso contrário”. “Le cas échéant” = “se for o caso”; “caso contrário” é “dans le cas contraire” ou “à défaut”.",
+      "Dizer “la mairesse” para a prefeita: tradicionalmente era a esposa do prefeito. Hoje diz-se “la maire”.",
+      "Usar o ponto mediano num documento oficial francês ou num exame. Nesses contextos, prefira os duplos (“les candidates et les candidats”) ou as palavras coletivas.",
       "Tratar a escrita inclusiva como assunto encerrado, num sentido ou no outro. Na França, ela divide opiniões; conheça as formas e observe o uso de cada contexto.",
     ],
     quiz: [
       {
-        question: "Num contrato, «Le locataire est tenu de payer le loyer» quer dizer…",
+        question: "Num contrato, “Le locataire est tenu de payer le loyer” quer dizer…",
         options: ["le locataire doit payer le loyer", "le locataire peut payer le loyer", "le locataire a déjà payé le loyer"],
         answer: "le locataire doit payer le loyer",
-        explanation: "«Être tenu de» = ser obrigado a.",
+        explanation: "“Être tenu de” = ser obrigado a.",
       },
       {
-        question: "O que quer dizer «le cas échéant»?",
+        question: "O que quer dizer “le cas échéant”?",
         options: ["si cela se produit", "dans le cas contraire", "à la fin du contrat"],
         answer: "si cela se produit",
-        explanation: "«Le cas échéant» = se for o caso, eventualmente.",
+        explanation: "“Le cas échéant” = se for o caso, eventualmente.",
       },
       {
         question: "Qual forma usa o ponto mediano?",
@@ -4251,13 +4251,13 @@ export const GRAMMAR_FR: GrammarTopic[] = [
         question: "Como se chama uma mulher que escreve livros, na forma hoje aceita pela Academia?",
         options: ["une autrice", "un auteur femme", "une auteuse"],
         answer: "une autrice",
-        explanation: "«Autrice» (e também «auteure») é aceita; «autrice» já existia no francês antigo.",
+        explanation: "“Autrice” (e também “auteure”) é aceita; “autrice” já existia no francês antigo.",
       },
       {
-        question: "Complete o adágio: «Nul n'est censé ___ la loi.»",
+        question: "Complete o adágio: “Nul n'est censé ___ la loi.”",
         options: ["ignorer", "connaître", "respecter"],
         answer: "ignorer",
-        explanation: "«Ninguém pode alegar desconhecimento da lei.»",
+        explanation: "“Ninguém pode alegar desconhecimento da lei.”",
       },
     ],
   },
@@ -4268,10 +4268,10 @@ export const GRAMMAR_FR: GrammarTopic[] = [
     level: "C2",
     title: "Passé simple e passé antérieur",
     emoji: "🖋️",
-    summary: "O tempo dos romances, dos contos de fadas e dos livros de história: «il entra», «elle naquit», «ils vécurent». Ninguém o usa na conversa, mas é preciso reconhecê-lo para ler qualquer livro. As três terminações, os irregulares e o passé antérieur.",
+    summary: "O tempo dos romances, dos contos de fadas e dos livros de história: “il entra”, “elle naquit”, “ils vécurent”. Ninguém o usa na conversa, mas é preciso reconhecê-lo para ler qualquer livro. As três terminações, os irregulares e o passé antérieur.",
     sections: [
       {
-        text: "Na fala, o francês usa o passé composé para o passado: «il est entré». Na escrita narrativa (romances, contos, biografias, livros de história), o tempo tradicional é o passé simple: «il entra». Os dois têm o mesmo valor, o do nosso pretérito perfeito («ele entrou»); a diferença é de registro. O passé simple aparece sobretudo na terceira pessoa, do singular e do plural, e combina com o imparfait: o imparfait pinta o cenário, o passé simple faz a história andar.",
+        text: "Na fala, o francês usa o passé composé para o passado: “il est entré”. Na escrita narrativa (romances, contos, biografias, livros de história), o tempo tradicional é o passé simple: “il entra”. Os dois têm o mesmo valor, o do nosso pretérito perfeito (“ele entrou”); a diferença é de registro. O passé simple aparece sobretudo na terceira pessoa, do singular e do plural, e combina com o imparfait: o imparfait pinta o cenário, o passé simple faz a história andar.",
         examples: [
           ["Il était une fois un roi qui avait trois filles. Un jour, il tomba malade.", "Era uma vez um rei que tinha três filhas. Um dia, ele adoeceu."],
           ["Et en disant ces mots, ce méchant Loup se jeta sur le petit Chaperon rouge, et la mangea.", "E, dizendo essas palavras, o Lobo malvado se atirou sobre Chapeuzinho Vermelho e a comeu. (Perrault, 1697)"],
@@ -4281,7 +4281,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "As três terminações",
-        text: "Os verbos em -er (inclusive aller) têm terminações em -a-; os verbos em -ir como finir e quase todos em -re, em -i-; e muitos irregulares, em -u-. Nas pessoas «nous» e «vous», a vogal leva acento circunflexo. Nos verbos em -cer e -ger, conserve o som: «il commença», «il mangea», «nous mangeâmes».",
+        text: "Os verbos em -er (inclusive aller) têm terminações em -a-; os verbos em -ir como finir e quase todos em -re, em -i-; e muitos irregulares, em -u-. Nas pessoas “nous” e “vous”, a vogal leva acento circunflexo. Nos verbos em -cer e -ger, conserve o som: “il commença”, “il mangea”, “nous mangeâmes”.",
         table: {
           head: ["Pessoa", "parler (-a-)", "finir (-i-)", "vouloir (-u-)"],
           rows: [
@@ -4296,7 +4296,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Os irregulares mais frequentes",
-        text: "Muitos passés simples irregulares se parecem com o particípio passado: «pris» → «il prit», «lu» → «il lut», «bu» → «il but». Os casos mais importantes, na terceira pessoa:",
+        text: "Muitos passés simples irregulares se parecem com o particípio passado: “pris” → “il prit”, “lu” → “il lut”, “bu” → “il but”. Os casos mais importantes, na terceira pessoa:",
         table: {
           head: ["Infinitivo", "il, elle", "ils, elles", "Português"],
           rows: [
@@ -4327,7 +4327,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "O passé antérieur",
-        text: "O passé antérieur é o passé simple do auxiliar + o particípio: «il eut fini», «elle fut partie». Ele marca uma ação terminada logo antes de outra no passé simple, quase sempre depois de «quand», «lorsque», «dès que», «après que», «à peine… que». Na fala, corresponde ao passé composé ou ao «passé surcomposé» regional; em português, ao «depois que terminou» ou «mal tinha terminado».",
+        text: "O passé antérieur é o passé simple do auxiliar + o particípio: “il eut fini”, “elle fut partie”. Ele marca uma ação terminada logo antes de outra no passé simple, quase sempre depois de “quand”, “lorsque”, “dès que”, “après que”, “à peine… que”. Na fala, corresponde ao passé composé ou ao “passé surcomposé” regional; em português, ao “depois que terminou” ou “mal tinha terminado”.",
         examples: [
           ["Quand il eut fini son discours, la salle applaudit.", "Quando ele terminou o discurso, a plateia aplaudiu."],
           ["Dès qu'elle fut sortie, il éclata de rire.", "Assim que ela saiu, ele caiu na gargalhada."],
@@ -4336,43 +4336,43 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Onde se encontra hoje",
-        text: "Além da literatura, o passé simple continua vivo nas biografias, nos livros de história, em reportagens longas sobre o passado e nos contos para crianças, que por isso o reconhecem desde cedo. Um romance escrito hoje pode ser todo em passé simple ou todo em passé composé: é uma escolha de estilo. Na conversa, usá-lo soa pomposo ou cômico, e muita gente não sabe mais conjugar as formas de «nous» e «vous».",
+        text: "Além da literatura, o passé simple continua vivo nas biografias, nos livros de história, em reportagens longas sobre o passado e nos contos para crianças, que por isso o reconhecem desde cedo. Um romance escrito hoje pode ser todo em passé simple ou todo em passé composé: é uma escolha de estilo. Na conversa, usá-lo soa pomposo ou cômico, e muita gente não sabe mais conjugar as formas de “nous” e “vous”.",
       },
     ],
     pitfalls: [
-      "Usar o passé simple na conversa ou num e-mail. Na fala, o passado é o passé composé: «Je suis allé à Lyon», não «J'allai à Lyon».",
-      "Dar terminação -it a um verbo em -er: «il allit», «il mangit». Os verbos em -er fazem sempre -a: «il alla», «il mangea».",
-      "Esquecer que o plural dos verbos em -er é -èrent, com acento grave: «ils parlèrent», «ils arrivèrent».",
-      "Confundir «il fut» (passé simple de être) com «qu'il fût» (imparfait du subjonctif, com acento circunflexo). O mesmo vale para «il eut» e «qu'il eût».",
-      "Confundir formas iguais: «je vis» pode ser «eu vi» (voir) ou «eu vivo» (vivre); «il finit» é tanto presente quanto passé simple. O contexto decide.",
+      "Usar o passé simple na conversa ou num e-mail. Na fala, o passado é o passé composé: “Je suis allé à Lyon”, não “J'allai à Lyon”.",
+      "Dar terminação -it a um verbo em -er: “il allit”, “il mangit”. Os verbos em -er fazem sempre -a: “il alla”, “il mangea”.",
+      "Esquecer que o plural dos verbos em -er é -èrent, com acento grave: “ils parlèrent”, “ils arrivèrent”.",
+      "Confundir “il fut” (passé simple de être) com “qu'il fût” (imparfait du subjonctif, com acento circunflexo). O mesmo vale para “il eut” e “qu'il eût”.",
+      "Confundir formas iguais: “je vis” pode ser “eu vi” (voir) ou “eu vivo” (vivre); “il finit” é tanto presente quanto passé simple. O contexto decide.",
     ],
     quiz: [
       {
-        question: "Qual é o passé simple de «aller» na terceira pessoa do singular?",
+        question: "Qual é o passé simple de “aller” na terceira pessoa do singular?",
         options: ["il alla", "il allit", "il allut"],
         answer: "il alla",
         explanation: "Aller se conjuga como os verbos em -er no passé simple: j'allai, il alla, ils allèrent.",
       },
       {
-        question: "«Victor Hugo naquit à Besançon.» Qual é o infinitivo de «naquit»?",
+        question: "“Victor Hugo naquit à Besançon.” Qual é o infinitivo de “naquit”?",
         options: ["naître", "nager", "noyer"],
         answer: "naître",
         explanation: "Naître: il naquit, ils naquirent. Victor Hugo nasceu em Besançon em 1802.",
       },
       {
-        question: "Complete: «Ils ___ beaucoup d'enfants.» (avoir, passé simple)",
+        question: "Complete: “Ils ___ beaucoup d'enfants.” (avoir, passé simple)",
         options: ["eurent", "avèrent", "eûrent"],
         answer: "eurent",
         explanation: "Avoir: j'eus, il eut, nous eûmes, ils eurent.",
       },
       {
-        question: "Como se diz «il a pris» em passé simple?",
+        question: "Como se diz “il a pris” em passé simple?",
         options: ["il prit", "il prenit", "il prena"],
         answer: "il prit",
         explanation: "Prendre: je pris, il prit, ils prirent.",
       },
       {
-        question: "Complete: «Quand elle ___ terminé, elle sortit.»",
+        question: "Complete: “Quand elle ___ terminé, elle sortit.”",
         options: ["eut", "avait eu", "eût"],
         answer: "eut",
         explanation: "Passé antérieur: passé simple do auxiliar + particípio, para uma ação logo antes de outra no passé simple.",
@@ -4384,11 +4384,11 @@ export const GRAMMAR_FR: GrammarTopic[] = [
     level: "C2",
     title: "Imparfait du subjonctif e outras formas literárias",
     emoji: "🎩",
-    summary: "«Il fallait qu'il vînt», «Qui l'eût cru ?», «Je ne saurais vous dire»: o subjuntivo imperfeito, o condicional passado de segunda forma, o «ne» sem «pas» e as inversões que dão ao francês escrito o seu ar clássico.",
+    summary: "“Il fallait qu'il vînt”, “Qui l'eût cru ?”, “Je ne saurais vous dire”: o subjuntivo imperfeito, o condicional passado de segunda forma, o “ne” sem “pas” e as inversões que dão ao francês escrito o seu ar clássico.",
     sections: [
       {
         heading: "O imparfait du subjonctif",
-        text: "Na língua clássica, quando o verbo principal estava no passado, o subjuntivo também ia para o passado: «Je voulais qu'il vînt» (eu queria que ele viesse). É exatamente o que o português faz até hoje com «viesse». O francês falado abandonou essa regra: hoje se diz «Je voulais qu'il vienne», com o subjuntivo presente. O imparfait du subjonctif sobrevive na literatura e na escrita muito cuidada, quase só na terceira pessoa do singular, que é a menos estranha ao ouvido.",
+        text: "Na língua clássica, quando o verbo principal estava no passado, o subjuntivo também ia para o passado: “Je voulais qu'il vînt” (eu queria que ele viesse). É exatamente o que o português faz até hoje com “viesse”. O francês falado abandonou essa regra: hoje se diz “Je voulais qu'il vienne”, com o subjuntivo presente. O imparfait du subjonctif sobrevive na literatura e na escrita muito cuidada, quase só na terceira pessoa do singular, que é a menos estranha ao ouvido.",
         examples: [
           ["Il fallait qu'il vînt. (hoje: qu'il vienne)", "Era preciso que ele viesse."],
           ["Elle attendit qu'il fût parti.", "Ela esperou que ele tivesse ido embora."],
@@ -4398,7 +4398,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Como se forma",
-        text: "Pegue a segunda pessoa do singular do passé simple, tire o -s final e acrescente -sse, -sses, -^t, -ssions, -ssiez, -ssent. Assim, a vogal do passé simple (a, i, u, in) se mantém em todas as pessoas. A terceira pessoa do singular leva acento circunflexo e termina em -t: «qu'il parlât», «qu'il finît», «qu'il fût».",
+        text: "Pegue a segunda pessoa do singular do passé simple, tire o -s final e acrescente -sse, -sses, -^t, -ssions, -ssiez, -ssent. Assim, a vogal do passé simple (a, i, u, in) se mantém em todas as pessoas. A terceira pessoa do singular leva acento circunflexo e termina em -t: “qu'il parlât”, “qu'il finît”, “qu'il fût”.",
         table: {
           head: ["Pessoa", "parler (tu parlas)", "finir (tu finis)", "être (tu fus)", "avoir (tu eus)"],
           rows: [
@@ -4413,11 +4413,11 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Formas que soam cômicas",
-        text: "Repare que, em «finir», várias formas coincidem com o subjuntivo presente («que je finisse»). Já as formas em -asse, -ussions ou -assiez soam hoje cômicas, e os franceses brincam com elas: «Fallait-il que je vous aimasse !». O mais-que-perfeito do subjuntivo é o auxiliar nesse tempo + particípio: «qu'il eût fini», «qu'elle fût venue».",
+        text: "Repare que, em “finir”, várias formas coincidem com o subjuntivo presente (“que je finisse”). Já as formas em -asse, -ussions ou -assiez soam hoje cômicas, e os franceses brincam com elas: “Fallait-il que je vous aimasse !”. O mais-que-perfeito do subjuntivo é o auxiliar nesse tempo + particípio: “qu'il eût fini”, “qu'elle fût venue”.",
       },
       {
         heading: "O condicional passado de segunda forma",
-        text: "Na literatura, o mais-que-perfeito do subjuntivo pode substituir o condicional passado, e às vezes também o mais-que-perfeito do indicativo depois de «si». São formas que ficaram em expressões do dia a dia, sobretudo «Qui l'eût cru ?» e «On eût dit…».",
+        text: "Na literatura, o mais-que-perfeito do subjuntivo pode substituir o condicional passado, e às vezes também o mais-que-perfeito do indicativo depois de “si”. São formas que ficaram em expressões do dia a dia, sobretudo “Qui l'eût cru ?” e “On eût dit…”.",
         examples: [
           ["Qui l'eût cru ?", "Quem diria? (= Qui l'aurait cru ?)"],
           ["On eût dit un fantôme.", "Parecia um fantasma. (= On aurait dit…)"],
@@ -4426,19 +4426,19 @@ export const GRAMMAR_FR: GrammarTopic[] = [
         ],
       },
       {
-        heading: "O «ne» sem «pas»",
-        text: "Com os verbos «pouvoir», «savoir», «oser» e «cesser», a língua escrita cuidada pode usar só «ne», sem «pas». «Je ne saurais» (no condicional) é uma forma elegante e muito usada de dizer «não poderia». Há também o «ne» expletivo, que não nega nada e aparece depois de «avant que», «à moins que», «craindre que», e nas comparações: «Je crains qu'il ne pleuve» = tenho medo de que chova.",
+        heading: "O “ne” sem “pas”",
+        text: "Com os verbos “pouvoir”, “savoir”, “oser” e “cesser”, a língua escrita cuidada pode usar só “ne”, sem “pas”. “Je ne saurais” (no condicional) é uma forma elegante e muito usada de dizer “não poderia”. Há também o “ne” expletivo, que não nega nada e aparece depois de “avant que”, “à moins que”, “craindre que”, e nas comparações: “Je crains qu'il ne pleuve” = tenho medo de que chova.",
         examples: [
           ["Je ne saurais vous dire à quel point je suis touché.", "Eu não saberia dizer o quanto estou comovido."],
           ["Il n'ose le lui avouer.", "Ele não se atreve a confessar isso a ela."],
           ["Elle ne cesse de répéter la même chose.", "Ela não para de repetir a mesma coisa."],
-          ["Je crains qu'il ne soit trop tard.", "Receio que seja tarde demais. (o «ne» não nega)"],
+          ["Je crains qu'il ne soit trop tard.", "Receio que seja tarde demais. (o “ne” não nega)"],
           ["C'est plus loin que je ne le pensais.", "É mais longe do que eu pensava."],
         ],
       },
       {
         heading: "Inversões literárias",
-        text: "Depois de alguns advérbios no começo da frase, a escrita formal inverte sujeito e verbo, como numa pergunta: «peut-être», «sans doute», «aussi» (no sentido de «por isso»), «à peine», «ainsi», «du moins». Em português não há nada parecido; na fala, o francês evita a inversão com «peut-être que».",
+        text: "Depois de alguns advérbios no começo da frase, a escrita formal inverte sujeito e verbo, como numa pergunta: “peut-être”, “sans doute”, “aussi” (no sentido de “por isso”), “à peine”, “ainsi”, “du moins”. Em português não há nada parecido; na fala, o francês evita a inversão com “peut-être que”.",
         examples: [
           ["Peut-être viendra-t-il demain. (fala: Peut-être qu'il viendra demain.)", "Talvez ele venha amanhã."],
           ["Sans doute a-t-elle raison.", "Sem dúvida ela tem razão."],
@@ -4448,42 +4448,42 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Confundir «il fut» (passé simple, sem acento) e «qu'il fût» (imparfait du subjonctif, com acento). O mesmo vale para «il eut / qu'il eût» e «il vint / qu'il vînt».",
-      "Usar o imparfait du subjonctif na conversa porque o português usa «viesse». Na fala, diga «Je voulais qu'il vienne».",
-      "Ler o «ne» expletivo como negação. «Avant qu'il ne parte» quer dizer «antes que ele parta», não «antes que ele não parta».",
-      "Entender «aussi» no começo da frase como «também». Com inversão, «Aussi sommes-nous restés…» é «por isso ficamos».",
-      "Esquecer o «-t-» de ligação na inversão: «Peut-être viendra-t-il», «Sans doute a-t-elle raison».",
+      "Confundir “il fut” (passé simple, sem acento) e “qu'il fût” (imparfait du subjonctif, com acento). O mesmo vale para “il eut / qu'il eût” e “il vint / qu'il vînt”.",
+      "Usar o imparfait du subjonctif na conversa porque o português usa “viesse”. Na fala, diga “Je voulais qu'il vienne”.",
+      "Ler o “ne” expletivo como negação. “Avant qu'il ne parte” quer dizer “antes que ele parta”, não “antes que ele não parta”.",
+      "Entender “aussi” no começo da frase como “também”. Com inversão, “Aussi sommes-nous restés…” é “por isso ficamos”.",
+      "Esquecer o “-t-” de ligação na inversão: “Peut-être viendra-t-il”, “Sans doute a-t-elle raison”.",
     ],
     quiz: [
       {
-        question: "Qual é a forma do imparfait du subjonctif de «venir» na terceira pessoa do singular?",
+        question: "Qual é a forma do imparfait du subjonctif de “venir” na terceira pessoa do singular?",
         options: ["qu'il vînt", "qu'il vint", "qu'il venât"],
         answer: "qu'il vînt",
-        explanation: "Tu vins → qu'il vînt, com acento circunflexo. «Il vint», sem acento, é o passé simple.",
+        explanation: "Tu vins → qu'il vînt, com acento circunflexo. “Il vint”, sem acento, é o passé simple.",
       },
       {
-        question: "«Qui l'eût cru ?» equivale a…",
+        question: "“Qui l'eût cru ?” equivale a…",
         options: ["Qui l'aurait cru ?", "Qui l'a cru ?", "Qui le croit ?"],
         answer: "Qui l'aurait cru ?",
-        explanation: "«Eût cru» é o condicional passado de segunda forma: quem diria?",
+        explanation: "“Eût cru” é o condicional passado de segunda forma: quem diria?",
       },
       {
-        question: "Na fala de hoje, como se diz «Il fallait qu'elle partît»?",
+        question: "Na fala de hoje, como se diz “Il fallait qu'elle partît”?",
         options: ["Il fallait qu'elle parte.", "Il fallait qu'elle partait.", "Il fallait qu'elle partirait."],
         answer: "Il fallait qu'elle parte.",
         explanation: "O francês falado usa o subjuntivo presente mesmo depois de um verbo no passado.",
       },
       {
-        question: "«Je crains qu'il ne vienne» quer dizer…",
+        question: "“Je crains qu'il ne vienne” quer dizer…",
         options: ["J'ai peur qu'il vienne.", "J'ai peur qu'il ne vienne pas.", "Je sais qu'il ne viendra pas."],
         answer: "J'ai peur qu'il vienne.",
-        explanation: "Depois de «craindre que», o «ne» é expletivo: não nega nada.",
+        explanation: "Depois de “craindre que”, o “ne” é expletivo: não nega nada.",
       },
       {
-        question: "Complete na escrita formal: «Peut-être ___ raison.»",
+        question: "Complete na escrita formal: “Peut-être ___ raison.”",
         options: ["a-t-elle", "elle a-t-elle", "a elle"],
         answer: "a-t-elle",
-        explanation: "Depois de «peut-être» no começo da frase, a escrita formal inverte: «Peut-être a-t-elle raison».",
+        explanation: "Depois de “peut-être” no começo da frase, a escrita formal inverte: “Peut-être a-t-elle raison”.",
       },
     ],
   },
@@ -4499,7 +4499,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Molière (1622–1673)",
-        text: "O maior autor de comédias da língua, a ponto de o francês ser chamado de «la langue de Molière». Em «O Avarento», a frase virou provérbio; em «O Burguês Fidalgo», o senhor Jourdain descobre, maravilhado, que fala em prosa, e usa um imparfait du subjonctif: «sans que j'en susse rien».",
+        text: "O maior autor de comédias da língua, a ponto de o francês ser chamado de “la langue de Molière”. Em “O Avarento”, a frase virou provérbio; em “O Burguês Fidalgo”, o senhor Jourdain descobre, maravilhado, que fala em prosa, e usa um imparfait du subjonctif: “sans que j'en susse rien”.",
         examples: [
           ["Il faut manger pour vivre, et non pas vivre pour manger.", "É preciso comer para viver, e não viver para comer. (O Avarento, 1668)"],
           ["Par ma foi ! il y a plus de quarante ans que je dis de la prose sans que j'en susse rien.", "Palavra! Faz mais de quarenta anos que falo em prosa sem saber nada disso. (O Burguês Fidalgo, 1670)"],
@@ -4507,42 +4507,42 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Victor Hugo (1802–1885)",
-        text: "Poeta, romancista («Os Miseráveis», «Notre-Dame de Paris») e homem político, exilado durante o Segundo Império. «Demain, dès l'aube», escrito para a filha Léopoldine, morta afogada em 1843, é um dos poemas mais conhecidos da França. Repare no futuro simples, que marca a decisão, e na ordem poética: «à l'heure où blanchit la campagne», com o sujeito depois do verbo.",
+        text: "Poeta, romancista (“Os Miseráveis”, “Notre-Dame de Paris”) e homem político, exilado durante o Segundo Império. “Demain, dès l'aube”, escrito para a filha Léopoldine, morta afogada em 1843, é um dos poemas mais conhecidos da França. Repare no futuro simples, que marca a decisão, e na ordem poética: “à l'heure où blanchit la campagne”, com o sujeito depois do verbo.",
         examples: [
           ["Demain, dès l'aube, à l'heure où blanchit la campagne, / Je partirai.", "Amanhã, ao raiar do dia, na hora em que o campo se ilumina, / Eu partirei. (As Contemplações, 1856)"],
         ],
       },
       {
         heading: "Charles Baudelaire (1821–1867)",
-        text: "«As Flores do Mal» (1857) inaugura a poesia moderna e rendeu ao autor um processo por ofensa à moral pública. No refrão de «Convite à viagem», não há verbo depois de «n'est que»: só substantivos, que criam um mundo ideal. «Ne… que» é a restrição (só, apenas), não uma negação.",
+        text: "“As Flores do Mal” (1857) inaugura a poesia moderna e rendeu ao autor um processo por ofensa à moral pública. No refrão de “Convite à viagem”, não há verbo depois de “n'est que”: só substantivos, que criam um mundo ideal. “Ne… que” é a restrição (só, apenas), não uma negação.",
         examples: [
           ["Là, tout n'est qu'ordre et beauté, / Luxe, calme et volupté.", "Lá, tudo é só ordem e beleza, / Luxo, calma e volúpia. (L'Invitation au voyage)"],
         ],
       },
       {
         heading: "Gustave Flaubert (1821–1880)",
-        text: "«Madame Bovary» (1857) também foi processado, e o autor, absolvido. Flaubert buscava a palavra exata e lia suas frases em voz alta. Na primeira frase do romance, o imparfait («nous étions») monta o cenário e o passé simple («entra») faz entrar a ação. «L'Étude» é a sala de estudos do colégio, e «un nouveau» é um aluno novo.",
+        text: "“Madame Bovary” (1857) também foi processado, e o autor, absolvido. Flaubert buscava a palavra exata e lia suas frases em voz alta. Na primeira frase do romance, o imparfait (“nous étions”) monta o cenário e o passé simple (“entra”) faz entrar a ação. “L'Étude” é a sala de estudos do colégio, e “un nouveau” é um aluno novo.",
         examples: [
           ["Nous étions à l'Étude, quand le Proviseur entra, suivi d'un nouveau habillé en bourgeois et d'un garçon de classe qui portait un grand pupitre.", "Estávamos na sala de estudos quando o diretor entrou, seguido de um aluno novo vestido à paisana e de um bedel que carregava uma grande carteira. (Madame Bovary, 1857)"],
         ],
       },
       {
         heading: "Guy de Maupassant (1850–1893)",
-        text: "Mestre do conto, discípulo de Flaubert, escreveu mais de trezentas histórias sobre camponeses normandos, funcionários de Paris e a guerra de 1870. «O Colar» («La Parure») começa apresentando Mathilde Loisel; «comme par une erreur du destin» antecipa a amargura da personagem. Repare no particípio «nées» concordando com «filles».",
+        text: "Mestre do conto, discípulo de Flaubert, escreveu mais de trezentas histórias sobre camponeses normandos, funcionários de Paris e a guerra de 1870. “O Colar” (“La Parure”) começa apresentando Mathilde Loisel; “comme par une erreur du destin” antecipa a amargura da personagem. Repare no particípio “nées” concordando com “filles”.",
         examples: [
           ["C'était une de ces jolies et charmantes filles, nées, comme par une erreur du destin, dans une famille d'employés.", "Era uma dessas moças bonitas e encantadoras, nascidas, como que por um erro do destino, numa família de funcionários. (La Parure, 1884)"],
         ],
       },
       {
         heading: "Marcel Proust (1871–1922)",
-        text: "«Em Busca do Tempo Perdido» tem sete volumes e frases famosas pelo comprimento. Mas a primeira de todas é curtíssima, e em passé composé, não em passé simple: o narrador fala de um passado que ainda o acompanha. «De bonne heure» = cedo.",
+        text: "“Em Busca do Tempo Perdido” tem sete volumes e frases famosas pelo comprimento. Mas a primeira de todas é curtíssima, e em passé composé, não em passé simple: o narrador fala de um passado que ainda o acompanha. “De bonne heure” = cedo.",
         examples: [
           ["Longtemps, je me suis couché de bonne heure.", "Durante muito tempo, fui me deitar cedo. (No Caminho de Swann, 1913)"],
         ],
       },
       {
         heading: "Antoine de Saint-Exupéry (1900–1944)",
-        text: "Aviador do correio aéreo, voou nas linhas que ligavam a França à América do Sul e fez escalas no Brasil. Desapareceu num voo de reconhecimento em 1944. «O Pequeno Príncipe» (1943) é o livro francês mais traduzido do mundo. Na frase da raposa, «ne… que» é outra vez restrição: só se vê bem com o coração.",
+        text: "Aviador do correio aéreo, voou nas linhas que ligavam a França à América do Sul e fez escalas no Brasil. Desapareceu num voo de reconhecimento em 1944. “O Pequeno Príncipe” (1943) é o livro francês mais traduzido do mundo. Na frase da raposa, “ne… que” é outra vez restrição: só se vê bem com o coração.",
         examples: [
           ["On ne voit bien qu'avec le cœur. L'essentiel est invisible pour les yeux.", "Só se vê bem com o coração. O essencial é invisível aos olhos. (O Pequeno Príncipe, 1943)"],
         ],
@@ -4563,42 +4563,42 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Ler «ne… que» como negação: «tout n'est qu'ordre et beauté» é «tudo é só ordem e beleza».",
+      "Ler “ne… que” como negação: “tout n'est qu'ordre et beauté” é “tudo é só ordem e beleza”.",
       "Achar que Proust erra ao usar o passé composé. A escolha é intencional: o narrador liga o passado ao presente.",
-      "Traduzir «de bonne heure» como «em boa hora». Quer dizer «cedo».",
-      "Traduzir «un nouveau habillé en bourgeois» como «um novo burguês». «Un nouveau» é um aluno novo, e «habillé en bourgeois» é vestido à paisana, sem uniforme.",
-      "Pensar que «la langue de Molière» é francês antigo. É uma forma elogiosa de dizer «o francês», como «a língua de Camões» para o português.",
+      "Traduzir “de bonne heure” como “em boa hora”. Quer dizer “cedo”.",
+      "Traduzir “un nouveau habillé en bourgeois” como “um novo burguês”. “Un nouveau” é um aluno novo, e “habillé en bourgeois” é vestido à paisana, sem uniforme.",
+      "Pensar que “la langue de Molière” é francês antigo. É uma forma elogiosa de dizer “o francês”, como “a língua de Camões” para o português.",
     ],
     quiz: [
       {
-        question: "Em «Là, tout n'est qu'ordre et beauté», «n'est que» quer dizer…",
+        question: "Em “Là, tout n'est qu'ordre et beauté”, “n'est que” quer dizer…",
         options: ["est seulement", "n'est pas", "n'est plus"],
         answer: "est seulement",
-        explanation: "«Ne… que» é restrição: tudo é só ordem e beleza.",
+        explanation: "“Ne… que” é restrição: tudo é só ordem e beleza.",
       },
       {
-        question: "Na primeira frase de Madame Bovary, qual é o tempo de «entra»?",
+        question: "Na primeira frase de Madame Bovary, qual é o tempo de “entra”?",
         options: ["le passé simple", "le présent", "l'imparfait"],
         answer: "le passé simple",
-        explanation: "«Il entra» = ele entrou. O imparfait «nous étions» monta o cenário.",
+        explanation: "“Il entra” = ele entrou. O imparfait “nous étions” monta o cenário.",
       },
       {
-        question: "Em «sans que j'en susse rien» (Molière), «susse» é…",
+        question: "Em “sans que j'en susse rien” (Molière), “susse” é…",
         options: ["l'imparfait du subjonctif de savoir", "le passé simple de savoir", "le subjonctif présent de sucer"],
         answer: "l'imparfait du subjonctif de savoir",
-        explanation: "Tu sus → que je susse. Hoje: «sans que j'en sache rien».",
+        explanation: "Tu sus → que je susse. Hoje: “sans que j'en sache rien”.",
       },
       {
-        question: "Quem escreveu «Demain, dès l'aube»?",
+        question: "Quem escreveu “Demain, dès l'aube”?",
         options: ["Victor Hugo", "Charles Baudelaire", "Marcel Proust"],
         answer: "Victor Hugo",
-        explanation: "O poema está em «Les Contemplations» (1856) e foi escrito para a filha Léopoldine.",
+        explanation: "O poema está em “Les Contemplations” (1856) e foi escrito para a filha Léopoldine.",
       },
       {
-        question: "Complete a frase do Pequeno Príncipe: «L'essentiel est ___ pour les yeux.»",
+        question: "Complete a frase do Pequeno Príncipe: “L'essentiel est ___ pour les yeux.”",
         options: ["invisible", "visible", "important"],
         answer: "invisible",
-        explanation: "«O essencial é invisível aos olhos.»",
+        explanation: "“O essencial é invisível aos olhos.”",
       },
     ],
   },
@@ -4607,7 +4607,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
     level: "C2",
     title: "Provérbios e o francês de outrora",
     emoji: "🦉",
-    summary: "«Qui vivra verra», «Petit à petit, l'oiseau fait son nid»: os provérbios guardam uma gramática antiga, sem artigo e com «qui» sem antecedente. E, voltando mais no tempo, os Juramentos de Estrasburgo (842), a Canção de Rolando e Villon.",
+    summary: "“Qui vivra verra”, “Petit à petit, l'oiseau fait son nid”: os provérbios guardam uma gramática antiga, sem artigo e com “qui” sem antecedente. E, voltando mais no tempo, os Juramentos de Estrasburgo (842), a Canção de Rolando e Villon.",
     sections: [
       {
         text: "Os provérbios são frases fixas, transmitidas de geração em geração, e por isso conservam construções que a língua corrente abandonou. Muitos têm equivalente quase palavra por palavra em português, porque circularam pela Europa em latim e nas línguas românicas; outros usam imagens diferentes. Conhecê-los ajuda a entender a conversa, a imprensa (que adora adaptá-los nos títulos) e o humor.",
@@ -4643,7 +4643,7 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "A gramática dos provérbios",
-        text: "Quatro traços antigos se repetem. O «qui» sem antecedente, que equivale a «celui qui» (aquele que): «Qui vivra verra». A ausência de artigo: «Chat échaudé», «Pierre qui roule», como no francês medieval. A negação só com «ne» e um complemento: «Qui ne dit mot» (quem não diz palavra). E a inversão do verbo no começo: «Rira bien qui rira le dernier», «Mieux vaut tard que jamais». La Fontaine (1621–1695) deixou nas suas «Fábulas» versos que funcionam como provérbios.",
+        text: "Quatro traços antigos se repetem. O “qui” sem antecedente, que equivale a “celui qui” (aquele que): “Qui vivra verra”. A ausência de artigo: “Chat échaudé”, “Pierre qui roule”, como no francês medieval. A negação só com “ne” e um complemento: “Qui ne dit mot” (quem não diz palavra). E a inversão do verbo no começo: “Rira bien qui rira le dernier”, “Mieux vaut tard que jamais”. La Fontaine (1621–1695) deixou nas suas “Fábulas” versos que funcionam como provérbios.",
         examples: [
           ["La raison du plus fort est toujours la meilleure.", "A razão do mais forte é sempre a melhor. (La Fontaine, O Lobo e o Cordeiro)"],
           ["Rien ne sert de courir ; il faut partir à point.", "De nada adianta correr; é preciso partir na hora certa. (La Fontaine, A Lebre e a Tartaruga)"],
@@ -4651,14 +4651,14 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
       {
         heading: "Os Juramentos de Estrasburgo (842)",
-        text: "O primeiro texto conhecido numa língua que já não é latim, e que dará o francês, é um juramento. Em 842, em Estrasburgo, dois netos de Carlos Magno, Luís, o Germânico, e Carlos, o Calvo, aliaram-se contra o irmão Lotário. Para serem entendidos pelas tropas do outro, cada um jurou na língua do exército do irmão: Luís em romance (a língua que dará o francês), Carlos em germânico. O historiador Nitardo copiou os textos. Repare como a língua ainda está perto do latim, e do português: «amur», «poblo», «salvament», «fradre».",
+        text: "O primeiro texto conhecido numa língua que já não é latim, e que dará o francês, é um juramento. Em 842, em Estrasburgo, dois netos de Carlos Magno, Luís, o Germânico, e Carlos, o Calvo, aliaram-se contra o irmão Lotário. Para serem entendidos pelas tropas do outro, cada um jurou na língua do exército do irmão: Luís em romance (a língua que dará o francês), Carlos em germânico. O historiador Nitardo copiou os textos. Repare como a língua ainda está perto do latim, e do português: “amur”, “poblo”, “salvament”, “fradre”.",
         examples: [
           ["Pro Deo amur et pro christian poblo et nostro commun salvament, d'ist di in avant…", "Pelo amor de Deus e pela salvação do povo cristão e nossa comum, deste dia em diante… (Juramentos de Estrasburgo, 842)"],
         ],
       },
       {
         heading: "O francês antigo e o médio",
-        text: "O francês antigo (do século IX ao XIII) ainda tinha dois casos, como o latim: o caso sujeito e o caso regime. «Li reis» era o rei como sujeito; «le rei», como objeto. A «Canção de Rolando», por volta de 1100, é a grande epopeia desse período. No francês médio (séculos XIV e XV), os casos desapareceram e a língua ficou muito mais próxima da de hoje. François Villon, poeta de Paris no século XV, é o autor do verso mais citado da época, sobre a passagem do tempo: «antan» quer dizer «o ano passado, os tempos de antes».",
+        text: "O francês antigo (do século IX ao XIII) ainda tinha dois casos, como o latim: o caso sujeito e o caso regime. “Li reis” era o rei como sujeito; “le rei”, como objeto. A “Canção de Rolando”, por volta de 1100, é a grande epopeia desse período. No francês médio (séculos XIV e XV), os casos desapareceram e a língua ficou muito mais próxima da de hoje. François Villon, poeta de Paris no século XV, é o autor do verso mais citado da época, sobre a passagem do tempo: “antan” quer dizer “o ano passado, os tempos de antes”.",
         examples: [
           ["Carles li reis, nostre emperere magnes", "Carlos, o rei, nosso grande imperador (Canção de Rolando, verso 1)"],
           ["Mais où sont les neiges d'antan ?", "Mas onde estão as neves de outrora? (Villon, Balada das damas do tempo passado)"],
@@ -4666,8 +4666,8 @@ export const GRAMMAR_FR: GrammarTopic[] = [
         ],
       },
       {
-        heading: "O acento circunflexo: um «s» que sumiu",
-        text: "Muitas palavras perderam um «s» entre o francês antigo e o moderno, e o acento circunflexo marca o lugar onde ele estava. Para um brasileiro, é um truque precioso: o «s» costuma estar lá no português.",
+        heading: "O acento circunflexo: um “s” que sumiu",
+        text: "Muitas palavras perderam um “s” entre o francês antigo e o moderno, e o acento circunflexo marca o lugar onde ele estava. Para um brasileiro, é um truque precioso: o “s” costuma estar lá no português.",
         table: {
           head: ["Latim", "Francês antigo", "Francês moderno", "Português"],
           rows: [
@@ -4683,27 +4683,27 @@ export const GRAMMAR_FR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      "Traduzir provérbios palavra por palavra quando o português tem outra imagem. «Petit à petit, l'oiseau fait son nid» é o nosso «de grão em grão».",
-      "Pôr artigo onde o provérbio não tem: é «Chat échaudé craint l'eau froide», e não «Le chat échaudé…».",
-      "Achar que «Qui vivra verra» é pergunta. «Qui» aqui é «aquele que»: quem viver verá.",
+      "Traduzir provérbios palavra por palavra quando o português tem outra imagem. “Petit à petit, l'oiseau fait son nid” é o nosso “de grão em grão”.",
+      "Pôr artigo onde o provérbio não tem: é “Chat échaudé craint l'eau froide”, e não “Le chat échaudé…”.",
+      "Achar que “Qui vivra verra” é pergunta. “Qui” aqui é “aquele que”: quem viver verá.",
       "Ler os Juramentos de Estrasburgo como latim errado. É o primeiro testemunho de uma língua nova, entre o latim e o francês.",
-      "Pensar que o circunflexo é só enfeite. Em «forêt», «fête» e «hôpital», ele guarda a memória de um «s» que o português conservou.",
+      "Pensar que o circunflexo é só enfeite. Em “forêt”, “fête” e “hôpital”, ele guarda a memória de um “s” que o português conservou.",
     ],
     quiz: [
       {
-        question: "Qual é o equivalente francês de «Quem cala consente»?",
+        question: "Qual é o equivalente francês de “Quem cala consente”?",
         options: ["Qui ne dit mot consent.", "Qui se tait parle.", "Le silence est d'or."],
         answer: "Qui ne dit mot consent.",
-        explanation: "«Qui ne dit mot» = quem não diz palavra. («Le silence est d'or» é outro provérbio: o silêncio vale ouro.)",
+        explanation: "“Qui ne dit mot” = quem não diz palavra. (“Le silence est d'or” é outro provérbio: o silêncio vale ouro.)",
       },
       {
-        question: "Em «Qui vivra verra», o que quer dizer «qui»?",
+        question: "Em “Qui vivra verra”, o que quer dizer “qui”?",
         options: ["celui qui", "est-ce que", "quelqu'un"],
         answer: "celui qui",
-        explanation: "É o «qui» sem antecedente dos provérbios: aquele que viver verá.",
+        explanation: "É o “qui” sem antecedente dos provérbios: aquele que viver verá.",
       },
       {
-        question: "Complete: «Petit à petit, l'oiseau fait son ___.»",
+        question: "Complete: “Petit à petit, l'oiseau fait son ___.”",
         options: ["nid", "chant", "vol"],
         answer: "nid",
         explanation: "Pouco a pouco, o pássaro faz seu ninho: de grão em grão, a galinha enche o papo.",
@@ -4715,10 +4715,10 @@ export const GRAMMAR_FR: GrammarTopic[] = [
         explanation: "Em 842, dois netos de Carlos Magno juraram aliança em romance e em germânico.",
       },
       {
-        question: "O que marca o acento circunflexo de «forêt»?",
+        question: "O que marca o acento circunflexo de “forêt”?",
         options: ["un s disparu", "une voyelle nasale", "une lettre grecque"],
         answer: "un s disparu",
-        explanation: "Forest → forêt, como o português «floresta». O mesmo em fête (festa) e île (ilha).",
+        explanation: "Forest → forêt, como o português “floresta”. O mesmo em fête (festa) e île (ilha).",
       },
     ],
   },

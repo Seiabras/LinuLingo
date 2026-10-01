@@ -19,21 +19,21 @@ export const DINHEIRO_PAISES: Record<string, NatureItem[]> = {
   ],
   BRA: [
     { emoji: '💵', name: 'Real', local: 'real (BRL, R$)', fact: 'Um real tem cem centavos. Cada nota traz um animal brasileiro: a tartaruga-marinha na de dois, a garça na de cinco, a onça-pintada na de cinquenta e o lobo-guará na de duzentos, lançada em 2020.' },
-    { emoji: '📱', name: 'Pix', local: 'Pix', fact: 'Criado pelo Banco Central em 2020, transfere dinheiro na hora, a qualquer hora, por QR code ou por uma «chave» (CPF, telefone ou e-mail). Virou o jeito mais comum de pagar, até na feira e no vendedor de rua.' },
-    { emoji: '💳', name: 'Parcelado no cartão', local: 'em 3x sem juros', fact: 'Um costume bem brasileiro: dividir a compra no cartão de crédito em várias parcelas, muitas vezes «sem juros».' },
+    { emoji: '📱', name: 'Pix', local: 'Pix', fact: 'Criado pelo Banco Central em 2020, transfere dinheiro na hora, a qualquer hora, por QR code ou por uma “chave” (CPF, telefone ou e-mail). Virou o jeito mais comum de pagar, até na feira e no vendedor de rua.' },
+    { emoji: '💳', name: 'Parcelado no cartão', local: 'em 3x sem juros', fact: 'Um costume bem brasileiro: dividir a compra no cartão de crédito em várias parcelas, muitas vezes “sem juros”.' },
   ],
   PRT: [
     { emoji: '💶', name: 'Euro', local: 'euro (EUR)', fact: 'Portugal usa o euro desde 2002 (no lugar do escudo). As moedas portuguesas trazem selos dos primeiros reis e os castelos do escudo nacional.' },
-    { emoji: '🏧', name: 'Multibanco', local: 'Multibanco', fact: 'A rede de caixas eletrônicos dos bancos portugueses paga contas, impostos, ingressos e até recarga de celular; nas compras online, muitos sites dão uma «referência Multibanco» para pagar.' },
+    { emoji: '🏧', name: 'Multibanco', local: 'Multibanco', fact: 'A rede de caixas eletrônicos dos bancos portugueses paga contas, impostos, ingressos e até recarga de celular; nas compras online, muitos sites dão uma “referência Multibanco” para pagar.' },
     { emoji: '📱', name: 'MB WAY', local: 'MB WAY', fact: 'App dos bancos para mandar dinheiro pelo número de telefone e pagar nas lojas; é o jeito comum de dividir a conta entre amigos.' },
   ],
   ESP: [
     { emoji: '💶', name: 'Euro', local: 'euro (EUR)', fact: 'A Espanha usa o euro desde 2002 (no lugar da peseta). As moedas espanholas trazem o rei, a catedral de Santiago de Compostela e Cervantes.' },
-    { emoji: '📱', name: 'Bizum', local: 'Bizum', fact: 'Sistema criado pelos bancos espanhóis em 2016 para mandar dinheiro na hora pelo número de telefone; «te hago un Bizum» virou expressão do dia a dia.' },
+    { emoji: '📱', name: 'Bizum', local: 'Bizum', fact: 'Sistema criado pelos bancos espanhóis em 2016 para mandar dinheiro na hora pelo número de telefone; “te hago un Bizum” virou expressão do dia a dia.' },
     { emoji: '🍽️', name: 'Gorjeta', local: 'propina', fact: 'Não é obrigatória: muita gente só arredonda a conta ou deixa as moedas do troco.' },
   ],
   MEX: [
-    { emoji: '💵', name: 'Peso mexicano', local: 'peso (MXN, $)', fact: 'Um peso tem cem centavos. O símbolo é o mesmo cifrão do dólar: nos preços, «$» quer dizer pesos.' },
+    { emoji: '💵', name: 'Peso mexicano', local: 'peso (MXN, $)', fact: 'Um peso tem cem centavos. O símbolo é o mesmo cifrão do dólar: nos preços, “$” quer dizer pesos.' },
     { emoji: '🪙', name: 'Dinheiro vivo', local: 'efectivo', fact: 'Nos mercados, nas barracas de tacos e no transporte, o dinheiro vivo domina. As lojas de conveniência recebem pagamento de contas e de compras feitas pela internet.' },
     { emoji: '🍽️', name: 'Gorjeta', local: 'propina', fact: 'Nos restaurantes, o costume é deixar de dez a quinze por cento.' },
   ],
@@ -48,7 +48,7 @@ export const DINHEIRO_PAISES: Record<string, NatureItem[]> = {
     { emoji: '🍽️', name: 'Gorjeta', local: 'propina', fact: 'Costuma-se deixar cerca de dez por cento nos restaurantes, muitas vezes em dinheiro vivo.' },
   ],
   PER: [
-    { emoji: '💵', name: 'Sol', local: 'sol (PEN, S/)', fact: 'Um sol tem cem céntimos. O nome lembra o sol dos incas; até 2015 a moeda se chamava «novo sol».' },
+    { emoji: '💵', name: 'Sol', local: 'sol (PEN, S/)', fact: 'Um sol tem cem céntimos. O nome lembra o sol dos incas; até 2015 a moeda se chamava “novo sol”.' },
     { emoji: '📱', name: 'Pagamento pelo celular', local: 'billeteras móviles', fact: 'Os apps que pagam por QR code ou pelo número de celular se espalharam tanto que aparecem até nas bancas dos mercados.' },
     { emoji: '💱', name: 'Dólar lado a lado', local: 'dólares', fact: 'Em muitos lugares turísticos, os preços aparecem em soles e em dólares, e as casas de câmbio estão por toda parte.' },
   ],
@@ -70,11 +70,11 @@ export const DINHEIRO_PAISES: Record<string, NatureItem[]> = {
   SWE: [
     { emoji: '💵', name: 'Coroa sueca', local: 'krona (SEK)', fact: 'Uma coroa tem cem öre, mas as moedas de öre saíram de circulação. As notas trazem personagens da cultura sueca, como Astrid Lindgren, a autora de Pippi Meialonga, na de vinte.' },
     { emoji: '📱', name: 'Swish', local: 'Swish', fact: 'Criado pelos bancos suecos em 2012, manda dinheiro na hora pelo número de telefone e é usado até em feiras, igrejas e vendas de garagem.' },
-    { emoji: '🚫', name: 'Loja sem dinheiro vivo', local: 'Vi hanterar inte kontanter', fact: 'É comum ver o aviso «não aceitamos dinheiro vivo»: a Suécia é um dos países que menos usa cédulas no mundo.' },
+    { emoji: '🚫', name: 'Loja sem dinheiro vivo', local: 'Vi hanterar inte kontanter', fact: 'É comum ver o aviso “não aceitamos dinheiro vivo”: a Suécia é um dos países que menos usa cédulas no mundo.' },
   ],
   NOR: [
     { emoji: '💵', name: 'Coroa norueguesa', local: 'krone (NOK)', fact: 'As notas mais novas trazem o mar da Noruega: um farol, um barco viking, o bacalhau, um barco de resgate e as ondas.' },
-    { emoji: '📱', name: 'Vipps', local: 'Vipps', fact: 'O app dos bancos noruegueses, criado em 2015, virou verbo: «vippse» é mandar dinheiro pelo celular. Hoje faz parte do Vipps MobilePay.' },
+    { emoji: '📱', name: 'Vipps', local: 'Vipps', fact: 'O app dos bancos noruegueses, criado em 2015, virou verbo: “vippse” é mandar dinheiro pelo celular. Hoje faz parte do Vipps MobilePay.' },
     { emoji: '💳', name: 'Cartão para tudo', local: 'bankkort', fact: 'Quase tudo se paga com cartão ou celular, até um café na estrada; a lei, porém, garante o direito de pagar em dinheiro vivo.' },
   ],
   DNK: [
@@ -113,7 +113,7 @@ export const DINHEIRO_PAISES: Record<string, NatureItem[]> = {
     { emoji: '🧺', name: 'Dinheiro nas feiras', local: 'grynieji', fact: 'Nas feiras de rua e no interior, o dinheiro vivo ainda é bem-vindo.' },
   ],
   LVA: [
-    { emoji: '💶', name: 'Euro', local: 'eiro (EUR)', fact: 'A Letônia trocou o lats pelo euro em 2014. As moedas de um e dois euros trazem a «donzela letã», a mesma figura de uma antiga moeda de cinco lats.' },
+    { emoji: '💶', name: 'Euro', local: 'eiro (EUR)', fact: 'A Letônia trocou o lats pelo euro em 2014. As moedas de um e dois euros trazem a “donzela letã”, a mesma figura de uma antiga moeda de cinco lats.' },
     { emoji: '💳', name: 'Cartão e transferência', local: 'bankas karte', fact: 'O cartão por aproximação domina nas cidades, e a transferência bancária pelo celular é o jeito comum de pagar um amigo.' },
     { emoji: '🧺', name: 'Mercado Central', local: 'Centrāltirgus', fact: 'Nos hangares de dirigíveis do Mercado Central de Riga, muitas bancas ainda preferem dinheiro vivo.' },
   ],
@@ -139,7 +139,7 @@ export const DINHEIRO_PAISES: Record<string, NatureItem[]> = {
   ],
   FRA: [
     { emoji: '💶', name: 'Euro', local: 'euro (EUR)', fact: 'A França trocou o franco pelo euro em 2002. Nas moedas francesas aparecem a árvore da vida, a Semeadora e Marianne, o símbolo da República.' },
-    { emoji: '💳', name: 'Carte Bancaire', local: 'CB', fact: 'O sistema nacional de cartões é aceito em quase toda loja; pagar por aproximação («sans contact») virou o normal.' },
+    { emoji: '💳', name: 'Carte Bancaire', local: 'CB', fact: 'O sistema nacional de cartões é aceito em quase toda loja; pagar por aproximação (“sans contact”) virou o normal.' },
     { emoji: '🧾', name: 'Cheque e serviço incluído', local: 'chèque, service compris', fact: 'A França ainda é um dos países europeus que mais usam cheque. Nos restaurantes, o serviço já vem incluído; deixar umas moedas é um agrado, não uma obrigação.' },
   ],
   GBR: [

@@ -27,7 +27,7 @@ export const FALSE_FRIENDS_JA: FalseFriend[] = [
   {
     word: 'スマート',
     means: 'magro, esbelto; elegante',
-    looksLike: 'esperto, inteligente (o «smart» do inglês)',
+    looksLike: 'esperto, inteligente (o “smart” do inglês)',
     forThat: '頭がいい; かしこい',
     emoji: '🧍',
     example: ['兄は背が高くて、スマートです。', 'Meu irmão é alto e esbelto.'],
@@ -35,7 +35,7 @@ export const FALSE_FRIENDS_JA: FalseFriend[] = [
   {
     word: 'カンニング',
     means: 'cola (na prova)',
-    looksLike: 'astúcia, esperteza (o «cunning» do inglês)',
+    looksLike: 'astúcia, esperteza (o “cunning” do inglês)',
     forThat: 'ずるがしこさ',
     emoji: '📝',
     example: ['テストでカンニングをしてはいけません。', 'Não pode colar na prova.'],
@@ -67,7 +67,7 @@ export const FALSE_FRIENDS_JA: FalseFriend[] = [
   {
     word: 'ナイーブ',
     means: 'sensível, delicado (que se magoa fácil)',
-    looksLike: 'ingênuo (o «naive» do inglês)',
+    looksLike: 'ingênuo (o “naive” do inglês)',
     forThat: '世間知らず; 単純',
     emoji: '🥺',
     example: ['彼はナイーブだから、強く言わないでね。', 'Ele é sensível, então não fale duro com ele, tá?'],
@@ -123,7 +123,7 @@ export const FALSE_FRIENDS_JA: FalseFriend[] = [
   {
     word: 'パンツ',
     means: 'cueca, calcinha (na moda, também calça)',
-    looksLike: 'calça (o «pants» do inglês)',
+    looksLike: 'calça (o “pants” do inglês)',
     forThat: 'ズボン',
     emoji: '🩲',
     example: ['旅行のかばんに、パンツとくつしたを入れました。', 'Coloquei cuecas e meias na mala de viagem.'],
@@ -131,7 +131,7 @@ export const FALSE_FRIENDS_JA: FalseFriend[] = [
   {
     word: 'トレーナー',
     means: 'blusa de moletom (sem capuz)',
-    looksLike: 'treinador (o «trainer» do inglês)',
+    looksLike: 'treinador (o “trainer” do inglês)',
     forThat: 'コーチ',
     emoji: '👕',
     example: ['このトレーナーは、とても暖かいです。', 'Esta blusa de moletom é bem quentinha.'],
@@ -155,7 +155,7 @@ export const FALSE_FRIENDS_JA: FalseFriend[] = [
   {
     word: 'モーニング',
     means: 'combo de café da manhã (a promoção das cafeterias)',
-    looksLike: 'manhã (o «morning» do inglês)',
+    looksLike: 'manhã (o “morning” do inglês)',
     forThat: '朝',
     emoji: '🥐',
     example: ['名古屋の喫茶店では、モーニングにトーストと卵がつきます。', 'Nas cafeterias de Nagoya, o combo da manhã vem com torrada e ovo.'],
@@ -163,7 +163,7 @@ export const FALSE_FRIENDS_JA: FalseFriend[] = [
   {
     word: 'バイク',
     means: 'moto',
-    looksLike: 'bicicleta (a «bike»)',
+    looksLike: 'bicicleta (a “bike”)',
     forThat: '自転車',
     emoji: '🏍️',
     example: ['父はバイクで会社に行きます。', 'Meu pai vai de moto para o trabalho.'],
@@ -179,7 +179,7 @@ export const FALSE_FRIENDS_JA: FalseFriend[] = [
   {
     word: 'ホーム',
     means: 'plataforma (da estação)',
-    looksLike: 'casa, lar (o «home» do inglês)',
+    looksLike: 'casa, lar (o “home” do inglês)',
     forThat: '家',
     emoji: '🚉',
     example: ['電車は三番ホームから出ます。', 'O trem sai da plataforma três.'],
@@ -195,7 +195,7 @@ export const FALSE_FRIENDS_JA: FalseFriend[] = [
   {
     word: 'ミシン',
     means: 'máquina de costura',
-    looksLike: 'máquina (o «machine» do inglês)',
+    looksLike: 'máquina (o “machine” do inglês)',
     forThat: '機械',
     emoji: '🧵',
     example: ['祖母はミシンで服を作ります。', 'Minha avó faz roupas na máquina de costura.'],
@@ -219,7 +219,7 @@ export const FALSE_FRIENDS_JA: FalseFriend[] = [
   {
     word: 'ストーブ',
     means: 'aquecedor (de ambiente)',
-    looksLike: 'fogão (o «stove» do inglês)',
+    looksLike: 'fogão (o “stove” do inglês)',
     forThat: 'コンロ',
     emoji: '🔥',
     example: ['冬は、ストーブの前でみかんを食べます。', 'No inverno, a gente come mexerica na frente do aquecedor.'],
@@ -235,7 +235,7 @@ export const FALSE_FRIENDS_JA: FalseFriend[] = [
   {
     word: 'リベンジ',
     means: 'revanche, nova tentativa',
-    looksLike: 'vingança (o «revenge» do inglês)',
+    looksLike: 'vingança (o “revenge” do inglês)',
     forThat: '復讐',
     emoji: '🔁',
     example: ['去年は落ちたけど、今年は試験にリベンジします！', 'Reprovei no ano passado, mas este ano vou tirar a revanche na prova!'],
@@ -243,7 +243,7 @@ export const FALSE_FRIENDS_JA: FalseFriend[] = [
   {
     word: 'グラス',
     means: 'taça, copo de vidro',
-    looksLike: 'grama (o «grass» do inglês)',
+    looksLike: 'grama (o “grass” do inglês)',
     forThat: '芝生',
     emoji: '🍷',
     example: ['ワインをグラスにつぎます。', 'Sirvo o vinho na taça.'],
@@ -267,7 +267,7 @@ export const FALSE_FRIENDS_JA: FalseFriend[] = [
   {
     word: 'アイス',
     means: 'sorvete',
-    looksLike: 'gelo (o «ice» do inglês)',
+    looksLike: 'gelo (o “ice” do inglês)',
     forThat: '氷',
     emoji: '🍨',
     example: ['お風呂のあとで、アイスを食べました。', 'Tomei um sorvete depois do banho.'],
@@ -315,7 +315,7 @@ export const FALSE_FRIENDS_JA: FalseFriend[] = [
   // ——— palavras japonesas que soam como uma nossa ———
   {
     word: '傘',
-    means: 'guarda-chuva (lê-se «kasa»)',
+    means: 'guarda-chuva (lê-se “kasa”)',
     looksLike: 'casa',
     forThat: '家',
     emoji: '☂️',
@@ -323,7 +323,7 @@ export const FALSE_FRIENDS_JA: FalseFriend[] = [
   },
   {
     word: 'タコ',
-    means: 'polvo (lê-se «tako»)',
+    means: 'polvo (lê-se “tako”)',
     looksLike: 'taco (de sinuca; ou o prato mexicano)',
     forThat: 'キュー; タコス',
     emoji: '🐙',
@@ -331,7 +331,7 @@ export const FALSE_FRIENDS_JA: FalseFriend[] = [
   },
   {
     word: '朝',
-    means: 'manhã (lê-se «asa»)',
+    means: 'manhã (lê-se “asa”)',
     looksLike: 'asa',
     forThat: '翼',
     emoji: '🌅',
@@ -339,7 +339,7 @@ export const FALSE_FRIENDS_JA: FalseFriend[] = [
   },
   {
     word: '馬',
-    means: 'cavalo (lê-se «uma»)',
+    means: 'cavalo (lê-se “uma”)',
     looksLike: 'uma (o artigo, o número)',
     forThat: '一つ',
     emoji: '🐴',
@@ -347,7 +347,7 @@ export const FALSE_FRIENDS_JA: FalseFriend[] = [
   },
   {
     word: '今',
-    means: 'agora (lê-se «ima»)',
+    means: 'agora (lê-se “ima”)',
     looksLike: 'ímã',
     forThat: '磁石',
     emoji: '⏰',
@@ -355,7 +355,7 @@ export const FALSE_FRIENDS_JA: FalseFriend[] = [
   },
   {
     word: 'ここ',
-    means: 'aqui (lê-se «koko»)',
+    means: 'aqui (lê-se “koko”)',
     looksLike: 'coco',
     forThat: 'ココナッツ',
     emoji: '📍',
@@ -363,7 +363,7 @@ export const FALSE_FRIENDS_JA: FalseFriend[] = [
   },
   {
     word: 'あの',
-    means: 'aquele, aquela (antes do substantivo); «hã…», para puxar conversa',
+    means: 'aquele, aquela (antes do substantivo); “hã…”, para puxar conversa',
     looksLike: 'ano',
     forThat: '年',
     emoji: '👉',
@@ -371,7 +371,7 @@ export const FALSE_FRIENDS_JA: FalseFriend[] = [
   },
   {
     word: 'から',
-    means: 'de, desde; porque (partícula, lê-se «kara»)',
+    means: 'de, desde; porque (partícula, lê-se “kara”)',
     looksLike: 'cara (o rosto)',
     forThat: '顔',
     emoji: '➡️',
@@ -379,7 +379,7 @@ export const FALSE_FRIENDS_JA: FalseFriend[] = [
   },
   {
     word: 'ごま',
-    means: 'gergelim (lê-se «goma»)',
+    means: 'gergelim (lê-se “goma”)',
     looksLike: 'goma (de tapioca; ou de mascar)',
     forThat: 'タピオカ粉; ガム',
     emoji: '🥢',
@@ -387,7 +387,7 @@ export const FALSE_FRIENDS_JA: FalseFriend[] = [
   },
   {
     word: 'あと',
-    means: 'depois; o resto (lê-se «ato»)',
+    means: 'depois; o resto (lê-se “ato”)',
     looksLike: 'ato (ação; parte de uma peça de teatro)',
     forThat: '行為; 幕',
     emoji: '⏭️',

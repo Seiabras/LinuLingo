@@ -88,7 +88,7 @@ export default function AccentGuessScreen() {
           <View className="flex-row items-end gap-2">
             <Linu mood="pensando" size={64} />
             <SpeechBubble className="mb-5">
-              Vou perguntar como você fala umas coisas — como é «legal» no seu sotaque, o nome da mandioca, o som do «r»… — e no fim tento adivinhar de onde é o seu sotaque. Você me diz se eu acertei!
+              Vou perguntar como você fala umas coisas — como é “legal” no seu sotaque, o nome da mandioca, o som do “r”… — e no fim tento adivinhar de onde é o seu sotaque. Você me diz se eu acertei!
             </SpeechBubble>
           </View>
           <Card className="gap-2">

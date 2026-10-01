@@ -33,7 +33,7 @@ export const SCENARIOS_AF: ScenarioSeed[] = [
     cefr: 'A1',
     register: 'informal',
     persona: 'Anna, jou klasmaat van die Afrikaanse kursus',
-    description: 'Anna, colega do curso de africâner, convida você para um café no centro da Cidade do Cabo. É uma conversa entre colegas: use «jy».',
+    description: 'Anna, colega do curso de africâner, convida você para um café no centro da Cidade do Cabo. É uma conversa entre colegas: use “jy”.',
     turns: [
       {
         bot: 'Hallo! Wat wil jy drink?',
@@ -58,7 +58,7 @@ export const ETYMOLOGY_AF: EtymologySeed[] = [
     root_word: 'milho',
     origin_language: 'Português',
     cognates: c(['pt', 'milho'], ['en', 'mealie (no inglês sul-africano)']),
-    evolution_note: 'O milho americano chegou à África pelos portugueses, e o nome veio junto: «milho» virou «mielie» no africâner e «mealie» no inglês da África do Sul.',
+    evolution_note: 'O milho americano chegou à África pelos portugueses, e o nome veio junto: “milho” virou “mielie” no africâner e “mealie” no inglês da África do Sul.',
     transparent: true,
   },
   {
@@ -66,7 +66,7 @@ export const ETYMOLOGY_AF: EtymologySeed[] = [
     root_word: '*watōr',
     origin_language: 'Protogermânico',
     cognates: c(['nl', 'water'], ['en', 'water'], ['de', 'Wasser']),
-    evolution_note: 'Herdada do neerlandês, que por sua vez a herdou do germânico comum; é a mesma palavra do inglês «water».',
+    evolution_note: 'Herdada do neerlandês, que por sua vez a herdou do germânico comum; é a mesma palavra do inglês “water”.',
     transparent: false,
   },
   {
@@ -74,7 +74,7 @@ export const ETYMOLOGY_AF: EtymologySeed[] = [
     root_word: 'huis',
     origin_language: 'Neerlandês',
     cognates: c(['nl', 'huis'], ['de', 'Haus'], ['en', 'house']),
-    evolution_note: 'Veio sem mudança do neerlandês falado pelos colonos do século XVII, que a herdou do germânico «*hūsą».',
+    evolution_note: 'Veio sem mudança do neerlandês falado pelos colonos do século XVII, que a herdou do germânico “*hūsą”.',
     transparent: false,
   },
   {
@@ -82,7 +82,7 @@ export const ETYMOLOGY_AF: EtymologySeed[] = [
     root_word: 'caseus',
     origin_language: 'Latim',
     cognates: c(['pt', 'queijo'], ['nl', 'kaas'], ['de', 'Käse']),
-    evolution_note: 'Os povos germânicos tomaram emprestada a palavra latina «caseus» (queijo) ainda na Antiguidade; ela chegou ao africâner pelo neerlandês. O mesmo «caseus» deu «queijo» em português.',
+    evolution_note: 'Os povos germânicos tomaram emprestada a palavra latina “caseus” (queijo) ainda na Antiguidade; ela chegou ao africâner pelo neerlandês. O mesmo “caseus” deu “queijo” em português.',
     transparent: false,
   },
   {
@@ -90,7 +90,7 @@ export const ETYMOLOGY_AF: EtymologySeed[] = [
     root_word: 'vinum',
     origin_language: 'Latim',
     cognates: c(['pt', 'vinho'], ['nl', 'wijn'], ['de', 'Wein']),
-    evolution_note: 'Do latim «vinum», pelo neerlandês «wijn». O africâner simplificou a grafia: o «ij» neerlandês virou «y».',
+    evolution_note: 'Do latim “vinum”, pelo neerlandês “wijn”. O africâner simplificou a grafia: o “ij” neerlandês virou “y”.',
     transparent: true,
   },
 ];

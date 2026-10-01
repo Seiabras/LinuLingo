@@ -27,7 +27,7 @@ export const STORIES_RM: StorySeed[] = [
         emoji: '😊',
         choices: [
           { text: 'Jau sun da São Paulo.', translation: 'Sou de São Paulo.', next: 'final_bun' },
-          { text: 'Jau baiv aua.', translation: 'Eu bebo água.', wrong: 'Isso não responde de onde você é. Use «Jau sun da…».' },
+          { text: 'Jau baiv aua.', translation: 'Eu bebo água.', wrong: 'Isso não responde de onde você é. Use “Jau sun da…”.' },
         ],
       },
       final_bun: {
@@ -60,7 +60,7 @@ export const STORIES_RM: StorySeed[] = [
         emoji: '📱',
         choices: [
           { text: 'Gea, jau hai in frar ed ina sora.', translation: 'Sim, tenho um irmão e uma irmã.', next: 'frars' },
-          { text: 'Mia chasa è gronda.', translation: 'A minha casa é grande.', wrong: 'Isso não responde se você tem irmãos. Use «jau hai…».' },
+          { text: 'Mia chasa è gronda.', translation: 'A minha casa é grande.', wrong: 'Isso não responde se você tem irmãos. Use “jau hai…”.' },
         ],
       },
       frars: {
@@ -69,7 +69,7 @@ export const STORIES_RM: StorySeed[] = [
         emoji: '🍽️',
         choices: [
           { text: 'Gea, grazia fitg!', translation: 'Sim, muito obrigado!', next: 'final_bun' },
-          { text: 'Jau sun da São Paulo.', translation: 'Sou de São Paulo.', wrong: 'Gian fez um convite: responda com «gea» ou «na, grazia».' },
+          { text: 'Jau sun da São Paulo.', translation: 'Sou de São Paulo.', wrong: 'Gian fez um convite: responda com “gea” ou “na, grazia”.' },
         ],
       },
       final_bun: {

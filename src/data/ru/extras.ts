@@ -52,7 +52,7 @@ export const SCENARIOS_RU: ScenarioSeed[] = [
     cefr: 'A1',
     register: 'informal',
     persona: 'Ди́ма, amigo russo',
-    description: 'Papo descontraído num café. Aqui se usa «ты»; o «вы» soa distante!',
+    description: 'Papo descontraído num café. Aqui se usa “ты”; o “вы” soa distante!',
     turns: [
       {
         bot: 'Приве́т! Как дела́? Давно́ не ви́делись!',
@@ -98,7 +98,7 @@ export const SCENARIOS_RU: ScenarioSeed[] = [
     cefr: 'A2',
     register: 'formal',
     persona: 'Еле́на, recepcionista',
-    description: 'Faça o check-in e tire dúvidas na recepção. Registro formal: use «вы».',
+    description: 'Faça o check-in e tire dúvidas na recepção. Registro formal: use “вы”.',
     turns: [
       {
         bot: 'До́брый ве́чер! Добро́ пожа́ловать. У вас есть бронь?',
@@ -144,7 +144,7 @@ export const SCENARIOS_RU: ScenarioSeed[] = [
     cefr: 'B1',
     register: 'formal',
     persona: 'О́льга Ви́кторовна, gerente de RH',
-    description: 'Apresente-se para uma vaga. Formalidade máxima: «вы» do começo ao fim!',
+    description: 'Apresente-se para uma vaga. Formalidade máxima: “вы” do começo ao fim!',
     turns: [
       {
         bot: 'Здра́вствуйте! Сади́тесь, пожа́луйста. Расскажи́те немно́го о себе́.',
@@ -190,7 +190,7 @@ export const SCENARIOS_RU: ScenarioSeed[] = [
     cefr: 'A2',
     register: 'formal',
     persona: 'Ната́лья Петро́вна, moradora da cidade',
-    description: 'Pergunte a uma desconhecida como chegar ao metrô. Com estranhos, sempre «вы».',
+    description: 'Pergunte a uma desconhecida como chegar ao metrô. Com estranhos, sempre “вы”.',
     turns: [
       {
         bot: 'Да, слу́шаю вас. Вы что́-то и́щете?',
@@ -245,7 +245,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     origin_language: 'Inglês',
     cognates: c(['en', 'Vauxhall Gardens']),
     evolution_note:
-      'Os Vauxhall Gardens eram um famoso parque de diversões com música em Londres. Na primeira ferrovia da Rússia (1837), a estação de Pávlovsk ganhou uma sala de concertos batizada com esse nome, e «вокза́л» passou a significar «estação de trem».',
+      'Os Vauxhall Gardens eram um famoso parque de diversões com música em Londres. Na primeira ferrovia da Rússia (1837), a estação de Pávlovsk ganhou uma sala de concertos batizada com esse nome, e “вокза́л” passou a significar “estação de trem”.',
     transparent: false,
   },
   {
@@ -253,7 +253,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     root_word: 'Butterbrot',
     origin_language: 'Alemão',
     cognates: c(['de', 'Butterbrot'], ['en', 'butter + bread']),
-    evolution_note: 'Em alemão é «pão com manteiga». Em russo virou qualquer sanduíche aberto: uma fatia de pão com queijo, salame ou caviar por cima.',
+    evolution_note: 'Em alemão é “pão com manteiga”. Em russo virou qualquer sanduíche aberto: uma fatia de pão com queijo, salame ou caviar por cima.',
     transparent: false,
   },
   {
@@ -262,7 +262,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     origin_language: 'Francês',
     cognates: c(['pt', 'praia'], ['fr', 'plage'], ['it', 'spiaggia'], ['es', 'playa']),
     evolution_note:
-      'Veio do francês no século XIX, quando a moda dos banhos de mar chegou à Rússia. Francês «plage» e português «praia» têm a mesma origem latina: «plagia».',
+      'Veio do francês no século XIX, quando a moda dos banhos de mar chegou à Rússia. Francês “plage” e português “praia” têm a mesma origem latina: “plagia”.',
     transparent: false,
   },
   {
@@ -270,7 +270,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     root_word: 'computer',
     origin_language: 'Inglês',
     cognates: c(['pt', 'computador'], ['en', 'computer'], ['de', 'Computer']),
-    evolution_note: 'Veio do inglês no século XX. No fundo é latim: «computare», «calcular», a mesma raiz de «computador» e «contar».',
+    evolution_note: 'Veio do inglês no século XX. No fundo é latim: “computare”, “calcular”, a mesma raiz de “computador” e “contar”.',
     transparent: true,
   },
   {
@@ -278,7 +278,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     root_word: 'Autobus',
     origin_language: 'Alemão',
     cognates: c(['pt', 'ônibus'], ['de', 'Autobus'], ['fr', 'autobus'], ['it', 'autobus']),
-    evolution_note: '«Auto» (grego: «por si mesmo») + «bus», o final do latim «omnibus», «para todos». O português ficou com a outra metade: «ônibus».',
+    evolution_note: '“Auto” (grego: “por si mesmo”) + “bus”, o final do latim “omnibus”, “para todos”. O português ficou com a outra metade: “ônibus”.',
     transparent: true,
   },
   {
@@ -287,7 +287,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     origin_language: 'Francês',
     cognates: c(['pt', 'metrô'], ['fr', 'métro'], ['it', 'metro']),
     evolution_note:
-      'Abreviação do francês «chemin de fer métropolitain», «ferrovia metropolitana». O metrô de Moscou, aberto em 1935, é famoso pelas estações decoradas como palácios.',
+      'Abreviação do francês “chemin de fer métropolitain”, “ferrovia metropolitana”. O metrô de Moscou, aberto em 1935, é famoso pelas estações decoradas como palácios.',
     transparent: true,
   },
   {
@@ -296,7 +296,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     origin_language: 'Holandês',
     cognates: c(['pt', 'café'], ['en', 'coffee'], ['de', 'Kaffee']),
     evolution_note:
-      'Chegou pelo holandês por volta de 1700. Não muda de forma nos casos e, pela norma, é masculino: «чёрный ко́фе», embora muita gente diga «чёрное».',
+      'Chegou pelo holandês por volta de 1700. Não muda de forma nos casos e, pela norma, é masculino: “чёрный ко́фе”, embora muita gente diga “чёрное”.',
     transparent: true,
   },
   {
@@ -305,7 +305,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     origin_language: 'Chinês',
     cognates: c(['pt', 'chá'], ['en', 'tea'], ['fr', 'thé']),
     evolution_note:
-      'O russo recebeu a palavra do norte da China, pela rota terrestre. O português levou «chá» de Macau, pelo mar. Já o inglês «tea» veio de outro dialeto chinês, pelos holandeses.',
+      'O russo recebeu a palavra do norte da China, pela rota terrestre. O português levou “chá” de Macau, pelo mar. Já o inglês “tea” veio de outro dialeto chinês, pelos holandeses.',
     transparent: true,
   },
   {
@@ -313,7 +313,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     root_word: 'schola',
     origin_language: 'Latim (do grego)',
     cognates: c(['pt', 'escola'], ['es', 'escuela'], ['it', 'scuola'], ['pl', 'szkoła']),
-    evolution_note: 'Chegou pelo polonês «szkoła». Curiosidade: o grego «scholē» queria dizer «tempo livre», o lazer que se dedicava ao estudo.',
+    evolution_note: 'Chegou pelo polonês “szkoła”. Curiosidade: o grego “scholē” queria dizer “tempo livre”, o lazer que se dedicava ao estudo.',
     transparent: true,
   },
   {
@@ -321,7 +321,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     root_word: 'restaurant',
     origin_language: 'Francês',
     cognates: c(['pt', 'restaurante'], ['fr', 'restaurant'], ['en', 'restaurant']),
-    evolution_note: 'O «t» final do francês, que já era mudo, sumiu da escrita russa. A ideia original: um lugar que «restaura» as forças.',
+    evolution_note: 'O “t” final do francês, que já era mudo, sumiu da escrita russa. A ideia original: um lugar que “restaura” as forças.',
     transparent: true,
   },
   {
@@ -329,7 +329,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     root_word: 'Schokolade',
     origin_language: 'Alemão (do náuatle, via espanhol)',
     cognates: c(['pt', 'chocolate'], ['es', 'chocolate'], ['de', 'Schokolade']),
-    evolution_note: 'A palavra nasceu no México, em náuatle, passou ao espanhol e chegou ao russo pelo alemão ou pelo holandês, o que explica o «-ад» final.',
+    evolution_note: 'A palavra nasceu no México, em náuatle, passou ao espanhol e chegou ao russo pelo alemão ou pelo holandês, o que explica o “-ад” final.',
     transparent: true,
   },
   {
@@ -338,7 +338,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     origin_language: 'Alemão (do italiano)',
     cognates: c(['de', 'Kartoffel'], ['it', 'tartufo'], ['pt', 'trufa']),
     evolution_note:
-      'Forma popular de «карто́фель», que vem do alemão «Kartoffel». Esta, por sua vez, vem do italiano «tartufolo», «trufa»: a batata lembrava o cogumelo que cresce debaixo da terra.',
+      'Forma popular de “карто́фель”, que vem do alemão “Kartoffel”. Esta, por sua vez, vem do italiano “tartufolo”, “trufa”: a batata lembrava o cogumelo que cresce debaixo da terra.',
     transparent: false,
   },
   {
@@ -346,7 +346,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     root_word: 'pomi d’oro',
     origin_language: 'Italiano',
     cognates: c(['it', 'pomodoro'], ['pt', 'pomo de ouro']),
-    evolution_note: 'Do italiano «pomi d’oro», «pomos de ouro», talvez porque os primeiros tomates levados à Europa fossem amarelos.',
+    evolution_note: 'Do italiano “pomi d’oro”, “pomos de ouro”, talvez porque os primeiros tomates levados à Europa fossem amarelos.',
     transparent: false,
   },
   {
@@ -354,7 +354,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     root_word: 'appelsien',
     origin_language: 'Holandês',
     cognates: c(['nl', 'appelsien'], ['de', 'Apfelsine']),
-    evolution_note: 'Quer dizer «maçã da China»: a laranja doce chegou da Ásia à Europa, e em holandês e baixo-alemão ganhou esse nome.',
+    evolution_note: 'Quer dizer “maçã da China”: a laranja doce chegou da Ásia à Europa, e em holandês e baixo-alemão ganhou esse nome.',
     transparent: false,
   },
   {
@@ -362,7 +362,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     root_word: 'halsdoek / Halstuch',
     origin_language: 'Holandês ou alemão',
     cognates: c(['nl', 'halsdoek'], ['de', 'Halstuch']),
-    evolution_note: 'Literalmente «pano do pescoço», do holandês «halsdoek» ou do alemão «Halstuch». Chegou no tempo de Pedro, o Grande, junto com muitos termos holandeses.',
+    evolution_note: 'Literalmente “pano do pescoço”, do holandês “halsdoek” ou do alemão “Halstuch”. Chegou no tempo de Pedro, o Grande, junto com muitos termos holandeses.',
     transparent: false,
   },
   {
@@ -370,7 +370,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     root_word: 'shāh māt',
     origin_language: 'Persa',
     cognates: c(['pt', 'xeque-mate'], ['en', 'checkmate'], ['de', 'Schach']),
-    evolution_note: 'O nome do jogo vem da jogada final, «шах и мат», do persa: «o rei está indefeso». É o mesmo «xeque-mate» do português.',
+    evolution_note: 'O nome do jogo vem da jogada final, “шах и мат”, do persa: “o rei está indefeso”. É o mesmo “xeque-mate” do português.',
     transparent: false,
   },
   {
@@ -378,7 +378,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     root_word: 'paletot',
     origin_language: 'Francês',
     cognates: c(['fr', 'paletot'], ['pt', 'paletó']),
-    evolution_note: 'O mesmo «paletot» francês que deu o nosso «paletó». Em russo virou o casaco comprido de inverno. Não muda nos casos: «в пальто́».',
+    evolution_note: 'O mesmo “paletot” francês que deu o nosso “paletó”. Em russo virou o casaco comprido de inverno. Não muda nos casos: “в пальто́”.',
     transparent: false,
   },
   {
@@ -387,7 +387,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     origin_language: 'Francês e alemão (do latim)',
     cognates: c(['pt', 'móvel / mobília'], ['fr', 'meuble'], ['de', 'Möbel']),
     evolution_note:
-      'Do latim «mobilis», «que se move»: os móveis são os bens que se podem carregar, ao contrário da casa. Em russo a palavra é coletiva e só existe no singular.',
+      'Do latim “mobilis”, “que se move”: os móveis são os bens que se podem carregar, ao contrário da casa. Em russo a palavra é coletiva e só existe no singular.',
     transparent: false,
   },
   {
@@ -395,7 +395,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     root_word: 'tetrádion',
     origin_language: 'Grego',
     cognates: c(['pt', 'tetra- (quatro)'], ['el', 'tetrádio']),
-    evolution_note: 'Do grego «tetrádion», um caderninho feito de folhas dobradas em quatro. É o mesmo «tetra» de «tetracampeão».',
+    evolution_note: 'Do grego “tetrádion”, um caderninho feito de folhas dobradas em quatro. É o mesmo “tetra” de “tetracampeão”.',
     transparent: false,
   },
   {
@@ -403,7 +403,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     root_word: 'apothḗkē',
     origin_language: 'Grego (via latim)',
     cognates: c(['pt', 'botica / bodega'], ['de', 'Apotheke'], ['pl', 'apteka']),
-    evolution_note: 'O grego «apothḗkē» era um «depósito». Chegou ao russo pelo polonês ou pelo alemão. Em português, a mesma palavra deu «botica» e «bodega».',
+    evolution_note: 'O grego “apothḗkē” era um “depósito”. Chegou ao russo pelo polonês ou pelo alemão. Em português, a mesma palavra deu “botica” e “bodega”.',
     transparent: false,
   },
   {
@@ -412,7 +412,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     origin_language: 'Germânico antigo',
     cognates: c(['en', 'loaf'], ['de', 'Laib']),
     evolution_note:
-      'Provavelmente um empréstimo muito antigo do germânico (em gótico, «hlaifs»), da época em que eslavos e germânicos eram vizinhos. É parente do inglês «loaf», «pão inteiro».',
+      'Provavelmente um empréstimo muito antigo do germânico (em gótico, “hlaifs”), da época em que eslavos e germânicos eram vizinhos. É parente do inglês “loaf”, “pão inteiro”.',
     transparent: false,
   },
   // ——— herança indo-europeia ———
@@ -421,7 +421,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     root_word: '*méh₂tēr',
     origin_language: 'Indo-europeu',
     cognates: c(['pt', 'mãe / materno'], ['en', 'mother'], ['de', 'Mutter'], ['it', 'madre']),
-    evolution_note: 'O latim «mater» e o russo «мать» são primos. O «r» antigo reaparece nos casos: «ма́тери» (da mãe).',
+    evolution_note: 'O latim “mater” e o russo “мать” são primos. O “r” antigo reaparece nos casos: “ма́тери” (da mãe).',
     transparent: false,
   },
   {
@@ -429,7 +429,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     root_word: '*bʰréh₂tēr',
     origin_language: 'Indo-europeu',
     cognates: c(['pt', 'frade / fraterno'], ['en', 'brother'], ['de', 'Bruder'], ['it', 'fratello']),
-    evolution_note: 'Em latim virou «frater», que deu «frade» e «fraterno». O «bh» indo-europeu virou «f» em latim e «б» em russo.',
+    evolution_note: 'Em latim virou “frater”, que deu “frade” e “fraterno”. O “bh” indo-europeu virou “f” em latim e “б” em russo.',
     transparent: false,
   },
   {
@@ -437,7 +437,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     root_word: '*swésōr',
     origin_language: 'Indo-europeu',
     cognates: c(['pt', 'sóror'], ['en', 'sister'], ['de', 'Schwester'], ['it', 'sorella']),
-    evolution_note: 'Em latim virou «soror», que o português guardou em «sóror» (freira). O russo e o alemão enfiaram um «t» no meio: сестра́, Schwester.',
+    evolution_note: 'Em latim virou “soror”, que o português guardou em “sóror” (freira). O russo e o alemão enfiaram um “t” no meio: сестра́, Schwester.',
     transparent: false,
   },
   {
@@ -445,7 +445,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     root_word: '*dʰugh₂tḗr',
     origin_language: 'Indo-europeu',
     cognates: c(['en', 'daughter'], ['de', 'Tochter'], ['el', 'thygátēr']),
-    evolution_note: 'Como «мать», guarda o «r» antigo nos casos: «до́чери» (da filha). O latim perdeu essa palavra e usou «filia».',
+    evolution_note: 'Como “мать”, guarda o “r” antigo nos casos: “до́чери” (da filha). O latim perdeu essa palavra e usou “filia”.',
     transparent: false,
   },
   {
@@ -453,7 +453,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     root_word: '*nas-',
     origin_language: 'Indo-europeu',
     cognates: c(['pt', 'nariz / nasal'], ['en', 'nose'], ['de', 'Nase'], ['it', 'naso']),
-    evolution_note: 'O latim tinha «nasus», que deu «nasal». O «a» curto antigo virou «o» no eslavo.',
+    evolution_note: 'O latim tinha “nasus”, que deu “nasal”. O “a” curto antigo virou “o” no eslavo.',
     transparent: false,
   },
   {
@@ -461,7 +461,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     root_word: '*tréyes',
     origin_language: 'Indo-europeu',
     cognates: c(['pt', 'três'], ['en', 'three'], ['de', 'drei'], ['it', 'tre']),
-    evolution_note: 'Um dos números mais estáveis da família: latim «tres», russo «три», e o mesmo «tri-» de «triângulo».',
+    evolution_note: 'Um dos números mais estáveis da família: latim “tres”, russo “три”, e o mesmo “tri-” de “triângulo”.',
     transparent: true,
   },
   {
@@ -470,7 +470,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     origin_language: 'Indo-europeu',
     cognates: c(['pt', 'dez / década'], ['en', 'ten'], ['it', 'dieci'], ['el', 'déka']),
     evolution_note:
-      'O latim «decem» deu «dez» e «dezembro» (o 10.º mês do antigo calendário romano). O «k» antigo virou «s» em russo, como em «сто», parente do latim «centum».',
+      'O latim “decem” deu “dez” e “dezembro” (o 10.º mês do antigo calendário romano). O “k” antigo virou “s” em russo, como em “сто”, parente do latim “centum”.',
     transparent: false,
   },
   {
@@ -478,7 +478,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     root_word: '*néwos',
     origin_language: 'Indo-europeu',
     cognates: c(['pt', 'novo'], ['en', 'new'], ['de', 'neu'], ['it', 'nuovo']),
-    evolution_note: 'Latim «novus», russo «но́вый». A cidade de Novgorod é a «Cidade Nova», como Nápoles, do grego «Neápolis».',
+    evolution_note: 'Latim “novus”, russo “но́вый”. A cidade de Novgorod é a “Cidade Nova”, como Nápoles, do grego “Neápolis”.',
     transparent: true,
   },
   {
@@ -486,7 +486,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     root_word: '*wódr̥',
     origin_language: 'Indo-europeu',
     cognates: c(['pt', 'hidro- (hidratar)'], ['en', 'water'], ['de', 'Wasser'], ['el', 'hýdōr']),
-    evolution_note: 'Parente do inglês «water» e do grego «hýdōr», de onde vem o nosso «hidro-». «Во́дка» é um diminutivo: «aguinha».',
+    evolution_note: 'Parente do inglês “water” e do grego “hýdōr”, de onde vem o nosso “hidro-”. “Во́дка” é um diminutivo: “aguinha”.',
     transparent: false,
   },
   {
@@ -494,7 +494,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     root_word: '*nókʷts',
     origin_language: 'Indo-europeu',
     cognates: c(['pt', 'noite / noturno'], ['en', 'night'], ['de', 'Nacht'], ['it', 'notte']),
-    evolution_note: 'O latim «nox, noctis» deu «noite». No eslavo, o grupo «kt» virou «ч»: «ночь».',
+    evolution_note: 'O latim “nox, noctis” deu “noite”. No eslavo, o grupo “kt” virou “ч”: “ночь”.',
     transparent: false,
   },
   {
@@ -502,7 +502,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     root_word: '*dóm-',
     origin_language: 'Indo-europeu',
     cognates: c(['pt', 'doméstico / domicílio'], ['it', 'duomo'], ['es', 'doméstico']),
-    evolution_note: 'O latim «domus» (casa) é primo direto de «дом». Daí «doméstico», «domicílio» e até «dono» (de «dominus», o senhor da casa).',
+    evolution_note: 'O latim “domus” (casa) é primo direto de “дом”. Daí “doméstico”, “domicílio” e até “dono” (de “dominus”, o senhor da casa).',
     transparent: false,
   },
   {
@@ -510,7 +510,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     root_word: '*h₁nómn̥',
     origin_language: 'Indo-europeu',
     cognates: c(['pt', 'nome'], ['en', 'name'], ['de', 'Name'], ['it', 'nome']),
-    evolution_note: 'O latim «nomen» deu «nome». Em russo é neutro e ganha «-ен-» nos casos: «и́мени», como «вре́мя», «вре́мени».',
+    evolution_note: 'O latim “nomen” deu “nome”. Em russo é neutro e ganha “-ен-” nos casos: “и́мени”, como “вре́мя”, “вре́мени”.',
     transparent: false,
   },
   {
@@ -518,7 +518,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     root_word: '*sóh₂wl̥',
     origin_language: 'Indo-europeu',
     cognates: c(['pt', 'sol / solar'], ['en', 'sun'], ['it', 'sole'], ['es', 'sol']),
-    evolution_note: 'Mesma raiz do latim «sol». O «-це» final era um sufixo de diminutivo, e o «л» se escreve mas não se pronuncia.',
+    evolution_note: 'Mesma raiz do latim “sol”. O “-це” final era um sufixo de diminutivo, e o “л” se escreve mas não se pronuncia.',
     transparent: false,
   },
   {
@@ -526,7 +526,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     root_word: '*ḱḗr',
     origin_language: 'Indo-europeu',
     cognates: c(['pt', 'coração / cordial'], ['en', 'heart'], ['el', 'kardía'], ['it', 'cuore']),
-    evolution_note: 'Primo do latim «cor, cordis» e do grego «kardía» (cardiologia). O «д» se escreve mas não se pronuncia.',
+    evolution_note: 'Primo do latim “cor, cordis” e do grego “kardía” (cardiologia). O “д” se escreve mas não se pronuncia.',
     transparent: false,
   },
   {
@@ -534,7 +534,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     root_word: '*médʰu',
     origin_language: 'Indo-europeu',
     cognates: c(['en', 'mead'], ['de', 'Met'], ['el', 'méthy']),
-    evolution_note: 'O inglês «mead» é o hidromel. O urso, «медве́дь», é literalmente «o que come mel»: acredita-se que o nome antigo do bicho fosse tabu.',
+    evolution_note: 'O inglês “mead” é o hidromel. O urso, “медве́дь”, é literalmente “o que come mel”: acredita-se que o nome antigo do bicho fosse tabu.',
     transparent: false,
   },
   {
@@ -542,7 +542,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     root_word: '*steh₂-',
     origin_language: 'Indo-europeu',
     cognates: c(['pt', 'estar / estátua'], ['en', 'stand'], ['de', 'stehen'], ['it', 'stare']),
-    evolution_note: 'O latim «stare», «estar de pé», deu o nosso «estar», além de «estátua» e «estação».',
+    evolution_note: 'O latim “stare”, “estar de pé”, deu o nosso “estar”, além de “estátua” e “estação”.',
     transparent: false,
   },
   {
@@ -551,7 +551,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     origin_language: 'Indo-europeu',
     cognates: c(['pt', 'comer'], ['en', 'eat'], ['de', 'essen'], ['it', 'edibile']),
     evolution_note:
-      'O latim «edere» (comer), com o prefixo «com-», virou «comedere» e daí o nosso «comer». Cuidado: «есть» também é a forma de «быть» que quer dizer «há, existe», como em «у меня́ есть».',
+      'O latim “edere” (comer), com o prefixo “com-”, virou “comedere” e daí o nosso “comer”. Cuidado: “есть” também é a forma de “быть” que quer dizer “há, existe”, como em “у меня́ есть”.',
     transparent: false,
   },
   {
@@ -559,7 +559,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     root_word: '*ǵneh₃-',
     origin_language: 'Indo-europeu',
     cognates: c(['pt', 'conhecer / cognição'], ['en', 'know'], ['el', 'gignṓskō'], ['it', 'conoscere']),
-    evolution_note: 'O latim «(co)gnoscere» deu «conhecer» e «ignorante» (quem não conhece). No inglês «know», o «k» mudo é resto da mesma raiz.',
+    evolution_note: 'O latim “(co)gnoscere” deu “conhecer” e “ignorante” (quem não conhece). No inglês “know”, o “k” mudo é resto da mesma raiz.',
     transparent: false,
   },
   {
@@ -567,7 +567,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     root_word: '*gʷénh₂',
     origin_language: 'Indo-europeu',
     cognates: c(['pt', 'gineco- (ginecologia)'], ['el', 'gynḗ'], ['en', 'queen']),
-    evolution_note: 'Parente do grego «gynḗ», «mulher», que está em «ginecologia». O inglês «queen» vem da mesma raiz.',
+    evolution_note: 'Parente do grego “gynḗ”, “mulher”, que está em “ginecologia”. O inglês “queen” vem da mesma raiz.',
     transparent: false,
   },
   {
@@ -575,7 +575,7 @@ export const ETYMOLOGY_RU: EtymologySeed[] = [
     root_word: '*mūs',
     origin_language: 'Indo-europeu',
     cognates: c(['pt', 'músculo'], ['en', 'mouse'], ['de', 'Maus'], ['it', 'muscolo']),
-    evolution_note: 'O latim «mus» deu «musculus», «ratinho»: o músculo se mexendo sob a pele lembrava um ratinho.',
+    evolution_note: 'O latim “mus” deu “musculus”, “ratinho”: o músculo se mexendo sob a pele lembrava um ratinho.',
     transparent: false,
   },
 ];

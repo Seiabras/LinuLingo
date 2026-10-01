@@ -6,38 +6,38 @@ export const GRAMMAR_PT: GrammarTopic[] = [
   {
     id: 'pt-g1',
     level: 'A1.1',
-    title: 'A pronúncia de Portugal: vogais que somem, «s» chiado, «r» na garganta e «l» velar',
+    title: 'A pronúncia de Portugal: vogais que somem, “s” chiado, “r” na garganta e “l” velar',
     emoji: '🗣️',
-    summary: 'A escrita é quase a mesma dos dois lados do Atlântico; o som, não. Em Lisboa as vogais átonas encolhem ou somem, o «s» no fim da sílaba chia, o «r» forte vem da garganta, o «l» final não vira «u» e o «t» e o «d» nunca viram «tch» e «dj».',
+    summary: 'A escrita é quase a mesma dos dois lados do Atlântico; o som, não. Em Lisboa as vogais átonas encolhem ou somem, o “s” no fim da sílaba chia, o “r” forte vem da garganta, o “l” final não vira “u” e o “t” e o “d” nunca viram “tch” e “dj”.',
     sections: [
       {
-        text: 'O português europeu tem um ritmo diferente do brasileiro: as sílabas tônicas são fortes e as átonas ficam curtas, fechadas ou desaparecem. Por isso o brasileiro às vezes tem a impressão de ouvir «só consoantes». Não é outra língua: são as mesmas palavras, com outra música. Aqui a referência é o padrão de Lisboa; no Norte e nas ilhas há variações. Nenhuma das duas pronúncias é «mais correta»: cada uma é a norma do seu país.',
+        text: 'O português europeu tem um ritmo diferente do brasileiro: as sílabas tônicas são fortes e as átonas ficam curtas, fechadas ou desaparecem. Por isso o brasileiro às vezes tem a impressão de ouvir “só consoantes”. Não é outra língua: são as mesmas palavras, com outra música. Aqui a referência é o padrão de Lisboa; no Norte e nas ilhas há variações. Nenhuma das duas pronúncias é “mais correta”: cada uma é a norma do seu país.',
       },
       {
         heading: 'Vogais átonas reduzidas',
-        text: 'Fora da sílaba tônica, o «e» vira um som bem fechado e curto, [ɨ] (quase um «i» engolido), e muitas vezes cai; o «o» vira [u], como no Brasil no fim da palavra, mas também no meio; o «a» átono fica fechado, [ɐ]. No fim da palavra o «e» costuma sumir: «noite» soa quase «nóit». No Brasil o «e» final vira «i» (noiti) e as átonas do meio ficam abertas e claras.',
+        text: 'Fora da sílaba tônica, o “e” vira um som bem fechado e curto, [ɨ] (quase um “i” engolido), e muitas vezes cai; o “o” vira [u], como no Brasil no fim da palavra, mas também no meio; o “a” átono fica fechado, [ɐ]. No fim da palavra o “e” costuma sumir: “noite” soa quase “nóit”. No Brasil o “e” final vira “i” (noiti) e as átonas do meio ficam abertas e claras.',
         table: {
           head: ['Palavra', 'IPA (Lisboa)', 'Como soa', 'No Brasil (Sudeste)'],
           rows: [
-            ['telefone', '[tɨlɨˈfɔnɨ]', '«tlfón»', '[teleˈfõni]'],
-            ['pequeno', '[pɨˈkenu]', '«pkénu»', '[peˈkẽnu]'],
-            ['menino', '[mɨˈninu]', '«mnínu»', '[meˈnĩnu]'],
-            ['Portugal', '[puɾtuˈɣaɫ]', '«purtugál»', '[poɾtuˈgaw]'],
-            ['obrigado', '[oβɾiˈɣaðu]', '«obrigádu»', '[obɾiˈgadu]'],
-            ['cidade', '[siˈðaðɨ]', '«sidád»', '[siˈdadʒi]'],
-            ['felicidade', '[fɨlisiˈðaðɨ]', '«flisidád»', '[felisiˈdadʒi]'],
-            ['cama', '[ˈkɐmɐ]', '«câmâ», bem fechado', '[ˈkɐ̃mɐ]'],
+            ['telefone', '[tɨlɨˈfɔnɨ]', '“tlfón”', '[teleˈfõni]'],
+            ['pequeno', '[pɨˈkenu]', '“pkénu”', '[peˈkẽnu]'],
+            ['menino', '[mɨˈninu]', '“mnínu”', '[meˈnĩnu]'],
+            ['Portugal', '[puɾtuˈɣaɫ]', '“purtugál”', '[poɾtuˈgaw]'],
+            ['obrigado', '[oβɾiˈɣaðu]', '“obrigádu”', '[obɾiˈgadu]'],
+            ['cidade', '[siˈðaðɨ]', '“sidád”', '[siˈdadʒi]'],
+            ['felicidade', '[fɨlisiˈðaðɨ]', '“flisidád”', '[felisiˈdadʒi]'],
+            ['cama', '[ˈkɐmɐ]', '“câmâ”, bem fechado', '[ˈkɐ̃mɐ]'],
           ],
         },
         examples: [
-          ['O telefone está em cima da mesa.', 'O telefone está em cima da mesa. (Em Lisboa: «u tlfón ishtá ãe cim da mêz»)'],
-          ['O menino é pequeno.', 'O menino é pequeno. (Soa «u mnínu é pkénu»)'],
-          ['Boa noite, até amanhã.', 'Boa noite, até amanhã. (O «e» de «noite» quase some)'],
+          ['O telefone está em cima da mesa.', 'O telefone está em cima da mesa. (Em Lisboa: “u tlfón ishtá ãe cim da mêz”)'],
+          ['O menino é pequeno.', 'O menino é pequeno. (Soa “u mnínu é pkénu”)'],
+          ['Boa noite, até amanhã.', 'Boa noite, até amanhã. (O “e” de “noite” quase some)'],
         ],
       },
       {
-        heading: 'O «s» chiado e o «l» velar',
-        text: 'No fim da sílaba, o «s» (e o «z» final) soa [ʃ], como o «x» de «xícara», antes de consoante surda e no fim da frase; antes de consoante sonora vira [ʒ], o «j» de «já». Antes de vogal da palavra seguinte liga-se como [z]: «os amigos» soa «uz amígus». No Brasil, o Rio de Janeiro e outras regiões também chiam; São Paulo e boa parte do país não. O «l» no fim da sílaba é velar, [ɫ], feito com o fundo da língua levantado: «Brasil» termina num «l» escuro, e não em «u» como no Brasil («Brasiu»). Por isso em Portugal «mal» e «mau» não soam iguais.',
+        heading: 'O “s” chiado e o “l” velar',
+        text: 'No fim da sílaba, o “s” (e o “z” final) soa [ʃ], como o “x” de “xícara”, antes de consoante surda e no fim da frase; antes de consoante sonora vira [ʒ], o “j” de “já”. Antes de vogal da palavra seguinte liga-se como [z]: “os amigos” soa “uz amígus”. No Brasil, o Rio de Janeiro e outras regiões também chiam; São Paulo e boa parte do país não. O “l” no fim da sílaba é velar, [ɫ], feito com o fundo da língua levantado: “Brasil” termina num “l” escuro, e não em “u” como no Brasil (“Brasiu”). Por isso em Portugal “mal” e “mau” não soam iguais.',
         table: {
           head: ['Palavra', 'IPA (Lisboa)', 'O que acontece'],
           rows: [
@@ -46,76 +46,76 @@ export const GRAMMAR_PT: GrammarTopic[] = [
             ['mesmo', '[ˈmeʒmu]', 's antes de consoante sonora: [ʒ]'],
             ['Lisboa', '[liʒˈboɐ]', 's antes de b: [ʒ]'],
             ['os amigos', '[uz ɐˈmiɣuʃ]', 's antes de vogal: [z]'],
-            ['mal', '[maɫ]', 'l velar, diferente de «mau» [maw]'],
+            ['mal', '[maɫ]', 'l velar, diferente de “mau” [maw]'],
             ['Brasil', '[bɾɐˈziɫ]', 'l velar no fim'],
             ['alto', '[ˈaɫtu]', 'l velar antes de consoante'],
           ],
         },
         examples: [
-          ['Os dois estão em Lisboa.', 'Os dois estão em Lisboa. (Soa «uz dóiz ishtãu ãe lijbôa»)'],
+          ['Os dois estão em Lisboa.', 'Os dois estão em Lisboa. (Soa “uz dóiz ishtãu ãe lijbôa”)'],
           ['O dia está mau, mas não está mal para passear.', 'O dia está ruim, mas não está mal para passear.'],
         ],
       },
       {
-        heading: 'O «r» forte, o «t» e o «d», e os ditongos de Lisboa',
-        text: 'O «r» forte (no começo da palavra e o «rr») é, em Lisboa, uvular, [ʁ], raspado no fundo da garganta; em várias zonas do Norte e do interior ainda se ouve o [r] vibrado na ponta da língua. O «r» fraco entre vogais é [ɾ], igual ao do Brasil. O «t» e o «d» nunca mudam antes de «i»: «tia» é [ˈtiɐ] e «dia» é [ˈdiɐ], sem o «tch» e o «dj» do Rio ou de São Paulo. Entre vogais, «b», «d» e «g» ficam suaves ([β], [ð], [ɣ]). Em Lisboa, «ei» soa [ɐj] («leite» parece «lâite») e o «em» final soa [ɐ̃j] («bem» parece «bãe»).',
+        heading: 'O “r” forte, o “t” e o “d”, e os ditongos de Lisboa',
+        text: 'O “r” forte (no começo da palavra e o “rr”) é, em Lisboa, uvular, [ʁ], raspado no fundo da garganta; em várias zonas do Norte e do interior ainda se ouve o [r] vibrado na ponta da língua. O “r” fraco entre vogais é [ɾ], igual ao do Brasil. O “t” e o “d” nunca mudam antes de “i”: “tia” é [ˈtiɐ] e “dia” é [ˈdiɐ], sem o “tch” e o “dj” do Rio ou de São Paulo. Entre vogais, “b”, “d” e “g” ficam suaves ([β], [ð], [ɣ]). Em Lisboa, “ei” soa [ɐj] (“leite” parece “lâite”) e o “em” final soa [ɐ̃j] (“bem” parece “bãe”).',
         table: {
           head: ['Palavra', 'IPA (Lisboa)', 'Traço'],
           rows: [
             ['rua', '[ˈʁuɐ]', 'r uvular no começo'],
             ['carro', '[ˈkaʁu]', 'rr uvular'],
             ['caro', '[ˈkaɾu]', 'r fraco, igual ao do Brasil'],
-            ['tia', '[ˈtiɐ]', 't sem «tch»'],
-            ['dia', '[ˈdiɐ]', 'd sem «dj»'],
+            ['tia', '[ˈtiɐ]', 't sem “tch”'],
+            ['dia', '[ˈdiɐ]', 'd sem “dj”'],
             ['leite', '[ˈlɐjtɨ]', 'ei de Lisboa: [ɐj]'],
             ['peixe', '[ˈpɐjʃɨ]', 'ei de Lisboa: [ɐj]'],
             ['bem', '[bɐ̃j]', 'em final: [ɐ̃j]'],
           ],
         },
         examples: [
-          ['A minha tia mora nesta rua.', 'Minha tia mora nesta rua. (Sem «tchia»: «tia»)'],
+          ['A minha tia mora nesta rua.', 'Minha tia mora nesta rua. (Sem “tchia”: “tia”)'],
           ['Bom dia! Um café com leite, se faz favor.', 'Bom dia! Um café com leite, por favor.'],
-          ['O carro é caro.', 'O carro é caro. («cáʁu» × «cáɾu»)'],
+          ['O carro é caro.', 'O carro é caro. (“cáʁu” × “cáɾu”)'],
         ],
       },
     ],
     pitfalls: [
-      'Pronunciar todas as vogais claras e abertas, como no Brasil: «te-le-fo-ne». Em Lisboa as átonas encolhem: «tlfón». Não é preciso imitar à força, mas é preciso reconhecer para entender.',
-      'Dizer «tchia» e «djia»: em Portugal o «t» e o «d» mantêm sempre o som de «ta» e «da», mesmo antes de «i».',
-      'Transformar o «l» final em «u» («Portugau», «Brasiu»). Em Portugal o «l» é velar e se ouve; «mal» e «mau» soam diferentes.',
-      'Achar que o «s» chiado é «sotaque carioca»: em Portugal ele é o padrão do país inteiro, não uma marca regional.',
-      'Confundir «caro» e «carro» ao ouvir: o «rr» de Lisboa sai da garganta, parecido com o «r» forte do Rio, mas mais raspado.',
+      'Pronunciar todas as vogais claras e abertas, como no Brasil: “te-le-fo-ne”. Em Lisboa as átonas encolhem: “tlfón”. Não é preciso imitar à força, mas é preciso reconhecer para entender.',
+      'Dizer “tchia” e “djia”: em Portugal o “t” e o “d” mantêm sempre o som de “ta” e “da”, mesmo antes de “i”.',
+      'Transformar o “l” final em “u” (“Portugau”, “Brasiu”). Em Portugal o “l” é velar e se ouve; “mal” e “mau” soam diferentes.',
+      'Achar que o “s” chiado é “sotaque carioca”: em Portugal ele é o padrão do país inteiro, não uma marca regional.',
+      'Confundir “caro” e “carro” ao ouvir: o “rr” de Lisboa sai da garganta, parecido com o “r” forte do Rio, mas mais raspado.',
     ],
     quiz: [
       {
-        question: 'Como soa, em Lisboa, a última vogal de «noite»?',
-        options: ['Um «i» claro, como no Brasil', 'Um [ɨ] curtíssimo, que muitas vezes some', 'Um «ê» fechado'],
+        question: 'Como soa, em Lisboa, a última vogal de “noite”?',
+        options: ['Um “i” claro, como no Brasil', 'Um [ɨ] curtíssimo, que muitas vezes some', 'Um “ê” fechado'],
         answer: 'Um [ɨ] curtíssimo, que muitas vezes some',
-        explanation: 'O «e» átono final se reduz a [ɨ] e muitas vezes cai: «nóit». No Brasil ele vira «i»: «noiti».',
+        explanation: 'O “e” átono final se reduz a [ɨ] e muitas vezes cai: “nóit”. No Brasil ele vira “i”: “noiti”.',
       },
       {
-        question: 'Qual é a transcrição de «dia» em Portugal?',
+        question: 'Qual é a transcrição de “dia” em Portugal?',
         options: ['[ˈdʒiɐ]', '[ˈdiɐ]', '[ˈʒiɐ]'],
         answer: '[ˈdiɐ]',
-        explanation: 'Em Portugal o «d» não muda antes de «i». O [dʒ] («dj») é típico de grande parte do Brasil.',
+        explanation: 'Em Portugal o “d” não muda antes de “i”. O [dʒ] (“dj”) é típico de grande parte do Brasil.',
       },
       {
-        question: 'Como soa o «s» de «mesmo» em Lisboa?',
+        question: 'Como soa o “s” de “mesmo” em Lisboa?',
         options: ['[s]', '[ʃ]', '[ʒ]'],
         answer: '[ʒ]',
-        explanation: 'No fim da sílaba, antes de consoante sonora (m), o «s» soa [ʒ], o «j» de «já»: [ˈmeʒmu].',
+        explanation: 'No fim da sílaba, antes de consoante sonora (m), o “s” soa [ʒ], o “j” de “já”: [ˈmeʒmu].',
       },
       {
-        question: 'Em Portugal, «mal» e «mau» soam...',
+        question: 'Em Portugal, “mal” e “mau” soam...',
         options: ['iguais', 'diferentes', 'iguais só no Porto'],
         answer: 'diferentes',
-        explanation: '«mal» termina em «l» velar [ɫ]; «mau» termina em [w]. No Brasil, em geral, as duas soam «mau».',
+        explanation: '“mal” termina em “l” velar [ɫ]; “mau” termina em [w]. No Brasil, em geral, as duas soam “mau”.',
       },
       {
-        question: 'Qual é o «r» típico de «rua» em Lisboa?',
-        options: ['[ɾ], como em «caro»', '[ʁ], raspado na garganta', '[ɹ], como no inglês'],
+        question: 'Qual é o “r” típico de “rua” em Lisboa?',
+        options: ['[ɾ], como em “caro”', '[ʁ], raspado na garganta', '[ɹ], como no inglês'],
         answer: '[ʁ], raspado na garganta',
-        explanation: 'O «r» forte de Lisboa é uvular, [ʁ]. O [ɾ] é o «r» fraco entre vogais, igual nos dois países.',
+        explanation: 'O “r” forte de Lisboa é uvular, [ʁ]. O [ɾ] é o “r” fraco entre vogais, igual nos dois países.',
       },
     ],
   },
@@ -124,11 +124,11 @@ export const GRAMMAR_PT: GrammarTopic[] = [
     level: 'A1.1',
     title: 'Saudações e tratamento: tu × você × o senhor',
     emoji: '👋',
-    summary: 'Cumprimentar em Portugal é fácil; difícil é escolher como chamar a pessoa. Entre amigos, «tu» com o verbo na 2ª pessoa; com desconhecidos, «o senhor», «a senhora», o nome ou o verbo sozinho. O «você», tão neutro no Brasil, pode soar distante ou brusco em Portugal.',
+    summary: 'Cumprimentar em Portugal é fácil; difícil é escolher como chamar a pessoa. Entre amigos, “tu” com o verbo na 2ª pessoa; com desconhecidos, “o senhor”, “a senhora”, o nome ou o verbo sozinho. O “você”, tão neutro no Brasil, pode soar distante ou brusco em Portugal.',
     sections: [
       {
         heading: 'Cumprimentar e se despedir',
-        text: 'As saudações são quase as mesmas do Brasil, com algumas diferenças de uso. «Olá» é o «oi» neutro. «Adeus» é uma despedida normal do dia a dia, sem o tom de «para sempre» que tem no Brasil. «Até já» quer dizer que você volta daqui a pouco. «Se faz favor» (ou «faz favor») é o «por favor» mais comum, e serve também para chamar o empregado de mesa.',
+        text: 'As saudações são quase as mesmas do Brasil, com algumas diferenças de uso. “Olá” é o “oi” neutro. “Adeus” é uma despedida normal do dia a dia, sem o tom de “para sempre” que tem no Brasil. “Até já” quer dizer que você volta daqui a pouco. “Se faz favor” (ou “faz favor”) é o “por favor” mais comum, e serve também para chamar o empregado de mesa.',
         table: {
           head: ['Portugal', 'Quando', 'Brasil'],
           rows: [
@@ -154,7 +154,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Tu: o íntimo, com o verbo na 2ª pessoa',
-        text: 'Em Portugal, «tu» é a forma normal com família, amigos, colegas da mesma idade e crianças, e o verbo vai sempre na 2ª pessoa: tu és, tu estás, tu tens, tu vais. Os possessivos acompanham: teu, tua; e o pronome átono é «te». No Brasil, o «tu» é usado em várias regiões (Sul, Norte, Nordeste, partes do Rio), muitas vezes com o verbo na 3ª pessoa («tu vai»); a norma culta, nos dois países, pede o verbo na 2ª pessoa: «tu vais».',
+        text: 'Em Portugal, “tu” é a forma normal com família, amigos, colegas da mesma idade e crianças, e o verbo vai sempre na 2ª pessoa: tu és, tu estás, tu tens, tu vais. Os possessivos acompanham: teu, tua; e o pronome átono é “te”. No Brasil, o “tu” é usado em várias regiões (Sul, Norte, Nordeste, partes do Rio), muitas vezes com o verbo na 3ª pessoa (“tu vai”); a norma culta, nos dois países, pede o verbo na 2ª pessoa: “tu vais”.',
         table: {
           head: ['Verbo', 'tu (Portugal e norma culta)', 'você (Brasil)'],
           rows: [
@@ -173,16 +173,16 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'O senhor, a senhora, o nome… e o «você»',
-        text: 'Com desconhecidos, pessoas mais velhas e no atendimento, o português europeu usa «o senhor» e «a senhora», ou o nome da pessoa na 3ª pessoa («A Ana quer um café?»), ou simplesmente o verbo sem pronome («Quer um café?»). O verbo vai na 3ª pessoa, como com «você». O «você» existe em Portugal e é gramaticalmente correto, mas dito diretamente a alguém pode soar distante, frio ou até brusco, dependendo da pessoa e da região; por isso os portugueses tendem a evitá-lo. No plural não há problema: «vocês» é a forma normal nos dois países para falar com mais de uma pessoa, seja com íntimos ou não.',
+        heading: 'O senhor, a senhora, o nome… e o “você”',
+        text: 'Com desconhecidos, pessoas mais velhas e no atendimento, o português europeu usa “o senhor” e “a senhora”, ou o nome da pessoa na 3ª pessoa (“A Ana quer um café?”), ou simplesmente o verbo sem pronome (“Quer um café?”). O verbo vai na 3ª pessoa, como com “você”. O “você” existe em Portugal e é gramaticalmente correto, mas dito diretamente a alguém pode soar distante, frio ou até brusco, dependendo da pessoa e da região; por isso os portugueses tendem a evitá-lo. No plural não há problema: “vocês” é a forma normal nos dois países para falar com mais de uma pessoa, seja com íntimos ou não.',
         table: {
           head: ['Forma', 'Em Portugal', 'No Brasil'],
           rows: [
             ['tu + 2ª pessoa', 'amigos, família, colegas, crianças', 'regional; muitas vezes com 3ª pessoa'],
             ['você + 3ª pessoa', 'existe, mas pode soar distante ou brusco', 'forma neutra do dia a dia'],
             ['o senhor / a senhora', 'formal e muito usado', 'formal, respeitoso'],
-            ['o nome + 3ª pessoa', '«O João quer?»: educado e comum', 'raro; soa estranho'],
-            ['verbo sem pronome', '«Quer um café?»: a saída mais segura', 'comum'],
+            ['o nome + 3ª pessoa', '“O João quer?”: educado e comum', 'raro; soa estranho'],
+            ['verbo sem pronome', '“Quer um café?”: a saída mais segura', 'comum'],
             ['vocês', 'plural normal, íntimo ou formal', 'plural normal'],
           ],
         },
@@ -195,55 +195,55 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Chamar todo mundo de «você», como no Brasil. Em Portugal, com um desconhecido, prefira «o senhor / a senhora» ou o verbo sem pronome: «Desculpe, sabe onde fica…?».',
-      'Usar «tu» com o verbo na 3ª pessoa («tu vai», «tu quer»). É comum na fala de várias regiões do Brasil, mas em Portugal e na norma culta dos dois países é «tu vais», «tu queres».',
-      'Estranhar o «Adeus!» da padaria: em Portugal é uma despedida comum, não um adeus definitivo.',
-      'Misturar tratamentos na mesma frase: «Tu quer que eu lhe ajude?». Escolha um só: «Queres que te ajude?» (tu) ou «Quer que o ajude?» (o senhor). A uniformidade de tratamento é regra da norma culta nos dois países.',
-      'Dizer «Obrigado» sendo mulher (ou «Obrigada» sendo homem): concorda com quem agradece, nos dois países.',
+      'Chamar todo mundo de “você”, como no Brasil. Em Portugal, com um desconhecido, prefira “o senhor / a senhora” ou o verbo sem pronome: “Desculpe, sabe onde fica…?”.',
+      'Usar “tu” com o verbo na 3ª pessoa (“tu vai”, “tu quer”). É comum na fala de várias regiões do Brasil, mas em Portugal e na norma culta dos dois países é “tu vais”, “tu queres”.',
+      'Estranhar o “Adeus!” da padaria: em Portugal é uma despedida comum, não um adeus definitivo.',
+      'Misturar tratamentos na mesma frase: “Tu quer que eu lhe ajude?”. Escolha um só: “Queres que te ajude?” (tu) ou “Quer que o ajude?” (o senhor). A uniformidade de tratamento é regra da norma culta nos dois países.',
+      'Dizer “Obrigado” sendo mulher (ou “Obrigada” sendo homem): concorda com quem agradece, nos dois países.',
     ],
     quiz: [
       {
         question: 'Você entra numa loja em Coimbra e quer perguntar se há pão. Qual é a forma mais natural?',
-        options: ['«Você tem pão?»', 'Bom dia, tem pão?', 'Tu tens pão?'],
+        options: ['“Você tem pão?”', 'Bom dia, tem pão?', 'Tu tens pão?'],
         answer: 'Bom dia, tem pão?',
-        explanation: 'Com desconhecidos, o verbo na 3ª pessoa sem pronome é a saída mais segura. «Você» pode soar brusco; «tu» é íntimo demais.',
+        explanation: 'Com desconhecidos, o verbo na 3ª pessoa sem pronome é a saída mais segura. “Você” pode soar brusco; “tu” é íntimo demais.',
       },
       {
-        question: 'Complete com a forma da norma culta: «Tu ___ ao cinema hoje?»',
+        question: 'Complete com a forma da norma culta: “Tu ___ ao cinema hoje?”',
         options: ['vai', 'vais', 'ides'],
         answer: 'vais',
-        explanation: 'Com «tu», o verbo vai na 2ª pessoa: tu vais. «Tu vai» é da fala de várias regiões do Brasil, não da norma culta.',
+        explanation: 'Com “tu”, o verbo vai na 2ª pessoa: tu vais. “Tu vai” é da fala de várias regiões do Brasil, não da norma culta.',
       },
       {
-        question: 'Um português diz «Até já!». O que isso significa?',
+        question: 'Um português diz “Até já!”. O que isso significa?',
         options: ['Adeus para sempre', 'Volto daqui a pouco', 'Até à próxima semana'],
         answer: 'Volto daqui a pouco',
-        explanation: '«Até já» é para uma separação curta; «até logo» e «até amanhã» são para mais tarde.',
+        explanation: '“Até já” é para uma separação curta; “até logo” e “até amanhã” são para mais tarde.',
       },
       {
         question: 'Qual destas frases é uma forma educada e comum em Portugal de oferecer algo ao Rui?',
         options: ['O Rui quer mais sopa?', 'Rui, você quer mais sopa?', 'Rui, vós quereis mais sopa?'],
         answer: 'O Rui quer mais sopa?',
-        explanation: 'Em Portugal é comum tratar a pessoa pelo nome na 3ª pessoa. «Vós» não se usa no dia a dia.',
+        explanation: 'Em Portugal é comum tratar a pessoa pelo nome na 3ª pessoa. “Vós” não se usa no dia a dia.',
       },
       {
-        question: 'Qual é o plural normal de «tu» e de «o senhor» em Portugal?',
+        question: 'Qual é o plural normal de “tu” e de “o senhor” em Portugal?',
         options: ['vós', 'vocês', 'os tus'],
         answer: 'vocês',
-        explanation: '«Vocês» é o plural de uso nos dois países, íntimo ou formal. «Vós» sobrevive em textos antigos, na liturgia e em falas regionais do Norte.',
+        explanation: '“Vocês” é o plural de uso nos dois países, íntimo ou formal. “Vós” sobrevive em textos antigos, na liturgia e em falas regionais do Norte.',
       },
     ],
   },
   {
     id: 'pt-g3',
     level: 'A1.1',
-    title: 'Números, dinheiro e horas: dezasseis, cêntimos e «mil milhões»',
+    title: 'Números, dinheiro e horas: dezasseis, cêntimos e “mil milhões”',
     emoji: '🔢',
-    summary: 'Os números são quase iguais aos do Brasil, com três diferenças que pegam: dezasseis, dezassete e dezanove; os cêntimos do euro; e o «bilião», que em Portugal vale mil vezes mais do que o «bilhão» brasileiro.',
+    summary: 'Os números são quase iguais aos do Brasil, com três diferenças que pegam: dezasseis, dezassete e dezanove; os cêntimos do euro; e o “bilião”, que em Portugal vale mil vezes mais do que o “bilhão” brasileiro.',
     sections: [
       {
         heading: 'De 0 a 20',
-        text: 'Em Portugal escreve-se e diz-se dezasseis, dezassete e dezanove, com «a»; no Brasil, dezesseis, dezessete e dezenove. O 14 é «catorze» (no Brasil existem «catorze» e «quatorze»). Um e dois variam em gênero nos dois países: um/uma, dois/duas. E ao ditar números de telefone os portugueses dizem «seis», nunca «meia».',
+        text: 'Em Portugal escreve-se e diz-se dezasseis, dezassete e dezanove, com “a”; no Brasil, dezesseis, dezessete e dezenove. O 14 é “catorze” (no Brasil existem “catorze” e “quatorze”). Um e dois variam em gênero nos dois países: um/uma, dois/duas. E ao ditar números de telefone os portugueses dizem “seis”, nunca “meia”.',
         table: {
           head: ['Número', 'Portugal', 'Brasil', 'Número', 'Portugal', 'Brasil'],
           rows: [
@@ -267,7 +267,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Dezenas, centenas e os números grandes',
-        text: 'Dezenas e centenas são iguais nos dois países: trinta, quarenta, cinquenta, cem, cento e um, duzentos, quinhentos. As centenas também concordam em gênero: duzentas pessoas. A grande diferença está nos números enormes: Portugal usa a escala longa, em que «bilião» é um milhão de milhões (10¹²); o Brasil usa a escala curta, em que «bilhão» é mil milhões (10⁹). Assim, o «bilhão» brasileiro é, em Portugal, «mil milhões»; e o «trilhão» brasileiro é o «bilião» português.',
+        text: 'Dezenas e centenas são iguais nos dois países: trinta, quarenta, cinquenta, cem, cento e um, duzentos, quinhentos. As centenas também concordam em gênero: duzentas pessoas. A grande diferença está nos números enormes: Portugal usa a escala longa, em que “bilião” é um milhão de milhões (10¹²); o Brasil usa a escala curta, em que “bilhão” é mil milhões (10⁹). Assim, o “bilhão” brasileiro é, em Portugal, “mil milhões”; e o “trilhão” brasileiro é o “bilião” português.',
         table: {
           head: ['Valor', 'Portugal', 'Brasil'],
           rows: [
@@ -284,7 +284,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Dinheiro e horas',
-        text: 'O euro divide-se em cêntimos (no Brasil, o real divide-se em centavos). Nos dois países a vírgula separa os decimais: 2,50 €. Nas horas, Portugal usa muito «um quarto» e «menos»: «São cinco menos dez». No Brasil também se diz «um quarto», mas é mais comum «e quinze» e «dez para as cinco». Na escrita os dois lados usam as 24 horas (15h30, ou 15:30).',
+        text: 'O euro divide-se em cêntimos (no Brasil, o real divide-se em centavos). Nos dois países a vírgula separa os decimais: 2,50 €. Nas horas, Portugal usa muito “um quarto” e “menos”: “São cinco menos dez”. No Brasil também se diz “um quarto”, mas é mais comum “e quinze” e “dez para as cinco”. Na escrita os dois lados usam as 24 horas (15h30, ou 15:30).',
         table: {
           head: ['Hora', 'Portugal', 'Brasil'],
           rows: [
@@ -304,11 +304,11 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Escrever ou dizer «dezesseis», «dezessete», «dezenove» num texto europeu: em Portugal é dezasseis, dezassete, dezanove.',
-      'Traduzir «bilhão» por «bilião». O bilhão brasileiro (10⁹) é «mil milhões» em Portugal; o «bilião» português é um trilhão no Brasil. Cuidado com notícias de economia.',
-      'Dizer «meia» no lugar de «seis» ao ditar o telefone: em Portugal ninguém entende.',
-      'Falar em «centavos» do euro: são cêntimos.',
-      'Esquecer a concordância no feminino (vale nos dois países): «duas casas», «duzentas pessoas», nunca «dois casas».',
+      'Escrever ou dizer “dezesseis”, “dezessete”, “dezenove” num texto europeu: em Portugal é dezasseis, dezassete, dezanove.',
+      'Traduzir “bilhão” por “bilião”. O bilhão brasileiro (10⁹) é “mil milhões” em Portugal; o “bilião” português é um trilhão no Brasil. Cuidado com notícias de economia.',
+      'Dizer “meia” no lugar de “seis” ao ditar o telefone: em Portugal ninguém entende.',
+      'Falar em “centavos” do euro: são cêntimos.',
+      'Esquecer a concordância no feminino (vale nos dois países): “duas casas”, “duzentas pessoas”, nunca “dois casas”.',
     ],
     quiz: [
       {
@@ -318,25 +318,25 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         explanation: 'Em Portugal: dezasseis, dezassete, dezanove. No Brasil: dezesseis, dezessete, dezenove.',
       },
       {
-        question: 'Um jornal de Lisboa diz «dois mil milhões de euros». Quanto é isso no Brasil?',
+        question: 'Um jornal de Lisboa diz “dois mil milhões de euros”. Quanto é isso no Brasil?',
         options: ['dois milhões', 'dois bilhões', 'dois trilhões'],
         answer: 'dois bilhões',
-        explanation: '«Mil milhões» é 10⁹, o bilhão brasileiro. O «bilião» português é 10¹².',
+        explanation: '“Mil milhões” é 10⁹, o bilhão brasileiro. O “bilião” português é 10¹².',
       },
       {
         question: 'Como um português diz 4h45?',
         options: ['São cinco menos um quarto.', 'São quatro e quarenta e cinco meia.', 'São menos quinze cinco.'],
         answer: 'São cinco menos um quarto.',
-        explanation: 'Em Portugal é comum «a hora seguinte menos os minutos»: cinco menos um quarto. No Brasil, «quinze para as cinco».',
+        explanation: 'Em Portugal é comum “a hora seguinte menos os minutos”: cinco menos um quarto. No Brasil, “quinze para as cinco”.',
       },
       {
         question: 'Qual é a parte menor do euro?',
         options: ['o centavo', 'o cêntimo', 'o tostão'],
         answer: 'o cêntimo',
-        explanation: 'O euro divide-se em cêntimos. «Centavo» é do real; «tostão» é moeda antiga, que sobrevive só em expressões.',
+        explanation: 'O euro divide-se em cêntimos. “Centavo” é do real; “tostão” é moeda antiga, que sobrevive só em expressões.',
       },
       {
-        question: 'Complete: «São ___ pessoas na fotografia.» (12)',
+        question: 'Complete: “São ___ pessoas na fotografia.” (12)',
         options: ['doze', 'dozes', 'duza'],
         answer: 'doze',
         explanation: 'De três em diante os números não variam em gênero, exceto as centenas (duzentas, trezentas…).',
@@ -353,19 +353,19 @@ export const GRAMMAR_PT: GrammarTopic[] = [
     sections: [
       {
         heading: 'Casa, comida e transporte',
-        text: 'Muitas palavras são diferentes porque cada país seguiu o seu caminho no século XIX e XX: o Brasil adotou mais termos do inglês (trem, de «train») e Portugal ficou com formas do francês ou criou as suas (comboio, autocarro). Nenhuma é mais correta: são as palavras normais de cada país. Os brasileiros entendem quase tudo pelo contexto; o difícil é lembrar de usar.',
+        text: 'Muitas palavras são diferentes porque cada país seguiu o seu caminho no século XIX e XX: o Brasil adotou mais termos do inglês (trem, de “train”) e Portugal ficou com formas do francês ou criou as suas (comboio, autocarro). Nenhuma é mais correta: são as palavras normais de cada país. Os brasileiros entendem quase tudo pelo contexto; o difícil é lembrar de usar.',
         table: {
           head: ['Portugal', 'Brasil', 'Nota'],
           rows: [
-            ['o pequeno-almoço', 'o café da manhã', '«tomar o pequeno-almoço»'],
+            ['o pequeno-almoço', 'o café da manhã', '“tomar o pequeno-almoço”'],
             ['o autocarro', 'o ônibus', 'a paragem = o ponto de ônibus'],
             ['o comboio', 'o trem', 'a estação de comboios'],
-            ['o metro', 'o metrô', 'tônica no «me»: «métru»'],
+            ['o metro', 'o metrô', 'tônica no “me”: “métru”'],
             ['o telemóvel', 'o celular', 'o ecrã = a tela'],
             ['a casa de banho', 'o banheiro', 'a sanita = o vaso sanitário'],
             ['o frigorífico', 'a geladeira', ''],
             ['o sumo', 'o suco', 'sumo de laranja'],
-            ['o gelado', 'o sorvete', '«gelado» também é adjetivo: frio'],
+            ['o gelado', 'o sorvete', '“gelado” também é adjetivo: frio'],
             ['a chávena', 'a xícara', 'uma chávena de chá'],
             ['a bica (Lisboa)', 'o cafezinho, o expresso', 'no Porto: um cimbalino'],
             ['o talho', 'o açougue', ''],
@@ -383,7 +383,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Palavras iguais, sentidos diferentes',
-        text: 'Mais traiçoeiras que as palavras novas são as que o brasileiro já conhece com outro sentido. «Apelido» em Portugal é o sobrenome (o nosso «apelido» lá é «alcunha»). «Rapariga» é simplesmente «moça», uma palavra neutra e comum, sem o sentido pejorativo que tem em partes do Brasil. «Camisola» é a blusa de malha, e não a roupa de dormir. «Propina» é a taxa que se paga à universidade, não suborno. «Bicha» ainda aparece com o sentido de «fila» (sobretudo entre os mais velhos), sem nada de ofensivo; hoje «fila» também é comum em Portugal.',
+        text: 'Mais traiçoeiras que as palavras novas são as que o brasileiro já conhece com outro sentido. “Apelido” em Portugal é o sobrenome (o nosso “apelido” lá é “alcunha”). “Rapariga” é simplesmente “moça”, uma palavra neutra e comum, sem o sentido pejorativo que tem em partes do Brasil. “Camisola” é a blusa de malha, e não a roupa de dormir. “Propina” é a taxa que se paga à universidade, não suborno. “Bicha” ainda aparece com o sentido de “fila” (sobretudo entre os mais velhos), sem nada de ofensivo; hoje “fila” também é comum em Portugal.',
         table: {
           head: ['Palavra', 'Em Portugal', 'No Brasil'],
           rows: [
@@ -391,7 +391,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
             ['a rapariga', 'a moça (neutro)', 'pejorativo em várias regiões'],
             ['o miúdo', 'o garoto, a criança', 'miúdo = pequeno; miúdos = vísceras'],
             ['a camisola', 'a blusa de malha, o suéter', 'a roupa de dormir'],
-            ['o fato', 'o terno (roupa)', '«fato» = acontecimento (em Portugal: «facto»)'],
+            ['o fato', 'o terno (roupa)', '“fato” = acontecimento (em Portugal: “facto”)'],
             ['a propina', 'a taxa da universidade', 'o suborno'],
             ['a bicha', 'a fila (uso tradicional)', 'termo ofensivo'],
             ['o puto', 'o garoto (informal)', 'palavra vulgar'],
@@ -407,35 +407,35 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pedir «um celular» ou «um suco» numa loja de Lisboa: vão entender, mas a palavra de Portugal é telemóvel e sumo.',
-      'Estranhar «rapariga»: em Portugal é a palavra neutra e comum para «moça», usada até em textos oficiais e livros infantis.',
-      'Responder com o seu apelido brasileiro quando perguntam «Qual é o seu apelido?»: querem o sobrenome.',
-      'Confundir «fato» (terno) com «facto» (acontecimento). Em Portugal a grafia com «c» continua, porque o «c» se pronuncia.',
-      'Chamar o autocarro de «ônibus» na escrita: em Portugal escreve-se autocarro; «ônibus» só entre aspas, como palavra do Brasil.',
+      'Pedir “um celular” ou “um suco” numa loja de Lisboa: vão entender, mas a palavra de Portugal é telemóvel e sumo.',
+      'Estranhar “rapariga”: em Portugal é a palavra neutra e comum para “moça”, usada até em textos oficiais e livros infantis.',
+      'Responder com o seu apelido brasileiro quando perguntam “Qual é o seu apelido?”: querem o sobrenome.',
+      'Confundir “fato” (terno) com “facto” (acontecimento). Em Portugal a grafia com “c” continua, porque o “c” se pronuncia.',
+      'Chamar o autocarro de “ônibus” na escrita: em Portugal escreve-se autocarro; “ônibus” só entre aspas, como palavra do Brasil.',
     ],
     quiz: [
       {
-        question: 'Como se diz «café da manhã» em Portugal?',
+        question: 'Como se diz “café da manhã” em Portugal?',
         options: ['o pequeno-almoço', 'o lanche', 'o almoço pequeno'],
         answer: 'o pequeno-almoço',
         explanation: 'Pequeno-almoço, com hífen. O almoço é ao meio-dia e o lanche é à tarde, nos dois países.',
       },
       {
-        question: 'Um formulário português pede «Apelido». O que você escreve?',
+        question: 'Um formulário português pede “Apelido”. O que você escreve?',
         options: ['o seu sobrenome', 'o seu nome carinhoso', 'o seu nome do meio'],
         answer: 'o seu sobrenome',
-        explanation: 'Em Portugal, apelido = sobrenome. O apelido brasileiro é «alcunha».',
+        explanation: 'Em Portugal, apelido = sobrenome. O apelido brasileiro é “alcunha”.',
       },
       {
         question: 'Qual destas palavras é a de Portugal para o meio de transporte sobre carris?',
-        options: ['o comboio', '«o trem»', 'o autocarro'],
+        options: ['o comboio', '“o trem”', 'o autocarro'],
         answer: 'o comboio',
-        explanation: 'Comboio é o trem. Autocarro é o ônibus. E «carris» são os trilhos.',
+        explanation: 'Comboio é o trem. Autocarro é o ônibus. E “carris” são os trilhos.',
       },
       {
-        question: 'Em Portugal, «a rapariga» é...',
-        options: ['uma palavra ofensiva', 'uma palavra neutra para «moça»', 'uma palavra só da literatura'],
-        answer: 'uma palavra neutra para «moça»',
+        question: 'Em Portugal, “a rapariga” é...',
+        options: ['uma palavra ofensiva', 'uma palavra neutra para “moça”', 'uma palavra só da literatura'],
+        answer: 'uma palavra neutra para “moça”',
         explanation: 'Em Portugal é neutra e comum. O sentido pejorativo é próprio de partes do Brasil.',
       },
       {
@@ -449,13 +449,13 @@ export const GRAMMAR_PT: GrammarTopic[] = [
   {
     id: 'pt-g5',
     level: 'A1.2',
-    title: 'O presente do indicativo com tu e vocês, e o «há» de existir',
+    title: 'O presente do indicativo com tu e vocês, e o “há” de existir',
     emoji: '⏱️',
-    summary: 'O presente é igual nos dois países; muda quem usa cada forma. Em Portugal a 2ª pessoa do singular (tu falas, tu comes) está viva no dia a dia, «vocês» é o plural de todos, e para dizer que algo existe usa-se «haver»: «Há pão?».',
+    summary: 'O presente é igual nos dois países; muda quem usa cada forma. Em Portugal a 2ª pessoa do singular (tu falas, tu comes) está viva no dia a dia, “vocês” é o plural de todos, e para dizer que algo existe usa-se “haver”: “Há pão?”.',
     sections: [
       {
         heading: 'Os verbos regulares',
-        text: 'As terminações são as da norma culta dos dois países. A diferença é de uso: o brasileiro quase não usa a forma de «tu» (ou a usa com o verbo na 3ª pessoa), e o português usa-a o tempo todo com amigos e família. A forma de «vós» (falais, comeis) é conhecida mas não se usa no dia a dia de nenhum dos dois países; o plural real é «vocês» + 3ª pessoa. «A gente» (= nós) existe em Portugal na fala informal, mas é bem menos frequente que no Brasil: o português diz mais «nós falamos».',
+        text: 'As terminações são as da norma culta dos dois países. A diferença é de uso: o brasileiro quase não usa a forma de “tu” (ou a usa com o verbo na 3ª pessoa), e o português usa-a o tempo todo com amigos e família. A forma de “vós” (falais, comeis) é conhecida mas não se usa no dia a dia de nenhum dos dois países; o plural real é “vocês” + 3ª pessoa. “A gente” (= nós) existe em Portugal na fala informal, mas é bem menos frequente que no Brasil: o português diz mais “nós falamos”.',
         table: {
           head: ['Pessoa', 'falar', 'comer', 'partir'],
           rows: [
@@ -475,7 +475,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Os irregulares mais usados',
-        text: 'Os irregulares são os mesmos nos dois países, com as mesmas formas na norma culta. Vale treinar a forma de «tu», que o brasileiro raramente conjuga: tu és, tu vais, tu fazes, tu dizes, tu vens.',
+        text: 'Os irregulares são os mesmos nos dois países, com as mesmas formas na norma culta. Vale treinar a forma de “tu”, que o brasileiro raramente conjuga: tu és, tu vais, tu fazes, tu dizes, tu vens.',
         table: {
           head: ['Verbo', 'eu', 'tu', 'ele / o senhor', 'nós', 'eles / vocês'],
           rows: [
@@ -497,8 +497,8 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         ],
       },
       {
-        heading: '«Há» e «ter fome»',
-        text: 'Para dizer que algo existe, a norma culta dos dois países usa «haver»: «Há pão?», «Há muitos turistas». No Brasil, a fala do dia a dia usa quase sempre «ter» («Tem pão?»); em Portugal, «haver» é o normal também na fala. E para as sensações o português europeu prefere «ter»: «Tenho fome», «Tenho frio», enquanto no Brasil é comum «Estou com fome». As duas construções existem nos dois países.',
+        heading: '“Há” e “ter fome”',
+        text: 'Para dizer que algo existe, a norma culta dos dois países usa “haver”: “Há pão?”, “Há muitos turistas”. No Brasil, a fala do dia a dia usa quase sempre “ter” (“Tem pão?”); em Portugal, “haver” é o normal também na fala. E para as sensações o português europeu prefere “ter”: “Tenho fome”, “Tenho frio”, enquanto no Brasil é comum “Estou com fome”. As duas construções existem nos dois países.',
         table: {
           head: ['Portugal', 'Brasil (fala)', 'Norma culta'],
           rows: [
@@ -515,55 +515,55 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Conjugar «tu» com o verbo de «você» («tu fala», «tu tem»). Em Portugal e na norma culta: tu falas, tu tens.',
-      'Usar «vós» achando que é o plural formal: em Portugal o plural é «vocês», tanto com amigos como com desconhecidos.',
-      'Perguntar «Tem pão?» e ouvir «Há, sim». Em Portugal, para existência, o normal é «haver».',
-      'Esquecer o acento de «têm» e «vêm» no plural (eles têm, eles vêm): regra de ortografia dos dois países.',
-      'Abusar do «a gente»: em Portugal soa informal; em conversa normal diz-se «nós».',
+      'Conjugar “tu” com o verbo de “você” (“tu fala”, “tu tem”). Em Portugal e na norma culta: tu falas, tu tens.',
+      'Usar “vós” achando que é o plural formal: em Portugal o plural é “vocês”, tanto com amigos como com desconhecidos.',
+      'Perguntar “Tem pão?” e ouvir “Há, sim”. Em Portugal, para existência, o normal é “haver”.',
+      'Esquecer o acento de “têm” e “vêm” no plural (eles têm, eles vêm): regra de ortografia dos dois países.',
+      'Abusar do “a gente”: em Portugal soa informal; em conversa normal diz-se “nós”.',
     ],
     quiz: [
       {
-        question: 'Complete: «Tu ___ português muito bem!»',
+        question: 'Complete: “Tu ___ português muito bem!”',
         options: ['fala', 'falas', 'falais'],
         answer: 'falas',
-        explanation: 'Com «tu», 2ª pessoa do singular: falas. «Falais» é de «vós».',
+        explanation: 'Com “tu”, 2ª pessoa do singular: falas. “Falais” é de “vós”.',
       },
       {
         question: 'Como um português pergunta normalmente se existe uma casa de banho no café?',
-        options: ['Há casa de banho?', '«Tem banheiro?»', 'Está casa de banho?'],
+        options: ['Há casa de banho?', '“Tem banheiro?”', 'Está casa de banho?'],
         answer: 'Há casa de banho?',
-        explanation: 'Para existência, em Portugal e na norma culta dos dois países, usa-se «haver».',
+        explanation: 'Para existência, em Portugal e na norma culta dos dois países, usa-se “haver”.',
       },
       {
-        question: 'Complete: «Eles ___ muitos amigos em Faro.»',
+        question: 'Complete: “Eles ___ muitos amigos em Faro.”',
         options: ['tem', 'têm', 'teem'],
         answer: 'têm',
-        explanation: 'O plural de «ter» leva acento circunflexo: eles têm. Vale nos dois países.',
+        explanation: 'O plural de “ter” leva acento circunflexo: eles têm. Vale nos dois países.',
       },
       {
-        question: 'Qual é o plural de «tu» no dia a dia de Portugal?',
+        question: 'Qual é o plural de “tu” no dia a dia de Portugal?',
         options: ['vós', 'vocês', 'os senhores sempre'],
         answer: 'vocês',
-        explanation: '«Vocês» serve para íntimos e desconhecidos. «Os senhores» existe, mas só no formal.',
+        explanation: '“Vocês” serve para íntimos e desconhecidos. “Os senhores” existe, mas só no formal.',
       },
       {
-        question: 'Complete: «Tu ___ connosco ao cinema?»',
+        question: 'Complete: “Tu ___ connosco ao cinema?”',
         options: ['vens', 'vem', 'vindes'],
         answer: 'vens',
-        explanation: 'vir: eu venho, tu vens, ele vem. «Vindes» é de «vós».',
+        explanation: 'vir: eu venho, tu vens, ele vem. “Vindes” é de “vós”.',
       },
     ],
   },
   {
     id: 'pt-g6',
     level: 'A1.2',
-    title: '«Estar a + infinitivo»: estou a trabalhar',
+    title: '“Estar a + infinitivo”: estou a trabalhar',
     emoji: '🔄',
-    summary: 'Para a ação em curso, Portugal diz «estou a trabalhar»; o Brasil diz «estou trabalhando». As duas construções são corretas e antigas na língua; cada país fez a sua a preferida. O mesmo vale para andar, ficar, continuar e começar.',
+    summary: 'Para a ação em curso, Portugal diz “estou a trabalhar”; o Brasil diz “estou trabalhando”. As duas construções são corretas e antigas na língua; cada país fez a sua a preferida. O mesmo vale para andar, ficar, continuar e começar.',
     sections: [
       {
         heading: 'A ação em curso',
-        text: 'No português europeu padrão, a ação que está acontecendo agora se forma com «estar a» + infinitivo: «Estou a ler», «Está a chover». No Brasil usa-se o gerúndio: «Estou lendo», «Está chovendo». O gerúndio não é erro em Portugal: é a forma normal no Alentejo, no Algarve e em partes das ilhas, e aparece em outros usos (adiante). E «estar a + infinitivo» não é erro no Brasil; só não é usual. Nenhuma é mais culta: são duas normas.',
+        text: 'No português europeu padrão, a ação que está acontecendo agora se forma com “estar a” + infinitivo: “Estou a ler”, “Está a chover”. No Brasil usa-se o gerúndio: “Estou lendo”, “Está chovendo”. O gerúndio não é erro em Portugal: é a forma normal no Alentejo, no Algarve e em partes das ilhas, e aparece em outros usos (adiante). E “estar a + infinitivo” não é erro no Brasil; só não é usual. Nenhuma é mais culta: são duas normas.',
         table: {
           head: ['Portugal', 'Brasil'],
           rows: [
@@ -582,7 +582,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Andar, ficar, continuar, começar, acabar',
-        text: 'A mesma troca acontece com outros verbos auxiliares. «Andar a + infinitivo» indica algo que se repete nos últimos tempos («Ando a dormir mal»). «Ficar a» é permanecer fazendo; «continuar a» é seguir fazendo. «Começar a» e «acabar de» são iguais nos dois países, porque já levam preposição também no Brasil.',
+        text: 'A mesma troca acontece com outros verbos auxiliares. “Andar a + infinitivo” indica algo que se repete nos últimos tempos (“Ando a dormir mal”). “Ficar a” é permanecer fazendo; “continuar a” é seguir fazendo. “Começar a” e “acabar de” são iguais nos dois países, porque já levam preposição também no Brasil.',
         table: {
           head: ['Portugal', 'Brasil', 'Sentido'],
           rows: [
@@ -600,8 +600,8 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'Pronomes com «estar a» e o gerúndio que fica',
-        text: 'O pronome átono pode ir ligado ao infinitivo com hífen («Estou a ouvir-te») ou ao auxiliar («Estou-te a ouvir»); as duas são correntes em Portugal. Com negação, o pronome sobe: «Não te estou a ouvir». O gerúndio continua a existir em Portugal em orações adverbiais, sobretudo na escrita: «Chegando a casa, telefonei-lhe» (= quando cheguei em casa).',
+        heading: 'Pronomes com “estar a” e o gerúndio que fica',
+        text: 'O pronome átono pode ir ligado ao infinitivo com hífen (“Estou a ouvir-te”) ou ao auxiliar (“Estou-te a ouvir”); as duas são correntes em Portugal. Com negação, o pronome sobe: “Não te estou a ouvir”. O gerúndio continua a existir em Portugal em orações adverbiais, sobretudo na escrita: “Chegando a casa, telefonei-lhe” (= quando cheguei em casa).',
         examples: [
           ['Estou a ouvir-te muito mal.', 'Estou te ouvindo muito mal.'],
           ['Não te estou a perceber.', 'Não estou te entendendo.'],
@@ -610,30 +610,30 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Escrever «estou fazendo» num texto que deve ser europeu: no padrão de Portugal é «estou a fazer».',
-      'Esquecer o «a»: «Estou trabalhar» não existe em lado nenhum. É «estou a trabalhar».',
-      'Achar que o gerúndio é «brasileirismo errado»: é português antigo, usado no sul de Portugal e em orações como «Saindo daqui, vire à esquerda».',
-      'Usar «andar a» para ação única: «Ando a comer» não é «estou comendo agora», é «tenho comido ultimamente».',
-      'Pôr o pronome no começo com negação e hífen: «Não estou-te a ouvir». Com «não», o pronome vai antes do auxiliar: «Não te estou a ouvir».',
+      'Escrever “estou fazendo” num texto que deve ser europeu: no padrão de Portugal é “estou a fazer”.',
+      'Esquecer o “a”: “Estou trabalhar” não existe em lado nenhum. É “estou a trabalhar”.',
+      'Achar que o gerúndio é “brasileirismo errado”: é português antigo, usado no sul de Portugal e em orações como “Saindo daqui, vire à esquerda”.',
+      'Usar “andar a” para ação única: “Ando a comer” não é “estou comendo agora”, é “tenho comido ultimamente”.',
+      'Pôr o pronome no começo com negação e hífen: “Não estou-te a ouvir”. Com “não”, o pronome vai antes do auxiliar: “Não te estou a ouvir”.',
     ],
     quiz: [
       {
-        question: 'Como se diz «Estou estudando» no padrão de Portugal?',
+        question: 'Como se diz “Estou estudando” no padrão de Portugal?',
         options: ['Estou a estudar.', 'Estou estudar.', 'Estou de estudar.'],
         answer: 'Estou a estudar.',
         explanation: 'estar + a + infinitivo: estou a estudar.',
       },
       {
-        question: 'O gerúndio («estou fazendo») em Portugal é...',
+        question: 'O gerúndio (“estou fazendo”) em Portugal é...',
         options: ['um erro', 'usual no Alentejo, no Algarve e em partes das ilhas', 'proibido na escrita'],
         answer: 'usual no Alentejo, no Algarve e em partes das ilhas',
-        explanation: 'Não é erro: é regional em Portugal e padrão no Brasil. O padrão de Lisboa prefere «estar a».',
+        explanation: 'Não é erro: é regional em Portugal e padrão no Brasil. O padrão de Lisboa prefere “estar a”.',
       },
       {
-        question: '«Ando a dormir mal» quer dizer...',
+        question: '“Ando a dormir mal” quer dizer...',
         options: ['Estou a dormir mal neste momento.', 'Tenho dormido mal ultimamente.', 'Vou dormir mal.'],
         answer: 'Tenho dormido mal ultimamente.',
-        explanation: '«Andar a + infinitivo» é algo repetido nos últimos tempos.',
+        explanation: '“Andar a + infinitivo” é algo repetido nos últimos tempos.',
       },
       {
         question: 'Qual frase está correta em Portugal?',
@@ -642,10 +642,10 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         explanation: 'A negação puxa o pronome para antes do verbo auxiliar.',
       },
       {
-        question: 'Complete no padrão europeu: «Continua ___ chover em Braga.»',
+        question: 'Complete no padrão europeu: “Continua ___ chover em Braga.”',
         options: ['a', 'de', 'em'],
         answer: 'a',
-        explanation: 'continuar a + infinitivo. No Brasil: «continua chovendo».',
+        explanation: 'continuar a + infinitivo. No Brasil: “continua chovendo”.',
       },
     ],
   },
@@ -655,11 +655,11 @@ export const GRAMMAR_PT: GrammarTopic[] = [
     level: 'A2.1',
     title: 'Pronomes átonos: ênclise (chamo-me) e próclise obrigatória (não me digas)',
     emoji: '🔗',
-    summary: 'É a diferença que mais denuncia o brasileiro em Portugal. Lá, o pronome átono vai depois do verbo, com hífen: «Chamo-me Ana», «Diz-me». Só vem antes quando há uma palavra que o «puxa»: negação, «já», «que», «quem»…',
+    summary: 'É a diferença que mais denuncia o brasileiro em Portugal. Lá, o pronome átono vai depois do verbo, com hífen: “Chamo-me Ana”, “Diz-me”. Só vem antes quando há uma palavra que o “puxa”: negação, “já”, “que”, “quem”…',
     sections: [
       {
         heading: 'A regra de Portugal: ênclise',
-        text: 'Em Portugal, numa frase afirmativa simples, o pronome átono (me, te, se, nos, vos, lhe, o, a…) vai depois do verbo, ligado por hífen, mesmo quando há sujeito antes: «Eu chamo-me Ana», «A Maria disse-me». No Brasil, a fala e boa parte da escrita usam a próclise: «Eu me chamo Ana», «A Maria me disse», e até no começo da frase: «Me chamo Ana». A norma culta dos dois países concorda num ponto: não se começa frase com pronome átono. Onde divergem: com sujeito antes do verbo, a norma brasileira aceita bem a próclise («Eu me chamo»); a portuguesa pede ênclise («Eu chamo-me»).',
+        text: 'Em Portugal, numa frase afirmativa simples, o pronome átono (me, te, se, nos, vos, lhe, o, a…) vai depois do verbo, ligado por hífen, mesmo quando há sujeito antes: “Eu chamo-me Ana”, “A Maria disse-me”. No Brasil, a fala e boa parte da escrita usam a próclise: “Eu me chamo Ana”, “A Maria me disse”, e até no começo da frase: “Me chamo Ana”. A norma culta dos dois países concorda num ponto: não se começa frase com pronome átono. Onde divergem: com sujeito antes do verbo, a norma brasileira aceita bem a próclise (“Eu me chamo”); a portuguesa pede ênclise (“Eu chamo-me”).',
         table: {
           head: ['Portugal', 'Brasil (fala)', 'Norma culta dos dois'],
           rows: [
@@ -678,8 +678,8 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'Quando o pronome vem antes: as palavras que «puxam»',
-        text: 'A próclise é obrigatória em Portugal (e na norma culta dos dois países) quando antes do verbo há: palavra negativa (não, nunca, ninguém, nada, nem); certos advérbios (já, ainda, sempre, também, só, talvez, bem, aqui); pronome ou advérbio interrogativo (que, quem, onde, quando, como, porque); pronome relativo (que, quem, onde); conjunção subordinativa (que, se, quando, porque, embora); e quantificadores como todos, tudo, alguém. Nestes casos, dizer «Não diz-me» é um erro grave para ouvidos portugueses.',
+        heading: 'Quando o pronome vem antes: as palavras que “puxam”',
+        text: 'A próclise é obrigatória em Portugal (e na norma culta dos dois países) quando antes do verbo há: palavra negativa (não, nunca, ninguém, nada, nem); certos advérbios (já, ainda, sempre, também, só, talvez, bem, aqui); pronome ou advérbio interrogativo (que, quem, onde, quando, como, porque); pronome relativo (que, quem, onde); conjunção subordinativa (que, se, quando, porque, embora); e quantificadores como todos, tudo, alguém. Nestes casos, dizer “Não diz-me” é um erro grave para ouvidos portugueses.',
         table: {
           head: ['O que puxa', 'Exemplo em Portugal'],
           rows: [
@@ -701,7 +701,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Com dois verbos e com o futuro',
-        text: 'Com locução verbal (poder, querer, ir + infinitivo), Portugal põe o pronome no primeiro verbo com hífen ou no infinitivo com hífen: «Vou-te dizer» ou «Vou dizer-te». O Brasil prefere o pronome solto entre os dois: «Vou te dizer». Com negação, o pronome sobe: «Não te vou dizer». Com o futuro e o condicional a ênclise não é possível («direi-te» não existe): na fala usa-se «vou dizer-te»; no registo culto, a mesóclise («dir-te-ei»), que se estuda no B1.',
+        text: 'Com locução verbal (poder, querer, ir + infinitivo), Portugal põe o pronome no primeiro verbo com hífen ou no infinitivo com hífen: “Vou-te dizer” ou “Vou dizer-te”. O Brasil prefere o pronome solto entre os dois: “Vou te dizer”. Com negação, o pronome sobe: “Não te vou dizer”. Com o futuro e o condicional a ênclise não é possível (“direi-te” não existe): na fala usa-se “vou dizer-te”; no registo culto, a mesóclise (“dir-te-ei”), que se estuda no B1.',
         examples: [
           ['Posso-te pedir um favor?', 'Posso te pedir um favor?'],
           ['Vou dizer-te uma coisa.', 'Vou te dizer uma coisa.'],
@@ -710,16 +710,16 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Começar a frase com pronome («Me chama às oito»). Em Portugal (e na norma culta dos dois países) é «Chama-me às oito».',
-      'Aplicar a ênclise depois de «não»: «Não diz-me» está errado. A negação puxa o pronome: «Não me digas».',
-      'Esquecer que «já», «também», «sempre» e «só» também puxam: «Já te disse», não «Já disse-te».',
-      'Achar que o sujeito antes do verbo pede próclise em Portugal. Lá é «Eu chamo-me», «A Ana deu-me».',
-      'Esquecer o hífen: «Chamo me Ana» não existe. Na ênclise o pronome vai sempre ligado por hífen.',
+      'Começar a frase com pronome (“Me chama às oito”). Em Portugal (e na norma culta dos dois países) é “Chama-me às oito”.',
+      'Aplicar a ênclise depois de “não”: “Não diz-me” está errado. A negação puxa o pronome: “Não me digas”.',
+      'Esquecer que “já”, “também”, “sempre” e “só” também puxam: “Já te disse”, não “Já disse-te”.',
+      'Achar que o sujeito antes do verbo pede próclise em Portugal. Lá é “Eu chamo-me”, “A Ana deu-me”.',
+      'Esquecer o hífen: “Chamo me Ana” não existe. Na ênclise o pronome vai sempre ligado por hífen.',
     ],
     quiz: [
       {
         question: 'Como se apresenta alguém em Portugal?',
-        options: ['Chamo-me Joana.', '«Me chamo Joana.»', 'Chamo me Joana.'],
+        options: ['Chamo-me Joana.', '“Me chamo Joana.”', 'Chamo me Joana.'],
         answer: 'Chamo-me Joana.',
         explanation: 'Frase afirmativa simples: ênclise com hífen. E não se começa frase com pronome átono (norma culta dos dois países).',
       },
@@ -730,22 +730,22 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         explanation: 'A negação obriga a próclise: não me diz.',
       },
       {
-        question: 'Complete no padrão europeu: «Já ___ que não posso.»',
+        question: 'Complete no padrão europeu: “Já ___ que não posso.”',
         options: ['te disse', 'disse-te', 'disse te'],
         answer: 'te disse',
-        explanation: '«Já» é um dos advérbios que puxam o pronome para antes do verbo.',
+        explanation: '“Já” é um dos advérbios que puxam o pronome para antes do verbo.',
       },
       {
         question: 'Qual é a forma mais natural em Portugal?',
         options: ['Eu sinto-me cansado.', 'Eu me sinto cansado.', 'Eu sinto me cansado.'],
         answer: 'Eu sinto-me cansado.',
-        explanation: 'Em Portugal, sujeito antes do verbo não puxa o pronome: ênclise. No Brasil, «Eu me sinto» é o normal e aceito na norma culta brasileira.',
+        explanation: 'Em Portugal, sujeito antes do verbo não puxa o pronome: ênclise. No Brasil, “Eu me sinto” é o normal e aceito na norma culta brasileira.',
       },
       {
         question: 'Qual frase exige próclise?',
         options: ['O livro que ___ deste é ótimo.', 'Dá-___ o livro.', 'A Ana deu-___ o livro.'],
         answer: 'O livro que ___ deste é ótimo.',
-        explanation: 'O pronome relativo «que» puxa o pronome: «que me deste».',
+        explanation: 'O pronome relativo “que” puxa o pronome: “que me deste”.',
       },
     ],
   },
@@ -754,11 +754,11 @@ export const GRAMMAR_PT: GrammarTopic[] = [
     level: 'A2.1',
     title: 'O, a, lhe e as contrações: vi-o, dá-mo, já lho disse',
     emoji: '🧩',
-    summary: 'Em Portugal os pronomes «o», «a» e «lhe» estão vivos na fala: «Vi-o ontem», «Dei-lhe o livro». E juntam-se: me + o = mo, te + o = to, lhe + o = lho («Dá-mo!»). No Brasil a fala prefere «vi ele» e «dei o livro para ele».',
+    summary: 'Em Portugal os pronomes “o”, “a” e “lhe” estão vivos na fala: “Vi-o ontem”, “Dei-lhe o livro”. E juntam-se: me + o = mo, te + o = to, lhe + o = lho (“Dá-mo!”). No Brasil a fala prefere “vi ele” e “dei o livro para ele”.',
     sections: [
       {
         heading: 'Objeto direto (o, a) e indireto (lhe)',
-        text: '«O, a, os, as» substituem o objeto direto (quem ou o que); «lhe, lhes» substituem o objeto indireto (a quem). Esta distinção é regra da norma culta dos dois países. Em Portugal ela é respeitada também na fala; no Brasil a fala usa «ele» como objeto («Vi ele») e às vezes «lhe» como objeto direto de «você» («Eu lhe vi»), usos coloquiais que a norma culta brasileira não aceita na escrita formal.',
+        text: '“O, a, os, as” substituem o objeto direto (quem ou o que); “lhe, lhes” substituem o objeto indireto (a quem). Esta distinção é regra da norma culta dos dois países. Em Portugal ela é respeitada também na fala; no Brasil a fala usa “ele” como objeto (“Vi ele”) e às vezes “lhe” como objeto direto de “você” (“Eu lhe vi”), usos coloquiais que a norma culta brasileira não aceita na escrita formal.',
         table: {
           head: ['Portugal (e norma culta)', 'Brasil (fala)', 'Função'],
           rows: [
@@ -777,7 +777,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Lo, la, no, na: quando o verbo muda',
-        text: 'Depois de verbo terminado em -r, -s ou -z, a consoante cai e o pronome vira «lo, la, los, las»: comprar + o = comprá-lo; fazemos + o = fazemo-lo; faz + o = fá-lo. Depois de som nasal (-m, -ão, -õe), vira «no, na, nos, nas»: viram + a = viram-na; dão + o = dão-no; põe + o = põe-no. Isso vale nos dois países na norma culta; em Portugal aparece também na fala do dia a dia.',
+        text: 'Depois de verbo terminado em -r, -s ou -z, a consoante cai e o pronome vira “lo, la, los, las”: comprar + o = comprá-lo; fazemos + o = fazemo-lo; faz + o = fá-lo. Depois de som nasal (-m, -ão, -õe), vira “no, na, nos, nas”: viram + a = viram-na; dão + o = dão-no; põe + o = põe-no. Isso vale nos dois países na norma culta; em Portugal aparece também na fala do dia a dia.',
         table: {
           head: ['Verbo + pronome', 'Resultado', 'Brasil (fala)'],
           rows: [
@@ -797,7 +797,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Contrações: mo, to, lho',
-        text: 'Quando um pronome indireto (me, te, lhe, nos, vos, lhes) se encontra com um direto (o, a, os, as), eles se fundem: me + o = mo, te + a = ta, lhe + os = lhos. «Lho» serve para lhe e lhes. Em Portugal essas formas são correntes na fala («Dá-mo!», «Já to disse»); no Brasil praticamente não se usam nem na escrita formal, onde se prefere repetir o objeto ou omiti-lo («Me dá isso!», «Já te disse»). São corretas nos dois países; só o uso difere.',
+        text: 'Quando um pronome indireto (me, te, lhe, nos, vos, lhes) se encontra com um direto (o, a, os, as), eles se fundem: me + o = mo, te + a = ta, lhe + os = lhos. “Lho” serve para lhe e lhes. Em Portugal essas formas são correntes na fala (“Dá-mo!”, “Já to disse”); no Brasil praticamente não se usam nem na escrita formal, onde se prefere repetir o objeto ou omiti-lo (“Me dá isso!”, “Já te disse”). São corretas nos dois países; só o uso difere.',
         table: {
           head: ['Combinação', 'Forma', 'Exemplo', 'Brasil'],
           rows: [
@@ -816,42 +816,42 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Dizer «Vi ele» num texto europeu ou formal: em Portugal e na norma culta dos dois países é «Vi-o».',
-      'Usar «lhe» como objeto direto («Eu lhe vi», «Eu lhe amo»). «Lhe» é objeto indireto: «Eu vi-o», «Amo-a»; «Dei-lhe um presente».',
-      'Esquecer que o -r cai e o verbo ganha acento: «comprar-o» não existe; é «comprá-lo». O mesmo com «fazê-lo», «parti-lo».',
-      'Estranhar «Dá-mo!» ou «Já to disse»: são formas vivas em Portugal, não linguagem antiquada.',
-      'Pôr o pronome contraído depois de negação: «Não dá-mo». A negação puxa: «Não mo dês».',
+      'Dizer “Vi ele” num texto europeu ou formal: em Portugal e na norma culta dos dois países é “Vi-o”.',
+      'Usar “lhe” como objeto direto (“Eu lhe vi”, “Eu lhe amo”). “Lhe” é objeto indireto: “Eu vi-o”, “Amo-a”; “Dei-lhe um presente”.',
+      'Esquecer que o -r cai e o verbo ganha acento: “comprar-o” não existe; é “comprá-lo”. O mesmo com “fazê-lo”, “parti-lo”.',
+      'Estranhar “Dá-mo!” ou “Já to disse”: são formas vivas em Portugal, não linguagem antiquada.',
+      'Pôr o pronome contraído depois de negação: “Não dá-mo”. A negação puxa: “Não mo dês”.',
     ],
     quiz: [
       {
-        question: 'Substitua o objeto: «Vi o Pedro ontem.»',
+        question: 'Substitua o objeto: “Vi o Pedro ontem.”',
         options: ['Vi-o ontem.', 'Vi-lhe ontem.', 'Vi-lo ontem.'],
         answer: 'Vi-o ontem.',
-        explanation: '«Ver» pede objeto direto: o. «Lhe» é indireto. «Lo» só depois de -r, -s, -z.',
+        explanation: '“Ver” pede objeto direto: o. “Lhe” é indireto. “Lo” só depois de -r, -s, -z.',
       },
       {
-        question: 'Complete: «O bolo? Vou ___ para a festa.»',
+        question: 'Complete: “O bolo? Vou ___ para a festa.”',
         options: ['fazê-lo', 'fazer-o', 'faze-lo'],
         answer: 'fazê-lo',
-        explanation: 'O -r cai, o pronome vira «lo» e o verbo em -er ganha circunflexo: fazê-lo.',
+        explanation: 'O -r cai, o pronome vira “lo” e o verbo em -er ganha circunflexo: fazê-lo.',
       },
       {
-        question: 'O que quer dizer «Dá-mo!»?',
+        question: 'O que quer dizer “Dá-mo!”?',
         options: ['Dá-me isso!', 'Dá-lhe isso!', 'Dá-te isso!'],
         answer: 'Dá-me isso!',
-        explanation: 'mo = me + o. «Dá-mo» = dá-me isso (o objeto masculino já conhecido).',
+        explanation: 'mo = me + o. “Dá-mo” = dá-me isso (o objeto masculino já conhecido).',
       },
       {
-        question: 'Complete: «Os meninos estão na praia; os pais viram-___ lá.»',
+        question: 'Complete: “Os meninos estão na praia; os pais viram-___ lá.”',
         options: ['nos', 'os', 'los'],
         answer: 'nos',
-        explanation: 'Depois de som nasal (viram), o pronome vira «no, na, nos, nas»: viram-nos.',
+        explanation: 'Depois de som nasal (viram), o pronome vira “no, na, nos, nas”: viram-nos.',
       },
       {
-        question: 'Qual frase usa «lhe» corretamente?',
+        question: 'Qual frase usa “lhe” corretamente?',
         options: ['Telefonei-lhe ontem.', 'Conheço-lhe há anos.', 'Vi-lhe na rua.'],
         answer: 'Telefonei-lhe ontem.',
-        explanation: 'Em Portugal, «telefonar a alguém» pede objeto indireto: telefonei-lhe. «Conhecer» e «ver» pedem objeto direto: conheço-o, vi-o.',
+        explanation: 'Em Portugal, “telefonar a alguém” pede objeto indireto: telefonei-lhe. “Conhecer” e “ver” pedem objeto direto: conheço-o, vi-o.',
       },
     ],
   },
@@ -859,13 +859,13 @@ export const GRAMMAR_PT: GrammarTopic[] = [
   {
     id: 'pt-g9',
     level: 'A2.2',
-    title: 'Pretérito perfeito × «tenho feito»: falei, tenho falado e o «falámos»',
+    title: 'Pretérito perfeito × “tenho feito”: falei, tenho falado e o “falámos”',
     emoji: '📅',
-    summary: '«Fiz» é uma ação acabada; «tenho feito» é algo que se repete ou dura até agora. A regra é a mesma nos dois países, mas os portugueses usam o composto com mais frequência. E em Portugal «falámos» (passado) não é «falamos» (presente).',
+    summary: '“Fiz” é uma ação acabada; “tenho feito” é algo que se repete ou dura até agora. A regra é a mesma nos dois países, mas os portugueses usam o composto com mais frequência. E em Portugal “falámos” (passado) não é “falamos” (presente).',
     sections: [
       {
         heading: 'O pretérito perfeito simples',
-        text: 'O perfeito simples conta uma ação concluída: «Ontem jantei em Évora». Os usos são iguais nos dois países. Duas diferenças de forma: a 2ª pessoa (tu falaste, tu comeste) é corrente em Portugal; e na 1ª pessoa do plural dos verbos em -ar, Portugal escreve e pronuncia «falámos» (passado, com o «a» aberto) diferente de «falamos» (presente, com o «a» fechado). O Acordo de 1990 deixou esse acento facultativo; em Portugal ele continua a ser a norma de uso, no Brasil não se escreve.',
+        text: 'O perfeito simples conta uma ação concluída: “Ontem jantei em Évora”. Os usos são iguais nos dois países. Duas diferenças de forma: a 2ª pessoa (tu falaste, tu comeste) é corrente em Portugal; e na 1ª pessoa do plural dos verbos em -ar, Portugal escreve e pronuncia “falámos” (passado, com o “a” aberto) diferente de “falamos” (presente, com o “a” fechado). O Acordo de 1990 deixou esse acento facultativo; em Portugal ele continua a ser a norma de uso, no Brasil não se escreve.',
         table: {
           head: ['Pessoa', 'falar', 'comer', 'partir', 'fazer', 'ir / ser'],
           rows: [
@@ -883,8 +883,8 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         ],
       },
       {
-        heading: '«Tenho feito»: o que se repete até agora',
-        text: 'O pretérito perfeito composto (ter no presente + particípio) não é um passado acabado: é algo que se repete ou continua desde um tempo até agora. «Tenho trabalhado muito» = ultimamente trabalho muito, e continuo. Isso vale nos dois países e é um ponto em que o português difere do espanhol e do inglês, onde «he hecho» / «I have done» valem uma ação única. Para o brasileiro a novidade é a frequência: em Portugal ouve-se «tenho feito» a toda a hora, onde o Brasil diria «ando fazendo» ou «tenho feito» só na escrita.',
+        heading: '“Tenho feito”: o que se repete até agora',
+        text: 'O pretérito perfeito composto (ter no presente + particípio) não é um passado acabado: é algo que se repete ou continua desde um tempo até agora. “Tenho trabalhado muito” = ultimamente trabalho muito, e continuo. Isso vale nos dois países e é um ponto em que o português difere do espanhol e do inglês, onde “he hecho” / “I have done” valem uma ação única. Para o brasileiro a novidade é a frequência: em Portugal ouve-se “tenho feito” a toda a hora, onde o Brasil diria “ando fazendo” ou “tenho feito” só na escrita.',
         table: {
           head: ['Frase', 'Sentido', 'Brasil (fala)'],
           rows: [
@@ -904,10 +904,10 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar «tenho feito» para uma ação única, como no espanhol ou no inglês: «Tenho visto esse filme ontem» é errado nos dois países. É «Vi esse filme ontem».',
-      'Conjugar o passado de «tu» com a terminação -sse («tu falasse», «tu fosse»). A 2ª pessoa do perfeito é -ste: falaste, foste, fizeste. «Falasse» é o conjuntivo.',
-      'Escrever «falamos» para o passado num texto europeu: em Portugal usa-se «falámos», «chegámos», «ficámos». No Brasil, sem acento.',
-      'Confundir «Estive doente» (acabou) com «Tenho estado doente» (continua): quem diz o segundo ainda não está bom.',
+      'Usar “tenho feito” para uma ação única, como no espanhol ou no inglês: “Tenho visto esse filme ontem” é errado nos dois países. É “Vi esse filme ontem”.',
+      'Conjugar o passado de “tu” com a terminação -sse (“tu falasse”, “tu fosse”). A 2ª pessoa do perfeito é -ste: falaste, foste, fizeste. “Falasse” é o conjuntivo.',
+      'Escrever “falamos” para o passado num texto europeu: em Portugal usa-se “falámos”, “chegámos”, “ficámos”. No Brasil, sem acento.',
+      'Confundir “Estive doente” (acabou) com “Tenho estado doente” (continua): quem diz o segundo ainda não está bom.',
     ],
     quiz: [
       {
@@ -917,28 +917,28 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         explanation: 'O perfeito composto indica repetição ou continuidade até o presente. Vale nos dois países.',
       },
       {
-        question: 'Complete no padrão europeu: «Ontem ___ com o diretor.» (nós, falar)',
+        question: 'Complete no padrão europeu: “Ontem ___ com o diretor.” (nós, falar)',
         options: ['falámos', 'falamos', 'falemos'],
         answer: 'falámos',
-        explanation: 'Em Portugal o passado leva acento: falámos. «Falamos» é presente; «falemos», conjuntivo.',
+        explanation: 'Em Portugal o passado leva acento: falámos. “Falamos” é presente; “falemos”, conjuntivo.',
       },
       {
-        question: 'Complete: «Tu ___ ao concerto no sábado?» (ir, passado)',
+        question: 'Complete: “Tu ___ ao concerto no sábado?” (ir, passado)',
         options: ['foste', 'fosse', 'foi'],
         answer: 'foste',
-        explanation: 'Perfeito, 2ª pessoa: foste. «Fosse» é o imperfeito do conjuntivo; «foi» é de ele/você.',
+        explanation: 'Perfeito, 2ª pessoa: foste. “Fosse” é o imperfeito do conjuntivo; “foi” é de ele/você.',
       },
       {
         question: 'Qual frase está errada nos dois países?',
         options: ['Tenho visto o filme ontem.', 'Vi o filme ontem.', 'Tenho visto muitos filmes.'],
         answer: 'Tenho visto o filme ontem.',
-        explanation: 'Com uma ação única e datada («ontem») usa-se o perfeito simples: vi.',
+        explanation: 'Com uma ação única e datada (“ontem”) usa-se o perfeito simples: vi.',
       },
       {
-        question: '«Tem chovido muito no Minho» quer dizer que...',
+        question: '“Tem chovido muito no Minho” quer dizer que...',
         options: ['choveu um dia e parou', 'chove com frequência nos últimos tempos', 'vai chover'],
         answer: 'chove com frequência nos últimos tempos',
-        explanation: '«Tem chovido» = tem chovido repetidamente até agora.',
+        explanation: '“Tem chovido” = tem chovido repetidamente até agora.',
       },
     ],
   },
@@ -947,11 +947,11 @@ export const GRAMMAR_PT: GrammarTopic[] = [
     level: 'A2.2',
     title: 'O imperfeito de cortesia: queria um café, podia ajudar-me?',
     emoji: '☕',
-    summary: 'Para pedir com educação, o português (dos dois lados) troca o presente pelo imperfeito: «Queria um café». Em Portugal isso é a forma normal de pedir em qualquer balcão, e aparece também em «Podia…?», «Importava-se de…?» e até no curioso «Era um galão».',
+    summary: 'Para pedir com educação, o português (dos dois lados) troca o presente pelo imperfeito: “Queria um café”. Em Portugal isso é a forma normal de pedir em qualquer balcão, e aparece também em “Podia…?”, “Importava-se de…?” e até no curioso “Era um galão”.',
     sections: [
       {
         heading: 'Pedir com o imperfeito',
-        text: '«Quero um café» é direto; «Queria um café» suaviza o pedido. Este imperfeito de cortesia existe nos dois países; o condicional («quereria») soa pesado e quase não se usa. No Brasil também se diz muito «Eu queria…», «Gostaria de…» ou, informalmente, «Me vê um café?»; em Portugal o normal no balcão é «Queria…», seguido de «se faz favor». Na fala portuguesa ouve-se até «Era um galão e uma torrada», que quer dizer simplesmente «Eu queria um galão e uma torrada».',
+        text: '“Quero um café” é direto; “Queria um café” suaviza o pedido. Este imperfeito de cortesia existe nos dois países; o condicional (“quereria”) soa pesado e quase não se usa. No Brasil também se diz muito “Eu queria…”, “Gostaria de…” ou, informalmente, “Me vê um café?”; em Portugal o normal no balcão é “Queria…”, seguido de “se faz favor”. Na fala portuguesa ouve-se até “Era um galão e uma torrada”, que quer dizer simplesmente “Eu queria um galão e uma torrada”.',
         table: {
           head: ['Portugal', 'Brasil', 'Registro'],
           rows: [
@@ -969,7 +969,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Podia…? Importava-se de…?',
-        text: 'O mesmo imperfeito serve para perguntas corteses: «Podia dizer-me as horas?» (= poderia). Em Portugal é muito comum «Importa-se de…?» ou, ainda mais delicado, «Importava-se de…?» (= o senhor se incomodaria de…?). Repare na regência com «de», que o português europeu mantém também antes do infinitivo: «precisar de sair», «importar-se de fechar». No Brasil é comum «preciso sair», sem preposição; a norma culta aceita as duas formas antes de infinitivo.',
+        text: 'O mesmo imperfeito serve para perguntas corteses: “Podia dizer-me as horas?” (= poderia). Em Portugal é muito comum “Importa-se de…?” ou, ainda mais delicado, “Importava-se de…?” (= o senhor se incomodaria de…?). Repare na regência com “de”, que o português europeu mantém também antes do infinitivo: “precisar de sair”, “importar-se de fechar”. No Brasil é comum “preciso sair”, sem preposição; a norma culta aceita as duas formas antes de infinitivo.',
         table: {
           head: ['Portugal', 'Brasil'],
           rows: [
@@ -987,7 +987,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'O imperfeito no lugar do condicional',
-        text: 'Nos dois países, a fala usa o imperfeito também em frases hipotéticas: «Se eu tivesse tempo, ia contigo» (= iria). Na escrita formal a norma culta de ambos prefere o condicional: «Se tivesse tempo, iria contigo». Em Portugal essa troca é tão comum na conversa que «Gostava de…» substitui quase sempre «Gostaria de…».',
+        text: 'Nos dois países, a fala usa o imperfeito também em frases hipotéticas: “Se eu tivesse tempo, ia contigo” (= iria). Na escrita formal a norma culta de ambos prefere o condicional: “Se tivesse tempo, iria contigo”. Em Portugal essa troca é tão comum na conversa que “Gostava de…” substitui quase sempre “Gostaria de…”.',
         examples: [
           ['Gostava de visitar a Madeira.', 'Gostaria de visitar a Madeira.'],
           ['Se pudesse, ficava mais uma semana.', 'Se eu pudesse, ficaria mais uma semana.'],
@@ -996,42 +996,42 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pedir com «Quero…» seco: não é errado, mas soa brusco num café português. Use «Queria…, se faz favor».',
-      'Estranhar «Era um café»: não é passado, é um pedido. Significa «Queria um café».',
-      'Tirar o «de» do «precisar» num texto europeu: em Portugal diz-se «preciso de sair»; no Brasil «preciso sair» é normal, e a norma culta aceita as duas.',
-      'Usar «quereria»: é correto, mas raríssimo nos dois países. O imperfeito ou «gostaria / gostava» soam naturais.',
-      'Achar que «Gostava de ir» é passado. Em Portugal, na maioria das vezes, é um desejo: «gostaria de ir».',
+      'Pedir com “Quero…” seco: não é errado, mas soa brusco num café português. Use “Queria…, se faz favor”.',
+      'Estranhar “Era um café”: não é passado, é um pedido. Significa “Queria um café”.',
+      'Tirar o “de” do “precisar” num texto europeu: em Portugal diz-se “preciso de sair”; no Brasil “preciso sair” é normal, e a norma culta aceita as duas.',
+      'Usar “quereria”: é correto, mas raríssimo nos dois países. O imperfeito ou “gostaria / gostava” soam naturais.',
+      'Achar que “Gostava de ir” é passado. Em Portugal, na maioria das vezes, é um desejo: “gostaria de ir”.',
     ],
     quiz: [
       {
         question: 'Qual é a forma mais natural de pedir um café num balcão de Lisboa?',
-        options: ['Queria um café, se faz favor.', 'Quereria um café.', '«Me vê um café.»'],
+        options: ['Queria um café, se faz favor.', 'Quereria um café.', '“Me vê um café.”'],
         answer: 'Queria um café, se faz favor.',
-        explanation: 'O imperfeito de cortesia + «se faz favor» é a fórmula padrão. «Quereria» é pesado; «me vê» é brasileiro e informal.',
+        explanation: 'O imperfeito de cortesia + “se faz favor” é a fórmula padrão. “Quereria” é pesado; “me vê” é brasileiro e informal.',
       },
       {
-        question: 'Um cliente diz ao empregado: «Era uma bica.» O que ele quer?',
+        question: 'Um cliente diz ao empregado: “Era uma bica.” O que ele quer?',
         options: ['Contar que tomou uma bica', 'Pedir uma bica', 'Reclamar da bica'],
         answer: 'Pedir uma bica',
-        explanation: '«Era…» no balcão é um pedido cortês e informal, típico de Portugal.',
+        explanation: '“Era…” no balcão é um pedido cortês e informal, típico de Portugal.',
       },
       {
-        question: 'Complete no padrão europeu: «Preciso ___ ir ao banco.»',
+        question: 'Complete no padrão europeu: “Preciso ___ ir ao banco.”',
         options: ['de', 'a', 'em'],
         answer: 'de',
-        explanation: 'Em Portugal «precisar de» mantém a preposição antes de infinitivo. No Brasil, «preciso ir» também é aceito pela norma culta.',
+        explanation: 'Em Portugal “precisar de” mantém a preposição antes de infinitivo. No Brasil, “preciso ir” também é aceito pela norma culta.',
       },
       {
-        question: '«Gostava de conhecer Timor-Leste» significa...',
+        question: '“Gostava de conhecer Timor-Leste” significa...',
         options: ['Eu gostaria de conhecer Timor-Leste.', 'Antes eu gostava de Timor-Leste.', 'Conheci Timor-Leste.'],
         answer: 'Eu gostaria de conhecer Timor-Leste.',
-        explanation: 'Em Portugal o imperfeito «gostava» substitui muitas vezes o condicional «gostaria».',
+        explanation: 'Em Portugal o imperfeito “gostava” substitui muitas vezes o condicional “gostaria”.',
       },
       {
         question: 'Qual é a pergunta mais delicada?',
         options: ['Importava-se de repetir?', 'Repete!', 'Tens de repetir.'],
         answer: 'Importava-se de repetir?',
-        explanation: '«Importava-se de…?» é o pedido mais cortês: imperfeito + 3ª pessoa formal.',
+        explanation: '“Importava-se de…?” é o pedido mais cortês: imperfeito + 3ª pessoa formal.',
       },
     ],
   },
@@ -1040,11 +1040,11 @@ export const GRAMMAR_PT: GrammarTopic[] = [
     level: 'A2.2',
     title: 'Tratamento na 3ª pessoa: o senhor quer…?, a menina, consigo',
     emoji: '🎩',
-    summary: 'No formal, Portugal fala com a pessoa como se falasse dela: «O senhor quer…?», «A Dona Rosa já almoçou?», «A menina deseja mais alguma coisa?». Tudo na 3ª pessoa, com os pronomes a acompanhar: o, a, lhe, seu, e o famoso «consigo».',
+    summary: 'No formal, Portugal fala com a pessoa como se falasse dela: “O senhor quer…?”, “A Dona Rosa já almoçou?”, “A menina deseja mais alguma coisa?”. Tudo na 3ª pessoa, com os pronomes a acompanhar: o, a, lhe, seu, e o famoso “consigo”.',
     sections: [
       {
         heading: 'Quem é tratado na 3ª pessoa',
-        text: 'O verbo vai na 3ª pessoa com «o senhor / a senhora», com o nome («O Paulo quer vir?»), com «Dona» + nome próprio para senhoras («A Dona Lurdes está bem?») e com «a menina» ou «o menino» para jovens, sobretudo no comércio. Também é muito comum omitir tudo e deixar só o verbo: «Deseja mais alguma coisa?». No Brasil o formal usa «o senhor / a senhora», mas o dia a dia usa «você»; tratar a pessoa pelo nome na 3ª pessoa soa estranho. E «a menina», em Portugal, é tratamento de cortesia para uma moça, sem nada de infantil.',
+        text: 'O verbo vai na 3ª pessoa com “o senhor / a senhora”, com o nome (“O Paulo quer vir?”), com “Dona” + nome próprio para senhoras (“A Dona Lurdes está bem?”) e com “a menina” ou “o menino” para jovens, sobretudo no comércio. Também é muito comum omitir tudo e deixar só o verbo: “Deseja mais alguma coisa?”. No Brasil o formal usa “o senhor / a senhora”, mas o dia a dia usa “você”; tratar a pessoa pelo nome na 3ª pessoa soa estranho. E “a menina”, em Portugal, é tratamento de cortesia para uma moça, sem nada de infantil.',
         table: {
           head: ['Portugal', 'Brasil', 'Quem'],
           rows: [
@@ -1064,7 +1064,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Os pronomes que acompanham: o, lhe, seu, consigo',
-        text: 'Quem trata alguém na 3ª pessoa tem de manter todos os pronomes na 3ª pessoa: objeto direto «o / a» («Posso ajudá-lo?»), indireto «lhe» («Trago-lhe a conta»), possessivo «seu / sua» («O seu café») e, depois de «com», «consigo» («Posso falar consigo?»). Em Portugal «consigo» é o «com você / com o senhor» do dia a dia; no Brasil «consigo» é quase só reflexivo («levou o livro consigo»), e a forma usual é «com você». As duas normas aceitam «consigo» reflexivo; o «consigo» de tratamento é característico de Portugal.',
+        text: 'Quem trata alguém na 3ª pessoa tem de manter todos os pronomes na 3ª pessoa: objeto direto “o / a” (“Posso ajudá-lo?”), indireto “lhe” (“Trago-lhe a conta”), possessivo “seu / sua” (“O seu café”) e, depois de “com”, “consigo” (“Posso falar consigo?”). Em Portugal “consigo” é o “com você / com o senhor” do dia a dia; no Brasil “consigo” é quase só reflexivo (“levou o livro consigo”), e a forma usual é “com você”. As duas normas aceitam “consigo” reflexivo; o “consigo” de tratamento é característico de Portugal.',
         table: {
           head: ['Função', 'Portugal', 'Brasil'],
           rows: [
@@ -1084,7 +1084,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Diga! Faça favor! O imperativo formal',
-        text: 'O imperativo de tratamento formal usa as formas do conjuntivo na 3ª pessoa: diga, faça, venha, sente-se, desculpe. Em Portugal «Diga!» é a forma normal de um funcionário perguntar o que o cliente deseja, e «Faça favor» serve para «Pode entrar», «Fique à vontade» ou «Aqui está». Com «tu» o imperativo é outro: diz, faz, vem, senta-te, desculpa. No Brasil a fala mistura as duas séries («Me diz», «Senta aí» para «você»); a norma culta dos dois países pede a série da 3ª pessoa para «você» e «o senhor».',
+        text: 'O imperativo de tratamento formal usa as formas do conjuntivo na 3ª pessoa: diga, faça, venha, sente-se, desculpe. Em Portugal “Diga!” é a forma normal de um funcionário perguntar o que o cliente deseja, e “Faça favor” serve para “Pode entrar”, “Fique à vontade” ou “Aqui está”. Com “tu” o imperativo é outro: diz, faz, vem, senta-te, desculpa. No Brasil a fala mistura as duas séries (“Me diz”, “Senta aí” para “você”); a norma culta dos dois países pede a série da 3ª pessoa para “você” e “o senhor”.',
         table: {
           head: ['Verbo', 'tu', 'o senhor / você'],
           rows: [
@@ -1103,42 +1103,42 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Misturar tratamentos: «O senhor quer que eu te ajude?». Tratamento na 3ª pessoa pede pronomes da 3ª: «Quer que o ajude?». A uniformidade é regra da norma culta nos dois países.',
-      'Estranhar «consigo» dito a você: «Posso falar consigo?» é «Posso falar com você/com o senhor?».',
-      'Achar que «a menina» é infantil ou desrespeitoso: em Portugal é cortesia comum para uma moça.',
-      'Usar o imperativo de «tu» com um desconhecido: «Senta-te!» é íntimo; com o senhor, «Sente-se».',
-      'Ofender-se com «Diga!» no balcão: não é rispidez, é a forma habitual de perguntar em que pode ajudar.',
+      'Misturar tratamentos: “O senhor quer que eu te ajude?”. Tratamento na 3ª pessoa pede pronomes da 3ª: “Quer que o ajude?”. A uniformidade é regra da norma culta nos dois países.',
+      'Estranhar “consigo” dito a você: “Posso falar consigo?” é “Posso falar com você/com o senhor?”.',
+      'Achar que “a menina” é infantil ou desrespeitoso: em Portugal é cortesia comum para uma moça.',
+      'Usar o imperativo de “tu” com um desconhecido: “Senta-te!” é íntimo; com o senhor, “Sente-se”.',
+      'Ofender-se com “Diga!” no balcão: não é rispidez, é a forma habitual de perguntar em que pode ajudar.',
     ],
     quiz: [
       {
         question: 'Um empregado de mesa quer levar a conta a uma senhora. Qual é a frase certa?',
         options: ['Trago-lhe já a conta.', 'Trago-te já a conta.', 'Trago já a conta a vós.'],
         answer: 'Trago-lhe já a conta.',
-        explanation: 'No tratamento formal, o objeto indireto é «lhe». «Te» é de «tu».',
+        explanation: 'No tratamento formal, o objeto indireto é “lhe”. “Te” é de “tu”.',
       },
       {
-        question: 'O que significa «Posso falar consigo?» em Portugal?',
+        question: 'O que significa “Posso falar consigo?” em Portugal?',
         options: ['Posso falar com você/com o senhor?', 'Posso falar comigo mesmo?', 'Consigo falar?'],
         answer: 'Posso falar com você/com o senhor?',
-        explanation: 'Em Portugal «consigo» é o pronome de tratamento depois de «com».',
+        explanation: 'Em Portugal “consigo” é o pronome de tratamento depois de “com”.',
       },
       {
-        question: 'Qual é o imperativo formal de «sentar-se»?',
+        question: 'Qual é o imperativo formal de “sentar-se”?',
         options: ['Sente-se!', 'Senta-te!', 'Sentai-vos!'],
         answer: 'Sente-se!',
-        explanation: 'Formal (o senhor, você): sente-se. «Senta-te» é de «tu»; «sentai-vos» é de «vós».',
+        explanation: 'Formal (o senhor, você): sente-se. “Senta-te” é de “tu”; “sentai-vos” é de “vós”.',
       },
       {
         question: 'Qual frase mantém o tratamento uniforme?',
         options: ['O senhor quer que o ajude?', 'O senhor quer que te ajude?', 'Tu quer que o ajude?'],
         answer: 'O senhor quer que o ajude?',
-        explanation: '«O senhor» pede pronomes da 3ª pessoa: o, lhe, seu, consigo.',
+        explanation: '“O senhor” pede pronomes da 3ª pessoa: o, lhe, seu, consigo.',
       },
       {
-        question: 'Numa loja do Porto, a funcionária diz «A menina precisa de ajuda?». Ela está...',
+        question: 'Numa loja do Porto, a funcionária diz “A menina precisa de ajuda?”. Ela está...',
         options: ['a tratá-la com cortesia', 'a chamá-la de criança', 'a ser irónica'],
         answer: 'a tratá-la com cortesia',
-        explanation: '«A menina» é tratamento de cortesia para uma moça, com o verbo na 3ª pessoa.',
+        explanation: '“A menina” é tratamento de cortesia para uma moça, com o verbo na 3ª pessoa.',
       },
     ],
   },
@@ -1148,10 +1148,10 @@ export const GRAMMAR_PT: GrammarTopic[] = [
     level: 'B1.1',
     title: 'Mesóclise: o pronome no meio do futuro e do condicional',
     emoji: '🪡',
-    summary: 'Em Portugal o pronome átono vem depois do verbo (diz-me), mas o futuro e o condicional não aceitam o pronome no fim: «direi-lhe» está errado. A saída da norma culta é pôr o pronome no meio: dir-lhe-ei, far-se-ia. Veja como se forma, quando ela some e o que os portugueses fazem na fala.',
+    summary: 'Em Portugal o pronome átono vem depois do verbo (diz-me), mas o futuro e o condicional não aceitam o pronome no fim: “direi-lhe” está errado. A saída da norma culta é pôr o pronome no meio: dir-lhe-ei, far-se-ia. Veja como se forma, quando ela some e o que os portugueses fazem na fala.',
     sections: [
       {
-        text: 'Em Portugal, o futuro se chama «futuro» e o nosso futuro do pretérito se chama «condicional» (é o nome da gramática escolar portuguesa; no Brasil, a Nomenclatura Gramatical Brasileira diz «futuro do pretérito»). Os dois tempos se formam com o infinitivo inteiro mais uma terminação: falar + ei = falarei, falar + ia = falaria. Por isso o pronome átono, que em Portugal vai depois do verbo, entra na emenda: falar-lhe-ei. A mesóclise é regra da norma culta nos dois países, mas no Brasil ela praticamente só aparece em texto muito formal, e na fala soa pomposa. Em Portugal aparece na escrita formal, nos jornais, nos discursos e ainda na fala cuidada.',
+        text: 'Em Portugal, o futuro se chama “futuro” e o nosso futuro do pretérito se chama “condicional” (é o nome da gramática escolar portuguesa; no Brasil, a Nomenclatura Gramatical Brasileira diz “futuro do pretérito”). Os dois tempos se formam com o infinitivo inteiro mais uma terminação: falar + ei = falarei, falar + ia = falaria. Por isso o pronome átono, que em Portugal vai depois do verbo, entra na emenda: falar-lhe-ei. A mesóclise é regra da norma culta nos dois países, mas no Brasil ela praticamente só aparece em texto muito formal, e na fala soa pomposa. Em Portugal aparece na escrita formal, nos jornais, nos discursos e ainda na fala cuidada.',
       },
       {
         heading: 'Como se forma: infinitivo + pronome + terminação',
@@ -1169,14 +1169,14 @@ export const GRAMMAR_PT: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['Dir-lhe-ei a verdade amanhã.', 'Vou dizer a verdade para ele amanhã. (Norma culta: «Dir-lhe-ei».)'],
-          ['Far-se-ia tudo para salvar a aldeia.', 'Se faria tudo para salvar a aldeia. (Norma culta: «Far-se-ia».)'],
+          ['Dir-lhe-ei a verdade amanhã.', 'Vou dizer a verdade para ele amanhã. (Norma culta: “Dir-lhe-ei”.)'],
+          ['Far-se-ia tudo para salvar a aldeia.', 'Se faria tudo para salvar a aldeia. (Norma culta: “Far-se-ia”.)'],
           ['Ver-nos-emos em Coimbra, na festa de fim de curso.', 'A gente se vê em Coimbra, na formatura.'],
         ],
       },
       {
         heading: 'Com o, a, os, as: o r cai e o pronome vira lo, la',
-        text: 'Com os pronomes o, a, os, as acontece o mesmo que na ênclise (comprá-lo, vendê-la): o r do infinitivo cai, o pronome ganha um l e a vogal que fica no fim recebe acento se precisar (á, ê, ô). No Brasil, a fala resolve com «ele» ou «ela» depois do verbo («vou comprar ele»), o que a norma culta dos dois países não aceita.',
+        text: 'Com os pronomes o, a, os, as acontece o mesmo que na ênclise (comprá-lo, vendê-la): o r do infinitivo cai, o pronome ganha um l e a vogal que fica no fim recebe acento se precisar (á, ê, ô). No Brasil, a fala resolve com “ele” ou “ela” depois do verbo (“vou comprar ele”), o que a norma culta dos dois países não aceita.',
         table: {
           head: ['Peças', 'Portugal (norma culta)', 'Brasil (fala comum)'],
           rows: [
@@ -1191,12 +1191,12 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         },
         examples: [
           ['O relatório? Fá-lo-ei até sexta-feira.', 'O relatório? Faço até sexta-feira.'],
-          ['Se o carro fosse meu, vendê-lo-ia já.', 'Se o carro fosse meu, eu vendia ele agora. (Norma culta: «vendê-lo-ia».)'],
+          ['Se o carro fosse meu, vendê-lo-ia já.', 'Se o carro fosse meu, eu vendia ele agora. (Norma culta: “vendê-lo-ia”.)'],
         ],
       },
       {
         heading: 'Quando a mesóclise some: as palavras que puxam o pronome',
-        text: 'As mesmas palavras que em Portugal obrigam a próclise no presente (não, nunca, já, também, só, que, quem, quando, porque, talvez, pronomes interrogativos) também puxam o pronome para antes do futuro e do condicional. Aí não há mesóclise nem ênclise: «Não lhe direi», «Disse que me telefonaria». Outra diferença: no Brasil, a norma culta aceita a próclise depois do sujeito («Eu lhe direi»); em Portugal o sujeito não puxa o pronome, e se diz «Eu dir-lhe-ei» ou, na fala, «Eu digo-lhe».',
+        text: 'As mesmas palavras que em Portugal obrigam a próclise no presente (não, nunca, já, também, só, que, quem, quando, porque, talvez, pronomes interrogativos) também puxam o pronome para antes do futuro e do condicional. Aí não há mesóclise nem ênclise: “Não lhe direi”, “Disse que me telefonaria”. Outra diferença: no Brasil, a norma culta aceita a próclise depois do sujeito (“Eu lhe direi”); em Portugal o sujeito não puxa o pronome, e se diz “Eu dir-lhe-ei” ou, na fala, “Eu digo-lhe”.',
         table: {
           head: ['Palavra que puxa', 'Portugal', 'Brasil'],
           rows: [
@@ -1215,7 +1215,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'E na fala de todos os dias?',
-        text: 'Mesmo em Portugal, o futuro simples é raro na conversa: prefere-se o presente («Digo-te amanhã»), o «ir + infinitivo» («Vou dizer-te» ou «Vou-te dizer», as duas correntes) ou o «haver de» («Hei de dizer-te»). E o condicional costuma dar lugar ao imperfeito: «Se pudesse, dava-te boleia» (boleia = carona). Na fala brasileira acontece o mesmo com o imperfeito («se pudesse, eu te dava carona»). Resultado: a mesóclise vive na escrita cuidada e em frases feitas como «dir-se-ia» (parece) e «sê-lo-á» (será).',
+        text: 'Mesmo em Portugal, o futuro simples é raro na conversa: prefere-se o presente (“Digo-te amanhã”), o “ir + infinitivo” (“Vou dizer-te” ou “Vou-te dizer”, as duas correntes) ou o “haver de” (“Hei de dizer-te”). E o condicional costuma dar lugar ao imperfeito: “Se pudesse, dava-te boleia” (boleia = carona). Na fala brasileira acontece o mesmo com o imperfeito (“se pudesse, eu te dava carona”). Resultado: a mesóclise vive na escrita cuidada e em frases feitas como “dir-se-ia” (parece) e “sê-lo-á” (será).',
         examples: [
           ['Digo-te amanhã, pode ser?', 'Te digo amanhã, pode ser?'],
           ['Se tivesse tempo, levava-te ao aeroporto.', 'Se eu tivesse tempo, te levava no aeroporto.'],
@@ -1224,24 +1224,24 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pôr o pronome depois do futuro ou do condicional: «direi-lhe», «faria-se», «darei-te». Está errado nos dois países; a norma pede dir-lhe-ei, far-se-ia, dar-te-ei.',
-      'Usar a mesóclise depois de palavra que puxa o pronome: «Não dir-lhe-ei». Com não, já, nunca, que, quem… a norma pede próclise: «Não lhe direi».',
-      'Esquecer que o r cai com o, a, os, as: «fazer-o-ei» ou «far-lo-ei». O certo é fá-lo-ei, di-lo-ia, comprá-lo-ei.',
-      'Começar a frase pelo pronome, como no Brasil («Te direi», «Lhe darei»): em Portugal isso soa estranho, e a norma culta dos dois países não aceita pronome átono abrindo a frase.',
-      'Escrever «Eu lhe direi» achando que é português de Portugal: lá o sujeito não puxa o pronome. Diz-se «Eu dir-lhe-ei» ou, com naturalidade, «Eu digo-lhe».',
+      'Pôr o pronome depois do futuro ou do condicional: “direi-lhe”, “faria-se”, “darei-te”. Está errado nos dois países; a norma pede dir-lhe-ei, far-se-ia, dar-te-ei.',
+      'Usar a mesóclise depois de palavra que puxa o pronome: “Não dir-lhe-ei”. Com não, já, nunca, que, quem… a norma pede próclise: “Não lhe direi”.',
+      'Esquecer que o r cai com o, a, os, as: “fazer-o-ei” ou “far-lo-ei”. O certo é fá-lo-ei, di-lo-ia, comprá-lo-ei.',
+      'Começar a frase pelo pronome, como no Brasil (“Te direi”, “Lhe darei”): em Portugal isso soa estranho, e a norma culta dos dois países não aceita pronome átono abrindo a frase.',
+      'Escrever “Eu lhe direi” achando que é português de Portugal: lá o sujeito não puxa o pronome. Diz-se “Eu dir-lhe-ei” ou, com naturalidade, “Eu digo-lhe”.',
     ],
     quiz: [
       {
-        question: 'Como fica «vou dizer a ele amanhã» no futuro simples, na norma culta de Portugal?',
+        question: 'Como fica “vou dizer a ele amanhã” no futuro simples, na norma culta de Portugal?',
         options: ['Direi-lhe amanhã.', 'Dir-lhe-ei amanhã.', 'Dizer-lhe-ei amanhã.'],
         answer: 'Dir-lhe-ei amanhã.',
-        explanation: 'O pronome entra entre o radical do futuro (dir-) e a terminação (-ei). «Direi-lhe» põe o pronome depois do futuro, o que a norma não aceita, e dizer tem o futuro irregular dir-.',
+        explanation: 'O pronome entra entre o radical do futuro (dir-) e a terminação (-ei). “Direi-lhe” põe o pronome depois do futuro, o que a norma não aceita, e dizer tem o futuro irregular dir-.',
       },
       {
-        question: 'Complete: «Não ___ nada, fica descansado.»',
+        question: 'Complete: “Não ___ nada, fica descansado.”',
         options: ['dir-te-ei', 'te direi', 'direi-te'],
         answer: 'te direi',
-        explanation: 'A negação puxa o pronome para antes do verbo, também no futuro. Com «não», nada de mesóclise: «Não te direi nada».',
+        explanation: 'A negação puxa o pronome para antes do verbo, também no futuro. Com “não”, nada de mesóclise: “Não te direi nada”.',
       },
       {
         question: 'Qual é a forma certa de fazer + o + ei?',
@@ -1250,16 +1250,16 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         explanation: 'Com o, a, os, as, o r do radical cai, o pronome vira lo e a vogal final ganha acento: far- + o → fá-lo-ei.',
       },
       {
-        question: 'Numa conversa informal em Lisboa, qual é a frase mais natural para «te ligo amanhã»?',
+        question: 'Numa conversa informal em Lisboa, qual é a frase mais natural para “te ligo amanhã”?',
         options: ['Ligar-te-ei amanhã.', 'Ligo-te amanhã.', 'Ligarei-te amanhã.'],
         answer: 'Ligo-te amanhã.',
-        explanation: 'Na fala, o presente com valor de futuro domina, e com ênclise: «Ligo-te amanhã». «Ligar-te-ei» está correto, mas é formal; «ligarei-te» está errado.',
+        explanation: 'Na fala, o presente com valor de futuro domina, e com ênclise: “Ligo-te amanhã”. “Ligar-te-ei” está correto, mas é formal; “ligarei-te” está errado.',
       },
       {
         question: 'Qual frase segue a norma culta?',
         options: ['Far-se-ia tudo por ela.', 'Faria-se tudo por ela.', 'Fazer-se-ia tudo por ela.'],
         answer: 'Far-se-ia tudo por ela.',
-        explanation: 'O condicional de fazer tem o radical far-, e o pronome vai no meio: far-se-ia. «Faria-se» põe o pronome no fim, o que não se faz no condicional.',
+        explanation: 'O condicional de fazer tem o radical far-, e o pronome vai no meio: far-se-ia. “Faria-se” põe o pronome no fim, o que não se faz no condicional.',
       },
     ],
   },
@@ -1268,19 +1268,19 @@ export const GRAMMAR_PT: GrammarTopic[] = [
     level: 'B1.1',
     title: 'Crase: quando o a leva acento grave',
     emoji: '🎯',
-    summary: 'A crase é a fusão da preposição «a» com o artigo «a» (ou com aquele, aquela, aquilo). A regra é a mesma nos dois países, mas em Portugal ela se ouve: o «à» é aberto e o «a» átono é fechado. E como os portugueses usam artigo antes de possessivos e nomes próprios, a crase aparece mais: «à minha mãe», «à Ana».',
+    summary: 'A crase é a fusão da preposição “a” com o artigo “a” (ou com aquele, aquela, aquilo). A regra é a mesma nos dois países, mas em Portugal ela se ouve: o “à” é aberto e o “a” átono é fechado. E como os portugueses usam artigo antes de possessivos e nomes próprios, a crase aparece mais: “à minha mãe”, “à Ana”.',
     sections: [
       {
-        text: 'Crase não é um acento: é o nome da fusão de dois «a» (a preposição + a artigo), que a escrita marca com o acento grave: à, às, àquele, àquela, àquilo. A norma culta é idêntica em Portugal e no Brasil. A diferença está na pronúncia: no Brasil, «a» e «à» soam iguais, e por isso a crase é um pesadelo de escola; em Portugal, o «a» átono (artigo ou preposição) soa fechado, quase um «â» [ɐ], e o «à» soa aberto [a]. Um português ouve a diferença entre «a casa» e «à casa». Ouvir o sotaque de Lisboa ajuda a acertar a crase.',
+        text: 'Crase não é um acento: é o nome da fusão de dois “a” (a preposição + a artigo), que a escrita marca com o acento grave: à, às, àquele, àquela, àquilo. A norma culta é idêntica em Portugal e no Brasil. A diferença está na pronúncia: no Brasil, “a” e “à” soam iguais, e por isso a crase é um pesadelo de escola; em Portugal, o “a” átono (artigo ou preposição) soa fechado, quase um “â” [ɐ], e o “à” soa aberto [a]. Um português ouve a diferença entre “a casa” e “à casa”. Ouvir o sotaque de Lisboa ajuda a acertar a crase.',
       },
       {
-        heading: 'O teste do masculino e o teste do «volto de»',
-        text: 'Há crase quando o verbo ou o nome pede a preposição «a» e a palavra seguinte, feminina, aceita o artigo «a». Dois truques valem nos dois países: troque a palavra feminina por uma masculina (se aparecer «ao», há crase); com nomes de lugar, pense em «volto de / volto da» (se voltar «da», há crase).',
+        heading: 'O teste do masculino e o teste do “volto de”',
+        text: 'Há crase quando o verbo ou o nome pede a preposição “a” e a palavra seguinte, feminina, aceita o artigo “a”. Dois truques valem nos dois países: troque a palavra feminina por uma masculina (se aparecer “ao”, há crase); com nomes de lugar, pense em “volto de / volto da” (se voltar “da”, há crase).',
         table: {
           head: ['Frase', 'Teste', 'Crase?'],
           rows: [
             ['Vou à praia.', 'Vou ao mar.', 'sim'],
-            ['Conheço a praia.', 'Conheço o mar.', 'não (conhecer não pede «a»)'],
+            ['Conheço a praia.', 'Conheço o mar.', 'não (conhecer não pede “a”)'],
             ['Obedeço à diretora.', 'Obedeço ao diretor.', 'sim'],
             ['Vou à Madeira.', 'Volto da Madeira.', 'sim'],
             ['Vou a Lisboa.', 'Volto de Lisboa.', 'não'],
@@ -1289,41 +1289,41 @@ export const GRAMMAR_PT: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['Vamos à Nazaré ver as ondas gigantes.', 'Vamos para a Nazaré ver as ondas gigantes. (Volto «da» Nazaré: com crase.)'],
-          ['Chegámos a Faro ao fim da tarde.', 'Chegamos em Faro no fim da tarde. (Volto «de» Faro: sem crase.)'],
+          ['Vamos à Nazaré ver as ondas gigantes.', 'Vamos para a Nazaré ver as ondas gigantes. (Volto “da” Nazaré: com crase.)'],
+          ['Chegámos a Faro ao fim da tarde.', 'Chegamos em Faro no fim da tarde. (Volto “de” Faro: sem crase.)'],
           ['Entreguei a encomenda àquele senhor.', 'Entreguei a encomenda para aquele senhor.'],
         ],
       },
       {
         heading: 'Quando nunca há crase',
-        text: 'Onde não pode haver o artigo «a», não pode haver crase. Isso vale igual nos dois países.',
+        text: 'Onde não pode haver o artigo “a”, não pode haver crase. Isso vale igual nos dois países.',
         table: {
           head: ['Caso', 'Exemplo certo', 'Por quê'],
           rows: [
-            ['antes de palavra masculina', 'Fui a pé; bife a cavalo', 'não existe artigo «a» antes de masculino'],
+            ['antes de palavra masculina', 'Fui a pé; bife a cavalo', 'não existe artigo “a” antes de masculino'],
             ['antes de verbo', 'Começou a chover.', 'verbo não leva artigo'],
             ['antes de pronome pessoal e da maioria dos de tratamento', 'Disse a ela; peço a Vossa Excelência', 'esses pronomes não aceitam artigo'],
             ['antes de artigo indefinido', 'Fui a uma festa.', 'já há um artigo (uma)'],
-            ['«a» no singular antes de plural', 'Não dou confiança a pessoas estranhas.', 'o «a» singular é só preposição'],
+            ['“a” no singular antes de plural', 'Não dou confiança a pessoas estranhas.', 'o “a” singular é só preposição'],
             ['palavras repetidas', 'cara a cara, gota a gota, frente a frente', 'locução sem artigo'],
-            ['«casa» = o próprio lar', 'Cheguei a casa tarde.', 'sem especificação, «casa» não leva artigo'],
-            ['«terra» = terra firme', 'Os marinheiros desceram a terra.', 'idem'],
+            ['“casa” = o próprio lar', 'Cheguei a casa tarde.', 'sem especificação, “casa” não leva artigo'],
+            ['“terra” = terra firme', 'Os marinheiros desceram a terra.', 'idem'],
           ],
         },
         examples: [
-          ['Cheguei a casa à meia-noite.', 'Cheguei em casa à meia-noite. (Em Portugal, «chegar a casa»; no Brasil, a fala diz «chegar em casa».)'],
+          ['Cheguei a casa à meia-noite.', 'Cheguei em casa à meia-noite. (Em Portugal, “chegar a casa”; no Brasil, a fala diz “chegar em casa”.)'],
           ['Voltei à casa dos meus avós, em Trás-os-Montes.', 'Voltei para a casa dos meus avós, em Trás-os-Montes. (Casa especificada: com crase.)'],
         ],
       },
       {
         heading: 'Quando é obrigatória, e onde Portugal e Brasil divergem',
-        text: 'Há crase sempre nas horas (às oito, à uma), nas locuções femininas (à noite, à pressa, à direita, à beira de, à procura de) e na expressão «à moda de», mesmo com a palavra «moda» escondida: bacalhau à Brás, tripas à moda do Porto. Onde os países divergem é no uso facultativo. Antes de possessivo e de nome próprio feminino, a crase é facultativa na norma culta, porque o artigo é facultativo. Só que em Portugal o artigo é quase sempre usado («a minha mãe», «a Ana»), e então se escreve «à minha mãe», «à Ana». No Brasil, muita gente não usa o artigo e escreve «a minha mãe», «a Ana». O mesmo com «até»: Portugal diz e escreve «até à praia», «até ao fim»; o Brasil prefere «até a praia», «até o fim».',
+        text: 'Há crase sempre nas horas (às oito, à uma), nas locuções femininas (à noite, à pressa, à direita, à beira de, à procura de) e na expressão “à moda de”, mesmo com a palavra “moda” escondida: bacalhau à Brás, tripas à moda do Porto. Onde os países divergem é no uso facultativo. Antes de possessivo e de nome próprio feminino, a crase é facultativa na norma culta, porque o artigo é facultativo. Só que em Portugal o artigo é quase sempre usado (“a minha mãe”, “a Ana”), e então se escreve “à minha mãe”, “à Ana”. No Brasil, muita gente não usa o artigo e escreve “a minha mãe”, “a Ana”. O mesmo com “até”: Portugal diz e escreve “até à praia”, “até ao fim”; o Brasil prefere “até a praia”, “até o fim”.',
         table: {
           head: ['Caso', 'Portugal (uso corrente)', 'Brasil (uso corrente)'],
           rows: [
             ['possessivo feminino', 'Liguei à minha irmã.', 'Liguei para a minha irmã / a minha irmã.'],
             ['nome próprio feminino', 'Dei o livro à Inês.', 'Dei o livro para a Inês / a Inês.'],
-            ['depois de «até»', 'Fomos até à estação.', 'Fomos até a estação.'],
+            ['depois de “até”', 'Fomos até à estação.', 'Fomos até a estação.'],
             ['horas', 'A aula começa às nove.', 'A aula começa às nove.'],
             ['à moda de', 'bacalhau à Brás, francesinha à moda do Porto', 'filé à parmegiana, frango à passarinho'],
           ],
@@ -1336,21 +1336,21 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pôr crase antes de masculino ou de verbo: «à pé», «à partir de amanhã», «começou à chover». Nos dois países o certo é a pé, a partir de, começou a chover.',
-      'Escrever «cheguei à casa» querendo dizer a própria casa. Sem especificação, «casa» não leva artigo: cheguei a casa (Portugal); no Brasil a fala diz «cheguei em casa».',
-      'Estranhar «à Ana», «à minha mãe» e «até à estação» nos textos portugueses: não é erro. Em Portugal o artigo antes de nomes e possessivos é quase obrigatório, e a crase vem junto.',
-      'Esquecer o acento em «às vezes», «à noite», «às três»: são locuções femininas e horas, com crase obrigatória nos dois países.',
-      'Crase antes de artigo indefinido ou pronome pessoal: «fui à uma festa», «disse à ela». O certo é a uma festa, a ela.',
+      'Pôr crase antes de masculino ou de verbo: “à pé”, “à partir de amanhã”, “começou à chover”. Nos dois países o certo é a pé, a partir de, começou a chover.',
+      'Escrever “cheguei à casa” querendo dizer a própria casa. Sem especificação, “casa” não leva artigo: cheguei a casa (Portugal); no Brasil a fala diz “cheguei em casa”.',
+      'Estranhar “à Ana”, “à minha mãe” e “até à estação” nos textos portugueses: não é erro. Em Portugal o artigo antes de nomes e possessivos é quase obrigatório, e a crase vem junto.',
+      'Esquecer o acento em “às vezes”, “à noite”, “às três”: são locuções femininas e horas, com crase obrigatória nos dois países.',
+      'Crase antes de artigo indefinido ou pronome pessoal: “fui à uma festa”, “disse à ela”. O certo é a uma festa, a ela.',
     ],
     quiz: [
       {
-        question: 'Complete: «Amanhã vou ___ Coimbra.»',
+        question: 'Complete: “Amanhã vou ___ Coimbra.”',
         options: ['a', 'à', 'há'],
         answer: 'a',
-        explanation: 'Volto «de» Coimbra, não «da» Coimbra: o nome não leva artigo, então não há crase.',
+        explanation: 'Volto “de” Coimbra, não “da” Coimbra: o nome não leva artigo, então não há crase.',
       },
       {
-        question: 'Complete: «A reunião é ___ três da tarde.»',
+        question: 'Complete: “A reunião é ___ três da tarde.”',
         options: ['às', 'as', 'há'],
         answer: 'às',
         explanation: 'Horas levam crase nos dois países: às três, à uma, às nove.',
@@ -1359,19 +1359,19 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         question: 'Qual frase está correta?',
         options: ['Fomos à pé.', 'Fomos a pé.', 'Fomos há pé.'],
         answer: 'Fomos a pé.',
-        explanation: '«Pé» é masculino: não existe artigo «a» antes dele, então não há crase.',
+        explanation: '“Pé” é masculino: não existe artigo “a” antes dele, então não há crase.',
       },
       {
-        question: 'Como um português escreveria naturalmente «Dei o presente ___ Inês»?',
+        question: 'Como um português escreveria naturalmente “Dei o presente ___ Inês”?',
         options: ['à', 'a', 'ao'],
         answer: 'à',
-        explanation: 'Em Portugal o nome próprio leva artigo (a Inês), então há crase: à Inês. No Brasil, sem artigo, «a Inês» também é correto: a crase aqui é facultativa na norma.',
+        explanation: 'Em Portugal o nome próprio leva artigo (a Inês), então há crase: à Inês. No Brasil, sem artigo, “a Inês” também é correto: a crase aqui é facultativa na norma.',
       },
       {
-        question: 'Complete: «Cheguei ___ casa muito cansado.» (a minha própria casa)',
+        question: 'Complete: “Cheguei ___ casa muito cansado.” (a minha própria casa)',
         options: ['a', 'à', 'na'],
         answer: 'a',
-        explanation: '«Casa» no sentido de lar, sem especificação, não leva artigo, portanto não há crase. Em Portugal diz-se «cheguei a casa»; no Brasil a fala diz «cheguei em casa».',
+        explanation: '“Casa” no sentido de lar, sem especificação, não leva artigo, portanto não há crase. Em Portugal diz-se “cheguei a casa”; no Brasil a fala diz “cheguei em casa”.',
       },
     ],
   },
@@ -1382,10 +1382,10 @@ export const GRAMMAR_PT: GrammarTopic[] = [
     level: 'B1.2',
     title: 'Regência verbal e nominal: ir a, chegar a, assistir a, preferir… a',
     emoji: '🧭',
-    summary: 'Regência é a preposição que o verbo ou o nome exige. A norma culta é a mesma nos dois países, mas aqui a fala portuguesa está mais perto dela: em Portugal se diz «vou ao cinema» e «cheguei a Braga», onde o Brasil diz «fui no cinema» e «cheguei em Braga».',
+    summary: 'Regência é a preposição que o verbo ou o nome exige. A norma culta é a mesma nos dois países, mas aqui a fala portuguesa está mais perto dela: em Portugal se diz “vou ao cinema” e “cheguei a Braga”, onde o Brasil diz “fui no cinema” e “cheguei em Braga”.',
     sections: [
       {
-        text: 'Cada verbo pede (ou não) uma preposição: «gostar de», «precisar de», «obedecer a». Isso é a regência verbal; quando quem pede é um nome ou adjetivo («fã de», «favorável a»), é regência nominal. A norma culta é a mesma em Portugal e no Brasil. O que muda é a fala: no Brasil, o «em» tomou o lugar do «a» com verbos de movimento («ir no médico», «chegar em casa»), e vários verbos perderam a preposição («assistir o jogo»). Em Portugal, a fala mantém quase sempre a regência tradicional, então imitar o português europeu aqui é também acertar a norma culta.',
+        text: 'Cada verbo pede (ou não) uma preposição: “gostar de”, “precisar de”, “obedecer a”. Isso é a regência verbal; quando quem pede é um nome ou adjetivo (“fã de”, “favorável a”), é regência nominal. A norma culta é a mesma em Portugal e no Brasil. O que muda é a fala: no Brasil, o “em” tomou o lugar do “a” com verbos de movimento (“ir no médico”, “chegar em casa”), e vários verbos perderam a preposição (“assistir o jogo”). Em Portugal, a fala mantém quase sempre a regência tradicional, então imitar o português europeu aqui é também acertar a norma culta.',
       },
       {
         heading: 'Os verbos que mais enganam',
@@ -1404,17 +1404,17 @@ export const GRAMMAR_PT: GrammarTopic[] = [
             ['namorar (alguém)', 'A Rita namora o Luís.', 'A Rita namora com o Luís.', 'A Rita namora com o Luís.'],
           ],
         },
-        text: 'Repare nos pares com pronome: esquecer-se de / esquecer, lembrar-se de / lembrar. A norma aceita as duas construções, mas não a mistura: «esqueci da chave» junta o «de» do verbo pronominal sem o pronome. Em Portugal, a forma com «me» é a natural da fala: «esqueci-me», «lembro-me». E «namorar com» também se ouve em Portugal: a norma prefere «namorar alguém» nos dois países.',
+        text: 'Repare nos pares com pronome: esquecer-se de / esquecer, lembrar-se de / lembrar. A norma aceita as duas construções, mas não a mistura: “esqueci da chave” junta o “de” do verbo pronominal sem o pronome. Em Portugal, a forma com “me” é a natural da fala: “esqueci-me”, “lembro-me”. E “namorar com” também se ouve em Portugal: a norma prefere “namorar alguém” nos dois países.',
         examples: [
-          ['Ontem fomos ao estádio assistir ao jogo.', 'Ontem fomos no estádio assistir o jogo. (Norma culta: «ao estádio», «ao jogo».)'],
-          ['Prefiro o comboio ao autocarro.', 'Prefiro o trem ao ônibus. (Na fala: «prefiro mais o trem do que o ônibus».)'],
-          ['Esqueci-me do guarda-chuva no café.', 'Esqueci o guarda-chuva no café. (Ou, na norma: «esqueci-me do guarda-chuva».)'],
-          ['Chegámos a Évora de madrugada.', 'Chegamos em Évora de madrugada. (Norma culta: «chegamos a Évora».)'],
+          ['Ontem fomos ao estádio assistir ao jogo.', 'Ontem fomos no estádio assistir o jogo. (Norma culta: “ao estádio”, “ao jogo”.)'],
+          ['Prefiro o comboio ao autocarro.', 'Prefiro o trem ao ônibus. (Na fala: “prefiro mais o trem do que o ônibus”.)'],
+          ['Esqueci-me do guarda-chuva no café.', 'Esqueci o guarda-chuva no café. (Ou, na norma: “esqueci-me do guarda-chuva”.)'],
+          ['Chegámos a Évora de madrugada.', 'Chegamos em Évora de madrugada. (Norma culta: “chegamos a Évora”.)'],
         ],
       },
       {
         heading: 'Verbos que mudam de sentido com a preposição',
-        text: 'Alguns verbos têm dois sentidos, e a regência é que decide. Isso vale nos dois países; hoje muitos gramáticos também aceitam «visar» sem preposição no sentido de «ter como objetivo», mas a forma clássica é «visar a».',
+        text: 'Alguns verbos têm dois sentidos, e a regência é que decide. Isso vale nos dois países; hoje muitos gramáticos também aceitam “visar” sem preposição no sentido de “ter como objetivo”, mas a forma clássica é “visar a”.',
         table: {
           head: ['Verbo', 'Com preposição', 'Sem preposição'],
           rows: [
@@ -1432,7 +1432,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Regência nominal',
-        text: 'Nomes e adjetivos também pedem preposição. As regras são as mesmas nos dois países; o erro mais comum, dos dois lados, é «preferível do que» (o certo é «preferível a», porque «preferível» já contém a ideia de «mais»).',
+        text: 'Nomes e adjetivos também pedem preposição. As regras são as mesmas nos dois países; o erro mais comum, dos dois lados, é “preferível do que” (o certo é “preferível a”, porque “preferível” já contém a ideia de “mais”).',
         table: {
           head: ['Nome ou adjetivo', 'Preposição', 'Exemplo em Portugal'],
           rows: [
@@ -1446,48 +1446,48 @@ export const GRAMMAR_PT: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['Ficar em casa é preferível a apanhar chuva.', 'Ficar em casa é preferível a pegar chuva. (Nunca «preferível do que».)'],
-          ['A professora é residente em Viseu.', 'A professora mora em Viseu. (Nunca «residente à rua», que é hipercorreção.)'],
+          ['Ficar em casa é preferível a apanhar chuva.', 'Ficar em casa é preferível a pegar chuva. (Nunca “preferível do que”.)'],
+          ['A professora é residente em Viseu.', 'A professora mora em Viseu. (Nunca “residente à rua”, que é hipercorreção.)'],
         ],
       },
     ],
     pitfalls: [
-      'Levar para Portugal o «ir em» e o «chegar em» da fala brasileira: «vou no supermercado», «cheguei em Lisboa». Em Portugal (e na norma culta dos dois países) é vou ao supermercado, cheguei a Lisboa.',
-      'Dizer «preferir mais… do que»: nos dois países a norma pede preferir X a Y, sem «mais» e sem «do que».',
-      'Misturar as duas construções de esquecer e lembrar: «esqueci da chave». Ou esqueci-me da chave, ou esqueci a chave.',
-      'Escrever «implica em» no sentido de «acarretar»: na norma dos dois países, implicar é transitivo direto (implica custos).',
-      'Confundir «assistir a» (ver) com «assistir» (ajudar): «o médico assistiu ao doente» quer dizer que ele viu o doente, não que o tratou.',
+      'Levar para Portugal o “ir em” e o “chegar em” da fala brasileira: “vou no supermercado”, “cheguei em Lisboa”. Em Portugal (e na norma culta dos dois países) é vou ao supermercado, cheguei a Lisboa.',
+      'Dizer “preferir mais… do que”: nos dois países a norma pede preferir X a Y, sem “mais” e sem “do que”.',
+      'Misturar as duas construções de esquecer e lembrar: “esqueci da chave”. Ou esqueci-me da chave, ou esqueci a chave.',
+      'Escrever “implica em” no sentido de “acarretar”: na norma dos dois países, implicar é transitivo direto (implica custos).',
+      'Confundir “assistir a” (ver) com “assistir” (ajudar): “o médico assistiu ao doente” quer dizer que ele viu o doente, não que o tratou.',
     ],
     quiz: [
       {
-        question: 'Como um português diria «fui no dentista ontem»?',
+        question: 'Como um português diria “fui no dentista ontem”?',
         options: ['Fui ao dentista ontem.', 'Fui no dentista ontem.', 'Fui em o dentista ontem.'],
         answer: 'Fui ao dentista ontem.',
-        explanation: 'Ir pede a preposição «a» (a + o = ao). É a norma culta nos dois países e a fala comum em Portugal.',
+        explanation: 'Ir pede a preposição “a” (a + o = ao). É a norma culta nos dois países e a fala comum em Portugal.',
       },
       {
         question: 'Qual frase segue a norma culta?',
         options: ['Prefiro praia a campo.', 'Prefiro mais praia do que campo.', 'Prefiro praia do que campo.'],
         answer: 'Prefiro praia a campo.',
-        explanation: 'Preferir já contém a ideia de «mais»: a norma pede «preferir X a Y», sem «mais» e sem «do que».',
+        explanation: 'Preferir já contém a ideia de “mais”: a norma pede “preferir X a Y”, sem “mais” e sem “do que”.',
       },
       {
-        question: 'Complete no sentido de «ver»: «Ontem assisti ___ concerto no Coliseu.»',
+        question: 'Complete no sentido de “ver”: “Ontem assisti ___ concerto no Coliseu.”',
         options: ['ao', 'o', 'no'],
         answer: 'ao',
-        explanation: 'Assistir no sentido de ver pede a preposição «a»: assistir ao concerto. Sem preposição, assistir quer dizer ajudar.',
+        explanation: 'Assistir no sentido de ver pede a preposição “a”: assistir ao concerto. Sem preposição, assistir quer dizer ajudar.',
       },
       {
         question: 'Qual frase está correta?',
         options: ['Esqueci-me da chave.', 'Esqueci da chave.', 'Esqueci-me a chave.'],
         answer: 'Esqueci-me da chave.',
-        explanation: 'Esquecer-se pede «de»; esquecer (sem pronome) não pede preposição. A mistura «esqueci da» e «esqueci-me a» fica fora da norma.',
+        explanation: 'Esquecer-se pede “de”; esquecer (sem pronome) não pede preposição. A mistura “esqueci da” e “esqueci-me a” fica fora da norma.',
       },
       {
-        question: 'Complete: «Ir a pé é preferível ___ ir de carro.»',
+        question: 'Complete: “Ir a pé é preferível ___ ir de carro.”',
         options: ['a', 'do que', 'que'],
         answer: 'a',
-        explanation: 'Preferível pede «a», nos dois países. «Preferível do que» é um erro comum, dos dois lados do Atlântico.',
+        explanation: 'Preferível pede “a”, nos dois países. “Preferível do que” é um erro comum, dos dois lados do Atlântico.',
       },
     ],
   },
@@ -1496,10 +1496,10 @@ export const GRAMMAR_PT: GrammarTopic[] = [
     level: 'B1.2',
     title: 'Concordância verbal básica: tu, a gente, vocês e o sujeito composto',
     emoji: '🤝',
-    summary: 'O verbo concorda com o sujeito em número e pessoa, nos dois países. A diferença está nas pessoas: em Portugal o «tu» vem sempre com a forma de 2ª pessoa (tu vais, tu foste), o «nós» é muito mais comum que «a gente», e ainda há regiões com «vós».',
+    summary: 'O verbo concorda com o sujeito em número e pessoa, nos dois países. A diferença está nas pessoas: em Portugal o “tu” vem sempre com a forma de 2ª pessoa (tu vais, tu foste), o “nós” é muito mais comum que “a gente”, e ainda há regiões com “vós”.',
     sections: [
       {
-        text: 'A regra geral é a mesma na norma culta dos dois países: o verbo concorda com o sujeito. O que muda é o sistema de pessoas. Em Portugal, «tu» é o tratamento de amigos e família, e vem sempre com o verbo na 2ª pessoa: tu és, tu vais, tu foste. No Brasil, onde se usa «tu» (no Sul, no Norte, em parte do Nordeste, no Rio), a fala muitas vezes o combina com a 3ª pessoa: «tu vai», «tu foi», o que a norma culta não aceita. E «a gente», que no Brasil substitui «nós» em quase toda conversa, em Portugal é menos frequente: lá se diz «nós vamos» ou só «vamos».',
+        text: 'A regra geral é a mesma na norma culta dos dois países: o verbo concorda com o sujeito. O que muda é o sistema de pessoas. Em Portugal, “tu” é o tratamento de amigos e família, e vem sempre com o verbo na 2ª pessoa: tu és, tu vais, tu foste. No Brasil, onde se usa “tu” (no Sul, no Norte, em parte do Nordeste, no Rio), a fala muitas vezes o combina com a 3ª pessoa: “tu vai”, “tu foi”, o que a norma culta não aceita. E “a gente”, que no Brasil substitui “nós” em quase toda conversa, em Portugal é menos frequente: lá se diz “nós vamos” ou só “vamos”.',
       },
       {
         heading: 'As pessoas do verbo nos dois países',
@@ -1507,23 +1507,23 @@ export const GRAMMAR_PT: GrammarTopic[] = [
           head: ['Pessoa', 'Portugal (ir: presente / pretérito)', 'Brasil, fala comum'],
           rows: [
             ['eu', 'vou / fui', 'vou / fui'],
-            ['tu (íntimo)', 'vais / foste', 'você vai / foi (ou «tu vai / tu foi»)'],
+            ['tu (íntimo)', 'vais / foste', 'você vai / foi (ou “tu vai / tu foi”)'],
             ['ele, ela, você, o senhor, a senhora', 'vai / foi', 'vai / foi'],
             ['nós', 'vamos / fomos', 'a gente vai / foi (ou nós vamos / fomos)'],
             ['vós (Norte rural, Bíblia, literatura)', 'ides / fostes', 'não se usa na fala'],
             ['eles, elas, vocês', 'vão / foram', 'vão / foram'],
           ],
         },
-        text: '«A gente» existe nos dois países e leva o verbo na 3ª pessoa do singular: «a gente vai». «A gente vamos» é popular, fora da norma culta dos dois lados. O «vós» sobrevive em aldeias do Norte de Portugal («vós ides») e em textos religiosos ou antigos; no resto do país, e no Brasil, o plural de «tu» é «vocês», com verbo na 3ª do plural.',
+        text: '“A gente” existe nos dois países e leva o verbo na 3ª pessoa do singular: “a gente vai”. “A gente vamos” é popular, fora da norma culta dos dois lados. O “vós” sobrevive em aldeias do Norte de Portugal (“vós ides”) e em textos religiosos ou antigos; no resto do país, e no Brasil, o plural de “tu” é “vocês”, com verbo na 3ª do plural.',
         examples: [
-          ['Tu foste ao mercado do Bolhão?', 'Você foi ao mercado do Bolhão? (Com «tu», a norma pede «tu foste», nunca «tu foi».)'],
+          ['Tu foste ao mercado do Bolhão?', 'Você foi ao mercado do Bolhão? (Com “tu”, a norma pede “tu foste”, nunca “tu foi”.)'],
           ['Nós vamos ao Algarve em agosto.', 'A gente vai para o Algarve em agosto.'],
           ['Vocês já almoçaram?', 'Vocês já almoçaram?'],
         ],
       },
       {
         heading: 'Sujeito composto',
-        text: 'Sujeito com dois ou mais núcleos antes do verbo: plural. Depois do verbo: plural, ou concordância com o núcleo mais próximo. Se há pessoas diferentes, a 1ª ganha da 2ª e da 3ª (eu + tu = nós); tu + ele dá «vós» na norma tradicional, mas o uso atual dos dois países prefere a 3ª do plural (vocês).',
+        text: 'Sujeito com dois ou mais núcleos antes do verbo: plural. Depois do verbo: plural, ou concordância com o núcleo mais próximo. Se há pessoas diferentes, a 1ª ganha da 2ª e da 3ª (eu + tu = nós); tu + ele dá “vós” na norma tradicional, mas o uso atual dos dois países prefere a 3ª do plural (vocês).',
         table: {
           head: ['Caso', 'Exemplo em Portugal', 'Regra'],
           rows: [
@@ -1531,7 +1531,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
             ['núcleos depois do verbo', 'Chegaram o Rui e a Inês. / Chegou o Rui e a Inês.', 'plural ou o mais próximo'],
             ['eu + outra pessoa', 'Eu e a minha irmã fomos a Sintra.', '1ª do plural'],
             ['tu + ele', 'Tu e o teu primo vão ao jantar? (literário: ides)', '3ª do plural no uso atual'],
-            ['núcleos ligados por «ou» com exclusão', 'O Pedro ou o Miguel será o capitão.', 'singular (só um pode ser)'],
+            ['núcleos ligados por “ou” com exclusão', 'O Pedro ou o Miguel será o capitão.', 'singular (só um pode ser)'],
           ],
         },
         examples: [
@@ -1540,48 +1540,48 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'Tratamento, coletivos e «fui eu que»',
-        text: 'Pronomes e formas de tratamento (o senhor, a senhora, Vossa Excelência) levam o verbo na 3ª pessoa, nos dois países: «Vossa Excelência está convidado». Em Portugal, a 3ª pessoa também aparece com o nome da pessoa, sem pronome: «A Ana quer um café?». O coletivo no singular pede verbo no singular (a turma saiu, o pessoal foi jantar). Com «fui eu que», o verbo concorda com «eu» (fui eu que paguei); com «fui eu quem», a norma aceita a 3ª pessoa ou a concordância com «eu» (fui eu quem pagou / quem paguei).',
+        heading: 'Tratamento, coletivos e “fui eu que”',
+        text: 'Pronomes e formas de tratamento (o senhor, a senhora, Vossa Excelência) levam o verbo na 3ª pessoa, nos dois países: “Vossa Excelência está convidado”. Em Portugal, a 3ª pessoa também aparece com o nome da pessoa, sem pronome: “A Ana quer um café?”. O coletivo no singular pede verbo no singular (a turma saiu, o pessoal foi jantar). Com “fui eu que”, o verbo concorda com “eu” (fui eu que paguei); com “fui eu quem”, a norma aceita a 3ª pessoa ou a concordância com “eu” (fui eu quem pagou / quem paguei).',
         examples: [
-          ['O senhor doutor deseja mais alguma coisa?', 'O senhor deseja mais alguma coisa? (No Brasil, «doutor» no tratamento é mais raro fora de contextos formais.)'],
+          ['O senhor doutor deseja mais alguma coisa?', 'O senhor deseja mais alguma coisa? (No Brasil, “doutor” no tratamento é mais raro fora de contextos formais.)'],
           ['A Ana quer um café?', 'Você quer um café, Ana?'],
           ['Fui eu que paguei o jantar.', 'Fui eu que paguei o jantar.'],
         ],
       },
     ],
     pitfalls: [
-      'Combinar «tu» com a 3ª pessoa, como em várias regiões do Brasil: «tu vai», «tu foi», «tu quer». Em Portugal (e na norma culta dos dois países) é tu vais, tu foste, tu queres.',
-      'Usar «a gente vamos»: nos dois países «a gente» leva o verbo na 3ª do singular. E em Portugal, prefira «nós».',
-      'Estranhar o «vós» num texto português antigo ou numa aldeia do Minho: é a 2ª do plural, com verbo próprio (vós ides, vós sois).',
-      'Pôr o verbo no plural com núcleos ligados por «ou» que se excluem: «o Pedro ou o Miguel serão o capitão». Só um pode ser: será.',
+      'Combinar “tu” com a 3ª pessoa, como em várias regiões do Brasil: “tu vai”, “tu foi”, “tu quer”. Em Portugal (e na norma culta dos dois países) é tu vais, tu foste, tu queres.',
+      'Usar “a gente vamos”: nos dois países “a gente” leva o verbo na 3ª do singular. E em Portugal, prefira “nós”.',
+      'Estranhar o “vós” num texto português antigo ou numa aldeia do Minho: é a 2ª do plural, com verbo próprio (vós ides, vós sois).',
+      'Pôr o verbo no plural com núcleos ligados por “ou” que se excluem: “o Pedro ou o Miguel serão o capitão”. Só um pode ser: será.',
     ],
     quiz: [
       {
-        question: 'Complete como em Portugal: «Tu ___ ao cinema ontem?»',
+        question: 'Complete como em Portugal: “Tu ___ ao cinema ontem?”',
         options: ['foste', 'foi', 'fostes'],
         answer: 'foste',
-        explanation: 'Tu pede a 2ª pessoa do singular: tu foste. «Tu foi» é fala regional brasileira, fora da norma; «fostes» é de «vós».',
+        explanation: 'Tu pede a 2ª pessoa do singular: tu foste. “Tu foi” é fala regional brasileira, fora da norma; “fostes” é de “vós”.',
       },
       {
         question: 'Qual frase segue a norma culta?',
         options: ['A gente vai à praia.', 'A gente vamos à praia.', 'A gente vão à praia.'],
         answer: 'A gente vai à praia.',
-        explanation: '«A gente» leva o verbo na 3ª pessoa do singular, nos dois países.',
+        explanation: '“A gente” leva o verbo na 3ª pessoa do singular, nos dois países.',
       },
       {
-        question: 'Complete: «Eu e a Marta ___ ao Porto no sábado.»',
+        question: 'Complete: “Eu e a Marta ___ ao Porto no sábado.”',
         options: ['fomos', 'foram', 'foi'],
         answer: 'fomos',
         explanation: 'Eu + outra pessoa = nós. A 1ª pessoa ganha das outras: fomos.',
       },
       {
-        question: 'Qual forma é a do «vós», ainda ouvida no Norte de Portugal?',
+        question: 'Qual forma é a do “vós”, ainda ouvida no Norte de Portugal?',
         options: ['vós ides', 'vós vão', 'vós vais'],
         answer: 'vós ides',
-        explanation: 'A 2ª do plural de «ir» é «ides» (e no pretérito, «fostes»). No resto do país e no Brasil, usa-se «vocês vão».',
+        explanation: 'A 2ª do plural de “ir” é “ides” (e no pretérito, “fostes”). No resto do país e no Brasil, usa-se “vocês vão”.',
       },
       {
-        question: 'Complete: «___ o Rui e a Inês.» (sujeito depois do verbo)',
+        question: 'Complete: “___ o Rui e a Inês.” (sujeito depois do verbo)',
         options: ['Chegaram', 'Chegámos', 'Chegaste'],
         answer: 'Chegaram',
         explanation: 'Sujeito composto depois do verbo aceita o plural (chegaram) ou a concordância com o mais próximo (chegou). As outras formas são de outras pessoas.',
@@ -1595,10 +1595,10 @@ export const GRAMMAR_PT: GrammarTopic[] = [
     level: 'B1.3',
     title: 'Presente do conjuntivo e o imperativo negativo',
     emoji: '🌥️',
-    summary: 'O que em Portugal se chama «conjuntivo» é o nosso «subjuntivo»: o modo do desejo, da dúvida e da finalidade. O presente se forma do mesmo jeito nos dois países. A grande diferença está no imperativo: em Portugal, com «tu», diz-se «Fala!» mas «Não fales!»',
+    summary: 'O que em Portugal se chama “conjuntivo” é o nosso “subjuntivo”: o modo do desejo, da dúvida e da finalidade. O presente se forma do mesmo jeito nos dois países. A grande diferença está no imperativo: em Portugal, com “tu”, diz-se “Fala!” mas “Não fales!”',
     sections: [
       {
-        text: 'Mesmo modo, dois nomes: a gramática portuguesa diz «conjuntivo», e a brasileira (a Nomenclatura Gramatical Brasileira) diz «subjuntivo». As formas e os usos são os mesmos na norma culta dos dois países. O presente se forma a partir da 1ª pessoa do presente do indicativo: tira-se o -o e põe-se -e (verbos em -ar) ou -a (verbos em -er e -ir). Assim os irregulares do indicativo passam a irregularidade para o conjuntivo: faço → faça, digo → diga, tenho → tenha.',
+        text: 'Mesmo modo, dois nomes: a gramática portuguesa diz “conjuntivo”, e a brasileira (a Nomenclatura Gramatical Brasileira) diz “subjuntivo”. As formas e os usos são os mesmos na norma culta dos dois países. O presente se forma a partir da 1ª pessoa do presente do indicativo: tira-se o -o e põe-se -e (verbos em -ar) ou -a (verbos em -er e -ir). Assim os irregulares do indicativo passam a irregularidade para o conjuntivo: faço → faça, digo → diga, tenho → tenha.',
         table: {
           head: ['Pessoa', 'falar (falo)', 'fazer (faço)', 'partir (parto)'],
           rows: [
@@ -1613,7 +1613,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Os irregulares de verdade',
-        text: 'Seis verbos fogem da regra da 1ª pessoa e precisam ser decorados. Atenção às formas populares «seje» e «esteje», que a norma dos dois países não aceita.',
+        text: 'Seis verbos fogem da regra da 1ª pessoa e precisam ser decorados. Atenção às formas populares “seje” e “esteje”, que a norma dos dois países não aceita.',
         table: {
           head: ['Infinitivo', 'que eu / ele', 'que tu', 'que nós'],
           rows: [
@@ -1628,12 +1628,12 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         },
         examples: [
           ['Espero que estejas bem.', 'Espero que você esteja bem.'],
-          ['Talvez haja lugar no comboio das oito.', 'Talvez tenha lugar no trem das oito. (Norma culta: «haja».)'],
+          ['Talvez haja lugar no comboio das oito.', 'Talvez tenha lugar no trem das oito. (Norma culta: “haja”.)'],
         ],
       },
       {
         heading: 'Quando usar',
-        text: 'O conjuntivo aparece depois de verbos de desejo, ordem, dúvida e sentimento seguidos de «que», depois de certas conjunções e com «talvez» antes do verbo. Nos dois países a fala às vezes troca pelo indicativo («espero que você está bem»), o que a norma não aceita.',
+        text: 'O conjuntivo aparece depois de verbos de desejo, ordem, dúvida e sentimento seguidos de “que”, depois de certas conjunções e com “talvez” antes do verbo. Nos dois países a fala às vezes troca pelo indicativo (“espero que você está bem”), o que a norma não aceita.',
         table: {
           head: ['Gatilho', 'Exemplo em Portugal', 'No Brasil'],
           rows: [
@@ -1652,7 +1652,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'O imperativo: Fala! × Não fales!',
-        text: 'Aqui Portugal e Brasil se separam na fala. Em Portugal, o imperativo de «tu» é afirmativo com a forma do indicativo sem o -s (fala, come, parte) e negativo com o conjuntivo (não fales, não comas, não partas). Os portugueses fazem isso sempre, sem pensar. No Brasil, a norma culta é a mesma, mas a fala mistura: usa «Fala!» e «Não fala!», ou o imperativo de «você» (fale, não fale). No formal, Portugal usa a 3ª pessoa do conjuntivo: «Faça o favor de entrar», «Sente-se, por favor». E o pronome segue as regras de sempre: «Diz-me», mas «Não me digas».',
+        text: 'Aqui Portugal e Brasil se separam na fala. Em Portugal, o imperativo de “tu” é afirmativo com a forma do indicativo sem o -s (fala, come, parte) e negativo com o conjuntivo (não fales, não comas, não partas). Os portugueses fazem isso sempre, sem pensar. No Brasil, a norma culta é a mesma, mas a fala mistura: usa “Fala!” e “Não fala!”, ou o imperativo de “você” (fale, não fale). No formal, Portugal usa a 3ª pessoa do conjuntivo: “Faça o favor de entrar”, “Sente-se, por favor”. E o pronome segue as regras de sempre: “Diz-me”, mas “Não me digas”.',
         table: {
           head: ['Verbo', 'tu afirmativo', 'tu negativo', 'o senhor / você'],
           rows: [
@@ -1664,46 +1664,46 @@ export const GRAMMAR_PT: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['Não te esqueças do guarda-chuva!', 'Não esquece o guarda-chuva! (Norma culta: «Não te esqueças» ou «Não se esqueça».)'],
+          ['Não te esqueças do guarda-chuva!', 'Não esquece o guarda-chuva! (Norma culta: “Não te esqueças” ou “Não se esqueça”.)'],
           ['Diz-me a verdade, mas não me mintas.', 'Me diz a verdade, mas não mente para mim.'],
           ['Faça o favor de se sentar.', 'Por favor, sente-se.'],
         ],
       },
     ],
     pitfalls: [
-      'Dizer em Portugal «Não fala!», «Não come!» para alguém que se trata por tu. Soa errado: o negativo de tu é conjuntivo: não fales, não comas.',
-      'Usar as formas populares «seje», «esteje», «teje»: nos dois países a norma pede seja, esteja.',
-      'Trocar o conjuntivo pelo indicativo depois de «espero que», «talvez», «embora»: «espero que estás bem». O certo é espero que estejas bem.',
-      'Confundir «perca» (verbo perder: não percas o comboio) com «perda» (substantivo: uma perda de tempo).',
-      'Estranhar «conjuntivo» nos livros portugueses: é o mesmo modo que no Brasil se chama subjuntivo.',
+      'Dizer em Portugal “Não fala!”, “Não come!” para alguém que se trata por tu. Soa errado: o negativo de tu é conjuntivo: não fales, não comas.',
+      'Usar as formas populares “seje”, “esteje”, “teje”: nos dois países a norma pede seja, esteja.',
+      'Trocar o conjuntivo pelo indicativo depois de “espero que”, “talvez”, “embora”: “espero que estás bem”. O certo é espero que estejas bem.',
+      'Confundir “perca” (verbo perder: não percas o comboio) com “perda” (substantivo: uma perda de tempo).',
+      'Estranhar “conjuntivo” nos livros portugueses: é o mesmo modo que no Brasil se chama subjuntivo.',
     ],
     quiz: [
       {
-        question: 'Como se diz em Portugal, a um amigo, «não fala isso!»?',
+        question: 'Como se diz em Portugal, a um amigo, “não fala isso!”?',
         options: ['Não digas isso!', 'Não diz isso!', 'Não dizes isso!'],
         answer: 'Não digas isso!',
         explanation: 'O imperativo negativo de tu usa o presente do conjuntivo: não digas. É a norma nos dois países e o uso normal em Portugal.',
       },
       {
-        question: 'Complete: «Espero que tu ___ bem.»',
+        question: 'Complete: “Espero que tu ___ bem.”',
         options: ['estejas', 'estás', 'estejes'],
         answer: 'estejas',
-        explanation: '«Esperar que» pede conjuntivo, e o conjuntivo de estar é esteja, estejas.',
+        explanation: '“Esperar que” pede conjuntivo, e o conjuntivo de estar é esteja, estejas.',
       },
       {
-        question: 'Qual é o presente do conjuntivo de «ir» para «eu»?',
+        question: 'Qual é o presente do conjuntivo de “ir” para “eu”?',
         options: ['vá', 'vai', 'vou'],
         answer: 'vá',
         explanation: 'Ir é um dos irregulares de verdade: que eu vá, que tu vás, que nós vamos.',
       },
       {
-        question: 'Complete: «Talvez ___ mais tarde.» (chover)',
+        question: 'Complete: “Talvez ___ mais tarde.” (chover)',
         options: ['chova', 'chove', 'chovesse'],
         answer: 'chova',
-        explanation: '«Talvez» antes do verbo pede conjuntivo. Para o presente ou futuro, usa-se o presente do conjuntivo: chova.',
+        explanation: '“Talvez” antes do verbo pede conjuntivo. Para o presente ou futuro, usa-se o presente do conjuntivo: chova.',
       },
       {
-        question: 'Qual é o imperativo afirmativo de «esquecer-se» para «tu»?',
+        question: 'Qual é o imperativo afirmativo de “esquecer-se” para “tu”?',
         options: ['Esquece-te!', 'Esqueças-te!', 'Te esquece!'],
         answer: 'Esquece-te!',
         explanation: 'O afirmativo de tu vem do indicativo sem -s (esquece), com ênclise: esquece-te. O conjuntivo (esqueças) é só para o negativo: não te esqueças.',
@@ -1715,7 +1715,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
     level: 'B1.3',
     title: 'Imperfeito e futuro do conjuntivo: se pudesse, quando puderes',
     emoji: '🔮',
-    summary: 'Dois tempos que os brasileiros usam todo dia e erram com frequência: o imperfeito (se eu tivesse) e o futuro do conjuntivo (quando eu puder). Em Portugal, com o «tu», eles aparecem ainda mais: «quando puderes», «se quiseres». A regra é a mesma nos dois países.',
+    summary: 'Dois tempos que os brasileiros usam todo dia e erram com frequência: o imperfeito (se eu tivesse) e o futuro do conjuntivo (quando eu puder). Em Portugal, com o “tu”, eles aparecem ainda mais: “quando puderes”, “se quiseres”. A regra é a mesma nos dois países.',
     sections: [
       {
         text: 'Os dois tempos saem da mesma raiz: a 3ª pessoa do plural do pretérito perfeito. Tire o -ram e acrescente -sse (imperfeito) ou nada (futuro). Assim: fizeram → fizesse / fizer; tiveram → tivesse / tiver; puderam → pudesse / puder. Quem conhece bem o pretérito perfeito acerta os dois. Essa regra e esses usos valem na norma culta dos dois países.',
@@ -1739,17 +1739,17 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         },
       },
       {
-        heading: 'Imperfeito: hipóteses, desejos e «como se»',
-        text: 'O imperfeito do conjuntivo aparece em hipóteses com «se» (se eu tivesse…), depois de verbos no passado ou no condicional (queria que viesses) e com «como se». Na norma culta, a outra metade da hipótese vai no condicional: «Se tivesse tempo, iria». Na fala, tanto em Portugal como no Brasil, o condicional costuma virar imperfeito do indicativo: «Se tivesse tempo, ia». As duas formas são corretas, mas em texto formal prefira o condicional.',
+        heading: 'Imperfeito: hipóteses, desejos e “como se”',
+        text: 'O imperfeito do conjuntivo aparece em hipóteses com “se” (se eu tivesse…), depois de verbos no passado ou no condicional (queria que viesses) e com “como se”. Na norma culta, a outra metade da hipótese vai no condicional: “Se tivesse tempo, iria”. Na fala, tanto em Portugal como no Brasil, o condicional costuma virar imperfeito do indicativo: “Se tivesse tempo, ia”. As duas formas são corretas, mas em texto formal prefira o condicional.',
         examples: [
-          ['Se eu tivesse tempo, ia contigo a Évora.', 'Se eu tivesse tempo, ia com você para Évora. (Norma escrita: «iria».)'],
+          ['Se eu tivesse tempo, ia contigo a Évora.', 'Se eu tivesse tempo, ia com você para Évora. (Norma escrita: “iria”.)'],
           ['A minha mãe queria que eu fosse médica.', 'Minha mãe queria que eu fosse médica.'],
           ['Fala como se fosse de Lisboa.', 'Fala como se fosse de Lisboa.'],
         ],
       },
       {
         heading: 'Futuro: quando puderes, se quiseres',
-        text: 'O futuro do conjuntivo marca um fato possível no futuro, depois de «quando», «se», «assim que», «logo que», «sempre que», «enquanto», «quem», «onde» e «como». Existe só no português e no galego entre as línguas vizinhas (o espanhol já o abandonou na fala). Em Portugal, como o «tu» é muito usado, as formas em -es aparecem o tempo todo: quando puderes, se quiseres, quando vieres.',
+        text: 'O futuro do conjuntivo marca um fato possível no futuro, depois de “quando”, “se”, “assim que”, “logo que”, “sempre que”, “enquanto”, “quem”, “onde” e “como”. Existe só no português e no galego entre as línguas vizinhas (o espanhol já o abandonou na fala). Em Portugal, como o “tu” é muito usado, as formas em -es aparecem o tempo todo: quando puderes, se quiseres, quando vieres.',
         table: {
           head: ['Portugal (tu)', 'Brasil (você)'],
           rows: [
@@ -1766,52 +1766,52 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'Ver × vir e o «caso»',
-        text: 'O erro clássico, frequente no Brasil e ouvido também em Portugal, é usar o infinitivo no lugar do futuro do conjuntivo: «quando eu ver», «se eu fazer», «se ele propor». O certo, nos dois países, é quando eu vir (de ver), se eu fizer, se ele propuser. Cuidado com o par ver / vir: «quando eu vir» é de ver; «quando eu vier» é de vir. E «caso» nunca leva o futuro: diz-se «caso chova» ou «caso chovesse», não «caso chover».',
+        heading: 'Ver × vir e o “caso”',
+        text: 'O erro clássico, frequente no Brasil e ouvido também em Portugal, é usar o infinitivo no lugar do futuro do conjuntivo: “quando eu ver”, “se eu fazer”, “se ele propor”. O certo, nos dois países, é quando eu vir (de ver), se eu fizer, se ele propuser. Cuidado com o par ver / vir: “quando eu vir” é de ver; “quando eu vier” é de vir. E “caso” nunca leva o futuro: diz-se “caso chova” ou “caso chovesse”, não “caso chover”.',
         examples: [
-          ['Quando eu vir o teu irmão, dou-lhe o recado.', 'Quando eu vir seu irmão, dou o recado para ele. (Nunca «quando eu ver».)'],
+          ['Quando eu vir o teu irmão, dou-lhe o recado.', 'Quando eu vir seu irmão, dou o recado para ele. (Nunca “quando eu ver”.)'],
           ['Quando vieres a Lisboa, ficas cá em casa.', 'Quando você vier a Lisboa, fica aqui em casa.'],
           ['Caso chova, a festa passa para o pavilhão.', 'Caso chova, a festa vai para o ginásio.'],
         ],
       },
     ],
     pitfalls: [
-      'Usar o infinitivo no lugar do futuro do conjuntivo: «se eu fazer», «quando ele ver», «se nós propormos». Nos dois países: se eu fizer, quando ele vir, se nós propusermos.',
-      'Confundir vir e ver: «quando eu vier» (vir, chegar) × «quando eu vir» (ver, enxergar).',
-      'Usar «caso» com o futuro: «caso chover». Caso pede presente ou imperfeito do conjuntivo: caso chova, caso chovesse.',
-      'Pôr o condicional depois do «se»: «se eu seria rico». O «se» de hipótese pede imperfeito do conjuntivo: se eu fosse rico.',
-      'Esquecer o -es de «tu» em Portugal: «quando tu puder». Com tu, é quando puderes, se quiseres.',
+      'Usar o infinitivo no lugar do futuro do conjuntivo: “se eu fazer”, “quando ele ver”, “se nós propormos”. Nos dois países: se eu fizer, quando ele vir, se nós propusermos.',
+      'Confundir vir e ver: “quando eu vier” (vir, chegar) × “quando eu vir” (ver, enxergar).',
+      'Usar “caso” com o futuro: “caso chover”. Caso pede presente ou imperfeito do conjuntivo: caso chova, caso chovesse.',
+      'Pôr o condicional depois do “se”: “se eu seria rico”. O “se” de hipótese pede imperfeito do conjuntivo: se eu fosse rico.',
+      'Esquecer o -es de “tu” em Portugal: “quando tu puder”. Com tu, é quando puderes, se quiseres.',
     ],
     quiz: [
       {
-        question: 'Complete como em Portugal: «Quando ___, liga-me.» (poder, tu)',
+        question: 'Complete como em Portugal: “Quando ___, liga-me.” (poder, tu)',
         options: ['puderes', 'poderes', 'pudesses'],
         answer: 'puderes',
-        explanation: 'Futuro do conjuntivo de poder: puder (de «puderam»), e com tu: puderes. «Poderes» é o infinitivo pessoal.',
+        explanation: 'Futuro do conjuntivo de poder: puder (de “puderam”), e com tu: puderes. “Poderes” é o infinitivo pessoal.',
       },
       {
         question: 'Qual frase segue a norma culta?',
         options: ['Quando eu vir o Rui, falo com ele.', 'Quando eu ver o Rui, falo com ele.', 'Quando eu vier o Rui, falo com ele.'],
         answer: 'Quando eu vir o Rui, falo com ele.',
-        explanation: 'O futuro do conjuntivo de ver é vir (de «viram»). «Vier» é de vir (chegar), e «ver» é o infinitivo.',
+        explanation: 'O futuro do conjuntivo de ver é vir (de “viram”). “Vier” é de vir (chegar), e “ver” é o infinitivo.',
       },
       {
-        question: 'Complete: «Se eu ___ mais tempo, aprendia a tocar guitarra portuguesa.»',
+        question: 'Complete: “Se eu ___ mais tempo, aprendia a tocar guitarra portuguesa.”',
         options: ['tivesse', 'tiver', 'teria'],
         answer: 'tivesse',
-        explanation: 'Hipótese com «se» e verbo no passado ou condicional pede o imperfeito do conjuntivo: tivesse.',
+        explanation: 'Hipótese com “se” e verbo no passado ou condicional pede o imperfeito do conjuntivo: tivesse.',
       },
       {
-        question: 'Complete: «Caso ___, levamos o guarda-chuva.»',
+        question: 'Complete: “Caso ___, levamos o guarda-chuva.”',
         options: ['chova', 'chover', 'choverá'],
         answer: 'chova',
-        explanation: '«Caso» pede presente (ou imperfeito) do conjuntivo, nunca o futuro: caso chova.',
+        explanation: '“Caso” pede presente (ou imperfeito) do conjuntivo, nunca o futuro: caso chova.',
       },
       {
-        question: 'Qual é o futuro do conjuntivo de «fazer» para «nós»?',
+        question: 'Qual é o futuro do conjuntivo de “fazer” para “nós”?',
         options: ['fizermos', 'fazermos', 'fizéssemos'],
         answer: 'fizermos',
-        explanation: 'De fizeram sai fizer: nós fizermos. «Fazermos» é o infinitivo pessoal e «fizéssemos» é o imperfeito do conjuntivo.',
+        explanation: 'De fizeram sai fizer: nós fizermos. “Fazermos” é o infinitivo pessoal e “fizéssemos” é o imperfeito do conjuntivo.',
       },
     ],
   },
@@ -1820,10 +1820,10 @@ export const GRAMMAR_PT: GrammarTopic[] = [
     level: 'B1.3',
     title: 'Infinitivo pessoal: para fazeres, antes de saírem',
     emoji: '🧩',
-    summary: 'O português é uma das raras línguas em que o infinitivo se conjuga: para eu fazer, para tu fazeres, para nós fazermos. Nos dois países ele é norma culta, mas em Portugal aparece ainda mais na fala, sobretudo com o «tu»: «Antes de saíres, fecha a janela».',
+    summary: 'O português é uma das raras línguas em que o infinitivo se conjuga: para eu fazer, para tu fazeres, para nós fazermos. Nos dois países ele é norma culta, mas em Portugal aparece ainda mais na fala, sobretudo com o “tu”: “Antes de saíres, fecha a janela”.',
     sections: [
       {
-        text: 'O infinitivo pessoal (ou flexionado) é o infinitivo com terminações de pessoa. É uma marca do português (o galego também o tem) e vale na norma culta de Portugal e do Brasil. Ele serve para dizer quem faz a ação quando o infinitivo tem sujeito próprio, diferente do verbo principal ou que precisa ficar claro. No Brasil, as formas de «nós» e «eles» são comuns (para a gente fazer, antes de vocês saírem); a forma de «tu» (fazeres) é rara, porque o «tu» é menos usado ou vem com a 3ª pessoa. Em Portugal, «para fazeres», «antes de saíres», «obrigado por vires» são do dia a dia.',
+        text: 'O infinitivo pessoal (ou flexionado) é o infinitivo com terminações de pessoa. É uma marca do português (o galego também o tem) e vale na norma culta de Portugal e do Brasil. Ele serve para dizer quem faz a ação quando o infinitivo tem sujeito próprio, diferente do verbo principal ou que precisa ficar claro. No Brasil, as formas de “nós” e “eles” são comuns (para a gente fazer, antes de vocês saírem); a forma de “tu” (fazeres) é rara, porque o “tu” é menos usado ou vem com a 3ª pessoa. Em Portugal, “para fazeres”, “antes de saíres”, “obrigado por vires” são do dia a dia.',
         table: {
           head: ['Pessoa', 'fazer', 'ir', 'estar'],
           rows: [
@@ -1838,7 +1838,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Onde ele aparece',
-        text: 'Depois de preposição (para, sem, antes de, depois de, por, até), depois de expressões impessoais (é melhor, é preciso, é importante) e com «ao» no sentido de «quando». O sujeito pode vir escrito ou não: «para tu fazeres» e «para fazeres» são iguais.',
+        text: 'Depois de preposição (para, sem, antes de, depois de, por, até), depois de expressões impessoais (é melhor, é preciso, é importante) e com “ao” no sentido de “quando”. O sujeito pode vir escrito ou não: “para tu fazeres” e “para fazeres” são iguais.',
         table: {
           head: ['Construção', 'Portugal', 'Brasil (fala comum)'],
           rows: [
@@ -1858,14 +1858,14 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Quando não se flexiona',
-        text: 'Nas locuções verbais o infinitivo fica sem flexão, porque quem se conjuga é o auxiliar: «podemos ir», nunca «podemos irmos». O mesmo com «estar a + infinitivo», tão português: «estamos a trabalhar», nunca «estamos a trabalharmos». Também não se flexiona quando o sujeito é o mesmo do verbo principal com querer, tentar, conseguir (queremos viajar) nem quando o sentido é geral (é proibido fumar). E na fala popular brasileira aparece «para mim fazer»: nos dois países, a norma pede «para eu fazer», porque o «eu» é sujeito do infinitivo.',
+        text: 'Nas locuções verbais o infinitivo fica sem flexão, porque quem se conjuga é o auxiliar: “podemos ir”, nunca “podemos irmos”. O mesmo com “estar a + infinitivo”, tão português: “estamos a trabalhar”, nunca “estamos a trabalharmos”. Também não se flexiona quando o sujeito é o mesmo do verbo principal com querer, tentar, conseguir (queremos viajar) nem quando o sentido é geral (é proibido fumar). E na fala popular brasileira aparece “para mim fazer”: nos dois países, a norma pede “para eu fazer”, porque o “eu” é sujeito do infinitivo.',
         table: {
           head: ['Errado', 'Certo (nos dois países)', 'Por quê'],
           rows: [
             ['Podemos irmos.', 'Podemos ir.', 'locução verbal: só o auxiliar se conjuga'],
             ['Estamos a trabalharmos.', 'Estamos a trabalhar.', 'estar a + infinitivo não flexionado'],
             ['Vão fazerem o jantar.', 'Vão fazer o jantar.', 'locução com ir'],
-            ['Isto é para mim fazer.', 'Isto é para eu fazer.', 'o sujeito do infinitivo é «eu»'],
+            ['Isto é para mim fazer.', 'Isto é para eu fazer.', 'o sujeito do infinitivo é “eu”'],
           ],
         },
         examples: [
@@ -1893,14 +1893,14 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Flexionar o infinitivo dentro de locução verbal: «podemos irmos», «vão fazerem». Quem se conjuga é o auxiliar: podemos ir, vão fazer.',
-      'Dizer «para mim fazer»: nos dois países o certo é para eu fazer (o «eu» é o sujeito do infinitivo).',
-      'Confundir infinitivo pessoal e futuro do conjuntivo nos irregulares: «para fizeres» ou «quando fazeres». É para fazeres, quando fizeres.',
-      'Estranhar «Obrigado por vires» ou «antes de saíres» em Portugal: são formas corretas e muito naturais com o tu.',
+      'Flexionar o infinitivo dentro de locução verbal: “podemos irmos”, “vão fazerem”. Quem se conjuga é o auxiliar: podemos ir, vão fazer.',
+      'Dizer “para mim fazer”: nos dois países o certo é para eu fazer (o “eu” é o sujeito do infinitivo).',
+      'Confundir infinitivo pessoal e futuro do conjuntivo nos irregulares: “para fizeres” ou “quando fazeres”. É para fazeres, quando fizeres.',
+      'Estranhar “Obrigado por vires” ou “antes de saíres” em Portugal: são formas corretas e muito naturais com o tu.',
     ],
     quiz: [
       {
-        question: 'Complete como em Portugal: «Antes de ___, apaga a luz.» (sair, tu)',
+        question: 'Complete como em Portugal: “Antes de ___, apaga a luz.” (sair, tu)',
         options: ['saíres', 'saires', 'saíste'],
         answer: 'saíres',
         explanation: 'Infinitivo pessoal de sair na 2ª pessoa: saíres (com acento no í, como saída).',
@@ -1912,22 +1912,22 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         explanation: 'Em locução verbal só o auxiliar (podemos) se conjuga; o infinitivo fica sem flexão.',
       },
       {
-        question: 'Complete: «É melhor ___ cedo para apanhar o comboio.» (nós, sair)',
+        question: 'Complete: “É melhor ___ cedo para apanhar o comboio.” (nós, sair)',
         options: ['sairmos', 'sair', 'saímos'],
         answer: 'sairmos',
-        explanation: 'Depois de «é melhor», com sujeito próprio (nós), usa-se o infinitivo pessoal: sairmos.',
+        explanation: 'Depois de “é melhor”, com sujeito próprio (nós), usa-se o infinitivo pessoal: sairmos.',
       },
       {
         question: 'Qual frase segue a norma culta?',
         options: ['Isto é para eu fazer.', 'Isto é para mim fazer.', 'Isto é para me fazer.'],
         answer: 'Isto é para eu fazer.',
-        explanation: '«Eu» é o sujeito de «fazer», por isso fica «para eu fazer». «Para mim fazer» é popular no Brasil, fora da norma dos dois países.',
+        explanation: '“Eu” é o sujeito de “fazer”, por isso fica “para eu fazer”. “Para mim fazer” é popular no Brasil, fora da norma dos dois países.',
       },
       {
-        question: 'Complete: «Trouxe o mapa para tu ___ o caminho.» (ver)',
+        question: 'Complete: “Trouxe o mapa para tu ___ o caminho.” (ver)',
         options: ['veres', 'vires', 'veras'],
         answer: 'veres',
-        explanation: 'Depois de «para» vem o infinitivo pessoal, que usa o infinitivo inteiro: veres. «Vires» é o futuro do conjuntivo (quando vires).',
+        explanation: 'Depois de “para” vem o infinitivo pessoal, que usa o infinitivo inteiro: veres. “Vires” é o futuro do conjuntivo (quando vires).',
       },
     ],
   },
@@ -1938,7 +1938,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
     level: 'B1.4',
     title: 'O Acordo Ortográfico de 1990: consoantes mudas e dupla grafia',
     emoji: '✍️',
-    summary: 'Desde o Acordo de 1990, Portugal e Brasil escrevem quase igual, mas não totalmente: cada país tira as consoantes que não pronuncia. Por isso Portugal escreve «facto» e «receção», e o Brasil «fato» e «recepção». E os acentos seguem a pronúncia: económico × econômico.',
+    summary: 'Desde o Acordo de 1990, Portugal e Brasil escrevem quase igual, mas não totalmente: cada país tira as consoantes que não pronuncia. Por isso Portugal escreve “facto” e “receção”, e o Brasil “fato” e “recepção”. E os acentos seguem a pronúncia: económico × econômico.',
     sections: [
       {
         text: 'O Acordo Ortográfico da Língua Portuguesa foi assinado em 1990 pelos países de língua portuguesa. No Brasil, ficou obrigatório em 2016; em Portugal, em 2015, depois de um período de transição. Ele aproximou muito as duas grafias, mas não criou uma só: onde a pronúncia é diferente, cada país escreve como fala. É a chamada dupla grafia, e as duas formas são corretas, cada uma na sua norma.',
@@ -1970,7 +1970,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Acentos: é/ê, ó/ô seguem a pronúncia',
-        text: 'Antes de m ou n, o português de Portugal abre o e e o o tônicos (é, ó), e o do Brasil fecha (ê, ô). A escrita acompanha: económico × econômico. As duas grafias são oficiais. O Acordo também mexeu em regras que o Brasil tinha e Portugal não: o Brasil tirou o trema (linguiça, frequente), o acento de ideia, heroico, voo e leem, que Portugal já não usava. E os dois tiraram o acento de «para» (verbo parar): «ele para o carro».',
+        text: 'Antes de m ou n, o português de Portugal abre o e e o o tônicos (é, ó), e o do Brasil fecha (ê, ô). A escrita acompanha: económico × econômico. As duas grafias são oficiais. O Acordo também mexeu em regras que o Brasil tinha e Portugal não: o Brasil tirou o trema (linguiça, frequente), o acento de ideia, heroico, voo e leem, que Portugal já não usava. E os dois tiraram o acento de “para” (verbo parar): “ele para o carro”.',
         table: {
           head: ['Portugal', 'Brasil', 'Observação'],
           rows: [
@@ -1990,7 +1990,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Parece ortografia, mas é palavra diferente',
-        text: 'Algumas diferenças não são de grafia, e o Acordo não mexeu nelas: são palavras ou formas diferentes em cada país. Cuidado especial com «fato»: em Portugal, «fato» é a roupa (o nosso terno), e o acontecimento é «facto».',
+        text: 'Algumas diferenças não são de grafia, e o Acordo não mexeu nelas: são palavras ou formas diferentes em cada país. Cuidado especial com “fato”: em Portugal, “fato” é a roupa (o nosso terno), e o acontecimento é “facto”.',
         table: {
           head: ['Portugal', 'Brasil'],
           rows: [
@@ -2004,19 +2004,19 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         },
         examples: [
           ['Vestiu um fato novo para o casamento.', 'Vestiu um terno novo para o casamento.'],
-          ['A equipa do Porto ganhou o jogo.', 'A equipe do Porto ganhou o jogo. (No futebol brasileiro, «time».)'],
+          ['A equipa do Porto ganhou o jogo.', 'A equipe do Porto ganhou o jogo. (No futebol brasileiro, “time”.)'],
         ],
       },
     ],
     pitfalls: [
       'Achar que o Acordo unificou tudo: onde a pronúncia difere, cada país escreve do seu jeito, e facto, contacto e receção são grafias oficiais de Portugal.',
-      'Usar em Portugal «fato» no sentido de acontecimento: lá, «fato» é a roupa. O acontecimento é «facto».',
-      'Corrigir «económico», «António» ou «bebé» num texto português: é a dupla grafia prevista no Acordo, tão correta quanto a brasileira.',
+      'Usar em Portugal “fato” no sentido de acontecimento: lá, “fato” é a roupa. O acontecimento é “facto”.',
+      'Corrigir “económico”, “António” ou “bebé” num texto português: é a dupla grafia prevista no Acordo, tão correta quanto a brasileira.',
       'Escrever as formas antigas de Portugal (acção, óptimo, director) achando que são o português europeu de hoje: essas consoantes mudas caíram em 2015.',
     ],
     quiz: [
       {
-        question: 'Como se escreve hoje em Portugal a palavra que antes era «óptimo»?',
+        question: 'Como se escreve hoje em Portugal a palavra que antes era “óptimo”?',
         options: ['ótimo', 'óptimo', 'optimo'],
         answer: 'ótimo',
         explanation: 'O p não se pronuncia em nenhum dos dois países, então caiu com o Acordo: ótimo.',
@@ -2028,10 +2028,10 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         explanation: 'Em Portugal o p não se pronuncia e caiu: receção. No Brasil, onde o p soa, escreve-se recepção.',
       },
       {
-        question: 'Em Portugal, «um fato» é…',
+        question: 'Em Portugal, “um fato” é…',
         options: ['um terno (roupa)', 'um acontecimento', 'uma fotografia'],
         answer: 'um terno (roupa)',
-        explanation: 'Em Portugal «fato» é a roupa; o acontecimento é «facto», com o c pronunciado.',
+        explanation: 'Em Portugal “fato” é a roupa; o acontecimento é “facto”, com o c pronunciado.',
       },
       {
         question: 'Qual é a grafia de Portugal?',
@@ -2052,7 +2052,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
     level: 'B1.4',
     title: 'Hífen e maiúsculas depois do Acordo',
     emoji: '➖',
-    summary: 'As regras do hífen com prefixos e das maiúsculas são as mesmas em Portugal e no Brasil desde o Acordo de 1990. As diferenças que ficaram são de hábito: Portugal escrevia os meses com maiúscula (Agosto) e o «hei-de» com hífen, e usa muito mais o hífen dos pronomes (diz-me, dir-lhe-ei).',
+    summary: 'As regras do hífen com prefixos e das maiúsculas são as mesmas em Portugal e no Brasil desde o Acordo de 1990. As diferenças que ficaram são de hábito: Portugal escrevia os meses com maiúscula (Agosto) e o “hei-de” com hífen, e usa muito mais o hífen dos pronomes (diz-me, dir-lhe-ei).',
     sections: [
       {
         heading: 'Prefixos: a regra das letras que se encontram',
@@ -2073,12 +2073,12 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         examples: [
           ['Aquece o leite no micro-ondas.', 'Esquenta o leite no micro-ondas.'],
           ['O ex-presidente da câmara inaugurou a autoestrada.', 'O ex-prefeito inaugurou a rodovia.'],
-          ['Há cada vez mais sem-abrigo em Lisboa.', 'Há cada vez mais moradores de rua em Lisboa. («Sem-abrigo» é o termo de Portugal; no Brasil também se diz «sem-teto».)'],
+          ['Há cada vez mais sem-abrigo em Lisboa.', 'Há cada vez mais moradores de rua em Lisboa. (“Sem-abrigo” é o termo de Portugal; no Brasil também se diz “sem-teto”.)'],
         ],
       },
       {
         heading: 'Compostos e locuções',
-        text: 'Compostos cujas partes formam uma unidade continuam com hífen: guarda-chuva, arco-íris, segunda-feira, bem-vindo, pequeno-almoço, couve-flor. Já as locuções com palavra de ligação (de, a, em) perderam o hífen com o Acordo: fim de semana, dia a dia, pé de moleque. Ficam algumas consagradas pelo uso, como cor-de-rosa, água-de-colónia (Brasil: água-de-colônia), mais-que-perfeito e pé-de-meia. E um caso que mudou só para Portugal: «haver de» perdeu o hífen. Portugal escrevia «hei-de», e hoje escreve «hei de», como o Brasil.',
+        text: 'Compostos cujas partes formam uma unidade continuam com hífen: guarda-chuva, arco-íris, segunda-feira, bem-vindo, pequeno-almoço, couve-flor. Já as locuções com palavra de ligação (de, a, em) perderam o hífen com o Acordo: fim de semana, dia a dia, pé de moleque. Ficam algumas consagradas pelo uso, como cor-de-rosa, água-de-colónia (Brasil: água-de-colônia), mais-que-perfeito e pé-de-meia. E um caso que mudou só para Portugal: “haver de” perdeu o hífen. Portugal escrevia “hei-de”, e hoje escreve “hei de”, como o Brasil.',
         table: {
           head: ['Com hífen', 'Sem hífen (locução)'],
           rows: [
@@ -2111,7 +2111,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Maiúsculas e minúsculas',
-        text: 'Com o Acordo, meses, estações do ano e dias da semana passaram a ser escritos com minúscula nos dois países. Para o Brasil nada mudou; para Portugal, sim: antes se escrevia «Janeiro», «Primavera». Pontos cardeais também são minúsculos, a não ser quando nomeiam uma região (o Norte de Portugal, o Nordeste brasileiro). Em alguns casos o Acordo deixou a escolha livre: disciplinas, formas de tratamento, nomes de ruas, santos e as palavras de títulos de obras depois da primeira.',
+        text: 'Com o Acordo, meses, estações do ano e dias da semana passaram a ser escritos com minúscula nos dois países. Para o Brasil nada mudou; para Portugal, sim: antes se escrevia “Janeiro”, “Primavera”. Pontos cardeais também são minúsculos, a não ser quando nomeiam uma região (o Norte de Portugal, o Nordeste brasileiro). Em alguns casos o Acordo deixou a escolha livre: disciplinas, formas de tratamento, nomes de ruas, santos e as palavras de títulos de obras depois da primeira.',
         table: {
           head: ['Caso', 'Regra', 'Exemplo'],
           rows: [
@@ -2126,17 +2126,17 @@ export const GRAMMAR_PT: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['Em agosto vamos para o Algarve de autocarro.', 'Em agosto vamos para o Algarve de ônibus. (Antes do Acordo, Portugal escrevia «Agosto».)'],
+          ['Em agosto vamos para o Algarve de autocarro.', 'Em agosto vamos para o Algarve de ônibus. (Antes do Acordo, Portugal escrevia “Agosto”.)'],
           ['A festa de Santo António enche Lisboa em junho.', 'A festa de Santo Antônio enche Lisboa em junho.'],
         ],
       },
     ],
     pitfalls: [
-      'Pôr hífen com vogais diferentes («auto-estrada», «extra-escolar») ou tirá-lo com vogais iguais («microondas»). Nos dois países: autoestrada, extraescolar, micro-ondas.',
-      'Esquecer de dobrar r e s: «anti-rugas», «ultra-som». O certo é antirrugas, ultrassom.',
+      'Pôr hífen com vogais diferentes (“auto-estrada”, “extra-escolar”) ou tirá-lo com vogais iguais (“microondas”). Nos dois países: autoestrada, extraescolar, micro-ondas.',
+      'Esquecer de dobrar r e s: “anti-rugas”, “ultra-som”. O certo é antirrugas, ultrassom.',
       'Escrever meses e estações com maiúscula, como no Portugal de antes do Acordo: hoje é janeiro, primavera, nos dois países.',
-      'Escrever «hei-de», «há-de» em texto português atual: o hífen caiu, e se escreve hei de, há de.',
-      'Esquecer o hífen da ênclise ao imitar o português europeu: «chamo me Ana». O certo é chamo-me Ana.',
+      'Escrever “hei-de”, “há-de” em texto português atual: o hífen caiu, e se escreve hei de, há de.',
+      'Esquecer o hífen da ênclise ao imitar o português europeu: “chamo me Ana”. O certo é chamo-me Ana.',
     ],
     quiz: [
       {
@@ -2155,7 +2155,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         question: 'Como se escreve hoje em Portugal?',
         options: ['Hei de ir ao Porto.', 'Hei-de ir ao Porto.', 'Heide ir ao Porto.'],
         answer: 'Hei de ir ao Porto.',
-        explanation: 'Com o Acordo, «haver de» perdeu o hífen em Portugal: hei de, hás de, há de, como no Brasil.',
+        explanation: 'Com o Acordo, “haver de” perdeu o hífen em Portugal: hei de, hás de, há de, como no Brasil.',
       },
       {
         question: 'Como se escreve hoje o mês em Portugal?',
@@ -2178,11 +2178,11 @@ export const GRAMMAR_PT: GrammarTopic[] = [
     level: 'B2.1',
     title: 'Concordância difícil: haver e fazer impessoais, a maioria, sujeito posposto',
     emoji: '⚖️',
-    summary: 'Os casos em que brasileiros e portugueses mais tropeçam: «haviam muitas pessoas», «fazem dois anos», «a maioria chegaram», «falta cinco minutos», «vende-se casas». As regras são as mesmas nas duas normas. A diferença de fundo é que Portugal diz «há» onde o Brasil diz «tem».',
+    summary: 'Os casos em que brasileiros e portugueses mais tropeçam: “haviam muitas pessoas”, “fazem dois anos”, “a maioria chegaram”, “falta cinco minutos”, “vende-se casas”. As regras são as mesmas nas duas normas. A diferença de fundo é que Portugal diz “há” onde o Brasil diz “tem”.',
     sections: [
       {
         heading: 'Haver e fazer impessoais: sempre no singular',
-        text: 'Quando «haver» quer dizer existir ou acontecer, e quando «haver» ou «fazer» indicam tempo passado, o verbo não tem sujeito: fica sempre na 3ª pessoa do singular. Isso contamina o auxiliar da locução (deve haver, vai fazer). Já «existir» tem sujeito e concorda. Na fala, o Brasil usa «ter» no lugar de «haver» («tem muita gente»), o que a norma culta evita em texto formal; em Portugal a fala usa «há» com naturalidade: «Há muita gente».',
+        text: 'Quando “haver” quer dizer existir ou acontecer, e quando “haver” ou “fazer” indicam tempo passado, o verbo não tem sujeito: fica sempre na 3ª pessoa do singular. Isso contamina o auxiliar da locução (deve haver, vai fazer). Já “existir” tem sujeito e concorda. Na fala, o Brasil usa “ter” no lugar de “haver” (“tem muita gente”), o que a norma culta evita em texto formal; em Portugal a fala usa “há” com naturalidade: “Há muita gente”.',
         table: {
           head: ['Errado (nos dois países)', 'Norma culta', 'Por quê'],
           rows: [
@@ -2196,14 +2196,14 @@ export const GRAMMAR_PT: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['Havia muitas pessoas na Feira do Livro.', 'Tinha muita gente na Feira do Livro. (Norma culta: «havia muitas pessoas».)'],
+          ['Havia muitas pessoas na Feira do Livro.', 'Tinha muita gente na Feira do Livro. (Norma culta: “havia muitas pessoas”.)'],
           ['Vivo em Braga há três anos.', 'Moro em Braga faz três anos.'],
-          ['Deve haver comboios de hora a hora.', 'Deve ter trem de hora em hora. (Norma culta: «deve haver trens».)'],
+          ['Deve haver comboios de hora a hora.', 'Deve ter trem de hora em hora. (Norma culta: “deve haver trens”.)'],
         ],
       },
       {
         heading: 'A maioria, metade, mais de um, cerca de',
-        text: 'Com expressões partitivas seguidas de plural (a maioria dos, metade dos, grande parte dos), a norma dos dois países aceita o verbo no singular (concordando com «a maioria») ou no plural (concordando com o que vem depois). O singular é o mais tradicional em texto formal. Outras expressões têm regra fixa.',
+        text: 'Com expressões partitivas seguidas de plural (a maioria dos, metade dos, grande parte dos), a norma dos dois países aceita o verbo no singular (concordando com “a maioria”) ou no plural (concordando com o que vem depois). O singular é o mais tradicional em texto formal. Outras expressões têm regra fixa.',
         table: {
           head: ['Expressão', 'Concordância', 'Exemplo em Portugal'],
           rows: [
@@ -2221,8 +2221,8 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'Sujeito depois do verbo e o «se»',
-        text: 'Quando o sujeito vem depois do verbo, a fala dos dois países tende a esquecer a concordância («falta cinco minutos», «chegou as encomendas»). A norma pede o plural: faltam, chegaram, bastam, sobraram. O mesmo na passiva com «se»: em «vendem-se casas», «casas» é o sujeito (casas são vendidas), e o verbo concorda. Já quando o verbo pede preposição (precisar de, tratar de, gostar de), o «se» indetermina o sujeito e o verbo fica no singular: «precisa-se de empregados», «trata-se de questões sérias». Em Portugal, como é afirmação sem palavra que puxe o pronome, a ordem é «vendem-se»; no Brasil, a fala diz «se vende» ou «vende-se».',
+        heading: 'Sujeito depois do verbo e o “se”',
+        text: 'Quando o sujeito vem depois do verbo, a fala dos dois países tende a esquecer a concordância (“falta cinco minutos”, “chegou as encomendas”). A norma pede o plural: faltam, chegaram, bastam, sobraram. O mesmo na passiva com “se”: em “vendem-se casas”, “casas” é o sujeito (casas são vendidas), e o verbo concorda. Já quando o verbo pede preposição (precisar de, tratar de, gostar de), o “se” indetermina o sujeito e o verbo fica no singular: “precisa-se de empregados”, “trata-se de questões sérias”. Em Portugal, como é afirmação sem palavra que puxe o pronome, a ordem é “vendem-se”; no Brasil, a fala diz “se vende” ou “vende-se”.',
         table: {
           head: ['Fala comum (nos dois países)', 'Norma culta'],
           rows: [
@@ -2236,27 +2236,27 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         },
         examples: [
           ['Faltam dez minutos para o comboio partir.', 'Faltam dez minutos para o trem sair.'],
-          ['Alugam-se quartos perto da universidade.', 'Alugam-se quartos perto da universidade. (Na fala: «tem quarto para alugar».)'],
+          ['Alugam-se quartos perto da universidade.', 'Alugam-se quartos perto da universidade. (Na fala: “tem quarto para alugar”.)'],
           ['Precisa-se de empregados de mesa para o verão.', 'Precisa-se de garçons para o verão.'],
         ],
       },
     ],
     pitfalls: [
-      'Pôr «haver» existencial no plural: «haviam pessoas», «houveram festas». Nos dois países é havia, houve, sempre no singular.',
-      'Levar a impessoalidade para o auxiliar esquecendo a regra: «devem haver», «vão fazer dez anos». O certo é deve haver, vai fazer dez anos.',
-      'Usar em Portugal o «tem» existencial do Brasil: «tem um café aqui perto». Lá se diz há um café aqui perto.',
-      'Deixar o verbo no singular com o sujeito posposto: «falta dois dias», «vende-se apartamentos». A norma pede faltam dois dias, vendem-se apartamentos.',
-      'Pôr no plural o «se» com verbo de preposição: «precisam-se de pessoas». Com preposição, singular: precisa-se de pessoas.',
+      'Pôr “haver” existencial no plural: “haviam pessoas”, “houveram festas”. Nos dois países é havia, houve, sempre no singular.',
+      'Levar a impessoalidade para o auxiliar esquecendo a regra: “devem haver”, “vão fazer dez anos”. O certo é deve haver, vai fazer dez anos.',
+      'Usar em Portugal o “tem” existencial do Brasil: “tem um café aqui perto”. Lá se diz há um café aqui perto.',
+      'Deixar o verbo no singular com o sujeito posposto: “falta dois dias”, “vende-se apartamentos”. A norma pede faltam dois dias, vendem-se apartamentos.',
+      'Pôr no plural o “se” com verbo de preposição: “precisam-se de pessoas”. Com preposição, singular: precisa-se de pessoas.',
     ],
     quiz: [
       {
-        question: 'Complete: «___ muitos turistas em Sintra no domingo.»',
+        question: 'Complete: “___ muitos turistas em Sintra no domingo.”',
         options: ['Havia', 'Haviam', 'Houveram'],
         answer: 'Havia',
         explanation: 'Haver no sentido de existir é impessoal: fica no singular, nos dois países.',
       },
       {
-        question: 'Complete: «Deve ___ lugares livres no autocarro.»',
+        question: 'Complete: “Deve ___ lugares livres no autocarro.”',
         options: ['haver', 'haverem', 'havia'],
         answer: 'haver',
         explanation: 'Na locução com haver impessoal, o auxiliar fica no singular (deve) e haver no infinitivo sem flexão.',
@@ -2268,16 +2268,16 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         explanation: 'Fazer indicando tempo decorrido é impessoal: singular, sempre.',
       },
       {
-        question: 'Complete o anúncio: «___ apartamentos no centro de Aveiro.»',
+        question: 'Complete o anúncio: “___ apartamentos no centro de Aveiro.”',
         options: ['Vendem-se', 'Vende-se', 'Se vendem'],
         answer: 'Vendem-se',
-        explanation: 'Na passiva com «se», apartamentos é o sujeito e o verbo concorda: vendem-se. E em Portugal a frase não começa por pronome átono.',
+        explanation: 'Na passiva com “se”, apartamentos é o sujeito e o verbo concorda: vendem-se. E em Portugal a frase não começa por pronome átono.',
       },
       {
-        question: 'Complete: «___ de voluntários para a festa.»',
+        question: 'Complete: “___ de voluntários para a festa.”',
         options: ['Precisa-se', 'Precisam-se', 'Precisa-se-lhes'],
         answer: 'Precisa-se',
-        explanation: 'Com verbo que pede preposição (precisar de), o «se» indetermina o sujeito e o verbo fica no singular.',
+        explanation: 'Com verbo que pede preposição (precisar de), o “se” indetermina o sujeito e o verbo fica no singular.',
       },
     ],
   },
@@ -2286,10 +2286,10 @@ export const GRAMMAR_PT: GrammarTopic[] = [
     level: 'B2.1',
     title: 'Pronomes relativos: que, quem, o qual, cujo, onde × aonde',
     emoji: '🔗',
-    summary: 'Os relativos ligam frases: «a rapariga com quem falei», «a cidade onde vivo», «o autor cujo livro li». As regras são as mesmas na norma culta dos dois países, e os erros também: «cujo o», «o filme que te falei», «o ano onde nasci». Veja cada um e a diferença entre onde e aonde.',
+    summary: 'Os relativos ligam frases: “a rapariga com quem falei”, “a cidade onde vivo”, “o autor cujo livro li”. As regras são as mesmas na norma culta dos dois países, e os erros também: “cujo o”, “o filme que te falei”, “o ano onde nasci”. Veja cada um e a diferença entre onde e aonde.',
     sections: [
       {
-        text: 'O relativo retoma um nome já dito e abre uma oração que o descreve. A norma culta é igual em Portugal e no Brasil; na fala dos dois lados, o «que» faz quase tudo e as preposições caem. Um detalhe da colocação portuguesa: o relativo puxa o pronome átono para antes do verbo, então em Portugal se diz «o livro que me deste», com próclise, mesmo sendo afirmação.',
+        text: 'O relativo retoma um nome já dito e abre uma oração que o descreve. A norma culta é igual em Portugal e no Brasil; na fala dos dois lados, o “que” faz quase tudo e as preposições caem. Um detalhe da colocação portuguesa: o relativo puxa o pronome átono para antes do verbo, então em Portugal se diz “o livro que me deste”, com próclise, mesmo sendo afirmação.',
         table: {
           head: ['Relativo', 'Uso', 'Exemplo em Portugal'],
           rows: [
@@ -2298,7 +2298,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
             ['o qual, a qual, os quais, as quais', 'depois de preposição longa ou para evitar ambiguidade', 'É a razão pela qual vim.'],
             ['cujo, cuja, cujos, cujas', 'posse (= do qual, de quem)', 'O escritor cujo livro li é do Porto.'],
             ['onde', 'lugar, sem movimento', 'A vila onde vivo é pequena.'],
-            ['aonde', 'lugar, com verbo de movimento que pede «a»', 'A praia aonde fomos era linda.'],
+            ['aonde', 'lugar, com verbo de movimento que pede “a”', 'A praia aonde fomos era linda.'],
             ['quanto, quantos', 'depois de tudo, todos, tanto', 'Fiz tudo quanto pude.'],
           ],
         },
@@ -2309,7 +2309,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Cujo: posse, sem artigo depois',
-        text: '«Cujo» liga o possuidor à coisa possuída e concorda com a coisa possuída (cujo livro, cuja casa, cujos filhos). Nunca leva artigo depois («cujo o» é erro) e aceita preposição antes, se o verbo pedir. Na fala dos dois países é raro, e aparece a construção com «que» mais um possessivo ou pronome, que a norma não aceita.',
+        text: '“Cujo” liga o possuidor à coisa possuída e concorda com a coisa possuída (cujo livro, cuja casa, cujos filhos). Nunca leva artigo depois (“cujo o” é erro) e aceita preposição antes, se o verbo pedir. Na fala dos dois países é raro, e aparece a construção com “que” mais um possessivo ou pronome, que a norma não aceita.',
         table: {
           head: ['Fora da norma', 'Norma culta (nos dois países)'],
           rows: [
@@ -2326,7 +2326,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'A preposição vai antes do relativo',
-        text: 'Se o verbo da oração relativa pede preposição, ela vem antes do relativo: falar de → «o filme de que te falei»; gostar de → «a música de que gosto»; morar em → «a casa em que moro». Na fala dos dois países a preposição costuma cair («o filme que te falei»), e no Brasil aparece também a relativa com pronome repetido («o rapaz que eu falei com ele»). Em texto formal, a norma pede a preposição.',
+        text: 'Se o verbo da oração relativa pede preposição, ela vem antes do relativo: falar de → “o filme de que te falei”; gostar de → “a música de que gosto”; morar em → “a casa em que moro”. Na fala dos dois países a preposição costuma cair (“o filme que te falei”), e no Brasil aparece também a relativa com pronome repetido (“o rapaz que eu falei com ele”). Em texto formal, a norma pede a preposição.',
         table: {
           head: ['Fala comum', 'Norma culta'],
           rows: [
@@ -2337,67 +2337,67 @@ export const GRAMMAR_PT: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['O livro de que te falei é de Eça de Queirós.', 'O livro de que te falei é de Eça de Queirós. (Na fala: «o livro que eu te falei».)'],
-          ['É uma cidade de que gosto muito.', 'É uma cidade de que gosto muito. (Na fala: «que eu gosto muito».)'],
+          ['O livro de que te falei é de Eça de Queirós.', 'O livro de que te falei é de Eça de Queirós. (Na fala: “o livro que eu te falei”.)'],
+          ['É uma cidade de que gosto muito.', 'É uma cidade de que gosto muito. (Na fala: “que eu gosto muito”.)'],
         ],
       },
       {
-        heading: 'Onde, aonde, donde e o «onde» que não é lugar',
-        text: '«Onde» é para lugar sem movimento (estar, viver, ficar). «Aonde» junta a preposição «a» e vai com verbos que pedem «a» (ir a, chegar a). «Donde» ou «de onde» indicam origem. A distinção vale na norma culta dos dois países; na fala, Portugal diz muito «Onde é que vais?» e o Brasil «Onde você vai?», e a norma pede «Aonde vais?» ou «Para onde vais?». E, também nos dois países, «onde» é só para lugar: para tempo ou situação, use «em que».',
+        heading: 'Onde, aonde, donde e o “onde” que não é lugar',
+        text: '“Onde” é para lugar sem movimento (estar, viver, ficar). “Aonde” junta a preposição “a” e vai com verbos que pedem “a” (ir a, chegar a). “Donde” ou “de onde” indicam origem. A distinção vale na norma culta dos dois países; na fala, Portugal diz muito “Onde é que vais?” e o Brasil “Onde você vai?”, e a norma pede “Aonde vais?” ou “Para onde vais?”. E, também nos dois países, “onde” é só para lugar: para tempo ou situação, use “em que”.',
         table: {
           head: ['Uso', 'Norma culta', 'Evite'],
           rows: [
             ['lugar sem movimento', 'A casa onde vivo.', '—'],
-            ['movimento com «a»', 'Aonde vais nas férias?', 'Onde vais nas férias?'],
+            ['movimento com “a”', 'Aonde vais nas férias?', 'Onde vais nas férias?'],
             ['origem', 'Donde és? / De onde és?', '—'],
             ['tempo', 'O ano em que nasci.', 'O ano onde nasci.'],
             ['situação', 'Uma situação em que ninguém ganha.', 'Uma situação onde ninguém ganha.'],
           ],
         },
         examples: [
-          ['Aonde vais nas férias? Vou aos Açores.', 'Aonde você vai nas férias? Vou para os Açores. (Na fala: «onde você vai».)'],
+          ['Aonde vais nas férias? Vou aos Açores.', 'Aonde você vai nas férias? Vou para os Açores. (Na fala: “onde você vai”.)'],
           ['Donde é que és? Sou de Viana do Castelo.', 'De onde você é? Sou de Viana do Castelo.'],
           ['Lembro-me bem do ano em que o meu irmão nasceu.', 'Lembro bem do ano em que meu irmão nasceu.'],
         ],
       },
     ],
     pitfalls: [
-      'Pôr artigo depois de cujo: «cujo o filho», «cuja a casa». Nos dois países é cujo filho, cuja casa.',
-      'Deixar cair a preposição do relativo em texto formal: «o filme que te falei». A norma pede o filme de que te falei.',
-      'Usar «onde» para tempo ou situação: «o ano onde nasci», «uma reunião onde se decidiu». O certo é em que, na qual.',
-      'Trocar onde e aonde: «aonde moras?». Morar não é movimento: onde moras? E com ir: aonde vais?',
-      'Esquecer a próclise depois do relativo ao escrever como em Portugal: «o livro que deste-me». O relativo puxa o pronome: o livro que me deste.',
+      'Pôr artigo depois de cujo: “cujo o filho”, “cuja a casa”. Nos dois países é cujo filho, cuja casa.',
+      'Deixar cair a preposição do relativo em texto formal: “o filme que te falei”. A norma pede o filme de que te falei.',
+      'Usar “onde” para tempo ou situação: “o ano onde nasci”, “uma reunião onde se decidiu”. O certo é em que, na qual.',
+      'Trocar onde e aonde: “aonde moras?”. Morar não é movimento: onde moras? E com ir: aonde vais?',
+      'Esquecer a próclise depois do relativo ao escrever como em Portugal: “o livro que deste-me”. O relativo puxa o pronome: o livro que me deste.',
     ],
     quiz: [
       {
         question: 'Qual frase segue a norma culta?',
         options: ['O senhor cujo filho é médico mora em Faro.', 'O senhor cujo o filho é médico mora em Faro.', 'O senhor que o filho é médico mora em Faro.'],
         answer: 'O senhor cujo filho é médico mora em Faro.',
-        explanation: 'Cujo nunca leva artigo depois e substitui a construção com «que + o».',
+        explanation: 'Cujo nunca leva artigo depois e substitui a construção com “que + o”.',
       },
       {
-        question: 'Complete: «É a música ___ mais gosto.»',
+        question: 'Complete: “É a música ___ mais gosto.”',
         options: ['de que', 'que', 'onde'],
         answer: 'de que',
-        explanation: 'Gostar pede «de», e a preposição vem antes do relativo: de que gosto.',
+        explanation: 'Gostar pede “de”, e a preposição vem antes do relativo: de que gosto.',
       },
       {
-        question: 'Complete: «___ vais no sábado?»',
+        question: 'Complete: “___ vais no sábado?”',
         options: ['Aonde', 'Onde', 'Donde'],
         answer: 'Aonde',
-        explanation: 'Ir pede «a» (ir a um sítio): aonde vais? «Onde» é para lugar sem movimento; «donde» é origem.',
+        explanation: 'Ir pede “a” (ir a um sítio): aonde vais? “Onde” é para lugar sem movimento; “donde” é origem.',
       },
       {
-        question: 'Complete: «Nunca me esqueço do dia ___ cheguei a Lisboa.»',
+        question: 'Complete: “Nunca me esqueço do dia ___ cheguei a Lisboa.”',
         options: ['em que', 'onde', 'aonde'],
         answer: 'em que',
-        explanation: '«Onde» é só para lugar. Para tempo, use «em que» (ou «no qual»).',
+        explanation: '“Onde” é só para lugar. Para tempo, use “em que” (ou “no qual”).',
       },
       {
-        question: 'Como fica em Portugal «Ainda tenho a carta que você me deu»?',
+        question: 'Como fica em Portugal “Ainda tenho a carta que você me deu”?',
         options: ['Ainda tenho a carta que me deste.', 'Ainda tenho a carta que deste-me.', 'Ainda tenho a carta que me deu-me.'],
         answer: 'Ainda tenho a carta que me deste.',
-        explanation: 'O relativo «que» puxa o pronome para antes do verbo: que me deste. «Deste» é o pretérito de dar com tu.',
+        explanation: 'O relativo “que” puxa o pronome para antes do verbo: que me deste. “Deste” é o pretérito de dar com tu.',
       },
     ],
   },
@@ -2405,13 +2405,13 @@ export const GRAMMAR_PT: GrammarTopic[] = [
   {
     id: 'pt-g23',
     level: 'B2.2',
-    title: 'Cartas e e-mails formais: do «Exmo. Senhor» ao «Com os melhores cumprimentos»',
+    title: 'Cartas e e-mails formais: do “Exmo. Senhor” ao “Com os melhores cumprimentos”',
     emoji: '✉️',
-    summary: 'A carta formal portuguesa tem fórmulas fixas, diferentes das brasileiras: abre com «Exmo. Senhor» em vez de «Prezado Senhor», usa «Venho por este meio» e fecha com «Com os melhores cumprimentos» em vez de «Atenciosamente». A estrutura (vocativo, assunto, pedido, fecho) é a mesma dos dois lados.',
+    summary: 'A carta formal portuguesa tem fórmulas fixas, diferentes das brasileiras: abre com “Exmo. Senhor” em vez de “Prezado Senhor”, usa “Venho por este meio” e fecha com “Com os melhores cumprimentos” em vez de “Atenciosamente”. A estrutura (vocativo, assunto, pedido, fecho) é a mesma dos dois lados.',
     sections: [
       {
         heading: 'A estrutura da carta e do e-mail',
-        text: 'A ordem é a mesma no Brasil e em Portugal: local e data, destinatário, assunto, vocativo, apresentação do pedido, desenvolvimento, fecho e assinatura. O que muda são as fórmulas. Em Portugal, o vocativo formal por excelência é «Exmo. Senhor» (Excelentíssimo Senhor) ou «Exma. Senhora»; para uma empresa ou serviço, sem destinatário conhecido, escreve-se «Exmos. Senhores». No Brasil, o equivalente seria «Prezado Senhor» ou «Prezados Senhores»; «Ilustríssimo» (Ilmo.) é uso brasileiro que em Portugal quase não aparece. A data portuguesa também costuma vir com o nome da cidade: «Coimbra, 3 de março de 2026» (meses em minúscula nos dois países desde o Acordo de 1990).',
+        text: 'A ordem é a mesma no Brasil e em Portugal: local e data, destinatário, assunto, vocativo, apresentação do pedido, desenvolvimento, fecho e assinatura. O que muda são as fórmulas. Em Portugal, o vocativo formal por excelência é “Exmo. Senhor” (Excelentíssimo Senhor) ou “Exma. Senhora”; para uma empresa ou serviço, sem destinatário conhecido, escreve-se “Exmos. Senhores”. No Brasil, o equivalente seria “Prezado Senhor” ou “Prezados Senhores”; “Ilustríssimo” (Ilmo.) é uso brasileiro que em Portugal quase não aparece. A data portuguesa também costuma vir com o nome da cidade: “Coimbra, 3 de março de 2026” (meses em minúscula nos dois países desde o Acordo de 1990).',
         table: {
           head: ['Parte', 'Portugal', 'Brasil'],
           rows: [
@@ -2429,7 +2429,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Frases prontas de Portugal',
-        text: 'A carta formal portuguesa gosta do verbo na 1ª pessoa com ênclise («Agradeço-lhe», «Envio-lhe») e do tratamento na 3ª pessoa («o senhor», «V. Ex.ª»). Repare no «estar a + infinitivo» até no registro formal («Fico a aguardar») e no vocabulário administrativo de Portugal: «comprovativo» (comprovante), «marcação» (agendamento), «morada» (endereço).',
+        text: 'A carta formal portuguesa gosta do verbo na 1ª pessoa com ênclise (“Agradeço-lhe”, “Envio-lhe”) e do tratamento na 3ª pessoa (“o senhor”, “V. Ex.ª”). Repare no “estar a + infinitivo” até no registro formal (“Fico a aguardar”) e no vocabulário administrativo de Portugal: “comprovativo” (comprovante), “marcação” (agendamento), “morada” (endereço).',
         examples: [
           ['Exmo. Senhor Diretor,', 'Prezado Senhor Diretor,'],
           ['Venho por este meio solicitar a marcação de uma reunião.', 'Venho por meio desta solicitar o agendamento de uma reunião.'],
@@ -2441,7 +2441,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'O e-mail do dia a dia de trabalho',
-        text: 'No e-mail português é muito comum abrir com a saudação do momento, sem «Prezado»: «Bom dia, Dra. Ferreira,» ou «Boa tarde,». O artigo antes do nome é normal em Portugal («Envio o documento à Marta»). O «você» quase nunca aparece num e-mail profissional: usa-se o nome, o título ou a 3ª pessoa sem pronome («Pode confirmar?», «O Eng.º Pires pode confirmar?»). Em vez de «Att.», que em Portugal quase não se usa, fecha-se com «Cumprimentos» ou «Obrigado/a».',
+        text: 'No e-mail português é muito comum abrir com a saudação do momento, sem “Prezado”: “Bom dia, Dra. Ferreira,” ou “Boa tarde,”. O artigo antes do nome é normal em Portugal (“Envio o documento à Marta”). O “você” quase nunca aparece num e-mail profissional: usa-se o nome, o título ou a 3ª pessoa sem pronome (“Pode confirmar?”, “O Eng.º Pires pode confirmar?”). Em vez de “Att.”, que em Portugal quase não se usa, fecha-se com “Cumprimentos” ou “Obrigado/a”.',
         examples: [
           ['Bom dia, Dra. Ferreira, envio-lhe em anexo o relatório de março.', 'Bom dia, Dra. Ferreira, segue em anexo o relatório de março.'],
           ['O Eng.º Pires pode confirmar a hora da reunião?', 'O senhor poderia confirmar o horário da reunião, engenheiro Pires?'],
@@ -2452,7 +2452,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Norma culta nos dois países',
-        text: 'Algumas regras valem igualmente em Lisboa e em Brasília. Pronome de tratamento pede verbo e possessivo na 3ª pessoa: «Vossa Excelência sabe», «a sua carta» (nunca «vossa carta» referindo-se a quem recebe). O adjetivo concorda com o sexo da pessoa: «V. Ex.ª está convidada» (a uma mulher). «Informar alguém de que» leva preposição nos dois lados, embora no Brasil seja frequente omiti-la na fala. E a vírgula depois do vocativo inicial é obrigatória nos dois países.',
+        text: 'Algumas regras valem igualmente em Lisboa e em Brasília. Pronome de tratamento pede verbo e possessivo na 3ª pessoa: “Vossa Excelência sabe”, “a sua carta” (nunca “vossa carta” referindo-se a quem recebe). O adjetivo concorda com o sexo da pessoa: “V. Ex.ª está convidada” (a uma mulher). “Informar alguém de que” leva preposição nos dois lados, embora no Brasil seja frequente omiti-la na fala. E a vírgula depois do vocativo inicial é obrigatória nos dois países.',
         examples: [
           ['Informamos V. Ex.ª de que o pedido foi deferido.', 'Informamos a Vossa Senhoria que o pedido foi deferido.'],
           ['Vossa Excelência e a sua família estão convidados.', 'Vossa Excelência e sua família estão convidados.'],
@@ -2461,42 +2461,42 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Abrir uma carta para Portugal com «Prezado Senhor»: é entendido, mas soa brasileiro. Lá, o formal é «Exmo. Senhor» (ou «Exmos. Senhores» para uma empresa).',
-      'Fechar com «Att.» ou «Atenciosamente» por hábito. Em Portugal o fecho natural é «Com os melhores cumprimentos», «Cumprimentos» ou «Atentamente».',
-      'Escrever «vossa carta» ou «vosso pedido» ao destinatário tratado por V. Ex.ª: pronome de tratamento pede possessivo de 3ª pessoa, «a sua carta», nos dois países.',
-      'Tratar o destinatário por «você» num e-mail profissional português: pode soar distante ou até brusco. Use o nome, o título («o Dr. Costa») ou a 3ª pessoa sem pronome («Pode enviar?»).',
-      'Usar «estou aguardando» no texto europeu: em Portugal é «fico a aguardar» ou «aguardo».',
+      'Abrir uma carta para Portugal com “Prezado Senhor”: é entendido, mas soa brasileiro. Lá, o formal é “Exmo. Senhor” (ou “Exmos. Senhores” para uma empresa).',
+      'Fechar com “Att.” ou “Atenciosamente” por hábito. Em Portugal o fecho natural é “Com os melhores cumprimentos”, “Cumprimentos” ou “Atentamente”.',
+      'Escrever “vossa carta” ou “vosso pedido” ao destinatário tratado por V. Ex.ª: pronome de tratamento pede possessivo de 3ª pessoa, “a sua carta”, nos dois países.',
+      'Tratar o destinatário por “você” num e-mail profissional português: pode soar distante ou até brusco. Use o nome, o título (“o Dr. Costa”) ou a 3ª pessoa sem pronome (“Pode enviar?”).',
+      'Usar “estou aguardando” no texto europeu: em Portugal é “fico a aguardar” ou “aguardo”.',
     ],
     quiz: [
       {
         question: 'Qual é o vocativo mais natural numa carta formal a uma empresa portuguesa?',
         options: ['Exmos. Senhores,', 'Prezados Senhores,', 'Ilmos. Senhores,'],
         answer: 'Exmos. Senhores,',
-        explanation: '«Exmos. Senhores» é a fórmula portuguesa para um destinatário coletivo. «Prezados» é a escolha brasileira, e «Ilmos.» praticamente não se usa em Portugal.',
+        explanation: '“Exmos. Senhores” é a fórmula portuguesa para um destinatário coletivo. “Prezados” é a escolha brasileira, e “Ilmos.” praticamente não se usa em Portugal.',
       },
       {
         question: 'Qual fecho soa mais português?',
         options: ['Com os melhores cumprimentos,', 'Att.,', 'Abraço,'],
         answer: 'Com os melhores cumprimentos,',
-        explanation: '«Com os melhores cumprimentos» é o fecho formal típico em Portugal. «Att.» é abreviatura brasileira de «atenciosamente», e «Abraço» é íntimo demais para uma carta formal.',
+        explanation: '“Com os melhores cumprimentos” é o fecho formal típico em Portugal. “Att.” é abreviatura brasileira de “atenciosamente”, e “Abraço” é íntimo demais para uma carta formal.',
       },
       {
-        question: 'Como dizer «Segue anexo o comprovante de endereço» em Portugal?',
+        question: 'Como dizer “Segue anexo o comprovante de endereço” em Portugal?',
         options: ['Junto envio o comprovativo de morada.', 'Junto envio o comprovante de endereço.', 'Segue anexo o comprovativo de endereçamento.'],
         answer: 'Junto envio o comprovativo de morada.',
-        explanation: 'Em Portugal diz-se «comprovativo» (comprovante) e «morada» (endereço). «Junto envio» é a fórmula clássica para anexos.',
+        explanation: 'Em Portugal diz-se “comprovativo” (comprovante) e “morada” (endereço). “Junto envio” é a fórmula clássica para anexos.',
       },
       {
         question: 'Qual frase respeita a norma culta?',
         options: ['Vossa Excelência trouxe a sua proposta?', 'Vossa Excelência trouxestes a vossa proposta?', 'Vossa Excelência trouxe a vossa proposta?'],
         answer: 'Vossa Excelência trouxe a sua proposta?',
-        explanation: 'Pronomes de tratamento levam o verbo e o possessivo para a 3ª pessoa: «trouxe», «a sua». A regra é a mesma no Brasil e em Portugal.',
+        explanation: 'Pronomes de tratamento levam o verbo e o possessivo para a 3ª pessoa: “trouxe”, “a sua”. A regra é a mesma no Brasil e em Portugal.',
       },
       {
         question: 'Qual frase está em português europeu?',
         options: ['Fico a aguardar a sua resposta.', 'Fico no aguardo da sua resposta.', 'Fico esperando sua resposta.'],
         answer: 'Fico a aguardar a sua resposta.',
-        explanation: 'Portugal usa «ficar a + infinitivo» e o artigo antes do possessivo («a sua»). «No aguardo» é expressão brasileira.',
+        explanation: 'Portugal usa “ficar a + infinitivo” e o artigo antes do possessivo (“a sua”). “No aguardo” é expressão brasileira.',
       },
     ],
   },
@@ -2505,16 +2505,16 @@ export const GRAMMAR_PT: GrammarTopic[] = [
     level: 'B2.2',
     title: 'Títulos, tratamento e linguagem administrativa: Dr., Eng.º, V. Ex.ª e o balcão das Finanças',
     emoji: '🏛️',
-    summary: 'Em Portugal, quem tem licenciatura costuma ser tratado por «Dr.» ou «Dr.ª», o engenheiro por «Eng.º», e a senhora mais velha por «Dona». Nos serviços públicos, a burocracia fala uma língua própria: Cartão de Cidadão, NIF, Finanças, Loja do Cidadão, marcação, requerimento.',
+    summary: 'Em Portugal, quem tem licenciatura costuma ser tratado por “Dr.” ou “Dr.ª”, o engenheiro por “Eng.º”, e a senhora mais velha por “Dona”. Nos serviços públicos, a burocracia fala uma língua própria: Cartão de Cidadão, NIF, Finanças, Loja do Cidadão, marcação, requerimento.',
     sections: [
       {
-        heading: 'Os títulos: quem é «doutor» em Portugal',
-        text: 'No Brasil, «doutor» vai para médicos, advogados e, na academia, para quem fez doutorado; no uso popular, também para qualquer autoridade. Em Portugal, o título acompanha a licenciatura (a graduação): o licenciado em Direito, Economia ou Letras é tratado por «Sr. Dr.» ou «Sr.ª Dr.ª», e isso é muito comum na vida profissional e nos serviços. Engenheiros são tratados por «Sr. Eng.º», arquitetos por «Sr. Arq.º», professores por «Sr. Professor» ou «Professora». Ao falar, o título costuma vir com o artigo e o nome de família: «O Dr. Machado já chegou?». Ninguém é obrigado a usar títulos, mas omiti-los num contexto formal português pode soar pouco cortês.',
+        heading: 'Os títulos: quem é “doutor” em Portugal',
+        text: 'No Brasil, “doutor” vai para médicos, advogados e, na academia, para quem fez doutorado; no uso popular, também para qualquer autoridade. Em Portugal, o título acompanha a licenciatura (a graduação): o licenciado em Direito, Economia ou Letras é tratado por “Sr. Dr.” ou “Sr.ª Dr.ª”, e isso é muito comum na vida profissional e nos serviços. Engenheiros são tratados por “Sr. Eng.º”, arquitetos por “Sr. Arq.º”, professores por “Sr. Professor” ou “Professora”. Ao falar, o título costuma vir com o artigo e o nome de família: “O Dr. Machado já chegou?”. Ninguém é obrigado a usar títulos, mas omiti-los num contexto formal português pode soar pouco cortês.',
         table: {
           head: ['Abreviatura', 'Por extenso', 'Para quem (em Portugal)'],
           rows: [
             ['Sr. / Sr.ª', 'Senhor / Senhora', 'qualquer pessoa, em registro cortês'],
-            ['D.', 'Dona', 'senhora, sobretudo mais velha: «a D. Amélia»'],
+            ['D.', 'Dona', 'senhora, sobretudo mais velha: “a D. Amélia”'],
             ['Dr. / Dr.ª', 'Doutor / Doutora', 'licenciados em geral e médicos'],
             ['Eng.º / Eng.ª', 'Engenheiro / Engenheira', 'licenciados em Engenharia'],
             ['Arq.º / Arq.ª', 'Arquiteto / Arquiteta', 'arquitetos'],
@@ -2533,7 +2533,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'A língua dos serviços públicos',
-        text: 'Quem se muda para Portugal descobre um vocabulário novo na burocracia. «Tirar senha» é pegar o número da fila; «fazer a marcação» é agendar; o «balcão» é o guichê. A «Loja do Cidadão» reúne vários serviços num só lugar, como o Poupatempo em São Paulo. A comparação da tabela é aproximada: as instituições não são idênticas.',
+        text: 'Quem se muda para Portugal descobre um vocabulário novo na burocracia. “Tirar senha” é pegar o número da fila; “fazer a marcação” é agendar; o “balcão” é o guichê. A “Loja do Cidadão” reúne vários serviços num só lugar, como o Poupatempo em São Paulo. A comparação da tabela é aproximada: as instituições não são idênticas.',
         table: {
           head: ['Portugal', 'Brasil (equivalente aproximado)'],
           rows: [
@@ -2560,7 +2560,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'O estilo administrativo',
-        text: 'Requerimentos e ofícios seguem modelos fixos, com a pessoa que pede na 3ª pessoa: «Fulano, portador do Cartão de Cidadão n.º…, vem requerer a V. Ex.ª…». No fim vem a fórmula «Pede deferimento» (P. D.), que também se usa no Brasil. Os dois países preferem nesses textos a voz passiva e as nominalizações: «procede-se à análise», «a emissão do documento».',
+        text: 'Requerimentos e ofícios seguem modelos fixos, com a pessoa que pede na 3ª pessoa: “Fulano, portador do Cartão de Cidadão n.º…, vem requerer a V. Ex.ª…”. No fim vem a fórmula “Pede deferimento” (P. D.), que também se usa no Brasil. Os dois países preferem nesses textos a voz passiva e as nominalizações: “procede-se à análise”, “a emissão do documento”.',
         examples: [
           ['Maria Sousa, residente em Braga, vem requerer a V. Ex.ª a emissão de uma certidão.', 'Maria Sousa, residente em Braga, vem requerer a Vossa Senhoria a emissão de uma certidão.'],
           ['Pede deferimento.', 'Pede deferimento. / Nestes termos, pede deferimento.'],
@@ -2569,18 +2569,18 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Estranhar que o funcionário do banco chame alguém de «Sr. Dr.» sem ser médico: em Portugal, o título acompanha a licenciatura.',
-      'Chamar um pedido de «agendamento» e o comprovante de «comprovante» no texto europeu: lá é «marcação» e «comprovativo».',
-      'Traduzir «prefeitura» por «prefeitura»: em Portugal o órgão é a Câmara Municipal, e o prefeito é o «presidente da Câmara».',
-      'Achar que «Dona» é sempre íntimo: em Portugal, «a D. Rosa» é tratamento respeitoso para uma senhora, e «a menina» é cortesia (um pouco antiga) para uma moça.',
-      'Misturar pessoas: quem escreve um requerimento fala de si na 3ª pessoa («vem requerer»), não «venho requerer», quando usa o modelo tradicional.',
+      'Estranhar que o funcionário do banco chame alguém de “Sr. Dr.” sem ser médico: em Portugal, o título acompanha a licenciatura.',
+      'Chamar um pedido de “agendamento” e o comprovante de “comprovante” no texto europeu: lá é “marcação” e “comprovativo”.',
+      'Traduzir “prefeitura” por “prefeitura”: em Portugal o órgão é a Câmara Municipal, e o prefeito é o “presidente da Câmara”.',
+      'Achar que “Dona” é sempre íntimo: em Portugal, “a D. Rosa” é tratamento respeitoso para uma senhora, e “a menina” é cortesia (um pouco antiga) para uma moça.',
+      'Misturar pessoas: quem escreve um requerimento fala de si na 3ª pessoa (“vem requerer”), não “venho requerer”, quando usa o modelo tradicional.',
     ],
     quiz: [
       {
-        question: 'Em Portugal, quem costuma ser tratado por «Sr. Dr.»?',
+        question: 'Em Portugal, quem costuma ser tratado por “Sr. Dr.”?',
         options: ['qualquer licenciado', 'só o médico', 'só quem tem doutoramento'],
         answer: 'qualquer licenciado',
-        explanation: 'Em Portugal o título «Dr.» acompanha a licenciatura (a graduação) e também os médicos. No Brasil, o uso é mais restrito.',
+        explanation: 'Em Portugal o título “Dr.” acompanha a licenciatura (a graduação) e também os médicos. No Brasil, o uso é mais restrito.',
       },
       {
         question: 'Qual é o documento português que corresponde, grosso modo, ao CPF?',
@@ -2589,19 +2589,19 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         explanation: 'O NIF (número de identificação fiscal, ou número de contribuinte) serve para impostos, faturas e contratos, como o CPF.',
       },
       {
-        question: 'Como se diz «agendar um atendimento» no vocabulário administrativo de Portugal?',
+        question: 'Como se diz “agendar um atendimento” no vocabulário administrativo de Portugal?',
         options: ['fazer a marcação', 'fazer o agendamento', 'marcar a senha'],
         answer: 'fazer a marcação',
-        explanation: '«Marcação» é a palavra portuguesa. «Tirar senha» é outra coisa: pegar o número da fila.',
+        explanation: '“Marcação” é a palavra portuguesa. “Tirar senha” é outra coisa: pegar o número da fila.',
       },
       {
-        question: 'Quem é o «presidente da Câmara» numa cidade portuguesa?',
+        question: 'Quem é o “presidente da Câmara” numa cidade portuguesa?',
         options: ['o equivalente ao prefeito', 'o presidente do parlamento', 'o chefe da polícia'],
         answer: 'o equivalente ao prefeito',
         explanation: 'A Câmara Municipal é o órgão executivo do município, e o seu presidente corresponde ao prefeito brasileiro.',
       },
       {
-        question: 'Qual abreviatura corresponde a «Engenheira»?',
+        question: 'Qual abreviatura corresponde a “Engenheira”?',
         options: ['Eng.ª', 'Enga.', 'E.ª'],
         answer: 'Eng.ª',
         explanation: 'Em Portugal as abreviaturas de títulos usam a letra final elevada: Eng.º, Eng.ª, Dr.ª, Arq.º.',
@@ -2614,11 +2614,11 @@ export const GRAMMAR_PT: GrammarTopic[] = [
     level: 'B2.3',
     title: 'Gíria de Portugal: fixe, bué, giro, malta e companhia',
     emoji: '😎',
-    summary: 'Na rua, em Portugal, tudo o que é legal é «fixe», o que é muito é «bué», o que é bonito é «giro» e a galera é «a malta». Algumas palavras são iguais ao Brasil com outro sentido, e umas poucas pedem cuidado dos dois lados do Atlântico.',
+    summary: 'Na rua, em Portugal, tudo o que é legal é “fixe”, o que é muito é “bué”, o que é bonito é “giro” e a galera é “a malta”. Algumas palavras são iguais ao Brasil com outro sentido, e umas poucas pedem cuidado dos dois lados do Atlântico.',
     sections: [
       {
         heading: 'O essencial da gíria portuguesa',
-        text: 'Todas estas palavras são informais: servem para amigos, colegas e redes sociais, não para uma entrevista de emprego. Muitos atribuem a «bué» origem angolana; hoje a palavra é típica da fala jovem de Lisboa; pode funcionar como advérbio («bué fixe», muito legal) ou com «de» antes do substantivo («bué de gente», muita gente). «Giro» é elogio simpático: para uma pessoa (bonita, fofa), para uma roupa, para uma ideia.',
+        text: 'Todas estas palavras são informais: servem para amigos, colegas e redes sociais, não para uma entrevista de emprego. Muitos atribuem a “bué” origem angolana; hoje a palavra é típica da fala jovem de Lisboa; pode funcionar como advérbio (“bué fixe”, muito legal) ou com “de” antes do substantivo (“bué de gente”, muita gente). “Giro” é elogio simpático: para uma pessoa (bonita, fofa), para uma roupa, para uma ideia.',
         table: {
           head: ['Portugal', 'Sentido', 'Brasil'],
           rows: [
@@ -2647,7 +2647,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Comer e beber como um português',
-        text: 'Boa parte da gíria mais útil está no café. Em Lisboa, o expresso é «uma bica»; no Porto, «um cimbalino» (hoje menos ouvido) ou simplesmente «um café». O chope é «uma imperial» em Lisboa e «um fino» no Porto. A «tasca» é o botequim tradicional, e a «tosta mista» é o misto-quente.',
+        text: 'Boa parte da gíria mais útil está no café. Em Lisboa, o expresso é “uma bica”; no Porto, “um cimbalino” (hoje menos ouvido) ou simplesmente “um café”. O chope é “uma imperial” em Lisboa e “um fino” no Porto. A “tasca” é o botequim tradicional, e a “tosta mista” é o misto-quente.',
         table: {
           head: ['Portugal', 'Brasil'],
           rows: [
@@ -2668,7 +2668,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Palavras que pedem cuidado',
-        text: 'Algumas palavras são inocentes num país e ofensivas ou íntimas no outro. Em Portugal, «rapariga» é simplesmente «moça»: «uma rapariga simpática» é um elogio; no Brasil, sobretudo no Nordeste, a palavra pode ser pejorativa. «Puto», em Portugal, é um jeito informal de dizer «garoto, moleque» («os putos estão na escola»), sem sentido ofensivo; no Brasil a palavra é vulgar ou quer dizer «furioso». Já «bicha», que em Portugal tradicionalmente quer dizer «fila», no Brasil é usada como ofensa homofóbica; em Portugal, «fila» também é corrente e é a opção segura. Conhecer estas diferenças evita mal-entendidos para os dois lados.',
+        text: 'Algumas palavras são inocentes num país e ofensivas ou íntimas no outro. Em Portugal, “rapariga” é simplesmente “moça”: “uma rapariga simpática” é um elogio; no Brasil, sobretudo no Nordeste, a palavra pode ser pejorativa. “Puto”, em Portugal, é um jeito informal de dizer “garoto, moleque” (“os putos estão na escola”), sem sentido ofensivo; no Brasil a palavra é vulgar ou quer dizer “furioso”. Já “bicha”, que em Portugal tradicionalmente quer dizer “fila”, no Brasil é usada como ofensa homofóbica; em Portugal, “fila” também é corrente e é a opção segura. Conhecer estas diferenças evita mal-entendidos para os dois lados.',
         examples: [
           ['A rapariga da receção foi muito simpática.', 'A moça da recepção foi muito simpática.'],
           ['Os putos estão a jogar à bola no parque.', 'Os meninos estão jogando bola no parque.'],
@@ -2677,42 +2677,42 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar «fixe», «bué» ou «gajo» num contexto formal: são gíria. Numa reunião diga «muito bom», «muito», «o senhor».',
-      'Estranhar «rapariga» e «puto» na boca de um português: lá são palavras neutras do dia a dia (moça, garoto). O contrário também vale: evite usá-las no Brasil com esse sentido.',
-      'Dizer «gaja» para qualquer mulher: a palavra existe, mas pode soar desrespeitosa. «Rapariga», «miúda» ou o nome são mais seguros.',
-      'Pedir «um cafezinho» e esperar um copinho de café coado: em Portugal «café» é o expresso; peça «uma bica» (Lisboa) ou «um café».',
-      'Confundir «giro» com o «giro» brasileiro de «dar um giro»: em Portugal o adjetivo quer dizer «bonito, engraçado».',
+      'Usar “fixe”, “bué” ou “gajo” num contexto formal: são gíria. Numa reunião diga “muito bom”, “muito”, “o senhor”.',
+      'Estranhar “rapariga” e “puto” na boca de um português: lá são palavras neutras do dia a dia (moça, garoto). O contrário também vale: evite usá-las no Brasil com esse sentido.',
+      'Dizer “gaja” para qualquer mulher: a palavra existe, mas pode soar desrespeitosa. “Rapariga”, “miúda” ou o nome são mais seguros.',
+      'Pedir “um cafezinho” e esperar um copinho de café coado: em Portugal “café” é o expresso; peça “uma bica” (Lisboa) ou “um café”.',
+      'Confundir “giro” com o “giro” brasileiro de “dar um giro”: em Portugal o adjetivo quer dizer “bonito, engraçado”.',
     ],
     quiz: [
       {
-        question: 'Como um jovem de Lisboa diria «O filme foi muito legal»?',
+        question: 'Como um jovem de Lisboa diria “O filme foi muito legal”?',
         options: ['O filme foi bué fixe.', 'O filme foi bué de fixe.', 'O filme foi fixe bué.'],
         answer: 'O filme foi bué fixe.',
-        explanation: 'Antes de adjetivo, «bué» funciona como «muito»: «bué fixe». O «de» aparece antes de substantivo: «bué de gente».',
+        explanation: 'Antes de adjetivo, “bué” funciona como “muito”: “bué fixe”. O “de” aparece antes de substantivo: “bué de gente”.',
       },
       {
-        question: 'O que é «a malta»?',
+        question: 'O que é “a malta”?',
         options: ['o grupo de amigos', 'a mala de viagem', 'a cerveja'],
         answer: 'o grupo de amigos',
-        explanation: '«A malta» é a galera, a turma: «A malta vai à praia».',
+        explanation: '“A malta” é a galera, a turma: “A malta vai à praia”.',
       },
       {
-        question: 'Em Portugal, o que quer dizer «Que menina tão gira!»?',
+        question: 'Em Portugal, o que quer dizer “Que menina tão gira!”?',
         options: ['Que menina bonita!', 'Que menina tonta!', 'Que menina agitada!'],
         answer: 'Que menina bonita!',
-        explanation: '«Giro/gira» é elogio: bonito, fofo, engraçado.',
+        explanation: '“Giro/gira” é elogio: bonito, fofo, engraçado.',
       },
       {
         question: 'Num café do Porto, como pedir um chope?',
         options: ['Um fino, se faz favor.', 'Um galão, se faz favor.', 'Uma bica, se faz favor.'],
         answer: 'Um fino, se faz favor.',
-        explanation: 'No Porto o chope é «um fino»; em Lisboa, «uma imperial». O galão é café com leite, e a bica é o expresso lisboeta.',
+        explanation: 'No Porto o chope é “um fino”; em Lisboa, “uma imperial”. O galão é café com leite, e a bica é o expresso lisboeta.',
       },
       {
-        question: 'Em Portugal, o que quer dizer «estar na bicha do supermercado»?',
+        question: 'Em Portugal, o que quer dizer “estar na bicha do supermercado”?',
         options: ['esperar a vez para pagar', 'estar a fazer compras às escondidas', 'trabalhar na caixa'],
         answer: 'esperar a vez para pagar',
-        explanation: 'Em Portugal, «bicha» tradicionalmente é a fila de espera, sem nenhum sentido ofensivo. «Fila» também é corrente lá e evita mal-entendidos com brasileiros.',
+        explanation: 'Em Portugal, “bicha” tradicionalmente é a fila de espera, sem nenhum sentido ofensivo. “Fila” também é corrente lá e evita mal-entendidos com brasileiros.',
       },
     ],
   },
@@ -2721,11 +2721,11 @@ export const GRAMMAR_PT: GrammarTopic[] = [
     level: 'B2.3',
     title: 'Expressões idiomáticas: estar-se nas tintas, meter água, ser canja',
     emoji: '🎭',
-    summary: 'Cada lado do Atlântico tem as suas imagens para a mesma ideia: o português «está-se nas tintas» quando o brasileiro «não está nem aí», «mete água» quando o brasileiro «pisa na bola», e «dá graxa» a quem o brasileiro «puxa o saco». Algumas expressões são comuns aos dois países.',
+    summary: 'Cada lado do Atlântico tem as suas imagens para a mesma ideia: o português “está-se nas tintas” quando o brasileiro “não está nem aí”, “mete água” quando o brasileiro “pisa na bola”, e “dá graxa” a quem o brasileiro “puxa o saco”. Algumas expressões são comuns aos dois países.',
     sections: [
       {
         heading: 'Expressões de Portugal e o equivalente brasileiro',
-        text: 'Expressão idiomática não se traduz palavra por palavra: é preciso trocar a imagem inteira. Várias expressões portuguesas são pronominais e, por isso, levam o pronome depois do verbo quando não há palavra atrativa: «Estou-me nas tintas», mas «Não me ralo».',
+        text: 'Expressão idiomática não se traduz palavra por palavra: é preciso trocar a imagem inteira. Várias expressões portuguesas são pronominais e, por isso, levam o pronome depois do verbo quando não há palavra atrativa: “Estou-me nas tintas”, mas “Não me ralo”.',
         table: {
           head: ['Portugal', 'Sentido', 'Brasil'],
           rows: [
@@ -2755,7 +2755,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Expressões comuns aos dois países',
-        text: 'Muitas expressões nasceram antes da separação entre as normas e continuam iguais, às vezes com uma pequena diferença de forma. Quando a forma muda, é quase sempre por causa do «estar a + infinitivo» ou do pronome.',
+        text: 'Muitas expressões nasceram antes da separação entre as normas e continuam iguais, às vezes com uma pequena diferença de forma. Quando a forma muda, é quase sempre por causa do “estar a + infinitivo” ou do pronome.',
         table: {
           head: ['Portugal', 'Brasil', 'Sentido'],
           rows: [
@@ -2777,7 +2777,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Registro: onde usar',
-        text: 'Quase todas as expressões desta lição são coloquiais. Em texto formal, prefira a palavra neutra: «não se importar», «errar», «ser fácil». Algumas mudam de tom de um país para o outro: «gozar com alguém», em Portugal, é simplesmente «zombar, tirar sarro» («Estás a gozar comigo?» = «Está de brincadeira?»); no Brasil, o verbo tem também um sentido íntimo, por isso o brasileiro estranha a frase. Em Portugal ela é totalmente normal.',
+        text: 'Quase todas as expressões desta lição são coloquiais. Em texto formal, prefira a palavra neutra: “não se importar”, “errar”, “ser fácil”. Algumas mudam de tom de um país para o outro: “gozar com alguém”, em Portugal, é simplesmente “zombar, tirar sarro” (“Estás a gozar comigo?” = “Está de brincadeira?”); no Brasil, o verbo tem também um sentido íntimo, por isso o brasileiro estranha a frase. Em Portugal ela é totalmente normal.',
         examples: [
           ['Estás a gozar comigo?', 'Você está de brincadeira comigo?'],
           ['Não gozes com o teu irmão.', 'Não tire sarro do seu irmão.'],
@@ -2786,42 +2786,42 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Traduzir ao pé da letra: «estar nas tintas» não tem nada a ver com pintura, e «meter água» não tem nada a ver com água. Aprenda a expressão inteira.',
-      'Esquecer o pronome nas expressões pronominais: é «estar-se nas tintas» («Estou-me nas tintas»), com ênclise, e «Não me ralo» com próclise por causa do «não».',
-      'Usar gíria idiomática em texto formal: numa carta, «o projeto meteu água» vira «o projeto não correu como previsto».',
-      'Estranhar «Estás a gozar comigo?»: em Portugal quer dizer apenas «Está de brincadeira comigo?».',
-      'Achar que «ficar a ver navios» é lusitanismo: a expressão é antiga e também existe no Brasil, onde convive com «ficar chupando o dedo».',
+      'Traduzir ao pé da letra: “estar nas tintas” não tem nada a ver com pintura, e “meter água” não tem nada a ver com água. Aprenda a expressão inteira.',
+      'Esquecer o pronome nas expressões pronominais: é “estar-se nas tintas” (“Estou-me nas tintas”), com ênclise, e “Não me ralo” com próclise por causa do “não”.',
+      'Usar gíria idiomática em texto formal: numa carta, “o projeto meteu água” vira “o projeto não correu como previsto”.',
+      'Estranhar “Estás a gozar comigo?”: em Portugal quer dizer apenas “Está de brincadeira comigo?”.',
+      'Achar que “ficar a ver navios” é lusitanismo: a expressão é antiga e também existe no Brasil, onde convive com “ficar chupando o dedo”.',
     ],
     quiz: [
       {
-        question: 'Um português diz «Isso é canja». Ele quer dizer que…',
+        question: 'Um português diz “Isso é canja”. Ele quer dizer que…',
         options: ['é muito fácil', 'é uma sopa', 'é muito caro'],
         answer: 'é muito fácil',
-        explanation: '«Ser canja» é «ser moleza». A expressão também é conhecida no Brasil, mas em Portugal é bem mais frequente.',
+        explanation: '“Ser canja” é “ser moleza”. A expressão também é conhecida no Brasil, mas em Portugal é bem mais frequente.',
       },
       {
-        question: 'Qual frase quer dizer «Pisei na bola»?',
+        question: 'Qual frase quer dizer “Pisei na bola”?',
         options: ['Meti água.', 'Fui aos arames.', 'Dei graxa.'],
         answer: 'Meti água.',
-        explanation: '«Meter água» é errar, fazer asneira. «Ir aos arames» é ficar furioso, e «dar graxa» é bajular.',
+        explanation: '“Meter água” é errar, fazer asneira. “Ir aos arames” é ficar furioso, e “dar graxa” é bajular.',
       },
       {
-        question: 'Como fica «Ele não está nem aí» em Portugal?',
+        question: 'Como fica “Ele não está nem aí” em Portugal?',
         options: ['Ele está-se nas tintas.', 'Ele se está nas tintas.', 'Ele está nas tintas-se.'],
         answer: 'Ele está-se nas tintas.',
-        explanation: 'A expressão é pronominal e, sem palavra atrativa, o pronome vem em ênclise: «está-se».',
+        explanation: 'A expressão é pronominal e, sem palavra atrativa, o pronome vem em ênclise: “está-se”.',
       },
       {
-        question: 'O que significa «Esta semana chove a potes»?',
+        question: 'O que significa “Esta semana chove a potes”?',
         options: ['Chove muito.', 'Chove pouco.', 'Não chove.'],
         answer: 'Chove muito.',
-        explanation: '«Chover a potes» é o «chover canivete» brasileiro.',
+        explanation: '“Chover a potes” é o “chover canivete” brasileiro.',
       },
       {
-        question: 'Qual expressão portuguesa corresponde a «ter cara de pau»?',
+        question: 'Qual expressão portuguesa corresponde a “ter cara de pau”?',
         options: ['ter lata', 'ter graxa', 'ter canja'],
         answer: 'ter lata',
-        explanation: '«Que lata!» é «que cara de pau!». «Dar graxa» é bajular, e «canja» é algo fácil.',
+        explanation: '“Que lata!” é “que cara de pau!”. “Dar graxa” é bajular, e “canja” é algo fácil.',
       },
     ],
   },
@@ -2830,11 +2830,11 @@ export const GRAMMAR_PT: GrammarTopic[] = [
     level: 'B2.3',
     title: 'Pois, pronto, ora essa: os marcadores da conversa em Portugal',
     emoji: '💬',
-    summary: 'A conversa portuguesa tem palavrinhas próprias que dão o ritmo à fala: «pois» para concordar, «pronto» para encerrar, «ora essa» para responder a um agradecimento, «se calhar» para dizer «talvez». Alguns marcadores são iguais aos do Brasil com outro sentido, como «pois não».',
+    summary: 'A conversa portuguesa tem palavrinhas próprias que dão o ritmo à fala: “pois” para concordar, “pronto” para encerrar, “ora essa” para responder a um agradecimento, “se calhar” para dizer “talvez”. Alguns marcadores são iguais aos do Brasil com outro sentido, como “pois não”.',
     sections: [
       {
         heading: 'Os marcadores mais frequentes',
-        text: 'Marcadores discursivos quase não têm sentido lexical: organizam a conversa, mostram concordância, hesitação ou encerramento. São os primeiros a denunciar o sotaque do brasileiro em Portugal, e os mais fáceis de adotar. «Pois» sozinho é um «é», um «pois é», um «pois sim»; repetido («Pois, pois») mostra que se está a ouvir.',
+        text: 'Marcadores discursivos quase não têm sentido lexical: organizam a conversa, mostram concordância, hesitação ou encerramento. São os primeiros a denunciar o sotaque do brasileiro em Portugal, e os mais fáceis de adotar. “Pois” sozinho é um “é”, um “pois é”, um “pois sim”; repetido (“Pois, pois”) mostra que se está a ouvir.',
         table: {
           head: ['Portugal', 'Função', 'Brasil'],
           rows: [
@@ -2862,7 +2862,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Iguais na forma, diferentes no uso',
-        text: 'O caso clássico é «pois não». No Brasil, «Pois não?» é o que o atendente diz para oferecer ajuda («Em que posso ajudar?»), e «pois não» como resposta quer dizer «claro, pois sim». Em Portugal, a expressão aparece sobretudo no fim de uma frase, para pedir confirmação, como o nosso «não é?»: «É bonito, pois não?». Outro exemplo: «Está bem» é aceitação neutra nos dois países, mas em Portugal é a resposta natural a quase tudo, enquanto o brasileiro diria «tá» ou «beleza». E «Faz favor!» ou «Se faz favor!» serve em Portugal para chamar o empregado de mesa.',
+        text: 'O caso clássico é “pois não”. No Brasil, “Pois não?” é o que o atendente diz para oferecer ajuda (“Em que posso ajudar?”), e “pois não” como resposta quer dizer “claro, pois sim”. Em Portugal, a expressão aparece sobretudo no fim de uma frase, para pedir confirmação, como o nosso “não é?”: “É bonito, pois não?”. Outro exemplo: “Está bem” é aceitação neutra nos dois países, mas em Portugal é a resposta natural a quase tudo, enquanto o brasileiro diria “tá” ou “beleza”. E “Faz favor!” ou “Se faz favor!” serve em Portugal para chamar o empregado de mesa.',
         examples: [
           ['O Douro é lindo, pois não?', 'O Douro é lindo, não é?'],
           ['Se faz favor! Pode trazer a conta?', 'Por favor! Pode trazer a conta?'],
@@ -2872,7 +2872,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Cortesias do quotidiano',
-        text: 'Em Portugal, «obrigado» e «obrigada» concordam com quem fala (o homem diz «obrigado», a mulher «obrigada»), como manda a norma culta nos dois países. Para pedir passagem diz-se «Com licença» ou «Dá licença?»; para pedir desculpa, «Desculpe» ou «Peço desculpa». À saída de uma loja ouve-se «Obrigadinho» e «Com licença». E ao pé de um bebé ou de uma criança o português diz «Que querido!» (que fofo!).',
+        text: 'Em Portugal, “obrigado” e “obrigada” concordam com quem fala (o homem diz “obrigado”, a mulher “obrigada”), como manda a norma culta nos dois países. Para pedir passagem diz-se “Com licença” ou “Dá licença?”; para pedir desculpa, “Desculpe” ou “Peço desculpa”. À saída de uma loja ouve-se “Obrigadinho” e “Com licença”. E ao pé de um bebé ou de uma criança o português diz “Que querido!” (que fofo!).',
         examples: [
           ['Dá licença? Preciso de passar.', 'Com licença? Preciso passar.'],
           ['Peço desculpa, enganei-me no número.', 'Desculpe, liguei para o número errado.'],
@@ -2881,42 +2881,42 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Responder «Pois não» querendo dizer «claro»: em Portugal a expressão soa como pedido de confirmação ou negação. Diga «Com certeza» ou «Claro».',
-      'Estranhar o «pronto» no meio da conversa: em Portugal ele fecha um assunto («Pronto, está resolvido»), sem nada a ver com «estar pronto».',
-      'Atender o telefone com «Alô» e não entender «Está?» ou «Estou?»: é o «alô» português.',
-      'Dizer «de repente» por «talvez»: em Portugal «de repente» é só «subitamente»; para «talvez», use «se calhar».',
-      'Usar «prontos» (com s) em texto escrito: é forma popular da fala; na norma culta é «pronto».',
+      'Responder “Pois não” querendo dizer “claro”: em Portugal a expressão soa como pedido de confirmação ou negação. Diga “Com certeza” ou “Claro”.',
+      'Estranhar o “pronto” no meio da conversa: em Portugal ele fecha um assunto (“Pronto, está resolvido”), sem nada a ver com “estar pronto”.',
+      'Atender o telefone com “Alô” e não entender “Está?” ou “Estou?”: é o “alô” português.',
+      'Dizer “de repente” por “talvez”: em Portugal “de repente” é só “subitamente”; para “talvez”, use “se calhar”.',
+      'Usar “prontos” (com s) em texto escrito: é forma popular da fala; na norma culta é “pronto”.',
     ],
     quiz: [
       {
         question: 'Alguém lhe agradece um favor em Lisboa. Qual resposta é bem portuguesa?',
         options: ['Ora essa!', 'Pois não!', 'Se calhar!'],
         answer: 'Ora essa!',
-        explanation: '«Ora essa» é o nosso «imagina!», «que é isso!». «Pois não» tem outros usos, e «se calhar» é «talvez».',
+        explanation: '“Ora essa” é o nosso “imagina!”, “que é isso!”. “Pois não” tem outros usos, e “se calhar” é “talvez”.',
       },
       {
-        question: 'Como dizer «Talvez chova amanhã» à portuguesa?',
+        question: 'Como dizer “Talvez chova amanhã” à portuguesa?',
         options: ['Se calhar chove amanhã.', 'De repente chove amanhã.', 'Pronto chove amanhã.'],
         answer: 'Se calhar chove amanhã.',
-        explanation: '«Se calhar» é o «talvez» da fala portuguesa. «De repente», em Portugal, quer dizer só «subitamente».',
+        explanation: '“Se calhar” é o “talvez” da fala portuguesa. “De repente”, em Portugal, quer dizer só “subitamente”.',
       },
       {
         question: 'Qual frase é um pedido de confirmação típico de Portugal?',
         options: ['Está frio, pois não?', 'Pois não, está frio?', 'Está frio, pronto?'],
         answer: 'Está frio, pois não?',
-        explanation: 'No fim da frase, «pois não?» funciona como o «não é?» brasileiro.',
+        explanation: 'No fim da frase, “pois não?” funciona como o “não é?” brasileiro.',
       },
       {
         question: 'Como um português costuma atender o telefone?',
         options: ['Estou?', 'Pronto?', 'Então?'],
         answer: 'Estou?',
-        explanation: '«Estou?», «Está?» ou «Está lá?» são as formas portuguesas do «Alô?». («Pronto» é assim no italiano, não no português.)',
+        explanation: '“Estou?”, “Está?” ou “Está lá?” são as formas portuguesas do “Alô?”. (“Pronto” é assim no italiano, não no português.)',
       },
       {
         question: 'Num café, como se chama o empregado de mesa em Portugal?',
         options: ['Se faz favor!', 'Pois não!', 'Ora bem!'],
         answer: 'Se faz favor!',
-        explanation: '«Se faz favor» ou «Faz favor» é a forma cortês de chamar alguém num café ou restaurante.',
+        explanation: '“Se faz favor” ou “Faz favor” é a forma cortês de chamar alguém num café ou restaurante.',
       },
     ],
   },
@@ -2926,7 +2926,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
     level: 'B2.4',
     title: 'Pontuação e coesão: a vírgula, os conectores e as aspas',
     emoji: '✒️',
-    summary: 'As regras da vírgula são as mesmas nos dois países: nunca entre o sujeito e o verbo, sempre no vocativo e no aposto, e com sentido diferente nas orações relativas. Os conectores (contudo, todavia, porquanto, por conseguinte) amarram o texto. A diferença mais visível é tipográfica: Portugal prefere as aspas « ».',
+    summary: 'As regras da vírgula são as mesmas nos dois países: nunca entre o sujeito e o verbo, sempre no vocativo e no aposto, e com sentido diferente nas orações relativas. Os conectores (contudo, todavia, porquanto, por conseguinte) amarram o texto. A diferença mais visível é tipográfica: Portugal prefere as aspas “ ”.',
     sections: [
       {
         heading: 'Onde a vírgula não entra e onde é obrigatória',
@@ -2950,7 +2950,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'A vírgula que muda o sentido: relativas',
-        text: 'A oração relativa explicativa vem entre vírgulas e fala de todos; a restritiva vem sem vírgula e separa um grupo. «Os turistas, que visitaram o Porto, adoraram» (todos os turistas visitaram o Porto e todos adoraram). «Os turistas que visitaram o Porto adoraram» (só os que foram ao Porto). A regra é idêntica nos dois países e aparece com frequência em provas de concurso e exames nacionais.',
+        text: 'A oração relativa explicativa vem entre vírgulas e fala de todos; a restritiva vem sem vírgula e separa um grupo. “Os turistas, que visitaram o Porto, adoraram” (todos os turistas visitaram o Porto e todos adoraram). “Os turistas que visitaram o Porto adoraram” (só os que foram ao Porto). A regra é idêntica nos dois países e aparece com frequência em provas de concurso e exames nacionais.',
         examples: [
           ['Os turistas, que visitaram o Porto, adoraram a viagem.', 'Todos os turistas visitaram o Porto e adoraram a viagem.'],
           ['Os turistas que visitaram o Porto adoraram a viagem.', 'Só os turistas que foram ao Porto adoraram a viagem.'],
@@ -2960,7 +2960,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Os conectores: amarrar o texto',
-        text: 'Conectores ligam ideias e orientam o leitor. Os de oposição (mas, porém, contudo, todavia, no entanto) pedem vírgula antes, e os que não vêm no início da oração ficam entre vírgulas: «A proposta, contudo, foi recusada». Os concessivos «embora», «ainda que» e «mesmo que» pedem conjuntivo (subjuntivo) nos dois países. O conclusivo «pois», depois do verbo, também fica entre vírgulas: «Estava cansado; foi, pois, dormir cedo».',
+        text: 'Conectores ligam ideias e orientam o leitor. Os de oposição (mas, porém, contudo, todavia, no entanto) pedem vírgula antes, e os que não vêm no início da oração ficam entre vírgulas: “A proposta, contudo, foi recusada”. Os concessivos “embora”, “ainda que” e “mesmo que” pedem conjuntivo (subjuntivo) nos dois países. O conclusivo “pois”, depois do verbo, também fica entre vírgulas: “Estava cansado; foi, pois, dormir cedo”.',
         table: {
           head: ['Relação', 'Conectores'],
           rows: [
@@ -2982,19 +2982,19 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Aspas, travessão e outras diferenças tipográficas',
-        text: 'A tradição portuguesa usa as aspas angulares « » (aspas baixas ou latinas) em livros e jornais, reservando as aspas " " para uma citação dentro de outra. No Brasil, o padrão são as aspas " ". Nos diálogos, os dois países usam o travessão. Também nos dois países o ponto final vem depois das aspas quando a citação é só parte da frase.',
+        text: 'A tradição portuguesa usa as aspas angulares “ ” (aspas baixas ou latinas) em livros e jornais, reservando as aspas " " para uma citação dentro de outra. No Brasil, o padrão são as aspas " ". Nos diálogos, os dois países usam o travessão. Também nos dois países o ponto final vem depois das aspas quando a citação é só parte da frase.',
         examples: [
-          ['Pessoa escreveu: «Tudo vale a pena se a alma não é pequena».', 'Pessoa escreveu: "Tudo vale a pena se a alma não é pequena".'],
+          ['Pessoa escreveu: “Tudo vale a pena se a alma não é pequena”.', 'Pessoa escreveu: "Tudo vale a pena se a alma não é pequena".'],
           ['— Vens jantar? — perguntou a mãe.', '— Você vem jantar? — perguntou a mãe.'],
         ],
       },
     ],
     pitfalls: [
-      'Pôr vírgula entre o sujeito longo e o verbo («Os alunos que chegaram atrasados, perderam a prova»). É erro nos dois países, por mais que haja pausa na fala.',
-      'Esquecer a vírgula do vocativo: «Rita anda cá» não é um pedido, é uma afirmação sobre a Rita. Escreva «Rita, anda cá».',
+      'Pôr vírgula entre o sujeito longo e o verbo (“Os alunos que chegaram atrasados, perderam a prova”). É erro nos dois países, por mais que haja pausa na fala.',
+      'Esquecer a vírgula do vocativo: “Rita anda cá” não é um pedido, é uma afirmação sobre a Rita. Escreva “Rita, anda cá”.',
       'Tratar relativa explicativa e restritiva como iguais: a vírgula muda quem está incluído na frase.',
-      'Usar «embora» com indicativo («embora está a chover»): o conector concessivo pede conjuntivo nos dois países («embora esteja a chover»).',
-      'Deixar «contudo» ou «todavia» sem vírgulas no meio da oração: «A proposta, contudo, foi recusada».',
+      'Usar “embora” com indicativo (“embora está a chover”): o conector concessivo pede conjuntivo nos dois países (“embora esteja a chover”).',
+      'Deixar “contudo” ou “todavia” sem vírgulas no meio da oração: “A proposta, contudo, foi recusada”.',
     ],
     quiz: [
       {
@@ -3013,7 +3013,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         question: 'Qual frase usa o conector concessivo corretamente?',
         options: ['Embora estivesse cansado, foi ao concerto.', 'Embora estava cansado, foi ao concerto.', 'Embora cansado estava, foi ao concerto.'],
         answer: 'Embora estivesse cansado, foi ao concerto.',
-        explanation: '«Embora» pede conjuntivo (subjuntivo): «estivesse». A regra vale nos dois países.',
+        explanation: '“Embora” pede conjuntivo (subjuntivo): “estivesse”. A regra vale nos dois países.',
       },
       {
         question: 'Qual pontuação está correta?',
@@ -3023,9 +3023,9 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         question: 'Qual frase mostra a tradição tipográfica portuguesa?',
-        options: ['Ela disse: «Até amanhã».', 'Ela disse: ‹Até amanhã›.', 'Ela disse: (Até amanhã).'],
-        answer: 'Ela disse: «Até amanhã».',
-        explanation: 'Em Portugal as aspas angulares « » são a escolha tradicional em livros e jornais; no Brasil, as aspas " ".',
+        options: ['Ela disse: “Até amanhã”.', 'Ela disse: ‹Até amanhã›.', 'Ela disse: (Até amanhã).'],
+        answer: 'Ela disse: “Até amanhã”.',
+        explanation: 'Em Portugal as aspas angulares “ ” são a escolha tradicional em livros e jornais; no Brasil, as aspas " ".',
       },
     ],
   },
@@ -3034,20 +3034,20 @@ export const GRAMMAR_PT: GrammarTopic[] = [
     level: 'B2.4',
     title: 'Os porquês, mal × mau, há × a × à, onde × aonde, senão × se não',
     emoji: '❓',
-    summary: 'Os pares que confundem os falantes nativos dos dois países. A maioria segue a mesma regra no Brasil e em Portugal (mal × mau, há × a, onde × aonde), mas os porquês não: em Portugal, a pergunta direta escreve-se «Porque não vieste?», tudo junto, e no fim da frase usa-se «porquê?».',
+    summary: 'Os pares que confundem os falantes nativos dos dois países. A maioria segue a mesma regra no Brasil e em Portugal (mal × mau, há × a, onde × aonde), mas os porquês não: em Portugal, a pergunta direta escreve-se “Porque não vieste?”, tudo junto, e no fim da frase usa-se “porquê?”.',
     sections: [
       {
         heading: 'Os porquês: a grande diferença',
-        text: 'No Brasil, a norma ensinada distingue quatro formas: «por que» em perguntas («Por que você veio?»), «por quê» no fim («Você veio por quê?»), «porque» na resposta e «porquê» como substantivo. Em Portugal, a norma é outra: a pergunta direta usa «porque», junto («Porque não vieste?», ou a forma muito corrente «Porque é que não vieste?»); no fim da frase ou sozinho vem «porquê» («Não vieste porquê?», «Porquê?»); e «por que», separado, só aparece quando o «que» equivale a «qual» ou «o qual»: «Por que razão?», «o caminho por que passei». O substantivo é «o porquê» nos dois países. A forma «por quê», com acento e separada, não se usa em Portugal.',
+        text: 'No Brasil, a norma ensinada distingue quatro formas: “por que” em perguntas (“Por que você veio?”), “por quê” no fim (“Você veio por quê?”), “porque” na resposta e “porquê” como substantivo. Em Portugal, a norma é outra: a pergunta direta usa “porque”, junto (“Porque não vieste?”, ou a forma muito corrente “Porque é que não vieste?”); no fim da frase ou sozinho vem “porquê” (“Não vieste porquê?”, “Porquê?”); e “por que”, separado, só aparece quando o “que” equivale a “qual” ou “o qual”: “Por que razão?”, “o caminho por que passei”. O substantivo é “o porquê” nos dois países. A forma “por quê”, com acento e separada, não se usa em Portugal.',
         table: {
           head: ['Uso', 'Portugal', 'Brasil'],
           rows: [
             ['Pergunta direta', 'Porque não vieste?', 'Por que você não veio?'],
-            ['Pergunta com «é que»', 'Porque é que não vieste?', '(pouco usado) Por que é que você não veio?'],
+            ['Pergunta com “é que”', 'Porque é que não vieste?', '(pouco usado) Por que é que você não veio?'],
             ['No fim da frase / sozinho', 'Não vieste porquê? / Porquê?', 'Você não veio por quê? / Por quê?'],
             ['Resposta, causa', 'Não fui porque estava doente.', 'Não fui porque estava doente.'],
-            ['Com substantivo: «que» = qual', 'Por que razão não vieste?', 'Por que razão você não veio?'],
-            ['«que» = pelo qual', 'Esse é o caminho por que passei.', 'Esse é o caminho por que passei.'],
+            ['Com substantivo: “que” = qual', 'Por que razão não vieste?', 'Por que razão você não veio?'],
+            ['“que” = pelo qual', 'Esse é o caminho por que passei.', 'Esse é o caminho por que passei.'],
             ['Substantivo', 'Não percebo o porquê da decisão.', 'Não entendo o porquê da decisão.'],
           ],
         },
@@ -3060,7 +3060,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'mal × mau, bem × bom',
-        text: 'Regra igual nos dois países: «mau» é adjetivo, opõe-se a «bom» e concorda com o substantivo (mau, má, maus, más). «Mal» é advérbio, opõe-se a «bem», e também substantivo («o mal») e conjunção temporal («mal cheguei» = assim que cheguei). O truque: troque por «bom/bem». Na pronúncia de Portugal as duas palavras soam diferentes («mal» com l velar, «mau» com u), o que facilita a escrita; no Brasil soam iguais, daí a confusão.',
+        text: 'Regra igual nos dois países: “mau” é adjetivo, opõe-se a “bom” e concorda com o substantivo (mau, má, maus, más). “Mal” é advérbio, opõe-se a “bem”, e também substantivo (“o mal”) e conjunção temporal (“mal cheguei” = assim que cheguei). O truque: troque por “bom/bem”. Na pronúncia de Portugal as duas palavras soam diferentes (“mal” com l velar, “mau” com u), o que facilita a escrita; no Brasil soam iguais, daí a confusão.',
         examples: [
           ['Hoje o tempo está mau.', 'Hoje o tempo está ruim.'],
           ['Dormi mal esta noite.', 'Dormi mal esta noite.'],
@@ -3070,7 +3070,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'há × a × à, e acerca de × há cerca de',
-        text: '«Há», do verbo haver, indica tempo passado e pode trocar-se por «faz»: «Vivo em Braga há três anos». «A» indica tempo futuro ou distância: «Daqui a duas semanas», «a cinco quilómetros». «À» é a crase (a + a). Não se escreve «há três anos atrás»: é redundância nos dois países. E atenção a três expressões parecidas: «acerca de» (sobre), «a cerca de» (a aproximadamente) e «há cerca de» (faz aproximadamente).',
+        text: '“Há”, do verbo haver, indica tempo passado e pode trocar-se por “faz”: “Vivo em Braga há três anos”. “A” indica tempo futuro ou distância: “Daqui a duas semanas”, “a cinco quilómetros”. “À” é a crase (a + a). Não se escreve “há três anos atrás”: é redundância nos dois países. E atenção a três expressões parecidas: “acerca de” (sobre), “a cerca de” (a aproximadamente) e “há cerca de” (faz aproximadamente).',
         table: {
           head: ['Forma', 'Sentido', 'Exemplo europeu'],
           rows: [
@@ -3090,7 +3090,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'onde × aonde, senão × se não',
-        text: 'Na norma culta dos dois países, «aonde» (a + onde) acompanha verbos de movimento que pedem a preposição «a»: ir, chegar, voltar («Aonde vais?»). «Onde» indica lugar fixo: estar, ficar, morar («Onde estás?»). Na fala, os dois países misturam, mas na escrita cuidada a distinção se mantém. «Senão» quer dizer «caso contrário» ou «a não ser»; «se não» é a conjunção «se» + o advérbio «não» e pode trocar-se por «caso não».',
+        text: 'Na norma culta dos dois países, “aonde” (a + onde) acompanha verbos de movimento que pedem a preposição “a”: ir, chegar, voltar (“Aonde vais?”). “Onde” indica lugar fixo: estar, ficar, morar (“Onde estás?”). Na fala, os dois países misturam, mas na escrita cuidada a distinção se mantém. “Senão” quer dizer “caso contrário” ou “a não ser”; “se não” é a conjunção “se” + o advérbio “não” e pode trocar-se por “caso não”.',
         examples: [
           ['Aonde vais este fim de semana?', 'Aonde você vai neste fim de semana?'],
           ['Onde fica a estação de São Bento?', 'Onde fica a estação de São Bento?'],
@@ -3100,43 +3100,43 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Escrever a pergunta à brasileira num texto europeu: «Por que não vieste?». Em Portugal, a norma é «Porque não vieste?» ou «Porque é que não vieste?».',
-      'Escrever «por quê» no fim da frase em texto europeu: em Portugal é «porquê?», junto e com acento.',
-      'Trocar «mau» por «mal»: «um mal aluno» está errado nos dois países; é «um mau aluno» (o contrário de «bom»).',
-      'Escrever «há três anos atrás»: é redundante. Basta «há três anos» ou «três anos atrás».',
-      'Usar «aonde» com verbos sem movimento («Aonde estás?»): na norma culta, é «Onde estás?».',
-      'Confundir «senão» e «se não»: faça o teste de «caso não». Se couber, é separado.',
+      'Escrever a pergunta à brasileira num texto europeu: “Por que não vieste?”. Em Portugal, a norma é “Porque não vieste?” ou “Porque é que não vieste?”.',
+      'Escrever “por quê” no fim da frase em texto europeu: em Portugal é “porquê?”, junto e com acento.',
+      'Trocar “mau” por “mal”: “um mal aluno” está errado nos dois países; é “um mau aluno” (o contrário de “bom”).',
+      'Escrever “há três anos atrás”: é redundante. Basta “há três anos” ou “três anos atrás”.',
+      'Usar “aonde” com verbos sem movimento (“Aonde estás?”): na norma culta, é “Onde estás?”.',
+      'Confundir “senão” e “se não”: faça o teste de “caso não”. Se couber, é separado.',
     ],
     quiz: [
       {
         question: 'Qual é a grafia europeia da pergunta?',
         options: ['Porque não vieste à festa?', 'Por que não vieste à festa?', 'Por quê não vieste à festa?'],
         answer: 'Porque não vieste à festa?',
-        explanation: 'Em Portugal, a pergunta direta escreve-se com «porque» junto. No Brasil, «Por que…?», separado.',
+        explanation: 'Em Portugal, a pergunta direta escreve-se com “porque” junto. No Brasil, “Por que…?”, separado.',
       },
       {
-        question: 'Complete à portuguesa: «Não gostaste do filme ___?»',
+        question: 'Complete à portuguesa: “Não gostaste do filme ___?”',
         options: ['porquê', 'por quê', 'porque'],
         answer: 'porquê',
-        explanation: 'No fim da frase, Portugal escreve «porquê», junto e com acento. «Por quê» é a forma brasileira.',
+        explanation: 'No fim da frase, Portugal escreve “porquê”, junto e com acento. “Por quê” é a forma brasileira.',
       },
       {
         question: 'Qual frase está correta?',
         options: ['Ele é um mau condutor.', 'Ele é um mal condutor.', 'Ele conduz mau.'],
         answer: 'Ele é um mau condutor.',
-        explanation: 'Adjetivo que se opõe a «bom» é «mau». «Mal» é advérbio (conduz mal).',
+        explanation: 'Adjetivo que se opõe a “bom” é “mau”. “Mal” é advérbio (conduz mal).',
       },
       {
-        question: 'Complete: «Vivo em Évora ___ dois anos.»',
+        question: 'Complete: “Vivo em Évora ___ dois anos.”',
         options: ['há', 'a', 'à'],
         answer: 'há',
-        explanation: 'Tempo passado, que se pode trocar por «faz», escreve-se com o verbo haver: «há dois anos».',
+        explanation: 'Tempo passado, que se pode trocar por “faz”, escreve-se com o verbo haver: “há dois anos”.',
       },
       {
         question: 'Qual frase respeita a norma culta?',
         options: ['Aonde vais agora?', 'Aonde estás agora?', 'Onde vais agora?'],
         answer: 'Aonde vais agora?',
-        explanation: '«Ir» pede a preposição «a», por isso «aonde». Com «estar», que não indica movimento, é «onde».',
+        explanation: '“Ir” pede a preposição “a”, por isso “aonde”. Com “estar”, que não indica movimento, é “onde”.',
       },
     ],
   },
@@ -3146,15 +3146,15 @@ export const GRAMMAR_PT: GrammarTopic[] = [
     level: 'C1.1',
     title: 'Português europeu e brasileiro: uma língua, duas normas, muitos sotaques',
     emoji: '🌍',
-    summary: 'O português europeu e o brasileiro são duas normas de uma mesma língua, com a mesma dignidade: nenhuma é «mais correta». Diferem na pronúncia, na colocação dos pronomes, no tratamento, no aspecto progressivo e no vocabulário. E dentro de cada país há sotaques bem distintos: o Minho, o Alentejo e os Açores soam tão diferentes entre si como Porto Alegre, Recife e Belém.',
+    summary: 'O português europeu e o brasileiro são duas normas de uma mesma língua, com a mesma dignidade: nenhuma é “mais correta”. Diferem na pronúncia, na colocação dos pronomes, no tratamento, no aspecto progressivo e no vocabulário. E dentro de cada país há sotaques bem distintos: o Minho, o Alentejo e os Açores soam tão diferentes entre si como Porto Alegre, Recife e Belém.',
     sections: [
       {
         heading: 'Duas normas, a mesma língua',
-        text: 'O português é uma língua pluricêntrica: tem mais de um centro de norma, como o inglês ou o espanhol. A norma europeia tem como referência a fala culta de Lisboa e Coimbra; a brasileira, a fala culta das grandes cidades do Brasil. As duas partem do mesmo português levado para a América a partir do século XVI e seguiram caminhos próprios: o português europeu reduziu muito as vogais átonas, e o brasileiro conservou-as mais abertas; o brasileiro generalizou «você» e a próclise, e o europeu manteve «tu» e a ênclise. Nenhuma dessas mudanças é «erro»: são evoluções naturais, como as que separaram o português do latim.',
+        text: 'O português é uma língua pluricêntrica: tem mais de um centro de norma, como o inglês ou o espanhol. A norma europeia tem como referência a fala culta de Lisboa e Coimbra; a brasileira, a fala culta das grandes cidades do Brasil. As duas partem do mesmo português levado para a América a partir do século XVI e seguiram caminhos próprios: o português europeu reduziu muito as vogais átonas, e o brasileiro conservou-as mais abertas; o brasileiro generalizou “você” e a próclise, e o europeu manteve “tu” e a ênclise. Nenhuma dessas mudanças é “erro”: são evoluções naturais, como as que separaram o português do latim.',
         table: {
           head: ['Traço', 'Portugal', 'Brasil'],
           rows: [
-            ['Vogais átonas', 'reduzidas: «telefone» soa quase «tlfón»', 'plenas: te-le-fo-ne'],
+            ['Vogais átonas', 'reduzidas: “telefone” soa quase “tlfón”', 'plenas: te-le-fo-ne'],
             ['Pronome átono', 'ênclise: Chamo-me Ana. / Diz-me.', 'próclise: Me chamo Ana. / Me diz.'],
             ['Progressivo', 'Estou a trabalhar.', 'Estou trabalhando.'],
             ['Tratamento íntimo', 'tu (tu estás)', 'você; tu no Sul, no Norte e no Nordeste'],
@@ -3173,23 +3173,23 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Os sotaques de Portugal',
-        text: 'Portugal é pequeno, mas tem variação regional nítida. O que se ensina como padrão é o sotaque de Lisboa e Coimbra. No Norte (Minho, Porto, Trás-os-Montes), muitos falantes pronunciam o «v» como «b» («binho» por «vinho»), mantêm o ditongo de «ou» («ouro» com o u audível) e, em zonas do interior, o «ch» soa «tch» («tchave»). No Alentejo, a fala é mais pausada e ouve-se o gerúndio, como no Brasil («estou fazendo»). Nos Açores, sobretudo em São Miguel, há vogais parecidas com as do francês, e o sotaque pode ser difícil até para outros portugueses. Na Madeira, a melodia e algumas vogais também são próprias. Todos esses sotaques são português europeu legítimo.',
+        text: 'Portugal é pequeno, mas tem variação regional nítida. O que se ensina como padrão é o sotaque de Lisboa e Coimbra. No Norte (Minho, Porto, Trás-os-Montes), muitos falantes pronunciam o “v” como “b” (“binho” por “vinho”), mantêm o ditongo de “ou” (“ouro” com o u audível) e, em zonas do interior, o “ch” soa “tch” (“tchave”). No Alentejo, a fala é mais pausada e ouve-se o gerúndio, como no Brasil (“estou fazendo”). Nos Açores, sobretudo em São Miguel, há vogais parecidas com as do francês, e o sotaque pode ser difícil até para outros portugueses. Na Madeira, a melodia e algumas vogais também são próprias. Todos esses sotaques são português europeu legítimo.',
         table: {
           head: ['Região', 'Traço marcante', 'Exemplo'],
           rows: [
-            ['Lisboa (padrão)', 'vogais átonas muito reduzidas; «s» chiado em fim de sílaba', '«pastéis» com «x» no fim'],
-            ['Minho e Porto', '«v» pronunciado como «b»; ditongo «ou» conservado', '«binho» por «vinho»; «ouro» com u'],
-            ['Trás-os-Montes e Beira interior', '«ch» africado, como «tch»', '«tchuva» por «chuva»'],
-            ['Alentejo', 'fala lenta; gerúndio com «estar»', '«Estou fazendo», como no Brasil'],
+            ['Lisboa (padrão)', 'vogais átonas muito reduzidas; “s” chiado em fim de sílaba', '“pastéis” com “x” no fim'],
+            ['Minho e Porto', '“v” pronunciado como “b”; ditongo “ou” conservado', '“binho” por “vinho”; “ouro” com u'],
+            ['Trás-os-Montes e Beira interior', '“ch” africado, como “tch”', '“tchuva” por “chuva”'],
+            ['Alentejo', 'fala lenta; gerúndio com “estar”', '“Estou fazendo”, como no Brasil'],
             ['Algarve', 'vogais tónicas mais fechadas e mudanças de timbre', 'melodia própria do Sul'],
-            ['Açores (São Miguel)', 'vogais arredondadas, semelhantes às do francês', '«tu» soa perto do «tu» francês'],
+            ['Açores (São Miguel)', 'vogais arredondadas, semelhantes às do francês', '“tu” soa perto do “tu” francês'],
             ['Madeira', 'melodia própria; vogais com timbre diferente', 'entoação reconhecível no país inteiro'],
           ],
         },
       },
       {
         heading: 'Sem hierarquia',
-        text: 'É comum ouvir que «o português de Portugal é o verdadeiro» ou que «o brasileiro é mais moderno». Nenhuma das duas ideias se sustenta: as duas variedades mudaram desde o século XVI, e cada uma conservou traços antigos que a outra perdeu. O Brasil manteve, por exemplo, as vogais átonas plenas, mais próximas da pronúncia do português clássico; Portugal manteve o «tu» com a conjugação de 2ª pessoa. Para quem aprende, o objetivo não é trocar uma norma pela outra, mas saber alternar conforme o lugar e o interlocutor.',
+        text: 'É comum ouvir que “o português de Portugal é o verdadeiro” ou que “o brasileiro é mais moderno”. Nenhuma das duas ideias se sustenta: as duas variedades mudaram desde o século XVI, e cada uma conservou traços antigos que a outra perdeu. O Brasil manteve, por exemplo, as vogais átonas plenas, mais próximas da pronúncia do português clássico; Portugal manteve o “tu” com a conjugação de 2ª pessoa. Para quem aprende, o objetivo não é trocar uma norma pela outra, mas saber alternar conforme o lugar e o interlocutor.',
         examples: [
           ['Estou a pensar ir ao Porto na próxima semana.', 'Estou pensando em ir ao Porto na semana que vem.'],
           ['Dá-me o teu número de telemóvel.', 'Me dá o seu número de celular.'],
@@ -3198,11 +3198,11 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Tratar o português europeu como «o correto» e o brasileiro como desvio, ou o contrário. São duas normas cultas, com gramáticas e dicionários próprios.',
-      'Achar que o gerúndio não existe em Portugal: ele é normal em orações adverbiais («Chegando a casa, liga-me») e na fala do Alentejo e do Algarve; o padrão de Lisboa só prefere «estar a + infinitivo» no progressivo.',
+      'Tratar o português europeu como “o correto” e o brasileiro como desvio, ou o contrário. São duas normas cultas, com gramáticas e dicionários próprios.',
+      'Achar que o gerúndio não existe em Portugal: ele é normal em orações adverbiais (“Chegando a casa, liga-me”) e na fala do Alentejo e do Algarve; o padrão de Lisboa só prefere “estar a + infinitivo” no progressivo.',
       'Imitar um só sotaque português como se fosse o do país inteiro: o Porto, os Açores e o Alentejo soam muito diferentes de Lisboa.',
-      'Esquecer que o «tu» também é brasileiro: no Rio Grande do Sul, no Pará, no Maranhão e em partes do Nordeste, é o pronome do dia a dia.',
-      'Escrever «falamos» para o passado num texto europeu: a norma de Portugal distingue «falámos» (passado) de «falamos» (presente).',
+      'Esquecer que o “tu” também é brasileiro: no Rio Grande do Sul, no Pará, no Maranhão e em partes do Nordeste, é o pronome do dia a dia.',
+      'Escrever “falamos” para o passado num texto europeu: a norma de Portugal distingue “falámos” (passado) de “falamos” (presente).',
     ],
     quiz: [
       {
@@ -3215,25 +3215,25 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         question: 'Qual frase está no padrão de Lisboa?',
         options: ['Estou a ler um livro de Eça.', 'Estou lendo um livro de Eça.', 'Leio-estou um livro de Eça.'],
         answer: 'Estou a ler um livro de Eça.',
-        explanation: 'O progressivo padrão em Portugal é «estar a + infinitivo». O gerúndio é brasileiro e também ocorre no Alentejo e no Algarve.',
+        explanation: 'O progressivo padrão em Portugal é “estar a + infinitivo”. O gerúndio é brasileiro e também ocorre no Alentejo e no Algarve.',
       },
       {
-        question: 'Em que região de Portugal é típico pronunciar «vinho» como «binho»?',
+        question: 'Em que região de Portugal é típico pronunciar “vinho” como “binho”?',
         options: ['no Norte', 'no Algarve', 'na Madeira'],
         answer: 'no Norte',
-        explanation: 'A troca do «v» pelo «b» é um dos traços mais conhecidos do Minho, do Porto e de Trás-os-Montes.',
+        explanation: 'A troca do “v” pelo “b” é um dos traços mais conhecidos do Minho, do Porto e de Trás-os-Montes.',
       },
       {
-        question: 'Qual frase é a forma europeia de «Eu vi ele ontem»?',
+        question: 'Qual frase é a forma europeia de “Eu vi ele ontem”?',
         options: ['Vi-o ontem.', 'Vi ele ontem.', 'O vi ontem.'],
         answer: 'Vi-o ontem.',
-        explanation: 'Em Portugal o objeto direto de 3ª pessoa é o pronome átono «o», em ênclise. No Brasil, «vi ele» é comum na fala, e «eu o vi» na escrita.',
+        explanation: 'Em Portugal o objeto direto de 3ª pessoa é o pronome átono “o”, em ênclise. No Brasil, “vi ele” é comum na fala, e “eu o vi” na escrita.',
       },
       {
         question: 'Em qual das formas a norma europeia marca o passado?',
         options: ['Ontem jantámos em Aveiro.', 'Ontem jantamos em Aveiro.', 'Ontem jantemos em Aveiro.'],
         answer: 'Ontem jantámos em Aveiro.',
-        explanation: 'Em Portugal o pretérito perfeito da 1ª pessoa do plural da 1ª conjugação leva acento («jantámos») e distingue-se do presente («jantamos»). No Brasil, as duas formas escrevem-se igual.',
+        explanation: 'Em Portugal o pretérito perfeito da 1ª pessoa do plural da 1ª conjugação leva acento (“jantámos”) e distingue-se do presente (“jantamos”). No Brasil, as duas formas escrevem-se igual.',
       },
     ],
   },
@@ -3263,11 +3263,11 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'O português de Angola e de Moçambique',
-        text: 'O português angolano, sobretudo o de Luanda, tem muitos empréstimos do quimbundo e de outras línguas bantas, alguns dos quais chegaram a Portugal pela música e pela fala jovem («bazar», «cota»). Na fala informal ouvem-se traços que o brasileiro reconhece, como «ir em» («vou na escola») e a próclise em início de frase. Em Moçambique, onde o português é para muitos segunda língua, o vocabulário reflete o convívio com as línguas bantas e também com o inglês dos países vizinhos. O Brasil também deve às línguas bantas palavras como «caçula», «moleque», «quitanda» e «cafuné», herança das pessoas escravizadas trazidas de Angola e do Congo.',
+        text: 'O português angolano, sobretudo o de Luanda, tem muitos empréstimos do quimbundo e de outras línguas bantas, alguns dos quais chegaram a Portugal pela música e pela fala jovem (“bazar”, “cota”). Na fala informal ouvem-se traços que o brasileiro reconhece, como “ir em” (“vou na escola”) e a próclise em início de frase. Em Moçambique, onde o português é para muitos segunda língua, o vocabulário reflete o convívio com as línguas bantas e também com o inglês dos países vizinhos. O Brasil também deve às línguas bantas palavras como “caçula”, “moleque”, “quitanda” e “cafuné”, herança das pessoas escravizadas trazidas de Angola e do Congo.',
         table: {
           head: ['Palavra', 'Onde', 'Sentido'],
           rows: [
-            ['kota', 'Angola (também em Portugal, «cota»)', 'pessoa mais velha, respeitada'],
+            ['kota', 'Angola (também em Portugal, “cota”)', 'pessoa mais velha, respeitada'],
             ['candengue', 'Angola', 'criança'],
             ['maka', 'Angola', 'problema, discussão'],
             ['kumbu', 'Angola', 'dinheiro'],
@@ -3285,7 +3285,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Timor-Leste, Macau e a Ásia',
-        text: 'Em Timor-Leste, a Constituição de 2002 fez do português e do tétum as línguas oficiais. O tétum tem muitas palavras de origem portuguesa: «obrigadu» (obrigado), «Bon dia» (bom dia), «eskola» (escola). Em Macau, as placas de rua e os documentos oficiais são bilingues, em chinês e português, embora o português seja língua materna de poucos. Na Índia, Goa esteve sob administração portuguesa até 1961; hoje o português é falado por uma minoria, e a língua oficial do estado é o concani, mas o legado aparece em nomes de família, na arquitetura e na culinária.',
+        text: 'Em Timor-Leste, a Constituição de 2002 fez do português e do tétum as línguas oficiais. O tétum tem muitas palavras de origem portuguesa: “obrigadu” (obrigado), “Bon dia” (bom dia), “eskola” (escola). Em Macau, as placas de rua e os documentos oficiais são bilingues, em chinês e português, embora o português seja língua materna de poucos. Na Índia, Goa esteve sob administração portuguesa até 1961; hoje o português é falado por uma minoria, e a língua oficial do estado é o concani, mas o legado aparece em nomes de família, na arquitetura e na culinária.',
         examples: [
           ['Em Díli, muitos jovens aprendem português na escola.', 'Em Díli, muitos jovens aprendem português na escola.'],
           ['As placas de Macau estão escritas em chinês e em português.', 'As placas de Macau são escritas em chinês e em português.'],
@@ -3293,11 +3293,11 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Chamar o português de Angola ou de Moçambique de «português errado»: são variedades com a sua história, os seus falantes nativos e a sua literatura.',
+      'Chamar o português de Angola ou de Moçambique de “português errado”: são variedades com a sua história, os seus falantes nativos e a sua literatura.',
       'Supor que em todos esses países a maioria tem o português como língua materna: em Moçambique e na Guiné-Bissau, por exemplo, a maioria fala primeiro outras línguas.',
       'Confundir o português de Cabo Verde com o crioulo cabo-verdiano: o português é a língua oficial; o crioulo é outra língua, de gramática própria, e a materna de quase toda a população.',
-      'Esquecer que o Brasil também tem herança banta: «caçula», «moleque», «quitanda» e «cafuné» vieram de línguas faladas em Angola e no Congo.',
-      'Dizer que Macau «fala português»: o português é oficial, mas a língua do dia a dia da maioria é o cantonês.',
+      'Esquecer que o Brasil também tem herança banta: “caçula”, “moleque”, “quitanda” e “cafuné” vieram de línguas faladas em Angola e no Congo.',
+      'Dizer que Macau “fala português”: o português é oficial, mas a língua do dia a dia da maioria é o cantonês.',
     ],
     quiz: [
       {
@@ -3313,16 +3313,16 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         explanation: 'A Constituição de 2002 estabeleceu o português e o tétum como línguas oficiais.',
       },
       {
-        question: 'Em Moçambique, o que é um «machimbombo»?',
+        question: 'Em Moçambique, o que é um “machimbombo”?',
         options: ['um autocarro', 'um mercado', 'um tambor'],
         answer: 'um autocarro',
-        explanation: '«Machimbombo» é o ônibus em Moçambique e em Angola.',
+        explanation: '“Machimbombo” é o ônibus em Moçambique e em Angola.',
       },
       {
         question: 'Qual palavra do português do Brasil tem origem banta?',
         options: ['caçula', 'saudade', 'janela'],
         answer: 'caçula',
-        explanation: '«Caçula» vem do quimbundo, língua de Angola, assim como «moleque» e «quitanda».',
+        explanation: '“Caçula” vem do quimbundo, língua de Angola, assim como “moleque” e “quitanda”.',
       },
       {
         question: 'Em que situação está o português em Macau?',
@@ -3337,7 +3337,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
     level: 'C1.1',
     title: 'Os crioulos de base portuguesa e o galego',
     emoji: '🧭',
-    summary: 'Da costa africana à Ásia e às Caraíbas, o contacto do português com outras línguas deu origem a crioulos: línguas novas, com gramática própria, que não são «português mal falado». E ao norte de Portugal fala-se o galego, irmão do português, nascido da mesma língua medieval: o galego-português.',
+    summary: 'Da costa africana à Ásia e às Caraíbas, o contacto do português com outras línguas deu origem a crioulos: línguas novas, com gramática própria, que não são “português mal falado”. E ao norte de Portugal fala-se o galego, irmão do português, nascido da mesma língua medieval: o galego-português.',
     sections: [
       {
         heading: 'O que é um crioulo',
@@ -3346,10 +3346,10 @@ export const GRAMMAR_PT: GrammarTopic[] = [
           head: ['Crioulo de Cabo Verde (Santiago)', 'Português europeu', 'O que marca'],
           rows: [
             ['N kume.', 'Comi.', 'verbo sem partícula: passado concluído'],
-            ['N ta kume.', 'Como (habitualmente). / Vou comer.', '«ta»: hábito ou futuro'],
-            ['N sta ta kume.', 'Estou a comer.', '«sta ta»: ação em curso'],
-            ['Modi ki bu sta?', 'Como estás?', 'pronome «bu» (tu)'],
-            ['N sta bon.', 'Estou bem.', 'pronome «N» (eu)'],
+            ['N ta kume.', 'Como (habitualmente). / Vou comer.', '“ta”: hábito ou futuro'],
+            ['N sta ta kume.', 'Estou a comer.', '“sta ta”: ação em curso'],
+            ['Modi ki bu sta?', 'Como estás?', 'pronome “bu” (tu)'],
+            ['N sta bon.', 'Estou bem.', 'pronome “N” (eu)'],
             ['sodade', 'saudade', 'palavra que o mundo conhece pela morna'],
           ],
         },
@@ -3371,13 +3371,13 @@ export const GRAMMAR_PT: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['A morna, a canção de Cabo Verde, canta muitas vezes a «sodade».', 'A morna, a canção de Cabo Verde, canta muitas vezes a saudade.'],
-          ['Em Curaçau, «Bon dia» quer dizer «bom dia» em papiamento.', 'Em Curaçao, «Bon dia» quer dizer «bom dia» em papiamento.'],
+          ['A morna, a canção de Cabo Verde, canta muitas vezes a “sodade”.', 'A morna, a canção de Cabo Verde, canta muitas vezes a saudade.'],
+          ['Em Curaçau, “Bon dia” quer dizer “bom dia” em papiamento.', 'Em Curaçao, “Bon dia” quer dizer “bom dia” em papiamento.'],
         ],
       },
       {
         heading: 'O galego: o irmão do outro lado do Minho',
-        text: 'Na Idade Média, a Galiza e o norte de Portugal falavam a mesma língua, o galego-português, em que se escreveram as cantigas de amigo, de amor e de escárnio e maldizer, e também as Cantigas de Santa Maria, reunidas na corte de Afonso X de Castela. O rei D. Dinis de Portugal foi um dos grandes trovadores dessa língua. Com a independência de Portugal e a integração da Galiza no reino de Castela, as duas variedades separaram-se: o português tornou-se língua de um Estado, e o galego viveu séculos à sombra do castelhano. No século XIX, o Rexurdimento (renascimento) devolveu-lhe prestígio literário, com Rosalía de Castro e os seus «Cantares gallegos» (1863). Hoje o galego é língua cooficial da Galiza, ao lado do castelhano, com norma da Real Academia Galega. Uma corrente, o reintegracionismo, defende escrever o galego com uma ortografia próxima da portuguesa, por considerar que se trata da mesma língua.',
+        text: 'Na Idade Média, a Galiza e o norte de Portugal falavam a mesma língua, o galego-português, em que se escreveram as cantigas de amigo, de amor e de escárnio e maldizer, e também as Cantigas de Santa Maria, reunidas na corte de Afonso X de Castela. O rei D. Dinis de Portugal foi um dos grandes trovadores dessa língua. Com a independência de Portugal e a integração da Galiza no reino de Castela, as duas variedades separaram-se: o português tornou-se língua de um Estado, e o galego viveu séculos à sombra do castelhano. No século XIX, o Rexurdimento (renascimento) devolveu-lhe prestígio literário, com Rosalía de Castro e os seus “Cantares gallegos” (1863). Hoje o galego é língua cooficial da Galiza, ao lado do castelhano, com norma da Real Academia Galega. Uma corrente, o reintegracionismo, defende escrever o galego com uma ortografia próxima da portuguesa, por considerar que se trata da mesma língua.',
         table: {
           head: ['Galego', 'Português europeu', 'Brasil'],
           rows: [
@@ -3401,9 +3401,9 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Chamar um crioulo de «português errado» ou «dialeto do português»: é uma língua própria, com gramática diferente, mesmo que o vocabulário venha do português.',
+      'Chamar um crioulo de “português errado” ou “dialeto do português”: é uma língua própria, com gramática diferente, mesmo que o vocabulário venha do português.',
       'Achar que quem fala português entende um crioulo sem esforço: as palavras parecem conhecidas, mas o sistema verbal e a estrutura da frase são outros.',
-      'Dizer que o galego é «espanhol com sotaque» ou «português mal escrito»: é uma língua românica com história própria, irmã do português e cooficial na Galiza.',
+      'Dizer que o galego é “espanhol com sotaque” ou “português mal escrito”: é uma língua românica com história própria, irmã do português e cooficial na Galiza.',
       'Esquecer que a literatura portuguesa começou em galego-português: as cantigas medievais pertencem às duas tradições.',
       'Confundir o mirandês com um dialeto do português: é de outro ramo, o asturo-leonês.',
     ],
@@ -3415,10 +3415,10 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         explanation: 'O crioulo tira do português a maior parte das palavras, mas tem gramática própria e é língua materna de comunidades inteiras.',
       },
       {
-        question: 'No crioulo de Santiago (Cabo Verde), o que quer dizer «N sta ta kume»?',
+        question: 'No crioulo de Santiago (Cabo Verde), o que quer dizer “N sta ta kume”?',
         options: ['Estou a comer.', 'Comi.', 'Não como.'],
         answer: 'Estou a comer.',
-        explanation: 'As partículas «sta ta» marcam a ação em curso; o verbo «kume» não se conjuga.',
+        explanation: 'As partículas “sta ta” marcam a ação em curso; o verbo “kume” não se conjuga.',
       },
       {
         question: 'Em que língua medieval se escreveram as cantigas de amigo?',
@@ -3446,29 +3446,29 @@ export const GRAMMAR_PT: GrammarTopic[] = [
     level: 'C1.2',
     title: 'O texto acadêmico na norma culta: impessoalidade, modalização e citação',
     emoji: '🎓',
-    summary: 'Como escrever um trabalho, um artigo ou uma dissertação em Portugal: a voz impessoal («pretende-se», «considera-se»), o plural de modéstia, a modalização («poder-se-ia afirmar»), a citação e o vocabulário universitário que muda (licenciatura, doutoramento, júri).',
+    summary: 'Como escrever um trabalho, um artigo ou uma dissertação em Portugal: a voz impessoal (“pretende-se”, “considera-se”), o plural de modéstia, a modalização (“poder-se-ia afirmar”), a citação e o vocabulário universitário que muda (licenciatura, doutoramento, júri).',
     sections: [
       {
-        text: 'O texto acadêmico segue a mesma norma culta nos dois países: objetividade, frases completas, termos precisos e nada de marcas da fala. O que muda em Portugal é a ortografia (facto, contacto, receção, académico), parte do vocabulário universitário e, sobretudo, a colocação dos pronomes. Em Portugal, a frase que começa por verbo pede ênclise («Pretende-se», «Considera-se»), e o futuro e o condicional pedem mesóclise no registro culto («poder-se-ia»). No Brasil, a norma culta aceita as mesmas formas, mas na prática acadêmica é comum a próclise («se pretende», «se poderia»).',
+        text: 'O texto acadêmico segue a mesma norma culta nos dois países: objetividade, frases completas, termos precisos e nada de marcas da fala. O que muda em Portugal é a ortografia (facto, contacto, receção, académico), parte do vocabulário universitário e, sobretudo, a colocação dos pronomes. Em Portugal, a frase que começa por verbo pede ênclise (“Pretende-se”, “Considera-se”), e o futuro e o condicional pedem mesóclise no registro culto (“poder-se-ia”). No Brasil, a norma culta aceita as mesmas formas, mas na prática acadêmica é comum a próclise (“se pretende”, “se poderia”).',
       },
       {
-        heading: 'Três maneiras de apagar o «eu»',
-        text: 'O autor acadêmico raramente diz «eu». Tem três recursos: o «se» impessoal ou apassivador, o plural de modéstia («nós», mesmo com um só autor) e o sujeito inanimado («o presente estudo», «este capítulo»). Lembre a concordância do «se» apassivador, que vale nos dois países: «Analisaram-se os dados» (os dados foram analisados), e não «analisou-se os dados», embora esta última apareça muito na escrita corrente dos dois lados.',
+        heading: 'Três maneiras de apagar o “eu”',
+        text: 'O autor acadêmico raramente diz “eu”. Tem três recursos: o “se” impessoal ou apassivador, o plural de modéstia (“nós”, mesmo com um só autor) e o sujeito inanimado (“o presente estudo”, “este capítulo”). Lembre a concordância do “se” apassivador, que vale nos dois países: “Analisaram-se os dados” (os dados foram analisados), e não “analisou-se os dados”, embora esta última apareça muito na escrita corrente dos dois lados.',
         table: {
           head: ['Recurso', 'Portugal', 'Brasil (uso comum)'],
           rows: [
-            ['«se» impessoal', 'Pretende-se, neste trabalho, demonstrar…', 'Pretende-se / Neste trabalho, se pretende…'],
-            ['«se» apassivador', 'Analisaram-se vinte inquéritos.', 'Analisaram-se vinte questionários.'],
+            ['“se” impessoal', 'Pretende-se, neste trabalho, demonstrar…', 'Pretende-se / Neste trabalho, se pretende…'],
+            ['“se” apassivador', 'Analisaram-se vinte inquéritos.', 'Analisaram-se vinte questionários.'],
             ['plural de modéstia', 'Consideramos que a hipótese se confirma.', 'Consideramos que a hipótese se confirma.'],
             ['sujeito inanimado', 'O presente estudo procura explicar…', 'O presente estudo busca explicar…'],
-            ['modalização', 'Poder-se-ia afirmar que…', 'se poderia, poder-se-ia (e o errado «poderia-se»)'],
+            ['modalização', 'Poder-se-ia afirmar que…', 'se poderia, poder-se-ia (e o errado “poderia-se”)'],
           ],
         },
         examples: [
-          ['Pretende-se, neste trabalho, descrever a variação do português falado em Braga.', 'Pretende-se, neste trabalho, descrever… (igual; no Brasil também se lê «neste trabalho, se pretende»)'],
-          ['Analisaram-se trinta inquéritos feitos em Évora e Faro.', 'Foram analisados trinta questionários (em Portugal «inquérito» é também o questionário de pesquisa).'],
+          ['Pretende-se, neste trabalho, descrever a variação do português falado em Braga.', 'Pretende-se, neste trabalho, descrever… (igual; no Brasil também se lê “neste trabalho, se pretende”)'],
+          ['Analisaram-se trinta inquéritos feitos em Évora e Faro.', 'Foram analisados trinta questionários (em Portugal “inquérito” é também o questionário de pesquisa).'],
           ['Não se pode, contudo, generalizar estes resultados.', 'Não se pode, contudo, generalizar esses resultados (próclise por causa da negação, nos dois países).'],
-          ['Poder-se-ia objetar que a amostra é pequena.', 'Poderia-se objetar… (errado na norma); o certo é «poder-se-ia» ou «se poderia».'],
+          ['Poder-se-ia objetar que a amostra é pequena.', 'Poderia-se objetar… (errado na norma); o certo é “poder-se-ia” ou “se poderia”.'],
           ['Os dados parecem indicar uma mudança em curso.', 'Os dados parecem indicar… (a modalização suaviza a afirmação).'],
         ],
       },
@@ -3478,14 +3478,14 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         table: {
           head: ['Portugal', 'Brasil', 'Nota'],
           rows: [
-            ['licenciatura', 'graduação (bacharelado / licenciatura)', 'em Portugal, «licenciado» é quem tem o 1.º ciclo, de qualquer área'],
+            ['licenciatura', 'graduação (bacharelado / licenciatura)', 'em Portugal, “licenciado” é quem tem o 1.º ciclo, de qualquer área'],
             ['mestrado', 'mestrado', 'igual'],
-            ['doutoramento', 'doutorado', '«doutorando» e «doutorado» existem nos dois'],
-            ['provas públicas, júri', 'defesa, banca', '«defender a tese» se diz nos dois'],
-            ['unidade curricular, cadeira', 'disciplina, matéria', '«cadeira» é informal em Portugal'],
-            ['propina', 'mensalidade, taxa', 'no Brasil, «propina» é suborno!'],
-            ['inquérito', 'questionário, pesquisa', 'também «investigação» = pesquisa'],
-            ['investigador', 'pesquisador', '«investigação científica» = pesquisa'],
+            ['doutoramento', 'doutorado', '“doutorando” e “doutorado” existem nos dois'],
+            ['provas públicas, júri', 'defesa, banca', '“defender a tese” se diz nos dois'],
+            ['unidade curricular, cadeira', 'disciplina, matéria', '“cadeira” é informal em Portugal'],
+            ['propina', 'mensalidade, taxa', 'no Brasil, “propina” é suborno!'],
+            ['inquérito', 'questionário, pesquisa', 'também “investigação” = pesquisa'],
+            ['investigador', 'pesquisador', '“investigação científica” = pesquisa'],
           ],
         },
         examples: [
@@ -3497,51 +3497,51 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Citação e referência',
-        text: 'A citação direta vai entre aspas (em Portugal, as aspas angulares « » são as tradicionais; no Brasil, predominam as aspas curvas “ ”) ou em bloco recuado quando é longa. A indireta dispensa aspas, mas não a fonte. As expressões latinas são as mesmas: apud (citado por), et al. (e outros), cf. (confira), op. cit. (obra citada), ibidem (no mesmo lugar). No Brasil, a norma de referência mais usada é a da ABNT; em Portugal, cada universidade ou revista escolhe a sua (APA, a norma portuguesa NP 405, Chicago…).',
+        text: 'A citação direta vai entre aspas (em Portugal, as aspas angulares “ ” são as tradicionais; no Brasil, predominam as aspas curvas “ ”) ou em bloco recuado quando é longa. A indireta dispensa aspas, mas não a fonte. As expressões latinas são as mesmas: apud (citado por), et al. (e outros), cf. (confira), op. cit. (obra citada), ibidem (no mesmo lugar). No Brasil, a norma de referência mais usada é a da ABNT; em Portugal, cada universidade ou revista escolhe a sua (APA, a norma portuguesa NP 405, Chicago…).',
         examples: [
           ['Segundo Cintra (1971), os dialetos portugueses dividem-se em dois grandes grupos.', 'Segundo Cintra (1971), os dialetos portugueses se dividem em dois grandes grupos.'],
-          ['Como observa a autora, «a norma não é uma só» (p. 12).', 'Como observa a autora, “a norma não é uma só” (p. 12).'],
+          ['Como observa a autora, “a norma não é uma só” (p. 12).', 'Como observa a autora, “a norma não é uma só” (p. 12).'],
           ['Cf. o capítulo 3, onde se discute o conceito de norma.', 'Cf. o capítulo 3, onde se discute o conceito de norma.'],
         ],
       },
     ],
     pitfalls: [
-      'Escrever «poderia-se» ou «deveria-se»: a norma culta não põe o pronome depois do condicional. Em Portugal, «poder-se-ia»; no Brasil também serve «se poderia».',
-      'Dizer a um português que a sua «propina» subiu esperando falar de suborno: em Portugal, propina é a taxa da universidade.',
-      'Usar «Se analisou» no começo da frase de um texto para Portugal: a frase não começa por pronome átono. «Analisaram-se os dados.»',
-      'Deixar o «se» apassivador no singular com sujeito plural: «Analisou-se os casos» → «Analisaram-se os casos», regra da norma culta nos dois países.',
-      'Escrever «acadêmico», «registro», «contato» num trabalho para Portugal: lá é «académico», «registo», «contacto».',
+      'Escrever “poderia-se” ou “deveria-se”: a norma culta não põe o pronome depois do condicional. Em Portugal, “poder-se-ia”; no Brasil também serve “se poderia”.',
+      'Dizer a um português que a sua “propina” subiu esperando falar de suborno: em Portugal, propina é a taxa da universidade.',
+      'Usar “Se analisou” no começo da frase de um texto para Portugal: a frase não começa por pronome átono. “Analisaram-se os dados.”',
+      'Deixar o “se” apassivador no singular com sujeito plural: “Analisou-se os casos” → “Analisaram-se os casos”, regra da norma culta nos dois países.',
+      'Escrever “acadêmico”, “registro”, “contato” num trabalho para Portugal: lá é “académico”, “registo”, “contacto”.',
     ],
     quiz: [
       {
         question: 'Qual forma segue a norma culta de Portugal num artigo?',
-        options: ['Poder-se-ia afirmar que…', '«Poderia-se afirmar que…»', '«Se poderia afirmar que…»'],
+        options: ['Poder-se-ia afirmar que…', '“Poderia-se afirmar que…”', '“Se poderia afirmar que…”'],
         answer: 'Poder-se-ia afirmar que…',
-        explanation: 'No condicional, a norma culta usa mesóclise ou próclise; em Portugal, no começo da frase, só a mesóclise. «Poderia-se» é errado nos dois países.',
+        explanation: 'No condicional, a norma culta usa mesóclise ou próclise; em Portugal, no começo da frase, só a mesóclise. “Poderia-se” é errado nos dois países.',
       },
       {
-        question: 'Complete com a concordância da norma culta: «___ vinte entrevistas em Aveiro.»',
-        options: ['Fizeram-se', 'Fez-se', '«Se fizeram»'],
+        question: 'Complete com a concordância da norma culta: “___ vinte entrevistas em Aveiro.”',
+        options: ['Fizeram-se', 'Fez-se', '“Se fizeram”'],
         answer: 'Fizeram-se',
-        explanation: '«Se» apassivador: «vinte entrevistas foram feitas», então o verbo vai ao plural. E em Portugal a frase não começa por «se».',
+        explanation: '“Se” apassivador: “vinte entrevistas foram feitas”, então o verbo vai ao plural. E em Portugal a frase não começa por “se”.',
       },
       {
         question: 'Como se chama em Portugal o curso de graduação?',
         options: ['licenciatura', 'bacharelato', 'graduação'],
         answer: 'licenciatura',
-        explanation: 'Em Portugal, o 1.º ciclo do ensino superior é a licenciatura, em qualquer área; quem a conclui é «licenciado».',
+        explanation: 'Em Portugal, o 1.º ciclo do ensino superior é a licenciatura, em qualquer área; quem a conclui é “licenciado”.',
       },
       {
-        question: 'O que é a «propina» numa universidade portuguesa?',
+        question: 'O que é a “propina” numa universidade portuguesa?',
         options: ['a taxa paga pelo estudante', 'um suborno', 'uma bolsa de estudo'],
         answer: 'a taxa paga pelo estudante',
-        explanation: 'Falso amigo: em Portugal, «propina» é a taxa de frequência; no Brasil, é suborno.',
+        explanation: 'Falso amigo: em Portugal, “propina” é a taxa de frequência; no Brasil, é suborno.',
       },
       {
-        question: 'Qual é o equivalente português de «doutorado»?',
+        question: 'Qual é o equivalente português de “doutorado”?',
         options: ['doutoramento', 'doutorança', 'doutoria'],
         answer: 'doutoramento',
-        explanation: 'Em Portugal faz-se o doutoramento; o aluno é «doutorando» e, depois, «doutorado», como no Brasil.',
+        explanation: 'Em Portugal faz-se o doutoramento; o aluno é “doutorando” e, depois, “doutorado”, como no Brasil.',
       },
     ],
   },
@@ -3550,14 +3550,14 @@ export const GRAMMAR_PT: GrammarTopic[] = [
     level: 'C1.2',
     title: 'Estilo jornalístico e nominalização',
     emoji: '📰',
-    summary: 'A notícia em Portugal e no Brasil: o lide, os títulos no presente, os verbos declarativos (adiantou, sublinhou, avançou) e a nominalização, que troca o verbo pelo substantivo («o Governo decidiu» → «a decisão do Governo»).',
+    summary: 'A notícia em Portugal e no Brasil: o lide, os títulos no presente, os verbos declarativos (adiantou, sublinhou, avançou) e a nominalização, que troca o verbo pelo substantivo (“o Governo decidiu” → “a decisão do Governo”).',
     sections: [
       {
         text: 'A notícia segue a mesma lógica nos dois países: o mais importante primeiro (o lide responde a quem, o quê, quando, onde, como e porquê), frases curtas, terceira pessoa e nenhuma opinião fora dos textos de opinião. O que dá sabor português à notícia são as palavras: o Governo (geralmente com maiúscula na imprensa portuguesa), a PSP e a GNR (as polícias), a autarquia e a câmara municipal (a prefeitura), o autarca (o prefeito ou vereador), o deputado da Assembleia da República.',
       },
       {
         heading: 'Títulos e verbos declarativos',
-        text: 'O título usa o presente para fatos passados («Governo aprova…») e «vai + infinitivo» para o futuro («Governo vai aprovar…»). O artigo inicial cai. Para relatar falas, a imprensa portuguesa tem verbos preferidos que soam diferentes ao ouvido brasileiro.',
+        text: 'O título usa o presente para fatos passados (“Governo aprova…”) e “vai + infinitivo” para o futuro (“Governo vai aprovar…”). O artigo inicial cai. Para relatar falas, a imprensa portuguesa tem verbos preferidos que soam diferentes ao ouvido brasileiro.',
         table: {
           head: ['Imprensa portuguesa', 'Sentido', 'No Brasil'],
           rows: [
@@ -3574,12 +3574,12 @@ export const GRAMMAR_PT: GrammarTopic[] = [
           ['O ministro adiantou que as obras começam em maio.', 'O ministro informou (antecipou) que as obras começam em maio.'],
           ['Segundo apurou o jornal, o contrato foi assinado ontem.', 'Segundo apurou o jornal, o contrato foi assinado ontem.'],
           ['A autarca sublinhou a importância do projeto para o Alentejo.', 'A prefeita destacou a importância do projeto para o Alentejo.'],
-          ['Detido suspeito de assalto em Setúbal.', 'Preso suspeito de assalto em Setúbal (o auxiliar «é» cai no título).'],
+          ['Detido suspeito de assalto em Setúbal.', 'Preso suspeito de assalto em Setúbal (o auxiliar “é” cai no título).'],
         ],
       },
       {
         heading: 'Nominalização: do verbo ao substantivo',
-        text: 'Nominalizar é transformar uma oração num substantivo: «o Governo decidiu» vira «a decisão do Governo». O texto fica mais denso, impessoal e técnico — ótimo para títulos, resumos e textos acadêmicos. Os sufixos mais usados são -ção, -mento, -agem, -ura e -ância/-ência. Atenção à ortografia de Portugal nas palavras em que o Acordo de 1990 cortou a consoante muda só lá: receção, conceção, perceção (no Brasil, recepção, concepção, percepção).',
+        text: 'Nominalizar é transformar uma oração num substantivo: “o Governo decidiu” vira “a decisão do Governo”. O texto fica mais denso, impessoal e técnico — ótimo para títulos, resumos e textos acadêmicos. Os sufixos mais usados são -ção, -mento, -agem, -ura e -ância/-ência. Atenção à ortografia de Portugal nas palavras em que o Acordo de 1990 cortou a consoante muda só lá: receção, conceção, perceção (no Brasil, recepção, concepção, percepção).',
         table: {
           head: ['Verbo', 'Nome (Portugal)', 'Nome (Brasil)'],
           rows: [
@@ -3602,33 +3602,33 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Quando a nominalização atrapalha',
-        text: 'Em excesso, ela cria cadeias de «de» difíceis de ler e esconde quem fez o quê: «a realização da avaliação da implementação do plano». A boa redação, nos dois países, alterna nomes e verbos. E evite «a nível de» no sentido de «em relação a»: é muito criticada pelos gramáticos de Portugal e do Brasil. Prefira «no que diz respeito a», «quanto a» ou, no sentido próprio de escala, «ao nível de» (Portugal) / «em nível de» (Brasil).',
+        text: 'Em excesso, ela cria cadeias de “de” difíceis de ler e esconde quem fez o quê: “a realização da avaliação da implementação do plano”. A boa redação, nos dois países, alterna nomes e verbos. E evite “a nível de” no sentido de “em relação a”: é muito criticada pelos gramáticos de Portugal e do Brasil. Prefira “no que diz respeito a”, “quanto a” ou, no sentido próprio de escala, “ao nível de” (Portugal) / “em nível de” (Brasil).',
         examples: [
           ['A realização da avaliação da implementação do plano. → Avaliou-se como o plano foi implementado.', 'Frase pesada → frase clara, com verbo.'],
-          ['No que diz respeito à saúde, o Algarve precisa de mais médicos.', 'Em relação à saúde, o Algarve precisa de mais médicos (em vez de «a nível de saúde»).'],
+          ['No que diz respeito à saúde, o Algarve precisa de mais médicos.', 'Em relação à saúde, o Algarve precisa de mais médicos (em vez de “a nível de saúde”).'],
           ['A cheia chegou ao nível da ponte.', 'A enchente chegou ao nível da ponte (sentido próprio: correto).'],
         ],
       },
     ],
     pitfalls: [
-      'Ler «o jornal avançou» como «o jornal progrediu»: na imprensa portuguesa, «avançar» uma notícia é divulgá-la em primeira mão.',
-      'Escrever «recepção» e «percepção» num texto para Portugal: lá, depois do Acordo, é «receção» e «perceção». Mas «exceção» é igual nos dois.',
-      'Empilhar nominalizações: «a efetivação da concretização da medida». Troque um dos nomes por um verbo.',
-      'Usar «a nível de» para tudo («a nível de preço…»): os manuais de estilo dos dois países condenam. Diga «quanto ao preço».',
-      'Confundir «câmara» com «câmera»: em Portugal, a Câmara Municipal é a prefeitura; o aparelho de fotografar é também «câmara».',
+      'Ler “o jornal avançou” como “o jornal progrediu”: na imprensa portuguesa, “avançar” uma notícia é divulgá-la em primeira mão.',
+      'Escrever “recepção” e “percepção” num texto para Portugal: lá, depois do Acordo, é “receção” e “perceção”. Mas “exceção” é igual nos dois.',
+      'Empilhar nominalizações: “a efetivação da concretização da medida”. Troque um dos nomes por um verbo.',
+      'Usar “a nível de” para tudo (“a nível de preço…”): os manuais de estilo dos dois países condenam. Diga “quanto ao preço”.',
+      'Confundir “câmara” com “câmera”: em Portugal, a Câmara Municipal é a prefeitura; o aparelho de fotografar é também “câmara”.',
     ],
     quiz: [
       {
-        question: 'Numa notícia portuguesa, «o jornal avançou que…» significa:',
+        question: 'Numa notícia portuguesa, “o jornal avançou que…” significa:',
         options: ['o jornal divulgou em primeira mão', 'o jornal melhorou', 'o jornal recuou'],
         answer: 'o jornal divulgou em primeira mão',
-        explanation: '«Avançar uma notícia» é dá-la antes dos outros. É um dos verbos declarativos típicos da imprensa portuguesa, ao lado de «adiantar» e «sublinhar».',
+        explanation: '“Avançar uma notícia” é dá-la antes dos outros. É um dos verbos declarativos típicos da imprensa portuguesa, ao lado de “adiantar” e “sublinhar”.',
       },
       {
-        question: 'Qual é a nominalização de «receber» na ortografia de Portugal?',
-        options: ['receção', '«recepção»', 'recebimento'],
+        question: 'Qual é a nominalização de “receber” na ortografia de Portugal?',
+        options: ['receção', '“recepção”', 'recebimento'],
         answer: 'receção',
-        explanation: 'Em Portugal, o p não se pronuncia e caiu com o Acordo de 1990: receção. No Brasil, onde o p ainda se escreve, «recepção».',
+        explanation: 'Em Portugal, o p não se pronuncia e caiu com o Acordo de 1990: receção. No Brasil, onde o p ainda se escreve, “recepção”.',
       },
       {
         question: 'Qual título tem o estilo jornalístico?',
@@ -3637,16 +3637,16 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         explanation: 'Título: presente, sem artigo inicial, curto e com o fato principal. O resto vai no lide.',
       },
       {
-        question: 'Em Portugal, a «câmara municipal» é:',
+        question: 'Em Portugal, a “câmara municipal” é:',
         options: ['a prefeitura', 'a câmara de vereadores apenas', 'o tribunal da cidade'],
         answer: 'a prefeitura',
         explanation: 'A câmara municipal é o órgão executivo do município, presidido pelo presidente da câmara (o equivalente ao prefeito).',
       },
       {
-        question: 'Qual alternativa evita a expressão criticada «a nível de»?',
+        question: 'Qual alternativa evita a expressão criticada “a nível de”?',
         options: ['Quanto à segurança, o plano é bom.', 'A nível de segurança, o plano é bom.', 'Em nível de segurança, o plano é bom.'],
         answer: 'Quanto à segurança, o plano é bom.',
-        explanation: '«A nível de» e «em nível de» no sentido de «quanto a» são condenados pelos gramáticos dos dois países. Use «quanto a», «no que diz respeito a».',
+        explanation: '“A nível de” e “em nível de” no sentido de “quanto a” são condenados pelos gramáticos dos dois países. Use “quanto a”, “no que diz respeito a”.',
       },
     ],
   },
@@ -3655,14 +3655,14 @@ export const GRAMMAR_PT: GrammarTopic[] = [
     level: 'C1.2',
     title: 'A dissertação argumentativa: estrutura, conectores e parágrafo',
     emoji: '🖋️',
-    summary: 'Tese, argumentos e conclusão; os conectores preferidos em Portugal («com efeito», «ora», «aliás») e os comuns aos dois países; o parágrafo bem construído; e a diferença entre o texto de opinião português e a redação do Enem.',
+    summary: 'Tese, argumentos e conclusão; os conectores preferidos em Portugal (“com efeito”, “ora”, “aliás”) e os comuns aos dois países; o parágrafo bem construído; e a diferença entre o texto de opinião português e a redação do Enem.',
     sections: [
       {
         text: 'A dissertação argumentativa defende um ponto de vista com argumentos. A estrutura é a mesma dos dois lados: introdução (apresenta o tema e a tese), desenvolvimento (um argumento por parágrafo, com exemplo, dado ou autoridade) e conclusão (retoma a tese e fecha). No Brasil, a redação do Enem pede ainda uma proposta de intervenção para o problema; em Portugal, o exame nacional de Português costuma pedir um texto de opinião ou de apreciação crítica, sem essa exigência.',
       },
       {
         heading: 'Os conectores',
-        text: 'O conector mostra a relação lógica entre as ideias. A maioria é igual nos dois países; alguns são bem mais frequentes em Portugal. «Com efeito» (= de fato) e «ora» (para introduzir o passo seguinte do raciocínio) soam muito portugueses ao ouvido brasileiro; «aliás» é comum nos dois, mas em Portugal aparece a toda hora.',
+        text: 'O conector mostra a relação lógica entre as ideias. A maioria é igual nos dois países; alguns são bem mais frequentes em Portugal. “Com efeito” (= de fato) e “ora” (para introduzir o passo seguinte do raciocínio) soam muito portugueses ao ouvido brasileiro; “aliás” é comum nos dois, mas em Portugal aparece a toda hora.',
         table: {
           head: ['Relação', 'Conectores (dos dois países)', 'Mais típicos de Portugal'],
           rows: [
@@ -3670,7 +3670,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
             ['oposição', 'mas, porém, contudo, todavia, no entanto', 'não obstante'],
             ['causa', 'porque, visto que, uma vez que, já que', 'dado que'],
             ['conclusão', 'portanto, logo, assim, por conseguinte', 'em suma, assim sendo'],
-            ['confirmação', 'de fato, efetivamente', 'com efeito (e «de facto»)'],
+            ['confirmação', 'de fato, efetivamente', 'com efeito (e “de facto”)'],
             ['progressão', 'além disso, por outro lado', 'ora'],
             ['concessão', 'embora, ainda que, apesar de', 'se bem que'],
           ],
@@ -3685,7 +3685,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'O parágrafo argumentativo',
-        text: 'Cada parágrafo do desenvolvimento tem três partes: o tópico frasal (a ideia principal), a fundamentação (exemplo, dado, causa e consequência, citação de autoridade) e o fecho que liga ao próximo. Varie o tipo de argumento e evite generalizações («todos sabem», «desde sempre»). A primeira pessoa do singular é aceita num texto de opinião em Portugal («Considero que…»); na redação do Enem, recomenda-se a impessoalidade.',
+        text: 'Cada parágrafo do desenvolvimento tem três partes: o tópico frasal (a ideia principal), a fundamentação (exemplo, dado, causa e consequência, citação de autoridade) e o fecho que liga ao próximo. Varie o tipo de argumento e evite generalizações (“todos sabem”, “desde sempre”). A primeira pessoa do singular é aceita num texto de opinião em Portugal (“Considero que…”); na redação do Enem, recomenda-se a impessoalidade.',
         examples: [
           ['Considero que a lei deve proteger os moradores antigos.', 'Considero que a lei deve proteger os moradores antigos (1ª pessoa: aceita no texto de opinião).'],
           ['Veja-se o caso de Guimarães, onde o centro histórico foi recuperado.', 'Veja-se o caso de Guimarães… (argumento pelo exemplo).'],
@@ -3695,27 +3695,27 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Pontuação dos conectores',
-        text: 'A regra da norma culta vale nos dois países: conector deslocado para o meio da frase vai entre vírgulas («A lei, contudo, é antiga»); no começo da frase, a vírgula depois de «contudo», «no entanto», «com efeito», «em suma» é recomendada. «Mas» nunca leva vírgula depois de si, e «porém» pode ir no meio da oração, ao contrário de «mas».',
+        text: 'A regra da norma culta vale nos dois países: conector deslocado para o meio da frase vai entre vírgulas (“A lei, contudo, é antiga”); no começo da frase, a vírgula depois de “contudo”, “no entanto”, “com efeito”, “em suma” é recomendada. “Mas” nunca leva vírgula depois de si, e “porém” pode ir no meio da oração, ao contrário de “mas”.',
         examples: [
           ['A lei, contudo, não resolve tudo.', 'A lei, contudo, não resolve tudo.'],
-          ['A proposta é boa, mas chega tarde.', 'A proposta é boa, mas chega tarde (sem vírgula depois de «mas»).'],
-          ['O plano, porém, nunca saiu do papel.', 'O plano, porém, nunca saiu do papel («porém» pode deslocar-se; «mas», não).'],
+          ['A proposta é boa, mas chega tarde.', 'A proposta é boa, mas chega tarde (sem vírgula depois de “mas”).'],
+          ['O plano, porém, nunca saiu do papel.', 'O plano, porém, nunca saiu do papel (“porém” pode deslocar-se; “mas”, não).'],
         ],
       },
     ],
     pitfalls: [
-      'Estranhar o «ora» no meio de um texto português: não é «agora» nem desdém; é um conector que introduz o passo seguinte do raciocínio («Ora, se assim é…»).',
-      'Escrever «de fato» num texto para Portugal: lá, «de facto», com c pronunciado.',
-      'Pôr vírgula depois de «mas» («Mas, o problema…»): só se houver uma intercalação logo a seguir. Regra dos dois países.',
-      'Usar «onde» como conector coringa («o turismo cresceu, onde os preços subiram»): «onde» é só para lugar. Use «pelo que», «o que fez com que».',
+      'Estranhar o “ora” no meio de um texto português: não é “agora” nem desdém; é um conector que introduz o passo seguinte do raciocínio (“Ora, se assim é…”).',
+      'Escrever “de fato” num texto para Portugal: lá, “de facto”, com c pronunciado.',
+      'Pôr vírgula depois de “mas” (“Mas, o problema…”): só se houver uma intercalação logo a seguir. Regra dos dois países.',
+      'Usar “onde” como conector coringa (“o turismo cresceu, onde os preços subiram”): “onde” é só para lugar. Use “pelo que”, “o que fez com que”.',
       'Levar a proposta de intervenção do Enem para um exame português: lá não é exigida, e a conclusão pode ser só a retomada da tese.',
     ],
     quiz: [
       {
-        question: 'Qual conector equivale a «de fato» e é muito usado na escrita de Portugal?',
+        question: 'Qual conector equivale a “de fato” e é muito usado na escrita de Portugal?',
         options: ['com efeito', 'ora', 'aliás'],
         answer: 'com efeito',
-        explanation: '«Com efeito» confirma o que se disse (= de facto, efetivamente). «Ora» faz progredir o raciocínio; «aliás» acrescenta.',
+        explanation: '“Com efeito” confirma o que se disse (= de facto, efetivamente). “Ora” faz progredir o raciocínio; “aliás” acrescenta.',
       },
       {
         question: 'Qual frase está pontuada segundo a norma culta?',
@@ -3727,19 +3727,19 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         question: 'Qual conector exprime concessão?',
         options: ['embora', 'portanto', 'visto que'],
         answer: 'embora',
-        explanation: '«Embora» (com conjuntivo) admite um fato contrário sem anular a tese: «Embora o turismo traga dinheiro, …».',
+        explanation: '“Embora” (com conjuntivo) admite um fato contrário sem anular a tese: “Embora o turismo traga dinheiro, …”.',
       },
       {
         question: 'Qual é a grafia usada em Portugal?',
         options: ['de facto', 'de fato', 'de feito'],
         answer: 'de facto',
-        explanation: 'Em Portugal o c de «facto» se pronuncia e se mantém. No Brasil, «fato».',
+        explanation: 'Em Portugal o c de “facto” se pronuncia e se mantém. No Brasil, “fato”.',
       },
       {
-        question: 'Na frase «Ora, se os preços sobem, os moradores saem», «ora» serve para:',
+        question: 'Na frase “Ora, se os preços sobem, os moradores saem”, “ora” serve para:',
         options: ['introduzir o passo seguinte do raciocínio', 'indicar tempo presente', 'mostrar desprezo'],
         answer: 'introduzir o passo seguinte do raciocínio',
-        explanation: '«Ora» é um conector argumentativo clássico em Portugal: «pois bem», «acontece que».',
+        explanation: '“Ora” é um conector argumentativo clássico em Portugal: “pois bem”, “acontece que”.',
       },
     ],
   },
@@ -3750,23 +3750,23 @@ export const GRAMMAR_PT: GrammarTopic[] = [
     level: 'C2',
     title: 'Camões: a língua de Os Lusíadas e dos sonetos',
     emoji: '⛵',
-    summary: 'Ler Camões no original: a ordem inversa (hipérbato), o «vós» épico, as formas antigas (alevanta, fruito) e os sonetos que todo português sabe de cor.',
+    summary: 'Ler Camões no original: a ordem inversa (hipérbato), o “vós” épico, as formas antigas (alevanta, fruito) e os sonetos que todo português sabe de cor.',
     sections: [
       {
         text: 'Luís Vaz de Camões (c. 1524–1580) publicou Os Lusíadas em 1572: dez cantos em oitava rima (estrofes de oito versos decassílabos, rimando ABABABCC) sobre a viagem de Vasco da Gama à Índia e a história de Portugal. A língua é o português do século XVI, já muito próximo do nosso, mas com a ordem das palavras latinizada e algumas formas antigas. As edições escolares modernizam a grafia; as citações abaixo seguem essa grafia atualizada.',
       },
       {
         heading: 'A abertura: o hipérbato',
-        text: 'Hipérbato é a inversão da ordem direta da frase. Na primeira estrofe, o sujeito («As armas e os barões assinalados») abre o poema, mas o verbo principal só chega no fim da estrofe seguinte: «Cantando espalharei por toda parte». Para ler Camões, reconstrua a ordem direta: sujeito, verbo, complementos.',
+        text: 'Hipérbato é a inversão da ordem direta da frase. Na primeira estrofe, o sujeito (“As armas e os barões assinalados”) abre o poema, mas o verbo principal só chega no fim da estrofe seguinte: “Cantando espalharei por toda parte”. Para ler Camões, reconstrua a ordem direta: sujeito, verbo, complementos.',
         examples: [
-          ['As armas e os barões assinalados, / Que da ocidental praia Lusitana, / Por mares nunca de antes navegados, / Passaram ainda além da Taprobana', 'Ordem direta: «Os barões ilustres que, da praia ocidental lusitana, passaram além do Ceilão por mares nunca antes navegados» (Os Lusíadas, I, 1).'],
-          ['Cesse tudo o que a Musa antiga canta, / Que outro valor mais alto se alevanta.', 'Que pare tudo o que a poesia antiga canta, porque se levanta um valor mais alto (I, 3). «Alevanta» é forma antiga de «levanta».'],
-          ['Estavas, linda Inês, posta em sossego, / De teus anos colhendo doce fruito', 'Você estava, bela Inês, tranquila, colhendo o doce fruto dos seus anos (III, 120). «Fruito» = fruto.'],
+          ['As armas e os barões assinalados, / Que da ocidental praia Lusitana, / Por mares nunca de antes navegados, / Passaram ainda além da Taprobana', 'Ordem direta: “Os barões ilustres que, da praia ocidental lusitana, passaram além do Ceilão por mares nunca antes navegados” (Os Lusíadas, I, 1).'],
+          ['Cesse tudo o que a Musa antiga canta, / Que outro valor mais alto se alevanta.', 'Que pare tudo o que a poesia antiga canta, porque se levanta um valor mais alto (I, 3). “Alevanta” é forma antiga de “levanta”.'],
+          ['Estavas, linda Inês, posta em sossego, / De teus anos colhendo doce fruito', 'Você estava, bela Inês, tranquila, colhendo o doce fruto dos seus anos (III, 120). “Fruito” = fruto.'],
         ],
       },
       {
-        heading: 'O «vós» épico e o «tu» lírico',
-        text: 'Na epopeia, o poeta se dirige às ninfas do Tejo e ao rei D. Sebastião com «vós», a segunda pessoa do plural, também usada como tratamento de respeito para uma só pessoa. O verbo concorda: «vós tendes». No episódio de Inês de Castro, o poeta fala com ela por «tu» («Estavas»). Repare na mesóclise e na ênclise, que já eram a norma na época.',
+        heading: 'O “vós” épico e o “tu” lírico',
+        text: 'Na epopeia, o poeta se dirige às ninfas do Tejo e ao rei D. Sebastião com “vós”, a segunda pessoa do plural, também usada como tratamento de respeito para uma só pessoa. O verbo concorda: “vós tendes”. No episódio de Inês de Castro, o poeta fala com ela por “tu” (“Estavas”). Repare na mesóclise e na ênclise, que já eram a norma na época.',
         table: {
           head: ['Forma de Camões', 'Hoje (Portugal)', 'Hoje (Brasil)'],
           rows: [
@@ -3787,46 +3787,46 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         text: 'A lírica de Camões brinca com contrários (antítese e paradoxo) e com repetições no começo dos versos (anáfora). Os dois sonetos abaixo estão entre os poemas mais citados da língua, nos dois lados do Atlântico.',
         examples: [
           ['Amor é fogo que arde sem se ver, / é ferida que dói, e não se sente; / é um contentamento descontente; / é dor que desatina sem doer.', 'Metáfora (amor = fogo) e paradoxos (contentamento descontente, dor que não dói).'],
-          ['Mudam-se os tempos, mudam-se as vontades, / Muda-se o ser, muda-se a confiança; / Todo o mundo é composto de mudança, / Tomando sempre novas qualidades.', 'Anáfora de «muda-se» e ênclise em todos os verbos. «Todo o mundo» aqui é «o mundo inteiro».'],
+          ['Mudam-se os tempos, mudam-se as vontades, / Muda-se o ser, muda-se a confiança; / Todo o mundo é composto de mudança, / Tomando sempre novas qualidades.', 'Anáfora de “muda-se” e ênclise em todos os verbos. “Todo o mundo” aqui é “o mundo inteiro”.'],
         ],
       },
     ],
     pitfalls: [
-      'Ler «Todo o mundo é composto de mudança» como «todas as pessoas»: em Portugal, «todo o mundo» é «o mundo inteiro»; «todas as pessoas» é «toda a gente».',
+      'Ler “Todo o mundo é composto de mudança” como “todas as pessoas”: em Portugal, “todo o mundo” é “o mundo inteiro”; “todas as pessoas” é “toda a gente”.',
       'Tentar ler Camões na ordem em que as palavras aparecem: primeiro ache o verbo e o sujeito, depois encaixe os complementos.',
-      'Achar que «vós» em Camões é sempre plural: é também tratamento de respeito dirigido a uma pessoa (o rei).',
+      'Achar que “vós” em Camões é sempre plural: é também tratamento de respeito dirigido a uma pessoa (o rei).',
       'Confundir o decassílabo com dez palavras: são dez sílabas poéticas, contadas até à última tônica do verso.',
     ],
     quiz: [
       {
-        question: 'O que é «Taprobana» na primeira estrofe de Os Lusíadas?',
+        question: 'O que é “Taprobana” na primeira estrofe de Os Lusíadas?',
         options: ['o Ceilão (Sri Lanka)', 'a Índia', 'o cabo da Boa Esperança'],
         answer: 'o Ceilão (Sri Lanka)',
-        explanation: 'Taprobana era o nome antigo do Ceilão. Os navegadores passaram «ainda além» dela, ou seja, foram mais longe que os antigos.',
+        explanation: 'Taprobana era o nome antigo do Ceilão. Os navegadores passaram “ainda além” dela, ou seja, foram mais longe que os antigos.',
       },
       {
-        question: 'Que figura aparece em «é um contentamento descontente»?',
+        question: 'Que figura aparece em “é um contentamento descontente”?',
         options: ['paradoxo', 'anáfora', 'hipérbato'],
         answer: 'paradoxo',
         explanation: 'Ideias contrárias reunidas numa só expressão: o paradoxo (ou oxímoro). A antítese opõe as ideias sem fundi-las.',
       },
       {
-        question: 'Qual é a forma moderna de «alevanta»?',
+        question: 'Qual é a forma moderna de “alevanta”?',
         options: ['levanta', 'alivia', 'alenta'],
         answer: 'levanta',
-        explanation: '«Alevantar» é a forma antiga (com a- protético) de «levantar».',
+        explanation: '“Alevantar” é a forma antiga (com a- protético) de “levantar”.',
       },
       {
-        question: 'Em «E vós, Tágides minhas, pois criado / Tendes em mim…», o verbo está na:',
+        question: 'Em “E vós, Tágides minhas, pois criado / Tendes em mim…”, o verbo está na:',
         options: ['2ª pessoa do plural', '3ª pessoa do plural', '2ª pessoa do singular'],
         answer: '2ª pessoa do plural',
-        explanation: '«Vós tendes»: segunda pessoa do plural, concordando com «vós». Hoje diríamos «vocês têm».',
+        explanation: '“Vós tendes”: segunda pessoa do plural, concordando com “vós”. Hoje diríamos “vocês têm”.',
       },
       {
         question: 'Qual verso começa pela figura da anáfora, repetida nos versos seguintes?',
         options: ['Mudam-se os tempos, mudam-se as vontades', 'Cesse tudo o que a Musa antiga canta', 'Estavas, linda Inês, posta em sossego'],
         answer: 'Mudam-se os tempos, mudam-se as vontades',
-        explanation: 'A repetição de «muda-se» no começo dos versos e das orações é a anáfora.',
+        explanation: 'A repetição de “muda-se” no começo dos versos e das orações é a anáfora.',
       },
     ],
   },
@@ -3835,7 +3835,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
     level: 'C2',
     title: 'Fernando Pessoa e os heterônimos: quatro vozes, uma língua',
     emoji: '🎭',
-    summary: 'Pessoa ortônimo, Alberto Caeiro, Ricardo Reis e Álvaro de Campos: cada um com a sua sintaxe. E o semi-heterônimo Bernardo Soares, que escreveu «Minha pátria é a língua portuguesa».',
+    summary: 'Pessoa ortônimo, Alberto Caeiro, Ricardo Reis e Álvaro de Campos: cada um com a sua sintaxe. E o semi-heterônimo Bernardo Soares, que escreveu “Minha pátria é a língua portuguesa”.',
     sections: [
       {
         text: 'Fernando Pessoa (Lisboa, 1888–1935) criou os heterônimos: poetas com biografia, visão de mundo e estilo próprios. Ler os quatro lado a lado é uma aula de estilística: a mesma língua soa clássica em Reis, simples em Caeiro, torrencial em Campos e musical no Pessoa ele mesmo.',
@@ -3852,60 +3852,60 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Pessoa ele mesmo: Mensagem e Autopsicografia',
-        text: 'Em «Mar Português», o poeta fala com o mar (apóstrofe) e exagera para comover (hipérbole). Em «Autopsicografia», define a poesia como fingimento. Repare no «deveras» (= de verdade), palavra literária nos dois países.',
+        text: 'Em “Mar Português”, o poeta fala com o mar (apóstrofe) e exagera para comover (hipérbole). Em “Autopsicografia”, define a poesia como fingimento. Repare no “deveras” (= de verdade), palavra literária nos dois países.',
         examples: [
-          ['Ó mar salgado, quanto do teu sal / São lágrimas de Portugal!', 'Apóstrofe («Ó mar») e hipérbole: o sal do mar seria feito das lágrimas das famílias dos navegadores.'],
+          ['Ó mar salgado, quanto do teu sal / São lágrimas de Portugal!', 'Apóstrofe (“Ó mar”) e hipérbole: o sal do mar seria feito das lágrimas das famílias dos navegadores.'],
           ['Valeu a pena? Tudo vale a pena / Se a alma não é pequena.', 'Pergunta retórica e resposta com o mesmo verbo (poliptoto: valeu / vale).'],
-          ['O poeta é um fingidor. / Finge tão completamente / Que chega a fingir que é dor / A dor que deveras sente.', '«Deveras» = de verdade, realmente. Repare no hipérbato: «a dor que deveras sente» é o objeto de «fingir».'],
-          ['O mito é o nada que é tudo.', 'Paradoxo («Ulisses», em Mensagem).'],
+          ['O poeta é um fingidor. / Finge tão completamente / Que chega a fingir que é dor / A dor que deveras sente.', '“Deveras” = de verdade, realmente. Repare no hipérbato: “a dor que deveras sente” é o objeto de “fingir”.'],
+          ['O mito é o nada que é tudo.', 'Paradoxo (“Ulisses”, em Mensagem).'],
         ],
       },
       {
         heading: 'Caeiro, Reis e Campos',
-        text: 'Caeiro escreve como quem fala, com repetição e lógica infantil de propósito. Reis usa o imperativo de «tu» («sê») e a ordem latina. Campos grita, enumera e se contradiz. Repare também em «O rebanho é os meus pensamentos»: o verbo «ser» concorda com o sujeito singular, desafiando a regra que manda «ser» concordar com o predicativo plural.',
+        text: 'Caeiro escreve como quem fala, com repetição e lógica infantil de propósito. Reis usa o imperativo de “tu” (“sê”) e a ordem latina. Campos grita, enumera e se contradiz. Repare também em “O rebanho é os meus pensamentos”: o verbo “ser” concorda com o sujeito singular, desafiando a regra que manda “ser” concordar com o predicativo plural.',
         examples: [
           ['O Tejo é mais belo que o rio que corre pela minha aldeia, / Mas o Tejo não é mais belo que o rio que corre pela minha aldeia / Porque o Tejo não é o rio que corre pela minha aldeia.', 'Caeiro: repetição e aparente contradição; o que vale é o que é seu.'],
-          ['Sou um guardador de rebanhos. / O rebanho é os meus pensamentos / E os meus pensamentos são todos sensações.', 'Caeiro: concordância de «ser» fora do padrão (a gramática pediria «são»), escolha poética.'],
-          ['Para ser grande, sê inteiro: nada / Teu exagera ou exclui.', 'Reis: imperativo «sê» (de ser, tu) e hipérbato: «que nada do que é seu seja exagerado ou excluído».'],
-          ['Não sou nada. / Nunca serei nada. / Não posso querer ser nada. / À parte isso, tenho em mim todos os sonhos do mundo.', 'Campos, «Tabacaria»: gradação e anáfora da negação, e a virada irônica final. «À parte isso» = tirando isso.'],
+          ['Sou um guardador de rebanhos. / O rebanho é os meus pensamentos / E os meus pensamentos são todos sensações.', 'Caeiro: concordância de “ser” fora do padrão (a gramática pediria “são”), escolha poética.'],
+          ['Para ser grande, sê inteiro: nada / Teu exagera ou exclui.', 'Reis: imperativo “sê” (de ser, tu) e hipérbato: “que nada do que é seu seja exagerado ou excluído”.'],
+          ['Não sou nada. / Nunca serei nada. / Não posso querer ser nada. / À parte isso, tenho em mim todos os sonhos do mundo.', 'Campos, “Tabacaria”: gradação e anáfora da negação, e a virada irônica final. “À parte isso” = tirando isso.'],
         ],
       },
       {
         heading: 'Bernardo Soares e a língua',
-        text: 'No Livro do Desassossego, Bernardo Soares escreve a frase mais citada sobre o idioma. Note a ausência do artigo antes do possessivo: em Portugal, o normal é «a minha pátria», e o Brasil hesita entre as duas formas. Sem artigo, a frase soa solene, de sentença.',
+        text: 'No Livro do Desassossego, Bernardo Soares escreve a frase mais citada sobre o idioma. Note a ausência do artigo antes do possessivo: em Portugal, o normal é “a minha pátria”, e o Brasil hesita entre as duas formas. Sem artigo, a frase soa solene, de sentença.',
         examples: [
-          ['Minha pátria é a língua portuguesa.', 'Minha pátria é a língua portuguesa (no uso comum de Portugal: «a minha pátria»).'],
+          ['Minha pátria é a língua portuguesa.', 'Minha pátria é a língua portuguesa (no uso comum de Portugal: “a minha pátria”).'],
           ['A minha casa fica em Lisboa.', 'Minha casa fica em Lisboa (em Portugal, o artigo antes do possessivo é a regra).'],
         ],
       },
     ],
     pitfalls: [
       'Chamar os heterônimos de pseudônimos: pseudônimo é só outro nome; heterônimo é outro autor, com vida e estilo próprios.',
-      'Ler «deveras» como erro de digitação de «de veras»: é uma palavra só, advérbio literário (= realmente).',
-      'Corrigir «O rebanho é os meus pensamentos» de Caeiro: a concordância fora do padrão é intencional.',
-      'Imitar Bernardo Soares e tirar o artigo de todos os possessivos num texto português: no uso normal de Portugal, «a minha», «o teu».',
+      'Ler “deveras” como erro de digitação de “de veras”: é uma palavra só, advérbio literário (= realmente).',
+      'Corrigir “O rebanho é os meus pensamentos” de Caeiro: a concordância fora do padrão é intencional.',
+      'Imitar Bernardo Soares e tirar o artigo de todos os possessivos num texto português: no uso normal de Portugal, “a minha”, “o teu”.',
     ],
     quiz: [
       {
-        question: 'Qual heterônimo escreveu «Tabacaria»?',
+        question: 'Qual heterônimo escreveu “Tabacaria”?',
         options: ['Álvaro de Campos', 'Alberto Caeiro', 'Ricardo Reis'],
         answer: 'Álvaro de Campos',
-        explanation: 'Campos, o engenheiro modernista, é o autor de «Tabacaria»: «Não sou nada. / Nunca serei nada.»',
+        explanation: 'Campos, o engenheiro modernista, é o autor de “Tabacaria”: “Não sou nada. / Nunca serei nada.”',
       },
       {
-        question: 'Em «Para ser grande, sê inteiro», «sê» é:',
-        options: ['o imperativo de «ser» (tu)', 'o presente de «saber»', 'o pronome «se» acentuado'],
-        answer: 'o imperativo de «ser» (tu)',
-        explanation: 'Imperativo afirmativo de «ser» para «tu»: sê. É forma viva em Portugal («Sê bem-vindo!»).',
+        question: 'Em “Para ser grande, sê inteiro”, “sê” é:',
+        options: ['o imperativo de “ser” (tu)', 'o presente de “saber”', 'o pronome “se” acentuado'],
+        answer: 'o imperativo de “ser” (tu)',
+        explanation: 'Imperativo afirmativo de “ser” para “tu”: sê. É forma viva em Portugal (“Sê bem-vindo!”).',
       },
       {
-        question: 'Que figura abre «Ó mar salgado, quanto do teu sal / São lágrimas de Portugal!»?',
+        question: 'Que figura abre “Ó mar salgado, quanto do teu sal / São lágrimas de Portugal!”?',
         options: ['apóstrofe', 'anáfora', 'eufemismo'],
         answer: 'apóstrofe',
         explanation: 'O poeta chama e fala diretamente com o mar: apóstrofe. A ideia de que o sal são lágrimas é hipérbole.',
       },
       {
-        question: 'Na fala comum de Portugal, como se diz «minha casa»?',
+        question: 'Na fala comum de Portugal, como se diz “minha casa”?',
         options: ['a minha casa', 'minha casa', 'casa minha'],
         answer: 'a minha casa',
         explanation: 'Em Portugal, o possessivo vem normalmente com artigo. Bernardo Soares tira o artigo para dar solenidade.',
@@ -3914,7 +3914,7 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         question: 'Qual heterônimo é o poeta das sensações, de linguagem simples?',
         options: ['Alberto Caeiro', 'Ricardo Reis', 'Bernardo Soares'],
         answer: 'Alberto Caeiro',
-        explanation: 'Caeiro, «o mestre», escreve como quem fala: «Sou um guardador de rebanhos.»',
+        explanation: 'Caeiro, “o mestre”, escreve como quem fala: “Sou um guardador de rebanhos.”',
       },
     ],
   },
@@ -3926,12 +3926,12 @@ export const GRAMMAR_PT: GrammarTopic[] = [
     summary: 'Metáfora, metonímia, antítese, ironia, personificação, eufemismo e hipérbole com trechos de Eça de Queirós, Cesário Verde e Machado de Assis — e as mesmas figuras na fala de todos os dias.',
     sections: [
       {
-        text: 'As figuras de linguagem são as mesmas nos dois países e têm os mesmos nomes na escola. Em Portugal, a disciplina fala em «recursos expressivos»; no Brasil, em «figuras de linguagem». A tabela resume as principais, com exemplos do dia a dia.',
+        text: 'As figuras de linguagem são as mesmas nos dois países e têm os mesmos nomes na escola. Em Portugal, a disciplina fala em “recursos expressivos”; no Brasil, em “figuras de linguagem”. A tabela resume as principais, com exemplos do dia a dia.',
         table: {
           head: ['Figura', 'O que faz', 'Exemplo corrente'],
           rows: [
-            ['metáfora', 'comparação sem «como»', 'Ele é uma rocha.'],
-            ['comparação', 'aproxima com «como», «tal qual»', 'Dorme como uma pedra.'],
+            ['metáfora', 'comparação sem “como”', 'Ele é uma rocha.'],
+            ['comparação', 'aproxima com “como”, “tal qual”', 'Dorme como uma pedra.'],
             ['metonímia', 'troca por relação de proximidade', 'Ler Eça (a obra pelo autor); beber um copo'],
             ['antítese', 'opõe ideias', 'Rir e chorar ao mesmo tempo.'],
             ['paradoxo', 'une ideias contrárias', 'Um silêncio ensurdecedor.'],
@@ -3947,43 +3947,43 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         heading: 'Eça de Queirós: a metáfora e a ironia',
         text: 'Eça (1845–1900), autor de Os Maias e O Primo Basílio, é o grande prosador realista português, famoso pela ironia e pelas imagens. A epígrafe de A Relíquia resume o seu programa: a verdade coberta por um véu de fantasia.',
         examples: [
-          ['Sobre a nudez forte da verdade — o manto diáfano da fantasia.', 'Metáforas (nudez da verdade, manto da fantasia) em antítese; «diáfano» = transparente (A Relíquia).'],
+          ['Sobre a nudez forte da verdade — o manto diáfano da fantasia.', 'Metáforas (nudez da verdade, manto da fantasia) em antítese; “diáfano” = transparente (A Relíquia).'],
           ['Lisboa, ao domingo, dormia até tarde.', 'Personificação e metonímia: a cidade (os lisboetas) dorme (exemplo no estilo de Eça).'],
         ],
       },
       {
         heading: 'Cesário Verde: a cidade e a personificação',
-        text: 'Cesário Verde (1855–1886) levou a Lisboa real — ruas, operários, o Tejo — para a poesia. Em «O Sentimento dum Ocidental», as coisas da cidade agem sobre o poeta: o Tejo e a maresia «despertam-lhe» o desejo. Repare na ênclise «despertam-me», normal em Portugal mesmo depois do sujeito.',
+        text: 'Cesário Verde (1855–1886) levou a Lisboa real — ruas, operários, o Tejo — para a poesia. Em “O Sentimento dum Ocidental”, as coisas da cidade agem sobre o poeta: o Tejo e a maresia “despertam-lhe” o desejo. Repare na ênclise “despertam-me”, normal em Portugal mesmo depois do sujeito.',
         examples: [
-          ['Nas nossas ruas, ao anoitecer, / Há tal soturnidade, há tal melancolia, / Que as sombras, o bulício, o Tejo, a maresia / Despertam-me um desejo absurdo de sofrer.', 'Anáfora («há tal»), enumeração e personificação; no Brasil a fala comum diria «me despertam».'],
+          ['Nas nossas ruas, ao anoitecer, / Há tal soturnidade, há tal melancolia, / Que as sombras, o bulício, o Tejo, a maresia / Despertam-me um desejo absurdo de sofrer.', 'Anáfora (“há tal”), enumeração e personificação; no Brasil a fala comum diria “me despertam”.'],
         ],
       },
       {
         heading: 'Machado de Assis: a ironia do narrador',
-        text: 'Machado de Assis (Rio de Janeiro, 1839–1908) é o mestre da ironia em língua portuguesa. Os trechos estão na grafia do Brasil. Brás Cubas, o «defunto autor», faz do fracasso um saldo positivo; Quincas Borba resume uma filosofia cruel numa frase cômica; José Dias define Capitu com uma metáfora que ficou famosa.',
+        text: 'Machado de Assis (Rio de Janeiro, 1839–1908) é o mestre da ironia em língua portuguesa. Os trechos estão na grafia do Brasil. Brás Cubas, o “defunto autor”, faz do fracasso um saldo positivo; Quincas Borba resume uma filosofia cruel numa frase cômica; José Dias define Capitu com uma metáfora que ficou famosa.',
         examples: [
-          ['«Não tive filhos, não transmiti a nenhuma criatura o legado da nossa miséria.»', 'Ironia e pessimismo: a última frase de Memórias Póstumas de Brás Cubas.'],
-          ['«Ao vencedor, as batatas!»', 'Elipse (falta o verbo) e ironia: a luta pela vida resumida em batatas (Quincas Borba).'],
-          ['«olhos de cigana oblíqua e dissimulada»', 'Metáfora: os adjetivos concordam com «cigana», mas descrevem o olhar de Capitu (Dom Casmurro).'],
-          ['«O meu fim evidente era atar as duas pontas da vida, e restaurar na velhice a adolescência.»', 'Metáfora (as pontas da vida) e antítese (velhice × adolescência), em Dom Casmurro.'],
+          ['“Não tive filhos, não transmiti a nenhuma criatura o legado da nossa miséria.”', 'Ironia e pessimismo: a última frase de Memórias Póstumas de Brás Cubas.'],
+          ['“Ao vencedor, as batatas!”', 'Elipse (falta o verbo) e ironia: a luta pela vida resumida em batatas (Quincas Borba).'],
+          ['“olhos de cigana oblíqua e dissimulada”', 'Metáfora: os adjetivos concordam com “cigana”, mas descrevem o olhar de Capitu (Dom Casmurro).'],
+          ['“O meu fim evidente era atar as duas pontas da vida, e restaurar na velhice a adolescência.”', 'Metáfora (as pontas da vida) e antítese (velhice × adolescência), em Dom Casmurro.'],
         ],
       },
     ],
     pitfalls: [
-      'Confundir metáfora com comparação: «é uma rocha» é metáfora; «é forte como uma rocha» é comparação (tem o «como»).',
+      'Confundir metáfora com comparação: “é uma rocha” é metáfora; “é forte como uma rocha” é comparação (tem o “como”).',
       'Chamar toda contradição de paradoxo: antítese opõe (vida × morte); paradoxo funde numa só ideia (silêncio ensurdecedor).',
       'Achar que a ironia de Machado é erro de lógica do narrador: é o efeito procurado; o leitor deve ler o contrário do que está dito.',
-      '«Corrigir» as citações de Machado para a grafia de Portugal (ou as de Eça para a do Brasil): citação se copia como está no original.',
+      '“Corrigir” as citações de Machado para a grafia de Portugal (ou as de Eça para a do Brasil): citação se copia como está no original.',
     ],
     quiz: [
       {
-        question: 'Que figura há em «Ele partiu» no sentido de «Ele morreu»?',
+        question: 'Que figura há em “Ele partiu” no sentido de “Ele morreu”?',
         options: ['eufemismo', 'hipérbole', 'sinestesia'],
         answer: 'eufemismo',
         explanation: 'O eufemismo suaviza uma ideia dura ou desagradável.',
       },
       {
-        question: 'Em «Sobre a nudez forte da verdade — o manto diáfano da fantasia», «diáfano» significa:',
+        question: 'Em “Sobre a nudez forte da verdade — o manto diáfano da fantasia”, “diáfano” significa:',
         options: ['transparente', 'pesado', 'escuro'],
         answer: 'transparente',
         explanation: 'Diáfano é o que deixa passar a luz: o manto da fantasia cobre a verdade sem a esconder.',
@@ -3992,16 +3992,16 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         question: 'Qual exemplo é metonímia?',
         options: ['Li Eça nas férias.', 'Ela é uma flor.', 'Chorei rios de lágrimas.'],
         answer: 'Li Eça nas férias.',
-        explanation: 'O autor pela obra: metonímia. «Uma flor» é metáfora; «rios de lágrimas», hipérbole.',
+        explanation: 'O autor pela obra: metonímia. “Uma flor” é metáfora; “rios de lágrimas”, hipérbole.',
       },
       {
-        question: 'Em «Despertam-me um desejo absurdo de sofrer», de Cesário Verde, o pronome está em:',
+        question: 'Em “Despertam-me um desejo absurdo de sofrer”, de Cesário Verde, o pronome está em:',
         options: ['ênclise', 'próclise', 'mesóclise'],
         answer: 'ênclise',
         explanation: 'Pronome depois do verbo, ligado por hífen: ênclise, a colocação normal em Portugal.',
       },
       {
-        question: 'A frase «Ao vencedor, as batatas!» é de que obra de Machado de Assis?',
+        question: 'A frase “Ao vencedor, as batatas!” é de que obra de Machado de Assis?',
         options: ['Quincas Borba', 'Dom Casmurro', 'Memórias Póstumas de Brás Cubas'],
         answer: 'Quincas Borba',
         explanation: 'É a síntese do Humanitismo, a filosofia de Quincas Borba, no romance que leva o seu nome (1891).',
@@ -4013,10 +4013,10 @@ export const GRAMMAR_PT: GrammarTopic[] = [
     level: 'C2',
     title: 'Provérbios de Portugal e do Brasil',
     emoji: '🦉',
-    summary: 'Os ditados que os dois países partilham, os que mudam uma palavra («dois a voar» × «dois voando») e os que só existem de um lado — com a gramática que eles guardam: elipse, paralelismo, rima e formas antigas.',
+    summary: 'Os ditados que os dois países partilham, os que mudam uma palavra (“dois a voar” × “dois voando”) e os que só existem de um lado — com a gramática que eles guardam: elipse, paralelismo, rima e formas antigas.',
     sections: [
       {
-        text: 'Os provérbios são a gramática congelada do povo: rimam, cortam palavras (elipse), repetem estruturas (paralelismo) e conservam formas antigas. Muitos são iguais nos dois países; outros mudaram de roupa na travessia do Atlântico, e alguns revelam a sintaxe de cada lado (o gerúndio no Brasil, «a + infinitivo» em Portugal; a mesóclise em Portugal).',
+        text: 'Os provérbios são a gramática congelada do povo: rimam, cortam palavras (elipse), repetem estruturas (paralelismo) e conservam formas antigas. Muitos são iguais nos dois países; outros mudaram de roupa na travessia do Atlântico, e alguns revelam a sintaxe de cada lado (o gerúndio no Brasil, “a + infinitivo” em Portugal; a mesóclise em Portugal).',
       },
       {
         heading: 'Iguais nos dois países',
@@ -4033,8 +4033,8 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         table: {
           head: ['Portugal', 'Brasil', 'O que muda'],
           rows: [
-            ['Mais vale um pássaro na mão do que dois a voar.', 'Mais vale um pássaro na mão do que dois voando.', '«a + infinitivo» × gerúndio'],
-            ['Diz-me com quem andas, dir-te-ei quem és.', 'Diga-me com quem andas e te direi quem és.', 'mesóclise e «tu» × próclise e «você»'],
+            ['Mais vale um pássaro na mão do que dois a voar.', 'Mais vale um pássaro na mão do que dois voando.', '“a + infinitivo” × gerúndio'],
+            ['Diz-me com quem andas, dir-te-ei quem és.', 'Diga-me com quem andas e te direi quem és.', 'mesóclise e “tu” × próclise e “você”'],
             ['Burro velho não aprende línguas.', 'Papagaio velho não aprende a falar.', 'o animal e o complemento'],
             ['Quem tem telhados de vidro não atira pedras.', 'Quem tem telhado de vidro não joga pedra no do vizinho.', 'atirar × jogar'],
             ['Casa roubada, trancas à porta.', 'Casa arrombada, trancas na porta.', 'à porta × na porta'],
@@ -4049,38 +4049,38 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
       {
         heading: 'Só de um lado',
-        text: 'Alguns provérbios dependem do clima, do calendário ou da história. Os de Portugal seguem as estações do hemisfério norte (em abril chove) e as festas do calendário agrícola (São Martinho, em 11 de novembro, é dia de castanhas e vinho novo). «Filho és, pai serás» guarda o futuro do conjuntivo, tempo que Portugal e Brasil partilham.',
+        text: 'Alguns provérbios dependem do clima, do calendário ou da história. Os de Portugal seguem as estações do hemisfério norte (em abril chove) e as festas do calendário agrícola (São Martinho, em 11 de novembro, é dia de castanhas e vinho novo). “Filho és, pai serás” guarda o futuro do conjuntivo, tempo que Portugal e Brasil partilham.',
         examples: [
           ['Em abril, águas mil.', 'Portugal: abril é mês de muita chuva (no Brasil, o clima é outro).'],
           ['No dia de São Martinho, lume, castanhas e vinho.', 'Portugal: em 11 de novembro, fogo, castanhas assadas e vinho novo.'],
           ['De Espanha, nem bom vento nem bom casamento.', 'Portugal: a velha desconfiança do vizinho, em tom de brincadeira.'],
           ['Filho és, pai serás; assim como fizeres, assim acharás.', 'Portugal: o que você fizer aos seus pais, seus filhos farão a você.'],
-          ['No Brasil diz-se «cada macaco no seu galho».', 'Brasil: cada um no seu lugar, cuidando do que é seu.'],
-          ['No Brasil diz-se «quem não chora não mama».', 'Brasil: quem não reclama não consegue nada.'],
+          ['No Brasil diz-se “cada macaco no seu galho”.', 'Brasil: cada um no seu lugar, cuidando do que é seu.'],
+          ['No Brasil diz-se “quem não chora não mama”.', 'Brasil: quem não reclama não consegue nada.'],
         ],
       },
     ],
     pitfalls: [
-      'Levar o gerúndio para o provérbio português: em Portugal, «dois a voar», não «dois voando».',
-      'Estranhar «dir-te-ei» num ditado popular: a mesóclise sobrevive em Portugal justamente nas frases feitas.',
-      'Usar «Em abril, águas mil» para o clima de São Paulo ou Salvador: o provérbio segue as estações do hemisfério norte.',
-      'Achar que «De Espanha, nem bom vento nem bom casamento» é ofensa séria: é um dito antigo, dito hoje com humor.',
+      'Levar o gerúndio para o provérbio português: em Portugal, “dois a voar”, não “dois voando”.',
+      'Estranhar “dir-te-ei” num ditado popular: a mesóclise sobrevive em Portugal justamente nas frases feitas.',
+      'Usar “Em abril, águas mil” para o clima de São Paulo ou Salvador: o provérbio segue as estações do hemisfério norte.',
+      'Achar que “De Espanha, nem bom vento nem bom casamento” é ofensa séria: é um dito antigo, dito hoje com humor.',
     ],
     quiz: [
       {
-        question: 'Como termina o provérbio em Portugal: «Mais vale um pássaro na mão do que dois…»?',
-        options: ['a voar', '«voando»', 'que voam no céu'],
+        question: 'Como termina o provérbio em Portugal: “Mais vale um pássaro na mão do que dois…”?',
+        options: ['a voar', '“voando”', 'que voam no céu'],
         answer: 'a voar',
-        explanation: 'Em Portugal, «a + infinitivo» ocupa o lugar do gerúndio brasileiro: «dois a voar».',
+        explanation: 'Em Portugal, “a + infinitivo” ocupa o lugar do gerúndio brasileiro: “dois a voar”.',
       },
       {
-        question: 'Qual é a versão portuguesa de «Diga-me com quem andas e te direi quem és»?',
-        options: ['Diz-me com quem andas, dir-te-ei quem és.', '«Me diz com quem andas, te direi quem és.»', 'Diz-me com quem andas, te direi quem és.'],
+        question: 'Qual é a versão portuguesa de “Diga-me com quem andas e te direi quem és”?',
+        options: ['Diz-me com quem andas, dir-te-ei quem és.', '“Me diz com quem andas, te direi quem és.”', 'Diz-me com quem andas, te direi quem és.'],
         answer: 'Diz-me com quem andas, dir-te-ei quem és.',
-        explanation: 'Ênclise no imperativo («diz-me») e mesóclise no futuro («dir-te-ei»).',
+        explanation: 'Ênclise no imperativo (“diz-me”) e mesóclise no futuro (“dir-te-ei”).',
       },
       {
-        question: 'Qual é o equivalente português de «Papagaio velho não aprende a falar»?',
+        question: 'Qual é o equivalente português de “Papagaio velho não aprende a falar”?',
         options: ['Burro velho não aprende línguas.', 'Cão velho não ladra.', 'Galinha velha dá bom caldo.'],
         answer: 'Burro velho não aprende línguas.',
         explanation: 'A mesma ideia — é difícil aprender coisas novas em idade avançada — com outro animal.',
@@ -4092,10 +4092,10 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         explanation: 'Dia de São Martinho: castanhas assadas, lume e prova do vinho novo.',
       },
       {
-        question: 'Que tempo verbal aparece em «assim como fizeres, assim acharás»?',
+        question: 'Que tempo verbal aparece em “assim como fizeres, assim acharás”?',
         options: ['futuro do conjuntivo', 'pretérito mais-que-perfeito', 'presente do indicativo'],
         answer: 'futuro do conjuntivo',
-        explanation: '«Fizeres» é o futuro do conjuntivo (no Brasil, futuro do subjuntivo) de «fazer», na 2ª pessoa.',
+        explanation: '“Fizeres” é o futuro do conjuntivo (no Brasil, futuro do subjuntivo) de “fazer”, na 2ª pessoa.',
       },
     ],
   },
@@ -4104,11 +4104,11 @@ export const GRAMMAR_PT: GrammarTopic[] = [
     level: 'C2',
     title: 'Formas arcaicas e literárias: vós, mesóclise e o mais-que-perfeito simples',
     emoji: '🏛️',
-    summary: 'O «vós» e a sua conjugação (sois, fostes, ide), a mesóclise literária (dar-vos-ei, fá-lo-ia) e o pretérito mais-que-perfeito simples («fizera», «dissera»), com o sentido que ele tem na narrativa e nas frases feitas («Quem me dera!», «Pudera!»).',
+    summary: 'O “vós” e a sua conjugação (sois, fostes, ide), a mesóclise literária (dar-vos-ei, fá-lo-ia) e o pretérito mais-que-perfeito simples (“fizera”, “dissera”), com o sentido que ele tem na narrativa e nas frases feitas (“Quem me dera!”, “Pudera!”).',
     sections: [
       {
-        heading: 'O «vós»',
-        text: 'A segunda pessoa do plural foi substituída por «vocês» (com verbo na 3ª pessoa) nos dois países. Sobrevive na Bíblia e na liturgia («Pai nosso que estais no céu»), nos discursos solenes, na literatura antiga e em falares do Norte de Portugal, onde ainda se ouve «vós ides», «vós sois». Os pronomes «vos» e «vosso» são bem mais vivos em Portugal do que no Brasil: um lisboeta diz naturalmente «Vou dizer-vos uma coisa» ou «a vossa casa» falando com «vocês».',
+        heading: 'O “vós”',
+        text: 'A segunda pessoa do plural foi substituída por “vocês” (com verbo na 3ª pessoa) nos dois países. Sobrevive na Bíblia e na liturgia (“Pai nosso que estais no céu”), nos discursos solenes, na literatura antiga e em falares do Norte de Portugal, onde ainda se ouve “vós ides”, “vós sois”. Os pronomes “vos” e “vosso” são bem mais vivos em Portugal do que no Brasil: um lisboeta diz naturalmente “Vou dizer-vos uma coisa” ou “a vossa casa” falando com “vocês”.',
         table: {
           head: ['Verbo', 'Presente', 'Pretérito perfeito', 'Imperativo'],
           rows: [
@@ -4124,14 +4124,14 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         examples: [
           ['Ide em paz.', 'Vão em paz (fórmula litúrgica).'],
           ['Vinde a mim.', 'Venham a mim.'],
-          ['Pai nosso que estais no céu', 'Pai nosso que está no céu (o texto tradicional usa «vós»: estais).'],
-          ['Meninos, a vossa mãe já chegou.', 'Meninos, a mãe de vocês já chegou (em Portugal, «vosso» com «vocês» é normal).'],
+          ['Pai nosso que estais no céu', 'Pai nosso que está no céu (o texto tradicional usa “vós”: estais).'],
+          ['Meninos, a vossa mãe já chegou.', 'Meninos, a mãe de vocês já chegou (em Portugal, “vosso” com “vocês” é normal).'],
           ['Vou dizer-vos uma coisa.', 'Vou dizer uma coisa para vocês.'],
         ],
       },
       {
         heading: 'A mesóclise literária',
-        text: 'No futuro do presente e no futuro do pretérito (condicional), o pronome átono pode entrar no meio do verbo: dar-te-ei, dir-se-ia. Em Portugal, a mesóclise é normal na escrita formal e aparece até na fala culta; no Brasil, soa muito formal ou literária, e a fala prefere a próclise («te darei»). Com dois pronomes, eles se contraem: dar-vo-lo-ei (= dar-vos-ei isso). Com o, a, os, as, o verbo perde o r e ganha acento: fá-lo-ia, dá-lo-ei.',
+        text: 'No futuro do presente e no futuro do pretérito (condicional), o pronome átono pode entrar no meio do verbo: dar-te-ei, dir-se-ia. Em Portugal, a mesóclise é normal na escrita formal e aparece até na fala culta; no Brasil, soa muito formal ou literária, e a fala prefere a próclise (“te darei”). Com dois pronomes, eles se contraem: dar-vo-lo-ei (= dar-vos-ei isso). Com o, a, os, as, o verbo perde o r e ganha acento: fá-lo-ia, dá-lo-ei.',
         table: {
           head: ['Forma', 'Análise', 'Brasil falado'],
           rows: [
@@ -4150,8 +4150,8 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'O mais-que-perfeito simples: «fizera»',
-        text: 'O pretérito mais-que-perfeito indica um passado anterior a outro passado. A forma composta («tinha feito») é a da fala nos dois países; a simples («fizera»), formada sobre a 3ª pessoa do plural do perfeito (fizeram → fizera), é literária e jornalística. Nos textos antigos e na poesia, ela tem ainda valor de condicional («mais valera» = mais valeria) e de desejo. Sobrevive em frases feitas: «Quem me dera!», «Pudera!» (= claro, não admira), «Tomara!».',
+        heading: 'O mais-que-perfeito simples: “fizera”',
+        text: 'O pretérito mais-que-perfeito indica um passado anterior a outro passado. A forma composta (“tinha feito”) é a da fala nos dois países; a simples (“fizera”), formada sobre a 3ª pessoa do plural do perfeito (fizeram → fizera), é literária e jornalística. Nos textos antigos e na poesia, ela tem ainda valor de condicional (“mais valera” = mais valeria) e de desejo. Sobrevive em frases feitas: “Quem me dera!”, “Pudera!” (= claro, não admira), “Tomara!”.',
         table: {
           head: ['Verbo', 'Perfeito (eles)', 'Mais-que-perfeito simples', 'Composto'],
           rows: [
@@ -4173,27 +4173,27 @@ export const GRAMMAR_PT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Confundir «fora» (mais-que-perfeito de ser/ir) com «fora» advérbio: «Ele fora ao Porto» = «tinha ido»; «Ele está lá fora» = do lado de fora.',
-      'Pôr mesóclise depois de negação ou pronome relativo: «Não dar-te-ei» é errado; com atrator, próclise: «Não te darei».',
-      'Achar «chegámos» erro de digitação: em Portugal, o acento distingue o pretérito perfeito (chegámos) do presente (chegamos).',
-      'Misturar tratamentos na conjugação: «Vós é» ou «vós são». Com «vós», o verbo vai na 2ª do plural: «vós sois».',
-      'Estranhar «a vossa casa» dito a «vocês» em Portugal: lá o possessivo «vosso» continua vivo mesmo sem o pronome «vós».',
+      'Confundir “fora” (mais-que-perfeito de ser/ir) com “fora” advérbio: “Ele fora ao Porto” = “tinha ido”; “Ele está lá fora” = do lado de fora.',
+      'Pôr mesóclise depois de negação ou pronome relativo: “Não dar-te-ei” é errado; com atrator, próclise: “Não te darei”.',
+      'Achar “chegámos” erro de digitação: em Portugal, o acento distingue o pretérito perfeito (chegámos) do presente (chegamos).',
+      'Misturar tratamentos na conjugação: “Vós é” ou “vós são”. Com “vós”, o verbo vai na 2ª do plural: “vós sois”.',
+      'Estranhar “a vossa casa” dito a “vocês” em Portugal: lá o possessivo “vosso” continua vivo mesmo sem o pronome “vós”.',
     ],
     quiz: [
       {
-        question: 'Qual é o imperativo de «ir» para «vós»?',
+        question: 'Qual é o imperativo de “ir” para “vós”?',
         options: ['ide', 'ides', 'vades'],
         answer: 'ide',
-        explanation: '«Ide em paz»: imperativo afirmativo de «ir», 2ª pessoa do plural. «Ides» é o presente do indicativo.',
+        explanation: '“Ide em paz”: imperativo afirmativo de “ir”, 2ª pessoa do plural. “Ides” é o presente do indicativo.',
       },
       {
-        question: 'Qual é a mesóclise de «faria + o»?',
+        question: 'Qual é a mesóclise de “faria + o”?',
         options: ['fá-lo-ia', 'far-o-ia', 'fari-lo-a'],
         answer: 'fá-lo-ia',
-        explanation: 'O r do radical cai diante de «o», que vira «lo», e o a ganha acento: fá-lo-ia.',
+        explanation: 'O r do radical cai diante de “o”, que vira “lo”, e o a ganha acento: fá-lo-ia.',
       },
       {
-        question: 'Em «Quando chegámos, o comboio já partira», «partira» equivale a:',
+        question: 'Em “Quando chegámos, o comboio já partira”, “partira” equivale a:',
         options: ['tinha partido', 'partiria', 'partiu'],
         answer: 'tinha partido',
         explanation: 'Mais-que-perfeito simples: um passado anterior a outro passado (a chegada).',
@@ -4205,10 +4205,10 @@ export const GRAMMAR_PT: GrammarTopic[] = [
         explanation: 'A negação atrai o pronome para antes do verbo (próclise), e isso vale também no futuro.',
       },
       {
-        question: 'Numa conversa, «— Estás com fome? — Pudera!» quer dizer:',
+        question: 'Numa conversa, “— Estás com fome? — Pudera!” quer dizer:',
         options: ['claro, não admira', 'talvez', 'eu poderia'],
         answer: 'claro, não admira',
-        explanation: '«Pudera!» é o mais-que-perfeito de «poder» cristalizado como interjeição: «não é de admirar».',
+        explanation: '“Pudera!” é o mais-que-perfeito de “poder” cristalizado como interjeição: “não é de admirar”.',
       },
     ],
   },

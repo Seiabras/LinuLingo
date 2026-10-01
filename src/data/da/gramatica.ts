@@ -8,14 +8,14 @@ export const GRAMMAR_DA: GrammarTopic[] = [
     level: 'A1.1',
     title: 'Pronúncia: o stød, o d suave, as letras mudas e as muitas vogais',
     emoji: '🔤',
-    summary: 'O dinamarquês se escreve de um jeito e se fala de outro. Tem o stød [ˀ], um «soluço» da garganta que separa «hun» (ela) de «hund» (cachorro); o d suave [ð̞] de «mad» (comida); consoantes que somem (o d de «mand», o h de «hvad», o g de «pige») e mais de vinte sons de vogal.',
+    summary: 'O dinamarquês se escreve de um jeito e se fala de outro. Tem o stød [ˀ], um “soluço” da garganta que separa “hun” (ela) de “hund” (cachorro); o d suave [ð̞] de “mad” (comida); consoantes que somem (o d de “mand”, o h de “hvad”, o g de “pige”) e mais de vinte sons de vogal.',
     sections: [
       {
-        text: 'O alfabeto dinamarquês tem 29 letras: as 26 do nosso, mais æ, ø e å, que ficam no fim do dicionário, depois do z. (Nada de ä ou ö, que são do sueco.) O app usa como referência o dinamarquês padrão, o «rigsdansk», falado sobretudo como em Copenhague. A tônica cai quase sempre na primeira sílaba (DAN-mark, PI-ge), e as sílabas átonas se enfraquecem muito: é por isso que a fala parece «engolida». Não se assuste: até os noruegueses e os suecos, que leem o dinamarquês sem dificuldade, dizem que é difícil de entender falado.',
+        text: 'O alfabeto dinamarquês tem 29 letras: as 26 do nosso, mais æ, ø e å, que ficam no fim do dicionário, depois do z. (Nada de ä ou ö, que são do sueco.) O app usa como referência o dinamarquês padrão, o “rigsdansk”, falado sobretudo como em Copenhague. A tônica cai quase sempre na primeira sílaba (DAN-mark, PI-ge), e as sílabas átonas se enfraquecem muito: é por isso que a fala parece “engolida”. Não se assuste: até os noruegueses e os suecos, que leem o dinamarquês sem dificuldade, dizem que é difícil de entender falado.',
       },
       {
-        heading: 'O stød: o «soluço» dinamarquês',
-        text: 'O stød [ˀ] é um aperto rápido da garganta, como uma voz rangida (em inglês, «creaky voice»), que cai numa vogal longa ou numa consoante sonora (l, m, n, r, d suave…) depois de vogal curta. Não é uma pausa completa como o «uh-oh» do inglês: é mais um tremor, um ranger curto no meio da sílaba. Ele muda o sentido de várias palavras, e nenhuma regra de escrita avisa onde ele cai: aprenda junto com a palavra. Algumas regiões do sul da Dinamarca não usam o stød, mas o dinamarquês padrão usa. Nas transcrições, ele vem marcado com [ˀ].',
+        heading: 'O stød: o “soluço” dinamarquês',
+        text: 'O stød [ˀ] é um aperto rápido da garganta, como uma voz rangida (em inglês, “creaky voice”), que cai numa vogal longa ou numa consoante sonora (l, m, n, r, d suave…) depois de vogal curta. Não é uma pausa completa como o “uh-oh” do inglês: é mais um tremor, um ranger curto no meio da sílaba. Ele muda o sentido de várias palavras, e nenhuma regra de escrita avisa onde ele cai: aprenda junto com a palavra. Algumas regiões do sul da Dinamarca não usam o stød, mas o dinamarquês padrão usa. Nas transcrições, ele vem marcado com [ˀ].',
         table: {
           head: ['Sem stød', 'Sentido', 'Com stød', 'Sentido'],
           rows: [
@@ -34,7 +34,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'O d suave [ð̞]',
-        text: 'Depois de vogal, o d dinamarquês quase nunca é o nosso d: vira [ð̞], um som parecido com o «th» de «the» em inglês, mas ainda mais frouxo, com a ponta da língua encostada atrás dos dentes de baixo e o meio da língua subindo. Para o ouvido brasileiro, ele lembra um «l» bem mole. No começo da palavra e da sílaba tônica, o d é duro: dag, Danmark. E o dd no meio também é suave: sidde (sentar). A frase de teste clássica, que os dinamarqueses pedem aos estrangeiros para repetir, é «rødgrød med fløde», uma sobremesa de frutas vermelhas com creme: tem quatro d suaves, stød e o r de garganta.',
+        text: 'Depois de vogal, o d dinamarquês quase nunca é o nosso d: vira [ð̞], um som parecido com o “th” de “the” em inglês, mas ainda mais frouxo, com a ponta da língua encostada atrás dos dentes de baixo e o meio da língua subindo. Para o ouvido brasileiro, ele lembra um “l” bem mole. No começo da palavra e da sílaba tônica, o d é duro: dag, Danmark. E o dd no meio também é suave: sidde (sentar). A frase de teste clássica, que os dinamarqueses pedem aos estrangeiros para repetir, é “rødgrød med fløde”, uma sobremesa de frutas vermelhas com creme: tem quatro d suaves, stød e o r de garganta.',
         table: {
           head: ['Palavra', 'IPA', 'Português'],
           rows: [
@@ -55,7 +55,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'As letras que somem',
-        text: 'Muitas letras se escrevem por tradição e não se pronunciam, ou viram só uma semivogal. O d cai depois de l, n e r (kold, mand, land). O h cai antes de v e j (hvad, hvid, hjem). O g depois de vogal vira um i ou um u rápido, ou some (pige, bog, dag), e some no final -ig e -lig (billig, dejlig). O v depois de vogal vira um u (hav, syv). O r depois de vogal vira uma vogal escura [ɐ] ou alonga a vogal (far, Danmark). E três palavrinhas muito frequentes quase nada têm do que se escreve: «og» (e) e «at» (a marca do infinitivo) soam os dois [ʌ], e «det» soa [de].',
+        text: 'Muitas letras se escrevem por tradição e não se pronunciam, ou viram só uma semivogal. O d cai depois de l, n e r (kold, mand, land). O h cai antes de v e j (hvad, hvid, hjem). O g depois de vogal vira um i ou um u rápido, ou some (pige, bog, dag), e some no final -ig e -lig (billig, dejlig). O v depois de vogal vira um u (hav, syv). O r depois de vogal vira uma vogal escura [ɐ] ou alonga a vogal (far, Danmark). E três palavrinhas muito frequentes quase nada têm do que se escreve: “og” (e) e “at” (a marca do infinitivo) soam os dois [ʌ], e “det” soa [de].',
         table: {
           head: ['O que some', 'Exemplos', 'IPA', 'Português'],
           rows: [
@@ -77,13 +77,13 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'As vogais: mais de vinte sons',
-        text: 'O dinamarquês é uma das línguas com mais sons de vogal do mundo: nove letras de vogal dão mais de vinte sons, contando as longas, as curtas e as variantes. Três avisos práticos. Primeiro, cada letra soa mais fechada do que parece: o «i» curto soa quase «ê» (fisk = «fesk»), o «e» longo é um «ê» bem fechado, o «u» curto pode soar «ô» (ung). Segundo, perto do r as vogais se abrem e recuam: o «a» de «gade» é quase «é», mas o de «far» é um «a» do fundo da boca. Terceiro, o «y» é um i com lábios em bico (como o «u» francês), o «ø» é um «ê» com bico, o «æ» é um «é» e o «å» é um «ó».',
+        text: 'O dinamarquês é uma das línguas com mais sons de vogal do mundo: nove letras de vogal dão mais de vinte sons, contando as longas, as curtas e as variantes. Três avisos práticos. Primeiro, cada letra soa mais fechada do que parece: o “i” curto soa quase “ê” (fisk = “fesk”), o “e” longo é um “ê” bem fechado, o “u” curto pode soar “ô” (ung). Segundo, perto do r as vogais se abrem e recuam: o “a” de “gade” é quase “é”, mas o de “far” é um “a” do fundo da boca. Terceiro, o “y” é um i com lábios em bico (como o “u” francês), o “ø” é um “ê” com bico, o “æ” é um “é” e o “å” é um “ó”.',
         table: {
           head: ['Letra', 'Som', 'Exemplo', 'IPA', 'Português'],
           rows: [
-            ['a', '[æː] quase «é» / [a] / [ɑ] perto do r', 'gade / kat / far', '[ˈɡæːð̞ə] / [ˈkʰad] / [ˈfɑː]', 'rua / gato / pai'],
+            ['a', '[æː] quase “é” / [a] / [ɑ] perto do r', 'gade / kat / far', '[ˈɡæːð̞ə] / [ˈkʰad] / [ˈfɑː]', 'rua / gato / pai'],
             ['e', '[eː] ê fechado / [ɛ] é', 'se / seng', '[ˈseˀ] / [ˈsɛŋˀ]', 'ver / cama'],
-            ['i', '[iː] / [e] quase «ê»', 'vin / fisk', '[ˈviˀn] / [ˈfesk]', 'vinho / peixe'],
+            ['i', '[iː] / [e] quase “ê”', 'vin / fisk', '[ˈviˀn] / [ˈfesk]', 'vinho / peixe'],
             ['o', '[oː] ô / [ʌ]', 'sol / sommer', '[ˈsoˀl] / [ˈsʌmɐ]', 'sol / verão'],
             ['u', '[uː] / [u] / [ɔ]', 'hus / hund / ung', '[ˈhuˀs] / [ˈhunˀ] / [ˈɔŋˀ]', 'casa / cachorro / jovem'],
             ['y', '[yː] i com bico', 'by / ny', '[ˈbyˀ] / [ˈnyˀ]', 'cidade / novo'],
@@ -100,7 +100,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'b, d, g × p, t, k e o r de garganta',
-        text: 'No começo da palavra, p, t e k saem com um sopro forte (aspirados), e o t sai com um chiadinho, quase «ts»: tak [ˈtˢaɡ] soa «tsak». Já b, d e g são surdos, sem vibração da garganta, só sem o sopro: para o brasileiro, «bil» pode soar quase «pil». O r do começo da sílaba é de garganta [ʁ], parecido com o nosso r carioca de «rato», mas mais suave. Depois de vogal, como vimos, o r vira vogal.',
+        text: 'No começo da palavra, p, t e k saem com um sopro forte (aspirados), e o t sai com um chiadinho, quase “ts”: tak [ˈtˢaɡ] soa “tsak”. Já b, d e g são surdos, sem vibração da garganta, só sem o sopro: para o brasileiro, “bil” pode soar quase “pil”. O r do começo da sílaba é de garganta [ʁ], parecido com o nosso r carioca de “rato”, mas mais suave. Depois de vogal, como vimos, o r vira vogal.',
         examples: [
           ['Tak!', '[ˈtˢaɡ] Obrigado!'],
           ['Taler du dansk?', 'Você fala dinamarquês?'],
@@ -109,21 +109,21 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Ler o d como no português depois de vogal: «mad» não é «mádi», é [ˈmæð̞], com o d suave. E depois de l, n, r ele some: «mand» soa «man» (com stød).',
-      'Pronunciar o h de «hv» e «hj»: hvad é «vé», hjem é «iém».',
-      'Achar que o stød é detalhe: sem ele, «hund» (cachorro) vira «hun» (ela).',
-      'Ler «og», «at» e «det» letra por letra: soam [ʌ], [ʌ] e [de]. «og» não é «óg».',
+      'Ler o d como no português depois de vogal: “mad” não é “mádi”, é [ˈmæð̞], com o d suave. E depois de l, n, r ele some: “mand” soa “man” (com stød).',
+      'Pronunciar o h de “hv” e “hj”: hvad é “vé”, hjem é “iém”.',
+      'Achar que o stød é detalhe: sem ele, “hund” (cachorro) vira “hun” (ela).',
+      'Ler “og”, “at” e “det” letra por letra: soam [ʌ], [ʌ] e [de]. “og” não é “óg”.',
       'Escrever ä ou ö por influência do sueco ou do alemão: em dinamarquês é sempre æ e ø (æble, rød).',
     ],
     quiz: [
       {
-        question: 'O que distingue «hund» (cachorro) de «hun» (ela)?',
+        question: 'O que distingue “hund” (cachorro) de “hun” (ela)?',
         options: ['o stød', 'a vogal longa', 'o d pronunciado'],
         answer: 'o stød',
-        explanation: 'O d de «hund» é mudo. O que separa as duas palavras é o stød: hund [ˈhunˀ], hun [ˈhun].',
+        explanation: 'O d de “hund” é mudo. O que separa as duas palavras é o stød: hund [ˈhunˀ], hun [ˈhun].',
       },
       {
-        question: 'Como soa o começo de «hvad» (o quê)?',
+        question: 'Como soa o começo de “hvad” (o quê)?',
         options: ['com v, sem o h', 'com h aspirado', 'com hv juntos'],
         answer: 'com v, sem o h',
         explanation: 'O h antes de v e j é mudo: hvad, hvor, hjem.',
@@ -135,16 +135,16 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         explanation: 'O d cai depois de l, n, r: kold [ˈkʌlˀ]. No começo da palavra (dag, Danmark), o d é pronunciado.',
       },
       {
-        question: 'Como se pronuncia «fisk» (peixe)?',
+        question: 'Como se pronuncia “fisk” (peixe)?',
         options: ['[ˈfesk]', '[ˈfisk]', '[ˈfysk]'],
         answer: '[ˈfesk]',
-        explanation: 'O i curto dinamarquês costuma soar quase como o nosso «ê»: fisk [ˈfesk].',
+        explanation: 'O i curto dinamarquês costuma soar quase como o nosso “ê”: fisk [ˈfesk].',
       },
       {
         question: 'Qual é a frase clássica para testar a pronúncia de um estrangeiro?',
         options: ['rødgrød med fløde', 'tak for mad', 'god morgen'],
         answer: 'rødgrød med fløde',
-        explanation: '«Rødgrød med fløde» junta d suaves, stød e o r de garganta: é o teste favorito dos dinamarqueses.',
+        explanation: '“Rødgrød med fløde” junta d suaves, stød e o r de garganta: é o teste favorito dos dinamarqueses.',
       },
     ],
   },
@@ -153,11 +153,11 @@ export const GRAMMAR_DA: GrammarTopic[] = [
     level: 'A1.1',
     title: 'Saudações, pronomes pessoais e o verbo være (er)',
     emoji: '👋',
-    summary: '«Hej» serve para quase tudo, e todo mundo se trata por «du», até o médico e a chefe. O verbo være (ser e estar) tem uma forma só no presente: jeg er, du er, vi er, de er. Nenhum verbo dinamarquês muda conforme a pessoa. E «vocês» é «I», com maiúscula.',
+    summary: '“Hej” serve para quase tudo, e todo mundo se trata por “du”, até o médico e a chefe. O verbo være (ser e estar) tem uma forma só no presente: jeg er, du er, vi er, de er. Nenhum verbo dinamarquês muda conforme a pessoa. E “vocês” é “I”, com maiúscula.',
     sections: [
       {
         heading: 'Cumprimentar, agradecer e se despedir',
-        text: '«Hej» é o nosso «oi»: serve de manhã, de tarde e de noite, com amigos ou na padaria. Para ir embora, os dinamarqueses dizem «hej hej» ou «hej» de novo: a mesma palavra cumprimenta e se despede. «Goddag» existe, mas soa formal. E a palavra mais importante é «tak»: agradece-se o tempo todo. «Tak for mad» ao levantar da mesa (e quem cozinhou responde «velbekomme»), «tak for sidst» ao reencontrar alguém, agradecendo pelo último encontro. Repare que godmorgen, goddag, godaften e godnat se escrevem numa palavra só.',
+        text: '“Hej” é o nosso “oi”: serve de manhã, de tarde e de noite, com amigos ou na padaria. Para ir embora, os dinamarqueses dizem “hej hej” ou “hej” de novo: a mesma palavra cumprimenta e se despede. “Goddag” existe, mas soa formal. E a palavra mais importante é “tak”: agradece-se o tempo todo. “Tak for mad” ao levantar da mesa (e quem cozinhou responde “velbekomme”), “tak for sidst” ao reencontrar alguém, agradecendo pelo último encontro. Repare que godmorgen, goddag, godaften e godnat se escrevem numa palavra só.',
         table: {
           head: ['Dinamarquês', 'Quando', 'Português'],
           rows: [
@@ -169,7 +169,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
             ['Hej hej! / Farvel!', 'ao sair', 'Tchau! / Adeus!'],
             ['Vi ses!', 'ao sair, informal', 'A gente se vê!'],
             ['Tak! / Mange tak! / Tusind tak!', 'agradecer', 'Obrigado! / Muito obrigado! / Mil vezes obrigado!'],
-            ['Det var så lidt! / Selv tak!', 'responder a «tak»', 'De nada! / Eu que agradeço!'],
+            ['Det var så lidt! / Selv tak!', 'responder a “tak”', 'De nada! / Eu que agradeço!'],
             ['Værsgo!', 'entregar, servir', 'Aqui está! Pode se servir!'],
             ['Undskyld!', 'pedir licença ou desculpas', 'Com licença! Desculpa!'],
             ['Tak for mad! — Velbekomme!', 'ao fim da refeição', 'Obrigado pela comida! — Bom proveito!'],
@@ -185,19 +185,19 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Os pronomes pessoais',
-        text: 'Como no inglês, há forma de sujeito e forma de objeto (jeg × mig, como I × me). A pronúncia engana: «jeg», «mig» e «dig» soam «jai», «mai», «dai», e «de» (eles) soa «di». O «vocês» é «I», sempre com maiúscula, para não se confundir com a preposição «i» (em). E o dinamarquês não tem feminino nas coisas: para objetos, «den» (palavras en) ou «det» (palavras et).',
+        text: 'Como no inglês, há forma de sujeito e forma de objeto (jeg × mig, como I × me). A pronúncia engana: “jeg”, “mig” e “dig” soam “jai”, “mai”, “dai”, e “de” (eles) soa “di”. O “vocês” é “I”, sempre com maiúscula, para não se confundir com a preposição “i” (em). E o dinamarquês não tem feminino nas coisas: para objetos, “den” (palavras en) ou “det” (palavras et).',
         table: {
           head: ['Pessoa', 'Sujeito', 'Objeto', 'Português'],
           rows: [
-            ['1ª sing.', 'jeg («jai»)', 'mig («mai»)', 'eu / me, mim'],
-            ['2ª sing.', 'du', 'dig («dai»)', 'você, tu / te'],
+            ['1ª sing.', 'jeg (“jai”)', 'mig (“mai”)', 'eu / me, mim'],
+            ['2ª sing.', 'du', 'dig (“dai”)', 'você, tu / te'],
             ['3ª sing. (homem)', 'han', 'ham', 'ele / o'],
             ['3ª sing. (mulher)', 'hun', 'hende', 'ela / a'],
             ['3ª sing. (coisa en)', 'den', 'den', 'ele, ela (coisa)'],
             ['3ª sing. (coisa et)', 'det', 'det', 'ele, ela (coisa); isso'],
             ['1ª pl.', 'vi', 'os', 'nós / nos'],
             ['2ª pl.', 'I', 'jer', 'vocês'],
-            ['3ª pl.', 'de («di»)', 'dem', 'eles, elas / os, as'],
+            ['3ª pl.', 'de (“di”)', 'dem', 'eles, elas / os, as'],
             ['cortesia (raro)', 'De', 'Dem', 'o senhor, a senhora'],
           ],
         },
@@ -211,7 +211,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'være: ser e estar numa forma só',
-        text: 'O infinitivo é «at være» (o «at» é a marca do infinitivo, como o «to» do inglês, e soa quase «ó»). O presente é «er», igual para todas as pessoas. Isso vale para todos os verbos dinamarqueses: nada de eu sou, tu és, nós somos. E «være» cobre o ser e o estar: «Jeg er træt» (estou cansado), «Jeg er lærer» (sou professor). Profissão e nacionalidade vêm sem artigo, como no português e diferente do inglês «I am a teacher».',
+        text: 'O infinitivo é “at være” (o “at” é a marca do infinitivo, como o “to” do inglês, e soa quase “ó”). O presente é “er”, igual para todas as pessoas. Isso vale para todos os verbos dinamarqueses: nada de eu sou, tu és, nós somos. E “være” cobre o ser e o estar: “Jeg er træt” (estou cansado), “Jeg er lærer” (sou professor). Profissão e nacionalidade vêm sem artigo, como no português e diferente do inglês “I am a teacher”.',
         table: {
           head: ['Dinamarquês', 'Português'],
           rows: [
@@ -233,46 +233,46 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Du com todo mundo',
-        text: 'Até o fim dos anos 1960, o normal com desconhecidos era «De» (com maiúscula), o «o senhor, a senhora». Numa mudança rápida, conhecida como a reforma do «du», quase todo mundo passou a dizer «du»: ao médico, à professora, ao chefe, ao atendente. Hoje o «De» aparece em cartas muito formais, com alguns idosos e ao falar com a família real. Outro detalhe: para responder «sim» a uma pergunta negativa, o dinamarquês usa «jo», não «ja».',
+        text: 'Até o fim dos anos 1960, o normal com desconhecidos era “De” (com maiúscula), o “o senhor, a senhora”. Numa mudança rápida, conhecida como a reforma do “du”, quase todo mundo passou a dizer “du”: ao médico, à professora, ao chefe, ao atendente. Hoje o “De” aparece em cartas muito formais, com alguns idosos e ao falar com a família real. Outro detalhe: para responder “sim” a uma pergunta negativa, o dinamarquês usa “jo”, não “ja”.',
       },
     ],
     pitfalls: [
-      'Conjugar o verbo pela pessoa: é «er» para todos, e todo verbo no presente termina em -r para todas as pessoas (jeg taler, vi taler).',
-      'Pôr artigo antes de profissão, pensando no inglês: «Hun er en læge» soa estranho; diga «Hun er læge».',
-      'Escrever o «I» (vocês) com minúscula: «i» é a preposição «em». «Hvor bor I?» = onde vocês moram?',
-      'Responder «ja» a uma pergunta negativa. «Er du ikke sulten?» — se está com fome, a resposta é «Jo!».',
-      'Responder «tak» com «ingen årsag», que é sueco e norueguês. Em dinamarquês: «det var så lidt» ou «selv tak».',
+      'Conjugar o verbo pela pessoa: é “er” para todos, e todo verbo no presente termina em -r para todas as pessoas (jeg taler, vi taler).',
+      'Pôr artigo antes de profissão, pensando no inglês: “Hun er en læge” soa estranho; diga “Hun er læge”.',
+      'Escrever o “I” (vocês) com minúscula: “i” é a preposição “em”. “Hvor bor I?” = onde vocês moram?',
+      'Responder “ja” a uma pergunta negativa. “Er du ikke sulten?” — se está com fome, a resposta é “Jo!”.',
+      'Responder “tak” com “ingen årsag”, que é sueco e norueguês. Em dinamarquês: “det var så lidt” ou “selv tak”.',
     ],
     quiz: [
       {
-        question: 'Como se diz «Eles estão cansados»?',
+        question: 'Como se diz “Eles estão cansados”?',
         options: ['De er trætte.', 'Dem er trætte.', 'De ere trætte.'],
         answer: 'De er trætte.',
-        explanation: 'O sujeito é «de» (soa «di»); «dem» é a forma de objeto. E o verbo é «er» para todas as pessoas.',
+        explanation: 'O sujeito é “de” (soa “di”); “dem” é a forma de objeto. E o verbo é “er” para todas as pessoas.',
       },
       {
-        question: 'Como se diz «Onde vocês moram?»?',
+        question: 'Como se diz “Onde vocês moram?”?',
         options: ['Hvor bor I?', 'Hvor bor jer?', 'Hvor bor i?'],
         answer: 'Hvor bor I?',
-        explanation: '«I» (com maiúscula) é o sujeito «vocês»; «jer» é a forma de objeto, e «i» minúsculo é a preposição.',
+        explanation: '“I” (com maiúscula) é o sujeito “vocês”; “jer” é a forma de objeto, e “i” minúsculo é a preposição.',
       },
       {
-        question: 'Alguém pergunta «Taler du ikke dansk?», e você fala. O que responde?',
+        question: 'Alguém pergunta “Taler du ikke dansk?”, e você fala. O que responde?',
         options: ['Ja!', 'Jo!', 'Nej!'],
         answer: 'Jo!',
-        explanation: '«Jo» é o sim que contradiz uma pergunta negativa. «Ja» responde a perguntas afirmativas.',
+        explanation: '“Jo” é o sim que contradiz uma pergunta negativa. “Ja” responde a perguntas afirmativas.',
       },
       {
         question: 'Você acabou de jantar na casa de amigos dinamarqueses. O que diz ao levantar da mesa?',
         options: ['Tak for mad!', 'Værsgo!', 'Godnat!'],
         answer: 'Tak for mad!',
-        explanation: '«Tak for mad» (obrigado pela comida) é dito ao fim da refeição; o anfitrião responde «Velbekomme!».',
+        explanation: '“Tak for mad” (obrigado pela comida) é dito ao fim da refeição; o anfitrião responde “Velbekomme!”.',
       },
       {
-        question: 'Qual é a forma de objeto de «jeg»?',
+        question: 'Qual é a forma de objeto de “jeg”?',
         options: ['mig', 'min', 'os'],
         answer: 'mig',
-        explanation: 'jeg × mig, como I × me: «Hun ser mig» (ela me vê). «min» é possessivo, e «os» é nos.',
+        explanation: 'jeg × mig, como I × me: “Hun ser mig” (ela me vê). “min” é possessivo, e “os” é nos.',
       },
     ],
   },
@@ -285,7 +285,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
     sections: [
       {
         heading: 'De 0 a 20',
-        text: 'Repare nas pronúncias, que se afastam muito da escrita: o «to» (dois) soa «tô», o «syv» (sete) perde o v e vira um u, o «otte» (oito) soa quase «ôde», o «tolv» (doze) perde o v, o «seksten» (dezesseis) soa «saisten» e o «tyve» (vinte) soa «tíu». Os números de 13 a 19 terminam em -ten, e o -ten quase vira um n só: femten soa «fémn».',
+        text: 'Repare nas pronúncias, que se afastam muito da escrita: o “to” (dois) soa “tô”, o “syv” (sete) perde o v e vira um u, o “otte” (oito) soa quase “ôde”, o “tolv” (doze) perde o v, o “seksten” (dezesseis) soa “saisten” e o “tyve” (vinte) soa “tíu”. Os números de 13 a 19 terminam em -ten, e o -ten quase vira um n só: femten soa “fémn”.',
         table: {
           head: ['Nº', 'Dinamarquês', 'IPA', 'Nº', 'Dinamarquês', 'IPA'],
           rows: [
@@ -304,8 +304,8 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         },
       },
       {
-        heading: 'O «um» muda com o gênero',
-        text: 'Contando, diz-se «en». Diante de um substantivo, o número um concorda com o gênero, como o artigo: en kop (uma xícara), et hus (uma casa). Para deixar claro que é o número e não o artigo, pode-se escrever com acento: «én kaffe» (um café, não dois), «ét barn» (um filho). E «fire» (quatro) não tem nada a ver com fogo: é só o número.',
+        heading: 'O “um” muda com o gênero',
+        text: 'Contando, diz-se “en”. Diante de um substantivo, o número um concorda com o gênero, como o artigo: en kop (uma xícara), et hus (uma casa). Para deixar claro que é o número e não o artigo, pode-se escrever com acento: “én kaffe” (um café, não dois), “ét barn” (um filho). E “fire” (quatro) não tem nada a ver com fogo: é só o número.',
         examples: [
           ['Én kaffe og to wienerbrød, tak.', 'Um café e dois folheados dinamarqueses, por favor.'],
           ['Vi har et barn og to hunde.', 'Nós temos um filho e dois cachorros.'],
@@ -314,7 +314,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Idade e preço',
-        text: 'A idade se diz com «være»: «Jeg er tyve år (gammel)». O «gammel» (velho) é opcional. A moeda é a coroa dinamarquesa, «krone», abreviada «kr.» ou «DKK»; o plural é «kroner». Uma coroa se divide em cem «øre». Nas Ilhas Faroé circulam cédulas próprias, mas a moeda é a mesma coroa.',
+        text: 'A idade se diz com “være”: “Jeg er tyve år (gammel)”. O “gammel” (velho) é opcional. A moeda é a coroa dinamarquesa, “krone”, abreviada “kr.” ou “DKK”; o plural é “kroner”. Uma coroa se divide em cem “øre”. Nas Ilhas Faroé circulam cédulas próprias, mas a moeda é a mesma coroa.',
         examples: [
           ['Hvor gammel er du? — Jeg er nitten år.', 'Quantos anos você tem? — Tenho dezenove anos.'],
           ['Min søn er fem år gammel.', 'Meu filho tem cinco anos.'],
@@ -324,7 +324,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Que horas são?',
-        text: 'Pergunta-se «Hvad er klokken?» (ou «Hvor mange er klokken?») e responde-se «Klokken er…». Atenção ao «halv»: como no alemão e no sueco, ele conta a meia hora ANTES da hora seguinte. «Halv tre» é duas e meia, não três e meia. «Kvart over» é e quinze; «kvart i» é quinze para (em dinamarquês é «i», não «på» como no norueguês). No dia a dia se usa o relógio de 12 horas; horários de trem e de loja usam o de 24.',
+        text: 'Pergunta-se “Hvad er klokken?” (ou “Hvor mange er klokken?”) e responde-se “Klokken er…”. Atenção ao “halv”: como no alemão e no sueco, ele conta a meia hora ANTES da hora seguinte. “Halv tre” é duas e meia, não três e meia. “Kvart over” é e quinze; “kvart i” é quinze para (em dinamarquês é “i”, não “på” como no norueguês). No dia a dia se usa o relógio de 12 horas; horários de trem e de loja usam o de 24.',
         table: {
           head: ['Hora', 'Dinamarquês', 'Literalmente'],
           rows: [
@@ -344,7 +344,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Uma prévia: a partir do 21, e o 50',
-        text: 'O dinamarquês diz as unidades antes das dezenas, como o alemão: 21 é «enogtyve» (um e vinte). E, a partir do 50, as dezenas contam de vinte em vinte, herança de um sistema antigo: «halvtreds» (50) vem de «halvtredsindstyve», «meio terceiro vezes vinte», isto é, dois e meio vezes vinte. Assim também «tres» (60 = três vezes vinte), «halvfjerds» (70 = três e meio vezes vinte), «firs» (80 = quatro vezes vinte) e «halvfems» (90 = quatro e meio vezes vinte). Isso fica para outro tópico, mas já dá para sorrir com a lógica.',
+        text: 'O dinamarquês diz as unidades antes das dezenas, como o alemão: 21 é “enogtyve” (um e vinte). E, a partir do 50, as dezenas contam de vinte em vinte, herança de um sistema antigo: “halvtreds” (50) vem de “halvtredsindstyve”, “meio terceiro vezes vinte”, isto é, dois e meio vezes vinte. Assim também “tres” (60 = três vezes vinte), “halvfjerds” (70 = três e meio vezes vinte), “firs” (80 = quatro vezes vinte) e “halvfems” (90 = quatro e meio vezes vinte). Isso fica para outro tópico, mas já dá para sorrir com a lógica.',
         table: {
           head: ['Nº', 'Dinamarquês', 'A lógica'],
           rows: [
@@ -361,42 +361,42 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Ler «halv fire» como três e meia errado: é 3:30, a meia hora antes das quatro. Quem chega às 4:30 chega uma hora atrasado.',
-      'Dizer «kvart på fire», como no norueguês: em dinamarquês é «kvart i fire».',
-      'Pronunciar todas as letras: «syv» soa «síu», «tyve» soa «tíu», «otte» soa «ôde».',
-      'Esquecer que o «um» concorda: en kop, et hus.',
-      'Achar que «fire» tem a ver com fogo, por causa do inglês: é o número quatro.',
+      'Ler “halv fire” como três e meia errado: é 3:30, a meia hora antes das quatro. Quem chega às 4:30 chega uma hora atrasado.',
+      'Dizer “kvart på fire”, como no norueguês: em dinamarquês é “kvart i fire”.',
+      'Pronunciar todas as letras: “syv” soa “síu”, “tyve” soa “tíu”, “otte” soa “ôde”.',
+      'Esquecer que o “um” concorda: en kop, et hus.',
+      'Achar que “fire” tem a ver com fogo, por causa do inglês: é o número quatro.',
     ],
     quiz: [
       {
         question: 'Como se diz 3:30?',
         options: ['halv tre', 'halv fire', 'tre og halv'],
         answer: 'halv fire',
-        explanation: '«halv» conta a meia hora antes da hora seguinte: halv fire = meia para as quatro = 3:30.',
+        explanation: '“halv” conta a meia hora antes da hora seguinte: halv fire = meia para as quatro = 3:30.',
       },
       {
         question: 'Qual é o número 16?',
         options: ['seksten', 'sekstan', 'sekston'],
         answer: 'seksten',
-        explanation: 'seksten, que soa «saisten». Os números de 13 a 19 terminam em -ten.',
+        explanation: 'seksten, que soa “saisten”. Os números de 13 a 19 terminam em -ten.',
       },
       {
-        question: 'Como se diz «Tenho vinte anos»?',
+        question: 'Como se diz “Tenho vinte anos”?',
         options: ['Jeg har tyve år.', 'Jeg er tyve år.', 'Jeg er tyve gammel.'],
         answer: 'Jeg er tyve år.',
-        explanation: 'Idade vai com «være» (er), não com «have»: Jeg er tyve år (gammel).',
+        explanation: 'Idade vai com “være” (er), não com “have”: Jeg er tyve år (gammel).',
       },
       {
         question: 'Como se diz 4:45?',
         options: ['kvart over fire', 'kvart i fem', 'kvart på fem'],
         answer: 'kvart i fem',
-        explanation: '«kvart i fem» é um quarto para as cinco. «kvart over fire» seria 4:15, e «kvart på» é norueguês.',
+        explanation: '“kvart i fem” é um quarto para as cinco. “kvart over fire” seria 4:15, e “kvart på” é norueguês.',
       },
       {
-        question: 'Quanto é «halvtreds»?',
+        question: 'Quanto é “halvtreds”?',
         options: ['50', '30', '25'],
         answer: '50',
-        explanation: '«halvtreds» é dois e meio vezes vinte: 50.',
+        explanation: '“halvtreds” é dois e meio vezes vinte: 50.',
       },
     ],
   },
@@ -404,13 +404,13 @@ export const GRAMMAR_DA: GrammarTopic[] = [
   {
     id: 'da-g4',
     level: 'A1.2',
-    title: 'O presente (-r), a negação com «ikke» e «jeg kan lide»',
+    title: 'O presente (-r), a negação com “ikke” e “jeg kan lide”',
     emoji: '🏃',
-    summary: 'Todo verbo dinamarquês no presente termina em -r, igual para todas as pessoas: jeg taler, vi taler, de taler. A negação é «ikke», logo depois do verbo. E para dizer do que gosta: «Jeg kan godt lide kaffe», «Jeg kan lide at læse».',
+    summary: 'Todo verbo dinamarquês no presente termina em -r, igual para todas as pessoas: jeg taler, vi taler, de taler. A negação é “ikke”, logo depois do verbo. E para dizer do que gosta: “Jeg kan godt lide kaffe”, “Jeg kan lide at læse”.',
     sections: [
       {
         heading: 'Uma forma só para todas as pessoas',
-        text: 'O infinitivo vem com «at» (soa quase «ó»), como o «to» do inglês: at tale (falar). Para o presente, acrescente -r ao infinitivo: tale → taler, bo → bor. Como não há conjugação por pessoa, o pronome é obrigatório: «taler dansk» sozinho não diz quem fala. Alguns verbos muito usados são irregulares. E o dinamarquês não tem uma forma própria para «estar fazendo»: «Jeg læser» é «eu leio» e «estou lendo».',
+        text: 'O infinitivo vem com “at” (soa quase “ó”), como o “to” do inglês: at tale (falar). Para o presente, acrescente -r ao infinitivo: tale → taler, bo → bor. Como não há conjugação por pessoa, o pronome é obrigatório: “taler dansk” sozinho não diz quem fala. Alguns verbos muito usados são irregulares. E o dinamarquês não tem uma forma própria para “estar fazendo”: “Jeg læser” é “eu leio” e “estou lendo”.',
         table: {
           head: ['Infinitivo', 'Presente', 'Português'],
           rows: [
@@ -434,8 +434,8 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'A negação: «ikke» depois do verbo',
-        text: 'Numa frase simples, o «ikke» vem logo depois do verbo conjugado, e não antes como o nosso «não»: «Jeg taler ikke dansk». Se o objeto é um pronome curto (mig, dig, ham, den, det…), ele vem antes do «ikke»: «Jeg kender ham ikke». Com substantivo, o objeto fica depois: «Jeg kender ikke Peter». Para responder, «nej» é não; e «heller ikke» é «também não».',
+        heading: 'A negação: “ikke” depois do verbo',
+        text: 'Numa frase simples, o “ikke” vem logo depois do verbo conjugado, e não antes como o nosso “não”: “Jeg taler ikke dansk”. Se o objeto é um pronome curto (mig, dig, ham, den, det…), ele vem antes do “ikke”: “Jeg kender ham ikke”. Com substantivo, o objeto fica depois: “Jeg kender ikke Peter”. Para responder, “nej” é não; e “heller ikke” é “também não”.',
         examples: [
           ['Jeg taler ikke dansk endnu.', 'Eu ainda não falo dinamarquês.'],
           ['Han drikker ikke kaffe.', 'Ele não bebe café.'],
@@ -445,8 +445,8 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'Gostar: «kan lide»',
-        text: 'O jeito mais comum de dizer «gostar» é «kan lide» (o verbo «lide», sozinho, quer dizer sofrer: é a expressão inteira que significa gostar). Muita gente acrescenta «godt»: «Jeg kan godt lide kaffe» soa mais natural que o simples «Jeg kan lide kaffe». Na negação, o «godt» sai: «Jeg kan ikke lide øl». Para uma atividade, use «at» + infinitivo: «Jeg kan lide at cykle». Para algo muito forte, «elske» (amar, adorar).',
+        heading: 'Gostar: “kan lide”',
+        text: 'O jeito mais comum de dizer “gostar” é “kan lide” (o verbo “lide”, sozinho, quer dizer sofrer: é a expressão inteira que significa gostar). Muita gente acrescenta “godt”: “Jeg kan godt lide kaffe” soa mais natural que o simples “Jeg kan lide kaffe”. Na negação, o “godt” sai: “Jeg kan ikke lide øl”. Para uma atividade, use “at” + infinitivo: “Jeg kan lide at cykle”. Para algo muito forte, “elske” (amar, adorar).',
         table: {
           head: ['Dinamarquês', 'Português'],
           rows: [
@@ -465,42 +465,42 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pôr o «ikke» antes do verbo, como o nosso «não»: «Jeg ikke taler» está errado; é «Jeg taler ikke».',
-      'Esquecer o pronome sujeito: «Taler dansk» não é frase; diga «Jeg taler dansk».',
-      'Pôr o pronome objeto depois do «ikke»: o natural é «Jeg forstår det ikke», não «Jeg forstår ikke det» (a não ser que «det» seja enfático).',
-      'Usar «lide» sozinho para «gostar»: «Jeg lider kaffe» quer dizer «eu sofro café». O certo é «Jeg kan lide kaffe».',
-      'Esquecer o «at» antes do infinitivo depois de «kan lide»: «Jeg kan lide at danse».',
+      'Pôr o “ikke” antes do verbo, como o nosso “não”: “Jeg ikke taler” está errado; é “Jeg taler ikke”.',
+      'Esquecer o pronome sujeito: “Taler dansk” não é frase; diga “Jeg taler dansk”.',
+      'Pôr o pronome objeto depois do “ikke”: o natural é “Jeg forstår det ikke”, não “Jeg forstår ikke det” (a não ser que “det” seja enfático).',
+      'Usar “lide” sozinho para “gostar”: “Jeg lider kaffe” quer dizer “eu sofro café”. O certo é “Jeg kan lide kaffe”.',
+      'Esquecer o “at” antes do infinitivo depois de “kan lide”: “Jeg kan lide at danse”.',
     ],
     quiz: [
       {
-        question: 'Como se diz «Eu não falo dinamarquês»?',
+        question: 'Como se diz “Eu não falo dinamarquês”?',
         options: ['Jeg taler ikke dansk.', 'Jeg ikke taler dansk.', 'Ikke jeg taler dansk.'],
         answer: 'Jeg taler ikke dansk.',
-        explanation: 'O «ikke» vem logo depois do verbo conjugado: taler ikke.',
+        explanation: 'O “ikke” vem logo depois do verbo conjugado: taler ikke.',
       },
       {
-        question: 'Qual é o presente de «at bo»?',
+        question: 'Qual é o presente de “at bo”?',
         options: ['bor', 'boer', 'bo'],
         answer: 'bor',
         explanation: 'Presente = infinitivo + r: bo → bor, para todas as pessoas.',
       },
       {
-        question: 'Como se diz «Eu gosto de café»?',
+        question: 'Como se diz “Eu gosto de café”?',
         options: ['Jeg kan godt lide kaffe.', 'Jeg lider kaffe.', 'Jeg godt kan kaffe.'],
         answer: 'Jeg kan godt lide kaffe.',
-        explanation: '«kan (godt) lide» é gostar. «lide» sozinho é sofrer.',
+        explanation: '“kan (godt) lide” é gostar. “lide” sozinho é sofrer.',
       },
       {
         question: 'Qual é a ordem natural?',
         options: ['Jeg kender ham ikke.', 'Jeg kender ikke ham.', 'Jeg ikke kender ham.'],
         answer: 'Jeg kender ham ikke.',
-        explanation: 'Pronome objeto curto vem antes do «ikke»: kender ham ikke.',
+        explanation: 'Pronome objeto curto vem antes do “ikke”: kender ham ikke.',
       },
       {
         question: 'Complete: Jeg kan lide ___ læse.',
         options: ['at', 'og', 'til'],
         answer: 'at',
-        explanation: 'Depois de «kan lide», uma atividade vem com «at» + infinitivo.',
+        explanation: 'Depois de “kan lide”, uma atividade vem com “at” + infinitivo.',
       },
     ],
   },
@@ -509,11 +509,11 @@ export const GRAMMAR_DA: GrammarTopic[] = [
     level: 'A1.2',
     title: 'en e et: o gênero e a forma definida (bilen, huset)',
     emoji: '🏠',
-    summary: 'O dinamarquês tem dois gêneros: o comum (en), que vale para cerca de três quartos das palavras, e o neutro (et). Não existe um «a» ou «o» separado antes da palavra: o artigo definido gruda no fim. En bil → bilen (o carro); et hus → huset (a casa).',
+    summary: 'O dinamarquês tem dois gêneros: o comum (en), que vale para cerca de três quartos das palavras, e o neutro (et). Não existe um “a” ou “o” separado antes da palavra: o artigo definido gruda no fim. En bil → bilen (o carro); et hus → huset (a casa).',
     sections: [
       {
         heading: 'Dois gêneros: en e et',
-        text: 'Diferente do português, o dinamarquês não tem masculino e feminino: os antigos se fundiram no gênero comum, o das palavras com «en». O outro é o neutro, com «et». Não há regra segura para adivinhar o gênero pelo sentido: «en dreng» (um menino) é comum, mas «et barn» (uma criança) é neutro. Aprenda cada palavra junto com o artigo. Como cerca de 75% são en, na dúvida aposte em en. Os pronomes seguem o gênero: palavra en → «den», palavra et → «det».',
+        text: 'Diferente do português, o dinamarquês não tem masculino e feminino: os antigos se fundiram no gênero comum, o das palavras com “en”. O outro é o neutro, com “et”. Não há regra segura para adivinhar o gênero pelo sentido: “en dreng” (um menino) é comum, mas “et barn” (uma criança) é neutro. Aprenda cada palavra junto com o artigo. Como cerca de 75% são en, na dúvida aposte em en. Os pronomes seguem o gênero: palavra en → “den”, palavra et → “det”.',
         table: {
           head: ['Comum (en)', 'Português', 'Neutro (et)', 'Português'],
           rows: [
@@ -533,7 +533,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'A forma definida vai no fim',
-        text: 'Para dizer «o carro», «a casa», acrescente o artigo no fim: -en para palavras en, -et para palavras et. Se a palavra já termina em -e átono, basta -n ou -t: en kvinde → kvinden, et æble → æblet. Depois de vogal curta, a consoante final dobra na escrita: en kat → katten, en kop → koppen. Na pronúncia, o -et de «huset» termina com o d suave [ð̞], e o -en quase vira um n só.',
+        text: 'Para dizer “o carro”, “a casa”, acrescente o artigo no fim: -en para palavras en, -et para palavras et. Se a palavra já termina em -e átono, basta -n ou -t: en kvinde → kvinden, et æble → æblet. Depois de vogal curta, a consoante final dobra na escrita: en kat → katten, en kop → koppen. Na pronúncia, o -et de “huset” termina com o d suave [ð̞], e o -en quase vira um n só.',
         table: {
           head: ['Indefinida', 'Definida', 'Português'],
           rows: [
@@ -555,7 +555,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Quando usar cada forma',
-        text: 'Use a forma indefinida para algo novo na conversa (en kat = um gato qualquer) e a definida para algo já conhecido (katten = aquele gato). Nomes de refeições, idiomas e muitas expressões fixas vão sem artigo: «Jeg taler dansk», «Vi spiser morgenmad». E atenção: palavras de medida e matéria (vand, kaffe, mælk) muitas vezes vão sem artigo, como em português: «Jeg drikker kaffe».',
+        text: 'Use a forma indefinida para algo novo na conversa (en kat = um gato qualquer) e a definida para algo já conhecido (katten = aquele gato). Nomes de refeições, idiomas e muitas expressões fixas vão sem artigo: “Jeg taler dansk”, “Vi spiser morgenmad”. E atenção: palavras de medida e matéria (vand, kaffe, mælk) muitas vezes vão sem artigo, como em português: “Jeg drikker kaffe”.',
         examples: [
           ['Der sidder en kat i vinduet. Katten er sort.', 'Tem um gato na janela. O gato é preto.'],
           ['Vi spiser morgenmad klokken syv.', 'Tomamos café da manhã às sete.'],
@@ -564,50 +564,50 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Tentar pôr um artigo definido separado antes: «den bil» não é «o carro», é «aquele carro». «O carro» é «bilen».',
-      'Adivinhar o gênero pelo português: «et barn» (criança) e «et hus» (casa) são neutros. Aprenda com o artigo.',
-      'Procurar o feminino: o dinamarquês padrão não tem «ei» como o norueguês. É «en bog», «bogen».',
-      'Esquecer de dobrar a consoante depois de vogal curta: kat → katten, não «katen».',
+      'Tentar pôr um artigo definido separado antes: “den bil” não é “o carro”, é “aquele carro”. “O carro” é “bilen”.',
+      'Adivinhar o gênero pelo português: “et barn” (criança) e “et hus” (casa) são neutros. Aprenda com o artigo.',
+      'Procurar o feminino: o dinamarquês padrão não tem “ei” como o norueguês. É “en bog”, “bogen”.',
+      'Esquecer de dobrar a consoante depois de vogal curta: kat → katten, não “katen”.',
     ],
     quiz: [
       {
-        question: 'Qual é a forma definida de «et hus»?',
+        question: 'Qual é a forma definida de “et hus”?',
         options: ['huset', 'husen', 'det hus'],
         answer: 'huset',
         explanation: 'Palavra et recebe -et no fim: huset (a casa).',
       },
       {
-        question: 'Qual é a forma definida de «en kvinde»?',
+        question: 'Qual é a forma definida de “en kvinde”?',
         options: ['kvinden', 'kvindeen', 'kvindet'],
         answer: 'kvinden',
         explanation: 'Termina em -e átono: basta o -n. kvinde → kvinden.',
       },
       {
-        question: 'Como se diz «o gato»?',
+        question: 'Como se diz “o gato”?',
         options: ['katten', 'katen', 'en kat'],
         answer: 'katten',
         explanation: 'Depois de vogal curta, a consoante dobra: kat → katten.',
       },
       {
-        question: 'Que pronome substitui «bordet» (a mesa)?',
+        question: 'Que pronome substitui “bordet” (a mesa)?',
         options: ['det', 'den', 'han'],
         answer: 'det',
-        explanation: '«bord» é uma palavra et, então o pronome é «det».',
+        explanation: '“bord” é uma palavra et, então o pronome é “det”.',
       },
       {
-        question: 'Qual é o gênero de «barn» (criança)?',
+        question: 'Qual é o gênero de “barn” (criança)?',
         options: ['et barn', 'en barn', 'ei barn'],
         answer: 'et barn',
-        explanation: '«barn» é neutro: et barn, barnet.',
+        explanation: '“barn” é neutro: et barn, barnet.',
       },
     ],
   },
   {
     id: 'da-g6',
     level: 'A1.2',
-    title: 'O plural e «der er / der findes»',
+    title: 'O plural e “der er / der findes”',
     emoji: '🚲',
-    summary: 'O plural dinamarquês tem três terminações principais: -er (biler), -e (huse) e nenhuma (år), além de alguns irregulares como børn (crianças) e mænd (homens). O plural definido acrescenta -ne: bilerne, husene. E «há», «tem» é «der er»: «Der er mange cykler i København».',
+    summary: 'O plural dinamarquês tem três terminações principais: -er (biler), -e (huse) e nenhuma (år), além de alguns irregulares como børn (crianças) e mænd (homens). O plural definido acrescenta -ne: bilerne, husene. E “há”, “tem” é “der er”: “Der er mange cykler i København”.',
     sections: [
       {
         heading: 'Três terminações e alguns rebeldes',
@@ -637,7 +637,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'O plural definido: -ne',
-        text: 'Para «os carros», «as casas», acrescente -ne ao plural (ou -ene, quando o plural não termina em -e): biler → bilerne, huse → husene, år → årene, børn → børnene. É a mesma lógica do singular: o artigo vai grudado no fim.',
+        text: 'Para “os carros”, “as casas”, acrescente -ne ao plural (ou -ene, quando o plural não termina em -e): biler → bilerne, huse → husene, år → årene, børn → børnene. É a mesma lógica do singular: o artigo vai grudado no fim.',
         table: {
           head: ['Singular definido', 'Plural', 'Plural definido', 'Português'],
           rows: [
@@ -655,8 +655,8 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         ],
       },
       {
-        heading: '«der er»: há, tem',
-        text: 'Para dizer que algo existe num lugar, o dinamarquês usa «der er» (literalmente «lá é»), para singular e plural. Não confunda com «det er» (isso é, é): «Det er en cykel» (é uma bicicleta) × «Der er en cykel i gården» (tem uma bicicleta no pátio). Na pergunta, inverte-se: «Er der…?». Para existência em geral, também se usa «der findes» (existe, há).',
+        heading: '“der er”: há, tem',
+        text: 'Para dizer que algo existe num lugar, o dinamarquês usa “der er” (literalmente “lá é”), para singular e plural. Não confunda com “det er” (isso é, é): “Det er en cykel” (é uma bicicleta) × “Der er en cykel i gården” (tem uma bicicleta no pátio). Na pergunta, inverte-se: “Er der…?”. Para existência em geral, também se usa “der findes” (existe, há).',
         examples: [
           ['Der er mange cykler i København.', 'Há muitas bicicletas em Copenhague.'],
           ['Er der en bank her i nærheden?', 'Tem um banco aqui perto?'],
@@ -667,32 +667,32 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pôr -s no plural, pensando no português ou no inglês: «bils» não existe; é «biler».',
+      'Pôr -s no plural, pensando no português ou no inglês: “bils” não existe; é “biler”.',
       'Esquecer os irregulares mais comuns: barn → børn, mand → mænd, bog → bøger.',
-      'Confundir «der er» (há, tem) com «det er» (é, isso é).',
-      'Usar «har» para «tem» no sentido de «existe»: «Tem um café na esquina» é «Der er en café på hjørnet», não «Det har en café».',
+      'Confundir “der er” (há, tem) com “det er” (é, isso é).',
+      'Usar “har” para “tem” no sentido de “existe”: “Tem um café na esquina” é “Der er en café på hjørnet”, não “Det har en café”.',
     ],
     quiz: [
       {
-        question: 'Qual é o plural de «et barn»?',
+        question: 'Qual é o plural de “et barn”?',
         options: ['børn', 'barner', 'barne'],
         answer: 'børn',
         explanation: 'barn é irregular: et barn, barnet, børn, børnene.',
       },
       {
-        question: 'Como se diz «as casas»?',
+        question: 'Como se diz “as casas”?',
         options: ['husene', 'huserne', 'husen'],
         answer: 'husene',
         explanation: 'Plural huse + -ne: husene.',
       },
       {
-        question: 'Como se diz «Tem um banco aqui perto?»?',
+        question: 'Como se diz “Tem um banco aqui perto?”?',
         options: ['Er der en bank her i nærheden?', 'Er det en bank her i nærheden?', 'Har der en bank her i nærheden?'],
         answer: 'Er der en bank her i nærheden?',
-        explanation: '«der er» (na pergunta, «er der») é o nosso «há, tem».',
+        explanation: '“der er” (na pergunta, “er der”) é o nosso “há, tem”.',
       },
       {
-        question: 'Qual é o plural de «en kvinde»?',
+        question: 'Qual é o plural de “en kvinde”?',
         options: ['kvinder', 'kvindes', 'kvinde'],
         answer: 'kvinder',
         explanation: 'Palavras terminadas em -e átono costumam ganhar -r: kvinde → kvinder.',
@@ -701,7 +701,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         question: 'Complete: Jeg har boet her i fem ___.',
         options: ['år', 'årer', 'åre'],
         answer: 'år',
-        explanation: '«år» não muda no plural: et år, to år.',
+        explanation: '“år” não muda no plural: et år, to år.',
       },
     ],
   },
@@ -711,11 +711,11 @@ export const GRAMMAR_DA: GrammarTopic[] = [
     level: 'A2.1',
     title: 'Ordem V2, inversão e perguntas',
     emoji: '🔀',
-    summary: 'Na frase principal, o verbo conjugado fica sempre em segundo lugar. Se a frase começa por outra coisa que não o sujeito («i dag», «her», «kaffe»), o sujeito passa para depois do verbo: «I dag regner det». Nas perguntas de sim ou não, o verbo vem primeiro: «Taler du dansk?».',
+    summary: 'Na frase principal, o verbo conjugado fica sempre em segundo lugar. Se a frase começa por outra coisa que não o sujeito (“i dag”, “her”, “kaffe”), o sujeito passa para depois do verbo: “I dag regner det”. Nas perguntas de sim ou não, o verbo vem primeiro: “Taler du dansk?”.',
     sections: [
       {
         heading: 'O verbo é sempre o segundo',
-        text: 'Imagine a frase como uma fila de blocos. O primeiro bloco pode ser o sujeito, uma expressão de tempo, um lugar, um objeto… até uma oração inteira. O segundo lugar é SEMPRE do verbo conjugado. Se o primeiro bloco não é o sujeito, ele vai para o terceiro lugar. Em português, «Hoje eu trabalho» e «Hoje trabalho eu» são possíveis; em dinamarquês, só a ordem com o verbo em segundo: «I dag arbejder jeg».',
+        text: 'Imagine a frase como uma fila de blocos. O primeiro bloco pode ser o sujeito, uma expressão de tempo, um lugar, um objeto… até uma oração inteira. O segundo lugar é SEMPRE do verbo conjugado. Se o primeiro bloco não é o sujeito, ele vai para o terceiro lugar. Em português, “Hoje eu trabalho” e “Hoje trabalho eu” são possíveis; em dinamarquês, só a ordem com o verbo em segundo: “I dag arbejder jeg”.',
         table: {
           head: ['1º lugar', 'Verbo (2º)', 'Sujeito', 'Resto'],
           rows: [
@@ -734,8 +734,8 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'O «ikke» na frase invertida',
-        text: 'O «ikke» continua depois do verbo, mas, se houve inversão, o sujeito pronome vem antes dele: «I dag arbejder jeg ikke». A ordem fica verbo + sujeito + ikke. E o pronome objeto curto também passa na frente do «ikke»: «I dag ser jeg ham ikke».',
+        heading: 'O “ikke” na frase invertida',
+        text: 'O “ikke” continua depois do verbo, mas, se houve inversão, o sujeito pronome vem antes dele: “I dag arbejder jeg ikke”. A ordem fica verbo + sujeito + ikke. E o pronome objeto curto também passa na frente do “ikke”: “I dag ser jeg ham ikke”.',
         examples: [
           ['I dag arbejder jeg ikke.', 'Hoje eu não trabalho.'],
           ['Om søndagen er butikkerne ikke altid åbne.', 'Aos domingos as lojas nem sempre estão abertas.'],
@@ -744,7 +744,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Perguntas de sim ou não',
-        text: 'Basta pôr o verbo em primeiro lugar, como no inglês antigo: «Du taler dansk» → «Taler du dansk?». Não existe um «do» auxiliar. A resposta curta usa «ja», «nej» ou «jo» (sim, contradizendo uma pergunta negativa), e muitas vezes repete o verbo com «det»: «Taler du dansk? — Ja, det gør jeg».',
+        text: 'Basta pôr o verbo em primeiro lugar, como no inglês antigo: “Du taler dansk” → “Taler du dansk?”. Não existe um “do” auxiliar. A resposta curta usa “ja”, “nej” ou “jo” (sim, contradizendo uma pergunta negativa), e muitas vezes repete o verbo com “det”: “Taler du dansk? — Ja, det gør jeg”.',
         examples: [
           ['Taler du engelsk? — Ja, det gør jeg.', 'Você fala inglês? — Falo, sim.'],
           ['Har I børn?', 'Vocês têm filhos?'],
@@ -754,7 +754,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'As palavras interrogativas: hv-',
-        text: 'Quase todas começam com hv-, e o h é mudo: hvad soa «vé», hvor soa «vór». Depois da palavra interrogativa vem o verbo e depois o sujeito (V2 de novo). «hvilken» concorda com o gênero: hvilken bil, hvilket hus, hvilke biler. E «hvordan» (como) é bem dinamarquês.',
+        text: 'Quase todas começam com hv-, e o h é mudo: hvad soa “vé”, hvor soa “vór”. Depois da palavra interrogativa vem o verbo e depois o sujeito (V2 de novo). “hvilken” concorda com o gênero: hvilken bil, hvilket hus, hvilke biler. E “hvordan” (como) é bem dinamarquês.',
         table: {
           head: ['Dinamarquês', 'Português', 'Exemplo'],
           rows: [
@@ -778,9 +778,9 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Manter a ordem do português depois de uma expressão de tempo: «I dag jeg arbejder» está errado; é «I dag arbejder jeg».',
-      'Inventar um auxiliar para perguntar, como o «do» do inglês: basta inverter. «Taler du dansk?».',
-      'Esquecer a preposição no fim em «Hvor kommer du fra?»: sem o «fra», a pergunta fica pela metade.',
+      'Manter a ordem do português depois de uma expressão de tempo: “I dag jeg arbejder” está errado; é “I dag arbejder jeg”.',
+      'Inventar um auxiliar para perguntar, como o “do” do inglês: basta inverter. “Taler du dansk?”.',
+      'Esquecer a preposição no fim em “Hvor kommer du fra?”: sem o “fra”, a pergunta fica pela metade.',
       'Pronunciar o h de hvad, hvor, hvem: é mudo.',
     ],
     quiz: [
@@ -788,10 +788,10 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         question: 'Qual é a ordem correta?',
         options: ['I morgen rejser vi til Aalborg.', 'I morgen vi rejser til Aalborg.', 'Vi i morgen rejser til Aalborg.'],
         answer: 'I morgen rejser vi til Aalborg.',
-        explanation: 'O verbo fica em 2º lugar; como a frase começa com «i morgen», o sujeito vai para depois dele.',
+        explanation: 'O verbo fica em 2º lugar; como a frase começa com “i morgen”, o sujeito vai para depois dele.',
       },
       {
-        question: 'Como se pergunta «Você tem um cachorro?»?',
+        question: 'Como se pergunta “Você tem um cachorro?”?',
         options: ['Har du en hund?', 'Du har en hund?', 'Gør du have en hund?'],
         answer: 'Har du en hund?',
         explanation: 'Pergunta de sim ou não: o verbo vem primeiro.',
@@ -803,7 +803,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         explanation: 'Com inversão: verbo + sujeito pronome + ikke.',
       },
       {
-        question: 'Como se diz «quando»?',
+        question: 'Como se diz “quando”?',
         options: ['hvornår', 'hvorfor', 'hvordan'],
         answer: 'hvornår',
         explanation: 'hvornår = quando; hvorfor = por que; hvordan = como.',
@@ -812,7 +812,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         question: 'Complete: ___ tog skal vi tage?',
         options: ['Hvilket', 'Hvilken', 'Hvad'],
         answer: 'Hvilket',
-        explanation: '«tog» (trem) é uma palavra et, então: hvilket tog.',
+        explanation: '“tog” (trem) é uma palavra et, então: hvilket tog.',
       },
     ],
   },
@@ -821,11 +821,11 @@ export const GRAMMAR_DA: GrammarTopic[] = [
     level: 'A2.1',
     title: 'Preposições (i, på, til, fra) e adjetivos (en stor bil, et stort hus)',
     emoji: '📍',
-    summary: '«i» e «på» dividem o nosso «em»: i København, mas på Bornholm e på arbejde. «til» é para onde, «fra» é de onde. E o adjetivo concorda com o substantivo: en stor bil, et stort hus, store biler. Detalhe curioso: o plural de «lille» (pequeno) é «små».',
+    summary: '“i” e “på” dividem o nosso “em”: i København, mas på Bornholm e på arbejde. “til” é para onde, “fra” é de onde. E o adjetivo concorda com o substantivo: en stor bil, et stort hus, store biler. Detalhe curioso: o plural de “lille” (pequeno) é “små”.',
     sections: [
       {
-        heading: 'i e på: os dois «em»',
-        text: '«i» é «dentro de»: cidades, países, espaços fechados e várias expressões de tempo. «på» é «em cima de», mas também vale para ilhas, para muitos lugares de trabalho e instituições e para idiomas («på dansk», em dinamarquês). Como a Dinamarca é cheia de ilhas, é bom decorar: «på Fyn», «på Sjælland», «på Bornholm», «på Møn», mas «i Jylland» (a Jutlândia é península). Não há regra perfeita: aprenda com a expressão.',
+        heading: 'i e på: os dois “em”',
+        text: '“i” é “dentro de”: cidades, países, espaços fechados e várias expressões de tempo. “på” é “em cima de”, mas também vale para ilhas, para muitos lugares de trabalho e instituições e para idiomas (“på dansk”, em dinamarquês). Como a Dinamarca é cheia de ilhas, é bom decorar: “på Fyn”, “på Sjælland”, “på Bornholm”, “på Møn”, mas “i Jylland” (a Jutlândia é península). Não há regra perfeita: aprenda com a expressão.',
         table: {
           head: ['i', 'Português', 'på', 'Português'],
           rows: [
@@ -847,7 +847,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'til, fra, med, hos e om',
-        text: '«til» indica destino (para) e também «para» no sentido de destinatário: en gave til dig. «fra» é origem (de). «med» é «com», e também o meio de transporte: med toget, med bussen; mas de bicicleta é «på cykel». «hos» é «na casa de, no lugar de alguém», como o «chez» francês: hos mig (na minha casa), hos lægen (no médico). E «om» + forma definida indica hábito: «om morgenen» (de manhã, todas as manhãs), «om sommeren» (no verão).',
+        text: '“til” indica destino (para) e também “para” no sentido de destinatário: en gave til dig. “fra” é origem (de). “med” é “com”, e também o meio de transporte: med toget, med bussen; mas de bicicleta é “på cykel”. “hos” é “na casa de, no lugar de alguém”, como o “chez” francês: hos mig (na minha casa), hos lægen (no médico). E “om” + forma definida indica hábito: “om morgenen” (de manhã, todas as manhãs), “om sommeren” (no verão).',
         table: {
           head: ['Preposição', 'Sentido', 'Exemplo'],
           rows: [
@@ -868,7 +868,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'O adjetivo concorda: en stor bil, et stort hus',
-        text: 'Antes do substantivo, na forma indefinida, o adjetivo fica igual com palavras en, ganha -t com palavras et e -e no plural. A mesma concordância vale depois do verbo: «bilen er stor», «huset er stort», «bilerne er store». Algumas exceções úteis: adjetivos terminados em -sk (dansk, norsk) e em -e (moderne) não ganham -t; «ny» vira «nyt» e «nye»; «gammel» perde o e: gammelt, gamle. E «lille» é o mais rebelde: en lille bil, et lille hus, mas små biler.',
+        text: 'Antes do substantivo, na forma indefinida, o adjetivo fica igual com palavras en, ganha -t com palavras et e -e no plural. A mesma concordância vale depois do verbo: “bilen er stor”, “huset er stort”, “bilerne er store”. Algumas exceções úteis: adjetivos terminados em -sk (dansk, norsk) e em -e (moderne) não ganham -t; “ny” vira “nyt” e “nye”; “gammel” perde o e: gammelt, gamle. E “lille” é o mais rebelde: en lille bil, et lille hus, mas små biler.',
         table: {
           head: ['en (comum)', 'et (neutro)', 'Plural', 'Português'],
           rows: [
@@ -890,18 +890,18 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar «i» para ilhas: é «på Bornholm», «på Fyn», «på Sjælland». Mas «i Jylland».',
-      'Dizer «i dansk»: em dinamarquês é «på dansk».',
-      'Esquecer o -t do neutro: «et stor hus» está errado; é «et stort hus», e «huset er stort».',
-      'Dizer «lille» no plural: o plural de «lille» é «små» (små børn).',
-      'Dizer «med cykel»: de bicicleta é «på cykel».',
+      'Usar “i” para ilhas: é “på Bornholm”, “på Fyn”, “på Sjælland”. Mas “i Jylland”.',
+      'Dizer “i dansk”: em dinamarquês é “på dansk”.',
+      'Esquecer o -t do neutro: “et stor hus” está errado; é “et stort hus”, e “huset er stort”.',
+      'Dizer “lille” no plural: o plural de “lille” é “små” (små børn).',
+      'Dizer “med cykel”: de bicicleta é “på cykel”.',
     ],
     quiz: [
       {
         question: 'Complete: Vi bor ___ Fyn.',
         options: ['på', 'i', 'til'],
         answer: 'på',
-        explanation: 'Com ilhas se usa «på»: på Fyn, på Bornholm.',
+        explanation: 'Com ilhas se usa “på”: på Fyn, på Bornholm.',
       },
       {
         question: 'Qual está certo?',
@@ -910,16 +910,16 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         explanation: 'Palavra et na forma indefinida: adjetivo + -t.',
       },
       {
-        question: 'Como se diz «crianças pequenas»?',
+        question: 'Como se diz “crianças pequenas”?',
         options: ['små børn', 'lille børn', 'lilles børn'],
         answer: 'små børn',
-        explanation: 'O plural de «lille» é «små».',
+        explanation: 'O plural de “lille” é “små”.',
       },
       {
         question: 'Complete: Jeg bor ___ min søster. (na casa da minha irmã)',
         options: ['hos', 'på', 'fra'],
         answer: 'hos',
-        explanation: '«hos» é «na casa de, junto de alguém», como o «chez» francês.',
+        explanation: '“hos” é “na casa de, junto de alguém”, como o “chez” francês.',
       },
       {
         question: 'Complete: Bilerne er ___.',
@@ -935,7 +935,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
     level: 'A2.2',
     title: 'Pretérito e perfeito: jeg spiste, jeg har spist',
     emoji: '⏪',
-    summary: 'O pretérito dinamarquês se forma com -ede (arbejdede) ou -te (spiste), e há verbos fortes que mudam a vogal (drikke → drak). O perfeito usa «have» ou «være» + particípio: «jeg har spist», «hun er rejst». Como no inglês, o pretérito é para um momento terminado («i går»), e o perfeito liga o passado ao agora.',
+    summary: 'O pretérito dinamarquês se forma com -ede (arbejdede) ou -te (spiste), e há verbos fortes que mudam a vogal (drikke → drak). O perfeito usa “have” ou “være” + particípio: “jeg har spist”, “hun er rejst”. Como no inglês, o pretérito é para um momento terminado (“i går”), e o perfeito liga o passado ao agora.',
     sections: [
       {
         heading: 'Os verbos fracos: -ede e -te',
@@ -988,7 +988,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Pretérito × perfeito',
-        text: 'A divisão é parecida com a do inglês. Use o pretérito para algo terminado num momento definido do passado, muitas vezes com uma expressão de tempo: i går, sidste år, i 2019, da jeg var barn. Use o perfeito quando o momento não importa ou não terminou: experiências (aldrig, nogensinde), resultados que valem agora e o que começou no passado e continua («Jeg har boet her i to år» = moro aqui há dois anos). Numa frase com «i går», o perfeito soa errado.',
+        text: 'A divisão é parecida com a do inglês. Use o pretérito para algo terminado num momento definido do passado, muitas vezes com uma expressão de tempo: i går, sidste år, i 2019, da jeg var barn. Use o perfeito quando o momento não importa ou não terminou: experiências (aldrig, nogensinde), resultados que valem agora e o que começou no passado e continua (“Jeg har boet her i to år” = moro aqui há dois anos). Numa frase com “i går”, o perfeito soa errado.',
         examples: [
           ['Jeg har aldrig været på Bornholm.', 'Eu nunca fui a Bornholm.'],
           ['Har du nogensinde spist rødgrød?', 'Você já comeu rødgrød alguma vez?'],
@@ -999,7 +999,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'have ou være no perfeito?',
-        text: 'Quase todos os verbos usam «have». Os verbos de movimento com destino e os de mudança de estado podem usar «være»: «Hun er rejst til Paris» (ela viajou e está lá), «Han er kommet hjem» (ele chegou em casa), «Bladene er faldet» (as folhas caíram). Quando o foco é a atividade em si, sem destino, usa-se «have»: «Vi har gået meget i dag» (andamos muito hoje). Na dúvida, «have» raramente soa grave; mas aprenda as expressões com «være», que são muito frequentes.',
+        text: 'Quase todos os verbos usam “have”. Os verbos de movimento com destino e os de mudança de estado podem usar “være”: “Hun er rejst til Paris” (ela viajou e está lá), “Han er kommet hjem” (ele chegou em casa), “Bladene er faldet” (as folhas caíram). Quando o foco é a atividade em si, sem destino, usa-se “have”: “Vi har gået meget i dag” (andamos muito hoje). Na dúvida, “have” raramente soa grave; mas aprenda as expressões com “være”, que são muito frequentes.',
         examples: [
           ['Toget er kørt.', 'O trem já partiu.'],
           ['Min søster er flyttet til Aarhus.', 'Minha irmã se mudou para Aarhus.'],
@@ -1009,14 +1009,14 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar o perfeito com tempo definido, como às vezes fazemos em português: «I går har jeg spist fisk» está errado; é «I går spiste jeg fisk».',
-      'Fazer o pretérito de verbo forte com -ede: «drikkede» não existe; é «drak».',
-      'Traduzir «moro aqui há dois anos» com o presente: em dinamarquês é perfeito, «Jeg har boet her i to år».',
-      'Esquecer o «være» nos verbos de deslocamento com destino: «Han er kommet hjem» (ele chegou em casa).',
+      'Usar o perfeito com tempo definido, como às vezes fazemos em português: “I går har jeg spist fisk” está errado; é “I går spiste jeg fisk”.',
+      'Fazer o pretérito de verbo forte com -ede: “drikkede” não existe; é “drak”.',
+      'Traduzir “moro aqui há dois anos” com o presente: em dinamarquês é perfeito, “Jeg har boet her i to år”.',
+      'Esquecer o “være” nos verbos de deslocamento com destino: “Han er kommet hjem” (ele chegou em casa).',
     ],
     quiz: [
       {
-        question: 'Qual é o pretérito de «drikke»?',
+        question: 'Qual é o pretérito de “drikke”?',
         options: ['drak', 'drikkede', 'drukket'],
         answer: 'drak',
         explanation: 'drikke é forte: drikke → drak → har drukket.',
@@ -1025,25 +1025,25 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         question: 'Complete: I går ___ vi i biografen.',
         options: ['var', 'har været', 'er'],
         answer: 'var',
-        explanation: 'Com «i går» (momento definido e terminado) se usa o pretérito: var.',
+        explanation: 'Com “i går” (momento definido e terminado) se usa o pretérito: var.',
       },
       {
-        question: 'Como se diz «Eu nunca estive na Groenlândia»?',
+        question: 'Como se diz “Eu nunca estive na Groenlândia”?',
         options: ['Jeg har aldrig været i Grønland.', 'Jeg var aldrig i Grønland.', 'Jeg er aldrig været i Grønland.'],
         answer: 'Jeg har aldrig været i Grønland.',
-        explanation: 'Experiência de vida, sem momento definido: perfeito com «have», «har været».',
+        explanation: 'Experiência de vida, sem momento definido: perfeito com “have”, “har været”.',
       },
       {
-        question: 'Qual é o pretérito de «købe»?',
+        question: 'Qual é o pretérito de “købe”?',
         options: ['købte', 'købede', 'kob'],
         answer: 'købte',
         explanation: 'købe é do grupo 2: købe → købte → har købt.',
       },
       {
-        question: 'Como se diz «O trem já partiu»?',
+        question: 'Como se diz “O trem já partiu”?',
         options: ['Toget er kørt.', 'Toget kørte er.', 'Toget er kørte.'],
         answer: 'Toget er kørt.',
-        explanation: 'Deslocamento com resultado no presente: «være» + particípio, «er kørt».',
+        explanation: 'Deslocamento com resultado no presente: “være” + particípio, “er kørt”.',
       },
     ],
   },
@@ -1052,11 +1052,11 @@ export const GRAMMAR_DA: GrammarTopic[] = [
     level: 'A2.2',
     title: 'A forma definida com adjetivo: den store bil',
     emoji: '🎯',
-    summary: 'Sozinho, «o carro» é «bilen». Mas com um adjetivo o artigo sai do fim e vai para a frente: «den store bil» (o carro grande), «det store hus», «de store biler». O substantivo fica SEM a terminação: nada de «den store bilen», que é norueguês. E o adjetivo ganha -e.',
+    summary: 'Sozinho, “o carro” é “bilen”. Mas com um adjetivo o artigo sai do fim e vai para a frente: “den store bil” (o carro grande), “det store hus”, “de store biler”. O substantivo fica SEM a terminação: nada de “den store bilen”, que é norueguês. E o adjetivo ganha -e.',
     sections: [
       {
         heading: 'O artigo pula para a frente',
-        text: 'É uma das diferenças mais marcantes entre o dinamarquês e os vizinhos. O norueguês diz «den store bilen» e o sueco «den stora bilen», com o artigo duas vezes. O dinamarquês usa o artigo uma vez só: quando há adjetivo, entra «den» (palavras en), «det» (palavras et) ou «de» (plural) antes do adjetivo, e o substantivo fica na forma simples. O adjetivo, em todos os casos, ganha -e.',
+        text: 'É uma das diferenças mais marcantes entre o dinamarquês e os vizinhos. O norueguês diz “den store bilen” e o sueco “den stora bilen”, com o artigo duas vezes. O dinamarquês usa o artigo uma vez só: quando há adjetivo, entra “den” (palavras en), “det” (palavras et) ou “de” (plural) antes do adjetivo, e o substantivo fica na forma simples. O adjetivo, em todos os casos, ganha -e.',
         table: {
           head: ['Sem adjetivo', 'Com adjetivo', 'Português'],
           rows: [
@@ -1077,7 +1077,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Resumo das três formas do adjetivo',
-        text: 'Juntando com o tópico anterior: na forma indefinida o adjetivo concorda com o gênero (stor, stort, store); na forma definida ele é sempre -e (store). Os adjetivos terminados em -e, como «moderne» e «lille», não mudam no singular. A pronúncia do «de» (plural) é «di», como o pronome.',
+        text: 'Juntando com o tópico anterior: na forma indefinida o adjetivo concorda com o gênero (stor, stort, store); na forma definida ele é sempre -e (store). Os adjetivos terminados em -e, como “moderne” e “lille”, não mudam no singular. A pronúncia do “de” (plural) é “di”, como o pronome.',
         table: {
           head: ['', 'en', 'et', 'Plural'],
           rows: [
@@ -1088,8 +1088,8 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         },
       },
       {
-        heading: 'Cuidado: «den bil» é «aquele carro»',
-        text: 'Sem adjetivo, «den» e «det» antes do substantivo são demonstrativos: «den bil» = aquele carro, «det hus» = aquela casa (com ênfase na fala). Para apontar algo perto, «den her» / «det her» (este, esta); para longe, «den der» / «det der» (aquele, aquela). Assim: «bilen» (o carro), «den bil» (aquele carro), «den store bil» (o carro grande).',
+        heading: 'Cuidado: “den bil” é “aquele carro”',
+        text: 'Sem adjetivo, “den” e “det” antes do substantivo são demonstrativos: “den bil” = aquele carro, “det hus” = aquela casa (com ênfase na fala). Para apontar algo perto, “den her” / “det her” (este, esta); para longe, “den der” / “det der” (aquele, aquela). Assim: “bilen” (o carro), “den bil” (aquele carro), “den store bil” (o carro grande).',
         examples: [
           ['Den her bog er rigtig god.', 'Este livro é muito bom.'],
           ['Hvem bor i det der hus?', 'Quem mora naquela casa?'],
@@ -1098,7 +1098,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Nomes e possessivos: também -e',
-        text: 'Depois de possessivo (min, din, hans…) ou de genitivo com -s (Peters, Danmarks), o adjetivo também fica com -e e o substantivo fica sem terminação: «min nye cykel», «Danmarks største ø». A maior ilha da Dinamarca propriamente dita é Sjælland (a Zelândia), onde fica Copenhague; a Groenlândia, bem maior, é um território autônomo do Reino.',
+        text: 'Depois de possessivo (min, din, hans…) ou de genitivo com -s (Peters, Danmarks), o adjetivo também fica com -e e o substantivo fica sem terminação: “min nye cykel”, “Danmarks største ø”. A maior ilha da Dinamarca propriamente dita é Sjælland (a Zelândia), onde fica Copenhague; a Groenlândia, bem maior, é um território autônomo do Reino.',
         examples: [
           ['Min nye cykel er hurtig.', 'Minha bicicleta nova é rápida.'],
           ['Hans gamle bil står i garagen.', 'O carro velho dele está na garagem.'],
@@ -1107,29 +1107,29 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Fazer dupla definição, como no norueguês e no sueco: «den store bilen» está errado em dinamarquês; é «den store bil».',
-      'Esquecer o -e do adjetivo na forma definida: «det stort hus» está errado; é «det store hus».',
-      'Usar «den bil» para «o carro»: sem adjetivo, é «bilen». «den bil» é «aquele carro».',
-      'Pôr -e em «lille» no plural: é «de små børn».',
+      'Fazer dupla definição, como no norueguês e no sueco: “den store bilen” está errado em dinamarquês; é “den store bil”.',
+      'Esquecer o -e do adjetivo na forma definida: “det stort hus” está errado; é “det store hus”.',
+      'Usar “den bil” para “o carro”: sem adjetivo, é “bilen”. “den bil” é “aquele carro”.',
+      'Pôr -e em “lille” no plural: é “de små børn”.',
     ],
     quiz: [
       {
-        question: 'Como se diz «a casa grande»?',
+        question: 'Como se diz “a casa grande”?',
         options: ['det store hus', 'det store huset', 'det stort hus'],
         answer: 'det store hus',
         explanation: 'Artigo na frente (det), adjetivo com -e e substantivo sem terminação.',
       },
       {
-        question: 'Como se diz «os carros novos»?',
+        question: 'Como se diz “os carros novos”?',
         options: ['de nye biler', 'de nye bilerne', 'den nye biler'],
         answer: 'de nye biler',
         explanation: 'Plural definido com adjetivo: de + adjetivo com -e + plural simples.',
       },
       {
-        question: 'O que significa «den bil»?',
+        question: 'O que significa “den bil”?',
         options: ['aquele carro', 'o carro', 'um carro'],
         answer: 'aquele carro',
-        explanation: 'Sem adjetivo, «den» é demonstrativo. «O carro» é «bilen».',
+        explanation: 'Sem adjetivo, “den” é demonstrativo. “O carro” é “bilen”.',
       },
       {
         question: 'Complete: Min ___ cykel er rød.',
@@ -1138,10 +1138,10 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         explanation: 'Depois de possessivo, o adjetivo fica com -e: min nye cykel.',
       },
       {
-        question: 'Como se diz «a menina pequena»?',
+        question: 'Como se diz “a menina pequena”?',
         options: ['den lille pige', 'den lille pigen', 'den små pige'],
         answer: 'den lille pige',
-        explanation: 'No singular, «lille» não muda; o substantivo fica sem o -n.',
+        explanation: 'No singular, “lille” não muda; o substantivo fica sem o -n.',
       },
     ],
   },
@@ -1150,11 +1150,11 @@ export const GRAMMAR_DA: GrammarTopic[] = [
     level: 'A2.2',
     title: 'Possessivos: min, mit, mine e sin × hans',
     emoji: '🔑',
-    summary: 'O possessivo vem antes do substantivo e concorda com a coisa possuída: min bil, mit hus, mine børn. Na 3ª pessoa há uma sutileza que o português não tem: «Peter elsker sin kone» (a própria mulher) × «Peter elsker hans kone» (a mulher de outro homem!).',
+    summary: 'O possessivo vem antes do substantivo e concorda com a coisa possuída: min bil, mit hus, mine børn. Na 3ª pessoa há uma sutileza que o português não tem: “Peter elsker sin kone” (a própria mulher) × “Peter elsker hans kone” (a mulher de outro homem!).',
     sections: [
       {
         heading: 'A tabela dos possessivos',
-        text: 'min, din e sin têm três formas: en, et e plural. Os outros (hans, hendes, vores, jeres, deres) não mudam. O possessivo vem antes do substantivo, e o substantivo fica na forma simples, sem terminação: «min bil», nunca «min bilen». (O norueguês diz «bilen min», mas o dinamarquês, não.)',
+        text: 'min, din e sin têm três formas: en, et e plural. Os outros (hans, hendes, vores, jeres, deres) não mudam. O possessivo vem antes do substantivo, e o substantivo fica na forma simples, sem terminação: “min bil”, nunca “min bilen”. (O norueguês diz “bilen min”, mas o dinamarquês, não.)',
         table: {
           head: ['Pessoa', 'en', 'et', 'Plural', 'Português'],
           rows: [
@@ -1178,7 +1178,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'sin × hans: o próprio ou o de outro',
-        text: 'Quando o dono é o próprio sujeito da oração, na 3ª pessoa do singular, usa-se sin/sit/sine. Quando o dono é outra pessoa, hans/hendes. Em português, «Pedro ama a mulher dele» é ambíguo; em dinamarquês, não. Duas regras práticas. Primeira: «sin» nunca faz parte do sujeito, então «Hans kone er sød» (a mulher dele é simpática), nunca «Sin kone». Segunda: com sujeito no plural, o dinamarquês padrão usa «deres»: «De elsker deres børn».',
+        text: 'Quando o dono é o próprio sujeito da oração, na 3ª pessoa do singular, usa-se sin/sit/sine. Quando o dono é outra pessoa, hans/hendes. Em português, “Pedro ama a mulher dele” é ambíguo; em dinamarquês, não. Duas regras práticas. Primeira: “sin” nunca faz parte do sujeito, então “Hans kone er sød” (a mulher dele é simpática), nunca “Sin kone”. Segunda: com sujeito no plural, o dinamarquês padrão usa “deres”: “De elsker deres børn”.',
         table: {
           head: ['Dinamarquês', 'Português'],
           rows: [
@@ -1198,7 +1198,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'O genitivo com -s',
-        text: 'Para «de alguém», o dinamarquês usa -s grudado no dono, sem apóstrofo: «Peters bil» (o carro do Peter), «Danmarks hovedstad» (a capital da Dinamarca), «børnenes værelse» (o quarto das crianças). Se o nome já termina em s, x ou z, usa-se só o apóstrofo: «Lars’ bil». E, como com os possessivos, a coisa possuída fica sem terminação: «Peters bil», nunca «Peters bilen».',
+        text: 'Para “de alguém”, o dinamarquês usa -s grudado no dono, sem apóstrofo: “Peters bil” (o carro do Peter), “Danmarks hovedstad” (a capital da Dinamarca), “børnenes værelse” (o quarto das crianças). Se o nome já termina em s, x ou z, usa-se só o apóstrofo: “Lars’ bil”. E, como com os possessivos, a coisa possuída fica sem terminação: “Peters bil”, nunca “Peters bilen”.',
         examples: [
           ['Københavns gader er fulde af cykler.', 'As ruas de Copenhague estão cheias de bicicletas.'],
           ['Andersens eventyr er kendte i hele verden.', 'Os contos de fadas de Andersen são conhecidos no mundo inteiro.'],
@@ -1207,33 +1207,33 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar «hans» quando o dono é o próprio sujeito: «Han vasker hans bil» significa que ele lava o carro de OUTRO homem. O próprio carro é «sin bil».',
-      'Pôr «sin» no sujeito: «Sin mor er lærer» está errado; é «Hans mor er lærer».',
-      'Copiar a ordem do norueguês: «bilen min» não é dinamarquês padrão; diga «min bil».',
-      'Esquecer a concordância: «min hus» está errado; «hus» é et, então «mit hus».',
-      'Pôr apóstrofo no genitivo como no inglês: é «Peters bil», sem apóstrofo.',
+      'Usar “hans” quando o dono é o próprio sujeito: “Han vasker hans bil” significa que ele lava o carro de OUTRO homem. O próprio carro é “sin bil”.',
+      'Pôr “sin” no sujeito: “Sin mor er lærer” está errado; é “Hans mor er lærer”.',
+      'Copiar a ordem do norueguês: “bilen min” não é dinamarquês padrão; diga “min bil”.',
+      'Esquecer a concordância: “min hus” está errado; “hus” é et, então “mit hus”.',
+      'Pôr apóstrofo no genitivo como no inglês: é “Peters bil”, sem apóstrofo.',
     ],
     quiz: [
       {
         question: 'Complete: Hvor er ___ pas? (meu passaporte; pas é et)',
         options: ['mit', 'min', 'mine'],
         answer: 'mit',
-        explanation: '«pas» é uma palavra et: mit pas.',
+        explanation: '“pas” é uma palavra et: mit pas.',
       },
       {
         question: 'Mette liga para a própria mãe. Como se diz?',
         options: ['Mette ringer til sin mor.', 'Mette ringer til hendes mor.', 'Mette ringer til sit mor.'],
         answer: 'Mette ringer til sin mor.',
-        explanation: 'O dono é o próprio sujeito, 3ª pessoa singular: sin. «mor» é en, então «sin», não «sit».',
+        explanation: 'O dono é o próprio sujeito, 3ª pessoa singular: sin. “mor” é en, então “sin”, não “sit”.',
       },
       {
         question: 'Qual está certo?',
         options: ['Hans kone er sød.', 'Sin kone er sød.', 'Kone hans er sød.'],
         answer: 'Hans kone er sød.',
-        explanation: '«sin» nunca faz parte do sujeito; aqui é «hans».',
+        explanation: '“sin” nunca faz parte do sujeito; aqui é “hans”.',
       },
       {
-        question: 'Como se diz «o carro do Peter»?',
+        question: 'Como se diz “o carro do Peter”?',
         options: ['Peters bil', 'Peter’s bil', 'Peters bilen'],
         answer: 'Peters bil',
         explanation: 'Genitivo com -s sem apóstrofo, e a coisa possuída sem terminação.',
@@ -1242,7 +1242,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         question: 'Complete: De elsker ___ børn.',
         options: ['deres', 'sine', 'dems'],
         answer: 'deres',
-        explanation: 'Com sujeito no plural, o dinamarquês padrão usa «deres».',
+        explanation: 'Com sujeito no plural, o dinamarquês padrão usa “deres”.',
       },
     ],
   },
@@ -1252,11 +1252,11 @@ export const GRAMMAR_DA: GrammarTopic[] = [
     level: 'B1.1',
     title: 'Verbos modais (kan, skal, vil, må, bør) e o futuro',
     emoji: '🧭',
-    summary: 'Os modais vêm seguidos do infinitivo sem «at»: «Jeg kan tale dansk». Cuidado com «må ikke», que é proibição, e com «vil», que é principalmente querer. Para o futuro, o dinamarquês usa «skal» (plano), «vil» (previsão), «kommer til at» (o que vai acontecer) e o próprio presente.',
+    summary: 'Os modais vêm seguidos do infinitivo sem “at”: “Jeg kan tale dansk”. Cuidado com “må ikke”, que é proibição, e com “vil”, que é principalmente querer. Para o futuro, o dinamarquês usa “skal” (plano), “vil” (previsão), “kommer til at” (o que vai acontecer) e o próprio presente.',
     sections: [
       {
         heading: 'Os modais e suas formas',
-        text: 'O modal é o verbo conjugado; o verbo principal vem logo depois, no infinitivo e sem «at». Na negação e nas perguntas, o modal se comporta como qualquer verbo conjugado: «Jeg kan ikke komme», «Kan du hjælpe mig?». Repare que o presente dos modais não termina em -r: kan, skal, vil, må, bør.',
+        text: 'O modal é o verbo conjugado; o verbo principal vem logo depois, no infinitivo e sem “at”. Na negação e nas perguntas, o modal se comporta como qualquer verbo conjugado: “Jeg kan ikke komme”, “Kan du hjælpe mig?”. Repare que o presente dos modais não termina em -r: kan, skal, vil, må, bør.',
         table: {
           head: ['Infinitivo', 'Presente', 'Pretérito', 'Sentido'],
           rows: [
@@ -1279,7 +1279,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'må ikke × behøver ikke',
-        text: 'Esta é a armadilha principal. «må» é poder, no sentido de ter permissão: «Må jeg komme ind?» (posso entrar?). Por isso «Du må ikke» não é «você não precisa»: é «você não pode», uma proibição. Para dizer que algo não é necessário, use «behøver ikke (at)» ou «skal ikke».',
+        text: 'Esta é a armadilha principal. “må” é poder, no sentido de ter permissão: “Må jeg komme ind?” (posso entrar?). Por isso “Du må ikke” não é “você não precisa”: é “você não pode”, uma proibição. Para dizer que algo não é necessário, use “behøver ikke (at)” ou “skal ikke”.',
         table: {
           head: ['Dinamarquês', 'Português'],
           rows: [
@@ -1291,8 +1291,8 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         },
       },
       {
-        heading: 'vil é querer; «vil gerne» é gostaria',
-        text: 'Como o alemão «will», o dinamarquês «vil» é antes de tudo querer. «Jeg vil gerne…» é o jeito educado de pedir: «Jeg vil gerne have en kaffe» (eu gostaria de um café). Com um substantivo, diz-se «vil have»: «Jeg vil have is!». E numa loja ou café, o mais comum é «Kan jeg få…?»: «Kan jeg få en øl?».',
+        heading: 'vil é querer; “vil gerne” é gostaria',
+        text: 'Como o alemão “will”, o dinamarquês “vil” é antes de tudo querer. “Jeg vil gerne…” é o jeito educado de pedir: “Jeg vil gerne have en kaffe” (eu gostaria de um café). Com um substantivo, diz-se “vil have”: “Jeg vil have is!”. E numa loja ou café, o mais comum é “Kan jeg få…?”: “Kan jeg få en øl?”.',
         examples: [
           ['Jeg vil gerne have en kop kaffe, tak.', 'Eu gostaria de uma xícara de café, por favor.'],
           ['Børnene vil have is.', 'As crianças querem sorvete.'],
@@ -1301,7 +1301,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Os jeitos de falar do futuro',
-        text: '«skal» + infinitivo é para planos e combinados (vou viajar, está marcado). Com um destino, o verbo de movimento pode cair: «Jeg skal til Aarhus i morgen». «vil» + infinitivo é previsão, mais comum no registro escrito e formal: «Det vil regne i morgen». Na fala, a previsão costuma vir com «kommer til at»: «Det kommer til at regne». E o presente com uma expressão de tempo também serve, como no português. «bliver» (fica, vai ser) é o futuro de estados: «Det bliver koldt».',
+        text: '“skal” + infinitivo é para planos e combinados (vou viajar, está marcado). Com um destino, o verbo de movimento pode cair: “Jeg skal til Aarhus i morgen”. “vil” + infinitivo é previsão, mais comum no registro escrito e formal: “Det vil regne i morgen”. Na fala, a previsão costuma vir com “kommer til at”: “Det kommer til at regne”. E o presente com uma expressão de tempo também serve, como no português. “bliver” (fica, vai ser) é o futuro de estados: “Det bliver koldt”.',
         examples: [
           ['Vi skal rejse til Skagen i sommer.', 'Nós vamos viajar para Skagen neste verão.'],
           ['Jeg skal til Aarhus i morgen.', 'Amanhã eu vou para Aarhus.'],
@@ -1312,41 +1312,41 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pôr «at» depois do modal: «Jeg kan at svømme» está errado; é «Jeg kan svømme».',
-      'Usar «må ikke» para «não precisa»: é proibição. «Não precisa» é «behøver ikke».',
-      'Pôr -r no presente do modal: «kanr», «vilr» não existem; é «kan», «vil».',
-      'Achar que «vil» é sempre futuro, como o «will» inglês: «Jeg vil rejse» é, antes de tudo, «eu quero viajar».',
+      'Pôr “at” depois do modal: “Jeg kan at svømme” está errado; é “Jeg kan svømme”.',
+      'Usar “må ikke” para “não precisa”: é proibição. “Não precisa” é “behøver ikke”.',
+      'Pôr -r no presente do modal: “kanr”, “vilr” não existem; é “kan”, “vil”.',
+      'Achar que “vil” é sempre futuro, como o “will” inglês: “Jeg vil rejse” é, antes de tudo, “eu quero viajar”.',
     ],
     quiz: [
       {
-        question: 'Como se diz «Você não pode estacionar aqui» (proibido)?',
+        question: 'Como se diz “Você não pode estacionar aqui” (proibido)?',
         options: ['Du må ikke parkere her.', 'Du behøver ikke parkere her.', 'Du vil ikke parkere her.'],
         answer: 'Du må ikke parkere her.',
-        explanation: '«må ikke» é proibição. «behøver ikke» seria «não precisa».',
+        explanation: '“må ikke” é proibição. “behøver ikke” seria “não precisa”.',
       },
       {
         question: 'Complete: Jeg kan ___ dansk.',
         options: ['tale', 'at tale', 'taler'],
         answer: 'tale',
-        explanation: 'Depois de modal vem o infinitivo sem «at».',
+        explanation: 'Depois de modal vem o infinitivo sem “at”.',
       },
       {
-        question: 'Como se diz «Vai chover amanhã» na fala do dia a dia?',
+        question: 'Como se diz “Vai chover amanhã” na fala do dia a dia?',
         options: ['Det kommer til at regne i morgen.', 'Det skal regne i morgen.', 'Det vil gerne regne i morgen.'],
         answer: 'Det kommer til at regne i morgen.',
-        explanation: 'Previsão na fala: «kommer til at». «Det vil regne» também existe, mais formal.',
+        explanation: 'Previsão na fala: “kommer til at”. “Det vil regne” também existe, mais formal.',
       },
       {
         question: 'Qual é o jeito educado de pedir um café?',
         options: ['Jeg vil gerne have en kaffe.', 'Jeg må have en kaffe.', 'Jeg skal kaffe.'],
         answer: 'Jeg vil gerne have en kaffe.',
-        explanation: '«vil gerne» é o nosso «gostaria».',
+        explanation: '“vil gerne” é o nosso “gostaria”.',
       },
       {
-        question: 'Como se diz «Não estou a fim»?',
+        question: 'Como se diz “Não estou a fim”?',
         options: ['Jeg gider ikke.', 'Jeg må ikke.', 'Jeg bør ikke.'],
         answer: 'Jeg gider ikke.',
-        explanation: '«gide» é ter vontade, estar disposto; muito usado na negação.',
+        explanation: '“gide” é ter vontade, estar disposto; muito usado na negação.',
       },
     ],
   },
@@ -1355,11 +1355,11 @@ export const GRAMMAR_DA: GrammarTopic[] = [
     level: 'B1.1',
     title: 'Imperativo e verbos reflexivos (sætte sig, glæde sig)',
     emoji: '🪑',
-    summary: 'O imperativo é o infinitivo sem o -e final: tal!, spis!, kom! E muitos verbos dinamarqueses são reflexivos, com mig, dig, sig: «Sæt dig!» (sente-se), «Jeg glæder mig!» (mal posso esperar!).',
+    summary: 'O imperativo é o infinitivo sem o -e final: tal!, spis!, kom! E muitos verbos dinamarqueses são reflexivos, com mig, dig, sig: “Sæt dig!” (sente-se), “Jeg glæder mig!” (mal posso esperar!).',
     sections: [
       {
         heading: 'O imperativo: tire o -e',
-        text: 'Pegue o infinitivo e tire o -e final átono: tale → tal, spise → spis. Se o infinitivo não termina em -e átono, fica igual: gå!, se!, bo!. Um m dobrado no fim se simplifica: komme → kom, glemme → glem. O resultado às vezes parece estranho na escrita, como «cykl!» (pedale!, de «cykle»), mas é assim mesmo. A negação vem depois, como em qualquer frase: «Glem det ikke!»; muito comum também é «Lad være med at…» (não faça…). Para suavizar, use «Vær sød at…» (seja gentil e…) ou uma pergunta com «Vil du…?» ou «Kan du…?». O dinamarquês não tem uma palavra que funcione como o nosso «por favor» em todos os casos: o tom e o «tak» fazem esse papel.',
+        text: 'Pegue o infinitivo e tire o -e final átono: tale → tal, spise → spis. Se o infinitivo não termina em -e átono, fica igual: gå!, se!, bo!. Um m dobrado no fim se simplifica: komme → kom, glemme → glem. O resultado às vezes parece estranho na escrita, como “cykl!” (pedale!, de “cykle”), mas é assim mesmo. A negação vem depois, como em qualquer frase: “Glem det ikke!”; muito comum também é “Lad være med at…” (não faça…). Para suavizar, use “Vær sød at…” (seja gentil e…) ou uma pergunta com “Vil du…?” ou “Kan du…?”. O dinamarquês não tem uma palavra que funcione como o nosso “por favor” em todos os casos: o tom e o “tak” fazem esse papel.',
         table: {
           head: ['Infinitivo', 'Imperativo', 'Português'],
           rows: [
@@ -1386,7 +1386,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Os pronomes reflexivos',
-        text: 'O reflexivo é o pronome de objeto, exceto na 3ª pessoa, que usa «sig» (tanto singular quanto plural, e soa «sai»). No presente, o pronome vem logo depois do verbo; com inversão, depois do sujeito: «I dag føler jeg mig godt tilpas».',
+        text: 'O reflexivo é o pronome de objeto, exceto na 3ª pessoa, que usa “sig” (tanto singular quanto plural, e soa “sai”). No presente, o pronome vem logo depois do verbo; com inversão, depois do sujeito: “I dag føler jeg mig godt tilpas”.',
         table: {
           head: ['Pessoa', 'sætte sig (sentar-se)', 'Português'],
           rows: [
@@ -1401,7 +1401,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Reflexivos do dia a dia',
-        text: 'Alguns batem com o português (sentar-se, deitar-se, vestir-se); outros não. «Glæde sig til» é esperar ansioso por algo bom; «hygge sig» é aproveitar com conforto e aconchego, o famoso «hygge» que virou palavra do mundo inteiro; «more sig» é divertir-se. E cuidado: «huske» (lembrar-se) e «vågne» (acordar) NÃO são reflexivos.',
+        text: 'Alguns batem com o português (sentar-se, deitar-se, vestir-se); outros não. “Glæde sig til” é esperar ansioso por algo bom; “hygge sig” é aproveitar com conforto e aconchego, o famoso “hygge” que virou palavra do mundo inteiro; “more sig” é divertir-se. E cuidado: “huske” (lembrar-se) e “vågne” (acordar) NÃO são reflexivos.',
         table: {
           head: ['Dinamarquês', 'Português', 'Exemplo'],
           rows: [
@@ -1426,42 +1426,42 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Deixar o -e no imperativo: «Spise!» é infinitivo; o imperativo é «Spis!».',
-      'Escrever «komm!» com dois m: o m dobrado se simplifica no fim, «kom!».',
-      'Usar o objeto comum na 3ª pessoa: é «Hun sætter sig», não «Hun sætter hende» (isso seria sentar outra mulher).',
-      'Pôr reflexivo onde o português põe: «Jeg husker mig» está errado; é só «Jeg husker».',
-      'Procurar um «por favor» fixo: em dinamarquês, a gentileza vem de «vil du…?», «vær sød at…» e de muitos «tak».',
+      'Deixar o -e no imperativo: “Spise!” é infinitivo; o imperativo é “Spis!”.',
+      'Escrever “komm!” com dois m: o m dobrado se simplifica no fim, “kom!”.',
+      'Usar o objeto comum na 3ª pessoa: é “Hun sætter sig”, não “Hun sætter hende” (isso seria sentar outra mulher).',
+      'Pôr reflexivo onde o português põe: “Jeg husker mig” está errado; é só “Jeg husker”.',
+      'Procurar um “por favor” fixo: em dinamarquês, a gentileza vem de “vil du…?”, “vær sød at…” e de muitos “tak”.',
     ],
     quiz: [
       {
-        question: 'Qual é o imperativo de «spise»?',
+        question: 'Qual é o imperativo de “spise”?',
         options: ['spis!', 'spise!', 'spiser!'],
         answer: 'spis!',
         explanation: 'Imperativo = infinitivo sem o -e final: spis!',
       },
       {
-        question: 'Como se diz «Não esqueça a chave!»?',
+        question: 'Como se diz “Não esqueça a chave!”?',
         options: ['Glem ikke nøglen!', 'Ikke glemme nøglen!', 'Glemmer ikke nøglen!'],
         answer: 'Glem ikke nøglen!',
-        explanation: 'Imperativo (glem) + ikke. Também se diz «Lad være med at glemme nøglen!».',
+        explanation: 'Imperativo (glem) + ikke. Também se diz “Lad være med at glemme nøglen!”.',
       },
       {
         question: 'Complete: Hun føler ___ syg i dag.',
         options: ['sig', 'hende', 'sin'],
         answer: 'sig',
-        explanation: 'Na 3ª pessoa o reflexivo é «sig». «hende» seria outra pessoa.',
+        explanation: 'Na 3ª pessoa o reflexivo é “sig”. “hende” seria outra pessoa.',
       },
       {
-        question: 'Como se diz «Mal posso esperar pelo Natal!»?',
+        question: 'Como se diz “Mal posso esperar pelo Natal!”?',
         options: ['Jeg glæder mig til jul!', 'Jeg glæder til jul!', 'Jeg er glad mig til jul!'],
         answer: 'Jeg glæder mig til jul!',
-        explanation: '«glæde sig til» é esperar ansioso por algo bom, e precisa do reflexivo.',
+        explanation: '“glæde sig til” é esperar ansioso por algo bom, e precisa do reflexivo.',
       },
       {
         question: 'Complete: Vi ___ os i Tivoli. (nos divertimos)',
         options: ['morede', 'morer', 'mores'],
         answer: 'morede',
-        explanation: '«more sig» no pretérito: vi morede os.',
+        explanation: '“more sig” no pretérito: vi morede os.',
       },
     ],
   },
@@ -1469,9 +1469,9 @@ export const GRAMMAR_DA: GrammarTopic[] = [
   {
     id: 'da-g14',
     level: 'B1.2',
-    title: 'Orações subordinadas: o «ikke» antes do verbo e as conjunções',
+    title: 'Orações subordinadas: o “ikke” antes do verbo e as conjunções',
     emoji: '🔗',
-    summary: 'Na oração principal, «ikke» vem depois do verbo: Jeg kan ikke. Na subordinada, ele pula para antes: …at jeg ikke kan. É a regra de ordem mais famosa do dinamarquês, e vale também para aldrig, altid, ofte, kun, gerne, nok, også e måske.',
+    summary: 'Na oração principal, “ikke” vem depois do verbo: Jeg kan ikke. Na subordinada, ele pula para antes: …at jeg ikke kan. É a regra de ordem mais famosa do dinamarquês, e vale também para aldrig, altid, ofte, kun, gerne, nok, også e måske.',
     sections: [
       {
         heading: 'Principal × subordinada',
@@ -1496,7 +1496,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'As conjunções subordinativas',
-        text: 'Todas estas abrem uma subordinada, então todas pedem o «ikke» antes do verbo. Três pares confundem o brasileiro: «hvis» e «om» podem ser «se», mas só «om» serve para a pergunta indireta («não sei se ela vem»); «når» é «quando» para o presente, o futuro e o que se repete, enquanto «da» é «quando» para um fato único do passado; e «fordi» (porque) não é «for» (pois), que é coordenativa. «Selvom» também se escreve «selv om»: as duas grafias valem.',
+        text: 'Todas estas abrem uma subordinada, então todas pedem o “ikke” antes do verbo. Três pares confundem o brasileiro: “hvis” e “om” podem ser “se”, mas só “om” serve para a pergunta indireta (“não sei se ela vem”); “når” é “quando” para o presente, o futuro e o que se repete, enquanto “da” é “quando” para um fato único do passado; e “fordi” (porque) não é “for” (pois), que é coordenativa. “Selvom” também se escreve “selv om”: as duas grafias valem.',
         table: {
           head: ['Conjunção', 'Português', 'Exemplo'],
           rows: [
@@ -1517,7 +1517,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Quando a subordinada vem primeiro, e as coordenativas',
-        text: 'Se a frase começa com a subordinada inteira, ela conta como o primeiro elemento da principal, e aí vem a inversão: verbo, depois sujeito. Na escrita, põe-se vírgula depois da subordinada inicial (essa vírgula é obrigatória). Já as coordenativas (og, men, eller, for, så) ligam duas principais e não mudam a ordem. A mais traiçoeira é «for» (pois): o sentido é parecido com o de «fordi», mas a ordem é de principal.',
+        text: 'Se a frase começa com a subordinada inteira, ela conta como o primeiro elemento da principal, e aí vem a inversão: verbo, depois sujeito. Na escrita, põe-se vírgula depois da subordinada inicial (essa vírgula é obrigatória). Já as coordenativas (og, men, eller, for, så) ligam duas principais e não mudam a ordem. A mais traiçoeira é “for” (pois): o sentido é parecido com o de “fordi”, mas a ordem é de principal.',
         table: {
           head: ['Estrutura', 'Exemplo'],
           rows: [
@@ -1536,42 +1536,42 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Levar a ordem da principal para a subordinada: «…at jeg kan ikke komme». Na escrita e nas provas, o certo é «…at jeg ikke kan komme». (Na fala, depois de «at», os dinamarqueses às vezes usam a outra ordem, mas não a imite no começo.)',
-      'Fazer inversão dentro da subordinada: «…at i morgen rejser jeg» está errado; diga «…at jeg rejser i morgen».',
-      'Esquecer a inversão depois de uma subordinada inicial: «Når jeg kommer hjem, jeg laver mad» está errado; o certo é «…, laver jeg mad».',
-      'Usar «når» para um fato único do passado: «Når jeg var lille…» é erro clássico. Para uma vez só no passado, é «da»: «Da jeg var lille…».',
-      'Usar «hvis» na pergunta indireta: «Jeg ved ikke hvis hun kommer» está errado; aí o «se» é «om»: «Jeg ved ikke om hun kommer».',
+      'Levar a ordem da principal para a subordinada: “…at jeg kan ikke komme”. Na escrita e nas provas, o certo é “…at jeg ikke kan komme”. (Na fala, depois de “at”, os dinamarqueses às vezes usam a outra ordem, mas não a imite no começo.)',
+      'Fazer inversão dentro da subordinada: “…at i morgen rejser jeg” está errado; diga “…at jeg rejser i morgen”.',
+      'Esquecer a inversão depois de uma subordinada inicial: “Når jeg kommer hjem, jeg laver mad” está errado; o certo é “…, laver jeg mad”.',
+      'Usar “når” para um fato único do passado: “Når jeg var lille…” é erro clássico. Para uma vez só no passado, é “da”: “Da jeg var lille…”.',
+      'Usar “hvis” na pergunta indireta: “Jeg ved ikke hvis hun kommer” está errado; aí o “se” é “om”: “Jeg ved ikke om hun kommer”.',
     ],
     quiz: [
       {
         question: 'Complete corretamente: Hun siger at hun ___ .',
         options: ['ikke kan komme', 'kan ikke komme', 'kan komme ikke'],
         answer: 'ikke kan komme',
-        explanation: 'Depois de «at» vem uma subordinada, e nela o «ikke» fica antes do verbo conjugado.',
+        explanation: 'Depois de “at” vem uma subordinada, e nela o “ikke” fica antes do verbo conjugado.',
       },
       {
         question: 'Qual frase está certa?',
         options: ['Da vi kom frem, spiste vi aftensmad.', 'Da vi kom frem, vi spiste aftensmad.', 'Da kom vi frem, spiste vi aftensmad.'],
         answer: 'Da vi kom frem, spiste vi aftensmad.',
-        explanation: 'A subordinada «Da vi kom frem» é o primeiro elemento; por isso a principal inverte: spiste vi.',
+        explanation: 'A subordinada “Da vi kom frem” é o primeiro elemento; por isso a principal inverte: spiste vi.',
       },
       {
-        question: 'Qual conjunção serve para «Não sei SE ela vem»?',
+        question: 'Qual conjunção serve para “Não sei SE ela vem”?',
         options: ['om', 'hvis', 'når'],
         answer: 'om',
-        explanation: 'Na pergunta indireta, o «se» é sempre «om». «Hvis» é o «se» da condição.',
+        explanation: 'Na pergunta indireta, o “se” é sempre “om”. “Hvis” é o “se” da condição.',
       },
       {
         question: 'Qual frase está certa?',
         options: ['Jeg er hjemme, for jeg er ikke rask.', 'Jeg er hjemme, for jeg ikke er rask.', 'Jeg er hjemme fordi jeg er ikke rask.'],
         answer: 'Jeg er hjemme, for jeg er ikke rask.',
-        explanation: '«For» é coordenativa: a segunda oração mantém a ordem de principal. Com «fordi» seria «fordi jeg ikke er rask».',
+        explanation: '“For” é coordenativa: a segunda oração mantém a ordem de principal. Com “fordi” seria “fordi jeg ikke er rask”.',
       },
       {
         question: 'Complete: ___ jeg studerede i Aalborg, boede jeg på et kollegium.',
         options: ['Da', 'Når', 'Hvis'],
         answer: 'Da',
-        explanation: 'É um período único no passado, então o «quando» é «da». «Når» fica para o presente, o futuro e o que se repete.',
+        explanation: 'É um período único no passado, então o “quando” é “da”. “Når” fica para o presente, o futuro e o que se repete.',
       },
     ],
   },
@@ -1580,11 +1580,11 @@ export const GRAMMAR_DA: GrammarTopic[] = [
     level: 'B1.2',
     title: 'Mais-que-perfeito (havde gjort, var gået) e a ordem dos acontecimentos',
     emoji: '⏪',
-    summary: 'O mais-que-perfeito é o «tinha feito» do português: havde + particípio. Com verbos de movimento e de mudança, o dinamarquês usa «var» no lugar de «havde»: Da jeg kom, var toget kørt (quando cheguei, o trem tinha partido).',
+    summary: 'O mais-que-perfeito é o “tinha feito” do português: havde + particípio. Com verbos de movimento e de mudança, o dinamarquês usa “var” no lugar de “havde”: Da jeg kom, var toget kørt (quando cheguei, o trem tinha partido).',
     sections: [
       {
         heading: 'Como se forma: havde ou var',
-        text: 'É o perfeito com o auxiliar no passado: «har» vira «havde», e «er» vira «var». O particípio é o mesmo do perfeito, então quem já sabe «har spist» sabe «havde spist». A maioria dos verbos usa «havde». Mas o dinamarquês, diferente do norueguês de hoje, ainda usa «være» com verbos que indicam deslocamento ou mudança de estado (komme, gå, rejse, køre, blive, dø, falde, begynde, forsvinde): «han er kommet», «hun var rejst».',
+        text: 'É o perfeito com o auxiliar no passado: “har” vira “havde”, e “er” vira “var”. O particípio é o mesmo do perfeito, então quem já sabe “har spist” sabe “havde spist”. A maioria dos verbos usa “havde”. Mas o dinamarquês, diferente do norueguês de hoje, ainda usa “være” com verbos que indicam deslocamento ou mudança de estado (komme, gå, rejse, køre, blive, dø, falde, begynde, forsvinde): “han er kommet”, “hun var rejst”.',
         table: {
           head: ['Infinitivo', 'Passado', 'Perfeito', 'Mais-que-perfeito', 'Português'],
           rows: [
@@ -1608,8 +1608,8 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'Antes, depois e «da»',
-        text: 'O mais-que-perfeito aparece muito com «efter at» (depois que), «før» (antes que) e «da» (quando). Depois de «efter at», o dinamarquês gosta de marcar a ordem com havde: primeiro uma coisa terminou, depois veio a outra. Com «før», a subordinada fica no passado simples e a principal pode ir para o mais-que-perfeito. E lembre: na subordinada, «ikke», «aldrig» e «allerede» ficam antes do «havde» ou do «var».',
+        heading: 'Antes, depois e “da”',
+        text: 'O mais-que-perfeito aparece muito com “efter at” (depois que), “før” (antes que) e “da” (quando). Depois de “efter at”, o dinamarquês gosta de marcar a ordem com havde: primeiro uma coisa terminou, depois veio a outra. Com “før”, a subordinada fica no passado simples e a principal pode ir para o mais-que-perfeito. E lembre: na subordinada, “ikke”, “aldrig” e “allerede” ficam antes do “havde” ou do “var”.',
         table: {
           head: ['Estrutura', 'Exemplo', 'Português'],
           rows: [
@@ -1623,51 +1623,51 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Passado simples ou mais-que-perfeito?',
-        text: 'Se você conta os fatos na ordem em que aconteceram, o passado simples basta: «Jeg stod op, spiste og tog på arbejde». O mais-que-perfeito entra quando você volta no tempo, isto é, quando conta algo que aconteceu ANTES do que acabou de contar. Também aparece no discurso indireto: o que alguém «har gjort» vira «havde gjort» quando você relata no passado.',
+        text: 'Se você conta os fatos na ordem em que aconteceram, o passado simples basta: “Jeg stod op, spiste og tog på arbejde”. O mais-que-perfeito entra quando você volta no tempo, isto é, quando conta algo que aconteceu ANTES do que acabou de contar. Também aparece no discurso indireto: o que alguém “har gjort” vira “havde gjort” quando você relata no passado.',
         examples: [
           ['Jeg stod op, spiste morgenmad og tog på arbejde.', 'Eu levantei, tomei café e fui trabalhar. (em ordem: passado simples)'],
           ['Jeg kom for sent på arbejde. Jeg havde sovet over mig.', 'Cheguei atrasado no trabalho. Eu tinha perdido a hora. (volta no tempo)'],
-          ['»Jeg har været på Bornholm«, sagde hun. → Hun sagde at hun havde været på Bornholm.', '«Eu estive em Bornholm», disse ela. → Ela disse que tinha estado em Bornholm.'],
+          ['”Jeg har været på Bornholm“, sagde hun. → Hun sagde at hun havde været på Bornholm.', '‘Eu estive em Bornholm’, disse ela. → Ela disse que tinha estado em Bornholm.'],
         ],
       },
     ],
     pitfalls: [
-      'Usar o passado simples quando a ordem importa: «Da jeg kom, kørte toget» quer dizer que o trem partiu na hora em que você chegou. Se ele já tinha ido, é «var kørt».',
-      'Usar «havde» com todo verbo de movimento, como no norueguês: «toget havde kørt» soa estranho; o natural é «toget var kørt», «han var gået», «de var rejst».',
-      'Pôr o «ikke» depois do auxiliar na subordinada: «…fordi han havde ikke spist» está errado; o certo é «…fordi han ikke havde spist».',
-      'Trocar o particípio pelo passado: «havde spiste» não existe. Depois do auxiliar vem sempre o particípio: havde spist, var gået, havde skrevet.',
-      'Lembrar que «frokost» em dinamarquês é o almoço; o café da manhã é «morgenmad».',
+      'Usar o passado simples quando a ordem importa: “Da jeg kom, kørte toget” quer dizer que o trem partiu na hora em que você chegou. Se ele já tinha ido, é “var kørt”.',
+      'Usar “havde” com todo verbo de movimento, como no norueguês: “toget havde kørt” soa estranho; o natural é “toget var kørt”, “han var gået”, “de var rejst”.',
+      'Pôr o “ikke” depois do auxiliar na subordinada: “…fordi han havde ikke spist” está errado; o certo é “…fordi han ikke havde spist”.',
+      'Trocar o particípio pelo passado: “havde spiste” não existe. Depois do auxiliar vem sempre o particípio: havde spist, var gået, havde skrevet.',
+      'Lembrar que “frokost” em dinamarquês é o almoço; o café da manhã é “morgenmad”.',
     ],
     quiz: [
       {
         question: 'Complete: Da vi kom i biografen, ___ filmen allerede begyndt.',
         options: ['var', 'har', 'blev'],
         answer: 'var',
-        explanation: '«Begynde» é mudança de estado e costuma levar «være»: er begyndt, var begyndt. O filme começou antes da chegada: mais-que-perfeito.',
+        explanation: '“Begynde” é mudança de estado e costuma levar “være”: er begyndt, var begyndt. O filme começou antes da chegada: mais-que-perfeito.',
       },
       {
-        question: 'Qual é o mais-que-perfeito de «skrive»?',
+        question: 'Qual é o mais-que-perfeito de “skrive”?',
         options: ['havde skrevet', 'havde skrev', 'havde skrivet'],
         answer: 'havde skrevet',
-        explanation: '«Skrive» é forte: skrive, skrev, skrevet. O mais-que-perfeito é havde + skrevet.',
+        explanation: '“Skrive” é forte: skrive, skrev, skrevet. O mais-que-perfeito é havde + skrevet.',
       },
       {
         question: 'Qual frase está certa?',
         options: ['Han var sulten fordi han ikke havde spist.', 'Han var sulten fordi han havde ikke spist.', 'Han var sulten fordi havde han ikke spist.'],
         answer: 'Han var sulten fordi han ikke havde spist.',
-        explanation: 'Depois de «fordi», ordem de subordinada: sujeito, ikke, verbo conjugado (havde).',
+        explanation: 'Depois de “fordi”, ordem de subordinada: sujeito, ikke, verbo conjugado (havde).',
       },
       {
         question: 'Qual frase soa mais natural em dinamarquês?',
         options: ['Da jeg ringede, var hun gået.', 'Da jeg ringede, havde hun gået.', 'Da jeg ringede, har hun gået.'],
         answer: 'Da jeg ringede, var hun gået.',
-        explanation: '«Gå» no sentido de ir embora leva «være»: er gået, var gået.',
+        explanation: '“Gå” no sentido de ir embora leva “være”: er gået, var gået.',
       },
       {
-        question: '»Jeg har mistet min pung«, sagde han. Em discurso indireto no passado fica:',
+        question: '”Jeg har mistet min pung“, sagde han. Em discurso indireto no passado fica:',
         options: ['Han sagde at han havde mistet sin pung.', 'Han sagde at han har mistet hans pung.', 'Han sagde at han mistede havde sin pung.'],
         answer: 'Han sagde at han havde mistet sin pung.',
-        explanation: 'O perfeito recua para o mais-que-perfeito (havde mistet), e a carteira é dele mesmo: «sin».',
+        explanation: 'O perfeito recua para o mais-que-perfeito (havde mistet), e a carteira é dele mesmo: “sin”.',
       },
     ],
   },
@@ -1705,7 +1705,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Onde fica o objeto',
-        text: 'Aqui o dinamarquês é mais rígido que os vizinhos: o objeto, seja substantivo ou pronome, vem ANTES da partícula. O sueco diz «ta på sig jackan», o norueguês aceita «ta på jakka» e «ta jakka på», mas o dinamarquês quer «tage jakken på». Com «ikke» e outros advérbios na oração principal, a ordem é: verbo, sujeito ou advérbio, objeto, partícula.',
+        text: 'Aqui o dinamarquês é mais rígido que os vizinhos: o objeto, seja substantivo ou pronome, vem ANTES da partícula. O sueco diz “ta på sig jackan”, o norueguês aceita “ta på jakka” e “ta jakka på”, mas o dinamarquês quer “tage jakken på”. Com “ikke” e outros advérbios na oração principal, a ordem é: verbo, sujeito ou advérbio, objeto, partícula.',
         table: {
           head: ['Certo', 'Errado', 'Português'],
           rows: [
@@ -1742,7 +1742,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Partícula solta × partícula grudada',
-        text: 'Às vezes a partícula também pode ir grudada no começo do verbo, e aí o sentido costuma ser mais abstrato ou mais formal. «Stå op» é levantar da cama; «opstå» é surgir. «Tage op» é pegar do chão; «optage» é gravar ou ocupar. No particípio usado como adjetivo, a partícula quase sempre gruda: «en afbrudt samtale» (uma conversa interrompida), «den nedlagte fabrik».',
+        text: 'Às vezes a partícula também pode ir grudada no começo do verbo, e aí o sentido costuma ser mais abstrato ou mais formal. “Stå op” é levantar da cama; “opstå” é surgir. “Tage op” é pegar do chão; “optage” é gravar ou ocupar. No particípio usado como adjetivo, a partícula quase sempre gruda: “en afbrudt samtale” (uma conversa interrompida), “den nedlagte fabrik”.',
         table: {
           head: ['Solta', 'Grudada'],
           rows: [
@@ -1760,11 +1760,11 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pôr o objeto depois da partícula, como no sueco: «Tag på jakken» está errado; é «Tag jakken på».',
-      'Esquecer a preposição fixa: «Jeg venter bussen» está errado; é «Jeg venter på bussen».',
-      'Traduzir «pensar em» com «i»: é «tænke på», não «tænke i».',
+      'Pôr o objeto depois da partícula, como no sueco: “Tag på jakken” está errado; é “Tag jakken på”.',
+      'Esquecer a preposição fixa: “Jeg venter bussen” está errado; é “Jeg venter på bussen”.',
+      'Traduzir “pensar em” com “i”: é “tænke på”, não “tænke i”.',
       'Acentuar o verbo em vez da partícula: diga stå OP, tage PÅ; o acento no verbo soa como outra coisa.',
-      'Confundir «se ud» (parecer, pela aparência) com «synes» (achar, opinião): «Du ser glad ud» × «Jeg synes du har ret».',
+      'Confundir “se ud” (parecer, pela aparência) com “synes” (achar, opinião): “Du ser glad ud” × “Jeg synes du har ret”.',
     ],
     quiz: [
       {
@@ -1774,7 +1774,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         explanation: 'No dinamarquês, o objeto vem antes da partícula: tag huen på.',
       },
       {
-        question: 'O que significa «finde ud af»?',
+        question: 'O que significa “finde ud af”?',
         options: ['descobrir, entender', 'sair para achar', 'encontrar alguém fora'],
         answer: 'descobrir, entender',
         explanation: 'É um verbo com partícula e preposição: Jeg kan ikke finde ud af det = não consigo entender isso.',
@@ -1783,19 +1783,19 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         question: 'Complete: Jeg glæder mig ___ at se dig.',
         options: ['til', 'på', 'for'],
         answer: 'til',
-        explanation: '«Glæde sig til» é estar ansioso por algo bom que vai acontecer.',
+        explanation: '“Glæde sig til” é estar ansioso por algo bom que vai acontecer.',
       },
       {
         question: 'Complete: Du ser træt ___ .',
         options: ['ud', 'op', 'på'],
         answer: 'ud',
-        explanation: '«Se ud» = parecer pela aparência.',
+        explanation: '“Se ud” = parecer pela aparência.',
       },
       {
-        question: 'Qual é o sentido de «opstå»?',
+        question: 'Qual é o sentido de “opstå”?',
         options: ['surgir', 'levantar-se da cama', 'ficar de pé'],
         answer: 'surgir',
-        explanation: 'Com a partícula grudada, o sentido fica abstrato: der opstod et problem. Levantar da cama é «stå op».',
+        explanation: 'Com a partícula grudada, o sentido fica abstrato: der opstod et problem. Levantar da cama é “stå op”.',
       },
     ],
   },
@@ -1804,11 +1804,11 @@ export const GRAMMAR_DA: GrammarTopic[] = [
     level: 'B1.3',
     title: 'A voz passiva: o -s e o blive + particípio',
     emoji: '🔄',
-    summary: 'O dinamarquês tem duas passivas: a do -s (Døren lukkes klokken ti) e a com «blive» (Huset blev bygget i 1900). O -s domina no presente, no infinitivo e nas placas; o «blive» domina no passado e fala de um fato concreto. Quem faz a ação entra com «af».',
+    summary: 'O dinamarquês tem duas passivas: a do -s (Døren lukkes klokken ti) e a com “blive” (Huset blev bygget i 1900). O -s domina no presente, no infinitivo e nas placas; o “blive” domina no passado e fala de um fato concreto. Quem faz a ação entra com “af”.',
     sections: [
       {
         heading: 'A passiva com -s',
-        text: 'Acrescenta-se -s ao infinitivo ou ao presente sem o -r: lukke → lukkes, sælge → sælges. É a passiva das regras, dos avisos, das receitas e do que se repete. Depois de modal, o infinitivo também leva -s: skal betales (deve ser pago), kan købes (pode ser comprado). No passado ela existe (bogen læstes), mas soa escrita e formal; na fala, prefira «blev».',
+        text: 'Acrescenta-se -s ao infinitivo ou ao presente sem o -r: lukke → lukkes, sælge → sælges. É a passiva das regras, dos avisos, das receitas e do que se repete. Depois de modal, o infinitivo também leva -s: skal betales (deve ser pago), kan købes (pode ser comprado). No passado ela existe (bogen læstes), mas soa escrita e formal; na fala, prefira “blev”.',
         table: {
           head: ['Ativa', 'Passiva com -s', 'Português'],
           rows: [
@@ -1827,7 +1827,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'A passiva com blive',
-        text: '«Blive» + particípio é a passiva de um acontecimento concreto, sobretudo no passado e no perfeito: blev bygget (foi construído), er blevet solgt (foi vendido). Quem faz a ação entra com «af». O particípio não concorda com o sujeito nessa construção: huset blev malet, husene blev malet.',
+        text: '“Blive” + particípio é a passiva de um acontecimento concreto, sobretudo no passado e no perfeito: blev bygget (foi construído), er blevet solgt (foi vendido). Quem faz a ação entra com “af”. O particípio não concorda com o sujeito nessa construção: huset blev malet, husene blev malet.',
         table: {
           head: ['Tempo', 'Exemplo', 'Português'],
           rows: [
@@ -1839,14 +1839,14 @@ export const GRAMMAR_DA: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['»Den lille havfrue« blev skrevet af H.C. Andersen.', '«A pequena sereia» foi escrito por H. C. Andersen.'],
+          ['”Den lille havfrue“ blev skrevet af H.C. Andersen.', '‘A pequena sereia’ foi escrito por H. C. Andersen.'],
           ['H.C. Andersen blev født i Odense i 1805.', 'H. C. Andersen nasceu em Odense em 1805.'],
           ['Min cykel er blevet stjålet igen!', 'Minha bicicleta foi roubada de novo!'],
         ],
       },
       {
         heading: 'Verbos que terminam em -s sem ser passiva',
-        text: 'Alguns verbos só existem com -s e têm sentido ativo ou recíproco: são os depoentes. «Synes» (achar) é o mais importante de todos. O -s recíproco quer dizer «um ao outro»: vi ses (a gente se vê), vi mødes (a gente se encontra). O passado desses verbos também leva -s: syntes, mødtes, lykkedes.',
+        text: 'Alguns verbos só existem com -s e têm sentido ativo ou recíproco: são os depoentes. “Synes” (achar) é o mais importante de todos. O -s recíproco quer dizer “um ao outro”: vi ses (a gente se vê), vi mødes (a gente se encontra). O passado desses verbos também leva -s: syntes, mødtes, lykkedes.',
         table: {
           head: ['Verbo', 'Passado', 'Português'],
           rows: [
@@ -1869,15 +1869,15 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar o -s no passado da fala como se fosse neutro: «Huset byggedes i 1900» existe, mas soa livro antigo. Diga «Huset blev bygget i 1900».',
-      'Traduzir «por» da voz passiva com «ved» ou «fra»: o agente é sempre «af». Bogen blev skrevet af…',
-      'Tratar «synes» como passiva: «jeg synes» é ativo e quer dizer «eu acho». Não existe «jeg syner».',
-      'Confundir «bliver» passivo com «bliver» de ficar: «Han bliver hjemme» é «ele fica em casa»; «Han bliver hentet» é «ele é buscado».',
-      'Esquecer o -s no infinitivo depois de modal: «Regningen skal betale» diz que a conta vai pagar alguém. O certo é «skal betales».',
+      'Usar o -s no passado da fala como se fosse neutro: “Huset byggedes i 1900” existe, mas soa livro antigo. Diga “Huset blev bygget i 1900”.',
+      'Traduzir “por” da voz passiva com “ved” ou “fra”: o agente é sempre “af”. Bogen blev skrevet af…',
+      'Tratar “synes” como passiva: “jeg synes” é ativo e quer dizer “eu acho”. Não existe “jeg syner”.',
+      'Confundir “bliver” passivo com “bliver” de ficar: “Han bliver hjemme” é “ele fica em casa”; “Han bliver hentet” é “ele é buscado”.',
+      'Esquecer o -s no infinitivo depois de modal: “Regningen skal betale” diz que a conta vai pagar alguém. O certo é “skal betales”.',
     ],
     quiz: [
       {
-        question: 'Como se diz «Vende-se» num anúncio de casa?',
+        question: 'Como se diz “Vende-se” num anúncio de casa?',
         options: ['Sælges', 'Sælger', 'Solgt'],
         answer: 'Sælges',
         explanation: 'É a passiva com -s, típica de anúncios e placas: Hus sælges.',
@@ -1898,13 +1898,13 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         question: 'Qual preposição introduz o agente da passiva?',
         options: ['af', 'fra', 'ved'],
         answer: 'af',
-        explanation: 'Bogen blev skrevet af Karen Blixen: o agente vem sempre com «af».',
+        explanation: 'Bogen blev skrevet af Karen Blixen: o agente vem sempre com “af”.',
       },
       {
-        question: 'O que significa «Vi ses»?',
+        question: 'O que significa “Vi ses”?',
         options: ['A gente se vê', 'Nós somos vistos', 'Nós vimos'],
         answer: 'A gente se vê',
-        explanation: '«Ses» aqui é recíproco (um ao outro), não passivo.',
+        explanation: '“Ses” aqui é recíproco (um ao outro), não passivo.',
       },
     ],
   },
@@ -1917,7 +1917,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
     sections: [
       {
         heading: 'O particípio presente em -ende',
-        text: 'Forma-se com -ende sobre o infinitivo (sem o -e final, quando há): smile → smilende, løbe → løbende, gå → gående. Ele funciona como adjetivo invariável (en sovende kat, et sovende barn) e também vira substantivo: de rejsende (os viajantes), en studerende (um estudante). Com verbos de movimento, descreve como alguém chegou: Hun kom løbende (ela veio correndo). O que ele NÃO faz é o gerúndio do português: «estou lendo» é só «jeg læser».',
+        text: 'Forma-se com -ende sobre o infinitivo (sem o -e final, quando há): smile → smilende, løbe → løbende, gå → gående. Ele funciona como adjetivo invariável (en sovende kat, et sovende barn) e também vira substantivo: de rejsende (os viajantes), en studerende (um estudante). Com verbos de movimento, descreve como alguém chegou: Hun kom løbende (ela veio correndo). O que ele NÃO faz é o gerúndio do português: “estou lendo” é só “jeg læser”.',
         table: {
           head: ['Uso', 'Exemplo', 'Português'],
           rows: [
@@ -1937,7 +1937,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'O particípio passado como adjetivo',
-        text: 'Diante de substantivo, o particípio passado se comporta como adjetivo: forma básica com «en» e «et», -e no plural e na forma definida (den malede dør). Nos verbos fracos em -et, o -et vira -ede: malet → malede. Nos fracos em -t, só se acrescenta -e: købt → købte. Nos fortes, o -et vira -ne: skrevet → skrevne, stjålet → stjålne.',
+        text: 'Diante de substantivo, o particípio passado se comporta como adjetivo: forma básica com “en” e “et”, -e no plural e na forma definida (den malede dør). Nos verbos fracos em -et, o -et vira -ede: malet → malede. Nos fracos em -t, só se acrescenta -e: købt → købte. Nos fortes, o -et vira -ne: skrevet → skrevne, stjålet → stjålne.',
         table: {
           head: ['Particípio', 'en / et', 'Plural e definido', 'Português'],
           rows: [
@@ -1958,7 +1958,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Estado × ação: er lukket, bliver lukket',
-        text: 'Depois de «være», o particípio descreve um estado: Butikken er lukket (a loja está fechada). Depois de «blive», descreve a ação (passiva): Butikken bliver lukket (a loja vai ser fechada). Como predicativo, o particípio pode ficar invariável ou ir para o plural: Butikkerne er lukket / lukkede. Na fala moderna, a forma sem -e é a mais comum.',
+        text: 'Depois de “være”, o particípio descreve um estado: Butikken er lukket (a loja está fechada). Depois de “blive”, descreve a ação (passiva): Butikken bliver lukket (a loja vai ser fechada). Como predicativo, o particípio pode ficar invariável ou ir para o plural: Butikkerne er lukket / lukkede. Na fala moderna, a forma sem -e é a mais comum.',
         examples: [
           ['Museet er lukket om mandagen.', 'O museu fica fechado às segundas.'],
           ['Vinduet er åbent, men døren er låst.', 'A janela está aberta, mas a porta está trancada.'],
@@ -1967,39 +1967,39 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar o -ende como gerúndio: «Jeg er læsende» não existe. «Estou lendo» é «Jeg læser» (ou «Jeg sidder og læser»).',
-      'Esquecer a concordância antes do substantivo: «de malet døre» está errado; é «de malede døre».',
-      'Fazer o plural dos fortes com -ede: «skrevede breve» está errado; é «skrevne breve».',
-      'Confundir «er lukket» (estado) com «bliver lukket» (ação que vai acontecer).',
-      'Esquecer que «åben» (aberto) é adjetivo, não particípio: en åben dør, et åbent vindue, åbne døre.',
+      'Usar o -ende como gerúndio: “Jeg er læsende” não existe. “Estou lendo” é “Jeg læser” (ou “Jeg sidder og læser”).',
+      'Esquecer a concordância antes do substantivo: “de malet døre” está errado; é “de malede døre”.',
+      'Fazer o plural dos fortes com -ede: “skrevede breve” está errado; é “skrevne breve”.',
+      'Confundir “er lukket” (estado) com “bliver lukket” (ação que vai acontecer).',
+      'Esquecer que “åben” (aberto) é adjetivo, não particípio: en åben dør, et åbent vindue, åbne døre.',
     ],
     quiz: [
       {
         question: 'Complete: Politiet fandt de ___ cykler.',
         options: ['stjålne', 'stjålet', 'stjålede'],
         answer: 'stjålne',
-        explanation: '«Stjæle» é forte: no plural e na forma definida, o particípio faz -ne: stjålne.',
+        explanation: '“Stjæle” é forte: no plural e na forma definida, o particípio faz -ne: stjålne.',
       },
       {
-        question: 'Como se diz «uma criança sorridente»?',
+        question: 'Como se diz “uma criança sorridente”?',
         options: ['et smilende barn', 'et smilet barn', 'en smilende barn'],
         answer: 'et smilende barn',
-        explanation: '«Barn» é neutro (et), e o particípio em -ende não muda.',
+        explanation: '“Barn” é neutro (et), e o particípio em -ende não muda.',
       },
       {
-        question: 'Qual forma completa «den ___ dør» (a porta pintada)?',
+        question: 'Qual forma completa “den ___ dør” (a porta pintada)?',
         options: ['malede', 'malet', 'malne'],
         answer: 'malede',
         explanation: 'Verbo fraco em -et: na forma definida o -et vira -ede.',
       },
       {
-        question: 'Como se diz «Estou lendo um livro»?',
+        question: 'Como se diz “Estou lendo um livro”?',
         options: ['Jeg læser en bog.', 'Jeg er læsende en bog.', 'Jeg læsende en bog.'],
         answer: 'Jeg læser en bog.',
-        explanation: 'O dinamarquês não tem gerúndio com «være»: o presente simples já diz «estou lendo».',
+        explanation: 'O dinamarquês não tem gerúndio com “være”: o presente simples já diz “estou lendo”.',
       },
       {
-        question: 'O que significa «de rejsende»?',
+        question: 'O que significa “de rejsende”?',
         options: ['os viajantes', 'as viagens', 'os que ficam em casa'],
         answer: 'os viajantes',
         explanation: 'O particípio em -ende vira substantivo: de rejsende, de studerende.',
@@ -2012,11 +2012,11 @@ export const GRAMMAR_DA: GrammarTopic[] = [
     level: 'B1.4',
     title: 'Comparativo e superlativo (større, størst, mest interessant)',
     emoji: '📏',
-    summary: 'O comparativo leva -ere e o superlativo -est: billig, billigere, billigst. Os campeões de irregularidade são god, bedre, bedst e lille, mindre, mindst. Palavras longas usam «mere» e «mest». O «do que» é «end», e o «tão… quanto» é «lige så… som».',
+    summary: 'O comparativo leva -ere e o superlativo -est: billig, billigere, billigst. Os campeões de irregularidade são god, bedre, bedst e lille, mindre, mindst. Palavras longas usam “mere” e “mest”. O “do que” é “end”, e o “tão… quanto” é “lige så… som”.',
     sections: [
       {
         heading: 'As formas regulares',
-        text: 'A maioria dos adjetivos faz o comparativo com -ere e o superlativo com -est. Os terminados em -ig e -som fazem só -st: billigst, morsomst. Os terminados em -sk ou em -e e os particípios usam «mere» e «mest»: mere praktisk, mest moderne. Os longos e estrangeiros também costumam preferir essa forma: mere interessant. O comparativo não muda com gênero ou número: en større by, et større hus, større byer.',
+        text: 'A maioria dos adjetivos faz o comparativo com -ere e o superlativo com -est. Os terminados em -ig e -som fazem só -st: billigst, morsomst. Os terminados em -sk ou em -e e os particípios usam “mere” e “mest”: mere praktisk, mest moderne. Os longos e estrangeiros também costumam preferir essa forma: mere interessant. O comparativo não muda com gênero ou número: en større by, et større hus, større byer.',
         table: {
           head: ['Positivo', 'Comparativo', 'Superlativo', 'Português'],
           rows: [
@@ -2033,7 +2033,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Os irregulares',
-        text: 'Estes vêm com mudança de vogal ou de raiz e aparecem o tempo todo. Vale decorar como uma cantiga: god, bedre, bedst; lille, mindre, mindst; gammel, ældre, ældst. «Mange» (muitos) e «meget» (muito) também entram aqui.',
+        text: 'Estes vêm com mudança de vogal ou de raiz e aparecem o tempo todo. Vale decorar como uma cantiga: god, bedre, bedst; lille, mindre, mindst; gammel, ældre, ældst. “Mange” (muitos) e “meget” (muito) também entram aqui.',
         table: {
           head: ['Positivo', 'Comparativo', 'Superlativo', 'Português'],
           rows: [
@@ -2057,7 +2057,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Superlativo com artigo, end e lige så… som',
-        text: 'Com artigo (den, det, de) ou possessivo, o superlativo ganha -e: den største by, det højeste punkt, min bedste ven. Depois de «er», sem substantivo, ele fica na forma curta: Han er størst. Para comparar, «end» (do que); para igualar, «lige så … som»; para «quanto mais…, mais…», «jo … desto» ou «jo … jo».',
+        text: 'Com artigo (den, det, de) ou possessivo, o superlativo ganha -e: den største by, det højeste punkt, min bedste ven. Depois de “er”, sem substantivo, ele fica na forma curta: Han er størst. Para comparar, “end” (do que); para igualar, “lige så … som”; para “quanto mais…, mais…”, “jo … desto” ou “jo … jo”.',
         table: {
           head: ['Estrutura', 'Exemplo', 'Português'],
           rows: [
@@ -2077,21 +2077,21 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Juntar «mere» com -ere: «mere billigere» está errado. Ou um, ou outro: billigere, mere praktisk.',
-      'Esquecer o -e depois do artigo: «den størst by» está errado; é «den største by».',
-      'Usar «som» ou «da» no lugar de «end»: «større som» é erro; o «do que» é sempre «end».',
-      'Dizer «godere» e «godest»: o comparativo de «god» é «bedre», e o superlativo, «bedst».',
-      'Pôr artigo antes do superlativo predicativo à toa: «Hvem er den højest?» está errado; ou «Hvem er højest?», ou «Hvem er den højeste?».',
+      'Juntar “mere” com -ere: “mere billigere” está errado. Ou um, ou outro: billigere, mere praktisk.',
+      'Esquecer o -e depois do artigo: “den størst by” está errado; é “den største by”.',
+      'Usar “som” ou “da” no lugar de “end”: “større som” é erro; o “do que” é sempre “end”.',
+      'Dizer “godere” e “godest”: o comparativo de “god” é “bedre”, e o superlativo, “bedst”.',
+      'Pôr artigo antes do superlativo predicativo à toa: “Hvem er den højest?” está errado; ou “Hvem er højest?”, ou “Hvem er den højeste?”.',
     ],
     quiz: [
       {
         question: 'Complete: København er ___ end Odense.',
         options: ['større', 'mere stor', 'størst'],
         answer: 'større',
-        explanation: '«Stor» é irregular: stor, større, størst. Com «end», comparativo.',
+        explanation: '“Stor” é irregular: stor, større, størst. Com “end”, comparativo.',
       },
       {
-        question: 'Qual é o superlativo de «god»?',
+        question: 'Qual é o superlativo de “god”?',
         options: ['bedst', 'godest', 'mest god'],
         answer: 'bedst',
         explanation: 'god, bedre, bedst.',
@@ -2100,19 +2100,19 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         question: 'Complete: Det er den ___ film jeg har set.',
         options: ['bedste', 'bedst', 'bedre'],
         answer: 'bedste',
-        explanation: 'Depois de «den», o superlativo ganha -e.',
+        explanation: 'Depois de “den”, o superlativo ganha -e.',
       },
       {
-        question: 'Como se diz «Ela é tão alta quanto o irmão»?',
+        question: 'Como se diz “Ela é tão alta quanto o irmão”?',
         options: ['Hun er lige så høj som sin bror.', 'Hun er så høj end sin bror.', 'Hun er lige høj end hans bror.'],
         answer: 'Hun er lige så høj som sin bror.',
-        explanation: 'Igualdade: lige så … som. E o irmão é dela: «sin».',
+        explanation: 'Igualdade: lige så … som. E o irmão é dela: “sin”.',
       },
       {
         question: 'Qual forma está certa?',
         options: ['mere praktisk', 'praktiskere', 'mere praktiskere'],
         answer: 'mere praktisk',
-        explanation: 'Adjetivos terminados em -sk fazem o comparativo com «mere», e nunca com os dois juntos.',
+        explanation: 'Adjetivos terminados em -sk fazem o comparativo com “mere”, e nunca com os dois juntos.',
       },
     ],
   },
@@ -2121,11 +2121,11 @@ export const GRAMMAR_DA: GrammarTopic[] = [
     level: 'B1.4',
     title: 'Pronomes relativos (som, der, hvis) e discurso indireto',
     emoji: '💬',
-    summary: '«Som» serve para tudo; «der» só serve de sujeito; «hvis» é o «cujo». Quando o relativo é objeto, dá para apagá-lo: bogen (som) jeg læser. No discurso indireto, os tempos recuam, e o «ikke» vai para antes do verbo. E um detalhe bem dinamarquês: hvem der kommer, hvad der sker.',
+    summary: '“Som” serve para tudo; “der” só serve de sujeito; “hvis” é o “cujo”. Quando o relativo é objeto, dá para apagá-lo: bogen (som) jeg læser. No discurso indireto, os tempos recuam, e o “ikke” vai para antes do verbo. E um detalhe bem dinamarquês: hvem der kommer, hvad der sker.',
     sections: [
       {
         heading: 'Som, der, hvis, hvad e hvor',
-        text: '«Som» é o relativo curinga: sujeito ou objeto, pessoa ou coisa. «Der» é muito usado, mas só como sujeito da relativa: manden der bor her (o homem que mora aqui), nunca «bogen der jeg læser». «Hvis» é o «cujo». «Hvad» é o «o que» depois de «alt»; para retomar uma frase inteira, a escrita usa «hvilket» (o que). Repare também em «den pige som…»: antes de uma relativa que restringe, o dinamarquês pode usar «den» + substantivo sem o artigo final. «Hvor» é o «onde».',
+        text: '“Som” é o relativo curinga: sujeito ou objeto, pessoa ou coisa. “Der” é muito usado, mas só como sujeito da relativa: manden der bor her (o homem que mora aqui), nunca “bogen der jeg læser”. “Hvis” é o “cujo”. “Hvad” é o “o que” depois de “alt”; para retomar uma frase inteira, a escrita usa “hvilket” (o que). Repare também em “den pige som…”: antes de uma relativa que restringe, o dinamarquês pode usar “den” + substantivo sem o artigo final. “Hvor” é o “onde”.',
         table: {
           head: ['Relativo', 'Uso', 'Exemplo', 'Português'],
           rows: [
@@ -2144,8 +2144,8 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'Preposição no fim e o «ikke» na relativa',
-        text: 'Na relativa, a preposição costuma ir para o fim, bem longe do relativo: den pige (som) jeg talte med (a menina com quem falei). É o normal na fala e na escrita. E a relativa é uma subordinada: «ikke», «aldrig» e companhia vêm antes do verbo.',
+        heading: 'Preposição no fim e o “ikke” na relativa',
+        text: 'Na relativa, a preposição costuma ir para o fim, bem longe do relativo: den pige (som) jeg talte med (a menina com quem falei). É o normal na fala e na escrita. E a relativa é uma subordinada: “ikke”, “aldrig” e companhia vêm antes do verbo.',
         table: {
           head: ['Dinamarquês', 'Português'],
           rows: [
@@ -2158,16 +2158,16 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Discurso indireto e perguntas indiretas',
-        text: 'Para relatar o que alguém disse com o verbo no passado (sagde, spurgte), o tempo recua: er → var, har → havde, vil → ville. As perguntas de sim ou não viram «om»; as outras mantêm a palavra interrogativa. Tudo em ordem de subordinada: sem inversão e com o «ikke» antes do verbo. E atenção: quando «hvem» ou «hvad» é o SUJEITO da pergunta indireta, o dinamarquês acrescenta «der»: Jeg ved ikke hvem der kommer.',
+        text: 'Para relatar o que alguém disse com o verbo no passado (sagde, spurgte), o tempo recua: er → var, har → havde, vil → ville. As perguntas de sim ou não viram “om”; as outras mantêm a palavra interrogativa. Tudo em ordem de subordinada: sem inversão e com o “ikke” antes do verbo. E atenção: quando “hvem” ou “hvad” é o SUJEITO da pergunta indireta, o dinamarquês acrescenta “der”: Jeg ved ikke hvem der kommer.',
         table: {
           head: ['Discurso direto', 'Discurso indireto'],
           rows: [
-            ['»Jeg er træt.«', 'Hun sagde at hun var træt.'],
-            ['»Jeg har ikke tid.«', 'Han sagde at han ikke havde tid.'],
-            ['»Kommer du i morgen?«', 'Hun spurgte om jeg kom i morgen.'],
-            ['»Hvor bor du?«', 'Han spurgte hvor jeg boede.'],
-            ['»Hvem kommer?«', 'Hun spurgte hvem der kom.'],
-            ['»Hvad skete der?«', 'Jeg ved ikke hvad der skete.'],
+            ['”Jeg er træt.“', 'Hun sagde at hun var træt.'],
+            ['”Jeg har ikke tid.“', 'Han sagde at han ikke havde tid.'],
+            ['”Kommer du i morgen?“', 'Hun spurgte om jeg kom i morgen.'],
+            ['”Hvor bor du?“', 'Han spurgte hvor jeg boede.'],
+            ['”Hvem kommer?“', 'Hun spurgte hvem der kom.'],
+            ['”Hvad skete der?“', 'Jeg ved ikke hvad der skete.'],
           ],
         },
         examples: [
@@ -2178,39 +2178,39 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar «der» como objeto: «bogen der jeg læser» está errado. Como objeto, use «som» ou apague o relativo: «bogen (som) jeg læser».',
-      'Esquecer o «der» na pergunta indireta com sujeito: «Jeg ved ikke hvem kommer» está errado; é «hvem der kommer».',
-      'Manter a ordem de pergunta no indireto: «Han spurgte hvor boede jeg» está errado; é «hvor jeg boede».',
-      'Traduzir «o que» por «som» depois de «alt»: o certo é «alt hvad du vil» (ou só «alt du vil»).',
-      'Traduzir «cujo» com «som sin»: use «hvis». Manden hvis datter…',
+      'Usar “der” como objeto: “bogen der jeg læser” está errado. Como objeto, use “som” ou apague o relativo: “bogen (som) jeg læser”.',
+      'Esquecer o “der” na pergunta indireta com sujeito: “Jeg ved ikke hvem kommer” está errado; é “hvem der kommer”.',
+      'Manter a ordem de pergunta no indireto: “Han spurgte hvor boede jeg” está errado; é “hvor jeg boede”.',
+      'Traduzir “o que” por “som” depois de “alt”: o certo é “alt hvad du vil” (ou só “alt du vil”).',
+      'Traduzir “cujo” com “som sin”: use “hvis”. Manden hvis datter…',
     ],
     quiz: [
       {
         question: 'Complete: Kvinden ___ bor her, er lærer.',
         options: ['der', 'hvis', 'hvad'],
         answer: 'der',
-        explanation: 'O relativo é sujeito (ela mora aqui), então «der» serve (e «som» também).',
+        explanation: 'O relativo é sujeito (ela mora aqui), então “der” serve (e “som” também).',
       },
       {
         question: 'Qual frase está errada?',
         options: ['Filmen der jeg så, var god.', 'Filmen som jeg så, var god.', 'Filmen jeg så, var god.'],
         answer: 'Filmen der jeg så, var god.',
-        explanation: '«Der» só pode ser sujeito. Como objeto, use «som» ou nada.',
+        explanation: '“Der” só pode ser sujeito. Como objeto, use “som” ou nada.',
       },
       {
         question: 'Complete: Jeg ved ikke hvem ___ har ringet.',
         options: ['der', 'som', 'hvad'],
         answer: 'der',
-        explanation: '«Hvem» é o sujeito da pergunta indireta: o dinamarquês pede «der».',
+        explanation: '“Hvem” é o sujeito da pergunta indireta: o dinamarquês pede “der”.',
       },
       {
-        question: '»Bor du i Odense?« Em discurso indireto:',
+        question: '”Bor du i Odense?“ Em discurso indireto:',
         options: ['Hun spurgte om jeg boede i Odense.', 'Hun spurgte hvis jeg boede i Odense.', 'Hun spurgte om boede jeg i Odense.'],
         answer: 'Hun spurgte om jeg boede i Odense.',
-        explanation: 'Pergunta de sim ou não vira «om», com ordem de subordinada e o tempo recuado.',
+        explanation: 'Pergunta de sim ou não vira “om”, com ordem de subordinada e o tempo recuado.',
       },
       {
-        question: 'Qual palavra traduz «cujo»?',
+        question: 'Qual palavra traduz “cujo”?',
         options: ['hvis', 'hvad', 'hvor'],
         answer: 'hvis',
         explanation: 'Manden hvis bil blev stjålet = o homem cujo carro foi roubado.',
@@ -2223,11 +2223,11 @@ export const GRAMMAR_DA: GrammarTopic[] = [
     level: 'B2.1',
     title: 'Condicional e cortesia: ville, skulle, kunne, burde',
     emoji: '🎩',
-    summary: 'O dinamarquês não tem um tempo condicional próprio: usa o passado dos modais. «Ville» + infinitivo é o nosso futuro do pretérito (jeg ville gerne…), «kunne» suaviza pedidos, «skulle» e «burde» dão conselhos. E o pedido educado mais dinamarquês de todos: Vil du være sød at…?',
+    summary: 'O dinamarquês não tem um tempo condicional próprio: usa o passado dos modais. “Ville” + infinitivo é o nosso futuro do pretérito (jeg ville gerne…), “kunne” suaviza pedidos, “skulle” e “burde” dão conselhos. E o pedido educado mais dinamarquês de todos: Vil du være sød at…?',
     sections: [
       {
         heading: 'Ville + infinitivo: o futuro do pretérito',
-        text: 'O «iria», «faria», «gostaria» do português se diz com «ville» + infinitivo: jeg ville købe (eu compraria), det ville være dejligt (seria ótimo). É também o futuro do passado no discurso indireto: Han sagde at han ville komme (ele disse que viria). «Ville gerne» é o «gostaria»: Jeg ville gerne have en kop kaffe.',
+        text: 'O “iria”, “faria”, “gostaria” do português se diz com “ville” + infinitivo: jeg ville købe (eu compraria), det ville være dejligt (seria ótimo). É também o futuro do passado no discurso indireto: Han sagde at han ville komme (ele disse que viria). “Ville gerne” é o “gostaria”: Jeg ville gerne have en kop kaffe.',
         table: {
           head: ['Dinamarquês', 'Português'],
           rows: [
@@ -2245,7 +2245,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Pedidos educados',
-        text: 'O dinamarquês não tem «por favor» de uma palavra só; a cortesia vem da construção. O mais típico é «Vil du være sød at…?» (você pode fazer a gentileza de…?). «Kunne du…?» é mais suave que «Kan du…?». Em lojas e restaurantes, o «Jeg vil gerne have…» (eu queria…) é o normal, e «Må jeg bede om…?» é o pedido mais formal. E o «lige» deixa tudo mais leve: Kan du lige…?',
+        text: 'O dinamarquês não tem “por favor” de uma palavra só; a cortesia vem da construção. O mais típico é “Vil du være sød at…?” (você pode fazer a gentileza de…?). “Kunne du…?” é mais suave que “Kan du…?”. Em lojas e restaurantes, o “Jeg vil gerne have…” (eu queria…) é o normal, e “Må jeg bede om…?” é o pedido mais formal. E o “lige” deixa tudo mais leve: Kan du lige…?',
         table: {
           head: ['Pedido', 'Tom', 'Português'],
           rows: [
@@ -2265,7 +2265,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Conselhos e obrigações suaves: skulle, burde, måtte',
-        text: '«Burde» é o «deveria» moral: du burde ringe til din mor. «Skulle» no passado dá conselho ou fala de um plano ou de um boato: Du skulle prøve smørrebrød (você devia experimentar), Det skulle være en god film (dizem que é um bom filme). «Kunne» no passado também sugere: Vi kunne tage til stranden (a gente podia ir à praia).',
+        text: '“Burde” é o “deveria” moral: du burde ringe til din mor. “Skulle” no passado dá conselho ou fala de um plano ou de um boato: Du skulle prøve smørrebrød (você devia experimentar), Det skulle være en god film (dizem que é um bom filme). “Kunne” no passado também sugere: Vi kunne tage til stranden (a gente podia ir à praia).',
         table: {
           head: ['Modal', 'Uso', 'Exemplo', 'Português'],
           rows: [
@@ -2284,54 +2284,54 @@ export const GRAMMAR_DA: GrammarTopic[] = [
     ],
     pitfalls: [
       'Procurar uma terminação de condicional no verbo: não existe. É sempre ville/kunne/skulle + infinitivo.',
-      'Achar que «vil» é «querer» e soar mandão: «Jeg vil gerne have…» é o jeito educado e normal de pedir.',
-      'Esquecer o «tak» no fim: como não há «por favor», o «tak» fecha o pedido: En kaffe, tak.',
-      'Traduzir «deveria ter feito» palavra por palavra: é «burde have gjort», com «have» no infinitivo.',
-      'Confundir «skulle» de boato com obrigação: «Han skulle være rig» é «dizem que ele é rico».',
+      'Achar que “vil” é “querer” e soar mandão: “Jeg vil gerne have…” é o jeito educado e normal de pedir.',
+      'Esquecer o “tak” no fim: como não há “por favor”, o “tak” fecha o pedido: En kaffe, tak.',
+      'Traduzir “deveria ter feito” palavra por palavra: é “burde have gjort”, com “have” no infinitivo.',
+      'Confundir “skulle” de boato com obrigação: “Han skulle være rig” é “dizem que ele é rico”.',
     ],
     quiz: [
       {
-        question: 'Como se diz «Seria ótimo»?',
+        question: 'Como se diz “Seria ótimo”?',
         options: ['Det ville være dejligt.', 'Det vil var dejligt.', 'Det skulle dejligt.'],
         answer: 'Det ville være dejligt.',
-        explanation: '«Ville» + infinitivo faz o futuro do pretérito.',
+        explanation: '“Ville” + infinitivo faz o futuro do pretérito.',
       },
       {
         question: 'Qual pedido é o mais gentil?',
         options: ['Vil du være sød at hjælpe mig?', 'Hjælp mig!', 'Du hjælper mig.'],
         answer: 'Vil du være sød at hjælpe mig?',
-        explanation: '«Vil du være sød at…?» é a fórmula clássica de pedido gentil.',
+        explanation: '“Vil du være sød at…?” é a fórmula clássica de pedido gentil.',
       },
       {
         question: 'Complete: Du ___ ringe til din mor. (deveria, dever moral)',
         options: ['burde', 'ville', 'kan'],
         answer: 'burde',
-        explanation: '«Burde» é o «deveria».',
+        explanation: '“Burde” é o “deveria”.',
       },
       {
-        question: 'Como se diz «Eu deveria ter dito isso»?',
+        question: 'Como se diz “Eu deveria ter dito isso”?',
         options: ['Jeg burde have sagt det.', 'Jeg burde sagt det.', 'Jeg burde har sagt det.'],
         answer: 'Jeg burde have sagt det.',
-        explanation: 'Depois do modal vem «have» no infinitivo, e depois o particípio.',
+        explanation: 'Depois do modal vem “have” no infinitivo, e depois o particípio.',
       },
       {
-        question: 'Qual frase quer dizer «Dizem que vai chover amanhã»?',
+        question: 'Qual frase quer dizer “Dizem que vai chover amanhã”?',
         options: ['Det skulle blive regnvejr i morgen.', 'Det burde blive regnvejr i morgen.', 'Det blev regnvejr i går.'],
         answer: 'Det skulle blive regnvejr i morgen.',
-        explanation: '«Skulle» aqui é o boato, a previsão ouvida de alguém. «Burde» seria «deveria chover», uma expectativa.',
+        explanation: '“Skulle” aqui é o boato, a previsão ouvida de alguém. “Burde” seria “deveria chover”, uma expectativa.',
       },
     ],
   },
   {
     id: 'da-g22',
     level: 'B2.1',
-    title: 'Hipóteses: hvis jeg havde…, havde jeg vidst… e os desejos com «gid»',
+    title: 'Hipóteses: hvis jeg havde…, havde jeg vidst… e os desejos com “gid”',
     emoji: '🌠',
-    summary: 'Para imaginar, o dinamarquês recua um tempo: Hvis jeg havde penge, ville jeg rejse (se eu tivesse dinheiro, viajaria). Para o passado que não aconteceu, recua dois: Hvis jeg havde vidst det, var jeg blevet hjemme. Dá para trocar o «hvis» por inversão (Havde jeg vidst det…), e os desejos ganham uma palavrinha própria: gid.',
+    summary: 'Para imaginar, o dinamarquês recua um tempo: Hvis jeg havde penge, ville jeg rejse (se eu tivesse dinheiro, viajaria). Para o passado que não aconteceu, recua dois: Hvis jeg havde vidst det, var jeg blevet hjemme. Dá para trocar o “hvis” por inversão (Havde jeg vidst det…), e os desejos ganham uma palavrinha própria: gid.',
     sections: [
       {
         heading: 'Hipótese no presente: passado + ville',
-        text: 'Na condição imaginária, a subordinada vai para o passado simples (havde, var, kunne, boede), e a principal leva «ville» + infinitivo, ou só o passado. Não existe subjuntivo: «se eu fosse» é simplesmente «hvis jeg var». Compare com a condição real, que fica no presente: Hvis det regner, bliver vi hjemme.',
+        text: 'Na condição imaginária, a subordinada vai para o passado simples (havde, var, kunne, boede), e a principal leva “ville” + infinitivo, ou só o passado. Não existe subjuntivo: “se eu fosse” é simplesmente “hvis jeg var”. Compare com a condição real, que fica no presente: Hvis det regner, bliver vi hjemme.',
         table: {
           head: ['Tipo', 'Exemplo', 'Português'],
           rows: [
@@ -2349,7 +2349,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Hipótese no passado: havde + particípio',
-        text: 'Para o que poderia ter acontecido e não aconteceu, a condição vai para o mais-que-perfeito (hvis jeg havde vidst), e a principal fica com «ville have» + particípio, ou, bem mais comum e mais curto, só o mais-que-perfeito: havde jeg sagt, var jeg kommet. Com verbos de movimento, lembre do «var»: var jeg blevet hjemme.',
+        text: 'Para o que poderia ter acontecido e não aconteceu, a condição vai para o mais-que-perfeito (hvis jeg havde vidst), e a principal fica com “ville have” + particípio, ou, bem mais comum e mais curto, só o mais-que-perfeito: havde jeg sagt, var jeg kommet. Com verbos de movimento, lembre do “var”: var jeg blevet hjemme.',
         table: {
           head: ['Forma', 'Exemplo', 'Português'],
           rows: [
@@ -2365,8 +2365,8 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'Desejos: gid, bare e «jeg ville ønske»',
-        text: 'Para desejos impossíveis ou arrependimentos, três fórmulas. «Gid» (tomara, quem dera) é uma palavra só do dinamarquês e pede o passado: Gid jeg var på ferie! «Bare» + passado é o mesmo, mais coloquial: Bare jeg havde taget en jakke med! E «Jeg ville ønske (at)…» é o «eu queria que…».',
+        heading: 'Desejos: gid, bare e “jeg ville ønske”',
+        text: 'Para desejos impossíveis ou arrependimentos, três fórmulas. “Gid” (tomara, quem dera) é uma palavra só do dinamarquês e pede o passado: Gid jeg var på ferie! “Bare” + passado é o mesmo, mais coloquial: Bare jeg havde taget en jakke med! E “Jeg ville ønske (at)…” é o “eu queria que…”.',
         table: {
           head: ['Dinamarquês', 'Português'],
           rows: [
@@ -2384,42 +2384,42 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar «ville» dentro da oração do «hvis»: «Hvis jeg ville have tid…» está errado; é «Hvis jeg havde tid…».',
-      'Procurar um subjuntivo para «se eu fosse»: é o passado normal, «hvis jeg var».',
-      'Esquecer a inversão na principal depois do «hvis»: «Hvis jeg var rig, jeg ville rejse» está errado; é «…, ville jeg rejse».',
-      'Pôr o «ikke» depois do verbo na oração do «hvis»: «Hvis han havde ikke ringet» está errado; é «Hvis han ikke havde ringet».',
-      'Usar o presente com «gid» para desejo irreal: «Gid jeg er rig» soa errado; é «Gid jeg var rig».',
+      'Usar “ville” dentro da oração do “hvis”: “Hvis jeg ville have tid…” está errado; é “Hvis jeg havde tid…”.',
+      'Procurar um subjuntivo para “se eu fosse”: é o passado normal, “hvis jeg var”.',
+      'Esquecer a inversão na principal depois do “hvis”: “Hvis jeg var rig, jeg ville rejse” está errado; é “…, ville jeg rejse”.',
+      'Pôr o “ikke” depois do verbo na oração do “hvis”: “Hvis han havde ikke ringet” está errado; é “Hvis han ikke havde ringet”.',
+      'Usar o presente com “gid” para desejo irreal: “Gid jeg er rig” soa errado; é “Gid jeg var rig”.',
     ],
     quiz: [
       {
         question: 'Complete: Hvis jeg ___ tid, ville jeg læse mere.',
         options: ['havde', 'har', 'ville have'],
         answer: 'havde',
-        explanation: 'Condição imaginária: passado simples na oração do «hvis».',
+        explanation: 'Condição imaginária: passado simples na oração do “hvis”.',
       },
       {
-        question: 'Como se diz «Se eu fosse você…»?',
+        question: 'Como se diz “Se eu fosse você…”?',
         options: ['Hvis jeg var dig…', 'Hvis jeg er dig…', 'Hvis jeg ville være dig…'],
         answer: 'Hvis jeg var dig…',
-        explanation: 'Sem subjuntivo: o passado simples «var» faz o papel.',
+        explanation: 'Sem subjuntivo: o passado simples “var” faz o papel.',
       },
       {
         question: 'Qual frase está certa?',
         options: ['Havde jeg vidst det, var jeg blevet hjemme.', 'Havde jeg vidst det, jeg var blevet hjemme.', 'Jeg havde vidst det, var jeg blevet hjemme.'],
         answer: 'Havde jeg vidst det, var jeg blevet hjemme.',
-        explanation: 'A inversão «Havde jeg vidst det» substitui o «hvis», e a principal também inverte.',
+        explanation: 'A inversão “Havde jeg vidst det” substitui o “hvis”, e a principal também inverte.',
       },
       {
         question: 'Complete: ___ det var sommer!',
         options: ['Gid', 'Hvis', 'Om'],
         answer: 'Gid',
-        explanation: '«Gid» é o «quem dera» dinamarquês, sempre com o verbo no passado.',
+        explanation: '“Gid” é o “quem dera” dinamarquês, sempre com o verbo no passado.',
       },
       {
         question: 'Qual frase está certa?',
         options: ['Hvis han ikke havde ringet, havde jeg sovet videre.', 'Hvis han havde ikke ringet, havde jeg sovet videre.', 'Hvis han ikke havde ringet, jeg havde sovet videre.'],
         answer: 'Hvis han ikke havde ringet, havde jeg sovet videre.',
-        explanation: '«Ikke» antes do verbo na subordinada, e inversão na principal.',
+        explanation: '“Ikke” antes do verbo na subordinada, e inversão na principal.',
       },
     ],
   },
@@ -2427,13 +2427,13 @@ export const GRAMMAR_DA: GrammarTopic[] = [
   {
     id: 'da-g23',
     level: 'B2.2',
-    title: 'Registro formal: e-mails, repartições e o «De» de antigamente',
+    title: 'Registro formal: e-mails, repartições e o “De” de antigamente',
     emoji: '🏛️',
-    summary: 'A Dinamarca é informal: até a prefeitura escreve «du» para você, e um e-mail de trabalho pode começar com «Hej». O formal dinamarquês está menos no pronome e mais nas fórmulas fixas (Med venlig hilsen, På forhånd tak) e no vocabulário das repartições: kommune, borgerservice, CPR-nummer, sundhedskort.',
+    summary: 'A Dinamarca é informal: até a prefeitura escreve “du” para você, e um e-mail de trabalho pode começar com “Hej”. O formal dinamarquês está menos no pronome e mais nas fórmulas fixas (Med venlig hilsen, På forhånd tak) e no vocabulário das repartições: kommune, borgerservice, CPR-nummer, sundhedskort.',
     sections: [
       {
         heading: 'Du, De e o tom dinamarquês',
-        text: 'Desde a década de 1970, «du» é o tratamento normal com todo mundo: colegas, chefes, médicos, professores e desconhecidos. O «De» (com maiúscula, objeto «Dem», possessivo «Deres») sobrevive em cartas muito cerimoniosas, com pessoas bem idosas que preferem assim e ao falar com a família real. Usar «De» com um colega soa distante ou irônico. A formalidade vem do vocabulário e das fórmulas, não do pronome.',
+        text: 'Desde a década de 1970, “du” é o tratamento normal com todo mundo: colegas, chefes, médicos, professores e desconhecidos. O “De” (com maiúscula, objeto “Dem”, possessivo “Deres”) sobrevive em cartas muito cerimoniosas, com pessoas bem idosas que preferem assim e ao falar com a família real. Usar “De” com um colega soa distante ou irônico. A formalidade vem do vocabulário e das fórmulas, não do pronome.',
         table: {
           head: ['Informal', 'Formal', 'Português'],
           rows: [
@@ -2446,7 +2446,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Anatomia de um e-mail',
-        text: 'A saudação mais segura é «Kære» + nome (Kære Mette), que não é íntima como o nosso «querida»: vale para qualquer um. Entre colegas, «Hej Mette» basta. Não há vírgula obrigatória depois da saudação. A despedida padrão é «Med venlig hilsen» (atenciosamente), abreviada «Mvh» em mensagens rápidas; «Venlig hilsen» e «De bedste hilsner» também servem.',
+        text: 'A saudação mais segura é “Kære” + nome (Kære Mette), que não é íntima como o nosso “querida”: vale para qualquer um. Entre colegas, “Hej Mette” basta. Não há vírgula obrigatória depois da saudação. A despedida padrão é “Med venlig hilsen” (atenciosamente), abreviada “Mvh” em mensagens rápidas; “Venlig hilsen” e “De bedste hilsner” também servem.',
         table: {
           head: ['Parte', 'Fórmula', 'Português'],
           rows: [
@@ -2469,7 +2469,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Nas repartições',
-        text: 'Quem se muda para a Dinamarca passa pela «kommune» (o município) e pelo «Borgerservice» (o atendimento ao cidadão). Lá se recebe o «CPR-nummer» (o número de registro pessoal, que abre todas as portas) e o «sundhedskort», o cartão amarelo da saúde pública, com o nome do seu médico de família (egen læge). A comunicação oficial chega pela caixa postal digital: quase não se usa carta de papel.',
+        text: 'Quem se muda para a Dinamarca passa pela “kommune” (o município) e pelo “Borgerservice” (o atendimento ao cidadão). Lá se recebe o “CPR-nummer” (o número de registro pessoal, que abre todas as portas) e o “sundhedskort”, o cartão amarelo da saúde pública, com o nome do seu médico de família (egen læge). A comunicação oficial chega pela caixa postal digital: quase não se usa carta de papel.',
         table: {
           head: ['Dinamarquês', 'Português'],
           rows: [
@@ -2493,39 +2493,39 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar «De» com o chefe ou com o médico para parecer educado: soa frio ou antiquado. Use «du» e capriche nas fórmulas.',
-      'Traduzir «Kære» como sinal de intimidade: é só a saudação padrão, como o nosso «Prezado».',
-      'Esquecer o gênero das palavras de escritório: «din henvendelse», «dit svar» (et svar), «din ansøgning».',
-      'Fechar o e-mail com «Obrigado e abraços» traduzido ao pé da letra: o padrão é «Med venlig hilsen».',
-      'Escrever «de» minúsculo querendo o formal: o pronome de cortesia é «De», com maiúscula; «de» minúsculo é «eles».',
+      'Usar “De” com o chefe ou com o médico para parecer educado: soa frio ou antiquado. Use “du” e capriche nas fórmulas.',
+      'Traduzir “Kære” como sinal de intimidade: é só a saudação padrão, como o nosso “Prezado”.',
+      'Esquecer o gênero das palavras de escritório: “din henvendelse”, “dit svar” (et svar), “din ansøgning”.',
+      'Fechar o e-mail com “Obrigado e abraços” traduzido ao pé da letra: o padrão é “Med venlig hilsen”.',
+      'Escrever “de” minúsculo querendo o formal: o pronome de cortesia é “De”, com maiúscula; “de” minúsculo é “eles”.',
     ],
     quiz: [
       {
         question: 'Qual é a despedida padrão de um e-mail?',
         options: ['Med venlig hilsen', 'Med kærlig hilsen fra kommunen', 'Farvel og tak for sidst'],
         answer: 'Med venlig hilsen',
-        explanation: '«Med venlig hilsen» (Mvh) é o «atenciosamente».',
+        explanation: '“Med venlig hilsen” (Mvh) é o “atenciosamente”.',
       },
       {
-        question: 'Com quem o «De» ainda aparece?',
+        question: 'Com quem o “De” ainda aparece?',
         options: ['Em cartas muito cerimoniosas', 'Com colegas de trabalho', 'Com o professor da escola'],
         answer: 'Em cartas muito cerimoniosas',
-        explanation: 'No dia a dia, até com chefes e professores, usa-se «du».',
+        explanation: 'No dia a dia, até com chefes e professores, usa-se “du”.',
       },
       {
-        question: 'Como se diz «Segue em anexo…» num e-mail?',
+        question: 'Como se diz “Segue em anexo…” num e-mail?',
         options: ['Vedhæftet finder du…', 'Jeg hæfter dig…', 'Her kommer bilaget…'],
         answer: 'Vedhæftet finder du…',
-        explanation: '«Vedhæftet» = anexado. A fórmula é «Vedhæftet finder du…».',
+        explanation: '“Vedhæftet” = anexado. A fórmula é “Vedhæftet finder du…”.',
       },
       {
         question: 'Complete: Tak for dit hurtige ___ .',
         options: ['svar', 'svaret', 'svare'],
         answer: 'svar',
-        explanation: '«Et svar»: com possessivo e adjetivo, o substantivo fica sem artigo final: dit hurtige svar.',
+        explanation: '“Et svar”: com possessivo e adjetivo, o substantivo fica sem artigo final: dit hurtige svar.',
       },
       {
-        question: 'O que é o «CPR-nummer»?',
+        question: 'O que é o “CPR-nummer”?',
         options: ['o número de registro pessoal', 'o telefone da prefeitura', 'o número do ônibus'],
         answer: 'o número de registro pessoal',
         explanation: 'É o número pessoal que abre as portas da vida na Dinamarca: saúde, banco, trabalho.',
@@ -2537,11 +2537,11 @@ export const GRAMMAR_DA: GrammarTopic[] = [
     level: 'B2.2',
     title: 'Linguagem de escritório: reuniões, prazos e as partículas jo, vel, nok, da, lige',
     emoji: '💼',
-    summary: 'O escritório dinamarquês é plano: todos se chamam pelo nome, o chefe pede opinião e a reunião termina com consenso. Para soar natural nesse ambiente, é preciso dominar as partículas pequenas que o português não tem: jo, vel, nok, da e, acima de todas, «lige».',
+    summary: 'O escritório dinamarquês é plano: todos se chamam pelo nome, o chefe pede opinião e a reunião termina com consenso. Para soar natural nesse ambiente, é preciso dominar as partículas pequenas que o português não tem: jo, vel, nok, da e, acima de todas, “lige”.',
     sections: [
       {
         heading: 'Vocabulário do dia de trabalho',
-        text: 'A jornada costuma acabar cedo, e «fyraften» (a hora de ir embora) é sagrada. O almoço, «frokost», é rápido e muitas vezes em grupo, na cantina. Nas reuniões, há «dagsorden» (pauta) e «referat» (ata). E muita empresa tem a «fredagsbar», o barzinho de sexta à tarde entre colegas.',
+        text: 'A jornada costuma acabar cedo, e “fyraften” (a hora de ir embora) é sagrada. O almoço, “frokost”, é rápido e muitas vezes em grupo, na cantina. Nas reuniões, há “dagsorden” (pauta) e “referat” (ata). E muita empresa tem a “fredagsbar”, o barzinho de sexta à tarde entre colegas.',
         table: {
           head: ['Dinamarquês', 'Português'],
           rows: [
@@ -2566,7 +2566,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'As partículas: jo, vel, nok, da',
-        text: 'Essas palavrinhas não se traduzem direito, mas mudam o tom da frase inteira. Elas ficam na posição do «ikke»: depois do verbo na principal. «Jo» = como você sabe; «vel» = suponho, né?; «nok» = provavelmente; «da» = ora, com certeza (e dá ênfase ou impaciência). «Jo» também é o «sim» que responde a uma pergunta negativa: Kommer du ikke? — Jo!',
+        text: 'Essas palavrinhas não se traduzem direito, mas mudam o tom da frase inteira. Elas ficam na posição do “ikke”: depois do verbo na principal. “Jo” = como você sabe; “vel” = suponho, né?; “nok” = provavelmente; “da” = ora, com certeza (e dá ênfase ou impaciência). “Jo” também é o “sim” que responde a uma pergunta negativa: Kommer du ikke? — Jo!',
         table: {
           head: ['Partícula', 'Tom', 'Exemplo', 'Português'],
           rows: [
@@ -2585,7 +2585,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Lige, bare e godt: a arte de amaciar',
-        text: '«Lige» é a palavra mais dinamarquesa do escritório: deixa qualquer pedido pequeno e simpático (Kan du lige kigge på det?). «Bare» dá permissão sem cerimônia: Tag bare en kop kaffe (pode pegar um café, fica à vontade). E «godt» antes do verbo marca permissão ou capacidade com tom de concessão: Du må godt gå nu (pode ir, tudo bem); Jeg kan godt forstå det (eu entendo, sim).',
+        text: '“Lige” é a palavra mais dinamarquesa do escritório: deixa qualquer pedido pequeno e simpático (Kan du lige kigge på det?). “Bare” dá permissão sem cerimônia: Tag bare en kop kaffe (pode pegar um café, fica à vontade). E “godt” antes do verbo marca permissão ou capacidade com tom de concessão: Du må godt gå nu (pode ir, tudo bem); Jeg kan godt forstå det (eu entendo, sim).',
         table: {
           head: ['Dinamarquês', 'Português'],
           rows: [
@@ -2603,42 +2603,42 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Responder «ja» a uma pergunta negativa: «Kommer du ikke?» — «Ja» fica ambíguo. Para dizer que vem, a resposta é «Jo!».',
-      'Pular as partículas por achar que são enfeite: sem «lige» e «bare», os pedidos soam secos ou mandões.',
-      'Pôr a partícula no lugar errado: ela fica na posição do «ikke»: «Det er jo sandt», e na subordinada antes do verbo: «…fordi han jo er syg».',
-      'Confundir «frokost» com o café da manhã: em dinamarquês, «frokost» é o almoço; café da manhã é «morgenmad».',
-      'Tratar o chefe com formalidade exagerada: no escritório dinamarquês, todos usam o primeiro nome e «du».',
+      'Responder “ja” a uma pergunta negativa: “Kommer du ikke?” — “Ja” fica ambíguo. Para dizer que vem, a resposta é “Jo!”.',
+      'Pular as partículas por achar que são enfeite: sem “lige” e “bare”, os pedidos soam secos ou mandões.',
+      'Pôr a partícula no lugar errado: ela fica na posição do “ikke”: “Det er jo sandt”, e na subordinada antes do verbo: “…fordi han jo er syg”.',
+      'Confundir “frokost” com o café da manhã: em dinamarquês, “frokost” é o almoço; café da manhã é “morgenmad”.',
+      'Tratar o chefe com formalidade exagerada: no escritório dinamarquês, todos usam o primeiro nome e “du”.',
     ],
     quiz: [
       {
-        question: '«Kommer du ikke til mødet?» Como dizer que você VAI?',
+        question: '“Kommer du ikke til mødet?” Como dizer que você VAI?',
         options: ['Jo!', 'Ja!', 'Nej!'],
         answer: 'Jo!',
-        explanation: '«Jo» é o sim que contradiz uma pergunta negativa.',
+        explanation: '“Jo” é o sim que contradiz uma pergunta negativa.',
       },
       {
         question: 'Qual frase é o pedido mais simpático?',
         options: ['Kan du lige hjælpe mig?', 'Hjælp mig.', 'Du skal hjælpe mig.'],
         answer: 'Kan du lige hjælpe mig?',
-        explanation: '«Lige» diminui o pedido: é só um instantinho.',
+        explanation: '“Lige” diminui o pedido: é só um instantinho.',
       },
       {
-        question: 'O que «nok» acrescenta em «Hun kommer nok senere»?',
+        question: 'O que “nok” acrescenta em “Hun kommer nok senere”?',
         options: ['provavelmente', 'suficiente', 'de jeito nenhum'],
         answer: 'provavelmente',
-        explanation: 'Como partícula, «nok» = provavelmente. (Como adjetivo, é «suficiente».)',
+        explanation: 'Como partícula, “nok” = provavelmente. (Como adjetivo, é “suficiente”.)',
       },
       {
-        question: 'O que é «fyraften»?',
+        question: 'O que é “fyraften”?',
         options: ['o fim do expediente', 'o barzinho de sexta', 'a folga de fim de ano'],
         answer: 'o fim do expediente',
-        explanation: '«Holde fyraften» é encerrar o dia de trabalho.',
+        explanation: '“Holde fyraften” é encerrar o dia de trabalho.',
       },
       {
-        question: 'Onde fica o «jo» na frase?',
+        question: 'Onde fica o “jo” na frase?',
         options: ['Vi har jo travlt.', 'Vi jo har travlt.', 'Vi har travlt jo.'],
         answer: 'Vi har jo travlt.',
-        explanation: 'Na principal, a partícula fica logo depois do verbo, como o «ikke».',
+        explanation: 'Na principal, a partícula fica logo depois do verbo, como o “ikke”.',
       },
     ],
   },
@@ -2673,7 +2673,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Corpo, comida e água',
-        text: 'Outro grupo grande usa o corpo e a comida. «Træde i spinaten» (pisar no espinafre) é o «pisar na bola»; «tage benene på nakken» (pôr as pernas no pescoço) é sair correndo. E «gå over åen efter vand» (atravessar o riacho para buscar água) é complicar o que era simples.',
+        text: 'Outro grupo grande usa o corpo e a comida. “Træde i spinaten” (pisar no espinafre) é o “pisar na bola”; “tage benene på nakken” (pôr as pernas no pescoço) é sair correndo. E “gå over åen efter vand” (atravessar o riacho para buscar água) é complicar o que era simples.',
         table: {
           head: ['Expressão', 'Ao pé da letra', 'Sentido'],
           rows: [
@@ -2710,20 +2710,20 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Traduzir ao pé da letra para o português: «ter uma raposa atrás da orelha» não diz nada ao brasileiro. Aprenda o sentido.',
-      'Mexer nas palavras da expressão: é «ingen ko på isen», não «ingen ko på vandet»; expressão idiomática é fixa.',
+      'Traduzir ao pé da letra para o português: “ter uma raposa atrás da orelha” não diz nada ao brasileiro. Aprenda o sentido.',
+      'Mexer nas palavras da expressão: é “ingen ko på isen”, não “ingen ko på vandet”; expressão idiomática é fixa.',
       'Usar expressões demais numa conversa: uma ou duas no lugar certo soam naturais; dez seguidas soam como livro didático.',
-      'Corrigir a «gramática» da expressão: em «så er den ged barberet», «den ged» é «essa cabra», sem o -en final; não diga «geden».',
+      'Corrigir a “gramática” da expressão: em “så er den ged barberet”, “den ged” é “essa cabra”, sem o -en final; não diga “geden”.',
     ],
     quiz: [
       {
-        question: 'Seu colega diz «Der er ingen ko på isen». Ele quer dizer que…',
+        question: 'Seu colega diz “Der er ingen ko på isen”. Ele quer dizer que…',
         options: ['está tudo sob controle', 'faz muito frio', 'a vaca fugiu'],
         answer: 'está tudo sob controle',
-        explanation: '«Não tem vaca no gelo» = não tem problema.',
+        explanation: '“Não tem vaca no gelo” = não tem problema.',
       },
       {
-        question: 'Qual expressão significa «dar uma gafe»?',
+        question: 'Qual expressão significa “dar uma gafe”?',
         options: ['at træde i spinaten', 'at skyde papegøjen', 'at have is i maven'],
         answer: 'at træde i spinaten',
         explanation: 'Pisar no espinafre = pisar na bola.',
@@ -2732,10 +2732,10 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         question: 'O que se diz quando uma tarefa foi concluída?',
         options: ['Så er den ged barberet.', 'Det er ikke mit bord.', 'Der er ingen ko på isen.'],
         answer: 'Så er den ged barberet.',
-        explanation: '«Então a cabra está barbeada» = pronto, está feito.',
+        explanation: '“Então a cabra está barbeada” = pronto, está feito.',
       },
       {
-        question: 'Qual é o equivalente de «matar dois coelhos com uma cajadada»?',
+        question: 'Qual é o equivalente de “matar dois coelhos com uma cajadada”?',
         options: ['at slå to fluer med ét smæk', 'at købe katten i sækken', 'at tage benene på nakken'],
         answer: 'at slå to fluer med ét smæk',
         explanation: 'Em dinamarquês são duas moscas e um tapa.',
@@ -2757,7 +2757,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
     sections: [
       {
         heading: 'Tudo junto, e o fim manda',
-        text: 'Em português, «casa de veraneio» tem três palavras; em dinamarquês, uma só: sommerhus. A última parte é a principal: ela dá o gênero, o plural e a forma definida. A primeira só especifica. Por isso «en bil» + «et værksted» dá «et bilværksted» (uma oficina de carros), neutro como «værksted». Na fala, o acento principal cai na primeira parte: SOMMERhus.',
+        text: 'Em português, “casa de veraneio” tem três palavras; em dinamarquês, uma só: sommerhus. A última parte é a principal: ela dá o gênero, o plural e a forma definida. A primeira só especifica. Por isso “en bil” + “et værksted” dá “et bilværksted” (uma oficina de carros), neutro como “værksted”. Na fala, o acento principal cai na primeira parte: SOMMERhus.',
         table: {
           head: ['Partes', 'Composto', 'Português'],
           rows: [
@@ -2798,7 +2798,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Separado muda o sentido',
-        text: 'Escrever as partes separadas (særskrivning) é o erro de ortografia mais famoso da Dinamarca, porque às vezes cria outra frase. «En engelsklærer» é um professor de inglês; «en engelsk lærer» é um professor inglês. «En storby» é uma metrópole; «en stor by» é só uma cidade grande. Na dúvida, se é um conceito só, escreva junto.',
+        text: 'Escrever as partes separadas (særskrivning) é o erro de ortografia mais famoso da Dinamarca, porque às vezes cria outra frase. “En engelsklærer” é um professor de inglês; “en engelsk lærer” é um professor inglês. “En storby” é uma metrópole; “en stor by” é só uma cidade grande. Na dúvida, se é um conceito só, escreva junto.',
         table: {
           head: ['Junto', 'Separado'],
           rows: [
@@ -2814,33 +2814,33 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Separar as partes como no inglês: «sommer hus», «tand læge» estão errados; é «sommerhus», «tandlæge».',
-      'Pegar o gênero da primeira parte: «en bilværksted» está errado; o fim é «et værksted», então é «et bilværksted».',
+      'Separar as partes como no inglês: “sommer hus”, “tand læge” estão errados; é “sommerhus”, “tandlæge”.',
+      'Pegar o gênero da primeira parte: “en bilværksted” está errado; o fim é “et værksted”, então é “et bilværksted”.',
       'Acentuar a última parte: o acento principal vai na primeira: FØDselsdag, SOMmerhus.',
-      'Esquecer a letra de ligação: «fødseldag» e «arbejdedag» estão errados; é «fødselsdag» e «arbejdsdag».',
-      'Traduzir «de» do português com «af» entre as partes: «en kop af kaffe» não; é «en kop kaffe», e em composto, «en kaffekop» (xícara de café, o objeto).',
+      'Esquecer a letra de ligação: “fødseldag” e “arbejdedag” estão errados; é “fødselsdag” e “arbejdsdag”.',
+      'Traduzir “de” do português com “af” entre as partes: “en kop af kaffe” não; é “en kop kaffe”, e em composto, “en kaffekop” (xícara de café, o objeto).',
     ],
     quiz: [
       {
-        question: 'Qual é o gênero de «sommerhus»?',
+        question: 'Qual é o gênero de “sommerhus”?',
         options: ['et sommerhus', 'en sommerhus', 'den sommerhus'],
         answer: 'et sommerhus',
         explanation: 'O gênero vem da última parte: et hus.',
       },
       {
-        question: 'Como se escreve «aniversário»?',
+        question: 'Como se escreve “aniversário”?',
         options: ['fødselsdag', 'fødseldag', 'fødsels dag'],
         answer: 'fødselsdag',
         explanation: 'Junto e com o -s- de ligação: fødsel + s + dag.',
       },
       {
-        question: 'O que é «en engelsk lærer»?',
+        question: 'O que é “en engelsk lærer”?',
         options: ['um professor inglês', 'um professor de inglês', 'uma aula de inglês'],
         answer: 'um professor inglês',
-        explanation: 'Separado, «engelsk» é adjetivo de nacionalidade. O professor de inglês é «en engelsklærer».',
+        explanation: 'Separado, “engelsk” é adjetivo de nacionalidade. O professor de inglês é “en engelsklærer”.',
       },
       {
-        question: 'Onde cai o acento principal em «tandlæge»?',
+        question: 'Onde cai o acento principal em “tandlæge”?',
         options: ['em tand', 'em læge', 'igual nas duas'],
         answer: 'em tand',
         explanation: 'Nos compostos, o acento principal cai na primeira parte.',
@@ -2849,7 +2849,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         question: 'Qual composto tem o -e- de ligação?',
         options: ['børnehave', 'fodbold', 'arbejdsdag'],
         answer: 'børnehave',
-        explanation: 'børn + e + have. «Fodbold» não tem ligação, e «arbejdsdag» tem -s-.',
+        explanation: 'børn + e + have. “Fodbold” não tem ligação, e “arbejdsdag” tem -s-.',
       },
     ],
   },
@@ -2858,11 +2858,11 @@ export const GRAMMAR_DA: GrammarTopic[] = [
     level: 'B2.3',
     title: 'Hygge, pyt e a gíria: o dinamarquês do dia a dia',
     emoji: '🕯️',
-    summary: '«Hygge» é a palavra dinamarquesa mais famosa do mundo, e ela é substantivo, verbo e adjetivo. Junto com «pyt» (deixa pra lá), as fórmulas de agradecimento (tak for mad, tak for sidst) e a gíria dos jovens (fedt, vildt, nederen), ela mostra o dinamarquês que não está nos livros de gramática.',
+    summary: '“Hygge” é a palavra dinamarquesa mais famosa do mundo, e ela é substantivo, verbo e adjetivo. Junto com “pyt” (deixa pra lá), as fórmulas de agradecimento (tak for mad, tak for sidst) e a gíria dos jovens (fedt, vildt, nederen), ela mostra o dinamarquês que não está nos livros de gramática.',
     sections: [
       {
         heading: 'Hygge: substantivo, verbo e adjetivo',
-        text: '«Hygge» é o aconchego de estar bem com gente querida: velas acesas, café, conversa sem pressa. Não é só coisa de inverno, e não se compra: se faz. A palavra é muito produtiva: «hygge» (o aconchego; é en-ord: hyggen), «at hygge sig» (curtir, ficar de boa), «hyggelig» (aconchegante, agradável) e dezenas de compostos. «Hyggelig» vale para pessoas, lugares e encontros: Det var hyggeligt at se dig (foi muito bom te ver).',
+        text: '“Hygge” é o aconchego de estar bem com gente querida: velas acesas, café, conversa sem pressa. Não é só coisa de inverno, e não se compra: se faz. A palavra é muito produtiva: “hygge” (o aconchego; é en-ord: hyggen), “at hygge sig” (curtir, ficar de boa), “hyggelig” (aconchegante, agradável) e dezenas de compostos. “Hyggelig” vale para pessoas, lugares e encontros: Det var hyggeligt at se dig (foi muito bom te ver).',
         table: {
           head: ['Forma', 'Exemplo', 'Português'],
           rows: [
@@ -2881,12 +2881,12 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Fórmulas que todo dinamarquês usa',
-        text: 'Algumas frases curtas são quase obrigatórias. «Tak for mad» se diz ao levantar da mesa, para quem cozinhou; a resposta é «Velbekomme». «Tak for sidst» (obrigado pela última vez) se diz ao reencontrar alguém com quem você esteve em um evento: esquecer soa mal-educado. E «pyt» é o «deixa pra lá», a arte de não esquentar a cabeça.',
+        text: 'Algumas frases curtas são quase obrigatórias. “Tak for mad” se diz ao levantar da mesa, para quem cozinhou; a resposta é “Velbekomme”. “Tak for sidst” (obrigado pela última vez) se diz ao reencontrar alguém com quem você esteve em um evento: esquecer soa mal-educado. E “pyt” é o “deixa pra lá”, a arte de não esquentar a cabeça.',
         table: {
           head: ['Fórmula', 'Quando', 'Português'],
           rows: [
             ['Tak for mad.', 'ao terminar a refeição', 'Obrigado pela comida.'],
-            ['Velbekomme.', 'resposta ao «tak for mad»', 'Bom proveito, de nada.'],
+            ['Velbekomme.', 'resposta ao “tak for mad”', 'Bom proveito, de nada.'],
             ['Tak for sidst.', 'ao reencontrar alguém', 'Obrigado pelo último encontro.'],
             ['Tak for i dag.', 'ao se despedir no fim do dia', 'Obrigado por hoje.'],
             ['Pyt med det.', 'quando algo dá errado', 'Deixa pra lá.'],
@@ -2901,7 +2901,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'A gíria dos jovens',
-        text: 'A gíria dinamarquesa usa muito intensificadores: vildt (selvagem), sygt (doente) e mega significam «muito» ou «demais». «Fedt» (gordo) é o nosso «legal». «Nederen» é «que chato, que droga». «Gider» (estar a fim, ter saco) aparece o tempo todo, geralmente na negativa. Nos bairros multiculturais de Copenhague e Aarhus, os jovens usam palavras do árabe e do turco, como «wallah» (juro). E «hold kæft» (cala a boca) também serve de «nossa!», mas é vulgar: cuidado onde usar.',
+        text: 'A gíria dinamarquesa usa muito intensificadores: vildt (selvagem), sygt (doente) e mega significam “muito” ou “demais”. “Fedt” (gordo) é o nosso “legal”. “Nederen” é “que chato, que droga”. “Gider” (estar a fim, ter saco) aparece o tempo todo, geralmente na negativa. Nos bairros multiculturais de Copenhague e Aarhus, os jovens usam palavras do árabe e do turco, como “wallah” (juro). E “hold kæft” (cala a boca) também serve de “nossa!”, mas é vulgar: cuidado onde usar.',
         table: {
           head: ['Gíria', 'Sentido', 'Exemplo'],
           rows: [
@@ -2922,42 +2922,42 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Traduzir «hygge» só como «conforto»: é mais social que material. Sozinho com um cobertor também dá, mas a ideia é estar bem, sem pressa e sem tensão.',
-      'Esquecer o «tak for mad» ao sair da mesa: para os dinamarqueses é tão automático quanto dizer «oi».',
-      'Esquecer o «tak for sidst» ao rever o anfitrião da festa da semana passada.',
-      'Usar «hold kæft» com o chefe ou com os sogros: mesmo como «nossa!», é vulgar.',
-      'Concordar «fed» errado: «en fed film», mas «et fedt sted» e «det var fedt».',
+      'Traduzir “hygge” só como “conforto”: é mais social que material. Sozinho com um cobertor também dá, mas a ideia é estar bem, sem pressa e sem tensão.',
+      'Esquecer o “tak for mad” ao sair da mesa: para os dinamarqueses é tão automático quanto dizer “oi”.',
+      'Esquecer o “tak for sidst” ao rever o anfitrião da festa da semana passada.',
+      'Usar “hold kæft” com o chefe ou com os sogros: mesmo como “nossa!”, é vulgar.',
+      'Concordar “fed” errado: “en fed film”, mas “et fedt sted” e “det var fedt”.',
     ],
     quiz: [
       {
         question: 'O que se diz ao levantar da mesa depois do jantar?',
         options: ['Tak for mad.', 'Velbekomme.', 'Skål!'],
         answer: 'Tak for mad.',
-        explanation: '«Tak for mad» agradece a comida; «velbekomme» é a resposta de quem cozinhou.',
+        explanation: '“Tak for mad” agradece a comida; “velbekomme” é a resposta de quem cozinhou.',
       },
       {
         question: 'Você reencontra quem te convidou para um jantar semana passada. O que diz?',
         options: ['Tak for sidst!', 'Tak for mad!', 'Pyt med det!'],
         answer: 'Tak for sidst!',
-        explanation: '«Tak for sidst» agradece o último encontro.',
+        explanation: '“Tak for sidst” agradece o último encontro.',
       },
       {
-        question: 'Qual forma completa «Det var ___ at se dig»?',
+        question: 'Qual forma completa “Det var ___ at se dig”?',
         options: ['hyggeligt', 'hyggelig', 'hygge'],
         answer: 'hyggeligt',
-        explanation: 'Com «det» como sujeito, o adjetivo vai para o neutro: hyggeligt.',
+        explanation: 'Com “det” como sujeito, o adjetivo vai para o neutro: hyggeligt.',
       },
       {
-        question: 'O que significa «Det er så nederen»?',
+        question: 'O que significa “Det er så nederen”?',
         options: ['Que droga', 'Que legal', 'Que frio'],
         answer: 'Que droga',
-        explanation: '«Nederen» é gíria para algo chato, uma pena.',
+        explanation: '“Nederen” é gíria para algo chato, uma pena.',
       },
       {
-        question: 'Como se diz «Não tô a fim»?',
+        question: 'Como se diz “Não tô a fim”?',
         options: ['Jeg gider ikke.', 'Jeg hygger ikke.', 'Jeg pyter ikke.'],
         answer: 'Jeg gider ikke.',
-        explanation: '«Gide» é ter vontade, ter saco, quase sempre na negativa.',
+        explanation: '“Gide” é ter vontade, ter saco, quase sempre na negativa.',
       },
     ],
   },
@@ -2967,11 +2967,11 @@ export const GRAMMAR_DA: GrammarTopic[] = [
     level: 'B2.4',
     title: 'Opinião e argumentação: synes, tror, mener e os conectores',
     emoji: '🗣️',
-    summary: 'O português tem um «achar» para tudo; o dinamarquês tem três: «synes» (gosto, experiência), «tror» (suposição) e «mener» (posição defendida). Para argumentar, os conectores fazem o texto andar: desuden, derimod, til gengæld, alligevel, altså. E, no começo da frase, eles puxam a inversão.',
+    summary: 'O português tem um “achar” para tudo; o dinamarquês tem três: “synes” (gosto, experiência), “tror” (suposição) e “mener” (posição defendida). Para argumentar, os conectores fazem o texto andar: desuden, derimod, til gengæld, alligevel, altså. E, no começo da frase, eles puxam a inversão.',
     sections: [
       {
         heading: 'Synes, tror, mener',
-        text: '«Synes» é a opinião baseada no gosto ou na experiência: Jeg synes maden er god (acho a comida boa, provei). «Tro» é suposição sobre fato que você não sabe: Jeg tror det regner i morgen. «Mene» é a posição que você defende num debate: Jeg mener at skatten er for høj. Trocar um pelo outro soa estranho: «Jeg tror filmen er god» dá a entender que você nem viu.',
+        text: '“Synes” é a opinião baseada no gosto ou na experiência: Jeg synes maden er god (acho a comida boa, provei). “Tro” é suposição sobre fato que você não sabe: Jeg tror det regner i morgen. “Mene” é a posição que você defende num debate: Jeg mener at skatten er for høj. Trocar um pelo outro soa estranho: “Jeg tror filmen er god” dá a entender que você nem viu.',
         table: {
           head: ['Verbo', 'Base', 'Exemplo', 'Português'],
           rows: [
@@ -3008,7 +3008,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Estruturar um texto',
-        text: 'Numa redação ou num debate, as expressões de ordem ajudam o leitor. Todas contam como primeiro elemento e pedem a inversão. Para concordar e discordar com educação, o dinamarquês prefere suavizar: «Det er jeg ikke helt enig i» é bem mais comum que um «não» seco.',
+        text: 'Numa redação ou num debate, as expressões de ordem ajudam o leitor. Todas contam como primeiro elemento e pedem a inversão. Para concordar e discordar com educação, o dinamarquês prefere suavizar: “Det er jeg ikke helt enig i” é bem mais comum que um “não” seco.',
         table: {
           head: ['Função', 'Dinamarquês', 'Português'],
           rows: [
@@ -3027,18 +3027,18 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar «tror» para gosto: «Jeg tror maden er god» diz que você não provou. Se provou, é «synes».',
-      'Esquecer a inversão depois do conector: «Desuden det er billigt» está errado; é «Desuden er det billigt».',
-      'Achar que «altså» é só «então»: na fala, também é um reforço impaciente, como «hein» ou «viu»: Det er altså for meget!',
-      'Confundir «derimod» (contraste) com «desuden» (acréscimo).',
-      'Traduzir «concordo com você» como «jeg enig med dig»: falta o verbo: «Jeg er enig med dig».',
+      'Usar “tror” para gosto: “Jeg tror maden er god” diz que você não provou. Se provou, é “synes”.',
+      'Esquecer a inversão depois do conector: “Desuden det er billigt” está errado; é “Desuden er det billigt”.',
+      'Achar que “altså” é só “então”: na fala, também é um reforço impaciente, como “hein” ou “viu”: Det er altså for meget!',
+      'Confundir “derimod” (contraste) com “desuden” (acréscimo).',
+      'Traduzir “concordo com você” como “jeg enig med dig”: falta o verbo: “Jeg er enig med dig”.',
     ],
     quiz: [
       {
         question: 'Você provou o bolo e gostou. Como diz que o acha bom?',
         options: ['Jeg synes kagen er god.', 'Jeg tror kagen er god.', 'Jeg mener kagen er god.'],
         answer: 'Jeg synes kagen er god.',
-        explanation: 'Opinião baseada na experiência: «synes».',
+        explanation: 'Opinião baseada na experiência: “synes”.',
       },
       {
         question: 'Qual frase está certa?',
@@ -3047,7 +3047,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         explanation: 'O conector ocupa o primeiro lugar, então o verbo vem antes do sujeito.',
       },
       {
-        question: 'Qual conector significa «em compensação»?',
+        question: 'Qual conector significa “em compensação”?',
         options: ['til gengæld', 'desuden', 'derfor'],
         answer: 'til gengæld',
         explanation: 'Det er dyrt. Til gengæld holder det længe.',
@@ -3056,7 +3056,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         question: 'Complete: Det regnede. ___ tog vi til stranden.',
         options: ['Alligevel', 'Derfor', 'Desuden'],
         answer: 'Alligevel',
-        explanation: '«Alligevel» = mesmo assim, apesar disso.',
+        explanation: '“Alligevel” = mesmo assim, apesar disso.',
       },
       {
         question: 'Como se discorda com educação?',
@@ -3069,13 +3069,13 @@ export const GRAMMAR_DA: GrammarTopic[] = [
   {
     id: 'da-g29',
     level: 'B2.4',
-    title: 'Pontuação: a vírgula dinamarquesa, as aspas »…«, datas e números',
+    title: 'Pontuação: a vírgula dinamarquesa, as aspas ”…“, datas e números',
     emoji: '✒️',
-    summary: 'A vírgula dinamarquesa segue a gramática e tem uma escolha: a «startkomma», a vírgula antes de uma subordinada, é opcional desde 2004. Obrigatória é a vírgula DEPOIS da subordinada que abre ou interrompe a frase. As aspas apontam para dentro (»assim«), as datas levam ponto (5. juni) e o milhar também (10.000 kr.).',
+    summary: 'A vírgula dinamarquesa segue a gramática e tem uma escolha: a “startkomma”, a vírgula antes de uma subordinada, é opcional desde 2004. Obrigatória é a vírgula DEPOIS da subordinada que abre ou interrompe a frase. As aspas apontam para dentro (”assim“), as datas levam ponto (5. juni) e o milhar também (10.000 kr.).',
     sections: [
       {
         heading: 'As regras da vírgula',
-        text: 'Há duas maneiras corretas de pontuar: com «startkomma» (vírgula antes de toda subordinada: Jeg tror, at hun kommer) ou sem ela (Jeg tror at hun kommer). As duas são oficiais; o importante é escolher uma e ser coerente no texto. Neste app usamos a sem startkomma. O resto vale para todos: vírgula depois de uma subordinada que abre a frase, vírgula depois de uma subordinada intercalada e vírgula entre duas orações principais, mesmo com «og».',
+        text: 'Há duas maneiras corretas de pontuar: com “startkomma” (vírgula antes de toda subordinada: Jeg tror, at hun kommer) ou sem ela (Jeg tror at hun kommer). As duas são oficiais; o importante é escolher uma e ser coerente no texto. Neste app usamos a sem startkomma. O resto vale para todos: vírgula depois de uma subordinada que abre a frase, vírgula depois de uma subordinada intercalada e vírgula entre duas orações principais, mesmo com “og”.',
         table: {
           head: ['Regra', 'Exemplo'],
           rows: [
@@ -3096,12 +3096,12 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Aspas, diálogo e maiúsculas',
-        text: 'As aspas mais tradicionais apontam para DENTRO: »assim« (o contrário das nossas « »). Também se usa „assim“. O diálogo nos livros costuma vir com travessão. Dias da semana, meses, feriados (jul, påske, grundlovsdag), nacionalidades e línguas vão com minúscula; o «De» formal e o «Dem», com maiúscula. E desde 1948 os substantivos comuns também vão com minúscula (antes eram com maiúscula, como no alemão).',
+        text: 'As aspas mais tradicionais apontam para DENTRO: ”assim“ (o contrário das nossas ‘ ’). Também se usa „assim‘. O diálogo nos livros costuma vir com travessão. Dias da semana, meses, feriados (jul, påske, grundlovsdag), nacionalidades e línguas vão com minúscula; o ‘De’ formal e o ‘Dem’, com maiúscula. E desde 1948 os substantivos comuns também vão com minúscula (antes eram com maiúscula, como no alemão).',
         table: {
           head: ['Uso', 'Exemplo'],
           rows: [
-            ['aspas', 'Hun sagde: »Vi ses i morgen.«'],
-            ['aspas internas', '»Hvad mener han med ›snart‹?« spurgte hun.'],
+            ['aspas', 'Hun sagde: ”Vi ses i morgen.“'],
+            ['aspas internas', '”Hvad mener han med ›snart‹?“ spurgte hun.'],
             ['diálogo', '– Kommer du i aften? spurgte han.'],
             ['minúsculas', 'på mandag, i januar, dansk, brasiliansk, en dansker'],
             ['maiúsculas', 'Danmark, Jylland, Folketinget, Nyhavn'],
@@ -3110,7 +3110,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Datas, horas, números e o genitivo',
-        text: 'O ordinal leva ponto (5. = quinto), então a data é «den 5. juni». A hora usa ponto: kl. 14.30. O decimal é vírgula, como no Brasil, e o milhar é ponto, também como no Brasil: 10.000 kr. O genitivo é -s sem apóstrofo (Danmarks, Mettes); só os nomes terminados em s, x ou z levam apóstrofo: Lars’ cykel, Jens’ hus.',
+        text: 'O ordinal leva ponto (5. = quinto), então a data é “den 5. juni”. A hora usa ponto: kl. 14.30. O decimal é vírgula, como no Brasil, e o milhar é ponto, também como no Brasil: 10.000 kr. O genitivo é -s sem apóstrofo (Danmarks, Mettes); só os nomes terminados em s, x ou z levam apóstrofo: Lars’ cykel, Jens’ hus.',
         table: {
           head: ['Uso', 'Dinamarquês', 'Português'],
           rows: [
@@ -3129,11 +3129,11 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Misturar os dois sistemas no mesmo texto: se usou startkomma uma vez («Jeg tror, at…»), use em todas as subordinadas.',
-      'Esquecer a vírgula depois da subordinada inicial: «Når jeg kommer hjem laver jeg mad» está errado; essa vírgula é obrigatória nos dois sistemas.',
-      'Escrever meses e dias com maiúscula: «Mandag», «Januar» só no começo da frase.',
-      'Pôr apóstrofo no genitivo comum: «Mette’s bog» é anglicismo; o certo é «Mettes bog».',
-      'Usar as aspas viradas para fora, como no Brasil: no estilo dinamarquês tradicional, elas apontam para dentro: »sådan«.',
+      'Misturar os dois sistemas no mesmo texto: se usou startkomma uma vez (“Jeg tror, at…”), use em todas as subordinadas.',
+      'Esquecer a vírgula depois da subordinada inicial: “Når jeg kommer hjem laver jeg mad” está errado; essa vírgula é obrigatória nos dois sistemas.',
+      'Escrever meses e dias com maiúscula: “Mandag”, “Januar” só no começo da frase.',
+      'Pôr apóstrofo no genitivo comum: “Mette’s bog” é anglicismo; o certo é “Mettes bog”.',
+      'Usar as aspas viradas para fora, como no Brasil: no estilo dinamarquês tradicional, elas apontam para dentro: ”sådan“.',
     ],
     quiz: [
       {
@@ -3146,7 +3146,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         question: 'Qual frase está certa em dinamarquês?',
         options: ['Jeg tror, at du har ret.', 'Jeg tror at, du har ret.', 'Jeg, tror at du har ret.'],
         answer: 'Jeg tror, at du har ret.',
-        explanation: 'Com startkomma, a vírgula antes de «at» é correta. Sem startkomma, também valeria «Jeg tror at du har ret».',
+        explanation: 'Com startkomma, a vírgula antes de “at” é correta. Sem startkomma, também valeria “Jeg tror at du har ret”.',
       },
       {
         question: 'Como se escreve o Dia da Constituição?',
@@ -3155,13 +3155,13 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         explanation: 'Ordinal com ponto e mês com minúscula.',
       },
       {
-        question: 'Qual é o genitivo certo de «Mette»?',
+        question: 'Qual é o genitivo certo de “Mette”?',
         options: ['Mettes bog', 'Mette’s bog', 'Mettes’ bog'],
         answer: 'Mettes bog',
         explanation: 'O genitivo é -s sem apóstrofo; só nomes terminados em s, x, z levam apóstrofo.',
       },
       {
-        question: 'Como se escreve «dez mil coroas» em dinamarquês?',
+        question: 'Como se escreve “dez mil coroas” em dinamarquês?',
         options: ['10.000 kr.', '10,000 kr.', '10:000 kr.'],
         answer: '10.000 kr.',
         explanation: 'O milhar leva ponto e o decimal leva vírgula, como no Brasil.',
@@ -3174,11 +3174,11 @@ export const GRAMMAR_DA: GrammarTopic[] = [
     level: 'C1.1',
     title: 'Rigsdansk e os dialetos: jysk, fynsk, sønderjysk e bornholmsk',
     emoji: '🗺️',
-    summary: 'A Dinamarca é pequena, mas já teve dialetos bem diferentes entre si: o «æ hus» (a casa) do oeste da Jutlândia, o falar cantado da Fiônia, o sønderjysk da fronteira e o bornholmsk com três gêneros. No século XX, o dinamarquês de Copenhague se espalhou pelo país, e hoje o ouvido precisa reconhecer mais os sotaques regionais do que dialetos inteiros.',
+    summary: 'A Dinamarca é pequena, mas já teve dialetos bem diferentes entre si: o “æ hus” (a casa) do oeste da Jutlândia, o falar cantado da Fiônia, o sønderjysk da fronteira e o bornholmsk com três gêneros. No século XX, o dinamarquês de Copenhague se espalhou pelo país, e hoje o ouvido precisa reconhecer mais os sotaques regionais do que dialetos inteiros.',
     sections: [
       {
         heading: 'O padrão vem da capital',
-        text: 'O dinamarquês padrão falado (rigsdansk) nasceu da fala culta de Copenhague e das cidades próximas. Com a escola obrigatória, o rádio, a televisão e a migração para as cidades, ele avançou sobre o país inteiro ao longo do século XX, e os dialetos tradicionais recuaram muito mais depressa do que na Noruega. Hoje quase todo dinamarquês fala o padrão com algum sotaque regional (regionalsprog), e os dialetos «de verdade» vivem sobretudo entre os mais velhos e no campo. Diferente da Noruega, falar dialeto na televisão ainda chama a atenção.',
+        text: 'O dinamarquês padrão falado (rigsdansk) nasceu da fala culta de Copenhague e das cidades próximas. Com a escola obrigatória, o rádio, a televisão e a migração para as cidades, ele avançou sobre o país inteiro ao longo do século XX, e os dialetos tradicionais recuaram muito mais depressa do que na Noruega. Hoje quase todo dinamarquês fala o padrão com algum sotaque regional (regionalsprog), e os dialetos “de verdade” vivem sobretudo entre os mais velhos e no campo. Diferente da Noruega, falar dialeto na televisão ainda chama a atenção.',
         examples: [
           ['Rigsdansk bygger især på det sprog, man taler i København.', 'O rigsdansk se baseia sobretudo na língua falada em Copenhague.'],
           ['Dialekterne er gået meget tilbage i løbet af det 20. århundrede.', 'Os dialetos recuaram muito ao longo do século XX.'],
@@ -3187,27 +3187,27 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Os três grandes grupos',
-        text: 'Os dialetólogos dividem o dinamarquês em três blocos: o jysk (Jutlândia, a península ligada à Alemanha), o ømål (as ilhas: Fiônia, Zelândia, Lolland-Falster) e o østdansk (Bornholm e, historicamente, a Escânia, hoje sueca, que foi dinamarquesa até 1658). Alguns traços são famosos. No oeste e no sul da Jutlândia, o artigo definido vem ANTES do substantivo, como em português: «æ hus» em vez de «huset». O sønderjysk e o bornholmsk não têm stød. O fynsk é conhecido pela entonação cantada. E o velho bornholmsk mantém três gêneros, como o norueguês.',
+        text: 'Os dialetólogos dividem o dinamarquês em três blocos: o jysk (Jutlândia, a península ligada à Alemanha), o ømål (as ilhas: Fiônia, Zelândia, Lolland-Falster) e o østdansk (Bornholm e, historicamente, a Escânia, hoje sueca, que foi dinamarquesa até 1658). Alguns traços são famosos. No oeste e no sul da Jutlândia, o artigo definido vem ANTES do substantivo, como em português: “æ hus” em vez de “huset”. O sønderjysk e o bornholmsk não têm stød. O fynsk é conhecido pela entonação cantada. E o velho bornholmsk mantém três gêneros, como o norueguês.',
         table: {
           head: ['Dialeto', 'Onde', 'Traços', 'Exemplo'],
           rows: [
-            ['vestjysk', 'oeste da Jutlândia', 'artigo antes do substantivo; «a» por «jeg»', 'æ hus (huset), a (jeg)'],
+            ['vestjysk', 'oeste da Jutlândia', 'artigo antes do substantivo; “a” por “jeg”', 'æ hus (huset), a (jeg)'],
             ['østjysk', 'leste da Jutlândia (Aarhus)', 'mais perto do padrão, com melodia própria', 'regionalsprog de Aarhus'],
             ['sønderjysk', 'sul da Jutlândia, perto da fronteira', 'artigo antes do substantivo; sem stød', 'æ hus (huset)'],
-            ['fynsk', 'Fiônia (Odense)', 'entonação «cantada», vogais próprias', 'o fynbo «synger»'],
+            ['fynsk', 'Fiônia (Odense)', 'entonação “cantada”, vogais próprias', 'o fynbo “synger”'],
             ['sjællandsk', 'Zelândia', 'a base do padrão', 'próximo do rigsdansk'],
-            ['bornholmsk', 'Bornholm', 'três gêneros; sem stød; perto do sueco do sul', 'soa «meio sueco» aos dinamarqueses'],
+            ['bornholmsk', 'Bornholm', 'três gêneros; sem stød; perto do sueco do sul', 'soa “meio sueco” aos dinamarqueses'],
           ],
         },
         examples: [
-          ['I Vestjylland siger man «æ hus» i stedet for «huset».', 'No oeste da Jutlândia, diz-se «æ hus» em vez de «huset».'],
+          ['I Vestjylland siger man “æ hus” i stedet for “huset”.', 'No oeste da Jutlândia, diz-se “æ hus” em vez de “huset”.'],
           ['Den gamle bornholmske dialekt har tre køn.', 'O velho dialeto de Bornholm tem três gêneros.'],
           ['Hun er fra Odense, og man kan høre det på melodien.', 'Ela é de Odense, e dá para ouvir isso na melodia.'],
         ],
       },
       {
         heading: 'O jeito jutlandês de falar',
-        text: 'A Jutlândia tem fama de gente de poucas palavras e de eufemismo: o elogio máximo pode ser «det er ikke så ringe endda» (literalmente, «não é tão ruim assim»). Em Copenhague se fala mais rápido, com mais vogais reduzidas e consoantes engolidas. Essas diferenças alimentam piadas e estereótipos (københavner × jyde) tanto quanto as diferenças de dialeto propriamente ditas.',
+        text: 'A Jutlândia tem fama de gente de poucas palavras e de eufemismo: o elogio máximo pode ser “det er ikke så ringe endda” (literalmente, “não é tão ruim assim”). Em Copenhague se fala mais rápido, com mais vogais reduzidas e consoantes engolidas. Essas diferenças alimentam piadas e estereótipos (københavner × jyde) tanto quanto as diferenças de dialeto propriamente ditas.',
         examples: [
           ['Det er ikke så ringe endda.', 'Não está nada mal. (o elogio contido da Jutlândia)'],
           ['Københavnerne taler hurtigt og sluger mange lyde.', 'Os copenhaguenses falam rápido e engolem muitos sons.'],
@@ -3216,7 +3216,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Sønderjylland: a fronteira que mudou',
-        text: 'Depois da guerra de 1864, o sul da Jutlândia (Slesvig) passou para a Prússia, e depois para a Alemanha. Em 1920, um plebiscito dividiu a região: o norte voltou para a Dinamarca (a Genforeningen, a «reunificação»), e o sul ficou alemão. O sønderjysk foi, nesse tempo, uma marca de identidade dinamarquesa, e ainda hoje é um dos dialetos mais vivos do país.',
+        text: 'Depois da guerra de 1864, o sul da Jutlândia (Slesvig) passou para a Prússia, e depois para a Alemanha. Em 1920, um plebiscito dividiu a região: o norte voltou para a Dinamarca (a Genforeningen, a “reunificação”), e o sul ficou alemão. O sønderjysk foi, nesse tempo, uma marca de identidade dinamarquesa, e ainda hoje é um dos dialetos mais vivos do país.',
         examples: [
           ['Sønderjylland hørte til Tyskland fra 1864 til 1920.', 'O sul da Jutlândia pertenceu à Alemanha de 1864 a 1920.'],
           ['Genforeningen i 1920 fejres stadig i Sønderjylland.', 'A reunificação de 1920 ainda é celebrada no sul da Jutlândia.'],
@@ -3225,17 +3225,17 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Achar que o dinamarquês «de verdade» é o do campo: o padrão é a fala de Copenhague, e os dialetos tradicionais hoje são minoria.',
-      'Estranhar «æ hus»: no dialeto do oeste da Jutlândia o artigo vem antes; no padrão, a forma definida é pospositiva (huset). Não misture os dois ao escrever.',
+      'Achar que o dinamarquês “de verdade” é o do campo: o padrão é a fala de Copenhague, e os dialetos tradicionais hoje são minoria.',
+      'Estranhar “æ hus”: no dialeto do oeste da Jutlândia o artigo vem antes; no padrão, a forma definida é pospositiva (huset). Não misture os dois ao escrever.',
       'Confundir sotaque regional (regionalsprog) com dialeto: quem é de Aarhus fala rigsdansk com melodia de Aarhus, não jysk tradicional.',
-      'Levar ao pé da letra o «ikke så ringe»: na boca de um jutlandês, costuma ser um elogio caloroso.',
+      'Levar ao pé da letra o “ikke så ringe”: na boca de um jutlandês, costuma ser um elogio caloroso.',
     ],
     quiz: [
       {
-        question: 'Em que dialeto o artigo definido vem antes do substantivo («æ hus»)?',
+        question: 'Em que dialeto o artigo definido vem antes do substantivo (“æ hus”)?',
         options: ['vestjysk', 'sjællandsk', 'københavnsk'],
         answer: 'vestjysk',
-        explanation: 'No oeste (e no sul) da Jutlândia, «æ hus» = huset. No padrão, o artigo definido é um sufixo.',
+        explanation: 'No oeste (e no sul) da Jutlândia, “æ hus” = huset. No padrão, o artigo definido é um sufixo.',
       },
       {
         question: 'Qual dialeto conserva três gêneros?',
@@ -3256,10 +3256,10 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         explanation: '1864 é o ano da perda para a Prússia; 1920, o do plebiscito e da Genforeningen; 1658, o da perda da Escânia.',
       },
       {
-        question: 'Um jutlandês diz sobre o seu jantar: «Det er ikke så ringe endda.» Ele…',
+        question: 'Um jutlandês diz sobre o seu jantar: “Det er ikke så ringe endda.” Ele…',
         options: ['gostou muito', 'odiou', 'ficou com fome'],
         answer: 'gostou muito',
-        explanation: 'O eufemismo jutlandês: «não é tão ruim assim» costuma querer dizer «está ótimo».',
+        explanation: 'O eufemismo jutlandês: “não é tão ruim assim” costuma querer dizer “está ótimo”.',
       },
     ],
   },
@@ -3268,7 +3268,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
     level: 'C1.1',
     title: 'Nabosprog: dinamarquês, norueguês e sueco lado a lado',
     emoji: '🤝',
-    summary: 'Dinamarqueses, noruegueses e suecos conversam cada um na sua língua e se entendem (quase sempre). A escrita dinamarquesa e a norueguesa (bokmål) são primas de primeiro grau; o sueco é mais distante na grafia, mas o grande obstáculo é a pronúncia dinamarquesa. E há falsos amigos entre os vizinhos: «rolig», «rar», «frokost».',
+    summary: 'Dinamarqueses, noruegueses e suecos conversam cada um na sua língua e se entendem (quase sempre). A escrita dinamarquesa e a norueguesa (bokmål) são primas de primeiro grau; o sueco é mais distante na grafia, mas o grande obstáculo é a pronúncia dinamarquesa. E há falsos amigos entre os vizinhos: “rolig”, “rar”, “frokost”.',
     sections: [
       {
         heading: 'Cada um fala a sua língua',
@@ -3281,7 +3281,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'A escrita: dinamarquês e bokmål quase iguais',
-        text: 'Por quatro séculos, a Noruega escreveu em dinamarquês, e o bokmål nasceu dessa escrita. Por isso, um texto dinamarquês e um texto em bokmål se parecem muito: a diferença mais visível está nas consoantes depois de vogal longa (dinamarquês b, d, g × norueguês p, t, k), nas consoantes duplas e em alguns pronomes. O sueco tem ortografia própria: ä e ö no lugar de æ e ø, «och» por «og», «inte» por «ikke», «jag» por «jeg».',
+        text: 'Por quatro séculos, a Noruega escreveu em dinamarquês, e o bokmål nasceu dessa escrita. Por isso, um texto dinamarquês e um texto em bokmål se parecem muito: a diferença mais visível está nas consoantes depois de vogal longa (dinamarquês b, d, g × norueguês p, t, k), nas consoantes duplas e em alguns pronomes. O sueco tem ortografia própria: ä e ö no lugar de æ e ø, “och” por “og”, “inte” por “ikke”, “jag” por “jeg”.',
         table: {
           head: ['Dinamarquês', 'Norueguês (bokmål)', 'Sueco', 'Português'],
           rows: [
@@ -3297,14 +3297,14 @@ export const GRAMMAR_DA: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['Hvad hedder du?', 'Como você se chama? (em norueguês: «Hva heter du?»)'],
+          ['Hvad hedder du?', 'Como você se chama? (em norueguês: “Hva heter du?”)'],
           ['Jeg har ikke tid i dag.', 'Não tenho tempo hoje.'],
           ['Bogen ligger på bordet.', 'O livro está em cima da mesa.'],
         ],
       },
       {
         heading: 'A fala: o dinamarquês é o mais difícil',
-        text: 'Na escrita, o dinamarquês é transparente para um norueguês; na fala, não. O dinamarquês reduz vogais, amolece o d (gade soa quase «gæ-ðe»), engole consoantes e tem o stød. Por isso, pesquisas de compreensão mostram um padrão constante: os noruegueses são os que melhor entendem os dois vizinhos, e dinamarqueses e suecos são os que têm mais dificuldade de se entender na fala. Para ser entendido por um sueco, o dinamarquês costuma falar mais devagar, articular melhor e trocar números e palavras traiçoeiras.',
+        text: 'Na escrita, o dinamarquês é transparente para um norueguês; na fala, não. O dinamarquês reduz vogais, amolece o d (gade soa quase “gæ-ðe”), engole consoantes e tem o stød. Por isso, pesquisas de compreensão mostram um padrão constante: os noruegueses são os que melhor entendem os dois vizinhos, e dinamarqueses e suecos são os que têm mais dificuldade de se entender na fala. Para ser entendido por um sueco, o dinamarquês costuma falar mais devagar, articular melhor e trocar números e palavras traiçoeiras.',
         examples: [
           ['Kan du tale lidt langsommere?', 'Você pode falar um pouco mais devagar?'],
           ['Nordmænd forstår som regel både dansk og svensk ret godt.', 'Os noruegueses em geral entendem bem tanto o dinamarquês quanto o sueco.'],
@@ -3317,12 +3317,12 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         table: {
           head: ['Palavra', 'Em dinamarquês', 'No vizinho'],
           rows: [
-            ['rolig', 'calmo, tranquilo', 'sueco «rolig»: engraçado, divertido'],
-            ['rar', 'gentil, simpático', 'norueguês «rar»: estranho; sueco «rar»: fofo'],
-            ['frokost', 'almoço', 'norueguês «frokost» e sueco «frukost»: café da manhã'],
-            ['grine', 'rir', 'norueguês «grine» (coloquial): chorar'],
-            ['semester', 'semestre letivo', 'sueco «semester»: férias'],
-            ['glas', 'copo, vidro', 'sueco «glass»: sorvete'],
+            ['rolig', 'calmo, tranquilo', 'sueco “rolig”: engraçado, divertido'],
+            ['rar', 'gentil, simpático', 'norueguês “rar”: estranho; sueco “rar”: fofo'],
+            ['frokost', 'almoço', 'norueguês “frokost” e sueco “frukost”: café da manhã'],
+            ['grine', 'rir', 'norueguês “grine” (coloquial): chorar'],
+            ['semester', 'semestre letivo', 'sueco “semester”: férias'],
+            ['glas', 'copo, vidro', 'sueco “glass”: sorvete'],
           ],
         },
         examples: [
@@ -3333,29 +3333,29 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Chamar um sueco para um «frokost» às 8 da manhã: na Dinamarca, frokost é o almoço; o café da manhã é «morgenmad».',
-      'Elogiar um norueguês dizendo que ele é «rar»: em norueguês, isso quer dizer «esquisito».',
-      'Misturar grafias: «jag», «inte» e «och» são suecos; «hva» e «ikkje» são noruegueses. Em dinamarquês: jeg, ikke, og, hvad.',
+      'Chamar um sueco para um “frokost” às 8 da manhã: na Dinamarca, frokost é o almoço; o café da manhã é “morgenmad”.',
+      'Elogiar um norueguês dizendo que ele é “rar”: em norueguês, isso quer dizer “esquisito”.',
+      'Misturar grafias: “jag”, “inte” e “och” são suecos; “hva” e “ikkje” são noruegueses. Em dinamarquês: jeg, ikke, og, hvad.',
       'Achar que ler bem norueguês garante entender a fala: a distância entre as três línguas é maior no ouvido do que no papel.',
     ],
     quiz: [
       {
-        question: 'Quando se come o «frokost» dinamarquês?',
+        question: 'Quando se come o “frokost” dinamarquês?',
         options: ['ao meio-dia', 'ao acordar', 'à noite'],
         answer: 'ao meio-dia',
         explanation: 'Na Dinamarca, frokost é o almoço; o café da manhã é morgenmad. No norueguês e no sueco, é o café da manhã.',
       },
       {
-        question: 'Qual é a forma dinamarquesa de «o quê»?',
+        question: 'Qual é a forma dinamarquesa de “o quê”?',
         options: ['hvad', 'vad', 'kva'],
         answer: 'hvad',
-        explanation: 'Dinamarquês «hvad» (o d é mudo); sueco «vad»; nynorsk «kva».',
+        explanation: 'Dinamarquês “hvad” (o d é mudo); sueco “vad”; nynorsk “kva”.',
       },
       {
-        question: 'Em dinamarquês, «rolig» quer dizer…',
+        question: 'Em dinamarquês, “rolig” quer dizer…',
         options: ['calmo', 'divertido', 'rápido'],
         answer: 'calmo',
-        explanation: '«Tag det roligt» = fica calmo. Em sueco, «rolig» é engraçado.',
+        explanation: '“Tag det roligt” = fica calmo. Em sueco, “rolig” é engraçado.',
       },
       {
         question: 'Qual escrita é a mais parecida com a dinamarquesa?',
@@ -3364,10 +3364,10 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         explanation: 'O bokmål nasceu do dinamarquês escrito na Noruega; a semelhança no papel é enorme.',
       },
       {
-        question: 'Qual é a palavra dinamarquesa para «menina»?',
+        question: 'Qual é a palavra dinamarquesa para “menina”?',
         options: ['pige', 'jente', 'flicka'],
         answer: 'pige',
-        explanation: 'Dinamarquês «pige»; norueguês «jente»; sueco «flicka».',
+        explanation: 'Dinamarquês “pige”; norueguês “jente”; sueco “flicka”.',
       },
     ],
   },
@@ -3389,11 +3389,11 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Groenlândia: o groenlandês é a língua oficial',
-        text: 'A Groenlândia ganhou autonomia em 1979 e o autogoverno (selvstyre) em 21 de junho de 2009; desde então, o groenlandês (kalaallisut, uma língua inuíte, sem parentesco com as línguas nórdicas) é a única língua oficial. O dinamarquês continua presente na educação superior, em parte da administração e como segunda língua de muitos groenlandeses. A história colonial pesa: por muito tempo, o dinamarquês foi imposto como língua de prestígio, e hoje a política linguística fortalece o groenlandês. Algumas palavras inuítes chegaram ao dinamarquês e ao mundo, como «kajak» e «anorak».',
+        text: 'A Groenlândia ganhou autonomia em 1979 e o autogoverno (selvstyre) em 21 de junho de 2009; desde então, o groenlandês (kalaallisut, uma língua inuíte, sem parentesco com as línguas nórdicas) é a única língua oficial. O dinamarquês continua presente na educação superior, em parte da administração e como segunda língua de muitos groenlandeses. A história colonial pesa: por muito tempo, o dinamarquês foi imposto como língua de prestígio, e hoje a política linguística fortalece o groenlandês. Algumas palavras inuítes chegaram ao dinamarquês e ao mundo, como “kajak” e “anorak”.',
         examples: [
           ['Grønlandsk er det eneste officielle sprog i Grønland.', 'O groenlandês é a única língua oficial da Groenlândia.'],
           ['Grønland fik selvstyre i 2009.', 'A Groenlândia ganhou autogoverno em 2009.'],
-          ['Ordet «kajak» kommer fra grønlandsk.', 'A palavra «kajak» vem do groenlandês.'],
+          ['Ordet “kajak” kommer fra grønlandsk.', 'A palavra “kajak” vem do groenlandês.'],
         ],
       },
       {
@@ -3424,10 +3424,10 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Chamar o groenlandês ou o feroês de «dialetos do dinamarquês»: são línguas próprias; o groenlandês nem é nórdico.',
+      'Chamar o groenlandês ou o feroês de “dialetos do dinamarquês”: são línguas próprias; o groenlandês nem é nórdico.',
       'Supor que todo feroês ou groenlandês tem o dinamarquês como língua materna: para a maioria, ele é a segunda língua.',
-      'Esquecer o gênero dos nomes de língua: «dansk», «færøsk», «grønlandsk» são adjetivos usados como substantivo neutro: «dansk er svært», «det grønlandske sprog».',
-      'Confundir Flensborg com uma cidade dinamarquesa: fica na Alemanha; «Flensborg» é só o nome dinamarquês de Flensburg.',
+      'Esquecer o gênero dos nomes de língua: “dansk”, “færøsk”, “grønlandsk” são adjetivos usados como substantivo neutro: “dansk er svært”, “det grønlandske sprog”.',
+      'Confundir Flensborg com uma cidade dinamarquesa: fica na Alemanha; “Flensborg” é só o nome dinamarquês de Flensburg.',
     ],
     quiz: [
       {
@@ -3458,20 +3458,20 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         question: 'Qual destas palavras veio do groenlandês?',
         options: ['kajak', 'hygge', 'smørrebrød'],
         answer: 'kajak',
-        explanation: '«Kajak» (e «anorak») vieram das línguas inuítes; «hygge» e «smørrebrød» são nórdicos.',
+        explanation: '“Kajak” (e “anorak”) vieram das línguas inuítes; “hygge” e “smørrebrød” são nórdicos.',
       },
     ],
   },
   {
     id: 'da-g33',
     level: 'C1.1',
-    title: 'Os números de base 20: por que 50 é «halvtreds»',
+    title: 'Os números de base 20: por que 50 é “halvtreds”',
     emoji: '🔢',
-    summary: 'Halvtreds (50), tres (60), halvfjerds (70), firs (80), halvfems (90): as dezenas dinamarquesas contam de vinte em vinte, e algumas começam com «meio». Por trás delas há uma conta antiga, «halvtredsindstyve» = dois e meio vezes vinte. Entendida a conta, os números deixam de ser decoreba.',
+    summary: 'Halvtreds (50), tres (60), halvfjerds (70), firs (80), halvfems (90): as dezenas dinamarquesas contam de vinte em vinte, e algumas começam com “meio”. Por trás delas há uma conta antiga, “halvtredsindstyve” = dois e meio vezes vinte. Entendida a conta, os números deixam de ser decoreba.',
     sections: [
       {
         heading: 'As dezenas de 20 a 90',
-        text: 'Até 40, as dezenas são decimais, como nas línguas vizinhas: tyve (20), tredive (30), fyrre (40). A partir de 50, entram os múltiplos de vinte. Cada forma curta de hoje é a abreviação de uma forma longa terminada em «-sindstyve» («vezes vinte»): «tres» vem de «tresindstyve», três vezes vinte. As formas longas ainda aparecem em textos antigos e em discursos solenes.',
+        text: 'Até 40, as dezenas são decimais, como nas línguas vizinhas: tyve (20), tredive (30), fyrre (40). A partir de 50, entram os múltiplos de vinte. Cada forma curta de hoje é a abreviação de uma forma longa terminada em “-sindstyve” (“vezes vinte”): “tres” vem de “tresindstyve”, três vezes vinte. As formas longas ainda aparecem em textos antigos e em discursos solenes.',
         table: {
           head: ['Número', 'Forma de hoje', 'Forma longa', 'A conta'],
           rows: [
@@ -3492,8 +3492,8 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'O «meio» que conta para trás',
-        text: 'O segredo está em «halv-». No dinamarquês antigo, «halvtredje» queria dizer «o terceiro pela metade»: dois inteiros e o terceiro só pela metade, ou seja, 2½. Do mesmo modo, «halvfjerde» = 3½ e «halvfemte» = 4½. Multiplique por vinte (-sindstyve, «vezes vinte») e sai a dezena: halvtreds = 2½ × 20 = 50; halvfjerds = 3½ × 20 = 70; halvfems = 4½ × 20 = 90. Um resto vivo desse sistema é «halvanden», que ainda se usa todo dia: 1½ («o segundo pela metade»). E a própria contagem em vintenas sobrevive na palavra «snes», uma vintena: «en snes æg» são vinte ovos.',
+        heading: 'O “meio” que conta para trás',
+        text: 'O segredo está em “halv-”. No dinamarquês antigo, “halvtredje” queria dizer “o terceiro pela metade”: dois inteiros e o terceiro só pela metade, ou seja, 2½. Do mesmo modo, “halvfjerde” = 3½ e “halvfemte” = 4½. Multiplique por vinte (-sindstyve, “vezes vinte”) e sai a dezena: halvtreds = 2½ × 20 = 50; halvfjerds = 3½ × 20 = 70; halvfems = 4½ × 20 = 90. Um resto vivo desse sistema é “halvanden”, que ainda se usa todo dia: 1½ (“o segundo pela metade”). E a própria contagem em vintenas sobrevive na palavra “snes”, uma vintena: “en snes æg” são vinte ovos.',
         table: {
           head: ['Palavra antiga', 'Literalmente', 'Valor', 'Dezena'],
           rows: [
@@ -3511,7 +3511,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Unidade antes da dezena',
-        text: 'Como no alemão, a unidade vem antes da dezena, ligada por «og»: 21 = enogtyve («um e vinte»), 57 = syvoghalvtreds, 73 = treoghalvfjerds, 99 = nioghalvfems. Tudo se escreve junto. Nos anos, conta-se em centenas: 1987 = nitten hundrede og syvogfirs. Ao ouvir, espere o fim: o número só se revela na última palavra.',
+        text: 'Como no alemão, a unidade vem antes da dezena, ligada por “og”: 21 = enogtyve (“um e vinte”), 57 = syvoghalvtreds, 73 = treoghalvfjerds, 99 = nioghalvfems. Tudo se escreve junto. Nos anos, conta-se em centenas: 1987 = nitten hundrede og syvogfirs. Ao ouvir, espere o fim: o número só se revela na última palavra.',
         table: {
           head: ['Número', 'Por extenso'],
           rows: [
@@ -3533,7 +3533,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'De onde veio isso?',
-        text: 'Contar em vintenas é antigo no norte da Europa: o inglês tem «score» e o francês diz «quatre-vingts» (quatro vintes) para 80. No dinamarquês, a contagem por vinte ficou nas dezenas altas, e as formas longas foram encurtadas com o tempo. Os vizinhos resolveram de outro jeito: o sueco diz femtio, o norueguês femti. Por um tempo, a Dinamarca usou formas decimais parecidas (femti, seksti, syvti, otti, niti) em contextos técnicos, como os cheques, para evitar confusão; no dia a dia, porém, nunca pegaram. Até os dinamarqueses brincam que os seus números são difíceis, mas nenhuma reforma os mudou.',
+        text: 'Contar em vintenas é antigo no norte da Europa: o inglês tem “score” e o francês diz “quatre-vingts” (quatro vintes) para 80. No dinamarquês, a contagem por vinte ficou nas dezenas altas, e as formas longas foram encurtadas com o tempo. Os vizinhos resolveram de outro jeito: o sueco diz femtio, o norueguês femti. Por um tempo, a Dinamarca usou formas decimais parecidas (femti, seksti, syvti, otti, niti) em contextos técnicos, como os cheques, para evitar confusão; no dia a dia, porém, nunca pegaram. Até os dinamarqueses brincam que os seus números são difíceis, mas nenhuma reforma os mudou.',
         examples: [
           ['De danske tal er svære for udlændinge.', 'Os números dinamarqueses são difíceis para os estrangeiros.'],
           ['På svensk og norsk tæller man i tiere.', 'Em sueco e em norueguês, conta-se de dez em dez.'],
@@ -3542,14 +3542,14 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Ler «halvtreds» como «meio três» e chutar 1,5 ou 30: é 2½ × 20 = 50.',
-      'Pôr a dezena antes da unidade: 64 é «fireogtres» («quatro e sessenta»), nunca «tresogfire».',
-      'Escrever os números compostos separados: «fem og halvtreds» está errado; é «femoghalvtreds», numa palavra só.',
-      'Confundir «tres» (60) com o português «três»: o dinamarquês «tre» é 3, e «tres» é 60.',
+      'Ler “halvtreds” como “meio três” e chutar 1,5 ou 30: é 2½ × 20 = 50.',
+      'Pôr a dezena antes da unidade: 64 é “fireogtres” (“quatro e sessenta”), nunca “tresogfire”.',
+      'Escrever os números compostos separados: “fem og halvtreds” está errado; é “femoghalvtreds”, numa palavra só.',
+      'Confundir “tres” (60) com o português “três”: o dinamarquês “tre” é 3, e “tres” é 60.',
     ],
     quiz: [
       {
-        question: 'Quanto é «halvfjerds»?',
+        question: 'Quanto é “halvfjerds”?',
         options: ['70', '35', '40'],
         answer: '70',
         explanation: 'Halvfjerds = 3½ × 20 = 70.',
@@ -3561,16 +3561,16 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         explanation: 'Unidade + og + dezena, numa palavra só: syv + og + halvtreds.',
       },
       {
-        question: 'O que quer dizer «-sindstyve» nas formas longas?',
+        question: 'O que quer dizer “-sindstyve” nas formas longas?',
         options: ['vezes vinte', 'mais dez', 'menos meio'],
         answer: 'vezes vinte',
-        explanation: 'Tresindstyve = três vezes vinte = 60; a forma curta é «tres».',
+        explanation: 'Tresindstyve = três vezes vinte = 60; a forma curta é “tres”.',
       },
       {
-        question: 'Quanto tempo é «halvanden time»?',
+        question: 'Quanto tempo é “halvanden time”?',
         options: ['1h30', '2h30', '30 min'],
         answer: '1h30',
-        explanation: 'Halvanden = 1½, «o segundo pela metade»: o mesmo mecanismo de halvtreds.',
+        explanation: 'Halvanden = 1½, “o segundo pela metade”: o mesmo mecanismo de halvtreds.',
       },
       {
         question: 'Qual é o número 80?',
@@ -3586,7 +3586,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
     level: 'C1.2',
     title: 'Nominalização: o estilo nominal dos textos especializados',
     emoji: '🧱',
-    summary: 'Em relatórios, leis e artigos, o dinamarquês troca verbos por substantivos: «vi vurderede ansøgningen» vira «der blev foretaget en vurdering af ansøgningen». Saber formar e desmontar essas construções (-ning, -else, -hed, -skab, -dom) é a chave para ler textos técnicos, e para não pegar a «navneordssyge», a doença do substantivo.',
+    summary: 'Em relatórios, leis e artigos, o dinamarquês troca verbos por substantivos: “vi vurderede ansøgningen” vira “der blev foretaget en vurdering af ansøgningen”. Saber formar e desmontar essas construções (-ning, -else, -hed, -skab, -dom) é a chave para ler textos técnicos, e para não pegar a “navneordssyge”, a doença do substantivo.',
     sections: [
       {
         heading: 'Os sufixos que formam substantivos',
@@ -3615,7 +3615,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Verbal × nominal',
-        text: 'O estilo nominal esconde quem age e condensa muita informação. Os verbos «vazios» mais comuns são foretage (efetuar), gennemføre (realizar), give (dar), ske (acontecer) e finde sted (ocorrer). O complemento do substantivo vem com «af» (vurderingen af ansøgningen) ou com genitivo em -s, sem apóstrofo (ansøgningens indhold). Em excesso, esse estilo tem nome em dinamarquês: «navneordssyge».',
+        text: 'O estilo nominal esconde quem age e condensa muita informação. Os verbos “vazios” mais comuns são foretage (efetuar), gennemføre (realizar), give (dar), ske (acontecer) e finde sted (ocorrer). O complemento do substantivo vem com “af” (vurderingen af ansøgningen) ou com genitivo em -s, sem apóstrofo (ansøgningens indhold). Em excesso, esse estilo tem nome em dinamarquês: “navneordssyge”.',
         table: {
           head: ['Estilo nominal', 'Estilo verbal', 'Português'],
           rows: [
@@ -3632,8 +3632,8 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         ],
       },
       {
-        heading: '«Det at» + infinitivo e os compostos longos',
-        text: 'Quando falta um substantivo pronto, o dinamarquês nominaliza o próprio infinitivo com «det at»: «det at lære et sprog» (o aprender uma língua). E os textos técnicos adoram compostos longos numa palavra só, muitas vezes com um -s- de ligação (fugen-s): sagsbehandlingstid = sag + s + behandling + s + tid, «tempo de tramitação do processo». Leia de trás para frente: a última parte é o núcleo e decide o gênero (tiden → sagsbehandlingstiden).',
+        heading: '“Det at” + infinitivo e os compostos longos',
+        text: 'Quando falta um substantivo pronto, o dinamarquês nominaliza o próprio infinitivo com “det at”: “det at lære et sprog” (o aprender uma língua). E os textos técnicos adoram compostos longos numa palavra só, muitas vezes com um -s- de ligação (fugen-s): sagsbehandlingstid = sag + s + behandling + s + tid, “tempo de tramitação do processo”. Leia de trás para frente: a última parte é o núcleo e decide o gênero (tiden → sagsbehandlingstiden).',
         examples: [
           ['Det at lære et nyt sprog kræver tålmodighed.', 'Aprender uma nova língua exige paciência.'],
           ['Sagsbehandlingstiden er tre måneder.', 'O tempo de tramitação do processo é de três meses.'],
@@ -3642,15 +3642,15 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Traduzir palavra por palavra «der blev foretaget en vurdering»: em português, «foi efetuada uma avaliação» soa tão burocrático quanto; muitas vezes «avaliamos» é melhor nas duas línguas.',
-      'Separar os compostos: «sagsbehandlings tid» é erro (særskrivning). Em dinamarquês, o composto se escreve junto.',
-      'Esquecer o «af» depois do substantivo verbal: «vurderingen af ansøgningen», não «vurderingen ansøgningen».',
-      'Pôr apóstrofo no genitivo: é «ansøgningens», nunca «ansøgningen’s».',
+      'Traduzir palavra por palavra “der blev foretaget en vurdering”: em português, “foi efetuada uma avaliação” soa tão burocrático quanto; muitas vezes “avaliamos” é melhor nas duas línguas.',
+      'Separar os compostos: “sagsbehandlings tid” é erro (særskrivning). Em dinamarquês, o composto se escreve junto.',
+      'Esquecer o “af” depois do substantivo verbal: “vurderingen af ansøgningen”, não “vurderingen ansøgningen”.',
+      'Pôr apóstrofo no genitivo: é “ansøgningens”, nunca “ansøgningen’s”.',
       'Dar o gênero errado a palavras em -skab: venskab e selskab são neutros (et), mas videnskab e egenskab são comuns (en).',
     ],
     quiz: [
       {
-        question: 'Qual é o substantivo de «at forstå»?',
+        question: 'Qual é o substantivo de “at forstå”?',
         options: ['forståelse', 'forståning', 'forståhed'],
         answer: 'forståelse',
         explanation: 'At forstå → forståelse (compreensão), com o sufixo -else.',
@@ -3659,19 +3659,19 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         question: 'Qual versão está no estilo verbal?',
         options: ['Vi vurderede ansøgningen.', 'Der blev foretaget en vurdering af ansøgningen.', 'Vurderingen af ansøgningen er foretaget.'],
         answer: 'Vi vurderede ansøgningen.',
-        explanation: 'O estilo verbal tem sujeito agente e verbo de conteúdo: «vi vurderede».',
+        explanation: 'O estilo verbal tem sujeito agente e verbo de conteúdo: “vi vurderede”.',
       },
       {
-        question: 'Qual é o gênero de «videnskab»?',
+        question: 'Qual é o gênero de “videnskab”?',
         options: ['en', 'et'],
         answer: 'en',
-        explanation: 'En videnskab, videnskaben. Mas «et venskab» e «et selskab» são neutros.',
+        explanation: 'En videnskab, videnskaben. Mas “et venskab” e “et selskab” são neutros.',
       },
       {
-        question: 'Complete: «Udviklingen ___ nye metoder tager tid.»',
+        question: 'Complete: “Udviklingen ___ nye metoder tager tid.”',
         options: ['af', 'på', 'til'],
         answer: 'af',
-        explanation: 'O complemento do substantivo derivado de verbo vem com «af».',
+        explanation: 'O complemento do substantivo derivado de verbo vem com “af”.',
       },
       {
         question: 'Qual é a grafia correta?',
@@ -3686,20 +3686,20 @@ export const GRAMMAR_DA: GrammarTopic[] = [
     level: 'C1.2',
     title: 'Klarsprog: a linguagem clara do setor público',
     emoji: '💡',
-    summary: '«Styrelsen skal hermed meddele, at De ikke er berettiget til ydelsen» ou «Du kan desværre ikke få ydelsen»? Há décadas, ministérios e municípios dinamarqueses reescrevem cartas e sites em klarsprog: o leitor tratado por «du», a mensagem principal primeiro, frases curtas e verbos na ativa. Saber as duas versões ajuda a ler o velho e a escrever o novo.',
+    summary: '“Styrelsen skal hermed meddele, at De ikke er berettiget til ydelsen” ou “Du kan desværre ikke få ydelsen”? Há décadas, ministérios e municípios dinamarqueses reescrevem cartas e sites em klarsprog: o leitor tratado por “du”, a mensagem principal primeiro, frases curtas e verbos na ativa. Saber as duas versões ajuda a ler o velho e a escrever o novo.',
     sections: [
       {
         heading: 'Os princípios',
-        text: 'Klarsprog (linguagem clara) é escrever de modo que o leitor entenda na primeira leitura e saiba o que fazer. Os conselhos de Dansk Sprognævn e dos guias oficiais se repetem: escreva para o leitor e trate-o por «du»; a instituição fala como «vi»; comece pelo mais importante; use a voz ativa; prefira verbos a substantivos abstratos; frases curtas, uma ideia por frase; títulos que dizem algo; e explique os termos técnicos. O «De» de cortesia praticamente saiu das cartas públicas desde a «du-reformen» dos anos 1960 e 1970.',
+        text: 'Klarsprog (linguagem clara) é escrever de modo que o leitor entenda na primeira leitura e saiba o que fazer. Os conselhos de Dansk Sprognævn e dos guias oficiais se repetem: escreva para o leitor e trate-o por “du”; a instituição fala como “vi”; comece pelo mais importante; use a voz ativa; prefira verbos a substantivos abstratos; frases curtas, uma ideia por frase; títulos que dizem algo; e explique os termos técnicos. O “De” de cortesia praticamente saiu das cartas públicas desde a “du-reformen” dos anos 1960 e 1970.',
         examples: [
-          ['Skriv til læseren, og brug «du» og «vi».', 'Escreva para o leitor e use «du» e «vi».'],
+          ['Skriv til læseren, og brug “du” og “vi”.', 'Escreva para o leitor e use “du” e “vi”.'],
           ['Begynd med det vigtigste.', 'Comece pelo mais importante.'],
           ['Skriv korte sætninger med ét budskab ad gangen.', 'Escreva frases curtas, com uma mensagem de cada vez.'],
         ],
       },
       {
         heading: 'Palavras de repartição e as alternativas',
-        text: 'O dinamarquês administrativo tradicional (kancellisprog, «a língua da chancelaria») tem palavras que quase não se usam na fala. O klarsprog troca cada uma por uma equivalente do dia a dia.',
+        text: 'O dinamarquês administrativo tradicional (kancellisprog, “a língua da chancelaria”) tem palavras que quase não se usam na fala. O klarsprog troca cada uma por uma equivalente do dia a dia.',
         table: {
           head: ['Kancellisprog', 'Klarsprog', 'Português'],
           rows: [
@@ -3723,7 +3723,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Antes e depois',
-        text: 'Repare nas mudanças: o agente aparece («vi»), o leitor vira «du», a negação chega cedo e a consequência prática fica clara. Mas cuidado: klarsprog não é linguagem infantil nem informal demais; a carta continua educada e precisa.',
+        text: 'Repare nas mudanças: o agente aparece (“vi”), o leitor vira “du”, a negação chega cedo e a consequência prática fica clara. Mas cuidado: klarsprog não é linguagem infantil nem informal demais; a carta continua educada e precisa.',
         table: {
           head: ['Antes', 'Depois'],
           rows: [
@@ -3741,14 +3741,14 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Tratar o funcionário por «De» achando que é o mais educado: hoje soa distante e antiquado; «du» é o normal, inclusive em cartas oficiais.',
-      'Confundir «idet» com «i det»: «idet» é conjunção formal (visto que); «i det» é preposição + pronome («i det hus»).',
+      'Tratar o funcionário por “De” achando que é o mais educado: hoje soa distante e antiquado; “du” é o normal, inclusive em cartas oficiais.',
+      'Confundir “idet” com “i det”: “idet” é conjunção formal (visto que); “i det” é preposição + pronome (“i det hus”).',
       'Achar que klarsprog é gíria: continua sendo linguagem cuidada, só que direta.',
-      'Traduzir «berettiget til» como «justificado»: aqui quer dizer «ter direito a».',
+      'Traduzir “berettiget til” como “justificado”: aqui quer dizer “ter direito a”.',
     ],
     quiz: [
       {
-        question: 'Qual é a alternativa em klarsprog para «såfremt»?',
+        question: 'Qual é a alternativa em klarsprog para “såfremt”?',
         options: ['hvis', 'idet', 'endvidere'],
         answer: 'hvis',
         explanation: 'Såfremt = hvis (se, caso).',
@@ -3757,25 +3757,25 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         question: 'Como a instituição costuma se referir a si mesma em klarsprog?',
         options: ['vi', 'styrelsen', 'man'],
         answer: 'vi',
-        explanation: 'A instituição fala como «vi» e trata o leitor por «du».',
+        explanation: 'A instituição fala como “vi” e trata o leitor por “du”.',
       },
       {
         question: 'Qual frase está em klarsprog?',
         options: ['Du kan klage over afgørelsen inden fire uger.', 'Nærværende afgørelse kan påklages inden fire uger.', 'Afgørelsen kan hermed påklages af Dem.'],
         answer: 'Du kan klage over afgørelsen inden fire uger.',
-        explanation: 'Leitor como «du», verbo na ativa, sem «nærværende» nem «hermed».',
+        explanation: 'Leitor como “du”, verbo na ativa, sem “nærværende” nem “hermed”.',
       },
       {
-        question: 'Qual verbo substitui «fremsende»?',
+        question: 'Qual verbo substitui “fremsende”?',
         options: ['sende', 'modtage', 'påbegynde'],
         answer: 'sende',
         explanation: 'Fremsende = sende (enviar).',
       },
       {
-        question: 'O que quer dizer «Du er berettiget til ydelsen»?',
+        question: 'O que quer dizer “Du er berettiget til ydelsen”?',
         options: ['Você tem direito ao benefício.', 'Você deve devolver o benefício.', 'Você perdeu o benefício.'],
         answer: 'Você tem direito ao benefício.',
-        explanation: '«Berettiget til» = ter direito a.',
+        explanation: '“Berettiget til” = ter direito a.',
       },
     ],
   },
@@ -3784,11 +3784,11 @@ export const GRAMMAR_DA: GrammarTopic[] = [
     level: 'C1.2',
     title: 'Estilo jornalístico e acadêmico',
     emoji: '📰',
-    summary: 'A notícia começa pelo fim (nyhedstrekanten), usa o perfeito no lead e o pretérito no corpo, e cita com travessão: «– Vi er glade, siger borgmesteren.» O texto acadêmico anuncia o seu plano («I det følgende…»), usa a passiva em -s («undersøges») e abrevia à dinamarquesa: bl.a., dvs., jf., fx.',
+    summary: 'A notícia começa pelo fim (nyhedstrekanten), usa o perfeito no lead e o pretérito no corpo, e cita com travessão: “– Vi er glade, siger borgmesteren.” O texto acadêmico anuncia o seu plano (“I det følgende…”), usa a passiva em -s (“undersøges”) e abrevia à dinamarquesa: bl.a., dvs., jf., fx.',
     sections: [
       {
         heading: 'A notícia: nyhedstrekanten',
-        text: 'A notícia dinamarquesa segue o triângulo da notícia (nyhedstrekanten), a pirâmide invertida: o mais importante no começo, os detalhes depois. As partes têm nome: rubrik (manchete), underrubrik (linha fina), manchet (o lead, em negrito, que resume tudo), brødtekst (o corpo) e mellemrubrikker (intertítulos). O tempo verbal também tem regra: o lead costuma vir no perfeito, porque a notícia é recente e relevante agora («Politiet har anholdt en mand»), e o corpo conta os detalhes no pretérito («Manden blev anholdt klokken 22»).',
+        text: 'A notícia dinamarquesa segue o triângulo da notícia (nyhedstrekanten), a pirâmide invertida: o mais importante no começo, os detalhes depois. As partes têm nome: rubrik (manchete), underrubrik (linha fina), manchet (o lead, em negrito, que resume tudo), brødtekst (o corpo) e mellemrubrikker (intertítulos). O tempo verbal também tem regra: o lead costuma vir no perfeito, porque a notícia é recente e relevante agora (“Politiet har anholdt en mand”), e o corpo conta os detalhes no pretérito (“Manden blev anholdt klokken 22”).',
         table: {
           head: ['Parte', 'Função', 'Exemplo'],
           rows: [
@@ -3806,7 +3806,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Citar e atribuir',
-        text: 'Os jornais dinamarqueses costumam abrir a fala citada com travessão, e o verbo de citação vem depois, com inversão (V2): «siger borgmesteren», não «borgmesteren siger». Os verbos de atribuição mais comuns são siger (diz), fortæller (conta), oplyser (informa, para fontes oficiais), skriver (escreve) e understreger (sublinha). «Ifølge» (segundo) atribui sem citar.',
+        text: 'Os jornais dinamarqueses costumam abrir a fala citada com travessão, e o verbo de citação vem depois, com inversão (V2): “siger borgmesteren”, não “borgmesteren siger”. Os verbos de atribuição mais comuns são siger (diz), fortæller (conta), oplyser (informa, para fontes oficiais), skriver (escreve) e understreger (sublinha). “Ifølge” (segundo) atribui sem citar.',
         examples: [
           ['– Vi er meget glade for resultatet, siger borgmesteren.', '– Estamos muito contentes com o resultado, diz o prefeito.'],
           ['Det oplyser politiet i en pressemeddelelse.', 'É o que informa a polícia num comunicado à imprensa.'],
@@ -3815,7 +3815,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'O texto acadêmico',
-        text: 'Na universidade, escrevem-se opgaver (trabalhos), o bachelorprojekt e o speciale (a dissertação de mestrado). O estilo anuncia o caminho (I det følgende…, Afslutningsvis…), usa a passiva em -s para focar o objeto (Det undersøges, om…), pode usar «jeg» ou «vi» para as escolhas do autor e distingue com cuidado o que é fato, interpretação e opinião. «Hvorvidt» (se, em que medida) é típico da pergunta de pesquisa.',
+        text: 'Na universidade, escrevem-se opgaver (trabalhos), o bachelorprojekt e o speciale (a dissertação de mestrado). O estilo anuncia o caminho (I det følgende…, Afslutningsvis…), usa a passiva em -s para focar o objeto (Det undersøges, om…), pode usar “jeg” ou “vi” para as escolhas do autor e distingue com cuidado o que é fato, interpretação e opinião. “Hvorvidt” (se, em que medida) é típico da pergunta de pesquisa.',
         table: {
           head: ['Expressão', 'Português'],
           rows: [
@@ -3834,7 +3834,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Abreviações',
-        text: 'As abreviações dinamarquesas mais comuns em textos formais. Repare que «fx» (por exemplo) se escreve sem pontos; «f.eks.» também é aceito.',
+        text: 'As abreviações dinamarquesas mais comuns em textos formais. Repare que “fx” (por exemplo) se escreve sem pontos; “f.eks.” também é aceito.',
         table: {
           head: ['Abreviação', 'Por extenso', 'Português'],
           rows: [
@@ -3855,10 +3855,10 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pôr o sujeito antes do verbo depois da citação: é «siger borgmesteren», com inversão, porque a citação ocupa a primeira posição.',
-      'Usar o pretérito no lead de uma notícia fresca: «Politiet har anholdt…» (perfeito) é o normal; o pretérito vem no corpo, com hora e lugar.',
-      'Traduzir «hvorvidt» como «até onde»: em geral é só o «se» da pergunta indireta formal.',
-      'Escrever «f.x.» ou «fx.»: a forma é «fx» (sem pontos) ou «f.eks.».',
+      'Pôr o sujeito antes do verbo depois da citação: é “siger borgmesteren”, com inversão, porque a citação ocupa a primeira posição.',
+      'Usar o pretérito no lead de uma notícia fresca: “Politiet har anholdt…” (perfeito) é o normal; o pretérito vem no corpo, com hora e lugar.',
+      'Traduzir “hvorvidt” como “até onde”: em geral é só o “se” da pergunta indireta formal.',
+      'Escrever “f.x.” ou “fx.”: a forma é “fx” (sem pontos) ou “f.eks.”.',
     ],
     quiz: [
       {
@@ -3868,7 +3868,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         explanation: 'Rubrik é a manchete; manchet é o lead; brødtekst é o corpo.',
       },
       {
-        question: 'Complete: «– Vi er glade, ___.»',
+        question: 'Complete: “– Vi er glade, ___.”',
         options: ['siger borgmesteren', 'borgmesteren siger', 'borgmesteren sagde han'],
         answer: 'siger borgmesteren',
         explanation: 'A citação ocupa a primeira posição, então o verbo vem antes do sujeito (V2).',
@@ -3880,16 +3880,16 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         explanation: 'O perfeito liga o fato ao presente; os detalhes vêm depois no pretérito.',
       },
       {
-        question: 'O que quer dizer «dvs.»?',
+        question: 'O que quer dizer “dvs.”?',
         options: ['det vil sige', 'desværre', 'den virkelige sandhed'],
         answer: 'det vil sige',
-        explanation: 'Dvs. = det vil sige, «isto é».',
+        explanation: 'Dvs. = det vil sige, “isto é”.',
       },
       {
         question: 'Qual frase usa a passiva em -s típica do texto acadêmico?',
         options: ['I det følgende undersøges sprogbrugen.', 'Jeg undersøgte sprogbrugen i går.', 'Vi har undersøgt sprogbrug.'],
         answer: 'I det følgende undersøges sprogbrugen.',
-        explanation: '«Undersøges» é a passiva em -s: foca o objeto, não quem investiga.',
+        explanation: '“Undersøges” é a passiva em -s: foca o objeto, não quem investiga.',
       },
     ],
   },
@@ -3899,7 +3899,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
     level: 'C2',
     title: 'H. C. Andersen: os contos e a língua falada na página',
     emoji: '🦢',
-    summary: 'Hans Christian Andersen (1805–1875), de Odense, escreveu contos que o mundo inteiro conhece: «Den lille havfrue», «Den grimme ælling», «Kejserens nye klæder». A novidade dele foi escrever como se fala, com partículas como «jo», «nu» e «da», frases curtas e onomatopeias. Ler Andersen no original é aprender o dinamarquês oral do século XIX.',
+    summary: 'Hans Christian Andersen (1805–1875), de Odense, escreveu contos que o mundo inteiro conhece: “Den lille havfrue”, “Den grimme ælling”, “Kejserens nye klæder”. A novidade dele foi escrever como se fala, com partículas como “jo”, “nu” e “da”, frases curtas e onomatopeias. Ler Andersen no original é aprender o dinamarquês oral do século XIX.',
     sections: [
       {
         heading: 'De Odense a Nyhavn',
@@ -3916,23 +3916,23 @@ export const GRAMMAR_DA: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['Mit liv er et smukt eventyr, så rigt og lykkeligt!', 'A minha vida é um belo conto de fadas, tão rico e feliz! (início da autobiografia «Mit Livs Eventyr», 1855)'],
+          ['Mit liv er et smukt eventyr, så rigt og lykkeligt!', 'A minha vida é um belo conto de fadas, tão rico e feliz! (início da autobiografia “Mit Livs Eventyr”, 1855)'],
           ['Andersen blev født i Odense i 1805.', 'Andersen nasceu em Odense em 1805.'],
           ['Som fjortenårig rejste han alene til København.', 'Aos catorze anos, ele viajou sozinho para Copenhague.'],
         ],
       },
       {
         heading: 'Começos famosos',
-        text: 'Os contos de Andersen começam de repente, no meio da ação ou com uma imagem forte, como alguém contando em voz alta. Os trechos abaixo estão na ortografia moderna (o original usa aa, maiúsculas nos substantivos e «ei» em vez de «ej»; veja o último tópico).',
+        text: 'Os contos de Andersen começam de repente, no meio da ação ou com uma imagem forte, como alguém contando em voz alta. Os trechos abaixo estão na ortografia moderna (o original usa aa, maiúsculas nos substantivos e “ei” em vez de “ej”; veja o último tópico).',
         examples: [
-          ['Der kom en soldat marcherende hen ad landevejen: én, to! én, to!', 'Vinha um soldado marchando pela estrada: um, dois! um, dois! («Fyrtøjet»)'],
-          ['Langt ude i havet er vandet så blåt som bladene på den dejligste kornblomst og så klart som det reneste glas.', 'Lá longe no mar, a água é tão azul quanto as pétalas da mais linda centáurea e tão clara quanto o vidro mais puro. («Den lille havfrue»)'],
-          ['Det var så grueligt koldt; det sneede, og det begyndte at blive mørk aften.', 'Fazia um frio terrível; nevava, e começava a escurecer. («Den lille pige med svovlstikkerne»)'],
+          ['Der kom en soldat marcherende hen ad landevejen: én, to! én, to!', 'Vinha um soldado marchando pela estrada: um, dois! um, dois! (“Fyrtøjet”)'],
+          ['Langt ude i havet er vandet så blåt som bladene på den dejligste kornblomst og så klart som det reneste glas.', 'Lá longe no mar, a água é tão azul quanto as pétalas da mais linda centáurea e tão clara quanto o vidro mais puro. (“Den lille havfrue”)'],
+          ['Det var så grueligt koldt; det sneede, og det begyndte at blive mørk aften.', 'Fazia um frio terrível; nevava, e começava a escurecer. (“Den lille pige med svovlstikkerne”)'],
         ],
       },
       {
         heading: 'As partículas: jo, nu, da, vel',
-        text: 'O traço mais «falado» de Andersen são as partículas modais, palavrinhas que não têm tradução direta e dão o tom da frase. «Jo» indica algo óbvio, que todos deveriam ver; «da» reforça ou reclama; «nu» suaviza ou chama a atenção; «vel» pede confirmação. O grito da criança em «Kejserens nye klæder» é o exemplo mais famoso: o «jo» diz «é evidente!». O dinamarquês de hoje usa essas partículas o tempo todo, e o português costuma traduzi-las pela entonação, por «ué», «ora», «né» ou simplesmente omiti-las.',
+        text: 'O traço mais “falado” de Andersen são as partículas modais, palavrinhas que não têm tradução direta e dão o tom da frase. “Jo” indica algo óbvio, que todos deveriam ver; “da” reforça ou reclama; “nu” suaviza ou chama a atenção; “vel” pede confirmação. O grito da criança em “Kejserens nye klæder” é o exemplo mais famoso: o “jo” diz “é evidente!”. O dinamarquês de hoje usa essas partículas o tempo todo, e o português costuma traduzi-las pela entonação, por “ué”, “ora”, “né” ou simplesmente omiti-las.',
         table: {
           head: ['Partícula', 'Tom', 'Exemplo', 'Português'],
           rows: [
@@ -3943,17 +3943,17 @@ export const GRAMMAR_DA: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['«Men han har jo ikke noget på!» sagde et lille barn.', '«Mas ele está sem roupa nenhuma!», disse uma criancinha. («Kejserens nye klæder»)'],
-          ['Det gør ikke noget at være født i andegården, når man kun har ligget i et svaneæg.', 'Não importa ter nascido no terreiro dos patos, quando se esteve num ovo de cisne. («Den grimme ælling»)'],
+          ['“Men han har jo ikke noget på!” sagde et lille barn.', '“Mas ele está sem roupa nenhuma!”, disse uma criancinha. (“Kejserens nye klæder”)'],
+          ['Det gør ikke noget at være født i andegården, når man kun har ligget i et svaneæg.', 'Não importa ter nascido no terreiro dos patos, quando se esteve num ovo de cisne. (“Den grimme ælling”)'],
           ['Det er jo bare et eventyr.', 'Ora, é só um conto de fadas.'],
         ],
       },
     ],
     pitfalls: [
-      'Traduzir «jo» como «sim»: na frase afirmativa, «jo» é partícula modal («é óbvio»); só responde «sim» a pergunta negativa («Kommer du ikke? – Jo!»).',
-      'Errar o gênero de «eventyr»: é neutro (et eventyr, eventyret), enquanto «historie» é comum (en historie). Andersen usou as duas palavras nos títulos das suas coletâneas.',
-      'Ler «klæder» como singular: é o plural «roupas»; «Kejserens nye klæder» = as roupas novas do imperador.',
-      'Esperar o final feliz da Disney: em «Den lille havfrue», a sereia não fica com o príncipe.',
+      'Traduzir “jo” como “sim”: na frase afirmativa, “jo” é partícula modal (“é óbvio”); só responde “sim” a pergunta negativa (“Kommer du ikke? – Jo!”).',
+      'Errar o gênero de “eventyr”: é neutro (et eventyr, eventyret), enquanto “historie” é comum (en historie). Andersen usou as duas palavras nos títulos das suas coletâneas.',
+      'Ler “klæder” como singular: é o plural “roupas”; “Kejserens nye klæder” = as roupas novas do imperador.',
+      'Esperar o final feliz da Disney: em “Den lille havfrue”, a sereia não fica com o príncipe.',
     ],
     quiz: [
       {
@@ -3963,25 +3963,25 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         explanation: 'Andersen nasceu em Odense, na Fiônia, em 1805, e se mudou para Copenhague aos 14 anos.',
       },
       {
-        question: 'Qual conto começa com «Langt ude i havet er vandet så blåt…»?',
+        question: 'Qual conto começa com “Langt ude i havet er vandet så blåt…”?',
         options: ['Den lille havfrue', 'Snedronningen', 'Fyrtøjet'],
         answer: 'Den lille havfrue',
-        explanation: 'É o começo de «A pequena sereia» (1837).',
+        explanation: 'É o começo de “A pequena sereia” (1837).',
       },
       {
-        question: 'Em «Men han har jo ikke noget på!», o «jo» indica que…',
+        question: 'Em “Men han har jo ikke noget på!”, o “jo” indica que…',
         options: ['o fato é evidente', 'a frase é uma pergunta', 'o fato aconteceu ontem'],
         answer: 'o fato é evidente',
-        explanation: '«Jo» é a partícula do óbvio: a criança diz o que todos veem e ninguém admite.',
+        explanation: '“Jo” é a partícula do óbvio: a criança diz o que todos veem e ninguém admite.',
       },
       {
-        question: 'Qual partícula pede confirmação, como o nosso «né»?',
+        question: 'Qual partícula pede confirmação, como o nosso “né”?',
         options: ['vel', 'jo', 'da'],
         answer: 'vel',
-        explanation: '«Du kommer vel i morgen?» = Você vem amanhã, né?',
+        explanation: '“Du kommer vel i morgen?” = Você vem amanhã, né?',
       },
       {
-        question: 'Qual é o gênero de «eventyr»?',
+        question: 'Qual é o gênero de “eventyr”?',
         options: ['et', 'en'],
         answer: 'et',
         explanation: 'Et eventyr, eventyret, eventyr (plural igual ao singular).',
@@ -3997,16 +3997,16 @@ export const GRAMMAR_DA: GrammarTopic[] = [
     sections: [
       {
         heading: 'Søren Kierkegaard (1813–1855)',
-        text: 'Filósofo e teólogo de Copenhague, considerado precursor do existencialismo. Publicou muitas obras sob pseudônimos, que discutem entre si: «Enten – Eller» (Ou isto, ou aquilo, 1843), «Frygt og Bæven» (Temor e tremor, 1843), «Begrebet Angest» (O conceito de angústia, 1844), «Sygdommen til Døden» (A doença para a morte, 1849). A sua frase mais citada vem dos diários de 1843 e costuma circular resumida como «a vida se entende para trás, mas se vive para frente». Curiosidade de ortografia: «Kierkegaard» é a grafia antiga de «kirkegård», cemitério.',
+        text: 'Filósofo e teólogo de Copenhague, considerado precursor do existencialismo. Publicou muitas obras sob pseudônimos, que discutem entre si: “Enten – Eller” (Ou isto, ou aquilo, 1843), “Frygt og Bæven” (Temor e tremor, 1843), “Begrebet Angest” (O conceito de angústia, 1844), “Sygdommen til Døden” (A doença para a morte, 1849). A sua frase mais citada vem dos diários de 1843 e costuma circular resumida como “a vida se entende para trás, mas se vive para frente”. Curiosidade de ortografia: “Kierkegaard” é a grafia antiga de “kirkegård”, cemitério.',
         examples: [
           ['Det er ganske sandt, hvad filosofien siger, at livet må forstås baglæns. Men derover glemmer man den anden sætning, at det må leves forlæns.', 'É bem verdade o que diz a filosofia, que a vida tem de ser compreendida para trás. Mas com isso se esquece a outra frase, que ela tem de ser vivida para frente. (diário, 1843; ortografia moderna)'],
           ['Kierkegaard skrev mange af sine bøger under pseudonym.', 'Kierkegaard escreveu muitos dos seus livros sob pseudônimo.'],
-          ['Navnet Kierkegaard er en gammel stavemåde af «kirkegård».', 'O nome Kierkegaard é uma grafia antiga de «kirkegård».'],
+          ['Navnet Kierkegaard er en gammel stavemåde af “kirkegård”.', 'O nome Kierkegaard é uma grafia antiga de “kirkegård”.'],
         ],
       },
       {
         heading: 'O Moderne Gennembrud: Jacobsen e Bang',
-        text: 'A partir de 1871, as conferências do crítico Georg Brandes pediram uma literatura que «pusesse problemas em debate»: nasceu o Moderne Gennembrud (a Ruptura Moderna), realista e naturalista. J. P. Jacobsen (1847–1885), de Thisted, era botânico e traduziu Darwin para o dinamarquês; escreveu «Fru Marie Grubbe» (1876) e «Niels Lyhne» (1880), com descrições minuciosas de luz, cor e plantas e personagens que perdem a fé. Herman Bang (1857–1912), da ilha de Als, é o impressionista: em «Ved Vejen» (1886) e «Tine» (1889), o narrador quase some, e a história se conta por diálogos, gestos e cenas curtas, como numa câmera.',
+        text: 'A partir de 1871, as conferências do crítico Georg Brandes pediram uma literatura que “pusesse problemas em debate”: nasceu o Moderne Gennembrud (a Ruptura Moderna), realista e naturalista. J. P. Jacobsen (1847–1885), de Thisted, era botânico e traduziu Darwin para o dinamarquês; escreveu “Fru Marie Grubbe” (1876) e “Niels Lyhne” (1880), com descrições minuciosas de luz, cor e plantas e personagens que perdem a fé. Herman Bang (1857–1912), da ilha de Als, é o impressionista: em “Ved Vejen” (1886) e “Tine” (1889), o narrador quase some, e a história se conta por diálogos, gestos e cenas curtas, como numa câmera.',
         table: {
           head: ['', 'J. P. Jacobsen', 'Herman Bang'],
           rows: [
@@ -4024,7 +4024,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'Karen Blixen (1885–1962)',
-        text: 'Karen Blixen viveu de 1914 a 1931 numa fazenda de café no Quênia, e dessa experiência saiu «Den afrikanske Farm» (1937), em inglês «Out of Africa», assinado Isak Dinesen. O livro de estreia, «Seven Gothic Tales» (1934), saiu primeiro em inglês. Ela costumava escrever primeiro em inglês e depois reescrever os livros em dinamarquês, com liberdade: as duas versões não são idênticas. Seus contos, como «Babettes Gæstebud» (A festa de Babette), usam um dinamarquês elegante e um pouco antiquado de propósito. Viveu e está enterrada em Rungstedlund, ao norte de Copenhague. Como morreu em 1962, este app não reproduz trechos da sua obra.',
+        text: 'Karen Blixen viveu de 1914 a 1931 numa fazenda de café no Quênia, e dessa experiência saiu “Den afrikanske Farm” (1937), em inglês “Out of Africa”, assinado Isak Dinesen. O livro de estreia, “Seven Gothic Tales” (1934), saiu primeiro em inglês. Ela costumava escrever primeiro em inglês e depois reescrever os livros em dinamarquês, com liberdade: as duas versões não são idênticas. Seus contos, como “Babettes Gæstebud” (A festa de Babette), usam um dinamarquês elegante e um pouco antiquado de propósito. Viveu e está enterrada em Rungstedlund, ao norte de Copenhague. Como morreu em 1962, este app não reproduz trechos da sua obra.',
         examples: [
           ['Karen Blixen skrev ofte sine bøger på engelsk først.', 'Karen Blixen muitas vezes escrevia os seus livros primeiro em inglês.'],
           ['Hun boede i Kenya i sytten år.', 'Ela morou no Quênia por dezessete anos.'],
@@ -4033,7 +4033,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'A língua literária: o genitivo e o particípio presente',
-        text: 'Dois recursos aparecem muito mais na prosa literária do que na fala. O genitivo em -s anteposto, que substitui construções com preposição («Herman Bangs romaner», «livets gåde»). E o particípio presente em -ende, usado como adjetivo ou advérbio («en lysende morgen», «hun gik syngende hjem»). Note que o genitivo não leva apóstrofo e que, depois dele, o substantivo fica na forma indefinida: «Bangs roman», nunca «Bangs romanen».',
+        text: 'Dois recursos aparecem muito mais na prosa literária do que na fala. O genitivo em -s anteposto, que substitui construções com preposição (“Herman Bangs romaner”, “livets gåde”). E o particípio presente em -ende, usado como adjetivo ou advérbio (“en lysende morgen”, “hun gik syngende hjem”). Note que o genitivo não leva apóstrofo e que, depois dele, o substantivo fica na forma indefinida: “Bangs roman”, nunca “Bangs romanen”.',
         examples: [
           ['Livets gåde optog ham hele livet.', 'O enigma da vida o ocupou a vida toda.'],
           ['Hun gik syngende hjem gennem skoven.', 'Ela foi para casa cantando pela floresta.'],
@@ -4042,14 +4042,14 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pôr artigo definido depois do genitivo: «Kierkegaards bog», não «Kierkegaards bogen».',
+      'Pôr artigo definido depois do genitivo: “Kierkegaards bog”, não “Kierkegaards bogen”.',
       'Achar que os pseudônimos de Kierkegaard falam sempre por ele: cada pseudônimo defende uma posição, e muitas vezes ele discorda deles.',
       'Pensar que as versões inglesa e dinamarquesa de Blixen são traduções literais uma da outra: ela reescrevia os livros, e as duas versões diferem.',
-      'Ler «Haabløse Slægter» e achar erro: é o título na ortografia de 1880 (hoje seria «Håbløse slægter»).',
+      'Ler “Haabløse Slægter” e achar erro: é o título na ortografia de 1880 (hoje seria “Håbløse slægter”).',
     ],
     quiz: [
       {
-        question: 'O que quer dizer «kirkegård», a palavra por trás do nome Kierkegaard?',
+        question: 'O que quer dizer “kirkegård”, a palavra por trás do nome Kierkegaard?',
         options: ['cemitério', 'igreja', 'fazenda'],
         answer: 'cemitério',
         explanation: 'Kirke (igreja) + gård (pátio, terreno): o terreno da igreja, o cemitério.',
@@ -4061,10 +4061,10 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         explanation: 'Jacobsen era botânico e traduziu Darwin antes de se dedicar aos romances.',
       },
       {
-        question: 'Em que língua saiu primeiro o livro de estreia de Karen Blixen, «Seven Gothic Tales» (1934)?',
+        question: 'Em que língua saiu primeiro o livro de estreia de Karen Blixen, “Seven Gothic Tales” (1934)?',
         options: ['engelsk', 'dansk', 'svensk'],
         answer: 'engelsk',
-        explanation: 'Saiu em inglês em 1934, com o pseudônimo Isak Dinesen; a versão dinamarquesa, «Syv fantastiske Fortællinger», ela mesma fez, em 1935.',
+        explanation: 'Saiu em inglês em 1934, com o pseudônimo Isak Dinesen; a versão dinamarquesa, “Syv fantastiske Fortællinger”, ela mesma fez, em 1935.',
       },
       {
         question: 'Qual forma está correta?',
@@ -4085,11 +4085,11 @@ export const GRAMMAR_DA: GrammarTopic[] = [
     level: 'C2',
     title: 'Ordsprog e talemåder: provérbios e expressões',
     emoji: '🦉',
-    summary: '«Borte godt, men hjemme bedst», «Morgenstund har guld i mund», «Der er ugler i mosen». Os provérbios dinamarqueses guardam gramática antiga (intet, hvo), a vírgula tradicional antes do relativo («Den, der…») e o objeto na primeira posição. E as expressões do dia a dia têm imagens que rendem boas traduções: falar «com letras grandes», atirar no papagaio.',
+    summary: '“Borte godt, men hjemme bedst”, “Morgenstund har guld i mund”, “Der er ugler i mosen”. Os provérbios dinamarqueses guardam gramática antiga (intet, hvo), a vírgula tradicional antes do relativo (“Den, der…”) e o objeto na primeira posição. E as expressões do dia a dia têm imagens que rendem boas traduções: falar “com letras grandes”, atirar no papagaio.',
     sections: [
       {
         heading: 'Ordsprog: os provérbios',
-        text: 'Em dinamarquês, o provérbio é «et ordsprog», e a expressão idiomática, «en talemåde» ou «et udtryk». Os provérbios usam o presente genérico, o sujeito «man» ou «den, der» (quem) e às vezes palavras antigas: «intet» (nada, hoje mais «ingenting») e, em versões velhas, «hvo» (quem).',
+        text: 'Em dinamarquês, o provérbio é “et ordsprog”, e a expressão idiomática, “en talemåde” ou “et udtryk”. Os provérbios usam o presente genérico, o sujeito “man” ou “den, der” (quem) e às vezes palavras antigas: “intet” (nada, hoje mais “ingenting”) e, em versões velhas, “hvo” (quem).',
         table: {
           head: ['Ordsprog', 'Tradução literal', 'Equivalente em português'],
           rows: [
@@ -4114,7 +4114,7 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
       {
         heading: 'A gramática dos provérbios',
-        text: 'Quatro traços se repetem. O adjetivo pode vir depois do substantivo, como na poesia: «bække små». O objeto ou o adjetivo pode abrir a frase, e o verbo continua em segundo lugar (V2): «Lille tue kan vælte stort læs». O relativo «der» serve de sujeito («den, der ler sidst»; «alt, hvad der glimrer»), e a vírgula antes dele é a tradicional dos provérbios. E há formas congeladas: «intet» por «ingenting», sem artigo em «lille tue» e «stort læs».',
+        text: 'Quatro traços se repetem. O adjetivo pode vir depois do substantivo, como na poesia: “bække små”. O objeto ou o adjetivo pode abrir a frase, e o verbo continua em segundo lugar (V2): “Lille tue kan vælte stort læs”. O relativo “der” serve de sujeito (“den, der ler sidst”; “alt, hvad der glimrer”), e a vírgula antes dele é a tradicional dos provérbios. E há formas congeladas: “intet” por “ingenting”, sem artigo em “lille tue” e “stort læs”.',
         examples: [
           ['Den, der ler sidst, ler bedst.', 'Quem ri por último ri melhor.'],
           ['Efter regn kommer solskin.', 'Depois da chuva vem o sol.'],
@@ -4147,41 +4147,41 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Traduzir o provérbio ao pé da letra: «morgenstund har guld i mund» em português é «Deus ajuda quem cedo madruga».',
-      'Modernizar o provérbio: «Den, der ikke vover noget, vinder ikke noget» se entende, mas perde a forma fixa; o ordsprog se cita como é.',
-      'Estranhar «ugler i mosen»: «mose» aqui é pântano, turfeira (en mose), não o musgo, que em dinamarquês é «mos».',
-      'Trocar «guld» por «gull»: «gull» é norueguês; em dinamarquês é «guld», com o d mudo.',
+      'Traduzir o provérbio ao pé da letra: “morgenstund har guld i mund” em português é “Deus ajuda quem cedo madruga”.',
+      'Modernizar o provérbio: “Den, der ikke vover noget, vinder ikke noget” se entende, mas perde a forma fixa; o ordsprog se cita como é.',
+      'Estranhar “ugler i mosen”: “mose” aqui é pântano, turfeira (en mose), não o musgo, que em dinamarquês é “mos”.',
+      'Trocar “guld” por “gull”: “gull” é norueguês; em dinamarquês é “guld”, com o d mudo.',
     ],
     quiz: [
       {
-        question: 'Complete: «Borte godt, men hjemme ___.»',
+        question: 'Complete: “Borte godt, men hjemme ___.”',
         options: ['bedst', 'godt', 'bedre'],
         answer: 'bedst',
-        explanation: '«Borte godt, men hjemme bedst»: fora é bom, mas em casa é melhor.',
+        explanation: '“Borte godt, men hjemme bedst”: fora é bom, mas em casa é melhor.',
       },
       {
-        question: 'Qual provérbio equivale a «de grão em grão a galinha enche o papo»?',
+        question: 'Qual provérbio equivale a “de grão em grão a galinha enche o papo”?',
         options: ['Mange bække små gør en stor å.', 'Lille tue kan vælte stort læs.', 'For mange kokke fordærver maden.'],
         answer: 'Mange bække små gør en stor å.',
         explanation: 'Muitos riachos pequenos fazem um rio grande: o pouco somado vira muito.',
       },
       {
-        question: 'Em «Den, der intet vover, intet vinder», «intet» equivale a…',
+        question: 'Em “Den, der intet vover, intet vinder”, “intet” equivale a…',
         options: ['ingenting', 'ikke', 'alt'],
         answer: 'ingenting',
-        explanation: '«Intet» é a forma antiga e formal de «ingenting» (nada).',
+        explanation: '“Intet” é a forma antiga e formal de “ingenting” (nada).',
       },
       {
-        question: 'Qual expressão quer dizer «falar sem rodeios»?',
+        question: 'Qual expressão quer dizer “falar sem rodeios”?',
         options: ['at tale med store bogstaver', 'at skyde papegøjen', 'at tage benene på nakken'],
         answer: 'at tale med store bogstaver',
-        explanation: '«Falar com letras grandes»: dizer as coisas claramente, sem suavizar.',
+        explanation: '“Falar com letras grandes”: dizer as coisas claramente, sem suavizar.',
       },
       {
         question: 'Alguém ganhou na loteria. Ele…',
         options: ['har skudt papegøjen', 'er på Herrens mark', 'har en høne at plukke'],
         answer: 'har skudt papegøjen',
-        explanation: '«At skyde papegøjen» = tirar a sorte grande.',
+        explanation: '“At skyde papegøjen” = tirar a sorte grande.',
       },
     ],
   },
@@ -4190,11 +4190,11 @@ export const GRAMMAR_DA: GrammarTopic[] = [
     level: 'C2',
     title: 'A ortografia antiga: ler Andersen e Kierkegaard no original',
     emoji: '🔍',
-    summary: 'Até 1948, o dinamarquês escrevia os substantivos com maiúscula, usava «aa» em vez de «å» e grafava «kunde», «skulde», «vilde». Antes disso, havia ainda «Kjøbenhavn», «deilig» e verbos no plural («vi ere»). Uma chave de leitura para livros antigos, lápides e placas, e para entender por que Aarhus e Aalborg ainda se escrevem com Aa.',
+    summary: 'Até 1948, o dinamarquês escrevia os substantivos com maiúscula, usava “aa” em vez de “å” e grafava “kunde”, “skulde”, “vilde”. Antes disso, havia ainda “Kjøbenhavn”, “deilig” e verbos no plural (“vi ere”). Uma chave de leitura para livros antigos, lápides e placas, e para entender por que Aarhus e Aalborg ainda se escrevem com Aa.',
     sections: [
       {
         heading: 'A reforma de 1948',
-        text: 'A grande reforma ortográfica dinamarquesa é de 1948. Ela fez três mudanças que saltam aos olhos: os substantivos comuns passaram para minúscula (a Dinamarca foi a última das línguas escandinavas a abandonar o costume alemão), o dígrafo «aa» virou a letra «å», e os passados dos verbos modais ganharam a grafia da fala: kunde → kunne, skulde → skulle, vilde → ville. Tudo o que foi impresso antes disso, incluindo Andersen, Kierkegaard, Jacobsen e Bang, vem com essa cara.',
+        text: 'A grande reforma ortográfica dinamarquesa é de 1948. Ela fez três mudanças que saltam aos olhos: os substantivos comuns passaram para minúscula (a Dinamarca foi a última das línguas escandinavas a abandonar o costume alemão), o dígrafo “aa” virou a letra “å”, e os passados dos verbos modais ganharam a grafia da fala: kunde → kunne, skulde → skulle, vilde → ville. Tudo o que foi impresso antes disso, incluindo Andersen, Kierkegaard, Jacobsen e Bang, vem com essa cara.',
         table: {
           head: ['Antes de 1948', 'Depois', 'Português'],
           rows: [
@@ -4207,12 +4207,12 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         examples: [
           ['Før 1948 skrev man navneord med stort begyndelsesbogstav.', 'Antes de 1948, escreviam-se os substantivos com letra inicial maiúscula.'],
           ['Bogstavet å blev indført i 1948.', 'A letra å foi introduzida em 1948.'],
-          ['I gamle bøger står der «kunde» i stedet for «kunne».', 'Em livros antigos, está escrito «kunde» em vez de «kunne».'],
+          ['I gamle bøger står der “kunde” i stedet for “kunne”.', 'Em livros antigos, está escrito “kunde” em vez de “kunne”.'],
         ],
       },
       {
         heading: 'Traços ainda mais antigos',
-        text: 'Em textos do século XIX aparecem outras grafias, abandonadas na virada para o século XX: «kj» e «gj» antes de vogal anterior (Kjøbenhavn, gjøre), «ei» e «øi» onde hoje se escreve «ej» e «øj» (deilig, Høi), «q» em vez de «kv» (Qvinde) e vogais dobradas para marcar vogal longa (een). Na gramática, os verbos ainda tinham plural na escrita: «vi ere» (vi er), «de vare» (de var). E o tratamento «De», com maiúscula, era a norma entre adultos.',
+        text: 'Em textos do século XIX aparecem outras grafias, abandonadas na virada para o século XX: “kj” e “gj” antes de vogal anterior (Kjøbenhavn, gjøre), “ei” e “øi” onde hoje se escreve “ej” e “øj” (deilig, Høi), “q” em vez de “kv” (Qvinde) e vogais dobradas para marcar vogal longa (een). Na gramática, os verbos ainda tinham plural na escrita: “vi ere” (vi er), “de vare” (de var). E o tratamento “De”, com maiúscula, era a norma entre adultos.',
         table: {
           head: ['Antigo', 'Moderno', 'Português'],
           rows: [
@@ -4225,22 +4225,22 @@ export const GRAMMAR_DA: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['Andersen skrev «Kjøbenhavn» med kj.', 'Andersen escrevia «Kjøbenhavn» com kj.'],
-          ['I dag skriver man «dejlig» med j.', 'Hoje se escreve «dejlig» com j.'],
+          ['Andersen skrev “Kjøbenhavn” med kj.', 'Andersen escrevia “Kjøbenhavn” com kj.'],
+          ['I dag skriver man “dejlig” med j.', 'Hoje se escreve “dejlig” com j.'],
         ],
       },
       {
         heading: 'Treino de leitura: Andersen no original',
-        text: 'Leia a frase como Andersen a publicou e depois a versão moderna. O truque é trocar mentalmente: aa → å; maiúscula no meio da frase → minúscula; ei → ej. Repare também na pontuação antiga, com mais vírgulas antes de «som».',
+        text: 'Leia a frase como Andersen a publicou e depois a versão moderna. O truque é trocar mentalmente: aa → å; maiúscula no meio da frase → minúscula; ei → ej. Repare também na pontuação antiga, com mais vírgulas antes de “som”.',
         examples: [
           ['Langt ude i Havet er Vandet saa blaat, som Bladene paa den deiligste Kornblomst og saa klart, som det reneste Glas.', 'Hoje: Langt ude i havet er vandet så blåt som bladene på den dejligste kornblomst og så klart som det reneste glas.'],
-          ['»Men han har jo ikke noget paa!« sagde et lille Barn.', 'Hoje: «Men han har jo ikke noget på!» sagde et lille barn.'],
+          ['”Men han har jo ikke noget paa!“ sagde et lille Barn.', 'Hoje: ‘Men han har jo ikke noget på!’ sagde et lille barn.'],
           ['Det var saa grueligt koldt; det sneede, og det begyndte at blive mørk Aften.', 'Hoje: Det var så grueligt koldt; det sneede, og det begyndte at blive mørk aften.'],
         ],
       },
       {
         heading: 'O Aa que ficou',
-        text: 'Os nomes próprios não seguem obrigatoriamente as reformas. Muitas cidades mantiveram ou recuperaram o «Aa»: Aalborg e Aabenraa sempre o usaram, e Aarhus, que passou a Århus em 1948, voltou oficialmente a Aarhus em 2011. Sobrenomes como Aagaard e Kierkegaard também guardam a grafia antiga. Na ordem alfabética dinamarquesa, «aa» conta como «å», a última letra: Aarhus vem depois de Vejle, no fim da lista.',
+        text: 'Os nomes próprios não seguem obrigatoriamente as reformas. Muitas cidades mantiveram ou recuperaram o “Aa”: Aalborg e Aabenraa sempre o usaram, e Aarhus, que passou a Århus em 1948, voltou oficialmente a Aarhus em 2011. Sobrenomes como Aagaard e Kierkegaard também guardam a grafia antiga. Na ordem alfabética dinamarquesa, “aa” conta como “å”, a última letra: Aarhus vem depois de Vejle, no fim da lista.',
         table: {
           head: ['Nome', 'Situação'],
           rows: [
@@ -4258,8 +4258,8 @@ export const GRAMMAR_DA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Ler «aa» como dois «a»: em textos antigos e em nomes, «aa» é o som de «å» (Aalborg se lê como «Ålborg»).',
-      'Ler «kunde» como o substantivo «kunde» (cliente): em texto anterior a 1948, costuma ser o passado de «kan» (kunne).',
+      'Ler “aa” como dois “a”: em textos antigos e em nomes, “aa” é o som de “å” (Aalborg se lê como “Ålborg”).',
+      'Ler “kunde” como o substantivo “kunde” (cliente): em texto anterior a 1948, costuma ser o passado de “kan” (kunne).',
       'Achar que a maiúscula no meio da frase marca um nome próprio: antes de 1948, todo substantivo tinha maiúscula (et lille Barn).',
       'Corrigir nomes próprios: Aarhus, Aalborg e Kierkegaard se escrevem assim de propósito.',
     ],
@@ -4271,13 +4271,13 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         explanation: 'A reforma de 1948. 1907 e 1887 são datas de reformas norueguesas.',
       },
       {
-        question: 'Como se escreve «skulde» hoje?',
+        question: 'Como se escreve “skulde” hoje?',
         options: ['skulle', 'skulde', 'skal'],
         answer: 'skulle',
         explanation: 'Em 1948, kunde, skulde e vilde viraram kunne, skulle e ville.',
       },
       {
-        question: 'Qual é a forma moderna de «Qvinde»?',
+        question: 'Qual é a forma moderna de “Qvinde”?',
         options: ['kvinde', 'quinde', 'hvinde'],
         answer: 'kvinde',
         explanation: 'O q deu lugar a kv: Qvinde → kvinde (mulher).',
@@ -4289,10 +4289,10 @@ export const GRAMMAR_DA: GrammarTopic[] = [
         explanation: 'Århus (1948–2010) voltou a ser Aarhus em 1º de janeiro de 2011.',
       },
       {
-        question: 'O que é «vi ere» num texto antigo?',
+        question: 'O que é “vi ere” num texto antigo?',
         options: ['vi er', 'vi var', 'vi ser'],
         answer: 'vi er',
-        explanation: '«Ere» era o plural escrito do presente de «være»; a forma sumiu da escrita por volta de 1900.',
+        explanation: '“Ere” era o plural escrito do presente de “være”; a forma sumiu da escrita por volta de 1900.',
       },
     ],
   },

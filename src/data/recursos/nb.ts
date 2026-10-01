@@ -32,7 +32,7 @@ export const RECURSOS_NB: LanguageResources = {
       fullName: 'Norskprøve C1 – høyere akademisk nivå',
       org: 'HK-dir (Direktoratet for høyere utdanning og kompetanse)',
       flag: '🇳🇴',
-      levels: 'Só o nível C1: cada uma das duas partes dá «C1» ou não; com C1 nas duas, você tem C1 nas quatro habilidades',
+      levels: 'Só o nível C1: cada uma das duas partes dá “C1” ou não; com C1 nas duas, você tem C1 nas quatro habilidades',
       cefr: ['C1', 'C1'],
       format: [
         'Compreensão oral e produção escrita: no computador, com cerca de 15 minutos de áudio (ouvido duas vezes) e 2h30 para as tarefas de escrita',
@@ -197,7 +197,7 @@ export const RECURSOS_NB: LanguageResources = {
       by: 'Karl Ove Knausgård',
       year: '2009',
       level: 'C1',
-      why: 'Primeiro volume da série autobiográfica «Minha Luta», sucesso no mundo inteiro: frases longas e o cotidiano descrito em detalhe.',
+      why: 'Primeiro volume da série autobiográfica “Minha Luta”, sucesso no mundo inteiro: frases longas e o cotidiano descrito em detalhe.',
     },
     {
       kind: 'livro',
@@ -257,7 +257,7 @@ export const RECURSOS_NB: LanguageResources = {
       by: 'Karpe',
       year: '2015',
       level: 'C1',
-      why: 'Álbum da dupla de rap de Oslo, com a gíria multicultural da cidade (o chamado «kebabnorsk») e letras sobre identidade.',
+      why: 'Álbum da dupla de rap de Oslo, com a gíria multicultural da cidade (o chamado “kebabnorsk”) e letras sobre identidade.',
       accent: 'norueguês de Oslo, com gíria multicultural',
     },
     {
@@ -289,7 +289,7 @@ export const RECURSOS_NB: LanguageResources = {
       title: 'NRK TV',
       by: 'NRK',
       level: 'B1',
-      why: 'O streaming da TV pública, com séries como «Skam» e legenda em norueguês em muitos programas; parte do catálogo só abre dentro da Noruega.',
+      why: 'O streaming da TV pública, com séries como “Skam” e legenda em norueguês em muitos programas; parte do catálogo só abre dentro da Noruega.',
     },
     {
       kind: 'canal',
@@ -328,10 +328,10 @@ export const RECURSOS_NB: LanguageResources = {
     },
   ],
   tips: [
-    'Há duas normas escritas: o bokmål, usado pela grande maioria, e o nynorsk, mais comum no oeste. Comece pelo bokmål, mas não se assuste ao ver «eg» em vez de «jeg» ou «ikkje» em vez de «ikke».',
-    'Não existe uma pronúncia-padrão oficial: os noruegueses falam o próprio dialeto na TV, no trabalho e na política. «Eu» pode soar «jæi» em Oslo, «eg» em Bergen e «æ» em Trondheim, então acostume o ouvido com séries de regiões diferentes.',
-    'O norueguês tem acento tonal: «bønder» (agricultores) e «bønner» (feijões, ou orações) diferem sobretudo pela melodia. Repita frases inteiras imitando a entonação.',
-    'O verbo não muda com a pessoa («jeg er, du er, vi er»), o que ajuda muito. Mas atenção à ordem das palavras: o verbo vem em segundo lugar («I dag drar jeg», hoje eu vou).',
+    'Há duas normas escritas: o bokmål, usado pela grande maioria, e o nynorsk, mais comum no oeste. Comece pelo bokmål, mas não se assuste ao ver “eg” em vez de “jeg” ou “ikkje” em vez de “ikke”.',
+    'Não existe uma pronúncia-padrão oficial: os noruegueses falam o próprio dialeto na TV, no trabalho e na política. “Eu” pode soar “jæi” em Oslo, “eg” em Bergen e “æ” em Trondheim, então acostume o ouvido com séries de regiões diferentes.',
+    'O norueguês tem acento tonal: “bønder” (agricultores) e “bønner” (feijões, ou orações) diferem sobretudo pela melodia. Repita frases inteiras imitando a entonação.',
+    'O verbo não muda com a pessoa (“jeg er, du er, vi er”), o que ajuda muito. Mas atenção à ordem das palavras: o verbo vem em segundo lugar (“I dag drar jeg”, hoje eu vou).',
     'Quem aprende norueguês leva de brinde boa parte do sueco falado e do dinamarquês escrito, que são muito próximos. Depois de um tempo, vale arriscar séries suecas e dinamarquesas.',
   ],
 };

@@ -39,5 +39,5 @@ export const INDONESIO: LanguagePack = {
   phrases: { hi: 'Halo!', thanks: 'Terima kasih!', letsStart: ['Ayo mulai!', 'Vamos começar!'] },
   formalMarkers: 'Bapak/Ibu, tolong, permisi',
   cognateNote:
-    'O indonésio é uma língua austronésia, sem parentesco com o português, mas com uma gramática surpreendentemente simples: sem conjugação verbal, sem gênero gramatical e sem artigos. Palavras como «kopi» (café) chegaram por outra rota até o português, mostrando como as línguas do mundo se cruzam pelo comércio.',
+    'O indonésio é uma língua austronésia, sem parentesco com o português, mas com uma gramática surpreendentemente simples: sem conjugação verbal, sem gênero gramatical e sem artigos. Palavras como “kopi” (café) chegaram por outra rota até o português, mostrando como as línguas do mundo se cruzam pelo comércio.',
 };

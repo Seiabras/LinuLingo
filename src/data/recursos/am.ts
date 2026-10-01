@@ -64,7 +64,7 @@ export const RECURSOS_AM: LanguageResources = {
       original: 'ፍቅር እስከ መቃብር',
       by: 'Haddis Alemayehu',
       level: 'C1',
-      why: 'O romance mais amado da Etiópia: o amor impossível entre um jovem professor pobre e a filha de um nobre, no tempo do império. Saiu em 1958 do calendário etíope (1965/66) e tem tradução inglesa, «Love Unto Crypt».',
+      why: 'O romance mais amado da Etiópia: o amor impossível entre um jovem professor pobre e a filha de um nobre, no tempo do império. Saiu em 1958 do calendário etíope (1965/66) e tem tradução inglesa, “Love Unto Crypt”.',
     },
     {
       kind: 'livro',
@@ -73,7 +73,7 @@ export const RECURSOS_AM: LanguageResources = {
       by: 'Baalu Girma',
       year: '1983',
       level: 'C1',
-      why: 'Romance sobre a campanha do governo militar na Eritreia; a crítica ao regime foi tanta que o autor desapareceu pouco depois do lançamento. O título, em tigrínia, quer dizer «acabou».',
+      why: 'Romance sobre a campanha do governo militar na Eritreia; a crítica ao regime foi tanta que o autor desapareceu pouco depois do lançamento. O título, em tigrínia, quer dizer “acabou”.',
     },
     {
       kind: 'livro',
@@ -89,7 +89,7 @@ export const RECURSOS_AM: LanguageResources = {
       title: 'Canções de Tilahun Gessesse',
       by: 'Tilahun Gessesse',
       level: 'B1',
-      why: 'Chamado de «A Voz», foi o grande cantor da era de ouro da música etíope. Canções lentas e bem articuladas, ótimas para acompanhar a letra.',
+      why: 'Chamado de “A Voz”, foi o grande cantor da era de ouro da música etíope. Canções lentas e bem articuladas, ótimas para acompanhar a letra.',
     },
     {
       kind: 'musica',
@@ -103,7 +103,7 @@ export const RECURSOS_AM: LanguageResources = {
       title: 'Ere Mela Mela',
       by: 'Mahmoud Ahmed',
       level: 'B2',
-      why: 'Clássico dos anos 1970, com metais, órgão e a voz rasgada de Mahmoud Ahmed; relançado na coleção «Éthiopiques», ajudou a apresentar a música etíope ao resto do mundo.',
+      why: 'Clássico dos anos 1970, com metais, órgão e a voz rasgada de Mahmoud Ahmed; relançado na coleção “Éthiopiques”, ajudou a apresentar a música etíope ao resto do mundo.',
     },
     {
       kind: 'musica',
@@ -118,7 +118,7 @@ export const RECURSOS_AM: LanguageResources = {
       by: 'Mulatu Astatke',
       year: '1972',
       level: 'A1',
-      why: 'Ethio-jazz instrumental: não tem letra, então serve para conhecer a música etíope, não para treinar o amárico. Músicas de Mulatu estão na trilha de «Flores Partidas», de Jim Jarmusch.',
+      why: 'Ethio-jazz instrumental: não tem letra, então serve para conhecer a música etíope, não para treinar o amárico. Músicas de Mulatu estão na trilha de “Flores Partidas”, de Jim Jarmusch.',
     },
     {
       kind: 'musica',
@@ -195,9 +195,9 @@ export const RECURSOS_AM: LanguageResources = {
   tips: [
     'Não existe prova padronizada de amárico aberta ao público. Para comprovar o nível, o caminho são cursos de universidades com estudos etíopes, na Etiópia, na Europa (como a de Hamburgo) e nos EUA, que dão certificado de conclusão. Se precisar de um certificado de fala para trabalho, pergunte à Language Testing International, que aplica a entrevista oral da ACTFL, se há avaliador de amárico. Sem prova, grave-se lendo e conversando todo mês para acompanhar o progresso.',
     "O amárico se escreve com o fidel, herdado do ge'ez, que ainda é a língua da liturgia da Igreja Ortodoxa Etíope. Cada símbolo é uma sílaba: a forma básica da consoante ganha pequenas marcas para cada vogal, como ሀ (hä), ሁ (hu), ሂ (hi), ሃ (ha), ሄ (he), ህ (hə) e ሆ (ho). Estude a tabela linha por linha, uma consoante por dia.",
-    'Algumas letras do fidel soam igual (ሀ, ሐ e ኀ são todas «h»; ሰ e ሠ, «s»; አ e ዐ, «a»): a grafia segue a tradição, então memorize a das palavras mais comuns. E o fidel não marca consoantes dobradas, que mudam o sentido: ገና pode ser «gäna» (ainda) ou «gänna» (Natal).',
+    'Algumas letras do fidel soam igual (ሀ, ሐ e ኀ são todas “h”; ሰ e ሠ, “s”; አ e ዐ, “a”): a grafia segue a tradição, então memorize a das palavras mais comuns. E o fidel não marca consoantes dobradas, que mudam o sentido: ገና pode ser “gäna” (ainda) ou “gänna” (Natal).',
     'Treine as consoantes ejetivas, ditas com um estalo na garganta: ጥ (t’), ቅ (k’), ጭ (tch’), ጵ (p’) e ጽ (ts’). Sem o estalo, a palavra vira outra.',
-    'O amárico marca o gênero até no «você»: a um homem se pergunta «እንዴት ነህ?» (endet neh, como vai?) e a uma mulher, «እንዴት ነሽ?» (endet nesh). E o verbo vai no fim da frase: «ቡና እጠጣለሁ» é, palavra por palavra, «café bebo».',
-    'A Etiópia tem calendário próprio, com 12 meses de 30 dias e um 13.º mês de 5 ou 6 dias; o ano novo cai em setembro, e o ano etíope está 7 ou 8 anos atrás do nosso. As horas contam a partir do amanhecer: «duas horas» (ሁለት ሰዓት) são 8h da manhã. Na dúvida, pergunte qual calendário e qual relógio estão valendo.',
+    'O amárico marca o gênero até no “você”: a um homem se pergunta “እንዴት ነህ?” (endet neh, como vai?) e a uma mulher, “እንዴት ነሽ?” (endet nesh). E o verbo vai no fim da frase: “ቡና እጠጣለሁ” é, palavra por palavra, “café bebo”.',
+    'A Etiópia tem calendário próprio, com 12 meses de 30 dias e um 13.º mês de 5 ou 6 dias; o ano novo cai em setembro, e o ano etíope está 7 ou 8 anos atrás do nosso. As horas contam a partir do amanhecer: “duas horas” (ሁለት ሰዓት) são 8h da manhã. Na dúvida, pergunte qual calendário e qual relógio estão valendo.',
   ],
 };

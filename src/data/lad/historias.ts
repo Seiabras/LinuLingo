@@ -27,7 +27,7 @@ export const STORIES_LAD: StorySeed[] = [
         emoji: '😊',
         choices: [
           { text: 'So de São Paulo.', translation: 'Sou de São Paulo.', next: 'final_bueno' },
-          { text: 'Bevo agua.', translation: 'Eu bebo água.', wrong: 'Isso não responde de onde você é. Use «So de…».' },
+          { text: 'Bevo agua.', translation: 'Eu bebo água.', wrong: 'Isso não responde de onde você é. Use “So de…”.' },
         ],
       },
       final_bueno: {
@@ -60,7 +60,7 @@ export const STORIES_LAD: StorySeed[] = [
         emoji: '📱',
         choices: [
           { text: 'Si, tengo un ermano i una ermana.', translation: 'Sim, tenho um irmão e uma irmã.', next: 'ermanos' },
-          { text: 'Mi kaza es grande.', translation: 'A minha casa é grande.', wrong: 'Isso não responde se você tem irmãos. Use «tengo…».' },
+          { text: 'Mi kaza es grande.', translation: 'A minha casa é grande.', wrong: 'Isso não responde se você tem irmãos. Use “tengo…”.' },
         ],
       },
       ermanos: {
@@ -69,7 +69,7 @@ export const STORIES_LAD: StorySeed[] = [
         emoji: '🥟',
         choices: [
           { text: 'Si, grasias!', translation: 'Sim, obrigado!', next: 'final_bueno' },
-          { text: 'So de São Paulo.', translation: 'Sou de São Paulo.', wrong: 'Moshe fez um convite: responda com «si» ou «no, grasias».' },
+          { text: 'So de São Paulo.', translation: 'Sou de São Paulo.', wrong: 'Moshe fez um convite: responda com “si” ou “no, grasias”.' },
         ],
       },
       final_bueno: {

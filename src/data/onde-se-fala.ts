@@ -61,7 +61,7 @@ export const MAP_LANGUAGES: MapLanguage[] = [
       o('ROU', { variant: 'ro-RO', note: 'Língua oficial; variante padrão ensinada no app.' }),
       o('MDA', {
         variant: 'ro-MD',
-        note: 'Língua oficial (desde 2023 também chamada «limba română» na legislação). Falar com vocabulário e sotaque próprios.',
+        note: 'Língua oficial (desde 2023 também chamada “limba română” na legislação). Falar com vocabulário e sotaque próprios.',
       }),
       r('UKR', 'Comunidades romenas no norte da Bucovina (Cernăuți) e na região de Odessa.', ['UA-77', 'UA-51']),
       r('SRB', 'Co-oficial na Voivodina; comunidade romena também no Vale do Timoc.', ['RS-VO']),
@@ -119,9 +119,9 @@ export const MAP_LANGUAGES: MapLanguage[] = [
     millions: 490,
     lineage: ['Indo-europeu', 'Itálico', 'Românico', 'Ibero-românico'],
     countries: [
-      o('ESP', { variant: 'es-ES', note: 'Espanhol da Espanha: vosotros, o «ce/zi» dito [θ] e vocabulário próprio (coche, móvil, ordenador).' }),
-      o('ARG', { variant: 'es-AR', note: 'Espanhol rioplatense: voseo (vos tenés), «yo» e «calle» com [ʃ] e o lunfardo.' }),
-      o('URY', { variant: 'es-AR', note: 'Espanhol rioplatense, como o de Buenos Aires: voseo e «sh».' }),
+      o('ESP', { variant: 'es-ES', note: 'Espanhol da Espanha: vosotros, o “ce/zi” dito [θ] e vocabulário próprio (coche, móvil, ordenador).' }),
+      o('ARG', { variant: 'es-AR', note: 'Espanhol rioplatense: voseo (vos tenés), “yo” e “calle” com [ʃ] e o lunfardo.' }),
+      o('URY', { variant: 'es-AR', note: 'Espanhol rioplatense, como o de Buenos Aires: voseo e “sh”.' }),
       o('MEX', { variant: 'es-419', note: 'O país com mais falantes nativos de espanhol do mundo.' }),
       ...['GTM', 'HND', 'SLV', 'NIC', 'CRI', 'PAN', 'CUB', 'DOM', 'PRI', 'COL', 'VEN', 'ECU', 'PER', 'BOL', 'CHL', 'PRY'].map((iso) => o(iso, { variant: 'es-419' })),
       o('GNQ', { note: 'O único país da África com o espanhol como língua oficial.' }),
@@ -141,7 +141,7 @@ export const MAP_LANGUAGES: MapLanguage[] = [
     lineage: ['Indo-europeu', 'Itálico', 'Românico', 'Ibero-românico'],
     countries: [
       o('BRA', { variant: 'pt-BR', note: 'Variante brasileira: a de quem usa o app, e uma das duas variantes do curso de português.' }),
-      o('PRT', { variant: 'pt-PT', note: 'Variante europeia: a que o curso de português ensina, com outra pronúncia, vocabulário (comboio, autocarro), a ênclise («diz-me») e o «tu» mais usado.' }),
+      o('PRT', { variant: 'pt-PT', note: 'Variante europeia: a que o curso de português ensina, com outra pronúncia, vocabulário (comboio, autocarro), a ênclise (“diz-me”) e o “tu” mais usado.' }),
       o('AGO'),
       o('MOZ'),
       o('GNB'),

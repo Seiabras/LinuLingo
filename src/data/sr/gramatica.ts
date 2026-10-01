@@ -14,14 +14,14 @@ export const GRAMMAR_SR: GrammarTopic[] = [
         table: {
           head: ['Cirílico', 'Latino', 'Som'],
           rows: [
-            ['Ј ј', 'J j', '«i» curto de «pai»'],
-            ['Љ љ', 'Lj lj', '«lh»'],
-            ['Њ њ', 'Nj nj', '«nh»'],
-            ['Ч ч', 'Č č', '«tch» duro'],
-            ['Ћ ћ', 'Ć ć', '«tch» macio'],
-            ['Џ џ', 'Dž dž', '«dj» duro'],
-            ['Ђ ђ', 'Đ đ', '«dj» macio'],
-            ['Ш ш / Ж ж', 'Š š / Ž ž', '«ch» / «j»'],
+            ['Ј ј', 'J j', '“i” curto de “pai”'],
+            ['Љ љ', 'Lj lj', '“lh”'],
+            ['Њ њ', 'Nj nj', '“nh”'],
+            ['Ч ч', 'Č č', '“tch” duro'],
+            ['Ћ ћ', 'Ć ć', '“tch” macio'],
+            ['Џ џ', 'Dž dž', '“dj” duro'],
+            ['Ђ ђ', 'Đ đ', '“dj” macio'],
+            ['Ш ш / Ж ж', 'Š š / Ž ž', '“ch” / “j”'],
           ],
         },
         examples: [
@@ -31,13 +31,13 @@ export const GRAMMAR_SR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Ler o «Ј» cirílico como o nosso «j»: soa como o «i» de «pai» — «ја» é «iá».',
-      'Ler o «Р», «С» e «Н» cirílicos como p, c e h: são r, s e n.',
-      'Esperar uma vogal em «црн» ou «четвртак»: o «р» faz o papel de vogal.',
+      'Ler o “Ј” cirílico como o nosso “j”: soa como o “i” de “pai” — “ја” é “iá”.',
+      'Ler o “Р”, “С” e “Н” cirílicos como p, c e h: são r, s e n.',
+      'Esperar uma vogal em “црн” ou “четвртак”: o “р” faz o papel de vogal.',
     ],
     quiz: [
-      { question: 'Como se escreve «хвала» no alfabeto latino?', options: ['hvala', 'xbala', 'hbala'], answer: 'hvala', explanation: 'Х = h, В = v, А = a, Л = l.' },
-      { question: 'Como soa o «Ј» de «ја» (eu)?', options: ['como o «i» de «pai»', 'como o «j» de «já»', 'como o «g» de «gato»'], answer: 'como o «i» de «pai»', explanation: '«Ја» soa «iá».' },
+      { question: 'Como se escreve “хвала” no alfabeto latino?', options: ['hvala', 'xbala', 'hbala'], answer: 'hvala', explanation: 'Х = h, В = v, А = a, Л = l.' },
+      { question: 'Como soa o “Ј” de “ја” (eu)?', options: ['como o “i” de “pai”', 'como o “j” de “já”', 'como o “g” de “gato”'], answer: 'como o “i” de “pai”', explanation: '“Ја” soa “iá”.' },
     ],
   },
   {
@@ -45,10 +45,10 @@ export const GRAMMAR_SR: GrammarTopic[] = [
     level: 'A1.1',
     title: 'Os pronomes e o verbo бити',
     emoji: '🙋',
-    summary: 'Sete pronomes, as formas curtas de «бити» (ser, estar) e o tratamento formal com «ви».',
+    summary: 'Sete pronomes, as formas curtas de “бити” (ser, estar) e o tratamento formal com “ви”.',
     sections: [
       {
-        text: 'No presente, «бити» tem formas curtas e átonas: «сам», «си», «је»… Elas não podem abrir a frase: vem antes o pronome ou outra palavra.',
+        text: 'No presente, “бити” tem formas curtas e átonas: “сам”, “си”, “је”… Elas não podem abrir a frase: vem antes o pronome ou outra palavra.',
         table: {
           head: ['Pronome', 'Tradução', 'бити'],
           rows: [
@@ -67,17 +67,17 @@ export const GRAMMAR_SR: GrammarTopic[] = [
       },
       {
         heading: 'O tratamento formal',
-        text: 'Com desconhecidos, mais velhos e no trabalho, use «ви» com o verbo no plural, mesmo falando com uma pessoa só.',
+        text: 'Com desconhecidos, mais velhos e no trabalho, use “ви” com o verbo no plural, mesmo falando com uma pessoa só.',
         examples: [
           ['Како сте?', 'Como vai o senhor / a senhora?'],
           ['Одакле сте?', 'De onde o senhor é?'],
         ],
       },
     ],
-    pitfalls: ['Começar a frase com «сам»: diga «Ја сам…» ou «Из Београда сам».', 'Tratar um desconhecido por «ти»: soa íntimo demais. Use «ви».'],
+    pitfalls: ['Começar a frase com “сам”: diga “Ја сам…” ou “Из Београда сам”.', 'Tratar um desconhecido por “ти”: soa íntimo demais. Use “ви”.'],
     quiz: [
-      { question: 'Complete: «Ја ___ из Куритибе.» (Eu sou de Curitiba.)', options: ['сам', 'је', 'си'], answer: 'сам', explanation: '«Сам» é a forma curta de «бити» para «ја».' },
-      { question: '«Како сте?» é…', options: ['formal ou plural', 'só para amigos', 'só para crianças'], answer: 'formal ou plural', explanation: '«Сте» é a forma de «ви», usada para vocês e para tratar alguém com respeito.' },
+      { question: 'Complete: “Ја ___ из Куритибе.” (Eu sou de Curitiba.)', options: ['сам', 'је', 'си'], answer: 'сам', explanation: '“Сам” é a forma curta de “бити” para “ја”.' },
+      { question: '“Како сте?” é…', options: ['formal ou plural', 'só para amigos', 'só para crianças'], answer: 'formal ou plural', explanation: '“Сте” é a forma de “ви”, usada para vocês e para tratar alguém com respeito.' },
     ],
   },
   {
@@ -85,12 +85,12 @@ export const GRAMMAR_SR: GrammarTopic[] = [
     level: 'A1.2',
     title: 'O gênero dos substantivos e o possessivo',
     emoji: '👪',
-    summary: 'Masculino, feminino e neutro, quase sempre visíveis na terminação, e «мој / моја / моје».',
+    summary: 'Masculino, feminino e neutro, quase sempre visíveis na terminação, e “мој / моја / моје”.',
     sections: [
       {
         text: 'A última letra costuma mostrar o gênero: consoante → masculino, -а → feminino, -о ou -е → neutro. O possessivo e o adjetivo concordam com o substantivo.',
         table: {
-          head: ['Gênero', 'Terminação', 'Exemplo com «meu»'],
+          head: ['Gênero', 'Terminação', 'Exemplo com “meu”'],
           rows: [
             ['masculino', 'consoante', 'мој град, мој брат'],
             ['feminino', '-а', 'моја кућа, моја сестра'],
@@ -104,12 +104,12 @@ export const GRAMMAR_SR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      '«Мачка» (gato) é feminino: «мачка је црна».',
-      '«Град» (cidade) é masculino: «велики град», não «велика град».',
+      '“Мачка” (gato) é feminino: “мачка је црна”.',
+      '“Град” (cidade) é masculino: “велики град”, não “велика град”.',
     ],
     quiz: [
-      { question: 'Qual é o gênero de «млеко» (leite)?', options: ['neutro', 'masculino', 'feminino'], answer: 'neutro', explanation: 'Palavras terminadas em -о costumam ser neutras.' },
-      { question: 'Como se diz «a minha irmã»?', options: ['моја сестра', 'мој сестра', 'моје сестра'], answer: 'моја сестра', explanation: '«Сестра» é feminino, então o possessivo é «моја».' },
+      { question: 'Qual é o gênero de “млеко” (leite)?', options: ['neutro', 'masculino', 'feminino'], answer: 'neutro', explanation: 'Palavras terminadas em -о costumam ser neutras.' },
+      { question: 'Como se diz “a minha irmã”?', options: ['моја сестра', 'мој сестра', 'моје сестра'], answer: 'моја сестра', explanation: '“Сестра” é feminino, então o possessivo é “моја”.' },
     ],
   },
   {
@@ -117,10 +117,10 @@ export const GRAMMAR_SR: GrammarTopic[] = [
     level: 'A1.2',
     title: 'O verbo имати e a negação',
     emoji: '🚫',
-    summary: '«Имати» (ter) no presente e a negação: «не» antes do verbo, com algumas formas grudadas.',
+    summary: '“Имати” (ter) no presente e a negação: “не” antes do verbo, com algumas formas grudadas.',
     sections: [
       {
-        text: 'Para negar, «не» vem antes do verbo e se escreve separado: «не знам». Três verbos muito usados grudam a negação: «имати» → «немам», «бити» → «нисам», «хтети» → «нећу».',
+        text: 'Para negar, “не” vem antes do verbo e se escreve separado: “не знам”. Três verbos muito usados grudam a negação: “имати” → “немам”, “бити” → “нисам”, “хтети” → “нећу”.',
         table: {
           head: ['Pronome', 'имати', 'negativo'],
           rows: [
@@ -139,10 +139,10 @@ export const GRAMMAR_SR: GrammarTopic[] = [
         ],
       },
     ],
-    pitfalls: ['Dizer «не имам»: o certo é «немам».', 'Dizer «не сам»: o certo é «нисам».'],
+    pitfalls: ['Dizer “не имам”: o certo é “немам”.', 'Dizer “не сам”: o certo é “нисам”.'],
     quiz: [
-      { question: 'Como se diz «eu não tenho irmão»?', options: ['Немам брата.', 'Не имам брата.', 'Имам не брата.'], answer: 'Немам брата.', explanation: 'A negação de «имам» é uma palavra só: «немам».' },
-      { question: 'Complete: «Он ___ сестру.» (Ele tem uma irmã.)', options: ['има', 'имам', 'имају'], answer: 'има', explanation: '«Има» é a forma de «имати» para он / она.' },
+      { question: 'Como se diz “eu não tenho irmão”?', options: ['Немам брата.', 'Не имам брата.', 'Имам не брата.'], answer: 'Немам брата.', explanation: 'A negação de “имам” é uma palavra só: “немам”.' },
+      { question: 'Complete: “Он ___ сестру.” (Ele tem uma irmã.)', options: ['има', 'имам', 'имају'], answer: 'има', explanation: '“Има” é a forma de “имати” para он / она.' },
     ],
   },
 ];

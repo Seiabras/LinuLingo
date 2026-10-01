@@ -8,8 +8,8 @@ export const FALSE_FRIENDS_SV: FalseFriend[] = [
   // ——— os clássicos: caem em qualquer conversa ———
   {
     word: 'bra',
-    means: 'bom; bem («Jag mår bra» = estou bem)',
-    looksLike: 'bra (sutiã, em inglês; em sueco é «bh», que se lê «bê-hô»)',
+    means: 'bom; bem (“Jag mår bra” = estou bem)',
+    looksLike: 'bra (sutiã, em inglês; em sueco é “bh”, que se lê “bê-hô”)',
     forThat: 'bh, behå',
     emoji: '👍',
     example: ['– Hur mår du? – Bra, tack!', '– Como você está? – Bem, obrigado!'],
@@ -24,7 +24,7 @@ export const FALSE_FRIENDS_SV: FalseFriend[] = [
   },
   {
     word: 'gift',
-    means: 'casado (adjetivo); «ett gift» é veneno',
+    means: 'casado (adjetivo); “ett gift” é veneno',
     looksLike: 'gift (presente, em inglês)',
     forThat: 'en present, en gåva',
     emoji: '💍',
@@ -81,14 +81,14 @@ export const FALSE_FRIENDS_SV: FalseFriend[] = [
   {
     word: 'rolig',
     means: 'divertido, engraçado',
-    looksLike: 'calmo (é o que «rolig» quer dizer em norueguês e em dinamarquês!)',
+    looksLike: 'calmo (é o que “rolig” quer dizer em norueguês e em dinamarquês!)',
     forThat: 'lugn',
     emoji: '😂',
     example: ['Filmen var så rolig att vi skrattade hela tiden.', 'O filme era tão engraçado que a gente riu o tempo todo.'],
   },
   {
     word: 'kiss',
-    means: 'xixi (informal, linguagem de criança); «kissa» é fazer xixi',
+    means: 'xixi (informal, linguagem de criança); “kissa” é fazer xixi',
     looksLike: 'kiss (beijo, em inglês)',
     forThat: 'en puss, en kyss',
     emoji: '🚽',
@@ -96,7 +96,7 @@ export const FALSE_FRIENDS_SV: FalseFriend[] = [
   },
   {
     word: 'slut',
-    means: 'fim; acabado, esgotado («slutsålt» = esgotado)',
+    means: 'fim; acabado, esgotado (“slutsålt” = esgotado)',
     looksLike: 'um insulto em inglês (em sueco a palavra é neutra e aparece no fim de todo filme)',
     forThat: '—',
     emoji: '🔚',
@@ -144,7 +144,7 @@ export const FALSE_FRIENDS_SV: FalseFriend[] = [
   },
   {
     word: 'bad',
-    means: 'banho (de banheira, de mar); «bada» é tomar banho de mar ou de piscina',
+    means: 'banho (de banheira, de mar); “bada” é tomar banho de mar ou de piscina',
     looksLike: 'bad (ruim, em inglês)',
     forThat: 'dålig',
     emoji: '🛁',
@@ -200,8 +200,8 @@ export const FALSE_FRIENDS_SV: FalseFriend[] = [
   },
   {
     word: 'tia',
-    means: 'uma moeda de dez coroas (coloquial: «en tia»)',
-    looksLike: 'tia (em sueco, «faster» é a irmã do pai e «moster», a irmã da mãe)',
+    means: 'uma moeda de dez coroas (coloquial: “en tia”)',
+    looksLike: 'tia (em sueco, “faster” é a irmã do pai e “moster”, a irmã da mãe)',
     forThat: 'faster, moster',
     emoji: '🪙',
     example: ['Har du en tia till parkeringen?', 'Você tem uma moeda de dez para o estacionamento?'],
@@ -216,7 +216,7 @@ export const FALSE_FRIENDS_SV: FalseFriend[] = [
   },
   {
     word: 'kaka',
-    means: 'biscoito, bolacha; bolo simples («sockerkaka»)',
+    means: 'biscoito, bolacha; bolo simples (“sockerkaka”)',
     looksLike: 'caca (cocô, na fala de criança)',
     forThat: 'bajs',
     emoji: '🍪',
@@ -240,7 +240,7 @@ export const FALSE_FRIENDS_SV: FalseFriend[] = [
   },
   {
     word: 'lov',
-    means: 'folga, férias da escola («sommarlov», «jullov»); permissão',
+    means: 'folga, férias da escola (“sommarlov”, “jullov”); permissão',
     looksLike: 'love (amor, em inglês)',
     forThat: 'kärlek',
     emoji: '🎒',
@@ -256,7 +256,7 @@ export const FALSE_FRIENDS_SV: FalseFriend[] = [
   },
   {
     word: 'sal',
-    means: 'salão, sala grande («matsal» = refeitório)',
+    means: 'salão, sala grande (“matsal” = refeitório)',
     looksLike: 'sal (de cozinha)',
     forThat: 'salt',
     emoji: '🏛️',
@@ -264,11 +264,11 @@ export const FALSE_FRIENDS_SV: FalseFriend[] = [
   },
   {
     word: 'dom',
-    means: 'eles, elas, os (na fala, no lugar de «de» e «dem»); sentença judicial',
+    means: 'eles, elas, os (na fala, no lugar de “de” e “dem”); sentença judicial',
     looksLike: 'dom (talento)',
     forThat: 'en talang, en gåva',
     emoji: '⚖️',
-    example: ['Dom kommer i morgon.', 'Eles chegam amanhã. (Na escrita cuidada: «De kommer i morgon».)'],
+    example: ['Dom kommer i morgon.', 'Eles chegam amanhã. (Na escrita cuidada: “De kommer i morgon”.)'],
   },
   {
     word: 'fin',
@@ -289,7 +289,7 @@ export const FALSE_FRIENDS_SV: FalseFriend[] = [
   },
   {
     word: 'ser',
-    means: 'vê (do verbo «se», ver)',
+    means: 'vê (do verbo “se”, ver)',
     looksLike: 'ser (o verbo)',
     forThat: 'vara, är',
     emoji: '👁️',
@@ -313,7 +313,7 @@ export const FALSE_FRIENDS_SV: FalseFriend[] = [
   },
   {
     word: 'far',
-    means: 'pai; também «vai» (do verbo «fara», viajar)',
+    means: 'pai; também “vai” (do verbo “fara”, viajar)',
     looksLike: 'far (longe, em inglês)',
     forThat: 'långt bort',
     emoji: '👨',
@@ -321,7 +321,7 @@ export const FALSE_FRIENDS_SV: FalseFriend[] = [
   },
   {
     word: 'kor',
-    means: 'vacas (plural de «en ko»)',
+    means: 'vacas (plural de “en ko”)',
     looksLike: 'cor',
     forThat: 'en färg',
     emoji: '🐄',

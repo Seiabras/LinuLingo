@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { norwegianNumber, norwegianOrdinal, norwegianYear, spellNorwegianNumbers } from '@/services/numeros/nb';
 
-test('números em norueguês: a contagem nova (tjueen, førtifem) e o «og» antes do último pedaço', () => {
+test('números em norueguês: a contagem nova (tjueen, førtifem) e o “og” antes do último pedaço', () => {
   const cases: [number, string][] = [
     [0, 'null'],
     [1, 'en'],

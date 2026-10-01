@@ -9,7 +9,7 @@ export const STORIES_SC: StorySeed[] = [
     title: 'Bona die in Casteddu',
     emoji: '👋',
     summary: 'Você conhece Maria numa praça de Cagliari (Casteddu, em sardo) e faz a sua primeira conversa em sardo.',
-    cultural_context: 'Cagliari, a capital da Sardenha, se chama Casteddu em sardo: «o castelo», por causa do bairro antigo no alto do morro.',
+    cultural_context: 'Cagliari, a capital da Sardenha, se chama Casteddu em sardo: “o castelo”, por causa do bairro antigo no alto do morro.',
     start: 'inicio',
     nodes: {
       inicio: {
@@ -27,7 +27,7 @@ export const STORIES_SC: StorySeed[] = [
         emoji: '😊',
         choices: [
           { text: 'So de su Brasile.', translation: 'Sou do Brasil.', next: 'final_bonu' },
-          { text: 'Mi praghet su cafè.', translation: 'Eu gosto de café.', wrong: 'Isso não responde de onde você é. Use «So de…».' },
+          { text: 'Mi praghet su cafè.', translation: 'Eu gosto de café.', wrong: 'Isso não responde de onde você é. Use “So de…”.' },
         ],
       },
       final_bonu: {
@@ -60,7 +60,7 @@ export const STORIES_SC: StorySeed[] = [
         emoji: '📱',
         choices: [
           { text: 'Eja, apo unu frade e una sorre.', translation: 'Sim, tenho um irmão e uma irmã.', next: 'frades' },
-          { text: 'Sa domo mea est manna.', translation: 'A minha casa é grande.', wrong: 'Isso não responde se você tem irmãos. Use «apo…» (tenho).' },
+          { text: 'Sa domo mea est manna.', translation: 'A minha casa é grande.', wrong: 'Isso não responde se você tem irmãos. Use “apo…” (tenho).' },
         ],
       },
       frades: {
@@ -69,7 +69,7 @@ export const STORIES_SC: StorySeed[] = [
         emoji: '🍽️',
         choices: [
           { text: 'Eja, gràtzias meda!', translation: 'Sim, muito obrigado!', next: 'final_bonu' },
-          { text: 'So de su Brasile.', translation: 'Sou do Brasil.', wrong: 'Antoni fez um convite: responda com «eja» (sim) ou «no, gràtzias».' },
+          { text: 'So de su Brasile.', translation: 'Sou do Brasil.', wrong: 'Antoni fez um convite: responda com “eja” (sim) ou “no, gràtzias”.' },
         ],
       },
       final_bonu: {

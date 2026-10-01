@@ -19,7 +19,7 @@ export function portugueseWords(text: string): string[] {
   return text
     .toLowerCase()
     .normalize('NFC')
-    .replace(/«[^»]*»/g, ' ')
+    .replace(/“[^”]*”/g, ' ')
     .split(/[^\p{L}]+/u)
     .filter((w) => /\p{L}/u.test(w));
 }
@@ -35,14 +35,14 @@ export function needsPron(w: string): boolean {
 export function pronunciationProblemsPt(pron: Record<string, string>, heads: string[]): string[] {
   const out: string[] = [];
   for (const [k, v] of Object.entries(pron)) {
-    if (k !== k.toLowerCase()) out.push(`«${k}»: chave em minúsculas`);
-    if (strip(v) !== strip(k)) out.push(`«${k}» → «${v}»: tirando as marcas, tem de ser a mesma palavra`);
+    if (k !== k.toLowerCase()) out.push(`“${k}”: chave em minúsculas`);
+    if (strip(v) !== strip(k)) out.push(`“${k}” → “${v}”: tirando as marcas, tem de ser a mesma palavra`);
     const marks = [...v].filter((c) => STRESS_MARKS.includes(c)).length;
-    if (marks > 1) out.push(`«${k}» → «${v}»: marque só UMA vogal tônica`);
-    if (marks === 0 && !/[ãõ]/.test(v) && nuclei(k) > 1) out.push(`«${k}» → «${v}»: marque a vogal tônica`);
+    if (marks > 1) out.push(`“${k}” → “${v}”: marque só UMA vogal tônica`);
+    if (marks === 0 && !/[ãõ]/.test(v) && nuclei(k) > 1) out.push(`“${k}” → “${v}”: marque a vogal tônica`);
   }
   const missing = new Set<string>();
   for (const h of heads) for (const w of portugueseWords(h)) if (needsPron(w) && !pron[w]) missing.add(w);
-  for (const w of missing) out.push(`falta «${w}»`);
+  for (const w of missing) out.push(`falta “${w}”`);
   return out;
 }

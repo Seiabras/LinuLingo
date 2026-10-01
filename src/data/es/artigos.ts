@@ -34,11 +34,11 @@ export const ARTIGOS_ES: ArticleSeed[] = [
     emoji: '🍢',
     paragraphs: [
       'En España, una tapa es una porción pequeña de comida que se come con una bebida: aceitunas, tortilla de patatas, jamón, queso o calamares.',
-      '«Ir de tapas» es salir con los amigos y pasar de un bar a otro, comer un poco en cada uno y hablar mucho. En algunas ciudades, como Granada, en muchos bares la tapa es gratis cuando pides una bebida.',
+      '“Ir de tapas” es salir con los amigos y pasar de un bar a otro, comer un poco en cada uno y hablar mucho. En algunas ciudades, como Granada, en muchos bares la tapa es gratis cuando pides una bebida.',
     ],
     translation: [
       'Na Espanha, uma tapa é uma porção pequena de comida que se come com uma bebida: azeitonas, tortilha de batata, presunto, queijo ou lulas.',
-      '«Ir de tapas» é sair com os amigos e passar de um bar a outro, comer um pouco em cada um e conversar muito. Em algumas cidades, como Granada, em muitos bares a tapa é grátis quando você pede uma bebida.',
+      '“Ir de tapas” é sair com os amigos e passar de um bar a outro, comer um pouco em cada um e conversar muito. Em algumas cidades, como Granada, em muitos bares a tapa é grátis quando você pede uma bebida.',
     ],
     glossary: [
       ['tapa', 'tapa, porçãozinha de comida'],
@@ -68,7 +68,7 @@ export const ARTIGOS_ES: ArticleSeed[] = [
     ],
     translation: [
       'No México, em 1º e 2 de novembro as famílias lembram os seus mortos com alegria. Nas casas preparam um altar, a oferenda, com fotos das pessoas que já se foram, velas, flores de cempasúchil (cravo-de-defunto) e a comida de que elas mais gostavam.',
-      'Também se come «pan de muerto» e se dão caveiras de açúcar com nomes escritos. Muitas famílias passam a noite no cemitério, junto aos túmulos, com música e comida. Em 2008, a UNESCO incluiu essa tradição na sua lista do patrimônio cultural imaterial.',
+      'Também se come “pan de muerto” e se dão caveiras de açúcar com nomes escritos. Muitas famílias passam a noite no cemitério, junto aos túmulos, com música e comida. Em 2008, a UNESCO incluiu essa tradição na sua lista do patrimônio cultural imaterial.',
     ],
     glossary: [
       ['preparan', 'preparam'],
@@ -125,13 +125,13 @@ export const ARTIGOS_ES: ArticleSeed[] = [
     title: 'García Márquez y el realismo mágico',
     emoji: '📚',
     paragraphs: [
-      'El escritor colombiano Gabriel García Márquez (1927–2014), «Gabo» para sus lectores, nació en Aracataca, un pueblo del Caribe colombiano cuyas historias, contadas por sus abuelos, marcaron toda su obra. Trabajó durante años como periodista antes de dedicarse por completo a la literatura.',
-      'En 1967 publicó «Cien años de soledad», la saga de la familia Buendía en el pueblo imaginario de Macondo, donde lo extraordinario — una lluvia que dura casi cinco años, una mujer que sube al cielo — se cuenta con la misma naturalidad que lo cotidiano. Ese estilo se conoce como realismo mágico.',
+      'El escritor colombiano Gabriel García Márquez (1927–2014), “Gabo” para sus lectores, nació en Aracataca, un pueblo del Caribe colombiano cuyas historias, contadas por sus abuelos, marcaron toda su obra. Trabajó durante años como periodista antes de dedicarse por completo a la literatura.',
+      'En 1967 publicó “Cien años de soledad”, la saga de la familia Buendía en el pueblo imaginario de Macondo, donde lo extraordinario — una lluvia que dura casi cinco años, una mujer que sube al cielo — se cuenta con la misma naturalidad que lo cotidiano. Ese estilo se conoce como realismo mágico.',
       'La novela vendió decenas de millones de ejemplares y fue traducida a decenas de idiomas. En 1982, García Márquez recibió el Premio Nobel de Literatura.',
     ],
     translation: [
-      'O escritor colombiano Gabriel García Márquez (1927–2014), «Gabo» para os seus leitores, nasceu em Aracataca, um povoado do Caribe colombiano cujas histórias, contadas pelos avós, marcaram toda a sua obra. Trabalhou durante anos como jornalista antes de se dedicar por completo à literatura.',
-      'Em 1967 publicou «Cem anos de solidão», a saga da família Buendía no povoado imaginário de Macondo, onde o extraordinário — uma chuva que dura quase cinco anos, uma mulher que sobe ao céu — é contado com a mesma naturalidade que o cotidiano. Esse estilo é conhecido como realismo mágico.',
+      'O escritor colombiano Gabriel García Márquez (1927–2014), “Gabo” para os seus leitores, nasceu em Aracataca, um povoado do Caribe colombiano cujas histórias, contadas pelos avós, marcaram toda a sua obra. Trabalhou durante anos como jornalista antes de se dedicar por completo à literatura.',
+      'Em 1967 publicou “Cem anos de solidão”, a saga da família Buendía no povoado imaginário de Macondo, onde o extraordinário — uma chuva que dura quase cinco anos, uma mulher que sobe ao céu — é contado com a mesma naturalidade que o cotidiano. Esse estilo é conhecido como realismo mágico.',
       'O romance vendeu dezenas de milhões de exemplares e foi traduzido para dezenas de idiomas. Em 1982, García Márquez recebeu o Prêmio Nobel de Literatura.',
     ],
     glossary: [
@@ -142,7 +142,7 @@ export const ARTIGOS_ES: ArticleSeed[] = [
       ['mágico', 'mágico'],
     ],
     questions: [
-      { q: 'Onde se passa «Cien años de soledad»?', options: ['Em Bogotá', 'No povoado imaginário de Macondo', 'Em Aracataca, com nomes reais'], answer: 1 },
+      { q: 'Onde se passa “Cien años de soledad”?', options: ['Em Bogotá', 'No povoado imaginário de Macondo', 'Em Aracataca, com nomes reais'], answer: 1 },
       { q: 'O que caracteriza o realismo mágico, segundo o texto?', options: ['Contar o extraordinário com a naturalidade do cotidiano', 'Histórias só com magos e dragões', 'Romances policiais'], answer: 0 },
       { q: 'Quando ele recebeu o Nobel?', options: ['1967', '1982', '2014'], answer: 1 },
     ],

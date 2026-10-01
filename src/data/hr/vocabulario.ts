@@ -74,7 +74,7 @@ export const ROWS: VocabRow[] = [
   ['mlijeko', 'leite', 'substantivo', 'Alimentação e Restaurantes', '🥛', 'Mlijeko je bijelo.', 'n'],
   ['sir', 'queijo', 'substantivo', 'Alimentação e Restaurantes', '🧀', 'Volim sir.', 'm'],
   ['kava', 'café', 'substantivo', 'Alimentação e Restaurantes', '☕', 'Jednu kavu, molim.', 'f'],
-  ['vino', 'vinho (o tinto se chama «crno vino», «vinho preto»)', 'substantivo', 'Alimentação e Restaurantes', '🍷', 'Čašu vina, molim.', 'n'],
+  ['vino', 'vinho (o tinto se chama “crno vino”, “vinho preto”)', 'substantivo', 'Alimentação e Restaurantes', '🍷', 'Čašu vina, molim.', 'n'],
   // ── Números ──
   ['jedan', 'um (fem. jedna, neutro jedno)', 'numeral', 'Números', '1️⃣', 'Jedan čaj, molim.'],
   ['dva', 'dois (fem. dvije)', 'numeral', 'Números', '2️⃣', 'Dva čaja, molim.'],

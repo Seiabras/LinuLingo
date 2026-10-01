@@ -33,7 +33,7 @@ export const SCENARIOS_PL: ScenarioSeed[] = [
     cefr: 'A1',
     register: 'informal',
     persona: 'Kasia, koleżanka z kursu polskiego',
-    description: 'Kasia convida você para um café no centro de Varsóvia. É uma conversa entre colegas: use «ty».',
+    description: 'Kasia convida você para um café no centro de Varsóvia. É uma conversa entre colegas: use “ty”.',
     turns: [
       {
         bot: 'Cześć! Co chcesz pić?',
@@ -58,7 +58,7 @@ export const ETYMOLOGY_PL: EtymologySeed[] = [
     root_word: '*bratrъ',
     origin_language: 'Protoeslavo',
     cognates: c(['ru', 'брат'], ['en', 'brother'], ['la', 'frater'], ['pt', 'frade, fraterno']),
-    evolution_note: 'A mesma palavra indo-europeia deu «frater» em latim (daí «fraterno» e «frade») e «brother» em inglês. Já no protoeslavo conviviam as formas *bratrъ e *bratъ; o polonês ficou com a mais curta.',
+    evolution_note: 'A mesma palavra indo-europeia deu “frater” em latim (daí “fraterno” e “frade”) e “brother” em inglês. Já no protoeslavo conviviam as formas *bratrъ e *bratъ; o polonês ficou com a mais curta.',
     transparent: false,
   },
   {
@@ -66,7 +66,7 @@ export const ETYMOLOGY_PL: EtymologySeed[] = [
     root_word: '*voda',
     origin_language: 'Protoeslavo',
     cognates: c(['ru', 'вода'], ['en', 'water'], ['de', 'Wasser'], ['pt', 'hidro- (do grego hýdōr)']),
-    evolution_note: 'Vem da mesma raiz indo-europeia do inglês «water» e do grego «hýdōr», que o português conhece em «hidráulica» e «hidratar».',
+    evolution_note: 'Vem da mesma raiz indo-europeia do inglês “water” e do grego “hýdōr”, que o português conhece em “hidráulica” e “hidratar”.',
     transparent: false,
   },
   {
@@ -74,7 +74,7 @@ export const ETYMOLOGY_PL: EtymologySeed[] = [
     root_word: '*domъ',
     origin_language: 'Protoeslavo',
     cognates: c(['ru', 'дом'], ['la', 'domus'], ['pt', 'doméstico']),
-    evolution_note: 'Irmã do latim «domus» (casa): o português guardou essa raiz em «doméstico», «domicílio» e «dono».',
+    evolution_note: 'Irmã do latim “domus” (casa): o português guardou essa raiz em “doméstico”, “domicílio” e “dono”.',
     transparent: false,
   },
   {
@@ -82,7 +82,7 @@ export const ETYMOLOGY_PL: EtymologySeed[] = [
     root_word: '*tri',
     origin_language: 'Protoeslavo',
     cognates: c(['pt', 'três'], ['la', 'tres'], ['ru', 'три'], ['en', 'three']),
-    evolution_note: 'Os números baixos são dos parentescos mais fáceis de ver: «trzy», «três» e «three» vêm todos do indo-europeu. No polonês, o r diante de i virou o som «rz».',
+    evolution_note: 'Os números baixos são dos parentescos mais fáceis de ver: “trzy”, “três” e “three” vêm todos do indo-europeu. No polonês, o r diante de i virou o som “rz”.',
     transparent: true,
   },
   {
@@ -90,7 +90,7 @@ export const ETYMOLOGY_PL: EtymologySeed[] = [
     root_word: 'kahve',
     origin_language: 'Turco',
     cognates: c(['pt', 'café'], ['tr', 'kahve'], ['ar', 'qahwa']),
-    evolution_note: 'O café chegou à Polônia pelo contato com o Império Otomano, e a palavra veio do turco «kahve», que por sua vez vem do árabe «qahwa». O português recebeu a mesma palavra por outro caminho, via italiano ou francês.',
+    evolution_note: 'O café chegou à Polônia pelo contato com o Império Otomano, e a palavra veio do turco “kahve”, que por sua vez vem do árabe “qahwa”. O português recebeu a mesma palavra por outro caminho, via italiano ou francês.',
     transparent: false,
   },
 ];

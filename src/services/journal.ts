@@ -112,7 +112,7 @@ export function checkJournal(text: string, lex: JournalLexicon, lang = 'ro'): { 
     if (!parts[i]) continue;
     const fixed = restoreDiacritics(parts[i], lex);
     if (fixed) {
-      issues.push({ kind: 'acento', original: parts[i], suggestion: fixed, why: `Em ${LANG_NAME[lang] ?? 'este idioma'} se escreve «${fixed}».` });
+      issues.push({ kind: 'acento', original: parts[i], suggestion: fixed, why: `Em ${LANG_NAME[lang] ?? 'este idioma'} se escreve “${fixed}”.` });
       parts[i] = fixed;
     }
   }
@@ -145,7 +145,7 @@ export function checkJournal(text: string, lex: JournalLexicon, lang = 'ro'): { 
         const elFem = !art.pl && g === 'f' && EL_FEM_ES.has(nx) && (w === 'el' || w === 'un');
         if (g && g !== art.g && !elFem) {
           const fix = matchCase(parts[i], art.to[g]);
-          issues.push({ kind: 'gênero', original: `${parts[i]} ${parts[j]}`, suggestion: `${fix} ${parts[j]}`, why: `«${parts[j]}» é ${g === 'm' ? 'masculino' : 'feminino'} em espanhol${g === 'm' ? '' : ''}: ${fix} ${parts[j]}. Cuidado: muitas palavras mudam de gênero em relação ao português.` });
+          issues.push({ kind: 'gênero', original: `${parts[i]} ${parts[j]}`, suggestion: `${fix} ${parts[j]}`, why: `“${parts[j]}” é ${g === 'm' ? 'masculino' : 'feminino'} em espanhol${g === 'm' ? '' : ''}: ${fix} ${parts[j]}. Cuidado: muitas palavras mudam de gênero em relação ao português.` });
           parts[i] = fix;
         }
         continue;
@@ -156,20 +156,20 @@ export function checkJournal(text: string, lex: JournalLexicon, lang = 'ro'): { 
         const g = lex.gender.get(nx) ?? lex.gender.get(nx.replace(/s$/, '')) ?? lex.gender.get(nx.replace(/es$/, ''));
         if (g === 'm' || g === 'f') {
           const fix = matchCase(parts[i], `much${g === 'f' ? 'a' : 'o'}${plural ? 's' : ''}`);
-          issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: `${fix} ${parts[j]}`, why: 'Antes de substantivo, «muito» é «mucho/mucha/muchos/muchas»; «muy» vai antes de adjetivo e advérbio (muy bonito).' });
+          issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: `${fix} ${parts[j]}`, why: 'Antes de substantivo, “muito” é “mucho/mucha/muchos/muchas”; “muy” vai antes de adjetivo e advérbio (muy bonito).' });
           parts[i] = fix;
         }
         continue;
       }
       // mucho + adjetivo → muy
       if ((w === 'mucho' || w === 'mucha') && ADJ_ES.has(nx)) {
-        issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: `${matchCase(parts[i], 'muy')} ${parts[j]}`, why: 'Antes de adjetivo ou advérbio, «muito» é «muy»: muy bonito, muy lejos.' });
+        issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: `${matchCase(parts[i], 'muy')} ${parts[j]}`, why: 'Antes de adjetivo ou advérbio, “muito” é “muy”: muy bonito, muy lejos.' });
         parts[i] = matchCase(parts[i], 'muy');
         continue;
       }
       // me gusta los/las… → me gustan
       if (w === 'gusta' && (nx === 'los' || nx === 'las')) {
-        issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: `${matchCase(parts[i], 'gustan')} ${parts[j]}`, why: '«Gustar» concorda com a coisa de que se gosta: me gusta el café, mas me gustan los perros.' });
+        issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: `${matchCase(parts[i], 'gustan')} ${parts[j]}`, why: '“Gustar” concorda com a coisa de que se gosta: me gusta el café, mas me gustan los perros.' });
         parts[i] = matchCase(parts[i], 'gustan');
       }
       continue;
@@ -182,7 +182,7 @@ export function checkJournal(text: string, lex: JournalLexicon, lang = 'ro'): { 
         const right = g === 'n' ? 'et' : 'en';
         if (right !== w) {
           const fix = matchCase(parts[i], right);
-          issues.push({ kind: 'gênero', original: `${parts[i]} ${parts[j]}`, suggestion: `${fix} ${parts[j]}`, why: `«${parts[j]}» é uma ${g === 'n' ? 'et-ord (neutro)' : 'en-ord (gênero comum)'}: ${fix} ${parts[j]}. Decore cada substantivo junto com o artigo.` });
+          issues.push({ kind: 'gênero', original: `${parts[i]} ${parts[j]}`, suggestion: `${fix} ${parts[j]}`, why: `“${parts[j]}” é uma ${g === 'n' ? 'et-ord (neutro)' : 'en-ord (gênero comum)'}: ${fix} ${parts[j]}. Decore cada substantivo junto com o artigo.` });
           parts[i] = fix;
         }
       }
@@ -196,7 +196,7 @@ export function checkJournal(text: string, lex: JournalLexicon, lang = 'ro'): { 
         const right = g === 'n' ? 'ett' : 'en';
         if (right !== w) {
           const fix = matchCase(parts[i], right);
-          issues.push({ kind: 'gênero', original: `${parts[i]} ${parts[j]}`, suggestion: `${fix} ${parts[j]}`, why: `«${parts[j]}» é uma ${g === 'n' ? 'ett-ord (neutro)' : 'en-ord (gênero comum)'}: ${fix} ${parts[j]}. Decore cada substantivo junto com o artigo.` });
+          issues.push({ kind: 'gênero', original: `${parts[i]} ${parts[j]}`, suggestion: `${fix} ${parts[j]}`, why: `“${parts[j]}” é uma ${g === 'n' ? 'ett-ord (neutro)' : 'en-ord (gênero comum)'}: ${fix} ${parts[j]}. Decore cada substantivo junto com o artigo.` });
           parts[i] = fix;
         }
       }
@@ -211,7 +211,7 @@ export function checkJournal(text: string, lex: JournalLexicon, lang = 'ro'): { 
         if (!ok.includes(w)) {
           const fix = matchCase(parts[i], ok[0]);
           const kind = g === 'n' ? 'neutra (et)' : g === 'f' ? 'feminina (ei, ou en no bokmål)' : 'masculina (en)';
-          issues.push({ kind: 'gênero', original: `${parts[i]} ${parts[j]}`, suggestion: `${fix} ${parts[j]}`, why: `«${parts[j]}» é uma palavra ${kind}: ${fix} ${parts[j]}. Decore cada substantivo junto com o artigo.` });
+          issues.push({ kind: 'gênero', original: `${parts[i]} ${parts[j]}`, suggestion: `${fix} ${parts[j]}`, why: `“${parts[j]}” é uma palavra ${kind}: ${fix} ${parts[j]}. Decore cada substantivo junto com o artigo.` });
           parts[i] = fix;
         }
       }
@@ -223,7 +223,7 @@ export function checkJournal(text: string, lex: JournalLexicon, lang = 'ro'): { 
       // estou fazendo → estou a fazer
       if (ESTAR_PT.has(w) && /[aei]ndo$/.test(nx)) {
         const inf = nx.replace(/ndo$/, 'r');
-        issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: `${parts[i]} a ${inf}`, why: 'Em Portugal, a ação em curso é «estar a + infinitivo»: «estou a fazer» (no Brasil, «estou fazendo»).' });
+        issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: `${parts[i]} a ${inf}`, why: 'Em Portugal, a ação em curso é “estar a + infinitivo”: “estou a fazer” (no Brasil, “estou fazendo”).' });
         parts[j] = `a ${inf}`;
         continue;
       }
@@ -231,7 +231,7 @@ export function checkJournal(text: string, lex: JournalLexicon, lang = 'ro'): { 
       const sentenceStart = i === 0 || /[.!?…]\s*$/.test(parts.slice(0, i).join(''));
       if (sentenceStart && CLITIC_START_PT.has(w) && j >= 0 && /^\p{L}+$/u.test(parts[j])) {
         const fix = `${matchCase(parts[i], parts[j].toLowerCase())}-${w}`;
-        issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: fix, why: 'Em Portugal, a frase não começa pelo pronome átono: ele vai depois do verbo, com hífen (ênclise): «Chamo-me Ana», «Diz-me».' });
+        issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: fix, why: 'Em Portugal, a frase não começa pelo pronome átono: ele vai depois do verbo, com hífen (ênclise): “Chamo-me Ana”, “Diz-me”.' });
         parts[i] = fix;
         parts[i + 1] = '';
         parts[j] = '';
@@ -252,8 +252,8 @@ export function checkJournal(text: string, lex: JournalLexicon, lang = 'ro'): { 
           const joined = fix.endsWith('’') ? `${fix}${parts[j]}` : `${fix} ${parts[j]}`;
           const why =
             g !== art.g
-              ? `«${parts[j]}» é ${g === 'm' ? 'masculino' : 'feminino'} em italiano: ${joined}.`
-              : `O artigo muda com o começo da palavra: «lo» e «uno» antes de s + consoante, z, gn e ps; «l’» antes de vogal: ${joined}.`;
+              ? `“${parts[j]}” é ${g === 'm' ? 'masculino' : 'feminino'} em italiano: ${joined}.`
+              : `O artigo muda com o começo da palavra: “lo” e “uno” antes de s + consoante, z, gn e ps; “l’” antes de vogal: ${joined}.`;
           issues.push({ kind: 'gênero', original: `${parts[i]} ${parts[j]}`, suggestion: joined, why });
           parts[i] = fix;
           if (fix.endsWith('’')) parts[i + 1] = '';
@@ -263,19 +263,19 @@ export function checkJournal(text: string, lex: JournalLexicon, lang = 'ro'): { 
       // sono 20 anni → ho 20 anni
       const ageNext = (/\d/.test(parts[i + 1] ?? '') && b === 'anni') || (j >= 0 && NUMBER_IT.test(parts[j]) && k >= 0 && low(k) === 'anni');
       if (w === 'sono' && ageNext) {
-        issues.push({ kind: 'expressão', original: parts[i], suggestion: matchCase(parts[i], 'ho'), why: 'Idade em italiano se «tem», como em português: «ho vent’anni».' });
+        issues.push({ kind: 'expressão', original: parts[i], suggestion: matchCase(parts[i], 'ho'), why: 'Idade em italiano se “tem”, como em português: “ho vent’anni”.' });
         parts[i] = matchCase(parts[i], 'ho');
         continue;
       }
       // io piace → mi piace
       if (w === 'io' && (nx === 'piace' || nx === 'piacciono')) {
-        issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: `${matchCase(parts[i], 'mi')} ${parts[j]}`, why: '«Piacere» funciona como «agradar»: «mi piace» = «me agrada / eu gosto».' });
+        issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: `${matchCase(parts[i], 'mi')} ${parts[j]}`, why: '“Piacere” funciona como “agradar”: “mi piace” = “me agrada / eu gosto”.' });
         parts[i] = matchCase(parts[i], 'mi');
         continue;
       }
       // mi piace i/gli/le… → mi piacciono
       if (w === 'piace' && ['i', 'gli', 'le'].includes(nx)) {
-        issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: `${matchCase(parts[i], 'piacciono')} ${parts[j]}`, why: '«Piacere» concorda com a coisa de que se gosta: mi piace il caffè, mas mi piacciono i gatti.' });
+        issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: `${matchCase(parts[i], 'piacciono')} ${parts[j]}`, why: '“Piacere” concorda com a coisa de que se gosta: mi piace il caffè, mas mi piacciono i gatti.' });
         parts[i] = matchCase(parts[i], 'piacciono');
       }
       continue;
@@ -285,7 +285,7 @@ export function checkJournal(text: string, lex: JournalLexicon, lang = 'ro'): { 
       // я имею 20 лет → мне 20 лет
       const ageNum = j >= 0 && (NUMBER_RU.test(parts[k] ?? '') || /\d/.test(parts[j + 1] ?? ''));
       if (dat && raw(j) === 'имею' && ageNum) {
-        issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: matchCase(parts[i], dat), why: `Idade em russo vai no dativo, sem «ter»: «${matchCase(parts[i], dat)} 20 лет» (literalmente «a mim, 20 anos»).` });
+        issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: matchCase(parts[i], dat), why: `Idade em russo vai no dativo, sem “ter”: “${matchCase(parts[i], dat)} 20 лет” (literalmente “a mim, 20 anos”).` });
         parts[i] = matchCase(parts[i], dat);
         parts[j] = '';
         parts[j + 1] = parts[j + 1]?.replace(/^\s+/, '') ?? '';
@@ -293,13 +293,13 @@ export function checkJournal(text: string, lex: JournalLexicon, lang = 'ro'): { 
       }
       // я нравится / я холодно → мне нравится / мне холодно
       if (dat && (raw(j) === 'нравится' || raw(j) === 'нравятся' || STATES_RU.has(raw(j)))) {
-        issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: `${matchCase(parts[i], dat)} ${parts[j]}`, why: raw(j).startsWith('нрав') ? '«Нравиться» funciona como «agradar»: «мне нравится» = «me agrada / eu gosto».' : 'Sensações e estados vão no dativo: «мне холодно» = «estou com frio» (literalmente «a mim está frio»).' });
+        issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: `${matchCase(parts[i], dat)} ${parts[j]}`, why: raw(j).startsWith('нрав') ? '“Нравиться” funciona como “agradar”: “мне нравится” = “me agrada / eu gosto”.' : 'Sensações e estados vão no dativo: “мне холодно” = “estou com frio” (literalmente “a mim está frio”).' });
         parts[i] = matchCase(parts[i], dat);
         continue;
       }
       // я есть студент → я студент (o presente não usa «ser/estar»)
       if (dat && raw(j) === 'есть' && k >= 0) {
-        issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: parts[i], why: 'No presente, o russo não usa o verbo «ser/estar»: «Я студент» = «eu sou estudante».' });
+        issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: parts[i], why: 'No presente, o russo não usa o verbo “ser/estar”: “Я студент” = “eu sou estudante”.' });
         parts[j] = '';
         parts[j + 1] = parts[j + 1]?.replace(/^\s+/, '') ?? '';
         continue;
@@ -309,7 +309,7 @@ export function checkJournal(text: string, lex: JournalLexicon, lang = 'ro'): { 
       const g = j >= 0 ? lex.gender.get(raw(j)) : undefined;
       if (poss && g && poss[g] !== raw(i)) {
         const fix = matchCase(parts[i], poss[g]);
-        issues.push({ kind: 'gênero', original: `${parts[i]} ${parts[j]}`, suggestion: `${fix} ${parts[j]}`, why: `«${parts[j]}» é ${GENDER_PT[g]}: o possessivo concorda, «${fix}».` });
+        issues.push({ kind: 'gênero', original: `${parts[i]} ${parts[j]}`, suggestion: `${fix} ${parts[j]}`, why: `“${parts[j]}” é ${GENDER_PT[g]}: o possessivo concorda, “${fix}”.` });
         parts[i] = fix;
       }
       continue;
@@ -318,10 +318,10 @@ export function checkJournal(text: string, lex: JournalLexicon, lang = 'ro'): { 
 
     // eu este / tu este → eu sunt / tu ești
     if (a === 'eu' && b === 'este') {
-      issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: `${parts[i]} sunt`, why: 'Com «eu», o verbo «a fi» é «sunt» (eu sunt = eu sou/estou).' });
+      issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: `${parts[i]} sunt`, why: 'Com “eu”, o verbo “a fi” é “sunt” (eu sunt = eu sou/estou).' });
       parts[j] = 'sunt';
     } else if (a === 'tu' && (b === 'este' || b === 'esti')) {
-      issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: `${parts[i]} ești`, why: 'Com «tu», o verbo «a fi» é «ești».' });
+      issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: `${parts[i]} ești`, why: 'Com “tu”, o verbo “a fi” é “ești”.' });
       parts[j] = 'ești';
     }
 
@@ -330,26 +330,26 @@ export function checkJournal(text: string, lex: JournalLexicon, lang = 'ro'): { 
     const wordAge = j >= 0 && NUMBER.test(parts[j]) && k >= 0 && ['ani', 'de'].includes(low(k));
     if (a === 'sunt' && (digitAge || wordAge)) {
       const num = digitAge ? (parts[i + 1] ?? '').trim() : parts[j];
-      issues.push({ kind: 'expressão', original: `${parts[i]} ${num}`, suggestion: `${matchCase(parts[i], 'am')} ${num}`, why: 'Idade em romeno se «tem», como em português: «am douăzeci de ani».' });
+      issues.push({ kind: 'expressão', original: `${parts[i]} ${num}`, suggestion: `${matchCase(parts[i], 'am')} ${num}`, why: 'Idade em romeno se “tem”, como em português: “am douăzeci de ani”.' });
       parts[i] = matchCase(parts[i], 'am');
     }
 
     // am foame → mi-e foame
     if (a === 'am' && STATES[b]) {
-      issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: `${matchCase(parts[i], 'mi-e')} ${STATES[b]}`, why: 'Fome, sede, frio, calor, medo e sono se dizem com «mi-e»: «mi-e foame» (literalmente «me é fome»).' });
+      issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: `${matchCase(parts[i], 'mi-e')} ${STATES[b]}`, why: 'Fome, sede, frio, calor, medo e sono se dizem com “mi-e”: “mi-e foame” (literalmente “me é fome”).' });
       parts[i] = matchCase(parts[i], 'mi-e');
       parts[j] = STATES[b];
     }
 
     // eu place → îmi place
     if (a === 'eu' && b === 'place') {
-      issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: `${matchCase(parts[i], 'îmi')} place`, why: '«A plăcea» funciona como «agradar»: «îmi place» = «me agrada / eu gosto».' });
+      issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: `${matchCase(parts[i], 'îmi')} place`, why: '“A plăcea” funciona como “agradar”: “îmi place” = “me agrada / eu gosto”.' });
       parts[i] = matchCase(parts[i], 'îmi');
     }
 
     // locuiesc la Cluj → locuiesc în Cluj
     if ((a === 'locuiesc' || a === 'traiesc') && b === 'la' && k >= 0 && /^\p{Lu}/u.test(parts[k])) {
-      issues.push({ kind: 'expressão', original: `${parts[j]} ${parts[k]}`, suggestion: `în ${parts[k]}`, why: 'Para morar numa cidade ou país usa-se «în»: «locuiesc în Cluj».' });
+      issues.push({ kind: 'expressão', original: `${parts[j]} ${parts[k]}`, suggestion: `în ${parts[k]}`, why: 'Para morar numa cidade ou país usa-se “în”: “locuiesc în Cluj”.' });
       parts[j] = 'în';
     }
 
@@ -357,7 +357,7 @@ export function checkJournal(text: string, lex: JournalLexicon, lang = 'ro'): { 
     if (a === 'buna' && ['dimineata', 'seara', 'zi', 'ziua'].includes(b) && j >= 0) {
       const target = { dimineata: 'dimineața', seara: 'seara', zi: 'ziua', ziua: 'ziua' }[b]!;
       if (parts[j].toLowerCase() !== target) {
-        issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: `${parts[i]} ${target}`, why: `A saudação usa o artigo: «Bună ${target}!».` });
+        issues.push({ kind: 'expressão', original: `${parts[i]} ${parts[j]}`, suggestion: `${parts[i]} ${target}`, why: `A saudação usa o artigo: “Bună ${target}!”.` });
         parts[j] = target;
       }
     }
@@ -367,10 +367,10 @@ export function checkJournal(text: string, lex: JournalLexicon, lang = 'ro'): { 
     if ((art === 'un' || art === 'o') && j >= 0) {
       const g = lex.gender.get(parts[j].toLowerCase());
       if (g === 'f' && art === 'un') {
-        issues.push({ kind: 'gênero', original: `${parts[i]} ${parts[j]}`, suggestion: `${matchCase(parts[i], 'o')} ${parts[j]}`, why: `«${parts[j]}» é feminino: o artigo é «o».` });
+        issues.push({ kind: 'gênero', original: `${parts[i]} ${parts[j]}`, suggestion: `${matchCase(parts[i], 'o')} ${parts[j]}`, why: `“${parts[j]}” é feminino: o artigo é “o”.` });
         parts[i] = matchCase(parts[i], 'o');
       } else if ((g === 'm' || g === 'n') && art === 'o') {
-        issues.push({ kind: 'gênero', original: `${parts[i]} ${parts[j]}`, suggestion: `${matchCase(parts[i], 'un')} ${parts[j]}`, why: `«${parts[j]}» é ${g === 'm' ? 'masculino' : 'neutro (no singular funciona como masculino)'}: o artigo é «un».` });
+        issues.push({ kind: 'gênero', original: `${parts[i]} ${parts[j]}`, suggestion: `${matchCase(parts[i], 'un')} ${parts[j]}`, why: `“${parts[j]}” é ${g === 'm' ? 'masculino' : 'neutro (no singular funciona como masculino)'}: o artigo é “un”.` });
         parts[i] = matchCase(parts[i], 'un');
       }
     }
@@ -382,7 +382,7 @@ export function checkJournal(text: string, lex: JournalLexicon, lang = 'ro'): { 
         const base = w.slice(0, -1);
         const fem = [`${base}ă`, `${base}e`, base, w].some((c) => lex.gender.get(c) === 'f');
         if (fem) {
-          issues.push({ kind: 'gênero', original: `${parts[i]} ${parts[j]}`, suggestion: `${parts[i]} mea`, why: `«${parts[i]}» é feminino: o possessivo concorda, «${parts[i]} mea».` });
+          issues.push({ kind: 'gênero', original: `${parts[i]} ${parts[j]}`, suggestion: `${parts[i]} mea`, why: `“${parts[i]}” é feminino: o possessivo concorda, “${parts[i]} mea”.` });
           parts[j] = 'mea';
         }
       }

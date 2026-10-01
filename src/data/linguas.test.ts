@@ -5,7 +5,7 @@ import { PACKS } from './idiomas';
 import { allOwnLanguages, findAccentAnywhere, OWN_LANGUAGE_META, sameFamily } from './linguas-proprias';
 import { familiesOf, languagesOfCountry, riskCounts, scopeOf } from './linguas-indigenas';
 
-test('línguas próprias: toda língua (kind «língua») dos idiomas tem família, e todo glottocode existe', () => {
+test('línguas próprias: toda língua (kind “língua”) dos idiomas tem família, e todo glottocode existe', () => {
   const codes = new Set(GLOTTOLOG_ROWS.map((r) => r[5]));
   const all = allOwnLanguages('sv');
   assert.ok(all.length >= 15);

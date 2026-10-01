@@ -129,8 +129,8 @@ export const ARTIGOS_RO: ArticleSeed[] = [
       'Din 2010, ziua nașterii sale, 15 ianuarie, este sărbătorită ca Ziua Culturii Naționale, atât în România, cât și în Republica Moldova, cu lecturi publice, concerte și flori depuse la statuile poetului.',
     ],
     translation: [
-      'O poeta Mihai Eminescu (1850–1889) é considerado o poeta nacional dos romenos. Nasceu em Botoșani, estudou em Viena e em Berlim e trabalhou, entre outras coisas, como jornalista no jornal «Timpul», de Bucareste.',
-      'Seu poema mais conhecido, «Luceafărul» (A Estrela da Manhã), publicado em 1883, conta a história do amor impossível entre uma filha de imperador e um astro imortal. Seus versos influenciaram profundamente a língua literária romena, e muitos alunos ainda hoje decoram estrofes inteiras.',
+      'O poeta Mihai Eminescu (1850–1889) é considerado o poeta nacional dos romenos. Nasceu em Botoșani, estudou em Viena e em Berlim e trabalhou, entre outras coisas, como jornalista no jornal “Timpul”, de Bucareste.',
+      'Seu poema mais conhecido, “Luceafărul” (A Estrela da Manhã), publicado em 1883, conta a história do amor impossível entre uma filha de imperador e um astro imortal. Seus versos influenciaram profundamente a língua literária romena, e muitos alunos ainda hoje decoram estrofes inteiras.',
       'Desde 2010, o dia do seu nascimento, 15 de janeiro, é comemorado como o Dia da Cultura Nacional, tanto na Romênia quanto na República da Moldávia, com leituras públicas, concertos e flores deixadas nas estátuas do poeta.',
     ],
     glossary: [
@@ -145,7 +145,7 @@ export const ARTIGOS_RO: ArticleSeed[] = [
     questions: [
       { q: 'Como se chama o poema mais conhecido de Eminescu?', options: ['Luceafărul', 'Miorița', 'Doina'], answer: 0 },
       { q: 'O que se comemora em 15 de janeiro?', options: ['O Dia da Independência', 'O Dia da Cultura Nacional', 'O Dia da Língua Romena'], answer: 1 },
-      { q: 'Onde Eminescu trabalhou como jornalista?', options: ['No jornal «Timpul»', 'Numa rádio', 'Numa revista de Viena'], answer: 0 },
+      { q: 'Onde Eminescu trabalhou como jornalista?', options: ['No jornal “Timpul”', 'Numa rádio', 'Numa revista de Viena'], answer: 0 },
     ],
   },
 ];

@@ -170,7 +170,7 @@ export default function ExpeditionScreen() {
               <Button title="🐢" variant="ghost" onPress={() => speak(clue, pack.speechLocale, { rate: 0.6 })} />
             </View>
             {stop.hints >= 1 || stop.done ? (
-              <Text className="text-lg font-bold text-slate-900 dark:text-white">«{clue}»</Text>
+              <Text className="text-lg font-bold text-slate-900 dark:text-white">“{clue}”</Text>
             ) : null}
             {stop.hints >= 2 || stop.done ? <Text className="text-sm text-slate-600 dark:text-slate-400">🇧🇷 O Linu viaja para {place.cityPt}.</Text> : null}
             {!stop.done && stop.hints < 2 && (

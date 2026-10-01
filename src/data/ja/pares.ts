@@ -17,37 +17,37 @@ export const PARES_JA: MinimalPairs = {
       id: 'consoante-dupla',
       name: 'consoante simples × consoante dupla (っ)',
       sounds: ['t', 'tː'],
-      tip: 'O っ pequeno é uma pausa de uma batida inteira antes da consoante: a boca se prepara para o «t» e fica parada um instante, como no italiano «notte». きって (selo) é «kit-te»; きて (venha) é «ki-te», direto. Sem a pausa, o japonês ouve a outra palavra: おっと (marido) vira おと (som).',
+      tip: 'O っ pequeno é uma pausa de uma batida inteira antes da consoante: a boca se prepara para o “t” e fica parada um instante, como no italiano “notte”. きって (selo) é “kit-te”; きて (venha) é “ki-te”, direto. Sem a pausa, o japonês ouve a outra palavra: おっと (marido) vira おと (som).',
     },
     {
       id: 'n-moraico',
       name: 'ん antes de vogal × n + vogal',
       sounds: ['ɰ̃', 'n'],
-      tip: 'O ん vale uma batida inteira e não se liga à vogal seguinte: きんえん (proibido fumar) é «kin-en», com um «n» nasal segurado, sem encostar a língua; きねん (lembrança) é «ki-nen». O brasileiro tende a juntar tudo («ki-nen») ou a só nasalizar a vogal, como em «quinto». Segure o ん como um «hum» curtinho antes de passar para a vogal.',
+      tip: 'O ん vale uma batida inteira e não se liga à vogal seguinte: きんえん (proibido fumar) é “kin-en”, com um “n” nasal segurado, sem encostar a língua; きねん (lembrança) é “ki-nen”. O brasileiro tende a juntar tudo (“ki-nen”) ou a só nasalizar a vogal, como em “quinto”. Segure o ん como um “hum” curtinho antes de passar para a vogal.',
     },
     {
       id: 'tsu-su',
       name: 'つ × す',
       sounds: ['t͡s', 's'],
-      tip: 'つ é «ts»: a ponta da língua encosta atrás dos dentes de cima, como para um «t», e solta chiando. す é só o «s», sem a batidinha. Se o «t» sumir, つき (lua) vira すき (gostar): em vez de falar da lua, você declara amor.',
+      tip: 'つ é “ts”: a ponta da língua encosta atrás dos dentes de cima, como para um “t”, e solta chiando. す é só o “s”, sem a batidinha. Se o “t” sumir, つき (lua) vira すき (gostar): em vez de falar da lua, você declara amor.',
     },
     {
       id: 'tsu-chu',
       name: 'つ × ちゅ',
       sounds: ['t͡s', 't͡ɕ'],
-      tip: 'No つ a língua fica na frente, atrás dos dentes, e sai o «ts» de «tsunami». No ちゅ a língua sobe para o céu da boca e sai o «tchu» de «tchutchuca». Muito brasileiro diz つ como «tchu», e aí つうがく (ir para a escola) vira ちゅうがく (o ginásio), e つうか (passagem) vira ちゅうか (comida chinesa).',
+      tip: 'No つ a língua fica na frente, atrás dos dentes, e sai o “ts” de “tsunami”. No ちゅ a língua sobe para o céu da boca e sai o “tchu” de “tchutchuca”. Muito brasileiro diz つ como “tchu”, e aí つうがく (ir para a escola) vira ちゅうがく (o ginásio), e つうか (passagem) vira ちゅうか (comida chinesa).',
     },
     {
       id: 'r-h',
       name: 'r batido × h',
       sounds: ['ɾ', 'h'],
-      tip: 'Armadilha de carioca e de paulistano: o nosso «r» do começo da palavra («rato») sai na garganta e soa como o は行 japonês. O «r» japonês é sempre o fraco de «cara», uma batidinha da ponta da língua, mesmo no começo da palavra. Com o «r» de «rato», ろうか (corredor) vira ほうか (incêndio criminoso), e れい (obrigado, reverência) vira へい (muro).',
+      tip: 'Armadilha de carioca e de paulistano: o nosso “r” do começo da palavra (“rato”) sai na garganta e soa como o は行 japonês. O “r” japonês é sempre o fraco de “cara”, uma batidinha da ponta da língua, mesmo no começo da palavra. Com o “r” de “rato”, ろうか (corredor) vira ほうか (incêndio criminoso), e れい (obrigado, reverência) vira へい (muro).',
     },
     {
       id: 'yoon',
       name: 'ゃ ゅ ょ pequenos × grandes',
       sounds: ['kʲo', 'kʲi.jo'],
-      tip: 'O ゃ, ゅ ou ょ pequeno gruda na sílaba anterior e forma uma batida só: きょう (hoje) é «kyô», きょ・う; きよう (habilidoso) é «ki-yô», き・よ・う, uma batida a mais. Olhe o tamanho da letra e conte as batidas: びょういん (hospital) × びよういん (salão de beleza) é um erro clássico de quem começa.',
+      tip: 'O ゃ, ゅ ou ょ pequeno gruda na sílaba anterior e forma uma batida só: きょう (hoje) é “kyô”, きょ・う; きよう (habilidoso) é “ki-yô”, き・よ・う, uma batida a mais. Olhe o tamanho da letra e conte as batidas: びょういん (hospital) × びよういん (salão de beleza) é um erro clássico de quem começa.',
     },
     {
       id: 'acento-tonal',
@@ -96,9 +96,9 @@ export const PARES_JA: MinimalPairs = {
   ],
   // escritas diferentes que soam igual: o kana guarda a história da palavra, a boca não
   sameSound: [
-    { words: [['じめん', 'chão, solo (地面)'], ['はなぢ', 'sangramento no nariz (鼻血)']], note: 'じ e ぢ soam igual, «dji». O ぢ só aparece quando um ち ganha os tracinhos ao formar palavra: はな (nariz) + ち (sangue) = はなぢ.' },
-    { words: [['すずしい', 'fresco (o clima)'], ['つづく', 'continuar']], note: 'ず e づ soam igual, «dzu». O づ vem de um つ que ganhou tracinhos: つづく repete o つ, e みか + つき vira みかづき (lua crescente).' },
-    { words: [['おおきい', 'grande'], ['おうさま', 'rei']], note: 'O «o» longo se escreve おお em poucas palavras (おおきい, とおい, おおい) e おう na maioria (おうさま, こうこう, ありがとう): o som é o mesmo, [oː].' },
-    { words: [['おかし', 'doce, guloseima'], ['をかし', 'encantador (no japonês clássico)']], note: 'お e を soam igual, «o». Hoje o を só aparece como a partícula do objeto (みずをのむ); nos textos antigos, como o «Makura no Sōshi», aparece dentro das palavras.' },
+    { words: [['じめん', 'chão, solo (地面)'], ['はなぢ', 'sangramento no nariz (鼻血)']], note: 'じ e ぢ soam igual, “dji”. O ぢ só aparece quando um ち ganha os tracinhos ao formar palavra: はな (nariz) + ち (sangue) = はなぢ.' },
+    { words: [['すずしい', 'fresco (o clima)'], ['つづく', 'continuar']], note: 'ず e づ soam igual, “dzu”. O づ vem de um つ que ganhou tracinhos: つづく repete o つ, e みか + つき vira みかづき (lua crescente).' },
+    { words: [['おおきい', 'grande'], ['おうさま', 'rei']], note: 'O “o” longo se escreve おお em poucas palavras (おおきい, とおい, おおい) e おう na maioria (おうさま, こうこう, ありがとう): o som é o mesmo, [oː].' },
+    { words: [['おかし', 'doce, guloseima'], ['をかし', 'encantador (no japonês clássico)']], note: 'お e を soam igual, “o”. Hoje o を só aparece como a partícula do objeto (みずをのむ); nos textos antigos, como o “Makura no Sōshi”, aparece dentro das palavras.' },
   ],
 };

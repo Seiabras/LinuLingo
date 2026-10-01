@@ -58,7 +58,7 @@ export const ETYMOLOGY_EN: EtymologySeed[] = [
     root_word: 'familia',
     origin_language: 'Latim (via francês antigo)',
     cognates: c(['pt', 'família'], ['es', 'familia'], ['fr', 'famille'], ['it', 'famiglia']),
-    evolution_note: 'Do latim «familia», a palavra entrou no inglês pelo francês normando depois de 1066 — quase idêntica ao português, um dos muitos cognatos "eruditos" que vieram junto com a conquista normanda.',
+    evolution_note: 'Do latim “familia”, a palavra entrou no inglês pelo francês normando depois de 1066 — quase idêntica ao português, um dos muitos cognatos "eruditos" que vieram junto com a conquista normanda.',
     transparent: true,
   },
   {
@@ -66,7 +66,7 @@ export const ETYMOLOGY_EN: EtymologySeed[] = [
     root_word: 'mōdor (proto-germânico)',
     origin_language: 'Germânico',
     cognates: c(['de', 'Mutter'], ['nl', 'moeder'], ['sv', 'moder']),
-    evolution_note: 'Palavra germânica nativa do inglês, sem relação direta com o português «mãe» (que vem do latim «matre(m)»): mostra a camada germânica original, por baixo do vocabulário latino/francês que o inglês adotou depois.',
+    evolution_note: 'Palavra germânica nativa do inglês, sem relação direta com o português “mãe” (que vem do latim “matre(m)”): mostra a camada germânica original, por baixo do vocabulário latino/francês que o inglês adotou depois.',
     transparent: false,
   },
   {
@@ -74,7 +74,7 @@ export const ETYMOLOGY_EN: EtymologySeed[] = [
     root_word: 'qahwa (árabe) → kahve (turco) → koffie (holandês)',
     origin_language: 'Árabe, via turco e holandês',
     cognates: c(['pt', 'café'], ['fr', 'café'], ['it', 'caffè'], ['de', 'Kaffee']),
-    evolution_note: 'A palavra viajou do árabe «qahwa» pelo turco «kahve» até o holandês «koffie», que deu o inglês «coffee» e, por outro caminho semelhante, o português «café» — quase todas as línguas europeias têm a mesma raiz para essa bebida.',
+    evolution_note: 'A palavra viajou do árabe “qahwa” pelo turco “kahve” até o holandês “koffie”, que deu o inglês “coffee” e, por outro caminho semelhante, o português “café” — quase todas as línguas europeias têm a mesma raiz para essa bebida.',
     transparent: true,
   },
 ];

@@ -51,5 +51,5 @@ export const ESTONIANO: LanguagePack = {
   phrases: { hi: 'Tere!', thanks: 'Aitäh!', letsStart: ['Hakkame pihta!', 'Vamos lá!'] },
   formalMarkers: 'kas ma saaksin…?, suur aitäh, vabandage',
   cognateNote:
-    'O estoniano é uma língua urálica, irmã do finlandês: muitas palavras se parecem com as finlandesas, às vezes com outro sentido. Séculos de convívio com o alemão deixaram muitos empréstimos (kool = escola, tool = cadeira). Não tem gênero nem artigos, e «tema» é ele e ela. Atenção às três durações dos sons, que mudam o sentido (sada = cem, saada = receber, e saada!, mais longo, = mande!).',
+    'O estoniano é uma língua urálica, irmã do finlandês: muitas palavras se parecem com as finlandesas, às vezes com outro sentido. Séculos de convívio com o alemão deixaram muitos empréstimos (kool = escola, tool = cadeira). Não tem gênero nem artigos, e “tema” é ele e ela. Atenção às três durações dos sons, que mudam o sentido (sada = cem, saada = receber, e saada!, mais longo, = mande!).',
 };

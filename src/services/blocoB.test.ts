@@ -48,7 +48,7 @@ test('pitch: detecta um tom de 200 Hz e ignora silêncio', () => {
   assert.equal(detectPitch(new Float32Array(2048), sr), null);
 });
 
-test('entonação: sim/não sobe; pergunta com «unde» e afirmação descem', () => {
+test('entonação: sim/não sobe; pergunta com “unde” e afirmação descem', () => {
   assert.equal(expectedContour('Vorbești română?'), 'sobe');
   assert.equal(expectedContour('Unde este gara?'), 'desce');
   assert.equal(expectedContour('Sunt din Brazilia.'), 'desce');
@@ -136,7 +136,7 @@ test('diário (sueco): en/ett pelo gênero do vocabulário', () => {
   assert.equal(checkJournal('Jag har en hus och ett bil.', lexSv, 'sv').corrected, 'Jag har ett hus och en bil.');
 });
 
-test('diário (norueguês): en/ei/et pelo gênero, com «en» aceito nas femininas', () => {
+test('diário (norueguês): en/ei/et pelo gênero, com “en” aceito nas femininas', () => {
   const lexNb = buildLexicon([], [
     { word: 'hus', gender: 'n' },
     { word: 'bil', gender: 'm' },

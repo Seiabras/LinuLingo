@@ -27,7 +27,7 @@ export const STORIES_SL: StorySeed[] = [
         emoji: '😊',
         choices: [
           { text: 'Sem iz São Paula.', translation: 'Sou de São Paulo.', next: 'final_bom' },
-          { text: 'Pijem vodo.', translation: 'Eu bebo água.', wrong: 'Isso não responde de onde você é. Use «Sem iz…».' },
+          { text: 'Pijem vodo.', translation: 'Eu bebo água.', wrong: 'Isso não responde de onde você é. Use “Sem iz…”.' },
         ],
       },
       final_bom: {
@@ -60,7 +60,7 @@ export const STORIES_SL: StorySeed[] = [
         emoji: '📱',
         choices: [
           { text: 'Da, imam brata in sestro.', translation: 'Sim, tenho um irmão e uma irmã.', next: 'druzina' },
-          { text: 'Moja hiša je velika.', translation: 'A minha casa é grande.', wrong: 'Isso não responde se você tem irmãos. Use «imam…».' },
+          { text: 'Moja hiša je velika.', translation: 'A minha casa é grande.', wrong: 'Isso não responde se você tem irmãos. Use “imam…”.' },
         ],
       },
       druzina: {
@@ -69,7 +69,7 @@ export const STORIES_SL: StorySeed[] = [
         emoji: '🍽️',
         choices: [
           { text: 'Da, hvala lepa!', translation: 'Sim, muito obrigado!', next: 'final_bom' },
-          { text: 'Sem iz São Paula.', translation: 'Sou de São Paulo.', wrong: 'Luka fez um convite: responda com «da» ou «ne, hvala».' },
+          { text: 'Sem iz São Paula.', translation: 'Sou de São Paulo.', wrong: 'Luka fez um convite: responda com “da” ou “ne, hvala”.' },
         ],
       },
       final_bom: {

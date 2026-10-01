@@ -127,7 +127,7 @@ export function KoiRipple({ word, size = 120, color = '#0EA5E9' }: { word: strin
   const n = Math.max(1, letters.length);
   const gap = Math.min(6, 38 / n);
   return (
-    <Svg width={size} height={size} viewBox="0 0 100 100" accessibilityLabel={`«${word}» em Koiwrit`}>
+    <Svg width={size} height={size} viewBox="0 0 100 100" accessibilityLabel={`“${word}” em Koiwrit`}>
       <Circle cx={50} cy={50} r={1.6} fill={color} />
       {letters.map((l, i) => (
         <Ring key={i} l={l} cx={50} cy={50} r={6 + i * gap + gap / 2} from={i * 67 - 30} color={color} w={Math.max(1.1, Math.min(2.2, gap * 0.38))} />

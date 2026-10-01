@@ -15,7 +15,7 @@ export const VARIETY_INFO = {
   sotaque:
     'Um sotaque muda só o som: a pronúncia e a melodia de uma região. As palavras e a gramática são as mesmas do resto do país. Exemplo: o carioca e o gaúcho falam o mesmo português com sons diferentes.',
   dialeto:
-    'Um dialeto muda o som e também palavras e gramática, mas continua sendo o mesmo idioma: quem fala o padrão entende, com algum esforço. Exemplo: o espanhol portenho de Buenos Aires, com o «vos» no lugar do «tú».',
+    'Um dialeto muda o som e também palavras e gramática, mas continua sendo o mesmo idioma: quem fala o padrão entende, com algum esforço. Exemplo: o espanhol portenho de Buenos Aires, com o “vos” no lugar do “tú”.',
   lingua:
     'Uma língua própria é outra língua falada no mesmo lugar, com gramática e história suas — não é um jeito de falar o idioma. Exemplo: o sámi na Suécia, o sardo na Itália. Por isso elas têm uma aba só delas.',
 } as const;

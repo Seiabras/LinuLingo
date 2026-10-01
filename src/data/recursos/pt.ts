@@ -22,7 +22,7 @@ export const RECURSOS_PT: LanguageResources = {
       usedFor: ['nacionalidade e residência em Portugal, para estrangeiros (o CIPLE, de nível A2, é o mais pedido)', 'universidade', 'trabalho'],
       where:
         'Quem é brasileiro não faz estas provas: o português é a sua língua materna, e os exames do CAPLE são feitos para estrangeiros que aprendem a língua. Para processos de residência ou nacionalidade, confira sempre as regras em vigor nos sites oficiais portugueses. Os exames são aplicados em Portugal e numa rede de centros no exterior, listados no site. O equivalente brasileiro, para estrangeiros que aprendem o português do Brasil, é o Celpe-Bras, do Inep.',
-      tip: 'Para um brasileiro, a língua é a mesma: o que muda é o sotaque, parte do vocabulário e o tratamento. Se o objetivo é viver ou trabalhar em Portugal, invista em treinar o ouvido e em adaptar o registo formal («o senhor», «a senhora», o vocabulário de lá), porque é aí que a diferença aparece.',
+      tip: 'Para um brasileiro, a língua é a mesma: o que muda é o sotaque, parte do vocabulário e o tratamento. Se o objetivo é viver ou trabalhar em Portugal, invista em treinar o ouvido e em adaptar o registo formal (“o senhor”, “a senhora”, o vocabulário de lá), porque é aí que a diferença aparece.',
       url: 'https://caple.letras.ulisboa.pt',
     },
   ],
@@ -82,7 +82,7 @@ export const RECURSOS_PT: LanguageResources = {
     {
       kind: 'serie',
       title: 'Conta-me Como Foi',
-      by: 'RTP (adaptação da espanhola «Cuéntame cómo pasó»)',
+      by: 'RTP (adaptação da espanhola “Cuéntame cómo pasó”)',
       year: '2007–2011',
       level: 'B1',
       why: 'Uma família de Lisboa no fim da ditadura, com conversas do dia a dia e muita história recente de Portugal.',
@@ -126,7 +126,7 @@ export const RECURSOS_PT: LanguageResources = {
       by: 'Ana Maria Magalhães e Isabel Alçada',
       year: '1982',
       level: 'B1',
-      why: 'O primeiro livro da coleção «Uma Aventura», que gerações de portugueses leram na escola: linguagem simples e muito diálogo.',
+      why: 'O primeiro livro da coleção “Uma Aventura”, que gerações de portugueses leram na escola: linguagem simples e muito diálogo.',
     },
     {
       kind: 'livro',
@@ -142,7 +142,7 @@ export const RECURSOS_PT: LanguageResources = {
       by: 'Dulce Maria Cardoso',
       year: '2011',
       level: 'B2',
-      why: 'Um adolescente que chega de Angola a Portugal em 1975, narrado na voz dele: a história dos «retornados» em linguagem acessível.',
+      why: 'Um adolescente que chega de Angola a Portugal em 1975, narrado na voz dele: a história dos “retornados” em linguagem acessível.',
     },
     {
       kind: 'livro',
@@ -190,7 +190,7 @@ export const RECURSOS_PT: LanguageResources = {
       by: 'José Afonso',
       year: '1971',
       level: 'B2',
-      why: 'O disco de «Grândola, Vila Morena», a senha da Revolução dos Cravos: música e história de Portugal ao mesmo tempo.',
+      why: 'O disco de “Grândola, Vila Morena”, a senha da Revolução dos Cravos: música e história de Portugal ao mesmo tempo.',
     },
     {
       kind: 'musica',
@@ -267,11 +267,11 @@ export const RECURSOS_PT: LanguageResources = {
     },
   ],
   tips: [
-    'O ouvido é o maior desafio: em Portugal, as vogais átonas encolhem ou somem («p’ra», «t’lefone»), e o «s» no fim de sílaba chia. Comece com legenda, sempre que houver, e vá tirando aos poucos.',
-    'Trate as pessoas como em Portugal: «tu» entre amigos e família; com desconhecidos, o verbo na terceira pessoa com «o senhor», «a senhora» ou o nome («A Ana quer um café?»). O «você» dito diretamente pode soar distante ou até indelicado.',
-    'Use «estar a» mais infinitivo no lugar do gerúndio: «estou a trabalhar», não «estou trabalhando».',
-    'Nas frases afirmativas, o pronome vem depois do verbo: «chamo-me», «diz-me», «vou-te dizer». Antes do verbo, só com negação e certas palavras («não me digas», «já te disse»).',
+    'O ouvido é o maior desafio: em Portugal, as vogais átonas encolhem ou somem (“p’ra”, “t’lefone”), e o “s” no fim de sílaba chia. Comece com legenda, sempre que houver, e vá tirando aos poucos.',
+    'Trate as pessoas como em Portugal: “tu” entre amigos e família; com desconhecidos, o verbo na terceira pessoa com “o senhor”, “a senhora” ou o nome (“A Ana quer um café?”). O “você” dito diretamente pode soar distante ou até indelicado.',
+    'Use “estar a” mais infinitivo no lugar do gerúndio: “estou a trabalhar”, não “estou trabalhando”.',
+    'Nas frases afirmativas, o pronome vem depois do verbo: “chamo-me”, “diz-me”, “vou-te dizer”. Antes do verbo, só com negação e certas palavras (“não me digas”, “já te disse”).',
     'Monte um glossário do dia a dia: autocarro (ônibus), comboio (trem), pequeno-almoço (café da manhã), casa de banho (banheiro), telemóvel (celular), frigorífico (geladeira), fato (terno), rapariga (moça, sem nenhum sentido pejorativo).',
-    'A ortografia é quase a mesma desde o Acordo de 1990, mas segue a pronúncia de cada país: em Portugal escreve-se «facto», «contacto» e «receção», porque lá se diz o «c» e não se diz o «p».',
+    'A ortografia é quase a mesma desde o Acordo de 1990, mas segue a pronúncia de cada país: em Portugal escreve-se “facto”, “contacto” e “receção”, porque lá se diz o “c” e não se diz o “p”.',
   ],
 };

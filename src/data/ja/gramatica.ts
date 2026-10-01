@@ -8,7 +8,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     level: 'A1.1',
     title: 'Os sons e a escrita: cinco vogais, moras, vogais longas, っ e ん',
     emoji: '🔤',
-    summary: 'O japonês tem só cinco vogais, bem parecidas com as nossas, e um ritmo de metrônomo: cada «batida» (a mora) dura o mesmo tempo. As armadilhas estão na duração: おばさん (tia) × おばあさん (avó), きて (venha) × きって (selo). E tudo isso se escreve com três escritas ao mesmo tempo: hiragana, katakana e kanji.',
+    summary: 'O japonês tem só cinco vogais, bem parecidas com as nossas, e um ritmo de metrônomo: cada “batida” (a mora) dura o mesmo tempo. As armadilhas estão na duração: おばさん (tia) × おばあさん (avó), きて (venha) × きって (selo). E tudo isso se escreve com três escritas ao mesmo tempo: hiragana, katakana e kanji.',
     sections: [
       {
         heading: 'Três escritas numa frase só',
@@ -23,36 +23,36 @@ export const GRAMMAR_JA: GrammarTopic[] = [
         },
         examples: [
           ['私はブラジル人です。', 'Eu sou brasileiro(a). Kanji (私, 人), hiragana (は, です) e katakana (ブラジル) na mesma frase.'],
-          ['コーヒーとパンをください。', 'Café e pão, por favor. パン veio do português «pão».'],
+          ['コーヒーとパンをください。', 'Café e pão, por favor. パン veio do português “pão”.'],
           ['日本へようこそ！', 'Bem-vindo(a) ao Japão!'],
         ],
       },
       {
         heading: 'As vogais e as consoantes: quase tudo você já sabe',
-        text: 'As cinco vogais são a, i, u, e, o (あいうえお), na ordem do dicionário japonês. O «a» e o «i» são como os nossos. O う é um «u» sem bico: diga «u» com os lábios relaxados, quase sorrindo. O え e o お ficam entre o «ê» e o «é», entre o «ô» e o «ó». E aqui mora a primeira armadilha do brasileiro: no fim da palavra, a vogal não se reduz. «Sake» (a bebida, さけ) não pode virar «saqui», porque さき é outra palavra (a ponta, o que vem antes). Entre duas consoantes surdas, o い e o う quase somem: です soa «dess», すき (gostar) soa «ski». Nas consoantes, o «r» de ら, り, る, れ, ろ é sempre o «r» brando de «caro», nunca o de «rato». O し é «xi», o ち é «tchi», como o «ti» de «tia» em boa parte do Brasil, e o じ é «dji». O ふ é um sopro entre os lábios, entre o «f» e o «h».',
+        text: 'As cinco vogais são a, i, u, e, o (あいうえお), na ordem do dicionário japonês. O “a” e o “i” são como os nossos. O う é um “u” sem bico: diga “u” com os lábios relaxados, quase sorrindo. O え e o お ficam entre o “ê” e o “é”, entre o “ô” e o “ó”. E aqui mora a primeira armadilha do brasileiro: no fim da palavra, a vogal não se reduz. “Sake” (a bebida, さけ) não pode virar “saqui”, porque さき é outra palavra (a ponta, o que vem antes). Entre duas consoantes surdas, o い e o う quase somem: です soa “dess”, すき (gostar) soa “ski”. Nas consoantes, o “r” de ら, り, る, れ, ろ é sempre o “r” brando de “caro”, nunca o de “rato”. O し é “xi”, o ち é “tchi”, como o “ti” de “tia” em boa parte do Brasil, e o じ é “dji”. O ふ é um sopro entre os lábios, entre o “f” e o “h”.',
         table: {
           head: ['Kana', 'IPA', 'Dica para o brasileiro'],
           rows: [
-            ['う', '[ɯ]', '«u» sem bico, com os lábios relaxados'],
-            ['え・お', '[e]・[o]', 'meio-termo entre ê/é e ô/ó; no fim da palavra não viram «i» nem «u»'],
-            ['ら・り・る・れ・ろ', '[ɾ]', 'o «r» brando de «caro», nunca o de «rato»'],
-            ['し・ち', '[ɕi]・[tɕi]', '«xi» e «tchi», como o «ti» de «tia»'],
-            ['じ', '[dʑi]', '«dji», como o «di» de «dia» no Rio'],
-            ['つ', '[tsɯ]', '«ts» colado, como em «tsunami»'],
-            ['ふ', '[ɸɯ]', 'sopro entre os lábios, entre «f» e «h»'],
-            ['ひ', '[çi]', '«h» chiado, como o «ch» do alemão «ich»'],
+            ['う', '[ɯ]', '“u” sem bico, com os lábios relaxados'],
+            ['え・お', '[e]・[o]', 'meio-termo entre ê/é e ô/ó; no fim da palavra não viram “i” nem “u”'],
+            ['ら・り・る・れ・ろ', '[ɾ]', 'o “r” brando de “caro”, nunca o de “rato”'],
+            ['し・ち', '[ɕi]・[tɕi]', '“xi” e “tchi”, como o “ti” de “tia”'],
+            ['じ', '[dʑi]', '“dji”, como o “di” de “dia” no Rio'],
+            ['つ', '[tsɯ]', '“ts” colado, como em “tsunami”'],
+            ['ふ', '[ɸɯ]', 'sopro entre os lábios, entre “f” e “h”'],
+            ['ひ', '[çi]', '“h” chiado, como o “ch” do alemão “ich”'],
           ],
         },
         examples: [
-          ['すしがすきです。', 'Gosto de sushi. Soa «sushi ga ski dess»: o «u» de すき e de です quase some.'],
-          ['さけをください。', 'Um saquê, por favor. O «e» final de さけ é «e» mesmo; «saqui» seria さき.'],
-          ['ありがとう。', 'Obrigado(a). O «r» é brando, como em «caro».'],
+          ['すしがすきです。', 'Gosto de sushi. Soa “sushi ga ski dess”: o “u” de すき e de です quase some.'],
+          ['さけをください。', 'Um saquê, por favor. O “e” final de さけ é “e” mesmo; “saqui” seria さき.'],
+          ['ありがとう。', 'Obrigado(a). O “r” é brando, como em “caro”.'],
           ['ふじさんはきれいです。', 'O monte Fuji é lindo. O ふ é um sopro entre os lábios.'],
         ],
       },
       {
         heading: 'A mora: cada batida dura o mesmo tempo',
-        text: 'O português conta sílabas; o japonês conta moras, batidas de duração igual, como um metrônomo. Cada kana normal vale uma batida. Os kana pequenos ゃ, ゅ, ょ se juntam ao kana anterior e formam uma batida só: きょ = kyo. Três coisas contam como batida inteira, e é nelas que o brasileiro tropeça. A vogal longa (escrita com uma vogal a mais no hiragana e com ー no katakana): おばさん é tia, おばあさん é avó; ビル é prédio, ビール é cerveja. O っ pequeno, que é uma pausa de uma batida antes da consoante, como se a palavra desse um tropeção: きて (venha) × きって (selo). E o ん, que é uma batida nasal inteira, e não só o «nasal» de «pão»: きんえん (proibido fumar) tem quatro batidas, き・ん・え・ん, e não se confunde com きねん (comemoração), que tem três. É por isso que 東京 (とうきょう) tem quatro batidas, e não as duas de «Tóquio».',
+        text: 'O português conta sílabas; o japonês conta moras, batidas de duração igual, como um metrônomo. Cada kana normal vale uma batida. Os kana pequenos ゃ, ゅ, ょ se juntam ao kana anterior e formam uma batida só: きょ = kyo. Três coisas contam como batida inteira, e é nelas que o brasileiro tropeça. A vogal longa (escrita com uma vogal a mais no hiragana e com ー no katakana): おばさん é tia, おばあさん é avó; ビル é prédio, ビール é cerveja. O っ pequeno, que é uma pausa de uma batida antes da consoante, como se a palavra desse um tropeção: きて (venha) × きって (selo). E o ん, que é uma batida nasal inteira, e não só o “nasal” de “pão”: きんえん (proibido fumar) tem quatro batidas, き・ん・え・ん, e não se confunde com きねん (comemoração), que tem três. É por isso que 東京 (とうきょう) tem quatro batidas, e não as duas de “Tóquio”.',
         table: {
           head: ['Curto', 'Sentido', 'Longo', 'Sentido'],
           rows: [
@@ -68,63 +68,63 @@ export const GRAMMAR_JA: GrammarTopic[] = [
         examples: [
           ['おばあさんはげんきです。', 'A avó está bem. お・ば・あ・さ・ん: cinco batidas.'],
           ['ビールをください。', 'Uma cerveja, por favor. ビ・ー・ル: três batidas; ビル (prédio) tem duas.'],
-          ['これはきってです。', 'Isto é um selo. き・っ・て: segure uma batida de silêncio antes do «te».'],
+          ['これはきってです。', 'Isto é um selo. き・っ・て: segure uma batida de silêncio antes do “te”.'],
           ['ここはきんえんです。', 'Aqui é proibido fumar. き・ん・え・ん: o ん vale uma batida inteira.'],
           ['とうきょうはおおきいです。', 'Tóquio é grande. と・う・きょ・う: quatro batidas.'],
         ],
       },
     ],
     pitfalls: [
-      'Encurtar as vogais longas: pedir a «おばさん» em vez da «おばあさん» troca a avó pela tia. Vogal longa dura duas batidas.',
+      'Encurtar as vogais longas: pedir a “おばさん” em vez da “おばあさん” troca a avó pela tia. Vogal longa dura duas batidas.',
       'Pular o っ: きって (selo) não é きて (venha). O っ é uma batida de silêncio, como se a língua tropeçasse.',
       'Tratar o ん como um nasal leve, à brasileira: ele vale uma batida inteira. きんえん tem quatro batidas.',
-      'Reduzir a vogal final como no português: さけ (saquê) vira «saqui», que soa como さき (a ponta). O «e» e o «o» finais se mantêm.',
-      'Usar o «r» forte de «rato» em ら, り, る, れ, ろ: é sempre o «r» brando de «caro».',
-      'Arredondar os lábios no う: o «u» japonês é sem bico.',
+      'Reduzir a vogal final como no português: さけ (saquê) vira “saqui”, que soa como さき (a ponta). O “e” e o “o” finais se mantêm.',
+      'Usar o “r” forte de “rato” em ら, り, る, れ, ろ: é sempre o “r” brando de “caro”.',
+      'Arredondar os lábios no う: o “u” japonês é sem bico.',
     ],
     quiz: [
       {
-        question: 'Quantas batidas (moras) tem «とうきょう» (Tóquio)?',
+        question: 'Quantas batidas (moras) tem “とうきょう” (Tóquio)?',
         options: ['Quatro', 'Duas', 'Três'],
         answer: 'Quatro',
         explanation: 'と・う・きょ・う: a vogal longa conta uma batida à parte, e きょ é uma batida só (o ょ pequeno se junta ao き).',
       },
       {
-        question: 'Qual palavra quer dizer «avó»?',
+        question: 'Qual palavra quer dizer “avó”?',
         options: ['おばあさん', 'おばさん', 'おじいさん'],
         answer: 'おばあさん',
         explanation: 'おばあさん, com a vogal longa, é avó (ou senhora idosa). おばさん é tia, e おじいさん é avô.',
       },
       {
-        question: 'O que o っ pequeno faz em «きって» (selo)?',
-        options: ['Uma pausa de uma batida antes do «te»', 'Nada, é só enfeite', 'Um «tsu» fraquinho'],
-        answer: 'Uma pausa de uma batida antes do «te»',
-        explanation: 'O っ pequeno não se lê «tsu»: ele segura a consoante seguinte por uma batida. きって tem três batidas; きて (venha) tem duas.',
+        question: 'O que o っ pequeno faz em “きって” (selo)?',
+        options: ['Uma pausa de uma batida antes do “te”', 'Nada, é só enfeite', 'Um “tsu” fraquinho'],
+        answer: 'Uma pausa de uma batida antes do “te”',
+        explanation: 'O っ pequeno não se lê “tsu”: ele segura a consoante seguinte por uma batida. きって tem três batidas; きて (venha) tem duas.',
       },
       {
-        question: 'Em que escrita se escreve «コーヒー» (café)?',
+        question: 'Em que escrita se escreve “コーヒー” (café)?',
         options: ['Katakana', 'Hiragana', 'Kanji'],
         answer: 'Katakana',
         explanation: 'As palavras que vieram de outras línguas se escrevem em katakana, com ー para a vogal longa.',
       },
       {
-        question: 'Como soa o «r» de «ありがとう»?',
-        options: ['Como o «r» brando de «caro»', 'Como o «r» forte de «rato»', 'Como o «l» de «lata»'],
-        answer: 'Como o «r» brando de «caro»',
-        explanation: 'O «r» japonês é uma batida rápida da ponta da língua [ɾ], o mesmo som de «caro», «para», «hora».',
+        question: 'Como soa o “r” de “ありがとう”?',
+        options: ['Como o “r” brando de “caro”', 'Como o “r” forte de “rato”', 'Como o “l” de “lata”'],
+        answer: 'Como o “r” brando de “caro”',
+        explanation: 'O “r” japonês é uma batida rápida da ponta da língua [ɾ], o mesmo som de “caro”, “para”, “hora”.',
       },
     ],
   },
   {
     id: 'ja-g-desu',
     level: 'A1.1',
-    title: 'です: a frase «X é Y» (私はがくせいです)',
+    title: 'です: a frase “X é Y” (私はがくせいです)',
     emoji: '🙋',
-    summary: 'A primeira frase do japonês é «X は Y です»: 私はがくせいです, «eu sou estudante». O です é o «ser» educado, igual para todas as pessoas, e fica sempre no fim. Para negar, じゃありません; para perguntar, basta pôr か no final.',
+    summary: 'A primeira frase do japonês é “X は Y です”: 私はがくせいです, “eu sou estudante”. O です é o “ser” educado, igual para todas as pessoas, e fica sempre no fim. Para negar, じゃありません; para perguntar, basta pôr か no final.',
     sections: [
       {
         heading: 'X は Y です',
-        text: 'A frase básica tem três peças: o assunto, a partícula は e o que se diz dele, fechado por です. 私はがくせいです = «eu sou estudante». Duas surpresas para o brasileiro. A partícula は se escreve com o kana «ha», mas se pronuncia «wa»: 私は = «watashi wa». E o です não muda com a pessoa: é です para eu, você, ele e eles. Também não há artigo nem plural: がくせい é «estudante», «um estudante», «a estudante» ou «os estudantes», e o contexto decide. O です é a forma educada, a que você deve usar com quem não é da família nem amigo próximo. Existe uma forma simples, だ, para os amigos, que vamos ver no A2.2.',
+        text: 'A frase básica tem três peças: o assunto, a partícula は e o que se diz dele, fechado por です. 私はがくせいです = “eu sou estudante”. Duas surpresas para o brasileiro. A partícula は se escreve com o kana “ha”, mas se pronuncia “wa”: 私は = “watashi wa”. E o です não muda com a pessoa: é です para eu, você, ele e eles. Também não há artigo nem plural: がくせい é “estudante”, “um estudante”, “a estudante” ou “os estudantes”, e o contexto decide. O です é a forma educada, a que você deve usar com quem não é da família nem amigo próximo. Existe uma forma simples, だ, para os amigos, que vamos ver no A2.2.',
         table: {
           head: ['Forma', 'Japonês', 'Português'],
           rows: [
@@ -145,7 +145,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'Perguntar e responder: か, はい, いいえ',
-        text: 'Para transformar a frase em pergunta, acrescente か no fim: たなかさんはせんせいですか. A entonação sobe um pouco no か. Na escrita mais cuidadosa, a pergunta com か termina em 。; o ？ aparece muito em mensagens e textos informais. Para responder «sim, é», diga はい、そうです; para «não, não é», いいえ、ちがいます (literalmente «é diferente») ou いいえ、〜じゃありません. A partícula も é o «também»: ela entra no lugar do は. 私もがくせいです = «eu também sou estudante».',
+        text: 'Para transformar a frase em pergunta, acrescente か no fim: たなかさんはせんせいですか. A entonação sobe um pouco no か. Na escrita mais cuidadosa, a pergunta com か termina em 。; o ？ aparece muito em mensagens e textos informais. Para responder “sim, é”, diga はい、そうです; para “não, não é”, いいえ、ちがいます (literalmente “é diferente”) ou いいえ、〜じゃありません. A partícula も é o “também”: ela entra no lugar do は. 私もがくせいです = “eu também sou estudante”.',
         table: {
           head: ['Japonês', 'Português', 'Quando'],
           rows: [
@@ -165,7 +165,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'Apresentar-se, e o さん',
-        text: 'A apresentação japonesa tem uma fórmula fixa: はじめまして (muito prazer, na primeira vez), o nome com です, de onde você é e, no fim, どうぞよろしくおねがいします, que não tem tradução exata: é algo como «conto com a sua boa vontade». O さん vai depois do nome dos outros, nunca do seu: たなかさん, マリアさん. Ele serve para homem e mulher, com sobrenome ou nome. E há uma diferença de costume: o japonês quase não usa あなた (você). Dizer あなた a alguém que você conhece soa distante ou até meio grosseiro. Use o nome com さん: «マリアさんはブラジル人ですか», literalmente «a Maria é brasileira?», mesmo falando com a própria Maria.',
+        text: 'A apresentação japonesa tem uma fórmula fixa: はじめまして (muito prazer, na primeira vez), o nome com です, de onde você é e, no fim, どうぞよろしくおねがいします, que não tem tradução exata: é algo como “conto com a sua boa vontade”. O さん vai depois do nome dos outros, nunca do seu: たなかさん, マリアさん. Ele serve para homem e mulher, com sobrenome ou nome. E há uma diferença de costume: o japonês quase não usa あなた (você). Dizer あなた a alguém que você conhece soa distante ou até meio grosseiro. Use o nome com さん: “マリアさんはブラジル人ですか”, literalmente “a Maria é brasileira?”, mesmo falando com a própria Maria.',
         table: {
           head: ['Japonês', 'Português'],
           rows: [
@@ -180,42 +180,42 @@ export const GRAMMAR_JA: GrammarTopic[] = [
           ['はじめまして。リヌです。', 'Muito prazer. Sou o Linu.'],
           ['ブラジルからきました。', 'Vim do Brasil.'],
           ['どうぞよろしくおねがいします。', 'Prazer em conhecê-lo(a).'],
-          ['マリアさんはブラジル人ですか。', 'Você (Maria) é brasileira? Com o nome no lugar de «você».'],
+          ['マリアさんはブラジル人ですか。', 'Você (Maria) é brasileira? Com o nome no lugar de “você”.'],
         ],
       },
     ],
     pitfalls: [
-      'Ler a partícula は como «ha»: como partícula ela soa «wa». 私は = «watashi wa».',
-      'Pôr さん no próprio nome: «リヌさんです» para se apresentar soa estranho. O さん é só para os outros.',
+      'Ler a partícula は como “ha”: como partícula ela soa “wa”. 私は = “watashi wa”.',
+      'Pôr さん no próprio nome: “リヌさんです” para se apresentar soa estranho. O さん é só para os outros.',
       'Usar あなた o tempo todo: soa distante. Chame a pessoa pelo nome com さん.',
-      'Procurar artigo e plural: がくせい é «estudante», «um estudante», «os estudantes».',
+      'Procurar artigo e plural: がくせい é “estudante”, “um estudante”, “os estudantes”.',
       'Achar que です muda com a pessoa: é です para eu, você, ele e nós.',
       'Esquecer o か da pergunta: sem ele, a frase é uma afirmação (ou uma pergunta só pela entonação, que é informal).',
     ],
     quiz: [
       {
-        question: 'Como se diz «Eu sou brasileiro»?',
+        question: 'Como se diz “Eu sou brasileiro”?',
         options: ['私はブラジル人です。', '私はブラジル人ですか。', '私はブラジル人さんです。'],
         answer: '私はブラジル人です。',
         explanation: 'X は Y です. Com か vira pergunta, e さん não vai depois de nacionalidade nem do próprio nome.',
       },
       {
-        question: 'Qual é a forma negativa de «せんせいです»?',
+        question: 'Qual é a forma negativa de “せんせいです”?',
         options: ['せんせいじゃありません', 'せんせいでした', 'せんせいですか'],
         answer: 'せんせいじゃありません',
         explanation: 'じゃありません (ou ではありません, mais formal) nega o です. でした é o passado, e ですか é a pergunta.',
       },
       {
-        question: 'Como se pronuncia a partícula は em «私は»?',
+        question: 'Como se pronuncia a partícula は em “私は”?',
         options: ['wa', 'ha', 'ba'],
         answer: 'wa',
-        explanation: 'Como partícula, は se lê «wa». No meio de palavras (はな, flor), é «ha» mesmo.',
+        explanation: 'Como partícula, は se lê “wa”. No meio de palavras (はな, flor), é “ha” mesmo.',
       },
       {
-        question: 'Como se responde «Sim, sou» a «がくせいですか»?',
+        question: 'Como se responde “Sim, sou” a “がくせいですか”?',
         options: ['はい、そうです。', 'いいえ、ちがいます。', 'はい、ちがいます。'],
         answer: 'はい、そうです。',
-        explanation: 'はい、そうです = «sim, é isso». いいえ、ちがいます quer dizer «não, é diferente».',
+        explanation: 'はい、そうです = “sim, é isso”. いいえ、ちがいます quer dizer “não, é diferente”.',
       },
       {
         question: 'Onde se usa o さん?',
@@ -230,11 +230,11 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     level: 'A1.1',
     title: 'これ, それ, あれ, どれ e a partícula の',
     emoji: '👉',
-    summary: 'O japonês aponta com quatro prefixos: こ (perto de mim), そ (perto de você), あ (longe dos dois) e ど (qual?). Deles saem これ, この, ここ, こちら… E a partícula の liga dois substantivos: 私のほん, «o meu livro», na ordem contrária à do português.',
+    summary: 'O japonês aponta com quatro prefixos: こ (perto de mim), そ (perto de você), あ (longe dos dois) e ど (qual?). Deles saem これ, この, ここ, こちら… E a partícula の liga dois substantivos: 私のほん, “o meu livro”, na ordem contrária à do português.',
     sections: [
       {
         heading: 'こ, そ, あ, ど: o mapa de quem está perto',
-        text: 'O português tem «este», «esse» e «aquele», mas no Brasil a gente mistura «este» e «esse» sem pensar. O japonês não mistura: こ é o território de quem fala, そ é o território de quem ouve, あ é o que está longe dos dois, e ど é a pergunta. Se o livro está na mão da pessoa com quem você fala, é それ, mesmo que esteja a meio metro de você. これ, それ e あれ ficam sozinhos, no lugar do substantivo; para pôr o substantivo junto, use この, その, あの: このほん (este livro). ここ, そこ, あそこ são lugares, e こちら, そちら, あちら são a versão educada, que também serve para apresentar pessoas: こちらはたなかさんです.',
+        text: 'O português tem “este”, “esse” e “aquele”, mas no Brasil a gente mistura “este” e “esse” sem pensar. O japonês não mistura: こ é o território de quem fala, そ é o território de quem ouve, あ é o que está longe dos dois, e ど é a pergunta. Se o livro está na mão da pessoa com quem você fala, é それ, mesmo que esteja a meio metro de você. これ, それ e あれ ficam sozinhos, no lugar do substantivo; para pôr o substantivo junto, use この, その, あの: このほん (este livro). ここ, そこ, あそこ são lugares, e こちら, そちら, あちら são a versão educada, que também serve para apresentar pessoas: こちらはたなかさんです.',
         table: {
           head: ['O quê', 'こ (perto de mim)', 'そ (perto de você)', 'あ (longe dos dois)', 'ど (pergunta)'],
           rows: [
@@ -254,8 +254,8 @@ export const GRAMMAR_JA: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'A partícula の: «de», ao contrário',
-        text: 'A partícula の liga dois substantivos, e o que modifica vem antes: 私のほん é «eu-de livro», o meu livro. É o nosso «de», só que na ordem inversa: マリアさんのかさ = o guarda-chuva da Maria. O の serve para posse (de quem é), origem (日本のくるま, carro do Japão), assunto (にほんごのほん, livro de japonês) e até para dizer o que a pessoa é: 日本人のせんせい é um professor que é japonês, enquanto にほんごのせんせい é um professor de japonês. Quando o substantivo já está claro, ele pode sumir: «これは私のです» = «isto é meu».',
+        heading: 'A partícula の: “de”, ao contrário',
+        text: 'A partícula の liga dois substantivos, e o que modifica vem antes: 私のほん é “eu-de livro”, o meu livro. É o nosso “de”, só que na ordem inversa: マリアさんのかさ = o guarda-chuva da Maria. O の serve para posse (de quem é), origem (日本のくるま, carro do Japão), assunto (にほんごのほん, livro de japonês) e até para dizer o que a pessoa é: 日本人のせんせい é um professor que é japonês, enquanto にほんごのせんせい é um professor de japonês. Quando o substantivo já está claro, ele pode sumir: “これは私のです” = “isto é meu”.',
         table: {
           head: ['Japonês', 'Palavra por palavra', 'Português'],
           rows: [
@@ -276,7 +276,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'Perguntar com ど: どれ, どの, どこ, どんな',
-        text: 'As palavras com ど fazem perguntas, e a resposta usa o prefixo certo: «どれですか» (qual é?) → «これです» (é este). Use どれ para escolher entre três ou mais coisas, sozinho; どの com o substantivo; どこ para lugar; どんな para o tipo («どんな人ですか», que tipo de pessoa é?). Para escolher entre duas coisas, o japonês usa どちら (ou どっち, informal). Uma dica de educação: para perguntar «de onde você é?», o educado é «おくには、どちらですか», com どちら no lugar de どこ.',
+        text: 'As palavras com ど fazem perguntas, e a resposta usa o prefixo certo: “どれですか” (qual é?) → “これです” (é este). Use どれ para escolher entre três ou mais coisas, sozinho; どの com o substantivo; どこ para lugar; どんな para o tipo (“どんな人ですか”, que tipo de pessoa é?). Para escolher entre duas coisas, o japonês usa どちら (ou どっち, informal). Uma dica de educação: para perguntar “de onde você é?”, o educado é “おくには、どちらですか”, com どちら no lugar de どこ.',
         table: {
           head: ['Pergunta', 'Resposta', 'Português'],
           rows: [
@@ -295,39 +295,39 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pôr これ antes de substantivo: «これほん» está errado. Antes de substantivo é この: このほん.',
-      'Inverter a ordem do の: «ほんの私» não é «meu livro». O dono vem primeiro: 私のほん.',
-      'Esquecer o の entre dois substantivos: «日本くるま» fica truncado. Diga 日本のくるま.',
+      'Pôr これ antes de substantivo: “これほん” está errado. Antes de substantivo é この: このほん.',
+      'Inverter a ordem do の: “ほんの私” não é “meu livro”. O dono vem primeiro: 私のほん.',
+      'Esquecer o の entre dois substantivos: “日本くるま” fica truncado. Diga 日本のくるま.',
       'Chamar de あれ o que está com a outra pessoa: se está perto de quem ouve, é それ.',
       'Confundir 日本人のせんせい (professor japonês) com にほんごのせんせい (professor de japonês).',
     ],
     quiz: [
       {
-        question: 'O livro está na mão da pessoa com quem você fala. Como você pergunta «O que é isso?»?',
+        question: 'O livro está na mão da pessoa com quem você fala. Como você pergunta “O que é isso?”?',
         options: ['それはなんですか。', 'これはなんですか。', 'あれはなんですか。'],
         answer: 'それはなんですか。',
         explanation: 'O que está perto de quem ouve é それ. これ é o que está com você; あれ, o que está longe dos dois.',
       },
       {
-        question: 'Como se diz «este guarda-chuva»?',
+        question: 'Como se diz “este guarda-chuva”?',
         options: ['このかさ', 'これかさ', 'これのかさ'],
         answer: 'このかさ',
         explanation: 'Antes de substantivo, usa-se この, その, あの, どの. これ fica sozinho.',
       },
       {
-        question: 'Como se diz «o guarda-chuva da Maria»?',
+        question: 'Como se diz “o guarda-chuva da Maria”?',
         options: ['マリアさんのかさ', 'かさのマリアさん', 'マリアさんかさ'],
         answer: 'マリアさんのかさ',
         explanation: 'O dono vem antes do の, e a coisa depois: マリアさんのかさ.',
       },
       {
-        question: 'Qual palavra pergunta «onde»?',
+        question: 'Qual palavra pergunta “onde”?',
         options: ['どこ', 'どれ', 'どの'],
         answer: 'どこ',
-        explanation: 'どこ é lugar (onde); どれ é «qual» sozinho, e どの é «qual» antes de substantivo.',
+        explanation: 'どこ é lugar (onde); どれ é “qual” sozinho, e どの é “qual” antes de substantivo.',
       },
       {
-        question: 'O que quer dizer «にほんごのせんせい»?',
+        question: 'O que quer dizer “にほんごのせんせい”?',
         options: ['professor de japonês', 'professor japonês', 'o japonês do professor'],
         answer: 'professor de japonês',
         explanation: 'にほんご é a língua; にほんごのせんせい é quem ensina japonês. Professor japonês seria 日本人のせんせい.',
@@ -340,11 +340,11 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     level: 'A1.2',
     title: 'Números, horas, preços e idade (一, 十, 百, 千, 万)',
     emoji: '🔢',
-    summary: 'Os números japoneses são lógicos: 十一 é «dez-um», 二十 é «dois-dez». As pegadinhas são três: o 4 e o 9 têm duas leituras (e uma delas dá azar), algumas combinações mudam de som (三百 = さんびゃく) e os números grandes se contam de dez mil em dez mil (万), e não de mil em mil.',
+    summary: 'Os números japoneses são lógicos: 十一 é “dez-um”, 二十 é “dois-dez”. As pegadinhas são três: o 4 e o 9 têm duas leituras (e uma delas dá azar), algumas combinações mudam de som (三百 = さんびゃく) e os números grandes se contam de dez mil em dez mil (万), e não de mil em mil.',
     sections: [
       {
         heading: 'De zero a cem',
-        text: 'Os números de um a dez são a base de tudo. O 4, o 7 e o 9 têm duas leituras: よん ou し, なな ou しち, きゅう ou く. Na dúvida, prefira よん, なな e きゅう, que são mais claras. O し do 4 soa como 死 (morte) e o く do 9, como 苦 (sofrimento): por isso muitos hotéis e hospitais pulam o quarto 4 e ninguém dá presente em conjuntos de quatro. Daí em diante é só montar: 十一 (じゅういち) é «dez-um», 二十 (にじゅう) é «dois-dez», 九十九 (きゅうじゅうきゅう) é 99. Na frase japonesa, os números se escrevem em kanji ou em algarismos; aqui no app usamos sempre o kanji, para você aprender a leitura.',
+        text: 'Os números de um a dez são a base de tudo. O 4, o 7 e o 9 têm duas leituras: よん ou し, なな ou しち, きゅう ou く. Na dúvida, prefira よん, なな e きゅう, que são mais claras. O し do 4 soa como 死 (morte) e o く do 9, como 苦 (sofrimento): por isso muitos hotéis e hospitais pulam o quarto 4 e ninguém dá presente em conjuntos de quatro. Daí em diante é só montar: 十一 (じゅういち) é “dez-um”, 二十 (にじゅう) é “dois-dez”, 九十九 (きゅうじゅうきゅう) é 99. Na frase japonesa, os números se escrevem em kanji ou em algarismos; aqui no app usamos sempre o kanji, para você aprender a leitura.',
         table: {
           head: ['Número', 'Kanji', 'Leitura', 'Observação'],
           rows: [
@@ -352,12 +352,12 @@ export const GRAMMAR_JA: GrammarTopic[] = [
             ['1', '一', 'いち', '—'],
             ['2', '二', 'に', '—'],
             ['3', '三', 'さん', '—'],
-            ['4', '四', 'よん／し', 'し soa como «morte»'],
+            ['4', '四', 'よん／し', 'し soa como “morte”'],
             ['5', '五', 'ご', '—'],
             ['6', '六', 'ろく', '—'],
             ['7', '七', 'なな／しち', 'なな é mais claro'],
             ['8', '八', 'はち', '—'],
-            ['9', '九', 'きゅう／く', 'く soa como «sofrimento»'],
+            ['9', '九', 'きゅう／く', 'く soa como “sofrimento”'],
             ['10', '十', 'じゅう', '—'],
             ['14', '十四', 'じゅうよん', 'dez-quatro'],
             ['20', '二十', 'にじゅう', 'dois-dez'],
@@ -372,7 +372,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'Centenas, milhares e o 万',
-        text: 'Aqui mora a maior diferença. O português agrupa de mil em mil (mil, milhão); o japonês agrupa de dez mil em dez mil: 万 (まん) é 10.000, e 十万 é «dez dez-mil», ou seja, cem mil. Um milhão é 百万 (cem dez-mil). Para não se perder, pense em «quantos 万»: um apartamento de 三千万円 custa trinta milhões de ienes. Algumas combinações mudam de som para ficar mais fáceis de dizer: o 百 vira びゃく depois de 三 e ぴゃく depois de 六 e 八, com っ; o 千 vira ぜん depois de 三 e ganha っ depois de 八. O 百 e o 千 sozinhos não levam 一 na frente, mas o 万 leva: 一万 (いちまん).',
+        text: 'Aqui mora a maior diferença. O português agrupa de mil em mil (mil, milhão); o japonês agrupa de dez mil em dez mil: 万 (まん) é 10.000, e 十万 é “dez dez-mil”, ou seja, cem mil. Um milhão é 百万 (cem dez-mil). Para não se perder, pense em “quantos 万”: um apartamento de 三千万円 custa trinta milhões de ienes. Algumas combinações mudam de som para ficar mais fáceis de dizer: o 百 vira びゃく depois de 三 e ぴゃく depois de 六 e 八, com っ; o 千 vira ぜん depois de 三 e ganha っ depois de 八. O 百 e o 千 sozinhos não levam 一 na frente, mas o 万 leva: 一万 (いちまん).',
         table: {
           head: ['Número', 'Kanji', 'Leitura'],
           rows: [
@@ -397,7 +397,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'Horas, minutos e idade',
-        text: 'Para as horas, ponha 時 (じ) depois do número: 一時, 二時, 三時. Três horas mudam: 四時 é よじ, 七時 é しちじ e 九時 é くじ. Os minutos (分) mudam mais: ふん depois de 2, 5, 7 e 9, ぷん com っ depois de 1, 6, 8 e 10 (いっぷん, ろっぷん, はっぷん, じゅっぷん), e ぷん depois de 3 e 4 (さんぷん, よんぷん). «E meia» é 半 (はん). Manhã e tarde vêm antes: 午前 (antes do meio-dia) e 午後 (depois do meio-dia). Para perguntar: 何時ですか (que horas são?), いくらですか (quanto custa?), なんさいですか ou, mais educado, おいくつですか (quantos anos?). A idade usa 歳 (さい), com uma exceção famosa: 二十歳, os vinte anos, idade em que se comemora a maioridade, se lê はたち.',
+        text: 'Para as horas, ponha 時 (じ) depois do número: 一時, 二時, 三時. Três horas mudam: 四時 é よじ, 七時 é しちじ e 九時 é くじ. Os minutos (分) mudam mais: ふん depois de 2, 5, 7 e 9, ぷん com っ depois de 1, 6, 8 e 10 (いっぷん, ろっぷん, はっぷん, じゅっぷん), e ぷん depois de 3 e 4 (さんぷん, よんぷん). “E meia” é 半 (はん). Manhã e tarde vêm antes: 午前 (antes do meio-dia) e 午後 (depois do meio-dia). Para perguntar: 何時ですか (que horas são?), いくらですか (quanto custa?), なんさいですか ou, mais educado, おいくつですか (quantos anos?). A idade usa 歳 (さい), com uma exceção famosa: 二十歳, os vinte anos, idade em que se comemora a maioridade, se lê はたち.',
         table: {
           head: ['Português', 'Kanji', 'Leitura'],
           rows: [
@@ -422,11 +422,11 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Contar de mil em mil: 一万 é dez mil, 十万 é cem mil e 百万 é um milhão. Pense sempre em «quantos 万».',
-      'Dizer «よんじ» ou «きゅうじ» para as horas: quatro horas é よじ, nove horas é くじ, sete horas é しちじ.',
+      'Contar de mil em mil: 一万 é dez mil, 十万 é cem mil e 百万 é um milhão. Pense sempre em “quantos 万”.',
+      'Dizer “よんじ” ou “きゅうじ” para as horas: quatro horas é よじ, nove horas é くじ, sete horas é しちじ.',
       'Esquecer as mudanças de som: 三百 é さんびゃく, 六百 é ろっぴゃく, 八百 é はっぴゃく, 三千 é さんぜん.',
-      'Ler 二十歳 como «にじゅうさい» numa conversa: a idade de vinte anos é はたち.',
-      'Dar presentes em conjuntos de quatro ou pedir o quarto 4 sem saber do tabu: o し de 四 soa como «morte».',
+      'Ler 二十歳 como “にじゅうさい” numa conversa: a idade de vinte anos é はたち.',
+      'Dar presentes em conjuntos de quatro ou pedir o quarto 4 sem saber do tabu: o し de 四 soa como “morte”.',
     ],
     quiz: [
       {
@@ -436,7 +436,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
         explanation: 'Depois do ん de さん, o ひゃく vira びゃく. Com 六 e 八, vira ぴゃく: ろっぴゃく, はっぴゃく.',
       },
       {
-        question: 'Como se diz «quatro horas»?',
+        question: 'Como se diz “quatro horas”?',
         options: ['よじ', 'よんじ', 'しじ'],
         answer: 'よじ',
         explanation: '四時 se lê よじ. Também mudam 七時 (しちじ) e 九時 (くじ).',
@@ -451,13 +451,13 @@ export const GRAMMAR_JA: GrammarTopic[] = [
         question: 'Como se lê 二十歳 (vinte anos de idade)?',
         options: ['はたち', 'ふたつ', 'にじゅうねん'],
         answer: 'はたち',
-        explanation: 'A idade de vinte anos tem leitura própria: はたち. ふたつ é «duas coisas», e にじゅうねん é «vinte anos» como período de tempo.',
+        explanation: 'A idade de vinte anos tem leitura própria: はたち. ふたつ é “duas coisas”, e にじゅうねん é “vinte anos” como período de tempo.',
       },
       {
-        question: 'O que se pergunta com «いくらですか»?',
+        question: 'O que se pergunta com “いくらですか”?',
         options: ['O preço', 'A hora', 'A idade'],
         answer: 'O preço',
-        explanation: 'いくら é «quanto (custa)». A hora é 何時ですか, e a idade é なんさいですか ou おいくつですか.',
+        explanation: 'いくら é “quanto (custa)”. A hora é 何時ですか, e a idade é なんさいですか ou おいくつですか.',
       },
     ],
   },
@@ -466,11 +466,11 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     level: 'A1.2',
     title: 'Os verbos com ます: presente, passado, negativo e 〜たい',
     emoji: '🏃',
-    summary: 'O verbo japonês fica sempre no fim da frase e não muda com a pessoa: 行きます é «vou», «você vai», «eles vão» e até «vou amanhã». Com quatro terminações (ます, ません, ました, ませんでした) você já fala de hoje, de ontem e do que não faz. E a mesma base serve para querer (行きたい) e convidar (行きませんか).',
+    summary: 'O verbo japonês fica sempre no fim da frase e não muda com a pessoa: 行きます é “vou”, “você vai”, “eles vão” e até “vou amanhã”. Com quatro terminações (ます, ません, ました, ませんでした) você já fala de hoje, de ontem e do que não faz. E a mesma base serve para querer (行きたい) e convidar (行きませんか).',
     sections: [
       {
         heading: 'Quatro terminações para quase tudo',
-        text: 'A forma com ます é a forma educada do verbo, a que você usa com quem não é íntimo. Ela tem só dois tempos: o «não passado» (presente e futuro juntos) e o passado. 行きます pode ser «vou (sempre)» ou «vou (amanhã)»: quem decide é o contexto e as palavras de tempo, como 毎日 (todo dia) ou あした (amanhã). Não há conjugação por pessoa: o sujeito costuma ficar implícito, e o verbo é o mesmo para todos. Palavras de tempo relativo (きょう, あした, きのう, 毎日) entram sem partícula; horas e datas levam に: 七時におきます.',
+        text: 'A forma com ます é a forma educada do verbo, a que você usa com quem não é íntimo. Ela tem só dois tempos: o “não passado” (presente e futuro juntos) e o passado. 行きます pode ser “vou (sempre)” ou “vou (amanhã)”: quem decide é o contexto e as palavras de tempo, como 毎日 (todo dia) ou あした (amanhã). Não há conjugação por pessoa: o sujeito costuma ficar implícito, e o verbo é o mesmo para todos. Palavras de tempo relativo (きょう, あした, きのう, 毎日) entram sem partícula; horas e datas levam に: 七時におきます.',
         table: {
           head: ['Verbo', 'Presente/futuro', 'Negativo', 'Passado', 'Passado negativo'],
           rows: [
@@ -492,7 +492,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'A ordem da frase: o verbo no fim',
-        text: 'Em português dizemos «eu como pão»; em japonês, «eu pão como»: 私はパンを食べます. O verbo vai sempre no fim, e o resto se organiza por partículas (は, を, に), que vamos ver no próximo tópico. Muita coisa que em português fica no verbo, em japonês fica no contexto: se a pergunta é «o que você comeu?», a resposta natural é só «すしを食べました», sem 私は. Repetir 私は em toda frase soa robótico.',
+        text: 'Em português dizemos “eu como pão”; em japonês, “eu pão como”: 私はパンを食べます. O verbo vai sempre no fim, e o resto se organiza por partículas (は, を, に), que vamos ver no próximo tópico. Muita coisa que em português fica no verbo, em japonês fica no contexto: se a pergunta é “o que você comeu?”, a resposta natural é só “すしを食べました”, sem 私は. Repetir 私は em toda frase soa robótico.',
         table: {
           head: ['Português', 'Ordem japonesa', 'Japonês'],
           rows: [
@@ -510,7 +510,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'A base do verbo: 〜たい, 〜ませんか, 〜ましょう',
-        text: 'Tire o ます e sobra a base (行き, 食べ, 見, し). Nela se encaixam outras terminações. 〜たい é «querer fazer»: 行きたいです (quero ir), 食べたくないです (não quero comer). O たい se comporta como um adjetivo, e por isso o negativo é たくない e o passado, たかった. Para convidar alguém, o japonês não pergunta «você quer…?»: pergunta «não vamos…?», com 〜ませんか. E para aceitar ou propor, 〜ましょう (vamos!). Perguntar «行きたいですか» a um desconhecido ou a um superior soa invasivo, como se você espiasse o desejo da pessoa; o convite com ませんか deixa a porta aberta.',
+        text: 'Tire o ます e sobra a base (行き, 食べ, 見, し). Nela se encaixam outras terminações. 〜たい é “querer fazer”: 行きたいです (quero ir), 食べたくないです (não quero comer). O たい se comporta como um adjetivo, e por isso o negativo é たくない e o passado, たかった. Para convidar alguém, o japonês não pergunta “você quer…?”: pergunta “não vamos…?”, com 〜ませんか. E para aceitar ou propor, 〜ましょう (vamos!). Perguntar “行きたいですか” a um desconhecido ou a um superior soa invasivo, como se você espiasse o desejo da pessoa; o convite com ませんか deixa a porta aberta.',
         table: {
           head: ['Forma', 'Exemplo', 'Português'],
           rows: [
@@ -525,47 +525,47 @@ export const GRAMMAR_JA: GrammarTopic[] = [
           ['日本へ行きたいです。', 'Quero ir ao Japão.'],
           ['いっしょにひるごはんを食べませんか。', 'Não quer almoçar comigo?'],
           ['いいですね。食べましょう。', 'Boa! Vamos comer.'],
-          ['すみません、きょうはちょっと……。', 'Desculpe, hoje é meio… (a recusa educada, sem dizer «não»)'],
+          ['すみません、きょうはちょっと……。', 'Desculpe, hoje é meio… (a recusa educada, sem dizer “não”)'],
         ],
       },
     ],
     pitfalls: [
       'Pôr o verbo no meio, como em português: ele vai sempre no fim da frase.',
-      'Procurar um futuro: 行きます já é «vou» e «irei». O tempo vem do contexto (あした, 来年).',
-      'Convidar com 〜たいですか: «行きたいですか» soa como espiar o desejo alheio. Convide com 〜ませんか.',
-      'Usar 〜たい para falar do desejo de outra pessoa: «たなかさんは行きたいです» soa estranho. O たい é para você (e, na pergunta, para o ouvinte íntimo).',
+      'Procurar um futuro: 行きます já é “vou” e “irei”. O tempo vem do contexto (あした, 来年).',
+      'Convidar com 〜たいですか: “行きたいですか” soa como espiar o desejo alheio. Convide com 〜ませんか.',
+      'Usar 〜たい para falar do desejo de outra pessoa: “たなかさんは行きたいです” soa estranho. O たい é para você (e, na pergunta, para o ouvinte íntimo).',
       'Repetir 私は em toda frase: quando o assunto já está claro, ele cai.',
-      'Recusar com um «いいえ» seco: o japonês recusa convites com «ちょっと……» e deixa a frase no ar.',
+      'Recusar com um “いいえ” seco: o japonês recusa convites com “ちょっと……” e deixa a frase no ar.',
     ],
     quiz: [
       {
-        question: 'Qual é o passado de «食べます»?',
+        question: 'Qual é o passado de “食べます”?',
         options: ['食べました', '食べません', '食べましょう'],
         answer: '食べました',
-        explanation: 'ます → ました no passado. ません é o negativo, e ましょう é «vamos».',
+        explanation: 'ます → ました no passado. ません é o negativo, e ましょう é “vamos”.',
       },
       {
-        question: 'Como se diz «Não bebo café»?',
+        question: 'Como se diz “Não bebo café”?',
         options: ['コーヒーはのみません。', 'コーヒーはのみました。', 'コーヒーはのみたいです。'],
         answer: 'コーヒーはのみません。',
-        explanation: 'ません é o negativo do presente. のみました é «bebi», e のみたいです é «quero beber».',
+        explanation: 'ません é o negativo do presente. のみました é “bebi”, e のみたいです é “quero beber”.',
       },
       {
-        question: 'Como convidar com educação: «Vamos almoçar juntos?»',
+        question: 'Como convidar com educação: “Vamos almoçar juntos?”',
         options: ['いっしょにひるごはんを食べませんか。', 'いっしょにひるごはんを食べたいですか。', 'いっしょにひるごはんを食べませんでした。'],
         answer: 'いっしょにひるごはんを食べませんか。',
-        explanation: 'O convite japonês é «não vamos…?», com ませんか. Perguntar «você quer?» (たいですか) soa invasivo.',
+        explanation: 'O convite japonês é “não vamos…?”, com ませんか. Perguntar “você quer?” (たいですか) soa invasivo.',
       },
       {
-        question: 'O que quer dizer «日本へ行きたいです»?',
+        question: 'O que quer dizer “日本へ行きたいです”?',
         options: ['Quero ir ao Japão.', 'Fui ao Japão.', 'Vamos ao Japão!'],
         answer: 'Quero ir ao Japão.',
-        explanation: 'A base 行き + たい = querer ir. «Fui» seria 行きました, e «vamos!» seria 行きましょう.',
+        explanation: 'A base 行き + たい = querer ir. “Fui” seria 行きました, e “vamos!” seria 行きましょう.',
       },
       {
-        question: '«行きます» pode querer dizer…',
-        options: ['«vou» e «irei»', 'só «fui»', 'só «vou agora»'],
-        answer: '«vou» e «irei»',
+        question: '“行きます” pode querer dizer…',
+        options: ['“vou” e “irei”', 'só “fui”', 'só “vou agora”'],
+        answer: '“vou” e “irei”',
         explanation: 'A forma ます cobre presente e futuro. O passado é 行きました.',
       },
     ],
@@ -575,11 +575,11 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     level: 'A1.2',
     title: 'As partículas: を, に, へ, で, と, も, から, まで',
     emoji: '🧩',
-    summary: 'As partículas são etiquetas que vão depois da palavra e dizem o papel dela na frase: を marca o objeto, に o ponto (hora, destino), で o lugar da ação e o meio, と a companhia. São as nossas preposições, só que postas depois: 東京で = «em Tóquio».',
+    summary: 'As partículas são etiquetas que vão depois da palavra e dizem o papel dela na frase: を marca o objeto, に o ponto (hora, destino), で o lugar da ação e o meio, と a companhia. São as nossas preposições, só que postas depois: 東京で = “em Tóquio”.',
     sections: [
       {
         heading: 'Preposições ao contrário',
-        text: 'Onde o português diz «em Tóquio», o japonês diz «Tóquio-em»: 東京で. A partícula cola na palavra que vem antes e diz qual é o papel dela. Por isso a ordem das palavras é bem mais livre do que parece: パンを私は食べます e 私はパンを食べます dizem a mesma coisa, porque o を avisa quem é o objeto. Só o verbo tem lugar fixo, no fim. Duas partículas têm grafia antiga: を (objeto) soa «o», e へ (direção) soa «e».',
+        text: 'Onde o português diz “em Tóquio”, o japonês diz “Tóquio-em”: 東京で. A partícula cola na palavra que vem antes e diz qual é o papel dela. Por isso a ordem das palavras é bem mais livre do que parece: パンを私は食べます e 私はパンを食べます dizem a mesma coisa, porque o を avisa quem é o objeto. Só o verbo tem lugar fixo, no fim. Duas partículas têm grafia antiga: を (objeto) soa “o”, e へ (direção) soa “e”.',
         table: {
           head: ['Partícula', 'Função', 'Exemplo', 'Português'],
           rows: [
@@ -590,7 +590,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
             ['で', 'lugar da ação', 'うちで食べます', 'como em casa'],
             ['で', 'meio, instrumento, língua', 'バスで行きます', 'vou de ônibus'],
             ['と', 'companhia', '友だちと行きます', 'vou com um amigo'],
-            ['と', '«e» entre substantivos', 'パンとコーヒー', 'pão e café'],
+            ['と', '“e” entre substantivos', 'パンとコーヒー', 'pão e café'],
             ['も', 'também', '私も行きます', 'eu também vou'],
             ['から', 'ponto de partida', '九時から', 'a partir das nove'],
             ['まで', 'ponto final', '五時まで', 'até as cinco'],
@@ -605,7 +605,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'に ou で? O lugar da ação e o ponto de chegada',
-        text: 'É a dúvida número um do brasileiro, porque as duas viram «em» em português. Use で para o lugar onde uma ação acontece: レストランで食べます (como no restaurante), 学校でべんきょうします (estudo na escola). Use に para o ponto aonde se chega (学校に行きます) e para o ponto no tempo (七時に, 日曜日に). Com verbos de movimento, に e へ quase se equivalem: へ põe o foco na direção, に no ponto de chegada. Já as palavras de tempo relativo (きょう, あした, 毎日, 今) não levam partícula nenhuma. O で também marca o meio: バスで (de ônibus), 日本語で (em japonês), はしで (com pauzinhos).',
+        text: 'É a dúvida número um do brasileiro, porque as duas viram “em” em português. Use で para o lugar onde uma ação acontece: レストランで食べます (como no restaurante), 学校でべんきょうします (estudo na escola). Use に para o ponto aonde se chega (学校に行きます) e para o ponto no tempo (七時に, 日曜日に). Com verbos de movimento, に e へ quase se equivalem: へ põe o foco na direção, に no ponto de chegada. Já as palavras de tempo relativo (きょう, あした, 毎日, 今) não levam partícula nenhuma. O で também marca o meio: バスで (de ônibus), 日本語で (em japonês), はしで (com pauzinhos).',
         table: {
           head: ['Frase', 'Por quê', 'Português'],
           rows: [
@@ -626,7 +626,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'と, も, から e まで',
-        text: 'と liga substantivos numa lista completa (パンとコーヒー, «pão e café», e mais nada) e também marca com quem se faz algo: 友だちと (com um amigo). Mas と não liga frases: para «e» entre frases, o japonês usa outras formas, que vêm depois. も é o «também» e entra no lugar do は, do が e do を: 私も (eu também), コーヒーも (café também). Com as outras partículas, ele vem depois: 東京にも (a Tóquio também). から e まで são «de» e «até», para tempo e lugar: 九時から五時まで (das nove às cinco), 東京から大阪まで (de Tóquio a Osaka).',
+        text: 'と liga substantivos numa lista completa (パンとコーヒー, “pão e café”, e mais nada) e também marca com quem se faz algo: 友だちと (com um amigo). Mas と não liga frases: para “e” entre frases, o japonês usa outras formas, que vêm depois. も é o “também” e entra no lugar do は, do が e do を: 私も (eu também), コーヒーも (café também). Com as outras partículas, ele vem depois: 東京にも (a Tóquio também). から e まで são “de” e “até”, para tempo e lugar: 九時から五時まで (das nove às cinco), 東京から大阪まで (de Tóquio a Osaka).',
         table: {
           head: ['Japonês', 'Português'],
           rows: [
@@ -647,42 +647,42 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Escrever を e へ como お e え: a pronúncia é «o» e «e», mas a grafia da partícula é を e へ.',
-      'Usar に para o lugar da ação: «レストランに食べます» está errado. Onde a ação acontece é で: レストランで食べます.',
+      'Escrever を e へ como お e え: a pronúncia é “o” e “e”, mas a grafia da partícula é を e へ.',
+      'Usar に para o lugar da ação: “レストランに食べます” está errado. Onde a ação acontece é で: レストランで食べます.',
       'Pôr に depois de あした, きょう, 毎日: palavras de tempo relativo não levam partícula.',
-      'Juntar も com は: «私はも» não existe. O も entra no lugar do は: 私も.',
-      'Ligar frases com と: と só liga substantivos (パンとコーヒー). Para «e» entre ações, veremos a forma て.',
+      'Juntar も com は: “私はも” não existe. O も entra no lugar do は: 私も.',
+      'Ligar frases com と: と só liga substantivos (パンとコーヒー). Para “e” entre ações, veremos a forma て.',
     ],
     quiz: [
       {
-        question: 'Complete: «レストラン＿食べます。» (Como no restaurante.)',
+        question: 'Complete: “レストラン＿食べます。” (Como no restaurante.)',
         options: ['で', 'に', 'を'],
         answer: 'で',
         explanation: 'O lugar onde a ação acontece leva で. に é para o ponto de chegada ou de tempo.',
       },
       {
-        question: 'Complete: «七時＿おきます。» (Acordo às sete.)',
+        question: 'Complete: “七時＿おきます。” (Acordo às sete.)',
         options: ['に', 'で', 'と'],
         answer: 'に',
         explanation: 'Hora exata leva に: 七時に, 日曜日に.',
       },
       {
-        question: 'Complete: «バス＿学校へ行きます。» (Vou de ônibus para a escola.)',
+        question: 'Complete: “バス＿学校へ行きます。” (Vou de ônibus para a escola.)',
         options: ['で', 'に', 'を'],
         answer: 'で',
         explanation: 'O meio de transporte leva で: バスで, でんしゃで, くるまで.',
       },
       {
-        question: 'Complete: «九時＿五時まではたらきます。» (Trabalho das nove às cinco.)',
+        question: 'Complete: “九時＿五時まではたらきます。” (Trabalho das nove às cinco.)',
         options: ['から', 'まで', 'へ'],
         answer: 'から',
         explanation: 'から marca o começo e まで, o fim: 九時から五時まで.',
       },
       {
-        question: 'Complete: «私＿コーヒーをのみます。» (Eu também tomo café.)',
+        question: 'Complete: “私＿コーヒーをのみます。” (Eu também tomo café.)',
         options: ['も', 'と', 'の'],
         answer: 'も',
-        explanation: 'も é o «também» e entra no lugar do は: 私も.',
+        explanation: 'も é o “também” e entra no lugar do は: 私も.',
       },
     ],
   },
@@ -692,11 +692,11 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     level: 'A2.1',
     title: 'あります × います: existir, estar, ter e as posições (上, 下, 前…)',
     emoji: '📦',
-    summary: 'O português diz «tem» para tudo; o japonês separa pelo que tem vida: います para pessoas e animais, あります para coisas, plantas e eventos. Com eles se diz onde as coisas estão (つくえの上に本があります), o que você tem e o que vai acontecer (あした、テストがあります).',
+    summary: 'O português diz “tem” para tudo; o japonês separa pelo que tem vida: います para pessoas e animais, あります para coisas, plantas e eventos. Com eles se diz onde as coisas estão (つくえの上に本があります), o que você tem e o que vai acontecer (あした、テストがあります).',
     sections: [
       {
         heading: 'います para o que se mexe, あります para o resto',
-        text: 'A regra é simples: います (いる) é para quem se move por conta própria, pessoas e animais; あります (ある) é para coisas, plantas (a árvore não anda) e acontecimentos. Um peixe no aquário います; o mesmo peixe no prato あります. Um táxi com motorista esperando na porta também います, porque tem gente dentro. Os dois verbos se conjugam como qualquer verbo com ます. O que existe costuma levar が, porque é informação nova: «へやにねこがいます», tem um gato no quarto.',
+        text: 'A regra é simples: います (いる) é para quem se move por conta própria, pessoas e animais; あります (ある) é para coisas, plantas (a árvore não anda) e acontecimentos. Um peixe no aquário います; o mesmo peixe no prato あります. Um táxi com motorista esperando na porta também います, porque tem gente dentro. Os dois verbos se conjugam como qualquer verbo com ます. O que existe costuma levar が, porque é informação nova: “へやにねこがいます”, tem um gato no quarto.',
         table: {
           head: ['Forma', 'Coisas, plantas, eventos', 'Pessoas, animais'],
           rows: [
@@ -716,7 +716,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'Onde fica: 上, 下, 前, うしろ…',
-        text: 'Para dizer a posição, o japonês usa um substantivo de lugar depois de の: つくえの上 é, palavra por palavra, «o em-cima da mesa». A referência vem primeiro, como no の de posse. Há duas maneiras de montar a frase, conforme o que é novidade. Se a novidade é a coisa, comece pelo lugar: «つくえの上に本があります» (em cima da mesa tem um livro). Se a coisa já é conhecida e a pergunta é onde ela está, ela vira o assunto com は: «本はつくえの上にあります» (o livro está em cima da mesa). Para perguntar, «トイレはどこにありますか», ou simplesmente «トイレはどこですか».',
+        text: 'Para dizer a posição, o japonês usa um substantivo de lugar depois de の: つくえの上 é, palavra por palavra, “o em-cima da mesa”. A referência vem primeiro, como no の de posse. Há duas maneiras de montar a frase, conforme o que é novidade. Se a novidade é a coisa, comece pelo lugar: “つくえの上に本があります” (em cima da mesa tem um livro). Se a coisa já é conhecida e a pergunta é onde ela está, ela vira o assunto com は: “本はつくえの上にあります” (o livro está em cima da mesa). Para perguntar, “トイレはどこにありますか”, ou simplesmente “トイレはどこですか”.',
         table: {
           head: ['Palavra', 'Leitura', 'Português'],
           rows: [
@@ -742,7 +742,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'Ter, acontecer e não haver ninguém',
-        text: 'Os mesmos verbos servem para «ter». Para parentes e bichos de estimação, います: «兄と妹がいます» (tenho um irmão mais velho e uma irmã mais nova). Para coisas e para o tempo, あります: «時間がありません» (não tenho tempo). Eventos também «existem»: «あした、テストがあります» (amanhã tem prova). Aqui há um detalhe fino: o lugar onde um evento acontece leva で, e não に, porque o evento é uma ação: «学校でおまつりがあります». Com だれも e 何も no negativo, você diz «ninguém» e «nada»: だれもいません, 何もありません.',
+        text: 'Os mesmos verbos servem para “ter”. Para parentes e bichos de estimação, います: “兄と妹がいます” (tenho um irmão mais velho e uma irmã mais nova). Para coisas e para o tempo, あります: “時間がありません” (não tenho tempo). Eventos também “existem”: “あした、テストがあります” (amanhã tem prova). Aqui há um detalhe fino: o lugar onde um evento acontece leva で, e não に, porque o evento é uma ação: “学校でおまつりがあります”. Com だれも e 何も no negativo, você diz “ninguém” e “nada”: だれもいません, 何もありません.',
         table: {
           head: ['Japonês', 'Português', 'Por quê'],
           rows: [
@@ -765,39 +765,39 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar あります para gente e bicho: «犬があります» faz o cachorro parecer um objeto. É 犬がいます.',
-      'Usar で para dizer onde algo está: «へやでねこがいます» está errado. Existência leva に: へやにねこがいます.',
-      'Inverter a posição: «上のつくえ» é «a mesa de cima». «Em cima da mesa» é つくえの上.',
-      'Traduzir todo «tem» com あります: «tem muita gente» é 人がたくさんいます.',
+      'Usar あります para gente e bicho: “犬があります” faz o cachorro parecer um objeto. É 犬がいます.',
+      'Usar で para dizer onde algo está: “へやでねこがいます” está errado. Existência leva に: へやにねこがいます.',
+      'Inverter a posição: “上のつくえ” é “a mesa de cima”. “Em cima da mesa” é つくえの上.',
+      'Traduzir todo “tem” com あります: “tem muita gente” é 人がたくさんいます.',
       'Esquecer que evento leva で: 学校でおまつりがあります, porque a festa é algo que acontece ali.',
     ],
     quiz: [
       {
-        question: 'Complete: «こうえんに子どもが＿。» (Tem crianças no parque.)',
+        question: 'Complete: “こうえんに子どもが＿。” (Tem crianças no parque.)',
         options: ['います', 'あります', 'です'],
         answer: 'います',
         explanation: 'Pessoas e animais levam います.',
       },
       {
-        question: 'Complete: «つくえの上に本が＿。» (Tem um livro em cima da mesa.)',
+        question: 'Complete: “つくえの上に本が＿。” (Tem um livro em cima da mesa.)',
         options: ['あります', 'います', 'です'],
         answer: 'あります',
         explanation: 'Coisas levam あります.',
       },
       {
-        question: 'Como se diz «O gato está embaixo da cadeira»?',
+        question: 'Como se diz “O gato está embaixo da cadeira”?',
         options: ['ねこはいすの下にいます。', 'ねこはいすの下にあります。', 'いすはねこの下にいます。'],
         answer: 'ねこはいすの下にいます。',
-        explanation: 'O gato é um animal (います), e a posição é いすの下: «o embaixo da cadeira».',
+        explanation: 'O gato é um animal (います), e a posição é いすの下: “o embaixo da cadeira”.',
       },
       {
-        question: 'Complete: «駅の＿に銀行があります。» (Em frente à estação tem um banco.)',
+        question: 'Complete: “駅の＿に銀行があります。” (Em frente à estação tem um banco.)',
         options: ['前', 'うしろ', '中'],
         answer: '前',
-        explanation: '前 (まえ) é «na frente». うしろ é atrás, e 中 é dentro.',
+        explanation: '前 (まえ) é “na frente”. うしろ é atrás, e 中 é dentro.',
       },
       {
-        question: 'Complete: «学校＿パーティーがあります。» (Tem uma festa na escola.)',
+        question: 'Complete: “学校＿パーティーがあります。” (Tem uma festa na escola.)',
         options: ['で', 'に', 'を'],
         answer: 'で',
         explanation: 'Um evento é algo que acontece, e o lugar de um acontecimento leva で.',
@@ -809,11 +809,11 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     level: 'A2.1',
     title: 'Adjetivos -い e -な: presente, passado, negativo e comparação',
     emoji: '🎨',
-    summary: 'O japonês tem dois tipos de adjetivo. Os adjetivos -い se conjugam como verbos: 高い, 高くない, 高かった («era caro»). Os adjetivos -な se comportam como substantivos: しずかです, しずかでした, e pedem な antes do substantivo (しずかな町). Com より, ほう e いちばん, você compara.',
+    summary: 'O japonês tem dois tipos de adjetivo. Os adjetivos -い se conjugam como verbos: 高い, 高くない, 高かった (“era caro”). Os adjetivos -な se comportam como substantivos: しずかです, しずかでした, e pedem な antes do substantivo (しずかな町). Com より, ほう e いちばん, você compara.',
     sections: [
       {
         heading: 'Adjetivos -い: o adjetivo que tem passado',
-        text: 'Em português, o adjetivo não tem tempo: o verbo é que muda («é caro», «era caro»). Em japonês, o adjetivo -い se conjuga sozinho. Tire o い final e acrescente くない (negativo), かった (passado) ou くなかった (passado negativo). Para ficar educado, basta pôr です no fim: 高いです, 高かったです. O です aqui só dá educação e nunca vira でした: «高いでした» é um erro clássico. O adjetivo いい (bom) é irregular: ele vem de よい, e por isso as outras formas saem de よ: よくない, よかった. Antes do substantivo, o adjetivo -い entra direto: 高いカメラ.',
+        text: 'Em português, o adjetivo não tem tempo: o verbo é que muda (“é caro”, “era caro”). Em japonês, o adjetivo -い se conjuga sozinho. Tire o い final e acrescente くない (negativo), かった (passado) ou くなかった (passado negativo). Para ficar educado, basta pôr です no fim: 高いです, 高かったです. O です aqui só dá educação e nunca vira でした: “高いでした” é um erro clássico. O adjetivo いい (bom) é irregular: ele vem de よい, e por isso as outras formas saem de よ: よくない, よかった. Antes do substantivo, o adjetivo -い entra direto: 高いカメラ.',
         table: {
           head: ['Forma', '高い (caro, alto)', 'いい (bom)'],
           rows: [
@@ -834,7 +834,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'Adjetivos -な: o adjetivo que parece substantivo',
-        text: 'Os adjetivos -な (しずか, きれい, 有名, 好き, べんり) funcionam como substantivos: fazem o presente com です, o negativo com じゃないです (ou じゃありません), e o passado com でした. O nome vem do な que aparece antes do substantivo: しずかな町, きれいな花. Cuidado com as armadilhas que terminam em い mas são -な: きれい (bonito, limpo), きらい (detestar) e ゆうめい (famoso). Uma dica de costume: きらいです é forte, quase «odeio». Para dizer que não gosta, o japonês prefere «あまり好きじゃないです» (não gosto muito).',
+        text: 'Os adjetivos -な (しずか, きれい, 有名, 好き, べんり) funcionam como substantivos: fazem o presente com です, o negativo com じゃないです (ou じゃありません), e o passado com でした. O nome vem do な que aparece antes do substantivo: しずかな町, きれいな花. Cuidado com as armadilhas que terminam em い mas são -な: きれい (bonito, limpo), きらい (detestar) e ゆうめい (famoso). Uma dica de costume: きらいです é forte, quase “odeio”. Para dizer que não gosta, o japonês prefere “あまり好きじゃないです” (não gosto muito).',
         table: {
           head: ['Forma', 'しずか (tranquilo)', 'きれい (bonito, limpo)'],
           rows: [
@@ -855,7 +855,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'Comparar: より, ほう, いちばん',
-        text: 'Para comparar duas coisas, o japonês põe より depois do termo de comparação: «東京は大阪より大きいです» = «Tóquio é, comparada a Osaka, grande», ou seja, maior. O adjetivo não muda: não existe «mais» colado nele. Para perguntar qual das duas, use «AとBとどちらが〜ですか», e responda com «Aのほうが〜です» (o lado de A é mais…). Para o superlativo, «〜の中で…がいちばん〜» (entre…, … é o mais…). いちばん é literalmente «número um».',
+        text: 'Para comparar duas coisas, o japonês põe より depois do termo de comparação: “東京は大阪より大きいです” = “Tóquio é, comparada a Osaka, grande”, ou seja, maior. O adjetivo não muda: não existe “mais” colado nele. Para perguntar qual das duas, use “AとBとどちらが〜ですか”, e responda com “Aのほうが〜です” (o lado de A é mais…). Para o superlativo, “〜の中で…がいちばん〜” (entre…, … é o mais…). いちばん é literalmente “número um”.',
         table: {
           head: ['Padrão', 'Exemplo', 'Português'],
           rows: [
@@ -875,43 +875,43 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pôr でした depois de adjetivo -い: «高いでした» está errado. O passado está no adjetivo: 高かったです.',
-      'Tratar きれい como adjetivo -い: «きれくない» não existe. É きれいじゃないです. Vale também para きらい e ゆうめい.',
-      'Esquecer o な antes do substantivo: «しずか町» fica truncado. É しずかな町.',
-      'Conjugar いい como se fosse regular: «いくない» e «いかった» não existem. É よくない, よかった.',
-      'Procurar um «mais» no adjetivo: em «東京は大阪より大きい», o adjetivo fica igual; o より faz a comparação.',
+      'Pôr でした depois de adjetivo -い: “高いでした” está errado. O passado está no adjetivo: 高かったです.',
+      'Tratar きれい como adjetivo -い: “きれくない” não existe. É きれいじゃないです. Vale também para きらい e ゆうめい.',
+      'Esquecer o な antes do substantivo: “しずか町” fica truncado. É しずかな町.',
+      'Conjugar いい como se fosse regular: “いくない” e “いかった” não existem. É よくない, よかった.',
+      'Procurar um “mais” no adjetivo: em “東京は大阪より大きい”, o adjetivo fica igual; o より faz a comparação.',
       'Dizer きらいです para qualquer coisa: soa forte. Prefira あまり好きじゃないです.',
     ],
     quiz: [
       {
-        question: 'Qual é o passado educado de «さむいです»?',
+        question: 'Qual é o passado educado de “さむいです”?',
         options: ['さむかったです', 'さむいでした', 'さむでした'],
         answer: 'さむかったです',
         explanation: 'Adjetivo -い: tire o い e ponha かった. O です fica no presente.',
       },
       {
-        question: 'Qual é o negativo de «いいです»?',
+        question: 'Qual é o negativo de “いいです”?',
         options: ['よくないです', 'いくないです', 'いいじゃないです'],
         answer: 'よくないです',
         explanation: 'いい vem de よい, e as formas conjugadas saem de よ: よくない, よかった.',
       },
       {
-        question: 'Complete com しずか: «＿へや» (um quarto tranquilo)',
+        question: 'Complete com しずか: “＿へや” (um quarto tranquilo)',
         options: ['しずかな', 'しずか', 'しずかい'],
         answer: 'しずかな',
         explanation: 'Adjetivo -な leva な antes do substantivo: しずかなへや.',
       },
       {
-        question: 'Qual é o negativo de «きれいです»?',
+        question: 'Qual é o negativo de “きれいです”?',
         options: ['きれいじゃないです', 'きれくないです', 'きれいくないです'],
         answer: 'きれいじゃないです',
         explanation: 'きれい termina em い, mas é adjetivo -な: o negativo é じゃないです.',
       },
       {
-        question: 'Complete: «東京は大阪＿大きいです。» (Tóquio é maior que Osaka.)',
+        question: 'Complete: “東京は大阪＿大きいです。” (Tóquio é maior que Osaka.)',
         options: ['より', 'ほう', 'いちばん'],
         answer: 'より',
-        explanation: 'より marca o termo de comparação: «maior que Osaka».',
+        explanation: 'より marca o termo de comparação: “maior que Osaka”.',
       },
     ],
   },
@@ -920,11 +920,11 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     level: 'A2.1',
     title: 'Contadores: つ, 人, 本, 枚, 匹 e as mudanças de som',
     emoji: '🐟',
-    summary: 'Em japonês não se conta «três canetas», e sim «caneta, três compridas»: ペンを三本. Cada tipo de coisa tem seu contador: 本 para objetos longos, 枚 para planos, 匹 para bichos, 人 para pessoas, e o curinga つ. E alguns números mudam de som ao encontrar o contador: いっぽん, さんぼん, ろっぴき.',
+    summary: 'Em japonês não se conta “três canetas”, e sim “caneta, três compridas”: ペンを三本. Cada tipo de coisa tem seu contador: 本 para objetos longos, 枚 para planos, 匹 para bichos, 人 para pessoas, e o curinga つ. E alguns números mudam de som ao encontrar o contador: いっぽん, さんぼん, ろっぴき.',
     sections: [
       {
         heading: 'Um contador para cada forma',
-        text: 'O português também tem contadores, só que poucos: «duas cabeças de gado», «três folhas de papel», «um dente de alho», «um par de sapatos». Em japonês, quase tudo se conta assim. O contador depende da forma ou do tipo da coisa: 本 (ほん) para coisas longas e finas (canetas, garrafas, guarda-chuvas, árvores, e até filmes e ligações), 枚 (まい) para coisas planas (papel, camisetas, pratos, ingressos), 匹 (ひき) para bichos pequenos e médios, 冊 (さつ) para livros, 台 (だい) para máquinas e carros. O lugar mais natural do número é depois da partícula, antes do verbo: «ペンを三本買いました» (comprei três canetas). Também se pode dizer 三本のペン, mais comum na escrita. Para perguntar, 何 + contador: 何本, 何枚, 何人. E uma curiosidade: por tradição, coelhos se contam com 羽 (わ), o contador das aves.',
+        text: 'O português também tem contadores, só que poucos: “duas cabeças de gado”, “três folhas de papel”, “um dente de alho”, “um par de sapatos”. Em japonês, quase tudo se conta assim. O contador depende da forma ou do tipo da coisa: 本 (ほん) para coisas longas e finas (canetas, garrafas, guarda-chuvas, árvores, e até filmes e ligações), 枚 (まい) para coisas planas (papel, camisetas, pratos, ingressos), 匹 (ひき) para bichos pequenos e médios, 冊 (さつ) para livros, 台 (だい) para máquinas e carros. O lugar mais natural do número é depois da partícula, antes do verbo: “ペンを三本買いました” (comprei três canetas). Também se pode dizer 三本のペン, mais comum na escrita. Para perguntar, 何 + contador: 何本, 何枚, 何人. E uma curiosidade: por tradição, coelhos se contam com 羽 (わ), o contador das aves.',
         table: {
           head: ['Contador', 'Leitura', 'Para', 'Exemplo'],
           rows: [
@@ -949,7 +949,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'ひとつ, ふたつ e ひとり, ふたり: os números nativos',
-        text: 'O japonês guardou uma segunda série de números, a nativa, que sobrevive em dois lugares. O contador curinga つ, que serve para qualquer coisa sem contador próprio (maçãs, pedidos, ideias) e vai só até dez: ひとつ, ふたつ, みっつ… とお. Depois de dez, usa-se o número comum, sem contador ou com 個. E as pessoas: uma e duas pessoas são ひとり e ふたり; de três em diante, o número sino-japonês com にん: さんにん, よにん (e não «よんにん»). No restaurante, o garçom pergunta «何名様ですか» (quantas pessoas?), e você responde com os dedos e «ふたりです».',
+        text: 'O japonês guardou uma segunda série de números, a nativa, que sobrevive em dois lugares. O contador curinga つ, que serve para qualquer coisa sem contador próprio (maçãs, pedidos, ideias) e vai só até dez: ひとつ, ふたつ, みっつ… とお. Depois de dez, usa-se o número comum, sem contador ou com 個. E as pessoas: uma e duas pessoas são ひとり e ふたり; de três em diante, o número sino-japonês com にん: さんにん, よにん (e não “よんにん”). No restaurante, o garçom pergunta “何名様ですか” (quantas pessoas?), e você responde com os dedos e “ふたりです”.',
         table: {
           head: ['Número', 'Coisas (〜つ)', 'Pessoas (〜人)'],
           rows: [
@@ -976,7 +976,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'As mudanças de som: いっぽん, さんぼん, ろっぴき',
-        text: 'Com os contadores que começam por h, k, s ou t, alguns números se encolhem. O 1, o 6, o 8 e o 10 perdem a vogal e ganham um っ: いっ, ろっ, はっ, じゅっ. Depois desse っ, o h vira p: いっぽん, ろっぴき, じゅっぷん. O 3 e o 何 terminam em ん, e depois do ん o h costuma virar b: さんぼん, なんびき, さんばい. Não é capricho: é a boca economizando movimento, como no português «em + o = no». Com contadores que começam por outras letras, como 枚 (まい) e 台 (だい), nada muda: いちまい, さんまい. Não precisa decorar tudo de uma vez: aprenda 本, 匹 e 分 (minutos), que seguem o mesmo padrão, e o resto vem com o ouvido.',
+        text: 'Com os contadores que começam por h, k, s ou t, alguns números se encolhem. O 1, o 6, o 8 e o 10 perdem a vogal e ganham um っ: いっ, ろっ, はっ, じゅっ. Depois desse っ, o h vira p: いっぽん, ろっぴき, じゅっぷん. O 3 e o 何 terminam em ん, e depois do ん o h costuma virar b: さんぼん, なんびき, さんばい. Não é capricho: é a boca economizando movimento, como no português “em + o = no”. Com contadores que começam por outras letras, como 枚 (まい) e 台 (だい), nada muda: いちまい, さんまい. Não precisa decorar tudo de uma vez: aprenda 本, 匹 e 分 (minutos), que seguem o mesmo padrão, e o resto vem com o ouvido.',
         table: {
           head: ['Número', '本 (longos)', '匹 (bichos)', '枚 (planos)'],
           rows: [
@@ -1002,11 +1002,11 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Contar sem contador: «ペンを三» fica truncado. É ペンを三本.',
-      'Dizer «いちほん» ou «さんほん»: é いっぽん e さんぼん. O 1, o 6, o 8 e o 10 ganham っ; o 3 amolece o h em b.',
+      'Contar sem contador: “ペンを三” fica truncado. É ペンを三本.',
+      'Dizer “いちほん” ou “さんほん”: é いっぽん e さんぼん. O 1, o 6, o 8 e o 10 ganham っ; o 3 amolece o h em b.',
       'Contar pessoas com os números comuns: uma e duas pessoas são ひとり e ふたり, e quatro é よにん.',
       'Usar 匹 para gente: soa como chamar a pessoa de bicho.',
-      'Pôr o número antes do substantivo, como em português: «三本ペン» não existe. Diga ペンを三本 ou 三本のペン.',
+      'Pôr o número antes do substantivo, como em português: “三本ペン” não existe. Diga ペンを三本 ou 三本のペン.',
     ],
     quiz: [
       {
@@ -1022,13 +1022,13 @@ export const GRAMMAR_JA: GrammarTopic[] = [
         explanation: 'Camisetas, papel, pratos e ingressos são planos: 枚 (まい).',
       },
       {
-        question: 'Como se diz «duas pessoas»?',
+        question: 'Como se diz “duas pessoas”?',
         options: ['ふたり', 'ににん', 'ふたつ'],
         answer: 'ふたり',
-        explanation: 'Uma e duas pessoas usam os números nativos: ひとり, ふたり. ふたつ é «duas coisas».',
+        explanation: 'Uma e duas pessoas usam os números nativos: ひとり, ふたり. ふたつ é “duas coisas”.',
       },
       {
-        question: 'Complete: «ねこが＿います。» (Tem um gato.)',
+        question: 'Complete: “ねこが＿います。” (Tem um gato.)',
         options: ['一匹', '一本', '一人'],
         answer: '一匹',
         explanation: 'Bichos pequenos e médios se contam com 匹: いっぴき.',
@@ -1047,17 +1047,17 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     level: 'A2.2',
     title: 'は × が: o assunto e o sujeito',
     emoji: '⚖️',
-    summary: 'は marca o assunto da conversa («quanto a…»); が marca o sujeito, muitas vezes a informação nova. «私はリヌです» apresenta; «リヌが来ました» responde «quem veio?». E as duas cabem na mesma frase: ぞうははながながい, «o elefante, a tromba é comprida».',
+    summary: 'は marca o assunto da conversa (“quanto a…”); が marca o sujeito, muitas vezes a informação nova. “私はリヌです” apresenta; “リヌが来ました” responde “quem veio?”. E as duas cabem na mesma frase: ぞうははながながい, “o elefante, a tromba é comprida”.',
     sections: [
       {
         heading: 'は abre o assunto, が aponta',
-        text: 'Pense no は como «quanto a…» ou «falando de…»: ele anuncia o assunto e o resto da frase comenta. O が marca quem faz ou quem é, e põe o foco nele. Por isso palavras interrogativas (だれ, 何, どこ) sempre levam が, nunca は: a pergunta é justamente sobre elas. E a resposta também leva が: «だれが来ましたか» → «リヌが来ました» (quem veio foi o Linu). Já o は aparece com o que já é conhecido: «リヌはどこですか» (e o Linu, onde está?). Uma boa regra de bolso: o que é novidade vai com が; o que já está na mesa vai com は.',
+        text: 'Pense no は como “quanto a…” ou “falando de…”: ele anuncia o assunto e o resto da frase comenta. O が marca quem faz ou quem é, e põe o foco nele. Por isso palavras interrogativas (だれ, 何, どこ) sempre levam が, nunca は: a pergunta é justamente sobre elas. E a resposta também leva が: “だれが来ましたか” → “リヌが来ました” (quem veio foi o Linu). Já o は aparece com o que já é conhecido: “リヌはどこですか” (e o Linu, onde está?). Uma boa regra de bolso: o que é novidade vai com が; o que já está na mesa vai com は.',
         table: {
           head: ['Situação', 'Partícula', 'Exemplo', 'Português'],
           rows: [
             ['apresentar o assunto', 'は', '私はリヌです。', 'Eu sou o Linu.'],
             ['depois de palavra interrogativa', 'が', 'だれが来ましたか。', 'Quem veio?'],
-            ['responder a «quem?»', 'が', 'リヌが来ました。', 'Quem veio foi o Linu.'],
+            ['responder a “quem?”', 'が', 'リヌが来ました。', 'Quem veio foi o Linu.'],
             ['o que existe', 'が', '駅の前に銀行があります。', 'Tem um banco em frente à estação.'],
             ['o que se vê agora', 'が', 'あ、バスが来ました。', 'Olha, o ônibus chegou!'],
             ['contraste', 'は', '肉は食べますが、魚は食べません。', 'Carne eu como, mas peixe não.'],
@@ -1072,7 +1072,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'ぞうははながながい: o assunto e o comentário',
-        text: 'A frase mais famosa da gramática japonesa é «ぞうははながながい»: «o elefante, a tromba é comprida». O elefante é o assunto (は); dentro do comentário, a tromba é o sujeito (が). O português do Brasil faz isso o tempo todo na fala: «a Maria, o pai dela é médico», «esse carro, o motor é bom». O japonês só dá a cada peça a sua partícula. O mesmo molde serve para os adjetivos e verbos de sentimento e de capacidade (好き, きらい, じょうず, わかる, ほしい), em que a coisa de que se gosta ou que se sabe leva が: «私はねこが好きです», «マリアさんは日本語がわかります».',
+        text: 'A frase mais famosa da gramática japonesa é “ぞうははながながい”: “o elefante, a tromba é comprida”. O elefante é o assunto (は); dentro do comentário, a tromba é o sujeito (が). O português do Brasil faz isso o tempo todo na fala: “a Maria, o pai dela é médico”, “esse carro, o motor é bom”. O japonês só dá a cada peça a sua partícula. O mesmo molde serve para os adjetivos e verbos de sentimento e de capacidade (好き, きらい, じょうず, わかる, ほしい), em que a coisa de que se gosta ou que se sabe leva が: “私はねこが好きです”, “マリアさんは日本語がわかります”.',
         table: {
           head: ['Japonês', 'Assunto (は)', 'Sujeito (が)', 'Português'],
           rows: [
@@ -1092,7 +1092,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'O は do contraste',
-        text: 'O は também serve para contrastar: ele põe duas coisas lado a lado, como o nosso «já…» ou «… eu não». «肉は食べますが、魚は食べません» = «carne eu como, mas peixe não». Por isso o は aparece tanto nas frases negativas: ao negar, você contrasta com algo que é verdade. Até uma frase curta pode sugerir o contraste: «日本語はわかりません» insinua «japonês não, mas outra língua sim». E cuidado com a resposta: se alguém pergunta «だれが来ましたか» e você diz «リヌは来ました», soa como «o Linu, pelo menos, veio» (e os outros não).',
+        text: 'O は também serve para contrastar: ele põe duas coisas lado a lado, como o nosso “já…” ou “… eu não”. “肉は食べますが、魚は食べません” = “carne eu como, mas peixe não”. Por isso o は aparece tanto nas frases negativas: ao negar, você contrasta com algo que é verdade. Até uma frase curta pode sugerir o contraste: “日本語はわかりません” insinua “japonês não, mas outra língua sim”. E cuidado com a resposta: se alguém pergunta “だれが来ましたか” e você diz “リヌは来ました”, soa como “o Linu, pelo menos, veio” (e os outros não).',
         table: {
           head: ['Japonês', 'Nuance', 'Português'],
           rows: [
@@ -1110,42 +1110,42 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pôr は depois de だれ, 何, どこ: «だれは来ましたか» está errado. Palavra interrogativa leva が.',
-      'Achar que は marca o sujeito: ele marca o assunto, que pode ser objeto, lugar ou tempo: «東京には行きました».',
-      'Usar を com 好き, わかる, じょうず: «ねこを好きです» está errado. É ねこが好きです.',
+      'Pôr は depois de だれ, 何, どこ: “だれは来ましたか” está errado. Palavra interrogativa leva が.',
+      'Achar que は marca o sujeito: ele marca o assunto, que pode ser objeto, lugar ou tempo: “東京には行きました”.',
+      'Usar を com 好き, わかる, じょうず: “ねこを好きです” está errado. É ねこが好きです.',
       'Repetir は em toda frase: depois que o assunto está claro, ele some.',
-      'Responder com は a uma pergunta com が: «リヌは来ました» soa como «o Linu, pelo menos, veio».',
+      'Responder com は a uma pergunta com が: “リヌは来ました” soa como “o Linu, pelo menos, veio”.',
     ],
     quiz: [
       {
-        question: 'Complete: «だれ＿来ましたか。» (Quem veio?)',
+        question: 'Complete: “だれ＿来ましたか。” (Quem veio?)',
         options: ['が', 'は', 'を'],
         answer: 'が',
         explanation: 'Palavras interrogativas levam sempre が.',
       },
       {
-        question: 'Complete: «私はねこ＿好きです。» (Eu gosto de gatos.)',
+        question: 'Complete: “私はねこ＿好きです。” (Eu gosto de gatos.)',
         options: ['が', 'を', 'に'],
         answer: 'が',
         explanation: 'Com 好き, きらい, じょうず, わかる e ほしい, a coisa leva が.',
       },
       {
-        question: 'Complete: «ビールは飲みますが、ワイン＿飲みません。» (Cerveja eu bebo, mas vinho não.)',
+        question: 'Complete: “ビールは飲みますが、ワイン＿飲みません。” (Cerveja eu bebo, mas vinho não.)',
         options: ['は', 'が', 'を'],
         answer: 'は',
         explanation: 'É o は do contraste: cerveja sim, vinho não.',
       },
       {
-        question: 'Complete: «つくえの上に本＿あります。» (Tem um livro em cima da mesa.)',
+        question: 'Complete: “つくえの上に本＿あります。” (Tem um livro em cima da mesa.)',
         options: ['が', 'は', 'で'],
         answer: 'が',
         explanation: 'O que existe, como novidade, leva が.',
       },
       {
-        question: 'O que quer dizer «ぞうははながながい»?',
+        question: 'O que quer dizer “ぞうははながながい”?',
         options: ['O elefante tem a tromba comprida.', 'A tromba tem um elefante comprido.', 'O elefante e a tromba são compridos.'],
         answer: 'O elefante tem a tromba comprida.',
-        explanation: 'ぞう é o assunto (は) e はな, o sujeito (が) do comentário: «o elefante, a tromba é comprida».',
+        explanation: 'ぞう é o assunto (は) e はな, o sujeito (が) do comentário: “o elefante, a tromba é comprida”.',
       },
     ],
   },
@@ -1154,11 +1154,11 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     level: 'A2.2',
     title: 'Os três grupos de verbos e a forma simples (行く, 食べる, だ)',
     emoji: '📘',
-    summary: 'Todo verbo japonês tem uma forma de dicionário, terminada em -u: 行く, 食べる, する. É a forma simples, que se usa com amigos e família e dentro de frases maiores («acho que…»). Os verbos se dividem em três grupos, e saber o grupo é saber conjugar.',
+    summary: 'Todo verbo japonês tem uma forma de dicionário, terminada em -u: 行く, 食べる, する. É a forma simples, que se usa com amigos e família e dentro de frases maiores (“acho que…”). Os verbos se dividem em três grupos, e saber o grupo é saber conjugar.',
     sections: [
       {
         heading: 'A forma de dicionário e os três grupos',
-        text: 'A forma que aparece no dicionário é a forma simples do presente, e todas terminam em -u: 書く, 話す, 食べる. Para passar para a forma com ます, você precisa saber o grupo. Grupo 1 (五段, «de cinco graus»): o -u final vira -i e ganha ます: 書く → 書きます, 話す → 話します. Grupo 2 (一段, «de um grau»): verbos terminados em -iru ou -eru que perdem o る: 食べる → 食べます, 見る → 見ます. Grupo 3: os dois irregulares, する → します e 来る (くる) → 来ます (きます). A armadilha é que alguns verbos terminados em -iru/-eru são do grupo 1: 帰る (voltar), 入る (entrar), 走る (correr), 知る (saber), 切る (cortar). Eles fazem 帰ります, e não «帰ます».',
+        text: 'A forma que aparece no dicionário é a forma simples do presente, e todas terminam em -u: 書く, 話す, 食べる. Para passar para a forma com ます, você precisa saber o grupo. Grupo 1 (五段, “de cinco graus”): o -u final vira -i e ganha ます: 書く → 書きます, 話す → 話します. Grupo 2 (一段, “de um grau”): verbos terminados em -iru ou -eru que perdem o る: 食べる → 食べます, 見る → 見ます. Grupo 3: os dois irregulares, する → します e 来る (くる) → 来ます (きます). A armadilha é que alguns verbos terminados em -iru/-eru são do grupo 1: 帰る (voltar), 入る (entrar), 走る (correr), 知る (saber), 切る (cortar). Eles fazem 帰ります, e não “帰ます”.',
         table: {
           head: ['Grupo', 'Dicionário', 'Forma ます', 'Como muda'],
           rows: [
@@ -1183,7 +1183,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'Falar simples: com amigos e família',
-        text: 'Com amigos, família e crianças, o japonês larga o です e o ます e fala na forma simples. O verbo fica na forma de dicionário (行く), o adjetivo -い fica sozinho (高い), e o substantivo e o adjetivo -な ganham だ, o «ser» simples: 学生だ, しずかだ. Na conversa, o だ cai muito, principalmente nas perguntas («学生？») e na fala feminina («きれい！»). A pergunta simples não usa か: sobe a entonação, ou fecha com の: «どこ行くの？». A forma simples é também a do diário, dos romances e dos pensamentos. Mas cuidado: usar a forma simples com um desconhecido, um cliente ou um professor soa grosseiro.',
+        text: 'Com amigos, família e crianças, o japonês larga o です e o ます e fala na forma simples. O verbo fica na forma de dicionário (行く), o adjetivo -い fica sozinho (高い), e o substantivo e o adjetivo -な ganham だ, o “ser” simples: 学生だ, しずかだ. Na conversa, o だ cai muito, principalmente nas perguntas (“学生？”) e na fala feminina (“きれい！”). A pergunta simples não usa か: sobe a entonação, ou fecha com の: “どこ行くの？”. A forma simples é também a do diário, dos romances e dos pensamentos. Mas cuidado: usar a forma simples com um desconhecido, um cliente ou um professor soa grosseiro.',
         table: {
           head: ['Educado (です・ます)', 'Simples', 'Português'],
           rows: [
@@ -1204,7 +1204,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: '〜と思う e 〜と言う: pensar e dizer',
-        text: 'A forma simples também aparece dentro de frases educadas, porque é ela que vai antes de palavras como と思います (acho que) e と言いました (disse que). O と é a aspa da fala japonesa: marca o que se pensa ou se diz. Mesmo numa conversa com o chefe, a parte de dentro fica simples: «明日は雨だと思います» (acho que amanhã vai chover), e não «雨ですと思います». Com substantivos e adjetivos -な, o だ fica: 雨だと思う. Com adjetivos -い e verbos, nada muda: 高いと思う, 来ると思う. Na conversa, o と vira って: «田中さん、来るって» (o Tanaka disse que vem).',
+        text: 'A forma simples também aparece dentro de frases educadas, porque é ela que vai antes de palavras como と思います (acho que) e と言いました (disse que). O と é a aspa da fala japonesa: marca o que se pensa ou se diz. Mesmo numa conversa com o chefe, a parte de dentro fica simples: “明日は雨だと思います” (acho que amanhã vai chover), e não “雨ですと思います”. Com substantivos e adjetivos -な, o だ fica: 雨だと思う. Com adjetivos -い e verbos, nada muda: 高いと思う, 来ると思う. Na conversa, o と vira って: “田中さん、来るって” (o Tanaka disse que vem).',
         table: {
           head: ['Padrão', 'Exemplo', 'Português'],
           rows: [
@@ -1224,10 +1224,10 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Conjugar 帰る, 入る, 走る, 知る como grupo 2: é 帰ります, 入ります, 走ります, e não «帰ます».',
+      'Conjugar 帰る, 入る, 走る, 知る como grupo 2: é 帰ります, 入ります, 走ります, e não “帰ます”.',
       'Usar a forma simples com desconhecidos, clientes ou professores: soa grosseiro. Com eles, です e ます.',
-      'Pôr だ depois de adjetivo -い: «高いだ» está errado. O adjetivo -い já é completo: 高い.',
-      'Pôr です dentro do と思う: «雨ですと思います» está errado. É 雨だと思います.',
+      'Pôr だ depois de adjetivo -い: “高いだ” está errado. O adjetivo -い já é completo: 高い.',
+      'Pôr です dentro do と思う: “雨ですと思います” está errado. É 雨だと思います.',
       'Esquecer que 来る muda de vogal: くる no dicionário, きます na forma educada.',
     ],
     quiz: [
@@ -1244,13 +1244,13 @@ export const GRAMMAR_JA: GrammarTopic[] = [
         explanation: '食べる termina em -eru e perde o る: 食べます. É do grupo 2.',
       },
       {
-        question: 'Qual é a forma simples de «学生です»?',
+        question: 'Qual é a forma simples de “学生です”?',
         options: ['学生だ', '学生ます', '学生だです'],
         answer: '学生だ',
         explanation: 'O です vira だ na forma simples (e na conversa o だ ainda pode cair).',
       },
       {
-        question: 'Como se diz «Acho que amanhã vai chover»?',
+        question: 'Como se diz “Acho que amanhã vai chover”?',
         options: ['明日は雨だと思います。', '明日は雨ですと思います。', '明日は雨と思いますだ。'],
         answer: '明日は雨だと思います。',
         explanation: 'Antes de と思う vai a forma simples: 雨だ. O です fica só no fim, em 思います.',
@@ -1268,7 +1268,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     level: 'A2.2',
     title: 'A forma て: pedir, encadear, permitir e proibir',
     emoji: '🔗',
-    summary: 'A forma て é o canivete suíço do japonês: com ela você pede (待ってください), encadeia ações (食べて、行きます), diz «depois de» (食べてから), pede licença (てもいいですか) e proíbe (てはいけません). Formar custa um pouco, porque o grupo 1 muda conforme a última sílaba; depois é só colar.',
+    summary: 'A forma て é o canivete suíço do japonês: com ela você pede (待ってください), encadeia ações (食べて、行きます), diz “depois de” (食べてから), pede licença (てもいいですか) e proíbe (てはいけません). Formar custa um pouco, porque o grupo 1 muda conforme a última sílaba; depois é só colar.',
     sections: [
       {
         heading: 'Como formar',
@@ -1281,7 +1281,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
             ['く', '→ いて', '書く → 書いて、聞く → 聞いて'],
             ['ぐ', '→ いで', '泳ぐ → 泳いで'],
             ['す', '→ して', '話す → 話して'],
-            ['exceção', '行く → 行って', 'nunca «行いて»'],
+            ['exceção', '行く → 行って', 'nunca “行いて”'],
             ['grupo 2', 'る → て', '食べる → 食べて、見る → 見て'],
             ['grupo 3', 'する → して、来る → 来て', 'べんきょうして、来て'],
           ],
@@ -1295,7 +1295,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'Encadear: 〜て、〜 e 〜てから',
-        text: 'A forma て liga ações em sequência, como o nosso «e» ou «e depois»: «朝ごはんを食べて、学校へ行きます». Ela não tem tempo: quem decide é o último verbo. «食べて、行きました» é «comi e fui». Com から, a ordem fica explícita: «手をあらってから、食べます» (como depois de lavar as mãos). Os adjetivos também têm forma て para juntar qualidades: o -い vira くて (安くて, おいしくて) e o -な e o substantivo ganham で (しずかで, 学生で). «この店は安くておいしいです» = «este restaurante é barato e gostoso».',
+        text: 'A forma て liga ações em sequência, como o nosso “e” ou “e depois”: “朝ごはんを食べて、学校へ行きます”. Ela não tem tempo: quem decide é o último verbo. “食べて、行きました” é “comi e fui”. Com から, a ordem fica explícita: “手をあらってから、食べます” (como depois de lavar as mãos). Os adjetivos também têm forma て para juntar qualidades: o -い vira くて (安くて, おいしくて) e o -な e o substantivo ganham で (しずかで, 学生で). “この店は安くておいしいです” = “este restaurante é barato e gostoso”.',
         table: {
           head: ['Padrão', 'Exemplo', 'Português'],
           rows: [
@@ -1315,7 +1315,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'Pedir licença e proibir: てもいい, てはいけない',
-        text: 'Para pedir permissão, «〜てもいいですか» (tudo bem se eu…?): «写真をとってもいいですか» (posso tirar foto?). A resposta positiva é «ええ、どうぞ» ou «いいですよ». A negativa quase nunca é um «いいえ» seco: o japonês diz «すみません、ちょっと……» e deixa a frase no ar. Para proibir, «〜てはいけません» (não pode…), comum em regras e avisos: «ここでたばこをすってはいけません». É forte, coisa de regra ou de pai e mãe; entre adultos, o pedido educado para alguém não fazer algo usa a forma ない, que vem no B1.1. E uma nota de cortesia: «〜てください» é um pedido direto, quase uma instrução. Para pedir um favor a um superior, o japonês suaviza: «〜てくださいませんか».',
+        text: 'Para pedir permissão, “〜てもいいですか” (tudo bem se eu…?): “写真をとってもいいですか” (posso tirar foto?). A resposta positiva é “ええ、どうぞ” ou “いいですよ”. A negativa quase nunca é um “いいえ” seco: o japonês diz “すみません、ちょっと……” e deixa a frase no ar. Para proibir, “〜てはいけません” (não pode…), comum em regras e avisos: “ここでたばこをすってはいけません”. É forte, coisa de regra ou de pai e mãe; entre adultos, o pedido educado para alguém não fazer algo usa a forma ない, que vem no B1.1. E uma nota de cortesia: “〜てください” é um pedido direto, quase uma instrução. Para pedir um favor a um superior, o japonês suaviza: “〜てくださいませんか”.',
         table: {
           head: ['Padrão', 'Uso', 'Exemplo', 'Português'],
           rows: [
@@ -1335,11 +1335,11 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Aplicar a regra do く em 行く: é 行って, nunca «行いて». É a única exceção.',
-      'Dar tempo à forma て: ela não tem passado nem presente. O último verbo decide: 食べて、行きました = «comi e fui».',
+      'Aplicar a regra do く em 行く: é 行って, nunca “行いて”. É a única exceção.',
+      'Dar tempo à forma て: ela não tem passado nem presente. O último verbo decide: 食べて、行きました = “comi e fui”.',
       'Pedir favores a superiores com 〜てください: soa como ordem. Use 〜てくださいませんか ou, mais tarde, 〜ていただけませんか.',
-      'Recusar um pedido com «いいえ» seco: o costume é «すみません、ちょっと……».',
-      'Usar と para ligar ações: «食べると行きます» não quer dizer «como e vou». Ações se ligam com て.',
+      'Recusar um pedido com “いいえ” seco: o costume é “すみません、ちょっと……”.',
+      'Usar と para ligar ações: “食べると行きます” não quer dizer “como e vou”. Ações se ligam com て.',
     ],
     quiz: [
       {
@@ -1355,7 +1355,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
         explanation: '行く é a única exceção do く: faz 行って.',
       },
       {
-        question: 'Como se pergunta «Posso sentar aqui?»?',
+        question: 'Como se pergunta “Posso sentar aqui?”?',
         options: ['ここにすわってもいいですか。', 'ここにすわってください。', 'ここにすわってはいけません。'],
         answer: 'ここにすわってもいいですか。',
         explanation: '〜てもいいですか pede permissão. てください é pedido, e てはいけません é proibição.',
@@ -1367,10 +1367,10 @@ export const GRAMMAR_JA: GrammarTopic[] = [
         explanation: 'う, つ e る viram って: 買って, 待って, 帰って.',
       },
       {
-        question: 'O que quer dizer «食べてから、はをみがきます»?',
+        question: 'O que quer dizer “食べてから、はをみがきます”?',
         options: ['Escovo os dentes depois de comer.', 'Escovo os dentes antes de comer.', 'Como enquanto escovo os dentes.'],
         answer: 'Escovo os dentes depois de comer.',
-        explanation: '〜てから = «depois de…». Primeiro a ação com て, depois a outra.',
+        explanation: '〜てから = “depois de…”. Primeiro a ação com て, depois a outra.',
       },
     ],
   },
@@ -1384,7 +1384,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     sections: [
       {
         heading: 'A forma ない: o negativo simples',
-        text: 'No grupo 1, o -u final vira -a e ganha ない: 書く → 書かない, 読む → 読まない, 帰る → 帰らない. Atenção ao う: ele não vira «あ», e sim わ: 買う → 買わない, 言う → 言わない. No grupo 2, troca-se o る por ない: 食べない, 見ない. Os irregulares: する → しない, 来る → 来ない (こない, com a vogal trocada). E um irregular escondido: o negativo de ある é simplesmente ない. A forma ない se conjuga como um adjetivo -い: o passado é なかった (行かなかった, não fui), e a forma て é なくて.',
+        text: 'No grupo 1, o -u final vira -a e ganha ない: 書く → 書かない, 読む → 読まない, 帰る → 帰らない. Atenção ao う: ele não vira “あ”, e sim わ: 買う → 買わない, 言う → 言わない. No grupo 2, troca-se o る por ない: 食べない, 見ない. Os irregulares: する → しない, 来る → 来ない (こない, com a vogal trocada). E um irregular escondido: o negativo de ある é simplesmente ない. A forma ない se conjuga como um adjetivo -い: o passado é なかった (行かなかった, não fui), e a forma て é なくて.',
         table: {
           head: ['Dicionário', 'ない (não)', 'なかった (não fez)', 'Português'],
           rows: [
@@ -1409,7 +1409,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'A forma た: o passado simples',
-        text: 'A boa notícia: se você sabe a forma て, sabe a forma た. É só trocar o て por た e o で por だ: 書いて → 書いた, 読んで → 読んだ, 行って → 行った, 食べて → 食べた, して → した, 来て → 来た (きた). Os adjetivos você já conhece do passado educado, é só tirar o です: 高かった, 楽しかった. O adjetivo -な e o substantivo ganham だった: しずかだった, 学生だった. Na conversa entre amigos, é assim que se conta o que aconteceu: «昨日、何した？» «友だちと映画を見た».',
+        text: 'A boa notícia: se você sabe a forma て, sabe a forma た. É só trocar o て por た e o で por だ: 書いて → 書いた, 読んで → 読んだ, 行って → 行った, 食べて → 食べた, して → した, 来て → 来た (きた). Os adjetivos você já conhece do passado educado, é só tirar o です: 高かった, 楽しかった. O adjetivo -な e o substantivo ganham だった: しずかだった, 学生だった. Na conversa entre amigos, é assim que se conta o que aconteceu: “昨日、何した？” “友だちと映画を見た”.',
         table: {
           head: ['Educado', 'Simples', 'Português'],
           rows: [
@@ -1432,7 +1432,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'Padrões com た e ない',
-        text: 'Muitas expressões do dia a dia nascem dessas formas. 〜たことがある conta uma experiência de vida: «já subi o Fuji». 〜たほうがいい dá um conselho («é melhor…»); no negativo, 〜ないほうがいい. 〜ないでください é o pedido educado para alguém não fazer algo. 〜なければならない (ou なければなりません) é a obrigação, «tenho que»; o contrário, «não precisa», é 〜なくてもいい. E 〜たり〜たりする lista ações como exemplos, sem esgotar: «leio, vejo filmes, essas coisas».',
+        text: 'Muitas expressões do dia a dia nascem dessas formas. 〜たことがある conta uma experiência de vida: “já subi o Fuji”. 〜たほうがいい dá um conselho (“é melhor…”); no negativo, 〜ないほうがいい. 〜ないでください é o pedido educado para alguém não fazer algo. 〜なければならない (ou なければなりません) é a obrigação, “tenho que”; o contrário, “não precisa”, é 〜なくてもいい. E 〜たり〜たりする lista ações como exemplos, sem esgotar: “leio, vejo filmes, essas coisas”.',
         table: {
           head: ['Padrão', 'Sentido', 'Exemplo', 'Português'],
           rows: [
@@ -1454,10 +1454,10 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Formar o negativo de 買う como «買あない»: o う vira わ. É 買わない, 言わない, 会わない.',
-      'Dizer «あらない»: o negativo de ある é só ない.',
+      'Formar o negativo de 買う como “買あない”: o う vira わ. É 買わない, 言わない, 会わない.',
+      'Dizer “あらない”: o negativo de ある é só ない.',
       'Esquecer que 来る muda de vogal: こない no negativo, きた no passado.',
-      'Usar 〜たことがある para coisas recentes ou rotineiras: «昨日すしを食べたことがあります» soa estranho. É para experiências de vida.',
+      'Usar 〜たことがある para coisas recentes ou rotineiras: “昨日すしを食べたことがあります” soa estranho. É para experiências de vida.',
       'Confundir 〜ないでください (por favor, não faça) com 〜なくてもいい (não precisa fazer).',
       'Falar na forma simples com superiores: com eles, continue com です e ます.',
     ],
@@ -1481,16 +1481,16 @@ export const GRAMMAR_JA: GrammarTopic[] = [
         explanation: 'Igual à forma て (行って), trocando て por た.',
       },
       {
-        question: 'Como se diz «Já fui a Kyoto»?',
+        question: 'Como se diz “Já fui a Kyoto”?',
         options: ['京都に行ったことがあります。', '京都に行くことがあります。', '京都に行ったことです。'],
         answer: '京都に行ったことがあります。',
-        explanation: 'A experiência usa a forma た: 〜たことがある. «行くことがある» quer dizer «às vezes vou».',
+        explanation: 'A experiência usa a forma た: 〜たことがある. “行くことがある” quer dizer “às vezes vou”.',
       },
       {
-        question: 'Como se diz «Amanhã você não precisa vir»?',
+        question: 'Como se diz “Amanhã você não precisa vir”?',
         options: ['明日は来なくてもいいです。', '明日は来ないでください。', '明日は来なければなりません。'],
         answer: '明日は来なくてもいいです。',
-        explanation: 'なくてもいい = não precisa. ないでください é «por favor, não venha», e なければなりません é «tem que vir».',
+        explanation: 'なくてもいい = não precisa. ないでください é “por favor, não venha”, e なければなりません é “tem que vir”.',
       },
     ],
   },
@@ -1499,11 +1499,11 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     level: 'B1.1',
     title: 'ている e companhia: estado, ação em curso, てある, ておく, てしまう, てみる',
     emoji: '⏳',
-    summary: 'ている não é só o nosso gerúndio. Com verbos de ação que dura, é «está fazendo» (食べている); com verbos de mudança, é o estado que ficou (結婚している = é casado). E a forma て se junta a outros verbos para dar nuances: てある (ficou feito), ておく (fazer antes), てしまう (acabar, sem querer), てみる (experimentar).',
+    summary: 'ている não é só o nosso gerúndio. Com verbos de ação que dura, é “está fazendo” (食べている); com verbos de mudança, é o estado que ficou (結婚している = é casado). E a forma て se junta a outros verbos para dar nuances: てある (ficou feito), ておく (fazer antes), てしまう (acabar, sem querer), てみる (experimentar).',
     sections: [
       {
         heading: 'ている: em curso, estado ou hábito',
-        text: 'O sentido de ている depende do verbo. Com ações que duram (ler, comer, chover, correr), é a ação em curso: 本を読んでいる, «está lendo». Com verbos de mudança instantânea (casar, morrer, saber, acordar, vestir, ir, vir), é o estado depois da mudança: 結婚している é «é casado», e não «está se casando». O português faz o mesmo em «está casado» e «está sentado». Por isso 住んでいる é «mora», 知っている é «sabe» e 行っている é «foi e está lá». O terceiro sentido é o hábito ou a profissão: «銀行で働いています», trabalha num banco. Na conversa, ている encolhe para てる: 何してる？ E cuidado: o negativo de 知っている é 知らない, não «知っていない».',
+        text: 'O sentido de ている depende do verbo. Com ações que duram (ler, comer, chover, correr), é a ação em curso: 本を読んでいる, “está lendo”. Com verbos de mudança instantânea (casar, morrer, saber, acordar, vestir, ir, vir), é o estado depois da mudança: 結婚している é “é casado”, e não “está se casando”. O português faz o mesmo em “está casado” e “está sentado”. Por isso 住んでいる é “mora”, 知っている é “sabe” e 行っている é “foi e está lá”. O terceiro sentido é o hábito ou a profissão: “銀行で働いています”, trabalha num banco. Na conversa, ている encolhe para てる: 何してる？ E cuidado: o negativo de 知っている é 知らない, não “知っていない”.',
         table: {
           head: ['Tipo de verbo', 'Exemplo', 'Sentido', 'Português'],
           rows: [
@@ -1526,7 +1526,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'Transitivo × intransitivo: 開ける × 開く',
-        text: 'O japonês tem pares de verbos para a mesma ação: um em que alguém faz (transitivo, com を) e outro em que a coisa acontece (intransitivo, com が). ドアを開ける = abrir a porta; ドアが開く = a porta abre. O português resolve com o «se» («a porta se abriu»); o japonês troca o verbo. Há um traço cultural aqui: para acidentes, o japonês prefere o intransitivo, que conta o fato sem apontar culpado. «コップがわれた» (o copo quebrou) soa mais natural do que «コップをわった» (quebrei o copo). Com ている, o intransitivo descreve o estado: ドアが開いている, a porta está aberta.',
+        text: 'O japonês tem pares de verbos para a mesma ação: um em que alguém faz (transitivo, com を) e outro em que a coisa acontece (intransitivo, com が). ドアを開ける = abrir a porta; ドアが開く = a porta abre. O português resolve com o “se” (“a porta se abriu”); o japonês troca o verbo. Há um traço cultural aqui: para acidentes, o japonês prefere o intransitivo, que conta o fato sem apontar culpado. “コップがわれた” (o copo quebrou) soa mais natural do que “コップをわった” (quebrei o copo). Com ている, o intransitivo descreve o estado: ドアが開いている, a porta está aberta.',
         table: {
           head: ['Acontece (が)', 'Alguém faz (を)', 'Português'],
           rows: [
@@ -1548,7 +1548,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'てある, ておく, てしまう, てみる, ていく, てくる',
-        text: 'A forma て se cola a outros verbos, que perdem o sentido próprio e viram nuance. てある, com verbo transitivo, é o estado deixado de propósito: まどが開けてある, «a janela foi deixada aberta» (alguém abriu, por algum motivo). ておく é fazer com antecedência, preparando: ホテルを予約しておく. てしまう é terminar por completo ou, muitas vezes, lamentar algo que aconteceu: さいふを落としてしまった; na conversa, vira ちゃう: 食べちゃった. てみる é experimentar: 着てみる, provar a roupa. E ていく e てくる dão direção: 持っていく é levar, 持ってくる é trazer, exatamente o nosso par «levar» e «trazer».',
+        text: 'A forma て se cola a outros verbos, que perdem o sentido próprio e viram nuance. てある, com verbo transitivo, é o estado deixado de propósito: まどが開けてある, “a janela foi deixada aberta” (alguém abriu, por algum motivo). ておく é fazer com antecedência, preparando: ホテルを予約しておく. てしまう é terminar por completo ou, muitas vezes, lamentar algo que aconteceu: さいふを落としてしまった; na conversa, vira ちゃう: 食べちゃった. てみる é experimentar: 着てみる, provar a roupa. E ていく e てくる dão direção: 持っていく é levar, 持ってくる é trazer, exatamente o nosso par “levar” e “trazer”.',
         table: {
           head: ['Forma', 'Sentido', 'Exemplo', 'Português'],
           rows: [
@@ -1570,40 +1570,40 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Traduzir 結婚している como «estou me casando»: é «sou casado». Com verbos de mudança, ている é o estado que ficou.',
-      'Dizer «知っていない»: o negativo de 知っている é 知らない (知りません).',
-      'Dizer onde mora com 住みます: «東京に住みます» é «vou morar em Tóquio». Onde você mora hoje é 住んでいます.',
-      'Usar てある com verbo intransitivo: «ドアが開いてある» está errado. てある pede o transitivo: 開けてある.',
+      'Traduzir 結婚している como “estou me casando”: é “sou casado”. Com verbos de mudança, ている é o estado que ficou.',
+      'Dizer “知っていない”: o negativo de 知っている é 知らない (知りません).',
+      'Dizer onde mora com 住みます: “東京に住みます” é “vou morar em Tóquio”. Onde você mora hoje é 住んでいます.',
+      'Usar てある com verbo intransitivo: “ドアが開いてある” está errado. てある pede o transitivo: 開けてある.',
       'Confundir 開く (a porta abre, com が) e 開ける (abrir a porta, com を).',
-      'Achar que てしまう é só «terminar»: muitas vezes quer dizer «(infelizmente) aconteceu».',
+      'Achar que てしまう é só “terminar”: muitas vezes quer dizer “(infelizmente) aconteceu”.',
     ],
     quiz: [
       {
-        question: 'O que quer dizer «姉は結婚しています»?',
+        question: 'O que quer dizer “姉は結婚しています”?',
         options: ['Minha irmã é casada.', 'Minha irmã está se casando agora.', 'Minha irmã vai se casar.'],
         answer: 'Minha irmã é casada.',
         explanation: '結婚する é uma mudança instantânea; com ている, é o estado que ficou.',
       },
       {
-        question: 'Qual é o negativo educado de «知っています»?',
+        question: 'Qual é o negativo educado de “知っています”?',
         options: ['知りません', '知っていません', '知ていません'],
         answer: '知りません',
         explanation: 'O negativo de 知っている é 知らない, e o educado é 知りません.',
       },
       {
-        question: 'Como se diz «A janela foi deixada aberta (por alguém, de propósito)»?',
+        question: 'Como se diz “A janela foi deixada aberta (por alguém, de propósito)”?',
         options: ['まどが開けてあります。', 'まどが開いてあります。', 'まどを開けています。'],
         answer: 'まどが開けてあります。',
         explanation: 'てある pede o verbo transitivo (開ける) e marca a coisa com が.',
       },
       {
-        question: 'Como se diz «Esqueci a carteira em casa (que droga)»?',
+        question: 'Como se diz “Esqueci a carteira em casa (que droga)”?',
         options: ['さいふを家にわすれてしまいました。', 'さいふを家にわすれておきました。', 'さいふを家にわすれてみました。'],
         answer: 'さいふを家にわすれてしまいました。',
-        explanation: 'てしまう traz o lamento. ておく seria de propósito, e てみる, «experimentei esquecer».',
+        explanation: 'てしまう traz o lamento. ておく seria de propósito, e てみる, “experimentei esquecer”.',
       },
       {
-        question: 'Complete: «風でドアが＿。» (A porta fechou com o vento.)',
+        question: 'Complete: “風でドアが＿。” (A porta fechou com o vento.)',
         options: ['閉まりました', '閉めました', '閉めてありました'],
         answer: '閉まりました',
         explanation: 'A porta fechou sozinha: é o intransitivo 閉まる, com が.',
@@ -1615,11 +1615,11 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     level: 'B1.1',
     title: 'As partículas finais: ね, よ, よね, かな, な, わ, ぞ',
     emoji: '💬',
-    summary: 'No fim da frase, uma partícula pequena muda o tom inteiro. ね é o nosso «né?», buscando acordo; よ é o «viu?», trazendo novidade; かな é o «será que…?». E há as que marcam estilo e personagem: わ, ぞ, ぜ, e até o じゃ do velhinho dos desenhos.',
+    summary: 'No fim da frase, uma partícula pequena muda o tom inteiro. ね é o nosso “né?”, buscando acordo; よ é o “viu?”, trazendo novidade; かな é o “será que…?”. E há as que marcam estilo e personagem: わ, ぞ, ぜ, e até o じゃ do velhinho dos desenhos.',
     sections: [
       {
-        heading: 'ね e よ: o «né?» e o «viu?»',
-        text: 'ね busca acordo e compartilha um sentimento: «いい天気ですね» (que dia bonito, né?). A resposta natural é «そうですね». よ faz o contrário: informa algo que o ouvinte não sabe e dá ênfase: «この店、安いですよ» (esta loja é barata, viu?). よね junta os dois e confirma o que você acha que é verdade: «会議は三時からですよね» (a reunião é às três, não é?). O brasileiro tem sorte: nosso «né?» e nosso «viu?» funcionam de um jeito muito parecido.',
+        heading: 'ね e よ: o “né?” e o “viu?”',
+        text: 'ね busca acordo e compartilha um sentimento: “いい天気ですね” (que dia bonito, né?). A resposta natural é “そうですね”. よ faz o contrário: informa algo que o ouvinte não sabe e dá ênfase: “この店、安いですよ” (esta loja é barata, viu?). よね junta os dois e confirma o que você acha que é verdade: “会議は三時からですよね” (a reunião é às três, não é?). O brasileiro tem sorte: nosso “né?” e nosso “viu?” funcionam de um jeito muito parecido.',
         table: {
           head: ['Partícula', 'Função', 'Exemplo', 'Português'],
           rows: [
@@ -1638,7 +1638,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'かな, っけ, な, の, さ: pensando alto e entre amigos',
-        text: 'Na conversa informal, aparecem outras partículas. かな é pensar em voz alta, o «será que…?»: 明日、晴れるかな. っけ é tentar lembrar: 名前、何だっけ？ (como era mesmo o nome?). な tem dois usos: depois de uma frase, é um «né» mais falado consigo mesmo (ああ、つかれたな); depois da forma de dicionário, é uma proibição brusca: さわるな！ (não toque!). O の fecha perguntas e explicações informais: どこ行くの？ E o さ, bem típico de Tóquio, preenche pausas: あのさ… (então…). Na pergunta informal, o か sozinho soa brusco; o natural é subir a entonação ou usar の.',
+        text: 'Na conversa informal, aparecem outras partículas. かな é pensar em voz alta, o “será que…?”: 明日、晴れるかな. っけ é tentar lembrar: 名前、何だっけ？ (como era mesmo o nome?). な tem dois usos: depois de uma frase, é um “né” mais falado consigo mesmo (ああ、つかれたな); depois da forma de dicionário, é uma proibição brusca: さわるな！ (não toque!). O の fecha perguntas e explicações informais: どこ行くの？ E o さ, bem típico de Tóquio, preenche pausas: あのさ… (então…). Na pergunta informal, o か sozinho soa brusco; o natural é subir a entonação ou usar の.',
         table: {
           head: ['Partícula', 'Função', 'Exemplo', 'Português'],
           rows: [
@@ -1659,7 +1659,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'わ, ぞ, ぜ e a fala de personagem',
-        text: 'Algumas partículas carregam gênero e personagem. O わ com entonação subindo é a fala feminina tradicional de Tóquio (すてきだわ), hoje rara entre as jovens. Mas no Kansai (Osaka, Kyoto) o わ, com entonação descendo, é usado por todo mundo: «ほな、帰るわ» (bom, vou indo). ぞ e ぜ são masculinos e enfáticos. Na ficção, isso vira «fala de personagem» (役割語): a moça rica fala 〜ですわ, o velho sábio diz わしは…じゃ, o samurai diz 〜でござる. Quem aprende com anime deve saber que, na vida real, falar assim soa teatral.',
+        text: 'Algumas partículas carregam gênero e personagem. O わ com entonação subindo é a fala feminina tradicional de Tóquio (すてきだわ), hoje rara entre as jovens. Mas no Kansai (Osaka, Kyoto) o わ, com entonação descendo, é usado por todo mundo: “ほな、帰るわ” (bom, vou indo). ぞ e ぜ são masculinos e enfáticos. Na ficção, isso vira “fala de personagem” (役割語): a moça rica fala 〜ですわ, o velho sábio diz わしは…じゃ, o samurai diz 〜でござる. Quem aprende com anime deve saber que, na vida real, falar assim soa teatral.',
         table: {
           head: ['Forma', 'Quem usa', 'Exemplo', 'Português'],
           rows: [
@@ -1678,39 +1678,39 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Abusar do よ com superiores: «私の名前はリヌですよ» soa como se você corrigisse ou desse lição.',
-      'Usar ね para algo que o outro não sabe: «私の誕生日は五月ですね» soa como se ele tivesse obrigação de saber.',
+      'Abusar do よ com superiores: “私の名前はリヌですよ” soa como se você corrigisse ou desse lição.',
+      'Usar ね para algo que o outro não sabe: “私の誕生日は五月ですね” soa como se ele tivesse obrigação de saber.',
       'Imitar a fala de anime (ぞ, ぜ, 俺, 〜じゃ) sem saber o efeito: na vida real, soa teatral ou agressivo.',
       'Achar que わ é sempre feminino: no Kansai, homens usam わ o tempo todo.',
-      'Fazer pergunta informal com か: «行くか？» soa brusco. Entre amigos, 行く？ ou 行くの？.',
+      'Fazer pergunta informal com か: “行くか？” soa brusco. Entre amigos, 行く？ ou 行くの？.',
     ],
     quiz: [
       {
-        question: 'Você e um colega sentem o calor. Complete: «今日は暑いです＿。»',
+        question: 'Você e um colega sentem o calor. Complete: “今日は暑いです＿。”',
         options: ['ね', 'よ', 'な'],
         answer: 'ね',
-        explanation: 'ね compartilha um sentimento e busca acordo, como o nosso «né?».',
+        explanation: 'ね compartilha um sentimento e busca acordo, como o nosso “né?”.',
       },
       {
-        question: 'Você conta uma novidade a um amigo. Complete: «あの店、安いです＿。»',
+        question: 'Você conta uma novidade a um amigo. Complete: “あの店、安いです＿。”',
         options: ['よ', 'ね', 'かな'],
         answer: 'よ',
-        explanation: 'よ traz informação que o ouvinte não tem: «é barata, viu?».',
+        explanation: 'よ traz informação que o ouvinte não tem: “é barata, viu?”.',
       },
       {
-        question: 'Você pensa em voz alta. Complete: «明日、雨がふる＿。»',
+        question: 'Você pensa em voz alta. Complete: “明日、雨がふる＿。”',
         options: ['かな', 'よ', 'ぞ'],
         answer: 'かな',
-        explanation: 'かな é o «será que…?» de quem pensa alto.',
+        explanation: 'かな é o “será que…?” de quem pensa alto.',
       },
       {
         question: 'Qual destas é uma proibição brusca?',
         options: ['さわるな！', 'さわるね。', 'さわるよ。'],
         answer: 'さわるな！',
-        explanation: 'な depois da forma de dicionário é uma ordem negativa: «não toque!».',
+        explanation: 'な depois da forma de dicionário é uma ordem negativa: “não toque!”.',
       },
       {
-        question: 'Um homem de Osaka diz «帰るわ». Como isso soa?',
+        question: 'Um homem de Osaka diz “帰るわ”. Como isso soa?',
         options: ['Normal: no Kansai, homens e mulheres usam essa partícula', 'Feminino', 'Grosseiro'],
         answer: 'Normal: no Kansai, homens e mulheres usam essa partícula',
         explanation: 'No Kansai, o わ com entonação descendo é neutro. O わ feminino é o de Tóquio, com entonação subindo.',
@@ -1723,11 +1723,11 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     level: 'B1.2',
     title: 'O potencial: 話せる, 食べられる, できる',
     emoji: '💪',
-    summary: 'Para dizer «consigo» ou «sei fazer», o japonês muda o próprio verbo: 話す → 話せる (consigo falar), 食べる → 食べられる (consigo comer), する → できる. O objeto costuma passar de を para が: 日本語が話せます. E ver e ouvir têm formas especiais: 見える, 聞こえる.',
+    summary: 'Para dizer “consigo” ou “sei fazer”, o japonês muda o próprio verbo: 話す → 話せる (consigo falar), 食べる → 食べられる (consigo comer), する → できる. O objeto costuma passar de を para が: 日本語が話せます. E ver e ouvir têm formas especiais: 見える, 聞こえる.',
     sections: [
       {
         heading: 'Como formar',
-        text: 'No grupo 1, o -u final vira -e e ganha る: 話す → 話せる, 書く → 書ける, 行く → 行ける, 買う → 買える. No grupo 2, o る vira られる: 食べる → 食べられる, 見る → 見られる. Os irregulares: する → できる, 来る → 来られる (こられる). O verbo que sai daí é um verbo do grupo 2 como outro qualquer: 話せます, 話せない, 話せた. O português usa «poder», «conseguir» e «saber» conforme o caso; o japonês usa o potencial para os três: «泳げる» é tanto «sei nadar» quanto «posso nadar (aqui)».',
+        text: 'No grupo 1, o -u final vira -e e ganha る: 話す → 話せる, 書く → 書ける, 行く → 行ける, 買う → 買える. No grupo 2, o る vira られる: 食べる → 食べられる, 見る → 見られる. Os irregulares: する → できる, 来る → 来られる (こられる). O verbo que sai daí é um verbo do grupo 2 como outro qualquer: 話せます, 話せない, 話せた. O português usa “poder”, “conseguir” e “saber” conforme o caso; o japonês usa o potencial para os três: “泳げる” é tanto “sei nadar” quanto “posso nadar (aqui)”.',
         table: {
           head: ['Dicionário', 'Potencial', 'Educado', 'Negativo'],
           rows: [
@@ -1752,7 +1752,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'が ou を? E 〜ことができる',
-        text: 'Com o potencial, o objeto costuma levar が em vez de を: 日本語が話せる. Com を também se ouve (日本語を話せる), sobretudo em frases longas, mas o が é o mais clássico. Há ainda uma forma mais formal e fácil de montar: forma de dicionário + ことができる. «ここでは写真をとることができません» é o tom de aviso e regulamento. Com os verbos com する, basta trocar する por できる: 運転できる (sei dirigir), 予約できる (dá para reservar). E habilidades inteiras: 日本語ができる, スキーができる.',
+        text: 'Com o potencial, o objeto costuma levar が em vez de を: 日本語が話せる. Com を também se ouve (日本語を話せる), sobretudo em frases longas, mas o が é o mais clássico. Há ainda uma forma mais formal e fácil de montar: forma de dicionário + ことができる. “ここでは写真をとることができません” é o tom de aviso e regulamento. Com os verbos com する, basta trocar する por できる: 運転できる (sei dirigir), 予約できる (dá para reservar). E habilidades inteiras: 日本語ができる, スキーができる.',
         table: {
           head: ['Normal', 'Potencial', 'Formal', 'Português'],
           rows: [
@@ -1769,8 +1769,8 @@ export const GRAMMAR_JA: GrammarTopic[] = [
         ],
       },
       {
-        heading: '見える × 見られる, 聞こえる × 聞ける, e os «ら抜き»',
-        text: 'Ver e ouvir têm duas formas. 見える e 聞こえる são o que chega aos olhos e ouvidos sozinho, sem esforço: «ここから富士山が見える» (daqui se vê o Fuji), «鳥の声が聞こえる» (dá para ouvir os passarinhos). 見られる e 聞ける são a possibilidade ou a oportunidade: «この映画はネットで見られる» (este filme dá para ver na internet). Na fala, o られる do grupo 2 perde muito o ら: 食べれる, 見れる, 来れる. São os «ら抜き言葉», hoje comuns entre os mais jovens, mas ainda malvistos na escrita e em situações formais. E わかる não tem potencial: ele já quer dizer «conseguir entender».',
+        heading: '見える × 見られる, 聞こえる × 聞ける, e os “ら抜き”',
+        text: 'Ver e ouvir têm duas formas. 見える e 聞こえる são o que chega aos olhos e ouvidos sozinho, sem esforço: “ここから富士山が見える” (daqui se vê o Fuji), “鳥の声が聞こえる” (dá para ouvir os passarinhos). 見られる e 聞ける são a possibilidade ou a oportunidade: “この映画はネットで見られる” (este filme dá para ver na internet). Na fala, o られる do grupo 2 perde muito o ら: 食べれる, 見れる, 来れる. São os “ら抜き言葉”, hoje comuns entre os mais jovens, mas ainda malvistos na escrita e em situações formais. E わかる não tem potencial: ele já quer dizer “conseguir entender”.',
         table: {
           head: ['Forma', 'Sentido', 'Exemplo', 'Português'],
           rows: [
@@ -1790,8 +1790,8 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Criar «わかれる» para «conseguir entender»: わかる já é isso. «日本語がわかります».',
-      'Usar 見られる para o que simplesmente aparece à vista: «ここから富士山が見られる» soa como «há a oportunidade de ver». O natural é 見える.',
+      'Criar “わかれる” para “conseguir entender”: わかる já é isso. “日本語がわかります”.',
+      'Usar 見られる para o que simplesmente aparece à vista: “ここから富士山が見られる” soa como “há a oportunidade de ver”. O natural é 見える.',
       'Usar 食べれる, 見れる, 来れる na escrita formal: na fala passam, mas no texto o padrão é 食べられる.',
       'Esquecer que o potencial de する é できる: 勉強できる, 運転できる.',
       'Confundir 行ける (consigo ir) com 行かれる (passiva ou respeito, que vêm no B2.1).',
@@ -1810,7 +1810,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
         explanation: 'Grupo 2: る → られる. 食べれる existe na fala (ら抜き), mas não é o padrão.',
       },
       {
-        question: 'Como se diz «Sei dirigir»?',
+        question: 'Como se diz “Sei dirigir”?',
         options: ['運転できます。', '運転されます。', '運転しられます。'],
         answer: '運転できます。',
         explanation: 'Nos verbos com する, o potencial troca する por できる.',
@@ -1822,7 +1822,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
         explanation: '見える é o que chega aos olhos sozinho. 見られる é ter a oportunidade ou o meio de ver.',
       },
       {
-        question: 'Complete: «日本語＿話せます。» (Sei falar japonês.)',
+        question: 'Complete: “日本語＿話せます。” (Sei falar japonês.)',
         options: ['が', 'に', 'で'],
         answer: 'が',
         explanation: 'Com o potencial, o objeto costuma levar が (を também se ouve).',
@@ -1834,11 +1834,11 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     level: 'B1.2',
     title: 'O volitivo: 行こう, 〜ようと思う, つもり e 〜ようとする',
     emoji: '🚀',
-    summary: 'O volitivo é o «vamos!» informal: 行こう, 食べよう, しよう (a versão educada é 行きましょう). Com と思う, vira intenção («estou pensando em…»); com とする, tentativa ou momento exato («quando eu ia sair…»). E つもり fala do plano firme.',
+    summary: 'O volitivo é o “vamos!” informal: 行こう, 食べよう, しよう (a versão educada é 行きましょう). Com と思う, vira intenção (“estou pensando em…”); com とする, tentativa ou momento exato (“quando eu ia sair…”). E つもり fala do plano firme.',
     sections: [
       {
         heading: 'Formar: 行こう, 食べよう, しよう',
-        text: 'No grupo 1, o -u final vira -o e ganha う: 行く → 行こう, 話す → 話そう, 待つ → 待とう, 読む → 読もう, 帰る → 帰ろう, 買う → 買おう. No grupo 2, o る vira よう: 食べよう, 見よう. Os irregulares: する → しよう, 来る → 来よう (こよう). É a versão simples do 〜ましょう: «行こう！» é «vamos!» entre amigos. Com か, vira pergunta ou oferta: «何を食べようか» (o que a gente come?), «持とうか？» (quer que eu carregue?).',
+        text: 'No grupo 1, o -u final vira -o e ganha う: 行く → 行こう, 話す → 話そう, 待つ → 待とう, 読む → 読もう, 帰る → 帰ろう, 買う → 買おう. No grupo 2, o る vira よう: 食べよう, 見よう. Os irregulares: する → しよう, 来る → 来よう (こよう). É a versão simples do 〜ましょう: “行こう！” é “vamos!” entre amigos. Com か, vira pergunta ou oferta: “何を食べようか” (o que a gente come?), “持とうか？” (quer que eu carregue?).',
         table: {
           head: ['Dicionário', 'Volitivo', 'Educado', 'Português'],
           rows: [
@@ -1862,7 +1862,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'Intenção: 〜ようと思う, つもり, 予定',
-        text: 'Para falar do que você pretende fazer, junte o volitivo a と思う: «日本へ行こうと思います» (estou pensando em ir ao Japão; resolvi ir). Com と思っています, a ideia já vem de algum tempo. つもり é o plano mais firme, decidido: «来年、留学するつもりです» (pretendo fazer intercâmbio no ano que vem). No negativo, «行かないつもり» (pretendo não ir) ou, mais forte, «行くつもりはない» (não tenho intenção nenhuma de ir). E 予定 é a agenda, o que está marcado: «三時に会議の予定です». Não confunda com 〜たいと思う, que é só desejo: querer não é pretender.',
+        text: 'Para falar do que você pretende fazer, junte o volitivo a と思う: “日本へ行こうと思います” (estou pensando em ir ao Japão; resolvi ir). Com と思っています, a ideia já vem de algum tempo. つもり é o plano mais firme, decidido: “来年、留学するつもりです” (pretendo fazer intercâmbio no ano que vem). No negativo, “行かないつもり” (pretendo não ir) ou, mais forte, “行くつもりはない” (não tenho intenção nenhuma de ir). E 予定 é a agenda, o que está marcado: “三時に会議の予定です”. Não confunda com 〜たいと思う, que é só desejo: querer não é pretender.',
         table: {
           head: ['Forma', 'Nuance', 'Exemplo', 'Português'],
           rows: [
@@ -1883,7 +1883,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: '〜ようとする: tentar e estar prestes a',
-        text: 'O volitivo com とする descreve o esforço ou o instante antes da ação. «ドアを開けようとした» é «tentei abrir a porta» (e, em geral, não deu). «出かけようとしたとき、電話が鳴った» é «quando eu estava para sair, o telefone tocou». No negativo, 〜ようとしない é «se recusa a», «não faz nem menção de»: «弟は野菜を食べようとしない» (meu irmão não quer nem saber de comer verdura).',
+        text: 'O volitivo com とする descreve o esforço ou o instante antes da ação. “ドアを開けようとした” é “tentei abrir a porta” (e, em geral, não deu). “出かけようとしたとき、電話が鳴った” é “quando eu estava para sair, o telefone tocou”. No negativo, 〜ようとしない é “se recusa a”, “não faz nem menção de”: “弟は野菜を食べようとしない” (meu irmão não quer nem saber de comer verdura).',
         table: {
           head: ['Forma', 'Sentido', 'Exemplo', 'Português'],
           rows: [
@@ -1900,11 +1900,11 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Formar o volitivo do grupo 1 com よう: «書よう» está errado. É 書こう, 話そう, 帰ろう.',
+      'Formar o volitivo do grupo 1 com よう: “書よう” está errado. É 書こう, 話そう, 帰ろう.',
       'Confundir 〜ようと思う (pretendo) com 〜たいと思う (queria): querer não é pretender.',
-      'Perguntar a intenção de um superior com つもり: «先生はどうするつもりですか» soa como cobrança. Pergunte «どうなさいますか».',
+      'Perguntar a intenção de um superior com つもり: “先生はどうするつもりですか” soa como cobrança. Pergunte “どうなさいますか”.',
       'Trocar 〜ましょうか (quer que eu…? / vamos?) por 〜ませんか (não quer…?): o primeiro oferece ou propõe; o segundo convida.',
-      'Usar つもり para o que não depende de você: «明日は雨のつもりです» não faz sentido. Previsão é でしょう; agenda é 予定.',
+      'Usar つもり para o que não depende de você: “明日は雨のつもりです” não faz sentido. Previsão é でしょう; agenda é 予定.',
     ],
     quiz: [
       {
@@ -1920,13 +1920,13 @@ export const GRAMMAR_JA: GrammarTopic[] = [
         explanation: 'Grupo 2: る → よう.',
       },
       {
-        question: 'Como se diz «Estou pensando em comprar um carro»?',
+        question: 'Como se diz “Estou pensando em comprar um carro”?',
         options: ['車を買おうと思っています。', '車を買いたいです。', '車を買おうとしています。'],
         answer: '車を買おうと思っています。',
-        explanation: 'Volitivo + と思っている = intenção que vem de algum tempo. 買いたい é só desejo, e 買おうとしている é «está tentando comprar».',
+        explanation: 'Volitivo + と思っている = intenção que vem de algum tempo. 買いたい é só desejo, e 買おうとしている é “está tentando comprar”.',
       },
       {
-        question: 'O que quer dizer «出かけようとしたとき、雨がふってきた»?',
+        question: 'O que quer dizer “出かけようとしたとき、雨がふってきた”?',
         options: ['Quando eu ia sair, começou a chover.', 'Depois que saí, começou a chover.', 'Saí porque começou a chover.'],
         answer: 'Quando eu ia sair, começou a chover.',
         explanation: '〜ようとしたとき é o instante logo antes da ação.',
@@ -1944,11 +1944,11 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     level: 'B1.2',
     title: 'Orações relativas: 昨日買った本, 日本語を話す人',
     emoji: '🪢',
-    summary: 'O japonês não tem «que» relativo: a oração inteira vai antes do substantivo, na forma simples. «O livro que comprei ontem» vira «ontem-comprei livro»: 昨日買った本. Dentro dela, o sujeito leva が (nunca は), o だ vira な ou の, e o verbo mantém o próprio tempo.',
+    summary: 'O japonês não tem “que” relativo: a oração inteira vai antes do substantivo, na forma simples. “O livro que comprei ontem” vira “ontem-comprei livro”: 昨日買った本. Dentro dela, o sujeito leva が (nunca は), o だ vira な ou の, e o verbo mantém o próprio tempo.',
     sections: [
       {
         heading: 'A oração vem antes do substantivo',
-        text: 'Em português, a oração relativa vem depois do nome, ligada por «que»: «a pessoa que fala japonês». Em japonês, ela vem antes, sem conector nenhum, e o verbo fica na forma simples: 日本語を話す人. Qualquer coisa que modifica um substantivo vai antes dele, como um adjetivo comprido: 駅の前にある大きい本屋 é «a livraria grande que fica em frente à estação». Leia de trás para a frente: o substantivo do fim é o centro, e tudo o que vem antes o descreve. O tempo é o do próprio verbo: 明日会う人 (a pessoa com quem vou me encontrar amanhã), 昨日会った人 (a pessoa que conheci ontem).',
+        text: 'Em português, a oração relativa vem depois do nome, ligada por “que”: “a pessoa que fala japonês”. Em japonês, ela vem antes, sem conector nenhum, e o verbo fica na forma simples: 日本語を話す人. Qualquer coisa que modifica um substantivo vai antes dele, como um adjetivo comprido: 駅の前にある大きい本屋 é “a livraria grande que fica em frente à estação”. Leia de trás para a frente: o substantivo do fim é o centro, e tudo o que vem antes o descreve. O tempo é o do próprio verbo: 明日会う人 (a pessoa com quem vou me encontrar amanhã), 昨日会った人 (a pessoa que conheci ontem).',
         table: {
           head: ['Frase', 'Oração relativa', 'Português'],
           rows: [
@@ -1968,7 +1968,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'Dentro da oração: が, な, の e nada de です',
-        text: 'Três ajustes dentro da oração. O sujeito leva が, ou às vezes の, mas nunca は, porque は é o assunto da frase inteira: 私が作った料理, ou 私の作った料理. O だ muda: o adjetivo -な pega o seu な (しずかな町) e o substantivo pega の (医者の友だち, «o amigo que é médico»). No passado, fica だった: 子どもだったころ. E as formas educadas (です, ます) ficam do lado de fora, no fim da frase: «昨日買いました本» está errado.',
+        text: 'Três ajustes dentro da oração. O sujeito leva が, ou às vezes の, mas nunca は, porque は é o assunto da frase inteira: 私が作った料理, ou 私の作った料理. O だ muda: o adjetivo -な pega o seu な (しずかな町) e o substantivo pega の (医者の友だち, “o amigo que é médico”). No passado, fica だった: 子どもだったころ. E as formas educadas (です, ます) ficam do lado de fora, no fim da frase: “昨日買いました本” está errado.',
         table: {
           head: ['Não vale', 'Vale', 'Português'],
           rows: [
@@ -1988,7 +1988,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: '時, 前に, 後で e という',
-        text: 'Os substantivos de tempo também recebem orações: 日本に来た時 (quando vim ao Japão). Com 前に (antes de), o verbo fica sempre na forma de dicionário: 寝る前に. Com 後で (depois de), sempre na forma た: 食べた後で. E o tempo dentro do 時 muda o sentido: «日本へ行く時、かばんを買った» é «comprei a mala antes de ir (para a viagem)», e «日本へ行った時、かばんを買った» é «comprei a mala quando estava no Japão». Para dar nome às coisas, 〜という: 「リヌ」というペンギン (um pinguim chamado Linu), 「もったいない」という言葉 (a palavra «mottainai»).',
+        text: 'Os substantivos de tempo também recebem orações: 日本に来た時 (quando vim ao Japão). Com 前に (antes de), o verbo fica sempre na forma de dicionário: 寝る前に. Com 後で (depois de), sempre na forma た: 食べた後で. E o tempo dentro do 時 muda o sentido: “日本へ行く時、かばんを買った” é “comprei a mala antes de ir (para a viagem)”, e “日本へ行った時、かばんを買った” é “comprei a mala quando estava no Japão”. Para dar nome às coisas, 〜という: 「リヌ」というペンギン (um pinguim chamado Linu), 「もったいない」という言葉 (a palavra “mottainai”).',
         table: {
           head: ['Padrão', 'Exemplo', 'Português'],
           rows: [
@@ -2002,47 +2002,47 @@ export const GRAMMAR_JA: GrammarTopic[] = [
           ['日本に来た時、何もわかりませんでした。', 'Quando vim ao Japão, não entendia nada.'],
           ['寝る前に、歯をみがきます。', 'Escovo os dentes antes de dormir.'],
           ['ご飯を食べた後で、散歩しましょう。', 'Vamos dar uma volta depois de comer.'],
-          ['「もったいない」という言葉を知っていますか。', 'Você conhece a palavra «mottainai»?'],
+          ['「もったいない」という言葉を知っていますか。', 'Você conhece a palavra “mottainai”?'],
         ],
       },
     ],
     pitfalls: [
-      'Pôr は dentro da oração: «私は買った本» está errado. O sujeito da oração leva が (ou の): 私が買った本.',
-      'Deixar o だ na oração: «しずかだ町» e «医者だ友だち» estão errados. É しずかな町, 医者の友だち.',
+      'Pôr は dentro da oração: “私は買った本” está errado. O sujeito da oração leva が (ou の): 私が買った本.',
+      'Deixar o だ na oração: “しずかだ町” e “医者だ友だち” estão errados. É しずかな町, 医者の友だち.',
       'Colocar a oração depois do substantivo, como em português: tudo o que descreve vem antes.',
-      'Usar a forma た com 前に: «食べた前に» está errado. É 食べる前に; e com 後で, 食べた後で.',
-      'Pôr です ou ます dentro da oração: «買いました本» está errado. A educação fica no fim da frase.',
+      'Usar a forma た com 前に: “食べた前に” está errado. É 食べる前に; e com 後で, 食べた後で.',
+      'Pôr です ou ます dentro da oração: “買いました本” está errado. A educação fica no fim da frase.',
     ],
     quiz: [
       {
-        question: 'Como se diz «o livro que comprei ontem»?',
+        question: 'Como se diz “o livro que comprei ontem”?',
         options: ['昨日買った本', '本を昨日買った', '昨日買いました本'],
         answer: '昨日買った本',
         explanation: 'A oração vai antes do substantivo, na forma simples.',
       },
       {
-        question: 'Como se diz «a comida que eu fiz»?',
+        question: 'Como se diz “a comida que eu fiz”?',
         options: ['私が作った料理', '私は作った料理', '料理が私作った'],
         answer: '私が作った料理',
         explanation: 'Dentro da oração, o sujeito leva が (ou の), nunca は.',
       },
       {
-        question: 'Como se diz «um amigo que é médico»?',
+        question: 'Como se diz “um amigo que é médico”?',
         options: ['医者の友だち', '医者だ友だち', '医者な友だち'],
         answer: '医者の友だち',
         explanation: 'Antes de substantivo, o substantivo com だ vira の.',
       },
       {
-        question: 'Complete: «＿前に、手をあらいます。» (Lavo as mãos antes de comer.)',
+        question: 'Complete: “＿前に、手をあらいます。” (Lavo as mãos antes de comer.)',
         options: ['食べる', '食べた', '食べて'],
         answer: '食べる',
         explanation: '前に pede sempre a forma de dicionário.',
       },
       {
-        question: 'O que quer dizer «日本へ行った時、かばんを買った»?',
+        question: 'O que quer dizer “日本へ行った時、かばんを買った”?',
         options: ['Comprei a mala quando estava no Japão.', 'Comprei a mala para levar ao Japão.', 'Comprei a mala depois de voltar do Japão.'],
         answer: 'Comprei a mala quando estava no Japão.',
-        explanation: 'Com 行った時, a compra foi depois de chegar lá. «行く時» seria antes ou a caminho.',
+        explanation: 'Com 行った時, a compra foi depois de chegar lá. “行く時” seria antes ou a caminho.',
       },
     ],
   },
@@ -2052,7 +2052,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     level: 'B1.3',
     title: 'As condicionais: と, ば, たら e なら',
     emoji: '🔀',
-    summary: 'O português se vira com «se» e «quando»; o japonês tem quatro condicionais, cada uma com seu jeito. たら é a curinga da conversa (着いたら、電話して). と é a consequência automática (おすと、開く). ば põe o foco na condição (どうすればいい？). なら parte do que o outro disse («se é assim…»).',
+    summary: 'O português se vira com “se” e “quando”; o japonês tem quatro condicionais, cada uma com seu jeito. たら é a curinga da conversa (着いたら、電話して). と é a consequência automática (おすと、開く). ば põe o foco na condição (どうすればいい？). なら parte do que o outro disse (“se é assim…”).',
     sections: [
       {
         heading: 'Formar ば e たら',
@@ -2081,7 +2081,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'Qual usar?',
-        text: 'と é a consequência automática, que sempre acontece: leis da natureza, máquinas, caminhos, hábitos. «春になると、桜がさく», «このボタンをおすと、ドアが開く». Por isso ela não aceita pedido, convite nem vontade depois dela. ば põe o foco na condição, no «basta que»: aparece muito em conselhos (どうすればいい？), provérbios e na estrutura «quanto mais…». たら é a mais versátil na conversa: «se/quando isso acontecer, aí…», e aceita pedidos e convites. No passado, conta uma descoberta: «家に帰ったら、荷物が届いていた» (quando cheguei em casa, a encomenda tinha chegado). なら toma o que foi dito como premissa: «日本へ行くなら、京都がおすすめです» (se você vai ao Japão, recomendo Kyoto). Com なら, a segunda parte pode até acontecer antes da primeira.',
+        text: 'と é a consequência automática, que sempre acontece: leis da natureza, máquinas, caminhos, hábitos. “春になると、桜がさく”, “このボタンをおすと、ドアが開く”. Por isso ela não aceita pedido, convite nem vontade depois dela. ば põe o foco na condição, no “basta que”: aparece muito em conselhos (どうすればいい？), provérbios e na estrutura “quanto mais…”. たら é a mais versátil na conversa: “se/quando isso acontecer, aí…”, e aceita pedidos e convites. No passado, conta uma descoberta: “家に帰ったら、荷物が届いていた” (quando cheguei em casa, a encomenda tinha chegado). なら toma o que foi dito como premissa: “日本へ行くなら、京都がおすすめです” (se você vai ao Japão, recomendo Kyoto). Com なら, a segunda parte pode até acontecer antes da primeira.',
         table: {
           head: ['Forma', 'Quando usar', 'Exemplo', 'Português'],
           rows: [
@@ -2102,7 +2102,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'Expressões prontas',
-        text: 'Algumas condicionais viraram expressões fixas, e vale aprendê-las inteiras. 〜ばいい / 〜たらいい: «o que eu faço?», «é só…». 〜ば〜ほど: «quanto mais…, mais…». 〜たらどう？: «que tal…?», para sugerir. もしよければ / よかったら: «se quiser», o jeito gentil de oferecer ou convidar. E você já conhece uma: なければならない é, ao pé da letra, «se não fizer, não dá».',
+        text: 'Algumas condicionais viraram expressões fixas, e vale aprendê-las inteiras. 〜ばいい / 〜たらいい: “o que eu faço?”, “é só…”. 〜ば〜ほど: “quanto mais…, mais…”. 〜たらどう？: “que tal…?”, para sugerir. もしよければ / よかったら: “se quiser”, o jeito gentil de oferecer ou convidar. E você já conhece uma: なければならない é, ao pé da letra, “se não fizer, não dá”.',
         table: {
           head: ['Expressão', 'Exemplo', 'Português'],
           rows: [
@@ -2121,15 +2121,15 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pôr pedido depois de と: «駅に着くと、電話してください» está errado. Com pedido, use たら: 着いたら、電話してください.',
-      'Confundir なら e たら na ordem dos fatos: «日本へ行くなら、パスポートを取って» (antes de ir); «日本へ行ったら、おみやげを買って» (lá no Japão).',
-      'Formar o ば de いい como «いければ»: é よければ.',
-      'Usar もし sozinho: ele reforça, mas quem faz a condição é o たら ou o ば. «もし雨だったら».',
+      'Pôr pedido depois de と: “駅に着くと、電話してください” está errado. Com pedido, use たら: 着いたら、電話してください.',
+      'Confundir なら e たら na ordem dos fatos: “日本へ行くなら、パスポートを取って” (antes de ir); “日本へ行ったら、おみやげを買って” (lá no Japão).',
+      'Formar o ば de いい como “いければ”: é よければ.',
+      'Usar もし sozinho: ele reforça, mas quem faz a condição é o たら ou o ば. “もし雨だったら”.',
       'Travar na hora de escolher: na dúvida, use たら, que serve em quase toda conversa do dia a dia.',
     ],
     quiz: [
       {
-        question: 'Complete: «駅に＿、電話してください。» (Quando chegar à estação, me ligue.)',
+        question: 'Complete: “駅に＿、電話してください。” (Quando chegar à estação, me ligue.)',
         options: ['着いたら', '着くと', '着けば'],
         answer: '着いたら',
         explanation: 'Com pedido na segunda parte, a condicional natural é たら. と não aceita pedido.',
@@ -2141,22 +2141,22 @@ export const GRAMMAR_JA: GrammarTopic[] = [
         explanation: 'Adjetivo -い: troca o い por ければ.',
       },
       {
-        question: 'Complete: «このボタンをおす＿、水が出ます。» (Apertando este botão, sai água.)',
+        question: 'Complete: “このボタンをおす＿、水が出ます。” (Apertando este botão, sai água.)',
         options: ['と', 'なら', 'ので'],
         answer: 'と',
         explanation: 'Máquina: consequência automática, sempre igual. É o caso típico do と.',
       },
       {
-        question: 'Um amigo diz: «京都に行くんです». Você responde: «京都に＿、金閣寺を見たほうがいいですよ。»',
+        question: 'Um amigo diz: “京都に行くんです”. Você responde: “京都に＿、金閣寺を見たほうがいいですよ。”',
         options: ['行くなら', '行くと', '行ったと'],
         answer: '行くなら',
-        explanation: 'なら parte do que o outro disse: «se você vai a Kyoto…».',
+        explanation: 'なら parte do que o outro disse: “se você vai a Kyoto…”.',
       },
       {
-        question: 'Como se diz «Quanto mais você pratica, melhor fica»?',
+        question: 'Como se diz “Quanto mais você pratica, melhor fica”?',
         options: ['練習すればするほど、上手になる。', '練習するとするほど、上手になる。', '練習したらするほど、上手になる。'],
         answer: '練習すればするほど、上手になる。',
-        explanation: 'A estrutura «quanto mais…» é 〜ば〜ほど: すればするほど.',
+        explanation: 'A estrutura “quanto mais…” é 〜ば〜ほど: すればするほど.',
       },
     ],
   },
@@ -2169,7 +2169,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     sections: [
       {
         heading: 'そう: pelo que vejo e pelo que ouvi',
-        text: 'Existem dois そう, e a diferença está no que vem antes. O そう da aparência se cola na base do verbo ou no adjetivo sem o い: おいしそう (parece gostoso), 雨がふりそう (parece que vai chover), 元気そう (parece bem). Duas irregulares: いい → よさそう, ない → なさそう. Ele funciona como adjetivo -な: おいしそうなケーキ. O そう do «ouvi dizer» vem depois da forma simples inteira: 雨がふるそうだ (dizem que vai chover), 学生だそうだ (dizem que é estudante). Um detalhe cultural importante: o japonês não afirma o que o outro sente, porque não tem como saber. «田中さんはさびしい» soa estranho; o natural é «田中さんはさびしそうだ» (o Tanaka parece triste).',
+        text: 'Existem dois そう, e a diferença está no que vem antes. O そう da aparência se cola na base do verbo ou no adjetivo sem o い: おいしそう (parece gostoso), 雨がふりそう (parece que vai chover), 元気そう (parece bem). Duas irregulares: いい → よさそう, ない → なさそう. Ele funciona como adjetivo -な: おいしそうなケーキ. O そう do “ouvi dizer” vem depois da forma simples inteira: 雨がふるそうだ (dizem que vai chover), 学生だそうだ (dizem que é estudante). Um detalhe cultural importante: o japonês não afirma o que o outro sente, porque não tem como saber. “田中さんはさびしい” soa estranho; o natural é “田中さんはさびしそうだ” (o Tanaka parece triste).',
         table: {
           head: ['Aparência (vejo)', 'Boato (ouvi)', 'Português'],
           rows: [
@@ -2189,7 +2189,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'ようだ, みたいだ, らしい: tirar conclusões',
-        text: 'ようだ é a dedução a partir de indícios: «だれか来たようです» (parece que chegou alguém; ouvi a porta). みたいだ é a mesma coisa, só que informal: «だれか来たみたい». As duas também servem para comparar: 夢のようだ, 夢みたい (parece um sonho). らしい tem dois usos. Um é o «pelo que dizem», com a informação vinda de fora: «あの店、来月閉まるらしいよ». O outro é «típico de», «digno de»: 春らしい天気 (um tempo bem de primavera), 彼らしい (é a cara dele). Repare na forma com substantivo e adjetivo -な: ようだ pede の e な (学生のようだ, 元気なようだ), e みたい e らしい se colam direto (学生みたい, 学生らしい).',
+        text: 'ようだ é a dedução a partir de indícios: “だれか来たようです” (parece que chegou alguém; ouvi a porta). みたいだ é a mesma coisa, só que informal: “だれか来たみたい”. As duas também servem para comparar: 夢のようだ, 夢みたい (parece um sonho). らしい tem dois usos. Um é o “pelo que dizem”, com a informação vinda de fora: “あの店、来月閉まるらしいよ”. O outro é “típico de”, “digno de”: 春らしい天気 (um tempo bem de primavera), 彼らしい (é a cara dele). Repare na forma com substantivo e adjetivo -な: ようだ pede の e な (学生のようだ, 元気なようだ), e みたい e らしい se colam direto (学生みたい, 学生らしい).',
         table: {
           head: ['Forma', 'Verbo', 'Adjetivo -い', 'Adjetivo -な', 'Substantivo'],
           rows: [
@@ -2210,7 +2210,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'かもしれない e でしょう: quanto você aposta',
-        text: 'Para a probabilidade, o japonês tem uma escala. A frase seca (雨がふる) é certeza. でしょう (informal: だろう) é o «deve», a previsão: é o tom do homem do tempo na TV, e ganha força com きっと (com certeza) ou たぶん (provavelmente). かもしれない (educado: かもしれません) é o «pode ser que», mais ou menos meio a meio, e combina com もしかしたら (quem sabe). Na conversa, でしょ？ com entonação subindo vira um pedido de confirmação: «言ったでしょ？» (eu não disse?).',
+        text: 'Para a probabilidade, o japonês tem uma escala. A frase seca (雨がふる) é certeza. でしょう (informal: だろう) é o “deve”, a previsão: é o tom do homem do tempo na TV, e ganha força com きっと (com certeza) ou たぶん (provavelmente). かもしれない (educado: かもしれません) é o “pode ser que”, mais ou menos meio a meio, e combina com もしかしたら (quem sabe). Na conversa, でしょ？ com entonação subindo vira um pedido de confirmação: “言ったでしょ？” (eu não disse?).',
         table: {
           head: ['Frase', 'Certeza', 'Português'],
           rows: [
@@ -2229,19 +2229,19 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Trocar ふりそう por ふるそう: a aparência usa a base (ふり), o «ouvi dizer» usa a forma simples (ふる).',
-      'Usar o そう da aparência com substantivo: «学生そう» está errado. Diga 学生みたい ou 学生のようだ.',
-      'Usar そう para o que está na cara: «きれいそう» soa como «parece bonito (mas não sei)». Se você está vendo, diga きれいだ.',
-      'Afirmar o que o outro sente: «田中さんはうれしい» soa estranho. Diga うれしそう, うれしいようだ.',
+      'Trocar ふりそう por ふるそう: a aparência usa a base (ふり), o “ouvi dizer” usa a forma simples (ふる).',
+      'Usar o そう da aparência com substantivo: “学生そう” está errado. Diga 学生みたい ou 学生のようだ.',
+      'Usar そう para o que está na cara: “きれいそう” soa como “parece bonito (mas não sei)”. Se você está vendo, diga きれいだ.',
+      'Afirmar o que o outro sente: “田中さんはうれしい” soa estranho. Diga うれしそう, うれしいようだ.',
       'Esquecer as irregulares よさそう e なさそう.',
-      'Achar que らしい é só boato: 男らしい, 春らしい querem dizer «típico de», «bem de».',
+      'Achar que らしい é só boato: 男らしい, 春らしい querem dizer “típico de”, “bem de”.',
     ],
     quiz: [
       {
-        question: 'O céu escureceu de repente. Como se diz «Parece que vai chover»?',
+        question: 'O céu escureceu de repente. Como se diz “Parece que vai chover”?',
         options: ['雨がふりそうだ。', '雨がふるそうだ。', '雨らしい天気だ。'],
         answer: '雨がふりそうだ。',
-        explanation: 'É a aparência, pelo que você vê agora: base do verbo + そう. 雨がふるそうだ é «dizem que vai chover».',
+        explanation: 'É a aparência, pelo que você vê agora: base do verbo + そう. 雨がふるそうだ é “dizem que vai chover”.',
       },
       {
         question: 'Qual é a forma de aparência de いい?',
@@ -2250,22 +2250,22 @@ export const GRAMMAR_JA: GrammarTopic[] = [
         explanation: 'いい e ない são irregulares: よさそう, なさそう.',
       },
       {
-        question: 'Como se diz «Parece que ele é estudante» (pelas roupas, pelo jeito)?',
+        question: 'Como se diz “Parece que ele é estudante” (pelas roupas, pelo jeito)?',
         options: ['学生みたいだ。', '学生そうだ。', '学生のそうだ。'],
         answer: '学生みたいだ。',
         explanation: 'O そう da aparência não vai com substantivo. Use みたい (ou 学生のようだ).',
       },
       {
-        question: 'O que quer dizer «春らしい天気»?',
+        question: 'O que quer dizer “春らしい天気”?',
         options: ['um tempo bem de primavera', 'dizem que é primavera', 'um tempo que parece chuvoso'],
         answer: 'um tempo bem de primavera',
-        explanation: 'Depois de substantivo, らしい pode ser «típico de», «digno de».',
+        explanation: 'Depois de substantivo, らしい pode ser “típico de”, “digno de”.',
       },
       {
         question: 'Qual frase é a menos certa?',
         options: ['雨がふるかもしれない。', 'きっと雨がふるでしょう。', '雨がふる。'],
         answer: '雨がふるかもしれない。',
-        explanation: 'かもしれない é «pode ser que»; でしょう com きっと é quase certeza; a frase seca é certeza.',
+        explanation: 'かもしれない é “pode ser que”; でしょう com きっと é quase certeza; a frase seca é certeza.',
       },
     ],
   },
@@ -2274,11 +2274,11 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     level: 'B1.3',
     title: 'の e こと: transformar ações em substantivos (e o 〜んです)',
     emoji: '🧱',
-    summary: 'Para dizer «gosto de ler», o japonês transforma o verbo em substantivo com の ou こと: 読むのが好き. Os dois são quase gêmeos, mas certos verbos pedem um ou outro. E do の nasce o 〜んです, o «é que…» que o japonês usa o tempo todo para explicar.',
+    summary: 'Para dizer “gosto de ler”, o japonês transforma o verbo em substantivo com の ou こと: 読むのが好き. Os dois são quase gêmeos, mas certos verbos pedem um ou outro. E do の nasce o 〜んです, o “é que…” que o japonês usa o tempo todo para explicar.',
     sections: [
       {
         heading: 'O verbo vira substantivo',
-        text: 'Uma oração na forma simples + の ou こと vira um substantivo, que pode ser sujeito ou objeto: «本を読むのが好きです» (gosto de ler livros), «日本語を話すのはむずかしい» (falar japonês é difícil). Em muitos casos, os dois servem. Mas o の é mais concreto e falado, e é obrigatório com verbos de percepção e ações simultâneas: ver, ouvir, esperar, ajudar («子どもが歌っているのが聞こえる», dá para ouvir as crianças cantando). A こと é mais abstrata e formal, e é obrigatória em definições e expressões fixas: «趣味は写真をとることです», «〜ことができる», «〜ことがある». Com adjetivo -な e substantivo, o だ vira な: 好きなのは, 学生なのは.',
+        text: 'Uma oração na forma simples + の ou こと vira um substantivo, que pode ser sujeito ou objeto: “本を読むのが好きです” (gosto de ler livros), “日本語を話すのはむずかしい” (falar japonês é difícil). Em muitos casos, os dois servem. Mas o の é mais concreto e falado, e é obrigatório com verbos de percepção e ações simultâneas: ver, ouvir, esperar, ajudar (“子どもが歌っているのが聞こえる”, dá para ouvir as crianças cantando). A こと é mais abstrata e formal, e é obrigatória em definições e expressões fixas: “趣味は写真をとることです”, “〜ことができる”, “〜ことがある”. Com adjetivo -な e substantivo, o だ vira な: 好きなのは, 学生なのは.',
         table: {
           head: ['Uso', 'Exemplo', 'Português'],
           rows: [
@@ -2298,7 +2298,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'ことにする, ことになる e companhia',
-        text: 'A こと forma expressões sobre decisões e regras. 〜ことにする é «decidir», por vontade própria: «日本へ行くことにしました» (resolvi ir ao Japão). 〜ことになる é «ficou decidido», por forças de fora ou pelas circunstâncias; o japonês usa isso até para as próprias decisões, por modéstia: «来月、結婚することになりました» (vou me casar no mês que vem; soa menos «eu decidi»). 〜ことにしている é uma regra pessoal («faço questão de…»), e 〜ことになっている, uma regra externa. Nos avisos escritos, こと sozinha no fim da frase dá ordens: 廊下を走らないこと (proibido correr no corredor).',
+        text: 'A こと forma expressões sobre decisões e regras. 〜ことにする é “decidir”, por vontade própria: “日本へ行くことにしました” (resolvi ir ao Japão). 〜ことになる é “ficou decidido”, por forças de fora ou pelas circunstâncias; o japonês usa isso até para as próprias decisões, por modéstia: “来月、結婚することになりました” (vou me casar no mês que vem; soa menos “eu decidi”). 〜ことにしている é uma regra pessoal (“faço questão de…”), e 〜ことになっている, uma regra externa. Nos avisos escritos, こと sozinha no fim da frase dá ordens: 廊下を走らないこと (proibido correr no corredor).',
         table: {
           head: ['Expressão', 'Sentido', 'Exemplo', 'Português'],
           rows: [
@@ -2317,7 +2317,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: '〜のは…だ e o 〜んです',
-        text: 'O の também serve para destacar uma parte da frase: «昨日会ったのは田中さんです» (quem eu encontrei ontem foi o Tanaka). E dele nasce o 〜んです (のです, na escrita), o final que explica ou pede explicação. É o nosso «é que…»: «どうしたんですか» (o que aconteceu?), «頭が痛いんです» (é que estou com dor de cabeça). Na pergunta, mostra que você percebeu algo e quer entender: «日本語を勉強しているんですか» (então você estuda japonês?). E abre pedidos com suavidade: «道に迷ったんですが、駅はどこですか» (é que me perdi; onde fica a estação?). Com substantivo e adjetivo -な, fica なんです: 学生なんです.',
+        text: 'O の também serve para destacar uma parte da frase: “昨日会ったのは田中さんです” (quem eu encontrei ontem foi o Tanaka). E dele nasce o 〜んです (のです, na escrita), o final que explica ou pede explicação. É o nosso “é que…”: “どうしたんですか” (o que aconteceu?), “頭が痛いんです” (é que estou com dor de cabeça). Na pergunta, mostra que você percebeu algo e quer entender: “日本語を勉強しているんですか” (então você estuda japonês?). E abre pedidos com suavidade: “道に迷ったんですが、駅はどこですか” (é que me perdi; onde fica a estação?). Com substantivo e adjetivo -な, fica なんです: 学生なんです.',
         table: {
           head: ['Frase', 'Uso', 'Português'],
           rows: [
@@ -2337,39 +2337,39 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar の na definição: «趣味は読むのです» está errado. Depois de 趣味は, 夢は, 仕事は, use こと.',
-      'Usar こと com ver e ouvir: «歌っていることが聞こえる» está errado. É 歌っているのが聞こえる.',
-      'Esquecer o な: «好きのは» e «学生んです» estão errados. É 好きなのは, 学生なんです.',
+      'Usar の na definição: “趣味は読むのです” está errado. Depois de 趣味は, 夢は, 仕事は, use こと.',
+      'Usar こと com ver e ouvir: “歌っていることが聞こえる” está errado. É 歌っているのが聞こえる.',
+      'Esquecer o な: “好きのは” e “学生んです” estão errados. É 好きなのは, 学生なんです.',
       'Abusar do 〜んです: em toda frase, soa como se você estivesse sempre se justificando ou insistindo.',
       'Confundir ことにする (eu decidi) com ことになる (ficou decidido).',
     ],
     quiz: [
       {
-        question: 'Complete: «趣味は写真をとる＿です。» (Meu hobby é tirar fotos.)',
+        question: 'Complete: “趣味は写真をとる＿です。” (Meu hobby é tirar fotos.)',
         options: ['こと', 'の', 'もの'],
         answer: 'こと',
         explanation: 'Em definições como 趣味は…, só こと.',
       },
       {
-        question: 'Complete: «子どもが遊んでいる＿が見える。» (Dá para ver as crianças brincando.)',
+        question: 'Complete: “子どもが遊んでいる＿が見える。” (Dá para ver as crianças brincando.)',
         options: ['の', 'こと', 'ん'],
         answer: 'の',
         explanation: 'Com verbos de percepção (ver, ouvir), só の.',
       },
       {
-        question: 'Qual frase quer dizer «Resolvi estudar no Japão»?',
+        question: 'Qual frase quer dizer “Resolvi estudar no Japão”?',
         options: ['日本で勉強することにしました。', '日本で勉強することになりました。', '日本で勉強することがあります。'],
         answer: '日本で勉強することにしました。',
-        explanation: 'ことにする é a decisão pessoal. ことになる é «ficou decidido», e ことがある é «às vezes».',
+        explanation: 'ことにする é a decisão pessoal. ことになる é “ficou decidido”, e ことがある é “às vezes”.',
       },
       {
         question: 'O médico pergunta o que houve. Qual é a resposta mais natural?',
         options: ['頭が痛いんです。', '頭が痛いのことです。', '頭が痛いんだです。'],
         answer: '頭が痛いんです。',
-        explanation: '〜んです explica: «é que estou com dor de cabeça».',
+        explanation: '〜んです explica: “é que estou com dor de cabeça”.',
       },
       {
-        question: 'Complete: «私が好き＿は夏です。» (A estação de que eu gosto é o verão.)',
+        question: 'Complete: “私が好き＿は夏です。” (A estação de que eu gosto é o verão.)',
         options: ['なの', 'の', 'だの'],
         answer: 'なの',
         explanation: 'Adjetivo -な antes de の pega o な: 好きなのは.',
@@ -2382,11 +2382,11 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     level: 'B1.4',
     title: 'Keigo: 丁寧語, 尊敬語 e 謙譲語',
     emoji: '🙇',
-    summary: 'O keigo, a linguagem respeitosa, tem três camadas: 丁寧語 (です, ます, a educação com quem ouve), 尊敬語 (eleva o outro: いらっしゃる, 召し上がる) e 謙譲語 (rebaixa você e os seus: 参る, いただく). Quem sobe e quem desce depende de quem é «de dentro» e «de fora».',
+    summary: 'O keigo, a linguagem respeitosa, tem três camadas: 丁寧語 (です, ます, a educação com quem ouve), 尊敬語 (eleva o outro: いらっしゃる, 召し上がる) e 謙譲語 (rebaixa você e os seus: 参る, いただく). Quem sobe e quem desce depende de quem é “de dentro” e “de fora”.',
     sections: [
       {
         heading: 'Três camadas',
-        text: 'O português tem «o senhor», «a senhora», «Vossa Excelência», mas o verbo continua o mesmo. O japonês muda o próprio verbo. O 丁寧語 você já usa: です e ます, a cortesia com quem ouve. O 尊敬語 (linguagem de respeito) eleva quem faz a ação: é para as ações do cliente, do professor, do chefe. O 謙譲語 (linguagem de modéstia) rebaixa quem faz: é para as suas ações, e as do seu grupo, quando elas se dirigem ao outro. A lógica é de gangorra: para mostrar respeito, ou você sobe o outro, ou você desce. Há ainda o 美化語, que só embeleza palavras com お e ご: お茶, ご飯. O keigo aparece o tempo todo no comércio, nos avisos e no trabalho; mesmo que você não fale assim no começo, precisa entender.',
+        text: 'O português tem “o senhor”, “a senhora”, “Vossa Excelência”, mas o verbo continua o mesmo. O japonês muda o próprio verbo. O 丁寧語 você já usa: です e ます, a cortesia com quem ouve. O 尊敬語 (linguagem de respeito) eleva quem faz a ação: é para as ações do cliente, do professor, do chefe. O 謙譲語 (linguagem de modéstia) rebaixa quem faz: é para as suas ações, e as do seu grupo, quando elas se dirigem ao outro. A lógica é de gangorra: para mostrar respeito, ou você sobe o outro, ou você desce. Há ainda o 美化語, que só embeleza palavras com お e ご: お茶, ご飯. O keigo aparece o tempo todo no comércio, nos avisos e no trabalho; mesmo que você não fale assim no começo, precisa entender.',
         table: {
           head: ['Tipo', 'O que faz', 'Exemplo', 'Português'],
           rows: [
@@ -2405,7 +2405,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'Os verbos especiais',
-        text: 'Os verbos mais comuns têm formas próprias no keigo, que precisam ser decoradas. É menos do que parece: uma dúzia cobre quase tudo. Quatro têm a forma com ます irregular: いらっしゃいます, おっしゃいます, なさいます, くださいます (e não «いらっしゃります»). Uma pista para lembrar: いただく (receber, com modéstia) é o mesmo verbo do «いただきます» que se diz antes de comer, literalmente «recebo com humildade».',
+        text: 'Os verbos mais comuns têm formas próprias no keigo, que precisam ser decoradas. É menos do que parece: uma dúzia cobre quase tudo. Quatro têm a forma com ます irregular: いらっしゃいます, おっしゃいます, なさいます, くださいます (e não “いらっしゃります”). Uma pista para lembrar: いただく (receber, com modéstia) é o mesmo verbo do “いただきます” que se diz antes de comer, literalmente “recebo com humildade”.',
         table: {
           head: ['Verbo', '尊敬語 (o outro)', '謙譲語 (eu)', 'Português'],
           rows: [
@@ -2430,8 +2430,8 @@ export const GRAMMAR_JA: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'A fórmula regular e o «de dentro» e «de fora»',
-        text: 'Os outros verbos seguem uma fórmula. Para o 尊敬語: お + base + になる (お帰りになる, お待ちになる), e para pedir com respeito, お + base + ください (お待ちください). Com palavras chinesas, ご: ご利用ください. Para o 謙譲語: お + base + する (お持ちします, eu levo), ou ご + palavra + する (ご案内します). E aqui entra a regra que mais surpreende: o 内 e o 外, «de dentro» e «de fora». Falando com um cliente, o seu próprio chefe é «de dentro», e por isso recebe 謙譲語 e perde o さん: «田中はただいま席を外しております». O mesmo vale para a família: 母 é a minha mãe; お母さん é a mãe dos outros (ou a sua, quando você fala com ela).',
+        heading: 'A fórmula regular e o “de dentro” e “de fora”',
+        text: 'Os outros verbos seguem uma fórmula. Para o 尊敬語: お + base + になる (お帰りになる, お待ちになる), e para pedir com respeito, お + base + ください (お待ちください). Com palavras chinesas, ご: ご利用ください. Para o 謙譲語: お + base + する (お持ちします, eu levo), ou ご + palavra + する (ご案内します). E aqui entra a regra que mais surpreende: o 内 e o 外, “de dentro” e “de fora”. Falando com um cliente, o seu próprio chefe é “de dentro”, e por isso recebe 謙譲語 e perde o さん: “田中はただいま席を外しております”. O mesmo vale para a família: 母 é a minha mãe; お母さん é a mãe dos outros (ou a sua, quando você fala com ela).',
         table: {
           head: ['Forma', 'Tipo', 'Exemplo', 'Português'],
           rows: [
@@ -2451,11 +2451,11 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar 尊敬語 para si: «私がいらっしゃいます» está errado. Para você, 謙譲語: 私が参ります.',
-      'Pôr さん no próprio chefe diante de um cliente: «田中部長さんは…» está errado. Diga 部長の田中は…',
-      'Empilhar keigo: «おっしゃられる» é keigo duplo, porque おっしゃる já é respeitoso.',
-      'Pôr お em tudo: お vai com palavras japonesas (お名前, お金) e ご com palavras chinesas (ご住所, ご家族), com exceções fixas (お電話, お時間). Com palavras estrangeiras, quase nunca: «おコーヒー» soa estranho.',
-      'Confundir いただく e くださる: «先生がいただきました» está errado. O professor dá (くださる); eu recebo (いただく).',
+      'Usar 尊敬語 para si: “私がいらっしゃいます” está errado. Para você, 謙譲語: 私が参ります.',
+      'Pôr さん no próprio chefe diante de um cliente: “田中部長さんは…” está errado. Diga 部長の田中は…',
+      'Empilhar keigo: “おっしゃられる” é keigo duplo, porque おっしゃる já é respeitoso.',
+      'Pôr お em tudo: お vai com palavras japonesas (お名前, お金) e ご com palavras chinesas (ご住所, ご家族), com exceções fixas (お電話, お時間). Com palavras estrangeiras, quase nunca: “おコーヒー” soa estranho.',
+      'Confundir いただく e くださる: “先生がいただきました” está errado. O professor dá (くださる); eu recebo (いただく).',
     ],
     quiz: [
       {
@@ -2474,10 +2474,10 @@ export const GRAMMAR_JA: GrammarTopic[] = [
         question: 'Um cliente liga e pergunta pelo seu chefe, o Tanaka, que saiu. O que você diz?',
         options: ['田中はただいま外出しております。', '田中さんはただいま外出していらっしゃいます。', '田中部長さんは外出なさっています。'],
         answer: '田中はただいま外出しております。',
-        explanation: 'Diante de alguém de fora, o seu chefe é «de dentro»: sem さん e com 謙譲語 (おる).',
+        explanation: 'Diante de alguém de fora, o seu chefe é “de dentro”: sem さん e com 謙譲語 (おる).',
       },
       {
-        question: 'Complete: «こちらで＿ください。» (Aguarde aqui, por favor.)',
+        question: 'Complete: “こちらで＿ください。” (Aguarde aqui, por favor.)',
         options: ['お待ち', 'お待ちし', '待たれ'],
         answer: 'お待ち',
         explanation: 'O pedido respeitoso é お + base + ください: お待ちください.',
@@ -2486,7 +2486,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
         question: 'Qual é o 謙譲語 (modéstia) de 見る?',
         options: ['拝見する', 'ご覧になる', '見られる'],
         answer: '拝見する',
-        explanation: '拝見する é «ver» com modéstia. ご覧になる é o respeito, para quando o outro vê.',
+        explanation: '拝見する é “ver” com modéstia. ご覧になる é o respeito, para quando o outro vê.',
       },
     ],
   },
@@ -2495,11 +2495,11 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     level: 'B1.4',
     title: 'Dar e receber: あげる, くれる, もらう (e o favor com て)',
     emoji: '🎁',
-    summary: 'O português tem um «dar» só; o japonês tem dois, conforme a direção: あげる (de mim para os outros) e くれる (dos outros para mim). E もらう é «receber». Com a forma て, os mesmos verbos falam de favores: 手伝ってくれた (me ajudou, que bom), 教えてもらった (consegui que me ensinassem).',
+    summary: 'O português tem um “dar” só; o japonês tem dois, conforme a direção: あげる (de mim para os outros) e くれる (dos outros para mim). E もらう é “receber”. Com a forma て, os mesmos verbos falam de favores: 手伝ってくれた (me ajudou, que bom), 教えてもらった (consegui que me ensinassem).',
     sections: [
       {
         heading: 'Três verbos, uma direção',
-        text: 'O segredo é saber para que lado a coisa vai. あげる é dar para fora: de mim para os outros, ou entre outras pessoas. くれる é dar para dentro: dos outros para mim, ou para alguém do meu grupo (família, amigos próximos). もらう é receber, do meu ponto de vista: «友だちに本をもらった» (ganhei um livro de um amigo). A mesma cena pode ser dita de dois jeitos: «友だちが本をくれた» e «友だちに本をもらった». O que não existe é «友だちが私にあげた»: quando vem para mim, é sempre くれる. Com もらう, quem dá leva に ou から; se for uma instituição, prefira から: 会社から.',
+        text: 'O segredo é saber para que lado a coisa vai. あげる é dar para fora: de mim para os outros, ou entre outras pessoas. くれる é dar para dentro: dos outros para mim, ou para alguém do meu grupo (família, amigos próximos). もらう é receber, do meu ponto de vista: “友だちに本をもらった” (ganhei um livro de um amigo). A mesma cena pode ser dita de dois jeitos: “友だちが本をくれた” e “友だちに本をもらった”. O que não existe é “友だちが私にあげた”: quando vem para mim, é sempre くれる. Com もらう, quem dá leva に ou から; se for uma instituição, prefira から: 会社から.',
         table: {
           head: ['Verbo', 'Direção', 'Exemplo', 'Português'],
           rows: [
@@ -2519,7 +2519,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'Para cima e para baixo: さしあげる, くださる, いただく, やる',
-        text: 'Com o keigo, cada verbo ganha um par. Para dar a um superior, さしあげる (use com cuidado: na frente da pessoa, pode soar como se você exibisse a gentileza; prefira «〜をどうぞ»). Quando o superior dá a você, くださる. Quando você recebe de um superior, いただく. E para baixo, para plantas e animais, やる: «花に水をやる» (regar as flores). Hoje muita gente diz «犬にえさをあげる», tratando o cachorro como da família.',
+        text: 'Com o keigo, cada verbo ganha um par. Para dar a um superior, さしあげる (use com cuidado: na frente da pessoa, pode soar como se você exibisse a gentileza; prefira “〜をどうぞ”). Quando o superior dá a você, くださる. Quando você recebe de um superior, いただく. E para baixo, para plantas e animais, やる: “花に水をやる” (regar as flores). Hoje muita gente diz “犬にえさをあげる”, tratando o cachorro como da família.',
         table: {
           head: ['Direção', 'Neutro', 'Com respeito', 'Português'],
           rows: [
@@ -2538,7 +2538,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'O favor com て: てあげる, てくれる, てもらう',
-        text: 'Com a forma て, os três verbos passam a falar de favores. 〜てくれる é alguém fazendo algo por mim, e carrega gratidão: «友だちが駅まで送ってくれた» (meu amigo me levou até a estação, que gentil). Sem o くれる, a frase fica fria, como um relatório. 〜てもらう é conseguir que alguém faça: «友だちに写真をとってもらった» (pedi e um amigo tirou minha foto). 〜てあげる é fazer por alguém, e por isso soa como favor: com superiores, evite. «先生、かばんを持ってあげます» é quase ofensivo; diga «お持ちします». E os pedidos mais educados do japonês vêm daqui: «〜ていただけませんか» e «〜てくださいませんか».',
+        text: 'Com a forma て, os três verbos passam a falar de favores. 〜てくれる é alguém fazendo algo por mim, e carrega gratidão: “友だちが駅まで送ってくれた” (meu amigo me levou até a estação, que gentil). Sem o くれる, a frase fica fria, como um relatório. 〜てもらう é conseguir que alguém faça: “友だちに写真をとってもらった” (pedi e um amigo tirou minha foto). 〜てあげる é fazer por alguém, e por isso soa como favor: com superiores, evite. “先生、かばんを持ってあげます” é quase ofensivo; diga “お持ちします”. E os pedidos mais educados do japonês vêm daqui: “〜ていただけませんか” e “〜てくださいませんか”.',
         table: {
           head: ['Forma', 'Sentido', 'Exemplo', 'Português'],
           rows: [
@@ -2558,21 +2558,21 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Dizer «友だちが私にあげた»: quando vem para mim, é くれる. 友だちが(私に)くれた.',
+      'Dizer “友だちが私にあげた”: quando vem para mim, é くれる. 友だちが(私に)くれた.',
       'Usar くれる com superior: se o professor deu, é くださった.',
       'Oferecer ajuda a um superior com 〜てあげる: soa arrogante. Use お + base + します: お持ちします.',
-      'Esquecer o くれる: «友だちが手伝った» é neutro e frio; «手伝ってくれた» mostra gratidão.',
+      'Esquecer o くれる: “友だちが手伝った” é neutro e frio; “手伝ってくれた” mostra gratidão.',
       'Com もらう, esquecer que a instituição leva から: 会社からもらった.',
     ],
     quiz: [
       {
-        question: 'Complete: «友だちが私に本を＿。» (Um amigo me deu um livro.)',
+        question: 'Complete: “友だちが私に本を＿。” (Um amigo me deu um livro.)',
         options: ['くれた', 'あげた', 'もらった'],
         answer: 'くれた',
         explanation: 'Quando o presente vem para mim, o verbo é くれる.',
       },
       {
-        question: 'Complete: «先生に本を＿。» (Ganhei um livro do professor.)',
+        question: 'Complete: “先生に本を＿。” (Ganhei um livro do professor.)',
         options: ['いただきました', 'くださいました', 'さしあげました'],
         answer: 'いただきました',
         explanation: 'Eu recebo de um superior: いただく. くださる seria com o professor como sujeito (先生が…くださった).',
@@ -2606,14 +2606,14 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     sections: [
       {
         heading: 'Causa: から × ので',
-        text: 'Os dois são «porque», e vêm depois da causa, não antes: «雨だから、行かない» (como está chovendo, não vou). から é mais direto e subjetivo, e combina com ordens, convites e opiniões: «危ないから、やめて！». ので soa mais objetivo e suave, e é o preferido para se justificar com educação: «電車がおくれたので、遅刻しました» (como o trem atrasou, cheguei tarde). Com adjetivo -な e substantivo, ので pede な: 雨なので, 静かなので. No começo da frase, だから e なので fazem o «por isso».',
+        text: 'Os dois são “porque”, e vêm depois da causa, não antes: “雨だから、行かない” (como está chovendo, não vou). から é mais direto e subjetivo, e combina com ordens, convites e opiniões: “危ないから、やめて！”. ので soa mais objetivo e suave, e é o preferido para se justificar com educação: “電車がおくれたので、遅刻しました” (como o trem atrasou, cheguei tarde). Com adjetivo -な e substantivo, ので pede な: 雨なので, 静かなので. No começo da frase, だから e なので fazem o “por isso”.',
         table: {
           head: ['Conector', 'Nuance', 'Exemplo', 'Português'],
           rows: [
             ['から', 'direto, subjetivo', '危ないから、さわらないで。', 'É perigoso, não toque.'],
             ['ので', 'objetivo, educado', '電車がおくれたので、遅刻しました。', 'Como o trem atrasou, cheguei tarde.'],
             ['なので', 'com substantivo e -な', '今日は休みなので、家にいます。', 'Hoje é folga, então fico em casa.'],
-            ['だから', 'no começo: «por isso»', 'だから、言ったでしょ？', 'Por isso eu disse, não disse?'],
+            ['だから', 'no começo: “por isso”', 'だから、言ったでしょ？', 'Por isso eu disse, não disse?'],
           ],
         },
         examples: [
@@ -2624,14 +2624,14 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'Contraste: けど, が, のに',
-        text: 'けど (mais falado) e が (mais formal e escrito) são o «mas»: «高いけど、おいしい». Os dois também servem de almofada antes de um pedido ou pergunta, sem contraste nenhum: «すみませんが、駅はどこですか», «ちょっと聞きたいんだけど…». のに é «apesar de», com uma carga de frustração ou surpresa: «約束したのに、来なかった» (prometeu e não veio!). Por carregar essa emoção, のに não serve para a sua própria vontade nem para pedidos, e no fim da frase vira lamento: «言ってくれればよかったのに» (era só ter me dito…).',
+        text: 'けど (mais falado) e が (mais formal e escrito) são o “mas”: “高いけど、おいしい”. Os dois também servem de almofada antes de um pedido ou pergunta, sem contraste nenhum: “すみませんが、駅はどこですか”, “ちょっと聞きたいんだけど…”. のに é “apesar de”, com uma carga de frustração ou surpresa: “約束したのに、来なかった” (prometeu e não veio!). Por carregar essa emoção, のに não serve para a sua própria vontade nem para pedidos, e no fim da frase vira lamento: “言ってくれればよかったのに” (era só ter me dito…).',
         table: {
           head: ['Conector', 'Nuance', 'Exemplo', 'Português'],
           rows: [
-            ['けど', '«mas», falado', '高いけど、おいしい。', 'É caro, mas é gostoso.'],
-            ['が', '«mas», formal', '行きたいですが、時間がありません。', 'Eu queria ir, mas não tenho tempo.'],
+            ['けど', '“mas”, falado', '高いけど、おいしい。', 'É caro, mas é gostoso.'],
+            ['が', '“mas”, formal', '行きたいですが、時間がありません。', 'Eu queria ir, mas não tenho tempo.'],
             ['が (almofada)', 'abrir um pedido', 'すみませんが、駅はどこですか。', 'Com licença, onde fica a estação?'],
-            ['のに', '«apesar de», frustração', '約束したのに、来なかった。', 'Prometeu e não veio!'],
+            ['のに', '“apesar de”, frustração', '約束したのに、来なかった。', 'Prometeu e não veio!'],
             ['のに (final)', 'lamento', '言ってくれればよかったのに。', 'Era só ter me dito…'],
           ],
         },
@@ -2643,7 +2643,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'し, ながら, ために, ように',
-        text: 'し empilha motivos, como «e além disso»: «安いし、おいしいし、この店が好き» (é barato, é gostoso, gosto deste restaurante). ながら é «enquanto», com o mesmo sujeito fazendo duas coisas: «音楽を聞きながら勉強する». Para o objetivo, há dois conectores. ために vai com ações que você controla, de propósito: «日本語を勉強するために、日本へ来た». ように vai com o que não depende só da vontade: verbos potenciais, negativos e mudanças: «よく見えるように、前にすわった» (sentei na frente para conseguir ver bem), «忘れないように、メモする» (anoto para não esquecer).',
+        text: 'し empilha motivos, como “e além disso”: “安いし、おいしいし、この店が好き” (é barato, é gostoso, gosto deste restaurante). ながら é “enquanto”, com o mesmo sujeito fazendo duas coisas: “音楽を聞きながら勉強する”. Para o objetivo, há dois conectores. ために vai com ações que você controla, de propósito: “日本語を勉強するために、日本へ来た”. ように vai com o que não depende só da vontade: verbos potenciais, negativos e mudanças: “よく見えるように、前にすわった” (sentei na frente para conseguir ver bem), “忘れないように、メモする” (anoto para não esquecer).',
         table: {
           head: ['Conector', 'Uso', 'Exemplo', 'Português'],
           rows: [
@@ -2663,10 +2663,10 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pôr a causa depois do から, como em português: «porque chove» é 雨だから, com o から no fim da causa.',
-      'Usar のに para pedidos ou para a própria vontade: «時間があるのに、手伝ってください» está errado. のに carrega queixa.',
-      'Usar ながら com dois sujeitos: «私が料理しながら、弟がテレビを見た» está errado. Use 〜ている間に ou て.',
-      'Usar ために com potencial ou negativo: «話せるために» está errado. É 話せるように.',
+      'Pôr a causa depois do から, como em português: “porque chove” é 雨だから, com o から no fim da causa.',
+      'Usar のに para pedidos ou para a própria vontade: “時間があるのに、手伝ってください” está errado. のに carrega queixa.',
+      'Usar ながら com dois sujeitos: “私が料理しながら、弟がテレビを見た” está errado. Use 〜ている間に ou て.',
+      'Usar ために com potencial ou negativo: “話せるために” está errado. É 話せるように.',
       'Justificar-se com から numa desculpa formal: soa como pretexto. Prefira ので.',
     ],
     quiz: [
@@ -2677,28 +2677,28 @@ export const GRAMMAR_JA: GrammarTopic[] = [
         explanation: 'ので soa objetivo e suave. から é mais direto, e のに não faz sentido aqui.',
       },
       {
-        question: 'Complete: «約束した＿、来なかった。» (Prometeu e não veio!)',
+        question: 'Complete: “約束した＿、来なかった。” (Prometeu e não veio!)',
         options: ['のに', 'から', 'し'],
         answer: 'のに',
-        explanation: 'のに é o «apesar de» com frustração.',
+        explanation: 'のに é o “apesar de” com frustração.',
       },
       {
-        question: 'Complete: «忘れない＿、メモします。» (Anoto para não esquecer.)',
+        question: 'Complete: “忘れない＿、メモします。” (Anoto para não esquecer.)',
         options: ['ように', 'ために', 'ながら'],
         answer: 'ように',
         explanation: 'Com negativo e com potencial, o objetivo usa ように.',
       },
       {
-        question: 'Complete: «音楽を聞き＿、勉強します。» (Estudo ouvindo música.)',
+        question: 'Complete: “音楽を聞き＿、勉強します。” (Estudo ouvindo música.)',
         options: ['ながら', 'のに', 'ので'],
         answer: 'ながら',
         explanation: 'ながら = duas ações ao mesmo tempo, com o mesmo sujeito. Vai na base do verbo: 聞きながら.',
       },
       {
-        question: 'Complete: «安い＿、おいしい＿、この店が好きです。»',
+        question: 'Complete: “安い＿、おいしい＿、この店が好きです。”',
         options: ['し', 'のに', 'ために'],
         answer: 'し',
-        explanation: 'し empilha motivos: «é barato, é gostoso…».',
+        explanation: 'し empilha motivos: “é barato, é gostoso…”.',
       },
     ],
   },
@@ -2712,7 +2712,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     sections: [
       {
         heading: 'Como formar',
-        text: 'No grupo 1, o -u final vira -a e ganha れる: 書く → 書かれる, 読む → 読まれる, 呼ぶ → 呼ばれる; o う vira わ: 言う → 言われる. No grupo 2, る → られる: 食べられる, ほめられる, idêntico ao potencial (o contexto desfaz a dúvida). する → される, 来る → 来られる (こられる). O verbo resultante é do grupo 2. Quem pratica a ação, o agente, leva に: «先生にほめられた» (fui elogiado pelo professor). Diferente do português, a passiva japonesa é muito comum na fala, sobretudo para contar o que os outros fizeram com a gente.',
+        text: 'No grupo 1, o -u final vira -a e ganha れる: 書く → 書かれる, 読む → 読まれる, 呼ぶ → 呼ばれる; o う vira わ: 言う → 言われる. No grupo 2, る → られる: 食べられる, ほめられる, idêntico ao potencial (o contexto desfaz a dúvida). する → される, 来る → 来られる (こられる). O verbo resultante é do grupo 2. Quem pratica a ação, o agente, leva に: “先生にほめられた” (fui elogiado pelo professor). Diferente do português, a passiva japonesa é muito comum na fala, sobretudo para contar o que os outros fizeram com a gente.',
         table: {
           head: ['Dicionário', 'Passiva', 'Educado', 'Português'],
           rows: [
@@ -2730,12 +2730,12 @@ export const GRAMMAR_JA: GrammarTopic[] = [
           ['先生にほめられました。', 'Fui elogiado pelo professor.'],
           ['子どものころ、よく母にしかられた。', 'Quando criança, eu levava muita bronca da minha mãe.'],
           ['知らない人に名前を呼ばれた。', 'Um desconhecido me chamou pelo nome.'],
-          ['友だちに「変わったね」と言われた。', 'Um amigo me disse: «Você mudou, hein».'],
+          ['友だちに「変わったね」と言われた。', 'Um amigo me disse: “Você mudou, hein”.'],
         ],
       },
       {
         heading: 'A passiva do incômodo',
-        text: 'O traço mais japonês da passiva é o 迷惑の受身, a passiva do incômodo. O sujeito é quem sofre as consequências, e por isso até verbos sem objeto podem ir para a passiva: «雨にふられた» é, ao pé da letra, «fui chovido», ou seja, peguei chuva. «子どもに泣かれた» é «a criança chorou (e eu que aguentei)». Com partes do corpo e posses, quem sofre é o sujeito e a coisa leva を: «電車で足をふまれた» (pisaram no meu pé no trem), «財布を盗まれた» (roubaram minha carteira). O português faz algo parecido com o «me»: «me roubaram a carteira», «a chuva me pegou». «私の財布が盗まれた» existe, mas soa como notícia, sem o «coitado de mim».',
+        text: 'O traço mais japonês da passiva é o 迷惑の受身, a passiva do incômodo. O sujeito é quem sofre as consequências, e por isso até verbos sem objeto podem ir para a passiva: “雨にふられた” é, ao pé da letra, “fui chovido”, ou seja, peguei chuva. “子どもに泣かれた” é “a criança chorou (e eu que aguentei)”. Com partes do corpo e posses, quem sofre é o sujeito e a coisa leva を: “電車で足をふまれた” (pisaram no meu pé no trem), “財布を盗まれた” (roubaram minha carteira). O português faz algo parecido com o “me”: “me roubaram a carteira”, “a chuva me pegou”. “私の財布が盗まれた” existe, mas soa como notícia, sem o “coitado de mim”.',
         table: {
           head: ['Ativa', 'Passiva do incômodo', 'Português'],
           rows: [
@@ -2755,12 +2755,12 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'A passiva impessoal e a passiva de respeito',
-        text: 'Na escrita e no jornal, a passiva aparece como a nossa, sem incômodo nenhum: «この寺は八世紀に建てられた» (este templo foi construído no século VIII), «オリンピックは東京で開かれた». Para autores de obras e descobertas, o agente leva によって: «「源氏物語」は紫式部によって書かれた». Com verbos de dizer e pensar, forma o impessoal: 〜と言われている (diz-se que), 〜と考えられている (acredita-se que). E a mesma forma é um keigo leve, muito usado no trabalho e nas notícias: «部長はもう帰られましたか» (o senhor diretor já foi embora?). É menos formal que いらっしゃる e serve para quase qualquer verbo. Com verbos do grupo 2, ela coincide com o potencial (来られる pode ser «vem», com respeito, ou «consegue vir»), e o contexto decide.',
+        text: 'Na escrita e no jornal, a passiva aparece como a nossa, sem incômodo nenhum: “この寺は八世紀に建てられた” (este templo foi construído no século VIII), “オリンピックは東京で開かれた”. Para autores de obras e descobertas, o agente leva によって: “「源氏物語」は紫式部によって書かれた”. Com verbos de dizer e pensar, forma o impessoal: 〜と言われている (diz-se que), 〜と考えられている (acredita-se que). E a mesma forma é um keigo leve, muito usado no trabalho e nas notícias: “部長はもう帰られましたか” (o senhor diretor já foi embora?). É menos formal que いらっしゃる e serve para quase qualquer verbo. Com verbos do grupo 2, ela coincide com o potencial (来られる pode ser “vem”, com respeito, ou “consegue vir”), e o contexto decide.',
         table: {
           head: ['Uso', 'Exemplo', 'Português'],
           rows: [
             ['fato, sem agente', 'この寺は八世紀に建てられた。', 'Este templo foi construído no século VIII.'],
-            ['autor: によって', '「源氏物語」は紫式部によって書かれた。', 'O «Genji Monogatari» foi escrito por Murasaki Shikibu.'],
+            ['autor: によって', '「源氏物語」は紫式部によって書かれた。', 'O “Genji Monogatari” foi escrito por Murasaki Shikibu.'],
             ['〜と言われている', '日本人は時間に正確だと言われている。', 'Dizem que os japoneses são pontuais.'],
             ['〜と考えられている', '原因は地震だと考えられている。', 'Acredita-se que a causa foi o terremoto.'],
             ['respeito leve', '社長はもう帰られました。', 'O presidente já foi embora.'],
@@ -2768,18 +2768,18 @@ export const GRAMMAR_JA: GrammarTopic[] = [
         },
         examples: [
           ['この寺は八世紀に建てられました。', 'Este templo foi construído no século VIII.'],
-          ['「源氏物語」は紫式部によって書かれた。', 'O «Genji Monogatari» foi escrito por Murasaki Shikibu.'],
+          ['「源氏物語」は紫式部によって書かれた。', 'O “Genji Monogatari” foi escrito por Murasaki Shikibu.'],
           ['この祭りは千年以上前から続けられている。', 'Este festival é realizado há mais de mil anos.'],
           ['部長はもう帰られましたか。', 'O senhor diretor já foi embora?'],
         ],
       },
     ],
     pitfalls: [
-      'Pôr a coisa roubada como sujeito para contar o que aconteceu com você: «私の財布が盗まれた» soa como notícia. O natural é (私は)財布を盗まれた.',
+      'Pôr a coisa roubada como sujeito para contar o que aconteceu com você: “私の財布が盗まれた” soa como notícia. O natural é (私は)財布を盗まれた.',
       'Marcar o agente com から ou で: na passiva comum, é に (母にしかられた); para autores e criadores, によって.',
-      'Traduzir toda passiva portuguesa com れる／られる: na conversa, o japonês prefere a ativa ou o intransitivo. «A porta foi aberta» é quase sempre ドアが開いた.',
-      'Confundir a passiva com o potencial no grupo 2: 食べられる pode ser «consigo comer» ou «foi comido». O contexto decide.',
-      'Esquecer o tom de queixa: «友だちに来られた» diz que a visita foi um incômodo. Se foi bom, use 来てくれた.',
+      'Traduzir toda passiva portuguesa com れる／られる: na conversa, o japonês prefere a ativa ou o intransitivo. “A porta foi aberta” é quase sempre ドアが開いた.',
+      'Confundir a passiva com o potencial no grupo 2: 食べられる pode ser “consigo comer” ou “foi comido”. O contexto decide.',
+      'Esquecer o tom de queixa: “友だちに来られた” diz que a visita foi um incômodo. Se foi bom, use 来てくれた.',
     ],
     quiz: [
       {
@@ -2789,25 +2789,25 @@ export const GRAMMAR_JA: GrammarTopic[] = [
         explanation: 'No grupo 1, o -u vira -a + れる; o う vira わ: 言われる.',
       },
       {
-        question: 'Como se diz «Peguei chuva»?',
+        question: 'Como se diz “Peguei chuva”?',
         options: ['雨にふられた。', '雨がふられた。', '雨をふった。'],
         answer: '雨にふられた。',
-        explanation: 'É a passiva do incômodo: o sujeito sou eu (implícito), e a chuva, com に, é quem «age».',
+        explanation: 'É a passiva do incômodo: o sujeito sou eu (implícito), e a chuva, com に, é quem “age”.',
       },
       {
-        question: 'Como se diz «Pisaram no meu pé no trem»?',
+        question: 'Como se diz “Pisaram no meu pé no trem”?',
         options: ['電車で足をふまれた。', '電車で足がふんだ。', '電車で足にふまれた。'],
         answer: '電車で足をふまれた。',
         explanation: 'Quem sofre é o sujeito; a parte do corpo leva を.',
       },
       {
-        question: 'Complete: «この小説は夏目漱石＿書かれた。» (Este romance foi escrito por Natsume Sōseki.)',
+        question: 'Complete: “この小説は夏目漱石＿書かれた。” (Este romance foi escrito por Natsume Sōseki.)',
         options: ['によって', 'から', 'で'],
         answer: 'によって',
         explanation: 'Para o autor de uma obra, o agente leva によって.',
       },
       {
-        question: 'O que quer dizer «先生は毎朝新聞を読まれますか»?',
+        question: 'O que quer dizer “先生は毎朝新聞を読まれますか”?',
         options: ['O professor lê jornal todas as manhãs?', 'O professor é lido pelo jornal todas as manhãs?', 'O jornal do professor é lido todas as manhãs?'],
         answer: 'O professor lê jornal todas as manhãs?',
         explanation: 'Aqui 読まれる é keigo leve: a forma passiva usada como respeito ao professor, que é quem lê.',
@@ -2819,7 +2819,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     level: 'B2.1',
     title: 'A causativa: 〜せる／〜させる (fazer e deixar fazer)',
     emoji: '🎬',
-    summary: 'A causativa diz que alguém faz ou deixa outra pessoa fazer algo: 子どもに野菜を食べさせる (faço a criança comer verdura). Se é «obrigar» ou «deixar», o contexto decide, e o てくれる deixa claro o favor. Dela vêm expressões do dia a dia: お待たせしました, 少し考えさせてください.',
+    summary: 'A causativa diz que alguém faz ou deixa outra pessoa fazer algo: 子どもに野菜を食べさせる (faço a criança comer verdura). Se é “obrigar” ou “deixar”, o contexto decide, e o てくれる deixa claro o favor. Dela vêm expressões do dia a dia: お待たせしました, 少し考えさせてください.',
     sections: [
       {
         heading: 'Como formar',
@@ -2844,7 +2844,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'Obrigar ou deixar? E as partículas',
-        text: 'A mesma forma serve para «obrigar» e para «deixar», e o contexto decide. Para deixar claro que foi uma permissão generosa, junte てくれる, てあげる ou てもらう: «父は私を留学させてくれた» (meu pai me deixou fazer intercâmbio, e sou grato). As partículas também ajudam. Com verbos sem objeto (ir, brincar, chorar), a pessoa que age leva を, mais impositivo, ou に, respeitando a vontade dela: «子どもを公園で遊ばせた». Com verbos que já têm um objeto com を, a pessoa leva に, para não repetir o を: «学生に本を読ませた».',
+        text: 'A mesma forma serve para “obrigar” e para “deixar”, e o contexto decide. Para deixar claro que foi uma permissão generosa, junte てくれる, てあげる ou てもらう: “父は私を留学させてくれた” (meu pai me deixou fazer intercâmbio, e sou grato). As partículas também ajudam. Com verbos sem objeto (ir, brincar, chorar), a pessoa que age leva を, mais impositivo, ou に, respeitando a vontade dela: “子どもを公園で遊ばせた”. Com verbos que já têm um objeto com を, a pessoa leva に, para não repetir o を: “学生に本を読ませた”.',
         table: {
           head: ['Frase', 'Por quê', 'Português'],
           rows: [
@@ -2862,7 +2862,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'Emoções e pedidos: お待たせしました, させてください',
-        text: 'A causativa também diz que alguém provoca uma emoção: 心配させる (deixar preocupado), 笑わせる (fazer rir), 泣かせる (fazer chorar), 待たせる (fazer esperar). Daí vem uma das frases mais ouvidas no Japão, a do garçom que traz o prato: «お待たせしました» (desculpe a espera). Com てください, vira um pedido para que deixem você fazer algo: «私にやらせてください» (deixe que eu faço), «少し考えさせてください» (deixe-me pensar um pouco, que muitas vezes é um «não» educado). E com いただく, vira a forma modesta do mundo dos negócios: «本日は休業させていただきます» (hoje não abriremos).',
+        text: 'A causativa também diz que alguém provoca uma emoção: 心配させる (deixar preocupado), 笑わせる (fazer rir), 泣かせる (fazer chorar), 待たせる (fazer esperar). Daí vem uma das frases mais ouvidas no Japão, a do garçom que traz o prato: “お待たせしました” (desculpe a espera). Com てください, vira um pedido para que deixem você fazer algo: “私にやらせてください” (deixe que eu faço), “少し考えさせてください” (deixe-me pensar um pouco, que muitas vezes é um “não” educado). E com いただく, vira a forma modesta do mundo dos negócios: “本日は休業させていただきます” (hoje não abriremos).',
         table: {
           head: ['Frase', 'Uso', 'Português'],
           rows: [
@@ -2882,10 +2882,10 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar a causativa com superiores: «先生に説明させた» diz que você obrigou o professor. O certo é 先生に説明していただいた.',
-      'Não diferenciar obrigar de deixar: para «deixar» com gratidão, junte てくれる: 行かせてくれた.',
+      'Usar a causativa com superiores: “先生に説明させた” diz que você obrigou o professor. O certo é 先生に説明していただいた.',
+      'Não diferenciar obrigar de deixar: para “deixar” com gratidão, junte てくれる: 行かせてくれた.',
       'Repetir を na mesma frase: com verbo que já tem objeto, a pessoa leva に: 学生に本を読ませる.',
-      'Levar «少し考えさせてください» ao pé da letra: numa negociação, muitas vezes é um «não» educado.',
+      'Levar “少し考えさせてください” ao pé da letra: numa negociação, muitas vezes é um “não” educado.',
       'Confundir 待たせる (fazer esperar) com 待たされる (ser obrigado a esperar), que vem no próximo tópico.',
     ],
     quiz: [
@@ -2905,16 +2905,16 @@ export const GRAMMAR_JA: GrammarTopic[] = [
         question: 'O garçom traz o prato depois de um tempo. O que ele diz?',
         options: ['お待たせしました。', 'お待ちしました。', '待たされました。'],
         answer: 'お待たせしました。',
-        explanation: 'お待たせしました = «fiz o senhor esperar», ou seja, desculpe a demora.',
+        explanation: 'お待たせしました = “fiz o senhor esperar”, ou seja, desculpe a demora.',
       },
       {
-        question: 'Como se diz «Meu pai me deixou estudar no exterior» (com gratidão)?',
+        question: 'Como se diz “Meu pai me deixou estudar no exterior” (com gratidão)?',
         options: ['父は私を留学させてくれた。', '父は私に留学させられた。', '父は私を留学した。'],
         answer: '父は私を留学させてくれた。',
         explanation: 'Causativa + てくれる = deixou, como um favor para mim.',
       },
       {
-        question: 'Complete: «先生は学生＿本を読ませた。»',
+        question: 'Complete: “先生は学生＿本を読ませた。”',
         options: ['に', 'を', 'が'],
         answer: 'に',
         explanation: 'O verbo já tem objeto (本を), então a pessoa que age leva に.',
@@ -2926,11 +2926,11 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     level: 'B2.1',
     title: 'A causativa-passiva: 〜させられる (ser obrigado a…)',
     emoji: '😩',
-    summary: 'Junte a causativa e a passiva e você tem o «fui obrigado a»: 子どものころ、野菜を食べさせられた. No grupo 1 há uma forma curta, muito falada: 待たされる, 飲まされる. E sem obrigação nenhuma, a mesma forma diz que algo mexeu com você: この映画には考えさせられた.',
+    summary: 'Junte a causativa e a passiva e você tem o “fui obrigado a”: 子どものころ、野菜を食べさせられた. No grupo 1 há uma forma curta, muito falada: 待たされる, 飲まされる. E sem obrigação nenhuma, a mesma forma diz que algo mexeu com você: この映画には考えさせられた.',
     sections: [
       {
         heading: 'Como formar',
-        text: 'Parta da causativa, que é um verbo do grupo 2, e ponha na passiva: 食べさせる → 食べさせられる. No grupo 1, a forma completa (行かせられる) tem uma versão curta, que é a mais ouvida: troque o -u por -a + される: 行かされる, 待たされる, 飲まされる. Os verbos terminados em す não encurtam, porque daria «さされる»: 話させられる. O grupo 2, する e 来る só têm a forma longa: 食べさせられる, させられる, 来させられる (こさせられる).',
+        text: 'Parta da causativa, que é um verbo do grupo 2, e ponha na passiva: 食べさせる → 食べさせられる. No grupo 1, a forma completa (行かせられる) tem uma versão curta, que é a mais ouvida: troque o -u por -a + される: 行かされる, 待たされる, 飲まされる. Os verbos terminados em す não encurtam, porque daria “さされる”: 話させられる. O grupo 2, する e 来る só têm a forma longa: 食べさせられる, させられる, 来させられる (こさせられる).',
         table: {
           head: ['Dicionário', 'Causativa', 'Causativa-passiva', 'Forma curta'],
           rows: [
@@ -2952,7 +2952,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'As quatro vozes lado a lado',
-        text: 'Vale a pena ver as quatro formas juntas. Na causativa-passiva, o sujeito é quem foi obrigado, e quem obrigou leva に: «私は母に野菜を食べさせられた» (minha mãe me obrigava a comer verdura). É a forma das reclamações: o chefe que obriga a ir ao bar depois do expediente, a fila que obriga a esperar, o professor que obriga a ler em voz alta. O português diz «me obrigaram a…», «me fizeram…», «tive que…».',
+        text: 'Vale a pena ver as quatro formas juntas. Na causativa-passiva, o sujeito é quem foi obrigado, e quem obrigou leva に: “私は母に野菜を食べさせられた” (minha mãe me obrigava a comer verdura). É a forma das reclamações: o chefe que obriga a ir ao bar depois do expediente, a fila que obriga a esperar, o professor que obriga a ler em voz alta. O português diz “me obrigaram a…”, “me fizeram…”, “tive que…”.',
         table: {
           head: ['Voz', 'Forma', 'Exemplo', 'Português'],
           rows: [
@@ -2970,7 +2970,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'Sem obrigação: 考えさせられる',
-        text: 'Com verbos de pensamento e emoção, a causativa-passiva perde a ideia de imposição e diz que algo provocou aquilo em você, quase sem querer: «この映画には考えさせられた» (este filme me fez pensar), «彼の努力には感心させられる» (não há como não admirar o esforço dele). É muito comum em resenhas, críticas e colunas de jornal. A causa costuma vir com には.',
+        text: 'Com verbos de pensamento e emoção, a causativa-passiva perde a ideia de imposição e diz que algo provocou aquilo em você, quase sem querer: “この映画には考えさせられた” (este filme me fez pensar), “彼の努力には感心させられる” (não há como não admirar o esforço dele). É muito comum em resenhas, críticas e colunas de jornal. A causa costuma vir com には.',
         table: {
           head: ['Frase', 'Português'],
           rows: [
@@ -2988,8 +2988,8 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     ],
     pitfalls: [
       'Confundir 待たせた (fiz alguém esperar) com 待たされた (me fizeram esperar).',
-      'Encurtar os verbos em す: «話さされる» está errado. É 話させられる.',
-      'Encurtar o grupo 2: «食べさされる» está errado. O grupo 2 só tem a forma longa: 食べさせられる.',
+      'Encurtar os verbos em す: “話さされる” está errado. É 話させられる.',
+      'Encurtar o grupo 2: “食べさされる” está errado. O grupo 2 só tem a forma longa: 食べさせられる.',
       'Usar a causativa-passiva para o que você fez por vontade própria: ela carrega a ideia de imposição.',
       'Marcar quem obrigou com から: é に. 母に食べさせられた.',
     ],
@@ -3007,19 +3007,19 @@ export const GRAMMAR_JA: GrammarTopic[] = [
         explanation: 'Os verbos em す não encurtam: 話させられる.',
       },
       {
-        question: 'Como se diz «Fui obrigado pela minha mãe a comer verdura»?',
+        question: 'Como se diz “Fui obrigado pela minha mãe a comer verdura”?',
         options: ['母に野菜を食べさせられた。', '母に野菜を食べさせた。', '母が野菜を食べられた。'],
         answer: '母に野菜を食べさせられた。',
         explanation: 'O sujeito (eu) foi obrigado; quem obrigou (a mãe) leva に.',
       },
       {
-        question: 'O que quer dizer «病院で二時間も待たされた»?',
+        question: 'O que quer dizer “病院で二時間も待たされた”?',
         options: ['Me fizeram esperar duas horas no hospital.', 'Fiz alguém esperar duas horas no hospital.', 'Esperei duas horas no hospital por vontade própria.'],
         answer: 'Me fizeram esperar duas horas no hospital.',
-        explanation: '待たされる = ser obrigado a esperar. O も reforça: «duas horas inteiras».',
+        explanation: '待たされる = ser obrigado a esperar. O も reforça: “duas horas inteiras”.',
       },
       {
-        question: 'O que quer dizer «この映画には考えさせられた»?',
+        question: 'O que quer dizer “この映画には考えさせられた”?',
         options: ['Este filme me fez pensar.', 'Fui obrigado a ver este filme.', 'Pensei em fazer este filme.'],
         answer: 'Este filme me fez pensar.',
         explanation: 'Com verbos de pensamento, a forma diz que algo provocou aquilo em você, sem obrigação.',
@@ -3032,11 +3032,11 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     level: 'B2.2',
     title: 'Japonês de negócios: telefone, e-mail e reunião',
     emoji: '💼',
-    summary: 'O ambiente de trabalho japonês funciona à base de frases fixas: お世話になっております, お疲れさまです, 恐れ入りますが, 承知しました. Saber quando usar cada uma, quem é «de dentro» e «de fora», e como trocar cartões de visita vale tanto quanto a gramática.',
+    summary: 'O ambiente de trabalho japonês funciona à base de frases fixas: お世話になっております, お疲れさまです, 恐れ入りますが, 承知しました. Saber quando usar cada uma, quem é “de dentro” e “de fora”, e como trocar cartões de visita vale tanto quanto a gramática.',
     sections: [
       {
         heading: 'As frases de todo dia',
-        text: 'No escritório, o dia é pontuado por fórmulas. «お疲れさまです» é o cumprimento entre colegas, a qualquer hora, no corredor ou no começo de um e-mail interno; ao pé da letra, «você deve estar cansado (de tanto trabalhar)». Ao sair antes dos outros, «お先に失礼します». Com clientes e parceiros, todo e-mail e telefonema começa com «いつもお世話になっております» (agradeço pela parceria de sempre), mesmo que seja o primeiro contato do dia. Para dizer «entendido» a um superior ou cliente, 承知しました ou かしこまりました; o 了解しました, comum entre colegas, soa casual demais para muita gente. E «ご苦労さま» só vai de cima para baixo: dizer isso ao chefe é uma gafe.',
+        text: 'No escritório, o dia é pontuado por fórmulas. “お疲れさまです” é o cumprimento entre colegas, a qualquer hora, no corredor ou no começo de um e-mail interno; ao pé da letra, “você deve estar cansado (de tanto trabalhar)”. Ao sair antes dos outros, “お先に失礼します”. Com clientes e parceiros, todo e-mail e telefonema começa com “いつもお世話になっております” (agradeço pela parceria de sempre), mesmo que seja o primeiro contato do dia. Para dizer “entendido” a um superior ou cliente, 承知しました ou かしこまりました; o 了解しました, comum entre colegas, soa casual demais para muita gente. E “ご苦労さま” só vai de cima para baixo: dizer isso ao chefe é uma gafe.',
         table: {
           head: ['Frase', 'Quando', 'Português'],
           rows: [
@@ -3056,7 +3056,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'Ao telefone',
-        text: 'O telefone de empresa tem roteiro. Não se atende com «もしもし»: diz-se o nome da empresa, «はい、〇〇でございます». Quem liga se identifica e pede a pessoa com 様 e いらっしゃる. Quem atende fala do colega sem さん e com 謙譲語, porque o colega é «de dentro»: «申し訳ございません。田中はただいま席を外しております». Depois, oferece o retorno (折り返し) ou anota o recado (伝言). E quem ligou desliga por último, depois de «失礼いたします».',
+        text: 'O telefone de empresa tem roteiro. Não se atende com “もしもし”: diz-se o nome da empresa, “はい、〇〇でございます”. Quem liga se identifica e pede a pessoa com 様 e いらっしゃる. Quem atende fala do colega sem さん e com 謙譲語, porque o colega é “de dentro”: “申し訳ございません。田中はただいま席を外しております”. Depois, oferece o retorno (折り返し) ou anota o recado (伝言). E quem ligou desliga por último, depois de “失礼いたします”.',
         table: {
           head: ['Situação', 'Frase', 'Português'],
           rows: [
@@ -3077,7 +3077,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'E-mail, palavras-almofada e cartões de visita',
-        text: 'O e-mail de negócios tem esqueleto fixo: o destinatário (empresa, departamento, nome com 様), a saudação (いつもお世話になっております), a identificação (〇〇社の田中です), o assunto e o fecho (何卒よろしくお願い申し上げます). Antes de pedir ou recusar, o japonês põe uma «palavra-almofada» (クッション言葉) que amortece o impacto: 恐れ入りますが, お手数ですが, あいにく. E há o ritual do cartão de visita (名刺交換): de pé, segurando com as duas mãos, com o texto virado para quem recebe, com uma leve reverência; o mais novo entrega primeiro e mantém o cartão um pouco mais baixo. O cartão recebido não se dobra, não se rabisca e não vai direto para o bolso: fica sobre a mesa durante a reunião.',
+        text: 'O e-mail de negócios tem esqueleto fixo: o destinatário (empresa, departamento, nome com 様), a saudação (いつもお世話になっております), a identificação (〇〇社の田中です), o assunto e o fecho (何卒よろしくお願い申し上げます). Antes de pedir ou recusar, o japonês põe uma “palavra-almofada” (クッション言葉) que amortece o impacto: 恐れ入りますが, お手数ですが, あいにく. E há o ritual do cartão de visita (名刺交換): de pé, segurando com as duas mãos, com o texto virado para quem recebe, com uma leve reverência; o mais novo entrega primeiro e mantém o cartão um pouco mais baixo. O cartão recebido não se dobra, não se rabisca e não vai direto para o bolso: fica sobre a mesa durante a reunião.',
         table: {
           head: ['Palavra-almofada', 'Uso', 'Exemplo'],
           rows: [
@@ -3099,7 +3099,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     pitfalls: [
       'Dizer 了解しました ao chefe ou a um cliente: muitos acham casual demais. Use 承知しました ou かしこまりました.',
       'Dizer ご苦労さまです a um superior: essa frase só vai de cima para baixo. Com todos, お疲れさまです.',
-      'Falar de um colega com さん a alguém de fora: «田中さんは今いません» está errado ao cliente. É 田中はただいま席を外しております.',
+      'Falar de um colega com さん a alguém de fora: “田中さんは今いません” está errado ao cliente. É 田中はただいま席を外しております.',
       'Atender o telefone da empresa com もしもし: diga o nome da empresa.',
       'Encher o texto de 〜させていただきます: um ou dois caem bem; em toda frase, soa servil e cansativo.',
       'Guardar o cartão de visita no bolso da calça ou escrever nele na frente da pessoa: é falta de respeito.',
@@ -3112,16 +3112,16 @@ export const GRAMMAR_JA: GrammarTopic[] = [
         explanation: 'É a abertura padrão com clientes e parceiros. お疲れさまです é entre colegas, e ご苦労さま só de superior para subordinado.',
       },
       {
-        question: 'Qual é o «entendido» adequado para o chefe?',
+        question: 'Qual é o “entendido” adequado para o chefe?',
         options: ['承知しました。', '了解。', 'わかった。'],
         answer: '承知しました。',
-        explanation: '承知しました (ou かしこまりました) é o «entendido» formal.',
+        explanation: '承知しました (ou かしこまりました) é o “entendido” formal.',
       },
       {
         question: 'Um cliente liga e pede o seu colega Yamada, que saiu. O que você diz?',
         options: ['山田はただいま外出しております。', '山田さんは今いないです。', '山田様は外出されています。'],
         answer: '山田はただいま外出しております。',
-        explanation: 'Para alguém de fora, o colega é «de dentro»: sem さん, com 謙譲語 (おる).',
+        explanation: 'Para alguém de fora, o colega é “de dentro”: sem さん, com 謙譲語 (おる).',
       },
       {
         question: 'Como se atende o telefone de uma empresa?',
@@ -3142,11 +3142,11 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     level: 'B2.2',
     title: 'O acento tonal (高低アクセント): 箸, 橋, 端',
     emoji: '🎵',
-    summary: 'O acento japonês não é de força, como o nosso, e sim de altura: cada mora é alta ou baixa. Por isso はし pode ser «pauzinhos» (箸, alto-baixo), «ponte» (橋, baixo-alto e cai na partícula) ou «beirada» (端, baixo-alto e fica alto). Raramente causa mal-entendido, mas é o que faz você soar natural.',
+    summary: 'O acento japonês não é de força, como o nosso, e sim de altura: cada mora é alta ou baixa. Por isso はし pode ser “pauzinhos” (箸, alto-baixo), “ponte” (橋, baixo-alto e cai na partícula) ou “beirada” (端, baixo-alto e fica alto). Raramente causa mal-entendido, mas é o que faz você soar natural.',
     sections: [
       {
         heading: 'Altura, não força',
-        text: 'No português, a sílaba tônica é mais forte e mais longa: «ca-FÉ». No japonês de Tóquio, nenhuma sílaba é mais forte nem mais longa; o que muda é a altura da voz, mora por mora: alta (●) ou baixa (○). Duas regras bastam para entender o sistema. A primeira e a segunda mora têm alturas diferentes: se a primeira é alta, a segunda é baixa; se a primeira é baixa, a segunda é alta. E, depois que a altura cai dentro de uma palavra, ela não sobe mais. O ponto onde a voz cai se chama «núcleo do acento», e cada palavra tem o seu, ou não tem nenhum. O brasileiro costuma trocar a altura por força e encolher as vogais longas: «to-KIÔ». Em japonês, とうきょう tem quatro moras e é plano, ○●●●, sem nenhuma batida mais forte.',
+        text: 'No português, a sílaba tônica é mais forte e mais longa: “ca-FÉ”. No japonês de Tóquio, nenhuma sílaba é mais forte nem mais longa; o que muda é a altura da voz, mora por mora: alta (●) ou baixa (○). Duas regras bastam para entender o sistema. A primeira e a segunda mora têm alturas diferentes: se a primeira é alta, a segunda é baixa; se a primeira é baixa, a segunda é alta. E, depois que a altura cai dentro de uma palavra, ela não sobe mais. O ponto onde a voz cai se chama “núcleo do acento”, e cada palavra tem o seu, ou não tem nenhum. O brasileiro costuma trocar a altura por força e encolher as vogais longas: “to-KIÔ”. Em japonês, とうきょう tem quatro moras e é plano, ○●●●, sem nenhuma batida mais forte.',
         table: {
           head: ['Palavra', 'Sentido', 'Tipo', 'Com が'],
           rows: [
@@ -3185,13 +3185,13 @@ export const GRAMMAR_JA: GrammarTopic[] = [
         examples: [
           ['桜がきれいですね。', 'As cerejeiras estão lindas: さくらが ○●●●.'],
           ['花が咲きました。', 'As flores desabrocharam: はなが ○●○.'],
-          ['鼻が高いですね。', 'Que nariz alto, hein (e também «que orgulho!»): はなが ○●●.'],
+          ['鼻が高いですね。', 'Que nariz alto, hein (e também “que orgulho!”): はなが ○●●.'],
           ['日本に行きたいです。', 'Quero ir ao Japão: にほん ○●○; já 二本 (dois objetos longos) é ●○○.'],
         ],
       },
       {
         heading: 'O monge Ikkyū e a ponte: acento, regiões e dicionários',
-        text: 'Uma história que toda criança japonesa conhece: diante de uma ponte, havia uma placa, «このはしわたるべからず» (proibido atravessar esta ponte). O pequeno monge Ikkyū atravessou tranquilamente pelo meio, explicando que não tinha pisado na はし, a beirada (端). Na escrita em kana, as duas palavras são idênticas; na fala, o acento as separa. O padrão que ensinamos é o de Tóquio. O Kansai (Osaka, Kyoto) tem outro sistema, com muitas palavras de padrão diferente, e há regiões, como partes de Tochigi e Ibaraki, onde as palavras nem têm acento distintivo. Para conferir o acento de uma palavra, use um dicionário com a marcação, como o dicionário de acento da NHK ou o OJAD, um dicionário on-line gratuito. E um presente para o brasileiro: nosso «caqui» vem justamente do japonês 柿.',
+        text: 'Uma história que toda criança japonesa conhece: diante de uma ponte, havia uma placa, “このはしわたるべからず” (proibido atravessar esta ponte). O pequeno monge Ikkyū atravessou tranquilamente pelo meio, explicando que não tinha pisado na はし, a beirada (端). Na escrita em kana, as duas palavras são idênticas; na fala, o acento as separa. O padrão que ensinamos é o de Tóquio. O Kansai (Osaka, Kyoto) tem outro sistema, com muitas palavras de padrão diferente, e há regiões, como partes de Tochigi e Ibaraki, onde as palavras nem têm acento distintivo. Para conferir o acento de uma palavra, use um dicionário com a marcação, como o dicionário de acento da NHK ou o OJAD, um dicionário on-line gratuito. E um presente para o brasileiro: nosso “caqui” vem justamente do japonês 柿.',
         table: {
           head: ['Onde', 'Como é'],
           rows: [
@@ -3201,18 +3201,18 @@ export const GRAMMAR_JA: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['このはしわたるべからず。', '«Proibido atravessar esta ponte», dizia a placa; Ikkyū atravessou pelo meio, alegando que não pisou na beirada (端).'],
+          ['このはしわたるべからず。', '“Proibido atravessar esta ponte”, dizia a placa; Ikkyū atravessou pelo meio, alegando que não pisou na beirada (端).'],
           ['柿を食べました。', 'Comi caqui: かきを ○●●. Com ●○○, seria 牡蠣 (ostra).'],
           ['お酒は飲みません。', 'Não bebo álcool: さけ ○●. Com ●○, seria 鮭 (salmão).'],
         ],
       },
     ],
     pitfalls: [
-      'Trocar altura por força: o japonês não «bate» na sílaba; só sobe ou desce a voz.',
-      'Alongar a sílaba que você acha tônica: «a-ri-GAA-to» cria uma vogal longa que não existe. E as longas de verdade, como as de とうきょう, não podem encolher.',
+      'Trocar altura por força: o japonês não “bate” na sílaba; só sobe ou desce a voz.',
+      'Alongar a sílaba que você acha tônica: “a-ri-GAA-to” cria uma vogal longa que não existe. E as longas de verdade, como as de とうきょう, não podem encolher.',
       'Subir a voz no fim de toda frase afirmativa: em japonês, a subida final é de pergunta.',
       'Tentar deduzir o acento pela escrita: o kanji e o kana não mostram. Consulte um dicionário com marcação.',
-      'Desanimar: o contexto quase sempre resolve. Ninguém confunde «como com ponte» com «como com pauzinhos». O acento é o toque final, não a base.',
+      'Desanimar: o contexto quase sempre resolve. Ninguém confunde “como com ponte” com “como com pauzinhos”. O acento é o toque final, não a base.',
     ],
     quiz: [
       {
@@ -3243,7 +3243,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
         question: 'Que palavra do português veio do japonês 柿?',
         options: ['caqui', 'caju', 'quiabo'],
         answer: 'caqui',
-        explanation: 'O «caqui» vem do japonês かき. E o acento de 柿 é plano (○●), diferente do de 牡蠣, a ostra (●○).',
+        explanation: 'O “caqui” vem do japonês かき. E o acento de 柿 é plano (○●), diferente do de 牡蠣, a ostra (●○).',
       },
     ],
   },
@@ -3257,7 +3257,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     sections: [
       {
         heading: 'Sons e estados',
-        text: 'O português tem algumas onomatopeias («au-au», «tique-taque», «tchibum», «blá-blá-blá»), mas quase só para sons, e quase só na fala informal. O japonês tem dois tipos, e os dois são vocabulário comum de adulto. Os 擬音語 imitam sons: o latido (ワンワン), a chuva forte (ザーザー), o trovão (ゴロゴロ). Os 擬態語 descrevem o que não faz som: o brilho (きらきら), o coração disparado (ドキドキ), a irritação (イライラ), o sono pesado (ぐっすり), o sorriso (にこにこ). No consultório, o médico pergunta «ずきずきしますか、ちくちくしますか» para saber se a dor é latejante ou em pontadas. Há até dicionários só de onomatopeias.',
+        text: 'O português tem algumas onomatopeias (“au-au”, “tique-taque”, “tchibum”, “blá-blá-blá”), mas quase só para sons, e quase só na fala informal. O japonês tem dois tipos, e os dois são vocabulário comum de adulto. Os 擬音語 imitam sons: o latido (ワンワン), a chuva forte (ザーザー), o trovão (ゴロゴロ). Os 擬態語 descrevem o que não faz som: o brilho (きらきら), o coração disparado (ドキドキ), a irritação (イライラ), o sono pesado (ぐっすり), o sorriso (にこにこ). No consultório, o médico pergunta “ずきずきしますか、ちくちくしますか” para saber se a dor é latejante ou em pontadas. Há até dicionários só de onomatopeias.',
         table: {
           head: ['Palavra', 'Tipo', 'Sentido', 'Português'],
           rows: [
@@ -3281,7 +3281,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'Como entram na frase',
-        text: 'As onomatopeias se encaixam de vários jeitos. Como advérbio, sozinhas ou com と: «ドアをドンドン(と)たたく». Com する, viram verbo: ドキドキする, イライラする, のんびりする. Com だ, viram predicado: «マリアさんは日本語がペラペラだ», «おなかがぺこぺこだ» (estou morrendo de fome). Com の, qualificam um substantivo: ふわふわのパンケーキ. E com に, dizem o resultado: «部屋をぴかぴかにした» (deixei o quarto brilhando). Quanto à forma, os moldes mais comuns são a repetição (きらきら), o AっBり (ぐっすり, すっきり) e o AんBり (のんびり). Em hiragana soam mais suaves; em katakana, mais barulhentas, como nos quadrinhos.',
+        text: 'As onomatopeias se encaixam de vários jeitos. Como advérbio, sozinhas ou com と: “ドアをドンドン(と)たたく”. Com する, viram verbo: ドキドキする, イライラする, のんびりする. Com だ, viram predicado: “マリアさんは日本語がペラペラだ”, “おなかがぺこぺこだ” (estou morrendo de fome). Com の, qualificam um substantivo: ふわふわのパンケーキ. E com に, dizem o resultado: “部屋をぴかぴかにした” (deixei o quarto brilhando). Quanto à forma, os moldes mais comuns são a repetição (きらきら), o AっBり (ぐっすり, すっきり) e o AんBり (のんびり). Em hiragana soam mais suaves; em katakana, mais barulhentas, como nos quadrinhos.',
         table: {
           head: ['Molde', 'Exemplo', 'Português'],
           rows: [
@@ -3323,13 +3323,13 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     pitfalls: [
       'Achar que onomatopeia é coisa de criança: adultos, médicos, jornais e anúncios usam o tempo todo.',
       'Trocar surdo e sonoro: ぎらぎら não é elogio, e ごろごろ não é uma bolinha delicada.',
-      'Pôr を: «ドキドキをする» está errado. Com する, a onomatopeia vira verbo direto: ドキドキする.',
-      'Traduzir ao pé da letra: ペラペラ não tem nada a ver com «pera»; é «fluente» (ou «falar demais»).',
+      'Pôr を: “ドキドキをする” está errado. Com する, a onomatopeia vira verbo direto: ドキドキする.',
+      'Traduzir ao pé da letra: ペラペラ não tem nada a ver com “pera”; é “fluente” (ou “falar demais”).',
       'Encher um texto formal de onomatopeias: num relatório ou artigo, prefira palavras comuns.',
     ],
     quiz: [
       {
-        question: 'Como se diz «Estou com o coração disparado»?',
+        question: 'Como se diz “Estou com o coração disparado”?',
         options: ['ドキドキしています。', 'ゴロゴロしています。', 'ペラペラしています。'],
         answer: 'ドキドキしています。',
         explanation: 'ドキドキ é o coração acelerado, de nervoso ou de emoção.',
@@ -3347,13 +3347,13 @@ export const GRAMMAR_JA: GrammarTopic[] = [
         explanation: 'A versão sonora (ぎら) é mais pesada e incômoda que a surda (きら).',
       },
       {
-        question: 'O que quer dizer «日本語がペラペラだ»?',
+        question: 'O que quer dizer “日本語がペラペラだ”?',
         options: ['fala japonês fluentemente', 'fala japonês devagar', 'não fala japonês'],
         answer: 'fala japonês fluentemente',
         explanation: 'ペラペラ com だ descreve quem fala uma língua com desenvoltura.',
       },
       {
-        question: 'Como se diz «Estou morrendo de fome»?',
+        question: 'Como se diz “Estou morrendo de fome”?',
         options: ['おなかがぺこぺこです。', 'おなかがぴかぴかです。', 'おなかがふわふわです。'],
         answer: 'おなかがぺこぺこです。',
         explanation: 'ぺこぺこ é a barriga vazia. ぴかぴか é brilhante, e ふわふわ é fofinho.',
@@ -3369,7 +3369,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     sections: [
       {
         heading: 'As contrações',
-        text: 'Não são erros: é assim que se fala, inclusive na TV. Cada contração tem sua regra. ている perde o い (てる). ておく vira とく. てしまう vira ちゃう (e でしまう vira じゃう: 飲んじゃう). ては vira ちゃ (では vira じゃ). なければ vira なきゃ ou なくちゃ, e o resto da frase («não dá») fica subentendido. という vira って. As sílabas ら, り, る, れ antes de な viram ん: わからない → わかんない, つまらない → つまんない. E のだ vira んだ. Na escrita e com superiores, volte às formas completas.',
+        text: 'Não são erros: é assim que se fala, inclusive na TV. Cada contração tem sua regra. ている perde o い (てる). ておく vira とく. てしまう vira ちゃう (e でしまう vira じゃう: 飲んじゃう). ては vira ちゃ (では vira じゃ). なければ vira なきゃ ou なくちゃ, e o resto da frase (“não dá”) fica subentendido. という vira って. As sílabas ら, り, る, れ antes de な viram ん: わからない → わかんない, つまらない → つまんない. E のだ vira んだ. Na escrita e com superiores, volte às formas completas.',
         table: {
           head: ['Completo', 'Falado', 'Exemplo', 'Português'],
           rows: [
@@ -3392,11 +3392,11 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'じゃん, って e companhia',
-        text: 'じゃん é o «não é?» ou o «viu?» informal, nascido na região de Yokohama e hoje ouvido no país inteiro: «いいじゃん» (tá ótimo, ué), «言ったじゃん» (eu falei, não falei?). A versão educada, 〜じゃないですか, pode soar insistente, como se o outro tivesse obrigação de saber. O って tem vários papéis: cita (田中さん、来ないって = o Tanaka disse que não vem), apresenta o assunto com um tom de comentário (日本語って、おもしろいね = esse tal de japonês é interessante, né) e abre uma correção (っていうか = aliás, quer dizer). E o «sim» e o «não» informais são うん e ううん, que só se diferenciam pela entonação.',
+        text: 'じゃん é o “não é?” ou o “viu?” informal, nascido na região de Yokohama e hoje ouvido no país inteiro: “いいじゃん” (tá ótimo, ué), “言ったじゃん” (eu falei, não falei?). A versão educada, 〜じゃないですか, pode soar insistente, como se o outro tivesse obrigação de saber. O って tem vários papéis: cita (田中さん、来ないって = o Tanaka disse que não vem), apresenta o assunto com um tom de comentário (日本語って、おもしろいね = esse tal de japonês é interessante, né) e abre uma correção (っていうか = aliás, quer dizer). E o “sim” e o “não” informais são うん e ううん, que só se diferenciam pela entonação.',
         table: {
           head: ['Forma', 'Uso', 'Exemplo', 'Português'],
           rows: [
-            ['じゃん', '«não é?», «viu?»', 'このシャツ、いいじゃん。', 'Essa camisa ficou boa, hein!'],
+            ['じゃん', '“não é?”, “viu?”', 'このシャツ、いいじゃん。', 'Essa camisa ficou boa, hein!'],
             ['〜って (citação)', 'alguém disse', '田中さん、来ないって。', 'O Tanaka disse que não vem.'],
             ['〜って (assunto)', 'comentar algo', '日本語って、おもしろいね。', 'Japonês é interessante, né?'],
             ['っていうか', 'corrigir, mudar o rumo', 'っていうか、もう時間ないよ。', 'Aliás, já não temos tempo.'],
@@ -3412,7 +3412,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'Eu, você e o gênero na fala',
-        text: 'O japonês tem vários «eu», e cada um diz algo sobre quem fala. 私 (わたし) é o neutro, e o único adequado para homens em situações formais. 僕 é masculino e suave (meninos, homens jovens, cantores). 俺 é masculino, informal e mais durão: com amigos, tudo bem; com o chefe, nunca. あたし é feminino e informal. Para «você», 君 é de superior para subordinado (e muito de letra de música), お前 e あんた soam bruscos ou íntimos. As diferenças de gênero na fala estão diminuindo, e muitas jovens usam formas neutras. Nas gírias, ヤバい é «perigoso, péssimo» e, cada vez mais, «incrível»; マジ é «sério?»; めっちゃ (do Kansai) é «muito».',
+        text: 'O japonês tem vários “eu”, e cada um diz algo sobre quem fala. 私 (わたし) é o neutro, e o único adequado para homens em situações formais. 僕 é masculino e suave (meninos, homens jovens, cantores). 俺 é masculino, informal e mais durão: com amigos, tudo bem; com o chefe, nunca. あたし é feminino e informal. Para “você”, 君 é de superior para subordinado (e muito de letra de música), お前 e あんた soam bruscos ou íntimos. As diferenças de gênero na fala estão diminuindo, e muitas jovens usam formas neutras. Nas gírias, ヤバい é “perigoso, péssimo” e, cada vez mais, “incrível”; マジ é “sério?”; めっちゃ (do Kansai) é “muito”.',
         table: {
           head: ['Palavra', 'Quem usa', 'Tom'],
           rows: [
@@ -3435,38 +3435,38 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     pitfalls: [
       'Usar as contrações por escrito ou com superiores: 食べちゃった e わかんない são de conversa entre íntimos.',
       'Usar 俺 no trabalho: com o chefe ou com clientes, 私.',
-      'Chamar alguém de お前 ou あんた achando que é só «você»: soa brusco, às vezes agressivo.',
-      'Usar ヤバい sem contexto claro: pode ser «péssimo» ou «incrível», e o tom decide.',
+      'Chamar alguém de お前 ou あんた achando que é só “você”: soa brusco, às vezes agressivo.',
+      'Usar ヤバい sem contexto claro: pode ser “péssimo” ou “incrível”, e o tom decide.',
       'Abusar de 〜じゃないですか com quem você não conhece bem: soa como cobrança.',
-      'Misturar registros na mesma frase: «そうですじゃん» não existe. Ou é そうですね, ou é そうじゃん.',
+      'Misturar registros na mesma frase: “そうですじゃん” não existe. Ou é そうですね, ou é そうじゃん.',
     ],
     quiz: [
       {
-        question: 'Qual é a forma falada de «食べてしまった»?',
+        question: 'Qual é a forma falada de “食べてしまった”?',
         options: ['食べちゃった', '食べてた', '食べとった'],
         answer: '食べちゃった',
         explanation: 'てしまう vira ちゃう; no passado, ちゃった.',
       },
       {
-        question: 'Qual é a forma falada de «行かなければ(ならない)»?',
+        question: 'Qual é a forma falada de “行かなければ(ならない)”?',
         options: ['行かなきゃ', '行かなちゃ', '行かんば'],
         answer: '行かなきゃ',
         explanation: 'なければ vira なきゃ, e o resto da frase fica subentendido.',
       },
       {
-        question: 'O que quer dizer «田中さん、来ないって»?',
+        question: 'O que quer dizer “田中さん、来ないって”?',
         options: ['O Tanaka disse que não vem.', 'O Tanaka, venha!', 'O Tanaka não veio?'],
         answer: 'O Tanaka disse que não vem.',
         explanation: 'って é a citação falada (と言っていた).',
       },
       {
-        question: 'Que «eu» um homem deve usar numa entrevista de emprego?',
+        question: 'Que “eu” um homem deve usar numa entrevista de emprego?',
         options: ['私', '俺', 'あたし'],
         answer: '私',
         explanation: '私 é o pronome neutro e formal. 俺 é informal demais, e あたし é feminino e informal.',
       },
       {
-        question: 'Qual é a forma falada de «わからない»?',
+        question: 'Qual é a forma falada de “わからない”?',
         options: ['わかんない', 'わかない', 'わからん'],
         answer: 'わかんない',
         explanation: 'ら antes de な vira ん: わかんない. わからん também existe, mas é dialetal ou masculino e mais seco.',
@@ -3478,11 +3478,11 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     level: 'B2.3',
     title: 'Expressões idiomáticas: 気, o corpo, provérbios e 四字熟語',
     emoji: '🎎',
-    summary: 'O 気 (ki: ânimo, atenção, espírito) aparece em dezenas de expressões: 気をつける, 気になる, 気が合う. As partes do corpo carregam metáforas (顔が広い, «ter o rosto largo», é conhecer muita gente). E provérbios e expressões de quatro kanji têm primos no português: 一石二鳥 é «matar dois coelhos com uma cajadada só».',
+    summary: 'O 気 (ki: ânimo, atenção, espírito) aparece em dezenas de expressões: 気をつける, 気になる, 気が合う. As partes do corpo carregam metáforas (顔が広い, “ter o rosto largo”, é conhecer muita gente). E provérbios e expressões de quatro kanji têm primos no português: 一石二鳥 é “matar dois coelhos com uma cajadada só”.',
     sections: [
       {
         heading: '気: ânimo, atenção, vontade',
-        text: 'O kanji 気 é o «ar» ou a «energia» (o mesmo ki do aikidô e do reiki) e está em palavras que você já conhece: 元気 (disposição), 天気 (tempo), 病気 (doença), 人気 (popularidade), 空気 (ar). Sozinho, ele forma expressões sobre atenção, humor e vontade, que são usadas todo dia. «気をつけてね» é o «cuidado!» de despedida. «気になる» é quando algo não sai da sua cabeça, seja uma dúvida, uma preocupação ou uma paixonite. «気にしないで» é o nosso «não esquenta».',
+        text: 'O kanji 気 é o “ar” ou a “energia” (o mesmo ki do aikidô e do reiki) e está em palavras que você já conhece: 元気 (disposição), 天気 (tempo), 病気 (doença), 人気 (popularidade), 空気 (ar). Sozinho, ele forma expressões sobre atenção, humor e vontade, que são usadas todo dia. “気をつけてね” é o “cuidado!” de despedida. “気になる” é quando algo não sai da sua cabeça, seja uma dúvida, uma preocupação ou uma paixonite. “気にしないで” é o nosso “não esquenta”.',
         table: {
           head: ['Expressão', 'Português', 'Exemplo'],
           rows: [
@@ -3505,7 +3505,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'O corpo fala',
-        text: 'Como no português («dar uma mão», «pão-duro», «cara de pau»), o japonês usa o corpo para falar de caráter e situações, e muitas imagens coincidem: 手を貸す é «dar uma mão», literalmente «emprestar a mão». Outras surpreendem: 顔が広い («o rosto é largo») é conhecer muita gente; 口がかたい («a boca é dura») é saber guardar segredo; 目がない («não ter olhos») é ser louco por algo; 首になる («virar pescoço») é ser demitido; 鼻が高い («o nariz fica alto») é ficar orgulhoso.',
+        text: 'Como no português (“dar uma mão”, “pão-duro”, “cara de pau”), o japonês usa o corpo para falar de caráter e situações, e muitas imagens coincidem: 手を貸す é “dar uma mão”, literalmente “emprestar a mão”. Outras surpreendem: 顔が広い (“o rosto é largo”) é conhecer muita gente; 口がかたい (“a boca é dura”) é saber guardar segredo; 目がない (“não ter olhos”) é ser louco por algo; 首になる (“virar pescoço”) é ser demitido; 鼻が高い (“o nariz fica alto”) é ficar orgulhoso.',
         table: {
           head: ['Expressão', 'Ao pé da letra', 'Sentido'],
           rows: [
@@ -3529,7 +3529,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'Provérbios (ことわざ) e expressões de quatro kanji (四字熟語)',
-        text: 'Os provérbios japoneses, as ことわざ, têm muitas vezes um primo brasileiro: «até o macaco cai da árvore» é o nosso «todo mundo erra». Já os 四字熟語 são expressões de quatro kanji, muitas vindas do chinês clássico, que resumem uma ideia inteira: 一石二鳥 (uma pedra, dois pássaros) é «matar dois coelhos com uma cajadada só»; 十人十色 (dez pessoas, dez cores) é «cada cabeça, uma sentença». 一期一会 (um encontro, uma vez na vida) vem do mundo da cerimônia do chá: cada encontro é único e deve ser vivido com toda a atenção. Use com parcimônia: um provérbio no lugar certo impressiona; três seguidos soam como sermão.',
+        text: 'Os provérbios japoneses, as ことわざ, têm muitas vezes um primo brasileiro: “até o macaco cai da árvore” é o nosso “todo mundo erra”. Já os 四字熟語 são expressões de quatro kanji, muitas vindas do chinês clássico, que resumem uma ideia inteira: 一石二鳥 (uma pedra, dois pássaros) é “matar dois coelhos com uma cajadada só”; 十人十色 (dez pessoas, dez cores) é “cada cabeça, uma sentença”. 一期一会 (um encontro, uma vez na vida) vem do mundo da cerimônia do chá: cada encontro é único e deve ser vivido com toda a atenção. Use com parcimônia: um provérbio no lugar certo impressiona; três seguidos soam como sermão.',
         table: {
           head: ['Expressão', 'Ao pé da letra', 'Equivalente'],
           rows: [
@@ -3552,33 +3552,33 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Traduzir ao pé da letra: 顔が広い não é «ter o rosto largo», e 首になる não tem nada a ver com pescoço.',
-      'Usar 気 com o verbo errado: «気をする» não existe. É 気にする, 気をつける, 気になる.',
+      'Traduzir ao pé da letra: 顔が広い não é “ter o rosto largo”, e 首になる não tem nada a ver com pescoço.',
+      'Usar 気 com o verbo errado: “気をする” não existe. É 気にする, 気をつける, 気になる.',
       'Confundir 気になる (ficar com algo na cabeça) com 気にする (se preocupar, ligar para).',
       'Encher a fala de provérbios: soa antiquado ou professoral. Um no lugar certo basta.',
       'Achar que todo 四字熟語 é popular: muitos só aparecem na escrita. Comece pelos do dia a dia: 一石二鳥, 十人十色, 一期一会.',
     ],
     quiz: [
       {
-        question: 'Como se diz «Cuidado com os carros»?',
+        question: 'Como se diz “Cuidado com os carros”?',
         options: ['車に気をつけて。', '車に気になって。', '車を気にして。'],
         answer: '車に気をつけて。',
         explanation: '気をつける = tomar cuidado. O perigo leva に.',
       },
       {
-        question: 'O que quer dizer «田中さんは顔が広い»?',
+        question: 'O que quer dizer “田中さんは顔が広い”?',
         options: ['O Tanaka conhece muita gente.', 'O Tanaka tem o rosto largo.', 'O Tanaka é orgulhoso.'],
         answer: 'O Tanaka conhece muita gente.',
         explanation: '顔が広い = ter muitos contatos. Orgulhoso seria 鼻が高い.',
       },
       {
-        question: 'Qual expressão equivale a «matar dois coelhos com uma cajadada só»?',
+        question: 'Qual expressão equivale a “matar dois coelhos com uma cajadada só”?',
         options: ['一石二鳥', '十人十色', '一期一会'],
         answer: '一石二鳥',
         explanation: '一石二鳥 = uma pedra, dois pássaros.',
       },
       {
-        question: 'O que quer dizer «甘いものに目がない»?',
+        question: 'O que quer dizer “甘いものに目がない”?',
         options: ['Ser louco por doces', 'Não enxergar doces', 'Não gostar de doces'],
         answer: 'Ser louco por doces',
         explanation: '〜に目がない = ser incapaz de resistir a algo.',
@@ -3587,7 +3587,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
         question: 'Qual provérbio diz que até os melhores erram?',
         options: ['猿も木から落ちる', '花より団子', '石の上にも三年'],
         answer: '猿も木から落ちる',
-        explanation: '«Até o macaco cai da árvore». 花より団子 é o útil antes do bonito, e 石の上にも三年, a paciência que vence.',
+        explanation: '“Até o macaco cai da árvore”. 花より団子 é o útil antes do bonito, e 石の上にも三年, a paciência que vence.',
       },
     ],
   },
@@ -3601,7 +3601,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     sections: [
       {
         heading: 'はず e わけ: o que se espera e o que se conclui',
-        text: 'はず é a expectativa apoiada em fatos, o nosso «deve» de dedução: «田中さんはもう着いているはずだ» (o Tanaka já deve ter chegado; saiu há duas horas). No negativo, はずがない é «não tem como». わけ é a razão ou a conclusão lógica: «毎晩三時まで起きているの？それで眠いわけだ» (você fica acordado até as três? Então é por isso que está com sono). E tem três negativos que confundem: わけではない (não é que…: 嫌いなわけではない, não é que eu não goste), わけがない (de jeito nenhum: 彼が知っているわけがない) e わけにはいかない (não posso, seria errado: 明日は大事な会議だから、休むわけにはいかない).',
+        text: 'はず é a expectativa apoiada em fatos, o nosso “deve” de dedução: “田中さんはもう着いているはずだ” (o Tanaka já deve ter chegado; saiu há duas horas). No negativo, はずがない é “não tem como”. わけ é a razão ou a conclusão lógica: “毎晩三時まで起きているの？それで眠いわけだ” (você fica acordado até as três? Então é por isso que está com sono). E tem três negativos que confundem: わけではない (não é que…: 嫌いなわけではない, não é que eu não goste), わけがない (de jeito nenhum: 彼が知っているわけがない) e わけにはいかない (não posso, seria errado: 明日は大事な会議だから、休むわけにはいかない).',
         table: {
           head: ['Forma', 'Sentido', 'Exemplo', 'Português'],
           rows: [
@@ -3622,7 +3622,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'もの e こと: a natureza das coisas e os conselhos',
-        text: 'もの, além de «coisa», fala do que é da natureza: «人は変わるものだ» (as pessoas mudam, é assim mesmo). Com o passado, vira lembrança saudosa, como o nosso «eu costumava…»: «子どものころ、よくこの川で泳いだものだ». Também dita o que é de bom senso: «年上の人には敬語を使うものだ» (com os mais velhos, se usa keigo). こと, por sua vez, dá conselhos diretos: «早く寝ることだ» (o melhor é dormir cedo), e, no negativo, tranquiliza: «心配することはない» (não precisa se preocupar).',
+        text: 'もの, além de “coisa”, fala do que é da natureza: “人は変わるものだ” (as pessoas mudam, é assim mesmo). Com o passado, vira lembrança saudosa, como o nosso “eu costumava…”: “子どものころ、よくこの川で泳いだものだ”. Também dita o que é de bom senso: “年上の人には敬語を使うものだ” (com os mais velhos, se usa keigo). こと, por sua vez, dá conselhos diretos: “早く寝ることだ” (o melhor é dormir cedo), e, no negativo, tranquiliza: “心配することはない” (não precisa se preocupar).',
         table: {
           head: ['Forma', 'Sentido', 'Exemplo', 'Português'],
           rows: [
@@ -3642,7 +3642,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'ところ e ばかり: o momento da ação',
-        text: 'ところ (lugar) virou marcador de momento. Com a forma de dicionário, é «estou para»: «今から出かけるところです». Com ている, é «estou no meio de»: «今、ご飯を食べているところ». Com た, é «acabei de», no sentido literal: «今、駅に着いたところ». ばかり com た também é «acabei de», mas subjetivo, e pode esticar: «日本に来たばかりです» (acabei de chegar ao Japão) pode ser dito três meses depois. Com a forma て + ばかりいる, é «só faz isso»: «弟はゲームばかりしている», «遊んでばかりいる». E うちに é «enquanto ainda»: 若いうちに (enquanto se é jovem), 熱いうちに (enquanto está quente).',
+        text: 'ところ (lugar) virou marcador de momento. Com a forma de dicionário, é “estou para”: “今から出かけるところです”. Com ている, é “estou no meio de”: “今、ご飯を食べているところ”. Com た, é “acabei de”, no sentido literal: “今、駅に着いたところ”. ばかり com た também é “acabei de”, mas subjetivo, e pode esticar: “日本に来たばかりです” (acabei de chegar ao Japão) pode ser dito três meses depois. Com a forma て + ばかりいる, é “só faz isso”: “弟はゲームばかりしている”, “遊んでばかりいる”. E うちに é “enquanto ainda”: 若いうちに (enquanto se é jovem), 熱いうちに (enquanto está quente).',
         table: {
           head: ['Forma', 'Sentido', 'Exemplo', 'Português'],
           rows: [
@@ -3663,39 +3663,39 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar はず para a própria vontade: «明日行くはずです» é «devo ir (está previsto)». Para intenção, つもり.',
+      'Usar はず para a própria vontade: “明日行くはずです” é “devo ir (está previsto)”. Para intenção, つもり.',
       'Confundir わけではない (não é que…) com わけがない (de jeito nenhum).',
       'Usar ところ com fatos antigos: 着いたところ é agora mesmo. Para algo que parece recente, mas não foi agora, ばかり.',
-      'Pôr ばかり no lugar errado: «ゲームをばかりする» está errado. É ゲームばかりする, ou 遊んでばかりいる.',
+      'Pôr ばかり no lugar errado: “ゲームをばかりする” está errado. É ゲームばかりする, ou 遊んでばかりいる.',
       'Usar 〜たものだ para um fato único: ele fala de hábito do passado, com saudade.',
     ],
     quiz: [
       {
-        question: 'O Tanaka saiu há duas horas; o trajeto leva uma. Como se diz «Ele já deve ter chegado»?',
+        question: 'O Tanaka saiu há duas horas; o trajeto leva uma. Como se diz “Ele já deve ter chegado”?',
         options: ['もう着いているはずだ。', 'もう着いているつもりだ。', 'もう着いたばかりだ。'],
         answer: 'もう着いているはずだ。',
-        explanation: 'はず é a expectativa apoiada em fatos. つもり é intenção, e ばかり, «acabou de».',
+        explanation: 'はず é a expectativa apoiada em fatos. つもり é intenção, e ばかり, “acabou de”.',
       },
       {
-        question: 'O que quer dizer «嫌いなわけではない»?',
+        question: 'O que quer dizer “嫌いなわけではない”?',
         options: ['Não é que eu não goste.', 'Não tem como eu não gostar.', 'Eu detesto, claro.'],
         answer: 'Não é que eu não goste.',
-        explanation: 'わけではない nega uma conclusão: «não é que…». わけがない seria «de jeito nenhum».',
+        explanation: 'わけではない nega uma conclusão: “não é que…”. わけがない seria “de jeito nenhum”.',
       },
       {
         question: 'Você está no meio do jantar e um amigo liga. O que você diz?',
         options: ['今、ご飯を食べているところ。', '今、ご飯を食べたところ。', '今、ご飯を食べるところ。'],
         answer: '今、ご飯を食べているところ。',
-        explanation: 'ている + ところ = no meio da ação. たところ é «acabei de», e 食べるところ é «estou para».',
+        explanation: 'ている + ところ = no meio da ação. たところ é “acabei de”, e 食べるところ é “estou para”.',
       },
       {
-        question: 'Complete: «明日は大事な会議があるから、休む＿。» (Não posso faltar.)',
+        question: 'Complete: “明日は大事な会議があるから、休む＿。” (Não posso faltar.)',
         options: ['わけにはいかない', 'わけがない', 'はずだ'],
         answer: 'わけにはいかない',
         explanation: 'わけにはいかない = não posso, por dever ou bom senso.',
       },
       {
-        question: 'O que quer dizer «子どものころ、よくこの公園で遊んだものだ»?',
+        question: 'O que quer dizer “子どものころ、よくこの公園で遊んだものだ”?',
         options: ['Quando criança, eu brincava muito neste parque.', 'As crianças devem brincar neste parque.', 'Este parque é coisa de criança.'],
         answer: 'Quando criança, eu brincava muito neste parque.',
         explanation: '〜たものだ = hábito do passado lembrado com saudade.',
@@ -3731,7 +3731,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'Rendaku: quando o som fica sonoro',
-        text: 'Nos compostos de palavras nativas, a primeira consoante da segunda parte muitas vezes fica sonora: k vira g, s vira z, t vira d, h vira b. É o 連濁 (rendaku): て + かみ = てがみ (carta), はな + ひ = はなび (fogos de artifício), ほん + たな = ほんだな (estante). Não é lei absoluta, mas tem freios conhecidos. O principal: se a segunda parte já tem uma consoante sonora, o rendaku não acontece (はる + かぜ = はるかぜ, e não «はるがぜ»). Também não costuma acontecer em palavras estrangeiras nem em compostos de «isto e aquilo»: 山川 lido やまかわ é «montanhas e rios», e lido やまがわ é «rio de montanha». O sinal 々 repete o kanji anterior, e com ele vem o rendaku: 人々 = ひとびと.',
+        text: 'Nos compostos de palavras nativas, a primeira consoante da segunda parte muitas vezes fica sonora: k vira g, s vira z, t vira d, h vira b. É o 連濁 (rendaku): て + かみ = てがみ (carta), はな + ひ = はなび (fogos de artifício), ほん + たな = ほんだな (estante). Não é lei absoluta, mas tem freios conhecidos. O principal: se a segunda parte já tem uma consoante sonora, o rendaku não acontece (はる + かぜ = はるかぜ, e não “はるがぜ”). Também não costuma acontecer em palavras estrangeiras nem em compostos de “isto e aquilo”: 山川 lido やまかわ é “montanhas e rios”, e lido やまがわ é “rio de montanha”. O sinal 々 repete o kanji anterior, e com ele vem o rendaku: 人々 = ひとびと.',
         table: {
           head: ['Partes', 'Composto', 'Português'],
           rows: [
@@ -3751,7 +3751,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'As três camadas: 和語, 漢語, 外来語',
-        text: 'O português tem palavras populares («olho»), eruditas («ocular») e estrangeiras («shopping»). O japonês tem o mesmo desenho. Os 和語, palavras nativas, são o vocabulário do dia a dia, suave e concreto: はじめる, きまり. Os 漢語, palavras sino-japonesas lidas em on, são o registro formal e técnico: 開始, 規則. Os 外来語, em katakana, vêm sobretudo do inglês e soam modernos: スタート, ルール. Os trios nem sempre são sinônimos perfeitos: 旅館 é a hospedaria em estilo japonês, e ホテル, o hotel ocidental. No meio dos 外来語 estão as palavras que os portugueses levaram no século XVI: パン (pão), ボタン (botão), カッパ (capa de chuva), タバコ, カルタ (carta de baralho). E há os falsos estrangeirismos, criados no Japão: マンション é um prédio de apartamentos, não uma mansão; サラリーマン é o funcionário assalariado; コンセント é a tomada.',
+        text: 'O português tem palavras populares (“olho”), eruditas (“ocular”) e estrangeiras (“shopping”). O japonês tem o mesmo desenho. Os 和語, palavras nativas, são o vocabulário do dia a dia, suave e concreto: はじめる, きまり. Os 漢語, palavras sino-japonesas lidas em on, são o registro formal e técnico: 開始, 規則. Os 外来語, em katakana, vêm sobretudo do inglês e soam modernos: スタート, ルール. Os trios nem sempre são sinônimos perfeitos: 旅館 é a hospedaria em estilo japonês, e ホテル, o hotel ocidental. No meio dos 外来語 estão as palavras que os portugueses levaram no século XVI: パン (pão), ボタン (botão), カッパ (capa de chuva), タバコ, カルタ (carta de baralho). E há os falsos estrangeirismos, criados no Japão: マンション é um prédio de apartamentos, não uma mansão; サラリーマン é o funcionário assalariado; コンセント é a tomada.',
         table: {
           head: ['和語 (nativo)', '漢語 (sino-japonês)', '外来語 (estrangeiro)', 'Português'],
           rows: [
@@ -3763,18 +3763,18 @@ export const GRAMMAR_JA: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['パンとボタンは、ポルトガル語から来た言葉です。', '«Pão» e «botão» são palavras que vieram do português.'],
-          ['駅前に新しいマンションが建った。', 'Construíram um prédio de apartamentos novo em frente à estação. (マンション não é «mansão»)'],
+          ['パンとボタンは、ポルトガル語から来た言葉です。', '“Pão” e “botão” são palavras que vieram do português.'],
+          ['駅前に新しいマンションが建った。', 'Construíram um prédio de apartamentos novo em frente à estação. (マンション não é “mansão”)'],
           ['スマホでコンビニの場所を調べた。', 'Procurei a loja de conveniência no celular: スマホ e コンビニ são abreviações de スマートフォン e コンビニエンスストア.'],
           ['会議は十時に開始します。', 'A reunião começa às dez. (漢語: tom de aviso)'],
         ],
       },
     ],
     pitfalls: [
-      'Ler um composto com a leitura kun: 食事 é しょくじ, não «たべこと». Compostos costumam ir em on.',
-      'Ignorar o rendaku: «てかみ» e «はなひ» estão errados. É てがみ, はなび.',
+      'Ler um composto com a leitura kun: 食事 é しょくじ, não “たべこと”. Compostos costumam ir em on.',
+      'Ignorar o rendaku: “てかみ” e “はなひ” estão errados. É てがみ, はなび.',
       'Confiar nos falsos estrangeirismos: マンション é prédio de apartamentos, カンニング é cola na prova, クレーム é reclamação.',
-      'Usar 漢語 demais na conversa: «開始しましょう» entre amigos soa como ata de reunião. Diga 始めよう.',
+      'Usar 漢語 demais na conversa: “開始しましょう” entre amigos soa como ata de reunião. Diga 始めよう.',
       'Achar que todo kanji tem só duas leituras: alguns, como 生 e 日, têm várias. Aprenda as leituras dentro das palavras.',
     ],
     quiz: [
@@ -3791,7 +3791,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
         explanation: 'É o rendaku: て + かみ = てがみ.',
       },
       {
-        question: 'Por que 春風 é はるかぜ, e não «はるがぜ»?',
+        question: 'Por que 春風 é はるかぜ, e não “はるがぜ”?',
         options: ['Porque a segunda parte já tem uma consoante sonora', 'Porque é palavra estrangeira', 'Porque a primeira parte é lida em on'],
         answer: 'Porque a segunda parte já tem uma consoante sonora',
         explanation: 'O rendaku não acontece quando a segunda parte já tem uma consoante sonora (o ぜ de かぜ).',
@@ -3800,13 +3800,13 @@ export const GRAMMAR_JA: GrammarTopic[] = [
         question: 'Qual destas palavras veio do português?',
         options: ['ボタン', 'ホテル', 'スタート'],
         answer: 'ボタン',
-        explanation: 'ボタン vem de «botão», levada pelos portugueses no século XVI. ホテル e スタート vêm do inglês.',
+        explanation: 'ボタン vem de “botão”, levada pelos portugueses no século XVI. ホテル e スタート vêm do inglês.',
       },
       {
         question: 'O que é uma マンション no Japão?',
         options: ['Um prédio de apartamentos', 'Uma mansão', 'Um hotel de luxo'],
         answer: 'Um prédio de apartamentos',
-        explanation: 'É um falso estrangeirismo: a palavra inglesa «mansion» ganhou outro sentido no Japão.',
+        explanation: 'É um falso estrangeirismo: a palavra inglesa “mansion” ganhou outro sentido no Japão.',
       },
     ],
   },
@@ -3820,7 +3820,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     sections: [
       {
         heading: 'Três estilos: です・ます, だ e である',
-        text: 'Todo texto japonês escolhe um estilo e fica nele. O です・ます調 é o das cartas, blogs e discursos, que falam com o leitor. O だ・である調 (常体) é o dos jornais, relatórios, artigos acadêmicos e romances. Dentro dele, である é a cópula mais formal e solene: 〜である, 〜ではない, 〜であった, 〜であろう, e 〜のである para arrematar uma explicação. A primeira linha mais famosa da literatura japonesa moderna brinca com isso: em «吾輩は猫である» (1905), de Natsume Sōseki, o narrador é um gato que fala com a pompa de um professor, usando 吾輩, um «eu» empolado, e o solene である.',
+        text: 'Todo texto japonês escolhe um estilo e fica nele. O です・ます調 é o das cartas, blogs e discursos, que falam com o leitor. O だ・である調 (常体) é o dos jornais, relatórios, artigos acadêmicos e romances. Dentro dele, である é a cópula mais formal e solene: 〜である, 〜ではない, 〜であった, 〜であろう, e 〜のである para arrematar uma explicação. A primeira linha mais famosa da literatura japonesa moderna brinca com isso: em “吾輩は猫である” (1905), de Natsume Sōseki, o narrador é um gato que fala com a pompa de um professor, usando 吾輩, um “eu” empolado, e o solene である.',
         table: {
           head: ['Educado (です・ます)', 'Simples (だ)', 'Escrito (である)', 'Português'],
           rows: [
@@ -3839,7 +3839,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: '連用中止 e as formas escritas',
-        text: 'Na escrita, as orações se encadeiam pela base do verbo, sem て: «東京に行き、友人に会った» (fui a Tóquio e encontrei um amigo). É o 連用中止法. Com adjetivos, 高く e 静かであり; com substantivos, 〜であり. Outras trocas típicas: ていて vira ており, ないで vira ず (ou ずに), なければならない vira ねばならない, e o «acho que» pessoal cede lugar ao impessoal 〜と考えられる. Os conectores também mudam de roupa: でも vira しかし, だから vira したがって ou そのため, e aparecem 一方 (por outro lado), また, さらに, なお (acrescente-se que), すなわち (ou seja).',
+        text: 'Na escrita, as orações se encadeiam pela base do verbo, sem て: “東京に行き、友人に会った” (fui a Tóquio e encontrei um amigo). É o 連用中止法. Com adjetivos, 高く e 静かであり; com substantivos, 〜であり. Outras trocas típicas: ていて vira ており, ないで vira ず (ou ずに), なければならない vira ねばならない, e o “acho que” pessoal cede lugar ao impessoal 〜と考えられる. Os conectores também mudam de roupa: でも vira しかし, だから vira したがって ou そのため, e aparecem 一方 (por outro lado), また, さらに, なお (acrescente-se que), すなわち (ou seja).',
         table: {
           head: ['Falado', 'Escrito', 'Português'],
           rows: [
@@ -3861,7 +3861,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'Jornal e academia',
-        text: 'A manchete japonesa corta partículas e verbos e empilha 漢語: «首相、来月訪米へ» (o primeiro-ministro visitará os EUA no mês que vem). Nessas abreviações, cada país tem seu kanji: 米 é os Estados Unidos, 英 o Reino Unido, 中 a China, e 伯 é o Brasil (de 伯剌西爾, a antiga grafia de «Brasil»), por isso as relações nipo-brasileiras são 日伯関係. No corpo da notícia, aparecem 〜によると (segundo), 〜とみられる (acredita-se), 〜という (diz-se), e terminar a frase num substantivo (体言止め) dá ritmo. O texto acadêmico tem suas fórmulas: 本稿では〜を論じる (neste artigo, discute-se), 〜と言える (pode-se dizer), e a cautela típica de 〜のではないだろうか (não seria o caso de…?).',
+        text: 'A manchete japonesa corta partículas e verbos e empilha 漢語: “首相、来月訪米へ” (o primeiro-ministro visitará os EUA no mês que vem). Nessas abreviações, cada país tem seu kanji: 米 é os Estados Unidos, 英 o Reino Unido, 中 a China, e 伯 é o Brasil (de 伯剌西爾, a antiga grafia de “Brasil”), por isso as relações nipo-brasileiras são 日伯関係. No corpo da notícia, aparecem 〜によると (segundo), 〜とみられる (acredita-se), 〜という (diz-se), e terminar a frase num substantivo (体言止め) dá ritmo. O texto acadêmico tem suas fórmulas: 本稿では〜を論じる (neste artigo, discute-se), 〜と言える (pode-se dizer), e a cautela típica de 〜のではないだろうか (não seria o caso de…?).',
         table: {
           head: ['Expressão', 'Uso', 'Exemplo'],
           rows: [
@@ -3874,7 +3874,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['首相、来月訪米へ', 'Manchete: «Primeiro-ministro visitará os EUA no mês que vem»'],
+          ['首相、来月訪米へ', 'Manchete: “Primeiro-ministro visitará os EUA no mês que vem”'],
           ['警察によると、けが人はいないという。', 'Segundo a polícia, não há feridos.'],
           ['日伯交流の歴史は百年以上に及ぶ。', 'A história do intercâmbio Japão-Brasil passa de cem anos.'],
           ['この結果は、方法を見直す必要があることを示しているのではないだろうか。', 'Este resultado não estaria mostrando a necessidade de rever o método?'],
@@ -3884,31 +3884,31 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     pitfalls: [
       'Misturar です・ます e である no mesmo texto: escolha um estilo e fique nele.',
       'Usar である na conversa: soa como alguém lendo um discurso.',
-      'Encadear orações com a base do verbo na fala informal: «行き、会った» é de texto; na conversa, 行って、会った.',
+      'Encadear orações com a base do verbo na fala informal: “行き、会った” é de texto; na conversa, 行って、会った.',
       'Colocar 的 em tudo: 経済的, 文化的, 基本的… um ou outro enriquece; em série, o texto fica pesado.',
       'Escrever o corpo do texto em estilo de manchete: a compressão (首相、訪米へ) é só para títulos.',
     ],
     quiz: [
       {
-        question: 'Qual é a versão em である de «学生でした»?',
+        question: 'Qual é a versão em である de “学生でした”?',
         options: ['学生であった', '学生であるでした', '学生でありました'],
         answer: '学生であった',
         explanation: 'No estilo である, o passado é であった.',
       },
       {
-        question: 'Qual é a forma escrita de «東京に行って、友人に会った»?',
+        question: 'Qual é a forma escrita de “東京に行って、友人に会った”?',
         options: ['東京に行き、友人に会った。', '東京に行きて、友人に会った。', '東京に行った、友人に会った。'],
         answer: '東京に行き、友人に会った。',
         explanation: 'O 連用中止法 liga as orações pela base do verbo: 行き.',
       },
       {
-        question: 'Qual é a forma escrita de «何も言わないで»?',
+        question: 'Qual é a forma escrita de “何も言わないで”?',
         options: ['何も言わず', '何も言わぬで', '何も言わなく'],
         answer: '何も言わず',
         explanation: 'Na escrita, ないで vira ず (ou ずに).',
       },
       {
-        question: 'O que quer dizer a manchete «首相、来月訪米へ»?',
+        question: 'O que quer dizer a manchete “首相、来月訪米へ”?',
         options: ['O primeiro-ministro visitará os EUA no mês que vem.', 'O primeiro-ministro visitou a China no mês passado.', 'Um americano visitará o primeiro-ministro.'],
         answer: 'O primeiro-ministro visitará os EUA no mês que vem.',
         explanation: '訪米 = visita aos EUA (米 = Estados Unidos), e へ indica a direção, o que está por vir.',
@@ -3930,7 +3930,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     sections: [
       {
         heading: 'Kansai-ben: o dialeto que todo japonês entende',
-        text: 'O dialeto de Kansai é o «jeito de falar de Osaka» que todo japonês reconhece na hora: Osaka é a terra da comédia, dos comerciantes e da comida de rua. É também o único dialeto que se ouve o tempo todo na TV nacional, porque os comediantes de Osaka dominam os programas. Na dupla de 漫才 (manzai), um faz o bobo (ボケ) e o outro corrige com um tapinha e um «なんでやねん！» (mas por quê?!). A cópula だ vira や, o negativo ない vira へん, e muita palavra muda. O acento também é outro. Kyoto tem uma fala mais suave e famosa pela indireta elegante, com o honorífico 〜はる (先生が来はる) e o «seja bem-vindo» おいでやす.',
+        text: 'O dialeto de Kansai é o “jeito de falar de Osaka” que todo japonês reconhece na hora: Osaka é a terra da comédia, dos comerciantes e da comida de rua. É também o único dialeto que se ouve o tempo todo na TV nacional, porque os comediantes de Osaka dominam os programas. Na dupla de 漫才 (manzai), um faz o bobo (ボケ) e o outro corrige com um tapinha e um “なんでやねん！” (mas por quê?!). A cópula だ vira や, o negativo ない vira へん, e muita palavra muda. O acento também é outro. Kyoto tem uma fala mais suave e famosa pela indireta elegante, com o honorífico 〜はる (先生が来はる) e o “seja bem-vindo” おいでやす.',
         table: {
           head: ['Padrão', 'Kansai', 'Português'],
           rows: [
@@ -3956,7 +3956,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'Pelo Japão afora',
-        text: 'Cada região tem sua marca. No Tohoku, o nordeste, os sons し e す, ち e つ tendem a se confundir, e «sim» pode ser んだ. Em Hokkaido, なまら é «muito». Em Nagoya, o final 〜だがや ficou famoso. Em Hiroshima, 〜じゃけえ é «porque», o sotaque dos filmes de yakuza. Em Fukuoka (Hakata), a pergunta termina em と: 何しよると？ (o que você está fazendo?). E em Okinawa, mais do que dialetos, há línguas ryukyuanas, parentes do japonês mas diferentes o bastante para não se entenderem; hoje estão ameaçadas, e o que se ouve no dia a dia é um japonês com palavras de lá: めんそーれ (bem-vindo), なんくるないさ (vai dar tudo certo), ちゅら (bonito, como em ちゅら海).',
+        text: 'Cada região tem sua marca. No Tohoku, o nordeste, os sons し e す, ち e つ tendem a se confundir, e “sim” pode ser んだ. Em Hokkaido, なまら é “muito”. Em Nagoya, o final 〜だがや ficou famoso. Em Hiroshima, 〜じゃけえ é “porque”, o sotaque dos filmes de yakuza. Em Fukuoka (Hakata), a pergunta termina em と: 何しよると？ (o que você está fazendo?). E em Okinawa, mais do que dialetos, há línguas ryukyuanas, parentes do japonês mas diferentes o bastante para não se entenderem; hoje estão ameaçadas, e o que se ouve no dia a dia é um japonês com palavras de lá: めんそーれ (bem-vindo), なんくるないさ (vai dar tudo certo), ちゅら (bonito, como em ちゅら海).',
         table: {
           head: ['Região', 'Dialeto', 'Padrão', 'Português'],
           rows: [
@@ -3994,27 +3994,27 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Imitar o Kansai-ben pela metade: o «falso kansai» (エセ関西弁) irrita os nativos de lá. Ou aprenda direito, ou fale o padrão.',
+      'Imitar o Kansai-ben pela metade: o “falso kansai” (エセ関西弁) irrita os nativos de lá. Ou aprenda direito, ou fale o padrão.',
       'Usar dialeto em texto formal: relatórios e e-mails de trabalho vão em 共通語.',
       'Achar que as línguas de Okinawa são só um sotaque: são línguas próprias, da mesma família do japonês.',
-      'Tratar o dialeto como «errado»: é outra norma, com gramática própria. O padrão é só o comum a todos.',
-      'Levar estereótipos a sério: ninguém em Osaka cumprimenta de verdade com «もうかりまっか？» a cada esquina.',
+      'Tratar o dialeto como “errado”: é outra norma, com gramática própria. O padrão é só o comum a todos.',
+      'Levar estereótipos a sério: ninguém em Osaka cumprimenta de verdade com “もうかりまっか？” a cada esquina.',
     ],
     quiz: [
       {
-        question: 'Como se diz «não vou» em Kansai-ben?',
+        question: 'Como se diz “não vou” em Kansai-ben?',
         options: ['行かへん', '行かんばい', '行かねえだ'],
         answer: '行かへん',
         explanation: 'Em Kansai, o negativo ない vira へん: 行かへん, 食べへん.',
       },
       {
-        question: 'O que quer dizer «あかん»?',
+        question: 'O que quer dizer “あかん”?',
         options: ['não pode, não dá', 'obrigado', 'muito'],
         answer: 'não pode, não dá',
         explanation: 'あかん é o だめ de Kansai. Obrigado é おおきに, e muito é めっちゃ.',
       },
       {
-        question: 'O que quer dizer «なんくるないさ»?',
+        question: 'O que quer dizer “なんくるないさ”?',
         options: ['Vai dar tudo certo.', 'Bem-vindo.', 'Não entendi.'],
         answer: 'Vai dar tudo certo.',
         explanation: 'É a expressão mais famosa de Okinawa. Bem-vindo é めんそーれ.',
@@ -4029,7 +4029,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
         question: 'Qual é a réplica clássica da comédia de Osaka?',
         options: ['なんでやねん！', 'なまら！', 'めんそーれ！'],
         answer: 'なんでやねん！',
-        explanation: '«Mas por quê?!»: é a fala de quem corrige o bobo na dupla de manzai.',
+        explanation: '“Mas por quê?!”: é a fala de quem corrige o bobo na dupla de manzai.',
       },
     ],
   },
@@ -4039,7 +4039,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     level: 'C1.2',
     title: 'Keigo avançado: cartas formais, as cinco categorias e os erros de keigo',
     emoji: '✉️',
-    summary: 'A carta formal japonesa tem arquitetura fixa: 拝啓, a saudação da estação, o corpo, e 敬具 para fechar. Há um vocabulário próprio (貴社, 弊社, ご査収ください), uma classificação oficial do keigo em cinco tipos, e erros que todo japonês nota: o keigo em dobro e o «keigo de balcão».',
+    summary: 'A carta formal japonesa tem arquitetura fixa: 拝啓, a saudação da estação, o corpo, e 敬具 para fechar. Há um vocabulário próprio (貴社, 弊社, ご査収ください), uma classificação oficial do keigo em cinco tipos, e erros que todo japonês nota: o keigo em dobro e o “keigo de balcão”.',
     sections: [
       {
         heading: 'A carta formal',
@@ -4063,7 +4063,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'O vocabulário da cortesia escrita',
-        text: 'A escrita formal tem palavras próprias para «vocês» e «nós». A empresa do outro é 貴社 na escrita e 御社 na fala; a sua é 弊社 («nossa humilde empresa»). Os pedidos vêm envoltos em fórmulas: «ご査収ください» (queira examinar o anexo), «ご検討のほど、よろしくお願いいたします» (peço a gentileza de considerar), «〜いただけますと幸いです» (ficaria grato se…). Para acompanhar um presente, «ご笑納ください», literalmente «aceite sorrindo (esta coisinha)». E para se despedir desejando saúde, «ご自愛ください».',
+        text: 'A escrita formal tem palavras próprias para “vocês” e “nós”. A empresa do outro é 貴社 na escrita e 御社 na fala; a sua é 弊社 (“nossa humilde empresa”). Os pedidos vêm envoltos em fórmulas: “ご査収ください” (queira examinar o anexo), “ご検討のほど、よろしくお願いいたします” (peço a gentileza de considerar), “〜いただけますと幸いです” (ficaria grato se…). Para acompanhar um presente, “ご笑納ください”, literalmente “aceite sorrindo (esta coisinha)”. E para se despedir desejando saúde, “ご自愛ください”.',
         table: {
           head: ['Palavra', 'Sentido', 'Uso'],
           rows: [
@@ -4084,14 +4084,14 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'As cinco categorias e os erros que todo japonês nota',
-        text: 'Em 2007, o Conselho de Cultura do governo japonês publicou diretrizes que dividem o keigo em cinco tipos. Além do 尊敬語, do 丁寧語 e do 美化語, o antigo 謙譲語 se dividiu em dois: o 謙譲語Ⅰ rebaixa você diante de alguém que recebe a ação (伺う, 申し上げる, お届けする), e o 謙譲語Ⅱ, ou 丁重語, só dá solenidade diante de quem ouve, sem ninguém que receba a ação: «明日から出張に参ります» (amanhã viajo a trabalho). E há os erros clássicos. O keigo em dobro, como おっしゃられる. E o «keigo de balcão» (バイト敬語), das lojas e restaurantes: «こちらコーヒーになります» (o café não «vira» nada), «よろしかったでしょうか» (um passado sem motivo), «千円からお預かりします». Muitos japoneses torcem o nariz para eles.',
+        text: 'Em 2007, o Conselho de Cultura do governo japonês publicou diretrizes que dividem o keigo em cinco tipos. Além do 尊敬語, do 丁寧語 e do 美化語, o antigo 謙譲語 se dividiu em dois: o 謙譲語Ⅰ rebaixa você diante de alguém que recebe a ação (伺う, 申し上げる, お届けする), e o 謙譲語Ⅱ, ou 丁重語, só dá solenidade diante de quem ouve, sem ninguém que receba a ação: “明日から出張に参ります” (amanhã viajo a trabalho). E há os erros clássicos. O keigo em dobro, como おっしゃられる. E o “keigo de balcão” (バイト敬語), das lojas e restaurantes: “こちらコーヒーになります” (o café não “vira” nada), “よろしかったでしょうか” (um passado sem motivo), “千円からお預かりします”. Muitos japoneses torcem o nariz para eles.',
         table: {
           head: ['Erro', 'Por quê', 'Melhor'],
           rows: [
             ['社長がおっしゃられました', 'keigo em dobro', '社長がおっしゃいました'],
-            ['こちらコーヒーになります', 'nada «vira» café', 'こちらコーヒーでございます'],
+            ['こちらコーヒーになります', 'nada “vira” café', 'こちらコーヒーでございます'],
             ['以上でよろしかったでしょうか', 'passado sem motivo', '以上でよろしいでしょうか'],
-            ['千円からお預かりします', '«a partir de» sem sentido', '千円お預かりします'],
+            ['千円からお預かりします', '“a partir de” sem sentido', '千円お預かりします'],
             ['拝見させていただきます', 'modéstia em dobro', '拝見します'],
           ],
         },
@@ -4107,7 +4107,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       'Abrir com 拝啓 e esquecer o 敬具: a abertura e o fecho andam em par.',
       'Usar a saudação da estação errada: 残暑の候 em dezembro soa como carta pronta copiada sem ler.',
       'Empilhar keigo: おっしゃられる, お召し上がりになられる. Um nível de respeito basta.',
-      'Copiar o keigo de balcão: «〜になります» e «よろしかったでしょうか» incomodam muitos ouvidos.',
+      'Copiar o keigo de balcão: “〜になります” e “よろしかったでしょうか” incomodam muitos ouvidos.',
       'Encher o texto de 〜させていただきます: soa servil e cansativo.',
     ],
     quiz: [
@@ -4118,16 +4118,16 @@ export const GRAMMAR_JA: GrammarTopic[] = [
         explanation: '拝啓 … 敬具. 前略 (que dispensa as saudações) fecha com 草々.',
       },
       {
-        question: 'Como se escreve «a sua empresa» numa carta formal?',
+        question: 'Como se escreve “a sua empresa” numa carta formal?',
         options: ['貴社', '御社', '弊社'],
         answer: '貴社',
         explanation: '貴社 é o da escrita; 御社, o da fala; e 弊社 é a própria empresa.',
       },
       {
-        question: 'O que se pede com «ご査収ください»?',
+        question: 'O que se pede com “ご査収ください”?',
         options: ['Que examinem o material enviado', 'Que aceitem um presente', 'Que se cuidem'],
         answer: 'Que examinem o material enviado',
-        explanation: 'ご査収 = examinar e receber o que foi enviado. Presente é ご笑納, e «cuide-se» é ご自愛.',
+        explanation: 'ご査収 = examinar e receber o que foi enviado. Presente é ご笑納, e “cuide-se” é ご自愛.',
       },
       {
         question: 'Qual destas frases tem keigo em dobro?',
@@ -4136,10 +4136,10 @@ export const GRAMMAR_JA: GrammarTopic[] = [
         explanation: 'おっしゃる já é respeitoso; somar られる dobra o keigo.',
       },
       {
-        question: 'Qual é a forma correta, sem «keigo de balcão»?',
+        question: 'Qual é a forma correta, sem “keigo de balcão”?',
         options: ['こちらコーヒーでございます。', 'こちらコーヒーになります。', 'こちらコーヒーのほうになります。'],
         answer: 'こちらコーヒーでございます。',
-        explanation: 'でございます é o です respeitoso. «〜になります» sugere que algo se transformou em café.',
+        explanation: 'でございます é o です respeitoso. “〜になります” sugere que algo se transformou em café.',
       },
     ],
   },
@@ -4152,7 +4152,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     sections: [
       {
         heading: 'Sem escolha: ざるを得ない, ずにはいられない, を余儀なくされる',
-        text: '〜ざるを得ない é «não ter outra saída senão»: a forma ない sem o ない + ざるを得ない (行かざるを得ない); com する, せざるを得ない. É uma obrigação imposta pelas circunstâncias ou pela razão. 〜ずにはいられない é outra coisa: o impulso emocional que não dá para segurar: «笑わずにはいられない» (não tem como não rir); com する, せずにはいられない. 〜を余儀なくされる, típico do jornal, é «ser forçado a», por causa de fatores externos: «台風のため、試合は中止を余儀なくされた».',
+        text: '〜ざるを得ない é “não ter outra saída senão”: a forma ない sem o ない + ざるを得ない (行かざるを得ない); com する, せざるを得ない. É uma obrigação imposta pelas circunstâncias ou pela razão. 〜ずにはいられない é outra coisa: o impulso emocional que não dá para segurar: “笑わずにはいられない” (não tem como não rir); com する, せずにはいられない. 〜を余儀なくされる, típico do jornal, é “ser forçado a”, por causa de fatores externos: “台風のため、試合は中止を余儀なくされた”.',
         table: {
           head: ['Forma', 'Sentido', 'Exemplo', 'Português'],
           rows: [
@@ -4170,7 +4170,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'Ênfase e avaliação: にほかならない, ならでは, てやまない, まじき',
-        text: 'Estes padrões dão peso ao que se afirma. 〜にほかならない é «não é outra coisa senão»: «成功は努力の結果にほかならない» (o sucesso nada mais é que fruto do esforço). 〜ならでは é «que só existe em», com orgulho: 京都ならではの景色 (uma paisagem que só Kyoto tem). 〜てやまない é «não parar de» desejar, amar ou esperar, comum em discursos: 平和を願ってやまない. 〜まじき é «impróprio de», uma censura séria: 教師にあるまじき行為 (uma atitude inadmissível para um professor). E 〜きらいがある aponta uma tendência ruim: «彼は物事を大げさに言うきらいがある» (ele tende a exagerar).',
+        text: 'Estes padrões dão peso ao que se afirma. 〜にほかならない é “não é outra coisa senão”: “成功は努力の結果にほかならない” (o sucesso nada mais é que fruto do esforço). 〜ならでは é “que só existe em”, com orgulho: 京都ならではの景色 (uma paisagem que só Kyoto tem). 〜てやまない é “não parar de” desejar, amar ou esperar, comum em discursos: 平和を願ってやまない. 〜まじき é “impróprio de”, uma censura séria: 教師にあるまじき行為 (uma atitude inadmissível para um professor). E 〜きらいがある aponta uma tendência ruim: “彼は物事を大げさに言うきらいがある” (ele tende a exagerar).',
         table: {
           head: ['Forma', 'Sentido', 'Exemplo', 'Português'],
           rows: [
@@ -4189,7 +4189,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'Tempo e propósito: や否や, べく, をもって, とはいえ',
-        text: 'Na escrita, o tempo e o objetivo também ganham formas próprias. 〜や否や (ou 〜が早いか) é «mal… e já»: «ベルが鳴るや否や、学生たちは教室を飛び出した». 〜べく é «a fim de», com ar decidido: «夢を実現すべく、留学を決めた»; com する, すべく. 〜をもって marca um prazo ou um meio, e aparece em todo aviso de encerramento: «本日をもって閉店いたします» (encerramos as atividades hoje). 〜とはいえ é «ainda que», «embora»: «春とはいえ、まだ寒い». E 〜んばかり (com o ん clássico, de む) é «como se estivesse prestes a»: 泣かんばかりの顔, um rosto quase em lágrimas.',
+        text: 'Na escrita, o tempo e o objetivo também ganham formas próprias. 〜や否や (ou 〜が早いか) é “mal… e já”: “ベルが鳴るや否や、学生たちは教室を飛び出した”. 〜べく é “a fim de”, com ar decidido: “夢を実現すべく、留学を決めた”; com する, すべく. 〜をもって marca um prazo ou um meio, e aparece em todo aviso de encerramento: “本日をもって閉店いたします” (encerramos as atividades hoje). 〜とはいえ é “ainda que”, “embora”: “春とはいえ、まだ寒い”. E 〜んばかり (com o ん clássico, de む) é “como se estivesse prestes a”: 泣かんばかりの顔, um rosto quase em lágrimas.',
         table: {
           head: ['Forma', 'Sentido', 'Exemplo', 'Português'],
           rows: [
@@ -4209,7 +4209,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Formar «しざるを得ない»: com する, a forma é せざるを得ない (e すべく, せずにはいられない).',
+      'Formar “しざるを得ない”: com する, a forma é せざるを得ない (e すべく, せずにはいられない).',
       'Confundir ざるを得ない (a razão obriga) com ずにはいられない (a emoção não deixa segurar).',
       'Trocar 余儀なくされる (fui forçado) por 余儀なくさせる (forçar alguém): quem sofre a imposição é o sujeito da primeira.',
       'Usar esses padrões num bate-papo: soam como discurso ou artigo. Na conversa, 行くしかない e 笑っちゃう.',
@@ -4217,28 +4217,28 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     ],
     quiz: [
       {
-        question: 'Complete: «台風が来るので、旅行を中止＿。» (Não há alternativa senão cancelar.)',
+        question: 'Complete: “台風が来るので、旅行を中止＿。” (Não há alternativa senão cancelar.)',
         options: ['せざるを得ない', 'しざるを得ない', 'するざるを得ない'],
         answer: 'せざるを得ない',
         explanation: 'Com する, a forma é せざる: せざるを得ない.',
       },
       {
-        question: 'O que quer dizer «この話を聞くと、笑わずにはいられない»?',
+        question: 'O que quer dizer “この話を聞くと、笑わずにはいられない”?',
         options: ['Não dá para não rir ao ouvir essa história.', 'Não posso rir dessa história.', 'É proibido rir dessa história.'],
         answer: 'Não dá para não rir ao ouvir essa história.',
         explanation: '〜ずにはいられない = impulso irresistível.',
       },
       {
-        question: 'Complete: «これは京都＿の味だ。» (É um sabor que só Kyoto tem.)',
+        question: 'Complete: “これは京都＿の味だ。” (É um sabor que só Kyoto tem.)',
         options: ['ならでは', 'にほかならない', 'とはいえ'],
         answer: 'ならでは',
-        explanation: '〜ならではの = «que só existe em», com orgulho.',
+        explanation: '〜ならではの = “que só existe em”, com orgulho.',
       },
       {
-        question: 'Onde se costuma ver «本日をもって閉店いたします»?',
+        question: 'Onde se costuma ver “本日をもって閉店いたします”?',
         options: ['Num aviso de encerramento de loja', 'Num convite de casamento', 'Numa receita'],
         answer: 'Num aviso de encerramento de loja',
-        explanation: 'をもって marca o prazo: «a partir de hoje, encerramos».',
+        explanation: 'をもって marca o prazo: “a partir de hoje, encerramos”.',
       },
       {
         question: 'Qual é a forma com べく de 実現する?',
@@ -4258,7 +4258,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
     sections: [
       {
         heading: 'O clássico que você já vê todo dia',
-        text: 'Até a Segunda Guerra, leis, jornais e documentos oficiais eram escritos em 文語, a língua clássica, baseada no japonês da corte de Heian (séculos IX a XII). A Constituição de 1946 foi escrita, pela primeira vez, na língua moderna. Mas as formas antigas continuam por aí. O negativo ず, ぬ, ざる está em provérbios e na piada dos três macacos de Nikkō, 見ざる聞かざる言わざる, em que ざる soa como 猿 (macaco). べし e べからず dão ordens solenes (立ち入るべからず, proibida a entrada). なり é o antigo «ser» (時は金なり), ごとし é «como» (光陰矢のごとし), e o adjetivo clássico em -き ainda enfeita frases: 古き良き時代, os bons velhos tempos.',
+        text: 'Até a Segunda Guerra, leis, jornais e documentos oficiais eram escritos em 文語, a língua clássica, baseada no japonês da corte de Heian (séculos IX a XII). A Constituição de 1946 foi escrita, pela primeira vez, na língua moderna. Mas as formas antigas continuam por aí. O negativo ず, ぬ, ざる está em provérbios e na piada dos três macacos de Nikkō, 見ざる聞かざる言わざる, em que ざる soa como 猿 (macaco). べし e べからず dão ordens solenes (立ち入るべからず, proibida a entrada). なり é o antigo “ser” (時は金なり), ごとし é “como” (光陰矢のごとし), e o adjetivo clássico em -き ainda enfeita frases: 古き良き時代, os bons velhos tempos.',
         table: {
           head: ['Forma clássica', 'Moderno', 'Exemplo', 'Português'],
           rows: [
@@ -4275,7 +4275,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
           ['見ざる、聞かざる、言わざる。', 'Não ver, não ouvir, não falar: os três macacos do santuário de Nikkō (ざる soa como 猿, macaco).'],
           ['時は金なり。', 'Tempo é dinheiro.'],
           ['光陰矢のごとし。', 'O tempo voa como uma flecha.'],
-          ['知らぬが仏。', 'Quem não sabe fica em paz (ao pé da letra, «não saber é ser Buda»).'],
+          ['知らぬが仏。', 'Quem não sabe fica em paz (ao pé da letra, “não saber é ser Buda”).'],
           ['働かざる者食うべからず。', 'Quem não trabalha não come.'],
         ],
       },
@@ -4296,13 +4296,13 @@ export const GRAMMAR_JA: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['春はあけぼの。やうやう白くなりゆく山ぎは、少しあかりて、紫だちたる雲の細くたなびきたる。', 'Na primavera, a aurora. A linha das montanhas vai clareando aos poucos, e nuvens arroxeadas se estendem, finas. (Sei Shōnagon, «O Livro do Travesseiro», c. 1000; やうやう se lê ようよう)'],
-          ['つれづれなるままに、日暮らし、硯にむかひて、心にうつりゆくよしなし事を、そこはかとなく書きつくれば、あやしうこそものぐるほしけれ。', 'No tédio, o dia inteiro diante do tinteiro, escrevo à toa as bobagens que me passam pela cabeça, e fico estranhamente fora de mim. (Yoshida Kenkō, «Ensaios no Ócio», c. 1330)'],
+          ['春はあけぼの。やうやう白くなりゆく山ぎは、少しあかりて、紫だちたる雲の細くたなびきたる。', 'Na primavera, a aurora. A linha das montanhas vai clareando aos poucos, e nuvens arroxeadas se estendem, finas. (Sei Shōnagon, “O Livro do Travesseiro”, c. 1000; やうやう se lê ようよう)'],
+          ['つれづれなるままに、日暮らし、硯にむかひて、心にうつりゆくよしなし事を、そこはかとなく書きつくれば、あやしうこそものぐるほしけれ。', 'No tédio, o dia inteiro diante do tinteiro, escrevo à toa as bobagens que me passam pela cabeça, e fico estranhamente fora de mim. (Yoshida Kenkō, “Ensaios no Ócio”, c. 1330)'],
         ],
       },
       {
         heading: 'Aberturas célebres e o 係り結び',
-        text: 'Os estudantes japoneses decoram as primeiras linhas dos clássicos, como nós decoramos «As armas e os barões assinalados». Elas mostram o clássico em ação: o あり (há), o なり (é), o ず (não), e um fenômeno sem par no português moderno, o 係り結び. Quando a frase tem certas partículas de ênfase (ぞ, なむ, や, か), o verbo final muda de forma e vai para a forma de adjetivo; com こそ, vai para outra forma, a 已然形. É o que se vê no fim do trecho de Kenkō: «あやしうこそものぐるほしけれ», em que こそ puxa o final けれ, e não けり.',
+        text: 'Os estudantes japoneses decoram as primeiras linhas dos clássicos, como nós decoramos “As armas e os barões assinalados”. Elas mostram o clássico em ação: o あり (há), o なり (é), o ず (não), e um fenômeno sem par no português moderno, o 係り結び. Quando a frase tem certas partículas de ênfase (ぞ, なむ, や, か), o verbo final muda de forma e vai para a forma de adjetivo; com こそ, vai para outra forma, a 已然形. É o que se vê no fim do trecho de Kenkō: “あやしうこそものぐるほしけれ”, em que こそ puxa o final けれ, e não けり.',
         table: {
           head: ['Obra', 'Autor', 'Época', 'Abertura'],
           rows: [
@@ -4315,46 +4315,46 @@ export const GRAMMAR_JA: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['祇園精舎の鐘の声、諸行無常の響きあり。', 'O som do sino do mosteiro de Gion Shōja (o Jetavana da Índia, onde Buda pregou) ecoa a impermanência de todas as coisas. («Heike Monogatari», século XIII)'],
-          ['ゆく河の流れは絶えずして、しかももとの水にあらず。', 'O fluxo do rio que corre não cessa, e no entanto nunca é a mesma água. (Kamo no Chōmei, «Hōjōki», 1212)'],
-          ['月日は百代の過客にして、行きかふ年もまた旅人なり。', 'Os meses e os dias são viajantes da eternidade, e os anos que vão e vêm também são viajantes. (Bashō, «Oku no Hosomichi»; 百代 = はくたい, 過客 = かかく)'],
+          ['祇園精舎の鐘の声、諸行無常の響きあり。', 'O som do sino do mosteiro de Gion Shōja (o Jetavana da Índia, onde Buda pregou) ecoa a impermanência de todas as coisas. (“Heike Monogatari”, século XIII)'],
+          ['ゆく河の流れは絶えずして、しかももとの水にあらず。', 'O fluxo do rio que corre não cessa, e no entanto nunca é a mesma água. (Kamo no Chōmei, “Hōjōki”, 1212)'],
+          ['月日は百代の過客にして、行きかふ年もまた旅人なり。', 'Os meses e os dias são viajantes da eternidade, e os anos que vão e vêm também são viajantes. (Bashō, “Oku no Hosomichi”; 百代 = はくたい, 過客 = かかく)'],
         ],
       },
     ],
     pitfalls: [
-      'Ler a grafia antiga ao pé da letra: いふ é «iu», かは é «kawa», けふ é «kyō».',
-      'Achar que べからず é «não consegue»: é proibição. 立ち入るべからず = proibido entrar.',
+      'Ler a grafia antiga ao pé da letra: いふ é “iu”, かは é “kawa”, けふ é “kyō”.',
+      'Achar que べからず é “não consegue”: é proibição. 立ち入るべからず = proibido entrar.',
       'Confundir o ぬ negativo (知らぬ, não sabe) com o ぬ de conclusão do clássico (風立ちぬ, o vento se levantou): o contexto e a forma do verbo decidem.',
       'Achar que o 文語 está morto: ele vive em provérbios, placas, letras de hino e nomes de lojas.',
       'Espalhar formas clássicas no texto moderno sem motivo: usadas de propósito, dão solenidade; por engano, soam afetadas.',
     ],
     quiz: [
       {
-        question: 'O que quer dizer «立ち入るべからず»?',
+        question: 'O que quer dizer “立ち入るべからず”?',
         options: ['Proibida a entrada', 'Entrada livre', 'Não é possível entrar'],
         answer: 'Proibida a entrada',
         explanation: 'べからず é a proibição solene do clássico, ainda usada em placas.',
       },
       {
-        question: 'Como se lê «けふ» na grafia antiga?',
+        question: 'Como se lê “けふ” na grafia antiga?',
         options: ['きょう', 'けふ', 'けう'],
         answer: 'きょう',
         explanation: 'けふ é a grafia histórica de 今日: a pronúncia moderna é きょう.',
       },
       {
-        question: 'Qual é o equivalente moderno de «時は金なり»?',
+        question: 'Qual é o equivalente moderno de “時は金なり”?',
         options: ['時は金である。', '時は金になる。', '時は金がない。'],
         answer: '時は金である。',
         explanation: 'なり é a cópula clássica, equivalente a である.',
       },
       {
-        question: 'Qual obra começa com «春はあけぼの»?',
+        question: 'Qual obra começa com “春はあけぼの”?',
         options: ['枕草子', '平家物語', '方丈記'],
         answer: '枕草子',
-        explanation: 'É a abertura do «Livro do Travesseiro», de Sei Shōnagon, por volta do ano 1000.',
+        explanation: 'É a abertura do “Livro do Travesseiro”, de Sei Shōnagon, por volta do ano 1000.',
       },
       {
-        question: 'Por que o trecho de Kenkō termina em «ものぐるほしけれ», e não «ものぐるほし»?',
+        question: 'Por que o trecho de Kenkō termina em “ものぐるほしけれ”, e não “ものぐるほし”?',
         options: ['Por causa de uma partícula de ênfase, que exige outra forma no fim da frase', 'Porque é uma pergunta', 'Porque é uma forma negativa'],
         answer: 'Por causa de uma partícula de ênfase, que exige outra forma no fim da frase',
         explanation: 'É o 係り結び: com こそ, o final vai para a forma 已然形 (けれ).',
@@ -4405,7 +4405,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       },
       {
         heading: 'Tanka, e o haicai no Brasil',
-        text: 'O tanka (短歌), de 5-7-5-7-7 moras, é bem mais antigo que o haicai: já está na primeira grande antologia, o 万葉集 (século VIII), e nos cem poemas do 百人一首, que viraram um jogo de cartas de Ano-Novo. Os poetas clássicos adoravam os duplos sentidos: no poema de Ono no Komachi, ふる é «passar a vida» e «cair (a chuva)», e ながめ é «olhar perdido» e «chuva longa». O tanka seguiu vivo: Ishikawa Takuboku o encheu de vida cotidiana, e Tawara Machi, em 1987, vendeu milhões com tanka em língua coloquial. E o haicai atravessou o oceano. Os imigrantes japoneses escreveram haicais no Brasil desde as primeiras décadas da imigração, adaptando os kigo às estações do hemisfério sul, e poetas brasileiros o adotaram em português: Guilherme de Almeida, Millôr Fernandes, Paulo Leminski, Alice Ruiz.',
+        text: 'O tanka (短歌), de 5-7-5-7-7 moras, é bem mais antigo que o haicai: já está na primeira grande antologia, o 万葉集 (século VIII), e nos cem poemas do 百人一首, que viraram um jogo de cartas de Ano-Novo. Os poetas clássicos adoravam os duplos sentidos: no poema de Ono no Komachi, ふる é “passar a vida” e “cair (a chuva)”, e ながめ é “olhar perdido” e “chuva longa”. O tanka seguiu vivo: Ishikawa Takuboku o encheu de vida cotidiana, e Tawara Machi, em 1987, vendeu milhões com tanka em língua coloquial. E o haicai atravessou o oceano. Os imigrantes japoneses escreveram haicais no Brasil desde as primeiras décadas da imigração, adaptando os kigo às estações do hemisfério sul, e poetas brasileiros o adotaram em português: Guilherme de Almeida, Millôr Fernandes, Paulo Leminski, Alice Ruiz.',
         table: {
           head: ['Forma', 'Moras', 'Tema', 'Poetas'],
           rows: [
@@ -4417,7 +4417,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
         examples: [
           ['花の色は移りにけりないたづらにわが身世にふるながめせしまに', 'A cor das flores / desbotou, em vão, / enquanto eu passava a vida / olhando a chuva longa. (Ono no Komachi, século IX; いたづらに se lê いたずらに)'],
           ['はたらけどはたらけど猶わが生活楽にならざりぢつと手を見る', 'Trabalho, trabalho, / e a minha vida / não fica mais leve: / fico olhando as minhas mãos. (Ishikawa Takuboku, 1910; 生活 se lê くらし, ぢつと é じっと)'],
-          ['「この味がいいね」と君が言ったから七月六日はサラダ記念日', '«Este sabor está bom», você disse, e por isso o 6 de julho é o Dia da Salada. (Tawara Machi, 1987)'],
+          ['「この味がいいね」と君が言ったから七月六日はサラダ記念日', '“Este sabor está bom”, você disse, e por isso o 6 de julho é o Dia da Salada. (Tawara Machi, 1987)'],
         ],
       },
     ],
@@ -4425,7 +4425,7 @@ export const GRAMMAR_JA: GrammarTopic[] = [
       'Contar sílabas em vez de moras: とうきょう tem quatro moras. ん, っ e as vogais longas contam uma cada.',
       'Achar que haicai tem de ter três linhas: em japonês, é uma linha só; as três linhas vêm das traduções.',
       'Ler 蛙 como かえる no poema de Bashō: ali é かわず, a forma poética.',
-      'Traduzir o 季語 sem a estação: para o leitor japonês, 月 já diz «outono»; na tradução, isso se perde se ninguém explicar.',
+      'Traduzir o 季語 sem a estação: para o leitor japonês, 月 já diz “outono”; na tradução, isso se perde se ninguém explicar.',
       'Confundir haicai e 川柳: a mesma forma, mas o 川柳 fala das pessoas, com humor, e dispensa o 季語.',
     ],
     quiz: [
@@ -4436,13 +4436,13 @@ export const GRAMMAR_JA: GrammarTopic[] = [
         explanation: '5-7-5 = 17 moras. O tanka, 5-7-5-7-7, tem 31.',
       },
       {
-        question: 'Como se lê 蛙 no haicai «古池や蛙飛び込む水の音»?',
+        question: 'Como se lê 蛙 no haicai “古池や蛙飛び込む水の音”?',
         options: ['かわず', 'かえる', 'がえる'],
         answer: 'かわず',
-        explanation: 'かわず é a forma poética antiga de «rã», e dá as sete moras do segmento do meio.',
+        explanation: 'かわず é a forma poética antiga de “rã”, e dá as sete moras do segmento do meio.',
       },
       {
-        question: 'Qual é a estação do 季語 «月» (lua)?',
+        question: 'Qual é a estação do 季語 “月” (lua)?',
         options: ['Outono', 'Primavera', 'Inverno'],
         answer: 'Outono',
         explanation: 'Na poesia japonesa, a lua é o kigo do outono, quando a lua cheia é mais admirada.',

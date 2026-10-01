@@ -55,7 +55,7 @@ export const WORD_FAMILIES: WordFamily[] = [
       { label: 'Latim aqua (indo-europeu *h₂ékʷeh₂)', kin: true, words: { pt: 'água', es: 'agua', it: 'acqua', ro: 'apă', fr: 'eau' } },
       { label: 'Indo-europeu *wódr̥', kin: true, words: { ru: 'вода́', sv: 'vatten', nb: 'vann', en: 'water', da: 'vand', is: 'vatn', fo: 'vatn' } },
     ],
-    note: 'Aqui há duas raízes diferentes, cada uma com a sua família. No romeno, o «qu» latino virou «p»: aqua → apă, equa → iapă (égua). Cuidado: o sueco e o norueguês «hav» não é água — quer dizer mar (veja a família do mar).',
+    note: 'Aqui há duas raízes diferentes, cada uma com a sua família. No romeno, o “qu” latino virou “p”: aqua → apă, equa → iapă (égua). Cuidado: o sueco e o norueguês “hav” não é água — quer dizer mar (veja a família do mar).',
   },
   {
     id: 'noite',
@@ -68,7 +68,7 @@ export const WORD_FAMILIES: WordFamily[] = [
       { label: 'Eslavo *noktь', kin: true, words: { ru: 'ночь' } },
       { label: 'Fínico (família urálica, não indo-europeia)', kin: false, words: { fi: 'yö', et: 'öö' } },
     ],
-    note: 'No romeno, o «ct» latino virou «pt»: noctem → noapte, lactem → lapte, octo → opt.',
+    note: 'No romeno, o “ct” latino virou “pt”: noctem → noapte, lactem → lapte, octo → opt.',
   },
   {
     id: 'coracao',
@@ -82,7 +82,7 @@ export const WORD_FAMILIES: WordFamily[] = [
       { label: 'Latim anima (alma)', kin: false, words: { ro: 'inimă' } },
       { label: 'Fínico (família urálica, não indo-europeia)', kin: false, words: { fi: 'sydän', et: 'süda' } },
     ],
-    note: 'O romeno «inimă» vem do latim «anima», a alma: o coração como o lugar da alma. Do latim «cor» vêm também «cordial» e «de cor» (saber de coração).',
+    note: 'O romeno “inimă” vem do latim “anima”, a alma: o coração como o lugar da alma. Do latim “cor” vêm também “cordial” e “de cor” (saber de coração).',
   },
   {
     id: 'nome',
@@ -143,7 +143,7 @@ export const WORD_FAMILIES: WordFamily[] = [
       { label: 'Latim germanus (do mesmo sangue)', kin: false, words: { pt: 'irmão', es: 'hermano' } },
       { label: 'Fínico (família urálica, não indo-europeia)', kin: false, words: { fi: 'veli', et: 'vend' } },
     ],
-    note: 'O português e o espanhol trocaram «frater» por «germanus». O velho «frater» ficou em «frade» e «fraile» (o irmão de convento) e em «fraterno».',
+    note: 'O português e o espanhol trocaram “frater” por “germanus”. O velho “frater” ficou em “frade” e “fraile” (o irmão de convento) e em “fraterno”.',
   },
   {
     id: 'mae',
@@ -154,9 +154,9 @@ export const WORD_FAMILIES: WordFamily[] = [
       { label: 'Latim mater', kin: true, words: { pt: 'mãe', es: 'madre', it: 'madre', fr: 'mère' } },
       { label: 'Germânico *mōdēr', kin: true, words: { sv: 'mor', nb: 'mor', en: 'mother', da: 'mor', is: 'móðir', fo: 'móðir' } },
       { label: 'Eslavo *mati', kin: true, words: { ru: 'мать' } },
-      { label: 'Fala de criança («ma-ma»)', kin: false, words: { ro: 'mamă' } },
+      { label: 'Fala de criança (“ma-ma”)', kin: false, words: { ro: 'mamă' } },
     ],
-    note: 'O romeno «mamă», como o «mamma» italiano e o «mamá» espanhol, vem da fala dos bebês: em quase toda língua as primeiras sílabas são «ma», «pa» e «ta».',
+    note: 'O romeno “mamă”, como o “mamma” italiano e o “mamá” espanhol, vem da fala dos bebês: em quase toda língua as primeiras sílabas são “ma”, “pa” e “ta”.',
   },
   {
     id: 'pai',
@@ -170,7 +170,7 @@ export const WORD_FAMILIES: WordFamily[] = [
       { label: 'Fala de criança: eslavo *otьcь (de *atta)', kin: false, words: { ru: 'оте́ц' } },
       { label: 'Fínico (família urálica, não indo-europeia)', kin: false, words: { fi: 'isä', et: 'isa' } },
     ],
-    note: 'Lei de Grimm: onde o latim tem «p», o germânico tem «f» — pater → father, piscis → fish, pes → foot.',
+    note: 'Lei de Grimm: onde o latim tem “p”, o germânico tem “f” — pater → father, piscis → fish, pes → foot.',
   },
   {
     id: 'filha',
@@ -193,7 +193,7 @@ export const WORD_FAMILIES: WordFamily[] = [
       { label: 'Germânico *tanþs', kin: true, words: { sv: 'tand', nb: 'tann', en: 'tooth', da: 'tand', is: 'tönn', fo: 'tonn' } },
       { label: 'Eslavo *zǫbъ', kin: false, words: { ru: 'зуб' } },
     ],
-    note: 'O russo «зуб» vem de outra raiz, a mesma do grego «gómphos» (cavilha, prego).',
+    note: 'O russo “зуб” vem de outra raiz, a mesma do grego “gómphos” (cavilha, prego).',
   },
   {
     id: 'olho',
@@ -206,7 +206,7 @@ export const WORD_FAMILIES: WordFamily[] = [
       { label: 'Eslavo *glazъ (bolinha, pedrinha)', kin: false, words: { ru: 'глаз' } },
       { label: 'Fínico (família urálica, não indo-europeia)', kin: false, words: { fi: 'silmä', et: 'silm' } },
     ],
-    note: 'O russo antigo tinha «о́ко», irmão de «olho»; ficou na poesia e em ditados, e hoje se diz «глаз».',
+    note: 'O russo antigo tinha “о́ко”, irmão de “olho”; ficou na poesia e em ditados, e hoje se diz “глаз”.',
   },
   {
     id: 'orelha',
@@ -244,7 +244,7 @@ export const WORD_FAMILIES: WordFamily[] = [
       { label: 'Nórdico antigo tungl (origem incerta)', kin: false, words: { is: 'tungl' } },
       { label: 'Fínico (família urálica, não indo-europeia)', kin: false, words: { fi: 'kuu', et: 'kuu' } },
     ],
-    note: 'O russo «луна́» é irmão do latim «luna». Já «moon» e «måne» vêm da raiz de «mês»: a lua marcava os meses.',
+    note: 'O russo “луна́” é irmão do latim “luna”. Já “moon” e “måne” vêm da raiz de “mês”: a lua marcava os meses.',
   },
   {
     id: 'sol',
@@ -257,7 +257,7 @@ export const WORD_FAMILIES: WordFamily[] = [
       { label: 'Eslavo *sъlnьce', kin: true, words: { ru: 'со́лнце' } },
       { label: 'Fínico (família urálica, não indo-europeia)', kin: false, words: { fi: 'aurinko', et: 'päike' } },
     ],
-    note: 'No romeno, o «l» latino entre vogais virou «r»: solem → soare, salem → sare, caelum → cer.',
+    note: 'No romeno, o “l” latino entre vogais virou “r”: solem → soare, salem → sare, caelum → cer.',
   },
   {
     id: 'sal',
@@ -281,7 +281,7 @@ export const WORD_FAMILIES: WordFamily[] = [
       { label: 'Germânico *hafą', kin: false, words: { sv: 'hav', nb: 'hav', da: 'hav', is: 'haf', fo: 'hav' } },
       { label: 'Germânico *saiwiz', kin: false, words: { en: 'sea' } },
     ],
-    note: 'O «hav» sueco e norueguês é o mar (não a água). A raiz *móri sobreviveu no inglês em «mermaid», a sereia (a «moça do mar»).',
+    note: 'O “hav” sueco e norueguês é o mar (não a água). A raiz *móri sobreviveu no inglês em “mermaid”, a sereia (a “moça do mar”).',
   },
   {
     id: 'vento',
@@ -307,7 +307,7 @@ export const WORD_FAMILIES: WordFamily[] = [
       { label: 'Eslavo zapadati (cair)', kin: false, words: { ro: 'zăpadă' } },
       { label: 'Fínico (família urálica, não indo-europeia)', kin: false, words: { fi: 'lumi', et: 'lumi' } },
     ],
-    note: 'O romeno também tem «nea», do latim nivem, mais poético; no dia a dia se diz «zăpadă», de origem eslava.',
+    note: 'O romeno também tem “nea”, do latim nivem, mais poético; no dia a dia se diz “zăpadă”, de origem eslava.',
   },
   {
     id: 'dia',
@@ -321,7 +321,7 @@ export const WORD_FAMILIES: WordFamily[] = [
       { label: 'Germânico *dagaz', kin: false, words: { sv: 'dag', nb: 'dag', en: 'day', da: 'dag', is: 'dagur', fo: 'dagur' } },
       { label: 'Fínico (família urálica, não indo-europeia)', kin: false, words: { fi: 'päivä', et: 'päev' } },
     ],
-    note: 'Armadilha famosa: o inglês «day» parece «dia», mas NÃO é parente — vem de outra raiz. Já o russo «день», que nem parece, é.',
+    note: 'Armadilha famosa: o inglês “day” parece “dia”, mas NÃO é parente — vem de outra raiz. Já o russo “день”, que nem parece, é.',
   },
   {
     id: 'porta',
@@ -336,7 +336,7 @@ export const WORD_FAMILIES: WordFamily[] = [
       { label: 'Germânico *hurdiz (grade trançada)', kin: false, words: { is: 'hurð', fo: 'hurð' } },
       { label: 'Fínico (família urálica, não indo-europeia)', kin: false, words: { fi: 'ovi', et: 'uks' } },
     ],
-    note: 'A raiz *dʰwer- também deu o latim «foris», a porta de fora — de onde vêm «fora», «fuera» e «fuori». No romeno, «poartă» (de porta) é o portão.',
+    note: 'A raiz *dʰwer- também deu o latim “foris”, a porta de fora — de onde vêm “fora”, “fuera” e “fuori”. No romeno, “poartă” (de porta) é o portão.',
   },
   {
     id: 'casa',
@@ -349,7 +349,7 @@ export const WORD_FAMILIES: WordFamily[] = [
       { label: 'Latim mansio (pousada)', kin: false, words: { fr: 'maison' } },
       { label: 'Germânico *hūsą', kin: false, words: { sv: 'hus', nb: 'hus', en: 'house', da: 'hus', is: 'hús', fo: 'hús' } },
     ],
-    note: 'O russo «дом» é irmão do latim «domus», que no português ficou em «doméstico» e «domicílio». Em latim, «casa» era só uma cabana.',
+    note: 'O russo “дом” é irmão do latim “domus”, que no português ficou em “doméstico” e “domicílio”. Em latim, “casa” era só uma cabana.',
   },
   {
     id: 'lobo',
@@ -362,7 +362,7 @@ export const WORD_FAMILIES: WordFamily[] = [
       { label: 'Eslavo *vьlkъ', kin: true, words: { ru: 'волк' } },
       { label: 'Nórdico antigo vargr (o fora da lei)', kin: false, words: { sv: 'varg' } },
     ],
-    note: 'O sueco trocou «ulv» por «varg» (o bandido, o fora da lei), talvez por tabu: dizer o nome do bicho podia chamá-lo.',
+    note: 'O sueco trocou “ulv” por “varg” (o bandido, o fora da lei), talvez por tabu: dizer o nome do bicho podia chamá-lo.',
   },
   {
     id: 'peixe',
@@ -375,7 +375,7 @@ export const WORD_FAMILIES: WordFamily[] = [
       { label: 'Eslavo *ryba', kin: false, words: { ru: 'ры́ба' } },
       { label: 'Fínico (família urálica, não indo-europeia)', kin: false, words: { fi: 'kala', et: 'kala' } },
     ],
-    note: 'Lei de Grimm de novo: «p» latino, «f» germânico (piscis → fish).',
+    note: 'Lei de Grimm de novo: “p” latino, “f” germânico (piscis → fish).',
   },
   {
     id: 'rato',
@@ -390,7 +390,7 @@ export const WORD_FAMILIES: WordFamily[] = [
       { label: 'Origem incerta', kin: false, words: { pt: 'rato', es: 'ratón' } },
       { label: 'Fínico (família urálica, não indo-europeia)', kin: false, words: { fi: 'hiiri', et: 'hiir' } },
     ],
-    note: 'O latim «mus» sumiu das línguas românicas, mas ficou em «músculo»: musculus era o «ratinho» que se mexe debaixo da pele.',
+    note: 'O latim “mus” sumiu das línguas românicas, mas ficou em “músculo”: musculus era o “ratinho” que se mexe debaixo da pele.',
   },
   {
     id: 'comer',
@@ -403,10 +403,10 @@ export const WORD_FAMILIES: WordFamily[] = [
       { label: 'Eslavo *ěsti', kin: true, words: { ru: 'есть' } },
       { label: 'Latim manducare (mastigar)', kin: false, words: { it: 'mangiare', ro: 'a mânca', fr: 'manger' } },
       { label: 'Latim expensa (despesa), pelo baixo-alemão spīse (comida)', kin: false, words: { da: 'spise' } },
-      { label: 'Nórdico borð (mesa): «comer à mesa»', kin: false, words: { is: 'borða' } },
+      { label: 'Nórdico borð (mesa): “comer à mesa”', kin: false, words: { is: 'borða' } },
       { label: 'Fínico (família urálica, não indo-europeia)', kin: false, words: { fi: 'syödä', et: 'sööma' } },
     ],
-    note: 'O dinamarquês «spise» (que o norueguês também usa) veio do baixo-alemão spīse, a comida, e antes do latim expensa, o gasto — prima de «despesa». O islandês «borða» vem de «borð», a mesa. E o russo «есть» (comer) se escreve igual a «есть» (há, existe).',
+    note: 'O dinamarquês “spise” (que o norueguês também usa) veio do baixo-alemão spīse, a comida, e antes do latim expensa, o gasto — prima de “despesa”. O islandês “borða” vem de “borð”, a mesa. E o russo “есть” (comer) se escreve igual a “есть” (há, existe).',
   },
 ];
 

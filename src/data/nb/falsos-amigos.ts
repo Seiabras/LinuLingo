@@ -16,7 +16,7 @@ export const FALSE_FRIENDS_NB: FalseFriend[] = [
   },
   {
     word: 'gift',
-    means: 'casado (adjetivo); como substantivo, «gift» é veneno',
+    means: 'casado (adjetivo); como substantivo, “gift” é veneno',
     looksLike: 'gift (presente, em inglês)',
     forThat: 'en gave',
     emoji: '💍',
@@ -40,8 +40,8 @@ export const FALSE_FRIENDS_NB: FalseFriend[] = [
   },
   {
     word: 'bra',
-    means: 'bom; bem («Jeg har det bra» = estou bem)',
-    looksLike: 'bra (sutiã, em inglês; em norueguês é «BH», que se lê «bê-hô»)',
+    means: 'bom; bem (“Jeg har det bra” = estou bem)',
+    looksLike: 'bra (sutiã, em inglês; em norueguês é “BH”, que se lê “bê-hô”)',
     forThat: 'en BH',
     emoji: '👍',
     example: ['– Hvordan har du det? – Bra, takk!', '– Como você está? – Bem, obrigado!'],
@@ -96,7 +96,7 @@ export const FALSE_FRIENDS_NB: FalseFriend[] = [
   },
   {
     word: 'fri',
-    means: 'livre; de folga («Jeg har fri» = estou de folga)',
+    means: 'livre; de folga (“Jeg har fri” = estou de folga)',
     looksLike: 'frio',
     forThat: 'kald',
     emoji: '🕊️',
@@ -104,7 +104,7 @@ export const FALSE_FRIENDS_NB: FalseFriend[] = [
   },
   {
     word: 'sort',
-    means: 'preto (o mesmo que «svart»); «en sort» é um tipo, uma espécie',
+    means: 'preto (o mesmo que “svart”); “en sort” é um tipo, uma espécie',
     looksLike: 'sorte',
     forThat: 'hell, flaks',
     emoji: '⚫',
@@ -112,7 +112,7 @@ export const FALSE_FRIENDS_NB: FalseFriend[] = [
   },
   {
     word: 'hell',
-    means: 'sorte («Hell og lykke!» = Boa sorte!)',
+    means: 'sorte (“Hell og lykke!” = Boa sorte!)',
     looksLike: 'hell (inferno, em inglês)',
     forThat: 'et helvete',
     emoji: '🍀',
@@ -120,7 +120,7 @@ export const FALSE_FRIENDS_NB: FalseFriend[] = [
   },
   {
     word: 'time',
-    means: 'uma hora (60 minutos); também horário marcado («time hos legen» = consulta médica)',
+    means: 'uma hora (60 minutos); também horário marcado (“time hos legen” = consulta médica)',
     looksLike: 'time (de futebol; tempo, em inglês)',
     forThat: 'et lag (time); tid (tempo)',
     emoji: '⏰',
@@ -169,7 +169,7 @@ export const FALSE_FRIENDS_NB: FalseFriend[] = [
   {
     word: 'rolig',
     means: 'calmo, tranquilo',
-    looksLike: 'engraçado (é o que «rolig» quer dizer em sueco!)',
+    looksLike: 'engraçado (é o que “rolig” quer dizer em sueco!)',
     forThat: 'morsom',
     emoji: '😌',
     example: ['Det er så rolig her på hytta.', 'É tão tranquilo aqui na cabana.'],
@@ -185,7 +185,7 @@ export const FALSE_FRIENDS_NB: FalseFriend[] = [
   },
   {
     word: 'konkurs',
-    means: 'falência («gå konkurs» = falir)',
+    means: 'falência (“gå konkurs” = falir)',
     looksLike: 'concurso',
     forThat: 'en konkurranse',
     emoji: '📉',
@@ -209,7 +209,7 @@ export const FALSE_FRIENDS_NB: FalseFriend[] = [
   },
   {
     word: 'lov',
-    means: 'lei; permissão («ha lov til» = poder, ter permissão)',
+    means: 'lei; permissão (“ha lov til” = poder, ter permissão)',
     looksLike: 'love (amor, em inglês)',
     forThat: 'kjærlighet',
     emoji: '⚖️',
@@ -217,7 +217,7 @@ export const FALSE_FRIENDS_NB: FalseFriend[] = [
   },
   {
     word: 'morder',
-    means: 'assassino (de «mord», assassinato)',
+    means: 'assassino (de “mord”, assassinato)',
     looksLike: 'morder (dar uma mordida)',
     forThat: 'å bite',
     emoji: '🔪',
@@ -249,7 +249,7 @@ export const FALSE_FRIENDS_NB: FalseFriend[] = [
   },
   {
     word: 'handle',
-    means: 'fazer compras («handle mat» = fazer mercado)',
+    means: 'fazer compras (“handle mat” = fazer mercado)',
     looksLike: 'handle (lidar com, em inglês)',
     forThat: 'å takle, å håndtere',
     emoji: '🛒',
@@ -258,7 +258,7 @@ export const FALSE_FRIENDS_NB: FalseFriend[] = [
   // ——— palavras curtinhas que enganam o ouvido ———
   {
     word: 'vil',
-    means: 'quer (de «å ville»: «Jeg vil ha kaffe» = quero café)',
+    means: 'quer (de “å ville”: “Jeg vil ha kaffe” = quero café)',
     looksLike: 'vil (desprezível)',
     forThat: 'ussel, sjofel',
     emoji: '🙋',
@@ -274,7 +274,7 @@ export const FALSE_FRIENDS_NB: FalseFriend[] = [
   },
   {
     word: 'ser',
-    means: 'vê, está vendo (de «å se»)',
+    means: 'vê, está vendo (de “å se”)',
     looksLike: 'ser (o verbo)',
     forThat: 'å være',
     emoji: '👀',
@@ -290,7 +290,7 @@ export const FALSE_FRIENDS_NB: FalseFriend[] = [
   },
   {
     word: 'kor',
-    means: 'coral (grupo que canta); no nynorsk, «kor» também é «onde» e «como»',
+    means: 'coral (grupo que canta); no nynorsk, “kor” também é “onde” e “como”',
     looksLike: 'cor',
     forThat: 'en farge',
     emoji: '🎶',
@@ -306,7 +306,7 @@ export const FALSE_FRIENDS_NB: FalseFriend[] = [
   },
   {
     word: 'fin',
-    means: 'bonito, bom, legal («fint vær» = tempo bom)',
+    means: 'bonito, bom, legal (“fint vær” = tempo bom)',
     looksLike: 'fino (magro)',
     forThat: 'tynn',
     emoji: '✨',
@@ -339,15 +339,15 @@ export const FALSE_FRIENDS_NB: FalseFriend[] = [
   },
   {
     word: 'kusine',
-    means: 'prima (o primo é «fetter»)',
-    looksLike: 'cozinha (e soa quase igual: «ku-sí-ne»)',
+    means: 'prima (o primo é “fetter”)',
+    looksLike: 'cozinha (e soa quase igual: “ku-sí-ne”)',
     forThat: 'et kjøkken',
     emoji: '👧',
     example: ['Kusinen min bor i Ålesund.', 'Minha prima mora em Ålesund.'],
   },
   {
     word: 'lue',
-    means: 'gorro, touca de lã (e a forma definida, «lua», quer dizer «o gorro»)',
+    means: 'gorro, touca de lã (e a forma definida, “lua”, quer dizer “o gorro”)',
     looksLike: 'lua',
     forThat: 'månen',
     emoji: '🧶',

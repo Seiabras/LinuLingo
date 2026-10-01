@@ -168,7 +168,7 @@ export default function MistakesScreen() {
                     ? '🎉 Aprendido! Saiu do caderno.'
                     : game.result === 'certo'
                       ? `Isso! Mais ${RESOLVE_STREAK - (cur.m.streak + 1)} acerto seguido e sai do caderno.`
-                      : `Era «${cur.m.expected}».`}
+                      : `Era “${cur.m.expected}”.`}
                 </Text>
                 {cur.m.note && <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">{cur.m.note}</Text>}
                 {cur.m.speak && (

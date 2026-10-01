@@ -33,10 +33,10 @@ export const GRAMMAR_ID: GrammarTopic[] = [
     level: 'A1.1',
     title: 'Sem conjugação, sem gênero',
     emoji: '🙋',
-    summary: 'O verbo indonésio nunca muda de forma, seja qual for a pessoa; e «dia» serve tanto para "ele" quanto para "ela".',
+    summary: 'O verbo indonésio nunca muda de forma, seja qual for a pessoa; e “dia” serve tanto para "ele" quanto para "ela".',
     sections: [
       {
-        text: 'Ao contrário do português, o verbo indonésio é sempre a mesma palavra, não importa quem fala: «saya makan» (eu como), «kamu makan» (você come), «dia makan» (ele/ela come) — o verbo «makan» nunca muda.',
+        text: 'Ao contrário do português, o verbo indonésio é sempre a mesma palavra, não importa quem fala: “saya makan” (eu como), “kamu makan” (você come), “dia makan” (ele/ela come) — o verbo “makan” nunca muda.',
         table: {
           head: ['Pronome', 'Tradução'],
           rows: [
@@ -65,7 +65,7 @@ export const GRAMMAR_ID: GrammarTopic[] = [
     summary: 'O indonésio distingue "nós" que inclui a pessoa com quem se fala ("kita") de "nós" que a exclui ("kami") — uma distinção que o português não faz.',
     sections: [
       {
-        text: '«Kami» é usado quando o grupo NÃO inclui a pessoa a quem você está falando: "Kami dari Brasil" (nós, eu e minha família, somos do Brasil — e você não está incluído). «Kita» inclui a pessoa ouvinte: "Ayo, kita belajar!" (vamos, nós — eu e você juntos — estudar!).',
+        text: '“Kami” é usado quando o grupo NÃO inclui a pessoa a quem você está falando: "Kami dari Brasil" (nós, eu e minha família, somos do Brasil — e você não está incluído). “Kita” inclui a pessoa ouvinte: "Ayo, kita belajar!" (vamos, nós — eu e você juntos — estudar!).',
         examples: [
           ['Kami dari Brasil.', 'Nós somos do Brasil. (sem incluir quem ouve)'],
           ['Ayo, kita belajar bahasa Indonesia!', 'Vamos, nós (você e eu) aprender indonésio!'],
@@ -83,14 +83,14 @@ export const GRAMMAR_ID: GrammarTopic[] = [
     summary: 'Sem palavras separadas para "irmão"/"irmã": kakak é o mais velho, adik o mais novo, não importa o sexo. E o plural, quando precisa aparecer, repete a palavra.',
     sections: [
       {
-        text: 'O indonésio organiza irmãos pela IDADE relativa, não pelo sexo: «kakak» é qualquer irmão mais velho (homem ou mulher), «adik» é qualquer irmão mais novo (homem ou mulher). Para especificar o sexo, acrescenta-se «laki-laki» (homem) ou «perempuan» (mulher): «kakak perempuan» é a irmã mais velha.',
+        text: 'O indonésio organiza irmãos pela IDADE relativa, não pelo sexo: “kakak” é qualquer irmão mais velho (homem ou mulher), “adik” é qualquer irmão mais novo (homem ou mulher). Para especificar o sexo, acrescenta-se “laki-laki” (homem) ou “perempuan” (mulher): “kakak perempuan” é a irmã mais velha.',
         examples: [
           ['Saya punya satu kakak dan satu adik.', 'Eu tenho um irmão/uma irmã mais velho(a) e um irmão/uma irmã mais novo(a).'],
         ],
       },
       {
         heading: 'O plural por repetição',
-        text: 'Quando o plural precisa ficar claro, a palavra se repete: «anak» (criança) → «anak-anak» (crianças); «buku» (livro) → «buku-buku» (livros). Na maioria das frases, porém, o contexto já basta e a palavra não muda.',
+        text: 'Quando o plural precisa ficar claro, a palavra se repete: “anak” (criança) → “anak-anak” (crianças); “buku” (livro) → “buku-buku” (livros). Na maioria das frases, porém, o contexto já basta e a palavra não muda.',
         examples: [['anak-anak bermain', 'as crianças brincam']],
       },
     ],

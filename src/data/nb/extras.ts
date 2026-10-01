@@ -57,7 +57,7 @@ export const SCENARIOS_NB: ScenarioSeed[] = [
     cefr: 'A1',
     register: 'informal',
     persona: 'Ingrid, colega do curso de norueguês',
-    description: 'Uma colega do curso chama você para um café no centro de Oslo. Entre amigos, tudo leve e informal: nada de «vennligst» nem de «herr».',
+    description: 'Uma colega do curso chama você para um café no centro de Oslo. Entre amigos, tudo leve e informal: nada de “vennligst” nem de “herr”.',
     turns: [
       {
         bot: 'Hei! Hvordan går det? Skal vi ta en kaffe?',
@@ -68,7 +68,7 @@ export const SCENARIOS_NB: ScenarioSeed[] = [
       },
       {
         bot: 'Hva vil du ha? Jeg tar en kaffe og en skolebolle.',
-        botTranslation: 'O que você vai querer? Eu vou de café e «skolebolle» (o pão doce com creme e coco).',
+        botTranslation: 'O que você vai querer? Eu vou de café e “skolebolle” (o pão doce com creme e coco).',
         keywords: ['jeg tar', 'også', 'te', 'kaffe', 'skolebolle', 'kanelbolle', 'takk'],
         suggestions: ['Jeg tar også en skolebolle.', 'Jeg tar en te og en kanelbolle, takk.'],
         registerBreakers: INFORMAL_BREAKERS,
@@ -103,7 +103,7 @@ export const SCENARIOS_NB: ScenarioSeed[] = [
     cefr: 'A2',
     register: 'formal',
     persona: 'Recepcionista de um hotel perto do cais de Bryggen',
-    description: 'Você chega de noite a um hotel em Bergen. O recepcionista trata você por «du», como todo mundo na Noruega, mas o tom é de atendimento: frases completas e sem gíria.',
+    description: 'Você chega de noite a um hotel em Bergen. O recepcionista trata você por “du”, como todo mundo na Noruega, mas o tom é de atendimento: frases completas e sem gíria.',
     turns: [
       {
         bot: 'God kveld, og velkommen! Har du en reservasjon?',
@@ -149,7 +149,7 @@ export const SCENARIOS_NB: ScenarioSeed[] = [
     cefr: 'A2',
     register: 'informal',
     persona: 'Sindre, um amigo de Bodø',
-    description: 'Um amigo leva você para subir uma montanha em Lofoten, com o mar lá embaixo. É o «friluftsliv», a vida ao ar livre: conversa solta, entre amigos.',
+    description: 'Um amigo leva você para subir uma montanha em Lofoten, com o mar lá embaixo. É o “friluftsliv”, a vida ao ar livre: conversa solta, entre amigos.',
     turns: [
       {
         bot: 'Er du klar for tur? I dag skal vi gå opp på Reinebringen.',
@@ -160,7 +160,7 @@ export const SCENARIOS_NB: ScenarioSeed[] = [
       },
       {
         bot: 'Har du med deg vann og matpakke?',
-        botTranslation: 'Você trouxe água e a «matpakke» (o lanche de sanduíches embrulhados)?',
+        botTranslation: 'Você trouxe água e a “matpakke” (o lanche de sanduíches embrulhados)?',
         keywords: ['ja', 'vann', 'matpakke', 'nei', 'glemte', 'sjokolade'],
         suggestions: ['Ja, jeg har vann og en matpakke.', 'Nei, jeg glemte matpakken!'],
         registerBreakers: INFORMAL_BREAKERS,
@@ -195,7 +195,7 @@ export const SCENARIOS_NB: ScenarioSeed[] = [
     cefr: 'B1',
     register: 'formal',
     persona: 'A médica de família (fastlege)',
-    description: 'Você está com dor de garganta e vai à médica de família. Ela usa «du», como todos na Noruega, mas a conversa é séria e precisa: descreva os sintomas com frases completas.',
+    description: 'Você está com dor de garganta e vai à médica de família. Ela usa “du”, como todos na Noruega, mas a conversa é séria e precisa: descreva os sintomas com frases completas.',
     turns: [
       {
         bot: 'Hei, velkommen inn. Hva kan jeg hjelpe deg med i dag?',
@@ -252,7 +252,7 @@ export const SCENARIOS_NB: ScenarioSeed[] = [
       },
       {
         bot: 'Jeg har på meg bunaden min i dag. Har du sett en bunad før?',
-        botTranslation: 'Hoje estou com o meu «bunad» (o traje típico da região). Você já tinha visto um bunad?',
+        botTranslation: 'Hoje estou com o meu “bunad” (o traje típico da região). Você já tinha visto um bunad?',
         keywords: ['ja', 'nei', 'fin', 'vakker', 'aldri', 'før', 'bilder'],
         suggestions: ['Nei, aldri! Den er kjempefin.', 'Ja, men bare på bilder. Den er så vakker!'],
         registerBreakers: INFORMAL_BREAKERS,
@@ -287,7 +287,7 @@ export const SCENARIOS_NB: ScenarioSeed[] = [
     cefr: 'B2',
     register: 'formal',
     persona: 'Gro, gerente de recursos humanos de uma empresa de energia',
-    description: 'Uma entrevista numa empresa de energia em Stavanger. O tratamento é por «du», mas o vocabulário é profissional: mostre experiência, motivação e boa organização, sem gíria.',
+    description: 'Uma entrevista numa empresa de energia em Stavanger. O tratamento é por “du”, mas o vocabulário é profissional: mostre experiência, motivação e boa organização, sem gíria.',
     turns: [
       {
         bot: 'Velkommen! Kan du fortelle litt om deg selv?',
@@ -337,7 +337,7 @@ export const JOURNAL_PROMPTS_NB: [string, string][] = [
   ['Hva skal du gjøre i helgen?', 'O que você vai fazer no fim de semana?'],
   ['Beskriv hjemmet ditt.', 'Descreva a sua casa.'],
   ['Fortell om den beste vennen din.', 'Fale do seu melhor amigo ou da sua melhor amiga.'],
-  ['Hva betyr «koselig» for deg? Gi et eksempel.', 'O que «koselig» (aconchegante) quer dizer para você? Dê um exemplo.'],
+  ['Hva betyr “koselig” for deg? Gi et eksempel.', 'O que “koselig” (aconchegante) quer dizer para você? Dê um exemplo.'],
   ['Hvilken norsk by vil du gjerne besøke? Hvorfor?', 'Qual cidade norueguesa você gostaria de visitar? Por quê?'],
   ['Hva gjorde du forrige helg?', 'O que você fez no fim de semana passado?'],
   ['Fortell om familien din.', 'Fale da sua família.'],
@@ -382,7 +382,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'hús',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'house'], ['de', 'Haus'], ['sv', 'hus'], ['da', 'hus'], ['is', 'hús']),
-    evolution_note: 'O norueguês guardou o «u» longo do germânico, que o inglês e o alemão transformaram em ditongo (house, Haus). Aparece em «sykehus» (hospital, a «casa dos doentes»). E o inglês «husband» vem do nórdico «húsbóndi», o dono da casa.',
+    evolution_note: 'O norueguês guardou o “u” longo do germânico, que o inglês e o alemão transformaram em ditongo (house, Haus). Aparece em “sykehus” (hospital, a “casa dos doentes”). E o inglês “husband” vem do nórdico “húsbóndi”, o dono da casa.',
     transparent: false,
   },
   {
@@ -390,7 +390,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'vatn',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'water'], ['de', 'Wasser'], ['sv', 'vatten'], ['is', 'vatn'], ['el', 'hýdor (hidro-)']),
-    evolution_note: 'O nynorsk ainda escreve «vatn», a forma antiga; no bokmål o «tn» se assimilou em «nn». A raiz indo-europeia é a mesma do grego «hýdor», de onde vêm hidratar e hidrante: o «d» grego e o «t» germânico são a troca de consoantes da Lei de Grimm.',
+    evolution_note: 'O nynorsk ainda escreve “vatn”, a forma antiga; no bokmål o “tn” se assimilou em “nn”. A raiz indo-europeia é a mesma do grego “hýdor”, de onde vêm hidratar e hidrante: o “d” grego e o “t” germânico são a troca de consoantes da Lei de Grimm.',
     transparent: false,
   },
   {
@@ -398,7 +398,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'mjólk',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'milk'], ['de', 'Milch'], ['sv', 'mjölk'], ['da', 'mælk'], ['is', 'mjólk']),
-    evolution_note: 'O bokmål escreve «melk», e o nynorsk, «mjølk», mais perto do nórdico antigo. A palavra latina para leite, «lac» (lácteo), não tem parentesco com esta.',
+    evolution_note: 'O bokmål escreve “melk”, e o nynorsk, “mjølk”, mais perto do nórdico antigo. A palavra latina para leite, “lac” (lácteo), não tem parentesco com esta.',
     transparent: false,
   },
   {
@@ -406,7 +406,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'brauð',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'bread'], ['de', 'Brot'], ['sv', 'bröd'], ['da', 'brød'], ['is', 'brauð']),
-    evolution_note: 'O ditongo nórdico «au» se fechou em «ø», como em «rød» (vermelho, do nórdico «rauðr», inglês «red»). O islandês conservou o ditongo até hoje: «brauð».',
+    evolution_note: 'O ditongo nórdico “au” se fechou em “ø”, como em “rød” (vermelho, do nórdico “rauðr”, inglês “red”). O islandês conservou o ditongo até hoje: “brauð”.',
     transparent: false,
   },
   {
@@ -414,7 +414,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'smjǫr',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'smear (untar)'], ['de', 'Schmer (gordura)'], ['sv', 'smör'], ['da', 'smør'], ['is', 'smjör']),
-    evolution_note: 'A manteiga é «aquilo que se unta». O inglês «butter» e o português «butiro» vêm do grego, mas o norueguês manteve a palavra germânica. Está dentro de «smørbrød» (sanduíche aberto).',
+    evolution_note: 'A manteiga é “aquilo que se unta”. O inglês “butter” e o português “butiro” vêm do grego, mas o norueguês manteve a palavra germânica. Está dentro de “smørbrød” (sanduíche aberto).',
     transparent: false,
   },
   {
@@ -422,7 +422,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'ǫl',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'ale'], ['sv', 'öl'], ['da', 'øl'], ['is', 'öl'], ['fi', 'olut']),
-    evolution_note: 'A cerveja manteve nas línguas nórdicas o nome germânico antigo, que no inglês sobrevive em «ale». O finlandês «olut» é empréstimo germânico muito antigo. O alemão «Bier» e o português «cerveja» têm outra história.',
+    evolution_note: 'A cerveja manteve nas línguas nórdicas o nome germânico antigo, que no inglês sobrevive em “ale”. O finlandês “olut” é empréstimo germânico muito antigo. O alemão “Bier” e o português “cerveja” têm outra história.',
     transparent: false,
   },
   {
@@ -430,7 +430,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'egg',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'egg'], ['de', 'Ei'], ['sv', 'ägg'], ['is', 'egg']),
-    evolution_note: 'O inglês moderno diz «egg» por causa dos vikings: o inglês antigo dizia «ey», mas a forma nórdica venceu no inglês medieval. O norueguês escreve a palavra exatamente como o nórdico antigo.',
+    evolution_note: 'O inglês moderno diz “egg” por causa dos vikings: o inglês antigo dizia “ey”, mas a forma nórdica venceu no inglês medieval. O norueguês escreve a palavra exatamente como o nórdico antigo.',
     transparent: false,
   },
   {
@@ -438,7 +438,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'knífr',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'knife'], ['sv', 'kniv'], ['da', 'kniv'], ['is', 'hnífur']),
-    evolution_note: 'Mais um presente dos vikings ao inglês: «knife» veio do nórdico antigo. Em norueguês o «k» inicial ainda se pronuncia; em inglês ficou mudo.',
+    evolution_note: 'Mais um presente dos vikings ao inglês: “knife” veio do nórdico antigo. Em norueguês o “k” inicial ainda se pronuncia; em inglês ficou mudo.',
     transparent: false,
   },
   {
@@ -446,7 +446,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'skyrta',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'shirt / skirt'], ['de', 'Schürze (avental)'], ['sv', 'skjorta'], ['da', 'skjorte']),
-    evolution_note: 'O inglês tem as duas formas: «shirt», herdada do inglês antigo, e «skirt», emprestada do nórdico, com o «sk» que o inglês perdeu. Mesma palavra, duas roupas.',
+    evolution_note: 'O inglês tem as duas formas: “shirt”, herdada do inglês antigo, e “skirt”, emprestada do nórdico, com o “sk” que o inglês perdeu. Mesma palavra, duas roupas.',
     transparent: false,
   },
   {
@@ -454,7 +454,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'lǫg',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'law'], ['sv', 'lag'], ['da', 'lov'], ['is', 'lög']),
-    evolution_note: 'Significa «o que foi posto», da mesma raiz de «legge» (pôr) e do inglês «lay». O inglês «law» é empréstimo viking. Em 1274, o rei Magnus Lagabøte («o reformador das leis») deu à Noruega uma lei comum para o reino todo, o Landsloven.',
+    evolution_note: 'Significa “o que foi posto”, da mesma raiz de “legge” (pôr) e do inglês “lay”. O inglês “law” é empréstimo viking. Em 1274, o rei Magnus Lagabøte (“o reformador das leis”) deu à Noruega uma lei comum para o reino todo, o Landsloven.',
     transparent: false,
   },
   {
@@ -462,7 +462,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'vindauga',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'window'], ['da', 'vindue'], ['is', 'vindauga (antigo)'], ['sv', 'vindöga (antigo)']),
-    evolution_note: 'É o «olho do vento»: «vindr» (vento) + «auga» (olho), o buraco no telhado por onde saía a fumaça e entrava o ar. O inglês «window» vem desta palavra nórdica; o sueco de hoje prefere «fönster», do latim «fenestra».',
+    evolution_note: 'É o “olho do vento”: “vindr” (vento) + “auga” (olho), o buraco no telhado por onde saía a fumaça e entrava o ar. O inglês “window” vem desta palavra nórdica; o sueco de hoje prefere “fönster”, do latim “fenestra”.',
     transparent: false,
   },
   {
@@ -470,7 +470,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'ský',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'sky'], ['sv', 'sky'], ['da', 'sky'], ['is', 'ský']),
-    evolution_note: 'Em norueguês, «sky» continua querendo dizer nuvem, como no nórdico antigo. O inglês tomou a palavra dos vikings e a esticou para o céu inteiro. Pronuncia-se [ʃyː], com o «sk» chiado antes de «y».',
+    evolution_note: 'Em norueguês, “sky” continua querendo dizer nuvem, como no nórdico antigo. O inglês tomou a palavra dos vikings e a esticou para o céu inteiro. Pronuncia-se [ʃyː], com o “sk” chiado antes de “y”.',
     transparent: false,
   },
   {
@@ -478,7 +478,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'borð',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'board'], ['de', 'Bord'], ['sv', 'bord'], ['pt', 'bordo (a bordo)']),
-    evolution_note: 'A palavra quer dizer tábua: a mesa era uma tábua, e o costado do navio também. Daí «om bord» (a bordo). O português «bordo» e «a bordo» vêm da mesma raiz germânica, pelo franco e pelo francês.',
+    evolution_note: 'A palavra quer dizer tábua: a mesa era uma tábua, e o costado do navio também. Daí “om bord” (a bordo). O português “bordo” e “a bordo” vêm da mesma raiz germânica, pelo franco e pelo francês.',
     transparent: false,
   },
   {
@@ -486,7 +486,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'dyrr',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'door'], ['de', 'Tür'], ['sv', 'dörr'], ['la', 'fores'], ['el', 'thýra']),
-    evolution_note: 'Uma das palavras mais antigas da família indo-europeia: o latim «fores» e o grego «thýra» são parentes. Em nórdico antigo, «dyrr» era plural, porque a porta tinha duas folhas.',
+    evolution_note: 'Uma das palavras mais antigas da família indo-europeia: o latim “fores” e o grego “thýra” são parentes. Em nórdico antigo, “dyrr” era plural, porque a porta tinha duas folhas.',
     transparent: false,
   },
   {
@@ -494,7 +494,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'stofa',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'stove (fogão)'], ['de', 'Stube'], ['sv', 'stuga'], ['da', 'stue']),
-    evolution_note: 'Era o cômodo aquecido da casa, onde ficava o fogo. O inglês guardou o aquecimento («stove», fogão) e o norueguês, o cômodo: a sala de estar.',
+    evolution_note: 'Era o cômodo aquecido da casa, onde ficava o fogo. O inglês guardou o aquecimento (“stove”, fogão) e o norueguês, o cômodo: a sala de estar.',
     transparent: false,
   },
 
@@ -504,7 +504,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'móðir',
     origin_language: 'Nórdico antigo',
     cognates: c(['pt', 'mãe / materno'], ['la', 'mater'], ['en', 'mother'], ['de', 'Mutter'], ['sv', 'mor']),
-    evolution_note: 'O «ð» do meio caiu na fala e na escrita: «móðir» virou «mor». Na forma longa «moder» ainda se vê a palavra antiga, e o latim «mater» está no nosso «materno».',
+    evolution_note: 'O “ð” do meio caiu na fala e na escrita: “móðir” virou “mor”. Na forma longa “moder” ainda se vê a palavra antiga, e o latim “mater” está no nosso “materno”.',
     transparent: false,
   },
   {
@@ -512,7 +512,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'faðir',
     origin_language: 'Nórdico antigo',
     cognates: c(['pt', 'pai / paterno'], ['la', 'pater'], ['en', 'father'], ['de', 'Vater'], ['sv', 'far']),
-    evolution_note: 'O «p» do latim «pater» virou «f» no germânico (Lei de Grimm), e o «ð» do meio sumiu como em «mor». Por isso «farfar» é o avô paterno e «morfar», o avô materno: o pai do pai e o pai da mãe.',
+    evolution_note: 'O “p” do latim “pater” virou “f” no germânico (Lei de Grimm), e o “ð” do meio sumiu como em “mor”. Por isso “farfar” é o avô paterno e “morfar”, o avô materno: o pai do pai e o pai da mãe.',
     transparent: false,
   },
   {
@@ -520,7 +520,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'bróðir',
     origin_language: 'Nórdico antigo',
     cognates: c(['pt', 'frade / fraterno'], ['la', 'frater'], ['en', 'brother'], ['de', 'Bruder'], ['sv', 'bror']),
-    evolution_note: 'Mesma raiz indo-europeia do latim «frater», de onde o português tirou fraterno, fraternidade e frade (o «irmão» do convento).',
+    evolution_note: 'Mesma raiz indo-europeia do latim “frater”, de onde o português tirou fraterno, fraternidade e frade (o “irmão” do convento).',
     transparent: false,
   },
   {
@@ -528,7 +528,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'sonr',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'son'], ['de', 'Sohn'], ['sv', 'son'], ['da', 'søn']),
-    evolution_note: 'Está nos sobrenomes noruegueses em «-sen» (Hansen, Olsen, Johansen), que eram patronímicos: Hansen = filho de Hans. A grafia com «-sen» veio do dinamarquês.',
+    evolution_note: 'Está nos sobrenomes noruegueses em “-sen” (Hansen, Olsen, Johansen), que eram patronímicos: Hansen = filho de Hans. A grafia com “-sen” veio do dinamarquês.',
     transparent: false,
   },
   {
@@ -536,7 +536,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'hjarta',
     origin_language: 'Nórdico antigo',
     cognates: c(['pt', 'cordial / coração'], ['la', 'cor, cordis'], ['en', 'heart'], ['de', 'Herz'], ['el', 'kardía']),
-    evolution_note: 'O «k» indo-europeu que o grego guardou em «kardía» (cardíaco) virou «h» no germânico. Do latim «cor» vêm o nosso coração, cordial e recordar (trazer de volta ao coração).',
+    evolution_note: 'O “k” indo-europeu que o grego guardou em “kardía” (cardíaco) virou “h” no germânico. Do latim “cor” vêm o nosso coração, cordial e recordar (trazer de volta ao coração).',
     transparent: false,
   },
   {
@@ -544,7 +544,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'fótr',
     origin_language: 'Nórdico antigo',
     cognates: c(['pt', 'pé / pedal'], ['la', 'pes, pedis'], ['en', 'foot'], ['de', 'Fuß'], ['el', 'poús']),
-    evolution_note: 'O «p» do latim «pes» virou «f» no germânico, e o «d» virou «t»: é a Lei de Grimm de novo. O plural é «føtter», com a vogal mudada, como no inglês «feet».',
+    evolution_note: 'O “p” do latim “pes” virou “f” no germânico, e o “d” virou “t”: é a Lei de Grimm de novo. O plural é “føtter”, com a vogal mudada, como no inglês “feet”.',
     transparent: false,
   },
   {
@@ -552,7 +552,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'auga',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'eye'], ['de', 'Auge'], ['sv', 'öga'], ['la', 'oculus (ocular)']),
-    evolution_note: 'O ditongo nórdico «au» virou «øy» no norueguês. Está escondido em «vindu», o «olho do vento». O latim «oculus», parente distante, deu óculos e ocular.',
+    evolution_note: 'O ditongo nórdico “au” virou “øy” no norueguês. Está escondido em “vindu”, o “olho do vento”. O latim “oculus”, parente distante, deu óculos e ocular.',
     transparent: false,
   },
   {
@@ -560,7 +560,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'eyra',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'ear'], ['de', 'Ohr'], ['sv', 'öra'], ['la', 'auris (auricular)']),
-    evolution_note: 'Parente distante do latim «auris», de onde vem auricular. Há um homônimo: «øre», o centavo da coroa, que vem de outra palavra, o latim «aureus» (moeda de ouro).',
+    evolution_note: 'Parente distante do latim “auris”, de onde vem auricular. Há um homônimo: “øre”, o centavo da coroa, que vem de outra palavra, o latim “aureus” (moeda de ouro).',
     transparent: false,
   },
   {
@@ -568,7 +568,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'tǫnn',
     origin_language: 'Nórdico antigo',
     cognates: c(['pt', 'dente / dentista'], ['la', 'dens, dentis'], ['en', 'tooth'], ['de', 'Zahn'], ['sv', 'tand']),
-    evolution_note: 'O «d» do latim «dens» virou «t» no germânico. Quem fala português já conhece a raiz por dentista e dental; só falta aplicar a Lei de Grimm.',
+    evolution_note: 'O “d” do latim “dens” virou “t” no germânico. Quem fala português já conhece a raiz por dentista e dental; só falta aplicar a Lei de Grimm.',
     transparent: false,
   },
 
@@ -578,7 +578,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'sól',
     origin_language: 'Nórdico antigo',
     cognates: c(['pt', 'sol'], ['la', 'sol'], ['sv', 'sol'], ['is', 'sól'], ['en', 'sun (outra forma)']),
-    evolution_note: 'Aqui o norueguês e o português dizem igual, e não é empréstimo: é a mesma raiz indo-europeia, conservada de um lado no latim e do outro no nórdico. O inglês «sun» vem de uma variante com «n».',
+    evolution_note: 'Aqui o norueguês e o português dizem igual, e não é empréstimo: é a mesma raiz indo-europeia, conservada de um lado no latim e do outro no nórdico. O inglês “sun” vem de uma variante com “n”.',
     transparent: true,
   },
   {
@@ -586,7 +586,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'stjarna',
     origin_language: 'Nórdico antigo',
     cognates: c(['pt', 'estrela'], ['la', 'stella'], ['en', 'star'], ['de', 'Stern'], ['el', 'astḗr']),
-    evolution_note: 'O grego «astḗr» (astro, astronomia) e o latim «stella» (estrela) são parentes. O «sj» norueguês de «stjerne» se pronuncia [ʃ]: «xérne».',
+    evolution_note: 'O grego “astḗr” (astro, astronomia) e o latim “stella” (estrela) são parentes. O “sj” norueguês de “stjerne” se pronuncia [ʃ]: “xérne”.',
     transparent: false,
   },
   {
@@ -594,7 +594,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'nótt',
     origin_language: 'Nórdico antigo',
     cognates: c(['pt', 'noite / noturno'], ['la', 'nox, noctis'], ['en', 'night'], ['de', 'Nacht'], ['sv', 'natt']),
-    evolution_note: 'Mesma raiz do latim «nox, noctis», de onde vêm noite e noturno. Na Noruega do norte, o inverno traz o «mørketid», o tempo escuro, e o verão, a «midnattssol», o sol da meia-noite.',
+    evolution_note: 'Mesma raiz do latim “nox, noctis”, de onde vêm noite e noturno. Na Noruega do norte, o inverno traz o “mørketid”, o tempo escuro, e o verão, a “midnattssol”, o sol da meia-noite.',
     transparent: false,
   },
   {
@@ -602,7 +602,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'veðr',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'weather'], ['de', 'Wetter'], ['sv', 'väder'], ['is', 'veður']),
-    evolution_note: 'Mais uma vez o «ð» nórdico caiu: «veðr» virou «vær». O ditado norueguês diz: «Det finnes ikke dårlig vær, bare dårlige klær» (não existe tempo ruim, só roupa ruim).',
+    evolution_note: 'Mais uma vez o “ð” nórdico caiu: “veðr” virou “vær”. O ditado norueguês diz: “Det finnes ikke dårlig vær, bare dårlige klær” (não existe tempo ruim, só roupa ruim).',
     transparent: false,
   },
   {
@@ -610,7 +610,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'haust',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'harvest (colheita)'], ['de', 'Herbst'], ['sv', 'höst'], ['nl', 'herfst']),
-    evolution_note: 'O outono era a estação da colheita: o inglês «harvest» e o alemão «Herbst» são a mesma palavra. O nynorsk ainda escreve «haust», com o ditongo antigo.',
+    evolution_note: 'O outono era a estação da colheita: o inglês “harvest” e o alemão “Herbst” são a mesma palavra. O nynorsk ainda escreve “haust”, com o ditongo antigo.',
     transparent: false,
   },
   {
@@ -618,7 +618,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'vár',
     origin_language: 'Nórdico antigo',
     cognates: c(['pt', 'primavera'], ['la', 'ver'], ['sv', 'vår'], ['is', 'vor']),
-    evolution_note: 'O substantivo «vår» (primavera) é parente do latim «ver»: a nossa «primavera» é a «prima vera», o começo do «ver». O pronome «vår» (nosso) é outra palavra, que só coincide na forma.',
+    evolution_note: 'O substantivo “vår” (primavera) é parente do latim “ver”: a nossa “primavera” é a “prima vera”, o começo do “ver”. O pronome “vår” (nosso) é outra palavra, que só coincide na forma.',
     transparent: false,
   },
   {
@@ -626,7 +626,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'fjall',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'fell (morro, no norte da Inglaterra)'], ['sv', 'fjäll'], ['is', 'fjall'], ['da', 'fjeld']),
-    evolution_note: 'Os vikings levaram a palavra para o norte da Inglaterra, onde «fell» ainda nomeia os morros do Lake District. Na Noruega, «på fjellet» é o lugar das férias de inverno e de verão.',
+    evolution_note: 'Os vikings levaram a palavra para o norte da Inglaterra, onde “fell” ainda nomeia os morros do Lake District. Na Noruega, “på fjellet” é o lugar das férias de inverno e de verão.',
     transparent: false,
   },
   {
@@ -634,7 +634,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'fjǫrðr',
     origin_language: 'Nórdico antigo',
     cognates: c(['pt', 'fiorde'], ['en', 'fjord / firth / ford'], ['de', 'Fjord / Furt (vau)'], ['sv', 'fjärd'], ['is', 'fjörður']),
-    evolution_note: 'Presente do norueguês ao mundo: «fjord» entrou no inglês no século XVII e daí no português como fiorde. A raiz quer dizer «passagem», a mesma do inglês «ford» (vau) e do alemão «Furt» (como em Frankfurt). O escocês «firth» é a mesma palavra, levada pelos vikings.',
+    evolution_note: 'Presente do norueguês ao mundo: “fjord” entrou no inglês no século XVII e daí no português como fiorde. A raiz quer dizer “passagem”, a mesma do inglês “ford” (vau) e do alemão “Furt” (como em Frankfurt). O escocês “firth” é a mesma palavra, levada pelos vikings.',
     transparent: true,
   },
   {
@@ -642,7 +642,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'ey',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'island (primeira parte)'], ['sv', 'ö'], ['da', 'ø'], ['is', 'ey']),
-    evolution_note: 'Está no fim dos nomes de arquipélagos nórdicos: Færøyene (as Ilhas Faroé) e, pelo nórdico, as Orkney. O inglês «island» vem do inglês antigo «īegland», da mesma raiz; o «s» foi posto depois, por confusão com «isle».',
+    evolution_note: 'Está no fim dos nomes de arquipélagos nórdicos: Færøyene (as Ilhas Faroé) e, pelo nórdico, as Orkney. O inglês “island” vem do inglês antigo “īegland”, da mesma raiz; o “s” foi posto depois, por confusão com “isle”.',
     transparent: false,
   },
   {
@@ -650,7 +650,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'vík',
     origin_language: 'Nórdico antigo',
     cognates: c(['is', 'vík (Reykjavík)'], ['sv', 'vik'], ['da', 'vig']),
-    evolution_note: 'Uma enseada, uma baía pequena. Está em Reykjavík, a «baía das fumaças», e em Narvik. Uma das explicações para a palavra «viking» liga-a a «vík», mas a origem exata é discutida.',
+    evolution_note: 'Uma enseada, uma baía pequena. Está em Reykjavík, a “baía das fumaças”, e em Narvik. Uma das explicações para a palavra “viking” liga-a a “vík”, mas a origem exata é discutida.',
     transparent: false,
   },
 
@@ -660,7 +660,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'fiskr',
     origin_language: 'Nórdico antigo',
     cognates: c(['pt', 'peixe / piscina'], ['la', 'piscis'], ['en', 'fish'], ['de', 'Fisch'], ['sv', 'fisk']),
-    evolution_note: 'O «p» do latim «piscis» virou «f» no germânico. A piscina era, em latim, o viveiro de peixes. A pesca é a atividade mais antiga da costa norueguesa.',
+    evolution_note: 'O “p” do latim “piscis” virou “f” no germânico. A piscina era, em latim, o viveiro de peixes. A pesca é a atividade mais antiga da costa norueguesa.',
     transparent: false,
   },
   {
@@ -668,7 +668,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'hvalr',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'whale'], ['de', 'Wal'], ['sv', 'val'], ['da', 'hval']),
-    evolution_note: 'O bokmål manteve a grafia «hv» do dinamarquês e do nórdico antigo, mas o «h» é mudo: «hval» soa [ʋɑːl]. O nynorsk escreve «kval», com o «k» de «kva» (o que).',
+    evolution_note: 'O bokmål manteve a grafia “hv” do dinamarquês e do nórdico antigo, mas o “h” é mudo: “hval” soa [ʋɑːl]. O nynorsk escreve “kval”, com o “k” de “kva” (o que).',
     transparent: false,
   },
   {
@@ -676,7 +676,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'náhvalr',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'narwhal'], ['pt', 'narval'], ['de', 'Narwal'], ['fr', 'narval']),
-    evolution_note: 'O inglês e o português tomaram o nome das línguas nórdicas. Segundo a explicação mais aceita, «nár» é cadáver: a pele manchada e pálida lembraria um afogado. O dente comprido do narval era vendido na Idade Média como chifre de unicórnio.',
+    evolution_note: 'O inglês e o português tomaram o nome das línguas nórdicas. Segundo a explicação mais aceita, “nár” é cadáver: a pele manchada e pálida lembraria um afogado. O dente comprido do narval era vendido na Idade Média como chifre de unicórnio.',
     transparent: false,
   },
   {
@@ -684,7 +684,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'síld',
     origin_language: 'Nórdico antigo',
     cognates: c(['sv', 'sill'], ['da', 'sild'], ['fi', 'silli'], ['ru', 'selʹd (сельдь)']),
-    evolution_note: 'O arenque foi riqueza da costa norueguesa, e o nome viajou com ele: o finlandês «silli» e o russo «selʹd» são empréstimos nórdicos. Bergen enriqueceu com o comércio de peixe da Liga Hanseática.',
+    evolution_note: 'O arenque foi riqueza da costa norueguesa, e o nome viajou com ele: o finlandês “silli” e o russo “selʹd” são empréstimos nórdicos. Bergen enriqueceu com o comércio de peixe da Liga Hanseática.',
     transparent: false,
   },
   {
@@ -692,7 +692,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'þorskr',
     origin_language: 'Nórdico antigo',
     cognates: c(['sv', 'torsk'], ['da', 'torsk'], ['is', 'þorskur'], ['de', 'Dorsch']),
-    evolution_note: 'É o bacalhau, peixe que liga a Noruega ao Brasil e a Portugal. Seco ao vento, vira «tørrfisk» (em Lofoten); salgado e seco nas pedras, «klippfisk», o bacalhau que os portugueses compram há séculos de cidades como Ålesund e Kristiansund.',
+    evolution_note: 'É o bacalhau, peixe que liga a Noruega ao Brasil e a Portugal. Seco ao vento, vira “tørrfisk” (em Lofoten); salgado e seco nas pedras, “klippfisk”, o bacalhau que os portugueses compram há séculos de cidades como Ålesund e Kristiansund.',
     transparent: false,
   },
   {
@@ -700,7 +700,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'hestr',
     origin_language: 'Nórdico antigo',
     cognates: c(['de', 'Hengst (garanhão)'], ['sv', 'häst'], ['da', 'hest'], ['is', 'hestur']),
-    evolution_note: 'Não é parente do inglês «horse», que corresponde ao nórdico «hross» (cavalo, em linguagem poética). O parente de «hest» é o alemão «Hengst», o garanhão.',
+    evolution_note: 'Não é parente do inglês “horse”, que corresponde ao nórdico “hross” (cavalo, em linguagem poética). O parente de “hest” é o alemão “Hengst”, o garanhão.',
     transparent: false,
   },
   {
@@ -708,7 +708,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'úlfr',
     origin_language: 'Nórdico antigo',
     cognates: c(['pt', 'lobo'], ['la', 'lupus'], ['en', 'wolf'], ['de', 'Wolf'], ['sv', 'ulv / varg']),
-    evolution_note: 'Parente distante do latim «lupus», de onde vem lobo. Como nome próprio, «Ulf» ainda existe. O sueco usa mais «varg», que já foi palavra de tabu: era melhor não chamar o lobo pelo nome.',
+    evolution_note: 'Parente distante do latim “lupus”, de onde vem lobo. Como nome próprio, “Ulf” ainda existe. O sueco usa mais “varg”, que já foi palavra de tabu: era melhor não chamar o lobo pelo nome.',
     transparent: false,
   },
   {
@@ -716,7 +716,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'bjǫrn',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'bear'], ['de', 'Bär'], ['sv', 'björn'], ['is', 'björn']),
-    evolution_note: 'Quer dizer «o marrom». O nome verdadeiro do urso, que o latim guardou em «ursus», foi evitado por tabu nas línguas germânicas, e ficou o apelido. «Bjørn» também é nome de homem comum na Noruega.',
+    evolution_note: 'Quer dizer “o marrom”. O nome verdadeiro do urso, que o latim guardou em “ursus”, foi evitado por tabu nas línguas germânicas, e ficou o apelido. “Bjørn” também é nome de homem comum na Noruega.',
     transparent: false,
   },
   {
@@ -724,7 +724,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'elgr',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'elk'], ['de', 'Elch'], ['sv', 'älg'], ['la', 'alces']),
-    evolution_note: 'O alce é o maior animal da floresta norueguesa. O latim «alces» veio das línguas germânicas. Cuidado: no inglês americano, «elk» é outro animal, o uapiti.',
+    evolution_note: 'O alce é o maior animal da floresta norueguesa. O latim “alces” veio das línguas germânicas. Cuidado: no inglês americano, “elk” é outro animal, o uapiti.',
     transparent: false,
   },
   {
@@ -732,7 +732,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'hreindýri',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'reindeer'], ['de', 'Rentier'], ['sv', 'ren'], ['is', 'hreindýr']),
-    evolution_note: '«Dyr» é animal (o inglês «deer» encolheu para cervo). O inglês «reindeer» veio do nórdico. No norte, a criação de renas é atividade tradicional do povo sámi.',
+    evolution_note: '“Dyr” é animal (o inglês “deer” encolheu para cervo). O inglês “reindeer” veio do nórdico. No norte, a criação de renas é atividade tradicional do povo sámi.',
     transparent: false,
   },
 
@@ -742,7 +742,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'þrír',
     origin_language: 'Nórdico antigo',
     cognates: c(['pt', 'três'], ['la', 'tres'], ['en', 'three'], ['de', 'drei'], ['sv', 'tre']),
-    evolution_note: 'Um dos números que o brasileiro reconhece, pela raiz indo-europeia comum. Há um homônimo: «tre» (árvore, madeira), do nórdico «tré», parente do inglês «tree».',
+    evolution_note: 'Um dos números que o brasileiro reconhece, pela raiz indo-europeia comum. Há um homônimo: “tre” (árvore, madeira), do nórdico “tré”, parente do inglês “tree”.',
     transparent: true,
   },
   {
@@ -750,7 +750,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'syv',
     origin_language: 'Dinamarquês',
     cognates: c(['da', 'syv'], ['sv', 'sju'], ['is', 'sjö'], ['la', 'septem'], ['en', 'seven']),
-    evolution_note: 'O bokmål aceita dois «sete»: «sju», a forma norueguesa (do nórdico «sjau»), e «syv», herança dos quatrocentos anos de união com a Dinamarca (1380–1814). Hoje «sju» é bem mais comum, mas «syv» ainda se ouve.',
+    evolution_note: 'O bokmål aceita dois “sete”: “sju”, a forma norueguesa (do nórdico “sjau”), e “syv”, herança dos quatrocentos anos de união com a Dinamarca (1380–1814). Hoje “sju” é bem mais comum, mas “syv” ainda se ouve.',
     transparent: false,
   },
   {
@@ -758,7 +758,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'hundrað',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'hundred'], ['de', 'hundert'], ['sv', 'hundra'], ['la', 'centum (cem)']),
-    evolution_note: 'No nórdico antigo, «hundrað» costumava valer 120, o «grande cento» (storhundre), contado em doze dezenas. O latim «centum» é parente: o «k» virou «h» no germânico.',
+    evolution_note: 'No nórdico antigo, “hundrað” costumava valer 120, o “grande cento” (storhundre), contado em doze dezenas. O latim “centum” é parente: o “k” virou “h” no germânico.',
     transparent: false,
   },
   {
@@ -766,7 +766,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'týsdagr',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'Tuesday'], ['sv', 'tisdag'], ['da', 'tirsdag'], ['la', 'dies Martis']),
-    evolution_note: 'O dia de Tyr, deus da guerra e da justiça, que os germânicos igualaram ao Marte romano: por isso o latim «dies Martis» deu «martes» em espanhol. O português trocou os deuses pelos números: terça-feira.',
+    evolution_note: 'O dia de Tyr, deus da guerra e da justiça, que os germânicos igualaram ao Marte romano: por isso o latim “dies Martis” deu “martes” em espanhol. O português trocou os deuses pelos números: terça-feira.',
     transparent: false,
   },
   {
@@ -774,7 +774,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'þórsdagr',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'Thursday'], ['sv', 'torsdag'], ['de', 'Donnerstag'], ['is', 'fimmtudagur']),
-    evolution_note: 'O dia de Thor, o deus do trovão, igualado a Júpiter (jueves em espanhol). O alemão «Donnerstag» é o «dia do trovão». O islandês, por decisão da Igreja na Idade Média, trocou os deuses por números: fimmtudagur, o quinto dia.',
+    evolution_note: 'O dia de Thor, o deus do trovão, igualado a Júpiter (jueves em espanhol). O alemão “Donnerstag” é o “dia do trovão”. O islandês, por decisão da Igreja na Idade Média, trocou os deuses por números: fimmtudagur, o quinto dia.',
     transparent: false,
   },
   {
@@ -782,7 +782,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'frjádagr',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'Friday'], ['sv', 'fredag'], ['de', 'Freitag'], ['la', 'dies Veneris']),
-    evolution_note: 'O dia de Frigg, a esposa de Odin, igualada a Vênus (viernes em espanhol). Na Noruega, sexta à noite é «fredagskos»: sofá, tacos e televisão em família.',
+    evolution_note: 'O dia de Frigg, a esposa de Odin, igualada a Vênus (viernes em espanhol). Na Noruega, sexta à noite é “fredagskos”: sofá, tacos e televisão em família.',
     transparent: false,
   },
   {
@@ -790,7 +790,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'laugardagr',
     origin_language: 'Nórdico antigo',
     cognates: c(['sv', 'lördag'], ['da', 'lørdag'], ['is', 'laugardagur'], ['en', 'lather (espuma)']),
-    evolution_note: 'O sábado nórdico é o «dia do banho»: «laug» era o banho, parente do inglês «lather» (espuma de sabão). O inglês «Saturday» é o dia de Saturno.',
+    evolution_note: 'O sábado nórdico é o “dia do banho”: “laug” era o banho, parente do inglês “lather” (espuma de sabão). O inglês “Saturday” é o dia de Saturno.',
     transparent: false,
   },
   {
@@ -798,7 +798,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'jól',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'yule (arcaico)'], ['sv', 'jul'], ['da', 'jul'], ['is', 'jól']),
-    evolution_note: 'Era uma festa pagã do meio do inverno, que o cristianismo absorveu e manteve com o nome antigo. O «God jul!» norueguês tem o mesmo parente do inglês «yule», que sobrevive em «yule log».',
+    evolution_note: 'Era uma festa pagã do meio do inverno, que o cristianismo absorveu e manteve com o nome antigo. O “God jul!” norueguês tem o mesmo parente do inglês “yule”, que sobrevive em “yule log”.',
     transparent: false,
   },
   {
@@ -806,7 +806,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'pascha',
     origin_language: 'Hebraico, via grego e latim',
     cognates: c(['pt', 'Páscoa'], ['la', 'pascha'], ['el', 'páscha'], ['da', 'påske'], ['sv', 'påsk']),
-    evolution_note: 'Vem do hebraico «pesach» (passagem), pelo grego e pelo latim da Igreja. Na Noruega, a Páscoa é tempo de cabana na montanha, esqui e romance policial: o «påskekrim».',
+    evolution_note: 'Vem do hebraico “pesach” (passagem), pelo grego e pelo latim da Igreja. Na Noruega, a Páscoa é tempo de cabana na montanha, esqui e romance policial: o “påskekrim”.',
     transparent: false,
   },
   {
@@ -814,7 +814,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'tími',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'time'], ['sv', 'timme'], ['da', 'time'], ['is', 'tími']),
-    evolution_note: 'Falso amigo com o inglês: em norueguês «time» é hora, aula ou consulta marcada («jeg har time hos legen»). Mesma raiz de «tid».',
+    evolution_note: 'Falso amigo com o inglês: em norueguês “time” é hora, aula ou consulta marcada (“jeg har time hos legen”). Mesma raiz de “tid”.',
     transparent: false,
   },
 
@@ -824,7 +824,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'konungr',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'king'], ['de', 'König'], ['sv', 'kung'], ['fi', 'kuningas']),
-    evolution_note: 'Deriva de «kyn» (família, linhagem): o rei era o homem da linhagem nobre. O finlandês «kuningas» conserva a forma germânica antiquíssima.',
+    evolution_note: 'Deriva de “kyn” (família, linhagem): o rei era o homem da linhagem nobre. O finlandês “kuningas” conserva a forma germânica antiquíssima.',
     transparent: false,
   },
   {
@@ -832,7 +832,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'þing',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'thing'], ['de', 'Ding'], ['sv', 'ting'], ['is', 'þing (Alþingi)']),
-    evolution_note: 'Antes de ser «coisa», era a assembleia dos homens livres, onde se faziam leis e julgamentos; depois, o assunto discutido nela; e por fim, qualquer coisa. O sentido antigo sobrevive em «Stortinget» e no «Alþingi» islandês.',
+    evolution_note: 'Antes de ser “coisa”, era a assembleia dos homens livres, onde se faziam leis e julgamentos; depois, o assunto discutido nela; e por fim, qualquer coisa. O sentido antigo sobrevive em “Stortinget” e no “Alþingi” islandês.',
     transparent: false,
   },
   {
@@ -840,7 +840,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'stor + ting',
     origin_language: 'Norueguês (nórdico antigo þing)',
     cognates: c(['is', 'Alþingi'], ['en', 'thing']),
-    evolution_note: 'A «grande assembleia»: o parlamento norueguês, criado pela Constituição assinada em Eidsvoll em 17 de maio de 1814, a data da festa nacional. O nome retoma de propósito as assembleias da Era Viking.',
+    evolution_note: 'A “grande assembleia”: o parlamento norueguês, criado pela Constituição assinada em Eidsvoll em 17 de maio de 1814, a data da festa nacional. O nome retoma de propósito as assembleias da Era Viking.',
     transparent: false,
   },
   {
@@ -848,7 +848,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'bóndi',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'husband (húsbóndi)'], ['sv', 'bonde'], ['da', 'bonde'], ['is', 'bóndi']),
-    evolution_note: 'Contração de «búandi», «aquele que mora e cultiva a terra». O «húsbóndi», o dono da casa, deu o inglês «husband». Na Noruega, os camponeses livres (bønder) sempre tiveram peso político.',
+    evolution_note: 'Contração de “búandi”, “aquele que mora e cultiva a terra”. O “húsbóndi”, o dono da casa, deu o inglês “husband”. Na Noruega, os camponeses livres (bønder) sempre tiveram peso político.',
     transparent: false,
   },
   {
@@ -856,7 +856,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'þǫkk',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'thanks'], ['de', 'Dank'], ['sv', 'tack'], ['is', 'takk']),
-    evolution_note: 'Mesma raiz de «tenke» (pensar), como o inglês «thank» e «think»: agradecer é lembrar do favor. O norueguês diz «takk for maten» ao sair da mesa e «takk for sist» ao reencontrar alguém.',
+    evolution_note: 'Mesma raiz de “tenke” (pensar), como o inglês “thank” e “think”: agradecer é lembrar do favor. O norueguês diz “takk for maten” ao sair da mesa e “takk for sist” ao reencontrar alguém.',
     transparent: false,
   },
   {
@@ -864,7 +864,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'gipt',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'gift (presente)'], ['de', 'Gift (veneno)'], ['sv', 'gift'], ['da', 'gift']),
-    evolution_note: 'Tudo vem de «gi» (dar): a noiva era «dada» em casamento, e por isso «gift» é casado. O substantivo «gift» é veneno, uma «dose dada», como no alemão. O inglês ficou só com o presente.',
+    evolution_note: 'Tudo vem de “gi” (dar): a noiva era “dada” em casamento, e por isso “gift” é casado. O substantivo “gift” é veneno, uma “dose dada”, como no alemão. O inglês ficou só com o presente.',
     transparent: false,
   },
   {
@@ -872,7 +872,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'taka',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'take'], ['sv', 'ta / taga'], ['da', 'tage'], ['is', 'taka']),
-    evolution_note: 'O inglês «take» é empréstimo viking: substituiu o inglês antigo «niman», parente do alemão «nehmen». O norueguês encurtou o verbo para «ta» (tar, tok, har tatt).',
+    evolution_note: 'O inglês “take” é empréstimo viking: substituiu o inglês antigo “niman”, parente do alemão “nehmen”. O norueguês encurtou o verbo para “ta” (tar, tok, har tatt).',
     transparent: false,
   },
   {
@@ -880,7 +880,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'þeir',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'they'], ['sv', 'de'], ['da', 'de'], ['is', 'þeir']),
-    evolution_note: 'O pronome inglês «they» (e «them», «their») veio do nórdico antigo, trazido pelos vikings. A grafia norueguesa «de» é dinamarquesa; na fala de Oslo, o pronome soa [diː].',
+    evolution_note: 'O pronome inglês “they” (e “them”, “their”) veio do nórdico antigo, trazido pelos vikings. A grafia norueguesa “de” é dinamarquesa; na fala de Oslo, o pronome soa [diː].',
     transparent: false,
   },
   {
@@ -888,7 +888,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'kaka',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'cake'], ['sv', 'kaka'], ['da', 'kage'], ['de', 'Kuchen']),
-    evolution_note: 'O inglês «cake» é empréstimo nórdico da época viking. O dinamarquês amoleceu o «k» do meio em «g» (kage); o norueguês manteve o som antigo.',
+    evolution_note: 'O inglês “cake” é empréstimo nórdico da época viking. O dinamarquês amoleceu o “k” do meio em “g” (kage); o norueguês manteve o som antigo.',
     transparent: false,
   },
   {
@@ -896,7 +896,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'læra',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'learn / lore'], ['de', 'lehren'], ['sv', 'lära'], ['da', 'lære']),
-    evolution_note: 'O verbo quer dizer ao mesmo tempo aprender e ensinar: «jeg lærer norsk» (aprendo norueguês), «hun lærer meg norsk» (ela me ensina norueguês). Daí vem «lærer», o professor.',
+    evolution_note: 'O verbo quer dizer ao mesmo tempo aprender e ensinar: “jeg lærer norsk” (aprendo norueguês), “hun lærer meg norsk” (ela me ensina norueguês). Daí vem “lærer”, o professor.',
     transparent: false,
   },
   {
@@ -904,7 +904,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'hvat',
     origin_language: 'Nórdico antigo',
     cognates: c(['pt', 'que'], ['la', 'quid'], ['en', 'what'], ['de', 'was'], ['sv', 'vad']),
-    evolution_note: 'O «kw» indo-europeu que o latim guardou em «quid» (e o português em «que») virou «hw» no germânico. O bokmål escreve «hv», à dinamarquesa, mas o «h» é mudo: [ʋɑː]. O nynorsk escreve «kva».',
+    evolution_note: 'O “kw” indo-europeu que o latim guardou em “quid” (e o português em “que”) virou “hw” no germânico. O bokmål escreve “hv”, à dinamarquesa, mas o “h” é mudo: [ʋɑː]. O nynorsk escreve “kva”.',
     transparent: false,
   },
   {
@@ -912,7 +912,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'hvítr',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'white'], ['de', 'weiß'], ['sv', 'vit'], ['da', 'hvid']),
-    evolution_note: 'O bokmål manteve o «hv» mudo da tradição dinamarquesa; o sueco já o eliminou (vit), e o nynorsk escreve «kvit». Está em «hvitløk», o alho, a «cebola branca».',
+    evolution_note: 'O bokmål manteve o “hv” mudo da tradição dinamarquesa; o sueco já o eliminou (vit), e o nynorsk escreve “kvit”. Está em “hvitløk”, o alho, a “cebola branca”.',
     transparent: false,
   },
   {
@@ -920,7 +920,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'rauðr',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'red'], ['de', 'rot'], ['sv', 'röd'], ['la', 'ruber (rubi)']),
-    evolution_note: 'Parente distante do latim «ruber», de onde vêm rubi e rubro. Erik, o Vermelho (Eiríkr rauði), fundou as colônias nórdicas da Groenlândia no fim do século X.',
+    evolution_note: 'Parente distante do latim “ruber”, de onde vêm rubi e rubro. Erik, o Vermelho (Eiríkr rauði), fundou as colônias nórdicas da Groenlândia no fim do século X.',
     transparent: false,
   },
 
@@ -930,7 +930,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'snacken',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'schnacken (tagarelar, no norte)'], ['da', 'snakke'], ['nl', 'snakken'], ['sv', 'snacka']),
-    evolution_note: 'Chegou com os mercadores da Liga Hanseática, que dominaram o comércio de Bergen do século XIII ao XVI. Hoje é o verbo comum para falar; o nórdico «tale» ficou para o formal (en tale = um discurso).',
+    evolution_note: 'Chegou com os mercadores da Liga Hanseática, que dominaram o comércio de Bergen do século XIII ao XVI. Hoje é o verbo comum para falar; o nórdico “tale” ficou para o formal (en tale = um discurso).',
     transparent: false,
   },
   {
@@ -938,7 +938,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'betalen',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'bezahlen'], ['sv', 'betala'], ['da', 'betale'], ['nl', 'betalen']),
-    evolution_note: 'O prefixo «be-» é marca registrada do baixo-alemão, e «tal» quer dizer número, conta. Pagar era «acertar a conta» com o mercador hanseático.',
+    evolution_note: 'O prefixo “be-” é marca registrada do baixo-alemão, e “tal” quer dizer número, conta. Pagar era “acertar a conta” com o mercador hanseático.',
     transparent: false,
   },
   {
@@ -946,7 +946,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'vornöget',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'vergnügt'], ['sv', 'förnöjd'], ['da', 'fornøjet']),
-    evolution_note: 'O prefixo «for-», equivalente ao alemão «ver-», é quase sempre sinal de empréstimo do baixo-alemão: forstå (entender), forklare (explicar), fornøyd (satisfeito).',
+    evolution_note: 'O prefixo “for-”, equivalente ao alemão “ver-”, é quase sempre sinal de empréstimo do baixo-alemão: forstå (entender), forklare (explicar), fornøyd (satisfeito).',
     transparent: false,
   },
   {
@@ -954,7 +954,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'arbeit',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'Arbeit'], ['sv', 'arbete'], ['da', 'arbejde'], ['nl', 'arbeid']),
-    evolution_note: 'Veio com os artesãos e mercadores alemães da Idade Média. O sentido antigo era «esforço, labuta». Na fala, muitos noruegueses dizem «jobb», do inglês.',
+    evolution_note: 'Veio com os artesãos e mercadores alemães da Idade Média. O sentido antigo era “esforço, labuta”. Na fala, muitos noruegueses dizem “jobb”, do inglês.',
     transparent: false,
   },
   {
@@ -962,7 +962,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'vrouwe',
     origin_language: 'Baixo-alemão médio',
     cognates: c(['de', 'Frau'], ['sv', 'fru'], ['da', 'frue'], ['nl', 'vrouw']),
-    evolution_note: 'A «senhora» veio do baixo-alemão, e o nórdico tinha a parente «Frøya», a deusa. Hoje «fru» é o tratamento formal, raro na Noruega de tanto «du».',
+    evolution_note: 'A “senhora” veio do baixo-alemão, e o nórdico tinha a parente “Frøya”, a deusa. Hoje “fru” é o tratamento formal, raro na Noruega de tanto “du”.',
     transparent: false,
   },
   {
@@ -970,7 +970,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'fri + -heit',
     origin_language: 'Nórdico antigo e baixo-alemão médio',
     cognates: c(['de', 'Freiheit'], ['sv', 'frihet'], ['da', 'frihed'], ['en', 'freedom']),
-    evolution_note: '«Fri» é nórdico, mas o sufixo «-het», que forma substantivos abstratos, veio do baixo-alemão «-heit»: kjærlighet, sannhet, frihet. O inglês usa o parente «-hood» (childhood).',
+    evolution_note: '“Fri” é nórdico, mas o sufixo “-het”, que forma substantivos abstratos, veio do baixo-alemão “-heit”: kjærlighet, sannhet, frihet. O inglês usa o parente “-hood” (childhood).',
     transparent: false,
   },
   {
@@ -986,7 +986,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'tolk',
     origin_language: 'Baixo-alemão médio, do eslavo',
     cognates: c(['de', 'Dolmetscher'], ['sv', 'tolk'], ['da', 'tolk'], ['ru', 'tolk (sentido, interpretação)']),
-    evolution_note: 'Os mercadores hanseáticos negociavam com os russos em Novgorod e trouxeram de lá a palavra eslava para intérprete. O alemão «Dolmetscher» tem a mesma origem.',
+    evolution_note: 'Os mercadores hanseáticos negociavam com os russos em Novgorod e trouxeram de lá a palavra eslava para intérprete. O alemão “Dolmetscher” tem a mesma origem.',
     transparent: false,
   },
   {
@@ -994,7 +994,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'kökene',
     origin_language: 'Latim, via baixo-alemão médio',
     cognates: c(['pt', 'cozinha'], ['la', 'coquina'], ['en', 'kitchen'], ['de', 'Küche'], ['sv', 'kök']),
-    evolution_note: 'O latim «coquina», de onde vem a nossa cozinha, chegou ao norueguês pelo baixo-alemão. O «kj» soa [ç], um sopro com a língua perto do céu da boca: «çøken».',
+    evolution_note: 'O latim “coquina”, de onde vem a nossa cozinha, chegou ao norueguês pelo baixo-alemão. O “kj” soa [ç], um sopro com a língua perto do céu da boca: “çøken”.',
     transparent: false,
   },
   {
@@ -1002,7 +1002,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'appelsina',
     origin_language: 'Baixo-alemão e holandês',
     cognates: c(['nl', 'sinaasappel'], ['de', 'Apfelsine'], ['sv', 'apelsin'], ['da', 'appelsin']),
-    evolution_note: 'É a «maçã da China»: «appel» + «Sina». O nome lembra que as laranjas doces chegaram à Europa pelos navegantes portugueses, vindas da Ásia.',
+    evolution_note: 'É a “maçã da China”: “appel” + “Sina”. O nome lembra que as laranjas doces chegaram à Europa pelos navegantes portugueses, vindas da Ásia.',
     transparent: false,
   },
   {
@@ -1010,7 +1010,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'klocke',
     origin_language: 'Latim medieval, via baixo-alemão médio',
     cognates: c(['en', 'clock'], ['de', 'Glocke (sino)'], ['fr', 'cloche (sino)'], ['la', 'clocca']),
-    evolution_note: 'Era o sino: as horas se contavam pelas badaladas da igreja. A palavra latina medieval «clocca» é de origem celta. «Klokka er ti» é «são dez horas».',
+    evolution_note: 'Era o sino: as horas se contavam pelas badaladas da igreja. A palavra latina medieval “clocca” é de origem celta. “Klokka er ti” é “são dez horas”.',
     transparent: false,
   },
 
@@ -1020,7 +1020,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'ek',
     origin_language: 'Nórdico antigo, com grafia dinamarquesa',
     cognates: c(['pt', 'eu / ego'], ['la', 'ego'], ['en', 'I'], ['de', 'ich'], ['da', 'jeg']),
-    evolution_note: 'O nórdico «ek» é parente do latim «ego». A grafia «jeg» é dinamarquesa, herança da época em que a língua escrita da Noruega era o dinamarquês; o nynorsk escreve «eg», como muitos dialetos falam.',
+    evolution_note: 'O nórdico “ek” é parente do latim “ego”. A grafia “jeg” é dinamarquesa, herança da época em que a língua escrita da Noruega era o dinamarquês; o nynorsk escreve “eg”, como muitos dialetos falam.',
     transparent: false,
   },
   {
@@ -1028,7 +1028,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'ekki',
     origin_language: 'Nórdico antigo, com grafia dinamarquesa',
     cognates: c(['da', 'ikke'], ['sv', 'inte'], ['is', 'ekki'], ['nn', 'ikkje']),
-    evolution_note: 'A forma «ikke» é a do dinamarquês; o nynorsk escreve «ikkje», com o som de muitos dialetos. O sueco «inte» vem de outra forma da mesma negação.',
+    evolution_note: 'A forma “ikke” é a do dinamarquês; o nynorsk escreve “ikkje”, com o som de muitos dialetos. O sueco “inte” vem de outra forma da mesma negação.',
     transparent: false,
   },
   {
@@ -1036,7 +1036,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'vrōkost',
     origin_language: 'Baixo-alemão médio, via dinamarquês',
     cognates: c(['da', 'frokost (almoço!)'], ['sv', 'frukost'], ['de', 'früh + Kost']),
-    evolution_note: 'A «comida cedo»: «fro» (cedo, alemão «früh») + «kost» (comida). Cuidado na Dinamarca: lá «frokost» é o almoço, e o café da manhã é «morgenmad».',
+    evolution_note: 'A “comida cedo”: “fro” (cedo, alemão “früh”) + “kost” (comida). Cuidado na Dinamarca: lá “frokost” é o almoço, e o café da manhã é “morgenmad”.',
     transparent: false,
   },
   {
@@ -1044,7 +1044,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'hyggja',
     origin_language: 'Nórdico antigo',
     cognates: c(['da', 'hyggelig / hygge'], ['sv', 'hygglig'], ['is', 'hyggja (pensar)']),
-    evolution_note: 'Vem do verbo nórdico «hyggja» (pensar, cuidar), da família de «hug» (mente, ânimo). «Hygge» é originalmente norueguês e passou ao dinamarquês por volta de 1800; hoje o mundo o conhece pelo dinamarquês.',
+    evolution_note: 'Vem do verbo nórdico “hyggja” (pensar, cuidar), da família de “hug” (mente, ânimo). “Hygge” é originalmente norueguês e passou ao dinamarquês por volta de 1800; hoje o mundo o conhece pelo dinamarquês.',
     transparent: false,
   },
   {
@@ -1052,7 +1052,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'cycle',
     origin_language: 'Grego, via francês e inglês',
     cognates: c(['pt', 'bicicleta / ciclo'], ['el', 'kýklos (roda)'], ['en', 'cycle'], ['da', 'cykel']),
-    evolution_note: 'Do grego «kýklos», a roda (o nosso ciclo). O dinamarquês escreve «cykel»; o norueguês adaptou a grafia à pronúncia, como fez com tantas palavras estrangeiras depois de separar a escrita da dinamarquesa.',
+    evolution_note: 'Do grego “kýklos”, a roda (o nosso ciclo). O dinamarquês escreve “cykel”; o norueguês adaptou a grafia à pronúncia, como fez com tantas palavras estrangeiras depois de separar a escrita da dinamarquesa.',
     transparent: false,
   },
 
@@ -1062,7 +1062,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'schola',
     origin_language: 'Latim (do grego)',
     cognates: c(['pt', 'escola'], ['la', 'schola'], ['el', 'scholḗ'], ['en', 'school'], ['sv', 'skola']),
-    evolution_note: 'O grego «scholḗ» queria dizer tempo livre, lazer: estudar era o que fazia quem não precisava trabalhar. Entrou com a Igreja na Idade Média.',
+    evolution_note: 'O grego “scholḗ” queria dizer tempo livre, lazer: estudar era o que fazia quem não precisava trabalhar. Entrou com a Igreja na Idade Média.',
     transparent: false,
   },
   {
@@ -1070,7 +1070,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'presbyter',
     origin_language: 'Latim (do grego)',
     cognates: c(['pt', 'presbítero / padre'], ['el', 'presbýteros (mais velho)'], ['en', 'priest'], ['de', 'Priester']),
-    evolution_note: 'O grego «presbýteros» era «o mais velho», o ancião da comunidade. A palavra chegou com o cristianismo, no século XI, junto com «kirke» (igreja) e «biskop» (bispo).',
+    evolution_note: 'O grego “presbýteros” era “o mais velho”, o ancião da comunidade. A palavra chegou com o cristianismo, no século XI, junto com “kirke” (igreja) e “biskop” (bispo).',
     transparent: false,
   },
   {
@@ -1078,7 +1078,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'scribere',
     origin_language: 'Latim',
     cognates: c(['pt', 'escrever'], ['la', 'scribere'], ['de', 'schreiben'], ['sv', 'skriva']),
-    evolution_note: 'Os nórdicos já escreviam runas, mas para isso usavam «rista» (entalhar). A escrita com pena e pergaminho chegou com os monges, e o verbo latino veio junto.',
+    evolution_note: 'Os nórdicos já escreviam runas, mas para isso usavam “rista” (entalhar). A escrita com pena e pergaminho chegou com os monges, e o verbo latino veio junto.',
     transparent: true,
   },
   {
@@ -1086,7 +1086,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'tabula',
     origin_language: 'Latim',
     cognates: c(['pt', 'tábua / tabela'], ['la', 'tabula'], ['de', 'Tafel'], ['sv', 'tavla']),
-    evolution_note: 'O «b» latino virou «v» no nórdico: «tabula» deu «tafla» e depois «tavle», o quadro-negro. No nórdico antigo, «tafl» também era o tabuleiro de jogo.',
+    evolution_note: 'O “b” latino virou “v” no nórdico: “tabula” deu “tafla” e depois “tavle”, o quadro-negro. No nórdico antigo, “tafl” também era o tabuleiro de jogo.',
     transparent: false,
   },
   {
@@ -1094,7 +1094,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'corona',
     origin_language: 'Latim',
     cognates: c(['pt', 'coroa'], ['la', 'corona'], ['sv', 'krona'], ['da', 'krone']),
-    evolution_note: 'A moeda norueguesa é a «coroa» desde 1875, quando a Noruega entrou na união monetária escandinava com a Suécia e a Dinamarca. A centésima parte é o «øre», do latim «aureus».',
+    evolution_note: 'A moeda norueguesa é a “coroa” desde 1875, quando a Noruega entrou na união monetária escandinava com a Suécia e a Dinamarca. A centésima parte é o “øre”, do latim “aureus”.',
     transparent: false,
   },
   {
@@ -1102,7 +1102,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'moneta',
     origin_language: 'Latim',
     cognates: c(['pt', 'moeda'], ['la', 'moneta'], ['en', 'mint / money'], ['de', 'Münze']),
-    evolution_note: 'Em Roma, as moedas eram cunhadas no templo de Juno Moneta, e o apelido da deusa virou o nome do dinheiro. O inglês tem as duas pontas: «mint» (casa da moeda) e «money».',
+    evolution_note: 'Em Roma, as moedas eram cunhadas no templo de Juno Moneta, e o apelido da deusa virou o nome do dinheiro. O inglês tem as duas pontas: “mint” (casa da moeda) e “money”.',
     transparent: false,
   },
   {
@@ -1110,7 +1110,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'kaupa',
     origin_language: 'Nórdico antigo (do latim caupo)',
     cognates: c(['la', 'caupo (taberneiro)'], ['de', 'kaufen'], ['en', 'cheap'], ['sv', 'köpa']),
-    evolution_note: 'Empréstimo muito antigo do latim «caupo», o taberneiro e vendedor das fronteiras do Império, que as tribos germânicas levaram adiante. Está no nome da cidade dinamarquesa København, o «porto dos mercadores».',
+    evolution_note: 'Empréstimo muito antigo do latim “caupo”, o taberneiro e vendedor das fronteiras do Império, que as tribos germânicas levaram adiante. Está no nome da cidade dinamarquesa København, o “porto dos mercadores”.',
     transparent: false,
   },
   {
@@ -1126,7 +1126,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'caulis',
     origin_language: 'Latim',
     cognates: c(['pt', 'couve'], ['la', 'caulis'], ['en', 'kale / cole'], ['de', 'Kohl'], ['sv', 'kål']),
-    evolution_note: 'O latim «caulis» (talo) deu a nossa couve e o norueguês «kål», o repolho. Está no prato nacional, o «fårikål»: carneiro com repolho.',
+    evolution_note: 'O latim “caulis” (talo) deu a nossa couve e o norueguês “kål”, o repolho. Está no prato nacional, o “fårikål”: carneiro com repolho.',
     transparent: false,
   },
   {
@@ -1134,7 +1134,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'oleum',
     origin_language: 'Latim (do grego)',
     cognates: c(['pt', 'óleo'], ['la', 'oleum'], ['el', 'élaion (azeite)'], ['en', 'oil'], ['sv', 'olja']),
-    evolution_note: 'O grego «élaion» era o azeite de oliva. Desde 1969, com o petróleo do Mar do Norte, «olje» é também a palavra da economia norueguesa.',
+    evolution_note: 'O grego “élaion” era o azeite de oliva. Desde 1969, com o petróleo do Mar do Norte, “olje” é também a palavra da economia norueguesa.',
     transparent: true,
   },
   {
@@ -1142,7 +1142,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'universitas',
     origin_language: 'Latim',
     cognates: c(['pt', 'universidade'], ['la', 'universitas'], ['de', 'Universität'], ['sv', 'universitet']),
-    evolution_note: '«Universitas» era a corporação, a comunidade inteira de mestres e alunos. A primeira universidade norueguesa foi fundada em Christiania (a atual Oslo) em 1811.',
+    evolution_note: '“Universitas” era a corporação, a comunidade inteira de mestres e alunos. A primeira universidade norueguesa foi fundada em Christiania (a atual Oslo) em 1811.',
     transparent: true,
   },
   {
@@ -1150,7 +1150,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'communis',
     origin_language: 'Latim, via francês',
     cognates: c(['pt', 'comum / comuna'], ['la', 'communis'], ['fr', 'commune'], ['sv', 'kommun']),
-    evolution_note: 'O município norueguês ganhou autonomia com as leis de 1837 (formannskapslovene). A palavra chegou pelo francês, e é o «comum» de todos os moradores.',
+    evolution_note: 'O município norueguês ganhou autonomia com as leis de 1837 (formannskapslovene). A palavra chegou pelo francês, e é o “comum” de todos os moradores.',
     transparent: false,
   },
 
@@ -1160,7 +1160,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'chauffeur',
     origin_language: 'Francês',
     cognates: c(['pt', 'chofer'], ['fr', 'chauffeur (aquecedor)'], ['en', 'chauffeur'], ['sv', 'chaufför']),
-    evolution_note: 'O «chauffeur» era quem aquecia a caldeira dos primeiros carros a vapor. O norueguês reescreveu a palavra pelo som: «sj» para o «ch» e «ø» para o «eu».',
+    evolution_note: 'O “chauffeur” era quem aquecia a caldeira dos primeiros carros a vapor. O norueguês reescreveu a palavra pelo som: “sj” para o “ch” e “ø” para o “eu”.',
     transparent: false,
   },
   {
@@ -1168,7 +1168,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'restaurer',
     origin_language: 'Francês',
     cognates: c(['pt', 'restaurante'], ['fr', 'restaurant'], ['la', 'restaurare'], ['en', 'restaurant']),
-    evolution_note: 'O «restaurant» era um caldo que «restaurava» as forças; depois, a casa que o servia. Na pronúncia norueguesa, a palavra fica à francesa, sem o «t» final: «restorang».',
+    evolution_note: 'O “restaurant” era um caldo que “restaurava” as forças; depois, a casa que o servia. Na pronúncia norueguesa, a palavra fica à francesa, sem o “t” final: “restorang”.',
     transparent: true,
   },
   {
@@ -1176,7 +1176,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'café',
     origin_language: 'Francês (do turco e do árabe)',
     cognates: c(['pt', 'café'], ['fr', 'café'], ['tr', 'kahve'], ['ar', 'qahwa']),
-    evolution_note: 'O lugar tem nome francês; a bebida, «kaffe», chegou antes pelo holandês e pelo alemão. As duas palavras vêm do árabe «qahwa», pelo turco. O norueguês é um dos maiores bebedores de café do mundo.',
+    evolution_note: 'O lugar tem nome francês; a bebida, “kaffe”, chegou antes pelo holandês e pelo alemão. As duas palavras vêm do árabe “qahwa”, pelo turco. O norueguês é um dos maiores bebedores de café do mundo.',
     transparent: true,
   },
   {
@@ -1184,7 +1184,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'bagage',
     origin_language: 'Francês',
     cognates: c(['pt', 'bagagem'], ['fr', 'bagage'], ['en', 'baggage'], ['sv', 'bagage']),
-    evolution_note: 'O sufixo francês «-age» virou «-asje» em norueguês, escrito como se fala: garasje, massasje, bagasje. O «sj» soa como o nosso «x», [ʃ].',
+    evolution_note: 'O sufixo francês “-age” virou “-asje” em norueguês, escrito como se fala: garasje, massasje, bagasje. O “sj” soa como o nosso “x”, [ʃ].',
     transparent: true,
   },
   {
@@ -1192,7 +1192,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'étage',
     origin_language: 'Francês',
     cognates: c(['fr', 'étage'], ['pt', 'estágio'], ['la', 'staticum'], ['sv', 'våning (outra palavra)']),
-    evolution_note: 'O andar de um prédio. O francês «étage» vem do latim popular «staticum», onde se fica, da família do português «estágio». Cuidado: a primeira etasje norueguesa é o térreo.',
+    evolution_note: 'O andar de um prédio. O francês “étage” vem do latim popular “staticum”, onde se fica, da família do português “estágio”. Cuidado: a primeira etasje norueguesa é o térreo.',
     transparent: false,
   },
   {
@@ -1200,7 +1200,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'parapluie',
     origin_language: 'Francês',
     cognates: c(['fr', 'parapluie'], ['it', 'parare (proteger)'], ['pt', 'para-brisa (mesma ideia)'], ['sv', 'paraply']),
-    evolution_note: 'É o «para-chuva»: «para» (protege de) + «pluie» (chuva). Palavra indispensável em Bergen, a cidade famosa pela chuva.',
+    evolution_note: 'É o “para-chuva”: “para” (protege de) + “pluie” (chuva). Palavra indispensável em Bergen, a cidade famosa pela chuva.',
     transparent: false,
   },
   {
@@ -1208,7 +1208,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'jaque',
     origin_language: 'Francês',
     cognates: c(['pt', 'jaqueta'], ['fr', 'jaquette'], ['en', 'jacket'], ['sv', 'jacka']),
-    evolution_note: 'O francês «jaque», um casaco curto, deu o diminutivo «jaquette» (jaqueta). Em norueguês, «jakke» é qualquer casaco, do paletó à jaqueta de esqui.',
+    evolution_note: 'O francês “jaque”, um casaco curto, deu o diminutivo “jaquette” (jaqueta). Em norueguês, “jakke” é qualquer casaco, do paletó à jaqueta de esqui.',
     transparent: false,
   },
 
@@ -1218,7 +1218,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'qahwa',
     origin_language: 'Árabe, via turco e holandês',
     cognates: c(['pt', 'café'], ['ar', 'qahwa'], ['tr', 'kahve'], ['nl', 'koffie'], ['sv', 'kaffe']),
-    evolution_note: 'Do árabe «qahwa», pelo turco «kahve» e pelo comércio holandês. «Kaffe» é a bebida; «kafé», o lugar.',
+    evolution_note: 'Do árabe “qahwa”, pelo turco “kahve” e pelo comércio holandês. “Kaffe” é a bebida; “kafé”, o lugar.',
     transparent: false,
   },
   {
@@ -1226,7 +1226,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'tê',
     origin_language: 'Chinês (min), via holandês',
     cognates: c(['en', 'tea'], ['fr', 'thé'], ['nl', 'thee'], ['pt', 'chá (outra forma chinesa)']),
-    evolution_note: 'As línguas que receberam o chá pelos holandeses, a partir do porto de Xiamen, dizem «te» (dialeto min). O português recebeu a palavra pelo cantonês, em Macau, e diz «chá».',
+    evolution_note: 'As línguas que receberam o chá pelos holandeses, a partir do porto de Xiamen, dizem “te” (dialeto min). O português recebeu a palavra pelo cantonês, em Macau, e diz “chá”.',
     transparent: false,
   },
   {
@@ -1234,7 +1234,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'sukkar',
     origin_language: 'Árabe, via italiano e baixo-alemão',
     cognates: c(['pt', 'açúcar'], ['ar', 'as-sukkar'], ['it', 'zucchero'], ['de', 'Zucker']),
-    evolution_note: 'O português «açúcar» ficou com o artigo árabe «as-» colado; as línguas do norte pegaram só a palavra, pelo italiano. A origem mais remota é o sânscrito «śarkarā».',
+    evolution_note: 'O português “açúcar” ficou com o artigo árabe “as-” colado; as línguas do norte pegaram só a palavra, pelo italiano. A origem mais remota é o sânscrito “śarkarā”.',
     transparent: false,
   },
   {
@@ -1242,7 +1242,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'chocolatl',
     origin_language: 'Náuatle, via espanhol',
     cognates: c(['pt', 'chocolate'], ['es', 'chocolate'], ['fr', 'chocolat'], ['sv', 'choklad']),
-    evolution_note: 'Veio do náuatle, a língua dos astecas, pelo espanhol. O norueguês escreveu o «ch» pelo som: «sj» [ʃ].',
+    evolution_note: 'Veio do náuatle, a língua dos astecas, pelo espanhol. O norueguês escreveu o “ch” pelo som: “sj” [ʃ].',
     transparent: true,
   },
   {
@@ -1250,7 +1250,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'batata',
     origin_language: 'Taíno, via espanhol e inglês',
     cognates: c(['pt', 'batata'], ['es', 'patata'], ['en', 'potato'], ['sv', 'potatis']),
-    evolution_note: 'Do taíno das Antilhas «batata» (batata-doce), pelo espanhol e pelo inglês. A batata chegou à Noruega no século XVIII e salvou o país de várias fomes; os padres a promoviam nos sermões.',
+    evolution_note: 'Do taíno das Antilhas “batata” (batata-doce), pelo espanhol e pelo inglês. A batata chegou à Noruega no século XVIII e salvou o país de várias fomes; os padres a promoviam nos sermões.',
     transparent: false,
   },
   {
@@ -1266,7 +1266,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'šāh',
     origin_language: 'Persa, via árabe e alemão',
     cognates: c(['pt', 'xadrez / xeque'], ['fa', 'šāh (rei)'], ['de', 'Schach'], ['en', 'chess']),
-    evolution_note: 'O «xá» é o rei do jogo: «sjakk» é o aviso de que o rei está ameaçado, e «sjakkmatt» vem do persa «šāh māt», o rei está sem saída.',
+    evolution_note: 'O “xá” é o rei do jogo: “sjakk” é o aviso de que o rei está ameaçado, e “sjakkmatt” vem do persa “šāh māt”, o rei está sem saída.',
     transparent: false,
   },
 
@@ -1276,7 +1276,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'skíð',
     origin_language: 'Nórdico antigo',
     cognates: c(['pt', 'esqui'], ['en', 'ski'], ['de', 'Ski'], ['sv', 'skidor'], ['is', 'skíði']),
-    evolution_note: 'Quer dizer «pedaço de madeira rachada». O mundo tomou a palavra do norueguês no século XIX, quando o esqui de Telemark virou esporte internacional. Em norueguês soa [ʃiː], «xi».',
+    evolution_note: 'Quer dizer “pedaço de madeira rachada”. O mundo tomou a palavra do norueguês no século XIX, quando o esqui de Telemark virou esporte internacional. Em norueguês soa [ʃiː], “xi”.',
     transparent: true,
   },
   {
@@ -1284,7 +1284,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'sla + låm',
     origin_language: 'Norueguês (dialeto de Telemark)',
     cognates: c(['pt', 'slalom'], ['en', 'slalom'], ['de', 'Slalom'], ['fr', 'slalom']),
-    evolution_note: '«Sla» é a encosta suave e «låm», a trilha deixada pelos esquis. O mundo adotou a grafia antiga «slalom»; a norma norueguesa escreve «slalåm», com o «å» que já soava assim.',
+    evolution_note: '“Sla” é a encosta suave e “låm”, a trilha deixada pelos esquis. O mundo adotou a grafia antiga “slalom”; a norma norueguesa escreve “slalåm”, com o “å” que já soava assim.',
     transparent: true,
   },
   {
@@ -1300,7 +1300,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'tūndâr',
     origin_language: 'Sámi (kildin), via russo',
     cognates: c(['pt', 'tundra'], ['ru', 'tundra'], ['en', 'tundra'], ['se', 'duottar (sámi do norte)']),
-    evolution_note: 'Vem do sámi de Kildin, falado na península de Kola, pelo russo: é o planalto sem árvores. No sámi do norte, falado em Finnmark, a palavra parente é «duottar».',
+    evolution_note: 'Vem do sámi de Kildin, falado na península de Kola, pelo russo: é o planalto sem árvores. No sámi do norte, falado em Finnmark, a palavra parente é “duottar”.',
     transparent: true,
   },
   {
@@ -1308,7 +1308,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'fri + luft + liv',
     origin_language: 'Norueguês',
     cognates: c(['sv', 'friluftsliv'], ['da', 'friluftsliv'], ['en', 'friluftsliv (empréstimo)']),
-    evolution_note: 'A «vida ao ar livre»: caminhar, esquiar, acampar, só pelo prazer da natureza. A palavra ficou famosa com o poema «Paa Vidderne», de Henrik Ibsen (1859), e hoje aparece em textos em inglês sem tradução.',
+    evolution_note: 'A “vida ao ar livre”: caminhar, esquiar, acampar, só pelo prazer da natureza. A palavra ficou famosa com o poema “Paa Vidderne”, de Henrik Ibsen (1859), e hoje aparece em textos em inglês sem tradução.',
     transparent: false,
   },
   {
@@ -1316,7 +1316,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'Nils',
     origin_language: 'Norueguês e dinamarquês (do grego Nikólaos)',
     cognates: c(['sv', 'tomte'], ['da', 'nisse'], ['pt', 'Nicolau'], ['el', 'Nikólaos']),
-    evolution_note: 'É um apelido de Nils, a forma nórdica de Nicolau. O nisse era o duende da fazenda, que exigia mingau na noite de Natal; hoje o «julenissen» é também o Papai Noel.',
+    evolution_note: 'É um apelido de Nils, a forma nórdica de Nicolau. O nisse era o duende da fazenda, que exigia mingau na noite de Natal; hoje o “julenissen” é também o Papai Noel.',
     transparent: false,
   },
   {
@@ -1324,7 +1324,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'skál',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'skol (brinde)'], ['sv', 'skål'], ['da', 'skål'], ['en', 'scale (prato de balança)']),
-    evolution_note: 'A «skål» é a tigela, e daí o brinde feito com ela. A história de que os vikings bebiam em crânios de inimigos é mito, nascido de uma tradução errada de um poema nórdico no século XVII.',
+    evolution_note: 'A “skål” é a tigela, e daí o brinde feito com ela. A história de que os vikings bebiam em crânios de inimigos é mito, nascido de uma tradução errada de um poema nórdico no século XVII.',
     transparent: false,
   },
   {
@@ -1332,7 +1332,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'fjós',
     origin_language: 'Nórdico antigo',
     cognates: c(['en', 'fee'], ['de', 'Vieh (gado)'], ['la', 'pecus (gado)'], ['pt', 'pecuária / pecúnia']),
-    evolution_note: 'Contração de «fé» (gado) + «hús» (casa): o estábulo é a «casa do gado». O gado era riqueza, por isso o latim «pecus» deu «pecúnia» (dinheiro) e o inglês «fee» (taxa).',
+    evolution_note: 'Contração de “fé” (gado) + “hús” (casa): o estábulo é a “casa do gado”. O gado era riqueza, por isso o latim “pecus” deu “pecúnia” (dinheiro) e o inglês “fee” (taxa).',
     transparent: false,
   },
   {
@@ -1340,7 +1340,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'sætr',
     origin_language: 'Nórdico antigo',
     cognates: c(['sv', 'säter'], ['en', 'saeter (em textos de geografia)']),
-    evolution_note: 'O pasto de verão nas montanhas, para onde se levava o gado. Muitos nomes de lugar terminam em «-seter» ou «-sæter», e a palavra aparece em livros de geografia em inglês.',
+    evolution_note: 'O pasto de verão nas montanhas, para onde se levava o gado. Muitos nomes de lugar terminam em “-seter” ou “-sæter”, e a palavra aparece em livros de geografia em inglês.',
     transparent: false,
   },
   {
@@ -1348,7 +1348,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'lut + fisk',
     origin_language: 'Norueguês',
     cognates: c(['en', 'lye (lixívia)'], ['de', 'Lauge'], ['sv', 'lutfisk'], ['en', 'lutefisk (EUA)']),
-    evolution_note: 'O bacalhau seco amolecido em «lut», a solução alcalina (parente do inglês «lye» e do alemão «Lauge»). Os emigrantes levaram o prato e a palavra ao meio-oeste dos Estados Unidos.',
+    evolution_note: 'O bacalhau seco amolecido em “lut”, a solução alcalina (parente do inglês “lye” e do alemão “Lauge”). Os emigrantes levaram o prato e a palavra ao meio-oeste dos Estados Unidos.',
     transparent: false,
   },
   {
@@ -1356,7 +1356,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'smør + brød',
     origin_language: 'Norueguês',
     cognates: c(['da', 'smørrebrød'], ['sv', 'smörgås'], ['en', 'bread and butter']),
-    evolution_note: 'O sanduíche aberto: pão com manteiga e o que vier por cima. O dinamarquês «smørrebrød» ficou famoso no mundo; o sueco usa outra palavra, «smörgås».',
+    evolution_note: 'O sanduíche aberto: pão com manteiga e o que vier por cima. O dinamarquês “smørrebrød” ficou famoso no mundo; o sueco usa outra palavra, “smörgås”.',
     transparent: false,
   },
   {
@@ -1364,7 +1364,7 @@ export const ETYMOLOGY_NB: EtymologySeed[] = [
     root_word: 'Guernsey',
     origin_language: 'Inglês (topônimo)',
     cognates: c(['en', 'guernsey / jersey']),
-    evolution_note: 'Vem de Guernsey, ilha do Canal da Mancha famosa pelas malhas de lã dos pescadores. A ilha vizinha deu o nome «jersey». O norueguês escreveu a palavra como ouviu: «genser».',
+    evolution_note: 'Vem de Guernsey, ilha do Canal da Mancha famosa pelas malhas de lã dos pescadores. A ilha vizinha deu o nome “jersey”. O norueguês escreveu a palavra como ouviu: “genser”.',
     transparent: false,
   },
 ];

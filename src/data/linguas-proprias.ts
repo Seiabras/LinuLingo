@@ -24,9 +24,9 @@ export interface OwnLanguageMeta {
 }
 
 const MINORIA_SUECIA = 'Uma das cinco línguas minoritárias nacionais da Suécia, reconhecidas em 2000.';
-const REGIONAIS_FRANCA = 'Na França, as línguas regionais não têm estatuto oficial: desde 2008, a Constituição diz que elas «pertencem ao patrimônio da França».';
+const REGIONAIS_FRANCA = 'Na França, as línguas regionais não têm estatuto oficial: desde 2008, a Constituição diz que elas “pertencem ao patrimônio da França”.';
 const NAO_VEM_DO_ITALIANO =
-  'Na Itália costuma ser chamado de «dialeto», mas não vem do italiano: vem direto do latim, como ele, e tem código próprio na norma ISO 639-3.';
+  'Na Itália costuma ser chamado de “dialeto”, mas não vem do italiano: vem direto do latim, como ele, e tem código próprio na norma ISO 639-3.';
 const FORA_DA_LEI_ITALIANA = 'Não está entre as 12 línguas minoritárias da lei italiana de 1999, que protege, por exemplo, o sardo e o friulano.';
 
 export const OWN_LANGUAGE_META: Record<string, OwnLanguageMeta> = {
@@ -51,7 +51,7 @@ export const OWN_LANGUAGE_META: Record<string, OwnLanguageMeta> = {
   'lt-russo': { family: 'Indo-europeu › Balto-eslavo › Eslavo', recognition: 'Língua de uma minoria nacional, sem status oficial; foi a língua da administração no período soviético.' },
   'lv-latgaliano': {
     family: 'Indo-europeu › Báltico › Báltico oriental',
-    recognition: 'A Lei da Língua de 1999 protege a «língua escrita latgaliana» como variante histórica do letão; é ensinada em algumas escolas e usada na imprensa, no rádio e na música.',
+    recognition: 'A Lei da Língua de 1999 protege a “língua escrita latgaliana” como variante histórica do letão; é ensinada em algumas escolas e usada na imprensa, no rádio e na música.',
     debated: 'O Estado letão a trata como variante histórica do letão; muitos falantes e linguistas a consideram língua regional, que tem código próprio na norma ISO 639-3 (ltg).',
   },
   'lv-livonio': {

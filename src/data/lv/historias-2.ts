@@ -9,9 +9,9 @@ export const STORIES: StorySeed[] = [
     cefr: 'B1',
     title: 'Papardes zieda meklējumos',
     emoji: '🌿',
-    summary: 'Na festa de Jāņi, numa casa de campo da Vidzeme, o Linu aprende tudo o que «tem de» ser feito antes da noite mais curta do ano e sai à procura da flor da samambaia.',
+    summary: 'Na festa de Jāņi, numa casa de campo da Vidzeme, o Linu aprende tudo o que “tem de” ser feito antes da noite mais curta do ano e sai à procura da flor da samambaia.',
     cultural_context:
-      'Jāņi, na noite de 23 para 24 de junho, é a festa mais querida da Letônia: os homens usam coroas de folhas de carvalho, as mulheres coroas de flores, acende-se uma fogueira que deve arder até o amanhecer, canta-se o refrão «līgo» e come-se o queijo de Jāņi, com cominho. Diz a tradição que quem encontra a flor da samambaia (planta que, na verdade, não dá flor) terá sorte.',
+      'Jāņi, na noite de 23 para 24 de junho, é a festa mais querida da Letônia: os homens usam coroas de folhas de carvalho, as mulheres coroas de flores, acende-se uma fogueira que deve arder até o amanhecer, canta-se o refrão “līgo” e come-se o queijo de Jāņi, com cominho. Diz a tradição que quem encontra a flor da samambaia (planta que, na verdade, não dá flor) terá sorte.',
     start: 'start',
     glossary: [
       ['jāizdara', 'tem de ser feito'],
@@ -26,8 +26,8 @@ export const STORIES: StorySeed[] = [
     nodes: {
       start: {
         emoji: '🏡',
-        text: 'Jāņu dienā Linu atbrauca uz lauku sētu Vidzemē, kur dzīvoja viņa draudzene Ilze ar ģimeni. Ilze uzreiz paskaidroja, ka līdz vakaram vēl daudz kas jāizdara. «Mums jānoplūc ozollapas un pļavas puķes, jo vakarā visiem jābūt vainagos», viņa teica.',
-        translation: 'No dia de Jāņi, o Linu chegou a uma casa de campo na Vidzeme, onde morava a amiga dele, Ilze, com a família. A Ilze explicou logo que até a noite ainda havia muita coisa a fazer. «Temos de colher folhas de carvalho e flores do campo, porque à noite todo mundo tem de estar de coroa», disse ela.',
+        text: 'Jāņu dienā Linu atbrauca uz lauku sētu Vidzemē, kur dzīvoja viņa draudzene Ilze ar ģimeni. Ilze uzreiz paskaidroja, ka līdz vakaram vēl daudz kas jāizdara. “Mums jānoplūc ozollapas un pļavas puķes, jo vakarā visiem jābūt vainagos”, viņa teica.',
+        translation: 'No dia de Jāņi, o Linu chegou a uma casa de campo na Vidzeme, onde morava a amiga dele, Ilze, com a família. A Ilze explicou logo que até a noite ainda havia muita coisa a fazer. “Temos de colher folhas de carvalho e flores do campo, porque à noite todo mundo tem de estar de coroa”, disse ela.',
         choices: [
           { text: 'Linu gāja ar Ilzi uz pļavu plūkt puķes.', translation: 'O Linu foi com a Ilze ao prado colher flores.', next: 'plava' },
           { text: 'Linu palika mājā palīdzēt Ilzes mammai.', translation: 'O Linu ficou em casa para ajudar a mãe da Ilze.', next: 'siers' },
@@ -42,7 +42,7 @@ export const STORIES: StorySeed[] = [
           {
             text: 'Linu nometa puķes, jo Ilze bija teikusi, ka vainags nav jāpin.',
             translation: 'O Linu largou as flores, porque a Ilze tinha dito que a coroa não precisava ser trançada.',
-            wrong: 'A Ilze disse o contrário: «visiem jābūt vainagos» — todos TÊM de estar de coroa. O prefixo jā- (debitivo) indica obrigação, e ela ainda ensinou como «jāsapin» (tem de se trançar) a coroa.',
+            wrong: 'A Ilze disse o contrário: “visiem jābūt vainagos” — todos TÊM de estar de coroa. O prefixo jā- (debitivo) indica obrigação, e ela ainda ensinou como “jāsapin” (tem de se trançar) a coroa.',
           },
         ],
       },
@@ -60,22 +60,22 @@ export const STORIES: StorySeed[] = [
       },
       ugunskurs: {
         emoji: '🔥',
-        text: 'Visi dziedāja dziesmas ar piedziedājumu «līgo, līgo». Ilzes tētis teica, ka Jāņu naktī nedrīkst gulēt, jo citādi visu gadu būsi miegains. Pusnaktī Ilze pačukstēja: «Iesim meklēt papardes ziedu? Tas jāatrod, pirms aust gaisma.»',
-        translation: 'Todos cantavam canções com o refrão «līgo, līgo». O pai da Ilze disse que na noite de Jāņi não se pode dormir, porque senão a pessoa fica sonolenta o ano inteiro. À meia-noite, a Ilze sussurrou: «Vamos procurar a flor da samambaia? Tem de ser encontrada antes de o dia clarear.»',
+        text: 'Visi dziedāja dziesmas ar piedziedājumu “līgo, līgo”. Ilzes tētis teica, ka Jāņu naktī nedrīkst gulēt, jo citādi visu gadu būsi miegains. Pusnaktī Ilze pačukstēja: “Iesim meklēt papardes ziedu? Tas jāatrod, pirms aust gaisma.”',
+        translation: 'Todos cantavam canções com o refrão “līgo, līgo”. O pai da Ilze disse que na noite de Jāņi não se pode dormir, porque senão a pessoa fica sonolenta o ano inteiro. À meia-noite, a Ilze sussurrou: “Vamos procurar a flor da samambaia? Tem de ser encontrada antes de o dia clarear.”',
         choices: [
           { text: 'Linu paņēma lukturīti un devās ar Ilzi uz mežu.', translation: 'O Linu pegou uma lanterninha e foi com a Ilze para o bosque.', next: 'mezs' },
           { text: 'Linu teica, ka vēl mazliet pasēdēs pie uguns.', translation: 'O Linu disse que ia ficar mais um pouquinho sentado perto do fogo.', next: 'aizmiga' },
           {
             text: 'Linu aizgāja gulēt, jo tētis bija teicis, ka Jāņu naktī jāguļ.',
             translation: 'O Linu foi dormir, porque o pai tinha dito que na noite de Jāņi é preciso dormir.',
-            wrong: 'O pai disse «nedrīkst gulēt»: NÃO se pode dormir na noite de Jāņi, senão a pessoa fica sonolenta o ano todo. «Nedrīkst» é proibição; «jāguļ» (tem de dormir) seria o oposto.',
+            wrong: 'O pai disse “nedrīkst gulēt”: NÃO se pode dormir na noite de Jāņi, senão a pessoa fica sonolenta o ano todo. “Nedrīkst” é proibição; “jāguļ” (tem de dormir) seria o oposto.',
           },
         ],
       },
       aizmiga: {
         emoji: '😴',
-        text: 'Linu apsēdās uz soliņa pie siltās uguns un aizvēra acis tikai uz brīdi. Kad viņš pamodās, jau bija gaišs, un visi smējās. «Nu tu būsi miegains visu gadu!» jokoja Ilzes tētis.',
-        translation: 'O Linu se sentou num banquinho perto do fogo quentinho e fechou os olhos só por um instante. Quando acordou, já estava claro, e todos riam. «Pronto, agora você vai ficar com sono o ano todo!», brincou o pai da Ilze.',
+        text: 'Linu apsēdās uz soliņa pie siltās uguns un aizvēra acis tikai uz brīdi. Kad viņš pamodās, jau bija gaišs, un visi smējās. “Nu tu būsi miegains visu gadu!” jokoja Ilzes tētis.',
+        translation: 'O Linu se sentou num banquinho perto do fogo quentinho e fechou os olhos só por um instante. Quando acordou, já estava claro, e todos riam. “Pronto, agora você vai ficar com sono o ano todo!”, brincou o pai da Ilze.',
         ending: { tone: 'neutro', title: 'Sono de verão', message: 'O Linu cochilou na noite mais curta do ano. A flor da samambaia fica para o próximo Jāņi.' },
       },
       mezs: {
@@ -115,14 +115,14 @@ export const STORIES: StorySeed[] = [
     nodes: {
       start: {
         emoji: '🌅',
-        text: 'Linu bija atbraucis uz Kolkasragu, kur Rīgas jūras līcis satiekas ar atklāto jūru. Ornitologs Māris viņam teica, ka rīt agri jāceļas, jo lielākā daļa putnu lido rītausmā. «Ja gribi redzēt lielos barus, tev jābūt krastā pulksten piecos», viņš piebilda.',
-        translation: 'O Linu tinha vindo ao cabo Kolka, onde o golfo de Riga se encontra com o mar aberto. O ornitólogo Māris disse a ele que amanhã era preciso levantar cedo, porque a maioria das aves voa ao amanhecer. «Se você quer ver os grandes bandos, tem de estar na praia às cinco horas», acrescentou.',
+        text: 'Linu bija atbraucis uz Kolkasragu, kur Rīgas jūras līcis satiekas ar atklāto jūru. Ornitologs Māris viņam teica, ka rīt agri jāceļas, jo lielākā daļa putnu lido rītausmā. “Ja gribi redzēt lielos barus, tev jābūt krastā pulksten piecos”, viņš piebilda.',
+        translation: 'O Linu tinha vindo ao cabo Kolka, onde o golfo de Riga se encontra com o mar aberto. O ornitólogo Māris disse a ele que amanhã era preciso levantar cedo, porque a maioria das aves voa ao amanhecer. “Se você quer ver os grandes bandos, tem de estar na praia às cinco horas”, acrescentou.',
         choices: [
           { text: 'Linu uzlika modinātāju uz pulksten četriem.', translation: 'O Linu pôs o despertador para as quatro horas.', next: 'rits' },
           {
             text: 'Linu nolēma iet uz krastu pusdienlaikā, kad būs siltāks.',
             translation: 'O Linu decidiu ir à praia na hora do almoço, quando estaria mais quente.',
-            wrong: 'O Māris explicou que a maioria das aves voa ao amanhecer e que o Linu «tev jābūt krastā pulksten piecos» — tinha de estar na praia às cinco. Ao meio-dia, os bandos já teriam passado.',
+            wrong: 'O Māris explicou que a maioria das aves voa ao amanhecer e que o Linu “tev jābūt krastā pulksten piecos” — tinha de estar na praia às cinco. Ao meio-dia, os bandos já teriam passado.',
           },
         ],
       },
@@ -143,8 +143,8 @@ export const STORIES: StorySeed[] = [
       },
       skaita: {
         emoji: '🦢',
-        text: 'Linu skaitīja un skaitīja, bet putni lidoja tik ātri, ka viņš visu laiku sajuka. «Nekas», smējās Māris, «pirmajā reizē visi sajūk. Galvenais, ka tu pieraksti, cik aptuveni to bija.» Tad Linu pamanīja, ka krastā kāds putns neveikli lēkā.',
-        translation: 'O Linu contava e contava, mas as aves voavam tão rápido que ele se embaralhava o tempo todo. «Não tem problema», riu o Māris, «da primeira vez todo mundo se embaralha. O importante é você anotar mais ou menos quantas eram.» Então o Linu percebeu que, na praia, uma ave pulava de um jeito desajeitado.',
+        text: 'Linu skaitīja un skaitīja, bet putni lidoja tik ātri, ka viņš visu laiku sajuka. “Nekas”, smējās Māris, “pirmajā reizē visi sajūk. Galvenais, ka tu pieraksti, cik aptuveni to bija.” Tad Linu pamanīja, ka krastā kāds putns neveikli lēkā.',
+        translation: 'O Linu contava e contava, mas as aves voavam tão rápido que ele se embaralhava o tempo todo. “Não tem problema”, riu o Māris, “da primeira vez todo mundo se embaralha. O importante é você anotar mais ou menos quantas eram.” Então o Linu percebeu que, na praia, uma ave pulava de um jeito desajeitado.',
         choices: [
           { text: 'Linu gāja paskatīties uz putnu.', translation: 'O Linu foi dar uma olhada na ave.', next: 'putns' },
           { text: 'Linu turpināja skaitīt pīles.', translation: 'O Linu continuou contando os patos.', next: 'turpina' },
@@ -152,14 +152,14 @@ export const STORIES: StorySeed[] = [
       },
       putns: {
         emoji: '🕊️',
-        text: 'Tā bija jauna kaija, kurai bija savainots spārns. Linu jau gribēja to pacelt, bet Māris steidzīgi teica, ka putnu nedrīkst ņemt rokās, jo tas var sabīties vēl vairāk. «Mums jāpiezvana uz nacionālo parku, un tur pateiks, kas jādara.»',
-        translation: 'Era uma gaivota jovem, com uma asa machucada. O Linu já ia pegá-la, mas o Māris disse depressa que não se pode pegar a ave na mão, porque ela pode se assustar ainda mais. «Temos de ligar para o parque nacional, e lá vão dizer o que tem de ser feito.»',
+        text: 'Tā bija jauna kaija, kurai bija savainots spārns. Linu jau gribēja to pacelt, bet Māris steidzīgi teica, ka putnu nedrīkst ņemt rokās, jo tas var sabīties vēl vairāk. “Mums jāpiezvana uz nacionālo parku, un tur pateiks, kas jādara.”',
+        translation: 'Era uma gaivota jovem, com uma asa machucada. O Linu já ia pegá-la, mas o Māris disse depressa que não se pode pegar a ave na mão, porque ela pode se assustar ainda mais. “Temos de ligar para o parque nacional, e lá vão dizer o que tem de ser feito.”',
         choices: [
           { text: 'Linu palika pa gabalu, kamēr Māris zvanīja.', translation: 'O Linu ficou a distância enquanto o Māris telefonava.', next: 'gaida' },
           {
             text: 'Linu paņēma kaiju rokās, lai to sasildītu.',
             translation: 'O Linu pegou a gaivota na mão para aquecê-la.',
-            wrong: 'O Māris avisou que «putnu nedrīkst ņemt rokās»: NÃO se pode pegar a ave na mão, porque ela pode se assustar ainda mais. O que «tem de» ser feito («jāpiezvana») é ligar para o parque.',
+            wrong: 'O Māris avisou que “putnu nedrīkst ņemt rokās”: NÃO se pode pegar a ave na mão, porque ela pode se assustar ainda mais. O que “tem de” ser feito (“jāpiezvana”) é ligar para o parque.',
           },
         ],
       },
@@ -177,8 +177,8 @@ export const STORIES: StorySeed[] = [
       },
       final_bom: {
         emoji: '💚',
-        text: 'Atbrauca nacionālā parka darbiniece ar kasti un rūpīgi ielika kaiju iekšā. Viņa teica, ka spārns sadzīs un pēc dažām nedēļām putnu varēs atkal palaist brīvībā. Māris uzsita Linu uz pleca: «Šodien tu putnus ne tikai saskaitīji, bet vienu arī izglābi.»',
-        translation: 'Chegou uma funcionária do parque nacional com uma caixa e colocou a gaivota lá dentro com cuidado. Ela disse que a asa ia sarar e que em algumas semanas a ave poderia ser solta de novo. O Māris deu um tapinha no ombro do Linu: «Hoje você não só contou as aves, como também salvou uma.»',
+        text: 'Atbrauca nacionālā parka darbiniece ar kasti un rūpīgi ielika kaiju iekšā. Viņa teica, ka spārns sadzīs un pēc dažām nedēļām putnu varēs atkal palaist brīvībā. Māris uzsita Linu uz pleca: “Šodien tu putnus ne tikai saskaitīji, bet vienu arī izglābi.”',
+        translation: 'Chegou uma funcionária do parque nacional com uma caixa e colocou a gaivota lá dentro com cuidado. Ela disse que a asa ia sarar e que em algumas semanas a ave poderia ser solta de novo. O Māris deu um tapinha no ombro do Linu: “Hoje você não só contou as aves, como também salvou uma.”',
         ending: { tone: 'bom', title: 'Guardião do cabo', message: 'O Linu aprendeu a contar bandos e, mais importante, a saber o que NÃO se deve fazer com uma ave ferida.' },
       },
     },
@@ -205,8 +205,8 @@ export const STORIES: StorySeed[] = [
     nodes: {
       start: {
         emoji: '🌊',
-        text: 'Aprīļa vakarā Linu stāvēja pie Ventas rumbas Kuldīgā, kur upe krīt pār platu, zemu klinti. Viņa draudzene Anna teica, ka pavasarī te jāatnāk krēslā, jo tad vimbas lec augšup pa ūdenskritumu. «Tikai jāuzmanās — akmeņi ir slideni», viņa brīdināja.',
-        translation: 'Numa noite de abril, o Linu estava junto à Ventas rumba, em Kuldīga, onde o rio cai por cima de uma rocha larga e baixa. A amiga dele, Anna, disse que na primavera é preciso vir ali ao entardecer, porque é quando as vimbas saltam queda acima. «Só tem de tomar cuidado: as pedras são escorregadias», avisou ela.',
+        text: 'Aprīļa vakarā Linu stāvēja pie Ventas rumbas Kuldīgā, kur upe krīt pār platu, zemu klinti. Viņa draudzene Anna teica, ka pavasarī te jāatnāk krēslā, jo tad vimbas lec augšup pa ūdenskritumu. “Tikai jāuzmanās — akmeņi ir slideni”, viņa brīdināja.',
+        translation: 'Numa noite de abril, o Linu estava junto à Ventas rumba, em Kuldīga, onde o rio cai por cima de uma rocha larga e baixa. A amiga dele, Anna, disse que na primavera é preciso vir ali ao entardecer, porque é quando as vimbas saltam queda acima. “Só tem de tomar cuidado: as pedras são escorregadias”, avisou ela.',
         choices: [
           { text: 'Linu apsēdās krastā un gaidīja.', translation: 'O Linu se sentou na margem e esperou.', next: 'gaida' },
           { text: 'Linu nokāpa tuvāk ūdenim.', translation: 'O Linu desceu para mais perto da água.', next: 'tuvak' },
@@ -214,8 +214,8 @@ export const STORIES: StorySeed[] = [
       },
       tuvak: {
         emoji: '😬',
-        text: 'Linu nokāpa pa akmeņiem gandrīz līdz pašam ūdenim. Viena kāja paslīdēja, un viņš tikko neiekrita upē. Anna pieskrēja, satvēra viņu aiz rokas un teica: «Es taču teicu, ka jāuzmanās!»',
-        translation: 'O Linu desceu pelas pedras quase até a beira da água. Um pé escorregou, e ele por pouco não caiu no rio. A Anna veio correndo, agarrou-o pela mão e disse: «Eu não falei que tinha de tomar cuidado?!»',
+        text: 'Linu nokāpa pa akmeņiem gandrīz līdz pašam ūdenim. Viena kāja paslīdēja, un viņš tikko neiekrita upē. Anna pieskrēja, satvēra viņu aiz rokas un teica: “Es taču teicu, ka jāuzmanās!”',
+        translation: 'O Linu desceu pelas pedras quase até a beira da água. Um pé escorregou, e ele por pouco não caiu no rio. A Anna veio correndo, agarrou-o pela mão e disse: “Eu não falei que tinha de tomar cuidado?!”',
         choices: [{ text: 'Linu atkāpās un apsēdās blakus Annai.', translation: 'O Linu recuou e se sentou ao lado da Anna.', next: 'gaida' }],
       },
       gaida: {
@@ -227,7 +227,7 @@ export const STORIES: StorySeed[] = [
           {
             text: 'Linu teica, ka žēl zivju, kas bēg prom no Kuldīgas.',
             translation: 'O Linu disse que tinha pena dos peixes que fogem de Kuldīga.',
-            wrong: 'Os peixes não estão fugindo: a Anna explicou que as vimbas «jātiek augšup pa upi» — TÊM DE subir o rio para desovar lá em cima.',
+            wrong: 'Os peixes não estão fugindo: a Anna explicou que as vimbas “jātiek augšup pa upi” — TÊM DE subir o rio para desovar lá em cima.',
           },
         ],
       },
@@ -247,20 +247,20 @@ export const STORIES: StorySeed[] = [
           {
             text: 'Linu teica, ka atbrauks pāriet rumbu ziemā, kad ūdens ir zemākais.',
             translation: 'O Linu disse que voltaria para atravessar a queda no inverno, quando a água está mais baixa.',
-            wrong: 'A Anna disse que se atravessa a pé no VERÃO («vasarā»), quando a água está baixa, e não no inverno.',
+            wrong: 'A Anna disse que se atravessa a pé no VERÃO (“vasarā”), quando a água está baixa, e não no inverno.',
           },
         ],
       },
       auksts: {
         emoji: '🥶',
-        text: 'Tiklīdz Linu iebāza kāju ūdenī, viņš saprata, ka tā bija kļūda: ūdens bija ledains, un straume gandrīz nogāza viņu no kājām. Anna palīdzēja viņam izkāpt krastā un iedeva savu šalli. «Rumbu var pāriet tikai vasarā», viņa atgādināja.',
-        translation: 'Assim que o Linu enfiou o pé na água, percebeu que tinha sido um erro: a água estava gelada, e a correnteza quase o derrubou. A Anna o ajudou a sair para a margem e deu a ele o cachecol dela. «Só dá para atravessar a queda no verão», lembrou ela.',
+        text: 'Tiklīdz Linu iebāza kāju ūdenī, viņš saprata, ka tā bija kļūda: ūdens bija ledains, un straume gandrīz nogāza viņu no kājām. Anna palīdzēja viņam izkāpt krastā un iedeva savu šalli. “Rumbu var pāriet tikai vasarā”, viņa atgādināja.',
+        translation: 'Assim que o Linu enfiou o pé na água, percebeu que tinha sido um erro: a água estava gelada, e a correnteza quase o derrubou. A Anna o ajudou a sair para a margem e deu a ele o cachecol dela. “Só dá para atravessar a queda no verão”, lembrou ela.',
         ending: { tone: 'neutro', title: 'Pés gelados', message: 'O Linu saiu molhado, mas inteiro. Em abril, a Ventas rumba é para olhar, não para atravessar.' },
       },
       jauta: {
         emoji: '📅',
-        text: 'Anna pakratīja galvu. «Aprīlī ūdens ir pārāk augsts un auksts. Tev jāatbrauc atkal jūlijā, tad mēs pāriesim kopā.» Linu uzreiz ierakstīja telefonā: «Jūlijs — Kuldīga — jāpāriet rumba».',
-        translation: 'A Anna balançou a cabeça. «Em abril a água está alta e fria demais. Você tem de voltar em julho, aí a gente atravessa junto.» O Linu anotou na hora no celular: «Julho — Kuldīga — atravessar a queda».',
+        text: 'Anna pakratīja galvu. “Aprīlī ūdens ir pārāk augsts un auksts. Tev jāatbrauc atkal jūlijā, tad mēs pāriesim kopā.” Linu uzreiz ierakstīja telefonā: “Jūlijs — Kuldīga — jāpāriet rumba”.',
+        translation: 'A Anna balançou a cabeça. “Em abril a água está alta e fria demais. Você tem de voltar em julho, aí a gente atravessa junto.” O Linu anotou na hora no celular: “Julho — Kuldīga — atravessar a queda”.',
         choices: [{ text: 'Linu apsolīja atbraukt vasarā.', translation: 'O Linu prometeu voltar no verão.', next: 'final_bom' }],
       },
       final_bom: {
@@ -295,8 +295,8 @@ export const STORIES: StorySeed[] = [
     nodes: {
       start: {
         emoji: '👑',
-        text: 'Rundāles pils tika uzcelta astoņpadsmitajā gadsimtā Kurzemes hercogam, un to projektēja itāļu arhitekts Rastrelli. Linu bija atbraucis uz pili kā brīvprātīgais, un viņu sagaidīja restauratore Laura. «Šodien jāpārbauda Baltā zāle», viņa teica, «jo tur kaut kas ir sabojāts.»',
-        translation: 'O Palácio de Rundāle foi construído no século XVIII para o duque da Curlândia, e quem o projetou foi o arquiteto italiano Rastrelli. O Linu tinha vindo ao palácio como voluntário, e quem o recebeu foi a restauradora Laura. «Hoje temos de verificar o Salão Branco», disse ela, «porque lá tem alguma coisa danificada.»',
+        text: 'Rundāles pils tika uzcelta astoņpadsmitajā gadsimtā Kurzemes hercogam, un to projektēja itāļu arhitekts Rastrelli. Linu bija atbraucis uz pili kā brīvprātīgais, un viņu sagaidīja restauratore Laura. “Šodien jāpārbauda Baltā zāle”, viņa teica, “jo tur kaut kas ir sabojāts.”',
+        translation: 'O Palácio de Rundāle foi construído no século XVIII para o duque da Curlândia, e quem o projetou foi o arquiteto italiano Rastrelli. O Linu tinha vindo ao palácio como voluntário, e quem o recebeu foi a restauradora Laura. “Hoje temos de verificar o Salão Branco”, disse ela, “porque lá tem alguma coisa danificada.”',
         choices: [
           { text: 'Linu sekoja Laurai uz Balto zāli.', translation: 'O Linu seguiu a Laura até o Salão Branco.', next: 'zale' },
           { text: 'Linu vispirms gribēja apskatīt rožu dārzu.', translation: 'O Linu quis ver primeiro o roseiral.', next: 'darzs' },
@@ -310,14 +310,14 @@ export const STORIES: StorySeed[] = [
       },
       zale: {
         emoji: '🤍',
-        text: 'Baltā zāle bija pilna gaismas, un griesti bija rotāti ar baltiem stuka ornamentiem. Laura parādīja uz stūri, kur trūka vienas stuka rozes. «Tā ir nokritusi naktī», viņa teica. «Nokritusī roze jāatrod, citādi tā būs jāveido no jauna.»',
-        translation: 'O Salão Branco estava cheio de luz, e o teto era decorado com ornamentos brancos de estuque. A Laura apontou para um canto onde faltava uma das rosas de estuque. «Ela caiu durante a noite», disse. «A rosa que caiu tem de ser encontrada, senão vai ter de ser feita de novo.»',
+        text: 'Baltā zāle bija pilna gaismas, un griesti bija rotāti ar baltiem stuka ornamentiem. Laura parādīja uz stūri, kur trūka vienas stuka rozes. “Tā ir nokritusi naktī”, viņa teica. “Nokritusī roze jāatrod, citādi tā būs jāveido no jauna.”',
+        translation: 'O Salão Branco estava cheio de luz, e o teto era decorado com ornamentos brancos de estuque. A Laura apontou para um canto onde faltava uma das rosas de estuque. “Ela caiu durante a noite”, disse. “A rosa que caiu tem de ser encontrada, senão vai ter de ser feita de novo.”',
         choices: [
           { text: 'Linu sāka meklēt uz grīdas.', translation: 'O Linu começou a procurar no chão.', next: 'grida' },
           {
             text: 'Linu jautāja, kāpēc roze tika noplūkta dārzā.',
             translation: 'O Linu perguntou por que a rosa tinha sido colhida no jardim.',
-            wrong: 'Não se trata de uma rosa do jardim: é uma rosa de estuque («stuka roze») que caiu do teto. «Nokritusī» é o particípio de «nokrist», cair: «a que caiu».',
+            wrong: 'Não se trata de uma rosa do jardim: é uma rosa de estuque (“stuka roze”) que caiu do teto. “Nokritusī” é o particípio de “nokrist”, cair: “a que caiu”.',
           },
         ],
       },
@@ -332,8 +332,8 @@ export const STORIES: StorySeed[] = [
       },
       apsargs: {
         emoji: '🔦',
-        text: 'Apsargs Valdis teica, ka naktī bija dzirdējis klusu troksni, bet neko aizdomīgu nebija redzējis. No rīta viņš bija redzējis apkopēju ar tīrīšanas ratiņiem pie Baltās zāles durvīm. «Pajautājiet viņai», viņš ieteica.',
-        translation: 'O vigia Valdis disse que de noite tinha ouvido um barulhinho, mas não tinha visto nada suspeito. De manhã, tinha visto a faxineira com o carrinho de limpeza perto da porta do Salão Branco. «Perguntem a ela», sugeriu.',
+        text: 'Apsargs Valdis teica, ka naktī bija dzirdējis klusu troksni, bet neko aizdomīgu nebija redzējis. No rīta viņš bija redzējis apkopēju ar tīrīšanas ratiņiem pie Baltās zāles durvīm. “Pajautājiet viņai”, viņš ieteica.',
+        translation: 'O vigia Valdis disse que de noite tinha ouvido um barulhinho, mas não tinha visto nada suspeito. De manhã, tinha visto a faxineira com o carrinho de limpeza perto da porta do Salão Branco. “Perguntem a ela”, sugeriu.',
         choices: [{ text: 'Linu un Laura sameklēja apkopēju.', translation: 'O Linu e a Laura foram atrás da faxineira.', next: 'ratini' }],
       },
       ratini: {
@@ -345,14 +345,14 @@ export const STORIES: StorySeed[] = [
           {
             text: 'Linu sadusmojās, jo Inta bija izmetusi rozi atkritumos.',
             translation: 'O Linu ficou bravo, porque a Inta tinha jogado a rosa no lixo.',
-            wrong: 'A Inta não jogou nada fora: ela tinha recolhido («savākusi») o pedaço e guardado, embrulhado («ietīta»), no carrinho, para ninguém pisar em cima.',
+            wrong: 'A Inta não jogou nada fora: ela tinha recolhido (“savākusi”) o pedaço e guardado, embrulhado (“ietīta”), no carrinho, para ninguém pisar em cima.',
           },
         ],
       },
       laura: {
         emoji: '🧩',
-        text: 'Laura attina paciņu un atviegloti uzelpoja: roze bija salūzusi tikai divās daļās. «Salauzts nav tas pats, kas pazudis», viņa smaidīja. «To var salīmēt.» Viņa aizgāja pēc instrumentiem, un Linu palika viens ar abām daļām.',
-        translation: 'A Laura desembrulhou o pacotinho e respirou aliviada: a rosa tinha se quebrado só em duas partes. «Quebrado não é o mesmo que perdido», sorriu ela. «Dá para colar.» Ela foi buscar as ferramentas, e o Linu ficou sozinho com os dois pedaços.',
+        text: 'Laura attina paciņu un atviegloti uzelpoja: roze bija salūzusi tikai divās daļās. “Salauzts nav tas pats, kas pazudis”, viņa smaidīja. “To var salīmēt.” Viņa aizgāja pēc instrumentiem, un Linu palika viens ar abām daļām.',
+        translation: 'A Laura desembrulhou o pacotinho e respirou aliviada: a rosa tinha se quebrado só em duas partes. “Quebrado não é o mesmo que perdido”, sorriu ela. “Dá para colar.” Ela foi buscar as ferramentas, e o Linu ficou sozinho com os dois pedaços.',
         choices: [
           { text: 'Linu gaidīja, kamēr Laura atgriezīsies.', translation: 'O Linu esperou a Laura voltar.', next: 'final_bom' },
           { text: 'Linu paņēma līmi un mēģināja salīmēt rozi pats.', translation: 'O Linu pegou cola e tentou colar a rosa sozinho.', next: 'pats' },
@@ -360,8 +360,8 @@ export const STORIES: StorySeed[] = [
       },
       pats: {
         emoji: '😅',
-        text: 'Linu salika abas daļas kopā un ātri tās salīmēja. Roze tika salīmēta, bet šķībi, un Laurai nācās to visu uzmanīgi atdalīt atpakaļ. «Paldies par centību», viņa nopūtās, «bet restaurācija nav darāma steigā.»',
-        translation: 'O Linu juntou as duas partes e colou tudo depressa. A rosa foi colada, mas torta, e a Laura teve de separar tudo de novo com muito cuidado. «Obrigada pelo empenho», suspirou ela, «mas restauração não se faz com pressa.»',
+        text: 'Linu salika abas daļas kopā un ātri tās salīmēja. Roze tika salīmēta, bet šķībi, un Laurai nācās to visu uzmanīgi atdalīt atpakaļ. “Paldies par centību”, viņa nopūtās, “bet restaurācija nav darāma steigā.”',
+        translation: 'O Linu juntou as duas partes e colou tudo depressa. A rosa foi colada, mas torta, e a Laura teve de separar tudo de novo com muito cuidado. “Obrigada pelo empenho”, suspirou ela, “mas restauração não se faz com pressa.”',
         ending: { tone: 'neutro', title: 'Rosa torta', message: 'A boa vontade do Linu atrasou o trabalho. Na restauração, esperar também faz parte do ofício.' },
       },
       final_bom: {
@@ -380,7 +380,7 @@ export const STORIES: StorySeed[] = [
     emoji: '💨',
     summary: 'Na Karosta, o antigo porto militar de Liepāja, o Linu visita a catedral dos marinheiros e enfrenta o vento no quebra-mar do norte, onde perde o gorro favorito.',
     cultural_context:
-      'A Karosta, bairro ao norte de Liepāja, foi construída no fim do século XIX como porto de guerra da frota do Império Russo. No período soviético era uma zona militar fechada, onde nem os moradores de Liepāja entravam livremente. Seu marco é a Catedral Ortodoxa de São Nicolau, de cúpulas douradas, e Liepāja é conhecida na Letônia como «a cidade onde nasce o vento».',
+      'A Karosta, bairro ao norte de Liepāja, foi construída no fim do século XIX como porto de guerra da frota do Império Russo. No período soviético era uma zona militar fechada, onde nem os moradores de Liepāja entravam livremente. Seu marco é a Catedral Ortodoxa de São Nicolau, de cúpulas douradas, e Liepāja é conhecida na Letônia como “a cidade onde nasce o vento”.',
     start: 'start',
     glossary: [
       ['tika uzbūvēta', 'foi construída'],
@@ -411,7 +411,7 @@ export const STORIES: StorySeed[] = [
           {
             text: 'Linu jautāja, kāpēc katedrāle tika uzcelta padomju laikā.',
             translation: 'O Linu perguntou por que a catedral foi construída no período soviético.',
-            wrong: 'Ela foi construída («tika uzcelta») na virada do século XIX para o XX. No período soviético, o prédio apenas foi USADO («tika izmantota») como cinema e ginásio.',
+            wrong: 'Ela foi construída (“tika uzcelta”) na virada do século XIX para o XX. No período soviético, o prédio apenas foi USADO (“tika izmantota”) como cinema e ginásio.',
           },
         ],
       },
@@ -425,7 +425,7 @@ export const STORIES: StorySeed[] = [
           {
             text: 'Linu novilka jaku, jo vējš bija vājš un silts.',
             translation: 'O Linu tirou a jaqueta, porque o vento estava fraco e morno.',
-            wrong: 'O vento soprava tão forte que o Linu «gandrīz nevarēja nostāvēt kājās» — quase não conseguia ficar em pé. Não era hora de tirar a jaqueta!',
+            wrong: 'O vento soprava tão forte que o Linu “gandrīz nevarēja nostāvēt kājās” — quase não conseguia ficar em pé. Não era hora de tirar a jaqueta!',
           },
         ],
       },
@@ -440,8 +440,8 @@ export const STORIES: StorySeed[] = [
       },
       kapt: {
         emoji: '⚠️',
-        text: 'Artūrs viņu satvēra aiz pleca. «Nekādā gadījumā! Šie akmeņi ir apauguši ar aļģēm, un vilnis tevi var noraut jūrā.» Viņš norādīja uz zīmi, uz kuras bija rakstīts: «Kāpt uz akmeņiem aizliegts».',
-        translation: 'O Artūrs o segurou pelo ombro. «De jeito nenhum! Estas pedras estão cobertas de algas, e uma onda pode te arrastar para o mar.» Ele apontou para uma placa em que estava escrito: «Proibido subir nas pedras».',
+        text: 'Artūrs viņu satvēra aiz pleca. “Nekādā gadījumā! Šie akmeņi ir apauguši ar aļģēm, un vilnis tevi var noraut jūrā.” Viņš norādīja uz zīmi, uz kuras bija rakstīts: “Kāpt uz akmeņiem aizliegts”.',
+        translation: 'O Artūrs o segurou pelo ombro. “De jeito nenhum! Estas pedras estão cobertas de algas, e uma onda pode te arrastar para o mar.” Ele apontou para uma placa em que estava escrito: “Proibido subir nas pedras”.',
         choices: [{ text: 'Linu paklausīja un atkāpās.', translation: 'O Linu obedeceu e recuou.', next: 'laiva' }],
       },
       laiva: {
@@ -458,8 +458,8 @@ export const STORIES: StorySeed[] = [
       },
       final_bom: {
         emoji: '🐟',
-        text: 'Zvejnieks pasniedza Linu slapjo cepuri un smējās: «Liepājā vējš paņem, bet jūra atdod.» Cepure tika izžāvēta pie krāsns zvejnieka mājā, kur Linu nogaršoja arī kūpinātas zivis. Tā bija labākā ekskursija, kurā viņš jebkad bija bijis.',
-        translation: 'O pescador entregou ao Linu o gorro molhado e riu: «Em Liepāja, o vento leva, mas o mar devolve.» O gorro foi secado perto do fogão na casa do pescador, onde o Linu também provou peixe defumado. Foi o melhor passeio que ele já tinha feito.',
+        text: 'Zvejnieks pasniedza Linu slapjo cepuri un smējās: “Liepājā vējš paņem, bet jūra atdod.” Cepure tika izžāvēta pie krāsns zvejnieka mājā, kur Linu nogaršoja arī kūpinātas zivis. Tā bija labākā ekskursija, kurā viņš jebkad bija bijis.',
+        translation: 'O pescador entregou ao Linu o gorro molhado e riu: “Em Liepāja, o vento leva, mas o mar devolve.” O gorro foi secado perto do fogão na casa do pescador, onde o Linu também provou peixe defumado. Foi o melhor passeio que ele já tinha feito.',
         ending: { tone: 'bom', title: 'O mar devolve', message: 'Sem arriscar nas pedras, o Linu recuperou o gorro e ainda ganhou um almoço de pescador.' },
       },
     },
@@ -496,8 +496,8 @@ export const STORIES: StorySeed[] = [
       },
       rotko: {
         emoji: '🎨',
-        text: 'Oļegs paskaidroja, ka Rotko ir slavens gleznotājs, dzimis Daugavpilī 1903. gadā. Vēl būdams bērns, viņš kopā ar ģimeni izbrauca uz Ameriku un tur kļuva par vienu no zināmākajiem abstraktās mākslas gleznotājiem. «Centrs atrodas cietoksnī, kas tika uzcelts deviņpadsmitajā gadsimtā», Oļegs piebilda.',
-        translation: 'O Oļegs explicou que Rothko é um pintor famoso, nascido em Daugavpils em 1903. Ainda criança, ele foi com a família para a América e lá se tornou um dos pintores mais conhecidos da arte abstrata. «O centro fica na fortaleza, que foi construída no século XIX», acrescentou o Oļegs.',
+        text: 'Oļegs paskaidroja, ka Rotko ir slavens gleznotājs, dzimis Daugavpilī 1903. gadā. Vēl būdams bērns, viņš kopā ar ģimeni izbrauca uz Ameriku un tur kļuva par vienu no zināmākajiem abstraktās mākslas gleznotājiem. “Centrs atrodas cietoksnī, kas tika uzcelts deviņpadsmitajā gadsimtā”, Oļegs piebilda.',
+        translation: 'O Oļegs explicou que Rothko é um pintor famoso, nascido em Daugavpils em 1903. Ainda criança, ele foi com a família para a América e lá se tornou um dos pintores mais conhecidos da arte abstrata. “O centro fica na fortaleza, que foi construída no século XIX”, acrescentou o Oļegs.',
         choices: [{ text: 'Linu un Oļegs devās uz cietoksni.', translation: 'O Linu e o Oļegs seguiram para a fortaleza.', next: 'cietoksnis' }],
       },
       kafejnica: {
@@ -509,7 +509,7 @@ export const STORIES: StorySeed[] = [
           {
             text: 'Linu jautāja, kāpēc cietoksnis tika nojaukts.',
             translation: 'O Linu perguntou por que a fortaleza foi demolida.',
-            wrong: 'O Oļegs disse que a fortaleza «tika uzcelta» — FOI CONSTRUÍDA no século XIX. Ela não foi demolida: o centro de arte funciona justamente dentro dela.',
+            wrong: 'O Oļegs disse que a fortaleza “tika uzcelta” — FOI CONSTRUÍDA no século XIX. Ela não foi demolida: o centro de arte funciona justamente dentro dela.',
           },
         ],
       },
@@ -530,8 +530,8 @@ export const STORIES: StorySeed[] = [
       },
       steiga: {
         emoji: '⏰',
-        text: 'Linu ieskrēja Rotko zālē, taču apsargs jau stāvēja pie durvīm. Viņš paspēja apskatīt tikai vienu gleznu, un tad gaisma tika izslēgta. Oļegs viņu mierināja: «Nekas, rīt atnāksim vēlreiz, un tu sāksi ar Rotko.»',
-        translation: 'O Linu entrou correndo na sala de Rothko, mas o segurança já estava na porta. Ele só conseguiu ver um quadro, e então a luz foi apagada. O Oļegs o consolou: «Não tem problema, amanhã a gente volta, e você começa pelo Rothko.»',
+        text: 'Linu ieskrēja Rotko zālē, taču apsargs jau stāvēja pie durvīm. Viņš paspēja apskatīt tikai vienu gleznu, un tad gaisma tika izslēgta. Oļegs viņu mierināja: “Nekas, rīt atnāksim vēlreiz, un tu sāksi ar Rotko.”',
+        translation: 'O Linu entrou correndo na sala de Rothko, mas o segurança já estava na porta. Ele só conseguiu ver um quadro, e então a luz foi apagada. O Oļegs o consolou: “Não tem problema, amanhã a gente volta, e você começa pelo Rothko.”',
         ending: { tone: 'neutro', title: 'Um quadro só', message: 'Faltou tempo para o principal. Amanhã, o Linu começa pela sala certa.' },
       },
       zale: {
@@ -543,14 +543,14 @@ export const STORIES: StorySeed[] = [
           {
             text: 'Linu teica, ka gleznās ir precīzi uzzīmēti Daugavpils nami.',
             translation: 'O Linu disse que nos quadros estavam desenhadas com precisão as casas de Daugavpils.',
-            wrong: 'As telas mostram «krāsu laukumi», campos de cor suaves, «peldoši» (que parecem flutuar), e não casas. Rothko era um pintor abstrato.',
+            wrong: 'As telas mostram “krāsu laukumi”, campos de cor suaves, “peldoši” (que parecem flutuar), e não casas. Rothko era um pintor abstrato.',
           },
         ],
       },
       saruna: {
         emoji: '🌅',
-        text: 'Oļegs brīdi padomāja un teica, ka redz Daugavu rudens vakarā. Linu atzinās, ka viņš redz saulrietu virs Brazīlijas jūras. Darbiniece, kas bija dzirdējusi viņu sarunu, pasmaidīja: «Tieši tā — katrs šeit ierauga kaut ko savu.»',
-        translation: 'O Oļegs pensou um instante e disse que via o rio Daugava numa tarde de outono. O Linu confessou que via um pôr do sol sobre o mar do Brasil. A funcionária, que tinha ouvido a conversa, sorriu: «É isso mesmo: aqui cada um enxerga algo seu.»',
+        text: 'Oļegs brīdi padomāja un teica, ka redz Daugavu rudens vakarā. Linu atzinās, ka viņš redz saulrietu virs Brazīlijas jūras. Darbiniece, kas bija dzirdējusi viņu sarunu, pasmaidīja: “Tieši tā — katrs šeit ierauga kaut ko savu.”',
+        translation: 'O Oļegs pensou um instante e disse que via o rio Daugava numa tarde de outono. O Linu confessou que via um pôr do sol sobre o mar do Brasil. A funcionária, que tinha ouvido a conversa, sorriu: “É isso mesmo: aqui cada um enxerga algo seu.”',
         ending: { tone: 'bom', title: 'Cada um vê o seu', message: 'Diante das telas de Rothko, na cidade onde ele nasceu, o Linu e o Oļegs descobriram que a cor também é uma língua.' },
       },
     },
@@ -562,7 +562,7 @@ export const STORIES: StorySeed[] = [
     cefr: 'B1',
     title: 'Zemāks par Cukurgalvu',
     emoji: '⛰️',
-    summary: 'O Linu se prepara para escalar «a montanha mais alta da Letônia» e descobre que o Gaiziņkalns é bem mais baixo que o Pão de Açúcar, mas nem por isso menos bonito.',
+    summary: 'O Linu se prepara para escalar “a montanha mais alta da Letônia” e descobre que o Gaiziņkalns é bem mais baixo que o Pão de Açúcar, mas nem por isso menos bonito.',
     cultural_context:
       'O Gaiziņkalns, na região montanhosa da Vidzeme, perto de Madona, é o ponto mais alto da Letônia, com cerca de 312 metros acima do nível do mar — mais baixo que o Pão de Açúcar, no Rio de Janeiro, que tem 396 metros. A Letônia é um país quase todo plano, e no inverno o Gaiziņkalns tem pistas de esqui.',
     start: 'start',
@@ -588,8 +588,8 @@ export const STORIES: StorySeed[] = [
       },
       augstums: {
         emoji: '📏',
-        text: '«Gaiziņkalns ir 312 metrus augsts», teica Kristaps. Linu brīdi padomāja un teica, ka Cukurgalva Riodežaneiro ir augstāka, gandrīz 400 metru. «Jā, bet mūsējais ir pats augstākais, kāds mums ir!» atbildēja Kristaps.',
-        translation: '«O Gaiziņkalns tem 312 metros de altura», disse o Kristaps. O Linu pensou um pouco e disse que o Pão de Açúcar, no Rio de Janeiro, é mais alto, quase 400 metros. «Sim, mas o nosso é o mais alto que a gente tem!», respondeu o Kristaps.',
+        text: '“Gaiziņkalns ir 312 metrus augsts”, teica Kristaps. Linu brīdi padomāja un teica, ka Cukurgalva Riodežaneiro ir augstāka, gandrīz 400 metru. “Jā, bet mūsējais ir pats augstākais, kāds mums ir!” atbildēja Kristaps.',
+        translation: '“O Gaiziņkalns tem 312 metros de altura”, disse o Kristaps. O Linu pensou um pouco e disse que o Pão de Açúcar, no Rio de Janeiro, é mais alto, quase 400 metros. “Sim, mas o nosso é o mais alto que a gente tem!”, respondeu o Kristaps.',
         choices: [{ text: 'Linu smējās un iekāpa mašīnā.', translation: 'O Linu riu e entrou no carro.', next: 'cels' }],
       },
       cels: {
@@ -610,7 +610,7 @@ export const STORIES: StorySeed[] = [
           {
             text: 'Linu sūdzējās, ka kāpj jau vairākas stundas pa garāko taku pasaulē.',
             translation: 'O Linu reclamou que já estava subindo havia várias horas pela trilha mais longa do mundo.',
-            wrong: 'Passaram só vinte minutos («pēc divdesmit minūtēm»), e a trilha era «daudz īsāka» — bem MAIS CURTA — do que o Linu esperava. Difícil era só a mochila.',
+            wrong: 'Passaram só vinte minutos (“pēc divdesmit minūtēm”), e a trilha era “daudz īsāka” — bem MAIS CURTA — do que o Linu esperava. Difícil era só a mochila.',
           },
         ],
       },
@@ -630,7 +630,7 @@ export const STORIES: StorySeed[] = [
           {
             text: 'Linu teica, ka no šejienes jūra un sniegotie kalni izskatās vēl skaistāki.',
             translation: 'O Linu disse que daqui o mar e as montanhas nevadas parecem ainda mais bonitos.',
-            wrong: 'Do alto se viam «zaļi meži, zili ezeri un mazas mājas» — matas verdes, lagos azuis e casinhas. Não há mar nem neve à vista: a Letônia é quase toda plana.',
+            wrong: 'Do alto se viam “zaļi meži, zili ezeri un mazas mājas” — matas verdes, lagos azuis e casinhas. Não há mar nem neve à vista: a Letônia é quase toda plana.',
           },
         ],
       },
@@ -680,8 +680,8 @@ export const STORIES: StorySeed[] = [
       },
       nosaukums: {
         emoji: '💧',
-        text: 'Liene stāstīja teiku par dziednieku, kurš ar alas avota ūdeni dziedināja slimos. Vārds «Gūtmanis» nāk no vācu valodas un nozīmē «labais cilvēks». Linu nodzēra malku no avota un teica, ka jūtas vēl veselāks nekā iepriekš.',
-        translation: 'A Liene contou a lenda de um curandeiro que curava os doentes com a água da fonte da gruta. O nome «Gūtmanis» vem do alemão e quer dizer «o homem bom». O Linu bebeu um gole da fonte e disse que se sentia ainda mais saudável do que antes.',
+        text: 'Liene stāstīja teiku par dziednieku, kurš ar alas avota ūdeni dziedināja slimos. Vārds “Gūtmanis” nāk no vācu valodas un nozīmē “labais cilvēks”. Linu nodzēra malku no avota un teica, ka jūtas vēl veselāks nekā iepriekš.',
+        translation: 'A Liene contou a lenda de um curandeiro que curava os doentes com a água da fonte da gruta. O nome “Gūtmanis” vem do alemão e quer dizer “o homem bom”. O Linu bebeu um gole da fonte e disse que se sentia ainda mais saudável do que antes.',
         choices: [{ text: 'Linu piegāja pie sienām.', translation: 'O Linu se aproximou das paredes.', next: 'sienas' }],
       },
       sienas: {
@@ -700,20 +700,20 @@ export const STORIES: StorySeed[] = [
           {
             text: 'Linu brīnījās, kāpēc neglītāko meiteni sauca par Rozi.',
             translation: 'O Linu estranhou que chamassem de Rosa a moça mais feia.',
-            wrong: 'É o contrário: Maija era «skaistākā meitene» — a moça MAIS BONITA da região, e por isso a chamavam de Rosa. O superlativo definido feminino termina em -ākā.',
+            wrong: 'É o contrário: Maija era “skaistākā meitene” — a moça MAIS BONITA da região, e por isso a chamavam de Rosa. O superlativo definido feminino termina em -ākā.',
           },
         ],
       },
       nazis: {
         emoji: '🔪',
-        text: 'Linu gribēja iegriezt sienā arī savu vārdu, blakus vecākajiem uzrakstiem. Liene viņu ātri apturēja: «Tagad tas ir aizliegts! Vecie uzraksti ir vēsture, bet jaunie tikai bojā smilšakmeni, kas ir ļoti mīksts.»',
-        translation: 'O Linu quis gravar o próprio nome na parede também, ao lado das inscrições mais antigas. A Liene o impediu rapidinho: «Hoje isso é proibido! As inscrições velhas são história, mas as novas só estragam o arenito, que é muito mole.»',
+        text: 'Linu gribēja iegriezt sienā arī savu vārdu, blakus vecākajiem uzrakstiem. Liene viņu ātri apturēja: “Tagad tas ir aizliegts! Vecie uzraksti ir vēsture, bet jaunie tikai bojā smilšakmeni, kas ir ļoti mīksts.”',
+        translation: 'O Linu quis gravar o próprio nome na parede também, ao lado das inscrições mais antigas. A Liene o impediu rapidinho: “Hoje isso é proibido! As inscrições velhas são história, mas as novas só estragam o arenito, que é muito mole.”',
         choices: [
           { text: 'Linu nokaunējies nolika nazi atpakaļ kabatā.', translation: 'O Linu, envergonhado, guardou o canivete de volta no bolso.', next: 'pils' },
           {
             text: 'Linu tomēr iegrieza vārdu, jo Liene teica, ka jaunie uzraksti alu padara skaistāku.',
             translation: 'O Linu gravou o nome mesmo assim, porque a Liene disse que as inscrições novas deixam a gruta mais bonita.',
-            wrong: 'A Liene disse que as inscrições novas «tikai bojā smilšakmeni» — só estragam o arenito, que é muito mole. E hoje isso é «aizliegts», proibido.',
+            wrong: 'A Liene disse que as inscrições novas “tikai bojā smilšakmeni” — só estragam o arenito, que é muito mole. E hoje isso é “aizliegts”, proibido.',
           },
         ],
       },
@@ -728,8 +728,8 @@ export const STORIES: StorySeed[] = [
       },
       suvenirs: {
         emoji: '🎁',
-        text: 'Linu nopirka mazu koka rozīti ar uzrakstu «Turaida» un gaidīja lejā. Kad Liene nokāpa, viņa stāstīja, ka no torņa bija redzams skaistākais rudens, kādu viņa atceras. Linu paskatījās uz augsto torni un mazliet nožēloja, ka bija palicis lejā.',
-        translation: 'O Linu comprou uma rosinha de madeira escrita «Turaida» e ficou esperando embaixo. Quando a Liene desceu, contou que da torre dava para ver o outono mais bonito de que ela se lembrava. O Linu olhou para a torre alta e se arrependeu um pouco de ter ficado embaixo.',
+        text: 'Linu nopirka mazu koka rozīti ar uzrakstu “Turaida” un gaidīja lejā. Kad Liene nokāpa, viņa stāstīja, ka no torņa bija redzams skaistākais rudens, kādu viņa atceras. Linu paskatījās uz augsto torni un mazliet nožēloja, ka bija palicis lejā.',
+        translation: 'O Linu comprou uma rosinha de madeira escrita “Turaida” e ficou esperando embaixo. Quando a Liene desceu, contou que da torre dava para ver o outono mais bonito de que ela se lembrava. O Linu olhou para a torre alta e se arrependeu um pouco de ter ficado embaixo.',
         ending: { tone: 'neutro', title: 'Rosa de madeira', message: 'Uma lembrancinha na mão, mas a vista mais bonita ficou lá no alto. Fica para o próximo outono.' },
       },
       final_bom: {
@@ -763,8 +763,8 @@ export const STORIES: StorySeed[] = [
     nodes: {
       start: {
         emoji: '📸',
-        text: 'Rīgas foto konkursa uzdevums bija vienkāršs: nofotografēt skaistāko jūgendstila fasādi. Linu draudzene Marta, kura studēja arhitektūru, teica, ka labākā vieta tam ir Alberta iela. «Tur ir vairāk jūgendstila namu nekā jebkurā citā ielā, kuru es zinu», viņa teica.',
-        translation: 'A tarefa do concurso de fotografia de Riga era simples: fotografar a fachada art nouveau mais bonita. A amiga do Linu, Marta, que estudava arquitetura, disse que o melhor lugar para isso é a rua Alberta. «Lá tem mais prédios art nouveau do que em qualquer outra rua que eu conheço», disse ela.',
+        text: 'Rīgas foto konkursa uzdevums bija vienkāršs: nofotografēt skaistāko jūgendstila fasādi. Linu draudzene Marta, kura studēja arhitektūru, teica, ka labākā vieta tam ir Alberta iela. “Tur ir vairāk jūgendstila namu nekā jebkurā citā ielā, kuru es zinu”, viņa teica.',
+        translation: 'A tarefa do concurso de fotografia de Riga era simples: fotografar a fachada art nouveau mais bonita. A amiga do Linu, Marta, que estudava arquitetura, disse que o melhor lugar para isso é a rua Alberta. “Lá tem mais prédios art nouveau do que em qualquer outra rua que eu conheço”, disse ela.',
         choices: [
           { text: 'Linu devās uz Alberta ielu kopā ar Martu.', translation: 'O Linu foi com a Marta para a rua Alberta.', next: 'iela' },
           { text: 'Linu gribēja vispirms apskatīt Vecrīgu.', translation: 'O Linu quis ver primeiro a Cidade Velha.', next: 'vecriga' },
@@ -772,14 +772,14 @@ export const STORIES: StorySeed[] = [
       },
       vecriga: {
         emoji: '🧱',
-        text: 'Vecrīgā bija šauras, bruģētas ielas un veci nami ar sarkaniem jumtiem, bet jūgendstila ēku tur bija mazāk. Marta paskaidroja, ka jūgendstils Rīgā uzplauka divdesmitā gadsimta sākumā, kad pilsēta strauji auga ārpus vecajiem mūriem. «Mums jāiet uz jaunākajiem kvartāliem», viņa teica.',
-        translation: 'Na Cidade Velha havia ruas estreitas de paralelepípedo e casas antigas de telhado vermelho, mas prédios art nouveau ali eram poucos. A Marta explicou que o art nouveau floresceu em Riga no começo do século XX, quando a cidade crescia depressa para fora das antigas muralhas. «Temos de ir para os bairros mais novos», disse ela.',
+        text: 'Vecrīgā bija šauras, bruģētas ielas un veci nami ar sarkaniem jumtiem, bet jūgendstila ēku tur bija mazāk. Marta paskaidroja, ka jūgendstils Rīgā uzplauka divdesmitā gadsimta sākumā, kad pilsēta strauji auga ārpus vecajiem mūriem. “Mums jāiet uz jaunākajiem kvartāliem”, viņa teica.',
+        translation: 'Na Cidade Velha havia ruas estreitas de paralelepípedo e casas antigas de telhado vermelho, mas prédios art nouveau ali eram poucos. A Marta explicou que o art nouveau floresceu em Riga no começo do século XX, quando a cidade crescia depressa para fora das antigas muralhas. “Temos de ir para os bairros mais novos”, disse ela.',
         choices: [
           { text: 'Linu sekoja Martai uz Alberta ielu.', translation: 'O Linu seguiu a Marta até a rua Alberta.', next: 'iela' },
           {
             text: 'Linu palika Vecrīgā, jo Marta teica, ka tur ir visvairāk jūgendstila ēku.',
             translation: 'O Linu ficou na Cidade Velha, porque a Marta disse que lá há o maior número de prédios art nouveau.',
-            wrong: 'A Marta disse o contrário: na Cidade Velha há MENOS («mazāk») prédios art nouveau. O estilo floresceu nos bairros mais novos, fora das antigas muralhas.',
+            wrong: 'A Marta disse o contrário: na Cidade Velha há MENOS (“mazāk”) prédios art nouveau. O estilo floresceu nos bairros mais novos, fora das antigas muralhas.',
           },
         ],
       },
@@ -809,14 +809,14 @@ export const STORIES: StorySeed[] = [
       },
       marta: {
         emoji: '🦉',
-        text: 'Marta aizveda viņu pie pelēka nama, kuru lielākā daļa tūristu pat nepamanīja. Virs durvīm sēdēja maza akmens pūce, kuru rīta saule apspīdēja tieši no sāniem. «Visskaistākās detaļas ir tās, kuras neredz uzreiz», teica Marta.',
-        translation: 'A Marta o levou até um prédio cinza que a maioria dos turistas nem notava. Acima da porta havia uma corujinha de pedra, que o sol da manhã iluminava bem de lado. «Os detalhes mais bonitos são os que a gente não vê de cara», disse a Marta.',
+        text: 'Marta aizveda viņu pie pelēka nama, kuru lielākā daļa tūristu pat nepamanīja. Virs durvīm sēdēja maza akmens pūce, kuru rīta saule apspīdēja tieši no sāniem. “Visskaistākās detaļas ir tās, kuras neredz uzreiz”, teica Marta.',
+        translation: 'A Marta o levou até um prédio cinza que a maioria dos turistas nem notava. Acima da porta havia uma corujinha de pedra, que o sol da manhã iluminava bem de lado. “Os detalhes mais bonitos são os que a gente não vê de cara”, disse a Marta.',
         choices: [
           { text: 'Linu nogaidīja labāko gaismu un nofotografēja pūci.', translation: 'O Linu esperou a melhor luz e fotografou a coruja.', next: 'final_bom' },
           {
             text: 'Linu nofotografēja pūci uz zilā nama jumta, kuru redzēja visi tūristi.',
             translation: 'O Linu fotografou a coruja no telhado do prédio azul, que todos os turistas viam.',
-            wrong: 'A coruja fica acima da porta de um prédio CINZA, que a maioria dos turistas nem nota («nepamanīja»). O relativo «kuru» se refere ao prédio cinza, não ao azul.',
+            wrong: 'A coruja fica acima da porta de um prédio CINZA, que a maioria dos turistas nem nota (“nepamanīja”). O relativo “kuru” se refere ao prédio cinza, não ao azul.',
           },
         ],
       },
@@ -841,7 +841,7 @@ export const STORIES: StorySeed[] = [
     cefr: 'B2',
     title: 'Ja jūra būtu siltāka',
     emoji: '🏖️',
-    summary: 'Numa manhã de verão em Jūrmala, o Linu hesita diante do mar a 17 graus, cheio de «se»: se a água estivesse mais quente, se ele morasse ali, se ele tivesse coragem…',
+    summary: 'Numa manhã de verão em Jūrmala, o Linu hesita diante do mar a 17 graus, cheio de “se”: se a água estivesse mais quente, se ele morasse ali, se ele tivesse coragem…',
     cultural_context:
       'Jūrmala, a uns 25 km de Riga, é uma cidade-balneário à beira do golfo de Riga, com uma praia longa de areia clara e fina e centenas de casas de veraneio de madeira dos séculos XIX e XX. A rua de pedestres Jomas iela, em Majori, é o coração do balneário. O mar ali é raso por um bom trecho, por causa dos bancos de areia, e pequenos pedaços de âmbar às vezes aparecem na praia.',
     start: 'start',
@@ -858,8 +858,8 @@ export const STORIES: StorySeed[] = [
     nodes: {
       start: {
         emoji: '📞',
-        text: 'Sandra piezvanīja Linu septiņos no rīta: «Brauc uz Jūrmalu! Ja tu būtu redzējis, cik šodien jūra ir mierīga, tu jau sēdētu vilcienā.» Linu vēl gulēja gultā un domāja, ka pēc vēl vienas stundas miega viņš būtu daudz priecīgāks. Tomēr viņš piecēlās un aizbrauca uz Majoriem.',
-        translation: 'A Sandra ligou para o Linu às sete da manhã: «Vem para Jūrmala! Se você tivesse visto como o mar está calmo hoje, já estaria sentado no trem.» O Linu ainda estava deitado e pensou que, com mais uma hora de sono, estaria muito mais feliz. Mesmo assim, levantou e foi para Majori.',
+        text: 'Sandra piezvanīja Linu septiņos no rīta: “Brauc uz Jūrmalu! Ja tu būtu redzējis, cik šodien jūra ir mierīga, tu jau sēdētu vilcienā.” Linu vēl gulēja gultā un domāja, ka pēc vēl vienas stundas miega viņš būtu daudz priecīgāks. Tomēr viņš piecēlās un aizbrauca uz Majoriem.',
+        translation: 'A Sandra ligou para o Linu às sete da manhã: “Vem para Jūrmala! Se você tivesse visto como o mar está calmo hoje, já estaria sentado no trem.” O Linu ainda estava deitado e pensou que, com mais uma hora de sono, estaria muito mais feliz. Mesmo assim, levantou e foi para Majori.',
         choices: [
           { text: 'Linu uzreiz steidzās uz pludmali.', translation: 'O Linu correu direto para a praia.', next: 'pludmale' },
           { text: 'Linu vispirms nopirka kafiju Jomas ielā.', translation: 'O Linu primeiro comprou um café na Jomas iela.', next: 'jomas' },
@@ -867,28 +867,28 @@ export const STORIES: StorySeed[] = [
       },
       jomas: {
         emoji: '☕',
-        text: 'Jomas iela vēl bija tukša, tikai sētnieks slaucīja bruģi. Kafejnīcas īpašnieks, sirms vīrs, stāstīja, ka viņa vecvecāki vasarās šeit izīrēja istabas rīdziniekiem. «Ja šīs koka mājas varētu runāt, tās stāstītu simtiem vasaru stāstu», viņš teica.',
-        translation: 'A Jomas iela ainda estava vazia; só um gari varria o calçamento. O dono do café, um senhor grisalho, contou que os avós dele alugavam quartos ali no verão para gente de Riga. «Se estas casas de madeira pudessem falar, contariam centenas de histórias de verão», disse ele.',
+        text: 'Jomas iela vēl bija tukša, tikai sētnieks slaucīja bruģi. Kafejnīcas īpašnieks, sirms vīrs, stāstīja, ka viņa vecvecāki vasarās šeit izīrēja istabas rīdziniekiem. “Ja šīs koka mājas varētu runāt, tās stāstītu simtiem vasaru stāstu”, viņš teica.',
+        translation: 'A Jomas iela ainda estava vazia; só um gari varria o calçamento. O dono do café, um senhor grisalho, contou que os avós dele alugavam quartos ali no verão para gente de Riga. “Se estas casas de madeira pudessem falar, contariam centenas de histórias de verão”, disse ele.',
         choices: [{ text: 'Linu ar kafiju rokā devās uz jūru.', translation: 'O Linu, de café na mão, foi para o mar.', next: 'pludmale' }],
       },
       pludmale: {
         emoji: '🌊',
-        text: 'Pludmale bija plata, ar baltām, smalkām smiltīm, un Sandra jau stāvēja ūdenī līdz ceļiem. «Ūdens ir septiņpadsmit grādu!» viņa sauca. «Ja tu ienāktu, pēc minūtes tu aukstumu vairs nejustu.» Linu pieskārās ūdenim ar kāju un nodrebēja.',
-        translation: 'A praia era larga, de areia branca e fina, e a Sandra já estava na água até os joelhos. «A água está a dezessete graus!», gritou ela. «Se você entrasse, depois de um minuto já não sentiria o frio.» O Linu encostou o pé na água e estremeceu.',
+        text: 'Pludmale bija plata, ar baltām, smalkām smiltīm, un Sandra jau stāvēja ūdenī līdz ceļiem. “Ūdens ir septiņpadsmit grādu!” viņa sauca. “Ja tu ienāktu, pēc minūtes tu aukstumu vairs nejustu.” Linu pieskārās ūdenim ar kāju un nodrebēja.',
+        translation: 'A praia era larga, de areia branca e fina, e a Sandra já estava na água até os joelhos. “A água está a dezessete graus!”, gritou ela. “Se você entrasse, depois de um minuto já não sentiria o frio.” O Linu encostou o pé na água e estremeceu.',
         choices: [
           { text: 'Linu teica, ka ienāktu, ja ūdens būtu kaut par pāris grādiem siltāks.', translation: 'O Linu disse que entraria se a água estivesse pelo menos uns dois graus mais quente.', next: 'saruna' },
           { text: 'Linu saņēmās un gāja ūdenī.', translation: 'O Linu tomou coragem e entrou na água.', next: 'udens' },
           {
             text: 'Linu priecājās, ka ūdens ir silts kā vanna.',
             translation: 'O Linu ficou feliz porque a água estava quente como numa banheira.',
-            wrong: 'A água estava a 17 graus, e o Linu «nodrebēja», estremeceu, ao tocá-la com o pé. A Sandra só disse que, SE ele entrasse («ja tu ienāktu»), deixaria de sentir o frio.',
+            wrong: 'A água estava a 17 graus, e o Linu “nodrebēja”, estremeceu, ao tocá-la com o pé. A Sandra só disse que, SE ele entrasse (“ja tu ienāktu”), deixaria de sentir o frio.',
           },
         ],
       },
       saruna: {
         emoji: '🤔',
-        text: 'Sandra smējās un teica, ka Latvijā neviens nekad nepeldētos, ja visi gaidītu tik ilgi kā Linu. «Ja tu dzīvotu šeit, tu zinātu, ka septiņpadsmit grādi ir laba diena», viņa piebilda. Linu paskatījās uz mierīgo jūru un sāka šaubīties.',
-        translation: 'A Sandra riu e disse que na Letônia ninguém jamais nadaria se todo mundo esperasse tanto quanto o Linu. «Se você morasse aqui, saberia que dezessete graus é um dia bom», acrescentou. O Linu olhou para o mar calmo e começou a hesitar.',
+        text: 'Sandra smējās un teica, ka Latvijā neviens nekad nepeldētos, ja visi gaidītu tik ilgi kā Linu. “Ja tu dzīvotu šeit, tu zinātu, ka septiņpadsmit grādi ir laba diena”, viņa piebilda. Linu paskatījās uz mierīgo jūru un sāka šaubīties.',
+        translation: 'A Sandra riu e disse que na Letônia ninguém jamais nadaria se todo mundo esperasse tanto quanto o Linu. “Se você morasse aqui, saberia que dezessete graus é um dia bom”, acrescentou. O Linu olhou para o mar calmo e começou a hesitar.',
         choices: [
           { text: 'Linu teica, ka tad labāk iet uzreiz, kamēr nav pārdomājis.', translation: 'O Linu disse que então era melhor entrar logo, antes de mudar de ideia.', next: 'udens' },
           { text: 'Linu nolēma palikt krastā un celt smilšu pili.', translation: 'O Linu decidiu ficar na areia e construir um castelo.', next: 'pils' },
@@ -903,14 +903,14 @@ export const STORIES: StorySeed[] = [
           {
             text: 'Linu teica, ka būtu labāk ienirt jau pie krasta, jo tur ir visdziļāk.',
             translation: 'O Linu disse que teria sido melhor mergulhar já na beira, porque lá é mais fundo.',
-            wrong: 'Na beira é justamente mais raso: a água era «sekls» (rasa), e eles tiveram de andar muito até ela chegar na cintura, por causa dos bancos de areia.',
+            wrong: 'Na beira é justamente mais raso: a água era “sekls” (rasa), e eles tiveram de andar muito até ela chegar na cintura, por causa dos bancos de areia.',
           },
         ],
       },
       dzintars: {
         emoji: '🟡',
-        text: 'Izkāpjot no ūdens, Linu ieraudzīja smiltīs mazu, dzeltenu akmentiņu. Sandra paskaidroja, ka tas ir dzintars un ka pēc vētrām to var atrast vairāk. «Ja tu nebūtu gājis jūrā, tu to nekad nebūtu atradis», viņa smējās.',
-        translation: 'Ao sair da água, o Linu viu na areia uma pedrinha amarela. A Sandra explicou que era âmbar e que depois das tempestades dá para achar mais. «Se você não tivesse entrado no mar, nunca teria achado isso», riu ela.',
+        text: 'Izkāpjot no ūdens, Linu ieraudzīja smiltīs mazu, dzeltenu akmentiņu. Sandra paskaidroja, ka tas ir dzintars un ka pēc vētrām to var atrast vairāk. “Ja tu nebūtu gājis jūrā, tu to nekad nebūtu atradis”, viņa smējās.',
+        translation: 'Ao sair da água, o Linu viu na areia uma pedrinha amarela. A Sandra explicou que era âmbar e que depois das tempestades dá para achar mais. “Se você não tivesse entrado no mar, nunca teria achado isso”, riu ela.',
         choices: [{ text: 'Linu ielika dzintaru kabatā.', translation: 'O Linu guardou o âmbar no bolso.', next: 'final_bom' }],
       },
       pils: {
@@ -921,8 +921,8 @@ export const STORIES: StorySeed[] = [
       },
       final_bom: {
         emoji: '🍦',
-        text: 'Pēc peldes viņi sēdēja uz dvieļa siltajās smiltīs un ēda saldējumu. Linu teica, ka viņš būtu smējies, ja kāds vakar būtu teicis, ka viņš peldēsies septiņpadsmit grādos. «Un tagad?» jautāja Sandra. «Tagad es brauktu atkal rīt», atbildēja Linu.',
-        translation: 'Depois do banho, eles ficaram sentados numa toalha na areia quente, tomando sorvete. O Linu disse que teria rido se alguém tivesse dito ontem que ele ia nadar a dezessete graus. «E agora?», perguntou a Sandra. «Agora eu voltaria amanhã de novo», respondeu o Linu.',
+        text: 'Pēc peldes viņi sēdēja uz dvieļa siltajās smiltīs un ēda saldējumu. Linu teica, ka viņš būtu smējies, ja kāds vakar būtu teicis, ka viņš peldēsies septiņpadsmit grādos. “Un tagad?” jautāja Sandra. “Tagad es brauktu atkal rīt”, atbildēja Linu.',
+        translation: 'Depois do banho, eles ficaram sentados numa toalha na areia quente, tomando sorvete. O Linu disse que teria rido se alguém tivesse dito ontem que ele ia nadar a dezessete graus. “E agora?”, perguntou a Sandra. “Agora eu voltaria amanhã de novo”, respondeu o Linu.',
         ending: { tone: 'bom', title: 'Dezessete graus', message: 'O Linu venceu o frio do Báltico e ainda levou um pedacinho de âmbar de lembrança.' },
       },
     },

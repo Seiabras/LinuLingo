@@ -18,9 +18,9 @@ export const UNITS_ID: UnitSeed[] = [
       history:
         'O indonésio (bahasa Indonesia) é a língua oficial da Indonésia, baseada no malaio, e foi adotada como símbolo de unidade nacional no Juramento da Juventude de 1928 — um país com mais de 700 línguas locais escolheu uma língua franca comum para se unir. Hoje é falada por mais de 270 milhões de pessoas, a maioria como segunda língua além da sua língua materna regional (javanês, sundanês, e outras).',
       culture_tip:
-        'Além de «halo», os indonésios cumprimentam pelo horário do dia: «selamat pagi» (bom dia), «selamat siang» (por volta do meio-dia), «selamat sore» (fim de tarde) e «selamat malam» (boa noite). «Terima kasih» é obrigado; a resposta mais comum é «sama-sama» (de nada). O tratamento é geralmente respeitoso: usa-se «Bapak» (senhor) ou «Ibu» (senhora) antes do nome com pessoas mais velhas ou desconhecidas.',
+        'Além de “halo”, os indonésios cumprimentam pelo horário do dia: “selamat pagi” (bom dia), “selamat siang” (por volta do meio-dia), “selamat sore” (fim de tarde) e “selamat malam” (boa noite). “Terima kasih” é obrigado; a resposta mais comum é “sama-sama” (de nada). O tratamento é geralmente respeitoso: usa-se “Bapak” (senhor) ou “Ibu” (senhora) antes do nome com pessoas mais velhas ou desconhecidas.',
       grammar_why:
-        'O indonésio não conjuga verbos! Não há formas diferentes para eu/você/ele: «saya makan» (eu como), «kamu makan» (você come) e «dia makan» (ele/ela come) usam exatamente a mesma palavra «makan». Também não existe artigo definido/indefinido nem gênero gramatical. E «dia» serve tanto para «ele» quanto para «ela» — o indonésio não distingue gênero nos pronomes.',
+        'O indonésio não conjuga verbos! Não há formas diferentes para eu/você/ele: “saya makan” (eu como), “kamu makan” (você come) e “dia makan” (ele/ela come) usam exatamente a mesma palavra “makan”. Também não existe artigo definido/indefinido nem gênero gramatical. E “dia” serve tanto para “ele” quanto para “ela” — o indonésio não distingue gênero nos pronomes.',
       grammar_examples: [
         ['Saya dari Brasil.', 'Eu sou do Brasil.'],
         ['Kamu dari mana?', 'De onde você é?'],
@@ -50,9 +50,9 @@ export const UNITS_ID: UnitSeed[] = [
           bot: 'Halo! Apa kabar?',
           botTranslation: 'Oi! Como você está?',
           expected: ['Baik, terima kasih! Kamu?', 'baik', 'terima kasih'],
-          hint: 'Responda que está bem com «baik» e devolva a pergunta: «Baik, terima kasih! Kamu?».',
+          hint: 'Responda que está bem com “baik” e devolva a pergunta: “Baik, terima kasih! Kamu?”.',
         },
-        communityPrompt: 'Escreva três cumprimentos em indonésio: um de manhã («Selamat pagi…»), um à noite («Selamat malam…») e uma despedida com «Selamat tinggal» ou «Sampai jumpa».',
+        communityPrompt: 'Escreva três cumprimentos em indonésio: um de manhã (“Selamat pagi…”), um à noite (“Selamat malam…”) e uma despedida com “Selamat tinggal” ou “Sampai jumpa”.',
       },
       {
         id: 'id-u1-l2',
@@ -68,9 +68,9 @@ export const UNITS_ID: UnitSeed[] = [
           bot: 'Halo! Siapa namamu?',
           botTranslation: 'Oi! Qual é o seu nome?',
           expected: ['Nama saya Ana. Kamu?', 'nama saya', 'kamu'],
-          hint: 'Diga o seu nome com «Nama saya…» e devolva a pergunta com «Kamu?».',
+          hint: 'Diga o seu nome com “Nama saya…” e devolva a pergunta com “Kamu?”.',
         },
-        communityPrompt: 'Apresente-se em indonésio: diga o seu nome com «Nama saya…» e pergunte o nome de outra pessoa com «Siapa namamu?».',
+        communityPrompt: 'Apresente-se em indonésio: diga o seu nome com “Nama saya…” e pergunte o nome de outra pessoa com “Siapa namamu?”.',
       },
       {
         id: 'id-u1-l3',
@@ -82,9 +82,9 @@ export const UNITS_ID: UnitSeed[] = [
           bot: 'Halo! Nama saya Budi. Siapa namamu, dan kamu dari mana?',
           botTranslation: 'Oi! Meu nome é Budi. Qual é o seu nome, e de onde você é?',
           expected: ['Halo! Nama saya Lucia, dan saya dari Brasil. Senang bertemu denganmu!', 'nama saya', 'saya dari', 'halo'],
-          hint: 'Devolva o cumprimento («Halo!»), diga o seu nome com «Nama saya…», a origem com «Saya dari…» e feche com «Senang bertemu denganmu!».',
+          hint: 'Devolva o cumprimento (“Halo!”), diga o seu nome com “Nama saya…”, a origem com “Saya dari…” e feche com “Senang bertemu denganmu!”.',
         },
-        communityPrompt: 'Escreva uma apresentação completa: cumprimento, nome com «Nama saya…», origem com «Saya dari…» e uma despedida.',
+        communityPrompt: 'Escreva uma apresentação completa: cumprimento, nome com “Nama saya…”, origem com “Saya dari…” e uma despedida.',
       },
     ],
   },
@@ -99,11 +99,11 @@ export const UNITS_ID: UnitSeed[] = [
       title: 'Kakak e adik: irmãos pela idade, não pelo sexo',
       emoji: '🧭',
       history:
-        'Uma das coisas mais surpreendentes do indonésio para quem fala português: não existem palavras separadas para «irmão» e «irmã». Em vez disso, «kakak» é qualquer irmão MAIS VELHO (seja homem ou mulher) e «adik» é qualquer irmão MAIS NOVO (seja homem ou mulher). Para especificar o sexo, quando necessário, acrescenta-se «laki-laki» (homem) ou «perempuan» (mulher): «kakak laki-laki» é o irmão mais velho especificamente.',
+        'Uma das coisas mais surpreendentes do indonésio para quem fala português: não existem palavras separadas para “irmão” e “irmã”. Em vez disso, “kakak” é qualquer irmão MAIS VELHO (seja homem ou mulher) e “adik” é qualquer irmão MAIS NOVO (seja homem ou mulher). Para especificar o sexo, quando necessário, acrescenta-se “laki-laki” (homem) ou “perempuan” (mulher): “kakak laki-laki” é o irmão mais velho especificamente.',
       culture_tip:
-        'A família estendida é muito valorizada na Indonésia, e «kakak» também é usado como forma de tratamento respeitoso para alguém um pouco mais velho, mesmo sem parentesco — parecido com chamar alguém de «mano» mais velho no Brasil, mas de um jeito mais formal e cotidiano.',
+        'A família estendida é muito valorizada na Indonésia, e “kakak” também é usado como forma de tratamento respeitoso para alguém um pouco mais velho, mesmo sem parentesco — parecido com chamar alguém de “mano” mais velho no Brasil, mas de um jeito mais formal e cotidiano.',
       grammar_why:
-        'O plural em indonésio, quando precisa ser marcado, se faz repetindo a palavra: «buku» (livro) → «buku-buku» (livros). Mas na maioria das frases, o contexto já deixa claro se é singular ou plural, e a palavra não muda nada — bem diferente do -s do português.',
+        'O plural em indonésio, quando precisa ser marcado, se faz repetindo a palavra: “buku” (livro) → “buku-buku” (livros). Mas na maioria das frases, o contexto já deixa claro se é singular ou plural, e a palavra não muda nada — bem diferente do -s do português.',
       grammar_examples: [
         ['Keluarga saya besar.', 'A minha família é grande.'],
         ['Saya punya satu kakak dan satu adik.', 'Eu tenho um irmão mais velho e um irmão mais novo.'],
@@ -130,7 +130,7 @@ export const UNITS_ID: UnitSeed[] = [
           bot: 'Kamu punya kakak atau adik?',
           botTranslation: 'Você tem irmãos mais velhos ou mais novos?',
           expected: ['Ya, saya punya satu kakak dan satu adik.', 'saya punya', 'kakak', 'adik'],
-          hint: 'Responda com «Saya punya…» e o número/tipo de irmãos, ou «Saya tidak punya kakak atau adik» se não tiver.',
+          hint: 'Responda com “Saya punya…” e o número/tipo de irmãos, ou “Saya tidak punya kakak atau adik” se não tiver.',
         },
         communityPrompt: 'Descreva a sua família em indonésio: quantos kakak/adik você tem, e como se chamam os seus pais.',
       },
@@ -148,7 +148,7 @@ export const UNITS_ID: UnitSeed[] = [
           bot: 'Kamu suka kopi Indonesia?',
           botTranslation: 'Você gosta do café indonésio?',
           expected: ['Ya, saya suka sekali, sangat bagus!', 'saya suka', 'sangat bagus'],
-          hint: 'Use «saya suka» (eu gosto) e o adjetivo «bagus» para dizer que é bom.',
+          hint: 'Use “saya suka” (eu gosto) e o adjetivo “bagus” para dizer que é bom.',
         },
         communityPrompt: 'Descreva a sua casa em duas ou três frases: se é grande ou pequena, e o que você gosta de comer ou beber nela.',
       },
@@ -162,7 +162,7 @@ export const UNITS_ID: UnitSeed[] = [
           bot: 'Ceritakan tentang keluargamu: berapa orang, dan bagaimana rumahmu?',
           botTranslation: 'Me conte sobre a sua família: quantas pessoas, e como é a sua casa?',
           expected: ['Keluarga saya ada empat orang: ibu, ayah, kakak saya, dan saya. Rumah kami kecil tapi sangat bagus.', 'keluarga saya', 'rumah kami'],
-          hint: 'Diga quantas pessoas há na família, nomeie alguns parentes e descreva a casa com «rumah kami…».',
+          hint: 'Diga quantas pessoas há na família, nomeie alguns parentes e descreva a casa com “rumah kami…”.',
         },
         communityPrompt: 'Escreva um parágrafo curto apresentando a sua família e a sua casa, usando pelo menos três palavras desta unidade.',
       },

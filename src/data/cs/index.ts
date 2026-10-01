@@ -39,5 +39,5 @@ export const TCHECO: LanguagePack = {
   phrases: { hi: 'Ahoj!', thanks: 'Děkuji!', letsStart: ['Začínáme!', 'Vamos começar!'] },
   formalMarkers: 'vy (com o verbo no plural, para uma pessoa só), prosím, promiňte',
   cognateNote:
-    'O tcheco é uma língua eslava ocidental, prima distante do português: os dois vêm do indo-europeu. Por isso «tři» lembra «três» e «dům» lembra «doméstico». Cada palavra mostra a raiz e os parentes em outras línguas.',
+    'O tcheco é uma língua eslava ocidental, prima distante do português: os dois vêm do indo-europeu. Por isso “tři” lembra “três” e “dům” lembra “doméstico”. Cada palavra mostra a raiz e os parentes em outras línguas.',
 };

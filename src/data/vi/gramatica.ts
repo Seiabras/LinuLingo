@@ -24,7 +24,7 @@ export const GRAMMAR_VI: GrammarTopic[] = [
         text: 'Não existe um jeito de "ler" o tom certo sem praticar de ouvido: os áudios de cada palavra do vocabulário mostram o tom na prática, sílaba por sílaba.',
       },
     ],
-    pitfalls: ['Ignorar o tom achando que é só um "acento decorativo": trocar o tom troca completamente a palavra, como «ma» (fantasma) virando «mã» (código).'],
+    pitfalls: ['Ignorar o tom achando que é só um "acento decorativo": trocar o tom troca completamente a palavra, como “ma” (fantasma) virando “mã” (código).'],
     quiz: [{ question: 'O que diferencia "má" de "mà" em vietnamita?', options: ['o tom', 'o significado é o mesmo', 'a letra inicial'], answer: 'o tom', explanation: 'A única diferença entre as duas palavras é o tom com que são ditas — e isso muda completamente o sentido.' }],
   },
   {
@@ -35,7 +35,7 @@ export const GRAMMAR_VI: GrammarTopic[] = [
     summary: 'Como o indonésio, o verbo vietnamita nunca muda de forma — a mesma palavra serve para qualquer pessoa.',
     sections: [
       {
-        text: 'O verbo «là» (ser) é sempre igual: «tôi là» (eu sou), «bạn là» (você é), «anh ấy là» (ele é). O sujeito nunca pode ficar de fora, já que não há terminação verbal para indicar quem fala.',
+        text: 'O verbo “là” (ser) é sempre igual: “tôi là” (eu sou), “bạn là” (você é), “anh ấy là” (ele é). O sujeito nunca pode ficar de fora, já que não há terminação verbal para indicar quem fala.',
         table: {
           head: ['Pronome', 'Tradução'],
           rows: [
@@ -70,7 +70,7 @@ export const GRAMMAR_VI: GrammarTopic[] = [
             ['Mulher', 'chị gái', 'em gái'],
           ],
         },
-        text: 'Essas palavras também funcionam como formas de tratamento respeitoso para pessoas próximas em idade, mesmo sem parentesco — parecido com o «kakak»/«adik» do indonésio, mas distinguindo também o sexo.',
+        text: 'Essas palavras também funcionam como formas de tratamento respeitoso para pessoas próximas em idade, mesmo sem parentesco — parecido com o “kakak”/“adik” do indonésio, mas distinguindo também o sexo.',
         examples: [['Tôi có một anh trai và một em gái.', 'Eu tenho um irmão mais velho e uma irmã mais nova.']],
       },
     ],
@@ -85,7 +85,7 @@ export const GRAMMAR_VI: GrammarTopic[] = [
     summary: 'Como o indonésio, o substantivo vietnamita geralmente não muda no plural; em vez disso, usa-se uma "palavra contadora" (classificador) antes dele.',
     sections: [
       {
-        text: 'Cada tipo de coisa tem o seu classificador: «con» para animais (con mèo, o/um gato), «cái» para objetos (cái nhà, a/uma casa), «người» para pessoas (người bạn, o/um amigo). No plural, acrescenta-se «những» ou «các» antes do classificador: «những con mèo» (os gatos).',
+        text: 'Cada tipo de coisa tem o seu classificador: “con” para animais (con mèo, o/um gato), “cái” para objetos (cái nhà, a/uma casa), “người” para pessoas (người bạn, o/um amigo). No plural, acrescenta-se “những” ou “các” antes do classificador: “những con mèo” (os gatos).',
         examples: [
           ['một con mèo', 'um gato'],
           ['những con mèo', 'os gatos'],
@@ -93,6 +93,6 @@ export const GRAMMAR_VI: GrammarTopic[] = [
       },
     ],
     pitfalls: ['Esperar um -s de plural como em português: o substantivo vietnamita não muda; o que muda é a palavra antes dele.'],
-    quiz: [{ question: 'Como se diz "os gatos" em vietnamita?', options: ['những con mèo', 'con mèos', 'mèo nhiều'], answer: 'những con mèo', explanation: '«Những» marca o plural antes do classificador «con», e o substantivo «mèo» não muda.' }],
+    quiz: [{ question: 'Como se diz "os gatos" em vietnamita?', options: ['những con mèo', 'con mèos', 'mèo nhiều'], answer: 'những con mèo', explanation: '“Những” marca o plural antes do classificador “con”, e o substantivo “mèo” não muda.' }],
   },
 ];

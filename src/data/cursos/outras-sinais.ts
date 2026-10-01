@@ -24,9 +24,9 @@ export const CURSO_ASL: MiniCourse = {
         { term: 'HELLO', meaning: 'olá', how: 'Mão aberta perto da testa (PA), sai para a frente e para o lado, como uma continência (M).' },
         { term: 'THANK YOU', meaning: 'obrigado', how: 'As pontas dos dedos da mão aberta tocam o queixo (PA) e a mão desce para a frente, na direção da pessoa (M).' },
         { term: 'PLEASE', meaning: 'por favor', how: 'Mão aberta sobre o peito (PA), fazendo círculos (M).' },
-        { term: 'SORRY', meaning: 'desculpa', how: 'Mão fechada, com o polegar ao lado (CM «A»), fazendo círculos sobre o peito.' },
-        { term: 'YES', meaning: 'sim', how: 'Mão fechada (CM «S») que dobra o punho para cima e para baixo, como uma cabeça dizendo sim.' },
-        { term: 'NO', meaning: 'não', how: 'O indicador e o médio se fecham sobre o polegar, duas vezes, como uma boquinha dizendo «não».' },
+        { term: 'SORRY', meaning: 'desculpa', how: 'Mão fechada, com o polegar ao lado (CM “A”), fazendo círculos sobre o peito.' },
+        { term: 'YES', meaning: 'sim', how: 'Mão fechada (CM “S”) que dobra o punho para cima e para baixo, como uma cabeça dizendo sim.' },
+        { term: 'NO', meaning: 'não', how: 'O indicador e o médio se fecham sobre o polegar, duas vezes, como uma boquinha dizendo “não”.' },
       ],
       quiz: [
         { q: 'Com que língua de sinais a ASL é aparentada?', options: ['Com a britânica', 'Com a francesa, como a Libras', 'Com nenhuma'], answer: 1 },
@@ -39,13 +39,13 @@ export const CURSO_ASL: MiniCourse = {
       title: 'Apresentar-se',
       emoji: '🙋',
       intro: [
-        'Em ASL, «Qual é o seu nome?» é sinalizado como YOUR NAME WHAT?, com as sobrancelhas franzidas no WHAT — como na Libras.',
-        'Dizer se você é surdo ou ouvinte faz parte da apresentação. E o sinal «I LOVE YOU» (eu te amo), com uma mão só, virou símbolo da cultura surda no mundo inteiro.',
+        'Em ASL, “Qual é o seu nome?” é sinalizado como YOUR NAME WHAT?, com as sobrancelhas franzidas no WHAT — como na Libras.',
+        'Dizer se você é surdo ou ouvinte faz parte da apresentação. E o sinal “I LOVE YOU” (eu te amo), com uma mão só, virou símbolo da cultura surda no mundo inteiro.',
       ],
       items: [
         { term: 'MY / MINE', meaning: 'meu, minha', how: 'Mão aberta encostada no peito.' },
         { term: 'YOUR', meaning: 'seu, sua', how: 'Mão aberta com a palma voltada para a pessoa, empurrando de leve na direção dela.' },
-        { term: 'NAME', meaning: 'nome', how: 'Indicador e médio esticados e juntos (CM «H») nas duas mãos; os da mão dominante batem duas vezes, cruzados, sobre os da outra.' },
+        { term: 'NAME', meaning: 'nome', how: 'Indicador e médio esticados e juntos (CM “H”) nas duas mãos; os da mão dominante batem duas vezes, cruzados, sobre os da outra.' },
         { term: 'WHAT', meaning: 'o quê', how: 'As duas mãos abertas, palmas para cima, balançando de leve, com as sobrancelhas franzidas.' },
         { term: 'DEAF', meaning: 'surdo', how: 'O indicador toca perto da orelha e depois perto da boca (ou o contrário).' },
         { term: 'HEARING', meaning: 'ouvinte', how: 'O indicador faz pequenos círculos para a frente, na frente da boca, como palavras saindo.' },
@@ -66,10 +66,10 @@ export const CURSO_ASL: MiniCourse = {
         'Muitos sinais de comida e bebida são icônicos: lembram o gesto de comer ou de beber. Mas cada língua escolhe um detalhe diferente.',
       ],
       items: [
-        { term: 'MOTHER', meaning: 'mãe', how: 'Mão aberta com os dedos separados (CM «5»); o polegar toca o queixo.' },
+        { term: 'MOTHER', meaning: 'mãe', how: 'Mão aberta com os dedos separados (CM “5”); o polegar toca o queixo.' },
         { term: 'FATHER', meaning: 'pai', how: 'A mesma mão, mas o polegar toca a testa. Só o lugar muda.' },
         { term: 'EAT', meaning: 'comer', how: 'As pontas dos dedos juntas tocam a boca, como levando comida.' },
-        { term: 'DRINK', meaning: 'beber', how: 'A mão em «C», como segurando um copo, inclina na direção da boca.' },
+        { term: 'DRINK', meaning: 'beber', how: 'A mão em “C”, como segurando um copo, inclina na direção da boca.' },
         { term: 'LOVE', meaning: 'amor', how: 'Braços cruzados sobre o peito, com as mãos fechadas, como num abraço.' },
       ],
       quiz: [
@@ -122,7 +122,7 @@ export const CURSO_MAIS_SINAIS: MiniCourse = {
       title: 'BSL: o alfabeto de duas mãos',
       emoji: '🇬🇧',
       intro: [
-        'A língua de sinais britânica é de outra família (BANZSL), e até o alfabeto é diferente: usa as duas mãos. A mão que não domina funciona como uma «tábua», e a outra aponta ou encosta nela.',
+        'A língua de sinais britânica é de outra família (BANZSL), e até o alfabeto é diferente: usa as duas mãos. A mão que não domina funciona como uma “tábua”, e a outra aponta ou encosta nela.',
         'As vogais são as mais fáceis: a mão dominante toca a ponta de um dedo da outra mão, do polegar ao mínimo — A, E, I, O, U.',
       ],
       items: [
@@ -144,7 +144,7 @@ export const CURSO_MAIS_SINAIS: MiniCourse = {
       emoji: '🇫🇷',
       intro: [
         'A língua de sinais francesa se formou na escola do abade de l’Épée, em Paris, a partir de 1760, com os sinais que os alunos surdos já usavam. Professores formados ali levaram a língua para o Brasil, os EUA, o México e boa parte da Europa.',
-        'Depois do Congresso de Milão, em 1880, a LSF foi proibida nas escolas francesas por quase um século. O «Réveil sourd» (despertar surdo), nos anos 1970, trouxe a língua de volta, e ela foi reconhecida por lei em 2005.',
+        'Depois do Congresso de Milão, em 1880, a LSF foi proibida nas escolas francesas por quase um século. O “Réveil sourd” (despertar surdo), nos anos 1970, trouxe a língua de volta, e ela foi reconhecida por lei em 2005.',
       ],
       items: [
         { term: 'Institut National de Jeunes Sourds', meaning: 'a escola de Paris, herdeira da escola de l’Épée' },
@@ -161,11 +161,11 @@ export const CURSO_MAIS_SINAIS: MiniCourse = {
       title: 'LGP: a portuguesa, filha da sueca',
       emoji: '🇵🇹',
       intro: [
-        'Em Portugal a língua se chama Língua Gestual Portuguesa, e não «de sinais»: «gesto» é a palavra usada lá. Ela é da família sueca, porque a primeira escola de surdos de Lisboa foi fundada em 1823 pelo sueco Pär Aron Borg.',
+        'Em Portugal a língua se chama Língua Gestual Portuguesa, e não “de sinais”: “gesto” é a palavra usada lá. Ela é da família sueca, porque a primeira escola de surdos de Lisboa foi fundada em 1823 pelo sueco Pär Aron Borg.',
         'Por isso um surdo brasileiro e um português, embora os dois países falem português, não se entendem de imediato: a Libras e a LGP são de famílias diferentes. A LGP está na Constituição portuguesa desde 1997.',
       ],
       items: [
-        { term: 'Língua Gestual Portuguesa', meaning: 'o nome em Portugal («gestual»)' },
+        { term: 'Língua Gestual Portuguesa', meaning: 'o nome em Portugal (“gestual”)' },
         { term: 'Pär Aron Borg', meaning: 'o professor sueco que fundou a escola de Lisboa em 1823' },
       ],
       quiz: [

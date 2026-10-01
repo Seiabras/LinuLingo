@@ -157,7 +157,7 @@ export const RECURSOS_UR: LanguageResources = {
       by: 'Faiz Ahmed Faiz',
       year: '1941',
       level: 'C1',
-      why: 'O primeiro livro de Faiz, com «Mujh se pehli si mohabbat» («Não me peça, amada, o amor de antes»): poesia de amor e de protesto, muito cantada.',
+      why: 'O primeiro livro de Faiz, com “Mujh se pehli si mohabbat” (“Não me peça, amada, o amor de antes”): poesia de amor e de protesto, muito cantada.',
     },
     {
       kind: 'livro',
@@ -210,7 +210,7 @@ export const RECURSOS_UR: LanguageResources = {
       original: 'رنجش ہی سہی',
       by: 'Mehdi Hassan (poema de Ahmad Faraz)',
       level: 'B2',
-      why: 'Um dos ghazals mais conhecidos, cantado pelo «rei do ghazal» com pronúncia impecável: bom para ouvir o urdu poético devagar.',
+      why: 'Um dos ghazals mais conhecidos, cantado pelo “rei do ghazal” com pronúncia impecável: bom para ouvir o urdu poético devagar.',
     },
     {
       kind: 'musica',
@@ -285,10 +285,10 @@ export const RECURSOS_UR: LanguageResources = {
   ],
   tips: [
     'O urdu se escreve da direita para a esquerda, num alfabeto perso-árabe, quase sempre na caligrafia nastaʿlīq, em que as letras de uma palavra descem em diagonal. Ela é mais difícil de ler que o árabe impresso: comece por textos em letra mais simples (naskh) ou com vogais marcadas e passe ao nastaʿlīq de jornais e livros depois.',
-    'O alfabeto tem letras extras para sons do sul da Ásia: as retroflexas ٹ (ṭ), ڈ (ḍ) e ڑ (ṛ), além de پ (p), چ (ch), ژ (zh) e گ (g). As aspiradas se escrevem com ھ: کھ (kh), پھ (ph). E várias letras soam igual (س، ص، ث são todas «s»; ز، ذ، ض، ظ, todas «z»), então a grafia só se aprende vendo a palavra.',
+    'O alfabeto tem letras extras para sons do sul da Ásia: as retroflexas ٹ (ṭ), ڈ (ḍ) e ڑ (ṛ), além de پ (p), چ (ch), ژ (zh) e گ (g). As aspiradas se escrevem com ھ: کھ (kh), پھ (ph). E várias letras soam igual (س، ص، ث são todas “s”; ز، ذ، ض، ظ, todas “z”), então a grafia só se aprende vendo a palavra.',
     'Urdu e híndi são, na fala do dia a dia, praticamente a mesma língua. Se você já estuda híndi, o urdu falado vai soar familiar; mudam a escrita e o vocabulário formal, que no urdu vem do persa e do árabe. As novelas paquistanesas e as canções de Bollywood servem aos dois.',
     'A cultura urdu gira em torno da poesia: o ghazal de Ghalib e de Faiz está nas músicas, nas novelas e até nas conversas. Aprenda palavras-chave como ishq (amor), dil (coração), zindagī (vida) e intezār (espera) e vá decorando dísticos (sheʿr): é assim que muitos falantes aprenderam.',
-    'O urdu é famoso pela cortesia (adab): trate por آپ (āp) quem você não conhece, cumprimente com «السلام علیکم» (assalāmu ʿalaikum) e agradeça com «شکریہ» (shukriya). Nas novelas, repare nos tratamentos de família (ammī, abbū, bājī, bhāī), que mostram quem é quem.',
+    'O urdu é famoso pela cortesia (adab): trate por آپ (āp) quem você não conhece, cumprimente com “السلام علیکم” (assalāmu ʿalaikum) e agradeça com “شکریہ” (shukriya). Nas novelas, repare nos tratamentos de família (ammī, abbū, bājī, bhāī), que mostram quem é quem.',
     'Além do ACTFL OPI, não há prova internacional padronizada de urdu para estrangeiros. Para estudar com certificado, o Conselho Nacional para a Promoção do Urdu (NCPUL), do governo da Índia, oferece um diploma de um ano em urdu, com ensino a distância em inglês ou híndi.',
   ],
 };

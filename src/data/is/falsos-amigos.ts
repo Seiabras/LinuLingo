@@ -8,7 +8,7 @@ export const FALSE_FRIENDS_IS: FalseFriend[] = [
   // ——— os clássicos: caem em qualquer conversa ———
   {
     word: 'gift',
-    means: 'casada, casado (adjetivo, no feminino e no neutro; no masculino, «giftur»)',
+    means: 'casada, casado (adjetivo, no feminino e no neutro; no masculino, “giftur”)',
     looksLike: 'gift (presente, em inglês)',
     forThat: 'gjöf',
     emoji: '💍',
@@ -24,7 +24,7 @@ export const FALSE_FRIENDS_IS: FalseFriend[] = [
   },
   {
     word: 'gata',
-    means: 'rua (a gata é «læða»; o gato, em geral, «köttur»)',
+    means: 'rua (a gata é “læða”; o gato, em geral, “köttur”)',
     looksLike: 'gata (a fêmea do gato)',
     forThat: 'læða; köttur',
     emoji: '🛣️',
@@ -80,7 +80,7 @@ export const FALSE_FRIENDS_IS: FalseFriend[] = [
   },
   {
     word: 'mál',
-    means: 'assunto, questão; também língua («móðurmál», língua materna) e processo na justiça',
+    means: 'assunto, questão; também língua (“móðurmál”, língua materna) e processo na justiça',
     looksLike: 'mal',
     forThat: 'illa; illt',
     emoji: '💬',
@@ -136,7 +136,7 @@ export const FALSE_FRIENDS_IS: FalseFriend[] = [
   },
   {
     word: 'bað',
-    means: 'banho; também «pediu» (passado de «biðja»)',
+    means: 'banho; também “pediu” (passado de “biðja”)',
     looksLike: 'bad (ruim, em inglês)',
     forThat: 'slæmur; vondur',
     emoji: '🛁',
@@ -192,7 +192,7 @@ export const FALSE_FRIENDS_IS: FalseFriend[] = [
   },
   {
     word: 'far',
-    means: 'carona, transporte («fá far», pegar carona); também marca, rastro',
+    means: 'carona, transporte (“fá far”, pegar carona); também marca, rastro',
     looksLike: 'far (longe, em inglês)',
     forThat: 'langt',
     emoji: '🚙',
@@ -209,14 +209,14 @@ export const FALSE_FRIENDS_IS: FalseFriend[] = [
   {
     word: 'kaldur',
     means: 'frio',
-    looksLike: 'caldo (o caldo quente; e, em italiano, «caldo» é quente, «heitur»)',
+    looksLike: 'caldo (o caldo quente; e, em italiano, “caldo” é quente, “heitur”)',
     forThat: 'soð; heitur',
     emoji: '🥶',
     example: ['Mér er kalt, vatnið er of kalt!', 'Estou com frio, a água está gelada demais!'],
   },
   {
     word: 'sund',
-    means: 'natação («fara í sund», ir à piscina); também estreito, canal entre ilhas',
+    means: 'natação (“fara í sund”, ir à piscina); também estreito, canal entre ilhas',
     looksLike: 'sound (som, em inglês)',
     forThat: 'hljóð',
     emoji: '🏊',
@@ -224,7 +224,7 @@ export const FALSE_FRIENDS_IS: FalseFriend[] = [
   },
   {
     word: 'spá',
-    means: 'previsão («veðurspá», previsão do tempo); como verbo, prever',
+    means: 'previsão (“veðurspá”, previsão do tempo); como verbo, prever',
     looksLike: 'spa',
     forThat: 'heilsulind',
     emoji: '🌦️',
@@ -272,7 +272,7 @@ export const FALSE_FRIENDS_IS: FalseFriend[] = [
   },
   {
     word: 'sápa',
-    means: 'sabão, sabonete (o sapo é «karta»; a rã, «froskur»)',
+    means: 'sabão, sabonete (o sapo é “karta”; a rã, “froskur”)',
     looksLike: 'sapo',
     forThat: 'karta; froskur',
     emoji: '🧼',
@@ -304,7 +304,7 @@ export const FALSE_FRIENDS_IS: FalseFriend[] = [
   },
   {
     word: 'ár',
-    means: 'ano; também remos e rios (plurais de «ár» e «á»)',
+    means: 'ano; também remos e rios (plurais de “ár” e “á”)',
     looksLike: 'ar',
     forThat: 'loft',
     emoji: '📅',
@@ -320,7 +320,7 @@ export const FALSE_FRIENDS_IS: FalseFriend[] = [
   },
   {
     word: 'dó',
-    means: 'morreu (passado de «deyja»)',
+    means: 'morreu (passado de “deyja”)',
     looksLike: 'dó (pena, compaixão; e a nota musical)',
     forThat: 'vorkunn',
     emoji: '🕯️',

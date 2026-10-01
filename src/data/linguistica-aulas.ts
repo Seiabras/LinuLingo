@@ -17,29 +17,29 @@ export const LESSONS: LingLesson[] = [
       },
       {
         heading: 'Por que a escrita comum não basta',
-        text: 'A ortografia de cada língua foi feita para os seus falantes, não para estrangeiros. Ela guarda história, etimologia e convenções: por isso uma mesma letra pode valer vários sons, e um mesmo som pode ser escrito de vários jeitos.\n\nO português é um bom exemplo: a letra «x» tem quatro valores diferentes. E o que vale para uma língua não vale para outra: o «j» do espanhol, do romeno e do português são três sons diferentes. No IPA, cada som tem o seu símbolo e acabou a confusão.',
+        text: 'A ortografia de cada língua foi feita para os seus falantes, não para estrangeiros. Ela guarda história, etimologia e convenções: por isso uma mesma letra pode valer vários sons, e um mesmo som pode ser escrito de vários jeitos.\n\nO português é um bom exemplo: a letra “x” tem quatro valores diferentes. E o que vale para uma língua não vale para outra: o “j” do espanhol, do romeno e do português são três sons diferentes. No IPA, cada som tem o seu símbolo e acabou a confusão.',
         table: {
           head: ['Escrita', 'Som (IPA)', 'O que mostra'],
           rows: [
-            ['xícara (pt)', '[ʃ]', 'o «x» vale «ch»…'],
+            ['xícara (pt)', '[ʃ]', 'o “x” vale “ch”…'],
             ['táxi (pt)', '[ks]', '…ou dois sons…'],
-            ['exame (pt)', '[z]', '…ou um «z»…'],
-            ['próximo (pt)', '[s]', '…ou um «s»: quatro sons para uma letra'],
-            ['jota (es)', '[x]', 'o «j» espanhol é raspado na garganta'],
-            ['joc (ro, «jogo»)', '[ʒ]', 'o «j» romeno é o mesmo do português «já»'],
-            ['молоко́ (ru, «leite»)', '[məlɐˈko]', 'três letras «о», três sons diferentes'],
+            ['exame (pt)', '[z]', '…ou um “z”…'],
+            ['próximo (pt)', '[s]', '…ou um “s”: quatro sons para uma letra'],
+            ['jota (es)', '[x]', 'o “j” espanhol é raspado na garganta'],
+            ['joc (ro, “jogo”)', '[ʒ]', 'o “j” romeno é o mesmo do português “já”'],
+            ['молоко́ (ru, “leite”)', '[məlɐˈko]', 'três letras “о”, três sons diferentes'],
           ],
         },
       },
       {
         heading: 'Como ler uma transcrição',
-        text: 'Os símbolos do IPA se baseiam no alfabeto latino, com letras gregas e letras inventadas para os sons que faltavam. Muitos você já conhece: [p], [t], [m], [s] soam como no português. Outros são novos: [ʃ] é o «ch» de «chave», [ʒ] o «j» de «já», [ɲ] o «nh» de «ninho», [ʎ] o «lh» de «filho», [ɾ] o «r» fraco de «caro».\n\nTão importantes quanto as letras são os sinais que se somam a elas, os diacríticos. A tabela abaixo mostra os que você mais vai encontrar no app.',
+        text: 'Os símbolos do IPA se baseiam no alfabeto latino, com letras gregas e letras inventadas para os sons que faltavam. Muitos você já conhece: [p], [t], [m], [s] soam como no português. Outros são novos: [ʃ] é o “ch” de “chave”, [ʒ] o “j” de “já”, [ɲ] o “nh” de “ninho”, [ʎ] o “lh” de “filho”, [ɾ] o “r” fraco de “caro”.\n\nTão importantes quanto as letras são os sinais que se somam a elas, os diacríticos. A tabela abaixo mostra os que você mais vai encontrar no app.',
         table: {
           head: ['Sinal', 'Nome', 'Exemplo'],
           rows: [
             ['ˈ', 'acento tônico: vem ANTES da sílaba forte', 'sábia [ˈsabjɐ] × sabiá [sabiˈa]'],
-            ['ː', 'duração: o som é longo', 'russo щи («sopa») [ɕːi]'],
-            ['ʲ', 'palatalização: a consoante «amolece», como se viesse um «i»', 'russo мать («mãe») [matʲ]; romeno lupi («lobos») [lupʲ]'],
+            ['ː', 'duração: o som é longo', 'russo щи (“sopa”) [ɕːi]'],
+            ['ʲ', 'palatalização: a consoante “amolece”, como se viesse um “i”', 'russo мать (“mãe”) [matʲ]; romeno lupi (“lobos”) [lupʲ]'],
             ['◌̃', 'til: vogal nasal, o ar sai também pelo nariz', 'português pão [ˈpɐ̃w̃]'],
             ['◌̯', 'não silábico: a vogal vira semivogal, sem formar sílaba', 'espanhol aire [ˈai̯ɾe]; romeno seară [ˈse̯arə]'],
           ],
@@ -47,14 +47,14 @@ export const LESSONS: LingLesson[] = [
       },
       {
         heading: '[Colchetes] × /barras/',
-        text: 'Uma transcrição pode vir de dois jeitos. Entre colchetes, [ ], vai a transcrição fonética: o som que de fato sai da boca, com os detalhes do sotaque. Entre barras, / /, vai a transcrição fonológica: os fonemas, isto é, as unidades de som que distinguem palavras naquela língua.\n\nNo Brasil, «tia» é /ˈtia/ para o sistema do português, mas na boca de um carioca sai [ˈt͡ʃiɐ]. O «t» virou «tch» e o «a» final ficou mais fechado, mas nenhum falante acha que a palavra mudou. As barras dizem o que a língua distingue; os colchetes, o que o ouvido escuta.',
+        text: 'Uma transcrição pode vir de dois jeitos. Entre colchetes, [ ], vai a transcrição fonética: o som que de fato sai da boca, com os detalhes do sotaque. Entre barras, / /, vai a transcrição fonológica: os fonemas, isto é, as unidades de som que distinguem palavras naquela língua.\n\nNo Brasil, “tia” é /ˈtia/ para o sistema do português, mas na boca de um carioca sai [ˈt͡ʃiɐ]. O “t” virou “tch” e o “a” final ficou mais fechado, mas nenhum falante acha que a palavra mudou. As barras dizem o que a língua distingue; os colchetes, o que o ouvido escuta.',
         table: {
           head: ['Palavra', '/Fonológica/', '[Fonética]'],
           rows: [
             ['tia (pt-BR)', '/ˈtia/', '[ˈt͡ʃiɐ]'],
             ['casa (pt-BR)', '/ˈkaza/', '[ˈkazɐ]'],
             ['lado (es)', '/ˈlado/', '[ˈlaðo]'],
-            ['хлеб (ru, «pão»)', '/xlʲeb/', '[xlʲep]'],
+            ['хлеб (ru, “pão”)', '/xlʲeb/', '[xlʲep]'],
           ],
         },
       },
@@ -65,9 +65,9 @@ export const LESSONS: LingLesson[] = [
     ],
     pitfalls: [
       'O acento tônico ˈ vem ANTES da sílaba tônica, não em cima da vogal: [ˈkaza], e não [káza].',
-      'IPA não é «pronúncia figurada»: [x] não é o «x» do português, e sim o «rr» raspado do espanhol «jota» e do russo «хлеб».',
-      'O [j] do IPA é o som do «i» em «pai», não o «j» de «já» (que é [ʒ]).',
-      'Não existe «a» transcrição de uma palavra: depende do sotaque e do nível de detalhe. «Carro» é [ˈkaʁu] em São Paulo e [ˈkaχu] no Rio.',
+      'IPA não é “pronúncia figurada”: [x] não é o “x” do português, e sim o “rr” raspado do espanhol “jota” e do russo “хлеб”.',
+      'O [j] do IPA é o som do “i” em “pai”, não o “j” de “já” (que é [ʒ]).',
+      'Não existe “a” transcrição de uma palavra: depende do sotaque e do nível de detalhe. “Carro” é [ˈkaʁu] em São Paulo e [ˈkaχu] no Rio.',
     ],
     quiz: [
       {
@@ -86,7 +86,7 @@ export const LESSONS: LingLesson[] = [
         question: 'Em [məlɐˈko], qual sílaba é a tônica?',
         options: ['mə', 'lɐ', 'ko', 'Nenhuma'],
         answer: 'ko',
-        explanation: 'O sinal ˈ vem antes da sílaba tônica: молоко́ é «ma-la-KÓ».',
+        explanation: 'O sinal ˈ vem antes da sílaba tônica: молоко́ é “ma-la-KÓ”.',
       },
       {
         question: 'O que indicam as barras em /ˈtia/?',
@@ -96,9 +96,9 @@ export const LESSONS: LingLesson[] = [
       },
       {
         question: 'O que o sinal ʲ indica em [matʲ]?',
-        options: ['Que o som é longo', 'Que a vogal é nasal', 'Que a consoante é palatalizada («mole»)', 'Que a sílaba é tônica'],
-        answer: 'Que a consoante é palatalizada («mole»)',
-        explanation: 'O ʲ mostra a consoante «amolecida», com o meio da língua levantado, como no russo мать.',
+        options: ['Que o som é longo', 'Que a vogal é nasal', 'Que a consoante é palatalizada (“mole”)', 'Que a sílaba é tônica'],
+        answer: 'Que a consoante é palatalizada (“mole”)',
+        explanation: 'O ʲ mostra a consoante “amolecida”, com o meio da língua levantado, como no russo мать.',
       },
     ],
   },
@@ -114,14 +114,14 @@ export const LESSONS: LingLesson[] = [
     sections: [
       {
         heading: 'Larga ou estreita?',
-        text: 'Toda transcrição escolhe um nível de detalhe. A transcrição larga anota só o essencial, o que distingue uma palavra da outra; costuma vir entre /barras/ e é a que você encontra em dicionários. A transcrição estreita anota detalhes do sotaque: a vogal que se reduziu, a consoante que amoleceu, o «t» que virou «tch»; vem entre [colchetes].\n\nNenhuma é melhor que a outra. A larga serve para aprender a palavra; a estreita, para imitar um sotaque ou estudar como a fala varia.',
+        text: 'Toda transcrição escolhe um nível de detalhe. A transcrição larga anota só o essencial, o que distingue uma palavra da outra; costuma vir entre /barras/ e é a que você encontra em dicionários. A transcrição estreita anota detalhes do sotaque: a vogal que se reduziu, a consoante que amoleceu, o “t” que virou “tch”; vem entre [colchetes].\n\nNenhuma é melhor que a outra. A larga serve para aprender a palavra; a estreita, para imitar um sotaque ou estudar como a fala varia.',
         table: {
           head: ['Palavra', 'Larga', 'Estreita', 'O detalhe a mais'],
           rows: [
-            ['leite (pt-BR)', '/ˈlejte/', '[ˈlejt͡ʃi]', 'o «e» final vira [i] e puxa o «t» para «tch»'],
-            ['cidade (pt-BR)', '/siˈdade/', '[siˈdad͡ʒi]', 'o «d» vira «dj» antes de [i]'],
-            ['nada (es)', '/ˈnada/', '[ˈnaða]', 'entre vogais, o «d» fica suave, quase um «th» inglês'],
-            ['вода́ (ru, «água»)', '/voˈda/', '[vɐˈda]', 'o «о» átono se reduz a [ɐ]'],
+            ['leite (pt-BR)', '/ˈlejte/', '[ˈlejt͡ʃi]', 'o “e” final vira [i] e puxa o “t” para “tch”'],
+            ['cidade (pt-BR)', '/siˈdade/', '[siˈdad͡ʒi]', 'o “d” vira “dj” antes de [i]'],
+            ['nada (es)', '/ˈnada/', '[ˈnaða]', 'entre vogais, o “d” fica suave, quase um “th” inglês'],
+            ['вода́ (ru, “água”)', '/voˈda/', '[vɐˈda]', 'o “о” átono se reduz a [ɐ]'],
           ],
         },
       },
@@ -134,14 +134,14 @@ export const LESSONS: LingLesson[] = [
             ['menino (pt)', 'me-NI-no', '[meˈninu]'],
             ['sabiá (pt)', 'sa-bi-Á', '[sabiˈa]'],
             ['ciudad (es)', 'ciu-DAD', '[sjuˈðað]'],
-            ['mulțumesc (ro, «obrigado»)', 'mul-țu-MESC', '[mult͡suˈmesk]'],
-            ['спаси́бо (ru, «obrigado»)', 'spa-SI-bo', '[spɐˈsʲibə]'],
+            ['mulțumesc (ro, “obrigado”)', 'mul-țu-MESC', '[mult͡suˈmesk]'],
+            ['спаси́бо (ru, “obrigado”)', 'spa-SI-bo', '[spɐˈsʲibə]'],
           ],
         },
       },
       {
         heading: 'Um passo a passo',
-        text: '1. Ouça a palavra várias vezes, de preferência de um falante nativo.\n2. Separe as sílabas e ache a tônica.\n3. Transcreva som por som, esquecendo a ortografia: pergunte-se «o que eu ouço?», e não «que letra está escrita?».\n4. Confira os pontos traiçoeiros de cada língua: vogais reduzidas (russo, português), consoantes moles (russo, romeno), semivogais (romeno, espanhol).\n5. Decida o nível de detalhe e use os colchetes ou as barras de acordo.',
+        text: '1. Ouça a palavra várias vezes, de preferência de um falante nativo.\n2. Separe as sílabas e ache a tônica.\n3. Transcreva som por som, esquecendo a ortografia: pergunte-se “o que eu ouço?”, e não “que letra está escrita?”.\n4. Confira os pontos traiçoeiros de cada língua: vogais reduzidas (russo, português), consoantes moles (russo, romeno), semivogais (romeno, espanhol).\n5. Decida o nível de detalhe e use os colchetes ou as barras de acordo.',
       },
       {
         heading: 'Exercícios: espanhol e romeno',
@@ -149,12 +149,12 @@ export const LESSONS: LingLesson[] = [
         table: {
           head: ['Palavra', 'Tradução', 'IPA', 'Dica'],
           rows: [
-            ['casa (es)', 'casa', '[ˈkasa]', 'o «s» entre vogais é [s], nunca [z]'],
-            ['perro (es)', 'cachorro', '[ˈpero]', '«rr» é vibrante múltipla [r]; «pero» tem [ɾ]'],
-            ['España (es)', 'Espanha', '[esˈpaɲa]', '«ñ» = [ɲ], o nosso «nh»'],
-            ['casă (ro)', 'casa', '[ˈkasə]', '«ă» é [ə], uma vogal neutra'],
-            ['câine (ro)', 'cachorro', '[ˈkɨjne]', '«â» e «î» são [ɨ], um «i» dito com a língua para trás'],
-            ['ochi (ro)', 'olho, olhos', '[okʲ]', '«chi» no fim = [kʲ], o «i» quase some'],
+            ['casa (es)', 'casa', '[ˈkasa]', 'o “s” entre vogais é [s], nunca [z]'],
+            ['perro (es)', 'cachorro', '[ˈpero]', '“rr” é vibrante múltipla [r]; “pero” tem [ɾ]'],
+            ['España (es)', 'Espanha', '[esˈpaɲa]', '“ñ” = [ɲ], o nosso “nh”'],
+            ['casă (ro)', 'casa', '[ˈkasə]', '“ă” é [ə], uma vogal neutra'],
+            ['câine (ro)', 'cachorro', '[ˈkɨjne]', '“â” e “î” são [ɨ], um “i” dito com a língua para trás'],
+            ['ochi (ro)', 'olho, olhos', '[okʲ]', '“chi” no fim = [kʲ], o “i” quase some'],
           ],
         },
       },
@@ -164,21 +164,21 @@ export const LESSONS: LingLesson[] = [
         table: {
           head: ['Palavra', 'Tradução', 'IPA', 'Dica'],
           rows: [
-            ['Москва́ (ru)', 'Moscou', '[mɐˈskva]', 'o «о» antes da tônica vira [ɐ]'],
-            ['хорошо́ (ru)', 'bem', '[xərɐˈʂo]', 'três «о», três sons: [ə], [ɐ], [o]'],
+            ['Москва́ (ru)', 'Moscou', '[mɐˈskva]', 'o “о” antes da tônica vira [ɐ]'],
+            ['хорошо́ (ru)', 'bem', '[xərɐˈʂo]', 'três “о”, três sons: [ə], [ɐ], [o]'],
             ['день (ru)', 'dia', '[dʲenʲ]', 'duas consoantes moles'],
-            ['хлеб (ru)', 'pão', '[xlʲep]', '«б» no fim da palavra soa [p]'],
+            ['хлеб (ru)', 'pão', '[xlʲep]', '“б” no fim da palavra soa [p]'],
             ['pão (pt)', '', '[ˈpɐ̃w̃]', 'ditongo nasal: til nas duas partes'],
-            ['filho (pt)', '', '[ˈfiʎu]', '«lh» = [ʎ]; o «o» final átono vira [u]'],
+            ['filho (pt)', '', '[ˈfiʎu]', '“lh” = [ʎ]; o “o” final átono vira [u]'],
           ],
         },
       },
     ],
     pitfalls: [
-      'O erro mais comum é transcrever a ortografia: «hora» não tem [h], e «exame» não tem [ks].',
-      'Transcrever a si mesmo é ótimo exercício, mas lembre-se de que o seu sotaque é um entre muitos: um gaúcho diz [ˈlejte], sem o «tch».',
-      'No espanhol, «b» e «v» soam igual: vaca e baca são ambas [ˈbaka].',
-      'No romeno, o «i» final depois de consoante quase nunca é vogal plena: lupi é [lupʲ], uma sílaba só.',
+      'O erro mais comum é transcrever a ortografia: “hora” não tem [h], e “exame” não tem [ks].',
+      'Transcrever a si mesmo é ótimo exercício, mas lembre-se de que o seu sotaque é um entre muitos: um gaúcho diz [ˈlejte], sem o “tch”.',
+      'No espanhol, “b” e “v” soam igual: vaca e baca são ambas [ˈbaka].',
+      'No romeno, o “i” final depois de consoante quase nunca é vogal plena: lupi é [lupʲ], uma sílaba só.',
     ],
     quiz: [
       {
@@ -195,21 +195,21 @@ export const LESSONS: LingLesson[] = [
       },
       {
         question: 'Por que хлеб termina em [p] na transcrição?',
-        options: ['Erro de digitação', 'Ensurdecimento: no fim da palavra, «б» soa [p]', 'Porque o «е» é mudo', 'Porque é uma palavra estrangeira'],
-        answer: 'Ensurdecimento: no fim da palavra, «б» soa [p]',
+        options: ['Erro de digitação', 'Ensurdecimento: no fim da palavra, “б” soa [p]', 'Porque o “е” é mudo', 'Porque é uma palavra estrangeira'],
+        answer: 'Ensurdecimento: no fim da palavra, “б” soa [p]',
         explanation: 'No russo, consoantes sonoras perdem a vibração no fim da palavra: хлеб [xlʲep].',
       },
       {
-        question: 'Qual o símbolo do «ă» romeno, como em casă?',
+        question: 'Qual o símbolo do “ă” romeno, como em casă?',
         options: ['[a]', '[ɨ]', '[ə]', '[ɐ̃]'],
         answer: '[ə]',
-        explanation: 'O «ă» é uma vogal neutra, central, o [ə] (chamado «schwa»).',
+        explanation: 'O “ă” é uma vogal neutra, central, o [ə] (chamado “schwa”).',
       },
       {
-        question: 'Qual a transcrição estreita de «leite» num sotaque do Sudeste?',
+        question: 'Qual a transcrição estreita de “leite” num sotaque do Sudeste?',
         options: ['[ˈlejte]', '[ˈlejt͡ʃi]', '[ˈlite]', '[lejˈte]'],
         answer: '[ˈlejt͡ʃi]',
-        explanation: 'O «e» final vira [i], e o «t» antes de [i] vira [t͡ʃ].',
+        explanation: 'O “e” final vira [i], e o “t” antes de [i] vira [t͡ʃ].',
       },
     ],
   },
@@ -225,13 +225,13 @@ export const LESSONS: LingLesson[] = [
     sections: [
       {
         heading: 'ISO 639: um código para cada língua',
-        text: 'A ISO (Organização Internacional de Normalização) mantém a lista ISO 639 de códigos de línguas. Ela tem mais de uma parte. A ISO 639-1 usa duas letras e cobre só as línguas mais conhecidas, pouco mais de 180. A ISO 639-2 usa três letras e nasceu para bibliotecas. A ISO 639-3, também de três letras, tenta cobrir todas as línguas do mundo, milhares delas. Em 2023 as partes foram reunidas numa norma só, a ISO 639:2023.\n\nOs códigos se escrevem sempre em minúsculas. Algumas línguas têm dois códigos de três letras: um «bibliográfico», antigo, e um «terminológico», tirado do nome da língua nela mesma. O romeno é «rum» e «ron».',
+        text: 'A ISO (Organização Internacional de Normalização) mantém a lista ISO 639 de códigos de línguas. Ela tem mais de uma parte. A ISO 639-1 usa duas letras e cobre só as línguas mais conhecidas, pouco mais de 180. A ISO 639-2 usa três letras e nasceu para bibliotecas. A ISO 639-3, também de três letras, tenta cobrir todas as línguas do mundo, milhares delas. Em 2023 as partes foram reunidas numa norma só, a ISO 639:2023.\n\nOs códigos se escrevem sempre em minúsculas. Algumas línguas têm dois códigos de três letras: um “bibliográfico”, antigo, e um “terminológico”, tirado do nome da língua nela mesma. O romeno é “rum” e “ron”.',
         table: {
           head: ['Língua', 'ISO 639-1', 'ISO 639-2 / 639-3', 'Observação'],
           rows: [
             ['português', 'pt', 'por', ''],
-            ['espanhol', 'es', 'spa', 'de «español»'],
-            ['romeno', 'ro', 'ron (antigo: rum)', 'o código «mo», de «moldávio», foi abandonado em 2008'],
+            ['espanhol', 'es', 'spa', 'de “español”'],
+            ['romeno', 'ro', 'ron (antigo: rum)', 'o código “mo”, de “moldávio”, foi abandonado em 2008'],
             ['russo', 'ru', 'rus', ''],
             ['inglês', 'en', 'eng', ''],
             ['finlandês', 'fi', 'fin', ''],
@@ -258,7 +258,7 @@ export const LESSONS: LingLesson[] = [
       },
       {
         heading: 'BCP 47: juntando as peças',
-        text: 'Na internet e nos celulares, os idiomas são identificados por etiquetas BCP 47, uma norma da IETF (a entidade que cuida dos padrões técnicos da internet). A etiqueta junta, com hífens, até três peças principais: língua (ISO 639), escrita (ISO 15924) e região.\n\nA região é um código de país de duas letras, em maiúsculas, ou um número de três dígitos da ONU para regiões maiores: 419 é a América Latina e o Caribe. Só se põe o que é necessário: «ru» basta para o russo, mas o sérvio, que se escreve nos dois alfabetos, pede «sr-Latn» ou «sr-Cyrl». O app usa essas etiquetas para escolher a voz certa de cada idioma, como pt-BR, es-MX, ro-RO e ru-RU.',
+        text: 'Na internet e nos celulares, os idiomas são identificados por etiquetas BCP 47, uma norma da IETF (a entidade que cuida dos padrões técnicos da internet). A etiqueta junta, com hífens, até três peças principais: língua (ISO 639), escrita (ISO 15924) e região.\n\nA região é um código de país de duas letras, em maiúsculas, ou um número de três dígitos da ONU para regiões maiores: 419 é a América Latina e o Caribe. Só se põe o que é necessário: “ru” basta para o russo, mas o sérvio, que se escreve nos dois alfabetos, pede “sr-Latn” ou “sr-Cyrl”. O app usa essas etiquetas para escolher a voz certa de cada idioma, como pt-BR, es-MX, ro-RO e ru-RU.',
         table: {
           head: ['Etiqueta', 'Significa'],
           rows: [
@@ -291,26 +291,26 @@ export const LESSONS: LingLesson[] = [
       },
     ],
     pitfalls: [
-      '«uk» não é o Reino Unido: é o código da língua ucraniana. O Reino Unido, na ISO 3166, é GB.',
-      'Estônia é EE, mas estoniano é «et»; Japão é JP, mas japonês é «ja»; Coreia do Sul é KR, mas coreano é «ko».',
-      'Maiúsculas e minúsculas são só convenção no BCP 47 («PT-br» funciona), mas o costume é língua em minúsculas, escrita com inicial maiúscula e região em maiúsculas.',
-      'Em 2023 o parlamento da Moldávia passou a chamar oficialmente a língua do país de «romeno»; nos códigos, o «mo» já tinha sido abandonado em 2008 em favor de «ro».',
+      '“uk” não é o Reino Unido: é o código da língua ucraniana. O Reino Unido, na ISO 3166, é GB.',
+      'Estônia é EE, mas estoniano é “et”; Japão é JP, mas japonês é “ja”; Coreia do Sul é KR, mas coreano é “ko”.',
+      'Maiúsculas e minúsculas são só convenção no BCP 47 (“PT-br” funciona), mas o costume é língua em minúsculas, escrita com inicial maiúscula e região em maiúsculas.',
+      'Em 2023 o parlamento da Moldávia passou a chamar oficialmente a língua do país de “romeno”; nos códigos, o “mo” já tinha sido abandonado em 2008 em favor de “ro”.',
     ],
     quiz: [
       {
         question: 'Qual é o código ISO 639-1 do romeno?',
         options: ['rm', 'ro', 'ru', 'rom'],
         answer: 'ro',
-        explanation: '«ro» é o romeno; «ru» é o russo, e «rm» é o romanche, da Suíça.',
+        explanation: '“ro” é o romeno; “ru” é o russo, e “rm” é o romanche, da Suíça.',
       },
       {
-        question: 'O que o «Cyrl» indica em «sr-Cyrl»?',
+        question: 'O que o “Cyrl” indica em “sr-Cyrl”?',
         options: ['O país', 'O alfabeto cirílico', 'O dialeto', 'A versão do app'],
         answer: 'O alfabeto cirílico',
         explanation: 'Códigos de quatro letras com a primeira maiúscula são escritas da ISO 15924.',
       },
       {
-        question: 'O que significa o «419» de «es-419»?',
+        question: 'O que significa o “419” de “es-419”?',
         options: ['Uma variante antiga do espanhol', 'A América Latina e o Caribe', 'O número do idioma na ISO', 'A Espanha continental'],
         answer: 'A América Latina e o Caribe',
         explanation: 'É um código numérico de região das Nações Unidas, usado quando a região é maior que um país.',
@@ -337,11 +337,11 @@ export const LESSONS: LingLesson[] = [
     title: 'Transliteração e romanização',
     emoji: '🔁',
     summary:
-      'Como escrever Чехов em letras latinas? Tchekhov, Chekhov e Čechov estão todos «certos»: cada um segue um sistema diferente. Veja os principais sistemas para o russo, o chinês, o japonês e o coreano.',
+      'Como escrever Чехов em letras latinas? Tchekhov, Chekhov e Čechov estão todos “certos”: cada um segue um sistema diferente. Veja os principais sistemas para o russo, o chinês, o japonês e o coreano.',
     sections: [
       {
         heading: 'Transliterar × transcrever',
-        text: 'Romanizar é passar uma língua de outro sistema de escrita para o alfabeto latino (o «romano»). Há dois caminhos.\n\nA transliteração troca letra por letra, de modo que dê para voltar ao original sem erro: é o que querem bibliotecas e linguistas. A transcrição tenta reproduzir o som, usando as convenções de uma língua de chegada: é o que querem jornais e leitores comuns. Por isso o mesmo nome russo aparece de um jeito em inglês, de outro em português e de outro num livro acadêmico.',
+        text: 'Romanizar é passar uma língua de outro sistema de escrita para o alfabeto latino (o “romano”). Há dois caminhos.\n\nA transliteração troca letra por letra, de modo que dê para voltar ao original sem erro: é o que querem bibliotecas e linguistas. A transcrição tenta reproduzir o som, usando as convenções de uma língua de chegada: é o que querem jornais e leitores comuns. Por isso o mesmo nome russo aparece de um jeito em inglês, de outro em português e de outro num livro acadêmico.',
       },
       {
         heading: 'Do cirílico ao latino: quatro sistemas',
@@ -363,7 +363,7 @@ export const LESSONS: LingLesson[] = [
       },
       {
         heading: 'Um nome, várias grafias',
-        text: 'Na tabela, «Čechov» é a grafia científica tradicional (com «ch» para o х), a mesma usada em tcheco; a científica mais recente prefere «Čexov». O inglês escreve «Chekhov», que coincide com o padrão dos passaportes. O português escreve «Tchekhov» ou «Tchékhov», porque o nosso «ch» soa como «x» e precisamos do «t» para ter o som «tch».',
+        text: 'Na tabela, “Čechov” é a grafia científica tradicional (com “ch” para o х), a mesma usada em tcheco; a científica mais recente prefere “Čexov”. O inglês escreve “Chekhov”, que coincide com o padrão dos passaportes. O português escreve “Tchekhov” ou “Tchékhov”, porque o nosso “ch” soa como “x” e precisamos do “t” para ter o som “tch”.',
         table: {
           head: ['Russo', 'ISO 9', 'Científica', 'Passaporte / inglês', 'Em português'],
           rows: [
@@ -376,7 +376,7 @@ export const LESSONS: LingLesson[] = [
       },
       {
         heading: 'Chinês, japonês e coreano',
-        text: 'O pinyin, adotado na China em 1958, é o sistema oficial para o mandarim e o padrão internacional. Ele marca os tons com acentos (mā, má, mǎ, mà) e usa letras com valores próprios: «x» é um «ch» suave, «q» é um «tch» aspirado, «zh» é um «tch» sem sopro, com a ponta da língua curvada para trás. Antes dele, o Ocidente usava o sistema Wade-Giles, de onde vêm grafias como «Peking» e «Mao Tse-tung».\n\nPara o japonês, o sistema mais usado é o Hepburn, criado pelo missionário americano James Curtis Hepburn no século XIX: ele escreve os sons à moda do inglês (shi, chi, tsu, fu) e marca as vogais longas com mácron (Tōkyō). O Japão tem também um sistema oficial, o Kunrei, que escreve si, ti, tu, hu.\n\nPara o coreano, a Coreia do Sul adotou em 2000 a romanização revisada, que substituiu o sistema McCune-Reischauer: por isso a cidade de «Pusan» virou «Busan» nas placas.',
+        text: 'O pinyin, adotado na China em 1958, é o sistema oficial para o mandarim e o padrão internacional. Ele marca os tons com acentos (mā, má, mǎ, mà) e usa letras com valores próprios: “x” é um “ch” suave, “q” é um “tch” aspirado, “zh” é um “tch” sem sopro, com a ponta da língua curvada para trás. Antes dele, o Ocidente usava o sistema Wade-Giles, de onde vêm grafias como “Peking” e “Mao Tse-tung”.\n\nPara o japonês, o sistema mais usado é o Hepburn, criado pelo missionário americano James Curtis Hepburn no século XIX: ele escreve os sons à moda do inglês (shi, chi, tsu, fu) e marca as vogais longas com mácron (Tōkyō). O Japão tem também um sistema oficial, o Kunrei, que escreve si, ti, tu, hu.\n\nPara o coreano, a Coreia do Sul adotou em 2000 a romanização revisada, que substituiu o sistema McCune-Reischauer: por isso a cidade de “Pusan” virou “Busan” nas placas.',
         table: {
           head: ['Original', 'Sistema atual', 'Sistema antigo ou alternativo', 'Significado'],
           rows: [
@@ -392,9 +392,9 @@ export const LESSONS: LingLesson[] = [
       },
     ],
     pitfalls: [
-      'Em português, o «ch» de «Chekhov» seria lido como «x»: por isso a imprensa brasileira escreve «Tchekhov», «Tchaikóvski», «Gorbatchov».',
-      'O pinyin não é pronúncia figurada para brasileiros: «Xi» soa mais ou menos «Chi», e «qi» soa «tchi».',
-      'Transliteração não mostra a tônica nem a redução das vogais do russo: «moloko» se diz «malakó».',
+      'Em português, o “ch” de “Chekhov” seria lido como “x”: por isso a imprensa brasileira escreve “Tchekhov”, “Tchaikóvski”, “Gorbatchov”.',
+      'O pinyin não é pronúncia figurada para brasileiros: “Xi” soa mais ou menos “Chi”, e “qi” soa “tchi”.',
+      'Transliteração não mostra a tônica nem a redução das vogais do russo: “moloko” se diz “malakó”.',
       'Um mesmo russo pode ter o nome escrito de um jeito no passaporte antigo e de outro no novo, porque as regras de romanização dos passaportes mudaram ao longo dos anos.',
     ],
     quiz: [
@@ -413,7 +413,7 @@ export const LESSONS: LingLesson[] = [
         question: 'Como se escreve Чехов na grafia usual da imprensa brasileira?',
         options: ['Chekhov', 'Čehov', 'Tchekhov', 'Tschechow'],
         answer: 'Tchekhov',
-        explanation: '«Tch» dá, em português, o som do ч russo. (Tschechow é a forma alemã.)',
+        explanation: '“Tch” dá, em português, o som do ч russo. (Tschechow é a forma alemã.)',
       },
       {
         question: 'Qual sistema de romanização é o padrão para o mandarim?',
@@ -422,13 +422,13 @@ export const LESSONS: LingLesson[] = [
         explanation: 'O pinyin, de 1958, substituiu o Wade-Giles como padrão internacional.',
       },
       {
-        question: 'No Hepburn, o que indica o traço sobre o «o» de Tōkyō?',
+        question: 'No Hepburn, o que indica o traço sobre o “o” de Tōkyō?',
         options: ['Tom ascendente', 'Vogal longa', 'Vogal nasal', 'Sílaba tônica'],
         answer: 'Vogal longa',
         explanation: 'O mácron marca as vogais longas do japonês.',
       },
       {
-        question: 'Por que a cidade coreana «Pusan» passou a ser escrita «Busan»?',
+        question: 'Por que a cidade coreana “Pusan” passou a ser escrita “Busan”?',
         options: ['Mudou de nome', 'Pela romanização revisada, adotada em 2000', 'Por influência do japonês', 'Por erro de tradução'],
         answer: 'Pela romanização revisada, adotada em 2000',
         explanation: 'A romanização revisada substituiu o McCune-Reischauer na Coreia do Sul.',
@@ -453,13 +453,13 @@ export const LESSONS: LingLesson[] = [
           rows: [
             ['original', 'fal-áva-mos', 'muito'],
             ['glosa', 'falar-IPFV.PST-1PL', 'muito'],
-            ['tradução', '«Nós falávamos muito.»', ''],
+            ['tradução', '“Nós falávamos muito.”', ''],
           ],
         },
       },
       {
         heading: 'As abreviações',
-        text: 'As regras de Leipzig trazem uma lista de abreviações padrão, em inglês, para as categorias gramaticais. Algumas regras de pontuação completam o quadro: o hífen separa morfemas, e cada hífen do original tem um correspondente na glosa; o ponto junta vários significados num pedaço só (quando a terminação diz «passado» e «plural» ao mesmo tempo); e o sinal de igual liga os clíticos, palavrinhas que se apoiam em outra, como os pronomes do espanhol «dáselo».',
+        text: 'As regras de Leipzig trazem uma lista de abreviações padrão, em inglês, para as categorias gramaticais. Algumas regras de pontuação completam o quadro: o hífen separa morfemas, e cada hífen do original tem um correspondente na glosa; o ponto junta vários significados num pedaço só (quando a terminação diz “passado” e “plural” ao mesmo tempo); e o sinal de igual liga os clíticos, palavrinhas que se apoiam em outra, como os pronomes do espanhol “dáselo”.',
         table: {
           head: ['Abreviação', 'Significado', 'Abreviação', 'Significado'],
           rows: [
@@ -469,57 +469,57 @@ export const LESSONS: LingLesson[] = [
             ['DAT', 'dativo', 'PRS', 'presente'],
             ['DEF', 'definido (artigo)', 'PST', 'passado'],
             ['IPFV', 'imperfectivo', 'PFV', 'perfectivo'],
-            ['IMP', 'imperativo', '1SG, 3PL…', 'pessoa + número: «eu», «eles»…'],
+            ['IMP', 'imperativo', '1SG, 3PL…', 'pessoa + número: “eu”, “eles”…'],
           ],
         },
       },
       {
         heading: 'Romeno: o artigo no fim',
-        text: 'O romeno põe o artigo definido no fim do substantivo: «băiat» é «menino», «băiatul» é «o menino». A glosa deixa isso visível na hora. No segundo exemplo, a terminação «-lui» acumula artigo e caso: por isso ganha várias abreviações unidas por ponto.',
+        text: 'O romeno põe o artigo definido no fim do substantivo: “băiat” é “menino”, “băiatul” é “o menino”. A glosa deixa isso visível na hora. No segundo exemplo, a terminação “-lui” acumula artigo e caso: por isso ganha várias abreviações unidas por ponto.',
         table: {
           head: ['Linha', 'Palavra 1', 'Palavra 2', 'Palavra 3'],
           rows: [
             ['original', 'Băiat-ul', 'citește', 'carte-a.'],
             ['glosa', 'menino-DEF.M.SG', 'ler.PRS.3SG', 'livro-DEF.F.SG'],
-            ['tradução', '«O menino lê o livro.»', '', ''],
+            ['tradução', '“O menino lê o livro.”', '', ''],
             ['original', 'Cas-a', 'frate-lui', ''],
             ['glosa', 'casa-DEF.F.SG', 'irmão-DEF.M.SG.GEN', ''],
-            ['tradução', '«A casa do irmão.»', '', ''],
+            ['tradução', '“A casa do irmão.”', '', ''],
           ],
         },
       },
       {
         heading: 'Russo: casos, aspecto e gênero',
-        text: 'Para línguas com outro alfabeto, as regras de Leipzig permitem acrescentar uma linha de transliteração. No exemplo, o verbo no passado concorda em gênero com o sujeito: «читала» mostra que quem fala é mulher. E «книгу» e «брата» mostram, pela terminação, qual é o objeto e quem é o dono.',
+        text: 'Para línguas com outro alfabeto, as regras de Leipzig permitem acrescentar uma linha de transliteração. No exemplo, o verbo no passado concorda em gênero com o sujeito: “читала” mostra que quem fala é mulher. E “книгу” e “брата” mostram, pela terminação, qual é o objeto e quem é o dono.',
         table: {
           head: ['Linha', 'Palavra 1', 'Palavra 2', 'Palavra 3', 'Palavra 4'],
           rows: [
             ['original', 'Я', 'чита-л-а', 'книг-у', 'брат-а.'],
             ['transliteração', 'Ja', 'čita-l-a', 'knig-u', 'brat-a'],
             ['glosa', '1SG.NOM', 'ler.IPFV-PST-F.SG', 'livro-ACC.SG', 'irmão-GEN.SG'],
-            ['tradução', '«Eu (mulher) lia o livro do irmão.»', '', '', ''],
+            ['tradução', '“Eu (mulher) lia o livro do irmão.”', '', '', ''],
           ],
         },
       },
       {
         heading: 'Espanhol: plural e clíticos',
-        text: 'No espanhol, a glosa mostra o plural marcado em várias palavras da mesma frase e o sinal de igual ligando os pronomes clíticos ao verbo. Em «dáselo», o «se» faz o papel de «le» (a ele) diante de «lo».',
+        text: 'No espanhol, a glosa mostra o plural marcado em várias palavras da mesma frase e o sinal de igual ligando os pronomes clíticos ao verbo. Em “dáselo”, o “se” faz o papel de “le” (a ele) diante de “lo”.',
         table: {
           head: ['Linha', 'Palavra 1', 'Palavra 2', 'Palavra 3', 'Palavra 4'],
           rows: [
             ['original', 'Lo-s', 'niño-s', 'com-ieron', 'manzana-s.'],
             ['glosa', 'DEF.M-PL', 'criança-PL', 'comer-PST.3PL', 'maçã-PL'],
-            ['tradução', '«As crianças comeram maçãs.»', '', '', ''],
+            ['tradução', '“As crianças comeram maçãs.”', '', '', ''],
             ['original', 'Dá=se=lo.', '', '', ''],
             ['glosa', 'dar.IMP.2SG=DAT.3=ACC.3SG.M', '', '', ''],
-            ['tradução', '«Dê isso a ele.»', '', '', ''],
+            ['tradução', '“Dê isso a ele.”', '', '', ''],
           ],
         },
       },
     ],
     pitfalls: [
-      'A glosa não é tradução: «menino-DEF.M.SG» não é português bonito, é uma análise. A tradução vem na terceira linha.',
-      'Cada hífen do original precisa ter o seu par na glosa, e vice-versa; se não der para separar (como em «citește»), use o ponto: ler.PRS.3SG.',
+      'A glosa não é tradução: “menino-DEF.M.SG” não é português bonito, é uma análise. A tradução vem na terceira linha.',
+      'Cada hífen do original precisa ter o seu par na glosa, e vice-versa; se não der para separar (como em “citește”), use o ponto: ler.PRS.3SG.',
       'As abreviações são em inglês mesmo em textos em português (ACC, e não AC), para que qualquer linguista do mundo as leia.',
       'Há mais de uma análise possível para a mesma palavra: o que importa é ser coerente dentro do texto.',
     ],
@@ -534,22 +534,22 @@ export const LESSONS: LingLesson[] = [
         question: 'O que significa GEN numa glosa?',
         options: ['Gênero', 'Genitivo', 'Geral', 'Gerúndio'],
         answer: 'Genitivo',
-        explanation: 'GEN é o genitivo, o caso de posse: брат-а, «do irmão».',
+        explanation: 'GEN é o genitivo, o caso de posse: брат-а, “do irmão”.',
       },
       {
-        question: 'Para que serve o ponto em «ler.PRS.3SG»?',
+        question: 'Para que serve o ponto em “ler.PRS.3SG”?',
         options: ['Separa morfemas', 'Junta vários significados num pedaço que não se separa', 'Marca o fim da frase', 'Indica um clítico'],
         answer: 'Junta vários significados num pedaço que não se separa',
         explanation: 'O hífen separa morfemas; o ponto une significados de um único pedaço.',
       },
       {
-        question: 'Em romeno, o que a glosa de «Băiat-ul» revela?',
+        question: 'Em romeno, o que a glosa de “Băiat-ul” revela?',
         options: ['Que o artigo definido vem no fim da palavra', 'Que a palavra está no plural', 'Que é um verbo', 'Que é um clítico'],
         answer: 'Que o artigo definido vem no fim da palavra',
-        explanation: '«-ul» é o artigo definido masculino: «o menino».',
+        explanation: '“-ul” é o artigo definido masculino: “o menino”.',
       },
       {
-        question: 'Que sinal liga os clíticos em «dá=se=lo»?',
+        question: 'Que sinal liga os clíticos em “dá=se=lo”?',
         options: ['Hífen', 'Ponto', 'Sinal de igual', 'Barra'],
         answer: 'Sinal de igual',
         explanation: 'Pelas regras de Leipzig, clíticos se ligam com =.',
@@ -568,7 +568,7 @@ export const LESSONS: LingLesson[] = [
     sections: [
       {
         heading: 'Uma régua comum para todas as línguas',
-        text: 'O CEFR foi publicado pelo Conselho da Europa em 2001. A ideia era ter uma só régua para descrever o domínio de qualquer língua, de modo que um B1 de espanhol e um B1 de russo quisesse dizer a mesma coisa.\n\nEm vez de medir quantas palavras ou regras a pessoa conhece, o CEFR descreve o que ela consegue FAZER com a língua, em frases do tipo «consigo…». São seis níveis, agrupados em três faixas: A (usuário básico), B (usuário independente) e C (usuário proficiente).',
+        text: 'O CEFR foi publicado pelo Conselho da Europa em 2001. A ideia era ter uma só régua para descrever o domínio de qualquer língua, de modo que um B1 de espanhol e um B1 de russo quisesse dizer a mesma coisa.\n\nEm vez de medir quantas palavras ou regras a pessoa conhece, o CEFR descreve o que ela consegue FAZER com a língua, em frases do tipo “consigo…”. São seis níveis, agrupados em três faixas: A (usuário básico), B (usuário independente) e C (usuário proficiente).',
       },
       {
         heading: 'O que cada nível sabe fazer',
@@ -586,7 +586,7 @@ export const LESSONS: LingLesson[] = [
       },
       {
         heading: 'Os subníveis do app',
-        text: 'Um nível do CEFR é um degrau grande, e ninguém sobe de B1 para B2 de uma vez. Por isso o app divide a trilha em 15 subníveis: A1.1, A1.2, A2.1, A2.2, B1.1 a B1.4, B2.1 a B2.4, C1.1, C1.2 e C2. Os níveis intermediários têm mais passos porque são os mais longos da jornada.\n\nEsses subníveis são uma escolha do app para organizar histórias, gramática e revisões; não são oficiais. O próprio Conselho da Europa, aliás, prevê subdivisões como A2+, B1+ e B2+, os chamados níveis «mais».',
+        text: 'Um nível do CEFR é um degrau grande, e ninguém sobe de B1 para B2 de uma vez. Por isso o app divide a trilha em 15 subníveis: A1.1, A1.2, A2.1, A2.2, B1.1 a B1.4, B2.1 a B2.4, C1.1, C1.2 e C2. Os níveis intermediários têm mais passos porque são os mais longos da jornada.\n\nEsses subníveis são uma escolha do app para organizar histórias, gramática e revisões; não são oficiais. O próprio Conselho da Europa, aliás, prevê subdivisões como A2+, B1+ e B2+, os chamados níveis “mais”.',
         table: {
           head: ['Nível CEFR', 'Subníveis no app'],
           rows: [
@@ -601,7 +601,7 @@ export const LESSONS: LingLesson[] = [
       },
       {
         heading: 'O volume de 2020',
-        text: 'Em 2020 o Conselho da Europa publicou o Volume Complementar (Companion Volume), que atualiza e amplia o quadro. Entre as novidades: um nível Pré-A1, para os primeiríssimos passos; descritores para a mediação, a capacidade de fazer a ponte entre pessoas, textos e línguas (resumir, explicar, traduzir informalmente); descritores para a competência plurilíngue, de quem transita entre várias línguas; escalas para as línguas de sinais; e o abandono do «falante nativo ideal» como modelo a ser alcançado.',
+        text: 'Em 2020 o Conselho da Europa publicou o Volume Complementar (Companion Volume), que atualiza e amplia o quadro. Entre as novidades: um nível Pré-A1, para os primeiríssimos passos; descritores para a mediação, a capacidade de fazer a ponte entre pessoas, textos e línguas (resumir, explicar, traduzir informalmente); descritores para a competência plurilíngue, de quem transita entre várias línguas; escalas para as línguas de sinais; e o abandono do “falante nativo ideal” como modelo a ser alcançado.',
       },
       {
         heading: 'Os exames oficiais',
@@ -635,7 +635,7 @@ export const LESSONS: LingLesson[] = [
         explanation: 'O CEFR é do Conselho da Europa, organização diferente da União Europeia.',
       },
       {
-        question: 'Qual faixa corresponde ao «usuário independente»?',
+        question: 'Qual faixa corresponde ao “usuário independente”?',
         options: ['A1 e A2', 'B1 e B2', 'C1 e C2', 'Pré-A1'],
         answer: 'B1 e B2',
         explanation: 'A = básico, B = independente, C = proficiente.',
@@ -671,11 +671,11 @@ export const LESSONS: LingLesson[] = [
     sections: [
       {
         heading: 'O que é uma família de línguas',
-        text: 'Uma família de línguas é um grupo de línguas que descendem de uma mesma língua antiga, a protolíngua. O português, o espanhol e o romeno são «filhos» do latim, e por isso são irmãos. O latim, por sua vez, é um ramo de uma família muito maior, o indo-europeu, que inclui também o russo, o inglês, o grego e o hindi.\n\nMuitas vezes a protolíngua nunca foi escrita. Ninguém tem um texto em protoindo-europeu: ele foi reconstruído comparando as línguas-filhas, como quem reconstrói o rosto de um avô olhando as fotos dos netos.',
+        text: 'Uma família de línguas é um grupo de línguas que descendem de uma mesma língua antiga, a protolíngua. O português, o espanhol e o romeno são “filhos” do latim, e por isso são irmãos. O latim, por sua vez, é um ramo de uma família muito maior, o indo-europeu, que inclui também o russo, o inglês, o grego e o hindi.\n\nMuitas vezes a protolíngua nunca foi escrita. Ninguém tem um texto em protoindo-europeu: ele foi reconstruído comparando as línguas-filhas, como quem reconstrói o rosto de um avô olhando as fotos dos netos.',
       },
       {
         heading: 'Como se prova o parentesco',
-        text: 'Semelhança solta não prova nada. Duas línguas podem ter palavras parecidas por acaso, por empréstimo (o japonês «pan», pão, veio do português) ou porque certas palavras são quase universais (mamã, papá). A prova está nas correspondências REGULARES: um mesmo som de uma língua corresponde sempre ao mesmo som da outra, em dezenas de palavras.\n\nPor exemplo: onde o latim tem «p» no início da palavra, as línguas germânicas têm «f» (pater → father, piscis → fish, pes/pedem → foot). É essa regularidade, repetida em centenas de casos, que convence os linguistas. Esse método se chama método comparativo.',
+        text: 'Semelhança solta não prova nada. Duas línguas podem ter palavras parecidas por acaso, por empréstimo (o japonês “pan”, pão, veio do português) ou porque certas palavras são quase universais (mamã, papá). A prova está nas correspondências REGULARES: um mesmo som de uma língua corresponde sempre ao mesmo som da outra, em dezenas de palavras.\n\nPor exemplo: onde o latim tem “p” no início da palavra, as línguas germânicas têm “f” (pater → father, piscis → fish, pes/pedem → foot). É essa regularidade, repetida em centenas de casos, que convence os linguistas. Esse método se chama método comparativo.',
         table: {
           head: ['Português', 'Latim', 'Grego antigo', 'Inglês', 'Alemão', 'Russo', 'Sânscrito', 'Finlandês (outra família)'],
           rows: [
@@ -704,7 +704,7 @@ export const LESSONS: LingLesson[] = [
       },
       {
         heading: 'Outras famílias, isoladas e casos discutidos',
-        text: 'O finlandês e o estoniano pertencem à família urálica, junto com o húngaro e as línguas sámi. Por isso «três» é «kolme» em finlandês e «kolm» em estoniano, e nada parecido com «tres». Uma língua ISOLADA é aquela sem nenhum parente comprovado, como o basco, falado entre a Espanha e a França.\n\nO japonês e o coreano são casos discutidos. O japonês tem parentes próximos só nas ilhas Ryukyu (a família japônica), e o coreano costuma ser tratado como isolado ou como uma família pequena (coreânica). Já se propôs uni-los ao turco e ao mongol numa família «altaica», mas a maioria dos linguistas hoje não aceita essa hipótese: as semelhanças não mostram correspondências regulares suficientes.',
+        text: 'O finlandês e o estoniano pertencem à família urálica, junto com o húngaro e as línguas sámi. Por isso “três” é “kolme” em finlandês e “kolm” em estoniano, e nada parecido com “tres”. Uma língua ISOLADA é aquela sem nenhum parente comprovado, como o basco, falado entre a Espanha e a França.\n\nO japonês e o coreano são casos discutidos. O japonês tem parentes próximos só nas ilhas Ryukyu (a família japônica), e o coreano costuma ser tratado como isolado ou como uma família pequena (coreânica). Já se propôs uni-los ao turco e ao mongol numa família “altaica”, mas a maioria dos linguistas hoje não aceita essa hipótese: as semelhanças não mostram correspondências regulares suficientes.',
       },
       {
         heading: 'As famílias indígenas do Brasil',
@@ -715,7 +715,7 @@ export const LESSONS: LingLesson[] = [
             [
               'Tronco tupi (família tupi-guarani)',
               'guarani, tupi antigo, nheengatu, kamaiurá',
-              'deu ao português «jacaré», «capivara», «pipoca», «mandioca», «Ipanema»',
+              'deu ao português “jacaré”, “capivara”, “pipoca”, “mandioca”, “Ipanema”',
             ],
             ['Tronco macro-jê', 'kaingang, xavante, kayapó (mebêngôkre)', 'muito presente no Brasil central e no Sul'],
             ['Família aruak', 'terena, baniwa', 'família espalhada por boa parte da América do Sul'],
@@ -726,10 +726,10 @@ export const LESSONS: LingLesson[] = [
       },
     ],
     pitfalls: [
-      'Parecido não quer dizer parente: o inglês «have» e o latim «habere» parecem irmãos, mas não são cognatos: pelas regras de som, o parente latino de «have» é «capere» (pegar).',
+      'Parecido não quer dizer parente: o inglês “have” e o latim “habere” parecem irmãos, mas não são cognatos: pelas regras de som, o parente latino de “have” é “capere” (pegar).',
       'O húngaro é parente do finlandês e do estoniano, mas tão distante que um falante não entende o outro, como acontece entre o português e o russo.',
-      'O romeno «mamă» não vem do latim «mater», e sim de «mamma», a palavra carinhosa. Mesmo entre irmãs, cada língua escolhe palavras diferentes.',
-      'O tupi não é «uma língua morta sem descendentes»: o nheengatu, derivado dele, ainda é falado no Amazonas.',
+      'O romeno “mamă” não vem do latim “mater”, e sim de “mamma”, a palavra carinhosa. Mesmo entre irmãs, cada língua escolhe palavras diferentes.',
+      'O tupi não é “uma língua morta sem descendentes”: o nheengatu, derivado dele, ainda é falado no Amazonas.',
     ],
     quiz: [
       {
@@ -781,7 +781,7 @@ export const LESSONS: LingLesson[] = [
     sections: [
       {
         heading: 'Tipologia: parentesco não é tudo',
-        text: 'A lição das famílias agrupa as línguas por ORIGEM. A tipologia as agrupa por FORMA: como constroem palavras e frases, sem importar de onde vieram. Duas línguas sem parentesco nenhum podem ser do mesmo tipo (o finlandês e o turco montam palavras de modo parecido), e duas irmãs podem se afastar (o inglês perdeu quase todas as terminações que o alemão ainda tem).\n\nOs tipos clássicos, pela formação das palavras, são quatro. Nenhuma língua é «pura»: são tendências, e cada língua fica num ponto de uma escala.',
+        text: 'A lição das famílias agrupa as línguas por ORIGEM. A tipologia as agrupa por FORMA: como constroem palavras e frases, sem importar de onde vieram. Duas línguas sem parentesco nenhum podem ser do mesmo tipo (o finlandês e o turco montam palavras de modo parecido), e duas irmãs podem se afastar (o inglês perdeu quase todas as terminações que o alemão ainda tem).\n\nOs tipos clássicos, pela formação das palavras, são quatro. Nenhuma língua é “pura”: são tendências, e cada língua fica num ponto de uma escala.',
       },
       {
         heading: 'Os quatro tipos clássicos',
@@ -789,24 +789,24 @@ export const LESSONS: LingLesson[] = [
         table: {
           head: ['Tipo', 'Língua', 'Exemplo', 'Como funciona'],
           rows: [
-            ['Isolante', 'chinês', '我昨天去 (wǒ zuótiān qù) = eu ontem ir', 'o verbo «qù» não muda; o passado vem de «ontem» (ou da partícula 了 le)'],
+            ['Isolante', 'chinês', '我昨天去 (wǒ zuótiān qù) = eu ontem ir', 'o verbo “qù” não muda; o passado vem de “ontem” (ou da partícula 了 le)'],
             ['Aglutinante', 'turco', 'ev-ler-im-de = nas minhas casas', 'casa + plural + meu + em: um pedaço, um sentido'],
             ['Aglutinante', 'finlandês', 'talo-i-ssa-ni = nas minhas casas', 'casa + plural + em + meu'],
             ['Aglutinante', 'japonês', 'tabe-sase-rare-ta = foi obrigado a comer', 'comer + fazer + passiva + passado'],
             ['Flexiva', 'latim', 'am-o = eu amo', '-o = 1ª pessoa + singular + presente + indicativo + voz ativa, tudo junto'],
             ['Flexiva', 'russo', 'стол-а (stola) = da mesa', '-а = genitivo + singular (+ classe do substantivo)'],
             ['Flexiva', 'romeno', 'cas-ei = da casa', '-ei = genitivo/dativo + singular + feminino + definido'],
-            ['Polissintética', 'inuktitut (inuíte)', 'tusaatsiarunnanngittualuujunga', '«não consigo ouvir muito bem»: uma palavra, uma frase'],
+            ['Polissintética', 'inuktitut (inuíte)', 'tusaatsiarunnanngittualuujunga', '“não consigo ouvir muito bem”: uma palavra, uma frase'],
           ],
         },
       },
       {
         heading: 'E o português?',
-        text: 'O português é flexivo como o latim, o russo e o romeno: em «cantávamos», o «-mos» é ao mesmo tempo 1ª pessoa e plural. Mas ele é MENOS flexivo que o latim: perdeu os casos dos substantivos e usa preposições no lugar deles («de», «para», «com»). O romeno guardou um pouco dos casos, e o russo guardou seis.\n\nPara quem estuda línguas, saber o tipo ajuda a prever a dificuldade: o finlandês assusta pelo tamanho das palavras, mas é bem regular, porque cada pedaço aparece sempre do mesmo jeito.',
+        text: 'O português é flexivo como o latim, o russo e o romeno: em “cantávamos”, o “-mos” é ao mesmo tempo 1ª pessoa e plural. Mas ele é MENOS flexivo que o latim: perdeu os casos dos substantivos e usa preposições no lugar deles (“de”, “para”, “com”). O romeno guardou um pouco dos casos, e o russo guardou seis.\n\nPara quem estuda línguas, saber o tipo ajuda a prever a dificuldade: o finlandês assusta pelo tamanho das palavras, mas é bem regular, porque cada pedaço aparece sempre do mesmo jeito.',
       },
       {
         heading: 'A ordem das palavras',
-        text: 'Outra forma de classificar é pela ordem básica de Sujeito, Verbo e Objeto numa frase simples como «O menino come a maçã». O português é SVO, mas SOV (verbo no fim) é ainda mais comum no mundo. Os números abaixo são aproximados e vêm de amostras de cerca de 1.400 línguas; uma parte das línguas (mais de 10%) não tem ordem dominante.',
+        text: 'Outra forma de classificar é pela ordem básica de Sujeito, Verbo e Objeto numa frase simples como “O menino come a maçã”. O português é SVO, mas SOV (verbo no fim) é ainda mais comum no mundo. Os números abaixo são aproximados e vêm de amostras de cerca de 1.400 línguas; uma parte das línguas (mais de 10%) não tem ordem dominante.',
         table: {
           head: ['Ordem', 'Frequência aproximada', 'Exemplos'],
           rows: [
@@ -822,16 +822,16 @@ export const LESSONS: LingLesson[] = [
     ],
     pitfalls: [
       'Tipo não é família: o finlandês e o japonês são ambos aglutinantes e não têm parentesco nenhum.',
-      'Nenhum tipo é «mais evoluído»: o chinês não é «primitivo» por não flexionar, e o latim não é «superior» por ter casos.',
+      'Nenhum tipo é “mais evoluído”: o chinês não é “primitivo” por não flexionar, e o latim não é “superior” por ter casos.',
       'O russo tem ordem de palavras flexível, porque os casos mostram quem faz o quê; a ordem muda a ênfase, não quem é o sujeito.',
-      'Em japonês e coreano o verbo fica no fim: «Eu maçã como». Quem fala português precisa se acostumar a esperar o verbo.',
+      'Em japonês e coreano o verbo fica no fim: “Eu maçã como”. Quem fala português precisa se acostumar a esperar o verbo.',
     ],
     quiz: [
       {
         question: 'Numa língua aglutinante, cada pedaço da palavra…',
         options: ['carrega vários sentidos ao mesmo tempo', 'tem, em geral, um só sentido', 'é uma palavra separada', 'nunca muda de lugar na frase'],
         answer: 'tem, em geral, um só sentido',
-        explanation: 'No turco «ev-ler-im-de», cada pedaço tem uma função: casa, plural, meu, em.',
+        explanation: 'No turco “ev-ler-im-de”, cada pedaço tem uma função: casa, plural, meu, em.',
       },
       {
         question: 'Qual destas línguas é tipicamente isolante?',
@@ -846,7 +846,7 @@ export const LESSONS: LingLesson[] = [
         explanation: 'SOV (verbo no fim) é um pouco mais comum que SVO.',
       },
       {
-        question: 'No latim «amo», a terminação «-o» indica…',
+        question: 'No latim “amo”, a terminação “-o” indica…',
         options: ['só a pessoa', 'só o tempo', 'pessoa, número, tempo, modo e voz ao mesmo tempo', 'nada: é parte da raiz'],
         answer: 'pessoa, número, tempo, modo e voz ao mesmo tempo',
         explanation: 'Esse acúmulo de sentidos numa terminação é o que define uma língua flexiva.',
@@ -889,7 +889,7 @@ export const LESSONS: LingLesson[] = [
       },
       {
         heading: 'Detalhes que surpreendem',
-        text: 'No ABJAD árabe, as consoantes carregam a ideia e as vogais completam: de k-t-b saem «kataba» (escreveu), «kitāb» (livro) e «maktab» (escritório). O leitor fluente adivinha as vogais pelo contexto. Árabe e hebraico se escrevem da direita para a esquerda.\n\nO japonês usa TRÊS escritas ao mesmo tempo: kanji para as raízes, hiragana para as terminações e palavras gramaticais, e katakana para palavras estrangeiras («パン pan», pão, que veio do português).\n\nO HANGUL foi criado de propósito, no século XV, pelo rei Sejong, para que o povo pudesse ler. É um alfabeto de verdade (cada letra é um som), mas as letras se juntam em blocos quadrados que formam sílabas.',
+        text: 'No ABJAD árabe, as consoantes carregam a ideia e as vogais completam: de k-t-b saem “kataba” (escreveu), “kitāb” (livro) e “maktab” (escritório). O leitor fluente adivinha as vogais pelo contexto. Árabe e hebraico se escrevem da direita para a esquerda.\n\nO japonês usa TRÊS escritas ao mesmo tempo: kanji para as raízes, hiragana para as terminações e palavras gramaticais, e katakana para palavras estrangeiras (“パン pan”, pão, que veio do português).\n\nO HANGUL foi criado de propósito, no século XV, pelo rei Sejong, para que o povo pudesse ler. É um alfabeto de verdade (cada letra é um som), mas as letras se juntam em blocos quadrados que formam sílabas.',
       },
       {
         heading: 'Do cuneiforme ao nosso alfabeto',
@@ -907,9 +907,9 @@ export const LESSONS: LingLesson[] = [
       },
     ],
     pitfalls: [
-      'No cirílico, algumas letras parecem latinas mas soam diferente: Р = r, Н = n, С = s, В = v, У = u. «РЕСТОРАН» se lê «restoran».',
+      'No cirílico, algumas letras parecem latinas mas soam diferente: Р = r, Н = n, С = s, В = v, У = u. “РЕСТОРАН” se lê “restoran”.',
       'O hangul não é um silabário: cada bloco é uma sílaba, mas é feito de letras que representam sons.',
-      'Os caracteres chineses não são «desenhos»: a maioria tem uma parte que dá pista do som, não só do sentido.',
+      'Os caracteres chineses não são “desenhos”: a maioria tem uma parte que dá pista do som, não só do sentido.',
       'O japonês tem kanji emprestados do chinês, mas as duas línguas não são parentes: a escrita viajou, a língua não.',
     ],
     quiz: [
@@ -932,7 +932,7 @@ export const LESSONS: LingLesson[] = [
         explanation: 'Em 한, as letras ㅎ, ㅏ e ㄴ formam um bloco.',
       },
       {
-        question: 'Qual escrita o japonês usa para palavras estrangeiras como «pan» (pão)?',
+        question: 'Qual escrita o japonês usa para palavras estrangeiras como “pan” (pão)?',
         options: ['Kanji', 'Hiragana', 'Katakana', 'Hangul'],
         answer: 'Katakana',
         explanation: 'O katakana marca os empréstimos: パン.',
@@ -953,15 +953,15 @@ export const LESSONS: LingLesson[] = [
     title: 'Como as línguas mudam',
     emoji: '⏳',
     summary:
-      'Por que o latim «octo» virou «oito» no Brasil, «ocho» na Espanha e «opt» na Romênia: as leis de som, as mudanças de sentido, os empréstimos e o nascimento de novas gramáticas.',
+      'Por que o latim “octo” virou “oito” no Brasil, “ocho” na Espanha e “opt” na Romênia: as leis de som, as mudanças de sentido, os empréstimos e o nascimento de novas gramáticas.',
     sections: [
       {
         heading: 'Toda língua viva muda',
-        text: 'Nenhuma língua fica parada: os sons se desgastam, os sentidos deslizam, palavras chegam de fora e formas gramaticais novas nascem de palavras comuns. Não é «corrupção» nem «decadência»: o português é o latim que mudou por dois mil anos.\n\nO mais impressionante é que a mudança de som costuma ser REGULAR: quando um som muda numa língua, ele muda em todas as palavras em que aparece naquele ambiente. É por isso que o parentesco pode ser provado.',
+        text: 'Nenhuma língua fica parada: os sons se desgastam, os sentidos deslizam, palavras chegam de fora e formas gramaticais novas nascem de palavras comuns. Não é “corrupção” nem “decadência”: o português é o latim que mudou por dois mil anos.\n\nO mais impressionante é que a mudança de som costuma ser REGULAR: quando um som muda numa língua, ele muda em todas as palavras em que aparece naquele ambiente. É por isso que o parentesco pode ser provado.',
       },
       {
         heading: 'Mudanças de som regulares',
-        text: 'Veja o grupo latino «-ct-»: o português e o espanhol o transformaram de jeitos diferentes, e o romeno o trocou por «-pt-». O mesmo vale para outros grupos, como «cl-» no início da palavra.',
+        text: 'Veja o grupo latino “-ct-”: o português e o espanhol o transformaram de jeitos diferentes, e o romeno o trocou por “-pt-”. O mesmo vale para outros grupos, como “cl-” no início da palavra.',
         table: {
           head: ['Latim', 'Português', 'Espanhol', 'Italiano', 'Romeno'],
           rows: [
@@ -975,7 +975,7 @@ export const LESSONS: LingLesson[] = [
       },
       {
         heading: 'A lei de Grimm',
-        text: 'No século XIX, Jacob Grimm (o mesmo dos contos de fadas, junto com o irmão) e o dinamarquês Rasmus Rask descreveram uma série de mudanças que separou as línguas germânicas do resto do indo-europeu. Por ela, o «p» antigo virou «f», o «t» virou «th» e o «k» virou «h». O latim guardou o som antigo; o inglês mostra o som novo.',
+        text: 'No século XIX, Jacob Grimm (o mesmo dos contos de fadas, junto com o irmão) e o dinamarquês Rasmus Rask descreveram uma série de mudanças que separou as línguas germânicas do resto do indo-europeu. Por ela, o “p” antigo virou “f”, o “t” virou “th” e o “k” virou “h”. O latim guardou o som antigo; o inglês mostra o som novo.',
         table: {
           head: ['Mudança', 'Latim (som antigo)', 'Inglês (som germânico)'],
           rows: [
@@ -988,7 +988,7 @@ export const LESSONS: LingLesson[] = [
       },
       {
         heading: 'Sentidos, empréstimos e camadas',
-        text: 'Os sentidos também mudam. O latim «casa» era uma cabana pobre; a casa «de verdade» era «domus». «Caballus» era um cavalo de trabalho, um pangaré; hoje é o cavalo em geral. «Esquisito» já quis dizer «refinado», sentido que o espanhol «exquisito» ainda guarda.\n\nAs línguas também recebem camadas de palavras de povos com quem convivem. Cada camada conta um pedaço da história.',
+        text: 'Os sentidos também mudam. O latim “casa” era uma cabana pobre; a casa “de verdade” era “domus”. “Caballus” era um cavalo de trabalho, um pangaré; hoje é o cavalo em geral. “Esquisito” já quis dizer “refinado”, sentido que o espanhol “exquisito” ainda guarda.\n\nAs línguas também recebem camadas de palavras de povos com quem convivem. Cada camada conta um pedaço da história.',
         table: {
           head: ['Língua', 'Camada', 'Exemplos'],
           rows: [
@@ -1001,7 +1001,7 @@ export const LESSONS: LingLesson[] = [
       },
       {
         heading: 'Gramaticalização: palavras que viram gramática',
-        text: 'Às vezes uma palavra comum perde o sentido próprio e vira peça da gramática. O latim clássico tinha o futuro «amabo», que desapareceu. No lugar dele, o latim falado disse «amare habeo» (tenho de amar, hei de amar), e o «habeo» colou no verbo: amar + hei = amarei. A prova ainda está viva na mesóclise: em «amá-lo-ei», o pronome fica ENTRE o verbo e a antiga forma de «haver».\n\nO mesmo aconteceu com «-mente»: «clara mente» era «com a mente clara» e virou «claramente». E acontece hoje: «vou fazer» está substituindo «farei» na fala.',
+        text: 'Às vezes uma palavra comum perde o sentido próprio e vira peça da gramática. O latim clássico tinha o futuro “amabo”, que desapareceu. No lugar dele, o latim falado disse “amare habeo” (tenho de amar, hei de amar), e o “habeo” colou no verbo: amar + hei = amarei. A prova ainda está viva na mesóclise: em “amá-lo-ei”, o pronome fica ENTRE o verbo e a antiga forma de “haver”.\n\nO mesmo aconteceu com “-mente”: “clara mente” era “com a mente clara” e virou “claramente”. E acontece hoje: “vou fazer” está substituindo “farei” na fala.',
         table: {
           head: ['Origem', 'Resultado', 'O que virou'],
           rows: [
@@ -1014,41 +1014,41 @@ export const LESSONS: LingLesson[] = [
       },
     ],
     pitfalls: [
-      'Mudança não é erro: as formas que hoje chamamos «corretas» já foram inovações da fala.',
+      'Mudança não é erro: as formas que hoje chamamos “corretas” já foram inovações da fala.',
       'Empréstimo não prova parentesco: o romeno tem muitas palavras eslavas e continua sendo uma língua românica, pela gramática e pelo vocabulário básico.',
-      'O inglês tem tantas palavras latinas e francesas («family», «nation») que parece românico, mas é germânico: o núcleo («father», «water», «come») denuncia a origem.',
+      'O inglês tem tantas palavras latinas e francesas (“family”, “nation”) que parece românico, mas é germânico: o núcleo (“father”, “water”, “come”) denuncia a origem.',
       'A lei de Grimm não fala de contos: é o mesmo Jacob Grimm, que também foi um grande linguista.',
     ],
     quiz: [
       {
-        question: 'O latim «octo» virou «oito» em português. Como ficou em romeno?',
+        question: 'O latim “octo” virou “oito” em português. Como ficou em romeno?',
         options: ['ocho', 'otto', 'opt', 'oct'],
         answer: 'opt',
-        explanation: 'O romeno trocou o grupo «-ct-» por «-pt-»: opt, noapte, lapte.',
+        explanation: 'O romeno trocou o grupo “-ct-” por “-pt-”: opt, noapte, lapte.',
       },
       {
-        question: 'Pela lei de Grimm, o «p» antigo virou o quê nas línguas germânicas?',
+        question: 'Pela lei de Grimm, o “p” antigo virou o quê nas línguas germânicas?',
         options: ['b', 'f', 'h', 't'],
         answer: 'f',
-        explanation: 'Latim «pater», inglês «father»; latim «piscis», inglês «fish».',
+        explanation: 'Latim “pater”, inglês “father”; latim “piscis”, inglês “fish”.',
       },
       {
-        question: 'De onde vem o futuro «amarei»?',
-        options: ['Do latim «amabo»', 'Do latim «amare habeo»', 'Do árabe', 'Do grego'],
-        answer: 'Do latim «amare habeo»',
-        explanation: 'O verbo «haver» colou no infinitivo e virou terminação: gramaticalização.',
+        question: 'De onde vem o futuro “amarei”?',
+        options: ['Do latim “amabo”', 'Do latim “amare habeo”', 'Do árabe', 'Do grego'],
+        answer: 'Do latim “amare habeo”',
+        explanation: 'O verbo “haver” colou no infinitivo e virou terminação: gramaticalização.',
       },
       {
-        question: 'Palavras como «a iubi» e «prieten» no romeno mostram…',
+        question: 'Palavras como “a iubi” e “prieten” no romeno mostram…',
         options: ['que o romeno é uma língua eslava', 'uma camada de empréstimos eslavos', 'que o romeno veio do grego', 'influência francesa'],
         answer: 'uma camada de empréstimos eslavos',
         explanation: 'O romeno é românico, mas conviveu séculos com povos eslavos.',
       },
       {
-        question: 'O que o latim «casa» significava originalmente?',
+        question: 'O que o latim “casa” significava originalmente?',
         options: ['Palácio', 'Cabana', 'Cidade', 'Família'],
         answer: 'Cabana',
-        explanation: 'A casa «normal» era «domus»; «casa» ganhou o sentido geral depois.',
+        explanation: 'A casa “normal” era “domus”; “casa” ganhou o sentido geral depois.',
       },
     ],
   },
@@ -1064,7 +1064,7 @@ export const LESSONS: LingLesson[] = [
     sections: [
       {
         heading: 'Língua ou dialeto?',
-        text: 'Não existe um critério puramente linguístico que separe «língua» de «dialeto». O critério da compreensão mútua falha dos dois lados: o sueco e o norueguês se entendem bem e são línguas diferentes, enquanto o mandarim e o cantonês quase não se entendem e muitas vezes são chamados de «dialetos do chinês».\n\nNa prática, o critério costuma ser POLÍTICO: ter Estado, escola, dicionário e norma escrita. Daí a frase famosa, popularizada pelo linguista Max Weinreich: «uma língua é um dialeto com exército e marinha». Para a linguística, todo dialeto é um sistema completo e com regras, e nenhum é «errado».',
+        text: 'Não existe um critério puramente linguístico que separe “língua” de “dialeto”. O critério da compreensão mútua falha dos dois lados: o sueco e o norueguês se entendem bem e são línguas diferentes, enquanto o mandarim e o cantonês quase não se entendem e muitas vezes são chamados de “dialetos do chinês”.\n\nNa prática, o critério costuma ser POLÍTICO: ter Estado, escola, dicionário e norma escrita. Daí a frase famosa, popularizada pelo linguista Max Weinreich: “uma língua é um dialeto com exército e marinha”. Para a linguística, todo dialeto é um sistema completo e com regras, e nenhum é “errado”.',
       },
       {
         heading: 'Variantes nacionais',
@@ -1072,23 +1072,23 @@ export const LESSONS: LingLesson[] = [
         table: {
           head: ['Variantes', 'Algumas diferenças'],
           rows: [
-            ['pt-BR × pt-PT', 'você × tu (no trato informal); «estou fazendo» × «estou a fazer»; ônibus × autocarro; trem × comboio; «me dá» × «dá-me»'],
+            ['pt-BR × pt-PT', 'você × tu (no trato informal); “estou fazendo” × “estou a fazer”; ônibus × autocarro; trem × comboio; “me dá” × “dá-me”'],
             [
               'ro-RO × ro-MD',
-              'a mesma língua (o romeno); na Moldávia há mais palavras e decalques do russo no dia a dia; em 2023, as leis moldavas trocaram o nome «moldavo» por «romeno»',
+              'a mesma língua (o romeno); na Moldávia há mais palavras e decalques do russo no dia a dia; em 2023, as leis moldavas trocaram o nome “moldavo” por “romeno”',
             ],
             [
               'es-ES × es-419',
-              'vosotros × ustedes; na Espanha, «z/ce/ci» soa [θ] (como o «th» inglês), na América soa [s]; ordenador × computadora; coche × carro/auto',
+              'vosotros × ustedes; na Espanha, “z/ce/ci” soa [θ] (como o “th” inglês), na América soa [s]; ordenador × computadora; coche × carro/auto',
             ],
           ],
         },
       },
       {
         heading: 'Registro, prestígio e diglossia',
-        text: 'Uma mesma pessoa fala de jeitos diferentes conforme a situação: esse é o REGISTRO, do formal ao coloquial. PRESTÍGIO é o valor social atribuído a uma forma de falar; ele depende de quem a usa, não de alguma qualidade da própria forma.\n\nDIGLOSSIA é quando uma comunidade usa duas variedades com papéis fixos: uma «alta» para a escrita, a escola e a religião, e uma «baixa» para a vida diária.',
+        text: 'Uma mesma pessoa fala de jeitos diferentes conforme a situação: esse é o REGISTRO, do formal ao coloquial. PRESTÍGIO é o valor social atribuído a uma forma de falar; ele depende de quem a usa, não de alguma qualidade da própria forma.\n\nDIGLOSSIA é quando uma comunidade usa duas variedades com papéis fixos: uma “alta” para a escrita, a escola e a religião, e uma “baixa” para a vida diária.',
         table: {
-          head: ['Comunidade', 'Variedade «alta»', 'Variedade «baixa»'],
+          head: ['Comunidade', 'Variedade “alta”', 'Variedade “baixa”'],
           rows: [
             ['Mundo árabe', 'árabe padrão (jornais, Alcorão, discursos)', 'árabe falado local (egípcio, marroquino…)'],
             ['Suíça alemã', 'alemão padrão (escrita, escola)', 'dialetos suíços (conversa, até na TV)'],
@@ -1102,23 +1102,23 @@ export const LESSONS: LingLesson[] = [
       },
     ],
     pitfalls: [
-      '«Dialeto» não quer dizer «língua errada» nem «língua sem escrita»: é só uma variedade de uma língua.',
-      'Ninguém fala «sem sotaque»: o sotaque de prestígio é só aquele que a sociedade escolheu como referência.',
-      'O crioulo cabo-verdiano não é «português mal falado»: é outra língua, com gramática própria.',
-      'Um falante de es-419 não precisa usar «vosotros»: na América, «ustedes» serve tanto para o formal quanto para o informal.',
+      '“Dialeto” não quer dizer “língua errada” nem “língua sem escrita”: é só uma variedade de uma língua.',
+      'Ninguém fala “sem sotaque”: o sotaque de prestígio é só aquele que a sociedade escolheu como referência.',
+      'O crioulo cabo-verdiano não é “português mal falado”: é outra língua, com gramática própria.',
+      'Um falante de es-419 não precisa usar “vosotros”: na América, “ustedes” serve tanto para o formal quanto para o informal.',
     ],
     quiz: [
       {
-        question: 'Qual é, na prática, o critério que mais pesa para chamar algo de «língua» e não de «dialeto»?',
+        question: 'Qual é, na prática, o critério que mais pesa para chamar algo de “língua” e não de “dialeto”?',
         options: ['O número de palavras', 'O critério político e social', 'A antiguidade', 'A dificuldade da gramática'],
         answer: 'O critério político e social',
         explanation: 'Estado, norma escrita e escola costumam decidir o rótulo.',
       },
       {
-        question: '«Estou a fazer» é típico de qual variante?',
+        question: '“Estou a fazer” é típico de qual variante?',
         options: ['pt-BR', 'pt-PT', 'es-419', 'ro-MD'],
         answer: 'pt-PT',
-        explanation: 'O Brasil prefere o gerúndio: «estou fazendo».',
+        explanation: 'O Brasil prefere o gerúndio: “estou fazendo”.',
       },
       {
         question: 'O que é diglossia?',
@@ -1129,7 +1129,7 @@ export const LESSONS: LingLesson[] = [
           'A mistura de duas línguas numa frase',
         ],
         answer: 'Duas variedades com papéis sociais fixos na mesma comunidade',
-        explanation: 'Uma variedade «alta» para contextos formais e uma «baixa» para o dia a dia.',
+        explanation: 'Uma variedade “alta” para contextos formais e uma “baixa” para o dia a dia.',
       },
       {
         question: 'O que transforma um pidgin em crioulo?',
@@ -1157,20 +1157,20 @@ export const LESSONS: LingLesson[] = [
     sections: [
       {
         heading: 'Input compreensível',
-        text: 'Quase todas as teorias concordam num ponto: sem muito INPUT (o que você ouve e lê), não há aquisição. O linguista Stephen Krashen defendeu que aprendemos sobretudo quando entendemos mensagens um pouco acima do nosso nível, o chamado «input compreensível».\n\nA ideia foi criticada por ser difícil de medir e por dar pouco valor à prática, mas o essencial resiste: ouvir e ler muito, em textos que você quase entende, é o motor do aprendizado. Ler uma história simples em romeno ensina mais do que decorar uma lista solta.',
+        text: 'Quase todas as teorias concordam num ponto: sem muito INPUT (o que você ouve e lê), não há aquisição. O linguista Stephen Krashen defendeu que aprendemos sobretudo quando entendemos mensagens um pouco acima do nosso nível, o chamado “input compreensível”.\n\nA ideia foi criticada por ser difícil de medir e por dar pouco valor à prática, mas o essencial resiste: ouvir e ler muito, em textos que você quase entende, é o motor do aprendizado. Ler uma história simples em romeno ensina mais do que decorar uma lista solta.',
       },
       {
         heading: 'Interlíngua e transferência',
-        text: 'Quem aprende não pula do zero para o nativo: passa por uma INTERLÍNGUA, um sistema provisório com regras próprias, que mistura a língua materna, a nova língua e hipóteses do aluno. Errar faz parte: o erro mostra que você está testando uma regra.\n\nA língua materna interfere nesse processo; isso se chama TRANSFERÊNCIA. Ela é POSITIVA quando ajuda (o brasileiro reconhece «noapte» e «noche») e NEGATIVA quando atrapalha: falsos amigos, pronúncia e estruturas levadas do português.',
+        text: 'Quem aprende não pula do zero para o nativo: passa por uma INTERLÍNGUA, um sistema provisório com regras próprias, que mistura a língua materna, a nova língua e hipóteses do aluno. Errar faz parte: o erro mostra que você está testando uma regra.\n\nA língua materna interfere nesse processo; isso se chama TRANSFERÊNCIA. Ela é POSITIVA quando ajuda (o brasileiro reconhece “noapte” e “noche”) e NEGATIVA quando atrapalha: falsos amigos, pronúncia e estruturas levadas do português.',
         table: {
           head: ['Tipo', 'Língua', 'Exemplo'],
           rows: [
             ['Positiva', 'espanhol, romeno', 'milhares de cognatos: noche e noapte = noite; libro = livro'],
-            ['Positiva', 'russo', 'os sons de «ch» e «j» do português ajudam com ш e ж'],
+            ['Positiva', 'russo', 'os sons de “ch” e “j” do português ajudam com ш e ж'],
             ['Negativa (falso amigo)', 'espanhol', 'embarazada = grávida; exquisito = delicioso; oficina = escritório'],
             ['Negativa (falso amigo)', 'russo', 'магазин (magazin) = loja; фамилия (familiia) = sobrenome'],
             ['Negativa (falso amigo)', 'romeno', 'prost = bobo, burro'],
-            ['Negativa (estrutura)', 'russo', 'querer pôr «o» e «a» antes dos substantivos, quando o russo não tem artigos'],
+            ['Negativa (estrutura)', 'russo', 'querer pôr “o” e “a” antes dos substantivos, quando o russo não tem artigos'],
           ],
         },
       },
@@ -1183,21 +1183,21 @@ export const LESSONS: LingLesson[] = [
             ['Você responde', 'dá uma nota à lembrança, de 0 (esqueci totalmente) a 5 (perfeito)'],
             ['1ª revisão', 'depois de 1 dia'],
             ['2ª revisão', 'depois de 6 dias'],
-            ['Seguintes', 'o intervalo anterior é multiplicado pelo «fator de facilidade» do cartão (começa em 2,5)'],
+            ['Seguintes', 'o intervalo anterior é multiplicado pelo “fator de facilidade” do cartão (começa em 2,5)'],
             ['Errou (nota abaixo de 3)', 'o cartão volta ao começo (revisão no dia seguinte), e o fator cai, até o mínimo de 1,3: ele aparecerá mais vezes'],
           ],
         },
       },
       {
         heading: 'Produção, feedback, pronúncia e idade',
-        text: 'Só ouvir não basta para FALAR bem. Pesquisas sobre a produção (a linguista Merrill Swain, por exemplo) mostram que tentar dizer algo nos faz perceber o que ainda não sabemos. O feedback, seja uma correção, seja o simples «não entendi», ajuda a ajustar a interlíngua.\n\nSobre a idade, a ciência é mais sutil do que o mito. Crianças imersas por anos tendem a chegar a uma pronúncia nativa com mais frequência. Adultos, porém, aprendem mais rápido no começo, porque já sabem ler, comparar e usar estratégias. Começar tarde muda o ponto de chegada provável da pronúncia, não impede a fluência.\n\nNão há método milagroso: nenhum app ensina uma língua em poucas semanas. O que funciona é constância, muito input, prática ativa e revisão espaçada.',
+        text: 'Só ouvir não basta para FALAR bem. Pesquisas sobre a produção (a linguista Merrill Swain, por exemplo) mostram que tentar dizer algo nos faz perceber o que ainda não sabemos. O feedback, seja uma correção, seja o simples “não entendi”, ajuda a ajustar a interlíngua.\n\nSobre a idade, a ciência é mais sutil do que o mito. Crianças imersas por anos tendem a chegar a uma pronúncia nativa com mais frequência. Adultos, porém, aprendem mais rápido no começo, porque já sabem ler, comparar e usar estratégias. Começar tarde muda o ponto de chegada provável da pronúncia, não impede a fluência.\n\nNão há método milagroso: nenhum app ensina uma língua em poucas semanas. O que funciona é constância, muito input, prática ativa e revisão espaçada.',
       },
     ],
     pitfalls: [
       'Estudar só gramática sem input quase não gera fluência; ouvir sem nunca tentar falar também não.',
-      '«Adulto não aprende língua» é mito: adultos aprendem bem; o que costuma ficar é um sotaque, e isso não impede a comunicação.',
+      '“Adulto não aprende língua” é mito: adultos aprendem bem; o que costuma ficar é um sotaque, e isso não impede a comunicação.',
       'Revisar tudo todo dia é menos eficiente que revisar na hora certa: por isso o app espaça os cartões.',
-      'Transferência não é só problema: para o brasileiro, o espanhol e o romeno já vêm com milhares de palavras «de graça».',
+      'Transferência não é só problema: para o brasileiro, o espanhol e o romeno já vêm com milhares de palavras “de graça”.',
     ],
     quiz: [
       {
@@ -1212,7 +1212,7 @@ export const LESSONS: LingLesson[] = [
         explanation: 'É o caminho entre a língua materna e a nova língua, com regras próprias.',
       },
       {
-        question: 'O espanhol «embarazada» significa…',
+        question: 'O espanhol “embarazada” significa…',
         options: ['envergonhada', 'grávida', 'embaraçada', 'atrasada'],
         answer: 'grávida',
         explanation: 'É um clássico caso de transferência negativa: um falso amigo.',
@@ -1254,7 +1254,7 @@ export const LESSONS: LingLesson[] = [
     sections: [
       {
         heading: 'Do latim ao galego-português',
-        text: 'O português nasceu do LATIM VULGAR, o latim falado pelo povo (soldados, colonos, comerciantes), e não do latim clássico dos livros. Os romanos chegaram à Península Ibérica em 218 a.C., e o latim foi substituindo as línguas locais.\n\nNo noroeste da península, onde hoje ficam a Galiza (Espanha) e o norte de Portugal, o latim evoluiu para o GALEGO-PORTUGUÊS, a língua das cantigas medievais. Os primeiros textos são do início do século XIII: o testamento do rei D. Afonso II, de 1214, é um dos mais antigos. Com a independência de Portugal e a expansão para o sul, o português e o galego seguiram caminhos separados. Na Idade Média, o árabe deixou centenas de palavras, como «azeite», «alface» e «oxalá».',
+        text: 'O português nasceu do LATIM VULGAR, o latim falado pelo povo (soldados, colonos, comerciantes), e não do latim clássico dos livros. Os romanos chegaram à Península Ibérica em 218 a.C., e o latim foi substituindo as línguas locais.\n\nNo noroeste da península, onde hoje ficam a Galiza (Espanha) e o norte de Portugal, o latim evoluiu para o GALEGO-PORTUGUÊS, a língua das cantigas medievais. Os primeiros textos são do início do século XIII: o testamento do rei D. Afonso II, de 1214, é um dos mais antigos. Com a independência de Portugal e a expansão para o sul, o português e o galego seguiram caminhos separados. Na Idade Média, o árabe deixou centenas de palavras, como “azeite”, “alface” e “oxalá”.',
       },
       {
         heading: 'Onde se fala hoje',
@@ -1288,22 +1288,22 @@ export const LESSONS: LingLesson[] = [
         table: {
           head: ['Característica', 'Exemplo', 'Onde mais aparece'],
           rows: [
-            ['Vogais e ditongos nasais', 'mãe, pão, bom, sim, põe', 'francês e polonês têm vogais nasais; ditongos nasais como «ão» são raríssimos'],
-            ['Infinitivo pessoal', '«para fazermos», «é hora de vocês saírem»', 'quase só o português e o galego entre as grandes línguas'],
-            ['Futuro do subjuntivo vivo', '«quando eu for», «se você quiser»', 'o espanhol tem, mas só em textos jurídicos e antigos'],
-            ['Mesóclise', '«dar-te-ei», «amá-lo-ia»', 'resto do futuro antigo; hoje, sobretudo no português europeu formal'],
+            ['Vogais e ditongos nasais', 'mãe, pão, bom, sim, põe', 'francês e polonês têm vogais nasais; ditongos nasais como “ão” são raríssimos'],
+            ['Infinitivo pessoal', '“para fazermos”, “é hora de vocês saírem”', 'quase só o português e o galego entre as grandes línguas'],
+            ['Futuro do subjuntivo vivo', '“quando eu for”, “se você quiser”', 'o espanhol tem, mas só em textos jurídicos e antigos'],
+            ['Mesóclise', '“dar-te-ei”, “amá-lo-ia”', 'resto do futuro antigo; hoje, sobretudo no português europeu formal'],
           ],
         },
       },
       {
         heading: 'Por que isso ajuda a aprender outras línguas',
-        text: 'Quem fala português tem uma vantagem enorme com as línguas românicas: milhares de cognatos e uma gramática de mesma raiz (gênero, conjugação, subjuntivo). Com o romeno, o espanhol ou o italiano, o brasileiro começa com meio caminho andado.\n\nNa pronúncia, o português também traz sons que outras línguas usam. Os sons de «ch» e «j» servem para o romeno ș e j e para o russo ш e ж. O «lh» e o «nh» equivalem ao «ll» (em parte da Espanha) e ao «ñ» espanhol. O «a» fraco do fim de «casa» lembra o romeno ă. E as vogais nasais preparam o ouvido para o francês e o polonês.',
+        text: 'Quem fala português tem uma vantagem enorme com as línguas românicas: milhares de cognatos e uma gramática de mesma raiz (gênero, conjugação, subjuntivo). Com o romeno, o espanhol ou o italiano, o brasileiro começa com meio caminho andado.\n\nNa pronúncia, o português também traz sons que outras línguas usam. Os sons de “ch” e “j” servem para o romeno ș e j e para o russo ш e ж. O “lh” e o “nh” equivalem ao “ll” (em parte da Espanha) e ao “ñ” espanhol. O “a” fraco do fim de “casa” lembra o romeno ă. E as vogais nasais preparam o ouvido para o francês e o polonês.',
       },
     ],
     pitfalls: [
-      'O português não vem do latim de Cícero, e sim do latim falado no dia a dia: por isso «cavalo» (de «caballus») e não «equo» (de «equus»).',
-      'O galego não é «um dialeto do espanhol»: historicamente, está do lado do português.',
-      'O infinitivo pessoal não é erro: «para nós fazermos» é português correto e raro no mundo.',
+      'O português não vem do latim de Cícero, e sim do latim falado no dia a dia: por isso “cavalo” (de “caballus”) e não “equo” (de “equus”).',
+      'O galego não é “um dialeto do espanhol”: historicamente, está do lado do português.',
+      'O infinitivo pessoal não é erro: “para nós fazermos” é português correto e raro no mundo.',
       'O romeno é o parente românico mais distante no vocabulário, mas o mais surpreendente: ainda guarda casos que o português perdeu.',
     ],
     quiz: [
@@ -1323,7 +1323,7 @@ export const LESSONS: LingLesson[] = [
         question: 'Qual destas frases usa o infinitivo pessoal?',
         options: ['Vou fazer isso.', 'É preciso fazer isso.', 'Saímos cedo para chegarmos a tempo.', 'Quero fazer isso.'],
         answer: 'Saímos cedo para chegarmos a tempo.',
-        explanation: '«Chegarmos» é um infinitivo com terminação de pessoa (nós).',
+        explanation: '“Chegarmos” é um infinitivo com terminação de pessoa (nós).',
       },
       {
         question: 'Em quantos países o português é língua oficial?',
@@ -1333,9 +1333,9 @@ export const LESSONS: LingLesson[] = [
       },
       {
         question: 'Qual som do português ajuda a pronunciar o russo ш?',
-        options: ['O «ch» de «chá»', 'O «r» de «caro»', 'O «ão» de «pão»', 'O «lh» de «olho»'],
-        answer: 'O «ch» de «chá»',
-        explanation: 'O ш russo é parecido com o nosso «ch».',
+        options: ['O “ch” de “chá”', 'O “r” de “caro”', 'O “ão” de “pão”', 'O “lh” de “olho”'],
+        answer: 'O “ch” de “chá”',
+        explanation: 'O ш russo é parecido com o nosso “ch”.',
       },
     ],
   },

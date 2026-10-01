@@ -39,5 +39,5 @@ export const CROATA: LanguagePack = {
   phrases: { hi: 'Bok!', thanks: 'Hvala!', letsStart: ['Počnimo!', 'Vamos começar!'] },
   formalMarkers: 'vi (com o verbo no plural, para uma pessoa só), molim, oprostite',
   cognateNote:
-    'O croata é uma língua eslava meridional, prima distante do português: os dois vêm do indo-europeu. Por isso «tri» lembra «três». Cada palavra mostra a raiz e os parentes em outras línguas.',
+    'O croata é uma língua eslava meridional, prima distante do português: os dois vêm do indo-europeu. Por isso “tri” lembra “três”. Cada palavra mostra a raiz e os parentes em outras línguas.',
 };

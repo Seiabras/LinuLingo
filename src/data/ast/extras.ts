@@ -33,7 +33,7 @@ export const SCENARIOS_AST: ScenarioSeed[] = [
     cefr: 'A1',
     register: 'informal',
     persona: 'Uxía, una compañera del cursu d’asturianu',
-    description: 'Uxía convida você para um café perto da praia de San Lorenzo. É uma conversa informal, entre amigas: use «tu».',
+    description: 'Uxía convida você para um café perto da praia de San Lorenzo. É uma conversa informal, entre amigas: use “tu”.',
     turns: [
       {
         bot: 'Hola! Qué quies tomar?',
@@ -58,7 +58,7 @@ export const ETYMOLOGY_AST: EtymologySeed[] = [
     root_word: 'lacte(m)',
     origin_language: 'Latim',
     cognates: c(['pt', 'leite'], ['es', 'leche'], ['it', 'latte'], ['fr', 'lait']),
-    evolution_note: 'O l- do começo virou ll- (som de lh): é um dos traços mais típicos do asturiano, que faz também «llingua» (língua) e «llunes» (segunda-feira).',
+    evolution_note: 'O l- do começo virou ll- (som de lh): é um dos traços mais típicos do asturiano, que faz também “llingua” (língua) e “llunes” (segunda-feira).',
     transparent: true,
   },
   {
@@ -74,7 +74,7 @@ export const ETYMOLOGY_AST: EtymologySeed[] = [
     root_word: 'hodie',
     origin_language: 'Latim',
     cognates: c(['pt', 'hoje'], ['es', 'hoy'], ['it', 'oggi'], ['fr', 'aujourd’hui']),
-    evolution_note: 'Do latim «hodie», com o o tônico ditongado em «üe», como acontece em muitas palavras asturianas.',
+    evolution_note: 'Do latim “hodie”, com o o tônico ditongado em “üe”, como acontece em muitas palavras asturianas.',
     transparent: false,
   },
   {
@@ -82,7 +82,7 @@ export const ETYMOLOGY_AST: EtymologySeed[] = [
     root_word: 'aqua',
     origin_language: 'Latim',
     cognates: c(['pt', 'água'], ['es', 'agua'], ['it', 'acqua'], ['fr', 'eau']),
-    evolution_note: 'Do latim «aqua», com o -qu- amolecido em -gu-, igual ao português e ao castelhano.',
+    evolution_note: 'Do latim “aqua”, com o -qu- amolecido em -gu-, igual ao português e ao castelhano.',
     transparent: true,
   },
   {

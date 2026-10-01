@@ -8,10 +8,10 @@ export const GRAMMAR_LT: GrammarTopic[] = [
     level: 'A1.1',
     title: 'Pronúncia: as letras com ogonek e o ė, vogais longas × curtas, a palatalização e a tônica livre',
     emoji: '🔤',
-    summary: 'O lituano se lê quase como se escreve, mas guarda surpresas: letras com «rabinho» (ą ę į ų) que hoje são só vogais longas, o ė fechado, o y que é um i longo, consoantes «moles» antes de i e e, e uma tônica que pode cair em qualquer sílaba e mudar de lugar dentro da mesma palavra.',
+    summary: 'O lituano se lê quase como se escreve, mas guarda surpresas: letras com “rabinho” (ą ę į ų) que hoje são só vogais longas, o ė fechado, o y que é um i longo, consoantes “moles” antes de i e e, e uma tônica que pode cair em qualquer sílaba e mudar de lugar dentro da mesma palavra.',
     sections: [
       {
-        text: 'O alfabeto lituano tem 32 letras: não tem q, w nem x, e acrescenta ą, č, ę, ė, į, š, ų, ū, ž, além do y, que é uma vogal. O rabinho embaixo de ą, ę, į, ų se chama «nosinė» (literalmente «a nasal»): séculos atrás essas vogais eram nasais como o nosso «ã», mas hoje são apenas vogais longas, sem som nasal nenhum. Nada de ā, ē, ī ou ģ, ķ, ļ, ņ: essas letras com tracinho em cima ou vírgula embaixo são do letão, a língua vizinha. O lituano é a língua indo-europeia viva mais conservadora: «dievas» (deus) lembra o latim «deus», e «sūnus» (filho) é quase igual ao sânscrito «sūnú». A tônica não se marca na escrita comum; nos dicionários e nas tabelas ela aparece com os sinais ´ ` ˜.',
+        text: 'O alfabeto lituano tem 32 letras: não tem q, w nem x, e acrescenta ą, č, ę, ė, į, š, ų, ū, ž, além do y, que é uma vogal. O rabinho embaixo de ą, ę, į, ų se chama “nosinė” (literalmente “a nasal”): séculos atrás essas vogais eram nasais como o nosso “ã”, mas hoje são apenas vogais longas, sem som nasal nenhum. Nada de ā, ē, ī ou ģ, ķ, ļ, ņ: essas letras com tracinho em cima ou vírgula embaixo são do letão, a língua vizinha. O lituano é a língua indo-europeia viva mais conservadora: “dievas” (deus) lembra o latim “deus”, e “sūnus” (filho) é quase igual ao sânscrito “sūnú”. A tônica não se marca na escrita comum; nos dicionários e nas tabelas ela aparece com os sinais ´ ` ˜.',
         table: {
           head: ['Letra', 'Som', 'Exemplo', 'IPA', 'Português'],
           rows: [
@@ -23,12 +23,12 @@ export const GRAMMAR_LT: GrammarTopic[] = [
             ['o', '[oː] ô longo', 'rožė', '[ˈroːʒʲeː]', 'rosa'],
             ['c', '[ts]', 'cukrus', '[ˈtsʊkrʊs]', 'açúcar'],
             ['č', '[tʃ] tch', 'čia', '[ˈtʃʲæ]', 'aqui'],
-            ['š', '[ʃ] ch de «chá»', 'šuo', '[ˈʃuə]', 'cachorro'],
-            ['ž', '[ʒ] j de «já»', 'žuvis', '[ʒʊˈvʲɪs]', 'peixe'],
+            ['š', '[ʃ] ch de “chá”', 'šuo', '[ˈʃuə]', 'cachorro'],
+            ['ž', '[ʒ] j de “já”', 'žuvis', '[ʒʊˈvʲɪs]', 'peixe'],
             ['ch', '[x] r aspirado, de garganta', 'choras', '[ˈxoːrɐs]', 'coral'],
             ['dž', '[dʒ] dj', 'džiazas', '[ˈdʒʲæːzɐs]', 'jazz'],
             ['h', '[ɣ] h sonoro, vibrando', 'humoras', '[ɣʊˈmoːrɐs]', 'humor'],
-            ['j', '[j] i de «iate»', 'jūra', '[ˈjuːrɐ]', 'mar'],
+            ['j', '[j] i de “iate”', 'jūra', '[ˈjuːrɐ]', 'mar'],
           ],
         },
         examples: [
@@ -39,7 +39,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Vogais longas × curtas',
-        text: 'O comprimento da vogal muda o sentido das palavras. A regra de leitura é simples: i e u são curtos e abertos ([ɪ], [ʊ]); y, į, ū, ų são longos ([iː], [uː]); ė é sempre um ê fechado e longo; o é quase sempre um ô longo. O a e o e têm um detalhe: quando levam a tônica numa sílaba aberta (que termina em vogal), eles se alongam, como em «labas» [ˈɫaːbɐs] e «medis» [ˈmʲæːdʲɪs] (árvore). E o e lituano tende ao «é» bem aberto, quase um «á» fechado ([æ]): nunca o nosso «ê».',
+        text: 'O comprimento da vogal muda o sentido das palavras. A regra de leitura é simples: i e u são curtos e abertos ([ɪ], [ʊ]); y, į, ū, ų são longos ([iː], [uː]); ė é sempre um ê fechado e longo; o é quase sempre um ô longo. O a e o e têm um detalhe: quando levam a tônica numa sílaba aberta (que termina em vogal), eles se alongam, como em “labas” [ˈɫaːbɐs] e “medis” [ˈmʲæːdʲɪs] (árvore). E o e lituano tende ao “é” bem aberto, quase um “á” fechado ([æ]): nunca o nosso “ê”.',
         table: {
           head: ['Curta', 'Exemplo', 'Longa', 'Exemplo'],
           rows: [
@@ -57,7 +57,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Os ditongos ie, uo, ai, au, ei, ui',
-        text: 'O lituano tem ditongos que o português não tem. «ie» soa [iə], um i que desliza para um «ê» apagado, e «uo» soa [uə], um u que desliza do mesmo jeito: nunca se lê «i-é» ou «u-ó» em duas sílabas. Os outros são mais familiares: ai [ɐɪ], au [ɐʊ], ei [ɛɪ], ui [ʊɪ].',
+        text: 'O lituano tem ditongos que o português não tem. “ie” soa [iə], um i que desliza para um “ê” apagado, e “uo” soa [uə], um u que desliza do mesmo jeito: nunca se lê “i-é” ou “u-ó” em duas sílabas. Os outros são mais familiares: ai [ɐɪ], au [ɐʊ], ei [ɛɪ], ui [ʊɪ].',
         table: {
           head: ['Ditongo', 'Exemplo', 'IPA', 'Português'],
           rows: [
@@ -77,7 +77,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'A palatalização: consoantes duras e moles',
-        text: 'Toda consoante lituana tem duas versões: dura e mole (palatalizada, marcada [ʲ] no IPA, com a língua subindo para o céu da boca, como no «ti» de «tia» carioca, só que mais leve). Antes de e, ė, ę, i, y, į e ie, a consoante é sempre mole. Antes de a, o, u, ela é dura, a não ser que venha um i escrito no meio: nesse caso o i não se pronuncia como vogal, só amolece a consoante. Assim, «čia» (aqui) soa [ˈtʃʲæ], sem «i», e «ačiū» soa [ˈaːtʃʲʊ]. Depois de consoante, «ia» soa quase «é» [ʲæ] e «iu» soa [ʲʊ]. O l duro soa grave, como o l de «full» em inglês, e nunca vira «u» como no nosso «Brasil»: «labas» [ˈɫaːbɐs]. O l mole é o l de «lista»: «lietus» [lʲiəˈtʊs] (chuva).',
+        text: 'Toda consoante lituana tem duas versões: dura e mole (palatalizada, marcada [ʲ] no IPA, com a língua subindo para o céu da boca, como no “ti” de “tia” carioca, só que mais leve). Antes de e, ė, ę, i, y, į e ie, a consoante é sempre mole. Antes de a, o, u, ela é dura, a não ser que venha um i escrito no meio: nesse caso o i não se pronuncia como vogal, só amolece a consoante. Assim, “čia” (aqui) soa [ˈtʃʲæ], sem “i”, e “ačiū” soa [ˈaːtʃʲʊ]. Depois de consoante, “ia” soa quase “é” [ʲæ] e “iu” soa [ʲʊ]. O l duro soa grave, como o l de “full” em inglês, e nunca vira “u” como no nosso “Brasil”: “labas” [ˈɫaːbɐs]. O l mole é o l de “lista”: “lietus” [lʲiəˈtʊs] (chuva).',
         table: {
           head: ['Dura', 'IPA', 'Mole', 'IPA'],
           rows: [
@@ -96,7 +96,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'A tônica livre e móvel, e os dois tons',
-        text: 'Em lituano a tônica pode cair em qualquer sílaba, e nenhuma regra de escrita avisa onde: «Vilnius» e «Kaunas» têm a tônica na primeira, «diena» e «lietus» na última. Pior: ela pode mudar de lugar dentro da mesma palavra quando o caso muda. «Ranka» (mão) tem a tônica no fim, «rankà»; no acusativo, ela volta para o começo: «rañką». Por isso vale aprender cada palavra ouvindo. Além disso, nas sílabas longas a tônica tem dois tons: o agudo (´), que começa forte e desce, e o circunflexo (˜), que sobe. Eles chegam a separar palavras: «káltas» (cinzel) × «kal̃tas» (culpado). Na fala rápida de hoje a diferença de tom se apaga bastante; para o aluno, o essencial é acertar a sílaba tônica.',
+        text: 'Em lituano a tônica pode cair em qualquer sílaba, e nenhuma regra de escrita avisa onde: “Vilnius” e “Kaunas” têm a tônica na primeira, “diena” e “lietus” na última. Pior: ela pode mudar de lugar dentro da mesma palavra quando o caso muda. “Ranka” (mão) tem a tônica no fim, “rankà”; no acusativo, ela volta para o começo: “rañką”. Por isso vale aprender cada palavra ouvindo. Além disso, nas sílabas longas a tônica tem dois tons: o agudo (´), que começa forte e desce, e o circunflexo (˜), que sobe. Eles chegam a separar palavras: “káltas” (cinzel) × “kal̃tas” (culpado). Na fala rápida de hoje a diferença de tom se apaga bastante; para o aluno, o essencial é acertar a sílaba tônica.',
         table: {
           head: ['Com os acentos do dicionário', 'IPA', 'Português'],
           rows: [
@@ -116,7 +116,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Surdas e sonoras: o som se contagia',
-        text: 'Como em russo e em polonês, a consoante se ajusta à vizinha. No fim da palavra, b, d, g, z, ž ensurdecem: «daug» (muito) soa [ˈdɐʊk], «kad» (que) soa [ˈkɐt]. No meio da palavra, a consoante copia a seguinte: em «dirbti» (trabalhar) o b vira p [ˈdʲɪrptʲɪ]; em «pusbrolis» (primo) o s vira z [ˈpʊzbroːlʲɪs]; em «Užupis», o bairro dos artistas de Vilnius, o ž se mantém porque vem antes de vogal [ˈʊʒʊpʲɪs].',
+        text: 'Como em russo e em polonês, a consoante se ajusta à vizinha. No fim da palavra, b, d, g, z, ž ensurdecem: “daug” (muito) soa [ˈdɐʊk], “kad” (que) soa [ˈkɐt]. No meio da palavra, a consoante copia a seguinte: em “dirbti” (trabalhar) o b vira p [ˈdʲɪrptʲɪ]; em “pusbrolis” (primo) o s vira z [ˈpʊzbroːlʲɪs]; em “Užupis”, o bairro dos artistas de Vilnius, o ž se mantém porque vem antes de vogal [ˈʊʒʊpʲɪs].',
         examples: [
           ['Daug laimės!', '[ˈdɐʊk ˈɫɐɪmʲeːs] Muitas felicidades!'],
           ['Aš dirbu Vilniuje.', 'Eu trabalho em Vilnius.'],
@@ -125,28 +125,28 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pronunciar ą, ę, į, ų como vogais nasais: hoje elas são só longas. «žąsis» não tem «ã», soa [ʒaːˈsʲɪs].',
-      'Ler o e lituano como o nosso «ê»: ele é aberto, quase «é» ou até [æ]. O «ê» fechado se escreve ė: gėlė [ɡʲeːˈlʲeː].',
-      'Ler o i depois de consoante como vogal em «čia», «ačiū», «Šiauliai»: ali ele só amolece a consoante. «čia» tem uma sílaba só.',
-      'Transformar o l duro em «u», como no «Brasil» brasileiro: «Vilnius» não é «Viunius», e «labas» começa com um l grave, bem pronunciado.',
-      'Achar que a tônica é fixa: ela é livre e móvel. «rankà» (a mão) mas «rañką» (a mão, acusativo). Ouça cada palavra nova.',
+      'Pronunciar ą, ę, į, ų como vogais nasais: hoje elas são só longas. “žąsis” não tem “ã”, soa [ʒaːˈsʲɪs].',
+      'Ler o e lituano como o nosso “ê”: ele é aberto, quase “é” ou até [æ]. O “ê” fechado se escreve ė: gėlė [ɡʲeːˈlʲeː].',
+      'Ler o i depois de consoante como vogal em “čia”, “ačiū”, “Šiauliai”: ali ele só amolece a consoante. “čia” tem uma sílaba só.',
+      'Transformar o l duro em “u”, como no “Brasil” brasileiro: “Vilnius” não é “Viunius”, e “labas” começa com um l grave, bem pronunciado.',
+      'Achar que a tônica é fixa: ela é livre e móvel. “rankà” (a mão) mas “rañką” (a mão, acusativo). Ouça cada palavra nova.',
       'Escrever ā, ē, ī ou ļ, ņ por influência do letão: em lituano é ą, ę, į e l, n sem vírgula.',
     ],
     quiz: [
       {
-        question: 'Como soa hoje a letra ą em «žąsis» (ganso)?',
+        question: 'Como soa hoje a letra ą em “žąsis” (ganso)?',
         options: ['[aː]', '[ɐ̃]', '[ɔ]'],
         answer: '[aː]',
         explanation: 'O rabinho (nosinė) marcava uma vogal nasal séculos atrás. Hoje ą é só um a longo: žąsis [ʒaːˈsʲɪs].',
       },
       {
-        question: 'Qual destas letras é um «ê» fechado e longo?',
+        question: 'Qual destas letras é um “ê” fechado e longo?',
         options: ['ė', 'e', 'ę'],
         answer: 'ė',
         explanation: 'O ė é o ê fechado [eː]: gėlė (flor). O e comum é aberto [ɛ], e o ę é um é bem aberto e longo [æː].',
       },
       {
-        question: 'Quantas sílabas tem «čia» (aqui)?',
+        question: 'Quantas sílabas tem “čia” (aqui)?',
         options: ['uma', 'duas', 'três'],
         answer: 'uma',
         explanation: 'O i depois de consoante e antes de a, o, u só amolece a consoante: čia [ˈtʃʲæ], uma sílaba.',
@@ -155,16 +155,16 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         question: 'Em qual palavra a consoante do começo é mole (palatalizada)?',
         options: ['lietus', 'labas', 'Kaunas'],
         answer: 'lietus',
-        explanation: 'Antes de ie a consoante é sempre mole: lietus [lʲiəˈtʊs]. Em «labas» e «Kaunas», antes de a, ela é dura.',
+        explanation: 'Antes de ie a consoante é sempre mole: lietus [lʲiəˈtʊs]. Em “labas” e “Kaunas”, antes de a, ela é dura.',
       },
       {
-        question: 'Qual letra lituana soa como o nosso «i» longo?',
+        question: 'Qual letra lituana soa como o nosso “i” longo?',
         options: ['y', 'j', 'ė'],
         answer: 'y',
         explanation: 'O y é uma vogal, um i longo [iː], igual ao į: dvylika [ˈdʲvʲiːlʲɪkɐ].',
       },
       {
-        question: 'Como soa o fim de «daug» (muito)?',
+        question: 'Como soa o fim de “daug” (muito)?',
         options: ['[k]', '[ɡ]', '[x]'],
         answer: '[k]',
         explanation: 'No fim da palavra as sonoras ensurdecem: daug [ˈdɐʊk].',
@@ -174,13 +174,13 @@ export const GRAMMAR_LT: GrammarTopic[] = [
   {
     id: 'lt-g2',
     level: 'A1.1',
-    title: 'Saudações, pronomes pessoais e o verbo «būti» (esu, esi, yra)',
+    title: 'Saudações, pronomes pessoais e o verbo “būti” (esu, esi, yra)',
     emoji: '👋',
-    summary: 'Labas, ačiū, viso gero: as frases da primeira conversa. Os pronomes (aš, tu, jis, ji…), o «jūs» de cortesia e o verbo «būti» (ser, estar), que no presente é esu, esi, yra e na negação vira nesu, nesi, nėra.',
+    summary: 'Labas, ačiū, viso gero: as frases da primeira conversa. Os pronomes (aš, tu, jis, ji…), o “jūs” de cortesia e o verbo “būti” (ser, estar), que no presente é esu, esi, yra e na negação vira nesu, nesi, nėra.',
     sections: [
       {
         heading: 'Cumprimentar e se despedir',
-        text: '«Labas» é o oi de todo dia, com amigos e em lojas. Com quem você trata por «jūs», o mais educado é «Laba diena» (literalmente «bom dia», usado o dia todo, de manhã até o anoitecer). Repare que até os cumprimentos concordam em gênero: «labas rytas» (rytas, manhã, é masculino), «laba diena» (diena, dia, é feminino). «Sveikas» é oi para um homem, «sveika» para uma mulher e «sveiki» para várias pessoas ou para cumprimentar com cortesia.',
+        text: '“Labas” é o oi de todo dia, com amigos e em lojas. Com quem você trata por “jūs”, o mais educado é “Laba diena” (literalmente “bom dia”, usado o dia todo, de manhã até o anoitecer). Repare que até os cumprimentos concordam em gênero: “labas rytas” (rytas, manhã, é masculino), “laba diena” (diena, dia, é feminino). “Sveikas” é oi para um homem, “sveika” para uma mulher e “sveiki” para várias pessoas ou para cumprimentar com cortesia.',
         table: {
           head: ['Lituano', 'Quando', 'Português'],
           rows: [
@@ -208,7 +208,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Apresentar-se',
-        text: 'Para perguntar o nome, os lituanos dizem «Koks tavo vardas?» (qual é o seu nome?) ou, bem tradicional, «Kuo tu vardu?». Com cortesia: «Koks jūsų vardas?». A nacionalidade também tem gênero: um brasileiro é «brazilas», uma brasileira é «brazilė»; um lituano é «lietuvis», uma lituana é «lietuvė». «De onde» se diz «iš kur», e o país vem no genitivo (o caso do «de»): iš Brazilijos, iš Lietuvos. O pronome sujeito pode cair, porque o verbo já diz a pessoa: «Esu iš Brazilijos» basta.',
+        text: 'Para perguntar o nome, os lituanos dizem “Koks tavo vardas?” (qual é o seu nome?) ou, bem tradicional, “Kuo tu vardu?”. Com cortesia: “Koks jūsų vardas?”. A nacionalidade também tem gênero: um brasileiro é “brazilas”, uma brasileira é “brazilė”; um lituano é “lietuvis”, uma lituana é “lietuvė”. “De onde” se diz “iš kur”, e o país vem no genitivo (o caso do “de”): iš Brazilijos, iš Lietuvos. O pronome sujeito pode cair, porque o verbo já diz a pessoa: “Esu iš Brazilijos” basta.',
         examples: [
           ['Koks tavo vardas? – Mano vardas Ana.', 'Qual é o seu nome? – Meu nome é Ana.'],
           ['Aš esu Tomas. Malonu susipažinti.', 'Eu sou o Tomas. Prazer em conhecer.'],
@@ -218,7 +218,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Os pronomes pessoais',
-        text: 'Não há «você» à parte: «tu» é o tratamento íntimo (família, amigos, crianças), e «jūs» é tanto «vocês» quanto o tratamento de cortesia com um desconhecido, um chefe, um idoso. Na hora de passar do «jūs» para o «tu», costuma-se perguntar: «Gal galime pereiti prie „tu“?» (podemos passar para o «tu»?). No plural, «eles» e «elas» são palavras diferentes: jie (eles, ou grupo misto) e jos (só mulheres).',
+        text: 'Não há “você” à parte: “tu” é o tratamento íntimo (família, amigos, crianças), e “jūs” é tanto “vocês” quanto o tratamento de cortesia com um desconhecido, um chefe, um idoso. Na hora de passar do “jūs” para o “tu”, costuma-se perguntar: “Gal galime pereiti prie „tu‘?’ (podemos passar para o ‘tu’?). No plural, ‘eles’ e ‘elas’ são palavras diferentes: jie (eles, ou grupo misto) e jos (só mulheres).',
         table: {
           head: ['Lituano', 'Português'],
           rows: [
@@ -239,8 +239,8 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'O verbo «būti» (ser, estar)',
-        text: '«Būti» serve para «ser» e para «estar», sem distinção. A terceira pessoa é igual no singular e no plural: jis yra, jie yra. Na negação, o ne- se gruda no verbo (nesu, nesi), e «ne + yra» vira «nėra». Na fala, «yra» muitas vezes cai: «Jis mokytojas» (ele é professor) é natural. E «esame», «esate» têm as formas curtas «esam», «esat», comuns na conversa.',
+        heading: 'O verbo “būti” (ser, estar)',
+        text: '“Būti” serve para “ser” e para “estar”, sem distinção. A terceira pessoa é igual no singular e no plural: jis yra, jie yra. Na negação, o ne- se gruda no verbo (nesu, nesi), e “ne + yra” vira “nėra”. Na fala, “yra” muitas vezes cai: “Jis mokytojas” (ele é professor) é natural. E “esame”, “esate” têm as formas curtas “esam”, “esat”, comuns na conversa.',
         table: {
           head: ['Pessoa', 'Afirmativo', 'Negativo'],
           rows: [
@@ -262,42 +262,42 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Dizer «Labas!» a um desconhecido mais velho numa repartição: ali o certo é «Laba diena!» e o tratamento por «jūs».',
-      'Usar «tu» com qualquer pessoa, como o nosso «você»: «tu» é íntimo. Com desconhecidos, «jūs» (esate, turite…).',
-      'Esquecer o gênero: uma mulher diz «Aš esu brazilė», «studentė», e cumprimenta um homem com «Sveikas!» e uma mulher com «Sveika!».',
-      'Escrever «ne yra» separado: a negação de «yra» é uma palavra só, «nėra».',
-      'Achar que «Prašom» é só «por favor»: é também o «de nada» depois do «ačiū» e o «pode pegar» ao entregar alguma coisa.',
+      'Dizer “Labas!” a um desconhecido mais velho numa repartição: ali o certo é “Laba diena!” e o tratamento por “jūs”.',
+      'Usar “tu” com qualquer pessoa, como o nosso “você”: “tu” é íntimo. Com desconhecidos, “jūs” (esate, turite…).',
+      'Esquecer o gênero: uma mulher diz “Aš esu brazilė”, “studentė”, e cumprimenta um homem com “Sveikas!” e uma mulher com “Sveika!”.',
+      'Escrever “ne yra” separado: a negação de “yra” é uma palavra só, “nėra”.',
+      'Achar que “Prašom” é só “por favor”: é também o “de nada” depois do “ačiū” e o “pode pegar” ao entregar alguma coisa.',
     ],
     quiz: [
       {
         question: 'Qual é o cumprimento neutro e educado durante o dia?',
         options: ['Laba diena!', 'Labanakt!', 'Iki!'],
         answer: 'Laba diena!',
-        explanation: '«Laba diena» serve do meio da manhã até o anoitecer, com qualquer pessoa. «Labanakt» é para a hora de dormir, e «Iki» é tchau.',
+        explanation: '“Laba diena” serve do meio da manhã até o anoitecer, com qualquer pessoa. “Labanakt” é para a hora de dormir, e “Iki” é tchau.',
       },
       {
-        question: 'Complete: «Mes ___ iš Brazilijos.»',
+        question: 'Complete: “Mes ___ iš Brazilijos.”',
         options: ['esame', 'esate', 'yra'],
         answer: 'esame',
-        explanation: 'Mes esame (nós somos). «Esate» é de «jūs», e «yra» é da terceira pessoa.',
+        explanation: 'Mes esame (nós somos). “Esate” é de “jūs”, e “yra” é da terceira pessoa.',
       },
       {
-        question: 'Como se diz «ele não está» (ele não é)?',
+        question: 'Como se diz “ele não está” (ele não é)?',
         options: ['jis nėra', 'jis ne yra', 'jis nesu'],
         answer: 'jis nėra',
-        explanation: 'Ne + yra se funde em «nėra», escrito junto.',
+        explanation: 'Ne + yra se funde em “nėra”, escrito junto.',
       },
       {
-        question: 'Uma mulher diz «Eu sou brasileira». Qual forma?',
+        question: 'Uma mulher diz “Eu sou brasileira”. Qual forma?',
         options: ['Aš esu brazilė.', 'Aš esu brazilas.', 'Aš yra brazilė.'],
         answer: 'Aš esu brazilė.',
-        explanation: 'A nacionalidade concorda com o gênero (brazilas, brazilė) e com «aš» o verbo é «esu».',
+        explanation: 'A nacionalidade concorda com o gênero (brazilas, brazilė) e com “aš” o verbo é “esu”.',
       },
       {
-        question: 'Qual pronome serve para «elas» (só mulheres)?',
+        question: 'Qual pronome serve para “elas” (só mulheres)?',
         options: ['jos', 'jie', 'ji'],
         answer: 'jos',
-        explanation: '«jos» é «elas»; «jie» é «eles» (ou grupo misto) e «ji» é «ela».',
+        explanation: '“jos” é “elas”; “jie” é “eles” (ou grupo misto) e “ji” é “ela”.',
       },
     ],
   },
@@ -306,11 +306,11 @@ export const GRAMMAR_LT: GrammarTopic[] = [
     level: 'A1.1',
     title: 'Os números de 0 a 20: gênero, preço e idade',
     emoji: '🔢',
-    summary: 'De nulis a dvidešimt. Os números de 1 a 9 têm masculino e feminino (du eurai, dvi kavos) e mudam o caso do substantivo: 1 pede o singular, 2 a 9 o plural, e 10 a 20 o genitivo plural (dešimt eurų). O -lika de 11 a 19 é primo do «-leven» do inglês «eleven».',
+    summary: 'De nulis a dvidešimt. Os números de 1 a 9 têm masculino e feminino (du eurai, dvi kavos) e mudam o caso do substantivo: 1 pede o singular, 2 a 9 o plural, e 10 a 20 o genitivo plural (dešimt eurų). O -lika de 11 a 19 é primo do “-leven” do inglês “eleven”.',
     sections: [
       {
         heading: 'De 0 a 20',
-        text: 'Os números de 1 a 9 concordam em gênero com o substantivo: «vienas» (um) com masculino, «viena» (uma) com feminino, e assim por diante (só o «trys», três, é igual nos dois). De 10 em diante, a forma é uma só. De 11 a 19 todos terminam em -lika, que vem da mesma raiz de «likti» (sobrar): «vienuolika» é «um que sobra» depois do dez. É a mesma ideia do inglês «eleven» e «twelve», que também significavam «um/dois que sobram». E «dvidešimt» é literalmente «duas dezenas».',
+        text: 'Os números de 1 a 9 concordam em gênero com o substantivo: “vienas” (um) com masculino, “viena” (uma) com feminino, e assim por diante (só o “trys”, três, é igual nos dois). De 10 em diante, a forma é uma só. De 11 a 19 todos terminam em -lika, que vem da mesma raiz de “likti” (sobrar): “vienuolika” é “um que sobra” depois do dez. É a mesma ideia do inglês “eleven” e “twelve”, que também significavam “um/dois que sobram”. E “dvidešimt” é literalmente “duas dezenas”.',
         table: {
           head: ['Nº', 'Masculino', 'Feminino', 'Nº', 'Forma única'],
           rows: [
@@ -335,7 +335,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'O número manda no caso',
-        text: 'Em lituano o número decide a forma do substantivo que vem depois. Com 1 (e 21, 31…), singular: «vienas euras». De 2 a 9, plural no nominativo: «du eurai», «penkios kavos». De 10 a 20 (e nas dezenas redondas), genitivo plural, a forma em -ų: «dešimt eurų», «penkiolika metų». É como se disséssemos «dez de euros». Ao pedir no café, a frase curta resolve: «Dvi kavos, prašom» (dois cafés, por favor).',
+        text: 'Em lituano o número decide a forma do substantivo que vem depois. Com 1 (e 21, 31…), singular: “vienas euras”. De 2 a 9, plural no nominativo: “du eurai”, “penkios kavos”. De 10 a 20 (e nas dezenas redondas), genitivo plural, a forma em -ų: “dešimt eurų”, “penkiolika metų”. É como se disséssemos “dez de euros”. Ao pedir no café, a frase curta resolve: “Dvi kavos, prašom” (dois cafés, por favor).',
         table: {
           head: ['Número', 'Masculino (euras)', 'Feminino (kava)'],
           rows: [
@@ -353,7 +353,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'A idade',
-        text: 'A idade não se «tem»: diz-se «a mim são tantos anos», com o pronome no dativo (man, tau, jam, jai) e a palavra «metai» (anos). De 10 a 20, «metai» vai para o genitivo plural, «metų»: «Man dvidešimt metų». De 2 a 9 usam-se números especiais, os coletivos, porque «metai» só existe no plural: «Jam penkeri metai» (ele tem cinco anos). Guarde por enquanto a pergunta e as idades de 10 a 20.',
+        text: 'A idade não se “tem”: diz-se “a mim são tantos anos”, com o pronome no dativo (man, tau, jam, jai) e a palavra “metai” (anos). De 10 a 20, “metai” vai para o genitivo plural, “metų”: “Man dvidešimt metų”. De 2 a 9 usam-se números especiais, os coletivos, porque “metai” só existe no plural: “Jam penkeri metai” (ele tem cinco anos). Guarde por enquanto a pergunta e as idades de 10 a 20.',
         examples: [
           ['Kiek tau metų?', 'Quantos anos você tem?'],
           ['Man devyniolika metų.', 'Eu tenho dezenove anos.'],
@@ -363,26 +363,26 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar sempre o masculino: com palavra feminina é «dvi kavos», «keturios knygos», nunca «du kavos».',
-      'Dizer «dešimt eurai»: de 10 a 20 o substantivo vai para o genitivo plural, «dešimt eurų».',
-      'Traduzir «eu tenho vinte anos» com «turiu»: em lituano é «Man dvidešimt metų», com «man» (a mim).',
-      'Confundir «dvylika» (12) com «dvidešimt» (20): o primeiro tem o -lika dos números de 11 a 19.',
+      'Usar sempre o masculino: com palavra feminina é “dvi kavos”, “keturios knygos”, nunca “du kavos”.',
+      'Dizer “dešimt eurai”: de 10 a 20 o substantivo vai para o genitivo plural, “dešimt eurų”.',
+      'Traduzir “eu tenho vinte anos” com “turiu”: em lituano é “Man dvidešimt metų”, com “man” (a mim).',
+      'Confundir “dvylika” (12) com “dvidešimt” (20): o primeiro tem o -lika dos números de 11 a 19.',
     ],
     quiz: [
       {
-        question: 'Complete: «___ kavos, prašom.» (duas)',
+        question: 'Complete: “___ kavos, prašom.” (duas)',
         options: ['Dvi', 'Du', 'Dvylika'],
         answer: 'Dvi',
-        explanation: '«kava» é feminino, então «dois» fica «dvi». «Du» é o masculino, e «dvylika» é doze.',
+        explanation: '“kava” é feminino, então “dois” fica “dvi”. “Du” é o masculino, e “dvylika” é doze.',
       },
       {
-        question: 'Qual está certo para «quinze euros»?',
+        question: 'Qual está certo para “quinze euros”?',
         options: ['penkiolika eurų', 'penkiolika eurai', 'penki eurų'],
         answer: 'penkiolika eurų',
         explanation: 'De 10 a 20 o substantivo vai para o genitivo plural: eurų.',
       },
       {
-        question: 'Como se diz «Eu tenho dezoito anos»?',
+        question: 'Como se diz “Eu tenho dezoito anos”?',
         options: ['Man aštuoniolika metų.', 'Aš turiu aštuoniolika metų.', 'Aš esu aštuoniolika.'],
         answer: 'Man aštuoniolika metų.',
         explanation: 'A idade se diz com o dativo: man (a mim), tau (a ti).',
@@ -394,7 +394,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         explanation: 'Trylika é 13; trys é 3, e trisdešimt é 30.',
       },
       {
-        question: 'Complete: «vienas ___» (um euro)',
+        question: 'Complete: “vienas ___” (um euro)',
         options: ['euras', 'eurai', 'eurų'],
         answer: 'euras',
         explanation: 'Com 1 o substantivo fica no singular: vienas euras.',
@@ -411,7 +411,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
     sections: [
       {
         heading: 'Três grupos, uma lógica',
-        text: 'Pelo infinitivo (que termina em -ti) nem sempre se adivinha o presente: o lituano pede que se aprenda cada verbo com a terceira pessoa do presente, que mostra o grupo. Se ela termina em -a (dirba, kalba, gyvena), o verbo é da 1ª conjugação; em -i (turi, myli, nori), da 2ª; em -o (skaito, rašo, žino), da 3ª. Uma grande vantagem para o brasileiro: a terceira pessoa é igual no singular e no plural. «Jis dirba» (ele trabalha), «jie dirba» (eles trabalham).',
+        text: 'Pelo infinitivo (que termina em -ti) nem sempre se adivinha o presente: o lituano pede que se aprenda cada verbo com a terceira pessoa do presente, que mostra o grupo. Se ela termina em -a (dirba, kalba, gyvena), o verbo é da 1ª conjugação; em -i (turi, myli, nori), da 2ª; em -o (skaito, rašo, žino), da 3ª. Uma grande vantagem para o brasileiro: a terceira pessoa é igual no singular e no plural. “Jis dirba” (ele trabalha), “jie dirba” (eles trabalham).',
         table: {
           head: ['Pessoa', '1ª: dirbti (trabalhar)', '2ª: turėti (ter)', '3ª: skaityti (ler)'],
           rows: [
@@ -431,7 +431,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Verbos do dia a dia',
-        text: 'Repare que o presente às vezes muda o radical: «gyventi» (morar) faz «gyvena», «eiti» (ir) faz «eina», «gerti» (beber) faz «geria», com o i que amolece a consoante (geriu, geri, geria). Na 1ª conjugação há por isso dois tipos de terminação: -u, -i, -a e -iu, -i, -ia. Na fala, «-ame» e «-ate» encurtam: «dirbam», «dirbat».',
+        text: 'Repare que o presente às vezes muda o radical: “gyventi” (morar) faz “gyvena”, “eiti” (ir) faz “eina”, “gerti” (beber) faz “geria”, com o i que amolece a consoante (geriu, geri, geria). Na 1ª conjugação há por isso dois tipos de terminação: -u, -i, -a e -iu, -i, -ia. Na fala, “-ame” e “-ate” encurtam: “dirbam”, “dirbat”.',
         table: {
           head: ['Infinitivo', 'aš', 'tu', 'jis / jie', 'Português'],
           rows: [
@@ -456,7 +456,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'O presente faz vários papéis',
-        text: 'Como em português, o presente lituano serve para o que acontece agora («Ką veiki?», o que você está fazendo?), para o hábito («Kiekvieną dieną einu į darbą», todo dia vou ao trabalho) e para um futuro próximo e combinado («Rytoj važiuoju į Kauną», amanhã vou para Kaunas). Não existe uma forma especial de «estar fazendo»: «skaitau» é «leio» e «estou lendo».',
+        text: 'Como em português, o presente lituano serve para o que acontece agora (“Ką veiki?”, o que você está fazendo?), para o hábito (“Kiekvieną dieną einu į darbą”, todo dia vou ao trabalho) e para um futuro próximo e combinado (“Rytoj važiuoju į Kauną”, amanhã vou para Kaunas). Não existe uma forma especial de “estar fazendo”: “skaitau” é “leio” e “estou lendo”.',
         examples: [
           ['Ką tu veiki? – Skaitau knygą.', 'O que você está fazendo? – Estou lendo um livro.'],
           ['Kiekvieną dieną einu į darbą.', 'Todo dia vou (a pé) ao trabalho.'],
@@ -465,42 +465,42 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar para «eles» uma forma diferente de «ele»: a terceira pessoa é uma só, «jis rašo», «jie rašo».',
-      'Adivinhar o presente pelo infinitivo: aprenda o par, porque «gyventi» dá «gyvena», «eiti» dá «eina» e «gerti» dá «geria».',
-      'Misturar as terminações das conjugações: «aš turiu» (2ª) mas «aš skaitau» (3ª), nunca «aš turau».',
-      'Procurar uma forma de «estar + -ndo»: «dirbu» já é «trabalho» e «estou trabalhando».',
-      'Esquecer que «norėti» (querer) pede genitivo para uma porção de algo: «Noriu kavos» (quero um café).',
+      'Usar para “eles” uma forma diferente de “ele”: a terceira pessoa é uma só, “jis rašo”, “jie rašo”.',
+      'Adivinhar o presente pelo infinitivo: aprenda o par, porque “gyventi” dá “gyvena”, “eiti” dá “eina” e “gerti” dá “geria”.',
+      'Misturar as terminações das conjugações: “aš turiu” (2ª) mas “aš skaitau” (3ª), nunca “aš turau”.',
+      'Procurar uma forma de “estar + -ndo”: “dirbu” já é “trabalho” e “estou trabalhando”.',
+      'Esquecer que “norėti” (querer) pede genitivo para uma porção de algo: “Noriu kavos” (quero um café).',
     ],
     quiz: [
       {
-        question: 'Complete: «Jie ___ Vilniuje.» (morar)',
+        question: 'Complete: “Jie ___ Vilniuje.” (morar)',
         options: ['gyvena', 'gyvenu', 'gyvename'],
         answer: 'gyvena',
         explanation: 'A terceira pessoa é igual no singular e no plural: jis gyvena, jie gyvena.',
       },
       {
-        question: 'Qual é o «eu» de «skaityti» (ler)?',
+        question: 'Qual é o “eu” de “skaityti” (ler)?',
         options: ['skaitau', 'skaitu', 'skaitiu'],
         answer: 'skaitau',
-        explanation: '«skaityti» é da 3ª conjugação (skaito): aš skaitau, tu skaitai.',
+        explanation: '“skaityti” é da 3ª conjugação (skaito): aš skaitau, tu skaitai.',
       },
       {
-        question: 'A qual conjugação pertence «turėti» (ter), que faz «jis turi»?',
+        question: 'A qual conjugação pertence “turėti” (ter), que faz “jis turi”?',
         options: ['2ª', '1ª', '3ª'],
         answer: '2ª',
         explanation: 'A terceira pessoa em -i marca a 2ª conjugação: turi, myli, nori.',
       },
       {
-        question: 'Complete: «Mes ___ lietuviškai.» (falar)',
+        question: 'Complete: “Mes ___ lietuviškai.” (falar)',
         options: ['kalbame', 'kalbate', 'kalba'],
         answer: 'kalbame',
-        explanation: 'Mes kalbame (nós falamos). «Kalbate» é de «jūs», e «kalba» é da terceira pessoa.',
+        explanation: 'Mes kalbame (nós falamos). “Kalbate” é de “jūs”, e “kalba” é da terceira pessoa.',
       },
       {
-        question: 'Qual forma é o «eu» de «gerti» (beber)?',
+        question: 'Qual forma é o “eu” de “gerti” (beber)?',
         options: ['geriu', 'geru', 'gerau'],
         answer: 'geriu',
-        explanation: '«gerti» faz geriu, geri, geria: 1ª conjugação com o i que amolece o r.',
+        explanation: '“gerti” faz geriu, geri, geria: 1ª conjugação com o i que amolece o r.',
       },
     ],
   },
@@ -513,7 +513,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
     sections: [
       {
         heading: 'Sem artigo, com terminação',
-        text: 'O lituano não tem «o», «a», «um», «uma»: «namas» é «casa», «a casa» ou «uma casa», conforme o contexto. Quem mostra o gênero é o fim da palavra. Os substantivos são só masculinos ou femininos (o neutro sobrevive apenas em adjetivos e pronomes, como «gera», «gražu»). E essas terminações vêm lá do indo-europeu: o -as de «dievas» corresponde ao -us do latim «deus» e ao -os do grego «theós».',
+        text: 'O lituano não tem “o”, “a”, “um”, “uma”: “namas” é “casa”, “a casa” ou “uma casa”, conforme o contexto. Quem mostra o gênero é o fim da palavra. Os substantivos são só masculinos ou femininos (o neutro sobrevive apenas em adjetivos e pronomes, como “gera”, “gražu”). E essas terminações vêm lá do indo-europeu: o -as de “dievas” corresponde ao -us do latim “deus” e ao -os do grego “theós”.',
         table: {
           head: ['Terminação', 'Gênero', 'Exemplos'],
           rows: [
@@ -535,7 +535,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Os sobrenomes contam a história',
-        text: 'Os sobrenomes lituanos também têm gênero, e o feminino tradicional diz o estado civil. A partir do sobrenome do pai, Kazlauskas, a esposa é «Kazlauskienė» e a filha solteira é «Kazlauskaitė». De -is ou -ys: Adomaitis → Adomaitienė, Adomaitytė. De -us: Jankus → Jankuvienė, Jankutė. Hoje existe também uma forma feminina neutra, que não indica o estado civil (Kazlauskė), usada por quem prefere.',
+        text: 'Os sobrenomes lituanos também têm gênero, e o feminino tradicional diz o estado civil. A partir do sobrenome do pai, Kazlauskas, a esposa é “Kazlauskienė” e a filha solteira é “Kazlauskaitė”. De -is ou -ys: Adomaitis → Adomaitienė, Adomaitytė. De -us: Jankus → Jankuvienė, Jankutė. Hoje existe também uma forma feminina neutra, que não indica o estado civil (Kazlauskė), usada por quem prefere.',
         table: {
           head: ['Pai / marido', 'Esposa', 'Filha'],
           rows: [
@@ -551,7 +551,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'O acusativo: o objeto direto',
-        text: 'O nominativo (a forma do dicionário) é o sujeito. Quando a palavra é o objeto direto (o que se vê, se compra, se lê), ela passa ao acusativo. Na escrita, o acusativo singular quase sempre ganha uma letra com rabinho: -ą, -ę, -į, -ų. Como essas letras hoje são só vogais longas, a diferença na fala é pequena, mas na escrita é obrigatória. O acusativo também marca tempo: «kiekvieną dieną» (todo dia), «visą naktį» (a noite toda).',
+        text: 'O nominativo (a forma do dicionário) é o sujeito. Quando a palavra é o objeto direto (o que se vê, se compra, se lê), ela passa ao acusativo. Na escrita, o acusativo singular quase sempre ganha uma letra com rabinho: -ą, -ę, -į, -ų. Como essas letras hoje são só vogais longas, a diferença na fala é pequena, mas na escrita é obrigatória. O acusativo também marca tempo: “kiekvieną dieną” (todo dia), “visą naktį” (a noite toda).',
         table: {
           head: ['Nominativo', 'Acusativo', 'Português'],
           rows: [
@@ -576,27 +576,27 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Procurar um artigo: «o livro» e «um livro» são só «knyga». Não traduza «o» e «a».',
-      'Achar que todo -is é masculino: «naktis», «akis», «širdis», «žuvis», «pilis» são femininos.',
-      'Deixar o objeto no nominativo: «Aš matau namas» está errado; o certo é «Aš matau namą».',
+      'Procurar um artigo: “o livro” e “um livro” são só “knyga”. Não traduza “o” e “a”.',
+      'Achar que todo -is é masculino: “naktis”, “akis”, “širdis”, “žuvis”, “pilis” são femininos.',
+      'Deixar o objeto no nominativo: “Aš matau namas” está errado; o certo é “Aš matau namą”.',
       'Esquecer o rabinho no acusativo escrito: knygą, gėlę, brolį, sūnų. Sem ele, a palavra vira nominativo.',
-      'Chamar a senhora Kazlauskienė de «ponia Kazlauskas»: o sobrenome feminino tem forma própria.',
+      'Chamar a senhora Kazlauskienė de “ponia Kazlauskas”: o sobrenome feminino tem forma própria.',
     ],
     quiz: [
       {
-        question: 'Qual é o gênero de «naktis» (noite)?',
+        question: 'Qual é o gênero de “naktis” (noite)?',
         options: ['feminino', 'masculino', 'neutro'],
         answer: 'feminino',
-        explanation: 'A maioria das palavras em -is é masculina, mas «naktis», «akis», «širdis» são femininas.',
+        explanation: 'A maioria das palavras em -is é masculina, mas “naktis”, “akis”, “širdis” são femininas.',
       },
       {
-        question: 'Complete: «Aš perku ___.» (duona, pão)',
+        question: 'Complete: “Aš perku ___.” (duona, pão)',
         options: ['duoną', 'duona', 'duonos'],
         answer: 'duoną',
         explanation: 'O objeto direto vai para o acusativo: -a → -ą.',
       },
       {
-        question: 'Qual é o acusativo de «brolis» (irmão)?',
+        question: 'Qual é o acusativo de “brolis” (irmão)?',
         options: ['brolį', 'brolią', 'brolis'],
         answer: 'brolį',
         explanation: 'Palavras em -is fazem o acusativo em -į: brolis → brolį.',
@@ -608,7 +608,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         explanation: '-aitė é a filha; -ienė é a esposa.',
       },
       {
-        question: 'Qual é o acusativo de «sūnus» (filho)?',
+        question: 'Qual é o acusativo de “sūnus” (filho)?',
         options: ['sūnų', 'sūną', 'sūnį'],
         answer: 'sūnų',
         explanation: 'Palavras em -us fazem o acusativo em -ų: sūnus → sūnų.',
@@ -618,13 +618,13 @@ export const GRAMMAR_LT: GrammarTopic[] = [
   {
     id: 'lt-g6',
     level: 'A1.2',
-    title: '«Turiu» (ter), a negação ne- e o genitivo da negação',
+    title: '“Turiu” (ter), a negação ne- e o genitivo da negação',
     emoji: '🚫',
-    summary: 'O ne- se gruda no verbo: turiu → neturiu, žinau → nežinau. E, quando um verbo negado tem objeto direto, o objeto sai do acusativo e vai para o genitivo: «Turiu šunį», mas «Neturiu šuns». O mesmo vale para «nėra» (não há): «Čia nėra kavinės».',
+    summary: 'O ne- se gruda no verbo: turiu → neturiu, žinau → nežinau. E, quando um verbo negado tem objeto direto, o objeto sai do acusativo e vai para o genitivo: “Turiu šunį”, mas “Neturiu šuns”. O mesmo vale para “nėra” (não há): “Čia nėra kavinės”.',
     sections: [
       {
-        heading: 'O verbo «turėti» (ter)',
-        text: '«Turėti» é da 2ª conjugação (turi). Ele serve para posse («Turiu šunį», tenho um cachorro) e também para obrigação, com infinitivo: «Turiu eiti» (tenho que ir). Para «há», o lituano não usa «ter»: usa «yra» («Čia yra kavinė», aqui há um café).',
+        heading: 'O verbo “turėti” (ter)',
+        text: '“Turėti” é da 2ª conjugação (turi). Ele serve para posse (“Turiu šunį”, tenho um cachorro) e também para obrigação, com infinitivo: “Turiu eiti” (tenho que ir). Para “há”, o lituano não usa “ter”: usa “yra” (“Čia yra kavinė”, aqui há um café).',
         table: {
           head: ['Pessoa', 'Afirmativo', 'Negativo'],
           rows: [
@@ -644,7 +644,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'A negação: ne- grudado',
-        text: 'A negação do verbo é o prefixo ne-, escrito junto: dirbu → nedirbu, esu → nesu, yra → nėra. Diante de outras palavras, «ne» fica separado: «ne aš» (não eu), «ne šiandien» (hoje não). Como no português, a negação dupla é normal e obrigatória: «Nieko nežinau» (não sei nada), «Niekas neatėjo» (ninguém veio).',
+        text: 'A negação do verbo é o prefixo ne-, escrito junto: dirbu → nedirbu, esu → nesu, yra → nėra. Diante de outras palavras, “ne” fica separado: “ne aš” (não eu), “ne šiandien” (hoje não). Como no português, a negação dupla é normal e obrigatória: “Nieko nežinau” (não sei nada), “Niekas neatėjo” (ninguém veio).',
         examples: [
           ['Aš nerūkau.', 'Eu não fumo.'],
           ['Ji nekalba angliškai.', 'Ela não fala inglês.'],
@@ -654,7 +654,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'O genitivo da negação',
-        text: 'Aqui mora a surpresa: o objeto direto de um verbo negado não fica no acusativo, vai para o genitivo, o caso do «de». «Matau namą» (vejo a casa) → «Nematau namo» (não vejo a casa). A regra é firme na língua padrão, e vale também para «nėra» (não há, não está), que põe no genitivo quem ou o que falta: «Tomo nėra namie» (o Tomas não está em casa). Atenção à diferença: quando «nėra» só liga sujeito e qualidade, não há genitivo: «Tomas nėra mokytojas» (o Tomas não é professor).',
+        text: 'Aqui mora a surpresa: o objeto direto de um verbo negado não fica no acusativo, vai para o genitivo, o caso do “de”. “Matau namą” (vejo a casa) → “Nematau namo” (não vejo a casa). A regra é firme na língua padrão, e vale também para “nėra” (não há, não está), que põe no genitivo quem ou o que falta: “Tomo nėra namie” (o Tomas não está em casa). Atenção à diferença: quando “nėra” só liga sujeito e qualidade, não há genitivo: “Tomas nėra mokytojas” (o Tomas não é professor).',
         table: {
           head: ['Nominativo', 'Genitivo', 'Afirmativo', 'Negativo'],
           rows: [
@@ -679,15 +679,15 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Escrever «ne turiu» separado: a negação do verbo é grudada, «neturiu».',
-      'Manter o acusativo depois do verbo negado: não é «Neturiu laiką», é «Neturiu laiko».',
-      'Usar «turėti» para «há»: «Čia yra parkas» (aqui há um parque), e na negação «Čia nėra parko».',
-      'Pôr o predicado no genitivo: «Tomas nėra mokytojas» fica no nominativo, porque ali não se nega a existência, só a qualidade.',
-      'Tirar a dupla negação por achar que é erro: «Nieko nematau» é o certo; «nieko matau» não existe.',
+      'Escrever “ne turiu” separado: a negação do verbo é grudada, “neturiu”.',
+      'Manter o acusativo depois do verbo negado: não é “Neturiu laiką”, é “Neturiu laiko”.',
+      'Usar “turėti” para “há”: “Čia yra parkas” (aqui há um parque), e na negação “Čia nėra parko”.',
+      'Pôr o predicado no genitivo: “Tomas nėra mokytojas” fica no nominativo, porque ali não se nega a existência, só a qualidade.',
+      'Tirar a dupla negação por achar que é erro: “Nieko nematau” é o certo; “nieko matau” não existe.',
     ],
     quiz: [
       {
-        question: 'Complete: «Aš neturiu ___.» (brolis)',
+        question: 'Complete: “Aš neturiu ___.” (brolis)',
         options: ['brolio', 'brolį', 'brolis'],
         answer: 'brolio',
         explanation: 'Com o verbo negado, o objeto vai para o genitivo: neturiu brolio.',
@@ -696,22 +696,22 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         question: 'Qual é a forma certa?',
         options: ['nežinau', 'ne žinau', 'nežinu'],
         answer: 'nežinau',
-        explanation: 'O ne- se escreve junto do verbo, e «žinoti» faz «žinau».',
+        explanation: 'O ne- se escreve junto do verbo, e “žinoti” faz “žinau”.',
       },
       {
-        question: 'Complete: «Čia nėra ___.» (kavinė, café)',
+        question: 'Complete: “Čia nėra ___.” (kavinė, café)',
         options: ['kavinės', 'kavinę', 'kavinė'],
         answer: 'kavinės',
-        explanation: '«nėra» no sentido de «não há» pede genitivo: kavinė → kavinės.',
+        explanation: '“nėra” no sentido de “não há” pede genitivo: kavinė → kavinės.',
       },
       {
         question: 'Qual frase está certa?',
         options: ['Tomas nėra mokytojas.', 'Tomas nėra mokytojo.', 'Tomo nėra mokytojas.'],
         answer: 'Tomas nėra mokytojas.',
-        explanation: 'Aqui «nėra» só nega a qualidade (não é professor), então sujeito e predicado ficam no nominativo.',
+        explanation: 'Aqui “nėra” só nega a qualidade (não é professor), então sujeito e predicado ficam no nominativo.',
       },
       {
-        question: 'Como se diz «Não vejo nada»?',
+        question: 'Como se diz “Não vejo nada”?',
         options: ['Nieko nematau.', 'Nieko matau.', 'Ne matau nieko.'],
         answer: 'Nieko nematau.',
         explanation: 'A negação dupla é obrigatória, e o ne- vai grudado no verbo.',
@@ -724,11 +724,11 @@ export const GRAMMAR_LT: GrammarTopic[] = [
     level: 'A2.1',
     title: 'Genitivo, locativo e preposições: Vilniuje, į Vilnių, iš Vilniaus',
     emoji: '📍',
-    summary: 'O genitivo é o caso do «de» e vem antes do substantivo (Tomo knyga, o livro do Tomas). O locativo é o caso do «em», sem preposição nenhuma (Vilniuje, em Vilnius). E cada preposição pede um caso: į + acusativo (para), iš + genitivo (de), su + instrumental (com).',
+    summary: 'O genitivo é o caso do “de” e vem antes do substantivo (Tomo knyga, o livro do Tomas). O locativo é o caso do “em”, sem preposição nenhuma (Vilniuje, em Vilnius). E cada preposição pede um caso: į + acusativo (para), iš + genitivo (de), su + instrumental (com).',
     sections: [
       {
         heading: 'O genitivo: posse e parte',
-        text: 'O genitivo responde a «de quem?» e «de quê?». Diferente do português, ele vem ANTES da palavra que determina: «Tomo namas» é «a casa do Tomas», «Lietuvos sostinė» é «a capital da Lituânia», «Vilniaus senamiestis» é «a Cidade Velha de Vilnius». Ele também indica uma parte, uma quantidade indefinida: «Duok vandens» (me dá um pouco de água), «puodelis kavos» (uma xícara de café), «daug laiko» (muito tempo).',
+        text: 'O genitivo responde a “de quem?” e “de quê?”. Diferente do português, ele vem ANTES da palavra que determina: “Tomo namas” é “a casa do Tomas”, “Lietuvos sostinė” é “a capital da Lituânia”, “Vilniaus senamiestis” é “a Cidade Velha de Vilnius”. Ele também indica uma parte, uma quantidade indefinida: “Duok vandens” (me dá um pouco de água), “puodelis kavos” (uma xícara de café), “daug laiko” (muito tempo).',
         table: {
           head: ['Nominativo', 'Genitivo', 'Exemplo'],
           rows: [
@@ -748,7 +748,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'O locativo: onde?',
-        text: 'Para dizer onde alguém está, o lituano não usa preposição: a própria terminação significa «em». Vilnius → Vilniuje, Kaunas → Kaune, Klaipėda → Klaipėdoje. Nomes de cidade no plural fazem -uose: Trakai → Trakuose, Šiauliai → Šiauliuose. «Em casa» é uma forma especial: «namie» (ou «namuose»).',
+        text: 'Para dizer onde alguém está, o lituano não usa preposição: a própria terminação significa “em”. Vilnius → Vilniuje, Kaunas → Kaune, Klaipėda → Klaipėdoje. Nomes de cidade no plural fazem -uose: Trakai → Trakuose, Šiauliai → Šiauliuose. “Em casa” é uma forma especial: “namie” (ou “namuose”).',
         table: {
           head: ['Terminação', 'Locativo', 'Exemplos'],
           rows: [
@@ -770,7 +770,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Onde, para onde, de onde',
-        text: 'Três ideias, três casos. «Kur?» serve para «onde?» e para «para onde?»: «Kur gyveni?» (onde você mora?) pede o locativo, sem preposição; «Kur eini?» (aonde você vai?) pede «į» + acusativo. «Iš kur?» (de onde?) pede «iš» + genitivo. Para ir à casa de alguém, usa-se «pas» + acusativo: «pas draugą» (à casa do amigo). E a volta para casa tem forma própria: «Einu namo» (vou para casa).',
+        text: 'Três ideias, três casos. “Kur?” serve para “onde?” e para “para onde?”: “Kur gyveni?” (onde você mora?) pede o locativo, sem preposição; “Kur eini?” (aonde você vai?) pede “į” + acusativo. “Iš kur?” (de onde?) pede “iš” + genitivo. Para ir à casa de alguém, usa-se “pas” + acusativo: “pas draugą” (à casa do amigo). E a volta para casa tem forma própria: “Einu namo” (vou para casa).',
         table: {
           head: ['Cidade', 'Onde? (locativo)', 'Para onde? (į + acus.)', 'De onde? (iš + gen.)'],
           rows: [
@@ -790,7 +790,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'As preposições e seus casos',
-        text: 'Cada preposição tem o seu caso, e vale aprender os pares como bloco. As mais usadas com genitivo: iš (de, de dentro de), be (sem), prie (junto de, perto de), ant (em cima de), nuo… iki (de… até), po (depois de), dėl (por causa de). Com acusativo: į (para dentro, para), pas (à casa de, até alguém), per (através de, durante), apie (sobre, a respeito de), prieš (antes de; contra). Com instrumental: su (com). Note que «em» e «no» não têm preposição: é o locativo.',
+        text: 'Cada preposição tem o seu caso, e vale aprender os pares como bloco. As mais usadas com genitivo: iš (de, de dentro de), be (sem), prie (junto de, perto de), ant (em cima de), nuo… iki (de… até), po (depois de), dėl (por causa de). Com acusativo: į (para dentro, para), pas (à casa de, até alguém), per (através de, durante), apie (sobre, a respeito de), prieš (antes de; contra). Com instrumental: su (com). Note que “em” e “no” não têm preposição: é o locativo.',
         table: {
           head: ['Preposição', 'Caso', 'Exemplo', 'Português'],
           rows: [
@@ -816,39 +816,39 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pôr o genitivo depois, como o nosso «de»: é «Tomo namas», não «namas Tomo».',
-      'Usar «į» para «em»: «Gyvenu į Vilniuje» está errado. «Em» é só o locativo: «Gyvenu Vilniuje». «Į» é movimento: «Važiuoju į Vilnių».',
-      'Esquecer o caso depois da preposição: «be cukraus» (genitivo), «į parduotuvę» (acusativo), nunca «be cukrus».',
-      'Tratar Trakai e Šiauliai como singular: são nomes no plural, então «Trakuose», «į Trakus», «iš Šiaulių».',
-      'Dizer «į namus» para «ir para casa»: o natural é «einu namo».',
+      'Pôr o genitivo depois, como o nosso “de”: é “Tomo namas”, não “namas Tomo”.',
+      'Usar “į” para “em”: “Gyvenu į Vilniuje” está errado. “Em” é só o locativo: “Gyvenu Vilniuje”. “Į” é movimento: “Važiuoju į Vilnių”.',
+      'Esquecer o caso depois da preposição: “be cukraus” (genitivo), “į parduotuvę” (acusativo), nunca “be cukrus”.',
+      'Tratar Trakai e Šiauliai como singular: são nomes no plural, então “Trakuose”, “į Trakus”, “iš Šiaulių”.',
+      'Dizer “į namus” para “ir para casa”: o natural é “einu namo”.',
     ],
     quiz: [
       {
-        question: 'Complete: «Aš gyvenu ___.» (Kaunas)',
+        question: 'Complete: “Aš gyvenu ___.” (Kaunas)',
         options: ['Kaune', 'į Kauną', 'iš Kauno'],
         answer: 'Kaune',
-        explanation: '«Onde» pede o locativo, sem preposição: Kaunas → Kaune.',
+        explanation: '“Onde” pede o locativo, sem preposição: Kaunas → Kaune.',
       },
       {
-        question: 'Como se diz «a capital da Lituânia»?',
+        question: 'Como se diz “a capital da Lituânia”?',
         options: ['Lietuvos sostinė', 'sostinė Lietuvos', 'sostinė iš Lietuvos'],
         answer: 'Lietuvos sostinė',
         explanation: 'O genitivo de posse vem antes do substantivo: Lietuvos sostinė.',
       },
       {
-        question: 'Complete: «Rytoj važiuoju ___.» (para Klaipėda)',
+        question: 'Complete: “Rytoj važiuoju ___.” (para Klaipėda)',
         options: ['į Klaipėdą', 'Klaipėdoje', 'iš Klaipėdos'],
         answer: 'į Klaipėdą',
         explanation: 'Movimento para um lugar: į + acusativo.',
       },
       {
-        question: 'Qual caso vem depois de «be» (sem)?',
+        question: 'Qual caso vem depois de “be” (sem)?',
         options: ['genitivo', 'acusativo', 'locativo'],
         answer: 'genitivo',
-        explanation: '«be» pede genitivo: be cukraus, be pinigų.',
+        explanation: '“be” pede genitivo: be cukraus, be pinigų.',
       },
       {
-        question: 'Qual é o locativo de «Trakai»?',
+        question: 'Qual é o locativo de “Trakai”?',
         options: ['Trakuose', 'Trakoje', 'Trake'],
         answer: 'Trakuose',
         explanation: 'Trakai é plural, e o locativo plural dos nomes em -ai é -uose.',
@@ -858,13 +858,13 @@ export const GRAMMAR_LT: GrammarTopic[] = [
   {
     id: 'lt-g8',
     level: 'A2.1',
-    title: 'Perguntas com «ar», palavras interrogativas e adjetivos com concordância',
+    title: 'Perguntas com “ar”, palavras interrogativas e adjetivos com concordância',
     emoji: '❓',
-    summary: 'Pergunta de sim ou não começa com «ar»: «Ar tu kalbi lietuviškai?». E, como no português, a resposta curta repete o verbo: «Kalbu». Os adjetivos vêm antes do substantivo e concordam com ele em gênero, número e caso: geras draugas, gera draugė, gerą draugą, gerame name.',
+    summary: 'Pergunta de sim ou não começa com “ar”: “Ar tu kalbi lietuviškai?”. E, como no português, a resposta curta repete o verbo: “Kalbu”. Os adjetivos vêm antes do substantivo e concordam com ele em gênero, número e caso: geras draugas, gera draugė, gerą draugą, gerame name.',
     sections: [
       {
-        heading: 'Perguntas de sim ou não: «ar»',
-        text: '«Ar» é uma partícula que só avisa: «isto é uma pergunta». Ela vem no começo, e a ordem das palavras não muda: «Tu kalbi lietuviškai» → «Ar tu kalbi lietuviškai?». Na fala, dá para deixar o «ar» de lado e usar só a entonação. Na resposta, o lituano faz igual ao português: em vez de só «taip» (sim), repete-se o verbo. Para pedir confirmação, acrescenta-se «ar ne?» no fim (não é?).',
+        heading: 'Perguntas de sim ou não: “ar”',
+        text: '“Ar” é uma partícula que só avisa: “isto é uma pergunta”. Ela vem no começo, e a ordem das palavras não muda: “Tu kalbi lietuviškai” → “Ar tu kalbi lietuviškai?”. Na fala, dá para deixar o “ar” de lado e usar só a entonação. Na resposta, o lituano faz igual ao português: em vez de só “taip” (sim), repete-se o verbo. Para pedir confirmação, acrescenta-se “ar ne?” no fim (não é?).',
         examples: [
           ['Ar tu kalbi lietuviškai? – Kalbu, bet nedaug.', 'Você fala lituano? – Falo, mas pouco.'],
           ['Ar čia Užupis? – Taip, čia.', 'Aqui é Užupis? – Sim, é aqui.'],
@@ -874,7 +874,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'As palavras interrogativas',
-        text: 'Com palavra interrogativa, não se usa «ar». «Kas» é «quem» e «o quê»; como objeto direto vira «ką». «Koks / kokia» (que tipo de, como é) e «kuris / kuri» (qual) concordam em gênero com o substantivo.',
+        text: 'Com palavra interrogativa, não se usa “ar”. “Kas” é “quem” e “o quê”; como objeto direto vira “ką”. “Koks / kokia” (que tipo de, como é) e “kuris / kuri” (qual) concordam em gênero com o substantivo.',
         table: {
           head: ['Lituano', 'Português', 'Exemplo'],
           rows: [
@@ -899,7 +899,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Os três tipos de adjetivo',
-        text: 'O adjetivo vem antes do substantivo e copia gênero, número e caso. No masculino ele termina em -as, -us ou -is; no feminino, em -a, -i ou -ė. Aprenda o par: geras / gera (bom, boa), gražus / graži (bonito, bonita), didelis / didelė (grande). Como predicado, depois de «būti», ele também concorda: «Namas didelis. Upė didelė.»',
+        text: 'O adjetivo vem antes do substantivo e copia gênero, número e caso. No masculino ele termina em -as, -us ou -is; no feminino, em -a, -i ou -ė. Aprenda o par: geras / gera (bom, boa), gražus / graži (bonito, bonita), didelis / didelė (grande). Como predicado, depois de “būti”, ele também concorda: “Namas didelis. Upė didelė.”',
         table: {
           head: ['Caso', 'geras (m.)', 'gera (f.)', 'gražus (m.)', 'graži (f.)', 'didelis (m.)', 'didelė (f.)'],
           rows: [
@@ -917,8 +917,8 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'O neutro: «šalta», «gražu»',
-        text: 'Os adjetivos lituanos guardam uma forma neutra, sem substantivo, para falar do tempo, de sensações e de situações: é o nosso «está frio», «é bom», «que interessante». Os de tipo geras fazem o neutro em -a (šalta, gera, šilta); os de tipo gražus, em -u (gražu, įdomu, sunku). Com o dativo, ela diz como alguém se sente: «Man šalta» (estou com frio).',
+        heading: 'O neutro: “šalta”, “gražu”',
+        text: 'Os adjetivos lituanos guardam uma forma neutra, sem substantivo, para falar do tempo, de sensações e de situações: é o nosso “está frio”, “é bom”, “que interessante”. Os de tipo geras fazem o neutro em -a (šalta, gera, šilta); os de tipo gražus, em -u (gražu, įdomu, sunku). Com o dativo, ela diz como alguém se sente: “Man šalta” (estou com frio).',
         examples: [
           ['Šiandien šalta.', 'Hoje está frio.'],
           ['Čia labai gražu!', 'Aqui é muito bonito!'],
@@ -928,39 +928,39 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar «ar» junto com palavra interrogativa: é «Kur tu gyveni?», nunca «Ar kur tu gyveni?».',
-      'Responder só «taip» a tudo: o natural é repetir o verbo, «Ar turi laiko? – Turiu».',
-      'Deixar o adjetivo sem concordar: «gražus mergina» está errado, é «graži mergina»; e no locativo, «dideliame name».',
-      'Pôr o adjetivo depois, como em português: o normal é «didelis namas», não «namas didelis» (que vira uma frase: «a casa é grande»).',
-      'Usar a forma masculina para falar do tempo: é «Šalta», «Gražu», não «Šaltas».',
+      'Usar “ar” junto com palavra interrogativa: é “Kur tu gyveni?”, nunca “Ar kur tu gyveni?”.',
+      'Responder só “taip” a tudo: o natural é repetir o verbo, “Ar turi laiko? – Turiu”.',
+      'Deixar o adjetivo sem concordar: “gražus mergina” está errado, é “graži mergina”; e no locativo, “dideliame name”.',
+      'Pôr o adjetivo depois, como em português: o normal é “didelis namas”, não “namas didelis” (que vira uma frase: “a casa é grande”).',
+      'Usar a forma masculina para falar do tempo: é “Šalta”, “Gražu”, não “Šaltas”.',
     ],
     quiz: [
       {
         question: 'Como começa uma pergunta de sim ou não?',
         options: ['ar', 'kas', 'kad'],
         answer: 'ar',
-        explanation: '«Ar» marca a pergunta de sim ou não: «Ar tu lietuvis?».',
+        explanation: '“Ar” marca a pergunta de sim ou não: “Ar tu lietuvis?”.',
       },
       {
-        question: 'Complete: «Vilnius yra ___ miestas.»',
+        question: 'Complete: “Vilnius yra ___ miestas.”',
         options: ['gražus', 'graži', 'gražų'],
         answer: 'gražus',
-        explanation: '«miestas» é masculino e está no nominativo: gražus miestas.',
+        explanation: '“miestas” é masculino e está no nominativo: gražus miestas.',
       },
       {
-        question: 'Complete: «Gyvenu ___ name.»',
+        question: 'Complete: “Gyvenu ___ name.”',
         options: ['dideliame', 'didelėje', 'didelis'],
         answer: 'dideliame',
-        explanation: '«name» é locativo masculino, e o adjetivo acompanha: dideliame name.',
+        explanation: '“name” é locativo masculino, e o adjetivo acompanha: dideliame name.',
       },
       {
-        question: 'Qual palavra pergunta «de quem?»',
+        question: 'Qual palavra pergunta “de quem?”',
         options: ['kieno', 'kiek', 'kuris'],
         answer: 'kieno',
-        explanation: '«kieno» é «de quem»; «kiek» é «quanto», e «kuris» é «qual».',
+        explanation: '“kieno” é “de quem”; “kiek” é “quanto”, e “kuris” é “qual”.',
       },
       {
-        question: 'Como se diz «Está frio»?',
+        question: 'Como se diz “Está frio”?',
         options: ['Šalta.', 'Šaltas.', 'Šalti.'],
         answer: 'Šalta.',
         explanation: 'Para o tempo e as sensações usa-se o neutro: šalta, šilta, gražu.',
@@ -977,7 +977,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
     sections: [
       {
         heading: 'As três formas de cada verbo',
-        text: 'Nos dicionários lituanos todo verbo aparece com três formas: o infinitivo, a terceira pessoa do presente e a terceira pessoa do passado. Com elas, você conjuga tudo. Como no presente, a terceira pessoa do passado serve para o singular e o plural: «jis buvo», «jie buvo» (ele foi/esteve, eles foram/estiveram).',
+        text: 'Nos dicionários lituanos todo verbo aparece com três formas: o infinitivo, a terceira pessoa do presente e a terceira pessoa do passado. Com elas, você conjuga tudo. Como no presente, a terceira pessoa do passado serve para o singular e o plural: “jis buvo”, “jie buvo” (ele foi/esteve, eles foram/estiveram).',
         table: {
           head: ['Infinitivo', 'Presente', 'Passado', 'Português'],
           rows: [
@@ -1003,7 +1003,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Conjugação: -o e -ė',
-        text: 'No passado em -o, as terminações são -au, -ai, -o, -ome, -ote, -o. No passado em -ė, são -iau, -ei, -ė, -ėme, -ėte, -ė. Nesse segundo grupo, o -iau do «eu» amolece a consoante, e t e d viram č e dž: matyti → mačiau (eu vi), skaityti → skaičiau (eu li), vesti → vedžiau (eu levei).',
+        text: 'No passado em -o, as terminações são -au, -ai, -o, -ome, -ote, -o. No passado em -ė, são -iau, -ei, -ė, -ėme, -ėte, -ė. Nesse segundo grupo, o -iau do “eu” amolece a consoante, e t e d viram č e dž: matyti → mačiau (eu vi), skaityti → skaičiau (eu li), vesti → vedžiau (eu levei).',
         table: {
           head: ['Pessoa', 'būti (-o)', 'dirbti (-o)', 'rašyti (-ė)', 'matyti (-ė)'],
           rows: [
@@ -1033,7 +1033,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Um passado para dois tempos',
-        text: 'O passado simples cobre o nosso pretérito perfeito e boa parte do imperfeito: «rašė» pode ser «escreveu» ou «escrevia, estava escrevendo». O que separa «fez» de «fazia» em lituano é sobretudo o aspecto, marcado por prefixos (rašė × parašė), que você verá no B1.2. Por enquanto, a negação funciona como no presente, com o genitivo: «Vakar negėriau kavos» (ontem não tomei café).',
+        text: 'O passado simples cobre o nosso pretérito perfeito e boa parte do imperfeito: “rašė” pode ser “escreveu” ou “escrevia, estava escrevendo”. O que separa “fez” de “fazia” em lituano é sobretudo o aspecto, marcado por prefixos (rašė × parašė), que você verá no B1.2. Por enquanto, a negação funciona como no presente, com o genitivo: “Vakar negėriau kavos” (ontem não tomei café).',
         examples: [
           ['Anksčiau aš gyvenau San Paule.', 'Antes eu morava em São Paulo.'],
           ['Vakar negėriau kavos.', 'Ontem não tomei café.'],
@@ -1042,41 +1042,41 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Criar um passado regular para todos: «rašyti» não faz «rašo» no passado, faz «rašė»; «eiti» faz «ėjo», com ė no começo.',
-      'Esquecer que t e d viram č e dž no «eu» do passado em -ė: «mačiau», não «matiau».',
-      'Confundir a terceira pessoa do presente com a do passado nos verbos em -yti: «rašo» (escreve) × «rašė» (escreveu).',
-      'Achar que precisa de um tempo especial para o imperfeito: «gyvenau» já é «morei» e «morava».',
+      'Criar um passado regular para todos: “rašyti” não faz “rašo” no passado, faz “rašė”; “eiti” faz “ėjo”, com ė no começo.',
+      'Esquecer que t e d viram č e dž no “eu” do passado em -ė: “mačiau”, não “matiau”.',
+      'Confundir a terceira pessoa do presente com a do passado nos verbos em -yti: “rašo” (escreve) × “rašė” (escreveu).',
+      'Achar que precisa de um tempo especial para o imperfeito: “gyvenau” já é “morei” e “morava”.',
     ],
     quiz: [
       {
-        question: 'Complete: «Vakar aš ___ Kaune.» (būti)',
+        question: 'Complete: “Vakar aš ___ Kaune.” (būti)',
         options: ['buvau', 'buvo', 'esu'],
         answer: 'buvau',
-        explanation: 'Passado de «būti» na 1ª pessoa: buvau.',
+        explanation: 'Passado de “būti” na 1ª pessoa: buvau.',
       },
       {
-        question: 'Qual é o passado (3ª pessoa) de «rašyti»?',
+        question: 'Qual é o passado (3ª pessoa) de “rašyti”?',
         options: ['rašė', 'rašo', 'rašojo'],
         answer: 'rašė',
         explanation: 'rašyti – rašo – rašė: o passado é em -ė.',
       },
       {
-        question: 'Como se diz «eu vi»?',
+        question: 'Como se diz “eu vi”?',
         options: ['mačiau', 'matiau', 'matau'],
         answer: 'mačiau',
-        explanation: 'No passado em -ė, o t vira č antes de -iau: mačiau. «Matau» é o presente.',
+        explanation: 'No passado em -ė, o t vira č antes de -iau: mačiau. “Matau” é o presente.',
       },
       {
-        question: 'Qual é o passado de «važiuoti»?',
+        question: 'Qual é o passado de “važiuoti”?',
         options: ['važiavo', 'važiuojo', 'važiavė'],
         answer: 'važiavo',
         explanation: 'Os verbos em -uoti (e em -auti) fazem o passado em -avo.',
       },
       {
-        question: 'Complete: «Mes ___ cepelinus.» (valgyti, passado)',
+        question: 'Complete: “Mes ___ cepelinus.” (valgyti, passado)',
         options: ['valgėme', 'valgome', 'valgėte'],
         answer: 'valgėme',
-        explanation: '«mes» no passado em -ė: valgėme. «Valgome» é o presente e «valgėte» é de «jūs».',
+        explanation: '“mes” no passado em -ė: valgėme. “Valgome” é o presente e “valgėte” é de “jūs”.',
       },
     ],
   },
@@ -1112,7 +1112,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Acusativo, genitivo e locativo no plural',
-        text: 'O acusativo plural termina em -us (masculinos), -as, -es ou -is (femininos). O genitivo plural é o mais fácil: sempre -ų. É a forma que aparece depois de «daug» (muito), «mažai» (pouco), «kiek» (quantos) e dos números de 10 a 20. O locativo plural termina em -uose, -ose, -ėse ou -yse.',
+        text: 'O acusativo plural termina em -us (masculinos), -as, -es ou -is (femininos). O genitivo plural é o mais fácil: sempre -ų. É a forma que aparece depois de “daug” (muito), “mažai” (pouco), “kiek” (quantos) e dos números de 10 a 20. O locativo plural termina em -uose, -ose, -ėse ou -yse.',
         table: {
           head: ['Nom. pl.', 'Acusativo', 'Genitivo', 'Locativo'],
           rows: [
@@ -1134,7 +1134,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Palavras que só existem no plural',
-        text: 'Algumas palavras lituanas são sempre plurais, mesmo quando falam de uma coisa só: «durys» (porta), «metai» (ano, anos), «pinigai» (dinheiro), «marškiniai» (camisa), «kelnės» (calça), «akiniai» (óculos), «Kalėdos» (Natal), «vestuvės» (casamento, a festa). Muitas cidades também: Trakai, Šiauliai, Druskininkai. Com elas, o verbo e o adjetivo ficam no plural, e para contar usam-se números especiais (vieneri metai, dvejos durys), que você verá mais adiante.',
+        text: 'Algumas palavras lituanas são sempre plurais, mesmo quando falam de uma coisa só: “durys” (porta), “metai” (ano, anos), “pinigai” (dinheiro), “marškiniai” (camisa), “kelnės” (calça), “akiniai” (óculos), “Kalėdos” (Natal), “vestuvės” (casamento, a festa). Muitas cidades também: Trakai, Šiauliai, Druskininkai. Com elas, o verbo e o adjetivo ficam no plural, e para contar usam-se números especiais (vieneri metai, dvejos durys), que você verá mais adiante.',
         examples: [
           ['Durys uždarytos.', 'A porta está fechada.'],
           ['Šie metai buvo geri.', 'Este ano foi bom.'],
@@ -1143,8 +1143,8 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         ],
       },
       {
-        heading: '«Namai» e «namo»: a casa e o lar',
-        text: '«Namas» é a casa, o prédio. No plural, «namai» é também o lar, a casa onde se vive: «Mano namai Vilniuje» (meu lar é em Vilnius). Daí vêm expressões fixas: «namie» ou «namuose» (em casa), «namo» (para casa), «iš namų» (de casa).',
+        heading: '“Namai” e “namo”: a casa e o lar',
+        text: '“Namas” é a casa, o prédio. No plural, “namai” é também o lar, a casa onde se vive: “Mano namai Vilniuje” (meu lar é em Vilnius). Daí vêm expressões fixas: “namie” ou “namuose” (em casa), “namo” (para casa), “iš namų” (de casa).',
         examples: [
           ['Esu namie.', 'Estou em casa.'],
           ['Einu namo.', 'Vou para casa.'],
@@ -1153,41 +1153,41 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Formar o plural com -s, como em português: «knyga» vira «knygos», «namas» vira «namai».',
-      'Tratar «durys» e «metai» como singular: «Durys atidarytos» (a porta está aberta), com verbo e particípio no plural.',
-      'Esquecer o genitivo plural depois de «daug»: «daug žmonių» (muita gente), não «daug žmonės».',
-      'Confundir «sūnus» (acusativo plural, os filhos como objeto) com «sūnus» (nominativo singular, filho): a forma é igual, o contexto decide.',
+      'Formar o plural com -s, como em português: “knyga” vira “knygos”, “namas” vira “namai”.',
+      'Tratar “durys” e “metai” como singular: “Durys atidarytos” (a porta está aberta), com verbo e particípio no plural.',
+      'Esquecer o genitivo plural depois de “daug”: “daug žmonių” (muita gente), não “daug žmonės”.',
+      'Confundir “sūnus” (acusativo plural, os filhos como objeto) com “sūnus” (nominativo singular, filho): a forma é igual, o contexto decide.',
     ],
     quiz: [
       {
-        question: 'Qual é o plural de «knyga» (livro)?',
+        question: 'Qual é o plural de “knyga” (livro)?',
         options: ['knygos', 'knygai', 'knygas'],
         answer: 'knygos',
-        explanation: 'Femininos em -a fazem o nominativo plural em -os. «Knygas» é o acusativo plural.',
+        explanation: 'Femininos em -a fazem o nominativo plural em -os. “Knygas” é o acusativo plural.',
       },
       {
-        question: 'Qual é o plural de «brolis» (irmão)?',
+        question: 'Qual é o plural de “brolis” (irmão)?',
         options: ['broliai', 'brolės', 'brolis'],
         answer: 'broliai',
         explanation: 'Masculinos em -is fazem o plural em -iai.',
       },
       {
-        question: 'Complete: «Lietuvoje daug ___.» (ežeras, lago)',
+        question: 'Complete: “Lietuvoje daug ___.” (ežeras, lago)',
         options: ['ežerų', 'ežerai', 'ežerus'],
         answer: 'ežerų',
-        explanation: 'Depois de «daug» vem o genitivo plural, que termina em -ų.',
+        explanation: 'Depois de “daug” vem o genitivo plural, que termina em -ų.',
       },
       {
         question: 'Qual destas palavras só existe no plural?',
         options: ['durys', 'langas', 'stalas'],
         answer: 'durys',
-        explanation: '«Durys» (porta) é sempre plural, como «metai», «pinigai» e «kelnės».',
+        explanation: '“Durys” (porta) é sempre plural, como “metai”, “pinigai” e “kelnės”.',
       },
       {
-        question: 'Como se diz «Vou para casa»?',
+        question: 'Como se diz “Vou para casa”?',
         options: ['Einu namo.', 'Einu namie.', 'Einu į namas.'],
         answer: 'Einu namo.',
-        explanation: '«namo» é a forma fixa para «para casa»; «namie» é «em casa».',
+        explanation: '“namo” é a forma fixa para “para casa”; “namie” é “em casa”.',
       },
     ],
   },
@@ -1196,11 +1196,11 @@ export const GRAMMAR_LT: GrammarTopic[] = [
     level: 'A2.2',
     title: 'Dativo e instrumental; os possessivos mano, tavo e savo',
     emoji: '🎁',
-    summary: 'O dativo é o «para alguém» (Duodu knygą broliui) e o caso de «Man patinka» (eu gosto). O instrumental é o «com» e o «por meio de» (su draugu, autobusu). Os possessivos mano, tavo, jo, jos não mudam nunca, e «savo» substitui todos quando o dono é o sujeito da frase.',
+    summary: 'O dativo é o “para alguém” (Duodu knygą broliui) e o caso de “Man patinka” (eu gosto). O instrumental é o “com” e o “por meio de” (su draugu, autobusu). Os possessivos mano, tavo, jo, jos não mudam nunca, e “savo” substitui todos quando o dono é o sujeito da frase.',
     sections: [
       {
         heading: 'O dativo: a quem?',
-        text: 'O dativo marca quem recebe: «Duodu knygą broliui» (dou o livro ao irmão), «Skambinu mamai» (ligo para a mãe). É também o caso de quem sente ou precisa: «Man patinka Vilnius» (eu gosto de Vilnius, literalmente «a mim agrada Vilnius»), «Man reikia pagalbos» (preciso de ajuda), «Man šalta» (estou com frio), e da idade: «Man dvidešimt metų».',
+        text: 'O dativo marca quem recebe: “Duodu knygą broliui” (dou o livro ao irmão), “Skambinu mamai” (ligo para a mãe). É também o caso de quem sente ou precisa: “Man patinka Vilnius” (eu gosto de Vilnius, literalmente “a mim agrada Vilnius”), “Man reikia pagalbos” (preciso de ajuda), “Man šalta” (estou com frio), e da idade: “Man dvidešimt metų”.',
         table: {
           head: ['Nominativo', 'Dativo', 'Pronome', 'Dativo'],
           rows: [
@@ -1222,7 +1222,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'O instrumental: com quê? com quem?',
-        text: 'O instrumental responde a «com quem?» (com a preposição su), a «com quê? por meio de quê?» (sem preposição) e diz o meio de transporte: «važiuoju autobusu» (vou de ônibus). Também serve para a profissão ou função, depois de «dirbti» (trabalhar como): «Ji dirba gydytoja» (ela trabalha como médica). No feminino em -a, o instrumental se escreve igual ao nominativo: «su mama».',
+        text: 'O instrumental responde a “com quem?” (com a preposição su), a “com quê? por meio de quê?” (sem preposição) e diz o meio de transporte: “važiuoju autobusu” (vou de ônibus). Também serve para a profissão ou função, depois de “dirbti” (trabalhar como): “Ji dirba gydytoja” (ela trabalha como médica). No feminino em -a, o instrumental se escreve igual ao nominativo: “su mama”.',
         table: {
           head: ['Nominativo', 'Instrumental', 'Pronome', 'Instrumental'],
           rows: [
@@ -1245,7 +1245,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Os possessivos: mano, tavo, jo, jos',
-        text: 'Boa notícia: os possessivos lituanos mais usados são genitivos dos pronomes e, por isso, não mudam nunca, nem com o gênero, nem com o número, nem com o caso. «Mano namas», «mano knyga», «mano namuose», «mano draugams»: sempre «mano».',
+        text: 'Boa notícia: os possessivos lituanos mais usados são genitivos dos pronomes e, por isso, não mudam nunca, nem com o gênero, nem com o número, nem com o caso. “Mano namas”, “mano knyga”, “mano namuose”, “mano draugams”: sempre “mano”.',
         table: {
           head: ['Pessoa', 'Possessivo', 'Português'],
           rows: [
@@ -1266,8 +1266,8 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         ],
       },
       {
-        heading: '«Savo»: o dono é o sujeito',
-        text: 'Quando o dono da coisa é o próprio sujeito da frase, o lituano usa «savo» em qualquer pessoa. Na terceira pessoa isso evita uma ambiguidade que o português tem: «Tomas myli savo žmoną» é «o Tomas ama a (própria) mulher»; «Tomas myli jo žmoną» é «o Tomas ama a mulher DELE» (de outro homem)! Com «aš» e «tu», «savo» é o normal na língua padrão: «Aš skambinu savo mamai».',
+        heading: '“Savo”: o dono é o sujeito',
+        text: 'Quando o dono da coisa é o próprio sujeito da frase, o lituano usa “savo” em qualquer pessoa. Na terceira pessoa isso evita uma ambiguidade que o português tem: “Tomas myli savo žmoną” é “o Tomas ama a (própria) mulher”; “Tomas myli jo žmoną” é “o Tomas ama a mulher DELE” (de outro homem)! Com “aš” e “tu”, “savo” é o normal na língua padrão: “Aš skambinu savo mamai”.',
         examples: [
           ['Tomas myli savo žmoną.', 'O Tomas ama a mulher dele (a própria).'],
           ['Rūta dažnai skambina savo seseriai.', 'A Rūta liga sempre para a irmã (dela mesma).'],
@@ -1277,41 +1277,41 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Traduzir «eu gosto de» com o sujeito «aš»: é «Man patinka» (a mim agrada), e o que agrada vai no nominativo: «Man patinka kava».',
-      'Esquecer o instrumental no transporte: «važiuoju autobusu», não «važiuoju su autobusu» (su é «em companhia de»).',
-      'Declinar «mano»: não existe «manos» ou «maną»; «mano» é sempre igual.',
-      'Usar «jo» quando o dono é o sujeito: «Jis myli savo žmoną». Com «jo žmoną», a mulher é de outro homem.',
+      'Traduzir “eu gosto de” com o sujeito “aš”: é “Man patinka” (a mim agrada), e o que agrada vai no nominativo: “Man patinka kava”.',
+      'Esquecer o instrumental no transporte: “važiuoju autobusu”, não “važiuoju su autobusu” (su é “em companhia de”).',
+      'Declinar “mano”: não existe “manos” ou “maną”; “mano” é sempre igual.',
+      'Usar “jo” quando o dono é o sujeito: “Jis myli savo žmoną”. Com “jo žmoną”, a mulher é de outro homem.',
     ],
     quiz: [
       {
-        question: 'Complete: «___ patinka Kaunas.» (eu gosto)',
+        question: 'Complete: “___ patinka Kaunas.” (eu gosto)',
         options: ['Man', 'Aš', 'Mane'],
         answer: 'Man',
-        explanation: '«patikti» pede o dativo de quem gosta: Man patinka.',
+        explanation: '“patikti” pede o dativo de quem gosta: Man patinka.',
       },
       {
-        question: 'Complete: «Važiuoju į darbą ___.» (de ônibus)',
+        question: 'Complete: “Važiuoju į darbą ___.” (de ônibus)',
         options: ['autobusu', 'su autobusu', 'autobuse'],
         answer: 'autobusu',
         explanation: 'O meio de transporte vai no instrumental, sem preposição.',
       },
       {
-        question: 'Complete: «Petras myli ___ žmoną.» (a própria mulher)',
+        question: 'Complete: “Petras myli ___ žmoną.” (a própria mulher)',
         options: ['savo', 'jo', 'jos'],
         answer: 'savo',
-        explanation: 'Quando o dono é o sujeito, usa-se «savo». «Jo žmoną» seria a mulher de outro homem.',
+        explanation: 'Quando o dono é o sujeito, usa-se “savo”. “Jo žmoną” seria a mulher de outro homem.',
       },
       {
-        question: 'Complete: «Duodu dovaną ___.» (para o irmão)',
+        question: 'Complete: “Duodu dovaną ___.” (para o irmão)',
         options: ['broliui', 'brolį', 'broliu'],
         answer: 'broliui',
-        explanation: 'Quem recebe vai no dativo: broliui. «Brolį» é acusativo, e «broliu» é instrumental.',
+        explanation: 'Quem recebe vai no dativo: broliui. “Brolį” é acusativo, e “broliu” é instrumental.',
       },
       {
-        question: 'Qual é o possessivo de «mes» (nós)?',
+        question: 'Qual é o possessivo de “mes” (nós)?',
         options: ['mūsų', 'mano', 'jūsų'],
         answer: 'mūsų',
-        explanation: '«mūsų» (nosso) não muda: mūsų namas, mūsų šalis.',
+        explanation: '“mūsų” (nosso) não muda: mūsų namas, mūsų šalis.',
       },
     ],
   },
@@ -1321,11 +1321,11 @@ export const GRAMMAR_LT: GrammarTopic[] = [
     level: 'B1.1',
     title: 'O futuro (-s-) e o imperativo (-k)',
     emoji: '🔮',
-    summary: 'O futuro se forma com um -s- grudado no radical do infinitivo: dirbti → dirbsiu, dirbs; būti → būsiu, bus. O imperativo troca o -ti por -k: rašyti → rašyk!, eiti → eik!, com -kite para vocês e para o tratamento de cortesia e -kime para «vamos!».',
+    summary: 'O futuro se forma com um -s- grudado no radical do infinitivo: dirbti → dirbsiu, dirbs; būti → būsiu, bus. O imperativo troca o -ti por -k: rašyti → rašyk!, eiti → eik!, com -kite para vocês e para o tratamento de cortesia e -kime para “vamos!”.',
     sections: [
       {
         heading: 'O futuro: tire o -ti, ponha o -s-',
-        text: 'O futuro lituano é um dos tempos mais regulares: sai do infinitivo sem o -ti, mais as terminações -siu, -si, -s, -sime, -site, -s. A terceira pessoa (igual no singular e no plural) é só o radical com -s: dirbs, rašys, kalbės, eis. Quando o radical termina em s, š, z ou ž, as consoantes se fundem: nešti → neš, vežti → veš. E em «būti» o u da terceira pessoa encurta: «bus».',
+        text: 'O futuro lituano é um dos tempos mais regulares: sai do infinitivo sem o -ti, mais as terminações -siu, -si, -s, -sime, -site, -s. A terceira pessoa (igual no singular e no plural) é só o radical com -s: dirbs, rašys, kalbės, eis. Quando o radical termina em s, š, z ou ž, as consoantes se fundem: nešti → neš, vežti → veš. E em “būti” o u da terceira pessoa encurta: “bus”.',
         table: {
           head: ['Pessoa', 'būti', 'dirbti', 'rašyti', 'eiti'],
           rows: [
@@ -1347,7 +1347,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Futuro ou presente?',
-        text: 'Como no português, um plano já combinado pode ir no presente: «Rytoj važiuoju į Nidą» (amanhã vou para Nida). O futuro é obrigatório quando se promete, se prevê ou quando o momento é mais distante ou incerto: «Kada nors aplankysiu Braziliją» (um dia vou visitar o Brasil). Depois de «kai» (quando) e «jei» (se) falando do futuro, o lituano usa o futuro, ao contrário do nosso subjuntivo: «Kai būsi Vilniuje, paskambink» (quando você estiver em Vilnius, liga).',
+        text: 'Como no português, um plano já combinado pode ir no presente: “Rytoj važiuoju į Nidą” (amanhã vou para Nida). O futuro é obrigatório quando se promete, se prevê ou quando o momento é mais distante ou incerto: “Kada nors aplankysiu Braziliją” (um dia vou visitar o Brasil). Depois de “kai” (quando) e “jei” (se) falando do futuro, o lituano usa o futuro, ao contrário do nosso subjuntivo: “Kai būsi Vilniuje, paskambink” (quando você estiver em Vilnius, liga).',
         examples: [
           ['Kai baigsiu darbą, eisiu namo.', 'Quando eu terminar o trabalho, vou para casa.'],
           ['Jei lis, liksime namie.', 'Se chover, vamos ficar em casa.'],
@@ -1356,7 +1356,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'O imperativo: -k, -kite, -kime',
-        text: 'O imperativo também nasce do infinitivo: tira-se o -ti e põe-se -k (tu), -kite (vocês ou o senhor, a senhora) ou -kime (vamos!). rašyti → rašyk, rašykite, rašykime. Se o radical já termina em k ou g, fica um k só: laukti → lauk (espera!), bėgti → bėk (corre!). A negação se gruda como sempre: «Nebijok!» (não tenha medo), «Nevėluok!» (não se atrase). Na fala, «vamos» também se diz com o presente: «Einam!», «Važiuojam!».',
+        text: 'O imperativo também nasce do infinitivo: tira-se o -ti e põe-se -k (tu), -kite (vocês ou o senhor, a senhora) ou -kime (vamos!). rašyti → rašyk, rašykite, rašykime. Se o radical já termina em k ou g, fica um k só: laukti → lauk (espera!), bėgti → bėk (corre!). A negação se gruda como sempre: “Nebijok!” (não tenha medo), “Nevėluok!” (não se atrase). Na fala, “vamos” também se diz com o presente: “Einam!”, “Važiuojam!”.',
         table: {
           head: ['Infinitivo', 'tu', 'jūs', 'mes (vamos)', 'Português'],
           rows: [
@@ -1379,7 +1379,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Ordens educadas e placas',
-        text: 'A cortesia vem com «prašom» (por favor) e com o -kite: «Prašom, užeikite» (por favor, entre). «Būk geras» / «būk gera» (seja bom, seja boa) é um «por favor» carinhoso entre íntimos, e «Būkite geri» vale para um grupo. Nas placas e nos avisos, o lituano usa o infinitivo em vez do imperativo: «Traukti» (puxe), «Stumti» (empurre), «Nerūkyti» (proibido fumar).',
+        text: 'A cortesia vem com “prašom” (por favor) e com o -kite: “Prašom, užeikite” (por favor, entre). “Būk geras” / “būk gera” (seja bom, seja boa) é um “por favor” carinhoso entre íntimos, e “Būkite geri” vale para um grupo. Nas placas e nos avisos, o lituano usa o infinitivo em vez do imperativo: “Traukti” (puxe), “Stumti” (empurre), “Nerūkyti” (proibido fumar).',
         examples: [
           ['Prašom, sėskitės.', 'Por favor, sente-se.'],
           ['Traukti / Stumti', 'Puxe / Empurre (nas portas)'],
@@ -1388,42 +1388,42 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar o presente depois de «kai» e «jei» falando do futuro: «Kai būsi Vilniuje…», não «Kai esi Vilniuje…».',
-      'Dizer «būs» na terceira pessoa: o futuro de «būti» é «bus», com u curto.',
-      'Duplicar o k: «laukti» faz «lauk», não «laukk»; «bėgti» faz «bėk».',
-      'Dar ordens a um desconhecido com o -k do «tu»: com quem você trata por «jūs», o certo é o -kite (palaukite, užeikite).',
-      'Esperar um imperativo nas placas: ali aparece o infinitivo, «Stumti», «Traukti».',
+      'Usar o presente depois de “kai” e “jei” falando do futuro: “Kai būsi Vilniuje…”, não “Kai esi Vilniuje…”.',
+      'Dizer “būs” na terceira pessoa: o futuro de “būti” é “bus”, com u curto.',
+      'Duplicar o k: “laukti” faz “lauk”, não “laukk”; “bėgti” faz “bėk”.',
+      'Dar ordens a um desconhecido com o -k do “tu”: com quem você trata por “jūs”, o certo é o -kite (palaukite, užeikite).',
+      'Esperar um imperativo nas placas: ali aparece o infinitivo, “Stumti”, “Traukti”.',
     ],
     quiz: [
       {
-        question: 'Complete: «Rytoj aš ___ namie.» (būti)',
+        question: 'Complete: “Rytoj aš ___ namie.” (būti)',
         options: ['būsiu', 'bus', 'buvau'],
         answer: 'būsiu',
-        explanation: 'Futuro de «būti» na 1ª pessoa: būsiu. «Bus» é a 3ª pessoa, «buvau» é o passado.',
+        explanation: 'Futuro de “būti” na 1ª pessoa: būsiu. “Bus” é a 3ª pessoa, “buvau” é o passado.',
       },
       {
-        question: 'Qual é o futuro (3ª pessoa) de «rašyti»?',
+        question: 'Qual é o futuro (3ª pessoa) de “rašyti”?',
         options: ['rašys', 'rašo', 'rašė'],
         answer: 'rašys',
         explanation: 'Radical do infinitivo + -s: rašy- + s = rašys.',
       },
       {
-        question: 'Como se diz «Espere!» para um desconhecido?',
+        question: 'Como se diz “Espere!” para um desconhecido?',
         options: ['Palaukite!', 'Palauk!', 'Palaukime!'],
         answer: 'Palaukite!',
         explanation: 'Com o tratamento de cortesia (jūs), usa-se o -kite.',
       },
       {
-        question: 'Complete: «Kai ___ Vilniuje, paskambink.» (você estiver)',
+        question: 'Complete: “Kai ___ Vilniuje, paskambink.” (você estiver)',
         options: ['būsi', 'esi', 'būk'],
         answer: 'būsi',
-        explanation: 'Depois de «kai» falando do futuro, o lituano usa o futuro: būsi.',
+        explanation: 'Depois de “kai” falando do futuro, o lituano usa o futuro: būsi.',
       },
       {
-        question: 'O que significa «Nerūkyti» numa placa?',
+        question: 'O que significa “Nerūkyti” numa placa?',
         options: ['proibido fumar', 'fume aqui', 'fumante'],
         answer: 'proibido fumar',
-        explanation: 'Nas placas usa-se o infinitivo com ne-: «Nerūkyti».',
+        explanation: 'Nas placas usa-se o infinitivo com ne-: “Nerūkyti”.',
       },
     ],
   },
@@ -1432,11 +1432,11 @@ export const GRAMMAR_LT: GrammarTopic[] = [
     level: 'B1.1',
     title: 'Verbos reflexivos (-si) e o vocativo (Tomai! Egle!)',
     emoji: '📣',
-    summary: 'O «se» dos verbos reflexivos vem grudado no fim: mokytis (estudar), aš mokausi; mas, se o verbo tem prefixo ou ne-, o -si- pula para dentro: nesimokau, atsikeliu. E para chamar alguém existe um caso só para isso, o vocativo: Tomas → Tomai!, Eglė → Egle!, drauge!',
+    summary: 'O “se” dos verbos reflexivos vem grudado no fim: mokytis (estudar), aš mokausi; mas, se o verbo tem prefixo ou ne-, o -si- pula para dentro: nesimokau, atsikeliu. E para chamar alguém existe um caso só para isso, o vocativo: Tomas → Tomai!, Eglė → Egle!, drauge!',
     sections: [
       {
-        heading: 'O «se» no fim do verbo',
-        text: 'Onde o português diz «me», «te», «se» (eu me levanto, ele se chama), o lituano gruda uma partícula no fim do verbo: o infinitivo termina em -tis (keltis, levantar-se; vadintis, chamar-se), e as formas pessoais em -si, -s ou -ės. Alguns verbos mudam de sentido com ela: «mokyti» é ensinar, «mokytis» é estudar, aprender (ensinar a si mesmo). E os reflexivos às vezes regem um caso próprio: «mokytis lietuvių kalbos» (genitivo), «domėtis istorija» (interessar-se por história, instrumental).',
+        heading: 'O “se” no fim do verbo',
+        text: 'Onde o português diz “me”, “te”, “se” (eu me levanto, ele se chama), o lituano gruda uma partícula no fim do verbo: o infinitivo termina em -tis (keltis, levantar-se; vadintis, chamar-se), e as formas pessoais em -si, -s ou -ės. Alguns verbos mudam de sentido com ela: “mokyti” é ensinar, “mokytis” é estudar, aprender (ensinar a si mesmo). E os reflexivos às vezes regem um caso próprio: “mokytis lietuvių kalbos” (genitivo), “domėtis istorija” (interessar-se por história, instrumental).',
         table: {
           head: ['Pessoa', 'mokytis (estudar)', 'keltis (levantar-se)', 'domėtis (interessar-se)'],
           rows: [
@@ -1457,7 +1457,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Com prefixo ou ne-, o -si- pula para dentro',
-        text: 'Aqui está a graça: se o verbo reflexivo ganha um prefixo (at-, su-, nu-, ap-…) ou a negação ne-, a partícula sai do fim e se encaixa logo depois do prefixo, como -si-. keltis → atsikelti (levantar-se da cama): «atsikeliu». mokytis → «nesimokau» (não estudo). susitikti (encontrar-se): «Susitikime rytoj!» (vamos nos encontrar amanhã!). O mesmo vale para o passado e o futuro: «Vakar atsikėliau anksti» (ontem me levantei cedo).',
+        text: 'Aqui está a graça: se o verbo reflexivo ganha um prefixo (at-, su-, nu-, ap-…) ou a negação ne-, a partícula sai do fim e se encaixa logo depois do prefixo, como -si-. keltis → atsikelti (levantar-se da cama): “atsikeliu”. mokytis → “nesimokau” (não estudo). susitikti (encontrar-se): “Susitikime rytoj!” (vamos nos encontrar amanhã!). O mesmo vale para o passado e o futuro: “Vakar atsikėliau anksti” (ontem me levantei cedo).',
         table: {
           head: ['Sem prefixo', 'Com prefixo ou ne-', 'Português'],
           rows: [
@@ -1477,7 +1477,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'O vocativo: o caso de chamar',
-        text: 'O lituano guarda o vocativo, o caso de chamar alguém, que o latim tinha («Et tu, Brute?»). Os nomes próprios em -as fazem -ai (Tomas → Tomai, Jonas → Jonai, Kazlauskas → Kazlauskai), mas as palavras comuns em -as fazem -e (draugas → drauge, ponas → pone). Os em -is fazem -i, os em -us fazem -au, e os femininos em -ė fazem -e curto. Os femininos em -a não mudam na escrita. No plural, o vocativo é igual ao nominativo: «Mieli draugai!».',
+        text: 'O lituano guarda o vocativo, o caso de chamar alguém, que o latim tinha (“Et tu, Brute?”). Os nomes próprios em -as fazem -ai (Tomas → Tomai, Jonas → Jonai, Kazlauskas → Kazlauskai), mas as palavras comuns em -as fazem -e (draugas → drauge, ponas → pone). Os em -is fazem -i, os em -us fazem -au, e os femininos em -ė fazem -e curto. Os femininos em -a não mudam na escrita. No plural, o vocativo é igual ao nominativo: “Mieli draugai!”.',
         table: {
           head: ['Nominativo', 'Vocativo', 'Nominativo', 'Vocativo'],
           rows: [
@@ -1499,21 +1499,21 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Separar o «se» do verbo, como no português: não existe «si mokau»; é «mokausi», e com ne- «nesimokau».',
-      'Deixar o -si- no fim quando há prefixo: não é «atkeliuosi», é «atsikeliu».',
-      'Confundir «mokyti» (ensinar) com «mokytis» (estudar, aprender): «Mokytoja moko vaikus, vaikai mokosi».',
-      'Chamar alguém no nominativo: «Labas, Tomas!» soa errado; o certo é «Labas, Tomai!».',
-      'Usar o -e dos substantivos comuns com nomes próprios: é «drauge!», mas «Jonai!», nunca «Jone!».',
+      'Separar o “se” do verbo, como no português: não existe “si mokau”; é “mokausi”, e com ne- “nesimokau”.',
+      'Deixar o -si- no fim quando há prefixo: não é “atkeliuosi”, é “atsikeliu”.',
+      'Confundir “mokyti” (ensinar) com “mokytis” (estudar, aprender): “Mokytoja moko vaikus, vaikai mokosi”.',
+      'Chamar alguém no nominativo: “Labas, Tomas!” soa errado; o certo é “Labas, Tomai!”.',
+      'Usar o -e dos substantivos comuns com nomes próprios: é “drauge!”, mas “Jonai!”, nunca “Jone!”.',
     ],
     quiz: [
       {
-        question: 'Complete: «Aš ___ lietuvių kalbos.» (mokytis)',
+        question: 'Complete: “Aš ___ lietuvių kalbos.” (mokytis)',
         options: ['mokausi', 'mokau', 'mokosi'],
         answer: 'mokausi',
-        explanation: '«mokausi» é «estudo, aprendo». «Mokau» é «ensino», e «mokosi» é da 3ª pessoa.',
+        explanation: '“mokausi” é “estudo, aprendo”. “Mokau” é “ensino”, e “mokosi” é da 3ª pessoa.',
       },
       {
-        question: 'Qual é a negação de «jaučiuosi» (me sinto)?',
+        question: 'Qual é a negação de “jaučiuosi” (me sinto)?',
         options: ['nesijaučiu', 'nejaučiuosi', 'ne jaučiuosi'],
         answer: 'nesijaučiu',
         explanation: 'Com ne-, o -si- pula para depois da negação: nesijaučiu.',
@@ -1525,13 +1525,13 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         explanation: 'Nomes próprios em -as fazem o vocativo em -ai.',
       },
       {
-        question: 'Qual é o vocativo de «Eglė»?',
+        question: 'Qual é o vocativo de “Eglė”?',
         options: ['Egle!', 'Eglė!', 'Eglai!'],
         answer: 'Egle!',
         explanation: 'Os femininos em -ė fazem o vocativo em -e curto.',
       },
       {
-        question: 'Complete: «Kasdien ___ septintą valandą.» (atsikelti, eu)',
+        question: 'Complete: “Kasdien ___ septintą valandą.” (atsikelti, eu)',
         options: ['atsikeliu', 'atkeliuosi', 'atsikeliuosi'],
         answer: 'atsikeliu',
         explanation: 'Com prefixo, o -si- vai para dentro e sai do fim: atsikeliu.',
@@ -1548,7 +1548,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
     sections: [
       {
         heading: 'Em andamento × concluído',
-        text: 'O verbo sem prefixo (imperfectivo) fala do processo, da duração ou do hábito: «rašiau laišką» é «estava escrevendo a carta» ou «escrevi carta» sem dizer se acabou. O verbo com prefixo (perfectivo) fala do resultado: «parašiau laišką» é «escrevi a carta (está pronta)». O português resolve isso com o pretérito imperfeito e o perfeito ou com «terminar de»; o lituano resolve no próprio verbo. O sistema é parecido com o do russo e do polonês, mas mais solto: alguns verbos sem prefixo já são concluídos por natureza (gauti, receber; rasti, achar; duoti, dar), e o presente de um perfectivo quase não se usa. No futuro, a diferença aparece bem: «rašysiu» (vou ficar escrevendo) × «parašysiu» (vou escrever e terminar).',
+        text: 'O verbo sem prefixo (imperfectivo) fala do processo, da duração ou do hábito: “rašiau laišką” é “estava escrevendo a carta” ou “escrevi carta” sem dizer se acabou. O verbo com prefixo (perfectivo) fala do resultado: “parašiau laišką” é “escrevi a carta (está pronta)”. O português resolve isso com o pretérito imperfeito e o perfeito ou com “terminar de”; o lituano resolve no próprio verbo. O sistema é parecido com o do russo e do polonês, mas mais solto: alguns verbos sem prefixo já são concluídos por natureza (gauti, receber; rasti, achar; duoti, dar), e o presente de um perfectivo quase não se usa. No futuro, a diferença aparece bem: “rašysiu” (vou ficar escrevendo) × “parašysiu” (vou escrever e terminar).',
         table: {
           head: ['Imperfectivo (processo)', 'Perfectivo (resultado)', 'Português'],
           rows: [
@@ -1603,7 +1603,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Prefixo + reflexivo: o -si- vai para dentro',
-        text: 'Sozinho, o reflexivo leva -si no fim (praustis, lavar-se; prausiuosi, eu me lavo). Com prefixo, o -si- sai do fim e entra entre o prefixo e a raiz: nusiprausti, atsikelti, susitikti, apsirengti, nusipirkti (comprar para si). O mesmo acontece com a negação: ne- também atrai o -si- (nesiprausia, não se lava), e com prefixo fica ne + prefixo + si (nesusitikome). Um prefixo à parte é tebe-, «ainda»: tebegyvena (ainda mora), tebelaukia (ainda espera).',
+        text: 'Sozinho, o reflexivo leva -si no fim (praustis, lavar-se; prausiuosi, eu me lavo). Com prefixo, o -si- sai do fim e entra entre o prefixo e a raiz: nusiprausti, atsikelti, susitikti, apsirengti, nusipirkti (comprar para si). O mesmo acontece com a negação: ne- também atrai o -si- (nesiprausia, não se lava), e com prefixo fica ne + prefixo + si (nesusitikome). Um prefixo à parte é tebe-, “ainda”: tebegyvena (ainda mora), tebelaukia (ainda espera).',
         table: {
           head: ['Sem prefixo', 'Com prefixo', 'Português'],
           rows: [
@@ -1626,30 +1626,30 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar o verbo simples quando o que importa é o resultado: «Vakar rašiau laišką» não diz que a carta ficou pronta. Para «escrevi (e está feita)», diga «parašiau».',
-      'Usar o perfectivo com duração: «Visą dieną parašiau» soa estranho. Com «visą dieną», «dvi valandas» ou «kiekvieną rytą», fica o simples: «Visą dieną rašiau».',
-      'Deixar o -si- no fim depois de um prefixo: «atkėliausi» está errado; o certo é «atsikėliau». Com prefixo, o -si- entra no meio e o fim fica sem ele.',
-      'Achar que o prefixo só marca o aspecto: išeiti (sair) e įeiti (entrar) não são «eiti terminado». Aprenda o sentido de cada prefixo.',
-      'Trocar suvalgyti e pavalgyti: «Suvalgiau pyragą» é «comi o bolo todo»; «Jau pavalgiau» é «já comi, já almocei».',
+      'Usar o verbo simples quando o que importa é o resultado: “Vakar rašiau laišką” não diz que a carta ficou pronta. Para “escrevi (e está feita)”, diga “parašiau”.',
+      'Usar o perfectivo com duração: “Visą dieną parašiau” soa estranho. Com “visą dieną”, “dvi valandas” ou “kiekvieną rytą”, fica o simples: “Visą dieną rašiau”.',
+      'Deixar o -si- no fim depois de um prefixo: “atkėliausi” está errado; o certo é “atsikėliau”. Com prefixo, o -si- entra no meio e o fim fica sem ele.',
+      'Achar que o prefixo só marca o aspecto: išeiti (sair) e įeiti (entrar) não são “eiti terminado”. Aprenda o sentido de cada prefixo.',
+      'Trocar suvalgyti e pavalgyti: “Suvalgiau pyragą” é “comi o bolo todo”; “Jau pavalgiau” é “já comi, já almocei”.',
     ],
     quiz: [
       {
-        question: 'Qual forma diz «Ontem eu terminei de ler o livro»?',
+        question: 'Qual forma diz “Ontem eu terminei de ler o livro”?',
         options: ['Vakar perskaičiau knygą.', 'Vakar skaičiau knygą.', 'Vakar skaitydavau knygą.'],
         answer: 'Vakar perskaičiau knygą.',
-        explanation: 'O prefixo per- dá o resultado: perskaityti é ler até o fim. «Skaičiau» só diz que eu estava lendo.',
+        explanation: 'O prefixo per- dá o resultado: perskaityti é ler até o fim. “Skaičiau” só diz que eu estava lendo.',
       },
       {
         question: 'Complete: Rytoj ___ anksti, nes važiuoju į Klaipėdą.',
         options: ['atsikelsiu', 'atkelsiuosi', 'keliuosi'],
         answer: 'atsikelsiu',
-        explanation: 'Com o prefixo at-, o -si- entra no meio: atsikelti → atsikelsiu. «Atkelsiuosi» não existe.',
+        explanation: 'Com o prefixo at-, o -si- entra no meio: atsikelti → atsikelsiu. “Atkelsiuosi” não existe.',
       },
       {
-        question: 'Qual verbo significa «sair»?',
+        question: 'Qual verbo significa “sair”?',
         options: ['išeiti', 'įeiti', 'pereiti'],
         answer: 'išeiti',
-        explanation: 'iš- é «para fora»; į- é «para dentro» (entrar) e per- é «através» (atravessar).',
+        explanation: 'iš- é “para fora”; į- é “para dentro” (entrar) e per- é “através” (atravessar).',
       },
       {
         question: 'Complete: Jis dvi valandas ___ laišką.',
@@ -1658,7 +1658,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         explanation: 'Com duração (dvi valandas), o lituano usa o verbo simples, que fala do processo.',
       },
       {
-        question: 'Como se diz «Ainda não nos encontramos»?',
+        question: 'Como se diz “Ainda não nos encontramos”?',
         options: ['Mes dar nesusitikome.', 'Mes dar susinetikome.', 'Mes dar nesitikome su.'],
         answer: 'Mes dar nesusitikome.',
         explanation: 'A negação vem na frente de tudo: ne + su + si + tikome. O -si- continua depois do prefixo.',
@@ -1670,11 +1670,11 @@ export const GRAMMAR_LT: GrammarTopic[] = [
     level: 'B1.2',
     title: 'O passado de costume (-davo) e as orações subordinadas',
     emoji: '🔁',
-    summary: 'O lituano tem um tempo só para o que «costumava acontecer»: vaikystėje žaisdavau kieme, na infância eu brincava no quintal. Ele se forma com -dav- no infinitivo e ocupa boa parte do nosso pretérito imperfeito. Junto, as conjunções que abrem subordinadas (kad, nes, kai, jei, ar, nors, kol), sempre com vírgula antes.',
+    summary: 'O lituano tem um tempo só para o que “costumava acontecer”: vaikystėje žaisdavau kieme, na infância eu brincava no quintal. Ele se forma com -dav- no infinitivo e ocupa boa parte do nosso pretérito imperfeito. Junto, as conjunções que abrem subordinadas (kad, nes, kai, jei, ar, nors, kol), sempre com vírgula antes.',
     sections: [
       {
         heading: 'O passado frequentativo: -davau, -davai, -davo',
-        text: 'Tire o -ti do infinitivo e ponha -dav- mais as terminações do passado em -o: rašyti → rašydavau, eiti → eidavau, būti → būdavau. Não há exceções: é o tempo mais regular do lituano. Ele serve para hábitos e repetições no passado, o que o português diz com o imperfeito («eu ia») ou com «costumava». Já o passado simples (rašiau, ėjau) conta um fato ou uma vez só. No reflexivo, o -si vem no fim, como sempre: mokydavausi, mokydavosi.',
+        text: 'Tire o -ti do infinitivo e ponha -dav- mais as terminações do passado em -o: rašyti → rašydavau, eiti → eidavau, būti → būdavau. Não há exceções: é o tempo mais regular do lituano. Ele serve para hábitos e repetições no passado, o que o português diz com o imperfeito (“eu ia”) ou com “costumava”. Já o passado simples (rašiau, ėjau) conta um fato ou uma vez só. No reflexivo, o -si vem no fim, como sempre: mokydavausi, mokydavosi.',
         table: {
           head: ['Pessoa', 'rašyti (escrever)', 'eiti (ir)', 'būti (ser, estar)', 'mokytis (estudar)'],
           rows: [
@@ -1696,7 +1696,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'As conjunções subordinativas',
-        text: 'Todas elas abrem uma oração subordinada, e o lituano não muda a ordem das palavras por causa disso (nada de inversão, como no alemão ou no dinamarquês). Três pares confundem o brasileiro: o «se» da condição é jei (ou jeigu), mas o «se» da pergunta indireta é ar («nežinau, ar ateis»); o «porque» é nes, que vem depois da oração principal, enquanto kadangi (como, já que) pode abrir a frase; e kol é tanto «enquanto» quanto «até que».',
+        text: 'Todas elas abrem uma oração subordinada, e o lituano não muda a ordem das palavras por causa disso (nada de inversão, como no alemão ou no dinamarquês). Três pares confundem o brasileiro: o “se” da condição é jei (ou jeigu), mas o “se” da pergunta indireta é ar (“nežinau, ar ateis”); o “porque” é nes, que vem depois da oração principal, enquanto kadangi (como, já que) pode abrir a frase; e kol é tanto “enquanto” quanto “até que”.',
         table: {
           head: ['Conjunção', 'Português', 'Exemplo'],
           rows: [
@@ -1714,8 +1714,8 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         },
       },
       {
-        heading: 'Vírgula sempre, e o futuro depois de «kai» e «jei»',
-        text: 'Em lituano, toda subordinada leva vírgula, por mais curta que seja: «Manau, kad…», «Nežinau, ar…», «Žinau, kur…». Se a subordinada está no meio, leva vírgula dos dois lados. Outra diferença: quando se fala do futuro, o lituano usa o futuro também depois de kai e jei, onde o português usa o futuro do subjuntivo («quando eu voltar» = kai grįšiu; «se fizer sol» = jei bus saulėta).',
+        heading: 'Vírgula sempre, e o futuro depois de “kai” e “jei”',
+        text: 'Em lituano, toda subordinada leva vírgula, por mais curta que seja: “Manau, kad…”, “Nežinau, ar…”, “Žinau, kur…”. Se a subordinada está no meio, leva vírgula dos dois lados. Outra diferença: quando se fala do futuro, o lituano usa o futuro também depois de kai e jei, onde o português usa o futuro do subjuntivo (“quando eu voltar” = kai grįšiu; “se fizer sol” = jei bus saulėta).',
         examples: [
           ['Kai grįšiu namo, tau paskambinsiu.', 'Quando eu voltar para casa, te ligo.'],
           ['Jeigu rytoj bus gražus oras, važiuosime į Trakus.', 'Se amanhã fizer tempo bom, vamos para Trakai.'],
@@ -1727,24 +1727,24 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar -davo para um fato único: «Pernai važiuodavome į Nidą» dá a ideia de que iam sempre. Se foi uma vez, é «važiavome».',
-      'Usar jei na pergunta indireta: «Nežinau, jei jis ateis» está errado; o «se» de dúvida é ar: «Nežinau, ar jis ateis».',
-      'Pôr o presente onde o sentido é futuro: «Kai grįžtu, paskambinsiu» está errado; diga «Kai grįšiu, paskambinsiu».',
-      'Esquecer a vírgula antes de kad: «Manau kad…» é erro de pontuação em lituano. A vírgula é obrigatória.',
-      'Abrir a frase com nes: na escrita, «Nes sirgau, likau namie» não se usa. No começo, use kadangi: «Kadangi sirgau, likau namie».',
+      'Usar -davo para um fato único: “Pernai važiuodavome į Nidą” dá a ideia de que iam sempre. Se foi uma vez, é “važiavome”.',
+      'Usar jei na pergunta indireta: “Nežinau, jei jis ateis” está errado; o “se” de dúvida é ar: “Nežinau, ar jis ateis”.',
+      'Pôr o presente onde o sentido é futuro: “Kai grįžtu, paskambinsiu” está errado; diga “Kai grįšiu, paskambinsiu”.',
+      'Esquecer a vírgula antes de kad: “Manau kad…” é erro de pontuação em lituano. A vírgula é obrigatória.',
+      'Abrir a frase com nes: na escrita, “Nes sirgau, likau namie” não se usa. No começo, use kadangi: “Kadangi sirgau, likau namie”.',
     ],
     quiz: [
       {
         question: 'Qual frase fala de um costume no passado?',
         options: ['Vasarą dažnai maudydavomės ežere.', 'Vasarą išsimaudėme ežere.', 'Vasarą maudysimės ežere.'],
         answer: 'Vasarą dažnai maudydavomės ežere.',
-        explanation: 'O -dav- marca a repetição: maudydavomės é «a gente costumava nadar».',
+        explanation: 'O -dav- marca a repetição: maudydavomės é “a gente costumava nadar”.',
       },
       {
         question: 'Complete: Nežinau, ___ ji kalba lietuviškai.',
         options: ['ar', 'jei', 'kad'],
         answer: 'ar',
-        explanation: 'Na pergunta indireta, o «se» é ar. Jei é só para condição.',
+        explanation: 'Na pergunta indireta, o “se” é ar. Jei é só para condição.',
       },
       {
         question: 'Complete: Kai ___ į Vilnių, aplankysiu Užupį.',
@@ -1759,7 +1759,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         explanation: 'A vírgula vem antes da conjunção que abre a subordinada, sempre.',
       },
       {
-        question: 'Qual é o passado frequentativo de «būti» para «aš»?',
+        question: 'Qual é o passado frequentativo de “būti” para “aš”?',
         options: ['būdavau', 'buvdavau', 'būvau'],
         answer: 'būdavau',
         explanation: 'Infinitivo sem -ti (bū-) + -davau. O tempo é regularíssimo.',
@@ -1772,7 +1772,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
     level: 'B1.3',
     title: 'Particípios ativos: skaitantis, skaitęs, skaitysiantis',
     emoji: '🧩',
-    summary: 'O lituano é campeão europeu de particípios: tem um para cada tempo, e todos se declinam como adjetivos. «Prie lango sėdintis vyras» é «o homem que está sentado junto à janela», numa palavra só. Os ativos (quem faz a ação) também formam os tempos compostos: esu buvęs, «já estive».',
+    summary: 'O lituano é campeão europeu de particípios: tem um para cada tempo, e todos se declinam como adjetivos. “Prie lango sėdintis vyras” é “o homem que está sentado junto à janela”, numa palavra só. Os ativos (quem faz a ação) também formam os tempos compostos: esu buvęs, “já estive”.',
     sections: [
       {
         heading: 'Como se formam',
@@ -1791,7 +1791,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Como adjetivo: concorda e se declina',
-        text: 'Como qualquer adjetivo, o particípio concorda em gênero, número e caso com o substantivo. Ele pode vir antes do nome com seus complementos («Kaune gyvenanti sesuo», a irmã que mora em Kaunas) ou depois, e muitas vezes substitui uma oração inteira com kuris. Com verbos de percepção (matyti, girdėti), o particípio no acusativo descreve o que se viu ou ouviu.',
+        text: 'Como qualquer adjetivo, o particípio concorda em gênero, número e caso com o substantivo. Ele pode vir antes do nome com seus complementos (“Kaune gyvenanti sesuo”, a irmã que mora em Kaunas) ou depois, e muitas vezes substitui uma oração inteira com kuris. Com verbos de percepção (matyti, girdėti), o particípio no acusativo descreve o que se viu ou ouviu.',
         table: {
           head: ['Caso', 'Masculino', 'Feminino'],
           rows: [
@@ -1813,7 +1813,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Os tempos compostos: esu buvęs',
-        text: 'Būti conjugado + particípio passado ativo forma os tempos compostos. O perfeito (esu buvęs) conta uma experiência ou um resultado que vale agora, como o «já estive» do português; o mais-que-perfeito (buvau išėjęs) conta o que já tinha acontecido antes de outro fato. O particípio concorda com o sujeito: o homem diz «esu buvęs», a mulher «esu buvusi», e no plural fica «esame buvę» ou «esame buvusios».',
+        text: 'Būti conjugado + particípio passado ativo forma os tempos compostos. O perfeito (esu buvęs) conta uma experiência ou um resultado que vale agora, como o “já estive” do português; o mais-que-perfeito (buvau išėjęs) conta o que já tinha acontecido antes de outro fato. O particípio concorda com o sujeito: o homem diz “esu buvęs”, a mulher “esu buvusi”, e no plural fica “esame buvę” ou “esame buvusios”.',
         examples: [
           ['Ar esi buvęs Nidoje?', 'Você (homem) já esteve em Nida?'],
           ['Ne, dar nesu buvusi.', 'Não, eu (mulher) ainda não estive.'],
@@ -1824,26 +1824,26 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Esquecer a concordância: «sėdintis moteris» está errado; com substantivo feminino, é «sėdinti moteris».',
-      'Errar o feminino do passado: não é «skaitėsi» nem «skaitusi», e sim «skaičiusi», com t → č. Do mesmo modo: mačiusi (de matyti), girdėjusi.',
-      'Na mulher, usar a forma masculina no tempo composto: «Aš esu buvęs» é fala de homem; a mulher diz «esu buvusi».',
-      'Confundir particípio ativo e passivo: «parašęs» é «que escreveu»; «parašytas» é «escrito» (o passivo, tópico seguinte).',
+      'Esquecer a concordância: “sėdintis moteris” está errado; com substantivo feminino, é “sėdinti moteris”.',
+      'Errar o feminino do passado: não é “skaitėsi” nem “skaitusi”, e sim “skaičiusi”, com t → č. Do mesmo modo: mačiusi (de matyti), girdėjusi.',
+      'Na mulher, usar a forma masculina no tempo composto: “Aš esu buvęs” é fala de homem; a mulher diz “esu buvusi”.',
+      'Confundir particípio ativo e passivo: “parašęs” é “que escreveu”; “parašytas” é “escrito” (o passivo, tópico seguinte).',
     ],
     quiz: [
       {
         question: 'Complete: Kaune ___ mano draugė dirba mokytoja.',
         options: ['gyvenanti', 'gyvenantis', 'gyvenančią'],
         answer: 'gyvenanti',
-        explanation: 'Concorda com «draugė»: feminino, singular, nominativo.',
+        explanation: 'Concorda com “draugė”: feminino, singular, nominativo.',
       },
       {
-        question: 'Uma mulher pergunta a outra: «Você já esteve em Klaipėda?»',
+        question: 'Uma mulher pergunta a outra: “Você já esteve em Klaipėda?”',
         options: ['Ar esi buvusi Klaipėdoje?', 'Ar esi buvęs Klaipėdoje?', 'Ar buvai esanti Klaipėdoje?'],
         answer: 'Ar esi buvusi Klaipėdoje?',
-        explanation: 'O particípio concorda com o sujeito: tu é mulher, então «buvusi».',
+        explanation: 'O particípio concorda com o sujeito: tu é mulher, então “buvusi”.',
       },
       {
-        question: 'Qual é o particípio passado ativo feminino de «skaityti»?',
+        question: 'Qual é o particípio passado ativo feminino de “skaityti”?',
         options: ['skaičiusi', 'skaitusi', 'skaitęsi'],
         answer: 'skaičiusi',
         explanation: 'skaitė → skaič-iusi: o t vira č antes do i.',
@@ -1855,10 +1855,10 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         explanation: 'Mais-que-perfeito com sujeito plural masculino (ou misto): buvo užmigę.',
       },
       {
-        question: 'Qual forma completa «Mačiau jį ___ per gatvę» (eu o vi atravessando a rua)?',
+        question: 'Qual forma completa “Mačiau jį ___ per gatvę” (eu o vi atravessando a rua)?',
         options: ['einantį', 'einantis', 'einant'],
         answer: 'einantį',
-        explanation: 'Com matyti, o particípio concorda com o objeto «jį», que está no acusativo: einantį.',
+        explanation: 'Com matyti, o particípio concorda com o objeto “jį”, que está no acusativo: einantį.',
       },
     ],
   },
@@ -1867,11 +1867,11 @@ export const GRAMMAR_LT: GrammarTopic[] = [
     level: 'B1.3',
     title: 'Particípios passivos e voz passiva: statomas × pastatytas',
     emoji: '🏗️',
-    summary: 'A passiva lituana é būti + particípio passivo: «Tiltas statomas» (a ponte está sendo construída), «Tiltas pastatytas» (a ponte está pronta). O agente não leva preposição nenhuma: vai para o genitivo. «Eilėraštis parašytas Maironio» é «o poema foi escrito por Maironis».',
+    summary: 'A passiva lituana é būti + particípio passivo: “Tiltas statomas” (a ponte está sendo construída), “Tiltas pastatytas” (a ponte está pronta). O agente não leva preposição nenhuma: vai para o genitivo. “Eilėraštis parašytas Maironio” é “o poema foi escrito por Maironis”.',
     sections: [
       {
         heading: 'Os particípios passivos',
-        text: 'O presente (-mas, -ma) sai da 3ª pessoa do presente: skaito → skaitomas, myli → mylimas, daro → daromas. Ele descreve algo que está sofrendo a ação agora ou sempre. O passado (-tas, -ta) sai do infinitivo: skaityti → skaitytas, parašyti → parašytas, išversti → išverstas. Ele descreve o resultado. Há ainda uma forma de necessidade, -tinas (o que deve ser feito): «skaitytina knyga», livro que vale a leitura. Todos se declinam como os adjetivos em -as, -a.',
+        text: 'O presente (-mas, -ma) sai da 3ª pessoa do presente: skaito → skaitomas, myli → mylimas, daro → daromas. Ele descreve algo que está sofrendo a ação agora ou sempre. O passado (-tas, -ta) sai do infinitivo: skaityti → skaitytas, parašyti → parašytas, išversti → išverstas. Ele descreve o resultado. Há ainda uma forma de necessidade, -tinas (o que deve ser feito): “skaitytina knyga”, livro que vale a leitura. Todos se declinam como os adjetivos em -as, -a.',
         table: {
           head: ['Tipo', 'Masculino', 'Feminino', 'Sentido'],
           rows: [
@@ -1891,7 +1891,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'A voz passiva: būti + particípio',
-        text: 'Com o particípio presente, a passiva fala de uma ação em andamento ou habitual; com o passado, do resultado. O tempo fica no būti: yra (ou nada), buvo, bus. No presente, o yra quase sempre cai: «Parduotuvė uždaryta» (a loja está fechada). O particípio concorda com o sujeito: «Namas pastatytas», «Bažnyčia pastatyta», «Durys uždarytos» (durys só existe no plural feminino). O agente vai para o genitivo, sem preposição, e costuma vir antes ou logo depois do particípio.',
+        text: 'Com o particípio presente, a passiva fala de uma ação em andamento ou habitual; com o passado, do resultado. O tempo fica no būti: yra (ou nada), buvo, bus. No presente, o yra quase sempre cai: “Parduotuvė uždaryta” (a loja está fechada). O particípio concorda com o sujeito: “Namas pastatytas”, “Bažnyčia pastatyta”, “Durys uždarytos” (durys só existe no plural feminino). O agente vai para o genitivo, sem preposição, e costuma vir antes ou logo depois do particípio.',
         table: {
           head: ['Tempo', 'Em andamento (-mas)', 'Resultado (-tas)'],
           rows: [
@@ -1911,7 +1911,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'O neutro sem sujeito: kalbama, parašyta, draudžiama',
-        text: 'Terminado em -ma ou -ta e sem sujeito, o particípio passivo vira uma frase impessoal, como o «se» do português: «Kalbama, kad…» (fala-se que…, dizem que…), «Čia parašyta, kad…» (aqui está escrito que…). É a linguagem das placas e dos avisos: «Čia rūkyti draudžiama» (proibido fumar aqui).',
+        text: 'Terminado em -ma ou -ta e sem sujeito, o particípio passivo vira uma frase impessoal, como o “se” do português: “Kalbama, kad…” (fala-se que…, dizem que…), “Čia parašyta, kad…” (aqui está escrito que…). É a linguagem das placas e dos avisos: “Čia rūkyti draudžiama” (proibido fumar aqui).',
         examples: [
           ['Kalbama, kad čia bus naujas parkas.', 'Dizem que aqui vai ter um parque novo.'],
           ['Čia parašyta, kad muziejus dirba iki šešių.', 'Aqui diz que o museu abre até as seis.'],
@@ -1921,17 +1921,17 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Traduzir o «por» do agente: «parašytas per Maironį» ou «nuo Maironio» está errado. O agente vai só para o genitivo: «parašytas Maironio».',
-      'Esquecer a concordância: «Knyga parašytas» está errado; é «Knyga parašyta». E «durys», que é plural, pede «uždarytos».',
-      'Formar o -tas a partir do passado: não é «skaitėtas», e sim «skaitytas», do infinitivo skaity-ti.',
-      'Trocar -mas e -tas: «Namas statomas» é «estão construindo a casa»; «Namas pastatytas» é «a casa está pronta».',
+      'Traduzir o “por” do agente: “parašytas per Maironį” ou “nuo Maironio” está errado. O agente vai só para o genitivo: “parašytas Maironio”.',
+      'Esquecer a concordância: “Knyga parašytas” está errado; é “Knyga parašyta”. E “durys”, que é plural, pede “uždarytos”.',
+      'Formar o -tas a partir do passado: não é “skaitėtas”, e sim “skaitytas”, do infinitivo skaity-ti.',
+      'Trocar -mas e -tas: “Namas statomas” é “estão construindo a casa”; “Namas pastatytas” é “a casa está pronta”.',
     ],
     quiz: [
       {
-        question: 'Qual frase diz «A ponte está sendo construída»?',
+        question: 'Qual frase diz “A ponte está sendo construída”?',
         options: ['Tiltas statomas.', 'Tiltas pastatytas.', 'Tiltas pastatęs.'],
         answer: 'Tiltas statomas.',
-        explanation: 'O particípio presente -mas mostra a ação em andamento. Pastatytas é o resultado; pastatęs é ativo («que construiu»).',
+        explanation: 'O particípio presente -mas mostra a ação em andamento. Pastatytas é o resultado; pastatęs é ativo (“que construiu”).',
       },
       {
         question: 'Complete: Šis apsakymas parašytas ___ .',
@@ -1946,13 +1946,13 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         explanation: 'Parduotuvė é feminino singular, então o particípio fica uždaryta.',
       },
       {
-        question: 'Qual é o particípio passivo passado de «išversti»?',
+        question: 'Qual é o particípio passivo passado de “išversti”?',
         options: ['išverstas', 'išvertęs', 'išverčiamas'],
         answer: 'išverstas',
-        explanation: 'Do infinitivo: išvers-ti → išvers-tas. Išvertęs é o ativo («que traduziu»).',
+        explanation: 'Do infinitivo: išvers-ti → išvers-tas. Išvertęs é o ativo (“que traduziu”).',
       },
       {
-        question: 'Como fica «Dizem que vai nevar»?',
+        question: 'Como fica “Dizem que vai nevar”?',
         options: ['Kalbama, kad snigs.', 'Kalbamas, kad snigs.', 'Kalbėta, kad snigs.'],
         answer: 'Kalbama, kad snigs.',
         explanation: 'Sem sujeito, o particípio fica no neutro presente: kalbama.',
@@ -1964,11 +1964,11 @@ export const GRAMMAR_LT: GrammarTopic[] = [
     level: 'B1.3',
     title: 'Eidamas, einant, ėjus: as formas adverbiais do verbo',
     emoji: '🚶',
-    summary: 'Onde o português usa o gerúndio («voltando para casa, encontrei um amigo»), o lituano escolhe entre três formas, conforme o sujeito e o tempo: o pusdalyvis (grįždamas) para o mesmo sujeito ao mesmo tempo, o particípio passado (grįžęs) para o mesmo sujeito antes, e o padalyvis (grįžtant, grįžus) quando o sujeito é outro, que então vai para o dativo.',
+    summary: 'Onde o português usa o gerúndio (“voltando para casa, encontrei um amigo”), o lituano escolhe entre três formas, conforme o sujeito e o tempo: o pusdalyvis (grįždamas) para o mesmo sujeito ao mesmo tempo, o particípio passado (grįžęs) para o mesmo sujeito antes, e o padalyvis (grįžtant, grįžus) quando o sujeito é outro, que então vai para o dativo.',
     sections: [
       {
         heading: 'O pusdalyvis: -damas, -dama',
-        text: 'Forma-se do infinitivo sem -ti + -damas (masc. sing.), -dama (fem. sing.), -dami (masc. pl.), -damos (fem. pl.): eiti → eidamas, skaityti → skaitydamas, grįžti → grįždamas. Ele só se usa quando o sujeito é o mesmo do verbo principal e as duas ações correm juntas. Como é quase um adjetivo, concorda com o sujeito: a mulher diz «eidama». No reflexivo, o -si vem no fim: mokydamasis, mokydamasi.',
+        text: 'Forma-se do infinitivo sem -ti + -damas (masc. sing.), -dama (fem. sing.), -dami (masc. pl.), -damos (fem. pl.): eiti → eidamas, skaityti → skaitydamas, grįžti → grįždamas. Ele só se usa quando o sujeito é o mesmo do verbo principal e as duas ações correm juntas. Como é quase um adjetivo, concorda com o sujeito: a mulher diz “eidama”. No reflexivo, o -si vem no fim: mokydamasis, mokydamasi.',
         table: {
           head: ['Infinitivo', 'Masc. sing.', 'Fem. sing.', 'Masc. pl.', 'Fem. pl.'],
           rows: [
@@ -1986,7 +1986,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Mesmo sujeito, ação anterior: o particípio passado',
-        text: 'Se a ação do mesmo sujeito aconteceu antes («depois de voltar para casa, jantei»), usa-se o particípio passado ativo, que você viu no tópico anterior: grįžęs, grįžusi. Ele também concorda com o sujeito.',
+        text: 'Se a ação do mesmo sujeito aconteceu antes (“depois de voltar para casa, jantei”), usa-se o particípio passado ativo, que você viu no tópico anterior: grįžęs, grįžusi. Ele também concorda com o sujeito.',
         examples: [
           ['Grįžęs namo, pavalgiau.', 'Depois de voltar para casa, eu (homem) comi.'],
           ['Baigusi universitetą, ji išvyko į Klaipėdą.', 'Depois de se formar, ela foi para Klaipėda.'],
@@ -1995,7 +1995,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Outro sujeito: o padalyvis e o dativo',
-        text: 'Quando o sujeito da ação secundária é outro, entra o padalyvis, que não varia. O presente (-ant, -int) sai da 3ª pessoa do presente: eina → einant, skaito → skaitant, myli → mylint. O passado (-us) sai da 3ª pessoa do passado: ėjo → ėjus, grįžo → grįžus, skaitė → skaičius. O sujeito dessa ação vai para o DATIVO: «Saulei tekant» (ao nascer do sol), «Man grįžus» (quando eu voltei). Sem sujeito nenhum, o padalyvis fica impessoal: «Lyjant geriau likti namie» (quando chove, é melhor ficar em casa).',
+        text: 'Quando o sujeito da ação secundária é outro, entra o padalyvis, que não varia. O presente (-ant, -int) sai da 3ª pessoa do presente: eina → einant, skaito → skaitant, myli → mylint. O passado (-us) sai da 3ª pessoa do passado: ėjo → ėjus, grįžo → grįžus, skaitė → skaičius. O sujeito dessa ação vai para o DATIVO: “Saulei tekant” (ao nascer do sol), “Man grįžus” (quando eu voltei). Sem sujeito nenhum, o padalyvis fica impessoal: “Lyjant geriau likti namie” (quando chove, é melhor ficar em casa).',
         table: {
           head: ['Forma', 'Quando', 'Exemplo'],
           rows: [
@@ -2015,15 +2015,15 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar o pusdalyvis com outro sujeito: «Eidamas namo, pradėjo lyti» está errado (quem ia para casa não era a chuva). Diga «Man einant namo, pradėjo lyti».',
-      'Pôr o sujeito do padalyvis no nominativo: «Aš grįžus, visi miegojo» está errado; o sujeito vai para o dativo: «Man grįžus…».',
-      'Esquecer a concordância do pusdalyvis: a mulher diz «eidama», «grįždama»; no plural, «eidami», «eidamos».',
-      'Formar o pusdalyvis a partir do presente: não é «einadamas», e sim «eidamas», do infinitivo ei-ti.',
+      'Usar o pusdalyvis com outro sujeito: “Eidamas namo, pradėjo lyti” está errado (quem ia para casa não era a chuva). Diga “Man einant namo, pradėjo lyti”.',
+      'Pôr o sujeito do padalyvis no nominativo: “Aš grįžus, visi miegojo” está errado; o sujeito vai para o dativo: “Man grįžus…”.',
+      'Esquecer a concordância do pusdalyvis: a mulher diz “eidama”, “grįždama”; no plural, “eidami”, “eidamos”.',
+      'Formar o pusdalyvis a partir do presente: não é “einadamas”, e sim “eidamas”, do infinitivo ei-ti.',
       'Na vírgula, não se preocupe demais: pelas regras atuais, separar essas construções com vírgula é, em geral, facultativo. Nos exemplos usamos a vírgula para facilitar a leitura.',
     ],
     quiz: [
       {
-        question: 'Uma mulher diz «Voltando do trabalho, comprei pão»:',
+        question: 'Uma mulher diz “Voltando do trabalho, comprei pão”:',
         options: ['Grįždama iš darbo, nupirkau duonos.', 'Grįždamas iš darbo, nupirkau duonos.', 'Man grįžtant iš darbo, nupirkau duonos.'],
         answer: 'Grįždama iš darbo, nupirkau duonos.',
         explanation: 'Mesmo sujeito e ao mesmo tempo: pusdalyvis, e no feminino, grįždama.',
@@ -2038,10 +2038,10 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         question: 'Complete: ___ darbą, išėjau namo (depois de terminar o trabalho, eu fui para casa).',
         options: ['Baigęs', 'Baigtas', 'Baigiamas'],
         answer: 'Baigęs',
-        explanation: 'Mesmo sujeito e ação anterior: particípio passado ativo. Baigtas e baigiamas são passivos («terminado», «sendo terminado»).',
+        explanation: 'Mesmo sujeito e ação anterior: particípio passado ativo. Baigtas e baigiamas são passivos (“terminado”, “sendo terminado”).',
       },
       {
-        question: 'Qual é o padalyvis presente de «lyti» (chover)?',
+        question: 'Qual é o padalyvis presente de “lyti” (chover)?',
         options: ['lyjant', 'lydamas', 'lijus'],
         answer: 'lyjant',
         explanation: 'Do presente lyja → lyjant. Lijus é o passado (depois que choveu).',
@@ -2060,7 +2060,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
     level: 'B1.4',
     title: 'Comparativo e superlativo: geresnis, geriausias',
     emoji: '🏆',
-    summary: 'O lituano compara com sufixos, não com «mais»: geras → geresnis (melhor) → geriausias (o melhor). O segundo termo vem com nei ou negu (+ nominativo) ou com už (+ acusativo): «Jonas aukštesnis už mane». E os advérbios seguem o mesmo caminho: gerai → geriau → geriausiai.',
+    summary: 'O lituano compara com sufixos, não com “mais”: geras → geresnis (melhor) → geriausias (o melhor). O segundo termo vem com nei ou negu (+ nominativo) ou com už (+ acusativo): “Jonas aukštesnis už mane”. E os advérbios seguem o mesmo caminho: gerai → geriau → geriausiai.',
     sections: [
       {
         heading: 'Os adjetivos: -esnis e -iausias',
@@ -2088,7 +2088,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Nei, negu ou už: o segundo termo',
-        text: 'Há três jeitos de dizer o «que» da comparação. Nei e negu (sinônimos) são seguidos do mesmo caso do primeiro termo, em geral o nominativo: «aukštesnis nei aš». Už pede o acusativo: «aukštesnis už mane». Para intensificar, use daug (muito), dar (ainda), šiek tiek (um pouco). E há construções que valem ouro: «kuo…, tuo…» (quanto mais…, mais…), «vis + comparativo» (cada vez mais) e «kuo + comparativo» (o mais… possível).',
+        text: 'Há três jeitos de dizer o “que” da comparação. Nei e negu (sinônimos) são seguidos do mesmo caso do primeiro termo, em geral o nominativo: “aukštesnis nei aš”. Už pede o acusativo: “aukštesnis už mane”. Para intensificar, use daug (muito), dar (ainda), šiek tiek (um pouco). E há construções que valem ouro: “kuo…, tuo…” (quanto mais…, mais…), “vis + comparativo” (cada vez mais) e “kuo + comparativo” (o mais… possível).',
         table: {
           head: ['Construção', 'Exemplo', 'Português'],
           rows: [
@@ -2103,7 +2103,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Os advérbios e o neutro: geriau, šalčiau',
-        text: 'Os advérbios em -ai fazem o comparativo em -iau e o superlativo em -iausiai: gerai → geriau → geriausiai, greitai → greičiau → greičiausiai. A mesma forma em -iau serve para falar do tempo e das sensações, sem sujeito: «Šiandien šalčiau nei vakar». Um detalhe curioso: greičiausiai, além de «o mais rápido», é o jeito mais comum de dizer «provavelmente».',
+        text: 'Os advérbios em -ai fazem o comparativo em -iau e o superlativo em -iausiai: gerai → geriau → geriausiai, greitai → greičiau → greičiausiai. A mesma forma em -iau serve para falar do tempo e das sensações, sem sujeito: “Šiandien šalčiau nei vakar”. Um detalhe curioso: greičiausiai, além de “o mais rápido”, é o jeito mais comum de dizer “provavelmente”.',
         table: {
           head: ['Advérbio', 'Comparativo', 'Superlativo'],
           rows: [
@@ -2123,27 +2123,27 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Montar o comparativo com «labiau», como o «mais» do português: «labiau geras» está errado; é «geresnis». Labiau só aparece com verbos e alguns particípios («labiau patinka», gosto mais).',
-      'Errar o caso depois de už: «už aš» está errado; já que už pede acusativo, é «už mane», «už tave», «už Joną».',
-      'Esquecer a troca de consoante: «šaltiausias» e «didiausias» estão errados; o certo é «šalčiausias» e «didžiausias».',
-      'Trocar o adjetivo pelo advérbio: «Jis geresnis kalba» está errado; para o modo de fazer, é o advérbio: «Jis geriau kalba».',
-      'Ler greičiausiai só como «o mais rápido»: em «Greičiausiai jis neateis», o sentido é «provavelmente ele não vem».',
+      'Montar o comparativo com “labiau”, como o “mais” do português: “labiau geras” está errado; é “geresnis”. Labiau só aparece com verbos e alguns particípios (“labiau patinka”, gosto mais).',
+      'Errar o caso depois de už: “už aš” está errado; já que už pede acusativo, é “už mane”, “už tave”, “už Joną”.',
+      'Esquecer a troca de consoante: “šaltiausias” e “didiausias” estão errados; o certo é “šalčiausias” e “didžiausias”.',
+      'Trocar o adjetivo pelo advérbio: “Jis geresnis kalba” está errado; para o modo de fazer, é o advérbio: “Jis geriau kalba”.',
+      'Ler greičiausiai só como “o mais rápido”: em “Greičiausiai jis neateis”, o sentido é “provavelmente ele não vem”.',
     ],
     quiz: [
       {
         question: 'Complete: Kaunas mažesnis už ___ .',
         options: ['Vilnių', 'Vilnius', 'Vilniaus'],
         answer: 'Vilnių',
-        explanation: 'Depois de už, o acusativo: Vilnius → Vilnių. Com nei seria «nei Vilnius».',
+        explanation: 'Depois de už, o acusativo: Vilnius → Vilnių. Com nei seria “nei Vilnius”.',
       },
       {
-        question: 'Qual é o superlativo masculino de «didelis»?',
+        question: 'Qual é o superlativo masculino de “didelis”?',
         options: ['didžiausias', 'didiausias', 'didelesnis'],
         answer: 'didžiausias',
         explanation: 'O d vira dž antes do i: didžiausias.',
       },
       {
-        question: 'Como se diz «Quanto mais cedo, melhor»?',
+        question: 'Como se diz “Quanto mais cedo, melhor”?',
         options: ['Kuo anksčiau, tuo geriau.', 'Kuo anksčiau, tuo geresnis.', 'Kiek anksti, tiek gerai.'],
         answer: 'Kuo anksčiau, tuo geriau.',
         explanation: 'Kuo…, tuo… com dois comparativos. Aqui são advérbios: anksčiau, geriau.',
@@ -2155,10 +2155,10 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         explanation: 'Modifica o verbo dainuoja, então é o advérbio: geriausiai.',
       },
       {
-        question: 'Qual o sentido mais provável de «Greičiausiai jis vėluos»?',
+        question: 'Qual o sentido mais provável de “Greičiausiai jis vėluos”?',
         options: ['Provavelmente ele vai atrasar.', 'Ele vai atrasar muito pouco.', 'Ele vai chegar o mais rápido possível.'],
         answer: 'Provavelmente ele vai atrasar.',
-        explanation: 'Greičiausiai é o superlativo de greitai, mas no dia a dia significa «provavelmente».',
+        explanation: 'Greičiausiai é o superlativo de greitai, mas no dia a dia significa “provavelmente”.',
       },
     ],
   },
@@ -2167,7 +2167,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
     level: 'B1.4',
     title: 'Relativos (kuris, kuri) e discurso indireto',
     emoji: '💬',
-    summary: 'O «que» relativo do português vira kuris (masc.) ou kuri (fem.), que se declina: o gênero e o número vêm do substantivo, e o caso vem da função dentro da oração relativa. «Knyga, kurią skaitau» (o livro que estou lendo). No discurso indireto, a boa notícia: o tempo verbal não muda. «Jis sakė, kad serga» é «ele disse que estava doente».',
+    summary: 'O “que” relativo do português vira kuris (masc.) ou kuri (fem.), que se declina: o gênero e o número vêm do substantivo, e o caso vem da função dentro da oração relativa. “Knyga, kurią skaitau” (o livro que estou lendo). No discurso indireto, a boa notícia: o tempo verbal não muda. “Jis sakė, kad serga” é “ele disse que estava doente”.',
     sections: [
       {
         heading: 'Kuris, kuri: dois critérios',
@@ -2193,7 +2193,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Kas, koks e kur',
-        text: 'Depois de pronomes como tas (aquilo), viskas (tudo), niekas (nada) e kiekvienas (cada um), o relativo é kas, também declinado: «viskas, ką žinau» (tudo o que sei). Para «do tipo que», usa-se koks, kokia, que concorda como adjetivo. Kur (onde) também é relativo, mas na escrita cuidada, depois de um substantivo, prefere-se kuriame, kurioje.',
+        text: 'Depois de pronomes como tas (aquilo), viskas (tudo), niekas (nada) e kiekvienas (cada um), o relativo é kas, também declinado: “viskas, ką žinau” (tudo o que sei). Para “do tipo que”, usa-se koks, kokia, que concorda como adjetivo. Kur (onde) também é relativo, mas na escrita cuidada, depois de um substantivo, prefere-se kuriame, kurioje.',
         examples: [
           ['Padarysiu viską, ką galiu.', 'Vou fazer tudo o que puder.'],
           ['Tas, kas daug skaito, daug žino.', 'Quem lê muito sabe muito.'],
@@ -2203,16 +2203,16 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Discurso indireto: sem mudar o tempo',
-        text: 'Afirmações entram com kad; perguntas de sim ou não, com ar; as outras, com a própria palavra interrogativa (kur, kada, kodėl, ką…). Mudam as pessoas e os pronomes, como em português, mas o tempo verbal fica igual ao da fala original: se a pessoa disse «estou cansado», o lituano relata «sakė, kad yra pavargęs». Pôr o passado ali mudaria o sentido (que estava cansado antes). Ordens e pedidos viram kad + condicional ou um infinitivo.',
+        text: 'Afirmações entram com kad; perguntas de sim ou não, com ar; as outras, com a própria palavra interrogativa (kur, kada, kodėl, ką…). Mudam as pessoas e os pronomes, como em português, mas o tempo verbal fica igual ao da fala original: se a pessoa disse “estou cansado”, o lituano relata “sakė, kad yra pavargęs”. Pôr o passado ali mudaria o sentido (que estava cansado antes). Ordens e pedidos viram kad + condicional ou um infinitivo.',
         table: {
           head: ['Fala direta', 'Discurso indireto'],
           rows: [
-            ['Jonas: «Aš dirbu Kaune.»', 'Jonas sakė, kad dirba Kaune.'],
-            ['Ona: «Rytoj važiuosiu į Nidą.»', 'Ona sakė, kad rytoj važiuos į Nidą.'],
-            ['Mokytojas: «Ar supratote?»', 'Mokytojas paklausė, ar supratome.'],
-            ['Draugas: «Kur tu gyveni?»', 'Draugas paklausė, kur gyvenu.'],
-            ['Mama: «Grįžk anksti!»', 'Mama paprašė, kad grįžčiau anksti.'],
-            ['Mama: «Grįžk anksti!»', 'Mama liepė man grįžti anksti.'],
+            ['Jonas: “Aš dirbu Kaune.”', 'Jonas sakė, kad dirba Kaune.'],
+            ['Ona: “Rytoj važiuosiu į Nidą.”', 'Ona sakė, kad rytoj važiuos į Nidą.'],
+            ['Mokytojas: “Ar supratote?”', 'Mokytojas paklausė, ar supratome.'],
+            ['Draugas: “Kur tu gyveni?”', 'Draugas paklausė, kur gyvenu.'],
+            ['Mama: “Grįžk anksti!”', 'Mama paprašė, kad grįžčiau anksti.'],
+            ['Mama: “Grįžk anksti!”', 'Mama liepė man grįžti anksti.'],
           ],
         },
         examples: [
@@ -2224,11 +2224,11 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Deixar kuris sempre no nominativo, como o «que» invariável do português: «knyga, kuri skaitau» está errado. Kuri é objeto de skaitau, então é «kurią».',
-      'Tirar o gênero do verbo em vez do substantivo: «vyras, kuri…» está errado; vyras é masculino → kuris, kurį, kuriam…',
-      'Voltar o tempo como no português: «Jis sakė, kad buvo pavargęs» significa que ele tinha estado cansado antes. Para «disse que estava cansado», é «sakė, kad yra pavargęs».',
-      'Usar kad na pergunta indireta: «Paklausė, kad aš ateisiu» está errado. Sim ou não pede ar: «Paklausė, ar aš ateisiu».',
-      'Esquecer as vírgulas da relativa: «Namas kuriame gyvenu yra senas» precisa de duas: «Namas, kuriame gyvenu, yra senas».',
+      'Deixar kuris sempre no nominativo, como o “que” invariável do português: “knyga, kuri skaitau” está errado. Kuri é objeto de skaitau, então é “kurią”.',
+      'Tirar o gênero do verbo em vez do substantivo: “vyras, kuri…” está errado; vyras é masculino → kuris, kurį, kuriam…',
+      'Voltar o tempo como no português: “Jis sakė, kad buvo pavargęs” significa que ele tinha estado cansado antes. Para “disse que estava cansado”, é “sakė, kad yra pavargęs”.',
+      'Usar kad na pergunta indireta: “Paklausė, kad aš ateisiu” está errado. Sim ou não pede ar: “Paklausė, ar aš ateisiu”.',
+      'Esquecer as vírgulas da relativa: “Namas kuriame gyvenu yra senas” precisa de duas: “Namas, kuriame gyvenu, yra senas”.',
     ],
     quiz: [
       {
@@ -2244,13 +2244,13 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         explanation: 'Butas é masculino e o sentido é de lugar (em que moramos): locativo masculino, kuriame.',
       },
       {
-        question: 'Ona disse: «Esu alkana». Como fica em discurso indireto?',
+        question: 'Ona disse: “Esu alkana”. Como fica em discurso indireto?',
         options: ['Ona sakė, kad yra alkana.', 'Ona sakė, kad buvo alkana.', 'Ona sakė, ar yra alkana.'],
         answer: 'Ona sakė, kad yra alkana.',
-        explanation: 'O tempo da fala original se mantém: yra. «Buvo» indicaria fome num momento anterior.',
+        explanation: 'O tempo da fala original se mantém: yra. “Buvo” indicaria fome num momento anterior.',
       },
       {
-        question: 'Como se relata a pergunta «Ar tu kalbi lietuviškai?»',
+        question: 'Como se relata a pergunta “Ar tu kalbi lietuviškai?”',
         options: ['Jis paklausė, ar kalbu lietuviškai.', 'Jis paklausė, kad kalbu lietuviškai.', 'Jis paklausė, jei kalbu lietuviškai.'],
         answer: 'Jis paklausė, ar kalbu lietuviškai.',
         explanation: 'Pergunta de sim ou não vira ar no discurso indireto.',
@@ -2269,7 +2269,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
     level: 'B2.1',
     title: 'O condicional: norėčiau, galėtum, būtų',
     emoji: '🌤️',
-    summary: 'O condicional lituano é o nosso futuro do pretérito («eu gostaria», «você poderia») e ainda faz o papel do subjuntivo depois de kad («para que você entenda» = kad suprastum). Forma-se do infinitivo, com terminações próprias: aš -čiau, tu -tum, jis -tų. É a chave da cortesia: «Norėčiau kavos», «Ar galėtumėte padėti?».',
+    summary: 'O condicional lituano é o nosso futuro do pretérito (“eu gostaria”, “você poderia”) e ainda faz o papel do subjuntivo depois de kad (“para que você entenda” = kad suprastum). Forma-se do infinitivo, com terminações próprias: aš -čiau, tu -tum, jis -tų. É a chave da cortesia: “Norėčiau kavos”, “Ar galėtumėte padėti?”.',
     sections: [
       {
         heading: 'As formas',
@@ -2288,7 +2288,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Cortesia, conselho e desejo',
-        text: 'Como em português, o condicional suaviza pedidos e perguntas. Com norėti, o objeto costuma ir para o genitivo, porque se pede «um pouco de»: «Norėčiau arbatos». Turėtum (você deveria) e reikėtų (seria preciso) dão conselhos sem soar mandão. Sozinho, com kad, o condicional exprime um desejo: «Kad būtų vasara!».',
+        text: 'Como em português, o condicional suaviza pedidos e perguntas. Com norėti, o objeto costuma ir para o genitivo, porque se pede “um pouco de”: “Norėčiau arbatos”. Turėtum (você deveria) e reikėtų (seria preciso) dão conselhos sem soar mandão. Sozinho, com kad, o condicional exprime um desejo: “Kad būtų vasara!”.',
         examples: [
           ['Norėčiau kavos su pienu.', 'Eu queria um café com leite.'],
           ['Ar galėtumėte man padėti?', 'O senhor poderia me ajudar?'],
@@ -2300,8 +2300,8 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'Kad + condicional: o «para que» e o pedido',
-        text: 'Onde o português pede o subjuntivo depois de «para que», «quero que», «peço que», o lituano usa kad + condicional. É o mesmo mecanismo que você viu no discurso indireto das ordens: «Mama paprašė, kad grįžčiau anksti». Se o sujeito for o mesmo, é mais natural usar o infinitivo: «Atėjau padėti» (vim ajudar).',
+        heading: 'Kad + condicional: o “para que” e o pedido',
+        text: 'Onde o português pede o subjuntivo depois de “para que”, “quero que”, “peço que”, o lituano usa kad + condicional. É o mesmo mecanismo que você viu no discurso indireto das ordens: “Mama paprašė, kad grįžčiau anksti”. Se o sujeito for o mesmo, é mais natural usar o infinitivo: “Atėjau padėti” (vim ajudar).',
         table: {
           head: ['Português', 'Lituano'],
           rows: [
@@ -2320,42 +2320,42 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar o futuro ou o presente depois de kad de finalidade: «Kalbu lėtai, kad suprasi» está errado. Para «para que», é o condicional: «kad suprastum».',
-      'Formar o condicional a partir do presente: não é «einčiau» nem «noričiau», e sim eičiau, norėčiau, do infinitivo.',
-      'Esquecer o č do «aš»: «norėtiau» e «būtiau» não existem; o t vira č: norėčiau, būčiau.',
-      'Trocar tu e jis: «tu būtų» está errado; tu é «būtum», e būtų é jis, ji, jie, jos.',
-      'Pedir no acusativo com o condicional de norėti: «Norėčiau kavą» se ouve, mas o natural é o genitivo, «Norėčiau kavos».',
+      'Usar o futuro ou o presente depois de kad de finalidade: “Kalbu lėtai, kad suprasi” está errado. Para “para que”, é o condicional: “kad suprastum”.',
+      'Formar o condicional a partir do presente: não é “einčiau” nem “noričiau”, e sim eičiau, norėčiau, do infinitivo.',
+      'Esquecer o č do “aš”: “norėtiau” e “būtiau” não existem; o t vira č: norėčiau, būčiau.',
+      'Trocar tu e jis: “tu būtų” está errado; tu é “būtum”, e būtų é jis, ji, jie, jos.',
+      'Pedir no acusativo com o condicional de norėti: “Norėčiau kavą” se ouve, mas o natural é o genitivo, “Norėčiau kavos”.',
     ],
     quiz: [
       {
         question: 'Complete (educado): ___ užsisakyti staliuką dviem.',
         options: ['Norėčiau', 'Noriu', 'Norėsiu'],
         answer: 'Norėčiau',
-        explanation: 'O condicional suaviza o pedido, como «eu gostaria».',
+        explanation: 'O condicional suaviza o pedido, como “eu gostaria”.',
       },
       {
         question: 'Complete: Rašau aiškiai, kad visi ___ .',
         options: ['suprastų', 'supras', 'supranta'],
         answer: 'suprastų',
-        explanation: 'Kad de finalidade («para que») pede o condicional.',
+        explanation: 'Kad de finalidade (“para que”) pede o condicional.',
       },
       {
-        question: 'Qual é o condicional de «eiti» para «tu»?',
+        question: 'Qual é o condicional de “eiti” para “tu”?',
         options: ['eitum', 'eitų', 'einčiau'],
         answer: 'eitum',
         explanation: 'Do infinitivo ei-ti + -tum. Eitų é da 3ª pessoa.',
       },
       {
-        question: 'Como se diz «Você deveria descansar»?',
+        question: 'Como se diz “Você deveria descansar”?',
         options: ['Tu turėtum pailsėti.', 'Tu turėsi pailsėti.', 'Tu turi pailsėjęs.'],
         answer: 'Tu turėtum pailsėti.',
-        explanation: 'Turėti no condicional (turėtum) é o «deveria» do conselho.',
+        explanation: 'Turėti no condicional (turėtum) é o “deveria” do conselho.',
       },
       {
         question: 'Complete: Mama nori, kad aš ___ gydytoja.',
         options: ['būčiau', 'būsiu', 'esu'],
         answer: 'būčiau',
-        explanation: '«Querer que» pede kad + condicional: kad būčiau.',
+        explanation: '“Querer que” pede kad + condicional: kad būčiau.',
       },
     ],
   },
@@ -2364,11 +2364,11 @@ export const GRAMMAR_LT: GrammarTopic[] = [
     level: 'B2.1',
     title: 'Orações hipotéticas: jei lis, jei turėčiau, jei būčiau žinojęs',
     emoji: '🤔',
-    summary: 'Três graus de «se»: o possível (jei + futuro: «Jei lis, liksime namie»), o irreal do presente (jei + condicional: «Jei turėčiau laiko, važiuočiau») e o irreal do passado (jei + būčiau + particípio: «Jei būčiau žinojęs, būčiau atėjęs»). Como o lituano não tem subjuntivo, tudo se faz com o futuro e o condicional.',
+    summary: 'Três graus de “se”: o possível (jei + futuro: “Jei lis, liksime namie”), o irreal do presente (jei + condicional: “Jei turėčiau laiko, važiuočiau”) e o irreal do passado (jei + būčiau + particípio: “Jei būčiau žinojęs, būčiau atėjęs”). Como o lituano não tem subjuntivo, tudo se faz com o futuro e o condicional.',
     sections: [
       {
         heading: 'Os três tipos',
-        text: 'No hipotético real, o que pode mesmo acontecer, o lituano usa o futuro nas duas orações (ou o imperativo na principal). O português usa o futuro do subjuntivo («se chover»), que o lituano não tem. No irreal do presente, as duas orações vão para o condicional. No irreal do passado, as duas levam o condicional composto: būčiau, būtum, būtų… + particípio passado ativo, que concorda com o sujeito.',
+        text: 'No hipotético real, o que pode mesmo acontecer, o lituano usa o futuro nas duas orações (ou o imperativo na principal). O português usa o futuro do subjuntivo (“se chover”), que o lituano não tem. No irreal do presente, as duas orações vão para o condicional. No irreal do passado, as duas levam o condicional composto: būčiau, būtum, būtų… + particípio passado ativo, que concorda com o sujeito.',
         table: {
           head: ['Tipo', 'Se…', 'Então…', 'Português'],
           rows: [
@@ -2388,8 +2388,8 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'Outras formas de «se»',
-        text: 'Jei e jeigu são sinônimos (jeigu é um pouco mais enfático). «Jei ne…» é o nosso «se não fosse…». «Net jei» é «mesmo que, mesmo se». «O jeigu…?» abre suposições: «e se…?». Na fala, kad também aparece como «se» no irreal: «Kad žinočiau, pasakyčiau» (se eu soubesse, diria). E a oração com se pode vir depois da principal, sempre separada por vírgula.',
+        heading: 'Outras formas de “se”',
+        text: 'Jei e jeigu são sinônimos (jeigu é um pouco mais enfático). “Jei ne…” é o nosso “se não fosse…”. “Net jei” é “mesmo que, mesmo se”. “O jeigu…?” abre suposições: “e se…?”. Na fala, kad também aparece como “se” no irreal: “Kad žinočiau, pasakyčiau” (se eu soubesse, diria). E a oração com se pode vir depois da principal, sempre separada por vírgula.',
         examples: [
           ['Jei ne tu, būčiau pasiklydęs.', 'Se não fosse você, eu teria me perdido.'],
           ['Net jei lis, eisime į koncertą.', 'Mesmo se chover, vamos ao show.'],
@@ -2400,7 +2400,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Na prática: conselhos, desculpas e arrependimentos',
-        text: 'O irreal é o jeito lituano de aconselhar com delicadeza («Tavo vietoje…», no seu lugar…) e de lamentar o que não foi feito. Repare que, depois de uma negação, o objeto continua no genitivo mesmo dentro do condicional: «Jei neturėčiau darbo…».',
+        text: 'O irreal é o jeito lituano de aconselhar com delicadeza (“Tavo vietoje…”, no seu lugar…) e de lamentar o que não foi feito. Repare que, depois de uma negação, o objeto continua no genitivo mesmo dentro do condicional: “Jei neturėčiau darbo…”.',
         examples: [
           ['Tavo vietoje aš nevažiuočiau per tokį sniegą.', 'No seu lugar, eu não viajaria com uma neve dessas.'],
           ['Jei neturėčiau darbo, ilgiau pabūčiau Palangoje.', 'Se eu não tivesse trabalho, ficaria mais tempo em Palanga.'],
@@ -2410,10 +2410,10 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar o presente para o futuro na condição: «Jei rytoj lyja» está errado; diga «Jei rytoj lis».',
-      'Misturar futuro e condicional: «Jei turėsiu laiko, važiuočiau» não combina. Ou tudo real (turėsiu… važiuosiu), ou tudo irreal (turėčiau… važiuočiau).',
-      'Esquecer a concordância do particípio no irreal do passado: a mulher diz «būčiau žinojusi»; no plural, «būtume žinoję».',
-      'Usar jei como «se» de dúvida: «Nežinau, jei…» está errado; aí é ar (tópico lt-g15).',
+      'Usar o presente para o futuro na condição: “Jei rytoj lyja” está errado; diga “Jei rytoj lis”.',
+      'Misturar futuro e condicional: “Jei turėsiu laiko, važiuočiau” não combina. Ou tudo real (turėsiu… važiuosiu), ou tudo irreal (turėčiau… važiuočiau).',
+      'Esquecer a concordância do particípio no irreal do passado: a mulher diz “būčiau žinojusi”; no plural, “būtume žinoję”.',
+      'Usar jei como “se” de dúvida: “Nežinau, jei…” está errado; aí é ar (tópico lt-g15).',
     ],
     quiz: [
       {
@@ -2429,16 +2429,16 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         explanation: 'Irreal do presente: condicional nas duas orações.',
       },
       {
-        question: 'Um homem diz «Se eu tivesse sabido, teria vindo»:',
+        question: 'Um homem diz “Se eu tivesse sabido, teria vindo”:',
         options: ['Jei būčiau žinojęs, būčiau atėjęs.', 'Jei žinočiau, ateičiau.', 'Jei būčiau žinojusi, būčiau atėjusi.'],
         answer: 'Jei būčiau žinojęs, būčiau atėjęs.',
         explanation: 'Irreal do passado com particípios masculinos. A segunda opção é o irreal do presente; a terceira é fala de mulher.',
       },
       {
-        question: 'Como se diz «Se não fosse você…»?',
+        question: 'Como se diz “Se não fosse você…”?',
         options: ['Jei ne tu…', 'Jei nebūtum…', 'Kad ne tave…'],
         answer: 'Jei ne tu…',
-        explanation: '«Jei ne» + nominativo é a fórmula fixa para «se não fosse».',
+        explanation: '“Jei ne” + nominativo é a fórmula fixa para “se não fosse”.',
       },
       {
         question: 'Complete: Jei nebūtume pavėlavę, ___ spektaklį.',
@@ -2452,13 +2452,13 @@ export const GRAMMAR_LT: GrammarTopic[] = [
   {
     id: 'lt-g23',
     level: 'B2.2',
-    title: 'Registro formal: o «Jūs» de cortesia e o e-mail',
+    title: 'Registro formal: o “Jūs” de cortesia e o e-mail',
     emoji: '🎩',
-    summary: 'Com desconhecidos, clientes, professores e chefes, o lituano usa Jūs (vós) com o verbo na 2ª pessoa do plural: «Kaip Jūs laikotės?». Na carta e no e-mail, Jūs vai com maiúscula, e a abertura clássica usa o vocativo: «Gerbiamasis pone Kazlauskai», «Gerbiamoji ponia Kazlauskiene». O tu fica para amigos, família, crianças e colegas próximos.',
+    summary: 'Com desconhecidos, clientes, professores e chefes, o lituano usa Jūs (vós) com o verbo na 2ª pessoa do plural: “Kaip Jūs laikotės?”. Na carta e no e-mail, Jūs vai com maiúscula, e a abertura clássica usa o vocativo: “Gerbiamasis pone Kazlauskai”, “Gerbiamoji ponia Kazlauskiene”. O tu fica para amigos, família, crianças e colegas próximos.',
     sections: [
       {
         heading: 'Tu × Jūs',
-        text: 'O verbo vai sempre para o plural (esate, galite, norėtumėte), mas o adjetivo e o particípio concordam com a pessoa real, no singular: a um homem, «Jūs esate teisus»; a uma mulher, «Jūs esate teisi». Na correspondência para uma pessoa, escrevem-se com maiúscula Jūs, Jūsų, Jums, Jus, Jumis. Em textos para o público geral (um aviso, um site), fica em minúscula. A passagem para o tu costuma ser proposta pelo mais velho ou pelo superior: «Gal galime kreiptis vienas į kitą vardu?» (podemos nos tratar pelo nome?).',
+        text: 'O verbo vai sempre para o plural (esate, galite, norėtumėte), mas o adjetivo e o particípio concordam com a pessoa real, no singular: a um homem, “Jūs esate teisus”; a uma mulher, “Jūs esate teisi”. Na correspondência para uma pessoa, escrevem-se com maiúscula Jūs, Jūsų, Jums, Jus, Jumis. Em textos para o público geral (um aviso, um site), fica em minúscula. A passagem para o tu costuma ser proposta pelo mais velho ou pelo superior: “Gal galime kreiptis vienas į kitą vardu?” (podemos nos tratar pelo nome?).',
         table: {
           head: ['Situação', 'Informal (tu)', 'Formal (Jūs)'],
           rows: [
@@ -2493,7 +2493,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'O e-mail formal, frase a frase',
-        text: 'Depois da saudação vem uma vírgula, e o texto começa na linha seguinte com maiúscula. O pedido vem no condicional (norėčiau, prašyčiau); o assunto, com dėl + genitivo. Fecha-se com «Pagarbiai,» ou «Su pagarba,» e o nome na linha de baixo. Empresas e repartições escrevem na 1ª pessoa do plural: informuojame, prašome, dėkojame.',
+        text: 'Depois da saudação vem uma vírgula, e o texto começa na linha seguinte com maiúscula. O pedido vem no condicional (norėčiau, prašyčiau); o assunto, com dėl + genitivo. Fecha-se com “Pagarbiai,” ou “Su pagarba,” e o nome na linha de baixo. Empresas e repartições escrevem na 1ª pessoa do plural: informuojame, prašome, dėkojame.',
         examples: [
           ['Rašau dėl darbo skelbimo.', 'Escrevo a respeito do anúncio de emprego.'],
           ['Norėčiau pasiteirauti, ar dar galima užsiregistruoti į kursus.', 'Gostaria de saber se ainda é possível se inscrever no curso.'],
@@ -2507,10 +2507,10 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pôr o verbo no singular com Jūs: «Jūs esi» está errado; é «Jūs esate», «Jūs galite».',
-      'Pôr o adjetivo no plural quando se fala com uma pessoa só: a um homem, «Jūs esate teisūs» soa como se fossem vários; diga «Jūs esate teisus».',
-      'Abrir a carta no nominativo: «Gerbiamas ponas Kazlauskas,» está errado. Quem é chamado vai para o vocativo: «Gerbiamasis pone Kazlauskai,».',
-      'Começar um e-mail formal com «Labas»: é íntimo demais. Use «Laba diena,» ou «Sveiki,».',
+      'Pôr o verbo no singular com Jūs: “Jūs esi” está errado; é “Jūs esate”, “Jūs galite”.',
+      'Pôr o adjetivo no plural quando se fala com uma pessoa só: a um homem, “Jūs esate teisūs” soa como se fossem vários; diga “Jūs esate teisus”.',
+      'Abrir a carta no nominativo: “Gerbiamas ponas Kazlauskas,” está errado. Quem é chamado vai para o vocativo: “Gerbiamasis pone Kazlauskai,”.',
+      'Começar um e-mail formal com “Labas”: é íntimo demais. Use “Laba diena,” ou “Sveiki,”.',
       'Escrever Jūs com minúscula numa carta pessoal: na correspondência para uma pessoa, a maiúscula é a marca do respeito.',
     ],
     quiz: [
@@ -2536,10 +2536,10 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         question: 'Complete: Rašau ___ Jūsų skelbimo.',
         options: ['dėl', 'apie', 'už'],
         answer: 'dėl',
-        explanation: 'Dėl + genitivo é o «a respeito de» da correspondência.',
+        explanation: 'Dėl + genitivo é o “a respeito de” da correspondência.',
       },
       {
-        question: 'Qual é o vocativo de «ponia Kazlauskienė»?',
+        question: 'Qual é o vocativo de “ponia Kazlauskienė”?',
         options: ['ponia Kazlauskiene', 'ponia Kazlauskienė', 'poniai Kazlauskienei'],
         answer: 'ponia Kazlauskiene',
         explanation: 'Os nomes em -ė fazem o vocativo em -e; ponia fica igual.',
@@ -2551,7 +2551,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
     level: 'B2.2',
     title: 'Na repartição: requerimentos, datas e abreviaturas',
     emoji: '🏛️',
-    summary: 'A linguagem administrativa lituana tem fórmulas fixas: o requerimento (prašymas) vai endereçado no dativo («Vilniaus miesto savivaldybės administracijai»), o assunto vem com dėl + genitivo, e o pedido com «Prašau…» + infinitivo. As datas se escrevem 2026-09-28 ou «2026 m. rugsėjo 28 d.», com o mês no genitivo e em minúscula.',
+    summary: 'A linguagem administrativa lituana tem fórmulas fixas: o requerimento (prašymas) vai endereçado no dativo (“Vilniaus miesto savivaldybės administracijai”), o assunto vem com dėl + genitivo, e o pedido com “Prašau…” + infinitivo. As datas se escrevem 2026-09-28 ou “2026 m. rugsėjo 28 d.”, com o mês no genitivo e em minúscula.',
     sections: [
       {
         heading: 'Palavras e abreviaturas do dia a dia',
@@ -2579,7 +2579,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Datas e endereços',
-        text: 'A forma curta oficial é ano-mês-dia com hífens: 2026-09-28. A forma por extenso usa o mês no genitivo, sempre com minúscula: «2026 m. rugsėjo 28 d.», lida como «du tūkstančiai dvidešimt šeštųjų metų rugsėjo dvidešimt aštuntoji». No endereço, primeiro a rua com a abreviatura, depois o número, depois a cidade: «Liepų g. 12, Klaipėda».',
+        text: 'A forma curta oficial é ano-mês-dia com hífens: 2026-09-28. A forma por extenso usa o mês no genitivo, sempre com minúscula: “2026 m. rugsėjo 28 d.”, lida como “du tūkstančiai dvidešimt šeštųjų metų rugsėjo dvidešimt aštuntoji”. No endereço, primeiro a rua com a abreviatura, depois o número, depois a cidade: “Liepų g. 12, Klaipėda”.',
         table: {
           head: ['Mês (nominativo)', 'Na data (genitivo)', 'Português'],
           rows: [
@@ -2605,7 +2605,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'O requerimento e o balcão',
-        text: 'O prašymas tem uma ordem fixa: no alto, o nome, o endereço e o contato de quem pede; depois, o destinatário no DATIVO (a quem se dirige); no meio, o título PRAŠYMAS com o assunto «DĖL…» e, embaixo, a data e o lugar; o texto começa com «Prašau…» + infinitivo; no fim, a lista do que vai anexo («Pridedama:») e a assinatura. No balcão, a linguagem é a mesma do e-mail formal: Jūs, condicional e passiva.',
+        text: 'O prašymas tem uma ordem fixa: no alto, o nome, o endereço e o contato de quem pede; depois, o destinatário no DATIVO (a quem se dirige); no meio, o título PRAŠYMAS com o assunto “DĖL…” e, embaixo, a data e o lugar; o texto começa com “Prašau…” + infinitivo; no fim, a lista do que vai anexo (“Pridedama:”) e a assinatura. No balcão, a linguagem é a mesma do e-mail formal: Jūs, condicional e passiva.',
         table: {
           head: ['Parte', 'Exemplo'],
           rows: [
@@ -2628,9 +2628,9 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Endereçar o requerimento no nominativo: «Vilniaus miesto savivaldybė» no alto da folha está errado; a quem se dirige vai no dativo: «…savivaldybei», «…administracijai».',
-      'Escrever o mês com maiúscula ou no nominativo: «2026 m. Rugsėjis 28 d.» está errado; é «rugsėjo», em minúscula e no genitivo.',
-      'Pôr o que se pede no acusativo depois de prašyti sozinho: «Prašau pažymą» soa errado. Ou «Prašau pažymos» (genitivo), ou «Prašau išduoti pažymą» (com infinitivo).',
+      'Endereçar o requerimento no nominativo: “Vilniaus miesto savivaldybė” no alto da folha está errado; a quem se dirige vai no dativo: “…savivaldybei”, “…administracijai”.',
+      'Escrever o mês com maiúscula ou no nominativo: “2026 m. Rugsėjis 28 d.” está errado; é “rugsėjo”, em minúscula e no genitivo.',
+      'Pôr o que se pede no acusativo depois de prašyti sozinho: “Prašau pažymą” soa errado. Ou “Prašau pažymos” (genitivo), ou “Prašau išduoti pažymą” (com infinitivo).',
       'Usar a data à brasileira: 28/09/2026 não é o padrão. Escreva 2026-09-28.',
     ],
     quiz: [
@@ -2650,10 +2650,10 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         question: 'Complete: Prašau ___ leidimą gyventi.',
         options: ['pratęsti', 'pratęsimas', 'pratęsimo'],
         answer: 'pratęsti',
-        explanation: '«Prašau» + infinitivo: prašau pratęsti, peço que prorroguem.',
+        explanation: '“Prašau” + infinitivo: prašau pratęsti, peço que prorroguem.',
       },
       {
-        question: 'O que significa «a. k.» num formulário?',
+        question: 'O que significa “a. k.” num formulário?',
         options: ['asmens kodas', 'adreso kortelė', 'atsakymo kopija'],
         answer: 'asmens kodas',
         explanation: 'É o código pessoal, o número de identificação de cada residente.',
@@ -2672,7 +2672,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
     level: 'B2.3',
     title: 'Diminutivos: namelis, sesutė, katytė',
     emoji: '🐣',
-    summary: 'O lituano adora diminutivos, tanto quanto o brasileiro adora o «-inho». Há vários sufixos (-elis, -ukas, -utis, -ytis e seus femininos -elė, -ukė, -utė, -ytė), e eles aparecem no carinho com crianças e bichos, na gentileza à mesa («Gal dar kavutės?»), nos apelidos (Jonukas, Onutė) e, em quantidade, nas canções populares.',
+    summary: 'O lituano adora diminutivos, tanto quanto o brasileiro adora o “-inho”. Há vários sufixos (-elis, -ukas, -utis, -ytis e seus femininos -elė, -ukė, -utė, -ytė), e eles aparecem no carinho com crianças e bichos, na gentileza à mesa (“Gal dar kavutės?”), nos apelidos (Jonukas, Onutė) e, em quantidade, nas canções populares.',
     sections: [
       {
         heading: 'Os sufixos',
@@ -2698,7 +2698,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Para que serve',
-        text: 'Além do tamanho, o diminutivo traz afeto e gentileza. Com crianças, bichos e comida, ele é quase obrigatório no tom carinhoso. Oferecer «kavutės» ou «arbatėlės» é mais acolhedor do que «kavos». Nos nomes, cria apelidos: Jonas → Jonukas, Petras → Petriukas, Ona → Onutė, Marija → Marytė. Nas dainos, as canções populares, há diminutivos em cascata: saulutė, tėvelis, motinėlė, bernužėlis (o rapazinho), mergužėlė (a mocinha). E, como em português, alguns diminutivos viraram palavras comuns: mergaitė (menina), lemputė (lâmpada), kelnaitės (roupa íntima, de kelnės, calça).',
+        text: 'Além do tamanho, o diminutivo traz afeto e gentileza. Com crianças, bichos e comida, ele é quase obrigatório no tom carinhoso. Oferecer “kavutės” ou “arbatėlės” é mais acolhedor do que “kavos”. Nos nomes, cria apelidos: Jonas → Jonukas, Petras → Petriukas, Ona → Onutė, Marija → Marytė. Nas dainos, as canções populares, há diminutivos em cascata: saulutė, tėvelis, motinėlė, bernužėlis (o rapazinho), mergužėlė (a mocinha). E, como em português, alguns diminutivos viraram palavras comuns: mergaitė (menina), lemputė (lâmpada), kelnaitės (roupa íntima, de kelnės, calça).',
         examples: [
           ['Gal dar kavutės?', 'Mais um cafezinho?'],
           ['Labanakt, mažyti.', 'Boa noite, pequenininho.'],
@@ -2709,7 +2709,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Um parente famoso: os sobrenomes femininos',
-        text: 'Os sufixos -aitė, -ytė, -utė, -ūtė, que marcam o sobrenome da mulher solteira (Kazlauskaitė, filha dos Kazlauskas), têm a mesma origem dos diminutivos: a «filhinha» da família. A mulher casada usa -ienė (Kazlauskienė). Hoje também é permitida uma forma que não indica o estado civil, com -ė: Kazlauskė.',
+        text: 'Os sufixos -aitė, -ytė, -utė, -ūtė, que marcam o sobrenome da mulher solteira (Kazlauskaitė, filha dos Kazlauskas), têm a mesma origem dos diminutivos: a “filhinha” da família. A mulher casada usa -ienė (Kazlauskienė). Hoje também é permitida uma forma que não indica o estado civil, com -ė: Kazlauskė.',
         table: {
           head: ['Pai / marido', 'Solteira', 'Casada', 'Neutra'],
           rows: [
@@ -2721,14 +2721,14 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Trocar o gênero no diminutivo: «knygelis» está errado; knyga é feminino, então knygelė.',
-      'Usar diminutivo em texto formal: num e-mail ao chefe, «Siunčiu dokumentėlį» soa infantil. Deixe o carinho para a conversa.',
-      'Esquecer o vocativo dos apelidos: chamando alguém, Jonukas vira «Jonuk!», e Onutė vira «Onute!».',
-      'Achar que mergaitė ou lemputė são sempre «pequenas»: são palavras comuns, sem ideia de tamanho.',
+      'Trocar o gênero no diminutivo: “knygelis” está errado; knyga é feminino, então knygelė.',
+      'Usar diminutivo em texto formal: num e-mail ao chefe, “Siunčiu dokumentėlį” soa infantil. Deixe o carinho para a conversa.',
+      'Esquecer o vocativo dos apelidos: chamando alguém, Jonukas vira “Jonuk!”, e Onutė vira “Onute!”.',
+      'Achar que mergaitė ou lemputė são sempre “pequenas”: são palavras comuns, sem ideia de tamanho.',
     ],
     quiz: [
       {
-        question: 'Qual é o diminutivo de «knyga»?',
+        question: 'Qual é o diminutivo de “knyga”?',
         options: ['knygelė', 'knygelis', 'knygukas'],
         answer: 'knygelė',
         explanation: 'Knyga é feminino, e o diminutivo também: knygelė.',
@@ -2737,10 +2737,10 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         question: 'Qual oferta soa mais acolhedora à mesa?',
         options: ['Gal dar arbatėlės?', 'Gal dar arbatos?', 'Gal dar arbatą?'],
         answer: 'Gal dar arbatėlės?',
-        explanation: 'O diminutivo arbatėlė dá o tom carinhoso de «um chazinho».',
+        explanation: 'O diminutivo arbatėlė dá o tom carinhoso de “um chazinho”.',
       },
       {
-        question: 'Qual é o diminutivo de «šuo» (cachorro)?',
+        question: 'Qual é o diminutivo de “šuo” (cachorro)?',
         options: ['šuniukas', 'šuoukas', 'šunelė'],
         answer: 'šuniukas',
         explanation: 'O radical de šuo nos outros casos é šun- (šuns, šunį): šun + iukas.',
@@ -2752,7 +2752,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         explanation: '-aitė é o sufixo da filha solteira; -ienė, o da mulher casada.',
       },
       {
-        question: 'Como se chama «Onutė» (vocativo)?',
+        question: 'Como se chama “Onutė” (vocativo)?',
         options: ['Onute!', 'Onutė!', 'Onutei!'],
         answer: 'Onute!',
         explanation: 'Os nomes em -ė fazem o vocativo em -e.',
@@ -2764,10 +2764,10 @@ export const GRAMMAR_LT: GrammarTopic[] = [
     level: 'B2.3',
     title: 'Expressões idiomáticas: sveikas kaip ridikas',
     emoji: '🥕',
-    summary: 'Os frazeologizmai lituanos vêm do campo, da casa e do corpo: quem está saudável está «kaip ridikas» (como um rabanete), quem vive bem vive «kaip inkstas taukuose» (como um rim na gordura), e quem faz tempestade em copo d’água «iš adatos vežimą priskaldo». E eles obedecem à gramática: na negativa, o objeto vai para o genitivo, como em qualquer frase.',
+    summary: 'Os frazeologizmai lituanos vêm do campo, da casa e do corpo: quem está saudável está “kaip ridikas” (como um rabanete), quem vive bem vive “kaip inkstas taukuose” (como um rim na gordura), e quem faz tempestade em copo d’água “iš adatos vežimą priskaldo”. E eles obedecem à gramática: na negativa, o objeto vai para o genitivo, como em qualquer frase.',
     sections: [
       {
-        heading: 'Comparações com «kaip»',
+        heading: 'Comparações com “kaip”',
         text: 'A maneira mais comum de fazer uma expressão em lituano é a comparação com kaip (como). Muitas têm equivalente em português, mas com outra imagem. Aprenda a expressão inteira, na ordem em que ela aparece.',
         table: {
           head: ['Expressão', 'Ao pé da letra', 'Sentido'],
@@ -2792,7 +2792,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Com partes do corpo',
-        text: 'Mãos, dedos, língua, nariz e cabeça rendem expressões que se ouvem todo dia. Algumas vêm de provérbios antigos, como «ranka ranką plauna», que é igual ao nosso «uma mão lava a outra».',
+        text: 'Mãos, dedos, língua, nariz e cabeça rendem expressões que se ouvem todo dia. Algumas vêm de provérbios antigos, como “ranka ranką plauna”, que é igual ao nosso “uma mão lava a outra”.',
         table: {
           head: ['Expressão', 'Ao pé da letra', 'Sentido'],
           rows: [
@@ -2816,7 +2816,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Do exagero: iš adatos vežimą priskaldyti',
-        text: 'Ao pé da letra, «rachar uma carroça (de lenha) a partir de uma agulha»: é o nosso «fazer tempestade em copo d’água». Como toda expressão lituana, ela se conjuga e se declina: tu priskaldai, jis priskaldė. Na negativa, entra o genitivo: «nepūsk miglos», «nelaikė liežuvio už dantų». Evite traduzir as nossas expressões palavra por palavra: «chover no molhado» ou «pagar o pato» não fazem sentido em lituano.',
+        text: 'Ao pé da letra, “rachar uma carroça (de lenha) a partir de uma agulha”: é o nosso “fazer tempestade em copo d’água”. Como toda expressão lituana, ela se conjuga e se declina: tu priskaldai, jis priskaldė. Na negativa, entra o genitivo: “nepūsk miglos”, “nelaikė liežuvio už dantų”. Evite traduzir as nossas expressões palavra por palavra: “chover no molhado” ou “pagar o pato” não fazem sentido em lituano.',
         examples: [
           ['Tu iš adatos vežimą priskaldai.', 'Você está fazendo tempestade em copo d’água.'],
           ['Ji nelaikė liežuvio už dantų ir viską papasakojo.', 'Ela não segurou a língua e contou tudo.'],
@@ -2826,14 +2826,14 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Esquecer o genitivo da negação dentro da expressão: «Nepūsk man miglą į akis» está errado; é «miglos».',
-      'Mudar a imagem: é «du vandens lašai», não «du pieno lašai»; é «šuniui penkta koja», não «katei penkta koja». As expressões são fixas.',
-      'Traduzir expressões brasileiras ao pé da letra: «pagar o pato» ou «chover no molhado» não existem em lituano.',
-      'Usar kaip com o caso errado: em «kaip žirniais į sieną», žirniais está no instrumental (jogar com ervilhas).',
+      'Esquecer o genitivo da negação dentro da expressão: “Nepūsk man miglą į akis” está errado; é “miglos”.',
+      'Mudar a imagem: é “du vandens lašai”, não “du pieno lašai”; é “šuniui penkta koja”, não “katei penkta koja”. As expressões são fixas.',
+      'Traduzir expressões brasileiras ao pé da letra: “pagar o pato” ou “chover no molhado” não existem em lituano.',
+      'Usar kaip com o caso errado: em “kaip žirniais į sieną”, žirniais está no instrumental (jogar com ervilhas).',
     ],
     quiz: [
       {
-        question: 'Qual expressão significa «cheio de saúde»?',
+        question: 'Qual expressão significa “cheio de saúde”?',
         options: ['sveikas kaip ridikas', 'alkanas kaip vilkas', 'bailus kaip kiškis'],
         answer: 'sveikas kaip ridikas',
         explanation: 'O rabanete (ridikas), firme e vermelho, é a imagem da saúde.',
@@ -2845,13 +2845,13 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         explanation: 'Com o verbo negado, o objeto direto vai para o genitivo, até dentro da expressão.',
       },
       {
-        question: 'Qual expressão equivale a «fazer tempestade em copo d’água»?',
+        question: 'Qual expressão equivale a “fazer tempestade em copo d’água”?',
         options: ['iš adatos vežimą priskaldyti', 'nė piršto nepajudinti', 'riesti nosį'],
         answer: 'iš adatos vežimą priskaldyti',
         explanation: 'Fazer uma carroça de lenha a partir de uma agulha: aumentar demais um problema.',
       },
       {
-        question: 'Quem «gyvena kaip inkstas taukuose»…',
+        question: 'Quem “gyvena kaip inkstas taukuose”…',
         options: ['gyvena labai gerai', 'labai serga', 'nuolat skundžiasi'],
         answer: 'gyvena labai gerai',
         explanation: 'O rim protegido pela gordura é a imagem de quem vive no conforto.',
@@ -2873,7 +2873,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
     sections: [
       {
         heading: 'Os verbos encurtados e as partículas',
-        text: 'Na fala, a 1ª e a 2ª pessoa do plural perdem o -e final: einame → einam, darome → darom, einate → einat; prašome vira prašom. No imperativo, eikime vira eime ou einam. As partículas dão o tom: na e nu (bem, ora, e aí), tai (então), gi (reforço: «Ateik gi!», vem logo!), juk (afinal, né: «Juk sakiau!», eu não disse?), gal (será que, talvez, e também pedido educado). Jo é o «é» ou «aham» da conversa, no lugar de taip.',
+        text: 'Na fala, a 1ª e a 2ª pessoa do plural perdem o -e final: einame → einam, darome → darom, einate → einat; prašome vira prašom. No imperativo, eikime vira eime ou einam. As partículas dão o tom: na e nu (bem, ora, e aí), tai (então), gi (reforço: “Ateik gi!”, vem logo!), juk (afinal, né: “Juk sakiau!”, eu não disse?), gal (será que, talvez, e também pedido educado). Jo é o “é” ou “aham” da conversa, no lugar de taip.',
         table: {
           head: ['Fala', 'Padrão', 'Português'],
           rows: [
@@ -2895,7 +2895,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Gírias que você vai ouvir',
-        text: 'Muitas gírias lituanas vieram de outras línguas: faina, do alemão fein, é o nosso «legal»; outras vêm do russo, como o «nu». Kietas (duro) virou «maneiro»; šaunu (ótimo) é coloquial, mas aceito em qualquer lugar. A gíria muda depressa e varia por idade e região; as abaixo são bem difundidas. Faina não se declina: «faina filmas», «faina vieta».',
+        text: 'Muitas gírias lituanas vieram de outras línguas: faina, do alemão fein, é o nosso “legal”; outras vêm do russo, como o “nu”. Kietas (duro) virou “maneiro”; šaunu (ótimo) é coloquial, mas aceito em qualquer lugar. A gíria muda depressa e varia por idade e região; as abaixo são bem difundidas. Faina não se declina: “faina filmas”, “faina vieta”.',
         table: {
           head: ['Gíria', 'Sentido', 'Padrão'],
           rows: [
@@ -2919,7 +2919,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'A norma e os barbarismos',
-        text: 'O lituano tem uma tradição forte de cuidado com a língua: por séculos ela resistiu à pressão do polonês e do russo, e hoje a Valstybinė lietuvių kalbos komisija publica recomendações sobre palavras emprestadas, os barbarismos. Na conversa entre amigos, «okei» e «sorry» são comuns; na escrita, no trabalho e com desconhecidos, prefira as formas lituanas.',
+        text: 'O lituano tem uma tradição forte de cuidado com a língua: por séculos ela resistiu à pressão do polonês e do russo, e hoje a Valstybinė lietuvių kalbos komisija publica recomendações sobre palavras emprestadas, os barbarismos. Na conversa entre amigos, “okei” e “sorry” são comuns; na escrita, no trabalho e com desconhecidos, prefira as formas lituanas.',
         table: {
           head: ['Coloquial / empréstimo', 'Lituano padrão', 'Português'],
           rows: [
@@ -2937,41 +2937,41 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Levar a gíria para o e-mail formal: «Faina, gavau Jūsų laišką» fica muito estranho. Na escrita cuidada, use «puiku», «gerai», «ačiū».',
-      'Usar jo como resposta formal: para um desconhecido ou num balcão, responda «taip».',
+      'Levar a gíria para o e-mail formal: “Faina, gavau Jūsų laišką” fica muito estranho. Na escrita cuidada, use “puiku”, “gerai”, “ačiū”.',
+      'Usar jo como resposta formal: para um desconhecido ou num balcão, responda “taip”.',
       'Achar que einam é erro: na fala é normalíssimo; só na escrita formal é que se volta para einame.',
-      'Declinar faina: é invariável. «Fainas filmas» não se usa; diga «faina filmas» ou, no padrão, «puikus filmas».',
+      'Declinar faina: é invariável. “Fainas filmas” não se usa; diga “faina filmas” ou, no padrão, “puikus filmas”.',
     ],
     quiz: [
       {
-        question: 'Qual é a forma padrão de «Ką darom?»',
+        question: 'Qual é a forma padrão de “Ką darom?”',
         options: ['Ką darome?', 'Ką daro?', 'Ką darėme?'],
         answer: 'Ką darome?',
         explanation: 'Na fala, a 1ª pessoa do plural perde o -e; no padrão, é darome.',
       },
       {
-        question: 'Um amigo diz «Šakės!». O que aconteceu?',
+        question: 'Um amigo diz “Šakės!”. O que aconteceu?',
         options: ['Kažkas blogo.', 'Kažkas labai gero.', 'Jis alkanas.'],
         answer: 'Kažkas blogo.',
-        explanation: 'Šakės (forcado) é gíria para «ferrou!»: alguma coisa deu errado.',
+        explanation: 'Šakės (forcado) é gíria para “ferrou!”: alguma coisa deu errado.',
       },
       {
-        question: 'Qual palavra é o «legal» vindo do alemão?',
+        question: 'Qual palavra é o “legal” vindo do alemão?',
         options: ['faina', 'čiuvas', 'tūsas'],
         answer: 'faina',
-        explanation: 'Faina vem do alemão fein. Čiuvas é «cara» e tūsas é «festa».',
+        explanation: 'Faina vem do alemão fein. Čiuvas é “cara” e tūsas é “festa”.',
       },
       {
-        question: 'Num e-mail ao professor, como você diz «ok»?',
+        question: 'Num e-mail ao professor, como você diz “ok”?',
         options: ['Gerai.', 'Okei.', 'Davai.'],
         answer: 'Gerai.',
         explanation: 'Na escrita formal, a forma lituana: gerai.',
       },
       {
-        question: 'O que a partícula juk acrescenta em «Juk sakiau!»?',
+        question: 'O que a partícula juk acrescenta em “Juk sakiau!”?',
         options: ['Aš tai jau sakiau, argi ne?', 'Aš nieko nesakiau.', 'Gal pasakysiu vėliau.'],
         answer: 'Aš tai jau sakiau, argi ne?',
-        explanation: 'Juk é o «afinal», «né»: lembra algo que o outro já devia saber.',
+        explanation: 'Juk é o “afinal”, “né”: lembra algo que o outro já devia saber.',
       },
     ],
   },
@@ -2985,7 +2985,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
     sections: [
       {
         heading: 'Contraste, causa e consequência',
-        text: 'Bet é o «mas» de todo dia; tačiau é mais formal e também pode vir no meio da oração. O é um contraste suave, um «e» ou «já» que opõe duas coisas («aš dirbu, o tu ilsiesi») e não é o nosso «o»! Vis dėlto é «ainda assim». Para causa: nes, kadangi, dėl + genitivo; para consequência: todėl, dėl to, taigi. Nepaisant + genitivo é «apesar de».',
+        text: 'Bet é o “mas” de todo dia; tačiau é mais formal e também pode vir no meio da oração. O é um contraste suave, um “e” ou “já” que opõe duas coisas (“aš dirbu, o tu ilsiesi”) e não é o nosso “o”! Vis dėlto é “ainda assim”. Para causa: nes, kadangi, dėl + genitivo; para consequência: todėl, dėl to, taigi. Nepaisant + genitivo é “apesar de”.',
         table: {
           head: ['Conector', 'Sentido', 'Exemplo'],
           rows: [
@@ -3041,11 +3041,11 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Ler o lituano «o» como o artigo português: ele é conjunção de contraste, «e» ou «já»: «Jonas dirba, o Ona mokosi».',
-      'Juntar kadangi e todėl na mesma frase: «Kadangi lijo, todėl likome namie» é redundante. Use um só: «Kadangi lijo, likome namie» ou «Lijo, todėl likome namie».',
-      'Pôr vírgula depois de tačiau ou todėl no começo da frase: «Tačiau, kaime…» está errado. Eles não são intercalações.',
-      'Esquecer as vírgulas das intercalações: «Be to jis netoli centro» precisa de vírgula: «Be to, jis…». O mesmo vale para pavyzdžiui, kita vertus, deja, žinoma e mano nuomone.',
-      'Usar nepaisant com acusativo: «nepaisant lietų» está errado; é genitivo, «nepaisant lietaus».',
+      'Ler o lituano “o” como o artigo português: ele é conjunção de contraste, “e” ou “já”: “Jonas dirba, o Ona mokosi”.',
+      'Juntar kadangi e todėl na mesma frase: “Kadangi lijo, todėl likome namie” é redundante. Use um só: “Kadangi lijo, likome namie” ou “Lijo, todėl likome namie”.',
+      'Pôr vírgula depois de tačiau ou todėl no começo da frase: “Tačiau, kaime…” está errado. Eles não são intercalações.',
+      'Esquecer as vírgulas das intercalações: “Be to jis netoli centro” precisa de vírgula: “Be to, jis…”. O mesmo vale para pavyzdžiui, kita vertus, deja, žinoma e mano nuomone.',
+      'Usar nepaisant com acusativo: “nepaisant lietų” está errado; é genitivo, “nepaisant lietaus”.',
     ],
     quiz: [
       {
@@ -3064,7 +3064,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         question: 'Complete: ___ lietaus, žmonės atėjo į aikštę.',
         options: ['Nepaisant', 'Todėl', 'Tačiau'],
         answer: 'Nepaisant',
-        explanation: 'Nepaisant + genitivo (lietaus) é «apesar de».',
+        explanation: 'Nepaisant + genitivo (lietaus) é “apesar de”.',
       },
       {
         question: 'Qual frase está certa?',
@@ -3076,7 +3076,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         question: 'Qual conector apresenta o outro lado do argumento?',
         options: ['kita vertus', 'be to', 'pavyzdžiui'],
         answer: 'kita vertus',
-        explanation: 'Kita vertus é «por outro lado». Be to soma; pavyzdžiui exemplifica.',
+        explanation: 'Kita vertus é “por outro lado”. Be to soma; pavyzdžiui exemplifica.',
       },
     ],
   },
@@ -3085,11 +3085,11 @@ export const GRAMMAR_LT: GrammarTopic[] = [
     level: 'B2.4',
     title: 'Pontuação e maiúsculas: kableliai, brūkšnys, „kabutės“',
     emoji: '✒️',
-    summary: 'A pontuação lituana é mais gramatical que a nossa: toda oração subordinada leva vírgula, sem exceção. O travessão substitui o verbo «ser» que caiu («Vilnius – Lietuvos sostinė»), as aspas são „assim“, e meses, dias da semana, nacionalidades e línguas se escrevem com minúscula, mas as festas, como Joninės e Kalėdos, com maiúscula.',
+    summary: 'A pontuação lituana é mais gramatical que a nossa: toda oração subordinada leva vírgula, sem exceção. O travessão substitui o verbo “ser” que caiu (“Vilnius – Lietuvos sostinė”), as aspas são „assim“, e meses, dias da semana, nacionalidades e línguas se escrevem com minúscula, mas as festas, como Joninės e Kalėdos, com maiúscula.',
     sections: [
       {
         heading: 'Vírgulas',
-        text: 'Leva vírgula: toda subordinada (kad, nes, kai, jei, ar, kuris, kur, ką…), dos dois lados se estiver no meio da frase; as orações ligadas por bet, o, tačiau; o vocativo («Jonai, ateik»); as interjeições; e as intercalações (be to, pavyzdžiui, deja, žinoma, mano nuomone). Não leva vírgula, em geral, o ir (e) que liga duas orações simples, nem o arba (ou). As construções com particípio, pusdalyvis e padalyvis podem ser separadas por vírgula ou não, pelas regras atuais; costuma-se usá-la quando o trecho é longo.',
+        text: 'Leva vírgula: toda subordinada (kad, nes, kai, jei, ar, kuris, kur, ką…), dos dois lados se estiver no meio da frase; as orações ligadas por bet, o, tačiau; o vocativo (“Jonai, ateik”); as interjeições; e as intercalações (be to, pavyzdžiui, deja, žinoma, mano nuomone). Não leva vírgula, em geral, o ir (e) que liga duas orações simples, nem o arba (ou). As construções com particípio, pusdalyvis e padalyvis podem ser separadas por vírgula ou não, pelas regras atuais; costuma-se usá-la quando o trecho é longo.',
         table: {
           head: ['Caso', 'Exemplo'],
           rows: [
@@ -3111,13 +3111,13 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Travessão, aspas e diálogo',
-        text: 'Quando o verbo būti some numa definição, o seu lugar é marcado por um travessão com espaços: «Vilnius – Lietuvos sostinė». As aspas lituanas abrem embaixo e fecham em cima: „Metai“. Nos diálogos, cada fala começa com travessão, e a fala do narrador fica entre travessões, com a vírgula antes do segundo.',
+        text: 'Quando o verbo būti some numa definição, o seu lugar é marcado por um travessão com espaços: “Vilnius – Lietuvos sostinė”. As aspas lituanas abrem embaixo e fecham em cima: „Metai“. Nos diálogos, cada fala começa com travessão, e a fala do narrador fica entre travessões, com a vírgula antes do segundo.',
         examples: [
           ['Vilnius – Lietuvos sostinė.', 'Vilnius é a capital da Lituânia.'],
           ['Mano brolis – gydytojas.', 'Meu irmão é médico.'],
-          ['Kristijono Donelaičio poema „Metai“ – lietuvių literatūros klasika.', 'O poema «As Estações», de Kristijonas Donelaitis, é um clássico da literatura lituana.'],
+          ['Kristijono Donelaičio poema „Metai“ – lietuvių literatūros klasika.', 'O poema ‘As Estações’, de Kristijonas Donelaitis, é um clássico da literatura lituana.'],
           ['– Labas, – pasakė Jonas. – Kaip sekasi?', '– Oi – disse Jonas. – Como vai?'],
-          ['Ant durų parašyta: „Uždaryta“.', 'Na porta está escrito: «Fechado».'],
+          ['Ant durų parašyta: „Uždaryta“.', 'Na porta está escrito: ‘Fechado’.'],
         ],
       },
       {
@@ -3131,7 +3131,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
             ['Mokausi Lietuvių kalbos.', 'Mokausi lietuvių kalbos.', 'língua: minúscula'],
             ['per joninės', 'per Jonines', 'festa: maiúscula'],
             ['3.5 kilometro', '3,5 kilometro', 'vírgula decimal'],
-            ['«Metai»', '„Metai“', 'aspas lituanas'],
+            ['“Metai”', '„Metai“', 'aspas lituanas'],
           ],
         },
         examples: [
@@ -3143,11 +3143,11 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Omitir a vírgula antes de kad, kai, kuris: em português às vezes não se usa («sei que…»), em lituano é obrigatória: «Žinau, kad…».',
+      'Omitir a vírgula antes de kad, kai, kuris: em português às vezes não se usa (“sei que…”), em lituano é obrigatória: “Žinau, kad…”.',
       'Escrever meses, dias e nacionalidades com maiúscula, como no inglês: é sausis, pirmadienis, lietuvis, brazilas.',
-      'Usar aspas retas ou as nossas «…»: o padrão lituano é „…“.',
-      'Deixar o travessão sem espaços ou trocá-lo por hífen: «Vilnius-sostinė» está errado; é «Vilnius – sostinė».',
-      'Pôr vírgula antes de ir entre duas orações simples: «Saulė nusileido, ir pasidarė vėsu» não segue a regra geral.',
+      'Usar aspas retas ou as nossas “…”: o padrão lituano é „…“.',
+      'Deixar o travessão sem espaços ou trocá-lo por hífen: “Vilnius-sostinė” está errado; é “Vilnius – sostinė”.',
+      'Pôr vírgula antes de ir entre duas orações simples: “Saulė nusileido, ir pasidarė vėsu” não segue a regra geral.',
     ],
     quiz: [
       {
@@ -3163,14 +3163,14 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         explanation: 'Festa e cidade com maiúscula; nacionalidade com minúscula.',
       },
       {
-        question: 'Como se escreve «Kaunas é uma cidade grande» sem o verbo?',
+        question: 'Como se escreve “Kaunas é uma cidade grande” sem o verbo?',
         options: ['Kaunas – didelis miestas.', 'Kaunas, didelis miestas.', 'Kaunas-didelis miestas.'],
         answer: 'Kaunas – didelis miestas.',
         explanation: 'O travessão com espaços ocupa o lugar do yra que caiu.',
       },
       {
         question: 'Quais são as aspas lituanas?',
-        options: ['„Metai“', '«Metai»', '“Metai”'],
+        options: ['„Metai“', '‘Metai’', '‘Metai’'],
         answer: '„Metai“',
         explanation: 'Abrem embaixo e fecham em cima: „…“.',
       },
@@ -3188,11 +3188,11 @@ export const GRAMMAR_LT: GrammarTopic[] = [
     level: 'C1.1',
     title: 'Aukštaičiai e žemaičiai: os dialetos do lituano',
     emoji: '🗺️',
-    summary: 'O lituano tem dois grandes dialetos: o aukštaičių (das «terras altas», o centro, o leste e o sul) e o žemaičių (das «terras baixas», o noroeste, a Žemaitija). A língua padrão nasceu do aukštaitiano ocidental, a fala da Suvalkija. O samogiciano soa tão diferente que muitos o tratam como língua à parte: onde o padrão diz «duona» (pão), ele diz «douna», «dūna» ou «dona».',
+    summary: 'O lituano tem dois grandes dialetos: o aukštaičių (das “terras altas”, o centro, o leste e o sul) e o žemaičių (das “terras baixas”, o noroeste, a Žemaitija). A língua padrão nasceu do aukštaitiano ocidental, a fala da Suvalkija. O samogiciano soa tão diferente que muitos o tratam como língua à parte: onde o padrão diz “duona” (pão), ele diz “douna”, “dūna” ou “dona”.',
     sections: [
       {
         heading: 'Dois dialetos, muitos falares',
-        text: 'Os dialetólogos dividem o lituano em dois dialetos (tarmės): o aukštaičių e o žemaičių. Cada um se divide em subdialetos (patarmės). Os samogicianos são batizados pela forma como dizem «duona» (pão): os do norte (Telšiai) são os dounininkai, os do sul (Raseiniai) são os dūnininkai, e os do oeste, perto do mar, são os donininkai. Entre os aukštaitianos, os do oeste vivem na Suvalkija e em volta de Kaunas; os do sul são os dzūkai (a Dzūkija, Alytus, Druskininkai); e os do leste ocupam a Aukštaitija propriamente dita (Utena, Panevėžys, Anykščiai).',
+        text: 'Os dialetólogos dividem o lituano em dois dialetos (tarmės): o aukštaičių e o žemaičių. Cada um se divide em subdialetos (patarmės). Os samogicianos são batizados pela forma como dizem “duona” (pão): os do norte (Telšiai) são os dounininkai, os do sul (Raseiniai) são os dūnininkai, e os do oeste, perto do mar, são os donininkai. Entre os aukštaitianos, os do oeste vivem na Suvalkija e em volta de Kaunas; os do sul são os dzūkai (a Dzūkija, Alytus, Druskininkai); e os do leste ocupam a Aukštaitija propriamente dita (Utena, Panevėžys, Anykščiai).',
         table: {
           head: ['Dialeto', 'Subdialeto', 'Onde', 'Traço famoso'],
           rows: [
@@ -3206,14 +3206,14 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         },
         examples: [
           ['Lietuvių kalba turi dvi pagrindines tarmes: aukštaičių ir žemaičių.', 'O lituano tem dois dialetos principais: o aukštaitiano e o samogiciano.'],
-          ['Žemaičiai sako «douna», o ne «duona».', 'Os samogicianos dizem «douna», e não «duona».'],
-          ['Dzūkai sako «dziena» vietoj «diena».', 'Os dzūkai dizem «dziena» em vez de «diena».'],
+          ['Žemaičiai sako “douna”, o ne “duona”.', 'Os samogicianos dizem “douna”, e não “duona”.'],
+          ['Dzūkai sako “dziena” vietoj “diena”.', 'Os dzūkai dizem “dziena” em vez de “diena”.'],
           ['Telšiai laikomi Žemaitijos sostine.', 'Telšiai é considerada a capital da Žemaitija.'],
         ],
       },
       {
         heading: 'Por que o samogiciano soa tão diferente',
-        text: 'Além dos ditongos trocados (uo → ou, ū, o), o samogiciano encurta ou derruba as terminações átonas: onde o padrão diz «vyras» (homem), ouve-se algo como «vīrs», o que lembra o letão. Tem vocabulário próprio e, no lugar do passado frequentativo em -davo (eidavo, «ele costumava ir»), usa a partícula «liuob» com o infinitivo. Tem também uma grafia própria, com macrons nas vogais longas, usada em livros, placas e na internet da região. Um lituano de Vilnius que ouve dois velhos de Telšiai conversando pode entender pouca coisa, e por isso há quem defenda que o samogiciano é uma língua, e não um dialeto. Oficialmente, ele é tratado como dialeto do lituano.',
+        text: 'Além dos ditongos trocados (uo → ou, ū, o), o samogiciano encurta ou derruba as terminações átonas: onde o padrão diz “vyras” (homem), ouve-se algo como “vīrs”, o que lembra o letão. Tem vocabulário próprio e, no lugar do passado frequentativo em -davo (eidavo, “ele costumava ir”), usa a partícula “liuob” com o infinitivo. Tem também uma grafia própria, com macrons nas vogais longas, usada em livros, placas e na internet da região. Um lituano de Vilnius que ouve dois velhos de Telšiai conversando pode entender pouca coisa, e por isso há quem defenda que o samogiciano é uma língua, e não um dialeto. Oficialmente, ele é tratado como dialeto do lituano.',
         examples: [
           ['Mano senelė kalba žemaitiškai, o aš – tik bendrine kalba.', 'Minha avó fala samogiciano, e eu, só a língua padrão.'],
           ['Žemaičių tarmė labai skiriasi nuo bendrinės kalbos.', 'O dialeto samogiciano difere muito da língua padrão.'],
@@ -3222,7 +3222,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'De onde veio o padrão',
-        text: 'No fim do século XIX, os intelectuais que criaram a imprensa nacional vinham em boa parte da Suvalkija, no sudoeste: foi da fala dessa região (o aukštaitiano ocidental) que saiu a bendrinė kalba. O linguista Jonas Jablonskis (1860–1930), também da Suvalkija, fixou a gramática e a ortografia e é chamado de «pai do lituano padrão». O padrão se espalhou pela escola e, depois, pelo rádio e pela televisão, mas os dialetos resistem mais do que em muitos países: na Žemaitija e na Dzūkija, ouvir a fala local na rua ainda é comum.',
+        text: 'No fim do século XIX, os intelectuais que criaram a imprensa nacional vinham em boa parte da Suvalkija, no sudoeste: foi da fala dessa região (o aukštaitiano ocidental) que saiu a bendrinė kalba. O linguista Jonas Jablonskis (1860–1930), também da Suvalkija, fixou a gramática e a ortografia e é chamado de “pai do lituano padrão”. O padrão se espalhou pela escola e, depois, pelo rádio e pela televisão, mas os dialetos resistem mais do que em muitos países: na Žemaitija e na Dzūkija, ouvir a fala local na rua ainda é comum.',
         examples: [
           ['Bendrinė kalba remiasi vakarų aukštaičių tarme.', 'A língua padrão se baseia no dialeto aukštaitiano ocidental.'],
           ['Jonas Jablonskis vadinamas bendrinės kalbos tėvu.', 'Jonas Jablonskis é chamado de pai da língua padrão.'],
@@ -3231,10 +3231,10 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Achar que «aukštaičių» é o dialeto de toda a Lituânia menos a Žemaitija: ele tem três subdialetos bem diferentes (oeste, dzūkai e leste), e só o do oeste é a base do padrão.',
-      'Copiar formas dialetais ao escrever: «douna», «dziena» e «runka» são para reconhecer de ouvido; na escrita padrão, fica «duona», «diena», «ranka».',
+      'Achar que “aukštaičių” é o dialeto de toda a Lituânia menos a Žemaitija: ele tem três subdialetos bem diferentes (oeste, dzūkai e leste), e só o do oeste é a base do padrão.',
+      'Copiar formas dialetais ao escrever: “douna”, “dziena” e “runka” são para reconhecer de ouvido; na escrita padrão, fica “duona”, “diena”, “ranka”.',
       'Escrever samogiciano com ā ou ī e achar que é lituano padrão: os macrons aparecem na grafia samogiciana (e no letão), nunca na bendrinė kalba.',
-      'Confundir a Žemaitija (região, com Telšiai e Plungė) com a palavra «žemė» (terra): o nome vem de «žemas» (baixo), as terras baixas, em oposição a «aukštas» (alto).',
+      'Confundir a Žemaitija (região, com Telšiai e Plungė) com a palavra “žemė” (terra): o nome vem de “žemas” (baixo), as terras baixas, em oposição a “aukštas” (alto).',
     ],
     quiz: [
       {
@@ -3244,28 +3244,28 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         explanation: 'O padrão saiu da fala da Suvalkija, o aukštaitiano ocidental, terra de muitos intelectuais do renascimento nacional.',
       },
       {
-        question: 'Um dzūkas diz «dziena». Qual é a palavra padrão?',
+        question: 'Um dzūkas diz “dziena”. Qual é a palavra padrão?',
         options: ['diena', 'daina', 'dešimt'],
         answer: 'diena',
-        explanation: 'Os dzūkai transformam t e d antes de i/e em c e dz (o próprio nome «dzūkai» vem daí).',
+        explanation: 'Os dzūkai transformam t e d antes de i/e em c e dz (o próprio nome “dzūkai” vem daí).',
       },
       {
         question: 'Dounininkai, dūnininkai e donininkai são subdialetos de qual dialeto?',
         options: ['žemaičių', 'dzūkų', 'latvių'],
         answer: 'žemaičių',
-        explanation: 'Os samogicianos se dividem pela forma de dizer «duona»: douna, dūna ou dona.',
+        explanation: 'Os samogicianos se dividem pela forma de dizer “duona”: douna, dūna ou dona.',
       },
       {
-        question: 'Como um aukštaitiano do leste pode pronunciar «ranka» (mão)?',
+        question: 'Como um aukštaitiano do leste pode pronunciar “ranka” (mão)?',
         options: ['runka', 'ronka', 'rinka'],
         answer: 'runka',
-        explanation: 'No leste, an e en viram un e in. «Rinka» existe, mas é outra palavra: mercado.',
+        explanation: 'No leste, an e en viram un e in. “Rinka” existe, mas é outra palavra: mercado.',
       },
       {
         question: 'Qual destas cidades fica na Žemaitija?',
         options: ['Telšiai', 'Utena', 'Alytus'],
         answer: 'Telšiai',
-        explanation: 'Telšiai é a «capital» samogiciana; Utena fica na Aukštaitija, e Alytus, na Dzūkija.',
+        explanation: 'Telšiai é a “capital” samogiciana; Utena fica na Aukštaitija, e Alytus, na Dzūkija.',
       },
     ],
   },
@@ -3278,7 +3278,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
     sections: [
       {
         heading: 'As ondas de emigração',
-        text: 'A primeira grande onda saiu no fim do século XIX e no começo do XX, sobretudo para os Estados Unidos: minas da Pensilvânia, fábricas e matadouros de Chicago, que até hoje tem uma das maiores comunidades lituanas fora do país. Nos anos 1920, muitos foram para a América do Sul: Brasil, Argentina e Uruguai. Depois da Segunda Guerra, milhares de refugiados que tinham fugido do avanço soviético passaram anos em campos de deslocados na Alemanha e depois se espalharam pelos EUA, pelo Canadá e pela Austrália; eles eram chamados de «dypukai», da sigla inglesa DP (displaced person). Depois de 1990, a nova onda foi para o Reino Unido, a Irlanda e a Noruega. Em lituano, a diáspora é a išeivija, e quem vive nela é um išeivis (emigrante).',
+        text: 'A primeira grande onda saiu no fim do século XIX e no começo do XX, sobretudo para os Estados Unidos: minas da Pensilvânia, fábricas e matadouros de Chicago, que até hoje tem uma das maiores comunidades lituanas fora do país. Nos anos 1920, muitos foram para a América do Sul: Brasil, Argentina e Uruguai. Depois da Segunda Guerra, milhares de refugiados que tinham fugido do avanço soviético passaram anos em campos de deslocados na Alemanha e depois se espalharam pelos EUA, pelo Canadá e pela Austrália; eles eram chamados de “dypukai”, da sigla inglesa DP (displaced person). Depois de 1990, a nova onda foi para o Reino Unido, a Irlanda e a Noruega. Em lituano, a diáspora é a išeivija, e quem vive nela é um išeivis (emigrante).',
         examples: [
           ['Čikagoje gyvena daug lietuvių kilmės žmonių.', 'Em Chicago vivem muitas pessoas de origem lituana.'],
           ['Po karo mano senelis atsidūrė pabėgėlių stovykloje Vokietijoje.', 'Depois da guerra, meu avô foi parar num campo de refugiados na Alemanha.'],
@@ -3305,9 +3305,9 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Como a língua muda longe de casa',
-        text: 'Quem cresce na diáspora fala um lituano de herança: entende bem, mas mistura. As palavras do país novo entram com terminação lituana e passam a declinar: no lituano dos EUA, o inglês «job» virou «džiabas» (no padrão, «darbas»). As terminações femininas dos sobrenomes costumam cair: no Brasil e nos EUA, a mulher de um Kazlauskas muitas vezes usa Kazlauskas nos documentos, e não Kazlauskienė, como faria na Lituânia. Os casos menos usados (o instrumental, o vocativo) enfraquecem primeiro. Para segurar a língua, as comunidades mantêm as lituanistinės mokyklos, escolas que funcionam aos sábados, e a Pasaulio lietuvių bendruomenė (Comunidade Lituana Mundial) liga os grupos de vários países.',
+        text: 'Quem cresce na diáspora fala um lituano de herança: entende bem, mas mistura. As palavras do país novo entram com terminação lituana e passam a declinar: no lituano dos EUA, o inglês “job” virou “džiabas” (no padrão, “darbas”). As terminações femininas dos sobrenomes costumam cair: no Brasil e nos EUA, a mulher de um Kazlauskas muitas vezes usa Kazlauskas nos documentos, e não Kazlauskienė, como faria na Lituânia. Os casos menos usados (o instrumental, o vocativo) enfraquecem primeiro. Para segurar a língua, as comunidades mantêm as lituanistinės mokyklos, escolas que funcionam aos sábados, e a Pasaulio lietuvių bendruomenė (Comunidade Lituana Mundial) liga os grupos de vários países.',
         examples: [
-          ['Amerikos lietuviai kartais sako «džiabas» vietoj «darbas».', 'Os lituanos dos EUA às vezes dizem «džiabas» em vez de «darbas».'],
+          ['Amerikos lietuviai kartais sako “džiabas” vietoj “darbas”.', 'Os lituanos dos EUA às vezes dizem “džiabas” em vez de “darbas”.'],
           ['Šeštadieniais vaikai eina į lituanistinę mokyklą.', 'Aos sábados, as crianças vão à escola lituana.'],
           ['Mano močiutė dar kalba lietuviškai, bet mama jau nebekalba.', 'Minha avó ainda fala lituano, mas minha mãe já não fala.'],
           ['Aš noriu išmokti senelių kalbą.', 'Eu quero aprender a língua dos meus avós.'],
@@ -3315,10 +3315,10 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Escrever «São Paulo» numa frase lituana sem declinar: o lituano adapta o nome (San Paulas) e o declina, «gyvenu San Paule» (moro em São Paulo).',
-      'Tomar o lituano de herança como modelo: «džiabas» e o sobrenome feminino sem -ienė ou -aitė são marcas da diáspora; no padrão, é «darbas» e «ponia Kazlauskienė».',
-      'Achar que «dypukai» é só uma sigla neutra: a palavra nasceu entre os próprios emigrados e pode soar irônica; num texto formal, prefira «pabėgėliai» (refugiados) ou «išeiviai».',
-      'Confundir «išeivis» (emigrante, quem vive fora) com «išvykti» (partir) ao traduzir: a išeivija é a comunidade, não a viagem.',
+      'Escrever “São Paulo” numa frase lituana sem declinar: o lituano adapta o nome (San Paulas) e o declina, “gyvenu San Paule” (moro em São Paulo).',
+      'Tomar o lituano de herança como modelo: “džiabas” e o sobrenome feminino sem -ienė ou -aitė são marcas da diáspora; no padrão, é “darbas” e “ponia Kazlauskienė”.',
+      'Achar que “dypukai” é só uma sigla neutra: a palavra nasceu entre os próprios emigrados e pode soar irônica; num texto formal, prefira “pabėgėliai” (refugiados) ou “išeiviai”.',
+      'Confundir “išeivis” (emigrante, quem vive fora) com “išvykti” (partir) ao traduzir: a išeivija é a comunidade, não a viagem.',
     ],
     quiz: [
       {
@@ -3334,22 +3334,22 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         explanation: 'Da sigla inglesa DP, displaced person. Os knygnešiai eram os contrabandistas de livros; os dzūkai, os aukštaitianos do sul.',
       },
       {
-        question: 'Complete: «Mano teta gyvena ___» (em Chicago).',
+        question: 'Complete: “Mano teta gyvena ___” (em Chicago).',
         options: ['Čikagoje', 'Čikaga', 'Čikagos'],
         answer: 'Čikagoje',
         explanation: 'Onde se mora pede o locativo: Čikaga → Čikagoje, como Brazilija → Brazilijoje.',
       },
       {
-        question: 'No lituano dos EUA, «džiabas» corresponde a que palavra padrão?',
+        question: 'No lituano dos EUA, “džiabas” corresponde a que palavra padrão?',
         options: ['darbas', 'karas', 'namas'],
         answer: 'darbas',
-        explanation: 'Vem do inglês «job», com a terminação -as dos masculinos.',
+        explanation: 'Vem do inglês “job”, com a terminação -as dos masculinos.',
       },
       {
         question: 'Qual é o nome das escolas de sábado da diáspora?',
         options: ['lituanistinė mokykla', 'vidurinė mokykla', 'muzikos mokykla'],
         answer: 'lituanistinė mokykla',
-        explanation: 'Nelas as crianças estudam língua, história e cultura lituanas; «vidurinė mokykla» é a escola secundária comum.',
+        explanation: 'Nelas as crianças estudam língua, história e cultura lituanas; “vidurinė mokykla” é a escola secundária comum.',
       },
     ],
   },
@@ -3358,11 +3358,11 @@ export const GRAMMAR_LT: GrammarTopic[] = [
     level: 'C1.1',
     title: 'As línguas bálticas: lituano, letão e o prussiano extinto',
     emoji: '🌊',
-    summary: 'O lituano e o letão são as duas únicas línguas bálticas vivas. São primas, não irmãs gêmeas: parecidas na gramática e em muitas raízes, mas sem compreensão fácil. O ramo ocidental, com o prussiano antigo, morreu no começo do século XVIII e deixou poucos textos, preciosos para os linguistas. E atenção: o estoniano, o terceiro país «báltico», fala uma língua de outra família, parente do finlandês.',
+    summary: 'O lituano e o letão são as duas únicas línguas bálticas vivas. São primas, não irmãs gêmeas: parecidas na gramática e em muitas raízes, mas sem compreensão fácil. O ramo ocidental, com o prussiano antigo, morreu no começo do século XVIII e deixou poucos textos, preciosos para os linguistas. E atenção: o estoniano, o terceiro país “báltico”, fala uma língua de outra família, parente do finlandês.',
     sections: [
       {
         heading: 'A família báltica',
-        text: 'As línguas bálticas formam um ramo próprio do indo-europeu, o mais próximo do eslavo. Dividem-se em dois grupos. O oriental tem o lituano e o letão, e teve também o selônio e o semigálio, que desapareceram na Idade Média. O ocidental tinha o prussiano antigo, o curônio e o jotvíngio, todos extintos. O curônio deixou o nome no istmo da Curlândia (Kuršių nerija), e os prussianos, bálticos, deram nome à Prússia, que depois virou um estado alemão. O estoniano, apesar de ser falado num «país báltico», é uma língua fino-úgrica, sem parentesco próximo com o lituano.',
+        text: 'As línguas bálticas formam um ramo próprio do indo-europeu, o mais próximo do eslavo. Dividem-se em dois grupos. O oriental tem o lituano e o letão, e teve também o selônio e o semigálio, que desapareceram na Idade Média. O ocidental tinha o prussiano antigo, o curônio e o jotvíngio, todos extintos. O curônio deixou o nome no istmo da Curlândia (Kuršių nerija), e os prussianos, bálticos, deram nome à Prússia, que depois virou um estado alemão. O estoniano, apesar de ser falado num “país báltico”, é uma língua fino-úgrica, sem parentesco próximo com o lituano.',
         table: {
           head: ['Grupo', 'Línguas', 'Situação'],
           rows: [
@@ -3381,7 +3381,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Lituano × letão: as diferenças que saltam aos olhos',
-        text: 'O letão mudou mais depressa. A tônica, que no lituano é livre e móvel, no letão caiu quase sempre na primeira sílaba. As terminações encurtaram: onde o lituano diz «dievas» (deus), o letão diz «dievs». O š e o ž lituanos muitas vezes viram s e z (širdis → sirds, «coração»; žiema → ziema, «inverno»), e k, g antes de vogal anterior viram c, dz. O letão marca as vogais longas com macron (ā, ē, ī, ū), enquanto o lituano usa ū, y e as letras com ogonek. E muitas palavras do dia a dia são simplesmente outras: «ačiū» × «paldies» (obrigado), «duona» × «maize» (pão), «ir» × «un» (e).',
+        text: 'O letão mudou mais depressa. A tônica, que no lituano é livre e móvel, no letão caiu quase sempre na primeira sílaba. As terminações encurtaram: onde o lituano diz “dievas” (deus), o letão diz “dievs”. O š e o ž lituanos muitas vezes viram s e z (širdis → sirds, “coração”; žiema → ziema, “inverno”), e k, g antes de vogal anterior viram c, dz. O letão marca as vogais longas com macron (ā, ē, ī, ū), enquanto o lituano usa ū, y e as letras com ogonek. E muitas palavras do dia a dia são simplesmente outras: “ačiū” × “paldies” (obrigado), “duona” × “maize” (pão), “ir” × “un” (e).',
         table: {
           head: ['Lituano', 'Letão', 'Português'],
           rows: [
@@ -3400,27 +3400,27 @@ export const GRAMMAR_LT: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['Latviai sako «paldies», o lietuviai – «ačiū».', 'Os letões dizem «paldies», e os lituanos, «ačiū».'],
+          ['Latviai sako “paldies”, o lietuviai – “ačiū”.', 'Os letões dizem “paldies”, e os lituanos, “ačiū”.'],
           ['Latvių kalboje kirtis beveik visada tenka pirmajam skiemeniui.', 'No letão, a tônica cai quase sempre na primeira sílaba.'],
           ['Lietuvis ir latvis ne visada supranta vienas kitą be vertėjo.', 'Um lituano e um letão nem sempre se entendem sem intérprete.'],
-          ['Žodis «diena» abiejose kalbose rašomas vienodai.', 'A palavra «diena» se escreve igual nas duas línguas.'],
+          ['Žodis “diena” abiejose kalbose rašomas vienodai.', 'A palavra “diena” se escreve igual nas duas línguas.'],
         ],
       },
       {
         heading: 'O prussiano antigo: uma língua que só existe no papel',
-        text: 'Os prussianos viviam entre o Vístula e o Neman, no território que hoje é a região de Kaliningrado e o nordeste da Polônia. Conquistados pela Ordem Teutônica no século XIII, foram aos poucos trocando a língua pelo alemão, e o prussiano deixou de ser falado no começo do século XVIII. Sobraram poucos textos: o Vocabulário de Elbing (um glossário alemão-prussiano de cerca de 800 palavras, por volta de 1400) e três catecismos luteranos impressos em Königsberg (dois em 1545 e o Enchiridion, de 1561). Para os linguistas, cada palavra é ouro: o prussiano «deiws» (deus) está ao lado do lituano «dievas» e do latim «deus».',
+        text: 'Os prussianos viviam entre o Vístula e o Neman, no território que hoje é a região de Kaliningrado e o nordeste da Polônia. Conquistados pela Ordem Teutônica no século XIII, foram aos poucos trocando a língua pelo alemão, e o prussiano deixou de ser falado no começo do século XVIII. Sobraram poucos textos: o Vocabulário de Elbing (um glossário alemão-prussiano de cerca de 800 palavras, por volta de 1400) e três catecismos luteranos impressos em Königsberg (dois em 1545 e o Enchiridion, de 1561). Para os linguistas, cada palavra é ouro: o prussiano “deiws” (deus) está ao lado do lituano “dievas” e do latim “deus”.',
         table: {
           head: ['Prussiano antigo', 'Lituano', 'Português'],
           rows: [
             ['deiws', 'dievas', 'deus'],
             ['semmē', 'žemė', 'terra'],
             ['wundan', 'vanduo', 'água'],
-            ['nage', 'koja', 'pé (lituano «nagas»: unha)'],
+            ['nage', 'koja', 'pé (lituano “nagas”: unha)'],
           ],
         },
         examples: [
           ['Prūsų kalba išnyko XVIII amžiaus pradžioje.', 'O prussiano desapareceu no começo do século XVIII.'],
-          ['Prūsų žodis «deiws» primena lietuvių «dievas».', 'A palavra prussiana «deiws» lembra o lituano «dievas».'],
+          ['Prūsų žodis “deiws” primena lietuvių “dievas”.', 'A palavra prussiana “deiws” lembra o lituano “dievas”.'],
           ['Karaliaučiuje buvo išspausdinti prūsų katekizmai.', 'Em Königsberg foram impressos os catecismos prussianos.'],
         ],
       },
@@ -3428,7 +3428,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
     pitfalls: [
       'Chamar o estoniano de língua báltica: a Estônia é um país báltico, mas a língua é fino-úgrica, parente do finlandês.',
       'Misturar as grafias: ā, ē, ī, ģ, ķ, ļ, ņ são do letão; o lituano escreve ą, ę, į, ų, ū, y, ė e nunca usa macron.',
-      'Usar «un» numa frase lituana: é o «e» letão; em lituano é «ir».',
+      'Usar “un” numa frase lituana: é o “e” letão; em lituano é “ir”.',
       'Achar que o prussiano é alemão: os prussianos originais eram bálticos, e só o nome passou ao estado alemão da Prússia.',
     ],
     quiz: [
@@ -3451,10 +3451,10 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         explanation: 'No começo do século XVIII. O século XIII é o da conquista pela Ordem Teutônica.',
       },
       {
-        question: 'O «un» do letão corresponde a que palavra lituana?',
+        question: 'O “un” do letão corresponde a que palavra lituana?',
         options: ['ir', 'bet', 'ar'],
         answer: 'ir',
-        explanation: '«ir» é «e»; «bet» é «mas», e «ar» abre perguntas.',
+        explanation: '“ir” é “e”; “bet” é “mas”, e “ar” abre perguntas.',
       },
       {
         question: 'O istmo da Curlândia deve o nome a que povo báltico?',
@@ -3473,7 +3473,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
     sections: [
       {
         heading: 'Quem mora na Lituânia',
-        text: 'Pelo censo de 2021, cerca de 85% da população se declara lituana, perto de 6,5% polonesa, 5% russa e 1% bielorrussa. Os poloneses vivem sobretudo em volta de Vilnius (os distritos de Vilnius e Šalčininkai), e a variedade de polonês falada ali, cheia de traços locais, é chamada pelos próprios falantes de «po prostu» (simplesmente, «a nossa fala»). Os russos se concentram em Visaginas, a cidade construída para a antiga usina nuclear de Ignalina, e em Klaipėda. Há também comunidades pequenas e antiquíssimas: os karaimai, trazidos da Crimeia pelo grão-duque Vytautas por volta de 1400, ainda têm em Trakai a sua casa de oração (kenesa) e os famosos pastéis kibinai; os tártaros lituanos chegaram na mesma época. Vilnius foi também, por séculos, um grande centro da cultura judaica (os litvakai), quase destruída no Holocausto.',
+        text: 'Pelo censo de 2021, cerca de 85% da população se declara lituana, perto de 6,5% polonesa, 5% russa e 1% bielorrussa. Os poloneses vivem sobretudo em volta de Vilnius (os distritos de Vilnius e Šalčininkai), e a variedade de polonês falada ali, cheia de traços locais, é chamada pelos próprios falantes de “po prostu” (simplesmente, “a nossa fala”). Os russos se concentram em Visaginas, a cidade construída para a antiga usina nuclear de Ignalina, e em Klaipėda. Há também comunidades pequenas e antiquíssimas: os karaimai, trazidos da Crimeia pelo grão-duque Vytautas por volta de 1400, ainda têm em Trakai a sua casa de oração (kenesa) e os famosos pastéis kibinai; os tártaros lituanos chegaram na mesma época. Vilnius foi também, por séculos, um grande centro da cultura judaica (os litvakai), quase destruída no Holocausto.',
         examples: [
           ['Vilniaus rajone daug žmonių kalba lenkiškai.', 'No distrito de Vilnius, muita gente fala polonês.'],
           ['Visagine dauguma gyventojų kalba rusiškai.', 'Em Visaginas, a maioria dos habitantes fala russo.'],
@@ -3483,7 +3483,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Todo nome ganha terminação',
-        text: 'O lituano não deixa substantivo sem caso, nem os estrangeiros. Nomes de lugar tradicionais têm forma lituana própria: Varšuva (Varsóvia), Maskva (Moscou), Paryžius (Paris), Londonas, Niujorkas, Lisabona, Rio de Žaneiras. Nomes de pessoas históricas conhecidas também se adaptam à pronúncia: Šekspyras, Molière vira Moljeras. Nos textos atuais, os nomes de pessoas de línguas com alfabeto latino costumam manter a grafia original e ganhar só a terminação, separada por apóstrofo quando o nome termina em som que não se escreve: «Johnas», «Shakespeare’as». Depois disso, declinam como qualquer palavra: Londonas → Londone (em Londres), Šekspyras → Šekspyro (de Shakespeare).',
+        text: 'O lituano não deixa substantivo sem caso, nem os estrangeiros. Nomes de lugar tradicionais têm forma lituana própria: Varšuva (Varsóvia), Maskva (Moscou), Paryžius (Paris), Londonas, Niujorkas, Lisabona, Rio de Žaneiras. Nomes de pessoas históricas conhecidas também se adaptam à pronúncia: Šekspyras, Molière vira Moljeras. Nos textos atuais, os nomes de pessoas de línguas com alfabeto latino costumam manter a grafia original e ganhar só a terminação, separada por apóstrofo quando o nome termina em som que não se escreve: “Johnas”, “Shakespeare’as”. Depois disso, declinam como qualquer palavra: Londonas → Londone (em Londres), Šekspyras → Šekspyro (de Shakespeare).',
         table: {
           head: ['Português', 'Lituano', 'Genitivo', 'Locativo'],
           rows: [
@@ -3504,7 +3504,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Os nomes nos documentos',
-        text: 'Por muito tempo, os nomes nos documentos lituanos só podiam ter letras do alfabeto lituano, que não tem q, w nem x. Para muitos poloneses da região de Vilnius, isso significava ver o próprio sobrenome escrito de outro jeito no passaporte. O tema foi debatido por décadas; desde 2022, a lei permite escrever o nome com as letras latinas q, w e x. Nos textos, porém, a regra da terminação continua: um estrangeiro que se chame Wojciech vira «Wojciechas» numa frase lituana, porque sem terminação o nome não teria caso.',
+        text: 'Por muito tempo, os nomes nos documentos lituanos só podiam ter letras do alfabeto lituano, que não tem q, w nem x. Para muitos poloneses da região de Vilnius, isso significava ver o próprio sobrenome escrito de outro jeito no passaporte. O tema foi debatido por décadas; desde 2022, a lei permite escrever o nome com as letras latinas q, w e x. Nos textos, porém, a regra da terminação continua: um estrangeiro que se chame Wojciech vira “Wojciechas” numa frase lituana, porque sem terminação o nome não teria caso.',
         examples: [
           ['Nuo 2022 metų pase galima rašyti raides q, w ir x.', 'Desde 2022, pode-se escrever as letras q, w e x no passaporte.'],
           ['Jo pavardė pase parašyta lenkiškai.', 'O sobrenome dele está escrito à polonesa no passaporte.'],
@@ -3513,10 +3513,10 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Escrever nome estrangeiro sem terminação no meio da frase («skaičiau Shakespeare sonetus»): o lituano exige o caso, «Šekspyro» ou «Shakespeare’o».',
-      'Traduzir «Paris» por «Parisas»: a forma tradicional é «Paryžius», e o locativo é «Paryžiuje».',
+      'Escrever nome estrangeiro sem terminação no meio da frase (“skaičiau Shakespeare sonetus”): o lituano exige o caso, “Šekspyro” ou “Shakespeare’o”.',
+      'Traduzir “Paris” por “Parisas”: a forma tradicional é “Paryžius”, e o locativo é “Paryžiuje”.',
       'Achar que a Lituânia tem uma só língua na rua: em partes de Vilnius e arredores, o polonês e o russo são ouvidos o tempo todo.',
-      'Chamar de «lietuvis» todo cidadão do país: «lietuvis» é o lituano de etnia; a cidadania é «Lietuvos pilietis», e um polonês de Vilnius é um «Lietuvos lenkas».',
+      'Chamar de “lietuvis” todo cidadão do país: “lietuvis” é o lituano de etnia; a cidadania é “Lietuvos pilietis”, e um polonês de Vilnius é um “Lietuvos lenkas”.',
     ],
     quiz: [
       {
@@ -3532,22 +3532,22 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         explanation: 'Trakai, com locativo plural Trakuose: lá ficam a kenesa e as casas de madeira dos karaimai.',
       },
       {
-        question: 'Qual é o genitivo de «Šekspyras»?',
+        question: 'Qual é o genitivo de “Šekspyras”?',
         options: ['Šekspyro', 'Šekspyrio', 'Šekspyrą'],
         answer: 'Šekspyro',
-        explanation: 'Masculino em -as: genitivo em -o, como «vyras → vyro». «Šekspyrą» é o acusativo.',
+        explanation: 'Masculino em -as: genitivo em -o, como “vyras → vyro”. “Šekspyrą” é o acusativo.',
       },
       {
-        question: 'Como fica «Paris» em lituano?',
+        question: 'Como fica “Paris” em lituano?',
         options: ['Paryžius', 'Parisas', 'Paryžas'],
         answer: 'Paryžius',
         explanation: 'Forma tradicional, que declina como os masculinos em -ius: Paryžiaus, Paryžiuje.',
       },
       {
-        question: 'Complete: «Mano brolis dirba ___» (em Londres).',
+        question: 'Complete: “Mano brolis dirba ___” (em Londres).',
         options: ['Londone', 'Londonoje', 'Londonui'],
         answer: 'Londone',
-        explanation: 'Londonas é masculino em -as: o locativo é -e, como «Kaunas → Kaune».',
+        explanation: 'Londonas é masculino em -as: o locativo é -e, como “Kaunas → Kaune”.',
       },
     ],
   },
@@ -3555,13 +3555,13 @@ export const GRAMMAR_LT: GrammarTopic[] = [
   {
     id: 'lt-g34',
     level: 'C1.2',
-    title: 'O modo relatado: «jis esąs gydytojas»',
+    title: 'O modo relatado: “jis esąs gydytojas”',
     emoji: '🗣️',
-    summary: 'O lituano tem um jeito gramatical de dizer «dizem que», «pelo jeito» ou «segundo ele»: trocar o verbo conjugado por um particípio no nominativo. «Jis yra gydytojas» (ele é médico) é um fato; «jis esąs gydytojas» é o que se conta por aí. É a netiesioginė nuosaka, o modo relatado, comum em contos populares, na imprensa e no discurso indireto cuidadoso.',
+    summary: 'O lituano tem um jeito gramatical de dizer “dizem que”, “pelo jeito” ou “segundo ele”: trocar o verbo conjugado por um particípio no nominativo. “Jis yra gydytojas” (ele é médico) é um fato; “jis esąs gydytojas” é o que se conta por aí. É a netiesioginė nuosaka, o modo relatado, comum em contos populares, na imprensa e no discurso indireto cuidadoso.',
     sections: [
       {
         heading: 'Particípio no lugar do verbo',
-        text: 'No modo relatado, o verbo conjugado dá lugar a um particípio ativo que concorda com o sujeito em gênero e número, no nominativo (vardininkas). Há um para cada tempo: presente (-ąs ou -įs; feminino -anti ou -inti), passado (-ęs; feminino -usi), futuro (-siąs; feminino -sianti) e passado frequentativo (-davęs; feminino -davusi). No plural masculino, usa-se a forma curta: «jie esą», «jie dirbą». O efeito é de distância: quem fala não garante o fato, só o transmite.',
+        text: 'No modo relatado, o verbo conjugado dá lugar a um particípio ativo que concorda com o sujeito em gênero e número, no nominativo (vardininkas). Há um para cada tempo: presente (-ąs ou -įs; feminino -anti ou -inti), passado (-ęs; feminino -usi), futuro (-siąs; feminino -sianti) e passado frequentativo (-davęs; feminino -davusi). No plural masculino, usa-se a forma curta: “jie esą”, “jie dirbą”. O efeito é de distância: quem fala não garante o fato, só o transmite.',
         table: {
           head: ['Tempo', 'Indicativo (fato)', 'Relatado (masc.)', 'Relatado (fem.)'],
           rows: [
@@ -3582,8 +3582,8 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         ],
       },
       {
-        heading: '«Pelo jeito»: o neutro com genitivo',
-        text: 'Há uma segunda construção, mais surpreendente: o particípio passivo no neutro (-ta, -ma) com o agente no genitivo. Ela diz que algo aconteceu, deduzido pelas marcas que deixou. «Čia būta pilies» é «pelo visto, aqui havia um castelo» (há ruínas); «Vilko čia eita» é «um lobo passou por aqui» (há pegadas). É frequente nos contos populares e dá um tom arcaico e expressivo ao texto.',
+        heading: '“Pelo jeito”: o neutro com genitivo',
+        text: 'Há uma segunda construção, mais surpreendente: o particípio passivo no neutro (-ta, -ma) com o agente no genitivo. Ela diz que algo aconteceu, deduzido pelas marcas que deixou. “Čia būta pilies” é “pelo visto, aqui havia um castelo” (há ruínas); “Vilko čia eita” é “um lobo passou por aqui” (há pegadas). É frequente nos contos populares e dá um tom arcaico e expressivo ao texto.',
         examples: [
           ['Čia būta senos pilies.', 'Pelo visto, aqui havia um castelo antigo.'],
           ['Vilko čia eita.', 'Um lobo passou por aqui (dá para ver pelas pegadas).'],
@@ -3592,7 +3592,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Esą, neva e as fórmulas da imprensa',
-        text: 'Quem não quer usar o particípio tem palavras que fazem o mesmo papel. «Esą» (antiga forma do particípio de «būti», hoje partícula) quer dizer «supostamente, segundo dizem». «Neva» acrescenta dúvida: «como se fosse, pretensamente». E há as fórmulas impessoais «sakoma» (diz-se), «teigiama» (afirma-se), «pranešama» (informa-se). Nos contos, o modo relatado aparece logo na abertura, porque o narrador conta o que ouviu: «Gyvenęs kartą karalius…» (era uma vez um rei, dizem).',
+        text: 'Quem não quer usar o particípio tem palavras que fazem o mesmo papel. “Esą” (antiga forma do particípio de “būti”, hoje partícula) quer dizer “supostamente, segundo dizem”. “Neva” acrescenta dúvida: “como se fosse, pretensamente”. E há as fórmulas impessoais “sakoma” (diz-se), “teigiama” (afirma-se), “pranešama” (informa-se). Nos contos, o modo relatado aparece logo na abertura, porque o narrador conta o que ouviu: “Gyvenęs kartą karalius…” (era uma vez um rei, dizem).',
         examples: [
           ['Jis, esą, sirgo visą savaitę.', 'Ele, supostamente, ficou doente a semana inteira.'],
           ['Jis neva nieko nežinojo.', 'Ele, pretensamente, não sabia de nada.'],
@@ -3603,40 +3603,40 @@ export const GRAMMAR_LT: GrammarTopic[] = [
     ],
     pitfalls: [
       'Colocar o sujeito em outro caso: no modo relatado com particípio ativo, o sujeito continua no nominativo e o particípio concorda com ele (ji esanti, jie esą).',
-      'Esquecer a concordância de gênero: é «jis buvęs», mas «ji buvusi»; «ji buvęs» é erro.',
-      'Traduzir «esąs» como simples presente: o português precisa marcar a distância, com «dizem que», «segundo ele» ou o futuro do pretérito («seria»).',
-      'Achar que «Čia būta pilies» é passiva comum: não há sujeito nominativo; o que existiu vai no genitivo, e o particípio fica no neutro -ta.',
+      'Esquecer a concordância de gênero: é “jis buvęs”, mas “ji buvusi”; “ji buvęs” é erro.',
+      'Traduzir “esąs” como simples presente: o português precisa marcar a distância, com “dizem que”, “segundo ele” ou o futuro do pretérito (“seria”).',
+      'Achar que “Čia būta pilies” é passiva comum: não há sujeito nominativo; o que existiu vai no genitivo, e o particípio fica no neutro -ta.',
     ],
     quiz: [
       {
-        question: 'Qual é a forma relatada de «jis yra»?',
+        question: 'Qual é a forma relatada de “jis yra”?',
         options: ['jis esąs', 'jis buvo', 'jis būtų'],
         answer: 'jis esąs',
-        explanation: '«Esąs» é o particípio presente de «būti»; «būtų» é o condicional, outra coisa.',
+        explanation: '“Esąs” é o particípio presente de “būti”; “būtų” é o condicional, outra coisa.',
       },
       {
-        question: 'Qual é o feminino de «esąs»?',
+        question: 'Qual é o feminino de “esąs”?',
         options: ['esanti', 'esąsa', 'esusi'],
         answer: 'esanti',
         explanation: 'O particípio presente faz o feminino em -anti (-inti): esanti, dirbanti, turinti.',
       },
       {
-        question: '«Čia būta pilies» quer dizer…',
+        question: '“Čia būta pilies” quer dizer…',
         options: ['pelo visto, havia um castelo aqui', 'aqui vai haver um castelo', 'o castelo foi vendido'],
         answer: 'pelo visto, havia um castelo aqui',
         explanation: 'Neutro -ta com genitivo: algo existiu ou aconteceu, deduzido pelos vestígios.',
       },
       {
-        question: 'Qual é o passado relatado de «ji turėjo»?',
+        question: 'Qual é o passado relatado de “ji turėjo”?',
         options: ['ji turėjusi', 'ji turinti', 'ji turėjęs'],
         answer: 'ji turėjusi',
-        explanation: 'Passado feminino em -usi. «Turėjęs» é o masculino; «turinti», o presente.',
+        explanation: 'Passado feminino em -usi. “Turėjęs” é o masculino; “turinti”, o presente.',
       },
       {
-        question: 'Qual partícula quer dizer «supostamente, segundo dizem»?',
+        question: 'Qual partícula quer dizer “supostamente, segundo dizem”?',
         options: ['esą', 'gal', 'net'],
         answer: 'esą',
-        explanation: '«Gal» é «talvez», e «net», «até, mesmo».',
+        explanation: '“Gal” é “talvez”, e “net”, “até, mesmo”.',
       },
     ],
   },
@@ -3645,11 +3645,11 @@ export const GRAMMAR_LT: GrammarTopic[] = [
     level: 'C1.2',
     title: 'O estilo acadêmico e os textos especializados',
     emoji: '🎓',
-    summary: 'O lituano acadêmico tem marcas claras: substantivos em -imas (tyrimas, vertinimas), a passiva impessoal no neutro («šiame straipsnyje nagrinėjama…»), os gerúndios em -ant/-int («remiantis», «atsižvelgiant į») e o travessão no lugar do verbo «ser» nas definições («Tyrimo tikslas – …»). E uma tradição forte de cuidado com a língua: termos lituanos em vez de estrangeirismos e uma lista oficial de erros a evitar.',
+    summary: 'O lituano acadêmico tem marcas claras: substantivos em -imas (tyrimas, vertinimas), a passiva impessoal no neutro (“šiame straipsnyje nagrinėjama…”), os gerúndios em -ant/-int (“remiantis”, “atsižvelgiant į”) e o travessão no lugar do verbo “ser” nas definições (“Tyrimo tikslas – …”). E uma tradição forte de cuidado com a língua: termos lituanos em vez de estrangeirismos e uma lista oficial de erros a evitar.',
     sections: [
       {
         heading: 'Nomes em vez de verbos',
-        text: 'Como em outras línguas, o texto especializado prefere substantivos derivados de verbos. O sufixo mais produtivo é -imas/-ymas (a ação): tirti → tyrimas (pesquisa), vertinti → vertinimas (avaliação), kurti → kūrimas (criação), rašyti → rašymas (escrita). Qualidades viram -umas: aiškus → aiškumas (clareza), tikslus → tikslumas (precisão). Quem faz a ação ganha -ėjas/-tojas: tyrėjas (pesquisador), vertintojas (avaliador). Os substantivos se encadeiam no genitivo, como em português com «de»: «mokinių skaitymo įgūdžių vertinimas» (a avaliação das habilidades de leitura dos alunos). Cuidado para não empilhar genitivos demais: três já pesam.',
+        text: 'Como em outras línguas, o texto especializado prefere substantivos derivados de verbos. O sufixo mais produtivo é -imas/-ymas (a ação): tirti → tyrimas (pesquisa), vertinti → vertinimas (avaliação), kurti → kūrimas (criação), rašyti → rašymas (escrita). Qualidades viram -umas: aiškus → aiškumas (clareza), tikslus → tikslumas (precisão). Quem faz a ação ganha -ėjas/-tojas: tyrėjas (pesquisador), vertintojas (avaliador). Os substantivos se encadeiam no genitivo, como em português com “de”: “mokinių skaitymo įgūdžių vertinimas” (a avaliação das habilidades de leitura dos alunos). Cuidado para não empilhar genitivos demais: três já pesam.',
         table: {
           head: ['Verbo', 'Ação (-imas)', 'Quem faz', 'Português'],
           rows: [
@@ -3668,7 +3668,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'A passiva impessoal e os gerúndios',
-        text: 'O autor acadêmico lituano quase nunca diz «eu»: usa o particípio passivo neutro sem sujeito, que funciona como o «se» do português: «nagrinėjama» (analisa-se), «aptariama» (discute-se), «siūloma» (propõe-se). Quando há sujeito, o particípio concorda: «pateikiamos rekomendacijos» (são apresentadas recomendações). Os gerúndios (padalyviai) em -ant/-int ligam as ideias: «remiantis» (com base em, + instrumental), «atsižvelgiant į» (levando em conta), «apibendrinant» (em resumo), «lyginant su» (em comparação com).',
+        text: 'O autor acadêmico lituano quase nunca diz “eu”: usa o particípio passivo neutro sem sujeito, que funciona como o “se” do português: “nagrinėjama” (analisa-se), “aptariama” (discute-se), “siūloma” (propõe-se). Quando há sujeito, o particípio concorda: “pateikiamos rekomendacijos” (são apresentadas recomendações). Os gerúndios (padalyviai) em -ant/-int ligam as ideias: “remiantis” (com base em, + instrumental), “atsižvelgiant į” (levando em conta), “apibendrinant” (em resumo), “lyginant su” (em comparação com).',
         examples: [
           ['Šiame straipsnyje nagrinėjama lietuvių kalbos kirčiavimo sistema.', 'Neste artigo, analisa-se o sistema de acentuação do lituano.'],
           ['Remiantis surinktais duomenimis, galima teigti, kad hipotezė pasitvirtino.', 'Com base nos dados coletados, pode-se afirmar que a hipótese se confirmou.'],
@@ -3678,7 +3678,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'A estrutura do artigo e o travessão',
-        text: 'Um artigo científico lituano segue a ordem: Santrauka (resumo), Reikšminiai žodžiai (palavras-chave), Įvadas (introdução), Tyrimo metodai (métodos), Rezultatai, Išvados (conclusões) e Literatūra (referências). Nas definições e nos objetivos, o verbo «būti» costuma sumir e ser trocado por um travessão: «Tyrimo tikslas – ištirti…» (o objetivo da pesquisa é investigar…), «Kalba – tautos siela» (a língua é a alma do povo). Outra marca é a vigilância da norma: a Comissão Estatal da Língua Lituana (Valstybinė lietuvių kalbos komisija) publica recomendações e uma lista de erros comuns, e há um banco oficial de termos. Um exemplo clássico: em vez de «pilnai sutinku» (que a norma considera erro), escreve-se «visiškai sutinku» (concordo plenamente).',
+        text: 'Um artigo científico lituano segue a ordem: Santrauka (resumo), Reikšminiai žodžiai (palavras-chave), Įvadas (introdução), Tyrimo metodai (métodos), Rezultatai, Išvados (conclusões) e Literatūra (referências). Nas definições e nos objetivos, o verbo “būti” costuma sumir e ser trocado por um travessão: “Tyrimo tikslas – ištirti…” (o objetivo da pesquisa é investigar…), “Kalba – tautos siela” (a língua é a alma do povo). Outra marca é a vigilância da norma: a Comissão Estatal da Língua Lituana (Valstybinė lietuvių kalbos komisija) publica recomendações e uma lista de erros comuns, e há um banco oficial de termos. Um exemplo clássico: em vez de “pilnai sutinku” (que a norma considera erro), escreve-se “visiškai sutinku” (concordo plenamente).',
         examples: [
           ['Tyrimo tikslas – įvertinti mokinių skaitymo įgūdžius.', 'O objetivo da pesquisa é avaliar as habilidades de leitura dos alunos.'],
           ['Tyrimo objektas – Vilniaus miesto užrašai.', 'O objeto da pesquisa são as placas da cidade de Vilnius.'],
@@ -3688,54 +3688,54 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Escrever «aš tyriau» (eu pesquisei) a cada frase: o estilo acadêmico lituano prefere «buvo ištirta» ou «tirta» e o autor no plural modesto («mes»), quando precisa aparecer.',
-      'Pôr «yra» nas definições em que o lituano usa travessão: «Tyrimo tikslas – įvertinti…» soa natural; «Tyrimo tikslas yra įvertinti…» não é erro, mas é mais pesado.',
-      'Esquecer a regência dos gerúndios: «remiantis» pede instrumental (duomenimis), «atsižvelgiant» pede «į» com acusativo (į rezultatus).',
-      'Usar «pilnai» no sentido de «completamente»: a forma recomendada é «visiškai».',
+      'Escrever “aš tyriau” (eu pesquisei) a cada frase: o estilo acadêmico lituano prefere “buvo ištirta” ou “tirta” e o autor no plural modesto (“mes”), quando precisa aparecer.',
+      'Pôr “yra” nas definições em que o lituano usa travessão: “Tyrimo tikslas – įvertinti…” soa natural; “Tyrimo tikslas yra įvertinti…” não é erro, mas é mais pesado.',
+      'Esquecer a regência dos gerúndios: “remiantis” pede instrumental (duomenimis), “atsižvelgiant” pede “į” com acusativo (į rezultatus).',
+      'Usar “pilnai” no sentido de “completamente”: a forma recomendada é “visiškai”.',
     ],
     quiz: [
       {
-        question: 'Qual palavra quer dizer «a pesquisa» (o ato de pesquisar)?',
+        question: 'Qual palavra quer dizer “a pesquisa” (o ato de pesquisar)?',
         options: ['tyrimas', 'tyrėjas', 'tirtas'],
         answer: 'tyrimas',
-        explanation: '-imas forma a ação; «tyrėjas» é o pesquisador, e «tirtas», o particípio «pesquisado».',
+        explanation: '-imas forma a ação; “tyrėjas” é o pesquisador, e “tirtas”, o particípio “pesquisado”.',
       },
       {
-        question: 'Em «Tyrimo tikslas – įvertinti…», o travessão substitui…',
+        question: 'Em “Tyrimo tikslas – įvertinti…”, o travessão substitui…',
         options: ['yra', 'ir', 'kad'],
         answer: 'yra',
-        explanation: 'Nas definições e nos objetivos, o travessão faz o papel do verbo «būti».',
+        explanation: 'Nas definições e nos objetivos, o travessão faz o papel do verbo “būti”.',
       },
       {
         question: 'Como começar a conclusão de um artigo?',
         options: ['Apibendrinant', 'Pavyzdžiui', 'Tačiau'],
         answer: 'Apibendrinant',
-        explanation: '«Apibendrinant» (em resumo) é o gerúndio de «apibendrinti», generalizar, resumir.',
+        explanation: '“Apibendrinant” (em resumo) é o gerúndio de “apibendrinti”, generalizar, resumir.',
       },
       {
-        question: 'Qual é a forma recomendada em vez de «pilnai sutinku»?',
+        question: 'Qual é a forma recomendada em vez de “pilnai sutinku”?',
         options: ['visiškai sutinku', 'pilnu sutinku', 'pilnai sutikau'],
         answer: 'visiškai sutinku',
-        explanation: '«Pilnai» nesse sentido está na lista de erros da norma, que recomenda «visiškai».',
+        explanation: '“Pilnai” nesse sentido está na lista de erros da norma, que recomenda “visiškai”.',
       },
       {
-        question: 'Complete: «Remiantis surinktais ___, galima teigti…»',
+        question: 'Complete: “Remiantis surinktais ___, galima teigti…”',
         options: ['duomenimis', 'duomenis', 'duomenų'],
         answer: 'duomenimis',
-        explanation: '«Remtis» (apoiar-se) pede instrumental: remiantis duomenimis.',
+        explanation: '“Remtis” (apoiar-se) pede instrumental: remiantis duomenimis.',
       },
     ],
   },
   {
     id: 'lt-g36',
     level: 'C1.2',
-    title: 'O estilo jornalístico: manchetes, citações e «pasak»',
+    title: 'O estilo jornalístico: manchetes, citações e “pasak”',
     emoji: '📰',
-    summary: 'A notícia lituana tem fórmulas próprias: manchetes com travessão no lugar do verbo («Kaune – naujas tiltas»), a fonte com «pasak» ou «anot» + genitivo, os verbos de citação (teigė, pažymėjo, pranešė), as formas impessoais «manoma» e «tikimasi», e as aspas baixas „…“, seguidas de vírgula e travessão antes de quem fala.',
+    summary: 'A notícia lituana tem fórmulas próprias: manchetes com travessão no lugar do verbo (“Kaune – naujas tiltas”), a fonte com “pasak” ou “anot” + genitivo, os verbos de citação (teigė, pažymėjo, pranešė), as formas impessoais “manoma” e “tikimasi”, e as aspas baixas „…“, seguidas de vírgula e travessão antes de quem fala.',
     sections: [
       {
         heading: 'A manchete e o lide',
-        text: 'A manchete (antraštė) economiza: corta o verbo «būti» e põe um travessão («Vilniuje – nauja paroda»), usa o presente para fatos recentes («Seimas priima naują įstatymą») e o futuro para anúncios («Palangoje vyks džiazo festivalis»). O primeiro parágrafo, o lide, responde logo a kas, kur, kada (o quê, onde, quando). As datas seguem um formato fixo, com o mês no genitivo e em minúscula: «2026 m. spalio 3 d.» (3 de outubro de 2026), onde «m.» é «metų» (do ano) e «d.» é «dieną» (no dia).',
+        text: 'A manchete (antraštė) economiza: corta o verbo “būti” e põe um travessão (“Vilniuje – nauja paroda”), usa o presente para fatos recentes (“Seimas priima naują įstatymą”) e o futuro para anúncios (“Palangoje vyks džiazo festivalis”). O primeiro parágrafo, o lide, responde logo a kas, kur, kada (o quê, onde, quando). As datas seguem um formato fixo, com o mês no genitivo e em minúscula: “2026 m. spalio 3 d.” (3 de outubro de 2026), onde “m.” é “metų” (do ano) e “d.” é “dieną” (no dia).',
         examples: [
           ['Vilniuje – nauja šiuolaikinio meno paroda.', 'Nova exposição de arte contemporânea em Vilnius.'],
           ['Renginys vyks 2026 m. spalio 3 d. Kaune.', 'O evento acontecerá em 3 de outubro de 2026, em Kaunas.'],
@@ -3744,7 +3744,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Quem disse: pasak, anot e os verbos de citação',
-        text: 'Para atribuir uma informação, o jornalista usa «pasak» ou «anot», sempre com genitivo: «pasak meteorologų» (segundo os meteorologistas), «anot policijos» (de acordo com a polícia). Os verbos de citação variam para não repetir «sakė» (disse): teigė (afirmou), pažymėjo (ressaltou), pabrėžė (enfatizou), pranešė (informou), patikino (garantiu). Quando a fonte é vaga, entram as formas impessoais do particípio passivo neutro: «manoma» (acredita-se), «tikimasi» (espera-se), «pranešama» (informa-se), «skelbiama» (anuncia-se).',
+        text: 'Para atribuir uma informação, o jornalista usa “pasak” ou “anot”, sempre com genitivo: “pasak meteorologų” (segundo os meteorologistas), “anot policijos” (de acordo com a polícia). Os verbos de citação variam para não repetir “sakė” (disse): teigė (afirmou), pažymėjo (ressaltou), pabrėžė (enfatizou), pranešė (informou), patikino (garantiu). Quando a fonte é vaga, entram as formas impessoais do particípio passivo neutro: “manoma” (acredita-se), “tikimasi” (espera-se), “pranešama” (informa-se), “skelbiama” (anuncia-se).',
         examples: [
           ['Pasak meteorologų, savaitgalį Lietuvoje lis.', 'Segundo os meteorologistas, vai chover na Lituânia no fim de semana.'],
           ['Anot policijos, eismo įvykyje niekas nenukentėjo.', 'De acordo com a polícia, ninguém se feriu no acidente de trânsito.'],
@@ -3754,7 +3754,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'As aspas e a pontuação da citação',
-        text: 'O lituano usa aspas baixas na abertura e altas no fechamento: „…“. Quando a citação vem antes de quem fala, depois das aspas vêm vírgula e travessão: „Darbai bus baigti iki rudens“, – teigė meras. Quando quem fala vem antes, usam-se dois-pontos: Meras teigė: „Darbai bus baigti iki rudens.“ Os números grandes também têm abreviações fixas: «tūkst.» (mil), «mln.» (milhão), «mlrd.» (bilhão), «proc.» (por cento), e o euro declina: 1 euras, 2 eurai, 10 eurų.',
+        text: 'O lituano usa aspas baixas na abertura e altas no fechamento: „…“. Quando a citação vem antes de quem fala, depois das aspas vêm vírgula e travessão: „Darbai bus baigti iki rudens‘, – teigė meras. Quando quem fala vem antes, usam-se dois-pontos: Meras teigė: „Darbai bus baigti iki rudens.‘ Os números grandes também têm abreviações fixas: ‘tūkst.’ (mil), ‘mln.’ (milhão), ‘mlrd.’ (bilhão), ‘proc.’ (por cento), e o euro declina: 1 euras, 2 eurai, 10 eurų.',
         table: {
           head: ['Abreviação', 'Por extenso', 'Português'],
           rows: [
@@ -3767,48 +3767,48 @@ export const GRAMMAR_LT: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['„Darbai bus baigti iki rudens“, – teigė meras.', '«As obras ficarão prontas até o outono», afirmou o prefeito.'],
-          ['Ministrė pabrėžė: „Mokytojų atlyginimai didės.“', 'A ministra enfatizou: «Os salários dos professores vão aumentar.»'],
+          ['„Darbai bus baigti iki rudens“, – teigė meras.', '‘As obras ficarão prontas até o outono’, afirmou o prefeito.'],
+          ['Ministrė pabrėžė: „Mokytojų atlyginimai didės.“', 'A ministra enfatizou: ‘Os salários dos professores vão aumentar.’'],
           ['Projektas kainuos 12 mln. eurų.', 'O projeto vai custar 12 milhões de euros.'],
         ],
       },
     ],
     pitfalls: [
-      'Usar aspas retas ou as angulares «…» num texto lituano: o padrão da imprensa é „…“.',
-      'Esquecer o genitivo depois de «pasak» e «anot»: é «pasak ministro», nunca «pasak ministras».',
-      'Escrever os meses com maiúscula ou no nominativo nas datas: é «spalio 3 d.», e não «Spalis 3».',
-      'Ler «manoma» como «vai se pensar»: é presente impessoal, «acredita-se».',
+      'Usar aspas retas ou as angulares “…” num texto lituano: o padrão da imprensa é „…“.',
+      'Esquecer o genitivo depois de “pasak” e “anot”: é “pasak ministro”, nunca “pasak ministras”.',
+      'Escrever os meses com maiúscula ou no nominativo nas datas: é “spalio 3 d.”, e não “Spalis 3”.',
+      'Ler “manoma” como “vai se pensar”: é presente impessoal, “acredita-se”.',
     ],
     quiz: [
       {
         question: 'Quais são as aspas corretas num jornal lituano?',
-        options: ['„Taip“', '«Taip»', '“Taip”'],
+        options: ['„Taip“', '‘Taip’', '‘Taip’'],
         answer: '„Taip“',
         explanation: 'Aspas baixas na abertura e altas no fechamento.',
       },
       {
-        question: 'Complete: «Pasak ___, biudžetas didės.»',
+        question: 'Complete: “Pasak ___, biudžetas didės.”',
         options: ['ministro', 'ministrą', 'ministrui'],
         answer: 'ministro',
-        explanation: '«Pasak» e «anot» pedem genitivo.',
+        explanation: '“Pasak” e “anot” pedem genitivo.',
       },
       {
-        question: 'O que quer dizer «manoma»?',
+        question: 'O que quer dizer “manoma”?',
         options: ['acredita-se', 'foi dito', 'vai se pensar'],
         answer: 'acredita-se',
-        explanation: 'Particípio passivo neutro de «manyti» (achar, crer), sem sujeito.',
+        explanation: 'Particípio passivo neutro de “manyti” (achar, crer), sem sujeito.',
       },
       {
         question: 'Qual é a data escrita corretamente?',
         options: ['spalio 3 d.', 'Spalio 3 d.', '3 Spalis'],
         answer: 'spalio 3 d.',
-        explanation: 'O mês vai em minúscula e no genitivo (spalio = de outubro), e «d.» abrevia «dieną».',
+        explanation: 'O mês vai em minúscula e no genitivo (spalio = de outubro), e “d.” abrevia “dieną”.',
       },
       {
-        question: 'Na manchete «Kaune – naujas tiltas», o travessão substitui…',
+        question: 'Na manchete “Kaune – naujas tiltas”, o travessão substitui…',
         options: ['o verbo', 'o sujeito', 'a data'],
         answer: 'o verbo',
-        explanation: 'O travessão toma o lugar de «yra» ou «pastatytas»: nova ponte em Kaunas.',
+        explanation: 'O travessão toma o lugar de “yra” ou “pastatytas”: nova ponte em Kaunas.',
       },
     ],
   },
@@ -3816,13 +3816,13 @@ export const GRAMMAR_LT: GrammarTopic[] = [
   {
     id: 'lt-g37',
     level: 'C2',
-    title: 'Donelaitis e «Metai»: o primeiro grande poema lituano',
+    title: 'Donelaitis e “Metai”: o primeiro grande poema lituano',
     emoji: '🌾',
-    summary: '«Metai» (As Estações), de Kristijonas Donelaitis, é o primeiro grande poema da literatura lituana: quase três mil versos em hexâmetro sobre um ano de trabalho dos camponeses da Lituânia Menor, escritos por volta de 1765–1775 e publicados só em 1818. Ler Donelaitis é ler o lituano do século XVIII, com palavras antigas, eslavismos e germanismos que o padrão moderno trocou.',
+    summary: '“Metai” (As Estações), de Kristijonas Donelaitis, é o primeiro grande poema da literatura lituana: quase três mil versos em hexâmetro sobre um ano de trabalho dos camponeses da Lituânia Menor, escritos por volta de 1765–1775 e publicados só em 1818. Ler Donelaitis é ler o lituano do século XVIII, com palavras antigas, eslavismos e germanismos que o padrão moderno trocou.',
     sections: [
       {
         heading: 'O pastor de Tolminkiemis',
-        text: 'Kristijonas Donelaitis (1714–1780) nasceu em Lazdynėliai, na Lituânia Menor (Mažoji Lietuva), a parte lituana da Prússia Oriental, e foi pastor luterano em Tolminkiemis de 1743 até morrer. Ali escreveu, em lituano, a vida dos seus paroquianos, os būrai (camponeses servos). O poema ficou em manuscrito e só foi publicado em 1818, em Königsberg (Karaliaučius), por Liudvikas Rėza, que lhe deu o título «Metai» e o acompanhou de uma tradução alemã. São quatro partes, que seguem o ano a partir da primavera.',
+        text: 'Kristijonas Donelaitis (1714–1780) nasceu em Lazdynėliai, na Lituânia Menor (Mažoji Lietuva), a parte lituana da Prússia Oriental, e foi pastor luterano em Tolminkiemis de 1743 até morrer. Ali escreveu, em lituano, a vida dos seus paroquianos, os būrai (camponeses servos). O poema ficou em manuscrito e só foi publicado em 1818, em Königsberg (Karaliaučius), por Liudvikas Rėza, que lhe deu o título “Metai” e o acompanhou de uma tradução alemã. São quatro partes, que seguem o ano a partir da primavera.',
         table: {
           head: ['Parte', 'Tradução'],
           rows: [
@@ -3833,14 +3833,14 @@ export const GRAMMAR_LT: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['Donelaitis parašė «Metus» Tolminkiemyje.', 'Donelaitis escreveu «Metai» em Tolminkiemis.'],
+          ['Donelaitis parašė “Metus” Tolminkiemyje.', 'Donelaitis escreveu “Metai” em Tolminkiemis.'],
           ['Poema išleista 1818 metais Karaliaučiuje.', 'O poema foi publicado em 1818, em Königsberg.'],
-          ['«Metai» prasideda pavasariu ir baigiasi žiema.', '«Metai» começa com a primavera e termina com o inverno.'],
+          ['“Metai” prasideda pavasariu ir baigiasi žiema.', '“Metai” começa com a primavera e termina com o inverno.'],
         ],
       },
       {
         heading: 'Os primeiros versos',
-        text: 'O poema abre com o sol que volta e derrete o inverno. Repare no vocabulário: «saulelė» é o diminutivo carinhoso de «saulė», como nas canções populares; «svietas» (mundo) é um eslavismo que o lituano moderno trocou por «pasaulis»; «budino» é «acordava» (hoje se diria «žadino»); «triūsai» aqui são as obras, o trabalho do inverno (o gelo, a neve); e «juokės» é a forma curta de «juokėsi» (ria). O metro é o hexâmetro, o verso da poesia épica grega e latina, adaptado à tônica lituana.',
+        text: 'O poema abre com o sol que volta e derrete o inverno. Repare no vocabulário: “saulelė” é o diminutivo carinhoso de “saulė”, como nas canções populares; “svietas” (mundo) é um eslavismo que o lituano moderno trocou por “pasaulis”; “budino” é “acordava” (hoje se diria “žadino”); “triūsai” aqui são as obras, o trabalho do inverno (o gelo, a neve); e “juokės” é a forma curta de “juokėsi” (ria). O metro é o hexâmetro, o verso da poesia épica grega e latina, adaptado à tônica lituana.',
         examples: [
           ['Jau saulelė vėl atkopdama budino svietą', 'O solzinho, subindo de novo, já despertava o mundo'],
           ['Ir žiemos šaltos triūsus pargriaudama juokės.', 'e, derrubando as obras do inverno frio, sorria.'],
@@ -3858,14 +3858,14 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Tratar «Metai» como singular: «metai» (ano) é uma palavra que só existe no plural, e o título se declina como tal: «skaitau Metus», «Metuose».',
-      'Imitar a grafia e o vocabulário do poema no lituano de hoje: «svietas» e «būrai» são do século XVIII; hoje se diz «pasaulis» e «valstiečiai».',
+      'Tratar “Metai” como singular: “metai” (ano) é uma palavra que só existe no plural, e o título se declina como tal: “skaitau Metus”, “Metuose”.',
+      'Imitar a grafia e o vocabulário do poema no lituano de hoje: “svietas” e “būrai” são do século XVIII; hoje se diz “pasaulis” e “valstiečiai”.',
       'Achar que Donelaitis viveu na Lituânia atual: Tolminkiemis fica na antiga Prússia Oriental, hoje na região de Kaliningrado.',
-      'Traduzir «saulelė» como «pequeno sol»: o diminutivo é afetivo, como o «solzinho» carinhoso do português.',
+      'Traduzir “saulelė” como “pequeno sol”: o diminutivo é afetivo, como o “solzinho” carinhoso do português.',
     ],
     quiz: [
       {
-        question: 'Em que metro está escrito «Metai»?',
+        question: 'Em que metro está escrito “Metai”?',
         options: ['hegzametru', 'jambu', 'laisvu eilėraščiu'],
         answer: 'hegzametru',
         explanation: 'O hexâmetro da épica clássica, adaptado à tônica lituana.',
@@ -3883,10 +3883,10 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         explanation: 'O ano do poema começa na primavera e termina no inverno.',
       },
       {
-        question: 'Como se diz «svietas» em lituano moderno?',
+        question: 'Como se diz “svietas” em lituano moderno?',
         options: ['pasaulis', 'saulė', 'šviesa'],
         answer: 'pasaulis',
-        explanation: '«Svietas» (mundo) é um eslavismo antigo; «šviesa» é «luz», outra palavra.',
+        explanation: '“Svietas” (mundo) é um eslavismo antigo; “šviesa” é “luz”, outra palavra.',
       },
       {
         question: 'Onde Donelaitis foi pastor?',
@@ -3905,7 +3905,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
     sections: [
       {
         heading: 'Maironis: a voz do renascimento nacional',
-        text: 'Maironis é o pseudônimo de Jonas Mačiulis (1862–1932), padre e professor, que viveu seus últimos anos em Kaunas, na casa que hoje é o museu da literatura lituana. Seu livro «Pavasario balsai» (As vozes da primavera, 1895) mudou a poesia lituana: versos musicais, rimados, sobre a natureza, a história (Trakai, Vytautas, os castelos) e o amor à pátria. Muitos poemas viraram canções que se cantam até hoje, como «Lietuva brangi», musicada por Juozas Naujalis. Repare no locativo curto «kapuos» (nos túmulos), forma poética de «kapuose».',
+        text: 'Maironis é o pseudônimo de Jonas Mačiulis (1862–1932), padre e professor, que viveu seus últimos anos em Kaunas, na casa que hoje é o museu da literatura lituana. Seu livro “Pavasario balsai” (As vozes da primavera, 1895) mudou a poesia lituana: versos musicais, rimados, sobre a natureza, a história (Trakai, Vytautas, os castelos) e o amor à pátria. Muitos poemas viraram canções que se cantam até hoje, como “Lietuva brangi”, musicada por Juozas Naujalis. Repare no locativo curto “kapuos” (nos túmulos), forma poética de “kapuose”.',
         examples: [
           ['Lietuva brangi, mano tėvyne,', 'Lituânia querida, minha pátria,'],
           ['Šalis, kur miega kapuos didvyriai.', 'terra onde dormem nos túmulos os heróis.'],
@@ -3914,16 +3914,16 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Žemaitė: a aldeia sem enfeite',
-        text: 'Žemaitė («a samogiciana») é o pseudônimo de Julija Beniuševičiūtė-Žymantienė (1845–1921). Nascida numa família de pequena nobreza, casou-se com um ex-servo, viveu décadas como camponesa e só começou a publicar perto dos cinquenta anos. Seus contos, como «Marti» (A nora), mostram a vida da aldeia samogiciana com humor, dureza e diálogos cheios de fala popular: casamentos por interesse, sogras, pobreza, bebida. Para quem estuda a língua, Žemaitė é uma mina de vocabulário do campo e de expressões do dia a dia.',
+        text: 'Žemaitė (“a samogiciana”) é o pseudônimo de Julija Beniuševičiūtė-Žymantienė (1845–1921). Nascida numa família de pequena nobreza, casou-se com um ex-servo, viveu décadas como camponesa e só começou a publicar perto dos cinquenta anos. Seus contos, como “Marti” (A nora), mostram a vida da aldeia samogiciana com humor, dureza e diálogos cheios de fala popular: casamentos por interesse, sogras, pobreza, bebida. Para quem estuda a língua, Žemaitė é uma mina de vocabulário do campo e de expressões do dia a dia.',
         examples: [
           ['Žemaitė pradėjo rašyti būdama beveik penkiasdešimties metų.', 'Žemaitė começou a escrever com quase cinquenta anos.'],
           ['Jos apsakymuose kaimo žmonės kalba savo kalba.', 'Nos contos dela, a gente da aldeia fala do seu próprio jeito.'],
-          ['«Marti» – vienas žinomiausių Žemaitės apsakymų.', '«Marti» é um dos contos mais conhecidos de Žemaitė.'],
+          ['“Marti” – vienas žinomiausių Žemaitės apsakymų.', '“Marti” é um dos contos mais conhecidos de Žemaitė.'],
         ],
       },
       {
         heading: 'Vydūnas e Kudirka',
-        text: 'Vydūnas é o nome de Vilius Storostas (1868–1953), da Lituânia Menor. Professor em Tilsit (Tilžė), escreveu dramas e livros de filosofia em lituano e em alemão, defendeu a cultura lituana na Prússia, foi vegetariano e pacifista, e morreu em Detmold, na Alemanha. Vincas Kudirka (1858–1899), médico, editou o jornal «Varpas» (O Sino), publicado na Prússia e contrabandeado para a Lituânia durante a proibição da imprensa. Em 1898 escreveu a «Tautiška giesmė» (Canção nacional), letra e música, que se tornou o hino da Lituânia. Morreu de tuberculose aos 40 anos.',
+        text: 'Vydūnas é o nome de Vilius Storostas (1868–1953), da Lituânia Menor. Professor em Tilsit (Tilžė), escreveu dramas e livros de filosofia em lituano e em alemão, defendeu a cultura lituana na Prússia, foi vegetariano e pacifista, e morreu em Detmold, na Alemanha. Vincas Kudirka (1858–1899), médico, editou o jornal “Varpas” (O Sino), publicado na Prússia e contrabandeado para a Lituânia durante a proibição da imprensa. Em 1898 escreveu a “Tautiška giesmė” (Canção nacional), letra e música, que se tornou o hino da Lituânia. Morreu de tuberculose aos 40 anos.',
         examples: [
           ['Lietuva, Tėvyne mūsų,', 'Lituânia, nossa pátria,'],
           ['Tu didvyrių žeme,', 'tu, terra de heróis,'],
@@ -3933,8 +3933,8 @@ export const GRAMMAR_LT: GrammarTopic[] = [
     ],
     pitfalls: [
       'Tomar os pseudônimos por sobrenomes: Maironis, Žemaitė e Vydūnas são nomes literários; na escola aprendem-se também os nomes civis.',
-      'Estranhar «tėvyne» e «žeme» nos versos: são vocativos (tėvynė → tėvyne, žemė → žeme), porque o poeta fala com a pátria.',
-      'Corrigir «kapuos» para «kapuose» ao ler poesia: a forma curta do locativo plural é comum nos versos e na fala.',
+      'Estranhar “tėvyne” e “žeme” nos versos: são vocativos (tėvynė → tėvyne, žemė → žeme), porque o poeta fala com a pátria.',
+      'Corrigir “kapuos” para “kapuose” ao ler poesia: a forma curta do locativo plural é comum nos versos e na fala.',
       'Achar que a Lituânia Menor é a Lituânia atual: Donelaitis e Vydūnas viveram na Prússia Oriental, de maioria alemã e luterana.',
     ],
     quiz: [
@@ -3948,10 +3948,10 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         question: 'Qual livro de Maironis saiu em 1895?',
         options: ['Pavasario balsai', 'Metai', 'Marti'],
         answer: 'Pavasario balsai',
-        explanation: '«Metai» é de Donelaitis, e «Marti», de Žemaitė.',
+        explanation: '“Metai” é de Donelaitis, e “Marti”, de Žemaitė.',
       },
       {
-        question: 'Quem escreveu «Marti»?',
+        question: 'Quem escreveu “Marti”?',
         options: ['Žemaitė', 'Vydūnas', 'Donelaitis'],
         answer: 'Žemaitė',
         explanation: 'O conto da nora infeliz, com a aldeia samogiciana ao fundo.',
@@ -3960,13 +3960,13 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         question: 'Quem escreveu a letra e a música do hino nacional?',
         options: ['Vincas Kudirka', 'Maironis', 'Žemaitė'],
         answer: 'Vincas Kudirka',
-        explanation: 'A «Tautiška giesmė», de 1898.',
+        explanation: 'A “Tautiška giesmė”, de 1898.',
       },
       {
-        question: '«Kapuos» é a forma curta de…',
+        question: '“Kapuos” é a forma curta de…',
         options: ['kapuose', 'kapus', 'kapais'],
         answer: 'kapuose',
-        explanation: 'Locativo plural de «kapas» (túmulo): kapuose, na poesia kapuos.',
+        explanation: 'Locativo plural de “kapas” (túmulo): kapuose, na poesia kapuos.',
       },
     ],
   },
@@ -3975,11 +3975,11 @@ export const GRAMMAR_LT: GrammarTopic[] = [
     level: 'C2',
     title: 'Dainos, sutartinės e patarlės: a sabedoria cantada e falada',
     emoji: '🎶',
-    summary: 'A Lituânia se orgulha de ser um «país de canções»: centenas de milhares de dainos (canções populares) foram recolhidas, cheias de diminutivos e de símbolos como a arruda (rūta). As sutartinės, cantos polifônicos do nordeste, são Patrimônio Imaterial da UNESCO desde 2010. E os provérbios (patarlės) resumem em poucas palavras o jeito de pensar do campo.',
+    summary: 'A Lituânia se orgulha de ser um “país de canções”: centenas de milhares de dainos (canções populares) foram recolhidas, cheias de diminutivos e de símbolos como a arruda (rūta). As sutartinės, cantos polifônicos do nordeste, são Patrimônio Imaterial da UNESCO desde 2010. E os provérbios (patarlės) resumem em poucas palavras o jeito de pensar do campo.',
     sections: [
       {
         heading: 'As dainos e a sua língua',
-        text: 'As dainos acompanhavam a vida inteira: o trabalho no campo, o casamento, a guerra, o luto. Sua língua tem marcas fáceis de reconhecer. A primeira é o diminutivo carinhoso em quase toda palavra: saulelė (o solzinho), motinėlė (a mãezinha), bernužėlis (o rapazinho), žirgelis (o cavalinho), rūtelė (a arrudinha). A segunda são os símbolos: o jardim de arruda (rūtų darželis) e a coroa de arruda (rūtų vainikėlis) representam a juventude da moça, que ela «perde» no casamento. A terceira é o paralelismo: uma imagem da natureza e, logo depois, uma imagem humana que a espelha. Desde 1924, a Dainų šventė (Festa da Canção) reúne milhares de cantores; as festas da canção e da dança dos três países bálticos também são reconhecidas pela UNESCO.',
+        text: 'As dainos acompanhavam a vida inteira: o trabalho no campo, o casamento, a guerra, o luto. Sua língua tem marcas fáceis de reconhecer. A primeira é o diminutivo carinhoso em quase toda palavra: saulelė (o solzinho), motinėlė (a mãezinha), bernužėlis (o rapazinho), žirgelis (o cavalinho), rūtelė (a arrudinha). A segunda são os símbolos: o jardim de arruda (rūtų darželis) e a coroa de arruda (rūtų vainikėlis) representam a juventude da moça, que ela “perde” no casamento. A terceira é o paralelismo: uma imagem da natureza e, logo depois, uma imagem humana que a espelha. Desde 1924, a Dainų šventė (Festa da Canção) reúne milhares de cantores; as festas da canção e da dança dos três países bálticos também são reconhecidas pela UNESCO.',
         table: {
           head: ['Palavra', 'Diminutivo nas dainos', 'Português'],
           rows: [
@@ -3999,16 +3999,16 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'As sutartinės',
-        text: 'As sutartinės são cantos polifônicos da Aukštaitija do nordeste, cantados sobretudo por mulheres, em duas, três ou quatro vozes. O nome vem de «sutarti», «entrar em acordo, combinar». Curiosamente, o «acordo» soa dissonante aos ouvidos de hoje: as vozes se cruzam em intervalos de segunda, e o efeito é hipnótico, quase um mantra. Os textos são curtos e repetitivos, com refrões sem significado próprio, como «lylio» e «sodauto». Em 2010, entraram na Lista Representativa do Patrimônio Cultural Imaterial da UNESCO.',
+        text: 'As sutartinės são cantos polifônicos da Aukštaitija do nordeste, cantados sobretudo por mulheres, em duas, três ou quatro vozes. O nome vem de “sutarti”, “entrar em acordo, combinar”. Curiosamente, o “acordo” soa dissonante aos ouvidos de hoje: as vozes se cruzam em intervalos de segunda, e o efeito é hipnótico, quase um mantra. Os textos são curtos e repetitivos, com refrões sem significado próprio, como “lylio” e “sodauto”. Em 2010, entraram na Lista Representativa do Patrimônio Cultural Imaterial da UNESCO.',
         examples: [
           ['Sutartinės giedamos dviem, trimis ar keturiais balsais.', 'As sutartinės são cantadas a duas, três ou quatro vozes.'],
-          ['Žodis «sutartinė» kilęs iš veiksmažodžio «sutarti».', 'A palavra «sutartinė» vem do verbo «sutarti».'],
+          ['Žodis “sutartinė” kilęs iš veiksmažodžio “sutarti”.', 'A palavra “sutartinė” vem do verbo “sutarti”.'],
           ['2010 metais sutartinės įtrauktos į UNESCO sąrašą.', 'Em 2010, as sutartinės foram incluídas na lista da UNESCO.'],
         ],
       },
       {
         heading: 'Patarlės e priežodžiai',
-        text: 'O lituano distingue a patarlė (provérbio completo, com uma lição) do priežodis (expressão ou comparação curta). Muitos provérbios têm par perfeito em português, e é uma boa forma de treinar o futuro (pasiklosi, išsimiegosi) e as construções com «kas… tas» e «ką… tą».',
+        text: 'O lituano distingue a patarlė (provérbio completo, com uma lição) do priežodis (expressão ou comparação curta). Muitos provérbios têm par perfeito em português, e é uma boa forma de treinar o futuro (pasiklosi, išsimiegosi) e as construções com “kas… tas” e “ką… tą”.',
         table: {
           head: ['Lituano', 'Literalmente', 'Equivalente em português'],
           rows: [
@@ -4029,10 +4029,10 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Traduzir os diminutivos das dainos como «pequeno»: «motinėlė» não é uma mãe pequena, é a mãe querida.',
-      'Achar que as sutartinės «desafinam»: as segundas que se chocam são a própria regra do gênero.',
-      'Confundir «giedoti» e «dainuoti»: as sutartinės e os hinos se «gieda» (canto solene, ritual); as canções comuns se «dainuoja».',
-      'Traduzir os provérbios ao pé da letra: busque o equivalente brasileiro, como «Filho de peixe, peixinho é».',
+      'Traduzir os diminutivos das dainos como “pequeno”: “motinėlė” não é uma mãe pequena, é a mãe querida.',
+      'Achar que as sutartinės “desafinam”: as segundas que se chocam são a própria regra do gênero.',
+      'Confundir “giedoti” e “dainuoti”: as sutartinės e os hinos se “gieda” (canto solene, ritual); as canções comuns se “dainuoja”.',
+      'Traduzir os provérbios ao pé da letra: busque o equivalente brasileiro, como “Filho de peixe, peixinho é”.',
     ],
     quiz: [
       {
@@ -4042,16 +4042,16 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         explanation: '1924 é o ano da primeira Festa da Canção; 1990, o da restauração da independência.',
       },
       {
-        question: 'Complete o provérbio: «Kaip pasiklosi, taip…»',
+        question: 'Complete o provérbio: “Kaip pasiklosi, taip…”',
         options: ['išsimiegosi', 'atsikelsi', 'pavalgysi'],
         answer: 'išsimiegosi',
         explanation: 'Como você arrumar a cama, assim vai dormir: cada um colhe o que planta.',
       },
       {
-        question: 'Qual é o diminutivo típico das dainos para «saulė»?',
+        question: 'Qual é o diminutivo típico das dainos para “saulė”?',
         options: ['saulelė', 'saulius', 'saulėtas'],
         answer: 'saulelė',
-        explanation: '«Saulėtas» é o adjetivo «ensolarado»; «Saulius» é um nome de homem.',
+        explanation: '“Saulėtas” é o adjetivo “ensolarado”; “Saulius” é um nome de homem.',
       },
       {
         question: 'De que região vêm as sutartinės?',
@@ -4060,7 +4060,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         explanation: 'Do nordeste da Lituânia, na Aukštaitija.',
       },
       {
-        question: '«Obuolys nuo obels netoli nurieda» corresponde a…',
+        question: '“Obuolys nuo obels netoli nurieda” corresponde a…',
         options: ['Filho de peixe, peixinho é', 'Quem tudo quer, tudo perde', 'Devagar se vai ao longe'],
         answer: 'Filho de peixe, peixinho é',
         explanation: 'A maçã não rola longe da macieira: os filhos se parecem com os pais.',
@@ -4072,7 +4072,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
     level: 'C2',
     title: 'A proibição da imprensa (1864–1904) e os knygnešiai',
     emoji: '📦',
-    summary: 'Por quarenta anos, o Império Russo proibiu livros e jornais lituanos impressos em alfabeto latino. Os lituanos responderam imprimindo na Prússia e contrabandeando tudo pela fronteira: os knygnešiai, os «carregadores de livros», viraram heróis nacionais. Foi nesse tempo que a ortografia moderna se formou, com o š e o č no lugar dos antigos sz e cz.',
+    summary: 'Por quarenta anos, o Império Russo proibiu livros e jornais lituanos impressos em alfabeto latino. Os lituanos responderam imprimindo na Prússia e contrabandeando tudo pela fronteira: os knygnešiai, os “carregadores de livros”, viraram heróis nacionais. Foi nesse tempo que a ortografia moderna se formou, com o š e o č no lugar dos antigos sz e cz.',
     sections: [
       {
         heading: 'A proibição',
@@ -4085,7 +4085,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Os knygnešiai e as escolas secretas',
-        text: 'Os livros passaram a ser impressos na Prússia Oriental, em cidades como Tilsit (Tilžė), e atravessavam a fronteira nas costas dos knygnešiai: camponeses, estudantes e padres que arriscavam prisão e exílio na Sibéria. O bispo Motiejus Valančius organizou boa parte da rede. O mais famoso contrabandista, Jurgis Bielinis, chamado de «rei dos knygnešiai», nasceu em 16 de março de 1846, e essa data virou o Dia do Knygnešys. Nas aldeias, as crianças aprendiam a ler em escolas clandestinas, as daraktorinės mokyklos, muitas vezes com a mãe junto da roca de fiar.',
+        text: 'Os livros passaram a ser impressos na Prússia Oriental, em cidades como Tilsit (Tilžė), e atravessavam a fronteira nas costas dos knygnešiai: camponeses, estudantes e padres que arriscavam prisão e exílio na Sibéria. O bispo Motiejus Valančius organizou boa parte da rede. O mais famoso contrabandista, Jurgis Bielinis, chamado de “rei dos knygnešiai”, nasceu em 16 de março de 1846, e essa data virou o Dia do Knygnešys. Nas aldeias, as crianças aprendiam a ler em escolas clandestinas, as daraktorinės mokyklos, muitas vezes com a mãe junto da roca de fiar.',
         examples: [
           ['Knygnešiai slapta gabeno knygas iš Mažosios Lietuvos.', 'Os knygnešiai transportavam livros escondido, vindos da Lituânia Menor.'],
           ['Sugauti knygnešiai būdavo tremiami į Sibirą.', 'Os knygnešiai que eram pegos costumavam ser exilados na Sibéria.'],
@@ -4095,7 +4095,7 @@ export const GRAMMAR_LT: GrammarTopic[] = [
       },
       {
         heading: 'Da grafia antiga à moderna',
-        text: 'Antes do fim do século XIX, o lituano se escrevia com convenções tomadas do polonês: sz para š, cz para č, w para v, e às vezes ł. O jornal «Aušra» (1883–1886) ainda saía com o título «Auszra». Nos jornais publicados na Prússia, como a «Aušra» e o «Varpas», e depois na gramática de Jonas Jablonskis (1901), foram entrando as letras de inspiração tcheca š, č e ž e o v no lugar do w. Quando a proibição caiu, em 1904, a ortografia moderna já estava praticamente definida. Ao ler um livro do século XIX, basta trocar mentalmente as combinações antigas.',
+        text: 'Antes do fim do século XIX, o lituano se escrevia com convenções tomadas do polonês: sz para š, cz para č, w para v, e às vezes ł. O jornal “Aušra” (1883–1886) ainda saía com o título “Auszra”. Nos jornais publicados na Prússia, como a “Aušra” e o “Varpas”, e depois na gramática de Jonas Jablonskis (1901), foram entrando as letras de inspiração tcheca š, č e ž e o v no lugar do w. Quando a proibição caiu, em 1904, a ortografia moderna já estava praticamente definida. Ao ler um livro do século XIX, basta trocar mentalmente as combinações antigas.',
         table: {
           head: ['Grafia antiga', 'Grafia moderna', 'Exemplo antigo → moderno'],
           rows: [
@@ -4107,16 +4107,16 @@ export const GRAMMAR_LT: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['Senojoje rašyboje vietoj «š» buvo rašoma «sz».', 'Na grafia antiga, escrevia-se «sz» no lugar de «š».'],
-          ['Laikraštis «Aušra» ėjo 1883–1886 metais.', 'O jornal «Aušra» circulou de 1883 a 1886.'],
+          ['Senojoje rašyboje vietoj “š” buvo rašoma “sz”.', 'Na grafia antiga, escrevia-se “sz” no lugar de “š”.'],
+          ['Laikraštis “Aušra” ėjo 1883–1886 metais.', 'O jornal “Aušra” circulou de 1883 a 1886.'],
           ['Jablonskio gramatika sutvarkė bendrinę kalbą.', 'A gramática de Jablonskis pôs ordem na língua padrão.'],
         ],
       },
     ],
     pitfalls: [
-      'Dizer que o lituano «foi proibido»: o que se proibiu foi a impressão em letras latinas; a língua continuou falada, e o governo tentou impor o alfabeto cirílico.',
-      'Confundir «knygnešys» (quem carrega livros, de «knyga» + «nešti») com «knygininkas» (livreiro, bibliotecário).',
-      'Estranhar «sz» e «w» em livros antigos: não é erro de impressão nem letão, é a grafia de influência polonesa do século XIX.',
+      'Dizer que o lituano “foi proibido”: o que se proibiu foi a impressão em letras latinas; a língua continuou falada, e o governo tentou impor o alfabeto cirílico.',
+      'Confundir “knygnešys” (quem carrega livros, de “knyga” + “nešti”) com “knygininkas” (livreiro, bibliotecário).',
+      'Estranhar “sz” e “w” em livros antigos: não é erro de impressão nem letão, é a grafia de influência polonesa do século XIX.',
       'Esquecer que as duas datas comemorativas são diferentes: 16 de março (Knygnešio diena) e 7 de maio (fim da proibição).',
     ],
     quiz: [
@@ -4133,13 +4133,13 @@ export const GRAMMAR_LT: GrammarTopic[] = [
         explanation: 'Knyga (livro) + nešti (carregar): traziam da Prússia os livros proibidos.',
       },
       {
-        question: 'Na grafia antiga, «sz» corresponde a qual letra moderna?',
+        question: 'Na grafia antiga, “sz” corresponde a qual letra moderna?',
         options: ['š', 'ž', 's'],
         answer: 'š',
         explanation: 'Szirdis → širdis. Do mesmo jeito, cz → č.',
       },
       {
-        question: 'Quem era chamado de «rei dos knygnešiai»?',
+        question: 'Quem era chamado de “rei dos knygnešiai”?',
         options: ['Jurgis Bielinis', 'Jonas Jablonskis', 'Vincas Kudirka'],
         answer: 'Jurgis Bielinis',
         explanation: 'O dia do seu nascimento, 16 de março, é o Dia do Knygnešys.',

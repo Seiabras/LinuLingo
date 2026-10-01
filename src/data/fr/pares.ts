@@ -10,43 +10,43 @@ export const PARES_FR: MinimalPairs = {
       id: 'y-u',
       name: 'u × ou',
       sounds: ['y', 'u'],
-      tip: 'O «u» francês [y] não existe em português: faça um «i» e, sem mexer a língua, arredonde os lábios como para assobiar. O «ou» [u] é o nosso «u». É isso que separa tu (você) de tout (tudo), e rue (rua) de roue (roda). Se o seu «u» sair igual ao nosso, você diz outra palavra.',
+      tip: 'O “u” francês [y] não existe em português: faça um “i” e, sem mexer a língua, arredonde os lábios como para assobiar. O “ou” [u] é o nosso “u”. É isso que separa tu (você) de tout (tudo), e rue (rua) de roue (roda). Se o seu “u” sair igual ao nosso, você diz outra palavra.',
     },
     {
       id: 'an-on',
       name: 'an × on (nasais)',
       sounds: ['ɑ̃', 'ɔ̃'],
-      tip: 'O francês tem quatro vogais nasais, e não se fecha a boca com «m» ou «n» no fim: o ar sai pelo nariz e acabou. O «an/en» [ɑ̃] é um «ã» bem aberto, com a boca como para «a»; o «on» [ɔ̃] é feito com os lábios redondos, como para «ô». Vent (vento) × vont (vão).',
+      tip: 'O francês tem quatro vogais nasais, e não se fecha a boca com “m” ou “n” no fim: o ar sai pelo nariz e acabou. O “an/en” [ɑ̃] é um “ã” bem aberto, com a boca como para “a”; o “on” [ɔ̃] é feito com os lábios redondos, como para “ô”. Vent (vento) × vont (vão).',
     },
     {
       id: 'in-an',
       name: 'in × an (nasais)',
       sounds: ['ɛ̃', 'ɑ̃'],
-      tip: 'O «in/ain/ein» [ɛ̃] é um «é» aberto nasalizado — mais aberto que o «im» de «sim» e sem o «i» no fim. O «an/en» [ɑ̃] é um «ã» de boca bem aberta. Vin (vinho) × vent (vento): a diferença está só na abertura da boca.',
+      tip: 'O “in/ain/ein” [ɛ̃] é um “é” aberto nasalizado — mais aberto que o “im” de “sim” e sem o “i” no fim. O “an/en” [ɑ̃] é um “ã” de boca bem aberta. Vin (vinho) × vent (vento): a diferença está só na abertura da boca.',
     },
     {
       id: 'e-ɛ',
       name: 'é × è',
       sounds: ['e', 'ɛ'],
-      tip: 'Como o nosso «ê» fechado (de «você») e o «é» aberto (de «café»). Em português, trocar um pelo outro raramente muda a palavra; em francês, muda: et (e) × est (é), les (os, as) × lait (leite). Regra de bolso: «é», «-er», «-ez» e «et» são fechados; «è», «ê», «ai» e «-et» costumam ser abertos.',
+      tip: 'Como o nosso “ê” fechado (de “você”) e o “é” aberto (de “café”). Em português, trocar um pelo outro raramente muda a palavra; em francês, muda: et (e) × est (é), les (os, as) × lait (leite). Regra de bolso: “é”, “-er”, “-ez” e “et” são fechados; “è”, “ê”, “ai” e “-et” costumam ser abertos.',
     },
     {
       id: 'ø-œ',
       name: 'eu fechado × eu aberto',
       sounds: ['ø', 'œ'],
-      tip: 'Os dois não existem em português. Para o [ø] fechado de «peu», diga «ê» e arredonde os lábios; para o [œ] aberto de «peur», diga «é» e arredonde os lábios. Em geral, o fechado vem no fim da sílaba (deux, peu, des œufs) e o aberto vem antes de uma consoante pronunciada (jeune, peur, un œuf).',
+      tip: 'Os dois não existem em português. Para o [ø] fechado de “peu”, diga “ê” e arredonde os lábios; para o [œ] aberto de “peur”, diga “é” e arredonde os lábios. Em geral, o fechado vem no fim da sílaba (deux, peu, des œufs) e o aberto vem antes de uma consoante pronunciada (jeune, peur, un œuf).',
     },
     {
       id: 'ə-e',
       name: 'e mudo × é',
       sounds: ['ə', 'e'],
-      tip: "O «e» sem acento no fim de sílaba é o «e mudo» [ə]: um som neutro, curtinho, com os lábios um pouco arredondados, que muitas vezes nem se pronuncia (samedi soa «sam'di»). Não o troque por «é»: le (o) é singular e les (os) é plural, je (eu) × j'ai (eu tenho). Para o brasileiro, é a diferença mais importante entre singular e plural na fala!",
+      tip: "O “e” sem acento no fim de sílaba é o “e mudo” [ə]: um som neutro, curtinho, com os lábios um pouco arredondados, que muitas vezes nem se pronuncia (samedi soa “sam'di”). Não o troque por “é”: le (o) é singular e les (os) é plural, je (eu) × j'ai (eu tenho). Para o brasileiro, é a diferença mais importante entre singular e plural na fala!",
     },
     {
       id: 's-z',
       name: 's × z',
       sounds: ['s', 'z'],
-      tip: 'Igual ao português: «s» entre vogais soa [z] (poison, veneno) e «ss» soa [s] (poisson, peixe). O perigo é o ouvido: na liaison, o «s» final vira [z] e muda o sentido: ils sont [il sɔ̃] (eles são) × ils ont [il‿zɔ̃] (eles têm).',
+      tip: 'Igual ao português: “s” entre vogais soa [z] (poison, veneno) e “ss” soa [s] (poisson, peixe). O perigo é o ouvido: na liaison, o “s” final vira [z] e muda o sentido: ils sont [il sɔ̃] (eles são) × ils ont [il‿zɔ̃] (eles têm).',
     },
   ],
   pairs: [
@@ -97,28 +97,28 @@ export const PARES_FR: MinimalPairs = {
         ['vin', 'vinho'],
         ['vingt', 'vinte'],
       ],
-      note: 'Soam igual, [vɛ̃], e ainda há «vain» (vão, inútil) e «vint» (veio). As letras do fim não se pronunciam: quem separa é o contexto e a escrita.',
+      note: 'Soam igual, [vɛ̃], e ainda há “vain” (vão, inútil) e “vint” (veio). As letras do fim não se pronunciam: quem separa é o contexto e a escrita.',
     },
     {
       words: [
         ['vert', 'verde'],
         ['verre', 'copo'],
       ],
-      note: 'Os dois soam [vɛʁ], e também «ver» (minhoca) e «vers» (em direção a; verso). Um clássico dos ditados escolares franceses.',
+      note: 'Os dois soam [vɛʁ], e também “ver” (minhoca) e “vers” (em direção a; verso). Um clássico dos ditados escolares franceses.',
     },
     {
       words: [
         ['mer', 'mar'],
         ['mère', 'mãe'],
       ],
-      note: 'Soam igual, [mɛʁ], e também «maire» (prefeito). Repare que «mer» é feminino: la mer.',
+      note: 'Soam igual, [mɛʁ], e também “maire” (prefeito). Repare que “mer” é feminino: la mer.',
     },
     {
       words: [
         ['sang', 'sangue'],
         ['cent', 'cem'],
       ],
-      note: 'Os dois soam [sɑ̃], e também «sans» (sem). Nenhuma dessas consoantes finais se pronuncia.',
+      note: 'Os dois soam [sɑ̃], e também “sans” (sem). Nenhuma dessas consoantes finais se pronuncia.',
     },
   ],
 };

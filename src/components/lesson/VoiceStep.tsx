@@ -126,7 +126,7 @@ export function VoiceStep({ challenge, locale, onDone }: { challenge: VoiceChall
 
       {heard !== null && (
         <View className={`gap-3 rounded-2xl p-4 ${accepted ? 'bg-conquista-light dark:bg-green-950' : 'bg-amber-50 dark:bg-amber-950'}`}>
-          <Text className="text-sm text-slate-600 dark:text-slate-300">Você disse: «{heard}»</Text>
+          <Text className="text-sm text-slate-600 dark:text-slate-300">Você disse: “{heard}”</Text>
           <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">Resposta-modelo · {score}% de acerto</Text>
           <View className="flex-row flex-wrap gap-1.5">
             {marks.map((m, k) => (

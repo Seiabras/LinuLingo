@@ -55,7 +55,7 @@ export function clipFor(locale: string, text: string): AudioClip | null {
   const table = CLIPS[locale.split('-')[0]];
   if (!table) return null;
   const t = text.trim();
-  const bare = t.replace(/[.!?¿¡,;:«»"]/g, '').trim();
+  const bare = t.replace(/[.!?¿¡,;:“”"]/g, '').trim();
   // a marca de tônica do russo (U+0301) é opcional na busca
   return table[t] ?? table[t.toLowerCase()] ?? table[bare.toLowerCase()] ?? byBare(table)[bare.toLowerCase().replace(/\u0301/g, '')] ?? null;
 }

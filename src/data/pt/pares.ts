@@ -7,31 +7,31 @@ export const PARES_PT: MinimalPairs = {
       id: 'o-aberto',
       name: 'ó aberto × ô fechado',
       sounds: ['ɔ', 'o'],
-      tip: 'Como no Brasil, o timbre do «o» tônico muda o sentido: avó × avô. Em Portugal há ainda pode [ˈpɔðɨ] (presente) × pôde [ˈpoðɨ] (passado), que se distinguem só pela boca mais aberta ou mais fechada.',
+      tip: 'Como no Brasil, o timbre do “o” tônico muda o sentido: avó × avô. Em Portugal há ainda pode [ˈpɔðɨ] (presente) × pôde [ˈpoðɨ] (passado), que se distinguem só pela boca mais aberta ou mais fechada.',
     },
     {
       id: 'e-aberto',
       name: 'é aberto × ê fechado',
       sounds: ['ɛ', 'e'],
-      tip: 'O «é» abre a boca; o «ê» fecha. É a mesma diferença do Brasil, mas em Portugal as vogais em volta ficam tão curtas que a tônica é quase tudo o que se ouve.',
+      tip: 'O “é” abre a boca; o “ê” fecha. É a mesma diferença do Brasil, mas em Portugal as vogais em volta ficam tão curtas que a tônica é quase tudo o que se ouve.',
     },
     {
       id: 'a-tonico',
       name: 'á aberto × â fechado (falamos × falámos)',
       sounds: ['a', 'ɐ'],
-      tip: 'Uma marca de Portugal: no presente, «falamos» tem o «a» fechado [ɐ]; no pretérito, «falámos» tem o «a» aberto [a] e leva acento na escrita. No Brasil as duas formas soam igual.',
+      tip: 'Uma marca de Portugal: no presente, “falamos” tem o “a” fechado [ɐ]; no pretérito, “falámos” tem o “a” aberto [a] e leva acento na escrita. No Brasil as duas formas soam igual.',
     },
     {
       id: 'r-rr',
       name: 'r simples × rr forte',
       sounds: ['ɾ', 'ʁ'],
-      tip: 'O «r» entre vogais é uma batida da língua (caro); o «rr» e o «r» do começo vêm da garganta em Lisboa [ʁ], parecido com o «r» carioca de «carro».',
+      tip: 'O “r” entre vogais é uma batida da língua (caro); o “rr” e o “r” do começo vêm da garganta em Lisboa [ʁ], parecido com o “r” carioca de “carro”.',
     },
     {
       id: 's-z',
       name: 's surdo × z sonoro',
       sounds: ['s', 'z'],
-      tip: 'Entre vogais, «ss» e «ç» soam [s] e o «s» sozinho soa [z]: caça × casa. Igual no Brasil, mas vale treinar o ouvido para a fala rápida de Portugal.',
+      tip: 'Entre vogais, “ss” e “ç” soam [s] e o “s” sozinho soa [z]: caça × casa. Igual no Brasil, mas vale treinar o ouvido para a fala rápida de Portugal.',
     },
   ],
   pairs: [
@@ -47,7 +47,7 @@ export const PARES_PT: MinimalPairs = {
     { contrast: 's-z', a: ['assa', 'assa (no forno)'], b: ['asa', 'asa'] },
   ],
   sameSound: [
-    { words: [['cozer', 'cozinhar'], ['coser', 'costurar']], note: 'Em Portugal as duas soam [kuˈzeɾ]: só o contexto separa «cozer o arroz» de «coser a camisa».' },
+    { words: [['cozer', 'cozinhar'], ['coser', 'costurar']], note: 'Em Portugal as duas soam [kuˈzeɾ]: só o contexto separa “cozer o arroz” de “coser a camisa”.' },
     { words: [['concerto', 'show de música'], ['conserto', 'reparo']], note: 'Mesma pronúncia dos dois lados do Atlântico; a escrita é que muda.' },
   ],
 };

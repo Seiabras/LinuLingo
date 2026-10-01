@@ -9,7 +9,7 @@ export const STORIES_HR: StorySeed[] = [
     title: 'Bok u Zagrebu',
     emoji: '👋',
     summary: 'Você conhece Ivana na praça Ban Jelačić, no centro de Zagreb, e faz a sua primeira conversa em croata.',
-    cultural_context: 'A praça Ban Jelačić é o coração de Zagreb, a capital da Croácia: é ali que muita gente marca encontro «pod satom», embaixo do relógio da praça.',
+    cultural_context: 'A praça Ban Jelačić é o coração de Zagreb, a capital da Croácia: é ali que muita gente marca encontro “pod satom”, embaixo do relógio da praça.',
     start: 'inicio',
     nodes: {
       inicio: {
@@ -27,7 +27,7 @@ export const STORIES_HR: StorySeed[] = [
         emoji: '😊',
         choices: [
           { text: 'Ja sam iz São Paula.', translation: 'Sou de São Paulo.', next: 'final_bom' },
-          { text: 'Pijem vodu.', translation: 'Eu bebo água.', wrong: 'Isso não responde de onde você é. Use «Ja sam iz…».' },
+          { text: 'Pijem vodu.', translation: 'Eu bebo água.', wrong: 'Isso não responde de onde você é. Use “Ja sam iz…”.' },
         ],
       },
       final_bom: {
@@ -60,7 +60,7 @@ export const STORIES_HR: StorySeed[] = [
         emoji: '📱',
         choices: [
           { text: 'Da, imam brata i sestru.', translation: 'Sim, tenho um irmão e uma irmã.', next: 'obitelj' },
-          { text: 'Moja kuća je velika.', translation: 'A minha casa é grande.', wrong: 'Isso não responde se você tem irmãos. Use «imam…».' },
+          { text: 'Moja kuća je velika.', translation: 'A minha casa é grande.', wrong: 'Isso não responde se você tem irmãos. Use “imam…”.' },
         ],
       },
       obitelj: {
@@ -69,7 +69,7 @@ export const STORIES_HR: StorySeed[] = [
         emoji: '🍽️',
         choices: [
           { text: 'Da, puno hvala!', translation: 'Sim, muito obrigado!', next: 'final_bom' },
-          { text: 'Ja sam iz São Paula.', translation: 'Sou de São Paulo.', wrong: 'Luka fez um convite: responda com «da» ou «ne, hvala».' },
+          { text: 'Ja sam iz São Paula.', translation: 'Sou de São Paulo.', wrong: 'Luka fez um convite: responda com “da” ou “ne, hvala”.' },
         ],
       },
       final_bom: {

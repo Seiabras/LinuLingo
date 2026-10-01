@@ -27,7 +27,7 @@ export const RECURSOS_HI: LanguageResources = {
       ],
       where:
         'Tudo pela internet, de casa, com fiscalização remota: a inscrição é no site da LTI, em inglês, e a entrevista é marcada num horário combinado com um avaliador de híndi. Confira no site se a versão no computador (OPIc) está disponível em híndi; a entrevista ao vivo está.',
-      tip: 'Não existe uma prova internacional de híndi no estilo do DELE ou do HSK, e o OPI é a opção mais reconhecida fora da Índia. Ele mede o que você faz falando, não a gramática decorada: treine contar histórias no passado (com o «ने» no lugar certo), descrever lugares e defender uma opinião, e faça antes uma simulação com um professor.',
+      tip: 'Não existe uma prova internacional de híndi no estilo do DELE ou do HSK, e o OPI é a opção mais reconhecida fora da Índia. Ele mede o que você faz falando, não a gramática decorada: treine contar histórias no passado (com o “ने” no lugar certo), descrever lugares e defender uma opinião, e faça antes uma simulação com um professor.',
       url: 'https://www.languagetesting.com/oral-proficiency-interview-opi',
     },
   ],
@@ -49,7 +49,7 @@ export const RECURSOS_HI: LanguageResources = {
       by: 'Ramesh Sippy',
       year: '1975',
       level: 'B1',
-      why: 'O «faroeste» mais famoso de Bollywood, com falas que todo indiano sabe de cor («कितने आदमी थे?»). Ótimo para expressões e referências culturais.',
+      why: 'O “faroeste” mais famoso de Bollywood, com falas que todo indiano sabe de cor (“कितने आदमी थे?”). Ótimo para expressões e referências culturais.',
     },
     {
       kind: 'filme',
@@ -87,7 +87,7 @@ export const RECURSOS_HI: LanguageResources = {
       by: 'Rajkumar Hirani',
       year: '2009',
       level: 'B1',
-      why: 'Comédia sobre três amigos numa faculdade de engenharia, com frases que viraram bordão, como «All is well». Mostra bem o jeito de falar dos universitários.',
+      why: 'Comédia sobre três amigos numa faculdade de engenharia, com frases que viraram bordão, como “All is well”. Mostra bem o jeito de falar dos universitários.',
       accent: 'híndi urbano misturado com inglês (hinglish)',
     },
     {
@@ -183,7 +183,7 @@ export const RECURSOS_HI: LanguageResources = {
       by: 'Harivansh Rai Bachchan',
       year: '1935',
       level: 'B2',
-      why: 'Quadras que terminam todas em «मधुशाला» (a taverna), musicais e fáceis de decorar. O autor é pai do ator Amitabh Bachchan.',
+      why: 'Quadras que terminam todas em “मधुशाला” (a taverna), musicais e fáceis de decorar. O autor é pai do ator Amitabh Bachchan.',
     },
     {
       kind: 'livro',
@@ -199,7 +199,7 @@ export const RECURSOS_HI: LanguageResources = {
       title: 'Complete Hindi',
       by: 'Rupert Snell',
       level: 'A1',
-      why: 'Curso para autodidatas da série «Teach Yourself», com áudio, que ensina o devanágari e a gramática passo a passo, com explicações em inglês claras e bem-humoradas.',
+      why: 'Curso para autodidatas da série “Teach Yourself”, com áudio, que ensina o devanágari e a gramática passo a passo, com explicações em inglês claras e bem-humoradas.',
     },
     {
       kind: 'musica',
@@ -217,7 +217,7 @@ export const RECURSOS_HI: LanguageResources = {
       by: 'Kishore Kumar (música de S. D. Burman)',
       year: '1969',
       level: 'A2',
-      why: 'Clássico alegre do filme «Aradhana», cantado para uma moça num trem; ritmo fácil e letra simples sobre amor.',
+      why: 'Clássico alegre do filme “Aradhana”, cantado para uma moça num trem; ritmo fácil e letra simples sobre amor.',
     },
     {
       kind: 'musica',
@@ -226,7 +226,7 @@ export const RECURSOS_HI: LanguageResources = {
       by: 'A. R. Rahman (vozes de Sukhwinder Singh e Sapna Awasthi)',
       year: '1998',
       level: 'B1',
-      why: 'A famosa dança em cima de um trem, do filme «Dil Se..», com letra de Gulzar inspirada na poesia sufi de Bulleh Shah.',
+      why: 'A famosa dança em cima de um trem, do filme “Dil Se..”, com letra de Gulzar inspirada na poesia sufi de Bulleh Shah.',
     },
     {
       kind: 'musica',
@@ -235,7 +235,7 @@ export const RECURSOS_HI: LanguageResources = {
       by: 'Arijit Singh (música de Mithoon)',
       year: '2013',
       level: 'A2',
-      why: 'A balada do filme «Aashiqui 2» que fez de Arijit Singh a voz de uma geração: poucas palavras, bem pronunciadas e repetidas.',
+      why: 'A balada do filme “Aashiqui 2” que fez de Arijit Singh a voz de uma geração: poucas palavras, bem pronunciadas e repetidas.',
     },
     {
       kind: 'podcast',
@@ -300,11 +300,11 @@ export const RECURSOS_HI: LanguageResources = {
     },
   ],
   tips: [
-    'O devanágari é um abugida: cada consoante já traz um «a» embutido (क = ka), e as outras vogais viram sinais em volta dela (कि ki, कु ku, के ke, को ko). A linha em cima liga as letras de uma palavra. O sistema se aprende em uma ou duas semanas: troque a transliteração pelo devanágari o quanto antes.',
-    'O híndi distingue consoantes com e sem sopro (पल pal, «momento» × फल phal, «fruta») e dentais × retroflexas, feitas com a ponta da língua curvada para trás (त × ट, द × ड). O «t» brasileiro é o त dental; o ट soa mais «duro». Essas diferenças mudam o sentido: treine com pares de palavras.',
+    'O devanágari é um abugida: cada consoante já traz um “a” embutido (क = ka), e as outras vogais viram sinais em volta dela (कि ki, कु ku, के ke, को ko). A linha em cima liga as letras de uma palavra. O sistema se aprende em uma ou duas semanas: troque a transliteração pelo devanágari o quanto antes.',
+    'O híndi distingue consoantes com e sem sopro (पल pal, “momento” × फल phal, “fruta”) e dentais × retroflexas, feitas com a ponta da língua curvada para trás (त × ट, द × ड). O “t” brasileiro é o त dental; o ट soa mais “duro”. Essas diferenças mudam o sentido: treine com pares de palavras.',
     'Híndi e urdu são, na fala do dia a dia, praticamente a mesma língua: um indiano e um paquistanês conversam sem esforço. Mudam a escrita (devanágari × alfabeto perso-árabe) e o vocabulário formal, que no híndi puxa do sânscrito e no urdu, do persa e do árabe. As canções de Bollywood misturam os dois.',
-    'A ordem é sujeito–objeto–verbo, com posposições no lugar de preposições: मैं चाय पीता हूँ («eu chá bebo»), घर में («casa em»). O verbo concorda em gênero: o homem diz «मैं जाता हूँ»; a mulher, «मैं जाती हूँ». No passado dos verbos transitivos entra o «ने», e o verbo passa a concordar com o objeto.',
-    'Há três graus de «você»: तू (tū, íntimo ou rude), तुम (tum, entre amigos) e आप (āp, respeitoso). Na dúvida, use आप e acrescente जी (jī) depois de nomes e respostas (हाँ जी) para soar educado. Nas cidades, muita gente mistura inglês ao híndi (o «hinglish»): não estranhe.',
+    'A ordem é sujeito–objeto–verbo, com posposições no lugar de preposições: मैं चाय पीता हूँ (“eu chá bebo”), घर में (“casa em”). O verbo concorda em gênero: o homem diz “मैं जाता हूँ”; a mulher, “मैं जाती हूँ”. No passado dos verbos transitivos entra o “ने”, e o verbo passa a concordar com o objeto.',
+    'Há três graus de “você”: तू (tū, íntimo ou rude), तुम (tum, entre amigos) e आप (āp, respeitoso). Na dúvida, use आप e acrescente जी (jī) depois de nomes e respostas (हाँ जी) para soar educado. Nas cidades, muita gente mistura inglês ao híndi (o “hinglish”): não estranhe.',
     'Para estudar com certificado, o Diretório Central de Híndi (Central Hindi Directorate), do governo da Índia, tem cursos por correspondência em inglês, com provas de certificado e diploma, abertos a estrangeiros. E o Kendriya Hindi Sansthan, em Agra, recebe bolsistas estrangeiros pelo programa de difusão do híndi no exterior, divulgado pelas embaixadas da Índia.',
   ],
 };

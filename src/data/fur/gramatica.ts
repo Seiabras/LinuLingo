@@ -7,16 +7,16 @@ export const GRAMMAR_FUR: GrammarTopic[] = [
     level: 'A1.1',
     title: 'Pronúncia: cj, gj, ç e as vogais longas',
     emoji: '🔤',
-    summary: 'O friulano usa o alfabeto latino com algumas letras próprias para sons «molhados» e um circunflexo que marca vogal longa.',
+    summary: 'O friulano usa o alfabeto latino com algumas letras próprias para sons “molhados” e um circunflexo que marca vogal longa.',
     sections: [
       {
         text: 'Quase tudo se lê como em italiano. As novidades são os sons feitos com a língua no céu da boca e as vogais longas, que mudam o sentido das palavras.',
         table: {
           head: ['Escrita', 'Som', 'Exemplo'],
           rows: [
-            ['cj', '«k» molhado, entre «k» e «tch»', 'cjase (casa)'],
-            ['gj', '«g» molhado, entre «g» e «dj»', 'gjat (gato)'],
-            ['ç', '«tch»', 'piçul (pequeno)'],
+            ['cj', '“k” molhado, entre “k” e “tch”', 'cjase (casa)'],
+            ['gj', '“g” molhado, entre “g” e “dj”', 'gjat (gato)'],
+            ['ç', '“tch”', 'piçul (pequeno)'],
             ['â ê î ô û', 'vogal longa', 'sûr (irmã), cîl (céu)'],
           ],
         },
@@ -26,10 +26,10 @@ export const GRAMMAR_FUR: GrammarTopic[] = [
         ],
       },
     ],
-    pitfalls: ['Ignorar o circunflexo: a vogal longa faz parte da palavra e às vezes muda o sentido.', 'Ler «cj» como «c» + «j»: é um som só.'],
+    pitfalls: ['Ignorar o circunflexo: a vogal longa faz parte da palavra e às vezes muda o sentido.', 'Ler “cj” como “c” + “j”: é um som só.'],
     quiz: [
-      { question: 'Qual palavra tem um «k» molhado?', options: ['cjase', 'pan', 'lat'], answer: 'cjase', explanation: 'O grupo «cj» marca o som molhado, entre «k» e «tch».' },
-      { question: 'O que marca o acento em «sûr»?', options: ['vogal longa', 'sílaba sem som', 'vogal nasal'], answer: 'vogal longa', explanation: 'O circunflexo friulano indica que a vogal é longa.' },
+      { question: 'Qual palavra tem um “k” molhado?', options: ['cjase', 'pan', 'lat'], answer: 'cjase', explanation: 'O grupo “cj” marca o som molhado, entre “k” e “tch”.' },
+      { question: 'O que marca o acento em “sûr”?', options: ['vogal longa', 'sílaba sem som', 'vogal nasal'], answer: 'vogal longa', explanation: 'O circunflexo friulano indica que a vogal é longa.' },
     ],
   },
   {
@@ -40,7 +40,7 @@ export const GRAMMAR_FUR: GrammarTopic[] = [
     summary: 'Antes do verbo vem sempre uma palavrinha que repete o sujeito: o, tu, al, e, o, o, a.',
     sections: [
       {
-        text: 'O pronome forte (jo, tu, lui…) pode cair, mas o clítico fica: «(jo) o soi di Udin». É parecido com o francês falado, em que «moi, je suis» repete o sujeito.',
+        text: 'O pronome forte (jo, tu, lui…) pode cair, mas o clítico fica: “(jo) o soi di Udin”. É parecido com o francês falado, em que “moi, je suis” repete o sujeito.',
         table: {
           head: ['Pronome', 'Clítico + jessi', 'Tradução'],
           rows: [
@@ -58,10 +58,10 @@ export const GRAMMAR_FUR: GrammarTopic[] = [
         ],
       },
     ],
-    pitfalls: ['Esquecer o clítico: «jo soi» está incompleto; o certo é «jo o soi».'],
+    pitfalls: ['Esquecer o clítico: “jo soi” está incompleto; o certo é “jo o soi”.'],
     quiz: [
-      { question: 'Complete: «Lui ___ è di Udin.»', options: ['al', 'o', 'e'], answer: 'al', explanation: '«Al» é o clítico de «lui» (ele).' },
-      { question: 'Como se diz «ela é»?', options: ['e je', 'al è', 'o soi'], answer: 'e je', explanation: 'Com «jê» (ela), o clítico é «e» e o verbo fica «je».' },
+      { question: 'Complete: “Lui ___ è di Udin.”', options: ['al', 'o', 'e'], answer: 'al', explanation: '“Al” é o clítico de “lui” (ele).' },
+      { question: 'Como se diz “ela é”?', options: ['e je', 'al è', 'o soi'], answer: 'e je', explanation: 'Com “jê” (ela), o clítico é “e” e o verbo fica “je”.' },
     ],
   },
   {
@@ -87,10 +87,10 @@ export const GRAMMAR_FUR: GrammarTopic[] = [
         ],
       },
     ],
-    pitfalls: ['Fazer o plural feminino só com -s: «cjases» está errado; o certo é «cjasis».'],
+    pitfalls: ['Fazer o plural feminino só com -s: “cjases” está errado; o certo é “cjasis”.'],
     quiz: [
-      { question: 'Qual é o plural de «cjase»?', options: ['cjasis', 'cjases', 'cjase'], answer: 'cjasis', explanation: 'Os femininos em -e fazem o plural em -is.' },
-      { question: 'Como se diz «os irmãos»?', options: ['i fradis', 'il fradis', 'lis fradis'], answer: 'i fradis', explanation: 'O artigo masculino plural é «i».' },
+      { question: 'Qual é o plural de “cjase”?', options: ['cjasis', 'cjases', 'cjase'], answer: 'cjasis', explanation: 'Os femininos em -e fazem o plural em -is.' },
+      { question: 'Como se diz “os irmãos”?', options: ['i fradis', 'il fradis', 'lis fradis'], answer: 'i fradis', explanation: 'O artigo masculino plural é “i”.' },
     ],
   },
   {
@@ -98,10 +98,10 @@ export const GRAMMAR_FUR: GrammarTopic[] = [
     level: 'A1.2',
     title: 'Vê (ter) e plasê (gostar)',
     emoji: '❤️',
-    summary: 'O verbo «vê» (ter) e o «plasê», que funciona como o «gustar» do espanhol.',
+    summary: 'O verbo “vê” (ter) e o “plasê”, que funciona como o “gustar” do espanhol.',
     sections: [
       {
-        text: '«Plasê» é como «agradar»: o que agrada é o sujeito. «Mi plâs il formadi» quer dizer «o queijo me agrada», ou seja, eu gosto de queijo.',
+        text: '“Plasê” é como “agradar”: o que agrada é o sujeito. “Mi plâs il formadi” quer dizer “o queijo me agrada”, ou seja, eu gosto de queijo.',
         table: {
           head: ['Pronome', 'vê', 'Tradução'],
           rows: [
@@ -119,10 +119,10 @@ export const GRAMMAR_FUR: GrammarTopic[] = [
         ],
       },
     ],
-    pitfalls: ['Dizer «o plâs il formadi» para «eu gosto de queijo»: o certo é «mi plâs il formadi».'],
+    pitfalls: ['Dizer “o plâs il formadi” para “eu gosto de queijo”: o certo é “mi plâs il formadi”.'],
     quiz: [
-      { question: 'Como se diz «eu gosto de pão»?', options: ['Mi plâs il pan.', 'O plasê il pan.', 'Jo o plâs pan.'], answer: 'Mi plâs il pan.', explanation: 'Com «plasê», a pessoa que gosta vem como «mi» (me), e o pão é o sujeito.' },
-      { question: 'Complete: «Nô ___ doi cjans.»', options: ['o vin', 'o ai', 'a àn'], answer: 'o vin', explanation: '«O vin» é «nós temos».' },
+      { question: 'Como se diz “eu gosto de pão”?', options: ['Mi plâs il pan.', 'O plasê il pan.', 'Jo o plâs pan.'], answer: 'Mi plâs il pan.', explanation: 'Com “plasê”, a pessoa que gosta vem como “mi” (me), e o pão é o sujeito.' },
+      { question: 'Complete: “Nô ___ doi cjans.”', options: ['o vin', 'o ai', 'a àn'], answer: 'o vin', explanation: '“O vin” é “nós temos”.' },
     ],
   },
 ];

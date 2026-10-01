@@ -24,7 +24,7 @@ export const RECURSOS_RO: LanguageResources = {
       usedFor: ['cidadania romena (certificado B1 ou mais)', 'universidade na Romênia', 'trabalho'],
       where:
         'Presencialmente, no Instituto Cultural Romeno, em Bucareste, na Universidade Babeș-Bolyai, em Cluj-Napoca, e em algumas sedes do ICR no exterior, em sessões ao longo do ano. Não há sede do ICR no Brasil; para quem mora aqui, a alternativa sem viagem é o atestado on-line do Instituto da Língua Romena (ILR). A inscrição é feita no site do RoExam.',
-      tip: 'A Faculdade de Letras da Babeș-Bolyai publica a descrição de cada nível, com exemplos de tarefas: leia antes para saber o que cai. Na parte de estruturas, capriche no artigo definido, que vem grudado no fim da palavra («un băiat», um menino; «băiatul», o menino), e no genitivo-dativo («băiatului», do menino), pontos em que o português não ajuda.',
+      tip: 'A Faculdade de Letras da Babeș-Bolyai publica a descrição de cada nível, com exemplos de tarefas: leia antes para saber o que cai. Na parte de estruturas, capriche no artigo definido, que vem grudado no fim da palavra (“un băiat”, um menino; “băiatul”, o menino), e no genitivo-dativo (“băiatului”, do menino), pontos em que o português não ajuda.',
       url: 'https://roexam.com/',
     },
     {
@@ -53,7 +53,7 @@ export const RECURSOS_RO: LanguageResources = {
         'Não é uma prova à parte: desde a Lei 14/2025, o pedido precisa de um certificado de nível B1 ou superior, ou de histórico escolar com pelo menos 3 anos de estudo em romeno',
       cefr: ['B1', 'B1'],
       format: [
-        'Certificado de competência linguística de nível B1 ou mais, emitido por universidade romena credenciada para o ano preparatório de romeno («an pregătitor»), pelo ILR, pelo ICR ou por um instituto cultural romeno no exterior',
+        'Certificado de competência linguística de nível B1 ou mais, emitido por universidade romena credenciada para o ano preparatório de romeno (“an pregătitor”), pelo ILR, pelo ICR ou por um instituto cultural romeno no exterior',
         'Ou histórico escolar autenticado que comprove pelo menos 3 anos de estudo em romeno, no ensino médio ou superior',
         'Na naturalização (art. 8), cobram-se também a Constituição, o hino nacional e noções de cultura e civilização romenas, incluindo história e geografia',
       ],
@@ -158,7 +158,7 @@ export const RECURSOS_RO: LanguageResources = {
       by: 'Petre Ispirescu',
       year: '1872',
       level: 'B2',
-      why: 'Os contos de fadas tradicionais, com Făt-Frumos, Ileana Cosânzeana e os dragões («zmei»), recolhidos da tradição oral; as fórmulas de conto se repetem e ajudam a memorizar.',
+      why: 'Os contos de fadas tradicionais, com Făt-Frumos, Ileana Cosânzeana e os dragões (“zmei”), recolhidos da tradição oral; as fórmulas de conto se repetem e ajudam a memorizar.',
     },
     {
       kind: 'livro',
@@ -279,14 +279,14 @@ export const RECURSOS_RO: LanguageResources = {
       title: 'Forvo',
       by: 'Forvo',
       level: 'A1',
-      why: 'Pronúncias gravadas por falantes nativos: ouça palavras com «ă», «î», «ș» e «ț» antes de tentar repetir.',
+      why: 'Pronúncias gravadas por falantes nativos: ouça palavras com “ă”, “î”, “ș” e “ț” antes de tentar repetir.',
     },
   ],
   tips: [
-    'O romeno é latino como o português, e muitas palavras se reconhecem logo: «frate» (irmão), «a cânta» (cantar), «apă» (água). Mas parte do vocabulário do dia a dia veio das línguas eslavas: «da» (sim), «a iubi» (amar), «prieten» (amigo).',
-    'O artigo definido vem grudado no fim da palavra: «un om» (um homem) e «omul» (o homem), «o casă» (uma casa) e «casa» (a casa). Aprenda cada substantivo já com as duas formas.',
-    'Treine as vogais que o português não tem: «ă» lembra o «a» fraco do fim de «casa»; «î» e «â» são o mesmo som, central, sem equivalente no português. O «ș» soa como o nosso «ch» e o «ț» como «ts».',
-    'O «e» do começo de «eu», «el», «este» e «ești» se pronuncia «ie»: «ieu», «iel», «ieste». Ler como se escreve denuncia o estrangeiro logo na primeira frase.',
+    'O romeno é latino como o português, e muitas palavras se reconhecem logo: “frate” (irmão), “a cânta” (cantar), “apă” (água). Mas parte do vocabulário do dia a dia veio das línguas eslavas: “da” (sim), “a iubi” (amar), “prieten” (amigo).',
+    'O artigo definido vem grudado no fim da palavra: “un om” (um homem) e “omul” (o homem), “o casă” (uma casa) e “casa” (a casa). Aprenda cada substantivo já com as duas formas.',
+    'Treine as vogais que o português não tem: “ă” lembra o “a” fraco do fim de “casa”; “î” e “â” são o mesmo som, central, sem equivalente no português. O “ș” soa como o nosso “ch” e o “ț” como “ts”.',
+    'O “e” do começo de “eu”, “el”, “este” e “ești” se pronuncia “ie”: “ieu”, “iel”, “ieste”. Ler como se escreve denuncia o estrangeiro logo na primeira frase.',
     'Na Moldávia também se fala romeno (desde 2023, a própria lei moldava chama a língua assim), com sotaque próprio e mais palavras vindas do russo. Músicas e vídeos de Chișinău ajudam a acostumar o ouvido.',
     'Na Romênia, filmes e séries estrangeiros passam legendados, não dublados. Veja com legenda em romeno filmes que você já conhece: a história ajuda a entender e a legenda mostra a grafia.',
   ],

@@ -13,11 +13,11 @@ export const UNITS_DA: UnitSeed[] = [
       title: 'Uma língua que se escreve de um jeito e se fala de outro',
       emoji: '🗣️',
       history:
-        'O dinamarquês é uma língua germânica do norte: descende do nórdico antigo, a língua dos vikings, e é prima próxima do norueguês e do sueco. Na escrita, dinamarqueses e noruegueses se entendem quase sem esforço, porque durante séculos, até 1814, a Noruega esteve unida à Dinamarca e escreveu em dinamarquês. Na fala é outra história: o dinamarquês engole consoantes, tem um número enorme de vogais e um «soluço» na garganta, o stød, e até suecos e noruegueses às vezes pedem para repetir. O alfabeto tem 29 letras: depois do z vêm æ, ø e å. A letra «å» só entrou na escrita oficial com a reforma ortográfica de 1948, a mesma que acabou com a maiúscula nos substantivos; antes se escrevia «aa», e por isso algumas cidades, como Aalborg e Aarhus, ainda aparecem com as duas letras.',
+        'O dinamarquês é uma língua germânica do norte: descende do nórdico antigo, a língua dos vikings, e é prima próxima do norueguês e do sueco. Na escrita, dinamarqueses e noruegueses se entendem quase sem esforço, porque durante séculos, até 1814, a Noruega esteve unida à Dinamarca e escreveu em dinamarquês. Na fala é outra história: o dinamarquês engole consoantes, tem um número enorme de vogais e um “soluço” na garganta, o stød, e até suecos e noruegueses às vezes pedem para repetir. O alfabeto tem 29 letras: depois do z vêm æ, ø e å. A letra “å” só entrou na escrita oficial com a reforma ortográfica de 1948, a mesma que acabou com a maiúscula nos substantivos; antes se escrevia “aa”, e por isso algumas cidades, como Aalborg e Aarhus, ainda aparecem com as duas letras.',
       culture_tip:
-        '«Hej» serve para todo mundo, a qualquer hora, e também para se despedir. Os dinamarqueses tratam quase todos por «du» (você), até o chefe e a médica; o «De» de cortesia hoje só aparece em situações muito formais, como falar com a família real. Não existe uma palavra exata para «por favor»: o trabalho é feito por «tak», que aparece o tempo todo: ao receber o troco, ao aceitar algo («ja tak») e ao sair da mesa («tak for mad»). Ao ser apresentado, dê um aperto de mão, olhe nos olhos e diga o seu nome.',
+        '“Hej” serve para todo mundo, a qualquer hora, e também para se despedir. Os dinamarqueses tratam quase todos por “du” (você), até o chefe e a médica; o “De” de cortesia hoje só aparece em situações muito formais, como falar com a família real. Não existe uma palavra exata para “por favor”: o trabalho é feito por “tak”, que aparece o tempo todo: ao receber o troco, ao aceitar algo (“ja tak”) e ao sair da mesa (“tak for mad”). Ao ser apresentado, dê um aperto de mão, olhe nos olhos e diga o seu nome.',
       grammar_why:
-        'Boa notícia: o verbo dinamarquês não muda com a pessoa. Em português dizemos «eu sou, você é, nós somos, eles são»; em dinamarquês é «er» para todo mundo: jeg er, du er, han er, hun er, vi er, I er, de er. Os pronomes são jeg (eu, que soa «iai»), du (você), han (ele), hun (ela), vi (nós), I (vocês, sempre com maiúscula, para não confundir com a preposição «i») e de (eles, elas), que soa «di». O mesmo «er» serve para «ser» e «estar»: «Jeg er træt» (estou cansado) e «Jeg er fra Brasilien» (sou do Brasil). E, para a idade, também se usa «er», não «ter»: «Jeg er tyve år» (tenho vinte anos). Nos números, repare como a escrita engana: syv (7) soa quase «siu», otte (8) soa «óde» e tyve (20) soa «tü-ue».',
+        'Boa notícia: o verbo dinamarquês não muda com a pessoa. Em português dizemos “eu sou, você é, nós somos, eles são”; em dinamarquês é “er” para todo mundo: jeg er, du er, han er, hun er, vi er, I er, de er. Os pronomes são jeg (eu, que soa “iai”), du (você), han (ele), hun (ela), vi (nós), I (vocês, sempre com maiúscula, para não confundir com a preposição “i”) e de (eles, elas), que soa “di”. O mesmo “er” serve para “ser” e “estar”: “Jeg er træt” (estou cansado) e “Jeg er fra Brasilien” (sou do Brasil). E, para a idade, também se usa “er”, não “ter”: “Jeg er tyve år” (tenho vinte anos). Nos números, repare como a escrita engana: syv (7) soa quase “siu”, otte (8) soa “óde” e tyve (20) soa “tü-ue”.',
       grammar_examples: [
         ['Jeg er fra Brasilien.', 'Eu sou do Brasil.'],
         ['Hun er i Aarhus i dag.', 'Ela está em Aarhus hoje.'],
@@ -25,22 +25,22 @@ export const UNITS_DA: UnitSeed[] = [
         ['De er fra Odense, og I?', 'Eles são de Odense, e vocês?'],
       ],
       character_guide: [
-        ['æ', '«é» aberto de «café»; às vezes ainda mais aberto, quase um «a»', 'æble, læse, være'],
-        ['ø', 'faça a boca de «ô» e diga «ê»: o som de «eu» do francês ou do «ö» alemão', 'øl, søster, brød'],
-        ['å', '«ó» aberto de «avó» ou «ô» fechado de «avô», conforme a palavra', 'år, gå, blå'],
-        ['y', 'diga «i» com os lábios em bico, como o «u» do francês', 'ny, by, syv'],
-        ['u', '«u» de «uva», mas com os lábios bem arredondados e para a frente', 'du, hus, ud'],
-        ['a', 'na maioria das palavras soa bem aberto e para a frente, perto de «é»; junto de r fica fundo, um «a» de «casa»', 'gade, male, bage (perto de «é»); far, rar («a» fundo)'],
-        ['e no fim', 'o «e» átono final é bem fraco, um «â» quase engolido', 'lille, kage, pige'],
+        ['æ', '“é” aberto de “café”; às vezes ainda mais aberto, quase um “a”', 'æble, læse, være'],
+        ['ø', 'faça a boca de “ô” e diga “ê”: o som de “eu” do francês ou do “ö” alemão', 'øl, søster, brød'],
+        ['å', '“ó” aberto de “avó” ou “ô” fechado de “avô”, conforme a palavra', 'år, gå, blå'],
+        ['y', 'diga “i” com os lábios em bico, como o “u” do francês', 'ny, by, syv'],
+        ['u', '“u” de “uva”, mas com os lábios bem arredondados e para a frente', 'du, hus, ud'],
+        ['a', 'na maioria das palavras soa bem aberto e para a frente, perto de “é”; junto de r fica fundo, um “a” de “casa”', 'gade, male, bage (perto de “é”); far, rar (“a” fundo)'],
+        ['e no fim', 'o “e” átono final é bem fraco, um “â” quase engolido', 'lille, kage, pige'],
         ['vogais', 'o dinamarquês tem mais de vinte sons de vogal (contando as longas e as curtas); não se assuste: imite e compare, palavra por palavra', 'is × es, hus × hos, lys × løs'],
-        ['stød [ˀ]', 'um pequeno «soluço» ou rangido na garganta, no meio da sílaba; às vezes é a única diferença entre duas palavras', 'hun (ela, sem stød) × hund (cachorro, com stød); man (a gente) × mand (homem)'],
-        ['d suave [ð]', 'depois de vogal, o d vira um som frouxo, parecido com o «th» do inglês «this», mas com a língua mole, quase um «l» que não encosta', 'mad, gade, rød, med'],
-        ['d mudo', 'o d não soa em «ld», «nd», «rd» nem em várias palavras curtas', 'holde, land, bord, godt, hvad'],
+        ['stød [ˀ]', 'um pequeno “soluço” ou rangido na garganta, no meio da sílaba; às vezes é a única diferença entre duas palavras', 'hun (ela, sem stød) × hund (cachorro, com stød); man (a gente) × mand (homem)'],
+        ['d suave [ð]', 'depois de vogal, o d vira um som frouxo, parecido com o “th” do inglês “this”, mas com a língua mole, quase um “l” que não encosta', 'mad, gade, rød, med'],
+        ['d mudo', 'o d não soa em “ld”, “nd”, “rd” nem em várias palavras curtas', 'holde, land, bord, godt, hvad'],
         ['h mudo', 'antes de v e de j, o h não se pronuncia', 'hvad, hvem, hvor, hjem, hjælpe'],
-        ['g suave ou mudo', 'depois de vogal, o g vira «i», vira «u» ou some', 'jeg («iai»), mig («mai»), pige («pí-i»), og («ô»), bage («bé-ie»)'],
-        ['v depois de vogal', 'soa como «u», formando ditongo', 'syv («siu»), hav, lov'],
-        ['r', 'raspado na garganta, bem suave; depois de vogal quase vira uma vogal «a» fraca', 'rød, tre (garganta); far, mor, fire («fí-a»)'],
-        ['p, t, k no começo', 'soltos com um sopro forte; o t inicial soa quase «ts»', 'tak, to, tyve, kage, pige'],
+        ['g suave ou mudo', 'depois de vogal, o g vira “i”, vira “u” ou some', 'jeg (“iai”), mig (“mai”), pige (“pí-i”), og (“ô”), bage (“bé-ie”)'],
+        ['v depois de vogal', 'soa como “u”, formando ditongo', 'syv (“siu”), hav, lov'],
+        ['r', 'raspado na garganta, bem suave; depois de vogal quase vira uma vogal “a” fraca', 'rød, tre (garganta); far, mor, fire (“fí-a”)'],
+        ['p, t, k no começo', 'soltos com um sopro forte; o t inicial soa quase “ts”', 'tak, to, tyve, kage, pige'],
         ['p, t, k no meio e no fim', 'depois de vogal amolecem e soam quase g, b, d, sem sopro', 'køkken, hoppe, sætte'],
       ],
     },
@@ -59,9 +59,9 @@ export const UNITS_DA: UnitSeed[] = [
           bot: 'Hej! Hvordan går det?',
           botTranslation: 'Oi! Como vai?',
           expected: ['Det går godt, tak! Hvad med dig?', 'det går godt', 'tak', 'hvad med dig'],
-          hint: 'Responda que vai bem e devolva a pergunta: «Det går godt, tak! Hvad med dig?». Em «godt», o d é mudo (soa «gót»); em «hvad», o h é mudo (soa quase «va»); e «dig» soa «dai».',
+          hint: 'Responda que vai bem e devolva a pergunta: “Det går godt, tak! Hvad med dig?”. Em “godt”, o d é mudo (soa “gót”); em “hvad”, o h é mudo (soa quase “va”); e “dig” soa “dai”.',
         },
-        communityPrompt: 'Escreva dois cumprimentos em dinamarquês: um de manhã, para uma vizinha («Godmorgen…»), e um de despedida para um amigo («Farvel…» ou «Hej hej…»). Use «Hvordan går det?» em um deles.',
+        communityPrompt: 'Escreva dois cumprimentos em dinamarquês: um de manhã, para uma vizinha (“Godmorgen…”), e um de despedida para um amigo (“Farvel…” ou “Hej hej…”). Use “Hvordan går det?” em um deles.',
       },
       {
         id: 'da-u1-l2',
@@ -77,9 +77,9 @@ export const UNITS_DA: UnitSeed[] = [
           bot: 'Hej! Jeg hedder Mads, og jeg er fra Odense. Hvad med dig?',
           botTranslation: 'Oi! Eu me chamo Mads e sou de Odense. E você?',
           expected: ['Hej, Mads! Jeg hedder Ana, og jeg er fra Brasilien.', 'jeg hedder', 'jeg er fra', 'Brasilien'],
-          hint: 'Diga o seu nome com «Jeg hedder…» e a origem com «Jeg er fra…». O «jeg» soa «iai», e o d de «hedder» é o d suave, frouxo, quase um «l».',
+          hint: 'Diga o seu nome com “Jeg hedder…” e a origem com “Jeg er fra…”. O “jeg” soa “iai”, e o d de “hedder” é o d suave, frouxo, quase um “l”.',
         },
-        communityPrompt: 'Apresente três pessoas em dinamarquês, uma frase para cada, usando «er»: você («Jeg er…»), um amigo («Han er…») e uma amiga («Hun er…»). Repare que o verbo não muda!',
+        communityPrompt: 'Apresente três pessoas em dinamarquês, uma frase para cada, usando “er”: você (“Jeg er…”), um amigo (“Han er…”) e uma amiga (“Hun er…”). Repare que o verbo não muda!',
       },
       {
         id: 'da-u1-l3',
@@ -95,9 +95,9 @@ export const UNITS_DA: UnitSeed[] = [
           bot: 'Hej, jeg hedder Sofie. Hvad hedder du? Og hvor gammel er du?',
           botTranslation: 'Oi, eu me chamo Sofie. Como você se chama? E quantos anos você tem?',
           expected: ['Hej, Sofie! Jeg hedder Paulo, og jeg er tyve år. Rart at møde dig!', 'jeg hedder', 'år', 'rart at møde dig'],
-          hint: 'A idade vem com «er»: «Jeg er tyve år» (tenho vinte anos). «Tyve» soa quase «tü-ue», e em «møde» o d é suave.',
+          hint: 'A idade vem com “er”: “Jeg er tyve år” (tenho vinte anos). “Tyve” soa quase “tü-ue”, e em “møde” o d é suave.',
         },
-        communityPrompt: 'Escreva um diálogo curto em que duas pessoas se apresentam, dizem a idade com números até 20 («Jeg er sytten år») e terminam com «Rart at møde dig!».',
+        communityPrompt: 'Escreva um diálogo curto em que duas pessoas se apresentam, dizem a idade com números até 20 (“Jeg er sytten år”) e terminam com “Rart at møde dig!”.',
       },
       {
         id: 'da-u1-p',
@@ -115,9 +115,9 @@ export const UNITS_DA: UnitSeed[] = [
             'jeg kommer fra',
             'rart at møde dig',
           ],
-          hint: 'Devolva o cumprimento («Godmorgen!»), diga o nome com «Jeg hedder…», a origem com «Jeg kommer fra…» e feche com «Rart at møde dig!».',
+          hint: 'Devolva o cumprimento (“Godmorgen!”), diga o nome com “Jeg hedder…”, a origem com “Jeg kommer fra…” e feche com “Rart at møde dig!”.',
         },
-        communityPrompt: 'Escreva uma apresentação completa em dinamarquês: cumprimento, nome, de onde você é, a sua idade, duas pessoas da sua vida com «han er» / «hun er» e uma despedida.',
+        communityPrompt: 'Escreva uma apresentação completa em dinamarquês: cumprimento, nome, de onde você é, a sua idade, duas pessoas da sua vida com “han er” / “hun er” e uma despedida.',
       },
     ],
   },
@@ -132,11 +132,11 @@ export const UNITS_DA: UnitSeed[] = [
       title: 'O artigo que vai no fim',
       emoji: '🍞',
       history:
-        'O pão da Dinamarca é o rugbrød: um pão de centeio escuro, denso e azedinho, feito com fermentação natural e cheio de grãos. Sobre uma fatia dele, com manteiga, nasce o smørrebrød (literalmente «pão com manteiga»), o sanduíche aberto que os dinamarqueses comem no almoço, a «frokost», com garfo e faca: arenque, ovo com camarão, rosbife ou o clássico leverpostej, um patê de fígado quente ou frio. O que se põe em cima do pão tem até nome próprio: «pålæg». E o doce folhado que o mundo chama de «danish» se chama, na Dinamarca, «wienerbrød», o «pão de Viena», porque a técnica chegou com padeiros vindos da Áustria no século XIX.',
+        'O pão da Dinamarca é o rugbrød: um pão de centeio escuro, denso e azedinho, feito com fermentação natural e cheio de grãos. Sobre uma fatia dele, com manteiga, nasce o smørrebrød (literalmente “pão com manteiga”), o sanduíche aberto que os dinamarqueses comem no almoço, a “frokost”, com garfo e faca: arenque, ovo com camarão, rosbife ou o clássico leverpostej, um patê de fígado quente ou frio. O que se põe em cima do pão tem até nome próprio: “pålæg”. E o doce folhado que o mundo chama de “danish” se chama, na Dinamarca, “wienerbrød”, o “pão de Viena”, porque a técnica chegou com padeiros vindos da Áustria no século XIX.',
       culture_tip:
-        'Ao terminar uma refeição na casa de alguém, agradeça sempre com «tak for mad» (obrigado pela comida); o anfitrião responde «velbekomme». Na hora do café com bolo, o clima ideal tem nome: «hygge», aquele aconchego de velas acesas, conversa sem pressa e ninguém olhando o celular. Os dinamarqueses acendem velas até no café da manhã, sobretudo no inverno escuro. E, no smørrebrød, a ordem conta: primeiro o peixe (o arenque), depois as carnes e, por fim, o queijo.',
+        'Ao terminar uma refeição na casa de alguém, agradeça sempre com “tak for mad” (obrigado pela comida); o anfitrião responde “velbekomme”. Na hora do café com bolo, o clima ideal tem nome: “hygge”, aquele aconchego de velas acesas, conversa sem pressa e ninguém olhando o celular. Os dinamarqueses acendem velas até no café da manhã, sobretudo no inverno escuro. E, no smørrebrød, a ordem conta: primeiro o peixe (o arenque), depois as carnes e, por fim, o queijo.',
       grammar_why:
-        'Todo substantivo dinamarquês tem um gênero: o comum, com «en» (cerca de três em cada quatro palavras), ou o neutro, com «et»: en ost (um queijo), et æg (um ovo), et brød (um pão). Não há regra segura, então aprenda sempre a palavra junto com o artigo. A grande surpresa: o artigo definido (o, a) não vem antes, mas grudado no fim da palavra: osten (o queijo), ægget (o ovo), brødet (o pão); se a palavra já termina em -e, basta -n ou -t: kagen (o bolo), æblet (a maçã). No plural, muitas palavras ganham -er ou -e (kager, oste), e várias não mudam (æg, brød); o plural definido termina em -ne: kagerne, ostene, æggene. No presente, o verbo tem uma forma só, terminada em -r: jeg spiser, du spiser, vi spiser. Para dizer que algo existe, use «der er» (há, tem); para dizer que gosta, «jeg kan lide», geralmente com «godt» no meio e sem preposição: jeg kan godt lide kaffe (eu gosto de café).',
+        'Todo substantivo dinamarquês tem um gênero: o comum, com “en” (cerca de três em cada quatro palavras), ou o neutro, com “et”: en ost (um queijo), et æg (um ovo), et brød (um pão). Não há regra segura, então aprenda sempre a palavra junto com o artigo. A grande surpresa: o artigo definido (o, a) não vem antes, mas grudado no fim da palavra: osten (o queijo), ægget (o ovo), brødet (o pão); se a palavra já termina em -e, basta -n ou -t: kagen (o bolo), æblet (a maçã). No plural, muitas palavras ganham -er ou -e (kager, oste), e várias não mudam (æg, brød); o plural definido termina em -ne: kagerne, ostene, æggene. No presente, o verbo tem uma forma só, terminada em -r: jeg spiser, du spiser, vi spiser. Para dizer que algo existe, use “der er” (há, tem); para dizer que gosta, “jeg kan lide”, geralmente com “godt” no meio e sem preposição: jeg kan godt lide kaffe (eu gosto de café).',
       grammar_examples: [
         ['Vi har et rugbrød. Brødet er friskt.', 'Nós temos um pão de centeio. O pão está fresco.'],
         ['Der er to æg og en ost i køleskabet.', 'Tem dois ovos e um queijo na geladeira.'],
@@ -160,9 +160,9 @@ export const UNITS_DA: UnitSeed[] = [
           bot: 'Godmorgen! Hvad spiser du til morgenmad?',
           botTranslation: 'Bom dia! O que você come no café da manhã?',
           expected: ['Jeg spiser rugbrød med smør og ost, og jeg drikker kaffe.', 'jeg spiser', 'rugbrød', 'jeg drikker'],
-          hint: 'Use o presente em -r: «Jeg spiser…», «Jeg drikker…». Em «rugbrød», o g quase some e o d do fim é o d suave: soa mais ou menos «ru-brøl», com a língua mole.',
+          hint: 'Use o presente em -r: “Jeg spiser…”, “Jeg drikker…”. Em “rugbrød”, o g quase some e o d do fim é o d suave: soa mais ou menos “ru-brøl”, com a língua mole.',
         },
-        communityPrompt: 'Descreva o seu café da manhã em dinamarquês com três frases no presente («Jeg spiser…», «Jeg drikker…») e use pelo menos uma forma definida, como «kaffen» ou «osten».',
+        communityPrompt: 'Descreva o seu café da manhã em dinamarquês com três frases no presente (“Jeg spiser…”, “Jeg drikker…”) e use pelo menos uma forma definida, como “kaffen” ou “osten”.',
       },
       {
         id: 'da-u2-l2',
@@ -178,9 +178,9 @@ export const UNITS_DA: UnitSeed[] = [
           bot: 'Velkommen! Hvad vil du have på dit smørrebrød?',
           botTranslation: 'Bem-vindo! O que você quer no seu smørrebrød?',
           expected: ['Jeg vil gerne have leverpostej og æg, tak.', 'jeg vil gerne have', 'leverpostej', 'tak'],
-          hint: 'Para pedir com educação, use «Jeg vil gerne have…» (eu gostaria de…) e termine com «tak», que aqui faz o papel do nosso «por favor».',
+          hint: 'Para pedir com educação, use “Jeg vil gerne have…” (eu gostaria de…) e termine com “tak”, que aqui faz o papel do nosso “por favor”.',
         },
-        communityPrompt: 'Monte o seu smørrebrød ideal em dinamarquês: diga o que há na geladeira com «Der er…», escolha três coisas de «pålæg» e use duas formas definidas («ægget», «osten»…).',
+        communityPrompt: 'Monte o seu smørrebrød ideal em dinamarquês: diga o que há na geladeira com “Der er…”, escolha três coisas de “pålæg” e use duas formas definidas (“ægget”, “osten”…).',
       },
       {
         id: 'da-u2-l3',
@@ -196,9 +196,9 @@ export const UNITS_DA: UnitSeed[] = [
           bot: 'Hej! Kan du lide kaffe, eller vil du hellere have te? Der er også kage.',
           botTranslation: 'Oi! Você gosta de café ou prefere chá? Também tem bolo.',
           expected: ['Jeg kan godt lide te. Og jeg vil gerne have en kanelsnegl, tak!', 'jeg kan godt lide', 'te', 'kanelsnegl'],
-          hint: 'Responda com «Jeg kan godt lide…» e peça um doce com «Jeg vil gerne have…». Em «lide», o d é suave: soa quase «lí-le».',
+          hint: 'Responda com “Jeg kan godt lide…” e peça um doce com “Jeg vil gerne have…”. Em “lide”, o d é suave: soa quase “lí-le”.',
         },
-        communityPrompt: 'Escreva em dinamarquês quatro frases sobre o que você gosta e não gosta de comer e beber: duas com «Jeg kan godt lide…» e duas com «Jeg kan ikke lide…».',
+        communityPrompt: 'Escreva em dinamarquês quatro frases sobre o que você gosta e não gosta de comer e beber: duas com “Jeg kan godt lide…” e duas com “Jeg kan ikke lide…”.',
       },
       {
         id: 'da-u2-p',
@@ -215,9 +215,9 @@ export const UNITS_DA: UnitSeed[] = [
             'jeg drikker',
             'kagen',
           ],
-          hint: 'Junte tudo: «Jeg kan godt lide…», um verbo no presente em -r («Jeg drikker…») e uma forma definida para elogiar («Kagen er dejlig!»).',
+          hint: 'Junte tudo: “Jeg kan godt lide…”, um verbo no presente em -r (“Jeg drikker…”) e uma forma definida para elogiar (“Kagen er dejlig!”).',
         },
-        communityPrompt: 'Escreva um pequeno texto sobre uma tarde de hygge em dinamarquês: o que há na mesa («Der er…»), o que cada pessoa come e bebe (presente em -r) e do que você gosta («Jeg kan godt lide…»). Use pelo menos três formas definidas.',
+        communityPrompt: 'Escreva um pequeno texto sobre uma tarde de hygge em dinamarquês: o que há na mesa (“Der er…”), o que cada pessoa come e bebe (presente em -r) e do que você gosta (“Jeg kan godt lide…”). Use pelo menos três formas definidas.',
       },
     ],
   },
@@ -232,11 +232,11 @@ export const UNITS_DA: UnitSeed[] = [
       title: 'O verbo sempre em segundo lugar',
       emoji: '2️⃣',
       history:
-        'Copenhague é uma das cidades mais amigas da bicicleta do mundo: há mais bicicletas do que carros, e muita gente pedala para o trabalho e para a escola faça chuva, faça vento ou neve. As ciclovias costumam ficar entre a calçada e a rua, um pouco mais altas que o asfalto, e em muitos cruzamentos têm semáforo próprio. Um dos cartões-postais da cidade é Nyhavn, o «porto novo», um canal aberto entre 1671 e 1673, no reinado de Christian V, e ladeado por casas coloridas. Hans Christian Andersen morou em três endereços diferentes de Nyhavn.',
+        'Copenhague é uma das cidades mais amigas da bicicleta do mundo: há mais bicicletas do que carros, e muita gente pedala para o trabalho e para a escola faça chuva, faça vento ou neve. As ciclovias costumam ficar entre a calçada e a rua, um pouco mais altas que o asfalto, e em muitos cruzamentos têm semáforo próprio. Um dos cartões-postais da cidade é Nyhavn, o “porto novo”, um canal aberto entre 1671 e 1673, no reinado de Christian V, e ladeado por casas coloridas. Hans Christian Andersen morou em três endereços diferentes de Nyhavn.',
       culture_tip:
         'Na ciclovia, pedale sempre pela direita e deixe a esquerda livre para quem quer ultrapassar. Antes de parar, levante a mão; antes de virar, estique o braço para o lado. Para virar à esquerda num cruzamento, o ciclista não corta pela frente dos carros: atravessa reto, para no canto oposto e espera o sinal para seguir. À noite, farol e lanterna são obrigatórios. E não pare no meio da ciclovia para tirar foto: na hora do rush, os ciclistas vão rápido e tocam a campainha sem dó.',
       grammar_why:
-        'A regra de ouro do dinamarquês é a V2: na oração principal, o verbo fica sempre na segunda posição. Se a frase começa pelo sujeito, nada muda: «Jeg cykler til arbejde». Mas, se ela começa por outra coisa, como um tempo ou um lugar, o sujeito passa para depois do verbo: «I dag cykler jeg til arbejde» (literalmente, «hoje pedalo eu para o trabalho»). Nas perguntas de sim ou não, o verbo vem primeiro («Cykler du?»); com palavra interrogativa, ela vem na frente e o verbo logo depois («Hvor bor du?»). As preposições básicas são i (em, dentro: i København), på (em, sobre: på cykelstien, e também para bairros e ilhas: på Nørrebro, på Bornholm), til (para) e fra (de, origem). O adjetivo concorda com o substantivo: en stor by, et stort hus (ganha -t com et) e store byer (ganha -e no plural).',
+        'A regra de ouro do dinamarquês é a V2: na oração principal, o verbo fica sempre na segunda posição. Se a frase começa pelo sujeito, nada muda: “Jeg cykler til arbejde”. Mas, se ela começa por outra coisa, como um tempo ou um lugar, o sujeito passa para depois do verbo: “I dag cykler jeg til arbejde” (literalmente, “hoje pedalo eu para o trabalho”). Nas perguntas de sim ou não, o verbo vem primeiro (“Cykler du?”); com palavra interrogativa, ela vem na frente e o verbo logo depois (“Hvor bor du?”). As preposições básicas são i (em, dentro: i København), på (em, sobre: på cykelstien, e também para bairros e ilhas: på Nørrebro, på Bornholm), til (para) e fra (de, origem). O adjetivo concorda com o substantivo: en stor by, et stort hus (ganha -t com et) e store byer (ganha -e no plural).',
       grammar_examples: [
         ['I dag cykler jeg til arbejde.', 'Hoje eu vou de bicicleta para o trabalho.'],
         ['Hvor bor du? — Jeg bor på Nørrebro.', 'Onde você mora? — Eu moro em Nørrebro.'],
@@ -260,9 +260,9 @@ export const UNITS_DA: UnitSeed[] = [
           bot: 'Hvordan kommer du på arbejde?',
           botTranslation: 'Como você vai para o trabalho?',
           expected: ['Jeg cykler. Om morgenen cykler jeg på cykelstien til arbejde.', 'jeg cykler', 'om morgenen cykler jeg', 'cykelstien'],
-          hint: 'Comece a segunda frase por «Om morgenen» e lembre-se da V2: o verbo vem antes do sujeito, «Om morgenen cykler jeg…».',
+          hint: 'Comece a segunda frase por “Om morgenen” e lembre-se da V2: o verbo vem antes do sujeito, “Om morgenen cykler jeg…”.',
         },
-        communityPrompt: 'Descreva em dinamarquês o seu caminho até o trabalho ou a escola com três frases, cada uma começando por uma expressão de tempo ou de lugar («I dag…», «Om morgenen…», «Ved lyskrydset…»), com o verbo em segundo lugar.',
+        communityPrompt: 'Descreva em dinamarquês o seu caminho até o trabalho ou a escola com três frases, cada uma começando por uma expressão de tempo ou de lugar (“I dag…”, “Om morgenen…”, “Ved lyskrydset…”), com o verbo em segundo lugar.',
       },
       {
         id: 'da-u3-l2',
@@ -278,9 +278,9 @@ export const UNITS_DA: UnitSeed[] = [
           bot: 'Undskyld, hvor ligger Den Lille Havfrue?',
           botTranslation: 'Com licença, onde fica a Pequena Sereia?',
           expected: ['Du cykler ligeud, over broen, og så til venstre ved hjørnet.', 'ligeud', 'over broen', 'til venstre'],
-          hint: 'Use «ligeud» (em frente), «til venstre» (à esquerda) e «til højre» (à direita). Em «højre», o h é mudo e o j soa «i»: «hói-a».',
+          hint: 'Use “ligeud” (em frente), “til venstre” (à esquerda) e “til højre” (à direita). Em “højre”, o h é mudo e o j soa “i”: “hói-a”.',
         },
-        communityPrompt: 'Explique em dinamarquês, com o mapa na mão, como ir da sua casa até uma padaria: use «ligeud», «til venstre», «til højre» e pelo menos duas preposições (i, på, til, fra).',
+        communityPrompt: 'Explique em dinamarquês, com o mapa na mão, como ir da sua casa até uma padaria: use “ligeud”, “til venstre”, “til højre” e pelo menos duas preposições (i, på, til, fra).',
       },
       {
         id: 'da-u3-l3',
@@ -296,9 +296,9 @@ export const UNITS_DA: UnitSeed[] = [
           bot: 'Hej! Er du turist? Hvad synes du om København?',
           botTranslation: 'Oi! Você é turista? O que você acha de Copenhague?',
           expected: ['Ja, jeg er turist fra Brasilien. København er en smuk by! I dag tager jeg en båd rundt i havnen.', 'jeg er turist', 'en smuk by', 'i dag tager jeg'],
-          hint: 'Elogie a cidade com um adjetivo («en smuk by») e comece uma frase por «I dag», com o verbo antes do sujeito: «I dag tager jeg…».',
+          hint: 'Elogie a cidade com um adjetivo (“en smuk by”) e comece uma frase por “I dag”, com o verbo antes do sujeito: “I dag tager jeg…”.',
         },
-        communityPrompt: 'Escreva um cartão-postal de Nyhavn em dinamarquês com quatro frases: use três adjetivos concordando com en, et e o plural (en gammel kanal, et smukt hus, farverige huse) e comece uma frase por «Om aftenen…».',
+        communityPrompt: 'Escreva um cartão-postal de Nyhavn em dinamarquês com quatro frases: use três adjetivos concordando com en, et e o plural (en gammel kanal, et smukt hus, farverige huse) e comece uma frase por “Om aftenen…”.',
       },
       {
         id: 'da-u3-p',
@@ -315,9 +315,9 @@ export const UNITS_DA: UnitSeed[] = [
             'i dag cykler jeg',
             'i morgen tager jeg',
           ],
-          hint: 'Mostre a V2 duas vezes: «I dag cykler jeg…» e «I morgen tager jeg…». Use «til» para o destino e «i» para dentro da cidade.',
+          hint: 'Mostre a V2 duas vezes: “I dag cykler jeg…” e “I morgen tager jeg…”. Use “til” para o destino e “i” para dentro da cidade.',
         },
-        communityPrompt: 'Planeje em dinamarquês um dia de bicicleta por Copenhague: faça duas perguntas (uma com «Hvor…?» e uma de sim ou não), responda-as, use três preposições diferentes e dois adjetivos concordando com o substantivo.',
+        communityPrompt: 'Planeje em dinamarquês um dia de bicicleta por Copenhague: faça duas perguntas (uma com “Hvor…?” e uma de sim ou não), responda-as, use três preposições diferentes e dois adjetivos concordando com o substantivo.',
       },
     ],
   },
@@ -329,17 +329,17 @@ export const UNITS_DA: UnitSeed[] = [
     emoji: '🦢',
     card: {
       id: 'da-c4',
-      title: 'O passado e «den lille havfrue»',
+      title: 'O passado e “den lille havfrue”',
       emoji: '📖',
       history:
-        'Hans Christian Andersen nasceu em 1805 em Odense, na ilha de Fiônia, filho de um sapateiro e de uma lavadeira, numa família pobre. O pai morreu quando ele tinha 11 anos, e aos 14 o menino foi sozinho para Copenhague, sonhando ser ator. Não deu certo no teatro, mas ele virou escritor: a partir de 1835 publicou os contos de fadas, os «eventyr», que o tornaram famoso no mundo inteiro, como «Prinsessen på ærten» (A princesa e a ervilha), «Den lille havfrue» (A pequena sereia) e «Den grimme ælling» (O patinho feio). Desde 1913, uma pequena estátua de bronze da Pequena Sereia olha para o mar no porto de Copenhague. Andersen morreu em 1875, em Copenhague.',
+        'Hans Christian Andersen nasceu em 1805 em Odense, na ilha de Fiônia, filho de um sapateiro e de uma lavadeira, numa família pobre. O pai morreu quando ele tinha 11 anos, e aos 14 o menino foi sozinho para Copenhague, sonhando ser ator. Não deu certo no teatro, mas ele virou escritor: a partir de 1835 publicou os contos de fadas, os “eventyr”, que o tornaram famoso no mundo inteiro, como “Prinsessen på ærten” (A princesa e a ervilha), “Den lille havfrue” (A pequena sereia) e “Den grimme ælling” (O patinho feio). Desde 1913, uma pequena estátua de bronze da Pequena Sereia olha para o mar no porto de Copenhague. Andersen morreu em 1875, em Copenhague.',
       culture_tip:
-        'Em Odense, a casa onde Andersen viveu na infância e o museu dedicado a ele atraem visitantes do mundo todo; pela cidade, siga as pegadas pintadas no chão que ligam os lugares da vida dele. O dia do seu aniversário, 2 de abril, é celebrado como o Dia Internacional do Livro Infantil. Na Dinamarca, os contos são lidos para as crianças desde cedo, e muitas expressões vêm deles: dizer que algo é «kejserens nye klæder» (a roupa nova do imperador) é dizer que todo mundo finge ver o que não existe.',
+        'Em Odense, a casa onde Andersen viveu na infância e o museu dedicado a ele atraem visitantes do mundo todo; pela cidade, siga as pegadas pintadas no chão que ligam os lugares da vida dele. O dia do seu aniversário, 2 de abril, é celebrado como o Dia Internacional do Livro Infantil. Na Dinamarca, os contos são lidos para as crianças desde cedo, e muitas expressões vêm deles: dizer que algo é “kejserens nye klæder” (a roupa nova do imperador) é dizer que todo mundo finge ver o que não existe.',
       grammar_why:
-        'Para contar o que aconteceu, o dinamarquês tem o pretérito, sem diferença entre «fazia» e «fez»: os verbos fracos ganham -ede ou -te (lavede, spiste, købte), e os fortes mudam a vogal (skrive → skrev, drikke → drak, gå → gik, se → så). O perfeito usa «har» + particípio (har spist, har skrevet) ou, com verbos de movimento e de mudança, «er» (er gået, er blevet). Com adjetivo, a forma definida muda de lugar: em vez do final -en/-et, usa-se den (comum), det (neutro) ou de (plural) antes do adjetivo com -e, e o substantivo fica sem terminação: den lille havfrue, det gamle hus, de grimme ællinger. Nada de «den lille havfruen»: o dinamarquês não repete o artigo, ao contrário do sueco e do norueguês. Nos possessivos, min/mit/mine concordam com a coisa possuída (min cykel, mit hus, mine bøger). E na terceira pessoa há uma sutileza: «sin» (sit, sine) quando o dono é o próprio sujeito, e «hans» ou «hendes» quando é outra pessoa.',
+        'Para contar o que aconteceu, o dinamarquês tem o pretérito, sem diferença entre “fazia” e “fez”: os verbos fracos ganham -ede ou -te (lavede, spiste, købte), e os fortes mudam a vogal (skrive → skrev, drikke → drak, gå → gik, se → så). O perfeito usa “har” + particípio (har spist, har skrevet) ou, com verbos de movimento e de mudança, “er” (er gået, er blevet). Com adjetivo, a forma definida muda de lugar: em vez do final -en/-et, usa-se den (comum), det (neutro) ou de (plural) antes do adjetivo com -e, e o substantivo fica sem terminação: den lille havfrue, det gamle hus, de grimme ællinger. Nada de “den lille havfruen”: o dinamarquês não repete o artigo, ao contrário do sueco e do norueguês. Nos possessivos, min/mit/mine concordam com a coisa possuída (min cykel, mit hus, mine bøger). E na terceira pessoa há uma sutileza: “sin” (sit, sine) quando o dono é o próprio sujeito, e “hans” ou “hendes” quando é outra pessoa.',
       grammar_examples: [
         ['H.C. Andersen skrev mange eventyr.', 'H.C. Andersen escreveu muitos contos de fadas.'],
-        ['Har du læst «Den grimme ælling»?', 'Você já leu «O patinho feio»?'],
+        ['Har du læst “Den grimme ælling”?', 'Você já leu “O patinho feio”?'],
         ['Den lille havfrue sidder på en sten ved havnen.', 'A Pequena Sereia está sentada numa pedra junto ao porto.'],
         ['Andersen elskede sin mor, men hans far døde tidligt.', 'Andersen amava a mãe, mas o pai dele morreu cedo.'],
       ],
@@ -354,15 +354,15 @@ export const UNITS_DA: UnitSeed[] = [
         cloze: [
           { sentence: 'Andersen ___ sine første eventyr i 1835.', answer: 'skrev', options: ['skrev', 'skrevet', 'skriver'], translation: 'Andersen escreveu os seus primeiros contos em 1835.' },
           { sentence: 'Hans familie var ___, og de boede i et lille hus i Odense.', answer: 'fattig', options: ['fattig', 'fattige', 'fattigt'], translation: 'A família dele era pobre e morava numa casinha em Odense.' },
-          { sentence: 'Jeg har ___ «Den grimme ælling» tre gange.', answer: 'læst', options: ['læst', 'læste', 'læser'], translation: 'Eu já li «O patinho feio» três vezes.' },
+          { sentence: 'Jeg har ___ “Den grimme ælling” tre gange.', answer: 'læst', options: ['læst', 'læste', 'læser'], translation: 'Eu já li “O patinho feio” três vezes.' },
         ],
         voice: {
           bot: 'Min bedstemor fortalte mig eventyr, da jeg var lille. Hvad med dig?',
           botTranslation: 'A minha avó me contava contos de fadas quando eu era pequeno. E você?',
           expected: ['Min mor fortalte mig også eventyr. Jeg elskede den grimme ælling.', 'min mor fortalte', 'eventyr', 'jeg elskede'],
-          hint: 'Conte no pretérito: «fortalte» (contava, contou) e «elskede» (amava). Lembre-se de que o dinamarquês não distingue «contava» de «contou».',
+          hint: 'Conte no pretérito: “fortalte” (contava, contou) e “elskede” (amava). Lembre-se de que o dinamarquês não distingue “contava” de “contou”.',
         },
-        communityPrompt: 'Conte em dinamarquês, com quatro frases no pretérito, uma história que alguém contava para você na infância: quem contava («Min … fortalte…»), onde vocês estavam e do que você mais gostava.',
+        communityPrompt: 'Conte em dinamarquês, com quatro frases no pretérito, uma história que alguém contava para você na infância: quem contava (“Min … fortalte…”), onde vocês estavam e do que você mais gostava.',
       },
       {
         id: 'da-u4-l2',
@@ -378,9 +378,9 @@ export const UNITS_DA: UnitSeed[] = [
           bot: 'Kender du eventyret om den grimme ælling? Hvad skete der til sidst?',
           botTranslation: 'Você conhece o conto do patinho feio? O que aconteceu no final?',
           expected: ['Ja! Den grimme ælling voksede op, og til sidst blev den en smuk svane.', 'den grimme ælling', 'blev', 'svane'],
-          hint: 'Use a forma definida com adjetivo, sem dupla marca: «den grimme ælling» (nunca «den grimme ællingen»), e o pretérito «blev» (virou, tornou-se).',
+          hint: 'Use a forma definida com adjetivo, sem dupla marca: “den grimme ælling” (nunca “den grimme ællingen”), e o pretérito “blev” (virou, tornou-se).',
         },
-        communityPrompt: 'Reconte em dinamarquês, em cinco frases no pretérito, o conto «Prinsessen på ærten». Use pelo menos duas vezes a forma definida com adjetivo («den lille ært», «den rigtige prinsesse»).',
+        communityPrompt: 'Reconte em dinamarquês, em cinco frases no pretérito, o conto “Prinsessen på ærten”. Use pelo menos duas vezes a forma definida com adjetivo (“den lille ært”, “den rigtige prinsesse”).',
       },
       {
         id: 'da-u4-l3',
@@ -396,9 +396,9 @@ export const UNITS_DA: UnitSeed[] = [
           bot: 'Du har besøgt Andersens hus i Odense, ikke? Hvad så du?',
           botTranslation: 'Você visitou a casa de Andersen em Odense, não foi? O que você viu?',
           expected: ['Ja! Jeg så hans papirklip, og min veninde købte en bog med hans eventyr.', 'jeg så', 'hans', 'min veninde købte'],
-          hint: 'Andersen fazia recortes de papel, os «papirklip». Use «hans» para as coisas dele e «min» para a sua amiga, e o pretérito: «så» (vi), «købte» (comprou).',
+          hint: 'Andersen fazia recortes de papel, os “papirklip”. Use “hans” para as coisas dele e “min” para a sua amiga, e o pretérito: “så” (vi), “købte” (comprou).',
         },
-        communityPrompt: 'Escreva em dinamarquês quatro frases sobre a família de um amigo, mostrando a diferença entre «sin» e «hans/hendes»: por exemplo, «Han besøger sin mor» × «Hans mor bor i Aalborg».',
+        communityPrompt: 'Escreva em dinamarquês quatro frases sobre a família de um amigo, mostrando a diferença entre “sin” e “hans/hendes”: por exemplo, “Han besøger sin mor” × “Hans mor bor i Aalborg”.',
       },
       {
         id: 'da-u4-p',
@@ -415,9 +415,9 @@ export const UNITS_DA: UnitSeed[] = [
             'den gamle by',
             'hans eventyr',
           ],
-          hint: 'Comece no perfeito («Jeg har besøgt…»), continue no pretérito («Bagefter gik jeg…»), use uma forma definida com adjetivo («den gamle by») e um possessivo.',
+          hint: 'Comece no perfeito (“Jeg har besøgt…”), continue no pretérito (“Bagefter gik jeg…”), use uma forma definida com adjetivo (“den gamle by”) e um possessivo.',
         },
-        communityPrompt: 'Escreva em dinamarquês o diário de um dia em Odense: use o perfeito («Jeg har…») e o pretérito de pelo menos três verbos fortes (gik, så, skrev…), duas formas definidas com adjetivo e os possessivos «sin» e «hans».',
+        communityPrompt: 'Escreva em dinamarquês o diário de um dia em Odense: use o perfeito (“Jeg har…”) e o pretérito de pelo menos três verbos fortes (gik, så, skrev…), duas formas definidas com adjetivo e os possessivos “sin” e “hans”.',
       },
     ],
   },
@@ -432,11 +432,11 @@ export const UNITS_DA: UnitSeed[] = [
       title: 'Pode, deve, vai: modais, imperativo e reflexivos',
       emoji: '🧭',
       history:
-        'O sommerhus, a casinha de veraneio perto do mar ou da floresta, é uma instituição dinamarquesa: muitas famílias têm uma ou alugam uma por uma semana no verão. Um dos destinos mais queridos é Skagen, na ponta norte da Jutlândia, onde fica Grenen, uma língua de areia em que dois mares se encontram, o Skagerrak e o Kattegat, e dá para ver as ondas batendo de lados opostos. A areia ali anda: perto da cidade, a igreja de São Lourenço foi sendo soterrada pelas dunas e acabou fechada em 1795; hoje só a torre aparece acima da areia, e por isso ela é chamada de «Den Tilsandede Kirke», a igreja soterrada. No fim do século XIX, a luz especial de Skagen atraiu um grupo de pintores, os pintores de Skagen, como Anna e Michael Ancher e P. S. Krøyer.',
+        'O sommerhus, a casinha de veraneio perto do mar ou da floresta, é uma instituição dinamarquesa: muitas famílias têm uma ou alugam uma por uma semana no verão. Um dos destinos mais queridos é Skagen, na ponta norte da Jutlândia, onde fica Grenen, uma língua de areia em que dois mares se encontram, o Skagerrak e o Kattegat, e dá para ver as ondas batendo de lados opostos. A areia ali anda: perto da cidade, a igreja de São Lourenço foi sendo soterrada pelas dunas e acabou fechada em 1795; hoje só a torre aparece acima da areia, e por isso ela é chamada de “Den Tilsandede Kirke”, a igreja soterrada. No fim do século XIX, a luz especial de Skagen atraiu um grupo de pintores, os pintores de Skagen, como Anna e Michael Ancher e P. S. Krøyer.',
       culture_tip:
-        'Na noite de 23 de junho, a véspera de São João, os dinamarqueses celebram o «sankthansaften»: acendem fogueiras na praia, põem nelas uma bruxa de pano e cantam juntos a «Midsommervisen», escrita em 1885 por Holger Drachmann, poeta e pintor ligado a Skagen. Ao alugar um sommerhus, confira se é preciso levar lençóis e toalhas e se a faxina final está incluída; o costume é deixar a casa tão limpa quanto a encontrou. E respeite as placas: em Grenen, é proibido entrar no mar, porque as correntes são perigosas.',
+        'Na noite de 23 de junho, a véspera de São João, os dinamarqueses celebram o “sankthansaften”: acendem fogueiras na praia, põem nelas uma bruxa de pano e cantam juntos a “Midsommervisen”, escrita em 1885 por Holger Drachmann, poeta e pintor ligado a Skagen. Ao alugar um sommerhus, confira se é preciso levar lençóis e toalhas e se a faxina final está incluída; o costume é deixar a casa tão limpa quanto a encontrou. E respeite as placas: em Grenen, é proibido entrar no mar, porque as correntes são perigosas.',
       grammar_why:
-        'Os verbos modais vêm seguidos do infinitivo SEM «at»: jeg kan svømme, du må gå, vi vil bade. «Kan» é poder ou saber; «vil» é querer; «skal» é o que está combinado, planejado ou obrigatório; «bør» é o conselho (você deveria); «må» é ter permissão ou ter de. Atenção à armadilha: «du må ikke» é proibição (você não pode), e «não precisa» é «du behøver ikke». Para o futuro, «skal» expressa plano («Vi skal til Skagen»; repare que, com destino, nem precisa de verbo de movimento), «vil» expressa vontade ou previsão, e «kommer til at» é a previsão mais neutra («Det kommer til at regne»). O imperativo é o próprio radical do verbo, sem o -e final: bade → bad!, huske → husk!, skynde sig → skynd dig! Muitos verbos são reflexivos e pedem o pronome «se», que muda com a pessoa: jeg sætter mig, du sætter dig, han sætter sig, vi sætter os, I sætter jer, de sætter sig.',
+        'Os verbos modais vêm seguidos do infinitivo SEM “at”: jeg kan svømme, du må gå, vi vil bade. “Kan” é poder ou saber; “vil” é querer; “skal” é o que está combinado, planejado ou obrigatório; “bør” é o conselho (você deveria); “må” é ter permissão ou ter de. Atenção à armadilha: “du må ikke” é proibição (você não pode), e “não precisa” é “du behøver ikke”. Para o futuro, “skal” expressa plano (“Vi skal til Skagen”; repare que, com destino, nem precisa de verbo de movimento), “vil” expressa vontade ou previsão, e “kommer til at” é a previsão mais neutra (“Det kommer til at regne”). O imperativo é o próprio radical do verbo, sem o -e final: bade → bad!, huske → husk!, skynde sig → skynd dig! Muitos verbos são reflexivos e pedem o pronome “se”, que muda com a pessoa: jeg sætter mig, du sætter dig, han sætter sig, vi sætter os, I sætter jer, de sætter sig.',
       grammar_examples: [
         ['Vi skal til Skagen i sommerferien.', 'Nós vamos para Skagen nas férias de verão.'],
         ['Du må ikke bade her – strømmen er for stærk.', 'Você não pode entrar no mar aqui: a correnteza é forte demais.'],
@@ -460,9 +460,9 @@ export const UNITS_DA: UnitSeed[] = [
           bot: 'Hvad skal vi lave i sommerhuset i morgen?',
           botTranslation: 'O que vamos fazer na casa de veraneio amanhã?',
           expected: ['Vi skal gå en tur i klitterne, og om eftermiddagen kan vi bade i havet.', 'vi skal', 'kan vi bade', 'klitterne'],
-          hint: 'Use «skal» para o plano e «kan» para a possibilidade, sempre com o infinitivo sem «at». Se começar por «om eftermiddagen», não esqueça a V2: «om eftermiddagen kan vi…».',
+          hint: 'Use “skal” para o plano e “kan” para a possibilidade, sempre com o infinitivo sem “at”. Se começar por “om eftermiddagen”, não esqueça a V2: “om eftermiddagen kan vi…”.',
         },
-        communityPrompt: 'Planeje em dinamarquês três dias num sommerhus: para cada dia, uma frase com «skal» (o plano) e outra com «kan» ou «vil» (uma possibilidade ou vontade).',
+        communityPrompt: 'Planeje em dinamarquês três dias num sommerhus: para cada dia, uma frase com “skal” (o plano) e outra com “kan” ou “vil” (uma possibilidade ou vontade).',
       },
       {
         id: 'da-u5-l2',
@@ -478,7 +478,7 @@ export const UNITS_DA: UnitSeed[] = [
           bot: 'Skynd dig! Vi skal spise om fem minutter.',
           botTranslation: 'Apresse-se! Vamos comer daqui a cinco minutos.',
           expected: ['Ja, ja, jeg skynder mig! Jeg klæder mig bare på.', 'jeg skynder mig', 'jeg klæder mig', 'på'],
-          hint: 'O pronome reflexivo acompanha a pessoa: «jeg skynder mig», «du skynder dig». Em «klæde sig på», o «på» vai para o fim: «Jeg klæder mig på».',
+          hint: 'O pronome reflexivo acompanha a pessoa: “jeg skynder mig”, “du skynder dig”. Em “klæde sig på”, o “på” vai para o fim: “Jeg klæder mig på”.',
         },
         communityPrompt: 'Escreva em dinamarquês cinco frases sobre um dia de férias com a família, cada uma com um verbo reflexivo e um sujeito diferente: jeg … mig, du … dig, han … sig, vi … os, de … sig.',
       },
@@ -496,9 +496,9 @@ export const UNITS_DA: UnitSeed[] = [
           bot: 'I morgen er det sankthansaften. Hvad skal vi tage med til stranden?',
           botTranslation: 'Amanhã é a véspera de São João. O que vamos levar para a praia?',
           expected: ['Vi skal have pølser med til grillen, og husk is til børnene!', 'vi skal', 'husk', 'is'],
-          hint: 'Diga o plano com «Vi skal…» e dê uma ordem amigável com o imperativo, que é o verbo sem o -e final: «husk» (lembre), «tag» (leve).',
+          hint: 'Diga o plano com “Vi skal…” e dê uma ordem amigável com o imperativo, que é o verbo sem o -e final: “husk” (lembre), “tag” (leve).',
         },
-        communityPrompt: 'Escreva em dinamarquês uma lista de cinco instruções para a festa de sankthans na praia, todas no imperativo, incluindo uma proibição com «Du må ikke…» e um conselho com «Du bør…».',
+        communityPrompt: 'Escreva em dinamarquês uma lista de cinco instruções para a festa de sankthans na praia, todas no imperativo, incluindo uma proibição com “Du må ikke…” e um conselho com “Du bør…”.',
       },
       {
         id: 'da-u5-p',
@@ -516,7 +516,7 @@ export const UNITS_DA: UnitSeed[] = [
             'vi må huske',
             'skynd dig',
           ],
-          hint: 'Junte tudo: um desejo com «vil», um plano com «skal» (com a V2 depois de «I morgen»), uma obrigação com «må», um reflexivo e um imperativo («Skynd dig!»).',
+          hint: 'Junte tudo: um desejo com “vil”, um plano com “skal” (com a V2 depois de “I morgen”), uma obrigação com “må”, um reflexivo e um imperativo (“Skynd dig!”).',
         },
         communityPrompt: 'Escreva em dinamarquês uma mensagem para amigos que vão passar uma semana com você num sommerhus em Skagen: o que vocês vão fazer (skal, vil), o que se pode e não se pode fazer (kan, må, må ikke), três ordens no imperativo e dois verbos reflexivos.',
       },
@@ -535,9 +535,9 @@ export const UNITS_DA: UnitSeed[] = [
       history:
         'Nenhum ponto da Dinamarca fica a mais de uns 50 quilômetros do mar, e o país tem milhares de quilômetros de litoral. Em Grenen, a ponta norte da Jutlândia, perto de Skagen, dá para ver as ondas do Skagerrak e do Kattegat se chocando. Ali perto ficam a Råbjerg Mile, uma duna que anda com o vento, e a Den Tilsandede Kirke, a igreja que a areia foi cobrindo até ser fechada em 1795: hoje só a torre aparece. No fim do século XIX, a luz de Skagen atraiu um grupo de pintores, os Skagensmalerne, como P. S. Krøyer e Anna Ancher. No outro extremo do país, na ilha de Møn, as falésias brancas de giz de Møns Klint passam dos 100 metros de altura.',
       culture_tip:
-        'O verão dinamarquês é curto, e muitas famílias passam as férias num sommerhus, a casa de veraneio perto da praia. Os dinamarqueses vão à praia com vento e até com chuva, e no inverno os mais corajosos praticam a vinterbadning, o banho de mar gelado. Depois de uma tempestade de inverno, vale procurar rav (âmbar) na areia da costa oeste. E confira a vejrudsigt: no litoral o tempo muda depressa, e os dinamarqueses repetem «Der findes ikke dårligt vejr, kun dårligt tøj» (não existe tempo ruim, só roupa ruim).',
+        'O verão dinamarquês é curto, e muitas famílias passam as férias num sommerhus, a casa de veraneio perto da praia. Os dinamarqueses vão à praia com vento e até com chuva, e no inverno os mais corajosos praticam a vinterbadning, o banho de mar gelado. Depois de uma tempestade de inverno, vale procurar rav (âmbar) na areia da costa oeste. E confira a vejrudsigt: no litoral o tempo muda depressa, e os dinamarqueses repetem “Der findes ikke dårligt vejr, kun dårligt tøj” (não existe tempo ruim, só roupa ruim).',
       grammar_why:
-        'Na oração principal, o «ikke» vem depois do verbo: «Jeg bader ikke i dag». Na subordinada (depois de at, fordi, når, da, hvis, om, selvom), o «ikke» e advérbios como «aldrig» e «altid» vêm ANTES do verbo: «fordi jeg ikke tør» — a mesma ordem do português («porque eu não tenho coragem»). Se a subordinada abre a frase, a principal inverte por causa do V2: «Når det blæser, bliver vi hjemme». «Når» serve para o presente e para o que se repete; «da» é para uma vez só no passado. «Om» é o «se» da pergunta indireta («Jeg ved ikke, om…»); «hvis» é o «se» de condição. O mais-que-perfeito é «havde» + particípio, como o nosso «tinha feito»: «Vi havde gået i to timer, da det begyndte at regne»; com verbos de movimento com destino, entra «var»: «Solen var gået ned».',
+        'Na oração principal, o “ikke” vem depois do verbo: “Jeg bader ikke i dag”. Na subordinada (depois de at, fordi, når, da, hvis, om, selvom), o “ikke” e advérbios como “aldrig” e “altid” vêm ANTES do verbo: “fordi jeg ikke tør” — a mesma ordem do português (“porque eu não tenho coragem”). Se a subordinada abre a frase, a principal inverte por causa do V2: “Når det blæser, bliver vi hjemme”. “Når” serve para o presente e para o que se repete; “da” é para uma vez só no passado. “Om” é o “se” da pergunta indireta (“Jeg ved ikke, om…”); “hvis” é o “se” de condição. O mais-que-perfeito é “havde” + particípio, como o nosso “tinha feito”: “Vi havde gået i to timer, da det begyndte at regne”; com verbos de movimento com destino, entra “var”: “Solen var gået ned”.',
       grammar_examples: [
         ['Vi tager til stranden, selvom det blæser.', 'A gente vai à praia mesmo que esteja ventando.'],
         ['Hun siger, at hun aldrig har badet i Vesterhavet.', 'Ela diz que nunca tomou banho no Mar do Norte.'],
@@ -581,10 +581,10 @@ export const UNITS_DA: UnitSeed[] = [
             'bader ikke',
             'kolde bølger',
           ],
-          hint: 'Explique com «fordi» e lembre: na subordinada o «ikke» vem antes do verbo (fordi jeg ikke kan…).',
+          hint: 'Explique com “fordi” e lembre: na subordinada o “ikke” vem antes do verbo (fordi jeg ikke kan…).',
         },
         communityPrompt:
-          'Descreva uma praia de que você gosta em 3 frases: uma com «fordi … ikke», uma com «når» e uma no mais-que-perfeito (havde + particípio).',
+          'Descreva uma praia de que você gosta em 3 frases: uma com “fordi … ikke”, uma com “når” e uma no mais-que-perfeito (havde + particípio).',
       },
       {
         id: 'da-u6-l2',
@@ -620,10 +620,10 @@ export const UNITS_DA: UnitSeed[] = [
             'cykler vi',
             'alligevel',
           ],
-          hint: 'Comece com «hvis» e ponha o «ikke» antes do verbo; depois a principal inverte (cykler vi).',
+          hint: 'Comece com “hvis” e ponha o “ikke” antes do verbo; depois a principal inverte (cykler vi).',
         },
         communityPrompt:
-          'Escreva a previsão do tempo de um fim de semana no litoral em 3 frases com subordinadas (når, hvis, selvom), pondo o «ikke» antes do verbo em pelo menos uma.',
+          'Escreva a previsão do tempo de um fim de semana no litoral em 3 frases com subordinadas (når, hvis, selvom), pondo o “ikke” antes do verbo em pelo menos uma.',
       },
       {
         id: 'da-u6-l3',
@@ -659,10 +659,10 @@ export const UNITS_DA: UnitSeed[] = [
             'når vandet',
             'nej tak',
           ],
-          hint: 'Recuse com «fordi jeg ikke tør…» e acrescente uma subordinada com «når».',
+          hint: 'Recuse com “fordi jeg ikke tør…” e acrescente uma subordinada com “når”.',
         },
         communityPrompt:
-          'Grave-se contando um dia na praia: o que vocês tinham feito antes (havde + particípio), o que aconteceu «da…» e o que vocês fizeram «selvom…».',
+          'Grave-se contando um dia na praia: o que vocês tinham feito antes (havde + particípio), o que aconteceu “da…” e o que vocês fizeram “selvom…”.',
       },
       {
         id: 'da-u6-p',
@@ -680,10 +680,10 @@ export const UNITS_DA: UnitSeed[] = [
             'fordi vi ikke',
             'var vi glade',
           ],
-          hint: 'Junte o mais-que-perfeito (havde gået), «selvom» com a inversão depois (var vi) e uma subordinada com «ikke» antes do verbo.',
+          hint: 'Junte o mais-que-perfeito (havde gået), “selvom” com a inversão depois (var vi) e uma subordinada com “ikke” antes do verbo.',
         },
         communityPrompt:
-          'Escreva um relato de 5 frases de um fim de semana no litoral dinamarquês: use at, når ou da, fordi, selvom e hvis, com pelo menos dois «ikke» em subordinadas e um verbo no mais-que-perfeito.',
+          'Escreva um relato de 5 frases de um fim de semana no litoral dinamarquês: use at, når ou da, fordi, selvom e hvis, com pelo menos dois “ikke” em subordinadas e um verbo no mais-que-perfeito.',
       },
     ],
   },
@@ -698,11 +698,11 @@ export const UNITS_DA: UnitSeed[] = [
       title: 'Cuidar da saúde à dinamarquesa',
       emoji: '💊',
       history:
-        'O sistema de saúde dinamarquês é público e pago pelos impostos: a consulta com o clínico e o hospital não custam nada ao paciente. Todo morador registrado no CPR recebe o sundhedskort, o «cartão amarelo», e tem um clínico geral fixo, a egen læge, que é a porta de entrada do sistema: é ele quem encaminha para o especialista. O Rigshospitalet, o grande hospital de Copenhague, tem origem no Frederiks Hospital, aberto em 1757. E em 1903 o médico dinamarquês Niels Finsen ganhou o Prêmio Nobel de Medicina pelo tratamento de doenças com luz.',
+        'O sistema de saúde dinamarquês é público e pago pelos impostos: a consulta com o clínico e o hospital não custam nada ao paciente. Todo morador registrado no CPR recebe o sundhedskort, o “cartão amarelo”, e tem um clínico geral fixo, a egen læge, que é a porta de entrada do sistema: é ele quem encaminha para o especialista. O Rigshospitalet, o grande hospital de Copenhague, tem origem no Frederiks Hospital, aberto em 1757. E em 1903 o médico dinamarquês Niels Finsen ganhou o Prêmio Nobel de Medicina pelo tratamento de doenças com luz.',
       culture_tip:
         'Para ir ao médico, primeiro você liga ou marca horário no lægehus, geralmente de manhã cedo. À noite e no fim de semana, quem atende é a lægevagt; na região de Copenhague, o número é o 1813, e é preciso ligar antes de ir ao pronto-socorro. Em emergência, o número é o 112. Os remédios da farmácia não são de graça: o Estado paga uma parte, que cresce conforme o quanto você gasta no ano. A receita é eletrônica: no apotek, basta mostrar o sundhedskort.',
       grammar_why:
-        'A passiva tem duas formas. Com -s, para o que é geral, rotina ou regra: «Recepten sendes til apoteket» (a receita é enviada para a farmácia), «Medicinen skal tages to gange om dagen». Com «blive» + particípio, para um fato concreto, um acontecimento: «Han blev kørt til skadestuen» (ele foi levado ao pronto-socorro). Quem faz a ação entra com «af»: «Jeg blev undersøgt af lægen». Os verbos com partícula mudam de sentido, e a partícula leva o acento: «falde» é cair, mas «falde om» é desmaiar, desabar; «ringe» é ligar, e «ringe op» é telefonar para alguém. O particípio também serve de adjetivo: «et brækket ben» (uma perna quebrada), «den ordinerede medicin» (o remédio receitado).',
+        'A passiva tem duas formas. Com -s, para o que é geral, rotina ou regra: “Recepten sendes til apoteket” (a receita é enviada para a farmácia), “Medicinen skal tages to gange om dagen”. Com “blive” + particípio, para um fato concreto, um acontecimento: “Han blev kørt til skadestuen” (ele foi levado ao pronto-socorro). Quem faz a ação entra com “af”: “Jeg blev undersøgt af lægen”. Os verbos com partícula mudam de sentido, e a partícula leva o acento: “falde” é cair, mas “falde om” é desmaiar, desabar; “ringe” é ligar, e “ringe op” é telefonar para alguém. O particípio também serve de adjetivo: “et brækket ben” (uma perna quebrada), “den ordinerede medicin” (o remédio receitado).',
       grammar_examples: [
         ['Recepten sendes direkte til apoteket.', 'A receita é enviada direto para a farmácia.'],
         ['Hun blev undersøgt af lægen i går.', 'Ela foi examinada pelo médico ontem.'],
@@ -746,10 +746,10 @@ export const UNITS_DA: UnitSeed[] = [
             'haft feber',
             'undersøges',
           ],
-          hint: 'Peça um horário e use a passiva com -s: «vil gerne undersøges» (quero ser examinado).',
+          hint: 'Peça um horário e use a passiva com -s: “vil gerne undersøges” (quero ser examinado).',
         },
         communityPrompt:
-          'Escreva 3 frases sobre uma ida ao médico: uma na passiva com -s (sendes, tages), uma com «blev» + particípio e uma com um verbo com partícula (ringe op, falde om).',
+          'Escreva 3 frases sobre uma ida ao médico: uma na passiva com -s (sendes, tages), uma com “blev” + particípio e uma com um verbo com partícula (ringe op, falde om).',
       },
       {
         id: 'da-u7-l2',
@@ -785,7 +785,7 @@ export const UNITS_DA: UnitSeed[] = [
             'trækker vejret',
             'skal hentes',
           ],
-          hint: 'Diga o que aconteceu (er faldet om) e use a passiva: «skal hentes» (precisa ser buscado).',
+          hint: 'Diga o que aconteceu (er faldet om) e use a passiva: “skal hentes” (precisa ser buscado).',
         },
         communityPrompt:
           'Imagine que um amigo se machucou em Copenhague. Escreva 3 frases: o que aconteceu (blev + particípio), para onde ligar (lægevagt ou 112) e o que foi feito no pronto-socorro.',
@@ -824,7 +824,7 @@ export const UNITS_DA: UnitSeed[] = [
             'købes',
             'skal den tages',
           ],
-          hint: 'Pergunte com a passiva com -s: «kan … købes» (pode ser comprado) e «skal … tages» (deve ser tomado).',
+          hint: 'Pergunte com a passiva com -s: “kan … købes” (pode ser comprado) e “skal … tages” (deve ser tomado).',
         },
         communityPrompt:
           'Grave-se no apotek: diga o que você sente, pergunte se um remédio pode ser comprado sem receita (kan … købes) e como ele deve ser tomado (skal … tages).',
@@ -845,10 +845,10 @@ export const UNITS_DA: UnitSeed[] = [
             'skadestuen',
             'lagt i gips',
           ],
-          hint: 'Conte em ordem: o acidente (faldt af…), a passiva com «blev» (blev kørt, blev lagt i gips) e onde isso aconteceu.',
+          hint: 'Conte em ordem: o acidente (faldt af…), a passiva com “blev” (blev kørt, blev lagt i gips) e onde isso aconteceu.',
         },
         communityPrompt:
-          'Escreva 5 frases sobre o sistema de saúde dinamarquês para um amigo brasileiro: use a passiva com -s pelo menos duas vezes, «blev» + particípio uma vez e dois verbos com partícula.',
+          'Escreva 5 frases sobre o sistema de saúde dinamarquês para um amigo brasileiro: use a passiva com -s pelo menos duas vezes, “blev” + particípio uma vez e dois verbos com partícula.',
       },
     ],
   },
@@ -863,11 +863,11 @@ export const UNITS_DA: UnitSeed[] = [
       title: 'O filho do sapateiro de Odense',
       emoji: '📖',
       history:
-        'Hans Christian Andersen nasceu em Odense, na ilha de Fiônia, em 2 de abril de 1805, filho de um sapateiro e de uma lavadeira. Aos 14 anos, foi sozinho para Copenhague sonhando ser ator; acabou famoso pelos contos de fadas, os eventyr, como «Prinsessen på ærten» (1835), «Den lille havfrue» (1837) e «Den grimme ælling» (1843). Seus contos foram traduzidos para mais de cem línguas, e o dia do seu nascimento, 2 de abril, é o Dia Internacional do Livro Infantil. A estátua da Pequena Sereia, de Edvard Eriksen, está na Langelinie, em Copenhague, desde 1913. Andersen morreu em Copenhague em 1875.',
+        'Hans Christian Andersen nasceu em Odense, na ilha de Fiônia, em 2 de abril de 1805, filho de um sapateiro e de uma lavadeira. Aos 14 anos, foi sozinho para Copenhague sonhando ser ator; acabou famoso pelos contos de fadas, os eventyr, como “Prinsessen på ærten” (1835), “Den lille havfrue” (1837) e “Den grimme ælling” (1843). Seus contos foram traduzidos para mais de cem línguas, e o dia do seu nascimento, 2 de abril, é o Dia Internacional do Livro Infantil. A estátua da Pequena Sereia, de Edvard Eriksen, está na Langelinie, em Copenhague, desde 1913. Andersen morreu em Copenhague em 1875.',
       culture_tip:
-        'Em Odense dá para visitar a casinha amarela onde, segundo a tradição, Andersen nasceu, e o museu dedicado a ele. Em Nyhavn, as casas coloridas dos números 18, 20 e 67 tiveram Andersen como morador. Para os dinamarqueses, os contos não são só coisa de criança: «Kejserens nye klæder» (A roupa nova do imperador) virou expressão para quem finge ver o que não existe. E prepare-se: a Pequena Sereia é bem menor do que muitos turistas imaginam.',
+        'Em Odense dá para visitar a casinha amarela onde, segundo a tradição, Andersen nasceu, e o museu dedicado a ele. Em Nyhavn, as casas coloridas dos números 18, 20 e 67 tiveram Andersen como morador. Para os dinamarqueses, os contos não são só coisa de criança: “Kejserens nye klæder” (A roupa nova do imperador) virou expressão para quem finge ver o que não existe. E prepare-se: a Pequena Sereia é bem menor do que muitos turistas imaginam.',
       grammar_why:
-        'O comparativo e o superlativo se formam com -ere e -est: «smuk, smukkere, smukkest», «grim, grimmere, grimmest». Alguns são irregulares, como em português: «god, bedre, bedst», «gammel, ældre, ældst», «lille, mindre, mindst», «stor, større, størst». Palavras longas e particípios usam «mere» e «mest»: «mere berømt, mest berømt». «End» é o «do que»: «Svanen er smukkere end ællingen». Com a forma definida, o superlativo ganha -e: «den smukkeste svane». O relativo é «som» (sujeito ou objeto) ou «der» (só sujeito); «hvis» é o nosso «cujo»: «forfatteren, hvis eventyr alle kender». No discurso indireto, o verbo recua no tempo e o «ikke» vai para antes do verbo: «Hun sagde, at hun ikke kunne sove». E numa pergunta indireta em que a hv-palavra é o sujeito entra um «der»: «Ved du, hvem der skrev det?»',
+        'O comparativo e o superlativo se formam com -ere e -est: “smuk, smukkere, smukkest”, “grim, grimmere, grimmest”. Alguns são irregulares, como em português: “god, bedre, bedst”, “gammel, ældre, ældst”, “lille, mindre, mindst”, “stor, større, størst”. Palavras longas e particípios usam “mere” e “mest”: “mere berømt, mest berømt”. “End” é o “do que”: “Svanen er smukkere end ællingen”. Com a forma definida, o superlativo ganha -e: “den smukkeste svane”. O relativo é “som” (sujeito ou objeto) ou “der” (só sujeito); “hvis” é o nosso “cujo”: “forfatteren, hvis eventyr alle kender”. No discurso indireto, o verbo recua no tempo e o “ikke” vai para antes do verbo: “Hun sagde, at hun ikke kunne sove”. E numa pergunta indireta em que a hv-palavra é o sujeito entra um “der”: “Ved du, hvem der skrev det?”',
       grammar_examples: [
         ['Den grimme ælling blev den smukkeste svane af dem alle.', 'O patinho feio virou o cisne mais bonito de todos.'],
         ['Andersen er den mest berømte danske forfatter i verden.', 'Andersen é o escritor dinamarquês mais famoso do mundo.'],
@@ -911,7 +911,7 @@ export const UNITS_DA: UnitSeed[] = [
             'som skrev',
             'der er kendt',
           ],
-          hint: 'Responda com dois relativos: «som skrev…» e «der er kendt…».',
+          hint: 'Responda com dois relativos: “som skrev…” e “der er kendt…”.',
         },
         communityPrompt:
           'Apresente um escritor ou escritora de que você gosta em 3 frases: uma com comparativo (end), uma com superlativo (den mest… ou -este) e uma com relativo (som, der ou hvis).',
@@ -950,10 +950,10 @@ export const UNITS_DA: UnitSeed[] = [
             'den smukkeste svane',
             'fordi',
           ],
-          hint: 'Use um relativo com «som» e um superlativo com a forma definida (den smukkeste).',
+          hint: 'Use um relativo com “som” e um superlativo com a forma definida (den smukkeste).',
         },
         communityPrompt:
-          'Reconte «Den grimme ælling» em 4 frases, com pelo menos um comparativo (grimmere, smukkere), um superlativo e um relativo (som ou der).',
+          'Reconte “Den grimme ælling” em 4 frases, com pelo menos um comparativo (grimmere, smukkere), um superlativo e um relativo (som ou der).',
       },
       {
         id: 'da-u8-l3',
@@ -989,10 +989,10 @@ export const UNITS_DA: UnitSeed[] = [
             'ikke havde sovet',
             'noget hårdt',
           ],
-          hint: 'Passe para o discurso indireto: «Hun sagde, at…», recue o tempo (havde sovet) e ponha o «ikke» antes do verbo.',
+          hint: 'Passe para o discurso indireto: “Hun sagde, at…”, recue o tempo (havde sovet) e ponha o “ikke” antes do verbo.',
         },
         communityPrompt:
-          'Grave-se recontando o que a princesa, o rei e a rainha disseram, em discurso indireto: «Hun sagde, at…», «Kongen spurgte, om…», com o verbo recuado no tempo.',
+          'Grave-se recontando o que a princesa, o rei e a rainha disseram, em discurso indireto: “Hun sagde, at…”, “Kongen spurgte, om…”, com o verbo recuado no tempo.',
       },
       {
         id: 'da-u8-p',
@@ -1010,10 +1010,10 @@ export const UNITS_DA: UnitSeed[] = [
             'grimmere end',
             'den smukkeste',
           ],
-          hint: 'Junte um superlativo irregular (bedst), relativos (som, der) e um comparativo com «end».',
+          hint: 'Junte um superlativo irregular (bedst), relativos (som, der) e um comparativo com “end”.',
         },
         communityPrompt:
-          'Escreva 5 frases comparando dois contos de Andersen: use comparativo e superlativo (inclusive um irregular, como bedre ou ældst), «som», «der» e «hvis», e uma frase em discurso indireto.',
+          'Escreva 5 frases comparando dois contos de Andersen: use comparativo e superlativo (inclusive um irregular, como bedre ou ældst), “som”, “der” e “hvis”, e uma frase em discurso indireto.',
       },
     ],
   },
@@ -1032,7 +1032,7 @@ export const UNITS_DA: UnitSeed[] = [
       culture_tip:
         'Nas ciclovias dinamarquesas há regras não escritas: pedale pela direita, ultrapasse pela esquerda e levante a mão antes de parar. Não freie de repente nem fique pedalando devagar lado a lado com um amigo, bloqueando quem vem atrás. A ladcykel, a bicicleta de carga, é usada para levar crianças e compras. No inverno os dinamarqueses continuam pedalando, com chuva ou vento: é só ter a roupa certa.',
       grammar_why:
-        'Para hipóteses, o dinamarquês usa o passado: «Hvis jeg havde mere tid, ville jeg cykle til arbejde» (se eu tivesse mais tempo, iria de bicicleta para o trabalho). É o mesmo movimento do português com o «tivesse» e o «iria»: «hvis» + passado e «ville» (ou «kunne», «skulle») + infinitivo. Para o que não aconteceu, entra o mais-que-perfeito: «Hvis jeg havde vidst det, ville jeg have taget toget» (se eu soubesse, teria pegado o trem). Na fala, a principal muitas vezes vira mais-que-perfeito também: «Hvis jeg havde vidst det, var jeg blevet hjemme». Dá para dispensar o «hvis» invertendo o verbo: «Havde jeg vidst det, …». «Skulle» dá o «se por acaso»: «Skulle det regne, tager vi toget». E «gid» + passado é o nosso «quem dera»: «Gid det var sommer!»',
+        'Para hipóteses, o dinamarquês usa o passado: “Hvis jeg havde mere tid, ville jeg cykle til arbejde” (se eu tivesse mais tempo, iria de bicicleta para o trabalho). É o mesmo movimento do português com o “tivesse” e o “iria”: “hvis” + passado e “ville” (ou “kunne”, “skulle”) + infinitivo. Para o que não aconteceu, entra o mais-que-perfeito: “Hvis jeg havde vidst det, ville jeg have taget toget” (se eu soubesse, teria pegado o trem). Na fala, a principal muitas vezes vira mais-que-perfeito também: “Hvis jeg havde vidst det, var jeg blevet hjemme”. Dá para dispensar o “hvis” invertendo o verbo: “Havde jeg vidst det, …”. “Skulle” dá o “se por acaso”: “Skulle det regne, tager vi toget”. E “gid” + passado é o nosso “quem dera”: “Gid det var sommer!”',
       grammar_examples: [
         ['Hvis jeg boede i København, ville jeg cykle overalt.', 'Se eu morasse em Copenhague, iria de bicicleta para todo lado.'],
         ['Hvis det ikke blæste så meget, kunne vi cykle til stranden.', 'Se não ventasse tanto, a gente poderia ir de bicicleta até a praia.'],
@@ -1076,10 +1076,10 @@ export const UNITS_DA: UnitSeed[] = [
             'ville jeg',
             'vindmøller',
           ],
-          hint: 'Comece com «Hvis jeg var…» e, na principal, inverta: «ville jeg» + infinitivo.',
+          hint: 'Comece com “Hvis jeg var…” e, na principal, inverta: “ville jeg” + infinitivo.',
         },
         communityPrompt:
-          'Escreva 3 frases sobre energia na sua cidade com «hvis» + passado e «ville» ou «kunne» + infinitivo, e mais uma com «hvis jeg havde…, ville jeg have…».',
+          'Escreva 3 frases sobre energia na sua cidade com “hvis” + passado e “ville” ou “kunne” + infinitivo, e mais uma com “hvis jeg havde…, ville jeg have…”.',
       },
       {
         id: 'da-u9-l2',
@@ -1115,10 +1115,10 @@ export const UNITS_DA: UnitSeed[] = [
             'ville jeg hellere cykle',
             'tager vi bilen',
           ],
-          hint: 'Faça uma hipótese com «hvis» + passado (hvis det ikke regnede) e responda com «ville jeg hellere…».',
+          hint: 'Faça uma hipótese com “hvis” + passado (hvis det ikke regnede) e responda com “ville jeg hellere…”.',
         },
         communityPrompt:
-          'Escreva 3 frases com «hvis jeg var…» ou «hvis jeg havde…» sobre como seria sua vida de ciclista em Copenhague, e uma com «skulle» (se por acaso).',
+          'Escreva 3 frases com “hvis jeg var…” ou “hvis jeg havde…” sobre como seria sua vida de ciclista em Copenhague, e uma com “skulle” (se por acaso).',
       },
       {
         id: 'da-u9-l3',
@@ -1154,10 +1154,10 @@ export const UNITS_DA: UnitSeed[] = [
             'ville det være',
             'miljøet',
           ],
-          hint: 'Use «hvis» + passado (cyklede, sorterede) e, na principal, «ville det være…».',
+          hint: 'Use “hvis” + passado (cyklede, sorterede) e, na principal, “ville det være…”.',
         },
         communityPrompt:
-          'Grave-se respondendo: o que você faria diferente se morasse na Dinamarca? Use «hvis jeg boede…, ville jeg…», uma hipótese no passado (hvis jeg havde…, ville jeg have…) e um «gid».',
+          'Grave-se respondendo: o que você faria diferente se morasse na Dinamarca? Use “hvis jeg boede…, ville jeg…”, uma hipótese no passado (hvis jeg havde…, ville jeg have…) e um “gid”.',
       },
       {
         id: 'da-u9-p',
@@ -1175,10 +1175,10 @@ export const UNITS_DA: UnitSeed[] = [
             'lært dansk',
             'cyklet',
           ],
-          hint: 'Hipótese no passado: «hvis jeg var flyttet…» (verbo de movimento leva «var») e «ville jeg have» + particípio.',
+          hint: 'Hipótese no passado: “hvis jeg var flyttet…” (verbo de movimento leva “var”) e “ville jeg have” + particípio.',
         },
         communityPrompt:
-          'Escreva 5 frases sobre um futuro mais verde: duas hipóteses no presente (hvis + passado, ville + infinitivo), uma no passado (havde … ville have), uma com inversão sem «hvis» e uma com «skulle» ou «gid».',
+          'Escreva 5 frases sobre um futuro mais verde: duas hipóteses no presente (hvis + passado, ville + infinitivo), uma no passado (havde … ville have), uma com inversão sem “hvis” e uma com “skulle” ou “gid”.',
       },
     ],
   },
@@ -1195,9 +1195,9 @@ export const UNITS_DA: UnitSeed[] = [
       history:
         'O CPR, o registro civil central da Dinamarca, foi criado em 1968: desde então, todo morador tem um cpr-nummer de dez dígitos, formado pela data de nascimento e mais quatro números. Com ele se abre conta no banco, se recebe o sundhedskort e se fala com qualquer órgão público. Desde 2014, a correspondência oficial para os cidadãos chega pela Digital Post, a caixa de correio digital do setor público. O atendimento presencial fica no Borgerservice, o balcão de atendimento de cada kommune. A Constituição, a Grundloven, foi assinada em 5 de junho de 1849, e o 5 de junho, o Grundlovsdag, é lembrado até hoje.',
       culture_tip:
-        'O dinamarquês formal é menos cerimonioso do que o português: até em e-mails para repartições se usa «du», e o «De» ficou raro, restrito a situações muito solenes ou a pessoas bem idosas. Um e-mail começa com «Kære…» ou simplesmente «Hej…» e termina com «Venlig hilsen» ou «Med venlig hilsen» e o seu nome. Seja direto: diga logo na primeira frase o que você quer. E, quando se mudar, avise a kommune em até cinco dias.',
+        'O dinamarquês formal é menos cerimonioso do que o português: até em e-mails para repartições se usa “du”, e o “De” ficou raro, restrito a situações muito solenes ou a pessoas bem idosas. Um e-mail começa com “Kære…” ou simplesmente “Hej…” e termina com “Venlig hilsen” ou “Med venlig hilsen” e o seu nome. Seja direto: diga logo na primeira frase o que você quer. E, quando se mudar, avise a kommune em até cinco dias.',
       grammar_why:
-        'O registro formal escrito tem marcas próprias. A passiva com -s aparece muito em regras e instruções: «Ansøgningen skal sendes senest den 1. marts», «Skemaet udfyldes digitalt». «Du bedes…» (pede-se que você…) é a ordem educada típica das repartições: «Du bedes oplyse dit cpr-nummer». Pedidos gentis usam o passado dos modais, como o nosso «poderia»: «Kunne du sende mig…?», além de «Jeg vil gerne bede om…» e «venligst» (por gentileza): «Svar venligst inden fredag». Há fórmulas fixas: «Hermed sender jeg…» (envio por meio deste…), «Vedhæftet finder du…» (em anexo você encontra…), «På forhånd tak» (desde já, obrigado). O estilo nominal também é típico: «ved flytning» (em caso de mudança) em vez de «når man flytter». Mas nada de exagero: os dinamarqueses preferem um tom claro e simples, e o «du» vale aqui também.',
+        'O registro formal escrito tem marcas próprias. A passiva com -s aparece muito em regras e instruções: “Ansøgningen skal sendes senest den 1. marts”, “Skemaet udfyldes digitalt”. “Du bedes…” (pede-se que você…) é a ordem educada típica das repartições: “Du bedes oplyse dit cpr-nummer”. Pedidos gentis usam o passado dos modais, como o nosso “poderia”: “Kunne du sende mig…?”, além de “Jeg vil gerne bede om…” e “venligst” (por gentileza): “Svar venligst inden fredag”. Há fórmulas fixas: “Hermed sender jeg…” (envio por meio deste…), “Vedhæftet finder du…” (em anexo você encontra…), “På forhånd tak” (desde já, obrigado). O estilo nominal também é típico: “ved flytning” (em caso de mudança) em vez de “når man flytter”. Mas nada de exagero: os dinamarqueses preferem um tom claro e simples, e o “du” vale aqui também.',
       grammar_examples: [
         ['Ansøgningen skal sendes senest den 1. marts.', 'O requerimento deve ser enviado até 1º de março.'],
         ['Kunne du venligst sende mig en kopi af kontrakten?', 'Você poderia, por gentileza, me enviar uma cópia do contrato?'],
@@ -1244,7 +1244,7 @@ export const UNITS_DA: UnitSeed[] = [
           hint: 'Diga que acabou de se mudar (er lige flyttet) e o que você quer, de forma direta e educada (vil gerne…).',
         },
         communityPrompt:
-          'Escreva 3 frases que um funcionário do Borgerservice diria, usando a passiva com -s (skal registreres), «Du bedes…» e «venligst».',
+          'Escreva 3 frases que um funcionário do Borgerservice diria, usando a passiva com -s (skal registreres), “Du bedes…” e “venligst”.',
       },
       {
         id: 'da-u10-l2',
@@ -1280,10 +1280,10 @@ export const UNITS_DA: UnitSeed[] = [
             'venlig hilsen',
             'sit eget navn',
           ],
-          hint: 'Cite a saudação (Kære, Hej) e o fecho (Med venlig hilsen); com «man», o possessivo é «sit».',
+          hint: 'Cite a saudação (Kære, Hej) e o fecho (Med venlig hilsen); com “man”, o possessivo é “sit”.',
         },
         communityPrompt:
-          'Escreva um e-mail curto (4 frases) para uma escola de idiomas pedindo informações: «Kære…», «Jeg skriver for at…», um pedido com «Kunne du…?» e o fecho «Med venlig hilsen».',
+          'Escreva um e-mail curto (4 frases) para uma escola de idiomas pedindo informações: “Kære…”, “Jeg skriver for at…”, um pedido com “Kunne du…?” e o fecho “Med venlig hilsen”.',
       },
       {
         id: 'da-u10-l3',
@@ -1319,10 +1319,10 @@ export const UNITS_DA: UnitSeed[] = [
             'afgørelse',
             'ikke er korrekt',
           ],
-          hint: 'Seja direto: o que você recebeu, o que quer (vil gerne klage) e por quê, com o «ikke» antes do verbo na subordinada.',
+          hint: 'Seja direto: o que você recebeu, o que quer (vil gerne klage) e por quê, com o “ikke” antes do verbo na subordinada.',
         },
         communityPrompt:
-          'Grave-se fazendo um pedido formal por telefone: cumprimente, diga o que deseja com «Jeg vil gerne ansøge om…» ou «Jeg vil gerne klage over…», explique o motivo e agradeça (tak for hjælpen).',
+          'Grave-se fazendo um pedido formal por telefone: cumprimente, diga o que deseja com “Jeg vil gerne ansøge om…” ou “Jeg vil gerne klage over…”, explique o motivo e agradeça (tak for hjælpen).',
       },
       {
         id: 'da-u10-p',
@@ -1340,10 +1340,10 @@ export const UNITS_DA: UnitSeed[] = [
             'Kunne I venligst',
             'Med venlig hilsen',
           ],
-          hint: 'Monte o e-mail: saudação, o motivo logo no começo, um pedido com «Kunne I venligst…» e o fecho formal.',
+          hint: 'Monte o e-mail: saudação, o motivo logo no começo, um pedido com “Kunne I venligst…” e o fecho formal.',
         },
         communityPrompt:
-          'Escreva um e-mail formal completo (6 frases) para uma repartição dinamarquesa: saudação, o motivo na primeira frase, a passiva com -s, um pedido com «Kunne du…?» ou «Du bedes…», «Vedhæftet finder du…» e o fecho.',
+          'Escreva um e-mail formal completo (6 frases) para uma repartição dinamarquesa: saudação, o motivo na primeira frase, a passiva com -s, um pedido com “Kunne du…?” ou “Du bedes…”, “Vedhæftet finder du…” e o fecho.',
       },
     ],
   },
@@ -1359,11 +1359,11 @@ export const UNITS_DA: UnitSeed[] = [
       title: 'Ingen ko på isen: o dinamarquês figurado',
       emoji: '🧊',
       history:
-        'O dinamarquês junta palavras sem espaço e cria compostos quase sem limite: «hjemme» + «kontor» dá «hjemmekontor», e «arbejde» + «miljø» dá «arbejdsmiljø», com um -s- de ligação. Separar o composto (særskrivning) é um erro clássico que muda o sentido: «en engelsklærer» é um professor de inglês, mas «en engelsk lærer» é um professor inglês. A palavra «hygge», o clima aconchegante de velas, café e boa companhia, virou moda no mundo todo por volta de 2016 e hoje aparece em dicionários de inglês. Nas cidades, os jovens misturam gírias como «fedt», «sejt» e «vildt» com palavras vindas do árabe e do inglês; os linguistas chamam de «multietnolekt» a fala que nasceu nos bairros multiculturais.',
+        'O dinamarquês junta palavras sem espaço e cria compostos quase sem limite: “hjemme” + “kontor” dá “hjemmekontor”, e “arbejde” + “miljø” dá “arbejdsmiljø”, com um -s- de ligação. Separar o composto (særskrivning) é um erro clássico que muda o sentido: “en engelsklærer” é um professor de inglês, mas “en engelsk lærer” é um professor inglês. A palavra “hygge”, o clima aconchegante de velas, café e boa companhia, virou moda no mundo todo por volta de 2016 e hoje aparece em dicionários de inglês. Nas cidades, os jovens misturam gírias como “fedt”, “sejt” e “vildt” com palavras vindas do árabe e do inglês; os linguistas chamam de “multietnolekt” a fala que nasceu nos bairros multiculturais.',
       culture_tip:
-        'Use a gíria só com quem você conhece: com o chefe ou numa repartição, «fedt» vira «godt» ou «fint». Os idiomas, ao contrário, estão por toda parte, até no jornal: «der er ingen ko på isen» («não tem vaca no gelo») quer dizer «não tem problema nenhum», e «at stå med håret i postkassen» («ficar com o cabelo preso na caixa do correio») é ficar numa situação constrangedora, sem saída. E «pyt!» é o «deixa pra lá» com que os dinamarqueses evitam se estressar com coisas pequenas.',
+        'Use a gíria só com quem você conhece: com o chefe ou numa repartição, “fedt” vira “godt” ou “fint”. Os idiomas, ao contrário, estão por toda parte, até no jornal: “der er ingen ko på isen” (“não tem vaca no gelo”) quer dizer “não tem problema nenhum”, e “at stå med håret i postkassen” (“ficar com o cabelo preso na caixa do correio”) é ficar numa situação constrangedora, sem saída. E “pyt!” é o “deixa pra lá” com que os dinamarqueses evitam se estressar com coisas pequenas.',
       grammar_why:
-        'No composto dinamarquês, a última palavra manda: ela dá o sentido principal e o gênero. «Et kontor» faz «et hjemmekontor» e «hjemmekontoret»; «en tid» faz «en skærmtid» e «skærmtiden». Entre as partes pode aparecer um -s- de ligação (arbejdsmiljø, arbejdsplads) ou um -e- (juleaften, julemand), e tudo se escreve junto, sem espaço nem hífen. A tônica cai na primeira parte, o contrário do português, em que «guarda-chuva» tem a tônica no fim. Os idiomas são blocos fixos: não se troca «katten» por «en kat» em «købe katten i sækken», mas o verbo se conjuga normalmente (han købte katten i sækken).',
+        'No composto dinamarquês, a última palavra manda: ela dá o sentido principal e o gênero. “Et kontor” faz “et hjemmekontor” e “hjemmekontoret”; “en tid” faz “en skærmtid” e “skærmtiden”. Entre as partes pode aparecer um -s- de ligação (arbejdsmiljø, arbejdsplads) ou um -e- (juleaften, julemand), e tudo se escreve junto, sem espaço nem hífen. A tônica cai na primeira parte, o contrário do português, em que “guarda-chuva” tem a tônica no fim. Os idiomas são blocos fixos: não se troca “katten” por “en kat” em “købe katten i sækken”, mas o verbo se conjuga normalmente (han købte katten i sækken).',
       grammar_examples: [
         ['Hun havde is i maven under hele eksamen.', 'Ela manteve a calma durante a prova inteira.'],
         ['Vi købte katten i sækken, da vi købte den gamle bil.', 'Nós compramos gato por lebre quando compramos o carro velho.'],
@@ -1407,9 +1407,9 @@ export const UNITS_DA: UnitSeed[] = [
             'roligt',
             'gik godt',
           ],
-          hint: 'Use «have is i maven» no passado (havde is i maven) e conte com calma como foi a entrevista.',
+          hint: 'Use “have is i maven” no passado (havde is i maven) e conte com calma como foi a entrevista.',
         },
-        communityPrompt: 'Escreva 4 frases em dinamarquês contando uma situação em que você «købte katten i sækken» ou «slog to fluer med ét smæk». Conjugue o verbo do idioma no passado.',
+        communityPrompt: 'Escreva 4 frases em dinamarquês contando uma situação em que você “købte katten i sækken” ou “slog to fluer med ét smæk”. Conjugue o verbo do idioma no passado.',
       },
       {
         id: 'da-u11-l2',
@@ -1440,14 +1440,14 @@ export const UNITS_DA: UnitSeed[] = [
           bot: 'Du har boet i Danmark et stykke tid nu. Hvilke danske ord synes du er sjove eller mærkelige?',
           botTranslation: 'Você já mora na Dinamarca há um tempo. Que palavras dinamarquesas você acha engraçadas ou esquisitas?',
           expected: [
-            'Jeg synes, de sammensatte ord er sjove, for eksempel «ladcykel» og «vinterbadning». Man sætter bare ordene sammen, og så har man et nyt ord!',
+            'Jeg synes, de sammensatte ord er sjove, for eksempel “ladcykel” og “vinterbadning”. Man sætter bare ordene sammen, og så har man et nyt ord!',
             'ladcykel',
             'vinterbadning',
             'sætter',
           ],
           hint: 'Dê dois exemplos de compostos e explique como eles se formam; lembre que se escrevem juntos, sem espaço.',
         },
-        communityPrompt: 'Invente 3 compostos dinamarqueses com palavras que você já conhece (ex.: «kaffe» + «kop») e escreva uma frase com cada um, usando a forma definida com o gênero da última palavra.',
+        communityPrompt: 'Invente 3 compostos dinamarqueses com palavras que você já conhece (ex.: “kaffe” + “kop”) e escreva uma frase com cada um, usando a forma definida com o gênero da última palavra.',
       },
       {
         id: 'da-u11-l3',
@@ -1485,7 +1485,7 @@ export const UNITS_DA: UnitSeed[] = [
           ],
           hint: 'Responda no mesmo tom descontraído, com duas gírias da lição, sem exagerar nem imitar sotaque.',
         },
-        communityPrompt: 'Reescreva em dinamarquês padrão, para um e-mail ao chefe, a mensagem «Mødet var mega fedt, altså!» e explique em português, em 2 frases, quando cada versão cabe.',
+        communityPrompt: 'Reescreva em dinamarquês padrão, para um e-mail ao chefe, a mensagem “Mødet var mega fedt, altså!” e explique em português, em 2 frases, quando cada versão cabe.',
       },
       {
         id: 'da-u11-p',
@@ -1497,7 +1497,7 @@ export const UNITS_DA: UnitSeed[] = [
           bot: 'Jeg skriver en artikel om, hvordan unge i København taler. Hvad synes du om slang og nye ord på dansk?',
           botTranslation: 'Estou escrevendo um artigo sobre como os jovens de Copenhague falam. O que você acha da gíria e das palavras novas no dinamarquês?',
           expected: [
-            'Jeg synes, det er spændende. Sproget forandrer sig hele tiden, og ord som «sejt» og «vildt» viser, hvor kreative de unge er. Men på arbejdet og i skolen er det klogt at bruge et mere neutralt sprog.',
+            'Jeg synes, det er spændende. Sproget forandrer sig hele tiden, og ord som “sejt” og “vildt” viser, hvor kreative de unge er. Men på arbejdet og i skolen er det klogt at bruge et mere neutralt sprog.',
             'forandrer sig',
             'hele tiden',
             'på arbejdet',
@@ -1523,9 +1523,9 @@ export const UNITS_DA: UnitSeed[] = [
       history:
         'A Dinamarca ganhou a sua primeira Constituição, a Grundlov, em 5 de junho de 1849, e o 5 de junho (grundlovsdag) ainda é lembrado com discursos ao ar livre. O artigo 77 garante a liberdade de expressão (ytringsfrihed) e proíbe a censura. Desde 2011, a pequena cidade de Allinge, na ilha de Bornholm, recebe todo mês de junho o Folkemødet, uma espécie de festival da democracia em que políticos, organizações e cidadãos debatem em tendas e palcos, de igual para igual. Na escola, os alunos treinam o texto argumentativo, em que é preciso pesar os prós e os contras antes de concluir.',
       culture_tip:
-        'Os dinamarqueses discutem de forma direta, mas calma: a ironia é frequente, e levantar a voz pega mal. É comum começar reconhecendo o outro lado («Jeg forstår godt, hvad du mener, men…»). E depois da discussão ninguém fica de mal: dá para discordar em tudo e tomar um café juntos.',
+        'Os dinamarqueses discutem de forma direta, mas calma: a ironia é frequente, e levantar a voz pega mal. É comum começar reconhecendo o outro lado (“Jeg forstår godt, hvad du mener, men…”). E depois da discussão ninguém fica de mal: dá para discordar em tudo e tomar um café juntos.',
       grammar_why:
-        'Os conectores dão estrutura ao argumento: «desuden» (além disso) soma, «derimod» (por outro lado, já) contrasta, «alligevel» (mesmo assim) concede, «dog» (porém) faz uma ressalva, e «altså» (ou seja, portanto) conclui. Quando um deles abre a frase, vale a regra V2: o verbo vem logo em seguida, e o sujeito depois dele — «Desuden er det dyrt», nunca «Desuden det er dyrt». «Efter min mening» também conta como primeiro elemento: «Efter min mening bør vi spare». «Derimod» e «dog» podem ainda vir depois do verbo: «I Skagen er der derimod ro og fred». Na pontuação, o dinamarquês usa a vírgula gramatical: depois de uma oração subordinada que abre a frase, a vírgula é obrigatória (Hvis det regner, bliver vi hjemme); já a vírgula antes de «at», «som» ou «hvis», o chamado startkomma, é opcional: «Jeg synes, at…» e «Jeg synes at…» estão ambas certas.',
+        'Os conectores dão estrutura ao argumento: “desuden” (além disso) soma, “derimod” (por outro lado, já) contrasta, “alligevel” (mesmo assim) concede, “dog” (porém) faz uma ressalva, e “altså” (ou seja, portanto) conclui. Quando um deles abre a frase, vale a regra V2: o verbo vem logo em seguida, e o sujeito depois dele — “Desuden er det dyrt”, nunca “Desuden det er dyrt”. “Efter min mening” também conta como primeiro elemento: “Efter min mening bør vi spare”. “Derimod” e “dog” podem ainda vir depois do verbo: “I Skagen er der derimod ro og fred”. Na pontuação, o dinamarquês usa a vírgula gramatical: depois de uma oração subordinada que abre a frase, a vírgula é obrigatória (Hvis det regner, bliver vi hjemme); já a vírgula antes de “at”, “som” ou “hvis”, o chamado startkomma, é opcional: “Jeg synes, at…” e “Jeg synes at…” estão ambas certas.',
       grammar_examples: [
         ['Bilen er praktisk. Desuden bor vi langt fra byen.', 'O carro é prático. Além disso, moramos longe da cidade.'],
         ['Det regnede hele dagen. Alligevel tog vi på skovtur.', 'Choveu o dia inteiro. Mesmo assim, fomos passear na floresta.'],
@@ -1570,9 +1570,9 @@ export const UNITS_DA: UnitSeed[] = [
             'desuden',
             'forstyrret',
           ],
-          hint: 'Comece com «Efter min mening» e ponha o verbo logo depois; dê dois argumentos ligados por «desuden».',
+          hint: 'Comece com “Efter min mening” e ponha o verbo logo depois; dê dois argumentos ligados por “desuden”.',
         },
-        communityPrompt: 'Escreva em dinamarquês um pequeno parágrafo de opinião (5 frases) sobre um problema da sua cidade, começando por «Efter min mening» e respeitando o V2 depois dele.',
+        communityPrompt: 'Escreva em dinamarquês um pequeno parágrafo de opinião (5 frases) sobre um problema da sua cidade, começando por “Efter min mening” e respeitando o V2 depois dele.',
       },
       {
         id: 'da-u12-l2',
@@ -1608,9 +1608,9 @@ export const UNITS_DA: UnitSeed[] = [
             'derimod',
             'alligevel',
           ],
-          hint: 'Use «desuden» para somar, «derimod» para contrastar e «alligevel» para concluir; o verbo vem logo depois do conector.',
+          hint: 'Use “desuden” para somar, “derimod” para contrastar e “alligevel” para concluir; o verbo vem logo depois do conector.',
         },
-        communityPrompt: 'Escreva 4 frases comparando o Brasil e a Dinamarca, com «desuden», «derimod», «alligevel» e «altså», um em cada frase, e o verbo em segundo lugar quando o conector abre a frase.',
+        communityPrompt: 'Escreva 4 frases comparando o Brasil e a Dinamarca, com “desuden”, “derimod”, “alligevel” e “altså”, um em cada frase, e o verbo em segundo lugar quando o conector abre a frase.',
       },
       {
         id: 'da-u12-l3',
@@ -1641,12 +1641,12 @@ export const UNITS_DA: UnitSeed[] = [
           bot: 'Min danske kollega siger, at kommaer er det sværeste på dansk. Kan du forklare, hvornår man sætter komma?',
           botTranslation: 'Meu colega dinamarquês diz que as vírgulas são a parte mais difícil do dinamarquês. Você consegue explicar quando se põe vírgula?',
           expected: [
-            'Man sætter altid komma efter en ledsætning, der står først. For eksempel: «Hvis det regner, bliver vi hjemme.» Kommaet før «at» er derimod valgfrit.',
+            'Man sætter altid komma efter en ledsætning, der står først. For eksempel: “Hvis det regner, bliver vi hjemme.” Kommaet før “at” er derimod valgfrit.',
             'ledsætning',
             'hvis det regner',
             'valgfrit',
           ],
-          hint: 'Explique a vírgula obrigatória depois da subordinada inicial, dê um exemplo e diga que o startkomma antes de «at» é opcional.',
+          hint: 'Explique a vírgula obrigatória depois da subordinada inicial, dê um exemplo e diga que o startkomma antes de “at” é opcional.',
         },
         communityPrompt: 'Escreva em dinamarquês 3 frases que comecem com uma oração subordinada (Hvis…, Når…, Selvom…), com a vírgula no lugar certo e o verbo logo depois dela.',
       },
@@ -1685,14 +1685,14 @@ export const UNITS_DA: UnitSeed[] = [
       title: 'Rigsdansk, dialetos e as línguas do Reino',
       emoji: '🧭',
       history:
-        'Até o século XX, cada região da Dinamarca tinha o seu dialeto, e ainda hoje dá para ouvir as diferenças: no oeste da Jutlândia, o artigo definido vem antes do substantivo («æ hus» em vez de «huset»), e no sul da Jutlândia o sønderjysk cumprimenta com «mojn», a qualquer hora do dia, tanto ao chegar quanto ao sair. Na ilha de Bornholm, o bornholmsk soa tão diferente que muitos dinamarqueses o acham parecido com o sueco. O Reino da Dinamarca inclui também as Ilhas Faroé e a Groenlândia, que têm autonomia e línguas próprias: o feroês e o groenlandês (kalaallisut), língua oficial da Groenlândia desde 2009. No sul da Jutlândia vive uma minoria de língua alemã desde que a região voltou à Dinamarca, em 1920, e do outro lado da fronteira, no norte da Alemanha, vive uma minoria dinamarquesa.',
+        'Até o século XX, cada região da Dinamarca tinha o seu dialeto, e ainda hoje dá para ouvir as diferenças: no oeste da Jutlândia, o artigo definido vem antes do substantivo (“æ hus” em vez de “huset”), e no sul da Jutlândia o sønderjysk cumprimenta com “mojn”, a qualquer hora do dia, tanto ao chegar quanto ao sair. Na ilha de Bornholm, o bornholmsk soa tão diferente que muitos dinamarqueses o acham parecido com o sueco. O Reino da Dinamarca inclui também as Ilhas Faroé e a Groenlândia, que têm autonomia e línguas próprias: o feroês e o groenlandês (kalaallisut), língua oficial da Groenlândia desde 2009. No sul da Jutlândia vive uma minoria de língua alemã desde que a região voltou à Dinamarca, em 1920, e do outro lado da fronteira, no norte da Alemanha, vive uma minoria dinamarquesa.',
       culture_tip:
-        'Dinamarqueses, noruegueses e suecos costumam conversar cada um na sua língua, e isso tem nome: «nabosprog» (línguas vizinhas). A leitura é fácil entre dinamarquês e norueguês, mas o dinamarquês falado é o mais difícil para os vizinhos, por causa das consoantes que somem e das muitas vogais. Nas Faroé e na Groenlândia, algumas palavras locais são um gesto de respeito: «takk» em feroês e «qujanaq» em groenlandês querem dizer «obrigado». E nunca chame um sønderjyde de alemão: a fronteira de 1920 ainda é um tema de orgulho.',
+        'Dinamarqueses, noruegueses e suecos costumam conversar cada um na sua língua, e isso tem nome: “nabosprog” (línguas vizinhas). A leitura é fácil entre dinamarquês e norueguês, mas o dinamarquês falado é o mais difícil para os vizinhos, por causa das consoantes que somem e das muitas vogais. Nas Faroé e na Groenlândia, algumas palavras locais são um gesto de respeito: “takk” em feroês e “qujanaq” em groenlandês querem dizer “obrigado”. E nunca chame um sønderjyde de alemão: a fronteira de 1920 ainda é um tema de orgulho.',
       grammar_why:
-        'Dinamarquês, norueguês (bokmål) e sueco compartilham a gramática: V2, artigo definido no fim do substantivo e verbos que não mudam com a pessoa. As diferenças estão na grafia, na pronúncia e no vocabulário: o norueguês tira o «d» mudo de «hvad», e o sueco escreve «jag» (eu) e «vad» (o quê) onde o dinamarquês tem «jeg» e «hvad». Há falsos amigos que pregam peças: «rolig» quer dizer «calmo» em dinamarquês, mas «engraçado» em sueco. Nos dialetos, a variação vai além do sotaque: o vestjysk põe o artigo antes do substantivo («æ hus»), e o bornholmsk ainda tem três gêneros (masculino, feminino e neutro), como o dinamarquês antigo. Na escrita, porém, todos usam o mesmo rigsdansk, e é ele que você deve usar em textos formais.',
+        'Dinamarquês, norueguês (bokmål) e sueco compartilham a gramática: V2, artigo definido no fim do substantivo e verbos que não mudam com a pessoa. As diferenças estão na grafia, na pronúncia e no vocabulário: o norueguês tira o “d” mudo de “hvad”, e o sueco escreve “jag” (eu) e “vad” (o quê) onde o dinamarquês tem “jeg” e “hvad”. Há falsos amigos que pregam peças: “rolig” quer dizer “calmo” em dinamarquês, mas “engraçado” em sueco. Nos dialetos, a variação vai além do sotaque: o vestjysk põe o artigo antes do substantivo (“æ hus”), e o bornholmsk ainda tem três gêneros (masculino, feminino e neutro), como o dinamarquês antigo. Na escrita, porém, todos usam o mesmo rigsdansk, e é ele que você deve usar em textos formais.',
       grammar_examples: [
         ['Jeg forstår godt norsk, når jeg læser det, men svensk er sværere at høre.', 'Eu entendo bem o norueguês quando leio, mas o sueco é mais difícil de entender falado.'],
-        ['I Vestjylland siger mange «æ hus» i stedet for «huset».', 'No oeste da Jutlândia, muita gente diz «æ hus» em vez de «huset».'],
+        ['I Vestjylland siger mange “æ hus” i stedet for “huset”.', 'No oeste da Jutlândia, muita gente diz “æ hus” em vez de “huset”.'],
         ['På Færøerne taler man færøsk, men alle lærer også dansk i skolen.', 'Nas Ilhas Faroé se fala feroês, mas todos também aprendem dinamarquês na escola.'],
         ['Grønlandsk er det officielle sprog i Grønland.', 'O groenlandês é a língua oficial da Groenlândia.'],
       ],
@@ -1706,10 +1706,10 @@ export const UNITS_DA: UnitSeed[] = [
         words: ['mojn', 'udtale', 'tosproget', 'lokal', 'genkende', 'typisk'],
         cloze: [
           {
-            sentence: 'Min mormor kommer fra Sønderjylland, og hun siger altid «___», både når hun kommer, og når hun går.',
+            sentence: 'Min mormor kommer fra Sønderjylland, og hun siger altid “___”, både når hun kommer, og når hun går.',
             answer: 'mojn',
             options: ['mojn', 'goddag', 'godnat'],
-            translation: 'Minha avó é do sul da Jutlândia e sempre diz «mojn», tanto quando chega quanto quando vai embora.',
+            translation: 'Minha avó é do sul da Jutlândia e sempre diz “mojn”, tanto quando chega quanto quando vai embora.',
           },
           {
             sentence: 'Man kan ___ en jyde på udtalen allerede efter to sætninger.',
@@ -1728,14 +1728,14 @@ export const UNITS_DA: UnitSeed[] = [
           bot: 'Æ hus ligger lige ved æ kirke. Forstår du, hvad jeg siger? Jeg er fra Vestjylland.',
           botTranslation: 'A casa fica bem do lado da igreja. Você entende o que eu estou dizendo? Eu sou do oeste da Jutlândia.',
           expected: [
-            'Ja, jeg forstår det godt. På vestjysk står artiklen foran ordet, så «æ hus» betyder «huset». Det er spændende at høre en lokal dialekt.',
+            'Ja, jeg forstår det godt. På vestjysk står artiklen foran ordet, så “æ hus” betyder “huset”. Det er spændende at høre en lokal dialekt.',
             'æ hus',
             'huset',
             'dialekt',
           ],
           hint: 'Mostre que entendeu, explique em dinamarquês padrão o artigo anteposto do vestjysk e comente o dialeto com simpatia.',
         },
-        communityPrompt: 'Escreva em dinamarquês 4 frases comparando um sotaque ou dialeto do Brasil com um dialeto dinamarquês desta lição, usando pelo menos uma passiva com «blive» (bliver udtalt, bliver brugt).',
+        communityPrompt: 'Escreva em dinamarquês 4 frases comparando um sotaque ou dialeto do Brasil com um dialeto dinamarquês desta lição, usando pelo menos uma passiva com “blive” (bliver udtalt, bliver brugt).',
       },
       {
         id: 'da-u13-l2',
@@ -1750,10 +1750,10 @@ export const UNITS_DA: UnitSeed[] = [
             translation: 'O norueguês e o dinamarquês se parecem muito na escrita.',
           },
           {
-            sentence: 'Min svenske kollega sagde, at filmen var «rolig», så jeg blev helt ___: Var den kedelig eller sjov?',
+            sentence: 'Min svenske kollega sagde, at filmen var “rolig”, så jeg blev helt ___: Var den kedelig eller sjov?',
             answer: 'forvirret',
             options: ['forvirret', 'forvirrende', 'forvirre'],
-            translation: 'Meu colega sueco disse que o filme era «rolig», e eu fiquei totalmente confuso: era parado ou engraçado?',
+            translation: 'Meu colega sueco disse que o filme era “rolig”, e eu fiquei totalmente confuso: era parado ou engraçado?',
           },
           {
             sentence: 'Til mødet i Stockholm havde vi ikke brug for en ___: Alle talte deres eget sprog.',
@@ -1773,7 +1773,7 @@ export const UNITS_DA: UnitSeed[] = [
           ],
           hint: 'Explique o que as três línguas têm em comum e onde o dinamarquês complica a conversa.',
         },
-        communityPrompt: 'Compare em dinamarquês, em 4 frases, a relação entre português e espanhol com a relação entre dinamarquês e norueguês. Use «ligne hinanden» e pelo menos um falso amigo.',
+        communityPrompt: 'Compare em dinamarquês, em 4 frases, a relação entre português e espanhol com a relação entre dinamarquês e norueguês. Use “ligne hinanden” e pelo menos um falso amigo.',
       },
       {
         id: 'da-u13-l3',
@@ -1804,14 +1804,14 @@ export const UNITS_DA: UnitSeed[] = [
           bot: 'Du skal til Nuuk og arbejde i et halvt år. Hvad vil du gerne vide om sproget og kulturen i Grønland?',
           botTranslation: 'Você vai para Nuuk trabalhar por meio ano. O que você gostaria de saber sobre a língua e a cultura da Groenlândia?',
           expected: [
-            'Jeg vil gerne lære lidt grønlandsk, for det er det officielle sprog. Jeg vil for eksempel sige «qujanaq» i stedet for «tak». Jeg vil også vide, hvordan man viser respekt for den lokale kultur.',
+            'Jeg vil gerne lære lidt grønlandsk, for det er det officielle sprog. Jeg vil for eksempel sige “qujanaq” i stedet for “tak”. Jeg vil også vide, hvordan man viser respekt for den lokale kultur.',
             'grønlandsk',
             'qujanaq',
             'kultur',
           ],
           hint: 'Mostre interesse pela língua groenlandesa, use uma palavra local e fale de respeito à cultura.',
         },
-        communityPrompt: 'Explique em dinamarquês, em 5 frases e em tom neutro, o que é o rigsfællesskab e que línguas se falam nele. Use pelo menos uma oração relativa com «som» ou «der».',
+        communityPrompt: 'Explique em dinamarquês, em 5 frases e em tom neutro, o que é o rigsfællesskab e que línguas se falam nele. Use pelo menos uma oração relativa com “som” ou “der”.',
       },
       {
         id: 'da-u13-p',
@@ -1831,7 +1831,7 @@ export const UNITS_DA: UnitSeed[] = [
           ],
           hint: 'Organize a resposta: a língua padrão, os dialetos, as línguas do Reino, a minoria alemã e os vizinhos escandinavos.',
         },
-        communityPrompt: 'Escreva em dinamarquês um texto de 8–10 frases para um blog de viagem sobre a variação do dinamarquês: um dialeto, as Faroé ou a Groenlândia e o «nabosprog», com um exemplo de cada.',
+        communityPrompt: 'Escreva em dinamarquês um texto de 8–10 frases para um blog de viagem sobre a variação do dinamarquês: um dialeto, as Faroé ou a Groenlândia e o “nabosprog”, com um exemplo de cada.',
       },
     ],
   },
@@ -1848,11 +1848,11 @@ export const UNITS_DA: UnitSeed[] = [
       title: 'Do kancellistil ao klarsprog',
       emoji: '📰',
       history:
-        'Durante séculos, as cartas oficiais dinamarquesas seguiram o «kancellistil», o estilo pesado da antiga chancelaria real, cheio de substantivos, voz passiva e frases longas. Nas últimas décadas, o movimento do «klarsprog» (linguagem clara) passou a incentivar repartições e empresas a escrever de forma simples: frases curtas, verbos em vez de substantivos, o leitor tratado por «du» e a informação mais importante primeiro. O jornalismo segue a «nyhedstrekanten», a pirâmide invertida: o essencial vem logo no primeiro parágrafo. Na universidade, o mestrado (kandidatuddannelse) termina com o «speciale», uma dissertação escrita que costuma ser avaliada pelo orientador e por um examinador externo, o «censor».',
+        'Durante séculos, as cartas oficiais dinamarquesas seguiram o “kancellistil”, o estilo pesado da antiga chancelaria real, cheio de substantivos, voz passiva e frases longas. Nas últimas décadas, o movimento do “klarsprog” (linguagem clara) passou a incentivar repartições e empresas a escrever de forma simples: frases curtas, verbos em vez de substantivos, o leitor tratado por “du” e a informação mais importante primeiro. O jornalismo segue a “nyhedstrekanten”, a pirâmide invertida: o essencial vem logo no primeiro parágrafo. Na universidade, o mestrado (kandidatuddannelse) termina com o “speciale”, uma dissertação escrita que costuma ser avaliada pelo orientador e por um examinador externo, o “censor”.',
       culture_tip:
-        'As cartas públicas dinamarquesas hoje chegam quase todas pelo correio digital, e a repartição trata você por «du»: o «De» formal ficou reservado a situações muito cerimoniosas. Se uma carta estiver confusa, é normal ligar e pedir uma explicação: «Hvad betyder det konkret for mig?». Nos jornais, repare na diferença entre a notícia (nyhed), neutra, e os textos de opinião assinados, como o «debatindlæg» e a «kronik».',
+        'As cartas públicas dinamarquesas hoje chegam quase todas pelo correio digital, e a repartição trata você por “du”: o “De” formal ficou reservado a situações muito cerimoniosas. Se uma carta estiver confusa, é normal ligar e pedir uma explicação: “Hvad betyder det konkret for mig?”. Nos jornais, repare na diferença entre a notícia (nyhed), neutra, e os textos de opinião assinados, como o “debatindlæg” e a “kronik”.',
       grammar_why:
-        'O texto especializado dinamarquês tem três marcas. A primeira é a passiva com -s, típica de regras e instruções: «Ansøgningen skal sendes senest den 1. maj» (o pedido deve ser enviado até 1º de maio). A segunda é o excesso de substantivos, que os dinamarqueses chamam de «navneordssyge» (doença dos substantivos): «Der foretages en undersøgelse af sagen» fica mais claro como «Vi undersøger sagen». A terceira é a ordem da informação: no klarsprog e na notícia, o mais importante vem primeiro, e cada frase carrega uma ideia só. No texto acadêmico, a passiva com o sujeito formal «det» deixa a frase impessoal («I dette speciale undersøges det, hvordan…»), mas o «jeg» e o «vi» também são aceitos hoje e costumam deixar o texto mais claro.',
+        'O texto especializado dinamarquês tem três marcas. A primeira é a passiva com -s, típica de regras e instruções: “Ansøgningen skal sendes senest den 1. maj” (o pedido deve ser enviado até 1º de maio). A segunda é o excesso de substantivos, que os dinamarqueses chamam de “navneordssyge” (doença dos substantivos): “Der foretages en undersøgelse af sagen” fica mais claro como “Vi undersøger sagen”. A terceira é a ordem da informação: no klarsprog e na notícia, o mais importante vem primeiro, e cada frase carrega uma ideia só. No texto acadêmico, a passiva com o sujeito formal “det” deixa a frase impessoal (“I dette speciale undersøges det, hvordan…”), mas o “jeg” e o “vi” também são aceitos hoje e costumam deixar o texto mais claro.',
       grammar_examples: [
         ['Ansøgningen skal sendes senest den 1. maj.', 'O pedido deve ser enviado até 1º de maio.'],
         ['Der foretages en undersøgelse af sagen. → Vi undersøger sagen.', 'Realiza-se uma investigação do caso. → Nós investigamos o caso.'],
@@ -1888,17 +1888,17 @@ export const UNITS_DA: UnitSeed[] = [
           },
         ],
         voice: {
-          bot: 'Jeg har fået et brev fra kommunen: «Der er truffet afgørelse om afslag på Deres ansøgning om boligstøtte.» Hvad betyder det egentlig?',
-          botTranslation: 'Recebi uma carta da prefeitura: «Foi tomada a decisão de indeferimento do seu pedido de auxílio-moradia.» O que isso quer dizer, afinal?',
+          bot: 'Jeg har fået et brev fra kommunen: “Der er truffet afgørelse om afslag på Deres ansøgning om boligstøtte.” Hvad betyder det egentlig?',
+          botTranslation: 'Recebi uma carta da prefeitura: “Foi tomada a decisão de indeferimento do seu pedido de auxílio-moradia.” O que isso quer dizer, afinal?',
           expected: [
-            'Det betyder, at kommunen har sagt nej til din ansøgning. På klarsprog kunne man skrive: «Vi har desværre sagt nej til din ansøgning om boligstøtte.»',
+            'Det betyder, at kommunen har sagt nej til din ansøgning. På klarsprog kunne man skrive: “Vi har desværre sagt nej til din ansøgning om boligstøtte.”',
             'sagt nej',
             'ansøgning',
             'klarsprog',
           ],
-          hint: 'Traduza o «kancellistil» para uma frase simples, com sujeito, verbo ativo e o leitor tratado por «du».',
+          hint: 'Traduza o “kancellistil” para uma frase simples, com sujeito, verbo ativo e o leitor tratado por “du”.',
         },
-        communityPrompt: 'Reescreva em klarsprog a frase «Der skal ske indsendelse af dokumentationen inden fristens udløb» e explique em português, em 2 frases, o que você mudou.',
+        communityPrompt: 'Reescreva em klarsprog a frase “Der skal ske indsendelse af dokumentationen inden fristens udløb” e explique em português, em 2 frases, o que você mudou.',
       },
       {
         id: 'da-u14-l2',
@@ -1934,9 +1934,9 @@ export const UNITS_DA: UnitSeed[] = [
             'ifølge politiet',
             'storm',
           ],
-          hint: 'Comece pelo fato mais importante (o quê, onde, por quê), cite a fonte com «ifølge» e termine com o conselho prático.',
+          hint: 'Comece pelo fato mais importante (o quê, onde, por quê), cite a fonte com “ifølge” e termine com o conselho prático.',
         },
-        communityPrompt: 'Escreva em dinamarquês uma notícia curta (5 frases) sobre um acontecimento inventado na sua cidade, na ordem da pirâmide invertida, com uma manchete (overskrift) e uma fonte citada com «ifølge».',
+        communityPrompt: 'Escreva em dinamarquês uma notícia curta (5 frases) sobre um acontecimento inventado na sua cidade, na ordem da pirâmide invertida, com uma manchete (overskrift) e uma fonte citada com “ifølge”.',
       },
       {
         id: 'da-u14-l3',
@@ -1972,7 +1972,7 @@ export const UNITS_DA: UnitSeed[] = [
             'analyse',
             'usikkert',
           ],
-          hint: 'Apresente a conclusão, diga em que dados ela se apoia e reconheça um limite do estudo com «dog».',
+          hint: 'Apresente a conclusão, diga em que dados ela se apoia e reconheça um limite do estudo com “dog”.',
         },
         communityPrompt: 'Escreva em dinamarquês o resumo (abstract) de um trabalho imaginário em 5 frases: objetivo, método, dados, resultado e limitação, com pelo menos duas passivas (-s ou blive).',
       },
@@ -1983,15 +1983,15 @@ export const UNITS_DA: UnitSeed[] = [
         words: [],
         cloze: [],
         voice: {
-          bot: 'Du arbejder i kommunen og skal omskrive et brev. Originalen lyder: «Ved manglende indbetaling inden fristens udløb vil sagen blive overgivet til inkasso.» Hvordan skriver du det på klarsprog, og hvorfor?',
-          botTranslation: 'Você trabalha na prefeitura e precisa reescrever uma carta. O original diz: «Em caso de falta de pagamento antes do vencimento do prazo, o processo será encaminhado à cobrança.» Como você escreve isso em linguagem clara, e por quê?',
+          bot: 'Du arbejder i kommunen og skal omskrive et brev. Originalen lyder: “Ved manglende indbetaling inden fristens udløb vil sagen blive overgivet til inkasso.” Hvordan skriver du det på klarsprog, og hvorfor?',
+          botTranslation: 'Você trabalha na prefeitura e precisa reescrever uma carta. O original diz: “Em caso de falta de pagamento antes do vencimento do prazo, o processo será encaminhado à cobrança.” Como você escreve isso em linguagem clara, e por quê?',
           expected: [
-            'Jeg ville skrive: «Hvis du ikke betaler, før fristen udløber, sender vi sagen til inkasso.» Sætningen er stadig præcis, men den bruger verber i stedet for navneord, og den taler direkte til læseren.',
+            'Jeg ville skrive: “Hvis du ikke betaler, før fristen udløber, sender vi sagen til inkasso.” Sætningen er stadig præcis, men den bruger verber i stedet for navneord, og den taler direkte til læseren.',
             'hvis du ikke betaler',
             'fristen',
             'læseren',
           ],
-          hint: 'Transforme os substantivos em verbos, troque a passiva pela ativa, trate o leitor por «du» e justifique cada mudança.',
+          hint: 'Transforme os substantivos em verbos, troque a passiva pela ativa, trate o leitor por “du” e justifique cada mudança.',
         },
         communityPrompt: 'Escreva em dinamarquês dois textos sobre o mesmo fato (o fechamento de uma biblioteca): uma carta oficial em klarsprog e uma notícia de jornal em pirâmide invertida, com 5 frases cada.',
       },
@@ -2010,16 +2010,16 @@ export const UNITS_DA: UnitSeed[] = [
       title: 'O dinamarquês da literatura',
       emoji: '📜',
       history:
-        'Hans Christian Andersen (1805–1875), nascido em Odense, escreveu mais de 150 contos de fadas, como «Den grimme ælling» (O patinho feio) e «Kejserens nye klæder» (A roupa nova do imperador), traduzidos para mais de cem línguas. Søren Kierkegaard (1813–1855), de Copenhague, é considerado o pai do existencialismo e publicou muitas obras com pseudônimos, como «Enten – Eller» (Ou isto, ou aquilo, 1843). J. P. Jacobsen (1847–1885) escreveu o romance «Niels Lyhne» (1880), que o poeta Rilke admirava, e Herman Bang (1857–1912) renovou a prosa com o estilo impressionista de «Ved Vejen» (1886). Todos escreveram antes da reforma ortográfica de 1948, que trocou o «aa» por «å» e passou os substantivos para a minúscula.',
+        'Hans Christian Andersen (1805–1875), nascido em Odense, escreveu mais de 150 contos de fadas, como “Den grimme ælling” (O patinho feio) e “Kejserens nye klæder” (A roupa nova do imperador), traduzidos para mais de cem línguas. Søren Kierkegaard (1813–1855), de Copenhague, é considerado o pai do existencialismo e publicou muitas obras com pseudônimos, como “Enten – Eller” (Ou isto, ou aquilo, 1843). J. P. Jacobsen (1847–1885) escreveu o romance “Niels Lyhne” (1880), que o poeta Rilke admirava, e Herman Bang (1857–1912) renovou a prosa com o estilo impressionista de “Ved Vejen” (1886). Todos escreveram antes da reforma ortográfica de 1948, que trocou o “aa” por “å” e passou os substantivos para a minúscula.',
       culture_tip:
-        'Em Odense dá para visitar o museu dedicado a Andersen e a casa onde ele passou a infância; em Copenhague, a estátua da Pequena Sereia, inspirada num conto dele, está no porto desde 1913. Os provérbios (ordsprog) ainda aparecem em conversas e manchetes: «Borte godt, men hjemme bedst» («longe é bom, mas em casa é melhor») é o nosso «lar, doce lar». A grafia antiga sobrevive em nomes: Aalborg nunca deixou o «aa», e Aarhus voltou a usá-lo oficialmente em 2011.',
+        'Em Odense dá para visitar o museu dedicado a Andersen e a casa onde ele passou a infância; em Copenhague, a estátua da Pequena Sereia, inspirada num conto dele, está no porto desde 1913. Os provérbios (ordsprog) ainda aparecem em conversas e manchetes: “Borte godt, men hjemme bedst” (“longe é bom, mas em casa é melhor”) é o nosso “lar, doce lar”. A grafia antiga sobrevive em nomes: Aalborg nunca deixou o “aa”, e Aarhus voltou a usá-lo oficialmente em 2011.',
       grammar_why:
-        'Os textos anteriores a 1948 seguem outra ortografia: todos os substantivos com maiúscula (como no alemão), «aa» no lugar de «å» e as formas «kunde», «skulde» e «vilde» no lugar de «kunne», «skulle» e «ville». No século XIX, a escrita ainda tinha formas de plural no verbo, como «vi ere» (nós somos) e «de vare» (eles eram), que a fala já não usava, e grafias como «gjør» por «gør». A prosa literária usa o pretérito narrativo, períodos longos e muita subordinação, enquanto os provérbios preferem o presente genérico, o «man» impessoal e frases curtas e simétricas: «Man skal ikke skue hunden på hårene» (não se deve julgar o cão pelo pelo, ou seja, as aparências enganam).',
+        'Os textos anteriores a 1948 seguem outra ortografia: todos os substantivos com maiúscula (como no alemão), “aa” no lugar de “å” e as formas “kunde”, “skulde” e “vilde” no lugar de “kunne”, “skulle” e “ville”. No século XIX, a escrita ainda tinha formas de plural no verbo, como “vi ere” (nós somos) e “de vare” (eles eram), que a fala já não usava, e grafias como “gjør” por “gør”. A prosa literária usa o pretérito narrativo, períodos longos e muita subordinação, enquanto os provérbios preferem o presente genérico, o “man” impessoal e frases curtas e simétricas: “Man skal ikke skue hunden på hårene” (não se deve julgar o cão pelo pelo, ou seja, as aparências enganam).',
       grammar_examples: [
-        ['«Det gjør ikke noget at være født i Andegaarden, naar man kun har ligget i et Svaneæg!» (Den grimme ælling, 1843)', '«Não faz mal nascer no quintal dos patos quando se esteve num ovo de cisne!» (O patinho feio, 1843)'],
-        ['«Men han har jo ikke noget paa!» sagde et lille Barn. (Kejserens nye klæder, 1837)', '«Mas ele não está vestindo nada!», disse uma criancinha. (A roupa nova do imperador, 1837)'],
+        ['“Det gjør ikke noget at være født i Andegaarden, naar man kun har ligget i et Svaneæg!” (Den grimme ælling, 1843)', '“Não faz mal nascer no quintal dos patos quando se esteve num ovo de cisne!” (O patinho feio, 1843)'],
+        ['“Men han har jo ikke noget paa!” sagde et lille Barn. (Kejserens nye klæder, 1837)', '“Mas ele não está vestindo nada!”, disse uma criancinha. (A roupa nova do imperador, 1837)'],
         ['Livet forstås baglæns, men må leves forlæns.', 'A vida se entende olhando para trás, mas precisa ser vivida olhando para a frente. (Kierkegaard, forma moderna de uma anotação de diário de 1843)'],
-        ['Når katten er ude, spiller musene på bordet.', 'Quando o gato sai, os ratos fazem a festa (literalmente: «brincam em cima da mesa»).'],
+        ['Når katten er ude, spiller musene på bordet.', 'Quando o gato sai, os ratos fazem a festa (literalmente: “brincam em cima da mesa”).'],
       ],
       character_guide: null,
     },
@@ -2037,10 +2037,10 @@ export const UNITS_DA: UnitSeed[] = [
             translation: 'H. C. Andersen publicou os seus primeiros contos em 1835, e desde então eles foram traduzidos para mais de cem línguas.',
           },
           {
-            sentence: '«Den grimme ælling» handler om en fugl, der føler sig anderledes, og mange læsere synes, at historien er dybt ___.',
+            sentence: '“Den grimme ælling” handler om en fugl, der føler sig anderledes, og mange læsere synes, at historien er dybt ___.',
             answer: 'rørende',
             options: ['rørende', 'rørt', 'rører'],
-            translation: '«O patinho feio» fala de uma ave que se sente diferente, e muitos leitores acham a história profundamente comovente.',
+            translation: '“O patinho feio” fala de uma ave que se sente diferente, e muitos leitores acham a história profundamente comovente.',
           },
           {
             sentence: 'Selvom Andersen voksede op som søn af en fattig skomager i Odense, ___ han verdensberømt.',
@@ -2053,14 +2053,14 @@ export const UNITS_DA: UnitSeed[] = [
           bot: 'Hvilket af H.C. Andersens eventyr kan du bedst lide, og hvorfor? Og synes du, at det kun er for børn?',
           botTranslation: 'De qual conto de H. C. Andersen você mais gosta, e por quê? E você acha que ele é só para crianças?',
           expected: [
-            'Jeg kan bedst lide «Den grimme ælling», fordi den handler om at være anderledes. Ællingen bliver drillet af alle, men til sidst opdager den, at den er en svane. Det er ikke kun en historie for børn; den handler også om ensomhed og om at finde sin plads i verden.',
+            'Jeg kan bedst lide “Den grimme ælling”, fordi den handler om at være anderledes. Ællingen bliver drillet af alle, men til sidst opdager den, at den er en svane. Det er ikke kun en historie for børn; den handler også om ensomhed og om at finde sin plads i verden.',
             'Den grimme ælling',
             'anderledes',
             'svane',
           ],
           hint: 'Escolha um conto, resuma o enredo no presente, interprete o tema e responda à segunda pergunta com um argumento.',
         },
-        communityPrompt: 'Reconte em dinamarquês, em 6 frases no pretérito, um conto de Andersen de que você se lembre, e termine com uma frase sobre a «moral» da história.',
+        communityPrompt: 'Reconte em dinamarquês, em 6 frases no pretérito, um conto de Andersen de que você se lembre, e termine com uma frase sobre a “moral” da história.',
       },
       {
         id: 'da-u15-l2',
@@ -2075,16 +2075,16 @@ export const UNITS_DA: UnitSeed[] = [
             translation: 'Kierkegaard publicou muitos dos seus livros sob pseudônimo, para que o leitor não os lesse como opiniões dele próprio.',
           },
           {
-            sentence: 'I romanen «Niels Lyhne» ___ hovedpersonen allerede som barn troen på Gud.',
+            sentence: 'I romanen “Niels Lyhne” ___ hovedpersonen allerede som barn troen på Gud.',
             answer: 'mister',
             options: ['mister', 'miste', 'mistet'],
-            translation: 'No romance «Niels Lyhne», o protagonista perde a fé em Deus ainda criança.',
+            translation: 'No romance “Niels Lyhne”, o protagonista perde a fé em Deus ainda criança.',
           },
           {
-            sentence: 'Herman Bangs roman «Ved Vejen» handler om en ___ kvinde, der lever et stille liv i en lille by ved jernbanen.',
+            sentence: 'Herman Bangs roman “Ved Vejen” handler om en ___ kvinde, der lever et stille liv i en lille by ved jernbanen.',
             answer: 'ensom',
             options: ['ensom', 'ensomt', 'ensomme'],
-            translation: 'O romance «Ved Vejen», de Herman Bang, fala de uma mulher solitária que leva uma vida quieta numa cidadezinha à beira da ferrovia.',
+            translation: 'O romance “Ved Vejen”, de Herman Bang, fala de uma mulher solitária que leva uma vida quieta numa cidadezinha à beira da ferrovia.',
           },
         ],
         voice: {
@@ -2096,9 +2096,9 @@ export const UNITS_DA: UnitSeed[] = [
             'vælge',
             'tvivler',
           ],
-          hint: 'Interprete a frase com as suas palavras, ligue-a à escolha e à dúvida e use pelo menos uma concessiva com «selvom».',
+          hint: 'Interprete a frase com as suas palavras, ligue-a à escolha e à dúvida e use pelo menos uma concessiva com “selvom”.',
         },
-        communityPrompt: 'Escreva em dinamarquês um parágrafo de 6 frases sobre uma escolha difícil da sua vida que você só entendeu depois, citando a frase de Kierkegaard e usando «tvivle», «længsel» ou «angst».',
+        communityPrompt: 'Escreva em dinamarquês um parágrafo de 6 frases sobre uma escolha difícil da sua vida que você só entendeu depois, citando a frase de Kierkegaard e usando “tvivle”, “længsel” ou “angst”.',
       },
       {
         id: 'da-u15-l3',
@@ -2107,10 +2107,10 @@ export const UNITS_DA: UnitSeed[] = [
         words: ['gammeldags', 'stave', 'bogstav', 'historisk', 'ældgammel', 'alfabet'],
         cloze: [
           {
-            sentence: 'Før retskrivningsreformen i 1948 ___ man «aa» i stedet for «å» og alle navneord med stort.',
+            sentence: 'Før retskrivningsreformen i 1948 ___ man “aa” i stedet for “å” og alle navneord med stort.',
             answer: 'skrev',
             options: ['skrev', 'skriver', 'skrevet'],
-            translation: 'Antes da reforma ortográfica de 1948, escrevia-se «aa» em vez de «å» e todos os substantivos com maiúscula.',
+            translation: 'Antes da reforma ortográfica de 1948, escrevia-se “aa” em vez de “å” e todos os substantivos com maiúscula.',
           },
           {
             sentence: 'Man skal ikke skue hunden på ___.',
@@ -2134,9 +2134,9 @@ export const UNITS_DA: UnitSeed[] = [
             'undskyld',
             'kagen',
           ],
-          hint: 'Responda com o provérbio certo, peça desculpas com humor e use a forma definida de «kage».',
+          hint: 'Responda com o provérbio certo, peça desculpas com humor e use a forma definida de “kage”.',
         },
-        communityPrompt: 'Transcreva para a ortografia moderna a frase de Andersen «Det gjør ikke noget at være født i Andegaarden, naar man kun har ligget i et Svaneæg!» e explique em português quais mudanças vêm da reforma de 1948.',
+        communityPrompt: 'Transcreva para a ortografia moderna a frase de Andersen “Det gjør ikke noget at være født i Andegaarden, naar man kun har ligget i et Svaneæg!” e explique em português quais mudanças vêm da reforma de 1948.',
       },
       {
         id: 'da-u15-p',

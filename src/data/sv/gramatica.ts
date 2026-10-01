@@ -8,21 +8,21 @@ export const GRAMMAR_SV: GrammarTopic[] = [
     level: 'A1.1',
     title: 'Pronúncia: vogais longas e curtas, sj e tj, retroflexas e os dois acentos tonais',
     emoji: '🔤',
-    summary: 'O sueco tem nove vogais, e cada uma existe em versão longa e curta: «tak» (teto) não é «tack» (obrigado). Tem dois sons que o português não conhece, o sj [ɧ] de «sju» e o tj [ɕ] de «tjugo», junta r + consoante num som só (bord, barn, Lars) e ainda canta: «anden» pode ser o pato ou o espírito, dependendo da melodia.',
+    summary: 'O sueco tem nove vogais, e cada uma existe em versão longa e curta: “tak” (teto) não é “tack” (obrigado). Tem dois sons que o português não conhece, o sj [ɧ] de “sju” e o tj [ɕ] de “tjugo”, junta r + consoante num som só (bord, barn, Lars) e ainda canta: “anden” pode ser o pato ou o espírito, dependendo da melodia.',
     sections: [
       {
-        text: 'O alfabeto sueco tem 29 letras: as 26 do nosso, mais å, ä e ö, que ficam no fim do dicionário, depois do z. Não são «a com enfeite»: são letras próprias, com sons próprios. E nada de æ ou ø, que são do norueguês e do dinamarquês. A tônica cai quase sempre na primeira sílaba (SVEN-ska, FLICK-a), e o sueco não tem vogais nasais: «man» (homem) soa «man» com o n bem pronunciado, nunca «mã».',
+        text: 'O alfabeto sueco tem 29 letras: as 26 do nosso, mais å, ä e ö, que ficam no fim do dicionário, depois do z. Não são “a com enfeite”: são letras próprias, com sons próprios. E nada de æ ou ø, que são do norueguês e do dinamarquês. A tônica cai quase sempre na primeira sílaba (SVEN-ska, FLICK-a), e o sueco não tem vogais nasais: “man” (homem) soa “man” com o n bem pronunciado, nunca “mã”.',
       },
       {
         heading: 'Nove vogais, cada uma longa ou curta',
-        text: 'Na sílaba tônica, a regra é de gangorra: vogal longa + consoante curta, ou vogal curta + consoante longa. A consoante dobrada na escrita avisa que a vogal antes dela é curta (e a consoante se segura um pouco): «mat» [mɑːt] é comida, «matt» [matː] é fosco ou cansado. Atenção a três letras: o «o» muitas vezes soa «u» (bok = «buk»), o «u» é um som entre o nosso u e o i, com os lábios bem arredondados, e o «y» é um i de lábios em bico, como o «u» francês.',
+        text: 'Na sílaba tônica, a regra é de gangorra: vogal longa + consoante curta, ou vogal curta + consoante longa. A consoante dobrada na escrita avisa que a vogal antes dela é curta (e a consoante se segura um pouco): “mat” [mɑːt] é comida, “matt” [matː] é fosco ou cansado. Atenção a três letras: o “o” muitas vezes soa “u” (bok = “buk”), o “u” é um som entre o nosso u e o i, com os lábios bem arredondados, e o “y” é um i de lábios em bico, como o “u” francês.',
         table: {
           head: ['Letra', 'Longa', 'Exemplo', 'Curta', 'Exemplo'],
           rows: [
-            ['a', '[ɑː] (a fundo, quase «ó»)', 'mat (comida)', '[a]', 'katt (gato)'],
+            ['a', '[ɑː] (a fundo, quase “ó”)', 'mat (comida)', '[a]', 'katt (gato)'],
             ['e', '[eː] (ê bem fechado)', 'se (ver)', '[ɛ]', 'vecka (semana)'],
             ['i', '[iː]', 'fin (bonito)', '[ɪ]', 'flicka (menina)'],
-            ['o', '[uː] (soa «u»!)', 'bok (livro)', '[ɔ]', 'boll (bola)'],
+            ['o', '[uː] (soa “u”!)', 'bok (livro)', '[ɔ]', 'boll (bola)'],
             ['u', '[ʉː] (entre u e i)', 'hus (casa)', '[ɵ]', 'buss (ônibus)'],
             ['y', '[yː] (i com bico)', 'ny (novo)', '[ʏ]', 'nytt (novo, neutro)'],
             ['å', '[oː] (ô)', 'båt (barco)', '[ɔ]', 'åtta (oito)'],
@@ -33,7 +33,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Pares que só mudam pela duração',
-        text: 'Para o brasileiro, a vogal longa parece «arrastada» e a curta, «engolida». É isso mesmo: exagere no começo. Na vogal curta, a consoante seguinte fica mais longa, quase como o «pizza» italiano dito com calma.',
+        text: 'Para o brasileiro, a vogal longa parece “arrastada” e a curta, “engolida”. É isso mesmo: exagere no começo. Na vogal curta, a consoante seguinte fica mais longa, quase como o “pizza” italiano dito com calma.',
         table: {
           head: ['Longa', 'Sentido', 'Curta', 'Sentido'],
           rows: [
@@ -54,7 +54,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Os sons sj [ɧ] e tj [ɕ], e o g que vira j',
-        text: 'O sj [ɧ] é o som mais famoso do sueco: parece um «rr» carioca soprado com os lábios em bico, ou um «x» chiado lá do fundo da boca. Ele se escreve de vários jeitos (sj, skj, stj, sk antes de e, i, y, ä, ö). Já o tj [ɕ] é mais leve e mais na frente: fica entre o «x» de «xícara» e o «t» de «tia» no sotaque carioca, só que sem o t. E o k e o g amolecem antes das vogais «de frente» (e, i, y, ä, ö): o k vira tj, o g vira j. Diante de a, o, u, å, continuam duros.',
+        text: 'O sj [ɧ] é o som mais famoso do sueco: parece um “rr” carioca soprado com os lábios em bico, ou um “x” chiado lá do fundo da boca. Ele se escreve de vários jeitos (sj, skj, stj, sk antes de e, i, y, ä, ö). Já o tj [ɕ] é mais leve e mais na frente: fica entre o “x” de “xícara” e o “t” de “tia” no sotaque carioca, só que sem o t. E o k e o g amolecem antes das vogais “de frente” (e, i, y, ä, ö): o k vira tj, o g vira j. Diante de a, o, u, å, continuam duros.',
         table: {
           head: ['Som', 'IPA', 'Grafias', 'Exemplos'],
           rows: [
@@ -74,7 +74,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'r + consoante: as retroflexas',
-        text: 'No sueco padrão, o r se funde com o d, t, s, n e l que vêm logo depois, e os dois viram um som só, feito com a ponta da língua virada para trás (retroflexa), parecido com o r caipira de «porta». O «rs» soa quase como o nosso «x»: Lars é «Lax». A fusão acontece até entre palavras: «har du» soa «ha-ɖu». Em Skåne, no sul, onde o r é de garganta, as retroflexas não aparecem.',
+        text: 'No sueco padrão, o r se funde com o d, t, s, n e l que vêm logo depois, e os dois viram um som só, feito com a ponta da língua virada para trás (retroflexa), parecido com o r caipira de “porta”. O “rs” soa quase como o nosso “x”: Lars é “Lax”. A fusão acontece até entre palavras: “har du” soa “ha-ɖu”. Em Skåne, no sul, onde o r é de garganta, as retroflexas não aparecem.',
         table: {
           head: ['Grafia', 'IPA', 'Exemplo', 'Português'],
           rows: [
@@ -93,7 +93,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Os dois acentos tonais',
-        text: 'É isso que dá ao sueco o seu jeito «cantado». O acento 1 (agudo) tem uma descida só, parecida com a nossa tônica normal. O acento 2 (grave) tem duas subidas, uma na sílaba tônica e outra depois: em Estocolmo soa como uma pergunta dentro da palavra. Regras práticas: palavras de uma sílaba têm sempre acento 1 (bil, hus), e a forma definida delas continua com acento 1 (bilen, huset); a maioria das palavras de duas sílabas terminadas em -a, -e, -ar, -or, -are tem acento 2 (flicka, pojke, bilar). No IPA, o acento 2 aparece com circunflexo na vogal tônica. Poucos pares mudam de sentido, e o contexto quase sempre salva, mas é a melodia que faz você soar sueco.',
+        text: 'É isso que dá ao sueco o seu jeito “cantado”. O acento 1 (agudo) tem uma descida só, parecida com a nossa tônica normal. O acento 2 (grave) tem duas subidas, uma na sílaba tônica e outra depois: em Estocolmo soa como uma pergunta dentro da palavra. Regras práticas: palavras de uma sílaba têm sempre acento 1 (bil, hus), e a forma definida delas continua com acento 1 (bilen, huset); a maioria das palavras de duas sílabas terminadas em -a, -e, -ar, -or, -are tem acento 2 (flicka, pojke, bilar). No IPA, o acento 2 aparece com circunflexo na vogal tônica. Poucos pares mudam de sentido, e o contexto quase sempre salva, mas é a melodia que faz você soar sueco.',
         table: {
           head: ['Acento 1', 'Sentido', 'Acento 2', 'Sentido'],
           rows: [
@@ -112,19 +112,19 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Ignorar a duração: dizer «tak» (teto) querendo agradecer. Obrigado é «tack», vogal curta e k segurado.',
-      'Ler o «o» sempre como «ó»: bok é «buk», sol é «sul», bo (morar) é «bu». O som de «ô» costuma vir escrito com å: båt, två.',
-      'Pronunciar sj como «s» + «j» ou como o nosso «x» de sempre: sju não é «siú» nem «xu», é o sopro [ɧ] com lábios em bico. E sk antes de e/i também é sj: sked, skön.',
-      'Endurecer o k antes de e, i, y, ä, ö: kyrka soa «tchýrka» (com o tj leve), kök soa «tchök». Mas há exceções de palavra nova, como «kille» (cara, rapaz), com k duro.',
-      'Separar o r do d, t, s, n: «bord» não é «bór-d», «barn» não é «bár-n», e «Lars» termina num som de «x». Pronuncie os dois como um só.',
-      'Nasalizar: «man», «han», «hon» terminam em n de verdade, com a língua no céu da boca, sem virar «mã», «rã», «rõ».',
+      'Ignorar a duração: dizer “tak” (teto) querendo agradecer. Obrigado é “tack”, vogal curta e k segurado.',
+      'Ler o “o” sempre como “ó”: bok é “buk”, sol é “sul”, bo (morar) é “bu”. O som de “ô” costuma vir escrito com å: båt, två.',
+      'Pronunciar sj como “s” + “j” ou como o nosso “x” de sempre: sju não é “siú” nem “xu”, é o sopro [ɧ] com lábios em bico. E sk antes de e/i também é sj: sked, skön.',
+      'Endurecer o k antes de e, i, y, ä, ö: kyrka soa “tchýrka” (com o tj leve), kök soa “tchök”. Mas há exceções de palavra nova, como “kille” (cara, rapaz), com k duro.',
+      'Separar o r do d, t, s, n: “bord” não é “bór-d”, “barn” não é “bár-n”, e “Lars” termina num som de “x”. Pronuncie os dois como um só.',
+      'Nasalizar: “man”, “han”, “hon” terminam em n de verdade, com a língua no céu da boca, sem virar “mã”, “rã”, “rõ”.',
     ],
     quiz: [
       {
-        question: 'Qual palavra quer dizer «obrigado»?',
+        question: 'Qual palavra quer dizer “obrigado”?',
         options: ['tak', 'tack', 'taak'],
         answer: 'tack',
-        explanation: 'Vogal curta + consoante dobrada: tack [takː]. «tak», com a longo, é teto.',
+        explanation: 'Vogal curta + consoante dobrada: tack [takː]. “tak”, com a longo, é teto.',
       },
       {
         question: 'Qual destas palavras começa com o som sj [ɧ]?',
@@ -133,22 +133,22 @@ export const GRAMMAR_SV: GrammarTopic[] = [
         explanation: 'sk antes de e, i, y, ä, ö soa [ɧ]: sked (colher). kyrka começa com o tj [ɕ], e katt com k duro.',
       },
       {
-        question: 'Como soa o «o» de «bok» (livro)?',
+        question: 'Como soa o “o” de “bok” (livro)?',
         options: ['[buːk]', '[bɔːk]', '[boːk]'],
         answer: '[buːk]',
-        explanation: 'O o longo sueco costuma soar [uː]: bok, sol, bo. O «ô» fechado geralmente se escreve com å (båt).',
+        explanation: 'O o longo sueco costuma soar [uː]: bok, sol, bo. O “ô” fechado geralmente se escreve com å (båt).',
       },
       {
-        question: 'Em «barn» (criança), o que acontece com o r e o n?',
+        question: 'Em “barn” (criança), o que acontece com o r e o n?',
         options: ['[bɑːrn]', '[bɑːɳ]', '[bɑːn]'],
         answer: '[bɑːɳ]',
         explanation: 'r + n se fundem na retroflexa [ɳ], feita com a ponta da língua virada para trás. O mesmo vale para rd, rt, rs e rl.',
       },
       {
-        question: 'Qual «anden» tem o acento 2 (a melodia de duas subidas)?',
+        question: 'Qual “anden” tem o acento 2 (a melodia de duas subidas)?',
         options: ['anden, o espírito', 'anden, o pato', 'os dois'],
         answer: 'anden, o espírito',
-        explanation: '«and» (pato) é monossílabo, e a forma definida mantém o acento 1. «ande» (espírito) tem duas sílabas em -e, e leva o acento 2.',
+        explanation: '“and” (pato) é monossílabo, e a forma definida mantém o acento 1. “ande” (espírito) tem duas sílabas em -e, e leva o acento 2.',
       },
     ],
   },
@@ -157,11 +157,11 @@ export const GRAMMAR_SV: GrammarTopic[] = [
     level: 'A1.1',
     title: 'Saudações, pronomes pessoais e o verbo vara (är)',
     emoji: '👋',
-    summary: 'Hej serve para quase tudo, e todo mundo se trata por «du», até o médico e o chefe. O verbo vara (ser e estar) tem uma forma só no presente: jag är, du är, vi är, de är. Os verbos suecos não mudam conforme a pessoa.',
+    summary: 'Hej serve para quase tudo, e todo mundo se trata por “du”, até o médico e o chefe. O verbo vara (ser e estar) tem uma forma só no presente: jag är, du är, vi är, de är. Os verbos suecos não mudam conforme a pessoa.',
     sections: [
       {
         heading: 'Cumprimentar e se despedir',
-        text: '«Hej» é o nosso «oi», mas serve de manhã, de tarde e de noite, com amigos, no banco ou na farmácia. Muita gente diz «hej hej», também na despedida. «God dag» existe, mas soa formal e antiquado. «Varsågod» é a palavra-coringa da gentileza: diz-se ao entregar algo, ao oferecer comida, ao abrir passagem e como resposta a «tack».',
+        text: '“Hej” é o nosso “oi”, mas serve de manhã, de tarde e de noite, com amigos, no banco ou na farmácia. Muita gente diz “hej hej”, também na despedida. “God dag” existe, mas soa formal e antiquado. “Varsågod” é a palavra-coringa da gentileza: diz-se ao entregar algo, ao oferecer comida, ao abrir passagem e como resposta a “tack”.',
         table: {
           head: ['Sueco', 'Quando', 'Português'],
           rows: [
@@ -174,7 +174,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
             ['Vi ses!', 'ao sair', 'A gente se vê!'],
             ['Ha det bra!', 'ao sair', 'Tudo de bom! Se cuida!'],
             ['Tack! / Tack så mycket! / Tusen tack!', 'agradecer', 'Obrigado! / Muito obrigado! / Mil vezes obrigado!'],
-            ['Varsågod! / Ingen orsak!', 'entregar algo; responder a «tack»', 'Aqui está! Pode se servir! / De nada!'],
+            ['Varsågod! / Ingen orsak!', 'entregar algo; responder a “tack”', 'Aqui está! Pode se servir! / De nada!'],
             ['Ursäkta!', 'pedir licença, chamar alguém', 'Com licença!'],
             ['Förlåt!', 'pedir desculpas', 'Desculpa!'],
           ],
@@ -189,12 +189,12 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Os pronomes pessoais',
-        text: 'Como no inglês, o sueco tem forma de sujeito e forma de objeto (jag × mig, como I × me). Algumas grafias enganam: «mig», «dig» e «sig» soam «mej», «dej», «sej»; «de» e «dem» soam os dois «dom»; e o «jag» costuma perder o g na fala: «ja». «Hen», o pronome sem gênero, está no dicionário da Academia Sueca desde 2015 e serve para quando o gênero não importa ou a pessoa prefere assim. E «ni» é «vocês», não um «senhor».',
+        text: 'Como no inglês, o sueco tem forma de sujeito e forma de objeto (jag × mig, como I × me). Algumas grafias enganam: “mig”, “dig” e “sig” soam “mej”, “dej”, “sej”; “de” e “dem” soam os dois “dom”; e o “jag” costuma perder o g na fala: “ja”. “Hen”, o pronome sem gênero, está no dicionário da Academia Sueca desde 2015 e serve para quando o gênero não importa ou a pessoa prefere assim. E “ni” é “vocês”, não um “senhor”.',
         table: {
           head: ['Pessoa', 'Sujeito', 'Objeto', 'Português'],
           rows: [
-            ['1ª sing.', 'jag («ja»)', 'mig («mej»)', 'eu / me, mim'],
-            ['2ª sing.', 'du', 'dig («dej»)', 'você, tu / te, você'],
+            ['1ª sing.', 'jag (“ja”)', 'mig (“mej”)', 'eu / me, mim'],
+            ['2ª sing.', 'du', 'dig (“dej”)', 'você, tu / te, você'],
             ['3ª sing. (homem)', 'han', 'honom', 'ele / o, ele'],
             ['3ª sing. (mulher)', 'hon', 'henne', 'ela / a, ela'],
             ['3ª sing. (sem gênero)', 'hen', 'hen, henom', 'ele ou ela'],
@@ -202,7 +202,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
             ['3ª sing. (coisa ett)', 'det', 'det', 'ele, ela (coisa); isso'],
             ['1ª pl.', 'vi', 'oss', 'nós / nos'],
             ['2ª pl.', 'ni', 'er', 'vocês / vocês'],
-            ['3ª pl.', 'de («dom»)', 'dem («dom»)', 'eles, elas / os, as'],
+            ['3ª pl.', 'de (“dom”)', 'dem (“dom”)', 'eles, elas / os, as'],
           ],
         },
         examples: [
@@ -214,7 +214,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'vara: ser e estar numa forma só',
-        text: 'O infinitivo é «vara», o presente é «är» [ɛːr] (na fala, muitas vezes só «é»), igual para todas as pessoas. Isso vale para todos os verbos suecos: nada de eu sou, tu és, nós somos. E «vara» cobre o ser e o estar: «Jag är trött» (estou cansado), «Jag är lärare» (sou professor). Repare: profissão e nacionalidade vêm sem artigo, como no português e diferente do inglês «I am a teacher».',
+        text: 'O infinitivo é “vara”, o presente é “är” [ɛːr] (na fala, muitas vezes só “é”), igual para todas as pessoas. Isso vale para todos os verbos suecos: nada de eu sou, tu és, nós somos. E “vara” cobre o ser e o estar: “Jag är trött” (estou cansado), “Jag är lärare” (sou professor). Repare: profissão e nacionalidade vêm sem artigo, como no português e diferente do inglês “I am a teacher”.',
         table: {
           head: ['Sueco', 'Português'],
           rows: [
@@ -236,47 +236,47 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Du com todo mundo',
-        text: 'No fim dos anos 1960, a Suécia passou pela «du-reformen»: em poucos anos, o tratamento com «du» substituiu os títulos e o «ni» de cortesia. Hoje se diz «du» ao médico, ao professor, ao chefe e ao atendente. O «ni» ficou para o plural (vocês); usado com uma pessoa só, soa distante ou antiquado. E um detalhe: para responder «sim» a uma pergunta negativa, o sueco usa «jo», não «ja».',
+        text: 'No fim dos anos 1960, a Suécia passou pela “du-reformen”: em poucos anos, o tratamento com “du” substituiu os títulos e o “ni” de cortesia. Hoje se diz “du” ao médico, ao professor, ao chefe e ao atendente. O “ni” ficou para o plural (vocês); usado com uma pessoa só, soa distante ou antiquado. E um detalhe: para responder “sim” a uma pergunta negativa, o sueco usa “jo”, não “ja”.',
       },
     ],
     pitfalls: [
-      'Conjugar o verbo pela pessoa: não existe «jag är, vi äro» no sueco moderno. É «är» para todos, e o mesmo vale para todos os verbos no presente (jag talar, vi talar).',
-      'Pôr artigo antes de profissão, pensando no inglês: «Hon är en läkare» soa estranho; diga «Hon är läkare».',
-      'Usar «ni» como «o senhor, a senhora» para ser educado: na Suécia de hoje, isso pode soar frio. Trate por «du».',
-      'Responder «ja» a uma pergunta negativa. «Är du inte trött?» — se está cansado, a resposta é «Jo!».',
-      'Ler «mig», «dig», «de» e «dem» como se escrevem: soam «mej», «dej», «dom», «dom».',
-      'Dizer «God natt» ao chegar num jantar: é só para a hora de dormir. Ao chegar, «Hej» ou «God kväll».',
+      'Conjugar o verbo pela pessoa: não existe “jag är, vi äro” no sueco moderno. É “är” para todos, e o mesmo vale para todos os verbos no presente (jag talar, vi talar).',
+      'Pôr artigo antes de profissão, pensando no inglês: “Hon är en läkare” soa estranho; diga “Hon är läkare”.',
+      'Usar “ni” como “o senhor, a senhora” para ser educado: na Suécia de hoje, isso pode soar frio. Trate por “du”.',
+      'Responder “ja” a uma pergunta negativa. “Är du inte trött?” — se está cansado, a resposta é “Jo!”.',
+      'Ler “mig”, “dig”, “de” e “dem” como se escrevem: soam “mej”, “dej”, “dom”, “dom”.',
+      'Dizer “God natt” ao chegar num jantar: é só para a hora de dormir. Ao chegar, “Hej” ou “God kväll”.',
     ],
     quiz: [
       {
-        question: 'Como se diz «Eles estão cansados»?',
+        question: 'Como se diz “Eles estão cansados”?',
         options: ['De är trötta.', 'De äro trötta.', 'Dem är trötta.'],
         answer: 'De är trötta.',
-        explanation: 'Sujeito é «de» (objeto é «dem», e os dois soam «dom»). «äro» é o plural antigo, que só aparece em textos velhos.',
+        explanation: 'Sujeito é “de” (objeto é “dem”, e os dois soam “dom”). “äro” é o plural antigo, que só aparece em textos velhos.',
       },
       {
-        question: 'Como se diz «Ela é médica»?',
+        question: 'Como se diz “Ela é médica”?',
         options: ['Hon är en läkare.', 'Hon är läkare.', 'Hon läkare är.'],
         answer: 'Hon är läkare.',
         explanation: 'Profissão vem sem artigo, como no português: Hon är läkare.',
       },
       {
-        question: 'Alguém pergunta «Talar du inte svenska?», e você fala. O que responde?',
+        question: 'Alguém pergunta “Talar du inte svenska?”, e você fala. O que responde?',
         options: ['Ja!', 'Jo!', 'Nej!'],
         answer: 'Jo!',
-        explanation: '«Jo» é o sim que contradiz uma pergunta negativa. «Ja» responde a perguntas afirmativas.',
+        explanation: '“Jo” é o sim que contradiz uma pergunta negativa. “Ja” responde a perguntas afirmativas.',
       },
       {
         question: 'Você chega a um jantar às oito da noite. O que diz?',
         options: ['God natt!', 'God kväll!', 'God morgon!'],
         answer: 'God kväll!',
-        explanation: '«God kväll» é a boa-noite da chegada. «God natt» é só para quando alguém vai dormir. E «Hej!» também serve.',
+        explanation: '“God kväll” é a boa-noite da chegada. “God natt” é só para quando alguém vai dormir. E “Hej!” também serve.',
       },
       {
         question: 'Qual pronome se usa para uma pessoa sem indicar o gênero?',
         options: ['hen', 'han', 'hon'],
         answer: 'hen',
-        explanation: '«Hen» é o pronome sem gênero, registrado pela Academia Sueca em 2015. «Han» é ele, «hon» é ela.',
+        explanation: '“Hen” é o pronome sem gênero, registrado pela Academia Sueca em 2015. “Han” é ele, “hon” é ela.',
       },
     ],
   },
@@ -285,11 +285,11 @@ export const GRAMMAR_SV: GrammarTopic[] = [
     level: 'A1.1',
     title: 'Os números de 0 a 20: idade, preço e hora',
     emoji: '🔢',
-    summary: 'De noll a tjugo, com as surpresas de pronúncia: sju começa com o sj [ɧ], tjugo com o tj [ɕ], e o 18 não é «åttaton», é arton. O «um» tem duas formas, en e ett, conforme a palavra.',
+    summary: 'De noll a tjugo, com as surpresas de pronúncia: sju começa com o sj [ɧ], tjugo com o tj [ɕ], e o 18 não é “åttaton”, é arton. O “um” tem duas formas, en e ett, conforme a palavra.',
     sections: [
       {
         heading: 'De 0 a 20',
-        text: 'De 13 a 19, os números terminam em -ton (como o -teen do inglês): tretton, fjorton, femton. Alguns mudam a vogal ou a consoante no caminho: fyra → fjorton, åtta → arton, nio → nitton. Na fala do dia a dia, nio e tio perdem o -o e soam «nie» e «tie». O -o de tjugo soa quase como um u curto.',
+        text: 'De 13 a 19, os números terminam em -ton (como o -teen do inglês): tretton, fjorton, femton. Alguns mudam a vogal ou a consoante no caminho: fyra → fjorton, åtta → arton, nio → nitton. Na fala do dia a dia, nio e tio perdem o -o e soam “nie” e “tie”. O -o de tjugo soa quase como um u curto.',
         table: {
           head: ['Número', 'Sueco', 'IPA'],
           rows: [
@@ -319,7 +319,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'en ou ett?',
-        text: 'Quando se conta (um, dois, três) ou se dita um número, usa-se «ett». Diante de um substantivo, o «um» concorda com o gênero da palavra: «en» com as palavras-en (en kopp, uma xícara) e «ett» com as palavras-ett (ett glas, um copo). Do dois em diante, o número não muda. E depois de números maiores que um, o substantivo vai para o plural: en krona, två kronor.',
+        text: 'Quando se conta (um, dois, três) ou se dita um número, usa-se “ett”. Diante de um substantivo, o “um” concorda com o gênero da palavra: “en” com as palavras-en (en kopp, uma xícara) e “ett” com as palavras-ett (ett glas, um copo). Do dois em diante, o número não muda. E depois de números maiores que um, o substantivo vai para o plural: en krona, två kronor.',
         examples: [
           ['Ett, två, tre — nu kör vi!', 'Um, dois, três — vamos lá!'],
           ['En kopp kaffe och ett glas vatten, tack.', 'Uma xícara de café e um copo d’água, por favor.'],
@@ -329,7 +329,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Idade, preço, hora e telefone',
-        text: 'Para a idade, o sueco pergunta «quão velho você é?» (Hur gammal är du?) e responde com o verbo vara, não com «ter»: «Jag är tjugo år». O dinheiro é a coroa: en krona, två kronor (abreviado kr, depois do número: 20 kr). Na hora, «klockan» é o relógio: «Klockan är tre» (são três horas). O telefone se dita número por número, e os celulares começam com 07.',
+        text: 'Para a idade, o sueco pergunta “quão velho você é?” (Hur gammal är du?) e responde com o verbo vara, não com “ter”: “Jag är tjugo år”. O dinheiro é a coroa: en krona, två kronor (abreviado kr, depois do número: 20 kr). Na hora, “klockan” é o relógio: “Klockan är tre” (são três horas). O telefone se dita número por número, e os celulares começam com 07.',
         table: {
           head: ['Pergunta', 'Resposta', 'Português'],
           rows: [
@@ -349,12 +349,12 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Ler «sju» como «siú» ou «xu»: é o som [ɧ], com lábios em bico. E sjutton (17) também começa com ele.',
-      'Pronunciar «tjugo» com t: o tj é um som só, [ɕ], leve como um «x» bem na frente da boca.',
-      'Inventar «åttaton» para 18: o certo é arton. E 14 é fjorton, não «fyraton».',
-      'Dizer «Jag har tjugo år» (eu tenho vinte anos): em sueco, a idade vem com vara. Jag är tjugo år.',
-      'Esquecer o plural depois do número: «två krona» está errado; é två kronor.',
-      'Contar «en, två, tre»: na contagem, o um é «ett».',
+      'Ler “sju” como “siú” ou “xu”: é o som [ɧ], com lábios em bico. E sjutton (17) também começa com ele.',
+      'Pronunciar “tjugo” com t: o tj é um som só, [ɕ], leve como um “x” bem na frente da boca.',
+      'Inventar “åttaton” para 18: o certo é arton. E 14 é fjorton, não “fyraton”.',
+      'Dizer “Jag har tjugo år” (eu tenho vinte anos): em sueco, a idade vem com vara. Jag är tjugo år.',
+      'Esquecer o plural depois do número: “två krona” está errado; é två kronor.',
+      'Contar “en, två, tre”: na contagem, o um é “ett”.',
     ],
     quiz: [
       {
@@ -376,10 +376,10 @@ export const GRAMMAR_SV: GrammarTopic[] = [
         explanation: 'Depois de números maiores que um, o substantivo vai para o plural: en krona, femton kronor.',
       },
       {
-        question: 'Como se diz «um copo d’água»?',
+        question: 'Como se diz “um copo d’água”?',
         options: ['en glas vatten', 'ett glas vatten', 'et glas vatten'],
         answer: 'ett glas vatten',
-        explanation: '«glas» é palavra-ett: ett glas. A grafia «et» é do norueguês e do dinamarquês.',
+        explanation: '“glas” é palavra-ett: ett glas. A grafia “et” é do norueguês e do dinamarquês.',
       },
       {
         question: 'Quanto é tolv plus åtta?',
@@ -393,9 +393,9 @@ export const GRAMMAR_SV: GrammarTopic[] = [
   {
     id: 'sv-g4',
     level: 'A1.2',
-    title: 'O presente dos verbos (-ar, -er, -r), a negação e «gillar / tycker om»',
+    title: 'O presente dos verbos (-ar, -er, -r), a negação e “gillar / tycker om”',
     emoji: '🏃',
-    summary: 'O presente sueco termina sempre em -r e é igual para todas as pessoas: jag talar, vi talar, de talar. Ele serve para o agora, o hábito e o futuro próximo. A negação «inte» vem depois do verbo, e para dizer que gosta de algo há «gillar» e «tycker om».',
+    summary: 'O presente sueco termina sempre em -r e é igual para todas as pessoas: jag talar, vi talar, de talar. Ele serve para o agora, o hábito e o futuro próximo. A negação “inte” vem depois do verbo, e para dizer que gosta de algo há “gillar” e “tycker om”.',
     sections: [
       {
         heading: 'Três grupos, uma forma para todos',
@@ -412,13 +412,13 @@ export const GRAMMAR_SV: GrammarTopic[] = [
             ['-r', 'gå, må', 'går, mår', 'ir (a pé); sentir-se, estar (de saúde)'],
             ['irregular', 'vara, ha', 'är, har', 'ser, estar; ter'],
             ['irregular', 'göra, veta', 'gör, vet', 'fazer; saber'],
-            ['irregular', 'säga, heta', 'säger («säjer»), heter', 'dizer; chamar-se'],
+            ['irregular', 'säga, heta', 'säger (“säjer”), heter', 'dizer; chamar-se'],
           ],
         },
       },
       {
         heading: 'Um presente para três usos',
-        text: 'O sueco não tem um «estou fazendo» separado: «Jag läser» é «eu leio» e «estou lendo». Com uma palavra de tempo, o presente também vale para o futuro próximo, como no nosso «amanhã eu vou». Para perguntar, basta pôr o verbo antes do sujeito, sem nenhum auxiliar como o «do» do inglês.',
+        text: 'O sueco não tem um “estou fazendo” separado: “Jag läser” é “eu leio” e “estou lendo”. Com uma palavra de tempo, o presente também vale para o futuro próximo, como no nosso “amanhã eu vou”. Para perguntar, basta pôr o verbo antes do sujeito, sem nenhum auxiliar como o “do” do inglês.',
         examples: [
           ['Jag läser en bok just nu.', 'Estou lendo um livro agora.'],
           ['Vi fikar varje dag klockan tre.', 'A gente faz fika todo dia às três.'],
@@ -429,7 +429,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'A negação: inte depois do verbo',
-        text: 'No português, o «não» vem antes do verbo; no sueco, o «inte» vem logo depois dele (numa oração principal): «Jag dricker inte kaffe». Pense no inglês antigo «I drink not». Em perguntas, o «inte» vem depois do sujeito: «Dricker du inte kaffe?». Para «nunca», o lugar é o mesmo: «Jag dricker aldrig kaffe».',
+        text: 'No português, o “não” vem antes do verbo; no sueco, o “inte” vem logo depois dele (numa oração principal): “Jag dricker inte kaffe”. Pense no inglês antigo “I drink not”. Em perguntas, o “inte” vem depois do sujeito: “Dricker du inte kaffe?”. Para “nunca”, o lugar é o mesmo: “Jag dricker aldrig kaffe”.',
         examples: [
           ['Jag dricker inte kaffe.', 'Eu não bebo café.'],
           ['Hon talar inte finska.', 'Ela não fala finlandês.'],
@@ -439,7 +439,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Gostar: gillar, tycker om, älskar',
-        text: '«Gilla» é o gostar do dia a dia, simples e informal. «Tycka om» quer dizer o mesmo, com a tônica no «om» (tycker OM). Com outro verbo, entra «att»: «Jag tycker om att dansa». Cuidado: «tycka» sozinho, com «att», é «achar» (dar opinião): «Jag tycker att det är dyrt» (acho que é caro). «Älska» é amar, bem mais forte que o nosso «adorar»: para uma pessoa querida mas não o amor da sua vida, «Jag tycker om dig» (gosto de você).',
+        text: '“Gilla” é o gostar do dia a dia, simples e informal. “Tycka om” quer dizer o mesmo, com a tônica no “om” (tycker OM). Com outro verbo, entra “att”: “Jag tycker om att dansa”. Cuidado: “tycka” sozinho, com “att”, é “achar” (dar opinião): “Jag tycker att det är dyrt” (acho que é caro). “Älska” é amar, bem mais forte que o nosso “adorar”: para uma pessoa querida mas não o amor da sua vida, “Jag tycker om dig” (gosto de você).',
         table: {
           head: ['Sueco', 'Português'],
           rows: [
@@ -454,39 +454,39 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Conjugar pela pessoa, como no português: «vi talamos», «de talan». É talar para todo mundo.',
-      'Pôr o «inte» antes do verbo, como o nosso «não»: «Jag inte dricker» está errado; é «Jag dricker inte».',
-      'Inventar um auxiliar à moda inglesa para perguntar: basta inverter, «Talar du svenska?».',
-      'Confundir «tycker om» (gosto de) com «tycker att» (acho que). E na negação o «inte» fica no meio: «Jag tycker inte om…».',
-      'Usar «älska» para coisas do cotidiano o tempo todo: soa exagerado. Para gostar, gilla ou tycka om.',
+      'Conjugar pela pessoa, como no português: “vi talamos”, “de talan”. É talar para todo mundo.',
+      'Pôr o “inte” antes do verbo, como o nosso “não”: “Jag inte dricker” está errado; é “Jag dricker inte”.',
+      'Inventar um auxiliar à moda inglesa para perguntar: basta inverter, “Talar du svenska?”.',
+      'Confundir “tycker om” (gosto de) com “tycker att” (acho que). E na negação o “inte” fica no meio: “Jag tycker inte om…”.',
+      'Usar “älska” para coisas do cotidiano o tempo todo: soa exagerado. Para gostar, gilla ou tycka om.',
     ],
     quiz: [
       {
-        question: 'Como se diz «Nós falamos sueco»?',
+        question: 'Como se diz “Nós falamos sueco”?',
         options: ['Vi talar svenska.', 'Vi talamos svenska.', 'Vi tala svenska.'],
         answer: 'Vi talar svenska.',
-        explanation: 'O presente é igual para todas as pessoas: talar. «tala» é o infinitivo.',
+        explanation: 'O presente é igual para todas as pessoas: talar. “tala” é o infinitivo.',
       },
       {
-        question: 'Qual é o presente de «bo» (morar)?',
+        question: 'Qual é o presente de “bo” (morar)?',
         options: ['boar', 'boer', 'bor'],
         answer: 'bor',
         explanation: 'Verbos curtos terminados em vogal que não é -a só ganham -r: bo → bor, tro → tror, gå → går.',
       },
       {
-        question: 'Como se diz «Eu não bebo café»?',
+        question: 'Como se diz “Eu não bebo café”?',
         options: ['Jag inte dricker kaffe.', 'Jag dricker inte kaffe.', 'Jag dricker kaffe inte.'],
         answer: 'Jag dricker inte kaffe.',
         explanation: 'Na oração principal, o inte vem logo depois do verbo conjugado.',
       },
       {
-        question: 'Como se diz «Eu gosto de nadar»?',
+        question: 'Como se diz “Eu gosto de nadar”?',
         options: ['Jag tycker om att simma.', 'Jag tycker att simma.', 'Jag gillar om simma.'],
         answer: 'Jag tycker om att simma.',
-        explanation: '«tycka om» + att + infinitivo. «Jag tycker att…» é «eu acho que…».',
+        explanation: '“tycka om” + att + infinitivo. “Jag tycker att…” é “eu acho que…”.',
       },
       {
-        question: 'Qual é o presente de «göra» (fazer)?',
+        question: 'Qual é o presente de “göra” (fazer)?',
         options: ['gör', 'görar', 'göra'],
         answer: 'gör',
         explanation: 'göra é irregular: jag gör, du gör. Como vara → är e ha → har.',
@@ -498,15 +498,15 @@ export const GRAMMAR_SV: GrammarTopic[] = [
     level: 'A1.2',
     title: 'en e ett: o gênero e a forma definida (bilen, huset)',
     emoji: '🏠',
-    summary: 'Todo substantivo sueco é «en» (gênero comum) ou «ett» (neutro), e isso não tem nada a ver com masculino e feminino. O artigo definido não vem antes: gruda no fim da palavra. en bil → bilen (o carro), ett hus → huset (a casa).',
+    summary: 'Todo substantivo sueco é “en” (gênero comum) ou “ett” (neutro), e isso não tem nada a ver com masculino e feminino. O artigo definido não vem antes: gruda no fim da palavra. en bil → bilen (o carro), ett hus → huset (a casa).',
     sections: [
       {
         heading: 'Dois gêneros: en e ett',
-        text: 'Cerca de três em cada quatro substantivos são palavras-en. O gênero sueco não segue o português: «casa» é feminina, mas hus é ett; «carro» é masculino, mas bil é en. Aprenda cada palavra com o artigo, como um bloco só: en bil, ett hus. Algumas terminações ajudam: -ing, -het, -tion e -are são en (en tidning, en möjlighet, en station, en lärare); -um, -eri e -ment são ett (ett museum, ett bageri, ett dokument).',
+        text: 'Cerca de três em cada quatro substantivos são palavras-en. O gênero sueco não segue o português: “casa” é feminina, mas hus é ett; “carro” é masculino, mas bil é en. Aprenda cada palavra com o artigo, como um bloco só: en bil, ett hus. Algumas terminações ajudam: -ing, -het, -tion e -are são en (en tidning, en möjlighet, en station, en lärare); -um, -eri e -ment são ett (ett museum, ett bageri, ett dokument).',
       },
       {
         heading: 'O artigo definido vai no fim',
-        text: 'Onde o português diz «o carro», o sueco diz «bilen»: o artigo virou sufixo, como no romeno. Palavras-en ganham -en (ou só -n depois de vogal); palavras-ett ganham -et (ou só -t depois de vogal). Palavras terminadas em -el, -er e -en átonos perdem o e: nyckel → nyckeln, fönster → fönstret, vatten → vattnet. E palavras curtas em m ou n dobram a consoante: rum → rummet, man → mannen.',
+        text: 'Onde o português diz “o carro”, o sueco diz “bilen”: o artigo virou sufixo, como no romeno. Palavras-en ganham -en (ou só -n depois de vogal); palavras-ett ganham -et (ou só -t depois de vogal). Palavras terminadas em -el, -er e -en átonos perdem o e: nyckel → nyckeln, fönster → fönstret, vatten → vattnet. E palavras curtas em m ou n dobram a consoante: rum → rummet, man → mannen.',
         table: {
           head: ['Palavra-en', 'Definida', 'Palavra-ett', 'Definida'],
           rows: [
@@ -529,7 +529,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'den ou det: o pronome segue o gênero',
-        text: 'Para retomar uma coisa já mencionada, o sueco usa «den» se ela for palavra-en e «det» se for palavra-ett. Não existe «ele» ou «ela» para objetos: han e hon são só para pessoas (e bichos queridos).',
+        text: 'Para retomar uma coisa já mencionada, o sueco usa “den” se ela for palavra-en e “det” se for palavra-ett. Não existe “ele” ou “ela” para objetos: han e hon são só para pessoas (e bichos queridos).',
         examples: [
           ['Var är nyckeln? — Den ligger på bordet.', 'Onde está a chave? — Está em cima da mesa.'],
           ['Var är äpplet? — Det ligger i köket.', 'Onde está a maçã? — Está na cozinha.'],
@@ -538,7 +538,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Quando o sueco e o português discordam',
-        text: 'Às vezes o sueco usa a forma definida onde nós não usamos artigo, e vice-versa. Meios de transporte e instrumentos costumam vir definidos: «Jag tar bussen» (pego ônibus). Já as afirmações gerais sobre coisas e grupos ficam sem artigo, onde o português põe: «Svenskar dricker mycket kaffe» (os suecos bebem muito café). Palavras abstratas grandes, como «livet» (a vida), costumam vir definidas nas duas línguas.',
+        text: 'Às vezes o sueco usa a forma definida onde nós não usamos artigo, e vice-versa. Meios de transporte e instrumentos costumam vir definidos: “Jag tar bussen” (pego ônibus). Já as afirmações gerais sobre coisas e grupos ficam sem artigo, onde o português põe: “Svenskar dricker mycket kaffe” (os suecos bebem muito café). Palavras abstratas grandes, como “livet” (a vida), costumam vir definidas nas duas línguas.',
         examples: [
           ['Jag tar bussen till jobbet.', 'Eu pego ônibus para o trabalho.'],
           ['Svenskar dricker mycket kaffe.', 'Os suecos bebem muito café.'],
@@ -548,21 +548,21 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Deduzir o gênero pelo português: casa é feminina, mas «ett hus»; mesa é feminina, mas «ett bord». O gênero sueco se decora com a palavra.',
-      'Pôr o artigo antes, como em português ou inglês: «den bil» ou «en bilen» não existem. O carro é «bilen», com o artigo no fim.',
-      'Chamar objetos de «han» ou «hon»: a chave é «den», a maçã é «det».',
-      'Esquecer de dobrar a consoante ou de tirar o e: «rumet» e «nyckelen» estão errados; são rummet e nyckeln.',
-      'Traduzir «os suecos gostam de…» como «Svenskarna gillar…» numa generalização: o natural é «Svenskar gillar…», sem artigo.',
+      'Deduzir o gênero pelo português: casa é feminina, mas “ett hus”; mesa é feminina, mas “ett bord”. O gênero sueco se decora com a palavra.',
+      'Pôr o artigo antes, como em português ou inglês: “den bil” ou “en bilen” não existem. O carro é “bilen”, com o artigo no fim.',
+      'Chamar objetos de “han” ou “hon”: a chave é “den”, a maçã é “det”.',
+      'Esquecer de dobrar a consoante ou de tirar o e: “rumet” e “nyckelen” estão errados; são rummet e nyckeln.',
+      'Traduzir “os suecos gostam de…” como “Svenskarna gillar…” numa generalização: o natural é “Svenskar gillar…”, sem artigo.',
     ],
     quiz: [
       {
-        question: 'Qual é a forma definida de «ett hus»?',
+        question: 'Qual é a forma definida de “ett hus”?',
         options: ['huset', 'husen', 'ett huset'],
         answer: 'huset',
-        explanation: 'Palavra-ett terminada em consoante ganha -et: huset (a casa). «husen» é o plural definido (as casas).',
+        explanation: 'Palavra-ett terminada em consoante ganha -et: huset (a casa). “husen” é o plural definido (as casas).',
       },
       {
-        question: 'Qual é a forma definida de «en flicka»?',
+        question: 'Qual é a forma definida de “en flicka”?',
         options: ['flickaen', 'flickan', 'flickat'],
         answer: 'flickan',
         explanation: 'Palavra-en terminada em vogal ganha só -n: flickan (a menina).',
@@ -571,7 +571,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
         question: 'Complete: Var är boken? — ___ ligger på bordet.',
         options: ['Den', 'Det', 'Han'],
         answer: 'Den',
-        explanation: '«bok» é palavra-en (en bok), então o pronome é den. Han é só para pessoas.',
+        explanation: '“bok” é palavra-en (en bok), então o pronome é den. Han é só para pessoas.',
       },
       {
         question: 'Qual destas palavras é ett?',
@@ -580,19 +580,19 @@ export const GRAMMAR_SV: GrammarTopic[] = [
         explanation: 'Palavras em -um são ett: ett museum. en stad, en station (-tion é en).',
       },
       {
-        question: 'Como se diz «Pego o trem para Uppsala»?',
+        question: 'Como se diz “Pego o trem para Uppsala”?',
         options: ['Jag tar tåget till Uppsala.', 'Jag tar den tåget till Uppsala.', 'Jag tar tågen till Uppsala.'],
         answer: 'Jag tar tåget till Uppsala.',
-        explanation: 'Transporte vem na forma definida: tåget. «tågen» seria «os trens», e «den tåget» mistura o artigo solto com o sufixo.',
+        explanation: 'Transporte vem na forma definida: tåget. “tågen” seria “os trens”, e “den tåget” mistura o artigo solto com o sufixo.',
       },
     ],
   },
   {
     id: 'sv-g6',
     level: 'A1.2',
-    title: 'O plural (as cinco declinações) e «det finns»',
+    title: 'O plural (as cinco declinações) e “det finns”',
     emoji: '🍎',
-    summary: 'O plural sueco tem cinco terminações: -or, -ar, -er, -n e nenhuma. flicka → flickor, bil → bilar, telefon → telefoner, äpple → äpplen, hus → hus. E para dizer que algo existe («há», «tem»), o sueco usa «det finns».',
+    summary: 'O plural sueco tem cinco terminações: -or, -ar, -er, -n e nenhuma. flicka → flickor, bil → bilar, telefon → telefoner, äpple → äpplen, hus → hus. E para dizer que algo existe (“há”, “tem”), o sueco usa “det finns”.',
     sections: [
       {
         heading: 'As cinco declinações',
@@ -635,7 +635,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'det finns: há, tem, existe',
-        text: 'No Brasil, dizemos «tem um café na esquina». O sueco não usa «ha» (ter) para isso: usa «det finns», literalmente «isso se encontra». Serve para singular e plural. Na pergunta, o verbo vem primeiro: «Finns det…?». Na negação, «Det finns inte…» ou, com plural e incontáveis, «Det finns inga…» (não há nenhum). Não confunda com «det är», que descreve: «Det är kallt» (está frio).',
+        text: 'No Brasil, dizemos “tem um café na esquina”. O sueco não usa “ha” (ter) para isso: usa “det finns”, literalmente “isso se encontra”. Serve para singular e plural. Na pergunta, o verbo vem primeiro: “Finns det…?”. Na negação, “Det finns inte…” ou, com plural e incontáveis, “Det finns inga…” (não há nenhum). Não confunda com “det är”, que descreve: “Det är kallt” (está frio).',
         examples: [
           ['Det finns ett bageri på torget.', 'Tem uma padaria na praça.'],
           ['Finns det mjölk i kylskåpet?', 'Tem leite na geladeira?'],
@@ -646,39 +646,39 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pôr -s no plural, como no português ou no inglês: «bils», «hus-s». Nenhuma declinação sueca usa -s.',
+      'Pôr -s no plural, como no português ou no inglês: “bils”, “hus-s”. Nenhuma declinação sueca usa -s.',
       'Esquecer as palavras que não mudam: um hus, dois hus; ett barn, tre barn. A diferença aparece no definido: huset × husen.',
-      'Traduzir «tem» por «har» para existência: «Det har en restaurang här» está errado; é «Det finns en restaurang här».',
-      'Esquecer a troca de vogal: «två boker», «tre manar». O certo é böcker e män.',
-      'Confundir o singular definido com o plural: «barnet» é a criança, «barnen» são as crianças.',
+      'Traduzir “tem” por “har” para existência: “Det har en restaurang här” está errado; é “Det finns en restaurang här”.',
+      'Esquecer a troca de vogal: “två boker”, “tre manar”. O certo é böcker e män.',
+      'Confundir o singular definido com o plural: “barnet” é a criança, “barnen” são as crianças.',
     ],
     quiz: [
       {
-        question: 'Qual é o plural de «en bil»?',
+        question: 'Qual é o plural de “en bil”?',
         options: ['biler', 'bilar', 'bilor'],
         answer: 'bilar',
-        explanation: 'bil é do grupo 2: bilar. A forma «biler» é norueguesa.',
+        explanation: 'bil é do grupo 2: bilar. A forma “biler” é norueguesa.',
       },
       {
-        question: 'Qual é o plural de «ett barn»?',
+        question: 'Qual é o plural de “ett barn”?',
         options: ['barner', 'barnar', 'barn'],
         answer: 'barn',
         explanation: 'Palavras-ett terminadas em consoante não mudam no plural: ett barn, två barn.',
       },
       {
-        question: 'Como se diz «as meninas»?',
+        question: 'Como se diz “as meninas”?',
         options: ['flickorna', 'flickarna', 'flickan'],
         answer: 'flickorna',
-        explanation: 'en flicka → flickor (plural) → flickorna (plural definido). «flickan» é «a menina».',
+        explanation: 'en flicka → flickor (plural) → flickorna (plural definido). “flickan” é “a menina”.',
       },
       {
-        question: 'Como se pergunta «Tem um museu em Kiruna?»',
+        question: 'Como se pergunta “Tem um museu em Kiruna?”',
         options: ['Har det ett museum i Kiruna?', 'Finns det ett museum i Kiruna?', 'Är det ett museum i Kiruna?'],
         answer: 'Finns det ett museum i Kiruna?',
-        explanation: 'Existência se diz com «det finns», e na pergunta o verbo vai para a frente: Finns det…? «Är det…» perguntaria se aquilo é um museu.',
+        explanation: 'Existência se diz com “det finns”, e na pergunta o verbo vai para a frente: Finns det…? “Är det…” perguntaria se aquilo é um museu.',
       },
       {
-        question: 'Qual é o plural de «en bok»?',
+        question: 'Qual é o plural de “en bok”?',
         options: ['boker', 'bokar', 'böcker'],
         answer: 'böcker',
         explanation: 'bok é irregular: troca o o por ö e ganha -er, böcker. O definido é böckerna.',
@@ -691,11 +691,11 @@ export const GRAMMAR_SV: GrammarTopic[] = [
     level: 'A2.1',
     title: 'Ordem V2, inversão, perguntas e expressões de tempo',
     emoji: '🔄',
-    summary: 'A regra de ouro do sueco: na oração principal, o verbo conjugado fica sempre em segundo lugar. Se a frase começa por «hoje», o sujeito passa para depois do verbo: «I dag åker jag». Nas perguntas de sim ou não, o verbo vem primeiro.',
+    summary: 'A regra de ouro do sueco: na oração principal, o verbo conjugado fica sempre em segundo lugar. Se a frase começa por “hoje”, o sujeito passa para depois do verbo: “I dag åker jag”. Nas perguntas de sim ou não, o verbo vem primeiro.',
     sections: [
       {
         heading: 'O verbo é sempre o segundo',
-        text: 'Em português e em inglês dizemos «hoje eu vou», «today I go»: o sujeito vem antes do verbo, mesmo quando outra coisa abre a frase. No sueco, o primeiro lugar pode ser ocupado pelo sujeito, por uma expressão de tempo ou lugar, ou até pelo objeto, mas o verbo conjugado fica no segundo lugar. Se o sujeito não veio primeiro, ele vai para depois do verbo. Isso se chama inversão, e o alemão, o norueguês e o dinamarquês fazem igual.',
+        text: 'Em português e em inglês dizemos “hoje eu vou”, “today I go”: o sujeito vem antes do verbo, mesmo quando outra coisa abre a frase. No sueco, o primeiro lugar pode ser ocupado pelo sujeito, por uma expressão de tempo ou lugar, ou até pelo objeto, mas o verbo conjugado fica no segundo lugar. Se o sujeito não veio primeiro, ele vai para depois do verbo. Isso se chama inversão, e o alemão, o norueguês e o dinamarquês fazem igual.',
         table: {
           head: ['1º lugar', 'Verbo (2º)', 'Sujeito', 'Resto'],
           rows: [
@@ -709,14 +709,14 @@ export const GRAMMAR_SV: GrammarTopic[] = [
         },
         examples: [
           ['I morgon åker vi till Kiruna.', 'Amanhã a gente vai para Kiruna.'],
-          ['På fredag har vi fredagsmys.', 'Na sexta temos o «fredagsmys», a noite aconchegante de sexta.'],
+          ['På fredag har vi fredagsmys.', 'Na sexta temos o “fredagsmys”, a noite aconchegante de sexta.'],
           ['I Uppsala finns det ett gammalt universitet.', 'Em Uppsala há uma universidade antiga.'],
           ['Om en vecka börjar skolan.', 'Daqui a uma semana começam as aulas.'],
         ],
       },
       {
         heading: 'E o inte?',
-        text: 'Na oração principal, o «inte» fica depois do verbo, e, se houve inversão, depois do sujeito também: verbo + sujeito + inte. Compare «Jag åker inte» com «I dag åker jag inte».',
+        text: 'Na oração principal, o “inte” fica depois do verbo, e, se houve inversão, depois do sujeito também: verbo + sujeito + inte. Compare “Jag åker inte” com “I dag åker jag inte”.',
         examples: [
           ['I dag åker jag inte.', 'Hoje eu não vou.'],
           ['Tyvärr kommer han inte i kväll.', 'Infelizmente ele não vem hoje à noite.'],
@@ -725,7 +725,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Perguntas',
-        text: 'Pergunta de sim ou não: o verbo abre a frase, sem auxiliar (Talar du svenska?). Pergunta com palavra interrogativa: a palavra vem primeiro e o verbo em segundo, sempre antes do sujeito (Var bor du?, nunca «Var du bor?»). Atenção ao trio var (onde, parado), vart (para onde, movimento) e varifrån (de onde).',
+        text: 'Pergunta de sim ou não: o verbo abre a frase, sem auxiliar (Talar du svenska?). Pergunta com palavra interrogativa: a palavra vem primeiro e o verbo em segundo, sempre antes do sujeito (Var bor du?, nunca “Var du bor?”). Atenção ao trio var (onde, parado), vart (para onde, movimento) e varifrån (de onde).',
         table: {
           head: ['Sueco', 'Português', 'Exemplo'],
           rows: [
@@ -749,7 +749,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Expressões de tempo',
-        text: 'São elas que mais abrem frases e provocam inversão. Repare nas preposições: «på» com dia da semana e parte do dia; «i» com mês, estação e «hoje, amanhã, ontem»; «om» para «daqui a»; «för … sedan» para «há … atrás» (na fala, «sen»). Dias da semana e meses se escrevem com letra minúscula.',
+        text: 'São elas que mais abrem frases e provocam inversão. Repare nas preposições: “på” com dia da semana e parte do dia; “i” com mês, estação e “hoje, amanhã, ontem”; “om” para “daqui a”; “för … sedan” para “há … atrás” (na fala, “sen”). Dias da semana e meses se escrevem com letra minúscula.',
         table: {
           head: ['Sueco', 'Português'],
           rows: [
@@ -768,39 +768,39 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Manter o sujeito antes do verbo depois de uma expressão de tempo: «I dag jag åker» é o erro mais comum de brasileiros (e de quem fala inglês). É «I dag åker jag».',
-      'Não inverter depois da palavra interrogativa: «Var du bor?» está errado; é «Var bor du?».',
-      'Usar «var» com movimento: «Var åker du?» soa errado; para onde é «vart».',
+      'Manter o sujeito antes do verbo depois de uma expressão de tempo: “I dag jag åker” é o erro mais comum de brasileiros (e de quem fala inglês). É “I dag åker jag”.',
+      'Não inverter depois da palavra interrogativa: “Var du bor?” está errado; é “Var bor du?”.',
+      'Usar “var” com movimento: “Var åker du?” soa errado; para onde é “vart”.',
       'Escrever dias e meses com maiúscula: é måndag, juli, jul (Natal) em minúscula.',
-      'Confundir «på måndag» (na próxima segunda) com «i måndags» (na segunda passada).',
+      'Confundir “på måndag” (na próxima segunda) com “i måndags” (na segunda passada).',
     ],
     quiz: [
       {
-        question: 'Como se diz «Hoje eu trabalho em casa»?',
+        question: 'Como se diz “Hoje eu trabalho em casa”?',
         options: ['I dag jag jobbar hemma.', 'I dag jobbar jag hemma.', 'Jag i dag jobbar hemma.'],
         answer: 'I dag jobbar jag hemma.',
         explanation: 'I dag ocupa o 1º lugar, o verbo fica em 2º e o sujeito vem depois: inversão V2.',
       },
       {
-        question: 'Como se pergunta «Onde você mora?»',
+        question: 'Como se pergunta “Onde você mora?”',
         options: ['Var bor du?', 'Var du bor?', 'Vart bor du?'],
         answer: 'Var bor du?',
-        explanation: 'Depois da palavra interrogativa vem o verbo. E morar é estar num lugar, então «var», não «vart».',
+        explanation: 'Depois da palavra interrogativa vem o verbo. E morar é estar num lugar, então “var”, não “vart”.',
       },
       {
-        question: 'Como se pergunta «Para onde você vai?»',
+        question: 'Como se pergunta “Para onde você vai?”',
         options: ['Var åker du?', 'Vart åker du?', 'Vad åker du?'],
         answer: 'Vart åker du?',
-        explanation: '«vart» é para onde (movimento); «var» é onde (parado); «vad» é o que.',
+        explanation: '“vart” é para onde (movimento); “var” é onde (parado); “vad” é o que.',
       },
       {
-        question: 'Como se diz «na segunda passada»?',
+        question: 'Como se diz “na segunda passada”?',
         options: ['på måndag', 'i måndags', 'på måndagar'],
         answer: 'i måndags',
-        explanation: '«i måndags» aponta para trás; «på måndag» é a próxima; «på måndagar» é toda segunda.',
+        explanation: '“i måndags” aponta para trás; “på måndag” é a próxima; “på måndagar” é toda segunda.',
       },
       {
-        question: 'Como se diz «Amanhã eu não vou»?',
+        question: 'Como se diz “Amanhã eu não vou”?',
         options: ['I morgon åker jag inte.', 'I morgon jag åker inte.', 'I morgon inte åker jag.'],
         answer: 'I morgon åker jag inte.',
         explanation: 'Tempo + verbo + sujeito + inte. O inte vem depois do sujeito invertido.',
@@ -812,11 +812,11 @@ export const GRAMMAR_SV: GrammarTopic[] = [
     level: 'A2.1',
     title: 'Preposições de lugar (i, på, till, från) e adjetivos (en stor bil, ett stort hus)',
     emoji: '📍',
-    summary: 'Onde o português diz «em» para tudo, o sueco escolhe entre «i» (dentro, cidades, países) e «på» (em cima, muitos lugares, ilhas). E o adjetivo vem antes do substantivo e concorda com ele: en stor bil, ett stort hus, stora bilar.',
+    summary: 'Onde o português diz “em” para tudo, o sueco escolhe entre “i” (dentro, cidades, países) e “på” (em cima, muitos lugares, ilhas). E o adjetivo vem antes do substantivo e concorda com ele: en stor bil, ett stort hus, stora bilar.',
     sections: [
       {
         heading: 'i ou på?',
-        text: '«i» é «dentro de»: cidades, países, cômodos, caixas. «på» é «em cima de», mas também se usa com muitos lugares onde se faz uma atividade (på jobbet, på bio, på restaurang) e com ilhas: på Gotland, på Öland, på Åland, até på Island (a Islândia). Não há uma lógica perfeita: aprenda as combinações mais comuns como blocos. «till» marca o destino, «från» a origem, e «hos» é «na casa de» (como o «chez» do francês).',
+        text: '“i” é “dentro de”: cidades, países, cômodos, caixas. “på” é “em cima de”, mas também se usa com muitos lugares onde se faz uma atividade (på jobbet, på bio, på restaurang) e com ilhas: på Gotland, på Öland, på Åland, até på Island (a Islândia). Não há uma lógica perfeita: aprenda as combinações mais comuns como blocos. “till” marca o destino, “från” a origem, e “hos” é “na casa de” (como o “chez” do francês).',
         table: {
           head: ['Preposição', 'Uso', 'Exemplo', 'Português'],
           rows: [
@@ -842,7 +842,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Parado ou em movimento: hemma × hem',
-        text: 'Alguns advérbios de lugar mudam de forma se há movimento, como o var × vart das perguntas. O português não faz essa diferença («estou em casa», «vou para casa»); o inglês faz só às vezes (here × hither, hoje arcaico).',
+        text: 'Alguns advérbios de lugar mudam de forma se há movimento, como o var × vart das perguntas. O português não faz essa diferença (“estou em casa”, “vou para casa”); o inglês faz só às vezes (here × hither, hoje arcaico).',
         table: {
           head: ['Parado (onde?)', 'Movimento (para onde?)', 'Português'],
           rows: [
@@ -862,7 +862,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Adjetivos: concordância com en, ett e plural',
-        text: 'O adjetivo vem antes do substantivo, como no inglês (a big car): en stor bil. Ele concorda com o substantivo: forma básica com palavras-en, -t com palavras-ett, -a no plural. A concordância vale também depois de «vara»: Bilen är stor, huset är stort, bilarna är stora. Alguns detalhes: adjetivos em vogal longa ganham -tt (ny → nytt, blå → blått); os terminados em -d depois de vogal longa trocam por -tt (röd → rött, god → gott); os terminados em -t não mudam no ett (svart); e «bra» nunca muda. «Liten» é irregular: litet no ett e små no plural.',
+        text: 'O adjetivo vem antes do substantivo, como no inglês (a big car): en stor bil. Ele concorda com o substantivo: forma básica com palavras-en, -t com palavras-ett, -a no plural. A concordância vale também depois de “vara”: Bilen är stor, huset är stort, bilarna är stora. Alguns detalhes: adjetivos em vogal longa ganham -tt (ny → nytt, blå → blått); os terminados em -d depois de vogal longa trocam por -tt (röd → rött, god → gott); os terminados em -t não mudam no ett (svart); e “bra” nunca muda. “Liten” é irregular: litet no ett e små no plural.',
         table: {
           head: ['Palavra-en', 'Palavra-ett', 'Plural', 'Português'],
           rows: [
@@ -888,42 +888,42 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar «i» com ilhas: «i Gotland» soa errado. É på Gotland, på Öland, på Åland.',
-      'Dizer «Jag går hemma» para «vou para casa»: com movimento, é hem. Hemma é parado.',
-      'Pôr o adjetivo depois do substantivo, como no português: «en bil stor». Em sueco, o adjetivo vem antes: en stor bil.',
-      'Esquecer o -t com palavras-ett: «ett stor hus» está errado; é ett stort hus. E também depois de vara: Huset är stort.',
-      'Regularizar o «liten»: o plural não é «litena», é små (små barn).',
+      'Usar “i” com ilhas: “i Gotland” soa errado. É på Gotland, på Öland, på Åland.',
+      'Dizer “Jag går hemma” para “vou para casa”: com movimento, é hem. Hemma é parado.',
+      'Pôr o adjetivo depois do substantivo, como no português: “en bil stor”. Em sueco, o adjetivo vem antes: en stor bil.',
+      'Esquecer o -t com palavras-ett: “ett stor hus” está errado; é ett stort hus. E também depois de vara: Huset är stort.',
+      'Regularizar o “liten”: o plural não é “litena”, é små (små barn).',
     ],
     quiz: [
       {
-        question: 'Como se diz «uma casa grande»?',
+        question: 'Como se diz “uma casa grande”?',
         options: ['en stor hus', 'ett stort hus', 'ett stora hus'],
         answer: 'ett stort hus',
         explanation: 'hus é palavra-ett: o artigo é ett e o adjetivo ganha -t, stort.',
       },
       {
-        question: 'Como se diz «Estou em Gotland»?',
+        question: 'Como se diz “Estou em Gotland”?',
         options: ['Jag är i Gotland.', 'Jag är på Gotland.', 'Jag är till Gotland.'],
         answer: 'Jag är på Gotland.',
-        explanation: 'Ilhas levam på: på Gotland, på Öland. «till» é para destino.',
+        explanation: 'Ilhas levam på: på Gotland, på Öland. “till” é para destino.',
       },
       {
-        question: 'Como se diz «Vou para casa»?',
+        question: 'Como se diz “Vou para casa”?',
         options: ['Jag går hemma.', 'Jag går hem.', 'Jag går till hemma.'],
         answer: 'Jag går hem.',
-        explanation: 'Com movimento, «hem»; parado, «hemma» (Jag är hemma).',
+        explanation: 'Com movimento, “hem”; parado, “hemma” (Jag är hemma).',
       },
       {
-        question: 'Como se diz «casas pequenas»?',
+        question: 'Como se diz “casas pequenas”?',
         options: ['litena hus', 'små hus', 'lilla hus'],
         answer: 'små hus',
-        explanation: 'O plural de liten é irregular: små. «lilla» é a forma definida do singular (det lilla huset).',
+        explanation: 'O plural de liten é irregular: små. “lilla” é a forma definida do singular (det lilla huset).',
       },
       {
         question: 'Complete: Soppan är ___ (a sopa está gostosa).',
         options: ['gott', 'god', 'goda'],
         answer: 'god',
-        explanation: 'soppa é palavra-en (en soppa, soppan), então fica a forma básica: god. «gott» seria para palavra-ett.',
+        explanation: 'soppa é palavra-en (en soppa, soppan), então fica a forma básica: god. “gott” seria para palavra-ett.',
       },
     ],
   },
@@ -933,11 +933,11 @@ export const GRAMMAR_SV: GrammarTopic[] = [
     level: 'A2.2',
     title: 'Pretérito e supino: jag åt, jag har ätit',
     emoji: '⏪',
-    summary: 'O sueco tem dois passados principais: o pretérito (jag åt, eu comi), para um momento definido, e o perfeito com «har» + supino (jag har ätit, eu já comi), para experiência e resultado. Os verbos fracos ganham sufixos (-ade, -de, -te, -dde); os fortes trocam a vogal (dricka, drack, druckit).',
+    summary: 'O sueco tem dois passados principais: o pretérito (jag åt, eu comi), para um momento definido, e o perfeito com “har” + supino (jag har ätit, eu já comi), para experiência e resultado. Os verbos fracos ganham sufixos (-ade, -de, -te, -dde); os fortes trocam a vogal (dricka, drack, druckit).',
     sections: [
       {
         heading: 'Verbos fracos: quatro modelos',
-        text: 'O modelo do verbo se reconhece pelo presente. Quem faz o presente em -ar faz o pretérito em -ade e o supino em -at. Quem faz em -er leva -de/-t, ou -te/-t se o radical termina em consoante surda (k, p, s, t, x). Os verbos curtos terminados em vogal levam -dde/-tt. O supino é a forma usada depois de «ha» (har ätit, hade ätit), e não muda nunca.',
+        text: 'O modelo do verbo se reconhece pelo presente. Quem faz o presente em -ar faz o pretérito em -ade e o supino em -at. Quem faz em -er leva -de/-t, ou -te/-t se o radical termina em consoante surda (k, p, s, t, x). Os verbos curtos terminados em vogal levam -dde/-tt. O supino é a forma usada depois de “ha” (har ätit, hade ätit), e não muda nunca.',
         table: {
           head: ['Grupo', 'Infinitivo', 'Pretérito', 'Supino (har …)', 'Português'],
           rows: [
@@ -981,7 +981,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Pretérito ou perfeito?',
-        text: 'O português usa «comi» para as duas coisas; o sueco separa, quase como o inglês (I ate × I have eaten). Pretérito: quando se diz ou se sabe quando aconteceu (i går, förra året, 2019). Perfeito (har + supino): experiência de vida sem data (Você já esteve em Kiruna?), resultado que importa agora (já comi) e algo que começou no passado e continua (moro aqui há três anos = jag har bott här i tre år).',
+        text: 'O português usa “comi” para as duas coisas; o sueco separa, quase como o inglês (I ate × I have eaten). Pretérito: quando se diz ou se sabe quando aconteceu (i går, förra året, 2019). Perfeito (har + supino): experiência de vida sem data (Você já esteve em Kiruna?), resultado que importa agora (já comi) e algo que começou no passado e continua (moro aqui há três anos = jag har bott här i tre år).',
         examples: [
           ['I går åt vi kanelbullar i Göteborg.', 'Ontem comemos pãezinhos de canela em Gotemburgo.'],
           ['Har du varit i Kiruna? — Nej, aldrig.', 'Você já esteve em Kiruna? — Não, nunca.'],
@@ -994,42 +994,42 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar o perfeito com data: «I går har jag ätit…» soa errado. Com i går, förra veckan, 2019, use o pretérito: I går åt jag…',
-      'Traduzir «moro aqui há três anos» com o presente: «Jag bor här i tre år» soa como «vou morar aqui por três anos». O certo é Jag har bott här i tre år.',
-      'Pôr o pretérito depois de «har»: «Jag har åt» está errado. Depois de ha vem o supino: Jag har ätit.',
-      'Regularizar os verbos fortes: «drickade», «skrivade», «gåde». Decore os três: dricka, drack, druckit.',
-      'Esquecer a inversão no passado: «I går jag åt» continua errado. I går åt jag.',
+      'Usar o perfeito com data: “I går har jag ätit…” soa errado. Com i går, förra veckan, 2019, use o pretérito: I går åt jag…',
+      'Traduzir “moro aqui há três anos” com o presente: “Jag bor här i tre år” soa como “vou morar aqui por três anos”. O certo é Jag har bott här i tre år.',
+      'Pôr o pretérito depois de “har”: “Jag har åt” está errado. Depois de ha vem o supino: Jag har ätit.',
+      'Regularizar os verbos fortes: “drickade”, “skrivade”, “gåde”. Decore os três: dricka, drack, druckit.',
+      'Esquecer a inversão no passado: “I går jag åt” continua errado. I går åt jag.',
     ],
     quiz: [
       {
-        question: 'Qual é o pretérito de «prata» (conversar)?',
+        question: 'Qual é o pretérito de “prata” (conversar)?',
         options: ['pratte', 'pratade', 'pratat'],
         answer: 'pratade',
-        explanation: 'Verbos com presente em -ar fazem o pretérito em -ade. «pratat» é o supino (har pratat).',
+        explanation: 'Verbos com presente em -ar fazem o pretérito em -ade. “pratat” é o supino (har pratat).',
       },
       {
-        question: 'Como se diz «Eu já comi»?',
+        question: 'Como se diz “Eu já comi”?',
         options: ['Jag har ätit.', 'Jag har åt.', 'Jag har ätat.'],
         answer: 'Jag har ätit.',
-        explanation: 'Depois de har vem o supino. O supino de äta é ätit; «åt» é o pretérito.',
+        explanation: 'Depois de har vem o supino. O supino de äta é ätit; “åt” é o pretérito.',
       },
       {
-        question: 'Como se diz «Ontem eu li um livro»?',
+        question: 'Como se diz “Ontem eu li um livro”?',
         options: ['I går har jag läst en bok.', 'I går läste jag en bok.', 'I går jag läste en bok.'],
         answer: 'I går läste jag en bok.',
-        explanation: 'Com data definida, pretérito (läste). E «i går» no 1º lugar pede a inversão: läste jag.',
+        explanation: 'Com data definida, pretérito (läste). E “i går” no 1º lugar pede a inversão: läste jag.',
       },
       {
-        question: 'Como se diz «Moro aqui há dois anos»?',
+        question: 'Como se diz “Moro aqui há dois anos”?',
         options: ['Jag bor här i två år.', 'Jag har bott här i två år.', 'Jag bodde här för två år.'],
         answer: 'Jag har bott här i två år.',
         explanation: 'Algo que começou no passado e continua usa o perfeito: har bott.',
       },
       {
-        question: 'Qual é o supino de «gå»?',
+        question: 'Qual é o supino de “gå”?',
         options: ['gått', 'gick', 'gåt'],
         answer: 'gått',
-        explanation: 'gå, gick, gått. «gick» é o pretérito.',
+        explanation: 'gå, gick, gått. “gick” é o pretérito.',
       },
     ],
   },
@@ -1038,11 +1038,11 @@ export const GRAMMAR_SV: GrammarTopic[] = [
     level: 'A2.2',
     title: 'A forma definida do adjetivo: den stora bilen',
     emoji: '🎯',
-    summary: 'Com adjetivo, o sueco marca o definido duas vezes: um artigo solto antes (den, det, de), o adjetivo em -a e o sufixo no substantivo. «O carro grande» é «den stora bilen». É a famosa dupla definição.',
+    summary: 'Com adjetivo, o sueco marca o definido duas vezes: um artigo solto antes (den, det, de), o adjetivo em -a e o sufixo no substantivo. “O carro grande” é “den stora bilen”. É a famosa dupla definição.',
     sections: [
       {
         heading: 'A dupla definição',
-        text: 'Sem adjetivo, basta o sufixo: bilen (o carro). Com adjetivo, entra um artigo solto antes: den para palavras-en, det para palavras-ett e de (pronunciado «dom») para o plural. O adjetivo vai para a forma em -a, e o substantivo continua com o sufixo definido. O português e o inglês marcam uma vez só (o carro grande, the big car); o sueco marca duas.',
+        text: 'Sem adjetivo, basta o sufixo: bilen (o carro). Com adjetivo, entra um artigo solto antes: den para palavras-en, det para palavras-ett e de (pronunciado “dom”) para o plural. O adjetivo vai para a forma em -a, e o substantivo continua com o sufixo definido. O português e o inglês marcam uma vez só (o carro grande, the big car); o sueco marca duas.',
         table: {
           head: ['', 'Palavra-en', 'Palavra-ett', 'Plural'],
           rows: [
@@ -1060,7 +1060,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'O adjetivo na forma definida',
-        text: 'Na forma definida, o adjetivo termina em -a no singular e no plural, sem distinção de en e ett. Adjetivos que já terminam em vogal, como bra e blå, não mudam. «Liten» tem duas formas: lilla no singular e små no plural. Em textos formais ou antigos pode aparecer -e quando se fala de um homem (den gamle mannen), mas a forma em -a é sempre correta.',
+        text: 'Na forma definida, o adjetivo termina em -a no singular e no plural, sem distinção de en e ett. Adjetivos que já terminam em vogal, como bra e blå, não mudam. “Liten” tem duas formas: lilla no singular e små no plural. Em textos formais ou antigos pode aparecer -e quando se fala de um homem (den gamle mannen), mas a forma em -a é sempre correta.',
         table: {
           head: ['Adjetivo', 'Definida singular', 'Definida plural', 'Exemplo'],
           rows: [
@@ -1075,7 +1075,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Este, aquele e as exceções',
-        text: '«Este» é den här / det här / de här, e «aquele» é den där / det där / de där, sempre com o substantivo na forma definida: den här bilen (este carro). Algumas palavras dispensam o artigo solto: hela (todo, inteiro), förra (passado), första (primeiro), e nomes próprios como Gamla stan e Vita huset. E duas pedem o substantivo sem sufixo: nästa (próximo) e samma (mesmo): nästa vecka, samma dag.',
+        text: '“Este” é den här / det här / de här, e “aquele” é den där / det där / de där, sempre com o substantivo na forma definida: den här bilen (este carro). Algumas palavras dispensam o artigo solto: hela (todo, inteiro), förra (passado), första (primeiro), e nomes próprios como Gamla stan e Vita huset. E duas pedem o substantivo sem sufixo: nästa (próximo) e samma (mesmo): nästa vecka, samma dag.',
         examples: [
           ['Jag gillar den här lilla staden.', 'Eu gosto desta cidadezinha.'],
           ['Hela familjen åkte till Dalarna förra veckan.', 'A família inteira foi para Dalarna na semana passada.'],
@@ -1086,39 +1086,39 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Esquecer um dos dois: «den stora bil» ou «stora bilen» (fora dos nomes próprios) estão incompletos. É den stora bilen.',
+      'Esquecer um dos dois: “den stora bil” ou “stora bilen” (fora dos nomes próprios) estão incompletos. É den stora bilen.',
       'Usar det com palavra-en: o artigo solto segue o gênero, den stora bilen, det stora huset.',
-      'Manter o -t da palavra-ett no definido: «det stort huset» está errado; no definido é sempre -a, det stora huset.',
-      'Pôr sufixo depois de nästa e samma: «nästa veckan» está errado; é nästa vecka.',
-      'Ler o «de» como se escreve: o artigo plural soa «dom», de stora bilarna.',
+      'Manter o -t da palavra-ett no definido: “det stort huset” está errado; no definido é sempre -a, det stora huset.',
+      'Pôr sufixo depois de nästa e samma: “nästa veckan” está errado; é nästa vecka.',
+      'Ler o “de” como se escreve: o artigo plural soa “dom”, de stora bilarna.',
     ],
     quiz: [
       {
-        question: 'Como se diz «a casa grande»?',
+        question: 'Como se diz “a casa grande”?',
         options: ['det stora huset', 'den stora huset', 'det stort huset'],
         answer: 'det stora huset',
         explanation: 'hus é palavra-ett: det + adjetivo em -a + huset.',
       },
       {
-        question: 'Como se diz «o carro novo»?',
+        question: 'Como se diz “o carro novo”?',
         options: ['den nya bil', 'den nya bilen', 'den ny bilen'],
         answer: 'den nya bilen',
         explanation: 'Dupla definição: den + nya + bilen, com o sufixo no substantivo.',
       },
       {
-        question: 'Como se diz «as crianças pequenas»?',
+        question: 'Como se diz “as crianças pequenas”?',
         options: ['de lilla barnen', 'de små barnen', 'de små barn'],
         answer: 'de små barnen',
         explanation: 'No plural, liten vira små, e o substantivo fica no plural definido: barnen.',
       },
       {
-        question: 'Como se diz «na semana que vem»?',
+        question: 'Como se diz “na semana que vem”?',
         options: ['nästa veckan', 'nästa vecka', 'den nästa vecka'],
         answer: 'nästa vecka',
-        explanation: '«nästa» pede o substantivo sem sufixo e sem artigo: nästa vecka.',
+        explanation: '“nästa” pede o substantivo sem sufixo e sem artigo: nästa vecka.',
       },
       {
-        question: 'Como se diz «este livro»?',
+        question: 'Como se diz “este livro”?',
         options: ['den här boken', 'det här boken', 'den här bok'],
         answer: 'den här boken',
         explanation: 'bok é palavra-en: den här + boken, com o substantivo na forma definida.',
@@ -1130,11 +1130,11 @@ export const GRAMMAR_SV: GrammarTopic[] = [
     level: 'A2.2',
     title: 'Possessivos: min, mitt, mina e sin × hans',
     emoji: '🔑',
-    summary: 'min bil, mitt hus, mina böcker: o possessivo concorda com a coisa possuída, e o substantivo vem sem sufixo. E o sueco resolve uma ambiguidade do nosso «seu»: «sin» é do próprio sujeito, «hans» é de outro homem.',
+    summary: 'min bil, mitt hus, mina böcker: o possessivo concorda com a coisa possuída, e o substantivo vem sem sufixo. E o sueco resolve uma ambiguidade do nosso “seu”: “sin” é do próprio sujeito, “hans” é de outro homem.',
     sections: [
       {
         heading: 'A tabela dos possessivos',
-        text: 'Min, din, vår e er mudam conforme a coisa possuída: forma básica com palavras-en, -tt ou -t com palavras-ett, -a no plural (como os adjetivos). Hans, hennes, hens e deras nunca mudam. Diferente do português «o meu carro», não há artigo, e o substantivo fica sem sufixo: min bil, nunca «min bilen».',
+        text: 'Min, din, vår e er mudam conforme a coisa possuída: forma básica com palavras-en, -tt ou -t com palavras-ett, -a no plural (como os adjetivos). Hans, hennes, hens e deras nunca mudam. Diferente do português “o meu carro”, não há artigo, e o substantivo fica sem sufixo: min bil, nunca “min bilen”.',
         table: {
           head: ['Dono', 'Palavra-en', 'Palavra-ett', 'Plural', 'Português'],
           rows: [
@@ -1158,7 +1158,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Possessivo + adjetivo',
-        text: 'Depois de um possessivo, o adjetivo vai para a forma em -a (como na forma definida), mas o substantivo continua sem sufixo: min nya bil, mitt stora hus, våra gamla vänner. Parece estranho no começo: o possessivo já «define» a coisa, e isso basta.',
+        text: 'Depois de um possessivo, o adjetivo vai para a forma em -a (como na forma definida), mas o substantivo continua sem sufixo: min nya bil, mitt stora hus, våra gamla vänner. Parece estranho no começo: o possessivo já “define” a coisa, e isso basta.',
         examples: [
           ['Min nya cykel är röd.', 'Minha bicicleta nova é vermelha.'],
           ['Hans lilla syster heter Elsa.', 'A irmã mais nova dele se chama Elsa.'],
@@ -1167,7 +1167,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'sin × hans: de quem é?',
-        text: 'Em «Erik pega a bicicleta dele», de quem é a bicicleta? Em português, fica ambíguo. Em sueco, não: se a coisa é do próprio sujeito da oração (de 3ª pessoa), usa-se sin/sitt/sina; se é de outra pessoa, hans, hennes ou deras. Duas regras: sin só aparece fora do sujeito (nunca «Sin fru heter Karin»; é «Hans fru heter Karin»), e com jag, du, vi e ni se usam os possessivos normais (Jag tar min cykel).',
+        text: 'Em “Erik pega a bicicleta dele”, de quem é a bicicleta? Em português, fica ambíguo. Em sueco, não: se a coisa é do próprio sujeito da oração (de 3ª pessoa), usa-se sin/sitt/sina; se é de outra pessoa, hans, hennes ou deras. Duas regras: sin só aparece fora do sujeito (nunca “Sin fru heter Karin”; é “Hans fru heter Karin”), e com jag, du, vi e ni se usam os possessivos normais (Jag tar min cykel).',
         table: {
           head: ['Sueco', 'De quem?', 'Português'],
           rows: [
@@ -1182,7 +1182,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'O genitivo com -s e a família',
-        text: 'Para «de alguém», o sueco põe -s no dono, sem apóstrofo (diferente do inglês Anna’s): Annas bil, Sveriges huvudstad. Como no possessivo, a coisa fica sem sufixo. E a família sueca se monta com esse jeito de compor: mormor é a mãe da mãe (mor + mor), farmor a mãe do pai, morfar e farfar os avôs; moster é a tia do lado da mãe e faster, a do lado do pai; morbror e farbror, os tios.',
+        text: 'Para “de alguém”, o sueco põe -s no dono, sem apóstrofo (diferente do inglês Anna’s): Annas bil, Sveriges huvudstad. Como no possessivo, a coisa fica sem sufixo. E a família sueca se monta com esse jeito de compor: mormor é a mãe da mãe (mor + mor), farmor a mãe do pai, morfar e farfar os avôs; moster é a tia do lado da mãe e faster, a do lado do pai; morbror e farbror, os tios.',
         examples: [
           ['Stockholm är Sveriges huvudstad.', 'Estocolmo é a capital da Suécia.'],
           ['Annas nya bil är blå.', 'O carro novo da Anna é azul.'],
@@ -1191,39 +1191,39 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pôr o sufixo depois do possessivo, pensando no «o meu carro»: «min bilen» está errado; é min bil.',
-      'Não concordar com a coisa: «min hus» está errado, porque hus é ett; é mitt hus. E no plural, mina böcker.',
-      'Usar «hans» quando a coisa é do próprio sujeito: «Erik älskar hans fru» dá a entender que é a mulher de outro homem. É Erik älskar sin fru.',
-      'Usar «sin» no sujeito: «Erik och sin fru bor här» está errado; é Erik och hans fru bor här.',
-      'Copiar o apóstrofo do inglês: «Anna’s bil» está errado; é Annas bil.',
+      'Pôr o sufixo depois do possessivo, pensando no “o meu carro”: “min bilen” está errado; é min bil.',
+      'Não concordar com a coisa: “min hus” está errado, porque hus é ett; é mitt hus. E no plural, mina böcker.',
+      'Usar “hans” quando a coisa é do próprio sujeito: “Erik älskar hans fru” dá a entender que é a mulher de outro homem. É Erik älskar sin fru.',
+      'Usar “sin” no sujeito: “Erik och sin fru bor här” está errado; é Erik och hans fru bor här.',
+      'Copiar o apóstrofo do inglês: “Anna’s bil” está errado; é Annas bil.',
     ],
     quiz: [
       {
-        question: 'Como se diz «minha casa»?',
+        question: 'Como se diz “minha casa”?',
         options: ['min hus', 'mitt hus', 'mitt huset'],
         answer: 'mitt hus',
         explanation: 'hus é palavra-ett, então mitt; e sem sufixo depois do possessivo.',
       },
       {
-        question: 'Como se diz «Erik ama a esposa dele (a própria)»?',
+        question: 'Como se diz “Erik ama a esposa dele (a própria)”?',
         options: ['Erik älskar sin fru.', 'Erik älskar hans fru.', 'Erik älskar sitt fru.'],
         answer: 'Erik älskar sin fru.',
-        explanation: 'A esposa é do próprio sujeito: sin (fru é palavra-en). «hans fru» seria a esposa de outro homem.',
+        explanation: 'A esposa é do próprio sujeito: sin (fru é palavra-en). “hans fru” seria a esposa de outro homem.',
       },
       {
-        question: 'Como se diz «meus livros»?',
+        question: 'Como se diz “meus livros”?',
         options: ['mina böcker', 'min böcker', 'mina böckerna'],
         answer: 'mina böcker',
         explanation: 'Plural: mina; e o substantivo fica sem sufixo, böcker.',
       },
       {
-        question: 'Como se diz «o carro da Anna»?',
+        question: 'Como se diz “o carro da Anna”?',
         options: ['Anna’s bil', 'Annas bil', 'Annas bilen'],
         answer: 'Annas bil',
         explanation: 'Genitivo com -s e sem apóstrofo; a coisa possuída fica sem sufixo.',
       },
       {
-        question: 'Como se diz «nosso carro novo»?',
+        question: 'Como se diz “nosso carro novo”?',
         options: ['vår ny bil', 'vår nya bil', 'vårt nya bil'],
         answer: 'vår nya bil',
         explanation: 'bil é palavra-en: vår. Depois do possessivo, o adjetivo vai para a forma em -a: nya.',
@@ -1236,11 +1236,11 @@ export const GRAMMAR_SV: GrammarTopic[] = [
     level: 'B1.1',
     title: 'Verbos modais (kan, måste, vill, ska, får, bör) e o futuro',
     emoji: '🧭',
-    summary: 'Os modais vêm seguidos do infinitivo puro, sem «att»: Jag kan simma. Cuidado com dois falsos amigos: «måste inte» é «não precisa», e a proibição é «får inte». Para o futuro, o sueco tem três caminhos: ska (plano), kommer att (previsão) e o simples presente com uma palavra de tempo.',
+    summary: 'Os modais vêm seguidos do infinitivo puro, sem “att”: Jag kan simma. Cuidado com dois falsos amigos: “måste inte” é “não precisa”, e a proibição é “får inte”. Para o futuro, o sueco tem três caminhos: ska (plano), kommer att (previsão) e o simples presente com uma palavra de tempo.',
     sections: [
       {
         heading: 'Os modais e as suas formas',
-        text: 'Os modais funcionam como em português («posso ir», «quero ir»): o verbo seguinte fica no infinitivo, e aqui sem nenhum «att». A diferença é que vários deles são irregulares e alguns não têm todas as formas: «måste» não tem infinitivo; quando você precisa de um, usa «behöva» (precisar) ou «bli tvungen att» (ser obrigado a). E o presente de «kunna» é «kan», e não «kunnar».',
+        text: 'Os modais funcionam como em português (“posso ir”, “quero ir”): o verbo seguinte fica no infinitivo, e aqui sem nenhum “att”. A diferença é que vários deles são irregulares e alguns não têm todas as formas: “måste” não tem infinitivo; quando você precisa de um, usa “behöva” (precisar) ou “bli tvungen att” (ser obrigado a). E o presente de “kunna” é “kan”, e não “kunnar”.',
         table: {
           head: ['Infinitivo', 'Presente', 'Pretérito', 'Supino', 'Sentido'],
           rows: [
@@ -1264,7 +1264,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Três armadilhas: måste inte, får e vilja att',
-        text: '«Du måste inte komma» quer dizer «você não é obrigado a vir», e não «você não pode vir». Para proibir, o sueco usa «får inte»: Du får inte parkera här. O próprio «får» tem dois lados: permissão (Får jag sitta här? — Posso sentar aqui?) e obrigação leve (Du får vänta en stund — Você vai ter que esperar um pouco). E «vilja» só pega infinitivo quando o sujeito é o mesmo: «Jag vill åka» (eu quero ir), mas «Jag vill att du åker» (quero que você vá), com «att» e oração inteira, nunca «jag vill dig åka».',
+        text: '“Du måste inte komma” quer dizer “você não é obrigado a vir”, e não “você não pode vir”. Para proibir, o sueco usa “får inte”: Du får inte parkera här. O próprio “får” tem dois lados: permissão (Får jag sitta här? — Posso sentar aqui?) e obrigação leve (Du får vänta en stund — Você vai ter que esperar um pouco). E “vilja” só pega infinitivo quando o sujeito é o mesmo: “Jag vill åka” (eu quero ir), mas “Jag vill att du åker” (quero que você vá), com “att” e oração inteira, nunca “jag vill dig åka”.',
         table: {
           head: ['Sueco', 'Português', 'Nota'],
           rows: [
@@ -1279,7 +1279,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'O futuro: ska, kommer att e o presente',
-        text: 'O sueco não tem uma conjugação de futuro. «Ska» indica intenção, plano ou combinado (o que alguém decidiu fazer). «Kommer att» indica previsão, o que vai acontecer sem depender da vontade de ninguém: o tempo, as consequências. E muitas vezes basta o presente com uma palavra de tempo, igual ao nosso «amanhã eu viajo». Na fala se ouve «kommer» sem o «att» (Det kommer regna), mas na escrita cuidada use «kommer att». Para «estou pensando em», existe «tänker»: Jag tänker sluta röka.',
+        text: 'O sueco não tem uma conjugação de futuro. “Ska” indica intenção, plano ou combinado (o que alguém decidiu fazer). “Kommer att” indica previsão, o que vai acontecer sem depender da vontade de ninguém: o tempo, as consequências. E muitas vezes basta o presente com uma palavra de tempo, igual ao nosso “amanhã eu viajo”. Na fala se ouve “kommer” sem o “att” (Det kommer regna), mas na escrita cuidada use “kommer att”. Para “estou pensando em”, existe “tänker”: Jag tänker sluta röka.',
         table: {
           head: ['Forma', 'Quando usar', 'Exemplo'],
           rows: [
@@ -1299,42 +1299,42 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pôr «att» depois do modal: «Jag kan att simma» está errado. Modal + infinitivo puro: Jag kan simma, Jag vill åka.',
-      'Traduzir «você não pode» por «du måste inte». Isso é «você não precisa». A proibição é «du får inte».',
-      'Dizer «jag vill du kommer». Com sujeitos diferentes, o sueco pede «att» e uma oração inteira: Jag vill att du kommer.',
-      'Usar «ska» para previsão do tempo: «det ska regna» soa como «dizem que vai chover». Para prever, use «det kommer att regna».',
-      'Inventar um infinitivo para «måste». Não existe «att måsta»: diga «att behöva» ou «att bli tvungen att».',
+      'Pôr “att” depois do modal: “Jag kan att simma” está errado. Modal + infinitivo puro: Jag kan simma, Jag vill åka.',
+      'Traduzir “você não pode” por “du måste inte”. Isso é “você não precisa”. A proibição é “du får inte”.',
+      'Dizer “jag vill du kommer”. Com sujeitos diferentes, o sueco pede “att” e uma oração inteira: Jag vill att du kommer.',
+      'Usar “ska” para previsão do tempo: “det ska regna” soa como “dizem que vai chover”. Para prever, use “det kommer att regna”.',
+      'Inventar um infinitivo para “måste”. Não existe “att måsta”: diga “att behöva” ou “att bli tvungen att”.',
     ],
     quiz: [
       {
-        question: 'Como dizer «Você não pode fumar aqui» (proibição)?',
+        question: 'Como dizer “Você não pode fumar aqui” (proibição)?',
         options: ['Du måste inte röka här.', 'Du får inte röka här.', 'Du vill inte röka här.'],
         answer: 'Du får inte röka här.',
-        explanation: 'Proibição é «får inte». «Måste inte» quer dizer «não precisa», e «vill inte» é «não quer».',
+        explanation: 'Proibição é “får inte”. “Måste inte” quer dizer “não precisa”, e “vill inte” é “não quer”.',
       },
       {
         question: 'Complete: Jag vill ___ svenska.',
         options: ['lära mig', 'att lära mig', 'lär mig'],
         answer: 'lära mig',
-        explanation: 'Depois de modal vem o infinitivo puro, sem «att»: Jag vill lära mig svenska.',
+        explanation: 'Depois de modal vem o infinitivo puro, sem “att”: Jag vill lära mig svenska.',
       },
       {
         question: 'Qual frase é uma previsão, sem vontade de ninguém?',
         options: ['Det kommer att regna i morgon.', 'Jag ska regna i morgon.', 'Det regnar att i morgon.'],
         answer: 'Det kommer att regna i morgon.',
-        explanation: '«Kommer att» é o futuro de previsão. «Ska» é plano ou intenção de alguém.',
+        explanation: '“Kommer att” é o futuro de previsão. “Ska” é plano ou intenção de alguém.',
       },
       {
-        question: 'Qual é o pretérito de «kan»?',
+        question: 'Qual é o pretérito de “kan”?',
         options: ['kunde', 'kunnade', 'kannade'],
         answer: 'kunde',
         explanation: 'kunna – kan – kunde – kunnat. Os modais são irregulares.',
       },
       {
-        question: 'Como dizer «Quero que você venha»?',
+        question: 'Como dizer “Quero que você venha”?',
         options: ['Jag vill du kommer.', 'Jag vill att du kommer.', 'Jag vill dig komma.'],
         answer: 'Jag vill att du kommer.',
-        explanation: 'Quando o sujeito muda, «vilja» pede «att» + oração completa.',
+        explanation: 'Quando o sujeito muda, “vilja” pede “att” + oração completa.',
       },
     ],
   },
@@ -1343,11 +1343,11 @@ export const GRAMMAR_SV: GrammarTopic[] = [
     level: 'B1.1',
     title: 'Imperativo e verbos reflexivos (sätta sig, känna sig)',
     emoji: '🪑',
-    summary: 'O imperativo sueco é curto: é o verbo sem terminação (Stäng dörren! Kom hit!), igual para «você» e «vocês». Os reflexivos usam mig, dig, sig, oss, er, sig, e muitos batem com o português (sentar-se = sätta sig), mas alguns não (lära sig = aprender).',
+    summary: 'O imperativo sueco é curto: é o verbo sem terminação (Stäng dörren! Kom hit!), igual para “você” e “vocês”. Os reflexivos usam mig, dig, sig, oss, er, sig, e muitos batem com o português (sentar-se = sätta sig), mas alguns não (lära sig = aprender).',
     sections: [
       {
         heading: 'Como formar o imperativo',
-        text: 'Regra prática: parta do presente. Nos verbos em -ar e nos verbos curtos em -r, tire só o -r (öppnar → öppna, bor → bo). Nos verbos em -er, tire o -er inteiro (stänger → stäng, skriver → skriv). A mesma forma serve para uma pessoa ou para várias: não há diferença entre «feche» e «fechem». Na negação, «inte» vem depois do verbo: Glöm inte! E nada de grosseria: um imperativo simples é normal em sueco, sobretudo com «tack» ou com um tom gentil.',
+        text: 'Regra prática: parta do presente. Nos verbos em -ar e nos verbos curtos em -r, tire só o -r (öppnar → öppna, bor → bo). Nos verbos em -er, tire o -er inteiro (stänger → stäng, skriver → skriv). A mesma forma serve para uma pessoa ou para várias: não há diferença entre “feche” e “fechem”. Na negação, “inte” vem depois do verbo: Glöm inte! E nada de grosseria: um imperativo simples é normal em sueco, sobretudo com “tack” ou com um tom gentil.',
         table: {
           head: ['Infinitivo', 'Presente', 'Imperativo', 'Exemplo'],
           rows: [
@@ -1373,7 +1373,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Os pronomes reflexivos',
-        text: 'O reflexivo sueco é quase o nosso «me, te, se, nos». Só a 3ª pessoa (singular e plural) tem forma própria, sig; nas outras, repete o pronome objeto. Na fala, mig, dig e sig soam «mej», «dej», «sej». A diferença entre sig e o pronome comum é a mesma do português: «Han rakar sig» (ele se barbeia) × «Han rakar honom» (ele barbeia outra pessoa).',
+        text: 'O reflexivo sueco é quase o nosso “me, te, se, nos”. Só a 3ª pessoa (singular e plural) tem forma própria, sig; nas outras, repete o pronome objeto. Na fala, mig, dig e sig soam “mej”, “dej”, “sej”. A diferença entre sig e o pronome comum é a mesma do português: “Han rakar sig” (ele se barbeia) × “Han rakar honom” (ele barbeia outra pessoa).',
         table: {
           head: ['Pessoa', 'Reflexivo', 'Exemplo', 'Português'],
           rows: [
@@ -1388,7 +1388,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Verbos reflexivos mais usados',
-        text: 'Atenção a dois pares que confundem: «sätta sig» é o movimento de sentar; «sitta» é estar sentado. «Lägga sig» é deitar-se; «ligga» é estar deitado. E alguns verbos são reflexivos só em sueco: «lära sig» (aprender; «lära» sozinho é «ensinar»). Na ordem da frase, o pronome reflexivo curto vem antes do «inte» na oração principal: Jag känner mig inte bra.',
+        text: 'Atenção a dois pares que confundem: “sätta sig” é o movimento de sentar; “sitta” é estar sentado. “Lägga sig” é deitar-se; “ligga” é estar deitado. E alguns verbos são reflexivos só em sueco: “lära sig” (aprender; “lära” sozinho é “ensinar”). Na ordem da frase, o pronome reflexivo curto vem antes do “inte” na oração principal: Jag känner mig inte bra.',
         table: {
           head: ['Sueco', 'Português', 'Nota'],
           rows: [
@@ -1415,42 +1415,42 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar o infinitivo como imperativo nos verbos em -er: «Stänga dörren!» está errado; o certo é «Stäng dörren!».',
-      'Pôr «inte» antes do imperativo: «Inte glöm!» não existe. Diga «Glöm inte!».',
-      'Esquecer o reflexivo em «lära sig»: «Jag lär svenska» soa como «eu ensino sueco». Diga «Jag lär mig svenska».',
-      'Usar «sig» com vi ou jag: «Vi gifte sig» está errado. Só a 3ª pessoa usa sig: Vi gifte oss, Jag känner mig.',
-      'Confundir movimento e estado: «Jag sätter mig» (eu me sento) × «Jag sitter» (estou sentado); «lägga sig» × «ligga».',
+      'Usar o infinitivo como imperativo nos verbos em -er: “Stänga dörren!” está errado; o certo é “Stäng dörren!”.',
+      'Pôr “inte” antes do imperativo: “Inte glöm!” não existe. Diga “Glöm inte!”.',
+      'Esquecer o reflexivo em “lära sig”: “Jag lär svenska” soa como “eu ensino sueco”. Diga “Jag lär mig svenska”.',
+      'Usar “sig” com vi ou jag: “Vi gifte sig” está errado. Só a 3ª pessoa usa sig: Vi gifte oss, Jag känner mig.',
+      'Confundir movimento e estado: “Jag sätter mig” (eu me sento) × “Jag sitter” (estou sentado); “lägga sig” × “ligga”.',
     ],
     quiz: [
       {
-        question: 'Qual é o imperativo de «stänga»?',
+        question: 'Qual é o imperativo de “stänga”?',
         options: ['stänga!', 'stäng!', 'stänger!'],
         answer: 'stäng!',
         explanation: 'Nos verbos em -er, tira-se o -er do presente: stänger → stäng.',
       },
       {
-        question: 'Como dizer «Sente-se aqui!» (a uma pessoa)?',
+        question: 'Como dizer “Sente-se aqui!” (a uma pessoa)?',
         options: ['Sätt dig här!', 'Sätta dig här!', 'Sätt mig här!'],
         answer: 'Sätt dig här!',
-        explanation: 'Imperativo «sätt» + reflexivo de «du», que é «dig».',
+        explanation: 'Imperativo “sätt” + reflexivo de “du”, que é “dig”.',
       },
       {
-        question: '«Nós nos casamos em junho» se diz:',
+        question: '“Nós nos casamos em junho” se diz:',
         options: ['Vi gifte oss i juni.', 'Vi gifte sig i juni.', 'Vi gifte oss på juni.'],
         answer: 'Vi gifte oss i juni.',
-        explanation: 'O reflexivo de «vi» é «oss», e com meses usa-se «i».',
+        explanation: 'O reflexivo de “vi” é “oss”, e com meses usa-se “i”.',
       },
       {
-        question: 'Como dizer «Estou aprendendo sueco»?',
+        question: 'Como dizer “Estou aprendendo sueco”?',
         options: ['Jag lär mig svenska.', 'Jag lär svenska.', 'Jag lär sig svenska.'],
         answer: 'Jag lär mig svenska.',
-        explanation: '«Lära sig» é aprender; sem o reflexivo, «lära» é ensinar. E o reflexivo de «jag» é «mig».',
+        explanation: '“Lära sig” é aprender; sem o reflexivo, “lära” é ensinar. E o reflexivo de “jag” é “mig”.',
       },
       {
-        question: 'Qual é o jeito certo de dizer «Não esqueça a chave!»?',
+        question: 'Qual é o jeito certo de dizer “Não esqueça a chave!”?',
         options: ['Glöm inte nyckeln!', 'Inte glöm nyckeln!', 'Glöm nyckeln inte!'],
         answer: 'Glöm inte nyckeln!',
-        explanation: 'No imperativo, «inte» vem logo depois do verbo, antes do objeto.',
+        explanation: 'No imperativo, “inte” vem logo depois do verbo, antes do objeto.',
       },
     ],
   },
@@ -1459,13 +1459,13 @@ export const GRAMMAR_SV: GrammarTopic[] = [
   {
     id: 'sv-g14',
     level: 'B1.2',
-    title: 'Orações subordinadas: o «inte» antes do verbo e as conjunções',
+    title: 'Orações subordinadas: o “inte” antes do verbo e as conjunções',
     emoji: '🔗',
-    summary: 'Na oração principal, «inte» vem depois do verbo: Jag kan inte. Na subordinada, ele pula para antes: …att jag inte kan. É a regra mais famosa do sueco para estrangeiros, e vale também para aldrig, alltid, ofta, redan e kanske.',
+    summary: 'Na oração principal, “inte” vem depois do verbo: Jag kan inte. Na subordinada, ele pula para antes: …att jag inte kan. É a regra mais famosa do sueco para estrangeiros, e vale também para aldrig, alltid, ofta, redan e kanske.',
     sections: [
       {
         heading: 'Principal × subordinada',
-        text: 'Na oração principal vale a ordem V2: o verbo conjugado é sempre o segundo elemento, e advérbios de frase como inte, aldrig, alltid, ofta, redan, kanske e nog vêm depois dele. Na subordinada (depois de att, när, om, eftersom…) a ordem muda: sujeito, depois o advérbio, e só então o verbo. E a subordinada nunca tem inversão: mesmo que comece com uma palavra de tempo, o sujeito vem antes do verbo. Os suecos decoram isso como «BIFF»: bisats, inte före finit (na subordinada, inte antes do verbo conjugado).',
+        text: 'Na oração principal vale a ordem V2: o verbo conjugado é sempre o segundo elemento, e advérbios de frase como inte, aldrig, alltid, ofta, redan, kanske e nog vêm depois dele. Na subordinada (depois de att, när, om, eftersom…) a ordem muda: sujeito, depois o advérbio, e só então o verbo. E a subordinada nunca tem inversão: mesmo que comece com uma palavra de tempo, o sujeito vem antes do verbo. Os suecos decoram isso como “BIFF”: bisats, inte före finit (na subordinada, inte antes do verbo conjugado).',
         table: {
           head: ['Oração principal', 'Oração subordinada'],
           rows: [
@@ -1486,7 +1486,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'As conjunções subordinativas',
-        text: 'Todas estas abrem uma subordinada, então todas pedem o «inte» antes do verbo. Repare em «om», que tem dois sentidos: condição («se chover») e pergunta indireta («não sei se ela vem»). E «när» é «quando», nunca «se»: «om du kommer» (se você vier) × «när du kommer» (quando você vier).',
+        text: 'Todas estas abrem uma subordinada, então todas pedem o “inte” antes do verbo. Repare em “om”, que tem dois sentidos: condição (“se chover”) e pergunta indireta (“não sei se ela vem”). E “när” é “quando”, nunca “se”: “om du kommer” (se você vier) × “när du kommer” (quando você vier).',
         table: {
           head: ['Conjunção', 'Português', 'Exemplo'],
           rows: [
@@ -1505,7 +1505,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Quando a subordinada vem primeiro, e as coordenativas',
-        text: 'Se a frase começa com a subordinada inteira, ela conta como o primeiro elemento da principal, e aí vem a inversão: o verbo, depois o sujeito. Já as conjunções coordenativas (och, men, eller, för, så) ligam duas principais e não mudam nada na ordem. A mais traiçoeira é «för» (pois): ela tem o sentido de «eftersom», mas a ordem é de principal.',
+        text: 'Se a frase começa com a subordinada inteira, ela conta como o primeiro elemento da principal, e aí vem a inversão: o verbo, depois o sujeito. Já as conjunções coordenativas (och, men, eller, för, så) ligam duas principais e não mudam nada na ordem. A mais traiçoeira é “för” (pois): ela tem o sentido de “eftersom”, mas a ordem é de principal.',
         table: {
           head: ['Estrutura', 'Exemplo'],
           rows: [
@@ -1524,42 +1524,42 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Levar a ordem da principal para a subordinada: «…att jag kan inte komma». Na escrita e nas provas, o certo é «…att jag inte kan komma». (Na fala espontânea, depois de «att», às vezes se ouve a outra ordem, mas não a imite no começo.)',
-      'Fazer inversão dentro da subordinada: «…att i morgon åker jag» está errado; diga «…att jag åker i morgon».',
-      'Esquecer a inversão depois de uma subordinada inicial: «När jag kom hem jag åt» está errado; o certo é «När jag kom hem åt jag».',
-      'Tratar «för» como «eftersom»: com «för» a ordem é de principal (för jag är inte frisk); com «eftersom» o «inte» vem antes (eftersom jag inte är frisk).',
-      'Traduzir «se» por «när»: «se» é «om». «När» é só «quando».',
+      'Levar a ordem da principal para a subordinada: “…att jag kan inte komma”. Na escrita e nas provas, o certo é “…att jag inte kan komma”. (Na fala espontânea, depois de “att”, às vezes se ouve a outra ordem, mas não a imite no começo.)',
+      'Fazer inversão dentro da subordinada: “…att i morgon åker jag” está errado; diga “…att jag åker i morgon”.',
+      'Esquecer a inversão depois de uma subordinada inicial: “När jag kom hem jag åt” está errado; o certo é “När jag kom hem åt jag”.',
+      'Tratar “för” como “eftersom”: com “för” a ordem é de principal (för jag är inte frisk); com “eftersom” o “inte” vem antes (eftersom jag inte är frisk).',
+      'Traduzir “se” por “när”: “se” é “om”. “När” é só “quando”.',
     ],
     quiz: [
       {
         question: 'Complete corretamente: Hon säger att hon ___ .',
         options: ['inte kan komma', 'kan inte komma', 'kan komma inte'],
         answer: 'inte kan komma',
-        explanation: 'Depois de «att» vem uma subordinada, e nela o «inte» fica antes do verbo conjugado.',
+        explanation: 'Depois de “att” vem uma subordinada, e nela o “inte” fica antes do verbo conjugado.',
       },
       {
         question: 'Qual frase está certa?',
         options: ['När vi kom fram åt vi middag.', 'När vi kom fram vi åt middag.', 'När kom vi fram åt vi middag.'],
         answer: 'När vi kom fram åt vi middag.',
-        explanation: 'A subordinada «När vi kom fram» é o primeiro elemento; por isso a principal inverte: åt vi.',
+        explanation: 'A subordinada “När vi kom fram” é o primeiro elemento; por isso a principal inverte: åt vi.',
       },
       {
-        question: 'Qual conjunção quer dizer «se» numa condição?',
+        question: 'Qual conjunção quer dizer “se” numa condição?',
         options: ['om', 'när', 'att'],
         answer: 'om',
-        explanation: '«Om» é «se» (condição e pergunta indireta). «När» é «quando».',
+        explanation: '“Om” é “se” (condição e pergunta indireta). “När” é “quando”.',
       },
       {
         question: 'Qual frase está certa?',
         options: ['Jag är hemma, för jag är inte frisk.', 'Jag är hemma, för jag inte är frisk.', 'Jag är hemma, eftersom jag är inte frisk.'],
         answer: 'Jag är hemma, för jag är inte frisk.',
-        explanation: '«För» é coordenativa: a segunda oração mantém a ordem de principal. Com «eftersom» seria «eftersom jag inte är frisk».',
+        explanation: '“För” é coordenativa: a segunda oração mantém a ordem de principal. Com “eftersom” seria “eftersom jag inte är frisk”.',
       },
       {
-        question: 'Onde fica «aldrig» em: «…eftersom han ___ fisk»?',
+        question: 'Onde fica “aldrig” em: “…eftersom han ___ fisk”?',
         options: ['aldrig äter', 'äter aldrig', 'äter fisk aldrig'],
         answer: 'aldrig äter',
-        explanation: '«Aldrig» segue a mesma regra do «inte»: na subordinada vem antes do verbo conjugado.',
+        explanation: '“Aldrig” segue a mesma regra do “inte”: na subordinada vem antes do verbo conjugado.',
       },
     ],
   },
@@ -1568,11 +1568,11 @@ export const GRAMMAR_SV: GrammarTopic[] = [
     level: 'B1.2',
     title: 'Mais-que-perfeito (hade gjort) e a ordem dos acontecimentos',
     emoji: '⏪',
-    summary: 'O mais-que-perfeito sueco é «hade» + supino, o nosso «tinha feito»: När vi kom hade tåget redan gått. Ele aparece junto de conjunções de tempo (när, innan, efter att, tills), e nas subordinadas o «hade» pode até sumir.',
+    summary: 'O mais-que-perfeito sueco é “hade” + supino, o nosso “tinha feito”: När vi kom hade tåget redan gått. Ele aparece junto de conjunções de tempo (när, innan, efter att, tills), e nas subordinadas o “hade” pode até sumir.',
     sections: [
       {
         heading: 'Formação: hade + supino',
-        text: 'É o mesmo supino do perfeito (har ätit), só que com «hade», o pretérito de «ha». O supino não muda nunca, não importa o sujeito. Use o mais-que-perfeito para uma ação que aconteceu antes de outra no passado, exatamente como o nosso «tinha feito».',
+        text: 'É o mesmo supino do perfeito (har ätit), só que com “hade”, o pretérito de “ha”. O supino não muda nunca, não importa o sujeito. Use o mais-que-perfeito para uma ação que aconteceu antes de outra no passado, exatamente como o nosso “tinha feito”.',
         table: {
           head: ['Infinitivo', 'Supino', 'Mais-que-perfeito', 'Português'],
           rows: [
@@ -1598,7 +1598,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Conjunções de tempo',
-        text: 'Estas conjunções abrem subordinadas, então a regra do «inte» antes do verbo continua valendo. Uma construção muito útil é «efter att ha» + supino, que corresponde ao nosso «depois de ter feito». E «sedan» como conjunção é «desde que»: Sedan jag flyttade hit… (desde que me mudei para cá…).',
+        text: 'Estas conjunções abrem subordinadas, então a regra do “inte” antes do verbo continua valendo. Uma construção muito útil é “efter att ha” + supino, que corresponde ao nosso “depois de ter feito”. E “sedan” como conjunção é “desde que”: Sedan jag flyttade hit… (desde que me mudei para cá…).',
         table: {
           head: ['Conjunção', 'Português', 'Exemplo'],
           rows: [
@@ -1612,8 +1612,8 @@ export const GRAMMAR_SV: GrammarTopic[] = [
         },
       },
       {
-        heading: 'O «hade» que desaparece',
-        text: 'Uma particularidade do sueco: nas orações subordinadas, o auxiliar «ha» (har ou hade) pode ser omitido, sobretudo na escrita. «Jag visste att hon redan åkt» é o mesmo que «…att hon redan hade åkt». Isso só acontece na subordinada; na principal o auxiliar é obrigatório. Você não precisa usar, mas vai encontrar em jornais e livros, e é bom reconhecer.',
+        heading: 'O “hade” que desaparece',
+        text: 'Uma particularidade do sueco: nas orações subordinadas, o auxiliar “ha” (har ou hade) pode ser omitido, sobretudo na escrita. “Jag visste att hon redan åkt” é o mesmo que “…att hon redan hade åkt”. Isso só acontece na subordinada; na principal o auxiliar é obrigatório. Você não precisa usar, mas vai encontrar em jornais e livros, e é bom reconhecer.',
         examples: [
           ['Jag visste att hon redan åkt.', 'Eu sabia que ela já tinha ido embora.'],
           ['Han berättade att han aldrig varit i Skåne.', 'Ele contou que nunca tinha estado na Escânia.'],
@@ -1623,42 +1623,42 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Conjugar o supino: «hade ätat» ou «hade åt» estão errados. O supino é fixo: hade ätit, hade gjort, hade sett.',
-      'Confundir supino com particípio: «hade skrivit» (tinha escrito) × «brevet var skrivet» (a carta estava escrita).',
-      'Tirar o auxiliar na oração principal: «Jag redan åkt» está errado. O «hade» só pode sumir em subordinadas.',
-      'Esquecer a inversão depois de uma subordinada de tempo: «När vi hade ätit gick vi ut», e não «…vi gick ut».',
-      'Traduzir «depois de comer» por «efter att äta». Com ação terminada, o natural é «efter att ha ätit».',
+      'Conjugar o supino: “hade ätat” ou “hade åt” estão errados. O supino é fixo: hade ätit, hade gjort, hade sett.',
+      'Confundir supino com particípio: “hade skrivit” (tinha escrito) × “brevet var skrivet” (a carta estava escrita).',
+      'Tirar o auxiliar na oração principal: “Jag redan åkt” está errado. O “hade” só pode sumir em subordinadas.',
+      'Esquecer a inversão depois de uma subordinada de tempo: “När vi hade ätit gick vi ut”, e não “…vi gick ut”.',
+      'Traduzir “depois de comer” por “efter att äta”. Com ação terminada, o natural é “efter att ha ätit”.',
     ],
     quiz: [
       {
-        question: 'Como dizer «Eu tinha esquecido o celular»?',
+        question: 'Como dizer “Eu tinha esquecido o celular”?',
         options: ['Jag hade glömt mobilen.', 'Jag har glömde mobilen.', 'Jag hade glömde mobilen.'],
         answer: 'Jag hade glömt mobilen.',
         explanation: 'Mais-que-perfeito = hade + supino. O supino de glömma é glömt.',
       },
       {
-        question: 'Qual é o supino de «göra»?',
+        question: 'Qual é o supino de “göra”?',
         options: ['gjort', 'gjorde', 'görat'],
         answer: 'gjort',
-        explanation: 'göra – gör – gjorde – gjort. «Gjorde» é o pretérito.',
+        explanation: 'göra – gör – gjorde – gjort. “Gjorde” é o pretérito.',
       },
       {
         question: 'Complete: När vi kom ___ redan gått.',
         options: ['hade filmen', 'filmen hade', 'filmen har'],
         answer: 'hade filmen',
-        explanation: 'A subordinada «När vi kom» vem primeiro, então a principal inverte: hade filmen.',
+        explanation: 'A subordinada “När vi kom” vem primeiro, então a principal inverte: hade filmen.',
       },
       {
-        question: 'Em qual frase o «hade» pode ser omitido?',
+        question: 'Em qual frase o “hade” pode ser omitido?',
         options: ['Jag visste att hon (hade) åkt.', 'Hon (hade) åkt när jag kom.', 'I går (hade) jag glömt allt.'],
         answer: 'Jag visste att hon (hade) åkt.',
-        explanation: 'O auxiliar só pode cair em oração subordinada, como a que vem depois de «att».',
+        explanation: 'O auxiliar só pode cair em oração subordinada, como a que vem depois de “att”.',
       },
       {
-        question: '«Depois de ter comido, saímos» se diz:',
+        question: '“Depois de ter comido, saímos” se diz:',
         options: ['Efter att ha ätit gick vi ut.', 'Efter att äta gick vi ut.', 'Efter att ha ätit vi gick ut.'],
         answer: 'Efter att ha ätit gick vi ut.',
-        explanation: '«Efter att ha» + supino, e depois a inversão na principal: gick vi.',
+        explanation: '“Efter att ha” + supino, e depois a inversão na principal: gick vi.',
       },
     ],
   },
@@ -1669,11 +1669,11 @@ export const GRAMMAR_SV: GrammarTopic[] = [
     level: 'B1.3',
     title: 'Verbos com partícula: tycka om, hälsa på, ta bort',
     emoji: '🧩',
-    summary: 'Muitos verbos suecos ganham um sentido novo com uma partícula (om, på, bort, upp, av…): tycka é «achar», mas tycka om é «gostar». A partícula leva o acento da frase, e é isso que distingue «hälsa PÅ» (visitar) de «HÄLSA på» (cumprimentar).',
+    summary: 'Muitos verbos suecos ganham um sentido novo com uma partícula (om, på, bort, upp, av…): tycka é “achar”, mas tycka om é “gostar”. A partícula leva o acento da frase, e é isso que distingue “hälsa PÅ” (visitar) de “HÄLSA på” (cumprimentar).',
     sections: [
       {
         heading: 'O verbo muda de sentido',
-        text: 'Pense no inglês «give up» ou «turn off»: o sueco é cheio disso. A partícula é tônica: na fala, ela recebe o acento mais forte (jag tycker OM dig). Se você não acentuar a partícula, pode estar dizendo outra coisa. Aprenda cada verbo com a sua partícula, como uma palavra só.',
+        text: 'Pense no inglês “give up” ou “turn off”: o sueco é cheio disso. A partícula é tônica: na fala, ela recebe o acento mais forte (jag tycker OM dig). Se você não acentuar a partícula, pode estar dizendo outra coisa. Aprenda cada verbo com a sua partícula, como uma palavra só.',
         table: {
           head: ['Sueco', 'Português', 'Exemplo'],
           rows: [
@@ -1702,8 +1702,8 @@ export const GRAMMAR_SV: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'Onde ficam a partícula e o «inte»',
-        text: 'A partícula fica logo depois do verbo principal (ou do supino), e em sueco ela vem antes do objeto, até de um pronome curto: «Stäng av den!», diferente do inglês «turn it off». O «inte» entra entre o verbo conjugado e a partícula na oração principal. Na subordinada, vale a regra de sempre: «inte» antes do verbo.',
+        heading: 'Onde ficam a partícula e o “inte”',
+        text: 'A partícula fica logo depois do verbo principal (ou do supino), e em sueco ela vem antes do objeto, até de um pronome curto: “Stäng av den!”, diferente do inglês “turn it off”. O “inte” entra entre o verbo conjugado e a partícula na oração principal. Na subordinada, vale a regra de sempre: “inte” antes do verbo.',
         table: {
           head: ['Estrutura', 'Exemplo', 'Português'],
           rows: [
@@ -1717,7 +1717,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'O acento muda tudo, e a partícula gruda no particípio',
-        text: 'Com «hälsa på», o acento decide o sentido: com a partícula acentuada (hälsa PÅ) é «visitar»; com a partícula átona (HÄLSA på någon) é «cumprimentar alguém». No particípio, a partícula vai para a frente e se junta ao verbo numa palavra só: stänga av → avstängd, ta bort → borttagen, känna igen → igenkänd, tycka om → omtyckt.',
+        text: 'Com “hälsa på”, o acento decide o sentido: com a partícula acentuada (hälsa PÅ) é “visitar”; com a partícula átona (HÄLSA på någon) é “cumprimentar alguém”. No particípio, a partícula vai para a frente e se junta ao verbo numa palavra só: stänga av → avstängd, ta bort → borttagen, känna igen → igenkänd, tycka om → omtyckt.',
         table: {
           head: ['Verbo com partícula', 'Particípio', 'Exemplo', 'Português'],
           rows: [
@@ -1735,39 +1735,39 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Esquecer a partícula: «Jag tycker kaffe» não quer dizer nada. «Gostar» é «tycka om»: Jag tycker om kaffe.',
-      'Pôr o pronome antes da partícula, à moda inglesa ou norueguesa: «Stäng den av». Em sueco: Stäng av den.',
-      'Pôr o «inte» depois da partícula: «Jag tycker om inte fisk» está errado; o certo é «Jag tycker inte om fisk».',
-      'Não acentuar a partícula: ela é a sílaba mais forte do grupo. «Tycker OM», «ser UT», «ger UPP».',
-      'Separar a partícula no particípio: «stängd av» não; o particípio é uma palavra só, «avstängd».',
+      'Esquecer a partícula: “Jag tycker kaffe” não quer dizer nada. “Gostar” é “tycka om”: Jag tycker om kaffe.',
+      'Pôr o pronome antes da partícula, à moda inglesa ou norueguesa: “Stäng den av”. Em sueco: Stäng av den.',
+      'Pôr o “inte” depois da partícula: “Jag tycker om inte fisk” está errado; o certo é “Jag tycker inte om fisk”.',
+      'Não acentuar a partícula: ela é a sílaba mais forte do grupo. “Tycker OM”, “ser UT”, “ger UPP”.',
+      'Separar a partícula no particípio: “stängd av” não; o particípio é uma palavra só, “avstängd”.',
     ],
     quiz: [
       {
-        question: 'Como dizer «Eu não gosto de café»?',
+        question: 'Como dizer “Eu não gosto de café”?',
         options: ['Jag tycker inte om kaffe.', 'Jag tycker om inte kaffe.', 'Jag inte tycker om kaffe.'],
         answer: 'Jag tycker inte om kaffe.',
-        explanation: 'Na principal, «inte» fica entre o verbo conjugado e a partícula.',
+        explanation: 'Na principal, “inte” fica entre o verbo conjugado e a partícula.',
       },
       {
-        question: 'Qual verbo quer dizer «desistir»?',
+        question: 'Qual verbo quer dizer “desistir”?',
         options: ['ge upp', 'ta upp', 'se upp'],
         answer: 'ge upp',
-        explanation: '«Ge upp» é desistir. «Ta upp» é levantar um assunto; «se upp» é tomar cuidado.',
+        explanation: '“Ge upp” é desistir. “Ta upp” é levantar um assunto; “se upp” é tomar cuidado.',
       },
       {
-        question: 'Como dizer «Desliga isso!» (a tv)?',
+        question: 'Como dizer “Desliga isso!” (a tv)?',
         options: ['Stäng av den!', 'Stäng den av!', 'Av stäng den!'],
         answer: 'Stäng av den!',
         explanation: 'Em sueco a partícula vem antes do objeto, até de um pronome.',
       },
       {
-        question: '«Du ser trött ut» quer dizer:',
+        question: '“Du ser trött ut” quer dizer:',
         options: ['Você parece cansado.', 'Você vê o cansado.', 'Você saiu cansado.'],
         answer: 'Você parece cansado.',
-        explanation: '«Se ut» é «parecer» (aparência). A partícula «ut» vai para o fim da oração.',
+        explanation: '“Se ut” é “parecer” (aparência). A partícula “ut” vai para o fim da oração.',
       },
       {
-        question: 'Qual é o particípio de «stänga av»?',
+        question: 'Qual é o particípio de “stänga av”?',
         options: ['avstängd', 'stängd av', 'avstänga'],
         answer: 'avstängd',
         explanation: 'No particípio a partícula vai para a frente e se junta ao verbo: avstängd.',
@@ -1779,11 +1779,11 @@ export const GRAMMAR_SV: GrammarTopic[] = [
     level: 'B1.3',
     title: 'Passiva com -s (dörren öppnas) e com bli + particípio',
     emoji: '🚪',
-    summary: 'O sueco faz a voz passiva com um simples -s no fim do verbo: Dörren öppnas (a porta é aberta), Huset byggdes (a casa foi construída). A outra passiva, com «bli» + particípio, é mais falada e fala de um acontecimento concreto: Cykeln blev stulen.',
+    summary: 'O sueco faz a voz passiva com um simples -s no fim do verbo: Dörren öppnas (a porta é aberta), Huset byggdes (a casa foi construída). A outra passiva, com “bli” + particípio, é mais falada e fala de um acontecimento concreto: Cykeln blev stulen.',
     sections: [
       {
         heading: 'A passiva com -s',
-        text: 'Pegue o verbo e acrescente -s: öppnar → öppnas, byggde → byggdes, har sålt → har sålts. Nos verbos em -er, o presente perde o -er antes do -s (köper → köps, skriver → skrivs), mas se o radical já termina em s, entra -es (läser → läses). Com modais e com «ska», o -s vai no infinitivo: det måste göras (tem que ser feito). O agente, quando aparece, vem com «av»: av Selma Lagerlöf. Essa passiva é típica de avisos, regras, notícias e afirmações gerais.',
+        text: 'Pegue o verbo e acrescente -s: öppnar → öppnas, byggde → byggdes, har sålt → har sålts. Nos verbos em -er, o presente perde o -er antes do -s (köper → köps, skriver → skrivs), mas se o radical já termina em s, entra -es (läser → läses). Com modais e com “ska”, o -s vai no infinitivo: det måste göras (tem que ser feito). O agente, quando aparece, vem com “av”: av Selma Lagerlöf. Essa passiva é típica de avisos, regras, notícias e afirmações gerais.',
         table: {
           head: ['Infinitivo', 'Presente passivo', 'Pretérito passivo', 'Supino passivo'],
           rows: [
@@ -1807,7 +1807,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'bli × vara + particípio',
-        text: '«Bli» + particípio descreve o acontecimento, a mudança (foi fechada, foi roubada). «Vara» + particípio descreve o estado que ficou (está fechada). O particípio concorda com o sujeito: en → -d/-t/-en, ett → -t/-et, plural → -a/-na. Na fala do dia a dia, «bli» é muito comum para contar o que aconteceu com alguém ou alguma coisa.',
+        text: '“Bli” + particípio descreve o acontecimento, a mudança (foi fechada, foi roubada). “Vara” + particípio descreve o estado que ficou (está fechada). O particípio concorda com o sujeito: en → -d/-t/-en, ett → -t/-et, plural → -a/-na. Na fala do dia a dia, “bli” é muito comum para contar o que aconteceu com alguém ou alguma coisa.',
         table: {
           head: ['Sueco', 'Português', 'Nota'],
           rows: [
@@ -1822,7 +1822,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Verbos em -s que não são passivos',
-        text: 'Alguns verbos terminam sempre em -s e têm sentido ativo: são os depoentes. Outros usam o -s com sentido recíproco («um ao outro»). Você já conhece dois: «det finns» (há) e «vi ses!» (a gente se vê!).',
+        text: 'Alguns verbos terminam sempre em -s e têm sentido ativo: são os depoentes. Outros usam o -s com sentido recíproco (“um ao outro”). Você já conhece dois: “det finns” (há) e “vi ses!” (a gente se vê!).',
         table: {
           head: ['Verbo', 'Português', 'Exemplo'],
           rows: [
@@ -1839,30 +1839,30 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar «vara» para a ação: «Cykeln var stulen i natt» soa estranho; para o acontecimento, use «blev stulen» ou «stals».',
-      'Esquecer a concordância do particípio: «Huset blev såld» não; «huset» é ett, então «Huset blev sålt», «Bilarna blev sålda».',
-      'Pôr o -s no modal em vez do infinitivo: «det måstes göra» está errado; o certo é «det måste göras».',
-      'Achar que todo verbo em -s é passivo: «Jag hoppas» é «eu espero», ativo. E não existe «hoppa» com esse sentido («hoppa» é pular).',
-      'Traduzir «por» do agente com «genom» ou «från»: o agente da passiva vem com «av».',
+      'Usar “vara” para a ação: “Cykeln var stulen i natt” soa estranho; para o acontecimento, use “blev stulen” ou “stals”.',
+      'Esquecer a concordância do particípio: “Huset blev såld” não; “huset” é ett, então “Huset blev sålt”, “Bilarna blev sålda”.',
+      'Pôr o -s no modal em vez do infinitivo: “det måstes göra” está errado; o certo é “det måste göras”.',
+      'Achar que todo verbo em -s é passivo: “Jag hoppas” é “eu espero”, ativo. E não existe “hoppa” com esse sentido (“hoppa” é pular).',
+      'Traduzir “por” do agente com “genom” ou “från”: o agente da passiva vem com “av”.',
     ],
     quiz: [
       {
-        question: 'Qual é o presente passivo de «köpa»?',
+        question: 'Qual é o presente passivo de “köpa”?',
         options: ['köps', 'köpas', 'köperas'],
         answer: 'köps',
         explanation: 'Nos verbos em -er, tira-se o -er e põe-se -s: köper → köps.',
       },
       {
-        question: '«A casa foi construída no século XVIII» se diz:',
+        question: '“A casa foi construída no século XVIII” se diz:',
         options: ['Huset byggdes på 1700-talet.', 'Huset byggs på 1700-talet.', 'Huset byggde på 1700-talet.'],
         answer: 'Huset byggdes på 1700-talet.',
-        explanation: 'Pretérito passivo: byggde + s = byggdes. «Byggs» seria presente.',
+        explanation: 'Pretérito passivo: byggde + s = byggdes. “Byggs” seria presente.',
       },
       {
         question: 'Qual frase descreve um estado, e não uma ação?',
         options: ['Dörren är stängd.', 'Dörren blev stängd.', 'Dörren stängdes.'],
         answer: 'Dörren är stängd.',
-        explanation: '«Vara» + particípio descreve o estado. «Bli» e a passiva com -s descrevem a ação.',
+        explanation: '“Vara” + particípio descreve o estado. “Bli” e a passiva com -s descrevem a ação.',
       },
       {
         question: 'Complete: Bilarna blev ___ .',
@@ -1874,7 +1874,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
         question: 'Qual verbo em -s tem sentido ativo?',
         options: ['hoppas', 'öppnas', 'stängs'],
         answer: 'hoppas',
-        explanation: '«Hoppas» (esperar, ter esperança) é depoente: tem forma em -s e sentido ativo.',
+        explanation: '“Hoppas” (esperar, ter esperança) é depoente: tem forma em -s e sentido ativo.',
       },
     ],
   },
@@ -1887,7 +1887,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
     sections: [
       {
         heading: 'Particípio presente: -ande e -ende',
-        text: 'Verbos cujo infinitivo termina em -a ganham -ande (spela → spelande, sova → sovande); verbos curtos terminados em vogal tônica ganham -ende (le → leende, gå → gående, bo → boende). Ele não varia. É usado como adjetivo (en spännande bok) e às vezes como substantivo (de boende, os moradores). O uso verbal mais comum é depois de verbos de movimento: Han kom springande (ele veio correndo). Mas atenção: o sueco não tem «estou fazendo» com particípio; para isso se usa o presente simples ou «håller på att».',
+        text: 'Verbos cujo infinitivo termina em -a ganham -ande (spela → spelande, sova → sovande); verbos curtos terminados em vogal tônica ganham -ende (le → leende, gå → gående, bo → boende). Ele não varia. É usado como adjetivo (en spännande bok) e às vezes como substantivo (de boende, os moradores). O uso verbal mais comum é depois de verbos de movimento: Han kom springande (ele veio correndo). Mas atenção: o sueco não tem “estou fazendo” com particípio; para isso se usa o presente simples ou “håller på att”.',
         table: {
           head: ['Infinitivo', 'Particípio presente', 'Exemplo', 'Português'],
           rows: [
@@ -1931,7 +1931,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Supino × particípio',
-        text: 'O brasileiro tende a misturar os dois porque em português «escrito» serve para tudo. Em sueco não: depois de «har/hade» vem o supino, que nunca muda (har skrivit, har stängt). Depois de «vara/bli» e antes de substantivo vem o particípio, que concorda (är skrivet, blev stulen). Nos verbos fortes a diferença salta aos olhos: skrivit × skriven/skrivet.',
+        text: 'O brasileiro tende a misturar os dois porque em português “escrito” serve para tudo. Em sueco não: depois de “har/hade” vem o supino, que nunca muda (har skrivit, har stängt). Depois de “vara/bli” e antes de substantivo vem o particípio, que concorda (är skrivet, blev stulen). Nos verbos fortes a diferença salta aos olhos: skrivit × skriven/skrivet.',
         table: {
           head: ['Supino (com ha)', 'Particípio (com vara, bli, substantivo)'],
           rows: [
@@ -1944,15 +1944,15 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Traduzir o gerúndio com -ande: «Jag är läsande» não existe. «Estou lendo» é «Jag läser» ou «Jag håller på att läsa».',
-      'Esquecer a concordância: «ett stängd fönster» está errado; com ett é «ett stängt fönster», no plural «stängda fönster».',
-      'Usar o supino onde vai o particípio: «Brevet är skrivit» está errado; o certo é «Brevet är skrivet».',
-      'Na forma definida, usar a forma singular: «den stulen cykeln» não; o certo é «den stulna cykeln».',
-      'Pôr -ande em verbo curto: «gåande» não existe; verbos como gå, le, bo fazem -ende: gående, leende, boende.',
+      'Traduzir o gerúndio com -ande: “Jag är läsande” não existe. “Estou lendo” é “Jag läser” ou “Jag håller på att läsa”.',
+      'Esquecer a concordância: “ett stängd fönster” está errado; com ett é “ett stängt fönster”, no plural “stängda fönster”.',
+      'Usar o supino onde vai o particípio: “Brevet är skrivit” está errado; o certo é “Brevet är skrivet”.',
+      'Na forma definida, usar a forma singular: “den stulen cykeln” não; o certo é “den stulna cykeln”.',
+      'Pôr -ande em verbo curto: “gåande” não existe; verbos como gå, le, bo fazem -ende: gående, leende, boende.',
     ],
     quiz: [
       {
-        question: 'Qual é o particípio presente de «gå»?',
+        question: 'Qual é o particípio presente de “gå”?',
         options: ['gående', 'gåande', 'gångande'],
         answer: 'gående',
         explanation: 'Verbos curtos terminados em vogal tônica fazem -ende: gående, leende, boende.',
@@ -1961,25 +1961,25 @@ export const GRAMMAR_SV: GrammarTopic[] = [
         question: 'Complete: ett ___ fönster (fechada).',
         options: ['stängt', 'stängd', 'stängda'],
         answer: 'stängt',
-        explanation: '«Fönster» é ett-palavra, então o particípio vai para a forma em -t.',
+        explanation: '“Fönster” é ett-palavra, então o particípio vai para a forma em -t.',
       },
       {
         question: 'Qual frase está certa?',
         options: ['Brevet är skrivet.', 'Brevet är skrivit.', 'Brevet är skriven.'],
         answer: 'Brevet är skrivet.',
-        explanation: 'Com «vara» vai o particípio concordando: «brevet» é ett, então «skrivet». «Skrivit» é o supino.',
+        explanation: 'Com “vara” vai o particípio concordando: “brevet” é ett, então “skrivet”. “Skrivit” é o supino.',
       },
       {
-        question: 'Como dizer «a bicicleta roubada»?',
+        question: 'Como dizer “a bicicleta roubada”?',
         options: ['den stulna cykeln', 'den stulen cykeln', 'den stulet cykeln'],
         answer: 'den stulna cykeln',
         explanation: 'Na forma definida, o particípio usa a forma do plural: stulna.',
       },
       {
-        question: '«Ele veio correndo» se diz:',
+        question: '“Ele veio correndo” se diz:',
         options: ['Han kom springande.', 'Han kom springer.', 'Han var springande.'],
         answer: 'Han kom springande.',
-        explanation: 'Com verbos de movimento como «komma», o particípio presente descreve o jeito de vir.',
+        explanation: 'Com verbos de movimento como “komma”, o particípio presente descreve o jeito de vir.',
       },
     ],
   },
@@ -1990,11 +1990,11 @@ export const GRAMMAR_SV: GrammarTopic[] = [
     level: 'B1.4',
     title: 'Comparativo e superlativo (större, störst; mer, mest)',
     emoji: '📏',
-    summary: 'O sueco compara com terminações: varm – varmare – varmast. Alguns adjetivos mudam a vogal (stor – större – störst) e outros são irregulares (bra – bättre – bäst). O «que» da comparação é «än», e o «tão… quanto» é «lika… som».',
+    summary: 'O sueco compara com terminações: varm – varmare – varmast. Alguns adjetivos mudam a vogal (stor – större – störst) e outros são irregulares (bra – bättre – bäst). O “que” da comparação é “än”, e o “tão… quanto” é “lika… som”.',
     sections: [
       {
         heading: 'A regra geral: -are e -ast',
-        text: 'A maioria dos adjetivos faz o comparativo com -are e o superlativo com -ast, e o comparativo não concorda com nada: en varmare dag, ett varmare land, varmare dagar. Adjetivos longos, particípios e os terminados em -isk ou -ande usam «mer» e «mest», como o nosso «mais»: mer praktisk, mest spännande. Para comparar: «än» (do que) e «lika… som» (tão… quanto).',
+        text: 'A maioria dos adjetivos faz o comparativo com -are e o superlativo com -ast, e o comparativo não concorda com nada: en varmare dag, ett varmare land, varmare dagar. Adjetivos longos, particípios e os terminados em -isk ou -ande usam “mer” e “mest”, como o nosso “mais”: mer praktisk, mest spännande. Para comparar: “än” (do que) e “lika… som” (tão… quanto).',
         table: {
           head: ['Positivo', 'Comparativo', 'Superlativo', 'Português'],
           rows: [
@@ -2016,7 +2016,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Mudança de vogal e irregulares',
-        text: 'Um grupo de adjetivos muito usados faz -re e -st e muda a vogal (o → ö, å → ä, u → y). Outros trocam de raiz, como o nosso bom → melhor. Repare que «dålig» tem duas séries: «sämre, sämst» (de pior qualidade) e «värre, värst» (pior, mais grave, para coisas ruins). O advérbio «gärna» (com gosto) vira «hellre» (preferir) e «helst» (de preferência).',
+        text: 'Um grupo de adjetivos muito usados faz -re e -st e muda a vogal (o → ö, å → ä, u → y). Outros trocam de raiz, como o nosso bom → melhor. Repare que “dålig” tem duas séries: “sämre, sämst” (de pior qualidade) e “värre, värst” (pior, mais grave, para coisas ruins). O advérbio “gärna” (com gosto) vira “hellre” (preferir) e “helst” (de preferência).',
         table: {
           head: ['Positivo', 'Comparativo', 'Superlativo', 'Português'],
           rows: [
@@ -2045,7 +2045,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'O superlativo antes do substantivo',
-        text: 'Sozinho, depois de «vara», o superlativo fica na forma curta: Den här är billigast. Antes de um substantivo, ele vai para a forma definida, com dupla definição: den billigaste biljetten, det största huset. Os em -ast ganham -e (billigaste), os em -st ganham -a (största, bästa). Depois de genitivo não há artigo: Sveriges högsta berg. E há dois truques úteis: «allt» + comparativo (cada vez mais) e «ju… desto» (quanto mais… mais).',
+        text: 'Sozinho, depois de “vara”, o superlativo fica na forma curta: Den här är billigast. Antes de um substantivo, ele vai para a forma definida, com dupla definição: den billigaste biljetten, det största huset. Os em -ast ganham -e (billigaste), os em -st ganham -a (största, bästa). Depois de genitivo não há artigo: Sveriges högsta berg. E há dois truques úteis: “allt” + comparativo (cada vez mais) e “ju… desto” (quanto mais… mais).',
         table: {
           head: ['Uso', 'Exemplo', 'Português'],
           rows: [
@@ -2066,15 +2066,15 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Dizer «mer större» ou «mest bäst»: ou se usa a terminação, ou «mer/mest», nunca os dois.',
-      'Regularizar os irregulares: «gammalare», «godare» ou «litenare» não existem. São äldre, bättre, mindre.',
-      'Usar «som» no lugar de «än»: «större som» está errado. Comparação de diferença é com «än»; «som» é para igualdade (lika stor som).',
-      'Esquecer a forma definida antes do substantivo: «den billigast biljetten» não; o certo é «den billigaste biljetten».',
-      'Pôr artigo depois do genitivo: «Sveriges det högsta berget» está errado; diga «Sveriges högsta berg».',
+      'Dizer “mer större” ou “mest bäst”: ou se usa a terminação, ou “mer/mest”, nunca os dois.',
+      'Regularizar os irregulares: “gammalare”, “godare” ou “litenare” não existem. São äldre, bättre, mindre.',
+      'Usar “som” no lugar de “än”: “större som” está errado. Comparação de diferença é com “än”; “som” é para igualdade (lika stor som).',
+      'Esquecer a forma definida antes do substantivo: “den billigast biljetten” não; o certo é “den billigaste biljetten”.',
+      'Pôr artigo depois do genitivo: “Sveriges det högsta berget” está errado; diga “Sveriges högsta berg”.',
     ],
     quiz: [
       {
-        question: 'Qual é o comparativo de «gammal»?',
+        question: 'Qual é o comparativo de “gammal”?',
         options: ['äldre', 'gammalare', 'mer gammal'],
         answer: 'äldre',
         explanation: 'gammal – äldre – äldst é irregular.',
@@ -2083,22 +2083,22 @@ export const GRAMMAR_SV: GrammarTopic[] = [
         question: 'Complete: Stockholm är större ___ Göteborg.',
         options: ['än', 'som', 'från'],
         answer: 'än',
-        explanation: 'O «do que» da comparação é «än».',
+        explanation: 'O “do que” da comparação é “än”.',
       },
       {
-        question: 'Como dizer «o maior lago»?',
+        question: 'Como dizer “o maior lago”?',
         options: ['den största sjön', 'den störst sjön', 'den största sjö'],
         answer: 'den största sjön',
         explanation: 'Superlativo antes de substantivo: artigo den + forma em -a (största) + substantivo definido (sjön).',
       },
       {
-        question: '«Prefiro chá» se diz:',
+        question: '“Prefiro chá” se diz:',
         options: ['Jag dricker hellre te.', 'Jag dricker gärnare te.', 'Jag dricker mer gärna te.'],
         answer: 'Jag dricker hellre te.',
-        explanation: '«Gärna» é irregular: gärna – hellre – helst.',
+        explanation: '“Gärna” é irregular: gärna – hellre – helst.',
       },
       {
-        question: 'Qual forma está certa para «spännande»?',
+        question: 'Qual forma está certa para “spännande”?',
         options: ['mer spännande', 'spännandare', 'spännandast'],
         answer: 'mer spännande',
         explanation: 'Adjetivos em -ande não recebem -are/-ast: usa-se mer e mest.',
@@ -2110,11 +2110,11 @@ export const GRAMMAR_SV: GrammarTopic[] = [
     level: 'B1.4',
     title: 'Pronomes relativos (som, vars, där) e discurso indireto',
     emoji: '💬',
-    summary: '«Som» é o «que» do sueco para quase tudo, e às vezes pode sumir. «Vars» é «cujo». A preposição costuma ir para o fim: huset som jag bodde i. No discurso indireto, os tempos recuam como em português, e as perguntas viram «om» ou «var, vad, varför…» com ordem de subordinada.',
+    summary: '“Som” é o “que” do sueco para quase tudo, e às vezes pode sumir. “Vars” é “cujo”. A preposição costuma ir para o fim: huset som jag bodde i. No discurso indireto, os tempos recuam como em português, e as perguntas viram “om” ou “var, vad, varför…” com ordem de subordinada.',
     sections: [
       {
         heading: 'som, vars, där, vilket',
-        text: '«Som» serve para pessoas e coisas, sujeito ou objeto, e não muda nunca. Quando é objeto, pode ser omitido: Boken (som) jag läser är bra. Quando é sujeito, é obrigatório: Kvinnan som bor här… A oração relativa é subordinada: «inte» vem antes do verbo. E a preposição, que em português vem antes do «que» (a casa em que eu morava), em sueco costuma ir para o fim da oração. Existe a forma formal «i vilket», mas é coisa de texto oficial.',
+        text: '“Som” serve para pessoas e coisas, sujeito ou objeto, e não muda nunca. Quando é objeto, pode ser omitido: Boken (som) jag läser är bra. Quando é sujeito, é obrigatório: Kvinnan som bor här… A oração relativa é subordinada: “inte” vem antes do verbo. E a preposição, que em português vem antes do “que” (a casa em que eu morava), em sueco costuma ir para o fim da oração. Existe a forma formal “i vilket”, mas é coisa de texto oficial.',
         table: {
           head: ['Pronome', 'Uso', 'Exemplo', 'Português'],
           rows: [
@@ -2136,22 +2136,22 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Discurso indireto: att e o recuo dos tempos',
-        text: 'Para contar o que alguém disse, use «att» (que) + oração subordinada, com «inte» antes do verbo. Se o verbo introdutor está no passado (sa, berättade), os tempos recuam como em português: är → var, ska → skulle, har → hade. Os pronomes mudam conforme quem conta: «jag» vira «han» ou «hon». Uma ordem vira «sa åt mig att…» ou «bad mig att…».',
+        text: 'Para contar o que alguém disse, use “att” (que) + oração subordinada, com “inte” antes do verbo. Se o verbo introdutor está no passado (sa, berättade), os tempos recuam como em português: är → var, ska → skulle, har → hade. Os pronomes mudam conforme quem conta: “jag” vira “han” ou “hon”. Uma ordem vira “sa åt mig att…” ou “bad mig att…”.',
         table: {
           head: ['Discurso direto', 'Discurso indireto'],
           rows: [
-            ['Hon säger: «Jag är trött.»', 'Hon säger att hon är trött.'],
-            ['Hon sa: «Jag är trött.»', 'Hon sa att hon var trött.'],
-            ['Han sa: «Jag ska ringa.»', 'Han sa att han skulle ringa.'],
-            ['Han sa: «Jag har ätit.»', 'Han sa att han hade ätit.'],
-            ['Han sa: «Jag kan inte.»', 'Han sa att han inte kunde.'],
-            ['Hon sa: «Vänta!»', 'Hon sa åt mig att vänta.'],
+            ['Hon säger: “Jag är trött.”', 'Hon säger att hon är trött.'],
+            ['Hon sa: “Jag är trött.”', 'Hon sa att hon var trött.'],
+            ['Han sa: “Jag ska ringa.”', 'Han sa att han skulle ringa.'],
+            ['Han sa: “Jag har ätit.”', 'Han sa att han hade ätit.'],
+            ['Han sa: “Jag kan inte.”', 'Han sa att han inte kunde.'],
+            ['Hon sa: “Vänta!”', 'Hon sa åt mig att vänta.'],
           ],
         },
       },
       {
-        heading: 'Perguntas indiretas: om, var, vad… e o «som» obrigatório',
-        text: 'Pergunta de sim ou não vira «om» (se): Hon frågade om jag ville ha kaffe. Pergunta com palavra interrogativa mantém a palavra, mas sem inversão: Hon frågade var jag bodde (e não «var bodde jag»). E um detalhe que todo aluno esquece: quando a palavra interrogativa é o sujeito (vem, vad, vilken), o sueco acrescenta «som» na pergunta indireta: Jag vet inte vem som ringde.',
+        heading: 'Perguntas indiretas: om, var, vad… e o “som” obrigatório',
+        text: 'Pergunta de sim ou não vira “om” (se): Hon frågade om jag ville ha kaffe. Pergunta com palavra interrogativa mantém a palavra, mas sem inversão: Hon frågade var jag bodde (e não “var bodde jag”). E um detalhe que todo aluno esquece: quando a palavra interrogativa é o sujeito (vem, vad, vilken), o sueco acrescenta “som” na pergunta indireta: Jag vet inte vem som ringde.',
         table: {
           head: ['Pergunta direta', 'Pergunta indireta'],
           rows: [
@@ -2171,30 +2171,30 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Omitir «som» quando ele é sujeito: «Kvinnan bor här är läkare» está errado. Só dá para omitir o «som» objeto.',
-      'Pôr a preposição antes do «som», à portuguesa: «huset i som jag bodde» não existe. Diga «huset som jag bodde i».',
-      'Manter a inversão na pergunta indireta: «Hon frågade var bodde jag» está errado; o certo é «var jag bodde».',
-      'Esquecer o «som» quando a palavra interrogativa é sujeito: «Jag vet inte vem ringde» → «Jag vet inte vem som ringde».',
-      'Usar «att» numa pergunta de sim ou não: «Hon frågade att jag kom» não; é «Hon frågade om jag kom».',
+      'Omitir “som” quando ele é sujeito: “Kvinnan bor här är läkare” está errado. Só dá para omitir o “som” objeto.',
+      'Pôr a preposição antes do “som”, à portuguesa: “huset i som jag bodde” não existe. Diga “huset som jag bodde i”.',
+      'Manter a inversão na pergunta indireta: “Hon frågade var bodde jag” está errado; o certo é “var jag bodde”.',
+      'Esquecer o “som” quando a palavra interrogativa é sujeito: “Jag vet inte vem ringde” → “Jag vet inte vem som ringde”.',
+      'Usar “att” numa pergunta de sim ou não: “Hon frågade att jag kom” não; é “Hon frågade om jag kom”.',
     ],
     quiz: [
       {
-        question: 'Como dizer «a cidade de onde viemos»?',
+        question: 'Como dizer “a cidade de onde viemos”?',
         options: ['staden som vi kommer från', 'staden från som vi kommer', 'staden vi från kommer'],
         answer: 'staden som vi kommer från',
         explanation: 'Em sueco a preposição vai para o fim da oração relativa.',
       },
       {
-        question: '«O homem cujo carro foi roubado» se diz:',
+        question: '“O homem cujo carro foi roubado” se diz:',
         options: ['mannen vars bil blev stulen', 'mannen som bil blev stulen', 'mannen vilken bil blev stulen'],
         answer: 'mannen vars bil blev stulen',
-        explanation: '«Vars» é o pronome relativo possessivo, o nosso «cujo».',
+        explanation: '“Vars” é o pronome relativo possessivo, o nosso “cujo”.',
       },
       {
-        question: 'Passe para o indireto: Han sa: «Jag ska komma.»',
+        question: 'Passe para o indireto: Han sa: “Jag ska komma.”',
         options: ['Han sa att han skulle komma.', 'Han sa att jag ska komma.', 'Han sa att han ska kom.'],
         answer: 'Han sa att han skulle komma.',
-        explanation: 'Com «sa» no passado, «ska» recua para «skulle», e «jag» vira «han».',
+        explanation: 'Com “sa” no passado, “ska” recua para “skulle”, e “jag” vira “han”.',
       },
       {
         question: 'Qual pergunta indireta está certa?',
@@ -2206,7 +2206,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
         question: 'Complete: Ingen vet vad ___ hände.',
         options: ['som', 'att', 'om'],
         answer: 'som',
-        explanation: 'Quando «vad» é o sujeito da pergunta indireta, entra «som»: vad som hände.',
+        explanation: 'Quando “vad” é o sujeito da pergunta indireta, entra “som”: vad som hände.',
       },
     ],
   },
@@ -2217,11 +2217,11 @@ export const GRAMMAR_SV: GrammarTopic[] = [
     level: 'B2.1',
     title: 'O condicional: skulle + infinitivo',
     emoji: '🤔',
-    summary: 'O nosso futuro do pretérito («eu compraria», «você poderia») em sueco é «skulle» + infinitivo. Ele serve para hipóteses, conselhos e, sobretudo, para pedir com educação: Jag skulle vilja ha en kaffe. Para o passado, «skulle ha» + supino: Jag skulle ha ringt.',
+    summary: 'O nosso futuro do pretérito (“eu compraria”, “você poderia”) em sueco é “skulle” + infinitivo. Ele serve para hipóteses, conselhos e, sobretudo, para pedir com educação: Jag skulle vilja ha en kaffe. Para o passado, “skulle ha” + supino: Jag skulle ha ringt.',
     sections: [
       {
         heading: 'As formas do condicional',
-        text: '«Skulle» é o pretérito de «ska», e junto com um infinitivo dá o condicional. Alguns modais já têm um sentido condicional no pretérito: «kunde» (poderia), «borde» (deveria). Para o condicional no passado (teria feito), use «skulle ha» + supino; na fala, também se ouve só «hade» + supino na oração principal (Då hade jag kommit). E «vore», uma forma antiga de «vara», continua viva com o sentido de «seria».',
+        text: '“Skulle” é o pretérito de “ska”, e junto com um infinitivo dá o condicional. Alguns modais já têm um sentido condicional no pretérito: “kunde” (poderia), “borde” (deveria). Para o condicional no passado (teria feito), use “skulle ha” + supino; na fala, também se ouve só “hade” + supino na oração principal (Då hade jag kommit). E “vore”, uma forma antiga de “vara”, continua viva com o sentido de “seria”.',
         table: {
           head: ['Forma', 'Uso', 'Exemplo', 'Português'],
           rows: [
@@ -2244,7 +2244,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Pedir com educação',
-        text: 'Os suecos são diretos, mas gentis. No café, «Jag tar en kaffe, tack» é perfeitamente educado. Quando o pedido é um favor ou você quer soar mais cuidadoso, o condicional ajuda. «Jag vill ha…» não é grosseiro, mas soa firme demais para um desconhecido.',
+        text: 'Os suecos são diretos, mas gentis. No café, “Jag tar en kaffe, tack” é perfeitamente educado. Quando o pedido é um favor ou você quer soar mais cuidadoso, o condicional ajuda. “Jag vill ha…” não é grosseiro, mas soa firme demais para um desconhecido.',
         table: {
           head: ['Mais direto', 'Mais cuidadoso', 'Português'],
           rows: [
@@ -2256,8 +2256,8 @@ export const GRAMMAR_SV: GrammarTopic[] = [
         },
       },
       {
-        heading: 'Outros usos de «skulle»',
-        text: '«Skulle» também faz o que o nosso futuro do pretérito faz no discurso indireto: Han sa att han skulle komma (ele disse que viria). Pode indicar um combinado que não deu certo: Vi skulle ses klockan sju (a gente ia se encontrar às sete). E, no começo da frase, com inversão, vale como «caso»: Skulle det regna, tar vi bussen (caso chova, pegamos o ônibus).',
+        heading: 'Outros usos de “skulle”',
+        text: '“Skulle” também faz o que o nosso futuro do pretérito faz no discurso indireto: Han sa att han skulle komma (ele disse que viria). Pode indicar um combinado que não deu certo: Vi skulle ses klockan sju (a gente ia se encontrar às sete). E, no começo da frase, com inversão, vale como “caso”: Skulle det regna, tar vi bussen (caso chova, pegamos o ônibus).',
         examples: [
           ['Han sa att han skulle komma, men han kom aldrig.', 'Ele disse que viria, mas nunca veio.'],
           ['Vi skulle ses klockan sju, men bussen var sen.', 'A gente ia se encontrar às sete, mas o ônibus atrasou.'],
@@ -2267,41 +2267,41 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Conjugar o verbo depois de «skulle»: «Jag skulle köpte» está errado. Depois de «skulle» vem o infinitivo: Jag skulle köpa.',
-      'Usar o supino sem «ha» no condicional passado: «Jag skulle ringt» é da fala, mas na escrita use «Jag skulle ha ringt».',
-      'Traduzir «eu queria um café» (pedido) por «Jag ville ha en kaffe»: isso é passado real. Diga «Jag skulle vilja ha en kaffe» ou «Jag tar en kaffe».',
-      'Pôr «att» depois de «skulle»: «Jag skulle att gå» não existe; «skulle» é modal e pede infinitivo puro.',
+      'Conjugar o verbo depois de “skulle”: “Jag skulle köpte” está errado. Depois de “skulle” vem o infinitivo: Jag skulle köpa.',
+      'Usar o supino sem “ha” no condicional passado: “Jag skulle ringt” é da fala, mas na escrita use “Jag skulle ha ringt”.',
+      'Traduzir “eu queria um café” (pedido) por “Jag ville ha en kaffe”: isso é passado real. Diga “Jag skulle vilja ha en kaffe” ou “Jag tar en kaffe”.',
+      'Pôr “att” depois de “skulle”: “Jag skulle att gå” não existe; “skulle” é modal e pede infinitivo puro.',
     ],
     quiz: [
       {
-        question: 'Como pedir «Eu gostaria de reservar uma mesa»?',
+        question: 'Como pedir “Eu gostaria de reservar uma mesa”?',
         options: ['Jag skulle vilja boka ett bord.', 'Jag skulle ville boka ett bord.', 'Jag skulle vilja att boka ett bord.'],
         answer: 'Jag skulle vilja boka ett bord.',
-        explanation: '«Skulle» + infinitivo (vilja) + infinitivo puro (boka), sem «att».',
+        explanation: '“Skulle” + infinitivo (vilja) + infinitivo puro (boka), sem “att”.',
       },
       {
-        question: '«Eu teria ligado» se diz:',
+        question: '“Eu teria ligado” se diz:',
         options: ['Jag skulle ha ringt.', 'Jag skulle ringde.', 'Jag hade skulle ringa.'],
         answer: 'Jag skulle ha ringt.',
         explanation: 'Condicional passado: skulle + ha + supino.',
       },
       {
-        question: 'Qual palavra quer dizer «deveria»?',
+        question: 'Qual palavra quer dizer “deveria”?',
         options: ['borde', 'skulle', 'kunde'],
         answer: 'borde',
-        explanation: '«Borde», pretérito de «bör», é o nosso «deveria». «Kunde» é «poderia».',
+        explanation: '“Borde”, pretérito de “bör”, é o nosso “deveria”. “Kunde” é “poderia”.',
       },
       {
-        question: 'Qual frase significa «Caso chova, ficamos em casa»?',
+        question: 'Qual frase significa “Caso chova, ficamos em casa”?',
         options: ['Skulle det regna, stannar vi hemma.', 'Det skulle regna, vi stannar hemma.', 'Skulle det regna, vi stannar hemma.'],
         answer: 'Skulle det regna, stannar vi hemma.',
-        explanation: '«Skulle» no começo, com inversão, vale «caso». Depois vem a principal, também com inversão: stannar vi.',
+        explanation: '“Skulle” no começo, com inversão, vale “caso”. Depois vem a principal, também com inversão: stannar vi.',
       },
       {
         question: 'Complete: Det ___ trevligt att träffas.',
         options: ['vore', 'var skulle', 'blir skulle'],
         answer: 'vore',
-        explanation: '«Vore» é a forma antiga de «vara» com sentido de «seria». Também se diz «skulle vara».',
+        explanation: '“Vore” é a forma antiga de “vara” com sentido de “seria”. Também se diz “skulle vara”.',
       },
     ],
   },
@@ -2310,11 +2310,11 @@ export const GRAMMAR_SV: GrammarTopic[] = [
     level: 'B2.1',
     title: 'Orações hipotéticas (om jag vore, om jag hade varit) e o subjuntivo residual',
     emoji: '🌠',
-    summary: 'Onde o português usa o subjuntivo (se eu tivesse, se eu fosse), o sueco usa o pretérito: Om jag hade tid… Para o passado, «hade» + supino: Om jag hade vetat det… O subjuntivo antigo sobrevive em fórmulas: vore, leve, må, måtte.',
+    summary: 'Onde o português usa o subjuntivo (se eu tivesse, se eu fosse), o sueco usa o pretérito: Om jag hade tid… Para o passado, “hade” + supino: Om jag hade vetat det… O subjuntivo antigo sobrevive em fórmulas: vore, leve, må, måtte.',
     sections: [
       {
-        heading: 'Três tipos de «se»',
-        text: 'Condição real: presente nas duas orações (Om det regnar, stannar vi hemma). Hipótese no presente: pretérito na oração com «om» e «skulle» + infinitivo (ou só pretérito) na principal. Hipótese no passado: «hade» + supino na oração com «om», e «skulle ha» + supino ou «hade» + supino na principal. Se a oração com «om» vem primeiro, a principal inverte. E, como em português, pode-se tirar o «om» e começar com o verbo: Hade jag vetat det… (tivesse eu sabido…).',
+        heading: 'Três tipos de “se”',
+        text: 'Condição real: presente nas duas orações (Om det regnar, stannar vi hemma). Hipótese no presente: pretérito na oração com “om” e “skulle” + infinitivo (ou só pretérito) na principal. Hipótese no passado: “hade” + supino na oração com “om”, e “skulle ha” + supino ou “hade” + supino na principal. Se a oração com “om” vem primeiro, a principal inverte. E, como em português, pode-se tirar o “om” e começar com o verbo: Hade jag vetat det… (tivesse eu sabido…).',
         table: {
           head: ['Tipo', 'Oração com om', 'Oração principal', 'Português'],
           rows: [
@@ -2335,7 +2335,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Desejos e irrealidades: vore, tänk om, om bara, som om',
-        text: '«Vore» é o antigo subjuntivo passado de «vara»; hoje convive com «var» (Om jag vore du = Om jag var du), soando um pouco mais elegante. Para desejos impossíveis: «Om jag bara hade…» (se ao menos eu tivesse…) e «Jag önskar att jag hade…» (quem dera eu tivesse…). «Tänk om…» é o nosso «e se…?». E «som om» (como se) pede pretérito ou vore.',
+        text: '“Vore” é o antigo subjuntivo passado de “vara”; hoje convive com “var” (Om jag vore du = Om jag var du), soando um pouco mais elegante. Para desejos impossíveis: “Om jag bara hade…” (se ao menos eu tivesse…) e “Jag önskar att jag hade…” (quem dera eu tivesse…). “Tänk om…” é o nosso “e se…?”. E “som om” (como se) pede pretérito ou vore.',
         table: {
           head: ['Expressão', 'Exemplo', 'Português'],
           rows: [
@@ -2350,12 +2350,12 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'O subjuntivo residual',
-        text: 'O sueco antigo tinha um subjuntivo completo, com o presente em -e. Hoje ele sobrevive em fórmulas fixas, brindes e canções, mais ou menos como o nosso «viva!» e «Deus te abençoe». Você não vai criar frases novas com ele, mas vai ouvi-lo em festas: no aniversário, os suecos cantam «Ja, må han leva», e numa comemoração se puxa o «Hon leve! Hurra, hurra, hurra, hurra!».',
+        text: 'O sueco antigo tinha um subjuntivo completo, com o presente em -e. Hoje ele sobrevive em fórmulas fixas, brindes e canções, mais ou menos como o nosso “viva!” e “Deus te abençoe”. Você não vai criar frases novas com ele, mas vai ouvi-lo em festas: no aniversário, os suecos cantam “Ja, må han leva”, e numa comemoração se puxa o “Hon leve! Hurra, hurra, hurra, hurra!”.',
         table: {
           head: ['Forma', 'Origem', 'Exemplo', 'Português'],
           rows: [
             ['leve', 'leva (viver)', 'Hon leve! Hurra, hurra, hurra, hurra!', 'Viva ela! Hip, hip, hurra!'],
-            ['må', 'modal «må»', 'Ja, må han leva uti hundrade år!', 'Sim, que ele viva cem anos!'],
+            ['må', 'modal “må”', 'Ja, må han leva uti hundrade år!', 'Sim, que ele viva cem anos!'],
             ['måtte', 'desejo', 'Måtte det gå bra!', 'Tomara que dê certo!'],
             ['bevare', 'bevara (proteger)', 'Gud bevare oss!', 'Deus nos proteja!'],
             ['vare sig', 'vara', 'vare sig du vill eller inte', 'queira você ou não'],
@@ -2371,42 +2371,42 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Procurar um subjuntivo para «se eu tivesse»: o sueco usa o pretérito simples, «om jag hade».',
-      'Pôr «skulle» dentro da oração com «om»: «Om jag skulle ha tid, skulle jag…» existe, mas soa pesado; o natural é «Om jag hade tid, skulle jag…».',
-      'Esquecer a inversão na principal quando a oração com «om» vem primeiro: «Om jag hade tid, jag skulle läsa» → «…skulle jag läsa».',
-      'Usar «vore» fora de «vara»: não existe «hade vore». «Vore» só substitui «var» (ou «skulle vara»).',
-      'Tentar criar subjuntivos novos com -e: «leve», «bevare» e «måtte» são fórmulas fixas; no resto, use o presente ou «skulle».',
+      'Procurar um subjuntivo para “se eu tivesse”: o sueco usa o pretérito simples, “om jag hade”.',
+      'Pôr “skulle” dentro da oração com “om”: “Om jag skulle ha tid, skulle jag…” existe, mas soa pesado; o natural é “Om jag hade tid, skulle jag…”.',
+      'Esquecer a inversão na principal quando a oração com “om” vem primeiro: “Om jag hade tid, jag skulle läsa” → “…skulle jag läsa”.',
+      'Usar “vore” fora de “vara”: não existe “hade vore”. “Vore” só substitui “var” (ou “skulle vara”).',
+      'Tentar criar subjuntivos novos com -e: “leve”, “bevare” e “måtte” são fórmulas fixas; no resto, use o presente ou “skulle”.',
     ],
     quiz: [
       {
-        question: 'Como dizer «Se eu tivesse dinheiro, viajaria»?',
+        question: 'Como dizer “Se eu tivesse dinheiro, viajaria”?',
         options: ['Om jag hade pengar, skulle jag resa.', 'Om jag har pengar, skulle jag resa.', 'Om jag hade pengar, jag skulle resa.'],
         answer: 'Om jag hade pengar, skulle jag resa.',
-        explanation: 'Hipótese: pretérito na oração com «om» e inversão na principal (skulle jag).',
+        explanation: 'Hipótese: pretérito na oração com “om” e inversão na principal (skulle jag).',
       },
       {
-        question: '«Se eu soubesse (antes), teria vindo» se diz:',
+        question: '“Se eu soubesse (antes), teria vindo” se diz:',
         options: ['Om jag hade vetat det, hade jag kommit.', 'Om jag visste det, har jag kommit.', 'Om jag vetat det, jag hade kommit.'],
         answer: 'Om jag hade vetat det, hade jag kommit.',
         explanation: 'Hipótese passada: hade + supino nas duas orações, com inversão na principal.',
       },
       {
-        question: 'Qual frase começa sem «om» e tem o mesmo sentido de «Om jag hade vetat det»?',
+        question: 'Qual frase começa sem “om” e tem o mesmo sentido de “Om jag hade vetat det”?',
         options: ['Hade jag vetat det, …', 'Jag hade vetat det, …', 'Vetat jag det, …'],
         answer: 'Hade jag vetat det, …',
-        explanation: 'Tirando o «om», o verbo vai para o começo: Hade jag vetat det.',
+        explanation: 'Tirando o “om”, o verbo vai para o começo: Hade jag vetat det.',
       },
       {
         question: 'Complete: Om jag ___ du, skulle jag vänta.',
         options: ['vore', 'är', 'blir'],
         answer: 'vore',
-        explanation: '«Vore» é o subjuntivo passado de «vara». Também se aceita «var».',
+        explanation: '“Vore” é o subjuntivo passado de “vara”. Também se aceita “var”.',
       },
       {
         question: 'O que se grita numa comemoração sueca?',
         options: ['Han leve! Hurra, hurra, hurra, hurra!', 'Han lever! Hurra, hurra, hurra, hurra!', 'Han levde! Hurra, hurra, hurra, hurra!'],
         answer: 'Han leve! Hurra, hurra, hurra, hurra!',
-        explanation: '«Leve» é o subjuntivo presente de «leva», que sobrevive nessa fórmula: viva ele!',
+        explanation: '“Leve” é o subjuntivo presente de “leva”, que sobrevive nessa fórmula: viva ele!',
       },
     ],
   },
@@ -2414,13 +2414,13 @@ export const GRAMMAR_SV: GrammarTopic[] = [
   {
     id: 'sv-g23',
     level: 'B2.2',
-    title: 'Registro formal: a du-reformen, o «ni» de cortesia e o e-mail de trabalho',
+    title: 'Registro formal: a du-reformen, o “ni” de cortesia e o e-mail de trabalho',
     emoji: '✉️',
-    summary: 'Na Suécia quase todo mundo se trata por «du», do chefe ao médico, desde a du-reformen dos anos 1960. O formal hoje mora menos nos pronomes e mais no vocabulário, nas fórmulas do e-mail e no tom das perguntas.',
+    summary: 'Na Suécia quase todo mundo se trata por “du”, do chefe ao médico, desde a du-reformen dos anos 1960. O formal hoje mora menos nos pronomes e mais no vocabulário, nas fórmulas do e-mail e no tom das perguntas.',
     sections: [
       {
-        heading: 'A du-reformen: por que todo mundo é «du»',
-        text: 'Até meados do século XX, falar com um desconhecido em sueco era um campo minado: evitava-se o pronome e usava-se o título na terceira pessoa («Vill direktören ha kaffe?», algo como «O senhor diretor deseja café?»), e o «ni» soava frio ou até grosseiro. Nos anos 1960 veio a du-reformen, que não foi lei, e sim mudança de costume: em 1967, o novo diretor do Socialstyrelsen, Bror Rexed, anunciou que trataria todos os funcionários por «du», e em poucos anos o país inteiro fez o mesmo. Hoje você diz «du» ao chefe, à professora, ao médico e ao atendente. O «ni» de cortesia no singular sobrevive em pouquíssimos lugares (alguns restaurantes elegantes, certo atendimento a pessoas idosas) e divide opiniões: há jovens que o acham educado e idosos que o acham distante. Na dúvida, «du». Já como plural («vocês»), «ni» é normalíssimo.',
+        heading: 'A du-reformen: por que todo mundo é “du”',
+        text: 'Até meados do século XX, falar com um desconhecido em sueco era um campo minado: evitava-se o pronome e usava-se o título na terceira pessoa (“Vill direktören ha kaffe?”, algo como “O senhor diretor deseja café?”), e o “ni” soava frio ou até grosseiro. Nos anos 1960 veio a du-reformen, que não foi lei, e sim mudança de costume: em 1967, o novo diretor do Socialstyrelsen, Bror Rexed, anunciou que trataria todos os funcionários por “du”, e em poucos anos o país inteiro fez o mesmo. Hoje você diz “du” ao chefe, à professora, ao médico e ao atendente. O “ni” de cortesia no singular sobrevive em pouquíssimos lugares (alguns restaurantes elegantes, certo atendimento a pessoas idosas) e divide opiniões: há jovens que o acham educado e idosos que o acham distante. Na dúvida, “du”. Já como plural (“vocês”), “ni” é normalíssimo.',
         table: {
           head: ['Situação', 'Sueco', 'Português'],
           rows: [
@@ -2434,12 +2434,12 @@ export const GRAMMAR_SV: GrammarTopic[] = [
         examples: [
           ['Hej! Har du tid för ett kort möte i morgon?', 'Oi! Você tem tempo para uma reunião curta amanhã?'],
           ['Välkomna! Ni kan sätta er här.', 'Sejam bem-vindos! Vocês podem se sentar aqui.'],
-          ['Förr sa man «ni» till främlingar, men i dag säger nästan alla «du».', 'Antigamente se dizia «ni» a estranhos, mas hoje quase todo mundo diz «du».'],
+          ['Förr sa man “ni” till främlingar, men i dag säger nästan alla “du”.', 'Antigamente se dizia “ni” a estranhos, mas hoje quase todo mundo diz “du”.'],
         ],
       },
       {
         heading: 'O e-mail de trabalho',
-        text: '«Hej» + nome serve para quase tudo, até para escrever a uma repartição pública. «Bästa» é a saudação um pouco mais formal; «Kära» (querido) fica para cartas pessoais. Para destinatário desconhecido, «Till den det berör» corresponde ao nosso «A quem interessar possa». A despedida padrão é «Med vänliga hälsningar» (muitas vezes abreviada MVH), o equivalente ao «Atenciosamente». O sueco escreve «mejl» (grafia recomendada pelo Språkrådet), mas «mail» e «e-post» também aparecem.',
+        text: '“Hej” + nome serve para quase tudo, até para escrever a uma repartição pública. “Bästa” é a saudação um pouco mais formal; “Kära” (querido) fica para cartas pessoais. Para destinatário desconhecido, “Till den det berör” corresponde ao nosso “A quem interessar possa”. A despedida padrão é “Med vänliga hälsningar” (muitas vezes abreviada MVH), o equivalente ao “Atenciosamente”. O sueco escreve “mejl” (grafia recomendada pelo Språkrådet), mas “mail” e “e-post” também aparecem.',
         table: {
           head: ['Parte', 'Sueco', 'Português'],
           rows: [
@@ -2463,7 +2463,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Onde o formal realmente aparece',
-        text: 'Sem pronome de cortesia, o sueco marca a formalidade de duas maneiras. A primeira é o vocabulário: cada verbo comum tem um par mais pesado, típico de documentos. A segunda é o pedido suavizado com o condicional («Skulle du kunna…?») ou com «Jag undrar om…» (eu queria saber se…). Mas atenção: desde a språklagen de 2009, a lei exige que a linguagem do setor público seja cuidada, simples e compreensível. Formal não é sinônimo de rebuscado, e as repartições modernas preferem «få» a «erhålla».',
+        text: 'Sem pronome de cortesia, o sueco marca a formalidade de duas maneiras. A primeira é o vocabulário: cada verbo comum tem um par mais pesado, típico de documentos. A segunda é o pedido suavizado com o condicional (“Skulle du kunna…?”) ou com “Jag undrar om…” (eu queria saber se…). Mas atenção: desde a språklagen de 2009, a lei exige que a linguagem do setor público seja cuidada, simples e compreensível. Formal não é sinônimo de rebuscado, e as repartições modernas preferem “få” a “erhålla”.',
         table: {
           head: ['Cotidiano', 'Formal', 'Português'],
           rows: [
@@ -2484,41 +2484,41 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar «ni» com um único colega achando que é mais educado: na Suécia soa distante ou antiquado, e com gente mais velha pode até cair mal. Use «du».',
-      'Traduzir «Prezado senhor» ao pé da letra («Käre herr…»): «Kära» é de carta pessoal, e o título «herr» quase não se usa. No trabalho, «Hej» ou «Bästa» + primeiro nome resolve.',
-      'Achar que formal é usar palavras difíceis: a språklagen pede linguagem simples no setor público, e «erhålla» onde cabe «få» soa pesado.',
-      'Chamar as pessoas pelo título ou sobrenome («doktor Lind», «fru Andersson»): na Suécia se usa o primeiro nome, inclusive com o chefe e o médico.',
+      'Usar “ni” com um único colega achando que é mais educado: na Suécia soa distante ou antiquado, e com gente mais velha pode até cair mal. Use “du”.',
+      'Traduzir “Prezado senhor” ao pé da letra (“Käre herr…”): “Kära” é de carta pessoal, e o título “herr” quase não se usa. No trabalho, “Hej” ou “Bästa” + primeiro nome resolve.',
+      'Achar que formal é usar palavras difíceis: a språklagen pede linguagem simples no setor público, e “erhålla” onde cabe “få” soa pesado.',
+      'Chamar as pessoas pelo título ou sobrenome (“doktor Lind”, “fru Andersson”): na Suécia se usa o primeiro nome, inclusive com o chefe e o médico.',
     ],
     quiz: [
       {
         question: 'Como você se dirige ao seu chefe numa empresa sueca?',
         options: ['du', 'ni', 'direktören'],
         answer: 'du',
-        explanation: 'Depois da du-reformen, «du» vale para todos, inclusive chefes. «Ni» no singular é raro, e o título na 3ª pessoa é coisa do passado.',
+        explanation: 'Depois da du-reformen, “du” vale para todos, inclusive chefes. “Ni” no singular é raro, e o título na 3ª pessoa é coisa do passado.',
       },
       {
         question: 'Qual é a despedida padrão de um e-mail de trabalho?',
         options: ['Med vänliga hälsningar', 'Puss och kram', 'Välkomna'],
         answer: 'Med vänliga hälsningar',
-        explanation: '«Med vänliga hälsningar» (MVH) equivale ao «Atenciosamente». «Puss och kram» (beijos e abraços) é para amigos e família.',
+        explanation: '“Med vänliga hälsningar” (MVH) equivale ao “Atenciosamente”. “Puss och kram” (beijos e abraços) é para amigos e família.',
       },
       {
-        question: 'Qual é a forma mais formal de «receber»?',
+        question: 'Qual é a forma mais formal de “receber”?',
         options: ['få', 'erhålla', 'ta'],
         answer: 'erhålla',
-        explanation: '«Erhålla» é o par formal de «få», típico de documentos. No dia a dia (e até em muitos textos oficiais modernos) prefere-se «få».',
+        explanation: '“Erhålla” é o par formal de “få”, típico de documentos. No dia a dia (e até em muitos textos oficiais modernos) prefere-se “få”.',
       },
       {
-        question: 'Complete com o plural: «Välkomna! ___ kan sätta er här.»',
+        question: 'Complete com o plural: “Välkomna! ___ kan sätta er här.”',
         options: ['Du', 'Ni', 'Dem'],
         answer: 'Ni',
-        explanation: '«Ni» é o «vocês», e combina com o reflexivo «er» e com «välkomna» no plural.',
+        explanation: '“Ni” é o “vocês”, e combina com o reflexivo “er” e com “välkomna” no plural.',
       },
       {
         question: 'Qual pedido soa mais educado?',
         options: ['Skulle du kunna hjälpa mig?', 'Hjälp mig!', 'Du hjälper mig.'],
         answer: 'Skulle du kunna hjälpa mig?',
-        explanation: 'O condicional «skulle … kunna» suaviza o pedido, como o nosso «você poderia…?». A cortesia sueca está no verbo, não no pronome.',
+        explanation: 'O condicional “skulle … kunna” suaviza o pedido, como o nosso “você poderia…?”. A cortesia sueca está no verbo, não no pronome.',
       },
     ],
   },
@@ -2531,18 +2531,18 @@ export const GRAMMAR_SV: GrammarTopic[] = [
     sections: [
       {
         heading: 'O escritório sueco',
-        text: 'A hierarquia é plana: o chefe é tratado por «du» e pelo primeiro nome, e as decisões costumam ser «förankrade», isto é, ancoradas no grupo antes de serem tomadas. Isso deixa as reuniões mais longas, mas a execução depois é rápida. A pontualidade é levada a sério. A fika (a pausa do café, com um doce) acontece em geral de manhã e à tarde e é um momento social de verdade. Por lei, todo empregado tem direito a 25 dias de férias por ano, e em julho o país praticamente para. Quando o filho fica doente, os pais ficam em casa com apoio da seguridade social: isso se chama VAB (vård av barn), e virou até verbo, «vabba».',
+        text: 'A hierarquia é plana: o chefe é tratado por “du” e pelo primeiro nome, e as decisões costumam ser “förankrade”, isto é, ancoradas no grupo antes de serem tomadas. Isso deixa as reuniões mais longas, mas a execução depois é rápida. A pontualidade é levada a sério. A fika (a pausa do café, com um doce) acontece em geral de manhã e à tarde e é um momento social de verdade. Por lei, todo empregado tem direito a 25 dias de férias por ano, e em julho o país praticamente para. Quando o filho fica doente, os pais ficam em casa com apoio da seguridade social: isso se chama VAB (vård av barn), e virou até verbo, “vabba”.',
         table: {
           head: ['Sueco', 'Português', 'Nota'],
           rows: [
             ['ett möte', 'uma reunião', 'boka ett möte = marcar uma reunião'],
-            ['en dagordning', 'uma pauta', 'também se diz «agenda»'],
-            ['ett protokoll', 'uma ata', 'não é «protocolo» no sentido brasileiro'],
-            ['en chef', 'um chefe', 'pronuncia-se com o som sj [ɧ]; cozinheiro é «kock»'],
+            ['en dagordning', 'uma pauta', 'também se diz “agenda”'],
+            ['ett protokoll', 'uma ata', 'não é “protocolo” no sentido brasileiro'],
+            ['en chef', 'um chefe', 'pronuncia-se com o som sj [ɧ]; cozinheiro é “kock”'],
             ['ett förslag', 'uma proposta', 'lägga fram ett förslag = apresentar uma proposta'],
             ['en fika / fika', 'pausa do café; tomar café', 'substantivo e verbo: vi fikar kl. 15'],
             ['vabba', 'ficar em casa com o filho doente', 'de VAB, vård av barn'],
-            ['en semester', 'férias', 'semestre letivo é «termin»'],
+            ['en semester', 'férias', 'semestre letivo é “termin”'],
             ['sjukskriven', 'de licença médica', 'sjukanmäla sig = avisar que está doente'],
             ['förankra', 'alinhar, ancorar (uma decisão)', 'förankra i gruppen = obter o apoio do grupo'],
           ],
@@ -2556,7 +2556,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Nas repartições (myndigheter)',
-        text: 'Quem mora na Suécia lida o tempo todo com órgãos públicos, as myndigheter. O Skatteverket (a Receita) registra o endereço (folkbokföring) e dá o personnummer, o número pessoal de 10 dígitos (data de nascimento + 4) que abre praticamente todas as portas. A Försäkringskassan cuida de benefícios como licença-parental e VAB; o Migrationsverket, da imigração; a Arbetsförmedlingen, do emprego; e o 1177 é o telefone e o site de orientação em saúde. Cada assunto vira um «ärende» (processo), com um «handläggare» (servidor responsável) e, no fim, um «beslut» (decisão).',
+        text: 'Quem mora na Suécia lida o tempo todo com órgãos públicos, as myndigheter. O Skatteverket (a Receita) registra o endereço (folkbokföring) e dá o personnummer, o número pessoal de 10 dígitos (data de nascimento + 4) que abre praticamente todas as portas. A Försäkringskassan cuida de benefícios como licença-parental e VAB; o Migrationsverket, da imigração; a Arbetsförmedlingen, do emprego; e o 1177 é o telefone e o site de orientação em saúde. Cada assunto vira um “ärende” (processo), com um “handläggare” (servidor responsável) e, no fim, um “beslut” (decisão).',
         table: {
           head: ['Sueco', 'Português'],
           rows: [
@@ -2581,7 +2581,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Frases de reunião',
-        text: 'A reunião sueca segue a pauta, e o último item quase sempre é «övriga frågor» (assuntos gerais). Pedir a palavra, propor e adiar se faz com frases curtas e sem dramatismo.',
+        text: 'A reunião sueca segue a pauta, e o último item quase sempre é “övriga frågor” (assuntos gerais). Pedir a palavra, propor e adiar se faz com frases curtas e sem dramatismo.',
         examples: [
           ['Får jag säga något?', 'Posso dizer uma coisa?'],
           ['Vi tar det på nästa möte.', 'Deixamos isso para a próxima reunião.'],
@@ -2593,41 +2593,41 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      '«Semester» é férias; o semestre letivo é «termin». «Jag har semester» quer dizer «estou de férias».',
-      '«Protokoll» de reunião é a ata, e «chef» é o chefe, não o cozinheiro (esse é «kock»).',
+      '“Semester” é férias; o semestre letivo é “termin”. “Jag har semester” quer dizer “estou de férias”.',
+      '“Protokoll” de reunião é a ata, e “chef” é o chefe, não o cozinheiro (esse é “kock”).',
       'Chegar atrasado ou pular a fika: pontualidade conta muito, e a fika é onde a equipe conversa de verdade; quem nunca vai demora a se enturmar.',
       'Esperar que o chefe decida sozinho e rápido: as decisões são ancoradas no grupo, e pressionar por uma resposta imediata pode soar agressivo.',
     ],
     quiz: [
       {
-        question: '«Semester» em sueco significa…',
+        question: '“Semester” em sueco significa…',
         options: ['férias', 'semestre', 'seminario'],
         answer: 'férias',
-        explanation: 'É um falso amigo: «semester» são as férias do trabalho. O semestre da faculdade é «termin».',
+        explanation: 'É um falso amigo: “semester” são as férias do trabalho. O semestre da faculdade é “termin”.',
       },
       {
         question: 'Quem cuida do seu processo numa repartição?',
         options: ['handläggare', 'kollega', 'kock'],
         answer: 'handläggare',
-        explanation: 'O «handläggare» é o servidor responsável pelo seu «ärende» (processo).',
+        explanation: 'O “handläggare” é o servidor responsável pelo seu “ärende” (processo).',
       },
       {
-        question: 'Complete: «I dag ___ jag, min son är sjuk.»',
+        question: 'Complete: “I dag ___ jag, min son är sjuk.”',
         options: ['vabbar', 'fikar', 'semestrar'],
         answer: 'vabbar',
-        explanation: '«Vabba» (de VAB, vård av barn) é ficar em casa com o filho doente. Repare na inversão: «I dag vabbar jag».',
+        explanation: '“Vabba” (de VAB, vård av barn) é ficar em casa com o filho doente. Repare na inversão: “I dag vabbar jag”.',
       },
       {
-        question: 'Qual palavra quer dizer «ata» de reunião?',
+        question: 'Qual palavra quer dizer “ata” de reunião?',
         options: ['protokoll', 'dagordning', 'blankett'],
         answer: 'protokoll',
-        explanation: '«Protokoll» é a ata; «dagordning» é a pauta; «blankett» é um formulário.',
+        explanation: '“Protokoll” é a ata; “dagordning” é a pauta; “blankett” é um formulário.',
       },
       {
         question: 'Qual é o último item típico da pauta de uma reunião sueca?',
         options: ['Övriga frågor', 'Personnummer', 'Handläggningstid'],
         answer: 'Övriga frågor',
-        explanation: '«Övriga frågor» (assuntos gerais) fecha quase toda pauta: é a hora de levantar o que não estava previsto.',
+        explanation: '“Övriga frågor” (assuntos gerais) fecha quase toda pauta: é a hora de levantar o que não estava previsto.',
       },
     ],
   },
@@ -2641,7 +2641,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
     sections: [
       {
         heading: 'As clássicas',
-        text: 'Expressões idiomáticas são fixas: não se troca o verbo nem o bicho. A mais famosa, «det är ingen ko på isen», vem de uma frase mais longa: «det är ingen ko på isen så länge rumpan är i land», ou seja, a vaca no gelo não corre perigo enquanto o traseiro estiver em terra firme. E «glida in på en räkmacka» (deslizar num sanduíche de camarão) é o jeito sueco de dizer que alguém conseguiu tudo sem esforço.',
+        text: 'Expressões idiomáticas são fixas: não se troca o verbo nem o bicho. A mais famosa, “det är ingen ko på isen”, vem de uma frase mais longa: “det är ingen ko på isen så länge rumpan är i land”, ou seja, a vaca no gelo não corre perigo enquanto o traseiro estiver em terra firme. E “glida in på en räkmacka” (deslizar num sanduíche de camarão) é o jeito sueco de dizer que alguém conseguiu tudo sem esforço.',
         table: {
           head: ['Expressão', 'Literalmente', 'Sentido', 'Em português'],
           rows: [
@@ -2669,7 +2669,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Expressões do dia a dia',
-        text: 'Algumas expressões não são pitorescas, mas aparecem em toda conversa. «Tack för senast» é quase obrigatória: ao reencontrar alguém com quem você esteve (num jantar, numa festa), agradece-se «pela última vez». E «lagom», que não tem tradução exata, resume um ideal sueco: nem demais, nem de menos.',
+        text: 'Algumas expressões não são pitorescas, mas aparecem em toda conversa. “Tack för senast” é quase obrigatória: ao reencontrar alguém com quem você esteve (num jantar, numa festa), agradece-se “pela última vez”. E “lagom”, que não tem tradução exata, resume um ideal sueco: nem demais, nem de menos.',
         table: {
           head: ['Sueco', 'Português', 'Quando se usa'],
           rows: [
@@ -2691,32 +2691,32 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Traduzir palavra por palavra: «det ligger en hund begraven» não tem nada a ver com cachorro; quer dizer «aí tem coisa».',
-      'Trocar peças da expressão: é «glida in på en räkmacka» (não «åka in»), «ha is i magen» (não «i huvudet»). Expressão fixa não aceita sinônimo.',
-      'Esquecer o «tack för senast»: ao reencontrar quem te recebeu em casa, não agradecer pela última vez soa um pouco mal-educado.',
-      'Usar «nu är det kört» ou «ingen fara» num e-mail formal: são coloquiais; no trabalho, prefira «det går tyvärr inte» ou «det går bra».',
+      'Traduzir palavra por palavra: “det ligger en hund begraven” não tem nada a ver com cachorro; quer dizer “aí tem coisa”.',
+      'Trocar peças da expressão: é “glida in på en räkmacka” (não “åka in”), “ha is i magen” (não “i huvudet”). Expressão fixa não aceita sinônimo.',
+      'Esquecer o “tack för senast”: ao reencontrar quem te recebeu em casa, não agradecer pela última vez soa um pouco mal-educado.',
+      'Usar “nu är det kört” ou “ingen fara” num e-mail formal: são coloquiais; no trabalho, prefira “det går tyvärr inte” ou “det går bra”.',
     ],
     quiz: [
       {
-        question: 'O que quer dizer «det är ingen ko på isen»?',
+        question: 'O que quer dizer “det är ingen ko på isen”?',
         options: ['sem pressa nem perigo', 'o inverno chegou', 'a comida acabou'],
         answer: 'sem pressa nem perigo',
         explanation: 'Não há vaca no gelo, então não há motivo para correr: está tudo sob controle.',
       },
       {
-        question: 'Qual expressão corresponde a «comprar gato por lebre»?',
+        question: 'Qual expressão corresponde a “comprar gato por lebre”?',
         options: ['köpa grisen i säcken', 'ha is i magen', 'sila mygg och svälja kameler'],
         answer: 'köpa grisen i säcken',
         explanation: 'Comprar o porco dentro do saco, sem ver: é arriscar-se a levar algo diferente do esperado.',
       },
       {
-        question: 'Complete: «Han har glidit in på en ___ hela livet.»',
+        question: 'Complete: “Han har glidit in på en ___ hela livet.”',
         options: ['räkmacka', 'ostmacka', 'ko'],
         answer: 'räkmacka',
-        explanation: 'É sempre o sanduíche de camarão, «räkmacka»: símbolo de luxo fácil. Com queijo não funciona.',
+        explanation: 'É sempre o sanduíche de camarão, “räkmacka”: símbolo de luxo fácil. Com queijo não funciona.',
       },
       {
-        question: 'Quem «går som katten kring het gröt»…',
+        question: 'Quem “går som katten kring het gröt”…',
         options: ['enrola e evita o assunto', 'come muito depressa', 'tem medo de gatos'],
         answer: 'enrola e evita o assunto',
         explanation: 'O gato quer o mingau, mas está quente demais: fica rodeando, como quem faz rodeios para não tocar no assunto.',
@@ -2725,20 +2725,20 @@ export const GRAMMAR_SV: GrammarTopic[] = [
         question: 'O que se diz ao reencontrar quem te recebeu em casa na semana passada?',
         options: ['Tack för senast!', 'Smaklig måltid!', 'Nu är det kört!'],
         answer: 'Tack för senast!',
-        explanation: '«Tack för senast» agradece pela última vez em que estiveram juntos: é um costume forte na Suécia.',
+        explanation: '“Tack för senast” agradece pela última vez em que estiveram juntos: é um costume forte na Suécia.',
       },
     ],
   },
   {
     id: 'sv-g26',
     level: 'B2.3',
-    title: 'Gíria e sueco falado: tjena, typ, sjukt, «dom» e a fala dos subúrbios',
+    title: 'Gíria e sueco falado: tjena, typ, sjukt, “dom” e a fala dos subúrbios',
     emoji: '😎',
-    summary: 'O sueco da rua cumprimenta com «tjena», intensifica com «sjukt», enche as frases de «typ» e «asså» e encurta tudo: «dom», «nåt», «sen». Nos subúrbios das grandes cidades nasceu ainda um jeito de falar com palavras do turco e do árabe.',
+    summary: 'O sueco da rua cumprimenta com “tjena”, intensifica com “sjukt”, enche as frases de “typ” e “asså” e encurta tudo: “dom”, “nåt”, “sen”. Nos subúrbios das grandes cidades nasceu ainda um jeito de falar com palavras do turco e do árabe.',
     sections: [
       {
         heading: 'As palavrinhas do dia a dia',
-        text: 'A gíria sueca é bem menos agressiva do que o palavrão brasileiro, e muitas palavras coloquiais aparecem até na boca de adultos em situações leves. O intensificador mais comum entre jovens é «sjukt» (literalmente «doente»): «sjukt bra» é «bom demais». Já «orka» (ter energia, ter pique) é essencial: «orkar inte» é o nosso «não tô com saco».',
+        text: 'A gíria sueca é bem menos agressiva do que o palavrão brasileiro, e muitas palavras coloquiais aparecem até na boca de adultos em situações leves. O intensificador mais comum entre jovens é “sjukt” (literalmente “doente”): “sjukt bra” é “bom demais”. Já “orka” (ter energia, ter pique) é essencial: “orkar inte” é o nosso “não tô com saco”.',
         table: {
           head: ['Coloquial', 'Padrão', 'Português'],
           rows: [
@@ -2769,7 +2769,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Como a fala encurta as palavras',
-        text: 'Várias palavras se escrevem de um jeito e se falam de outro, e na escrita informal (mensagem, chat) a forma falada vai para o papel. O caso mais conhecido é «de» (eles) e «dem» (os, a eles), que se pronunciam os dois «dom»; muita gente escreve «dom» nas mensagens. Algumas formas curtas já viraram padrão: «ska», «sa» e «la» substituíram «skall», «sade» e «lade» em quase todo texto.',
+        text: 'Várias palavras se escrevem de um jeito e se falam de outro, e na escrita informal (mensagem, chat) a forma falada vai para o papel. O caso mais conhecido é “de” (eles) e “dem” (os, a eles), que se pronunciam os dois “dom”; muita gente escreve “dom” nas mensagens. Algumas formas curtas já viraram padrão: “ska”, “sa” e “la” substituíram “skall”, “sade” e “lade” em quase todo texto.',
         table: {
           head: ['Escrita padrão', 'Falado / informal', 'Português'],
           rows: [
@@ -2791,7 +2791,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Förortssvenska: a fala dos subúrbios',
-        text: 'Nos subúrbios multiculturais de Estocolmo, Gotemburgo e Malmö surgiu, a partir dos anos 1980, um jeito de falar que os linguistas chamam de multietnoleto, e que o público conhece como förortssvenska ou «rinkebysvenska» (de Rinkeby, bairro de Estocolmo). Tem ritmo próprio e palavras vindas do turco, do árabe e de outras línguas dos imigrantes. Algumas saíram do subúrbio e viraram gíria jovem no país todo.',
+        text: 'Nos subúrbios multiculturais de Estocolmo, Gotemburgo e Malmö surgiu, a partir dos anos 1980, um jeito de falar que os linguistas chamam de multietnoleto, e que o público conhece como förortssvenska ou “rinkebysvenska” (de Rinkeby, bairro de Estocolmo). Tem ritmo próprio e palavras vindas do turco, do árabe e de outras línguas dos imigrantes. Algumas saíram do subúrbio e viraram gíria jovem no país todo.',
         table: {
           head: ['Palavra', 'Origem', 'Sentido'],
           rows: [
@@ -2811,41 +2811,41 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Entender «sjukt» como algo ligado a doença: na gíria é só intensificador («sjukt kul» = divertido demais). Mas «Jag är sjuk» continua sendo «estou doente».',
-      'Escrever «dom», «mej» ou «nåt» num texto formal: são grafias da fala e do chat; na redação e no e-mail de trabalho vale «de/dem», «mig» e «något».',
-      'Usar gírias como «guss», «aina» ou «len» com qualquer pessoa: são marcas de um grupo jovem e podem soar forçadas ou caricatas na boca de um estrangeiro adulto.',
-      'Achar que «Läget?» pergunta onde você está: é «como vão as coisas?», e a resposta natural é «Bra, och du?».',
+      'Entender “sjukt” como algo ligado a doença: na gíria é só intensificador (“sjukt kul” = divertido demais). Mas “Jag är sjuk” continua sendo “estou doente”.',
+      'Escrever “dom”, “mej” ou “nåt” num texto formal: são grafias da fala e do chat; na redação e no e-mail de trabalho vale “de/dem”, “mig” e “något”.',
+      'Usar gírias como “guss”, “aina” ou “len” com qualquer pessoa: são marcas de um grupo jovem e podem soar forçadas ou caricatas na boca de um estrangeiro adulto.',
+      'Achar que “Läget?” pergunta onde você está: é “como vão as coisas?”, e a resposta natural é “Bra, och du?”.',
     ],
     quiz: [
       {
-        question: '«Filmen var sjukt bra» quer dizer que o filme foi…',
+        question: '“Filmen var sjukt bra” quer dizer que o filme foi…',
         options: ['muito bom', 'ruim', 'sobre hospitais'],
         answer: 'muito bom',
-        explanation: '«Sjukt» é intensificador na gíria: «sjukt bra» = bom demais.',
+        explanation: '“Sjukt” é intensificador na gíria: “sjukt bra” = bom demais.',
       },
       {
-        question: 'Qual é a forma escrita padrão do que se pronuncia «dom»?',
+        question: 'Qual é a forma escrita padrão do que se pronuncia “dom”?',
         options: ['de / dem', 'dom / dem', 'du / dig'],
         answer: 'de / dem',
-        explanation: '«De» (sujeito, eles) e «dem» (objeto) soam iguais, «dom». Na escrita formal, escolha conforme a função.',
+        explanation: '“De” (sujeito, eles) e “dem” (objeto) soam iguais, “dom”. Na escrita formal, escolha conforme a função.',
       },
       {
-        question: 'Qual é a resposta natural para «Tjena! Läget?»',
+        question: 'Qual é a resposta natural para “Tjena! Läget?”',
         options: ['Bra, och du?', 'Tack för senast.', 'Med vänliga hälsningar'],
         answer: 'Bra, och du?',
-        explanation: '«Läget?» é «como vão as coisas?»; responde-se «Bra, och du?» (bem, e você?).',
+        explanation: '“Läget?” é “como vão as coisas?”; responde-se “Bra, och du?” (bem, e você?).',
       },
       {
-        question: 'Qual verbo coloquial quer dizer «comer»?',
+        question: 'Qual verbo coloquial quer dizer “comer”?',
         options: ['käka', 'plugga', 'orka'],
         answer: 'käka',
-        explanation: '«Käka» = äta. «Plugga» é estudar e «orka» é ter energia para algo.',
+        explanation: '“Käka” = äta. “Plugga” é estudar e “orka” é ter energia para algo.',
       },
       {
-        question: 'O que «orkar inte» expressa?',
+        question: 'O que “orkar inte” expressa?',
         options: ['falta de energia ou vontade', 'fome', 'pressa'],
         answer: 'falta de energia ou vontade',
-        explanation: '«Orka» é ter forças ou pique; «orkar inte» é «não tô com saco», «não aguento».',
+        explanation: '“Orka” é ter forças ou pique; “orkar inte” é “não tô com saco”, “não aguento”.',
       },
     ],
   },
@@ -2858,7 +2858,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
     sections: [
       {
         heading: 'Junto, sempre junto',
-        text: 'Onde o português usa «de» (fígado de frango, professor de inglês), o sueco emenda as palavras numa só, como o alemão. Escrever separado, a chamada «särskrivning», é um dos erros mais comentados da Suécia, porque muda o sentido de um jeito muitas vezes cômico: a placa «rök fritt» parece dizer «fume à vontade», quando a ideia era «rökfritt», proibido fumar.',
+        text: 'Onde o português usa “de” (fígado de frango, professor de inglês), o sueco emenda as palavras numa só, como o alemão. Escrever separado, a chamada “särskrivning”, é um dos erros mais comentados da Suécia, porque muda o sentido de um jeito muitas vezes cômico: a placa “rök fritt” parece dizer “fume à vontade”, quando a ideia era “rökfritt”, proibido fumar.',
         table: {
           head: ['Junto (certo)', 'Sentido', 'Separado', 'O que se lê'],
           rows: [
@@ -2877,7 +2877,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'O gênero e o sentido vêm do fim',
-        text: 'Na composta, a última parte é a principal: ela decide o gênero (en/ett), o plural e o que a coisa é. A primeira parte só especifica. A ordem é a do inglês (houseboat), o contrário do português: «båthus» é uma casa para barcos, «husbåt» é um barco que serve de casa. Na pronúncia, a composta ganha o acento 2 (o acento tonal «duplo»), com a tônica principal na primeira parte.',
+        text: 'Na composta, a última parte é a principal: ela decide o gênero (en/ett), o plural e o que a coisa é. A primeira parte só especifica. A ordem é a do inglês (houseboat), o contrário do português: “båthus” é uma casa para barcos, “husbåt” é um barco que serve de casa. Na pronúncia, a composta ganha o acento 2 (o acento tonal “duplo”), com a tônica principal na primeira parte.',
         table: {
           head: ['Partes', 'Composta', 'Português'],
           rows: [
@@ -2922,41 +2922,41 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Separar as partes (särskrivning): «kyckling lever» diz que o frango está vivo; o prato é «kycklinglever».',
-      'Pegar o gênero da primeira parte: «hus» é ett, mas «husbåt» é en, porque «båt» é en. Quem manda é a última parte.',
-      'Ler na ordem do português: «båthus» não é um barco-casa, é a casa do barco. Em sueco, o que especifica vem antes.',
-      'Esquecer o -s- de ligação ou inventá-lo: é «arbetsplats» (não «arbeteplats») e «skolväska» (não «skolsväska»).',
+      'Separar as partes (särskrivning): “kyckling lever” diz que o frango está vivo; o prato é “kycklinglever”.',
+      'Pegar o gênero da primeira parte: “hus” é ett, mas “husbåt” é en, porque “båt” é en. Quem manda é a última parte.',
+      'Ler na ordem do português: “båthus” não é um barco-casa, é a casa do barco. Em sueco, o que especifica vem antes.',
+      'Esquecer o -s- de ligação ou inventá-lo: é “arbetsplats” (não “arbeteplats”) e “skolväska” (não “skolsväska”).',
     ],
     quiz: [
       {
-        question: '«Kyckling lever» (separado) quer dizer…',
+        question: '“Kyckling lever” (separado) quer dizer…',
         options: ['o frango vive', 'fígado de frango', 'frango frito'],
         answer: 'o frango vive',
-        explanation: 'Separado, «lever» vira o verbo «leva» (viver). O fígado de frango é «kycklinglever», tudo junto.',
+        explanation: 'Separado, “lever” vira o verbo “leva” (viver). O fígado de frango é “kycklinglever”, tudo junto.',
       },
       {
-        question: 'Qual é o gênero de «husbåt»?',
+        question: 'Qual é o gênero de “husbåt”?',
         options: ['en husbåt', 'ett husbåt', 'den husbåt'],
         answer: 'en husbåt',
-        explanation: 'A última parte, «båt», é en; por isso «en husbåt», mesmo com «ett hus» no começo.',
+        explanation: 'A última parte, “båt”, é en; por isso “en husbåt”, mesmo com “ett hus” no começo.',
       },
       {
         question: 'Qual é a forma correta?',
         options: ['arbetsplats', 'arbeteplats', 'arbetplats'],
         answer: 'arbetsplats',
-        explanation: '«Arbete» perde o -e e ganha o -s- de ligação: arbets-plats.',
+        explanation: '“Arbete” perde o -e e ganha o -s- de ligação: arbets-plats.',
       },
       {
-        question: '«Kyrka» + «gård» vira…',
+        question: '“Kyrka” + “gård” vira…',
         options: ['kyrkogård', 'kyrkagård', 'kyrksgård'],
         answer: 'kyrkogård',
-        explanation: 'O -a de «kyrka» vira -o- na composta: kyrkogård (cemitério), como em veckodag.',
+        explanation: 'O -a de “kyrka” vira -o- na composta: kyrkogård (cemitério), como em veckodag.',
       },
       {
-        question: 'Um «engelsklärare» é…',
+        question: 'Um “engelsklärare” é…',
         options: ['um professor de inglês', 'um professor inglês', 'um inglês que aprende'],
         answer: 'um professor de inglês',
-        explanation: 'Junto, é a composta: professor de inglês. Separado, «engelsk lärare» é um professor que é inglês.',
+        explanation: 'Junto, é a composta: professor de inglês. Separado, “engelsk lärare” é um professor que é inglês.',
       },
     ],
   },
@@ -2966,11 +2966,11 @@ export const GRAMMAR_SV: GrammarTopic[] = [
     level: 'B2.4',
     title: 'Opinião e argumentação: tycka, tro, tänka, anse e como concordar e discordar',
     emoji: '💬',
-    summary: 'O nosso «achar» se divide em sueco: «tycka» para opinião, «tro» para suposição, e «tänka» nem entra nessa história. Mais as fórmulas para concordar, discordar com jeito, ponderar e o «jo» que responde «sim» a uma pergunta negativa.',
+    summary: 'O nosso “achar” se divide em sueco: “tycka” para opinião, “tro” para suposição, e “tänka” nem entra nessa história. Mais as fórmulas para concordar, discordar com jeito, ponderar e o “jo” que responde “sim” a uma pergunta negativa.',
     sections: [
       {
-        heading: 'Quatro verbos para o nosso «achar»',
-        text: 'É o erro mais comum do brasileiro: usar um verbo só para tudo. «Tycka» dá opinião ou juízo de valor (algo que você avaliou: bom, ruim, caro, bonito). «Tro» é suposição sobre um fato que você não sabe ao certo. «Tänka» é pensar (a atividade mental) ou pretender fazer algo; não serve para opinião. «Anse» é o «tycka» formal, de jornal e de debate. E «mena» é «querer dizer» ou «sustentar».',
+        heading: 'Quatro verbos para o nosso “achar”',
+        text: 'É o erro mais comum do brasileiro: usar um verbo só para tudo. “Tycka” dá opinião ou juízo de valor (algo que você avaliou: bom, ruim, caro, bonito). “Tro” é suposição sobre um fato que você não sabe ao certo. “Tänka” é pensar (a atividade mental) ou pretender fazer algo; não serve para opinião. “Anse” é o “tycka” formal, de jornal e de debate. E “mena” é “querer dizer” ou “sustentar”.',
         table: {
           head: ['Verbo', 'Uso', 'Exemplo', 'Português'],
           rows: [
@@ -2991,7 +2991,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Concordar, discordar e ponderar',
-        text: 'O debate sueco valoriza o consenso e a discordância suave. «Du har fel» (você está errado) é seco demais para a maioria das situações; o sueco prefere reconhecer um ponto do outro antes de discordar («visserligen…, men…») ou dizer que vê as coisas de outro jeito. Repare na inversão V2 depois dos advérbios que abrem a frase: «Visserligen är tåget…», «Å andra sidan tar det…».',
+        text: 'O debate sueco valoriza o consenso e a discordância suave. “Du har fel” (você está errado) é seco demais para a maioria das situações; o sueco prefere reconhecer um ponto do outro antes de discordar (“visserligen…, men…”) ou dizer que vê as coisas de outro jeito. Repare na inversão V2 depois dos advérbios que abrem a frase: “Visserligen är tåget…”, “Å andra sidan tar det…”.',
         table: {
           head: ['Sueco', 'Português'],
           rows: [
@@ -3016,8 +3016,8 @@ export const GRAMMAR_SV: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'Jo: o «sim» que contradiz',
-        text: 'Numa discussão aparecem muitas perguntas negativas («Você não acha que…?»). Para responder «sim» a uma pergunta ou afirmação negativa, o sueco usa «jo», não «ja». O «jo» contradiz a negação: «Não comeu? – Comi, sim!». Responder «ja» aqui deixa o ouvinte em dúvida. Para confirmar a negação, usa-se «nej».',
+        heading: 'Jo: o “sim” que contradiz',
+        text: 'Numa discussão aparecem muitas perguntas negativas (“Você não acha que…?”). Para responder “sim” a uma pergunta ou afirmação negativa, o sueco usa “jo”, não “ja”. O “jo” contradiz a negação: “Não comeu? – Comi, sim!”. Responder “ja” aqui deixa o ouvinte em dúvida. Para confirmar a negação, usa-se “nej”.',
         examples: [
           ['– Har du inte ätit? – Jo, jag har ätit.', '– Você não comeu? – Comi, sim.'],
           ['– Du kommer väl inte? – Jo, klart jag kommer!', '– Você não vem, né? – Venho, claro!'],
@@ -3026,42 +3026,42 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar «tänka» para opinião («Jag tänker att det är bra»): soa estranho. Opinião é «Jag tycker att…».',
-      'Usar «tycka» para um fato incerto: «Jag tycker att tåget går kl. 8» mistura opinião com informação; suposição é «Jag tror att…».',
-      'Responder «ja» a uma pergunta negativa: «Kommer du inte? – Ja» confunde. Para dizer que vem, é «Jo!».',
-      'Discordar de forma seca («Du har fel»): prefira «Jag håller inte riktigt med» ou «Jag ser det på ett annat sätt».',
-      'Esquecer a inversão depois de «visserligen», «enligt min mening», «å andra sidan»: o verbo vem logo em seguida, antes do sujeito.',
+      'Usar “tänka” para opinião (“Jag tänker att det är bra”): soa estranho. Opinião é “Jag tycker att…”.',
+      'Usar “tycka” para um fato incerto: “Jag tycker att tåget går kl. 8” mistura opinião com informação; suposição é “Jag tror att…”.',
+      'Responder “ja” a uma pergunta negativa: “Kommer du inte? – Ja” confunde. Para dizer que vem, é “Jo!”.',
+      'Discordar de forma seca (“Du har fel”): prefira “Jag håller inte riktigt med” ou “Jag ser det på ett annat sätt”.',
+      'Esquecer a inversão depois de “visserligen”, “enligt min mening”, “å andra sidan”: o verbo vem logo em seguida, antes do sujeito.',
     ],
     quiz: [
       {
-        question: 'Você viu o filme e dá sua opinião: «Jag ___ att filmen var bra.»',
+        question: 'Você viu o filme e dá sua opinião: “Jag ___ att filmen var bra.”',
         options: ['tycker', 'tänker', 'tror'],
         answer: 'tycker',
-        explanation: 'Opinião sobre algo que você avaliou pede «tycka». «Tro» seria suposição de quem não viu.',
+        explanation: 'Opinião sobre algo que você avaliou pede “tycka”. “Tro” seria suposição de quem não viu.',
       },
       {
-        question: 'Suposição: «Jag ___ att bussen redan har gått.»',
+        question: 'Suposição: “Jag ___ att bussen redan har gått.”',
         options: ['tror', 'tycker', 'tänker'],
         answer: 'tror',
-        explanation: 'Você não sabe ao certo se o ônibus passou: é suposição, «tro».',
+        explanation: 'Você não sabe ao certo se o ônibus passou: é suposição, “tro”.',
       },
       {
-        question: '«Har du inte varit i Visby?» Você já foi. Responda:',
+        question: '“Har du inte varit i Visby?” Você já foi. Responda:',
         options: ['Jo, det har jag.', 'Ja, det har jag.', 'Nej, det har jag.'],
         answer: 'Jo, det har jag.',
-        explanation: 'Pergunta negativa + resposta positiva = «jo».',
+        explanation: 'Pergunta negativa + resposta positiva = “jo”.',
       },
       {
-        question: 'Como dizer «concordo com você»?',
+        question: 'Como dizer “concordo com você”?',
         options: ['Jag håller med dig.', 'Jag håller dig.', 'Jag tycker dig.'],
         answer: 'Jag håller med dig.',
-        explanation: '«Hålla med» (com a partícula «med») é concordar. «Hålla dig» seria «segurar você».',
+        explanation: '“Hålla med” (com a partícula “med”) é concordar. “Hålla dig” seria “segurar você”.',
       },
       {
-        question: 'Complete: «Visserligen ___ dyrt, men det är värt det.»',
+        question: 'Complete: “Visserligen ___ dyrt, men det är värt det.”',
         options: ['är det', 'det är', 'det'],
         answer: 'är det',
-        explanation: '«Visserligen» ocupa a primeira posição, então o verbo vem em segundo: «Visserligen är det dyrt».',
+        explanation: '“Visserligen” ocupa a primeira posição, então o verbo vem em segundo: “Visserligen är det dyrt”.',
       },
     ],
   },
@@ -3070,11 +3070,11 @@ export const GRAMMAR_SV: GrammarTopic[] = [
     level: 'B2.4',
     title: 'Conectores e pontuação: därför, däremot, dessutom, trots att e a vírgula sueca',
     emoji: '🔗',
-    summary: 'Cada conector sueco puxa uma ordem de palavras: conjunções não mexem em nada, advérbios como «därför» e «dessutom» provocam a inversão V2, e subjunções como «eftersom» e «trots att» põem o «inte» antes do verbo. Mais a pontuação, que usa menos vírgulas e escreve números de outro jeito.',
+    summary: 'Cada conector sueco puxa uma ordem de palavras: conjunções não mexem em nada, advérbios como “därför” e “dessutom” provocam a inversão V2, e subjunções como “eftersom” e “trots att” põem o “inte” antes do verbo. Mais a pontuação, que usa menos vírgulas e escreve números de outro jeito.',
     sections: [
       {
         heading: 'Três tipos de conector, três ordens de palavras',
-        text: 'As conjunções coordenativas (och, men, eller, för, så, utan) só ligam duas orações principais, sem mudar nada. Os advérbios conectores (därför, dessutom, däremot, alltså, ändå, sedan) contam como um elemento da frase: se vierem no começo, o verbo vem logo depois e o sujeito passa para trás (V2); também podem ficar no meio («Jag kan därför inte…»). As subjunções (att, eftersom, trots att, när, om, fast, medan, innan) abrem uma oração subordinada, em que o «inte» e outros advérbios vêm antes do verbo.',
+        text: 'As conjunções coordenativas (och, men, eller, för, så, utan) só ligam duas orações principais, sem mudar nada. Os advérbios conectores (därför, dessutom, däremot, alltså, ändå, sedan) contam como um elemento da frase: se vierem no começo, o verbo vem logo depois e o sujeito passa para trás (V2); também podem ficar no meio (“Jag kan därför inte…”). As subjunções (att, eftersom, trots att, när, om, fast, medan, innan) abrem uma oração subordinada, em que o “inte” e outros advérbios vêm antes do verbo.',
         table: {
           head: ['Tipo', 'Conector', 'Exemplo'],
           rows: [
@@ -3098,8 +3098,8 @@ export const GRAMMAR_SV: GrammarTopic[] = [
         ],
       },
       {
-        heading: '«Men» × «utan», «trots» × «trots att»',
-        text: 'Dois pares confundem o brasileiro. «Utan» é o «mas sim» que corrige uma negação: só aparece depois de «inte», «aldrig» e afins, e substitui o que foi negado. «Men» é o «mas» comum, que acrescenta um contraste sem anular o anterior. E «trots» é preposição (vem antes de um substantivo: trots regnet), enquanto «trots att» é subjunção (vem antes de uma oração: trots att det regnade).',
+        heading: '“Men” × “utan”, “trots” × “trots att”',
+        text: 'Dois pares confundem o brasileiro. “Utan” é o “mas sim” que corrige uma negação: só aparece depois de “inte”, “aldrig” e afins, e substitui o que foi negado. “Men” é o “mas” comum, que acrescenta um contraste sem anular o anterior. E “trots” é preposição (vem antes de um substantivo: trots regnet), enquanto “trots att” é subjunção (vem antes de uma oração: trots att det regnade).',
         examples: [
           ['Han är inte från Sverige utan från Finland.', 'Ele não é da Suécia, e sim da Finlândia.'],
           ['Han är inte svensk, men han talar svenska perfekt.', 'Ele não é sueco, mas fala sueco perfeitamente.'],
@@ -3109,11 +3109,11 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Pontuação sueca',
-        text: 'O sueco usa menos vírgulas que o português. Não há vírgula antes de «att» nem antes de uma relativa restritiva com «som». Depois de uma subordinada no começo da frase, a vírgula é opcional (e o verbo principal vem logo depois dela, por causa do V2). Nos números, a vírgula é decimal, como no Brasil, mas os milhares se separam com espaço, não com ponto; as horas levam ponto (kl. 14.30). As aspas são iguais dos dois lados (”…”), e na ficção o diálogo muitas vezes vem com travessão. Abreviações frequentes: t.ex. (por exemplo), bl.a. (entre outros), osv. (etc.), dvs. (ou seja), ca (cerca de).',
+        text: 'O sueco usa menos vírgulas que o português. Não há vírgula antes de “att” nem antes de uma relativa restritiva com “som”. Depois de uma subordinada no começo da frase, a vírgula é opcional (e o verbo principal vem logo depois dela, por causa do V2). Nos números, a vírgula é decimal, como no Brasil, mas os milhares se separam com espaço, não com ponto; as horas levam ponto (kl. 14.30). As aspas são iguais dos dois lados (”…”), e na ficção o diálogo muitas vezes vem com travessão. Abreviações frequentes: t.ex. (por exemplo), bl.a. (entre outros), osv. (etc.), dvs. (ou seja), ca (cerca de).',
         table: {
           head: ['Regra', 'Sueco', 'No Brasil'],
           rows: [
-            ['Sem vírgula antes de «att»', 'Jag hoppas att du kommer.', 'Espero que você venha.'],
+            ['Sem vírgula antes de “att”', 'Jag hoppas att du kommer.', 'Espero que você venha.'],
             ['Relativa restritiva sem vírgula', 'Boken som jag läser är bra.', 'O livro que estou lendo é bom.'],
             ['Milhares com espaço', '10 000 kronor', '10.000 coroas'],
             ['Decimal com vírgula', '3,5 procent', '3,5%'],
@@ -3131,39 +3131,39 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Não inverter depois de um advérbio conector: «Därför jag stannar hemma» está errado; o certo é «Därför stannar jag hemma».',
-      'Usar «men» para corrigir uma negação: «inte i Uppsala men i Lund» → «inte i Uppsala utan i Lund».',
-      'Confundir «trots» com «trots att»: «trots regnet» (substantivo), mas «trots att det regnade» (oração).',
-      'Pôr o «inte» depois do verbo na subordinada: «eftersom jag kan inte» → «eftersom jag inte kan».',
-      'Escrever números à brasileira: em sueco são «10 000 kronor» (espaço nos milhares) e «kl. 14.30».',
+      'Não inverter depois de um advérbio conector: “Därför jag stannar hemma” está errado; o certo é “Därför stannar jag hemma”.',
+      'Usar “men” para corrigir uma negação: “inte i Uppsala men i Lund” → “inte i Uppsala utan i Lund”.',
+      'Confundir “trots” com “trots att”: “trots regnet” (substantivo), mas “trots att det regnade” (oração).',
+      'Pôr o “inte” depois do verbo na subordinada: “eftersom jag kan inte” → “eftersom jag inte kan”.',
+      'Escrever números à brasileira: em sueco são “10 000 kronor” (espaço nos milhares) e “kl. 14.30”.',
     ],
     quiz: [
       {
-        question: 'Complete: «Jag är trött. Därför ___ hem.»',
+        question: 'Complete: “Jag är trött. Därför ___ hem.”',
         options: ['går jag', 'jag går', 'jag inte går'],
         answer: 'går jag',
-        explanation: '«Därför» é advérbio e ocupa a primeira posição: o verbo vem em segundo, antes do sujeito.',
+        explanation: '“Därför” é advérbio e ocupa a primeira posição: o verbo vem em segundo, antes do sujeito.',
       },
       {
-        question: 'Complete: «Hon bor inte i Malmö ___ i Lund.»',
+        question: 'Complete: “Hon bor inte i Malmö ___ i Lund.”',
         options: ['utan', 'men', 'och'],
         answer: 'utan',
-        explanation: 'Depois de uma negação, para dizer «e sim», usa-se «utan».',
+        explanation: 'Depois de uma negação, para dizer “e sim”, usa-se “utan”.',
       },
       {
-        question: 'Complete: «Vi gick ut ___ att det regnade.»',
+        question: 'Complete: “Vi gick ut ___ att det regnade.”',
         options: ['trots', 'dessutom', 'därför'],
         answer: 'trots',
-        explanation: '«Trots att» + oração = embora. «Trots» sozinho vai antes de substantivo: trots regnet.',
+        explanation: '“Trots att” + oração = embora. “Trots” sozinho vai antes de substantivo: trots regnet.',
       },
       {
         question: 'Qual ordem está certa?',
         options: ['eftersom jag inte har tid', 'eftersom jag har inte tid', 'eftersom inte jag har tid'],
         answer: 'eftersom jag inte har tid',
-        explanation: 'Na subordinada, o «inte» fica entre o sujeito e o verbo: jag inte har.',
+        explanation: 'Na subordinada, o “inte” fica entre o sujeito e o verbo: jag inte har.',
       },
       {
-        question: 'Como se escreve «dez mil coroas» em sueco?',
+        question: 'Como se escreve “dez mil coroas” em sueco?',
         options: ['10 000 kronor', '10.000 kronor', '10,000 kronor'],
         answer: '10 000 kronor',
         explanation: 'O sueco separa os milhares com espaço; a vírgula fica para os decimais.',
@@ -3185,23 +3185,23 @@ export const GRAMMAR_SV: GrammarTopic[] = [
           head: ['Região', 'Traços', 'Nota'],
           rows: [
             ['Skåne (skånska)', 'r uvular, feito no fundo da boca, parecido com o r francês; vogais longas ditongadas', 'A Escânia foi dinamarquesa até 1658 (Tratado de Roskilde); palavras próprias como påg (menino) e tös (menina)'],
-            ['Göteborg (göteborgska)', 'melodia própria, fala rápida, fama de humor e trocadilhos (göteborgsvitsar)', '«gött» (bom, gostoso) é típico do oeste'],
-            ['Gotland (gutamål, gotländska)', 'conserva ditongos do nórdico antigo', '«stain» em vez de sten (pedra); as rochas da costa se chamam raukar'],
+            ['Göteborg (göteborgska)', 'melodia própria, fala rápida, fama de humor e trocadilhos (göteborgsvitsar)', '“gött” (bom, gostoso) é típico do oeste'],
+            ['Gotland (gutamål, gotländska)', 'conserva ditongos do nórdico antigo', '“stain” em vez de sten (pedra); as rochas da costa se chamam raukar'],
             ['Dalarna (dalmål, älvdalska)', 'dialetos muito arcaicos; o älvdalska conserva vogais nasais', 'as runas de Dalarna foram usadas até o começo do século XX'],
-            ['Norrland (norrländska)', 'palavras encurtadas no fim (apócope): «int» por inte', 'fala considerada calma e econômica; em Västerbotten e Norrbotten, «hä» por det'],
-            ['Estocolmo (stockholmska)', 'base do padrão; e e ä muito próximos; o i «zumbido» (Viby-i) em parte da fala urbana', 'gíria urbana própria'],
+            ['Norrland (norrländska)', 'palavras encurtadas no fim (apócope): “int” por inte', 'fala considerada calma e econômica; em Västerbotten e Norrbotten, “hä” por det'],
+            ['Estocolmo (stockholmska)', 'base do padrão; e e ä muito próximos; o i “zumbido” (Viby-i) em parte da fala urbana', 'gíria urbana própria'],
           ],
         },
         examples: [
           ['Hon pratar skånska, så jag hör direkt att hon kommer från Malmö.', 'Ela fala escanês, então percebo na hora que ela é de Malmö.'],
           ['Min farfar talade gutamål, men jag förstod inte ett ord.', 'Meu avô falava o gútnico, mas eu não entendia uma palavra.'],
-          ['I Norrland säger många «int» i stället för «inte».', 'No Norrland muita gente diz «int» em vez de «inte».'],
+          ['I Norrland säger många “int” i stället för “inte”.', 'No Norrland muita gente diz “int” em vez de “inte”.'],
           ['Dialekten i Älvdalen skiljer sig mycket från rikssvenskan.', 'O dialeto de Älvdalen é bem diferente do sueco padrão.'],
         ],
       },
       {
         heading: 'O r e o l mudam de região para região',
-        text: 'O r mais comum na Suécia é o da ponta da língua, vibrado ou batido. No sul (Escânia, Blekinge e parte de Halland), o r é uvular, do fundo da boca, e não é «erro»: é o r normal da região. Outra marca é o «tjockt l» (l grosso), um toque retroflexo parecido com o r caipira do interior paulista, que aparece em boa parte do centro e do norte, em palavras como «sol» ou «gård». Ele não existe na Escânia nem no sueco da Finlândia.',
+        text: 'O r mais comum na Suécia é o da ponta da língua, vibrado ou batido. No sul (Escânia, Blekinge e parte de Halland), o r é uvular, do fundo da boca, e não é “erro”: é o r normal da região. Outra marca é o “tjockt l” (l grosso), um toque retroflexo parecido com o r caipira do interior paulista, que aparece em boa parte do centro e do norte, em palavras como “sol” ou “gård”. Ele não existe na Escânia nem no sueco da Finlândia.',
         examples: [
           ['I Skåne låter r:et helt annorlunda.', 'Na Escânia o r soa completamente diferente.'],
           ['Många i Dalarna och Norrland har tjockt l.', 'Muita gente em Dalarna e no Norrland tem o l grosso.'],
@@ -3209,7 +3209,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Os acentos tonais têm sotaque',
-        text: 'Todo sueco distingue os dois acentos tonais: «anden» com acento 1 é «o pato», com acento 2 é «o espírito». Mas o desenho da melodia muda muito de região: no centro, o acento 2 tem dois picos; no oeste, no sul e no norte a curva é outra. É pela melodia, mais do que pelo vocabulário, que um sueco descobre de onde o outro vem. No sueco da Finlândia, os dois acentos nem existem.',
+        text: 'Todo sueco distingue os dois acentos tonais: “anden” com acento 1 é “o pato”, com acento 2 é “o espírito”. Mas o desenho da melodia muda muito de região: no centro, o acento 2 tem dois picos; no oeste, no sul e no norte a curva é outra. É pela melodia, mais do que pelo vocabulário, que um sueco descobre de onde o outro vem. No sueco da Finlândia, os dois acentos nem existem.',
         examples: [
           ['Anden simmar i dammen.', 'O pato nada no laguinho.'],
           ['Anden i flaskan uppfyller tre önskningar.', 'O gênio da garrafa realiza três desejos.'],
@@ -3231,16 +3231,16 @@ export const GRAMMAR_SV: GrammarTopic[] = [
     ],
     pitfalls: [
       'Achar que o r uvular da Escânia é defeito: é o r normal do sul, tão sueco quanto o vibrado.',
-      'Confundir sotaque com dialeto: quem «fala skånska» hoje usa quase sempre o padrão com sotaque; o dialeto tradicional é bem mais distante.',
+      'Confundir sotaque com dialeto: quem “fala skånska” hoje usa quase sempre o padrão com sotaque; o dialeto tradicional é bem mais distante.',
       'Imitar um dialeto para fazer graça: aprenda a reconhecer os sotaques, mas fale o padrão; imitação soa como deboche.',
       'Esperar a mesma melodia em todo o país: os acentos tonais mudam de região para região, e na Finlândia não existem.',
     ],
     quiz: [
       {
-        question: 'Onde se diz «påg» para menino?',
+        question: 'Onde se diz “påg” para menino?',
         options: ['Skåne', 'Gotland', 'Norrland'],
         answer: 'Skåne',
-        explanation: '«Påg» (menino) e «tös» (menina) são palavras típicas da Escânia.',
+        explanation: '“Påg” (menino) e “tös” (menina) são palavras típicas da Escânia.',
       },
       {
         question: 'Até que ano a Escânia pertenceu à Dinamarca?',
@@ -3249,16 +3249,16 @@ export const GRAMMAR_SV: GrammarTopic[] = [
         explanation: 'Pelo Tratado de Roskilde, em 1658, a Escânia passou para a Suécia. 1809 é a perda da Finlândia; 1905, o fim da união com a Noruega.',
       },
       {
-        question: 'Qual forma é típica do Norrland para «inte»?',
+        question: 'Qual forma é típica do Norrland para “inte”?',
         options: ['int', 'ej', 'icke'],
         answer: 'int',
-        explanation: 'A apócope (queda do fim da palavra) é marca do Norrland: «int». «Ej» e «icke» são formas antigas ou formais.',
+        explanation: 'A apócope (queda do fim da palavra) é marca do Norrland: “int”. “Ej” e “icke” são formas antigas ou formais.',
       },
       {
         question: 'Onde se fala o gutamål?',
         options: ['Gotland', 'Öland', 'Åland'],
         answer: 'Gotland',
-        explanation: 'O gutamål é o dialeto tradicional de Gotland, que conserva ditongos do nórdico antigo, como em «stain».',
+        explanation: 'O gutamål é o dialeto tradicional de Gotland, que conserva ditongos do nórdico antigo, como em “stain”.',
       },
       {
         question: 'Qual variedade de Dalarna muitos consideram uma língua à parte?',
@@ -3277,7 +3277,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
     sections: [
       {
         heading: 'Uma língua nacional, não estrangeira',
-        text: 'A Finlândia fez parte do reino da Suécia por uns seiscentos anos, até 1809, quando passou à Rússia. O sueco ficou: a Constituição finlandesa reconhece o finlandês e o sueco como línguas nacionais, os dois idiomas são ensinados nas escolas e muitas cidades têm nome duplo. Os finlandeses de língua sueca (finlandssvenskar) vivem sobretudo na costa: em Nyland (em torno de Helsinque), em Åboland (perto de Turku) e em Österbotten (na costa oeste). Não são imigrantes suecos: são finlandeses com séculos de história. O arquipélago de Åland é uma região autônoma da Finlândia desde 1921, desmilitarizada, e lá só o sueco é oficial. Grandes nomes da cultura finlandesa escreveram em sueco: Johan Ludvig Runeberg, autor da letra do hino nacional («Vårt land»), a poeta modernista Edith Södergran e Tove Jansson, criadora dos Mumins.',
+        text: 'A Finlândia fez parte do reino da Suécia por uns seiscentos anos, até 1809, quando passou à Rússia. O sueco ficou: a Constituição finlandesa reconhece o finlandês e o sueco como línguas nacionais, os dois idiomas são ensinados nas escolas e muitas cidades têm nome duplo. Os finlandeses de língua sueca (finlandssvenskar) vivem sobretudo na costa: em Nyland (em torno de Helsinque), em Åboland (perto de Turku) e em Österbotten (na costa oeste). Não são imigrantes suecos: são finlandeses com séculos de história. O arquipélago de Åland é uma região autônoma da Finlândia desde 1921, desmilitarizada, e lá só o sueco é oficial. Grandes nomes da cultura finlandesa escreveram em sueco: Johan Ludvig Runeberg, autor da letra do hino nacional (“Vårt land”), a poeta modernista Edith Södergran e Tove Jansson, criadora dos Mumins.',
         table: {
           head: ['Sueco', 'Finlandês', 'Nota'],
           rows: [
@@ -3299,7 +3299,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Como soa o finlandssvenska',
-        text: 'O que mais chama a atenção do sueco da Suécia é a melodia: o finlandssvenska não tem os dois acentos tonais, e a entonação lembra a do finlandês, mais plana. As consoantes longas e curtas soam bem nítidas, o som sj costuma ser um «x» simples [ʃ] (em vez do [ɧ] sueco), e o tj e o k antes de e/i tendem a «tch» [tʃ]. Não existe o «tjockt l». Muitos brasileiros acham o finlandssvenska mais fácil de entender, por ser mais pausado e silabado. A norma é cuidada pelo Institutet för de inhemska språken (Instituto das Línguas Nacionais), em Helsinque, que segue de perto a norma da Suécia.',
+        text: 'O que mais chama a atenção do sueco da Suécia é a melodia: o finlandssvenska não tem os dois acentos tonais, e a entonação lembra a do finlandês, mais plana. As consoantes longas e curtas soam bem nítidas, o som sj costuma ser um “x” simples [ʃ] (em vez do [ɧ] sueco), e o tj e o k antes de e/i tendem a “tch” [tʃ]. Não existe o “tjockt l”. Muitos brasileiros acham o finlandssvenska mais fácil de entender, por ser mais pausado e silabado. A norma é cuidada pelo Institutet för de inhemska språken (Instituto das Línguas Nacionais), em Helsinque, que segue de perto a norma da Suécia.',
         examples: [
           ['Hon talar finlandssvenska, det hörs på melodin.', 'Ela fala o sueco da Finlândia, dá para perceber pela melodia.'],
           ['Han kommer från Vasa och är tvåspråkig.', 'Ele é de Vaasa e é bilíngue.'],
@@ -3307,7 +3307,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Palavras próprias (finlandismer)',
-        text: 'Algumas palavras vêm do finlandês, outras são palavras suecas antigas que ganharam outro uso. No trato, o «ni» de cortesia também é mais usado na Finlândia do que na Suécia.',
+        text: 'Algumas palavras vêm do finlandês, outras são palavras suecas antigas que ganharam outro uso. No trato, o “ni” de cortesia também é mais usado na Finlândia do que na Suécia.',
         table: {
           head: ['Finlandssvenska', 'Na Suécia', 'Português'],
           rows: [
@@ -3328,10 +3328,10 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Tratar o finlandssvenska como sueco «errado»: é uma variedade padrão com norma própria, cuidada por um instituto oficial em Helsinque.',
+      'Tratar o finlandssvenska como sueco “errado”: é uma variedade padrão com norma própria, cuidada por um instituto oficial em Helsinque.',
       'Achar que os suecos-finlandeses são imigrantes da Suécia: a presença sueca na Finlândia tem séculos; eles são finlandeses de língua sueca.',
       'Dizer que Åland pertence à Suécia: é uma região autônoma da Finlândia, de língua sueca.',
-      'Pedir uma «semla» em Helsinque esperando o doce de creme: lá a palavra pode ser um pãozinho comum; o doce de carnaval é a «fastlagsbulle».',
+      'Pedir uma “semla” em Helsinque esperando o doce de creme: lá a palavra pode ser um pãozinho comum; o doce de carnaval é a “fastlagsbulle”.',
     ],
     quiz: [
       {
@@ -3359,10 +3359,10 @@ export const GRAMMAR_SV: GrammarTopic[] = [
         explanation: 'Sem os acentos 1 e 2, a melodia do finlandssvenska fica mais plana, parecida com a do finlandês.',
       },
       {
-        question: 'Qual é o equivalente de «kiva» na Suécia?',
+        question: 'Qual é o equivalente de “kiva” na Suécia?',
         options: ['trevlig', 'lägenhet', 'åka'],
         answer: 'trevlig',
-        explanation: '«Kiva» vem do finlandês e quer dizer legal, agradável: trevlig ou kul.',
+        explanation: '“Kiva” vem do finlandês e quer dizer legal, agradável: trevlig ou kul.',
       },
     ],
   },
@@ -3375,7 +3375,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
     sections: [
       {
         heading: 'Sueco, norueguês e dinamarquês: conversa sem tradutor',
-        text: 'Sueco, norueguês e dinamarquês são línguas escandinavas, do ramo norte-germânico, e são em boa parte intercompreensíveis: nas reuniões nórdicas é comum cada um falar a própria língua (a chamada grannspråksförståelse, compreensão entre línguas vizinhas). Para o sueco, o norueguês costuma ser o mais fácil de ouvir, porque tem melodia e acentos tonais parecidos. O dinamarquês escrito é fácil de ler, mas o falado é difícil: as consoantes se enfraquecem, muitas sílabas se fundem e há o «stød», uma espécie de golpe de glote. O islandês e o feroês também são nórdicos, mas não se entendem sem estudo. O finlandês nem é germânico: é uma língua urálica. Pela Convenção Linguística Nórdica, em vigor desde 1987, cidadãos nórdicos podem usar a própria língua com as autoridades de outro país nórdico.',
+        text: 'Sueco, norueguês e dinamarquês são línguas escandinavas, do ramo norte-germânico, e são em boa parte intercompreensíveis: nas reuniões nórdicas é comum cada um falar a própria língua (a chamada grannspråksförståelse, compreensão entre línguas vizinhas). Para o sueco, o norueguês costuma ser o mais fácil de ouvir, porque tem melodia e acentos tonais parecidos. O dinamarquês escrito é fácil de ler, mas o falado é difícil: as consoantes se enfraquecem, muitas sílabas se fundem e há o “stød”, uma espécie de golpe de glote. O islandês e o feroês também são nórdicos, mas não se entendem sem estudo. O finlandês nem é germânico: é uma língua urálica. Pela Convenção Linguística Nórdica, em vigor desde 1987, cidadãos nórdicos podem usar a própria língua com as autoridades de outro país nórdico.',
         table: {
           head: ['Sueco', 'Norueguês (bokmål)', 'Dinamarquês', 'Português'],
           rows: [
@@ -3400,7 +3400,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Falsos amigos entre vizinhos',
-        text: 'A semelhança engana. As mesmas palavras às vezes mudam de sentido do outro lado da fronteira, e dizer a um dinamarquês que a festa foi «rolig» é elogiar a calma dela, não a animação.',
+        text: 'A semelhança engana. As mesmas palavras às vezes mudam de sentido do outro lado da fronteira, e dizer a um dinamarquês que a festa foi “rolig” é elogiar a calma dela, não a animação.',
         table: {
           head: ['Palavra', 'Em sueco', 'Em norueguês', 'Em dinamarquês'],
           rows: [
@@ -3424,7 +3424,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
           rows: [
             ['sámi', 'samiska', 'o povo sámi, no norte e no centro do país', 'várias línguas sámi: do norte, lule, do sul, ume e pite'],
             ['finlandês', 'finska', 'os sverigefinnar, em todo o país', 'maior minoria linguística; presença de séculos, reforçada pela imigração dos anos 1950 a 1970'],
-            ['meänkieli', 'meänkieli', 'o vale do rio Torne (Tornedalen), em Norrbotten', 'língua fínica; o nome quer dizer «nossa língua»'],
+            ['meänkieli', 'meänkieli', 'o vale do rio Torne (Tornedalen), em Norrbotten', 'língua fínica; o nome quer dizer “nossa língua”'],
             ['romani', 'romani chib', 'os roma, em todo o país', 'presentes na Suécia desde o século XVI'],
             ['ídiche', 'jiddisch', 'comunidades judaicas, em todo o país', 'presença judaica organizada desde o fim do século XVIII'],
           ],
@@ -3437,7 +3437,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'O povo sámi',
-        text: 'Os sámi são um povo indígena (urfolk), reconhecido como tal na Constituição sueca. A sua terra tradicional, o Sápmi, atravessa a Noruega, a Suécia, a Finlândia e a península de Kola, na Rússia. No passado, o Estado sueco praticou políticas de assimilação que afastaram muitas famílias da própria língua; hoje há um esforço de revitalização, com escolas, rádio, TV e literatura em sámi. O Sametinget (Parlamento Sámi), com sede em Kiruna, funciona desde 1993, e o dia nacional sámi é 6 de fevereiro, data do primeiro congresso sámi, em 1917. A criação de renas é parte central da cultura e um direito reservado aos sámi, mas só uma minoria vive dela: a maioria dos sámi trabalha e vive como qualquer outro sueco. Em sueco, diz-se «en same», «samer», «samisk»; o termo antigo «lapp» é considerado ofensivo.',
+        text: 'Os sámi são um povo indígena (urfolk), reconhecido como tal na Constituição sueca. A sua terra tradicional, o Sápmi, atravessa a Noruega, a Suécia, a Finlândia e a península de Kola, na Rússia. No passado, o Estado sueco praticou políticas de assimilação que afastaram muitas famílias da própria língua; hoje há um esforço de revitalização, com escolas, rádio, TV e literatura em sámi. O Sametinget (Parlamento Sámi), com sede em Kiruna, funciona desde 1993, e o dia nacional sámi é 6 de fevereiro, data do primeiro congresso sámi, em 1917. A criação de renas é parte central da cultura e um direito reservado aos sámi, mas só uma minoria vive dela: a maioria dos sámi trabalha e vive como qualquer outro sueco. Em sueco, diz-se “en same”, “samer”, “samisk”; o termo antigo “lapp” é considerado ofensivo.',
         examples: [
           ['Samerna är ett urfolk, men inte alla samer arbetar med renskötsel.', 'Os sámi são um povo indígena, mas nem todos os sámi trabalham com a criação de renas.'],
           ['Sametinget ligger i Kiruna.', 'O Parlamento Sámi fica em Kiruna.'],
@@ -3447,11 +3447,11 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Chamar os sámi de «lapões» (em sueco, «lappar»): o termo é considerado ofensivo. Diga sámi; em sueco, «samer», e uma pessoa é «en same».',
+      'Chamar os sámi de “lapões” (em sueco, “lappar”): o termo é considerado ofensivo. Diga sámi; em sueco, “samer”, e uma pessoa é “en same”.',
       'Tratar o sámi como uma língua só: há várias línguas sámi, e um falante de sámi do norte e um de sámi do sul podem não se entender bem.',
       'Achar que todo sámi cria renas ou vive em tendas: a criação de renas é central na cultura, mas a maioria dos sámi vive vida urbana moderna.',
       'Achar que o finlandês é parente do sueco: é língua urálica; o parente próximo do finlandês na Suécia é o meänkieli.',
-      'Dizer a um norueguês ou dinamarquês que algo foi «rolig» querendo dizer divertido: para eles, quer dizer calmo.',
+      'Dizer a um norueguês ou dinamarquês que algo foi “rolig” querendo dizer divertido: para eles, quer dizer calmo.',
     ],
     quiz: [
       {
@@ -3467,22 +3467,22 @@ export const GRAMMAR_SV: GrammarTopic[] = [
         explanation: 'O Parlamento Sámi da Suécia tem sede em Kiruna, na Lapônia, e funciona desde 1993.',
       },
       {
-        question: 'Para um dinamarquês, «frokost» corresponde a qual refeição sueca?',
+        question: 'Para um dinamarquês, “frokost” corresponde a qual refeição sueca?',
         options: ['lunch', 'frukost', 'middag'],
         answer: 'lunch',
-        explanation: 'Em dinamarquês «frokost» é o almoço; em sueco e em norueguês, a palavra parecida é o café da manhã.',
+        explanation: 'Em dinamarquês “frokost” é o almoço; em sueco e em norueguês, a palavra parecida é o café da manhã.',
       },
       {
-        question: 'Um sueco diz que a festa foi «rolig». Um norueguês entende que ela foi…',
+        question: 'Um sueco diz que a festa foi “rolig”. Um norueguês entende que ela foi…',
         options: ['calma', 'divertida', 'cara'],
         answer: 'calma',
-        explanation: '«Rolig» é engraçado em sueco, mas calmo em norueguês e em dinamarquês.',
+        explanation: '“Rolig” é engraçado em sueco, mas calmo em norueguês e em dinamarquês.',
       },
       {
         question: 'Qual é a palavra respeitosa, em sueco, para o povo sámi?',
         options: ['samer', 'lappar', 'nordbor'],
         answer: 'samer',
-        explanation: '«Samer» (singular «same») é o termo correto. «Lappar» é antigo e ofensivo; «nordbor» quer dizer nórdicos em geral.',
+        explanation: '“Samer” (singular “same”) é o termo correto. “Lappar” é antigo e ofensivo; “nordbor” quer dizer nórdicos em geral.',
       },
     ],
   },
@@ -3492,10 +3492,10 @@ export const GRAMMAR_SV: GrammarTopic[] = [
     level: 'C1.2',
     title: 'Nominalização: quando o verbo vira substantivo',
     emoji: '📑',
-    summary: 'Relatórios, leis e artigos preferem «beslutet om en utbyggnad» a «de beslutade att bygga ut». Veja os sufixos (-ning, -ande, -else, -an, -het), o gênero de cada um, os verbos-suporte (fatta beslut, vidta åtgärder) e como voltar ao verbo quando o texto precisa ser claro.',
+    summary: 'Relatórios, leis e artigos preferem “beslutet om en utbyggnad” a “de beslutade att bygga ut”. Veja os sufixos (-ning, -ande, -else, -an, -het), o gênero de cada um, os verbos-suporte (fatta beslut, vidta åtgärder) e como voltar ao verbo quando o texto precisa ser claro.',
     sections: [
       {
-        text: 'Todo texto técnico em sueco tende ao «nominalstil»: em vez de dizer quem fez o quê, transforma a ação num substantivo. «Kommunen beslutade att bygga ut skolan» (a prefeitura decidiu ampliar a escola) vira «Kommunens beslut om en utbyggnad av skolan» (a decisão da prefeitura sobre uma ampliação da escola). O português faz o mesmo com -ção e -mento, e o sueco tem sufixos quase tão previsíveis. A boa notícia: cada sufixo tem um gênero fixo, então ao aprender o sufixo você aprende se o substantivo é en ou ett.',
+        text: 'Todo texto técnico em sueco tende ao “nominalstil”: em vez de dizer quem fez o quê, transforma a ação num substantivo. “Kommunen beslutade att bygga ut skolan” (a prefeitura decidiu ampliar a escola) vira “Kommunens beslut om en utbyggnad av skolan” (a decisão da prefeitura sobre uma ampliação da escola). O português faz o mesmo com -ção e -mento, e o sueco tem sufixos quase tão previsíveis. A boa notícia: cada sufixo tem um gênero fixo, então ao aprender o sufixo você aprende se o substantivo é en ou ett.',
         table: {
           head: ['Sufixo', 'Verbo ou adjetivo', 'Substantivo', 'Gênero', 'Plural'],
           rows: [
@@ -3518,7 +3518,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Os verbos-suporte',
-        text: 'O estilo nominal troca o verbo simples por um verbo «vazio» + substantivo, exatamente como o nosso «tomar uma decisão» no lugar de «decidir». Muitos desses pares são fixos: em sueco se «fatta» (agarra) uma decisão, não se «gör» uma; e se «vidta» (toma) medidas. Reconhecer essas locuções é essencial para ler jornal e documento oficial; saber desfazê-las é essencial para escrever bem.',
+        text: 'O estilo nominal troca o verbo simples por um verbo “vazio” + substantivo, exatamente como o nosso “tomar uma decisão” no lugar de “decidir”. Muitos desses pares são fixos: em sueco se “fatta” (agarra) uma decisão, não se “gör” uma; e se “vidta” (toma) medidas. Reconhecer essas locuções é essencial para ler jornal e documento oficial; saber desfazê-las é essencial para escrever bem.',
         table: {
           head: ['Locução nominal', 'Verbo simples', 'Português'],
           rows: [
@@ -3543,7 +3543,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'As preposições depois do substantivo',
-        text: 'Quando o verbo vira substantivo, o objeto direto precisa de uma preposição, e ela não é sempre a mesma. O objeto da ação vem quase sempre com «av» (användningen av, höjningen av); o assunto vem com «om» (beslut om, frågan om); a exigência, com «på» (krav på); a necessidade, com «av» (behov av); o interesse, com «för» (intresse för). Traduzir tudo por «de» é o erro número um do brasileiro.',
+        text: 'Quando o verbo vira substantivo, o objeto direto precisa de uma preposição, e ela não é sempre a mesma. O objeto da ação vem quase sempre com “av” (användningen av, höjningen av); o assunto vem com “om” (beslut om, frågan om); a exigência, com “på” (krav på); a necessidade, com “av” (behov av); o interesse, com “för” (intresse för). Traduzir tudo por “de” é o erro número um do brasileiro.',
         table: {
           head: ['Com verbo', 'Com substantivo', 'Português'],
           rows: [
@@ -3574,41 +3574,41 @@ export const GRAMMAR_SV: GrammarTopic[] = [
     ],
     pitfalls: [
       'Errar o gênero: tudo em -ande/-ende é ett (ett påstående, ett uttalande), e o substantivo sem sufixo quase sempre também (ett beslut, ett besök, ett köp). Já -ning, -het, -else e -tion são en.',
-      'Estranhar «ansökan» na forma definida: «ansökan» serve para «um pedido» e para «o pedido» (din ansökan, ansökan har kommit in). O plural é outro radical: ansökningar. O mesmo com önskan (önskningar) e början.',
-      'Traduzir todo «de» por «av»: é «beslut om», «krav på», «intresse för», «strävan efter». Só o objeto da ação (höjningen av skatten) e a necessidade (behov av) levam «av».',
-      'Dizer «göra ett beslut», decalcado do inglês «make a decision»: em sueco se «fattar» beslut (ou simplesmente «beslutar»).',
+      'Estranhar “ansökan” na forma definida: “ansökan” serve para “um pedido” e para “o pedido” (din ansökan, ansökan har kommit in). O plural é outro radical: ansökningar. O mesmo com önskan (önskningar) e början.',
+      'Traduzir todo “de” por “av”: é “beslut om”, “krav på”, “intresse för”, “strävan efter”. Só o objeto da ação (höjningen av skatten) e a necessidade (behov av) levam “av”.',
+      'Dizer “göra ett beslut”, decalcado do inglês “make a decision”: em sueco se “fattar” beslut (ou simplesmente “beslutar”).',
       'Achar que o estilo nominal é mais culto e usá-lo sempre: em texto para o público, os suecos valorizam o verbo e a frase curta.',
     ],
     quiz: [
       {
-        question: 'Qual é o substantivo de «påstå» (afirmar), com o artigo certo?',
+        question: 'Qual é o substantivo de “påstå” (afirmar), com o artigo certo?',
         options: ['ett påstående', 'en påståelse', 'en påstådning'],
         answer: 'ett påstående',
         explanation: 'O sufixo -ande/-ende forma substantivos neutros: ett påstående, ett uttalande, ett antagande.',
       },
       {
-        question: 'Complete: «Regeringen har fattat ___ om nya regler.»',
+        question: 'Complete: “Regeringen har fattat ___ om nya regler.”',
         options: ['beslut', 'besluten', 'beslutning'],
         answer: 'beslut',
-        explanation: '«Fatta beslut» é a locução fixa (tomar decisão), com o substantivo neutro ett beslut, sem sufixo.',
+        explanation: '“Fatta beslut” é a locução fixa (tomar decisão), com o substantivo neutro ett beslut, sem sufixo.',
       },
       {
-        question: 'Qual é a preposição certa? «kravet ___ lägre priser»',
+        question: 'Qual é a preposição certa? “kravet ___ lägre priser”',
         options: ['på', 'av', 'om'],
         answer: 'på',
-        explanation: '«Krav» pede «på»: ställa krav på, kravet på. «Av» é para o objeto da ação (höjningen av skatten).',
+        explanation: '“Krav” pede “på”: ställa krav på, kravet på. “Av” é para o objeto da ação (höjningen av skatten).',
       },
       {
-        question: 'Qual é o plural de «en ansökan»?',
+        question: 'Qual é o plural de “en ansökan”?',
         options: ['ansökningar', 'ansökaner', 'ansökan'],
         answer: 'ansökningar',
         explanation: 'Os substantivos em -an fazem o plural com -ningar: ansökningar, önskningar, anmälningar.',
       },
       {
-        question: 'Qual verbo simples substitui «vidta åtgärder»?',
+        question: 'Qual verbo simples substitui “vidta åtgärder”?',
         options: ['agera', 'bedöma', 'hända'],
         answer: 'agera',
-        explanation: '«Vidta åtgärder» é tomar medidas, agir. «Bedöma» substitui «göra en bedömning» e «hända» substitui «äga rum».',
+        explanation: '“Vidta åtgärder” é tomar medidas, agir. “Bedöma” substitui “göra en bedömning” e “hända” substitui “äga rum”.',
       },
     ],
   },
@@ -3617,10 +3617,10 @@ export const GRAMMAR_SV: GrammarTopic[] = [
     level: 'C1.2',
     title: 'Myndighetssvenska e a linguagem clara (klarspråk)',
     emoji: '🏛️',
-    summary: '«Erforderliga handlingar skall inges.» O sueco das repartições tem palavras próprias, passiva e frases longas. Desde 2009 a lei manda escrever de forma «vårdat, enkelt och begripligt». Aprenda a ler o estilo antigo e a traduzi-lo para o sueco claro de hoje.',
+    summary: '“Erforderliga handlingar skall inges.” O sueco das repartições tem palavras próprias, passiva e frases longas. Desde 2009 a lei manda escrever de forma “vårdat, enkelt och begripligt”. Aprenda a ler o estilo antigo e a traduzi-lo para o sueco claro de hoje.',
     sections: [
       {
-        text: '«Myndighetssvenska» (sueco das autoridades) é o nome, meio irônico, do estilo tradicional dos órgãos públicos: palavras solenes (erforderlig, vederbörande, torde), verbos na passiva com -s, muitas nominalizações e o leitor tratado na terceira pessoa («den sökande»). Desde os anos 1970 o Estado sueco trabalha para simplificar essa linguagem, e a Lei da Língua (språklagen, de 2009) tornou isso obrigação legal para todo órgão público.',
+        text: '“Myndighetssvenska” (sueco das autoridades) é o nome, meio irônico, do estilo tradicional dos órgãos públicos: palavras solenes (erforderlig, vederbörande, torde), verbos na passiva com -s, muitas nominalizações e o leitor tratado na terceira pessoa (“den sökande”). Desde os anos 1970 o Estado sueco trabalha para simplificar essa linguagem, e a Lei da Língua (språklagen, de 2009) tornou isso obrigação legal para todo órgão público.',
         examples: [
           ['Språket i offentlig verksamhet ska vara vårdat, enkelt och begripligt.', 'A linguagem da administração pública deve ser cuidada, simples e compreensível. (Språklagen, 11 §)'],
         ],
@@ -3651,7 +3651,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Antes e depois',
-        text: 'As regras da linguagem clara são poucas: fale com o leitor por «du» e chame a instituição de «vi»; ponha o mais importante primeiro; prefira a voz ativa e o verbo ao substantivo; use frases curtas e palavras comuns. O resultado não é um sueco mais pobre, é um sueco que qualquer pessoa entende na primeira leitura.',
+        text: 'As regras da linguagem clara são poucas: fale com o leitor por “du” e chame a instituição de “vi”; ponha o mais importante primeiro; prefira a voz ativa e o verbo ao substantivo; use frases curtas e palavras comuns. O resultado não é um sueco mais pobre, é um sueco que qualquer pessoa entende na primeira leitura.',
         examples: [
           ['Ansökan skall vara inkommen till myndigheten senast den 1 mars.', 'O pedido deve ter dado entrada no órgão até 1º de março. (antes)'],
           ['Skicka in din ansökan senast den 1 mars.', 'Envie o seu pedido até 1º de março. (depois)'],
@@ -3665,7 +3665,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Du, Ni e o leitor',
-        text: 'Até os anos 1960, a carta oficial tratava o cidadão por «Ni» ou «Ert», muitas vezes com maiúscula, ou evitava o pronome («Sökanden ombeds…»). Depois da du-reformen, o «du» passou a valer para quase todo mundo, e hoje é o padrão também nas cartas das autoridades suecas. Um «Ni» de cortesia numa carta atual soa antiquado ou até distante; «ni» minúsculo é simplesmente o plural (vocês).',
+        text: 'Até os anos 1960, a carta oficial tratava o cidadão por “Ni” ou “Ert”, muitas vezes com maiúscula, ou evitava o pronome (“Sökanden ombeds…”). Depois da du-reformen, o “du” passou a valer para quase todo mundo, e hoje é o padrão também nas cartas das autoridades suecas. Um “Ni” de cortesia numa carta atual soa antiquado ou até distante; “ni” minúsculo é simplesmente o plural (vocês).',
         table: {
           head: ['Estilo antigo', 'Hoje', 'Português'],
           rows: [
@@ -3678,42 +3678,42 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Imitar o estilo oficial para parecer fluente: «erhålla», «tillhandahålla» e «torde» numa mensagem comum soam como um formulário dos anos 1970. Na dúvida, use «få», «ge» e «troligen».',
-      'Escrever «skall» achando que é mais correto: a forma curta «ska» é a recomendada hoje, inclusive em textos do governo.',
-      'Tratar um desconhecido por «Ni» em carta formal: desde a du-reformen o padrão é «du», também com autoridades e clientes.',
-      'Confundir «torde» com obrigação: «torde» expressa probabilidade (provavelmente), não dever. «Beslutet torde komma i maj» = a decisão deve sair em maio, provavelmente.',
-      'Ler «bidrag utgår» como «o auxílio sai/acaba»: em linguagem oficial, «utgå» quer dizer «ser pago». Mas «utgå» também pode significar «ser suprimido», e é o contexto que decide; por isso a linguagem clara evita o verbo.',
+      'Imitar o estilo oficial para parecer fluente: “erhålla”, “tillhandahålla” e “torde” numa mensagem comum soam como um formulário dos anos 1970. Na dúvida, use “få”, “ge” e “troligen”.',
+      'Escrever “skall” achando que é mais correto: a forma curta “ska” é a recomendada hoje, inclusive em textos do governo.',
+      'Tratar um desconhecido por “Ni” em carta formal: desde a du-reformen o padrão é “du”, também com autoridades e clientes.',
+      'Confundir “torde” com obrigação: “torde” expressa probabilidade (provavelmente), não dever. “Beslutet torde komma i maj” = a decisão deve sair em maio, provavelmente.',
+      'Ler “bidrag utgår” como “o auxílio sai/acaba”: em linguagem oficial, “utgå” quer dizer “ser pago”. Mas “utgå” também pode significar “ser suprimido”, e é o contexto que decide; por isso a linguagem clara evita o verbo.',
     ],
     quiz: [
       {
-        question: 'Qual é a versão clara de «Erforderliga handlingar skall bifogas»?',
+        question: 'Qual é a versão clara de “Erforderliga handlingar skall bifogas”?',
         options: ['Skicka med de papper som behövs.', 'Handlingar erfordras bifogade.', 'Det torde bifogas handlingar.'],
         answer: 'Skicka med de papper som behövs.',
-        explanation: 'Imperativo direto ao leitor, «som behövs» no lugar de «erforderliga» e nada de passiva: é a receita do klarspråk.',
+        explanation: 'Imperativo direto ao leitor, “som behövs” no lugar de “erforderliga” e nada de passiva: é a receita do klarspråk.',
       },
       {
-        question: 'Em sueco claro, «erhålla» vira…',
+        question: 'Em sueco claro, “erhålla” vira…',
         options: ['få', 'ge', 'hålla'],
         answer: 'få',
-        explanation: '«Erhålla» é receber, obter. O equivalente comum é «få».',
+        explanation: '“Erhålla” é receber, obter. O equivalente comum é “få”.',
       },
       {
-        question: '«Beslutet torde komma i maj» significa que a decisão…',
+        question: '“Beslutet torde komma i maj” significa que a decisão…',
         options: ['kommer troligen i maj', 'måste komma i maj', 'kom i maj'],
         answer: 'kommer troligen i maj',
-        explanation: '«Torde» é um verbo modal formal de probabilidade: «troligen, nog».',
+        explanation: '“Torde” é um verbo modal formal de probabilidade: “troligen, nog”.',
       },
       {
         question: 'Como uma autoridade sueca trata o cidadão numa carta de hoje?',
         options: ['du', 'Ni', 'Ers nåd'],
         answer: 'du',
-        explanation: 'Depois da du-reformen, «du» é o padrão, e a instituição fala de si como «vi».',
+        explanation: 'Depois da du-reformen, “du” é o padrão, e a instituição fala de si como “vi”.',
       },
       {
-        question: 'Qual palavra do estilo oficial quer dizer «eftersom» (porque)?',
+        question: 'Qual palavra do estilo oficial quer dizer “eftersom” (porque)?',
         options: ['enär', 'därest', 'föreligga'],
         answer: 'enär',
-        explanation: '«Enär» e «emedan» equivalem a «eftersom». «Därest» é «om» (caso) e «föreligga» é «finnas».',
+        explanation: '“Enär” e “emedan” equivalem a “eftersom”. “Därest” é “om” (caso) e “föreligga” é “finnas”.',
       },
     ],
   },
@@ -3722,11 +3722,11 @@ export const GRAMMAR_SV: GrammarTopic[] = [
     level: 'C1.2',
     title: 'Estilo jornalístico e acadêmico',
     emoji: '📰',
-    summary: 'Manchetes no presente e sem verbo, o «ska ha» que protege o jornalista («mannen ska ha stulit bilen»), os verbos de citação (uppger, hävdar) e as fórmulas da redação acadêmica: «denna uppsats» sem artigo pospositivo, a passiva com -s, t.ex., bl.a., jfr.',
+    summary: 'Manchetes no presente e sem verbo, o “ska ha” que protege o jornalista (“mannen ska ha stulit bilen”), os verbos de citação (uppger, hävdar) e as fórmulas da redação acadêmica: “denna uppsats” sem artigo pospositivo, a passiva com -s, t.ex., bl.a., jfr.',
     sections: [
       {
         heading: 'Manchetes',
-        text: 'A manchete sueca usa o presente mesmo para o que já aconteceu, corta artigos e verbos de ligação, e marca a fonte com dois-pontos: «Polisen: …» quer dizer «segundo a polícia». O travessão junta duas informações sem verbo. No corpo da notícia, o primeiro parágrafo costuma vir no perfeito (har gripits, har ökat), e os detalhes seguintes no pretérito.',
+        text: 'A manchete sueca usa o presente mesmo para o que já aconteceu, corta artigos e verbos de ligação, e marca a fonte com dois-pontos: “Polisen: …” quer dizer “segundo a polícia”. O travessão junta duas informações sem verbo. No corpo da notícia, o primeiro parágrafo costuma vir no perfeito (har gripits, har ökat), e os detalhes seguintes no pretérito.',
         table: {
           head: ['Manchete', 'Frase completa', 'Português'],
           rows: [
@@ -3744,7 +3744,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Informação não confirmada: ska ha, uppges, lär',
-        text: 'O português jornalístico usa o futuro do pretérito para o que não está confirmado («o homem teria roubado»). O sueco faz isso com «ska ha» + supino: «Mannen ska ha stulit bilen». É uma armadilha, porque «ska» parece futuro ou obrigação. Outras fórmulas: «uppges» e «sägs» (é dito, segundo informações), «lär» (dizem que) e «enligt uppgift» (segundo informações).',
+        text: 'O português jornalístico usa o futuro do pretérito para o que não está confirmado (“o homem teria roubado”). O sueco faz isso com “ska ha” + supino: “Mannen ska ha stulit bilen”. É uma armadilha, porque “ska” parece futuro ou obrigação. Outras fórmulas: “uppges” e “sägs” (é dito, segundo informações), “lär” (dizem que) e “enligt uppgift” (segundo informações).',
         table: {
           head: ['Fórmula', 'Exemplo', 'Português'],
           rows: [
@@ -3758,7 +3758,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Verbos de citação',
-        text: 'O verbo que introduz a fala revela a posição do jornalista. «Säger» e «uppger» são neutros; «hävdar» (alega) sugere dúvida; «medger» (admite) sugere algo desfavorável; «förnekar» é negar; «betonar» é enfatizar. Depois da citação, o sueco inverte: «– Vi är nöjda, säger hon.»',
+        text: 'O verbo que introduz a fala revela a posição do jornalista. “Säger” e “uppger” são neutros; “hävdar” (alega) sugere dúvida; “medger” (admite) sugere algo desfavorável; “förnekar” é negar; “betonar” é enfatizar. Depois da citação, o sueco inverte: “– Vi är nöjda, säger hon.”',
         examples: [
           ['– Vi har inte fått några klagomål, säger han.', '– Não recebemos nenhuma reclamação, diz ele.'],
           ['Företaget hävdar att reglerna har följts.', 'A empresa alega que as regras foram seguidas.'],
@@ -3768,7 +3768,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'A redação acadêmica',
-        text: 'O trabalho acadêmico sueco (uppsats, avhandling, artikel) tem fórmulas fixas para o objetivo, o método e as conclusões. Duas marcas de estilo: o demonstrativo «denna/detta/dessa» com o substantivo SEM o artigo pospositivo (denna uppsats, detta kapitel), contra o «den här uppsatsen» da fala; e a passiva com -s para apagar o autor (data samlades in, i kapitel 3 diskuteras…). Também é comum o autor dizer «vi» ou «jag», com moderação.',
+        text: 'O trabalho acadêmico sueco (uppsats, avhandling, artikel) tem fórmulas fixas para o objetivo, o método e as conclusões. Duas marcas de estilo: o demonstrativo “denna/detta/dessa” com o substantivo SEM o artigo pospositivo (denna uppsats, detta kapitel), contra o “den här uppsatsen” da fala; e a passiva com -s para apagar o autor (data samlades in, i kapitel 3 diskuteras…). Também é comum o autor dizer “vi” ou “jag”, com moderação.',
         table: {
           head: ['Fórmula', 'Português'],
           rows: [
@@ -3805,18 +3805,18 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Ler «Mannen ska ha stulit bilen» como futuro ou obrigação: é informação não confirmada, «o homem teria roubado o carro».',
-      'Escrever «denna uppsatsen»: com denna/detta/dessa o substantivo fica na forma indefinida (denna uppsats). A forma com artigo pospositivo vai com «den här» (den här uppsatsen).',
-      'Traduzir «hävdar» por «afirma» neutro: o verbo sugere que a afirmação é discutível. Para o neutro, use «säger» ou «uppger».',
-      'Esquecer a inversão depois da citação: é «säger hon», não «hon säger».',
+      'Ler “Mannen ska ha stulit bilen” como futuro ou obrigação: é informação não confirmada, “o homem teria roubado o carro”.',
+      'Escrever “denna uppsatsen”: com denna/detta/dessa o substantivo fica na forma indefinida (denna uppsats). A forma com artigo pospositivo vai com “den här” (den här uppsatsen).',
+      'Traduzir “hävdar” por “afirma” neutro: o verbo sugere que a afirmação é discutível. Para o neutro, use “säger” ou “uppger”.',
+      'Esquecer a inversão depois da citação: é “säger hon”, não “hon säger”.',
       'Estranhar a manchete no presente para um fato de ontem: é a norma do gênero, como no português.',
     ],
     quiz: [
       {
-        question: 'O que significa «Ministern ska ha känt till problemet»?',
+        question: 'O que significa “Ministern ska ha känt till problemet”?',
         options: ['Ministern kände troligen till problemet, enligt uppgift.', 'Ministern kommer att känna till problemet.', 'Ministern måste känna till problemet.'],
         answer: 'Ministern kände troligen till problemet, enligt uppgift.',
-        explanation: '«Ska ha» + supino é informação não confirmada: o ministro teria sabido do problema.',
+        explanation: '“Ska ha” + supino é informação não confirmada: o ministro teria sabido do problema.',
       },
       {
         question: 'Qual é a forma correta na escrita acadêmica?',
@@ -3828,19 +3828,19 @@ export const GRAMMAR_SV: GrammarTopic[] = [
         question: 'Qual verbo de citação é neutro?',
         options: ['uppger', 'hävdar', 'medger'],
         answer: 'uppger',
-        explanation: '«Uppger» (informa, declara) é neutro. «Hävdar» sugere dúvida e «medger» é admitir algo desfavorável.',
+        explanation: '“Uppger” (informa, declara) é neutro. “Hävdar” sugere dúvida e “medger” é admitir algo desfavorável.',
       },
       {
-        question: 'Complete a citação: «– Vi är nöjda, ___.»',
+        question: 'Complete a citação: “– Vi är nöjda, ___.”',
         options: ['säger hon', 'hon säger', 'hon sa det'],
         answer: 'säger hon',
         explanation: 'Depois da fala citada vem o verbo e só então o sujeito: é a regra do V2.',
       },
       {
-        question: 'O que é «dvs.» por extenso?',
+        question: 'O que é “dvs.” por extenso?',
         options: ['det vill säga', 'den visade sidan', 'det var sant'],
         answer: 'det vill säga',
-        explanation: '«Dvs.» = det vill säga, isto é.',
+        explanation: '“Dvs.” = det vill säga, isto é.',
       },
     ],
   },
@@ -3851,14 +3851,14 @@ export const GRAMMAR_SV: GrammarTopic[] = [
     level: 'C2',
     title: 'Strindberg e Söderberg: a prosa moderna de Estocolmo',
     emoji: '🖋️',
-    summary: 'Frases curtas de August Strindberg (1849–1912) e Hjalmar Söderberg (1869–1941), lidas com lupa: o «afton» literário, a grafia antes de 1906, o «synd om», a data sem preposição («en aprilafton») e a enumeração de particípios em «Doktor Glas».',
+    summary: 'Frases curtas de August Strindberg (1849–1912) e Hjalmar Söderberg (1869–1941), lidas com lupa: o “afton” literário, a grafia antes de 1906, o “synd om”, a data sem preposição (“en aprilafton”) e a enumeração de particípios em “Doktor Glas”.',
     sections: [
       {
         text: 'Strindberg e Söderberg escreveram o sueco que ainda se lê sem dicionário antigo: frases diretas, vocabulário urbano, Estocolmo como cenário. O que um leitor de hoje estranha é pouco: algumas palavras literárias (afton, icke), a grafia anterior à reforma de 1906 (af, hvad) e um ou outro plural verbal antigo. Os trechos abaixo são curtos e seguem as edições correntes, que modernizam a ortografia.',
       },
       {
         heading: 'August Strindberg (1849–1912)',
-        text: '«Röda rummet» (O quarto vermelho, 1879) é considerado o primeiro romance moderno sueco. A primeira frase usa «afton», palavra literária para «kväll» (noite, fim de tarde), e na edição original se escrevia «af maj». Em «Hemsöborna» (Os habitantes de Hemsö, 1887), a expressão de tempo «en aprilafton» vem sem preposição, como «en söndag» (num domingo). Em «Ett drömspel» (Um sonho, 1901), a filha do deus Indra repete a frase que virou a mais citada do teatro sueco: «synd om» é «ter pena de», e «människorna» é a forma definida plural (os seres humanos).',
+        text: '“Röda rummet” (O quarto vermelho, 1879) é considerado o primeiro romance moderno sueco. A primeira frase usa “afton”, palavra literária para “kväll” (noite, fim de tarde), e na edição original se escrevia “af maj”. Em “Hemsöborna” (Os habitantes de Hemsö, 1887), a expressão de tempo “en aprilafton” vem sem preposição, como “en söndag” (num domingo). Em “Ett drömspel” (Um sonho, 1901), a filha do deus Indra repete a frase que virou a mais citada do teatro sueco: “synd om” é “ter pena de”, e “människorna” é a forma definida plural (os seres humanos).',
         examples: [
           ['Det var en afton i början av maj.', 'Era uma noite no começo de maio. (Röda rummet, cap. 1)'],
           ['Han kom som ett yrväder en aprilafton', 'Ele chegou como uma tempestade de neve numa noite de abril (Hemsöborna, cap. 1)'],
@@ -3867,7 +3867,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Hjalmar Söderberg (1869–1941)',
-        text: '«Doktor Glas» (1905) é o diário de um médico de Estocolmo. Na passagem mais famosa, o narrador descreve a escada de desejos humanos: ser amado, admirado, temido, odiado. A gramática é simples e elegante: «man» como sujeito genérico, particípios passados em série (älskad, beundrad, fruktad, avskydd, föraktad) e «i brist därpå» (na falta disso), com o advérbio pronominal «därpå» (= på det).',
+        text: '“Doktor Glas” (1905) é o diário de um médico de Estocolmo. Na passagem mais famosa, o narrador descreve a escada de desejos humanos: ser amado, admirado, temido, odiado. A gramática é simples e elegante: “man” como sujeito genérico, particípios passados em série (älskad, beundrad, fruktad, avskydd, föraktad) e “i brist därpå” (na falta disso), com o advérbio pronominal “därpå” (= på det).',
         examples: [
           ['Man vill bli älskad, i brist därpå beundrad, i brist därpå fruktad, i brist därpå avskydd och föraktad.', 'A gente quer ser amado; na falta disso, admirado; na falta disso, temido; na falta disso, odiado e desprezado. (Doktor Glas)'],
         ],
@@ -3889,38 +3889,38 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Ler «synd om» como «pecado»: «synd» também é pecado, mas «det är synd om någon» é «ter pena de alguém», e «det är synd» sozinho é «que pena».',
-      'Traduzir «afton» como «tarde»: é a noite, o começo da noite, como em «julafton» (véspera de Natal) e «midsommarafton».',
-      'Procurar uma preposição que falta em «en aprilafton»: em sueco, a expressão de tempo com artigo indefinido dispensa preposição (en morgon, en dag i maj).',
-      'Achar que «avskydd» é particípio de «avskeda»: é de «avsky» (detestar). «Avskedad» seria «demitido».',
+      'Ler “synd om” como “pecado”: “synd” também é pecado, mas “det är synd om någon” é “ter pena de alguém”, e “det är synd” sozinho é “que pena”.',
+      'Traduzir “afton” como “tarde”: é a noite, o começo da noite, como em “julafton” (véspera de Natal) e “midsommarafton”.',
+      'Procurar uma preposição que falta em “en aprilafton”: em sueco, a expressão de tempo com artigo indefinido dispensa preposição (en morgon, en dag i maj).',
+      'Achar que “avskydd” é particípio de “avskeda”: é de “avsky” (detestar). “Avskedad” seria “demitido”.',
     ],
     quiz: [
       {
-        question: 'Na frase de Strindberg «Det var en afton i början av maj», «afton» equivale a…',
+        question: 'Na frase de Strindberg “Det var en afton i början av maj”, “afton” equivale a…',
         options: ['kväll', 'morgon', 'natt'],
         answer: 'kväll',
-        explanation: '«Afton» é a palavra literária para «kväll», e sobrevive em julafton e nyårsafton.',
+        explanation: '“Afton” é a palavra literária para “kväll”, e sobrevive em julafton e nyårsafton.',
       },
       {
-        question: 'Complete a frase de «Ett drömspel»: «Det är ___ om människorna.»',
+        question: 'Complete a frase de “Ett drömspel”: “Det är ___ om människorna.”',
         options: ['synd', 'skam', 'sorg'],
         answer: 'synd',
-        explanation: '«Det är synd om någon» = ter pena de alguém.',
+        explanation: '“Det är synd om någon” = ter pena de alguém.',
       },
       {
-        question: 'Como se escrevia «av» antes da reforma ortográfica de 1906?',
+        question: 'Como se escrevia “av” antes da reforma ortográfica de 1906?',
         options: ['af', 'aff', 'ave'],
         answer: 'af',
         explanation: 'A reforma de 1906 trocou o f com som de v por v: af → av, hafva → hava.',
       },
       {
-        question: 'Em «Doktor Glas», «i brist därpå» significa…',
+        question: 'Em “Doktor Glas”, “i brist därpå” significa…',
         options: ['om man inte får det', 'efter det', 'trots det'],
         answer: 'om man inte får det',
-        explanation: '«I brist på» é «na falta de»; com «därpå» (= på det), «na falta disso».',
+        explanation: '“I brist på” é “na falta de”; com “därpå” (= på det), “na falta disso”.',
       },
       {
-        question: 'Qual palavra de Söderberg é o particípio de «avsky» (detestar)?',
+        question: 'Qual palavra de Söderberg é o particípio de “avsky” (detestar)?',
         options: ['avskydd', 'avskedad', 'avskyd'],
         answer: 'avskydd',
         explanation: 'Verbo curto terminado em vogal: avsky → avskydd, como tro → trodd.',
@@ -3932,14 +3932,14 @@ export const GRAMMAR_SV: GrammarTopic[] = [
     level: 'C2',
     title: 'Selma Lagerlöf e Karin Boye',
     emoji: '🪿',
-    summary: 'A primeira mulher a ganhar o Nobel de Literatura (1909) e a poeta de «Ja visst gör det ont». Frases de «Nils Holgersson» e «Gösta Berlings saga», versos de Boye, e a gramática por trás deles: V2, o «en» de aproximação, o deslocamento à esquerda e a clivagem.',
+    summary: 'A primeira mulher a ganhar o Nobel de Literatura (1909) e a poeta de “Ja visst gör det ont”. Frases de “Nils Holgersson” e “Gösta Berlings saga”, versos de Boye, e a gramática por trás deles: V2, o “en” de aproximação, o deslocamento à esquerda e a clivagem.',
     sections: [
       {
-        text: 'Selma Lagerlöf (1858–1940) nasceu em Värmland e escreveu uma prosa de conto popular, oral e musical. Karin Boye (1900–1941) foi poeta e romancista; «Kallocain» (1940) é uma das grandes distopias do século XX. As duas são leitura de escola na Suécia, e os versos de Boye aparecem em cartões, formaturas e até em muros.',
+        text: 'Selma Lagerlöf (1858–1940) nasceu em Värmland e escreveu uma prosa de conto popular, oral e musical. Karin Boye (1900–1941) foi poeta e romancista; “Kallocain” (1940) é uma das grandes distopias do século XX. As duas são leitura de escola na Suécia, e os versos de Boye aparecem em cartões, formaturas e até em muros.',
       },
       {
         heading: 'Selma Lagerlöf (1858–1940)',
-        text: '«Nils Holgerssons underbara resa genom Sverige» (1906–1907) foi encomendado como livro de geografia para as escolas: o menino encolhido viaja pelo país nas costas de um ganso, com o bando da velha Akka från Kebnekajse. O começo imita o conto de fadas («Det var en gång»). Repare em «så där en fjorton år»: o artigo «en» antes de um número quer dizer «uns, mais ou menos». Em «Gösta Berlings saga» (1891), a primeira frase abre com o advérbio «Äntligen», e por isso o verbo vem antes do sujeito: é o V2.',
+        text: '“Nils Holgerssons underbara resa genom Sverige” (1906–1907) foi encomendado como livro de geografia para as escolas: o menino encolhido viaja pelo país nas costas de um ganso, com o bando da velha Akka från Kebnekajse. O começo imita o conto de fadas (“Det var en gång”). Repare em “så där en fjorton år”: o artigo “en” antes de um número quer dizer “uns, mais ou menos”. Em “Gösta Berlings saga” (1891), a primeira frase abre com o advérbio “Äntligen”, e por isso o verbo vem antes do sujeito: é o V2.',
         examples: [
           ['Det var en gång en pojke.', 'Era uma vez um menino. (Nils Holgersson, cap. 1)'],
           ['Han var så där en fjorton år gammal, lång och gänglig och linhårig.', 'Ele tinha uns catorze anos, era alto, desengonçado e de cabelo cor de linho. (Nils Holgersson, cap. 1)'],
@@ -3948,7 +3948,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Karin Boye (1900–1941)',
-        text: 'Em «Ja visst gör det ont» (1935), a primavera sofre para brotar. «Ja visst» (sim, claro) ocupa a primeira posição, e o verbo «gör» vem antes do sujeito «det»: V2 de novo. «Varför skulle annars våren tveka?» é uma pergunta retórica com «skulle» (por que outro motivo a primavera hesitaria?). Em «I rörelse» (1927), dois recursos: o deslocamento à esquerda («Den mätta dagen, den är…»), que retoma o sujeito com um pronome, e a clivagem («det är vägen, som är…»), que destaca «o caminho».',
+        text: 'Em “Ja visst gör det ont” (1935), a primavera sofre para brotar. “Ja visst” (sim, claro) ocupa a primeira posição, e o verbo “gör” vem antes do sujeito “det”: V2 de novo. “Varför skulle annars våren tveka?” é uma pergunta retórica com “skulle” (por que outro motivo a primavera hesitaria?). Em “I rörelse” (1927), dois recursos: o deslocamento à esquerda (“Den mätta dagen, den är…”), que retoma o sujeito com um pronome, e a clivagem (“det är vägen, som är…”), que destaca “o caminho”.',
         examples: [
           ['Ja visst gör det ont när knoppar brister.', 'Sim, claro que dói quando os botões se abrem. (Ja visst gör det ont)'],
           ['Varför skulle annars våren tveka?', 'Por que mais a primavera hesitaria? (Ja visst gör det ont)'],
@@ -3962,50 +3962,50 @@ export const GRAMMAR_SV: GrammarTopic[] = [
         table: {
           head: ['No texto', 'O que acontece', 'Sueco comum'],
           rows: [
-            ['så där en fjorton år', '«en» + número = aproximação', 'ungefär fjorton år'],
+            ['så där en fjorton år', '“en” + número = aproximação', 'ungefär fjorton år'],
             ['Äntligen stod prästen', 'advérbio na frente, verbo em 2º (V2)', 'Prästen stod äntligen'],
-            ['Ja visst gör det ont', 'V2 depois de «ja visst»', 'Det gör verkligen ont'],
+            ['Ja visst gör det ont', 'V2 depois de “ja visst”', 'Det gör verkligen ont'],
             ['Den mätta dagen, den är…', 'deslocamento à esquerda', 'Den mätta dagen är…'],
             ['det är vägen, som är mödan värd', 'clivagem (utbrytning)', 'vägen är mödan värd'],
-            ['mödan värd', '«värd» + o que se vale, depois', 'värd besväret'],
-            ['knoppar brister', '«brista» = romper, estourar', 'knopparna slår ut'],
+            ['mödan värd', '“värd” + o que se vale, depois', 'värd besväret'],
+            ['knoppar brister', '“brista” = romper, estourar', 'knopparna slår ut'],
           ],
         },
       },
     ],
     pitfalls: [
-      'Ler «en fjorton år» como «um catorze anos»: o «en» antes de número é aproximação, «uns catorze anos».',
-      'Colocar o sujeito antes do verbo ao citar ou imitar os versos: «Ja visst det gör ont» quebra o V2. É «Ja visst gör det ont».',
-      'Traduzir «den är» em «Den mätta dagen, den är aldrig störst» como «aquele é»: é só o pronome que retoma o sujeito, recurso de ênfase.',
-      'Confundir «brister» (de brista, estourar, romper) com «brist» (falta): «knoppar brister» é «os botões se abrem».',
+      'Ler “en fjorton år” como “um catorze anos”: o “en” antes de número é aproximação, “uns catorze anos”.',
+      'Colocar o sujeito antes do verbo ao citar ou imitar os versos: “Ja visst det gör ont” quebra o V2. É “Ja visst gör det ont”.',
+      'Traduzir “den är” em “Den mätta dagen, den är aldrig störst” como “aquele é”: é só o pronome que retoma o sujeito, recurso de ênfase.',
+      'Confundir “brister” (de brista, estourar, romper) com “brist” (falta): “knoppar brister” é “os botões se abrem”.',
     ],
     quiz: [
       {
-        question: 'Complete o verso de Karin Boye: «Ja visst gör det ont när knoppar ___.»',
+        question: 'Complete o verso de Karin Boye: “Ja visst gör det ont när knoppar ___.”',
         options: ['brister', 'blommar', 'faller'],
         answer: 'brister',
-        explanation: '«Brista» é romper, estourar: os botões se rompem para a flor sair.',
+        explanation: '“Brista” é romper, estourar: os botões se rompem para a flor sair.',
       },
       {
-        question: 'Por que é «Äntligen stod prästen» e não «Äntligen prästen stod»?',
+        question: 'Por que é “Äntligen stod prästen” e não “Äntligen prästen stod”?',
         options: ['V2: verbet står på andra plats', 'Det är en fråga', 'Det är en bisats'],
         answer: 'V2: verbet står på andra plats',
         explanation: 'Na oração principal o verbo finito ocupa sempre a segunda posição; com o advérbio na frente, o sujeito vai para depois do verbo.',
       },
       {
-        question: 'Em «så där en fjorton år gammal», o que indica «en»?',
+        question: 'Em “så där en fjorton år gammal”, o que indica “en”?',
         options: ['ungefär', 'exakt', 'ensam'],
         answer: 'ungefär',
-        explanation: '«En» antes de um número indica aproximação: uns catorze anos.',
+        explanation: '“En” antes de um número indica aproximação: uns catorze anos.',
       },
       {
-        question: 'Complete o verso de «I rörelse»: «men det är vägen, som är mödan ___.»',
+        question: 'Complete o verso de “I rörelse”: “men det är vägen, som är mödan ___.”',
         options: ['värd', 'värt', 'värda'],
         answer: 'värd',
-        explanation: '«Mödan värd» = que vale o esforço; concorda com «vägen» (en-ord), por isso «värd».',
+        explanation: '“Mödan värd” = que vale o esforço; concorda com “vägen” (en-ord), por isso “värd”.',
       },
       {
-        question: 'Em «Den mätta dagen, den är aldrig störst», o segundo «den»…',
+        question: 'Em “Den mätta dagen, den är aldrig störst”, o segundo “den”…',
         options: ['upprepar subjektet', 'är ett objekt', 'är en artikel'],
         answer: 'upprepar subjektet',
         explanation: 'É o deslocamento à esquerda: o sujeito aparece primeiro e é retomado por um pronome, para dar ênfase.',
@@ -4017,14 +4017,14 @@ export const GRAMMAR_SV: GrammarTopic[] = [
     level: 'C2',
     title: 'Bellman e a canção sueca',
     emoji: '🎻',
-    summary: 'Carl Michael Bellman (1740–1795) cantou a Estocolmo do século XVIII nas «Fredmans epistlar» e «Fredmans sånger». Veja seus versos mais famosos, o plural verbal antigo («vi framställa», «så lunka vi»), o imperativo plural («Blåsen nu alla») e o hino «Du gamla, du fria».',
+    summary: 'Carl Michael Bellman (1740–1795) cantou a Estocolmo do século XVIII nas “Fredmans epistlar” e “Fredmans sånger”. Veja seus versos mais famosos, o plural verbal antigo (“vi framställa”, “så lunka vi”), o imperativo plural (“Blåsen nu alla”) e o hino “Du gamla, du fria”.',
     sections: [
       {
-        text: 'Bellman é o grande poeta-cantor da Suécia: suas canções falam de tavernas, amores, a morte e a natureza em volta de Estocolmo, com deuses gregos misturados a bêbados de Södermalm. O personagem Fredman, um relojoeiro arruinado, dá nome às duas coletâneas (1790 e 1791). Muitas canções ainda são cantadas em festas e no «visafton», e todo sueco conhece pelo menos um refrão. As citações abaixo seguem a grafia modernizada das edições populares; a original tinha «hvila», «rödt», «tidsfördrif».',
+        text: 'Bellman é o grande poeta-cantor da Suécia: suas canções falam de tavernas, amores, a morte e a natureza em volta de Estocolmo, com deuses gregos misturados a bêbados de Södermalm. O personagem Fredman, um relojoeiro arruinado, dá nome às duas coletâneas (1790 e 1791). Muitas canções ainda são cantadas em festas e no “visafton”, e todo sueco conhece pelo menos um refrão. As citações abaixo seguem a grafia modernizada das edições populares; a original tinha “hvila”, “rödt”, “tidsfördrif”.',
       },
       {
         heading: 'Os versos',
-        text: 'Em «Vila vid denna källa» (Epístola 82), um piquenique à beira de uma fonte: «vi framställa» é o plural verbal antigo (hoje «vi ställer fram»). Em «Så lunka vi så småningom» (Canção 21), a vida é uma caminhada lenta rumo à morte, e «Bacchi» é o genitivo latino de Baco. «Märk hur vår skugga» (Epístola 81) abre com o imperativo «märk» (repare) e o francês «mon frère», moda da época. «Blåsen nu alla» (Epístola 25) usa o imperativo plural em -en, dirigido a vários músicos.',
+        text: 'Em “Vila vid denna källa” (Epístola 82), um piquenique à beira de uma fonte: “vi framställa” é o plural verbal antigo (hoje “vi ställer fram”). Em “Så lunka vi så småningom” (Canção 21), a vida é uma caminhada lenta rumo à morte, e “Bacchi” é o genitivo latino de Baco. “Märk hur vår skugga” (Epístola 81) abre com o imperativo “märk” (repare) e o francês “mon frère”, moda da época. “Blåsen nu alla” (Epístola 25) usa o imperativo plural em -en, dirigido a vários músicos.',
         examples: [
           ['Vila vid denna källa, / vår lilla frukost vi framställa', 'Descansa junto a esta fonte, / o nosso pequeno desjejum nós servimos (Fredmans epistel nr 82)'],
           ['Så lunka vi så småningom / från Bacchi buller och tidsfördriv', 'Assim vamos, a passo lento, pouco a pouco, / longe do barulho e dos passatempos de Baco (Fredmans sång nr 21)'],
@@ -4034,8 +4034,8 @@ export const GRAMMAR_SV: GrammarTopic[] = [
         ],
       },
       {
-        heading: '«Du gamla, du fria»',
-        text: 'O hino que os suecos cantam como nacional foi escrito por Richard Dybeck (1811–1877) em 1844, sobre uma melodia popular; nunca foi oficializado por lei, mas é o hino de fato. «Nord» é o Norte; «uppå» é forma antiga de «på»; «ängder» (campos, regiões) é palavra poética; «fornstora dar» é «os grandes dias de outrora», com «dar» por «dagar».',
+        heading: '“Du gamla, du fria”',
+        text: 'O hino que os suecos cantam como nacional foi escrito por Richard Dybeck (1811–1877) em 1844, sobre uma melodia popular; nunca foi oficializado por lei, mas é o hino de fato. “Nord” é o Norte; “uppå” é forma antiga de “på”; “ängder” (campos, regiões) é palavra poética; “fornstora dar” é “os grandes dias de outrora”, com “dar” por “dagar”.',
         examples: [
           ['Du gamla, du fria, du fjällhöga nord, / du tysta, du glädjerika sköna!', 'Tu, velho, tu, livre, tu, Norte de altas montanhas, / tu, silencioso, tu, belo e cheio de alegria!'],
           ['Jag hälsar dig, vänaste land uppå jord', 'Eu te saúdo, a mais amável terra sobre a Terra'],
@@ -4051,52 +4051,52 @@ export const GRAMMAR_SV: GrammarTopic[] = [
             ['vi framställa', 'vi ställer fram', 'plural verbal antigo'],
             ['så lunka vi', 'så lunkar vi', 'plural verbal antigo'],
             ['blåsen', 'blås (ni)', 'imperativo plural em -en'],
-            ['märk', 'lägg märke till', 'imperativo de «märka»'],
+            ['märk', 'lägg märke till', 'imperativo de “märka”'],
             ['Bacchi', 'Bacchus', 'genitivo latino'],
             ['hvila, rödt (1790)', 'vila, rött', 'grafia antes de 1906'],
             ['uppå jord', 'på jorden', 'preposição antiga, sem artigo'],
             ['fornstora dar', 'storslagna dagar förr', 'palavra poética e forma curta'],
-            ['vänaste', 'vänligaste, ljuvaste', 'superlativo de «vän» (amável)'],
+            ['vänaste', 'vänligaste, ljuvaste', 'superlativo de “vän” (amável)'],
           ],
         },
       },
     ],
     pitfalls: [
-      'Corrigir «vi framställa» para «vi framställer» ao ler Bellman: o plural sem -r era o padrão escrito até o século XX. Não é erro, é a gramática da época.',
-      'Ler «Blåsen» como substantivo definido (as bolhas): é imperativo plural, «soprai», dirigido a vários músicos.',
-      'Achar que «Du gamla, du fria» é o hino oficial por lei: é o hino de fato, sem lei que o estabeleça.',
-      'Traduzir «vän» em «vänaste land» como «amigo»: aqui é o adjetivo antigo «vän» (belo, amável), no superlativo.',
+      'Corrigir “vi framställa” para “vi framställer” ao ler Bellman: o plural sem -r era o padrão escrito até o século XX. Não é erro, é a gramática da época.',
+      'Ler “Blåsen” como substantivo definido (as bolhas): é imperativo plural, “soprai”, dirigido a vários músicos.',
+      'Achar que “Du gamla, du fria” é o hino oficial por lei: é o hino de fato, sem lei que o estabeleça.',
+      'Traduzir “vän” em “vänaste land” como “amigo”: aqui é o adjetivo antigo “vän” (belo, amável), no superlativo.',
     ],
     quiz: [
       {
-        question: 'Em «vår lilla frukost vi framställa», qual é a forma de hoje?',
+        question: 'Em “vår lilla frukost vi framställa”, qual é a forma de hoje?',
         options: ['vi ställer fram', 'vi framställa', 'vi framställt'],
         answer: 'vi ställer fram',
-        explanation: '«Vi framställa» é o plural verbal antigo (sem -r). Hoje, com o verbo de partícula, «vi ställer fram».',
+        explanation: '“Vi framställa” é o plural verbal antigo (sem -r). Hoje, com o verbo de partícula, “vi ställer fram”.',
       },
       {
-        question: '«Blåsen nu alla» é…',
+        question: '“Blåsen nu alla” é…',
         options: ['imperativ plural', 'bestämd form av blåsa', 'presens singular'],
         answer: 'imperativ plural',
         explanation: 'O imperativo plural antigo terminava em -en: blåsen, gån, kommen.',
       },
       {
-        question: 'Complete o hino: «Du gamla, du fria, du fjällhöga ___»',
+        question: 'Complete o hino: “Du gamla, du fria, du fjällhöga ___”',
         options: ['nord', 'jord', 'fjord'],
         answer: 'nord',
-        explanation: '«Du fjällhöga nord»: o Norte de altas montanhas.',
+        explanation: '“Du fjällhöga nord”: o Norte de altas montanhas.',
       },
       {
-        question: 'Em «Så lunka vi så småningom», por que «lunka» e não «lunkar»?',
+        question: 'Em “Så lunka vi så småningom”, por que “lunka” e não “lunkar”?',
         options: ['gammal pluralform', 'infinitiv efter modalverb', 'imperativ'],
         answer: 'gammal pluralform',
         explanation: 'No sueco antigo o verbo no plural perdia o -r: vi lunka, vi äro, de gå.',
       },
       {
-        question: 'Na forma moderna, «hvila» vira…',
+        question: 'Na forma moderna, “hvila” vira…',
         options: ['vila', 'hwila', 'fila'],
         answer: 'vila',
-        explanation: 'A reforma de 1906 trocou «hv» por «v»: hvila → vila, hvad → vad.',
+        explanation: 'A reforma de 1906 trocou “hv” por “v”: hvila → vila, hvad → vad.',
       },
     ],
   },
@@ -4108,11 +4108,11 @@ export const GRAMMAR_SV: GrammarTopic[] = [
     summary: 'O plural verbal (vi äro, de voro, de gingo), o imperativo plural (gån, låten), o subjuntivo (vore, leve kungen, helgat varde ditt namn), palavras como månne, ty, icke e blott, os restos de caso (i sinom tid, till fots) e a reforma ortográfica de 1906.',
     sections: [
       {
-        text: 'Até o começo do século XX, o sueco escrito conjugava o verbo no plural. Na fala, a distinção já tinha sumido havia muito tempo, mas jornais, leis e livros continuaram escrevendo «vi äro» e «de voro» até mais ou menos os anos 1940. A Bíblia de 1917, os salmos, os hinos e a literatura clássica estão cheios dessas formas, e elas voltam hoje em textos solenes, em paródias e em frases feitas.',
+        text: 'Até o começo do século XX, o sueco escrito conjugava o verbo no plural. Na fala, a distinção já tinha sumido havia muito tempo, mas jornais, leis e livros continuaram escrevendo “vi äro” e “de voro” até mais ou menos os anos 1940. A Bíblia de 1917, os salmos, os hinos e a literatura clássica estão cheios dessas formas, e elas voltam hoje em textos solenes, em paródias e em frases feitas.',
       },
       {
         heading: 'O plural verbal',
-        text: 'No presente, o plural era igual ao infinitivo (vi gå, vi hava, vi kunna); «vara» tinha a forma própria «äro». No pretérito dos verbos fortes, o plural terminava em -o e muitas vezes mudava a vogal (drack → drucko). Os verbos fracos não mudavam no pretérito (de talade). A 2ª pessoa do plural era «I» (hoje «ni»), com o verbo em -en.',
+        text: 'No presente, o plural era igual ao infinitivo (vi gå, vi hava, vi kunna); “vara” tinha a forma própria “äro”. No pretérito dos verbos fortes, o plural terminava em -o e muitas vezes mudava a vogal (drack → drucko). Os verbos fracos não mudavam no pretérito (de talade). A 2ª pessoa do plural era “I” (hoje “ni”), com o verbo em -en.',
         table: {
           head: ['Infinitivo', 'Singular', 'Plural antigo', 'Hoje (vi, de)'],
           rows: [
@@ -4137,7 +4137,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'O subjuntivo (konjunktiv)',
-        text: 'O subjuntivo sueco quase desapareceu, mas deixou fósseis muito usados. O pretérito do subjuntivo «vore» (de vara) é vivo e elegante: «om jag vore du» (se eu fosse você), «det vore bra» (seria bom). O presente do subjuntivo, terminado em -e, expressa desejo e sobrevive em fórmulas: «Leve kungen!», «Gud bevare…», «Komme vad som komme». O Pai-Nosso na versão de 1917 tem três de uma vez.',
+        text: 'O subjuntivo sueco quase desapareceu, mas deixou fósseis muito usados. O pretérito do subjuntivo “vore” (de vara) é vivo e elegante: “om jag vore du” (se eu fosse você), “det vore bra” (seria bom). O presente do subjuntivo, terminado em -e, expressa desejo e sobrevive em fórmulas: “Leve kungen!”, “Gud bevare…”, “Komme vad som komme”. O Pai-Nosso na versão de 1917 tem três de uma vez.',
         table: {
           head: ['Forma', 'Verbo', 'Uso', 'Português'],
           rows: [
@@ -4161,7 +4161,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'Palavras antigas e restos de caso',
-        text: '«Månne» é um advérbio de pergunta, «será que», hoje literário ou brincalhão. «Ty» (pois), «icke» e «ej» (não), «blott» (só), «ehuru» (embora) e «allena» (sozinho) aparecem em literatura e textos solenes. O sueco antigo tinha casos, e sobraram expressões fixas: o dativo em «i sinom tid» (a seu tempo) e «man ur huse» (todos, até o último da casa), e o genitivo depois de «till» em «till fots», «till sjöss», «till bords».',
+        text: '“Månne” é um advérbio de pergunta, “será que”, hoje literário ou brincalhão. “Ty” (pois), “icke” e “ej” (não), “blott” (só), “ehuru” (embora) e “allena” (sozinho) aparecem em literatura e textos solenes. O sueco antigo tinha casos, e sobraram expressões fixas: o dativo em “i sinom tid” (a seu tempo) e “man ur huse” (todos, até o último da casa), e o genitivo depois de “till” em “till fots”, “till sjöss”, “till bords”.',
         table: {
           head: ['Arcaico', 'Hoje', 'Português'],
           rows: [
@@ -4186,7 +4186,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'A grafia antes de 1906',
-        text: 'A reforma ortográfica de 1906, do ministro Fridtjuv Berg, aproximou a escrita da fala. Três mudanças explicam quase tudo o que um texto antigo tem de estranho: «hv» virou «v», o «f» e o «fv» com som de v viraram «v», e o «dt» virou «t».',
+        text: 'A reforma ortográfica de 1906, do ministro Fridtjuv Berg, aproximou a escrita da fala. Três mudanças explicam quase tudo o que um texto antigo tem de estranho: “hv” virou “v”, o “f” e o “fv” com som de v viraram “v”, e o “dt” virou “t”.',
         table: {
           head: ['Antes de 1906', 'Depois', 'Regra'],
           rows: [
@@ -4198,42 +4198,42 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Achar que «vi äro» é erro ou dialeto: é a norma escrita antiga. Ao ler Strindberg, Lagerlöf ou a Bíblia de 1917, entenda; ao escrever hoje, use «vi är».',
-      'Confundir «de gingo» (plural antigo de «gick») com um verbo desconhecido: procure o singular com outra vogal (drucko → drack, funno → fann, sågo → såg).',
-      'Tratar «vore» como arcaico demais para usar: «om jag vore du» e «det vore bra» são correntes, sobretudo na escrita.',
-      'Usar «ty» na conversa: soa bíblico ou irônico. No dia a dia, «för» ou «eftersom».',
-      'Ler o «I» maiúsculo de um texto antigo como «eu»: é o pronome «vós» (hoje «ni»). O «eu» sueco é «jag».',
+      'Achar que “vi äro” é erro ou dialeto: é a norma escrita antiga. Ao ler Strindberg, Lagerlöf ou a Bíblia de 1917, entenda; ao escrever hoje, use “vi är”.',
+      'Confundir “de gingo” (plural antigo de “gick”) com um verbo desconhecido: procure o singular com outra vogal (drucko → drack, funno → fann, sågo → såg).',
+      'Tratar “vore” como arcaico demais para usar: “om jag vore du” e “det vore bra” são correntes, sobretudo na escrita.',
+      'Usar “ty” na conversa: soa bíblico ou irônico. No dia a dia, “för” ou “eftersom”.',
+      'Ler o “I” maiúsculo de um texto antigo como “eu”: é o pronome “vós” (hoje “ni”). O “eu” sueco é “jag”.',
     ],
     quiz: [
       {
-        question: 'Qual é o plural antigo de «de var» (eles eram)?',
+        question: 'Qual é o plural antigo de “de var” (eles eram)?',
         options: ['de voro', 'de äro', 'de vare'],
         answer: 'de voro',
-        explanation: '«Voro» é o pretérito plural de «vara»; «äro» é o presente plural.',
+        explanation: '“Voro” é o pretérito plural de “vara”; “äro” é o presente plural.',
       },
       {
-        question: 'Complete: «Om jag ___ du skulle jag tacka ja.»',
+        question: 'Complete: “Om jag ___ du skulle jag tacka ja.”',
         options: ['vore', 'är', 'vare'],
         answer: 'vore',
-        explanation: '«Vore» é o pretérito do subjuntivo de «vara», usado na hipótese: se eu fosse você.',
+        explanation: '“Vore” é o pretérito do subjuntivo de “vara”, usado na hipótese: se eu fosse você.',
       },
       {
-        question: 'O que significa «Månne det blir regn i morgon?»',
+        question: 'O que significa “Månne det blir regn i morgon?”',
         options: ['Undrar om det blir regn i morgon.', 'Det blir säkert regn i morgon.', 'Det blev regn i morse.'],
         answer: 'Undrar om det blir regn i morgon.',
-        explanation: '«Månne» é advérbio de pergunta: será que vai chover amanhã?',
+        explanation: '“Månne” é advérbio de pergunta: será que vai chover amanhã?',
       },
       {
-        question: 'Como se escreve hoje «godt»?',
+        question: 'Como se escreve hoje “godt”?',
         options: ['gott', 'got', 'godd'],
         answer: 'gott',
-        explanation: 'A reforma de 1906 trocou «dt» por «t»: godt → gott, rödt → rött.',
+        explanation: 'A reforma de 1906 trocou “dt” por “t”: godt → gott, rödt → rött.',
       },
       {
-        question: 'Em «Leve kungen!», «leve» é…',
+        question: 'Em “Leve kungen!”, “leve” é…',
         options: ['konjunktiv', 'imperativ', 'infinitiv'],
         answer: 'konjunktiv',
-        explanation: 'É o presente do subjuntivo de «leva», que expressa desejo: viva o rei!',
+        explanation: 'É o presente do subjuntivo de “leva”, que expressa desejo: viva o rei!',
       },
     ],
   },
@@ -4242,7 +4242,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
     level: 'C2',
     title: 'Provérbios e ditos',
     emoji: '🦊',
-    summary: '«Borta bra men hemma bäst», «Lika barn leka bäst», «Surt, sa räven om rönnbären». A gramática dos provérbios suecos: frases sem artigo, «den som… (han)», o plural verbal antigo que sobreviveu, o imperativo «bliv» e os «sa-ordspråk» com a raposa.',
+    summary: '“Borta bra men hemma bäst”, “Lika barn leka bäst”, “Surt, sa räven om rönnbären”. A gramática dos provérbios suecos: frases sem artigo, “den som… (han)”, o plural verbal antigo que sobreviveu, o imperativo “bliv” e os “sa-ordspråk” com a raposa.',
     sections: [
       {
         text: 'Muitos provérbios suecos têm irmãos no português; outros usam imagens nórdicas (o urso, a raposa, a sorveira). Como são antigos, guardam gramática antiga: substantivo sem artigo, verbo no plural sem -r, imperativo em forma longa. Conhecer essas marcas ajuda a reconhecer um provérbio no meio de um texto, mesmo quando ele vem modificado ou pela metade.',
@@ -4269,7 +4269,7 @@ export const GRAMMAR_SV: GrammarTopic[] = [
         text: 'Aqui o sentido é o mesmo de um provérbio nosso, mas a imagem muda. O urso aparece onde o português fala em ovos e galinhas; a vaca no gelo virou símbolo de problema sério.',
         examples: [
           ['Man ska inte sälja skinnet förrän björnen är skjuten.', 'Não se vende a pele antes de o urso ser abatido. (= não conte com o ovo antes da galinha)'],
-          ['Man ska inte ropa hej förrän man är över bäcken.', 'Não se grita «oi» antes de atravessar o riacho. (= não cante vitória antes da hora)'],
+          ['Man ska inte ropa hej förrän man är över bäcken.', 'Não se grita “oi” antes de atravessar o riacho. (= não cante vitória antes da hora)'],
           ['Liten tuva stjälper ofta stort lass.', 'Uma pequena touceira muitas vezes derruba uma carga grande. (= pequenas causas, grandes efeitos)'],
           ['Många bäckar små gör en stor å.', 'Muitos riachos pequenos fazem um rio grande. (= de grão em grão)'],
           ['Det finns inget dåligt väder, bara dåliga kläder.', 'Não existe tempo ruim, só roupa ruim.'],
@@ -4278,21 +4278,21 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
       {
         heading: 'A gramática dos provérbios',
-        text: 'Quatro marcas: (1) o sujeito genérico «man» com «ska» de conselho (man ska inte…); (2) «den som…», às vezes retomado por «han» (Den som spar, han har); (3) substantivos sem artigo, como em latim (Tala är silver); (4) formas antigas congeladas: «Lika barn leka bäst» mantém o plural verbal sem -r, «Skomakare, bliv vid din läst» usa o imperativo antigo «bliv» (hoje «bli»), e «Bränt barn skyr elden» usa «sky» (evitar), hoje raro.',
+        text: 'Quatro marcas: (1) o sujeito genérico “man” com “ska” de conselho (man ska inte…); (2) “den som…”, às vezes retomado por “han” (Den som spar, han har); (3) substantivos sem artigo, como em latim (Tala är silver); (4) formas antigas congeladas: “Lika barn leka bäst” mantém o plural verbal sem -r, “Skomakare, bliv vid din läst” usa o imperativo antigo “bliv” (hoje “bli”), e “Bränt barn skyr elden” usa “sky” (evitar), hoje raro.',
         table: {
           head: ['Provérbio', 'Forma antiga', 'Hoje seria', 'Português'],
           rows: [
             ['Lika barn leka bäst.', 'leka (plural)', 'leker', 'Cada qual com seu igual.'],
             ['Skomakare, bliv vid din läst.', 'bliv (imperativo)', 'bli', 'Sapateiro, não passe do sapato.'],
             ['Bränt barn skyr elden.', 'skyr (de sky, evitar)', 'undviker', 'Gato escaldado tem medo de água fria.'],
-            ['Den som spar, han har.', 'han retomando «den som»', 'Den som sparar har.', 'Quem guarda tem.'],
+            ['Den som spar, han har.', 'han retomando “den som”', 'Den som sparar har.', 'Quem guarda tem.'],
             ['Kärt barn har många namn.', 'kärt (querido)', 'älskat', 'Filho querido tem muitos nomes.'],
           ],
         },
       },
       {
-        heading: 'Os «sa-ordspråk» e outros ditos',
-        text: 'Um tipo de dito que o sueco adora: uma frase, depois «sa» (disse) e quem disse, numa situação que dá o sentido irônico. O mais famoso é o da raposa que não alcança as bagas da sorveira e decide que elas estão azedas, a mesma fábula das uvas verdes de Esopo. Repare na inversão: «sa räven», verbo antes do sujeito. Depois dela, dois ditos curtos que todo sueco usa no dia a dia.',
+        heading: 'Os “sa-ordspråk” e outros ditos',
+        text: 'Um tipo de dito que o sueco adora: uma frase, depois “sa” (disse) e quem disse, numa situação que dá o sentido irônico. O mais famoso é o da raposa que não alcança as bagas da sorveira e decide que elas estão azedas, a mesma fábula das uvas verdes de Esopo. Repare na inversão: “sa räven”, verbo antes do sujeito. Depois dela, dois ditos curtos que todo sueco usa no dia a dia.',
         examples: [
           ['Surt, sa räven om rönnbären.', 'Estão azedas, disse a raposa das bagas de sorveira. (= as uvas estão verdes)'],
           ['Smakar det så kostar det.', 'Se tem gosto, tem custo. (= o que é bom custa caro)'],
@@ -4301,42 +4301,42 @@ export const GRAMMAR_SV: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Corrigir «Lika barn leka bäst» para «leker»: o provérbio conserva o plural verbal antigo, e é assim que todo sueco o diz.',
-      'Traduzir palavra por palavra e perder o sentido: «Surt, sa räven om rönnbären» não é sobre bagas, é sobre desdenhar o que não se consegue ter.',
-      'Esquecer a inversão nos «sa-ordspråk»: é «sa räven», não «räven sa».',
-      'Pôr artigo onde o provérbio não tem: é «Tala är silver», não «Talet är silvret».',
-      'Achar que «man ska» é «a gente vai»: em provérbio, «ska» dá conselho ou regra (deve-se, não se deve).',
+      'Corrigir “Lika barn leka bäst” para “leker”: o provérbio conserva o plural verbal antigo, e é assim que todo sueco o diz.',
+      'Traduzir palavra por palavra e perder o sentido: “Surt, sa räven om rönnbären” não é sobre bagas, é sobre desdenhar o que não se consegue ter.',
+      'Esquecer a inversão nos “sa-ordspråk”: é “sa räven”, não “räven sa”.',
+      'Pôr artigo onde o provérbio não tem: é “Tala är silver”, não “Talet är silvret”.',
+      'Achar que “man ska” é “a gente vai”: em provérbio, “ska” dá conselho ou regra (deve-se, não se deve).',
     ],
     quiz: [
       {
-        question: 'Complete: «Borta bra men hemma ___.»',
+        question: 'Complete: “Borta bra men hemma ___.”',
         options: ['bäst', 'bättre', 'bra'],
         answer: 'bäst',
         explanation: 'Superlativo: fora é bom, mas em casa é melhor que tudo.',
       },
       {
-        question: 'Por que «Lika barn leka bäst» e não «leker»?',
+        question: 'Por que “Lika barn leka bäst” e não “leker”?',
         options: ['gammal pluralform', 'imperativ', 'infinitiv efter modalverb'],
         answer: 'gammal pluralform',
-        explanation: 'O provérbio congelou o plural verbal antigo, sem -r, como em «vi äro».',
+        explanation: 'O provérbio congelou o plural verbal antigo, sem -r, como em “vi äro”.',
       },
       {
-        question: 'Qual provérbio sueco corresponde a «as uvas estão verdes»?',
+        question: 'Qual provérbio sueco corresponde a “as uvas estão verdes”?',
         options: ['Surt, sa räven om rönnbären.', 'Kärt barn har många namn.', 'Övning ger färdighet.'],
         answer: 'Surt, sa räven om rönnbären.',
         explanation: 'É a fábula da raposa: desdenhar o que não se consegue alcançar.',
       },
       {
-        question: 'Complete: «Man ska inte sälja skinnet förrän ___ är skjuten.»',
+        question: 'Complete: “Man ska inte sälja skinnet förrän ___ är skjuten.”',
         options: ['björnen', 'räven', 'älgen'],
         answer: 'björnen',
         explanation: 'A pele do urso: não conte com o que ainda não tem.',
       },
       {
-        question: 'Em «Skomakare, bliv vid din läst», «bliv» é…',
+        question: 'Em “Skomakare, bliv vid din läst”, “bliv” é…',
         options: ['gammal imperativ av bli', 'presens av bli', 'ett substantiv'],
         answer: 'gammal imperativ av bli',
-        explanation: '«Bliv» é o imperativo antigo, da forma longa «bliva». Hoje: «bli».',
+        explanation: '“Bliv” é o imperativo antigo, da forma longa “bliva”. Hoje: “bli”.',
       },
     ],
   },

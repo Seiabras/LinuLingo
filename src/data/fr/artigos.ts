@@ -40,7 +40,7 @@ export const ARTIGOS_FR: ArticleSeed[] = [
       "Mais combien de bises ? À Paris, on en fait souvent deux ; dans d'autres régions, trois ou même quatre. Au travail et avec les inconnus, on se serre plutôt la main.",
     ],
     translation: [
-      'Na França, os amigos e a família se cumprimentam com «la bise»: encostam as bochechas e fazem um barulhinho de beijo.',
+      'Na França, os amigos e a família se cumprimentam com “la bise”: encostam as bochechas e fazem um barulhinho de beijo.',
       'Mas quantos beijinhos? Em Paris, muitas vezes são dois; em outras regiões, três ou até quatro. No trabalho e com desconhecidos, é mais comum apertar a mão.',
     ],
     glossary: [
@@ -51,7 +51,7 @@ export const ARTIGOS_FR: ArticleSeed[] = [
       ['disent', 'dire'],
     ],
     questions: [
-      { q: 'Quantas «bises» se costuma dar em Paris?', options: ['Uma', 'Duas', 'Cinco'], answer: 1 },
+      { q: 'Quantas “bises” se costuma dar em Paris?', options: ['Uma', 'Duas', 'Cinco'], answer: 1 },
       { q: 'Como se cumprimenta um desconhecido no trabalho?', options: ['Com a bise', 'Com um aperto de mão', 'Com um abraço'], answer: 1 },
     ],
   },
@@ -118,12 +118,12 @@ export const ARTIGOS_FR: ArticleSeed[] = [
     emoji: '📜',
     paragraphs: [
       "En 842, deux petits-fils de Charlemagne, Louis le Germanique et Charles le Chauve, s'allient contre leur frère aîné, Lothaire. Pour sceller leur alliance devant leurs armées, ils prêtent serment à Strasbourg, chacun dans la langue que comprennent les soldats de l'autre.",
-      "Le texte, rapporté par l'historien Nithard, est considéré comme le plus ancien document écrit dans une langue romane distincte du latin, l'ancêtre lointain du français, à côté d'un serment en langue germanique. On y lit par exemple « Pro Deo amur », là où le latin aurait dit « Pro Dei amore ».",
+      "Le texte, rapporté par l'historien Nithard, est considéré comme le plus ancien document écrit dans une langue romane distincte du latin, l'ancêtre lointain du français, à côté d'un serment en langue germanique. On y lit par exemple “ Pro Deo amur ”, là où le latin aurait dit “ Pro Dei amore ”.",
       "L'année suivante, le traité de Verdun partage l'empire entre les trois frères : une frontière qui préfigure, de loin, celles de la France et de l'Allemagne.",
     ],
     translation: [
       'Em 842, dois netos de Carlos Magno, Luís, o Germânico, e Carlos, o Calvo, se aliam contra o irmão mais velho, Lotário. Para selar a aliança diante dos seus exércitos, fazem um juramento em Estrasburgo, cada um na língua que os soldados do outro entendem.',
-      'O texto, registrado pelo historiador Nitardo, é considerado o documento escrito mais antigo numa língua românica diferente do latim, a antepassada distante do francês, ao lado de um juramento em língua germânica. Lê-se ali, por exemplo, «Pro Deo amur», onde o latim teria dito «Pro Dei amore».',
+      'O texto, registrado pelo historiador Nitardo, é considerado o documento escrito mais antigo numa língua românica diferente do latim, a antepassada distante do francês, ao lado de um juramento em língua germânica. Lê-se ali, por exemplo, “Pro Deo amur”, onde o latim teria dito “Pro Dei amore”.',
       'No ano seguinte, o tratado de Verdun divide o império entre os três irmãos: uma fronteira que prefigura, de longe, as da França e da Alemanha.',
     ],
     glossary: [
@@ -131,7 +131,7 @@ export const ARTIGOS_FR: ArticleSeed[] = [
       ['distincte', 'diferente'],
       ['latin', 'latim'],
       ['germanique', 'germânica'],
-      ['amur', '«amor», na grafia de 842'],
+      ['amur', '“amor”, na grafia de 842'],
     ],
     forms: [
       ['aurait', 'avoir'],

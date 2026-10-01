@@ -51,5 +51,5 @@ export const FINLANDES: LanguagePack = {
   phrases: { hi: 'Hei!', thanks: 'Kiitos!', letsStart: ['Aloitetaan!', 'Vamos lá!'] },
   formalMarkers: 'voisinko saada…?, kiitos paljon, anteeksi',
   cognateNote:
-    'O finlandês não é indo-europeu: é uma língua urálica, parente do estoniano e, de longe, do húngaro. Por isso quase nada lembra o português, mas a escrita é fonética (cada letra, um som) e a tônica cai sempre na primeira sílaba. Há empréstimos antigos do sueco e do germânico (kuningas = rei). Atenção aos falsos amigos: «kasa» é pilha, «mato» é minhoca e «pato» é represa.',
+    'O finlandês não é indo-europeu: é uma língua urálica, parente do estoniano e, de longe, do húngaro. Por isso quase nada lembra o português, mas a escrita é fonética (cada letra, um som) e a tônica cai sempre na primeira sílaba. Há empréstimos antigos do sueco e do germânico (kuningas = rei). Atenção aos falsos amigos: “kasa” é pilha, “mato” é minhoca e “pato” é represa.',
 };

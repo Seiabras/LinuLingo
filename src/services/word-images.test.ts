@@ -41,7 +41,7 @@ test('imagens das palavras: fotos (tradução inteira, sem notas, alternativas)'
   assert.equal(photo('cão'), 'cachorro'); // alternativa da chave
   assert.equal(photo('cachorro / cão (pl. câini)'), 'cachorro');
   assert.equal(photo('pena'), 'pena-de-ave');
-  assert.equal(photo('punição, pena'), undefined); // «pena» tem mais de um sentido
+  assert.equal(photo('punição, pena'), undefined); // “pena” tem mais de um sentido
   assert.ok(AMBIGUOUS.has('pena'));
   assert.equal(photo('borracha; chiclete'), undefined); // só o primeiro sentido
   assert.equal(photo('queijo (osten)'), undefined);

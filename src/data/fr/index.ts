@@ -55,5 +55,5 @@ export const FRANCES: LanguagePack = {
   phrases: { hi: 'Bonjour !', thanks: 'Merci !', letsStart: ["C'est parti !", 'Vamos lá!'] },
   formalMarkers: "vous, s'il vous plaît, excusez-moi, pourriez-vous… ?",
   cognateNote:
-    'O francês é irmão do português: os dois vêm do latim, e muitas palavras se reconhecem na escrita (université, hôpital, fête). Na fala, porém, o francês engoliu letras e mudou sons: o «ca» latino virou «cha» (cantar → chanter), o «s» antes de consoante virou acento circunflexo (festa → fête) e as letras finais quase nunca se pronunciam. Cuidado com os falsos amigos: attendre é esperar, rester é ficar e le collège é a escola do 6º ao 9º ano.',
+    'O francês é irmão do português: os dois vêm do latim, e muitas palavras se reconhecem na escrita (université, hôpital, fête). Na fala, porém, o francês engoliu letras e mudou sons: o “ca” latino virou “cha” (cantar → chanter), o “s” antes de consoante virou acento circunflexo (festa → fête) e as letras finais quase nunca se pronunciam. Cuidado com os falsos amigos: attendre é esperar, rester é ficar e le collège é a escola do 6º ao 9º ano.',
 };

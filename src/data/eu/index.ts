@@ -41,5 +41,5 @@ export const BASCO: LanguagePack = {
   phrases: { hi: 'Kaixo!', thanks: 'Eskerrik asko!', letsStart: ['Has gaitezen!', 'Vamos começar!'] },
   formalMarkers: 'zu (e nunca o íntimo hi), mesedez, barkatu',
   cognateNote:
-    'O basco é uma língua isolada: não se comprovou parentesco com nenhuma outra língua. Ele já era falado nos Pireneus antes da chegada das línguas indo-europeias, como o latim, e sobreviveu a elas (já se propôs parentesco com o ibérico antigo e com línguas do Cáucaso, mas essas ideias não são aceitas). Por isso as palavras nativas, como «etxe» (casa) e «ur» (água), não lembram o português; as parecidas, como «katu» (gato) e «liburu» (livro), vieram emprestadas do latim.',
+    'O basco é uma língua isolada: não se comprovou parentesco com nenhuma outra língua. Ele já era falado nos Pireneus antes da chegada das línguas indo-europeias, como o latim, e sobreviveu a elas (já se propôs parentesco com o ibérico antigo e com línguas do Cáucaso, mas essas ideias não são aceitas). Por isso as palavras nativas, como “etxe” (casa) e “ur” (água), não lembram o português; as parecidas, como “katu” (gato) e “liburu” (livro), vieram emprestadas do latim.',
 };

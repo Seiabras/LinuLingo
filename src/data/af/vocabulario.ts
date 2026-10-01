@@ -21,7 +21,7 @@ export const ROWS: VocabRow[] = [
   ['ja', 'sim', 'advérbio', 'Essenciais', '👍', 'Ja, dankie!'],
   ['nee', 'não (resposta)', 'advérbio', 'Essenciais', '👎', 'Nee, dankie.'],
   ['nie', 'não (a negação costuma vir em duas partes: nie … nie)', 'advérbio', 'Essenciais', '🚫', 'Die huis is nie groot nie.'],
-  ["'n", 'um, uma (artigo indefinido; soa como um «â» fraco)', 'artigo', 'Essenciais', null, "Ek het 'n hond."],
+  ["'n", 'um, uma (artigo indefinido; soa como um “â” fraco)', 'artigo', 'Essenciais', null, "Ek het 'n hond."],
   ['die', 'o, a, os, as (artigo definido)', 'artigo', 'Essenciais', null, 'Die kat slaap.'],
   ['en', 'e', 'conjunção', 'Essenciais', null, 'Brood en kaas.'],
   ['of', 'ou', 'conjunção', 'Essenciais', null, 'Koffie of tee?'],
@@ -52,8 +52,8 @@ export const ROWS: VocabRow[] = [
   ['vriend', 'amigo', 'substantivo', 'Pessoas', '🧑‍🤝‍🧑', 'Hy is my vriend.'],
   ['vriendin', 'amiga', 'substantivo', 'Pessoas', '🧑‍🤝‍🧑', 'Sy is my vriendin.'],
   // ── Verbos-chave ──
-  ['wees', 'ser, estar (no presente, «is» para todas as pessoas)', 'verbo', 'Verbos-chave', '🧑', "Ek is 'n student."],
-  ['hê', 'ter (no presente, «het» para todas as pessoas)', 'verbo', 'Verbos-chave', '🤲', "Ek het 'n broer."],
+  ['wees', 'ser, estar (no presente, “is” para todas as pessoas)', 'verbo', 'Verbos-chave', '🧑', "Ek is 'n student."],
+  ['hê', 'ter (no presente, “het” para todas as pessoas)', 'verbo', 'Verbos-chave', '🤲', "Ek het 'n broer."],
   ['heet', 'chamar-se', 'verbo', 'Verbos-chave', '🏷️', 'Ek heet Ana.'],
   ['kom', 'vir (ek kom van … af = eu sou de …)', 'verbo', 'Verbos-chave', '🧭', 'Ek kom van Recife af.'],
   ['praat', 'falar', 'verbo', 'Verbos-chave', '🗣️', "Ek praat 'n bietjie Afrikaans."],
@@ -94,7 +94,7 @@ export const ROWS: VocabRow[] = [
   ['tien', 'dez', 'numeral', 'Números', '🔟', 'Tien rand.'],
   // ── Tempo ──
   ['vandag', 'hoje', 'advérbio', 'Tempo', '📅', 'Vandag is dit Maandag.'],
-  ['môre', 'amanhã (também «manhã»)', 'advérbio', 'Tempo', '📅', 'Tot môre!'],
+  ['môre', 'amanhã (também “manhã”)', 'advérbio', 'Tempo', '📅', 'Tot môre!'],
   ['gister', 'ontem', 'advérbio', 'Tempo', '📅', 'Gister, vandag en môre.'],
   ['Maandag', 'segunda-feira', 'substantivo', 'Tempo', '📅', 'Vandag is dit Maandag.'],
   ['Dinsdag', 'terça-feira', 'substantivo', 'Tempo', '📅', 'Vandag is dit Dinsdag.'],

@@ -33,7 +33,7 @@ test('loja: krill = XP / 10 menos o que foi gasto; o comprado fica liberado', ()
   assert.equal(krillBalance(10 * KRILL_XP + 9, []), 10);
   assert.equal(krillBalance(100 * KRILL_XP, ['fez']), 100 - fez.price!);
   assert.ok(unlockedOutfits({}, ['fez']).has('fez'));
-  assert.ok(!unlockedOutfits({}, ['caciula']).has('caciula'), 'presente de idioma não se «compra»');
+  assert.ok(!unlockedOutfits({}, ['caciula']).has('caciula'), 'presente de idioma não se “compra”');
 });
 
 test('visual: uma peça por lugar (cabeça, corpo, mão, rosto); vestir outra do mesmo lugar troca', () => {

@@ -104,7 +104,7 @@ const ARVORE_ELFICA: ConlangTreeNode = {
   ],
 };
 const NOTA_ELFICA =
-  'Tolkien mudou essa árvore várias vezes. Nos anos 1930, a língua com som de galês se chamava «noldorin» e era a dos noldor; na versão final, ela virou o sindarin dos elfos que ficaram na Terra-média.';
+  'Tolkien mudou essa árvore várias vezes. Nos anos 1930, a língua com som de galês se chamava “noldorin” e era a dos noldor; na versão final, ela virou o sindarin dos elfos que ficaram na Terra-média.';
 
 const ARVORE_ESPERANTO: ConlangTreeNode = {
   name: 'Esperanto',
@@ -146,7 +146,7 @@ export const CONLANGS: Conlang[] = [
     origin: 'mista',
     stage: 'completa',
     about: 'Um padre alemão contou que a língua lhe veio num sonho.',
-    text: 'Foi a primeira língua auxiliar a fazer sucesso, com congressos e centenas de clubes nos anos 1880. O nome vem do inglês: «vol» (de «world», mundo) e «pük» (de «speak», falar) — as palavras foram tão transformadas que ninguém as reconhece. Perdeu o público para o esperanto, mais fácil.',
+    text: 'Foi a primeira língua auxiliar a fazer sucesso, com congressos e centenas de clubes nos anos 1880. O nome vem do inglês: “vol” (de “world”, mundo) e “pük” (de “speak”, falar) — as palavras foram tão transformadas que ninguém as reconhece. Perdeu o público para o esperanto, mais fácil.',
     samples: [['O Fat obas, kel binol in süls', 'Ó Pai nosso, que estás nos céus']],
     note: 'Raízes reais (sobretudo do inglês e do alemão), mas deformadas até parecerem inventadas.',
   },
@@ -160,7 +160,7 @@ export const CONLANGS: Conlang[] = [
     origin: 'a posteriori',
     stage: 'completa',
     about: 'Uma reforma do esperanto, feita por uma comissão internacional.',
-    text: 'Tira as letras com acento do esperanto e deixa as palavras mais parecidas com as das línguas europeias. O nome quer dizer «descendente» em esperanto. Dividiu o movimento: a maioria ficou com o esperanto.',
+    text: 'Tira as letras com acento do esperanto e deixa as palavras mais parecidas com as das línguas europeias. O nome quer dizer “descendente” em esperanto. Dividiu o movimento: a maioria ficou com o esperanto.',
     samples: [['Quale vu standas?', 'Como você está?']],
     tree: { kind: 'real', root: ARVORE_ESPERANTO, highlight: 'Ido' },
   },
@@ -187,7 +187,7 @@ export const CONLANGS: Conlang[] = [
     origin: 'a posteriori',
     stage: 'completa',
     about: 'Uma língua auxiliar com o nome da antiga língua de contato do Mediterrâneo, começada nos anos 1960 e publicada em 1998.',
-    text: 'O vocabulário vem das línguas românicas (português, espanhol, francês, italiano e catalão), e a gramática é simples como a de um crioulo: o verbo nunca muda, e o tempo vai numa partícula — «me ia come», eu comi.',
+    text: 'O vocabulário vem das línguas românicas (português, espanhol, francês, italiano e catalão), e a gramática é simples como a de um crioulo: o verbo nunca muda, e o tempo vai numa partícula — “me ia come”, eu comi.',
     samples: [['Bon dia! Me es Ana.', 'Bom dia! Eu sou a Ana.']],
   },
   {
@@ -200,7 +200,7 @@ export const CONLANGS: Conlang[] = [
     origin: 'a priori',
     stage: 'completa',
     about: 'Um músico francês fez uma língua com as sete notas musicais.',
-    text: 'Cada palavra é uma sequência de notas — dó, ré, mi, fá, sol, lá, si —, então dá para falar, cantar, tocar num instrumento, pintar com sete cores ou escrever com sete números. O próprio nome, «solresol», quer dizer «língua». É uma das primeiras línguas a priori, sem nada de nenhuma língua natural.',
+    text: 'Cada palavra é uma sequência de notas — dó, ré, mi, fá, sol, lá, si —, então dá para falar, cantar, tocar num instrumento, pintar com sete cores ou escrever com sete números. O próprio nome, “solresol”, quer dizer “língua”. É uma das primeiras línguas a priori, sem nada de nenhuma língua natural.',
     samples: [
       ['si', 'sim'],
       ['do', 'não'],
@@ -231,10 +231,10 @@ export const CONLANGS: Conlang[] = [
     about: 'O Senhor dos Anéis e O Silmarillion: a língua antiga dos elfos.',
     text: 'Tolkien, que era filólogo, dizia que inventou as histórias para dar um mundo às suas línguas, e não o contrário. O quenya tem o som e as terminações de caso inspirados no finlandês, com toques do latim e do grego, e se escreve com as tengwar, letras criadas por ele.',
     samples: [
-      ['Elen síla lúmenn’ omentielvo', 'Uma estrela brilha sobre a hora do nosso encontro (Frodo, em «O Senhor dos Anéis», de J. R. R. Tolkien)'],
+      ['Elen síla lúmenn’ omentielvo', 'Uma estrela brilha sobre a hora do nosso encontro (Frodo, em “O Senhor dos Anéis”, de J. R. R. Tolkien)'],
       ['elen', 'estrela'],
     ],
-    note: 'As raízes são inventadas (a priori), mas o som e a gramática imitam línguas reais. Tolkien mudou a língua a vida inteira e não a terminou: o «neo-quenya» dos fãs preenche as lacunas.',
+    note: 'As raízes são inventadas (a priori), mas o som e a gramática imitam línguas reais. Tolkien mudou a língua a vida inteira e não a terminou: o “neo-quenya” dos fãs preenche as lacunas.',
     tree: { kind: 'ficção', root: ARVORE_ELFICA, highlight: 'Quenya', note: NOTA_ELFICA },
   },
   {
@@ -247,7 +247,7 @@ export const CONLANGS: Conlang[] = [
     origin: 'mista',
     stage: 'parcial',
     about: 'A língua do dia a dia dos elfos na Terra-média.',
-    text: 'Tolkien deu ao sindarin a sonoridade do galês, com as mutações de consoantes no começo das palavras que o galês tem. Na porta de Moria, a senha era «mellon», amigo.',
+    text: 'Tolkien deu ao sindarin a sonoridade do galês, com as mutações de consoantes no começo das palavras que o galês tem. Na porta de Moria, a senha era “mellon”, amigo.',
     samples: [
       ['Mae govannen!', 'Bem encontrado! (saudação)'],
       ['mellon', 'amigo'],
@@ -282,7 +282,7 @@ export const CONLANGS: Conlang[] = [
     stage: 'completa',
     about: 'Game of Thrones: a língua dos cavaleiros nômades do Mar Dothraki.',
     text: 'George R. R. Martin tinha deixado só algumas palavras nos livros. Para a série da HBO, Peterson partiu delas e criou uma língua com milhares de palavras — muitas sobre cavalos.',
-    samples: [['M’athchomaroon!', 'Olá! (literalmente, «com respeito»)']],
+    samples: [['M’athchomaroon!', 'Olá! (literalmente, “com respeito”)']],
   },
   {
     id: 'alto-valiriano',
@@ -311,7 +311,7 @@ export const CONLANGS: Conlang[] = [
         ],
       },
       highlight: 'Alto Valiriano',
-      note: 'Depois da queda de Valíria, a língua se partiu em dialetos «bastardos», como o latim se partiu nas línguas românicas.',
+      note: 'Depois da queda de Valíria, a língua se partiu em dialetos “bastardos”, como o latim se partiu nas línguas românicas.',
     },
   },
   {
@@ -327,21 +327,21 @@ export const CONLANGS: Conlang[] = [
     text: 'James Cameron pediu uma língua que os atores conseguissem pronunciar, mas que não lembrasse nenhuma da Terra. O linguista Paul Frommer usou sons raros, como as ejetivas, e uma ordem de palavras livre, marcada por casos. Os fãs continuam ampliando o vocabulário com ele.',
     samples: [
       ['Kaltxì!', 'Olá!'],
-      ['Oel ngati kameie.', 'Eu te vejo (no sentido de «eu te entendo por dentro»).'],
+      ['Oel ngati kameie.', 'Eu te vejo (no sentido de “eu te entendo por dentro”).'],
     ],
   },
   {
     id: 'tsevhu',
     name: 'Tsevhu',
     emoji: '🎏',
-    creator: 'Koa Vhukva («koallary») e a comunidade',
+    creator: 'Koa Vhukva (“koallary”) e a comunidade',
     year: '2020',
     purpose: 'artistica',
     origin: 'a priori',
     stage: 'completa',
     about: 'A língua do povo tsavhe, do planeta fictício Onope — escrita sobre peixes koi.',
     text: 'A escrita Koiwrit não é linear: a frase é desenhada como um peixe koi cercado de ondulações: cada som vira uma ondulação, e o lugar das palavras em volta do peixe diz o papel delas na frase. A direção para onde o koi aponta marca o tempo verbal. Os substantivos têm singular, dual, plural e coletivo. Virou sucesso nas redes pelos desenhos.',
-    note: 'Usada no LinuLingo com autorização dos autores: o dicionário, a gramática e o Koiwrit estão no módulo «🐟 Tsevhu».',
+    note: 'Usada no LinuLingo com autorização dos autores: o dicionário, a gramática e o Koiwrit estão no módulo “🐟 Tsevhu”.',
   },
   {
     id: 'parseltongue',
@@ -365,7 +365,7 @@ export const CONLANGS: Conlang[] = [
     origin: 'a priori',
     stage: 'esboco',
     about: 'A Longa Jornada (Watership Down): a língua dos coelhos.',
-    text: 'Algumas dezenas de palavras mostram como os coelhos veem o mundo: «hrair» quer dizer «muitos» — qualquer número acima de quatro, porque coelho só conta até quatro.',
+    text: 'Algumas dezenas de palavras mostram como os coelhos veem o mundo: “hrair” quer dizer “muitos” — qualquer número acima de quatro, porque coelho só conta até quatro.',
     samples: [
       ['hrair', 'muitos (mais de quatro)'],
       ['Frith', 'o sol, que para os coelhos é um deus'],
@@ -381,7 +381,7 @@ export const CONLANGS: Conlang[] = [
     origin: 'a posteriori',
     stage: 'esboco',
     about: '1984: a língua do Partido.',
-    text: 'É o inglês podado, para que certas ideias fiquem impossíveis de dizer — e, com o tempo, de pensar. Dentro do romance, ela seria uma língua de engenharia a serviço da ditadura. Deixou palavras no mundo real, como «duplipensar».',
+    text: 'É o inglês podado, para que certas ideias fiquem impossíveis de dizer — e, com o tempo, de pensar. Dentro do romance, ela seria uma língua de engenharia a serviço da ditadura. Deixou palavras no mundo real, como “duplipensar”.',
     samples: [['duplipensar', 'acreditar em duas ideias contraditórias ao mesmo tempo']],
   },
   {
@@ -394,10 +394,10 @@ export const CONLANGS: Conlang[] = [
     origin: 'a posteriori',
     stage: 'esboco',
     about: 'Laranja Mecânica: a gíria dos jovens.',
-    text: 'É o inglês com centenas de palavras russas adaptadas. O próprio nome vem do sufixo russo dos números de 11 a 19, como «teen» em inglês.',
+    text: 'É o inglês com centenas de palavras russas adaptadas. O próprio nome vem do sufixo russo dos números de 11 a 19, como “teen” em inglês.',
     samples: [
-      ['droog', 'amigo (do russo «drug»)'],
-      ['moloko', 'leite (do russo «moloko»)'],
+      ['droog', 'amigo (do russo “drug”)'],
+      ['moloko', 'leite (do russo “moloko”)'],
     ],
   },
   {
@@ -410,7 +410,7 @@ export const CONLANGS: Conlang[] = [
     origin: 'a posteriori',
     stage: 'completa',
     about: 'Uma história alternativa: e se o latim tivesse sobrevivido na Grã-Bretanha?',
-    text: 'É uma língua românica imaginária, derivada do latim com as mudanças de som que o galês sofreu. Deu origem a um passatempo inteiro de línguas de «histórias alternativas».',
+    text: 'É uma língua românica imaginária, derivada do latim com as mudanças de som que o galês sofreu. Deu origem a um passatempo inteiro de línguas de “histórias alternativas”.',
     tree: {
       kind: 'ficção',
       root: {
@@ -437,7 +437,7 @@ export const CONLANGS: Conlang[] = [
     origin: 'a posteriori',
     stage: 'completa',
     about: 'Uma língua minimalista, para pensar só no essencial.',
-    text: 'Tem cerca de 120 palavras no livro de 2014 (137 com as do dicionário de 2021). Com tão poucas, cada uma cobre muito: «telo» é água e qualquer líquido; um carro pode ser «tomo tawa», «estrutura que se move». Dizer as coisas vira um jogo de simplificar.',
+    text: 'Tem cerca de 120 palavras no livro de 2014 (137 com as do dicionário de 2021). Com tão poucas, cada uma cobre muito: “telo” é água e qualquer líquido; um carro pode ser “tomo tawa”, “estrutura que se move”. Dizer as coisas vira um jogo de simplificar.',
     samples: [
       ['toki pona', 'língua boa, língua simples'],
       ['mi moku.', 'eu como.'],
@@ -536,7 +536,7 @@ export const FORMAL_GROUPS: FormalGroup[] = [
     items: [
       { name: 'Python', year: '1991', who: 'Guido van Rossum', text: 'Feita para ser lida quase como inglês; o recuo do texto faz parte da gramática.' },
       { name: 'C++', year: '1985', who: 'Bjarne Stroustrup', text: 'Rápida e próxima da máquina; usada em jogos, navegadores e sistemas.' },
-      { name: 'Java', year: '1995', who: 'James Gosling', text: '«Escreva uma vez, rode em qualquer lugar»: o mesmo programa roda em sistemas diferentes.' },
+      { name: 'Java', year: '1995', who: 'James Gosling', text: '“Escreva uma vez, rode em qualquer lugar”: o mesmo programa roda em sistemas diferentes.' },
       { name: 'JavaScript', year: '1995', who: 'Brendan Eich', text: 'A linguagem dos navegadores — este aplicativo, na web, roda nela.' },
       { name: 'Scratch', year: '2007', who: 'MIT', text: 'Blocos coloridos que se encaixam: programar sem digitar, feito para crianças.' },
     ],
@@ -547,7 +547,7 @@ export const FORMAL_GROUPS: FormalGroup[] = [
     emoji: '🗂️',
     text: 'Não dão ordens passo a passo: as de consulta descrevem o que se quer buscar nos dados, e as de marcação dizem o que cada pedaço de um texto é (título, parágrafo, link).',
     items: [
-      { name: 'SQL', year: '1974', who: 'Donald Chamberlin e Raymond Boyce (IBM)', text: 'Busca em bancos de dados: «selecione os nomes dos alunos onde a nota é maior que 7». O LinuLingo guarda o seu progresso num banco consultado em SQL.' },
+      { name: 'SQL', year: '1974', who: 'Donald Chamberlin e Raymond Boyce (IBM)', text: 'Busca em bancos de dados: “selecione os nomes dos alunos onde a nota é maior que 7”. O LinuLingo guarda o seu progresso num banco consultado em SQL.' },
       { name: 'HTML', year: '1991', who: 'Tim Berners-Lee', text: 'A marcação das páginas da web: <h1> para título, <p> para parágrafo, <a> para link.' },
       { name: 'XML', year: '1998', who: 'W3C', text: 'Marcação para qualquer tipo de dado, com as marcas que se quiser inventar.' },
       { name: 'JSON', year: '2001', who: 'Douglas Crockford', text: 'Dados em chaves e valores, fácil para gente e para máquina ler.' },
@@ -561,16 +561,16 @@ export const FORMAL_GROUPS: FormalGroup[] = [
     text: 'Notações para escrever raciocínios sem nenhuma ambiguidade, de modo que se possa provar se estão certos. Vieram antes dos computadores — e os tornaram possíveis.',
     items: [
       { name: 'Álgebra booleana', year: '1854', who: 'George Boole', text: 'Contas com verdadeiro e falso (E, OU, NÃO). É o que os circuitos de todo computador fazem.' },
-      { name: 'Lógica de primeira ordem', year: '1879', who: 'Gottlob Frege', text: '«Para todo x», «existe um x»: a notação para dizer com precisão o que as frases dizem.' },
+      { name: 'Lógica de primeira ordem', year: '1879', who: 'Gottlob Frege', text: '“Para todo x”, “existe um x”: a notação para dizer com precisão o que as frases dizem.' },
       { name: 'Cálculo lambda', year: '1936', who: 'Alonzo Church', text: 'Uma linguagem só de funções, capaz de expressar qualquer cálculo; é a avó das linguagens funcionais.' },
-      { name: 'Expressões regulares', year: '1951', who: 'Stephen Kleene', text: 'Padrões para achar texto: [0-9]+ quer dizer «um ou mais algarismos». O corretor deste app usa várias.' },
+      { name: 'Expressões regulares', year: '1951', who: 'Stephen Kleene', text: 'Padrões para achar texto: [0-9]+ quer dizer “um ou mais algarismos”. O corretor deste app usa várias.' },
     ],
   },
 ];
 
 /** A mesma ideia em várias notações. */
 export const SAME_IDEA: { title: string; lines: [string, string][] } = {
-  title: '«Os alunos que estudaram passaram.»',
+  title: '“Os alunos que estudaram passaram.”',
   lines: [
     ['Português', 'Os alunos que estudaram passaram.'],
     ['Lógica de primeira ordem', '∀x ((Aluno(x) ∧ Estudou(x)) → Passou(x))'],
@@ -581,10 +581,10 @@ export const SAME_IDEA: { title: string; lines: [string, string][] } = {
 };
 
 export const HUMAN_VS_FORMAL: [string, string, string][] = [
-  ['Ambiguidade', '«Vi o homem com o binóculo» tem dois sentidos, e o contexto resolve.', 'Cada frase tem um sentido só; se não tiver, é erro.'],
+  ['Ambiguidade', '“Vi o homem com o binóculo” tem dois sentidos, e o contexto resolve.', 'Cada frase tem um sentido só; se não tiver, é erro.'],
   ['Mudança', 'Mudam sozinhas, com o uso, ao longo das gerações.', 'Mudam por decisão, em versões numeradas (Python 2 → Python 3).'],
   ['Erros', 'Uma frase com erro ainda é entendida.', 'Um ponto e vírgula a menos e nada funciona.'],
-  ['Falantes', 'Aprendidas por crianças, sem aula.', 'Aprendidas de propósito, e «faladas» por máquinas.'],
+  ['Falantes', 'Aprendidas por crianças, sem aula.', 'Aprendidas de propósito, e “faladas” por máquinas.'],
   ['Gramática', 'Descrita pelos linguistas depois.', 'Escrita antes, numa gramática formal (como a notação BNF, de 1960).'],
 ];
 
@@ -595,7 +595,7 @@ export const FORMAL_BRIDGE =
 
 export const CONTACT_STAGES: { name: string; emoji: string; text: string }[] = [
   { name: 'Jargão', emoji: '🗯️', text: 'Umas poucas palavras soltas, para trocar mercadorias ou dar ordens. Cada um fala do seu jeito.' },
-  { name: 'Pidgin', emoji: '🤝', text: 'Um sistema estável e simplificado, criado do contato entre povos sem língua comum. Ninguém o tem como língua materna: é sempre a segunda língua de todos. O vocabulário costuma vir da língua do grupo com mais poder (a «língua lexificadora»).' },
+  { name: 'Pidgin', emoji: '🤝', text: 'Um sistema estável e simplificado, criado do contato entre povos sem língua comum. Ninguém o tem como língua materna: é sempre a segunda língua de todos. O vocabulário costuma vir da língua do grupo com mais poder (a “língua lexificadora”).' },
   { name: 'Pidgin expandido', emoji: '📈', text: 'Quando o pidgin passa a ser usado em tudo — no mercado, na igreja, no rádio —, ele ganha palavras e regras. O tok pisin, da Papua-Nova Guiné, passou por aí.' },
   { name: 'Crioulo', emoji: '👶', text: 'Quando as crianças aprendem o pidgin como língua materna, elas o completam: surge uma gramática rica e uma língua natural como qualquer outra. Muitos crioulos nasceram nas colônias, entre pessoas escravizadas que vinham de povos de línguas diferentes.' },
 ];
@@ -618,7 +618,7 @@ export const CONTACT_LANGUAGES: ContactLanguage[] = [
   { name: 'Forro (santome)', kind: 'crioulo', base: 'português', where: 'São Tomé e Príncipe', text: 'Um dos crioulos portugueses do Golfo da Guiné, nascido nas plantações de açúcar do século XVI.' },
   { name: 'Patuá macaense', kind: 'crioulo', base: 'português, com malaio e cantonês', where: 'Macau', text: 'Quase extinto; restam poucos falantes, e há grupos de teatro que o mantêm vivo.' },
   { name: 'Chavacano', kind: 'crioulo', base: 'espanhol', where: 'Filipinas (Zamboanga)', text: 'O único crioulo de base espanhola da Ásia.' },
-  { name: 'Tok Pisin', kind: 'crioulo', base: 'inglês, com línguas austronésias', where: 'Papua-Nova Guiné', text: 'Começou como pidgin nas plantações do século XIX e hoje é língua materna de muitos jovens e língua oficial do país. «Pisin» vem de «pidgin».', sample: ['Mi laik go long maket.', 'Eu quero ir ao mercado.'] },
+  { name: 'Tok Pisin', kind: 'crioulo', base: 'inglês, com línguas austronésias', where: 'Papua-Nova Guiné', text: 'Começou como pidgin nas plantações do século XIX e hoje é língua materna de muitos jovens e língua oficial do país. “Pisin” vem de “pidgin”.', sample: ['Mi laik go long maket.', 'Eu quero ir ao mercado.'] },
   { name: 'Sranan Tongo', kind: 'crioulo', base: 'inglês, com holandês e português', where: 'Suriname', text: 'Língua franca do Suriname, embora o país tenha sido colônia holandesa: o inglês veio dos primeiros colonos.' },
   { name: 'Crioulo de Maurício (kreol morisien)', kind: 'crioulo', base: 'francês', where: 'Maurício', text: 'Falado por quase toda a população, mesmo com o inglês como língua do governo.' },
   { name: 'Russenorsk', kind: 'pidgin', base: 'russo e norueguês', where: 'Ártico (norte da Noruega)', text: 'Pescadores noruegueses e comerciantes russos o usaram no verão, do século XVIII ao começo do XX. Tinha umas 400 palavras e sumiu com a Revolução Russa, quando o comércio acabou.' },
@@ -651,26 +651,26 @@ export const CONTROLLED: { name: string; emoji: string; year: string; text: stri
     emoji: '✈️',
     year: 'anos 1980',
     text: 'Criado pela indústria aeroespacial europeia para os manuais de manutenção de aviões, lidos por mecânicos do mundo todo, muitos com o inglês como segunda língua. Cada palavra tem um sentido só, as frases de instrução têm no máximo 20 palavras e a voz é sempre ativa.',
-    sample: ['Do not touch the hot surface.', 'Não toque na superfície quente. (em vez de «Contact with the surface should be avoided»)'],
+    sample: ['Do not touch the hot surface.', 'Não toque na superfície quente. (em vez de “Contact with the surface should be avoided”)'],
   },
   {
     name: 'Basic English',
     emoji: '🔤',
     year: '1930',
-    text: 'O linguista C. K. Ogden reduziu o inglês a 850 palavras, com a ideia de que elas bastariam para dizer quase tudo: em vez de «ascend», «go up». Orwell se interessou por ele, e a Novilíngua de 1984 lembra um Basic English levado ao extremo, para servir ao poder.',
+    text: 'O linguista C. K. Ogden reduziu o inglês a 850 palavras, com a ideia de que elas bastariam para dizer quase tudo: em vez de “ascend”, “go up”. Orwell se interessou por ele, e a Novilíngua de 1984 lembra um Basic English levado ao extremo, para servir ao poder.',
   },
   {
     name: 'Fraseologia da aviação (ICAO)',
     emoji: '🗼',
     year: 'anos 1950',
-    text: 'Pilotos e controladores falam um inglês fixo e curto, com o alfabeto fonético (Alfa, Bravo, Charlie…) e palavras como «roger» (recebido) e «wilco» (vou cumprir). Desde 2008, pilotos de voos internacionais precisam provar proficiência em inglês.',
+    text: 'Pilotos e controladores falam um inglês fixo e curto, com o alfabeto fonético (Alfa, Bravo, Charlie…) e palavras como “roger” (recebido) e “wilco” (vou cumprir). Desde 2008, pilotos de voos internacionais precisam provar proficiência em inglês.',
     sample: ['Climb flight level three five zero.', 'Suba para o nível de voo 350.'],
   },
   {
     name: 'Seaspeak',
     emoji: '⚓',
     year: 'anos 1980',
-    text: 'A versão do mar: frases-padrão para a comunicação por rádio entre navios, que abrem com a intenção — «question», «instruction», «warning».',
+    text: 'A versão do mar: frases-padrão para a comunicação por rádio entre navios, que abrem com a intenção — “question”, “instruction”, “warning”.',
   },
   {
     name: 'Linguagem simples',
@@ -710,7 +710,7 @@ export const MODALITIES: { name: string; emoji: string; text: string; examples: 
 export const STATES: { name: string; emoji: string; text: string; examples: [string, string][] }[] = [
   { name: 'Vivas', emoji: '🌱', text: 'Aprendidas pelas crianças em casa e usadas no dia a dia por uma comunidade.', examples: [['Português', 'mais de 250 milhões de falantes'], ['Islandês', 'cerca de 350 mil, e o mesmo alfabeto das sagas']] },
   { name: 'Mortas', emoji: '📜', text: 'Não têm mais falantes nativos, mas continuam sendo usadas por escrito, na religião ou na ciência.', examples: [['Latim', 'língua da Igreja Católica e dos nomes científicos das espécies'], ['Sânscrito', 'língua sagrada do hinduísmo, ainda estudada e recitada']] },
-  { name: 'Extintas', emoji: '🪦', text: 'Não têm mais nenhum uso: sobram inscrições e textos, às vezes nem decifrados. Muitos povos preferem dizer «adormecida», porque uma língua pode voltar.', examples: [['Sumério', 'a primeira língua escrita conhecida, na Mesopotâmia'], ['Etrusco', 'lemos as letras, mas entendemos pouco']] },
+  { name: 'Extintas', emoji: '🪦', text: 'Não têm mais nenhum uso: sobram inscrições e textos, às vezes nem decifrados. Muitos povos preferem dizer “adormecida”, porque uma língua pode voltar.', examples: [['Sumério', 'a primeira língua escrita conhecida, na Mesopotâmia'], ['Etrusco', 'lemos as letras, mas entendemos pouco']] },
   { name: 'Revitalizadas', emoji: '🔄', text: 'Voltaram depois de perder os falantes nativos.', examples: [['Hebraico', 'língua de livros por quase 2 mil anos, voltou a ser língua materna no fim do século XIX; é o único caso completo'], ['Manês (Ilha de Man)', 'o último falante nativo morreu em 1974; hoje há crianças aprendendo de novo, numa escola em manês'], ['Córnico', 'dado como extinto pela UNESCO em 2009, reclassificado em 2010 como criticamente ameaçado']] },
   { name: 'Protolínguas', emoji: '🧬', text: 'Ancestrais nunca escritos, reconstruídos pelos linguistas comparando as línguas filhas. As formas reconstruídas levam um asterisco (*), para lembrar que ninguém as viu escritas.', examples: [['Proto-indo-europeu', 'falado há uns 5 a 6 mil anos; mãe do português, do russo, do sueco, do hindi e do persa'], ['Proto-tupi-guarani', 'a mãe do guarani, do tupi antigo e do nheengatu'], ['Proto-urálico', 'a mãe do finlandês, do estoniano, do húngaro e das sámi']] },
 ];
@@ -725,4 +725,4 @@ export const PIE_WORDS: { pie: string; means: string; children: string }[] = [
 ];
 
 export const PIE_NOTE =
-  'Em 1868, o linguista August Schleicher escreveu uma pequena fábula em proto-indo-europeu reconstruído, «A ovelha e os cavalos». Desde então, outros a reescreveram a cada avanço da reconstrução: comparar as versões mostra quanto a ciência mudou — e quanto uma protolíngua é uma hipótese.';
+  'Em 1868, o linguista August Schleicher escreveu uma pequena fábula em proto-indo-europeu reconstruído, “A ovelha e os cavalos”. Desde então, outros a reescreveram a cada avanço da reconstrução: comparar as versões mostra quanto a ciência mudou — e quanto uma protolíngua é uma hipótese.';

@@ -31,7 +31,7 @@ export const CURSO_TATIL: MiniCourse = {
       emoji: '⠁',
       intro: [
         'O Braille não é uma língua: é um sistema de escrita, lido com as pontas dos dedos. Cada caractere é uma cela de 6 pontos em relevo, em duas colunas de três. Os pontos são numerados: 1, 2 e 3 na coluna da esquerda, de cima para baixo; 4, 5 e 6 na da direita.',
-        'Louis Braille se feriu num olho aos 3 anos e ficou totalmente cego por volta dos 5; aos 15, em 1824, adaptou um código militar de «escrita noturna» de 12 pontos, de Charles Barbier. O sistema dele, publicado em 1829, cabe inteiro debaixo de uma ponta de dedo.',
+        'Louis Braille se feriu num olho aos 3 anos e ficou totalmente cego por volta dos 5; aos 15, em 1824, adaptou um código militar de “escrita noturna” de 12 pontos, de Charles Barbier. O sistema dele, publicado em 1829, cabe inteiro debaixo de uma ponta de dedo.',
         'As 10 primeiras letras usam só os 4 pontos de cima (1, 2, 4 e 5). Aprenda estas, porque o resto do alfabeto é construído a partir delas.',
       ],
       items: letters('abcdefghij'),
@@ -50,7 +50,7 @@ export const CURSO_TATIL: MiniCourse = {
       items: letters('klmnopqrst'),
       quiz: [
         { q: 'Que letra é esta?', braille: '123', options: ['l', 'k', 'b'], answer: 0 },
-        { q: 'Se o «c» tem os pontos 1-4, o «m» tem…', options: ['1-3-4', '1-4-5', '1-2-4'], answer: 0 },
+        { q: 'Se o “c” tem os pontos 1-4, o “m” tem…', options: ['1-3-4', '1-4-5', '1-2-4'], answer: 0 },
         { q: 'Que letra é esta?', braille: '234', options: ['t', 's', 'r'], answer: 1 },
       ],
     },
@@ -80,13 +80,13 @@ export const CURSO_TATIL: MiniCourse = {
       items: [
         { term: 'maiúscula', meaning: 'sinal de maiúscula (vem antes da letra)', braille: BRAILLE_CAPITAL, how: 'pontos 4-6' },
         { term: 'número', meaning: 'sinal de número (vem antes)', braille: BRAILLE_NUMBER, how: 'pontos 3-4-5-6' },
-        { term: '1', meaning: 'sinal de número + a', braille: BRAILLE.a, how: 'sinal de número, depois o «a»' },
-        { term: '2', meaning: 'sinal de número + b', braille: BRAILLE.b, how: 'sinal de número, depois o «b»' },
-        { term: '0', meaning: 'sinal de número + j', braille: BRAILLE.j, how: 'sinal de número, depois o «j»' },
+        { term: '1', meaning: 'sinal de número + a', braille: BRAILLE.a, how: 'sinal de número, depois o “a”' },
+        { term: '2', meaning: 'sinal de número + b', braille: BRAILLE.b, how: 'sinal de número, depois o “b”' },
+        { term: '0', meaning: 'sinal de número + j', braille: BRAILLE.j, how: 'sinal de número, depois o “j”' },
       ],
       quiz: [
-        { q: 'Depois do sinal de número, a cela do «c» (1-4) vale…', options: ['3', '4', '7'], answer: 0 },
-        { q: 'E a do «j»?', options: ['10', '0', '9'], answer: 1 },
+        { q: 'Depois do sinal de número, a cela do “c” (1-4) vale…', options: ['3', '4', '7'], answer: 0 },
+        { q: 'E a do “j”?', options: ['10', '0', '9'], answer: 1 },
         { q: 'Que cela avisa que a próxima letra é maiúscula?', braille: '46', options: ['Esta, a dos pontos 4-6', 'A do ponto 1', 'Não existe'], answer: 0 },
       ],
     },
@@ -115,7 +115,7 @@ export const CURSO_TATIL: MiniCourse = {
       ],
       items: [
         { term: 'Libras tátil', meaning: 'a Libras sentida com as mãos', how: 'A pessoa surdocega apoia as mãos sobre as mãos de quem sinaliza e sente a configuração, o lugar e o movimento.' },
-        { term: 'Protactile', meaning: 'uma língua do toque, criada por surdocegos nos EUA', how: 'Usa o toque no corpo — mãos, braços, costas — também para dar retorno («estou entendendo»), no lugar do rosto que não se vê.' },
+        { term: 'Protactile', meaning: 'uma língua do toque, criada por surdocegos nos EUA', how: 'Usa o toque no corpo — mãos, braços, costas — também para dar retorno (“estou entendendo”), no lugar do rosto que não se vê.' },
         { term: 'Tadoma', meaning: 'sentir a fala pelo rosto', how: 'O polegar nos lábios e os outros dedos na bochecha e na garganta de quem fala: sente-se a vibração e o movimento. Helen Keller aprendeu a falar assim.' },
         { term: 'Escrita na palma', meaning: 'letras desenhadas na mão', how: 'Letras de fôrma escritas com o dedo na palma da mão; no alfabeto de Lorm, cada letra é um ponto ou um traço num lugar da mão.' },
         { term: 'Braille', meaning: 'para ler e escrever', how: 'Também em linhas Braille ligadas ao computador e ao celular, que levantam os pontos eletronicamente.' },
@@ -145,7 +145,7 @@ export function brailleOf(text: string): string {
     }
     inNumber = false;
     const lower = ch.toLowerCase();
-    if (!BRAILLE[lower]) throw new Error(`sem Braille para «${ch}»`);
+    if (!BRAILLE[lower]) throw new Error(`sem Braille para “${ch}”`);
     if (ch !== lower) out.push(BRAILLE_CAPITAL);
     out.push(BRAILLE[lower]);
   }

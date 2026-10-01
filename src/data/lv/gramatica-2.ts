@@ -6,13 +6,13 @@ export const GRAMMAR: GrammarTopic[] = [
   {
     id: 'lv-g14',
     level: 'B1.2',
-    title: 'O debitivo: «man jāiet» (eu tenho de ir)',
+    title: 'O debitivo: “man jāiet” (eu tenho de ir)',
     emoji: '📌',
-    summary: 'Para dizer «ter de», o letão tem um modo só para isso: o debitivo. Põe-se jā- na frente da 3ª pessoa do presente (strādā → jāstrādā) e quem tem a obrigação vai para o dativo: man jāstrādā, tev jāmācās, Annai jāiet. O objeto, surpresa, fica no nominativo: man jāpērk maize.',
+    summary: 'Para dizer “ter de”, o letão tem um modo só para isso: o debitivo. Põe-se jā- na frente da 3ª pessoa do presente (strādā → jāstrādā) e quem tem a obrigação vai para o dativo: man jāstrādā, tev jāmācās, Annai jāiet. O objeto, surpresa, fica no nominativo: man jāpērk maize.',
     sections: [
       {
         heading: 'Como se forma',
-        text: 'Pegue a 3ª pessoa do presente (viņš strādā, viņš lasa, viņš iet) e cole jā- na frente. A forma não muda com a pessoa: quem muda é o pronome, que vai para o dativo (man, tev, viņam, viņai, mums, jums, viņiem). A única exceção é «būt»: o debitivo não é «jāir», e sim jābūt. Com prefixo, o jā- vem antes de tudo: jāaiziet, jāizlasa. Com verbo reflexivo, parte-se da 3ª pessoa reflexiva: viņš mācās → jāmācās.',
+        text: 'Pegue a 3ª pessoa do presente (viņš strādā, viņš lasa, viņš iet) e cole jā- na frente. A forma não muda com a pessoa: quem muda é o pronome, que vai para o dativo (man, tev, viņam, viņai, mums, jums, viņiem). A única exceção é “būt”: o debitivo não é “jāir”, e sim jābūt. Com prefixo, o jā- vem antes de tudo: jāaiziet, jāizlasa. Com verbo reflexivo, parte-se da 3ª pessoa reflexiva: viņš mācās → jāmācās.',
         table: {
           head: ['Infinitivo', '3ª pessoa do presente', 'Debitivo'],
           rows: [
@@ -34,7 +34,7 @@ export const GRAMMAR: GrammarTopic[] = [
       },
       {
         heading: 'O objeto fica no nominativo',
-        text: 'É a parte mais estranha para o brasileiro: no debitivo, o que seria o objeto direto não vai para o acusativo, e sim para o nominativo. «Es pērku maizi» (acusativo), mas «Man jāpērk maize» (nominativo). A lógica é que a frase diz algo como «para mim, o pão é de comprar». A exceção são os pronomes pessoais (mani, tevi, mūs, jūs), que ficam no acusativo: «Man tevi jāsatiek».',
+        text: 'É a parte mais estranha para o brasileiro: no debitivo, o que seria o objeto direto não vai para o acusativo, e sim para o nominativo. “Es pērku maizi” (acusativo), mas “Man jāpērk maize” (nominativo). A lógica é que a frase diz algo como “para mim, o pão é de comprar”. A exceção são os pronomes pessoais (mani, tevi, mūs, jūs), que ficam no acusativo: “Man tevi jāsatiek”.',
         table: {
           head: ['Frase normal (acusativo)', 'Debitivo (nominativo)'],
           rows: [
@@ -52,7 +52,7 @@ export const GRAMMAR: GrammarTopic[] = [
       },
       {
         heading: 'Passado, futuro e negação',
-        text: 'O tempo vem do verbo «būt» posto antes: bija (passado), būs (futuro), būtu (condicional: «deveria»). A negação é «nav», e aí o sentido muda: «Man nav jāiet» quer dizer «não preciso ir», e não «não devo ir». Para proibir, use «nedrīkstēt»: «Tu nedrīksti smēķēt» (você não pode fumar). Uma alternativa mais leve ao debitivo é «vajag» com infinitivo: «Man vajag atpūsties» (preciso descansar).',
+        text: 'O tempo vem do verbo “būt” posto antes: bija (passado), būs (futuro), būtu (condicional: “deveria”). A negação é “nav”, e aí o sentido muda: “Man nav jāiet” quer dizer “não preciso ir”, e não “não devo ir”. Para proibir, use “nedrīkstēt”: “Tu nedrīksti smēķēt” (você não pode fumar). Uma alternativa mais leve ao debitivo é “vajag” com infinitivo: “Man vajag atpūsties” (preciso descansar).',
         table: {
           head: ['Tempo', 'Letão', 'Português'],
           rows: [
@@ -73,11 +73,11 @@ export const GRAMMAR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Conjugar o debitivo: «man jāeju», «tev jāej» não existem. A forma é uma só (jāiet) para todas as pessoas; quem muda é o dativo.',
-      'Pôr o sujeito no nominativo: «Es jāstrādā» está errado. Quem tem a obrigação vai para o dativo: «Man jāstrādā».',
-      'Deixar o objeto no acusativo: «Man jāpērk maizi» é o erro mais comum. O certo é «Man jāpērk maize».',
-      'Ler «Man nav jāiet» como proibição. Quer dizer «não preciso ir». Para «não pode», use «nedrīkst»: «Te nedrīkst smēķēt».',
-      'Formar o debitivo de «būt» como «jāir». É exceção: jābūt.',
+      'Conjugar o debitivo: “man jāeju”, “tev jāej” não existem. A forma é uma só (jāiet) para todas as pessoas; quem muda é o dativo.',
+      'Pôr o sujeito no nominativo: “Es jāstrādā” está errado. Quem tem a obrigação vai para o dativo: “Man jāstrādā”.',
+      'Deixar o objeto no acusativo: “Man jāpērk maizi” é o erro mais comum. O certo é “Man jāpērk maize”.',
+      'Ler “Man nav jāiet” como proibição. Quer dizer “não preciso ir”. Para “não pode”, use “nedrīkst”: “Te nedrīkst smēķēt”.',
+      'Formar o debitivo de “būt” como “jāir”. É exceção: jābūt.',
     ],
     quiz: [
       {
@@ -87,28 +87,28 @@ export const GRAMMAR: GrammarTopic[] = [
         explanation: 'O debitivo não se conjuga: é sempre jā- + 3ª pessoa do presente (viņš iet → jāiet).',
       },
       {
-        question: 'Qual frase quer dizer «Eu tenho de comprar pão»?',
+        question: 'Qual frase quer dizer “Eu tenho de comprar pão”?',
         options: ['Man jāpērk maize.', 'Man jāpērk maizi.', 'Es jāpērku maizi.'],
         answer: 'Man jāpērk maize.',
         explanation: 'Quem tem a obrigação vai para o dativo (man) e o objeto fica no nominativo (maize).',
       },
       {
-        question: 'Como se diz «Hoje não preciso trabalhar»?',
+        question: 'Como se diz “Hoje não preciso trabalhar”?',
         options: ['Man šodien nav jāstrādā.', 'Es šodien nedrīkstu strādāt.', 'Es šodien nestrādāju.'],
         answer: 'Man šodien nav jāstrādā.',
-        explanation: '«Nav» + debitivo é «não precisar». «Nedrīkstu» seria «não posso (é proibido)».',
+        explanation: '“Nav” + debitivo é “não precisar”. “Nedrīkstu” seria “não posso (é proibido)”.',
       },
       {
-        question: 'Complete com o debitivo de «būt»: Tev ___ mājās pulksten astoņos.',
+        question: 'Complete com o debitivo de “būt”: Tev ___ mājās pulksten astoņos.',
         options: ['jābūt', 'jāir', 'jāesi'],
         answer: 'jābūt',
-        explanation: '«Būt» é a exceção: o debitivo é jābūt.',
+        explanation: '“Būt” é a exceção: o debitivo é jābūt.',
       },
       {
-        question: 'Como fica «Eu tive de esperar»?',
+        question: 'Como fica “Eu tive de esperar”?',
         options: ['Man bija jāgaida.', 'Man jāgaidīja.', 'Es bija jāgaida.'],
         answer: 'Man bija jāgaida.',
-        explanation: 'O passado vem de «bija» antes do debitivo, que não muda: jāgaida.',
+        explanation: 'O passado vem de “bija” antes do debitivo, que não muda: jāgaida.',
       },
     ],
   },
@@ -117,7 +117,7 @@ export const GRAMMAR: GrammarTopic[] = [
     level: 'B1.2',
     title: 'Prefixos verbais: aiziet, atnākt, izlasīt',
     emoji: '🧩',
-    summary: 'Os prefixos do letão (aiz-, at-, ie-, iz-, uz-, no-, pie-, pār-, sa-, pa-, ap-) dão direção ao movimento (ieiet = entrar, iziet = sair) e, muitas vezes, dizem que a ação chegou ao fim: lasīt é «ler», izlasīt é «ler até o fim».',
+    summary: 'Os prefixos do letão (aiz-, at-, ie-, iz-, uz-, no-, pie-, pār-, sa-, pa-, ap-) dão direção ao movimento (ieiet = entrar, iziet = sair) e, muitas vezes, dizem que a ação chegou ao fim: lasīt é “ler”, izlasīt é “ler até o fim”.',
     sections: [
       {
         heading: 'Os prefixos e a direção',
@@ -149,7 +149,7 @@ export const GRAMMAR: GrammarTopic[] = [
       },
       {
         heading: 'Prefixo = ação concluída',
-        text: 'Sem prefixo, o verbo costuma mostrar a ação em andamento ou em geral; com prefixo, a ação foi (ou será) levada até o fim. É o que o português faz com «estava lendo» × «li o livro todo». Os pares mais comuns: lasīt × izlasīt, rakstīt × uzrakstīt, ēst × apēst, darīt × izdarīt, celt × uzcelt, gatavot × pagatavot. No futuro, o prefixo dá a ideia de «vou terminar»: «Es uzrakstīšu vēstuli» (vou escrever a carta, e ela vai ficar pronta).',
+        text: 'Sem prefixo, o verbo costuma mostrar a ação em andamento ou em geral; com prefixo, a ação foi (ou será) levada até o fim. É o que o português faz com “estava lendo” × “li o livro todo”. Os pares mais comuns: lasīt × izlasīt, rakstīt × uzrakstīt, ēst × apēst, darīt × izdarīt, celt × uzcelt, gatavot × pagatavot. No futuro, o prefixo dá a ideia de “vou terminar”: “Es uzrakstīšu vēstuli” (vou escrever a carta, e ela vai ficar pronta).',
         table: {
           head: ['Sem prefixo (processo)', 'Com prefixo (resultado)'],
           rows: [
@@ -168,7 +168,7 @@ export const GRAMMAR: GrammarTopic[] = [
       },
       {
         heading: 'Negação, debitivo e reflexivos',
-        text: 'O «ne-» da negação e o «jā-» do debitivo vêm ANTES do prefixo: neaiziet, jāizlasa. Nos verbos reflexivos, a terminação reflexiva fica sempre no fim, mesmo com prefixo: satikties (encontrar-se), apģērbties (vestir-se). Aqui o letão se afasta do lituano, que enfia o reflexivo entre o prefixo e a raiz (lituano susitikti). Atenção também aos sentidos figurados: «pāriet» também é «passar» (uma dor), e «atnākt» é «vir até aqui», enquanto «aiziet» é «ir embora daqui».',
+        text: 'O “ne-” da negação e o “jā-” do debitivo vêm ANTES do prefixo: neaiziet, jāizlasa. Nos verbos reflexivos, a terminação reflexiva fica sempre no fim, mesmo com prefixo: satikties (encontrar-se), apģērbties (vestir-se). Aqui o letão se afasta do lituano, que enfia o reflexivo entre o prefixo e a raiz (lituano susitikti). Atenção também aos sentidos figurados: “pāriet” também é “passar” (uma dor), e “atnākt” é “vir até aqui”, enquanto “aiziet” é “ir embora daqui”.',
         examples: [
           ['Viņš vēl neaizgāja.', 'Ele ainda não foi embora.'],
           ['Man jāizlasa šī grāmata līdz pirmdienai.', 'Tenho de ler este livro inteiro até segunda-feira.'],
@@ -179,15 +179,15 @@ export const GRAMMAR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar o verbo sem prefixo para uma ação terminada: «Es rakstīju vēstuli» soa como «eu estava escrevendo a carta». Se ela ficou pronta, diga «Es uzrakstīju vēstuli».',
-      'Confundir «aiziet» (ir embora, afastar-se) com «atnākt» (vir, chegar até quem fala).',
-      'Pôr o «ne-» depois do prefixo: «izneiet» não existe. O certo é «neiziet».',
+      'Usar o verbo sem prefixo para uma ação terminada: “Es rakstīju vēstuli” soa como “eu estava escrevendo a carta”. Se ela ficou pronta, diga “Es uzrakstīju vēstuli”.',
+      'Confundir “aiziet” (ir embora, afastar-se) com “atnākt” (vir, chegar até quem fala).',
+      'Pôr o “ne-” depois do prefixo: “izneiet” não existe. O certo é “neiziet”.',
       'Levar o hábito do lituano para o letão: em letão o reflexivo fica no fim (satikties), nunca no meio do verbo.',
-      'Achar que «pa-» é sempre «um pouco»: em «paņemt» (pegar) e «paiet» (passar, o tempo) ele muda o sentido de outro jeito. Aprenda esses verbos como palavras inteiras.',
+      'Achar que “pa-” é sempre “um pouco”: em “paņemt” (pegar) e “paiet” (passar, o tempo) ele muda o sentido de outro jeito. Aprenda esses verbos como palavras inteiras.',
     ],
     quiz: [
       {
-        question: 'Qual verbo quer dizer «entrar»?',
+        question: 'Qual verbo quer dizer “entrar”?',
         options: ['ieiet', 'iziet', 'aiziet'],
         answer: 'ieiet',
         explanation: 'ie- = para dentro; iz- = para fora; aiz- = para longe.',
@@ -199,19 +199,19 @@ export const GRAMMAR: GrammarTopic[] = [
         explanation: 'O prefixo iz- mostra que a leitura foi até o fim.',
       },
       {
-        question: 'Como se diz «fechar a porta»?',
+        question: 'Como se diz “fechar a porta”?',
         options: ['aizvērt durvis', 'atvērt durvis', 'ievērt durvis'],
         answer: 'aizvērt durvis',
         explanation: 'aizvērt = fechar; atvērt = abrir. (Ievērt é enfiar a linha na agulha.)',
       },
       {
-        question: 'Como fica «ele não saiu»?',
+        question: 'Como fica “ele não saiu”?',
         options: ['viņš neizgāja', 'viņš iznegāja', 'viņš izgāja ne'],
         answer: 'viņš neizgāja',
-        explanation: 'O «ne-» vem antes do prefixo: ne + iz + gāja.',
+        explanation: 'O “ne-” vem antes do prefixo: ne + iz + gāja.',
       },
       {
-        question: 'Qual é o debitivo de «uzrakstīt»?',
+        question: 'Qual é o debitivo de “uzrakstīt”?',
         options: ['jāuzraksta', 'uzjāraksta', 'jāuzrakstīt'],
         answer: 'jāuzraksta',
         explanation: 'O jā- vem antes do prefixo e se junta à 3ª pessoa do presente: uzraksta → jāuzraksta.',
@@ -223,11 +223,11 @@ export const GRAMMAR: GrammarTopic[] = [
     level: 'B1.2',
     title: 'Orações subordinadas: ka, jo, kad, ja, vai, lai',
     emoji: '🔗',
-    summary: 'As subordinadas do letão são abertas por conjunções curtas (ka, jo, kad, ja, vai, lai, kamēr, pirms, lai gan) e SEMPRE separadas por vírgula, até antes do «ka» (que). A ordem das palavras é livre como no português, e o futuro aparece onde o português usa o futuro do subjuntivo: «Kad es būšu Rīgā…» (quando eu estiver em Riga…).',
+    summary: 'As subordinadas do letão são abertas por conjunções curtas (ka, jo, kad, ja, vai, lai, kamēr, pirms, lai gan) e SEMPRE separadas por vírgula, até antes do “ka” (que). A ordem das palavras é livre como no português, e o futuro aparece onde o português usa o futuro do subjuntivo: “Kad es būšu Rīgā…” (quando eu estiver em Riga…).',
     sections: [
       {
         heading: 'As conjunções',
-        text: 'Diferente do português, o letão põe vírgula antes de TODA subordinada: «Es zinu, ka…», «Es nezinu, vai…». A ordem dentro da subordinada é a mesma da principal (em geral sujeito, verbo, complemento); não há regra de verbo no fim como no alemão. Cuidado com as palavras parecidas: ka (que) × kā (como), ja (se) × jā (sim) × jau (já).',
+        text: 'Diferente do português, o letão põe vírgula antes de TODA subordinada: “Es zinu, ka…”, “Es nezinu, vai…”. A ordem dentro da subordinada é a mesma da principal (em geral sujeito, verbo, complemento); não há regra de verbo no fim como no alemão. Cuidado com as palavras parecidas: ka (que) × kā (como), ja (se) × jā (sim) × jau (já).',
         table: {
           head: ['Conjunção', 'Português', 'Exemplo'],
           rows: [
@@ -247,7 +247,7 @@ export const GRAMMAR: GrammarTopic[] = [
       },
       {
         heading: 'Futuro onde o português usa o subjuntivo',
-        text: 'Depois de «kad» e «ja», quando se fala do futuro, o letão usa o futuro simples. O brasileiro diz «quando eu ESTIVER», «se você TIVER»; o letão diz literalmente «quando eu estarei», «se você terá». E «lai» (para que) pede o condicional em -tu, que você vai ver no B2.1: por enquanto, guarde o molde «lai es saprastu», «lai varētu».',
+        text: 'Depois de “kad” e “ja”, quando se fala do futuro, o letão usa o futuro simples. O brasileiro diz “quando eu ESTIVER”, “se você TIVER”; o letão diz literalmente “quando eu estarei”, “se você terá”. E “lai” (para que) pede o condicional em -tu, que você vai ver no B2.1: por enquanto, guarde o molde “lai es saprastu”, “lai varētu”.',
         examples: [
           ['Kad es būšu Rīgā, es tev piezvanīšu.', 'Quando eu estiver em Riga, te ligo.'],
           ['Ja tev būs laiks, atnāc!', 'Se você tiver tempo, venha!'],
@@ -257,7 +257,7 @@ export const GRAMMAR: GrammarTopic[] = [
       },
       {
         heading: 'Pares que confundem',
-        text: 'Três pares merecem atenção. «Ja» é o «se» da condição; «vai» é o «se» da pergunta indireta («não sei se…»), a mesma palavra que abre as perguntas de sim ou não. «Jo» (porque) abre uma subordinada, mas «tāpēc» sozinho é «por isso» e liga duas orações principais. E «kad» é «quando» (tempo), não «se».',
+        text: 'Três pares merecem atenção. “Ja” é o “se” da condição; “vai” é o “se” da pergunta indireta (“não sei se…”), a mesma palavra que abre as perguntas de sim ou não. “Jo” (porque) abre uma subordinada, mas “tāpēc” sozinho é “por isso” e liga duas orações principais. E “kad” é “quando” (tempo), não “se”.',
         examples: [
           ['Pajautā, vai veikals ir atvērts!', 'Pergunte se a loja está aberta!'],
           ['Es palieku mājās, jo līst.', 'Fico em casa porque está chovendo.'],
@@ -267,18 +267,18 @@ export const GRAMMAR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Esquecer a vírgula antes de «ka»: em português «Eu sei que…» não leva vírgula, mas em letão é obrigatório: «Es zinu, ka…».',
-      'Usar «ja» na pergunta indireta: «Es nezinu, ja viņa nāks» está errado. O certo é «Es nezinu, vai viņa nāks».',
-      'Pôr o presente onde o letão quer o futuro: «Kad es esmu Rīgā, es piezvanīšu» soa estranho; diga «Kad es būšu Rīgā…».',
-      'Confundir «ja» (se) com «jā» (sim) e com «jau» (já). A vogal longa e a letra a mais mudam tudo.',
-      'Trocar «jo» por «tāpēc»: «Es palieku mājās, tāpēc līst» diz que a chuva é consequência de você ficar em casa.',
+      'Esquecer a vírgula antes de “ka”: em português “Eu sei que…” não leva vírgula, mas em letão é obrigatório: “Es zinu, ka…”.',
+      'Usar “ja” na pergunta indireta: “Es nezinu, ja viņa nāks” está errado. O certo é “Es nezinu, vai viņa nāks”.',
+      'Pôr o presente onde o letão quer o futuro: “Kad es esmu Rīgā, es piezvanīšu” soa estranho; diga “Kad es būšu Rīgā…”.',
+      'Confundir “ja” (se) com “jā” (sim) e com “jau” (já). A vogal longa e a letra a mais mudam tudo.',
+      'Trocar “jo” por “tāpēc”: “Es palieku mājās, tāpēc līst” diz que a chuva é consequência de você ficar em casa.',
     ],
     quiz: [
       {
         question: 'Não sei SE ela vem: Es nezinu, ___ viņa nāks.',
         options: ['vai', 'ja', 'kad'],
         answer: 'vai',
-        explanation: 'Na pergunta indireta o «se» é «vai». «Ja» é o «se» da condição.',
+        explanation: 'Na pergunta indireta o “se” é “vai”. “Ja” é o “se” da condição.',
       },
       {
         question: 'Qual pontuação está certa?',
@@ -290,19 +290,19 @@ export const GRAMMAR: GrammarTopic[] = [
         question: 'Complete: ___ rīt būs saulains laiks, brauksim uz Jūrmalu.',
         options: ['Ja', 'Jā', 'Jo'],
         answer: 'Ja',
-        explanation: 'É uma condição: «se amanhã fizer sol». «Jā» é «sim» e «jo» é «porque».',
+        explanation: 'É uma condição: “se amanhã fizer sol”. “Jā” é “sim” e “jo” é “porque”.',
       },
       {
         question: 'Quando eu estiver em casa, te escrevo: Kad es ___ mājās, es tev uzrakstīšu.',
         options: ['būšu', 'esmu', 'būtu'],
         answer: 'būšu',
-        explanation: 'Para o futuro, o letão usa o futuro simples depois de «kad»: būšu.',
+        explanation: 'Para o futuro, o letão usa o futuro simples depois de “kad”: būšu.',
       },
       {
-        question: 'Qual frase quer dizer «Fico em casa porque está frio»?',
+        question: 'Qual frase quer dizer “Fico em casa porque está frio”?',
         options: ['Es palieku mājās, jo ir auksts.', 'Es palieku mājās, tāpēc ir auksts.', 'Es palieku mājās, ja ir auksts.'],
         answer: 'Es palieku mājās, jo ir auksts.',
-        explanation: '«Jo» dá a causa. «Tāpēc» daria o frio virar consequência, e «ja» seria «se».',
+        explanation: '“Jo” dá a causa. “Tāpēc” daria o frio virar consequência, e “ja” seria “se”.',
       },
     ],
   },
@@ -312,11 +312,11 @@ export const GRAMMAR: GrammarTopic[] = [
     level: 'B1.3',
     title: 'Particípios: lasošs, lasījis, lasāms, lasīts',
     emoji: '🍂',
-    summary: 'O letão tem quatro particípios que se declinam como adjetivos: o ativo presente (-ošs: lasošs, «que está lendo»), o ativo passado (-is/-usi: bijis, bijusi), o passivo presente (-ams/-āms: dzerams, «potável») e o passivo passado (-ts/-ta: slēgts, «fechado»). O ativo passado ainda forma os tempos compostos: esmu bijis, esmu bijusi.',
+    summary: 'O letão tem quatro particípios que se declinam como adjetivos: o ativo presente (-ošs: lasošs, “que está lendo”), o ativo passado (-is/-usi: bijis, bijusi), o passivo presente (-ams/-āms: dzerams, “potável”) e o passivo passado (-ts/-ta: slēgts, “fechado”). O ativo passado ainda forma os tempos compostos: esmu bijis, esmu bijusi.',
     sections: [
       {
         heading: 'Os quatro particípios',
-        text: 'Todos concordam em gênero, número e caso com o substantivo, como qualquer adjetivo: slēgts veikals (loja fechada, masculino), slēgta kafejnīca (café fechado, feminino), atvērtas durvis (portas abertas, feminino plural). O -ošs sai da 3ª pessoa do presente (lasa → lasošs; runā → runājošs). O -is/-usi sai do passado, com mudanças: iet → gājis, gājusi; būt → bijis, bijusi. O -ams/-āms tem sentido de «que se pode (ou se deve) fazer». O -ts/-ta é o nosso particípio «fechado, escrito, construído».',
+        text: 'Todos concordam em gênero, número e caso com o substantivo, como qualquer adjetivo: slēgts veikals (loja fechada, masculino), slēgta kafejnīca (café fechado, feminino), atvērtas durvis (portas abertas, feminino plural). O -ošs sai da 3ª pessoa do presente (lasa → lasošs; runā → runājošs). O -is/-usi sai do passado, com mudanças: iet → gājis, gājusi; būt → bijis, bijusi. O -ams/-āms tem sentido de “que se pode (ou se deve) fazer”. O -ts/-ta é o nosso particípio “fechado, escrito, construído”.',
         table: {
           head: ['Particípio', 'Sentido', 'Exemplo'],
           rows: [
@@ -329,7 +329,7 @@ export const GRAMMAR: GrammarTopic[] = [
       },
       {
         heading: 'Tabela de formas',
-        text: 'Na coluna do -is/-usi, a primeira forma é a masculina e a segunda, a feminina. O plural é -uši (masculino) e -ušas (feminino): bijuši, bijušas. Verbos de movimento como «iet» não têm o particípio em -ts.',
+        text: 'Na coluna do -is/-usi, a primeira forma é a masculina e a segunda, a feminina. O plural é -uši (masculino) e -ušas (feminino): bijuši, bijušas. Verbos de movimento como “iet” não têm o particípio em -ts.',
         table: {
           head: ['Verbo', '-ošs', '-is / -usi', '-ams / -āms', '-ts'],
           rows: [
@@ -351,7 +351,7 @@ export const GRAMMAR: GrammarTopic[] = [
       },
       {
         heading: 'Os tempos compostos',
-        text: 'Com «būt» + particípio em -is/-usi, o letão forma o perfeito (esmu bijis: já estive), o mais-que-perfeito (biju bijis: tinha estado) e o futuro perfeito (būšu bijis). O particípio concorda com o sujeito: o homem diz «esmu bijis», a mulher diz «esmu bijusi», um grupo diz «esam bijuši». O perfeito é usado para experiências e para o que ainda vale agora: «Vai tu esi bijis Rundālē?» (você já esteve em Rundāle?).',
+        text: 'Com “būt” + particípio em -is/-usi, o letão forma o perfeito (esmu bijis: já estive), o mais-que-perfeito (biju bijis: tinha estado) e o futuro perfeito (būšu bijis). O particípio concorda com o sujeito: o homem diz “esmu bijis”, a mulher diz “esmu bijusi”, um grupo diz “esam bijuši”. O perfeito é usado para experiências e para o que ainda vale agora: “Vai tu esi bijis Rundālē?” (você já esteve em Rundāle?).',
         examples: [
           ['Es esmu lasījis šo grāmatu.', 'Eu (homem) já li este livro.'],
           ['Es esmu lasījusi šo grāmatu.', 'Eu (mulher) já li este livro.'],
@@ -363,14 +363,14 @@ export const GRAMMAR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Esquecer a concordância de gênero no perfeito: uma mulher diz «esmu bijusi», nunca «esmu bijis».',
-      'Não concordar o particípio com «durvis»: a palavra é feminina e plural, então «durvis ir atvērtas».',
-      'Confundir -ams (que se pode fazer) com -ts (que foi feito): «dzerams ūdens» é água potável; «dzerts» é «bebido».',
-      'Esquecer o «j» do -ošs depois de vogal: runā → runājošs, dzīvo → dzīvojošs.',
+      'Esquecer a concordância de gênero no perfeito: uma mulher diz “esmu bijusi”, nunca “esmu bijis”.',
+      'Não concordar o particípio com “durvis”: a palavra é feminina e plural, então “durvis ir atvērtas”.',
+      'Confundir -ams (que se pode fazer) com -ts (que foi feito): “dzerams ūdens” é água potável; “dzerts” é “bebido”.',
+      'Esquecer o “j” do -ošs depois de vogal: runā → runājošs, dzīvo → dzīvojošs.',
     ],
     quiz: [
       {
-        question: 'Uma mulher diz «Eu já estive em Riga»: Es jau esmu ___ Rīgā.',
+        question: 'Uma mulher diz “Eu já estive em Riga”: Es jau esmu ___ Rīgā.',
         options: ['bijusi', 'bijis', 'bijuši'],
         answer: 'bijusi',
         explanation: 'O particípio concorda com quem fala: feminino singular é -usi.',
@@ -379,22 +379,22 @@ export const GRAMMAR: GrammarTopic[] = [
         question: 'A loja está fechada: Veikals ir ___ .',
         options: ['slēgts', 'slēgta', 'slēdzošs'],
         answer: 'slēgts',
-        explanation: '«Veikals» é masculino, então o particípio passivo é «slēgts».',
+        explanation: '“Veikals” é masculino, então o particípio passivo é “slēgts”.',
       },
       {
-        question: 'Como se diz «água potável»?',
+        question: 'Como se diz “água potável”?',
         options: ['dzerams ūdens', 'dzerts ūdens', 'dzerošs ūdens'],
         answer: 'dzerams ūdens',
-        explanation: 'O particípio em -ams quer dizer «que se pode beber».',
+        explanation: 'O particípio em -ams quer dizer “que se pode beber”.',
       },
       {
         question: 'A porta está aberta: Durvis ir ___ .',
         options: ['atvērtas', 'atvērts', 'atvērta'],
         answer: 'atvērtas',
-        explanation: '«Durvis» é feminino plural, e o particípio concorda: atvērtas.',
+        explanation: '“Durvis” é feminino plural, e o particípio concorda: atvērtas.',
       },
       {
-        question: 'Qual é o particípio ativo passado masculino de «iet»?',
+        question: 'Qual é o particípio ativo passado masculino de “iet”?',
         options: ['gājis', 'ejošs', 'iets'],
         answer: 'gājis',
         explanation: 'O particípio sai do passado (gāju): gājis, gājusi.',
@@ -404,13 +404,13 @@ export const GRAMMAR: GrammarTopic[] = [
   {
     id: 'lv-g18',
     level: 'B1.3',
-    title: 'A voz passiva: «tiek celts» e «ir uzcelts»',
+    title: 'A voz passiva: “tiek celts” e “ir uzcelts”',
     emoji: '🏗️',
-    summary: 'A passiva do letão se faz com «tikt» (o processo: tiek celta, «está sendo construída») ou com «būt» (o resultado: ir uzcelta, «está construída»), mais o particípio em -ts/-ta. O agente quase nunca aparece; quando precisa, o letão prefere a voz ativa ou o genitivo: tēva celtā māja.',
+    summary: 'A passiva do letão se faz com “tikt” (o processo: tiek celta, “está sendo construída”) ou com “būt” (o resultado: ir uzcelta, “está construída”), mais o particípio em -ts/-ta. O agente quase nunca aparece; quando precisa, o letão prefere a voz ativa ou o genitivo: tēva celtā māja.',
     sections: [
       {
         heading: 'tikt + particípio: o processo',
-        text: '«Tikt» é o auxiliar da passiva de processo, e só ele se conjuga: tiek (presente), tika (passado), tiks (futuro). O particípio em -ts/-ta concorda com o sujeito em gênero e número. Em textos antigos e literários aparece também «tapt» (tapa uzcelts), mas no dia a dia é «tikt».',
+        text: '“Tikt” é o auxiliar da passiva de processo, e só ele se conjuga: tiek (presente), tika (passado), tiks (futuro). O particípio em -ts/-ta concorda com o sujeito em gênero e número. Em textos antigos e literários aparece também “tapt” (tapa uzcelts), mas no dia a dia é “tikt”.',
         table: {
           head: ['Tempo', 'Letão', 'Português'],
           rows: [
@@ -428,7 +428,7 @@ export const GRAMMAR: GrammarTopic[] = [
       },
       {
         heading: 'būt + particípio: o resultado',
-        text: 'Com «būt», a frase descreve o estado em que a coisa ficou, e o verbo quase sempre tem prefixo (uzcelts, aizvērts, izlasīts). Compare: «Veikals tiek slēgts pulksten astoņos» (a loja é fechada às oito: é o ato de fechar) e «Veikals ir slēgts» (a loja está fechada: é o estado).',
+        text: 'Com “būt”, a frase descreve o estado em que a coisa ficou, e o verbo quase sempre tem prefixo (uzcelts, aizvērts, izlasīts). Compare: “Veikals tiek slēgts pulksten astoņos” (a loja é fechada às oito: é o ato de fechar) e “Veikals ir slēgts” (a loja está fechada: é o estado).',
         table: {
           head: ['Processo (tikt)', 'Resultado (būt)'],
           rows: [
@@ -440,7 +440,7 @@ export const GRAMMAR: GrammarTopic[] = [
       },
       {
         heading: 'E quem fez? O agente e a frase impessoal',
-        text: 'O português diz «foi construída PELO avô»; em letão, a tradução palavra por palavra com «no» (no vectēva) é considerada um decalque e fica feia. Há duas saídas naturais: o genitivo antes do particípio (vectēva celtā māja: a casa construída pelo avô) ou simplesmente a voz ativa. E quando o agente é «as pessoas em geral», o letão usa a 3ª pessoa sem sujeito, como o nosso «se»: «Latvijā runā latviski» (na Letônia fala-se letão).',
+        text: 'O português diz “foi construída PELO avô”; em letão, a tradução palavra por palavra com “no” (no vectēva) é considerada um decalque e fica feia. Há duas saídas naturais: o genitivo antes do particípio (vectēva celtā māja: a casa construída pelo avô) ou simplesmente a voz ativa. E quando o agente é “as pessoas em geral”, o letão usa a 3ª pessoa sem sujeito, como o nosso “se”: “Latvijā runā latviski” (na Letônia fala-se letão).',
         examples: [
           ['Tā ir vectēva celtā māja.', 'Esta é a casa construída pelo avô.'],
           ['Vectēvs uzcēla šo māju.', 'O avô construiu esta casa.'],
@@ -450,41 +450,41 @@ export const GRAMMAR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar «ir» quando se quer o processo: «Tilts ir būvēts» é «a ponte está construída»; para «está sendo construída», diga «Tilts tiek būvēts».',
-      'Esquecer a concordância: «Vēstule tika uzrakstīts» está errado, porque «vēstule» é feminina: «uzrakstīta».',
-      'Traduzir o «por» do agente com «no»: «māja tika celta no vectēva» é decalque. Prefira «vectēva celtā māja» ou a voz ativa.',
-      'Abusar da passiva: o letão usa muito mais a frase impessoal («Šeit runā latviski») do que o português usa a passiva analítica.',
+      'Usar “ir” quando se quer o processo: “Tilts ir būvēts” é “a ponte está construída”; para “está sendo construída”, diga “Tilts tiek būvēts”.',
+      'Esquecer a concordância: “Vēstule tika uzrakstīts” está errado, porque “vēstule” é feminina: “uzrakstīta”.',
+      'Traduzir o “por” do agente com “no”: “māja tika celta no vectēva” é decalque. Prefira “vectēva celtā māja” ou a voz ativa.',
+      'Abusar da passiva: o letão usa muito mais a frase impessoal (“Šeit runā latviski”) do que o português usa a passiva analítica.',
     ],
     quiz: [
       {
         question: 'A ponte está sendo construída: Tilts ___ būvēts.',
         options: ['tiek', 'ir', 'tika'],
         answer: 'tiek',
-        explanation: 'Processo no presente é «tiek» + particípio. «Ir būvēts» seria o resultado (já está construída).',
+        explanation: 'Processo no presente é “tiek” + particípio. “Ir būvēts” seria o resultado (já está construída).',
       },
       {
         question: 'Riga foi fundada em 1201: Rīga ___ dibināta 1201. gadā.',
         options: ['tika', 'tiek', 'tiks'],
         answer: 'tika',
-        explanation: 'Passado do auxiliar «tikt»: tika.',
+        explanation: 'Passado do auxiliar “tikt”: tika.',
       },
       {
         question: 'Qual frase está certa (a carta foi escrita)?',
         options: ['Vēstule tika uzrakstīta.', 'Vēstule tika uzrakstīts.', 'Vēstule tikta uzrakstīta.'],
         answer: 'Vēstule tika uzrakstīta.',
-        explanation: '«Vēstule» é feminina: o particípio fica em -ta. O auxiliar «tika» não concorda em gênero.',
+        explanation: '“Vēstule” é feminina: o particípio fica em -ta. O auxiliar “tika” não concorda em gênero.',
       },
       {
-        question: 'Como dizer «a casa construída pelo avô» do jeito natural?',
+        question: 'Como dizer “a casa construída pelo avô” do jeito natural?',
         options: ['vectēva celtā māja', 'māja, celta no vectēva', 'māja tika vectēvs celta'],
         answer: 'vectēva celtā māja',
         explanation: 'O agente vai para o genitivo antes do particípio, que fica na forma definida (celtā).',
       },
       {
-        question: 'Como se diz «Como se escreve esta palavra?»',
+        question: 'Como se diz “Como se escreve esta palavra?”',
         options: ['Kā šo vārdu raksta?', 'Kā šis vārds tiek rakstīt?', 'Kā šo vārdu rakstās?'],
         answer: 'Kā šo vārdu raksta?',
-        explanation: 'O «se» impessoal vira 3ª pessoa sem sujeito, com o objeto no acusativo: šo vārdu raksta.',
+        explanation: 'O “se” impessoal vira 3ª pessoa sem sujeito, com o objeto no acusativo: šo vārdu raksta.',
       },
     ],
   },
@@ -493,11 +493,11 @@ export const GRAMMAR: GrammarTopic[] = [
     level: 'B1.3',
     title: 'Particípios adverbiais: ejot, iedams, dziedam',
     emoji: '🚶',
-    summary: 'Para dizer «indo», «sorrindo», «lendo», o letão tem formas que não se declinam como adjetivos: -ot (ejot, lasot), que não muda nunca, e -dams/-dama (iedams, smaidīdama), que concorda com o sujeito. Depois de verbos de percepção aparece ainda o -am/-ām: «Es dzirdu putnus dziedam» (ouço os pássaros cantando).',
+    summary: 'Para dizer “indo”, “sorrindo”, “lendo”, o letão tem formas que não se declinam como adjetivos: -ot (ejot, lasot), que não muda nunca, e -dams/-dama (iedams, smaidīdama), que concorda com o sujeito. Depois de verbos de percepção aparece ainda o -am/-ām: “Es dzirdu putnus dziedam” (ouço os pássaros cantando).',
     sections: [
       {
         heading: 'Como se formam',
-        text: 'O -ot sai da 3ª pessoa do presente (lasa → lasot; runā → runājot; iet → ejot). O -dams sai do infinitivo, trocando o -t (lasīt → lasīdams, lasīdama; no plural lasīdami, lasīdamas). Nos reflexivos: smieties → smiedamies (masculino), smiedamās (feminino). O -am/-ām também sai do presente e aparece quase só depois de «redzēt» e «dzirdēt».',
+        text: 'O -ot sai da 3ª pessoa do presente (lasa → lasot; runā → runājot; iet → ejot). O -dams sai do infinitivo, trocando o -t (lasīt → lasīdams, lasīdama; no plural lasīdami, lasīdamas). Nos reflexivos: smieties → smiedamies (masculino), smiedamās (feminino). O -am/-ām também sai do presente e aparece quase só depois de “redzēt” e “dzirdēt”.',
         table: {
           head: ['Verbo', '-ot', '-dams / -dama', '-am / -ām'],
           rows: [
@@ -512,7 +512,7 @@ export const GRAMMAR: GrammarTopic[] = [
       },
       {
         heading: '-ot × -dams',
-        text: 'Os dois mostram uma ação que acontece ao mesmo tempo que a principal. O -ot é o curinga: não muda e serve até quando o sujeito é outro; nesse caso, o sujeito dele vai para o dativo («Man ejot mājās, sāka līt»: enquanto eu ia para casa, começou a chover). O -dams só serve quando o sujeito é o mesmo da oração principal, e concorda com ele: «Viņa ienāca smaidīdama». Uma locução com -ot ou -dams fica entre vírgulas.',
+        text: 'Os dois mostram uma ação que acontece ao mesmo tempo que a principal. O -ot é o curinga: não muda e serve até quando o sujeito é outro; nesse caso, o sujeito dele vai para o dativo (“Man ejot mājās, sāka līt”: enquanto eu ia para casa, começou a chover). O -dams só serve quando o sujeito é o mesmo da oração principal, e concorda com ele: “Viņa ienāca smaidīdama”. Uma locução com -ot ou -dams fica entre vírgulas.',
         examples: [
           ['Ejot uz darbu, es satiku kaimiņu.', 'Indo para o trabalho, encontrei o vizinho.'],
           ['Braucot pa Jūrmalu, mēs redzējām vecas koka mājas.', 'Passando de carro por Jūrmala, vimos casas antigas de madeira.'],
@@ -522,8 +522,8 @@ export const GRAMMAR: GrammarTopic[] = [
         ],
       },
       {
-        heading: '-am/-ām depois de «ver» e «ouvir»',
-        text: 'Com «redzēt» (ver) e «dzirdēt» (ouvir), o português usa o gerúndio ou o infinitivo («vi ele chegando», «ouvi os pássaros cantarem»). O letão usa o -am/-ām. Usar -ot aqui é um erro comum até entre nativos. Não confunda o -ot adverbial com o -ot do modo relatado («viņš esot slims»: dizem que ele está doente), que você verá no C1.2: a forma é igual, o uso é outro.',
+        heading: '-am/-ām depois de “ver” e “ouvir”',
+        text: 'Com “redzēt” (ver) e “dzirdēt” (ouvir), o português usa o gerúndio ou o infinitivo (“vi ele chegando”, “ouvi os pássaros cantarem”). O letão usa o -am/-ām. Usar -ot aqui é um erro comum até entre nativos. Não confunda o -ot adverbial com o -ot do modo relatado (“viņš esot slims”: dizem que ele está doente), que você verá no C1.2: a forma é igual, o uso é outro.',
         examples: [
           ['Es dzirdu putnus dziedam.', 'Ouço os pássaros cantando.'],
           ['Mēs redzējām viņu nākam.', 'Nós o vimos chegando.'],
@@ -532,10 +532,10 @@ export const GRAMMAR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar -dams com outro sujeito: «Iedams mājās, sāka līt» está errado, porque quem ia não é quem choveu. Use «Man ejot mājās, sāka līt».',
-      'Esquecer a concordância do -dams: uma mulher entra «smaidīdama», um homem «smaidīdams».',
-      'Usar -ot depois de «dzirdēt» e «redzēt»: «dzirdu putnus dziedot» é descuidado; o padrão é «dziedam».',
-      'Achar que o -ot é sempre o gerúndio: «Viņš esot slims» é o modo relatado (dizem que ele está doente), não «ele sendo doente».',
+      'Usar -dams com outro sujeito: “Iedams mājās, sāka līt” está errado, porque quem ia não é quem choveu. Use “Man ejot mājās, sāka līt”.',
+      'Esquecer a concordância do -dams: uma mulher entra “smaidīdama”, um homem “smaidīdams”.',
+      'Usar -ot depois de “dzirdēt” e “redzēt”: “dzirdu putnus dziedot” é descuidado; o padrão é “dziedam”.',
+      'Achar que o -ot é sempre o gerúndio: “Viņš esot slims” é o modo relatado (dizem que ele está doente), não “ele sendo doente”.',
     ],
     quiz: [
       {
@@ -554,19 +554,19 @@ export const GRAMMAR: GrammarTopic[] = [
         question: 'Ouço os pássaros cantando: Es dzirdu putnus ___ .',
         options: ['dziedam', 'dziedot', 'dziedādami'],
         answer: 'dziedam',
-        explanation: 'Depois de «dzirdēt» e «redzēt», a forma padrão é a em -am/-ām.',
+        explanation: 'Depois de “dzirdēt” e “redzēt”, a forma padrão é a em -am/-ām.',
       },
       {
-        question: 'Qual é a forma em -ot de «runāt»?',
+        question: 'Qual é a forma em -ot de “runāt”?',
         options: ['runājot', 'runāot', 'runot'],
         answer: 'runājot',
-        explanation: 'Depois de vogal entra um «j»: runā → runājot.',
+        explanation: 'Depois de vogal entra um “j”: runā → runājot.',
       },
       {
         question: 'Eles saíram rindo: Viņi izgāja ___ .',
         options: ['smiedamies', 'smiedamās', 'smiedamas'],
         answer: 'smiedamies',
-        explanation: '«Smieties» é reflexivo: masculino -damies, feminino -damās.',
+        explanation: '“Smieties” é reflexivo: masculino -damies, feminino -damās.',
       },
     ],
   },
@@ -576,11 +576,11 @@ export const GRAMMAR: GrammarTopic[] = [
     level: 'B1.4',
     title: 'Comparativo e superlativo: lielāks, vislielākais',
     emoji: '📏',
-    summary: 'O comparativo se faz com -āks/-āka (liels → lielāks), sem exceções como o nosso «melhor»: labs → labāks. O superlativo é vis- + a forma definida (vislielākais, vislabākā). «Do que» é «nekā» ou «par» + acusativo: Rīga ir lielāka nekā Liepāja / par Liepāju.',
+    summary: 'O comparativo se faz com -āks/-āka (liels → lielāks), sem exceções como o nosso “melhor”: labs → labāks. O superlativo é vis- + a forma definida (vislielākais, vislabākā). “Do que” é “nekā” ou “par” + acusativo: Rīga ir lielāka nekā Liepāja / par Liepāju.',
     sections: [
       {
         heading: 'Adjetivos',
-        text: 'Troque a terminação por -āks (masculino) ou -āka (feminino) e decline normalmente. O superlativo junta vis- à forma definida do comparativo (-ākais, -ākā). Muitas vezes o vis- nem aparece: a forma definida já basta para dar sentido de superlativo («lielākā pilsēta» = a maior cidade). Nada de formas irregulares: labs → labāks → vislabākais.',
+        text: 'Troque a terminação por -āks (masculino) ou -āka (feminino) e decline normalmente. O superlativo junta vis- à forma definida do comparativo (-ākais, -ākā). Muitas vezes o vis- nem aparece: a forma definida já basta para dar sentido de superlativo (“lielākā pilsēta” = a maior cidade). Nada de formas irregulares: labs → labāks → vislabākais.',
         table: {
           head: ['Positivo', 'Comparativo', 'Superlativo'],
           rows: [
@@ -602,7 +602,7 @@ export const GRAMMAR: GrammarTopic[] = [
       },
       {
         heading: 'Advérbios',
-        text: 'Os advérbios fazem -āk e vis-…-āk: ātri → ātrāk → visātrāk. «Daudz» e «maz» dão vairāk (mais) e mazāk (menos). Para o tempo e as sensações, o letão usa o advérbio, não o adjetivo: «Šodien ir siltāk nekā vakar» (hoje está mais quente do que ontem).',
+        text: 'Os advérbios fazem -āk e vis-…-āk: ātri → ātrāk → visātrāk. “Daudz” e “maz” dão vairāk (mais) e mazāk (menos). Para o tempo e as sensações, o letão usa o advérbio, não o adjetivo: “Šodien ir siltāk nekā vakar” (hoje está mais quente do que ontem).',
         table: {
           head: ['Advérbio', 'Comparativo', 'Superlativo'],
           rows: [
@@ -620,8 +620,8 @@ export const GRAMMAR: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'Igualdade, «muito mais» e «quanto mais…»',
-        text: '«Tão… quanto» é tikpat… kā. Para reforçar o comparativo, use «daudz» ou «vēl», nunca «ļoti»: daudz labāks (muito melhor), vēl dārgāks (ainda mais caro). «Quanto mais…, mais…» é jo…, jo….',
+        heading: 'Igualdade, “muito mais” e “quanto mais…”',
+        text: '“Tão… quanto” é tikpat… kā. Para reforçar o comparativo, use “daudz” ou “vēl”, nunca “ļoti”: daudz labāks (muito melhor), vēl dārgāks (ainda mais caro). “Quanto mais…, mais…” é jo…, jo….',
         examples: [
           ['Anna ir tikpat gara kā Pēteris.', 'A Anna é tão alta quanto o Pēteris.'],
           ['Jaunais dzīvoklis ir daudz labāks.', 'O apartamento novo é muito melhor.'],
@@ -630,23 +630,23 @@ export const GRAMMAR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Procurar formas irregulares como «melhor» e «pior»: em letão é tudo regular (labāks, sliktāks).',
-      'Usar «ļoti» com o comparativo: «ļoti labāks» está errado; diga «daudz labāks».',
-      'Esquecer o acusativo depois de «par»: «vecāks par es» está errado; é «vecāks par mani». Com «nekā», o caso não muda: «vecāks nekā es».',
-      'Usar o adjetivo para o tempo: «Šodien ir siltāks» soa errado; para o clima vai o advérbio: «Šodien ir siltāk».',
+      'Procurar formas irregulares como “melhor” e “pior”: em letão é tudo regular (labāks, sliktāks).',
+      'Usar “ļoti” com o comparativo: “ļoti labāks” está errado; diga “daudz labāks”.',
+      'Esquecer o acusativo depois de “par”: “vecāks par es” está errado; é “vecāks par mani”. Com “nekā”, o caso não muda: “vecāks nekā es”.',
+      'Usar o adjetivo para o tempo: “Šodien ir siltāks” soa errado; para o clima vai o advérbio: “Šodien ir siltāk”.',
     ],
     quiz: [
       {
         question: 'Riga é maior do que Liepāja: Rīga ir ___ nekā Liepāja.',
         options: ['lielāka', 'lielāks', 'vairāk liela'],
         answer: 'lielāka',
-        explanation: '«Rīga» é feminina: o comparativo é «lielāka».',
+        explanation: '“Rīga” é feminina: o comparativo é “lielāka”.',
       },
       {
         question: 'Complete: Mans brālis ir vecāks par ___ .',
         options: ['mani', 'es', 'man'],
         answer: 'mani',
-        explanation: '«Par» pede o acusativo: mani.',
+        explanation: '“Par” pede o acusativo: mani.',
       },
       {
         question: 'Hoje está mais quente do que ontem: Šodien ir ___ nekā vakar.',
@@ -655,13 +655,13 @@ export const GRAMMAR: GrammarTopic[] = [
         explanation: 'Para o tempo, o letão usa o advérbio: siltāk.',
       },
       {
-        question: 'Como se diz «muito melhor»?',
+        question: 'Como se diz “muito melhor”?',
         options: ['daudz labāks', 'ļoti labāks', 'vairāk labs'],
         answer: 'daudz labāks',
-        explanation: 'O comparativo se reforça com «daudz» (ou «vēl»), não com «ļoti».',
+        explanation: 'O comparativo se reforça com “daudz” (ou “vēl”), não com “ļoti”.',
       },
       {
-        question: 'Qual é o superlativo de «labs»?',
+        question: 'Qual é o superlativo de “labs”?',
         options: ['vislabākais', 'vislabs', 'visvairāk labs'],
         answer: 'vislabākais',
         explanation: 'vis- + comparativo na forma definida: vislabākais.',
@@ -673,11 +673,11 @@ export const GRAMMAR: GrammarTopic[] = [
     level: 'B1.4',
     title: 'Adjetivos definidos: liela māja × lielā māja',
     emoji: '🎯',
-    summary: 'O letão não tem artigo, mas o adjetivo faz o papel dele: «liela māja» é «uma casa grande» e «lielā māja» é «a casa grande». A forma definida (-ais, -ā) aparece depois de šis e tas, dos possessivos e do genitivo, no superlativo e no vocativo. Muitas vezes só o mácron separa as duas: laba × labā.',
+    summary: 'O letão não tem artigo, mas o adjetivo faz o papel dele: “liela māja” é “uma casa grande” e “lielā māja” é “a casa grande”. A forma definida (-ais, -ā) aparece depois de šis e tas, dos possessivos e do genitivo, no superlativo e no vocativo. Muitas vezes só o mácron separa as duas: laba × labā.',
     sections: [
       {
         heading: 'Indefinido × definido',
-        text: 'Use a forma indefinida para o que é novo na conversa ou é só uma característica; use a definida para o que já é conhecido, único ou apontado. Depois de «šis», «tas», «mans», «tavs» e de um genitivo (tēva, Annas), o adjetivo vai sempre para a forma definida. No predicado, depois de «ir», o adjetivo é sempre indefinido: «Kafija ir karsta».',
+        text: 'Use a forma indefinida para o que é novo na conversa ou é só uma característica; use a definida para o que já é conhecido, único ou apontado. Depois de “šis”, “tas”, “mans”, “tavs” e de um genitivo (tēva, Annas), o adjetivo vai sempre para a forma definida. No predicado, depois de “ir”, o adjetivo é sempre indefinido: “Kafija ir karsta”.',
         examples: [
           ['Man ir jauna mašīna.', 'Tenho um carro novo.'],
           ['Jaunā mašīna stāv pagalmā.', 'O carro novo está no pátio.'],
@@ -689,7 +689,7 @@ export const GRAMMAR: GrammarTopic[] = [
       },
       {
         heading: 'A declinação no singular',
-        text: 'Repare que várias formas se distinguem só pela vogal longa: laba (indefinido) × labā (definido); o mácron aqui faz o trabalho do artigo. O instrumental, com «ar», tem a forma do acusativo (ar labo draugu).',
+        text: 'Repare que várias formas se distinguem só pela vogal longa: laba (indefinido) × labā (definido); o mácron aqui faz o trabalho do artigo. O instrumental, com “ar”, tem a forma do acusativo (ar labo draugu).',
         table: {
           head: ['Caso', 'Masc. indef.', 'Masc. def.', 'Fem. indef.', 'Fem. def.'],
           rows: [
@@ -722,35 +722,35 @@ export const GRAMMAR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar a forma definida no predicado: «Kafija ir karstā» está errado; depois de «ir» o adjetivo é indefinido: «Kafija ir karsta».',
-      'Esquecer a forma definida depois do possessivo: «mans jauns dzīvoklis» está errado; o certo é «mans jaunais dzīvoklis».',
-      'Ignorar o mácron: «laba grāmata» (um bom livro) e «labā grāmata» (o bom livro) são palavras diferentes.',
-      'Achar que o vocativo é como o nominativo indefinido: chama-se alguém com a forma definida: «Mīļais draugs!», «Dārgā māmiņa!».',
+      'Usar a forma definida no predicado: “Kafija ir karstā” está errado; depois de “ir” o adjetivo é indefinido: “Kafija ir karsta”.',
+      'Esquecer a forma definida depois do possessivo: “mans jauns dzīvoklis” está errado; o certo é “mans jaunais dzīvoklis”.',
+      'Ignorar o mácron: “laba grāmata” (um bom livro) e “labā grāmata” (o bom livro) são palavras diferentes.',
+      'Achar que o vocativo é como o nominativo indefinido: chama-se alguém com a forma definida: “Mīļais draugs!”, “Dārgā māmiņa!”.',
     ],
     quiz: [
       {
         question: 'O carro novo é do meu pai: ___ mašīna ir mana tēva.',
         options: ['Jaunā', 'Jauna', 'Jaunais'],
         answer: 'Jaunā',
-        explanation: 'É um carro conhecido («o carro novo»), e «mašīna» é feminina: jaunā.',
+        explanation: 'É um carro conhecido (“o carro novo”), e “mašīna” é feminina: jaunā.',
       },
       {
-        question: 'Depois de «mans», o adjetivo fica…: mans ___ dzīvoklis',
+        question: 'Depois de “mans”, o adjetivo fica…: mans ___ dzīvoklis',
         options: ['jaunais', 'jauns', 'jaunā'],
         answer: 'jaunais',
-        explanation: 'Depois de possessivo, sempre a forma definida; «dzīvoklis» é masculino: jaunais.',
+        explanation: 'Depois de possessivo, sempre a forma definida; “dzīvoklis” é masculino: jaunais.',
       },
       {
         question: 'Laiks šodien ir ___ .',
         options: ['silts', 'siltais', 'siltā'],
         answer: 'silts',
-        explanation: 'No predicado (depois de «ir»), o adjetivo é sempre indefinido.',
+        explanation: 'No predicado (depois de “ir”), o adjetivo é sempre indefinido.',
       },
       {
         question: 'Es dāvināju ziedus tai ___ skolotājai.',
         options: ['jaunajai', 'jaunai', 'jaunā'],
         answer: 'jaunajai',
-        explanation: 'Depois de «tai» (demonstrativo), forma definida; dativo feminino: jaunajai.',
+        explanation: 'Depois de “tai” (demonstrativo), forma definida; dativo feminino: jaunajai.',
       },
       {
         question: 'Querido amigo! (começo de carta): ___ draugs!',
@@ -765,11 +765,11 @@ export const GRAMMAR: GrammarTopic[] = [
     level: 'B1.4',
     title: 'Pronomes relativos: kas, kurš, kura',
     emoji: '🪢',
-    summary: 'O «que» relativo do letão é «kas» (não muda com gênero e número) ou «kurš/kura» (concorda com o substantivo). Os dois se declinam conforme a função na oração: «Māja, kurā es dzīvoju» (a casa EM QUE moro), «Grāmata, ko tu man iedevi» (o livro QUE você me deu). E a oração relativa fica sempre entre vírgulas.',
+    summary: 'O “que” relativo do letão é “kas” (não muda com gênero e número) ou “kurš/kura” (concorda com o substantivo). Os dois se declinam conforme a função na oração: “Māja, kurā es dzīvoju” (a casa EM QUE moro), “Grāmata, ko tu man iedevi” (o livro QUE você me deu). E a oração relativa fica sempre entre vírgulas.',
     sections: [
       {
         heading: 'kurš: gênero e número do substantivo, caso da oração',
-        text: '«Kurš» copia o gênero e o número da palavra a que se refere, mas o caso vem do papel que ele tem dentro da relativa. Em «Draudzene, kurai es rakstīju» (a amiga a quem escrevi), «kurai» é feminino singular por causa de «draudzene» e dativo porque «rakstīt kādam» pede dativo. O genitivo «kura/kuras» faz o papel do nosso «cujo»: «kaimiņš, kura suns rej» (o vizinho cujo cachorro late).',
+        text: '“Kurš” copia o gênero e o número da palavra a que se refere, mas o caso vem do papel que ele tem dentro da relativa. Em “Draudzene, kurai es rakstīju” (a amiga a quem escrevi), “kurai” é feminino singular por causa de “draudzene” e dativo porque “rakstīt kādam” pede dativo. O genitivo “kura/kuras” faz o papel do nosso “cujo”: “kaimiņš, kura suns rej” (o vizinho cujo cachorro late).',
         table: {
           head: ['Caso', 'Masc. sing.', 'Fem. sing.', 'Masc. pl.', 'Fem. pl.'],
           rows: [
@@ -788,8 +788,8 @@ export const GRAMMAR: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'kas: o «que» que não muda de gênero',
-        text: '«Kas» serve para qualquer gênero e número e é muito comum na fala: «cilvēks, kas…», «sievietes, kas…». Ele se declina só em caso: kas (nominativo), kā (genitivo), kam (dativo), ko (acusativo). Depois de «tas», «viss», «nekas» e «tas pats», usa-se quase sempre «kas»: «Tas, ko tu saki…» (o que você diz…). Para lugares, «kur» (onde) também funciona como relativo.',
+        heading: 'kas: o “que” que não muda de gênero',
+        text: '“Kas” serve para qualquer gênero e número e é muito comum na fala: “cilvēks, kas…”, “sievietes, kas…”. Ele se declina só em caso: kas (nominativo), kā (genitivo), kam (dativo), ko (acusativo). Depois de “tas”, “viss”, “nekas” e “tas pats”, usa-se quase sempre “kas”: “Tas, ko tu saki…” (o que você diz…). Para lugares, “kur” (onde) também funciona como relativo.',
         table: {
           head: ['Caso', 'Forma', 'Exemplo'],
           rows: [
@@ -808,35 +808,35 @@ export const GRAMMAR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Deixar o relativo sempre no nominativo: «Māja, kura es dzīvoju» está errado; «dzīvot» pede o locativo: «kurā es dzīvoju».',
-      'Esquecer a vírgula do fim quando a relativa está no meio: «Puisis, kas tur stāv, ir mans brālis» leva duas vírgulas.',
-      'Pôr «kurš» depois de «viss» e «tas»: diga «viss, kas…», «tas, ko…».',
-      'Usar «kas» no lugar de «ko» para o objeto: «Grāmata, kas es lasu» está errado; é «Grāmata, ko es lasu».',
+      'Deixar o relativo sempre no nominativo: “Māja, kura es dzīvoju” está errado; “dzīvot” pede o locativo: “kurā es dzīvoju”.',
+      'Esquecer a vírgula do fim quando a relativa está no meio: “Puisis, kas tur stāv, ir mans brālis” leva duas vírgulas.',
+      'Pôr “kurš” depois de “viss” e “tas”: diga “viss, kas…”, “tas, ko…”.',
+      'Usar “kas” no lugar de “ko” para o objeto: “Grāmata, kas es lasu” está errado; é “Grāmata, ko es lasu”.',
     ],
     quiz: [
       {
         question: 'A casa em que moro é velha: Māja, ___ es dzīvoju, ir veca.',
         options: ['kurā', 'kura', 'kuru'],
         answer: 'kurā',
-        explanation: '«Dzīvot» pede o locativo, e «māja» é feminina: kurā.',
+        explanation: '“Dzīvot” pede o locativo, e “māja” é feminina: kurā.',
       },
       {
         question: 'O livro que eu li era longo: Grāmata, ___ es izlasīju, bija gara.',
         options: ['ko', 'kas', 'kam'],
         answer: 'ko',
-        explanation: 'O relativo é objeto de «izlasīju»: acusativo de «kas» = ko.',
+        explanation: 'O relativo é objeto de “izlasīju”: acusativo de “kas” = ko.',
       },
       {
         question: 'Tudo o que você diz é verdade: Viss, ___ tu saki, ir taisnība.',
         options: ['ko', 'kas', 'kurš'],
         answer: 'ko',
-        explanation: 'Depois de «viss» vem «kas», aqui no acusativo porque é objeto de «saki»: ko.',
+        explanation: 'Depois de “viss” vem “kas”, aqui no acusativo porque é objeto de “saki”: ko.',
       },
       {
         question: 'A amiga a quem escrevi mora em Cēsis: Draudzene, ___ es rakstīju, dzīvo Cēsīs.',
         options: ['kurai', 'kuru', 'kura'],
         answer: 'kurai',
-        explanation: '«Rakstīt kādam» pede dativo; feminino singular: kurai.',
+        explanation: '“Rakstīt kādam” pede dativo; feminino singular: kurai.',
       },
       {
         question: 'Qual pontuação está certa?',
@@ -850,13 +850,13 @@ export const GRAMMAR: GrammarTopic[] = [
   {
     id: 'lv-g23',
     level: 'B2.1',
-    title: 'O condicional: «es gribētu», «vai jūs varētu…?»',
+    title: 'O condicional: “es gribētu”, “vai jūs varētu…?”',
     emoji: '🌤️',
     summary: 'O condicional do letão é o tempo mais fácil da língua: troca-se o -t do infinitivo por -tu, e a forma é a mesma para todas as pessoas (es būtu, tu būtu, viņi būtu). Serve para pedir com educação, aconselhar, desejar e imaginar.',
     sections: [
       {
         heading: 'Como se forma',
-        text: 'Infinitivo sem o -t, mais -tu: strādāt → strādātu, iet → ietu, būt → būtu. Nos reflexivos, -ties vira -tos: mācīties → mācītos. A negação é o ne- de sempre: nebūtu, neietu. Para o passado («teria feito»), use būtu + particípio em -is/-usi: es būtu atnācis (homem), es būtu atnākusi (mulher).',
+        text: 'Infinitivo sem o -t, mais -tu: strādāt → strādātu, iet → ietu, būt → būtu. Nos reflexivos, -ties vira -tos: mācīties → mācītos. A negação é o ne- de sempre: nebūtu, neietu. Para o passado (“teria feito”), use būtu + particípio em -is/-usi: es būtu atnācis (homem), es būtu atnākusi (mulher).',
         table: {
           head: ['Infinitivo', 'Condicional', 'Português'],
           rows: [
@@ -871,7 +871,7 @@ export const GRAMMAR: GrammarTopic[] = [
       },
       {
         heading: 'Pedidos, conselhos e desejos',
-        text: 'O condicional amacia qualquer pedido, igual ao nosso «poderia», «gostaria». Para conselho, use «vajadzētu» (deveria) ou o debitivo com «būtu» (tev būtu jā…). Para desejo, «kaut» + condicional é o nosso «tomara que» ou «quem dera»; e «labprāt» + condicional é «eu adoraria».',
+        text: 'O condicional amacia qualquer pedido, igual ao nosso “poderia”, “gostaria”. Para conselho, use “vajadzētu” (deveria) ou o debitivo com “būtu” (tev būtu jā…). Para desejo, “kaut” + condicional é o nosso “tomara que” ou “quem dera”; e “labprāt” + condicional é “eu adoraria”.',
         examples: [
           ['Vai jūs varētu man palīdzēt?', 'O senhor poderia me ajudar?'],
           ['Es gribētu vienu kafiju, lūdzu.', 'Eu gostaria de um café, por favor.'],
@@ -882,8 +882,8 @@ export const GRAMMAR: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'Imaginar e o «lai»',
-        text: 'O condicional também é o modo do que não é real («eu faria, se…», no próximo tópico) e o modo obrigatório depois de «lai» (para que). No passado, ele vira «teria»: «Es būtu atnācis, bet biju slims» (eu teria vindo, mas estava doente).',
+        heading: 'Imaginar e o “lai”',
+        text: 'O condicional também é o modo do que não é real (“eu faria, se…”, no próximo tópico) e o modo obrigatório depois de “lai” (para que). No passado, ele vira “teria”: “Es būtu atnācis, bet biju slims” (eu teria vindo, mas estava doente).',
         examples: [
           ['Es būtu atnācis, bet biju slims.', 'Eu teria vindo, mas estava doente.'],
           ['Viņa runāja skaļi, lai visi dzirdētu.', 'Ela falou alto para que todos ouvissem.'],
@@ -892,10 +892,10 @@ export const GRAMMAR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Conjugar o condicional: «es būtu, tu būtu, viņš būtu» — a forma é uma só para todas as pessoas.',
-      'Esquecer o -tos nos reflexivos: «viņš mācītu» é «ele ensinaria»; «ele estudaria» é «viņš mācītos».',
-      'Pedir no presente seco: «Es gribu kafiju» é direto demais com um desconhecido; «Es gribētu kafiju» é o tom certo.',
-      'Esquecer a concordância no condicional passado: a mulher diz «es būtu atnākusi».',
+      'Conjugar o condicional: “es būtu, tu būtu, viņš būtu” — a forma é uma só para todas as pessoas.',
+      'Esquecer o -tos nos reflexivos: “viņš mācītu” é “ele ensinaria”; “ele estudaria” é “viņš mācītos”.',
+      'Pedir no presente seco: “Es gribu kafiju” é direto demais com um desconhecido; “Es gribētu kafiju” é o tom certo.',
+      'Esquecer a concordância no condicional passado: a mulher diz “es būtu atnākusi”.',
     ],
     quiz: [
       {
@@ -908,7 +908,7 @@ export const GRAMMAR: GrammarTopic[] = [
         question: 'Ele estudaria mais: Viņš ___ vairāk.',
         options: ['mācītos', 'mācītu', 'mācās'],
         answer: 'mācītos',
-        explanation: '«Mācīties» é reflexivo: condicional em -tos. «Mācītu» seria «ensinaria».',
+        explanation: '“Mācīties” é reflexivo: condicional em -tos. “Mācītu” seria “ensinaria”.',
       },
       {
         question: 'O senhor poderia me ajudar? Vai jūs ___ man palīdzēt?',
@@ -920,7 +920,7 @@ export const GRAMMAR: GrammarTopic[] = [
         question: 'Quem dera já fosse verão: ___ jau būtu vasara!',
         options: ['Kaut', 'Ja', 'Lai gan'],
         answer: 'Kaut',
-        explanation: '«Kaut» + condicional expressa desejo.',
+        explanation: '“Kaut” + condicional expressa desejo.',
       },
       {
         question: 'Eu (homem) teria vindo: Es ___ atnācis.',
@@ -933,13 +933,13 @@ export const GRAMMAR: GrammarTopic[] = [
   {
     id: 'lv-g24',
     level: 'B2.1',
-    title: 'Orações hipotéticas: «ja man būtu laiks…»',
+    title: 'Orações hipotéticas: “ja man būtu laiks…”',
     emoji: '🔮',
-    summary: 'No letão, a hipótese irreal usa o condicional nas DUAS orações: «Ja man būtu laiks, es brauktu» (se eu tivesse tempo, iria). Onde o português alterna imperfeito do subjuntivo e futuro do pretérito, o letão repete o -tu. A hipótese real, sobre o futuro, fica no futuro: «Ja rīt līs, paliksim mājās».',
+    summary: 'No letão, a hipótese irreal usa o condicional nas DUAS orações: “Ja man būtu laiks, es brauktu” (se eu tivesse tempo, iria). Onde o português alterna imperfeito do subjuntivo e futuro do pretérito, o letão repete o -tu. A hipótese real, sobre o futuro, fica no futuro: “Ja rīt līs, paliksim mājās”.',
     sections: [
       {
         heading: 'Real × irreal',
-        text: 'Se a condição pode acontecer, use o indicativo (futuro para o futuro, presente para o que é sempre verdade). Se é imaginária, use o condicional nas duas partes. Para o passado imaginário («se eu tivesse sabido, teria vindo»), o condicional composto: būtu + particípio, também nas duas partes. A oração principal pode começar com «tad» (então), que é opcional.',
+        text: 'Se a condição pode acontecer, use o indicativo (futuro para o futuro, presente para o que é sempre verdade). Se é imaginária, use o condicional nas duas partes. Para o passado imaginário (“se eu tivesse sabido, teria vindo”), o condicional composto: būtu + particípio, também nas duas partes. A oração principal pode começar com “tad” (então), que é opcional.',
         table: {
           head: ['Tipo', 'Letão', 'Português'],
           rows: [
@@ -953,7 +953,7 @@ export const GRAMMAR: GrammarTopic[] = [
       },
       {
         heading: 'Expressões úteis',
-        text: '«Ja es būtu tavā vietā» é o nosso «se eu fosse você» (literalmente «se eu estivesse no seu lugar»). «Pat ja» é «mesmo se»; «ja vien» é «se ao menos» (e também «contanto que»); «ja nu» abre uma suposição: «e se…?». A negação é normal: «ja nebūtu» (se não fosse / se não houvesse).',
+        text: '“Ja es būtu tavā vietā” é o nosso “se eu fosse você” (literalmente “se eu estivesse no seu lugar”). “Pat ja” é “mesmo se”; “ja vien” é “se ao menos” (e também “contanto que”); “ja nu” abre uma suposição: “e se…?”. A negação é normal: “ja nebūtu” (se não fosse / se não houvesse).',
         examples: [
           ['Ja es būtu tavā vietā, es piekristu.', 'Se eu fosse você, aceitaria.'],
           ['Ja nebūtu lietus, mēs ietu uz pludmali.', 'Se não fosse a chuva, iríamos à praia.'],
@@ -965,10 +965,10 @@ export const GRAMMAR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar o passado para a hipótese: «Ja man bija laiks, es braucu» quer dizer «quando eu tinha tempo, eu ia» (fato), não «se eu tivesse». Para o imaginário, «Ja man būtu laiks, es brauktu».',
+      'Usar o passado para a hipótese: “Ja man bija laiks, es braucu” quer dizer “quando eu tinha tempo, eu ia” (fato), não “se eu tivesse”. Para o imaginário, “Ja man būtu laiks, es brauktu”.',
       'Pôr o condicional só numa das orações: o letão repete o -tu nas duas.',
-      'Usar o presente para o futuro depois de «ja»: com «amanhã», o natural é o futuro: «Ja rīt līs…».',
-      'Esquecer a concordância do particípio no passado irreal: a mulher diz «ja es būtu zinājusi».',
+      'Usar o presente para o futuro depois de “ja”: com “amanhã”, o natural é o futuro: “Ja rīt līs…”.',
+      'Esquecer a concordância do particípio no passado irreal: a mulher diz “ja es būtu zinājusi”.',
     ],
     quiz: [
       {
@@ -993,7 +993,7 @@ export const GRAMMAR: GrammarTopic[] = [
         question: 'Mesmo se chover, vamos a Jūrmala: ___ ja līs, mēs brauksim uz Jūrmalu.',
         options: ['Pat', 'Kaut', 'Vai'],
         answer: 'Pat',
-        explanation: '«Pat ja» = mesmo se.',
+        explanation: '“Pat ja” = mesmo se.',
       },
       {
         question: 'Qual frase é uma hipótese imaginária?',
@@ -1009,11 +1009,11 @@ export const GRAMMAR: GrammarTopic[] = [
     level: 'B2.2',
     title: 'Registro formal: Jūs, kungs e kundze, e-mails e repartições',
     emoji: '🏛️',
-    summary: 'Com desconhecidos, no trabalho e nas repartições, o letão usa «Jūs» (com maiúscula nas cartas) e o verbo no plural: «Vai Jūs runājat angliski?». O adjetivo e o particípio, porém, ficam no singular e no gênero da pessoa: «Jūs esat nogurusi?». O tratamento é sobrenome no genitivo + kungs ou kundze: Ozola kungs, Ozolas kundze.',
+    summary: 'Com desconhecidos, no trabalho e nas repartições, o letão usa “Jūs” (com maiúscula nas cartas) e o verbo no plural: “Vai Jūs runājat angliski?”. O adjetivo e o particípio, porém, ficam no singular e no gênero da pessoa: “Jūs esat nogurusi?”. O tratamento é sobrenome no genitivo + kungs ou kundze: Ozola kungs, Ozolas kundze.',
     sections: [
       {
         heading: 'Jūs de cortesia',
-        text: 'O verbo vai para a 2ª pessoa do plural (esat, runājat, varat), e o imperativo educado também: apsēdieties, uzgaidiet, aizpildiet. Mas o que descreve a pessoa (adjetivo ou particípio) fica no singular, concordando com o gênero dela: a um homem, «Vai Jūs esat noguris?»; a uma mulher, «Vai Jūs esat nogurusi?». Nas cartas e e-mails, Jūs, Jums, Jūsu vão com maiúscula. Passar para o «tu» é um passo que a pessoa mais velha ou de posição mais alta costuma propor: «Varam būt uz tu».',
+        text: 'O verbo vai para a 2ª pessoa do plural (esat, runājat, varat), e o imperativo educado também: apsēdieties, uzgaidiet, aizpildiet. Mas o que descreve a pessoa (adjetivo ou particípio) fica no singular, concordando com o gênero dela: a um homem, “Vai Jūs esat noguris?”; a uma mulher, “Vai Jūs esat nogurusi?”. Nas cartas e e-mails, Jūs, Jums, Jūsu vão com maiúscula. Passar para o “tu” é um passo que a pessoa mais velha ou de posição mais alta costuma propor: “Varam būt uz tu”.',
         examples: [
           ['Vai Jūs runājat angliski?', 'O senhor fala inglês?'],
           ['Kā Jums klājas?', 'Como vai a senhora?'],
@@ -1024,7 +1024,7 @@ export const GRAMMAR: GrammarTopic[] = [
       },
       {
         heading: 'Senhor e senhora',
-        text: '«Kungs» (senhor) e «kundze» (senhora) vêm DEPOIS do sobrenome, e o sobrenome vai para o genitivo: Ozols → Ozola kungs; Ozola (feminino) → Ozolas kundze. Os sobrenomes letões têm forma masculina e feminina (Bērziņš, Bērziņa). No começo de uma carta, o vocativo vem com adjetivo definido e ponto de exclamação: «Cienījamā Ozolas kundze!». Para grupos: «Godātie kolēģi!», «Dāmas un kungi!».',
+        text: '“Kungs” (senhor) e “kundze” (senhora) vêm DEPOIS do sobrenome, e o sobrenome vai para o genitivo: Ozols → Ozola kungs; Ozola (feminino) → Ozolas kundze. Os sobrenomes letões têm forma masculina e feminina (Bērziņš, Bērziņa). No começo de uma carta, o vocativo vem com adjetivo definido e ponto de exclamação: “Cienījamā Ozolas kundze!”. Para grupos: “Godātie kolēģi!”, “Dāmas un kungi!”.',
         table: {
           head: ['Nome', 'Tratamento', 'Abertura de carta'],
           rows: [
@@ -1037,7 +1037,7 @@ export const GRAMMAR: GrammarTopic[] = [
       },
       {
         heading: 'E-mails e repartições',
-        text: 'Um e-mail formal abre com «Labdien!» ou com o tratamento, e fecha com «Ar cieņu,» (com respeito) seguido do nome; «Ar sveicieniem,» é um pouco mais leve. No lugar de «gribēt» (querer), o registro formal prefere «vēlēties», de preferência no condicional: «Es vēlētos…». Nas repartições, espere o debitivo e o imperativo plural: «Jums jāaizpilda šī veidlapa», «Lūdzu, uzrādiet pasi!».',
+        text: 'Um e-mail formal abre com “Labdien!” ou com o tratamento, e fecha com “Ar cieņu,” (com respeito) seguido do nome; “Ar sveicieniem,” é um pouco mais leve. No lugar de “gribēt” (querer), o registro formal prefere “vēlēties”, de preferência no condicional: “Es vēlētos…”. Nas repartições, espere o debitivo e o imperativo plural: “Jums jāaizpilda šī veidlapa”, “Lūdzu, uzrādiet pasi!”.',
         examples: [
           ['Labdien! Vēlos jautāt, vai jūsu birojs strādā sestdienās.', 'Bom dia! Gostaria de perguntar se o seu escritório funciona aos sábados.'],
           ['Pielikumā sūtu nepieciešamos dokumentus.', 'Envio em anexo os documentos necessários.'],
@@ -1050,10 +1050,10 @@ export const GRAMMAR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pôr o adjetivo no plural com o Jūs de cortesia: a uma mulher, «Jūs esat laipna», e não «laipnas».',
-      'Pôr «kungs» antes do nome, como «senhor Ozols»: em letão é «Ozola kungs», com o sobrenome no genitivo.',
-      'Tratar um desconhecido por «tu» ou usar o imperativo singular: «Apsēdies!» a um cliente soa rude; diga «Lūdzu, apsēdieties!».',
-      'Fechar um e-mail formal com «Čau» ou «Atā»: o fecho é «Ar cieņu,».',
+      'Pôr o adjetivo no plural com o Jūs de cortesia: a uma mulher, “Jūs esat laipna”, e não “laipnas”.',
+      'Pôr “kungs” antes do nome, como “senhor Ozols”: em letão é “Ozola kungs”, com o sobrenome no genitivo.',
+      'Tratar um desconhecido por “tu” ou usar o imperativo singular: “Apsēdies!” a um cliente soa rude; diga “Lūdzu, apsēdieties!”.',
+      'Fechar um e-mail formal com “Čau” ou “Atā”: o fecho é “Ar cieņu,”.',
     ],
     quiz: [
       {
@@ -1078,13 +1078,13 @@ export const GRAMMAR: GrammarTopic[] = [
         question: 'Qual é o fecho de um e-mail formal?',
         options: ['Ar cieņu,', 'Atā!', 'Čau,'],
         answer: 'Ar cieņu,',
-        explanation: '«Ar cieņu» (com respeito) é o fecho padrão.',
+        explanation: '“Ar cieņu” (com respeito) é o fecho padrão.',
       },
       {
-        question: 'Como se diz «o senhor Ozols»?',
+        question: 'Como se diz “o senhor Ozols”?',
         options: ['Ozola kungs', 'Ozols kungs', 'kungs Ozols'],
         answer: 'Ozola kungs',
-        explanation: 'Sobrenome no genitivo, e «kungs» depois dele.',
+        explanation: 'Sobrenome no genitivo, e “kungs” depois dele.',
       },
     ],
   },
@@ -1094,18 +1094,18 @@ export const GRAMMAR: GrammarTopic[] = [
     level: 'B2.3',
     title: 'Expressões idiomáticas e a gíria de Riga',
     emoji: '🦆',
-    summary: 'O letão tem imagens bem suas: quem conta lorota «sopra patinhos» (pūš pīlītes), quem torce «segura os polegares» (tur īkšķus) e o que dá certo «vai como pela manteiga» (iet kā pa sviestu). Na fala de Riga, ouve-se ainda «čau», «forši», «baigi» e empréstimos do russo como «davai».',
+    summary: 'O letão tem imagens bem suas: quem conta lorota “sopra patinhos” (pūš pīlītes), quem torce “segura os polegares” (tur īkšķus) e o que dá certo “vai como pela manteiga” (iet kā pa sviestu). Na fala de Riga, ouve-se ainda “čau”, “forši”, “baigi” e empréstimos do russo como “davai”.',
     sections: [
       {
         heading: 'Expressões do dia a dia',
-        text: 'Muitas expressões têm par no português, mas com outra imagem. Nos idiomatismos, os casos continuam valendo: «turēt īkšķus PAR kādu» (torcer POR alguém) pede o acusativo.',
+        text: 'Muitas expressões têm par no português, mas com outra imagem. Nos idiomatismos, os casos continuam valendo: “turēt īkšķus PAR kādu” (torcer POR alguém) pede o acusativo.',
         table: {
           head: ['Letão', 'Literalmente', 'Sentido'],
           rows: [
             ['turēt īkšķus', 'segurar os polegares', 'torcer por alguém, cruzar os dedos'],
             ['pūst pīlītes', 'soprar patinhos', 'contar lorota, inventar'],
             ['iet kā pa sviestu', 'ir como pela manteiga', 'correr às mil maravilhas'],
-            ['būt uz tu', 'estar no «tu»', 'tratar-se por você (sem formalidade)'],
+            ['būt uz tu', 'estar no “tu”', 'tratar-se por você (sem formalidade)'],
             ['mest mieru', 'jogar a paz', 'desistir, largar de mão'],
             ['lāča pakalpojums', 'favor de urso', 'ajuda que atrapalha'],
             ['ne zivs, ne gaļa', 'nem peixe, nem carne', 'nem uma coisa nem outra'],
@@ -1146,41 +1146,41 @@ export const GRAMMAR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Traduzir as expressões do português palavra por palavra: «matar dois coelhos» em letão são «divi zaķi» (duas lebres) e com um tiro.',
-      'Usar a gíria no lugar errado: «čau» e «atā» com o chefe ou numa repartição soam desrespeitosos; lá é «Labdien» e «Uz redzēšanos».',
-      'Esquecer a concordância dentro da expressão: «Turēšu īkšķus par tevi» (acusativo depois de «par»), não «par tu».',
-      'Achar que «normāli» é só «normalmente»: na fala, como resposta a «Kā iet?», quer dizer «tudo certo, de boa».',
+      'Traduzir as expressões do português palavra por palavra: “matar dois coelhos” em letão são “divi zaķi” (duas lebres) e com um tiro.',
+      'Usar a gíria no lugar errado: “čau” e “atā” com o chefe ou numa repartição soam desrespeitosos; lá é “Labdien” e “Uz redzēšanos”.',
+      'Esquecer a concordância dentro da expressão: “Turēšu īkšķus par tevi” (acusativo depois de “par”), não “par tu”.',
+      'Achar que “normāli” é só “normalmente”: na fala, como resposta a “Kā iet?”, quer dizer “tudo certo, de boa”.',
     ],
     quiz: [
       {
         question: 'Vou torcer por você: ___ īkšķus par tevi!',
         options: ['Turēšu', 'Turēšos', 'Metīšu'],
         answer: 'Turēšu',
-        explanation: 'A expressão é «turēt īkšķus» (segurar os polegares), no futuro: turēšu.',
+        explanation: 'A expressão é “turēt īkšķus” (segurar os polegares), no futuro: turēšu.',
       },
       {
         question: 'Ele está contando lorota: Viņš pūš ___ .',
         options: ['pīlītes', 'zaķus', 'sviestu'],
         answer: 'pīlītes',
-        explanation: '«Pūst pīlītes» (soprar patinhos) = inventar, contar lorota.',
+        explanation: '“Pūst pīlītes” (soprar patinhos) = inventar, contar lorota.',
       },
       {
         question: 'Deu tudo certo: Viss gāja kā pa ___ .',
         options: ['sviestu', 'sviests', 'medu'],
         answer: 'sviestu',
-        explanation: '«Kā pa sviestu» (como pela manteiga); «pa» pede o acusativo.',
+        explanation: '“Kā pa sviestu” (como pela manteiga); “pa” pede o acusativo.',
       },
       {
         question: 'Podemos nos tratar sem formalidade? Vai varam būt uz ___ ?',
         options: ['tu', 'jūs', 'tevi'],
         answer: 'tu',
-        explanation: 'A expressão é fixa: «būt uz tu».',
+        explanation: 'A expressão é fixa: “būt uz tu”.',
       },
       {
-        question: 'Como se diz, na gíria, «muito bom!»?',
+        question: 'Como se diz, na gíria, “muito bom!”?',
         options: ['Baigi labi!', 'Ļoti labā!', 'Labi baigi!'],
         answer: 'Baigi labi!',
-        explanation: '«Baigi» é intensificador coloquial e vem antes da palavra que reforça.',
+        explanation: '“Baigi” é intensificador coloquial e vem antes da palavra que reforça.',
       },
     ],
   },
@@ -1207,7 +1207,7 @@ export const GRAMMAR: GrammarTopic[] = [
       },
       {
         heading: 'Para que serve',
-        text: 'Como no português, o diminutivo diz tamanho pequeno e, mais ainda, carinho. Aparece com crianças, com comida («maizīte», «vēl gabaliņu kūkas?»), com nomes (Jānis → Jānītis, Anna → Anniņa) e em peso nas dainas, as quadras populares: a «saulīte» e a «māmiņa» estão em toda parte. Adjetivo concorda: «mazā mājiņa».',
+        text: 'Como no português, o diminutivo diz tamanho pequeno e, mais ainda, carinho. Aparece com crianças, com comida (“maizīte”, “vēl gabaliņu kūkas?”), com nomes (Jānis → Jānītis, Anna → Anniņa) e em peso nas dainas, as quadras populares: a “saulīte” e a “māmiņa” estão em toda parte. Adjetivo concorda: “mazā mājiņa”.',
         examples: [
           ['Mīļā māmiņa, daudz laimes dzimšanas dienā!', 'Querida mãezinha, feliz aniversário!'],
           ['Vai gribi vēl vienu gabaliņu kūkas?', 'Quer mais um pedacinho de bolo?'],
@@ -1218,7 +1218,7 @@ export const GRAMMAR: GrammarTopic[] = [
       },
       {
         heading: '-ēns: o filhote (e uma pegadinha)',
-        text: 'O sufixo -ēns não quer dizer «pequeno», e sim «filho de»: kaķis → kaķēns (filhote de gato), lācis → lācēns (filhote de urso), zaķis → zaķēns (filhote de lebre). A pegadinha é «brālēns», que não é «irmãozinho», e sim «primo» (a prima é «māsīca»). Irmãozinho é «brālītis».',
+        text: 'O sufixo -ēns não quer dizer “pequeno”, e sim “filho de”: kaķis → kaķēns (filhote de gato), lācis → lācēns (filhote de urso), zaķis → zaķēns (filhote de lebre). A pegadinha é “brālēns”, que não é “irmãozinho”, e sim “primo” (a prima é “māsīca”). Irmãozinho é “brālītis”.',
         examples: [
           ['Kaķenei ir pieci kaķēni.', 'A gata tem cinco filhotes.'],
           ['Mans brālēns dzīvo Daugavpilī.', 'Meu primo mora em Daugavpils.'],
@@ -1227,26 +1227,26 @@ export const GRAMMAR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Esquecer a alternância: «rokiņa» está errado; é «rociņa». Da mesma forma, «koks» dá «kociņš».',
-      'Usar o sufixo do gênero errado: «mājītis» não existe; «māja» é feminina: «mājiņa».',
-      'Achar que «brālēns» é «irmãozinho»: é «primo». Irmãozinho é «brālītis».',
-      'Esquecer o «ņ» ao declinar: galdiņš, galdiņa, galdiņam (o «ņ» fica em todas as formas).',
+      'Esquecer a alternância: “rokiņa” está errado; é “rociņa”. Da mesma forma, “koks” dá “kociņš”.',
+      'Usar o sufixo do gênero errado: “mājītis” não existe; “māja” é feminina: “mājiņa”.',
+      'Achar que “brālēns” é “irmãozinho”: é “primo”. Irmãozinho é “brālītis”.',
+      'Esquecer o “ņ” ao declinar: galdiņš, galdiņa, galdiņam (o “ņ” fica em todas as formas).',
     ],
     quiz: [
       {
-        question: 'Qual é o diminutivo de «māja»?',
+        question: 'Qual é o diminutivo de “māja”?',
         options: ['mājiņa', 'mājītis', 'mājiņš'],
         answer: 'mājiņa',
         explanation: 'Feminino em -a faz -iņa.',
       },
       {
-        question: 'Qual é o diminutivo de «brālis»?',
+        question: 'Qual é o diminutivo de “brālis”?',
         options: ['brālītis', 'brāliņa', 'brālēns'],
         answer: 'brālītis',
-        explanation: 'Masculino em -is faz -ītis. «Brālēns» é «primo».',
+        explanation: 'Masculino em -is faz -ītis. “Brālēns” é “primo”.',
       },
       {
-        question: 'Qual é o diminutivo de «upe»?',
+        question: 'Qual é o diminutivo de “upe”?',
         options: ['upīte', 'upiņa', 'upītis'],
         answer: 'upīte',
         explanation: 'Feminino em -e faz -īte.',
@@ -1258,7 +1258,7 @@ export const GRAMMAR: GrammarTopic[] = [
         explanation: 'O -ēns indica o filhote: zaķēns, filhote de lebre.',
       },
       {
-        question: 'Qual é o diminutivo de «roka» (atenção à alternância)?',
+        question: 'Qual é o diminutivo de “roka” (atenção à alternância)?',
         options: ['rociņa', 'rokiņa', 'rokīte'],
         answer: 'rociņa',
         explanation: 'Antes de -iņa, o k vira c: roka → rociņa.',
@@ -1271,11 +1271,11 @@ export const GRAMMAR: GrammarTopic[] = [
     level: 'B2.4',
     title: 'Argumentar: tomēr, tāpēc, turklāt e companhia',
     emoji: '⚖️',
-    summary: 'Para dar opinião e argumentar em letão, você precisa de um punhado de conectores: tomēr (no entanto), tāpēc (por isso), turklāt (além disso), savukārt (por sua vez), tātad (portanto), par spīti (apesar de). Com eles e com «manuprāt» (na minha opinião), dá para montar um texto de opinião inteiro.',
+    summary: 'Para dar opinião e argumentar em letão, você precisa de um punhado de conectores: tomēr (no entanto), tāpēc (por isso), turklāt (além disso), savukārt (por sua vez), tātad (portanto), par spīti (apesar de). Com eles e com “manuprāt” (na minha opinião), dá para montar um texto de opinião inteiro.',
     sections: [
       {
         heading: 'Os conectores',
-        text: 'Os conectores ligam orações ou frases inteiras. Os que abrem uma subordinada (jo, lai gan) pedem vírgula antes; os que ligam duas principais (tomēr, tāpēc, turklāt, taču, bet) também levam vírgula antes quando estão no meio da frase. «Manuprāt», «piemēram» e «protams» são intercalados e ficam entre vírgulas. «Par spīti» pede o dativo: par spīti lietum (apesar da chuva).',
+        text: 'Os conectores ligam orações ou frases inteiras. Os que abrem uma subordinada (jo, lai gan) pedem vírgula antes; os que ligam duas principais (tomēr, tāpēc, turklāt, taču, bet) também levam vírgula antes quando estão no meio da frase. “Manuprāt”, “piemēram” e “protams” são intercalados e ficam entre vírgulas. “Par spīti” pede o dativo: par spīti lietum (apesar da chuva).',
         table: {
           head: ['Conector', 'Sentido'],
           rows: [
@@ -1305,7 +1305,7 @@ export const GRAMMAR: GrammarTopic[] = [
       },
       {
         heading: 'Montando um texto de opinião',
-        text: 'Um texto argumentativo em letão segue o mesmo roteiro das redações brasileiras: tese, argumentos, contra-argumento e conclusão. Algumas fórmulas prontas ajudam em cada etapa. Repare que o debitivo é muito usado para propor soluções: «ir jāattīsta» (é preciso desenvolver).',
+        text: 'Um texto argumentativo em letão segue o mesmo roteiro das redações brasileiras: tese, argumentos, contra-argumento e conclusão. Algumas fórmulas prontas ajudam em cada etapa. Repare que o debitivo é muito usado para propor soluções: “ir jāattīsta” (é preciso desenvolver).',
         table: {
           head: ['Etapa', 'Fórmula'],
           rows: [
@@ -1325,10 +1325,10 @@ export const GRAMMAR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Confundir «tāpēc» (por isso: consequência) com «jo» (porque: causa). «Ir auksts, tāpēc uzvelku jaku» × «Uzvelku jaku, jo ir auksts».',
-      'Esquecer o dativo depois de «par spīti»: é «par spīti lietum», não «par spīti lietus».',
-      'Esquecer as vírgulas de «manuprāt» e «piemēram»: são palavras intercaladas.',
-      'Encher o texto de «un»: o letão escrito prefere variar com turklāt, savukārt, taču.',
+      'Confundir “tāpēc” (por isso: consequência) com “jo” (porque: causa). “Ir auksts, tāpēc uzvelku jaku” × “Uzvelku jaku, jo ir auksts”.',
+      'Esquecer o dativo depois de “par spīti”: é “par spīti lietum”, não “par spīti lietus”.',
+      'Esquecer as vírgulas de “manuprāt” e “piemēram”: são palavras intercaladas.',
+      'Encher o texto de “un”: o letão escrito prefere variar com turklāt, savukārt, taču.',
     ],
     quiz: [
       {
@@ -1341,25 +1341,25 @@ export const GRAMMAR: GrammarTopic[] = [
         question: 'Além disso: Dzīvoklis ir lēts, ___ tas ir tuvu centram.',
         options: ['turklāt', 'tomēr', 'proti'],
         answer: 'turklāt',
-        explanation: '«Turklāt» acrescenta mais um argumento a favor.',
+        explanation: '“Turklāt” acrescenta mais um argumento a favor.',
       },
       {
         question: 'Na minha opinião: ___ , tas ir labs risinājums.',
         options: ['Manuprāt', 'Mans prāts', 'Manā prātā'],
         answer: 'Manuprāt',
-        explanation: '«Manuprāt» é uma palavra só e fica separada por vírgula.',
+        explanation: '“Manuprāt” é uma palavra só e fica separada por vírgula.',
       },
       {
         question: 'Apesar da chuva: Par spīti ___ mēs gājām pastaigāties.',
         options: ['lietum', 'lietu', 'lietus'],
         answer: 'lietum',
-        explanation: '«Par spīti» pede o dativo: lietum.',
+        explanation: '“Par spīti” pede o dativo: lietum.',
       },
       {
         question: 'Ele estava cansado, mas mesmo assim continuou trabalhando: Viņš bija noguris, ___ turpināja strādāt.',
         options: ['tomēr', 'tāpēc', 'jo'],
         answer: 'tomēr',
-        explanation: '«Tomēr» marca o contraste: apesar do cansaço, continuou.',
+        explanation: '“Tomēr” marca o contraste: apesar do cansaço, continuou.',
       },
     ],
   },
@@ -1368,11 +1368,11 @@ export const GRAMMAR: GrammarTopic[] = [
     level: 'B2.4',
     title: 'Pontuação: a vírgula letã e os números',
     emoji: '✒️',
-    summary: 'A pontuação do letão é mais rígida que a nossa: vírgula antes de TODA subordinada (até antes do «ka»), vírgulas em volta das locuções com -ot e -dams, vírgula antes do segundo «gan» e do segundo «ne». Nos números, o ordinal leva ponto (18. novembris) e o decimal leva vírgula (3,5).',
+    summary: 'A pontuação do letão é mais rígida que a nossa: vírgula antes de TODA subordinada (até antes do “ka”), vírgulas em volta das locuções com -ot e -dams, vírgula antes do segundo “gan” e do segundo “ne”. Nos números, o ordinal leva ponto (18. novembris) e o decimal leva vírgula (3,5).',
     sections: [
       {
         heading: 'Onde vai a vírgula',
-        text: 'A regra de ouro: cada oração subordinada é separada por vírgula, e quando ela está no meio da frase, por duas. O mesmo vale para as locuções com particípio adverbial (-ot, -dams). Já o «un» simples, ligando duas palavras, não leva vírgula, como no português.',
+        text: 'A regra de ouro: cada oração subordinada é separada por vírgula, e quando ela está no meio da frase, por duas. O mesmo vale para as locuções com particípio adverbial (-ot, -dams). Já o “un” simples, ligando duas palavras, não leva vírgula, como no português.',
         table: {
           head: ['Regra', 'Exemplo'],
           rows: [
@@ -1383,8 +1383,8 @@ export const GRAMMAR: GrammarTopic[] = [
             ['gan… gan… e ne… ne…: vírgula antes do segundo', 'Nāks gan Anna, gan Pēteris.'],
             ['Vocativo separado', 'Anna, nāc šurp!'],
             ['Palavras intercaladas', 'Protams, es tev palīdzēšu.'],
-            ['«nekā» ou «kā» com oração', 'Tas bija vieglāk, nekā es domāju.'],
-            ['«un» simples: sem vírgula', 'Es nopirku maizi un pienu.'],
+            ['“nekā” ou “kā” com oração', 'Tas bija vieglāk, nekā es domāju.'],
+            ['“un” simples: sem vírgula', 'Es nopirku maizi un pienu.'],
           ],
         },
         examples: [
@@ -1396,7 +1396,7 @@ export const GRAMMAR: GrammarTopic[] = [
       },
       {
         heading: 'Números e datas',
-        text: 'O número ordinal se escreve com ponto: 1. (pirmais), 18. (astoņpadsmitais). Por isso as datas têm pontos: «2026. gada 28. septembrī» (em 28 de setembro de 2026: ano no genitivo, dia no locativo). A fração decimal usa vírgula, como no Brasil (3,5), e os milhares se separam por espaço (10 000).',
+        text: 'O número ordinal se escreve com ponto: 1. (pirmais), 18. (astoņpadsmitais). Por isso as datas têm pontos: “2026. gada 28. septembrī” (em 28 de setembro de 2026: ano no genitivo, dia no locativo). A fração decimal usa vírgula, como no Brasil (3,5), e os milhares se separam por espaço (10 000).',
         examples: [
           ['Latvijas Republika tika proklamēta 1918. gada 18. novembrī.', 'A República da Letônia foi proclamada em 18 de novembro de 1918.'],
           ['Šodien ir 28. septembris.', 'Hoje é 28 de setembro.'],
@@ -1406,7 +1406,7 @@ export const GRAMMAR: GrammarTopic[] = [
       },
       {
         heading: 'Cartas, ordens e diálogos',
-        text: 'Na abertura de uma carta, o letão usa ponto de exclamação, e o texto segue com maiúscula: «Cienījamā kundze! Vēlos Jums pateikt…». O imperativo leva exclamação com mais frequência do que em português: «Nāc šurp!», «Lūdzu, uzgaidiet!». Nos diálogos, usa-se o travessão; para citações, os livros letões usam as aspas „assim”, baixa na abertura e alta no fechamento.',
+        text: 'Na abertura de uma carta, o letão usa ponto de exclamação, e o texto segue com maiúscula: “Cienījamā kundze! Vēlos Jums pateikt…”. O imperativo leva exclamação com mais frequência do que em português: “Nāc šurp!”, “Lūdzu, uzgaidiet!”. Nos diálogos, usa-se o travessão; para citações, os livros letões usam as aspas „assim”, baixa na abertura e alta no fechamento.',
         examples: [
           ['Cienījamā kundze! Vēlos Jums pateikties par palīdzību.', 'Prezada senhora, gostaria de lhe agradecer pela ajuda.'],
           ['— Kur tu esi? — viņa jautāja.', '— Onde você está? — ela perguntou.'],
@@ -1415,17 +1415,17 @@ export const GRAMMAR: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Omitir a vírgula antes de «ka» e «vai» porque o português não a usa: em letão ela é obrigatória.',
-      'Esquecer a segunda vírgula da subordinada no meio: «Māja, kurā mēs dzīvojam ir veca» está errado.',
-      'Escrever a data sem o ponto do ordinal: «18 novembris» está errado; é «18. novembris».',
-      'Não pôr vírgula depois de uma locução com -ot: «Ejot mājās es satiku draugu» está errado.',
+      'Omitir a vírgula antes de “ka” e “vai” porque o português não a usa: em letão ela é obrigatória.',
+      'Esquecer a segunda vírgula da subordinada no meio: “Māja, kurā mēs dzīvojam ir veca” está errado.',
+      'Escrever a data sem o ponto do ordinal: “18 novembris” está errado; é “18. novembris”.',
+      'Não pôr vírgula depois de uma locução com -ot: “Ejot mājās es satiku draugu” está errado.',
     ],
     quiz: [
       {
         question: 'Qual frase está certa?',
         options: ['Es nezinu, vai viņš nāks.', 'Es nezinu vai viņš nāks.', 'Es nezinu vai, viņš nāks.'],
         answer: 'Es nezinu, vai viņš nāks.',
-        explanation: 'A vírgula vem antes de «vai», que abre a subordinada.',
+        explanation: 'A vírgula vem antes de “vai”, que abre a subordinada.',
       },
       {
         question: 'Qual frase está certa?',
@@ -1434,7 +1434,7 @@ export const GRAMMAR: GrammarTopic[] = [
         explanation: 'A locução inteira com -ot (ejot uz skolu) fica separada por vírgula.',
       },
       {
-        question: 'Como se escreve «18 de novembro»?',
+        question: 'Como se escreve “18 de novembro”?',
         options: ['18. novembris', '18 novembris', 'novembris 18.'],
         answer: '18. novembris',
         explanation: 'O dia é ordinal e leva ponto.',
@@ -1443,7 +1443,7 @@ export const GRAMMAR: GrammarTopic[] = [
         question: 'Qual frase está certa?',
         options: ['Nāks gan Anna, gan Pēteris.', 'Nāks gan Anna gan Pēteris.', 'Nāks, gan Anna, gan Pēteris.'],
         answer: 'Nāks gan Anna, gan Pēteris.',
-        explanation: 'Em «gan… gan…», a vírgula vem antes do segundo «gan».',
+        explanation: 'Em “gan… gan…”, a vírgula vem antes do segundo “gan”.',
       },
       {
         question: 'Qual frase está certa?',

@@ -59,7 +59,7 @@ export const STORIES_GL: StorySeed[] = [
         emoji: '📱',
         choices: [
           { text: 'Si, teño un irmán e unha irmá.', translation: 'Sim, tenho um irmão e uma irmã.', next: 'irmans' },
-          { text: 'A miña casa é grande.', translation: 'Minha casa é grande.', wrong: 'Isso não responde se você tem irmãos. Use «teño» ou «non teño».' },
+          { text: 'A miña casa é grande.', translation: 'Minha casa é grande.', wrong: 'Isso não responde se você tem irmãos. Use “teño” ou “non teño”.' },
         ],
       },
       irmans: {
@@ -68,7 +68,7 @@ export const STORIES_GL: StorySeed[] = [
         emoji: '🏠',
         choices: [
           { text: 'A miña casa é pequena pero moi bonita.', translation: 'Minha casa é pequena mas muito bonita.', next: 'final_bo' },
-          { text: 'Teño vinte anos.', translation: 'Tenho vinte anos.', wrong: 'Isso não descreve a sua casa. Fale sobre ela: «a miña casa é…».' },
+          { text: 'Teño vinte anos.', translation: 'Tenho vinte anos.', wrong: 'Isso não descreve a sua casa. Fale sobre ela: “a miña casa é…”.' },
         ],
       },
       final_bo: {

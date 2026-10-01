@@ -179,7 +179,7 @@ export default function MinimalPairsScreen() {
             {game.answer && (
               <Card className="gap-3">
                 <Text className={`text-lg font-extrabold ${game.answer === cur.target ? 'text-conquista' : 'text-rose-600'}`}>
-                  {game.answer === cur.target ? 'Isso!' : `Era «${cur.pair[cur.target][0]}».`} Compare os dois:
+                  {game.answer === cur.target ? 'Isso!' : `Era “${cur.pair[cur.target][0]}”.`} Compare os dois:
                 </Text>
                 <PairRow pair={cur.pair} source={cur.pair.source} say={say} ipa={pack.ipa} />
                 <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">{contrastOf(cur.pair.contrast).tip}</Text>
@@ -204,7 +204,7 @@ export default function MinimalPairsScreen() {
       </View>
       <View className="mt-4 flex-row items-end gap-2">
         <Linu mood="falando" size={64} />
-        <SpeechBubble className="mb-5">{`Pares mínimos são palavras que só mudam por um som, como «${example.a[0]}» e «${example.b[0]}». Treinar o ouvido com eles ajuda a ouvir, e depois a falar, os sons que o português não tem.`}</SpeechBubble>
+        <SpeechBubble className="mb-5">{`Pares mínimos são palavras que só mudam por um som, como “${example.a[0]}” e “${example.b[0]}”. Treinar o ouvido com eles ajuda a ouvir, e depois a falar, os sons que o português não tem.`}</SpeechBubble>
       </View>
       <Button title={`🎯 Treinar (${ROUND})`} variant="success" onPress={start} disabled={!pairs.length} />
 

@@ -273,16 +273,16 @@ function Feedback({ q, answer, locale, onNext, last }: { q: ListenQuestion; answ
   const title = !r
     ? answer.ok
       ? 'Isso!'
-      : `Era «${w}».`
+      : `Era “${w}”.`
     : r.kind === 'certo'
       ? 'Isso! Escrita perfeita.'
       : r.kind === 'acentos'
-        ? `Certo, só faltou acento: «${w}».`
+        ? `Certo, só faltou acento: “${w}”.`
         : r.kind === 'homofono'
-          ? `«${r.other}» soa igual! Aqui era «${w}».`
+          ? `“${r.other}” soa igual! Aqui era “${w}”.`
           : r.kind === 'quase'
-            ? `Por uma letra! Era «${w}».`
-            : `Era «${w}».`;
+            ? `Por uma letra! Era “${w}”.`
+            : `Era “${w}”.`;
   const clip = q.item.clip;
   const who = clip ? speakerOf(clip) : '';
   const where = clip ? speakerPlace(locale.split('-')[0].toLowerCase(), who) : null;

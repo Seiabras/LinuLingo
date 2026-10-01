@@ -45,5 +45,5 @@ export const SERVIO: LanguagePack = {
   phrases: { hi: 'Здраво!', thanks: 'Хвала!', letsStart: ['Хајде да почнемо!', 'Vamos começar!'] },
   formalMarkers: 'ви (com o verbo no plural, para uma pessoa só), молим, извините',
   cognateNote:
-    'O sérvio é uma língua eslava meridional, prima distante do português: os dois vêm do indo-europeu. Por isso «три» lembra «três». Dos séculos de convivência com o turco vieram palavras como «кафа». Cada palavra mostra a raiz e os parentes em outras línguas.',
+    'O sérvio é uma língua eslava meridional, prima distante do português: os dois vêm do indo-europeu. Por isso “три” lembra “três”. Dos séculos de convivência com o turco vieram palavras como “кафа”. Cada palavra mostra a raiz e os parentes em outras línguas.',
 };

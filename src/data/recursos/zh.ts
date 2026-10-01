@@ -198,7 +198,7 @@ export const RECURSOS_ZH: LanguageResources = {
       by: 'Lu Xun',
       year: '1921',
       level: 'C1',
-      why: 'Novela satírica do pai da literatura chinesa moderna, sobre um homem que transforma toda derrota em «vitória moral». Chinês do começo do século XX, ainda com marcas do chinês clássico.',
+      why: 'Novela satírica do pai da literatura chinesa moderna, sobre um homem que transforma toda derrota em “vitória moral”. Chinês do começo do século XX, ainda com marcas do chinês clássico.',
     },
     {
       kind: 'livro',
@@ -207,7 +207,7 @@ export const RECURSOS_ZH: LanguageResources = {
       by: 'Yu Hua',
       year: '1993',
       level: 'B2',
-      why: 'Um velho camponês conta como perdeu tudo entre a guerra civil e a Revolução Cultural. Frases curtas e diretas: um dos primeiros romances que dá para ler no original. Virou o filme «Tempo de Viver», de Zhang Yimou.',
+      why: 'Um velho camponês conta como perdeu tudo entre a guerra civil e a Revolução Cultural. Frases curtas e diretas: um dos primeiros romances que dá para ler no original. Virou o filme “Tempo de Viver”, de Zhang Yimou.',
     },
     {
       kind: 'livro',
@@ -241,7 +241,7 @@ export const RECURSOS_ZH: LanguageResources = {
       title: 'Mandarin Companion (leituras graduadas)',
       by: 'Mandarin Companion',
       level: 'A2',
-      why: 'Clássicos como «O Jardim Secreto» recontados em cenários chineses, com vocabulário controlado por nível e glossário. Ideal para a primeira leitura fora do livro didático.',
+      why: 'Clássicos como “O Jardim Secreto” recontados em cenários chineses, com vocabulário controlado por nível e glossário. Ideal para a primeira leitura fora do livro didático.',
     },
     {
       kind: 'musica',
@@ -260,7 +260,7 @@ export const RECURSOS_ZH: LanguageResources = {
       by: 'Jay Chou (周杰倫)',
       year: '2003',
       level: 'B1',
-      why: 'Um dos maiores sucessos do rei do mandopop. Ele é famoso por «engolir» as palavras, então acompanhe com a letra: é um ótimo treino de escuta.',
+      why: 'Um dos maiores sucessos do rei do mandopop. Ele é famoso por “engolir” as palavras, então acompanhe com a letra: é um ótimo treino de escuta.',
       accent: 'mandarim de Taiwan',
     },
     {
@@ -279,7 +279,7 @@ export const RECURSOS_ZH: LanguageResources = {
       by: 'Mayday (五月天)',
       year: '2004',
       level: 'B1',
-      why: 'Rock otimista da banda mais popular de Taiwan, com refrão fácil de cantar junto; «倔強» é «teimoso», no bom sentido.',
+      why: 'Rock otimista da banda mais popular de Taiwan, com refrão fácil de cantar junto; “倔強” é “teimoso”, no bom sentido.',
       accent: 'mandarim de Taiwan',
     },
     {
@@ -341,11 +341,11 @@ export const RECURSOS_ZH: LanguageResources = {
     },
   ],
   tips: [
-    'Aprenda cada palavra já com o tom: mā (妈, mãe), má (麻, cânhamo), mǎ (马, cavalo) e mà (骂, xingar) são palavras diferentes. Treine os tons em pares de sílabas, não isolados, e lembre a regra mais comum: dois terceiros tons seguidos viram segundo + terceiro (nǐ hǎo soa «ní hǎo»).',
-    'O pinyin não se lê como português. «x» lembra o «x» de «xícara», mas com a língua espalhada atrás dos dentes; «q» é um «tch» com sopro, e «j», um «dj» sem sopro; «zh», «ch» e «sh» têm a ponta da língua curvada para trás; «c» é «ts» com sopro; e «b», «d», «g» são surdos, quase o nosso «p», «t», «k», enquanto «p», «t», «k» levam um sopro forte.',
+    'Aprenda cada palavra já com o tom: mā (妈, mãe), má (麻, cânhamo), mǎ (马, cavalo) e mà (骂, xingar) são palavras diferentes. Treine os tons em pares de sílabas, não isolados, e lembre a regra mais comum: dois terceiros tons seguidos viram segundo + terceiro (nǐ hǎo soa “ní hǎo”).',
+    'O pinyin não se lê como português. “x” lembra o “x” de “xícara”, mas com a língua espalhada atrás dos dentes; “q” é um “tch” com sopro, e “j”, um “dj” sem sopro; “zh”, “ch” e “sh” têm a ponta da língua curvada para trás; “c” é “ts” com sopro; e “b”, “d”, “g” são surdos, quase o nosso “p”, “t”, “k”, enquanto “p”, “t”, “k” levam um sopro forte.',
     'Estude os caracteres pelos componentes: 妈 (mā, mãe) = 女 (mulher, que dá o sentido) + 马 (mǎ, que dá o som). Umas poucas centenas de componentes aparecem em quase tudo. Revise com repetição espaçada e escreva à mão no começo para fixar a forma e a ordem dos traços.',
     'A China continental e Singapura usam caracteres simplificados; Taiwan, Hong Kong e Macau, os tradicionais. Escolha um conforme o objetivo (simplificado para o HSK, tradicional para Taiwan e o TOCFL): depois de ler bem um, o outro vem rápido.',
-    'Não há conjugação, gênero nem plural: o tempo vem do contexto e de partículas como 了, 过 e 在. Em compensação, número e demonstrativo pedem um classificador (一本书, «um livro»; 两个人, «duas pessoas»). Aprenda cada substantivo com o seu classificador e, na dúvida, use 个.',
+    'Não há conjugação, gênero nem plural: o tempo vem do contexto e de partículas como 了, 过 e 在. Em compensação, número e demonstrativo pedem um classificador (一本书, “um livro”; 两个人, “duas pessoas”). Aprenda cada substantivo com o seu classificador e, na dúvida, use 个.',
     'Quase todo vídeo chinês vem com legenda em chinês embutida, por causa dos muitos homófonos e dos sotaques regionais. Aproveite: assista com essa legenda e pause para anotar palavras novas, treinando leitura e escuta ao mesmo tempo.',
   ],
 };

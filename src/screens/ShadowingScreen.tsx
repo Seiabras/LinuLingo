@@ -116,7 +116,7 @@ export default function ShadowingScreen() {
         language: pack.code,
         source: 'shadowing',
         key: phrase,
-        prompt: `🎙️ Repita com o ritmo e a melodia do modelo: «${phrase}»`,
+        prompt: `🎙️ Repita com o ritmo e a melodia do modelo: “${phrase}”`,
         expected: phrase,
         given: off || null,
         note: into.tip,

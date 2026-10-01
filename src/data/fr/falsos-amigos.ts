@@ -117,7 +117,7 @@ export const FALSE_FRIENDS_FR: FalseFriend[] = [
   },
   {
     word: 'la sorte',
-    means: 'tipo, espécie («une sorte de»)',
+    means: 'tipo, espécie (“une sorte de”)',
     looksLike: 'sorte',
     forThat: 'la chance',
     emoji: '🧩',
@@ -157,7 +157,7 @@ export const FALSE_FRIENDS_FR: FalseFriend[] = [
   },
   {
     word: 'embrasser',
-    means: "beijar (nas cartas, «je t'embrasse» é «um beijo»)",
+    means: "beijar (nas cartas, “je t'embrasse” é “um beijo”)",
     looksLike: 'abraçar',
     forThat: 'serrer dans ses bras',
     emoji: '😘',
@@ -169,11 +169,11 @@ export const FALSE_FRIENDS_FR: FalseFriend[] = [
     looksLike: 'puxar',
     forThat: 'tirer',
     emoji: '🚪',
-    example: ['Sur la porte, il est écrit « Poussez ».', 'Na porta está escrito «Empurre».'],
+    example: ['Sur la porte, il est écrit “ Poussez ”.', 'Na porta está escrito “Empurre”.'],
   },
   {
     word: 'tirer',
-    means: 'puxar; atirar; sortear («tirer au sort»)',
+    means: 'puxar; atirar; sortear (“tirer au sort”)',
     looksLike: 'tirar (remover)',
     forThat: 'enlever, retirer',
     emoji: '🪢',
@@ -249,7 +249,7 @@ export const FALSE_FRIENDS_FR: FalseFriend[] = [
     looksLike: 'sobrenome',
     forThat: 'le nom de famille',
     emoji: '🏷️',
-    example: ["Il s'appelle Thierry, mais son surnom, c'est « Titi ».", 'Ele se chama Thierry, mas o apelido dele é «Titi».'],
+    example: ["Il s'appelle Thierry, mais son surnom, c'est “ Titi ”.", 'Ele se chama Thierry, mas o apelido dele é “Titi”.'],
   },
   {
     word: 'les parents',
@@ -261,7 +261,7 @@ export const FALSE_FRIENDS_FR: FalseFriend[] = [
   },
   {
     word: 'la course',
-    means: 'corrida; «les courses», as compras do dia a dia',
+    means: 'corrida; “les courses”, as compras do dia a dia',
     looksLike: 'curso',
     forThat: 'le cours ; la formation',
     emoji: '🏃',
@@ -470,7 +470,7 @@ export const FALSE_FRIENDS_FR: FalseFriend[] = [
   },
   {
     word: 'la fonte',
-    means: 'ferro fundido; derretimento («la fonte des neiges»)',
+    means: 'ferro fundido; derretimento (“la fonte des neiges”)',
     looksLike: 'fonte (de água; de letra)',
     forThat: 'la source, la fontaine ; la police',
     emoji: '🍳',
@@ -486,7 +486,7 @@ export const FALSE_FRIENDS_FR: FalseFriend[] = [
   },
   {
     word: 'le carton',
-    means: 'papelão; caixa de papelão; cartão (no futebol: «carton rouge»)',
+    means: 'papelão; caixa de papelão; cartão (no futebol: “carton rouge”)',
     looksLike: 'cartão (de crédito, de visita)',
     forThat: 'la carte',
     emoji: '📦',
@@ -619,7 +619,7 @@ export const FALSE_FRIENDS_FR: FalseFriend[] = [
     looksLike: 'divisa (fronteira)',
     forThat: 'la frontière',
     emoji: '💱',
-    example: ['La devise de la République est « Liberté, Égalité, Fraternité ».', 'O lema da República é «Liberdade, Igualdade, Fraternidade».'],
+    example: ['La devise de la République est “ Liberté, Égalité, Fraternité ”.', 'O lema da República é “Liberdade, Igualdade, Fraternidade”.'],
   },
   {
     word: 'le chiffre',

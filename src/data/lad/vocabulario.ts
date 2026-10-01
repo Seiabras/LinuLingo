@@ -13,7 +13,7 @@ export const ROWS: VocabRow[] = [
   ['buenas noches', 'boa noite', 'interjeição', 'Expressões', '🌙', 'Buenas noches i adio!'],
   ['adio', 'tchau, adeus', 'interjeição', 'Expressões', '👋', 'Adio, asta mas tadre!'],
   ['grasias', 'obrigado', 'interjeição', 'Expressões', '🙏', 'Grasias por todo!'],
-  ['mersi', 'obrigado (do francês «merci»)', 'interjeição', 'Expressões', '🙏', 'Mersi muncho!'],
+  ['mersi', 'obrigado (do francês “merci”)', 'interjeição', 'Expressões', '🙏', 'Mersi muncho!'],
   ['de nada', 'de nada', 'interjeição', 'Expressões', '🙏', 'Grasias! De nada.'],
   ['por favor', 'por favor', 'interjeição', 'Expressões', '🙏', 'Un kafe, por favor.'],
   ['perdon', 'desculpe, perdão', 'interjeição', 'Expressões', '🙏', 'Perdon, no entiendo.'],
@@ -95,7 +95,7 @@ export const ROWS: VocabRow[] = [
   ['djueves', 'quinta-feira', 'substantivo', 'Tempo', '📅', 'Oy es djueves.', 'm'],
   ['viernes', 'sexta-feira', 'substantivo', 'Tempo', '📅', 'Oy es viernes.', 'm'],
   ['shabat', 'sábado (o dia de descanso)', 'substantivo', 'Tempo', '🕯️', 'Shabat shalom!', 'm'],
-  ['alhad', 'domingo (do árabe, «o primeiro» dia)', 'substantivo', 'Tempo', '📅', 'Oy es alhad.', 'm'],
+  ['alhad', 'domingo (do árabe, “o primeiro” dia)', 'substantivo', 'Tempo', '📅', 'Oy es alhad.', 'm'],
   // ── Cores ──
   ['kolorado', 'vermelho', 'adjetivo', 'Cores', '🔴', 'El vino es kolorado.'],
   ['azul', 'azul', 'adjetivo', 'Cores', '🔵', 'La mar es azul.'],

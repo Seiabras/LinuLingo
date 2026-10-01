@@ -37,5 +37,5 @@ export const TURCO: LanguagePack = {
   phrases: { hi: 'Merhaba!', thanks: 'Teşekkürler!', letsStart: ['Haydi başlayalım!', 'Vamos começar!'] },
   formalMarkers: 'siz (o tratamento formal, com o verbo no plural), lütfen, teşekkür ederim',
   cognateNote:
-    'O turco não é parente do português: é da família túrquica, com o azeri, o cazaque e o uzbeque. Mas pegou muitas palavras do árabe e do persa e, mais tarde, do francês (otobüs, istasyon), e deu ao mundo palavras como «iogurte» (yoğurt). Cada palavra mostra de onde veio.',
+    'O turco não é parente do português: é da família túrquica, com o azeri, o cazaque e o uzbeque. Mas pegou muitas palavras do árabe e do persa e, mais tarde, do francês (otobüs, istasyon), e deu ao mundo palavras como “iogurte” (yoğurt). Cada palavra mostra de onde veio.',
 };

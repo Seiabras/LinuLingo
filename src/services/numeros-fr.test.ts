@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { frenchNumber, frenchOrdinal, spellFrenchNumbers } from '@/services/numeros/fr';
 
-test('números em francês: hífens, «et», quatre-vingts, cents e mille', () => {
+test('números em francês: hífens, “et”, quatre-vingts, cents e mille', () => {
   const cases: [number, string][] = [
     [0, 'zéro'],
     [1, 'un'],
@@ -39,7 +39,7 @@ test('números em francês: hífens, «et», quatre-vingts, cents e mille', () =
   assert.equal(frenchOrdinal(80), 'quatre-vingtième');
 });
 
-test('números em francês: o «un» concorda com o substantivo que vem depois', () => {
+test('números em francês: o “un” concorda com o substantivo que vem depois', () => {
   assert.equal(spellFrenchNumbers("J'ai 21 ans."), "J'ai vingt et un ans.");
   assert.equal(spellFrenchNumbers('Le livre a 21 pages.'), 'Le livre a vingt et une pages.');
   assert.equal(spellFrenchNumbers('Il reste 1 place.'), 'Il reste une place.');

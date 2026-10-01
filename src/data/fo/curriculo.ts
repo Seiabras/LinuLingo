@@ -13,11 +13,11 @@ export const UNITS_FO: UnitSeed[] = [
       title: 'Uma escrita antiga para uma fala nova',
       emoji: '🗣️',
       history:
-        'O feroês é uma língua germânica do norte, parente próxima do islandês e dos dialetos do oeste da Noruega: descende do nórdico antigo levado às ilhas por colonos noruegueses na Era Viking. Durante séculos, o dinamarquês foi a língua da igreja, da escola e da administração, e o feroês sobreviveu sobretudo na boca do povo, nas baladas longas (kvæði) cantadas na dança de roda. Em 1846, o pastor V. U. Hammershaimb criou a ortografia que se usa até hoje: uma escrita etimológica, que mostra de onde as palavras vêm (e se parece muito com o islandês), mas não como se pronunciam hoje. Por isso o «ð» quase nunca soa e o «á» vira «óa». Hoje o feroês é a língua oficial das 18 ilhas, falada por algumas dezenas de milhares de pessoas.',
+        'O feroês é uma língua germânica do norte, parente próxima do islandês e dos dialetos do oeste da Noruega: descende do nórdico antigo levado às ilhas por colonos noruegueses na Era Viking. Durante séculos, o dinamarquês foi a língua da igreja, da escola e da administração, e o feroês sobreviveu sobretudo na boca do povo, nas baladas longas (kvæði) cantadas na dança de roda. Em 1846, o pastor V. U. Hammershaimb criou a ortografia que se usa até hoje: uma escrita etimológica, que mostra de onde as palavras vêm (e se parece muito com o islandês), mas não como se pronunciam hoje. Por isso o “ð” quase nunca soa e o “á” vira “óa”. Hoje o feroês é a língua oficial das 18 ilhas, falada por algumas dezenas de milhares de pessoas.',
       culture_tip:
-        'O cumprimento de todas as horas é «hey» (dito «hei»); «góðan dag» é o bom-dia mais educado, e «góðan morgun» vale só para o começo da manhã. Para agradecer, «takk» ou «takk fyri»; para se despedir, «farvæl» ou o descontraído «vit síggjast» (a gente se vê). Nas Faroé, quase todo mundo se trata por «tú» e pelo primeiro nome, até no banco ou no médico. E, como nos outros países nórdicos, quem reencontra alguém que o recebeu costuma dizer «takk fyri seinast»: obrigado pela última vez.',
+        'O cumprimento de todas as horas é “hey” (dito “hei”); “góðan dag” é o bom-dia mais educado, e “góðan morgun” vale só para o começo da manhã. Para agradecer, “takk” ou “takk fyri”; para se despedir, “farvæl” ou o descontraído “vit síggjast” (a gente se vê). Nas Faroé, quase todo mundo se trata por “tú” e pelo primeiro nome, até no banco ou no médico. E, como nos outros países nórdicos, quem reencontra alguém que o recebeu costuma dizer “takk fyri seinast”: obrigado pela última vez.',
       grammar_why:
-        'Os pronomes são eg (eu; soa só «ê»), tú (você), hann (ele), hon (ela) e tað (para coisas neutras); no plural, vit (nós), tit (vocês) e três formas de «eles»: teir (só homens), tær (só mulheres) e tey (grupo misto). O verbo «vera» serve para «ser» e para «estar», como no nosso dia a dia: eg eri, tú ert, hann/hon/tað er, vit/tit/tey eru. Os números de 1 a 3 concordam com o gênero, parecido com o nosso «um/uma, dois/duas», só que com três formas: ein, ein, eitt (1); tveir, tvær, tvey (2); tríggir, tríggjar, trý (3). Do 4 em diante (fýra, fimm, seks…) a forma não muda. A idade se diz com «vera» e «ára gamal» (homem) ou «ára gomul» (mulher): «Eg eri tjúgu ára gamal».',
+        'Os pronomes são eg (eu; soa só “ê”), tú (você), hann (ele), hon (ela) e tað (para coisas neutras); no plural, vit (nós), tit (vocês) e três formas de “eles”: teir (só homens), tær (só mulheres) e tey (grupo misto). O verbo “vera” serve para “ser” e para “estar”, como no nosso dia a dia: eg eri, tú ert, hann/hon/tað er, vit/tit/tey eru. Os números de 1 a 3 concordam com o gênero, parecido com o nosso “um/uma, dois/duas”, só que com três formas: ein, ein, eitt (1); tveir, tvær, tvey (2); tríggir, tríggjar, trý (3). Do 4 em diante (fýra, fimm, seks…) a forma não muda. A idade se diz com “vera” e “ára gamal” (homem) ou “ára gomul” (mulher): “Eg eri tjúgu ára gamal”.',
       grammar_examples: [
         ['Eg eri úr Brasil.', 'Eu sou do Brasil.'],
         ['Hon er í Havn í dag.', 'Ela está em Tórshavn hoje.'],
@@ -26,37 +26,37 @@ export const UNITS_FO: UnitSeed[] = [
         ['Eg eri tjúgu ára gamal.', 'Eu tenho vinte anos.'],
       ],
       character_guide: [
-        ['á', 'longa: «óa», um «ó» que escorrega para «a»; curta: «ó» aberto', 'á, bátur («BÓA-tur»), fáa'],
-        ['í e ý', 'soam igual: longas, «ui», quase «u» + «i»; curtas, um «u» frouxo', 'í, lítil («LUI-til»), býur'],
-        ['i e y', 'soam igual: um «i» curto', 'vit, tykkum, systir'],
-        ['ó', 'longa: «ôu» de «vou»; curta: o «ö» (boca de «ó» dizendo «ê»)', 'bók («bôuk»), góður, fótbóltur'],
-        ['ú', 'longa: um «u» de lábios em bico que escorrega para «i», quase «iu»; curta: o «ü» francês', 'tú, hús, úti'],
-        ['u', '«u» frouxo, quase «ô»', 'hundur, sonur, sumar'],
-        ['o', '«ó» aberto; longa, «ô»', 'og («ó»), kona, sonur'],
-        ['e', '«ê»; curta, «é»', 'eg («ê»), eta, seks'],
-        ['æ', 'longa: «éa»; curta: «a»', 'læra («LÉA-ra»), vælkomin'],
-        ['ø', 'faça a boca de «ô» e diga «ê»: o «eu» do francês', 'kjøt, Føroyar, døgurði'],
-        ['ei', '«ai» de «pai»', 'nei, ein, heima'],
-        ['ey', '«éi» de «papéis»', 'hey, breyð, seyður'],
-        ['oy', '«ói» de «boi»', 'oyggj, Føroyar, hoyra'],
-        ['ð (a letra muda)', 'quase nunca soa: entre vogais vira um «v», um «i» ou um «u» de ligação, só para as vogais não se emendarem; nunca é o «th» do islandês', 'við («vi»), góður («GÔU-ur»), maður («MÉA-vur»)'],
-        ['g no meio e no fim', 'depois de vogal, costuma sumir como o ð', 'eg («ê»), og («ó»), dagur («DÉA-vur»)'],
-        ['a escrita etimológica', 'a grafia mostra a origem da palavra, não a fala de hoje: palavras que se escrevem diferente podem soar quase igual, e a mesma letra muda de som conforme a vizinhança', 'maður e dagur rimam («MÉA-vur», «DÉA-vur»), embora um tenha ð e o outro g'],
-        ['hv', 'soa «kv»', 'hvat («kva»), hvar, hvussu'],
-        ['hj', 'soa «tch»', 'hjá («tchóa»), hjálpa'],
-        ['k antes de e, i, y, ey', 'soa «tch»', 'kirkja («TCHIR-tcha»), ikki («ÍTCHI»), keypa'],
-        ['sk antes de e, i, y, ey; sj', 'soa «ch» de «chá»', 'skip («chíp»), sjey («chéi»), skjúrta'],
-        ['g antes de e, i, y, ey', 'soa «dj»', 'gera («DJÊ-ra»), geva, genta'],
-        ['ggj', 'soa «dj», e a vogal de antes muda', 'oyggj («ódj»), nýggjur («NUD-jur»), níggju'],
-        ['ógv e úgv', 'viram «égv» e «igv»: o «gv» endurece e muda a vogal', 'nógv («négv»), búgva («BIG-va»), sjógvur'],
-        ['ll', 'soa «dl»', 'fjall («fiadl»), ella, gull'],
-        ['avn', 'soa «aun»', 'Havn («haun»), navn, Tórshavn'],
-        ['rs', 'um «ch» chiado', 'Tórshavn («TÔUCH-haun»), fyrst'],
-        ['p, t, k', 'com um sopro forte; dobradas (pp, tt, kk), o sopro vem ANTES da consoante', 'takk («tahk»), eitt, okkum'],
+        ['á', 'longa: “óa”, um “ó” que escorrega para “a”; curta: “ó” aberto', 'á, bátur (“BÓA-tur”), fáa'],
+        ['í e ý', 'soam igual: longas, “ui”, quase “u” + “i”; curtas, um “u” frouxo', 'í, lítil (“LUI-til”), býur'],
+        ['i e y', 'soam igual: um “i” curto', 'vit, tykkum, systir'],
+        ['ó', 'longa: “ôu” de “vou”; curta: o “ö” (boca de “ó” dizendo “ê”)', 'bók (“bôuk”), góður, fótbóltur'],
+        ['ú', 'longa: um “u” de lábios em bico que escorrega para “i”, quase “iu”; curta: o “ü” francês', 'tú, hús, úti'],
+        ['u', '“u” frouxo, quase “ô”', 'hundur, sonur, sumar'],
+        ['o', '“ó” aberto; longa, “ô”', 'og (“ó”), kona, sonur'],
+        ['e', '“ê”; curta, “é”', 'eg (“ê”), eta, seks'],
+        ['æ', 'longa: “éa”; curta: “a”', 'læra (“LÉA-ra”), vælkomin'],
+        ['ø', 'faça a boca de “ô” e diga “ê”: o “eu” do francês', 'kjøt, Føroyar, døgurði'],
+        ['ei', '“ai” de “pai”', 'nei, ein, heima'],
+        ['ey', '“éi” de “papéis”', 'hey, breyð, seyður'],
+        ['oy', '“ói” de “boi”', 'oyggj, Føroyar, hoyra'],
+        ['ð (a letra muda)', 'quase nunca soa: entre vogais vira um “v”, um “i” ou um “u” de ligação, só para as vogais não se emendarem; nunca é o “th” do islandês', 'við (“vi”), góður (“GÔU-ur”), maður (“MÉA-vur”)'],
+        ['g no meio e no fim', 'depois de vogal, costuma sumir como o ð', 'eg (“ê”), og (“ó”), dagur (“DÉA-vur”)'],
+        ['a escrita etimológica', 'a grafia mostra a origem da palavra, não a fala de hoje: palavras que se escrevem diferente podem soar quase igual, e a mesma letra muda de som conforme a vizinhança', 'maður e dagur rimam (“MÉA-vur”, “DÉA-vur”), embora um tenha ð e o outro g'],
+        ['hv', 'soa “kv”', 'hvat (“kva”), hvar, hvussu'],
+        ['hj', 'soa “tch”', 'hjá (“tchóa”), hjálpa'],
+        ['k antes de e, i, y, ey', 'soa “tch”', 'kirkja (“TCHIR-tcha”), ikki (“ÍTCHI”), keypa'],
+        ['sk antes de e, i, y, ey; sj', 'soa “ch” de “chá”', 'skip (“chíp”), sjey (“chéi”), skjúrta'],
+        ['g antes de e, i, y, ey', 'soa “dj”', 'gera (“DJÊ-ra”), geva, genta'],
+        ['ggj', 'soa “dj”, e a vogal de antes muda', 'oyggj (“ódj”), nýggjur (“NUD-jur”), níggju'],
+        ['ógv e úgv', 'viram “égv” e “igv”: o “gv” endurece e muda a vogal', 'nógv (“négv”), búgva (“BIG-va”), sjógvur'],
+        ['ll', 'soa “dl”', 'fjall (“fiadl”), ella, gull'],
+        ['avn', 'soa “aun”', 'Havn (“haun”), navn, Tórshavn'],
+        ['rs', 'um “ch” chiado', 'Tórshavn (“TÔUCH-haun”), fyrst'],
+        ['p, t, k', 'com um sopro forte; dobradas (pp, tt, kk), o sopro vem ANTES da consoante', 'takk (“tahk”), eitt, okkum'],
         ['b, d, g no começo', 'sem voz: parecem p, t, k, mas sem o sopro', 'bók, dagur, góður'],
-        ['r', 'um «r» de ponta de língua, sem vibrar, parecido com o «r» do interior paulista', 'ferð, bróðir, Føroyar'],
-        ['j', '«i» antes de vogal, como em «iate»', 'ja, jól, familja'],
-        ['s', 'sempre «s» de «sapo», nunca «z»', 'hús, lesa, seks'],
+        ['r', 'um “r” de ponta de língua, sem vibrar, parecido com o “r” do interior paulista', 'ferð, bróðir, Føroyar'],
+        ['j', '“i” antes de vogal, como em “iate”', 'ja, jól, familja'],
+        ['s', 'sempre “s” de “sapo”, nunca “z”', 'hús, lesa, seks'],
         ['tônica', 'quase sempre na primeira sílaba', 'FØ-roy-ar, TÓRS-havn, KLAKS-vík'],
       ],
     },
@@ -75,9 +75,9 @@ export const UNITS_FO: UnitSeed[] = [
           bot: 'Hey! Hvussu gongur?',
           botTranslation: 'Oi! Como vai?',
           expected: ['Tað gongur væl, takk! Og tær?', 'gongur væl', 'takk', 'og tær'],
-          hint: 'Responda que vai bem e devolva a pergunta: «Tað gongur væl, takk! Og tær?». No «takk», o kk tem um sopro antes: soa quase «tahk». O «og» soa só «ó», e o ð de «tað» não soa: «tea».',
+          hint: 'Responda que vai bem e devolva a pergunta: “Tað gongur væl, takk! Og tær?”. No “takk”, o kk tem um sopro antes: soa quase “tahk”. O “og” soa só “ó”, e o ð de “tað” não soa: “tea”.',
         },
-        communityPrompt: 'Escreva dois cumprimentos em feroês: um de manhã, para uma vizinha («Góðan morgun…»), e um à noite, para um amigo («Gott kvøld…»). Termine um deles com «Farvæl!» e o outro com «Vit síggjast!».',
+        communityPrompt: 'Escreva dois cumprimentos em feroês: um de manhã, para uma vizinha (“Góðan morgun…”), e um à noite, para um amigo (“Gott kvøld…”). Termine um deles com “Farvæl!” e o outro com “Vit síggjast!”.',
       },
       {
         id: 'fo-u1-l2',
@@ -93,9 +93,9 @@ export const UNITS_FO: UnitSeed[] = [
           bot: 'Hey! Eg eiti Jógvan, og eg eri úr Gjógv. Og tú?',
           botTranslation: 'Oi! Eu me chamo Jógvan e sou de Gjógv. E você?',
           expected: ['Hey, Jógvan! Eg eiti Ana, og eg eri úr Brasil.', 'eg eiti', 'eg eri úr', 'Brasil'],
-          hint: 'Diga o nome com «Eg eiti…» e a origem com «Eg eri úr…». O «eg» soa só «ê», e o «ei» de «eiti» é o «ai» de «pai»: «ê AI-ti». Repare no nome dele: «Jógvan» soa «IÉG-van», como o «ógv» de «Gjógv» («djégv»).',
+          hint: 'Diga o nome com “Eg eiti…” e a origem com “Eg eri úr…”. O “eg” soa só “ê”, e o “ei” de “eiti” é o “ai” de “pai”: “ê AI-ti”. Repare no nome dele: “Jógvan” soa “IÉG-van”, como o “ógv” de “Gjógv” (“djégv”).',
         },
-        communityPrompt: 'Apresente três pessoas em feroês, uma frase para cada, com o verbo «vera»: você («Eg eri…»), uma amiga («Hon er…») e um casal de amigos («Tey eru…»).',
+        communityPrompt: 'Apresente três pessoas em feroês, uma frase para cada, com o verbo “vera”: você (“Eg eri…”), uma amiga (“Hon er…”) e um casal de amigos (“Tey eru…”).',
       },
       {
         id: 'fo-u1-l3',
@@ -111,9 +111,9 @@ export const UNITS_FO: UnitSeed[] = [
           bot: 'Hey, eg eiti Rannvá. Hvat eitur tú? Og hvaðani ert tú?',
           botTranslation: 'Oi, eu me chamo Rannvá. Como você se chama? E de onde você é?',
           expected: ['Hey, Rannvá! Eg eiti Pedro, og eg eri úr Brasil. Hugnaligt at hitta teg!', 'eg eiti', 'úr Brasil', 'hugnaligt at hitta teg'],
-          hint: '«Hugnaligt at hitta teg» é o nosso «prazer em conhecer você». O «hv» de «hvat» e de «hvaðani» soa «kv», e o ð não soa: «KVÉA-a-ni». No fim de «hvat», o t quase some: «kva».',
+          hint: '“Hugnaligt at hitta teg” é o nosso “prazer em conhecer você”. O “hv” de “hvat” e de “hvaðani” soa “kv”, e o ð não soa: “KVÉA-a-ni”. No fim de “hvat”, o t quase some: “kva”.',
         },
-        communityPrompt: 'Escreva um diálogo curto em que duas pessoas se apresentam, dizem de onde são e a idade com «Eg eri … ára gamal» ou «… ára gomul» e terminam com «Hugnaligt at hitta teg!».',
+        communityPrompt: 'Escreva um diálogo curto em que duas pessoas se apresentam, dizem de onde são e a idade com “Eg eri … ára gamal” ou “… ára gomul” e terminam com “Hugnaligt at hitta teg!”.',
       },
       {
         id: 'fo-u1-p',
@@ -131,9 +131,9 @@ export const UNITS_FO: UnitSeed[] = [
             'eg eri úr',
             'ára',
           ],
-          hint: 'Devolva o cumprimento («Góðan dag!»), diga o nome com «Eg eiti…», a origem com «Eg eri úr…», a idade com «Eg eri … ára gamal» (ou «gomul», se você for mulher) e feche com «Hugnaligt at hitta teg!». Lembre: o ð de «góðan» não soa, e a tônica vai na primeira sílaba.',
+          hint: 'Devolva o cumprimento (“Góðan dag!”), diga o nome com “Eg eiti…”, a origem com “Eg eri úr…”, a idade com “Eg eri … ára gamal” (ou “gomul”, se você for mulher) e feche com “Hugnaligt at hitta teg!”. Lembre: o ð de “góðan” não soa, e a tônica vai na primeira sílaba.',
         },
-        communityPrompt: 'Escreva uma apresentação completa em feroês: cumprimento, nome, de onde você é, a sua idade, duas pessoas da sua vida com «hann er» / «hon er», uma frase com «tey eru» e uma despedida.',
+        communityPrompt: 'Escreva uma apresentação completa em feroês: cumprimento, nome, de onde você é, a sua idade, duas pessoas da sua vida com “hann er” / “hon er”, uma frase com “tey eru” e uma despedida.',
       },
     ],
   },
@@ -148,11 +148,11 @@ export const UNITS_FO: UnitSeed[] = [
       title: 'O artigo que vai grudado no fim',
       emoji: '🏠',
       history:
-        'O nome «Føroyar» costuma ser explicado como «as ilhas das ovelhas», e não à toa: até hoje há mais ovelhas do que gente no arquipélago. Por séculos, a mesa feroesa foi feita de peixe, carne de carneiro, batata e pouco mais, porque nas ilhas quase não crescem árvores nem cereais. Uma especialidade é o «skerpikjøt», carne de carneiro secada ao vento durante meses num galpão de ripas, o «hjallur», por onde passa o ar salgado. As casas antigas, de madeira pintada de preto ou de cores vivas, têm telhado de turfa com grama por cima, o «torvtak», que protege do vento e do frio.',
+        'O nome “Føroyar” costuma ser explicado como “as ilhas das ovelhas”, e não à toa: até hoje há mais ovelhas do que gente no arquipélago. Por séculos, a mesa feroesa foi feita de peixe, carne de carneiro, batata e pouco mais, porque nas ilhas quase não crescem árvores nem cereais. Uma especialidade é o “skerpikjøt”, carne de carneiro secada ao vento durante meses num galpão de ripas, o “hjallur”, por onde passa o ar salgado. As casas antigas, de madeira pintada de preto ou de cores vivas, têm telhado de turfa com grama por cima, o “torvtak”, que protege do vento e do frio.',
       culture_tip:
-        'Visitar uma casa feroesa quase sempre acaba em café com bolo. Tire os sapatos na entrada, e espere o anfitrião dizer «gerið so væl!» (sirvam-se, fiquem à vontade) antes de começar. Ao terminar a refeição, agradeça com «takk fyri matin» (obrigado pela comida): é quase obrigatório. E, se alguém lhe oferecer mais, «ja takk» aceita e «nei takk» recusa com educação.',
+        'Visitar uma casa feroesa quase sempre acaba em café com bolo. Tire os sapatos na entrada, e espere o anfitrião dizer “gerið so væl!” (sirvam-se, fiquem à vontade) antes de começar. Ao terminar a refeição, agradeça com “takk fyri matin” (obrigado pela comida): é quase obrigatório. E, se alguém lhe oferecer mais, “ja takk” aceita e “nei takk” recusa com educação.',
       grammar_why:
-        'Todo substantivo feroês tem um de três gêneros: masculino (bátur, barco), feminino (bók, livro; kona, mulher) e neutro (hús, casa). O artigo indefinido é «ein» no masculino e no feminino e «eitt» no neutro: ein bátur, ein kona, eitt hús. Já o definido não vem antes, como o nosso «o/a»: ele gruda no fim da palavra. Masculino e feminino ganham -(i)n (báturin, bókin, konan) e o neutro ganha -(i)ð (húsið, barnið). No plural, o masculino costuma terminar em -ar (bátar), o feminino em -ur ou -ir (konur, bøkur) e o neutro muitas vezes não muda (eitt hús, tvey hús). No presente, os verbos em -a do tipo «tosa» fazem eg tosi, tú tosar, hann tosar, vit tosa; outros mudam a vogal: fara vira eg fari, tú fert, hann fer. E «tað er» faz o papel do nosso «tem» ou «há»: «Tað er ein bátur í havnini».',
+        'Todo substantivo feroês tem um de três gêneros: masculino (bátur, barco), feminino (bók, livro; kona, mulher) e neutro (hús, casa). O artigo indefinido é “ein” no masculino e no feminino e “eitt” no neutro: ein bátur, ein kona, eitt hús. Já o definido não vem antes, como o nosso “o/a”: ele gruda no fim da palavra. Masculino e feminino ganham -(i)n (báturin, bókin, konan) e o neutro ganha -(i)ð (húsið, barnið). No plural, o masculino costuma terminar em -ar (bátar), o feminino em -ur ou -ir (konur, bøkur) e o neutro muitas vezes não muda (eitt hús, tvey hús). No presente, os verbos em -a do tipo “tosa” fazem eg tosi, tú tosar, hann tosar, vit tosa; outros mudam a vogal: fara vira eg fari, tú fert, hann fer. E “tað er” faz o papel do nosso “tem” ou “há”: “Tað er ein bátur í havnini”.',
       grammar_examples: [
         ['Tað er ein bátur í havnini.', 'Tem um barco no porto.'],
         ['Báturin er stórur, og húsið er lítið.', 'O barco é grande, e a casa é pequena.'],
@@ -176,9 +176,9 @@ export const UNITS_FO: UnitSeed[] = [
           bot: 'Hygg! Hvat er á myndini?',
           botTranslation: 'Olha! O que tem na foto?',
           expected: ['Tað er ein bátur, eitt hús og ein kona á myndini.', 'ein bátur', 'eitt hús', 'ein kona'],
-          hint: 'Use «Tað er…» e o artigo certo para cada gênero: «ein» para bátur e kona, «eitt» para hús. O «á» de «bátur» soa «óa», e o «ei» de «ein» é o «ai» de «pai»: «ain BÓA-tur».',
+          hint: 'Use “Tað er…” e o artigo certo para cada gênero: “ein” para bátur e kona, “eitt” para hús. O “á” de “bátur” soa “óa”, e o “ei” de “ein” é o “ai” de “pai”: “ain BÓA-tur”.',
         },
-        communityPrompt: 'Descreva uma foto (real ou imaginária) de uma vila feroesa com quatro frases com «Tað er…» ou «Tað eru…». Use pelo menos uma palavra de cada gênero e uma no plural.',
+        communityPrompt: 'Descreva uma foto (real ou imaginária) de uma vila feroesa com quatro frases com “Tað er…” ou “Tað eru…”. Use pelo menos uma palavra de cada gênero e uma no plural.',
       },
       {
         id: 'fo-u2-l2',
@@ -194,9 +194,9 @@ export const UNITS_FO: UnitSeed[] = [
           bot: 'Hvat etur og drekkur tú um morgunin?',
           botTranslation: 'O que você come e bebe de manhã?',
           expected: ['Eg eti breyð við osti, og eg drekki kaffi við mjólk.', 'eg eti', 'eg drekki', 'kaffi'],
-          hint: 'Com «eg», o verbo termina em -i: «eg eti», «eg drekki». «Breyð» soa «brêi», porque o ð final não soa; e o «ó» de «mjólk» é o «ôu» de «vou».',
+          hint: 'Com “eg”, o verbo termina em -i: “eg eti”, “eg drekki”. “Breyð” soa “brêi”, porque o ð final não soa; e o “ó” de “mjólk” é o “ôu” de “vou”.',
         },
-        communityPrompt: 'Conte em feroês o seu café da manhã em três frases no presente: o que você come («Eg eti…»), o que bebe («Eg drekki…») e onde compra («Eg keypi… í handlinum»).',
+        communityPrompt: 'Conte em feroês o seu café da manhã em três frases no presente: o que você come (“Eg eti…”), o que bebe (“Eg drekki…”) e onde compra (“Eg keypi… í handlinum”).',
       },
       {
         id: 'fo-u2-l3',
@@ -212,9 +212,9 @@ export const UNITS_FO: UnitSeed[] = [
           bot: 'Hvar býrt tú? Er húsið stórt?',
           botTranslation: 'Onde você mora? A casa é grande?',
           expected: ['Eg búgvi í Curitiba. Húsið er lítið, men køkurin er stórur, og stovan er hugnalig.', 'eg búgvi', 'húsið er', 'køkurin'],
-          hint: '«Búgva» (morar) é irregular: «eg búgvi», mas «tú býrt» e «hann býr». O «úgv» soa «igv»: «BIG-vi». Lembre o artigo grudado: «húsið» (neutro), «køkurin» (masculino), «stovan» (feminino).',
+          hint: '“Búgva” (morar) é irregular: “eg búgvi”, mas “tú býrt” e “hann býr”. O “úgv” soa “igv”: “BIG-vi”. Lembre o artigo grudado: “húsið” (neutro), “køkurin” (masculino), “stovan” (feminino).',
         },
-        communityPrompt: 'Descreva a sua casa em feroês com quatro frases: onde você mora («Eg búgvi í…»), como é a casa e dois cômodos com o artigo no fim («stovan er…», «køkurin er…»).',
+        communityPrompt: 'Descreva a sua casa em feroês com quatro frases: onde você mora (“Eg búgvi í…”), como é a casa e dois cômodos com o artigo no fim (“stovan er…”, “køkurin er…”).',
       },
       {
         id: 'fo-u2-p',
@@ -232,9 +232,9 @@ export const UNITS_FO: UnitSeed[] = [
             'eti eg',
             'eg drekki',
           ],
-          hint: 'Junte tudo: onde você mora («Eg búgvi í…»), como é a casa, com o artigo grudado («húsið», «køkurin»), e o café da manhã no presente. Se começar a frase por «Um morgunin», o verbo vem logo depois: «Um morgunin eti eg…».',
+          hint: 'Junte tudo: onde você mora (“Eg búgvi í…”), como é a casa, com o artigo grudado (“húsið”, “køkurin”), e o café da manhã no presente. Se começar a frase por “Um morgunin”, o verbo vem logo depois: “Um morgunin eti eg…”.',
         },
-        communityPrompt: 'Escreva um parágrafo em feroês sobre a sua casa e a sua comida: onde você mora, dois cômodos com o artigo no fim, uma frase com «Tað er…», uma com um plural e duas com verbos no presente («eg eti», «vit drekka»…).',
+        communityPrompt: 'Escreva um parágrafo em feroês sobre a sua casa e a sua comida: onde você mora, dois cômodos com o artigo no fim, uma frase com “Tað er…”, uma com um plural e duas com verbos no presente (“eg eti”, “vit drekka”…).',
       },
     ],
   },
@@ -249,11 +249,11 @@ export const UNITS_FO: UnitSeed[] = [
       title: 'Quem faz, quem recebe e onde',
       emoji: '🧭',
       history:
-        'As 18 ilhas Faroé ficam no Atlântico Norte, entre a Islândia, a Noruega e a Escócia, e hoje a maioria delas se liga por estrada. Uma ponte curtinha sobre o estreito entre Streymoy e Eysturoy ganhou o apelido de «a ponte sobre o Atlântico». Vários túneis correm por baixo do mar: o de Eysturoy, aberto em 2020, tem até uma rotatória no fundo, iluminada por dentro. Para as ilhas mais afastadas, como Suðuroy, ainda se vai de balsa, e algumas, como Mykines, recebem também um helicóptero.',
+        'As 18 ilhas Faroé ficam no Atlântico Norte, entre a Islândia, a Noruega e a Escócia, e hoje a maioria delas se liga por estrada. Uma ponte curtinha sobre o estreito entre Streymoy e Eysturoy ganhou o apelido de “a ponte sobre o Atlântico”. Vários túneis correm por baixo do mar: o de Eysturoy, aberto em 2020, tem até uma rotatória no fundo, iluminada por dentro. Para as ilhas mais afastadas, como Suðuroy, ainda se vai de balsa, e algumas, como Mykines, recebem também um helicóptero.',
       culture_tip:
-        'Nas estradas das vilas, é costume cumprimentar quem passa, mesmo sem conhecer: um «hey» ou um aceno bastam. O tempo muda depressa e às vezes cancela balsas e voos, então confira os horários no mesmo dia e tenha um plano B. Para pedir informação, comece com «Orsaka meg…» (com licença) e agradeça com «takk fyri»: as pessoas costumam ajudar com gosto, muitas vezes em inglês, mas ficam contentes quando você tenta o feroês.',
+        'Nas estradas das vilas, é costume cumprimentar quem passa, mesmo sem conhecer: um “hey” ou um aceno bastam. O tempo muda depressa e às vezes cancela balsas e voos, então confira os horários no mesmo dia e tenha um plano B. Para pedir informação, comece com “Orsaka meg…” (com licença) e agradeça com “takk fyri”: as pessoas costumam ajudar com gosto, muitas vezes em inglês, mas ficam contentes quando você tenta o feroês.',
       grammar_why:
-        'O feroês tem quatro casos, e o artigo e a terminação mostram a função da palavra na frase. O nominativo é o sujeito: «Báturin er her». O acusativo é o objeto direto: «Eg síggi bátin». O dativo aparece depois de preposições como frá (de), úr (de dentro de), hjá (na casa de), av (de) e com «í» e «á» quando indicam lugar: «í havnini», «í bátinum». Com «í» e «á» indicando movimento, vem o acusativo: «Eg fari í bilin». O genitivo quase só aparece em fórmulas, como «til Havnar» (para Tórshavn). Alguns verbos pedem dativo, como hjálpa: «Eg hjálpi mammu». A ordem das palavras segue a regra V2: o verbo é sempre o segundo elemento, então, se a frase começa por «Í dag», o sujeito passa para depois do verbo: «Í dag fari eg til Havnar». Nas perguntas, o verbo vem logo depois da palavra interrogativa, ou no começo: «Hvar býrt tú?», «Fert tú í dag?».',
+        'O feroês tem quatro casos, e o artigo e a terminação mostram a função da palavra na frase. O nominativo é o sujeito: “Báturin er her”. O acusativo é o objeto direto: “Eg síggi bátin”. O dativo aparece depois de preposições como frá (de), úr (de dentro de), hjá (na casa de), av (de) e com “í” e “á” quando indicam lugar: “í havnini”, “í bátinum”. Com “í” e “á” indicando movimento, vem o acusativo: “Eg fari í bilin”. O genitivo quase só aparece em fórmulas, como “til Havnar” (para Tórshavn). Alguns verbos pedem dativo, como hjálpa: “Eg hjálpi mammu”. A ordem das palavras segue a regra V2: o verbo é sempre o segundo elemento, então, se a frase começa por “Í dag”, o sujeito passa para depois do verbo: “Í dag fari eg til Havnar”. Nas perguntas, o verbo vem logo depois da palavra interrogativa, ou no começo: “Hvar býrt tú?”, “Fert tú í dag?”.',
       grammar_examples: [
         ['Í dag fari eg til Suðuroyar við ferjuni.', 'Hoje eu vou para Suðuroy de balsa.'],
         ['Eg síggi bátin í havnini.', 'Eu vejo o barco no porto.'],
@@ -277,9 +277,9 @@ export const UNITS_FO: UnitSeed[] = [
           bot: 'Hvussu fert tú til Suðuroyar?',
           botTranslation: 'Como você vai para Suðuroy?',
           expected: ['Eg fari við ferjuni frá Tórshavn.', 'eg fari', 'við ferjuni', 'frá Tórshavn'],
-          hint: 'Para o meio de transporte, use «við» + dativo com artigo: «við ferjuni», «við bussinum». O «g» de «fari eg» some: «FÓA-ri ê». E «Tórshavn» soa «TÔUCH-haun».',
+          hint: 'Para o meio de transporte, use “við” + dativo com artigo: “við ferjuni”, “við bussinum”. O “g” de “fari eg” some: “FÓA-ri ê”. E “Tórshavn” soa “TÔUCH-haun”.',
         },
-        communityPrompt: 'Escreva em feroês como você iria de Tórshavn para duas ilhas diferentes, uma frase para cada, com «við» + o meio de transporte («við ferjuni», «við bussinum»…). Comece uma delas por «Í morgin…» e respeite a regra V2.',
+        communityPrompt: 'Escreva em feroês como você iria de Tórshavn para duas ilhas diferentes, uma frase para cada, com “við” + o meio de transporte (“við ferjuni”, “við bussinum”…). Comece uma delas por “Í morgin…” e respeite a regra V2.',
       },
       {
         id: 'fo-u3-l2',
@@ -295,7 +295,7 @@ export const UNITS_FO: UnitSeed[] = [
           bot: 'Hey! Kann eg hjálpa tær?',
           botTranslation: 'Oi! Posso te ajudar?',
           expected: ['Ja takk! Hvar er bussurin til Klaksvíkar, og nær fer hann?', 'hvar er', 'nær fer', 'Klaksvíkar'],
-          hint: 'Faça duas perguntas: onde («Hvar er…?») e quando («Nær fer…?»). Depois da palavra interrogativa vem o verbo. O «hv» de «hvar» soa «kv»: «kvoar».',
+          hint: 'Faça duas perguntas: onde (“Hvar er…?”) e quando (“Nær fer…?”). Depois da palavra interrogativa vem o verbo. O “hv” de “hvar” soa “kv”: “kvoar”.',
         },
         communityPrompt: 'Escreva quatro perguntas em feroês para fazer num balcão de informações turísticas, cada uma com uma palavra diferente: hvar, nær, hvussu e hvagar.',
       },
@@ -313,9 +313,9 @@ export const UNITS_FO: UnitSeed[] = [
           bot: 'Hey! Hvaðani ert tú, og hvat sært tú her í Gjógv?',
           botTranslation: 'Oi! De onde você é, e o que você está vendo aqui em Gjógv?',
           expected: ['Eg eri úr Brasil. Eg síggi kirkjuna, havnina og fjøllini.', 'eg síggi', 'kirkjuna', 'havnina'],
-          hint: 'Depois de «síggja» (ver) vem o acusativo: «kirkjuna», «havnina», «fjøllini». «Síggja» soa «SUD-ja», com o «ggj» de «dj», e «eg síggi» soa «ê SUD-ji».',
+          hint: 'Depois de “síggja” (ver) vem o acusativo: “kirkjuna”, “havnina”, “fjøllini”. “Síggja” soa “SUD-ja”, com o “ggj” de “dj”, e “eg síggi” soa “ê SUD-ji”.',
         },
-        communityPrompt: 'Escreva em feroês um pequeno roteiro de um dia numa vila: três coisas que você vê (acusativo: «Eg síggi kirkjuna…»), um lugar onde você está (dativo: «í bygdini», «í havnini») e uma pergunta com «hvar».',
+        communityPrompt: 'Escreva em feroês um pequeno roteiro de um dia numa vila: três coisas que você vê (acusativo: “Eg síggi kirkjuna…”), um lugar onde você está (dativo: “í bygdini”, “í havnini”) e uma pergunta com “hvar”.',
       },
       {
         id: 'fo-u3-p',
@@ -332,9 +332,9 @@ export const UNITS_FO: UnitSeed[] = [
             'við bussinum',
             'síggi eg',
           ],
-          hint: 'Comece por «Í dag» e lembre da regra V2: «Í dag fari eg…». Use «til» + genitivo para o destino («til Klaksvíkar»), «við» + dativo para o transporte («við bussinum») e o acusativo depois de «síggja».',
+          hint: 'Comece por “Í dag” e lembre da regra V2: “Í dag fari eg…”. Use “til” + genitivo para o destino (“til Klaksvíkar”), “við” + dativo para o transporte (“við bussinum”) e o acusativo depois de “síggja”.',
         },
-        communityPrompt: 'Escreva em feroês um passeio de um dia pelas ilhas: para onde você vai, como vai, o que vê e onde come. Use pelo menos um acusativo, um dativo com «í» e duas frases que comecem por uma expressão de tempo («Í dag…», «Í kvøld…»).',
+        communityPrompt: 'Escreva em feroês um passeio de um dia pelas ilhas: para onde você vai, como vai, o que vê e onde come. Use pelo menos um acusativo, um dativo com “í” e duas frases que comecem por uma expressão de tempo (“Í dag…”, “Í kvøld…”).',
       },
     ],
   },
@@ -346,14 +346,14 @@ export const UNITS_FO: UnitSeed[] = [
     emoji: '💃',
     card: {
       id: 'fo-c4',
-      title: 'O passado, os adjetivos e o «meu»',
+      title: 'O passado, os adjetivos e o “meu”',
       emoji: '📷',
       history:
-        'A dança de roda feroesa é um costume de origem medieval que desapareceu em quase toda a Europa, mas continuou vivo nas Faroé. Todos dão as mãos numa roda comprida e sinuosa e dançam ao som de uma única coisa: a própria voz. Não há instrumentos: uma pessoa canta os versos de uma balada, o «kvæði», e a roda inteira responde no refrão. Algumas baladas têm centenas de estrofes e contam histórias de heróis antigos, como Sigurd, o matador do dragão. A grande noite da dança é a Ólavsøka, a festa nacional de 28 e 29 de julho em Tórshavn, que termina com todo mundo cantando junto depois da meia-noite.',
+        'A dança de roda feroesa é um costume de origem medieval que desapareceu em quase toda a Europa, mas continuou vivo nas Faroé. Todos dão as mãos numa roda comprida e sinuosa e dançam ao som de uma única coisa: a própria voz. Não há instrumentos: uma pessoa canta os versos de uma balada, o “kvæði”, e a roda inteira responde no refrão. Algumas baladas têm centenas de estrofes e contam histórias de heróis antigos, como Sigurd, o matador do dragão. A grande noite da dança é a Ólavsøka, a festa nacional de 28 e 29 de julho em Tórshavn, que termina com todo mundo cantando junto depois da meia-noite.',
       culture_tip:
-        'Na dança de roda, ninguém fica de fora: é só dar a mão para quem está do lado e acompanhar o passo, um movimento simples que se repete enquanto a roda gira devagar. Não precisa saber a letra: escute quem puxa o verso e cante o refrão com os outros. Na Ólavsøka, muita gente veste o traje típico, o «búni», e é comum ver famílias inteiras, dos avós às crianças, na mesma roda.',
+        'Na dança de roda, ninguém fica de fora: é só dar a mão para quem está do lado e acompanhar o passo, um movimento simples que se repete enquanto a roda gira devagar. Não precisa saber a letra: escute quem puxa o verso e cante o refrão com os outros. Na Ólavsøka, muita gente veste o traje típico, o “búni”, e é comum ver famílias inteiras, dos avós às crianças, na mesma roda.',
       grammar_why:
-        'O passado dos verbos fracos se faz com um final: -aði nos verbos como «dansa» (eg dansaði, vit dansaðu) e -di ou -ti em outros (hoyra → hoyrdi, keypa → keypti). Os fortes mudam a vogal, como o nosso «fazer → fiz»: fara → fór, koma → kom, síggja → sá, syngja → sang; no plural, a vogal muda de novo: vit fóru, komu, sóu, sungu. «Vera» vira var (plural vóru). Os adjetivos também mudam: sem artigo, têm a forma «forte», que concorda em gênero, caso e número (ein nýggjur bátur, ein nýggj bók, eitt nýtt hús); com o artigo, ficam na forma «fraca», bem mais simples (tann nýggi báturin, tann nýggja bókin, tað nýggja húsið). Os possessivos mín (meu) e tín (teu) concordam com a coisa possuída (mín bróðir, mítt hús, mínir brøður), enquanto hansara (dele), hennara (dela), okkara (nosso) e teirra (deles) nunca mudam. Na fala, também se diz muito «húsið hjá mær» (a casa de mim), no lugar de «mítt hús».',
+        'O passado dos verbos fracos se faz com um final: -aði nos verbos como “dansa” (eg dansaði, vit dansaðu) e -di ou -ti em outros (hoyra → hoyrdi, keypa → keypti). Os fortes mudam a vogal, como o nosso “fazer → fiz”: fara → fór, koma → kom, síggja → sá, syngja → sang; no plural, a vogal muda de novo: vit fóru, komu, sóu, sungu. “Vera” vira var (plural vóru). Os adjetivos também mudam: sem artigo, têm a forma “forte”, que concorda em gênero, caso e número (ein nýggjur bátur, ein nýggj bók, eitt nýtt hús); com o artigo, ficam na forma “fraca”, bem mais simples (tann nýggi báturin, tann nýggja bókin, tað nýggja húsið). Os possessivos mín (meu) e tín (teu) concordam com a coisa possuída (mín bróðir, mítt hús, mínir brøður), enquanto hansara (dele), hennara (dela), okkara (nosso) e teirra (deles) nunca mudam. Na fala, também se diz muito “húsið hjá mær” (a casa de mim), no lugar de “mítt hús”.',
       grammar_examples: [
         ['Í gjár dansaðu vit alla náttina.', 'Ontem nós dançamos a noite toda.'],
         ['Hon keypti eina nýggja troyggju.', 'Ela comprou um suéter novo.'],
@@ -377,9 +377,9 @@ export const UNITS_FO: UnitSeed[] = [
           bot: 'Hvør er hetta á myndini?',
           botTranslation: 'Quem é esta pessoa na foto?',
           expected: ['Hetta er mín systir. Hon búði í Havn í fjør.', 'mín systir', 'hon búði', 'í fjør'],
-          hint: 'Apresente alguém com «Hetta er mín…» e conte uma coisa do passado: «búgva» (morar) vira «búði». O ð de «bróðir» não soa: «BRÔU-ir».',
+          hint: 'Apresente alguém com “Hetta er mín…” e conte uma coisa do passado: “búgva” (morar) vira “búði”. O ð de “bróðir” não soa: “BRÔU-ir”.',
         },
-        communityPrompt: 'Apresente em feroês três pessoas da sua família com um possessivo («mín mamma», «mín bróðir»…) e conte uma coisa que cada uma fez no passado («Hon búði…», «Hann var…», «Tey fóru…»).',
+        communityPrompt: 'Apresente em feroês três pessoas da sua família com um possessivo (“mín mamma”, “mín bróðir”…) e conte uma coisa que cada uma fez no passado (“Hon búði…”, “Hann var…”, “Tey fóru…”).',
       },
       {
         id: 'fo-u4-l2',
@@ -395,9 +395,9 @@ export const UNITS_FO: UnitSeed[] = [
           bot: 'Tann troyggjan er vøkur! Hvar keypti tú hana?',
           botTranslation: 'Esse suéter é lindo! Onde você comprou?',
           expected: ['Eg keypti hana í Havn í gjár. Hon var ikki bílig!', 'eg keypti', 'í gjár', 'hon var'],
-          hint: '«Troyggja» é feminina, então vira «hana» (acusativo de «hon») e o adjetivo concorda no feminino: «bílig». O passado de «keypa» é «keypti». E o «oyggj» de «troyggja» soa «ódj»: «TRÓD-ja».',
+          hint: '“Troyggja” é feminina, então vira “hana” (acusativo de “hon”) e o adjetivo concorda no feminino: “bílig”. O passado de “keypa” é “keypti”. E o “oyggj” de “troyggja” soa “ódj”: “TRÓD-ja”.',
         },
-        communityPrompt: 'Descreva em feroês três roupas ou objetos seus com cor e idade («ein reyður jakki», «ein gomul taska», «eitt nýtt…») e diga onde comprou um deles, no passado.',
+        communityPrompt: 'Descreva em feroês três roupas ou objetos seus com cor e idade (“ein reyður jakki”, “ein gomul taska”, “eitt nýtt…”) e diga onde comprou um deles, no passado.',
       },
       {
         id: 'fo-u4-l3',
@@ -413,9 +413,9 @@ export const UNITS_FO: UnitSeed[] = [
           bot: 'Hvat gjørdi tú í gjár?',
           botTranslation: 'O que você fez ontem?',
           expected: ['Í gjár dansaði eg føroyskan dans, og vit sungu eitt langt kvæði. Eg var sera glaður!', 'í gjár dansaði eg', 'vit sungu', 'eg var'],
-          hint: 'Comece por «Í gjár» e ponha o verbo logo depois (V2): «Í gjár dansaði eg…». «Syngja» é forte: «eg sang», «vit sungu». Em «í gjár», o «gj» soa «dj»: «ui DJÓAR».',
+          hint: 'Comece por “Í gjár” e ponha o verbo logo depois (V2): “Í gjár dansaði eg…”. “Syngja” é forte: “eg sang”, “vit sungu”. Em “í gjár”, o “gj” soa “dj”: “ui DJÓAR”.',
         },
-        communityPrompt: 'Conte em feroês uma festa de que você participou, em quatro frases no passado: aonde foi, com quem, o que fizeram (dançar, cantar, comer) e como você estava («Eg var glaður/glað…»).',
+        communityPrompt: 'Conte em feroês uma festa de que você participou, em quatro frases no passado: aonde foi, com quem, o que fizeram (dançar, cantar, comer) e como você estava (“Eg var glaður/glað…”).',
       },
       {
         id: 'fo-u4-p',
@@ -433,9 +433,9 @@ export const UNITS_FO: UnitSeed[] = [
             'dansaðu vit',
             'eg keypti',
           ],
-          hint: 'Conte a festa no passado: verbos fortes («fóru», «sóu») e fracos («dansaðu», «keypti»). «Ólavsøka» é feminina, então se responde com «Hon var…» e o adjetivo no feminino: «stuttlig». Não esqueça de um possessivo («mín bróðir») e de um adjetivo concordando («eina nýggja troyggju»).',
+          hint: 'Conte a festa no passado: verbos fortes (“fóru”, “sóu”) e fracos (“dansaðu”, “keypti”). “Ólavsøka” é feminina, então se responde com “Hon var…” e o adjetivo no feminino: “stuttlig”. Não esqueça de um possessivo (“mín bróðir”) e de um adjetivo concordando (“eina nýggja troyggju”).',
         },
-        communityPrompt: 'Escreva em feroês um relato de uma festa ou viagem com a família: pelo menos cinco verbos no passado (fortes e fracos), dois possessivos, um adjetivo na forma forte e um na forma fraca («tann gamla kirkjan»…).',
+        communityPrompt: 'Escreva em feroês um relato de uma festa ou viagem com a família: pelo menos cinco verbos no passado (fortes e fracos), dois possessivos, um adjetivo na forma forte e um na forma fraca (“tann gamla kirkjan”…).',
       },
     ],
   },
@@ -450,11 +450,11 @@ export const UNITS_FO: UnitSeed[] = [
       title: 'Poder, querer, dever — e o tempo que muda',
       emoji: '🌫️',
       history:
-        'Graças à Corrente do Golfo, o clima das Faroé é oceânico e suave para a latitude: a média do inverno fica acima de zero e a do verão, em torno de 11 graus. Em compensação, chove ou garoa na maior parte dos dias do ano, venta muito, e a neblina, a «toka», pode descer das montanhas em poucos minutos. Os feroeses brincam que dá para ver as quatro estações num dia só. No verão, as falésias de Mykines recebem milhares de papagaios-do-mar, os «lundar», que chegam para criar os filhotes e vão embora para o mar no fim da estação.',
+        'Graças à Corrente do Golfo, o clima das Faroé é oceânico e suave para a latitude: a média do inverno fica acima de zero e a do verão, em torno de 11 graus. Em compensação, chove ou garoa na maior parte dos dias do ano, venta muito, e a neblina, a “toka”, pode descer das montanhas em poucos minutos. Os feroeses brincam que dá para ver as quatro estações num dia só. No verão, as falésias de Mykines recebem milhares de papagaios-do-mar, os “lundar”, que chegam para criar os filhotes e vão embora para o mar no fim da estação.',
       culture_tip:
-        'Antes de uma caminhada, olhe a previsão e avise alguém do seu plano: com neblina, é fácil se perder. Muitas trilhas antigas são marcadas por «varðar», montinhos de pedra que mostram o caminho de um ao outro; siga-os e não saia da trilha. Algumas trilhas passam por terras particulares e cobram uma taxa de quem passa. E, se o tempo virar, ninguém vai estranhar se você desistir: nas Faroé, respeitar o tempo é sinal de juízo.',
+        'Antes de uma caminhada, olhe a previsão e avise alguém do seu plano: com neblina, é fácil se perder. Muitas trilhas antigas são marcadas por “varðar”, montinhos de pedra que mostram o caminho de um ao outro; siga-os e não saia da trilha. Algumas trilhas passam por terras particulares e cobram uma taxa de quem passa. E, se o tempo virar, ninguém vai estranhar se você desistir: nas Faroé, respeitar o tempo é sinal de juízo.',
       grammar_why:
-        'Os verbos modais vêm seguidos do infinitivo, sem «at»: kunna (poder, saber: eg kann, tú kanst, hann kann, vit kunnu), vilja (querer: eg vil, tú vilt, hann vil, vit vilja), skula (ir, dever, combinar: eg skal, tú skalt, hann skal, vit skulu) e mega (ter de: eg má, tú mást, hann má, vit mugu). Com «ikki», «má» vira proibição: «Tú mást ikki» é «você não pode». Para o futuro há três caminhos: «skula» para planos e combinados («Vit skulu til Mykinesar»), «fara at» + infinitivo, como o nosso «vou fazer» («Tað fer at regna»), e «verða» para o que vai ficar de certo jeito («Tað verður kalt»); e, como em português, o presente com uma palavra de tempo também serve: «Í morgin fari eg». O imperativo é o verbo sem o final: kom! (vem!), far! (vai!), gev! (dá!), tak! (pega!), sit! (senta!); para várias pessoas, soma-se -ið: komið!, gerið so væl!.',
+        'Os verbos modais vêm seguidos do infinitivo, sem “at”: kunna (poder, saber: eg kann, tú kanst, hann kann, vit kunnu), vilja (querer: eg vil, tú vilt, hann vil, vit vilja), skula (ir, dever, combinar: eg skal, tú skalt, hann skal, vit skulu) e mega (ter de: eg má, tú mást, hann má, vit mugu). Com “ikki”, “má” vira proibição: “Tú mást ikki” é “você não pode”. Para o futuro há três caminhos: “skula” para planos e combinados (“Vit skulu til Mykinesar”), “fara at” + infinitivo, como o nosso “vou fazer” (“Tað fer at regna”), e “verða” para o que vai ficar de certo jeito (“Tað verður kalt”); e, como em português, o presente com uma palavra de tempo também serve: “Í morgin fari eg”. O imperativo é o verbo sem o final: kom! (vem!), far! (vai!), gev! (dá!), tak! (pega!), sit! (senta!); para várias pessoas, soma-se -ið: komið!, gerið so væl!.',
       grammar_examples: [
         ['Kanst tú hjálpa mær?', 'Você pode me ajudar?'],
         ['Í morgin skulu vit til Mykinesar at síggja lundar.', 'Amanhã nós vamos para Mykines ver papagaios-do-mar.'],
@@ -479,9 +479,9 @@ export const UNITS_FO: UnitSeed[] = [
           bot: 'Hvussu verður veðrið í morgin?',
           botTranslation: 'Como vai ficar o tempo amanhã?',
           expected: ['Í morgin verður tað kalt, og tað fer at regna. Men seinnapartin kemur sólin!', 'verður tað kalt', 'fer at regna', 'sólin'],
-          hint: 'Use «verða» para como o tempo vai ficar («verður tað kalt») e «fara at» para o que vai acontecer («tað fer at regna»). No fim de «veðrið», o ð não soa: «VÊ-ri». E em «í morgin», o «g» antes de i soa «dj»: «ui MÓR-djin».',
+          hint: 'Use “verða” para como o tempo vai ficar (“verður tað kalt”) e “fara at” para o que vai acontecer (“tað fer at regna”). No fim de “veðrið”, o ð não soa: “VÊ-ri”. E em “í morgin”, o “g” antes de i soa “dj”: “ui MÓR-djin”.',
         },
-        communityPrompt: 'Escreva em feroês a previsão do tempo para os próximos três dias na sua cidade, uma frase por dia, usando «verða», «fara at» e uma palavra de tempo no começo da frase («Í morgin…»).',
+        communityPrompt: 'Escreva em feroês a previsão do tempo para os próximos três dias na sua cidade, uma frase por dia, usando “verða”, “fara at” e uma palavra de tempo no começo da frase (“Í morgin…”).',
       },
       {
         id: 'fo-u5-l2',
@@ -497,9 +497,9 @@ export const UNITS_FO: UnitSeed[] = [
           bot: 'Hvat skalt tú gera í morgin?',
           botTranslation: 'O que você vai fazer amanhã?',
           expected: ['Í morgin skal eg ferðast til Mykinesar. Eg vil síggja lundarnar, men kanska verður toka.', 'skal eg', 'eg vil síggja', 'kanska'],
-          hint: 'Fale do plano com «skal» e do desejo com «vil», sempre com o infinitivo depois: «skal eg ferðast», «eg vil síggja». Lembre a regra V2 depois de «Í morgin». «Lundi» soa «LUN-di», com o u frouxo, quase «ô».',
+          hint: 'Fale do plano com “skal” e do desejo com “vil”, sempre com o infinitivo depois: “skal eg ferðast”, “eg vil síggja”. Lembre a regra V2 depois de “Í morgin”. “Lundi” soa “LUN-di”, com o u frouxo, quase “ô”.',
         },
-        communityPrompt: 'Escreva em feroês o plano de uma viagem às Faroé: o que você quer ver («Eg vil…»), o que vai fazer em cada dia («Mánadagin skal eg…»), o que você não pode esquecer («Eg má ikki gloyma…») e uma frase com «kanska».',
+        communityPrompt: 'Escreva em feroês o plano de uma viagem às Faroé: o que você quer ver (“Eg vil…”), o que vai fazer em cada dia (“Mánadagin skal eg…”), o que você não pode esquecer (“Eg má ikki gloyma…”) e uma frase com “kanska”.',
       },
       {
         id: 'fo-u5-l3',
@@ -515,9 +515,9 @@ export const UNITS_FO: UnitSeed[] = [
           bot: 'Ger so væl, set teg! Vilt tú hava kaffi ella te?',
           botTranslation: 'Fique à vontade, sente-se! Você quer café ou chá?',
           expected: ['Takk fyri! Eg vil fegin hava kaffi. Kanst tú geva mær mjólkina?', 'eg vil', 'kaffi', 'kanst tú'],
-          hint: 'Aceite com «Eg vil fegin…» (eu quero, com prazer) e peça algo com «Kanst tú…?». O «g» de «geva» soa «dj»: «DJÊ-va». E «ella» (ou) soa «É-dla».',
+          hint: 'Aceite com “Eg vil fegin…” (eu quero, com prazer) e peça algo com “Kanst tú…?”. O “g” de “geva” soa “dj”: “DJÊ-va”. E “ella” (ou) soa “É-dla”.',
         },
-        communityPrompt: 'Escreva em feroês o que um anfitrião diz ao receber visitas: quatro frases no imperativo (entre, sente-se, pegue, coma…), uma para várias pessoas com -ið («Komið inn!») e uma pergunta com «Vilt tú…?».',
+        communityPrompt: 'Escreva em feroês o que um anfitrião diz ao receber visitas: quatro frases no imperativo (entre, sente-se, pegue, coma…), uma para várias pessoas com -ið (“Komið inn!”) e uma pergunta com “Vilt tú…?”.',
       },
       {
         id: 'fo-u5-p',
@@ -534,9 +534,9 @@ export const UNITS_FO: UnitSeed[] = [
             'í morgin verður',
             'skulu vit',
           ],
-          hint: 'Proponha um plano para hoje com «Vit kunnu…», fale do tempo de amanhã com «verða» e do plano seguinte com «skula». Depois de «tá» (então), o verbo vem antes do sujeito: «tá skulu vit». Feche com um imperativo, como «Tak regnfrakkan við!» (leve a capa de chuva!).',
+          hint: 'Proponha um plano para hoje com “Vit kunnu…”, fale do tempo de amanhã com “verða” e do plano seguinte com “skula”. Depois de “tá” (então), o verbo vem antes do sujeito: “tá skulu vit”. Feche com um imperativo, como “Tak regnfrakkan við!” (leve a capa de chuva!).',
         },
-        communityPrompt: 'Escreva em feroês uma mensagem para um amigo que vem visitar você nas Faroé: a previsão do tempo, dois planos com «skula» ou «fara at», uma coisa que ele pode e uma que ele não pode fazer («Tú kanst…», «Tú mást ikki…») e três conselhos no imperativo.',
+        communityPrompt: 'Escreva em feroês uma mensagem para um amigo que vem visitar você nas Faroé: a previsão do tempo, dois planos com “skula” ou “fara at”, uma coisa que ele pode e uma que ele não pode fazer (“Tú kanst…”, “Tú mást ikki…”) e três conselhos no imperativo.',
       },
     ],
   },
@@ -553,9 +553,9 @@ export const UNITS_FO: UnitSeed[] = [
       history:
         'As Ilhas Faroé ficam no Atlântico Norte, entre a Escócia, a Noruega e a Islândia, e a Corrente do Golfo deixa o clima ameno: o inverno raramente é muito frio, e o verão raramente é quente. Em compensação, chove na maior parte dos dias do ano, venta muito e, no verão, a neblina (mjørki) cobre as montanhas com frequência. O tempo muda tão depressa que os feroeses brincam que dá para ver as quatro estações num só dia. A neblina e o vento também atrasam voos no aeroporto de Vágar e barcos entre as ilhas.',
       culture_tip:
-        'Antes de uma caminhada, os feroeses olham a previsão, mas também o céu: se a neblina baixar, o mais seguro é voltar pelo mesmo caminho, porque as trilhas somem e há penhascos. Muitas trilhas antigas entre as vilas são marcadas por montinhos de pedra, os varðar; siga de um marco ao outro. Leve casaco impermeável, porque com esse vento o guarda-chuva vira do avesso. E se quiser puxar conversa, o tempo é o assunto mais seguro: «Tað er gott veður í dag!».',
+        'Antes de uma caminhada, os feroeses olham a previsão, mas também o céu: se a neblina baixar, o mais seguro é voltar pelo mesmo caminho, porque as trilhas somem e há penhascos. Muitas trilhas antigas entre as vilas são marcadas por montinhos de pedra, os varðar; siga de um marco ao outro. Leve casaco impermeável, porque com esse vento o guarda-chuva vira do avesso. E se quiser puxar conversa, o tempo é o assunto mais seguro: “Tað er gott veður í dag!”.',
       grammar_why:
-        'As orações subordinadas começam com conjunções como «at» (que), «tí at» (porque), «um» (se), «tá ið» (quando), «hóast» (embora) e «áðrenn» (antes que). Nelas não vale o V2: o sujeito vem logo depois da conjunção, e o «ikki» pode vir ANTES do verbo, sobretudo na escrita: «tí at tað ikki regnar» (porque não chove); na fala também se ouve «tí at tað regnar ikki». Quando a subordinada abre a frase, a principal inverte: «Um tað regnar, fara vit ikki til fjals». O genitivo quase sumiu da fala, mas vive depois de «til» e em expressões fixas: «til Havnar» (para Tórshavn), «til fjals» (para a montanha), «til jóla» (até o Natal), e em nomes oficiais como «Føroya Løgting». No dia a dia, a posse se diz com «hjá» + dativo: «bilurin hjá pápa» (o carro do papai).',
+        'As orações subordinadas começam com conjunções como “at” (que), “tí at” (porque), “um” (se), “tá ið” (quando), “hóast” (embora) e “áðrenn” (antes que). Nelas não vale o V2: o sujeito vem logo depois da conjunção, e o “ikki” pode vir ANTES do verbo, sobretudo na escrita: “tí at tað ikki regnar” (porque não chove); na fala também se ouve “tí at tað regnar ikki”. Quando a subordinada abre a frase, a principal inverte: “Um tað regnar, fara vit ikki til fjals”. O genitivo quase sumiu da fala, mas vive depois de “til” e em expressões fixas: “til Havnar” (para Tórshavn), “til fjals” (para a montanha), “til jóla” (até o Natal), e em nomes oficiais como “Føroya Løgting”. No dia a dia, a posse se diz com “hjá” + dativo: “bilurin hjá pápa” (o carro do papai).',
       grammar_examples: [
         ['Eg veit, at veðrið ikki verður gott í morgin.', 'Sei que o tempo não vai estar bom amanhã.'],
         ['Um tað regnar, fara vit til Havnar við bussi.', 'Se chover, vamos para Tórshavn de ônibus.'],
@@ -599,10 +599,10 @@ export const UNITS_FO: UnitSeed[] = [
             'mjørki',
             'veðurforsøgnin sigur',
           ],
-          hint: 'Responda que não e explique o motivo com «tí at»; na subordinada, o sujeito vem logo depois da conjunção.',
+          hint: 'Responda que não e explique o motivo com “tí at”; na subordinada, o sujeito vem logo depois da conjunção.',
         },
         communityPrompt:
-          'Escreva em feroês 4 frases sobre o tempo de hoje onde você mora: use «at», «tí at», «um» e uma subordinada com «ikki» antes do verbo.',
+          'Escreva em feroês 4 frases sobre o tempo de hoje onde você mora: use “at”, “tí at”, “um” e uma subordinada com “ikki” antes do verbo.',
       },
       {
         id: 'fo-u6-l2',
@@ -638,10 +638,10 @@ export const UNITS_FO: UnitSeed[] = [
             'venda aftur',
             'eg orki',
           ],
-          hint: 'Diga que aguenta, mas ponha uma condição com «um» (se).',
+          hint: 'Diga que aguenta, mas ponha uma condição com “um” (se).',
         },
         communityPrompt:
-          'Descreva em feroês uma caminhada até um cume em 4 frases: use «til fjals», uma oração com «tá ið», uma com «áðrenn» e uma com «ikki» antes do verbo.',
+          'Descreva em feroês uma caminhada até um cume em 4 frases: use “til fjals”, uma oração com “tá ið”, uma com “áðrenn” e uma com “ikki” antes do verbo.',
       },
       {
         id: 'fo-u6-l3',
@@ -677,10 +677,10 @@ export const UNITS_FO: UnitSeed[] = [
             'sjóveikur',
             'eg komi við',
           ],
-          hint: 'Aceite o convite com «um» e acrescente uma ressalva com «hóast» (embora).',
+          hint: 'Aceite o convite com “um” e acrescente uma ressalva com “hóast” (embora).',
         },
         communityPrompt:
-          'Escreva em feroês 3 frases sobre uma viagem de balsa com tempo ruim: use «tí at», «til» com genitivo (til Suðuroyar, til Havnar) e uma subordinada negativa.',
+          'Escreva em feroês 3 frases sobre uma viagem de balsa com tempo ruim: use “tí at”, “til” com genitivo (til Suðuroyar, til Havnar) e uma subordinada negativa.',
       },
       {
         id: 'fo-u6-p',
@@ -697,10 +697,10 @@ export const UNITS_FO: UnitSeed[] = [
             'fari eg',
             'ikki altíð',
           ],
-          hint: 'Comece pela subordinada com «um» e inverta a principal (fari eg); depois use «at» com «ikki» antes do verbo.',
+          hint: 'Comece pela subordinada com “um” e inverta a principal (fari eg); depois use “at” com “ikki” antes do verbo.',
         },
         communityPrompt:
-          'Escreva em feroês um pequeno relato (5–6 frases) de um dia em que o tempo mudou várias vezes: use pelo menos quatro conjunções diferentes (at, tí at, um, tá ið, hóast), uma subordinada negativa com «ikki» antes do verbo e um genitivo depois de «til».',
+          'Escreva em feroês um pequeno relato (5–6 frases) de um dia em que o tempo mudou várias vezes: use pelo menos quatro conjunções diferentes (at, tí at, um, tá ið, hóast), uma subordinada negativa com “ikki” antes do verbo e um genitivo depois de “til”.',
       },
     ],
   },
@@ -717,9 +717,9 @@ export const UNITS_FO: UnitSeed[] = [
       history:
         'A Ólavsøka é celebrada em Tórshavn nos dias 28 e 29 de julho, em memória de santo Olavo, o rei norueguês morto em 1030 na batalha de Stiklestad. No dia 29, o Løgting abre o seu ano de trabalho: os deputados seguem em cortejo até a catedral para o culto e depois voltam ao parlamento, onde o løgmaður faz o discurso de abertura. Durante a festa há regatas a remo no porto, exposições, esportes e música, e muita gente veste o traje nacional. Na noite do dia 29, perto da meia-noite, milhares de pessoas cantam juntas no centro da cidade e depois dançam a dança de roda até tarde.',
       culture_tip:
-        'Na dança de roda feroesa, todos dão as mãos numa roda comprida e sinuosa e dão dois passos para a esquerda e um para a direita, no ritmo de uma balada (kvæði) puxada pelo skipari e cantada por todos. Não há instrumentos: só as vozes e o bater dos pés. Pode entrar na roda sem medo: basta pegar a mão de alguém e seguir o passo. O importante é acompanhar a história da balada, que pode ter dezenas de estrofes. Para cumprimentar alguém nesses dias, diga «Góða Ólavsøku!».',
+        'Na dança de roda feroesa, todos dão as mãos numa roda comprida e sinuosa e dão dois passos para a esquerda e um para a direita, no ritmo de uma balada (kvæði) puxada pelo skipari e cantada por todos. Não há instrumentos: só as vozes e o bater dos pés. Pode entrar na roda sem medo: basta pegar a mão de alguém e seguir o passo. O importante é acompanhar a história da balada, que pode ter dezenas de estrofes. Para cumprimentar alguém nesses dias, diga “Góða Ólavsøku!”.',
       grammar_why:
-        'Os verbos em -st (voz média) indicam ação recíproca, reflexiva ou com sentido passivo: «hittast» (encontrar-se), «síggjast» (ver-se), «minnast» (lembrar-se), «savnast» (reunir-se). Eles se conjugam como os outros, mas terminam em -st: «vit hittast», «eg minnist», «tey hittust» (passado). A passiva usa «verða» (ação) ou «vera» (estado) + particípio passado, que concorda em gênero e número com o sujeito, como um adjetivo: «Ólavsøka verður hildin» (feminino), «Tingið verður sett» (neutro), «bátarnir eru gjørdir» (masculino plural). O agente vem com «av», como o nosso «por»: «varð vunnin av Klaksvík». O particípio presente termina em -andi e não muda: «Fólkið kom syngjandi» (o pessoal veio cantando).',
+        'Os verbos em -st (voz média) indicam ação recíproca, reflexiva ou com sentido passivo: “hittast” (encontrar-se), “síggjast” (ver-se), “minnast” (lembrar-se), “savnast” (reunir-se). Eles se conjugam como os outros, mas terminam em -st: “vit hittast”, “eg minnist”, “tey hittust” (passado). A passiva usa “verða” (ação) ou “vera” (estado) + particípio passado, que concorda em gênero e número com o sujeito, como um adjetivo: “Ólavsøka verður hildin” (feminino), “Tingið verður sett” (neutro), “bátarnir eru gjørdir” (masculino plural). O agente vem com “av”, como o nosso “por”: “varð vunnin av Klaksvík”. O particípio presente termina em -andi e não muda: “Fólkið kom syngjandi” (o pessoal veio cantando).',
       grammar_examples: [
         ['Vit hittast í miðbýnum á Ólavsøkukvøld.', 'A gente se encontra no centro na noite da Ólavsøka.'],
         ['Tingið verður sett 29. juli.', 'O parlamento é aberto em 29 de julho.'],
@@ -763,10 +763,10 @@ export const UNITS_FO: UnitSeed[] = [
             'í miðbýnum',
             'dansa',
           ],
-          hint: 'Retribua o cumprimento e responda com o verbo recíproco «hittast» (encontrar-se).',
+          hint: 'Retribua o cumprimento e responda com o verbo recíproco “hittast” (encontrar-se).',
         },
         communityPrompt:
-          'Escreva em feroês 4 frases sobre uma festa da sua cidade: use dois verbos em -st (hittast, síggjast, savnast) e duas passivas com «verða» + particípio.',
+          'Escreva em feroês 4 frases sobre uma festa da sua cidade: use dois verbos em -st (hittast, síggjast, savnast) e duas passivas com “verða” + particípio.',
       },
       {
         id: 'fo-u7-l2',
@@ -802,10 +802,10 @@ export const UNITS_FO: UnitSeed[] = [
             'av róðrarliðnum',
             'gleddust',
           ],
-          hint: 'Responda na passiva: «varð vunnin av…» (foi vencida por…).',
+          hint: 'Responda na passiva: “varð vunnin av…” (foi vencida por…).',
         },
         communityPrompt:
-          'Conte em feroês, em 4 frases, uma competição que você assistiu: use pelo menos duas passivas com «verða» + particípio, o agente com «av» e um particípio presente em -andi.',
+          'Conte em feroês, em 4 frases, uma competição que você assistiu: use pelo menos duas passivas com “verða” + particípio, o agente com “av” e um particípio presente em -andi.',
       },
       {
         id: 'fo-u7-l3',
@@ -841,7 +841,7 @@ export const UNITS_FO: UnitSeed[] = [
             'dansi við',
             'skiparanum',
           ],
-          hint: 'Diga que não se lembra da balada com «minnast», mas que entra na roda assim mesmo.',
+          hint: 'Diga que não se lembra da balada com “minnast”, mas que entra na roda assim mesmo.',
         },
         communityPrompt:
           'Descreva em feroês a dança de roda em 3–4 frases: use um verbo em -st, uma passiva (kvæðið verður sungið…) e um particípio presente (syngjandi, dansandi).',
@@ -864,7 +864,7 @@ export const UNITS_FO: UnitSeed[] = [
           hint: 'Conte no passado com um verbo em -st (hittust), uma passiva (varð vunnin) e um particípio presente (syngjandi).',
         },
         communityPrompt:
-          'Escreva em feroês um relato (5–6 frases) de um dia de Ólavsøka: o cortejo, a regata e a dança de roda. Use pelo menos dois verbos em -st, duas passivas com «verða» e um particípio presente em -andi.',
+          'Escreva em feroês um relato (5–6 frases) de um dia de Ólavsøka: o cortejo, a regata e a dança de roda. Use pelo menos dois verbos em -st, duas passivas com “verða” e um particípio presente em -andi.',
       },
     ],
   },
@@ -883,7 +883,7 @@ export const UNITS_FO: UnitSeed[] = [
       culture_tip:
         'Na trilha até o farol de Mykineshólmur, fique sempre no caminho marcado: os papagaios-do-mar cavam as tocas na grama, e um passo fora da trilha pode destruir um ninho. Não chegue perto da borda dos penhascos, porque a turfa pode ceder. Para caminhar em Mykines costuma haver uma taxa, e o número de visitantes pode ser limitado; vale conferir antes. E leve binóculo: dá para ver os papagaios-do-mar chegando do mar com o bico cheio de peixinhos.',
       grammar_why:
-        'O comparativo termina em -ari ou -ri, e o superlativo em -astur ou -stur: «vakur – vakrari – vakrastur» (bonito), «høgur – hægri – hægstur» (alto), «stórur – størri – størstur». Alguns são irregulares, como no português: «góður – betri – bestur» (bom, melhor, o melhor) e «lítil – minni – minstur». O «do que» é «enn»: «Súlan er størri enn lundin». Com artigo, o superlativo toma a forma fraca: «hægsta fjallið», «tann vakrasti fuglurin». O pronome relativo «sum» (ou «ið») serve para qualquer gênero, número e caso, como o nosso «que»: «fuglurin, sum vit sóu». No discurso indireto, use «at» e, em geral, recue o tempo verbal: «Hann segði, at lundin var komin»; na pergunta indireta, use «um» ou a palavra interrogativa: «Hon spurdi, hvar súlurnar búgva».',
+        'O comparativo termina em -ari ou -ri, e o superlativo em -astur ou -stur: “vakur – vakrari – vakrastur” (bonito), “høgur – hægri – hægstur” (alto), “stórur – størri – størstur”. Alguns são irregulares, como no português: “góður – betri – bestur” (bom, melhor, o melhor) e “lítil – minni – minstur”. O “do que” é “enn”: “Súlan er størri enn lundin”. Com artigo, o superlativo toma a forma fraca: “hægsta fjallið”, “tann vakrasti fuglurin”. O pronome relativo “sum” (ou “ið”) serve para qualquer gênero, número e caso, como o nosso “que”: “fuglurin, sum vit sóu”. No discurso indireto, use “at” e, em geral, recue o tempo verbal: “Hann segði, at lundin var komin”; na pergunta indireta, use “um” ou a palavra interrogativa: “Hon spurdi, hvar súlurnar búgva”.',
       grammar_examples: [
         ['Slættaratindur er hægsta fjallið í Føroyum.', 'O Slættaratindur é a montanha mais alta das Faroé.'],
         ['Súlan er størri enn lundin.', 'O alcatraz é maior que o papagaio-do-mar.'],
@@ -927,10 +927,10 @@ export const UNITS_FO: UnitSeed[] = [
             'minni enn',
             'lundi',
           ],
-          hint: 'Identifique a ave com uma relativa com «sum» e compare com outra ave usando «enn».',
+          hint: 'Identifique a ave com uma relativa com “sum” e compare com outra ave usando “enn”.',
         },
         communityPrompt:
-          'Escreva em feroês 4 frases comparando três aves ou animais: use um comparativo com «enn», um superlativo e duas relativas com «sum».',
+          'Escreva em feroês 4 frases comparando três aves ou animais: use um comparativo com “enn”, um superlativo e duas relativas com “sum”.',
       },
       {
         id: 'fo-u8-l2',
@@ -966,10 +966,10 @@ export const UNITS_FO: UnitSeed[] = [
             'størri',
             'enn eg helt',
           ],
-          hint: 'Use um superlativo com artigo (tað vakrasta) e um comparativo com «enn».',
+          hint: 'Use um superlativo com artigo (tað vakrasta) e um comparativo com “enn”.',
         },
         communityPrompt:
-          'Descreva em feroês 4 paisagens das Faroé ou do Brasil, comparando-as: use «enn», um superlativo com artigo (tann hægsti, tað vakrasta) e uma relativa com «sum».',
+          'Descreva em feroês 4 paisagens das Faroé ou do Brasil, comparando-as: use “enn”, um superlativo com artigo (tann hægsti, tað vakrasta) e uma relativa com “sum”.',
       },
       {
         id: 'fo-u8-l3',
@@ -1005,10 +1005,10 @@ export const UNITS_FO: UnitSeed[] = [
             'betri',
             'ikki fer',
           ],
-          hint: 'Relate o que o capitão disse com «Hann segði, at…» e use um comparativo (betri).',
+          hint: 'Relate o que o capitão disse com “Hann segði, at…” e use um comparativo (betri).',
         },
         communityPrompt:
-          'Conte em feroês, em 3–4 frases, o que um guia disse num passeio (discurso indireto com «segði, at» e «spurdi, um»), usando também um comparativo.',
+          'Conte em feroês, em 3–4 frases, o que um guia disse num passeio (discurso indireto com “segði, at” e “spurdi, um”), usando também um comparativo.',
       },
       {
         id: 'fo-u8-p',
@@ -1025,10 +1025,10 @@ export const UNITS_FO: UnitSeed[] = [
             'segði, at',
             'einastu',
           ],
-          hint: 'Misture um comparativo (fleiri… enn), um superlativo ou «tær einastu» e o discurso indireto com «segði, at».',
+          hint: 'Misture um comparativo (fleiri… enn), um superlativo ou “tær einastu” e o discurso indireto com “segði, at”.',
         },
         communityPrompt:
-          'Escreva em feroês um relato (5–6 frases) de um dia em Mykines: use dois comparativos, um superlativo, duas relativas com «sum» e uma frase em discurso indireto.',
+          'Escreva em feroês um relato (5–6 frases) de um dia em Mykines: use dois comparativos, um superlativo, duas relativas com “sum” e uma frase em discurso indireto.',
       },
     ],
   },
@@ -1045,9 +1045,9 @@ export const UNITS_FO: UnitSeed[] = [
       history:
         'A maior parte dos cerca de 55 mil feroeses mora em vilas pequenas (bygdir) espalhadas pelas ilhas e ligadas por estradas, túneis e balsas. Gjógv, no norte de Eysturoy, deve o nome a uma fenda no rochedo que serve de porto natural. Em Saksun, no norte de Streymoy, uma igrejinha com telhado de turfa fica acima de uma lagoa que a maré enche e esvazia. Nas casas antigas, o telhado de turfa (torvtak) protegia do frio e do vento, e a família passava as noites de inverno na roykstova, a sala com o fogo, trabalhando a lã e contando histórias. Muitos jovens estudam fora, sobretudo na Dinamarca, e parte deles volta depois para as ilhas.',
       culture_tip:
-        'Numa vila feroesa, todo mundo se conhece, e é normal cumprimentar quem passa na rua, mesmo sem conhecer. Ao entrar numa casa, tiram-se os sapatos na porta. É comum ser convidado para um café com bolo; aceitar é a melhor forma de fazer amizade. E quem se despede de alguém que vai viajar ainda ouve fórmulas antigas, como «Gud signi teg!».',
+        'Numa vila feroesa, todo mundo se conhece, e é normal cumprimentar quem passa na rua, mesmo sem conhecer. Ao entrar numa casa, tiram-se os sapatos na porta. É comum ser convidado para um café com bolo; aceitar é a melhor forma de fazer amizade. E quem se despede de alguém que vai viajar ainda ouve fórmulas antigas, como “Gud signi teg!”.',
       grammar_why:
-        'O feroês quase perdeu as formas próprias do subjuntivo. O subjuntivo presente sobrevive em desejos e fórmulas fixas: «Gud signi teg!» (Deus te abençoe), com «signi» no lugar de «signar». Para hipóteses (o nosso «se eu morasse…, eu iria…»), usa-se o passado simples nas duas orações: «Um eg búði í Gjógv, fór eg at fiska hvønn dag». Para o que não aconteceu (o nosso «se eu tivesse…, teria…»), usa-se «hevði/høvdu» + particípio: «Um vit høvdu havt tíð, høvdu vit vitjað Saksun». Esse «hevði» + particípio também faz o papel do nosso futuro do pretérito: «Tað hevði verið stuttligt» (seria divertido). Para um desejo educado, «vildi fegin» + particípio: «Eg vildi fegin farið heim» (eu adoraria ir para casa). Lembre que, quando a oração com «um» vem primeiro, a principal inverte: «…, fór eg».',
+        'O feroês quase perdeu as formas próprias do subjuntivo. O subjuntivo presente sobrevive em desejos e fórmulas fixas: “Gud signi teg!” (Deus te abençoe), com “signi” no lugar de “signar”. Para hipóteses (o nosso “se eu morasse…, eu iria…”), usa-se o passado simples nas duas orações: “Um eg búði í Gjógv, fór eg at fiska hvønn dag”. Para o que não aconteceu (o nosso “se eu tivesse…, teria…”), usa-se “hevði/høvdu” + particípio: “Um vit høvdu havt tíð, høvdu vit vitjað Saksun”. Esse “hevði” + particípio também faz o papel do nosso futuro do pretérito: “Tað hevði verið stuttligt” (seria divertido). Para um desejo educado, “vildi fegin” + particípio: “Eg vildi fegin farið heim” (eu adoraria ir para casa). Lembre que, quando a oração com “um” vem primeiro, a principal inverte: “…, fór eg”.',
       grammar_examples: [
         ['Um eg búði í Gjógv, fór eg at fiska hvønn dag.', 'Se eu morasse em Gjógv, iria pescar todo dia.'],
         ['Um vit høvdu havt tíð, høvdu vit vitjað Saksun.', 'Se tivéssemos tido tempo, teríamos visitado Saksun.'],
@@ -1091,10 +1091,10 @@ export const UNITS_FO: UnitSeed[] = [
             'flutti eg',
             'fegin',
           ],
-          hint: 'Responda com uma hipótese: «um» + passado na condição e passado também na principal, que inverte (flutti eg).',
+          hint: 'Responda com uma hipótese: “um” + passado na condição e passado também na principal, que inverte (flutti eg).',
         },
         communityPrompt:
-          'Escreva em feroês 4 frases sobre como seria a sua vida numa vila feroesa: use duas hipóteses com «um» + passado e uma com «hevði» + particípio.',
+          'Escreva em feroês 4 frases sobre como seria a sua vida numa vila feroesa: use duas hipóteses com “um” + passado e uma com “hevði” + particípio.',
       },
       {
         id: 'fo-u9-l2',
@@ -1130,10 +1130,10 @@ export const UNITS_FO: UnitSeed[] = [
             'um eg kundi',
             'fór eg',
           ],
-          hint: 'Diga do que sente falta com «sakna» e acrescente uma hipótese com «um eg kundi…».',
+          hint: 'Diga do que sente falta com “sakna” e acrescente uma hipótese com “um eg kundi…”.',
         },
         communityPrompt:
-          'Escreva em feroês 3–4 frases a alguém que mora longe de casa: use um desejo no subjuntivo (Gud signi teg), uma hipótese com «um» e uma frase com «vildi fegin».',
+          'Escreva em feroês 3–4 frases a alguém que mora longe de casa: use um desejo no subjuntivo (Gud signi teg), uma hipótese com “um” e uma frase com “vildi fegin”.',
       },
       {
         id: 'fo-u9-l3',
@@ -1169,10 +1169,10 @@ export const UNITS_FO: UnitSeed[] = [
             'við eldin',
             'strikkað',
           ],
-          hint: 'Use «hevði» + particípio para dizer o que você teria feito (eg hevði sitið, hevði strikkað).',
+          hint: 'Use “hevði” + particípio para dizer o que você teria feito (eg hevði sitið, hevði strikkað).',
         },
         communityPrompt:
-          'Imagine em feroês, em 3–4 frases, uma noite de inverno numa roykstova de antigamente: use «hevði» + particípio pelo menos duas vezes.',
+          'Imagine em feroês, em 3–4 frases, uma noite de inverno numa roykstova de antigamente: use “hevði” + particípio pelo menos duas vezes.',
       },
       {
         id: 'fo-u9-p',
@@ -1189,10 +1189,10 @@ export const UNITS_FO: UnitSeed[] = [
             'búði eg',
             'hevði eg',
           ],
-          hint: 'Encadeie duas hipóteses: uma com o passado simples (búði eg) e outra com «hevði» + particípio.',
+          hint: 'Encadeie duas hipóteses: uma com o passado simples (búði eg) e outra com “hevði” + particípio.',
         },
         communityPrompt:
-          'Escreva em feroês um texto (5–6 frases) sobre a vida que você levaria numa vila das Faroé: use pelo menos três hipóteses (duas com «um» + passado, uma com «hevði» + particípio) e termine com um desejo no subjuntivo.',
+          'Escreva em feroês um texto (5–6 frases) sobre a vida que você levaria numa vila das Faroé: use pelo menos três hipóteses (duas com “um” + passado, uma com “hevði” + particípio) e termine com um desejo no subjuntivo.',
       },
     ],
   },
@@ -1209,9 +1209,9 @@ export const UNITS_FO: UnitSeed[] = [
       history:
         'Tinganes, a pequena península de rocha no porto de Tórshavn, é apontado como um dos lugares de assembleia mais antigos do mundo: desde a era viking os homens livres das ilhas se reuniam ali, ao ar livre, no ting. Hoje as casinhas de madeira pintadas de vermelho, com telhado de turfa, abrigam o governo feroês (landsstýri), enquanto o Løgting se reúne num prédio próprio no centro da cidade. As Faroé são uma nação autônoma dentro do Reino da Dinamarca, com parlamento e governo próprios, e o chefe do governo tem o título de løgmaður. Desde 1948 o feroês é a língua principal das ilhas, e o dinamarquês também pode ser usado em assuntos oficiais.',
       culture_tip:
-        'Os feroeses se tratam por «tú» quase sempre, até com médicos e autoridades. O tratamento formal «tygum», que leva o verbo no plural, aparece hoje sobretudo com pessoas bem idosas, em cartas oficiais e em ocasiões de muita cerimônia; usá-lo com um jovem soa engraçado. Em avisos, formulários e e-mails, o pedido educado se faz com «vinarliga» (por favor). As cartas costumam abrir com «Góði…» ou «Góða…» e fechar com «Vinarliga» ou «Við vinarligari heilsan».',
+        'Os feroeses se tratam por “tú” quase sempre, até com médicos e autoridades. O tratamento formal “tygum”, que leva o verbo no plural, aparece hoje sobretudo com pessoas bem idosas, em cartas oficiais e em ocasiões de muita cerimônia; usá-lo com um jovem soa engraçado. Em avisos, formulários e e-mails, o pedido educado se faz com “vinarliga” (por favor). As cartas costumam abrir com “Góði…” ou “Góða…” e fechar com “Vinarliga” ou “Við vinarligari heilsan”.',
       grammar_why:
-        'O registro formal escrito prefere construções impessoais e passivas, sobretudo com os verbos em -st depois de um modal: «Umsóknin skal sendast áðrenn 1. mai» (a candidatura deve ser enviada antes de 1º de maio). Também usa mais substantivos e mais genitivos, como em nomes de instituições: «formaður landsstýrisins» (o chefe do governo). O «tygum» (o senhor, a senhora) leva o verbo no plural, mesmo falando com uma só pessoa: «Hava tygum skrásett adressuna?». Para pedir com delicadeza, use o passado do modal + particípio, como o nosso «poderia»: «Kundu tygum hjálpt mær?». Nos avisos, o imperativo vem no plural e acompanhado de «vinarliga»: «Vinarliga latið hurðina aftur».',
+        'O registro formal escrito prefere construções impessoais e passivas, sobretudo com os verbos em -st depois de um modal: “Umsóknin skal sendast áðrenn 1. mai” (a candidatura deve ser enviada antes de 1º de maio). Também usa mais substantivos e mais genitivos, como em nomes de instituições: “formaður landsstýrisins” (o chefe do governo). O “tygum” (o senhor, a senhora) leva o verbo no plural, mesmo falando com uma só pessoa: “Hava tygum skrásett adressuna?”. Para pedir com delicadeza, use o passado do modal + particípio, como o nosso “poderia”: “Kundu tygum hjálpt mær?”. Nos avisos, o imperativo vem no plural e acompanhado de “vinarliga”: “Vinarliga latið hurðina aftur”.',
       grammar_examples: [
         ['Umsóknin skal sendast kommununi áðrenn 1. mai.', 'A candidatura deve ser enviada à prefeitura antes de 1º de maio.'],
         ['Vinarliga latið hurðina aftur.', 'Por favor, fechem a porta.'],
@@ -1255,10 +1255,10 @@ export const UNITS_FO: UnitSeed[] = [
             'adressuna',
             'kundu tygum',
           ],
-          hint: 'Diga o que precisa e peça ajuda com a forma educada «Kundu tygum…?».',
+          hint: 'Diga o que precisa e peça ajuda com a forma educada “Kundu tygum…?”.',
         },
         communityPrompt:
-          'Escreva em feroês 3–4 frases que você diria no balcão da prefeitura: trate o atendente por «tygum», use uma passiva com -st (skal sendast, kann gjaldast) e um pedido com «vinarliga».',
+          'Escreva em feroês 3–4 frases que você diria no balcão da prefeitura: trate o atendente por “tygum”, use uma passiva com -st (skal sendast, kann gjaldast) e um pedido com “vinarliga”.',
       },
       {
         id: 'fo-u10-l2',
@@ -1294,10 +1294,10 @@ export const UNITS_FO: UnitSeed[] = [
             'sent',
             'áðrenn fríggjadag',
           ],
-          hint: 'Confirme usando a passiva formal: «verður undirskrivað» e «sent».',
+          hint: 'Confirme usando a passiva formal: “verður undirskrivað” e “sent”.',
         },
         communityPrompt:
-          'Escreva em feroês um pequeno aviso formal (3–4 frases) sobre um prazo de impostos: use passivas (skal sendast, verður drigin), «vinarliga» e o tratamento «tygum».',
+          'Escreva em feroês um pequeno aviso formal (3–4 frases) sobre um prazo de impostos: use passivas (skal sendast, verður drigin), “vinarliga” e o tratamento “tygum”.',
       },
       {
         id: 'fo-u10-l3',
@@ -1318,10 +1318,10 @@ export const UNITS_FO: UnitSeed[] = [
             translation: 'O løgmaður é o chefe do governo.',
           },
           {
-            sentence: 'Embætismaðurin spurdi: «Hvussu kann eg hjálpa ___?»',
+            sentence: 'Embætismaðurin spurdi: “Hvussu kann eg hjálpa ___?”',
             answer: 'tygum',
             options: ['tygum', 'tú', 'teir'],
-            translation: 'O funcionário perguntou: «Como posso ajudar o senhor?»',
+            translation: 'O funcionário perguntou: “Como posso ajudar o senhor?”',
           },
         ],
         voice: {
@@ -1333,10 +1333,10 @@ export const UNITS_FO: UnitSeed[] = [
             'lógaruppskot',
             'verður samtykt',
           ],
-          hint: 'Faça uma pergunta educada com «Kundu tygum…» e use a passiva «verður samtykt».',
+          hint: 'Faça uma pergunta educada com “Kundu tygum…” e use a passiva “verður samtykt”.',
         },
         communityPrompt:
-          'Escreva em feroês 3 perguntas formais que você faria numa visita ao Løgting, tratando o guia por «tygum» e usando pelo menos uma passiva.',
+          'Escreva em feroês 3 perguntas formais que você faria numa visita ao Løgting, tratando o guia por “tygum” e usando pelo menos uma passiva.',
       },
       {
         id: 'fo-u10-p',
@@ -1353,10 +1353,10 @@ export const UNITS_FO: UnitSeed[] = [
             'vinarliga',
             'svar',
           ],
-          hint: 'Explique o caso de modo formal: diga quando enviou, que não teve resposta, e peça com «Kundu tygum vinarliga…».',
+          hint: 'Explique o caso de modo formal: diga quando enviou, que não teve resposta, e peça com “Kundu tygum vinarliga…”.',
         },
         communityPrompt:
-          'Escreva em feroês um e-mail formal (5–6 frases) à prefeitura pedindo uma licença: abra com uma saudação formal, trate o destinatário por «tygum», use duas passivas (skal sendast, verður viðgjørd) e feche com «Vinarliga» ou «Við vinarligari heilsan».',
+          'Escreva em feroês um e-mail formal (5–6 frases) à prefeitura pedindo uma licença: abra com uma saudação formal, trate o destinatário por “tygum”, use duas passivas (skal sendast, verður viðgjørd) e feche com “Vinarliga” ou “Við vinarligari heilsan”.',
       },
     ],
   },
@@ -1371,11 +1371,11 @@ export const UNITS_FO: UnitSeed[] = [
       title: 'O purismo feroês',
       emoji: '🔨',
       history:
-        'Durante séculos, o dinamarquês foi a língua da igreja, da escola e da administração nas Ilhas Faroé, e o feroês sobreviveu sobretudo na fala e nas baladas. Quando V. U. Hammershaimb criou a ortografia moderna, em 1846, escolheu uma escrita etimológica, próxima do nórdico antigo, e o movimento nacional do fim do século XIX passou a trocar palavras dinamarquesas por criações feitas com raízes da própria língua. Esse purismo continua vivo: o computador é «telda», do verbo «telja» (contar), a internet é «alnet» e a inteligência artificial é «vitlíki». Hoje um conselho oficial da língua ajuda a propor e a discutir palavras novas.',
+        'Durante séculos, o dinamarquês foi a língua da igreja, da escola e da administração nas Ilhas Faroé, e o feroês sobreviveu sobretudo na fala e nas baladas. Quando V. U. Hammershaimb criou a ortografia moderna, em 1846, escolheu uma escrita etimológica, próxima do nórdico antigo, e o movimento nacional do fim do século XIX passou a trocar palavras dinamarquesas por criações feitas com raízes da própria língua. Esse purismo continua vivo: o computador é “telda”, do verbo “telja” (contar), a internet é “alnet” e a inteligência artificial é “vitlíki”. Hoje um conselho oficial da língua ajuda a propor e a discutir palavras novas.',
       culture_tip:
-        'Na conversa, os feroeses soltam muita palavra dinamarquesa e inglesa, mas na escrita, na escola, no rádio e nos jornais vale a forma feroesa: escreva «teldupostur», e não «e-mail». Uma expressão que você vai ouvir o tempo todo é «tað ber til» (dá, é possível), e o contrário, «tað ber ikki til». Quando alguém pede desculpas por um pequeno transtorno, responda «eingin vandi» ou «tað ger einki»: é o nosso «relaxa, sem problema».',
+        'Na conversa, os feroeses soltam muita palavra dinamarquesa e inglesa, mas na escrita, na escola, no rádio e nos jornais vale a forma feroesa: escreva “teldupostur”, e não “e-mail”. Uma expressão que você vai ouvir o tempo todo é “tað ber til” (dá, é possível), e o contrário, “tað ber ikki til”. Quando alguém pede desculpas por um pequeno transtorno, responda “eingin vandi” ou “tað ger einki”: é o nosso “relaxa, sem problema”.',
       grammar_why:
-        'As expressões feitas do feroês vêm com verbo, caso e preposição fixos, então aprenda-as em bloco, como aprendemos «pisar na bola». «Tað ber til» usa o verbo «bera» (carregar) com a partícula «til» e quer dizer «é possível»; em «tað veldst um» (depende), o que vem depois de «um» fica no acusativo: «tað veldst um veðrið». Muitas expressões de sentimento têm o sujeito lógico no dativo, como «mær dámar» (eu gosto) e «mær leingist heim» (tenho saudade de casa): quem sente não é o sujeito, e sim «a quem» a coisa acontece. Já as palavras novas se comportam como qualquer palavra antiga: «telda» é feminina fraca (teldu no acusativo, dativo e genitivo; «í telduni», no computador) e faz o plural «teldur». Em português «o mouse» não muda; em feroês «teldumús» faz até plural irregular: teldumýs.',
+        'As expressões feitas do feroês vêm com verbo, caso e preposição fixos, então aprenda-as em bloco, como aprendemos “pisar na bola”. “Tað ber til” usa o verbo “bera” (carregar) com a partícula “til” e quer dizer “é possível”; em “tað veldst um” (depende), o que vem depois de “um” fica no acusativo: “tað veldst um veðrið”. Muitas expressões de sentimento têm o sujeito lógico no dativo, como “mær dámar” (eu gosto) e “mær leingist heim” (tenho saudade de casa): quem sente não é o sujeito, e sim “a quem” a coisa acontece. Já as palavras novas se comportam como qualquer palavra antiga: “telda” é feminina fraca (teldu no acusativo, dativo e genitivo; “í telduni”, no computador) e faz o plural “teldur”. Em português “o mouse” não muda; em feroês “teldumús” faz até plural irregular: teldumýs.',
       grammar_examples: [
         ['Ber tað til at gjalda við korti her?', 'Dá para pagar com cartão aqui?'],
         ['Tað veldst um veðrið, men vit fara kanska út á Mykines.', 'Depende do tempo, mas talvez a gente vá a Mykines.'],
@@ -1393,15 +1393,15 @@ export const UNITS_FO: UnitSeed[] = [
         cloze: [
           { sentence: 'Eg arbeiði allan dagin við ___.', answer: 'telduni', options: ['telduni', 'teldan', 'telduna'], translation: 'Trabalho o dia todo no computador.' },
           { sentence: 'Eg havi gloymt ___ mítt!', answer: 'loyniorðið', options: ['loyniorðið', 'loyniorðinum', 'loyniorðsins'], translation: 'Esqueci minha senha!' },
-          { sentence: 'Orðið «telda» kemur av sagnorðinum «___».', answer: 'telja', options: ['telja', 'tala', 'tosa'], translation: 'A palavra «telda» vem do verbo «telja» (contar).' },
+          { sentence: 'Orðið “telda” kemur av sagnorðinum “___”.', answer: 'telja', options: ['telja', 'tala', 'tosa'], translation: 'A palavra “telda” vem do verbo “telja” (contar).' },
         ],
         voice: {
-          bot: 'Veitst tú, hvaðani orðið «telda» kemur?',
-          botTranslation: 'Você sabe de onde vem a palavra «telda»?',
-          expected: ['Ja, tað kemur av sagnorðinum «telja», tí at ein telda telur og roknar.', 'telja', 'kemur av', 'roknar'],
-          hint: 'Explique a origem com «Tað kemur av…» (vem de…), que pede dativo: sagnorðinum. «Veitst» é a 2ª pessoa de «vita» (saber). A tônica fica na primeira sílaba: TEL-da, AL-net.',
+          bot: 'Veitst tú, hvaðani orðið “telda” kemur?',
+          botTranslation: 'Você sabe de onde vem a palavra “telda”?',
+          expected: ['Ja, tað kemur av sagnorðinum “telja”, tí at ein telda telur og roknar.', 'telja', 'kemur av', 'roknar'],
+          hint: 'Explique a origem com “Tað kemur av…” (vem de…), que pede dativo: sagnorðinum. “Veitst” é a 2ª pessoa de “vita” (saber). A tônica fica na primeira sílaba: TEL-da, AL-net.',
         },
-        communityPrompt: 'Invente uma palavra feroesa para algo moderno (por exemplo, um patinete elétrico) juntando duas palavras antigas, e explique em feroês, com «Orðið kemur av…», de onde vem cada parte.',
+        communityPrompt: 'Invente uma palavra feroesa para algo moderno (por exemplo, um patinete elétrico) juntando duas palavras antigas, e explique em feroês, com “Orðið kemur av…”, de onde vem cada parte.',
       },
       {
         id: 'fo-u11-l2',
@@ -1417,9 +1417,9 @@ export const UNITS_FO: UnitSeed[] = [
           bot: 'Æ, ferjan til Suðuroyar fer ikki í dag, tí at tað er ódn!',
           botTranslation: 'Ai, a balsa para Suðuroy não sai hoje, porque está tendo tempestade!',
           expected: ['Tak tað róligt, eingin vandi! Vit kunnu fara í morgin, um veðrið er betri.', 'tak tað róligt', 'eingin vandi', 'í morgin'],
-          hint: 'Acalme com «Tak tað róligt» e «eingin vandi», e proponha outra saída. «Kunnu» é o plural de «kann» (vit kunnu = nós podemos); o «ó» de «róligt» soa como «ou».',
+          hint: 'Acalme com “Tak tað róligt” e “eingin vandi”, e proponha outra saída. “Kunnu” é o plural de “kann” (vit kunnu = nós podemos); o “ó” de “róligt” soa como “ou”.',
         },
-        communityPrompt: 'Conte em feroês um pequeno perrengue (uma balsa cancelada, uma senha esquecida) em 3–4 frases e use pelo menos duas expressões da lição, como «tak tað róligt», «tað veldst um» ou «eingin vandi».',
+        communityPrompt: 'Conte em feroês um pequeno perrengue (uma balsa cancelada, uma senha esquecida) em 3–4 frases e use pelo menos duas expressões da lição, como “tak tað róligt”, “tað veldst um” ou “eingin vandi”.',
       },
       {
         id: 'fo-u11-l3',
@@ -1427,7 +1427,7 @@ export const UNITS_FO: UnitSeed[] = [
         kind: 'voz',
         words: ['orðatak', 'orðaleikur', 'orðfeingi', 'spjaldurtelda', 'teldumús', 'forrit'],
         cloze: [
-          { sentence: 'Á føroyskum sigur man ikki «computer», men «___».', answer: 'telda', options: ['telda', 'telefon', 'tól'], translation: 'Em feroês não se diz «computer», e sim «telda».' },
+          { sentence: 'Á føroyskum sigur man ikki “computer”, men “___”.', answer: 'telda', options: ['telda', 'telefon', 'tól'], translation: 'Em feroês não se diz “computer”, e sim “telda”.' },
           { sentence: 'Hetta er eitt gamalt føroyskt ___.', answer: 'orðatak', options: ['orðatak', 'orðatøk', 'orðataki'], translation: 'Esta é uma expressão feroesa antiga.' },
           { sentence: 'Eg keypti mær eina nýggja ___.', answer: 'spjaldurteldu', options: ['spjaldurteldu', 'spjaldurtelda', 'spjaldurtelduni'], translation: 'Comprei um tablet novo.' },
         ],
@@ -1435,9 +1435,9 @@ export const UNITS_FO: UnitSeed[] = [
           bot: 'Hvørji føroysk orð fyri nýggja tøkni kennir tú?',
           botTranslation: 'Que palavras feroesas para a tecnologia nova você conhece?',
           expected: ['Eg kenni til dømis teldu, alnet, fartelefon og teldupost.', 'teldu', 'alnet', 'fartelefon'],
-          hint: 'Depois de «kenni», tudo vai para o acusativo: telda → teldu, teldupostur → teldupost (alnet e fartelefon não mudam). A tônica fica sempre na primeira sílaba: AL-net, FAR-te-le-fon.',
+          hint: 'Depois de “kenni”, tudo vai para o acusativo: telda → teldu, teldupostur → teldupost (alnet e fartelefon não mudam). A tônica fica sempre na primeira sílaba: AL-net, FAR-te-le-fon.',
         },
-        communityPrompt: 'Escolha cinco palavras de tecnologia e compare em feroês com o português, no modelo «Á portugisiskum sigur man computador, men á føroyskum telda.». Diga qual delas você acha mais bonita e por quê.',
+        communityPrompt: 'Escolha cinco palavras de tecnologia e compare em feroês com o português, no modelo “Á portugisiskum sigur man computador, men á føroyskum telda.”. Diga qual delas você acha mais bonita e por quê.',
       },
       {
         id: 'fo-u11-p',
@@ -1449,13 +1449,13 @@ export const UNITS_FO: UnitSeed[] = [
           bot: 'Góðan dag! Eg skrivi eina grein um nýggj orð. Hvørt føroyskt orð dámar tær best, og hví?',
           botTranslation: 'Bom dia! Estou escrevendo um artigo sobre palavras novas. De qual palavra feroesa você gosta mais, e por quê?',
           expected: [
-            'Mær dámar «telda» best, tí at tað kemur av «telja». Føroyingar gera heldur nýggj orð enn at taka tey úr donskum ella enskum, og tað dámar mær væl.',
+            'Mær dámar “telda” best, tí at tað kemur av “telja”. Føroyingar gera heldur nýggj orð enn at taka tey úr donskum ella enskum, og tað dámar mær væl.',
             'mær dámar',
             'telda',
             'tí at',
             'nýggj orð',
           ],
-          hint: 'Dê a opinião com «Mær dámar…» (quem gosta vai no dativo), justifique com «tí at…» e explique a formação da palavra. Se quiser, feche com uma expressão da unidade.',
+          hint: 'Dê a opinião com “Mær dámar…” (quem gosta vai no dativo), justifique com “tí at…” e explique a formação da palavra. Se quiser, feche com uma expressão da unidade.',
         },
         communityPrompt: 'Escreva um parágrafo em feroês (5–6 frases) sobre o purismo: dê dois exemplos de palavras novas, explique como foram formadas e termine com uma expressão feita da unidade.',
       },
@@ -1472,11 +1472,11 @@ export const UNITS_FO: UnitSeed[] = [
       title: 'Debate na vila',
       emoji: '🗣️',
       history:
-        'Nas Ilhas Faroé, onde muitas vilas têm poucas centenas de moradores, as grandes decisões costumam passar por longas conversas. Nas últimas décadas, túneis submarinos ligaram ilhas que antes dependiam de balsa: o de Vágar abriu em 2002, o das Norðoyggjar em 2006, e o de Eysturoy, de 2020, tem até uma rotatória no fundo do mar. Cada túnel foi precedido de debates sobre custo, pedágio e o futuro das vilas pequenas, no Løgting (o parlamento) e nos «borgarafundir», as reuniões abertas em que os moradores dão sua opinião.',
+        'Nas Ilhas Faroé, onde muitas vilas têm poucas centenas de moradores, as grandes decisões costumam passar por longas conversas. Nas últimas décadas, túneis submarinos ligaram ilhas que antes dependiam de balsa: o de Vágar abriu em 2002, o das Norðoyggjar em 2006, e o de Eysturoy, de 2020, tem até uma rotatória no fundo do mar. Cada túnel foi precedido de debates sobre custo, pedágio e o futuro das vilas pequenas, no Løgting (o parlamento) e nos “borgarafundir”, as reuniões abertas em que os moradores dão sua opinião.',
       culture_tip:
-        'Numa discussão feroesa, discorda-se com calma: «eg eri ósamdur» (discordo) ou «tað haldi eg ikki» (acho que não) soam firmes sem ser grosseiros, e é comum reconhecer o ponto do outro antes («tú hevur rætt, men…»). Interromper e levantar a voz pega mal: numa vila onde todos se conhecem, amanhã você vai cruzar com a mesma pessoa no mercado.',
+        'Numa discussão feroesa, discorda-se com calma: “eg eri ósamdur” (discordo) ou “tað haldi eg ikki” (acho que não) soam firmes sem ser grosseiros, e é comum reconhecer o ponto do outro antes (“tú hevur rætt, men…”). Interromper e levantar a voz pega mal: numa vila onde todos se conhecem, amanhã você vai cruzar com a mesma pessoa no mercado.',
       grammar_why:
-        'Para argumentar, você precisa dos conectores, e eles mexem com a ordem das palavras. Os coordenativos «og», «men», «ella» e «tí» (porque) não contam como primeira posição: depois deles vêm sujeito e verbo, como em português. Já os advérbios de ligação ocupam a primeira posição e empurram o verbo para antes do sujeito (V2): «Afturat er tunnilin bíligari» (além disso, o túnel é mais barato). No começo da frase, «tí» também pode querer dizer «por isso», e então puxa o verbo: «Tí haldi eg…». As subordinadas com «hóast» (embora), «tí at» (porque), «um» (se) e «áðrenn» (antes que) mantêm sujeito + verbo, e o «ikki» costuma vir antes do verbo: «um ferjan ikki longur siglir». Quando a subordinada abre a frase, a principal começa pelo verbo: «Hóast tað kostar nógv, er tunnilin ein góð loysn».',
+        'Para argumentar, você precisa dos conectores, e eles mexem com a ordem das palavras. Os coordenativos “og”, “men”, “ella” e “tí” (porque) não contam como primeira posição: depois deles vêm sujeito e verbo, como em português. Já os advérbios de ligação ocupam a primeira posição e empurram o verbo para antes do sujeito (V2): “Afturat er tunnilin bíligari” (além disso, o túnel é mais barato). No começo da frase, “tí” também pode querer dizer “por isso”, e então puxa o verbo: “Tí haldi eg…”. As subordinadas com “hóast” (embora), “tí at” (porque), “um” (se) e “áðrenn” (antes que) mantêm sujeito + verbo, e o “ikki” costuma vir antes do verbo: “um ferjan ikki longur siglir”. Quando a subordinada abre a frase, a principal começa pelo verbo: “Hóast tað kostar nógv, er tunnilin ein góð loysn”.',
       grammar_examples: [
         ['Tunnilin kostar nógv, men hann bindur oyggjarnar saman.', 'O túnel custa caro, mas liga as ilhas.'],
         ['Afturat noyðast vit ikki at bíða eftir ferjuni.', 'Além disso, a gente não precisa esperar a balsa.'],
@@ -1500,9 +1500,9 @@ export const UNITS_FO: UnitSeed[] = [
           bot: 'Hvat heldur tú: eiga vit at byggja ein tunnil til okkara oyggjar?',
           botTranslation: 'O que você acha: devemos construir um túnel até a nossa ilha?',
           expected: ['Ja, uttan iva. Tunnilin er dýrur, men afturat er hann tryggari enn ferjan, og til seinast fáa fleiri ung fólk hug at búgva her.', 'uttan iva', 'men', 'afturat', 'til seinast'],
-          hint: 'Organize: opinião («uttan iva»), um contra («men»), um argumento a mais («afturat») e a conclusão («til seinast»). Depois de «afturat» e «til seinast», o verbo vem antes do sujeito: «afturat er hann», «til seinast fáa…».',
+          hint: 'Organize: opinião (“uttan iva”), um contra (“men”), um argumento a mais (“afturat”) e a conclusão (“til seinast”). Depois de “afturat” e “til seinast”, o verbo vem antes do sujeito: “afturat er hann”, “til seinast fáa…”.',
         },
-        communityPrompt: 'Escreva 4 frases em feroês a favor ou contra uma ponte ou um túnel na sua cidade, usando «hóast», «afturat» e «til seinast» e respeitando a ordem verbo–sujeito depois deles.',
+        communityPrompt: 'Escreva 4 frases em feroês a favor ou contra uma ponte ou um túnel na sua cidade, usando “hóast”, “afturat” e “til seinast” e respeitando a ordem verbo–sujeito depois deles.',
       },
       {
         id: 'fo-u12-l2',
@@ -1512,15 +1512,15 @@ export const UNITS_FO: UnitSeed[] = [
         cloze: [
           { sentence: 'Eg skilji títt ___, men eg eri ósamdur.', answer: 'sjónarmið', options: ['sjónarmið', 'sjónarmiði', 'sjónarmiðs'], translation: 'Entendo seu ponto de vista, mas discordo.' },
           { sentence: 'Eg eri ósamdur, ___ at tað kostar ov nógv.', answer: 'tí', options: ['tí', 'hóast', 'men'], translation: 'Discordo, porque custa caro demais.' },
-          { sentence: 'Hon sigur: «Eg eri ___.»', answer: 'ósamd', options: ['ósamd', 'ósamdur', 'ósamt'], translation: 'Ela diz: «Eu discordo.»' },
+          { sentence: 'Hon sigur: “Eg eri ___.”', answer: 'ósamd', options: ['ósamd', 'ósamdur', 'ósamt'], translation: 'Ela diz: “Eu discordo.”' },
         ],
         voice: {
           bot: 'Eg haldi, at alt ov nógv ferðafólk koma til Føroya. Hvat heldur tú?',
           botTranslation: 'Acho que turistas demais vêm para as Faroé. O que você acha?',
           expected: ['Tað skilji eg væl, men tað haldi eg ikki. Ferðafólk geva bygdunum pening, hóast tey eisini kunnu skaða náttúruna.', 'tað haldi eg ikki', 'men', 'hóast'],
-          hint: 'Reconheça antes de discordar: «Tað skilji eg væl, men…». Repare na ordem de «tað haldi eg ikki»: o objeto «tað» vem na frente e o verbo fica em segundo lugar.',
+          hint: 'Reconheça antes de discordar: “Tað skilji eg væl, men…”. Repare na ordem de “tað haldi eg ikki”: o objeto “tað” vem na frente e o verbo fica em segundo lugar.',
         },
-        communityPrompt: 'Escolha um tema polêmico da sua cidade (trânsito, turismo, obras) e escreva em feroês um diálogo curto de 4 falas em que uma pessoa concorda e a outra discorda, com «tú hevur rætt», «eg eri ósamdur» e «tí at».',
+        communityPrompt: 'Escolha um tema polêmico da sua cidade (trânsito, turismo, obras) e escreva em feroês um diálogo curto de 4 falas em que uma pessoa concorda e a outra discorda, com “tú hevur rætt”, “eg eri ósamdur” e “tí at”.',
       },
       {
         id: 'fo-u12-l3',
@@ -1536,9 +1536,9 @@ export const UNITS_FO: UnitSeed[] = [
           bot: 'Vælkomin á borgarafundin! Hvør er tín meining um nýggja uppskotið?',
           botTranslation: 'Bem-vindo à reunião dos moradores! Qual é a sua opinião sobre a nova proposta?',
           expected: ['Mín meining er, at uppskotið er gott, men vit mugu hugsa um kostnaðin. Tí haldi eg, at vit skulu tosa meira um tað, áðrenn vit taka eina avgerð.', 'mín meining er', 'men', 'tí haldi eg'],
-          hint: 'Abra com «Mín meining er, at…», faça a ressalva com «men» e conclua com «Tí haldi eg…»: no começo da frase, «tí» quer dizer «por isso» e puxa o verbo para antes do sujeito.',
+          hint: 'Abra com “Mín meining er, at…”, faça a ressalva com “men” e conclua com “Tí haldi eg…”: no começo da frase, “tí” quer dizer “por isso” e puxa o verbo para antes do sujeito.',
         },
-        communityPrompt: 'Imagine uma reunião de moradores numa vila feroesa sobre uma nova trilha para turistas. Escreva em feroês a sua fala (4–5 frases): dê sua opinião, um argumento a favor, um contra e uma conclusão com «tí».',
+        communityPrompt: 'Imagine uma reunião de moradores numa vila feroesa sobre uma nova trilha para turistas. Escreva em feroês a sua fala (4–5 frases): dê sua opinião, um argumento a favor, um contra e uma conclusão com “tí”.',
       },
       {
         id: 'fo-u12-p',
@@ -1556,9 +1556,9 @@ export const UNITS_FO: UnitSeed[] = [
             'afturat',
             'tí',
           ],
-          hint: 'Use a estrutura completa: opinião («eg haldi, at…»), concessão com «hóast» (e a principal começando pelo verbo), argumento extra com «afturat» e conclusão com «tí». Fale devagar e marque as pausas entre as partes.',
+          hint: 'Use a estrutura completa: opinião (“eg haldi, at…”), concessão com “hóast” (e a principal começando pelo verbo), argumento extra com “afturat” e conclusão com “tí”. Fale devagar e marque as pausas entre as partes.',
         },
-        communityPrompt: 'Escreva um pequeno texto de opinião em feroês (6–7 frases) sobre balsa × túnel, com introdução, dois argumentos, uma concessão com «hóast» e uma conclusão com «tí» ou «til seinast».',
+        communityPrompt: 'Escreva um pequeno texto de opinião em feroês (6–7 frases) sobre balsa × túnel, com introdução, dois argumentos, uma concessão com “hóast” e uma conclusão com “tí” ou “til seinast”.',
       },
     ],
   },
@@ -1575,9 +1575,9 @@ export const UNITS_FO: UnitSeed[] = [
       history:
         'O feroês descende do nórdico ocidental levado às ilhas pelos colonos vindos da Noruega na Era Viking, e por isso seus parentes mais próximos são o islandês e os dialetos do oeste da Noruega. A gramática lembra muito a do islandês (quatro casos, três gêneros), mas a pronúncia mudou tanto que um islandês lê um jornal feroês com certa facilidade e entende bem menos quando o ouve. As Faroé fazem parte do Reino da Dinamarca e têm autonomia desde 1948, quando o feroês passou a ser a língua principal das ilhas; o dinamarquês continua sendo ensinado nas escolas. Mesmo com pouco mais de 50 mil habitantes, cada região tem seu sotaque, e o de Suðuroy, a ilha mais ao sul, é um dos mais fáceis de reconhecer.',
       culture_tip:
-        'O dinamarquês lido com a pronúncia feroesa tem nome: «gøtudanskt», o «dinamarquês da rua», hoje lembrado com humor. Com islandeses e noruegueses, muitos feroeses conversam cada um na sua língua, falando devagar. E cuidado: chamar o feroês de «dialeto do dinamarquês» ofende, porque é outra língua, bem mais próxima do islandês.',
+        'O dinamarquês lido com a pronúncia feroesa tem nome: “gøtudanskt”, o “dinamarquês da rua”, hoje lembrado com humor. Com islandeses e noruegueses, muitos feroeses conversam cada um na sua língua, falando devagar. E cuidado: chamar o feroês de “dialeto do dinamarquês” ofende, porque é outra língua, bem mais próxima do islandês.',
       grammar_why:
-        'Comparar as línguas irmãs ajuda a ver o que é só do feroês. O islandês escreve «þ» onde o feroês tem «t» ou «h»: islandês «þú», «það», «þetta»; feroês «tú», «tað», «hetta»; norueguês «du», «det», «dette». A escrita feroesa é etimológica e por isso fica perto do islandês no papel: «hestur» (cavalo) e «dagur» (dia) se escrevem igual nas duas línguas, mas em feroês o «g» de «dagur» não soa (algo como «TÉA-vur»). Os quatro casos seguem firmes, mas o genitivo quase só aparece na escrita e em expressões fixas, como «til Føroya» (para as Faroé); na fala, a posse vem com «hjá» + dativo: «bilurin hjá pápa» (o carro do papai). Com «líkjast» (parecer-se com), o termo comparado vai para o dativo: «føroyskt líkist íslendskum».',
+        'Comparar as línguas irmãs ajuda a ver o que é só do feroês. O islandês escreve “þ” onde o feroês tem “t” ou “h”: islandês “þú”, “það”, “þetta”; feroês “tú”, “tað”, “hetta”; norueguês “du”, “det”, “dette”. A escrita feroesa é etimológica e por isso fica perto do islandês no papel: “hestur” (cavalo) e “dagur” (dia) se escrevem igual nas duas línguas, mas em feroês o “g” de “dagur” não soa (algo como “TÉA-vur”). Os quatro casos seguem firmes, mas o genitivo quase só aparece na escrita e em expressões fixas, como “til Føroya” (para as Faroé); na fala, a posse vem com “hjá” + dativo: “bilurin hjá pápa” (o carro do papai). Com “líkjast” (parecer-se com), o termo comparado vai para o dativo: “føroyskt líkist íslendskum”.',
       grammar_examples: [
         ['Tú ert íslendingur, og eg eri føroyingur, men vit skilja hvør annan.', 'Você é islandês e eu sou feroês, mas a gente se entende.'],
         ['Í Suðuroy tosa tey øðrvísi enn í Tórshavn.', 'Em Suðuroy se fala diferente de Tórshavn.'],
@@ -1601,7 +1601,7 @@ export const UNITS_FO: UnitSeed[] = [
           bot: 'Skilur tú íslendskt, nú tú kanst føroyskt?',
           botTranslation: 'Você entende islandês, agora que sabe feroês?',
           expected: ['Eg skilji nógv, tá ið eg lesi, tí at skriftin líkist, men tað er truplari at skilja, tá ið íslendingar tosa.', 'tá ið', 'líkist', 'truplari'],
-          hint: 'Compare leitura e escuta com «tá ið» (quando) e o comparativo «truplari» (mais difícil). «Líkist» é voz média: «se parece», sem objeto direto.',
+          hint: 'Compare leitura e escuta com “tá ið” (quando) e o comparativo “truplari” (mais difícil). “Líkist” é voz média: “se parece”, sem objeto direto.',
         },
         communityPrompt: 'Escreva em feroês 4 frases comparando feroês, islandês e norueguês: uma sobre a escrita, uma sobre a pronúncia, uma sobre uma palavra parecida e uma sobre o que você acha mais difícil.',
       },
@@ -1619,7 +1619,7 @@ export const UNITS_FO: UnitSeed[] = [
           bot: 'Tosa føroyingar danskt sínámillum?',
           botTranslation: 'Os feroeses falam dinamarquês entre si?',
           expected: ['Nei, føroyingar tosa føroyskt sínámillum, men flestir skilja danskt, tí at danskt verður lært í skúlanum.', 'føroyskt', 'sínámillum', 'í skúlanum'],
-          hint: 'Responda com «nei» e corrija com «men». «Sínámillum» (entre si) é uma palavra só. «Verður lært» é passiva: «é ensinado».',
+          hint: 'Responda com “nei” e corrija com “men”. “Sínámillum” (entre si) é uma palavra só. “Verður lært” é passiva: “é ensinado”.',
         },
         communityPrompt: 'Um amigo acha que o feroês é um dialeto do dinamarquês. Responda em feroês, com 4–5 frases educadas, explicando por que não é e qual língua é mais parecida com o feroês.',
       },
@@ -1637,7 +1637,7 @@ export const UNITS_FO: UnitSeed[] = [
           bot: 'Hoyrir tú, hvaðani eg eri, tá ið eg tosi?',
           botTranslation: 'Você percebe de onde eu sou quando eu falo?',
           expected: ['Ja, eg haldi, at tú ert úr Suðuroy, tí at framburðurin er øðrvísi enn í Tórshavn.', 'úr Suðuroy', 'framburðurin', 'øðrvísi'],
-          hint: 'Arrisque um palpite com «eg haldi, at…» e justifique com «tí at…». Lembre: «úr» pede dativo, e «Suðuroy» fica igual: úr Suðuroy, í Suðuroy.',
+          hint: 'Arrisque um palpite com “eg haldi, at…” e justifique com “tí at…”. Lembre: “úr” pede dativo, e “Suðuroy” fica igual: úr Suðuroy, í Suðuroy.',
         },
         communityPrompt: 'Pesquise um traço do sotaque de alguma região das Faroé (por exemplo, de Suðuroy ou das Norðoyggjar) e descreva-o em feroês em 3–4 frases, com um exemplo de palavra.',
       },
@@ -1657,9 +1657,9 @@ export const UNITS_FO: UnitSeed[] = [
             'íslendskum',
             'tó',
           ],
-          hint: 'Use o condicional do passado «eg hevði sagt, at…», compare com «líkist … meira enn …» (líkjast pede dativo: íslendskum, donskum) e faça a ressalva com «tó» (porém), que vem depois do verbo.',
+          hint: 'Use o condicional do passado “eg hevði sagt, at…”, compare com “líkist … meira enn …” (líkjast pede dativo: íslendskum, donskum) e faça a ressalva com “tó” (porém), que vem depois do verbo.',
         },
-        communityPrompt: 'Escreva em feroês um parágrafo (6–7 frases) sobre as línguas das Faroé: a relação com o islandês e o norueguês, o papel do dinamarquês e a variação entre as ilhas. Use pelo menos um «hóast» e um «tó».',
+        communityPrompt: 'Escreva em feroês um parágrafo (6–7 frases) sobre as línguas das Faroé: a relação com o islandês e o norueguês, o papel do dinamarquês e a variação entre as ilhas. Use pelo menos um “hóast” e um “tó”.',
       },
     ],
   },
@@ -1676,9 +1676,9 @@ export const UNITS_FO: UnitSeed[] = [
       history:
         'As Ilhas Faroé são feitas de camadas de basalto, restos de erupções vulcânicas de dezenas de milhões de anos atrás, quando o Atlântico Norte se abria. A economia depende do mar: peixe e produtos de peixe, com destaque para o salmão de cativeiro, são de longe a maior parte das exportações. Por isso a pesquisa marinha tem peso: o Havstovan, o instituto feroês de pesquisa do mar, acompanha os estoques de peixe, as correntes e a temperatura da água. Uma corrente quente do Atlântico, ramo da Corrente do Golfo, deixa o inverno ameno para uma latitude tão alta.',
       culture_tip:
-        'Os textos técnicos feroeses (relatórios, artigos, boletins) usam um estilo impessoal: voz passiva («verður mátað», é medido) e muitos substantivos formados de verbos, como «gransking» (pesquisa, de «granska») e «útrokning» (cálculo, de «rokna út»). Os números usam vírgula decimal, como no Brasil: 8,5 stig. E quase toda ciência tem nome feroês: «lívfrøði» (biologia), «jarðfrøði» (geologia), com «frøði» (saber) no lugar do grego «-logia».',
+        'Os textos técnicos feroeses (relatórios, artigos, boletins) usam um estilo impessoal: voz passiva (“verður mátað”, é medido) e muitos substantivos formados de verbos, como “gransking” (pesquisa, de “granska”) e “útrokning” (cálculo, de “rokna út”). Os números usam vírgula decimal, como no Brasil: 8,5 stig. E quase toda ciência tem nome feroês: “lívfrøði” (biologia), “jarðfrøði” (geologia), com “frøði” (saber) no lugar do grego “-logia”.',
       grammar_why:
-        'O texto especializado feroês junta três recursos que você já conhece. 1) A passiva com «verða» + particípio, que concorda com o sujeito: «hitastigið verður mátað» (neutro singular), «mátingarnar vórðu gjørdar» (feminino plural), «tølini verða greinað» (neutro plural). 2) Os compostos, em que a última parte manda no gênero: «fiskastovnur» é masculino por causa de «stovnur», e «havgransking» é feminino por causa de «gransking»; muitas vezes a primeira parte vem no genitivo, como «fiska-» (de peixes). 3) Os substantivos em «-ing», sempre femininos e com plural em «-ingar»: «máting», «greining», «frágreiðing». Em português dizemos «foi feita uma medição»; em feroês, o mais natural no texto técnico é pôr o resultado como sujeito: «mátingin varð gjørd».',
+        'O texto especializado feroês junta três recursos que você já conhece. 1) A passiva com “verða” + particípio, que concorda com o sujeito: “hitastigið verður mátað” (neutro singular), “mátingarnar vórðu gjørdar” (feminino plural), “tølini verða greinað” (neutro plural). 2) Os compostos, em que a última parte manda no gênero: “fiskastovnur” é masculino por causa de “stovnur”, e “havgransking” é feminino por causa de “gransking”; muitas vezes a primeira parte vem no genitivo, como “fiska-” (de peixes). 3) Os substantivos em “-ing”, sempre femininos e com plural em “-ingar”: “máting”, “greining”, “frágreiðing”. Em português dizemos “foi feita uma medição”; em feroês, o mais natural no texto técnico é pôr o resultado como sujeito: “mátingin varð gjørd”.',
       grammar_examples: [
         ['Hitastigið í sjónum verður mátað hvønn dag.', 'A temperatura do mar é medida todos os dias.'],
         ['Tølini verða greinað í royndarstovuni.', 'Os números são analisados no laboratório.'],
@@ -1702,9 +1702,9 @@ export const UNITS_FO: UnitSeed[] = [
           bot: 'Hvat granskar Havstovan?',
           botTranslation: 'O que o Havstovan pesquisa?',
           expected: ['Havstovan granskar fiskastovnarnar, havstreymarnar og hitastigið í sjónum.', 'fiskastovnarnar', 'havstreym', 'hitastigið'],
-          hint: '«Granskar» (pesquisa) pede acusativo; no plural definido dos masculinos o acusativo termina em «-arnar»: fiskastovnarnar, havstreymarnar. O «ey» de «havstreymur» soa como «éi».',
+          hint: '“Granskar” (pesquisa) pede acusativo; no plural definido dos masculinos o acusativo termina em “-arnar”: fiskastovnarnar, havstreymarnar. O “ey” de “havstreymur” soa como “éi”.',
         },
-        communityPrompt: 'Escreva em feroês 3–4 frases de um boletim de pesquisa marinha, usando pelo menos duas passivas com «verður» ou «varð» (por exemplo, o que é medido e quando).',
+        communityPrompt: 'Escreva em feroês 3–4 frases de um boletim de pesquisa marinha, usando pelo menos duas passivas com “verður” ou “varð” (por exemplo, o que é medido e quando).',
       },
       {
         id: 'fo-u14-l2',
@@ -1720,9 +1720,9 @@ export const UNITS_FO: UnitSeed[] = [
           bot: 'Hvat kann eitt lítið land sum Føroyar gera fyri umhvørvið?',
           botTranslation: 'O que um país pequeno como as Faroé pode fazer pelo meio ambiente?',
           expected: ['Føroyar kunnu brúka meira vindorku og vatnorku, so at minni olja verður brend. Afturat eiga vit at halda havið reint.', 'vindorku', 'vatnorku', 'verður brend'],
-          hint: 'Proponha medidas com «kunnu» e «eiga at» (dever), use uma passiva («verður brend», é queimado: «olja» é feminino) e ligue as ideias com «so at» (para que) e «afturat».',
+          hint: 'Proponha medidas com “kunnu” e “eiga at” (dever), use uma passiva (“verður brend”, é queimado: “olja” é feminino) e ligue as ideias com “so at” (para que) e “afturat”.',
         },
-        communityPrompt: 'Escreva em feroês um pequeno parágrafo técnico (4–5 frases) sobre uma fonte de energia no Brasil (hidrelétrica, eólica ou solar), com um número, uma passiva e um composto com «-orka».',
+        communityPrompt: 'Escreva em feroês um pequeno parágrafo técnico (4–5 frases) sobre uma fonte de energia no Brasil (hidrelétrica, eólica ou solar), com um número, uma passiva e um composto com “-orka”.',
       },
       {
         id: 'fo-u14-l3',
@@ -1738,9 +1738,9 @@ export const UNITS_FO: UnitSeed[] = [
           bot: 'Kanst tú greiða stutt frá úrslitunum í granskingini?',
           botTranslation: 'Você pode apresentar brevemente os resultados da pesquisa?',
           expected: ['Ja. Mátingarnar vórðu gjørdar í fimm ár, og greiningin vísir, at miðalhitin í sjónum er hækkaður. Afturat er fiskastovnurin fluttur norðureftir.', 'vórðu gjørdar', 'greiningin vísir', 'miðal'],
-          hint: 'Siga a ordem de um resumo técnico: método (passiva no passado, «vórðu gjørdar»), resultado («greiningin vísir, at…») e um dado extra com «afturat». Fale os números devagar.',
+          hint: 'Siga a ordem de um resumo técnico: método (passiva no passado, “vórðu gjørdar”), resultado (“greiningin vísir, at…”) e um dado extra com “afturat”. Fale os números devagar.',
         },
-        communityPrompt: 'Resuma em feroês (4–5 frases) um dado que você conhece (por exemplo, a temperatura média da sua cidade), com «greiningin vísir, at…», um «miðaltal» e uma passiva.',
+        communityPrompt: 'Resuma em feroês (4–5 frases) um dado que você conhece (por exemplo, a temperatura média da sua cidade), com “greiningin vísir, at…”, um “miðaltal” e uma passiva.',
       },
       {
         id: 'fo-u14-p',
@@ -1758,7 +1758,7 @@ export const UNITS_FO: UnitSeed[] = [
             'úrslitini vísa',
             'tí',
           ],
-          hint: 'Estruture como numa apresentação: agradecimento, resultado principal («hevur víst, at…»), método (passiva), dado e conclusão com «tí». «Kring» pede acusativo: kring Føroyar.',
+          hint: 'Estruture como numa apresentação: agradecimento, resultado principal (“hevur víst, at…”), método (passiva), dado e conclusão com “tí”. “Kring” pede acusativo: kring Føroyar.',
         },
         communityPrompt: 'Escreva o resumo de uma pesquisa imaginária em feroês (6–7 frases): objetivo, método com passiva, resultados com números e uma conclusão. Use pelo menos três compostos técnicos.',
       },
@@ -1775,13 +1775,13 @@ export const UNITS_FO: UnitSeed[] = [
       title: 'Os kvæði e a dança de roda',
       emoji: '💃',
       history:
-        'Durante séculos, quase nada se escreveu em feroês: a língua viveu nos kvæði, longas baladas heroicas cantadas na dança de roda, algumas com dezenas e até centenas de estrofes. No fim do século XVIII, Jens Christian Svabo percorreu as ilhas anotando baladas e palavras, e no século XIX V. U. Hammershaimb criou a ortografia (1846) e publicou coleções de baladas e lendas. Jens Christian Djurhuus (1773–1853) foi um dos primeiros poetas conhecidos a compor baladas em feroês, entre elas «Ormurin langi», sobre o navio do rei norueguês Olavo Tryggvason. No século XX veio a poesia moderna, com poetas como Janus Djurhuus, e o hino nacional, «Tú alfagra land mítt», de Símun av Skarði.',
+        'Durante séculos, quase nada se escreveu em feroês: a língua viveu nos kvæði, longas baladas heroicas cantadas na dança de roda, algumas com dezenas e até centenas de estrofes. No fim do século XVIII, Jens Christian Svabo percorreu as ilhas anotando baladas e palavras, e no século XIX V. U. Hammershaimb criou a ortografia (1846) e publicou coleções de baladas e lendas. Jens Christian Djurhuus (1773–1853) foi um dos primeiros poetas conhecidos a compor baladas em feroês, entre elas “Ormurin langi”, sobre o navio do rei norueguês Olavo Tryggvason. No século XX veio a poesia moderna, com poetas como Janus Djurhuus, e o hino nacional, “Tú alfagra land mítt”, de Símun av Skarði.',
       culture_tip:
         'A dança de roda é simples: todos dão as mãos e seguem dois passos para a esquerda e um para a direita, sem instrumentos, só com as vozes. Um cantor puxa as estrofes (ørindi) e a roda responde no refrão (niðurlag). Não é espetáculo para turista: acontece na Ólavsøka, em casamentos e em festas de vila, e qualquer um pode entrar na roda: basta acompanhar o passo e, com o tempo, o refrão.',
       grammar_why:
-        'A língua dos kvæði é antiga e cheia de fórmulas, e lê-la é o teste final do nível C2. Repare em três coisas. 1) A ordem livre da poesia: o verbo pode abrir o verso por ênfase, como em «Glymur dansur í høll» (ressoa a dança no salão), algo raro na prosa. 2) O imperativo plural: em «dans sláið í ring», «sláið» é o imperativo plural de «sláa» (bater) e o objeto «dans» vem antes do verbo: «formem a roda da dança». 3) O genitivo, quase sumido da fala, aparece vivo: «Noregs menn» (os homens da Noruega) e «til Hildar ting» (à assembleia de Hildur, uma valquíria, ou seja, à batalha). Os provérbios (málshættir) também guardam gramática antiga e se decoram em bloco, como os nossos.',
+        'A língua dos kvæði é antiga e cheia de fórmulas, e lê-la é o teste final do nível C2. Repare em três coisas. 1) A ordem livre da poesia: o verbo pode abrir o verso por ênfase, como em “Glymur dansur í høll” (ressoa a dança no salão), algo raro na prosa. 2) O imperativo plural: em “dans sláið í ring”, “sláið” é o imperativo plural de “sláa” (bater) e o objeto “dans” vem antes do verbo: “formem a roda da dança”. 3) O genitivo, quase sumido da fala, aparece vivo: “Noregs menn” (os homens da Noruega) e “til Hildar ting” (à assembleia de Hildur, uma valquíria, ou seja, à batalha). Os provérbios (málshættir) também guardam gramática antiga e se decoram em bloco, como os nossos.',
       grammar_examples: [
-        ['Glymur dansur í høll, dans sláið í ring!', 'Ressoa a dança no salão, formem a roda da dança! (refrão de «Ormurin langi»)'],
+        ['Glymur dansur í høll, dans sláið í ring!', 'Ressoa a dança no salão, formem a roda da dança! (refrão de “Ormurin langi”)'],
         ['Glaðir ríða Noregs menn til Hildar ting.', 'Alegres cavalgam os homens da Noruega para a batalha (lit. a assembleia de Hildur).'],
         ['Tú alfagra land mítt, mín dýrasta ogn!', 'Tu, minha terra tão bela, meu bem mais precioso! (começo do hino, de Símun av Skarði)'],
         ['Hammershaimb skrivaði føroyskt, so at tað líktist gamla norrøna málinum.', 'Hammershaimb escreveu o feroês de modo que se parecesse com o antigo nórdico.'],
@@ -1803,7 +1803,7 @@ export const UNITS_FO: UnitSeed[] = [
           bot: 'Hevur tú nakrantíð dansað føroyskan dans?',
           botTranslation: 'Você já dançou a dança feroesa alguma vez?',
           expected: ['Ja, eg dansaði á Ólavsøku. Vit stóðu í ringi og sungu niðurlagið saman.', 'dansaði', 'niðurlagið', 'sungu'],
-          hint: 'Conte no passado: dansa → dansaði, syngja → sungu (plural), standa → stóðu. «Á Ólavsøku» usa o dativo da festa nacional.',
+          hint: 'Conte no passado: dansa → dansaði, syngja → sungu (plural), standa → stóðu. “Á Ólavsøku” usa o dativo da festa nacional.',
         },
         communityPrompt: 'Descreva em feroês (4–5 frases) como é a dança de roda: o passo, quem canta as estrofes, quem canta o refrão e onde ela acontece.',
       },
@@ -1821,7 +1821,7 @@ export const UNITS_FO: UnitSeed[] = [
           bot: 'Hví hevur Hammershaimb so stóran týdning fyri føroyska málið?',
           botTranslation: 'Por que Hammershaimb é tão importante para a língua feroesa?',
           expected: ['Tí at hann gjørdi føroysku stavsetingina í 1846. Hann valdi eina skrift, sum líkist gamla norrøna málinum, so at allir føroyingar kundu lesa hana, hóast framburðurin er ymiskur.', 'stavseting', '1846', 'hóast'],
-          hint: 'Justifique com «tí at…» e explique a ideia central da ortografia: uma escrita comum a todas as ilhas, mesmo com pronúncias diferentes. «Hóast» introduz a concessão; «ymiskur» quer dizer «variado, diferente».',
+          hint: 'Justifique com “tí at…” e explique a ideia central da ortografia: uma escrita comum a todas as ilhas, mesmo com pronúncias diferentes. “Hóast” introduz a concessão; “ymiskur” quer dizer “variado, diferente”.',
         },
         communityPrompt: 'Escreva em feroês um pequeno verbete (5–6 frases) sobre um autor feroês já falecido (Svabo, Hammershaimb, J. C. Djurhuus ou Janus Djurhuus): quando viveu, o que fez e por que é importante.',
       },
@@ -1836,12 +1836,12 @@ export const UNITS_FO: UnitSeed[] = [
           { sentence: 'Kvæðini greiða frá ___ hendingum og gomlum hetjum.', answer: 'søguligum', options: ['søguligum', 'søguligar', 'søguligt'], translation: 'As baladas contam acontecimentos históricos e feitos de heróis antigos.' },
         ],
         voice: {
-          bot: 'Kanst tú syngja niðurlagið í «Ormurin langi»?',
-          botTranslation: 'Você sabe cantar o refrão de «Ormurin langi»?',
+          bot: 'Kanst tú syngja niðurlagið í “Ormurin langi”?',
+          botTranslation: 'Você sabe cantar o refrão de “Ormurin langi”?',
           expected: ['Glymur dansur í høll, dans sláið í ring! Glaðir ríða Noregs menn til Hildar ting.', 'glymur dansur í høll', 'dans sláið í ring', 'Noregs menn'],
-          hint: 'Recite com ritmo, com a tônica na primeira sílaba: GLI-mur DAN-sur. O «y» feroês soa como «i». Em «Hildar ting», Hildur é uma valquíria, e a «assembleia de Hildur» é a batalha.',
+          hint: 'Recite com ritmo, com a tônica na primeira sílaba: GLI-mur DAN-sur. O “y” feroês soa como “i”. Em “Hildar ting”, Hildur é uma valquíria, e a “assembleia de Hildur” é a batalha.',
         },
-        communityPrompt: 'Traduza para o português o refrão de «Ormurin langi» de dois jeitos (um literal e um que caiba na música) e explique em feroês, em 2–3 frases, por que a ordem das palavras na poesia é diferente da prosa.',
+        communityPrompt: 'Traduza para o português o refrão de “Ormurin langi” de dois jeitos (um literal e um que caiba na música) e explique em feroês, em 2–3 frases, por que a ordem das palavras na poesia é diferente da prosa.',
       },
       {
         id: 'fo-u15-p',
@@ -1859,9 +1859,9 @@ export const UNITS_FO: UnitSeed[] = [
             'á Ólavsøku',
             'tí at',
           ],
-          hint: 'Mostre domínio: perfeito («hava havt»), subordinada no passado com «tá ið», vocabulário culto («varðveittu», preservaram) e uma conclusão que ligue passado e presente. Se quiser, termine recitando o refrão.',
+          hint: 'Mostre domínio: perfeito (“hava havt”), subordinada no passado com “tá ið”, vocabulário culto (“varðveittu”, preservaram) e uma conclusão que ligue passado e presente. Se quiser, termine recitando o refrão.',
         },
-        communityPrompt: 'Escreva um ensaio curto em feroês (7–8 frases) sobre o papel das baladas na sobrevivência da língua feroesa, citando Svabo e Hammershaimb e o refrão de «Ormurin langi». Termine com a sua opinião pessoal.',
+        communityPrompt: 'Escreva um ensaio curto em feroês (7–8 frases) sobre o papel das baladas na sobrevivência da língua feroesa, citando Svabo e Hammershaimb e o refrão de “Ormurin langi”. Termine com a sua opinião pessoal.',
       },
     ],
   },

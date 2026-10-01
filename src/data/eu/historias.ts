@@ -27,7 +27,7 @@ export const STORIES_EU: StorySeed[] = [
         emoji: '😊',
         choices: [
           { text: 'São Paulokoa naiz.', translation: 'Sou de São Paulo.', next: 'amaiera_ona' },
-          { text: 'Ura edaten dut.', translation: 'Eu bebo água.', wrong: 'Isso não responde de onde você é. Use «…koa naiz».' },
+          { text: 'Ura edaten dut.', translation: 'Eu bebo água.', wrong: 'Isso não responde de onde você é. Use “…koa naiz”.' },
         ],
       },
       amaiera_ona: {
@@ -51,7 +51,7 @@ export const STORIES_EU: StorySeed[] = [
     title: 'Afaria familian',
     emoji: '👪',
     summary: 'Mikel, um amigo de San Sebastián, pergunta pela sua família e convida você para jantar com a família dele.',
-    cultural_context: 'San Sebastián (Donostia, em basco) é famosa pela comida: os «pintxos», petiscos servidos no balcão dos bares, são uma tradição da cidade.',
+    cultural_context: 'San Sebastián (Donostia, em basco) é famosa pela comida: os “pintxos”, petiscos servidos no balcão dos bares, são uma tradição da cidade.',
     start: 'hasiera',
     nodes: {
       hasiera: {
@@ -60,7 +60,7 @@ export const STORIES_EU: StorySeed[] = [
         emoji: '📱',
         choices: [
           { text: 'Bai, bi anaia ditut.', translation: 'Sim, tenho dois irmãos.', next: 'familia' },
-          { text: 'Nire etxea txikia da.', translation: 'A minha casa é pequena.', wrong: 'Isso não responde sobre a sua família. Use «… dut» ou «… ditut».' },
+          { text: 'Nire etxea txikia da.', translation: 'A minha casa é pequena.', wrong: 'Isso não responde sobre a sua família. Use “… dut” ou “… ditut”.' },
         ],
       },
       familia: {
@@ -69,7 +69,7 @@ export const STORIES_EU: StorySeed[] = [
         emoji: '🍽️',
         choices: [
           { text: 'Bai, mila esker!', translation: 'Sim, muito obrigado!', next: 'amaiera_ona' },
-          { text: 'São Paulokoa naiz.', translation: 'Sou de São Paulo.', wrong: 'Mikel fez um convite: responda com «bai» ou «ez, eskerrik asko».' },
+          { text: 'São Paulokoa naiz.', translation: 'Sou de São Paulo.', wrong: 'Mikel fez um convite: responda com “bai” ou “ez, eskerrik asko”.' },
         ],
       },
       amaiera_ona: {

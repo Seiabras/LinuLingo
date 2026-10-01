@@ -10,14 +10,14 @@ export const LINGUISTICS_SW: LinguisticsArea[] = [
     sections: [
       {
         heading: 'Cinco vogais inteiras',
-        text: 'As vogais a, e, i, o, u não mudam de timbre nem se reduzem no fim da palavra, como acontece no português do Brasil («leite» soa «leiti»). Em suaíli, «pole» é [ˈpɔle], nunca «póli». Duas vogais iguais seguidas são duas sílabas: «saa» (hora) é sa-a.',
+        text: 'As vogais a, e, i, o, u não mudam de timbre nem se reduzem no fim da palavra, como acontece no português do Brasil (“leite” soa “leiti”). Em suaíli, “pole” é [ˈpɔle], nunca “póli”. Duas vogais iguais seguidas são duas sílabas: “saa” (hora) é sa-a.',
         table: {
           head: ['Palavra', 'IPA', 'O que observar'],
           rows: [
-            ['pole', '[ˈpɔle]', 'o «e» final soa inteiro'],
-            ['moto', '[ˈmɔtɔ]', 'o «o» final não vira «u»'],
+            ['pole', '[ˈpɔle]', 'o “e” final soa inteiro'],
+            ['moto', '[ˈmɔtɔ]', 'o “o” final não vira “u”'],
             ['saa', '[ˈsaa]', 'duas sílabas'],
-            ['kesho', '[ˈkeʃɔ]', '«sh» como o nosso «ch»'],
+            ['kesho', '[ˈkeʃɔ]', '“sh” como o nosso “ch”'],
           ],
         },
         examples: [
@@ -28,7 +28,7 @@ export const LINGUISTICS_SW: LinguisticsArea[] = [
       },
       {
         heading: 'Pré-nasais e sons árabes',
-        text: 'Muitas palavras começam com «m» ou «n» grudados na consoante: mbwa (cachorro), ndizi (banana), ngoma (tambor). Antes de consoante, o «m» pode ser uma sílaba inteira (m-tu, pessoa). Das palavras árabes vieram sons que o português não tem: «dh» (o «th» de «this»: dhahabu), «th» (o «th» de «think»: thelathini) e «gh» (um «r» raspado na garganta: ghali).',
+        text: 'Muitas palavras começam com “m” ou “n” grudados na consoante: mbwa (cachorro), ndizi (banana), ngoma (tambor). Antes de consoante, o “m” pode ser uma sílaba inteira (m-tu, pessoa). Das palavras árabes vieram sons que o português não tem: “dh” (o “th” de “this”: dhahabu), “th” (o “th” de “think”: thelathini) e “gh” (um “r” raspado na garganta: ghali).',
         examples: [
           ['Mbwa na ngoma.', 'O cachorro e o tambor.'],
           ['Dhahabu ni ghali.', 'O ouro é caro.'],
@@ -39,15 +39,15 @@ export const LINGUISTICS_SW: LinguisticsArea[] = [
     topics: ['sw-g-letras'],
     quiz: [
       {
-        question: 'Como soa o «e» final de «pole»?',
-        options: ['como um «e» inteiro', 'como «i»', 'mudo'],
-        answer: 'como um «e» inteiro',
+        question: 'Como soa o “e” final de “pole”?',
+        options: ['como um “e” inteiro', 'como “i”', 'mudo'],
+        answer: 'como um “e” inteiro',
         explanation: 'Em suaíli, todas as vogais finais soam plenas: [ˈpɔle].',
       },
       {
-        question: 'Qual som é o «dh» de «dhahabu»?',
-        options: ['o «th» de «this»', 'o «d» de «dado»', 'o «j» de «já»'],
-        answer: 'o «th» de «this»',
+        question: 'Qual som é o “dh” de “dhahabu”?',
+        options: ['o “th” de “this”', 'o “d” de “dado”', 'o “j” de “já”'],
+        answer: 'o “th” de “this”',
         explanation: 'É o som [ð], que veio com as palavras árabes.',
       },
     ],
@@ -80,13 +80,13 @@ export const LINGUISTICS_SW: LinguisticsArea[] = [
     topics: ['sw-g-infinitivo'],
     quiz: [
       {
-        question: 'Onde fica a tônica de «asanteni»?',
-        options: ['na sílaba «te»', 'na sílaba «san»', 'na sílaba «ni»'],
-        answer: 'na sílaba «te»',
+        question: 'Onde fica a tônica de “asanteni”?',
+        options: ['na sílaba “te”', 'na sílaba “san”', 'na sílaba “ni”'],
+        answer: 'na sílaba “te”',
         explanation: 'A tônica anda para a penúltima sílaba: a-san-TE-ni.',
       },
       {
-        question: 'Por que «doctor» virou «daktari»?',
+        question: 'Por que “doctor” virou “daktari”?',
         options: ['porque a sílaba suaíli termina em vogal', 'porque veio do árabe', 'por engano de grafia'],
         answer: 'porque a sílaba suaíli termina em vogal',
         explanation: 'O suaíli acrescenta vogais para evitar consoantes no fim da sílaba.',
@@ -131,16 +131,16 @@ export const LINGUISTICS_SW: LinguisticsArea[] = [
     topics: ['sw-g-classes', 'sw-g-ki-vi', 'sw-g-outras-classes', 'sw-g-presente', 'sw-g-tempos', 'sw-g-perfeito', 'sw-g-subjuntivo', 'sw-g-objeto', 'sw-g-extensoes', 'sw-g-hipotetico', 'sw-g-ji-ana', 'sw-g-ka-hu', 'sw-g-possessivos'],
     quiz: [
       {
-        question: 'Qual é o plural de «kitabu»?',
+        question: 'Qual é o plural de “kitabu”?',
         options: ['vitabu', 'makitabu', 'kitabus'],
         answer: 'vitabu',
         explanation: 'Classe ki-/vi-: o prefixo ki- vira vi- no plural.',
       },
       {
-        question: 'Em «nilikupikia», qual peça quer dizer «você» (objeto)?',
+        question: 'Em “nilikupikia”, qual peça quer dizer “você” (objeto)?',
         options: ['-ku-', '-li-', 'ni-'],
         answer: '-ku-',
-        explanation: 'ni- é o sujeito, -li- o passado, -ku- o objeto «te», e -i- o «para».',
+        explanation: 'ni- é o sujeito, -li- o passado, -ku- o objeto “te”, e -i- o “para”.',
       },
     ],
   },
@@ -152,7 +152,7 @@ export const LINGUISTICS_SW: LinguisticsArea[] = [
     sections: [
       {
         heading: 'Tudo depois do substantivo',
-        text: 'Adjetivos, possessivos, demonstrativos e números vêm depois do substantivo, concordando com ele: «kitabu changu kizuri hiki» (este meu livro bonito). As perguntas mudam só a entonação ou recebem «je» no começo: «Je, unasema Kiswahili?». A pergunta fica no lugar da resposta: «Unakwenda wapi?» (você vai aonde?).',
+        text: 'Adjetivos, possessivos, demonstrativos e números vêm depois do substantivo, concordando com ele: “kitabu changu kizuri hiki” (este meu livro bonito). As perguntas mudam só a entonação ou recebem “je” no começo: “Je, unasema Kiswahili?”. A pergunta fica no lugar da resposta: “Unakwenda wapi?” (você vai aonde?).',
         examples: [
           ['Kitabu changu kiko wapi?', 'Onde está o meu livro?'],
           ['Je, unasema Kiswahili?', 'Você fala suaíli?'],
@@ -161,7 +161,7 @@ export const LINGUISTICS_SW: LinguisticsArea[] = [
       },
       {
         heading: 'Relativas e lugares dentro do verbo',
-        text: 'O «que» relativo pode ser a palavra amba- + a classe (ambaye, ambacho) ou uma peça no verbo (aliyekuja, a pessoa que veio). O «quando» é o -po- (nilipofika), o «se», o -ki- (ukienda). E o lugar concorda com a classe de lugar: «Mezani pana kitabu» (na mesa há um livro).',
+        text: 'O “que” relativo pode ser a palavra amba- + a classe (ambaye, ambacho) ou uma peça no verbo (aliyekuja, a pessoa que veio). O “quando” é o -po- (nilipofika), o “se”, o -ki- (ukienda). E o lugar concorda com a classe de lugar: “Mezani pana kitabu” (na mesa há um livro).',
         examples: [
           ['Mtu aliyekuja ni mwalimu.', 'A pessoa que veio é o professor.'],
           ['Nilipofika, mvua ilianza.', 'Quando cheguei, a chuva começou.'],
@@ -172,7 +172,7 @@ export const LINGUISTICS_SW: LinguisticsArea[] = [
     topics: ['sw-g-pronomes', 'sw-g-perguntas', 'sw-g-relativos', 'sw-g-ki-po', 'sw-g-locativos', 'sw-g-ter'],
     quiz: [
       {
-        question: 'Como se diz «o meu livro»?',
+        question: 'Como se diz “o meu livro”?',
         options: ['kitabu changu', 'changu kitabu', 'kitabu yangu'],
         answer: 'kitabu changu',
         explanation: 'O possessivo vem depois e concorda com a classe ki-: changu.',
@@ -181,7 +181,7 @@ export const LINGUISTICS_SW: LinguisticsArea[] = [
         question: 'Qual palavra transforma uma frase em pergunta de sim ou não?',
         options: ['je', 'nini', 'wapi'],
         answer: 'je',
-        explanation: '«Je» no começo marca a pergunta, sem mudar a ordem.',
+        explanation: '“Je” no começo marca a pergunta, sem mudar a ordem.',
       },
     ],
   },
@@ -211,7 +211,7 @@ export const LINGUISTICS_SW: LinguisticsArea[] = [
       },
       {
         heading: 'Números e horas que enganam',
-        text: 'Os números de um a cinco e o oito concordam com a classe (watoto wawili, vitabu viwili), mas seis, sete e nove, que vêm do árabe, e o dez não mudam (sita, saba, tisa, kumi). A hora começa a contar ao nascer do sol: «saa moja» são sete horas. E «pesa», «fedha» e «hela» dizem todos «dinheiro», cada um vindo de uma língua.',
+        text: 'Os números de um a cinco e o oito concordam com a classe (watoto wawili, vitabu viwili), mas seis, sete e nove, que vêm do árabe, e o dez não mudam (sita, saba, tisa, kumi). A hora começa a contar ao nascer do sol: “saa moja” são sete horas. E “pesa”, “fedha” e “hela” dizem todos “dinheiro”, cada um vindo de uma língua.',
         examples: [
           ['Nina vitabu viwili na kalamu sita.', 'Tenho dois livros e seis canetas.'],
           ['Tutaonana saa moja asubuhi.', 'Nos vemos às sete da manhã.'],
@@ -222,7 +222,7 @@ export const LINGUISTICS_SW: LinguisticsArea[] = [
     topics: ['sw-g-numeros', 'sw-g-hora', 'sw-g-emprestimos'],
     quiz: [
       {
-        question: 'O que quer dizer «Kiswahili»?',
+        question: 'O que quer dizer “Kiswahili”?',
         options: ['a língua suaíli', 'uma pessoa suaíli', 'a costa suaíli'],
         answer: 'a língua suaíli',
         explanation: 'O prefixo ki- marca a língua; a pessoa é Mswahili.',
@@ -239,11 +239,11 @@ export const LINGUISTICS_SW: LinguisticsArea[] = [
   {
     area: 'pragmatica',
     summary:
-      'No suaíli, cumprimentar é obrigatório antes de qualquer assunto, a idade pede fórmulas de respeito (shikamoo, mzee, mama) e o pedido educado usa o subjuntivo e «naomba» no lugar da ordem direta.',
+      'No suaíli, cumprimentar é obrigatório antes de qualquer assunto, a idade pede fórmulas de respeito (shikamoo, mzee, mama) e o pedido educado usa o subjuntivo e “naomba” no lugar da ordem direta.',
     sections: [
       {
         heading: 'O respeito pela idade',
-        text: 'Os mais novos cumprimentam os mais velhos com «Shikamoo» e recebem «Marahaba». Chamar alguém de «mzee» (ancião), «mama» ou «baba» é sinal de respeito, não de intimidade. Entrar numa loja ou numa conversa sem cumprimentar é falta de educação, mesmo com pressa.',
+        text: 'Os mais novos cumprimentam os mais velhos com “Shikamoo” e recebem “Marahaba”. Chamar alguém de “mzee” (ancião), “mama” ou “baba” é sinal de respeito, não de intimidade. Entrar numa loja ou numa conversa sem cumprimentar é falta de educação, mesmo com pressa.',
         examples: [
           ['Shikamoo, mzee!', 'Meus respeitos, senhor!'],
           ['Habari za nyumbani?', 'Como vão as coisas em casa?'],
@@ -252,7 +252,7 @@ export const LINGUISTICS_SW: LinguisticsArea[] = [
       },
       {
         heading: 'Pedir e argumentar',
-        text: 'O imperativo seco soa rude com desconhecidos: prefere-se «naomba…» (peço…), «tafadhali» e o subjuntivo («ukae», sente-se). Num debate formal, abre-se com «Mheshimiwa mwenyekiti» (senhor presidente), e as opiniões vêm com «kwa maoni yangu» e com os dois lados («kwa upande mmoja… kwa upande mwingine»).',
+        text: 'O imperativo seco soa rude com desconhecidos: prefere-se “naomba…” (peço…), “tafadhali” e o subjuntivo (“ukae”, sente-se). Num debate formal, abre-se com “Mheshimiwa mwenyekiti” (senhor presidente), e as opiniões vêm com “kwa maoni yangu” e com os dois lados (“kwa upande mmoja… kwa upande mwingine”).',
         examples: [
           ['Naomba maji, tafadhali.', 'Por favor, um pouco de água.'],
           ['Ukae hapa, tafadhali.', 'Sente-se aqui, por favor.'],
@@ -266,13 +266,13 @@ export const LINGUISTICS_SW: LinguisticsArea[] = [
         question: 'Como um jovem cumprimenta uma pessoa idosa?',
         options: ['Shikamoo', 'Mambo', 'Niaje'],
         answer: 'Shikamoo',
-        explanation: '«Shikamoo» é o cumprimento de respeito; a resposta é «marahaba».',
+        explanation: '“Shikamoo” é o cumprimento de respeito; a resposta é “marahaba”.',
       },
       {
         question: 'Qual pedido é mais educado?',
         options: ['Naomba maji, tafadhali.', 'Nipe maji!', 'Maji!'],
         answer: 'Naomba maji, tafadhali.',
-        explanation: '«Naomba» (peço) e «tafadhali» suavizam o pedido.',
+        explanation: '“Naomba” (peço) e “tafadhali” suavizam o pedido.',
       },
     ],
   },
@@ -304,7 +304,7 @@ export const LINGUISTICS_SW: LinguisticsArea[] = [
     topics: ['sw-g-poesia', 'sw-g-variedades'],
     quiz: [
       {
-        question: 'O que é uma «methali»?',
+        question: 'O que é uma “methali”?',
         options: ['um provérbio', 'um poema longo', 'uma gíria de Nairobi'],
         answer: 'um provérbio',
         explanation: 'Methali são os provérbios, usados para aconselhar e ensinar.',

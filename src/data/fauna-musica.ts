@@ -57,7 +57,7 @@ export const FAUNA_MUSICA: Record<string, CountryNature> = {
     instruments: [
       { emoji: '🏹', name: 'Berimbau', fact: 'Arco musical de origem africana que virou símbolo da capoeira.', origin: 'tradicional' },
       { emoji: '🎸', name: 'Viola caipira', fact: 'Viola de 10 cordas da música sertaneja de raiz, desenvolvida no Brasil a partir das violas portuguesas.', origin: 'criado' },
-      { emoji: '🥁', name: 'Cuíca', fact: 'Tambor de fricção que dá o «ronco» característico do samba.', origin: 'tradicional' },
+      { emoji: '🥁', name: 'Cuíca', fact: 'Tambor de fricção que dá o “ronco” característico do samba.', origin: 'tradicional' },
     ],
   },
   PRT: {
@@ -147,7 +147,7 @@ export const FAUNA_MUSICA: Record<string, CountryNature> = {
       { emoji: '🐐', name: 'Íbex-dos-alpes', local: 'stambecco', fact: 'Cabra-montesa de chifres enormes. No século XIX restavam poucas dezenas, na região do Gran Paradiso; todas as populações dos Alpes descendem delas.' },
     ],
     instruments: [
-      { emoji: '🎹', name: 'Piano', local: 'pianoforte', fact: 'Inventado em Florença por volta de 1700 por Bartolomeo Cristofori. O nome vem de tocar «piano e forte»: baixo e alto.', origin: 'criado' },
+      { emoji: '🎹', name: 'Piano', local: 'pianoforte', fact: 'Inventado em Florença por volta de 1700 por Bartolomeo Cristofori. O nome vem de tocar “piano e forte”: baixo e alto.', origin: 'criado' },
       { emoji: '🎻', name: 'Violino', local: 'violino', fact: 'Ganhou sua forma no norte da Itália no século XVI; em Cremona trabalharam os luthiers Amati, Stradivari e Guarneri.', origin: 'criado' },
       { emoji: '🪕', name: 'Bandolim napolitano', local: 'mandolino', fact: 'O bandolim de quatro pares de cordas nasceu em Nápoles no século XVIII.', origin: 'criado' },
       { emoji: '🎶', name: 'Zampogna', local: 'zampogna', fact: 'Gaita de foles do centro e do sul da Itália, tocada pelos pastores e, no Natal, pelas ruas.', origin: 'tradicional' },
@@ -155,7 +155,7 @@ export const FAUNA_MUSICA: Record<string, CountryNature> = {
   },
   SWE: {
     animals: [
-      { emoji: '🫎', name: 'Alce', local: 'älg', fact: 'A Suécia tem uma das maiores populações de alces do mundo; as placas «cuidado com o alce» são símbolo das estradas do país.' },
+      { emoji: '🫎', name: 'Alce', local: 'älg', fact: 'A Suécia tem uma das maiores populações de alces do mundo; as placas “cuidado com o alce” são símbolo das estradas do país.' },
       { emoji: '🦡', name: 'Glutão', local: 'järv', fact: 'O maior mustelídeo terrestre, parente das doninhas, vive nas montanhas do norte da Escandinávia.' },
       { emoji: '🦊', name: 'Raposa-do-ártico', local: 'fjällräv', fact: 'Raposa das montanhas escandinavas, branca no inverno; é uma espécie ameaçada na Suécia e protegida por programas de conservação.' },
     ],
@@ -177,7 +177,7 @@ export const FAUNA_MUSICA: Record<string, CountryNature> = {
   },
   DNK: {
     animals: [
-      { emoji: '🦢', name: 'Cisne-branco', local: 'knopsvane', fact: 'É a ave nacional da Dinamarca, ligada ao conto «O patinho feio», de Hans Christian Andersen.' },
+      { emoji: '🦢', name: 'Cisne-branco', local: 'knopsvane', fact: 'É a ave nacional da Dinamarca, ligada ao conto “O patinho feio”, de Hans Christian Andersen.' },
       { emoji: '🦭', name: 'Foca-comum', local: 'spættet sæl', fact: 'Vive nas praias e bancos de areia do mar de Wadden e do Kattegat.' },
     ],
     instruments: [
@@ -197,7 +197,7 @@ export const FAUNA_MUSICA: Record<string, CountryNature> = {
   },
   FRO: {
     animals: [
-      { emoji: '🐑', name: 'Ovelha feroesa', local: 'seyður', fact: 'O nome das ilhas, Føroyar, costuma ser explicado como «ilhas das ovelhas»; há mais ovelhas do que pessoas.' },
+      { emoji: '🐑', name: 'Ovelha feroesa', local: 'seyður', fact: 'O nome das ilhas, Føroyar, costuma ser explicado como “ilhas das ovelhas”; há mais ovelhas do que pessoas.' },
       { emoji: '🐦', name: 'Ostraceiro', local: 'tjaldur', fact: 'A ave nacional das Ilhas Faroé; a chegada dela anuncia a primavera.' },
     ],
     instruments: [
@@ -260,7 +260,7 @@ export const FAUNA_MUSICA: Record<string, CountryNature> = {
       { emoji: '🐒', name: 'Chimpanzé', local: 'sokwe', fact: 'No Parque Nacional de Gombe, às margens do lago Tanganica, os chimpanzés são estudados desde 1960.' },
     ],
     instruments: [
-      { emoji: '🥁', name: 'Ngoma', local: 'ngoma', fact: 'Na África Oriental, «ngoma» quer dizer ao mesmo tempo tambor, dança e festa: não há festa sem tambor.', origin: 'tradicional' },
+      { emoji: '🥁', name: 'Ngoma', local: 'ngoma', fact: 'Na África Oriental, “ngoma” quer dizer ao mesmo tempo tambor, dança e festa: não há festa sem tambor.', origin: 'tradicional' },
       { emoji: '🎻', name: 'Zeze', local: 'zeze', fact: 'Instrumento de cordas tocado com arco ou dedilhado, com uma cabaça que faz a caixa de som; comum em várias regiões da Tanzânia.', origin: 'tradicional' },
     ],
   },
@@ -295,7 +295,7 @@ export const FAUNA_MUSICA: Record<string, CountryNature> = {
   },
   FRA: {
     animals: [
-      { emoji: '🐓', name: 'Galo', local: 'le coq', fact: 'É um dos símbolos da França: em latim, «gallus» era ao mesmo tempo o galo e o gaulês. Aparece em moedas, selos e no uniforme das seleções.' },
+      { emoji: '🐓', name: 'Galo', local: 'le coq', fact: 'É um dos símbolos da França: em latim, “gallus” era ao mesmo tempo o galo e o gaulês. Aparece em moedas, selos e no uniforme das seleções.' },
       { emoji: '🐎', name: 'Cavalo da Camargue', local: 'le cheval camargue', fact: 'Cavalo branco e rústico que vive meio selvagem nos pântanos da Camargue, no delta do Ródano; os guardiões da região montam nele para lidar com os touros.' },
       { emoji: '🦩', name: 'Flamingo-rosa', local: 'le flamant rose', fact: 'A Camargue abriga uma das maiores colônias de flamingos do Mediterrâneo.' },
       { emoji: '🐻', name: 'Urso-pardo', local: "l'ours brun", fact: 'Quase desapareceu dos Pireneus; a partir de 1996, ursos trazidos da Eslovênia foram soltos lá, e a população voltou a crescer.' },
@@ -303,9 +303,9 @@ export const FAUNA_MUSICA: Record<string, CountryNature> = {
       { emoji: '🦫', name: 'Castor-europeu', local: "le castor d'Europe", fact: 'Quase extinto no começo do século XX, sobreviveu no vale do Ródano e hoje voltou a muitos rios franceses.' },
     ],
     instruments: [
-      { emoji: '🪗', name: 'Acordeão', local: "l'accordéon", fact: 'O som do «bal musette», os bailes populares de Paris da primeira metade do século XX.', origin: 'tradicional' },
+      { emoji: '🪗', name: 'Acordeão', local: "l'accordéon", fact: 'O som do “bal musette”, os bailes populares de Paris da primeira metade do século XX.', origin: 'tradicional' },
       { emoji: '🎻', name: 'Viela de roda', local: 'la vielle à roue', fact: 'Uma roda, girada por uma manivela, esfrega as cordas; é tradicional no centro da França, como no Berry e na Auvergne.', origin: 'tradicional' },
-      { emoji: '🎶', name: 'Gaita de foles bretã', local: 'le biniou', fact: 'A gaita de foles da Bretanha, tocada em dupla com a bombarde nos bailes «fest-noz», patrimônio imaterial da UNESCO desde 2012.', origin: 'tradicional' },
+      { emoji: '🎶', name: 'Gaita de foles bretã', local: 'le biniou', fact: 'A gaita de foles da Bretanha, tocada em dupla com a bombarde nos bailes “fest-noz”, patrimônio imaterial da UNESCO desde 2012.', origin: 'tradicional' },
       { emoji: '📯', name: 'Trompa de caça', local: 'la trompe de chasse', fact: 'Trompa enrolada em espiral, de som potente, com repertório e tradição próprios na França.', origin: 'tradicional' },
       { emoji: '🎸', name: 'Violão manouche', local: 'la guitare manouche', fact: 'O violão do jazz cigano, que Django Reinhardt tornou famoso nos anos 1930 com o Quintette du Hot Club de France.', origin: 'tradicional' },
       { emoji: '🎹', name: 'Órgão de catedral', local: "l'orgue", fact: 'No século XIX, o organeiro Aristide Cavaillé-Coll construiu os grandes órgãos de igrejas como Notre-Dame e Saint-Sulpice, em Paris.', origin: 'tradicional' },

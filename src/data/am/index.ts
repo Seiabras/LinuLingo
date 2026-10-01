@@ -53,5 +53,5 @@ export const AMARICO: LanguagePack = {
   phrases: { hi: 'ሰላም!', thanks: 'አመሰግናለሁ!', letsStart: ['እንጀምር!', 'Vamos começar!'] },
   formalMarkers: 'እርስዎ, እባክዎ, እግዚአብሔር ይስጥልኝ',
   cognateNote:
-    'O amárico é uma língua semítica, prima do árabe, do hebraico e do tigrínia: o verbo se monta com raízes de três consoantes, como no árabe. É a língua de trabalho do governo federal da Etiópia e se escreve no fidel, o silabário ge’ez, em que cada sinal é uma consoante com uma vogal (ለ lä, ሉ lu, ሊ li). Do amárico e das línguas vizinhas veio a palavra «café»: o cafeeiro é nativo das terras altas etíopes.',
+    'O amárico é uma língua semítica, prima do árabe, do hebraico e do tigrínia: o verbo se monta com raízes de três consoantes, como no árabe. É a língua de trabalho do governo federal da Etiópia e se escreve no fidel, o silabário ge’ez, em que cada sinal é uma consoante com uma vogal (ለ lä, ሉ lu, ሊ li). Do amárico e das línguas vizinhas veio a palavra “café”: o cafeeiro é nativo das terras altas etíopes.',
 };

@@ -52,7 +52,7 @@ export const ETYMOLOGY_VI: EtymologySeed[] = [
     root_word: 'café (francês) ← qahwa (árabe)',
     origin_language: 'Francês, via árabe',
     cognates: c(['pt', 'café'], ['fr', 'café'], ['en', 'coffee']),
-    evolution_note: 'O Vietnã foi colônia francesa até 1954, e «cà phê» veio direto do francês «café» — que, como o português «café», remonta à mesma raiz árabe «qahwa». Hoje o Vietnã é um dos maiores produtores de café do mundo.',
+    evolution_note: 'O Vietnã foi colônia francesa até 1954, e “cà phê” veio direto do francês “café” — que, como o português “café”, remonta à mesma raiz árabe “qahwa”. Hoje o Vietnã é um dos maiores produtores de café do mundo.',
     transparent: true,
   },
 ];

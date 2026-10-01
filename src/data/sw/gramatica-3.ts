@@ -13,7 +13,7 @@ export const GRAMMAR_SW_3: GrammarTopic[] = [
     sections: [
       {
         heading: 'Se eu tivesse… eu faria',
-        text: 'O -nge- entra no lugar do tempo: ni-nge-kuwa, u-nge-kwenda. Diferente do português, as duas partes da hipótese usam a mesma forma: «Ningekuwa na pesa, ningenunua gari» (se eu tivesse dinheiro, compraria um carro). «Kama» (se) é opcional. Na negativa, entra -singe-: «Nisingeenda» (eu não iria).',
+        text: 'O -nge- entra no lugar do tempo: ni-nge-kuwa, u-nge-kwenda. Diferente do português, as duas partes da hipótese usam a mesma forma: “Ningekuwa na pesa, ningenunua gari” (se eu tivesse dinheiro, compraria um carro). “Kama” (se) é opcional. Na negativa, entra -singe-: “Nisingeenda” (eu não iria).',
         table: {
           head: ['Forma', 'Português'],
           rows: [
@@ -32,7 +32,7 @@ export const GRAMMAR_SW_3: GrammarTopic[] = [
       },
       {
         heading: 'O que não aconteceu: -ngali-',
-        text: 'Para lamentar o passado, o suaíli padrão usa -ngali-: «Ningalijua, ningalikuja mapema» (se eu soubesse, teria vindo cedo). Na fala de hoje, muita gente usa -nge- também nesse sentido, e o contexto mostra que é passado: «Ningejua, ningekuja». As duas formas aparecem nos jornais e nos livros.',
+        text: 'Para lamentar o passado, o suaíli padrão usa -ngali-: “Ningalijua, ningalikuja mapema” (se eu soubesse, teria vindo cedo). Na fala de hoje, muita gente usa -nge- também nesse sentido, e o contexto mostra que é passado: “Ningejua, ningekuja”. As duas formas aparecem nos jornais e nos livros.',
         examples: [
           ['Ningalijua, ningalikuja mapema.', 'Se eu tivesse sabido, teria vindo cedo.'],
           ['Tungalipanda miti zamani, mto usingalikauka.', 'Se tivéssemos plantado árvores antes, o rio não teria secado.'],
@@ -41,25 +41,25 @@ export const GRAMMAR_SW_3: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pôr -nge- só numa das partes: o suaíli repete a marca nas duas («ningekuwa…, ningenunua…»).',
-      'Traduzir «se» com -ki- nas hipóteses irreais: «ukienda» é uma condição real (se você for); «ungeenda» é hipótese (se você fosse).',
-      'Esquecer o -si- da negativa: «nisingeenda», não «singeenda» nem «ningeenda si».',
+      'Pôr -nge- só numa das partes: o suaíli repete a marca nas duas (“ningekuwa…, ningenunua…”).',
+      'Traduzir “se” com -ki- nas hipóteses irreais: “ukienda” é uma condição real (se você for); “ungeenda” é hipótese (se você fosse).',
+      'Esquecer o -si- da negativa: “nisingeenda”, não “singeenda” nem “ningeenda si”.',
     ],
     quiz: [
       {
-        question: 'Como se diz «se eu tivesse dinheiro, compraria um carro»?',
+        question: 'Como se diz “se eu tivesse dinheiro, compraria um carro”?',
         options: ['Ningekuwa na pesa, ningenunua gari', 'Nikiwa na pesa, nitanunua gari', 'Nilikuwa na pesa, nilinunua gari'],
         answer: 'Ningekuwa na pesa, ningenunua gari',
         explanation: 'Hipótese irreal: -nge- nas duas partes.',
       },
       {
-        question: 'Qual é a negativa de «ningeenda» (eu iria)?',
+        question: 'Qual é a negativa de “ningeenda” (eu iria)?',
         options: ['nisingeenda', 'singeenda', 'sitaenda'],
         answer: 'nisingeenda',
         explanation: 'O -si- entra entre o sujeito e o -nge-: ni-si-nge-enda.',
       },
       {
-        question: '«Ningalijua» quer dizer…',
+        question: '“Ningalijua” quer dizer…',
         options: ['se eu tivesse sabido', 'eu sei', 'eu vou saber'],
         answer: 'se eu tivesse sabido',
         explanation: '-ngali- marca o hipotético do passado, o que não aconteceu.',
@@ -76,7 +76,7 @@ export const GRAMMAR_SW_3: GrammarTopic[] = [
     sections: [
       {
         heading: 'O -ji- reflexivo',
-        text: 'O -ji- ocupa o lugar do marcador de objeto e serve para todas as pessoas: ni-na-ji-ona (eu me vejo), a-li-ji-kata (ele se cortou), tu-ta-ji-tetea (vamos nos defender). Alguns verbos só existem assim, com sentido próprio: kujifunza (aprender, «ensinar a si mesmo»), kujisikia (sentir-se), kujiandaa (preparar-se).',
+        text: 'O -ji- ocupa o lugar do marcador de objeto e serve para todas as pessoas: ni-na-ji-ona (eu me vejo), a-li-ji-kata (ele se cortou), tu-ta-ji-tetea (vamos nos defender). Alguns verbos só existem assim, com sentido próprio: kujifunza (aprender, “ensinar a si mesmo”), kujisikia (sentir-se), kujiandaa (preparar-se).',
         examples: [
           ['Ninajifunza Kiswahili.', 'Estou aprendendo suaíli.'],
           ['Alijikata kwa kisu.', 'Ele se cortou com a faca.'],
@@ -85,7 +85,7 @@ export const GRAMMAR_SW_3: GrammarTopic[] = [
       },
       {
         heading: 'O -ana recíproco',
-        text: 'Trocando o -a final por -ana, a ação passa a ser mútua: penda → pendana (amar-se), saidia → saidiana (ajudar-se), ona → onana (ver-se), piga → pigana (brigar, «bater um no outro»). O sujeito vem no plural, ou com «na»: «Juma na Amina wanapendana», «Tutaonana kesho!» (a gente se vê amanhã!).',
+        text: 'Trocando o -a final por -ana, a ação passa a ser mútua: penda → pendana (amar-se), saidia → saidiana (ajudar-se), ona → onana (ver-se), piga → pigana (brigar, “bater um no outro”). O sujeito vem no plural, ou com “na”: “Juma na Amina wanapendana”, “Tutaonana kesho!” (a gente se vê amanhã!).',
         examples: [
           ['Tutaonana kesho!', 'A gente se vê amanhã!'],
           ['Majirani wanasaidiana.', 'Os vizinhos se ajudam.'],
@@ -94,28 +94,28 @@ export const GRAMMAR_SW_3: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Esquecer que «kujifunza» (aprender) já tem o -ji-: «ninajifunza», não «ninafunza».',
-      'Usar o -ji- quando a ação é mútua: «wanajipenda» é «cada um se ama»; «wanapendana» é «amam um ao outro».',
-      'Deixar o sujeito no singular com o recíproco: é preciso dois lados («Juma na Amina wanapendana»).',
+      'Esquecer que “kujifunza” (aprender) já tem o -ji-: “ninajifunza”, não “ninafunza”.',
+      'Usar o -ji- quando a ação é mútua: “wanajipenda” é “cada um se ama”; “wanapendana” é “amam um ao outro”.',
+      'Deixar o sujeito no singular com o recíproco: é preciso dois lados (“Juma na Amina wanapendana”).',
     ],
     quiz: [
       {
-        question: 'Como se diz «a gente se vê amanhã»?',
+        question: 'Como se diz “a gente se vê amanhã”?',
         options: ['Tutaonana kesho', 'Tutajiona kesho', 'Tutaona kesho'],
         answer: 'Tutaonana kesho',
         explanation: 'Recíproco: ona → onana, ver-se um ao outro.',
       },
       {
-        question: '«Alijikata» quer dizer…',
+        question: '“Alijikata” quer dizer…',
         options: ['ele se cortou', 'ele cortou alguém', 'eles se cortaram um ao outro'],
         answer: 'ele se cortou',
         explanation: 'O -ji- faz a ação voltar para o próprio sujeito.',
       },
       {
-        question: 'Qual verbo quer dizer «aprender»?',
+        question: 'Qual verbo quer dizer “aprender”?',
         options: ['kujifunza', 'kufundisha', 'kufunzana'],
         answer: 'kujifunza',
-        explanation: 'Kujifunza é «ensinar a si mesmo», isto é, aprender; kufundisha é ensinar.',
+        explanation: 'Kujifunza é “ensinar a si mesmo”, isto é, aprender; kufundisha é ensinar.',
       },
     ],
   },
@@ -129,8 +129,8 @@ export const GRAMMAR_SW_3: GrammarTopic[] = [
       'O sufixo -ni transforma um substantivo em lugar (nyumbani, em casa), e três classes de lugar concordam com ele: pa- (lugar exato), ku- (lugar vago ou direção) e mu- (dentro de).',
     sections: [
       {
-        heading: 'O -ni e o «estar em»',
-        text: 'Juntando -ni ao substantivo, ele vira lugar: nyumba → nyumbani (em casa), soko → sokoni (no mercado), shule → shuleni (na escola). Para dizer onde algo está, o verbo «estar» leva a marca da classe e um sufixo de lugar: -ko (vago), -po (exato) ou -mo (dentro): «Mama yuko sokoni» (a mamãe está no mercado), «Kitabu kiko mezani» (o livro está na mesa), «Maji yamo chupani» (a água está dentro da garrafa).',
+        heading: 'O -ni e o “estar em”',
+        text: 'Juntando -ni ao substantivo, ele vira lugar: nyumba → nyumbani (em casa), soko → sokoni (no mercado), shule → shuleni (na escola). Para dizer onde algo está, o verbo “estar” leva a marca da classe e um sufixo de lugar: -ko (vago), -po (exato) ou -mo (dentro): “Mama yuko sokoni” (a mamãe está no mercado), “Kitabu kiko mezani” (o livro está na mesa), “Maji yamo chupani” (a água está dentro da garrafa).',
         table: {
           head: ['Classe de lugar', 'Sentido', 'Exemplo'],
           rows: [
@@ -147,7 +147,7 @@ export const GRAMMAR_SW_3: GrammarTopic[] = [
       },
       {
         heading: 'Concordância com o lugar',
-        text: 'Quando o lugar é o sujeito, tudo concorda com a classe de lugar: «Nyumbani kwetu ni kuzuri» (em nossa casa é bonito, com ku-), «Mezani pana kitabu» (na mesa há um livro, com pa-), «Chumbani mwangu mna giza» (no meu quarto está escuro, com mu-). O possessivo também muda: kwetu, petu, mwetu.',
+        text: 'Quando o lugar é o sujeito, tudo concorda com a classe de lugar: “Nyumbani kwetu ni kuzuri” (em nossa casa é bonito, com ku-), “Mezani pana kitabu” (na mesa há um livro, com pa-), “Chumbani mwangu mna giza” (no meu quarto está escuro, com mu-). O possessivo também muda: kwetu, petu, mwetu.',
         examples: [
           ['Nyumbani kwetu ni kuzuri.', 'A nossa casa é um lugar bonito.'],
           ['Karibu nyumbani kwangu!', 'Bem-vindo à minha casa!'],
@@ -156,22 +156,22 @@ export const GRAMMAR_SW_3: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pôr «katika» e -ni juntos: é «nyumbani» ou «katika nyumba», não «katika nyumbani».',
-      'Usar «ni» para localização: «yuko sokoni» (está no mercado), não «ni sokoni».',
-      'Esquecer que nomes de cidades e países não levam -ni: «niko Arusha», não «niko Arushani».',
+      'Pôr “katika” e -ni juntos: é “nyumbani” ou “katika nyumba”, não “katika nyumbani”.',
+      'Usar “ni” para localização: “yuko sokoni” (está no mercado), não “ni sokoni”.',
+      'Esquecer que nomes de cidades e países não levam -ni: “niko Arusha”, não “niko Arushani”.',
     ],
     quiz: [
       {
-        question: 'Como se diz «a mamãe está no mercado»?',
+        question: 'Como se diz “a mamãe está no mercado”?',
         options: ['Mama yuko sokoni', 'Mama ni sokoni', 'Mama iko soko'],
         answer: 'Mama yuko sokoni',
-        explanation: 'Pessoa + lugar vago: yu-ko, e o -ni faz de «soko» um lugar.',
+        explanation: 'Pessoa + lugar vago: yu-ko, e o -ni faz de “soko” um lugar.',
       },
       {
-        question: 'Qual classe de lugar quer dizer «dentro de»?',
+        question: 'Qual classe de lugar quer dizer “dentro de”?',
         options: ['mu- (-mo)', 'pa- (-po)', 'ku- (-ko)'],
         answer: 'mu- (-mo)',
-        explanation: 'mu-/-mo é o lugar de dentro: «Maji yamo chupani».',
+        explanation: 'mu-/-mo é o lugar de dentro: “Maji yamo chupani”.',
       },
       {
         question: 'Qual frase está certa?',
@@ -188,11 +188,11 @@ export const GRAMMAR_SW_3: GrammarTopic[] = [
     title: 'Narrar com -ka- e falar de hábitos com hu-',
     emoji: '📰',
     summary:
-      'Numa narração, só o primeiro verbo leva o tempo; os seguintes usam -ka- («e então»): «Alifika, akaketi, akala». Para hábitos e verdades gerais, o hu- dispensa o sujeito: «Watoto hucheza» (as crianças costumam brincar).',
+      'Numa narração, só o primeiro verbo leva o tempo; os seguintes usam -ka- (“e então”): “Alifika, akaketi, akala”. Para hábitos e verdades gerais, o hu- dispensa o sujeito: “Watoto hucheza” (as crianças costumam brincar).',
     sections: [
       {
         heading: 'O -ka- da sequência',
-        text: 'O -ka- é a marca do «e depois»: o primeiro verbo diz o tempo (-li-), e os seguintes se encadeiam com -ka-: «Nilienda sokoni, nikanunua samaki, nikarudi nyumbani» (fui ao mercado, comprei peixe e voltei para casa). Nas notícias e nas histórias, ele dá ritmo ao texto. Depois de imperativo, o -ka- indica «ir e fazer»: «Nenda ukalete maji» (vai buscar água).',
+        text: 'O -ka- é a marca do “e depois”: o primeiro verbo diz o tempo (-li-), e os seguintes se encadeiam com -ka-: “Nilienda sokoni, nikanunua samaki, nikarudi nyumbani” (fui ao mercado, comprei peixe e voltei para casa). Nas notícias e nas histórias, ele dá ritmo ao texto. Depois de imperativo, o -ka- indica “ir e fazer”: “Nenda ukalete maji” (vai buscar água).',
         examples: [
           ['Alifika, akaketi, akaanza kula.', 'Ele chegou, sentou-se e começou a comer.'],
           ['Tulipanda basi, tukasafiri usiku kucha.', 'Pegamos o ônibus e viajamos a noite inteira.'],
@@ -201,7 +201,7 @@ export const GRAMMAR_SW_3: GrammarTopic[] = [
       },
       {
         heading: 'O hu- dos hábitos',
-        text: 'O hu- não muda com a pessoa: «Mimi huamka mapema» (eu costumo acordar cedo), «Watu hutembea jioni» (as pessoas costumam passear à tarde). Ele aparece muito nos provérbios, que falam de verdades gerais: «Haba na haba hujaza kibaba» (pouco a pouco se enche a medida). Como não tem marca de pessoa, o sujeito costuma vir expresso.',
+        text: 'O hu- não muda com a pessoa: “Mimi huamka mapema” (eu costumo acordar cedo), “Watu hutembea jioni” (as pessoas costumam passear à tarde). Ele aparece muito nos provérbios, que falam de verdades gerais: “Haba na haba hujaza kibaba” (pouco a pouco se enche a medida). Como não tem marca de pessoa, o sujeito costuma vir expresso.',
         examples: [
           ['Mimi huamka saa kumi na mbili.', 'Eu costumo acordar às seis.'],
           ['Wavuvi hurudi asubuhi na samaki.', 'Os pescadores costumam voltar de manhã com peixe.'],
@@ -211,18 +211,18 @@ export const GRAMMAR_SW_3: GrammarTopic[] = [
     ],
     pitfalls: [
       'Repetir -li- em todos os verbos da história: fica pesado; depois do primeiro, use -ka-.',
-      'Pôr sujeito no hu-: é «hucheza», não «wahucheza».',
-      'Usar hu- para uma ação única: «huamka» é hábito, não «acordei hoje».',
+      'Pôr sujeito no hu-: é “hucheza”, não “wahucheza”.',
+      'Usar hu- para uma ação única: “huamka” é hábito, não “acordei hoje”.',
     ],
     quiz: [
       {
-        question: 'Como se diz «ele chegou e sentou-se»?',
+        question: 'Como se diz “ele chegou e sentou-se”?',
         options: ['alifika akaketi', 'alifika aliketi', 'anafika akaketi'],
         answer: 'alifika akaketi',
         explanation: 'O primeiro verbo leva -li-, o segundo se encadeia com -ka-.',
       },
       {
-        question: '«Watoto hucheza» quer dizer…',
+        question: '“Watoto hucheza” quer dizer…',
         options: ['os pequenos costumam brincar', 'os pequenos brincaram', 'os pequenos vão brincar'],
         answer: 'os pequenos costumam brincar',
         explanation: 'O hu- marca hábito ou verdade geral.',
@@ -246,7 +246,7 @@ export const GRAMMAR_SW_3: GrammarTopic[] = [
     sections: [
       {
         heading: 'As camadas de empréstimos',
-        text: 'O árabe, pelo comércio e pelo islã, deu muitas palavras de religião, comércio e ideias: kitabu (livro), saa (hora), habari (notícia), dunia (mundo), elimu (educação). Do português, dos séculos XVI e XVII, ficaram meza (mesa), bendera (bandeira), leso (lenço), gereza (prisão) e pipa (barril). Do hindi, chapati e pesa (dinheiro, de «paisa»); do alemão colonial, shule (escola) e hela (dinheiro, da moeda Heller); do inglês, baiskeli (bicicleta) e kompyuta (computador).',
+        text: 'O árabe, pelo comércio e pelo islã, deu muitas palavras de religião, comércio e ideias: kitabu (livro), saa (hora), habari (notícia), dunia (mundo), elimu (educação). Do português, dos séculos XVI e XVII, ficaram meza (mesa), bendera (bandeira), leso (lenço), gereza (prisão) e pipa (barril). Do hindi, chapati e pesa (dinheiro, de “paisa”); do alemão colonial, shule (escola) e hela (dinheiro, da moeda Heller); do inglês, baiskeli (bicicleta) e kompyuta (computador).',
         table: {
           head: ['Palavra', 'Origem', 'Português'],
           rows: [
@@ -265,7 +265,7 @@ export const GRAMMAR_SW_3: GrammarTopic[] = [
       },
       {
         heading: 'Criando palavras com as próprias raízes',
-        text: 'A partir de um verbo, o suaíli forma nomes: com m-/wa- e -aji ou -i, quem faz (kuimba → mwimbaji, cantor; kupika → mpishi, cozinheiro); com u-, a ideia abstrata (huru → uhuru, liberdade; moja → umoja, união); com ki-, o jeito ou a língua (Kiswahili, kitoto, «à maneira de criança»). E há compostos: mwanafunzi (filho do aprender, aluno), mwenyekiti (dono da cadeira, presidente de uma reunião).',
+        text: 'A partir de um verbo, o suaíli forma nomes: com m-/wa- e -aji ou -i, quem faz (kuimba → mwimbaji, cantor; kupika → mpishi, cozinheiro); com u-, a ideia abstrata (huru → uhuru, liberdade; moja → umoja, união); com ki-, o jeito ou a língua (Kiswahili, kitoto, “à maneira de criança”). E há compostos: mwanafunzi (filho do aprender, aluno), mwenyekiti (dono da cadeira, presidente de uma reunião).',
         examples: [
           ['Mwimbaji anaimba taarab.', 'O cantor canta taarab.'],
           ['Uhuru na umoja.', 'Liberdade e união (lema da Tanzânia).'],
@@ -274,25 +274,25 @@ export const GRAMMAR_SW_3: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Achar que todo empréstimo é árabe: «meza» é do português, «shule» do alemão, «pesa» do hindi.',
-      'Esquecer que o empréstimo entra numa classe: «kitabu» virou classe ki-/vi- (vitabu) por começar com ki-.',
+      'Achar que todo empréstimo é árabe: “meza” é do português, “shule” do alemão, “pesa” do hindi.',
+      'Esquecer que o empréstimo entra numa classe: “kitabu” virou classe ki-/vi- (vitabu) por começar com ki-.',
       'Confundir mwimbaji (cantor) com wimbo (canção): a mesma raiz, classes diferentes.',
     ],
     quiz: [
       {
-        question: 'De que língua vem «meza» (mesa)?',
+        question: 'De que língua vem “meza” (mesa)?',
         options: ['do português', 'do árabe', 'do inglês'],
         answer: 'do português',
         explanation: 'É uma das palavras que ficaram dos séculos de presença portuguesa na costa.',
       },
       {
-        question: 'O que quer dizer «uhuru»?',
+        question: 'O que quer dizer “uhuru”?',
         options: ['liberdade', 'livre (adjetivo)', 'libertador'],
         answer: 'liberdade',
         explanation: 'O prefixo u- forma nomes abstratos: huru (livre) → uhuru (liberdade).',
       },
       {
-        question: 'Qual palavra designa «quem canta»?',
+        question: 'Qual palavra designa “quem canta”?',
         options: ['mwimbaji', 'wimbo', 'kuimba'],
         answer: 'mwimbaji',
         explanation: 'm-/mw- + raiz + -aji forma o nome de quem faz a ação.',
@@ -306,11 +306,11 @@ export const GRAMMAR_SW_3: GrammarTopic[] = [
     title: 'Argumentar e relatar: conectores e discurso indireto',
     emoji: '⚖️',
     summary:
-      'No registro formal, o suaíli organiza as ideias com conectores (kwanza, zaidi ya hayo, hata hivyo, kwa hiyo) e relata o que outros disseram com «kwamba» ou «kuwa».',
+      'No registro formal, o suaíli organiza as ideias com conectores (kwanza, zaidi ya hayo, hata hivyo, kwa hiyo) e relata o que outros disseram com “kwamba” ou “kuwa”.',
     sections: [
       {
         heading: 'Os conectores do debate',
-        text: 'Para ordenar: kwanza (primeiro), pili (segundo), mwisho (por fim). Para somar: zaidi ya hayo, pia. Para contrastar: lakini, hata hivyo (mesmo assim), ingawa (embora). Para concluir: kwa hiyo, hivyo. Para opinar: kwa maoni yangu (na minha opinião). E para pesar os dois lados: «kwa upande mmoja… kwa upande mwingine…».',
+        text: 'Para ordenar: kwanza (primeiro), pili (segundo), mwisho (por fim). Para somar: zaidi ya hayo, pia. Para contrastar: lakini, hata hivyo (mesmo assim), ingawa (embora). Para concluir: kwa hiyo, hivyo. Para opinar: kwa maoni yangu (na minha opinião). E para pesar os dois lados: “kwa upande mmoja… kwa upande mwingine…”.',
         table: {
           head: ['Conector', 'Português', 'Uso'],
           rows: [
@@ -329,7 +329,7 @@ export const GRAMMAR_SW_3: GrammarTopic[] = [
       },
       {
         heading: 'Discurso indireto',
-        text: 'Para relatar, usa-se «kwamba» (ou «kuwa») depois de verbos como kusema (dizer), kueleza (explicar) e kudai (afirmar): «Alisema kwamba atakuja» (ele disse que vai vir). O tempo do verbo relatado costuma ficar como na fala original, e o pronome muda: «Nitakuja» → «Alisema kwamba atakuja». Nas notícias, é comum «inasemekana kwamba…» (diz-se que…).',
+        text: 'Para relatar, usa-se “kwamba” (ou “kuwa”) depois de verbos como kusema (dizer), kueleza (explicar) e kudai (afirmar): “Alisema kwamba atakuja” (ele disse que vai vir). O tempo do verbo relatado costuma ficar como na fala original, e o pronome muda: “Nitakuja” → “Alisema kwamba atakuja”. Nas notícias, é comum “inasemekana kwamba…” (diz-se que…).',
         examples: [
           ['Alisema kwamba atakuja kesho.', 'Ele disse que vem amanhã.'],
           ['Waziri alieleza kuwa mradi umekamilika.', 'O ministro explicou que o projeto foi concluído.'],
@@ -338,25 +338,25 @@ export const GRAMMAR_SW_3: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Recuar o tempo como no português («ele disse que viria»): em suaíli fica «alisema kwamba atakuja».',
-      'Usar «lakini» e «hata hivyo» juntos no começo da mesma frase: um basta.',
-      'Esquecer que «ingawa» pede duas orações: «Ingawa…, …».',
+      'Recuar o tempo como no português (“ele disse que viria”): em suaíli fica “alisema kwamba atakuja”.',
+      'Usar “lakini” e “hata hivyo” juntos no começo da mesma frase: um basta.',
+      'Esquecer que “ingawa” pede duas orações: “Ingawa…, …”.',
     ],
     quiz: [
       {
-        question: 'Como se relata «Nitakuja» (virei)?',
+        question: 'Como se relata “Nitakuja” (virei)?',
         options: ['Alisema kwamba atakuja', 'Alisema kwamba nitakuja', 'Alisema kwamba alikuja'],
         answer: 'Alisema kwamba atakuja',
         explanation: 'Muda o pronome (ni- → a-), mas o tempo continua futuro.',
       },
       {
-        question: 'Qual conector quer dizer «mesmo assim»?',
+        question: 'Qual conector quer dizer “mesmo assim”?',
         options: ['hata hivyo', 'kwa hiyo', 'zaidi ya hayo'],
         answer: 'hata hivyo',
-        explanation: 'Hata hivyo marca contraste: «mesmo assim, no entanto».',
+        explanation: 'Hata hivyo marca contraste: “mesmo assim, no entanto”.',
       },
       {
-        question: 'Como se diz «na minha opinião»?',
+        question: 'Como se diz “na minha opinião”?',
         options: ['kwa maoni yangu', 'kwa hiyo', 'kwa upande mwingine'],
         answer: 'kwa maoni yangu',
         explanation: 'Maoni = opinião; kwa maoni yangu = na minha opinião.',
@@ -374,7 +374,7 @@ export const GRAMMAR_SW_3: GrammarTopic[] = [
     sections: [
       {
         heading: 'Mizani e vina',
-        text: 'No shairi, cada verso (mstari) tem dezesseis sílabas, divididas em duas metades (vipande) de oito. A última sílaba da primeira metade é o «kina cha kati» (rima do meio), e a última do verso, o «kina cha mwisho» (rima do fim). Nos poemas clássicos, as rimas se repetem em todos os versos da estrofe (ubeti), e o último verso pode voltar como refrão (kituo) em todas as estrofes. Para contar as sílabas, lembre que o «m» e o «n» antes de consoante podem formar sílaba sozinhos (m-tu) e que «ng», «ny» e «ch» são um som só.',
+        text: 'No shairi, cada verso (mstari) tem dezesseis sílabas, divididas em duas metades (vipande) de oito. A última sílaba da primeira metade é o “kina cha kati” (rima do meio), e a última do verso, o “kina cha mwisho” (rima do fim). Nos poemas clássicos, as rimas se repetem em todos os versos da estrofe (ubeti), e o último verso pode voltar como refrão (kituo) em todas as estrofes. Para contar as sílabas, lembre que o “m” e o “n” antes de consoante podem formar sílaba sozinhos (m-tu) e que “ng”, “ny” e “ch” são um som só.',
         table: {
           head: ['Termo', 'Sentido'],
           rows: [
@@ -394,7 +394,7 @@ export const GRAMMAR_SW_3: GrammarTopic[] = [
       },
       {
         heading: 'Utenzi e a escrita antiga',
-        text: 'O utenzi (ou utendi) é o poema narrativo longo, de versos de oito sílabas, usado para histórias heroicas e religiosas. O manuscrito mais antigo conhecido em suaíli é o «Utendi wa Tambuka», datado de 1728 e escrito em letras árabes, como toda a literatura suaíli antiga. Hoje convivem a poesia clássica, com mizani e vina, e a poesia livre (mashairi huru), sem métrica fixa, defendida por autores modernos.',
+        text: 'O utenzi (ou utendi) é o poema narrativo longo, de versos de oito sílabas, usado para histórias heroicas e religiosas. O manuscrito mais antigo conhecido em suaíli é o “Utendi wa Tambuka”, datado de 1728 e escrito em letras árabes, como toda a literatura suaíli antiga. Hoje convivem a poesia clássica, com mizani e vina, e a poesia livre (mashairi huru), sem métrica fixa, defendida por autores modernos.',
         examples: [
           ['Utenzi ni shairi refu la hadithi.', 'O utenzi é um poema longo de narração.'],
           ['Zamani Kiswahili kiliandikwa kwa herufi za Kiarabu.', 'Antigamente o suaíli se escrevia com letras árabes.'],
@@ -403,8 +403,8 @@ export const GRAMMAR_SW_3: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Contar «ng», «ny» ou «ch» como duas sílabas: são um som só.',
-      'Esquecer que o «m» de «mtu» forma sílaba sozinho: m-tu tem duas.',
+      'Contar “ng”, “ny” ou “ch” como duas sílabas: são um som só.',
+      'Esquecer que o “m” de “mtu” forma sílaba sozinho: m-tu tem duas.',
       'Confundir shairi (estrofes de quatro versos longos) com utenzi (poema narrativo de versos curtos).',
     ],
     quiz: [
@@ -415,13 +415,13 @@ export const GRAMMAR_SW_3: GrammarTopic[] = [
         explanation: 'São duas metades de oito sílabas: 8 + 8 = 16 mizani.',
       },
       {
-        question: 'O que são os «vina»?',
+        question: 'O que são os “vina”?',
         options: ['as rimas', 'as estrofes', 'os versos finais repetidos'],
         answer: 'as rimas',
         explanation: 'Vina são as rimas do meio (kina cha kati) e do fim (kina cha mwisho).',
       },
       {
-        question: 'Em que escrita foi feito o «Utendi wa Tambuka» (1728)?',
+        question: 'Em que escrita foi feito o “Utendi wa Tambuka” (1728)?',
         options: ['em letras árabes', 'em letras latinas', 'em ge’ez'],
         answer: 'em letras árabes',
         explanation: 'A literatura suaíli antiga era escrita em letras árabes; o alfabeto latino se firmou no século XIX.',
@@ -447,7 +447,7 @@ export const GRAMMAR_SW_3: GrammarTopic[] = [
       },
       {
         heading: 'Sheng: a gíria de Nairobi',
-        text: 'O sheng nasceu nos bairros de Nairobi, misturando a gramática suaíli com palavras do inglês, das línguas do Quênia e invenções que mudam a cada geração. Cumprimentos como «Niaje?» (e aí?) e respostas como «Poa!» (beleza!) saíram dele e hoje se ouvem em toda a região. O sheng é a língua da música e das ruas, mas não entra em cartas formais, provas nem noticiários.',
+        text: 'O sheng nasceu nos bairros de Nairobi, misturando a gramática suaíli com palavras do inglês, das línguas do Quênia e invenções que mudam a cada geração. Cumprimentos como “Niaje?” (e aí?) e respostas como “Poa!” (beleza!) saíram dele e hoje se ouvem em toda a região. O sheng é a língua da música e das ruas, mas não entra em cartas formais, provas nem noticiários.',
         examples: [
           ['Niaje, msee?', 'E aí, cara? (sheng)'],
           ['Poa sana!', 'Muito bem! (coloquial)'],
@@ -457,8 +457,8 @@ export const GRAMMAR_SW_3: GrammarTopic[] = [
     ],
     pitfalls: [
       'Usar sheng em contexto formal: numa carta ou entrevista, prefira o padrão.',
-      'Achar que o suaíli do Congo é «errado»: é uma variedade com história própria.',
-      'Confundir «Kiswahili sanifu» (a norma) com o jeito de falar de uma cidade só.',
+      'Achar que o suaíli do Congo é “errado”: é uma variedade com história própria.',
+      'Confundir “Kiswahili sanifu” (a norma) com o jeito de falar de uma cidade só.',
     ],
     quiz: [
       {

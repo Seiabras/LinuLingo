@@ -31,7 +31,7 @@ export const STORIES_YO_A2: StorySeed[] = [
         emoji: '💸',
         choices: [
           { text: 'Ó wọ́n jù! Ẹ jọ̀ọ́, ẹ dín in kù díẹ̀.', translation: 'Está caro demais! Por favor, abaixe um pouco.', next: 'desconto' },
-          { text: 'Mẹ́ta àti mẹ́ta jẹ́ mẹ́fà.', translation: 'Três e três são seis.', wrong: 'Na feira se pechincha: reclame do preço com «Ó wọ́n jù!» e peça desconto.' },
+          { text: 'Mẹ́ta àti mẹ́ta jẹ́ mẹ́fà.', translation: 'Três e três são seis.', wrong: 'Na feira se pechincha: reclame do preço com “Ó wọ́n jù!” e peça desconto.' },
         ],
       },
       desconto: {

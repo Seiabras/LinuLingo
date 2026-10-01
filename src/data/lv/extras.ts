@@ -58,7 +58,7 @@ export const SCENARIOS_LV: ScenarioSeed[] = [
     cefr: 'A1',
     register: 'informal',
     persona: 'Līga, colega do curso de letão',
-    description: 'Uma colega do curso chama você para um café no centro de Riga. Entre amigos, tudo leve e com «tu»: nada de «kungs» nem de «kundze».',
+    description: 'Uma colega do curso chama você para um café no centro de Riga. Entre amigos, tudo leve e com “tu”: nada de “kungs” nem de “kundze”.',
     turns: [
       {
         bot: 'Čau! Kā tev iet? Ejam iedzert kafiju?',
@@ -69,7 +69,7 @@ export const SCENARIOS_LV: ScenarioSeed[] = [
       },
       {
         bot: 'Ko tu gribi? Es ņemšu kafiju un pīrādziņu.',
-        botTranslation: 'O que você quer? Eu vou pegar um café e um «pīrādziņš» (pãozinho assado recheado de bacon e cebola).',
+        botTranslation: 'O que você quer? Eu vou pegar um café e um “pīrādziņš” (pãozinho assado recheado de bacon e cebola).',
         keywords: ['ņemšu', 'arī', 'tēju', 'kafiju', 'pīrādziņu', 'kūku', 'lūdzu'],
         suggestions: ['Es arī ņemšu pīrādziņu.', 'Es ņemšu tēju un kūku, lūdzu.'],
         registerBreakers: INFORMAL_BREAKERS,
@@ -104,7 +104,7 @@ export const SCENARIOS_LV: ScenarioSeed[] = [
     cefr: 'A2',
     register: 'formal',
     persona: 'Recepcionista de um hotel no centro de Liepāja',
-    description: 'Você chega de noite a um hotel em Liepāja, a cidade do vento, no litoral oeste. O recepcionista trata você por «jūs»: responda no mesmo tom, sem «tu» e sem gíria.',
+    description: 'Você chega de noite a um hotel em Liepāja, a cidade do vento, no litoral oeste. O recepcionista trata você por “jūs”: responda no mesmo tom, sem “tu” e sem gíria.',
     turns: [
       {
         bot: 'Labvakar! Laipni lūdzam! Vai jums ir rezervācija?',
@@ -129,7 +129,7 @@ export const SCENARIOS_LV: ScenarioSeed[] = [
       },
       {
         bot: 'Brokastis ir no septiņiem līdz desmitiem otrajā stāvā. Vai jums vēl kaut kas ir vajadzīgs?',
-        botTranslation: 'O café da manhã é das sete às dez, no «segundo andar» (o nosso primeiro: na Letônia, o térreo já é o primeiro andar). Precisa de mais alguma coisa?',
+        botTranslation: 'O café da manhã é das sete às dez, no “segundo andar” (o nosso primeiro: na Letônia, o térreo já é o primeiro andar). Precisa de mais alguma coisa?',
         keywords: ['interneta', 'parole', 'paldies', 'nē', 'kur', 'lifts'],
         suggestions: ['Kāda ir interneta parole?', 'Nē, paldies, viss ir kārtībā.'],
         registerBreakers: FORMAL_BREAKERS,
@@ -150,7 +150,7 @@ export const SCENARIOS_LV: ScenarioSeed[] = [
     cefr: 'A2',
     register: 'formal',
     persona: 'Vendedora de uma banca de verduras no Mercado Central',
-    description: 'O Mercado Central de Riga ocupa pavilhões feitos com a estrutura de antigos hangares de zepelins. A vendedora não conhece você: o tratamento é «jūs».',
+    description: 'O Mercado Central de Riga ocupa pavilhões feitos com a estrutura de antigos hangares de zepelins. A vendedora não conhece você: o tratamento é “jūs”.',
     turns: [
       {
         bot: 'Labdien! Ko jūs vēlaties?',
@@ -196,7 +196,7 @@ export const SCENARIOS_LV: ScenarioSeed[] = [
     cefr: 'B1',
     register: 'informal',
     persona: 'Kārlis, amigo que convida você para os Jāņi na casa de campo da família',
-    description: 'Na noite de 23 para 24 de junho, a Letônia festeja os Jāņi, a festa do solstício: coroas de folhas de carvalho e de flores, queijo com cominho, fogueira e as canções de «līgo» até o nascer do sol. Entre amigos, tudo com «tu».',
+    description: 'Na noite de 23 para 24 de junho, a Letônia festeja os Jāņi, a festa do solstício: coroas de folhas de carvalho e de flores, queijo com cominho, fogueira e as canções de “līgo” até o nascer do sol. Entre amigos, tudo com “tu”.',
     turns: [
       {
         bot: 'Čau! Vai brauksi pie mums uz laukiem svinēt Jāņus?',
@@ -221,7 +221,7 @@ export const SCENARIOS_LV: ScenarioSeed[] = [
       },
       {
         bot: 'Naktī mēs lēksim pāri ugunskuram un dziedāsim līgo dziesmas.',
-        botTranslation: 'À noite vamos pular a fogueira e cantar as canções de «līgo».',
+        botTranslation: 'À noite vamos pular a fogueira e cantar as canções de “līgo”.',
         keywords: ['forši', 'lēkšu', 'dziedāšu', 'dziesmu', 'iemācīties', 'kopā'],
         suggestions: ['Forši! Es gribu iemācīties kādu līgo dziesmu.', 'Es lēkšu pāri ugunskuram kopā ar tevi!'],
         registerBreakers: INFORMAL_BREAKERS,
@@ -242,7 +242,7 @@ export const SCENARIOS_LV: ScenarioSeed[] = [
     cefr: 'B1',
     register: 'formal',
     persona: 'Farmacêutica de uma farmácia em Jūrmala',
-    description: 'Você pegou um resfriado nas férias em Jūrmala, a cidade balneária perto de Riga. Na farmácia, o tratamento é «jūs», e a farmacêutica usa o debitivo («jums jālieto» = o senhor deve tomar).',
+    description: 'Você pegou um resfriado nas férias em Jūrmala, a cidade balneária perto de Riga. Na farmácia, o tratamento é “jūs”, e a farmacêutica usa o debitivo (“jums jālieto” = o senhor deve tomar).',
     turns: [
       {
         bot: 'Labdien! Kā es varu jums palīdzēt?',
@@ -288,7 +288,7 @@ export const SCENARIOS_LV: ScenarioSeed[] = [
     cefr: 'B2',
     register: 'formal',
     persona: 'Gerente de recursos humanos de uma empresa de tecnologia',
-    description: 'Uma entrevista para uma vaga numa empresa de Riga. Tom formal do começo ao fim: «jūs», frases completas, o condicional (-tu) para soar educado e conectores como «tomēr» e «jo».',
+    description: 'Uma entrevista para uma vaga numa empresa de Riga. Tom formal do começo ao fim: “jūs”, frases completas, o condicional (-tu) para soar educado e conectores como “tomēr” e “jo”.',
     turns: [
       {
         bot: 'Labdien! Paldies, ka atnācāt. Lūdzu, pastāstiet mazliet par sevi.',

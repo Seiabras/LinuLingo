@@ -142,7 +142,7 @@ export const RECURSOS_AR: LanguageResources = {
       by: 'Youssef Chahine',
       year: '1958',
       level: 'B2',
-      why: 'Clássico do cinema egípcio passado na estação central do Cairo (em inglês, «Cairo Station»); o próprio Chahine vive o jornaleiro obcecado por uma vendedora de refrigerantes.',
+      why: 'Clássico do cinema egípcio passado na estação central do Cairo (em inglês, “Cairo Station”); o próprio Chahine vive o jornaleiro obcecado por uma vendedora de refrigerantes.',
       accent: 'árabe egípcio (do Cairo)',
     },
     {
@@ -161,7 +161,7 @@ export const RECURSOS_AR: LanguageResources = {
       by: 'Instituição de Produção Conjunta dos Países Árabes do Golfo, no Kuwait',
       year: '1979',
       level: 'A1',
-      why: 'A «Vila Sésamo» árabe: fantoches, canções e frases curtas em árabe padrão, feitas para crianças, perfeitas para quem está começando.',
+      why: 'A “Vila Sésamo” árabe: fantoches, canções e frases curtas em árabe padrão, feitas para crianças, perfeitas para quem está começando.',
       accent: 'árabe padrão (MSA)',
     },
     {
@@ -241,7 +241,7 @@ export const RECURSOS_AR: LanguageResources = {
       by: 'Gibran Khalil Gibran',
       year: '1912',
       level: 'B2',
-      why: 'Romance curto e poético do autor de «O Profeta», este escrito em árabe: frases simples e muito vocabulário de sentimentos.',
+      why: 'Romance curto e poético do autor de “O Profeta”, este escrito em árabe: frases simples e muito vocabulário de sentimentos.',
       accent: 'árabe padrão (MSA)',
     },
     {
@@ -270,7 +270,7 @@ export const RECURSOS_AR: LanguageResources = {
       by: 'Fairuz (música de Ziad Rahbani)',
       year: '1991',
       level: 'B1',
-      why: 'Uma das canções mais queridas da voz do Líbano, com letra coloquial e curta; o título já ensina o «como vai você?» levantino.',
+      why: 'Uma das canções mais queridas da voz do Líbano, com letra coloquial e curta; o título já ensina o “como vai você?” levantino.',
       accent: 'árabe libanês (levantino)',
     },
     {
@@ -279,7 +279,7 @@ export const RECURSOS_AR: LanguageResources = {
       original: 'أهواك',
       by: 'Abdel Halim Hafez',
       level: 'B1',
-      why: 'Clássico romântico do «rouxinol moreno» do Egito, cantado devagar e com dicção muito clara.',
+      why: 'Clássico romântico do “rouxinol moreno” do Egito, cantado devagar e com dicção muito clara.',
       accent: 'árabe egípcio',
     },
     {
@@ -365,8 +365,8 @@ export const RECURSOS_AR: LanguageResources = {
     'O árabe tem duas camadas. O árabe padrão (fuṣḥá, ou MSA) é o da escrita, do noticiário, dos discursos e das provas; no dia a dia, cada região fala o seu dialeto (egípcio, levantino, do Golfo, magrebino…), e eles diferem bastante entre si. O caminho mais comum é aprender o padrão para ler e um dialeto para conversar; o egípcio e o levantino são os mais entendidos, graças ao cinema, às novelas e à música.',
     'A escrita vai da direita para a esquerda, as letras mudam de forma conforme a posição na palavra, e as vogais curtas quase nunca se escrevem: كتب pode ser kataba (escreveu), kutiba (foi escrito) ou kutub (livros). No começo, leia textos com as vogais marcadas (ḥarakāt), como livros infantis e didáticos, e vá tirando o apoio aos poucos.',
     'Quase todo o vocabulário sai de raízes de três consoantes: k-t-b dá kitāb (livro), kātib (escritor), maktab (escritório) e maktaba (biblioteca). Aprender os moldes de palavra (awzān) multiplica o vocabulário, e dicionários como o Hans Wehr organizam as palavras pela raiz: para achar مكتبة, procure em ك ت ب.',
-    'Sons que pedem treino: ع (ʿayn), apertado na garganta; ح (ḥāʾ), um «h» forte e sussurrado; ق (qāf), um «k» bem no fundo; e as enfáticas ص ض ط ظ, que «escurecem» a vogal ao lado. A boa notícia: خ (khāʾ) é quase o «r» carioca de «carro», e غ (ghayn) é a versão sonora dele. Trocar س por ص ou ه por ح muda a palavra.',
-    'Você já conhece centenas de palavras de origem árabe: azeite (az-zayt), açúcar (as-sukkar), almofada (al-mikhadda), alface (al-khass). O «a-» ou «al-» do começo é o artigo árabe «al», que em português ficou grudado na palavra.',
+    'Sons que pedem treino: ع (ʿayn), apertado na garganta; ح (ḥāʾ), um “h” forte e sussurrado; ق (qāf), um “k” bem no fundo; e as enfáticas ص ض ط ظ, que “escurecem” a vogal ao lado. A boa notícia: خ (khāʾ) é quase o “r” carioca de “carro”, e غ (ghayn) é a versão sonora dele. Trocar س por ص ou ه por ح muda a palavra.',
+    'Você já conhece centenas de palavras de origem árabe: azeite (az-zayt), açúcar (as-sukkar), almofada (al-mikhadda), alface (al-khass). O “a-” ou “al-” do começo é o artigo árabe “al”, que em português ficou grudado na palavra.',
     'O Brasil tem uma das maiores comunidades de origem árabe fora do mundo árabe, sobretudo libanesa e síria. Em São Paulo, Foz do Iguaçu e outras cidades, clubes, igrejas, mesquitas e centros culturais oferecem cursos, e são um bom lugar para ouvir o levantino de verdade.',
   ],
 };

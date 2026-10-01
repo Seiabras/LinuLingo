@@ -15,7 +15,7 @@ test('amigos do Linu: ids e nomes únicos, grupo válido, fatos completos e um d
     assert.ok(a.group in GRUPOS_AMIGOS, `${a.id}: grupo ${a.group}`);
     assert.match(a.scientific, /^[A-Z][a-z]+ [a-z]+$/, `${a.id}: nome científico`);
     assert.ok(a.facts.length >= 3, `${a.id}: pelo menos 3 fatos`);
-    for (const f of [...a.facts, a.jeito, a.hi]) assert.match(f, /[.!?]$/, `${a.id}: «${f}» sem ponto final`);
+    for (const f of [...a.facts, a.jeito, a.hi]) assert.match(f, /[.!?]$/, `${a.id}: “${f}” sem ponto final`);
     assert.ok(new RegExp(`^\\s*'?${a.id}'?: [A-Z]`, 'm').test(art), `${a.id}: sem desenho em LinuAmigo.tsx`);
   }
 });

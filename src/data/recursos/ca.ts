@@ -10,7 +10,7 @@ export const RECURSOS_CA: LanguageResources = {
       org: 'Secretaria de Política Lingüística, Generalitat de Catalunya',
       flag: '🇪🇸',
       main: true,
-      levels: 'Um exame por nível, do A2 ao C2 (o A1, inicial, não tem prova); aprovação por «apte/apta»',
+      levels: 'Um exame por nível, do A2 ao C2 (o A1, inicial, não tem prova); aprovação por “apte/apta”',
       cefr: ['A2', 'C2'],
       format: [
         'Prova escrita: compreensão de leitura, gramática e vocabulário, e produção de textos',
@@ -185,9 +185,9 @@ export const RECURSOS_CA: LanguageResources = {
   ],
   tips: [
     'Comece separando os cognatos óbvios (casa, animal, música) dos falsos amigos (carro = carroça, llarg = comprido, embaràs = gravidez): o catalão parece espanhol na escrita, mas soa e se comporta de um jeito próprio.',
-    'A vogal neutra é a chave da pronúncia: quase todo «a» e «e» sem acento tônico vira o mesmo som fraco [ə]. Ouvir antes de falar ajuda mais do que tentar deduzir da escrita.',
-    'O passado mais comum não é um tempo verbal simples: é «vaig/vas/va/vam/vau/van + infinitivo» (vaig parlar = eu falei). Decore essa perífrase antes de se preocupar com o pretérito perfeito simples, que só aparece em textos literários.',
-    'Escolha entre «per» (causa, meio, passagem) e «per a» (destino, finalidade) com atenção: o espanhol perdeu essa distinção, então quem já sabe espanhol tende a esquecê-la em catalão.',
+    'A vogal neutra é a chave da pronúncia: quase todo “a” e “e” sem acento tônico vira o mesmo som fraco [ə]. Ouvir antes de falar ajuda mais do que tentar deduzir da escrita.',
+    'O passado mais comum não é um tempo verbal simples: é “vaig/vas/va/vam/vau/van + infinitivo” (vaig parlar = eu falei). Decore essa perífrase antes de se preocupar com o pretérito perfeito simples, que só aparece em textos literários.',
+    'Escolha entre “per” (causa, meio, passagem) e “per a” (destino, finalidade) com atenção: o espanhol perdeu essa distinção, então quem já sabe espanhol tende a esquecê-la em catalão.',
     'O catalão tem falantes em 4 países (Espanha, Andorra, França e Itália) e formas regionais próprias: valenciano, balear, catalão do norte e alguerês. Escolha o catalão central (Barcelona) como base — é o que o app ensina — e trate as variantes como enriquecimento, não como confusão.',
   ],
 };

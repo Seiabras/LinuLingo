@@ -33,7 +33,7 @@ export const GRAMMAR_ZH: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Ler o pinyin como português: «x» não é o «x» de «xícara», é parecido com um «ch» com os lábios esticados; «q» soa perto de «tch».',
+      'Ler o pinyin como português: “x” não é o “x” de “xícara”, é parecido com um “ch” com os lábios esticados; “q” soa perto de “tch”.',
       'Achar que o tom é só entonação da frase: em chinês ele faz parte da palavra, como uma letra.',
     ],
     quiz: [
@@ -68,17 +68,17 @@ export const GRAMMAR_ZH: GrammarTopic[] = [
       },
       {
         heading: '是 não vai com adjetivo',
-        text: 'Para dizer como algo é, o chinês liga o adjetivo direto, normalmente com 很 (hěn, «muito»), que aqui quase não tem força.',
+        text: 'Para dizer como algo é, o chinês liga o adjetivo direto, normalmente com 很 (hěn, “muito”), que aqui quase não tem força.',
         examples: [
           ['我很好。', 'Eu estou bem. (wǒ hěn hǎo)'],
           ['我家很大。', 'A minha casa é grande. (wǒ jiā hěn dà)'],
         ],
       },
     ],
-    pitfalls: ['Dizer «我是好» para «estou bem»: com adjetivo não se usa 是; o certo é «我很好».', 'Mudar a ordem da frase para perguntar: em chinês a ordem fica igual, só entra o 吗 no fim.'],
+    pitfalls: ['Dizer “我是好” para “estou bem”: com adjetivo não se usa 是; o certo é “我很好”.', 'Mudar a ordem da frase para perguntar: em chinês a ordem fica igual, só entra o 吗 no fim.'],
     quiz: [
-      { question: 'Como se diz «eu estou bem»?', options: ['我很好。', '我是好。', '好我是。'], answer: '我很好。', explanation: 'O adjetivo vem direto depois do sujeito, com 很.' },
-      { question: 'Como transformar «你是老师» em pergunta?', options: ['你是老师吗？', '是你老师？', '你吗是老师？'], answer: '你是老师吗？', explanation: 'A ordem fica igual e 吗 vai no fim.' },
+      { question: 'Como se diz “eu estou bem”?', options: ['我很好。', '我是好。', '好我是。'], answer: '我很好。', explanation: 'O adjetivo vem direto depois do sujeito, com 很.' },
+      { question: 'Como transformar “你是老师” em pergunta?', options: ['你是老师吗？', '是你老师？', '你吗是老师？'], answer: '你是老师吗？', explanation: 'A ordem fica igual e 吗 vai no fim.' },
     ],
   },
   {
@@ -89,7 +89,7 @@ export const GRAMMAR_ZH: GrammarTopic[] = [
     summary: 'Entre o número e o substantivo entra um classificador: 一个人 (uma pessoa), 一只猫 (um gato).',
     sections: [
       {
-        text: 'A ordem é número + classificador + substantivo. O 个 (gè) é o mais comum; 只 (zhī) serve para muitos animais. Antes de classificador, «dois» é 两 (liǎng), e não 二.',
+        text: 'A ordem é número + classificador + substantivo. O 个 (gè) é o mais comum; 只 (zhī) serve para muitos animais. Antes de classificador, “dois” é 两 (liǎng), e não 二.',
         table: {
           head: ['Número', 'Classificador', 'Substantivo', 'Tradução'],
           rows: [
@@ -105,9 +105,9 @@ export const GRAMMAR_ZH: GrammarTopic[] = [
         ],
       },
     ],
-    pitfalls: ['Esquecer o classificador: «我有一猫» está errado; o certo é «我有一只猫».', 'Usar 二 antes do classificador: «二个朋友» está errado; o certo é «两个朋友».'],
+    pitfalls: ['Esquecer o classificador: “我有一猫” está errado; o certo é “我有一只猫”.', 'Usar 二 antes do classificador: “二个朋友” está errado; o certo é “两个朋友”.'],
     quiz: [
-      { question: 'Como se diz «dois amigos»?', options: ['两个朋友', '二个朋友', '两朋友'], answer: '两个朋友', explanation: 'Antes de classificador, «dois» é 两, e o classificador 个 não pode faltar.' },
+      { question: 'Como se diz “dois amigos”?', options: ['两个朋友', '二个朋友', '两朋友'], answer: '两个朋友', explanation: 'Antes de classificador, “dois” é 两, e o classificador 个 não pode faltar.' },
       { question: 'Qual classificador vai com 猫 (gato)?', options: ['只', '是', '的'], answer: '只', explanation: '只 (zhī) é o classificador de muitos animais.' },
     ],
   },
@@ -138,10 +138,10 @@ export const GRAMMAR_ZH: GrammarTopic[] = [
         ],
       },
     ],
-    pitfalls: ['Dizer «我不有»: o verbo 有 só se nega com 没, «我没有».', 'Pôr a coisa antes do dono, como em português («o gato de mim»): em chinês o dono vem primeiro, «我的猫».'],
+    pitfalls: ['Dizer “我不有”: o verbo 有 só se nega com 没, “我没有”.', 'Pôr a coisa antes do dono, como em português (“o gato de mim”): em chinês o dono vem primeiro, “我的猫”.'],
     quiz: [
-      { question: 'Como se diz «não tenho cachorro»?', options: ['我没有狗。', '我不有狗。', '我有不狗。'], answer: '我没有狗。', explanation: '有 se nega com 没: 没有.' },
-      { question: '«我的朋友» quer dizer…', options: ['o meu amigo', 'eu sou amigo', 'o amigo tem'], answer: 'o meu amigo', explanation: 'Dono (我) + 的 + coisa (朋友).' },
+      { question: 'Como se diz “não tenho cachorro”?', options: ['我没有狗。', '我不有狗。', '我有不狗。'], answer: '我没有狗。', explanation: '有 se nega com 没: 没有.' },
+      { question: '“我的朋友” quer dizer…', options: ['o meu amigo', 'eu sou amigo', 'o amigo tem'], answer: 'o meu amigo', explanation: 'Dono (我) + 的 + coisa (朋友).' },
     ],
   },
 ];

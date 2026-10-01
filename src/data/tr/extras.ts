@@ -33,7 +33,7 @@ export const SCENARIOS_TR: ScenarioSeed[] = [
     cefr: 'A1',
     register: 'informal',
     persona: 'Elif, uma colega do curso de turco',
-    description: 'Elif chama você para um café em Istambul. É uma conversa entre colegas: use «sen».',
+    description: 'Elif chama você para um café em Istambul. É uma conversa entre colegas: use “sen”.',
     turns: [
       {
         bot: 'Merhaba! Ne içmek istersin?',
@@ -58,7 +58,7 @@ export const ETYMOLOGY_TR: EtymologySeed[] = [
     root_word: 'qahwa',
     origin_language: 'Árabe',
     cognates: c(['pt', 'café'], ['it', 'caffè'], ['fr', 'café']),
-    evolution_note: 'O árabe «qahwa» virou «kahve» em turco, e do turco a palavra passou ao italiano «caffè», de onde se espalhou pela Europa e chegou ao português «café».',
+    evolution_note: 'O árabe “qahwa” virou “kahve” em turco, e do turco a palavra passou ao italiano “caffè”, de onde se espalhou pela Europa e chegou ao português “café”.',
     transparent: false,
   },
   {
@@ -66,7 +66,7 @@ export const ETYMOLOGY_TR: EtymologySeed[] = [
     root_word: 'sharāb',
     origin_language: 'Árabe',
     cognates: c(['pt', 'xarope'], ['es', 'jarabe']),
-    evolution_note: 'O árabe «sharāb» (bebida) deu «şarap» (vinho) em turco. A mesma palavra árabe chegou ao português como «xarope».',
+    evolution_note: 'O árabe “sharāb” (bebida) deu “şarap” (vinho) em turco. A mesma palavra árabe chegou ao português como “xarope”.',
     transparent: false,
   },
   {
@@ -74,7 +74,7 @@ export const ETYMOLOGY_TR: EtymologySeed[] = [
     root_word: 'marḥaban',
     origin_language: 'Árabe',
     cognates: c(['ar', 'مرحبا (marḥaban)']),
-    evolution_note: 'O cumprimento árabe «marḥaban» (bem-vindo) virou o «oi» de todo dia em turco.',
+    evolution_note: 'O cumprimento árabe “marḥaban” (bem-vindo) virou o “oi” de todo dia em turco.',
     transparent: false,
   },
   {
@@ -82,7 +82,7 @@ export const ETYMOLOGY_TR: EtymologySeed[] = [
     root_word: 'shahr',
     origin_language: 'Persa',
     cognates: c(['hi', 'शहर (shahar)'], ['ur', 'شہر (shahr)']),
-    evolution_note: 'Do persa «shahr» (cidade), que também passou ao híndi e ao urdu. O turco tem muitas palavras persas, da época em que o persa era a língua de cultura da corte otomana.',
+    evolution_note: 'Do persa “shahr” (cidade), que também passou ao híndi e ao urdu. O turco tem muitas palavras persas, da época em que o persa era a língua de cultura da corte otomana.',
     transparent: false,
   },
   {
@@ -90,7 +90,7 @@ export const ETYMOLOGY_TR: EtymologySeed[] = [
     root_word: 'ʿāʾila',
     origin_language: 'Árabe',
     cognates: c(['ar', 'عائلة (ʿāʾila)']),
-    evolution_note: 'Do árabe «ʿāʾila» (família). Muitas palavras árabes entraram no turco pela religião, pelo comércio e pela escrita árabe, usada até 1928.',
+    evolution_note: 'Do árabe “ʿāʾila” (família). Muitas palavras árabes entraram no turco pela religião, pelo comércio e pela escrita árabe, usada até 1928.',
     transparent: false,
   },
 ];

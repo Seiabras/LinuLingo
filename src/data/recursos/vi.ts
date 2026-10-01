@@ -82,7 +82,7 @@ export const RECURSOS_VI: LanguageResources = {
       by: 'Victor Vũ',
       year: '2015',
       level: 'B1',
-      why: 'Dois irmãos numa vila pobre do Centro do Vietnã nos anos 1980, a partir do livro de Nguyễn Nhật Ánh. O título quer dizer «Vejo flores amarelas na grama verde»; fala simples de criança.',
+      why: 'Dois irmãos numa vila pobre do Centro do Vietnã nos anos 1980, a partir do livro de Nguyễn Nhật Ánh. O título quer dizer “Vejo flores amarelas na grama verde”; fala simples de criança.',
     },
     {
       kind: 'filme',
@@ -135,7 +135,7 @@ export const RECURSOS_VI: LanguageResources = {
       by: 'VTV',
       year: '2017',
       level: 'B2',
-      why: 'Drama policial sobre o chefão do submundo de uma cidade do Norte, adaptado da série israelense «Ha-Borer». Muito comentado no Vietnã, com diálogos tensos e cheios de frases de efeito.',
+      why: 'Drama policial sobre o chefão do submundo de uma cidade do Norte, adaptado da série israelense “Ha-Borer”. Muito comentado no Vietnã, com diálogos tensos e cheios de frases de efeito.',
       accent: 'vietnamita do Norte',
     },
     {
@@ -144,7 +144,7 @@ export const RECURSOS_VI: LanguageResources = {
       by: 'Nguyễn Du',
       year: 'início do séc. XIX',
       level: 'C2',
-      why: 'O poema nacional («O Conto de Kiều»): 3.254 versos em lục bát, o metro de seis e oito sílabas, sobre uma moça que se vende para salvar a família. Muitos vietnamitas sabem trechos de cor; leia numa edição comentada.',
+      why: 'O poema nacional (“O Conto de Kiều”): 3.254 versos em lục bát, o metro de seis e oito sílabas, sobre uma moça que se vende para salvar a família. Muitos vietnamitas sabem trechos de cor; leia numa edição comentada.',
     },
     {
       kind: 'livro',
@@ -160,7 +160,7 @@ export const RECURSOS_VI: LanguageResources = {
       by: 'Nguyễn Nhật Ánh',
       year: '2008',
       level: 'B1',
-      why: 'Um adulto relembra a infância com humor — o título pede «uma passagem para a infância». Nguyễn Nhật Ánh é um dos autores mais lidos pelos jovens do país, com um vietnamita claro e atual.',
+      why: 'Um adulto relembra a infância com humor — o título pede “uma passagem para a infância”. Nguyễn Nhật Ánh é um dos autores mais lidos pelos jovens do país, com um vietnamita claro e atual.',
     },
     {
       kind: 'livro',
@@ -177,7 +177,7 @@ export const RECURSOS_VI: LanguageResources = {
       by: 'Bảo Ninh',
       year: '1990',
       level: 'C1',
-      why: 'Um ex-soldado do Norte revive a guerra enquanto recolhe os restos de companheiros mortos. O grande romance da guerra do ponto de vista vietnamita (em inglês, «The Sorrow of War»).',
+      why: 'Um ex-soldado do Norte revive a guerra enquanto recolhe os restos de companheiros mortos. O grande romance da guerra do ponto de vista vietnamita (em inglês, “The Sorrow of War”).',
     },
     {
       kind: 'livro',
@@ -192,7 +192,7 @@ export const RECURSOS_VI: LanguageResources = {
       title: 'Diễm xưa',
       by: 'Trịnh Công Sơn (na voz de Khánh Ly)',
       level: 'B1',
-      why: 'Do compositor mais amado do país, às vezes chamado de «Bob Dylan do Vietnã», uma canção sobre a chuva de Huế. Melodia lenta e poesia fácil de acompanhar.',
+      why: 'Do compositor mais amado do país, às vezes chamado de “Bob Dylan do Vietnã”, uma canção sobre a chuva de Huế. Melodia lenta e poesia fácil de acompanhar.',
     },
     {
       kind: 'musica',
@@ -285,11 +285,11 @@ export const RECURSOS_VI: LanguageResources = {
     },
   ],
   tips: [
-    'O vietnamita tem seis tons no Norte (Hanói) e cinco no Sul, onde o hỏi e o ngã se juntam. Um tom errado muda a palavra: «ma» (fantasma), «má» (bochecha; «mãe», no Sul), «mà» (mas), «mả» (túmulo), «mã» (cavalo, em palavras sino-vietnamitas), «mạ» (muda de arroz). Treine pares assim desde o primeiro dia.',
-    'A escrita (chữ Quốc ngữ) usa o alfabeto latino e foi criada por missionários no século XVII, portugueses entre eles — por isso o «nh» soa como o nosso («nhà», casa). Mas atenção: «x» soa «s», «đ» é parecido com o nosso «d», e o «d» sem traço vale «z» no Norte e «i» no Sul.',
-    'Aprenda a digitar com o método Telex, que vem em qualquer teclado vietnamita: «aa» vira â, «ow» vira ơ, «dd» vira đ, e as letras s, f, r, x e j no fim da palavra põem os tons (sắc, huyền, hỏi, ngã, nặng). Digitar certo obriga você a saber o tom de cada palavra.',
-    'Não existe um «você» neutro: as pessoas se tratam por termos de parentesco conforme a idade — «anh» (irmão mais velho), «chị» (irmã mais velha), «em» (irmão ou irmã mais nova), «cô», «chú», «bác», «ông», «bà». Na dúvida, pergunte a idade: por lá é uma pergunta normal.',
-    'A gramática é leve: o verbo não conjuga, e o tempo vem de «đã» (passado), «đang» (em andamento) e «sẽ» (futuro). Boa parte do vocabulário culto vem do chinês, como «quốc gia» (país) e «học sinh» (aluno): aprenda as sílabas que se repetem e as palavras novas ficam fáceis.',
-    'Escolha um sotaque para imitar: o do Norte é o dos cursos e do rádio estatal; o do Sul é o de Saigon e da maioria dos vietnamitas que vivem fora do país. Filmes como «Bố già» e «Furie» treinam o ouvido para o Sul.',
+    'O vietnamita tem seis tons no Norte (Hanói) e cinco no Sul, onde o hỏi e o ngã se juntam. Um tom errado muda a palavra: “ma” (fantasma), “má” (bochecha; “mãe”, no Sul), “mà” (mas), “mả” (túmulo), “mã” (cavalo, em palavras sino-vietnamitas), “mạ” (muda de arroz). Treine pares assim desde o primeiro dia.',
+    'A escrita (chữ Quốc ngữ) usa o alfabeto latino e foi criada por missionários no século XVII, portugueses entre eles — por isso o “nh” soa como o nosso (“nhà”, casa). Mas atenção: “x” soa “s”, “đ” é parecido com o nosso “d”, e o “d” sem traço vale “z” no Norte e “i” no Sul.',
+    'Aprenda a digitar com o método Telex, que vem em qualquer teclado vietnamita: “aa” vira â, “ow” vira ơ, “dd” vira đ, e as letras s, f, r, x e j no fim da palavra põem os tons (sắc, huyền, hỏi, ngã, nặng). Digitar certo obriga você a saber o tom de cada palavra.',
+    'Não existe um “você” neutro: as pessoas se tratam por termos de parentesco conforme a idade — “anh” (irmão mais velho), “chị” (irmã mais velha), “em” (irmão ou irmã mais nova), “cô”, “chú”, “bác”, “ông”, “bà”. Na dúvida, pergunte a idade: por lá é uma pergunta normal.',
+    'A gramática é leve: o verbo não conjuga, e o tempo vem de “đã” (passado), “đang” (em andamento) e “sẽ” (futuro). Boa parte do vocabulário culto vem do chinês, como “quốc gia” (país) e “học sinh” (aluno): aprenda as sílabas que se repetem e as palavras novas ficam fáceis.',
+    'Escolha um sotaque para imitar: o do Norte é o dos cursos e do rádio estatal; o do Sul é o de Saigon e da maioria dos vietnamitas que vivem fora do país. Filmes como “Bố già” e “Furie” treinam o ouvido para o Sul.',
   ],
 };

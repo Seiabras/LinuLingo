@@ -12,7 +12,7 @@ const SHIMAKUTUBA = 'A província de Okinawa celebra desde 2006 o Dia da Shimaku
 const OKINAWA = `${DIALETO_OFICIAL} ${SHIMAKUTUBA}`;
 
 const LINGUA_OU_DIALETO_RYUKYU =
-  'No Japão, são chamadas tradicionalmente de «dialetos das Ryūkyū» (Ryūkyū hōgen), e é assim que o governo as trata. A maioria dos linguistas, a UNESCO e a norma ISO 639-3 as tratam como línguas próprias, irmãs do japonês, porque quem fala japonês não as entende sem estudar. Muitos moradores preferem «shimakutuba» («fala da ilha»), que não toma partido.';
+  'No Japão, são chamadas tradicionalmente de “dialetos das Ryūkyū” (Ryūkyū hōgen), e é assim que o governo as trata. A maioria dos linguistas, a UNESCO e a norma ISO 639-3 as tratam como línguas próprias, irmãs do japonês, porque quem fala japonês não as entende sem estudar. Muitos moradores preferem “shimakutuba” (“fala da ilha”), que não toma partido.';
 
 /** Família, reconhecimento e glottocodes das línguas próprias (kind 'língua') de ./sotaques.ts. */
 export const OWN_META_JA: Record<string, OwnLanguageMeta> = {

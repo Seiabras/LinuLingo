@@ -114,12 +114,12 @@ export const ARTIGOS_NB: ArticleSeed[] = [
     title: 'Fridtjof Nansen',
     emoji: '🧭',
     paragraphs: [
-      'Forskeren Fridtjof Nansen (1861–1930) krysset Grønland på ski i 1888 og lot seg senere drive med skipet «Fram» gjennom isen i Polhavet for å komme nærmest mulig Nordpolen.',
-      'Etter første verdenskrig ble han Folkeforbundets høykommissær for flyktninger. Han fikk innført «Nansenpasset», et reisedokument for statsløse flyktninger som hundretusener fikk nytte av. For dette arbeidet fikk han Nobels fredspris i 1922.',
+      'Forskeren Fridtjof Nansen (1861–1930) krysset Grønland på ski i 1888 og lot seg senere drive med skipet “Fram” gjennom isen i Polhavet for å komme nærmest mulig Nordpolen.',
+      'Etter første verdenskrig ble han Folkeforbundets høykommissær for flyktninger. Han fikk innført “Nansenpasset”, et reisedokument for statsløse flyktninger som hundretusener fikk nytte av. For dette arbeidet fikk han Nobels fredspris i 1922.',
     ],
     translation: [
-      'O cientista e explorador Fridtjof Nansen (1861–1930) atravessou a Groenlândia de esqui em 1888 e depois se deixou levar à deriva com o navio «Fram» pelo gelo do oceano Ártico, para chegar o mais perto possível do Polo Norte.',
-      'Depois da Primeira Guerra Mundial, tornou-se alto-comissário da Liga das Nações para os refugiados. Criou o «passaporte Nansen», um documento de viagem para refugiados apátridas que beneficiou centenas de milhares de pessoas. Por esse trabalho recebeu o Nobel da Paz em 1922.',
+      'O cientista e explorador Fridtjof Nansen (1861–1930) atravessou a Groenlândia de esqui em 1888 e depois se deixou levar à deriva com o navio “Fram” pelo gelo do oceano Ártico, para chegar o mais perto possível do Polo Norte.',
+      'Depois da Primeira Guerra Mundial, tornou-se alto-comissário da Liga das Nações para os refugiados. Criou o “passaporte Nansen”, um documento de viagem para refugiados apátridas que beneficiou centenas de milhares de pessoas. Por esse trabalho recebeu o Nobel da Paz em 1922.',
     ],
     glossary: [
       ['lot', 'deixou'],
@@ -129,7 +129,7 @@ export const ARTIGOS_NB: ArticleSeed[] = [
     ],
     questions: [
       { q: 'Como Nansen atravessou a Groenlândia?', options: ['De esqui', 'De avião', 'De trenó puxado por renas'], answer: 0 },
-      { q: 'Para quem era o «passaporte Nansen»?', options: ['Para exploradores', 'Para refugiados apátridas', 'Para diplomatas'], answer: 1 },
+      { q: 'Para quem era o “passaporte Nansen”?', options: ['Para exploradores', 'Para refugiados apátridas', 'Para diplomatas'], answer: 1 },
       { q: 'Por que ele recebeu o Nobel da Paz?', options: ['Pelo trabalho com os refugiados', 'Pela expedição ao Polo', 'Por um livro'], answer: 0 },
     ],
   },

@@ -5,16 +5,16 @@ export const LINGUISTICS_RO: LinguisticsArea[] = [
   {
     area: 'fonetica',
     summary:
-      'O romeno tem duas vogais centrais que o português brasileiro não tem (ă e â/î), o [t͡s] do «ț», um [h] sempre pronunciado e um «i» final que quase não soa.',
+      'O romeno tem duas vogais centrais que o português brasileiro não tem (ă e â/î), o [t͡s] do “ț”, um [h] sempre pronunciado e um “i” final que quase não soa.',
     sections: [
       {
         heading: 'As vogais: sete, e nenhuma nasal',
-        text: 'O romeno tem sete vogais. Cinco são as do português (a, e, i, o, u, só que sem a diferença entre «é» e «ê», «ó» e «ô»). As outras duas ficam no centro da boca e não existem no português do Brasil. E o romeno não tem vogais nasais: «pâine» (pão) se diz com a boca aberta, sem o «ão» nasal.',
+        text: 'O romeno tem sete vogais. Cinco são as do português (a, e, i, o, u, só que sem a diferença entre “é” e “ê”, “ó” e “ô”). As outras duas ficam no centro da boca e não existem no português do Brasil. E o romeno não tem vogais nasais: “pâine” (pão) se diz com a boca aberta, sem o “ão” nasal.',
         table: {
           head: ['Letra', 'IPA', 'Como produzir', 'Exemplo'],
           rows: [
-            ['ă', '[ə]', 'boca meio aberta e relaxada, língua parada no meio: o «a» fraco do fim de «casa» dito de propósito', 'casă [kasə]'],
-            ['â / î', '[ɨ]', 'diga «i» e, sem mudar a abertura, puxe a língua para trás, sem sorrir', 'câine [kɨjne], în [ɨn]'],
+            ['ă', '[ə]', 'boca meio aberta e relaxada, língua parada no meio: o “a” fraco do fim de “casa” dito de propósito', 'casă [kasə]'],
+            ['â / î', '[ɨ]', 'diga “i” e, sem mudar a abertura, puxe a língua para trás, sem sorrir', 'câine [kɨjne], în [ɨn]'],
             ['e', '[e]', 'sempre fechado e cheio, mesmo no fim da palavra', 'carte [karte]'],
             ['o', '[o]', 'sempre fechado e cheio, mesmo no fim da palavra', 'acolo [akolo]'],
           ],
@@ -30,18 +30,18 @@ export const LINGUISTICS_RO: LinguisticsArea[] = [
         table: {
           head: ['Letra', 'IPA', 'O que muda para o brasileiro', 'Exemplo'],
           rows: [
-            ['ț', '[t͡s]', 'um «t» e um «s» colados num som só, como em «tsunami»', 'țară [t͡sarə] (país)'],
+            ['ț', '[t͡s]', 'um “t” e um “s” colados num som só, como em “tsunami”', 'țară [t͡sarə] (país)'],
             ['h', '[h]', 'sempre soa, como um sopro: nunca é mudo', 'hotel [hotel], hartă [hartə] (mapa)'],
-            ['r', '[r]', 'sempre na ponta da língua, vibrado, também no começo da palavra: nunca o «r» de «rato» do Rio', 'rac [rak] (caranguejo)'],
-            ['ș', '[ʃ]', 'o «ch» de «chave», também antes de consoante', 'școală [ʃko̯alə]'],
-            ['c / g + e, i', '[t͡ʃ] / [d͡ʒ]', 'o «tch» e o «dj» de «tia» e «dia» cariocas, mas antes de e também', 'ce [t͡ʃe], ger [d͡ʒer] (geada)'],
+            ['r', '[r]', 'sempre na ponta da língua, vibrado, também no começo da palavra: nunca o “r” de “rato” do Rio', 'rac [rak] (caranguejo)'],
+            ['ș', '[ʃ]', 'o “ch” de “chave”, também antes de consoante', 'școală [ʃko̯alə]'],
+            ['c / g + e, i', '[t͡ʃ] / [d͡ʒ]', 'o “tch” e o “dj” de “tia” e “dia” cariocas, mas antes de e também', 'ce [t͡ʃe], ger [d͡ʒer] (geada)'],
           ],
         },
-        text: 'O [h] é a novidade mais fácil de errar: o brasileiro tende a apagar o «h» escrito (hotel) e a transformar o «r» inicial em [h] (rac). Em romeno são dois sons separados, e trocar um pelo outro muda a palavra.',
+        text: 'O [h] é a novidade mais fácil de errar: o brasileiro tende a apagar o “h” escrito (hotel) e a transformar o “r” inicial em [h] (rac). Em romeno são dois sons separados, e trocar um pelo outro muda a palavra.',
       },
       {
-        heading: 'A consoante «amaciada» pelo -i final',
-        text: 'Depois de consoante, o -i átono do fim da palavra não forma sílaba: ele só palataliza a consoante anterior, que sai com a língua encostando no céu da boca, como se fosse dizer «i» sem dizer. Em IPA isso se escreve com um [ʲ] pequeno. É o som dos plurais e da 2ª pessoa dos verbos.',
+        heading: 'A consoante “amaciada” pelo -i final',
+        text: 'Depois de consoante, o -i átono do fim da palavra não forma sílaba: ele só palataliza a consoante anterior, que sai com a língua encostando no céu da boca, como se fosse dizer “i” sem dizer. Em IPA isso se escreve com um [ʲ] pequeno. É o som dos plurais e da 2ª pessoa dos verbos.',
         examples: [
           ['lup, lupi', 'lobo, lobos: [lup], [lupʲ]'],
           ['pomi', 'árvores (frutíferas): [pomʲ]'],
@@ -51,7 +51,7 @@ export const LINGUISTICS_RO: LinguisticsArea[] = [
       },
       {
         heading: 'Ditongos, tritongos e vogais que não se reduzem',
-        text: 'O romeno junta vogais em ditongos crescentes que o português não tem, como ea [e̯a] e oa [o̯a], e até em tritongos: «beau» (eu bebo) é uma sílaba só, [be̯aw]. Por outro lado, as vogais átonas não enfraquecem como no Brasil: «lapte» (leite) termina em [e] cheio, nunca em «i», e «acolo» (lá) termina em [o], nunca em «u».',
+        text: 'O romeno junta vogais em ditongos crescentes que o português não tem, como ea [e̯a] e oa [o̯a], e até em tritongos: “beau” (eu bebo) é uma sílaba só, [be̯aw]. Por outro lado, as vogais átonas não enfraquecem como no Brasil: “lapte” (leite) termina em [e] cheio, nunca em “i”, e “acolo” (lá) termina em [o], nunca em “u”.',
         examples: [
           ['noapte', 'noite: [no̯apte]'],
           ['seară', 'noitinha, fim da tarde: [se̯arə]'],
@@ -63,27 +63,27 @@ export const LINGUISTICS_RO: LinguisticsArea[] = [
     quiz: [
       {
         question: 'Qual destes sons NÃO existe no português do Brasil?',
-        options: ['[ʃ] de «ș»', '[ɨ] de «â/î»', '[ʒ] de «j»', '[k] de «ch»'],
-        answer: '[ɨ] de «â/î»',
-        explanation: '[ɨ] é uma vogal central, um «i» com a língua recuada. Os outros sons existem no português: chave, já, casa.',
+        options: ['[ʃ] de “ș”', '[ɨ] de “â/î”', '[ʒ] de “j”', '[k] de “ch”'],
+        answer: '[ɨ] de “â/î”',
+        explanation: '[ɨ] é uma vogal central, um “i” com a língua recuada. Os outros sons existem no português: chave, já, casa.',
       },
       {
-        question: 'Como se pronuncia o «h» de «hotel» em romeno?',
-        options: ['Não se pronuncia', 'Como um sopro [h]', 'Como o «lh»', 'Como o «ch» de «chave»'],
+        question: 'Como se pronuncia o “h” de “hotel” em romeno?',
+        options: ['Não se pronuncia', 'Como um sopro [h]', 'Como o “lh”', 'Como o “ch” de “chave”'],
         answer: 'Como um sopro [h]',
-        explanation: 'Em romeno o «h» é sempre pronunciado, como um sopro leve.',
+        explanation: 'Em romeno o “h” é sempre pronunciado, como um sopro leve.',
       },
       {
-        question: 'Em «lupi» (lobos), o -i final…',
-        options: ['soa como um «i» cheio', 'é totalmente mudo e não muda nada', 'só palataliza o «p»: [lupʲ]', 'soa como «e»'],
-        answer: 'só palataliza o «p»: [lupʲ]',
-        explanation: 'O -i átono final depois de consoante não forma sílaba: deixa a consoante «amaciada».',
+        question: 'Em “lupi” (lobos), o -i final…',
+        options: ['soa como um “i” cheio', 'é totalmente mudo e não muda nada', 'só palataliza o “p”: [lupʲ]', 'soa como “e”'],
+        answer: 'só palataliza o “p”: [lupʲ]',
+        explanation: 'O -i átono final depois de consoante não forma sílaba: deixa a consoante “amaciada”.',
       },
       {
-        question: 'Como termina a pronúncia de «lapte» (leite)?',
-        options: ['[i], como em «leite»', '[e] cheio', 'sem vogal', '[ə]'],
+        question: 'Como termina a pronúncia de “lapte” (leite)?',
+        options: ['[i], como em “leite”', '[e] cheio', 'sem vogal', '[ə]'],
         answer: '[e] cheio',
-        explanation: 'O romeno não reduz o «e» átono final a «i», como faz o português do Brasil.',
+        explanation: 'O romeno não reduz o “e” átono final a “i”, como faz o português do Brasil.',
       },
     ],
   },
@@ -94,7 +94,7 @@ export const LINGUISTICS_RO: LinguisticsArea[] = [
     sections: [
       {
         heading: 'O que é fonema em romeno e alofone em português',
-        text: 'No Brasil, o «t» de «tia» pode soar [t] ou [t͡ʃ] sem mudar a palavra: são alofones. Em romeno, [t], [t͡s] e [t͡ʃ] são três fonemas diferentes, e cada um faz uma palavra. O mesmo vale para as vogais centrais: a diferença entre a, ă e â muda o sentido, e o ă final chega a separar «uma casa» de «a casa».',
+        text: 'No Brasil, o “t” de “tia” pode soar [t] ou [t͡ʃ] sem mudar a palavra: são alofones. Em romeno, [t], [t͡s] e [t͡ʃ] são três fonemas diferentes, e cada um faz uma palavra. O mesmo vale para as vogais centrais: a diferença entre a, ă e â muda o sentido, e o ă final chega a separar “uma casa” de “a casa”.',
         table: {
           head: ['Par mínimo', 'IPA', 'Significados'],
           rows: [
@@ -145,7 +145,7 @@ export const LINGUISTICS_RO: LinguisticsArea[] = [
       },
       {
         heading: 'Escrita e som, e os sotaques',
-        text: 'O romeno foi escrito em alfabeto cirílico até meados do século XIX, quando passou ao latino. A reforma de 1993 devolveu o â no meio da palavra (România, mâine) e a forma «sunt» no lugar de «sînt»; na Moldávia, o alfabeto latino foi adotado em 1989. As letras ș e ț levam vírgula embaixo, não cedilha. A ortografia é tão próxima da fala que os sotaques regionais aparecem como pequenas trocas de som: na Moldávia é comum ouvir [ʃ] no lugar de [t͡ʃ] (ce, cinci) e «chiatră» em vez de «piatră» (pedra).',
+        text: 'O romeno foi escrito em alfabeto cirílico até meados do século XIX, quando passou ao latino. A reforma de 1993 devolveu o â no meio da palavra (România, mâine) e a forma “sunt” no lugar de “sînt”; na Moldávia, o alfabeto latino foi adotado em 1989. As letras ș e ț levam vírgula embaixo, não cedilha. A ortografia é tão próxima da fala que os sotaques regionais aparecem como pequenas trocas de som: na Moldávia é comum ouvir [ʃ] no lugar de [t͡ʃ] (ce, cinci) e “chiatră” em vez de “piatră” (pedra).',
         examples: [
           ['România', 'Romênia: com â no meio'],
           ['Eu sunt din Moldova.', 'Eu sou da Moldávia.'],
@@ -155,22 +155,22 @@ export const LINGUISTICS_RO: LinguisticsArea[] = [
     topics: ['ro-g-regionalismos'],
     quiz: [
       {
-        question: 'Qual a diferença entre «casă» e «casa»?',
-        options: ['Nenhuma, são variantes', '«casă» é uma casa; «casa» é a casa', '«casa» é o plural', '«casă» é o diminutivo'],
-        answer: '«casă» é uma casa; «casa» é a casa',
+        question: 'Qual a diferença entre “casă” e “casa”?',
+        options: ['Nenhuma, são variantes', '“casă” é uma casa; “casa” é a casa', '“casa” é o plural', '“casă” é o diminutivo'],
+        answer: '“casă” é uma casa; “casa” é a casa',
         explanation: 'O artigo definido feminino é o -a final: trocar [ə] por [a] muda o sentido.',
       },
       {
-        question: 'O plural de «student» é «studenți». Que alternância acontece?',
+        question: 'O plural de “student” é “studenți”. Que alternância acontece?',
         options: ['t → ț', 'e → ea', 'd → z', 'Nenhuma'],
         answer: 't → ț',
-        explanation: 'Antes do -i do plural, o «t» vira «ț» [t͡s].',
+        explanation: 'Antes do -i do plural, o “t” vira “ț” [t͡s].',
       },
       {
-        question: 'Como se sabe onde cai o acento de «copii»?',
+        question: 'Como se sabe onde cai o acento de “copii”?',
         options: ['Pelo acento gráfico', 'Pelo contexto: a escrita não o marca', 'Sempre na última sílaba', 'Sempre na penúltima sílaba'],
         answer: 'Pelo contexto: a escrita não o marca',
-        explanation: '«copíi» (crianças) e «cópii» (cópias) se escrevem igual; o romeno não marca o acento na escrita.',
+        explanation: '“copíi” (crianças) e “cópii” (cópias) se escrevem igual; o romeno não marca o acento na escrita.',
       },
       {
         question: 'Em que ano a Moldávia adotou o alfabeto latino para o romeno?',
@@ -187,7 +187,7 @@ export const LINGUISTICS_RO: LinguisticsArea[] = [
     sections: [
       {
         heading: 'Um nome, muitas formas',
-        text: 'O latim tinha seis casos; o português perdeu todos nos nomes. O romeno guardou três: nominativo-acusativo (sujeito e objeto), genitivo-dativo (posse e objeto indireto, «de» e «para») e vocativo (para chamar). E o artigo definido vem colado no fim: «băiatul» = «o menino». Artigo, número e caso se fundem numa única terminação, como é típico das línguas flexivas.',
+        text: 'O latim tinha seis casos; o português perdeu todos nos nomes. O romeno guardou três: nominativo-acusativo (sujeito e objeto), genitivo-dativo (posse e objeto indireto, “de” e “para”) e vocativo (para chamar). E o artigo definido vem colado no fim: “băiatul” = “o menino”. Artigo, número e caso se fundem numa única terminação, como é típico das línguas flexivas.',
         table: {
           head: ['Forma', 'Masculino', 'Feminino', 'Neutro'],
           rows: [
@@ -214,9 +214,9 @@ export const LINGUISTICS_RO: LinguisticsArea[] = [
       },
       {
         heading: 'O verbo: tempos simples e compostos',
-        text: 'O verbo romeno conjuga-se em quatro grupos pelo infinitivo, que vem com «a» na frente (a face = fazer). Muitos verbos inserem -ez ou -esc entre a raiz e a terminação (lucrez, vorbesc). Há tempos sintéticos (numa palavra só), como o imperfeito e o mais-que-perfeito, e analíticos (com auxiliar), como o passado composto e o futuro. Não há aspecto gramatical à maneira do russo: a oposição é a mesma do português, entre um passado concluído e um imperfeito. E não existe um «estou fazendo»: o presente cobre as duas coisas.',
+        text: 'O verbo romeno conjuga-se em quatro grupos pelo infinitivo, que vem com “a” na frente (a face = fazer). Muitos verbos inserem -ez ou -esc entre a raiz e a terminação (lucrez, vorbesc). Há tempos sintéticos (numa palavra só), como o imperfeito e o mais-que-perfeito, e analíticos (com auxiliar), como o passado composto e o futuro. Não há aspecto gramatical à maneira do russo: a oposição é a mesma do português, entre um passado concluído e um imperfeito. E não existe um “estou fazendo”: o presente cobre as duas coisas.',
         table: {
-          head: ['Tempo ou modo', 'Forma de «a face» (eu)', 'Português'],
+          head: ['Tempo ou modo', 'Forma de “a face” (eu)', 'Português'],
           rows: [
             ['prezent', 'fac', 'faço / estou fazendo'],
             ['perfect compus', 'am făcut', 'fiz'],
@@ -232,7 +232,7 @@ export const LINGUISTICS_RO: LinguisticsArea[] = [
       },
       {
         heading: 'Formação de palavras',
-        text: 'O romeno forma palavras com prefixos e sufixos, muitos herdados do latim. O prefixo ne- nega (necunoscut = desconhecido), stră- recua uma geração (străbunic = bisavô), -tor forma agentes (muncitor = trabalhador) e os diminutivos são produtivos. Os números de 11 a 19 guardam uma construção curiosa, calcada no eslavo: «unsprezece» = um sobre dez; e «douăzeci» = duas dezenas.',
+        text: 'O romeno forma palavras com prefixos e sufixos, muitos herdados do latim. O prefixo ne- nega (necunoscut = desconhecido), stră- recua uma geração (străbunic = bisavô), -tor forma agentes (muncitor = trabalhador) e os diminutivos são produtivos. Os números de 11 a 19 guardam uma construção curiosa, calcada no eslavo: “unsprezece” = um sobre dez; e “douăzeci” = duas dezenas.',
         examples: [
           ['nefericit', 'infeliz (ne- + fericit, feliz)'],
           ['străbunicul meu', 'meu bisavô'],
@@ -280,27 +280,27 @@ export const LINGUISTICS_RO: LinguisticsArea[] = [
         explanation: 'un tren, trenul (como masculino); două trenuri, trenurile (como feminino).',
       },
       {
-        question: 'O que significa «fetei» em «Dau fetei o floare»?',
+        question: 'O que significa “fetei” em “Dau fetei o floare”?',
         options: ['a moça (sujeito)', 'à moça (objeto indireto)', 'as moças', 'moça! (chamando)'],
         answer: 'à moça (objeto indireto)',
         explanation: '-ei é a terminação de genitivo-dativo do feminino singular com artigo.',
       },
       {
-        question: 'Como o romeno diz «estou fazendo»?',
+        question: 'Como o romeno diz “estou fazendo”?',
         options: ['sunt făcând', 'fac', 'am făcut', 'făceam'],
         answer: 'fac',
-        explanation: 'Não há forma progressiva: o presente «fac» vale para «faço» e «estou fazendo».',
+        explanation: 'Não há forma progressiva: o presente “fac” vale para “faço” e “estou fazendo”.',
       },
     ],
   },
   {
     area: 'sintaxe',
     summary:
-      'A frase romena é SVO e flexível como a portuguesa, mas tem traços balcânicos: «să» + verbo conjugado no lugar do infinitivo, duplicação do objeto com pronome átono e o «pe» antes do objeto que é pessoa.',
+      'A frase romena é SVO e flexível como a portuguesa, mas tem traços balcânicos: “să” + verbo conjugado no lugar do infinitivo, duplicação do objeto com pronome átono e o “pe” antes do objeto que é pessoa.',
     sections: [
       {
         heading: 'Ordem das palavras',
-        text: 'A ordem básica é sujeito, verbo, objeto, como no português, e o sujeito pronome costuma cair. O adjetivo vem normalmente depois do nome, e o demonstrativo pode vir antes (sem artigo) ou depois (com o nome articulado). A negação é «nu» antes do verbo, e a dupla negação é obrigatória, como no português: «nu … nimic».',
+        text: 'A ordem básica é sujeito, verbo, objeto, como no português, e o sujeito pronome costuma cair. O adjetivo vem normalmente depois do nome, e o demonstrativo pode vir antes (sem artigo) ou depois (com o nome articulado). A negação é “nu” antes do verbo, e a dupla negação é obrigatória, como no português: “nu … nimic”.',
         table: {
           head: ['Português', 'Romeno', 'O que notar'],
           rows: [
@@ -316,8 +316,8 @@ export const LINGUISTICS_RO: LinguisticsArea[] = [
         ],
       },
       {
-        heading: '«Să» no lugar do infinitivo',
-        text: 'Depois de verbos como querer, precisar e poder, o português usa infinitivo; o romeno prefere «să» + verbo conjugado na pessoa certa. É um traço compartilhado com o búlgaro, o grego e o albanês, línguas vizinhas que formam a chamada união linguística balcânica.',
+        heading: '“Să” no lugar do infinitivo',
+        text: 'Depois de verbos como querer, precisar e poder, o português usa infinitivo; o romeno prefere “să” + verbo conjugado na pessoa certa. É um traço compartilhado com o búlgaro, o grego e o albanês, línguas vizinhas que formam a chamada união linguística balcânica.',
         table: {
           head: ['Português', 'Romeno', 'Literalmente'],
           rows: [
@@ -328,8 +328,8 @@ export const LINGUISTICS_RO: LinguisticsArea[] = [
         },
       },
       {
-        heading: 'Clíticos, «pe» e a duplicação do objeto',
-        text: 'Os pronomes átonos vêm antes do verbo conjugado e depois do imperativo afirmativo e do gerúndio, ligados por hífen. Quando o objeto direto é uma pessoa definida, ele leva a preposição «pe» e é repetido por um pronome átono. No português isso soaria redundante («a Maria, eu a vejo»); em romeno é a construção normal.',
+        heading: 'Clíticos, “pe” e a duplicação do objeto',
+        text: 'Os pronomes átonos vêm antes do verbo conjugado e depois do imperativo afirmativo e do gerúndio, ligados por hífen. Quando o objeto direto é uma pessoa definida, ele leva a preposição “pe” e é repetido por um pronome átono. No português isso soaria redundante (“a Maria, eu a vejo”); em romeno é a construção normal.',
         examples: [
           ['Pe Maria o văd în fiecare zi.', 'Vejo a Maria todo dia.'],
           ['I-am dat lui Ion cartea.', 'Dei o livro ao Ion.'],
@@ -339,7 +339,7 @@ export const LINGUISTICS_RO: LinguisticsArea[] = [
       },
       {
         heading: 'Subordinação',
-        text: 'As orações se ligam com «că» (que, declarativo), «să» (que, com desejo ou finalidade), «dacă» (se) e os relativos. O relativo «care» ganha «pe» quando é objeto, e o pronome átono volta para dentro da oração. No discurso indireto, o romeno mantém o tempo verbal da fala original, ao contrário do português.',
+        text: 'As orações se ligam com “că” (que, declarativo), “să” (que, com desejo ou finalidade), “dacă” (se) e os relativos. O relativo “care” ganha “pe” quando é objeto, e o pronome átono volta para dentro da oração. No discurso indireto, o romeno mantém o tempo verbal da fala original, ao contrário do português.',
         examples: [
           ['Omul pe care l-am văzut e medic.', 'O homem que eu vi é médico.'],
           ['A spus că e obosit.', 'Disse que estava cansado. (lit.: que está cansado)'],
@@ -361,25 +361,25 @@ export const LINGUISTICS_RO: LinguisticsArea[] = [
     ],
     quiz: [
       {
-        question: 'Como se diz «Quero sair» em romeno?',
+        question: 'Como se diz “Quero sair” em romeno?',
         options: ['Vreau a pleca.', 'Vreau să plec.', 'Vreau plecând.', 'Vreau plecat.'],
         answer: 'Vreau să plec.',
-        explanation: 'Depois de «vreau», o romeno usa «să» + verbo conjugado, não o infinitivo.',
+        explanation: 'Depois de “vreau”, o romeno usa “să” + verbo conjugado, não o infinitivo.',
       },
       {
-        question: 'Por que «Pe Maria o văd» tem «o»?',
-        options: ['É o artigo feminino', 'É o pronome que duplica o objeto «Maria»', 'É um erro comum', 'Marca o futuro'],
-        answer: 'É o pronome que duplica o objeto «Maria»',
-        explanation: 'Objeto direto de pessoa definida leva «pe» e é retomado por um pronome átono.',
+        question: 'Por que “Pe Maria o văd” tem “o”?',
+        options: ['É o artigo feminino', 'É o pronome que duplica o objeto “Maria”', 'É um erro comum', 'Marca o futuro'],
+        answer: 'É o pronome que duplica o objeto “Maria”',
+        explanation: 'Objeto direto de pessoa definida leva “pe” e é retomado por um pronome átono.',
       },
       {
         question: 'Onde fica o pronome átono no imperativo afirmativo?',
         options: ['Antes do verbo, sem hífen', 'Depois do verbo, com hífen', 'No fim da frase', 'Não se usa pronome'],
         answer: 'Depois do verbo, com hífen',
-        explanation: '«Spune-mi!» (diga-me); no negativo volta para antes: «Nu-mi spune!».',
+        explanation: '“Spune-mi!” (diga-me); no negativo volta para antes: “Nu-mi spune!”.',
       },
       {
-        question: 'Qual é a ordem normal em «uma casa grande»?',
+        question: 'Qual é a ordem normal em “uma casa grande”?',
         options: ['o mare casă', 'o casă mare', 'mare o casă', 'casă o mare'],
         answer: 'o casă mare',
         explanation: 'O adjetivo vem normalmente depois do substantivo.',
@@ -393,7 +393,7 @@ export const LINGUISTICS_RO: LinguisticsArea[] = [
     sections: [
       {
         heading: 'Camadas históricas do vocabulário',
-        text: 'As palavras mais básicas vêm do latim falado na Dácia. Umas poucas são anteriores aos romanos e várias têm paralelo no albanês. Séculos de vizinhança trouxeram palavras eslavas (inclusive o «da» do sim), gregas, turcas e húngaras. No século XIX, a modernização buscou o francês e o italiano, e o vocabulário culto ficou muito parecido com o nosso.',
+        text: 'As palavras mais básicas vêm do latim falado na Dácia. Umas poucas são anteriores aos romanos e várias têm paralelo no albanês. Séculos de vizinhança trouxeram palavras eslavas (inclusive o “da” do sim), gregas, turcas e húngaras. No século XIX, a modernização buscou o francês e o italiano, e o vocabulário culto ficou muito parecido com o nosso.',
         table: {
           head: ['Origem', 'Exemplos', 'Português'],
           rows: [
@@ -430,7 +430,7 @@ export const LINGUISTICS_RO: LinguisticsArea[] = [
       },
       {
         heading: 'Um verbo, muitos sentidos',
-        text: 'Alguns verbos cobrem o espaço que o português divide. «A fi» faz o trabalho de «ser» e «estar». «A avea» (ter) serve para idade, fome e razão. «A merge» é ir, andar e funcionar, e «Merge!» sozinho quer dizer «Tá bom!». E «mare» é ao mesmo tempo «grande» e «mar»: duas palavras latinas que coincidiram (homonímia).',
+        text: 'Alguns verbos cobrem o espaço que o português divide. “A fi” faz o trabalho de “ser” e “estar”. “A avea” (ter) serve para idade, fome e razão. “A merge” é ir, andar e funcionar, e “Merge!” sozinho quer dizer “Tá bom!”. E “mare” é ao mesmo tempo “grande” e “mar”: duas palavras latinas que coincidiram (homonímia).',
         examples: [
           ['Sunt obosit și sunt acasă.', 'Estou cansado e estou em casa.'],
           ['Am douăzeci de ani.', 'Tenho vinte anos.'],
@@ -440,7 +440,7 @@ export const LINGUISTICS_RO: LinguisticsArea[] = [
       },
       {
         heading: 'Campos curiosos',
-        text: 'O romeno tem uma palavra que os romenos gostam de comparar à nossa «saudade»: «dor», que vem do mesmo latim «dolor» da nossa «dor». Os dias da semana guardam os deuses e astros romanos (luni, marți, miercuri, joi, vineri, da Lua, Marte, Mercúrio, Júpiter e Vênus), enquanto o português trocou tudo por «segunda-feira». E a mesma raiz latina às vezes chegou duas vezes: pela herança popular e pelo empréstimo culto, como «drept» (reto, direito) e «direct» (direto), ambas do latim «directus».',
+        text: 'O romeno tem uma palavra que os romenos gostam de comparar à nossa “saudade”: “dor”, que vem do mesmo latim “dolor” da nossa “dor”. Os dias da semana guardam os deuses e astros romanos (luni, marți, miercuri, joi, vineri, da Lua, Marte, Mercúrio, Júpiter e Vênus), enquanto o português trocou tudo por “segunda-feira”. E a mesma raiz latina às vezes chegou duas vezes: pela herança popular e pelo empréstimo culto, como “drept” (reto, direito) e “direct” (direto), ambas do latim “directus”.',
         examples: [
           ['Mi-e dor de tine.', 'Tenho saudade de você.'],
           ['Luni merg la lucru.', 'Na segunda vou ao trabalho.'],
@@ -450,39 +450,39 @@ export const LINGUISTICS_RO: LinguisticsArea[] = [
     topics: ['ro-g-a-fi', 'ro-g-a-avea', 'ro-g-expressoes-modais'],
     quiz: [
       {
-        question: 'O que significa «carte» em romeno?',
+        question: 'O que significa “carte” em romeno?',
         options: ['carta', 'livro', 'cartão', 'mapa'],
         answer: 'livro',
-        explanation: 'Falso amigo: «carta» se diz «scrisoare».',
+        explanation: 'Falso amigo: “carta” se diz “scrisoare”.',
       },
       {
-        question: 'De que língua vem o «da» (sim) romeno?',
+        question: 'De que língua vem o “da” (sim) romeno?',
         options: ['latim', 'eslavo', 'turco', 'grego'],
         answer: 'eslavo',
-        explanation: 'É um dos muitos empréstimos eslavos, como «a iubi» (amar) e «prieten» (amigo).',
+        explanation: 'É um dos muitos empréstimos eslavos, como “a iubi” (amar) e “prieten” (amigo).',
       },
       {
-        question: '«Mi-e dor de tine» quer dizer…',
+        question: '“Mi-e dor de tine” quer dizer…',
         options: ['Estou com dor por você', 'Tenho saudade de você', 'Tenho medo de você', 'Estou bravo com você'],
         answer: 'Tenho saudade de você',
-        explanation: '«dor» é a saudade romena, do latim «dolor».',
+        explanation: '“dor” é a saudade romena, do latim “dolor”.',
       },
       {
-        question: 'O que significa «Telefonul nu merge»?',
+        question: 'O que significa “Telefonul nu merge”?',
         options: ['O telefone não vai', 'O telefone não funciona', 'O telefone não tocou', 'O telefone não é meu'],
         answer: 'O telefone não funciona',
-        explanation: '«a merge» é ir e andar, mas também funcionar.',
+        explanation: '“a merge” é ir e andar, mas também funcionar.',
       },
     ],
   },
   {
     area: 'pragmatica',
     summary:
-      'O romeno tem uma escala de tratamento mais rica que o nosso «você/o senhor», usa o vocativo para chamar e suaviza pedidos com o condicional e com fórmulas de desculpa.',
+      'O romeno tem uma escala de tratamento mais rica que o nosso “você/o senhor”, usa o vocativo para chamar e suaviza pedidos com o condicional e com fórmulas de desculpa.',
     sections: [
       {
         heading: 'Graus de tratamento',
-        text: 'Entre o «tu» íntimo e o «dumneavoastră» respeitoso há degraus intermediários. O formal usa o verbo na 2ª pessoa do plural, como o «vós» antigo: «Ce doriți?» (O que o senhor deseja?). Com estranhos, idosos, clientes e superiores, comece pelo formal e espere o outro propor o «tu».',
+        text: 'Entre o “tu” íntimo e o “dumneavoastră” respeitoso há degraus intermediários. O formal usa o verbo na 2ª pessoa do plural, como o “vós” antigo: “Ce doriți?” (O que o senhor deseja?). Com estranhos, idosos, clientes e superiores, comece pelo formal e espere o outro propor o “tu”.',
         table: {
           head: ['Forma', 'Verbo', 'Uso'],
           rows: [
@@ -499,7 +499,7 @@ export const LINGUISTICS_RO: LinguisticsArea[] = [
       },
       {
         heading: 'Cumprimentos e fórmulas do dia a dia',
-        text: '«Bună ziua» serve para quase o dia todo em situação formal; entre amigos, «Salut» ou «Ceau». «Sărut mâna» (beijo a mão) é um cumprimento respeitoso tradicional, dito sobretudo por homens a mulheres mais velhas. Na mesa se diz «Poftă bună», no brinde «Noroc!» e no aniversário «La mulți ani!».',
+        text: '“Bună ziua” serve para quase o dia todo em situação formal; entre amigos, “Salut” ou “Ceau”. “Sărut mâna” (beijo a mão) é um cumprimento respeitoso tradicional, dito sobretudo por homens a mulheres mais velhas. Na mesa se diz “Poftă bună”, no brinde “Noroc!” e no aniversário “La mulți ani!”.',
         examples: [
           ['Bună ziua, doamnă!', 'Bom dia / boa tarde, senhora!'],
           ['Salut! Ce mai faci?', 'Oi! Como vai?'],
@@ -509,7 +509,7 @@ export const LINGUISTICS_RO: LinguisticsArea[] = [
       },
       {
         heading: 'Pedir com jeito',
-        text: 'O imperativo puro soa brusco com desconhecidos. Para pedir, o romeno usa «vă rog» (por favor, formal), o condicional (aș vrea, ați putea) e uma fórmula para chamar a atenção que não tem par no português: «Nu vă supărați», literalmente «não se aborreça», que funciona como «com licença» antes de uma pergunta.',
+        text: 'O imperativo puro soa brusco com desconhecidos. Para pedir, o romeno usa “vă rog” (por favor, formal), o condicional (aș vrea, ați putea) e uma fórmula para chamar a atenção que não tem par no português: “Nu vă supărați”, literalmente “não se aborreça”, que funciona como “com licença” antes de uma pergunta.',
         examples: [
           ['Aș vrea o cafea, vă rog.', 'Eu queria um café, por favor.'],
           ['Nu vă supărați, unde e gara?', 'Com licença, onde fica a estação?'],
@@ -519,7 +519,7 @@ export const LINGUISTICS_RO: LinguisticsArea[] = [
       },
       {
         heading: 'Chamar alguém e o que soa rude',
-        text: 'Para chamar alguém se usa o vocativo, que muda a forma da palavra: «domnule!» (senhor!), «doamnă!» (senhora!), «Ioane!» (Ion!). Entre amigos, «măi» chama com intimidade. Já «bă» e «fă» são interjeições para chamar homem e mulher que soam grosseiras fora do círculo íntimo: evite-as. E trocar o «dumneavoastră» por «tu» sem convite passa por falta de educação.',
+        text: 'Para chamar alguém se usa o vocativo, que muda a forma da palavra: “domnule!” (senhor!), “doamnă!” (senhora!), “Ioane!” (Ion!). Entre amigos, “măi” chama com intimidade. Já “bă” e “fă” são interjeições para chamar homem e mulher que soam grosseiras fora do círculo íntimo: evite-as. E trocar o “dumneavoastră” por “tu” sem convite passa por falta de educação.',
         examples: [
           ['Domnule, ați uitat ceva!', 'Senhor, o senhor esqueceu uma coisa!'],
           ['Măi, Ioane, vino aici!', 'Ô Ion, vem cá!'],
@@ -532,25 +532,25 @@ export const LINGUISTICS_RO: LinguisticsArea[] = [
         question: 'Qual pronome é o tratamento formal padrão?',
         options: ['tu', 'dumneata', 'dumneavoastră', 'voi'],
         answer: 'dumneavoastră',
-        explanation: '«dumneavoastră» (dvs.) é o «o senhor / a senhora», com o verbo na 2ª pessoa do plural.',
+        explanation: '“dumneavoastră” (dvs.) é o “o senhor / a senhora”, com o verbo na 2ª pessoa do plural.',
       },
       {
-        question: 'Para que serve «Nu vă supărați» antes de uma pergunta?',
-        options: ['Para pedir desculpas por um erro grave', 'Como «com licença», para chamar a atenção', 'Para encerrar a conversa', 'Para expressar raiva'],
-        answer: 'Como «com licença», para chamar a atenção',
-        explanation: 'Literalmente «não se aborreça»: introduz educadamente um pedido ou pergunta.',
+        question: 'Para que serve “Nu vă supărați” antes de uma pergunta?',
+        options: ['Para pedir desculpas por um erro grave', 'Como “com licença”, para chamar a atenção', 'Para encerrar a conversa', 'Para expressar raiva'],
+        answer: 'Como “com licença”, para chamar a atenção',
+        explanation: 'Literalmente “não se aborreça”: introduz educadamente um pedido ou pergunta.',
       },
       {
         question: 'Qual pedido soa mais educado?',
         options: ['Dă-mi o cafea!', 'Vreau o cafea.', 'Aș vrea o cafea, vă rog.', 'O cafea!'],
         answer: 'Aș vrea o cafea, vă rog.',
-        explanation: 'O condicional «aș vrea» mais «vă rog» suaviza o pedido.',
+        explanation: 'O condicional “aș vrea” mais “vă rog” suaviza o pedido.',
       },
       {
         question: 'O que se diz num aniversário?',
         options: ['Noroc!', 'Poftă bună!', 'La mulți ani!', 'Sărut mâna!'],
         answer: 'La mulți ani!',
-        explanation: '«La mulți ani» (por muitos anos) serve para aniversário e ano novo.',
+        explanation: '“La mulți ani” (por muitos anos) serve para aniversário e ano novo.',
       },
     ],
   },
@@ -561,7 +561,7 @@ export const LINGUISTICS_RO: LinguisticsArea[] = [
     sections: [
       {
         heading: 'Registros: do ofício à rua',
-        text: 'O romeno formal transforma verbos em substantivos, prefere construções impessoais e passivas e usa os demonstrativos padrão (acest, acel). O coloquial encurta tudo: ăsta, ăla, e gírias como «mișto» (legal) e «nașpa» (ruim, chato). Em Ardeal e no Banat se ouve «fain» (legal), do alemão.',
+        text: 'O romeno formal transforma verbos em substantivos, prefere construções impessoais e passivas e usa os demonstrativos padrão (acest, acel). O coloquial encurta tudo: ăsta, ăla, e gírias como “mișto” (legal) e “nașpa” (ruim, chato). Em Ardeal e no Banat se ouve “fain” (legal), do alemão.',
         table: {
           head: ['Formal', 'Neutro', 'Coloquial'],
           rows: [
@@ -578,12 +578,12 @@ export const LINGUISTICS_RO: LinguisticsArea[] = [
       },
       {
         heading: 'Diminutivos',
-        text: 'Como o português, o romeno adora diminutivos, e eles trazem carinho, delicadeza ou ironia mais do que tamanho. Os sufixos mais comuns são -el, -uț, -ică, -ișor e -ioară. Alguns se lexicalizaram: «cățel» é hoje a palavra comum para «cachorro».',
+        text: 'Como o português, o romeno adora diminutivos, e eles trazem carinho, delicadeza ou ironia mais do que tamanho. Os sufixos mais comuns são -el, -uț, -ică, -ișor e -ioară. Alguns se lexicalizaram: “cățel” é hoje a palavra comum para “cachorro”.',
         examples: [
           ['băiețel', 'menininho (de băiat)'],
           ['căsuță', 'casinha (de casă)'],
           ['surioară', 'irmãzinha (de soră)'],
-          ['puișor', 'pintinho; também «querido» (de pui)'],
+          ['puișor', 'pintinho; também “querido” (de pui)'],
         ],
       },
       {
@@ -602,7 +602,7 @@ export const LINGUISTICS_RO: LinguisticsArea[] = [
       },
       {
         heading: 'Estilo literário e grandes autores',
-        text: 'A narração literária usa tempos que a fala comum de quase todo o país abandonou, como o perfeito simples (plecă, zise), e os contos de fada abrem com «A fost odată ca niciodată» (era uma vez, como nunca). Mihai Eminescu (1850–1889), autor de «Luceafărul», é considerado o poeta nacional. Ion Creangă deixou as memórias de infância «Amintiri din copilărie», e Ion Luca Caragiale satirizou a política na comédia «O scrisoare pierdută». A balada popular «Miorița» é um marco da tradição oral. Emil Cioran e Eugène Ionesco, nascidos na Romênia, fizeram carreira escrevendo em francês.',
+        text: 'A narração literária usa tempos que a fala comum de quase todo o país abandonou, como o perfeito simples (plecă, zise), e os contos de fada abrem com “A fost odată ca niciodată” (era uma vez, como nunca). Mihai Eminescu (1850–1889), autor de “Luceafărul”, é considerado o poeta nacional. Ion Creangă deixou as memórias de infância “Amintiri din copilărie”, e Ion Luca Caragiale satirizou a política na comédia “O scrisoare pierdută”. A balada popular “Miorița” é um marco da tradição oral. Emil Cioran e Eugène Ionesco, nascidos na Romênia, fizeram carreira escrevendo em francês.',
         examples: [
           ['A fost odată ca niciodată…', 'Era uma vez…'],
           ['Și zise împăratul…', 'E disse o imperador…'],
@@ -612,19 +612,19 @@ export const LINGUISTICS_RO: LinguisticsArea[] = [
     topics: ['ro-g-coloquial', 'ro-g-nominalizacao', 'ro-g-perfect-simplu', 'ro-g-proverbios'],
     quiz: [
       {
-        question: 'O que significa a gíria «mișto»?',
+        question: 'O que significa a gíria “mișto”?',
         options: ['ruim', 'legal, bacana', 'misturado', 'estranho'],
         answer: 'legal, bacana',
-        explanation: '«mișto» é elogio coloquial; o contrário é «nașpa».',
+        explanation: '“mișto” é elogio coloquial; o contrário é “nașpa”.',
       },
       {
         question: 'Quem é considerado o poeta nacional da Romênia?',
         options: ['Ion Creangă', 'Mihai Eminescu', 'Emil Cioran', 'Ion Luca Caragiale'],
         answer: 'Mihai Eminescu',
-        explanation: 'Eminescu (1850–1889), autor de «Luceafărul».',
+        explanation: 'Eminescu (1850–1889), autor de “Luceafărul”.',
       },
       {
-        question: 'Qual é o equivalente de «Graba strică treaba»?',
+        question: 'Qual é o equivalente de “Graba strică treaba”?',
         options: ['Devagar se vai ao longe.', 'A pressa é inimiga da perfeição.', 'Quem espera sempre alcança.', 'Deus ajuda quem cedo madruga.'],
         answer: 'A pressa é inimiga da perfeição.',
         explanation: 'Literalmente: a pressa estraga o trabalho.',
@@ -633,7 +633,7 @@ export const LINGUISTICS_RO: LinguisticsArea[] = [
         question: 'Como começam os contos de fada romenos?',
         options: ['A fost odată ca niciodată…', 'Bună ziua…', 'Cine se scoală…', 'Nu vă supărați…'],
         answer: 'A fost odată ca niciodată…',
-        explanation: '«Era uma vez, como nunca»: a fórmula clássica dos contos.',
+        explanation: '“Era uma vez, como nunca”: a fórmula clássica dos contos.',
       },
     ],
   },

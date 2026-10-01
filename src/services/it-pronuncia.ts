@@ -22,13 +22,13 @@ export function italianWords(text: string): string[] {
 export function pronunciationProblems(pron: Record<string, string>, heads: string[]): string[] {
   const out: string[] = [];
   for (const [k, v] of Object.entries(pron)) {
-    if (k !== k.toLowerCase()) out.push(`«${k}»: chave em minúsculas`);
-    if (strip(v) !== strip(k)) out.push(`«${k}» → «${v}»: tirando os acentos, tem de ser a mesma palavra`);
+    if (k !== k.toLowerCase()) out.push(`“${k}”: chave em minúsculas`);
+    if (strip(v) !== strip(k)) out.push(`“${k}” → “${v}”: tirando os acentos, tem de ser a mesma palavra`);
     const marks = [...v].filter((c) => 'àáèéìíòóùú'.includes(c)).length;
-    if (vowelGroups(k) > 1 && marks !== 1) out.push(`«${k}» → «${v}»: marque exatamente UMA vogal tônica`);
-    if (marks > 1) out.push(`«${k}» → «${v}»: mais de um acento`);
-    if (/[áíú]/.test(v)) out.push(`«${k}» → «${v}»: a, i, u tônicos levam acento grave (à ì ù)`);
+    if (vowelGroups(k) > 1 && marks !== 1) out.push(`“${k}” → “${v}”: marque exatamente UMA vogal tônica`);
+    if (marks > 1) out.push(`“${k}” → “${v}”: mais de um acento`);
+    if (/[áíú]/.test(v)) out.push(`“${k}” → “${v}”: a, i, u tônicos levam acento grave (à ì ù)`);
   }
-  for (const h of heads) for (const w of italianWords(h)) if (vowelGroups(w) > 1 && !pron[w]) out.push(`falta «${w}»`);
+  for (const h of heads) for (const w of italianWords(h)) if (vowelGroups(w) > 1 && !pron[w]) out.push(`falta “${w}”`);
   return out;
 }

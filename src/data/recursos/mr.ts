@@ -105,7 +105,7 @@ export const RECURSOS_MR: LanguageResources = {
       original: 'व्यक्ती आणि वल्ली',
       by: 'P. L. Deshpande',
       level: 'B2',
-      why: 'Retratos cômicos de tipos inesquecíveis, do humorista mais amado do marati, conhecido como «Pu La». Engraçado, mas cheio de expressões de Pune e de Mumbai.',
+      why: 'Retratos cômicos de tipos inesquecíveis, do humorista mais amado do marati, conhecido como “Pu La”. Engraçado, mas cheio de expressões de Pune e de Mumbai.',
     },
     {
       kind: 'livro',
@@ -150,7 +150,7 @@ export const RECURSOS_MR: LanguageResources = {
       by: 'Ajay–Atul',
       year: '2016',
       level: 'A2',
-      why: 'A música de festa de «Sairat», que virou hino de casamentos em Maharashtra. Ritmo rápido e refrão fácil.',
+      why: 'A música de festa de “Sairat”, que virou hino de casamentos em Maharashtra. Ritmo rápido e refrão fácil.',
     },
     {
       kind: 'musica',
@@ -174,7 +174,7 @@ export const RECURSOS_MR: LanguageResources = {
       title: 'Abhangas na voz de Bhimsen Joshi',
       by: 'Bhimsen Joshi',
       level: 'B2',
-      why: 'O mestre da música clássica indiana gravou abhangas dos santos devotos de Vitthal, como «Teerth Vitthal». Ótimo para ouvir o marati cantado devagar.',
+      why: 'O mestre da música clássica indiana gravou abhangas dos santos devotos de Vitthal, como “Teerth Vitthal”. Ótimo para ouvir o marati cantado devagar.',
     },
     {
       kind: 'canal',
@@ -226,9 +226,9 @@ export const RECURSOS_MR: LanguageResources = {
   ],
   tips: [
     'Não existe prova padronizada de marati para estrangeiros. Para ter um certificado, o caminho são cursos: o American Institute of Indian Studies dá marati intensivo em Pune e online (pensado para estudantes de universidades americanas), e as escolas Marathi Shala, da Bruhan Maharashtra Mandal, aplicam provas com certificado da Bharati Vidyapeeth, de Pune (pensadas para filhos de imigrantes). Sem prova, registre o seu progresso: grave-se lendo e conversando todo mês.',
-    'O marati usa o devanágari, a mesma escrita do híndi e do sânscrito, e ainda a letra «ळ» (ḷa), um «l» com a ponta da língua virada para trás, como em «शाळा» (shāḷā, escola) e «बाळ» (bāḷ, bebê). Se você já leu híndi, a leitura sai quase de graça.',
-    'Há três gêneros — masculino, feminino e neutro — e o verbo concorda com quem fala: um homem diz «मी जातो» (mī jāto, eu vou) e uma mulher, «मी जाते» (mī jāte). Aprenda as frases já na forma certa para você.',
-    'As preposições vêm grudadas no fim da palavra, e às vezes a própria palavra muda: «घरात» (gharāt, dentro de casa), «पुण्याला» (puṇyālā, para Pune), «मुंबईहून» (mumbaīhūn, de Mumbai). Ler em voz alta ajuda a pegar o jeito.',
-    'O marati dos livros e do noticiário tem por base o falar de Pune; em Mumbai ele se mistura com híndi e inglês, e no litoral do Konkan se ouve o malvani, como na série «Ratris Khel Chale». Comece pelo padrão e use os filmes para acostumar o ouvido ao resto.',
+    'O marati usa o devanágari, a mesma escrita do híndi e do sânscrito, e ainda a letra “ळ” (ḷa), um “l” com a ponta da língua virada para trás, como em “शाळा” (shāḷā, escola) e “बाळ” (bāḷ, bebê). Se você já leu híndi, a leitura sai quase de graça.',
+    'Há três gêneros — masculino, feminino e neutro — e o verbo concorda com quem fala: um homem diz “मी जातो” (mī jāto, eu vou) e uma mulher, “मी जाते” (mī jāte). Aprenda as frases já na forma certa para você.',
+    'As preposições vêm grudadas no fim da palavra, e às vezes a própria palavra muda: “घरात” (gharāt, dentro de casa), “पुण्याला” (puṇyālā, para Pune), “मुंबईहून” (mumbaīhūn, de Mumbai). Ler em voz alta ajuda a pegar o jeito.',
+    'O marati dos livros e do noticiário tem por base o falar de Pune; em Mumbai ele se mistura com híndi e inglês, e no litoral do Konkan se ouve o malvani, como na série “Ratris Khel Chale”. Comece pelo padrão e use os filmes para acostumar o ouvido ao resto.',
   ],
 };

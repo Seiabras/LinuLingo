@@ -52,5 +52,5 @@ export const DINAMARQUES: LanguagePack = {
   phrases: { hi: 'Hej!', thanks: 'Tak!', letsStart: ['Så går vi i gang!', 'Vamos lá!'] },
   formalMarkers: 'kunne jeg få…?, mange tak, undskyld',
   cognateNote:
-    'O dinamarquês é uma língua germânica, irmã do norueguês e do sueco e prima do inglês e do alemão: muitas palavras básicas lembram o inglês (hus = house, vand = water). Do português, os parentes vêm do latim e do francês (station, restaurant, fortov). Atenção aos falsos amigos: «rar» é simpático, «frokost» é almoço e «fart» é velocidade.',
+    'O dinamarquês é uma língua germânica, irmã do norueguês e do sueco e prima do inglês e do alemão: muitas palavras básicas lembram o inglês (hus = house, vand = water). Do português, os parentes vêm do latim e do francês (station, restaurant, fortov). Atenção aos falsos amigos: “rar” é simpático, “frokost” é almoço e “fart” é velocidade.',
 };

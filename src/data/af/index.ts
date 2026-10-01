@@ -39,5 +39,5 @@ export const AFRICANER: LanguagePack = {
   phrases: { hi: 'Hallo!', thanks: 'Dankie!', letsStart: ['Kom ons begin!', 'Vamos começar!'] },
   formalMarkers: 'u (em vez de jy), asseblief, verskoon my, meneer, mevrou',
   cognateNote:
-    'O africâner é filho do neerlandês do século XVII e continua muito parecido com ele: quem aprende um lê boa parte do outro. É também primo do alemão e do inglês (huis = Haus = house). O português deixou marcas na língua, como «mielie» (milho) e «kraal» (curral).',
+    'O africâner é filho do neerlandês do século XVII e continua muito parecido com ele: quem aprende um lê boa parte do outro. É também primo do alemão e do inglês (huis = Haus = house). O português deixou marcas na língua, como “mielie” (milho) e “kraal” (curral).',
 };

@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { portugueseNumber, portugueseOrdinal, spellPortugueseNumbers } from '@/services/numeros/pt';
 
-test('números em português: as formas de Portugal, com «e» e o gênero', () => {
+test('números em português: as formas de Portugal, com “e” e o gênero', () => {
   const cases: [number, string][] = [
     [0, 'zero'],
     [1, 'um'],

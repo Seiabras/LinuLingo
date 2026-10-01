@@ -18,7 +18,7 @@ export const RECURSOS_DA: LanguageResources = {
       usedFor: ['residência permanente (PD2 ou mais)', 'cidadania dinamarquesa (PD3)', 'trabalho'],
       where:
         'Só na Dinamarca, nos centros de idiomas (sprogcentre), em duas sessões por ano. A inscrição é feita direto no centro onde você quer fazer a prova.',
-      tip: 'O site Dansk og Prøver descreve cada prova e mostra exemplos das tarefas. Treine a parte oral em voz alta desde cedo: o dinamarquês falado é muito mais «engolido» do que o escrito, e é na fala que a leitura sozinha não prepara.',
+      tip: 'O site Dansk og Prøver descreve cada prova e mostra exemplos das tarefas. Treine a parte oral em voz alta desde cedo: o dinamarquês falado é muito mais “engolido” do que o escrito, e é na fala que a leitura sozinha não prepara.',
       url: 'https://danskogproever.dk/',
     },
     {
@@ -35,7 +35,7 @@ export const RECURSOS_DA: LanguageResources = {
         'Comunicação oral: uma entrevista e um monólogo; depois, uma interação e uma discussão',
       ],
       validity: 'Não expira',
-      usedFor: ['universidade na Dinamarca (vale no lugar do «Dansk A» pedido na maioria dos cursos)', 'trabalho'],
+      usedFor: ['universidade na Dinamarca (vale no lugar do “Dansk A” pedido na maioria dos cursos)', 'trabalho'],
       where:
         'Na Dinamarca, em centros de idiomas como a Studieskolen, em Copenhague, e a UCplus. A parte escrita acontece no mesmo dia e na mesma hora em todo o país.',
       tip: 'Como a nota mínima vale para cada parte, não adianta brilhar na fala e ir mal na escrita: treine as três com a mesma seriedade, e a produção escrita sempre com tempo marcado.',
@@ -201,7 +201,7 @@ export const RECURSOS_DA: LanguageResources = {
       by: 'H.C. Andersen',
       year: '1835–1872',
       level: 'B2',
-      why: 'Histórias que você conhece desde criança, como «A Pequena Sereia» e «O Patinho Feio», no original: dinamarquês do século XIX, mas com frases de conto.',
+      why: 'Histórias que você conhece desde criança, como “A Pequena Sereia” e “O Patinho Feio”, no original: dinamarquês do século XIX, mas com frases de conto.',
     },
     {
       kind: 'livro',
@@ -210,7 +210,7 @@ export const RECURSOS_DA: LanguageResources = {
       by: 'Tove Ditlevsen',
       year: '1967',
       level: 'B2',
-      why: 'Primeiro volume da «Trilogia de Copenhague»: a infância pobre da autora num bairro operário, em prosa simples e direta.',
+      why: 'Primeiro volume da “Trilogia de Copenhague”: a infância pobre da autora num bairro operário, em prosa simples e direta.',
     },
     {
       kind: 'livro',
@@ -281,7 +281,7 @@ export const RECURSOS_DA: LanguageResources = {
       title: 'DR TV',
       by: 'DR',
       level: 'B1',
-      why: 'O streaming da TV pública, com séries como «Borgen» e legenda em dinamarquês em muitos programas; parte do catálogo só abre na Dinamarca.',
+      why: 'O streaming da TV pública, com séries como “Borgen” e legenda em dinamarquês em muitos programas; parte do catálogo só abre na Dinamarca.',
     },
     {
       kind: 'canal',
@@ -314,9 +314,9 @@ export const RECURSOS_DA: LanguageResources = {
   ],
   tips: [
     'A escrita engana: o dinamarquês falado engole consoantes e emenda as palavras. Desde o começo, ouça mais do que lê e confira a pronúncia de cada palavra nova no Forvo ou na Den Danske Ordbog.',
-    'Aprenda o «stød», uma trava rápida na garganta que muda o sentido: «hun» (ela) não tem, «hund» (cachorro) tem. E o «d» depois de vogal costuma ser «macio», parecido com o «th» do inglês «the»: «mad» (comida), «gade» (rua).',
-    'Os números de 50 a 90 contam de vinte em vinte: «halvtreds» (50), «tres» (60), «halvfjerds» (70), «firs» (80), «halvfems» (90). E a unidade vem antes da dezena: 21 é «enogtyve», um-e-vinte.',
-    'O verbo não muda com a pessoa («jeg er, du er, vi er»), e a ordem das palavras segue a regra do verbo em segundo lugar: «I morgen tager jeg til Aarhus» (amanhã vou a Aarhus).',
+    'Aprenda o “stød”, uma trava rápida na garganta que muda o sentido: “hun” (ela) não tem, “hund” (cachorro) tem. E o “d” depois de vogal costuma ser “macio”, parecido com o “th” do inglês “the”: “mad” (comida), “gade” (rua).',
+    'Os números de 50 a 90 contam de vinte em vinte: “halvtreds” (50), “tres” (60), “halvfjerds” (70), “firs” (80), “halvfems” (90). E a unidade vem antes da dezena: 21 é “enogtyve”, um-e-vinte.',
+    'O verbo não muda com a pessoa (“jeg er, du er, vi er”), e a ordem das palavras segue a regra do verbo em segundo lugar: “I morgen tager jeg til Aarhus” (amanhã vou a Aarhus).',
     'Na Dinamarca, filmes e séries estrangeiros passam legendados. Use as legendas em dinamarquês do DR TV para ligar o som à escrita.',
   ],
 };

@@ -27,7 +27,7 @@ export const STORIES_SK: StorySeed[] = [
         emoji: '😊',
         choices: [
           { text: 'Som zo São Paula.', translation: 'Sou de São Paulo.', next: 'final_dobry' },
-          { text: 'Pijem vodu.', translation: 'Eu bebo água.', wrong: 'Isso não responde de onde você é. Use «Som z…».' },
+          { text: 'Pijem vodu.', translation: 'Eu bebo água.', wrong: 'Isso não responde de onde você é. Use “Som z…”.' },
         ],
       },
       final_dobry: {
@@ -51,7 +51,7 @@ export const STORIES_SK: StorySeed[] = [
     title: 'Nedeľný obed',
     emoji: '👪',
     summary: 'Peter, um amigo de Košice, pergunta pela sua família e convida você para o almoço de domingo com a família dele.',
-    cultural_context: 'Košice é a maior cidade do leste da Eslováquia. Os «bryndzové halušky», nhoque de batata com queijo de ovelha, são considerados o prato nacional.',
+    cultural_context: 'Košice é a maior cidade do leste da Eslováquia. Os “bryndzové halušky”, nhoque de batata com queijo de ovelha, são considerados o prato nacional.',
     start: 'inicio',
     nodes: {
       inicio: {
@@ -60,7 +60,7 @@ export const STORIES_SK: StorySeed[] = [
         emoji: '📱',
         choices: [
           { text: 'Áno, mám brata a sestru.', translation: 'Sim, tenho um irmão e uma irmã.', next: 'rodina' },
-          { text: 'Môj dom je veľký.', translation: 'A minha casa é grande.', wrong: 'Isso não responde se você tem irmãos. Use «mám…».' },
+          { text: 'Môj dom je veľký.', translation: 'A minha casa é grande.', wrong: 'Isso não responde se você tem irmãos. Use “mám…”.' },
         ],
       },
       rodina: {
@@ -69,7 +69,7 @@ export const STORIES_SK: StorySeed[] = [
         emoji: '🍽️',
         choices: [
           { text: 'Áno, ďakujem veľmi pekne!', translation: 'Sim, muito obrigado!', next: 'final_dobry' },
-          { text: 'Som zo São Paula.', translation: 'Sou de São Paulo.', wrong: 'Peter fez um convite: responda com «áno» ou «nie, ďakujem».' },
+          { text: 'Som zo São Paula.', translation: 'Sou de São Paulo.', wrong: 'Peter fez um convite: responda com “áno” ou “nie, ďakujem”.' },
         ],
       },
       final_dobry: {

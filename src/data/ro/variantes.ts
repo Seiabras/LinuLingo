@@ -21,11 +21,11 @@ export const VARIANTS_RO: LanguageVariant[] = [
       title: 'O romeno de Chișinău',
       emoji: '🇲🇩',
       history:
-        'A República da Moldávia declarou independência em 27 de agosto de 1991. Em 1989 a língua voltou a ser escrita com alfabeto latino, depois de décadas em cirílico; por isso o dia 31 de agosto é feriado nacional, «Limba noastră» (Nossa língua). Em 2023 o Parlamento substituiu a expressão «limba moldovenească» por «limba română» na legislação. Parte da população é bilíngue romeno-russo, e no país vivem também comunidades de língua ucraniana, gagauz e búlgara.',
+        'A República da Moldávia declarou independência em 27 de agosto de 1991. Em 1989 a língua voltou a ser escrita com alfabeto latino, depois de décadas em cirílico; por isso o dia 31 de agosto é feriado nacional, “Limba noastră” (Nossa língua). Em 2023 o Parlamento substituiu a expressão “limba moldovenească” por “limba română” na legislação. Parte da população é bilíngue romeno-russo, e no país vivem também comunidades de língua ucraniana, gagauz e búlgara.',
       culture_tip:
-        'Na escola, na TV e nos documentos o romeno da Moldávia segue a mesma norma da Romênia, então tudo o que você aprendeu no app serve. As diferenças aparecem na conversa: sotaque, palavras regionais (várias também usadas na região da Moldávia romena, em Iași) e gírias vindas do russo. Entenda-as, mas não as imite para brincar: sotaque não é piada. E na mesa, «plăcinte» são pastéis finos de massa esticada, com recheio de queijo, repolho ou batata.',
+        'Na escola, na TV e nos documentos o romeno da Moldávia segue a mesma norma da Romênia, então tudo o que você aprendeu no app serve. As diferenças aparecem na conversa: sotaque, palavras regionais (várias também usadas na região da Moldávia romena, em Iași) e gírias vindas do russo. Entenda-as, mas não as imite para brincar: sotaque não é piada. E na mesa, “plăcinte” são pastéis finos de massa esticada, com recheio de queijo, repolho ou batata.',
       grammar_why:
-        'A gramática é a mesma do padrão, mas a fala coloquial tem marcas próprias: (1) no pretérito composto, a 3ª pessoa usa o auxiliar «o» tanto no singular quanto no plural: «o venit» (padrão: «a venit» / «au venit»); (2) «îs» substitui «sunt» (eu sou / eles são), e «îi» ou «-i» substitui «este»; (3) demonstrativos «aista, aiasta» no lugar de «acesta, aceasta»; (4) «amu» no lugar de «acum»; (5) palavrinhas do russo no meio da frase, como «davai» (vamos, bora) e «ladna» (tá bom). Na escrita formal, use sempre o padrão.',
+        'A gramática é a mesma do padrão, mas a fala coloquial tem marcas próprias: (1) no pretérito composto, a 3ª pessoa usa o auxiliar “o” tanto no singular quanto no plural: “o venit” (padrão: “a venit” / “au venit”); (2) “îs” substitui “sunt” (eu sou / eles são), e “îi” ou “-i” substitui “este”; (3) demonstrativos “aista, aiasta” no lugar de “acesta, aceasta”; (4) “amu” no lugar de “acum”; (5) palavrinhas do russo no meio da frase, como “davai” (vamos, bora) e “ladna” (tá bom). Na escrita formal, use sempre o padrão.',
       grammar_examples: [
         ['Ei o venit ieri. (padrão: Ei au venit ieri.)', 'Eles vieram ontem.'],
         ['Mama o făcut plăcinte. (padrão: Mama a făcut plăcinte.)', 'A mãe fez plăcinte.'],
@@ -37,23 +37,23 @@ export const VARIANTS_RO: LanguageVariant[] = [
       character_guide: null,
     },
     pronunciation: [
-      '«ce, ci, ge, gi» perdem o «t/d» inicial e viram chiado: [ʃ] e [ʒ]. «Ce faci?» soa como «Șe faș?», e «cinci» como «șinși».',
-      'Palatalização das labiais na fala popular: «b, p, f» antes de «i/e» soam como «gh, ch, h». «Bine» vira «ghine», «picior» vira «chicior», «fir» vira «hir».',
-      '«e» final átono fecha em «i»: «bine» vira «ghini», «pe» vira «pi», «mare» vira «mari». Por isso o clássico «Ghini, mulțămesc!».',
-      'Depois de «s, z, ș, ț», o «e» vira «ă» (a consoante fica «dura»): «zece» soa «zăci», «seară» soa «sară», «semn» soa «sămn».',
+      '“ce, ci, ge, gi” perdem o “t/d” inicial e viram chiado: [ʃ] e [ʒ]. “Ce faci?” soa como “Șe faș?”, e “cinci” como “șinși”.',
+      'Palatalização das labiais na fala popular: “b, p, f” antes de “i/e” soam como “gh, ch, h”. “Bine” vira “ghine”, “picior” vira “chicior”, “fir” vira “hir”.',
+      '“e” final átono fecha em “i”: “bine” vira “ghini”, “pe” vira “pi”, “mare” vira “mari”. Por isso o clássico “Ghini, mulțămesc!”.',
+      'Depois de “s, z, ș, ț”, o “e” vira “ă” (a consoante fica “dura”): “zece” soa “zăci”, “seară” soa “sară”, “semn” soa “sămn”.',
       'Esses traços são mais fortes no campo e entre os mais velhos; em Chișinău, no rádio e na TV predomina a pronúncia padrão. Para você, a meta é entender, não imitar.',
     ],
     vocab: [
       ['cartofi', 'barabule', 'batatas', 'regional'],
       ['roșii', 'pătlăgele roșii', 'tomates', 'regional; também existe em partes da Romênia'],
       ['vinete', 'pătlăgele vinete', 'berinjelas', 'regional'],
-      ['porumb', 'păpușoi', 'milho', 'regional; «mămăligă de păpușoi»'],
+      ['porumb', 'păpușoi', 'milho', 'regional; “mămăligă de păpușoi”'],
       ['varză', 'curechi', 'repolho', 'regional; também na Moldávia romena'],
       ['pepene verde', 'harbuz', 'melancia', 'regional'],
-      ['struguri', 'poamă', 'uvas', 'regional; «a culege poama» = vindimar'],
+      ['struguri', 'poamă', 'uvas', 'regional; “a culege poama” = vindimar'],
       ['ciorbă de pui', 'zeamă', 'sopa de galinha azedinha, com macarrão caseiro', 'prato típico'],
-      ['bunic', 'bunel', 'avô', 'regional; «bunica» continua igual'],
-      ['fiu', 'fecior', 'filho', 'regional; também «rapaz»'],
+      ['bunic', 'bunel', 'avô', 'regional; “bunica” continua igual'],
+      ['fiu', 'fecior', 'filho', 'regional; também “rapaz”'],
       ['pisică', 'mâță', 'gato', 'regional; também na Transilvânia'],
       ['porumbel', 'hulub', 'pombo', 'regional'],
       ['cocoș', 'cucoș', 'galo', 'regional'],
@@ -62,15 +62,15 @@ export const VARIANTS_RO: LanguageVariant[] = [
       ['bucătărie', 'cuhnie', 'cozinha', 'regional, coloquial'],
       ['acum', 'amu', 'agora', 'regional'],
       ['acesta / aceasta', 'aista / aiasta', 'este / esta', 'regional'],
-      ['foarte', 'tare', 'muito (intensificador)', 'coloquial: «tare frumos»; existe também na Romênia'],
+      ['foarte', 'tare', 'muito (intensificador)', 'coloquial: “tare frumos”; existe também na Romênia'],
       ['sunt', 'îs', 'sou / são', 'coloquial'],
-      ['a venit / au venit', 'o venit', 'veio / vieram', 'coloquial: auxiliar «o» na 3ª pessoa'],
+      ['a venit / au venit', 'o venit', 'veio / vieram', 'coloquial: auxiliar “o” na 3ª pessoa'],
       ['microbuz, maxi-taxi', 'rutieră', 'van de linha urbana', 'usual em Chișinău'],
       ['farmacie', 'aptecă', 'farmácia', 'coloquial, do russo'],
       ['frigider', 'holodilnic', 'geladeira', 'coloquial, do russo'],
       ['aspirator', 'pâlesos', 'aspirador de pó', 'coloquial, do russo'],
-      ['renovare', 'remont', 'reforma (da casa)', 'coloquial, do russo: «facem remont»'],
-      ['pungă', 'pachet', 'sacola plástica', 'coloquial, do russo; na Romênia «pachet» é «pacote»'],
+      ['renovare', 'remont', 'reforma (da casa)', 'coloquial, do russo: “facem remont”'],
+      ['pungă', 'pachet', 'sacola plástica', 'coloquial, do russo; na Romênia “pachet” é “pacote”'],
       ['apartament', 'cvartiră', 'apartamento', 'coloquial, do russo'],
       ['permis de conducere', 'prava', 'carteira de motorista', 'coloquial, do russo'],
       ['geacă', 'curtcă', 'jaqueta', 'coloquial, do russo'],
@@ -91,7 +91,7 @@ export const VARIANTS_RO: LanguageVariant[] = [
         cefr: 'A2',
         title: 'Linu la Piața Centrală',
         emoji: '🥔',
-        summary: 'Linu vai ao mercado de Chișinău fazer compras para um jantar e descobre que lá batata se chama «barabule».',
+        summary: 'Linu vai ao mercado de Chișinău fazer compras para um jantar e descobre que lá batata se chama “barabule”.',
         cultural_context:
           'A Piața Centrală é o grande mercado do centro de Chișinău. A zeamă, sopa de galinha azedinha com macarrão caseiro e levístico, é um dos pratos mais típicos da Moldávia.',
         start: 'start',
@@ -108,23 +108,23 @@ export const VARIANTS_RO: LanguageVariant[] = [
         nodes: {
           start: {
             emoji: '🚌',
-            text: 'Mâine vine în vizită prietena lui Linu, Doina. Linu o să gătească zeamă și barabule la cuptor, ca în Moldova. Doina îi scrie: «Du-te la Piața Centrală! Ia rutiera, e mai rapidă decât troleibuzul.»',
+            text: 'Mâine vine în vizită prietena lui Linu, Doina. Linu o să gătească zeamă și barabule la cuptor, ca în Moldova. Doina îi scrie: “Du-te la Piața Centrală! Ia rutiera, e mai rapidă decât troleibuzul.”',
             translation:
-              'Amanhã a amiga do Linu, Doina, vem visitá-lo. Linu vai cozinhar zeamă e batatas assadas, como na Moldávia. Doina escreve: «Vá à Piața Centrală! Pegue a rutieră, é mais rápida que o trólebus.»',
+              'Amanhã a amiga do Linu, Doina, vem visitá-lo. Linu vai cozinhar zeamă e batatas assadas, como na Moldávia. Doina escreve: “Vá à Piața Centrală! Pegue a rutieră, é mais rápida que o trólebus.”',
             choices: [
               { text: 'Ia rutiera.', translation: 'Pega a rutieră.', next: 'rutiera' },
               { text: 'Merge pe jos pe bulevardul Ștefan cel Mare.', translation: 'Vai a pé pelo bulevar Ștefan cel Mare.', next: 'pe_jos' },
               {
                 text: 'Ia troleibuzul, pentru că e mai rapid.',
                 translation: 'Pega o trólebus, porque é mais rápido.',
-                wrong: 'Doina disse o contrário: a rutieră é «mai rapidă decât troleibuzul», mais rápida que o trólebus.',
+                wrong: 'Doina disse o contrário: a rutieră é “mai rapidă decât troleibuzul”, mais rápida que o trólebus.',
               },
             ],
           },
           rutiera: {
             emoji: '🚐',
-            text: 'În rutieră e cald și plin de oameni. Șoferul strigă: «Piața Centrală! Coborâți aici!» Linu coboară și vede o mulțime de tarabe.',
-            translation: 'Na rutieră está quente e cheio de gente. O motorista grita: «Piața Centrală! Desçam aqui!» Linu desce e vê um monte de bancas.',
+            text: 'În rutieră e cald și plin de oameni. Șoferul strigă: “Piața Centrală! Coborâți aici!” Linu coboară și vede o mulțime de tarabe.',
+            translation: 'Na rutieră está quente e cheio de gente. O motorista grita: “Piața Centrală! Desçam aqui!” Linu desce e vê um monte de bancas.',
             choices: [{ text: 'Intră în piață.', translation: 'Entra no mercado.', next: 'piata' }],
           },
           pe_jos: {
@@ -136,38 +136,38 @@ export const VARIANTS_RO: LanguageVariant[] = [
           },
           piata: {
             emoji: '🧺',
-            text: 'La o tarabă, o bunicuță vinde legume. «Ce-ți trebuie, dragă?» Linu citește lista lui: cartofi, roșii, ceapă. Dar pe tarabă scrie: «Barabule» și «Pătlăgele roșii».',
+            text: 'La o tarabă, o bunicuță vinde legume. “Ce-ți trebuie, dragă?” Linu citește lista lui: cartofi, roșii, ceapă. Dar pe tarabă scrie: “Barabule” și “Pătlăgele roșii”.',
             translation:
-              'Numa banca, uma senhorinha vende legumes. «Do que você precisa, querido?» Linu lê a lista dele: batatas, tomates, cebola. Mas na banca está escrito: «Barabule» e «Pătlăgele roșii».',
+              'Numa banca, uma senhorinha vende legumes. “Do que você precisa, querido?” Linu lê a lista dele: batatas, tomates, cebola. Mas na banca está escrito: “Barabule” e “Pătlăgele roșii”.',
             choices: [
               { text: 'Cumpără barabule, pătlăgele roșii și ceapă.', translation: 'Compra batatas, tomates e cebola.', next: 'barabule' },
               {
                 text: 'Pleacă supărat: aici nu vând cartofi.',
                 translation: 'Vai embora chateado: aqui não vendem batatas.',
-                wrong: '«Barabule» são batatas! No falar da Moldávia, «barabule» = «cartofi» e «pătlăgele roșii» = «roșii». Está tudo na banca.',
+                wrong: '“Barabule” são batatas! No falar da Moldávia, “barabule” = “cartofi” e “pătlăgele roșii” = “roșii”. Está tudo na banca.',
               },
             ],
           },
           barabule: {
             emoji: '🍉',
-            text: 'Bunicuța râde: «Barabulele mele îs mai bune decât cele de la magazin! Ia și un harbuz, îi dulce ca mierea.» Harbuzul e mare și greu.',
+            text: 'Bunicuța râde: “Barabulele mele îs mai bune decât cele de la magazin! Ia și un harbuz, îi dulce ca mierea.” Harbuzul e mare și greu.',
             translation:
-              'A senhorinha ri: «Minhas batatas são melhores que as da loja! Leve também uma melancia, está doce como mel.» A melancia é grande e pesada.',
+              'A senhorinha ri: “Minhas batatas são melhores que as da loja! Leve também uma melancia, está doce como mel.” A melancia é grande e pesada.',
             choices: [
               { text: 'Cumpără și harbuzul.', translation: 'Compra também a melancia.', next: 'harbuz' },
-              { text: '«Mulțumesc, altă dată!»', translation: '«Obrigado, fica para outra vez!»', next: 'final_fara' },
+              { text: '“Mulțumesc, altă dată!”', translation: '“Obrigado, fica para outra vez!”', next: 'final_fara' },
             ],
           },
           harbuz: {
             emoji: '💪',
-            text: 'Linu ține harbuzul cu ambele aripi. Bunicuța îi dă un sfat: «Nu merge pe jos! Ia rutiera, o să ajungi mai repede.»',
-            translation: 'Linu segura a melancia com as duas asas. A senhorinha dá um conselho: «Não vá a pé! Pegue a rutieră, você vai chegar mais rápido.»',
+            text: 'Linu ține harbuzul cu ambele aripi. Bunicuța îi dă un sfat: “Nu merge pe jos! Ia rutiera, o să ajungi mai repede.”',
+            translation: 'Linu segura a melancia com as duas asas. A senhorinha dá um conselho: “Não vá a pé! Pegue a rutieră, você vai chegar mais rápido.”',
             choices: [{ text: 'Ia rutiera spre casă.', translation: 'Pega a rutieră para casa.', next: 'final_bom' }],
           },
           final_bom: {
             emoji: '🎉',
-            text: 'Seara, Doina gustă zeama și zice: «E mai bună decât a mamei mele! Dar să nu-i spui!» La desert, mănâncă harbuz rece.',
-            translation: 'À noite, Doina prova a zeamă e diz: «Está melhor que a da minha mãe! Mas não conte para ela!» De sobremesa, comem melancia gelada.',
+            text: 'Seara, Doina gustă zeama și zice: “E mai bună decât a mamei mele! Dar să nu-i spui!” La desert, mănâncă harbuz rece.',
+            translation: 'À noite, Doina prova a zeamă e diz: “Está melhor que a da minha mãe! Mas não conte para ela!” De sobremesa, comem melancia gelada.',
             ending: {
               tone: 'bom',
               title: 'Jantar moldavo',
@@ -176,8 +176,8 @@ export const VARIANTS_RO: LanguageVariant[] = [
           },
           final_fara: {
             emoji: '🙂',
-            text: 'Linu ajunge acasă ușor. Seara vine Doina, cu un harbuz mare în brațe: «Data viitoare, cumpără-l tu!»',
-            translation: 'Linu chega em casa sem esforço. À noite chega Doina, com uma melancia grande nos braços: «Da próxima vez, compre você!»',
+            text: 'Linu ajunge acasă ușor. Seara vine Doina, cu un harbuz mare în brațe: “Data viitoare, cumpără-l tu!”',
+            translation: 'Linu chega em casa sem esforço. À noite chega Doina, com uma melancia grande nos braços: “Da próxima vez, compre você!”',
             ending: {
               tone: 'neutro',
               title: 'Sobremesa trazida',
@@ -210,9 +210,9 @@ export const VARIANTS_RO: LanguageVariant[] = [
         nodes: {
           start: {
             emoji: '🏡',
-            text: 'Linu a ajuns la o pensiune din Butuceni, lângă Orheiul Vechi. În ogradă, un bătrân cu pălărie stă pe o bancă, la umbra unui nuc. «Eu îs bunelul Ion», zice el. «Șezi, că amu îți povestesc cum era satul pe vremuri.»',
+            text: 'Linu a ajuns la o pensiune din Butuceni, lângă Orheiul Vechi. În ogradă, un bătrân cu pălărie stă pe o bancă, la umbra unui nuc. “Eu îs bunelul Ion”, zice el. “Șezi, că amu îți povestesc cum era satul pe vremuri.”',
             translation:
-              'Linu chegou a uma pousada em Butuceni, perto de Orheiul Vechi. No quintal, um velho de chapéu está sentado num banco, à sombra de uma nogueira. «Eu sou o vovô Ion», diz ele. «Sente-se, que agora eu te conto como era a aldeia antigamente.»',
+              'Linu chegou a uma pousada em Butuceni, perto de Orheiul Vechi. No quintal, um velho de chapéu está sentado num banco, à sombra de uma nogueira. “Eu sou o vovô Ion”, diz ele. “Sente-se, que agora eu te conto como era a aldeia antigamente.”',
             choices: [
               { text: 'Se așază și ascultă.', translation: 'Senta-se e escuta.', next: 'poveste' },
               { text: 'Pleacă direct spre mănăstire.', translation: 'Vai direto para o mosteiro.', next: 'singur' },
@@ -227,33 +227,33 @@ export const VARIANTS_RO: LanguageVariant[] = [
           },
           poveste: {
             emoji: '👴',
-            text: '«Când eram copil, nu aveam televizor. Seara ne adunam toți în ogradă, iar bunica mea cânta. Toamna, tot satul culegea poama împreună, și după aceea mâncam mămăligă de păpușoi cu brânză.»',
+            text: '“Când eram copil, nu aveam televizor. Seara ne adunam toți în ogradă, iar bunica mea cânta. Toamna, tot satul culegea poama împreună, și după aceea mâncam mămăligă de păpușoi cu brânză.”',
             translation:
-              '«Quando eu era criança, não tínhamos televisão. À noite nos reuníamos todos no quintal, e a minha avó cantava. No outono, a aldeia inteira colhia as uvas junta, e depois comíamos polenta de milho com queijo.»',
+              '“Quando eu era criança, não tínhamos televisão. À noite nos reuníamos todos no quintal, e a minha avó cantava. No outono, a aldeia inteira colhia as uvas junta, e depois comíamos polenta de milho com queijo.”',
             choices: [
-              { text: '«Și amu mai culegeți poama împreună?»', translation: '«E agora vocês ainda colhem as uvas juntos?»', next: 'poama' },
+              { text: '“Și amu mai culegeți poama împreună?”', translation: '“E agora vocês ainda colhem as uvas juntos?”', next: 'poama' },
               {
-                text: '«Deci diseară bunica dumneavoastră o să cânte în ogradă?»',
-                translation: '«Então hoje à noite a sua avó vai cantar no quintal?»',
-                wrong: '«Cânta» está no imperfeito: a avó cantava quando ele era criança, era um hábito do passado, não um plano para hoje à noite.',
+                text: '“Deci diseară bunica dumneavoastră o să cânte în ogradă?”',
+                translation: '“Então hoje à noite a sua avó vai cantar no quintal?”',
+                wrong: '“Cânta” está no imperfeito: a avó cantava quando ele era criança, era um hábito do passado, não um plano para hoje à noite.',
               },
             ],
           },
           poama: {
             emoji: '🍇',
-            text: '«Amu mai rar», oftează bunelul. «Pe vremuri eram zeci de oameni la cules, dar mulți tineri o plecat la oraș.» Apoi zâmbește: «Mâine vine nepotul meu din Chișinău și culegem poama din vie. Ne ajuți?»',
+            text: '“Amu mai rar”, oftează bunelul. “Pe vremuri eram zeci de oameni la cules, dar mulți tineri o plecat la oraș.” Apoi zâmbește: “Mâine vine nepotul meu din Chișinău și culegem poama din vie. Ne ajuți?”',
             translation:
-              '«Agora mais raramente», suspira o vovô. «Antigamente éramos dezenas de pessoas na colheita, mas muitos jovens foram para a cidade.» Depois sorri: «Amanhã meu neto vem de Chișinău e vamos colher as uvas da vinha. Você nos ajuda?»',
+              '“Agora mais raramente”, suspira o vovô. “Antigamente éramos dezenas de pessoas na colheita, mas muitos jovens foram para a cidade.” Depois sorri: “Amanhã meu neto vem de Chișinău e vamos colher as uvas da vinha. Você nos ajuda?”',
             choices: [
-              { text: '«Da, vin cu plăcere la cules!»', translation: '«Sim, vou com prazer à colheita!»', next: 'cules' },
-              { text: '«Aș prefera să văd mănăstirea.»', translation: '«Eu preferiria ver o mosteiro.»', next: 'manastire' },
+              { text: '“Da, vin cu plăcere la cules!”', translation: '“Sim, vou com prazer à colheita!”', next: 'cules' },
+              { text: '“Aș prefera să văd mănăstirea.”', translation: '“Eu preferiria ver o mosteiro.”', next: 'manastire' },
             ],
           },
           manastire: {
             emoji: '⛰️',
-            text: 'A doua zi, bunelul îl conduce pe o potecă spre stâncă. Pe drum îi arată: «Aici era fântâna satului. Femeile veneau dimineața cu gălețile și stăteau de vorbă ore întregi.» De sus se vede toată valea Răutului.',
+            text: 'A doua zi, bunelul îl conduce pe o potecă spre stâncă. Pe drum îi arată: “Aici era fântâna satului. Femeile veneau dimineața cu gălețile și stăteau de vorbă ore întregi.” De sus se vede toată valea Răutului.',
             translation:
-              'No dia seguinte, o vovô o leva por uma trilha até a rocha. No caminho ele mostra: «Aqui ficava o poço da aldeia. As mulheres vinham de manhã com os baldes e ficavam conversando horas a fio.» Lá de cima se vê todo o vale do Răut.',
+              'No dia seguinte, o vovô o leva por uma trilha até a rocha. No caminho ele mostra: “Aqui ficava o poço da aldeia. As mulheres vinham de manhã com os baldes e ficavam conversando horas a fio.” Lá de cima se vê todo o vale do Răut.',
             choices: [
               { text: 'Intră în mănăstire, în liniște.', translation: 'Entra no mosteiro, em silêncio.', next: 'final_manastire' },
               { text: 'Se întoarce în sat, la cules.', translation: 'Volta para a aldeia, para a colheita.', next: 'cules' },
@@ -271,9 +271,9 @@ export const VARIANTS_RO: LanguageVariant[] = [
           },
           final_cules: {
             emoji: '🎉',
-            text: 'Seara, în ogradă, mănâncă toți zeamă și mămăligă. Bunelul ridică paharul: «Pe vremuri, așa era în fiecare toamnă. Amu, cu voi, o fost iar ca atunci.»',
+            text: 'Seara, în ogradă, mănâncă toți zeamă și mămăligă. Bunelul ridică paharul: “Pe vremuri, așa era în fiecare toamnă. Amu, cu voi, o fost iar ca atunci.”',
             translation:
-              'À noite, no quintal, todos comem zeamă e polenta. O vovô ergue o copo: «Antigamente era assim todo outono. Agora, com vocês, foi de novo como naquele tempo.»',
+              'À noite, no quintal, todos comem zeamă e polenta. O vovô ergue o copo: “Antigamente era assim todo outono. Agora, com vocês, foi de novo como naquele tempo.”',
             ending: {
               tone: 'bom',
               title: 'Vindima em família',
@@ -282,20 +282,20 @@ export const VARIANTS_RO: LanguageVariant[] = [
           },
           final_gustat: {
             emoji: '😅',
-            text: 'Linu gustă o boabă, apoi încă una, apoi un ciorchine întreg. La prânz, găleata lui era aproape goală, iar el era tare sătul. Andrei râde: «Și eu făceam la fel când eram mic!»',
+            text: 'Linu gustă o boabă, apoi încă una, apoi un ciorchine întreg. La prânz, găleata lui era aproape goală, iar el era tare sătul. Andrei râde: “Și eu făceam la fel când eram mic!”',
             translation:
-              'Linu prova um bago, depois outro, depois um cacho inteiro. Na hora do almoço, o balde dele estava quase vazio, e ele estava muito cheio. Andrei ri: «Eu também fazia isso quando era pequeno!»',
+              'Linu prova um bago, depois outro, depois um cacho inteiro. Na hora do almoço, o balde dele estava quase vazio, e ele estava muito cheio. Andrei ri: “Eu também fazia isso quando era pequeno!”',
             ending: {
               tone: 'neutro',
               title: 'Colheita saborosa',
-              message: 'Pouca uva no balde, muita na barriga. Pelo menos você entendeu que «făceam» é um hábito de criança!',
+              message: 'Pouca uva no balde, muita na barriga. Pelo menos você entendeu que “făceam” é um hábito de criança!',
             },
           },
           final_manastire: {
             emoji: '🕯️',
-            text: 'În biserica săpată în stâncă e răcoare și liniște. Bunelul șoptește: «Mama mă aducea aici când eram mic. Veneam pe jos din sat și ne opream la fântână să bem apă.»',
+            text: 'În biserica săpată în stâncă e răcoare și liniște. Bunelul șoptește: “Mama mă aducea aici când eram mic. Veneam pe jos din sat și ne opream la fântână să bem apă.”',
             translation:
-              'Na igreja escavada na rocha está fresco e silencioso. O vovô sussurra: «Minha mãe me trazia aqui quando eu era pequeno. Vínhamos a pé da aldeia e parávamos no poço para beber água.»',
+              'Na igreja escavada na rocha está fresco e silencioso. O vovô sussurra: “Minha mãe me trazia aqui quando eu era pequeno. Vínhamos a pé da aldeia e parávamos no poço para beber água.”',
             ending: {
               tone: 'bom',
               title: 'Memórias na rocha',
@@ -313,7 +313,7 @@ export const VARIANTS_RO: LanguageVariant[] = [
         emoji: '🍷',
         summary: 'Numa visita às adegas subterrâneas de Cricova, Linu se distrai, perde o grupo e precisa achar o caminho entre ruas com nome de vinho.',
         cultural_context:
-          'As adegas de Cricova, perto de Chișinău, ocupam galerias subterrâneas de antigas minas de calcário, com dezenas de quilômetros de «ruas» batizadas com nomes de vinhos. Lá embaixo a temperatura fica estável e fresca o ano todo.',
+          'As adegas de Cricova, perto de Chișinău, ocupam galerias subterrâneas de antigas minas de calcário, com dezenas de quilômetros de “ruas” batizadas com nomes de vinhos. Lá embaixo a temperatura fica estável e fresca o ano todo.',
         start: 'start',
         glossary: [
           ['își uitase', 'tinha esquecido'],
@@ -329,9 +329,9 @@ export const VARIANTS_RO: LanguageVariant[] = [
         nodes: {
           start: {
             emoji: '🚐',
-            text: 'Linu ajunsese la Cricova cu zece minute înainte de tur, deși plecase târziu din Chișinău. Doamna Victoria, ghidul, se uită la tricoul lui și zâmbește: «Jos e răcoare tot anul. Ai luat o curtcă?» Abia atunci își dă seama Linu că își uitase geaca în rutieră.',
+            text: 'Linu ajunsese la Cricova cu zece minute înainte de tur, deși plecase târziu din Chișinău. Doamna Victoria, ghidul, se uită la tricoul lui și zâmbește: “Jos e răcoare tot anul. Ai luat o curtcă?” Abia atunci își dă seama Linu că își uitase geaca în rutieră.',
             translation:
-              'Linu tinha chegado a Cricova dez minutos antes do passeio, embora tivesse saído tarde de Chișinău. A senhora Victoria, a guia, olha para a camiseta dele e sorri: «Lá embaixo é fresco o ano todo. Trouxe uma jaqueta?» Só então Linu percebe que tinha esquecido o casaco na rutieră.',
+              'Linu tinha chegado a Cricova dez minutos antes do passeio, embora tivesse saído tarde de Chișinău. A senhora Victoria, a guia, olha para a camiseta dele e sorri: “Lá embaixo é fresco o ano todo. Trouxe uma jaqueta?” Só então Linu percebe que tinha esquecido o casaco na rutieră.',
             choices: [
               { text: 'Își cumpără un pulover de la magazinul vinăriei.', translation: 'Compra um pulôver na loja da vinícola.', next: 'pulover' },
               { text: 'Coboară totuși în tricou.', translation: 'Desce mesmo assim de camiseta.', next: 'tricou' },
@@ -339,44 +339,44 @@ export const VARIANTS_RO: LanguageVariant[] = [
                 text: 'Fuge acasă după geacă, fiindcă a lăsat-o în cuier.',
                 translation: 'Corre para casa buscar o casaco, porque o deixou no cabide.',
                 wrong:
-                  'Linu tinha esquecido o casaco na rutieră (a van), não em casa: «își uitase geaca în rutieră». Além disso, o passeio começa em dez minutos.',
+                  'Linu tinha esquecido o casaco na rutieră (a van), não em casa: “își uitase geaca în rutieră”. Além disso, o passeio começa em dez minutos.',
               },
             ],
           },
           pulover: {
             emoji: '🧶',
-            text: 'Puloverul e scump; în schimb, e gros și cald. Grupul urcă în niște mașinuțe electrice și intră în galerii. Pe pereți apar plăcuțe cu nume de străzi: «Strada Cabernet», «Strada Sauvignon».',
+            text: 'Puloverul e scump; în schimb, e gros și cald. Grupul urcă în niște mașinuțe electrice și intră în galerii. Pe pereți apar plăcuțe cu nume de străzi: “Strada Cabernet”, “Strada Sauvignon”.',
             translation:
-              'O pulôver é caro; em compensação, é grosso e quente. O grupo sobe em carrinhos elétricos e entra nas galerias. Nas paredes aparecem placas com nomes de ruas: «Rua Cabernet», «Rua Sauvignon».',
+              'O pulôver é caro; em compensação, é grosso e quente. O grupo sobe em carrinhos elétricos e entra nas galerias. Nas paredes aparecem placas com nomes de ruas: “Rua Cabernet”, “Rua Sauvignon”.',
             choices: [{ text: 'Ascultă ghidul.', translation: 'Escuta a guia.', next: 'galerii' }],
           },
           tricou: {
             emoji: '🥶',
-            text: 'Jos e frig, iar Linu tremură tot; prin urmare, abia aude ce spune ghidul. Doamna Victoria îi dă totuși eșarfa ei: «Ladna, ia-o, dar data viitoare vii îmbrăcat!» Grupul intră cu mașinuțe electrice pe «Strada Cabernet».',
+            text: 'Jos e frig, iar Linu tremură tot; prin urmare, abia aude ce spune ghidul. Doamna Victoria îi dă totuși eșarfa ei: “Ladna, ia-o, dar data viitoare vii îmbrăcat!” Grupul intră cu mașinuțe electrice pe “Strada Cabernet”.',
             translation:
-              'Lá embaixo está frio, e Linu treme inteiro; por conseguinte, mal ouve o que a guia diz. A senhora Victoria mesmo assim lhe dá a echarpe dela: «Tá bom, pegue, mas da próxima vez venha agasalhado!» O grupo entra de carrinho elétrico na «Rua Cabernet».',
+              'Lá embaixo está frio, e Linu treme inteiro; por conseguinte, mal ouve o que a guia diz. A senhora Victoria mesmo assim lhe dá a echarpe dela: “Tá bom, pegue, mas da próxima vez venha agasalhado!” O grupo entra de carrinho elétrico na “Rua Cabernet”.',
             choices: [{ text: 'Ascultă ghidul.', translation: 'Escuta a guia.', next: 'galerii' }],
           },
           galerii: {
             emoji: '🍾',
-            text: 'Ghidul explică: «Aceste galerii fuseseră la început mine de calcar; abia mai târziu au devenit pivnițe pentru vin.» La începutul turului, le spusese tuturor: «Dacă vă pierdeți, nu vă mișcați din loc!» Linu rămâne în urmă să fotografieze o sticlă foarte veche. Când ridică ochii, grupul dispăruse.',
+            text: 'Ghidul explică: “Aceste galerii fuseseră la început mine de calcar; abia mai târziu au devenit pivnițe pentru vin.” La începutul turului, le spusese tuturor: “Dacă vă pierdeți, nu vă mișcați din loc!” Linu rămâne în urmă să fotografieze o sticlă foarte veche. Când ridică ochii, grupul dispăruse.',
             translation:
-              'A guia explica: «Estas galerias tinham sido, no começo, minas de calcário; só mais tarde viraram adegas de vinho.» No começo do passeio, ela tinha dito a todos: «Se vocês se perderem, não saiam do lugar!» Linu fica para trás para fotografar uma garrafa muito antiga. Quando levanta os olhos, o grupo tinha desaparecido.',
+              'A guia explica: “Estas galerias tinham sido, no começo, minas de calcário; só mais tarde viraram adegas de vinho.” No começo do passeio, ela tinha dito a todos: “Se vocês se perderem, não saiam do lugar!” Linu fica para trás para fotografar uma garrafa muito antiga. Quando levanta os olhos, o grupo tinha desaparecido.',
             choices: [
               { text: 'Rămâne pe loc, cum le spusese ghidul.', translation: 'Fica no lugar, como a guia tinha dito.', next: 'asteapta' },
               { text: 'Pornește singur pe o stradă laterală.', translation: 'Sai sozinho por uma rua lateral.', next: 'singur' },
               {
                 text: 'Aleargă după grup, pe care îl vede la capătul străzii.',
                 translation: 'Corre atrás do grupo, que ele vê no fim da rua.',
-                wrong: '«Grupul dispăruse»: quando Linu levantou os olhos, o grupo já tinha desaparecido (mais-que-perfeito). Ele não consegue mais vê-lo.',
+                wrong: '“Grupul dispăruse”: quando Linu levantou os olhos, o grupo já tinha desaparecido (mais-que-perfeito). Ele não consegue mais vê-lo.',
               },
             ],
           },
           singur: {
             emoji: '🧭',
-            text: 'Linu merge pe «Strada Pinot», apoi pe «Strada Aligoté», însă toate galeriile par la fel. Deși e puțin speriat, observă pe jos urme proaspete de roți. Își amintește totuși că ghidul îi rugase să nu se miște din loc.',
+            text: 'Linu merge pe “Strada Pinot”, apoi pe “Strada Aligoté”, însă toate galeriile par la fel. Deși e puțin speriat, observă pe jos urme proaspete de roți. Își amintește totuși că ghidul îi rugase să nu se miște din loc.',
             translation:
-              'Linu anda pela «Rua Pinot», depois pela «Rua Aligoté», mas todas as galerias parecem iguais. Embora esteja um pouco assustado, ele nota no chão marcas frescas de rodas. Mesmo assim, lembra que a guia tinha pedido para não saírem do lugar.',
+              'Linu anda pela “Rua Pinot”, depois pela “Rua Aligoté”, mas todas as galerias parecem iguais. Embora esteja um pouco assustado, ele nota no chão marcas frescas de rodas. Mesmo assim, lembra que a guia tinha pedido para não saírem do lugar.',
             choices: [
               { text: 'Urmează urmele de roți.', translation: 'Segue as marcas de rodas.', next: 'iesire' },
               { text: 'Se întoarce lângă sticla veche și așteaptă.', translation: 'Volta para perto da garrafa antiga e espera.', next: 'asteapta' },
@@ -384,9 +384,9 @@ export const VARIANTS_RO: LanguageVariant[] = [
           },
           asteapta: {
             emoji: '⏳',
-            text: 'Linu așteaptă lângă un butoi uriaș. Deși trec doar zece minute, i se par o oră. În sfârșit, aude o voce cunoscută: «Davai, davai, te căutăm peste tot!» Era doamna Victoria, care observase lipsa lui când numărase turiștii.',
+            text: 'Linu așteaptă lângă un butoi uriaș. Deși trec doar zece minute, i se par o oră. În sfârșit, aude o voce cunoscută: “Davai, davai, te căutăm peste tot!” Era doamna Victoria, care observase lipsa lui când numărase turiștii.',
             translation:
-              'Linu espera ao lado de um barril enorme. Embora passem só dez minutos, parecem uma hora. Finalmente, ouve uma voz conhecida: «Anda, anda, estamos te procurando por toda parte!» Era a senhora Victoria, que tinha notado a falta dele quando contara os turistas.',
+              'Linu espera ao lado de um barril enorme. Embora passem só dez minutos, parecem uma hora. Finalmente, ouve uma voz conhecida: “Anda, anda, estamos te procurando por toda parte!” Era a senhora Victoria, que tinha notado a falta dele quando contara os turistas.',
             choices: [{ text: 'Îi mulțumește și se alătură grupului.', translation: 'Agradece e se junta ao grupo.', next: 'degustare' }],
           },
           iesire: {
@@ -402,13 +402,13 @@ export const VARIANTS_RO: LanguageVariant[] = [
           },
           degustare: {
             emoji: '🥂',
-            text: 'Grupul intră într-o sală de degustare, sub bolți de piatră. Somelierul toarnă un vin spumant și explică faptul că acesta fermentează a doua oară chiar în sticlă. Doamna Victoria se întoarce spre Linu: «Ei, ți-a plăcut, deși te-ai rătăcit?»',
+            text: 'Grupul intră într-o sală de degustare, sub bolți de piatră. Somelierul toarnă un vin spumant și explică faptul că acesta fermentează a doua oară chiar în sticlă. Doamna Victoria se întoarce spre Linu: “Ei, ți-a plăcut, deși te-ai rătăcit?”',
             translation:
-              'O grupo entra numa sala de degustação, sob abóbadas de pedra. O sommelier serve um vinho espumante e explica que ele fermenta pela segunda vez na própria garrafa. A senhora Victoria se vira para Linu: «E aí, gostou, embora tenha se perdido?»',
+              'O grupo entra numa sala de degustação, sob abóbadas de pedra. O sommelier serve um vinho espumante e explica que ele fermenta pela segunda vez na própria garrafa. A senhora Victoria se vira para Linu: “E aí, gostou, embora tenha se perdido?”',
             choices: [
               {
-                text: '«Tare mi-a plăcut! În schimb, data viitoare nu mai rămân în urmă.»',
-                translation: '«Gostei muito! Em compensação, da próxima vez não fico mais para trás.»',
+                text: '“Tare mi-a plăcut! În schimb, data viitoare nu mai rămân în urmă.”',
+                translation: '“Gostei muito! Em compensação, da próxima vez não fico mais para trás.”',
                 next: 'final_bom',
               },
               { text: 'Îi arată poza cu sticla veche.', translation: 'Mostra a ela a foto da garrafa antiga.', next: 'final_poza' },
@@ -416,9 +416,9 @@ export const VARIANTS_RO: LanguageVariant[] = [
           },
           final_bom: {
             emoji: '🎉',
-            text: 'Toți râd, iar Victoria îi face cu ochiul: «Ladna, te iertăm.» La plecare, Linu cumpără o sticlă de spumant pentru bunelul Ion din Butuceni. Deși se rătăcise, ziua fusese una dintre cele mai frumoase din călătorie.',
+            text: 'Toți râd, iar Victoria îi face cu ochiul: “Ladna, te iertăm.” La plecare, Linu cumpără o sticlă de spumant pentru bunelul Ion din Butuceni. Deși se rătăcise, ziua fusese una dintre cele mai frumoase din călătorie.',
             translation:
-              'Todos riem, e Victoria pisca para ele: «Tá bom, está perdoado.» Na saída, Linu compra uma garrafa de espumante para o vovô Ion de Butuceni. Embora tivesse se perdido, o dia tinha sido um dos mais bonitos da viagem.',
+              'Todos riem, e Victoria pisca para ele: “Tá bom, está perdoado.” Na saída, Linu compra uma garrafa de espumante para o vovô Ion de Butuceni. Embora tivesse se perdido, o dia tinha sido um dos mais bonitos da viagem.',
             ending: {
               tone: 'bom',
               title: 'Perdido e achado',
@@ -427,9 +427,9 @@ export const VARIANTS_RO: LanguageVariant[] = [
           },
           final_poza: {
             emoji: '📸',
-            text: 'Victoria privește poza și rămâne surprinsă: «Nu știam că sticla asta e atât de fotogenică!» Îi cere voie s-o pună pe pagina vinăriei, iar Linu acceptă bucuros. Totuși, îi promite că data viitoare va face pozele fără să piardă grupul.',
+            text: 'Victoria privește poza și rămâne surprinsă: “Nu știam că sticla asta e atât de fotogenică!” Îi cere voie s-o pună pe pagina vinăriei, iar Linu acceptă bucuros. Totuși, îi promite că data viitoare va face pozele fără să piardă grupul.',
             translation:
-              'Victoria olha a foto e fica surpresa: «Eu não sabia que essa garrafa era tão fotogênica!» Ela pede permissão para colocá-la na página da vinícola, e Linu aceita contente. Mesmo assim, promete que da próxima vez vai tirar as fotos sem perder o grupo.',
+              'Victoria olha a foto e fica surpresa: “Eu não sabia que essa garrafa era tão fotogênica!” Ela pede permissão para colocá-la na página da vinícola, e Linu aceita contente. Mesmo assim, promete que da próxima vez vai tirar as fotos sem perder o grupo.',
             ending: {
               tone: 'bom',
               title: 'Fotógrafo das adegas',

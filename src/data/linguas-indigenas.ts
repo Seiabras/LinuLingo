@@ -13,7 +13,7 @@ export const RISK_LEVELS = [
   { level: 2, label: 'em declínio', color: '#EA580C', text: 'os pais falam, mas as crianças já não aprendem como primeira língua.' },
   { level: 3, label: 'moribunda', color: '#DC2626', text: 'só a geração dos avós ainda fala.' },
   { level: 4, label: 'quase extinta', color: '#9F1239', text: 'restam poucos falantes, quase todos idosos.' },
-  { level: 5, label: 'extinta', color: '#64748B', text: 'ninguém mais a tem como língua materna. Muitos povos preferem dizer «adormecida», e alguns a estão retomando a partir de registros antigos e da memória dos mais velhos.' },
+  { level: 5, label: 'extinta', color: '#64748B', text: 'ninguém mais a tem como língua materna. Muitos povos preferem dizer “adormecida”, e alguns a estão retomando a partir de registros antigos e da memória dos mais velhos.' },
 ] as const;
 
 /** Nas Américas e na Oceania, «indígena» tem um sentido claro: as línguas de antes da colonização. */

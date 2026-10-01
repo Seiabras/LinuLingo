@@ -120,7 +120,7 @@ export const RECURSOS_KO: LanguageResources = {
       by: 'Kwak Kyung-taek',
       year: '2001',
       level: 'B2',
-      why: 'Quatro amigos de infância em Busan, dos anos 1970 aos 1990 (lançado lá fora como «Friend»): o filme que popularizou no país inteiro as falas em dialeto de Busan.',
+      why: 'Quatro amigos de infância em Busan, dos anos 1970 aos 1990 (lançado lá fora como “Friend”): o filme que popularizou no país inteiro as falas em dialeto de Busan.',
       accent: 'dialeto de Busan (Gyeongsang)',
     },
     // séries
@@ -178,7 +178,7 @@ export const RECURSOS_KO: LanguageResources = {
       by: 'Kim Won-seok (direção) e Lim Sang-choon (roteiro)',
       year: '2025',
       level: 'B2',
-      why: 'Uma vida inteira em Jeju, da juventude à velhice; o próprio título original está no dialeto de Jeju (algo como «você se esforçou muito»), que muitos coreanos só entendem com legenda.',
+      why: 'Uma vida inteira em Jeju, da juventude à velhice; o próprio título original está no dialeto de Jeju (algo como “você se esforçou muito”), que muitos coreanos só entendem com legenda.',
       accent: 'dialeto de Jeju',
     },
     {
@@ -235,7 +235,7 @@ export const RECURSOS_KO: LanguageResources = {
       by: 'Lee Dong-geon',
       year: '2015–2020',
       level: 'B1',
-      why: 'Webtoon sobre a cabeça de uma funcionária de escritório, com as «células» discutindo cada decisão: balões curtos e fala informal do dia a dia.',
+      why: 'Webtoon sobre a cabeça de uma funcionária de escritório, com as “células” discutindo cada decisão: balões curtos e fala informal do dia a dia.',
     },
     {
       kind: 'hq',
@@ -341,9 +341,9 @@ export const RECURSOS_KO: LanguageResources = {
   tips: [
     'Aprenda o hangul no primeiro dia: são 14 consoantes e 10 vogais básicas, montadas em blocos silábicos (한 = ㅎ + ㅏ + ㄴ). Em poucas horas você já lê — devagar — qualquer placa.',
     'Os níveis de formalidade mudam o fim de cada frase: comece pelo 해요체 (-아요/-어요), educado e neutro; depois o 합니다체 (-습니다) das notícias e do trabalho; o 반말 (informal) fica para amigos próximos.',
-    'Treine os sons que o português não separa: ㄱ/ㄲ/ㅋ, ㄷ/ㄸ/ㅌ, ㅂ/ㅃ/ㅍ (simples, tenso e aspirado) — 불 («fogo»), 뿔 («chifre») e 풀 («grama») são palavras diferentes.',
+    'Treine os sons que o português não separa: ㄱ/ㄲ/ㅋ, ㄷ/ㄸ/ㅌ, ㅂ/ㅃ/ㅍ (simples, tenso e aspirado) — 불 (“fogo”), 뿔 (“chifre”) e 풀 (“grama”) são palavras diferentes.',
     'O coreano põe o verbo no fim e marca a função das palavras com partículas (은/는 tópico, 이/가 sujeito, 을/를 objeto): treine-as com frases curtas antes de decorar listas de vocabulário.',
-    'Boa parte do vocabulário vem do chinês: a raiz 학 («estudo») aparece em 학교 («escola»), 학생 («aluno») e 대학 («universidade»). Aprender raízes multiplica as palavras que você reconhece.',
+    'Boa parte do vocabulário vem do chinês: a raiz 학 (“estudo”) aparece em 학교 (“escola”), 학생 (“aluno”) e 대학 (“universidade”). Aprender raízes multiplica as palavras que você reconhece.',
     'No Brasil, o Bom Retiro, em São Paulo, concentra a comunidade coreana; o Centro Cultural Coreano e os Institutos Rei Sejong (como o da UnB, em Brasília) oferecem cursos e eventos.',
   ],
 };

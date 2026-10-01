@@ -64,7 +64,7 @@ export default function AccentPracticeScreen() {
         language: pack.code,
         source: 'sotaque',
         key: `${a.id}:${cur.kind}:${cur.prompt}`,
-        prompt: cur.kind === 'significa' ? `O que quer dizer «${cur.prompt}»? (${a.name})` : cur.kind === 'como-se-diz' ? `Como se diz «${cur.prompt}»? (${a.name})` : `De onde é esta frase: «${cur.prompt}»?`,
+        prompt: cur.kind === 'significa' ? `O que quer dizer “${cur.prompt}”? (${a.name})` : cur.kind === 'como-se-diz' ? `Como se diz “${cur.prompt}”? (${a.name})` : `De onde é esta frase: “${cur.prompt}”?`,
         expected: cur.answer,
         given: opt,
         note: cur.kind === 'de-onde' ? cur.translation : null,
@@ -115,7 +115,7 @@ export default function AccentPracticeScreen() {
               <View className="flex-row items-center gap-2">
                 {cur.kind !== 'como-se-diz' && <SpeakButton text={cur.prompt} locale={locale} size={16} />}
                 <Text accessibilityLabel={`Pergunta: ${cur.prompt}`} className="shrink text-center text-3xl font-extrabold text-slate-900 dark:text-white">
-                  {cur.kind === 'como-se-diz' ? `«${cur.prompt}»` : cur.prompt}
+                  {cur.kind === 'como-se-diz' ? `“${cur.prompt}”` : cur.prompt}
                 </Text>
               </View>
               {cur.kind === 'de-onde' && game.answer && <Text className="text-sm text-slate-500 dark:text-slate-400">{cur.translation}</Text>}
@@ -140,7 +140,7 @@ export default function AccentPracticeScreen() {
             {game.answer && (
               <Card className="gap-2">
                 <Text className={`text-lg font-extrabold ${game.answer === cur.answer ? 'text-conquista' : 'text-rose-600'}`}>
-                  {game.answer === cur.answer ? 'Isso!' : `Era «${cur.answer}».`}
+                  {game.answer === cur.answer ? 'Isso!' : `Era “${cur.answer}”.`}
                 </Text>
                 <Button title="Continuar" variant="success" onPress={nextQ} />
               </Card>

@@ -31,19 +31,19 @@ export function europeanPortugueseProblems(raw: string): string[] {
   const out: string[] = [];
   // citação curta entre « » (até 3 palavras: «ônibus», «café da manhã») é a forma brasileira
   // citada de propósito e não se confere; falas mais longas entre « » são diálogo e se conferem
-  const text = raw.replace(/«([^»]*)»/g, (m, inner: string) => (inner.trim().split(/\s+/).length <= 3 ? '«»' : m));
+  const text = raw.replace(/“([^”]*)”/g, (m, inner: string) => (inner.trim().split(/\s+/).length <= 3 ? '“”' : m));
   if (/[Ѐ-ӿ]/.test(text)) out.push('letra cirílica no português');
   // gerúndio com estar: em Portugal, «estar a + infinitivo»
   const ger = text.match(new RegExp(`${B}(estou|estás|está|estamos|estão|estava|estavas|estávamos|estavam|estive|esteve|estiveram|estar|estará|estarei|estaria) (\\p{L}+ndo)${E}`, 'iu'));
-  if (ger) out.push(`«${ger[0]}»: em Portugal usa-se «estar a + infinitivo» (${ger[1]} a ${ger[2].replace(/ndo$/, 'r')})`);
+  if (ger) out.push(`“${ger[0]}”: em Portugal usa-se “estar a + infinitivo” (${ger[1]} a ${ger[2].replace(/ndo$/, 'r')})`);
   // pronome átono no começo da frase: em Portugal, ênclise (Diz-me, Chamo-me)
   const procl = text.match(new RegExp(`(?:^|[.!?…]\\s+|—\\s*)(Me|Te|Lhe|Lhes|Vos) \\p{L}+`, 'u'));
-  if (procl) out.push(`«${procl[0].trim()}»: em Portugal, frase não começa por pronome átono (use a ênclise: «Diz-me»)`);
+  if (procl) out.push(`“${procl[0].trim()}”: em Portugal, frase não começa por pronome átono (use a ênclise: “Diz-me”)`);
   for (const [br, pt] of Object.entries(BR_SPELLING))
-    if (new RegExp(`${B}${br}${E}`, 'iu').test(text)) out.push(`«${br}» é a grafia do Brasil; em Portugal: «${pt}»`);
+    if (new RegExp(`${B}${br}${E}`, 'iu').test(text)) out.push(`“${br}” é a grafia do Brasil; em Portugal: “${pt}”`);
   for (const [br, pt] of Object.entries(BR_WORDS)) {
     const w = br.replace(/ \(.*\)$/, '');
-    if (new RegExp(`${B}${w}${E}`, 'iu').test(text)) out.push(`«${w}» é do Brasil; em Portugal: «${pt}» (se for de propósito, ponha entre « »)`);
+    if (new RegExp(`${B}${w}${E}`, 'iu').test(text)) out.push(`“${w}” é do Brasil; em Portugal: “${pt}” (se for de propósito, ponha entre “ ”)`);
   }
   return out;
 }

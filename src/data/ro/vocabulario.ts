@@ -29,7 +29,7 @@ const ROWS: VocabRow[] = [
   ['pentru', 'para', 'preposição', 'Essenciais', null, 'Este pentru tine.'],
   ['a face', 'fazer', 'verbo', 'Verbos-chave', '🛠️', 'Ce faci azi?'],
   ['a putea', 'poder', 'verbo', 'Verbos-chave', null, 'Pot să intru?'],
-  ['a spune', 'dizer', 'verbo', 'Verbos-chave', '🗣️', 'Cum se spune «obrigado»?'],
+  ['a spune', 'dizer', 'verbo', 'Verbos-chave', '🗣️', 'Cum se spune “obrigado”?'],
   ['a merge', 'ir / andar / funcionar', 'verbo', 'Verbos-chave', '🚶', 'Merg acasă.'],
   ['a vrea', 'querer', 'verbo', 'Verbos-chave', null, 'Vreau o cameră.'],
   ['a ști', 'saber', 'verbo', 'Verbos-chave', '🧠', 'Nu știu.'],

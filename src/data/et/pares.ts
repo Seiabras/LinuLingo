@@ -19,7 +19,7 @@ export const PARES_ET: MinimalPairs = {
       id: 'oclusiva',
       name: 'b/d/g × p/t/k',
       sounds: ['b̥', 'p'],
-      tip: 'O «b», o «d» e o «g» do estoniano não vibram a garganta: soam como um «p», «t», «k» curtos e moles. O «p», «t», «k» escrito é o mesmo som, só que mais longo e firme: kabi (casco) × kapi (do armário). Nada de sopro depois da consoante.',
+      tip: 'O “b”, o “d” e o “g” do estoniano não vibram a garganta: soam como um “p”, “t”, “k” curtos e moles. O “p”, “t”, “k” escrito é o mesmo som, só que mais longo e firme: kabi (casco) × kapi (do armário). Nada de sopro depois da consoante.',
     },
     {
       id: 'oclusiva-dupla',
@@ -31,19 +31,19 @@ export const PARES_ET: MinimalPairs = {
       id: 'o-til-o',
       name: 'õ [ɤ] × o',
       sounds: ['ɤ', 'o'],
-      tip: 'O «õ» estoniano não tem nada do nosso «õ» nasal: é um som sem nasal, com a língua na posição do «ô» e os lábios esticados, sem bico, como se você fosse dizer «ê» e «ô» ao mesmo tempo. No «o», os lábios fazem bico: kõrv (orelha) × korv (cesto).',
+      tip: 'O “õ” estoniano não tem nada do nosso “õ” nasal: é um som sem nasal, com a língua na posição do “ô” e os lábios esticados, sem bico, como se você fosse dizer “ê” e “ô” ao mesmo tempo. No “o”, os lábios fazem bico: kõrv (orelha) × korv (cesto).',
     },
     {
       id: 'u-trema-u',
       name: 'ü [y] × u',
       sounds: ['y', 'u'],
-      tip: 'O «ü» é um «i» com os lábios em bico, como o «u» do francês; o «u» é o nosso «u»: tüli (briga) × tuli (fogo); süsi (carvão) × susi (lobo).',
+      tip: 'O “ü” é um “i” com os lábios em bico, como o “u” do francês; o “u” é o nosso “u”: tüli (briga) × tuli (fogo); süsi (carvão) × susi (lobo).',
     },
     {
       id: 'a-trema-e',
       name: 'ä [æ] × e',
       sounds: ['æ', 'e'],
-      tip: 'O «ä» é um «é» bem aberto, quase um «a», com a boca bem aberta e a língua para a frente. O «e» é o nosso «ê» fechado: kära (barulho) × kera (bola, esfera). Se ficar em dúvida, abra mais a boca para o «ä».',
+      tip: 'O “ä” é um “é” bem aberto, quase um “a”, com a boca bem aberta e a língua para a frente. O “e” é o nosso “ê” fechado: kära (barulho) × kera (bola, esfera). Se ficar em dúvida, abra mais a boca para o “ä”.',
     },
   ],
   pairs: [
@@ -66,8 +66,8 @@ export const PARES_ET: MinimalPairs = {
     { contrast: 'a-trema-e', a: ['käär', 'curva, dobra'], b: ['keer', 'volta, giro'] },
   ],
   sameSound: [
-    { words: [['tee', 'caminho, estrada'], ['tee', 'chá']], note: 'Mesma grafia e mesmo som, as duas sobrelongas: só o contexto separa. Até o genitivo coincide: «tee».' },
-    { words: [['tuli', 'fogo'], ['tuli', 'veio (passado de «tulema», vir)']], note: 'O substantivo e o verbo soam iguais: «Tuli tuli» quer dizer «O fogo veio».' },
-    { words: [['palk', 'salário'], ['palk', 'tora, tronco']], note: 'Iguais no nominativo, mas se separam no genitivo: «palga» (do salário) × «palgi» (da tora).' },
+    { words: [['tee', 'caminho, estrada'], ['tee', 'chá']], note: 'Mesma grafia e mesmo som, as duas sobrelongas: só o contexto separa. Até o genitivo coincide: “tee”.' },
+    { words: [['tuli', 'fogo'], ['tuli', 'veio (passado de “tulema”, vir)']], note: 'O substantivo e o verbo soam iguais: “Tuli tuli” quer dizer “O fogo veio”.' },
+    { words: [['palk', 'salário'], ['palk', 'tora, tronco']], note: 'Iguais no nominativo, mas se separam no genitivo: “palga” (do salário) × “palgi” (da tora).' },
   ],
 };

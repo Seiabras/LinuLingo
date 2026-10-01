@@ -18,7 +18,7 @@ export const STORIES_FUR: StorySeed[] = [
         emoji: '🙋‍♀️',
         choices: [
           { text: 'Ben, graciis! E tu?', translation: 'Bem, obrigado! E você?', next: 'ben' },
-          { text: 'Buine gnot!', translation: 'Boa noite (despedida)!', wrong: 'Marie acabou de chegar: «buine gnot» é para ir dormir. Responda ao cumprimento.' },
+          { text: 'Buine gnot!', translation: 'Boa noite (despedida)!', wrong: 'Marie acabou de chegar: “buine gnot” é para ir dormir. Responda ao cumprimento.' },
         ],
       },
       ben: {
@@ -27,7 +27,7 @@ export const STORIES_FUR: StorySeed[] = [
         emoji: '😊',
         choices: [
           { text: 'O soi di São Paulo.', translation: 'Sou de São Paulo.', next: 'final_bon' },
-          { text: 'O bêf aghe.', translation: 'Eu bebo água.', wrong: 'Isso não responde de onde você é. Use «O soi di…».' },
+          { text: 'O bêf aghe.', translation: 'Eu bebo água.', wrong: 'Isso não responde de onde você é. Use “O soi di…”.' },
         ],
       },
       final_bon: {
@@ -51,7 +51,7 @@ export const STORIES_FUR: StorySeed[] = [
     title: 'Un tai cun Toni',
     emoji: '🍷',
     summary: 'Toni, um amigo de Gorizia, pergunta pela sua família e convida você para comer frico.',
-    cultural_context: 'O frico, de queijo montasio e batata, é o prato típico do Friul; o «tai» é a taça de vinho dos bares das aldeias.',
+    cultural_context: 'O frico, de queijo montasio e batata, é o prato típico do Friul; o “tai” é a taça de vinho dos bares das aldeias.',
     start: 'inicio',
     nodes: {
       inicio: {
@@ -60,7 +60,7 @@ export const STORIES_FUR: StorySeed[] = [
         emoji: '📱',
         choices: [
           { text: 'Sì, o ai un fradi e une sûr.', translation: 'Sim, tenho um irmão e uma irmã.', next: 'fradis' },
-          { text: 'La mê cjase e je grande.', translation: 'A minha casa é grande.', wrong: 'Isso não responde se você tem irmãos. Use «o ai…».' },
+          { text: 'La mê cjase e je grande.', translation: 'A minha casa é grande.', wrong: 'Isso não responde se você tem irmãos. Use “o ai…”.' },
         ],
       },
       fradis: {
@@ -69,7 +69,7 @@ export const STORIES_FUR: StorySeed[] = [
         emoji: '🧀',
         choices: [
           { text: 'Sì, graciis tantis!', translation: 'Sim, muito obrigado!', next: 'final_bon' },
-          { text: 'O soi di São Paulo.', translation: 'Sou de São Paulo.', wrong: 'Toni fez um convite: responda com «sì» ou «no, graciis».' },
+          { text: 'O soi di São Paulo.', translation: 'Sou de São Paulo.', wrong: 'Toni fez um convite: responda com “sì” ou “no, graciis”.' },
         ],
       },
       final_bon: {

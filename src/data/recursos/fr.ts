@@ -36,9 +36,9 @@ export const RECURSOS_FR: LanguageResources = {
       cefr: ['A1', 'C2'],
       format: [
         'Compreensão oral: perguntas de múltipla escolha, das mais fáceis às mais difíceis',
-        'Domínio das estruturas da língua (gramática e vocabulário): múltipla escolha, na versão «tout public»',
+        'Domínio das estruturas da língua (gramática e vocabulário): múltipla escolha, na versão “tout public”',
         'Compreensão escrita: textos curtos e longos, com múltipla escolha',
-        'Expressão escrita e expressão oral: obrigatórias em versões como o TCF Canada e o TCF IRN, opcionais no TCF «tout public»',
+        'Expressão escrita e expressão oral: obrigatórias em versões como o TCF Canada e o TCF IRN, opcionais no TCF “tout public”',
       ],
       validity: '2 anos',
       usedFor: ['imigração para o Canadá (TCF Canada) e o Quebec (TCF Québec)', 'residência e nacionalidade francesa (TCF IRN)', 'universidade na França'],
@@ -234,7 +234,7 @@ export const RECURSOS_FR: LanguageResources = {
       by: 'Édith Piaf',
       year: '1947',
       level: 'B1',
-      why: 'Letra curta e cantada devagar, com o «r» rolado da chanson antiga, que hoje quase não se ouve.',
+      why: 'Letra curta e cantada devagar, com o “r” rolado da chanson antiga, que hoje quase não se ouve.',
     },
     {
       kind: 'musica',
@@ -268,7 +268,7 @@ export const RECURSOS_FR: LanguageResources = {
       by: 'Angèle',
       year: '2018',
       level: 'B2',
-      why: 'Pop atual com letras irônicas e o vocabulário dos jovens da Bélgica; «brol» mesmo é gíria belga para bagunça.',
+      why: 'Pop atual com letras irônicas e o vocabulário dos jovens da Bélgica; “brol” mesmo é gíria belga para bagunça.',
       accent: 'francês da Bélgica',
     },
     {
@@ -332,10 +332,10 @@ export const RECURSOS_FR: LanguageResources = {
     },
   ],
   tips: [
-    'O francês se escreve de um jeito e se fala de outro: as letras finais quase sempre são mudas («ils parlent» soa como «il parle»), mas a ligação (liaison) faz uma consoante aparecer antes de vogal («les‿amis»). Ouça e leia o mesmo texto ao mesmo tempo.',
-    'Treine a diferença entre «u» e «ou» («tu» e «tout», «dessus» e «dessous») e as vogais nasais, que não são iguais às nossas: «vin», «vent» e «vont» são três palavras diferentes.',
-    'Na fala do dia a dia o «ne» da negação quase some («je sais pas»), e «on» substitui «nous» («on y va»). Entenda a forma falada, mas escreva a completa.',
-    'Falsos amigos comuns: «attendre» é esperar, «entendre» é ouvir, «rester» é ficar, «le crayon» é lápis e «la tasse» é xícara.',
-    'Aprenda cada substantivo com o artigo, porque o gênero muitas vezes é o contrário do português: «la mer» (o mar), «la dent» (o dente), «le voyage» (a viagem), «le message» (a mensagem).',
+    'O francês se escreve de um jeito e se fala de outro: as letras finais quase sempre são mudas (“ils parlent” soa como “il parle”), mas a ligação (liaison) faz uma consoante aparecer antes de vogal (“les‿amis”). Ouça e leia o mesmo texto ao mesmo tempo.',
+    'Treine a diferença entre “u” e “ou” (“tu” e “tout”, “dessus” e “dessous”) e as vogais nasais, que não são iguais às nossas: “vin”, “vent” e “vont” são três palavras diferentes.',
+    'Na fala do dia a dia o “ne” da negação quase some (“je sais pas”), e “on” substitui “nous” (“on y va”). Entenda a forma falada, mas escreva a completa.',
+    'Falsos amigos comuns: “attendre” é esperar, “entendre” é ouvir, “rester” é ficar, “le crayon” é lápis e “la tasse” é xícara.',
+    'Aprenda cada substantivo com o artigo, porque o gênero muitas vezes é o contrário do português: “la mer” (o mar), “la dent” (o dente), “le voyage” (a viagem), “le message” (a mensagem).',
   ],
 };

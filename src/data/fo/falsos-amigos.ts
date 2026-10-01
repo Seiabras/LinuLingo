@@ -40,7 +40,7 @@ export const FALSE_FRIENDS_FO: FalseFriend[] = [
   },
   {
     word: 'tá',
-    means: 'então, naquela hora; «tá ið» é quando',
+    means: 'então, naquela hora; “tá ið” é quando',
     looksLike: 'tá (está, na fala)',
     forThat: 'er',
     emoji: '⏳',
@@ -56,7 +56,7 @@ export const FALSE_FRIENDS_FO: FalseFriend[] = [
   },
   {
     word: 'mær',
-    means: 'me, a mim (o dativo de «eg», eu)',
+    means: 'me, a mim (o dativo de “eg”, eu)',
     looksLike: 'mãe',
     forThat: 'mamma, móðir',
     emoji: '🙋',
@@ -88,7 +88,7 @@ export const FALSE_FRIENDS_FO: FalseFriend[] = [
   },
   {
     word: 'gift',
-    means: 'casada, casado (forma feminina e neutra de «giftur»)',
+    means: 'casada, casado (forma feminina e neutra de “giftur”)',
     looksLike: 'gift (presente, em inglês)',
     forThat: 'gáva',
     emoji: '💍',
@@ -104,7 +104,7 @@ export const FALSE_FRIENDS_FO: FalseFriend[] = [
   },
   {
     word: 'barn',
-    means: 'criança; filho, filha (no plural, «børn»)',
+    means: 'criança; filho, filha (no plural, “børn”)',
     looksLike: 'barn (celeiro, em inglês)',
     forThat: 'hlaða',
     emoji: '🧒',
@@ -201,7 +201,7 @@ export const FALSE_FRIENDS_FO: FalseFriend[] = [
   },
   {
     word: 'føt',
-    means: 'roupa (é plural: «føtini», as roupas)',
+    means: 'roupa (é plural: “føtini”, as roupas)',
     looksLike: 'feet (pés, em inglês)',
     forThat: 'føtur',
     emoji: '👕',

@@ -59,7 +59,7 @@ export const SCENARIOS_SW: ScenarioSeed[] = [
     cefr: 'A1',
     register: 'informal',
     persona: 'Juma, colega do curso de suaíli',
-    description: 'Um fim de tarde num café da Kariakoo. Juma é da sua idade: dá para usar «mambo» e «poa» à vontade.',
+    description: 'Um fim de tarde num café da Kariakoo. Juma é da sua idade: dá para usar “mambo” e “poa” à vontade.',
     turns: [
       {
         bot: 'Mambo! Twende tukanywe chai?',
@@ -94,7 +94,7 @@ export const SCENARIOS_SW: ScenarioSeed[] = [
     cefr: 'A2',
     register: 'formal',
     persona: 'Bi Mwanaisha, recepcionista do hotel',
-    description: 'Você chega a um hotel em Stone Town. Seja educado: cumprimente, use «tafadhali» e «naomba».',
+    description: 'Você chega a um hotel em Stone Town. Seja educado: cumprimente, use “tafadhali” e “naomba”.',
     turns: [
       {
         bot: 'Karibu, bwana. Nikusaidie nini?',
@@ -226,7 +226,7 @@ export const SCENARIOS_SW: ScenarioSeed[] = [
     cefr: 'B1',
     register: 'formal',
     persona: 'Mzee Juma, o pai do seu amigo, em Morogoro',
-    description: 'Seu amigo o leva para conhecer a família. Com o pai dele, a etiqueta pede «shikamoo» e palavras de respeito.',
+    description: 'Seu amigo o leva para conhecer a família. Com o pai dele, a etiqueta pede “shikamoo” e palavras de respeito.',
     turns: [
       {
         bot: 'Karibu nyumbani, mwanangu.',

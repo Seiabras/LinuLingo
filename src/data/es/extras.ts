@@ -53,7 +53,7 @@ export const SCENARIOS_ES: ScenarioSeed[] = [
     cefr: 'A1',
     register: 'informal',
     persona: 'Memo, amigo mexicano',
-    description: 'Um amigo leva você à taquería da esquina, na Cidade do México. Entre amigos, «tú»; nada de «usted». E lembre: «tengo mucha hambre», porque «hambre» é feminino.',
+    description: 'Um amigo leva você à taquería da esquina, na Cidade do México. Entre amigos, “tú”; nada de “usted”. E lembre: “tengo mucha hambre”, porque “hambre” é feminino.',
     turns: [
       {
         bot: '¡Qué onda! ¿Tienes hambre? Aquí hacen los mejores tacos de la ciudad.',
@@ -99,7 +99,7 @@ export const SCENARIOS_ES: ScenarioSeed[] = [
     cefr: 'A2',
     register: 'formal',
     persona: 'Valentina, recepcionista',
-    description: 'Faça o check-in num hotel de Cartagena, na Colômbia. Registro formal: «usted». Os colombianos adoram «con mucho gusto» e «a la orden».',
+    description: 'Faça o check-in num hotel de Cartagena, na Colômbia. Registro formal: “usted”. Os colombianos adoram “con mucho gusto” e “a la orden”.',
     turns: [
       {
         bot: 'Buenas tardes, bienvenido. ¿Tiene una reserva?',
@@ -145,7 +145,7 @@ export const SCENARIOS_ES: ScenarioSeed[] = [
     cefr: 'B1',
     register: 'formal',
     persona: 'Carmen Ortega, diretora de RH',
-    description: 'Candidate-se a uma vaga numa empresa de Madri. Na entrevista, «usted» do começo ao fim, mesmo que depois, no escritório, todo mundo se trate por «tú».',
+    description: 'Candidate-se a uma vaga numa empresa de Madri. Na entrevista, “usted” do começo ao fim, mesmo que depois, no escritório, todo mundo se trate por “tú”.',
     turns: [
       {
         bot: 'Buenos días. Siéntese, por favor. Cuénteme un poco sobre usted.',
@@ -200,7 +200,7 @@ export const SCENARIOS_ES: ScenarioSeed[] = [
     cefr: 'A2',
     register: 'formal',
     persona: 'Don Julio, morador de Miraflores',
-    description: 'Você se perdeu em Miraflores, em Lima. Para abordar um desconhecido: «disculpe» e «usted». No Peru, «cuadra» é o quarteirão e «voltear» é virar.',
+    description: 'Você se perdeu em Miraflores, em Lima. Para abordar um desconhecido: “disculpe” e “usted”. No Peru, “cuadra” é o quarteirão e “voltear” é virar.',
     turns: [
       {
         bot: 'Buenas tardes. ¿Lo puedo ayudar en algo? ¿Está perdido?',
@@ -246,7 +246,7 @@ export const SCENARIOS_ES: ScenarioSeed[] = [
     cefr: 'A1',
     register: 'informal',
     persona: 'Kusi, amiga cusquenha',
-    description: 'Uma amiga mostra a você o mercado de San Pedro, em Cusco, no Peru. Entre amigos, «tú». No Peru, a batata é «papa», e o suéter é «chompa».',
+    description: 'Uma amiga mostra a você o mercado de San Pedro, em Cusco, no Peru. Entre amigos, “tú”. No Peru, a batata é “papa”, e o suéter é “chompa”.',
     turns: [
       {
         bot: '¡Hola! ¡Qué bueno que viniste al mercado de San Pedro! ¿Quieres probar un jugo?',
@@ -292,7 +292,7 @@ export const SCENARIOS_ES: ScenarioSeed[] = [
     cefr: 'B1',
     register: 'formal',
     persona: 'Doutor Rojas, clínico geral',
-    description: 'Uma consulta num consultório de Santiago do Chile. Com o médico, «usted». Para dores, «doler» funciona como «gustar»: «me duele la cabeza», «me duelen los pies».',
+    description: 'Uma consulta num consultório de Santiago do Chile. Com o médico, “usted”. Para dores, “doler” funciona como “gustar”: “me duele la cabeza”, “me duelen los pies”.',
     turns: [
       {
         bot: 'Buenos días. Tome asiento, por favor. ¿Qué lo trae por aquí?',
@@ -346,7 +346,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'aqua',
     origin_language: 'Latim',
     cognates: c(['pt', 'aquático / aquário'], ['it', 'acqua'], ['fr', 'eau'], ['ro', 'apă']),
-    evolution_note: 'Em português, «água». É feminina, mas leva «el» no singular: «el agua fría». O artigo muda só para não juntar dois «a» tônicos; no plural volta o «las»: «las aguas».',
+    evolution_note: 'Em português, “água”. É feminina, mas leva “el” no singular: “el agua fría”. O artigo muda só para não juntar dois “a” tônicos; no plural volta o “las”: “las aguas”.',
     transparent: true,
   },
   {
@@ -354,7 +354,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'noctem',
     origin_language: 'Latim',
     cognates: c(['pt', 'noite'], ['it', 'notte'], ['fr', 'nuit'], ['ro', 'noapte']),
-    evolution_note: 'O grupo latino «ct» virou «it» em português e «ch» em espanhol: noctem → noite / noche. O mesmo em «lacte» → leite / leche e «factum» → feito / hecho.',
+    evolution_note: 'O grupo latino “ct” virou “it” em português e “ch” em espanhol: noctem → noite / noche. O mesmo em “lacte” → leite / leche e “factum” → feito / hecho.',
     transparent: true,
   },
   {
@@ -362,7 +362,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'lactem',
     origin_language: 'Latim',
     cognates: c(['pt', 'leite / lácteo'], ['it', 'latte'], ['fr', 'lait'], ['ro', 'lapte']),
-    evolution_note: 'Mesmo caminho de «noche»: «ct» → «ch». E é um heterogenérico: em espanhol é «la leche», feminino, enquanto em português é «o leite».',
+    evolution_note: 'Mesmo caminho de “noche”: “ct” → “ch”. E é um heterogenérico: em espanhol é “la leche”, feminino, enquanto em português é “o leite”.',
     transparent: false,
   },
   {
@@ -370,7 +370,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'oculus',
     origin_language: 'Latim',
     cognates: c(['pt', 'olho / ocular'], ['it', 'occhio'], ['fr', 'œil'], ['ro', 'ochi']),
-    evolution_note: 'O latim falado encurtou «oculus» para «oclu». O «cl» do meio virou «lh» em português e «j» em espanhol, como em «vetulus» → velho / viejo.',
+    evolution_note: 'O latim falado encurtou “oculus” para “oclu”. O “cl” do meio virou “lh” em português e “j” em espanhol, como em “vetulus” → velho / viejo.',
     transparent: false,
   },
   {
@@ -378,7 +378,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'filius',
     origin_language: 'Latim',
     cognates: c(['pt', 'filho'], ['it', 'figlio'], ['fr', 'fils'], ['ro', 'fiu']),
-    evolution_note: 'No castelhano antigo, o «f» inicial latino virou um «h» aspirado, que depois emudeceu: filius → hijo. Por isso o «h» espanhol não se pronuncia.',
+    evolution_note: 'No castelhano antigo, o “f” inicial latino virou um “h” aspirado, que depois emudeceu: filius → hijo. Por isso o “h” espanhol não se pronuncia.',
     transparent: false,
   },
   {
@@ -386,7 +386,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'fabulari',
     origin_language: 'Latim',
     cognates: c(['pt', 'falar / fábula'], ['it', 'favola'], ['en', 'fable']),
-    evolution_note: 'O verbo latino queria dizer «conversar, contar histórias». O português ficou com «falar»; o espanhol trocou o «f» por «h», como em «hijo» e «hacer».',
+    evolution_note: 'O verbo latino queria dizer “conversar, contar histórias”. O português ficou com “falar”; o espanhol trocou o “f” por “h”, como em “hijo” e “hacer”.',
     transparent: false,
   },
   {
@@ -394,7 +394,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'facere',
     origin_language: 'Latim',
     cognates: c(['pt', 'fazer'], ['it', 'fare'], ['fr', 'faire'], ['ro', 'a face']),
-    evolution_note: 'Mais um «f» que virou «h»: facere → hacer. O particípio mostra também o «ct» → «ch»: factum → hecho (em português, feito).',
+    evolution_note: 'Mais um “f” que virou “h”: facere → hacer. O particípio mostra também o “ct” → “ch”: factum → hecho (em português, feito).',
     transparent: false,
   },
   {
@@ -402,7 +402,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'clavis',
     origin_language: 'Latim',
     cognates: c(['pt', 'chave / clave'], ['it', 'chiave'], ['fr', 'clé'], ['ro', 'cheie']),
-    evolution_note: 'No início da palavra, o latim «cl», «pl» e «fl» virou «ch» em português e «ll» em espanhol: chave / llave, chuva / lluvia, chama / llama.',
+    evolution_note: 'No início da palavra, o latim “cl”, “pl” e “fl” virou “ch” em português e “ll” em espanhol: chave / llave, chuva / lluvia, chama / llama.',
     transparent: false,
   },
   {
@@ -410,7 +410,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'pluvia',
     origin_language: 'Latim',
     cognates: c(['pt', 'chuva / pluvial'], ['it', 'pioggia'], ['fr', 'pluie'], ['ro', 'ploaie']),
-    evolution_note: 'O «pl» latino virou «ch» em português e «ll» em espanhol. A forma antiga sobrevive na palavra culta «pluvial», igual nas duas línguas.',
+    evolution_note: 'O “pl” latino virou “ch” em português e “ll” em espanhol. A forma antiga sobrevive na palavra culta “pluvial”, igual nas duas línguas.',
     transparent: false,
   },
   {
@@ -418,7 +418,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'plicare',
     origin_language: 'Latim',
     cognates: c(['pt', 'chegar'], ['it', 'piegare'], ['ro', 'a pleca']),
-    evolution_note: '«Plicare» era «dobrar»; o sentido de «chegar» veio provavelmente dos marinheiros, que dobravam as velas ao aportar. Curiosamente, o romeno «a pleca», da mesma raiz, quer dizer «partir».',
+    evolution_note: '“Plicare” era “dobrar”; o sentido de “chegar” veio provavelmente dos marinheiros, que dobravam as velas ao aportar. Curiosamente, o romeno “a pleca”, da mesma raiz, quer dizer “partir”.',
     transparent: false,
   },
   {
@@ -426,7 +426,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'porta',
     origin_language: 'Latim',
     cognates: c(['pt', 'porta'], ['it', 'porta'], ['fr', 'porte'], ['ro', 'poartă']),
-    evolution_note: 'O «o» aberto e tônico do latim virou «ue» em espanhol: porta → puerta, novus → nuevo. É o mesmo ditongo dos verbos «poder» → «puedo».',
+    evolution_note: 'O “o” aberto e tônico do latim virou “ue” em espanhol: porta → puerta, novus → nuevo. É o mesmo ditongo dos verbos “poder” → “puedo”.',
     transparent: true,
   },
   {
@@ -434,7 +434,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'tempus',
     origin_language: 'Latim',
     cognates: c(['pt', 'tempo'], ['it', 'tempo'], ['fr', 'temps'], ['ro', 'timp']),
-    evolution_note: 'O «e» aberto e tônico virou «ie»: tempus → tiempo, petra → piedra. É o mesmo ditongo dos verbos «pensar» → «pienso».',
+    evolution_note: 'O “e” aberto e tônico virou “ie”: tempus → tiempo, petra → piedra. É o mesmo ditongo dos verbos “pensar” → “pienso”.',
     transparent: true,
   },
   {
@@ -442,7 +442,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'manus',
     origin_language: 'Latim',
     cognates: c(['pt', 'manual / manusear'], ['it', 'mano'], ['fr', 'main']),
-    evolution_note: 'Termina em «-o», mas é feminina, como no latim: «la mano derecha». O português também herdou o feminino: «a mão».',
+    evolution_note: 'Termina em “-o”, mas é feminina, como no latim: “la mano derecha”. O português também herdou o feminino: “a mão”.',
     transparent: true,
   },
   {
@@ -450,7 +450,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'capitia',
     origin_language: 'Latim',
     cognates: c(['pt', 'capital / decapitar'], ['it', 'capo'], ['fr', 'chef']),
-    evolution_note: 'Irmã do português «cabeça». Vem do latim popular «capitia», derivado de «caput» (cabeça). De «caput» vieram também «capital», «capitão» e o francês «chef», o que está à frente.',
+    evolution_note: 'Irmã do português “cabeça”. Vem do latim popular “capitia”, derivado de “caput” (cabeça). De “caput” vieram também “capital”, “capitão” e o francês “chef”, o que está à frente.',
     transparent: true,
   },
   {
@@ -458,7 +458,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'pater',
     origin_language: 'Latim',
     cognates: c(['pt', 'pai / padre / paterno'], ['it', 'padre'], ['fr', 'père']),
-    evolution_note: 'Cuidado: em espanhol, «padre» é o pai, e «los padres» são o pai e a mãe. O sacerdote também se chama «padre», mas no dia a dia é o pai.',
+    evolution_note: 'Cuidado: em espanhol, “padre” é o pai, e “los padres” são o pai e a mãe. O sacerdote também se chama “padre”, mas no dia a dia é o pai.',
     transparent: false,
   },
   {
@@ -466,7 +466,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'civitatem',
     origin_language: 'Latim',
     cognates: c(['pt', 'cidade'], ['ca', 'ciutat'], ['fr', 'cité'], ['ro', 'cetate']),
-    evolution_note: '«Civitas» era o conjunto dos cidadãos. O «-tatem» latino deu «-dad» em espanhol e «-dade» em português: verdad / verdade, libertad / liberdade.',
+    evolution_note: '“Civitas” era o conjunto dos cidadãos. O “-tatem” latino deu “-dad” em espanhol e “-dade” em português: verdad / verdade, libertad / liberdade.',
     transparent: true,
   },
   {
@@ -474,7 +474,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'annus',
     origin_language: 'Latim',
     cognates: c(['pt', 'ano'], ['it', 'anno'], ['fr', 'an'], ['ro', 'an']),
-    evolution_note: 'O «nn» latino virou «ñ»; a própria letra nasceu de um «n» pequeno escrito sobre outro. Não esqueça o til: «ano», sem ele, é outra palavra, e nada elegante.',
+    evolution_note: 'O “nn” latino virou “ñ”; a própria letra nasceu de um “n” pequeno escrito sobre outro. Não esqueça o til: “ano”, sem ele, é outra palavra, e nada elegante.',
     transparent: true,
   },
   {
@@ -482,7 +482,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'caseus',
     origin_language: 'Latim',
     cognates: c(['pt', 'queijo'], ['ro', 'caș'], ['en', 'cheese'], ['de', 'Käse']),
-    evolution_note: 'O italiano e o francês trocaram «caseus» por «formaticus», o queijo feito na forma: «formaggio», «fromage». O espanhol e o português ficaram com o latim antigo.',
+    evolution_note: 'O italiano e o francês trocaram “caseus” por “formaticus”, o queijo feito na forma: “formaggio”, “fromage”. O espanhol e o português ficaram com o latim antigo.',
     transparent: true,
   },
   {
@@ -490,7 +490,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'piscatum',
     origin_language: 'Latim',
     cognates: c(['pt', 'peixe / pescado'], ['it', 'pesce'], ['fr', 'poisson']),
-    evolution_note: '«Piscatum» era «o que foi pescado». Em espanhol, o peixe vivo é «pez», e o que vai para a panela é «pescado».',
+    evolution_note: '“Piscatum” era “o que foi pescado”. Em espanhol, o peixe vivo é “pez”, e o que vai para a panela é “pescado”.',
     transparent: true,
   },
   {
@@ -498,7 +498,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'quaerere',
     origin_language: 'Latim',
     cognates: c(['pt', 'querer / inquérito'], ['it', 'chiedere'], ['en', 'query / question']),
-    evolution_note: 'Em latim era «procurar, pedir». O italiano «chiedere» ainda quer dizer «pedir»; no espanhol e no português, quem procura algo é porque o quer.',
+    evolution_note: 'Em latim era “procurar, pedir”. O italiano “chiedere” ainda quer dizer “pedir”; no espanhol e no português, quem procura algo é porque o quer.',
     transparent: true,
   },
   {
@@ -506,7 +506,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'ventus',
     origin_language: 'Latim',
     cognates: c(['pt', 'vento / ventilar'], ['it', 'vento'], ['fr', 'vent']),
-    evolution_note: 'É a abertura por onde entra o vento. O português preferiu «janela», do latim «ianuella», portinha, diminutivo de «ianua».',
+    evolution_note: 'É a abertura por onde entra o vento. O português preferiu “janela”, do latim “ianuella”, portinha, diminutivo de “ianua”.',
     transparent: false,
   },
   {
@@ -514,7 +514,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'directus',
     origin_language: 'Latim',
     cognates: c(['pt', 'direita / direto'], ['it', 'diritto'], ['fr', 'droit']),
-    evolution_note: 'O «ct» latino virou «ch», como em «noche»: directus → derecho. «Derecho» também é o direito das leis, como em português.',
+    evolution_note: 'O “ct” latino virou “ch”, como em “noche”: directus → derecho. “Derecho” também é o direito das leis, como em português.',
     transparent: true,
   },
   {
@@ -522,7 +522,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'ezker',
     origin_language: 'Basco (provavelmente)',
     cognates: c(['pt', 'esquerda'], ['ca', 'esquerra'], ['eu', 'ezker']),
-    evolution_note: 'Uma das poucas palavras comuns que vêm, ao que tudo indica, do basco, a língua pré-romana da Península. O latim «sinister» ficou só em «sinistro».',
+    evolution_note: 'Uma das poucas palavras comuns que vêm, ao que tudo indica, do basco, a língua pré-romana da Península. O latim “sinister” ficou só em “sinistro”.',
     transparent: true,
   },
   {
@@ -530,7 +530,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'perro',
     origin_language: 'Origem incerta',
     cognates: c(['pt', 'canino'], ['la', 'canis']),
-    evolution_note: 'Ninguém sabe ao certo de onde veio: é uma palavra só do espanhol. O latim «canis», que deu o nosso «cão», ficou no espanhol só no poético «can». E atenção: «cachorro» em espanhol é o filhote.',
+    evolution_note: 'Ninguém sabe ao certo de onde veio: é uma palavra só do espanhol. O latim “canis”, que deu o nosso “cão”, ficou no espanhol só no poético “can”. E atenção: “cachorro” em espanhol é o filhote.',
     transparent: false,
   },
   {
@@ -538,7 +538,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'tripalium',
     origin_language: 'Latim',
     cognates: c(['pt', 'trabalho'], ['fr', 'travail'], ['ca', 'treball']),
-    evolution_note: 'Vem de «trabajar», do latim popular «tripaliare», «torturar», derivado de «tripalium», um instrumento de três paus. O cansaço virou o próprio trabalho.',
+    evolution_note: 'Vem de “trabajar”, do latim popular “tripaliare”, “torturar”, derivado de “tripalium”, um instrumento de três paus. O cansaço virou o próprio trabalho.',
     transparent: true,
   },
   {
@@ -546,7 +546,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'maneana',
     origin_language: 'Latim',
     cognates: c(['la', 'mane'], ['it', 'domani'], ['fr', 'demain']),
-    evolution_note: 'Do latim «mane», cedo, veio «(hora) maneana», a hora cedinho. É a nossa «manhã», com o «ñ» no lugar do «nh». Em espanhol, «mañana» é a manhã e também o amanhã: «mañana por la mañana».',
+    evolution_note: 'Do latim “mane”, cedo, veio “(hora) maneana”, a hora cedinho. É a nossa “manhã”, com o “ñ” no lugar do “nh”. Em espanhol, “mañana” é a manhã e também o amanhã: “mañana por la mañana”.',
     transparent: true,
   },
   {
@@ -554,7 +554,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'ieiunium',
     origin_language: 'Latim',
     cognates: c(['pt', 'jejum / desjejum'], ['fr', 'déjeuner'], ['en', 'breakfast']),
-    evolution_note: 'O «des-» desfaz o «ayuno», o jejum da noite. O português tem «desjejum», e o inglês «breakfast» é a mesma ideia: quebrar o jejum.',
+    evolution_note: 'O “des-” desfaz o “ayuno”, o jejum da noite. O português tem “desjejum”, e o inglês “breakfast” é a mesma ideia: quebrar o jejum.',
     transparent: false,
   },
   {
@@ -562,7 +562,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'plagia',
     origin_language: 'Latim',
     cognates: c(['pt', 'praia'], ['it', 'spiaggia'], ['ca', 'platja']),
-    evolution_note: 'Do latim tardio «plagia», vindo do grego «plágios», oblíquo, inclinado, como a faixa de areia que desce até o mar.',
+    evolution_note: 'Do latim tardio “plagia”, vindo do grego “plágios”, oblíquo, inclinado, como a faixa de areia que desce até o mar.',
     transparent: true,
   },
   {
@@ -570,7 +570,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'qahwa',
     origin_language: 'Italiano (do turco e do árabe)',
     cognates: c(['pt', 'café'], ['it', 'caffè'], ['tr', 'kahve'], ['ar', 'qahwa']),
-    evolution_note: 'O árabe «qahwa» virou «kahve» em turco e chegou à Europa pelos comerciantes de Veneza. Colômbia e outros países de língua espanhola estão entre os grandes produtores do mundo.',
+    evolution_note: 'O árabe “qahwa” virou “kahve” em turco e chegou à Europa pelos comerciantes de Veneza. Colômbia e outros países de língua espanhola estão entre os grandes produtores do mundo.',
     transparent: true,
   },
   {
@@ -578,7 +578,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'avion',
     origin_language: 'Francês (do latim)',
     cognates: c(['pt', 'aviador'], ['fr', 'avion'], ['la', 'avis']),
-    evolution_note: 'Palavra criada no fim do século XIX pelo francês Clément Ader, a partir do latim «avis», ave. O «-ão» português corresponde ao «-ón» espanhol: avião / avión, canção / canción.',
+    evolution_note: 'Palavra criada no fim do século XIX pelo francês Clément Ader, a partir do latim “avis”, ave. O “-ão” português corresponde ao “-ón” espanhol: avião / avión, canção / canción.',
     transparent: true,
   },
   {
@@ -586,7 +586,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'kocsi',
     origin_language: 'Húngaro',
     cognates: c(['pt', 'coche'], ['de', 'Kutsche'], ['en', 'coach']),
-    evolution_note: 'Vem de Kocs, uma aldeia húngara famosa por suas carruagens. Na Espanha, «coche» é o carro; em boa parte da América, diz-se «carro» ou «auto».',
+    evolution_note: 'Vem de Kocs, uma aldeia húngara famosa por suas carruagens. Na Espanha, “coche” é o carro; em boa parte da América, diz-se “carro” ou “auto”.',
     transparent: false,
   },
   // ——— arabismos: quase oito séculos de al-Andalus ———
@@ -595,7 +595,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'al-mujadda',
     origin_language: 'Árabe',
     cognates: c(['pt', 'almofada'], ['ar', 'mikhadda']),
-    evolution_note: 'Vem de «jadd», bochecha: é onde se apoia o rosto. O «al-» do começo é o artigo árabe, grudado na palavra, como em tantos arabismos.',
+    evolution_note: 'Vem de “jadd”, bochecha: é onde se apoia o rosto. O “al-” do começo é o artigo árabe, grudado na palavra, como em tantos arabismos.',
     transparent: false,
   },
   {
@@ -603,7 +603,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'az-zayt',
     origin_language: 'Árabe',
     cognates: c(['pt', 'azeite'], ['ar', 'zayt']),
-    evolution_note: 'Em espanhol, «aceite» é qualquer óleo, não só o de oliva: «aceite de girasol» é o óleo de girassol. O azeite propriamente dito é «aceite de oliva».',
+    evolution_note: 'Em espanhol, “aceite” é qualquer óleo, não só o de oliva: “aceite de girasol” é o óleo de girassol. O azeite propriamente dito é “aceite de oliva”.',
     transparent: false,
   },
   {
@@ -611,7 +611,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'az-zaytuna',
     origin_language: 'Árabe',
     cognates: c(['pt', 'azeitona'], ['ar', 'zaytūna']),
-    evolution_note: 'A mesma raiz de «aceite». A árvore tem nome latino, «olivo», e o fruto tem nome árabe: um retrato das duas culturas na Península.',
+    evolution_note: 'A mesma raiz de “aceite”. A árvore tem nome latino, “olivo”, e o fruto tem nome árabe: um retrato das duas culturas na Península.',
     transparent: false,
   },
   {
@@ -619,7 +619,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'as-sukkar',
     origin_language: 'Árabe (do sânscrito)',
     cognates: c(['it', 'zucchero'], ['en', 'sugar'], ['sa', 'śarkarā']),
-    evolution_note: 'Irmã do português «açúcar». Uma longa viagem: do sânscrito «śarkarā» ao persa, ao árabe e à Península. Em espanhol aceita os dois gêneros: «el azúcar» ou «la azúcar morena».',
+    evolution_note: 'Irmã do português “açúcar”. Uma longa viagem: do sânscrito “śarkarā” ao persa, ao árabe e à Península. Em espanhol aceita os dois gêneros: “el azúcar” ou “la azúcar morena”.',
     transparent: true,
   },
   {
@@ -627,7 +627,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'law šá lláh',
     origin_language: 'Árabe',
     cognates: c(['pt', 'oxalá'], ['ar', 'in šāʾ allāh']),
-    evolution_note: 'Significava «se Deus quiser». Em espanhol é muito mais usado que o nosso «oxalá» e pede subjuntivo: «ojalá que llueva».',
+    evolution_note: 'Significava “se Deus quiser”. Em espanhol é muito mais usado que o nosso “oxalá” e pede subjuntivo: “ojalá que llueva”.',
     transparent: true,
   },
   {
@@ -635,7 +635,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'al-qadi',
     origin_language: 'Árabe',
     cognates: c(['pt', 'cádi'], ['ar', 'qāḍī']),
-    evolution_note: 'O «cádi» era o juiz muçulmano; na Espanha cristã, o título passou ao chefe da prefeitura. «El alcalde» é o prefeito. Não confunda com «alcaide», de outra raiz árabe.',
+    evolution_note: 'O “cádi” era o juiz muçulmano; na Espanha cristã, o título passou ao chefe da prefeitura. “El alcalde” é o prefeito. Não confunda com “alcaide”, de outra raiz árabe.',
     transparent: false,
   },
   {
@@ -643,7 +643,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'ad-day’a',
     origin_language: 'Árabe',
     cognates: c(['pt', 'aldeia'], ['ar', 'ḍayʿa']),
-    evolution_note: 'Em árabe era uma propriedade rural, uma granja. O artigo «al-» se assimilou ao «d»: «ad-day’a».',
+    evolution_note: 'Em árabe era uma propriedade rural, uma granja. O artigo “al-” se assimilou ao “d”: “ad-day’a”.',
     transparent: true,
   },
   {
@@ -651,7 +651,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'ar-ruzz',
     origin_language: 'Árabe (do grego)',
     cognates: c(['pt', 'arroz'], ['it', 'riso'], ['el', 'óryza']),
-    evolution_note: 'Os árabes difundiram o cultivo do arroz na Península. O italiano «riso» veio direto do latim e do grego, sem o artigo árabe.',
+    evolution_note: 'Os árabes difundiram o cultivo do arroz na Península. O italiano “riso” veio direto do latim e do grego, sem o artigo árabe.',
     transparent: true,
   },
   {
@@ -659,7 +659,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'naranja',
     origin_language: 'Árabe (do persa)',
     cognates: c(['pt', 'laranja'], ['it', 'arancia'], ['fr', 'orange'], ['fa', 'nārang']),
-    evolution_note: 'Do persa «nārang», pelo árabe. O português trocou o «n» por «l» (laranja), e o francês «orange» perdeu o «n» inicial.',
+    evolution_note: 'Do persa “nārang”, pelo árabe. O português trocou o “n” por “l” (laranja), e o francês “orange” perdeu o “n” inicial.',
     transparent: false,
   },
   {
@@ -675,7 +675,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'barri',
     origin_language: 'Árabe',
     cognates: c(['pt', 'bairro'], ['ca', 'barri']),
-    evolution_note: 'Em árabe queria dizer «de fora»: eram as partes da cidade fora das muralhas. Hoje é o bairro de qualquer cidade.',
+    evolution_note: 'Em árabe queria dizer “de fora”: eram as partes da cidade fora das muralhas. Hoje é o bairro de qualquer cidade.',
     transparent: true,
   },
   {
@@ -683,7 +683,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'hatta',
     origin_language: 'Árabe',
     cognates: c(['pt', 'até'], ['ar', 'ḥattā']),
-    evolution_note: 'Uma preposição de todo dia vinda do árabe: «hasta mañana», «hasta luego». O português «até» provavelmente tem a mesma origem.',
+    evolution_note: 'Uma preposição de todo dia vinda do árabe: “hasta mañana”, “hasta luego”. O português “até” provavelmente tem a mesma origem.',
     transparent: false,
   },
   {
@@ -691,7 +691,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'aš-šiṭranǧ',
     origin_language: 'Árabe (do sânscrito)',
     cognates: c(['pt', 'xadrez'], ['sa', 'caturaṅga']),
-    evolution_note: 'O jogo nasceu na Índia com o nome «caturaṅga», as quatro partes do exército. Chegou à Península com os árabes, e a palavra junto.',
+    evolution_note: 'O jogo nasceu na Índia com o nome “caturaṅga”, as quatro partes do exército. Chegou à Península com os árabes, e a palavra junto.',
     transparent: false,
   },
   {
@@ -699,7 +699,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'al-majzan',
     origin_language: 'Árabe',
     cognates: c(['pt', 'armazém'], ['it', 'magazzino'], ['fr', 'magasin'], ['en', 'magazine']),
-    evolution_note: 'Era o depósito. Sem o artigo árabe, a palavra foi ao italiano e ao francês, e o inglês «magazine» ganhou o sentido de revista: um «depósito» de textos.',
+    evolution_note: 'Era o depósito. Sem o artigo árabe, a palavra foi ao italiano e ao francês, e o inglês “magazine” ganhou o sentido de revista: um “depósito” de textos.',
     transparent: false,
   },
   // ——— línguas indígenas americanas ———
@@ -708,7 +708,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'xocolatl',
     origin_language: 'Náuatle',
     cognates: c(['pt', 'chocolate'], ['en', 'chocolate'], ['fr', 'chocolat']),
-    evolution_note: 'Vem do náuatle, a língua dos astecas; a forma exata é discutida, e costuma-se citar «xocolatl». Os mexicas bebiam o cacau amargo, com pimenta; o açúcar veio depois, com os espanhóis.',
+    evolution_note: 'Vem do náuatle, a língua dos astecas; a forma exata é discutida, e costuma-se citar “xocolatl”. Os mexicas bebiam o cacau amargo, com pimenta; o açúcar veio depois, com os espanhóis.',
     transparent: true,
   },
   {
@@ -716,7 +716,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'tomatl',
     origin_language: 'Náuatle',
     cognates: c(['pt', 'tomate'], ['en', 'tomato'], ['fr', 'tomate']),
-    evolution_note: 'O náuatle perdeu o «-tl» final ao entrar no espanhol, como em «chocolate». No México, o tomate vermelho se chama «jitomate», de «xitomatl».',
+    evolution_note: 'O náuatle perdeu o “-tl” final ao entrar no espanhol, como em “chocolate”. No México, o tomate vermelho se chama “jitomate”, de “xitomatl”.',
     transparent: true,
   },
   {
@@ -724,7 +724,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'ahuacatl',
     origin_language: 'Náuatle',
     cognates: c(['pt', 'abacate'], ['en', 'avocado'], ['fr', 'avocat']),
-    evolution_note: 'O português «abacate» veio do espanhol. No Peru, na Bolívia, no Chile e na Argentina, a fruta se chama «palta», palavra do quíchua.',
+    evolution_note: 'O português “abacate” veio do espanhol. No Peru, na Bolívia, no Chile e na Argentina, a fruta se chama “palta”, palavra do quíchua.',
     transparent: false,
   },
   {
@@ -732,7 +732,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'chilli',
     origin_language: 'Náuatle',
     cognates: c(['pt', 'pimenta'], ['en', 'chili']),
-    evolution_note: 'No México, «chile» é a pimenta. Não tem relação com o nome do país Chile, cuja origem é outra e ainda discutida.',
+    evolution_note: 'No México, “chile” é a pimenta. Não tem relação com o nome do país Chile, cuja origem é outra e ainda discutida.',
     transparent: false,
   },
   {
@@ -748,7 +748,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'papa',
     origin_language: 'Quíchua',
     cognates: c(['pt', 'batata'], ['en', 'potato']),
-    evolution_note: 'Na América se diz «papa»; na Espanha, «patata», mistura de «papa» com «batata», palavra taína que era a batata-doce. E cuidado: «la papa» é o tubérculo; «el Papa», o pontífice.',
+    evolution_note: 'Na América se diz “papa”; na Espanha, “patata”, mistura de “papa” com “batata”, palavra taína que era a batata-doce. E cuidado: “la papa” é o tubérculo; “el Papa”, o pontífice.',
     transparent: false,
   },
   {
@@ -764,7 +764,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'llama',
     origin_language: 'Quíchua',
     cognates: c(['pt', 'lhama'], ['en', 'llama']),
-    evolution_note: 'O animal andino tem nome quíchua. Por coincidência, existe outra «llama», a chama do fogo, que vem do latim «flamma», com o mesmo «fl» → «ll» de «lluvia».',
+    evolution_note: 'O animal andino tem nome quíchua. Por coincidência, existe outra “llama”, a chama do fogo, que vem do latim “flamma”, com o mesmo “fl” → “ll” de “lluvia”.',
     transparent: true,
   },
   {
@@ -780,7 +780,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'kancha',
     origin_language: 'Quíchua',
     cognates: c(['pt', 'cancha']),
-    evolution_note: 'Em quíchua era um recinto cercado. Hoje é a quadra ou o campo de esporte: «cancha de fútbol». No Sul do Brasil, «cancha» também se usa.',
+    evolution_note: 'Em quíchua era um recinto cercado. Hoje é a quadra ou o campo de esporte: “cancha de fútbol”. No Sul do Brasil, “cancha” também se usa.',
     transparent: false,
   },
   {
@@ -788,7 +788,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'chuqllu',
     origin_language: 'Quíchua',
     cognates: c(['pt', 'milho verde']),
-    evolution_note: 'É a espiga de milho verde nos Andes e no Cone Sul. No México, a mesma espiga é o «elote», palavra do náuatle.',
+    evolution_note: 'É a espiga de milho verde nos Andes e no Cone Sul. No México, a mesma espiga é o “elote”, palavra do náuatle.',
     transparent: false,
   },
   {
@@ -796,7 +796,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'hurakán',
     origin_language: 'Taíno',
     cognates: c(['en', 'hurricane'], ['fr', 'ouragan'], ['it', 'uragano']),
-    evolution_note: 'O taíno era a língua das Grandes Antilhas, a primeira que os espanhóis ouviram na América. A palavra passou do espanhol para quase toda a Europa; em português, virou «furacão».',
+    evolution_note: 'O taíno era a língua das Grandes Antilhas, a primeira que os espanhóis ouviram na América. A palavra passou do espanhol para quase toda a Europa; em português, virou “furacão”.',
     transparent: true,
   },
   {
@@ -812,7 +812,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'hamaca',
     origin_language: 'Taíno',
     cognates: c(['pt', 'rede'], ['en', 'hammock'], ['fr', 'hamac']),
-    evolution_note: 'A rede de dormir dos povos do Caribe. O português preferiu «rede», mas o inglês e o francês pegaram a palavra taína, pelo espanhol.',
+    evolution_note: 'A rede de dormir dos povos do Caribe. O português preferiu “rede”, mas o inglês e o francês pegaram a palavra taína, pelo espanhol.',
     transparent: false,
   },
   {
@@ -820,7 +820,7 @@ export const ETYMOLOGY_ES: EtymologySeed[] = [
     root_word: 'mahís',
     origin_language: 'Taíno',
     cognates: c(['pt', 'maís / milho'], ['en', 'maize'], ['fr', 'maïs']),
-    evolution_note: 'O espanhol usou a palavra taína. O português deu ao cereal americano o nome de um grão antigo do Velho Mundo, o latim «milium», e ficou com «milho».',
+    evolution_note: 'O espanhol usou a palavra taína. O português deu ao cereal americano o nome de um grão antigo do Velho Mundo, o latim “milium”, e ficou com “milho”.',
     transparent: false,
   },
 ];

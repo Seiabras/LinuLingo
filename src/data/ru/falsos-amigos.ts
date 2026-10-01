@@ -88,7 +88,7 @@ export const FALSE_FRIENDS_RU: FalseFriend[] = [
     looksLike: 'roto (rasgado)',
     forThat: 'рваный',
     emoji: '👄',
-    example: ['Открой рот и скажи «а».', 'Abra a boca e diga "ah".'],
+    example: ['Открой рот и скажи “а”.', 'Abra a boca e diga "ah".'],
   },
   {
     word: 'дар',

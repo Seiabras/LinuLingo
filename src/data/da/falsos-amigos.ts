@@ -16,7 +16,7 @@ export const FALSE_FRIENDS_DA: FalseFriend[] = [
   },
   {
     word: 'gift',
-    means: 'casado (adjetivo); como substantivo, «gift» é veneno',
+    means: 'casado (adjetivo); como substantivo, “gift” é veneno',
     looksLike: 'gift (presente, em inglês)',
     forThat: 'en gave',
     emoji: '💍',
@@ -40,7 +40,7 @@ export const FALSE_FRIENDS_DA: FalseFriend[] = [
   },
   {
     word: 'rar',
-    means: 'simpático, gentil, bonzinho (cuidado: no norueguês e no sueco, «rar» quer dizer outra coisa)',
+    means: 'simpático, gentil, bonzinho (cuidado: no norueguês e no sueco, “rar” quer dizer outra coisa)',
     looksLike: 'raro',
     forThat: 'sjælden',
     emoji: '😊',
@@ -48,7 +48,7 @@ export const FALSE_FRIENDS_DA: FalseFriend[] = [
   },
   {
     word: 'barn',
-    means: 'criança; filho, filha (no plural, «børn»)',
+    means: 'criança; filho, filha (no plural, “børn”)',
     looksLike: 'barn (celeiro, em inglês)',
     forThat: 'en lade',
     emoji: '🧒',
@@ -56,7 +56,7 @@ export const FALSE_FRIENDS_DA: FalseFriend[] = [
   },
   {
     word: 'mad',
-    means: 'comida (o «d» final é suave e quase some: [mæð̞])',
+    means: 'comida (o “d” final é suave e quase some: [mæð̞])',
     looksLike: 'mad (louco, em inglês)',
     forThat: 'skør, vanvittig',
     emoji: '🍲',
@@ -73,14 +73,14 @@ export const FALSE_FRIENDS_DA: FalseFriend[] = [
   {
     word: 'frokost',
     means: 'almoço: a refeição do meio do dia, muitas vezes com smørrebrød, os sanduíches abertos',
-    looksLike: 'café da manhã (que é o sentido de «frokost» no norueguês e de «frukost» no sueco)',
+    looksLike: 'café da manhã (que é o sentido de “frokost” no norueguês e de “frukost” no sueco)',
     forThat: 'morgenmad',
     emoji: '🥪',
     example: ['Vi spiser frokost klokken tolv i kantinen.', 'A gente almoça ao meio-dia no refeitório.'],
   },
   {
     word: 'sort',
-    means: 'preto; como substantivo, «en sort» é um tipo, uma espécie',
+    means: 'preto; como substantivo, “en sort” é um tipo, uma espécie',
     looksLike: 'sorte',
     forThat: 'held',
     emoji: '⚫',
@@ -88,7 +88,7 @@ export const FALSE_FRIENDS_DA: FalseFriend[] = [
   },
   {
     word: 'time',
-    means: 'hora («en time» = uma hora); também aula ou consulta marcada',
+    means: 'hora (“en time” = uma hora); também aula ou consulta marcada',
     looksLike: 'time (de futebol); time (tempo, em inglês)',
     forThat: 'et hold; tid',
     emoji: '⏰',
@@ -120,7 +120,7 @@ export const FALSE_FRIENDS_DA: FalseFriend[] = [
   },
   {
     word: 'konkurs',
-    means: 'falência («gå konkurs» = falir)',
+    means: 'falência (“gå konkurs” = falir)',
     looksLike: 'concurso',
     forThat: 'en konkurrence',
     emoji: '📉',
@@ -136,7 +136,7 @@ export const FALSE_FRIENDS_DA: FalseFriend[] = [
   },
   {
     word: 'lov',
-    means: 'lei; também permissão («have lov til» = ter permissão, poder)',
+    means: 'lei; também permissão (“have lov til” = ter permissão, poder)',
     looksLike: 'love (amor, em inglês)',
     forThat: 'kærlighed',
     emoji: '⚖️',
@@ -160,7 +160,7 @@ export const FALSE_FRIENDS_DA: FalseFriend[] = [
   },
   {
     word: 'eventuelt',
-    means: 'se for o caso, possivelmente (abreviado «evt.»)',
+    means: 'se for o caso, possivelmente (abreviado “evt.”)',
     looksLike: 'eventually (finalmente, em inglês)',
     forThat: 'til sidst, endelig',
     emoji: '🤷',
@@ -176,7 +176,7 @@ export const FALSE_FRIENDS_DA: FalseFriend[] = [
   },
   {
     word: 'handle',
-    means: 'fazer compras («handle ind»); também negociar e agir; «handle om» = tratar de',
+    means: 'fazer compras (“handle ind”); também negociar e agir; “handle om” = tratar de',
     looksLike: 'handle (lidar com, em inglês)',
     forThat: 'at klare, at håndtere',
     emoji: '🛒',
@@ -192,7 +192,7 @@ export const FALSE_FRIENDS_DA: FalseFriend[] = [
   },
   {
     word: 'fin',
-    means: 'bonito, bom, elegante; «Fint!» = ótimo!',
+    means: 'bonito, bom, elegante; “Fint!” = ótimo!',
     looksLike: 'fino (magro, estreito)',
     forThat: 'tynd',
     emoji: '👌',
@@ -208,7 +208,7 @@ export const FALSE_FRIENDS_DA: FalseFriend[] = [
   },
   {
     word: 'kusine',
-    means: 'prima (o primo é «fætter»)',
+    means: 'prima (o primo é “fætter”)',
     looksLike: 'cozinha',
     forThat: 'et køkken',
     emoji: '👧',
@@ -272,7 +272,7 @@ export const FALSE_FRIENDS_DA: FalseFriend[] = [
   },
   {
     word: 'pude',
-    means: 'almofada; travesseiro («hovedpude»)',
+    means: 'almofada; travesseiro (“hovedpude”)',
     looksLike: 'pude (do verbo poder)',
     forThat: 'kunne',
     emoji: '🛏️',
@@ -280,7 +280,7 @@ export const FALSE_FRIENDS_DA: FalseFriend[] = [
   },
   {
     word: 'pas',
-    means: 'passaporte; «Pas på!» = cuidado!',
+    means: 'passaporte; “Pas på!” = cuidado!',
     looksLike: 'paz',
     forThat: 'fred',
     emoji: '🛂',
@@ -288,7 +288,7 @@ export const FALSE_FRIENDS_DA: FalseFriend[] = [
   },
   {
     word: 'salg',
-    means: 'venda; «udsalg» = liquidação',
+    means: 'venda; “udsalg” = liquidação',
     looksLike: 'sal',
     forThat: 'salt',
     emoji: '🏷️',

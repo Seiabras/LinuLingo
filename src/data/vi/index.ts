@@ -37,5 +37,5 @@ export const VIETNAMITA: LanguagePack = {
   phrases: { hi: 'Xin chào!', thanks: 'Cảm ơn!', letsStart: ['Bắt đầu thôi!', 'Vamos começar!'] },
   formalMarkers: 'dạ, thưa, xin phép',
   cognateNote:
-    'O vietnamita é uma língua austro-asiática, tonal e isolante (sem conjugação, como o indonésio), sem parentesco com o português. Mas séculos de colonização francesa deixaram palavras emprestadas, como «cà phê» (café), que remonta à mesma raiz árabe do português.',
+    'O vietnamita é uma língua austro-asiática, tonal e isolante (sem conjugação, como o indonésio), sem parentesco com o português. Mas séculos de colonização francesa deixaram palavras emprestadas, como “cà phê” (café), que remonta à mesma raiz árabe do português.',
 };

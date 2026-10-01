@@ -16,13 +16,13 @@ test('palavras irmãs: ids únicos, cada língua uma vez por família, todas com
 
 test('palavras irmãs: parecer não é ser parente, e não parecer não impede', () => {
   const fam = (id: string) => WORD_FAMILIES.find((f) => f.id === id)!;
-  assert.ok(!areSiblings(fam('dia'), 'pt', 'en'), '«day» não é irmão de «dia»');
-  assert.ok(areSiblings(fam('dia'), 'pt', 'ru'), '«день» é irmão de «dia»');
-  assert.ok(!areSiblings(fam('agua'), 'pt', 'sv'), '«vatten» é de outra raiz');
-  assert.ok(areSiblings(fam('agua'), 'ro', 'it'), '«apă» e «acqua» vêm de aqua');
+  assert.ok(!areSiblings(fam('dia'), 'pt', 'en'), '“day” não é irmão de “dia”');
+  assert.ok(areSiblings(fam('dia'), 'pt', 'ru'), '“день” é irmão de “dia”');
+  assert.ok(!areSiblings(fam('agua'), 'pt', 'sv'), '“vatten” é de outra raiz');
+  assert.ok(areSiblings(fam('agua'), 'ro', 'it'), '“apă” e “acqua” vêm de aqua');
   assert.ok(areSiblings(fam('noite'), 'ru', 'sv'));
-  assert.ok(!areSiblings(fam('coracao'), 'ro', 'pt'), '«inimă» vem de anima');
-  assert.equal(wordIn(fam('mar'), 'sv')?.word, 'hav', '«hav» é mar, não água');
+  assert.ok(!areSiblings(fam('coracao'), 'ro', 'pt'), '“inimă” vem de anima');
+  assert.equal(wordIn(fam('mar'), 'sv')?.word, 'hav', '“hav” é mar, não água');
   const langs: KinLang[] = ['ro', 'ru', 'es', 'it', 'sv', 'nb', 'da', 'is', 'fo'];
   for (const l of langs) assert.ok(WORD_FAMILIES.filter((f) => areSiblings(f, l, 'pt')).length >= 5, `${l}: poucas irmãs do português para o jogo`);
 });
@@ -33,6 +33,6 @@ test('palavras irmãs: o finlandês e o estoniano são de outra família (nenhum
     assert.equal(WORD_FAMILIES.filter((f) => areSiblings(f, l, 'pt')).length, 0, `${l}: tem irmã do português?`);
   }
   const fam = (id: string) => WORD_FAMILIES.find((f) => f.id === id)!;
-  assert.ok(areSiblings(fam('noite'), 'is', 'sv'), '«nótt» e «natt»');
-  assert.ok(!areSiblings(fam('comer'), 'da', 'sv'), '«spise» não vem de *etaną');
+  assert.ok(areSiblings(fam('noite'), 'is', 'sv'), '“nótt” e “natt”');
+  assert.ok(!areSiblings(fam('comer'), 'da', 'sv'), '“spise” não vem de *etaną');
 });

@@ -16,7 +16,7 @@ export const RECURSOS_IG: LanguageResources = {
       flag: '🇳🇬',
       main: true,
       levels:
-        'Uma prova só, sem níveis: as notas vão de A1 (excelente) a F9 (reprovado), e de C6 para cima conta como «credit», a nota que as universidades nigerianas pedem. Não há tabela oficial com o QECR: a faixa indicada é uma estimativa, porque a prova é feita para quem tem o igbo como língua materna',
+        'Uma prova só, sem níveis: as notas vão de A1 (excelente) a F9 (reprovado), e de C6 para cima conta como “credit”, a nota que as universidades nigerianas pedem. Não há tabela oficial com o QECR: a faixa indicada é uma estimativa, porque a prova é feita para quem tem o igbo como língua materna',
       cefr: ['B2', 'C1'],
       format: [
         'Prova objetiva: questões de múltipla escolha sobre a língua (sons, gramática e vocabulário), a literatura e a cultura igbos',
@@ -25,8 +25,8 @@ export const RECURSOS_IG: LanguageResources = {
       validity: 'Não expira',
       usedFor: ['conclusão do ensino médio na Nigéria', 'ingresso em universidades nigerianas, junto com o exame UTME, da JAMB'],
       where:
-        'Só na Nigéria, em escolas e centros credenciados pela WAEC; não há aplicação no Brasil. Quem não estuda numa escola nigeriana se inscreve na edição para candidatos externos («private candidates»), que acontece em outra época do ano.',
-      tip: 'Não é uma prova para estrangeiros: os textos, os livros e as perguntas de cultura são os mesmos que os alunos nigerianos estudam na escola. Mesmo sem fazer a prova, o programa (syllabus) publicado pela WAEC é um bom roteiro para quem já passou do intermediário, e os livros de questões antigas («past questions»), vendidos na Nigéria, servem de simulado.',
+        'Só na Nigéria, em escolas e centros credenciados pela WAEC; não há aplicação no Brasil. Quem não estuda numa escola nigeriana se inscreve na edição para candidatos externos (“private candidates”), que acontece em outra época do ano.',
+      tip: 'Não é uma prova para estrangeiros: os textos, os livros e as perguntas de cultura são os mesmos que os alunos nigerianos estudam na escola. Mesmo sem fazer a prova, o programa (syllabus) publicado pela WAEC é um bom roteiro para quem já passou do intermediário, e os livros de questões antigas (“past questions”), vendidos na Nigéria, servem de simulado.',
       url: 'https://www.waecnigeria.org',
     },
     {
@@ -36,7 +36,7 @@ export const RECURSOS_IG: LanguageResources = {
       org: 'National Examinations Council (NECO), órgão do governo federal da Nigéria',
       flag: '🇳🇬',
       levels:
-        'Uma prova só, sem níveis, com a mesma escala do WASSCE: de A1 (excelente) a F9 (reprovado), com «credit» de C6 para cima. A faixa do QECR é uma estimativa, porque a prova é feita para falantes nativos',
+        'Uma prova só, sem níveis, com a mesma escala do WASSCE: de A1 (excelente) a F9 (reprovado), com “credit” de C6 para cima. A faixa do QECR é uma estimativa, porque a prova é feita para falantes nativos',
       cefr: ['B2', 'C1'],
       format: [
         'Prova objetiva: questões de múltipla escolha sobre língua, literatura e cultura igbos',
@@ -45,7 +45,7 @@ export const RECURSOS_IG: LanguageResources = {
       validity: 'Não expira',
       usedFor: ['conclusão do ensino médio na Nigéria, com o mesmo valor do WASSCE', 'ingresso em universidades nigerianas'],
       where: 'Só na Nigéria. Há a edição interna, para alunos das escolas, e a externa, para candidatos particulares; não há aplicação no Brasil.',
-      tip: 'Muitos alunos nigerianos fazem o WASSCE e o NECO no mesmo ano, para ter duas chances de tirar «credit». Para quem estuda de fora, vale o mesmo conselho do WASSCE: use o programa e as questões antigas como material de estudo, não como meta.',
+      tip: 'Muitos alunos nigerianos fazem o WASSCE e o NECO no mesmo ano, para ter duas chances de tirar “credit”. Para quem estuda de fora, vale o mesmo conselho do WASSCE: use o programa e as questões antigas como material de estudo, não como meta.',
       url: 'https://www.neco.gov.ng',
     },
   ],
@@ -89,7 +89,7 @@ export const RECURSOS_IG: LanguageResources = {
       title: 'Ukwa Ruo Oge Ya Ọ Daa',
       by: 'Tony Ubesie',
       level: 'B2',
-      why: 'Romance de um dos autores mais lidos da literatura em igbo, que escreveu vários livros populares nos anos 1970. O título é um provérbio: «quando chega a hora, a fruta-pão cai».',
+      why: 'Romance de um dos autores mais lidos da literatura em igbo, que escreveu vários livros populares nos anos 1970. O título é um provérbio: “quando chega a hora, a fruta-pão cai”.',
     },
     {
       kind: 'livro',
@@ -106,7 +106,7 @@ export const RECURSOS_IG: LanguageResources = {
       by: 'Stephen Osita Osadebe',
       year: '1984',
       level: 'B1',
-      why: 'Highlife lento e dançante; o título é um provérbio, «uns dançam enquanto outros choram». Voz calma, ótima para acompanhar o igbo cantado.',
+      why: 'Highlife lento e dançante; o título é um provérbio, “uns dançam enquanto outros choram”. Voz calma, ótima para acompanhar o igbo cantado.',
     },
     {
       kind: 'musica',
@@ -177,10 +177,10 @@ export const RECURSOS_IG: LanguageResources = {
   ],
   tips: [
     'As únicas provas padronizadas de igbo são as de fim do ensino médio da Nigéria (WASSCE e NECO), feitas para falantes nativos. Para comprovar o nível, o caminho são cursos de universidades, na Nigéria (como a Universidade da Nigéria, em Nsukka) e fora dela, que dão certificado de conclusão. Se precisar de um certificado de fala, pergunte à Language Testing International, que aplica a entrevista oral da ACTFL, se há avaliador de igbo.',
-    'O igbo tem tons, e a escrita do dia a dia quase nunca os marca. O exemplo clássico é «akwa»: «ákwá» é choro, «ákwà» é pano, «àkwá» é ovo e «àkwà» é cama ou ponte. Aprenda as palavras ouvindo e confira os tons num dicionário que os marque.',
-    'São oito vogais: além de a, e, i, o, u, há «ị», «ọ» e «ụ», mais abertas, e numa mesma palavra as vogais costumam ser do mesmo grupo (a, ị, ọ, ụ ou e, i, o, u). O «ṅ» é o som do «ng» do inglês «sing»; «gb» e «kp» se pronunciam fechando os lábios e o fundo da boca ao mesmo tempo.',
+    'O igbo tem tons, e a escrita do dia a dia quase nunca os marca. O exemplo clássico é “akwa”: “ákwá” é choro, “ákwà” é pano, “àkwá” é ovo e “àkwà” é cama ou ponte. Aprenda as palavras ouvindo e confira os tons num dicionário que os marque.',
+    'São oito vogais: além de a, e, i, o, u, há “ị”, “ọ” e “ụ”, mais abertas, e numa mesma palavra as vogais costumam ser do mesmo grupo (a, ị, ọ, ụ ou e, i, o, u). O “ṅ” é o som do “ng” do inglês “sing”; “gb” e “kp” se pronunciam fechando os lábios e o fundo da boca ao mesmo tempo.',
     'O igbo tem muitos dialetos, às vezes bem diferentes entre si (de Onitsha, de Owerri, de Nsukka…). A escola, a BBC e os livros usam o igbo padrão (Igbo Izugbe): comece por ele e use os filmes e as músicas para acostumar o ouvido às variantes.',
-    'Os provérbios são parte da conversa. Como escreveu Achebe, «os provérbios são o azeite de dendê com que se comem as palavras» — em igbo, «ilu bụ mmanụ e ji eri okwu». Anote os que ouvir: os mais velhos adoram quando alguém de fora usa um no momento certo.',
-    'Nomes igbos são frases: Chinua vem de «Chinualumọgụ» («que Deus lute por mim»), e Chimamanda quer dizer «meu chi não vai falhar» — o chi é o espírito protetor de cada pessoa. Perguntar o sentido de um nome é um ótimo começo de conversa.',
+    'Os provérbios são parte da conversa. Como escreveu Achebe, “os provérbios são o azeite de dendê com que se comem as palavras” — em igbo, “ilu bụ mmanụ e ji eri okwu”. Anote os que ouvir: os mais velhos adoram quando alguém de fora usa um no momento certo.',
+    'Nomes igbos são frases: Chinua vem de “Chinualumọgụ” (“que Deus lute por mim”), e Chimamanda quer dizer “meu chi não vai falhar” — o chi é o espírito protetor de cada pessoa. Perguntar o sentido de um nome é um ótimo começo de conversa.',
   ],
 };

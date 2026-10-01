@@ -13,7 +13,7 @@ export const ARTIGOS_DA: ArticleSeed[] = [
     ],
     translation: [
       'Smørrebrød é pão de centeio com manteiga e algo por cima (pålæg), por exemplo queijo, patê de fígado ou rolo de carne fatiado.',
-      'Come-se smørrebrød no «frokost». Na Dinamarca, «frokost» é a comida que se come no meio do dia (o almoço).',
+      'Come-se smørrebrød no “frokost”. Na Dinamarca, “frokost” é a comida que se come no meio do dia (o almoço).',
     ],
     glossary: [
       ['eksempel', 'exemplo'],
@@ -22,7 +22,7 @@ export const ARTIGOS_DA: ArticleSeed[] = [
     ],
     questions: [
       { q: 'Com que pão se faz o smørrebrød?', options: ['Pão branco', 'Pão de centeio', 'Pão de milho'], answer: 1 },
-      { q: 'O que é «frokost» na Dinamarca?', options: ['O café da manhã', 'O almoço, no meio do dia', 'O jantar'], answer: 1 },
+      { q: 'O que é “frokost” na Dinamarca?', options: ['O café da manhã', 'O almoço, no meio do dia', 'O jantar'], answer: 1 },
     ],
   },
   {
@@ -35,7 +35,7 @@ export const ARTIGOS_DA: ArticleSeed[] = [
       'Hygge er især vigtigt om vinteren, når det bliver mørkt tidligt. Så bliver man inde, spiser kage og snakker. Danskerne tænder mange stearinlys – også midt på dagen.',
     ],
     translation: [
-      'Hygge é uma palavra dinamarquesa para um clima gostoso e aconchegante. É «hyggeligt» ficar junto com amigos ou família, acender velas e tomar café ou chá.',
+      'Hygge é uma palavra dinamarquesa para um clima gostoso e aconchegante. É “hyggeligt” ficar junto com amigos ou família, acender velas e tomar café ou chá.',
       'O hygge é importante sobretudo no inverno, quando escurece cedo. Aí se fica em casa, come-se bolo e conversa-se. Os dinamarqueses acendem muitas velas — até no meio do dia.',
     ],
     glossary: [
@@ -83,11 +83,11 @@ export const ARTIGOS_DA: ArticleSeed[] = [
     title: 'LEGO fra Billund',
     emoji: '🧱',
     paragraphs: [
-      'LEGO blev grundlagt i 1932 i Billund af tømreren Ole Kirk Christiansen, som lavede legetøj af træ. Navnet, som kom til i 1934, kommer af «leg godt».',
+      'LEGO blev grundlagt i 1932 i Billund af tømreren Ole Kirk Christiansen, som lavede legetøj af træ. Navnet, som kom til i 1934, kommer af “leg godt”.',
       'I 1958 fik virksomheden patent på den plastikklods, vi kender i dag – og klodser fra dengang kan stadig sættes sammen med de nye. I dag er LEGO en af verdens største legetøjsproducenter, men hovedsædet ligger stadig i Billund, hvor man også finder Legoland og LEGO House.',
     ],
     translation: [
-      'A LEGO foi fundada em 1932 em Billund pelo carpinteiro Ole Kirk Christiansen, que fazia brinquedos de madeira. O nome, que surgiu em 1934, vem de «leg godt» («brinque bem»).',
+      'A LEGO foi fundada em 1932 em Billund pelo carpinteiro Ole Kirk Christiansen, que fazia brinquedos de madeira. O nome, que surgiu em 1934, vem de “leg godt” (“brinque bem”).',
       'Em 1958 a empresa conseguiu a patente da pecinha de plástico que conhecemos hoje — e as peças daquela época ainda encaixam nas novas. Hoje a LEGO é uma das maiores fabricantes de brinquedos do mundo, mas a sede continua em Billund, onde também ficam a Legoland e a LEGO House.',
     ],
     glossary: [
@@ -99,7 +99,7 @@ export const ARTIGOS_DA: ArticleSeed[] = [
       ['fik', 'få'],
     ],
     questions: [
-      { q: 'De onde vem o nome LEGO?', options: ['De «leg godt», «brinque bem»', 'Do latim «lego», «eu junto»', 'Do nome do fundador'], answer: 0 },
+      { q: 'De onde vem o nome LEGO?', options: ['De “leg godt”, “brinque bem”', 'Do latim “lego”, “eu junto”', 'Do nome do fundador'], answer: 0 },
       { q: 'Do que eram os primeiros brinquedos?', options: ['De plástico', 'De madeira', 'De metal'], answer: 1 },
       { q: 'O que o texto diz das peças de 1958?', options: ['Ainda encaixam nas novas', 'Foram proibidas', 'Eram de outra cor'], answer: 0 },
     ],
@@ -111,11 +111,11 @@ export const ARTIGOS_DA: ArticleSeed[] = [
     emoji: '🧜‍♀️',
     paragraphs: [
       'Forfatteren Hans Christian Andersen (1805–1875) voksede op i fattige kår i Odense og rejste som fjortenårig til København for at blive skuespiller. Det blev han aldrig, men han skrev romaner, digte og rejsebøger – og frem for alt over 150 eventyr.',
-      'Blandt dem er «Den grimme ælling», «Kejserens nye klæder» og «Den lille havfrue». Eventyrene er oversat til mere end 125 sprog, og statuen af den lille havfrue på Langelinie i København, afsløret i 1913, er blevet et af byens vartegn.',
+      'Blandt dem er “Den grimme ælling”, “Kejserens nye klæder” og “Den lille havfrue”. Eventyrene er oversat til mere end 125 sprog, og statuen af den lille havfrue på Langelinie i København, afsløret i 1913, er blevet et af byens vartegn.',
     ],
     translation: [
       'O escritor Hans Christian Andersen (1805–1875) cresceu na pobreza em Odense e, aos catorze anos, foi para Copenhague para ser ator. Nunca chegou a ser, mas escreveu romances, poemas e livros de viagem — e, acima de tudo, mais de 150 contos de fadas.',
-      'Entre eles estão «O patinho feio», «A roupa nova do imperador» e «A pequena sereia». Os contos foram traduzidos para mais de 125 línguas, e a estátua da pequena sereia em Langelinie, em Copenhague, inaugurada em 1913, virou um dos símbolos da cidade.',
+      'Entre eles estão “O patinho feio”, “A roupa nova do imperador” e “A pequena sereia”. Os contos foram traduzidos para mais de 125 línguas, e a estátua da pequena sereia em Langelinie, em Copenhague, inaugurada em 1913, virou um dos símbolos da cidade.',
     ],
     glossary: [
       ['kår', 'condições (de vida)'],

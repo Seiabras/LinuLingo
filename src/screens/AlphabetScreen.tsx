@@ -62,7 +62,7 @@ export default function AlphabetScreen() {
         language: pack.code,
         source: 'alfabeto',
         key: `${q.kind}:${q.kind === 'leitura' ? q.word[0] : q.letter.letter}`,
-        prompt: q.kind === 'som' ? `Que som tem a letra ${q.letter.letter}?` : q.kind === 'letra' ? `Qual letra faz o som «${q.letter.short}» ${q.letter.ipa}?` : `Leia: o que é «${q.word[0]}»?`,
+        prompt: q.kind === 'som' ? `Que som tem a letra ${q.letter.letter}?` : q.kind === 'letra' ? `Qual letra faz o som “${q.letter.short}” ${q.letter.ipa}?` : `Leia: o que é “${q.word[0]}”?`,
         expected: q.answer,
         given: opt,
         note: q.kind === 'leitura' ? q.word[2] : q.letter.sound,
@@ -125,7 +125,7 @@ export default function AlphabetScreen() {
               {q.kind === 'letra' && (
                 <>
                   <Text className="text-sm font-bold uppercase tracking-wide text-slate-500">Qual letra faz este som?</Text>
-                  <Text className="text-5xl font-extrabold text-conecta">«{q.letter.short}»</Text>
+                  <Text className="text-5xl font-extrabold text-conecta">“{q.letter.short}”</Text>
                   <Text className="text-center text-sm text-slate-500 dark:text-slate-400">{q.letter.ipa}</Text>
                 </>
               )}
@@ -158,7 +158,7 @@ export default function AlphabetScreen() {
             {game.answer && (
               <Card className="gap-2">
                 <Text className={`text-lg font-extrabold ${game.answer === q.answer ? 'text-conquista' : 'text-rose-600'}`}>
-                  {game.answer === q.answer ? 'Isso!' : `Era «${q.answer}».`}
+                  {game.answer === q.answer ? 'Isso!' : `Era “${q.answer}”.`}
                 </Text>
                 {q.kind === 'leitura' ? (
                   <Text className="text-base text-slate-700 dark:text-slate-300">

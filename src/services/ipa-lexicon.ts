@@ -27,14 +27,14 @@ export function lexiconIpa(text: string, lex: IpaLexicon): string {
 export function ipaLexiconProblems(lex: IpaLexicon, texts: string[]): string[] {
   const out: string[] = [];
   for (const [k, v] of Object.entries(lex)) {
-    if (k !== k.toLowerCase().normalize('NFC')) out.push(`«${k}»: chave em minúsculas`);
-    if (!v || /[A-Z0-9[\]/⟨⟩]/.test(v)) out.push(`«${k}» → «${v}»: só a transcrição, sem colchetes, barras nem maiúsculas`);
+    if (k !== k.toLowerCase().normalize('NFC')) out.push(`“${k}”: chave em minúsculas`);
+    if (!v || /[A-Z0-9[\]/⟨⟩]/.test(v)) out.push(`“${k}” → “${v}”: só a transcrição, sem colchetes, barras nem maiúsculas`);
     // palavras de 2+ sílabas levam a marca de tônica ˈ
     const syll = (v.match(/[aeiouyæøɛɔœɐəɨʉɪʊʏɑɒʌɜɯɤ]+/g) ?? []).length;
-    if (syll > 1 && !v.includes('ˈ')) out.push(`«${k}» → «${v}»: falta a marca de tônica ˈ`);
+    if (syll > 1 && !v.includes('ˈ')) out.push(`“${k}” → “${v}”: falta a marca de tônica ˈ`);
   }
   const missing = new Set<string>();
   for (const t of texts) for (const w of lexiconWords(t)) if (!lex[w] && !lex[w.replace(/[’']/g, '')]) missing.add(w);
-  for (const w of missing) out.push(`falta «${w}»`);
+  for (const w of missing) out.push(`falta “${w}”`);
   return out;
 }

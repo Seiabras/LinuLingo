@@ -10,7 +10,7 @@ export const FALSE_FRIENDS_PT: FalseFriend[] = [
     word: 'rapariga',
     means: 'moça, garota (palavra neutra e carinhosa, usada para qualquer jovem)',
     looksLike: 'mulher de má fama (sentido pejorativo em boa parte do Brasil, sobretudo no Nordeste)',
-    forThat: 'Em Portugal esse sentido não existe: diz-se «prostituta» ou «amante», conforme o caso',
+    forThat: 'Em Portugal esse sentido não existe: diz-se “prostituta” ou “amante”, conforme o caso',
     emoji: '👧',
     example: ['A rapariga da receção foi muito simpática connosco.', 'A moça da recepção foi muito simpática com a gente.'],
   },
@@ -24,7 +24,7 @@ export const FALSE_FRIENDS_PT: FalseFriend[] = [
   },
   {
     word: 'puto',
-    means: 'garoto, moleque (informal e sem malícia; «os putos» = a criançada)',
+    means: 'garoto, moleque (informal e sem malícia; “os putos” = a criançada)',
     looksLike: 'furioso, com muita raiva (gíria vulgar); ou um insulto',
     forThat: 'furioso, danado, fulo',
     emoji: '🧒',
@@ -49,7 +49,7 @@ export const FALSE_FRIENDS_PT: FalseFriend[] = [
   {
     word: 'pila',
     means: 'órgão sexual masculino (palavra familiar, de criança)',
-    looksLike: 'dinheiro, «real» (gíria do Sul do Brasil)',
+    looksLike: 'dinheiro, “real” (gíria do Sul do Brasil)',
     forThat: 'dinheiro, massa, guita (informal)',
     emoji: '💶',
     example: ['Não tenho massa para ir ao cinema este mês.', 'Não tenho grana para ir ao cinema este mês.'],
@@ -57,7 +57,7 @@ export const FALSE_FRIENDS_PT: FalseFriend[] = [
   // ——— os clássicos: caem em qualquer conversa ———
   {
     word: 'propina',
-    means: 'mensalidade ou taxa paga à universidade (normalmente no plural: «as propinas»)',
+    means: 'mensalidade ou taxa paga à universidade (normalmente no plural: “as propinas”)',
     looksLike: 'suborno',
     forThat: 'suborno, luvas',
     emoji: '🎓',
@@ -73,7 +73,7 @@ export const FALSE_FRIENDS_PT: FalseFriend[] = [
   },
   {
     word: 'cuecas',
-    means: 'roupa íntima de baixo, de homem ou de mulher (inclui a «calcinha» brasileira)',
+    means: 'roupa íntima de baixo, de homem ou de mulher (inclui a “calcinha” brasileira)',
     looksLike: 'cueca só de homem',
     forThat: 'cuecas, boxers (para a cueca samba-canção)',
     emoji: '🩲',
@@ -81,7 +81,7 @@ export const FALSE_FRIENDS_PT: FalseFriend[] = [
   },
   {
     word: 'fato',
-    means: 'terno (roupa); «fato de banho» = maiô; «fato de treino» = agasalho esportivo',
+    means: 'terno (roupa); “fato de banho” = maiô; “fato de treino” = agasalho esportivo',
     looksLike: 'fato (acontecimento, coisa que aconteceu)',
     forThat: 'facto',
     emoji: '🤵',
@@ -89,7 +89,7 @@ export const FALSE_FRIENDS_PT: FalseFriend[] = [
   },
   {
     word: 'banheiro',
-    means: 'salva-vidas de praia (palavra tradicional; o termo oficial é «nadador-salvador»)',
+    means: 'salva-vidas de praia (palavra tradicional; o termo oficial é “nadador-salvador”)',
     looksLike: 'banheiro (o cômodo da casa)',
     forThat: 'casa de banho',
     emoji: '🛟',
@@ -113,15 +113,15 @@ export const FALSE_FRIENDS_PT: FalseFriend[] = [
   },
   {
     word: 'reformado',
-    means: 'aposentado («a reforma» = a aposentadoria)',
+    means: 'aposentado (“a reforma” = a aposentadoria)',
     looksLike: 'reformado (renovado, que passou por obras)',
-    forThat: 'remodelado, renovado («fazer obras em casa»)',
+    forThat: 'remodelado, renovado (“fazer obras em casa”)',
     emoji: '👴',
     example: ['O meu avô está reformado e passa as manhãs no jardim.', 'Meu avô está aposentado e passa as manhãs na praça.'],
   },
   {
     word: 'presunto',
-    means: 'presunto cru, curado (como o de Parma); o cozido, de sanduíche, chama-se «fiambre»',
+    means: 'presunto cru, curado (como o de Parma); o cozido, de sanduíche, chama-se “fiambre”',
     looksLike: 'presunto cozido, de sanduíche; na gíria, também cadáver',
     forThat: 'fiambre',
     emoji: '🍖',
@@ -153,7 +153,7 @@ export const FALSE_FRIENDS_PT: FalseFriend[] = [
   },
   {
     word: 'hospedeira',
-    means: 'comissária de bordo («hospedeira de bordo»)',
+    means: 'comissária de bordo (“hospedeira de bordo”)',
     looksLike: 'dona de pensão, anfitriã',
     forThat: 'anfitriã; dona da pensão',
     emoji: '✈️',
@@ -233,8 +233,8 @@ export const FALSE_FRIENDS_PT: FalseFriend[] = [
   },
   {
     word: 'arrumar',
-    means: 'guardar, organizar; também estacionar («arrumar o carro»)',
-    looksLike: 'arrumar (conseguir: «arrumar um emprego»; consertar)',
+    means: 'guardar, organizar; também estacionar (“arrumar o carro”)',
+    looksLike: 'arrumar (conseguir: “arrumar um emprego”; consertar)',
     forThat: 'arranjar (um emprego); arranjar, consertar (uma avaria)',
     emoji: '🧹',
     example: ['Arrumei o carro à porta e fui arrumar a cozinha.', 'Estacionei o carro na porta e fui arrumar a cozinha.'],
@@ -259,8 +259,8 @@ export const FALSE_FRIENDS_PT: FalseFriend[] = [
   {
     word: 'giro',
     means: 'bonito, bonitinho, interessante (informal)',
-    looksLike: 'giro (volta, passeio: «dar um giro»)',
-    forThat: 'volta («dar uma volta»)',
+    looksLike: 'giro (volta, passeio: “dar um giro”)',
+    forThat: 'volta (“dar uma volta”)',
     emoji: '🥰',
     example: ['Que casaco tão giro! Onde o compraste?', 'Que casaco lindo! Onde você comprou?'],
   },
@@ -298,7 +298,7 @@ export const FALSE_FRIENDS_PT: FalseFriend[] = [
   },
   {
     word: 'pastilha',
-    means: 'chiclete («pastilha elástica»); também pastilha para a garganta',
+    means: 'chiclete (“pastilha elástica”); também pastilha para a garganta',
     looksLike: 'pastilha (só a balinha ou o comprimido)',
     forThat: 'rebuçado (bala); pastilha (para a garganta)',
     emoji: '🫧',
@@ -306,7 +306,7 @@ export const FALSE_FRIENDS_PT: FalseFriend[] = [
   },
   {
     word: 'bilhete',
-    means: 'passagem, ingresso; «bilhete de identidade» era o RG (hoje «cartão de cidadão»)',
+    means: 'passagem, ingresso; “bilhete de identidade” era o RG (hoje “cartão de cidadão”)',
     looksLike: 'bilhete (recado escrito)',
     forThat: 'recado, nota',
     emoji: '🎟️',
@@ -316,7 +316,7 @@ export const FALSE_FRIENDS_PT: FalseFriend[] = [
     word: 'cena',
     means: 'coisa, situação (gíria jovem); também cena de filme',
     looksLike: 'cena (de filme, de teatro; escândalo)',
-    forThat: 'cena, escândalo («fazer uma cena» diz-se igual)',
+    forThat: 'cena, escândalo (“fazer uma cena” diz-se igual)',
     emoji: '🎬',
     example: ['Que cena! Perdi as chaves outra vez.', 'Que coisa! Perdi as chaves de novo.'],
   },
@@ -330,7 +330,7 @@ export const FALSE_FRIENDS_PT: FalseFriend[] = [
   },
   {
     word: 'doutor',
-    means: 'tratamento de quem tem licenciatura («o senhor doutor», «Dr.»)',
+    means: 'tratamento de quem tem licenciatura (“o senhor doutor”, “Dr.”)',
     looksLike: 'doutor (médico, ou quem tem doutorado)',
     forThat: 'médico; doutorado (o título académico)',
     emoji: '👔',
@@ -338,7 +338,7 @@ export const FALSE_FRIENDS_PT: FalseFriend[] = [
   },
   {
     word: 'ralar-se',
-    means: 'preocupar-se («não te rales» = não esquenta)',
+    means: 'preocupar-se (“não te rales” = não esquenta)',
     looksLike: 'ralar (raspar no ralador; ralar-se = esfolar-se)',
     forThat: 'esfolar-se, arranhar-se',
     emoji: '😌',
@@ -346,7 +346,7 @@ export const FALSE_FRIENDS_PT: FalseFriend[] = [
   },
   {
     word: 'rancho',
-    means: 'grupo de dança e música folclórica («rancho folclórico»)',
+    means: 'grupo de dança e música folclórica (“rancho folclórico”)',
     looksLike: 'rancho (casa de campo, sítio)',
     forThat: 'casa de campo, quinta',
     emoji: '💃',
@@ -362,7 +362,7 @@ export const FALSE_FRIENDS_PT: FalseFriend[] = [
   },
   {
     word: 'penso',
-    means: 'curativo («penso rápido» = band-aid)',
+    means: 'curativo (“penso rápido” = band-aid)',
     looksLike: 'penso (do verbo pensar)',
     forThat: 'penso (o verbo é igual)',
     emoji: '🩹',
@@ -370,7 +370,7 @@ export const FALSE_FRIENDS_PT: FalseFriend[] = [
   },
   {
     word: 'banco',
-    means: 'além do banco de dinheiro e do assento, o pronto-socorro do hospital («o banco», hoje mais «as urgências»)',
+    means: 'além do banco de dinheiro e do assento, o pronto-socorro do hospital (“o banco”, hoje mais “as urgências”)',
     looksLike: 'banco (só a agência bancária ou o assento)',
     forThat: 'banco (nos dois sentidos diz-se igual)',
     emoji: '🏥',
@@ -398,7 +398,7 @@ export const FALSE_FRIENDS_PT: FalseFriend[] = [
     looksLike: 'tia (parente; professora do primário, no tratamento das crianças)',
     forThat: 'professora, a senhora professora',
     emoji: '👒',
-    example: ['Ela fala como uma tia de Cascais: tudo é «imenso» e «querida».', 'Ela fala como uma madame de Cascais: tudo é «imenso» e «querida».'],
+    example: ['Ela fala como uma tia de Cascais: tudo é “imenso” e “querida”.', 'Ela fala como uma madame de Cascais: tudo é “imenso” e “querida”.'],
   },
   {
     word: 'lanche',
@@ -418,9 +418,9 @@ export const FALSE_FRIENDS_PT: FalseFriend[] = [
   },
   {
     word: 'batido',
-    means: 'vitamina, milk-shake («batido de morango»)',
-    looksLike: 'batido (gasto, repetido: «assunto batido»); ou batida (bebida)',
-    forThat: 'gasto, repetido; para a bebida brasileira, «batida»',
+    means: 'vitamina, milk-shake (“batido de morango”)',
+    looksLike: 'batido (gasto, repetido: “assunto batido”); ou batida (bebida)',
+    forThat: 'gasto, repetido; para a bebida brasileira, “batida”',
     emoji: '🥤',
     example: ['Pedi um batido de banana e um sumo de laranja.', 'Pedi uma vitamina de banana e um suco de laranja.'],
   },
@@ -434,7 +434,7 @@ export const FALSE_FRIENDS_PT: FalseFriend[] = [
   },
   {
     word: 'prego',
-    means: 'além de prego, sanduíche de bife no pão («prego no pão»)',
+    means: 'além de prego, sanduíche de bife no pão (“prego no pão”)',
     looksLike: 'prego (só o de martelar)',
     forThat: 'prego (igual)',
     emoji: '🥩',
@@ -466,7 +466,7 @@ export const FALSE_FRIENDS_PT: FalseFriend[] = [
   },
   {
     word: 'andar',
-    means: 'além de pavimento, apartamento («comprámos um andar no Porto»)',
+    means: 'além de pavimento, apartamento (“comprámos um andar no Porto”)',
     looksLike: 'andar (só o pavimento do prédio)',
     forThat: 'andar, piso (igual)',
     emoji: '🏢',
@@ -474,7 +474,7 @@ export const FALSE_FRIENDS_PT: FalseFriend[] = [
   },
   {
     word: 'fino',
-    means: 'chope, cerveja de pressão (no Norte; em Lisboa, «imperial»)',
+    means: 'chope, cerveja de pressão (no Norte; em Lisboa, “imperial”)',
     looksLike: 'fino (elegante; delgado)',
     forThat: 'fino, elegante (igual)',
     emoji: '🍺',
@@ -490,7 +490,7 @@ export const FALSE_FRIENDS_PT: FalseFriend[] = [
   },
   {
     word: 'grosso',
-    means: 'além de espesso, bêbado (gíria: «estar grosso»)',
+    means: 'além de espesso, bêbado (gíria: “estar grosso”)',
     looksLike: 'grosso (mal-educado, estúpido)',
     forThat: 'malcriado, bruto, mal-educado',
     emoji: '🍷',
@@ -506,7 +506,7 @@ export const FALSE_FRIENDS_PT: FalseFriend[] = [
   },
   {
     word: 'cachorro',
-    means: 'filhote de cão (ou de outros animais, como o leão); «cachorro-quente» é igual',
+    means: 'filhote de cão (ou de outros animais, como o leão); “cachorro-quente” é igual',
     looksLike: 'cachorro (cão de qualquer idade)',
     forThat: 'cão',
     emoji: '🐶',
@@ -516,7 +516,7 @@ export const FALSE_FRIENDS_PT: FalseFriend[] = [
     word: 'matrícula',
     means: 'placa do carro; também inscrição (escolar)',
     looksLike: 'matrícula (só a inscrição)',
-    forThat: 'inscrição (também se diz «matrícula»)',
+    forThat: 'inscrição (também se diz “matrícula”)',
     emoji: '🚗',
     example: ['A testemunha não viu a matrícula do carro.', 'A testemunha não viu a placa do carro.'],
   },
@@ -530,7 +530,7 @@ export const FALSE_FRIENDS_PT: FalseFriend[] = [
   },
   {
     word: 'vaga',
-    means: 'onda («vaga de calor», «vaga de frio»); também vaga de emprego',
+    means: 'onda (“vaga de calor”, “vaga de frio”); também vaga de emprego',
     looksLike: 'vaga (lugar livre; vaga de estacionamento)',
     forThat: 'lugar (de estacionamento)',
     emoji: '🌡️',
@@ -546,7 +546,7 @@ export const FALSE_FRIENDS_PT: FalseFriend[] = [
   },
   {
     word: 'carta',
-    means: 'além de carta (correspondência), carteira de motorista («carta de condução»)',
+    means: 'além de carta (correspondência), carteira de motorista (“carta de condução”)',
     looksLike: 'carta (só a correspondência)',
     forThat: 'carta (igual)',
     emoji: '🪪',
@@ -554,7 +554,7 @@ export const FALSE_FRIENDS_PT: FalseFriend[] = [
   },
   {
     word: 'atestar',
-    means: 'encher até em cima («atestar o depósito» = encher o tanque)',
+    means: 'encher até em cima (“atestar o depósito” = encher o tanque)',
     looksLike: 'atestar (certificar, comprovar)',
     forThat: 'atestar, certificar (também se diz assim)',
     emoji: '⛽',

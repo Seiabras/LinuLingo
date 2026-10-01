@@ -33,7 +33,7 @@ export const SCENARIOS_SC: ScenarioSeed[] = [
     cefr: 'A1',
     register: 'informal',
     persona: 'Maria, una cumpagna de su cursu de sardu',
-    description: 'Maria convida você para um café no centro de Cagliari. É uma conversa informal, entre amigos: use «tue».',
+    description: 'Maria convida você para um café no centro de Cagliari. É uma conversa informal, entre amigos: use “tue”.',
     turns: [
       {
         bot: 'Salude! Ite cheres?',
@@ -58,7 +58,7 @@ export const ETYMOLOGY_SC: EtymologySeed[] = [
     root_word: 'domus',
     origin_language: 'Latim',
     cognates: c(['pt', 'doméstico'], ['it', 'duomo'], ['es', 'doméstico']),
-    evolution_note: 'O sardo manteve «domus» (casa) como a palavra comum para casa, enquanto o português, o espanhol e o italiano usam «casa», do latim «casa» (cabana). Em português, «domus» só sobrevive em palavras cultas como «doméstico».',
+    evolution_note: 'O sardo manteve “domus” (casa) como a palavra comum para casa, enquanto o português, o espanhol e o italiano usam “casa”, do latim “casa” (cabana). Em português, “domus” só sobrevive em palavras cultas como “doméstico”.',
     transparent: false,
   },
   {
@@ -74,7 +74,7 @@ export const ETYMOLOGY_SC: EtymologySeed[] = [
     root_word: 'caseus',
     origin_language: 'Latim',
     cognates: c(['pt', 'queijo'], ['es', 'queso'], ['it', 'cacio'], ['ro', 'caș']),
-    evolution_note: 'Do latim «caseus», como o português «queijo» e o espanhol «queso»; o italiano usa mais «formaggio», mas guarda «cacio» na mesma raiz.',
+    evolution_note: 'Do latim “caseus”, como o português “queijo” e o espanhol “queso”; o italiano usa mais “formaggio”, mas guarda “cacio” na mesma raiz.',
     transparent: false,
   },
   {
@@ -90,7 +90,7 @@ export const ETYMOLOGY_SC: EtymologySeed[] = [
     root_word: 'etiam',
     origin_language: 'Latim',
     cognates: c(['it', 'già'], ['pt', 'já']),
-    evolution_note: 'O «sim» sardo vem, segundo a explicação mais aceita, do latim «etiam» (também, ainda), da mesma raiz de «già» e «já».',
+    evolution_note: 'O “sim” sardo vem, segundo a explicação mais aceita, do latim “etiam” (também, ainda), da mesma raiz de “già” e “já”.',
     transparent: false,
   },
 ];

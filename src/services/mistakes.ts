@@ -99,7 +99,7 @@ const MIN_EASE = 1.3;
 /** A revisão do sprint já aplica o SM-2 ao erro: não precisa de penalidade a mais. */
 const SRS_SELF_PENALIZED = new Set<MistakeSource>(['revisao']);
 
-const bare = (w: string) => w.normalize('NFC').toLowerCase().replace(/\u0301/g, '').replace(/ё/g, 'е').replace(/[.!?¿¡,;:«»"]/g, '').trim();
+const bare = (w: string) => w.normalize('NFC').toLowerCase().replace(/\u0301/g, '').replace(/ё/g, 'е').replace(/[.!?¿¡,;:“”"]/g, '').trim();
 
 /** Índice palavra → id do vocabulário, por banco e idioma (o vocabulário não muda durante o uso). */
 const vocabIndex = new WeakMap<SQLiteDatabase, Map<string, Promise<Map<string, string>>>>();

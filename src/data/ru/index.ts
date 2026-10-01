@@ -53,5 +53,5 @@ export const RUSSO: LanguagePack = {
   phrases: { hi: 'Приве́т!', thanks: 'Спаси́бо!', letsStart: ['Дава́йте начнём!', 'Vamos começar!'] },
   formalMarkers: 'вы, пожа́луйста, бу́дьте добры́',
   cognateNote:
-    'O russo é uma língua eslava, prima distante do português: os dois vêm do indo-europeu. Por isso мать lembra «mãe» e три lembra «três». Muitas palavras também chegaram do francês, do alemão e do inglês.',
+    'O russo é uma língua eslava, prima distante do português: os dois vêm do indo-europeu. Por isso мать lembra “mãe” e три lembra “três”. Muitas palavras também chegaram do francês, do alemão e do inglês.',
 };

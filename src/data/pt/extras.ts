@@ -70,7 +70,7 @@ export const SCENARIOS_PT: ScenarioSeed[] = [
     register: 'formal',
     persona: 'Dona Fernanda, atendente de balcão',
     description:
-      'Peça o café da manhã numa pastelaria de Alfama, em Lisboa. Com quem atende, fala-se na 3ª pessoa ou sem pronome, e «se faz favor» é o «por favor» mais português. Evite «você», «tu» e «oi».',
+      'Peça o café da manhã numa pastelaria de Alfama, em Lisboa. Com quem atende, fala-se na 3ª pessoa ou sem pronome, e “se faz favor” é o “por favor” mais português. Evite “você”, “tu” e “oi”.',
     turns: [
       {
         bot: 'Bom dia! O que vai ser?',
@@ -117,7 +117,7 @@ export const SCENARIOS_PT: ScenarioSeed[] = [
     register: 'formal',
     persona: 'Doutora Helena, farmacêutica',
     description:
-      'Você está resfriado e vai a uma farmácia da Baixa do Porto. Em Portugal, «constipado» é resfriado, e o farmacêutico costuma ser tratado por «senhor doutor» ou «senhora doutora». Registro formal: nada de «você» nem de «tu».',
+      'Você está resfriado e vai a uma farmácia da Baixa do Porto. Em Portugal, “constipado” é resfriado, e o farmacêutico costuma ser tratado por “senhor doutor” ou “senhora doutora”. Registro formal: nada de “você” nem de “tu”.',
     turns: [
       {
         bot: 'Boa tarde. Em que posso ajudar?',
@@ -164,7 +164,7 @@ export const SCENARIOS_PT: ScenarioSeed[] = [
     register: 'formal',
     persona: 'Senhor Fonseca, funcionário das Finanças',
     description:
-      'Numa repartição de Finanças em Coimbra, você pede o número de contribuinte (NIF), o «CPF» português, indispensável para alugar casa, abrir conta ou assinar contrato. Registro formal: 3ª pessoa, «queria», «vinha tratar de…».',
+      'Numa repartição de Finanças em Coimbra, você pede o número de contribuinte (NIF), o “CPF” português, indispensável para alugar casa, abrir conta ou assinar contrato. Registro formal: 3ª pessoa, “queria”, “vinha tratar de…”.',
     turns: [
       {
         bot: 'Bom dia. Tem senha? Qual é o assunto?',
@@ -258,7 +258,7 @@ export const SCENARIOS_PT: ScenarioSeed[] = [
     register: 'formal',
     persona: 'Engenheira Marta Correia, diretora de recursos humanos',
     description:
-      'Uma entrevista para uma vaga numa empresa de Lisboa. Em Portugal, o tratamento formal é a 3ª pessoa, e títulos como «Engenheira» e «Doutor» aparecem até na conversa. Use o condicional e o imperfeito de cortesia («gostaria», «teria», «queria») e nada de «você».',
+      'Uma entrevista para uma vaga numa empresa de Lisboa. Em Portugal, o tratamento formal é a 3ª pessoa, e títulos como “Engenheira” e “Doutor” aparecem até na conversa. Use o condicional e o imperfeito de cortesia (“gostaria”, “teria”, “queria”) e nada de “você”.',
     turns: [
       {
         bot: 'Bom dia. Sente-se, por favor. Fale-me um pouco do seu percurso.',
@@ -305,7 +305,7 @@ export const SCENARIOS_PT: ScenarioSeed[] = [
     register: 'informal',
     persona: 'Rui, amigo portuense',
     description:
-      'Um amigo leva você a uma tasca da Ribeira, no Porto, para comer francesinha. Entre amigos, «tu», com o verbo na 2ª pessoa («queres», «alinhas?»); «o senhor» e «você» soariam frios. No Porto, o chope é «fino».',
+      'Um amigo leva você a uma tasca da Ribeira, no Porto, para comer francesinha. Entre amigos, “tu”, com o verbo na 2ª pessoa (“queres”, “alinhas?”); “o senhor” e “você” soariam frios. No Porto, o chope é “fino”.',
     turns: [
       {
         bot: 'Então, pá, chegaste! Queres um fino enquanto esperamos pela Sofia?',
@@ -405,7 +405,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'auto(móvel) + carro',
     origin_language: 'Composto português (grego + latim)',
     cognates: c(['pt', 'ônibus'], ['es', 'autobús'], ['fr', 'autobus'], ['it', 'autobus'], ['ro', 'autobuz']),
-    evolution_note: 'Portugal juntou «auto», de automóvel (grego autós, «por si mesmo»), a «carro», do latim carrus, palavra de origem gaulesa. O Brasil ficou com «ônibus», do latim omnibus, «para todos», nome que os franceses deram às carruagens coletivas do século XIX.',
+    evolution_note: 'Portugal juntou “auto”, de automóvel (grego autós, “por si mesmo”), a “carro”, do latim carrus, palavra de origem gaulesa. O Brasil ficou com “ônibus”, do latim omnibus, “para todos”, nome que os franceses deram às carruagens coletivas do século XIX.',
     transparent: false,
   },
   {
@@ -413,7 +413,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'convoi',
     origin_language: 'Francês',
     cognates: c(['pt', 'trem / comboio'], ['fr', 'convoi'], ['es', 'convoy'], ['it', 'convoglio'], ['en', 'convoy']),
-    evolution_note: '«Comboio» era uma fila de navios ou de carros que seguiam juntos, com escolta. Em Portugal, a fila de vagões puxada pela locomotiva herdou o nome. O Brasil preferiu «trem», que veio do inglês train pelo francês train, e guardou «comboio» no sentido antigo.',
+    evolution_note: '“Comboio” era uma fila de navios ou de carros que seguiam juntos, com escolta. Em Portugal, a fila de vagões puxada pela locomotiva herdou o nome. O Brasil preferiu “trem”, que veio do inglês train pelo francês train, e guardou “comboio” no sentido antigo.',
     transparent: false,
   },
   {
@@ -421,7 +421,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'petit déjeuner',
     origin_language: 'Decalque do francês',
     cognates: c(['pt', 'café da manhã'], ['fr', 'petit-déjeuner'], ['es', 'desayuno'], ['it', 'colazione'], ['en', 'breakfast']),
-    evolution_note: 'Tradução peça por peça do francês «petit déjeuner». «Almoço» vem do latim vulgar admordium, de admordere, «dar uma dentada». Em Portugal, o almoço é a refeição do meio-dia e o pequeno-almoço é a primeira do dia; o Brasil batizou a refeição pela bebida: café da manhã.',
+    evolution_note: 'Tradução peça por peça do francês “petit déjeuner”. “Almoço” vem do latim vulgar admordium, de admordere, “dar uma dentada”. Em Portugal, o almoço é a refeição do meio-dia e o pequeno-almoço é a primeira do dia; o Brasil batizou a refeição pela bebida: café da manhã.',
     transparent: false,
   },
   {
@@ -429,31 +429,31 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'tele + mobilis',
     origin_language: 'Composto moderno (grego + latim)',
     cognates: c(['pt', 'celular'], ['es', 'móvil / celular'], ['it', 'cellulare'], ['fr', 'portable'], ['en', 'mobile phone / cell phone']),
-    evolution_note: 'Grego tēle, «longe», mais latim mobilis, «que se move». Portugal seguiu a lógica europeia do aparelho que se leva consigo (como o espanhol da Espanha «móvil» e o inglês britânico «mobile»); o Brasil seguiu a americana, da rede dividida em células: celular.',
+    evolution_note: 'Grego tēle, “longe”, mais latim mobilis, “que se move”. Portugal seguiu a lógica europeia do aparelho que se leva consigo (como o espanhol da Espanha “móvil” e o inglês britânico “mobile”); o Brasil seguiu a americana, da rede dividida em células: celular.',
     transparent: false,
   },
   {
     word: 'rapariga',
     root_word: 'rapaz',
     origin_language: 'Português (do latim rapax)',
-    cognates: c(['pt', 'moça, garota'], ['es', 'rapaz («ave de rapina»)'], ['en', 'rapacious'], ['it', 'rapace']),
-    evolution_note: 'Feminino formado a partir de «rapaz», que vem do latim rapax, «que arrebata», com a ideia de moço impetuoso. Em Portugal, «rapariga» é a palavra neutra para moça. No Brasil, sobretudo no Nordeste, ganhou sentido pejorativo — por isso os brasileiros evitam a palavra, e os portugueses a usam sem malícia nenhuma.',
+    cognates: c(['pt', 'moça, garota'], ['es', 'rapaz (“ave de rapina”)'], ['en', 'rapacious'], ['it', 'rapace']),
+    evolution_note: 'Feminino formado a partir de “rapaz”, que vem do latim rapax, “que arrebata”, com a ideia de moço impetuoso. Em Portugal, “rapariga” é a palavra neutra para moça. No Brasil, sobretudo no Nordeste, ganhou sentido pejorativo — por isso os brasileiros evitam a palavra, e os portugueses a usam sem malícia nenhuma.',
     transparent: false,
   },
   {
     word: 'bicha',
     root_word: 'bestia',
     origin_language: 'Latim',
-    cognates: c(['pt', 'fila'], ['es', 'bicho'], ['it', 'biscia («cobra-d’água»)'], ['fr', 'bête'], ['en', 'beast']),
-    evolution_note: 'Do latim bestia, «animal», veio «bicho» e o feminino «bicha», o bichinho comprido, a lombriga. Pela forma, a fila de gente virou «bicha» em Portugal. No Brasil, a palavra tomou outro rumo e virou termo, muitas vezes ofensivo, para homens gays; hoje, em Portugal, também se diz «fila».',
+    cognates: c(['pt', 'fila'], ['es', 'bicho'], ['it', 'biscia (“cobra-d’água”)'], ['fr', 'bête'], ['en', 'beast']),
+    evolution_note: 'Do latim bestia, “animal”, veio “bicho” e o feminino “bicha”, o bichinho comprido, a lombriga. Pela forma, a fila de gente virou “bicha” em Portugal. No Brasil, a palavra tomou outro rumo e virou termo, muitas vezes ofensivo, para homens gays; hoje, em Portugal, também se diz “fila”.',
     transparent: false,
   },
   {
     word: 'propina',
     root_word: 'propinare',
     origin_language: 'Latim (do grego)',
-    cognates: c(['pt', 'mensalidade da faculdade'], ['es', 'propina («gorjeta»)'], ['it', 'propinare («servir»)']),
-    evolution_note: 'O grego propínein era «beber à saúde de alguém»; o latim propinare, «dar de beber». Daí a gratificação que se dava a alguém. Em Portugal, a palavra ficou com as taxas pagas à universidade; no espanhol, com a gorjeta; no Brasil, com o dinheiro dado por baixo do pano: suborno.',
+    cognates: c(['pt', 'mensalidade da faculdade'], ['es', 'propina (“gorjeta”)'], ['it', 'propinare (“servir”)']),
+    evolution_note: 'O grego propínein era “beber à saúde de alguém”; o latim propinare, “dar de beber”. Daí a gratificação que se dava a alguém. Em Portugal, a palavra ficou com as taxas pagas à universidade; no espanhol, com a gorjeta; no Brasil, com o dinheiro dado por baixo do pano: suborno.',
     transparent: false,
   },
   {
@@ -461,7 +461,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'fato',
     origin_language: 'Origem discutida',
     cognates: c(['pt', 'terno'], ['es', 'traje'], ['it', 'abito'], ['fr', 'costume'], ['en', 'suit']),
-    evolution_note: 'Em Portugal, «fato» é a roupa — o terno, e também o «fato de banho» (maiô) e o «fato de treino» (agasalho). Não se confunde com o acontecimento porque, lá, este se escreve e se diz «facto», com o «c» do latim factum pronunciado. No Brasil, o «c» caiu e «fato» ficou só com esse sentido.',
+    evolution_note: 'Em Portugal, “fato” é a roupa — o terno, e também o “fato de banho” (maiô) e o “fato de treino” (agasalho). Não se confunde com o acontecimento porque, lá, este se escreve e se diz “facto”, com o “c” do latim factum pronunciado. No Brasil, o “c” caiu e “fato” ficou só com esse sentido.',
     transparent: false,
   },
   {
@@ -469,7 +469,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'camisia',
     origin_language: 'Latim tardio',
     cognates: c(['pt', 'suéter, blusa de lã'], ['es', 'camisa'], ['it', 'camicia'], ['fr', 'chemise'], ['ro', 'cămașă']),
-    evolution_note: 'Diminutivo de «camisa», do latim tardio camisia. Em Portugal, a camisola é a peça de malha que se veste por cima; em futebol, «a camisola da seleção» é a camisa do time. No Brasil, camisola é roupa de dormir — o que em Portugal se chama «camisa de dormir» ou «camisa de noite».',
+    evolution_note: 'Diminutivo de “camisa”, do latim tardio camisia. Em Portugal, a camisola é a peça de malha que se veste por cima; em futebol, “a camisola da seleção” é a camisa do time. No Brasil, camisola é roupa de dormir — o que em Portugal se chama “camisa de dormir” ou “camisa de noite”.',
     transparent: false,
   },
   {
@@ -477,7 +477,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'frigorificus',
     origin_language: 'Latim',
     cognates: c(['pt', 'geladeira / frigorífico'], ['es', 'frigorífico'], ['it', 'frigorifero'], ['fr', 'frigo']),
-    evolution_note: 'Latim frigus, «frio», mais facere, «fazer»: o que faz frio. Portugal usa a palavra erudita para o eletrodoméstico, como a Espanha e a Itália; o Brasil criou «geladeira», de «gelar», e reservou «frigorífico» para a câmara fria da indústria de carnes.',
+    evolution_note: 'Latim frigus, “frio”, mais facere, “fazer”: o que faz frio. Portugal usa a palavra erudita para o eletrodoméstico, como a Espanha e a Itália; o Brasil criou “geladeira”, de “gelar”, e reservou “frigorífico” para a câmara fria da indústria de carnes.',
     transparent: false,
   },
   {
@@ -485,7 +485,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'zōmós',
     origin_language: 'Grego (pelo latim)',
     cognates: c(['pt', 'suco'], ['es', 'zumo'], ['it', 'succo'], ['fr', 'jus'], ['en', 'juice']),
-    evolution_note: 'Portugal e a Espanha ficaram com a palavra de origem grega zōmós, «caldo»: sumo e zumo. O Brasil escolheu «suco», do latim sucus, a mesma raiz do italiano «succo». Os dois lados conhecem as duas palavras, mas no café de Lisboa pede-se «um sumo de laranja».',
+    evolution_note: 'Portugal e a Espanha ficaram com a palavra de origem grega zōmós, “caldo”: sumo e zumo. O Brasil escolheu “suco”, do latim sucus, a mesma raiz do italiano “succo”. Os dois lados conhecem as duas palavras, mas no café de Lisboa pede-se “um sumo de laranja”.',
     transparent: false,
   },
   {
@@ -493,7 +493,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'gelare',
     origin_language: 'Latim',
     cognates: c(['pt', 'sorvete'], ['it', 'gelato'], ['es', 'helado'], ['fr', 'glace'], ['ro', 'înghețată']),
-    evolution_note: 'Particípio de «gelar», do latim gelare, como o italiano «gelato» e o espanhol «helado». O Brasil chama a sobremesa de «sorvete», do italiano sorbetto, que veio pelo turco do árabe šarba, «bebida». Em Portugal, «sorvete» é mais o de fruta, sem leite.',
+    evolution_note: 'Particípio de “gelar”, do latim gelare, como o italiano “gelato” e o espanhol “helado”. O Brasil chama a sobremesa de “sorvete”, do italiano sorbetto, que veio pelo turco do árabe šarba, “bebida”. Em Portugal, “sorvete” é mais o de fruta, sem leite.',
     transparent: true,
   },
   {
@@ -501,7 +501,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'taleare',
     origin_language: 'Latim',
     cognates: c(['pt', 'açougue'], ['es', 'tajo'], ['it', 'taglio'], ['fr', 'taille'], ['en', 'tailor']),
-    evolution_note: 'De «talhar», do latim taleare, «cortar»: o talho é o lugar onde se corta a carne. O Brasil ficou com «açougue», do árabe as-sūq, «o mercado». Em Portugal, o dono do talho é o «talhante».',
+    evolution_note: 'De “talhar”, do latim taleare, “cortar”: o talho é o lugar onde se corta a carne. O Brasil ficou com “açougue”, do árabe as-sūq, “o mercado”. Em Portugal, o dono do talho é o “talhante”.',
     transparent: false,
   },
   {
@@ -509,7 +509,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'montre',
     origin_language: 'Francês',
     cognates: c(['pt', 'vitrine'], ['fr', 'montre / vitrine'], ['es', 'escaparate'], ['it', 'vetrina'], ['en', 'demonstrate']),
-    evolution_note: 'Do francês «montre», «mostra», de montrer, «mostrar», que vem do latim monstrare. Os dois países foram buscar a palavra ao francês, mas cada um escolheu uma: Portugal a montre (a exposição), o Brasil a vitrine (o vidro).',
+    evolution_note: 'Do francês “montre”, “mostra”, de montrer, “mostrar”, que vem do latim monstrare. Os dois países foram buscar a palavra ao francês, mas cada um escolheu uma: Portugal a montre (a exposição), o Brasil a vitrine (o vidro).',
     transparent: false,
   },
   {
@@ -517,15 +517,15 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'écran',
     origin_language: 'Francês',
     cognates: c(['pt', 'tela'], ['fr', 'écran'], ['es', 'pantalla'], ['it', 'schermo'], ['en', 'screen']),
-    evolution_note: 'Adaptação do francês «écran», com o «an» nasal escrito «ã». O Brasil diz «tela», palavra latina (tela, «tecido») que vem da tela de pintura e do cinema. O italiano «schermo» e o inglês «screen» são parentes germânicos do francês «écran».',
+    evolution_note: 'Adaptação do francês “écran”, com o “an” nasal escrito “ã”. O Brasil diz “tela”, palavra latina (tela, “tecido”) que vem da tela de pintura e do cinema. O italiano “schermo” e o inglês “screen” são parentes germânicos do francês “écran”.',
     transparent: false,
   },
   {
     word: 'miúdo',
     root_word: 'minutus',
     origin_language: 'Latim',
-    cognates: c(['pt', 'criança; miúdo (pequeno)'], ['es', 'menudo'], ['it', 'minuto'], ['fr', 'menu'], ['en', 'minute («minúsculo»)']),
-    evolution_note: 'Do latim minutus, «diminuído, pequeno», a mesma raiz de «minuto» (a pequena parte da hora). No Brasil, «miúdo» é o pequeno, e «miúdos» são os de frango; em Portugal, «os miúdos» são as crianças. O francês «menu» começou por ser a lista «miúda», detalhada.',
+    cognates: c(['pt', 'criança; miúdo (pequeno)'], ['es', 'menudo'], ['it', 'minuto'], ['fr', 'menu'], ['en', 'minute (“minúsculo”)']),
+    evolution_note: 'Do latim minutus, “diminuído, pequeno”, a mesma raiz de “minuto” (a pequena parte da hora). No Brasil, “miúdo” é o pequeno, e “miúdos” são os de frango; em Portugal, “os miúdos” são as crianças. O francês “menu” começou por ser a lista “miúda”, detalhada.',
     transparent: true,
   },
   {
@@ -533,7 +533,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'putus',
     origin_language: 'Latim',
     cognates: c(['pt', 'garoto'], ['it', 'putto (o anjinho da pintura)']),
-    evolution_note: 'Do latim putus, «menino». Em Portugal, «puto» é só o garoto, em tom familiar e sem nada de ofensivo; os meninos gordinhos dos quadros do Renascimento são os «putti» em italiano. No Brasil, a palavra ganhou sentidos de gíria («ficar puto», zangado) e usos vulgares — por isso soa tão diferente para um brasileiro.',
+    evolution_note: 'Do latim putus, “menino”. Em Portugal, “puto” é só o garoto, em tom familiar e sem nada de ofensivo; os meninos gordinhos dos quadros do Renascimento são os “putti” em italiano. No Brasil, a palavra ganhou sentidos de gíria (“ficar puto”, zangado) e usos vulgares — por isso soa tão diferente para um brasileiro.',
     transparent: false,
   },
   {
@@ -541,7 +541,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'gachó',
     origin_language: 'Caló (romani da Península Ibérica)',
     cognates: c(['pt', 'cara, sujeito'], ['es', 'gachó']),
-    evolution_note: 'No caló, a língua dos ciganos ibéricos, «gachó» era o homem que não pertencia ao povo cigano. Em Portugal, virou o informal «gajo», «o cara»; o feminino «gaja» é mais atrevido e convém evitá-lo fora da intimidade.',
+    evolution_note: 'No caló, a língua dos ciganos ibéricos, “gachó” era o homem que não pertencia ao povo cigano. Em Portugal, virou o informal “gajo”, “o cara”; o feminino “gaja” é mais atrevido e convém evitá-lo fora da intimidade.',
     transparent: false,
   },
   {
@@ -549,7 +549,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'canalis',
     origin_language: 'Latim',
     cognates: c(['pt', 'encanador'], ['es', 'fontanero'], ['it', 'idraulico'], ['fr', 'plombier'], ['en', 'canal']),
-    evolution_note: 'De «canalizar», de canal, do latim canalis, «cano». Portugal diz quem faz a canalização; o Brasil, quem faz o encanamento. O francês «plombier» e o inglês «plumber» lembram os antigos canos de chumbo (latim plumbum).',
+    evolution_note: 'De “canalizar”, de canal, do latim canalis, “cano”. Portugal diz quem faz a canalização; o Brasil, quem faz o encanamento. O francês “plombier” e o inglês “plumber” lembram os antigos canos de chumbo (latim plumbum).',
     transparent: false,
   },
   {
@@ -557,7 +557,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'ēlektron',
     origin_language: 'Grego (pelo latim moderno)',
     cognates: c(['pt', 'bonde'], ['es', 'tranvía'], ['it', 'tram'], ['fr', 'tramway'], ['en', 'electric / tram']),
-    evolution_note: 'Grego ēlektron, «âmbar», que atrai coisas quando esfregado. Em Lisboa, o «elétrico» é o carro elétrico sobre trilhos, como o famoso 28. No Rio, segundo a explicação mais aceita, os bilhetes das companhias de carris lembravam títulos financeiros, os «bonds» em inglês, e o próprio veículo acabou chamado «bonde».',
+    evolution_note: 'Grego ēlektron, “âmbar”, que atrai coisas quando esfregado. Em Lisboa, o “elétrico” é o carro elétrico sobre trilhos, como o famoso 28. No Rio, segundo a explicação mais aceita, os bilhetes das companhias de carris lembravam títulos financeiros, os “bonds” em inglês, e o próprio veículo acabou chamado “bonde”.',
     transparent: false,
   },
   {
@@ -565,7 +565,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'balneum',
     origin_language: 'Latim',
     cognates: c(['pt', 'banheiro'], ['es', 'cuarto de baño'], ['it', 'bagno'], ['fr', 'salle de bains'], ['en', 'bathroom']),
-    evolution_note: '«Banho» vem do latim balneum. Portugal descreve o cômodo, como os vizinhos europeus: a casa, a sala, o quarto de banho. O Brasil criou «banheiro»; em Portugal, «banheiro» é o nadador-salvador da praia, o salva-vidas.',
+    evolution_note: '“Banho” vem do latim balneum. Portugal descreve o cômodo, como os vizinhos europeus: a casa, a sala, o quarto de banho. O Brasil criou “banheiro”; em Portugal, “banheiro” é o nadador-salvador da praia, o salva-vidas.',
     transparent: true,
   },
   {
@@ -573,7 +573,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'canis',
     origin_language: 'Latim',
     cognates: c(['pt', 'cachorro / cão'], ['es', 'can (literário)'], ['it', 'cane'], ['fr', 'chien'], ['ro', 'câine']),
-    evolution_note: 'Latim canem → cane → cão, com a queda do «n» entre vogais deixando a nasal. Portugal manteve «cão» como a palavra de todo dia; no Brasil ela ficou mais formal, e «cachorro» tomou o lugar. Em Portugal, «cachorro» é o filhote.',
+    evolution_note: 'Latim canem → cane → cão, com a queda do “n” entre vogais deixando a nasal. Portugal manteve “cão” como a palavra de todo dia; no Brasil ela ficou mais formal, e “cachorro” tomou o lugar. Em Portugal, “cachorro” é o filhote.',
     transparent: true,
   },
   {
@@ -581,7 +581,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'équipe',
     origin_language: 'Francês (do nórdico antigo)',
     cognates: c(['pt', 'equipe, time'], ['fr', 'équipe'], ['es', 'equipo'], ['it', 'equipaggio'], ['en', 'equip / ship']),
-    evolution_note: 'O francês «équipe» vem de équiper, «equipar um navio», do nórdico antigo skipa, parente do inglês «ship». O Brasil manteve a forma francesa «equipe» (e usa «time», do inglês team); Portugal aportuguesou para «equipa».',
+    evolution_note: 'O francês “équipe” vem de équiper, “equipar um navio”, do nórdico antigo skipa, parente do inglês “ship”. O Brasil manteve a forma francesa “equipe” (e usa “time”, do inglês team); Portugal aportuguesou para “equipa”.',
     transparent: true,
   },
   {
@@ -589,7 +589,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'goal',
     origin_language: 'Inglês',
     cognates: c(['pt', 'gol'], ['es', 'gol'], ['it', 'gol'], ['fr', 'but'], ['en', 'goal']),
-    evolution_note: 'O futebol chegou à Península com vocabulário inglês. O Brasil ficou com «gol» (plural «gols»); Portugal acrescentou a vogal final, «golo», com plural regular «golos».',
+    evolution_note: 'O futebol chegou à Península com vocabulário inglês. O Brasil ficou com “gol” (plural “gols”); Portugal acrescentou a vogal final, “golo”, com plural regular “golos”.',
     transparent: true,
   },
   {
@@ -597,7 +597,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'guardar + rete',
     origin_language: 'Germânico + latim',
     cognates: c(['pt', 'goleiro'], ['es', 'portero / guardameta'], ['it', 'portiere'], ['fr', 'gardien de but'], ['en', 'goalkeeper']),
-    evolution_note: 'Quem guarda as redes: «guardar» é germânico, «rede» é latim (rete). O Brasil formou o nome a partir de «gol»: goleiro. Portugal guarda o «golo»; o Brasil marca o «gol».',
+    evolution_note: 'Quem guarda as redes: “guardar” é germânico, “rede” é latim (rete). O Brasil formou o nome a partir de “gol”: goleiro. Portugal guarda o “golo”; o Brasil marca o “gol”.',
     transparent: false,
   },
   {
@@ -605,7 +605,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'porta',
     origin_language: 'Latim',
     cognates: c(['pt', 'pedágio'], ['es', 'peaje'], ['it', 'pedaggio'], ['fr', 'péage']),
-    evolution_note: 'Na Idade Média, pagava-se para entrar pelas portas da cidade: portagem. O Brasil ficou com «pedágio», do latim medieval pedaticum, a taxa por pôr o pé no caminho, a mesma raiz do italiano «pedaggio» e do francês «péage».',
+    evolution_note: 'Na Idade Média, pagava-se para entrar pelas portas da cidade: portagem. O Brasil ficou com “pedágio”, do latim medieval pedaticum, a taxa por pôr o pé no caminho, a mesma raiz do italiano “pedaggio” e do francês “péage”.',
     transparent: false,
   },
   {
@@ -613,7 +613,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'parare',
     origin_language: 'Latim',
     cognates: c(['pt', 'ponto (de ônibus)'], ['es', 'parada'], ['it', 'fermata'], ['fr', 'arrêt']),
-    evolution_note: 'De «parar», do latim parare, «preparar», que no latim vulgar passou a «deter-se». Em Portugal espera-se o autocarro na paragem; no Brasil, o ônibus no ponto.',
+    evolution_note: 'De “parar”, do latim parare, “preparar”, que no latim vulgar passou a “deter-se”. Em Portugal espera-se o autocarro na paragem; no Brasil, o ônibus no ponto.',
     transparent: false,
   },
   {
@@ -621,7 +621,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'camion',
     origin_language: 'Francês',
     cognates: c(['pt', 'caminhão'], ['fr', 'camion'], ['es', 'camión'], ['it', 'camion']),
-    evolution_note: 'Do francês «camion». Portugal adaptou-o diretamente: camião. No Brasil, a palavra se cruzou com «caminho» e virou «caminhão».',
+    evolution_note: 'Do francês “camion”. Portugal adaptou-o diretamente: camião. No Brasil, a palavra se cruzou com “caminho” e virou “caminhão”.',
     transparent: true,
   },
   {
@@ -629,7 +629,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'trottinette',
     origin_language: 'Francês',
     cognates: c(['pt', 'patinete'], ['fr', 'trottinette'], ['es', 'patinete'], ['it', 'monopattino'], ['en', 'scooter']),
-    evolution_note: 'Do francês «trottinette», de trottiner, «andar a passinhos». O Brasil pegou outro nome, «patinete», de patim, como o espanhol.',
+    evolution_note: 'Do francês “trottinette”, de trottiner, “andar a passinhos”. O Brasil pegou outro nome, “patinete”, de patim, como o espanhol.',
     transparent: false,
   },
   {
@@ -637,7 +637,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'explanare',
     origin_language: 'Latim (pelo italiano e pelo francês)',
     cognates: c(['pt', 'mesas na calçada'], ['it', 'spianata'], ['fr', 'esplanade'], ['es', 'explanada']),
-    evolution_note: 'Do latim explanare, «aplanar»: um terreno plano e aberto, sentido que o Brasil guarda (a Esplanada dos Ministérios, em Brasília). Em Portugal, o espaço aberto por excelência são as mesas de café ao ar livre: sentar na esplanada é um hábito nacional.',
+    evolution_note: 'Do latim explanare, “aplanar”: um terreno plano e aberto, sentido que o Brasil guarda (a Esplanada dos Ministérios, em Brasília). Em Portugal, o espaço aberto por excelência são as mesas de café ao ar livre: sentar na esplanada é um hábito nacional.',
     transparent: false,
   },
   {
@@ -645,7 +645,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'passus',
     origin_language: 'Latim',
     cognates: c(['pt', 'calçada; passeio'], ['es', 'paseo'], ['it', 'passeggiata'], ['fr', 'pas']),
-    evolution_note: 'De «passear», formado sobre «passo», do latim passus. Em Portugal, «passeio» também é a parte da rua reservada aos peões (pedestres). E a «calçada», lá, é o chão de pedrinhas: a famosa calçada portuguesa.',
+    evolution_note: 'De “passear”, formado sobre “passo”, do latim passus. Em Portugal, “passeio” também é a parte da rua reservada aos peões (pedestres). E a “calçada”, lá, é o chão de pedrinhas: a famosa calçada portuguesa.',
     transparent: true,
   },
   {
@@ -653,7 +653,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'berme',
     origin_language: 'Francês (do neerlandês)',
     cognates: c(['pt', 'acostamento'], ['fr', 'berme'], ['es', 'berma'], ['en', 'berm']),
-    evolution_note: 'Termo de engenharia militar, o francês «berme» (do neerlandês berm) era a faixa entre a muralha e o fosso. Em Portugal, passou à faixa ao lado da estrada; o Brasil criou «acostamento», o lugar onde se encosta o carro.',
+    evolution_note: 'Termo de engenharia militar, o francês “berme” (do neerlandês berm) era a faixa entre a muralha e o fosso. Em Portugal, passou à faixa ao lado da estrada; o Brasil criou “acostamento”, o lugar onde se encosta o carro.',
     transparent: false,
   },
   {
@@ -661,7 +661,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'castanea',
     origin_language: 'Latim (do grego)',
     cognates: c(['pt', 'marrom'], ['es', 'castaño'], ['fr', 'marron'], ['it', 'castano'], ['en', 'chestnut']),
-    evolution_note: 'Portugal e o Brasil deram à cor o nome da castanha — só que em línguas diferentes. «Castanho» vem do latim castanea; «marrom», do francês marron, a castanha grande. Em Portugal, «marrom» quase não se usa.',
+    evolution_note: 'Portugal e o Brasil deram à cor o nome da castanha — só que em línguas diferentes. “Castanho” vem do latim castanea; “marrom”, do francês marron, a castanha grande. Em Portugal, “marrom” quase não se usa.',
     transparent: true,
   },
   {
@@ -669,7 +669,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'cinis',
     origin_language: 'Latim',
     cognates: c(['pt', 'cinza'], ['es', 'ceniciento'], ['it', 'cenere'], ['fr', 'cendre'], ['ro', 'cenușiu']),
-    evolution_note: 'De «cinza», do latim cinis / cinisia. O Brasil usa o próprio substantivo como cor («um carro cinza»); Portugal prefere o adjetivo em -ento, «cinzento», como em «friorento» e «ciumento».',
+    evolution_note: 'De “cinza”, do latim cinis / cinisia. O Brasil usa o próprio substantivo como cor (“um carro cinza”); Portugal prefere o adjetivo em -ento, “cinzento”, como em “friorento” e “ciumento”.',
     transparent: true,
   },
   {
@@ -677,7 +677,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'cawan',
     origin_language: 'Malaio',
     cognates: c(['pt', 'xícara'], ['es', 'jícara'], ['en', 'cup']),
-    evolution_note: 'Os navegadores portugueses trouxeram do Oriente o chá e, junto, a «chávena», do malaio cawan, «tigela». O Brasil ficou com «xícara», do náuatle xicalli, a cuia mexicana, pelo espanhol «jícara». Uma palavra da Ásia, outra da América, para a mesma louça.',
+    evolution_note: 'Os navegadores portugueses trouxeram do Oriente o chá e, junto, a “chávena”, do malaio cawan, “tigela”. O Brasil ficou com “xícara”, do náuatle xicalli, a cuia mexicana, pelo espanhol “jícara”. Uma palavra da Ásia, outra da América, para a mesma louça.',
     transparent: false,
   },
   {
@@ -685,7 +685,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'sandwich',
     origin_language: 'Inglês',
     cognates: c(['pt', 'sanduíche'], ['es', 'sándwich'], ['it', 'sandwich / tramezzino'], ['fr', 'sandwich'], ['en', 'sandwich']),
-    evolution_note: 'Do inglês «sandwich», que a tradição liga a um conde de Sandwich do século XVIII, que comia sem largar a mesa de jogo. Portugal encurtou para «sandes» (a mesma forma no singular e no plural); o Brasil adaptou para «sanduíche».',
+    evolution_note: 'Do inglês “sandwich”, que a tradição liga a um conde de Sandwich do século XVIII, que comia sem largar a mesa de jogo. Portugal encurtou para “sandes” (a mesma forma no singular e no plural); o Brasil adaptou para “sanduíche”.',
     transparent: false,
   },
   {
@@ -693,7 +693,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'lunch',
     origin_language: 'Inglês',
     cognates: c(['pt', 'lanche'], ['es', 'lonche (México)'], ['en', 'lunch']),
-    evolution_note: 'Do inglês «lunch», o almoço leve. Nos dois países, «lanche» passou a ser a refeição pequena da tarde. Em Portugal convive com «merenda» e com o «lanche» das crianças à saída da escola.',
+    evolution_note: 'Do inglês “lunch”, o almoço leve. Nos dois países, “lanche” passou a ser a refeição pequena da tarde. Em Portugal convive com “merenda” e com o “lanche” das crianças à saída da escola.',
     transparent: true,
   },
   {
@@ -701,7 +701,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'merenda',
     origin_language: 'Latim',
     cognates: c(['pt', 'merenda, lanche'], ['es', 'merienda'], ['it', 'merenda'], ['ro', 'merinde']),
-    evolution_note: 'O latim merenda era a refeição da tarde, talvez ligada a merere, «merecer»: o que se ganha depois do trabalho. Portugal, Espanha, Itália e Romênia ainda a usam para o lanchinho da tarde; no Brasil, é a «merenda escolar».',
+    evolution_note: 'O latim merenda era a refeição da tarde, talvez ligada a merere, “merecer”: o que se ganha depois do trabalho. Portugal, Espanha, Itália e Romênia ainda a usam para o lanchinho da tarde; no Brasil, é a “merenda escolar”.',
     transparent: true,
   },
   {
@@ -709,7 +709,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'pastilla',
     origin_language: 'Espanhol',
     cognates: c(['pt', 'chiclete; pastilha'], ['es', 'pastilla / chicle'], ['it', 'pastiglia'], ['fr', 'pastille']),
-    evolution_note: 'Diminutivo espanhol de pasta. Em Portugal, a goma de mascar é a «pastilha elástica» ou só «pastilha». O «chiclete» do Brasil vem de chicle, a resina de uma árvore mexicana, palavra do náuatle (tzictli) que chegou pelo espanhol.',
+    evolution_note: 'Diminutivo espanhol de pasta. Em Portugal, a goma de mascar é a “pastilha elástica” ou só “pastilha”. O “chiclete” do Brasil vem de chicle, a resina de uma árvore mexicana, palavra do náuatle (tzictli) que chegou pelo espanhol.',
     transparent: true,
   },
   {
@@ -717,7 +717,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'perexsuctus',
     origin_language: 'Latim',
     cognates: c(['pt', 'presunto cru, presunto tipo Parma'], ['it', 'prosciutto'], ['es', 'jamón']),
-    evolution_note: 'Do latim perexsuctus, «bem enxuto»: a carne curada e seca, parente do italiano «prosciutto». Em Portugal, o presunto é sempre o cru, curado; o presunto cozido do sanduíche brasileiro chama-se lá «fiambre».',
+    evolution_note: 'Do latim perexsuctus, “bem enxuto”: a carne curada e seca, parente do italiano “prosciutto”. Em Portugal, o presunto é sempre o cru, curado; o presunto cozido do sanduíche brasileiro chama-se lá “fiambre”.',
     transparent: true,
   },
   {
@@ -725,7 +725,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'fiambre',
     origin_language: 'Espanhol (do latim frigidus)',
     cognates: c(['pt', 'presunto (cozido)'], ['es', 'fiambre'], ['it', 'freddo'], ['fr', 'froid']),
-    evolution_note: 'Do espanhol «fiambre», de fiambrar, que remonta a «frio» (latim frigidus): a carne preparada para se comer fria. Em Portugal é o presunto cozido do Brasil; «uma sandes de fiambre» é o misto sem queijo.',
+    evolution_note: 'Do espanhol “fiambre”, de fiambrar, que remonta a “frio” (latim frigidus): a carne preparada para se comer fria. Em Portugal é o presunto cozido do Brasil; “uma sandes de fiambre” é o misto sem queijo.',
     transparent: false,
   },
   {
@@ -733,7 +733,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'al-burqūq',
     origin_language: 'Árabe (do latim)',
     cognates: c(['pt', 'damasco'], ['es', 'albaricoque'], ['it', 'albicocca'], ['fr', 'abricot'], ['en', 'apricot']),
-    evolution_note: 'Viagem de ida e volta: o latim praecoquum, «precoce» (a fruta que amadurece cedo), passou ao grego, daí ao árabe al-burqūq, e voltou à Península como «alperce». O Brasil chama a fruta de «damasco», pela cidade de Damasco; em Portugal, «damasco» é mais o tecido.',
+    evolution_note: 'Viagem de ida e volta: o latim praecoquum, “precoce” (a fruta que amadurece cedo), passou ao grego, daí ao árabe al-burqūq, e voltou à Península como “alperce”. O Brasil chama a fruta de “damasco”, pela cidade de Damasco; em Portugal, “damasco” é mais o tecido.',
     transparent: false,
   },
   {
@@ -741,7 +741,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'persicum',
     origin_language: 'Latim',
     cognates: c(['pt', 'pêssego'], ['fr', 'pêche'], ['it', 'pesca'], ['ro', 'piersică'], ['en', 'peach']),
-    evolution_note: 'Do latim persicum (malum), a «maçã da Pérsia», porque os romanos achavam que a fruta vinha de lá. O espanhol foi por outro lado («melocotón»), mas o inglês «peach» vem da mesma raiz, pelo francês.',
+    evolution_note: 'Do latim persicum (malum), a “maçã da Pérsia”, porque os romanos achavam que a fruta vinha de lá. O espanhol foi por outro lado (“melocotón”), mas o inglês “peach” vem da mesma raiz, pelo francês.',
     transparent: true,
   },
   {
@@ -749,7 +749,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'Tânger',
     origin_language: 'Topônimo',
     cognates: c(['pt', 'tangerina, mexerica, bergamota'], ['en', 'tangerine'], ['es', 'mandarina'], ['fr', 'mandarine']),
-    evolution_note: 'A laranja de Tânger, cidade do Marrocos que foi portuguesa entre os séculos XV e XVII. Em Portugal, também se ouve «mandarina»; no Brasil, a mesma fruta muda de nome conforme a região: mexerica, bergamota…',
+    evolution_note: 'A laranja de Tânger, cidade do Marrocos que foi portuguesa entre os séculos XV e XVII. Em Portugal, também se ouve “mandarina”; no Brasil, a mesma fruta muda de nome conforme a região: mexerica, bergamota…',
     transparent: true,
   },
   {
@@ -757,7 +757,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'bāḏinjān',
     origin_language: 'Árabe (do persa)',
     cognates: c(['pt', 'berinjela'], ['es', 'berenjena'], ['fr', 'aubergine'], ['en', 'aubergine'], ['it', 'melanzana']),
-    evolution_note: 'Do árabe bāḏinjān, que veio do persa. Portugal escreve com «e» (beringela), o Brasil com «i» (berinjela) — um dos casos em que o Acordo de 1990 manteve grafias diferentes. O francês «aubergine» vem da mesma palavra árabe, pelo catalão.',
+    evolution_note: 'Do árabe bāḏinjān, que veio do persa. Portugal escreve com “e” (beringela), o Brasil com “i” (berinjela) — um dos casos em que o Acordo de 1990 manteve grafias diferentes. O francês “aubergine” vem da mesma palavra árabe, pelo catalão.',
     transparent: true,
   },
   {
@@ -765,7 +765,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'al-mikhadda',
     origin_language: 'Árabe',
     cognates: c(['pt', 'travesseiro; almofada'], ['es', 'almohada'], ['gl', 'almofada']),
-    evolution_note: 'Do árabe al-mikhadda, de khadd, «bochecha»: aquilo onde se encosta o rosto. Em Portugal, «almofada» é tanto o travesseiro da cama como a do sofá. O Brasil separou: travesseiro para dormir, almofada para enfeitar.',
+    evolution_note: 'Do árabe al-mikhadda, de khadd, “bochecha”: aquilo onde se encosta o rosto. Em Portugal, “almofada” é tanto o travesseiro da cama como a do sofá. O Brasil separou: travesseiro para dormir, almofada para enfeitar.',
     transparent: true,
   },
   {
@@ -773,7 +773,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'al-qaṭīfa',
     origin_language: 'Árabe',
     cognates: c(['pt', 'carpete'], ['es', 'alcatifa (arcaico)'], ['fr', 'moquette'], ['en', 'carpet']),
-    evolution_note: 'Do árabe al-qaṭīfa, «tecido felpudo». Portugal ainda chama de «alcatifa» o tapete que cobre o chão todo; o Brasil trocou pelo «carpete», do inglês carpet.',
+    evolution_note: 'Do árabe al-qaṭīfa, “tecido felpudo”. Portugal ainda chama de “alcatifa” o tapete que cobre o chão todo; o Brasil trocou pelo “carpete”, do inglês carpet.',
     transparent: false,
   },
   {
@@ -781,7 +781,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'kari’oka',
     origin_language: 'Tupi',
     cognates: c(['pt', 'carioca (natural do Rio); café fraco']),
-    evolution_note: 'Palavra tupi, nome de um rio do Rio de Janeiro; o sentido exato do nome indígena ainda é discutido. Virou o natural da cidade. Em Lisboa, um «carioca» é um café fraco, bem diluído, e um «carioca de limão» é uma casca de limão em água quente.',
+    evolution_note: 'Palavra tupi, nome de um rio do Rio de Janeiro; o sentido exato do nome indígena ainda é discutido. Virou o natural da cidade. Em Lisboa, um “carioca” é um café fraco, bem diluído, e um “carioca de limão” é uma casca de limão em água quente.',
     transparent: true,
   },
   {
@@ -789,7 +789,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'bué',
     origin_language: 'Português de Angola (origem discutida)',
     cognates: c(['pt', 'muito, um monte']),
-    evolution_note: 'Gíria que chegou a Lisboa pela fala de Angola. Costuma-se ligá-la ao quimbundo, mas a origem exata é discutida. Hoje é o intensificador jovem mais típico de Portugal: «bué fixe», «bué de gente».',
+    evolution_note: 'Gíria que chegou a Lisboa pela fala de Angola. Costuma-se ligá-la ao quimbundo, mas a origem exata é discutida. Hoje é o intensificador jovem mais típico de Portugal: “bué fixe”, “bué de gente”.',
     transparent: false,
   },
   {
@@ -797,7 +797,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'kizomba',
     origin_language: 'Quimbundo',
     cognates: c(['pt', 'kizomba'], ['es', 'kizomba'], ['fr', 'kizomba']),
-    evolution_note: 'Em quimbundo, língua de Angola, «kizomba» quer dizer «festa». Deu nome ao ritmo e à dança angolana dos anos 1980, que se espalhou por Portugal e pelo mundo.',
+    evolution_note: 'Em quimbundo, língua de Angola, “kizomba” quer dizer “festa”. Deu nome ao ritmo e à dança angolana dos anos 1980, que se espalhou por Portugal e pelo mundo.',
     transparent: true,
   },
   {
@@ -813,7 +813,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'kari',
     origin_language: 'Tâmil',
     cognates: c(['pt', 'curry, caril'], ['en', 'curry'], ['es', 'curry'], ['fr', 'cari / curry']),
-    evolution_note: 'Do tâmil kari, «molho, tempero», que os portugueses encontraram no sul da Índia e chamaram «caril». O inglês fez «curry» da mesma palavra. Em Portugal, «caril de gambas» é prato comum; no Brasil, diz-se mais «curry».',
+    evolution_note: 'Do tâmil kari, “molho, tempero”, que os portugueses encontraram no sul da Índia e chamaram “caril”. O inglês fez “curry” da mesma palavra. Em Portugal, “caril de gambas” é prato comum; no Brasil, diz-se mais “curry”.',
     transparent: false,
   },
 
@@ -823,7 +823,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'aqua',
     origin_language: 'Latim',
     cognates: c(['pt', 'água / aquático'], ['es', 'agua'], ['it', 'acqua'], ['fr', 'eau'], ['ro', 'apă']),
-    evolution_note: 'O «qu» latino entre vogais amoleceu em «gu»: aqua → água. A forma culta «aquático» mostra a raiz intacta. Em Lisboa, a sílaba final quase some: «águ(a)».',
+    evolution_note: 'O “qu” latino entre vogais amoleceu em “gu”: aqua → água. A forma culta “aquático” mostra a raiz intacta. Em Lisboa, a sílaba final quase some: “águ(a)”.',
     transparent: true,
   },
   {
@@ -831,7 +831,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'noctem',
     origin_language: 'Latim',
     cognates: c(['pt', 'noite / noturno'], ['es', 'noche'], ['it', 'notte'], ['fr', 'nuit'], ['ro', 'noapte'], ['gl', 'noite']),
-    evolution_note: 'O grupo latino «ct» virou «it» em português e galego: noctem → noite, octo → oito, lactem → leite. O espanhol fez «ch» (noche) e o italiano «tt» (notte).',
+    evolution_note: 'O grupo latino “ct” virou “it” em português e galego: noctem → noite, octo → oito, lactem → leite. O espanhol fez “ch” (noche) e o italiano “tt” (notte).',
     transparent: true,
   },
   {
@@ -839,7 +839,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'lactem',
     origin_language: 'Latim',
     cognates: c(['pt', 'leite / lácteo'], ['es', 'leche'], ['it', 'latte'], ['fr', 'lait'], ['ro', 'lapte']),
-    evolution_note: 'Mesmo caminho de «noite»: «ct» → «it». O português manteve o masculino do latim, como o italiano; o espanhol passou para o feminino: la leche. Em Portugal, o café com muito leite é o «galão», servido no copo.',
+    evolution_note: 'Mesmo caminho de “noite”: “ct” → “it”. O português manteve o masculino do latim, como o italiano; o espanhol passou para o feminino: la leche. Em Portugal, o café com muito leite é o “galão”, servido no copo.',
     transparent: true,
   },
   {
@@ -847,7 +847,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'oculus',
     origin_language: 'Latim',
     cognates: c(['pt', 'olho / ocular'], ['es', 'ojo'], ['it', 'occhio'], ['fr', 'œil'], ['ro', 'ochi'], ['gl', 'ollo']),
-    evolution_note: 'O latim falado encurtou oculus para oclu, e o «cl» virou «lh»: olho. O mesmo em auricula → orelha. O galego escreve o mesmo som com «ll»: ollo.',
+    evolution_note: 'O latim falado encurtou oculus para oclu, e o “cl” virou “lh”: olho. O mesmo em auricula → orelha. O galego escreve o mesmo som com “ll”: ollo.',
     transparent: true,
   },
   {
@@ -855,7 +855,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'clavis',
     origin_language: 'Latim',
     cognates: c(['pt', 'chave / clave'], ['es', 'llave'], ['it', 'chiave'], ['fr', 'clé'], ['gl', 'chave']),
-    evolution_note: 'No início da palavra, o «cl» latino virou «ch» em português: clavis → chave, clamare → chamar. A forma erudita «clave» (em música) guardou o original. Em Portugal, o «ch» tem sempre o som chiado, como no Brasil.',
+    evolution_note: 'No início da palavra, o “cl” latino virou “ch” em português: clavis → chave, clamare → chamar. A forma erudita “clave” (em música) guardou o original. Em Portugal, o “ch” tem sempre o som chiado, como no Brasil.',
     transparent: true,
   },
   {
@@ -863,7 +863,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'pluvia',
     origin_language: 'Latim',
     cognates: c(['pt', 'chuva / pluvial'], ['es', 'lluvia'], ['it', 'pioggia'], ['fr', 'pluie'], ['ro', 'ploaie'], ['gl', 'choiva']),
-    evolution_note: 'Também «pl» → «ch»: pluvia → chuva, plenus → cheio, plorare → chorar. O espanhol fez «ll» e o italiano «pi». No Norte de Portugal e na Galiza, a chuva é assunto sério: o galego diz «choiva».',
+    evolution_note: 'Também “pl” → “ch”: pluvia → chuva, plenus → cheio, plorare → chorar. O espanhol fez “ll” e o italiano “pi”. No Norte de Portugal e na Galiza, a chuva é assunto sério: o galego diz “choiva”.',
     transparent: true,
   },
   {
@@ -871,7 +871,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'plenus',
     origin_language: 'Latim',
     cognates: c(['pt', 'cheio / pleno'], ['es', 'lleno'], ['it', 'pieno'], ['fr', 'plein'], ['gl', 'cheo']),
-    evolution_note: 'Duas mudanças típicas do galego-português: «pl» → «ch» e a queda do «n» entre vogais: plenu → cheo. O português ainda pôs um «i» para desfazer o hiato (cheio); o galego ficou com «cheo». A forma erudita «pleno» veio mais tarde, dos livros.',
+    evolution_note: 'Duas mudanças típicas do galego-português: “pl” → “ch” e a queda do “n” entre vogais: plenu → cheo. O português ainda pôs um “i” para desfazer o hiato (cheio); o galego ficou com “cheo”. A forma erudita “pleno” veio mais tarde, dos livros.',
     transparent: true,
   },
   {
@@ -879,7 +879,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'filius',
     origin_language: 'Latim',
     cognates: c(['pt', 'filho / filial'], ['es', 'hijo'], ['it', 'figlio'], ['fr', 'fils'], ['ro', 'fiu'], ['gl', 'fillo']),
-    evolution_note: 'O «li» latino antes de vogal virou o som palatal «lh»: filius → filho, folia → folha. O português foi buscar a grafia «lh» ao provençal, na Idade Média.',
+    evolution_note: 'O “li” latino antes de vogal virou o som palatal “lh”: filius → filho, folia → folha. O português foi buscar a grafia “lh” ao provençal, na Idade Média.',
     transparent: true,
   },
   {
@@ -887,23 +887,23 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'pedem',
     origin_language: 'Latim',
     cognates: c(['pt', 'pé / pedal'], ['es', 'pie'], ['it', 'piede'], ['fr', 'pied'], ['en', 'pedestrian']),
-    evolution_note: 'O português derrubou o «d» entre vogais: pede → pee → pé. O mesmo em credere → crer e videre → ver. Em Portugal, quem anda a pé é o «peão» — no Brasil, pedestre.',
+    evolution_note: 'O português derrubou o “d” entre vogais: pede → pee → pé. O mesmo em credere → crer e videre → ver. Em Portugal, quem anda a pé é o “peão” — no Brasil, pedestre.',
     transparent: true,
   },
   {
     word: 'mesa',
     root_word: 'mensa',
     origin_language: 'Latim',
-    cognates: c(['pt', 'mesa'], ['es', 'mesa'], ['ro', 'masă'], ['it', 'mensa («refeitório»)']),
-    evolution_note: 'O latim mensa já se pronunciava «mesa» na boca do povo romano: o «n» antes de «s» caiu cedo. O italiano guardou «mensa» só para o refeitório, e diz «tavola» (de tabula) para o móvel.',
+    cognates: c(['pt', 'mesa'], ['es', 'mesa'], ['ro', 'masă'], ['it', 'mensa (“refeitório”)']),
+    evolution_note: 'O latim mensa já se pronunciava “mesa” na boca do povo romano: o “n” antes de “s” caiu cedo. O italiano guardou “mensa” só para o refeitório, e diz “tavola” (de tabula) para o móvel.',
     transparent: true,
   },
   {
     word: 'cadeira',
     root_word: 'cathedra',
     origin_language: 'Latim (do grego)',
-    cognates: c(['pt', 'cadeira'], ['es', 'cadera («quadril»)'], ['fr', 'chaise / chaire'], ['en', 'cathedral']),
-    evolution_note: 'Do grego kathédra, «assento», pelo latim cathedra. A catedral é a igreja onde fica a cadeira do bispo. Em Portugal, uma «cadeira» é também a disciplina da faculdade (no Brasil, diz-se mais «disciplina»).',
+    cognates: c(['pt', 'cadeira'], ['es', 'cadera (“quadril”)'], ['fr', 'chaise / chaire'], ['en', 'cathedral']),
+    evolution_note: 'Do grego kathédra, “assento”, pelo latim cathedra. A catedral é a igreja onde fica a cadeira do bispo. Em Portugal, uma “cadeira” é também a disciplina da faculdade (no Brasil, diz-se mais “disciplina”).',
     transparent: true,
   },
   {
@@ -911,7 +911,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'ianuella',
     origin_language: 'Latim vulgar',
     cognates: c(['pt', 'janela'], ['gl', 'xanela'], ['en', 'January'], ['es', 'ventana']),
-    evolution_note: 'Diminutivo de ianua, «porta»: a janela era a «portinha». Da mesma família vêm Jano, o deus das passagens, e janeiro, a porta do ano. O espanhol preferiu «ventana», de viento.',
+    evolution_note: 'Diminutivo de ianua, “porta”: a janela era a “portinha”. Da mesma família vêm Jano, o deus das passagens, e janeiro, a porta do ano. O espanhol preferiu “ventana”, de viento.',
     transparent: true,
   },
   {
@@ -919,7 +919,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'ecclesia',
     origin_language: 'Latim (do grego)',
     cognates: c(['pt', 'igreja / eclesiástico'], ['es', 'iglesia'], ['it', 'chiesa'], ['fr', 'église'], ['gl', 'igrexa']),
-    evolution_note: 'Grego ekklēsía, «assembleia», pelo latim ecclesia. O «cl» do meio passou a «gr», como em ecclesia → egreja → igreja. O romeno foi por outro caminho: «biserică», de basilica.',
+    evolution_note: 'Grego ekklēsía, “assembleia”, pelo latim ecclesia. O “cl” do meio passou a “gr”, como em ecclesia → egreja → igreja. O romeno foi por outro caminho: “biserică”, de basilica.',
     transparent: true,
   },
   {
@@ -927,7 +927,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'civitatem',
     origin_language: 'Latim',
     cognates: c(['pt', 'cidade / cívico'], ['es', 'ciudad'], ['it', 'città'], ['fr', 'cité'], ['en', 'city']),
-    evolution_note: 'Civitas era a comunidade de cidadãos; só depois virou o lugar. O «v» caiu e o «t» entre vogais amoleceu em «d»: civitate → cidade.',
+    evolution_note: 'Civitas era a comunidade de cidadãos; só depois virou o lugar. O “v” caiu e o “t” entre vogais amoleceu em “d”: civitate → cidade.',
     transparent: true,
   },
   {
@@ -935,7 +935,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'feria secunda',
     origin_language: 'Latim eclesiástico',
     cognates: c(['pt', 'segunda-feira'], ['es', 'lunes'], ['it', 'lunedì'], ['fr', 'lundi'], ['ro', 'luni']),
-    evolution_note: 'Toda a Romània deu aos dias nomes de deuses e astros (lunes, lundi, luni: dia da Lua). O português é a exceção: adotou a contagem da liturgia cristã, «feria secunda», «feria tertia»…, uso que a tradição liga a São Martinho de Dume, bispo de Braga no século VI.',
+    evolution_note: 'Toda a Romània deu aos dias nomes de deuses e astros (lunes, lundi, luni: dia da Lua). O português é a exceção: adotou a contagem da liturgia cristã, “feria secunda”, “feria tertia”…, uso que a tradição liga a São Martinho de Dume, bispo de Braga no século VI.',
     transparent: true,
   },
   {
@@ -943,7 +943,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'dies dominicus',
     origin_language: 'Latim',
     cognates: c(['pt', 'domingo'], ['es', 'domingo'], ['it', 'domenica'], ['fr', 'dimanche'], ['ro', 'duminică']),
-    evolution_note: 'O «dia do Senhor» (dominus). O domingo e o sábado escaparam da contagem por «feiras» e são iguais nas línguas vizinhas.',
+    evolution_note: 'O “dia do Senhor” (dominus). O domingo e o sábado escaparam da contagem por “feiras” e são iguais nas línguas vizinhas.',
     transparent: true,
   },
   {
@@ -951,7 +951,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'sabbatum',
     origin_language: 'Latim (do hebraico)',
     cognates: c(['pt', 'sábado'], ['es', 'sábado'], ['it', 'sabato'], ['fr', 'samedi'], ['ro', 'sâmbătă']),
-    evolution_note: 'Do hebraico shabbat, «descanso», pelo grego e pelo latim sabbatum. A mesma palavra que o português usa para o dia é a do descanso judaico.',
+    evolution_note: 'Do hebraico shabbat, “descanso”, pelo grego e pelo latim sabbatum. A mesma palavra que o português usa para o dia é a do descanso judaico.',
     transparent: true,
   },
   {
@@ -959,7 +959,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'feria',
     origin_language: 'Latim',
     cognates: c(['pt', 'feira / férias'], ['es', 'feria'], ['it', 'fiera'], ['fr', 'foire'], ['en', 'fair']),
-    evolution_note: 'Feria era o dia de festa; nos dias de festa havia mercado, e a feira virou o mercado. O plural culto «férias» guardou o sentido de descanso. Em Portugal, a Feira da Ladra, em Lisboa, é das mais antigas.',
+    evolution_note: 'Feria era o dia de festa; nos dias de festa havia mercado, e a feira virou o mercado. O plural culto “férias” guardou o sentido de descanso. Em Portugal, a Feira da Ladra, em Lisboa, é das mais antigas.',
     transparent: true,
   },
   {
@@ -967,7 +967,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'mensem',
     origin_language: 'Latim',
     cognates: c(['pt', 'mês / mensal'], ['es', 'mes'], ['it', 'mese'], ['fr', 'mois']),
-    evolution_note: 'Mensem → mese → mês: o «n» antes do «s» caiu ainda no latim falado, como em mensa → mesa. «Mensal» e «menstruação» são formas cultas que o guardam.',
+    evolution_note: 'Mensem → mese → mês: o “n” antes do “s” caiu ainda no latim falado, como em mensa → mesa. “Mensal” e “menstruação” são formas cultas que o guardam.',
     transparent: true,
   },
   {
@@ -975,15 +975,15 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'hodie',
     origin_language: 'Latim',
     cognates: c(['pt', 'hoje'], ['es', 'hoy'], ['it', 'oggi'], ['fr', '(aujourd’)hui'], ['gl', 'hoxe']),
-    evolution_note: 'O latim hodie é «hoc die», «neste dia». O «di» antes de vogal virou o som de «j»: hodie → hoje. O francês guardou a palavra dentro de «aujourd’hui», «ao dia de hoje».',
+    evolution_note: 'O latim hodie é “hoc die”, “neste dia”. O “di” antes de vogal virou o som de “j”: hodie → hoje. O francês guardou a palavra dentro de “aujourd’hui”, “ao dia de hoje”.',
     transparent: true,
   },
   {
     word: 'ontem',
     root_word: 'ad noctem',
     origin_language: 'Latim',
-    cognates: c(['pt', 'ontem'], ['es', 'anoche («ontem à noite»)'], ['gl', 'onte']),
-    evolution_note: 'Do latim ad noctem, «à noite», isto é, a noite passada. O espanhol ficou com «anoche» para a noite de ontem e usa «ayer» para o dia; o português generalizou para o dia inteiro.',
+    cognates: c(['pt', 'ontem'], ['es', 'anoche (“ontem à noite”)'], ['gl', 'onte']),
+    evolution_note: 'Do latim ad noctem, “à noite”, isto é, a noite passada. O espanhol ficou com “anoche” para a noite de ontem e usa “ayer” para o dia; o português generalizou para o dia inteiro.',
     transparent: true,
   },
   {
@@ -991,7 +991,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'maneana',
     origin_language: 'Latim vulgar',
     cognates: c(['pt', 'manhã / amanhã'], ['es', 'mañana'], ['gl', 'mañá'], ['fr', 'matin']),
-    evolution_note: 'Do latim mane, «cedo», veio o adjetivo maneana (hora), «a hora cedo». O «n» entre vogais nasalou a vogal anterior e depois caiu, deixando o til: manhã. «Amanhã» é «à manhã», a manhã seguinte.',
+    evolution_note: 'Do latim mane, “cedo”, veio o adjetivo maneana (hora), “a hora cedo”. O “n” entre vogais nasalou a vogal anterior e depois caiu, deixando o til: manhã. “Amanhã” é “à manhã”, a manhã seguinte.',
     transparent: true,
   },
   {
@@ -999,7 +999,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'fabulari',
     origin_language: 'Latim',
     cognates: c(['pt', 'falar / fábula'], ['es', 'hablar'], ['gl', 'falar'], ['it', 'favellare (literário)']),
-    evolution_note: 'O latim clássico dizia loqui; o povo preferiu fabulari, «contar histórias, conversar». O «b» entre vogais caiu: fabulare → faular → falar. O espanhol fez hablar, com o «f» virando «h».',
+    evolution_note: 'O latim clássico dizia loqui; o povo preferiu fabulari, “contar histórias, conversar”. O “b” entre vogais caiu: fabulare → faular → falar. O espanhol fez hablar, com o “f” virando “h”.',
     transparent: true,
   },
   {
@@ -1007,15 +1007,15 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'comedere',
     origin_language: 'Latim',
     cognates: c(['pt', 'comer / comestível'], ['es', 'comer'], ['it', 'mangiare'], ['fr', 'manger']),
-    evolution_note: 'Comedere era «comer tudo, devorar» (com + edere). O português e o espanhol ficaram com essa forma reforçada; o italiano e o francês preferiram manducare, «mastigar», origem de mangiare e manger.',
+    evolution_note: 'Comedere era “comer tudo, devorar” (com + edere). O português e o espanhol ficaram com essa forma reforçada; o italiano e o francês preferiram manducare, “mastigar”, origem de mangiare e manger.',
     transparent: true,
   },
   {
     word: 'chegar',
     root_word: 'plicare',
     origin_language: 'Latim',
-    cognates: c(['pt', 'chegar'], ['es', 'llegar'], ['ro', 'pleca («partir»)'], ['fr', 'plier («dobrar»)']),
-    evolution_note: 'Plicare era «dobrar»: os marinheiros dobravam as velas ao chegar ao porto, e o verbo passou a «aproximar-se». Curiosidade: em romeno, a mesma raiz deu «a pleca», «partir» — o contrário do português.',
+    cognates: c(['pt', 'chegar'], ['es', 'llegar'], ['ro', 'pleca (“partir”)'], ['fr', 'plier (“dobrar”)']),
+    evolution_note: 'Plicare era “dobrar”: os marinheiros dobravam as velas ao chegar ao porto, e o verbo passou a “aproximar-se”. Curiosidade: em romeno, a mesma raiz deu “a pleca”, “partir” — o contrário do português.',
     transparent: true,
   },
   {
@@ -1023,7 +1023,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'solitatem',
     origin_language: 'Latim',
     cognates: c(['pt', 'saudade / solidão'], ['gl', 'saudade / soidade'], ['es', 'soledad']),
-    evolution_note: 'Do latim solitatem, «solidão», que deu no português antigo «soidade» e «suidade». A forma moderna cruzou-se com «saúde» e «saudar». A ideia de solidão transformou-se no sentimento da falta, tema maior do fado e da poesia portuguesa.',
+    evolution_note: 'Do latim solitatem, “solidão”, que deu no português antigo “soidade” e “suidade”. A forma moderna cruzou-se com “saúde” e “saudar”. A ideia de solidão transformou-se no sentimento da falta, tema maior do fado e da poesia portuguesa.',
     transparent: true,
   },
   {
@@ -1031,7 +1031,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'fatum',
     origin_language: 'Latim',
     cognates: c(['pt', 'fado'], ['it', 'fato'], ['es', 'hado'], ['en', 'fate'], ['fr', 'fée']),
-    evolution_note: 'Fatum, «o que foi dito» pelos deuses, isto é, o destino. Em Lisboa e em Coimbra, o canto que fala do destino, da perda e da saudade herdou o nome. O francês «fée», «fada», é da mesma família: as fadas decidiam a sorte.',
+    evolution_note: 'Fatum, “o que foi dito” pelos deuses, isto é, o destino. Em Lisboa e em Coimbra, o canto que fala do destino, da perda e da saudade herdou o nome. O francês “fée”, “fada”, é da mesma família: as fadas decidiam a sorte.',
     transparent: true,
   },
   {
@@ -1039,7 +1039,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'patrem',
     origin_language: 'Latim',
     cognates: c(['pt', 'pai / paterno'], ['es', 'padre'], ['it', 'padre'], ['fr', 'père'], ['en', 'paternal']),
-    evolution_note: 'Patrem → padre → pai: o «t» virou «d» e depois o «d» caiu. O português antigo ainda dizia «padre», palavra que ficou para o sacerdote. O mesmo com matrem → madre → mãe.',
+    evolution_note: 'Patrem → padre → pai: o “t” virou “d” e depois o “d” caiu. O português antigo ainda dizia “padre”, palavra que ficou para o sacerdote. O mesmo com matrem → madre → mãe.',
     transparent: true,
   },
   {
@@ -1047,7 +1047,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'matrem',
     origin_language: 'Latim',
     cognates: c(['pt', 'mãe / materno'], ['es', 'madre'], ['it', 'madre'], ['fr', 'mère'], ['ro', 'mamă']),
-    evolution_note: 'Matrem → madre → mae, com a vogal nasalada. «Madre» ficou para a freira superiora e para a «madrepérola».',
+    evolution_note: 'Matrem → madre → mae, com a vogal nasalada. “Madre” ficou para a freira superiora e para a “madrepérola”.',
     transparent: true,
   },
   {
@@ -1055,7 +1055,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'germanus',
     origin_language: 'Latim',
     cognates: c(['pt', 'irmão / germano'], ['es', 'hermano'], ['it', 'fratello'], ['fr', 'frère'], ['ro', 'frate']),
-    evolution_note: 'O latim frater («irmão») foi trocado por germanus, «do mesmo sangue» (frater germanus, «irmão legítimo»). O português, o galego, o espanhol e o catalão fizeram essa troca; italiano, francês e romeno guardaram frater.',
+    evolution_note: 'O latim frater (“irmão”) foi trocado por germanus, “do mesmo sangue” (frater germanus, “irmão legítimo”). O português, o galego, o espanhol e o catalão fizeram essa troca; italiano, francês e romeno guardaram frater.',
     transparent: true,
   },
   {
@@ -1063,7 +1063,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'cor',
     origin_language: 'Latim',
     cognates: c(['pt', 'coração / cordial'], ['es', 'corazón'], ['it', 'cuore'], ['fr', 'cœur'], ['ro', 'cord (anatomia)']),
-    evolution_note: 'O latim cor era curto demais; o povo o esticou com um sufixo aumentativo, e daí coração e corazón. «Cordial», «recordar» e «de cor» (saber de memória) guardam a raiz.',
+    evolution_note: 'O latim cor era curto demais; o povo o esticou com um sufixo aumentativo, e daí coração e corazón. “Cordial”, “recordar” e “de cor” (saber de memória) guardam a raiz.',
     transparent: true,
   },
   {
@@ -1071,7 +1071,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'capitia',
     origin_language: 'Latim vulgar',
     cognates: c(['pt', 'cabeça / capital'], ['es', 'cabeza'], ['it', 'capo'], ['fr', 'chef'], ['ro', 'cap']),
-    evolution_note: 'Do latim caput, «cabeça», veio o derivado popular capitia. O «p» entre vogais virou «b»: capitia → cabeça. De caput também vêm capital, capitão e chefe.',
+    evolution_note: 'Do latim caput, “cabeça”, veio o derivado popular capitia. O “p” entre vogais virou “b”: capitia → cabeça. De caput também vêm capital, capitão e chefe.',
     transparent: true,
   },
   {
@@ -1079,7 +1079,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'auricula',
     origin_language: 'Latim',
     cognates: c(['pt', 'orelha / auricular'], ['es', 'oreja'], ['it', 'orecchio'], ['fr', 'oreille'], ['ro', 'ureche']),
-    evolution_note: 'O latim falado preferiu o diminutivo auricula («orelhinha») a auris. O «cl» virou «lh», como em oculus → olho. Todas as línguas românicas herdaram o diminutivo.',
+    evolution_note: 'O latim falado preferiu o diminutivo auricula (“orelhinha”) a auris. O “cl” virou “lh”, como em oculus → olho. Todas as línguas românicas herdaram o diminutivo.',
     transparent: true,
   },
   {
@@ -1087,7 +1087,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'genuculum',
     origin_language: 'Latim',
     cognates: c(['pt', 'joelho / genuflexão'], ['it', 'ginocchio'], ['fr', 'genou'], ['ro', 'genunchi'], ['es', 'rodilla']),
-    evolution_note: 'Diminutivo de genu, «joelho». O «cl» deu «lh» outra vez. O espanhol trocou por «rodilla», de rota, «roda»; «genuflexão» (dobrar o joelho) é a forma erudita.',
+    evolution_note: 'Diminutivo de genu, “joelho”. O “cl” deu “lh” outra vez. O espanhol trocou por “rodilla”, de rota, “roda”; “genuflexão” (dobrar o joelho) é a forma erudita.',
     transparent: true,
   },
   {
@@ -1095,7 +1095,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'caseus',
     origin_language: 'Latim',
     cognates: c(['pt', 'queijo / caseína'], ['es', 'queso'], ['ro', 'caș'], ['it', 'formaggio'], ['fr', 'fromage']),
-    evolution_note: 'O português, o espanhol e o romeno ficaram com caseus. O italiano e o francês preferiram formaticus, o queijo feito na «forma». Portugal tem queijos de fama, como o da Serra da Estrela.',
+    evolution_note: 'O português, o espanhol e o romeno ficaram com caseus. O italiano e o francês preferiram formaticus, o queijo feito na “forma”. Portugal tem queijos de fama, como o da Serra da Estrela.',
     transparent: true,
   },
   {
@@ -1103,7 +1103,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'lupus',
     origin_language: 'Latim',
     cognates: c(['pt', 'lobo'], ['es', 'lobo'], ['it', 'lupo'], ['fr', 'loup'], ['ro', 'lup']),
-    evolution_note: 'O «p» entre vogais virou «b»: lupu → lobo, como capitia → cabeça. O lobo-ibérico ainda vive no Norte de Portugal, em Trás-os-Montes e no Gerês.',
+    evolution_note: 'O “p” entre vogais virou “b”: lupu → lobo, como capitia → cabeça. O lobo-ibérico ainda vive no Norte de Portugal, em Trás-os-Montes e no Gerês.',
     transparent: true,
   },
   {
@@ -1111,7 +1111,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'vinum',
     origin_language: 'Latim',
     cognates: c(['pt', 'vinho'], ['es', 'vino'], ['it', 'vino'], ['fr', 'vin'], ['ro', 'vin'], ['en', 'wine']),
-    evolution_note: 'O «n» entre vogais, em vez de cair, virou «nh» depois de «i»: vinu → vinho. O inglês «wine» veio do latim pelos povos germânicos. Portugal tem o vinho do Porto e o vinho verde do Minho.',
+    evolution_note: 'O “n” entre vogais, em vez de cair, virou “nh” depois de “i”: vinu → vinho. O inglês “wine” veio do latim pelos povos germânicos. Portugal tem o vinho do Porto e o vinho verde do Minho.',
     transparent: true,
   },
   {
@@ -1119,7 +1119,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'cervesia',
     origin_language: 'Latim (do gaulês)',
     cognates: c(['pt', 'cerveja'], ['es', 'cerveza'], ['fr', 'cervoise (antigo)'], ['it', 'birra']),
-    evolution_note: 'Os romanos aprenderam a bebida com os gauleses e ficaram com a palavra deles: cervesia. O italiano e o francês moderno trocaram-na pela germânica «birra» / «bière». Em Lisboa, um copo pequeno de cerveja de pressão é um «imperial»; no Porto, um «fino».',
+    evolution_note: 'Os romanos aprenderam a bebida com os gauleses e ficaram com a palavra deles: cervesia. O italiano e o francês moderno trocaram-na pela germânica “birra” / “bière”. Em Lisboa, um copo pequeno de cerveja de pressão é um “imperial”; no Porto, um “fino”.',
     transparent: true,
   },
   {
@@ -1127,15 +1127,15 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'multum',
     origin_language: 'Latim',
     cognates: c(['pt', 'muito / multidão'], ['es', 'mucho'], ['it', 'molto'], ['fr', 'moult (antigo)'], ['ro', 'mult']),
-    evolution_note: 'Multum → muito: o «l» antes do «t» virou «i», como o «c» de noctem → noite. A pronúncia «muinto», nasalada, é a mesma nos dois lados do Atlântico, embora a escrita não mostre.',
+    evolution_note: 'Multum → muito: o “l” antes do “t” virou “i”, como o “c” de noctem → noite. A pronúncia “muinto”, nasalada, é a mesma nos dois lados do Atlântico, embora a escrita não mostre.',
     transparent: true,
   },
   {
     word: 'casa',
     root_word: 'casa',
     origin_language: 'Latim',
-    cognates: c(['pt', 'casa'], ['es', 'casa'], ['it', 'casa'], ['ro', 'casă'], ['fr', 'chez («em casa de»)']),
-    evolution_note: 'Em latim, casa era a choupana, a cabana pobre; a casa de verdade era domus. O povo ficou com a palavra humilde. Domus sobrevive em «doméstico» e no italiano «duomo».',
+    cognates: c(['pt', 'casa'], ['es', 'casa'], ['it', 'casa'], ['ro', 'casă'], ['fr', 'chez (“em casa de”)']),
+    evolution_note: 'Em latim, casa era a choupana, a cabana pobre; a casa de verdade era domus. O povo ficou com a palavra humilde. Domus sobrevive em “doméstico” e no italiano “duomo”.',
     transparent: true,
   },
   {
@@ -1143,14 +1143,14 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'plattus',
     origin_language: 'Latim vulgar (do grego)',
     cognates: c(['pt', 'chato'], ['es', 'chato'], ['fr', 'plat'], ['it', 'piatto'], ['en', 'plate']),
-    evolution_note: 'Do grego platýs, «largo, plano», pelo latim vulgar plattus. Com «pl» → «ch», deu «chato», plano (o pé chato). O sentido de «aborrecido», sem relevo, vale nos dois países.',
+    evolution_note: 'Do grego platýs, “largo, plano”, pelo latim vulgar plattus. Com “pl” → “ch”, deu “chato”, plano (o pé chato). O sentido de “aborrecido”, sem relevo, vale nos dois países.',
     transparent: true,
   },
   {
     word: 'milho',
     root_word: 'milium',
     origin_language: 'Latim',
-    cognates: c(['pt', 'milho'], ['es', 'mijo («painço»)'], ['it', 'miglio'], ['fr', 'mil'], ['en', 'millet']),
+    cognates: c(['pt', 'milho'], ['es', 'mijo (“painço”)'], ['it', 'miglio'], ['fr', 'mil'], ['en', 'millet']),
     evolution_note: 'O latim milium era o painço, um cereal miúdo. Quando o milho americano chegou, herdou o nome do cereal antigo. Em Portugal, a broa de milho é o pão tradicional do Norte.',
     transparent: true,
   },
@@ -1167,7 +1167,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'pigmenta',
     origin_language: 'Latim',
     cognates: c(['pt', 'pimenta'], ['es', 'pimienta'], ['fr', 'piment'], ['en', 'pimento / pigment']),
-    evolution_note: 'Pigmenta, plural de pigmentum, eram as tintas e, depois, as drogas e especiarias. A pimenta foi o grande negócio da Carreira da Índia. «Pigmento» é a forma culta.',
+    evolution_note: 'Pigmenta, plural de pigmentum, eram as tintas e, depois, as drogas e especiarias. A pimenta foi o grande negócio da Carreira da Índia. “Pigmento” é a forma culta.',
     transparent: true,
   },
   {
@@ -1175,7 +1175,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'pimenta',
     origin_language: 'Português (do latim)',
     cognates: c(['pt', 'pimentão'], ['es', 'pimiento'], ['en', 'pimento']),
-    evolution_note: 'Masculino de «pimenta»: em Portugal, o pimento é o legume grande, o pimentão do Brasil. O inglês «pimento» veio daí. E a pimenta ardida, lá, é a «malagueta».',
+    evolution_note: 'Masculino de “pimenta”: em Portugal, o pimento é o legume grande, o pimentão do Brasil. O inglês “pimento” veio daí. E a pimenta ardida, lá, é a “malagueta”.',
     transparent: false,
   },
   {
@@ -1183,7 +1183,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'canna',
     origin_language: 'Latim',
     cognates: c(['pt', 'canela'], ['es', 'canela'], ['it', 'cannella'], ['fr', 'cannelle']),
-    evolution_note: 'Diminutivo de «cana» (latim canna): a casca enrolada parece um canudinho. No pastel de nata, a canela vai por cima.',
+    evolution_note: 'Diminutivo de “cana” (latim canna): a casca enrolada parece um canudinho. No pastel de nata, a canela vai por cima.',
     transparent: true,
   },
   {
@@ -1199,7 +1199,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'obligatus',
     origin_language: 'Latim',
     cognates: c(['pt', 'obrigado'], ['en', 'obliged'], ['es', 'obligado'], ['gl', 'obrigado']),
-    evolution_note: 'Quem agradece diz que fica «obrigado», ligado por um dever para com o outro (latim obligatus). Mito comum: o japonês «arigatō» não vem daqui — é palavra japonesa antiga, anterior à chegada dos portugueses.',
+    evolution_note: 'Quem agradece diz que fica “obrigado”, ligado por um dever para com o outro (latim obligatus). Mito comum: o japonês “arigatō” não vem daqui — é palavra japonesa antiga, anterior à chegada dos portugueses.',
     transparent: true,
   },
   {
@@ -1207,7 +1207,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'panem',
     origin_language: 'Latim',
     cognates: c(['pt', 'pão'], ['es', 'pan'], ['it', 'pane'], ['fr', 'pain'], ['ro', 'pâine']),
-    evolution_note: 'Panem → pane → pão: o «n» entre vogais caiu e deixou a nasal. Os portugueses levaram o pão ao Japão no século XVI, e lá ele ainda se chama «pan». Em Portugal, o pãozinho do café da manhã é a «carcaça» ou o «papo-seco».',
+    evolution_note: 'Panem → pane → pão: o “n” entre vogais caiu e deixou a nasal. Os portugueses levaram o pão ao Japão no século XVI, e lá ele ainda se chama “pan”. Em Portugal, o pãozinho do café da manhã é a “carcaça” ou o “papo-seco”.',
     transparent: true,
   },
   {
@@ -1215,7 +1215,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'bouton',
     origin_language: 'Francês',
     cognates: c(['pt', 'botão'], ['fr', 'bouton'], ['es', 'botón'], ['it', 'bottone'], ['en', 'button']),
-    evolution_note: 'Do francês bouton, que era também o botão de flor. Os portugueses levaram o objeto e o nome ao Japão, onde ainda se diz «botan».',
+    evolution_note: 'Do francês bouton, que era também o botão de flor. Os portugueses levaram o objeto e o nome ao Japão, onde ainda se diz “botan”.',
     transparent: true,
   },
 
@@ -1225,7 +1225,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'az-zayt',
     origin_language: 'Árabe',
     cognates: c(['pt', 'azeite'], ['es', 'aceite'], ['it', 'olio'], ['fr', 'huile'], ['en', 'oil']),
-    evolution_note: 'O «a(l)-» inicial de tantas palavras é o artigo árabe colado ao nome: az-zayt, «o óleo». O latim oleum ficou em «óleo» para os outros usos. Portugal é grande produtor de azeite, sobretudo no Alentejo e em Trás-os-Montes.',
+    evolution_note: 'O “a(l)-” inicial de tantas palavras é o artigo árabe colado ao nome: az-zayt, “o óleo”. O latim oleum ficou em “óleo” para os outros usos. Portugal é grande produtor de azeite, sobretudo no Alentejo e em Trás-os-Montes.',
     transparent: true,
   },
   {
@@ -1233,7 +1233,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'az-zaytūna',
     origin_language: 'Árabe',
     cognates: c(['pt', 'azeitona'], ['es', 'aceituna'], ['it', 'oliva'], ['fr', 'olive'], ['en', 'olive']),
-    evolution_note: 'Mesma raiz de «azeite». O latim oliva sobreviveu em «oliveira» e «olival»: a árvore ficou latina, o fruto e o óleo ficaram árabes.',
+    evolution_note: 'Mesma raiz de “azeite”. O latim oliva sobreviveu em “oliveira” e “olival”: a árvore ficou latina, o fruto e o óleo ficaram árabes.',
     transparent: true,
   },
   {
@@ -1241,7 +1241,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'al-khass',
     origin_language: 'Árabe',
     cognates: c(['pt', 'alface'], ['es', 'lechuga'], ['it', 'lattuga'], ['fr', 'laitue']),
-    evolution_note: 'Os árabes, grandes horticultores, deixaram o nome de muitos legumes na Península. O espanhol, porém, ficou com o latim lactuca («a planta de seiva leitosa»), como o italiano e o francês.',
+    evolution_note: 'Os árabes, grandes horticultores, deixaram o nome de muitos legumes na Península. O espanhol, porém, ficou com o latim lactuca (“a planta de seiva leitosa”), como o italiano e o francês.',
     transparent: true,
   },
   {
@@ -1257,7 +1257,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'al-funduq',
     origin_language: 'Árabe (do grego)',
     cognates: c(['pt', 'alfândega'], ['es', 'aduana'], ['it', 'fondaco (antigo armazém)'], ['en', 'customs']),
-    evolution_note: 'O árabe al-funduq era a hospedaria de mercadores, onde se guardavam e taxavam as mercadorias; vem do grego pandokheîon, «que recebe a todos». O espanhol preferiu outra palavra árabe: aduana.',
+    evolution_note: 'O árabe al-funduq era a hospedaria de mercadores, onde se guardavam e taxavam as mercadorias; vem do grego pandokheîon, “que recebe a todos”. O espanhol preferiu outra palavra árabe: aduana.',
     transparent: true,
   },
   {
@@ -1273,7 +1273,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'law šā’ Allāh',
     origin_language: 'Árabe',
     cognates: c(['pt', 'oxalá, tomara'], ['es', 'ojalá']),
-    evolution_note: 'Do árabe law šā’ Allāh, «se Deus quiser». Em Portugal, «oxalá» ainda é comum na fala, seguido de conjuntivo: «Oxalá não chova». No Brasil, soa mais literário, e diz-se «tomara».',
+    evolution_note: 'Do árabe law šā’ Allāh, “se Deus quiser”. Em Portugal, “oxalá” ainda é comum na fala, seguido de conjuntivo: “Oxalá não chova”. No Brasil, soa mais literário, e diz-se “tomara”.',
     transparent: true,
   },
   {
@@ -1281,7 +1281,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'al-makhzan',
     origin_language: 'Árabe',
     cognates: c(['pt', 'armazém'], ['es', 'almacén'], ['fr', 'magasin'], ['it', 'magazzino'], ['en', 'magazine']),
-    evolution_note: 'Do árabe al-makhzan, «depósito». O francês «magasin» (loja) e o inglês «magazine» (a revista, «depósito» de artigos) são da mesma família, sem o artigo.',
+    evolution_note: 'Do árabe al-makhzan, “depósito”. O francês “magasin” (loja) e o inglês “magazine” (a revista, “depósito” de artigos) são da mesma família, sem o artigo.',
     transparent: true,
   },
   {
@@ -1289,7 +1289,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'aḍ-ḍayʿa',
     origin_language: 'Árabe',
     cognates: c(['pt', 'aldeia'], ['es', 'aldea']),
-    evolution_note: 'Do árabe aḍ-ḍayʿa, «a quinta, a propriedade rural». Em Portugal, a aldeia é a povoação pequena do interior, abaixo da vila; ir «à terra» é voltar à aldeia da família.',
+    evolution_note: 'Do árabe aḍ-ḍayʿa, “a quinta, a propriedade rural”. Em Portugal, a aldeia é a povoação pequena do interior, abaixo da vila; ir “à terra” é voltar à aldeia da família.',
     transparent: true,
   },
   {
@@ -1297,7 +1297,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'barrī',
     origin_language: 'Árabe',
     cognates: c(['pt', 'bairro'], ['es', 'barrio']),
-    evolution_note: 'Do árabe barrī, «de fora, exterior»: o bairro era o arrabalde fora das muralhas. Hoje, em Lisboa, o Bairro Alto e Alfama — esta também de nome árabe — estão no coração da cidade.',
+    evolution_note: 'Do árabe barrī, “de fora, exterior”: o bairro era o arrabalde fora das muralhas. Hoje, em Lisboa, o Bairro Alto e Alfama — esta também de nome árabe — estão no coração da cidade.',
     transparent: true,
   },
   {
@@ -1305,7 +1305,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'az-zulayj',
     origin_language: 'Árabe',
     cognates: c(['pt', 'azulejo'], ['es', 'azulejo']),
-    evolution_note: 'Do árabe az-zulayj, «pedrinha polida». Não vem de «azul», embora o azul e branco tenha virado a marca do azulejo português — nas estações, igrejas e fachadas de Lisboa e do Porto.',
+    evolution_note: 'Do árabe az-zulayj, “pedrinha polida”. Não vem de “azul”, embora o azul e branco tenha virado a marca do azulejo português — nas estações, igrejas e fachadas de Lisboa e do Porto.',
     transparent: true,
   },
   {
@@ -1313,7 +1313,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'lāzaward',
     origin_language: 'Árabe (do persa)',
     cognates: c(['pt', 'azul'], ['es', 'azul'], ['it', 'azzurro'], ['fr', 'azur'], ['en', 'azure']),
-    evolution_note: 'Do persa lāžward, a pedra azul (o lápis-lazúli), pelo árabe lāzaward. O «l» inicial foi confundido com o artigo e caiu. O latim não tinha uma palavra única e estável para o azul.',
+    evolution_note: 'Do persa lāžward, a pedra azul (o lápis-lazúli), pelo árabe lāzaward. O “l” inicial foi confundido com o artigo e caiu. O latim não tinha uma palavra única e estável para o azul.',
     transparent: true,
   },
   {
@@ -1321,7 +1321,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'nāranja',
     origin_language: 'Árabe (do persa e do sânscrito)',
     cognates: c(['pt', 'laranja'], ['es', 'naranja'], ['it', 'arancia'], ['fr', 'orange'], ['en', 'orange']),
-    evolution_note: 'Do sânscrito, pelo persa nārang e pelo árabe nāranja. A laranja doce que os portugueses trouxeram do Oriente fez tanto sucesso que ganhou o nome do país: «portocală» em romeno, «portokáli» em grego, «portakal» em turco.',
+    evolution_note: 'Do sânscrito, pelo persa nārang e pelo árabe nāranja. A laranja doce que os portugueses trouxeram do Oriente fez tanto sucesso que ganhou o nome do país: “portocală” em romeno, “portokáli” em grego, “portakal” em turco.',
     transparent: true,
   },
   {
@@ -1329,7 +1329,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'šiṭranj',
     origin_language: 'Árabe (do sânscrito)',
     cognates: c(['pt', 'xadrez'], ['es', 'ajedrez'], ['en', 'chess'], ['fr', 'échecs']),
-    evolution_note: 'Do sânscrito caturaṅga, «as quatro partes do exército», pelo persa e pelo árabe šiṭranj. O padrão de quadrados do tabuleiro deu o «tecido de xadrez».',
+    evolution_note: 'Do sânscrito caturaṅga, “as quatro partes do exército”, pelo persa e pelo árabe šiṭranj. O padrão de quadrados do tabuleiro deu o “tecido de xadrez”.',
     transparent: true,
   },
   {
@@ -1337,7 +1337,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'šarāb',
     origin_language: 'Árabe',
     cognates: c(['pt', 'xarope'], ['es', 'jarabe'], ['it', 'sciroppo'], ['fr', 'sirop'], ['en', 'syrup']),
-    evolution_note: 'Do árabe šarāb, «bebida». A mesma raiz deu «sorvete» e o inglês «sherbet». O «x» português soava «ch», como no árabe.',
+    evolution_note: 'Do árabe šarāb, “bebida”. A mesma raiz deu “sorvete” e o inglês “sherbet”. O “x” português soava “ch”, como no árabe.',
     transparent: true,
   },
   {
@@ -1345,7 +1345,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'al-Khwārizmī',
     origin_language: 'Árabe (nome próprio)',
     cognates: c(['pt', 'algoritmo'], ['es', 'algoritmo'], ['it', 'algoritmo'], ['fr', 'algorithme'], ['en', 'algorithm']),
-    evolution_note: 'Nome do matemático persa al-Khwārizmī (século IX), latinizado como Algorismus e cruzado com o grego arithmós, «número». O «th» do inglês e do francês é resto dessa confusão.',
+    evolution_note: 'Nome do matemático persa al-Khwārizmī (século IX), latinizado como Algorismus e cruzado com o grego arithmós, “número”. O “th” do inglês e do francês é resto dessa confusão.',
     transparent: true,
   },
   {
@@ -1353,7 +1353,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'al-Khwārizmī',
     origin_language: 'Árabe (nome próprio)',
     cognates: c(['pt', 'algarismo'], ['es', 'guarismo'], ['en', 'algorism (arcaico)']),
-    evolution_note: 'Irmão de «algoritmo»: vem do mesmo matemático, cujo livro espalhou pela Europa os números indo-arábicos. O português guardou «algarismo» para os dígitos de 0 a 9.',
+    evolution_note: 'Irmão de “algoritmo”: vem do mesmo matemático, cujo livro espalhou pela Europa os números indo-arábicos. O português guardou “algarismo” para os dígitos de 0 a 9.',
     transparent: true,
   },
   {
@@ -1361,7 +1361,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'ṣifr',
     origin_language: 'Árabe (pelo italiano)',
     cognates: c(['pt', 'zero / cifra'], ['it', 'zero'], ['fr', 'zéro / chiffre'], ['en', 'zero / cipher']),
-    evolution_note: 'O árabe ṣifr, «vazio», foi latinizado como zephirum e contraído em italiano para «zero». A mesma palavra, por outro caminho, deu «cifra».',
+    evolution_note: 'O árabe ṣifr, “vazio”, foi latinizado como zephirum e contraído em italiano para “zero”. A mesma palavra, por outro caminho, deu “cifra”.',
     transparent: true,
   },
   {
@@ -1369,7 +1369,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'al-khuzāmā',
     origin_language: 'Árabe',
     cognates: c(['pt', 'lavanda, alfazema'], ['es', 'alhucema / lavanda'], ['it', 'lavanda'], ['en', 'lavender']),
-    evolution_note: 'Do árabe al-khuzāmā. Em Portugal, «alfazema» é a palavra comum; no Brasil, a planta e o perfume são mais «lavanda», palavra do italiano, ligada a lavare, «lavar».',
+    evolution_note: 'Do árabe al-khuzāmā. Em Portugal, “alfazema” é a palavra comum; no Brasil, a planta e o perfume são mais “lavanda”, palavra do italiano, ligada a lavare, “lavar”.',
     transparent: false,
   },
   {
@@ -1377,7 +1377,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'jabalī',
     origin_language: 'Árabe',
     cognates: c(['pt', 'javali'], ['es', 'jabalí']),
-    evolution_note: 'Do árabe (khinzīr) jabalī, «(porco) da montanha». Só a parte do adjetivo ficou: «javali». Ainda é comum nas serras do Alentejo e do Norte.',
+    evolution_note: 'Do árabe (khinzīr) jabalī, “(porco) da montanha”. Só a parte do adjetivo ficou: “javali”. Ainda é comum nas serras do Alentejo e do Norte.',
     transparent: true,
   },
   {
@@ -1385,7 +1385,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'ṭarīḥa',
     origin_language: 'Árabe',
     cognates: c(['pt', 'tarefa'], ['es', 'tarea']),
-    evolution_note: 'Do árabe ṭarīḥa, «quantidade de trabalho imposta». É das poucas palavras árabes sem o artigo «al-».',
+    evolution_note: 'Do árabe ṭarīḥa, “quantidade de trabalho imposta”. É das poucas palavras árabes sem o artigo “al-”.',
     transparent: true,
   },
   {
@@ -1393,7 +1393,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'qahwa',
     origin_language: 'Árabe (pelo turco e pelo italiano)',
     cognates: c(['pt', 'café'], ['it', 'caffè'], ['fr', 'café'], ['en', 'coffee'], ['ro', 'cafea']),
-    evolution_note: 'Do árabe qahwa, pelo turco kahve e pelo italiano caffè. Em Lisboa, «um café» é o espresso curto, também chamado «bica»; no Porto, «um cimbalino».',
+    evolution_note: 'Do árabe qahwa, pelo turco kahve e pelo italiano caffè. Em Lisboa, “um café” é o espresso curto, também chamado “bica”; no Porto, “um cimbalino”.',
     transparent: true,
   },
   {
@@ -1409,7 +1409,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'ṣuffa',
     origin_language: 'Árabe (pelo turco e pelo francês)',
     cognates: c(['pt', 'sofá'], ['fr', 'sofa'], ['it', 'sofà'], ['en', 'sofa']),
-    evolution_note: 'O árabe ṣuffa era um estrado coberto de almofadas. Chegou à Europa pelo turco e pelo francês — sem passar pelos árabes da Península, por isso não tem o «al-».',
+    evolution_note: 'O árabe ṣuffa era um estrado coberto de almofadas. Chegou à Europa pelo turco e pelo francês — sem passar pelos árabes da Península, por isso não tem o “al-”.',
     transparent: true,
   },
   {
@@ -1417,7 +1417,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'zarāfa',
     origin_language: 'Árabe',
     cognates: c(['pt', 'girafa'], ['es', 'jirafa'], ['it', 'giraffa'], ['fr', 'girafe'], ['en', 'giraffe']),
-    evolution_note: 'Do árabe zarāfa, pelo italiano. Os romanos chamavam o animal de camelopardalis, «camelo-leopardo».',
+    evolution_note: 'Do árabe zarāfa, pelo italiano. Os romanos chamavam o animal de camelopardalis, “camelo-leopardo”.',
     transparent: true,
   },
   {
@@ -1433,7 +1433,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'bāzār',
     origin_language: 'Persa',
     cognates: c(['pt', 'bazar'], ['es', 'bazar'], ['fr', 'bazar'], ['it', 'bazar'], ['en', 'bazaar']),
-    evolution_note: 'Do persa bāzār, «mercado». Os portugueses o encontraram na Índia e no Golfo Pérsico.',
+    evolution_note: 'Do persa bāzār, “mercado”. Os portugueses o encontraram na Índia e no Golfo Pérsico.',
     transparent: true,
   },
 
@@ -1443,15 +1443,15 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: '*werra',
     origin_language: 'Germânico (frâncico)',
     cognates: c(['pt', 'guerra'], ['es', 'guerra'], ['it', 'guerra'], ['fr', 'guerre'], ['en', 'war']),
-    evolution_note: 'O latim bellum («guerra») ficou só em «bélico». O povo adotou o germânico werra, «confusão, briga». O «w» germânico virou «gu» nas línguas românicas — por isso guerra e war são a mesma palavra.',
+    evolution_note: 'O latim bellum (“guerra”) ficou só em “bélico”. O povo adotou o germânico werra, “confusão, briga”. O “w” germânico virou “gu” nas línguas românicas — por isso guerra e war são a mesma palavra.',
     transparent: true,
   },
   {
     word: 'guardar',
     root_word: '*wardōn',
     origin_language: 'Germânico',
-    cognates: c(['pt', 'guardar'], ['es', 'guardar'], ['it', 'guardare («olhar»)'], ['fr', 'garder'], ['en', 'ward / guard']),
-    evolution_note: 'Do germânico wardōn, «vigiar». Outra vez «w» → «gu». O italiano «guardare» ficou com o sentido de «olhar», o português com o de «vigiar» e «conservar».',
+    cognates: c(['pt', 'guardar'], ['es', 'guardar'], ['it', 'guardare (“olhar”)'], ['fr', 'garder'], ['en', 'ward / guard']),
+    evolution_note: 'Do germânico wardōn, “vigiar”. Outra vez “w” → “gu”. O italiano “guardare” ficou com o sentido de “olhar”, o português com o de “vigiar” e “conservar”.',
     transparent: true,
   },
   {
@@ -1459,7 +1459,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: '*blank',
     origin_language: 'Germânico',
     cognates: c(['pt', 'branco'], ['es', 'blanco'], ['it', 'bianco'], ['fr', 'blanc'], ['en', 'blank']),
-    evolution_note: 'Do germânico blank, «brilhante». Tomou o lugar do latim albus, que sobrevive em «alvo», «álbum» e no romeno «alb». No português, o «l» depois de consoante virou «r»: blanco → branco, como em «praia» (plagia) e «igreja».',
+    evolution_note: 'Do germânico blank, “brilhante”. Tomou o lugar do latim albus, que sobrevive em “alvo”, “álbum” e no romeno “alb”. No português, o “l” depois de consoante virou “r”: blanco → branco, como em “praia” (plagia) e “igreja”.',
     transparent: true,
   },
   {
@@ -1467,7 +1467,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: '*raubōn',
     origin_language: 'Germânico',
     cognates: c(['pt', 'roubar'], ['es', 'robar'], ['it', 'rubare'], ['fr', 'dérober'], ['en', 'rob']),
-    evolution_note: 'Do germânico raubōn, «saquear», trazido pelos povos que invadiram o Império Romano. O inglês «rob» voltou ao inglês pelo francês antigo.',
+    evolution_note: 'Do germânico raubōn, “saquear”, trazido pelos povos que invadiram o Império Romano. O inglês “rob” voltou ao inglês pelo francês antigo.',
     transparent: true,
   },
   {
@@ -1475,7 +1475,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'lōfa',
     origin_language: 'Gótico',
     cognates: c(['pt', 'luva'], ['gl', 'luva'], ['es', 'guante'], ['it', 'guanto'], ['fr', 'gant']),
-    evolution_note: 'Do gótico lōfa, «palma da mão». Os suevos e visigodos que viveram na Península deixaram poucas palavras, e esta é uma delas. O espanhol e as outras línguas usaram outra palavra germânica, wantu.',
+    evolution_note: 'Do gótico lōfa, “palma da mão”. Os suevos e visigodos que viveram na Península deixaram poucas palavras, e esta é uma delas. O espanhol e as outras línguas usaram outra palavra germânica, wantu.',
     transparent: true,
   },
   {
@@ -1483,7 +1483,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'reiks',
     origin_language: 'Gótico',
     cognates: c(['pt', 'rico'], ['es', 'rico'], ['it', 'ricco'], ['fr', 'riche'], ['en', 'rich']),
-    evolution_note: 'O gótico reiks era «poderoso, chefe», a mesma raiz do alemão Reich. O poder dos senhores germânicos virou riqueza. O latim dives sumiu.',
+    evolution_note: 'O gótico reiks era “poderoso, chefe”, a mesma raiz do alemão Reich. O poder dos senhores germânicos virou riqueza. O latim dives sumiu.',
     transparent: true,
   },
   {
@@ -1491,7 +1491,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: '*frisk',
     origin_language: 'Germânico',
     cognates: c(['pt', 'fresco'], ['es', 'fresco'], ['it', 'fresco'], ['fr', 'frais'], ['en', 'fresh']),
-    evolution_note: 'Do germânico frisk, «novo, recente». Em Portugal, «estar fresco» também é estar frio, e «uma fresca» é o ar fresco do fim da tarde.',
+    evolution_note: 'Do germânico frisk, “novo, recente”. Em Portugal, “estar fresco” também é estar frio, e “uma fresca” é o ar fresco do fim da tarde.',
     transparent: true,
   },
   {
@@ -1499,7 +1499,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: '*urgōli',
     origin_language: 'Germânico (frâncico)',
     cognates: c(['pt', 'orgulho'], ['es', 'orgullo'], ['it', 'orgoglio'], ['fr', 'orgueil']),
-    evolution_note: 'Do frâncico urgōli, «excelência», que passou pelo catalão ou pelo provençal antes de chegar ao português. Uma das palavras germânicas que vieram de segunda mão, por outra língua românica.',
+    evolution_note: 'Do frâncico urgōli, “excelência”, que passou pelo catalão ou pelo provençal antes de chegar ao português. Uma das palavras germânicas que vieram de segunda mão, por outra língua românica.',
     transparent: true,
   },
   {
@@ -1507,7 +1507,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: '*suppa',
     origin_language: 'Germânico',
     cognates: c(['pt', 'sopa'], ['es', 'sopa'], ['it', 'zuppa'], ['fr', 'soupe'], ['en', 'soup / sop']),
-    evolution_note: 'A «suppa» germânica era a fatia de pão molhada no caldo. Em Portugal, a sopa é a entrada de todo almoço e jantar: o caldo verde, do Minho, é o mais famoso.',
+    evolution_note: 'A “suppa” germânica era a fatia de pão molhada no caldo. Em Portugal, a sopa é a entrada de todo almoço e jantar: o caldo verde, do Minho, é o mais famoso.',
     transparent: true,
   },
   {
@@ -1515,7 +1515,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: '*gard',
     origin_language: 'Germânico (pelo francês)',
     cognates: c(['pt', 'jardim'], ['fr', 'jardin'], ['es', 'jardín'], ['it', 'giardino'], ['en', 'garden']),
-    evolution_note: 'Do frâncico gard, «cercado», pelo francês jardin. O inglês «garden» e o alemão «Garten» são primos pelo lado germânico.',
+    evolution_note: 'Do frâncico gard, “cercado”, pelo francês jardin. O inglês “garden” e o alemão “Garten” são primos pelo lado germânico.',
     transparent: true,
   },
   {
@@ -1523,7 +1523,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'loge',
     origin_language: 'Francês (do frâncico)',
     cognates: c(['pt', 'loja'], ['fr', 'loge'], ['it', 'loggia'], ['en', 'lodge']),
-    evolution_note: 'Do frâncico laubja, «abrigo de folhagem», pelo francês loge. De «abrigo» passou a «galeria» e depois a «estabelecimento comercial».',
+    evolution_note: 'Do frâncico laubja, “abrigo de folhagem”, pelo francês loge. De “abrigo” passou a “galeria” e depois a “estabelecimento comercial”.',
     transparent: true,
   },
 
@@ -1533,7 +1533,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'naná',
     origin_language: 'Tupi-guarani',
     cognates: c(['pt', 'abacaxi / ananás'], ['fr', 'ananas'], ['it', 'ananas'], ['ro', 'ananas'], ['en', 'pineapple']),
-    evolution_note: 'Do tupi-guarani naná. Os portugueses levaram a fruta e o nome ao mundo: quase toda a Europa diz «ananás» ou «ananas». No Brasil venceu «abacaxi», outra palavra tupi; em Portugal, «abacaxi» é quase desconhecido.',
+    evolution_note: 'Do tupi-guarani naná. Os portugueses levaram a fruta e o nome ao mundo: quase toda a Europa diz “ananás” ou “ananas”. No Brasil venceu “abacaxi”, outra palavra tupi; em Portugal, “abacaxi” é quase desconhecido.',
     transparent: false,
   },
   {
@@ -1541,7 +1541,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'mara kuya',
     origin_language: 'Tupi',
     cognates: c(['pt', 'maracujá'], ['en', 'passion fruit'], ['es', 'maracuyá']),
-    evolution_note: 'Nome tupi da fruta, que os portugueses levaram para a Madeira e os Açores, onde é muito cultivada. O inglês chama-a pelo nome cristão, «fruta da paixão», pela forma da flor.',
+    evolution_note: 'Nome tupi da fruta, que os portugueses levaram para a Madeira e os Açores, onde é muito cultivada. O inglês chama-a pelo nome cristão, “fruta da paixão”, pela forma da flor.',
     transparent: true,
   },
   {
@@ -1549,7 +1549,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'mandubi',
     origin_language: 'Tupi',
     cognates: c(['pt', 'amendoim'], ['es', 'maní / cacahuete']),
-    evolution_note: 'Do tupi mandubi, cruzado com «amêndoa», pela semelhança. Em Angola e Moçambique, onde a planta se espalhou, também se diz «jinguba» e «amendoim».',
+    evolution_note: 'Do tupi mandubi, cruzado com “amêndoa”, pela semelhança. Em Angola e Moçambique, onde a planta se espalhou, também se diz “jinguba” e “amendoim”.',
     transparent: true,
   },
   {
@@ -1557,7 +1557,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'āhuacatl',
     origin_language: 'Náuatle (pelo espanhol)',
     cognates: c(['pt', 'abacate'], ['es', 'aguacate'], ['en', 'avocado'], ['fr', 'avocat']),
-    evolution_note: 'Do náuatle, a língua dos astecas, pelo espanhol aguacate. O inglês «avocado» cruzou a palavra com o espanhol abogado, «advogado».',
+    evolution_note: 'Do náuatle, a língua dos astecas, pelo espanhol aguacate. O inglês “avocado” cruzou a palavra com o espanhol abogado, “advogado”.',
     transparent: true,
   },
   {
@@ -1573,7 +1573,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'tomatl',
     origin_language: 'Náuatle (pelo espanhol)',
     cognates: c(['pt', 'tomate'], ['es', 'tomate'], ['fr', 'tomate'], ['en', 'tomato'], ['it', 'pomodoro']),
-    evolution_note: 'Do náuatle tomatl. O italiano chamou-lhe «pomo d’oro», «maçã de ouro», porque os primeiros eram amarelos.',
+    evolution_note: 'Do náuatle tomatl. O italiano chamou-lhe “pomo d’oro”, “maçã de ouro”, porque os primeiros eram amarelos.',
     transparent: true,
   },
   {
@@ -1581,7 +1581,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'batata',
     origin_language: 'Taíno (pelo espanhol)',
     cognates: c(['pt', 'batata'], ['es', 'patata / batata'], ['en', 'potato'], ['it', 'patata']),
-    evolution_note: 'No taíno, língua do Caribe, «batata» era a batata-doce. O nome passou à batata dos Andes (em quíchua, papa), e o espanhol cruzou as duas: patata.',
+    evolution_note: 'No taíno, língua do Caribe, “batata” era a batata-doce. O nome passou à batata dos Andes (em quíchua, papa), e o espanhol cruzou as duas: patata.',
     transparent: true,
   },
   {
@@ -1589,7 +1589,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'Peru',
     origin_language: 'Topônimo',
     cognates: c(['pt', 'peru'], ['en', 'turkey'], ['fr', 'dinde']),
-    evolution_note: 'A ave é norte-americana, mas cada língua a batizou com uma terra distante: o português com o Peru, o inglês com a Turquia, o francês com a Índia («d’Inde» → dinde).',
+    evolution_note: 'A ave é norte-americana, mas cada língua a batizou com uma terra distante: o português com o Peru, o inglês com a Turquia, o francês com a Índia (“d’Inde” → dinde).',
     transparent: true,
   },
   {
@@ -1597,7 +1597,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'vainilla',
     origin_language: 'Espanhol (do latim)',
     cognates: c(['pt', 'baunilha'], ['es', 'vainilla'], ['fr', 'vanille'], ['en', 'vanilla']),
-    evolution_note: 'Diminutivo espanhol de vaina, «vagem», do latim vagina, «bainha». A especiaria é a vagem de uma orquídea mexicana.',
+    evolution_note: 'Diminutivo espanhol de vaina, “vagem”, do latim vagina, “bainha”. A especiaria é a vagem de uma orquídea mexicana.',
     transparent: true,
   },
   {
@@ -1605,7 +1605,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'chá',
     origin_language: 'Chinês',
     cognates: c(['pt', 'chá'], ['ro', 'ceai'], ['en', 'tea'], ['fr', 'thé'], ['it', 'tè']),
-    evolution_note: 'Os portugueses aprenderam a palavra no sul da China, em Macau, onde se dizia «chá». Os holandeses a buscaram no dialeto de Fujian, «te», e daí vieram tea, thé e tè. O romeno ceai veio pelo russo.',
+    evolution_note: 'Os portugueses aprenderam a palavra no sul da China, em Macau, onde se dizia “chá”. Os holandeses a buscaram no dialeto de Fujian, “te”, e daí vieram tea, thé e tè. O romeno ceai veio pelo russo.',
     transparent: true,
   },
   {
@@ -1613,7 +1613,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'māṅkāy',
     origin_language: 'Tâmil / malaiala',
     cognates: c(['pt', 'manga'], ['es', 'mango'], ['fr', 'mangue'], ['en', 'mango']),
-    evolution_note: 'Das línguas do sul da Índia, onde os portugueses a conheceram. A fruta e o nome foram de lá para a África e o Brasil, e o inglês «mango» veio do português.',
+    evolution_note: 'Das línguas do sul da Índia, onde os portugueses a conheceram. A fruta e o nome foram de lá para a África e o Brasil, e o inglês “mango” veio do português.',
     transparent: true,
   },
   {
@@ -1629,7 +1629,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'makaku',
     origin_language: 'Línguas bantas',
     cognates: c(['pt', 'macaco'], ['fr', 'macaque'], ['en', 'macaque'], ['it', 'macaco']),
-    evolution_note: 'De uma língua banta da região do Congo, pelos portugueses. O francês e o inglês fizeram de «macaque» o nome de um gênero de primatas. Em Portugal, o macaco do carro é o mesmo que no Brasil.',
+    evolution_note: 'De uma língua banta da região do Congo, pelos portugueses. O francês e o inglês fizeram de “macaque” o nome de um gênero de primatas. Em Portugal, o macaco do carro é o mesmo que no Brasil.',
     transparent: true,
   },
   {
@@ -1637,7 +1637,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'coco',
     origin_language: 'Português',
     cognates: c(['pt', 'coco'], ['es', 'coco'], ['fr', 'coco'], ['en', 'coconut']),
-    evolution_note: 'O «coco» (ou «papão») era o bicho-papão, uma cara feia que assusta as crianças. Os navegadores viram nos três furos da casca uma carinha e deram-lhe esse nome. O inglês «coconut» veio daí.',
+    evolution_note: 'O “coco” (ou “papão”) era o bicho-papão, uma cara feia que assusta as crianças. Os navegadores viram nos três furos da casca uma carinha e deram-lhe esse nome. O inglês “coconut” veio daí.',
     transparent: true,
   },
 
@@ -1647,7 +1647,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'marmelo',
     origin_language: 'Português (do latim e do grego)',
     cognates: c(['pt', 'marmelada'], ['en', 'marmalade'], ['fr', 'marmelade'], ['it', 'marmellata']),
-    evolution_note: 'O doce de marmelo; «marmelo» vem do latim melimelum, do grego melímēlon, «maçã-mel». O inglês pegou a palavra do português e a usa para doce de laranja. Em Portugal, a marmelada é firme, para cortar em fatias com queijo.',
+    evolution_note: 'O doce de marmelo; “marmelo” vem do latim melimelum, do grego melímēlon, “maçã-mel”. O inglês pegou a palavra do português e a usa para doce de laranja. Em Portugal, a marmelada é firme, para cortar em fatias com queijo.',
     transparent: true,
   },
   {
@@ -1655,7 +1655,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'musca',
     origin_language: 'Latim (pelo português e espanhol)',
     cognates: c(['pt', 'mosquito, pernilongo'], ['es', 'mosquito'], ['en', 'mosquito'], ['fr', 'moustique'], ['it', 'moscerino']),
-    evolution_note: 'Diminutivo ibérico de «mosca» (latim musca). O inglês adotou «mosquito» do espanhol ou do português. No Brasil, em muitas regiões, diz-se «pernilongo».',
+    evolution_note: 'Diminutivo ibérico de “mosca” (latim musca). O inglês adotou “mosquito” do espanhol ou do português. No Brasil, em muitas regiões, diz-se “pernilongo”.',
     transparent: true,
   },
   {
@@ -1663,7 +1663,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'colubra',
     origin_language: 'Latim',
     cognates: c(['pt', 'cobra'], ['es', 'culebra'], ['fr', 'couleuvre'], ['en', 'cobra']),
-    evolution_note: 'Do latim colubra, «serpente». Os portugueses chamaram a naja da Índia de «cobra de capelo», pelo «capuz» que ela abre; o inglês ficou com «cobra» só para essa espécie.',
+    evolution_note: 'Do latim colubra, “serpente”. Os portugueses chamaram a naja da Índia de “cobra de capelo”, pelo “capuz” que ela abre; o inglês ficou com “cobra” só para essa espécie.',
     transparent: true,
   },
   {
@@ -1671,7 +1671,7 @@ export const ETYMOLOGY_PT: EtymologySeed[] = [
     root_word: 'zebra',
     origin_language: 'Português / espanhol (origem antiga discutida)',
     cognates: c(['pt', 'zebra'], ['es', 'cebra'], ['it', 'zebra'], ['fr', 'zèbre'], ['en', 'zebra']),
-    evolution_note: 'Na Península Ibérica medieval, «zebra» ou «zevra» era um burro selvagem. Os portugueses deram o nome ao animal listrado da África, e ele passou às outras línguas. A origem mais antiga da palavra é discutida.',
+    evolution_note: 'Na Península Ibérica medieval, “zebra” ou “zevra” era um burro selvagem. Os portugueses deram o nome ao animal listrado da África, e ele passou às outras línguas. A origem mais antiga da palavra é discutida.',
     transparent: true,
   },
 ];

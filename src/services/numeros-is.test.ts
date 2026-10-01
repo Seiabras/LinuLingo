@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { icelandicNumber, icelandicOrdinal, icelandicYear, spellIcelandicNumbers } from '@/services/numeros/is';
 
-test('números em islandês: as formas de contar e o «og» antes da última palavra', () => {
+test('números em islandês: as formas de contar e o “og” antes da última palavra', () => {
   const cases: [number, string][] = [
     [0, 'núll'],
     [1, 'einn'],

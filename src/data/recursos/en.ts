@@ -22,7 +22,7 @@ export const RECURSOS_EN: LanguageResources = {
       usedFor: ['universidade (Academic)', 'visto e imigração (Reino Unido, Canadá, Austrália, Nova Zelândia)', 'trabalho e registro profissional'],
       where:
         'No Brasil, o British Council e a IDP aplicam a prova em dezenas de locais, em cidades como São Paulo, Rio de Janeiro, Brasília, Belo Horizonte e Curitiba, no papel ou no computador. O IELTS Academic também pode ser feito em casa (IELTS Online). Quem fez a prova no computador pode refazer só uma habilidade (One Skill Retake) em centros selecionados, com inscrição em até 60 dias. Para visto do Reino Unido, a versão pedida é o IELTS for UKVI.',
-      tip: 'Decida antes entre Academic e General Training: Listening e Speaking são iguais, mas a leitura e a escrita mudam. Treine com cronômetro, porque 60 minutos para 40 perguntas de leitura passam rápido, e no Speaking desenvolva as respostas com exemplos em vez de responder só «yes» ou «no».',
+      tip: 'Decida antes entre Academic e General Training: Listening e Speaking são iguais, mas a leitura e a escrita mudam. Treine com cronômetro, porque 60 minutos para 40 perguntas de leitura passam rápido, e no Speaking desenvolva as respostas com exemplos em vez de responder só “yes” ou “no”.',
       url: 'https://ielts.org',
     },
     {
@@ -355,10 +355,10 @@ export const RECURSOS_EN: LanguageResources = {
     },
   ],
   tips: [
-    'Inglês não se lê como se escreve: confira cada palavra nova num dicionário com áudio. Os sons que mais denunciam o brasileiro são o «th», a diferença entre vogais curtas e longas («ship» e «sheep») e o «i» que a gente acrescenta no fim («Facebook-i»).',
-    'Cuidado com os falsos amigos: «actually» é «na verdade», «pretend» é «fingir», «push» é «empurrar», «library» é «biblioteca» e «college» é «faculdade», não colégio.',
+    'Inglês não se lê como se escreve: confira cada palavra nova num dicionário com áudio. Os sons que mais denunciam o brasileiro são o “th”, a diferença entre vogais curtas e longas (“ship” e “sheep”) e o “i” que a gente acrescenta no fim (“Facebook-i”).',
+    'Cuidado com os falsos amigos: “actually” é “na verdade”, “pretend” é “fingir”, “push” é “empurrar”, “library” é “biblioteca” e “college” é “faculdade”, não colégio.',
     'Escolha um sotaque de referência para a sua fala, americano ou britânico, mas ouça os dois e também australianos, irlandeses, indianos e nigerianos: é esse inglês variado que você vai encontrar no trabalho e nas viagens.',
     'Troque a legenda em português pela legenda em inglês assim que conseguir: você liga o som à escrita e percebe palavras que não pegaria só de ouvido.',
-    'Aprenda os phrasal verbs dentro de frases, não em listas: «give up», «find out» e «run out of» aparecem o tempo todo na fala e quase nunca têm tradução literal.',
+    'Aprenda os phrasal verbs dentro de frases, não em listas: “give up”, “find out” e “run out of” aparecem o tempo todo na fala e quase nunca têm tradução literal.',
   ],
 };

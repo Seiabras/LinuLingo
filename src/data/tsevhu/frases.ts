@@ -66,7 +66,7 @@ export const FRASES: { tsevhu: string; curta?: string; pt: string; literal?: str
     tsevhu: 'tsa non lonayo',
     curta: 'non lona',
     pt: 'eu te amo',
-    nota: 'A versão curta quer dizer mais «(eu (n)) expresso amor a você (n)».',
+    nota: 'A versão curta quer dizer mais “(eu (n)) expresso amor a você (n)”.',
   },
   { tsevhu: 'che ruj', pt: 'bom apetite', literal: 'comer bom' },
   { tsevhu: 'awnamt (ruj)', pt: 'come tudo! / bebe tudo!', literal: 'beba / engula (bom)' },
@@ -129,7 +129,7 @@ export const FRASES: { tsevhu: string; curta?: string; pt: string; literal?: str
     tsevhu: 'osiuri dy',
     curta: 'osiuri / siugi',
     pt: 'que triste; ah, não!',
-    literal: 'isso está cheio de lágrimas / lágrimas! (tipo «ai, meu Deus», «ah, não»)',
+    literal: 'isso está cheio de lágrimas / lágrimas! (tipo “ai, meu Deus”, “ah, não”)',
   },
   {
     tsevhu: 'nsa tiru non uomona yn (yiit mona yn) / no otiru umona yn / (non) tiru mona',
@@ -182,17 +182,17 @@ export const EXPRESSOES: { tsevhu: string; pt: string; sentido?: string }[] = [
   {
     tsevhu: 'Meq feuo sytamlak (bae)',
     pt: 'E assim aconteceu.',
-    sentido: 'Ao pé da letra: «e isto se concretizou».',
+    sentido: 'Ao pé da letra: “e isto se concretizou”.',
   },
   {
     tsevhu: "syky'en xe'iyu 'aro",
     pt: 'vendo coisas estranhas',
-    sentido: 'No fundo, «o que é que eu estou vendo?».',
+    sentido: 'No fundo, “o que é que eu estou vendo?”.',
   },
   {
     tsevhu: "aje'i un tem moni",
     pt: 'está tudo em jogo',
-    sentido: 'Ao pé da letra: «tudo está sobre o risco».',
+    sentido: 'Ao pé da letra: “tudo está sobre o risco”.',
   },
   {
     tsevhu: 'kymangmse sy vhu; obe ovhuphe',

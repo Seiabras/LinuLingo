@@ -33,7 +33,7 @@ export function normalize(s: string, { keepDiacritics = false } = {}): string {
     .replace(/\u0301/g, '')
     // apóstrofo reto, tipográfico ou ausente valem o mesmo (las’ că = las' că = las că)
     .replace(/['’`´]/g, '')
-    .replace(/[.,!?¿¡;:«»"“”„()…\-。、・「」『』〜～]/g, ' ')
+    .replace(/[.,!?¿¡;:“”"“”„()…\-。、・「」『』〜～]/g, ' ')
     .replace(CJK_ALL, ' $& ')
     .replace(/\s+/g, ' ')
     .trim();

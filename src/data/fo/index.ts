@@ -52,5 +52,5 @@ export const FEROES: LanguagePack = {
   phrases: { hi: 'Hey!', thanks: 'Takk!', letsStart: ['Nú byrja vit!', 'Vamos lá!'] },
   formalMarkers: 'kundi eg fingið…?, túsund takk, orsaka',
   cognateNote:
-    'O feroês é a língua de umas 70 mil pessoas nas Ilhas Faroé, irmã próxima do islandês e do norueguês ocidental. A escrita, criada em 1846, é etimológica: mostra de onde a palavra vem, não como se fala (o ð de «maður» não soa). Muitas palavras lembram o inglês (hús = house). Atenção aos falsos amigos: «um» quer dizer «se», e «sum» quer dizer «que».',
+    'O feroês é a língua de umas 70 mil pessoas nas Ilhas Faroé, irmã próxima do islandês e do norueguês ocidental. A escrita, criada em 1846, é etimológica: mostra de onde a palavra vem, não como se fala (o ð de “maður” não soa). Muitas palavras lembram o inglês (hús = house). Atenção aos falsos amigos: “um” quer dizer “se”, e “sum” quer dizer “que”.',
 };

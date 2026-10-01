@@ -97,7 +97,7 @@ function Review({ req, defaultName }: { req: ExchangeRequest; defaultName: strin
       </View>
       <Card className="gap-2">
         <Text className="text-xs font-bold text-slate-500">{req.prompt}</Text>
-        <Text className="text-lg text-slate-900 dark:text-white">{req.kind === 'audio' ? `🎙️ «${req.content}»` : req.content}</Text>
+        <Text className="text-lg text-slate-900 dark:text-white">{req.kind === 'audio' ? `🎙️ “${req.content}”` : req.content}</Text>
         {req.audio ? (
           <Button title="▶ Ouvir o áudio" variant="ghost" onPress={() => typeof Audio !== 'undefined' && new Audio(req.audio!).play().catch(() => {})} />
         ) : req.kind === 'audio' ? (

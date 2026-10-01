@@ -48,7 +48,7 @@ export const ROWS: VocabRow[] = [
   ['-a kumi na mbili', 'décimo segundo (wa kumi na mbili…)', 'numeral', 'Números', null, 'Desemba ni mwezi wa kumi na mbili.'],
   ['-a ishirini', 'vigésimo (wa ishirini…)', 'numeral', 'Números', null, 'Hii ni sherehe ya ishirini ya shule yetu.'],
   ['-a mia', 'centésimo (wa mia…)', 'numeral', 'Números', null, 'Alikuwa mteja wa mia leo.'],
-  ['namba', 'número (pl. namba; também «nambari»)', 'substantivo', 'Números', '🔢', 'Namba yako ya simu ni ipi?'],
+  ['namba', 'número (pl. namba; também “nambari”)', 'substantivo', 'Números', '🔢', 'Namba yako ya simu ni ipi?'],
   ['nambari', 'número (sobretudo o escrito: telefone, casa, documento)', 'substantivo', 'Números', '🔢', 'Andika nambari ya pasipoti hapa.'],
   ['nusu', 'metade; meio', 'substantivo', 'Números', '🌗', 'Nipe nusu ya mkate.'],
   ['robo', 'um quarto (1/4)', 'substantivo', 'Números', null, 'Ni saa tatu na robo.'],

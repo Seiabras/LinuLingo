@@ -27,7 +27,7 @@ export const STORIES_LA: StorySeed[] = [
         emoji: '😊',
         choices: [
           { text: 'Nomen mihi est Iulia.', translation: 'Meu nome é Júlia.', next: 'final_bo' },
-          { text: 'Vinum amo.', translation: 'Eu amo vinho.', wrong: 'Isso não responde qual é o seu nome. Tente «Nomen mihi est…».' },
+          { text: 'Vinum amo.', translation: 'Eu amo vinho.', wrong: 'Isso não responde qual é o seu nome. Tente “Nomen mihi est…”.' },
         ],
       },
       final_bo: {
@@ -59,7 +59,7 @@ export const STORIES_LA: StorySeed[] = [
         emoji: '📜',
         choices: [
           { text: 'Ita, unum fratrem et unam sororem habeo.', translation: 'Sim, tenho um irmão e uma irmã.', next: 'fam' },
-          { text: 'Domus mea magna est.', translation: 'Minha casa é grande.', wrong: 'Isso não responde se você tem irmãos. Use «habeo» ou «non habeo».' },
+          { text: 'Domus mea magna est.', translation: 'Minha casa é grande.', wrong: 'Isso não responde se você tem irmãos. Use “habeo” ou “non habeo”.' },
         ],
       },
       fam: {
@@ -68,7 +68,7 @@ export const STORIES_LA: StorySeed[] = [
         emoji: '🏠',
         choices: [
           { text: 'Domus mea parva sed pulchra est.', translation: 'Minha casa é pequena mas bonita.', next: 'final_bo' },
-          { text: 'Viginti dies habeo.', translation: 'Tenho vinte dias.', wrong: 'Isso não descreve a sua casa. Fale sobre ela: «domus mea…».' },
+          { text: 'Viginti dies habeo.', translation: 'Tenho vinte dias.', wrong: 'Isso não descreve a sua casa. Fale sobre ela: “domus mea…”.' },
         ],
       },
       final_bo: {

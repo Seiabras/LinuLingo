@@ -84,7 +84,7 @@ export const ROWS: VocabRow[] = [
   ['pamatēdiens', 'prato principal (pamatēdiena)', 'substantivo', 'Alimentação e Restaurantes', '🍽️', 'Pamatēdienam izvēlos zivi.', 'm'],
   ['konditoreja', 'confeitaria (konditorejas)', 'substantivo', 'Alimentação e Restaurantes', '🎂', 'Konditorejā pērkam torti.', 'f'],
   ['sastāvdaļa', 'ingrediente (sastāvdaļas)', 'substantivo', 'Alimentação e Restaurantes', '🧾', 'Kādas ir šī ēdiena sastāvdaļas?', 'f'],
-  ['derīguma termiņš', 'prazo de validade («beidzies derīguma termiņš» = vencido)', 'expressão', 'Alimentação e Restaurantes', '📅', 'Pienam ir beidzies derīguma termiņš.'],
+  ['derīguma termiņš', 'prazo de validade (“beidzies derīguma termiņš” = vencido)', 'expressão', 'Alimentação e Restaurantes', '📅', 'Pienam ir beidzies derīguma termiņš.'],
   ['ziedkāposts', 'couve-flor (ziedkāposta)', 'substantivo', 'Alimentação e Restaurantes', '🥦', 'Ziedkāpostu var cept krāsnī.', 'm'],
   ['maizīte', 'pãozinho (maizītes)', 'substantivo', 'Alimentação e Restaurantes', '🥯', 'Svaigas maizītes no maiznīcas.', 'f'],
   ['piedeva', 'acompanhamento (piedevas)', 'substantivo', 'Alimentação e Restaurantes', '🍚', 'Kādu piedevu vēlaties: rīsus vai kartupeļus?', 'f'],

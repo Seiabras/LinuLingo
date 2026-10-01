@@ -48,7 +48,7 @@ export default function VoiceSetupScreen() {
       ? `${status === 'nenhuma' ? 'Seu aparelho não tem' : 'Seu aparelho só tem uma voz robótica em'} ${status === 'nenhuma' ? `voz em ${nomeIdioma(pack.name)}` : nomeIdioma(pack.name)}, mas tudo bem: eu tenho a minha própria voz neural, que roda aqui no navegador. Quando não houver gravação de um nativo, é ela que fala.`
       : {
           verificando: 'Deixa eu procurar uma voz aqui no seu aparelho…',
-          natural: `Achei uma voz ${nomeIdioma(pack.name)} bem natural! Toque em «Ouvir» para testar.`,
+          natural: `Achei uma voz ${nomeIdioma(pack.name)} bem natural! Toque em “Ouvir” para testar.`,
           robotica: `Tem voz em ${nomeIdioma(pack.name)}, mas é meio robótica. Dá para trocar por uma mais natural, olha o passo a passo abaixo.`,
           nenhuma: `Ainda não tem voz em ${nomeIdioma(pack.name)} neste aparelho. É rapidinho: siga os passos do seu sistema aqui embaixo.`,
         }[status];
@@ -84,7 +84,7 @@ export default function VoiceSetupScreen() {
           <Button title="▶ Ouvir" className="flex-1" disabled={status === 'verificando'} onPress={() => speak(pack.sampleSentence, pack.speechLocale)} />
           <Button title="Verificar de novo" variant="ghost" className="flex-1" onPress={check} />
         </View>
-        <Text className="text-xs italic text-slate-500 dark:text-slate-400">«{pack.sampleSentence}»</Text>
+        <Text className="text-xs italic text-slate-500 dark:text-slate-400">“{pack.sampleSentence}”</Text>
       </Card>
 
       {neural && <NeuralVoiceCard locale={pack.speechLocale} sample={pack.sampleSentence} preferred={status !== 'natural'} />}

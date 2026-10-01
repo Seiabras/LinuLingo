@@ -210,7 +210,7 @@ export const RECURSOS_IT: LanguageResources = {
       by: 'Domenico Modugno',
       year: '1958',
       level: 'A2',
-      why: 'O famoso «Volare», com letra simples e dicção clara, vencedora do Festival de Sanremo.',
+      why: 'O famoso “Volare”, com letra simples e dicção clara, vencedora do Festival de Sanremo.',
     },
     {
       kind: 'musica',
@@ -302,11 +302,11 @@ export const RECURSOS_IT: LanguageResources = {
     },
   ],
   tips: [
-    'Pronuncie as consoantes dobradas de verdade, segurando o som: «pala» e «palla», «caro» e «carro», «nono» e «nonno» são palavras diferentes.',
-    'No italiano o «t» e o «d» não viram «tch» e «dj» antes de «i», e o «o» e o «e» finais não viram «u» e «i»: «latte» não é «latchi», e «molto» termina em «o».',
-    'Falsos amigos: «guardare» é olhar, «salire» é subir, «caldo» é quente, «burro» é manteiga, «prendere» é pegar e «squisito» é delicioso.',
-    'Aprenda desde o início os artigos e as preposições articuladas: «il», «lo», «l’», «gli» e «le» mudam conforme a palavra seguinte, e «di + il» vira «del», «in + la» vira «nella».',
-    'No passato prossimo, os verbos de movimento e de mudança usam «essere» («sono andato»), e aí o particípio concorda com o sujeito («siamo arrivate»).',
+    'Pronuncie as consoantes dobradas de verdade, segurando o som: “pala” e “palla”, “caro” e “carro”, “nono” e “nonno” são palavras diferentes.',
+    'No italiano o “t” e o “d” não viram “tch” e “dj” antes de “i”, e o “o” e o “e” finais não viram “u” e “i”: “latte” não é “latchi”, e “molto” termina em “o”.',
+    'Falsos amigos: “guardare” é olhar, “salire” é subir, “caldo” é quente, “burro” é manteiga, “prendere” é pegar e “squisito” é delicioso.',
+    'Aprenda desde o início os artigos e as preposições articuladas: “il”, “lo”, “l’”, “gli” e “le” mudam conforme a palavra seguinte, e “di + il” vira “del”, “in + la” vira “nella”.',
+    'No passato prossimo, os verbos de movimento e de mudança usam “essere” (“sono andato”), e aí o particípio concorda com o sujeito (“siamo arrivate”).',
     'Na Itália convivem o italiano padrão e sotaques e dialetos regionais fortes. Tome como modelo para a sua fala o italiano dos telejornais da RAI, e nos filmes conte com o romano, o napolitano e o siciliano.',
   ],
 };

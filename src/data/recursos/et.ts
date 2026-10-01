@@ -104,7 +104,7 @@ export const RECURSOS_ET: LanguageResources = {
       by: 'Rainer Sarnet',
       year: '2017',
       level: 'B2',
-      why: 'Fábula em preto e branco com lobisomens, o diabo e os «kratt» do folclore, baseada no romance de Andrus Kivirähk: estoniano rural e antigo.',
+      why: 'Fábula em preto e branco com lobisomens, o diabo e os “kratt” do folclore, baseada no romance de Andrus Kivirähk: estoniano rural e antigo.',
     },
     {
       kind: 'filme',
@@ -195,7 +195,7 @@ export const RECURSOS_ET: LanguageResources = {
       by: 'Festival da Canção da Estônia',
       year: 'desde 1869',
       level: 'A2',
-      why: 'Dezenas de milhares de cantores num só coro, a cada cinco anos em Tallinn: o evento que sustentou a identidade estoniana e a «revolução cantada».',
+      why: 'Dezenas de milhares de cantores num só coro, a cada cinco anos em Tallinn: o evento que sustentou a identidade estoniana e a “revolução cantada”.',
     },
     {
       kind: 'musica',
@@ -211,7 +211,7 @@ export const RECURSOS_ET: LanguageResources = {
       by: 'Alo Mattiisen (música) e Jüri Leesment (letra)',
       year: '1988',
       level: 'B1',
-      why: 'Uma das «cinco canções patrióticas» da revolução cantada, que levou à independência: refrão fácil de entender e de cantar.',
+      why: 'Uma das “cinco canções patrióticas” da revolução cantada, que levou à independência: refrão fácil de entender e de cantar.',
     },
     {
       kind: 'musica',
@@ -268,10 +268,10 @@ export const RECURSOS_ET: LanguageResources = {
     },
   ],
   tips: [
-    'O estoniano é primo próximo do finlandês (e nada tem a ver com o letão ou o russo): quem já estudou finlandês ganha muito vocabulário, mas cuidado com os falsos amigos — «hallitus» é «governo» em finlandês e «mofo» em estoniano.',
-    'São 14 casos, mas não há gênero gramatical nem tempo futuro. O difícil é a duração: há sílabas curtas, longas e extralongas, e a escrita nem sempre mostra a diferença (linna, «da cidade», × linna, «para a cidade», mais longo).',
-    'O õ é uma vogal que o português não tem: faça a boca de «o» e estique os lábios, sem arredondar. Treine com palavras comuns, como «õde» («irmã») e «õun» («maçã»).',
-    'Em Tallinn e sobretudo em Narva, muita gente tem o russo como língua materna, e muitos jovens passam para o inglês ao ouvir sotaque. Peça: «Räägime eesti keeles, palun!» («Vamos falar estoniano, por favor!»).',
+    'O estoniano é primo próximo do finlandês (e nada tem a ver com o letão ou o russo): quem já estudou finlandês ganha muito vocabulário, mas cuidado com os falsos amigos — “hallitus” é “governo” em finlandês e “mofo” em estoniano.',
+    'São 14 casos, mas não há gênero gramatical nem tempo futuro. O difícil é a duração: há sílabas curtas, longas e extralongas, e a escrita nem sempre mostra a diferença (linna, “da cidade”, × linna, “para a cidade”, mais longo).',
+    'O õ é uma vogal que o português não tem: faça a boca de “o” e estique os lábios, sem arredondar. Treine com palavras comuns, como “õde” (“irmã”) e “õun” (“maçã”).',
+    'Em Tallinn e sobretudo em Narva, muita gente tem o russo como língua materna, e muitos jovens passam para o inglês ao ouvir sotaque. Peça: “Räägime eesti keeles, palun!” (“Vamos falar estoniano, por favor!”).',
     'Quem mora na Estônia tem acesso aos cursos de estoniano da Fundação de Integração (Integratsiooni Sihtasutus); do Brasil, comece pelo Keeleklikk, gratuito e online.',
   ],
 };

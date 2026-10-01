@@ -8,31 +8,31 @@ export const GRAMMAR_IT: GrammarTopic[] = [
     level: 'A1.1',
     title: 'Pronúncia e ortografia: c/ch, g/gh, gn, gli, sc e as consoantes duplas',
     emoji: '🔤',
-    summary: 'O italiano se lê quase sempre como se escreve, mas com regras próprias: «ch» soa «k», «ci» soa «tchi», «gli» soa «lh». E as consoantes duplas são pronunciadas longas e mudam o sentido: caro (caro) não é carro (carroça), nono (nono) não é nonno (avô).',
+    summary: 'O italiano se lê quase sempre como se escreve, mas com regras próprias: “ch” soa “k”, “ci” soa “tchi”, “gli” soa “lh”. E as consoantes duplas são pronunciadas longas e mudam o sentido: caro (caro) não é carro (carroça), nono (nono) não é nonno (avô).',
     sections: [
       {
-        text: 'O alfabeto italiano tem 21 letras; j, k, w, x e y só aparecem em palavras estrangeiras (jeans, taxi, weekend). As vogais são sempre orais (não existe «ã» nem «õ») e a vogal final não enfraquece: «latte» soa «lát-te», nunca «látchi»; «vino» termina em «o» de verdade, nunca em «u». E o t e o d não mudam antes de i: «tipo» é «tí-po», «dire» é «dí-re», sem «tchi» nem «dji».',
+        text: 'O alfabeto italiano tem 21 letras; j, k, w, x e y só aparecem em palavras estrangeiras (jeans, taxi, weekend). As vogais são sempre orais (não existe “ã” nem “õ”) e a vogal final não enfraquece: “latte” soa “lát-te”, nunca “látchi”; “vino” termina em “o” de verdade, nunca em “u”. E o t e o d não mudam antes de i: “tipo” é “tí-po”, “dire” é “dí-re”, sem “tchi” nem “dji”.',
       },
       {
         heading: 'As letras que enganam',
-        text: 'A regra de ouro: c e g são «duros» antes de a, o, u e «moles» antes de e, i. Para deixar duro antes de e, i, o italiano põe um h (che, ghi); para deixar mole antes de a, o, u, põe um i que não soa (cia, gio). É o contrário do que o olho do brasileiro espera: «chi» não é «xi», é «ki».',
+        text: 'A regra de ouro: c e g são “duros” antes de a, o, u e “moles” antes de e, i. Para deixar duro antes de e, i, o italiano põe um h (che, ghi); para deixar mole antes de a, o, u, põe um i que não soa (cia, gio). É o contrário do que o olho do brasileiro espera: “chi” não é “xi”, é “ki”.',
         table: {
           head: ['Grafia', 'IPA', 'Como soa', 'Exemplo'],
           rows: [
-            ['c + a, o, u', '[k]', '«c» de «casa»', 'casa, cosa (coisa), cuore (coração)'],
-            ['ch + e, i', '[k]', '«qu» de «queijo»; o h só endurece', 'che (que), chiesa (igreja), chiave (chave)'],
-            ['c + e, i', '[tʃ]', '«tch» de «tchau»', 'cena (jantar), cinema, dieci (dez)'],
-            ['ci + a, o, u', '[tʃ]', '«tch»; o i não soa', 'ciao, cioccolato, ciuffo (topete)'],
-            ['g + a, o, u', '[g]', '«g» de «gato»', 'gatto, gola (garganta), gusto'],
-            ['gh + e, i', '[g]', '«gue», «gui» de «guerra», «guitarra»', 'spaghetti, ghiaccio (gelo)'],
-            ['g + e, i', '[dʒ]', '«dj» de «adjetivo»', 'gelato (sorvete), giro (volta)'],
-            ['gi + a, o, u', '[dʒ]', '«dj»; o i não soa', 'giorno (dia), giallo (amarelo)'],
-            ['gn', '[ɲ]', '«nh» de «banho»', 'bagno (banheiro), gnocchi'],
-            ['gli', '[ʎ]', '«lh» de «filho»', 'figlio (filho), aglio (alho), gli'],
-            ['sc + e, i', '[ʃ]', '«x» de «xícara»', 'scena, sci (esqui), pesce (peixe)'],
-            ['sci + a, o, u', '[ʃ]', '«x»; o i não soa', 'lasciare (deixar), sciopero (greve)'],
-            ['sc + a, o, u; sch + e, i', '[sk]', '«sc» de «escada»', 'scuola (escola), schiena (costas)'],
-            ['z, zz', '[ts] / [dz]', '«ts» ou «dz», nunca «z» de «zebra»', 'pizza, grazie, zero'],
+            ['c + a, o, u', '[k]', '“c” de “casa”', 'casa, cosa (coisa), cuore (coração)'],
+            ['ch + e, i', '[k]', '“qu” de “queijo”; o h só endurece', 'che (que), chiesa (igreja), chiave (chave)'],
+            ['c + e, i', '[tʃ]', '“tch” de “tchau”', 'cena (jantar), cinema, dieci (dez)'],
+            ['ci + a, o, u', '[tʃ]', '“tch”; o i não soa', 'ciao, cioccolato, ciuffo (topete)'],
+            ['g + a, o, u', '[g]', '“g” de “gato”', 'gatto, gola (garganta), gusto'],
+            ['gh + e, i', '[g]', '“gue”, “gui” de “guerra”, “guitarra”', 'spaghetti, ghiaccio (gelo)'],
+            ['g + e, i', '[dʒ]', '“dj” de “adjetivo”', 'gelato (sorvete), giro (volta)'],
+            ['gi + a, o, u', '[dʒ]', '“dj”; o i não soa', 'giorno (dia), giallo (amarelo)'],
+            ['gn', '[ɲ]', '“nh” de “banho”', 'bagno (banheiro), gnocchi'],
+            ['gli', '[ʎ]', '“lh” de “filho”', 'figlio (filho), aglio (alho), gli'],
+            ['sc + e, i', '[ʃ]', '“x” de “xícara”', 'scena, sci (esqui), pesce (peixe)'],
+            ['sci + a, o, u', '[ʃ]', '“x”; o i não soa', 'lasciare (deixar), sciopero (greve)'],
+            ['sc + a, o, u; sch + e, i', '[sk]', '“sc” de “escada”', 'scuola (escola), schiena (costas)'],
+            ['z, zz', '[ts] / [dz]', '“ts” ou “dz”, nunca “z” de “zebra”', 'pizza, grazie, zero'],
             ['qu', '[kw]', 'o u sempre soa', 'quando, questo (este), acqua'],
             ['h', '—', 'muda; só serve para ch, gh e para ho, hai, ha, hanno', 'ho (tenho), hanno (têm)'],
             ['r, rr', '[r]', 'vibrado com a ponta da língua, até no começo da palavra', 'Roma, raro, terra'],
@@ -41,7 +41,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Consoantes duplas: segure o som',
-        text: 'Em português, «rr» e «ss» são só grafia. Em italiano, a consoante dupla se pronuncia mais longa, com uma pequena pausa antes (como no japonês ou no «pizza» dito com calma: «pit-tsa»). E ela muda o sentido: engolir a dupla é trocar de palavra. O contrário também erra: «carro» em italiano é carroça (o carro é la macchina).',
+        text: 'Em português, “rr” e “ss” são só grafia. Em italiano, a consoante dupla se pronuncia mais longa, com uma pequena pausa antes (como no japonês ou no “pizza” dito com calma: “pit-tsa”). E ela muda o sentido: engolir a dupla é trocar de palavra. O contrário também erra: “carro” em italiano é carroça (o carro é la macchina).',
         table: {
           head: ['Simples', 'Sentido', 'Dupla', 'Sentido'],
           rows: [
@@ -66,7 +66,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Acento gráfico e apóstrofo',
-        text: 'O italiano só escreve o acento quando a tônica cai na última vogal: città, perché, caffè, più, però, lunedì. Nas outras palavras a tônica não é marcada, e o brasileiro precisa decorar: a maioria é paroxítona (a-MI-co, CA-sa), mas muitas são proparoxítonas sem nenhum sinal: TA-vo-lo (mesa), te-LE-fo-no, MAC-chi-na (carro), NA-po-li. O acento é grave (à, è, ì, ò, ù) quase sempre; o agudo só aparece no é fechado de perché, poiché, benché, né, sé e ventitré. O apóstrofo marca a vogal que caiu: l’acqua, c’è, dov’è, un po’. Mas «qual è» não leva apóstrofo.',
+        text: 'O italiano só escreve o acento quando a tônica cai na última vogal: città, perché, caffè, più, però, lunedì. Nas outras palavras a tônica não é marcada, e o brasileiro precisa decorar: a maioria é paroxítona (a-MI-co, CA-sa), mas muitas são proparoxítonas sem nenhum sinal: TA-vo-lo (mesa), te-LE-fo-no, MAC-chi-na (carro), NA-po-li. O acento é grave (à, è, ì, ò, ù) quase sempre; o agudo só aparece no é fechado de perché, poiché, benché, né, sé e ventitré. O apóstrofo marca a vogal que caiu: l’acqua, c’è, dov’è, un po’. Mas “qual è” não leva apóstrofo.',
         table: {
           head: ['Com acento', 'Sentido', 'Sem acento', 'Sentido'],
           rows: [
@@ -87,40 +87,40 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Ler com sotaque brasileiro: «latte» como «látchi», «dire» como «djíri». O t e o d não mudam antes de i, e a vogal final soa inteira.',
-      'Ler «chi», «che» como «xi», «xe». Em italiano ch é sempre «k»: chiesa é «kiéza», chiave é «kiáve». E ci é «tchi»: dieci é «diétchi».',
-      'Engolir as duplas: «nono» (nono) não é «nonno» (avô), «sete» (sede) não é «sette» (sete). Segure a consoante.',
-      'Pronunciar o r como o «rr» carioca, raspado na garganta: em italiano todo r é vibrado na ponta da língua, até em Roma.',
-      'Escrever ç, ã, õ, ê ou ô. Nada disso existe: «canção» é canzone, «praça» é piazza.',
-      'Pôr acento na direção errada ou onde não há: perché (agudo), caffè (grave), e nada de acento em «tavolo» ou «telefono», mesmo sendo proparoxítonas.',
+      'Ler com sotaque brasileiro: “latte” como “látchi”, “dire” como “djíri”. O t e o d não mudam antes de i, e a vogal final soa inteira.',
+      'Ler “chi”, “che” como “xi”, “xe”. Em italiano ch é sempre “k”: chiesa é “kiéza”, chiave é “kiáve”. E ci é “tchi”: dieci é “diétchi”.',
+      'Engolir as duplas: “nono” (nono) não é “nonno” (avô), “sete” (sede) não é “sette” (sete). Segure a consoante.',
+      'Pronunciar o r como o “rr” carioca, raspado na garganta: em italiano todo r é vibrado na ponta da língua, até em Roma.',
+      'Escrever ç, ã, õ, ê ou ô. Nada disso existe: “canção” é canzone, “praça” é piazza.',
+      'Pôr acento na direção errada ou onde não há: perché (agudo), caffè (grave), e nada de acento em “tavolo” ou “telefono”, mesmo sendo proparoxítonas.',
     ],
     quiz: [
       {
-        question: 'Qual palavra quer dizer «avô»?',
+        question: 'Qual palavra quer dizer “avô”?',
         options: ['nono', 'nonno', 'nonò'],
         answer: 'nonno',
-        explanation: 'Com n dobrado: nonno. «nono» é o numeral ordinal (nono). A dupla muda o sentido.',
+        explanation: 'Com n dobrado: nonno. “nono” é o numeral ordinal (nono). A dupla muda o sentido.',
       },
       {
-        question: 'Como se escreve a palavra que soa «kiáve» (chave)?',
+        question: 'Como se escreve a palavra que soa “kiáve” (chave)?',
         options: ['ciave', 'chiave', 'kiave'],
         answer: 'chiave',
-        explanation: 'Para o c soar «k» antes de i, o italiano põe h: chi. «ci» soaria «tchi», e o k não existe em palavras italianas.',
+        explanation: 'Para o c soar “k” antes de i, o italiano põe h: chi. “ci” soaria “tchi”, e o k não existe em palavras italianas.',
       },
       {
-        question: 'Qual palavra tem o som do «x» de «xícara»?',
+        question: 'Qual palavra tem o som do “x” de “xícara”?',
         options: ['scuola', 'scena', 'schiena'],
         answer: 'scena',
-        explanation: 'sc antes de e ou i soa «x». Antes de a, o, u (scuola) e em sch (schiena) soa «sc» de «escada».',
+        explanation: 'sc antes de e ou i soa “x”. Antes de a, o, u (scuola) e em sch (schiena) soa “sc” de “escada”.',
       },
       {
-        question: 'Qual é a grafia correta de «porque»?',
+        question: 'Qual é a grafia correta de “porque”?',
         options: ['perché', 'perche', 'percé'],
         answer: 'perché',
         explanation: 'Tônica na última sílaba leva acento, e em -ché ele é agudo (é fechado), como em poiché e benché.',
       },
       {
-        question: 'Onde cai a tônica de «telefono»?',
+        question: 'Onde cai a tônica de “telefono”?',
         options: ['TE-le-fo-no', 'te-LE-fo-no', 'te-le-FO-no'],
         answer: 'te-LE-fo-no',
         explanation: 'É proparoxítona, mas sem acento escrito: o italiano só marca a tônica quando ela está na última vogal.',
@@ -132,11 +132,11 @@ export const GRAMMAR_IT: GrammarTopic[] = [
     level: 'A1.1',
     title: 'Saudações, essere, tu × Lei e os números de 1 a 20',
     emoji: '👋',
-    summary: 'Cumprimentar, dizer quem você é e de onde vem. O verbo essere cobre o «ser» e boa parte do «estar»; o tratamento formal é Lei (verbo na 3ª pessoa), e «voi» não é «você», é «vocês».',
+    summary: 'Cumprimentar, dizer quem você é e de onde vem. O verbo essere cobre o “ser” e boa parte do “estar”; o tratamento formal é Lei (verbo na 3ª pessoa), e “voi” não é “você”, é “vocês”.',
     sections: [
       {
         heading: 'Cumprimentar e se despedir',
-        text: 'Buonasera entra bem mais cedo do que o nosso «boa noite»: a partir do meio da tarde já se diz buonasera. E buonanotte é só despedida, na hora de dormir; chegando num restaurante às nove da noite, diga buonasera.',
+        text: 'Buonasera entra bem mais cedo do que o nosso “boa noite”: a partir do meio da tarde já se diz buonasera. E buonanotte é só despedida, na hora de dormir; chegando num restaurante às nove da noite, diga buonasera.',
         table: {
           head: ['Italiano', 'Quando', 'Português'],
           rows: [
@@ -154,7 +154,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Pronomes e o verbo essere',
-        text: 'O pronome sujeito quase sempre cai, porque a terminação do verbo já diz quem é: «Sono di Recife» basta. Para falar com desconhecidos, lojistas e pessoas mais velhas usa-se Lei (literalmente «ela»), com o verbo na 3ª pessoa do singular, tanto para homem quanto para mulher: é o nosso «o senhor / a senhora». Tu é o «você» íntimo, com terminação própria. E voi é o plural: «vocês». Note que sono serve para «eu sou» e para «eles são»: o contexto decide.',
+        text: 'O pronome sujeito quase sempre cai, porque a terminação do verbo já diz quem é: “Sono di Recife” basta. Para falar com desconhecidos, lojistas e pessoas mais velhas usa-se Lei (literalmente “ela”), com o verbo na 3ª pessoa do singular, tanto para homem quanto para mulher: é o nosso “o senhor / a senhora”. Tu é o “você” íntimo, com terminação própria. E voi é o plural: “vocês”. Note que sono serve para “eu sou” e para “eles são”: o contexto decide.',
         table: {
           head: ['Pronome', 'essere', 'Português'],
           rows: [
@@ -175,8 +175,8 @@ export const GRAMMAR_IT: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'essere × stare: o «estar» fica quase todo com essere',
-        text: 'O português separa «ser» e «estar»; o italiano padrão usa essere também para estados e lugares: «Sono stanco» (estou cansado), «Siamo a casa» (estamos em casa). Stare fica para a saúde e o bem-estar (Come stai? Sto bene), para «ficar» (stare zitto, ficar quieto) e para algumas expressões fixas.',
+        heading: 'essere × stare: o “estar” fica quase todo com essere',
+        text: 'O português separa “ser” e “estar”; o italiano padrão usa essere também para estados e lugares: “Sono stanco” (estou cansado), “Siamo a casa” (estamos em casa). Stare fica para a saúde e o bem-estar (Come stai? Sto bene), para “ficar” (stare zitto, ficar quieto) e para algumas expressões fixas.',
         examples: [
           ['Siamo stanchi ma contenti.', 'Estamos cansados mas contentes.'],
           ['Marco è in ufficio.', 'O Marco está no escritório.'],
@@ -185,7 +185,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Números de 1 a 20',
-        text: 'De 11 a 16 o número termina em -dici; de 17 a 19 ele começa com dici-. Repare nas duplas: quattro, sette, otto, diciassette, diciotto, diciannove. E sei é ao mesmo tempo «seis» e «(tu) és». Para dizer a idade o italiano usa avere, como o português: «Ho vent’anni».',
+        text: 'De 11 a 16 o número termina em -dici; de 17 a 19 ele começa com dici-. Repare nas duplas: quattro, sette, otto, diciassette, diciotto, diciannove. E sei é ao mesmo tempo “seis” e “(tu) és”. Para dizer a idade o italiano usa avere, como o português: “Ho vent’anni”.',
         table: {
           head: ['Número', 'Italiano', 'Número', 'Italiano'],
           rows: [
@@ -209,11 +209,11 @@ export const GRAMMAR_IT: GrammarTopic[] = [
     ],
     pitfalls: [
       'Chegar dizendo buonanotte: ela só serve para se despedir antes de dormir. Chegando à noite, é buonasera.',
-      'Tratar desconhecidos por tu. Numa loja ou com alguém mais velho, use Lei com o verbo na 3ª pessoa: «Lei è italiano?», «Come sta?».',
-      'Traduzir «você» por voi. Voi é plural (vocês); «você» é tu (íntimo) ou Lei (formal).',
-      'Usar stare para todo «estar»: «Sto stanco» soa regional. No italiano padrão é «Sono stanco», «Sono a casa».',
-      'Repetir o pronome em toda frase («Io sono… io ho…»): soa enfático. Normalmente ele cai.',
-      'Ler «ciao» como «siao» e «dieci» como «diéssi». O c antes de i soa «tch»: «tchao», «diétchi».',
+      'Tratar desconhecidos por tu. Numa loja ou com alguém mais velho, use Lei com o verbo na 3ª pessoa: “Lei è italiano?”, “Come sta?”.',
+      'Traduzir “você” por voi. Voi é plural (vocês); “você” é tu (íntimo) ou Lei (formal).',
+      'Usar stare para todo “estar”: “Sto stanco” soa regional. No italiano padrão é “Sono stanco”, “Sono a casa”.',
+      'Repetir o pronome em toda frase (“Io sono… io ho…”): soa enfático. Normalmente ele cai.',
+      'Ler “ciao” como “siao” e “dieci” como “diéssi”. O c antes de i soa “tch”: “tchao”, “diétchi”.',
     ],
     quiz: [
       {
@@ -226,19 +226,19 @@ export const GRAMMAR_IT: GrammarTopic[] = [
         question: 'Como perguntar a um senhor desconhecido de onde ele é?',
         options: ['Tu di dove sei?', 'Lei di dov’è?', 'Voi di dove siete?'],
         answer: 'Lei di dov’è?',
-        explanation: 'Com desconhecidos usa-se Lei, com o verbo na 3ª pessoa (è). Voi é plural, «vocês».',
+        explanation: 'Com desconhecidos usa-se Lei, com o verbo na 3ª pessoa (è). Voi é plural, “vocês”.',
       },
       {
-        question: 'Complete: «Noi ___ italiani.»',
+        question: 'Complete: “Noi ___ italiani.”',
         options: ['siamo', 'sono', 'siete'],
         answer: 'siamo',
-        explanation: 'noi siamo = nós somos. Sono é «eu sou» ou «eles são»; siete é «vocês são».',
+        explanation: 'noi siamo = nós somos. Sono é “eu sou” ou “eles são”; siete é “vocês são”.',
       },
       {
-        question: 'Como se diz «Estou cansado»?',
+        question: 'Como se diz “Estou cansado”?',
         options: ['Sto stanco.', 'Sono stanco.', 'Ho stanco.'],
         answer: 'Sono stanco.',
-        explanation: 'No italiano padrão, estados como o cansaço vão com essere. Stare fica para «Sto bene» (estou bem).',
+        explanation: 'No italiano padrão, estados como o cansaço vão com essere. Stare fica para “Sto bene” (estou bem).',
       },
       {
         question: 'Qual é o número 17?',
@@ -256,7 +256,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
     summary: 'O português tem o, a, os, as; o italiano tem sete formas de artigo definido e quatro de indefinido. Quem escolhe não é só o gênero: é o som com que a palavra seguinte começa (lo studente, l’amico, gli zii).',
     sections: [
       {
-        text: 'Em português o artigo depende só do gênero e do número. Em italiano depende também do começo da palavra que vem logo depois: consoante comum, vogal, ou um dos grupos «difíceis» (s + consoante, z, gn, ps, x, y). Por isso o mesmo substantivo masculino pode pedir il, lo ou l’.',
+        text: 'Em português o artigo depende só do gênero e do número. Em italiano depende também do começo da palavra que vem logo depois: consoante comum, vogal, ou um dos grupos “difíceis” (s + consoante, z, gn, ps, x, y). Por isso o mesmo substantivo masculino pode pedir il, lo ou l’.',
       },
       {
         heading: 'O artigo definido',
@@ -279,7 +279,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'O artigo indefinido',
-        text: 'O apóstrofo só aparece no feminino: un’amica (uma amiga), mas un amico (um amigo), sem apóstrofo, porque un já é a forma masculina completa. Para o plural «uns, umas», o italiano usa o partitivo: dei libri, degli amici, delle case.',
+        text: 'O apóstrofo só aparece no feminino: un’amica (uma amiga), mas un amico (um amigo), sem apóstrofo, porque un já é a forma masculina completa. Para o plural “uns, umas”, o italiano usa o partitivo: dei libri, degli amici, delle case.',
         table: {
           head: ['Gênero', 'A palavra seguinte é…', 'Artigo', 'Exemplo'],
           rows: [
@@ -297,7 +297,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Onde o artigo aparece (ou some)',
-        text: 'O possessivo pede artigo, como no português: la mia casa, il tuo libro. A exceção são os parentes no singular sem outro enfeite: mia madre, tuo fratello, nostro zio, sem artigo (mas le mie sorelle, la mia sorellina). Com títulos, o artigo aparece quando se fala da pessoa, e some quando se fala com ela: «Il signor Rossi è qui» × «Buongiorno, signor Rossi».',
+        text: 'O possessivo pede artigo, como no português: la mia casa, il tuo libro. A exceção são os parentes no singular sem outro enfeite: mia madre, tuo fratello, nostro zio, sem artigo (mas le mie sorelle, la mia sorellina). Com títulos, o artigo aparece quando se fala da pessoa, e some quando se fala com ela: “Il signor Rossi è qui” × “Buongiorno, signor Rossi”.',
         examples: [
           ['La mia casa è piccola, ma mia sorella ha una casa grande.', 'Minha casa é pequena, mas minha irmã tem uma casa grande.'],
           ['Il dottor Bianchi arriva alle dieci.', 'O doutor Bianchi chega às dez.'],
@@ -306,39 +306,39 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar il antes de s + consoante ou z: «il studente», «il zaino». O certo é lo studente, lo zaino (e gli studenti, gli zaini).',
-      'Fazer o plural de l’amico com i: «i amici». Masculino que começa com vogal faz gli: gli amici.',
-      'Pôr apóstrofo no masculino: «un’amico» está errado. O apóstrofo é só do feminino: un amico, un’amica.',
-      'Pôr artigo antes de parente no singular: «la mia madre». O certo é mia madre, mio padre (mas la mia casa).',
-      'Ler gli como «gli»: o grupo soa «lh». Gli amici é «lhamítchi».',
+      'Usar il antes de s + consoante ou z: “il studente”, “il zaino”. O certo é lo studente, lo zaino (e gli studenti, gli zaini).',
+      'Fazer o plural de l’amico com i: “i amici”. Masculino que começa com vogal faz gli: gli amici.',
+      'Pôr apóstrofo no masculino: “un’amico” está errado. O apóstrofo é só do feminino: un amico, un’amica.',
+      'Pôr artigo antes de parente no singular: “la mia madre”. O certo é mia madre, mio padre (mas la mia casa).',
+      'Ler gli como “gli”: o grupo soa “lh”. Gli amici é “lhamítchi”.',
     ],
     quiz: [
       {
-        question: 'Complete: «___ zaino è pesante.»',
+        question: 'Complete: “___ zaino è pesante.”',
         options: ['Il', 'Lo', 'L’'],
         answer: 'Lo',
         explanation: 'Masculino que começa com z pede lo (e gli no plural): lo zaino, gli zaini.',
       },
       {
-        question: 'Qual é o plural de «l’amico»?',
+        question: 'Qual é o plural de “l’amico”?',
         options: ['i amici', 'gli amici', 'le amiche'],
         answer: 'gli amici',
         explanation: 'Masculino que começa com vogal faz o plural com gli. Le amiche é o plural de l’amica.',
       },
       {
-        question: 'Como se diz «uma amiga»?',
+        question: 'Como se diz “uma amiga”?',
         options: ['un’amica', 'uno amica', 'un amica'],
         answer: 'un’amica',
         explanation: 'Feminino antes de vogal: una perde o a e ganha apóstrofo, un’amica. Sem apóstrofo, un é masculino.',
       },
       {
-        question: 'Como se diz «Minha mãe é de Nápoles»?',
+        question: 'Como se diz “Minha mãe é de Nápoles”?',
         options: ['La mia madre è di Napoli.', 'Mia madre è di Napoli.', 'Madre mia è di Napoli.'],
         answer: 'Mia madre è di Napoli.',
         explanation: 'Parente no singular, sem outro adjetivo, dispensa o artigo diante do possessivo.',
       },
       {
-        question: 'Complete: «___ studenti di Perugia.»',
+        question: 'Complete: “___ studenti di Perugia.”',
         options: ['I', 'Gli', 'Le'],
         answer: 'Gli',
         explanation: 'studente começa com s + consoante: lo studente no singular, gli studenti no plural.',
@@ -351,10 +351,10 @@ export const GRAMMAR_IT: GrammarTopic[] = [
     level: 'A1.2',
     title: 'Presente dos verbos regulares: -are, -ere, -ire e -isc-',
     emoji: '⚙️',
-    summary: 'Três conjugações, parecidas com as nossas. O que muda: o «tu» tem terminação própria (-i), a 3ª do plural tem a tônica lá atrás (PAR-la-no) e parte dos verbos em -ire ganha um -isc- no meio (capisco).',
+    summary: 'Três conjugações, parecidas com as nossas. O que muda: o “tu” tem terminação própria (-i), a 3ª do plural tem a tônica lá atrás (PAR-la-no) e parte dos verbos em -ire ganha um -isc- no meio (capisco).',
     sections: [
       {
-        text: 'Tire -are, -ere ou -ire e acrescente a terminação. Diferente do português falado, em que «você fala» usa a forma de «ele», em italiano o tu tem sempre a sua terminação, que é -i nas três conjugações: parli, scrivi, dormi. E cuidado com a tônica da 3ª pessoa do plural: ela fica na mesma sílaba do singular, não no «-a-no»: PAR-la-no, SCRI-vo-no, DOR-mo-no.',
+        text: 'Tire -are, -ere ou -ire e acrescente a terminação. Diferente do português falado, em que “você fala” usa a forma de “ele”, em italiano o tu tem sempre a sua terminação, que é -i nas três conjugações: parli, scrivi, dormi. E cuidado com a tônica da 3ª pessoa do plural: ela fica na mesma sílaba do singular, não no “-a-no”: PAR-la-no, SCRI-vo-no, DOR-mo-no.',
         table: {
           head: ['Pessoa', 'parlare (falar)', 'scrivere (escrever)', 'dormire (dormir)', 'capire (entender)'],
           rows: [
@@ -369,7 +369,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Os verbos em -isc-',
-        text: 'Muitos verbos em -ire (capire, finire, preferire, pulire, spedire) ganham -isc- em io, tu, lui/lei e loro, mas não em noi e voi. Outros (dormire, partire, sentire, aprire, offrire) não ganham: é preciso decorar. Na pronúncia, a regra do sc vale: capisco soa «capísko», capisci soa «capíxi».',
+        text: 'Muitos verbos em -ire (capire, finire, preferire, pulire, spedire) ganham -isc- em io, tu, lui/lei e loro, mas não em noi e voi. Outros (dormire, partire, sentire, aprire, offrire) não ganham: é preciso decorar. Na pronúncia, a regra do sc vale: capisco soa “capísko”, capisci soa “capíxi”.',
         examples: [
           ['Finisco il lavoro alle sei.', 'Termino o trabalho às seis.'],
           ['Preferisci il mare o la montagna?', 'Você prefere o mar ou a montanha?'],
@@ -392,7 +392,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Para que serve o presente',
-        text: 'Como no português, o presente serve para o futuro próximo (Domani parto per Roma) e para o que está acontecendo agora: «Che cosa fai?» é «o que você está fazendo?». Para algo que começou no passado e continua, o italiano usa presente + da: «Studio italiano da due anni», e não com «ha» (que é «tem»).',
+        text: 'Como no português, o presente serve para o futuro próximo (Domani parto per Roma) e para o que está acontecendo agora: “Che cosa fai?” é “o que você está fazendo?”. Para algo que começou no passado e continua, o italiano usa presente + da: “Studio italiano da due anni”, e não com “ha” (que é “tem”).',
         examples: [
           ['Parlo italiano e un po’ di spagnolo.', 'Falo italiano e um pouco de espanhol.'],
           ['Studio italiano da due anni.', 'Estudo italiano há dois anos.'],
@@ -402,27 +402,27 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Acentuar a 3ª do plural como em português: «parLAno», «abiTAno». O certo é PAR-la-no, A-bi-ta-no, SCRI-vo-no.',
-      'Usar a forma de «ele» com tu, como no «você fala»: «tu parla». Com tu a terminação é -i: tu parli.',
-      'Esquecer o -isc-: «io capo» quer dizer «eu, chefe». É io capisco, tu capisci, loro capiscono.',
-      'Traduzir «há dois anos» (e continua) com ha: «Studio ha due anni». O certo é da due anni.',
-      'Confundir guardare com «guardar»: guardare é olhar, assistir. «Guardar» é mettere via ou conservare.',
+      'Acentuar a 3ª do plural como em português: “parLAno”, “abiTAno”. O certo é PAR-la-no, A-bi-ta-no, SCRI-vo-no.',
+      'Usar a forma de “ele” com tu, como no “você fala”: “tu parla”. Com tu a terminação é -i: tu parli.',
+      'Esquecer o -isc-: “io capo” quer dizer “eu, chefe”. É io capisco, tu capisci, loro capiscono.',
+      'Traduzir “há dois anos” (e continua) com ha: “Studio ha due anni”. O certo é da due anni.',
+      'Confundir guardare com “guardar”: guardare é olhar, assistir. “Guardar” é mettere via ou conservare.',
     ],
     quiz: [
       {
-        question: 'Como se diz «eles falam»?',
+        question: 'Como se diz “eles falam”?',
         options: ['loro parla', 'loro parlano', 'loro parlono'],
         answer: 'loro parlano',
         explanation: 'Verbos em -are fazem -ano na 3ª do plural, com a tônica em PAR: PAR-la-no.',
       },
       {
-        question: 'Você pergunta a um amigo: «Você entende?»',
+        question: 'Você pergunta a um amigo: “Você entende?”',
         options: ['Capi?', 'Capisci?', 'Capiscono?'],
         answer: 'Capisci?',
-        explanation: 'capire é um verbo em -isc-, e com tu a terminação é -i: capisci (soa «capíxi»).',
+        explanation: 'capire é um verbo em -isc-, e com tu a terminação é -i: capisci (soa “capíxi”).',
       },
       {
-        question: 'Complete: «Noi ___ alle cinque.» (finire)',
+        question: 'Complete: “Noi ___ alle cinque.” (finire)',
         options: ['finiamo', 'finisciamo', 'finiscono'],
         answer: 'finiamo',
         explanation: 'O -isc- não entra em noi e voi: finiamo, finite.',
@@ -431,10 +431,10 @@ export const GRAMMAR_IT: GrammarTopic[] = [
         question: 'Qual é a forma de tu do verbo cercare?',
         options: ['cerci', 'cerchi', 'cercai'],
         answer: 'cerchi',
-        explanation: 'O h mantém o som de «k» antes do i: cerchi. «cerci» soaria «tchértchi».',
+        explanation: 'O h mantém o som de “k” antes do i: cerchi. “cerci” soaria “tchértchi”.',
       },
       {
-        question: 'Como se diz «Moro em Florença há três anos»?',
+        question: 'Como se diz “Moro em Florença há três anos”?',
         options: ['Abito a Firenze da tre anni.', 'Abito a Firenze ha tre anni.', 'Abito a Firenze fa tre anni.'],
         answer: 'Abito a Firenze da tre anni.',
         explanation: 'Situação que começou no passado e continua: presente + da. Fa é para o passado encerrado (tre anni fa, três anos atrás).',
@@ -446,11 +446,11 @@ export const GRAMMAR_IT: GrammarTopic[] = [
     level: 'A1.2',
     title: 'Avere, gênero e plural',
     emoji: '🧺',
-    summary: 'Avere é «ter» e também o «estar com» do português: ho fame, ho caldo. Os substantivos às vezes trocam de gênero (il fiore, la fine) e o plural não usa -s: muda a vogal final (libro → libri, casa → case), e alguns são bem irregulares (l’uovo → le uova).',
+    summary: 'Avere é “ter” e também o “estar com” do português: ho fame, ho caldo. Os substantivos às vezes trocam de gênero (il fiore, la fine) e o plural não usa -s: muda a vogal final (libro → libri, casa → case), e alguns são bem irregulares (l’uovo → le uova).',
     sections: [
       {
         heading: 'O verbo avere',
-        text: 'O h é mudo: ho soa «ó», hai soa «ai», ha soa «a», hanno soa igual a anno (ano). Ele só existe para diferenciar na escrita: ho (tenho) × o (ou), ha (tem) × a (preposição), hanno (têm) × anno (ano).',
+        text: 'O h é mudo: ho soa “ó”, hai soa “ai”, ha soa “a”, hanno soa igual a anno (ano). Ele só existe para diferenciar na escrita: ho (tenho) × o (ou), ha (tem) × a (preposição), hanno (têm) × anno (ano).',
         table: {
           head: ['Pessoa', 'avere', 'Português'],
           rows: [
@@ -464,8 +464,8 @@ export const GRAMMAR_IT: GrammarTopic[] = [
         },
       },
       {
-        heading: 'Onde o português diz «estar com»',
-        text: 'Fome, sede, frio, calor, sono, pressa e medo se «têm» em italiano, como no português de Portugal: nada de «sono con fame». Cuidado com caldo: é «quente», e ho caldo é «estou com calor» (caldo de sopa é brodo).',
+        heading: 'Onde o português diz “estar com”',
+        text: 'Fome, sede, frio, calor, sono, pressa e medo se “têm” em italiano, como no português de Portugal: nada de “sono con fame”. Cuidado com caldo: é “quente”, e ho caldo é “estou com calor” (caldo de sopa é brodo).',
         table: {
           head: ['Italiano', 'Português'],
           rows: [
@@ -530,42 +530,42 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Traduzir «estou com fome» ao pé da letra: «sono con fame». O certo é ho fame, ho sete, ho freddo.',
-      'Esquecer o h de avere na escrita: «o fame» (o = ou), «a vent’anni» (a = preposição). É ho, ha, hanno.',
-      'Levar o gênero do português: «la fiore», «la dolore», «il fine» para «o fim». O certo é il fiore, il dolore, la fine (il fine é «o objetivo»).',
-      'Pôr -s no plural: «le cittàs», «i bars», «i films». Oxítonas e estrangeiras ficam iguais: le città, i bar, i film.',
-      'Plural regular em palavras irregulares: «le uove», «i bracci». O certo é le uova, le braccia, le dita, gli uomini.',
+      'Traduzir “estou com fome” ao pé da letra: “sono con fame”. O certo é ho fame, ho sete, ho freddo.',
+      'Esquecer o h de avere na escrita: “o fame” (o = ou), “a vent’anni” (a = preposição). É ho, ha, hanno.',
+      'Levar o gênero do português: “la fiore”, “la dolore”, “il fine” para “o fim”. O certo é il fiore, il dolore, la fine (il fine é “o objetivo”).',
+      'Pôr -s no plural: “le cittàs”, “i bars”, “i films”. Oxítonas e estrangeiras ficam iguais: le città, i bar, i film.',
+      'Plural regular em palavras irregulares: “le uove”, “i bracci”. O certo é le uova, le braccia, le dita, gli uomini.',
     ],
     quiz: [
       {
-        question: 'Como se diz «Estou com calor»?',
+        question: 'Como se diz “Estou com calor”?',
         options: ['Sono caldo.', 'Ho caldo.', 'Sto con caldo.'],
         answer: 'Ho caldo.',
-        explanation: 'Calor, frio, fome e sede se «têm»: ho caldo. «Sono caldo» diria que você mesmo está quente ao toque.',
+        explanation: 'Calor, frio, fome e sede se “têm”: ho caldo. “Sono caldo” diria que você mesmo está quente ao toque.',
       },
       {
-        question: 'Qual é o plural de «la città»?',
+        question: 'Qual é o plural de “la città”?',
         options: ['le citte', 'le città', 'le cittadi'],
         answer: 'le città',
         explanation: 'Palavras com a tônica na última vogal (acentuadas) não mudam no plural.',
       },
       {
-        question: 'Qual é o plural de «l’uovo»?',
+        question: 'Qual é o plural de “l’uovo”?',
         options: ['gli uovi', 'le uova', 'le uove'],
         answer: 'le uova',
         explanation: 'Plural irregular: vira feminino em -a, le uova, como le braccia e le dita.',
       },
       {
-        question: 'Complete: «___ fiore è giallo.»',
+        question: 'Complete: “___ fiore è giallo.”',
         options: ['Il', 'La', 'Lo'],
         answer: 'Il',
-        explanation: 'fiore é masculino em italiano (il fiore), ao contrário de «a flor».',
+        explanation: 'fiore é masculino em italiano (il fiore), ao contrário de “a flor”.',
       },
       {
-        question: 'Como se diz «Eles têm vinte anos»?',
+        question: 'Como se diz “Eles têm vinte anos”?',
         options: ['Hanno vent’anni.', 'Sono vent’anni.', 'Anno vent’anni.'],
         answer: 'Hanno vent’anni.',
-        explanation: 'A idade vai com avere, e «têm» se escreve hanno, com h. Anno é «ano».',
+        explanation: 'A idade vai com avere, e “têm” se escreve hanno, com h. Anno é “ano”.',
       },
     ],
   },
@@ -574,11 +574,11 @@ export const GRAMMAR_IT: GrammarTopic[] = [
     level: 'A1.2',
     title: 'C’è e ci sono; mi piace e mi piacciono',
     emoji: '💚',
-    summary: 'O «tem» de existência do português brasileiro não é avere: é c’è / ci sono. E «eu gosto de» vira «me agrada»: a coisa é o sujeito, então o verbo concorda com ela (mi piace il gelato, mi piacciono i gatti).',
+    summary: 'O “tem” de existência do português brasileiro não é avere: é c’è / ci sono. E “eu gosto de” vira “me agrada”: a coisa é o sujeito, então o verbo concorda com ela (mi piace il gelato, mi piacciono i gatti).',
     sections: [
       {
-        heading: 'c’è / ci sono: o «tem» de existência',
-        text: 'Em português do Brasil, «tem um bar aqui» usa o verbo ter. Em italiano, avere é só posse; para dizer que algo existe num lugar, usa-se c’è (+ singular) e ci sono (+ plural). E para perguntar onde fica uma coisa já conhecida, use dov’è: «C’è un museo?» (existe um museu?) × «Dov’è il museo?» (onde fica o museu?).',
+        heading: 'c’è / ci sono: o “tem” de existência',
+        text: 'Em português do Brasil, “tem um bar aqui” usa o verbo ter. Em italiano, avere é só posse; para dizer que algo existe num lugar, usa-se c’è (+ singular) e ci sono (+ plural). E para perguntar onde fica uma coisa já conhecida, use dov’è: “C’è un museo?” (existe um museu?) × “Dov’è il museo?” (onde fica o museu?).',
         table: {
           head: ['Italiano', 'Uso', 'Português'],
           rows: [
@@ -600,7 +600,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'mi piace: o gostar ao contrário',
-        text: 'Em português, quem gosta é o sujeito: «eu gosto de pizza». Em italiano, a coisa é que agrada à pessoa: «Mi piace la pizza» (a pizza me agrada). Por isso: não tem «di»; o substantivo leva artigo; e o verbo concorda com a coisa: piace com singular ou com verbo no infinitivo, piacciono com plural. A pessoa aparece como pronome indireto (mi, ti, gli, le…) ou com a (a Marco, a me).',
+        text: 'Em português, quem gosta é o sujeito: “eu gosto de pizza”. Em italiano, a coisa é que agrada à pessoa: “Mi piace la pizza” (a pizza me agrada). Por isso: não tem “di”; o substantivo leva artigo; e o verbo concorda com a coisa: piace com singular ou com verbo no infinitivo, piacciono com plural. A pessoa aparece como pronome indireto (mi, ti, gli, le…) ou com a (a Marco, a me).',
         table: {
           head: ['Quem gosta', 'Pronome', '+ singular ou infinitivo', '+ plural'],
           rows: [
@@ -624,7 +624,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Concordar e responder',
-        text: 'Para concordar, repita a mesma estrutura: «Anche a me» (eu também) e «Neanche a me» (eu também não). Anch’io aqui não serve, porque io seria sujeito. E atenção a mi piaci: com tu como sujeito, quer dizer «gosto de você», no sentido de atração.',
+        text: 'Para concordar, repita a mesma estrutura: “Anche a me” (eu também) e “Neanche a me” (eu também não). Anch’io aqui não serve, porque io seria sujeito. E atenção a mi piaci: com tu como sujeito, quer dizer “gosto de você”, no sentido de atração.',
         examples: [
           ['Non mi piace il freddo. — Neanche a me.', 'Não gosto de frio. — Nem eu.'],
           ['Ai miei figli piace il calcio.', 'Meus filhos gostam de futebol.'],
@@ -632,40 +632,40 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Traduzir o «tem» brasileiro com avere: «Ha un bar qui?». Existência é c’è / ci sono: C’è un bar qui?',
-      'Não concordar c’è / ci sono: «c’è due chiese», «ci sono una banca». Singular com c’è, plural com ci sono.',
-      'Fazer a pessoa ser sujeito: «Io piaccio la pizza», «Io piace». O certo é Mi piace la pizza.',
-      'Pôr di e tirar o artigo: «Mi piace di pizza». O certo é Mi piace la pizza.',
-      'Deixar piace no singular com plural: «Mi piace i gatti». O certo é Mi piacciono i gatti.',
-      'Responder «Anch’io» a «Mi piace…». A resposta que casa é Anche a me.',
+      'Traduzir o “tem” brasileiro com avere: “Ha un bar qui?”. Existência é c’è / ci sono: C’è un bar qui?',
+      'Não concordar c’è / ci sono: “c’è due chiese”, “ci sono una banca”. Singular com c’è, plural com ci sono.',
+      'Fazer a pessoa ser sujeito: “Io piaccio la pizza”, “Io piace”. O certo é Mi piace la pizza.',
+      'Pôr di e tirar o artigo: “Mi piace di pizza”. O certo é Mi piace la pizza.',
+      'Deixar piace no singular com plural: “Mi piace i gatti”. O certo é Mi piacciono i gatti.',
+      'Responder “Anch’io” a “Mi piace…”. A resposta que casa é Anche a me.',
     ],
     quiz: [
       {
-        question: 'Como se diz «Tem um banco aqui perto?»',
+        question: 'Como se diz “Tem um banco aqui perto?”',
         options: ['Ha una banca qui vicino?', 'C’è una banca qui vicino?', 'Ci sono una banca qui vicino?'],
         answer: 'C’è una banca qui vicino?',
         explanation: 'Existência de uma coisa no singular: c’è. Avere é só posse. (E banco, a instituição, é banca.)',
       },
       {
-        question: 'Como se diz «Gosto de gatos»?',
+        question: 'Como se diz “Gosto de gatos”?',
         options: ['Mi piace i gatti.', 'Mi piacciono i gatti.', 'Io piaccio i gatti.'],
         answer: 'Mi piacciono i gatti.',
         explanation: 'Os gatos são o sujeito (eles me agradam), e são plural: piacciono.',
       },
       {
-        question: 'Alguém diz «Mi piace il gelato». Como responder «Eu também»?',
+        question: 'Alguém diz “Mi piace il gelato”. Como responder “Eu também”?',
         options: ['Anch’io.', 'Anche a me.', 'Anche io piace.'],
         answer: 'Anche a me.',
-        explanation: 'A pergunta usa «a mim» (mi); a resposta repete a estrutura: anche a me.',
+        explanation: 'A pergunta usa “a mim” (mi); a resposta repete a estrutura: anche a me.',
       },
       {
-        question: 'Complete: «A Marco ___ viaggiare.»',
+        question: 'Complete: “A Marco ___ viaggiare.”',
         options: ['piace', 'piacciono', 'piaci'],
         answer: 'piace',
         explanation: 'Com verbo no infinitivo, piace fica no singular.',
       },
       {
-        question: 'Como se diz «Na praça tem duas igrejas»?',
+        question: 'Como se diz “Na praça tem duas igrejas”?',
         options: ['In piazza c’è due chiese.', 'In piazza ci sono due chiese.', 'In piazza hanno due chiese.'],
         answer: 'In piazza ci sono due chiese.',
         explanation: 'Duas igrejas é plural: ci sono.',
@@ -678,16 +678,16 @@ export const GRAMMAR_IT: GrammarTopic[] = [
     level: 'A2.1',
     title: 'Preposições simples e articuladas: del, nel, sul, dal',
     emoji: '🧭',
-    summary: 'O italiano junta a preposição com o artigo, como o português (do, no, ao), mas com mais formas e com consoante dupla (alla, della). E as escolhas mudam: a Roma, mas in Italia; in treno, e não «de trem»; dal medico, e não «ao médico».',
+    summary: 'O italiano junta a preposição com o artigo, como o português (do, no, ao), mas com mais formas e com consoante dupla (alla, della). E as escolhas mudam: a Roma, mas in Italia; in treno, e não “de trem”; dal medico, e não “ao médico”.',
     sections: [
       {
         heading: 'As preposições simples',
-        text: 'A mais traiçoeira é da: indica de onde se vem (vengo da Roma), a casa ou o lugar de alguém (vado dal medico, sono da Marco) e o «há… e continua» (da due anni). Já di é posse, matéria e origem com essere (sono di Genova). Cidade leva a; país e região levam in.',
+        text: 'A mais traiçoeira é da: indica de onde se vem (vengo da Roma), a casa ou o lugar de alguém (vado dal medico, sono da Marco) e o “há… e continua” (da due anni). Já di é posse, matéria e origem com essere (sono di Genova). Cidade leva a; país e região levam in.',
         table: {
           head: ['Preposição', 'Usos principais', 'Exemplo'],
           rows: [
             ['di', 'posse, matéria, origem com essere', 'il libro di Anna; sono di Genova'],
-            ['a', 'cidades, horas, «para alguém»', 'vado a Milano; alle otto; scrivo a Luca'],
+            ['a', 'cidades, horas, “para alguém”', 'vado a Milano; alle otto; scrivo a Luca'],
             ['da', 'procedência, casa ou lugar de alguém, desde', 'vengo da Roma; vado dal medico; da lunedì'],
             ['in', 'países, regiões, transporte, alguns lugares', 'in Brasile; in Toscana; in treno; in banca'],
             ['con', 'com', 'con gli amici'],
@@ -719,7 +719,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Lugares com e sem artigo',
-        text: 'Muitos lugares do dia a dia vão com in ou a sem artigo, onde o português põe «no, na»: in ufficio (no escritório), in banca, in piazza, in montagna, a scuola, a casa, a teatro. Outros levam a articulada: al mare (na praia), al cinema, al supermercato. Países sem adjetivo também ficam sem artigo: in Italia, mas nell’Italia del Sud.',
+        text: 'Muitos lugares do dia a dia vão com in ou a sem artigo, onde o português põe “no, na”: in ufficio (no escritório), in banca, in piazza, in montagna, a scuola, a casa, a teatro. Outros levam a articulada: al mare (na praia), al cinema, al supermercato. Países sem adjetivo também ficam sem artigo: in Italia, mas nell’Italia del Sud.',
         table: {
           head: ['Italiano', 'Português'],
           rows: [
@@ -738,8 +738,8 @@ export const GRAMMAR_IT: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'Os três «há» do tempo: da, fa, tra',
-        text: 'O português usa «há» para duas coisas diferentes, e o italiano separa: da para o que começou e continua (presente + da), fa para o que acabou (passado + fa, depois do número). E tra (ou fra) é «daqui a».',
+        heading: 'Os três “há” do tempo: da, fa, tra',
+        text: 'O português usa “há” para duas coisas diferentes, e o italiano separa: da para o que começou e continua (presente + da), fa para o que acabou (passado + fa, depois do número). E tra (ou fra) é “daqui a”.',
         examples: [
           ['Lavoro qui da tre anni.', 'Trabalho aqui há três anos.'],
           ['Sono arrivato tre giorni fa.', 'Cheguei há três dias.'],
@@ -748,22 +748,22 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar in com cidade: «in Roma». Cidade leva a (a Roma); país e região levam in (in Italia, in Puglia).',
-      'Traduzir «de trem, de avião» com di: é in treno, in aereo (e a piedi, a pé).',
-      'Dizer «vado al medico» para «vou ao médico». Para pessoas, o italiano usa da: vado dal medico, vado da Anna.',
-      'Usar da para passado: «sono arrivato da tre giorni». Passado encerrado leva fa depois do número: tre giorni fa.',
-      'Escrever as articuladas com uma consoante só: «ala», «dela», «nela». O certo é alla, della, nella.',
-      'Confundir origem: «vengo di Napoli». Com essere é di (sono di Napoli); com venire é da (vengo da Napoli).',
+      'Usar in com cidade: “in Roma”. Cidade leva a (a Roma); país e região levam in (in Italia, in Puglia).',
+      'Traduzir “de trem, de avião” com di: é in treno, in aereo (e a piedi, a pé).',
+      'Dizer “vado al medico” para “vou ao médico”. Para pessoas, o italiano usa da: vado dal medico, vado da Anna.',
+      'Usar da para passado: “sono arrivato da tre giorni”. Passado encerrado leva fa depois do número: tre giorni fa.',
+      'Escrever as articuladas com uma consoante só: “ala”, “dela”, “nela”. O certo é alla, della, nella.',
+      'Confundir origem: “vengo di Napoli”. Com essere é di (sono di Napoli); com venire é da (vengo da Napoli).',
     ],
     quiz: [
       {
-        question: 'Como se diz «Moro em Milão»?',
+        question: 'Como se diz “Moro em Milão”?',
         options: ['Abito in Milano.', 'Abito a Milano.', 'Abito nel Milano.'],
         answer: 'Abito a Milano.',
         explanation: 'Cidade leva a. In fica para países e regiões.',
       },
       {
-        question: 'Como se diz «Vou para a Itália de trem»?',
+        question: 'Como se diz “Vou para a Itália de trem”?',
         options: ['Vado a Italia con treno.', 'Vado in Italia in treno.', 'Vado nell’Italia di treno.'],
         answer: 'Vado in Italia in treno.',
         explanation: 'País leva in sem artigo, e meio de transporte também leva in.',
@@ -775,16 +775,16 @@ export const GRAMMAR_IT: GrammarTopic[] = [
         explanation: 'di vira de- e junta com gli: degli (degli studenti).',
       },
       {
-        question: 'Como se diz «Vou ao dentista»?',
+        question: 'Como se diz “Vou ao dentista”?',
         options: ['Vado al dentista.', 'Vado dal dentista.', 'Vado nel dentista.'],
         answer: 'Vado dal dentista.',
         explanation: 'Ir até uma pessoa (ou ao consultório dela) é da: dal dentista, dal medico, da Marco.',
       },
       {
-        question: 'Como se diz «Cheguei há três dias»?',
+        question: 'Como se diz “Cheguei há três dias”?',
         options: ['Sono arrivato da tre giorni.', 'Sono arrivato tre giorni fa.', 'Sono arrivato tra tre giorni.'],
         answer: 'Sono arrivato tre giorni fa.',
-        explanation: 'Ação encerrada no passado: fa, depois do número. Da é para o que continua; tra é «daqui a».',
+        explanation: 'Ação encerrada no passado: fa, depois do número. Da é para o que continua; tra é “daqui a”.',
       },
     ],
   },
@@ -793,10 +793,10 @@ export const GRAMMAR_IT: GrammarTopic[] = [
     level: 'A2.1',
     title: 'Passato prossimo com avere e essere; os irregulares do dia a dia',
     emoji: '⏪',
-    summary: 'O passado do dia a dia se faz com auxiliar: ho mangiato é «comi», e não «tenho comido». Verbos de movimento e de mudança usam essere, e aí o particípio concorda (Giulia è andata). E seis verbos irregulares que aparecem em toda frase: andare, fare, venire, dovere, potere, volere.',
+    summary: 'O passado do dia a dia se faz com auxiliar: ho mangiato é “comi”, e não “tenho comido”. Verbos de movimento e de mudança usam essere, e aí o particípio concorda (Giulia è andata). E seis verbos irregulares que aparecem em toda frase: andare, fare, venire, dovere, potere, volere.',
     sections: [
       {
-        text: 'Passato prossimo = avere ou essere no presente + particípio. Ele equivale ao nosso pretérito perfeito (comi, fui, fiz), e não ao «tenho comido», que em português indica repetição. Os particípios regulares: -are → -ato, -ere → -uto, -ire → -ito (parlato, ricevuto, dormito).',
+        text: 'Passato prossimo = avere ou essere no presente + particípio. Ele equivale ao nosso pretérito perfeito (comi, fui, fiz), e não ao “tenho comido”, que em português indica repetição. Os particípios regulares: -are → -ato, -ere → -uto, -ire → -ito (parlato, ricevuto, dormito).',
         table: {
           head: ['Infinitivo', 'Particípio', 'Português'],
           rows: [
@@ -839,7 +839,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Seis irregulares que aparecem em toda frase',
-        text: 'Dovere, potere e volere vão direto com o infinitivo, sem preposição: devo studiare (tenho que estudar, nunca «ho che»), posso entrare?, voglio partire. Para pedir algo, voglio soa brusco; prefira vorrei (eu queria). E venire é «vir» e também o «ir» até onde está quem fala ou ouve: «Vieni alla festa? — Sì, vengo!».',
+        text: 'Dovere, potere e volere vão direto com o infinitivo, sem preposição: devo studiare (tenho que estudar, nunca “ho che”), posso entrare?, voglio partire. Para pedir algo, voglio soa brusco; prefira vorrei (eu queria). E venire é “vir” e também o “ir” até onde está quem fala ou ouve: “Vieni alla festa? — Sì, vengo!”.',
         table: {
           head: ['Pessoa', 'andare', 'fare', 'venire', 'dovere', 'potere', 'volere'],
           rows: [
@@ -861,41 +861,41 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar avere com verbo de movimento: «ho andato», «ho arrivato». O certo é sono andato, sono arrivato.',
-      'Esquecer a concordância com essere: «Anna è andato». O particípio segue o sujeito: Anna è andata, i ragazzi sono andati.',
-      'Achar que ho mangiato é «tenho comido». É o nosso «comi», o passado comum da conversa.',
-      'Inventar particípios regulares: «prenduto», «facciato», «metuto». O certo é preso, fatto, messo.',
-      'Dizer «vado» quando o convite é para ir aonde a pessoa está. Nesse caso é venire: «Sì, vengo!».',
-      'Traduzir «tenho que» com avere: «ho che studiare». O certo é devo studiare.',
-      'Usar «vado a mangiare» como futuro («vou comer amanhã»). O futuro próximo é o presente: Domani mangio da Laura; vado a mangiare é sair para comer.',
+      'Usar avere com verbo de movimento: “ho andato”, “ho arrivato”. O certo é sono andato, sono arrivato.',
+      'Esquecer a concordância com essere: “Anna è andato”. O particípio segue o sujeito: Anna è andata, i ragazzi sono andati.',
+      'Achar que ho mangiato é “tenho comido”. É o nosso “comi”, o passado comum da conversa.',
+      'Inventar particípios regulares: “prenduto”, “facciato”, “metuto”. O certo é preso, fatto, messo.',
+      'Dizer “vado” quando o convite é para ir aonde a pessoa está. Nesse caso é venire: “Sì, vengo!”.',
+      'Traduzir “tenho que” com avere: “ho che studiare”. O certo é devo studiare.',
+      'Usar “vado a mangiare” como futuro (“vou comer amanhã”). O futuro próximo é o presente: Domani mangio da Laura; vado a mangiare é sair para comer.',
     ],
     quiz: [
       {
-        question: 'Como se diz «A Sara foi a Roma»?',
+        question: 'Como se diz “A Sara foi a Roma”?',
         options: ['Sara ha andato a Roma.', 'Sara è andata a Roma.', 'Sara è andato a Roma.'],
         answer: 'Sara è andata a Roma.',
         explanation: 'andare usa essere, e o particípio concorda com o sujeito feminino: andata.',
       },
       {
-        question: 'Como se diz «Ontem eu fiz o jantar»?',
+        question: 'Como se diz “Ontem eu fiz o jantar”?',
         options: ['Ieri ho fatto la cena.', 'Ieri sono fatto la cena.', 'Ieri ho facito la cena.'],
         answer: 'Ieri ho fatto la cena.',
         explanation: 'fare tem objeto (la cena), então usa avere, e o particípio é irregular: fatto.',
       },
       {
-        question: 'Complete: «Noi ___ partire presto.» (dovere)',
+        question: 'Complete: “Noi ___ partire presto.” (dovere)',
         options: ['dobbiamo', 'doviamo', 'deviamo'],
         answer: 'dobbiamo',
         explanation: 'dovere é irregular: devo, devi, deve, dobbiamo, dovete, devono.',
       },
       {
-        question: 'Um amigo te convida para a festa na casa dele. Como dizer «Sim, eu vou!»?',
+        question: 'Um amigo te convida para a festa na casa dele. Como dizer “Sim, eu vou!”?',
         options: ['Sì, vado!', 'Sì, vengo!', 'Sì, sono andato!'],
         answer: 'Sì, vengo!',
         explanation: 'Ir até onde está quem fala ou ouve é venire, não andare.',
       },
       {
-        question: 'Como se diz «Eles chegaram tarde»?',
+        question: 'Como se diz “Eles chegaram tarde”?',
         options: ['Hanno arrivato tardi.', 'Sono arrivati tardi.', 'Sono arrivato tardi.'],
         answer: 'Sono arrivati tardi.',
         explanation: 'arrivare usa essere, e com sujeito masculino plural o particípio fica arrivati.',
@@ -911,7 +911,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
     summary: 'O italiano usa o pronome reflexivo em muitos verbos em que o português falado o deixa cair: mi sveglio (acordo), mi alzo (levanto), mi sbaglio (me engano). No passato prossimo eles usam sempre essere, com concordância.',
     sections: [
       {
-        text: 'O pronome (mi, ti, si, ci, vi, si) vem antes do verbo conjugado, como no português do Brasil («me chamo»). O que muda é a quantidade de verbos reflexivos: no Brasil dizemos «acordei cedo», «levantei», «formei em Direito»; em italiano o pronome é obrigatório. Sem ele, o verbo passa a ter outro sentido: «ho svegliato» é «acordei alguém».',
+        text: 'O pronome (mi, ti, si, ci, vi, si) vem antes do verbo conjugado, como no português do Brasil (“me chamo”). O que muda é a quantidade de verbos reflexivos: no Brasil dizemos “acordei cedo”, “levantei”, “formei em Direito”; em italiano o pronome é obrigatório. Sem ele, o verbo passa a ter outro sentido: “ho svegliato” é “acordei alguém”.',
         table: {
           head: ['Pessoa', 'chiamarsi (chamar-se)', 'svegliarsi (acordar)', 'vestirsi (vestir-se)'],
           rows: [
@@ -968,39 +968,39 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Deixar cair o pronome como no português falado: «ho svegliato alle sette». Isso é «acordei alguém»; você acordou: mi sono svegliato.',
-      'Usar avere no passado: «mi ho alzato». Reflexivo usa sempre essere: mi sono alzato.',
-      'Esquecer a concordância: «Anna si è alzato». É si è alzata.',
-      'Usar «se» do português ou o pronome errado: «noi si chiamiamo». É ci chiamiamo; o pronome muda com a pessoa.',
-      'Deixar o infinitivo em si: «devo alzarsi». O pronome acompanha a pessoa: devo alzarmi, dobbiamo alzarci.',
+      'Deixar cair o pronome como no português falado: “ho svegliato alle sette”. Isso é “acordei alguém”; você acordou: mi sono svegliato.',
+      'Usar avere no passado: “mi ho alzato”. Reflexivo usa sempre essere: mi sono alzato.',
+      'Esquecer a concordância: “Anna si è alzato”. É si è alzata.',
+      'Usar “se” do português ou o pronome errado: “noi si chiamiamo”. É ci chiamiamo; o pronome muda com a pessoa.',
+      'Deixar o infinitivo em si: “devo alzarsi”. O pronome acompanha a pessoa: devo alzarmi, dobbiamo alzarci.',
     ],
     quiz: [
       {
-        question: 'Um homem diz «Acordei às sete». Qual é a frase certa?',
+        question: 'Um homem diz “Acordei às sete”. Qual é a frase certa?',
         options: ['Ho svegliato alle sette.', 'Mi sono svegliato alle sette.', 'Mi ho svegliato alle sette.'],
         answer: 'Mi sono svegliato alle sette.',
-        explanation: 'svegliarsi é reflexivo e usa essere. Sem o mi, «ho svegliato» seria acordar outra pessoa.',
+        explanation: 'svegliarsi é reflexivo e usa essere. Sem o mi, “ho svegliato” seria acordar outra pessoa.',
       },
       {
-        question: 'Complete: «Noi ___ chiamiamo Rossi.»',
+        question: 'Complete: “Noi ___ chiamiamo Rossi.”',
         options: ['si', 'ci', 'vi'],
         answer: 'ci',
         explanation: 'O pronome reflexivo de noi é ci: ci chiamiamo.',
       },
       {
-        question: 'Como se diz «A Chiara se formou»?',
+        question: 'Como se diz “A Chiara se formou”?',
         options: ['Chiara si è laureata.', 'Chiara ha laureata.', 'Chiara si ha laureato.'],
         answer: 'Chiara si è laureata.',
         explanation: 'Reflexivo com essere e particípio no feminino: si è laureata.',
       },
       {
-        question: 'Como se diz «Amanhã tenho que levantar cedo»?',
+        question: 'Como se diz “Amanhã tenho que levantar cedo”?',
         options: ['Domani devo alzarsi presto.', 'Domani devo alzarmi presto.', 'Domani devo mi alzare presto.'],
         answer: 'Domani devo alzarmi presto.',
         explanation: 'O pronome vai colado no infinitivo e concorda com a pessoa: alzarmi (ou: mi devo alzare).',
       },
       {
-        question: 'Como se diz «Nós nos divertimos» (grupo misto)?',
+        question: 'Como se diz “Nós nos divertimos” (grupo misto)?',
         options: ['Ci siamo divertiti.', 'Ci abbiamo divertito.', 'Si siamo divertiti.'],
         answer: 'Ci siamo divertiti.',
         explanation: 'Reflexivo: pronome ci, auxiliar essere e particípio no masculino plural.',
@@ -1012,10 +1012,10 @@ export const GRAMMAR_IT: GrammarTopic[] = [
     level: 'A2.2',
     title: 'Imperfetto e a escolha entre passato prossimo e imperfetto',
     emoji: '🕰️',
-    summary: 'O imperfetto é o nosso pretérito imperfeito (falava, tinha, dormia) e se usa quase do mesmo jeito: cenário, hábito, ação em andamento. A armadilha está na forma: io ero (não «era»), noi parlavamo com a tônica no VA, e facevo, dicevo, bevevo.',
+    summary: 'O imperfetto é o nosso pretérito imperfeito (falava, tinha, dormia) e se usa quase do mesmo jeito: cenário, hábito, ação em andamento. A armadilha está na forma: io ero (não “era”), noi parlavamo com a tônica no VA, e facevo, dicevo, bevevo.',
     sections: [
       {
-        text: 'Tire o -re do infinitivo e acrescente -vo, -vi, -va, -vamo, -vate, -vano. Diferente do português, -ere e -ire conservam o v: avevo (tinha), dormivo (dormia). A 1ª pessoa termina em -o (io ero, io avevo), não em -a como no português «eu era». E a tônica de noi e voi cai no VA: parla-VA-mo, parla-VA-te (e não «parLÁvamos»).',
+        text: 'Tire o -re do infinitivo e acrescente -vo, -vi, -va, -vamo, -vate, -vano. Diferente do português, -ere e -ire conservam o v: avevo (tinha), dormivo (dormia). A 1ª pessoa termina em -o (io ero, io avevo), não em -a como no português “eu era”. E a tônica de noi e voi cai no VA: parla-VA-mo, parla-VA-te (e não “parLÁvamos”).',
         table: {
           head: ['Pessoa', 'parlare', 'avere', 'dormire', 'essere'],
           rows: [
@@ -1038,7 +1038,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Quando usar cada um',
-        text: 'A lógica é a mesma do português: o imperfetto pinta o cenário e o costume; o passato prossimo conta o fato que aconteceu e terminou. Uma diferença: ação com duração fechada (per due anni, tutto il giorno) vai para o passato prossimo, mesmo que tenha durado muito: «Ho vissuto a Trento per due anni».',
+        text: 'A lógica é a mesma do português: o imperfetto pinta o cenário e o costume; o passato prossimo conta o fato que aconteceu e terminou. Uma diferença: ação com duração fechada (per due anni, tutto il giorno) vai para o passato prossimo, mesmo que tenha durado muito: “Ho vissuto a Trento per due anni”.',
         table: {
           head: ['Imperfetto', 'Passato prossimo'],
           rows: [
@@ -1059,7 +1059,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Verbos que mudam de sentido',
-        text: 'Com alguns verbos, o tempo muda o significado, como no português «sabia» × «soube»: sapevo (sabia) × ho saputo (fiquei sabendo); conoscevo (conhecia) × ho conosciuto (conheci, fui apresentado); dovevo (tinha que, e talvez não fiz) × ho dovuto (tive que, e fiz).',
+        text: 'Com alguns verbos, o tempo muda o significado, como no português “sabia” × “soube”: sapevo (sabia) × ho saputo (fiquei sabendo); conoscevo (conhecia) × ho conosciuto (conheci, fui apresentado); dovevo (tinha que, e talvez não fiz) × ho dovuto (tive que, e fiz).',
         examples: [
           ['Non sapevo che eri a Roma!', 'Eu não sabia que você estava em Roma!'],
           ['Ho saputo la notizia ieri.', 'Fiquei sabendo da notícia ontem.'],
@@ -1068,21 +1068,21 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Dizer «io era» como no português. A 1ª pessoa termina em -o: io ero, io avevo, io andavo.',
-      'Acentuar como em português: «parLÁvamo». Em italiano é parla-VA-mo, ave-VA-mo.',
-      'Formar «favo» ou «dizevo». Fare, dire e bere usam o radical antigo: facevo, dicevo, bevevo.',
-      'Usar o passato prossimo para descrever: «Quando sono stato piccolo…». Idade e cenário vão no imperfetto: Quando ero piccolo…',
-      'Usar o imperfetto com duração fechada: «Abitavo a Roma per tre anni». Com per + tempo definido, é Ho abitato a Roma per tre anni.',
+      'Dizer “io era” como no português. A 1ª pessoa termina em -o: io ero, io avevo, io andavo.',
+      'Acentuar como em português: “parLÁvamo”. Em italiano é parla-VA-mo, ave-VA-mo.',
+      'Formar “favo” ou “dizevo”. Fare, dire e bere usam o radical antigo: facevo, dicevo, bevevo.',
+      'Usar o passato prossimo para descrever: “Quando sono stato piccolo…”. Idade e cenário vão no imperfetto: Quando ero piccolo…',
+      'Usar o imperfetto com duração fechada: “Abitavo a Roma per tre anni”. Com per + tempo definido, é Ho abitato a Roma per tre anni.',
     ],
     quiz: [
       {
-        question: 'Como se diz «Quando eu era criança…»?',
+        question: 'Como se diz “Quando eu era criança…”?',
         options: ['Quando sono stato bambino…', 'Quando ero bambino…', 'Quando era bambino io…'],
         answer: 'Quando ero bambino…',
         explanation: 'Idade e cenário vão no imperfetto, e a 1ª pessoa de essere é ero.',
       },
       {
-        question: 'Como se diz «Enquanto eu lia, o telefone tocou»?',
+        question: 'Como se diz “Enquanto eu lia, o telefone tocou”?',
         options: ['Mentre leggevo, il telefono ha squillato.', 'Mentre ho letto, il telefono squillava.', 'Mentre leggevo, il telefono squillava.'],
         answer: 'Mentre leggevo, il telefono ha squillato.',
         explanation: 'A ação em andamento (leggevo) fica no imperfetto; a que interrompe (ha squillato) vai no passato prossimo.',
@@ -1094,7 +1094,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
         explanation: 'noi: -vamo, com a tônica no VA: parla-VA-mo. Parlavano é loro.',
       },
       {
-        question: 'Como se diz «Morei em Nápoles por três anos»?',
+        question: 'Como se diz “Morei em Nápoles por três anos”?',
         options: ['Abitavo a Napoli per tre anni.', 'Ho abitato a Napoli per tre anni.', 'Ero abitato a Napoli per tre anni.'],
         answer: 'Ho abitato a Napoli per tre anni.',
         explanation: 'Duração fechada (per tre anni) vai no passato prossimo, e abitare usa avere.',
@@ -1112,10 +1112,10 @@ export const GRAMMAR_IT: GrammarTopic[] = [
     level: 'A2.2',
     title: 'Pronomes diretos: lo, la, li, le e a concordância do particípio',
     emoji: '🎯',
-    summary: 'No Brasil a gente diz «vi ele» ou simplesmente «vi». Em italiano o objeto não pode sumir nem virar «lui»: vira lo, la, li, le, antes do verbo. E no passato prossimo o particípio concorda com ele: la torta? L’ho mangiata.',
+    summary: 'No Brasil a gente diz “vi ele” ou simplesmente “vi”. Em italiano o objeto não pode sumir nem virar “lui”: vira lo, la, li, le, antes do verbo. E no passato prossimo o particípio concorda com ele: la torta? L’ho mangiata.',
     sections: [
       {
-        text: 'O pronome direto substitui o objeto (quem ou o que recebe a ação) e fica antes do verbo conjugado. O português falado costuma omitir o objeto («Comprou o pão? Comprei.») ou usar «ele»; em italiano isso não funciona: «Sì, l’ho comprato». O pronome tônico (lui, lei) como objeto só aparece para dar ênfase ou contraste: «Ho visto lui, non lei».',
+        text: 'O pronome direto substitui o objeto (quem ou o que recebe a ação) e fica antes do verbo conjugado. O português falado costuma omitir o objeto (“Comprou o pão? Comprei.”) ou usar “ele”; em italiano isso não funciona: “Sì, l’ho comprato”. O pronome tônico (lui, lei) como objeto só aparece para dar ênfase ou contraste: “Ho visto lui, non lei”.',
         table: {
           head: ['Pessoa', 'Pronome', 'Exemplo', 'Português'],
           rows: [
@@ -1165,47 +1165,47 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'O lo que retoma uma ideia',
-        text: 'Lo também retoma uma frase inteira, onde o português não põe nada: «Lo so» (eu sei), «Non lo so» (não sei), «Sei stanca? — Sì, lo sono» (Está cansada? — Estou).',
+        text: 'Lo também retoma uma frase inteira, onde o português não põe nada: “Lo so” (eu sei), “Non lo so” (não sei), “Sei stanca? — Sì, lo sono” (Está cansada? — Estou).',
         examples: [
           ['Domani c’è sciopero. — Lo so.', 'Amanhã tem greve. — Eu sei.'],
         ],
       },
     ],
     pitfalls: [
-      'Omitir o objeto como no português falado: «Hai il biglietto? — Sì, ho comprato.». O certo é Sì, l’ho comprato.',
-      'Usar o pronome tônico como objeto comum: «Ho visto lui ieri». Sem ênfase, é L’ho visto ieri.',
-      'Esquecer a concordância do particípio: «La torta? L’ho mangiato». Com la, o particípio fica no feminino: l’ho mangiata.',
-      'Pôr apóstrofo em li e le: «l’ho comprati». Só lo e la se apostrofam: li ho comprati, le ho comprate.',
-      'Pôr o pronome entre o modal e o infinitivo: «voglio lo vedere». O certo é voglio vederlo ou lo voglio vedere.',
+      'Omitir o objeto como no português falado: “Hai il biglietto? — Sì, ho comprato.”. O certo é Sì, l’ho comprato.',
+      'Usar o pronome tônico como objeto comum: “Ho visto lui ieri”. Sem ênfase, é L’ho visto ieri.',
+      'Esquecer a concordância do particípio: “La torta? L’ho mangiato”. Com la, o particípio fica no feminino: l’ho mangiata.',
+      'Pôr apóstrofo em li e le: “l’ho comprati”. Só lo e la se apostrofam: li ho comprati, le ho comprate.',
+      'Pôr o pronome entre o modal e o infinitivo: “voglio lo vedere”. O certo é voglio vederlo ou lo voglio vedere.',
       'Confundir o pronome lo com o artigo lo: no artigo vem um substantivo depois (lo zaino); no pronome vem um verbo (lo vedo).',
     ],
     quiz: [
       {
-        question: 'Como se diz «A pizza? Comi ontem.»?',
+        question: 'Como se diz “A pizza? Comi ontem.”?',
         options: ['La pizza? L’ho mangiato ieri.', 'La pizza? L’ho mangiata ieri.', 'La pizza? Ho mangiato ieri.'],
         answer: 'La pizza? L’ho mangiata ieri.',
         explanation: 'O objeto não pode sumir (la vira l’), e o particípio concorda com ele no feminino: mangiata.',
       },
       {
-        question: 'Como se diz «Os ingressos? Comprei.»?',
+        question: 'Como se diz “Os ingressos? Comprei.”?',
         options: ['Li ho comprati.', 'L’ho comprati.', 'Li ho comprato.'],
         answer: 'Li ho comprati.',
         explanation: 'Li não se apostrofa, e o particípio concorda no masculino plural: comprati.',
       },
       {
-        question: 'Como se diz «Quero ver ele»?',
+        question: 'Como se diz “Quero ver ele”?',
         options: ['Voglio vederlo.', 'Voglio lo vedere.', 'Voglio vedere lui lo.'],
         answer: 'Voglio vederlo.',
         explanation: 'Com infinitivo, o pronome vai colado no fim: vederlo (ou antes do conjunto: lo voglio vedere).',
       },
       {
-        question: 'Complete: «Le lettere? ___ ho lette tutte.»',
+        question: 'Complete: “Le lettere? ___ ho lette tutte.”',
         options: ['Le', 'Li', 'L’'],
         answer: 'Le',
         explanation: 'lettere é feminino plural: le, que nunca se apostrofa. O particípio concorda: lette.',
       },
       {
-        question: '«Conhece a Paola? — Sim, conheço.» Qual é a resposta certa?',
+        question: '“Conhece a Paola? — Sim, conheço.” Qual é a resposta certa?',
         options: ['Sì, conosco.', 'Sì, la conosco.', 'Sì, lo conosco.'],
         answer: 'Sì, la conosco.',
         explanation: 'O objeto não pode sumir, e Paola é feminino: la conosco.',
@@ -1218,10 +1218,10 @@ export const GRAMMAR_IT: GrammarTopic[] = [
     level: 'B1.1',
     title: 'Pronomes indiretos e combinados: gli, le, glielo, me lo',
     emoji: '🎁',
-    summary: 'No Brasil quase ninguém diz «lhe»: falamos «dei pra ele». Em italiano o pronome indireto (mi, ti, gli, le, ci, vi) é o jeito normal de falar, vem antes do verbo e, junto com lo/la/li/le/ne, vira me lo, te la, glielo.',
+    summary: 'No Brasil quase ninguém diz “lhe”: falamos “dei pra ele”. Em italiano o pronome indireto (mi, ti, gli, le, ci, vi) é o jeito normal de falar, vem antes do verbo e, junto com lo/la/li/le/ne, vira me lo, te la, glielo.',
     sections: [
       {
-        text: 'O objeto indireto responde a «para quem?» ou «a quem?». O português do Brasil costuma trocar o pronome por uma preposição («liguei pra ela», «dei a ele») ou simplesmente omiti-lo («já dei»). O italiano usa o pronome átono sempre, antes do verbo conjugado: «Le ho telefonato» (liguei pra ela). A forma tônica («a lei», «a lui») existe, mas só para dar ênfase ou contraste.',
+        text: 'O objeto indireto responde a “para quem?” ou “a quem?”. O português do Brasil costuma trocar o pronome por uma preposição (“liguei pra ela”, “dei a ele”) ou simplesmente omiti-lo (“já dei”). O italiano usa o pronome átono sempre, antes do verbo conjugado: “Le ho telefonato” (liguei pra ela). A forma tônica (“a lei”, “a lui”) existe, mas só para dar ênfase ou contraste.',
         table: {
           head: ['Pessoa', 'Átono (normal)', 'Tônico (ênfase)', 'Exemplo'],
           rows: [
@@ -1244,7 +1244,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Direto ou indireto? Nem sempre como no português',
-        text: 'A maioria dos verbos rege como no português (dare a, dire a, scrivere a, chiedere a, rispondere a). Mas alguns trocam: «ringraziare» (agradecer) e «aiutare» (ajudar) pedem objeto DIRETO em italiano; «telefonare» pede indireto, enquanto «chiamare» (ligar, chamar) pede direto. E verbos como piacere, mancare, servire, sembrare e dispiacere funcionam com indireto: quem sente vira o objeto.',
+        text: 'A maioria dos verbos rege como no português (dare a, dire a, scrivere a, chiedere a, rispondere a). Mas alguns trocam: “ringraziare” (agradecer) e “aiutare” (ajudar) pedem objeto DIRETO em italiano; “telefonare” pede indireto, enquanto “chiamare” (ligar, chamar) pede direto. E verbos como piacere, mancare, servire, sembrare e dispiacere funcionam com indireto: quem sente vira o objeto.',
         table: {
           head: ['Verbo', 'Rege', 'Com pronome', 'Português'],
           rows: [
@@ -1264,7 +1264,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Os pronomes combinados',
-        text: 'Quando um indireto e um direto (lo, la, li, le) ou o «ne» se juntam, o indireto vem primeiro e o «i» vira «e»: mi → me, ti → te, ci → ce, vi → ve. Gli, le e Le viram todos «glie-», escrito junto: glielo, gliela, glieli, gliele, gliene. Por isso «glielo» pode ser «para ele», «para ela», «para o senhor» ou «para eles»: o contexto decide. O português falado no Brasil simplesmente corta os dois pronomes («já dei»); o italiano não corta nenhum.',
+        text: 'Quando um indireto e um direto (lo, la, li, le) ou o “ne” se juntam, o indireto vem primeiro e o “i” vira “e”: mi → me, ti → te, ci → ce, vi → ve. Gli, le e Le viram todos “glie-”, escrito junto: glielo, gliela, glieli, gliele, gliene. Por isso “glielo” pode ser “para ele”, “para ela”, “para o senhor” ou “para eles”: o contexto decide. O português falado no Brasil simplesmente corta os dois pronomes (“já dei”); o italiano não corta nenhum.',
         table: {
           head: ['Indireto', '+ lo', '+ la', '+ li', '+ le', '+ ne'],
           rows: [
@@ -1286,7 +1286,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Com o passato prossimo',
-        text: 'Lo e la perdem a vogal antes de «ho, hai, ha…»: gliel’ho, te l’ho, me l’ha. E o particípio concorda com o pronome DIRETO (lo, la, li, le) que vem antes, nunca com o indireto. «Le ho scritto» (escrevi pra ela) não muda; «le ho scritte» quer dizer «escrevi-as» (as cartas).',
+        text: 'Lo e la perdem a vogal antes de “ho, hai, ha…”: gliel’ho, te l’ho, me l’ha. E o particípio concorda com o pronome DIRETO (lo, la, li, le) que vem antes, nunca com o indireto. “Le ho scritto” (escrevi pra ela) não muda; “le ho scritte” quer dizer “escrevi-as” (as cartas).',
         examples: [
           ['Hai dato le chiavi a Marco? Sì, gliele ho date.', 'Você deu as chaves pro Marco? Sim, dei.'],
           ['La lettera? Gliel’ho spedita ieri.', 'A carta? Mandei pra ele ontem.'],
@@ -1295,43 +1295,43 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Responder só com o verbo, como no Brasil: «Sì, ho dato» fica incompleto. Em italiano: «Sì, gliel’ho dato».',
-      'Usar o pronome tônico no lugar do átono: «Ho telefonato lui» está errado. Diga «Gli ho telefonato» (ou, com ênfase, «Ho telefonato a lui»).',
-      'Usar «gli» para mulher. No italiano padrão, «a ela» é «le»: «Le ho detto la verità».',
-      'Traduzir a regência do português: «Gli ringrazio» está errado, porque «ringraziare» é direto: «Lo ringrazio». O mesmo com «aiutare»: «La aiuto».',
-      'Concordar o particípio com o indireto: «Le ho telefonata» está errado. O certo é «Le ho telefonato».',
-      'Escrever «gli lo», «le lo» ou «glie lo» separados. A forma é uma só, colada: glielo, gliela, gliene.',
+      'Responder só com o verbo, como no Brasil: “Sì, ho dato” fica incompleto. Em italiano: “Sì, gliel’ho dato”.',
+      'Usar o pronome tônico no lugar do átono: “Ho telefonato lui” está errado. Diga “Gli ho telefonato” (ou, com ênfase, “Ho telefonato a lui”).',
+      'Usar “gli” para mulher. No italiano padrão, “a ela” é “le”: “Le ho detto la verità”.',
+      'Traduzir a regência do português: “Gli ringrazio” está errado, porque “ringraziare” é direto: “Lo ringrazio”. O mesmo com “aiutare”: “La aiuto”.',
+      'Concordar o particípio com o indireto: “Le ho telefonata” está errado. O certo é “Le ho telefonato”.',
+      'Escrever “gli lo”, “le lo” ou “glie lo” separados. A forma é uma só, colada: glielo, gliela, gliene.',
     ],
     quiz: [
       {
-        question: 'Complete: «Hai visto Anna? Sì, e ___ ho dato il libro.»',
+        question: 'Complete: “Hai visto Anna? Sì, e ___ ho dato il libro.”',
         options: ['gli', 'le', 'la'],
         answer: 'le',
-        explanation: 'Dar o livro «a ela»: objeto indireto feminino, «le». «Gli» é para ele; «la» seria objeto direto.',
+        explanation: 'Dar o livro “a ela”: objeto indireto feminino, “le”. “Gli” é para ele; “la” seria objeto direto.',
       },
       {
-        question: 'Qual é a combinação de «mi» + «lo»?',
+        question: 'Qual é a combinação de “mi” + “lo”?',
         options: ['mi lo', 'me lo', 'melo'],
         answer: 'me lo',
-        explanation: 'Diante de lo, la, li, le e ne, o «i» de mi, ti, ci, vi vira «e»: me lo, te lo, ce lo, ve lo.',
+        explanation: 'Diante de lo, la, li, le e ne, o “i” de mi, ti, ci, vi vira “e”: me lo, te lo, ce lo, ve lo.',
       },
       {
-        question: 'Como se diz «Agradeço a ele»?',
+        question: 'Como se diz “Agradeço a ele”?',
         options: ['Lo ringrazio.', 'Gli ringrazio.', 'Ringrazio a lui.'],
         answer: 'Lo ringrazio.',
-        explanation: '«Ringraziare» pede objeto direto em italiano (agradecer alguém), então o pronome é «lo».',
+        explanation: '“Ringraziare” pede objeto direto em italiano (agradecer alguém), então o pronome é “lo”.',
       },
       {
-        question: 'Troque «a Paola» por pronome: «Ho telefonato a Paola.»',
+        question: 'Troque “a Paola” por pronome: “Ho telefonato a Paola.”',
         options: ['Le ho telefonato.', 'L’ho telefonata.', 'Le ho telefonata.'],
         answer: 'Le ho telefonato.',
-        explanation: '«Telefonare a» pede indireto (le), e com indireto o particípio não concorda: telefonato.',
+        explanation: '“Telefonare a” pede indireto (le), e com indireto o particípio não concorda: telefonato.',
       },
       {
-        question: '«Hai spedito la lettera al direttore?» Qual é a resposta certa?',
+        question: '“Hai spedito la lettera al direttore?” Qual é a resposta certa?',
         options: ['Sì, gliel’ho spedita.', 'Sì, le l’ho spedita.', 'Sì, gli l’ho spedito.'],
         answer: 'Sì, gliel’ho spedita.',
-        explanation: 'Gli + la = gliela; antes de «ho», perde a vogal: gliel’ho. O particípio concorda com «la»: spedita.',
+        explanation: 'Gli + la = gliela; antes de “ho”, perde a vogal: gliel’ho. O particípio concorda com “la”: spedita.',
       },
     ],
   },
@@ -1340,11 +1340,11 @@ export const GRAMMAR_IT: GrammarTopic[] = [
     level: 'B1.1',
     title: 'Ci, ne e o imperativo (tu, noi, voi e Lei)',
     emoji: '📍',
-    summary: '«Ci» e «ne» são as partículas que o brasileiro mais esquece: «Sì, ci vado», «Ne ho due». E no imperativo, o formal (Lei) não é o nosso «você»: «Senta!», «Venga!», «Mi dica!».',
+    summary: '“Ci” e “ne” são as partículas que o brasileiro mais esquece: “Sì, ci vado”, “Ne ho due”. E no imperativo, o formal (Lei) não é o nosso “você”: “Senta!”, “Venga!”, “Mi dica!”.',
     sections: [
       {
-        heading: 'Ci: «lá», «nisso», «com isso»',
-        text: 'Em português dizemos «Você vai a Roma? Vou.» e pronto. O italiano retoma o lugar com «ci»: «Sì, ci vado». O «ci» também substitui «a/in + coisa» depois de verbos como pensare a, credere a, riuscire a. E aparece fixo em c’è / ci sono, volerci (levar tempo, ser preciso) e, na fala, em «ce l’ho» (tenho).',
+        heading: 'Ci: “lá”, “nisso”, “com isso”',
+        text: 'Em português dizemos “Você vai a Roma? Vou.” e pronto. O italiano retoma o lugar com “ci”: “Sì, ci vado”. O “ci” também substitui “a/in + coisa” depois de verbos como pensare a, credere a, riuscire a. E aparece fixo em c’è / ci sono, volerci (levar tempo, ser preciso) e, na fala, em “ce l’ho” (tenho).',
         table: {
           head: ['Uso', 'Pergunta', 'Resposta com ci'],
           rows: [
@@ -1363,8 +1363,8 @@ export const GRAMMAR_IT: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'Ne: «disso», «deles», «de lá»',
-        text: 'O «ne» retoma uma quantidade ou um complemento com «di». Com números e quantidades ele é obrigatório: à pergunta «Quantos irmãos você tem?» o brasileiro responde «Tenho dois»; o italiano, «Ne ho due». Sem o «ne», a frase fica manca. No passato prossimo, o particípio concorda com a quantidade retomada pelo ne.',
+        heading: 'Ne: “disso”, “deles”, “de lá”',
+        text: 'O “ne” retoma uma quantidade ou um complemento com “di”. Com números e quantidades ele é obrigatório: à pergunta “Quantos irmãos você tem?” o brasileiro responde “Tenho dois”; o italiano, “Ne ho due”. Sem o “ne”, a frase fica manca. No passato prossimo, o particípio concorda com a quantidade retomada pelo ne.',
         table: {
           head: ['Uso', 'Pergunta', 'Resposta com ne'],
           rows: [
@@ -1384,7 +1384,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'O imperativo: as formas',
-        text: 'Tu e voi são quase o presente (com a troca -i → -a nos verbos em -are: «parla!»). O Lei formal usa o congiuntivo: «parli!», «prenda!», «senta!». Cuidado: para o brasileiro «senta!» é informal, mas em italiano «Senta!» é o formal («Escute, por favor, senhor»). O noi é igual ao presente: «andiamo!».',
+        text: 'Tu e voi são quase o presente (com a troca -i → -a nos verbos em -are: “parla!”). O Lei formal usa o congiuntivo: “parli!”, “prenda!”, “senta!”. Cuidado: para o brasileiro “senta!” é informal, mas em italiano “Senta!” é o formal (“Escute, por favor, senhor”). O noi é igual ao presente: “andiamo!”.',
         table: {
           head: ['', 'tu', 'Lei', 'noi', 'voi'],
           rows: [
@@ -1405,7 +1405,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'O negativo e os pronomes',
-        text: 'O negativo do tu é «non + infinitivo»: «Non parlare!», «Non andare!». Os outros só ganham «non» na frente: «Non parli», «Non andiamo». Os pronomes (mi, lo, ci, ne, glielo…) se colam no fim do tu, noi e voi, mas ficam ANTES do Lei. Com as formas curtas va’, fa’, da’, di’, sta’, a consoante do pronome dobra: dimmi, fallo, dammi, vacci. Só «gli» não dobra: digli, dagli.',
+        text: 'O negativo do tu é “non + infinitivo”: “Non parlare!”, “Non andare!”. Os outros só ganham “non” na frente: “Non parli”, “Non andiamo”. Os pronomes (mi, lo, ci, ne, glielo…) se colam no fim do tu, noi e voi, mas ficam ANTES do Lei. Com as formas curtas va’, fa’, da’, di’, sta’, a consoante do pronome dobra: dimmi, fallo, dammi, vacci. Só “gli” não dobra: digli, dagli.',
         table: {
           head: ['Pessoa', 'Afirmativo', 'Negativo'],
           rows: [
@@ -1425,40 +1425,40 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Esquecer o «ci» de lugar: «Sì, vado» soa cortado. Diga «Sì, ci vado».',
-      'Esquecer o «ne» com números: «Ho due» não basta. «Ne ho due», «Ne voglio tre».',
-      'Fazer o negativo do tu como no português: «Non parla!» é «ele não fala». A ordem negativa é «Non parlare!».',
-      'Tratar um desconhecido com o imperativo do tu: «Scusa, senti!» é íntimo. Com Lei: «Scusi, senta!», «Venga!», «Mi dica!».',
-      'Escrever «dimi», «fami», «dami». Com as formas curtas a consoante dobra: dimmi, fammi, dammi.',
-      'Usar o presente do indicativo como imperativo nos verbos em -ere e -ire: «prende!» está errado; o tu é «prendi!».',
+      'Esquecer o “ci” de lugar: “Sì, vado” soa cortado. Diga “Sì, ci vado”.',
+      'Esquecer o “ne” com números: “Ho due” não basta. “Ne ho due”, “Ne voglio tre”.',
+      'Fazer o negativo do tu como no português: “Non parla!” é “ele não fala”. A ordem negativa é “Non parlare!”.',
+      'Tratar um desconhecido com o imperativo do tu: “Scusa, senti!” é íntimo. Com Lei: “Scusi, senta!”, “Venga!”, “Mi dica!”.',
+      'Escrever “dimi”, “fami”, “dami”. Com as formas curtas a consoante dobra: dimmi, fammi, dammi.',
+      'Usar o presente do indicativo como imperativo nos verbos em -ere e -ire: “prende!” está errado; o tu é “prendi!”.',
     ],
     quiz: [
       {
-        question: 'Complete: «Vai spesso a Bologna? Sì, ___ vado ogni mese.»',
+        question: 'Complete: “Vai spesso a Bologna? Sì, ___ vado ogni mese.”',
         options: ['ci', 'ne', 'lo'],
         answer: 'ci',
-        explanation: '«Ci» retoma o lugar (a Bologna). O português omite o «lá», o italiano não.',
+        explanation: '“Ci” retoma o lugar (a Bologna). O português omite o “lá”, o italiano não.',
       },
       {
-        question: 'Complete: «Quanti fratelli hai? ___ ho tre.»',
+        question: 'Complete: “Quanti fratelli hai? ___ ho tre.”',
         options: ['Ci', 'Ne', 'Li'],
         answer: 'Ne',
-        explanation: 'Com quantidades, o «ne» retoma o substantivo (dei fratelli): «Ne ho tre».',
+        explanation: 'Com quantidades, o “ne” retoma o substantivo (dei fratelli): “Ne ho tre”.',
       },
       {
-        question: 'Qual é o negativo de «Parla!» (tu)?',
+        question: 'Qual é o negativo de “Parla!” (tu)?',
         options: ['Non parla!', 'Non parlare!', 'Non parli!'],
         answer: 'Non parlare!',
-        explanation: 'O imperativo negativo do tu é «non + infinitivo». «Non parli!» é o negativo do Lei.',
+        explanation: 'O imperativo negativo do tu é “non + infinitivo”. “Non parli!” é o negativo do Lei.',
       },
       {
-        question: 'Como pedir a um senhor, com educação: «Entre, por favor»?',
+        question: 'Como pedir a um senhor, com educação: “Entre, por favor”?',
         options: ['Entra, prego.', 'Entri, prego.', 'Entrate, prego.'],
         answer: 'Entri, prego.',
         explanation: 'O imperativo do Lei usa o congiuntivo presente: entri, prenda, senta.',
       },
       {
-        question: 'Como se escreve «Me diga!» (tu)?',
+        question: 'Como se escreve “Me diga!” (tu)?',
         options: ['Dimi!', 'Dimmi!', 'Di’mi!'],
         answer: 'Dimmi!',
         explanation: 'Di’ + mi: com as formas curtas do imperativo, a consoante do pronome dobra: dimmi, fammi, dammi.',
@@ -1471,10 +1471,10 @@ export const GRAMMAR_IT: GrammarTopic[] = [
     level: 'B1.2',
     title: 'Futuro semplice e futuro anteriore',
     emoji: '🔮',
-    summary: 'O italiano usa o futuro sintético (parlerò) na fala, sem cerimônia, e ele também serve para supor: «Sarà in ufficio» (deve estar no escritório). E «vado a mangiare» não é futuro: é «vou (a um lugar) comer».',
+    summary: 'O italiano usa o futuro sintético (parlerò) na fala, sem cerimônia, e ele também serve para supor: “Sarà in ufficio” (deve estar no escritório). E “vado a mangiare” não é futuro: é “vou (a um lugar) comer”.',
     sections: [
       {
-        text: 'No Brasil o futuro sintético («falarei») soa formal e usamos «vou falar». Em italiano é o contrário: «parlerò» é comum na conversa, e «andare a + infinitivo» sempre indica movimento (ir a algum lugar para fazer algo), nunca um futuro. Para planos próximos, o presente também serve: «Domani parto per Trieste».',
+        text: 'No Brasil o futuro sintético (“falarei”) soa formal e usamos “vou falar”. Em italiano é o contrário: “parlerò” é comum na conversa, e “andare a + infinitivo” sempre indica movimento (ir a algum lugar para fazer algo), nunca um futuro. Para planos próximos, o presente também serve: “Domani parto per Trieste”.',
         table: {
           head: ['Pessoa', 'parlare', 'prendere', 'partire', 'essere', 'avere'],
           rows: [
@@ -1489,7 +1489,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Os radicais que mudam',
-        text: 'Nos verbos em -are, o «a» vira «e»: parlerò (nunca «parlarò»). Os terminados em -care e -gare ganham h para manter o som: cercherò, pagherò. Os em -ciare e -giare perdem o i: comincerò, mangerò. Vários verbos encurtam o radical.',
+        text: 'Nos verbos em -are, o “a” vira “e”: parlerò (nunca “parlarò”). Os terminados em -care e -gare ganham h para manter o som: cercherò, pagherò. Os em -ciare e -giare perdem o i: comincerò, mangerò. Vários verbos encurtam o radical.',
         table: {
           head: ['Infinitivo', 'Futuro (io)', 'Infinitivo', 'Futuro (io)'],
           rows: [
@@ -1511,7 +1511,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'O futuro de suposição',
-        text: 'Onde o português diz «deve estar», «deve ser», o italiano usa o futuro: «Sarà stanco» (deve estar cansado), «Avrà trent’anni» (deve ter uns trinta anos). É muito frequente e soa natural.',
+        text: 'Onde o português diz “deve estar”, “deve ser”, o italiano usa o futuro: “Sarà stanco” (deve estar cansado), “Avrà trent’anni” (deve ter uns trinta anos). É muito frequente e soa natural.',
         examples: [
           ['Dov’è Luca? Non so, sarà al lavoro.', 'Cadê o Luca? Não sei, deve estar no trabalho.'],
           ['Che ore sono? Saranno le otto.', 'Que horas são? Devem ser oito.'],
@@ -1519,8 +1519,8 @@ export const GRAMMAR_IT: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'Futuro anteriore e o «quando» sem subjuntivo',
-        text: 'O futuro anteriore (avrò/sarò + particípio) indica o que já terá acontecido antes de outro fato futuro. Aqui mora uma diferença grande: o português usa o futuro do subjuntivo («quando eu chegar», «se você puder»), que o italiano NÃO tem. Depois de quando, appena, se, dopo che, o italiano usa o futuro do indicativo (ou o presente na fala).',
+        heading: 'Futuro anteriore e o “quando” sem subjuntivo',
+        text: 'O futuro anteriore (avrò/sarò + particípio) indica o que já terá acontecido antes de outro fato futuro. Aqui mora uma diferença grande: o português usa o futuro do subjuntivo (“quando eu chegar”, “se você puder”), que o italiano NÃO tem. Depois de quando, appena, se, dopo che, o italiano usa o futuro do indicativo (ou o presente na fala).',
         table: {
           head: ['Português', 'Italiano'],
           rows: [
@@ -1539,42 +1539,42 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar «andare a + infinitivo» como futuro: «Vado a studiare» é «vou (a algum lugar) estudar». Para futuro: «Studierò».',
-      'Manter o «a» dos verbos em -are: «parlarò», «mangiarò» estão errados. É parlerò, mangerò.',
-      'Escrever «mangierò», «comincierò»: o i cai antes do e: mangerò, comincerò.',
-      'Procurar o futuro do subjuntivo («quando eu for»): ele não existe. Use o futuro: «quando andrò», «se potrai».',
-      'Errar o auxiliar no anteriore: «avrò partito» está errado; «partire» usa essere: «sarò partito».',
+      'Usar “andare a + infinitivo” como futuro: “Vado a studiare” é “vou (a algum lugar) estudar”. Para futuro: “Studierò”.',
+      'Manter o “a” dos verbos em -are: “parlarò”, “mangiarò” estão errados. É parlerò, mangerò.',
+      'Escrever “mangierò”, “comincierò”: o i cai antes do e: mangerò, comincerò.',
+      'Procurar o futuro do subjuntivo (“quando eu for”): ele não existe. Use o futuro: “quando andrò”, “se potrai”.',
+      'Errar o auxiliar no anteriore: “avrò partito” está errado; “partire” usa essere: “sarò partito”.',
     ],
     quiz: [
       {
-        question: 'Qual é o futuro de «parlare» para «io»?',
+        question: 'Qual é o futuro de “parlare” para “io”?',
         options: ['parlarò', 'parlerò', 'parlerei'],
         answer: 'parlerò',
-        explanation: 'Nos verbos em -are o a vira e no futuro: parlerò. «Parlerei» é o condizionale.',
+        explanation: 'Nos verbos em -are o a vira e no futuro: parlerò. “Parlerei” é o condizionale.',
       },
       {
-        question: 'Como se diz «Não sei, ele deve estar no trabalho»?',
+        question: 'Como se diz “Não sei, ele deve estar no trabalho”?',
         options: ['Non so, sarà al lavoro.', 'Non so, va a essere al lavoro.', 'Non so, sarebbe al lavoro.'],
         answer: 'Non so, sarà al lavoro.',
-        explanation: 'O futuro semplice expressa suposição no presente: «sarà» = deve estar.',
+        explanation: 'O futuro semplice expressa suposição no presente: “sarà” = deve estar.',
       },
       {
-        question: 'Como se diz «Quando você chegar a Turim, me liga»?',
+        question: 'Como se diz “Quando você chegar a Turim, me liga”?',
         options: ['Quando arriverai a Torino, chiamami.', 'Quando arriveresti a Torino, chiamami.', 'Quando arrivassi a Torino, chiamami.'],
         answer: 'Quando arriverai a Torino, chiamami.',
-        explanation: 'O italiano não tem futuro do subjuntivo: depois de «quando» vai o futuro do indicativo.',
+        explanation: 'O italiano não tem futuro do subjuntivo: depois de “quando” vai o futuro do indicativo.',
       },
       {
-        question: 'Qual frase fala do futuro («amanhã vou estudar»)?',
+        question: 'Qual frase fala do futuro (“amanhã vou estudar”)?',
         options: ['Domani studierò.', 'Domani vado a studiare.', 'Domani stavo studiando.'],
         answer: 'Domani studierò.',
-        explanation: '«Vado a studiare» indica ir a algum lugar para estudar; o futuro é «studierò».',
+        explanation: '“Vado a studiare” indica ir a algum lugar para estudar; o futuro é “studierò”.',
       },
       {
-        question: 'Complete: «Ti chiamerò appena ___.» (finire)',
+        question: 'Complete: “Ti chiamerò appena ___.” (finire)',
         options: ['avrò finito', 'sarò finito', 'avrei finito'],
         answer: 'avrò finito',
-        explanation: 'Ação futura anterior a outra: futuro anteriore com avere, «avrò finito».',
+        explanation: 'Ação futura anterior a outra: futuro anteriore com avere, “avrò finito”.',
       },
     ],
   },
@@ -1583,11 +1583,11 @@ export const GRAMMAR_IT: GrammarTopic[] = [
     level: 'B1.2',
     title: 'Condizionale presente, stare + gerundio e stare per',
     emoji: '☕',
-    summary: '«Vorrei» é o pedido educado (o brasileiro diz «eu queria»); «parleremmo» e «parleremo» mudam só pela consoante dupla. O gerúndio italiano é bem mais econômico que o nosso, e «estou saindo» (já, já) é «sto per uscire».',
+    summary: '“Vorrei” é o pedido educado (o brasileiro diz “eu queria”); “parleremmo” e “parleremo” mudam só pela consoante dupla. O gerúndio italiano é bem mais econômico que o nosso, e “estou saindo” (já, já) é “sto per uscire”.',
     sections: [
       {
         heading: 'Condizionale presente: as formas',
-        text: 'O condizionale usa o mesmo radical do futuro (parler-, sar-, avr-, vorr-, andr-) com as terminações -ei, -esti, -ebbe, -emmo, -este, -ebbero. É o nosso futuro do pretérito («falaria»). Atenção ao noi: «parleremmo» (falaríamos) tem mm; «parleremo» (falaremos), um m só.',
+        text: 'O condizionale usa o mesmo radical do futuro (parler-, sar-, avr-, vorr-, andr-) com as terminações -ei, -esti, -ebbe, -emmo, -este, -ebbero. É o nosso futuro do pretérito (“falaria”). Atenção ao noi: “parleremmo” (falaríamos) tem mm; “parleremo” (falaremos), um m só.',
         table: {
           head: ['Pessoa', 'parlare', 'volere', 'essere', 'potere', 'piacere'],
           rows: [
@@ -1602,7 +1602,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Para que serve',
-        text: 'Pedido educado («vorrei», «potrebbe»), conselho («dovresti» = você deveria), desejo («mi piacerebbe» = eu gostaria; «gostar» em italiano é piacere, com o gostador como objeto indireto) e hipótese. Na imprensa, serve ainda para notícia não confirmada: «Il sindaco sarebbe in viaggio» (o prefeito estaria viajando, segundo fontes).',
+        text: 'Pedido educado (“vorrei”, “potrebbe”), conselho (“dovresti” = você deveria), desejo (“mi piacerebbe” = eu gostaria; “gostar” em italiano é piacere, com o gostador como objeto indireto) e hipótese. Na imprensa, serve ainda para notícia não confirmada: “Il sindaco sarebbe in viaggio” (o prefeito estaria viajando, segundo fontes).',
         examples: [
           ['Vorrei un cappuccino e un cornetto, per favore.', 'Eu queria um cappuccino e um croissant, por favor.'],
           ['Potrebbe ripetere, per favore?', 'O senhor poderia repetir, por favor?'],
@@ -1613,7 +1613,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Stare + gerundio: só o que está acontecendo agora',
-        text: 'O gerúndio se forma com -ando (verbos em -are) e -endo (em -ere e -ire): parlando, prendendo, partendo. Irregulares: fare → facendo, dire → dicendo, bere → bevendo. O brasileiro usa «estar + gerúndio» para tudo; o italiano o reserva para a ação em curso neste instante. Situação temporária ou habitual vai no presente: «Lavoro a Milano» (estou trabalhando em Milão). E nada de «vou estar fazendo».',
+        text: 'O gerúndio se forma com -ando (verbos em -are) e -endo (em -ere e -ire): parlando, prendendo, partendo. Irregulares: fare → facendo, dire → dicendo, bere → bevendo. O brasileiro usa “estar + gerúndio” para tudo; o italiano o reserva para a ação em curso neste instante. Situação temporária ou habitual vai no presente: “Lavoro a Milano” (estou trabalhando em Milão). E nada de “vou estar fazendo”.',
         table: {
           head: ['Português', 'Italiano', 'Por quê'],
           rows: [
@@ -1632,7 +1632,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Stare per + infinitivo: estar prestes a',
-        text: '«Stare per» anuncia algo iminente. O brasileiro usa o gerúndio («estou saindo», «o filme está começando») para o que ainda vai acontecer; em italiano isso é «sto per uscire», «il film sta per cominciare».',
+        text: '“Stare per” anuncia algo iminente. O brasileiro usa o gerúndio (“estou saindo”, “o filme está começando”) para o que ainda vai acontecer; em italiano isso é “sto per uscire”, “il film sta per cominciare”.',
         examples: [
           ['Sto per uscire, ti chiamo dopo.', 'Estou saindo, te ligo depois.'],
           ['Il treno per Cagliari sta per partire.', 'O trem para Cagliari está para partir.'],
@@ -1641,42 +1641,42 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Confundir condizionale e futuro no noi: «parleremo» (falaremos) × «parleremmo» (falaríamos). A consoante dupla muda o tempo.',
-      'Traduzir «eu gostaria» com um verbo «gustare»: o certo é «mi piacerebbe», com o pronome indireto.',
-      'Pôr tudo no gerúndio: «Sto lavorando a Milano da due anni» soa estranho. Para situação duradoura: «Lavoro a Milano da due anni».',
-      'Usar o gerúndio para o futuro imediato: «Sto uscendo» quer dizer que você já está passando pela porta. Para «vou sair já», diga «Sto per uscire».',
-      'Criar gerúndios regulares para fare, dire e bere: «fando», «dindo» não existem. É facendo, dicendo, bevendo.',
+      'Confundir condizionale e futuro no noi: “parleremo” (falaremos) × “parleremmo” (falaríamos). A consoante dupla muda o tempo.',
+      'Traduzir “eu gostaria” com um verbo “gustare”: o certo é “mi piacerebbe”, com o pronome indireto.',
+      'Pôr tudo no gerúndio: “Sto lavorando a Milano da due anni” soa estranho. Para situação duradoura: “Lavoro a Milano da due anni”.',
+      'Usar o gerúndio para o futuro imediato: “Sto uscendo” quer dizer que você já está passando pela porta. Para “vou sair já”, diga “Sto per uscire”.',
+      'Criar gerúndios regulares para fare, dire e bere: “fando”, “dindo” não existem. É facendo, dicendo, bevendo.',
     ],
     quiz: [
       {
         question: 'Qual é o pedido educado no bar?',
         options: ['Voglio un caffè.', 'Vorrei un caffè.', 'Vorrò un caffè.'],
         answer: 'Vorrei un caffè.',
-        explanation: 'O condizionale «vorrei» é a forma cortês de pedir; «voglio» soa brusco.',
+        explanation: 'O condizionale “vorrei” é a forma cortês de pedir; “voglio” soa brusco.',
       },
       {
-        question: 'Como se diz «nós falaríamos»?',
+        question: 'Como se diz “nós falaríamos”?',
         options: ['parleremo', 'parleremmo', 'parlaremmo'],
         answer: 'parleremmo',
-        explanation: 'Condizionale do noi: -emmo, com mm. «Parleremo» é o futuro.',
+        explanation: 'Condizionale do noi: -emmo, com mm. “Parleremo” é o futuro.',
       },
       {
-        question: 'Como se diz «Eu gostaria de ir a Veneza»?',
+        question: 'Como se diz “Eu gostaria de ir a Veneza”?',
         options: ['Mi piacerebbe andare a Venezia.', 'Gusterei andare a Venezia.', 'Io piacerei andare a Venezia.'],
         answer: 'Mi piacerebbe andare a Venezia.',
-        explanation: '«Gostar» é piacere, com quem gosta no indireto (mi). No condizionale: mi piacerebbe.',
+        explanation: '“Gostar” é piacere, com quem gosta no indireto (mi). No condizionale: mi piacerebbe.',
       },
       {
-        question: 'Como dizer «Estou saindo (daqui a pouco)»?',
+        question: 'Como dizer “Estou saindo (daqui a pouco)”?',
         options: ['Sto per uscire.', 'Sto a uscire.', 'Sono per uscire.'],
         answer: 'Sto per uscire.',
-        explanation: '«Stare per + infinitivo» marca o que está prestes a acontecer.',
+        explanation: '“Stare per + infinitivo” marca o que está prestes a acontecer.',
       },
       {
-        question: 'Qual é o gerúndio de «fare»?',
+        question: 'Qual é o gerúndio de “fare”?',
         options: ['fando', 'facendo', 'fatto'],
         answer: 'facendo',
-        explanation: 'O gerúndio vem do radical latino fac-: facendo. «Fatto» é o particípio.',
+        explanation: 'O gerúndio vem do radical latino fac-: facendo. “Fatto” é o particípio.',
       },
     ],
   },
@@ -1684,12 +1684,12 @@ export const GRAMMAR_IT: GrammarTopic[] = [
   {
     id: 'it-g16',
     level: 'B1.3',
-    title: 'Congiuntivo presente: formas e «penso che sia»',
+    title: 'Congiuntivo presente: formas e “penso che sia”',
     emoji: '🤔',
-    summary: 'O brasileiro diz «acho que ele está» com indicativo. O italiano, não: opinião pede congiuntivo: «Penso che sia a casa». As formas lembram o nosso subjuntivo («que eu fale»), o que ajuda muito.',
+    summary: 'O brasileiro diz “acho que ele está” com indicativo. O italiano, não: opinião pede congiuntivo: “Penso che sia a casa”. As formas lembram o nosso subjuntivo (“que eu fale”), o que ajuda muito.',
     sections: [
       {
-        text: 'A boa notícia: o congiuntivo presente se parece com o presente do subjuntivo português («que eu fale», «que ele coma»). Os verbos em -are fazem -i; os em -ere e -ire fazem -a. As três pessoas do singular são iguais, por isso o pronome sujeito aparece mais: «che tu parli», «che lui parli».',
+        text: 'A boa notícia: o congiuntivo presente se parece com o presente do subjuntivo português (“que eu fale”, “que ele coma”). Os verbos em -are fazem -i; os em -ere e -ire fazem -a. As três pessoas do singular são iguais, por isso o pronome sujeito aparece mais: “che tu parli”, “che lui parli”.',
         table: {
           head: ['Pessoa', 'parlare', 'prendere', 'partire', 'finire'],
           rows: [
@@ -1726,7 +1726,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Opinião e dúvida pedem congiuntivo',
-        text: 'Este é o grande contraste. Em português, «achar», «acreditar» e «parecer» vêm com indicativo: «acho que ele TEM razão». Em italiano, tudo o que é opinião, dúvida ou impressão pede congiuntivo: penso che, credo che, mi sembra che, immagino che, dubito che, non sono sicuro che. O mesmo vale para as expressões impessoais de necessidade e possibilidade: è importante che, bisogna che, è possibile che, è meglio che.',
+        text: 'Este é o grande contraste. Em português, “achar”, “acreditar” e “parecer” vêm com indicativo: “acho que ele TEM razão”. Em italiano, tudo o que é opinião, dúvida ou impressão pede congiuntivo: penso che, credo che, mi sembra che, immagino che, dubito che, non sono sicuro che. O mesmo vale para as expressões impessoais de necessidade e possibilidade: è importante che, bisogna che, è possibile che, è meglio che.',
         table: {
           head: ['Português (indicativo)', 'Italiano (congiuntivo)'],
           rows: [
@@ -1746,7 +1746,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Mesmo sujeito: di + infinitivo',
-        text: 'Se quem pensa e quem faz são a mesma pessoa, não se usa «che»: vai «di + infinitivo». «Penso di partire domani» (acho que vou partir amanhã), nunca «penso che io parta».',
+        text: 'Se quem pensa e quem faz são a mesma pessoa, não se usa “che”: vai “di + infinitivo”. “Penso di partire domani” (acho que vou partir amanhã), nunca “penso che io parta”.',
         examples: [
           ['Penso di tornare in Abruzzo quest’estate.', 'Acho que vou voltar para os Abruzos neste verão.'],
           ['Credo di aver capito.', 'Acho que entendi.'],
@@ -1755,42 +1755,42 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Traduzir «acho que é» ao pé da letra: «Penso che è vero» é o erro número um. O padrão é «Penso che sia vero».',
-      'Usar «che» com o mesmo sujeito: «Credo che io abbia ragione». O natural é «Credo di avere ragione».',
-      'Esquecer o pronome quando a forma é ambígua: «Voglio che parli» pode ser eu, você ou ele. Na dúvida: «che tu parli».',
-      'Inventar formas regulares para essere e avere: é «che sia», «che abbia», nunca «che esse» ou «che ava».',
-      'Trocar a vogal: -are faz -i (che parli), -ere/-ire fazem -a (che prenda). O brasileiro, pelo português, acerta «parli», mas escreve «che prendi» (errado).',
+      'Traduzir “acho que é” ao pé da letra: “Penso che è vero” é o erro número um. O padrão é “Penso che sia vero”.',
+      'Usar “che” com o mesmo sujeito: “Credo che io abbia ragione”. O natural é “Credo di avere ragione”.',
+      'Esquecer o pronome quando a forma é ambígua: “Voglio che parli” pode ser eu, você ou ele. Na dúvida: “che tu parli”.',
+      'Inventar formas regulares para essere e avere: é “che sia”, “che abbia”, nunca “che esse” ou “che ava”.',
+      'Trocar a vogal: -are faz -i (che parli), -ere/-ire fazem -a (che prenda). O brasileiro, pelo português, acerta “parli”, mas escreve “che prendi” (errado).',
     ],
     quiz: [
       {
-        question: 'Complete: «Penso che Marco ___ ragione.»',
+        question: 'Complete: “Penso che Marco ___ ragione.”',
         options: ['ha', 'abbia', 'avrebbe'],
         answer: 'abbia',
-        explanation: 'Opinião (penso che) pede congiuntivo: abbia. Em português usaríamos indicativo («tem»).',
+        explanation: 'Opinião (penso che) pede congiuntivo: abbia. Em português usaríamos indicativo (“tem”).',
       },
       {
-        question: 'Qual é o congiuntivo presente de «essere» para «loro»?',
+        question: 'Qual é o congiuntivo presente de “essere” para “loro”?',
         options: ['sono', 'siano', 'sieno'],
         answer: 'siano',
         explanation: 'Che io/tu/lui sia, che noi siamo, che voi siate, che loro siano.',
       },
       {
-        question: 'Como se diz «Acho que vou partir amanhã»?',
+        question: 'Como se diz “Acho que vou partir amanhã”?',
         options: ['Penso di partire domani.', 'Penso che io parta domani.', 'Penso che parto domani.'],
         answer: 'Penso di partire domani.',
-        explanation: 'Mesmo sujeito nas duas partes: «di + infinitivo».',
+        explanation: 'Mesmo sujeito nas duas partes: “di + infinitivo”.',
       },
       {
-        question: 'Complete: «È importante che voi ___ in orario.» (arrivare)',
+        question: 'Complete: “È importante che voi ___ in orario.” (arrivare)',
         options: ['arrivate', 'arriviate', 'arrivino'],
         answer: 'arriviate',
-        explanation: '«È importante che» pede congiuntivo; para voi, arriviate.',
+        explanation: '“È importante che” pede congiuntivo; para voi, arriviate.',
       },
       {
-        question: 'Qual é o congiuntivo presente de «fare» para «io»?',
+        question: 'Qual é o congiuntivo presente de “fare” para “io”?',
         options: ['faccia', 'fa', 'fassa'],
         answer: 'faccia',
-        explanation: 'Sai da 1ª pessoa do presente, «io faccio»: che io faccia.',
+        explanation: 'Sai da 1ª pessoa do presente, “io faccio”: che io faccia.',
       },
     ],
   },
@@ -1799,11 +1799,11 @@ export const GRAMMAR_IT: GrammarTopic[] = [
     level: 'B1.3',
     title: 'Congiuntivo com vontade, emoção e conjunções (benché, prima che, affinché)',
     emoji: '🔗',
-    summary: '«Voglio che tu venga» é igual ao português. As armadilhas estão nas conjunções: «perché» com congiuntivo é «para que», e «anche se» (mesmo que) pede indicativo, ao contrário do nosso «mesmo que chova».',
+    summary: '“Voglio che tu venga” é igual ao português. As armadilhas estão nas conjunções: “perché” com congiuntivo é “para que”, e “anche se” (mesmo que) pede indicativo, ao contrário do nosso “mesmo que chova”.',
     sections: [
       {
         heading: 'Vontade, pedido, emoção',
-        text: 'Quando alguém quer, pede, espera, teme ou sente algo sobre a ação de OUTRA pessoa, vem o congiuntivo, como no português: voglio che, preferisco che, spero che, ho paura che, sono contento che, mi dispiace che. A diferença é que o italiano não relaxa: o brasileiro diz «fico feliz que você veio»; o italiano mantém o congiuntivo.',
+        text: 'Quando alguém quer, pede, espera, teme ou sente algo sobre a ação de OUTRA pessoa, vem o congiuntivo, como no português: voglio che, preferisco che, spero che, ho paura che, sono contento che, mi dispiace che. A diferença é que o italiano não relaxa: o brasileiro diz “fico feliz que você veio”; o italiano mantém o congiuntivo.',
         examples: [
           ['Voglio che tu venga con noi a Matera.', 'Quero que você venha com a gente a Matera.'],
           ['Spero che il tempo sia bello domani.', 'Espero que o tempo esteja bom amanhã.'],
@@ -1834,7 +1834,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Os falsos amigos entre as conjunções',
-        text: '«Perché» tem duas vidas: com indicativo é «porque»; com congiuntivo é «para que». «Anche se» (mesmo que, ainda que) pede INDICATIVO, embora o português use subjuntivo. «A meno che non» leva um «non» que não nega nada. E «dopo che» é sempre indicativo, como o nosso «depois que».',
+        text: '“Perché” tem duas vidas: com indicativo é “porque”; com congiuntivo é “para que”. “Anche se” (mesmo que, ainda que) pede INDICATIVO, embora o português use subjuntivo. “A meno che non” leva um “non” que não nega nada. E “dopo che” é sempre indicativo, como o nosso “depois que”.',
         table: {
           head: ['Português', 'Italiano', 'Modo'],
           rows: [
@@ -1849,7 +1849,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Mesmo sujeito: preposição + infinitivo',
-        text: 'Se o sujeito é o mesmo, o italiano troca a conjunção por preposição + infinitivo: prima che → prima di, affinché → per, senza che → senza. Em português também: «antes de sair», «sem dizer nada».',
+        text: 'Se o sujeito é o mesmo, o italiano troca a conjunção por preposição + infinitivo: prima che → prima di, affinché → per, senza che → senza. Em português também: “antes de sair”, “sem dizer nada”.',
         examples: [
           ['Prima di uscire, chiudo la finestra.', 'Antes de sair, fecho a janela.'],
           ['Studio l’italiano per parlare con i miei nonni.', 'Estudo italiano para falar com meus avós.'],
@@ -1858,42 +1858,42 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pôr congiuntivo depois de «anche se»: «Anche se piova» está errado. «Mesmo que chova» é «anche se piove».',
-      'Ler «perché + congiuntivo» como «porque»: «Te lo dico perché tu lo sappia» é «para que você saiba».',
-      'Achar que o «non» de «a meno che non piova» nega: a frase quer dizer «a menos que chova».',
-      'Usar «prima che» com o mesmo sujeito: «Prima che io esca, chiudo» soa errado. Diga «Prima di uscire, chiudo».',
-      'Relaxar como no português falado: «Sono contento che sei venuto» é coloquial; o padrão é «che tu sia venuto».',
+      'Pôr congiuntivo depois de “anche se”: “Anche se piova” está errado. “Mesmo que chova” é “anche se piove”.',
+      'Ler “perché + congiuntivo” como “porque”: “Te lo dico perché tu lo sappia” é “para que você saiba”.',
+      'Achar que o “non” de “a meno che non piova” nega: a frase quer dizer “a menos que chova”.',
+      'Usar “prima che” com o mesmo sujeito: “Prima che io esca, chiudo” soa errado. Diga “Prima di uscire, chiudo”.',
+      'Relaxar como no português falado: “Sono contento che sei venuto” é coloquial; o padrão é “che tu sia venuto”.',
     ],
     quiz: [
       {
-        question: 'Complete: «Voglio che tu ___ con noi.» (venire)',
+        question: 'Complete: “Voglio che tu ___ con noi.” (venire)',
         options: ['vieni', 'venga', 'venissi'],
         answer: 'venga',
         explanation: 'Vontade sobre outra pessoa, verbo principal no presente: congiuntivo presente, venga.',
       },
       {
-        question: 'Complete: «Esco ___ piova.» (embora)',
+        question: 'Complete: “Esco ___ piova.” (embora)',
         options: ['benché', 'anche se', 'dopo che'],
         answer: 'benché',
-        explanation: '«Benché» (embora) pede congiuntivo: benché piova. «Anche se» pediria «piove».',
+        explanation: '“Benché” (embora) pede congiuntivo: benché piova. “Anche se” pediria “piove”.',
       },
       {
-        question: 'Como se diz «Mesmo que chova, eu saio»?',
+        question: 'Como se diz “Mesmo que chova, eu saio”?',
         options: ['Anche se piove, esco.', 'Anche se piova, esco.', 'Anche se pioverebbe, esco.'],
         answer: 'Anche se piove, esco.',
-        explanation: '«Anche se» vem com indicativo, ao contrário do português, que usa subjuntivo.',
+        explanation: '“Anche se” vem com indicativo, ao contrário do português, que usa subjuntivo.',
       },
       {
-        question: 'Como se diz «Te explico para que você entenda»?',
+        question: 'Como se diz “Te explico para que você entenda”?',
         options: ['Te lo spiego perché capisci.', 'Te lo spiego perché tu capisca.', 'Te lo spiego per capisci.'],
         answer: 'Te lo spiego perché tu capisca.',
-        explanation: '«Perché» com congiuntivo = para que. Com indicativo («capisci») seria «porque você entende».',
+        explanation: '“Perché” com congiuntivo = para que. Com indicativo (“capisci”) seria “porque você entende”.',
       },
       {
-        question: 'Como se diz «Antes de sair, fecho a janela»?',
+        question: 'Como se diz “Antes de sair, fecho a janela”?',
         options: ['Prima di uscire, chiudo la finestra.', 'Prima che esca, chiudo la finestra.', 'Prima uscire, chiudo la finestra.'],
         answer: 'Prima di uscire, chiudo la finestra.',
-        explanation: 'Mesmo sujeito: «prima di + infinitivo». «Prima che» é para sujeitos diferentes.',
+        explanation: 'Mesmo sujeito: “prima di + infinitivo”. “Prima che” é para sujeitos diferentes.',
       },
     ],
   },
@@ -1902,11 +1902,11 @@ export const GRAMMAR_IT: GrammarTopic[] = [
     level: 'B1.3',
     title: 'Congiuntivo passato e quando NÃO usar o congiuntivo',
     emoji: '⚖️',
-    summary: '«Penso che sia partito» (acho que ele partiu): o congiuntivo passato é abbia/sia + particípio. E nem tudo pede congiuntivo: certeza (so che, è vero che) fica no indicativo.',
+    summary: '“Penso che sia partito” (acho que ele partiu): o congiuntivo passato é abbia/sia + particípio. E nem tudo pede congiuntivo: certeza (so che, è vero che) fica no indicativo.',
     sections: [
       {
         heading: 'As formas',
-        text: 'É o congiuntivo presente de avere ou essere mais o particípio, com as mesmas regras do passato prossimo: verbos de movimento e mudança usam essere e concordam. Corresponde ao nosso «que eu tenha feito», mas o italiano o usa também onde o português põe o pretérito: «acho que ele SAIU» → «penso che sia uscito».',
+        text: 'É o congiuntivo presente de avere ou essere mais o particípio, com as mesmas regras do passato prossimo: verbos de movimento e mudança usam essere e concordam. Corresponde ao nosso “que eu tenha feito”, mas o italiano o usa também onde o português põe o pretérito: “acho que ele SAIU” → “penso che sia uscito”.',
         table: {
           head: ['Pessoa', 'mangiare', 'andare'],
           rows: [
@@ -1939,7 +1939,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Quando o indicativo fica',
-        text: 'Congiuntivo é o modo da opinião, da dúvida, do desejo. Onde há certeza ou fato, o indicativo continua. O brasileiro, depois de aprender o congiuntivo, às vezes exagera e o põe em tudo que tem «che».',
+        text: 'Congiuntivo é o modo da opinião, da dúvida, do desejo. Onde há certeza ou fato, o indicativo continua. O brasileiro, depois de aprender o congiuntivo, às vezes exagera e o põe em tudo que tem “che”.',
         table: {
           head: ['Indicativo (certeza, fato)', 'Congiuntivo (opinião, dúvida, desejo)'],
           rows: [
@@ -1959,42 +1959,42 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar o indicativo passado depois de opinião, como no português: «Penso che è partito» está errado. «Penso che sia partito».',
-      'Errar o auxiliar: «che abbia uscito» está errado; uscire usa essere: «che sia uscito».',
-      'Botar congiuntivo em certeza: «So che sia vero» está errado. Com sapere, è vero, è chiaro, sono sicuro: indicativo.',
-      'Traduzir «que vocês tenham gostado» com avere: «che abbiate piaciuto» está errado. Piacere usa essere e o indireto: «che vi sia piaciuto».',
-      'Esquecer a concordância com essere: «Credo che Giulia sia andato» → «sia andata».',
+      'Usar o indicativo passado depois de opinião, como no português: “Penso che è partito” está errado. “Penso che sia partito”.',
+      'Errar o auxiliar: “che abbia uscito” está errado; uscire usa essere: “che sia uscito”.',
+      'Botar congiuntivo em certeza: “So che sia vero” está errado. Com sapere, è vero, è chiaro, sono sicuro: indicativo.',
+      'Traduzir “que vocês tenham gostado” com avere: “che abbiate piaciuto” está errado. Piacere usa essere e o indireto: “che vi sia piaciuto”.',
+      'Esquecer a concordância com essere: “Credo che Giulia sia andato” → “sia andata”.',
     ],
     quiz: [
       {
-        question: 'Como se diz «Acho que ele já saiu»?',
+        question: 'Como se diz “Acho que ele já saiu”?',
         options: ['Penso che sia già uscito.', 'Penso che è già uscito.', 'Penso che abbia già uscito.'],
         answer: 'Penso che sia già uscito.',
         explanation: 'Opinião sobre ação anterior: congiuntivo passato, com essere porque uscire é verbo de movimento.',
       },
       {
-        question: 'Como se diz «Sei que ele está em casa»?',
+        question: 'Como se diz “Sei que ele está em casa”?',
         options: ['So che sia a casa.', 'So che è a casa.', 'So che fosse a casa.'],
         answer: 'So che è a casa.',
-        explanation: '«Sapere» exprime certeza: indicativo.',
+        explanation: '“Sapere” exprime certeza: indicativo.',
       },
       {
-        question: 'Como se diz «Espero que vocês tenham gostado»?',
+        question: 'Como se diz “Espero que vocês tenham gostado”?',
         options: ['Spero che vi sia piaciuto.', 'Spero che avete piaciuto.', 'Spero che abbiate piaciuto.'],
         answer: 'Spero che vi sia piaciuto.',
-        explanation: 'Piacere usa essere e quem gosta vira objeto indireto (vi): «che vi sia piaciuto».',
+        explanation: 'Piacere usa essere e quem gosta vira objeto indireto (vi): “che vi sia piaciuto”.',
       },
       {
-        question: 'Complete: «Dopo che ___, siamo andati a cena.» (lei, arrivare)',
+        question: 'Complete: “Dopo che ___, siamo andati a cena.” (lei, arrivare)',
         options: ['sia arrivata', 'è arrivata', 'fosse arrivata'],
         answer: 'è arrivata',
-        explanation: '«Dopo che» indica um fato: indicativo, como no português «depois que ela chegou».',
+        explanation: '“Dopo che” indica um fato: indicativo, como no português “depois que ela chegou”.',
       },
       {
-        question: 'Complete: «Non credo che Luca ___ la verità.» (dire, no passado)',
+        question: 'Complete: “Non credo che Luca ___ la verità.” (dire, no passado)',
         options: ['ha detto', 'abbia detto', 'sia detto'],
         answer: 'abbia detto',
-        explanation: '«Non credo che» pede congiuntivo; ação anterior: congiuntivo passato com avere, «abbia detto».',
+        explanation: '“Non credo che” pede congiuntivo; ação anterior: congiuntivo passato com avere, “abbia detto”.',
       },
     ],
   },
@@ -2004,11 +2004,11 @@ export const GRAMMAR_IT: GrammarTopic[] = [
     level: 'B1.4',
     title: 'Trapassato prossimo e como reconhecer o passato remoto',
     emoji: '📜',
-    summary: 'O trapassato («era già partito») é o nosso «tinha partido», com o auxiliar essere quando o verbo pede. E o passato remoto (parlò, fu, nacque) parece o nosso pretérito perfeito, mas na fala do dia a dia o italiano usa o passato prossimo.',
+    summary: 'O trapassato (“era già partito”) é o nosso “tinha partido”, com o auxiliar essere quando o verbo pede. E o passato remoto (parlò, fu, nacque) parece o nosso pretérito perfeito, mas na fala do dia a dia o italiano usa o passato prossimo.',
     sections: [
       {
         heading: 'Trapassato prossimo: o passado do passado',
-        text: 'É o imperfetto de avere ou essere mais o particípio. Corresponde ao «tinha feito» do português, mas com a escolha de auxiliar do italiano: «eu tinha ido» é «ero andato», nunca «avevo andato». O português falado às vezes simplifica («quando cheguei, o trem já saiu»); o italiano marca a anterioridade: «era già partito».',
+        text: 'É o imperfetto de avere ou essere mais o particípio. Corresponde ao “tinha feito” do português, mas com a escolha de auxiliar do italiano: “eu tinha ido” é “ero andato”, nunca “avevo andato”. O português falado às vezes simplifica (“quando cheguei, o trem já saiu”); o italiano marca a anterioridade: “era già partito”.',
         table: {
           head: ['Pessoa', 'mangiare (avere)', 'partire (essere)'],
           rows: [
@@ -2029,7 +2029,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Passato remoto: para ler, não para conversar',
-        text: 'O passato remoto parece o nosso pretérito perfeito («falei, falou»), e o brasileiro tende a usá-lo em conversa. Mas no italiano padrão falado, sobretudo no Norte e no Centro, o passado do dia a dia é o passato prossimo («ieri ho parlato»). O remoto aparece em livros, contos, biografias e na história; no Sul (Sicília, Calábria, Campânia) também se ouve na fala. No B1 o objetivo é reconhecê-lo.',
+        text: 'O passato remoto parece o nosso pretérito perfeito (“falei, falou”), e o brasileiro tende a usá-lo em conversa. Mas no italiano padrão falado, sobretudo no Norte e no Centro, o passado do dia a dia é o passato prossimo (“ieri ho parlato”). O remoto aparece em livros, contos, biografias e na história; no Sul (Sicília, Calábria, Campânia) também se ouve na fala. No B1 o objetivo é reconhecê-lo.',
         table: {
           head: ['Pessoa', 'parlare', 'credere', 'partire'],
           rows: [
@@ -2071,42 +2071,42 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar avere com verbos de movimento no trapassato: «avevo andato» está errado. «Ero andato», «era partita».',
-      'Esquecer o acento da 3ª pessoa: «parlò» (ele falou) × «parlo» (eu falo); «partì» (ele partiu) × «parti» (você parte).',
-      'Usar o passato remoto na conversa sobre ontem: «Ieri andai al cinema» soa literário ou do Sul. O padrão é «Ieri sono andato al cinema».',
-      'Confundir «fu» (foi, de essere) com um verbo «fare»: «fece» é que vem de fare.',
-      'Traduzir «tinha sido» com avere: «avevo stato» não existe; é «ero stato», porque essere usa essere.',
+      'Usar avere com verbos de movimento no trapassato: “avevo andato” está errado. “Ero andato”, “era partita”.',
+      'Esquecer o acento da 3ª pessoa: “parlò” (ele falou) × “parlo” (eu falo); “partì” (ele partiu) × “parti” (você parte).',
+      'Usar o passato remoto na conversa sobre ontem: “Ieri andai al cinema” soa literário ou do Sul. O padrão é “Ieri sono andato al cinema”.',
+      'Confundir “fu” (foi, de essere) com um verbo “fare”: “fece” é que vem de fare.',
+      'Traduzir “tinha sido” com avere: “avevo stato” não existe; é “ero stato”, porque essere usa essere.',
     ],
     quiz: [
       {
-        question: 'Complete: «Quando sono arrivato, il treno ___ già partito.»',
+        question: 'Complete: “Quando sono arrivato, il treno ___ già partito.”',
         options: ['era', 'aveva', 'è stato'],
         answer: 'era',
-        explanation: 'Trapassato de partire: auxiliar essere no imperfetto, «era partito».',
+        explanation: 'Trapassato de partire: auxiliar essere no imperfetto, “era partito”.',
       },
       {
-        question: 'Como se diz «Eu nunca tinha visto o mar»?',
+        question: 'Como se diz “Eu nunca tinha visto o mar”?',
         options: ['Non avevo mai visto il mare.', 'Non ero mai visto il mare.', 'Non ho mai avuto visto il mare.'],
         answer: 'Non avevo mai visto il mare.',
-        explanation: '«Vedere» usa avere: trapassato «avevo visto».',
+        explanation: '“Vedere” usa avere: trapassato “avevo visto”.',
       },
       {
-        question: '«Nacque» é o passato remoto de qual verbo?',
+        question: '“Nacque” é o passato remoto de qual verbo?',
         options: ['nascere', 'nascondere', 'nuocere'],
         answer: 'nascere',
-        explanation: 'Nascere: nacqui, nascesti, nacque… É o «nasceu» das biografias.',
+        explanation: 'Nascere: nacqui, nascesti, nacque… É o “nasceu” das biografias.',
       },
       {
-        question: 'Complete no passato remoto: «Il principe ___ al re.» (parlare)',
+        question: 'Complete no passato remoto: “Il principe ___ al re.” (parlare)',
         options: ['parlo', 'parlò', 'parlé'],
         answer: 'parlò',
-        explanation: 'A 3ª pessoa do singular dos verbos em -are termina em -ò, com acento. «Parlo» é «eu falo».',
+        explanation: 'A 3ª pessoa do singular dos verbos em -are termina em -ò, com acento. “Parlo” é “eu falo”.',
       },
       {
-        question: 'A qual passato prossimo corresponde «fu»?',
+        question: 'A qual passato prossimo corresponde “fu”?',
         options: ['è stato', 'ha fatto', 'è andato'],
         answer: 'è stato',
-        explanation: '«Fu» é o passato remoto de essere (foi). O de fare é «fece».',
+        explanation: '“Fu” é o passato remoto de essere (foi). O de fare é “fece”.',
       },
     ],
   },
@@ -2115,11 +2115,11 @@ export const GRAMMAR_IT: GrammarTopic[] = [
     level: 'B1.4',
     title: 'Relativos (che, cui, il quale, chi) e discurso indireto',
     emoji: '🗣️',
-    summary: 'O brasileiro fala «a pessoa que eu conversei», sem preposição. O italiano não deixa: «la persona con cui ho parlato». E no discurso indireto, «disse que viria» é «ha detto che sarebbe venuto», com condizionale PASSATO.',
+    summary: 'O brasileiro fala “a pessoa que eu conversei”, sem preposição. O italiano não deixa: “la persona con cui ho parlato”. E no discurso indireto, “disse que viria” é “ha detto che sarebbe venuto”, com condizionale PASSATO.',
     sections: [
       {
         heading: 'Che e cui',
-        text: '«Che» é o relativo de sujeito e de objeto direto, invariável, como o nosso «que». Depois de preposição, usa-se «cui»: di cui, a cui, con cui, in cui, per cui, da cui. O português falado costuma cortar a preposição («o filme que te falei», «a cidade que eu nasci»); em italiano ela é obrigatória. «In cui» também pode virar «dove» para lugares.',
+        text: '“Che” é o relativo de sujeito e de objeto direto, invariável, como o nosso “que”. Depois de preposição, usa-se “cui”: di cui, a cui, con cui, in cui, per cui, da cui. O português falado costuma cortar a preposição (“o filme que te falei”, “a cidade que eu nasci”); em italiano ela é obrigatória. “In cui” também pode virar “dove” para lugares.',
         table: {
           head: ['Português falado', 'Italiano', 'Relativo'],
           rows: [
@@ -2140,7 +2140,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Il quale, chi e quello che',
-        text: '«Il quale» (la quale, i quali, le quali) substitui che ou cui na escrita formal e concorda com o antecedente, o que ajuda a desfazer ambiguidades. Com preposição, forma as articuladas: del quale, alla quale, nei quali. «Chi» não retoma um substantivo: quer dizer «quem, aquele que» e vai no singular. «O que» (aquilo que) é «quello che» ou «ciò che».',
+        text: '“Il quale” (la quale, i quali, le quali) substitui che ou cui na escrita formal e concorda com o antecedente, o que ajuda a desfazer ambiguidades. Com preposição, forma as articuladas: del quale, alla quale, nei quali. “Chi” não retoma um substantivo: quer dizer “quem, aquele que” e vai no singular. “O que” (aquilo que) é “quello che” ou “ciò che”.',
         table: {
           head: ['Forma', 'Uso', 'Exemplo'],
           rows: [
@@ -2159,16 +2159,16 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Discurso indireto: o que muda',
-        text: 'Com o verbo introdutor no passado (ha detto, disse, mi ha chiesto), os tempos recuam, como no português. A diferença mais traiçoeira é o futuro: o português diz «disse que viria» (futuro do pretérito simples), o italiano usa o condizionale PASSATO: «ha detto che sarebbe venuto». O imperativo vira «di + infinitivo».',
+        text: 'Com o verbo introdutor no passado (ha detto, disse, mi ha chiesto), os tempos recuam, como no português. A diferença mais traiçoeira é o futuro: o português diz “disse que viria” (futuro do pretérito simples), o italiano usa o condizionale PASSATO: “ha detto che sarebbe venuto”. O imperativo vira “di + infinitivo”.',
         table: {
           head: ['Discurso direto', 'Discurso indireto'],
           rows: [
-            ['«Sono stanco.» (presente)', 'Ha detto che era stanco. (imperfetto)'],
-            ['«Ho perso il treno.» (passato prossimo)', 'Ha detto che aveva perso il treno. (trapassato)'],
-            ['«Verrò domani.» (futuro)', 'Ha detto che sarebbe venuto il giorno dopo. (condizionale passato)'],
-            ['«Chiudi la porta!» (imperativo)', 'Mi ha detto di chiudere la porta. (di + infinito)'],
-            ['«Dove vai?» (pergunta)', 'Mi ha chiesto dove andavo.'],
-            ['«Vieni anche tu?» (sim/não)', 'Mi ha chiesto se venivo anch’io.'],
+            ['“Sono stanco.” (presente)', 'Ha detto che era stanco. (imperfetto)'],
+            ['“Ho perso il treno.” (passato prossimo)', 'Ha detto che aveva perso il treno. (trapassato)'],
+            ['“Verrò domani.” (futuro)', 'Ha detto che sarebbe venuto il giorno dopo. (condizionale passato)'],
+            ['“Chiudi la porta!” (imperativo)', 'Mi ha detto di chiudere la porta. (di + infinito)'],
+            ['“Dove vai?” (pergunta)', 'Mi ha chiesto dove andavo.'],
+            ['“Vieni anche tu?” (sim/não)', 'Mi ha chiesto se venivo anch’io.'],
           ],
         },
       },
@@ -2176,49 +2176,49 @@ export const GRAMMAR_IT: GrammarTopic[] = [
         heading: 'Pessoas, lugares e tempo',
         text: 'Como no português, mudam os pronomes (io → lui), os possessivos (mio → suo) e as referências: qui → lì, questo → quello, oggi → quel giorno, ieri → il giorno prima, domani → il giorno dopo, fra una settimana → una settimana dopo.',
         examples: [
-          ['«Oggi resto a casa», ha detto Sara. → Sara ha detto che quel giorno restava a casa.', '«Hoje fico em casa», disse Sara. → Sara disse que naquele dia ficava em casa.'],
-          ['«Partirò per Ancona domani», mi ha scritto. → Mi ha scritto che sarebbe partito per Ancona il giorno dopo.', '«Parto para Ancona amanhã», ele me escreveu. → Ele me escreveu que partiria para Ancona no dia seguinte.'],
-          ['«Aspettami qui!» → Mi ha detto di aspettarlo lì.', '«Me espere aqui!» → Ele me disse para esperá-lo lá.'],
+          ['“Oggi resto a casa”, ha detto Sara. → Sara ha detto che quel giorno restava a casa.', '“Hoje fico em casa”, disse Sara. → Sara disse que naquele dia ficava em casa.'],
+          ['“Partirò per Ancona domani”, mi ha scritto. → Mi ha scritto che sarebbe partito per Ancona il giorno dopo.', '“Parto para Ancona amanhã”, ele me escreveu. → Ele me escreveu que partiria para Ancona no dia seguinte.'],
+          ['“Aspettami qui!” → Mi ha detto di aspettarlo lì.', '“Me espere aqui!” → Ele me disse para esperá-lo lá.'],
         ],
       },
     ],
     pitfalls: [
-      'Cortar a preposição como no português falado: «la persona che ho parlato» está errado. É «la persona con cui ho parlato».',
-      'Usar «chi» depois de um substantivo: «la ragazza chi canta» está errado. Depois de substantivo, «che»: «la ragazza che canta».',
-      'Usar «che» depois de preposição: «il libro di che parlo» está errado. Depois de preposição, «cui»: «il libro di cui parlo».',
-      'Traduzir «disse que viria» com condizionale presente: «ha detto che verrebbe» soa errado no padrão. O certo é «ha detto che sarebbe venuto».',
-      'Manter o imperativo no indireto: «Mi ha detto che chiudo la porta» está errado. É «Mi ha detto di chiudere la porta».',
+      'Cortar a preposição como no português falado: “la persona che ho parlato” está errado. É “la persona con cui ho parlato”.',
+      'Usar “chi” depois de um substantivo: “la ragazza chi canta” está errado. Depois de substantivo, “che”: “la ragazza che canta”.',
+      'Usar “che” depois de preposição: “il libro di che parlo” está errado. Depois de preposição, “cui”: “il libro di cui parlo”.',
+      'Traduzir “disse que viria” com condizionale presente: “ha detto che verrebbe” soa errado no padrão. O certo é “ha detto che sarebbe venuto”.',
+      'Manter o imperativo no indireto: “Mi ha detto che chiudo la porta” está errado. É “Mi ha detto di chiudere la porta”.',
     ],
     quiz: [
       {
-        question: 'Complete: «La ragazza ___ ho parlato è di Genova.»',
+        question: 'Complete: “La ragazza ___ ho parlato è di Genova.”',
         options: ['che', 'con cui', 'cui che'],
         answer: 'con cui',
-        explanation: '«Parlare con qualcuno»: a preposição vai antes do relativo, e depois de preposição usa-se «cui».',
+        explanation: '“Parlare con qualcuno”: a preposição vai antes do relativo, e depois de preposição usa-se “cui”.',
       },
       {
-        question: 'Complete: «Questo è il libro ___ ti ho parlato.»',
+        question: 'Complete: “Questo è il libro ___ ti ho parlato.”',
         options: ['di cui', 'che', 'del che'],
         answer: 'di cui',
-        explanation: '«Parlare di qualcosa»: di cui. O português falado corta a preposição; o italiano, não.',
+        explanation: '“Parlare di qualcosa”: di cui. O português falado corta a preposição; o italiano, não.',
       },
       {
-        question: 'Complete o provérbio: «___ cerca trova.»',
+        question: 'Complete o provérbio: “___ cerca trova.”',
         options: ['Chi', 'Che', 'Cui'],
         answer: 'Chi',
-        explanation: '«Chi» = quem, aquele que, sem antecedente e no singular.',
+        explanation: '“Chi” = quem, aquele que, sem antecedente e no singular.',
       },
       {
-        question: '«Verrò domani», ha detto Luca. Qual é o discurso indireto?',
+        question: '“Verrò domani”, ha detto Luca. Qual é o discurso indireto?',
         options: ['Luca ha detto che verrebbe il giorno dopo.', 'Luca ha detto che sarebbe venuto il giorno dopo.', 'Luca ha detto che veniva il giorno prima.'],
         answer: 'Luca ha detto che sarebbe venuto il giorno dopo.',
-        explanation: 'O futuro no passado é o condizionale passato: sarebbe venuto. E «domani» vira «il giorno dopo».',
+        explanation: 'O futuro no passado é o condizionale passato: sarebbe venuto. E “domani” vira “il giorno dopo”.',
       },
       {
-        question: '«Chiudi la finestra!», mi ha detto. Qual é o discurso indireto?',
+        question: '“Chiudi la finestra!”, mi ha detto. Qual é o discurso indireto?',
         options: ['Mi ha detto di chiudere la finestra.', 'Mi ha detto che chiudi la finestra.', 'Mi ha detto chiudere la finestra.'],
         answer: 'Mi ha detto di chiudere la finestra.',
-        explanation: 'O imperativo, no discurso indireto, vira «di + infinitivo».',
+        explanation: 'O imperativo, no discurso indireto, vira “di + infinitivo”.',
       },
     ],
   },
@@ -2228,11 +2228,11 @@ export const GRAMMAR_IT: GrammarTopic[] = [
     level: 'B2.1',
     title: 'Congiuntivo imperfetto e trapassato',
     emoji: '🕰️',
-    summary: '«Parlasse», «fosse», «avesse»: o congiuntivo imperfetto soa quase como o nosso «falasse, fosse, tivesse». Ele aparece quando o verbo principal está no passado ou no condizionale: «Pensavo che fosse vero», «Vorrei che tu restassi».',
+    summary: '“Parlasse”, “fosse”, “avesse”: o congiuntivo imperfetto soa quase como o nosso “falasse, fosse, tivesse”. Ele aparece quando o verbo principal está no passado ou no condizionale: “Pensavo che fosse vero”, “Vorrei che tu restassi”.',
     sections: [
       {
         heading: 'As formas',
-        text: 'O imperfetto do congiuntivo tem o -ss- do nosso imperfeito do subjuntivo: parlasse ≈ falasse. Atenção à 1ª e à 2ª pessoa, que terminam em -i: «che io parlassi», «che tu parlassi» (não «parlasse»). O trapassato é avessi/fossi + particípio, o nosso «tivesse feito».',
+        text: 'O imperfetto do congiuntivo tem o -ss- do nosso imperfeito do subjuntivo: parlasse ≈ falasse. Atenção à 1ª e à 2ª pessoa, que terminam em -i: “che io parlassi”, “che tu parlassi” (não “parlasse”). O trapassato é avessi/fossi + particípio, o nosso “tivesse feito”.',
         table: {
           head: ['Pessoa', 'parlare', 'prendere', 'partire', 'essere', 'avere'],
           rows: [
@@ -2262,7 +2262,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'A concordância dos tempos',
-        text: 'Se o verbo principal está no passado (pensavo, credevo, volevo, speravo) ou no condizionale (vorrei, preferirei), o congiuntivo recua: imperfetto para o simultâneo, trapassato para o anterior. Para o posterior, vai o condizionale passato. A lógica é a do português («eu achava que fosse», «queria que você viesse»), mas o italiano a respeita sempre, mesmo onde o brasileiro usa indicativo («eu achava que ele era italiano»).',
+        text: 'Se o verbo principal está no passado (pensavo, credevo, volevo, speravo) ou no condizionale (vorrei, preferirei), o congiuntivo recua: imperfetto para o simultâneo, trapassato para o anterior. Para o posterior, vai o condizionale passato. A lógica é a do português (“eu achava que fosse”, “queria que você viesse”), mas o italiano a respeita sempre, mesmo onde o brasileiro usa indicativo (“eu achava que ele era italiano”).',
         table: {
           head: ['Relação', 'Forma', 'Exemplo'],
           rows: [
@@ -2281,7 +2281,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Come se e magari',
-        text: '«Come se» (como se) pede sempre congiuntivo imperfetto ou trapassato, como no português. «Magari» + congiuntivo imperfetto é o nosso «quem dera».',
+        text: '“Come se” (como se) pede sempre congiuntivo imperfetto ou trapassato, como no português. “Magari” + congiuntivo imperfetto é o nosso “quem dera”.',
         examples: [
           ['Parla come se fosse il padrone di casa.', 'Ele fala como se fosse o dono da casa.'],
           ['Mi guardava come se non mi avesse mai visto.', 'Ele me olhava como se nunca tivesse me visto.'],
@@ -2291,39 +2291,39 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar a forma da 3ª pessoa para «io», copiando o português «que eu falasse»: «che io parlasse» está errado. É «che io parlassi».',
-      'Misturar tempos: «Volevo che tu vieni» ou «Vorrei che tu venga». Depois de passado ou condizionale: «che tu venissi».',
-      'Usar indicativo onde o brasileiro usaria: «Pensavo che era italiano» é coloquial; o padrão é «Pensavo che fosse italiano».',
-      'Escrever o voi como no português: «che voi parlassete» não existe. É «che voi parlaste» (igual ao passato remoto).',
-      'Errar o auxiliar do trapassato: «avessi andato» está errado; «fossi andato».',
+      'Usar a forma da 3ª pessoa para “io”, copiando o português “que eu falasse”: “che io parlasse” está errado. É “che io parlassi”.',
+      'Misturar tempos: “Volevo che tu vieni” ou “Vorrei che tu venga”. Depois de passado ou condizionale: “che tu venissi”.',
+      'Usar indicativo onde o brasileiro usaria: “Pensavo che era italiano” é coloquial; o padrão é “Pensavo che fosse italiano”.',
+      'Escrever o voi como no português: “che voi parlassete” não existe. É “che voi parlaste” (igual ao passato remoto).',
+      'Errar o auxiliar do trapassato: “avessi andato” está errado; “fossi andato”.',
     ],
     quiz: [
       {
-        question: 'Complete: «Pensavo che tu ___ italiano.»',
+        question: 'Complete: “Pensavo che tu ___ italiano.”',
         options: ['sei', 'sia', 'fossi'],
         answer: 'fossi',
-        explanation: 'Verbo principal no passado (pensavo) + ação simultânea: congiuntivo imperfetto, «fossi».',
+        explanation: 'Verbo principal no passado (pensavo) + ação simultânea: congiuntivo imperfetto, “fossi”.',
       },
       {
-        question: 'Qual é o congiuntivo imperfetto de «parlare» para «io»?',
+        question: 'Qual é o congiuntivo imperfetto de “parlare” para “io”?',
         options: ['parlasse', 'parlassi', 'parlavo'],
         answer: 'parlassi',
-        explanation: 'Che io parlassi, che tu parlassi, che lui parlasse. O português «que eu falasse» engana.',
+        explanation: 'Che io parlassi, che tu parlassi, che lui parlasse. O português “que eu falasse” engana.',
       },
       {
-        question: 'Complete: «Vorrei che voi ___ di più.» (studiare)',
+        question: 'Complete: “Vorrei che voi ___ di più.” (studiare)',
         options: ['studiate', 'studiaste', 'studiassero'],
         answer: 'studiaste',
-        explanation: 'Depois de condizionale (vorrei), congiuntivo imperfetto; para voi, «studiaste».',
+        explanation: 'Depois de condizionale (vorrei), congiuntivo imperfetto; para voi, “studiaste”.',
       },
       {
-        question: 'Complete: «Parla come se ___ tutto.» (sapere)',
+        question: 'Complete: “Parla come se ___ tutto.” (sapere)',
         options: ['sa', 'sapesse', 'saprebbe'],
         answer: 'sapesse',
-        explanation: '«Come se» pede congiuntivo imperfetto: sapesse.',
+        explanation: '“Come se” pede congiuntivo imperfetto: sapesse.',
       },
       {
-        question: 'Como se diz «Eu não sabia que eles já tinham partido»?',
+        question: 'Como se diz “Eu não sabia que eles já tinham partido”?',
         options: ['Non sapevo che fossero già partiti.', 'Non sapevo che erano già partito.', 'Non sapevo che avessero già partiti.'],
         answer: 'Non sapevo che fossero già partiti.',
         explanation: 'Ação anterior a um passado: congiuntivo trapassato, com essere e concordância (partiti).',
@@ -2335,7 +2335,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
     level: 'B2.1',
     title: 'Periodo ipotetico e condizionale passato',
     emoji: '🎲',
-    summary: '«Se avessi tempo, viaggerei» funciona como o português. As armadilhas: «se chover» não tem futuro do subjuntivo em italiano («se pioverà»), «se» nunca leva condizionale, e «deveria ter dito» é «avrei dovuto dire».',
+    summary: '“Se avessi tempo, viaggerei” funciona como o português. As armadilhas: “se chover” não tem futuro do subjuntivo em italiano (“se pioverà”), “se” nunca leva condizionale, e “deveria ter dito” é “avrei dovuto dire”.',
     sections: [
       {
         heading: 'Condizionale passato',
@@ -2378,7 +2378,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Onde o português engana',
-        text: 'Três contrastes. 1) O «se chover», «se puder» do português usa futuro do subjuntivo, que o italiano não tem: vai presente ou futuro do indicativo. 2) Depois de «se» nunca vem condizionale: «se sarei» é um erro clássico (até entre italianos). 3) Com verbos modais, o auxiliar fica no modal: «deveria ter dito» = «avrei dovuto dire», «poderia ter vindo» = «sarei potuto venire» ou «avrei potuto venire». Na fala, o italiano também usa o imperfetto nos dois lados («Se lo sapevo, venivo»), como o brasileiro («se eu soubesse, eu vinha»), mas na escrita e no registro cuidado vale a forma completa.',
+        text: 'Três contrastes. 1) O “se chover”, “se puder” do português usa futuro do subjuntivo, que o italiano não tem: vai presente ou futuro do indicativo. 2) Depois de “se” nunca vem condizionale: “se sarei” é um erro clássico (até entre italianos). 3) Com verbos modais, o auxiliar fica no modal: “deveria ter dito” = “avrei dovuto dire”, “poderia ter vindo” = “sarei potuto venire” ou “avrei potuto venire”. Na fala, o italiano também usa o imperfetto nos dois lados (“Se lo sapevo, venivo”), como o brasileiro (“se eu soubesse, eu vinha”), mas na escrita e no registro cuidado vale a forma completa.',
         table: {
           head: ['Português', 'Errado', 'Certo'],
           rows: [
@@ -2391,39 +2391,39 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pôr condizionale depois de «se»: «Se avrei tempo» está errado. É «Se avessi tempo».',
-      'Procurar o futuro do subjuntivo: «se chover» é «se piove» ou «se pioverà», nunca «se piovesse» (que seria «se chovesse»).',
-      'Traduzir «deveria ter feito» palavra por palavra: «dovrei avere fatto» está errado. O auxiliar vai no modal: «avrei dovuto fare».',
-      'Misturar condizionale presente com passado no tipo impossível: «Se avessi studiato, supererei l’esame» está errado; é «avrei superato».',
-      'Esquecer o auxiliar essere: «avrei andato» está errado; «sarei andato».',
+      'Pôr condizionale depois de “se”: “Se avrei tempo” está errado. É “Se avessi tempo”.',
+      'Procurar o futuro do subjuntivo: “se chover” é “se piove” ou “se pioverà”, nunca “se piovesse” (que seria “se chovesse”).',
+      'Traduzir “deveria ter feito” palavra por palavra: “dovrei avere fatto” está errado. O auxiliar vai no modal: “avrei dovuto fare”.',
+      'Misturar condizionale presente com passado no tipo impossível: “Se avessi studiato, supererei l’esame” está errado; é “avrei superato”.',
+      'Esquecer o auxiliar essere: “avrei andato” está errado; “sarei andato”.',
     ],
     quiz: [
       {
-        question: 'Complete: «Se ___ tempo, verrei con voi.»',
+        question: 'Complete: “Se ___ tempo, verrei con voi.”',
         options: ['avrei', 'avessi', 'avevo'],
         answer: 'avessi',
         explanation: 'Hipótese possível: se + congiuntivo imperfetto, e condizionale presente na consequência.',
       },
       {
-        question: 'Como se diz «Se chover amanhã, fico em casa»?',
+        question: 'Como se diz “Se chover amanhã, fico em casa”?',
         options: ['Se pioverà domani, resterò a casa.', 'Se piovesse domani, resto a casa.', 'Se pioverebbe domani, resterò a casa.'],
         answer: 'Se pioverà domani, resterò a casa.',
-        explanation: 'Hipótese real no futuro: futuro do indicativo. O italiano não tem futuro do subjuntivo e não usa condizionale depois de «se».',
+        explanation: 'Hipótese real no futuro: futuro do indicativo. O italiano não tem futuro do subjuntivo e não usa condizionale depois de “se”.',
       },
       {
-        question: 'Como se diz «Você deveria ter me contado»?',
+        question: 'Como se diz “Você deveria ter me contado”?',
         options: ['Avresti dovuto dirmelo.', 'Avrai dovuto dirmelo.', 'Dovresti dirmelo avuto.'],
         answer: 'Avresti dovuto dirmelo.',
         explanation: 'O condizionale passato vai no modal (avresti dovuto) e o verbo principal fica no infinitivo.',
       },
       {
-        question: 'Como se diz «Se eu tivesse estudado, teria passado na prova»?',
+        question: 'Como se diz “Se eu tivesse estudado, teria passado na prova”?',
         options: ['Se avessi studiato, avrei superato l’esame.', 'Se avrei studiato, avessi superato l’esame.', 'Se studiassi, avrei superato l’esame.'],
         answer: 'Se avessi studiato, avrei superato l’esame.',
         explanation: 'Hipótese impossível no passado: congiuntivo trapassato + condizionale passato.',
       },
       {
-        question: 'Como se diz «Se eu tivesse aceitado o emprego em Milão, hoje moraria lá»?',
+        question: 'Como se diz “Se eu tivesse aceitado o emprego em Milão, hoje moraria lá”?',
         options: ['Se avessi accettato il lavoro a Milano, oggi ci abiterei.', 'Se avessi accettato il lavoro a Milano, oggi ci avrei abitato.', 'Se accettavo il lavoro a Milano, oggi ci abitassi.'],
         answer: 'Se avessi accettato il lavoro a Milano, oggi ci abiterei.',
         explanation: 'Tipo misto: condição no passado (trapassato), consequência no presente (condizionale presente).',
@@ -2434,16 +2434,16 @@ export const GRAMMAR_IT: GrammarTopic[] = [
   {
     id: 'it-g23',
     level: 'B2.2',
-    title: 'Voz passiva e o «si» impessoal e passivante',
+    title: 'Voz passiva e o “si” impessoal e passivante',
     emoji: '🏗️',
-    summary: 'O italiano faz a passiva com três auxiliares: essere, venire e andare, cada um com um matiz. E o «si» cobre o nosso «vende-se», o «a gente» e o «você» genérico, com regras de concordância que o brasileiro costuma ignorar.',
+    summary: 'O italiano faz a passiva com três auxiliares: essere, venire e andare, cada um com um matiz. E o “si” cobre o nosso “vende-se”, o “a gente” e o “você” genérico, com regras de concordância que o brasileiro costuma ignorar.',
     sections: [
       {
-        text: 'Quando quem faz a ação não importa ou é desconhecido, o italiano tem duas grandes saídas: a voz passiva (a casa foi vendida) e o «si» (vende-se a casa). O português tem as mesmas estruturas, mas o Brasil falado quase só diz «venderam a casa» ou «vende casa». Em italiano, a passiva e o «si» são vivos também na fala, e o «si» é a forma mais natural para regras, anúncios e hábitos coletivos.',
+        text: 'Quando quem faz a ação não importa ou é desconhecido, o italiano tem duas grandes saídas: a voz passiva (a casa foi vendida) e o “si” (vende-se a casa). O português tem as mesmas estruturas, mas o Brasil falado quase só diz “venderam a casa” ou “vende casa”. Em italiano, a passiva e o “si” são vivos também na fala, e o “si” é a forma mais natural para regras, anúncios e hábitos coletivos.',
       },
       {
         heading: 'Passiva com essere e com venire',
-        text: 'A passiva se forma com o auxiliar + particípio passado, que concorda em gênero e número com o sujeito, como no português. O agente vem com «da» (e suas formas articuladas: dal, dalla, dai…), nunca com «per». Com essere, a passiva pode indicar ação ou estado; com venire, ela indica sempre a ação acontecendo, e por isso é muito usada em textos técnicos e jornalísticos. Mas venire só existe nos tempos simples: nos compostos, use essere (è stata venduta, nunca «è venuta venduta»).',
+        text: 'A passiva se forma com o auxiliar + particípio passado, que concorda em gênero e número com o sujeito, como no português. O agente vem com “da” (e suas formas articuladas: dal, dalla, dai…), nunca com “per”. Com essere, a passiva pode indicar ação ou estado; com venire, ela indica sempre a ação acontecendo, e por isso é muito usada em textos técnicos e jornalísticos. Mas venire só existe nos tempos simples: nos compostos, use essere (è stata venduta, nunca “è venuta venduta”).',
         table: {
           head: ['Tempo', 'com essere', 'com venire', 'Português'],
           rows: [
@@ -2465,7 +2465,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Passiva com andare: dever e perda',
-        text: 'Andare + particípio, nos tempos simples, expressa necessidade ou obrigação: «va fatto» = deve ser feito. É muito comum em instruções, bulas e regras. Com verbos de perda (perdere, distruggere, smarrire, sprecare), andare também aparece nos tempos compostos, sem ideia de dever: «è andato perso» = se perdeu.',
+        text: 'Andare + particípio, nos tempos simples, expressa necessidade ou obrigação: “va fatto” = deve ser feito. É muito comum em instruções, bulas e regras. Com verbos de perda (perdere, distruggere, smarrire, sprecare), andare também aparece nos tempos compostos, sem ideia de dever: “è andato perso” = se perdeu.',
         table: {
           head: ['Frase', 'Sentido', 'Português'],
           rows: [
@@ -2484,7 +2484,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Si passivante: o verbo concorda',
-        text: 'Com verbo transitivo e objeto expresso, o «si» tem valor passivo e o verbo concorda com o que é vendido, alugado, procurado: «si vende una casa», «si vendono case». É o nosso «vendem-se casas», que no Brasil virou «vende-se casas». Em italiano, a concordância é obrigatória também na fala. Nas placas e anúncios aparece a forma antiga com o «si» colado: «vendesi», «affittasi», geralmente sem variar.',
+        text: 'Com verbo transitivo e objeto expresso, o “si” tem valor passivo e o verbo concorda com o que é vendido, alugado, procurado: “si vende una casa”, “si vendono case”. É o nosso “vendem-se casas”, que no Brasil virou “vende-se casas”. Em italiano, a concordância é obrigatória também na fala. Nas placas e anúncios aparece a forma antiga com o “si” colado: “vendesi”, “affittasi”, geralmente sem variar.',
         table: {
           head: ['Singular', 'Plural', 'Português'],
           rows: [
@@ -2497,8 +2497,8 @@ export const GRAMMAR_IT: GrammarTopic[] = [
         },
       },
       {
-        heading: 'Si impersonale: o «a gente» italiano',
-        text: 'Sem objeto que concorde (com verbos intransitivos ou sem complemento), o «si» é impessoal e o verbo fica no singular: «si vive bene», «si parte alle otto». Três detalhes que o português não tem. Primeiro: com essere, adjetivos e particípios vão para o masculino plural, embora o verbo fique no singular: «quando si è giovani». Segundo: nos tempos compostos o auxiliar é sempre essere; com verbos que normalmente usam avere, o particípio fica em -o («si è mangiato bene»), com verbos que usam essere, em -i («si è arrivati tardi»). Terceiro: com verbos reflexivos, «si si» vira «ci si»: «ci si alza presto».',
+        heading: 'Si impersonale: o “a gente” italiano',
+        text: 'Sem objeto que concorde (com verbos intransitivos ou sem complemento), o “si” é impessoal e o verbo fica no singular: “si vive bene”, “si parte alle otto”. Três detalhes que o português não tem. Primeiro: com essere, adjetivos e particípios vão para o masculino plural, embora o verbo fique no singular: “quando si è giovani”. Segundo: nos tempos compostos o auxiliar é sempre essere; com verbos que normalmente usam avere, o particípio fica em -o (“si è mangiato bene”), com verbos que usam essere, em -i (“si è arrivati tardi”). Terceiro: com verbos reflexivos, “si si” vira “ci si”: “ci si alza presto”.',
         table: {
           head: ['Caso', 'Exemplo', 'Português'],
           rows: [
@@ -2511,7 +2511,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['Come si dice «saudade» in italiano?', 'Como se diz «saudade» em italiano?'],
+          ['Come si dice “saudade” in italiano?', 'Como se diz “saudade” em italiano?'],
           ['A Bologna si mangia bene e si spende poco.', 'Em Bolonha se come bem e se gasta pouco.'],
           ['Non si sa mai.', 'Nunca se sabe.'],
           ['In vacanza ci si diverte sempre.', 'Nas férias a gente sempre se diverte.'],
@@ -2519,43 +2519,43 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar «per» para o agente, como no português «foi escrito por»: em italiano é «da»: «scritto da Dante», «costruito dai Romani».',
-      'Usar venire nos tempos compostos: «è venuto costruito» não existe. Nos compostos, a passiva é com essere: «è stato costruito».',
-      'Deixar o verbo no singular com objeto plural: «si vende case». Com o si passivante, concorde: «si vendono case».',
-      'Ler «va fatto» como «vai ser feito». Andare + particípio indica dever: «deve ser feito».',
-      'Escrever «si si alza» com verbo reflexivo. O impessoal de alzarsi é «ci si alza».',
-      'Pôr o adjetivo no singular com o si impessoal: «quando si è giovane». O certo é o plural: «quando si è giovani».',
+      'Usar “per” para o agente, como no português “foi escrito por”: em italiano é “da”: “scritto da Dante”, “costruito dai Romani”.',
+      'Usar venire nos tempos compostos: “è venuto costruito” não existe. Nos compostos, a passiva é com essere: “è stato costruito”.',
+      'Deixar o verbo no singular com objeto plural: “si vende case”. Com o si passivante, concorde: “si vendono case”.',
+      'Ler “va fatto” como “vai ser feito”. Andare + particípio indica dever: “deve ser feito”.',
+      'Escrever “si si alza” com verbo reflexivo. O impessoal de alzarsi é “ci si alza”.',
+      'Pôr o adjetivo no singular com o si impessoal: “quando si è giovane”. O certo é o plural: “quando si è giovani”.',
     ],
     quiz: [
       {
         question: 'Qual frase está correta?',
         options: ['La lettera è stata scritta da Marco.', 'La lettera è venuta scritta da Marco.', 'La lettera è stata scritta per Marco.'],
         answer: 'La lettera è stata scritta da Marco.',
-        explanation: 'Nos tempos compostos, a passiva usa essere, e o agente vem com «da». «Per Marco» significaria «para o Marco».',
+        explanation: 'Nos tempos compostos, a passiva usa essere, e o agente vem com “da”. “Per Marco” significaria “para o Marco”.',
       },
       {
-        question: 'Complete a placa: «In questo negozio si ___ biciclette usate.»',
+        question: 'Complete a placa: “In questo negozio si ___ biciclette usate.”',
         options: ['vende', 'vendono', 'venduto'],
         answer: 'vendono',
-        explanation: 'Si passivante: o verbo concorda com «biciclette», no plural.',
+        explanation: 'Si passivante: o verbo concorda com “biciclette”, no plural.',
       },
       {
-        question: 'O que quer dizer «Il biglietto va timbrato prima di salire»?',
+        question: 'O que quer dizer “Il biglietto va timbrato prima di salire”?',
         options: ['O bilhete deve ser validado antes de subir.', 'O bilhete vai ser validado depois.', 'O bilhete foi validado antes de subir.'],
         answer: 'O bilhete deve ser validado antes de subir.',
         explanation: 'Andare + particípio nos tempos simples expressa obrigação.',
       },
       {
-        question: 'Complete: «Quando si è giovani, si è sempre ___.»',
+        question: 'Complete: “Quando si è giovani, si è sempre ___.”',
         options: ['ottimista', 'ottimisti', 'ottimisto'],
         answer: 'ottimisti',
         explanation: 'Com o si impessoal + essere, o adjetivo vai para o plural, embora o verbo fique no singular.',
       },
       {
-        question: 'Complete: «In montagna ___ alza presto.»',
+        question: 'Complete: “In montagna ___ alza presto.”',
         options: ['si si', 'ci si', 'se si'],
         answer: 'ci si',
-        explanation: 'Com verbo reflexivo (alzarsi), o impessoal vira «ci si» para não repetir «si si».',
+        explanation: 'Com verbo reflexivo (alzarsi), o impessoal vira “ci si” para não repetir “si si”.',
       },
     ],
   },
@@ -2564,14 +2564,14 @@ export const GRAMMAR_IT: GrammarTopic[] = [
     level: 'B2.2',
     title: 'Registro formal: Lei, cartas e e-mails',
     emoji: '✉️',
-    summary: 'O Lei é o «o senhor / a senhora» do italiano e se usa muito mais do que no Brasil. Aqui está como ele mexe no verbo e nos pronomes, e as fórmulas de uma carta ou e-mail formal: «Gentile Dottoressa», «Le scrivo per…», «Cordiali saluti».',
+    summary: 'O Lei é o “o senhor / a senhora” do italiano e se usa muito mais do que no Brasil. Aqui está como ele mexe no verbo e nos pronomes, e as fórmulas de uma carta ou e-mail formal: “Gentile Dottoressa”, “Le scrivo per…”, “Cordiali saluti”.',
     sections: [
       {
-        text: 'Em italiano, trata-se por Lei quem não se conhece, os clientes, os mais velhos, os professores e quase todo contato de trabalho ou com repartição pública. O Lei é um pronome feminino de 3ª pessoa usado para homens e mulheres: o verbo vai para a 3ª pessoa do singular, como com «o senhor». Nas cartas e e-mails formais, é tradição escrever Lei, La, Le e Suo com maiúscula (a «maiuscola di cortesia»); hoje é opcional, mas continua muito comum.',
+        text: 'Em italiano, trata-se por Lei quem não se conhece, os clientes, os mais velhos, os professores e quase todo contato de trabalho ou com repartição pública. O Lei é um pronome feminino de 3ª pessoa usado para homens e mulheres: o verbo vai para a 3ª pessoa do singular, como com “o senhor”. Nas cartas e e-mails formais, é tradição escrever Lei, La, Le e Suo com maiúscula (a “maiuscola di cortesia”); hoje é opcional, mas continua muito comum.',
       },
       {
         heading: 'Do tu ao Lei',
-        text: 'Tudo que se refere ao Lei vai para a 3ª pessoa: verbo, possessivo (Suo), objeto direto (La) e indireto (Le). O imperativo formal usa o congiuntivo presente, com o pronome antes do verbo: «si accomodi», «mi dica». Adjetivos e particípios concordam com o sexo real da pessoa: «Signor Neri, Lei è stanco?».',
+        text: 'Tudo que se refere ao Lei vai para a 3ª pessoa: verbo, possessivo (Suo), objeto direto (La) e indireto (Le). O imperativo formal usa o congiuntivo presente, com o pronome antes do verbo: “si accomodi”, “mi dica”. Adjetivos e particípios concordam com o sexo real da pessoa: “Signor Neri, Lei è stanco?”.',
         table: {
           head: ['Função', 'Informal (tu)', 'Formal (Lei)', 'Português'],
           rows: [
@@ -2593,7 +2593,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Títulos: dottore, avvocato, ingegnere',
-        text: 'Na Itália, os títulos profissionais são usados no tratamento, na fala e na escrita. «Dottore» e «dottoressa» valem para qualquer pessoa com diploma universitário (laurea), não só para médicos. Diante de um nome, os títulos masculinos em -ore e -ere perdem o -e final: signor Rossi, dottor Bianchi, professor Conti, ingegner Ferri. As abreviaturas mais comuns são Sig., Sig.ra, Dott., Dott.ssa, Prof., Prof.ssa, Avv., Ing., Arch.',
+        text: 'Na Itália, os títulos profissionais são usados no tratamento, na fala e na escrita. “Dottore” e “dottoressa” valem para qualquer pessoa com diploma universitário (laurea), não só para médicos. Diante de um nome, os títulos masculinos em -ore e -ere perdem o -e final: signor Rossi, dottor Bianchi, professor Conti, ingegner Ferri. As abreviaturas mais comuns são Sig., Sig.ra, Dott., Dott.ssa, Prof., Prof.ssa, Avv., Ing., Arch.',
         examples: [
           ['Buonasera, dottor Esposito.', 'Boa noite, doutor Esposito.'],
           ['Gentile professoressa Marino, …', 'Prezada professora Marino, …'],
@@ -2620,7 +2620,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Gentile, Egregio, Caro',
-        text: '«Gentile» serve para homens e mulheres e é a saudação formal mais segura. «Egregio» é só masculino e mais solene. «Caro» e «cara» são para quem você conhece: um colega, um amigo, um cliente antigo. «Salve» é um meio-termo neutro, útil quando não se sabe se o tu é aceito. O condicional de cortesia (vorrei, potrebbe, sarebbe così gentile da…) suaviza qualquer pedido.',
+        text: '“Gentile” serve para homens e mulheres e é a saudação formal mais segura. “Egregio” é só masculino e mais solene. “Caro” e “cara” são para quem você conhece: um colega, um amigo, um cliente antigo. “Salve” é um meio-termo neutro, útil quando não se sabe se o tu é aceito. O condicional de cortesia (vorrei, potrebbe, sarebbe così gentile da…) suaviza qualquer pedido.',
         examples: [
           ['Gentile Signora Colombo, Le scrivo per confermare l’appuntamento di giovedì.', 'Prezada Senhora Colombo, escrevo para confirmar o compromisso de quinta-feira.'],
           ['Sarebbe così gentile da inviarmi il programma del corso?', 'Seria tão gentil de me enviar o programa do curso?'],
@@ -2630,40 +2630,40 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Misturar tu e Lei na mesma mensagem: «Gentile Dottore, ti scrivo…». Escolhido o Lei, mantenha verbo, Suo, La e Le até o fim.',
-      'Trocar La e Le: ringraziare, aiutare, chiamare e salutare pedem objeto direto em italiano («La ringrazio», «La chiamo»); scrivere, telefonare e chiedere pedem indireto («Le scrivo», «Le telefono»).',
-      'Achar que «dottore» é só médico. Na Itália, todo formado é «dottore» ou «dottoressa», e esquecer o título pode soar frio.',
-      'Escrever «Egregia Signora»: Egregio é só para homens. Para mulheres, use «Gentile Signora».',
-      'Dizer «signore Rossi» ou «dottore Bianchi»: antes do nome, o título perde o -e: «signor Rossi», «dottor Bianchi».',
-      'Traduzir «Atenciosamente» ao pé da letra. A despedida formal é «Cordiali saluti» ou «Distinti saluti».',
+      'Misturar tu e Lei na mesma mensagem: “Gentile Dottore, ti scrivo…”. Escolhido o Lei, mantenha verbo, Suo, La e Le até o fim.',
+      'Trocar La e Le: ringraziare, aiutare, chiamare e salutare pedem objeto direto em italiano (“La ringrazio”, “La chiamo”); scrivere, telefonare e chiedere pedem indireto (“Le scrivo”, “Le telefono”).',
+      'Achar que “dottore” é só médico. Na Itália, todo formado é “dottore” ou “dottoressa”, e esquecer o título pode soar frio.',
+      'Escrever “Egregia Signora”: Egregio é só para homens. Para mulheres, use “Gentile Signora”.',
+      'Dizer “signore Rossi” ou “dottore Bianchi”: antes do nome, o título perde o -e: “signor Rossi”, “dottor Bianchi”.',
+      'Traduzir “Atenciosamente” ao pé da letra. A despedida formal é “Cordiali saluti” ou “Distinti saluti”.',
     ],
     quiz: [
       {
         question: 'Qual é a saudação adequada num e-mail à diretora de uma escola que você não conhece?',
         options: ['Gentile Direttrice,', 'Cara Direttrice,', 'Egregia Direttrice,'],
         answer: 'Gentile Direttrice,',
-        explanation: '«Gentile» é a saudação formal para homens e mulheres. «Cara» é para conhecidos e «Egregio» só existe no masculino.',
+        explanation: '“Gentile” é a saudação formal para homens e mulheres. “Cara” é para conhecidos e “Egregio” só existe no masculino.',
       },
       {
-        question: 'Complete: «___ ringrazio per la Sua disponibilità.»',
+        question: 'Complete: “___ ringrazio per la Sua disponibilità.”',
         options: ['La', 'Le', 'Lei'],
         answer: 'La',
-        explanation: 'Ringraziare pede objeto direto em italiano (ringraziare qualcuno): «La ringrazio».',
+        explanation: 'Ringraziare pede objeto direto em italiano (ringraziare qualcuno): “La ringrazio”.',
       },
       {
-        question: 'Complete: «___ scrivo per chiedere informazioni sul corso.»',
+        question: 'Complete: “___ scrivo per chiedere informazioni sul corso.”',
         options: ['La', 'Le', 'Lei'],
         answer: 'Le',
-        explanation: 'Scrivere pede objeto indireto (scrivere a qualcuno): «Le scrivo».',
+        explanation: 'Scrivere pede objeto indireto (scrivere a qualcuno): “Le scrivo”.',
       },
       {
-        question: 'Como se diz «Sente-se, por favor» a um cliente?',
+        question: 'Como se diz “Sente-se, por favor” a um cliente?',
         options: ['Si accomodi, prego.', 'Accomodati, prego.', 'Si accomoda, prego.'],
         answer: 'Si accomodi, prego.',
-        explanation: 'O imperativo do Lei usa o congiuntivo presente: si accomodi. «Accomodati» é do tu; «si accomoda» é o indicativo.',
+        explanation: 'O imperativo do Lei usa o congiuntivo presente: si accomodi. “Accomodati” é do tu; “si accomoda” é o indicativo.',
       },
       {
-        question: 'Complete: «Buongiorno, ___ Rossi, come sta?»',
+        question: 'Complete: “Buongiorno, ___ Rossi, come sta?”',
         options: ['signor', 'signore', 'signori'],
         answer: 'signor',
         explanation: 'Diante de um nome, signore perde o -e: signor Rossi. O mesmo vale para dottor, professor e ingegner.',
@@ -2680,11 +2680,11 @@ export const GRAMMAR_IT: GrammarTopic[] = [
     summary: 'Um verbo comum + pronomes grudados (se, ne, la, ce) e o sentido muda: andare é ir, andarsene é ir embora; fare é fazer, farcela é conseguir. São verbos do dia a dia, e o segredo está em conjugar os pronomes.',
     sections: [
       {
-        text: 'Os verbos pronominais levam um ou dois pronomes fixos que não se referem a nada concreto: o «la» de farcela não é «ela», o «ne» de andarsene não é «disso». O conjunto funciona como uma palavra nova, com sentido idiomático. O português tem casos parecidos («se virar», «dar-se bem»), mas o italiano usa muito mais, sobretudo na fala.',
+        text: 'Os verbos pronominais levam um ou dois pronomes fixos que não se referem a nada concreto: o “la” de farcela não é “ela”, o “ne” de andarsene não é “disso”. O conjunto funciona como uma palavra nova, com sentido idiomático. O português tem casos parecidos (“se virar”, “dar-se bem”), mas o italiano usa muito mais, sobretudo na fala.',
       },
       {
         heading: 'Os mais usados',
-        text: 'Quando dois pronomes se juntam, o primeiro muda o -i para -e: mi → me, ti → te, si → se, ci → ce, vi → ve. Nos tempos compostos, os verbos com «si» usam essere; farcela usa avere. O particípio concorda com o «la» fixo: ce l’ho fatta, me la sono cavata, se l’è presa.',
+        text: 'Quando dois pronomes se juntam, o primeiro muda o -i para -e: mi → me, ti → te, si → se, ci → ce, vi → ve. Nos tempos compostos, os verbos com “si” usam essere; farcela usa avere. O particípio concorda com o “la” fixo: ce l’ho fatta, me la sono cavata, se l’è presa.',
         table: {
           head: ['Verbo', 'Presente (io)', 'Passato prossimo (io)', 'Sentido'],
           rows: [
@@ -2702,7 +2702,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Conjugando andarsene e farcela',
-        text: 'Os pronomes seguem a pessoa (me ne, te ne, se ne…), mas o «ce la» de farcela não muda. No imperativo afirmativo e no infinitivo, os pronomes se grudam no fim do verbo: vattene!, andatevene!; «devo andarmene» ou «me ne devo andare». No imperativo do Lei, ficam antes: «se ne vada!».',
+        text: 'Os pronomes seguem a pessoa (me ne, te ne, se ne…), mas o “ce la” de farcela não muda. No imperativo afirmativo e no infinitivo, os pronomes se grudam no fim do verbo: vattene!, andatevene!; “devo andarmene” ou “me ne devo andare”. No imperativo do Lei, ficam antes: “se ne vada!”.',
         table: {
           head: ['Pessoa', 'andarsene', 'farcela'],
           rows: [
@@ -2724,7 +2724,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Outros verbos da conversa',
-        text: 'Smetterla (parar com algo irritante) aparece sobretudo no imperativo: smettila!, smettetela!. Prendersela con qualcuno é culpar ou descontar em alguém. Passarsela é «estar passando» (come te la passi? = como vai a vida?). Aspettarselo é «esperar por isso», sobretudo em «me lo aspettavo» e «non me l’aspettavo».',
+        text: 'Smetterla (parar com algo irritante) aparece sobretudo no imperativo: smettila!, smettetela!. Prendersela con qualcuno é culpar ou descontar em alguém. Passarsela é “estar passando” (come te la passi? = como vai a vida?). Aspettarselo é “esperar por isso”, sobretudo em “me lo aspettavo” e “non me l’aspettavo”.',
         examples: [
           ['Me la cavo abbastanza bene con il tedesco.', 'Eu me viro bem no alemão.'],
           ['Non prendertela, era solo uno scherzo!', 'Não fica chateado, era só brincadeira!'],
@@ -2736,40 +2736,40 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Dizer «mi ne vado» ou «si ne va». Antes de ne e la, os pronomes mudam: «me ne vado», «se ne va».',
-      'Dizer «vado via» achando que é errado: está certo e é muito comum. «Me ne vado» é só mais expressivo; mas «mi vado» não existe.',
-      'Esquecer a concordância com o «la» fixo: «ce l’ho fatto» está errado; o certo é «ce l’ho fatta», mesmo para um homem.',
-      'Usar avere com andarsene ou cavarsela: «me ne ho andato» não existe. Com «si», o auxiliar é essere: «me ne sono andato».',
-      'Traduzir «me la prendo» por «eu a pego». Não há objeto nenhum: quer dizer «fico chateado».',
-      'No imperativo negativo do tu, usar o imperativo afirmativo: «non te la prendi!». O certo é non + infinitivo: «non te la prendere!» ou «non prendertela!».',
+      'Dizer “mi ne vado” ou “si ne va”. Antes de ne e la, os pronomes mudam: “me ne vado”, “se ne va”.',
+      'Dizer “vado via” achando que é errado: está certo e é muito comum. “Me ne vado” é só mais expressivo; mas “mi vado” não existe.',
+      'Esquecer a concordância com o “la” fixo: “ce l’ho fatto” está errado; o certo é “ce l’ho fatta”, mesmo para um homem.',
+      'Usar avere com andarsene ou cavarsela: “me ne ho andato” não existe. Com “si”, o auxiliar é essere: “me ne sono andato”.',
+      'Traduzir “me la prendo” por “eu a pego”. Não há objeto nenhum: quer dizer “fico chateado”.',
+      'No imperativo negativo do tu, usar o imperativo afirmativo: “non te la prendi!”. O certo é non + infinitivo: “non te la prendere!” ou “non prendertela!”.',
     ],
     quiz: [
       {
-        question: 'Complete: «È tardi, io ___.»',
+        question: 'Complete: “È tardi, io ___.”',
         options: ['mi ne vado', 'me ne vado', 'me ne va'],
         answer: 'me ne vado',
-        explanation: 'Antes de «ne», mi vira me: me ne vado.',
+        explanation: 'Antes de “ne”, mi vira me: me ne vado.',
       },
       {
-        question: 'Complete: «Era difficile, ma alla fine Luca ___!»',
+        question: 'Complete: “Era difficile, ma alla fine Luca ___!”',
         options: ['ce l’ha fatta', 'ce l’ha fatto', 'ce la è fatta'],
         answer: 'ce l’ha fatta',
-        explanation: 'Farcela usa avere, e o particípio concorda com o «la» fixo: fatta, mesmo quando o sujeito é homem.',
+        explanation: 'Farcela usa avere, e o particípio concorda com o “la” fixo: fatta, mesmo quando o sujeito é homem.',
       },
       {
-        question: 'Complete: «Non te ___: era solo uno scherzo!»',
+        question: 'Complete: “Non te ___: era solo uno scherzo!”',
         options: ['la prendi', 'la prendere', 'ne prendere'],
         answer: 'la prendere',
         explanation: 'O imperativo negativo do tu é non + infinitivo: non te la prendere.',
       },
       {
-        question: 'Qual frase tem o mesmo sentido de «Me la cavo con l’inglese»?',
+        question: 'Qual frase tem o mesmo sentido de “Me la cavo con l’inglese”?',
         options: ['Mi arrangio con l’inglese.', 'Ho rinunciato all’inglese.', 'Odio l’inglese.'],
         answer: 'Mi arrangio con l’inglese.',
         explanation: 'Cavarsela = se virar, sair-se razoavelmente bem.',
       },
       {
-        question: 'Complete: «Marta ___ andata senza salutare.»',
+        question: 'Complete: “Marta ___ andata senza salutare.”',
         options: ['si è ne', 'se n’è', 'se ne ha'],
         answer: 'se n’è',
         explanation: 'Andarsene no passato prossimo: se ne + è = se n’è andata, com essere e particípio concordando com Marta.',
@@ -2781,7 +2781,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
     level: 'B2.3',
     title: 'Expressões idiomáticas',
     emoji: '🐺',
-    summary: '«In bocca al lupo», «essere al verde», «prendere in giro»: expressões que não se traduzem palavra por palavra. Algumas têm par exato no português; outras enganam justamente porque parecem transparentes.',
+    summary: '“In bocca al lupo”, “essere al verde”, “prendere in giro”: expressões que não se traduzem palavra por palavra. Algumas têm par exato no português; outras enganam justamente porque parecem transparentes.',
     sections: [
       {
         text: 'As expressões idiomáticas (modi di dire) são parte do italiano de todo dia, na conversa, na TV e nos jornais. Muitas coincidem com o português, por virem das mesmas imagens latinas e cristãs; outras usam a imagem certa num sentido inesperado. A regra é aprender a expressão inteira, com o verbo, e nunca montar o equivalente a partir do português.',
@@ -2833,7 +2833,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Provérbios do dia a dia',
-        text: 'Os provérbios (proverbi) aparecem inteiros ou pela metade, quando o ouvinte completa de cabeça: «chi va piano…» (va sano e va lontano).',
+        text: 'Os provérbios (proverbi) aparecem inteiros ou pela metade, quando o ouvinte completa de cabeça: “chi va piano…” (va sano e va lontano).',
         examples: [
           ['Chi dorme non piglia pesci.', 'Quem dorme não pega peixe (Deus ajuda quem cedo madruga).'],
           ['Chi va piano va sano e va lontano.', 'Devagar se vai ao longe.'],
@@ -2844,42 +2844,42 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Responder «Grazie!» a «In bocca al lupo!». A resposta tradicional é «Crepi!» (ou «Crepi il lupo!»).',
-      'Entender «prendere in giro» ao pé da letra. Não tem nada de passeio: é zoar alguém ou enganar.',
-      'Achar que «essere in gamba» fala de pernas: é elogio, quer dizer ser capaz, esperto.',
-      'Traduzir as expressões portuguesas palavra por palavra: «pagar mico» em italiano é «fare una figuraccia», e «estar duro» é «essere al verde».',
-      'Usar «rompere le scatole» em situação formal: é informal, embora não seja vulgar. Com desconhecidos, prefira «disturbare».',
+      'Responder “Grazie!” a “In bocca al lupo!”. A resposta tradicional é “Crepi!” (ou “Crepi il lupo!”).',
+      'Entender “prendere in giro” ao pé da letra. Não tem nada de passeio: é zoar alguém ou enganar.',
+      'Achar que “essere in gamba” fala de pernas: é elogio, quer dizer ser capaz, esperto.',
+      'Traduzir as expressões portuguesas palavra por palavra: “pagar mico” em italiano é “fare una figuraccia”, e “estar duro” é “essere al verde”.',
+      'Usar “rompere le scatole” em situação formal: é informal, embora não seja vulgar. Com desconhecidos, prefira “disturbare”.',
     ],
     quiz: [
       {
-        question: 'Um amigo diz «In bocca al lupo!» antes da sua entrevista. O que você responde?',
+        question: 'Um amigo diz “In bocca al lupo!” antes da sua entrevista. O que você responde?',
         options: ['Crepi!', 'Anche a te!', 'Prego!'],
         answer: 'Crepi!',
-        explanation: 'A resposta tradicional a «in bocca al lupo» (boa sorte) é «crepi» (que o lobo morra).',
+        explanation: 'A resposta tradicional a “in bocca al lupo” (boa sorte) é “crepi” (que o lobo morra).',
       },
       {
-        question: 'O que significa «Sono al verde»?',
+        question: 'O que significa “Sono al verde”?',
         options: ['Estou sem dinheiro.', 'Estou com inveja.', 'Estou no campo.'],
         answer: 'Estou sem dinheiro.',
-        explanation: '«Essere al verde» = estar duro, sem grana.',
+        explanation: '“Essere al verde” = estar duro, sem grana.',
       },
       {
-        question: 'Como se diz «Paguei o maior mico na festa»?',
+        question: 'Como se diz “Paguei o maior mico na festa”?',
         options: ['Ho fatto una figuraccia alla festa.', 'Ho pagato una scimmia alla festa.', 'Ho fatto bella figura alla festa.'],
         answer: 'Ho fatto una figuraccia alla festa.',
-        explanation: '«Fare una figuraccia» = passar vergonha. «Fare bella figura» é o contrário: causar boa impressão.',
+        explanation: '“Fare una figuraccia” = passar vergonha. “Fare bella figura” é o contrário: causar boa impressão.',
       },
       {
         question: 'Qual é o elogio?',
         options: ['È una ragazza in gamba.', 'È una ragazza al verde.', 'È una ragazza che rompe le scatole.'],
         answer: 'È una ragazza in gamba.',
-        explanation: '«Essere in gamba» = ser capaz, competente.',
+        explanation: '“Essere in gamba” = ser capaz, competente.',
       },
       {
-        question: 'Complete: «Non vedo ___ di partire per le vacanze!»',
+        question: 'Complete: “Non vedo ___ di partire per le vacanze!”',
         options: ['l’ora', 'il tempo', 'il momento'],
         answer: 'l’ora',
-        explanation: '«Non vedere l’ora di» = mal poder esperar para. A expressão é fixa, como o nosso «não ver a hora».',
+        explanation: '“Non vedere l’ora di” = mal poder esperar para. A expressão é fixa, como o nosso “não ver a hora”.',
       },
     ],
   },
@@ -2888,7 +2888,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
     level: 'B2.3',
     title: 'Gerundio e participio assoluti',
     emoji: '⏳',
-    summary: '«Essendo stanco, sono rimasto a casa»; «Finita la cena, siamo usciti». O gerúndio e o particípio condensam uma oração inteira. O português tem as mesmas construções, mas o italiano as usa com regras mais estritas de sujeito e concordância.',
+    summary: '“Essendo stanco, sono rimasto a casa”; “Finita la cena, siamo usciti”. O gerúndio e o particípio condensam uma oração inteira. O português tem as mesmas construções, mas o italiano as usa com regras mais estritas de sujeito e concordância.',
     sections: [
       {
         text: 'Uma oração subordinada (porque estava cansado, depois que o jantar terminou) pode ser encurtada com um gerúndio ou um particípio, sem conjunção e sem verbo conjugado. É uma marca do italiano escrito e culto, mas o gerúndio aparece muito também na fala. A regra de ouro: o gerúndio, em geral, tem o mesmo sujeito da oração principal.',
@@ -2906,7 +2906,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'O gerúndio e seus valores',
-        text: 'O gerúndio presente indica ação simultânea; o passato, ação anterior. Conforme o contexto, ele tem valor de causa, tempo, modo, condição ou (com «pur») concessão. Os pronomes átonos se grudam no fim: vedendola, avendoglielo detto. Se o sujeito do gerúndio for diferente, ele vem expresso depois do gerúndio: «Essendo il treno in ritardo, abbiamo preso un taxi».',
+        text: 'O gerúndio presente indica ação simultânea; o passato, ação anterior. Conforme o contexto, ele tem valor de causa, tempo, modo, condição ou (com “pur”) concessão. Os pronomes átonos se grudam no fim: vedendola, avendoglielo detto. Se o sujeito do gerúndio for diferente, ele vem expresso depois do gerúndio: “Essendo il treno in ritardo, abbiamo preso un taxi”.',
         table: {
           head: ['Valor', 'Exemplo', 'Português'],
           rows: [
@@ -2928,7 +2928,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'O particípio absoluto',
-        text: 'O particípio passado sozinho indica uma ação concluída antes da principal («depois que…», «uma vez que…»). Com verbos transitivos, ele concorda com o objeto, que vem depois: «finita la lezione», «scritte le lettere». Com verbos intransitivos de essere, concorda com o sujeito: «arrivata a casa, Maria…». «Una volta» + particípio reforça a ideia de tempo. É o mesmo do português «terminado o jantar», só que bem mais frequente.',
+        text: 'O particípio passado sozinho indica uma ação concluída antes da principal (“depois que…”, “uma vez que…”). Com verbos transitivos, ele concorda com o objeto, que vem depois: “finita la lezione”, “scritte le lettere”. Com verbos intransitivos de essere, concorda com o sujeito: “arrivata a casa, Maria…”. “Una volta” + particípio reforça a ideia de tempo. É o mesmo do português “terminado o jantar”, só que bem mais frequente.',
         table: {
           head: ['Exemplo', 'Concorda com', 'Português'],
           rows: [
@@ -2943,39 +2943,39 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'O gerúndio «solto»: «Entrando in casa, il cane mi ha salutato» quer dizer que o cachorro entrou. Com sujeitos diferentes, use uma oração: «Quando sono entrato in casa, il cane mi ha salutato».',
-      'Usar o gerúndio para uma consequência posterior, como no português jornalístico: «Il treno è partito, arrivando alle dieci». Em italiano, prefira «ed è arrivato alle dieci».',
-      'Esquecer a concordância do particípio absoluto: «Finito la cena» está errado; o particípio concorda com «la cena»: «Finita la cena».',
-      'Usar «essendo» com verbo de avere: «essendo mangiato». O gerúndio passato usa o mesmo auxiliar do passato prossimo: «avendo mangiato», «essendo partito».',
-      'Traduzir «embora» + gerúndio sem o «pur»: «Essendo ricco, vive in modo semplice» soa como causa. A concessão pede «pur essendo ricco».',
+      'O gerúndio “solto”: “Entrando in casa, il cane mi ha salutato” quer dizer que o cachorro entrou. Com sujeitos diferentes, use uma oração: “Quando sono entrato in casa, il cane mi ha salutato”.',
+      'Usar o gerúndio para uma consequência posterior, como no português jornalístico: “Il treno è partito, arrivando alle dieci”. Em italiano, prefira “ed è arrivato alle dieci”.',
+      'Esquecer a concordância do particípio absoluto: “Finito la cena” está errado; o particípio concorda com “la cena”: “Finita la cena”.',
+      'Usar “essendo” com verbo de avere: “essendo mangiato”. O gerúndio passato usa o mesmo auxiliar do passato prossimo: “avendo mangiato”, “essendo partito”.',
+      'Traduzir “embora” + gerúndio sem o “pur”: “Essendo ricco, vive in modo semplice” soa como causa. A concessão pede “pur essendo ricco”.',
     ],
     quiz: [
       {
-        question: 'Complete: «___ il film, siamo andati a cena.»',
+        question: 'Complete: “___ il film, siamo andati a cena.”',
         options: ['Finito', 'Finita', 'Finiti'],
         answer: 'Finito',
-        explanation: 'O particípio absoluto concorda com «il film», masculino singular.',
+        explanation: 'O particípio absoluto concorda com “il film”, masculino singular.',
       },
       {
-        question: 'Complete: «___ tutte le lettere, Paolo è uscito.»',
+        question: 'Complete: “___ tutte le lettere, Paolo è uscito.”',
         options: ['Scritto', 'Scritte', 'Scrivendo'],
         answer: 'Scritte',
-        explanation: 'Ação concluída antes da principal: particípio absoluto concordando com «le lettere» (feminino plural).',
+        explanation: 'Ação concluída antes da principal: particípio absoluto concordando com “le lettere” (feminino plural).',
       },
       {
-        question: 'Qual frase quer dizer «Embora seja rico, vive com simplicidade»?',
+        question: 'Qual frase quer dizer “Embora seja rico, vive com simplicidade”?',
         options: ['Pur essendo ricco, vive in modo semplice.', 'Essendo ricco, vive in modo semplice.', 'Pur avendo ricco, vive in modo semplice.'],
         answer: 'Pur essendo ricco, vive in modo semplice.',
-        explanation: 'O gerúndio com valor concessivo pede «pur». Sem ele, a frase soa como causa.',
+        explanation: 'O gerúndio com valor concessivo pede “pur”. Sem ele, a frase soa como causa.',
       },
       {
-        question: 'Complete: «___ già mangiato, non ho ordinato niente.»',
+        question: 'Complete: “___ già mangiato, non ho ordinato niente.”',
         options: ['Essendo', 'Avendo', 'Avuto'],
         answer: 'Avendo',
         explanation: 'Mangiare usa avere no passato prossimo; o gerundio passato é avendo mangiato.',
       },
       {
-        question: 'Complete: «___ a Torino, Giulia ha chiamato la madre.»',
+        question: 'Complete: “___ a Torino, Giulia ha chiamato la madre.”',
         options: ['Arrivata', 'Arrivato', 'Avendo arrivato'],
         answer: 'Arrivata',
         explanation: 'Com verbo de essere, o particípio absoluto concorda com o sujeito: Giulia, feminino.',
@@ -2989,10 +2989,10 @@ export const GRAMMAR_IT: GrammarTopic[] = [
     level: 'B2.4',
     title: 'Opinião, argumentação e conectores',
     emoji: '⚖️',
-    summary: '«Credo che sia» mas «secondo me è»; «sebbene» pede congiuntivo, «anche se» não. Para argumentar em italiano, é preciso saber que modo verbal cada expressão e cada conector exigem.',
+    summary: '“Credo che sia” mas “secondo me è”; “sebbene” pede congiuntivo, “anche se” não. Para argumentar em italiano, é preciso saber que modo verbal cada expressão e cada conector exigem.',
     sections: [
       {
-        text: 'Numa discussão, num texto de opinião ou numa prova de redação, o italiano marca com o modo verbal a diferença entre certeza e opinião. Verbos de opinião (credere, pensare, ritenere, sembrare) pedem congiuntivo; expressões de certeza (sono sicuro, è evidente, so) pedem indicativo. Na fala informal, muitos italianos usam o indicativo depois de «penso che», mas na escrita e no registro culto o congiuntivo é esperado.',
+        text: 'Numa discussão, num texto de opinião ou numa prova de redação, o italiano marca com o modo verbal a diferença entre certeza e opinião. Verbos de opinião (credere, pensare, ritenere, sembrare) pedem congiuntivo; expressões de certeza (sono sicuro, è evidente, so) pedem indicativo. Na fala informal, muitos italianos usam o indicativo depois de “penso che”, mas na escrita e no registro culto o congiuntivo é esperado.',
       },
       {
         heading: 'Dar a opinião',
@@ -3054,40 +3054,40 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar congiuntivo depois de «secondo me»: «secondo me sia giusto». «Secondo me» pede indicativo: «secondo me è giusto».',
-      'Usar «che» quando o sujeito é o mesmo: «penso che io abbia ragione». O natural é «penso di avere ragione».',
-      'Confundir «infatti» com «mas na verdade». Infatti confirma o que foi dito (de fato, tanto que); para contrastar, use «invece» ou «in realtà».',
-      'Pôr congiuntivo depois de «anche se»: «anche se sia tardi». Anche se pede indicativo; sebbene e benché pedem congiuntivo.',
-      'Usar «siccome» no meio da frase, como «porque». Siccome abre a frase («Siccome piove, resto a casa»); no meio, use «perché» ou «poiché».',
-      'Traduzir «anzi» como «antes». Anzi corrige ou reforça: «pelo contrário», «aliás».',
+      'Usar congiuntivo depois de “secondo me”: “secondo me sia giusto”. “Secondo me” pede indicativo: “secondo me è giusto”.',
+      'Usar “che” quando o sujeito é o mesmo: “penso che io abbia ragione”. O natural é “penso di avere ragione”.',
+      'Confundir “infatti” com “mas na verdade”. Infatti confirma o que foi dito (de fato, tanto que); para contrastar, use “invece” ou “in realtà”.',
+      'Pôr congiuntivo depois de “anche se”: “anche se sia tardi”. Anche se pede indicativo; sebbene e benché pedem congiuntivo.',
+      'Usar “siccome” no meio da frase, como “porque”. Siccome abre a frase (“Siccome piove, resto a casa”); no meio, use “perché” ou “poiché”.',
+      'Traduzir “anzi” como “antes”. Anzi corrige ou reforça: “pelo contrário”, “aliás”.',
     ],
     quiz: [
       {
-        question: 'Complete: «Credo che Marco ___ ragione.»',
+        question: 'Complete: “Credo che Marco ___ ragione.”',
         options: ['ha', 'abbia', 'avere'],
         answer: 'abbia',
         explanation: 'Verbos de opinião (credere, pensare) pedem congiuntivo: credo che abbia.',
       },
       {
-        question: 'Complete: «Secondo me questo progetto ___ troppo caro.»',
+        question: 'Complete: “Secondo me questo progetto ___ troppo caro.”',
         options: ['è', 'sia', 'fosse'],
         answer: 'è',
-        explanation: '«Secondo me» não é verbo de opinião, é um advérbio de ponto de vista: pede indicativo.',
+        explanation: '“Secondo me” não é verbo de opinião, é um advérbio de ponto de vista: pede indicativo.',
       },
       {
-        question: 'Complete: «Ti presto la macchina, purché tu la ___ entro sera.»',
+        question: 'Complete: “Ti presto la macchina, purché tu la ___ entro sera.”',
         options: ['riporti', 'riporta', 'riporterai'],
         answer: 'riporti',
-        explanation: '«Purché» (contanto que) pede congiuntivo.',
+        explanation: '“Purché” (contanto que) pede congiuntivo.',
       },
       {
-        question: 'Qual conector completa: «Il piano è interessante; ___, costa troppo.»',
+        question: 'Qual conector completa: “Il piano è interessante; ___, costa troppo.”',
         options: ['infatti', 'tuttavia', 'pertanto'],
         answer: 'tuttavia',
         explanation: 'É preciso um contraste: tuttavia (no entanto). Infatti confirmaria e pertanto concluiria.',
       },
       {
-        question: 'Complete: «Penso ___ partire domani.» (quem parte sou eu)',
+        question: 'Complete: “Penso ___ partire domani.” (quem parte sou eu)',
         options: ['che', 'di', 'a'],
         answer: 'di',
         explanation: 'Com o mesmo sujeito, usa-se di + infinito: penso di partire.',
@@ -3099,14 +3099,14 @@ export const GRAMMAR_IT: GrammarTopic[] = [
     level: 'B2.4',
     title: 'Concordanza dei tempi',
     emoji: '🕰️',
-    summary: 'O tempo da oração principal decide o tempo da subordinada. A grande surpresa: o «futuro do passado» italiano é o condizionale PASSATO: «ha detto che sarebbe venuto», onde o português diz «disse que viria».',
+    summary: 'O tempo da oração principal decide o tempo da subordinada. A grande surpresa: o “futuro do passado” italiano é o condizionale PASSATO: “ha detto che sarebbe venuto”, onde o português diz “disse que viria”.',
     sections: [
       {
         text: 'A concordância dos tempos (concordanza dei tempi) é a combinação entre o tempo da oração principal e o da subordinada. Ela depende de duas coisas: se a principal está no presente ou no passado, e se a ação da subordinada é anterior, simultânea ou posterior. Boa parte coincide com o português; o que muda é a posterioridade no passado e o rigor do congiuntivo.',
       },
       {
         heading: 'Com o indicativo',
-        text: 'Verbos como dire, sapere, scrivere e sono sicuro pedem indicativo. Com a principal no passado, o futuro vira condizionale passato: é o «futuro nel passato». O condizionale presente («ha detto che verrebbe») existe na fala de algumas regiões, mas não é a norma.',
+        text: 'Verbos como dire, sapere, scrivere e sono sicuro pedem indicativo. Com a principal no passado, o futuro vira condizionale passato: é o “futuro nel passato”. O condizionale presente (“ha detto che verrebbe”) existe na fala de algumas regiões, mas não é a norma.',
         table: {
           head: ['Principal', 'Anterior', 'Simultânea', 'Posterior'],
           rows: [
@@ -3143,7 +3143,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Com o condizionale na principal',
-        text: 'Vorrei che, preferirei che, sarebbe meglio che: o desejo no condicional pede congiuntivo imperfetto (simultâneo ou posterior) ou trapassato (anterior). Nunca congiuntivo presente: «vorrei che tu venga» é um erro clássico.',
+        text: 'Vorrei che, preferirei che, sarebbe meglio che: o desejo no condicional pede congiuntivo imperfetto (simultâneo ou posterior) ou trapassato (anterior). Nunca congiuntivo presente: “vorrei che tu venga” é um erro clássico.',
         table: {
           head: ['Principal', 'Simultânea / posterior', 'Anterior'],
           rows: [
@@ -3160,39 +3160,39 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Traduzir «disse que viria» por «ha detto che verrebbe». O futuro do passado em italiano é o condizionale passato: «ha detto che sarebbe venuto».',
-      'Manter o congiuntivo presente depois de um passado: «pensavo che sia». Com a principal no passado: «pensavo che fosse».',
-      'Usar congiuntivo presente depois de «vorrei che»: «vorrei che tu venga». O certo é «vorrei che tu venissi».',
-      'Esquecer a anterioridade no passado: «credevo che fosse partito» (já tinha partido) × «credevo che partisse» (estava partindo ou ia partir).',
-      'Achar que «spero che» segue o português «espero que» só no presente: para o passado, «spero che abbia dormito bene» (espero que tenha dormido bem).',
+      'Traduzir “disse que viria” por “ha detto che verrebbe”. O futuro do passado em italiano é o condizionale passato: “ha detto che sarebbe venuto”.',
+      'Manter o congiuntivo presente depois de um passado: “pensavo che sia”. Com a principal no passado: “pensavo che fosse”.',
+      'Usar congiuntivo presente depois de “vorrei che”: “vorrei che tu venga”. O certo é “vorrei che tu venissi”.',
+      'Esquecer a anterioridade no passado: “credevo che fosse partito” (já tinha partido) × “credevo che partisse” (estava partindo ou ia partir).',
+      'Achar que “spero che” segue o português “espero que” só no presente: para o passado, “spero che abbia dormito bene” (espero que tenha dormido bem).',
     ],
     quiz: [
       {
-        question: 'Complete: «Pensavo che tu ___ già a casa.»',
+        question: 'Complete: “Pensavo che tu ___ già a casa.”',
         options: ['sia', 'fossi', 'sei'],
         answer: 'fossi',
         explanation: 'Principal no passado + ação simultânea: congiuntivo imperfetto.',
       },
       {
-        question: 'Complete: «Marco ha detto che ___ il giorno dopo.»',
+        question: 'Complete: “Marco ha detto che ___ il giorno dopo.”',
         options: ['arriverebbe', 'sarebbe arrivato', 'arrivi'],
         answer: 'sarebbe arrivato',
-        explanation: 'Futuro no passado: condizionale passato, onde o português usa o condicional simples («chegaria»).',
+        explanation: 'Futuro no passado: condizionale passato, onde o português usa o condicional simples (“chegaria”).',
       },
       {
-        question: 'Complete: «Vorrei che voi ___ più attenzione.»',
+        question: 'Complete: “Vorrei che voi ___ più attenzione.”',
         options: ['facciate', 'faceste', 'fate'],
         answer: 'faceste',
         explanation: 'Vorrei che + congiuntivo imperfetto.',
       },
       {
-        question: 'Complete: «Non sapevo che Anna ___ il giorno prima.»',
+        question: 'Complete: “Non sapevo che Anna ___ il giorno prima.”',
         options: ['sia partita', 'fosse partita', 'partisse'],
         answer: 'fosse partita',
-        explanation: 'Principal no passado + ação anterior: congiuntivo trapassato. (Com «sapere», o indicativo «era partita» também é aceito.)',
+        explanation: 'Principal no passado + ação anterior: congiuntivo trapassato. (Com “sapere”, o indicativo “era partita” também é aceito.)',
       },
       {
-        question: 'Complete: «Spero che ieri tu ___ bene.»',
+        question: 'Complete: “Spero che ieri tu ___ bene.”',
         options: ['dorma', 'dormissi', 'abbia dormito'],
         answer: 'abbia dormito',
         explanation: 'Principal no presente + ação anterior: congiuntivo passato.',
@@ -3206,10 +3206,10 @@ export const GRAMMAR_IT: GrammarTopic[] = [
     level: 'C1.1',
     title: 'Os dialetos: línguas irmãs do italiano',
     emoji: '🗺️',
-    summary: 'Napoletano, siciliano, veneto, milanese: os «dialetti» não são italiano errado nem sotaque. São línguas neolatinas que nasceram do latim ao lado do florentino, que virou o italiano padrão.',
+    summary: 'Napoletano, siciliano, veneto, milanese: os “dialetti” não são italiano errado nem sotaque. São línguas neolatinas que nasceram do latim ao lado do florentino, que virou o italiano padrão.',
     sections: [
       {
-        text: 'Em cada região da Itália, o latim falado evoluiu de um jeito próprio e formou falares diferentes. Um deles, o florentino, ganhou prestígio no século XIV com Dante, Petrarca e Boccaccio e se tornou a base da língua escrita comum. Os outros continuaram vivos como línguas da casa, da rua e da poesia popular. Por isso, do ponto de vista linguístico, o napoletano ou o siciliano não derivam do italiano: são irmãos dele, filhos do mesmo latim. O nome «dialetto» indica o papel social (língua sem uso oficial), não um defeito.',
+        text: 'Em cada região da Itália, o latim falado evoluiu de um jeito próprio e formou falares diferentes. Um deles, o florentino, ganhou prestígio no século XIV com Dante, Petrarca e Boccaccio e se tornou a base da língua escrita comum. Os outros continuaram vivos como línguas da casa, da rua e da poesia popular. Por isso, do ponto de vista linguístico, o napoletano ou o siciliano não derivam do italiano: são irmãos dele, filhos do mesmo latim. O nome “dialetto” indica o papel social (língua sem uso oficial), não um defeito.',
       },
       {
         heading: 'Da Unificação à televisão',
@@ -3248,12 +3248,12 @@ export const GRAMMAR_IT: GrammarTopic[] = [
           ['’O sole mio (napoletano)', 'O meu sol: a canção de 1898, em napoletano, conhecida no mundo todo.'],
           ['Unni vai? (siciliano)', 'Aonde você vai? Em italiano: Dove vai?'],
           ['Ghe pensi mi. (milanese)', 'Deixa comigo. Em italiano: Ci penso io.'],
-          ['Ciao, dal veneziano «s-ciavo»', 'Tchau vem do veneziano «s-ciavo» (seu escravo, a seu dispor).'],
+          ['Ciao, dal veneziano “s-ciavo”', 'Tchau vem do veneziano “s-ciavo” (seu escravo, a seu dispor).'],
         ],
       },
       {
         heading: 'Traços de cada um',
-        text: 'O napoletano reduz as vogais finais a um som fraco, quase mudo, e usa os artigos ’o, ’a, ’e; tem uma longa tradição de teatro e canção. O siciliano tem só três vogais finais (-a, -i, -u: «beddu», «cumpari») e foi a língua da Escola Siciliana de poesia, na corte de Frederico II, no século XIII, a primeira poesia lírica em língua da península. O veneto usa «xe» para «è» e «sono» e foi a língua da administração da República de Veneza; Carlo Goldoni escreveu comédias nele. O milanese, do grupo galo-itálico, tem vogais como ö e ü, que lembram o francês, e uma poesia importante, como a de Carlo Porta.',
+        text: 'O napoletano reduz as vogais finais a um som fraco, quase mudo, e usa os artigos ’o, ’a, ’e; tem uma longa tradição de teatro e canção. O siciliano tem só três vogais finais (-a, -i, -u: “beddu”, “cumpari”) e foi a língua da Escola Siciliana de poesia, na corte de Frederico II, no século XIII, a primeira poesia lírica em língua da península. O veneto usa “xe” para “è” e “sono” e foi a língua da administração da República de Veneza; Carlo Goldoni escreveu comédias nele. O milanese, do grupo galo-itálico, tem vogais como ö e ü, que lembram o francês, e uma poesia importante, como a de Carlo Porta.',
       },
       {
         heading: 'Línguas minoritárias e o talian',
@@ -3266,11 +3266,11 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Chamar o dialeto de «italiano errado» ou «italiano mal falado». Ele tem gramática, vocabulário e literatura próprios; é outra língua da mesma família.',
+      'Chamar o dialeto de “italiano errado” ou “italiano mal falado”. Ele tem gramática, vocabulário e literatura próprios; é outra língua da mesma família.',
       'Confundir dialeto com sotaque regional. O sotaque é o jeito de pronunciar o italiano; o dialeto é outra língua, que um italiano de outra região muitas vezes não entende.',
       'Achar que todo italiano entende todos os dialetos. Um milanese pode não entender um siciliano falando em dialeto fechado.',
       'Imitar um dialeto para fazer graça com desconhecidos: pode soar como deboche. Mostrar interesse e perguntar como se diz algo costuma ser muito bem recebido.',
-      'Pensar que o talian do Rio Grande do Sul é «italiano antigo»: ele vem sobretudo do vêneto e evoluiu no Brasil, com palavras do português.',
+      'Pensar que o talian do Rio Grande do Sul é “italiano antigo”: ele vem sobretudo do vêneto e evoluiu no Brasil, com palavras do português.',
     ],
     quiz: [
       {
@@ -3280,21 +3280,21 @@ export const GRAMMAR_IT: GrammarTopic[] = [
         explanation: 'Eles nasceram do latim ao lado do florentino, que virou o italiano padrão. São irmãos, não derivados.',
       },
       {
-        question: 'Em que dialeto «Unni vai?» quer dizer «Dove vai?»?',
+        question: 'Em que dialeto “Unni vai?” quer dizer “Dove vai?”?',
         options: ['siciliano', 'veneto', 'milanese'],
         answer: 'siciliano',
-        explanation: '«Unni» é o «dove» siciliano.',
+        explanation: '“Unni” é o “dove” siciliano.',
       },
       {
-        question: 'De onde vem a saudação «ciao»?',
-        options: ['dal veneziano «s-ciavo»', 'dal latino «salve»', 'dal napoletano «guaglione»'],
-        answer: 'dal veneziano «s-ciavo»',
-        explanation: '«S-ciavo (vostro)» = «(sou seu) escravo», uma fórmula de cortesia veneziana que virou «ciao».',
+        question: 'De onde vem a saudação “ciao”?',
+        options: ['dal veneziano “s-ciavo”', 'dal latino “salve”', 'dal napoletano “guaglione”'],
+        answer: 'dal veneziano “s-ciavo”',
+        explanation: '“S-ciavo (vostro)” = “(sou seu) escravo”, uma fórmula de cortesia veneziana que virou “ciao”.',
       },
       {
-        question: 'Em «’O sole mio», o que é «’o»?',
-        options: ['l’articolo «il»', 'il pronome «lui»', 'l’interiezione «oh»'],
-        answer: 'l’articolo «il»',
+        question: 'Em “’O sole mio”, o que é “’o”?',
+        options: ['l’articolo “il”', 'il pronome “lui”', 'l’interiezione “oh”'],
+        answer: 'l’articolo “il”',
         explanation: 'Em napoletano, ’o é o artigo masculino: ’o sole = il sole.',
       },
       {
@@ -3317,7 +3317,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Pronúncia',
-        text: 'No Norte, o s entre vogais soa como z: «casa» soa «caza»; no Centro e no Sul, soa s: «cassa». Na Toscana, o c entre vogais pode virar aspiração («la hasa», a chamada gorgia toscana). No Centro e no Sul, as consoantes iniciais dobram depois de certas palavras: «a casa» soa «accasa». No Sul, é comum o «nd» virar «nn»: «quanno» por «quando». E o e aberto e fechado se distribuem de forma diferente em cada região: «perché» com e aberto no Norte, fechado em Florença.',
+        text: 'No Norte, o s entre vogais soa como z: “casa” soa “caza”; no Centro e no Sul, soa s: “cassa”. Na Toscana, o c entre vogais pode virar aspiração (“la hasa”, a chamada gorgia toscana). No Centro e no Sul, as consoantes iniciais dobram depois de certas palavras: “a casa” soa “accasa”. No Sul, é comum o “nd” virar “nn”: “quanno” por “quando”. E o e aberto e fechado se distribuem de forma diferente em cada região: “perché” com e aberto no Norte, fechado em Florença.',
       },
       {
         heading: 'Vocabulário',
@@ -3355,7 +3355,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Lei, tu e voi: quem usa o quê',
-        text: 'O tu se espalhou muito: é normal entre jovens, colegas de trabalho, nas redes sociais e em muitas lojas. O Lei continua sendo o padrão com desconhecidos adultos, clientes e superiores. Quem propõe passar ao tu é, em geral, a pessoa mais velha ou de posição mais alta: «Diamoci del tu!». O voi como tratamento de respeito a uma só pessoa foi comum por séculos; em 1938, o regime fascista tentou impor o voi no lugar do Lei, e depois da guerra o Lei voltou a ser a norma. Hoje, esse voi singular sobrevive no Sul, sobretudo na Campânia e na Puglia, com os mais velhos, e nas fórmulas comerciais («Vi ringraziamo per averci scelto»). No plural, voi serve tanto para o informal quanto, na prática, para o formal; o «Loro» formal é raro e soa antiquado.',
+        text: 'O tu se espalhou muito: é normal entre jovens, colegas de trabalho, nas redes sociais e em muitas lojas. O Lei continua sendo o padrão com desconhecidos adultos, clientes e superiores. Quem propõe passar ao tu é, em geral, a pessoa mais velha ou de posição mais alta: “Diamoci del tu!”. O voi como tratamento de respeito a uma só pessoa foi comum por séculos; em 1938, o regime fascista tentou impor o voi no lugar do Lei, e depois da guerra o Lei voltou a ser a norma. Hoje, esse voi singular sobrevive no Sul, sobretudo na Campânia e na Puglia, com os mais velhos, e nas fórmulas comerciais (“Vi ringraziamo per averci scelto”). No plural, voi serve tanto para o informal quanto, na prática, para o formal; o “Loro” formal é raro e soa antiquado.',
         table: {
           head: ['Pronome', 'Quando', 'Exemplo'],
           rows: [
@@ -3375,39 +3375,39 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Corrigir um italiano que diz «tengo fame» ou «la Giulia»: é italiano regional, normal na fala. Só evite essas formas na escrita formal.',
+      'Corrigir um italiano que diz “tengo fame” ou “la Giulia”: é italiano regional, normal na fala. Só evite essas formas na escrita formal.',
       'Achar que o voi para uma pessoa é erro ou falta de educação. No Sul, é uma forma respeitosa, sobretudo com idosos.',
-      'Passar ao tu por conta própria com um desconhecido mais velho. Espere o convite («diamoci del tu») ou pergunte: «Posso darLe del tu?».',
-      'Imaginar que «babbo» é bobo: em Florença e na Toscana, babbo é simplesmente «pai», e «Babbo Natale» é o Papai Noel em toda a Itália.',
-      'Dizer «darsi il tu» ou «farsi del tu». A expressão é fixa: dare del tu, dare del Lei, darsi del tu.',
+      'Passar ao tu por conta própria com um desconhecido mais velho. Espere o convite (“diamoci del tu”) ou pergunte: “Posso darLe del tu?”.',
+      'Imaginar que “babbo” é bobo: em Florença e na Toscana, babbo é simplesmente “pai”, e “Babbo Natale” é o Papai Noel em toda a Itália.',
+      'Dizer “darsi il tu” ou “farsi del tu”. A expressão é fixa: dare del tu, dare del Lei, darsi del tu.',
     ],
     quiz: [
       {
-        question: 'Em Florença, o que quer dizer «babbo»?',
+        question: 'Em Florença, o que quer dizer “babbo”?',
         options: ['papà', 'nonno', 'bambino'],
         answer: 'papà',
-        explanation: 'Na Toscana, babbo é o pai. Por isso o Papai Noel é «Babbo Natale».',
+        explanation: 'Na Toscana, babbo é o pai. Por isso o Papai Noel é “Babbo Natale”.',
       },
       {
         question: 'Qual frase é típica do italiano regional do Sul e se evita na escrita formal?',
         options: ['Tengo fame.', 'Ho fame.', 'Ho molta fame.'],
         answer: 'Tengo fame.',
-        explanation: 'No Sul, «tenere» é usado como «avere», por influência dos dialetos. No padrão: «ho fame».',
+        explanation: 'No Sul, “tenere” é usado como “avere”, por influência dos dialetos. No padrão: “ho fame”.',
       },
       {
-        question: 'Complete (a uma senhora desconhecida): «Signora, ___ è molto gentile.»',
+        question: 'Complete (a uma senhora desconhecida): “Signora, ___ è molto gentile.”',
         options: ['tu', 'Lei', 'Loro'],
         answer: 'Lei',
         explanation: 'Com uma desconhecida adulta, o tratamento padrão é o Lei.',
       },
       {
-        question: 'Como se propõe passar ao «tu»?',
+        question: 'Como se propõe passar ao “tu”?',
         options: ['Possiamo farci del tu?', 'Possiamo darci del tu?', 'Possiamo darci il tu?'],
         answer: 'Possiamo darci del tu?',
-        explanation: 'A expressão é «darsi del tu» (tratar-se por você).',
+        explanation: 'A expressão é “darsi del tu” (tratar-se por você).',
       },
       {
-        question: 'Em Nápoles, alguém pergunta a um idoso «Voi come state?». O que é isso?',
+        question: 'Em Nápoles, alguém pergunta a um idoso “Voi come state?”. O que é isso?',
         options: ['un uso regionale e rispettoso del voi', 'un errore di grammatica', 'una forma offensiva'],
         answer: 'un uso regionale e rispettoso del voi',
         explanation: 'O voi singular de respeito ainda vive no Sul, sobretudo com os mais velhos.',
@@ -3419,7 +3419,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
     level: 'C1.1',
     title: 'Gírias, humor e ironia',
     emoji: '😏',
-    summary: '«Che figata!», «boh», «scialla»: a gíria dos italianos, e o humor que diz o contrário do que fala. Entender a ironia («Complimenti, eh!») é tão importante quanto entender as palavras.',
+    summary: '“Che figata!”, “boh”, “scialla”: a gíria dos italianos, e o humor que diz o contrário do que fala. Entender a ironia (“Complimenti, eh!”) é tão importante quanto entender as palavras.',
     sections: [
       {
         text: 'A gíria (gergo giovanile, linguaggio colloquiale) muda rápido e varia por região e geração; muitas palavras nasceram em Roma, Milão ou Nápoles e se espalharam pela TV, pela música e pela internet. Aqui estão as mais estáveis, que você vai ouvir de norte a sul. Use-as com amigos: com desconhecidos e no trabalho, soam desleixadas.',
@@ -3438,7 +3438,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
             ['dare buca', 'dar bolo', 'Mi ha dato buca di nuovo.'],
             ['scialla (Roma)', 'relaxa, de boa', 'Scialla, non è successo niente.'],
             ['rosicare (Roma)', 'morrer de inveja, ficar com raiva', 'Non rosicare, hai perso!'],
-            ['raga', 'galera (de «ragazzi»)', 'Raga, stasera pizza?'],
+            ['raga', 'galera (de “ragazzi”)', 'Raga, stasera pizza?'],
             ['sfigato', 'azarado; mané', 'Che sfigato, ha perso il treno!'],
             ['cioè…, tipo…', 'tipo…, assim…', 'Cioè, tipo, non lo so.'],
           ],
@@ -3473,7 +3473,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Fazer humor',
-        text: 'Uma piada contada é uma «barzelletta»; uma tirada rápida é uma «battuta». «Scherzare» é brincar, e «prendere in giro» é zoar alguém. O humor italiano tem raízes antigas: a commedia dell’arte deu personagens como Arlecchino, de Bergamo, e Pulcinella, de Nápoles. A atenuação também é humor: «non è proprio un genio» (não é exatamente um gênio) diz, com elegância, que a pessoa é bem pouco esperta.',
+        text: 'Uma piada contada é uma “barzelletta”; uma tirada rápida é uma “battuta”. “Scherzare” é brincar, e “prendere in giro” é zoar alguém. O humor italiano tem raízes antigas: a commedia dell’arte deu personagens como Arlecchino, de Bergamo, e Pulcinella, de Nápoles. A atenuação também é humor: “non è proprio un genio” (não é exatamente um gênio) diz, com elegância, que a pessoa é bem pouco esperta.',
         examples: [
           ['Stai scherzando?', 'Você está brincando?'],
           ['Dai, scherzavo!', 'Calma, eu estava brincando!'],
@@ -3483,42 +3483,42 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Confundir «casino» com cassino. Casino é bagunça, confusão, ou «um montão»; o cassino de jogo é «casinò».',
-      'Entender «Complimenti!» ou «Grazie tante!» sempre ao pé da letra. Com o tom arrastado, são ironia pura.',
-      'Usar gíria no trabalho ou com desconhecidos: «figo», «raga» e «scialla» são para amigos.',
-      'Achar que «dai» é só o verbo «dare». Na conversa, «dai!» é incentivo («vamos!») ou incredulidade («ma dai!» = não acredito!).',
-      'Chamar alguém de «sfigato» achando que é carinhoso: pode ofender. É «azarado», mas também «perdedor».',
+      'Confundir “casino” com cassino. Casino é bagunça, confusão, ou “um montão”; o cassino de jogo é “casinò”.',
+      'Entender “Complimenti!” ou “Grazie tante!” sempre ao pé da letra. Com o tom arrastado, são ironia pura.',
+      'Usar gíria no trabalho ou com desconhecidos: “figo”, “raga” e “scialla” são para amigos.',
+      'Achar que “dai” é só o verbo “dare”. Na conversa, “dai!” é incentivo (“vamos!”) ou incredulidade (“ma dai!” = não acredito!).',
+      'Chamar alguém de “sfigato” achando que é carinhoso: pode ofender. É “azarado”, mas também “perdedor”.',
     ],
     quiz: [
       {
-        question: 'Um amigo diz «Che figata!» sobre um show. O que ele achou?',
+        question: 'Um amigo diz “Che figata!” sobre um show. O que ele achou?',
         options: ['Muito legal', 'Horrível', 'Caro demais'],
         answer: 'Muito legal',
-        explanation: '«Figata» = coisa muito legal.',
+        explanation: '“Figata” = coisa muito legal.',
       },
       {
-        question: 'O que quer dizer «Mi ha dato buca»?',
+        question: 'O que quer dizer “Mi ha dato buca”?',
         options: ['Me deu um bolo', 'Me emprestou dinheiro', 'Me deu um presente'],
         answer: 'Me deu um bolo',
-        explanation: '«Dare buca» = faltar a um encontro combinado.',
+        explanation: '“Dare buca” = faltar a um encontro combinado.',
       },
       {
-        question: 'Você esqueceu o passaporte, e um amigo diz: «Complimenti, eh!». O que é isso?',
+        question: 'Você esqueceu o passaporte, e um amigo diz: “Complimenti, eh!”. O que é isso?',
         options: ['ironia', 'un complimento sincero', 'una domanda'],
         answer: 'ironia',
-        explanation: 'Elogio para um vacilo: é ironia, como o nosso «parabéns, hein!».',
+        explanation: 'Elogio para um vacilo: é ironia, como o nosso “parabéns, hein!”.',
       },
       {
-        question: '«C’era un casino di gente» significa:',
+        question: '“C’era un casino di gente” significa:',
         options: ['Tinha muita gente', 'Tinha gente num cassino', 'Tinha pouca gente'],
         answer: 'Tinha muita gente',
-        explanation: '«Un casino di» = um montão de. O cassino de jogo é «casinò».',
+        explanation: '“Un casino di” = um montão de. O cassino de jogo é “casinò”.',
       },
       {
         question: 'Alguém conta uma vantagem absurda. Qual resposta é irônica?',
         options: ['Sì, come no!', 'Meno male!', 'In bocca al lupo!'],
         answer: 'Sì, come no!',
-        explanation: '«Sì, come no!» = «ah, tá!»: mostra que você não acredita.',
+        explanation: '“Sì, come no!” = “ah, tá!”: mostra que você não acredita.',
       },
     ],
   },
@@ -3528,10 +3528,10 @@ export const GRAMMAR_IT: GrammarTopic[] = [
     level: 'C1.2',
     title: 'Nominalizações: o estilo nominal',
     emoji: '📑',
-    summary: 'Nos textos técnicos, o verbo vira substantivo: «approvare» vira «l’approvazione». Veja os sufixos, os verbos-suporte (effettuare, procedere a) e o gênero que engana o brasileiro (il viaggio, il messaggio).',
+    summary: 'Nos textos técnicos, o verbo vira substantivo: “approvare” vira “l’approvazione”. Veja os sufixos, os verbos-suporte (effettuare, procedere a) e o gênero que engana o brasileiro (il viaggio, il messaggio).',
     sections: [
       {
-        text: 'Relatórios, leis, artigos científicos e notícias preferem o substantivo ao verbo: em vez de «il governo ha approvato la legge», escrevem «l’approvazione della legge da parte del governo». É o chamado «stile nominale». O português faz o mesmo («a aprovação da lei»), e os sufixos são quase paralelos: -ção vira -zione, -mento continua -mento, -dade vira -tà.',
+        text: 'Relatórios, leis, artigos científicos e notícias preferem o substantivo ao verbo: em vez de “il governo ha approvato la legge”, escrevem “l’approvazione della legge da parte del governo”. É o chamado “stile nominale”. O português faz o mesmo (“a aprovação da lei”), e os sufixos são quase paralelos: -ção vira -zione, -mento continua -mento, -dade vira -tà.',
         table: {
           head: ['Sufixo', 'Verbo ou adjetivo', 'Substantivo', 'Gênero'],
           rows: [
@@ -3548,7 +3548,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Os verbos-suporte',
-        text: 'O estilo nominal troca o verbo simples por um verbo genérico + substantivo: «effettuare un pagamento» (= pagare), «procedere alla verifica» (= verificare). É típico da escrita técnica e burocrática. Você precisa reconhecer essas locuções e, quando escreve para ser claro, saber voltar ao verbo simples.',
+        text: 'O estilo nominal troca o verbo simples por um verbo genérico + substantivo: “effettuare un pagamento” (= pagare), “procedere alla verifica” (= verificare). É típico da escrita técnica e burocrática. Você precisa reconhecer essas locuções e, quando escreve para ser claro, saber voltar ao verbo simples.',
         table: {
           head: ['Locução nominal', 'Verbo simples', 'Português'],
           rows: [
@@ -3569,7 +3569,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Cadeias de complementos',
-        text: 'Com os verbos transformados em substantivos, a frase se enche de preposições articuladas: «in seguito all’aumento dei costi di produzione». Atenção a «da parte di», que indica quem faz a ação («l’approvazione da parte del Senato»), e a locuções como «a seguito di», «in vista di», «ai fini di», «in materia di».',
+        text: 'Com os verbos transformados em substantivos, a frase se enche de preposições articuladas: “in seguito all’aumento dei costi di produzione”. Atenção a “da parte di”, que indica quem faz a ação (“l’approvazione da parte del Senato”), e a locuções como “a seguito di”, “in vista di”, “ai fini di”, “in materia di”.',
         examples: [
           ['In seguito all’aumento dei costi di produzione, l’azienda ha ridotto gli investimenti.', 'Em razão do aumento dos custos de produção, a empresa reduziu os investimentos.'],
           ['L’approvazione del bilancio da parte del consiglio è prevista per marzo.', 'A aprovação do balanço pelo conselho está prevista para março.'],
@@ -3588,54 +3588,54 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Fazer feminino o que termina em -aggio: em português «a viagem, a mensagem, a paisagem, a coragem»; em italiano «il viaggio, il messaggio, il paesaggio, il coraggio», todos masculinos.',
-      'Errar o plural de -zione: «la decisione» → «le decisioni» (não «decisiones» nem «decisione»). E as palavras em -tà não mudam no plural: «la possibilità» → «le possibilità».',
-      'Copiar o sufixo do português: «-ção» não vira «-ciona» nem «-zão». É sempre «-zione» (azione, situazione) ou «-sione» (decisione, discussione).',
-      'Usar «realizzare» como «fazer, executar» em tudo: em italiano ele também significa «perceber, dar-se conta» («ho realizzato che…» = percebi que…), por influência do inglês. Em texto técnico, prefira «svolgere», «effettuare», «realizzare un progetto».',
-      '«Mancato» antes do substantivo não é «faltado»: «la mancata consegna» = a não entrega; «il mancato pagamento» = o não pagamento.',
+      'Fazer feminino o que termina em -aggio: em português “a viagem, a mensagem, a paisagem, a coragem”; em italiano “il viaggio, il messaggio, il paesaggio, il coraggio”, todos masculinos.',
+      'Errar o plural de -zione: “la decisione” → “le decisioni” (não “decisiones” nem “decisione”). E as palavras em -tà não mudam no plural: “la possibilità” → “le possibilità”.',
+      'Copiar o sufixo do português: “-ção” não vira “-ciona” nem “-zão”. É sempre “-zione” (azione, situazione) ou “-sione” (decisione, discussione).',
+      'Usar “realizzare” como “fazer, executar” em tudo: em italiano ele também significa “perceber, dar-se conta” (“ho realizzato che…” = percebi que…), por influência do inglês. Em texto técnico, prefira “svolgere”, “effettuare”, “realizzare un progetto”.',
+      '“Mancato” antes do substantivo não é “faltado”: “la mancata consegna” = a não entrega; “il mancato pagamento” = o não pagamento.',
     ],
     quiz: [
       {
-        question: 'Qual é o substantivo de «chiudere»?',
+        question: 'Qual é o substantivo de “chiudere”?',
         options: ['la chiusura', 'il chiudimento', 'la chiudizione'],
         answer: 'la chiusura',
-        explanation: '«Chiudere» forma «la chiusura», como «aprire» forma «l’apertura».',
+        explanation: '“Chiudere” forma “la chiusura”, como “aprire” forma “l’apertura”.',
       },
       {
-        question: 'Complete: «___ viaggio è stato lungo.»',
+        question: 'Complete: “___ viaggio è stato lungo.”',
         options: ['Il', 'La', 'Lo'],
         answer: 'Il',
-        explanation: 'As palavras em -aggio são masculinas: «il viaggio», ao contrário de «a viagem».',
+        explanation: 'As palavras em -aggio são masculinas: “il viaggio”, ao contrário de “a viagem”.',
       },
       {
-        question: 'Qual é o verbo simples de «effettuare un pagamento»?',
+        question: 'Qual é o verbo simples de “effettuare un pagamento”?',
         options: ['pagare', 'effettuare', 'pagamentare'],
         answer: 'pagare',
-        explanation: '«Effettuare» é só um verbo-suporte; o sentido está no substantivo «pagamento».',
+        explanation: '“Effettuare” é só um verbo-suporte; o sentido está no substantivo “pagamento”.',
       },
       {
-        question: 'Qual é o plural de «la possibilità»?',
+        question: 'Qual é o plural de “la possibilità”?',
         options: ['le possibilità', 'le possibilite', 'le possibilitè'],
         answer: 'le possibilità',
         explanation: 'Palavras com acento na última sílaba não mudam no plural.',
       },
       {
-        question: '«Il mancato rispetto delle regole» significa…',
+        question: '“Il mancato rispetto delle regole” significa…',
         options: ['il non rispetto delle regole', 'il rispetto mancante delle regole', 'la mancanza di regole'],
         answer: 'il non rispetto delle regole',
-        explanation: '«Mancato» antes do substantivo indica que a ação não aconteceu: o descumprimento das regras.',
+        explanation: '“Mancato” antes do substantivo indica que a ação não aconteceu: o descumprimento das regras.',
       },
     ],
   },
   {
     id: 'it-g34',
     level: 'C1.2',
-    title: 'O «burocratese»: a língua dos órgãos públicos',
+    title: 'O “burocratese”: a língua dos órgãos públicos',
     emoji: '🏛️',
-    summary: '«Il sottoscritto», «entro e non oltre», «si prega di munirsi di»: o italiano das repartições tem vocabulário e gramática próprios. Aprenda a entendê-lo e a traduzi-lo para o italiano de todo dia.',
+    summary: '“Il sottoscritto”, “entro e non oltre”, “si prega di munirsi di”: o italiano das repartições tem vocabulário e gramática próprios. Aprenda a entendê-lo e a traduzi-lo para o italiano de todo dia.',
     sections: [
       {
-        text: 'Os italianos chamam de «burocratese» a língua dos formulários, avisos e cartas oficiais, cheia de palavras raras e fórmulas fixas. Em 1965, Italo Calvino a batizou de «antilingua» num artigo famoso. O brasileiro reconhece o fenômeno: é o nosso «vimos por meio desta». Você vai encontrá-lo no «comune» (prefeitura), na «questura» (setor de estrangeiros da polícia), no banco e na universidade.',
+        text: 'Os italianos chamam de “burocratese” a língua dos formulários, avisos e cartas oficiais, cheia de palavras raras e fórmulas fixas. Em 1965, Italo Calvino a batizou de “antilingua” num artigo famoso. O brasileiro reconhece o fenômeno: é o nosso “vimos por meio desta”. Você vai encontrá-lo no “comune” (prefeitura), na “questura” (setor de estrangeiros da polícia), no banco e na universidade.',
         table: {
           head: ['Burocratese', 'Italiano comum', 'Português'],
           rows: [
@@ -3656,7 +3656,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'A gramática do burocratese',
-        text: 'Alguns traços se repetem: (1) o particípio presente como substantivo para nomear as pessoas: «il richiedente», «il dichiarante», «l’avente diritto», «gli aventi diritto»; (2) o «si» impessoal nos avisos: «si prega», «si comunica», «si avvisa»; (3) o futuro com valor de obrigação: «la domanda dovrà pervenire» = deve chegar; (4) a passiva com «andare»: «il modulo va compilato»; (5) «qualora» e «ove» com congiuntivo no lugar de «se»; (6) «codesto» para falar do órgão a quem se escreve: «codesto Ufficio».',
+        text: 'Alguns traços se repetem: (1) o particípio presente como substantivo para nomear as pessoas: “il richiedente”, “il dichiarante”, “l’avente diritto”, “gli aventi diritto”; (2) o “si” impessoal nos avisos: “si prega”, “si comunica”, “si avvisa”; (3) o futuro com valor de obrigação: “la domanda dovrà pervenire” = deve chegar; (4) a passiva com “andare”: “il modulo va compilato”; (5) “qualora” e “ove” com congiuntivo no lugar de “se”; (6) “codesto” para falar do órgão a quem se escreve: “codesto Ufficio”.',
         examples: [
           ['Il sottoscritto Marco Bianchi, nato a Bari il 3 maggio 1980, chiede il rilascio del certificato di residenza.', 'O abaixo assinado Marco Bianchi, nascido em Bari em 3 de maio de 1980, solicita a emissão do atestado de residência.'],
           ['Si prega di munirsi di un documento di identità in corso di validità.', 'Solicita-se trazer um documento de identidade válido.'],
@@ -3681,42 +3681,42 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      '«Recarsi» não tem nada a ver com «recusar»: significa «ir, dirigir-se». «Recarsi in questura» = ir à delegacia de estrangeiros.',
-      '«Pratica» é falso amigo: na repartição é o processo, o trâmite («la mia pratica è ferma» = meu processo está parado). E «domanda» é o requerimento, não só a pergunta.',
-      '«Entro» não é o verbo «entrar»: é «dentro de, até» um prazo. «Entro venerdì» = até sexta-feira. E «scadenza» é o prazo, a data de vencimento.',
-      'Usar o indicativo depois de «qualora»: é sempre congiuntivo. «Qualora il documento sia scaduto», nunca «qualora il documento è scaduto».',
-      'Ler «codesto» como «este»: no burocratese ele indica o órgão do destinatário (esse aí a quem escrevo), não o próprio remetente.',
+      '“Recarsi” não tem nada a ver com “recusar”: significa “ir, dirigir-se”. “Recarsi in questura” = ir à delegacia de estrangeiros.',
+      '“Pratica” é falso amigo: na repartição é o processo, o trâmite (“la mia pratica è ferma” = meu processo está parado). E “domanda” é o requerimento, não só a pergunta.',
+      '“Entro” não é o verbo “entrar”: é “dentro de, até” um prazo. “Entro venerdì” = até sexta-feira. E “scadenza” é o prazo, a data de vencimento.',
+      'Usar o indicativo depois de “qualora”: é sempre congiuntivo. “Qualora il documento sia scaduto”, nunca “qualora il documento è scaduto”.',
+      'Ler “codesto” como “este”: no burocratese ele indica o órgão do destinatário (esse aí a quem escrevo), não o próprio remetente.',
     ],
     quiz: [
       {
-        question: 'O que significa «recarsi presso la segreteria»?',
+        question: 'O que significa “recarsi presso la segreteria”?',
         options: ['andare in segreteria', 'rifiutare la segreteria', 'chiamare la segreteria'],
         answer: 'andare in segreteria',
-        explanation: '«Recarsi» = ir, dirigir-se. Nada a ver com «recusar».',
+        explanation: '“Recarsi” = ir, dirigir-se. Nada a ver com “recusar”.',
       },
       {
-        question: 'Complete: «Qualora il pagamento non ___ effettuato, la pratica sarà sospesa.»',
+        question: 'Complete: “Qualora il pagamento non ___ effettuato, la pratica sarà sospesa.”',
         options: ['venga', 'viene', 'verrà'],
         answer: 'venga',
-        explanation: '«Qualora» pede congiuntivo: «qualora non venga effettuato».',
+        explanation: '“Qualora” pede congiuntivo: “qualora non venga effettuato”.',
       },
       {
-        question: 'Qual é o equivalente comum de «munirsi di un documento»?',
+        question: 'Qual é o equivalente comum de “munirsi di un documento”?',
         options: ['portare un documento', 'firmare un documento', 'perdere un documento'],
         answer: 'portare un documento',
-        explanation: '«Munirsi di» = prover-se de, levar consigo.',
+        explanation: '“Munirsi di” = prover-se de, levar consigo.',
       },
       {
-        question: 'Na frase «Il richiedente deve firmare», quem é «il richiedente»?',
+        question: 'Na frase “Il richiedente deve firmare”, quem é “il richiedente”?',
         options: ['chi fa la domanda', 'chi riceve la domanda', 'chi rifiuta la domanda'],
         answer: 'chi fa la domanda',
-        explanation: 'Particípio presente substantivado: «richiedente» = quem requer, o requerente.',
+        explanation: 'Particípio presente substantivado: “richiedente” = quem requer, o requerente.',
       },
       {
-        question: 'O que muda em «entro e non oltre il 10 maggio» em relação a «entro il 10 maggio»?',
+        question: 'O que muda em “entro e non oltre il 10 maggio” em relação a “entro il 10 maggio”?',
         options: ['niente, è solo più enfatico', 'la data diventa il 9 maggio', 'la scadenza è dopo il 10 maggio'],
         answer: 'niente, è solo più enfatico',
-        explanation: '«E non oltre» é uma redundância típica do burocratese: só reforça que o prazo é improrrogável.',
+        explanation: '“E non oltre” é uma redundância típica do burocratese: só reforça que o prazo é improrrogável.',
       },
     ],
   },
@@ -3725,11 +3725,11 @@ export const GRAMMAR_IT: GrammarTopic[] = [
     level: 'C1.2',
     title: 'Estilo jornalístico e acadêmico',
     emoji: '📰',
-    summary: 'Manchetes sem verbo, o condicional que protege o jornalista («il sindaco avrebbe firmato»), as metonímias (il Colle, Palazzo Chigi) e as fórmulas do texto acadêmico (come è noto, ne consegue che, cfr.).',
+    summary: 'Manchetes sem verbo, o condicional que protege o jornalista (“il sindaco avrebbe firmato”), as metonímias (il Colle, Palazzo Chigi) e as fórmulas do texto acadêmico (come è noto, ne consegue che, cfr.).',
     sections: [
       {
         heading: 'Manchetes',
-        text: 'Os títulos de jornal italianos cortam artigos e verbos auxiliares. Aparecem só o particípio («Arrestato il ladro del museo» = foi preso), o substantivo («Maltempo in Liguria: chiuse le scuole») ou o presente. A vírgula ou os dois-pontos separam o tema do fato.',
+        text: 'Os títulos de jornal italianos cortam artigos e verbos auxiliares. Aparecem só o particípio (“Arrestato il ladro del museo” = foi preso), o substantivo (“Maltempo in Liguria: chiuse le scuole”) ou o presente. A vírgula ou os dois-pontos separam o tema do fato.',
         examples: [
           ['Maltempo in Liguria: chiuse le scuole a Genova.', 'Temporal na Ligúria: escolas fechadas em Gênova.'],
           ['Arrestato a Palermo il ladro del museo.', 'Preso em Palermo o ladrão do museu.'],
@@ -3739,7 +3739,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'O condicional de distanciamento',
-        text: 'Quando a notícia não está confirmada, o jornalista usa o condicional: «il sindaco avrebbe firmato» = o prefeito teria assinado (segundo fontes). É o «condizionale di dissociazione»: o autor informa sem garantir. O português faz igual com «teria», mas em italiano o uso é sistemático, e quem o ignora lê boato como fato.',
+        text: 'Quando a notícia não está confirmada, o jornalista usa o condicional: “il sindaco avrebbe firmato” = o prefeito teria assinado (segundo fontes). É o “condizionale di dissociazione”: o autor informa sem garantir. O português faz igual com “teria”, mas em italiano o uso é sistemático, e quem o ignora lê boato como fato.',
         table: {
           head: ['Tempo', 'Frase', 'Sentido'],
           rows: [
@@ -3773,7 +3773,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'O texto acadêmico',
-        text: 'No texto acadêmico, domina o impessoal: «si osserva», «si è scelto di», a passiva, e o «noi» de modéstia mesmo quando há um só autor. As citações usam abreviações latinas: «cfr.» (confira), «ivi» (no mesmo lugar, outra página), «ibidem» (mesmo lugar, mesma página), «et al.». Os conectores organizam o argumento: in primo luogo, inoltre, tuttavia, ne consegue che, in altri termini, pertanto.',
+        text: 'No texto acadêmico, domina o impessoal: “si osserva”, “si è scelto di”, a passiva, e o “noi” de modéstia mesmo quando há um só autor. As citações usam abreviações latinas: “cfr.” (confira), “ivi” (no mesmo lugar, outra página), “ibidem” (mesmo lugar, mesma página), “et al.”. Os conectores organizam o argumento: in primo luogo, inoltre, tuttavia, ne consegue che, in altri termini, pertanto.',
         examples: [
           ['Nel presente lavoro si intende analizzare il lessico dei migranti veneti in Brasile.', 'No presente trabalho, pretende-se analisar o léxico dos migrantes vênetos no Brasil.'],
           ['Come è noto, il toscano letterario è alla base dell’italiano standard.', 'Como se sabe, o toscano literário é a base do italiano padrão.'],
@@ -3784,11 +3784,11 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Ler o condicional jornalístico como certeza: «il ministro avrebbe detto» é «o ministro teria dito», notícia não confirmada.',
-      '«Argomento» é falso amigo: é o assunto, o tema («l’argomento della tesi»). O argumento de uma discussão é «l’argomentazione» ou «la ragione».',
-      '«Tesi» é a tese, mas «tesi di laurea» é o trabalho de conclusão da graduação, não um doutorado. O doutorado é «il dottorato».',
-      'Tomar o «noi» acadêmico como plural real: num artigo de um só autor, «riteniamo» é modéstia, não um grupo.',
-      'Traduzir «il Colle» ao pé da letra: nas manchetes é a Presidência da República, que fica no palácio do Quirinale, sobre a colina de mesmo nome.',
+      'Ler o condicional jornalístico como certeza: “il ministro avrebbe detto” é “o ministro teria dito”, notícia não confirmada.',
+      '“Argomento” é falso amigo: é o assunto, o tema (“l’argomento della tesi”). O argumento de uma discussão é “l’argomentazione” ou “la ragione”.',
+      '“Tesi” é a tese, mas “tesi di laurea” é o trabalho de conclusão da graduação, não um doutorado. O doutorado é “il dottorato”.',
+      'Tomar o “noi” acadêmico como plural real: num artigo de um só autor, “riteniamo” é modéstia, não um grupo.',
+      'Traduzir “il Colle” ao pé da letra: nas manchetes é a Presidência da República, que fica no palácio do Quirinale, sobre a colina de mesmo nome.',
     ],
     quiz: [
       {
@@ -3798,13 +3798,13 @@ export const GRAMMAR_IT: GrammarTopic[] = [
         explanation: 'O condicional passato na notícia indica distanciamento: o jornalista não garante o fato.',
       },
       {
-        question: 'Na manchete «Arrestato il rapinatore», o que foi omitido?',
+        question: 'Na manchete “Arrestato il rapinatore”, o que foi omitido?',
         options: ['È stato', 'Ha', 'Si è'],
         answer: 'È stato',
-        explanation: 'As manchetes cortam o auxiliar: «(È stato) arrestato il rapinatore».',
+        explanation: 'As manchetes cortam o auxiliar: “(È stato) arrestato il rapinatore”.',
       },
       {
-        question: 'Nas notícias, «Palazzo Chigi» indica…',
+        question: 'Nas notícias, “Palazzo Chigi” indica…',
         options: ['il governo', 'il Senato', 'il Comune di Roma'],
         answer: 'il governo',
         explanation: 'É a sede da Presidência do Conselho de Ministros: por metonímia, o governo.',
@@ -3813,13 +3813,13 @@ export const GRAMMAR_IT: GrammarTopic[] = [
         question: 'Qual conector introduz uma conclusão lógica?',
         options: ['ne consegue che', 'tuttavia', 'inoltre'],
         answer: 'ne consegue che',
-        explanation: '«Ne consegue che» = daí decorre que. «Tuttavia» opõe, «inoltre» acrescenta.',
+        explanation: '“Ne consegue che” = daí decorre que. “Tuttavia” opõe, “inoltre” acrescenta.',
       },
       {
-        question: 'Complete: «L’argomento ___ tesi è la migrazione italiana in Argentina.»',
+        question: 'Complete: “L’argomento ___ tesi è la migrazione italiana in Argentina.”',
         options: ['della', 'dalla', 'nella'],
         answer: 'della',
-        explanation: '«L’argomento della tesi» = o tema da tese. Preposição «di» + «la».',
+        explanation: '“L’argomento della tesi” = o tema da tese. Preposição “di” + “la”.',
       },
     ],
   },
@@ -3829,10 +3829,10 @@ export const GRAMMAR_IT: GrammarTopic[] = [
     level: 'C2',
     title: 'Passato remoto: os verbos regulares',
     emoji: '📜',
-    summary: 'O tempo dos romances e dos livros de história: «parlò, credette, partì». As três conjugações, as duas séries do -ere, os verbos essere, avere, stare, dare, fare e dire, e onde ele ainda se fala.',
+    summary: 'O tempo dos romances e dos livros de história: “parlò, credette, partì”. As três conjugações, as duas séries do -ere, os verbos essere, avere, stare, dare, fare e dire, e onde ele ainda se fala.',
     sections: [
       {
-        text: 'O passato remoto narra ações concluídas num passado sentido como distante, sem ligação com o presente. É o tempo da literatura, da biografia e da história: «Garibaldi partì da Quarto nel 1860». Corresponde ao nosso pretérito perfeito («partiu»). Na fala do Norte ele quase sumiu, trocado pelo passato prossimo; no Sul (Sicília, Campânia, Calábria, Puglia) continua vivo até para fatos recentes.',
+        text: 'O passato remoto narra ações concluídas num passado sentido como distante, sem ligação com o presente. É o tempo da literatura, da biografia e da história: “Garibaldi partì da Quarto nel 1860”. Corresponde ao nosso pretérito perfeito (“partiu”). Na fala do Norte ele quase sumiu, trocado pelo passato prossimo; no Sul (Sicília, Campânia, Calábria, Puglia) continua vivo até para fatos recentes.',
         table: {
           head: ['Pessoa', 'parlare', 'credere', 'dormire'],
           rows: [
@@ -3847,7 +3847,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Acento e consoante dupla',
-        text: 'A 3ª pessoa do singular é oxítona e leva acento gráfico: «parlò», «credé», «dormì», «finì». Sem acento, vira outra palavra: «parlo» (eu falo), «fini» (fins). A 3ª do plural é proparoxítona: «parlàrono», «dormìrono» (o acento não se escreve). E a 1ª do plural tem «mm»: «parlammo», «credemmo», «partimmo», diferente do presente «parliamo».',
+        text: 'A 3ª pessoa do singular é oxítona e leva acento gráfico: “parlò”, “credé”, “dormì”, “finì”. Sem acento, vira outra palavra: “parlo” (eu falo), “fini” (fins). A 3ª do plural é proparoxítona: “parlàrono”, “dormìrono” (o acento não se escreve). E a 1ª do plural tem “mm”: “parlammo”, “credemmo”, “partimmo”, diferente do presente “parliamo”.',
         examples: [
           ['Cristoforo Colombo partì da Palos nel 1492.', 'Cristóvão Colombo partiu de Palos em 1492.'],
           ['Guglielmo Marconi inviò il primo segnale radio oltre l’Atlantico nel 1901.', 'Guglielmo Marconi enviou o primeiro sinal de rádio através do Atlântico em 1901.'],
@@ -3858,7 +3858,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'As duas séries do -ere',
-        text: 'Os verbos regulares em -ere têm duas formas em três pessoas (io, lui, loro): em -ei/-é/-erono e em -etti/-ette/-ettero. Ambas são corretas; a série em -etti é mais comum na língua de hoje. Quando o radical termina em «t», usa-se só a série em -ei, para evitar sons repetidos: «potei», «battei», nunca «potetti».',
+        text: 'Os verbos regulares em -ere têm duas formas em três pessoas (io, lui, loro): em -ei/-é/-erono e em -etti/-ette/-ettero. Ambas são corretas; a série em -etti é mais comum na língua de hoje. Quando o radical termina em “t”, usa-se só a série em -ei, para evitar sons repetidos: “potei”, “battei”, nunca “potetti”.',
         table: {
           head: ['Verbo', 'io', 'lui / lei', 'loro'],
           rows: [
@@ -3887,47 +3887,47 @@ export const GRAMMAR_IT: GrammarTopic[] = [
           ['Fu una giornata indimenticabile.', 'Foi um dia inesquecível.'],
           ['Il re ebbe paura e fuggì.', 'O rei teve medo e fugiu.'],
           ['Stettero in silenzio per un lungo momento.', 'Ficaram em silêncio por um longo momento.'],
-          ['Mi diede la mano e disse: «Benvenuto».', 'Ele me deu a mão e disse: «Bem-vindo».'],
+          ['Mi diede la mano e disse: “Benvenuto”.', 'Ele me deu a mão e disse: “Bem-vindo”.'],
         ],
       },
     ],
     pitfalls: [
-      'Esquecer o acento da 3ª pessoa: «parlo» é «eu falo»; «parlò» é «ele falou». Na escrita, o acento é a única diferença.',
-      'Escrever a 1ª do plural com um «m» só: «parlamo» não existe. É «parlammo» (falamos, no passado) × «parliamo» (falamos, no presente).',
-      'Confundir «fu» e «fosse» com o português «foi/fosse» no lugar errado: «fu» é passato remoto (foi); «fosse» é congiuntivo imperfetto (fosse).',
-      'Achar que o passato remoto é erro na fala: no Sul da Itália ele é normal no dia a dia («ieri andai al mare»). No Norte, soa literário.',
-      'Usar «stetti» no sentido de «estive» genérico: «stare» no passado remoto costuma valer «ficar, permanecer» («stette zitto» = ficou calado).',
+      'Esquecer o acento da 3ª pessoa: “parlo” é “eu falo”; “parlò” é “ele falou”. Na escrita, o acento é a única diferença.',
+      'Escrever a 1ª do plural com um “m” só: “parlamo” não existe. É “parlammo” (falamos, no passado) × “parliamo” (falamos, no presente).',
+      'Confundir “fu” e “fosse” com o português “foi/fosse” no lugar errado: “fu” é passato remoto (foi); “fosse” é congiuntivo imperfetto (fosse).',
+      'Achar que o passato remoto é erro na fala: no Sul da Itália ele é normal no dia a dia (“ieri andai al mare”). No Norte, soa literário.',
+      'Usar “stetti” no sentido de “estive” genérico: “stare” no passado remoto costuma valer “ficar, permanecer” (“stette zitto” = ficou calado).',
     ],
     quiz: [
       {
-        question: 'Complete: «Nel 1860 Garibaldi ___ da Quarto con i Mille.»',
+        question: 'Complete: “Nel 1860 Garibaldi ___ da Quarto con i Mille.”',
         options: ['partì', 'parti', 'partii'],
         answer: 'partì',
-        explanation: '3ª pessoa do singular de «partire»: «partì», com acento. «Parti» é «tu parti» (presente), «partii» é «io».',
+        explanation: '3ª pessoa do singular de “partire”: “partì”, com acento. “Parti” é “tu parti” (presente), “partii” é “io”.',
       },
       {
-        question: 'Qual é a 1ª pessoa do plural de «parlare» no passato remoto?',
+        question: 'Qual é a 1ª pessoa do plural de “parlare” no passato remoto?',
         options: ['parlammo', 'parlamo', 'parliamo'],
         answer: 'parlammo',
-        explanation: 'O passato remoto tem «mm»: parlammo. «Parliamo» é o presente.',
+        explanation: 'O passato remoto tem “mm”: parlammo. “Parliamo” é o presente.',
       },
       {
-        question: 'Qual forma de «potere» é correta na 1ª pessoa?',
+        question: 'Qual forma de “potere” é correta na 1ª pessoa?',
         options: ['potei', 'potetti', 'potii'],
         answer: 'potei',
-        explanation: 'Com radical em «t», só existe a série em -ei: potei, poté, poterono.',
+        explanation: 'Com radical em “t”, só existe a série em -ei: potei, poté, poterono.',
       },
       {
-        question: 'Complete: «Loro ___ molto coraggio.» (avere)',
+        question: 'Complete: “Loro ___ molto coraggio.” (avere)',
         options: ['ebbero', 'avettero', 'ebbono'],
         answer: 'ebbero',
-        explanation: '«Avere»: ebbi, avesti, ebbe, avemmo, aveste, ebbero.',
+        explanation: '“Avere”: ebbi, avesti, ebbe, avemmo, aveste, ebbero.',
       },
       {
-        question: 'Complete: «Quando lo vide, gli ___ la mano.» (dare)',
+        question: 'Complete: “Quando lo vide, gli ___ la mano.” (dare)',
         options: ['diede', 'dasse', 'dando'],
         answer: 'diede',
-        explanation: '«Dare» no passato remoto: diedi (detti), desti, diede (dette)…',
+        explanation: '“Dare” no passato remoto: diedi (detti), desti, diede (dette)…',
       },
     ],
   },
@@ -3936,11 +3936,11 @@ export const GRAMMAR_IT: GrammarTopic[] = [
     level: 'C2',
     title: 'Passato remoto: os irregulares e o trapassato remoto',
     emoji: '🗝️',
-    summary: 'Chiesi, scrissi, venni, nacque, vissero: os irregulares seguem o padrão «1-3-3». Mais o trapassato remoto («dopo che ebbe finito») e a escolha entre remoto e prossimo.',
+    summary: 'Chiesi, scrissi, venni, nacque, vissero: os irregulares seguem o padrão “1-3-3”. Mais o trapassato remoto (“dopo che ebbe finito”) e a escolha entre remoto e prossimo.',
     sections: [
       {
         heading: 'O padrão 1-3-3',
-        text: 'Quase todos os irregulares em -ere o são só em três pessoas: io (1), lui/lei (3) e loro (3 do plural). Nas outras três (tu, noi, voi), o verbo é regular, formado sobre o infinitivo. Sabendo a forma do «io», você deduz as outras duas irregulares: troca -i por -e e por -ero.',
+        text: 'Quase todos os irregulares em -ere o são só em três pessoas: io (1), lui/lei (3) e loro (3 do plural). Nas outras três (tu, noi, voi), o verbo é regular, formado sobre o infinitivo. Sabendo a forma do “io”, você deduz as outras duas irregulares: troca -i por -e e por -ero.',
         table: {
           head: ['Pessoa', 'prendere', 'scrivere', 'venire', 'conoscere'],
           rows: [
@@ -3955,7 +3955,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Os grupos',
-        text: 'Os irregulares se agrupam pela terminação do «io». Estude por família.',
+        text: 'Os irregulares se agrupam pela terminação do “io”. Estude por família.',
         table: {
           head: ['Tipo', 'Infinitivo → io, lui, loro'],
           rows: [
@@ -3968,7 +3968,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
         },
         examples: [
           ['Dante nacque a Firenze nel 1265.', 'Dante nasceu em Florença em 1265.'],
-          ['Manzoni scrisse «I promessi sposi» e li rivide per anni.', 'Manzoni escreveu «Os noivos» e os revisou durante anos.'],
+          ['Manzoni scrisse “I promessi sposi” e li rivide per anni.', 'Manzoni escreveu “Os noivos” e os revisou durante anos.'],
           ['Quando lo vide, non disse nulla e chiuse la porta.', 'Quando o viu, não disse nada e fechou a porta.'],
           ['I miei bisnonni vennero dal Veneto e vissero a Caxias do Sul.', 'Meus bisavós vieram do Vêneto e viveram em Caxias do Sul.'],
           ['Il bambino cadde, ruppe il vaso e pianse.', 'O menino caiu, quebrou o vaso e chorou.'],
@@ -3977,7 +3977,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'O trapassato remoto',
-        text: 'É o passato remoto de «avere» ou «essere» + particípio: «ebbi finito», «fu arrivato». Indica uma ação imediatamente anterior a outra no passato remoto e só aparece depois de «dopo che», «appena», «(non) appena», «quando», «come». É exclusivo da escrita literária; na fala, diz-se «dopo aver finito» ou «appena finito».',
+        text: 'É o passato remoto de “avere” ou “essere” + particípio: “ebbi finito”, “fu arrivato”. Indica uma ação imediatamente anterior a outra no passato remoto e só aparece depois de “dopo che”, “appena”, “(non) appena”, “quando”, “come”. É exclusivo da escrita literária; na fala, diz-se “dopo aver finito” ou “appena finito”.',
         table: {
           head: ['Pessoa', 'com avere', 'com essere'],
           rows: [
@@ -3993,7 +3993,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Remoto ou prossimo?',
-        text: 'No italiano padrão, o passato prossimo é usado para fatos que ainda tocam o presente, e o remoto para fatos isolados no passado. A distância é mais psicológica do que cronológica: «Mio nonno emigrò in Argentina nel 1920» (fato encerrado), mas «Mio nonno è morto dieci anni fa e mi manca ancora» (ainda me afeta). Nas biografias e nos livros de história, o remoto é a norma.',
+        text: 'No italiano padrão, o passato prossimo é usado para fatos que ainda tocam o presente, e o remoto para fatos isolados no passado. A distância é mais psicológica do que cronológica: “Mio nonno emigrò in Argentina nel 1920” (fato encerrado), mas “Mio nonno è morto dieci anni fa e mi manca ancora” (ainda me afeta). Nas biografias e nos livros de história, o remoto é a norma.',
         examples: [
           ['Mio nonno emigrò in Argentina nel 1920.', 'Meu avô emigrou para a Argentina em 1920.'],
           ['Mio nonno è morto dieci anni fa e mi manca ancora.', 'Meu avô morreu há dez anos e ainda sinto falta dele.'],
@@ -4002,39 +4002,39 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Estender a irregularidade a todas as pessoas: «tu presti», «noi presimmo» estão errados. Só io, lui e loro são irregulares: «tu prendesti», «noi prendemmo».',
-      'Confundir «vide» (viu) com «vite» (vidas, parafusos) ou «venne» (veio) com «vene» (veias). As consoantes duplas mudam tudo.',
-      'Usar o trapassato remoto sozinho, como o nosso mais-que-perfeito: «ebbe finito» só existe depois de «dopo che», «appena», «quando». Fora disso, é «aveva finito» (trapassato prossimo).',
-      'Ler «nacque» como erro de ortografia: o grupo «cq» é a grafia correta (nacque, piacque, tacque, acqua).',
-      'Esquecer a concordância no trapassato remoto com «essere»: «furono arrivate» para sujeito feminino plural.',
+      'Estender a irregularidade a todas as pessoas: “tu presti”, “noi presimmo” estão errados. Só io, lui e loro são irregulares: “tu prendesti”, “noi prendemmo”.',
+      'Confundir “vide” (viu) com “vite” (vidas, parafusos) ou “venne” (veio) com “vene” (veias). As consoantes duplas mudam tudo.',
+      'Usar o trapassato remoto sozinho, como o nosso mais-que-perfeito: “ebbe finito” só existe depois de “dopo che”, “appena”, “quando”. Fora disso, é “aveva finito” (trapassato prossimo).',
+      'Ler “nacque” como erro de ortografia: o grupo “cq” é a grafia correta (nacque, piacque, tacque, acqua).',
+      'Esquecer a concordância no trapassato remoto com “essere”: “furono arrivate” para sujeito feminino plural.',
     ],
     quiz: [
       {
-        question: 'Complete: «Petrarca ___ ad Arezzo nel 1304.» (nascere)',
+        question: 'Complete: “Petrarca ___ ad Arezzo nel 1304.” (nascere)',
         options: ['nacque', 'nascé', 'nasque'],
         answer: 'nacque',
-        explanation: '«Nascere»: nacqui, nascesti, nacque… com «cq».',
+        explanation: '“Nascere”: nacqui, nascesti, nacque… com “cq”.',
       },
       {
-        question: 'Qual é a forma correta de «tu» para «scrivere»?',
+        question: 'Qual é a forma correta de “tu” para “scrivere”?',
         options: ['scrivesti', 'scrissesti', 'scrissi'],
         answer: 'scrivesti',
         explanation: 'Padrão 1-3-3: a 2ª pessoa é regular, formada sobre o infinitivo.',
       },
       {
-        question: 'Complete: «Appena ___ la notizia, corse a casa.»',
+        question: 'Complete: “Appena ___ la notizia, corse a casa.”',
         options: ['ebbe saputo', 'ha saputo', 'avrebbe saputo'],
         answer: 'ebbe saputo',
-        explanation: 'Depois de «appena», com o verbo principal no passato remoto (corse), usa-se o trapassato remoto.',
+        explanation: 'Depois de “appena”, com o verbo principal no passato remoto (corse), usa-se o trapassato remoto.',
       },
       {
-        question: 'Qual é o passato remoto de «volere» na 3ª pessoa do plural?',
+        question: 'Qual é o passato remoto de “volere” na 3ª pessoa do plural?',
         options: ['vollero', 'volettero', 'volerono'],
         answer: 'vollero',
-        explanation: '«Volere»: volli, volesti, volle, volemmo, voleste, vollero.',
+        explanation: '“Volere”: volli, volesti, volle, volemmo, voleste, vollero.',
       },
       {
-        question: 'Complete: «I Mille ___ in Sicilia nel maggio del 1860.» (sbarcare)',
+        question: 'Complete: “I Mille ___ in Sicilia nel maggio del 1860.” (sbarcare)',
         options: ['sbarcarono', 'sbarcorono', 'sbarcerono'],
         answer: 'sbarcarono',
         explanation: 'Verbo regular em -are: -arono. O desembarque em Marsala foi em 11 de maio de 1860.',
@@ -4053,7 +4053,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Dante Alighieri (1265–1321)',
-        text: 'A «Divina Commedia» é escrita em tercetos de hendecassílabos (versos de onze sílabas). Nas primeiras linhas: «cammin» é «cammino» truncado; «mi ritrovai» é passato remoto; «ché» é «perché» (pois); «per una selva» é «dentro de uma floresta». Na porta do Inferno, «ogne» é «ogni» e «intrate» é «entrate». No último verso do poema, «move» é «muove».',
+        text: 'A “Divina Commedia” é escrita em tercetos de hendecassílabos (versos de onze sílabas). Nas primeiras linhas: “cammin” é “cammino” truncado; “mi ritrovai” é passato remoto; “ché” é “perché” (pois); “per una selva” é “dentro de uma floresta”. Na porta do Inferno, “ogne” é “ogni” e “intrate” é “entrate”. No último verso do poema, “move” é “muove”.',
         examples: [
           ['Nel mezzo del cammin di nostra vita / mi ritrovai per una selva oscura, / ché la diritta via era smarrita.', 'No meio do caminho de nossa vida / eu me encontrei numa selva escura, / pois o caminho reto estava perdido. (Inferno, I, 1–3)'],
           ['Lasciate ogne speranza, voi ch’intrate.', 'Deixai toda esperança, vós que entrais. (Inferno, III, 9)'],
@@ -4063,21 +4063,21 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Francesco Petrarca (1304–1374)',
-        text: 'O «Canzoniere» fixou a língua da poesia lírica por séculos. No soneto de abertura: «ond’» = «di cui, con cui» (com os quais); «nudriva» = «nutrivo», com a 1ª pessoa antiga do imperfetto em -a; «’l» = «il».',
+        text: 'O “Canzoniere” fixou a língua da poesia lírica por séculos. No soneto de abertura: “ond’” = “di cui, con cui” (com os quais); “nudriva” = “nutrivo”, com a 1ª pessoa antiga do imperfetto em -a; “’l” = “il”.',
         examples: [
           ['Voi ch’ascoltate in rime sparse il suono / di quei sospiri ond’io nudriva ’l core', 'Vós que escutais em rimas esparsas o som / daqueles suspiros com que eu nutria o coração (Canzoniere, 1, 1–2)'],
         ],
       },
       {
         heading: 'Giovanni Boccaccio (1313–1375)',
-        text: 'O «Decameron» é o modelo da prosa. A frase de Boccaccio imita o latim: verbo no fim, adjetivo antes do substantivo, inversões. Na primeira frase do Proêmio, o predicado vem antes: «Umana cosa è» = «è cosa umana».',
+        text: 'O “Decameron” é o modelo da prosa. A frase de Boccaccio imita o latim: verbo no fim, adjetivo antes do substantivo, inversões. Na primeira frase do Proêmio, o predicado vem antes: “Umana cosa è” = “è cosa umana”.',
         examples: [
           ['Umana cosa è aver compassione degli afflitti', 'É coisa humana ter compaixão dos aflitos (Decameron, Proemio)'],
         ],
       },
       {
         heading: 'Alessandro Manzoni (1785–1873)',
-        text: '«I promessi sposi» (Os noivos) é o romance fundador do italiano moderno: Manzoni reescreveu o livro para aproximá-lo do florentino falado, o famoso «risciacquare i panni in Arno». Repare em «s’ha da fare» = «si deve fare» e na narração com passato remoto.',
+        text: '“I promessi sposi” (Os noivos) é o romance fundador do italiano moderno: Manzoni reescreveu o livro para aproximá-lo do florentino falado, o famoso “risciacquare i panni in Arno”. Repare em “s’ha da fare” = “si deve fare” e na narração com passato remoto.',
         examples: [
           ['Quel ramo del lago di Como, che volge a mezzogiorno, tra due catene non interrotte di monti…', 'Aquele braço do lago de Como que se volta para o sul, entre duas cadeias ininterruptas de montanhas… (I promessi sposi, cap. I)'],
           ['Questo matrimonio non s’ha da fare, né domani, né mai.', 'Este casamento não deve ser feito, nem amanhã, nem nunca. (cap. I)'],
@@ -4086,7 +4086,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Giacomo Leopardi (1798–1837)',
-        text: 'Em «L’infinito», «mi fu» é passato remoto (sempre me foi querida), «ermo» = solitário, «il guardo» = lo sguardo, e «naufragar» é o infinitivo truncado usado como substantivo (o naufragar).',
+        text: 'Em “L’infinito”, “mi fu” é passato remoto (sempre me foi querida), “ermo” = solitário, “il guardo” = lo sguardo, e “naufragar” é o infinitivo truncado usado como substantivo (o naufragar).',
         examples: [
           ['Sempre caro mi fu quest’ermo colle, / e questa siepe, che da tanta parte / dell’ultimo orizzonte il guardo esclude.', 'Sempre me foi cara esta colina solitária, / e esta sebe, que de tanta parte / do último horizonte exclui o olhar.'],
           ['e il naufragar m’è dolce in questo mare.', 'e o naufragar me é doce neste mar.'],
@@ -4111,42 +4111,42 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Ler «ché» como «que»: com acento, é «perché, poiché» (pois). E o acento é agudo, como em «perché».',
-      'Traduzir «per una selva oscura» como «por uma selva»: aqui «per» indica o lugar por onde se está, «numa, através de».',
-      'Achar que «nudriva» é 3ª pessoa: em Petrarca, a 1ª pessoa do imperfetto terminava em -a (io nudriva, io avea). Olhe o sujeito «io».',
-      'Estranhar a ordem das palavras: «Sempre caro mi fu quest’ermo colle» é «Quest’ermo colle mi fu sempre caro». Reordene antes de traduzir.',
-      'Citar de memória a versão popular: «Lasciate ogni speranza, o voi ch’entrate» circula muito, mas a edição crítica traz «ogne» e «ch’intrate».',
+      'Ler “ché” como “que”: com acento, é “perché, poiché” (pois). E o acento é agudo, como em “perché”.',
+      'Traduzir “per una selva oscura” como “por uma selva”: aqui “per” indica o lugar por onde se está, “numa, através de”.',
+      'Achar que “nudriva” é 3ª pessoa: em Petrarca, a 1ª pessoa do imperfetto terminava em -a (io nudriva, io avea). Olhe o sujeito “io”.',
+      'Estranhar a ordem das palavras: “Sempre caro mi fu quest’ermo colle” é “Quest’ermo colle mi fu sempre caro”. Reordene antes de traduzir.',
+      'Citar de memória a versão popular: “Lasciate ogni speranza, o voi ch’entrate” circula muito, mas a edição crítica traz “ogne” e “ch’intrate”.',
     ],
     quiz: [
       {
-        question: 'No verso «ché la diritta via era smarrita», «ché» significa…',
+        question: 'No verso “ché la diritta via era smarrita”, “ché” significa…',
         options: ['perché', 'che cosa', 'chi'],
         answer: 'perché',
-        explanation: '«Ché» com acento é a forma antiga (e poética) de «perché, poiché».',
+        explanation: '“Ché” com acento é a forma antiga (e poética) de “perché, poiché”.',
       },
       {
-        question: 'Em «Sempre caro mi fu quest’ermo colle», que tempo é «fu»?',
+        question: 'Em “Sempre caro mi fu quest’ermo colle”, que tempo é “fu”?',
         options: ['passato remoto', 'imperfetto', 'congiuntivo'],
         answer: 'passato remoto',
-        explanation: '«Fu» é o passato remoto de «essere», 3ª pessoa: foi.',
+        explanation: '“Fu” é o passato remoto de “essere”, 3ª pessoa: foi.',
       },
       {
-        question: 'Complete o verso de Dante: «l’amor che move il sole e l’altre ___.»',
+        question: 'Complete o verso de Dante: “l’amor che move il sole e l’altre ___.”',
         options: ['stelle', 'lune', 'terre'],
         answer: 'stelle',
-        explanation: 'É o último verso do Paradiso (XXXIII, 145): todas as três partes da Commedia terminam com a palavra «stelle».',
+        explanation: 'É o último verso do Paradiso (XXXIII, 145): todas as três partes da Commedia terminam com a palavra “stelle”.',
       },
       {
-        question: 'Em Manzoni, «non s’ha da fare» equivale a…',
+        question: 'Em Manzoni, “non s’ha da fare” equivale a…',
         options: ['non si deve fare', 'non si è fatto', 'non si può sapere'],
         answer: 'non si deve fare',
-        explanation: '«Avere da» + infinitivo exprime obrigação: «si ha da fare» = «si deve fare».',
+        explanation: '“Avere da” + infinitivo exprime obrigação: “si ha da fare” = “si deve fare”.',
       },
       {
-        question: 'Em «il naufragar m’è dolce», «naufragar» é…',
+        question: 'Em “il naufragar m’è dolce”, “naufragar” é…',
         options: ['un infinito usato come nome', 'un passato remoto', 'un participio'],
         answer: 'un infinito usato come nome',
-        explanation: 'Infinitivo truncado e substantivado, com artigo: «il naufragare».',
+        explanation: 'Infinitivo truncado e substantivado, com artigo: “il naufragare”.',
       },
     ],
   },
@@ -4155,11 +4155,11 @@ export const GRAMMAR_IT: GrammarTopic[] = [
     level: 'C2',
     title: 'Formas literárias e arcaicas: egli, ella, codesto, testé',
     emoji: '🪶',
-    summary: 'Os pronomes da escrita formal (egli, ella, esso), o demonstrativo «codesto», advérbios como «testé» e «sovente», e a morfologia poética (core, speme, splendea, vendesi).',
+    summary: 'Os pronomes da escrita formal (egli, ella, esso), o demonstrativo “codesto”, advérbios como “testé” e “sovente”, e a morfologia poética (core, speme, splendea, vendesi).',
     sections: [
       {
         heading: 'Pronomes sujeito da escrita',
-        text: 'Na fala, o sujeito de 3ª pessoa é «lui, lei, loro». A escrita formal e literária usa «egli» (ele) e «ella» (ela) para pessoas e «esso, essa, essi, esse» sobretudo para coisas e animais. Hoje «egli» ainda aparece em ensaios, livros didáticos e textos jurídicos; «ella» soa antiquado. «Egli» e «ella» só funcionam como sujeito: nunca depois de preposição ou como objeto. Na poesia, «egli» encurta para «ei»: é o famoso «Ei fu» com que Manzoni abre «Il cinque maggio», sobre a morte de Napoleão.',
+        text: 'Na fala, o sujeito de 3ª pessoa é “lui, lei, loro”. A escrita formal e literária usa “egli” (ele) e “ella” (ela) para pessoas e “esso, essa, essi, esse” sobretudo para coisas e animais. Hoje “egli” ainda aparece em ensaios, livros didáticos e textos jurídicos; “ella” soa antiquado. “Egli” e “ella” só funcionam como sujeito: nunca depois de preposição ou como objeto. Na poesia, “egli” encurta para “ei”: é o famoso “Ei fu” com que Manzoni abre “Il cinque maggio”, sobre a morte de Napoleão.',
         table: {
           head: ['Uso', 'Singular m.', 'Singular f.', 'Plural'],
           rows: [
@@ -4172,12 +4172,12 @@ export const GRAMMAR_IT: GrammarTopic[] = [
           ['Egli dedicò tutta la vita allo studio dei dialetti.', 'Ele dedicou a vida inteira ao estudo dos dialetos.'],
           ['Ella non rispose e abbassò lo sguardo.', 'Ela não respondeu e baixou os olhos.'],
           ['Il regolamento è entrato in vigore; esso prevede tre fasi.', 'O regulamento entrou em vigor; ele prevê três fases.'],
-          ['Ei fu.', 'Ele foi. (Manzoni, «Il cinque maggio»: Napoleão morreu)'],
+          ['Ei fu.', 'Ele foi. (Manzoni, “Il cinque maggio”: Napoleão morreu)'],
         ],
       },
       {
-        heading: '«Codesto»: o terceiro demonstrativo',
-        text: 'O italiano antigo tinha três demonstrativos, como o português: «questo» (este, perto de mim), «codesto» (esse, perto de você) e «quello» (aquele). A língua comum ficou só com «questo» e «quello», e o brasileiro sente falta do nosso «esse». «Codesto» sobrevive na Toscana, na literatura e no burocratese, onde indica o órgão a quem se escreve («codesto Ministero»).',
+        heading: '“Codesto”: o terceiro demonstrativo',
+        text: 'O italiano antigo tinha três demonstrativos, como o português: “questo” (este, perto de mim), “codesto” (esse, perto de você) e “quello” (aquele). A língua comum ficou só com “questo” e “quello”, e o brasileiro sente falta do nosso “esse”. “Codesto” sobrevive na Toscana, na literatura e no burocratese, onde indica o órgão a quem se escreve (“codesto Ministero”).',
         examples: [
           ['Che cos’è codesto libro che tieni in mano?', 'Que livro é esse que você tem na mão?'],
           ['Si trasmette a codesto Ufficio la documentazione richiesta.', 'Encaminha-se a esse órgão a documentação solicitada.'],
@@ -4210,7 +4210,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Morfologia poética e enclise',
-        text: 'A poesia até o século XIX usa formas que a prosa já tinha abandonado: o truncamento (cuor, amor, dolor), o imperfetto sem «v» (avea, splendea, credea), palavras próprias da poesia (core, speme, loco, augello, desio, beltà, rimembrare). E a enclise do pronome, que hoje vive só nos anúncios: «vendesi», «affittasi», «cercasi».',
+        text: 'A poesia até o século XIX usa formas que a prosa já tinha abandonado: o truncamento (cuor, amor, dolor), o imperfetto sem “v” (avea, splendea, credea), palavras próprias da poesia (core, speme, loco, augello, desio, beltà, rimembrare). E a enclise do pronome, que hoje vive só nos anúncios: “vendesi”, “affittasi”, “cercasi”.',
         table: {
           head: ['Forma poética', 'Italiano comum', 'Português'],
           rows: [
@@ -4226,49 +4226,49 @@ export const GRAMMAR_IT: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['Silvia, rimembri ancora / quel tempo della tua vita mortale, / quando beltà splendea / negli occhi tuoi ridenti e fuggitivi', 'Sílvia, recordas ainda / aquele tempo da tua vida mortal, / quando a beleza brilhava / nos teus olhos risonhos e fugidios (Leopardi, «A Silvia»)'],
+          ['Silvia, rimembri ancora / quel tempo della tua vita mortale, / quando beltà splendea / negli occhi tuoi ridenti e fuggitivi', 'Sílvia, recordas ainda / aquele tempo da tua vida mortal, / quando a beleza brilhava / nos teus olhos risonhos e fugidios (Leopardi, “A Silvia”)'],
           ['Affittasi appartamento in centro, a Trieste.', 'Aluga-se apartamento no centro, em Trieste.'],
           ['Cercasi cameriere con esperienza.', 'Precisa-se de garçom com experiência.'],
         ],
       },
     ],
     pitfalls: [
-      'Usar «egli» depois de preposição ou como objeto: «ho parlato con egli» está errado. Diga «con lui». «Egli» é só sujeito.',
-      '«Onde» é falso amigo: no italiano literário não é «onde» (lugar em que), mas «de onde», «a fim de que» ou «por isso». O lugar em que é «ove» ou «dove».',
-      'Ler «codesto» como «este»: é «esse» (perto do interlocutor). «Questo» é o «este».',
-      'Achar que «vendesi appartamenti» é erro grosseiro: a norma tradicional pede o plural «vendonsi appartamenti», mas o singular fixo aparece muito nos anúncios.',
-      'Usar essas formas na fala: «testé», «sovente» e «egli» num bar soam como um personagem de ópera.',
+      'Usar “egli” depois de preposição ou como objeto: “ho parlato con egli” está errado. Diga “con lui”. “Egli” é só sujeito.',
+      '“Onde” é falso amigo: no italiano literário não é “onde” (lugar em que), mas “de onde”, “a fim de que” ou “por isso”. O lugar em que é “ove” ou “dove”.',
+      'Ler “codesto” como “este”: é “esse” (perto do interlocutor). “Questo” é o “este”.',
+      'Achar que “vendesi appartamenti” é erro grosseiro: a norma tradicional pede o plural “vendonsi appartamenti”, mas o singular fixo aparece muito nos anúncios.',
+      'Usar essas formas na fala: “testé”, “sovente” e “egli” num bar soam como um personagem de ópera.',
     ],
     quiz: [
       {
-        question: 'Complete: «Ho parlato a lungo con ___.»',
+        question: 'Complete: “Ho parlato a lungo con ___.”',
         options: ['lui', 'egli', 'esso'],
         answer: 'lui',
-        explanation: '«Egli» é só sujeito. Depois de preposição, usa-se «lui».',
+        explanation: '“Egli” é só sujeito. Depois de preposição, usa-se “lui”.',
       },
       {
-        question: '«Il direttore è uscito testé» significa…',
+        question: '“Il direttore è uscito testé” significa…',
         options: ['è uscito poco fa', 'è uscito di corsa', 'è uscito da solo'],
         answer: 'è uscito poco fa',
-        explanation: '«Testé» = poco fa, há pouco.',
+        explanation: '“Testé” = poco fa, há pouco.',
       },
       {
         question: 'Qual demonstrativo indica algo perto de quem ouve?',
         options: ['codesto', 'questo', 'quello'],
         answer: 'codesto',
-        explanation: '«Codesto» corresponde ao nosso «esse»; «questo» é «este», «quello» é «aquele».',
+        explanation: '“Codesto” corresponde ao nosso “esse”; “questo” é “este”, “quello” é “aquele”.',
       },
       {
-        question: 'Na poesia, «speme» significa…',
+        question: 'Na poesia, “speme” significa…',
         options: ['speranza', 'spesa', 'spazio'],
         answer: 'speranza',
-        explanation: '«Speme» é a forma poética de «speranza», do latim «spes».',
+        explanation: '“Speme” é a forma poética de “speranza”, do latim “spes”.',
       },
       {
-        question: 'Qual é a forma comum de «splendea»?',
+        question: 'Qual é a forma comum de “splendea”?',
         options: ['splendeva', 'splendette', 'splenderà'],
         answer: 'splendeva',
-        explanation: 'O imperfetto poético perde o «v»: splendea = splendeva, avea = aveva.',
+        explanation: 'O imperfetto poético perde o “v”: splendea = splendeva, avea = aveva.',
       },
     ],
   },
@@ -4281,7 +4281,7 @@ export const GRAMMAR_IT: GrammarTopic[] = [
     sections: [
       {
         heading: 'A gramática dos provérbios',
-        text: 'Os provérbios têm sintaxe própria: (1) «chi» + 3ª pessoa do singular, sem antecedente: «Chi dorme non piglia pesci»; (2) omissão do artigo: «Can che abbaia non morde», «Moglie e buoi dei paesi tuoi»; (3) frases sem verbo, com rima: «Natale con i tuoi, Pasqua con chi vuoi»; (4) o congiuntivo exortativo, que dá uma ordem em 3ª pessoa: «Chi la fa l’aspetti» (que espere a vingança); (5) formas antigas ou regionais: «piglia» (prende), «can» (cane).',
+        text: 'Os provérbios têm sintaxe própria: (1) “chi” + 3ª pessoa do singular, sem antecedente: “Chi dorme non piglia pesci”; (2) omissão do artigo: “Can che abbaia non morde”, “Moglie e buoi dei paesi tuoi”; (3) frases sem verbo, com rima: “Natale con i tuoi, Pasqua con chi vuoi”; (4) o congiuntivo exortativo, que dá uma ordem em 3ª pessoa: “Chi la fa l’aspetti” (que espere a vingança); (5) formas antigas ou regionais: “piglia” (prende), “can” (cane).',
         examples: [
           ['Chi dorme non piglia pesci.', 'Quem dorme não pega peixe. (quem não se mexe não consegue nada)'],
           ['Chi la fa l’aspetti.', 'Aqui se faz, aqui se paga.'],
@@ -4331,52 +4331,52 @@ export const GRAMMAR_IT: GrammarTopic[] = [
       },
       {
         heading: 'Ditos que vieram da literatura',
-        text: 'Versos de Dante e Manzoni viraram frases feitas. «Galeotto» era o nome italiano de Gallehault, que nas lendas arturianas aproximou Lancelote e Genebra; «fare da galeotto» passou a ser «servir de alcoviteiro».',
+        text: 'Versos de Dante e Manzoni viraram frases feitas. “Galeotto” era o nome italiano de Gallehault, que nas lendas arturianas aproximou Lancelote e Genebra; “fare da galeotto” passou a ser “servir de alcoviteiro”.',
         examples: [
           ['Galeotto fu ’l libro e chi lo scrisse', 'O alcoviteiro foi o livro e quem o escreveu (Dante, Inferno, V, 137: diz-se do que aproximou um casal)'],
           ['non ragioniam di lor, ma guarda e passa.', 'não falemos deles, mas olha e passa. (Inferno, III, 51: ignore quem não merece atenção)'],
           ['fatti non foste a viver come bruti, / ma per seguir virtute e canoscenza.', 'não fostes feitos para viver como brutos, / mas para seguir virtude e conhecimento. (Inferno, XXVI, 119–120)'],
-          ['Fu vera gloria? Ai posteri / l’ardua sentenza.', 'Foi glória verdadeira? À posteridade / a árdua sentença. (Manzoni, «Il cinque maggio»: deixemos que o futuro julgue)'],
+          ['Fu vera gloria? Ai posteri / l’ardua sentenza.', 'Foi glória verdadeira? À posteridade / a árdua sentença. (Manzoni, “Il cinque maggio”: deixemos que o futuro julgue)'],
         ],
       },
     ],
     pitfalls: [
-      'Pôr artigo onde o provérbio não tem: «Il cane che abbaia non morde» se entende, mas o provérbio é «Can che abbaia non morde».',
-      'Conjugar «chi» no plural: «Chi dormono» está errado. «Chi» pede sempre o verbo no singular: «Chi dorme».',
-      'Responder «Grazie» a «In bocca al lupo!»: a resposta tradicional é «Crepi!» (ou «Crepi il lupo!»).',
-      'Ler «Chi la fa l’aspetti» como indicativo: «aspetti» é congiuntivo com valor de ordem (que ele espere), não «tu aspetti».',
-      'Traduzir palavra por palavra: «Il mattino ha l’oro in bocca» não fala de boca nem de ouro, é o nosso «Deus ajuda quem cedo madruga».',
+      'Pôr artigo onde o provérbio não tem: “Il cane che abbaia non morde” se entende, mas o provérbio é “Can che abbaia non morde”.',
+      'Conjugar “chi” no plural: “Chi dormono” está errado. “Chi” pede sempre o verbo no singular: “Chi dorme”.',
+      'Responder “Grazie” a “In bocca al lupo!”: a resposta tradicional é “Crepi!” (ou “Crepi il lupo!”).',
+      'Ler “Chi la fa l’aspetti” como indicativo: “aspetti” é congiuntivo com valor de ordem (que ele espere), não “tu aspetti”.',
+      'Traduzir palavra por palavra: “Il mattino ha l’oro in bocca” não fala de boca nem de ouro, é o nosso “Deus ajuda quem cedo madruga”.',
     ],
     quiz: [
       {
-        question: 'Complete: «Chi ___ non piglia pesci.»',
+        question: 'Complete: “Chi ___ non piglia pesci.”',
         options: ['dorme', 'dormono', 'dorma'],
         answer: 'dorme',
-        explanation: '«Chi» pede verbo na 3ª pessoa do singular do indicativo.',
+        explanation: '“Chi” pede verbo na 3ª pessoa do singular do indicativo.',
       },
       {
-        question: 'Qual provérbio equivale a «Mais vale um pássaro na mão que dois voando»?',
+        question: 'Qual provérbio equivale a “Mais vale um pássaro na mão que dois voando”?',
         options: ['Meglio un uovo oggi che una gallina domani.', 'Chi va piano va sano e va lontano.', 'L’abito non fa il monaco.'],
         answer: 'Meglio un uovo oggi che una gallina domani.',
         explanation: 'A imagem muda (ovo e galinha), a ideia é a mesma: melhor o certo e pequeno que o incerto e grande.',
       },
       {
-        question: 'Como se responde a «In bocca al lupo!»?',
+        question: 'Como se responde a “In bocca al lupo!”?',
         options: ['Crepi!', 'Anche a te!', 'Prego!'],
         answer: 'Crepi!',
-        explanation: '«Crepi (il lupo)!» é a resposta tradicional: que o lobo morra.',
+        explanation: '“Crepi (il lupo)!” é a resposta tradicional: que o lobo morra.',
       },
       {
-        question: 'Em «Chi la fa l’aspetti», «aspetti» é…',
+        question: 'Em “Chi la fa l’aspetti”, “aspetti” é…',
         options: ['congiuntivo esortativo', 'indicativo presente', 'imperativo di tu'],
         answer: 'congiuntivo esortativo',
-        explanation: 'É um congiuntivo com valor de ordem em 3ª pessoa: «que ele espere».',
+        explanation: 'É um congiuntivo com valor de ordem em 3ª pessoa: “que ele espere”.',
       },
       {
-        question: 'Complete o provérbio: «Tra il dire e il fare c’è di mezzo ___.»',
+        question: 'Complete o provérbio: “Tra il dire e il fare c’è di mezzo ___.”',
         options: ['il mare', 'il monte', 'il fiume'],
         answer: 'il mare',
-        explanation: '«Tra il dire e il fare c’è di mezzo il mare»: a rima dire/fare/mare ajuda a memorizar.',
+        explanation: '“Tra il dire e il fare c’è di mezzo il mare”: a rima dire/fare/mare ajuda a memorizar.',
       },
     ],
   },

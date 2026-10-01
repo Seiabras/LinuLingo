@@ -21,7 +21,7 @@ const FOREIGN: Record<string, RegExp> = {
 /** Palavras muito frequentes de um vizinho que denunciam mistura (fora de citações). */
 const NEIGHBOR_WORDS: Record<string, string[]> = {
   // «og» e «jeg» ficam de fora no sueco: a unidade de intercompreensão tem uma fala em norueguês de propósito
-  sv: ['ikke', 'også'], // «hvad» era a grafia sueca antes da reforma de 1906
+  sv: ['ikke', 'også'], // “hvad” era a grafia sueca antes da reforma de 1906
   nb: ['och', 'inte', 'jag', 'också', 'någon'],
   nn: ['och', 'inte', 'jag', 'också', 'någon'],
   da: ['och', 'inte', 'jag', 'också', 'någon', 'hva', 'ikkje'],
@@ -39,12 +39,12 @@ const PROPER = /São Paulo|Brasília|Ålesund|Tórshavn|Þingvellir|Göteborg|Ma
 export function nordicTextProblems(lang: string, raw: string): string[] {
   const out: string[] = [];
   // citação curta entre « » (até 3 palavras) é palavra de outra língua citada de propósito
-  const text = raw.replace(PROPER, 'X').replace(/«([^»]*)»/g, (m, inner: string) => (inner.trim().split(/\s+/).length <= 3 ? '«»' : m));
+  const text = raw.replace(PROPER, 'X').replace(/“([^”]*)”/g, (m, inner: string) => (inner.trim().split(/\s+/).length <= 3 ? '“”' : m));
   const re = FOREIGN[lang];
   const m = re ? text.match(re) : null;
-  if (m) out.push(`«${m[0]}» não existe em ${NAMES[lang] ?? lang} (letra de outra língua?)`);
+  if (m) out.push(`“${m[0]}” não existe em ${NAMES[lang] ?? lang} (letra de outra língua?)`);
   if (/[Ѐ-ӿ]/.test(text)) out.push('letra cirílica');
   for (const w of NEIGHBOR_WORDS[lang] ?? [])
-    if (new RegExp(`(?<![\\p{L}])${w}(?![\\p{L}])`, 'iu').test(text)) out.push(`«${w}» é de uma língua vizinha, não de ${NAMES[lang] ?? lang}`);
+    if (new RegExp(`(?<![\\p{L}])${w}(?![\\p{L}])`, 'iu').test(text)) out.push(`“${w}” é de uma língua vizinha, não de ${NAMES[lang] ?? lang}`);
   return out;
 }

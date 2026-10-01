@@ -6,7 +6,7 @@ export const LINGUISTICS_RU: LinguisticsArea[] = [
   {
     area: 'fonetica',
     summary:
-      'O russo tem sons que o português não conhece: a vogal «ы», as chiantes graves ж e ш, o «rr» raspado de х e uma fileira inteira de consoantes «moles», ditas com a língua encostada no céu da boca.',
+      'O russo tem sons que o português não conhece: a vogal “ы”, as chiantes graves ж e ш, o “rr” raspado de х e uma fileira inteira de consoantes “moles”, ditas com a língua encostada no céu da boca.',
     sections: [
       {
         heading: 'Os sons que faltam no português',
@@ -14,21 +14,21 @@ export const LINGUISTICS_RU: LinguisticsArea[] = [
         table: {
           head: ['Letra', 'IPA', 'O que é', 'Como produzir', 'Exemplo'],
           rows: [
-            ['ы', '[ɨ]', 'vogal alta central', 'diga «i» sem sorrir, puxando a língua para trás, como se fosse dizer «u»', 'сыр [sɨr] (queijo)'],
+            ['ы', '[ɨ]', 'vogal alta central', 'diga “i” sem sorrir, puxando a língua para trás, como se fosse dizer “u”', 'сыр [sɨr] (queijo)'],
             [
               'ж',
               '[ʐ]',
               'chiante sonora retroflexa',
-              'o «j» de «já», com a ponta da língua um pouco mais para trás e os lábios arredondados',
+              'o “j” de “já”, com a ponta da língua um pouco mais para trás e os lábios arredondados',
               'жук [ʐuk] (besouro)',
             ],
-            ['ш', '[ʂ]', 'chiante surda retroflexa', 'o «ch» de «chave», mais grave e «oco»', 'шум [ʂum] (barulho)'],
-            ['щ', '[ɕː]', 'chiante longa e palatal', 'um «ch» longo e agudo, com o meio da língua no céu da boca, sorrindo', 'щи [ɕːi] (sopa de repolho)'],
-            ['ч', '[t͡ɕ]', 'africada palatal', 'o «tch» de «tchau», mais macio', 'чай [t͡ɕaj] (chá)'],
-            ['ц', '[t͡s]', 'africada dental', '«t» e «s» grudados, como em «tsunami»', 'царь [t͡sarʲ] (czar)'],
-            ['х', '[x]', 'fricativa velar surda', 'o «rr» carioca de «carro», raspando no fundo da boca', 'хлеб [xlʲep] (pão)'],
-            ['р', '[r]', 'vibrante múltipla', 'a ponta da língua bate várias vezes nos dentes de cima, como o «r» de «caro» repetido', 'ры́ба [ˈrɨbə] (peixe)'],
-            ['л', '[ɫ]', 'lateral velarizada', 'o «l» grosso, com o fundo da língua levantado; o «l» mole [lʲ] é mais claro que o nosso', 'лук [ɫuk] (cebola)'],
+            ['ш', '[ʂ]', 'chiante surda retroflexa', 'o “ch” de “chave”, mais grave e “oco”', 'шум [ʂum] (barulho)'],
+            ['щ', '[ɕː]', 'chiante longa e palatal', 'um “ch” longo e agudo, com o meio da língua no céu da boca, sorrindo', 'щи [ɕːi] (sopa de repolho)'],
+            ['ч', '[t͡ɕ]', 'africada palatal', 'o “tch” de “tchau”, mais macio', 'чай [t͡ɕaj] (chá)'],
+            ['ц', '[t͡s]', 'africada dental', '“t” e “s” grudados, como em “tsunami”', 'царь [t͡sarʲ] (czar)'],
+            ['х', '[x]', 'fricativa velar surda', 'o “rr” carioca de “carro”, raspando no fundo da boca', 'хлеб [xlʲep] (pão)'],
+            ['р', '[r]', 'vibrante múltipla', 'a ponta da língua bate várias vezes nos dentes de cima, como o “r” de “caro” repetido', 'ры́ба [ˈrɨbə] (peixe)'],
+            ['л', '[ɫ]', 'lateral velarizada', 'o “l” grosso, com o fundo da língua levantado; o “l” mole [lʲ] é mais claro que o nosso', 'лук [ɫuk] (cebola)'],
           ],
         },
         examples: [
@@ -38,15 +38,15 @@ export const LINGUISTICS_RU: LinguisticsArea[] = [
         ],
       },
       {
-        heading: 'Consoantes moles: um «i» embutido',
-        text: 'Quase toda consoante russa tem duas versões: dura e mole (palatalizada, marcada no IPA com ʲ). Na mole, o meio da língua sobe até o céu da boca enquanto se faz a consoante, como se houvesse um «i» colado nela. O português tem algo parecido em «nh» e «lh», e no «t» e «d» de «tia» e «dia», mas no russo isso vale para quase todas as consoantes, inclusive no fim da palavra: мать [matʲ] termina num «t» amaciado, quase um «tchi» engolido.',
+        heading: 'Consoantes moles: um “i” embutido',
+        text: 'Quase toda consoante russa tem duas versões: dura e mole (palatalizada, marcada no IPA com ʲ). Na mole, o meio da língua sobe até o céu da boca enquanto se faz a consoante, como se houvesse um “i” colado nela. O português tem algo parecido em “nh” e “lh”, e no “t” e “d” de “tia” e “dia”, mas no russo isso vale para quase todas as consoantes, inclusive no fim da palavra: мать [matʲ] termina num “t” amaciado, quase um “tchi” engolido.',
         table: {
           head: ['Dura', 'Mole', 'Diferença'],
           rows: [
-            ['мат [mat] (xeque-mate)', 'мать [matʲ] (mãe)', '«t» final amaciado'],
-            ['брат [brat] (irmão)', 'брать [bratʲ] (pegar)', '«t» final amaciado'],
-            ['лук [ɫuk] (cebola)', 'люк [lʲuk] (escotilha)', '«l» grosso × «l» claro'],
-            ['нос [nos] (nariz)', 'нёс [nʲos] (carregava)', '«n» × quase «nh»'],
+            ['мат [mat] (xeque-mate)', 'мать [matʲ] (mãe)', '“t” final amaciado'],
+            ['брат [brat] (irmão)', 'брать [bratʲ] (pegar)', '“t” final amaciado'],
+            ['лук [ɫuk] (cebola)', 'люк [lʲuk] (escotilha)', '“l” grosso × “l” claro'],
+            ['нос [nos] (nariz)', 'нёс [nʲos] (carregava)', '“n” × quase “nh”'],
           ],
         },
         examples: [
@@ -57,11 +57,11 @@ export const LINGUISTICS_RU: LinguisticsArea[] = [
       },
       {
         heading: 'Grupos de consoantes',
-        text: 'O português brasileiro gosta de sílabas abertas e costuma inserir um «i» entre consoantes (pneu → «pineu»). O russo junta três ou quatro consoantes seguidas sem vogal nenhuma no meio, e o desafio para o brasileiro é não pôr esse «i». A boa notícia: algumas letras escritas nem são pronunciadas, como o primeiro в de здра́вствуйте [ˈzdrastvʊjtʲɪ].',
+        text: 'O português brasileiro gosta de sílabas abertas e costuma inserir um “i” entre consoantes (pneu → “pineu”). O russo junta três ou quatro consoantes seguidas sem vogal nenhuma no meio, e o desafio para o brasileiro é não pôr esse “i”. A boa notícia: algumas letras escritas nem são pronunciadas, como o primeiro в de здра́вствуйте [ˈzdrastvʊjtʲɪ].',
         examples: [
           ['Здра́вствуйте!', 'Bom dia! (saudação formal) [ˈzdrastvʊjtʲɪ]'],
           ['взгляд', 'olhar: [vzglʲat], quatro consoantes antes da vogal'],
-          ['Карл у Кла́ры укра́л кора́ллы.', 'Karl roubou os corais de Klara (trava-língua do «r» e do «l»).'],
+          ['Карл у Кла́ры укра́л кора́ллы.', 'Karl roubou os corais de Klara (trava-língua do “r” e do “l”).'],
           ['Шла Са́ша по шоссе́ и соса́ла су́шку.', 'Sacha ia pela estrada chupando uma rosquinha (trava-língua do ш e do с).'],
         ],
       },
@@ -69,20 +69,20 @@ export const LINGUISTICS_RU: LinguisticsArea[] = [
     topics: ['ru-g1'],
     quiz: [
       {
-        question: 'Como se produz a vogal «ы» [ɨ]?',
+        question: 'Como se produz a vogal “ы” [ɨ]?',
         options: [
-          'Como o «i», mas com a língua puxada para trás e sem sorrir',
-          'Como um «u» bem arredondado',
-          'Como o «e» fechado de «você»',
-          'Como um «i» nasal',
+          'Como o “i”, mas com a língua puxada para trás e sem sorrir',
+          'Como um “u” bem arredondado',
+          'Como o “e” fechado de “você”',
+          'Como um “i” nasal',
         ],
-        answer: 'Como o «i», mas com a língua puxada para trás e sem sorrir',
-        explanation: '[ɨ] é uma vogal alta central: a altura do «i», mas com a língua mais recuada e os lábios neutros.',
+        answer: 'Como o “i”, mas com a língua puxada para trás e sem sorrir',
+        explanation: '[ɨ] é uma vogal alta central: a altura do “i”, mas com a língua mais recuada e os lábios neutros.',
       },
       {
         question: 'Que som tem a letra х, em хлеб (pão)?',
-        options: ['[x], o «rr» raspado de «carro» no Rio', '[ks], como o «x» de «táxi»', '[ʃ], como o «x» de «xícara»', '[h] aspirado, como no inglês'],
-        answer: '[x], o «rr» raspado de «carro» no Rio',
+        options: ['[x], o “rr” raspado de “carro” no Rio', '[ks], como o “x” de “táxi”', '[ʃ], como o “x” de “xícara”', '[h] aspirado, como no inglês'],
+        answer: '[x], o “rr” raspado de “carro” no Rio',
         explanation: 'х é uma fricativa velar surda [x]: o ar raspa entre o fundo da língua e o véu palatino.',
       },
       {
@@ -93,9 +93,9 @@ export const LINGUISTICS_RU: LinguisticsArea[] = [
       },
       {
         question: 'Qual é o erro de pronúncia mais típico do brasileiro em palavras como взгляд (olhar)?',
-        options: ['Inserir um «i» entre as consoantes', 'Nasalizar a vogal', 'Trocar o «l» por «r»', 'Pronunciar o «я» como «é»'],
-        answer: 'Inserir um «i» entre as consoantes',
-        explanation: 'O português brasileiro desfaz grupos de consoantes com um «i» (pneu → «pineu»); o russo junta várias consoantes seguidas: [vzglʲat].',
+        options: ['Inserir um “i” entre as consoantes', 'Nasalizar a vogal', 'Trocar o “l” por “r”', 'Pronunciar o “я” como “é”'],
+        answer: 'Inserir um “i” entre as consoantes',
+        explanation: 'O português brasileiro desfaz grupos de consoantes com um “i” (pneu → “pineu”); o russo junta várias consoantes seguidas: [vzglʲat].',
       },
     ],
   },
@@ -108,7 +108,7 @@ export const LINGUISTICS_RU: LinguisticsArea[] = [
     sections: [
       {
         heading: 'Dura × mole: uma diferença que muda a palavra',
-        text: 'No português, o «t» de «tia» dito [t] ou [t͡ʃ] é a mesma palavra: são alofones. No russo, a diferença entre consoante dura e mole é fonológica: брат (irmão) e брать (pegar) formam um par mínimo. Por isso o russo tem cerca de 35 fonemas consonantais, quase o dobro do português. Já as vogais são poucas: cinco fonemas, /a e i o u/, segundo a Escola Fonológica de Moscou. A Escola de Leningrado (São Petersburgo) conta seis, porque trata ы como fonema próprio; para Moscou, ы é só o alofone de /i/ depois de consoante dura: o и de Ива́н soa [ɨ] em «с Ива́ном» (com Ivan), dito como uma palavra só: [sɨˈvanəm].',
+        text: 'No português, o “t” de “tia” dito [t] ou [t͡ʃ] é a mesma palavra: são alofones. No russo, a diferença entre consoante dura e mole é fonológica: брат (irmão) e брать (pegar) formam um par mínimo. Por isso o russo tem cerca de 35 fonemas consonantais, quase o dobro do português. Já as vogais são poucas: cinco fonemas, /a e i o u/, segundo a Escola Fonológica de Moscou. A Escola de Leningrado (São Petersburgo) conta seis, porque trata ы como fonema próprio; para Moscou, ы é só o alofone de /i/ depois de consoante dura: o и de Ива́н soa [ɨ] em “с Ива́ном” (com Ivan), dito como uma palavra só: [sɨˈvanəm].',
         examples: [
           ['брат — брать', 'irmão × pegar'],
           ['мат — мать', 'xeque-mate × mãe'],
@@ -116,12 +116,12 @@ export const LINGUISTICS_RU: LinguisticsArea[] = [
         ],
       },
       {
-        heading: 'Redução vocálica: o «o» que vira «a»',
-        text: 'Só a vogal tônica soa com clareza. Nas átonas, о e а se confundem: na sílaba logo antes da tônica viram [ɐ], um «a» fraco (fenômeno chamado а́канье, «falar em a»), e nas outras viram [ə], um «â» neutro. Depois de consoante mole, е e я átonos viram [ɪ] (и́канье). É como o «menino» dito «mininu» no português, só que muito mais forte. Em alguns dialetos do norte da Rússia o «o» átono se mantém (о́канье).',
+        heading: 'Redução vocálica: o “o” que vira “a”',
+        text: 'Só a vogal tônica soa com clareza. Nas átonas, о e а se confundem: na sílaba logo antes da tônica viram [ɐ], um “a” fraco (fenômeno chamado а́канье, “falar em a”), e nas outras viram [ə], um “â” neutro. Depois de consoante mole, е e я átonos viram [ɪ] (и́канье). É como o “menino” dito “mininu” no português, só que muito mais forte. Em alguns dialetos do norte da Rússia o “o” átono se mantém (о́канье).',
         table: {
           head: ['Palavra', 'Pronúncia', 'O que acontece'],
           rows: [
-            ['молоко́ (leite)', '[məlɐˈko]', 'três «o» escritos, só o tônico soa «o»'],
+            ['молоко́ (leite)', '[məlɐˈko]', 'três “o” escritos, só o tônico soa “o”'],
             ['хорошо́ (bem)', '[xərɐˈʂo]', 'о → [ə], о → [ɐ], о tônico'],
             ['голова́ (cabeça)', '[gəlɐˈva]', 'о → [ə], о → [ɐ]'],
             ['язы́к (língua)', '[jɪˈzɨk]', 'я átono → [ɪ]'],
@@ -134,7 +134,7 @@ export const LINGUISTICS_RU: LinguisticsArea[] = [
       },
       {
         heading: 'Acento livre e móvel',
-        text: 'Em português, a tônica cai quase sempre numa das três últimas sílabas, e a posição é previsível pela grafia. No russo, ela pode cair em qualquer sílaba, não é marcada na escrita comum e pode mudar de lugar dentro da mesma palavra, de uma forma para outra: рука́ (mão) → ру́ку no acusativo; го́род (cidade) → города́ (cidades). Às vezes só a tônica distingue duas palavras, como «sábia/sabia/sabiá» no português. Por isso o app marca a tônica com um acento agudo, que os russos só usam em dicionários e livros para estrangeiros.',
+        text: 'Em português, a tônica cai quase sempre numa das três últimas sílabas, e a posição é previsível pela grafia. No russo, ela pode cair em qualquer sílaba, não é marcada na escrita comum e pode mudar de lugar dentro da mesma palavra, de uma forma para outra: рука́ (mão) → ру́ку no acusativo; го́род (cidade) → города́ (cidades). Às vezes só a tônica distingue duas palavras, como “sábia/sabia/sabiá” no português. Por isso o app marca a tônica com um acento agudo, que os russos só usam em dicionários e livros para estrangeiros.',
         table: {
           head: ['Par', 'Sentido'],
           rows: [
@@ -154,7 +154,7 @@ export const LINGUISTICS_RU: LinguisticsArea[] = [
         text: 'No fim da palavra, as consoantes sonoras perdem a voz: код (código) e кот (gato) soam iguais, [kot]; луг (prado) e лук (cebola) soam [ɫuk]. Num grupo, a última consoante contagia as anteriores: во́дка soa [ˈvotkə], сде́лать (fazer) soa [ˈzdʲelətʲ]. Mesmo assim, a ortografia russa é morfológica: escreve o morfema sempre do mesmo jeito (код, porque o plural é ко́ды), e não como se fala. Há ainda exceções fixas: что soa [ʂto], его́ soa [jɪˈvo] e сего́дня soa [sʲɪˈvodnʲə]. Na entonação, a pergunta de sim ou não tem a mesma ordem da afirmação: o que muda é a melodia, que sobe bruscamente na tônica da palavra em foco e cai logo depois (a construção entonacional nº 3 da descrição clássica de Elena Bryzgunova).',
         examples: [
           ['Ты был в Москве́.', 'Você esteve em Moscou. (afirmação: a voz desce)'],
-          ['Ты был в Москве́?', 'Você esteve em Moscou? (pergunta: a voz sobe em «Москве́» e cai)'],
+          ['Ты был в Москве́?', 'Você esteve em Moscou? (pergunta: a voz sobe em “Москве́” e cai)'],
           ['во́дка', 'vodca: [ˈvotkə], o д vira [t] antes do к'],
         ],
       },
@@ -180,12 +180,12 @@ export const LINGUISTICS_RU: LinguisticsArea[] = [
       },
       {
         question: 'Por que код (código) e кот (gato) soam iguais?',
-        options: ['Porque a consoante sonora se ensurdece no fim da palavra', 'Porque o д é mudo no russo', 'Porque a tônica muda', 'Porque o о vira «a»'],
+        options: ['Porque a consoante sonora se ensurdece no fim da palavra', 'Porque o д é mudo no russo', 'Porque a tônica muda', 'Porque o о vira “a”'],
         answer: 'Porque a consoante sonora se ensurdece no fim da palavra',
         explanation: 'No fim da palavra, д vira [t], г vira [k], б vira [p] etc. A escrita mantém o д porque o morfema é o mesmo de ко́ды (códigos).',
       },
       {
-        question: 'Como o russo distingue, na fala, «Ты был в Москве́.» de «Ты был в Москве́?»',
+        question: 'Como o russo distingue, na fala, “Ты был в Москве́.” de “Ты был в Москве́?”',
         options: ['Só pela entonação', 'Pela ordem das palavras', 'Por uma partícula obrigatória', 'Pelo tempo verbal'],
         answer: 'Só pela entonação',
         explanation: 'Na pergunta de sim ou não, a voz sobe bruscamente na tônica da palavra em foco e cai depois; as palavras e a ordem ficam iguais.',
@@ -201,16 +201,16 @@ export const LINGUISTICS_RU: LinguisticsArea[] = [
     sections: [
       {
         heading: 'Seis casos, uma terminação para tudo',
-        text: 'O latim tinha casos; o português os perdeu e passou a usar preposições e a ordem das palavras. O russo os manteve: a terminação mostra a função da palavra na frase. Como em toda língua fusional, uma única terminação carrega várias informações de uma vez: o -у de кни́гу diz ao mesmo tempo «feminino, singular, acusativo». Não há artigo: кни́га é «livro», «um livro» ou «o livro», conforme o contexto.',
+        text: 'O latim tinha casos; o português os perdeu e passou a usar preposições e a ordem das palavras. O russo os manteve: a terminação mostra a função da palavra na frase. Como em toda língua fusional, uma única terminação carrega várias informações de uma vez: o -у de кни́гу diz ao mesmo tempo “feminino, singular, acusativo”. Não há artigo: кни́га é “livro”, “um livro” ou “o livro”, conforme o contexto.',
         table: {
           head: ['Caso', 'Pergunta', 'Função típica', 'кни́га (livro)', 'стол (mesa)', 'окно́ (janela)'],
           rows: [
             ['Nominativo', 'кто? что?', 'sujeito', 'кни́га', 'стол', 'окно́'],
-            ['Genitivo', 'кого́? чего́?', '«de», posse, ausência', 'кни́ги', 'стола́', 'окна́'],
-            ['Dativo', 'кому́? чему́?', '«para», quem recebe', 'кни́ге', 'столу́', 'окну́'],
+            ['Genitivo', 'кого́? чего́?', '“de”, posse, ausência', 'кни́ги', 'стола́', 'окна́'],
+            ['Dativo', 'кому́? чему́?', '“para”, quem recebe', 'кни́ге', 'столу́', 'окну́'],
             ['Acusativo', 'кого́? что?', 'objeto direto', 'кни́гу', 'стол', 'окно́'],
-            ['Instrumental', 'кем? чем?', '«com», instrumento', 'кни́гой', 'столо́м', 'окно́м'],
-            ['Preposicional', 'о ком? о чём?', 'lugar, «sobre»', '(о) кни́ге', '(о) столе́', '(об) окне́'],
+            ['Instrumental', 'кем? чем?', '“com”, instrumento', 'кни́гой', 'столо́м', 'окно́м'],
+            ['Preposicional', 'о ком? о чём?', 'lugar, “sobre”', '(о) кни́ге', '(о) столе́', '(об) окне́'],
           ],
         },
         examples: [
@@ -248,7 +248,7 @@ export const LINGUISTICS_RU: LinguisticsArea[] = [
       },
       {
         heading: 'Formação de palavras: raiz, prefixo, sufixo',
-        text: 'A formação de palavras é muito produtiva e transparente: conhecendo a raiz e os afixos, você adivinha o sentido de palavras novas. Da raiz ход (andar) saem ходи́ть (andar), вход (entrada), вы́ход (saída), перехо́д (travessia, passagem subterrânea) e прохо́д (corredor, passagem). As raízes também alternam consoantes na conjugação, como no português «dizer / digo»: писа́ть → пишу́, ходи́ть → хожу́, люби́ть → люблю́.',
+        text: 'A formação de palavras é muito produtiva e transparente: conhecendo a raiz e os afixos, você adivinha o sentido de palavras novas. Da raiz ход (andar) saem ходи́ть (andar), вход (entrada), вы́ход (saída), перехо́д (travessia, passagem subterrânea) e прохо́д (corredor, passagem). As raízes também alternam consoantes na conjugação, como no português “dizer / digo”: писа́ть → пишу́, ходи́ть → хожу́, люби́ть → люблю́.',
         table: {
           head: ['Sufixo', 'Sentido', 'Exemplo'],
           rows: [
@@ -292,7 +292,7 @@ export const LINGUISTICS_RU: LinguisticsArea[] = [
         explanation: 'Nominativo, genitivo, dativo, acusativo, instrumental e preposicional.',
       },
       {
-        question: 'Por que se diz я ви́жу бра́та, e não «я ви́жу брат»?',
+        question: 'Por que se diz я ви́жу бра́та, e não “я ви́жу брат”?',
         options: [
           'Porque objeto direto masculino animado toma a forma do genitivo',
           'Porque ви́деть sempre pede dativo',
@@ -317,7 +317,7 @@ export const LINGUISTICS_RU: LinguisticsArea[] = [
           'Porque só os verbos imperfectivos fazem isso',
         ],
         answer: 'Porque ele vem de um antigo particípio, que concordava como adjetivo',
-        explanation: 'O -л era a marca de um particípio usado com o verbo «ser»; o auxiliar caiu e ficou a concordância em gênero e número.',
+        explanation: 'O -л era a marca de um particípio usado com o verbo “ser”; o auxiliar caiu e ficou a concordância em gênero e número.',
       },
     ],
   },
@@ -326,11 +326,11 @@ export const LINGUISTICS_RU: LinguisticsArea[] = [
   {
     area: 'sintaxe',
     summary:
-      'Como os casos já mostram quem faz o quê, a ordem das palavras russa é livre e serve à informação (o novo vai para o fim); o presente dispensa o verbo «ser», e muitas frases não têm sujeito no nominativo.',
+      'Como os casos já mostram quem faz o quê, a ordem das palavras russa é livre e serve à informação (o novo vai para o fim); o presente dispensa o verbo “ser”, e muitas frases não têm sujeito no nominativo.',
     sections: [
       {
         heading: 'Ordem livre, guiada pela informação',
-        text: 'No português, «o cachorro mordeu o carteiro» e «o carteiro mordeu o cachorro» dizem coisas opostas. No russo, a terminação já mostra quem é o sujeito e quem é o objeto, então as palavras podem trocar de lugar sem mudar quem fez o quê. A ordem neutra é sujeito-verbo-objeto (SVO), mas a regra que manda é outra: o que já se sabe (o tema) vem primeiro, e a informação nova (o rema) vai para o fim. A frase clássica das cartilhas soviéticas mostra isso.',
+        text: 'No português, “o cachorro mordeu o carteiro” e “o carteiro mordeu o cachorro” dizem coisas opostas. No russo, a terminação já mostra quem é o sujeito e quem é o objeto, então as palavras podem trocar de lugar sem mudar quem fez o quê. A ordem neutra é sujeito-verbo-objeto (SVO), mas a regra que manda é outra: o que já se sabe (o tema) vem primeiro, e a informação nova (o rema) vai para o fim. A frase clássica das cartilhas soviéticas mostra isso.',
         table: {
           head: ['Frase', 'Ordem', 'Nuance'],
           rows: [
@@ -346,8 +346,8 @@ export const LINGUISTICS_RU: LinguisticsArea[] = [
         ],
       },
       {
-        heading: 'Frases sem «ser», sem «ter» e sem sujeito',
-        text: 'No presente, o russo omite o verbo «ser»: Я студе́нт (eu estudante). Quando sujeito e predicado são dois substantivos, a escrita põe um travessão no lugar do verbo. Para «ter», usa-se «junto de mim há»: у меня́ есть. E muitas frases comuns são impessoais, com a pessoa no dativo: мне хо́лодно (a mim [está] frio). Em мне нра́вится му́зыка (eu gosto de música), o sujeito gramatical é a música, como no espanhol «me gusta».',
+        heading: 'Frases sem “ser”, sem “ter” e sem sujeito',
+        text: 'No presente, o russo omite o verbo “ser”: Я студе́нт (eu estudante). Quando sujeito e predicado são dois substantivos, a escrita põe um travessão no lugar do verbo. Para “ter”, usa-se “junto de mim há”: у меня́ есть. E muitas frases comuns são impessoais, com a pessoa no dativo: мне хо́лодно (a mim [está] frio). Em мне нра́вится му́зыка (eu gosto de música), o sujeito gramatical é a música, como no espanhol “me gusta”.',
         examples: [
           ['Я студе́нт.', 'Eu sou estudante.'],
           ['Москва́ — столи́ца Росси́и.', 'Moscou é a capital da Rússia.'],
@@ -359,7 +359,7 @@ export const LINGUISTICS_RU: LinguisticsArea[] = [
       },
       {
         heading: 'Regência dos números e negação',
-        text: 'Os numerais governam o caso do substantivo: depois de 1 vem o nominativo singular, depois de 2, 3 e 4 o genitivo singular, e de 5 em diante o genitivo plural. Na negação, o russo acumula palavras negativas, e todas precisam do не: onde o português diz «nunca disse nada a ninguém», o russo diz literalmente «nunca a ninguém nada não disse». E a ausência pede genitivo: нет вре́мени (não há tempo).',
+        text: 'Os numerais governam o caso do substantivo: depois de 1 vem o nominativo singular, depois de 2, 3 e 4 o genitivo singular, e de 5 em diante o genitivo plural. Na negação, o russo acumula palavras negativas, e todas precisam do не: onde o português diz “nunca disse nada a ninguém”, o russo diz literalmente “nunca a ninguém nada não disse”. E a ausência pede genitivo: нет вре́мени (não há tempo).',
         table: {
           head: ['Número', 'Caso', 'Exemplo'],
           rows: [
@@ -376,7 +376,7 @@ export const LINGUISTICS_RU: LinguisticsArea[] = [
       },
       {
         heading: 'Subordinação e vírgulas',
-        text: 'As orações subordinadas se ligam por что (que), что́бы (para que, com o verbo no passado), ли (se, na pergunta indireta) e кото́рый (o qual), que recebe gênero e número do antecedente e o caso da sua função na oração. No discurso indireto, o russo mantém o tempo da fala original: onde o português diz «ele disse que morava», o russo diz «ele disse que mora». A vírgula segue a gramática, não a respiração: toda oração subordinada vem separada por vírgulas, inclusive antes de что.',
+        text: 'As orações subordinadas se ligam por что (que), что́бы (para que, com o verbo no passado), ли (se, na pergunta indireta) e кото́рый (o qual), que recebe gênero e número do antecedente e o caso da sua função na oração. No discurso indireto, o russo mantém o tempo da fala original: onde o português diz “ele disse que morava”, o russo diz “ele disse que mora”. A vírgula segue a gramática, não a respiração: toda oração subordinada vem separada por vírgulas, inclusive antes de что.',
         examples: [
           ['Он сказа́л, что живёт в Москве́.', 'Ele disse que morava em Moscou. (literalmente: que mora)'],
           ['Я не зна́ю, придёт ли он.', 'Não sei se ele vem.'],
@@ -402,7 +402,7 @@ export const LINGUISTICS_RU: LinguisticsArea[] = [
         question: 'Em Ра́му мы́ла ма́ма, qual é a informação nova?',
         options: ['Quem lavou (a mamãe)', 'O que foi lavado (a moldura)', 'Quando foi lavado', 'Nenhuma: a frase é neutra'],
         answer: 'Quem lavou (a mamãe)',
-        explanation: 'O rema, a informação nova, tende a ir para o fim da frase: «quem lavou a moldura foi a mamãe».',
+        explanation: 'O rema, a informação nova, tende a ir para o fim da frase: “quem lavou a moldura foi a mamãe”.',
       },
       {
         question: 'Qual caso vem depois de пять (cinco): пять…?',
@@ -414,7 +414,7 @@ export const LINGUISTICS_RU: LinguisticsArea[] = [
         question: 'Em мне нра́вится му́зыка (eu gosto de música), qual palavra é o sujeito gramatical?',
         options: ['му́зыка (música)', 'мне (a mim)', 'нра́вится (agrada)', 'Não há sujeito'],
         answer: 'му́зыка (música)',
-        explanation: 'A música é quem agrada (nominativo); a pessoa que gosta vai para o dativo, como no espanhol «me gusta la música».',
+        explanation: 'A música é quem agrada (nominativo); a pessoa que gosta vai para o dativo, como no espanhol “me gusta la música”.',
       },
     ],
   },
@@ -434,20 +434,20 @@ export const LINGUISTICS_RU: LinguisticsArea[] = [
             ['Eslavo comum', 'мать (mãe), вода́ (água), дом (casa), со́лнце (sol)'],
             ['Eslavo eclesiástico', 'глава́ (capítulo, chefe) × голова́ (cabeça); град × го́род (cidade); брег × бе́рег (margem)'],
             ['Grego (via Bizâncio)', 'ико́на (ícone), тетра́дь (caderno), фона́рь (lanterna)'],
-            ['Túrquico', 'де́ньги (dinheiro), каранда́ш (lápis, «pedra negra»), сунду́к (baú)'],
+            ['Túrquico', 'де́ньги (dinheiro), каранда́ш (lápis, “pedra negra”), сунду́к (baú)'],
             ['Holandês e alemão (séc. XVIII)', 'верфь (estaleiro), флаг (bandeira), бутербро́д (sanduíche aberto)'],
             ['Francês (séc. XVIII e XIX)', 'пальто́ (casaco), пляж (praia), тротуа́р (calçada)'],
             ['Inglês (séc. XX e XXI)', 'компью́тер, футбо́л, ме́неджер'],
           ],
         },
         examples: [
-          ['Волгогра́д', 'Volgogrado: «cidade do Volga», com o град eclesiástico'],
-          ['Ни́жний Но́вгород', 'Níjni Nóvgorod: «cidade nova de baixo», com o го́род russo'],
+          ['Волгогра́д', 'Volgogrado: “cidade do Volga”, com o град eclesiástico'],
+          ['Ни́жний Но́вгород', 'Níjni Nóvgorod: “cidade nova de baixo”, com o го́род russo'],
         ],
       },
       {
         heading: 'Cognatos e falsos amigos',
-        text: 'Russo e português são línguas indo-europeias, primas distantes. Por baixo da diferença de alfabeto, há cognatos antigos: мать e «mãe» (latim mater), брат e «frade» (frater), нос e «nariz» (nasus), ночь e «noite» (nox), но́вый e «novo», вдова́ e «viúva», три e «três», есть e «é» (est). Mas há também falsos amigos, quase sempre empréstimos que mudaram de sentido no caminho.',
+        text: 'Russo e português são línguas indo-europeias, primas distantes. Por baixo da diferença de alfabeto, há cognatos antigos: мать e “mãe” (latim mater), брат e “frade” (frater), нос e “nariz” (nasus), ночь e “noite” (nox), но́вый e “novo”, вдова́ e “viúva”, три e “três”, есть e “é” (est). Mas há também falsos amigos, quase sempre empréstimos que mudaram de sentido no caminho.',
         table: {
           head: ['Russo', 'Parece', 'Quer dizer'],
           rows: [
@@ -466,7 +466,7 @@ export const LINGUISTICS_RU: LinguisticsArea[] = [
       },
       {
         heading: 'Campos recortados de outro jeito',
-        text: 'Cada língua divide o mundo à sua maneira. O russo tem dois azuis básicos: си́ний (azul-escuro) e голубо́й (azul-claro), tão distintos para um russo quanto «vermelho» e «rosa» para nós; um estudo de 2007 (Winawer e colegas) mostrou que falantes de russo distinguem mais rápido tons que caem dos dois lados dessa fronteira. O parentesco também é mais detalhado: «sogro» é тесть (pai da esposa) ou свёкор (pai do marido), e «sogra» é тёща ou свекро́вь. E «ir» se divide pelo meio de transporte e pela direção: идти́ e ходи́ть a pé, е́хать e е́здить de veículo.',
+        text: 'Cada língua divide o mundo à sua maneira. O russo tem dois azuis básicos: си́ний (azul-escuro) e голубо́й (azul-claro), tão distintos para um russo quanto “vermelho” e “rosa” para nós; um estudo de 2007 (Winawer e colegas) mostrou que falantes de russo distinguem mais rápido tons que caem dos dois lados dessa fronteira. O parentesco também é mais detalhado: “sogro” é тесть (pai da esposa) ou свёкор (pai do marido), e “sogra” é тёща ou свекро́вь. E “ir” se divide pelo meio de transporte e pela direção: идти́ e ходи́ть a pé, е́хать e е́здить de veículo.',
         examples: [
           ['си́ний и голубо́й', 'azul-escuro e azul-claro'],
           ['Я иду́ в шко́лу.', 'Estou indo para a escola (agora, a pé).'],
@@ -476,7 +476,7 @@ export const LINGUISTICS_RU: LinguisticsArea[] = [
       },
       {
         heading: 'Polissemia e expressões idiomáticas',
-        text: 'Algumas palavras concentram sentidos que o português separa. Мир quer dizer «mundo» e «paz»; antes da reforma de 1918 eram escritas de modo diferente (міръ, «mundo», e миръ, «paz»). Язы́к, como «língua», é o órgão e o idioma. Nas expressões idiomáticas, o sentido do todo não é a soma das partes: не в свое́й таре́лке («não no seu próprio prato») é um decalque do francês «pas dans son assiette» e quer dizer «pouco à vontade».',
+        text: 'Algumas palavras concentram sentidos que o português separa. Мир quer dizer “mundo” e “paz”; antes da reforma de 1918 eram escritas de modo diferente (міръ, “mundo”, e миръ, “paz”). Язы́к, como “língua”, é o órgão e o idioma. Nas expressões idiomáticas, o sentido do todo não é a soma das partes: не в свое́й таре́лке (“não no seu próprio prato”) é um decalque do francês “pas dans son assiette” e quer dizer “pouco à vontade”.',
         examples: [
           ['Война́ и мир', 'Guerra e Paz (romance de Tolstói)'],
           ['Я сего́дня не в свое́й таре́лке.', 'Hoje estou meio deslocado, pouco à vontade.'],
@@ -491,13 +491,13 @@ export const LINGUISTICS_RU: LinguisticsArea[] = [
         question: 'O que significa магази́н?',
         options: ['Loja', 'Revista', 'Armazém de armas', 'Jornal'],
         answer: 'Loja',
-        explanation: 'É um falso amigo: veio do francês «magasin» (loja). Revista é журна́л.',
+        explanation: 'É um falso amigo: veio do francês “magasin” (loja). Revista é журна́л.',
       },
       {
         question: 'Qual par mostra a herança do eslavo eclesiástico?',
         options: ['глава́ × голова́', 'мать × ма́ма', 'дом × до́мик', 'стол × столы́'],
         answer: 'глава́ × голова́',
-        explanation: 'глава́ (capítulo, chefe) é a forma eclesiástica, sem a vogal extra; голова́ (cabeça) é a forma russa, com o «оло».',
+        explanation: 'глава́ (capítulo, chefe) é a forma eclesiástica, sem a vogal extra; голова́ (cabeça) é a forma russa, com o “оло”.',
       },
       {
         question: 'Qual a diferença entre си́ний e голубо́й?',
@@ -506,7 +506,7 @@ export const LINGUISTICS_RU: LinguisticsArea[] = [
         explanation: 'Para o russo, são duas cores básicas diferentes, como vermelho e rosa para nós.',
       },
       {
-        question: 'Qual palavra russa é cognata do português «noite»?',
+        question: 'Qual palavra russa é cognata do português “noite”?',
         options: ['ночь', 'нос', 'нет', 'но́вый'],
         answer: 'ночь',
         explanation: 'Ambas vêm da mesma raiz indo-europeia, que deu o latim nox, noctis.',
@@ -522,7 +522,7 @@ export const LINGUISTICS_RU: LinguisticsArea[] = [
     sections: [
       {
         heading: 'ты × вы, nome e patronímico',
-        text: 'O russo distingue ты (íntimo, para família, amigos, crianças) e вы (formal, e também o plural). Tratar um desconhecido adulto, um professor ou um chefe por ты soa rude. A passagem de вы para ты é um pequeno ritual, e quem propõe costuma ser o mais velho ou o de posição mais alta. O tratamento respeitoso usa o nome e o patronímico, formado a partir do nome do pai: Ива́н Петро́вич é «Ivan, filho de Piotr». Entre íntimos, usam-se formas afetivas do nome: Алекса́ндр vira Са́ша, Мари́я vira Ма́ша, Ива́н vira Ва́ня.',
+        text: 'O russo distingue ты (íntimo, para família, amigos, crianças) e вы (formal, e também o plural). Tratar um desconhecido adulto, um professor ou um chefe por ты soa rude. A passagem de вы para ты é um pequeno ritual, e quem propõe costuma ser o mais velho ou o de posição mais alta. O tratamento respeitoso usa o nome e o patronímico, formado a partir do nome do pai: Ива́н Петро́вич é “Ivan, filho de Piotr”. Entre íntimos, usam-se formas afetivas do nome: Алекса́ндр vira Са́ша, Мари́я vira Ма́ша, Ива́н vira Ва́ня.',
         table: {
           head: ['Situação', 'Tratamento', 'Exemplo'],
           rows: [
@@ -534,11 +534,11 @@ export const LINGUISTICS_RU: LinguisticsArea[] = [
         examples: [
           ['Здра́вствуйте, А́нна Серге́евна!', 'Bom dia, Anna Serguêievna! (formal)'],
           ['Приве́т, Ма́ша! Как дела́?', 'Oi, Macha! Tudo bem?'],
-          ['Дава́й перейдём на ты.', 'Vamos nos tratar por «ты»?'],
+          ['Дава́й перейдём на ты.', 'Vamos nos tratar por “ты”?'],
         ],
       },
       {
-        heading: 'Pedidos: diretos, mas com «пожа́луйста»',
+        heading: 'Pedidos: diretos, mas com “пожа́луйста”',
         text: 'Para um brasileiro, o imperativo parece seco; para um russo, um imperativo com пожа́луйста é perfeitamente educado, e rodeios demais podem soar estranhos. A forma mais gentil é a pergunta negativa, que dá ao outro a chance de recusar. Nos convites, o imperativo imperfectivo é o normal e soa acolhedor: сади́тесь (sente-se), проходи́те (entre, pode passar). Na proibição, também se usa o imperfectivo.',
         examples: [
           ['Да́йте, пожа́луйста, ча́шку ко́фе.', 'Me dê uma xícara de café, por favor.'],
@@ -549,7 +549,7 @@ export const LINGUISTICS_RU: LinguisticsArea[] = [
       },
       {
         heading: 'Cumprimentos, sorrisos e superstições',
-        text: 'Здра́вствуйте é a saudação formal e приве́т, a informal; до свида́ния e пока́ são as despedidas correspondentes. Пожа́луйста serve para «por favor» e para «de nada». Na Rússia, sorrir para desconhecidos não é o padrão de gentileza, e isso não quer dizer antipatia: o sorriso é reservado para quem se conhece. «Как дела́?» é uma pergunta de verdade, e pode vir uma resposta sincera. Algumas regras vêm da tradição: não se aperta a mão por cima da soleira da porta, e flores de presente vão em número ímpar, porque número par é para funerais.',
+        text: 'Здра́вствуйте é a saudação formal e приве́т, a informal; до свида́ния e пока́ são as despedidas correspondentes. Пожа́луйста serve para “por favor” e para “de nada”. Na Rússia, sorrir para desconhecidos não é o padrão de gentileza, e isso não quer dizer antipatia: o sorriso é reservado para quem se conhece. “Как дела́?” é uma pergunta de verdade, e pode vir uma resposta sincera. Algumas regras vêm da tradição: não se aperta a mão por cima da soleira da porta, e flores de presente vão em número ímpar, porque número par é para funerais.',
         examples: [
           ['Спаси́бо! — Пожа́луйста.', 'Obrigado! — De nada.'],
           ['До свида́ния!', 'Até logo! (formal)'],
@@ -558,7 +558,7 @@ export const LINGUISTICS_RU: LinguisticsArea[] = [
       },
       {
         heading: 'Partículas: o tom nas palavras pequenas',
-        text: 'O russo falado é cheio de partículas que não mudam o conteúdo, mas mudam a intenção: же insiste ou reclama («eu não disse?»), ведь lembra algo que o outro já sabe («afinal»), ну marca impaciência, hesitação ou convite, e вот aponta ou fecha um assunto. Com a entonação, elas também fazem ironia: «Ну ты и ге́ний!» pode ser elogio ou deboche.',
+        text: 'O russo falado é cheio de partículas que não mudam o conteúdo, mas mudam a intenção: же insiste ou reclama (“eu não disse?”), ведь lembra algo que o outro já sabe (“afinal”), ну marca impaciência, hesitação ou convite, e вот aponta ou fecha um assunto. Com a entonação, elas também fazem ironia: “Ну ты и ге́ний!” pode ser elogio ou deboche.',
         examples: [
           ['Я же говори́л!', 'Eu não disse?!'],
           ['Ты ведь зна́ешь.', 'Você sabe, afinal.'],
@@ -579,7 +579,7 @@ export const LINGUISTICS_RU: LinguisticsArea[] = [
         question: 'Qual é a forma mais gentil de perguntar onde fica o metrô a um desconhecido?',
         options: ['Вы не подска́жете, где метро́?', 'Где метро́?', 'Скажи́, где метро́!', 'Ты зна́ешь, где метро́?'],
         answer: 'Вы не подска́жете, где метро́?',
-        explanation: 'A pergunta negativa com вы («o senhor não me indicaria…?») é a fórmula clássica de pedido educado.',
+        explanation: 'A pergunta negativa com вы (“o senhor não me indicaria…?”) é a fórmula clássica de pedido educado.',
       },
       {
         question: 'Por que é ruim dar a alguém um buquê com 6 flores?',
@@ -593,10 +593,10 @@ export const LINGUISTICS_RU: LinguisticsArea[] = [
         explanation: 'Na tradição russa, flores de presente vão em número ímpar; o número par é levado a túmulos e velórios.',
       },
       {
-        question: 'Qual é a função da partícula же em «Я же говори́л!»?',
-        options: ['Insistir, com tom de «eu não disse?»', 'Formar o passado', 'Indicar pergunta', 'Tornar a frase negativa'],
-        answer: 'Insistir, com tom de «eu não disse?»',
-        explanation: 'же reforça e insiste; aqui dá o tom de reprovação ou de «eu avisei».',
+        question: 'Qual é a função da partícula же em “Я же говори́л!”?',
+        options: ['Insistir, com tom de “eu não disse?”', 'Formar o passado', 'Indicar pergunta', 'Tornar a frase negativa'],
+        answer: 'Insistir, com tom de “eu não disse?”',
+        explanation: 'же reforça e insiste; aqui dá o tom de reprovação ou de “eu avisei”.',
       },
     ],
   },
@@ -609,7 +609,7 @@ export const LINGUISTICS_RU: LinguisticsArea[] = [
     sections: [
       {
         heading: 'Registros: do oficial ao coloquial',
-        text: 'O estilo oficial e burocrático troca verbos por substantivos, encadeia genitivos e prefere construções impessoais: повыше́ние ка́чества образова́ния («a elevação da qualidade da educação»). O escritor Kornei Tchukóvski apelidou esse vício, quando invade a fala comum, de канцеляри́т, como se fosse uma doença («cartorite»). No outro extremo está a fala coloquial, com formas encurtadas e gírias; e há ainda o мат, o vocabulário obsceno, fortemente tabu em público.',
+        text: 'O estilo oficial e burocrático troca verbos por substantivos, encadeia genitivos e prefere construções impessoais: повыше́ние ка́чества образова́ния (“a elevação da qualidade da educação”). O escritor Kornei Tchukóvski apelidou esse vício, quando invade a fala comum, de канцеляри́т, como se fosse uma doença (“cartorite”). No outro extremo está a fala coloquial, com formas encurtadas e gírias; e há ainda o мат, o vocabulário obsceno, fortemente tabu em público.',
         table: {
           head: ['Registro', 'Exemplo', 'Sentido'],
           rows: [
@@ -626,7 +626,7 @@ export const LINGUISTICS_RU: LinguisticsArea[] = [
       },
       {
         heading: 'Diminutivos e aumentativos',
-        text: 'Como no «cafezinho» brasileiro, o diminutivo russo traz carinho, cortesia ou ironia, mais do que tamanho: мину́точка («minutinho») é um pedido gentil. Os sufixos também desprezam ou aumentam: до́мик é uma casinha fofa, доми́шко é um casebre, доми́на é um casarão. Nos nomes, a mesma pessoa pode ser Ива́н (neutro), Ва́ня (familiar), Ва́нечка (carinhoso) ou Ва́нька (familiar demais, até rude para um adulto).',
+        text: 'Como no “cafezinho” brasileiro, o diminutivo russo traz carinho, cortesia ou ironia, mais do que tamanho: мину́точка (“minutinho”) é um pedido gentil. Os sufixos também desprezam ou aumentam: до́мик é uma casinha fofa, доми́шко é um casebre, доми́на é um casarão. Nos nomes, a mesma pessoa pode ser Ива́н (neutro), Ва́ня (familiar), Ва́нечка (carinhoso) ou Ва́нька (familiar demais, até rude para um adulto).',
         table: {
           head: ['Base', 'Diminutivo afetivo', 'Pejorativo', 'Aumentativo'],
           rows: [
@@ -653,9 +653,9 @@ export const LINGUISTICS_RU: LinguisticsArea[] = [
       },
       {
         heading: 'O estilo literário',
-        text: 'Aleksandr Púchkin (1799–1837) é considerado o criador da língua literária russa moderna: ele fundiu a fala viva, o eslavo eclesiástico e os empréstimos numa só língua. Seu «Ievguêni Oniéguin» é um romance em versos, escrito na «estrofe de Oniéguin», de 14 versos em tetrâmetro iâmbico. Depois vieram Lérmontov, Gógol, Dostoiévski, Tolstói e Tchékhov, que defendia a concisão numa carta: «a brevidade é irmã do talento». Na poesia, a inversão da ordem e o adjetivo depois do substantivo criam solenidade e ritmo; o verso russo clássico é silábico-tônico, com um padrão regular de sílabas fortes e fracas.',
+        text: 'Aleksandr Púchkin (1799–1837) é considerado o criador da língua literária russa moderna: ele fundiu a fala viva, o eslavo eclesiástico e os empréstimos numa só língua. Seu “Ievguêni Oniéguin” é um romance em versos, escrito na “estrofe de Oniéguin”, de 14 versos em tetrâmetro iâmbico. Depois vieram Lérmontov, Gógol, Dostoiévski, Tolstói e Tchékhov, que defendia a concisão numa carta: “a brevidade é irmã do talento”. Na poesia, a inversão da ordem e o adjetivo depois do substantivo criam solenidade e ritmo; o verso russo clássico é silábico-tônico, com um padrão regular de sílabas fortes e fracas.',
         examples: [
-          ['Мой дя́дя са́мых че́стных пра́вил…', 'Meu tio, de regras as mais honestas… (1º verso de «Ievguêni Oniéguin», Púchkin)'],
+          ['Мой дя́дя са́мых че́стных пра́вил…', 'Meu tio, de regras as mais honestas… (1º verso de “Ievguêni Oniéguin”, Púchkin)'],
           ['Я вас люби́л: любо́вь ещё, быть мо́жет…', 'Eu a amei: o amor ainda, talvez… (Púchkin)'],
           ['Бе́лая берёза под мои́м окно́м…', 'A bétula branca sob a minha janela… (Iessiênin)'],
           ['Кра́ткость — сестра́ тала́нта.', 'A brevidade é irmã do talento. (Tchékhov)'],
@@ -674,7 +674,7 @@ export const LINGUISTICS_RU: LinguisticsArea[] = [
         question: 'O que caracteriza o estilo oficial russo (канцеляри́т)?',
         options: ['Substantivos no lugar de verbos e genitivos em cadeia', 'Muitas gírias e diminutivos', 'Frases curtas e rimadas', 'Uso obrigatório de ты'],
         answer: 'Substantivos no lugar de verbos e genitivos em cadeia',
-        explanation: 'Ex.: повыше́ние ка́чества образова́ния, «a elevação da qualidade da educação».',
+        explanation: 'Ex.: повыше́ние ка́чества образова́ния, “a elevação da qualidade da educação”.',
       },
       {
         question: 'Quem é considerado o criador da língua literária russa moderna?',
@@ -683,10 +683,10 @@ export const LINGUISTICS_RU: LinguisticsArea[] = [
         explanation: 'Púchkin fundiu a fala viva, o eslavo eclesiástico e os empréstimos numa língua literária que é, no essencial, a de hoje.',
       },
       {
-        question: 'Qual provérbio português corresponde a «Ти́ше е́дешь — да́льше бу́дешь»?',
+        question: 'Qual provérbio português corresponde a “Ти́ше е́дешь — да́льше бу́дешь”?',
         options: ['Devagar se vai ao longe', 'Antes tarde do que nunca', 'Quem não tem cão caça com gato', 'Onde há fumaça, há fogo'],
         answer: 'Devagar se vai ao longe',
-        explanation: 'Literalmente: «quanto mais devagar você vai, mais longe você estará».',
+        explanation: 'Literalmente: “quanto mais devagar você vai, mais longe você estará”.',
       },
     ],
   },

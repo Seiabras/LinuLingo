@@ -16,10 +16,10 @@ export const GRAMMAR_LAD: GrammarTopic[] = [
           rows: [
             ['k', 'k', 'kaza, kezo'],
             ['s', 's', 'sivdad, sinko'],
-            ['sh', '«x» de «xícara»', 'sesh (seis)'],
-            ['j', '«j» de «já»', 'mujer'],
-            ['dj', '«dj»', 'djueves'],
-            ['ny', '«nh»', 'anyo (ano)'],
+            ['sh', '“x” de “xícara”', 'sesh (seis)'],
+            ['j', '“j” de “já”', 'mujer'],
+            ['dj', '“dj”', 'djueves'],
+            ['ny', '“nh”', 'anyo (ano)'],
           ],
         },
         examples: [
@@ -28,10 +28,10 @@ export const GRAMMAR_LAD: GrammarTopic[] = [
         ],
       },
     ],
-    pitfalls: ['Escrever como em espanhol («casa», «queso»): em ladino é «kaza», «kezo».', 'Ler o «j» como o j espanhol (som de «r» forte): em ladino ele soa como em português.'],
+    pitfalls: ['Escrever como em espanhol (“casa”, “queso”): em ladino é “kaza”, “kezo”.', 'Ler o “j” como o j espanhol (som de “r” forte): em ladino ele soa como em português.'],
     quiz: [
-      { question: 'Como se escreve «casa» em ladino?', options: ['kaza', 'casa', 'kasa'], answer: 'kaza', explanation: 'O som k se escreve k, e o s sonoro entre vogais (som de z) se escreve z.' },
-      { question: 'Como soa o «sh» de «sesh»?', options: ['como o x de «xícara»', 'como «s»', 'como «tch»'], answer: 'como o x de «xícara»', explanation: '«Sh» é o som que o espanhol moderno perdeu e que o ladino guardou.' },
+      { question: 'Como se escreve “casa” em ladino?', options: ['kaza', 'casa', 'kasa'], answer: 'kaza', explanation: 'O som k se escreve k, e o s sonoro entre vogais (som de z) se escreve z.' },
+      { question: 'Como soa o “sh” de “sesh”?', options: ['como o x de “xícara”', 'como “s”', 'como “tch”'], answer: 'como o x de “xícara”', explanation: '“Sh” é o som que o espanhol moderno perdeu e que o ladino guardou.' },
     ],
   },
   {
@@ -39,10 +39,10 @@ export const GRAMMAR_LAD: GrammarTopic[] = [
     level: 'A1.1',
     title: 'Os pronomes e os verbos ser e estar',
     emoji: '🙋',
-    summary: 'Pronomes com formas próprias (mozotros, vozotros) e o verbo «ser» com «so» e «sos».',
+    summary: 'Pronomes com formas próprias (mozotros, vozotros) e o verbo “ser” com “so” e “sos”.',
     sections: [
       {
-        text: 'Como em português, há dois verbos: «ser» para origem e identidade, «estar» para lugar e estado. A 1ª pessoa de «ser» é «so» (e não «soy»).',
+        text: 'Como em português, há dois verbos: “ser” para origem e identidade, “estar” para lugar e estado. A 1ª pessoa de “ser” é “so” (e não “soy”).',
         table: {
           head: ['Pronome', 'Tradução', 'estar'],
           rows: [
@@ -60,10 +60,10 @@ export const GRAMMAR_LAD: GrammarTopic[] = [
         ],
       },
     ],
-    pitfalls: ['Dizer «nosotros» como no espanhol moderno: em ladino é «mozotros».', 'Usar «soy»: em ladino é «so».'],
+    pitfalls: ['Dizer “nosotros” como no espanhol moderno: em ladino é “mozotros”.', 'Usar “soy”: em ladino é “so”.'],
     quiz: [
-      { question: 'Como se diz «nós» em ladino?', options: ['mozotros', 'nosotros', 'nos'], answer: 'mozotros', explanation: 'O ladino usa «mozotros» (e «mozotras» no feminino).' },
-      { question: 'Complete: «___ de Izmir.» (eu sou)', options: ['So', 'Soy', 'Esto'], answer: 'So', explanation: 'A 1ª pessoa de «ser» é «so».' },
+      { question: 'Como se diz “nós” em ladino?', options: ['mozotros', 'nosotros', 'nos'], answer: 'mozotros', explanation: 'O ladino usa “mozotros” (e “mozotras” no feminino).' },
+      { question: 'Complete: “___ de Izmir.” (eu sou)', options: ['So', 'Soy', 'Esto'], answer: 'So', explanation: 'A 1ª pessoa de “ser” é “so”.' },
     ],
   },
   {
@@ -74,7 +74,7 @@ export const GRAMMAR_LAD: GrammarTopic[] = [
     summary: 'El, la, los, las; possessivos antes do nome; plural com -s.',
     sections: [
       {
-        text: 'O artigo e o plural funcionam como no espanhol: el ermano → los ermanos, la kaza → las kazas. O possessivo vai antes do nome, sem artigo: «mi madre», «tu padre».',
+        text: 'O artigo e o plural funcionam como no espanhol: el ermano → los ermanos, la kaza → las kazas. O possessivo vai antes do nome, sem artigo: “mi madre”, “tu padre”.',
         table: {
           head: ['', 'singular', 'plural'],
           rows: [
@@ -89,10 +89,10 @@ export const GRAMMAR_LAD: GrammarTopic[] = [
         ],
       },
     ],
-    pitfalls: ['Pôr artigo antes do possessivo, como em português («o meu irmão»): em ladino é só «mi ermano».'],
+    pitfalls: ['Pôr artigo antes do possessivo, como em português (“o meu irmão”): em ladino é só “mi ermano”.'],
     quiz: [
-      { question: 'Qual é o plural de «la kaza»?', options: ['las kazas', 'los kazas', 'la kazas'], answer: 'las kazas', explanation: 'Artigo feminino plural «las» + plural com -s.' },
-      { question: 'Como se diz «minha mãe»?', options: ['mi madre', 'la mi madre', 'mia madre'], answer: 'mi madre', explanation: 'O possessivo vem antes do nome, sem artigo.' },
+      { question: 'Qual é o plural de “la kaza”?', options: ['las kazas', 'los kazas', 'la kazas'], answer: 'las kazas', explanation: 'Artigo feminino plural “las” + plural com -s.' },
+      { question: 'Como se diz “minha mãe”?', options: ['mi madre', 'la mi madre', 'mia madre'], answer: 'mi madre', explanation: 'O possessivo vem antes do nome, sem artigo.' },
     ],
   },
   {
@@ -121,10 +121,10 @@ export const GRAMMAR_LAD: GrammarTopic[] = [
         ],
       },
     ],
-    pitfalls: ['Escrever «tengo» com g e «komo» com c: o ladino usa k para o som de k.'],
+    pitfalls: ['Escrever “tengo” com g e “komo” com c: o ladino usa k para o som de k.'],
     quiz: [
-      { question: 'Como se diz «eu como»?', options: ['komo', 'como', 'kome'], answer: 'komo', explanation: 'Com k: «komo».' },
-      { question: 'Complete: «Mozotros ___ dos ermanos.»', options: ['tenemos', 'tengo', 'tienen'], answer: 'tenemos', explanation: '«Tenemos» é «nós temos».' },
+      { question: 'Como se diz “eu como”?', options: ['komo', 'como', 'kome'], answer: 'komo', explanation: 'Com k: “komo”.' },
+      { question: 'Complete: “Mozotros ___ dos ermanos.”', options: ['tenemos', 'tengo', 'tienen'], answer: 'tenemos', explanation: '“Tenemos” é “nós temos”.' },
     ],
   },
 ];

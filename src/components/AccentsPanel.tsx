@@ -146,7 +146,7 @@ export function AccentDetails({ a, embedded }: { a: Accent; embedded?: boolean }
       <Text className="text-xs text-slate-500 dark:text-slate-400">{a.region}</Text>
       <View className="flex-row flex-wrap gap-2">
         <Button title="🎯 Treinar" variant="success" onPress={() => router.push({ pathname: '/sotaque', params: { id: a.id } })} />
-        {/* dentro da variante (o sotaque é ela mesma), «voltar ao padrão» não mudaria nada */}
+        {/* dentro da variante (o sotaque é ela mesma), “voltar ao padrão” não mudaria nada */}
         {!embedded && <Button title="Voltar ao padrão" variant="ghost" onPress={() => setAccent(null)} />}
       </View>
       {a.kind === 'língua' && (
@@ -316,7 +316,7 @@ function CompareAccents() {
   return (
     <Card className="gap-3">
       <Text className="text-lg font-extrabold text-slate-900 dark:text-white">🎧 A mesma palavra, sotaques diferentes</Text>
-      <Text className="text-sm text-slate-600 dark:text-slate-400">Gravações de nativos de cada região. Toque e compare as vogais, os «s» e os «r».</Text>
+      <Text className="text-sm text-slate-600 dark:text-slate-400">Gravações de nativos de cada região. Toque e compare as vogais, os “s” e os “r”.</Text>
       {words.map((w) => (
         <View key={w} className="gap-1.5">
           <Text className="text-base font-bold text-slate-900 dark:text-white">{w}</Text>

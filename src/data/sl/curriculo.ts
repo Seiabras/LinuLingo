@@ -18,9 +18,9 @@ export const UNITS_SL: UnitSeed[] = [
       history:
         'O esloveno é uma língua eslava meridional, falada entre os Alpes, o Adriático e a planície da Panônia. Os Manuscritos de Freising, copiados por volta do ano 1000, estão entre os textos eslavos mais antigos escritos em letras latinas. Os primeiros livros impressos em esloveno saíram em 1550, pelas mãos do reformador Primož Trubar. Hoje o esloveno é a língua oficial da Eslovênia e, desde 2004, uma das línguas oficiais da União Europeia. Para uma língua de pouco mais de dois milhões de falantes, tem uma variedade de dialetos enorme.',
       culture_tip:
-        '«Živjo» é o oi e o tchau entre amigos. Com desconhecidos, diga «Dober dan» e trate a pessoa por «vi», com o verbo no plural. Uma curiosidade: a Eslovênia tem uma tradição de apicultura tão forte que ela entrou na lista do patrimônio imaterial da UNESCO, e foi o país que propôs o Dia Mundial das Abelhas, em 20 de maio.',
+        '“Živjo” é o oi e o tchau entre amigos. Com desconhecidos, diga “Dober dan” e trate a pessoa por “vi”, com o verbo no plural. Uma curiosidade: a Eslovênia tem uma tradição de apicultura tão forte que ela entrou na lista do patrimônio imaterial da UNESCO, e foi o país que propôs o Dia Mundial das Abelhas, em 20 de maio.',
       grammar_why:
-        'O esloveno não tem artigos, e o pronome costuma cair, porque o verbo já mostra a pessoa: «sem» já é «eu sou». O nome se diz com «ime mi je Ana», palavra por palavra «nome me é Ana». E há um traço raro: além do singular e do plural, o esloveno tem o dual, para duas pessoas ou coisas — «midva» é «nós dois».',
+        'O esloveno não tem artigos, e o pronome costuma cair, porque o verbo já mostra a pessoa: “sem” já é “eu sou”. O nome se diz com “ime mi je Ana”, palavra por palavra “nome me é Ana”. E há um traço raro: além do singular e do plural, o esloveno tem o dual, para duas pessoas ou coisas — “midva” é “nós dois”.',
       grammar_examples: [
         ['Živjo! Ime mi je Ana.', 'Oi! Eu me chamo Ana.'],
         ['Kako ti je ime?', 'Como você se chama?'],
@@ -28,14 +28,14 @@ export const UNITS_SL: UnitSeed[] = [
         ['Dobro, hvala. Pa ti?', 'Bem, obrigado. E você?'],
       ],
       character_guide: [
-        ['č', '«tch» de «tchau»', 'črn (preto), noč'],
-        ['š', '«ch» de «chá»', 'šest (seis)'],
-        ['ž', '«j» de «já»', 'živjo, živim'],
-        ['j', '«i» curto de «pai»', 'jaz (eu), jutri'],
-        ['c', '«ts» de «tsunami»', 'konec (fim), cesta (rua)'],
-        ['h', '«rr» aspirado', 'hvala, kruh'],
-        ['l no fim da sílaba', 'costuma soar como «u»', 'bel (branco) soa «beu»'],
-        ['v antes de consoante', 'costuma soar como um «u» breve', 'včeraj (ontem)'],
+        ['č', '“tch” de “tchau”', 'črn (preto), noč'],
+        ['š', '“ch” de “chá”', 'šest (seis)'],
+        ['ž', '“j” de “já”', 'živjo, živim'],
+        ['j', '“i” curto de “pai”', 'jaz (eu), jutri'],
+        ['c', '“ts” de “tsunami”', 'konec (fim), cesta (rua)'],
+        ['h', '“rr” aspirado', 'hvala, kruh'],
+        ['l no fim da sílaba', 'costuma soar como “u”', 'bel (branco) soa “beu”'],
+        ['v antes de consoante', 'costuma soar como um “u” breve', 'včeraj (ontem)'],
       ],
     },
     lessons: [
@@ -53,9 +53,9 @@ export const UNITS_SL: UnitSeed[] = [
           bot: 'Živjo! Kako si?',
           botTranslation: 'Oi! Como vai?',
           expected: ['Dobro, hvala! Pa ti?', 'dobro', 'hvala'],
-          hint: 'Responda que vai bem e devolva a pergunta: «Dobro, hvala! Pa ti?».',
+          hint: 'Responda que vai bem e devolva a pergunta: “Dobro, hvala! Pa ti?”.',
         },
-        communityPrompt: 'Escreva três cumprimentos em esloveno: um de dia («Dober dan…»), um à noite («Dober večer…») e uma despedida («Nasvidenje» ou «Lahko noč»).',
+        communityPrompt: 'Escreva três cumprimentos em esloveno: um de dia (“Dober dan…”), um à noite (“Dober večer…”) e uma despedida (“Nasvidenje” ou “Lahko noč”).',
       },
       {
         id: 'sl-u1-l2',
@@ -71,9 +71,9 @@ export const UNITS_SL: UnitSeed[] = [
           bot: 'Živjo! Kako ti je ime?',
           botTranslation: 'Oi! Como você se chama?',
           expected: ['Ime mi je Ana. Pa tebi?', 'ime mi je', 'pa tebi'],
-          hint: 'Diga o seu nome com «Ime mi je…» e devolva a pergunta com «Pa tebi?» (e a você?).',
+          hint: 'Diga o seu nome com “Ime mi je…” e devolva a pergunta com “Pa tebi?” (e a você?).',
         },
-        communityPrompt: 'Apresente-se em esloveno: diga o seu nome com «Ime mi je…» e pergunte o nome de alguém com «Kako ti je ime?».',
+        communityPrompt: 'Apresente-se em esloveno: diga o seu nome com “Ime mi je…” e pergunte o nome de alguém com “Kako ti je ime?”.',
       },
       {
         id: 'sl-u1-l3',
@@ -85,9 +85,9 @@ export const UNITS_SL: UnitSeed[] = [
           bot: 'Živjo! Ime mi je Luka. Kako ti je ime in od kod si?',
           botTranslation: 'Oi! Eu me chamo Luka. Como você se chama e de onde você é?',
           expected: ['Živjo! Ime mi je Lucija in sem iz São Paula.', 'ime mi je', 'sem iz', 'živjo'],
-          hint: 'Devolva o cumprimento («Živjo!»), diga o nome com «Ime mi je…» e a cidade com «Sem iz…».',
+          hint: 'Devolva o cumprimento (“Živjo!”), diga o nome com “Ime mi je…” e a cidade com “Sem iz…”.',
         },
-        communityPrompt: 'Escreva uma apresentação completa: cumprimento, nome com «Ime mi je…», cidade com «Sem iz…» e uma despedida.',
+        communityPrompt: 'Escreva uma apresentação completa: cumprimento, nome com “Ime mi je…”, cidade com “Sem iz…” e uma despedida.',
       },
     ],
   },
@@ -99,14 +99,14 @@ export const UNITS_SL: UnitSeed[] = [
     emoji: '👪',
     card: {
       id: 'sl-c2',
-      title: 'Três gêneros, «moj / moja / moje» e o «nimam»',
+      title: 'Três gêneros, “moj / moja / moje” e o “nimam”',
       emoji: '🧭',
       history:
-        'O esloveno tem seis casos: a terminação muda conforme a função na frase. Você já viu isso sem perceber: «sem iz Ljubljane» (sou de Liubliana) usa o genitivo de «Ljubljana», e «kavo, prosim» usa o acusativo de «kava». Com o dual, os números também mudam a palavra: «en čaj», «dva čaja», «tri čaji».',
+        'O esloveno tem seis casos: a terminação muda conforme a função na frase. Você já viu isso sem perceber: “sem iz Ljubljane” (sou de Liubliana) usa o genitivo de “Ljubljana”, e “kavo, prosim” usa o acusativo de “kava”. Com o dual, os números também mudam a palavra: “en čaj”, “dva čaja”, “tri čaji”.',
       culture_tip:
         'Muitas famílias eslovenas passam o fim de semana na natureza: subir o monte Triglav, o mais alto do país e símbolo nacional (ele aparece na bandeira), é quase um rito para muitos eslovenos.',
       grammar_why:
-        'Os substantivos são masculinos, femininos ou neutros, e a terminação costuma mostrar qual: consoante → masculino (brat, kruh), -a → feminino (hiša, voda), -o/-e → neutro (mleko, ime). O possessivo concorda: «moj brat», «moja sestra», «moje ime». Para negar, «ne» vem antes do verbo, mas «ter» e «ser» têm formas próprias: «nimam» (não tenho) e «nisem» (não sou).',
+        'Os substantivos são masculinos, femininos ou neutros, e a terminação costuma mostrar qual: consoante → masculino (brat, kruh), -a → feminino (hiša, voda), -o/-e → neutro (mleko, ime). O possessivo concorda: “moj brat”, “moja sestra”, “moje ime”. Para negar, “ne” vem antes do verbo, mas “ter” e “ser” têm formas próprias: “nimam” (não tenho) e “nisem” (não sou).',
       grammar_examples: [
         ['Moja družina je velika.', 'A minha família é grande.'],
         ['Imam brata in sestro.', 'Tenho um irmão e uma irmã.'],
@@ -114,8 +114,8 @@ export const UNITS_SL: UnitSeed[] = [
         ['Ne vem.', 'Eu não sei.'],
       ],
       character_guide: [
-        ['-a → -o', 'depois de «imam» (tenho), a palavra feminina muda: é o acusativo', 'sestra → imam sestro'],
-        ['nimam / nisem', 'as negações de «imeti» e «biti» são uma palavra só', 'nimam brata, nisem iz Maribora'],
+        ['-a → -o', 'depois de “imam” (tenho), a palavra feminina muda: é o acusativo', 'sestra → imam sestro'],
+        ['nimam / nisem', 'as negações de “imeti” e “biti” são uma palavra só', 'nimam brata, nisem iz Maribora'],
       ],
     },
     lessons: [
@@ -133,9 +133,9 @@ export const UNITS_SL: UnitSeed[] = [
           bot: 'Imaš brata ali sestro?',
           botTranslation: 'Você tem irmão ou irmã?',
           expected: ['Da, imam brata in sestro.', 'imam', 'brata', 'sestro'],
-          hint: 'Responda com «Da, imam…» ou «Ne, nimam…».',
+          hint: 'Responda com “Da, imam…” ou “Ne, nimam…”.',
         },
-        communityPrompt: 'Descreva a sua família em esloveno: se você tem irmão (brat) ou irmã (sestra) e de onde são os seus pais («Moja mama je iz…»).',
+        communityPrompt: 'Descreva a sua família em esloveno: se você tem irmão (brat) ou irmã (sestra) e de onde são os seus pais (“Moja mama je iz…”).',
       },
       {
         id: 'sl-u2-l2',
@@ -151,9 +151,9 @@ export const UNITS_SL: UnitSeed[] = [
           bot: 'Kaj ješ za zajtrk?',
           botTranslation: 'O que você come no café da manhã?',
           expected: ['Jem kruh in sir.', 'jem', 'kruh', 'sir'],
-          hint: 'Diga o que come com «Jem…».',
+          hint: 'Diga o que come com “Jem…”.',
         },
-        communityPrompt: 'Escreva o que você come e bebe de manhã: «Jem…» e «Pijem…».',
+        communityPrompt: 'Escreva o que você come e bebe de manhã: “Jem…” e “Pijem…”.',
       },
       {
         id: 'sl-u2-l3',
@@ -165,9 +165,9 @@ export const UNITS_SL: UnitSeed[] = [
           bot: 'Povej mi o družini: imaš brata ali sestro?',
           botTranslation: 'Me conte da sua família: você tem irmão ou irmã?',
           expected: ['Da, imam sestro. Ime ji je Marija.', 'imam', 'ime ji je'],
-          hint: 'Diga se tem irmãos («imam…») e o nome deles («ime mu je…» para ele, «ime ji je…» para ela).',
+          hint: 'Diga se tem irmãos (“imam…”) e o nome deles (“ime mu je…” para ele, “ime ji je…” para ela).',
         },
-        communityPrompt: 'Escreva cinco frases sobre a sua família e a sua casa, usando «imam», «ime ji je / ime mu je» e «je».',
+        communityPrompt: 'Escreva cinco frases sobre a sua família e a sua casa, usando “imam”, “ime ji je / ime mu je” e “je”.',
       },
     ],
   },

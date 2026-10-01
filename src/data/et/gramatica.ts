@@ -11,27 +11,27 @@ export const GRAMMAR_ET: GrammarTopic[] = [
     summary: 'O estoniano se lê quase como se escreve. A tônica cai na primeira sílaba (TE-re, TAR-tu), há quatro vogais novas (õ [ɤ], ä [æ], ö [ø], ü [y]) e uma coisa rara no mundo: três durações diferentes para o mesmo som, que mudam o sentido (sada, saada, saada).',
     sections: [
       {
-        text: 'O estoniano é primo do finlandês (os dois são línguas fino-úgricas, de uma família diferente da nossa), e não parente do sueco ou do russo, apesar da vizinhança. A boa notícia: a escrita é muito regular, e cada letra tem quase sempre o mesmo som. O alfabeto usa as letras do nosso, mais õ, ä, ö e ü, que ficam perto do fim do dicionário, e š e ž, que aparecem em palavras de fora (šokolaad, žürii). As letras c, q, w, x e y só aparecem em nomes estrangeiros. Não há acento agudo nem til no estoniano: o «õ» é uma letra própria, e não um «o» anasalado como o nosso.',
+        text: 'O estoniano é primo do finlandês (os dois são línguas fino-úgricas, de uma família diferente da nossa), e não parente do sueco ou do russo, apesar da vizinhança. A boa notícia: a escrita é muito regular, e cada letra tem quase sempre o mesmo som. O alfabeto usa as letras do nosso, mais õ, ä, ö e ü, que ficam perto do fim do dicionário, e š e ž, que aparecem em palavras de fora (šokolaad, žürii). As letras c, q, w, x e y só aparecem em nomes estrangeiros. Não há acento agudo nem til no estoniano: o “õ” é uma letra própria, e não um “o” anasalado como o nosso.',
       },
       {
         heading: 'As vogais: nove sons, todos puros',
-        text: 'As vogais estonianas são «limpas», sem o chiado nem a redução que o português às vezes faz: o «e» final de «tere» é um [e] inteiro, e não um [i] como no nosso «leite». O «a» é mais fundo que o nosso, [ɑ], quase como o «a» de «pai» dito com a boca bem aberta. As quatro vogais novas são o grande treino. O «õ» [ɤ] é o mais típico do estoniano: faça um «o» e, sem mexer a língua, abra os lábios num sorriso; o som que sai, entre «o» e «e», é o «õ». O «ä» [æ] é um «é» bem aberto, puxado para o «a». O «ö» [ø] é um «ê» dito com os lábios de «ô». O «ü» [y] é um «i» dito com os lábios de «u», como o «u» do francês.',
+        text: 'As vogais estonianas são “limpas”, sem o chiado nem a redução que o português às vezes faz: o “e” final de “tere” é um [e] inteiro, e não um [i] como no nosso “leite”. O “a” é mais fundo que o nosso, [ɑ], quase como o “a” de “pai” dito com a boca bem aberta. As quatro vogais novas são o grande treino. O “õ” [ɤ] é o mais típico do estoniano: faça um “o” e, sem mexer a língua, abra os lábios num sorriso; o som que sai, entre “o” e “e”, é o “õ”. O “ä” [æ] é um “é” bem aberto, puxado para o “a”. O “ö” [ø] é um “ê” dito com os lábios de “ô”. O “ü” [y] é um “i” dito com os lábios de “u”, como o “u” do francês.',
         table: {
           head: ['Letra', 'IPA', 'Dica para o brasileiro', 'Exemplo', 'Português'],
           rows: [
-            ['a', '[ɑ]', '«a» fundo, boca aberta', 'maja [ˈmɑjɑ]', 'casa'],
-            ['e', '[e]', '«ê» fechado, sempre inteiro', 'tere [ˈtere]', 'oi, olá'],
-            ['õ', '[ɤ]', '«o» com os lábios de sorriso', 'õde [ˈɤte]', 'irmã'],
-            ['ä', '[æ]', '«é» bem aberto, quase «a»', 'mägi [ˈmæki]', 'montanha, morro'],
-            ['ö', '[ø]', '«ê» com lábios de «ô»', 'töö [ˈtøː]', 'trabalho'],
-            ['ü', '[y]', '«i» com lábios de «u»', 'süda [ˈsytɑ]', 'coração'],
-            ['o', '[o]', '«ô» fechado', 'kodu [ˈkotu]', 'lar, casa'],
-            ['u', '[u]', '«u» como o nosso', 'tuli [ˈtuli]', 'fogo'],
-            ['i', '[i]', '«i» como o nosso', 'kivi [ˈkivi]', 'pedra'],
+            ['a', '[ɑ]', '“a” fundo, boca aberta', 'maja [ˈmɑjɑ]', 'casa'],
+            ['e', '[e]', '“ê” fechado, sempre inteiro', 'tere [ˈtere]', 'oi, olá'],
+            ['õ', '[ɤ]', '“o” com os lábios de sorriso', 'õde [ˈɤte]', 'irmã'],
+            ['ä', '[æ]', '“é” bem aberto, quase “a”', 'mägi [ˈmæki]', 'montanha, morro'],
+            ['ö', '[ø]', '“ê” com lábios de “ô”', 'töö [ˈtøː]', 'trabalho'],
+            ['ü', '[y]', '“i” com lábios de “u”', 'süda [ˈsytɑ]', 'coração'],
+            ['o', '[o]', '“ô” fechado', 'kodu [ˈkotu]', 'lar, casa'],
+            ['u', '[u]', '“u” como o nosso', 'tuli [ˈtuli]', 'fogo'],
+            ['i', '[i]', '“i” como o nosso', 'kivi [ˈkivi]', 'pedra'],
           ],
         },
         examples: [
-          ['Tere!', '[ˈtere] Oi! (com o «e» final inteiro, nada de «téri»)'],
+          ['Tere!', '[ˈtere] Oi! (com o “e” final inteiro, nada de “téri”)'],
           ['õun', '[ˈɤun] maçã'],
           ['Pärnu', '[ˈpærnu] Pärnu, a cidade de praia da costa oeste'],
           ['üks', '[ˈyks] um'],
@@ -40,7 +40,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'A tônica: sempre na primeira sílaba',
-        text: 'Nas palavras estonianas, a sílaba forte é a primeira, sem exceção nas palavras nativas: TE-re, TAL-linn, VIL-jan-di, KA-hek-sa (oito). As outras sílabas não se enfraquecem: são ditas por inteiro, só com menos força. O ritmo lembra um pouco o do finlandês. As exceções são palavras vindas de fora (como «šokolaad», com a força no «laad») e o muito usado «aitäh» (obrigado), que tem a força na última sílaba: ai-TÄH.',
+        text: 'Nas palavras estonianas, a sílaba forte é a primeira, sem exceção nas palavras nativas: TE-re, TAL-linn, VIL-jan-di, KA-hek-sa (oito). As outras sílabas não se enfraquecem: são ditas por inteiro, só com menos força. O ritmo lembra um pouco o do finlandês. As exceções são palavras vindas de fora (como “šokolaad”, com a força no “laad”) e o muito usado “aitäh” (obrigado), que tem a força na última sílaba: ai-TÄH.',
         table: {
           head: ['Palavra', 'IPA', 'Português'],
           rows: [
@@ -59,7 +59,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'As três quantidades: curta, longa e sobrelonga',
-        text: 'Aqui está o traço mais famoso do estoniano. Uma sílaba tônica pode ter três durações, e elas mudam o sentido. A primeira quantidade é curta (sada, cem). A segunda é longa (saada!, mande!). A terceira é sobrelonga, ainda mais esticada e com a voz caindo no meio (saada, receber, conseguir). A escrita mostra a diferença entre curto e longo com a letra dobrada (a × aa, l × ll), mas quase nunca mostra a diferença entre longo e sobrelongo: «saada» (mande!) e «saada» (receber) se escrevem igual. A exceção são as consoantes k, p e t entre vogais: kapi (do armário, longo) × kappi (para dentro do armário, sobrelongo). Nas transcrições deste app, a sobrelonga vem marcada com [ːː]. Não se assuste: o contexto quase sempre resolve, e os estonianos entendem você mesmo que a terceira quantidade saia só «longa».',
+        text: 'Aqui está o traço mais famoso do estoniano. Uma sílaba tônica pode ter três durações, e elas mudam o sentido. A primeira quantidade é curta (sada, cem). A segunda é longa (saada!, mande!). A terceira é sobrelonga, ainda mais esticada e com a voz caindo no meio (saada, receber, conseguir). A escrita mostra a diferença entre curto e longo com a letra dobrada (a × aa, l × ll), mas quase nunca mostra a diferença entre longo e sobrelongo: “saada” (mande!) e “saada” (receber) se escrevem igual. A exceção são as consoantes k, p e t entre vogais: kapi (do armário, longo) × kappi (para dentro do armário, sobrelongo). Nas transcrições deste app, a sobrelonga vem marcada com [ːː]. Não se assuste: o contexto quase sempre resolve, e os estonianos entendem você mesmo que a terceira quantidade saia só “longa”.',
         table: {
           head: ['Curta (1ª)', 'Longa (2ª)', 'Sobrelonga (3ª)'],
           rows: [
@@ -72,12 +72,12 @@ export const GRAMMAR_ET: GrammarTopic[] = [
           ['Ma sõidan linna.', '[mɑ ˈsɤitɑn ˈlinːːɑ] Eu vou para a cidade. (3ª quantidade)'],
           ['linna keskus', '[ˈlinːɑ ˈkeskus] o centro da cidade (2ª quantidade)'],
           ['Pane raamat kappi.', 'Ponha o livro no armário. (kappi, sobrelongo)'],
-          ['jäääär', '[ˈjæːæːr] a beira do gelo: jää (gelo) + äär (beira), três «ä» seguidos'],
+          ['jäääär', '[ˈjæːæːr] a beira do gelo: jää (gelo) + äär (beira), três “ä” seguidos'],
         ],
       },
       {
         heading: 'As consoantes: b, d, g sem voz, h sempre, r vibrado',
-        text: 'Para o ouvido brasileiro, o b, o d e o g do estoniano soam quase como p, t e k: são consoantes curtas e frouxas, sem a vibração das cordas vocais do nosso «b». A diferença entre «kabi» e «kapi» não é de voz, mas de duração: o p de «kapi» é mais longo e mais tenso. E o p, o t e o k do estoniano nunca têm aquele sopro do inglês. O h se pronuncia sempre, como o «h» do inglês «house», inclusive no fim da palavra (aitäh, mahl). O r é vibrado com a ponta da língua, como o «r» de «caro», e mais forte quando é dobrado ou no começo da palavra. O j é o nosso «i» rápido de «iate». O š soa como o nosso «ch» [ʃ] e o ž como o nosso «j» [ʒ]. E há uma sutileza que você vai ouvir aos poucos: algumas consoantes são «amolecidas» (palatalizadas), com um «i» escondido, e isso também muda o sentido: palk [ˈpɑlk] é tronco de árvore, palk [ˈpɑlʲk] é salário.',
+        text: 'Para o ouvido brasileiro, o b, o d e o g do estoniano soam quase como p, t e k: são consoantes curtas e frouxas, sem a vibração das cordas vocais do nosso “b”. A diferença entre “kabi” e “kapi” não é de voz, mas de duração: o p de “kapi” é mais longo e mais tenso. E o p, o t e o k do estoniano nunca têm aquele sopro do inglês. O h se pronuncia sempre, como o “h” do inglês “house”, inclusive no fim da palavra (aitäh, mahl). O r é vibrado com a ponta da língua, como o “r” de “caro”, e mais forte quando é dobrado ou no começo da palavra. O j é o nosso “i” rápido de “iate”. O š soa como o nosso “ch” [ʃ] e o ž como o nosso “j” [ʒ]. E há uma sutileza que você vai ouvir aos poucos: algumas consoantes são “amolecidas” (palatalizadas), com um “i” escondido, e isso também muda o sentido: palk [ˈpɑlk] é tronco de árvore, palk [ˈpɑlʲk] é salário.',
         table: {
           head: ['Letra', 'IPA', 'Exemplo', 'Português'],
           rows: [
@@ -92,14 +92,14 @@ export const GRAMMAR_ET: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['Head aega!', 'Tchau! (literalmente «bom tempo!»; o h de «head» se ouve)'],
+          ['Head aega!', 'Tchau! (literalmente “bom tempo!”; o h de “head” se ouve)'],
           ['Mu sõber elab Haapsalus.', 'Meu amigo mora em Haapsalu.'],
           ['Aitäh, see on väga hea!', 'Obrigado, isto está muito bom!'],
         ],
       },
       {
         heading: 'Vogais dobradas e ditongos',
-        text: 'Vogal dobrada é vogal longa, e só: aa, ee, ii, oo, uu, õõ, ää, öö, üü. Não se diz duas vezes a vogal, só se estica: «kool» (escola) é [ˈkoːl], um «ô» comprido. Os ditongos são muitos, e os dois sons se ouvem bem: ai, ei, oi, ui, õu, äe, õi, au, ea (tere, hea). O «õu» de «õun» (maçã) e de «õues» (lá fora) é um dos sons mais estonianos que existem.',
+        text: 'Vogal dobrada é vogal longa, e só: aa, ee, ii, oo, uu, õõ, ää, öö, üü. Não se diz duas vezes a vogal, só se estica: “kool” (escola) é [ˈkoːl], um “ô” comprido. Os ditongos são muitos, e os dois sons se ouvem bem: ai, ei, oi, ui, õu, äe, õi, au, ea (tere, hea). O “õu” de “õun” (maçã) e de “õues” (lá fora) é um dos sons mais estonianos que existem.',
         examples: [
           ['kool', '[ˈkoːl] escola'],
           ['maa', '[ˈmɑː] terra, campo, país'],
@@ -110,15 +110,15 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Dizer o «õ» como o nosso «õ» anasalado de «põe»: o estoniano [ɤ] não tem nada de nasal; é um «o» com os lábios esticados.',
-      'Reduzir o «e» final a «i»: «tere» é [ˈtere], não «téri».',
+      'Dizer o “õ” como o nosso “õ” anasalado de “põe”: o estoniano [ɤ] não tem nada de nasal; é um “o” com os lábios esticados.',
+      'Reduzir o “e” final a “i”: “tere” é [ˈtere], não “téri”.',
       'Pôr a força na penúltima sílaba, como no português: é KA-hek-sa, VIL-jan-di, e não ka-HEK-sa, vil-JAN-di.',
-      'Ignorar a letra dobrada: «lina» (linho) e «linna» (da cidade) são palavras diferentes; «koli» (tralha) e «kolli» (do monstro) também.',
-      'Deixar o h mudo como em português: «hea» (bom) e «ea» não são a mesma coisa; o h sempre soa.',
+      'Ignorar a letra dobrada: “lina” (linho) e “linna” (da cidade) são palavras diferentes; “koli” (tralha) e “kolli” (do monstro) também.',
+      'Deixar o h mudo como em português: “hea” (bom) e “ea” não são a mesma coisa; o h sempre soa.',
     ],
     quiz: [
       {
-        question: 'Qual sílaba é a forte em «kaheksa» (oito)?',
+        question: 'Qual sílaba é a forte em “kaheksa” (oito)?',
         options: ['KA-hek-sa', 'ka-HEK-sa', 'ka-hek-SA'],
         answer: 'KA-hek-sa',
         explanation: 'Nas palavras estonianas, a força cai sempre na primeira sílaba.',
@@ -127,19 +127,19 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         question: 'Qual palavra estoniana tem a força na última sílaba?',
         options: ['aitäh', 'tere', 'Tartu'],
         answer: 'aitäh',
-        explanation: '«aitäh» (obrigado) é a exceção famosa: ai-TÄH.',
+        explanation: '“aitäh” (obrigado) é a exceção famosa: ai-TÄH.',
       },
       {
-        question: 'Como soa o «õ» estoniano?',
-        options: ['Um «o» dito com os lábios esticados [ɤ]', 'Um «o» nasal, como em «põe»', 'Um «u» fechado'],
-        answer: 'Um «o» dito com os lábios esticados [ɤ]',
-        explanation: 'O «õ» [ɤ] não é nasal: é uma vogal posterior sem arredondamento dos lábios.',
+        question: 'Como soa o “õ” estoniano?',
+        options: ['Um “o” dito com os lábios esticados [ɤ]', 'Um “o” nasal, como em “põe”', 'Um “u” fechado'],
+        answer: 'Um “o” dito com os lábios esticados [ɤ]',
+        explanation: 'O “õ” [ɤ] não é nasal: é uma vogal posterior sem arredondamento dos lábios.',
       },
       {
-        question: 'O que distingue «sada» (cem) de «saada» (mande!)?',
-        options: ['O tamanho do «a» da primeira sílaba', 'O lugar da tônica', 'O «d», que é sonoro só em «saada»'],
-        answer: 'O tamanho do «a» da primeira sílaba',
-        explanation: '«sada» tem o «a» curto (1ª quantidade); «saada» tem o «a» longo (2ª) ou sobrelongo (3ª, receber).',
+        question: 'O que distingue “sada” (cem) de “saada” (mande!)?',
+        options: ['O tamanho do “a” da primeira sílaba', 'O lugar da tônica', 'O “d”, que é sonoro só em “saada”'],
+        answer: 'O tamanho do “a” da primeira sílaba',
+        explanation: '“sada” tem o “a” curto (1ª quantidade); “saada” tem o “a” longo (2ª) ou sobrelongo (3ª, receber).',
       },
       {
         question: 'Qual palavra tem a sobrelonga (3ª quantidade) indicada na escrita?',
@@ -154,11 +154,11 @@ export const GRAMMAR_ET: GrammarTopic[] = [
     level: 'A1.1',
     title: 'Saudações, pronomes pessoais e o verbo olema (olen, on)',
     emoji: '👋',
-    summary: '«Tere!» serve para quase tudo, «aitäh» é obrigado e «head aega» é tchau. Os pronomes têm uma forma longa e uma curta (mina/ma, sina/sa, tema/ta), o «ta» vale para ele e para ela, e o verbo «olema» (ser, estar) conjuga assim: olen, oled, on, oleme, olete, on.',
+    summary: '“Tere!” serve para quase tudo, “aitäh” é obrigado e “head aega” é tchau. Os pronomes têm uma forma longa e uma curta (mina/ma, sina/sa, tema/ta), o “ta” vale para ele e para ela, e o verbo “olema” (ser, estar) conjuga assim: olen, oled, on, oleme, olete, on.',
     sections: [
       {
         heading: 'Cumprimentar e se despedir',
-        text: '«Tere» é o cumprimento universal: serve para amigos, desconhecidos e até no começo de um e-mail. Para marcar a hora do dia, existem «tere hommikust» (bom dia), «tere päevast» (boa tarde, mais formal) e «tere õhtust» (boa noite, ao chegar). Na despedida, o mais comum é «head aega» (literalmente «bom tempo»), «nägemist» (até mais, de «ver») e, entre amigos, «tšau». «Head ööd» é boa noite só na hora de dormir. «Aitäh» e «tänan» são obrigado, e «palun» é ao mesmo tempo por favor, de nada e «aqui está». Curiosidade: o finlandês diz «terve» e «kiitos»; o estoniano, «tere» e «aitäh». São primos, mas não gêmeos.',
+        text: '“Tere” é o cumprimento universal: serve para amigos, desconhecidos e até no começo de um e-mail. Para marcar a hora do dia, existem “tere hommikust” (bom dia), “tere päevast” (boa tarde, mais formal) e “tere õhtust” (boa noite, ao chegar). Na despedida, o mais comum é “head aega” (literalmente “bom tempo”), “nägemist” (até mais, de “ver”) e, entre amigos, “tšau”. “Head ööd” é boa noite só na hora de dormir. “Aitäh” e “tänan” são obrigado, e “palun” é ao mesmo tempo por favor, de nada e “aqui está”. Curiosidade: o finlandês diz “terve” e “kiitos”; o estoniano, “tere” e “aitäh”. São primos, mas não gêmeos.',
         table: {
           head: ['Estoniano', 'Português', 'Quando'],
           rows: [
@@ -184,7 +184,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Pronomes: forma longa e forma curta, e nada de gênero',
-        text: 'Cada pronome tem duas formas. A curta (ma, sa, ta, me, te, nad) é a do dia a dia. A longa (mina, sina, tema, meie, teie, nemad) serve para dar ênfase ou contrastar: «Mina olen Ana, tema on Mari». O estoniano não tem gênero gramatical: «ta» (ou «tema») quer dizer ele e ela, e o contexto é que diz quem é. Também não há artigos: «maja» é casa, a casa e uma casa. Para tratar alguém com respeito, use «teie» (vocês, o senhor, a senhora), como o «vous» do francês.',
+        text: 'Cada pronome tem duas formas. A curta (ma, sa, ta, me, te, nad) é a do dia a dia. A longa (mina, sina, tema, meie, teie, nemad) serve para dar ênfase ou contrastar: “Mina olen Ana, tema on Mari”. O estoniano não tem gênero gramatical: “ta” (ou “tema”) quer dizer ele e ela, e o contexto é que diz quem é. Também não há artigos: “maja” é casa, a casa e uma casa. Para tratar alguém com respeito, use “teie” (vocês, o senhor, a senhora), como o “vous” do francês.',
         table: {
           head: ['Longa', 'Curta', 'Português'],
           rows: [
@@ -204,7 +204,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'O verbo olema: ser e estar',
-        text: 'O estoniano não separa ser de estar: «olema» faz os dois papéis. Os verbos estonianos aparecem no dicionário com a terminação -ma (olema, elama, tulema), e o presente ganha uma terminação para cada pessoa. A 3ª pessoa de «olema» é igual no singular e no plural: «on». Para negar, use «ei ole» para todas as pessoas, ou a forma curta «pole», muito comum na fala.',
+        text: 'O estoniano não separa ser de estar: “olema” faz os dois papéis. Os verbos estonianos aparecem no dicionário com a terminação -ma (olema, elama, tulema), e o presente ganha uma terminação para cada pessoa. A 3ª pessoa de “olema” é igual no singular e no plural: “on”. Para negar, use “ei ole” para todas as pessoas, ou a forma curta “pole”, muito comum na fala.',
         table: {
           head: ['Pessoa', 'Estoniano', 'Português'],
           rows: [
@@ -226,42 +226,42 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar «head ööd» para cumprimentar à noite: ele é só para ir dormir; ao chegar, diga «tere õhtust» ou simplesmente «tere».',
-      'Procurar um pronome «ela»: «ta» serve para ele e para ela.',
-      'Pôr artigo: não existe «o» nem «um» em estoniano; «raamat» é livro, o livro e um livro.',
-      'Esquecer que a 3ª pessoa do plural de «olema» é «on», igual à do singular: «Nad on», e não «Nad olevad».',
-      'Negar com «ei» e a forma conjugada: é «ma ei ole», e não «ma ei olen».',
+      'Usar “head ööd” para cumprimentar à noite: ele é só para ir dormir; ao chegar, diga “tere õhtust” ou simplesmente “tere”.',
+      'Procurar um pronome “ela”: “ta” serve para ele e para ela.',
+      'Pôr artigo: não existe “o” nem “um” em estoniano; “raamat” é livro, o livro e um livro.',
+      'Esquecer que a 3ª pessoa do plural de “olema” é “on”, igual à do singular: “Nad on”, e não “Nad olevad”.',
+      'Negar com “ei” e a forma conjugada: é “ma ei ole”, e não “ma ei olen”.',
     ],
     quiz: [
       {
-        question: 'Como se diz «Eu sou brasileiro»?',
+        question: 'Como se diz “Eu sou brasileiro”?',
         options: ['Ma olen brasiillane.', 'Ma on brasiillane.', 'Ma oled brasiillane.'],
         answer: 'Ma olen brasiillane.',
-        explanation: 'Com «ma» (eu), o verbo «olema» fica «olen».',
+        explanation: 'Com “ma” (eu), o verbo “olema” fica “olen”.',
       },
       {
-        question: 'Qual pronome serve para «ele» e para «ela»?',
+        question: 'Qual pronome serve para “ele” e para “ela”?',
         options: ['ta', 'sa', 'me'],
         answer: 'ta',
-        explanation: 'O estoniano não tem gênero: «ta» (ou «tema») vale para os dois.',
+        explanation: 'O estoniano não tem gênero: “ta” (ou “tema”) vale para os dois.',
       },
       {
         question: 'Você vai dormir. O que diz?',
         options: ['Head ööd!', 'Tere õhtust!', 'Tere hommikust!'],
         answer: 'Head ööd!',
-        explanation: '«Head ööd» é o boa-noite da hora de dormir; «tere õhtust» é para chegar.',
+        explanation: '“Head ööd” é o boa-noite da hora de dormir; “tere õhtust” é para chegar.',
       },
       {
         question: 'Complete: Nad ___ Tallinnas.',
         options: ['on', 'olevad', 'oled'],
         answer: 'on',
-        explanation: 'A 3ª pessoa de «olema» é «on» no singular e no plural.',
+        explanation: 'A 3ª pessoa de “olema” é “on” no singular e no plural.',
       },
       {
-        question: 'Como se diz «Ele não está em casa»?',
+        question: 'Como se diz “Ele não está em casa”?',
         options: ['Ta ei ole kodus.', 'Ta ei on kodus.', 'Ta on ei kodus.'],
         answer: 'Ta ei ole kodus.',
-        explanation: 'A negação é «ei ole» (ou «pole») para todas as pessoas.',
+        explanation: 'A negação é “ei ole” (ou “pole”) para todas as pessoas.',
       },
     ],
   },
@@ -270,11 +270,11 @@ export const GRAMMAR_ET: GrammarTopic[] = [
     level: 'A1.1',
     title: 'Os números de 0 a 20: idade, preço e hora',
     emoji: '🔢',
-    summary: 'De 1 a 10: üks, kaks, kolm, neli, viis, kuus, seitse, kaheksa, üheksa, kümme. De 11 a 19, acrescente «-teist»: üksteist, kaksteist… E 20 é «kakskümmend». Depois de 2 em diante, o substantivo vai para o partitivo: üks kohv, mas kaks kohvi.',
+    summary: 'De 1 a 10: üks, kaks, kolm, neli, viis, kuus, seitse, kaheksa, üheksa, kümme. De 11 a 19, acrescente “-teist”: üksteist, kaksteist… E 20 é “kakskümmend”. Depois de 2 em diante, o substantivo vai para o partitivo: üks kohv, mas kaks kohvi.',
     sections: [
       {
         heading: 'De 0 a 10',
-        text: 'Lembre a tônica na primeira sílaba: KA-hek-sa, ÜH-ek-sa. O «ü» de «üks» e de «üheksa» é o «i» com lábios de «u». Repare que «kaheksa» (oito) e «üheksa» (nove) terminam igual, e lembram «kaks» (dois) e «üks» (um). No finlandês, o primo, são «kahdeksan» e «yhdeksän».',
+        text: 'Lembre a tônica na primeira sílaba: KA-hek-sa, ÜH-ek-sa. O “ü” de “üks” e de “üheksa” é o “i” com lábios de “u”. Repare que “kaheksa” (oito) e “üheksa” (nove) terminam igual, e lembram “kaks” (dois) e “üks” (um). No finlandês, o primo, são “kahdeksan” e “yhdeksän”.',
         table: {
           head: ['Número', 'Estoniano', 'IPA'],
           rows: [
@@ -298,8 +298,8 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'De 11 a 20: o «-teist»',
-        text: 'De 11 a 19, o número de 1 a 9 ganha «-teist», que quer dizer «do segundo (dez)»: üksteist é «um do segundo dez», ou seja, 11. O 20 é «kaks» + «kümmend» (dezenas): kakskümmend. Da mesma forma se fazem 30 (kolmkümmend), 40 (nelikümmend) e assim por diante.',
+        heading: 'De 11 a 20: o “-teist”',
+        text: 'De 11 a 19, o número de 1 a 9 ganha “-teist”, que quer dizer “do segundo (dez)”: üksteist é “um do segundo dez”, ou seja, 11. O 20 é “kaks” + “kümmend” (dezenas): kakskümmend. Da mesma forma se fazem 30 (kolmkümmend), 40 (nelikümmend) e assim por diante.',
         table: {
           head: ['Número', 'Estoniano', 'Número', 'Estoniano'],
           rows: [
@@ -318,7 +318,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Contar coisas: üks + nominativo, kaks + partitivo',
-        text: 'Com «üks» (um), o substantivo fica na forma básica, o nominativo: üks kohv, üks laps. Do dois em diante, o substantivo vai para o partitivo SINGULAR (e não para o plural, como em português): kaks kohvi, kolm last, kümme eurot. O partitivo é um caso que você vai estudar com calma no A2.2; por enquanto, decore as formas mais úteis junto com o número.',
+        text: 'Com “üks” (um), o substantivo fica na forma básica, o nominativo: üks kohv, üks laps. Do dois em diante, o substantivo vai para o partitivo SINGULAR (e não para o plural, como em português): kaks kohvi, kolm last, kümme eurot. O partitivo é um caso que você vai estudar com calma no A2.2; por enquanto, decore as formas mais úteis junto com o número.',
         table: {
           head: ['Um', 'Dois ou mais', 'Português'],
           rows: [
@@ -337,27 +337,27 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Idade e hora',
-        text: 'Para a idade, o estoniano diz «ser X anos velho»: «Ma olen kakskümmend aastat vana». A pergunta é «Kui vana sa oled?» (quão velho você é?). Para a hora, usa-se «kell» (relógio, sino): «Mis kell on?» (que horas são?) — «Kell on kolm» (são três horas). E atenção à meia hora: «pool neli» quer dizer «metade do quatro», ou seja, TRÊS e meia, porque se conta a hora que está chegando.',
+        text: 'Para a idade, o estoniano diz “ser X anos velho”: “Ma olen kakskümmend aastat vana”. A pergunta é “Kui vana sa oled?” (quão velho você é?). Para a hora, usa-se “kell” (relógio, sino): “Mis kell on?” (que horas são?) — “Kell on kolm” (são três horas). E atenção à meia hora: “pool neli” quer dizer “metade do quatro”, ou seja, TRÊS e meia, porque se conta a hora que está chegando.',
         examples: [
           ['Kui vana sa oled? — Ma olen üheksateist aastat vana.', 'Quantos anos você tem? — Tenho dezenove anos.'],
           ['Mis kell on? — Kell on kaheksa.', 'Que horas são? — São oito horas.'],
-          ['Kell on pool kaks.', 'É uma e meia. (literalmente «metade do dois»)'],
+          ['Kell on pool kaks.', 'É uma e meia. (literalmente “metade do dois”)'],
           ['Kui palju see maksab? — Kaksteist eurot.', 'Quanto custa isto? — Doze euros.'],
         ],
       },
     ],
     pitfalls: [
-      'Pôr o plural depois de número: é «kaks kohvi» (partitivo singular), e não «kaks kohvid».',
-      'Entender «pool kolm» como três e meia: é duas e meia, a metade do caminho até as três.',
-      'Esquecer o «-teist» nos números de 11 a 19: 13 é «kolmteist», e não «kümme kolm».',
-      'Dizer «Mul on kakskümmend aastat» para a idade: em estoniano se «é» a idade, com «olema» e «vana»: «Ma olen kakskümmend aastat vana».',
+      'Pôr o plural depois de número: é “kaks kohvi” (partitivo singular), e não “kaks kohvid”.',
+      'Entender “pool kolm” como três e meia: é duas e meia, a metade do caminho até as três.',
+      'Esquecer o “-teist” nos números de 11 a 19: 13 é “kolmteist”, e não “kümme kolm”.',
+      'Dizer “Mul on kakskümmend aastat” para a idade: em estoniano se “é” a idade, com “olema” e “vana”: “Ma olen kakskümmend aastat vana”.',
     ],
     quiz: [
       {
         question: 'Como se diz 14?',
         options: ['neliteist', 'nelikümmend', 'kümme neli'],
         answer: 'neliteist',
-        explanation: 'De 11 a 19: número + «-teist». «nelikümmend» é 40.',
+        explanation: 'De 11 a 19: número + “-teist”. “nelikümmend” é 40.',
       },
       {
         question: 'Como se pedem dois cafés?',
@@ -366,16 +366,16 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         explanation: 'Do dois em diante, o substantivo vai para o partitivo singular: kohvi.',
       },
       {
-        question: '«Kell on pool viis» quer dizer…',
+        question: '“Kell on pool viis” quer dizer…',
         options: ['4:30', '5:30', '5:15'],
         answer: '4:30',
-        explanation: '«pool viis» é a metade do caminho até as cinco: quatro e meia.',
+        explanation: '“pool viis” é a metade do caminho até as cinco: quatro e meia.',
       },
       {
-        question: 'Como se diz «Tenho vinte anos»?',
+        question: 'Como se diz “Tenho vinte anos”?',
         options: ['Ma olen kakskümmend aastat vana.', 'Mul on kakskümmend aastat.', 'Ma olen kaksteist aastat vana.'],
         answer: 'Ma olen kakskümmend aastat vana.',
-        explanation: 'A idade é dita com «olema»: «olen … aastat vana». E 20 é «kakskümmend» (12 é «kaksteist»).',
+        explanation: 'A idade é dita com “olema”: “olen … aastat vana”. E 20 é “kakskümmend” (12 é “kaksteist”).',
       },
     ],
   },
@@ -385,11 +385,11 @@ export const GRAMMAR_ET: GrammarTopic[] = [
     level: 'A1.2',
     title: 'O presente: -n, -d, -b, -me, -te, -vad',
     emoji: '🏃',
-    summary: 'O presente estoniano tem uma terminação para cada pessoa, sempre as mesmas: ma elan, sa elad, ta elab, me elame, te elate, nad elavad. O mesmo tempo serve para «eu moro», «estou morando» e até «vou morar».',
+    summary: 'O presente estoniano tem uma terminação para cada pessoa, sempre as mesmas: ma elan, sa elad, ta elab, me elame, te elate, nad elavad. O mesmo tempo serve para “eu moro”, “estou morando” e até “vou morar”.',
     sections: [
       {
         heading: 'As seis terminações',
-        text: 'O verbo aparece no dicionário com a terminação -ma (elama, morar; rääkima, falar). Tire o -ma e acrescente a terminação da pessoa: ela-n, ela-d, ela-b, ela-me, ela-te, ela-vad. As terminações são as mesmas para todos os verbos, sem exceção. Como a terminação já mostra quem faz a ação, o pronome «ma» ou «sa» pode cair, como no português: «Elan Tartus» (moro em Tartu).',
+        text: 'O verbo aparece no dicionário com a terminação -ma (elama, morar; rääkima, falar). Tire o -ma e acrescente a terminação da pessoa: ela-n, ela-d, ela-b, ela-me, ela-te, ela-vad. As terminações são as mesmas para todos os verbos, sem exceção. Como a terminação já mostra quem faz a ação, o pronome “ma” ou “sa” pode cair, como no português: “Elan Tartus” (moro em Tartu).',
         table: {
           head: ['Pessoa', 'Terminação', 'elama (morar)', 'laulma (cantar)'],
           rows: [
@@ -410,7 +410,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Quando o radical muda: a gradação',
-        text: 'Em muitos verbos, o radical do presente não é igual ao do -ma: uma consoante enfraquece ou some. É a gradação, um fenômeno que o estoniano divide com o finlandês e que você vai reencontrar nos substantivos. Por isso os dicionários dão três formas de cada verbo: o -ma, o -da e o presente da 1ª pessoa (rääkima, rääkida, räägin). Decore o verbo já com o «räägin» junto. Um verbo é bem irregular: «minema» (ir) vira «lähen» no presente.',
+        text: 'Em muitos verbos, o radical do presente não é igual ao do -ma: uma consoante enfraquece ou some. É a gradação, um fenômeno que o estoniano divide com o finlandês e que você vai reencontrar nos substantivos. Por isso os dicionários dão três formas de cada verbo: o -ma, o -da e o presente da 1ª pessoa (rääkima, rääkida, räägin). Decore o verbo já com o “räägin” junto. Um verbo é bem irregular: “minema” (ir) vira “lähen” no presente.',
         table: {
           head: ['-ma', 'ma…', 'ta…', 'nad…', 'Português'],
           rows: [
@@ -433,7 +433,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Um presente para três tempos',
-        text: 'O estoniano não tem uma forma própria para «estar fazendo» nem um futuro simples. O presente cobre tudo: «Ma loen» é eu leio, estou lendo e (com uma palavra de tempo) vou ler. Para o futuro, basta pôr «homme» (amanhã), «varsti» (logo) ou «järgmisel aastal» (no ano que vem).',
+        text: 'O estoniano não tem uma forma própria para “estar fazendo” nem um futuro simples. O presente cobre tudo: “Ma loen” é eu leio, estou lendo e (com uma palavra de tempo) vou ler. Para o futuro, basta pôr “homme” (amanhã), “varsti” (logo) ou “järgmisel aastal” (no ano que vem).',
         examples: [
           ['Ma söön.', 'Eu como. / Estou comendo.'],
           ['Homme sõidan Saaremaale.', 'Amanhã eu vou para Saaremaa.'],
@@ -443,11 +443,11 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar o -ma como se fosse o verbo conjugado: «Ma elama Tartus» está errado; é «Ma elan Tartus».',
+      'Usar o -ma como se fosse o verbo conjugado: “Ma elama Tartus” está errado; é “Ma elan Tartus”.',
       'Confundir -b e -vad: -b é só ele/ela (ta elab); eles/elas é -vad (nad elavad).',
-      'Formar o presente de «minema» como «minen»: o presente é «lähen, lähed, läheb…».',
-      'Esquecer a gradação: de «rääkima» sai «räägin», não «rääkin»; de «õppima», «õpin».',
-      'Procurar um verbo auxiliar para o futuro: o presente com «homme» já resolve («Ma tulen homme»).',
+      'Formar o presente de “minema” como “minen”: o presente é “lähen, lähed, läheb…”.',
+      'Esquecer a gradação: de “rääkima” sai “räägin”, não “rääkin”; de “õppima”, “õpin”.',
+      'Procurar um verbo auxiliar para o futuro: o presente com “homme” já resolve (“Ma tulen homme”).',
     ],
     quiz: [
       {
@@ -457,35 +457,35 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         explanation: 'Eles/elas (nad) levam -vad: elavad.',
       },
       {
-        question: 'Qual é o presente de «minema» para «ma»?',
+        question: 'Qual é o presente de “minema” para “ma”?',
         options: ['lähen', 'minen', 'minan'],
         answer: 'lähen',
-        explanation: '«minema» (ir) é irregular: lähen, lähed, läheb, läheme, lähete, lähevad.',
+        explanation: '“minema” (ir) é irregular: lähen, lähed, läheb, läheme, lähete, lähevad.',
       },
       {
         question: 'Complete: Sa ___ hästi eesti keelt. (rääkima)',
         options: ['räägid', 'rääkid', 'räägib'],
         answer: 'räägid',
-        explanation: 'Com gradação, kk enfraquece para g: räägi-; e «sa» leva -d.',
+        explanation: 'Com gradação, kk enfraquece para g: räägi-; e “sa” leva -d.',
       },
       {
-        question: 'Como se diz «Amanhã eu vou ler»?',
+        question: 'Como se diz “Amanhã eu vou ler”?',
         options: ['Ma loen homme.', 'Ma lugema homme.', 'Ma loeb homme.'],
         answer: 'Ma loen homme.',
-        explanation: 'O presente com «homme» (amanhã) faz o papel do futuro; «ma» leva -n: loen.',
+        explanation: 'O presente com “homme” (amanhã) faz o papel do futuro; “ma” leva -n: loen.',
       },
     ],
   },
   {
     id: 'et-g5',
     level: 'A1.2',
-    title: 'A negação com «ei» e as perguntas com «kas»',
+    title: 'A negação com “ei” e as perguntas com “kas”',
     emoji: '❓',
-    summary: 'Para negar, «ei» + o verbo SEM terminação, igual para todas as pessoas: ma ei räägi, nad ei räägi. Para perguntar sim ou não, ponha «kas» no começo: «Kas sa räägid eesti keelt?». As outras perguntas usam kes, mis, kus, kust, kuhu, millal, miks, kuidas.',
+    summary: 'Para negar, “ei” + o verbo SEM terminação, igual para todas as pessoas: ma ei räägi, nad ei räägi. Para perguntar sim ou não, ponha “kas” no começo: “Kas sa räägid eesti keelt?”. As outras perguntas usam kes, mis, kus, kust, kuhu, millal, miks, kuidas.',
     sections: [
       {
-        heading: '«ei» + o radical: uma forma para todos',
-        text: 'A negação estoniana é muito simples: «ei» vem antes do verbo, e o verbo perde a terminação da pessoa. O que sobra é o radical do presente, o mesmo para ma, sa, ta, me, te e nad. Assim, «ma räägin» vira «ma ei räägi», «nad räägivad» vira «nad ei räägi». O «ei» nunca muda. Com «olema», a negação é «ei ole», ou «pole» na fala. E «ei» sozinho também é a resposta «não».',
+        heading: '“ei” + o radical: uma forma para todos',
+        text: 'A negação estoniana é muito simples: “ei” vem antes do verbo, e o verbo perde a terminação da pessoa. O que sobra é o radical do presente, o mesmo para ma, sa, ta, me, te e nad. Assim, “ma räägin” vira “ma ei räägi”, “nad räägivad” vira “nad ei räägi”. O “ei” nunca muda. Com “olema”, a negação é “ei ole”, ou “pole” na fala. E “ei” sozinho também é a resposta “não”.',
         table: {
           head: ['Afirmativo', 'Negativo', 'Português'],
           rows: [
@@ -506,8 +506,8 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         ],
       },
       {
-        heading: '«kas»: a pergunta de sim ou não',
-        text: 'Para transformar uma frase em pergunta de sim ou não, basta pôr «kas» no começo, sem mudar mais nada: «Sa räägid eesti keelt» → «Kas sa räägid eesti keelt?». O «kas» não se traduz; é como um ponto de interrogação falado. Para responder, o estoniano gosta de repetir o verbo: «Jah, räägin» (sim, falo), «Ei, ei räägi» (não, não falo). Na fala, «kas» às vezes cai e a entonação faz a pergunta, e no fim da frase aparece o «eks», que funciona como o nosso «né?».',
+        heading: '“kas”: a pergunta de sim ou não',
+        text: 'Para transformar uma frase em pergunta de sim ou não, basta pôr “kas” no começo, sem mudar mais nada: “Sa räägid eesti keelt” → “Kas sa räägid eesti keelt?”. O “kas” não se traduz; é como um ponto de interrogação falado. Para responder, o estoniano gosta de repetir o verbo: “Jah, räägin” (sim, falo), “Ei, ei räägi” (não, não falo). Na fala, “kas” às vezes cai e a entonação faz a pergunta, e no fim da frase aparece o “eks”, que funciona como o nosso “né?”.',
         examples: [
           ['Kas sa räägid eesti keelt? — Jah, natuke.', 'Você fala estoniano? — Sim, um pouco.'],
           ['Kas te olete eestlane? — Ei, ma olen brasiillane.', 'O senhor é estoniano? — Não, sou brasileiro.'],
@@ -517,7 +517,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'As palavras interrogativas',
-        text: 'Com palavra interrogativa, não se usa «kas»: a palavra vai no começo e basta. Repare que o estoniano tem três palavras para «onde», conforme o movimento: «kus» (onde se está), «kust» (de onde) e «kuhu» (para onde). Elas preparam os casos de lugar que você verá no A2.1.',
+        text: 'Com palavra interrogativa, não se usa “kas”: a palavra vai no começo e basta. Repare que o estoniano tem três palavras para “onde”, conforme o movimento: “kus” (onde se está), “kust” (de onde) e “kuhu” (para onde). Elas preparam os casos de lugar que você verá no A2.1.',
         table: {
           head: ['Estoniano', 'Português', 'Exemplo'],
           rows: [
@@ -541,49 +541,49 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Manter a terminação depois do «ei»: «ma ei räägin» está errado; é «ma ei räägi».',
-      'Negar com «mitte» antes do verbo, como o nosso «não»: o verbo se nega com «ei»; «mitte» nega outras palavras («mitte täna», não hoje).',
-      'Juntar «kas» com palavra interrogativa: «Kas kus sa elad?» está errado; basta «Kus sa elad?».',
-      'Usar «kus» para movimento: «Kus sa lähed?» soa errado; para onde é «kuhu»: «Kuhu sa lähed?».',
-      'Responder só «jah» ou «ei» o tempo todo: repetir o verbo («Jah, tulen») soa muito mais natural.',
+      'Manter a terminação depois do “ei”: “ma ei räägin” está errado; é “ma ei räägi”.',
+      'Negar com “mitte” antes do verbo, como o nosso “não”: o verbo se nega com “ei”; “mitte” nega outras palavras (“mitte täna”, não hoje).',
+      'Juntar “kas” com palavra interrogativa: “Kas kus sa elad?” está errado; basta “Kus sa elad?”.',
+      'Usar “kus” para movimento: “Kus sa lähed?” soa errado; para onde é “kuhu”: “Kuhu sa lähed?”.',
+      'Responder só “jah” ou “ei” o tempo todo: repetir o verbo (“Jah, tulen”) soa muito mais natural.',
     ],
     quiz: [
       {
-        question: 'Como se diz «Nós não sabemos»?',
+        question: 'Como se diz “Nós não sabemos”?',
         options: ['Me ei tea.', 'Me ei teame.', 'Me ei teavad.'],
         answer: 'Me ei tea.',
-        explanation: 'Depois de «ei», o verbo fica sem terminação, igual para todas as pessoas.',
+        explanation: 'Depois de “ei”, o verbo fica sem terminação, igual para todas as pessoas.',
       },
       {
         question: 'Qual pergunta está certa?',
         options: ['Kas sa räägid eesti keelt?', 'Kas räägid sa eesti keel?', 'Sa kas räägid eesti keelt?'],
         answer: 'Kas sa räägid eesti keelt?',
-        explanation: '«kas» vai no começo e o resto da frase fica igual.',
+        explanation: '“kas” vai no começo e o resto da frase fica igual.',
       },
       {
         question: 'Complete: ___ sa lähed? — Tartusse.',
         options: ['Kuhu', 'Kus', 'Kust'],
         answer: 'Kuhu',
-        explanation: '«Tartusse» é «para Tartu»: a pergunta é «kuhu», para onde.',
+        explanation: '“Tartusse” é “para Tartu”: a pergunta é “kuhu”, para onde.',
       },
       {
-        question: 'Qual é a negação de «nad on»?',
+        question: 'Qual é a negação de “nad on”?',
         options: ['nad ei ole', 'nad ei on', 'nad ei olevad'],
         answer: 'nad ei ole',
-        explanation: '«olema» se nega com «ei ole» (ou «pole») em todas as pessoas.',
+        explanation: '“olema” se nega com “ei ole” (ou “pole”) em todas as pessoas.',
       },
     ],
   },
   {
     id: 'et-g6',
     level: 'A1.2',
-    title: '«Mul on»: como se diz «ter» sem um verbo ter',
+    title: '“Mul on”: como se diz “ter” sem um verbo ter',
     emoji: '🎒',
-    summary: 'O estoniano não tem verbo «ter». Diz-se «em mim há»: mul on auto (eu tenho um carro), sul on aega (você tem tempo), emal on koer (a mãe tem um cachorro). Na negação, a coisa vai para o partitivo: mul ei ole autot.',
+    summary: 'O estoniano não tem verbo “ter”. Diz-se “em mim há”: mul on auto (eu tenho um carro), sul on aega (você tem tempo), emal on koer (a mãe tem um cachorro). Na negação, a coisa vai para o partitivo: mul ei ole autot.',
     sections: [
       {
-        heading: '«Mul on»: em mim há',
-        text: 'Para dizer que alguém tem algo, o estoniano põe o dono num caso chamado adessivo (terminação -l, «junto de») e usa «on» (há, é): «mul on» é literalmente «em mim há». O verbo é sempre «on», seja quem for o dono e seja quanta coisa for: «Mul on kaks venda» (tenho dois irmãos). Com substantivos, o dono também leva -l: «Emal on koer», «Peetril on auto». Há ainda as formas longas (minul, sinul, temal), usadas para dar ênfase.',
+        heading: '“Mul on”: em mim há',
+        text: 'Para dizer que alguém tem algo, o estoniano põe o dono num caso chamado adessivo (terminação -l, “junto de”) e usa “on” (há, é): “mul on” é literalmente “em mim há”. O verbo é sempre “on”, seja quem for o dono e seja quanta coisa for: “Mul on kaks venda” (tenho dois irmãos). Com substantivos, o dono também leva -l: “Emal on koer”, “Peetril on auto”. Há ainda as formas longas (minul, sinul, temal), usadas para dar ênfase.',
         table: {
           head: ['Pronome', 'Dono (-l)', 'Português'],
           rows: [
@@ -604,7 +604,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Na negação, o partitivo',
-        text: 'Quando se diz que alguém NÃO tem algo, a coisa vai para o partitivo, o caso da «parte» e da ausência: «Mul on auto» → «Mul ei ole autot» (ou «Mul pole autot»). É uma regra forte do estoniano: na frase negativa, o que se «tem» ou o objeto quase sempre fica no partitivo. As formas do partitivo virão no A2.2; aqui, decore os pares mais úteis.',
+        text: 'Quando se diz que alguém NÃO tem algo, a coisa vai para o partitivo, o caso da “parte” e da ausência: “Mul on auto” → “Mul ei ole autot” (ou “Mul pole autot”). É uma regra forte do estoniano: na frase negativa, o que se “tem” ou o objeto quase sempre fica no partitivo. As formas do partitivo virão no A2.2; aqui, decore os pares mais úteis.',
         table: {
           head: ['Tenho', 'Não tenho', 'Português'],
           rows: [
@@ -622,8 +622,8 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'Fome, frio, alegria: sentir também é «ter»',
-        text: 'Muitas sensações se dizem com a mesma estrutura: «Mul on külm» (estou com frio, literalmente «em mim é frio»), «Mul on palav» (estou com calor), «Mul on igav» (estou entediado), «Mul on hea meel» (fico feliz, literalmente «em mim há bom ânimo»). E a fome tem um jeito divertido: «Mul on kõht tühi», «minha barriga está vazia».',
+        heading: 'Fome, frio, alegria: sentir também é “ter”',
+        text: 'Muitas sensações se dizem com a mesma estrutura: “Mul on külm” (estou com frio, literalmente “em mim é frio”), “Mul on palav” (estou com calor), “Mul on igav” (estou entediado), “Mul on hea meel” (fico feliz, literalmente “em mim há bom ânimo”). E a fome tem um jeito divertido: “Mul on kõht tühi”, “minha barriga está vazia”.',
         examples: [
           ['Mul on külm.', 'Estou com frio.'],
           ['Mul on kõht tühi.', 'Estou com fome. (a barriga está vazia)'],
@@ -633,35 +633,35 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Procurar um verbo «ter»: não existe; «Ma olen auto» quer dizer «eu sou um carro». Diga «Mul on auto».',
-      'Conjugar o «on» conforme o dono: é «meil on», «neil on», e não «meil oleme».',
-      'Esquecer o partitivo na negação: é «Mul ei ole autot», não «Mul ei ole auto».',
-      'Traduzir «estou com frio» com «olema» e o pronome: «Ma olen külm» quer dizer que você é uma pessoa fria; a sensação é «Mul on külm».',
+      'Procurar um verbo “ter”: não existe; “Ma olen auto” quer dizer “eu sou um carro”. Diga “Mul on auto”.',
+      'Conjugar o “on” conforme o dono: é “meil on”, “neil on”, e não “meil oleme”.',
+      'Esquecer o partitivo na negação: é “Mul ei ole autot”, não “Mul ei ole auto”.',
+      'Traduzir “estou com frio” com “olema” e o pronome: “Ma olen külm” quer dizer que você é uma pessoa fria; a sensação é “Mul on külm”.',
     ],
     quiz: [
       {
-        question: 'Como se diz «Nós temos um cachorro»?',
+        question: 'Como se diz “Nós temos um cachorro”?',
         options: ['Meil on koer.', 'Me oleme koer.', 'Meil oleme koer.'],
         answer: 'Meil on koer.',
-        explanation: 'Ter = dono com -l + «on»: meil on.',
+        explanation: 'Ter = dono com -l + “on”: meil on.',
       },
       {
-        question: 'Como se diz «Eu não tenho carro»?',
+        question: 'Como se diz “Eu não tenho carro”?',
         options: ['Mul ei ole autot.', 'Mul ei ole auto.', 'Ma ei ole autot.'],
         answer: 'Mul ei ole autot.',
         explanation: 'Na negação, a coisa vai para o partitivo: autot.',
       },
       {
-        question: 'Como se diz «Estou com frio»?',
+        question: 'Como se diz “Estou com frio”?',
         options: ['Mul on külm.', 'Ma olen külm.', 'Mul olen külm.'],
         answer: 'Mul on külm.',
-        explanation: 'Sensações se dizem com «mul on»; «Ma olen külm» é «eu sou frio».',
+        explanation: 'Sensações se dizem com “mul on”; “Ma olen külm” é “eu sou frio”.',
       },
       {
         question: 'Complete: Emal ___ kaks venda.',
         options: ['on', 'olen', 'oled'],
         answer: 'on',
-        explanation: 'Na estrutura de «ter», o verbo é sempre «on».',
+        explanation: 'Na estrutura de “ter”, o verbo é sempre “on”.',
       },
     ],
   },
@@ -671,11 +671,11 @@ export const GRAMMAR_ET: GrammarTopic[] = [
     level: 'A2.1',
     title: 'Casos de lugar (1): dentro — -s, -st, -sse',
     emoji: '🏠',
-    summary: 'O estoniano não usa preposições como «em», «de» e «para»: põe terminações no substantivo. Para «dentro», são três: -s (em: Tartus), -st (de dentro: Tartust) e -sse (para dentro: Tartusse). Elas respondem a kus, kust e kuhu.',
+    summary: 'O estoniano não usa preposições como “em”, “de” e “para”: põe terminações no substantivo. Para “dentro”, são três: -s (em: Tartus), -st (de dentro: Tartust) e -sse (para dentro: Tartusse). Elas respondem a kus, kust e kuhu.',
     sections: [
       {
         heading: 'Catorze casos, sem pânico',
-        text: 'O estoniano tem 14 casos, e isso assusta. Mas muitos deles são só as nossas preposições coladas no fim da palavra, sempre com a mesma terminação para todos os substantivos. Seis deles são casos de lugar, organizados em dois trios. O primeiro trio, deste tópico, é o de «dentro»: estar dentro, sair de dentro, entrar. O segundo, o de «em cima» e «junto», vem no próximo tópico.',
+        text: 'O estoniano tem 14 casos, e isso assusta. Mas muitos deles são só as nossas preposições coladas no fim da palavra, sempre com a mesma terminação para todos os substantivos. Seis deles são casos de lugar, organizados em dois trios. O primeiro trio, deste tópico, é o de “dentro”: estar dentro, sair de dentro, entrar. O segundo, o de “em cima” e “junto”, vem no próximo tópico.',
         table: {
           head: ['Pergunta', 'Caso', 'Terminação', 'Sentido', 'Exemplo'],
           rows: [
@@ -716,7 +716,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Não só lugares: línguas, assuntos e materiais',
-        text: 'Os casos de «dentro» também servem para coisas abstratas. A língua em que algo se diz vai no inessivo: «eesti keeles» (em estoniano). O assunto de uma conversa vai no elativo: «Me räägime filmist» (falamos do filme). E alguns verbos pedem o ilativo, como «armuma» (apaixonar-se): «Ma armusin Tartusse». Comece pela língua, que você vai usar o tempo todo.',
+        text: 'Os casos de “dentro” também servem para coisas abstratas. A língua em que algo se diz vai no inessivo: “eesti keeles” (em estoniano). O assunto de uma conversa vai no elativo: “Me räägime filmist” (falamos do filme). E alguns verbos pedem o ilativo, como “armuma” (apaixonar-se): “Ma armusin Tartusse”. Comece pela língua, que você vai usar o tempo todo.',
         examples: [
           ['Mis see on eesti keeles?', 'Como se diz isto em estoniano?'],
           ['Me räägime Tallinna vanalinnast.', 'Estamos falando da cidade velha de Tallinn.'],
@@ -726,10 +726,10 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Deixar o nome da cidade sem terminação: «Ma elan Tallinn» está errado; é «Ma elan Tallinnas».',
-      'Usar -s para movimento: «Ma lähen Pärnus» está errado; para onde é -sse: «Ma lähen Pärnusse».',
-      'Pôr a terminação direto na consoante: é «linnas», não «linns»; «koolis», não «kools».',
-      'Traduzir «vou para casa» com «kodusse»: o certo é a forma curta «koju».',
+      'Deixar o nome da cidade sem terminação: “Ma elan Tallinn” está errado; é “Ma elan Tallinnas”.',
+      'Usar -s para movimento: “Ma lähen Pärnus” está errado; para onde é -sse: “Ma lähen Pärnusse”.',
+      'Pôr a terminação direto na consoante: é “linnas”, não “linns”; “koolis”, não “kools”.',
+      'Traduzir “vou para casa” com “kodusse”: o certo é a forma curta “koju”.',
     ],
     quiz: [
       {
@@ -742,16 +742,16 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         question: 'Complete: Ma olen pärit ___. (Brasiilia)',
         options: ['Brasiiliast', 'Brasiilias', 'Brasiiliasse'],
         answer: 'Brasiiliast',
-        explanation: '«Ser de» é «pärit» + de onde (kust?): -st.',
+        explanation: '“Ser de” é “pärit” + de onde (kust?): -st.',
       },
       {
-        question: 'Como se diz «Vou para casa»?',
+        question: 'Como se diz “Vou para casa”?',
         options: ['Ma lähen koju.', 'Ma lähen kodus.', 'Ma lähen kodust.'],
         answer: 'Ma lähen koju.',
-        explanation: '«kodu» tem o ilativo curto «koju»; «kodus» é em casa.',
+        explanation: '“kodu” tem o ilativo curto “koju”; “kodus” é em casa.',
       },
       {
-        question: 'Como se diz «em estoniano»?',
+        question: 'Como se diz “em estoniano”?',
         options: ['eesti keeles', 'eesti keelest', 'eesti keelde'],
         answer: 'eesti keeles',
         explanation: 'A língua em que algo se diz vai no inessivo (-s).',
@@ -763,11 +763,11 @@ export const GRAMMAR_ET: GrammarTopic[] = [
     level: 'A2.1',
     title: 'Casos de lugar (2): em cima e junto — -l, -lt, -le',
     emoji: '🏝️',
-    summary: 'O segundo trio é o de «em cima» e «junto de»: -l (em cima de, em: laual, tööl), -lt (de cima de, de alguém: laualt) e -le (para cima de, para alguém: lauale, emale). O mesmo trio diz «ter» (mul on), «gostar» (mulle meeldib) e a hora do dia (hommikul).',
+    summary: 'O segundo trio é o de “em cima” e “junto de”: -l (em cima de, em: laual, tööl), -lt (de cima de, de alguém: laualt) e -le (para cima de, para alguém: lauale, emale). O mesmo trio diz “ter” (mul on), “gostar” (mulle meeldib) e a hora do dia (hommikul).',
     sections: [
       {
         heading: 'O trio de fora: -l, -lt, -le',
-        text: 'Os três casos «de fora» funcionam como os de «dentro», com as mesmas perguntas: kus? (onde), kust? (de onde), kuhu? (para onde). A terminação também vai no radical do genitivo: laud (mesa) → laua → laual, laualt, lauale. A ideia básica é a superfície: em cima da mesa, tirar da mesa, pôr na mesa.',
+        text: 'Os três casos “de fora” funcionam como os de “dentro”, com as mesmas perguntas: kus? (onde), kust? (de onde), kuhu? (para onde). A terminação também vai no radical do genitivo: laud (mesa) → laua → laual, laualt, lauale. A ideia básica é a superfície: em cima da mesa, tirar da mesa, pôr na mesa.',
         table: {
           head: ['Pergunta', 'Caso', 'Terminação', 'Sentido', 'Exemplo'],
           rows: [
@@ -785,7 +785,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Lugares que pedem o -l',
-        text: 'Alguns lugares usam o trio de fora mesmo quando, em português, a gente pensaria em «dentro». É preciso aprender com a palavra: o trabalho (tööl, no trabalho; tööle, para o trabalho), a feira (turul), a rua (tänaval), o mar (merel), o interior (maal, no campo) e as ilhas e regiões terminadas em -maa: Saaremaal, Hiiumaal. Já as cidades usam o trio de dentro: Tallinnas, Haapsalus, Viljandis.',
+        text: 'Alguns lugares usam o trio de fora mesmo quando, em português, a gente pensaria em “dentro”. É preciso aprender com a palavra: o trabalho (tööl, no trabalho; tööle, para o trabalho), a feira (turul), a rua (tänaval), o mar (merel), o interior (maal, no campo) e as ilhas e regiões terminadas em -maa: Saaremaal, Hiiumaal. Já as cidades usam o trio de dentro: Tallinnas, Haapsalus, Viljandis.',
         table: {
           head: ['Palavra', 'kus? (-l)', 'kust? (-lt)', 'kuhu? (-le)'],
           rows: [
@@ -800,12 +800,12 @@ export const GRAMMAR_ET: GrammarTopic[] = [
           ['Isa on tööl.', 'O pai está no trabalho.'],
           ['Ma lähen hommikul tööle.', 'De manhã eu vou para o trabalho.'],
           ['Suvel sõidame Saaremaale.', 'No verão vamos para Saaremaa.'],
-          ['Ta ostab turult kala.', 'Ela compra peixe na feira. (literalmente «da feira»)'],
+          ['Ta ostab turult kala.', 'Ela compra peixe na feira. (literalmente “da feira”)'],
         ],
       },
       {
         heading: 'Pessoas: dar, pedir, gostar',
-        text: 'Com pessoas, o alativo (-le) é o «para alguém» e o ablativo (-lt) é o «de alguém»: «Ma annan emale lille» (dou uma flor para a mãe), «Ma küsin õpetajalt» (pergunto ao professor, literalmente «do professor»). Os pronomes têm formas curtas: mulle (para mim), sulle, talle, meile, teile, neile; mult (de mim), sult, talt, meilt, teilt, neilt. O verbo «meeldima» (agradar) usa o alativo: «Mulle meeldib Tartu» é «Tartu me agrada», ou seja, eu gosto de Tartu. E o adessivo (-l) é o mesmo caso do «mul on» (eu tenho) que você já conhece.',
+        text: 'Com pessoas, o alativo (-le) é o “para alguém” e o ablativo (-lt) é o “de alguém”: “Ma annan emale lille” (dou uma flor para a mãe), “Ma küsin õpetajalt” (pergunto ao professor, literalmente “do professor”). Os pronomes têm formas curtas: mulle (para mim), sulle, talle, meile, teile, neile; mult (de mim), sult, talt, meilt, teilt, neilt. O verbo “meeldima” (agradar) usa o alativo: “Mulle meeldib Tartu” é “Tartu me agrada”, ou seja, eu gosto de Tartu. E o adessivo (-l) é o mesmo caso do “mul on” (eu tenho) que você já conhece.',
         examples: [
           ['Ma helistan emale.', 'Eu ligo para a mãe.'],
           ['Anna mulle vett, palun.', 'Me dá água, por favor.'],
@@ -825,10 +825,10 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar o trio de dentro para o trabalho: «Ma olen töös» não é «estou no trabalho»; é «Ma olen tööl».',
-      'Dizer «Ma meeldin Tartu» para «eu gosto de Tartu»: quem gosta vai no alativo e a coisa é o sujeito: «Mulle meeldib Tartu».',
-      'Esquecer o -le em «dar para» e «ligar para»: «Ma helistan ema» está errado; é «Ma helistan emale».',
-      'Tratar Saaremaa como cidade: é «Saaremaal» (na ilha), não «Saaremaas».',
+      'Usar o trio de dentro para o trabalho: “Ma olen töös” não é “estou no trabalho”; é “Ma olen tööl”.',
+      'Dizer “Ma meeldin Tartu” para “eu gosto de Tartu”: quem gosta vai no alativo e a coisa é o sujeito: “Mulle meeldib Tartu”.',
+      'Esquecer o -le em “dar para” e “ligar para”: “Ma helistan ema” está errado; é “Ma helistan emale”.',
+      'Tratar Saaremaa como cidade: é “Saaremaal” (na ilha), não “Saaremaas”.',
     ],
     quiz: [
       {
@@ -838,10 +838,10 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         explanation: 'Onde está (kus?), em cima: -l.',
       },
       {
-        question: 'Como se diz «Eu gosto de café»?',
+        question: 'Como se diz “Eu gosto de café”?',
         options: ['Mulle meeldib kohv.', 'Ma meeldin kohv.', 'Mul meeldib kohvi.'],
         answer: 'Mulle meeldib kohv.',
-        explanation: '«meeldima» = agradar: quem gosta vai no alativo (mulle), o café é o sujeito.',
+        explanation: '“meeldima” = agradar: quem gosta vai no alativo (mulle), o café é o sujeito.',
       },
       {
         question: 'Complete: Suvel sõidame ___.',
@@ -850,7 +850,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         explanation: 'As terras em -maa usam o trio de fora; para onde: -le.',
       },
       {
-        question: 'Como se diz «de manhã»?',
+        question: 'Como se diz “de manhã”?',
         options: ['hommikul', 'hommikus', 'hommikule'],
         answer: 'hommikul',
         explanation: 'As partes do dia vão no adessivo: hommikul, õhtul, öösel.',
@@ -863,7 +863,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
     level: 'A2.2',
     title: 'O genitivo: de quem é, o que fica perto de quê',
     emoji: '🔑',
-    summary: 'O genitivo é o «de» da posse, e vem ANTES da coisa possuída: isa auto (o carro do pai), Eesti pealinn (a capital da Estônia). Ele sempre termina em vogal, é a base dos outros casos e acompanha as posposições: laua all (debaixo da mesa), maja taga (atrás da casa).',
+    summary: 'O genitivo é o “de” da posse, e vem ANTES da coisa possuída: isa auto (o carro do pai), Eesti pealinn (a capital da Estônia). Ele sempre termina em vogal, é a base dos outros casos e acompanha as posposições: laua all (debaixo da mesa), maja taga (atrás da casa).',
     sections: [
       {
         heading: 'Como se forma: aprenda com a palavra',
@@ -892,7 +892,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'A posse: o dono vem primeiro',
-        text: 'Em português dizemos «o carro do pai»; em estoniano, a ordem é a do inglês «father’s car»: «isa auto». O dono, no genitivo, vem antes. Os pronomes também têm genitivo, com forma longa e curta: minu / mu (meu), sinu / su (teu), tema / ta (dele, dela), meie (nosso), teie (de vocês), nende (deles). A coisa possuída não muda de forma.',
+        text: 'Em português dizemos “o carro do pai”; em estoniano, a ordem é a do inglês “father’s car”: “isa auto”. O dono, no genitivo, vem antes. Os pronomes também têm genitivo, com forma longa e curta: minu / mu (meu), sinu / su (teu), tema / ta (dele, dela), meie (nosso), teie (de vocês), nende (deles). A coisa possuída não muda de forma.',
         table: {
           head: ['Pronome', 'Genitivo', 'Exemplo', 'Português'],
           rows: [
@@ -912,7 +912,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'Posposições: «debaixo da mesa» vira «mesa debaixo»',
+        heading: 'Posposições: “debaixo da mesa” vira “mesa debaixo”',
         text: 'Onde o português usa preposição (debaixo de, atrás de, ao lado de), o estoniano usa uma posposição: uma palavra que vem DEPOIS do substantivo no genitivo. Muitas têm três formas, como os casos de lugar: all (debaixo, parado), alt (de debaixo), alla (para debaixo).',
         table: {
           head: ['Posposição', 'Português', 'Exemplo'],
@@ -935,26 +935,26 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pôr o dono depois, como em português: «auto isa» está errado; é «isa auto».',
-      'Procurar um «de» separado: o genitivo já é o «de»; «Eesti pealinn», sem nada no meio.',
-      'Usar a posposição antes do substantivo: é «laua all», e não «all laua».',
-      'Adivinhar o genitivo pela forma do nominativo: «tuba» vira «toa», «jõgi» vira «jõe». Decore os dois juntos.',
+      'Pôr o dono depois, como em português: “auto isa” está errado; é “isa auto”.',
+      'Procurar um “de” separado: o genitivo já é o “de”; “Eesti pealinn”, sem nada no meio.',
+      'Usar a posposição antes do substantivo: é “laua all”, e não “all laua”.',
+      'Adivinhar o genitivo pela forma do nominativo: “tuba” vira “toa”, “jõgi” vira “jõe”. Decore os dois juntos.',
     ],
     quiz: [
       {
-        question: 'Como se diz «o carro do pai»?',
+        question: 'Como se diz “o carro do pai”?',
         options: ['isa auto', 'auto isa', 'auto isast'],
         answer: 'isa auto',
         explanation: 'O dono, no genitivo, vem antes: isa auto.',
       },
       {
-        question: 'Qual é o genitivo de «inimene» (pessoa)?',
+        question: 'Qual é o genitivo de “inimene” (pessoa)?',
         options: ['inimese', 'inimene', 'inimeni'],
         answer: 'inimese',
         explanation: 'As palavras em -ne fazem o genitivo em -se: inimene → inimese.',
       },
       {
-        question: 'Como se diz «debaixo da mesa»?',
+        question: 'Como se diz “debaixo da mesa”?',
         options: ['laua all', 'all laud', 'laud all'],
         answer: 'laua all',
         explanation: 'Posposição depois do genitivo: laua (da mesa) + all (debaixo).',
@@ -970,9 +970,9 @@ export const GRAMMAR_ET: GrammarTopic[] = [
   {
     id: 'et-g10',
     level: 'A2.2',
-    title: 'O partitivo: a parte, a quantidade e o «não»',
+    title: 'O partitivo: a parte, a quantidade e o “não”',
     emoji: '🍰',
-    summary: 'O partitivo é o caso da «parte», e é um dos mais usados do estoniano. Ele aparece depois de números (kaks kohvi), de palavras de quantidade (klaas vett, palju tööd), na negação (mul pole autot) e com verbos como armastama e ootama (ma armastan sind). As terminações são -t, -d ou só uma vogal.',
+    summary: 'O partitivo é o caso da “parte”, e é um dos mais usados do estoniano. Ele aparece depois de números (kaks kohvi), de palavras de quantidade (klaas vett, palju tööd), na negação (mul pole autot) e com verbos como armastama e ootama (ma armastan sind). As terminações são -t, -d ou só uma vogal.',
     sections: [
       {
         heading: 'Três jeitos de formar',
@@ -1001,7 +1001,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Quando usar (1): números e quantidades',
-        text: 'Você já viu que depois de «kaks» em diante vem o partitivo singular: kaks kohvi, kolm last. O mesmo vale para as palavras de quantidade: palju (muito), vähe (pouco), natuke (um pouco), veel (mais), e para as medidas: klaas (copo), tass (xícara), pudel (garrafa), tükk (pedaço), kilo. Coisas que não se contam, como água, pão ou dinheiro, também vão para o partitivo quando se fala de «um pouco de»: «Ma ostan leiba» (compro pão).',
+        text: 'Você já viu que depois de “kaks” em diante vem o partitivo singular: kaks kohvi, kolm last. O mesmo vale para as palavras de quantidade: palju (muito), vähe (pouco), natuke (um pouco), veel (mais), e para as medidas: klaas (copo), tass (xícara), pudel (garrafa), tükk (pedaço), kilo. Coisas que não se contam, como água, pão ou dinheiro, também vão para o partitivo quando se fala de “um pouco de”: “Ma ostan leiba” (compro pão).',
         examples: [
           ['Palun üks klaas vett!', 'Um copo de água, por favor!'],
           ['Kas soovite tassi teed?', 'Aceita uma xícara de chá?'],
@@ -1011,8 +1011,8 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'Quando usar (2): o «não» e os verbos de sentimento',
-        text: 'Na frase negativa, o objeto vai sempre para o partitivo: «Ma ostan auto» (vou comprar o carro) → «Ma ei osta autot» (não vou comprar o carro). E alguns verbos pedem o partitivo sempre, porque a ação nunca «termina» no objeto: armastama (amar), ootama (esperar), aitama (ajudar), vihkama (odiar), otsima (procurar), igatsema (sentir falta). E, como você viu, a ação em andamento também leva partitivo («Ma loen raamatut», estou lendo um livro). No B1.1 você verá quando o objeto NÃO vai para o partitivo.',
+        heading: 'Quando usar (2): o “não” e os verbos de sentimento',
+        text: 'Na frase negativa, o objeto vai sempre para o partitivo: “Ma ostan auto” (vou comprar o carro) → “Ma ei osta autot” (não vou comprar o carro). E alguns verbos pedem o partitivo sempre, porque a ação nunca “termina” no objeto: armastama (amar), ootama (esperar), aitama (ajudar), vihkama (odiar), otsima (procurar), igatsema (sentir falta). E, como você viu, a ação em andamento também leva partitivo (“Ma loen raamatut”, estou lendo um livro). No B1.1 você verá quando o objeto NÃO vai para o partitivo.',
         examples: [
           ['Ma armastan sind.', 'Eu te amo.'],
           ['Ma ootan bussi.', 'Estou esperando o ônibus.'],
@@ -1023,10 +1023,10 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Deixar o objeto no nominativo na negação: «Ma ei joo kohv» está errado; é «Ma ei joo kohvi».',
-      'Usar o plural depois de número: é «kolm last» (partitivo singular), e não «kolm lapsed».',
-      'Traduzir «estudo estoniano» com o nominativo: o certo é «Ma õpin eesti keelt».',
-      'Esquecer que «armastama» e «ootama» pedem sempre o partitivo: «Ma armastan sind», nunca «Ma armastan sina».',
+      'Deixar o objeto no nominativo na negação: “Ma ei joo kohv” está errado; é “Ma ei joo kohvi”.',
+      'Usar o plural depois de número: é “kolm last” (partitivo singular), e não “kolm lapsed”.',
+      'Traduzir “estudo estoniano” com o nominativo: o certo é “Ma õpin eesti keelt”.',
+      'Esquecer que “armastama” e “ootama” pedem sempre o partitivo: “Ma armastan sind”, nunca “Ma armastan sina”.',
     ],
     quiz: [
       {
@@ -1036,7 +1036,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         explanation: 'Depois de uma medida (klaas), o partitivo: vett.',
       },
       {
-        question: 'Como se diz «Eu não bebo café»?',
+        question: 'Como se diz “Eu não bebo café”?',
         options: ['Ma ei joo kohvi.', 'Ma ei joo kohv.', 'Ma ei jooda kohv.'],
         answer: 'Ma ei joo kohvi.',
         explanation: 'Na negação, o objeto vai para o partitivo: kohvi.',
@@ -1045,13 +1045,13 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         question: 'Complete: Ma ootan ___. (buss)',
         options: ['bussi', 'buss', 'bussis'],
         answer: 'bussi',
-        explanation: '«ootama» (esperar) pede sempre o partitivo.',
+        explanation: '“ootama” (esperar) pede sempre o partitivo.',
       },
       {
-        question: 'Qual é o partitivo de «keel» (língua)?',
+        question: 'Qual é o partitivo de “keel” (língua)?',
         options: ['keelt', 'keele', 'keeld'],
         answer: 'keelt',
-        explanation: 'keel → keelt: «Ma õpin eesti keelt».',
+        explanation: 'keel → keelt: “Ma õpin eesti keelt”.',
       },
     ],
   },
@@ -1064,7 +1064,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
     sections: [
       {
         heading: 'Nominativo plural: genitivo + -d',
-        text: 'Aqui o genitivo que você decorou compensa: o plural do sujeito é o genitivo singular + -d. Maja → maja → majad; linn → linna → linnad; laps → lapse → lapsed; tuba → toa → toad. Não há exceção nessa regra. Lembre que depois de números o estoniano NÃO usa esse plural, e sim o partitivo singular: «kolm last», mas «lapsed mängivad» (as crianças brincam).',
+        text: 'Aqui o genitivo que você decorou compensa: o plural do sujeito é o genitivo singular + -d. Maja → maja → majad; linn → linna → linnad; laps → lapse → lapsed; tuba → toa → toad. Não há exceção nessa regra. Lembre que depois de números o estoniano NÃO usa esse plural, e sim o partitivo singular: “kolm last”, mas “lapsed mängivad” (as crianças brincam).',
         table: {
           head: ['Singular', 'Genitivo', 'Plural', 'Português'],
           rows: [
@@ -1084,7 +1084,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Genitivo plural e os outros casos no plural',
-        text: 'O genitivo plural termina em -de ou -te (a escolha depende da palavra; o dicionário mostra): autode, raamatute, laste, sõprade, inimeste, saarte. Ele serve para a posse no plural («laste raamatud», os livros das crianças) e é a base de quase todos os outros casos no plural: é só colar a terminação conhecida. Linnade → linnades (nas cidades), lastele (para as crianças), sõpradega (com os amigos; o -ga é o caso comitativo, «com»).',
+        text: 'O genitivo plural termina em -de ou -te (a escolha depende da palavra; o dicionário mostra): autode, raamatute, laste, sõprade, inimeste, saarte. Ele serve para a posse no plural (“laste raamatud”, os livros das crianças) e é a base de quase todos os outros casos no plural: é só colar a terminação conhecida. Linnade → linnades (nas cidades), lastele (para as crianças), sõpradega (com os amigos; o -ga é o caso comitativo, “com”).',
         table: {
           head: ['Palavra', 'Genitivo plural', 'Com -s / -le / -ga', 'Português'],
           rows: [
@@ -1101,8 +1101,8 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'Partitivo plural: «alguns», «muitos», «não… nenhum»',
-        text: 'O partitivo plural é usado onde o singular usaria o partitivo, mas para coisas contáveis no plural: «muitas pessoas», «compro maçãs», «você tem filhos?». As terminações variam (-id, -sid, -e, -i, -u), e o jeito certo é aprender com a palavra. Não se preocupe em acertar todas: comece por estas.',
+        heading: 'Partitivo plural: “alguns”, “muitos”, “não… nenhum”',
+        text: 'O partitivo plural é usado onde o singular usaria o partitivo, mas para coisas contáveis no plural: “muitas pessoas”, “compro maçãs”, “você tem filhos?”. As terminações variam (-id, -sid, -e, -i, -u), e o jeito certo é aprender com a palavra. Não se preocupe em acertar todas: comece por estas.',
         table: {
           head: ['Singular', 'Partitivo plural', 'Exemplo', 'Português'],
           rows: [
@@ -1133,14 +1133,14 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar o plural depois de número: «kaks lapsed» está errado; é «kaks last».',
-      'Formar o plural a partir do nominativo: de «laps» não sai «lapsd»; o plural vem do genitivo: lapse → lapsed.',
-      'Esquecer de concordar o adjetivo: «suur majas» está errado; é «suures majas».',
-      'Usar o nominativo plural para «alguns» ou «muitos»: «palju inimesed» está errado; é «palju inimesi».',
+      'Usar o plural depois de número: “kaks lapsed” está errado; é “kaks last”.',
+      'Formar o plural a partir do nominativo: de “laps” não sai “lapsd”; o plural vem do genitivo: lapse → lapsed.',
+      'Esquecer de concordar o adjetivo: “suur majas” está errado; é “suures majas”.',
+      'Usar o nominativo plural para “alguns” ou “muitos”: “palju inimesed” está errado; é “palju inimesi”.',
     ],
     quiz: [
       {
-        question: 'Qual é o plural de «laps» (genitivo «lapse»)?',
+        question: 'Qual é o plural de “laps” (genitivo “lapse”)?',
         options: ['lapsed', 'lapsid', 'lapsd'],
         answer: 'lapsed',
         explanation: 'Nominativo plural = genitivo + -d: lapse → lapsed.',
@@ -1149,16 +1149,16 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         question: 'Complete: Poes on palju ___.',
         options: ['inimesi', 'inimesed', 'inimene'],
         answer: 'inimesi',
-        explanation: 'Depois de «palju» (muito), contáveis vão para o partitivo plural.',
+        explanation: 'Depois de “palju” (muito), contáveis vão para o partitivo plural.',
       },
       {
-        question: 'Como se diz «numa casa grande»?',
+        question: 'Como se diz “numa casa grande”?',
         options: ['suures majas', 'suur majas', 'suures maja'],
         answer: 'suures majas',
         explanation: 'O adjetivo leva o mesmo caso: suure-s maja-s.',
       },
       {
-        question: 'Como se diz «os livros das crianças»?',
+        question: 'Como se diz “os livros das crianças”?',
         options: ['laste raamatud', 'lapsed raamatud', 'raamatud laste'],
         answer: 'laste raamatud',
         explanation: 'Genitivo plural (laste) antes da coisa possuída.',
@@ -1171,11 +1171,11 @@ export const GRAMMAR_ET: GrammarTopic[] = [
     level: 'B1.1',
     title: 'O passado simples: -si- (elasin) e -i- (olin), e a negação com -nud',
     emoji: '⏳',
-    summary: 'O passado da maioria dos verbos leva -si- entre o radical e a terminação: ma elasin, sa elasid, ta elas. Um grupo de verbos muito usados leva só -i-: ma olin, ta oli; ma tulin, ta tuli. Na negação, «ei» + a forma em -nud, igual para todos: ma ei elanud, nad ei tulnud.',
+    summary: 'O passado da maioria dos verbos leva -si- entre o radical e a terminação: ma elasin, sa elasid, ta elas. Um grupo de verbos muito usados leva só -i-: ma olin, ta oli; ma tulin, ta tuli. Na negação, “ei” + a forma em -nud, igual para todos: ma ei elanud, nad ei tulnud.',
     sections: [
       {
         heading: 'O tipo -si-: elasin, elasid, elas',
-        text: 'O passado se forma sobre o radical do -ma (sem gradação, na forma forte): elama → ela-, rääkima → rääki-. Acrescente -si- e as terminações de pessoa que você já conhece (-n, -d, -me, -te, -d). A 3ª pessoa do singular não tem terminação: termina em -s (ta elas, ta rääkis). Se o radical termina em consoante, como em laulma ou ostma, a 3ª pessoa fica em -is: ta laulis, ta ostis. Repare que «nad» no passado leva -d, igual a «sa»: sa elasid, nad elasid.',
+        text: 'O passado se forma sobre o radical do -ma (sem gradação, na forma forte): elama → ela-, rääkima → rääki-. Acrescente -si- e as terminações de pessoa que você já conhece (-n, -d, -me, -te, -d). A 3ª pessoa do singular não tem terminação: termina em -s (ta elas, ta rääkis). Se o radical termina em consoante, como em laulma ou ostma, a 3ª pessoa fica em -is: ta laulis, ta ostis. Repare que “nad” no passado leva -d, igual a “sa”: sa elasid, nad elasid.',
         table: {
           head: ['Pessoa', 'elama (morar)', 'rääkima (falar)', 'laulma (cantar)'],
           rows: [
@@ -1219,7 +1219,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'A negação: ei + -nud',
-        text: 'Para negar o passado, não se conjuga: usa-se «ei» + uma forma em -nud (o particípio), igual para todas as pessoas. O -nud se cola no radical do -ma: elama → elanud, rääkima → rääkinud, olema → olnud, tulema → tulnud. Alguns são irregulares: tegema → teinud, nägema → näinud, minema → läinud. «Ei olnud» tem a forma curta «polnud».',
+        text: 'Para negar o passado, não se conjuga: usa-se “ei” + uma forma em -nud (o particípio), igual para todas as pessoas. O -nud se cola no radical do -ma: elama → elanud, rääkima → rääkinud, olema → olnud, tulema → tulnud. Alguns são irregulares: tegema → teinud, nägema → näinud, minema → läinud. “Ei olnud” tem a forma curta “polnud”.',
         table: {
           head: ['Afirmativo', 'Negativo', 'Português'],
           rows: [
@@ -1239,37 +1239,37 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Palavras de tempo',
-        text: 'Para situar o passado: eile (ontem), üleeile (anteontem), möödunud nädalal (na semana passada), eelmisel aastal (no ano passado), ammu (há muito tempo). «Há X tempo» é «X tagasi», com o partitivo depois do número: «kaks aastat tagasi» (há dois anos).',
+        text: 'Para situar o passado: eile (ontem), üleeile (anteontem), möödunud nädalal (na semana passada), eelmisel aastal (no ano passado), ammu (há muito tempo). “Há X tempo” é “X tagasi”, com o partitivo depois do número: “kaks aastat tagasi” (há dois anos).',
         examples: [
           ['Kolm aastat tagasi elasin Brasiilias.', 'Há três anos eu morava no Brasil.'],
-          ['Eelmisel aastal käisime Soomaal «viiendal aastaajal».', 'No ano passado fomos a Soomaa na «quinta estação», a época das cheias.'],
+          ['Eelmisel aastal käisime Soomaal “viiendal aastaajal”.', 'No ano passado fomos a Soomaa na “quinta estação”, a época das cheias.'],
         ],
       },
     ],
     pitfalls: [
-      'Usar a forma fraca da gradação no passado: é «rääkisin» (do rääki-ma), não «räägisin».',
-      'Conjugar depois do «ei» no passado: «ma ei elasin» está errado; é «ma ei elanud».',
-      'Dar -s a todos os verbos na 3ª pessoa: é «ta oli» e «ta tuli», e não «ta olis», «ta tulis».',
-      'Esquecer que o passado de «minema» é «läksin, läks», e a negação é «ei läinud».',
+      'Usar a forma fraca da gradação no passado: é “rääkisin” (do rääki-ma), não “räägisin”.',
+      'Conjugar depois do “ei” no passado: “ma ei elasin” está errado; é “ma ei elanud”.',
+      'Dar -s a todos os verbos na 3ª pessoa: é “ta oli” e “ta tuli”, e não “ta olis”, “ta tulis”.',
+      'Esquecer que o passado de “minema” é “läksin, läks”, e a negação é “ei läinud”.',
     ],
     quiz: [
       {
         question: 'Complete: Eile ma ___ kodus. (olema)',
         options: ['olin', 'olen', 'olisin'],
         answer: 'olin',
-        explanation: '«olema» é do tipo -i-: olin, olid, oli.',
+        explanation: '“olema” é do tipo -i-: olin, olid, oli.',
       },
       {
-        question: 'Como se diz «Ela não falou»?',
+        question: 'Como se diz “Ela não falou”?',
         options: ['Ta ei rääkinud.', 'Ta ei rääkis.', 'Ta ei räägi.'],
         answer: 'Ta ei rääkinud.',
-        explanation: 'Negação do passado: ei + -nud, sem terminação de pessoa. «Ta ei räägi» é o presente.',
+        explanation: 'Negação do passado: ei + -nud, sem terminação de pessoa. “Ta ei räägi” é o presente.',
       },
       {
-        question: 'Qual é o passado de «minema» para «ta»?',
+        question: 'Qual é o passado de “minema” para “ta”?',
         options: ['läks', 'mines', 'läheb'],
         answer: 'läks',
-        explanation: 'minema → läksin, läksid, läks. «läheb» é o presente.',
+        explanation: 'minema → läksin, läksid, läks. “läheb” é o presente.',
       },
       {
         question: 'Complete: Me ___ laulupeol. (laulma)',
@@ -1284,11 +1284,11 @@ export const GRAMMAR_ET: GrammarTopic[] = [
     level: 'B1.1',
     title: 'Objeto total × parcial e o imperativo (tule!, tulge!, ära mine!)',
     emoji: '🎯',
-    summary: 'O objeto estoniano muda de caso conforme a ação: acabada e inteira, vai no genitivo (Ma ostsin auto: comprei o carro); em andamento, parcial ou negada, vai no partitivo (Ma loen raamatut: estou lendo o livro). No imperativo, o objeto total fica no nominativo: Võta raamat! O imperativo é o radical (tule!) ou -ge / -ke (tulge!), e o «não faça» é «ära» (ära mine!).',
+    summary: 'O objeto estoniano muda de caso conforme a ação: acabada e inteira, vai no genitivo (Ma ostsin auto: comprei o carro); em andamento, parcial ou negada, vai no partitivo (Ma loen raamatut: estou lendo o livro). No imperativo, o objeto total fica no nominativo: Võta raamat! O imperativo é o radical (tule!) ou -ge / -ke (tulge!), e o “não faça” é “ära” (ära mine!).',
     sections: [
       {
         heading: 'Objeto total: a ação chega ao fim',
-        text: 'Você já viu que o objeto vai para o partitivo na negação e com verbos como armastama e ootama. Mas quando a frase é afirmativa, a ação se completa e o objeto é inteiro e definido, ele vai para o chamado objeto total: o genitivo no singular e o nominativo no plural. É um pouco como a diferença entre «li o livro (todo)» e «fiquei lendo o livro». Palavrinhas como «ära» (até o fim, embora), «läbi» (de ponta a ponta), «valmis» (pronto) e «kinni» (fechado) reforçam que a ação terminou e quase sempre vêm com o objeto total.',
+        text: 'Você já viu que o objeto vai para o partitivo na negação e com verbos como armastama e ootama. Mas quando a frase é afirmativa, a ação se completa e o objeto é inteiro e definido, ele vai para o chamado objeto total: o genitivo no singular e o nominativo no plural. É um pouco como a diferença entre “li o livro (todo)” e “fiquei lendo o livro”. Palavrinhas como “ära” (até o fim, embora), “läbi” (de ponta a ponta), “valmis” (pronto) e “kinni” (fechado) reforçam que a ação terminou e quase sempre vêm com o objeto total.',
         table: {
           head: ['Parcial (partitivo)', 'Total (genitivo / nom. plural)', 'A diferença'],
           rows: [
@@ -1309,7 +1309,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'O imperativo: tule!, tulge!',
-        text: 'Para dar uma ordem a uma pessoa que você trata por «sa», use o radical do presente, o mesmo que vem depois do «ei»: tule! (vem!), loe! (lê!), räägi! (fala!), mine! (vai!). Para «te» (vocês, ou o senhor e a senhora), acrescente -ge ou -ke ao radical do infinitivo: tulge!, lugege!, rääkige!, minge!. Qual das duas terminações, e com que radical, é melhor decorar verbo a verbo. Com «palun», o pedido fica educado: «Palun istuge!» (sente-se, por favor).',
+        text: 'Para dar uma ordem a uma pessoa que você trata por “sa”, use o radical do presente, o mesmo que vem depois do “ei”: tule! (vem!), loe! (lê!), räägi! (fala!), mine! (vai!). Para “te” (vocês, ou o senhor e a senhora), acrescente -ge ou -ke ao radical do infinitivo: tulge!, lugege!, rääkige!, minge!. Qual das duas terminações, e com que radical, é melhor decorar verbo a verbo. Com “palun”, o pedido fica educado: “Palun istuge!” (sente-se, por favor).',
         table: {
           head: ['-ma', 'sa (tu)', 'te (vocês, formal)', 'Português'],
           rows: [
@@ -1332,8 +1332,8 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'O «não faça»: ära e ärge',
-        text: 'A ordem negativa tem uma palavra própria: «ära» + o radical, para «sa»; «ärge» + a forma em -ge / -ke, para «te». E o objeto, como em toda negação, vai para o partitivo.',
+        heading: 'O “não faça”: ära e ärge',
+        text: 'A ordem negativa tem uma palavra própria: “ära” + o radical, para “sa”; “ärge” + a forma em -ge / -ke, para “te”. E o objeto, como em toda negação, vai para o partitivo.',
         examples: [
           ['Ära muretse!', 'Não se preocupe!'],
           ['Ära mine veel!', 'Não vá ainda!'],
@@ -1343,7 +1343,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Imperativo + objeto total = nominativo',
-        text: 'Uma regra curiosa: no imperativo afirmativo, o objeto total singular fica no nominativo, e não no genitivo. «Ma võtan raamatu» (vou pegar o livro), mas «Võta raamat!» (pegue o livro!). O objeto parcial continua no partitivo: «Osta leiba!» (compre pão), «Söö suppi!» (tome sopa).',
+        text: 'Uma regra curiosa: no imperativo afirmativo, o objeto total singular fica no nominativo, e não no genitivo. “Ma võtan raamatu” (vou pegar o livro), mas “Võta raamat!” (pegue o livro!). O objeto parcial continua no partitivo: “Osta leiba!” (compre pão), “Söö suppi!” (tome sopa).',
         table: {
           head: ['Frase comum', 'Imperativo', 'Português'],
           rows: [
@@ -1361,42 +1361,42 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar o partitivo para uma ação acabada e inteira: «Ma ostsin autot» soa como se a compra não tivesse terminado; é «Ma ostsin auto».',
-      'Usar o objeto total na negação: «Ma ei ostnud auto» está errado; na negação é sempre «autot».',
-      'Pôr o genitivo no imperativo: «Võta raamatu!» está errado; é «Võta raamat!».',
-      'Negar a ordem com «ei»: «Ei mine!» não é «não vá»; é «Ära mine!».',
-      'Tratar um desconhecido com «tule!»: com quem você chama de «teie», use «tulge!», de preferência com «palun».',
+      'Usar o partitivo para uma ação acabada e inteira: “Ma ostsin autot” soa como se a compra não tivesse terminado; é “Ma ostsin auto”.',
+      'Usar o objeto total na negação: “Ma ei ostnud auto” está errado; na negação é sempre “autot”.',
+      'Pôr o genitivo no imperativo: “Võta raamatu!” está errado; é “Võta raamat!”.',
+      'Negar a ordem com “ei”: “Ei mine!” não é “não vá”; é “Ära mine!”.',
+      'Tratar um desconhecido com “tule!”: com quem você chama de “teie”, use “tulge!”, de preferência com “palun”.',
     ],
     quiz: [
       {
-        question: 'Qual frase quer dizer «Li o livro todo»?',
+        question: 'Qual frase quer dizer “Li o livro todo”?',
         options: ['Ma lugesin raamatu läbi.', 'Ma lugesin raamatut.', 'Ma loen raamatut.'],
         answer: 'Ma lugesin raamatu läbi.',
-        explanation: 'Ação acabada e objeto inteiro: objeto total (genitivo «raamatu») + «läbi».',
+        explanation: 'Ação acabada e objeto inteiro: objeto total (genitivo “raamatu”) + “läbi”.',
       },
       {
-        question: 'Como se diz «Pegue o livro!» (para «sa»)?',
+        question: 'Como se diz “Pegue o livro!” (para “sa”)?',
         options: ['Võta raamat!', 'Võta raamatu!', 'Võtad raamatut!'],
         answer: 'Võta raamat!',
         explanation: 'No imperativo afirmativo, o objeto total singular fica no nominativo.',
       },
       {
-        question: 'Como se diz «Não vá!» (para «sa»)?',
+        question: 'Como se diz “Não vá!” (para “sa”)?',
         options: ['Ära mine!', 'Ei mine!', 'Ärge mine!'],
         answer: 'Ära mine!',
-        explanation: 'O imperativo negativo é «ära» + radical; «ärge» vai com a forma «minge».',
+        explanation: 'O imperativo negativo é “ära” + radical; “ärge” vai com a forma “minge”.',
       },
       {
-        question: 'Complete: Palun ___! (istuma, para «te»)',
+        question: 'Complete: Palun ___! (istuma, para “te”)',
         options: ['istuge', 'istu', 'istute'],
         answer: 'istuge',
-        explanation: 'Para «te», o imperativo leva -ge: istuge. «istute» é o presente (vocês sentam).',
+        explanation: 'Para “te”, o imperativo leva -ge: istuge. “istute” é o presente (vocês sentam).',
       },
       {
         question: 'Qual frase está certa?',
         options: ['Ma ei ostnud autot.', 'Ma ei ostnud auto.', 'Ma ei ostsin autot.'],
         answer: 'Ma ei ostnud autot.',
-        explanation: 'Na negação, o objeto é sempre parcial (partitivo), e o passado negativo é «ei» + -nud.',
+        explanation: 'Na negação, o objeto é sempre parcial (partitivo), e o passado negativo é “ei” + -nud.',
       },
     ],
   },
@@ -1406,7 +1406,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
     level: 'B1.2',
     title: 'Perfeito e mais-que-perfeito: olen teinud, olin teinud',
     emoji: '⏳',
-    summary: 'O estoniano forma os tempos compostos com «olema» (ser, estar) + o particípio em -nud: «olen lugenud» (já li), «olin lugenud» (tinha lido). O -nud não muda com a pessoa, e é a mesma forma que aparece no passado negativo: «ma ei lugenud» (não li).',
+    summary: 'O estoniano forma os tempos compostos com “olema” (ser, estar) + o particípio em -nud: “olen lugenud” (já li), “olin lugenud” (tinha lido). O -nud não muda com a pessoa, e é a mesma forma que aparece no passado negativo: “ma ei lugenud” (não li).',
     sections: [
       {
         heading: 'O particípio em -nud',
@@ -1432,7 +1432,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'O perfeito: olen + -nud',
-        text: 'O perfeito (täisminevik) usa o presente de «olema» + -nud. Ele funciona quase como o «present perfect» do inglês: fala de experiências («já estive em Tartu?»), de algo que começou no passado e continua («moro aqui há três anos») e de um resultado que importa agora. Quando a frase tem um momento fechado do passado (eile, möödunud aastal, 2020. aastal), use o passado simples (lihtminevik): «Eile ma käisin kinos», nunca «eile olen käinud». Na negação, «ei ole» costuma se contrair em «pole».',
+        text: 'O perfeito (täisminevik) usa o presente de “olema” + -nud. Ele funciona quase como o “present perfect” do inglês: fala de experiências (“já estive em Tartu?”), de algo que começou no passado e continua (“moro aqui há três anos”) e de um resultado que importa agora. Quando a frase tem um momento fechado do passado (eile, möödunud aastal, 2020. aastal), use o passado simples (lihtminevik): “Eile ma käisin kinos”, nunca “eile olen käinud”. Na negação, “ei ole” costuma se contrair em “pole”.',
         table: {
           head: ['Pessoa', 'Afirmativa', 'Negativa'],
           rows: [
@@ -1454,7 +1454,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'O mais-que-perfeito: olin + -nud',
-        text: 'O mais-que-perfeito (enneminevik) usa o passado de «olema» (olin, olid, oli, olime, olite, olid) + -nud. Serve, como em português, para o que aconteceu antes de outro fato do passado: «quando chegamos, o trem já tinha saído». Na negação, «ei olnud» se contrai em «polnud». E atenção ao passado simples negativo: ele também usa -nud, mas sem «olema»: «ma ei lugenud» (não li), «ma ei ole lugenud» (não li, ainda não li), «ma ei olnud lugenud» (eu não tinha lido).',
+        text: 'O mais-que-perfeito (enneminevik) usa o passado de “olema” (olin, olid, oli, olime, olite, olid) + -nud. Serve, como em português, para o que aconteceu antes de outro fato do passado: “quando chegamos, o trem já tinha saído”. Na negação, “ei olnud” se contrai em “polnud”. E atenção ao passado simples negativo: ele também usa -nud, mas sem “olema”: “ma ei lugenud” (não li), “ma ei ole lugenud” (não li, ainda não li), “ma ei olnud lugenud” (eu não tinha lido).',
         table: {
           head: ['Tempo', 'Afirmativa', 'Negativa', 'Português'],
           rows: [
@@ -1472,24 +1472,24 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Conjugar o -nud: «ma olen lugenudin» não existe. Quem muda é o «olema» (olen, oled, on…); o -nud fica igual.',
-      'Usar o perfeito com um momento fechado do passado: «Eile ma olen käinud kinos» soa errado. Com eile, möödunud nädalal, 2019. aastal, use o passado simples: «Eile ma käisin kinos».',
-      'Confundir «ma ei lugenud» (não li, passado simples) com «ma ei ole lugenud» (ainda não li, perfeito). As duas usam -nud; só a segunda tem «ole».',
-      'Esquecer os irregulares: «minenud» e «tegenud» não existem; o certo é «läinud» e «teinud».',
-      'Ler «olen lugenud» como o «tenho lido» do português, que indica repetição. Em estoniano, o perfeito é quase sempre «já li» ou «li (e isso importa agora)»: «Olen selle raamatu läbi lugenud» é «já terminei de ler esse livro».',
+      'Conjugar o -nud: “ma olen lugenudin” não existe. Quem muda é o “olema” (olen, oled, on…); o -nud fica igual.',
+      'Usar o perfeito com um momento fechado do passado: “Eile ma olen käinud kinos” soa errado. Com eile, möödunud nädalal, 2019. aastal, use o passado simples: “Eile ma käisin kinos”.',
+      'Confundir “ma ei lugenud” (não li, passado simples) com “ma ei ole lugenud” (ainda não li, perfeito). As duas usam -nud; só a segunda tem “ole”.',
+      'Esquecer os irregulares: “minenud” e “tegenud” não existem; o certo é “läinud” e “teinud”.',
+      'Ler “olen lugenud” como o “tenho lido” do português, que indica repetição. Em estoniano, o perfeito é quase sempre “já li” ou “li (e isso importa agora)”: “Olen selle raamatu läbi lugenud” é “já terminei de ler esse livro”.',
     ],
     quiz: [
       {
         question: 'Complete: Kas sa oled Pärnus ___?',
         options: ['käinud', 'käisid', 'käima'],
         answer: 'käinud',
-        explanation: 'O perfeito é «olema» + -nud: oled käinud.',
+        explanation: 'O perfeito é “olema” + -nud: oled käinud.',
       },
       {
         question: 'Complete: Ma ___ seda filmi näinud.',
         options: ['pole', 'ei', 'olen ei'],
         answer: 'pole',
-        explanation: 'O perfeito negativo é «ei ole» + -nud, que se contrai em «pole»: ma pole näinud. Só «ei näinud» seria o passado simples.',
+        explanation: 'O perfeito negativo é “ei ole” + -nud, que se contrai em “pole”: ma pole näinud. Só “ei näinud” seria o passado simples.',
       },
       {
         question: 'Complete: Kui ma koju jõudsin, ___ lapsed juba magama läinud.',
@@ -1498,16 +1498,16 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         explanation: 'Uma ação anterior a outra do passado pede o mais-que-perfeito: olid läinud (tinham ido).',
       },
       {
-        question: 'Qual é o -nud de «minema» (ir)?',
+        question: 'Qual é o -nud de “minema” (ir)?',
         options: ['läinud', 'minenud', 'minnud'],
         answer: 'läinud',
-        explanation: '«Minema» é irregular: läksin (fui), läinud (ido).',
+        explanation: '“Minema” é irregular: läksin (fui), läinud (ido).',
       },
       {
         question: 'Complete: Eile ma ___ kinos.',
         options: ['käisin', 'olen käinud', 'käinud'],
         answer: 'käisin',
-        explanation: 'Com «eile» (ontem), um momento fechado do passado, usa-se o passado simples: käisin.',
+        explanation: 'Com “eile” (ontem), um momento fechado do passado, usa-se o passado simples: käisin.',
       },
     ],
   },
@@ -1516,7 +1516,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
     level: 'B1.2',
     title: 'Supino (-ma) × infinitivo (-da): lähen ujuma, tahan ujuda',
     emoji: '🏊',
-    summary: 'O estoniano tem dois «infinitivos». O supino em -ma (a forma do dicionário) vem depois de verbos de movimento e de alguns outros, como hakkama e pidama: «lähen ujuma», «pean minema». O infinitivo em -da vem depois de querer, poder, saber e gostar: «tahan ujuda», «mulle meeldib laulda». Não existe regra de sentido: é o verbo da frente que escolhe.',
+    summary: 'O estoniano tem dois “infinitivos”. O supino em -ma (a forma do dicionário) vem depois de verbos de movimento e de alguns outros, como hakkama e pidama: “lähen ujuma”, “pean minema”. O infinitivo em -da vem depois de querer, poder, saber e gostar: “tahan ujuda”, “mulle meeldib laulda”. Não existe regra de sentido: é o verbo da frente que escolhe.',
     sections: [
       {
         heading: 'As duas formas de cada verbo',
@@ -1542,7 +1542,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Quem pede -ma e quem pede -da',
-        text: 'Pedem o supino: os verbos de movimento com finalidade (minema, tulema, sõitma, jooksma: «vou nadar»), hakkama (começar, e também o futuro: «hakkan õppima»), pidama (ter de), jääma (ficar), õppima (aprender a), õpetama (ensinar a), kutsuma (convidar para) e sundima (obrigar a). Pedem o infinitivo: tahtma (querer), võima (poder, ter permissão), saama (conseguir), oskama (saber fazer), suutma (ser capaz), proovima e püüdma (tentar), otsustama (decidir), julgema (ousar), meeldima (gostar: mulle meeldib…), e as expressões com «on»: «on vaja» (é preciso), «tuleb» (é preciso), «on raske» (é difícil), «on aeg» (é hora).',
+        text: 'Pedem o supino: os verbos de movimento com finalidade (minema, tulema, sõitma, jooksma: “vou nadar”), hakkama (começar, e também o futuro: “hakkan õppima”), pidama (ter de), jääma (ficar), õppima (aprender a), õpetama (ensinar a), kutsuma (convidar para) e sundima (obrigar a). Pedem o infinitivo: tahtma (querer), võima (poder, ter permissão), saama (conseguir), oskama (saber fazer), suutma (ser capaz), proovima e püüdma (tentar), otsustama (decidir), julgema (ousar), meeldima (gostar: mulle meeldib…), e as expressões com “on”: “on vaja” (é preciso), “tuleb” (é preciso), “on raske” (é difícil), “on aeg” (é hora).',
         table: {
           head: ['Pede -ma', 'Exemplo', 'Pede -da', 'Exemplo'],
           rows: [
@@ -1564,7 +1564,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'O supino também se declina',
-        text: 'O supino é, na origem, um substantivo verbal, e por isso tem casos. Além do -ma (para onde: vou nadar), há o -mas (onde: estou nadando, fui nadar e voltei), o -mast (de onde: acabei de voltar de nadar; também depois de keelduma, recusar-se), o -mata (sem fazer: ilma ütlemata) e o -maks, formal, de finalidade. O -mas junto com «olema» é o jeito estoniano de dizer «estar lá fazendo algo, estar em atividade»: «Lapsed on õues mängimas».',
+        text: 'O supino é, na origem, um substantivo verbal, e por isso tem casos. Além do -ma (para onde: vou nadar), há o -mas (onde: estou nadando, fui nadar e voltei), o -mast (de onde: acabei de voltar de nadar; também depois de keelduma, recusar-se), o -mata (sem fazer: ilma ütlemata) e o -maks, formal, de finalidade. O -mas junto com “olema” é o jeito estoniano de dizer “estar lá fazendo algo, estar em atividade”: “Lapsed on õues mängimas”.',
         table: {
           head: ['Forma', 'Sentido', 'Exemplo', 'Português'],
           rows: [
@@ -1584,11 +1584,11 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar sempre a forma do dicionário: «Ma tahan ujuma» está errado. Depois de «tahtma», é o infinitivo: «Ma tahan ujuda».',
-      'Achar que a escolha depende do sentido: «pidama» (ter de) pede -ma e «tuleb» (é preciso), com o mesmo sentido, pede -da: «Ma pean minema», mas «Mul tuleb minna».',
-      'Formar o infinitivo por analogia: «tegeda», «sööda» e «mineda» não existem. Decore: teha, süüa, minna.',
-      'Traduzir «fui fazer compras» com «läksin» + -ma quando você já voltou. Para ida e volta, o natural é «käima» + -mas: «Käisin poes».',
-      'Confundir «õppima» (aprender a, pede -ma: õpin ujuma) com «tahtma õppida» (querer aprender: o -da vem do «tahtma»).',
+      'Usar sempre a forma do dicionário: “Ma tahan ujuma” está errado. Depois de “tahtma”, é o infinitivo: “Ma tahan ujuda”.',
+      'Achar que a escolha depende do sentido: “pidama” (ter de) pede -ma e “tuleb” (é preciso), com o mesmo sentido, pede -da: “Ma pean minema”, mas “Mul tuleb minna”.',
+      'Formar o infinitivo por analogia: “tegeda”, “sööda” e “mineda” não existem. Decore: teha, süüa, minna.',
+      'Traduzir “fui fazer compras” com “läksin” + -ma quando você já voltou. Para ida e volta, o natural é “käima” + -mas: “Käisin poes”.',
+      'Confundir “õppima” (aprender a, pede -ma: õpin ujuma) com “tahtma õppida” (querer aprender: o -da vem do “tahtma”).',
     ],
     quiz: [
       {
@@ -1601,25 +1601,25 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         question: 'Complete: Ma tahan kohvi ___.',
         options: ['juua', 'jooma', 'joonud'],
         answer: 'juua',
-        explanation: '«Tahtma» (querer) pede o infinitivo em -da; o de «jooma» é irregular: juua.',
+        explanation: '“Tahtma” (querer) pede o infinitivo em -da; o de “jooma” é irregular: juua.',
       },
       {
         question: 'Complete: Ma pean homme ___.',
         options: ['töötama', 'töötada', 'töötamas'],
         answer: 'töötama',
-        explanation: '«Pidama» (ter de) pede o supino: pean töötama.',
+        explanation: '“Pidama” (ter de) pede o supino: pean töötama.',
       },
       {
         question: 'Complete: Kas sa oskad eesti keelt ___?',
         options: ['rääkida', 'rääkima', 'rääkimas'],
         answer: 'rääkida',
-        explanation: '«Oskama» (saber fazer) pede o infinitivo em -da.',
+        explanation: '“Oskama” (saber fazer) pede o infinitivo em -da.',
       },
       {
         question: 'Onde você estava? Complete: Ma käisin ___.',
         options: ['ujumas', 'ujuma', 'ujuda'],
         answer: 'ujumas',
-        explanation: 'Com «käima» (ir e voltar), o supino fica no inessivo: käisin ujumas.',
+        explanation: 'Com “käima” (ir e voltar), o supino fica no inessivo: käisin ujumas.',
       },
     ],
   },
@@ -1627,13 +1627,13 @@ export const GRAMMAR_ET: GrammarTopic[] = [
   {
     id: 'et-g16',
     level: 'B1.3',
-    title: 'O impessoal: räägitakse, räägiti (o nosso «fala-se»)',
+    title: 'O impessoal: räägitakse, räägiti (o nosso “fala-se”)',
     emoji: '👥',
-    summary: 'Quando não importa quem faz, o estoniano usa o impessoal (umbisikuline tegumood): «Eestis räägitakse eesti keelt» (na Estônia se fala estoniano). No presente ele termina em -takse/-dakse, no passado em -ti/-di, e é uma forma só para todas as pessoas.',
+    summary: 'Quando não importa quem faz, o estoniano usa o impessoal (umbisikuline tegumood): “Eestis räägitakse eesti keelt” (na Estônia se fala estoniano). No presente ele termina em -takse/-dakse, no passado em -ti/-di, e é uma forma só para todas as pessoas.',
     sections: [
       {
         heading: 'Como se forma',
-        text: 'O impessoal sai do infinitivo em -da. No presente, junta-se -takse ou -dakse; no passado, -ti ou -di. A escolha entre t e d segue o infinitivo: se ele termina em -da depois de vogal, costuma vir -takse/-ti, com o radical na forma fraca da gradação (rääkida → räägitakse, lugeda → loetakse); se termina em -la, -na, -ra ou em vogal longa, vem -dakse/-di (laulda → lauldakse, saada → saadakse). Na prática, aprenda junto com o verbo, e repare que o impessoal nunca muda: é «räägitakse» com eu, você, nós ou eles.',
+        text: 'O impessoal sai do infinitivo em -da. No presente, junta-se -takse ou -dakse; no passado, -ti ou -di. A escolha entre t e d segue o infinitivo: se ele termina em -da depois de vogal, costuma vir -takse/-ti, com o radical na forma fraca da gradação (rääkida → räägitakse, lugeda → loetakse); se termina em -la, -na, -ra ou em vogal longa, vem -dakse/-di (laulda → lauldakse, saada → saadakse). Na prática, aprenda junto com o verbo, e repare que o impessoal nunca muda: é “räägitakse” com eu, você, nós ou eles.',
         table: {
           head: ['Supino', 'Infinitivo', 'Impessoal presente', 'Impessoal passado'],
           rows: [
@@ -1661,7 +1661,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'A negação',
-        text: 'Na negação, como sempre, entra «ei», e o verbo muda de forma. No presente, o impessoal negativo termina em -ta/-da (é o -takse sem o -kse): ei räägita, ei laulda, ei tehta. No passado, termina em -tud/-dud, a mesma forma do particípio passivo: ei räägitud, ei lauldud. Placas e avisos usam muito a negação impessoal: «Siin ei suitsetata» (aqui não se fuma).',
+        text: 'Na negação, como sempre, entra “ei”, e o verbo muda de forma. No presente, o impessoal negativo termina em -ta/-da (é o -takse sem o -kse): ei räägita, ei laulda, ei tehta. No passado, termina em -tud/-dud, a mesma forma do particípio passivo: ei räägitud, ei lauldud. Placas e avisos usam muito a negação impessoal: “Siin ei suitsetata” (aqui não se fuma).',
         table: {
           head: ['Afirmativa presente', 'Negativa presente', 'Afirmativa passado', 'Negativa passado'],
           rows: [
@@ -1681,7 +1681,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'O objeto no impessoal',
-        text: 'O impessoal não tem sujeito: o que em português seria o sujeito da passiva continua sendo objeto em estoniano. Se o objeto é total, ele fica no nominativo (não no genitivo): «Maja ehitati» (a casa foi construída). Se é parcial, ou se a frase é negativa, fica no partitivo, como sempre: «Siin müüakse leiba» (aqui se vende pão), «Maja ei ehitatud». O verbo nunca vai para o plural: «Majad ehitati», e não «majad ehitatid». Quem fez quase nunca aparece; se for preciso dizer, o estoniano prefere a frase ativa.',
+        text: 'O impessoal não tem sujeito: o que em português seria o sujeito da passiva continua sendo objeto em estoniano. Se o objeto é total, ele fica no nominativo (não no genitivo): “Maja ehitati” (a casa foi construída). Se é parcial, ou se a frase é negativa, fica no partitivo, como sempre: “Siin müüakse leiba” (aqui se vende pão), “Maja ei ehitatud”. O verbo nunca vai para o plural: “Majad ehitati”, e não “majad ehitatid”. Quem fez quase nunca aparece; se for preciso dizer, o estoniano prefere a frase ativa.',
         examples: [
           ['Maja ehitati 1920. aastal.', 'A casa foi construída em 1920.'],
           ['Siin müüakse värsket leiba.', 'Aqui se vende pão fresco.'],
@@ -1691,20 +1691,20 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pôr o impessoal no plural: «majad ehitatid» não existe. O impessoal tem uma forma só: «Majad ehitati».',
-      'Usar o genitivo no objeto total, como na frase ativa: «Ukse suleti» está errado; o certo é «Uks suleti» (compare com a ativa «Ta sulges ukse», com genitivo).',
-      'Esquecer que a negação muda a forma: «ei räägitakse» está errado; é «ei räägita».',
-      'Traduzir «a gente» ou «eles» genéricos ao pé da letra: «Eestis nad räägivad eesti keelt» soa estranho. Para uma regra geral, use o impessoal: «Eestis räägitakse eesti keelt».',
+      'Pôr o impessoal no plural: “majad ehitatid” não existe. O impessoal tem uma forma só: “Majad ehitati”.',
+      'Usar o genitivo no objeto total, como na frase ativa: “Ukse suleti” está errado; o certo é “Uks suleti” (compare com a ativa “Ta sulges ukse”, com genitivo).',
+      'Esquecer que a negação muda a forma: “ei räägitakse” está errado; é “ei räägita”.',
+      'Traduzir “a gente” ou “eles” genéricos ao pé da letra: “Eestis nad räägivad eesti keelt” soa estranho. Para uma regra geral, use o impessoal: “Eestis räägitakse eesti keelt”.',
     ],
     quiz: [
       {
-        question: 'Como se diz «Na Estônia se fala estoniano»?',
+        question: 'Como se diz “Na Estônia se fala estoniano”?',
         options: ['Eestis räägitakse eesti keelt.', 'Eestis räägib eesti keelt.', 'Eestis räägitud eesti keelt.'],
         answer: 'Eestis räägitakse eesti keelt.',
-        explanation: 'O impessoal presente de «rääkima» é «räägitakse», com o k enfraquecido em g.',
+        explanation: 'O impessoal presente de “rääkima” é “räägitakse”, com o k enfraquecido em g.',
       },
       {
-        question: 'Qual é a negação de «Siin suitsetatakse»?',
+        question: 'Qual é a negação de “Siin suitsetatakse”?',
         options: ['Siin ei suitsetata.', 'Siin ei suitsetatakse.', 'Siin ei suitseta.'],
         answer: 'Siin ei suitsetata.',
         explanation: 'No presente negativo, o impessoal perde o -kse: ei suitsetata.',
@@ -1713,7 +1713,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         question: 'Complete: Uus sild ___ eelmisel aastal.',
         options: ['ehitati', 'ehitatakse', 'ehitatid'],
         answer: 'ehitati',
-        explanation: '«Eelmisel aastal» (no ano passado) pede o impessoal passado: ehitati.',
+        explanation: '“Eelmisel aastal” (no ano passado) pede o impessoal passado: ehitati.',
       },
       {
         question: 'Qual frase está certa?',
@@ -1728,11 +1728,11 @@ export const GRAMMAR_ET: GrammarTopic[] = [
     level: 'B1.3',
     title: 'O particípio em -tud: on tehtud, oli tehtud, pood on suletud',
     emoji: '🔒',
-    summary: 'O particípio passivo em -tud/-dud (tehtud = feito, suletud = fechado) forma os tempos compostos do impessoal: «Töö on tehtud» (o trabalho foi feito, está feito), «Arve oli juba makstud» (a conta já tinha sido paga). É também o jeito de descrever um estado: «Pood on suletud» (a loja está fechada).',
+    summary: 'O particípio passivo em -tud/-dud (tehtud = feito, suletud = fechado) forma os tempos compostos do impessoal: “Töö on tehtud” (o trabalho foi feito, está feito), “Arve oli juba makstud” (a conta já tinha sido paga). É também o jeito de descrever um estado: “Pood on suletud” (a loja está fechada).',
     sections: [
       {
         heading: 'A forma em -tud/-dud',
-        text: 'O particípio passivo é o impessoal passado com -tud/-dud no lugar do -ti/-di: räägiti → räägitud, lauldi → lauldud, tehti → tehtud. Ele já apareceu na negação do impessoal passado (ei räägitud). Não confunda com o -nud, que é ativo: «ma olen teinud» (eu fiz), «on tehtud» (foi feito, alguém fez).',
+        text: 'O particípio passivo é o impessoal passado com -tud/-dud no lugar do -ti/-di: räägiti → räägitud, lauldi → lauldud, tehti → tehtud. Ele já apareceu na negação do impessoal passado (ei räägitud). Não confunda com o -nud, que é ativo: “ma olen teinud” (eu fiz), “on tehtud” (foi feito, alguém fez).',
         table: {
           head: ['Supino', 'Ativo (-nud)', 'Passivo (-tud)', 'Português'],
           rows: [
@@ -1751,7 +1751,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Os tempos compostos do impessoal',
-        text: 'Com «on» + -tud, tem-se o perfeito impessoal; com «oli» + -tud, o mais-que-perfeito. Assim como o impessoal simples, eles não mudam com o número: «Kiri on saadetud», «Kirjad on saadetud». Na negação, fica «ei ole» (pole) ou «ei olnud» (polnud) + -tud, e o objeto vai para o partitivo: «Arvet pole veel makstud».',
+        text: 'Com “on” + -tud, tem-se o perfeito impessoal; com “oli” + -tud, o mais-que-perfeito. Assim como o impessoal simples, eles não mudam com o número: “Kiri on saadetud”, “Kirjad on saadetud”. Na negação, fica “ei ole” (pole) ou “ei olnud” (polnud) + -tud, e o objeto vai para o partitivo: “Arvet pole veel makstud”.',
         table: {
           head: ['Tempo', 'Afirmativa', 'Negativa', 'Português'],
           rows: [
@@ -1769,8 +1769,8 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         ],
       },
       {
-        heading: 'Estado ou ação? E o «saama» + -tud',
-        text: 'A mesma frase pode descrever uma ação terminada ou só um estado, como o nosso «está fechado» × «foi fechado». É por isso que as portas das lojas dizem «Avatud» (aberto) e «Suletud» (fechado). Na fala, também é muito comum «saama» + -tud para dizer que uma tarefa finalmente ficou pronta: «Töö sai tehtud» (o trabalho ficou feito, consegui terminar). E o -tud serve como adjetivo antes do substantivo, sem se declinar: «suletud uks» (porta fechada), «suletud uksest» (pela porta fechada).',
+        heading: 'Estado ou ação? E o “saama” + -tud',
+        text: 'A mesma frase pode descrever uma ação terminada ou só um estado, como o nosso “está fechado” × “foi fechado”. É por isso que as portas das lojas dizem “Avatud” (aberto) e “Suletud” (fechado). Na fala, também é muito comum “saama” + -tud para dizer que uma tarefa finalmente ficou pronta: “Töö sai tehtud” (o trabalho ficou feito, consegui terminar). E o -tud serve como adjetivo antes do substantivo, sem se declinar: “suletud uks” (porta fechada), “suletud uksest” (pela porta fechada).',
         examples: [
           ['Pood on pühapäeval suletud.', 'A loja fica fechada no domingo.'],
           ['Muuseum on avatud kella kümnest kuueni.', 'O museu fica aberto das dez às seis.'],
@@ -1780,14 +1780,14 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Trocar -nud por -tud: «Ma olen tehtud» não quer dizer «eu fiz»; o ativo é «Ma olen teinud». O -tud é para quando não importa quem fez: «See on tehtud».',
-      'Usar sempre o passado simples para «foi feito»: «Töö tehti» conta o fato naquele momento do passado; para dizer que agora está pronto, use «Töö on tehtud».',
-      'Esquecer o partitivo na negação: «Arve pole makstud» está errado; na negação o objeto vai para o partitivo: «Arvet pole makstud».',
-      'Declinar o -tud antes do substantivo: «suletudest uksest» não existe. Como adjunto, o -tud fica fixo: «suletud uksest».',
+      'Trocar -nud por -tud: “Ma olen tehtud” não quer dizer “eu fiz”; o ativo é “Ma olen teinud”. O -tud é para quando não importa quem fez: “See on tehtud”.',
+      'Usar sempre o passado simples para “foi feito”: “Töö tehti” conta o fato naquele momento do passado; para dizer que agora está pronto, use “Töö on tehtud”.',
+      'Esquecer o partitivo na negação: “Arve pole makstud” está errado; na negação o objeto vai para o partitivo: “Arvet pole makstud”.',
+      'Declinar o -tud antes do substantivo: “suletudest uksest” não existe. Como adjunto, o -tud fica fixo: “suletud uksest”.',
     ],
     quiz: [
       {
-        question: 'Como se diz «O trabalho já foi feito»?',
+        question: 'Como se diz “O trabalho já foi feito”?',
         options: ['Töö on juba tehtud.', 'Töö on juba teinud.', 'Töö tehakse juba.'],
         answer: 'Töö on juba tehtud.',
         explanation: 'Perfeito impessoal: on + particípio passivo em -tud.',
@@ -1796,16 +1796,16 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         question: 'O que está escrito na porta de uma loja fechada?',
         options: ['Suletud', 'Sulgenud', 'Suleti'],
         answer: 'Suletud',
-        explanation: '«Suletud» é o particípio passivo de «sulgema» (fechar) e descreve o estado: fechado.',
+        explanation: '“Suletud” é o particípio passivo de “sulgema” (fechar) e descreve o estado: fechado.',
       },
       {
         question: 'Complete: Arvet ___ veel makstud.',
         options: ['pole', 'on', 'ei'],
         answer: 'pole',
-        explanation: 'O partitivo «arvet» já mostra a negação: pole (ei ole) makstud.',
+        explanation: 'O partitivo “arvet” já mostra a negação: pole (ei ole) makstud.',
       },
       {
-        question: 'Qual é o particípio passivo de «saatma» (enviar)?',
+        question: 'Qual é o particípio passivo de “saatma” (enviar)?',
         options: ['saadetud', 'saatnud', 'saatetud'],
         answer: 'saadetud',
         explanation: 'Com a gradação, o t do radical enfraquece em d: saata → saadeti → saadetud.',
@@ -1817,11 +1817,11 @@ export const GRAMMAR_ET: GrammarTopic[] = [
     level: 'B1.3',
     title: 'O condicional (-ks-): tahaksin, läheksin, oleksin teinud',
     emoji: '🤔',
-    summary: 'O condicional estoniano tem a marca -ks-: «ma tahaksin» (eu queria, gostaria), «me läheksime» (nós iríamos). Ele serve para hipóteses, desejos e pedidos educados, e aparece nas DUAS partes da frase com «kui»: «Kui mul oleks aega, läheksin Saaremaale».',
+    summary: 'O condicional estoniano tem a marca -ks-: “ma tahaksin” (eu queria, gostaria), “me läheksime” (nós iríamos). Ele serve para hipóteses, desejos e pedidos educados, e aparece nas DUAS partes da frase com “kui”: “Kui mul oleks aega, läheksin Saaremaale”.',
     sections: [
       {
         heading: 'Como se forma',
-        text: 'Pegue a 1ª pessoa do presente, tire o -n e junte -ksin, -ksid, -ks, -ksime, -ksite, -ksid: loen → loeksin, lähen → läheksin, räägin → räägiksin. Com isso a gradação já vem pronta, porque o radical é o mesmo do presente. A negação é «ei» + a forma em -ks, igual para todas as pessoas: ma ei läheks, nad ei läheks. Na fala, muita gente usa o -ks sem terminação para todas as pessoas: «ma tahaks», «me läheks»; é normal no dia a dia, mas escreva a forma completa em textos formais.',
+        text: 'Pegue a 1ª pessoa do presente, tire o -n e junte -ksin, -ksid, -ks, -ksime, -ksite, -ksid: loen → loeksin, lähen → läheksin, räägin → räägiksin. Com isso a gradação já vem pronta, porque o radical é o mesmo do presente. A negação é “ei” + a forma em -ks, igual para todas as pessoas: ma ei läheks, nad ei läheks. Na fala, muita gente usa o -ks sem terminação para todas as pessoas: “ma tahaks”, “me läheks”; é normal no dia a dia, mas escreva a forma completa em textos formais.',
         table: {
           head: ['Pessoa', 'olema', 'minema', 'tahtma', 'Negativa'],
           rows: [
@@ -1835,8 +1835,8 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         },
       },
       {
-        heading: 'Hipóteses com «kui»',
-        text: 'Em português, a frase com «se» usa o imperfeito do subjuntivo e a outra parte o futuro do pretérito: «se eu tivesse tempo, iria». Em estoniano, as duas partes ficam no condicional: «Kui mul oleks aega, läheksin». Para o passado (o que poderia ter sido e não foi), usa-se o condicional de «olema» + -nud, também nas duas partes: «Kui ma oleksin teadnud, oleksin tulnud» (se eu tivesse sabido, teria vindo). Na negação do passado, «ei oleks» costuma virar «poleks».',
+        heading: 'Hipóteses com “kui”',
+        text: 'Em português, a frase com “se” usa o imperfeito do subjuntivo e a outra parte o futuro do pretérito: “se eu tivesse tempo, iria”. Em estoniano, as duas partes ficam no condicional: “Kui mul oleks aega, läheksin”. Para o passado (o que poderia ter sido e não foi), usa-se o condicional de “olema” + -nud, também nas duas partes: “Kui ma oleksin teadnud, oleksin tulnud” (se eu tivesse sabido, teria vindo). Na negação do passado, “ei oleks” costuma virar “poleks”.',
         table: {
           head: ['Tipo', 'Estoniano', 'Português'],
           rows: [
@@ -1855,7 +1855,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Cortesia e desejos',
-        text: 'Como o nosso «gostaria» e «poderia», o condicional suaviza pedidos. No café, «Ma tahaksin ühte kohvi» soa bem mais educado que «Ma tahan kohvi». Para pedir um favor, «Kas te saaksite…?» ou «Kas sa võiksid…?». Para dar conselho, «Sa võiksid…» ou «Sa peaksid…» (você deveria). E para desejos, «Oleks tore, kui…» (seria ótimo se…) ou só «Oh, kui…»: «Oh, kui ma oskaksin laulda!».',
+        text: 'Como o nosso “gostaria” e “poderia”, o condicional suaviza pedidos. No café, “Ma tahaksin ühte kohvi” soa bem mais educado que “Ma tahan kohvi”. Para pedir um favor, “Kas te saaksite…?” ou “Kas sa võiksid…?”. Para dar conselho, “Sa võiksid…” ou “Sa peaksid…” (você deveria). E para desejos, “Oleks tore, kui…” (seria ótimo se…) ou só “Oh, kui…”: “Oh, kui ma oskaksin laulda!”.',
         examples: [
           ['Ma tahaksin ühte kohvi, palun.', 'Eu queria um café, por favor.'],
           ['Kas te saaksite mind aidata?', 'O senhor poderia me ajudar?'],
@@ -1866,35 +1866,35 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar o condicional só numa parte: «Kui mul on aega, läheksin» mistura real e hipótese. Na hipótese, as duas partes vão para o condicional: «Kui mul oleks aega, läheksin».',
-      'Formar do supino em vez do presente: «mineksin» e «tegeksin» não existem. Parta do presente: lähen → läheksin, teen → teeksin.',
-      'Conjugar a negação: «ma ei oleksin» está errado. Depois de «ei», fica só o -ks: «ma ei oleks».',
-      'Pedir com o presente puro no café: «Ma tahan kohvi» é gramatical, mas soa seco. «Ma tahaksin ühte kohvi, palun» é o pedido educado.',
+      'Usar o condicional só numa parte: “Kui mul on aega, läheksin” mistura real e hipótese. Na hipótese, as duas partes vão para o condicional: “Kui mul oleks aega, läheksin”.',
+      'Formar do supino em vez do presente: “mineksin” e “tegeksin” não existem. Parta do presente: lähen → läheksin, teen → teeksin.',
+      'Conjugar a negação: “ma ei oleksin” está errado. Depois de “ei”, fica só o -ks: “ma ei oleks”.',
+      'Pedir com o presente puro no café: “Ma tahan kohvi” é gramatical, mas soa seco. “Ma tahaksin ühte kohvi, palun” é o pedido educado.',
     ],
     quiz: [
       {
         question: 'Complete: Kui mul oleks raha, ma ___ uue auto.',
         options: ['ostaksin', 'ostan', 'ostsin'],
         answer: 'ostaksin',
-        explanation: 'Hipótese com «kui»: as duas partes no condicional (oleks … ostaksin).',
+        explanation: 'Hipótese com “kui”: as duas partes no condicional (oleks … ostaksin).',
       },
       {
-        question: 'Qual é o condicional de «ma lähen»?',
+        question: 'Qual é o condicional de “ma lähen”?',
         options: ['ma läheksin', 'ma mineksin', 'ma läksin'],
         answer: 'ma läheksin',
-        explanation: 'O condicional sai do presente: lähen → läheksin. «Läksin» é o passado.',
+        explanation: 'O condicional sai do presente: lähen → läheksin. “Läksin” é o passado.',
       },
       {
-        question: 'Qual é a negação de «ma teeksin»?',
+        question: 'Qual é a negação de “ma teeksin”?',
         options: ['ma ei teeks', 'ma ei teeksin', 'ma ei tee'],
         answer: 'ma ei teeks',
-        explanation: 'Depois de «ei», o condicional perde a terminação de pessoa: ei teeks.',
+        explanation: 'Depois de “ei”, o condicional perde a terminação de pessoa: ei teeks.',
       },
       {
-        question: 'Como se diz «Se eu tivesse sabido, teria vindo»?',
+        question: 'Como se diz “Se eu tivesse sabido, teria vindo”?',
         options: ['Kui ma oleksin teadnud, oleksin tulnud.', 'Kui ma teadsin, oleksin tulnud.', 'Kui ma oleksin teadnud, tulin.'],
         answer: 'Kui ma oleksin teadnud, oleksin tulnud.',
-        explanation: 'O condicional do passado é «oleksin» + -nud, e vai nas duas partes da frase.',
+        explanation: 'O condicional do passado é “oleksin” + -nud, e vai nas duas partes da frase.',
       },
     ],
   },
@@ -1904,11 +1904,11 @@ export const GRAMMAR_ET: GrammarTopic[] = [
     level: 'B1.4',
     title: 'Comparativo e superlativo: suurem, kõige suurem, suurim',
     emoji: '🏔️',
-    summary: 'O comparativo tem a marca -m, colada ao genitivo: suur → suure → suurem (maior). O superlativo é «kõige» + comparativo (kõige suurem) ou a forma curta em -im (suurim). Para comparar, use «kui» (Tartu on väiksem kui Tallinn) ou o elativo -st (Tartu on Tallinnast väiksem).',
+    summary: 'O comparativo tem a marca -m, colada ao genitivo: suur → suure → suurem (maior). O superlativo é “kõige” + comparativo (kõige suurem) ou a forma curta em -im (suurim). Para comparar, use “kui” (Tartu on väiksem kui Tallinn) ou o elativo -st (Tartu on Tallinnast väiksem).',
     sections: [
       {
         heading: 'O comparativo: genitivo + -m',
-        text: 'Parta do genitivo singular e junte -m. Nas palavras de duas sílabas cujo genitivo termina em -a, o a vira e: vana → vana → vanem, pikk → pika → pikem, tark → targa → targem. Nas palavras mais longas, o a fica: ilus → ilusa → ilusam, odav → odava → odavam. Há poucos irregulares, e o mais importante é «hea» (bom): parem (melhor), parim (o melhor). Não existe «mais bonito» com palavra solta: o -m faz esse papel sozinho. «Rohkem» (mais) e «vähem» (menos) servem para quantidades e verbos: «Ma loen rohkem».',
+        text: 'Parta do genitivo singular e junte -m. Nas palavras de duas sílabas cujo genitivo termina em -a, o a vira e: vana → vana → vanem, pikk → pika → pikem, tark → targa → targem. Nas palavras mais longas, o a fica: ilus → ilusa → ilusam, odav → odava → odavam. Há poucos irregulares, e o mais importante é “hea” (bom): parem (melhor), parim (o melhor). Não existe “mais bonito” com palavra solta: o -m faz esse papel sozinho. “Rohkem” (mais) e “vähem” (menos) servem para quantidades e verbos: “Ma loen rohkem”.',
         table: {
           head: ['Adjetivo', 'Genitivo', 'Comparativo', 'Superlativo curto', 'Português'],
           rows: [
@@ -1928,8 +1928,8 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         },
       },
       {
-        heading: 'Comparar: «kui» ou o elativo',
-        text: 'Há dois jeitos de dizer «do que». Com «kui», a coisa comparada fica no mesmo caso da outra (em geral, o nominativo): «Tallinn on suurem kui Tartu». Sem «kui», ela vai para o elativo (-st), e costuma vir antes do comparativo: «Tallinn on Tartust suurem». Para «muito mais», use «palju» ou «tunduvalt»; para «ainda mais», «veel». Igualdade é «sama … kui» (tão … quanto). E o «quanto mais…, mais…» é «mida…, seda…»: «Mida rohkem, seda parem».',
+        heading: 'Comparar: “kui” ou o elativo',
+        text: 'Há dois jeitos de dizer “do que”. Com “kui”, a coisa comparada fica no mesmo caso da outra (em geral, o nominativo): “Tallinn on suurem kui Tartu”. Sem “kui”, ela vai para o elativo (-st), e costuma vir antes do comparativo: “Tallinn on Tartust suurem”. Para “muito mais”, use “palju” ou “tunduvalt”; para “ainda mais”, “veel”. Igualdade é “sama … kui” (tão … quanto). E o “quanto mais…, mais…” é “mida…, seda…”: “Mida rohkem, seda parem”.',
         examples: [
           ['Tartu on väiksem kui Tallinn.', 'Tartu é menor que Tallinn.'],
           ['Tartu on Tallinnast väiksem.', 'Tartu é menor que Tallinn.'],
@@ -1941,7 +1941,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'O superlativo',
-        text: '«Kõige» + comparativo funciona com qualquer adjetivo e é o mais comum na fala: kõige suurem, kõige ilusam. A forma curta em -im (suurim, parim, vanim) é um pouco mais escrita, mas é muito usada em notícias e em expressões fixas: «parim sõber» (melhor amigo), «Parimate soovidega» (com os melhores votos, no fim de cartas). As duas se declinam como adjetivos: «kõige suuremas linnas», «suurimas linnas».',
+        text: '“Kõige” + comparativo funciona com qualquer adjetivo e é o mais comum na fala: kõige suurem, kõige ilusam. A forma curta em -im (suurim, parim, vanim) é um pouco mais escrita, mas é muito usada em notícias e em expressões fixas: “parim sõber” (melhor amigo), “Parimate soovidega” (com os melhores votos, no fim de cartas). As duas se declinam como adjetivos: “kõige suuremas linnas”, “suurimas linnas”.',
         examples: [
           ['Suur Munamägi on Eesti kõige kõrgem mägi.', 'O Suur Munamägi é a montanha mais alta da Estônia.'],
           ['Tallinn on Eesti suurim linn.', 'Tallinn é a maior cidade da Estônia.'],
@@ -1952,29 +1952,29 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Copiar o «mais» do português: «rohkem ilus» está errado. O adjetivo leva -m: «ilusam».',
-      'Juntar «kui» com o elativo: «suurem kui Tartust» mistura as duas construções. Ou «suurem kui Tartu», ou «Tartust suurem».',
-      'Regularizar o «hea»: «heam» não existe; é «parem» (melhor) e «parim» ou «kõige parem» (o melhor).',
-      'Esquecer a troca a → e nas palavras curtas: «vanam» e «pikam» estão errados; o certo é «vanem» e «pikem».',
+      'Copiar o “mais” do português: “rohkem ilus” está errado. O adjetivo leva -m: “ilusam”.',
+      'Juntar “kui” com o elativo: “suurem kui Tartust” mistura as duas construções. Ou “suurem kui Tartu”, ou “Tartust suurem”.',
+      'Regularizar o “hea”: “heam” não existe; é “parem” (melhor) e “parim” ou “kõige parem” (o melhor).',
+      'Esquecer a troca a → e nas palavras curtas: “vanam” e “pikam” estão errados; o certo é “vanem” e “pikem”.',
     ],
     quiz: [
       {
-        question: 'Qual é o comparativo de «ilus» (bonito)?',
+        question: 'Qual é o comparativo de “ilus” (bonito)?',
         options: ['ilusam', 'ilusem', 'rohkem ilus'],
         answer: 'ilusam',
-        explanation: 'Genitivo «ilusa» + -m. Em palavras mais longas, o a não vira e.',
+        explanation: 'Genitivo “ilusa” + -m. Em palavras mais longas, o a não vira e.',
       },
       {
         question: 'Complete: Tallinn on ___ suurem.',
         options: ['Tartust', 'kui Tartust', 'Tartut'],
         answer: 'Tartust',
-        explanation: 'Sem «kui», a coisa comparada vai para o elativo (-st): Tartust suurem.',
+        explanation: 'Sem “kui”, a coisa comparada vai para o elativo (-st): Tartust suurem.',
       },
       {
-        question: 'Como se diz «melhor» (comparativo de «hea»)?',
+        question: 'Como se diz “melhor” (comparativo de “hea”)?',
         options: ['parem', 'heam', 'parim'],
         answer: 'parem',
-        explanation: '«Hea» é irregular: parem (melhor), parim (o melhor).',
+        explanation: '“Hea” é irregular: parem (melhor), parim (o melhor).',
       },
       {
         question: 'Complete: Minu vend on ___ kui mina.',
@@ -1983,10 +1983,10 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         explanation: 'Em palavras de duas sílabas com genitivo em -a, o a vira e: vana → vanem.',
       },
       {
-        question: 'Qual frase quer dizer «o livro mais interessante»?',
+        question: 'Qual frase quer dizer “o livro mais interessante”?',
         options: ['kõige huvitavam raamat', 'rohkem huvitav raamat', 'huvitavam raamat'],
         answer: 'kõige huvitavam raamat',
-        explanation: '«Kõige» + comparativo forma o superlativo. «Huvitavam raamat» é só «um livro mais interessante».',
+        explanation: '“Kõige” + comparativo forma o superlativo. “Huvitavam raamat” é só “um livro mais interessante”.',
       },
     ],
   },
@@ -1995,11 +1995,11 @@ export const GRAMMAR_ET: GrammarTopic[] = [
     level: 'B1.4',
     title: 'Relativos (kes, mis) e o modo indireto: ta olevat haige',
     emoji: '🗣️',
-    summary: '«Kes» (quem, que) retoma pessoas e «mis» (que, o que) retoma coisas, e os dois se declinam: «mees, keda ma nägin», «raamat, mida ma loen». E o estoniano tem um modo verbal só para o que se ouviu dizer, o indireto em -vat: «Ta olevat haige» (dizem que ele está doente).',
+    summary: '“Kes” (quem, que) retoma pessoas e “mis” (que, o que) retoma coisas, e os dois se declinam: “mees, keda ma nägin”, “raamat, mida ma loen”. E o estoniano tem um modo verbal só para o que se ouviu dizer, o indireto em -vat: “Ta olevat haige” (dizem que ele está doente).',
     sections: [
       {
         heading: 'Kes e mis, declinados',
-        text: 'O relativo toma o caso que a função dele pede DENTRO da oração relativa, como o nosso «com quem», «de que». Em «o homem que eu vi», o «que» é objeto de «ver», então fica no partitivo: «mees, keda ma nägin». Use «kes» para pessoas (e animais de estimação) e «mis» para coisas e ideias; no plural, as formas são as mesmas: «inimesed, kes…», «raamatud, mida…». A oração relativa leva SEMPRE vírgula, e «mis» também pode retomar uma frase inteira: «Ta tuli hilja, mis mind üllatas».',
+        text: 'O relativo toma o caso que a função dele pede DENTRO da oração relativa, como o nosso “com quem”, “de que”. Em “o homem que eu vi”, o “que” é objeto de “ver”, então fica no partitivo: “mees, keda ma nägin”. Use “kes” para pessoas (e animais de estimação) e “mis” para coisas e ideias; no plural, as formas são as mesmas: “inimesed, kes…”, “raamatud, mida…”. A oração relativa leva SEMPRE vírgula, e “mis” também pode retomar uma frase inteira: “Ta tuli hilja, mis mind üllatas”.',
         table: {
           head: ['Caso', 'kes (pessoas)', 'mis (coisas)', 'Português'],
           rows: [
@@ -2023,7 +2023,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'O modo indireto: -vat',
-        text: 'Quando você conta algo que não viu, só ouviu ou leu, o estoniano tem o modo indireto (kaudne kõneviis). O presente se faz com -vat, igual para todas as pessoas: olevat, tulevat, elavat. É o nosso «dizem que», «parece que», o «supostamente» das notícias. Para o passado, use «olevat» + -nud: «ta olevat olnud haige» (dizem que ele esteve doente). A negação é «ei» + -vat: «ta ei olevat tulnud». No discurso indireto comum, com «et», o verbo fica no indicativo e o tempo não recua como em português: «Ta ütles, et ta on väsinud» (ele disse que estava cansado).',
+        text: 'Quando você conta algo que não viu, só ouviu ou leu, o estoniano tem o modo indireto (kaudne kõneviis). O presente se faz com -vat, igual para todas as pessoas: olevat, tulevat, elavat. É o nosso “dizem que”, “parece que”, o “supostamente” das notícias. Para o passado, use “olevat” + -nud: “ta olevat olnud haige” (dizem que ele esteve doente). A negação é “ei” + -vat: “ta ei olevat tulnud”. No discurso indireto comum, com “et”, o verbo fica no indicativo e o tempo não recua como em português: “Ta ütles, et ta on väsinud” (ele disse que estava cansado).',
         table: {
           head: ['Indicativo', 'Indireto', 'Português'],
           rows: [
@@ -2043,36 +2043,36 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Deixar o relativo sempre no nominativo, como o nosso «que»: «raamat, mis ma loen» está errado. O «que» é objeto, então vai para o partitivo: «raamat, mida ma loen».',
+      'Deixar o relativo sempre no nominativo, como o nosso “que”: “raamat, mis ma loen” está errado. O “que” é objeto, então vai para o partitivo: “raamat, mida ma loen”.',
       'Esquecer a vírgula: em estoniano, a oração relativa é sempre separada por vírgula, mesmo quando em português não teria.',
-      'Usar «mis» para pessoas: «mees, mis seal seisab» soa errado na língua padrão; para gente, é «kes».',
-      'Recuar o tempo no discurso indireto como em português: o natural é manter o tempo da fala original: «Ta ütles, et ta on väsinud». Com «oli», a frase sugere que o cansaço vinha de antes.',
-      'Conjugar o -vat: «ma olevatin» não existe. O indireto tem uma forma só para todas as pessoas.',
+      'Usar “mis” para pessoas: “mees, mis seal seisab” soa errado na língua padrão; para gente, é “kes”.',
+      'Recuar o tempo no discurso indireto como em português: o natural é manter o tempo da fala original: “Ta ütles, et ta on väsinud”. Com “oli”, a frase sugere que o cansaço vinha de antes.',
+      'Conjugar o -vat: “ma olevatin” não existe. O indireto tem uma forma só para todas as pessoas.',
     ],
     quiz: [
       {
         question: 'Complete: Film, ___ me eile nägime, oli igav.',
         options: ['mida', 'mis', 'keda'],
         answer: 'mida',
-        explanation: 'O relativo é objeto de «nägema» e se refere a uma coisa: partitivo de «mis», mida.',
+        explanation: 'O relativo é objeto de “nägema” e se refere a uma coisa: partitivo de “mis”, mida.',
       },
       {
         question: 'Complete: Tüdruk, ___ ma tantsisin, on eestlane.',
         options: ['kellega', 'millega', 'kes'],
         answer: 'kellega',
-        explanation: '«Dancei COM ela»: comitativo, e para pessoa usa-se «kes» → kellega.',
+        explanation: '“Dancei COM ela”: comitativo, e para pessoa usa-se “kes” → kellega.',
       },
       {
-        question: 'Como se diz «Dizem que ele está doente»?',
+        question: 'Como se diz “Dizem que ele está doente”?',
         options: ['Ta olevat haige.', 'Ta oleks haige.', 'Ta oli haige.'],
         answer: 'Ta olevat haige.',
-        explanation: 'O modo indireto (-vat) marca o que se ouviu dizer. «Oleks» é o condicional.',
+        explanation: 'O modo indireto (-vat) marca o que se ouviu dizer. “Oleks” é o condicional.',
       },
       {
         question: 'Complete: Ta ___ olnud haige. (Dizem que ele esteve doente.)',
         options: ['olevat', 'oleks', 'on'],
         answer: 'olevat',
-        explanation: 'O passado do modo indireto é «olevat» + -nud. «Oleks olnud» seria o condicional (teria estado).',
+        explanation: 'O passado do modo indireto é “olevat” + -nud. “Oleks olnud” seria o condicional (teria estado).',
       },
     ],
   },
@@ -2082,11 +2082,11 @@ export const GRAMMAR_ET: GrammarTopic[] = [
     level: 'B2.1',
     title: 'Os quatro particípios: lugev, loetav, lugenud, loetud',
     emoji: '🧩',
-    summary: 'Cada verbo estoniano tem quatro particípios: presente ativo em -v (lugev, «que lê»), presente passivo em -tav/-dav (loetav, «que se pode ler», legível), passado ativo em -nud (lugenud, «que leu») e passado passivo em -tud/-dud (loetud, «lido»). Eles funcionam como adjetivos: «magav laps» (criança dormindo), «söödav seen» (cogumelo comestível).',
+    summary: 'Cada verbo estoniano tem quatro particípios: presente ativo em -v (lugev, “que lê”), presente passivo em -tav/-dav (loetav, “que se pode ler”, legível), passado ativo em -nud (lugenud, “que leu”) e passado passivo em -tud/-dud (loetud, “lido”). Eles funcionam como adjetivos: “magav laps” (criança dormindo), “söödav seen” (cogumelo comestível).',
     sections: [
       {
         heading: 'Quadro dos particípios',
-        text: 'Os dois ativos (-v e -nud) dizem o que o substantivo FAZ ou FEZ; os dois passivos (-tav e -tud) dizem o que é feito com ele. O -v sai do supino (lugema → lugev); o -tav e o -tud saem do impessoal (loetakse → loetav, loetud); e o -nud você já conhece dos tempos compostos. O -tav muitas vezes ganha o sentido de «que se pode…», como os nossos adjetivos em -vel: söödav (comestível), nähtav (visível), loetav (legível).',
+        text: 'Os dois ativos (-v e -nud) dizem o que o substantivo FAZ ou FEZ; os dois passivos (-tav e -tud) dizem o que é feito com ele. O -v sai do supino (lugema → lugev); o -tav e o -tud saem do impessoal (loetakse → loetav, loetud); e o -nud você já conhece dos tempos compostos. O -tav muitas vezes ganha o sentido de “que se pode…”, como os nossos adjetivos em -vel: söödav (comestível), nähtav (visível), loetav (legível).',
         table: {
           head: ['Verbo', '-v (ativo pres.)', '-tav (passivo pres.)', '-nud (ativo pass.)', '-tud (passivo pass.)'],
           rows: [
@@ -2109,7 +2109,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Quais se declinam',
-        text: 'Antes do substantivo, o -v e o -tav se declinam como qualquer adjetivo, concordando em caso e número: «magav laps», «magavat last», «magavatele lastele». Já o -nud e o -tud, na posição de adjunto, ficam fixos: «väsinud mees», «väsinud mehele», «väsinud meestega»; «keedetud muna», «keedetud munaga». Quando viram substantivo, porém, eles se declinam, com o radical -nu-/-tu-: «Arst aitas haavatuid» (o médico ajudou os feridos), «Me rääkisime väsinutega» (falamos com os cansados).',
+        text: 'Antes do substantivo, o -v e o -tav se declinam como qualquer adjetivo, concordando em caso e número: “magav laps”, “magavat last”, “magavatele lastele”. Já o -nud e o -tud, na posição de adjunto, ficam fixos: “väsinud mees”, “väsinud mehele”, “väsinud meestega”; “keedetud muna”, “keedetud munaga”. Quando viram substantivo, porém, eles se declinam, com o radical -nu-/-tu-: “Arst aitas haavatuid” (o médico ajudou os feridos), “Me rääkisime väsinutega” (falamos com os cansados).',
         table: {
           head: ['Particípio', 'Nominativo', 'Partitivo', 'Comitativo'],
           rows: [
@@ -2122,7 +2122,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Particípios que viraram palavras comuns',
-        text: 'Muitos adjetivos e substantivos do dia a dia são particípios que se fixaram. «Huvitav» (interessante) é o -v de «huvitama» (interessar); «armastatud» (amado, querido) é o -tud de «armastama»; «tuntud» (conhecido, famoso) vem de «tundma» (conhecer). Também há substantivos: «õpetaja» não é particípio (é o sufixo -ja), mas «alustav» (iniciante) e «lõpetanud» (formado) aparecem muito em anúncios e documentos.',
+        text: 'Muitos adjetivos e substantivos do dia a dia são particípios que se fixaram. “Huvitav” (interessante) é o -v de “huvitama” (interessar); “armastatud” (amado, querido) é o -tud de “armastama”; “tuntud” (conhecido, famoso) vem de “tundma” (conhecer). Também há substantivos: “õpetaja” não é particípio (é o sufixo -ja), mas “alustav” (iniciante) e “lõpetanud” (formado) aparecem muito em anúncios e documentos.',
         examples: [
           ['See on väga huvitav raamat.', 'É um livro muito interessante.'],
           ['Koidula on Eesti tuntud luuletaja.', 'Koidula é uma poetisa estoniana conhecida.'],
@@ -2132,14 +2132,14 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Declinar o -nud e o -tud antes do substantivo: «väsinudele meestele» está errado; é «väsinud meestele».',
-      'Esquecer de declinar o -v e o -tav: «magav last» está errado; é «magavat last», concordando no partitivo.',
-      'Confundir «huvitav» (interessante) com «huvitatud» (interessado): «Ma olen huvitav» quer dizer «eu sou interessante»; para «estou interessado», diga «Ma olen huvitatud».',
-      'Trocar ativo por passivo: «lugenud raamat» não é «livro lido» (seria «o livro que leu»); o certo é «loetud raamat».',
+      'Declinar o -nud e o -tud antes do substantivo: “väsinudele meestele” está errado; é “väsinud meestele”.',
+      'Esquecer de declinar o -v e o -tav: “magav last” está errado; é “magavat last”, concordando no partitivo.',
+      'Confundir “huvitav” (interessante) com “huvitatud” (interessado): “Ma olen huvitav” quer dizer “eu sou interessante”; para “estou interessado”, diga “Ma olen huvitatud”.',
+      'Trocar ativo por passivo: “lugenud raamat” não é “livro lido” (seria “o livro que leu”); o certo é “loetud raamat”.',
     ],
     quiz: [
       {
-        question: 'Como se diz «um livro lido»?',
+        question: 'Como se diz “um livro lido”?',
         options: ['loetud raamat', 'lugenud raamat', 'lugev raamat'],
         answer: 'loetud raamat',
         explanation: 'O livro sofre a ação: particípio passivo do passado, em -tud.',
@@ -2148,32 +2148,32 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         question: 'Complete: Ära ärata ___ last!',
         options: ['magavat', 'magav', 'maganud'],
         answer: 'magavat',
-        explanation: 'O -v se declina: «last» está no partitivo, então «magavat» também.',
+        explanation: 'O -v se declina: “last” está no partitivo, então “magavat” também.',
       },
       {
         question: 'Complete: Ma rääkisin ___ turistidega.',
         options: ['väsinud', 'väsinudega', 'väsinutega'],
         answer: 'väsinud',
-        explanation: 'Como adjunto, o -nud fica fixo, mesmo com o substantivo no comitativo plural. «Väsinutega» só serve sem substantivo: «com os cansados».',
+        explanation: 'Como adjunto, o -nud fica fixo, mesmo com o substantivo no comitativo plural. “Väsinutega” só serve sem substantivo: “com os cansados”.',
       },
       {
-        question: 'Como se diz «Estou interessado»?',
+        question: 'Como se diz “Estou interessado”?',
         options: ['Ma olen huvitatud.', 'Ma olen huvitav.', 'Ma olen huvitanud.'],
         answer: 'Ma olen huvitatud.',
-        explanation: '«Huvitatud» (-tud) é «interessado»; «huvitav» (-v) é «interessante».',
+        explanation: '“Huvitatud” (-tud) é “interessado”; “huvitav” (-v) é “interessante”.',
       },
     ],
   },
   {
     id: 'et-g22',
     level: 'B2.1',
-    title: 'Encurtando frases: particípios no lugar do «mis», o gerúndio -des e o -mata',
+    title: 'Encurtando frases: particípios no lugar do “mis”, o gerúndio -des e o -mata',
     emoji: '✂️',
-    summary: 'O estoniano escrito adora trocar uma oração inteira por um particípio: «kiri, mis eile saabus» vira «eile saabunud kiri» (a carta que chegou ontem). O gerúndio em -des faz o papel do nosso «-ndo» (koju minnes = indo para casa), e o -mata é o «sem» (pesemata nõud = louça sem lavar).',
+    summary: 'O estoniano escrito adora trocar uma oração inteira por um particípio: “kiri, mis eile saabus” vira “eile saabunud kiri” (a carta que chegou ontem). O gerúndio em -des faz o papel do nosso “-ndo” (koju minnes = indo para casa), e o -mata é o “sem” (pesemata nõud = louça sem lavar).',
     sections: [
       {
         heading: 'O particípio no lugar da oração relativa',
-        text: 'Em estoniano, tudo o que modifica o substantivo vem ANTES dele, e isso vale para frases inteiras: o complemento do particípio vai na frente, e o substantivo fecha o bloco. Assim, «sõber, kes elab Tallinnas» vira «Tallinnas elav sõber», e «kohvik, mis avati hiljuti» vira «hiljuti avatud kohvik». Na fala, as duas versões são normais; em jornais, documentos e textos formais, a versão com particípio é muito mais comum. Leia de trás para frente: primeiro o substantivo, depois o que se diz dele.',
+        text: 'Em estoniano, tudo o que modifica o substantivo vem ANTES dele, e isso vale para frases inteiras: o complemento do particípio vai na frente, e o substantivo fecha o bloco. Assim, “sõber, kes elab Tallinnas” vira “Tallinnas elav sõber”, e “kohvik, mis avati hiljuti” vira “hiljuti avatud kohvik”. Na fala, as duas versões são normais; em jornais, documentos e textos formais, a versão com particípio é muito mais comum. Leia de trás para frente: primeiro o substantivo, depois o que se diz dele.',
         table: {
           head: ['Com oração relativa', 'Com particípio', 'Português'],
           rows: [
@@ -2192,7 +2192,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'O gerúndio em -des',
-        text: 'O gerúndio (des-vorm) sai do infinitivo em -da: troca-se o -a por -es. lugeda → lugedes, teha → tehes, minna → minnes, süüa → süües. Ele descreve algo que acontece ao mesmo tempo que a ação principal, feito pelo mesmo sujeito: «Ta laulab süüa tehes» (ela canta enquanto cozinha). Também traduz o nosso «ao + infinitivo» e o «-ndo» de modo: «Koju minnes ostsin leiba» (indo para casa, comprei pão). Não confunda com o -mas do supino, que diz ONDE a pessoa está ocupada: «Ta on ujumas» (está nadando, foi nadar).',
+        text: 'O gerúndio (des-vorm) sai do infinitivo em -da: troca-se o -a por -es. lugeda → lugedes, teha → tehes, minna → minnes, süüa → süües. Ele descreve algo que acontece ao mesmo tempo que a ação principal, feito pelo mesmo sujeito: “Ta laulab süüa tehes” (ela canta enquanto cozinha). Também traduz o nosso “ao + infinitivo” e o “-ndo” de modo: “Koju minnes ostsin leiba” (indo para casa, comprei pão). Não confunda com o -mas do supino, que diz ONDE a pessoa está ocupada: “Ta on ujumas” (está nadando, foi nadar).',
         table: {
           head: ['Infinitivo', 'Gerúndio', 'Exemplo', 'Português'],
           rows: [
@@ -2206,7 +2206,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'O -vat com verbos de percepção, e o -mata',
-        text: 'Depois de «nägema» (ver) e «kuulma» (ouvir), o estoniano usa o particípio em -vat para o que se vê ou ouve acontecendo, com a pessoa no partitivo: «Ma nägin teda tulevat» (eu o vi vindo). E o supino em -mata (sem fazer) também vira adjetivo fixo: «pesemata nõud» (louça sem lavar), «lugemata raamat» (livro não lido), «magamata öö» (noite sem dormir). Com «ilma», ele traduz o nosso «sem + infinitivo»: «ilma küsimata» (sem perguntar).',
+        text: 'Depois de “nägema” (ver) e “kuulma” (ouvir), o estoniano usa o particípio em -vat para o que se vê ou ouve acontecendo, com a pessoa no partitivo: “Ma nägin teda tulevat” (eu o vi vindo). E o supino em -mata (sem fazer) também vira adjetivo fixo: “pesemata nõud” (louça sem lavar), “lugemata raamat” (livro não lido), “magamata öö” (noite sem dormir). Com “ilma”, ele traduz o nosso “sem + infinitivo”: “ilma küsimata” (sem perguntar).',
         examples: [
           ['Ma nägin teda üle tänava tulevat.', 'Eu o vi atravessando a rua.'],
           ['Me kuulsime lapsi õues laulvat.', 'Ouvimos as crianças cantando lá fora.'],
@@ -2217,20 +2217,20 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Pôr o complemento depois do particípio: «saabunud eile kiri» está errado. Tudo o que descreve o substantivo vem antes, e o particípio fica colado nele: «eile saabunud kiri».',
-      'Usar o gerúndio com outro sujeito: «Koju minnes hakkas vihma sadama» soa como se a chuva estivesse indo para casa. Com sujeitos diferentes, use «kui»: «Kui ma koju läksin, hakkas vihma sadama».',
-      'Trocar -des por -mas: «Ta on lugedes» está errado; «estar lendo» é «Ta loeb» ou, com o sentido de estar ocupado com isso, «Ta on lugemas».',
-      'Esquecer o partitivo com os verbos de percepção: «Ma nägin ta tulevat» está errado; é «Ma nägin teda tulevat».',
+      'Pôr o complemento depois do particípio: “saabunud eile kiri” está errado. Tudo o que descreve o substantivo vem antes, e o particípio fica colado nele: “eile saabunud kiri”.',
+      'Usar o gerúndio com outro sujeito: “Koju minnes hakkas vihma sadama” soa como se a chuva estivesse indo para casa. Com sujeitos diferentes, use “kui”: “Kui ma koju läksin, hakkas vihma sadama”.',
+      'Trocar -des por -mas: “Ta on lugedes” está errado; “estar lendo” é “Ta loeb” ou, com o sentido de estar ocupado com isso, “Ta on lugemas”.',
+      'Esquecer o partitivo com os verbos de percepção: “Ma nägin ta tulevat” está errado; é “Ma nägin teda tulevat”.',
     ],
     quiz: [
       {
-        question: 'Qual é a versão com particípio de «raamat, mis ilmus eelmisel aastal»?',
+        question: 'Qual é a versão com particípio de “raamat, mis ilmus eelmisel aastal”?',
         options: ['eelmisel aastal ilmunud raamat', 'ilmunud eelmisel aastal raamat', 'raamat eelmisel aastal ilmunud'],
         answer: 'eelmisel aastal ilmunud raamat',
         explanation: 'O complemento vem primeiro, o particípio depois, e o substantivo fecha o bloco.',
       },
       {
-        question: 'Qual é o gerúndio de «minema» (infinitivo minna)?',
+        question: 'Qual é o gerúndio de “minema” (infinitivo minna)?',
         options: ['minnes', 'minedes', 'minemas'],
         answer: 'minnes',
         explanation: 'O gerúndio sai do infinitivo: minna → minnes.',
@@ -2239,13 +2239,13 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         question: 'Complete: Ma kuulsin sind ___.',
         options: ['laulvat', 'laulmas', 'laulev'],
         answer: 'laulvat',
-        explanation: 'Depois de «kuulma» e «nägema», o que se percebe acontecendo vai para o -vat.',
+        explanation: 'Depois de “kuulma” e “nägema”, o que se percebe acontecendo vai para o -vat.',
       },
       {
-        question: 'Como se diz «louça sem lavar»?',
+        question: 'Como se diz “louça sem lavar”?',
         options: ['pesemata nõud', 'pestud nõud', 'pesev nõud'],
         answer: 'pesemata nõud',
-        explanation: 'O -mata é o «sem fazer». «Pestud nõud» é a louça já lavada.',
+        explanation: 'O -mata é o “sem fazer”. “Pestud nõud” é a louça já lavada.',
       },
     ],
   },
@@ -2253,13 +2253,13 @@ export const GRAMMAR_ET: GrammarTopic[] = [
   {
     id: 'et-g23',
     level: 'B2.2',
-    title: 'Registro formal: teie, «Lugupeetud…» e «Lugupidamisega»',
+    title: 'Registro formal: teie, “Lugupeetud…” e “Lugupidamisega”',
     emoji: '✉️',
-    summary: 'O estoniano formal usa «teie» (vocês) para tratar uma pessoa com respeito, o imperativo plural para pedir (Palun saatke…) e o condicional para suavizar (Kas oleks võimalik…?). Nos e-mails, abre-se com «Tere!» ou «Lugupeetud…» e fecha-se com «Lugupidamisega» ou «Parimate soovidega».',
+    summary: 'O estoniano formal usa “teie” (vocês) para tratar uma pessoa com respeito, o imperativo plural para pedir (Palun saatke…) e o condicional para suavizar (Kas oleks võimalik…?). Nos e-mails, abre-se com “Tere!” ou “Lugupeetud…” e fecha-se com “Lugupidamisega” ou “Parimate soovidega”.',
     sections: [
       {
         heading: 'Sina × teie',
-        text: 'Como em muitas línguas europeias, o estoniano tem dois «você»: «sina» (sa), íntimo, e «teie» (te), que é o plural e também a forma de respeito para uma pessoa só. Há até verbos para isso: «sinatama» (tratar por sina) e «teietama» (tratar por teie). Com desconhecidos, em lojas, repartições e e-mails de trabalho, comece com «teie»; entre colegas jovens e amigos, passa-se logo para «sina», muitas vezes com a proposta explícita «Võime ju sinatada?». Em cartas, pode-se escrever «Teie» com maiúscula para mostrar respeito a uma pessoa. E os estonianos usam muito o primeiro nome, até com chefes: «härra» e «proua» + sobrenome ficam para situações bem formais.',
+        text: 'Como em muitas línguas europeias, o estoniano tem dois “você”: “sina” (sa), íntimo, e “teie” (te), que é o plural e também a forma de respeito para uma pessoa só. Há até verbos para isso: “sinatama” (tratar por sina) e “teietama” (tratar por teie). Com desconhecidos, em lojas, repartições e e-mails de trabalho, comece com “teie”; entre colegas jovens e amigos, passa-se logo para “sina”, muitas vezes com a proposta explícita “Võime ju sinatada?”. Em cartas, pode-se escrever “Teie” com maiúscula para mostrar respeito a uma pessoa. E os estonianos usam muito o primeiro nome, até com chefes: “härra” e “proua” + sobrenome ficam para situações bem formais.',
         table: {
           head: ['Informal (sina)', 'Formal (teie)', 'Português'],
           rows: [
@@ -2273,7 +2273,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'A estrutura de um e-mail formal',
-        text: 'Na saudação, «Tere!» ou «Tere, Mari!» servem para quase tudo, inclusive no trabalho. «Hea Mari» (cara Mari) é cordial e muito usado. «Lugupeetud härra Tamm» ou «Lugupeetud proua Kask» é o mais formal, para autoridades e desconhecidos. No corpo, apresente o assunto logo: o estilo estoniano é direto e econômico. Para fechar, «Lugupidamisega» (respeitosamente) é o formal; «Parimate soovidega» e «Heade soovidega» (com os melhores votos) são cordiais; «Tervitades» (saudações) é neutro e comum.',
+        text: 'Na saudação, “Tere!” ou “Tere, Mari!” servem para quase tudo, inclusive no trabalho. “Hea Mari” (cara Mari) é cordial e muito usado. “Lugupeetud härra Tamm” ou “Lugupeetud proua Kask” é o mais formal, para autoridades e desconhecidos. No corpo, apresente o assunto logo: o estilo estoniano é direto e econômico. Para fechar, “Lugupidamisega” (respeitosamente) é o formal; “Parimate soovidega” e “Heade soovidega” (com os melhores votos) são cordiais; “Tervitades” (saudações) é neutro e comum.',
         table: {
           head: ['Parte', 'Formal', 'Neutro ou cordial'],
           rows: [
@@ -2293,7 +2293,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Pedidos educados',
-        text: 'O imperativo plural (-ge/-ke) com «palun» já é educado: «Palun saatke…», «Palun täitke…». Para ser mais cuidadoso, use o condicional: «Kas Te saaksite…?» (o senhor poderia…?), «Kas oleks võimalik…?» (seria possível…?), «Ma sooviksin…» (eu gostaria…). «Palun» fica bem no começo ou no fim, e o estoniano não precisa de tantas camadas de gentileza quanto o português: um pedido curto e claro não é grosseiro.',
+        text: 'O imperativo plural (-ge/-ke) com “palun” já é educado: “Palun saatke…”, “Palun täitke…”. Para ser mais cuidadoso, use o condicional: “Kas Te saaksite…?” (o senhor poderia…?), “Kas oleks võimalik…?” (seria possível…?), “Ma sooviksin…” (eu gostaria…). “Palun” fica bem no começo ou no fim, e o estoniano não precisa de tantas camadas de gentileza quanto o português: um pedido curto e claro não é grosseiro.',
         examples: [
           ['Kas oleks võimalik kohtumine järgmisele nädalale edasi lükata?', 'Seria possível adiar a reunião para a semana que vem?'],
           ['Ma sooviksin broneerida laua kahele.', 'Eu gostaria de reservar uma mesa para dois.'],
@@ -2303,20 +2303,20 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar «sina» com um desconhecido numa repartição: não é crime, mas soa íntimo demais. Comece com «teie» e espere o outro propor o «sina».',
-      'Conjugar o verbo no singular com «teie»: «Kas te saad…» está errado. «Teie» pede o plural mesmo para uma pessoa: «Kas te saate…».',
+      'Usar “sina” com um desconhecido numa repartição: não é crime, mas soa íntimo demais. Comece com “teie” e espere o outro propor o “sina”.',
+      'Conjugar o verbo no singular com “teie”: “Kas te saad…” está errado. “Teie” pede o plural mesmo para uma pessoa: “Kas te saate…”.',
       'Encher o e-mail de fórmulas como em português: frases longas de cortesia soam estranhas. O estilo estoniano é curto e direto.',
-      'Fechar um e-mail oficial com «Tšau!»: para o trabalho, use «Lugupidamisega» ou «Parimate soovidega».',
+      'Fechar um e-mail oficial com “Tšau!”: para o trabalho, use “Lugupidamisega” ou “Parimate soovidega”.',
     ],
     quiz: [
       {
         question: 'Qual é o fecho mais formal de um e-mail?',
         options: ['Lugupidamisega', 'Tšau', 'Kallistan'],
         answer: 'Lugupidamisega',
-        explanation: '«Lugupidamisega» (respeitosamente) é o fecho formal padrão.',
+        explanation: '“Lugupidamisega” (respeitosamente) é o fecho formal padrão.',
       },
       {
-        question: 'Como se diz «Entre!» de modo formal?',
+        question: 'Como se diz “Entre!” de modo formal?',
         options: ['Tulge sisse!', 'Tule sisse!', 'Tulete sisse!'],
         answer: 'Tulge sisse!',
         explanation: 'O tratamento formal usa o imperativo plural: tulge.',
@@ -2325,13 +2325,13 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         question: 'Complete o pedido formal: Kas Te ___ mulle arve saata?',
         options: ['saaksite', 'saad', 'saaksid'],
         answer: 'saaksite',
-        explanation: '«Te» pede a 2ª pessoa do plural, e o condicional deixa o pedido mais suave: saaksite.',
+        explanation: '“Te” pede a 2ª pessoa do plural, e o condicional deixa o pedido mais suave: saaksite.',
       },
       {
-        question: 'Um colega propõe: «Võime ju sinatada?». Você aceita. Como pergunta «como vai?» a ele agora?',
+        question: 'Um colega propõe: “Võime ju sinatada?”. Você aceita. Como pergunta “como vai?” a ele agora?',
         options: ['Kuidas sul läheb?', 'Kuidas teil läheb?', 'Kuidas tal läheb?'],
         answer: 'Kuidas sul läheb?',
-        explanation: '«Sinatama» é tratar por «sina»: a partir daí, é «sul» (a você), e não mais «teil».',
+        explanation: '“Sinatama” é tratar por “sina”: a partir daí, é “sul” (a você), e não mais “teil”.',
       },
     ],
   },
@@ -2340,11 +2340,11 @@ export const GRAMMAR_ET: GrammarTopic[] = [
     level: 'B2.2',
     title: 'Nas repartições: isikukood, taotlus e o estilo dos formulários',
     emoji: '🏛️',
-    summary: 'A Estônia é famosa pelo Estado digital: quase tudo se resolve com o documento de identidade e o código pessoal (isikukood). A linguagem dos formulários tem marcas próprias: substantivos em -mine (taotluse esitamine = a apresentação do requerimento), o «tuleb» + infinitivo (é preciso) e as pós-posições formais (vastavalt, seoses, alates).',
+    summary: 'A Estônia é famosa pelo Estado digital: quase tudo se resolve com o documento de identidade e o código pessoal (isikukood). A linguagem dos formulários tem marcas próprias: substantivos em -mine (taotluse esitamine = a apresentação do requerimento), o “tuleb” + infinitivo (é preciso) e as pós-posições formais (vastavalt, seoses, alates).',
     sections: [
       {
         heading: 'Palavras de repartição',
-        text: 'Todo cidadão e todo residente registrado na Estônia tem um «isikukood», um código pessoal de 11 dígitos que aparece em quase todo formulário. Com o cartão de identidade (ID-kaart) se assina documentos pela internet: é a «digiallkiri», a assinatura digital. Estas são as palavras que você vai encontrar em sites públicos, bancos e escolas.',
+        text: 'Todo cidadão e todo residente registrado na Estônia tem um “isikukood”, um código pessoal de 11 dígitos que aparece em quase todo formulário. Com o cartão de identidade (ID-kaart) se assina documentos pela internet: é a “digiallkiri”, a assinatura digital. Estas são as palavras que você vai encontrar em sites públicos, bancos e escolas.',
         table: {
           head: ['Estoniano', 'Português'],
           rows: [
@@ -2371,7 +2371,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'O estilo dos formulários',
-        text: 'Três marcas deixam o texto oficial com cara de oficial. A primeira é o substantivo em -mine (feito do supino: esitama → esitamine), que junta a ação com o objeto no genitivo: «dokumentide esitamine» (a apresentação dos documentos). A segunda é o «tuleb» + infinitivo para obrigações impessoais: «Taotlusele tuleb lisada foto» (ao requerimento deve-se anexar uma foto). A terceira é o impessoal e o particípio -tud: «Taotlus on vastu võetud» (o requerimento foi recebido).',
+        text: 'Três marcas deixam o texto oficial com cara de oficial. A primeira é o substantivo em -mine (feito do supino: esitama → esitamine), que junta a ação com o objeto no genitivo: “dokumentide esitamine” (a apresentação dos documentos). A segunda é o “tuleb” + infinitivo para obrigações impessoais: “Taotlusele tuleb lisada foto” (ao requerimento deve-se anexar uma foto). A terceira é o impessoal e o particípio -tud: “Taotlus on vastu võetud” (o requerimento foi recebido).',
         table: {
           head: ['Linguagem do dia a dia', 'Linguagem oficial', 'Português'],
           rows: [
@@ -2384,7 +2384,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Pós-posições e expressões formais',
-        text: 'O português usa preposições; o estoniano formal usa muitas pós-posições (depois do genitivo) e algumas preposições. As mais frequentes nos documentos: «vastavalt» + alativo (de acordo com), «seoses» + comitativo (em relação a), «alates» + elativo (a partir de), «kuni» + terminativo em -ni (até), «hiljemalt» (no mais tardar), «vajaduse korral» (se necessário) e «käesolev» (o presente, este: käesolev leping = o presente contrato).',
+        text: 'O português usa preposições; o estoniano formal usa muitas pós-posições (depois do genitivo) e algumas preposições. As mais frequentes nos documentos: “vastavalt” + alativo (de acordo com), “seoses” + comitativo (em relação a), “alates” + elativo (a partir de), “kuni” + terminativo em -ni (até), “hiljemalt” (no mais tardar), “vajaduse korral” (se necessário) e “käesolev” (o presente, este: käesolev leping = o presente contrato).',
         examples: [
           ['Vastavalt seadusele peab taotlus olema allkirjastatud.', 'De acordo com a lei, o requerimento deve estar assinado.'],
           ['Seoses remondiga on kontor suletud.', 'Em razão da reforma, o escritório está fechado.'],
@@ -2395,14 +2395,14 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar o substantivo em -mine com o objeto no partitivo: «dokumente esitamine» está errado. O objeto vai para o genitivo, antes: «dokumentide esitamine».',
-      'Traduzir «deve-se» com «peab» sem sujeito: «Peab lisama foto» fica incompleto. Na linguagem oficial, é «tuleb» + infinitivo: «Tuleb lisada foto».',
-      'Confundir «taotlus» (pedido formal a um órgão) com «küsimus» (pergunta): pedir uma autorização de residência é «esitada elamisloa taotlus».',
-      'Esquecer o caso depois das pós-posições: «alates 1. jaanuar» está errado; «alates» pede o elativo: «alates 1. jaanuarist».',
+      'Usar o substantivo em -mine com o objeto no partitivo: “dokumente esitamine” está errado. O objeto vai para o genitivo, antes: “dokumentide esitamine”.',
+      'Traduzir “deve-se” com “peab” sem sujeito: “Peab lisama foto” fica incompleto. Na linguagem oficial, é “tuleb” + infinitivo: “Tuleb lisada foto”.',
+      'Confundir “taotlus” (pedido formal a um órgão) com “küsimus” (pergunta): pedir uma autorização de residência é “esitada elamisloa taotlus”.',
+      'Esquecer o caso depois das pós-posições: “alates 1. jaanuar” está errado; “alates” pede o elativo: “alates 1. jaanuarist”.',
     ],
     quiz: [
       {
-        question: 'Como fica «apresentar os documentos» na linguagem oficial?',
+        question: 'Como fica “apresentar os documentos” na linguagem oficial?',
         options: ['dokumentide esitamine', 'dokumente esitamine', 'dokumendid esitamine'],
         answer: 'dokumentide esitamine',
         explanation: 'O substantivo em -mine leva o objeto no genitivo, na frente: dokumentide esitamine.',
@@ -2411,19 +2411,19 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         question: 'Complete: Taotlusele ___ lisada foto.',
         options: ['tuleb', 'peab', 'on'],
         answer: 'tuleb',
-        explanation: 'A obrigação impessoal da linguagem oficial é «tuleb» + infinitivo em -da.',
+        explanation: 'A obrigação impessoal da linguagem oficial é “tuleb” + infinitivo em -da.',
       },
       {
         question: 'Complete: ___ 1. maist on kontor avatud ka laupäeval.',
         options: ['Alates', 'Seoses', 'Vastavalt'],
         answer: 'Alates',
-        explanation: '«Alates» + elativo (1. maist) é «a partir de».',
+        explanation: '“Alates” + elativo (1. maist) é “a partir de”.',
       },
       {
-        question: 'Como se diz «assinatura digital»?',
+        question: 'Como se diz “assinatura digital”?',
         options: ['digiallkiri', 'isikukood', 'elamisluba'],
         answer: 'digiallkiri',
-        explanation: '«Allkiri» é assinatura; «digiallkiri» é a assinatura feita com o cartão de identidade.',
+        explanation: '“Allkiri” é assinatura; “digiallkiri” é a assinatura feita com o cartão de identidade.',
       },
     ],
   },
@@ -2437,7 +2437,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
     sections: [
       {
         heading: 'Bichos e corpo',
-        text: 'Muitas expressões usam animais e partes do corpo. Repare que elas pedem construções fixas: «jänes püksis» vem com «tal on» (ele tem), e «käed rüpes» vem com «istuma» (ficar sentado). A tradução ao pé da letra ajuda a lembrar, mas o sentido é o da coluna do meio.',
+        text: 'Muitas expressões usam animais e partes do corpo. Repare que elas pedem construções fixas: “jänes püksis” vem com “tal on” (ele tem), e “käed rüpes” vem com “istuma” (ficar sentado). A tradução ao pé da letra ajuda a lembrar, mas o sentido é o da coluna do meio.',
         table: {
           head: ['Expressão', 'Sentido', 'Ao pé da letra'],
           rows: [
@@ -2461,7 +2461,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Do dia a dia',
-        text: 'Estas aparecem o tempo todo na conversa. «Nagu lepase reega» lembra o trenó feito de amieiro, leve e fácil de puxar: algo que correu às mil maravilhas. «Sajab nagu oavarrest» é o nosso «chove canivetes». E «mul on kõrini» (estou por aqui) leva o elativo daquilo que cansou: «mul on sellest kõrini».',
+        text: 'Estas aparecem o tempo todo na conversa. “Nagu lepase reega” lembra o trenó feito de amieiro, leve e fácil de puxar: algo que correu às mil maravilhas. “Sajab nagu oavarrest” é o nosso “chove canivetes”. E “mul on kõrini” (estou por aqui) leva o elativo daquilo que cansou: “mul on sellest kõrini”.',
         table: {
           head: ['Expressão', 'Sentido'],
           rows: [
@@ -2483,7 +2483,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Ditados de todo dia',
-        text: 'Alguns provérbios são tão usados que viraram frases prontas. «Hommik on õhtust targem» é o nosso «a noite é boa conselheira», só que ao contrário: quem é sábia é a manhã. «Oma silm on kuningas» (o próprio olho é rei) é o «ver para crer». E «Kus viga näed laita, seal tule ja aita» (onde você vê defeito para criticar, venha e ajude) é quase um lema de convivência na Estônia.',
+        text: 'Alguns provérbios são tão usados que viraram frases prontas. “Hommik on õhtust targem” é o nosso “a noite é boa conselheira”, só que ao contrário: quem é sábia é a manhã. “Oma silm on kuningas” (o próprio olho é rei) é o “ver para crer”. E “Kus viga näed laita, seal tule ja aita” (onde você vê defeito para criticar, venha e ajude) é quase um lema de convivência na Estônia.',
         examples: [
           ['Hommik on õhtust targem.', 'A manhã é mais sábia que a noite.'],
           ['Oma silm on kuningas.', 'Ver para crer.'],
@@ -2492,20 +2492,20 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Traduzir expressões brasileiras ao pé da letra: «sajab nuge» (chove facas) ninguém entende. Aprenda a expressão estoniana: «sajab nagu oavarrest».',
-      'Mudar a forma fixa: «tal on jänes pükstes» ou «jänesed püksis» quebram a expressão; é sempre «jänes püksis».',
-      'Esquecer o caso que a expressão pede: com «kõrini», aquilo que cansou vai para o elativo: «Mul on sellest kõrini», e não «see on mul kõrini».',
-      'Usar «karuteene» como elogio: não é um «favor enorme», é um favor que faz mais mal que bem.',
+      'Traduzir expressões brasileiras ao pé da letra: “sajab nuge” (chove facas) ninguém entende. Aprenda a expressão estoniana: “sajab nagu oavarrest”.',
+      'Mudar a forma fixa: “tal on jänes pükstes” ou “jänesed püksis” quebram a expressão; é sempre “jänes püksis”.',
+      'Esquecer o caso que a expressão pede: com “kõrini”, aquilo que cansou vai para o elativo: “Mul on sellest kõrini”, e não “see on mul kõrini”.',
+      'Usar “karuteene” como elogio: não é um “favor enorme”, é um favor que faz mais mal que bem.',
     ],
     quiz: [
       {
-        question: 'Como se diz «Ele está com medo»?',
+        question: 'Como se diz “Ele está com medo”?',
         options: ['Tal on jänes püksis.', 'Tal on karu püksis.', 'Tal on nina püsti.'],
         answer: 'Tal on jänes püksis.',
         explanation: 'A lebre (jänes), bicho assustado, fica na calça de quem tem medo.',
       },
       {
-        question: 'Qual expressão quer dizer «correu às mil maravilhas»?',
+        question: 'Qual expressão quer dizer “correu às mil maravilhas”?',
         options: ['läks nagu lepase reega', 'läks nagu kuu pealt', 'läks hambad ristis'],
         answer: 'läks nagu lepase reega',
         explanation: 'O trenó de amieiro (lepp) é leve e desliza sem esforço.',
@@ -2514,26 +2514,26 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         question: 'Um amigo fica nervoso com um problema pequeno. O que você diz?',
         options: ['Ära tee kärbsest elevanti!', 'Ära aja mulli!', 'Ära istu käed rüpes!'],
         answer: 'Ära tee kärbsest elevanti!',
-        explanation: '«Fazer de uma mosca um elefante» é exagerar um problema pequeno.',
+        explanation: '“Fazer de uma mosca um elefante” é exagerar um problema pequeno.',
       },
       {
         question: 'Complete: Mul on ___ kõrini.',
         options: ['sellest', 'see', 'sellele'],
         answer: 'sellest',
-        explanation: '«Kõrini» pede o elativo daquilo que cansou: sellest.',
+        explanation: '“Kõrini” pede o elativo daquilo que cansou: sellest.',
       },
     ],
   },
   {
     id: 'et-g26',
     level: 'B2.3',
-    title: 'A língua falada: ma e mina, o «vä», as partículas ju, küll e ikka',
+    title: 'A língua falada: ma e mina, o “vä”, as partículas ju, küll e ikka',
     emoji: '💬',
-    summary: 'Na conversa, o estoniano encurta: «ma» em vez de «mina», «pole» em vez de «ei ole», «vä» no lugar de «kas». E ele vive de partículas pequenas que mudam o tom da frase: «ju» (afinal, como você sabe), «küll» (sim, com certeza; pode deixar), «ikka» (claro, ainda assim), «vist» (acho que, provavelmente).',
+    summary: 'Na conversa, o estoniano encurta: “ma” em vez de “mina”, “pole” em vez de “ei ole”, “vä” no lugar de “kas”. E ele vive de partículas pequenas que mudam o tom da frase: “ju” (afinal, como você sabe), “küll” (sim, com certeza; pode deixar), “ikka” (claro, ainda assim), “vist” (acho que, provavelmente).',
     sections: [
       {
         heading: 'Formas curtas e longas',
-        text: 'Os pronomes têm forma longa (mina, sina, tema, meie, teie, nemad) e curta (ma, sa, ta, me, te, nad). As duas são corretas: a curta é a normal, e a longa dá ênfase ou contraste, como quando em português apontamos «EU fui, não ELE». O mesmo vale para os casos: minul/mul, sinul/sul, temal/tal. Na fala, «ei ole» vira «pole», «ei olnud» vira «polnud», e o condicional sem terminação (ma tahaks, me läheks) é o comum.',
+        text: 'Os pronomes têm forma longa (mina, sina, tema, meie, teie, nemad) e curta (ma, sa, ta, me, te, nad). As duas são corretas: a curta é a normal, e a longa dá ênfase ou contraste, como quando em português apontamos “EU fui, não ELE”. O mesmo vale para os casos: minul/mul, sinul/sul, temal/tal. Na fala, “ei ole” vira “pole”, “ei olnud” vira “polnud”, e o condicional sem terminação (ma tahaks, me läheks) é o comum.',
         table: {
           head: ['Forma completa', 'Falada', 'Português'],
           rows: [
@@ -2553,7 +2553,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'As partículas que dão o tom',
-        text: 'Estas palavrinhas não se traduzem direto, mas sem elas a fala soa dura. «Ju» apela ao que o outro já sabe (afinal, né). «Küll» tranquiliza ou confirma (pode deixar, com certeza), e em contraste vira «até que» (Ilus küll, aga kallis = bonito até é, mas caro). «Ikka» é o «claro!» da resposta e também o «ainda» e o «mesmo assim». «Vist» é o «acho que». «Ka» é «também», mas numa pergunta suaviza: «Kas sa tuled ka?». «Nagu» (como) virou muleta, como o nosso «tipo». E «või» no fim da frase pede confirmação, como o nosso «né?».',
+        text: 'Estas palavrinhas não se traduzem direto, mas sem elas a fala soa dura. “Ju” apela ao que o outro já sabe (afinal, né). “Küll” tranquiliza ou confirma (pode deixar, com certeza), e em contraste vira “até que” (Ilus küll, aga kallis = bonito até é, mas caro). “Ikka” é o “claro!” da resposta e também o “ainda” e o “mesmo assim”. “Vist” é o “acho que”. “Ka” é “também”, mas numa pergunta suaviza: “Kas sa tuled ka?”. “Nagu” (como) virou muleta, como o nosso “tipo”. E “või” no fim da frase pede confirmação, como o nosso “né?”.',
         table: {
           head: ['Partícula', 'Tom', 'Exemplo', 'Português'],
           rows: [
@@ -2568,7 +2568,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Gíria leve e respostas rápidas',
-        text: 'Alguns jeitos de falar que você vai ouvir dos jovens e na rua: «tšau» (tchau, oi), «lahe» e «äge» (legal, massa), «mul on savi» (tô nem aí, ao pé da letra: tenho argila), «okei», «jaa» e «jah» (sim), «nojah» (é, bom…). Para «como vai?», a resposta comum é curta: «Hästi», «Normaalselt» ou «Pole viga» (nada mal). E «Terviseks!» serve para o brinde e para quando alguém espirra.',
+        text: 'Alguns jeitos de falar que você vai ouvir dos jovens e na rua: “tšau” (tchau, oi), “lahe” e “äge” (legal, massa), “mul on savi” (tô nem aí, ao pé da letra: tenho argila), “okei”, “jaa” e “jah” (sim), “nojah” (é, bom…). Para “como vai?”, a resposta comum é curta: “Hästi”, “Normaalselt” ou “Pole viga” (nada mal). E “Terviseks!” serve para o brinde e para quando alguém espirra.',
         examples: [
           ['Tšau! Kuidas läheb? – Pole viga.', 'Oi! Como vai? – Nada mal.'],
           ['See kontsert oli nii äge!', 'Esse show foi muito massa!'],
@@ -2578,35 +2578,35 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar sempre a forma longa: «Mina olen väsinud, mina tahan magada» soa enfático demais, como se você brigasse. No dia a dia, prefira «ma».',
-      'Escrever «vä» num texto formal: é só da fala. Por escrito, pergunte com «kas»: «Kas sa tuled?».',
-      'Achar que «küll» é só «sim»: em «Ilus küll, aga kallis», ele concede antes de uma objeção (até é bonito, mas…).',
-      'Usar «mul on savi» com um professor ou num e-mail: é gíria e soa desinteressado. No formal, diga «Mulle sobib kõik» (para mim tudo serve).',
+      'Usar sempre a forma longa: “Mina olen väsinud, mina tahan magada” soa enfático demais, como se você brigasse. No dia a dia, prefira “ma”.',
+      'Escrever “vä” num texto formal: é só da fala. Por escrito, pergunte com “kas”: “Kas sa tuled?”.',
+      'Achar que “küll” é só “sim”: em “Ilus küll, aga kallis”, ele concede antes de uma objeção (até é bonito, mas…).',
+      'Usar “mul on savi” com um professor ou num e-mail: é gíria e soa desinteressado. No formal, diga “Mulle sobib kõik” (para mim tudo serve).',
     ],
     quiz: [
       {
-        question: 'Qual é a forma falada de «Mina ei ole kodus»?',
+        question: 'Qual é a forma falada de “Mina ei ole kodus”?',
         options: ['Ma pole kodus.', 'Ma ei kodus.', 'Mina ole kodus.'],
         answer: 'Ma pole kodus.',
-        explanation: 'Na fala, «mina» vira «ma» e «ei ole» vira «pole».',
+        explanation: 'Na fala, “mina” vira “ma” e “ei ole” vira “pole”.',
       },
       {
-        question: 'Alguém pergunta «Tuled homme?». Qual resposta quer dizer «Claro!»?',
+        question: 'Alguém pergunta “Tuled homme?”. Qual resposta quer dizer “Claro!”?',
         options: ['Ikka!', 'Vist.', 'Nagu.'],
         answer: 'Ikka!',
-        explanation: '«Ikka» como resposta é o «claro!». «Vist» seria «acho que sim».',
+        explanation: '“Ikka” como resposta é o “claro!”. “Vist” seria “acho que sim”.',
       },
       {
-        question: 'Qual frase quer dizer «Acho que ele está doente»?',
+        question: 'Qual frase quer dizer “Acho que ele está doente”?',
         options: ['Ta on vist haige.', 'Ta on ju haige.', 'Ta on ikka haige.'],
         answer: 'Ta on vist haige.',
-        explanation: '«Vist» marca dúvida (provavelmente). «Ju» apelaria ao que o outro já sabe.',
+        explanation: '“Vist” marca dúvida (provavelmente). “Ju” apelaria ao que o outro já sabe.',
       },
       {
         question: 'Qual é a pergunta em estoniano escrito formal?',
         options: ['Kas te tulete?', 'Tulete vä?', 'Tulete või?'],
         answer: 'Kas te tulete?',
-        explanation: 'Por escrito, a pergunta de sim ou não abre com «kas»; «vä» e «või» no fim são da fala.',
+        explanation: 'Por escrito, a pergunta de sim ou não abre com “kas”; “vä” e “või” no fim são da fala.',
       },
     ],
   },
@@ -2619,7 +2619,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
     sections: [
       {
         heading: 'Palavras compostas',
-        text: 'Os compostos se escrevem juntos, e a tônica fica na primeira sílaba do primeiro elemento, como sempre. O último elemento dá o sentido principal e é ele que se declina: «raamatukogu» (biblioteca), «raamatukogus» (na biblioteca). O primeiro elemento vem em geral no genitivo (laul → laulu + pidu) e às vezes no nominativo (kodu + maa = kodumaa, pátria). Não existe regra segura para escolher: aprenda com a palavra.',
+        text: 'Os compostos se escrevem juntos, e a tônica fica na primeira sílaba do primeiro elemento, como sempre. O último elemento dá o sentido principal e é ele que se declina: “raamatukogu” (biblioteca), “raamatukogus” (na biblioteca). O primeiro elemento vem em geral no genitivo (laul → laulu + pidu) e às vezes no nominativo (kodu + maa = kodumaa, pátria). Não existe regra segura para escolher: aprenda com a palavra.',
         table: {
           head: ['Composto', 'Partes', 'Português'],
           rows: [
@@ -2657,7 +2657,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Sufixos que formam adjetivos',
-        text: 'O -lik dá «que tem jeito de» (sõber → sõbralik, simpático; laps → lapsik, infantil). O -ne dá «que tem» (vihm → vihmane, chuvoso; päike → päikeseline, ensolarado). O -tu é o nosso «sem» ou «-less» do inglês: raha → rahatu (sem dinheiro), maitse → maitsetu (sem gosto), töö → töötu (desempregado). Com eles, o vocabulário se multiplica.',
+        text: 'O -lik dá “que tem jeito de” (sõber → sõbralik, simpático; laps → lapsik, infantil). O -ne dá “que tem” (vihm → vihmane, chuvoso; päike → päikeseline, ensolarado). O -tu é o nosso “sem” ou “-less” do inglês: raha → rahatu (sem dinheiro), maitse → maitsetu (sem gosto), töö → töötu (desempregado). Com eles, o vocabulário se multiplica.',
         table: {
           head: ['Base', 'Adjetivo', 'Com -tu', 'Português'],
           rows: [
@@ -2677,32 +2677,32 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Separar os compostos: «raamatu kogu» se lê como «a coleção do livro», e não como «biblioteca». Compostos se escrevem juntos: «raamatukogu».',
-      'Declinar a primeira parte: «raamatuskogus» não existe. Só o último elemento muda: «raamatukogus».',
-      'Confundir «-lik» com «-line»: «sõbralik» é simpático; «päikeseline» é ensolarado. Os dois formam adjetivos, mas cada palavra pede o seu.',
-      'Traduzir «desempregado» com «ilma tööta» numa ficha: a palavra do formulário é «töötu».',
+      'Separar os compostos: “raamatu kogu” se lê como “a coleção do livro”, e não como “biblioteca”. Compostos se escrevem juntos: “raamatukogu”.',
+      'Declinar a primeira parte: “raamatuskogus” não existe. Só o último elemento muda: “raamatukogus”.',
+      'Confundir “-lik” com “-line”: “sõbralik” é simpático; “päikeseline” é ensolarado. Os dois formam adjetivos, mas cada palavra pede o seu.',
+      'Traduzir “desempregado” com “ilma tööta” numa ficha: a palavra do formulário é “töötu”.',
     ],
     quiz: [
       {
-        question: 'Qual palavra quer dizer «vendedor» (de «müüma», vender)?',
+        question: 'Qual palavra quer dizer “vendedor” (de “müüma”, vender)?',
         options: ['müüja', 'müügla', 'müümine'],
         answer: 'müüja',
         explanation: 'O sufixo -ja forma quem faz a ação: müüja.',
       },
       {
-        question: 'Como se diz «sem dinheiro» com um sufixo?',
+        question: 'Como se diz “sem dinheiro” com um sufixo?',
         options: ['rahatu', 'rahalik', 'rahane'],
         answer: 'rahatu',
-        explanation: 'O -tu é o «sem»: raha + tu.',
+        explanation: 'O -tu é o “sem”: raha + tu.',
       },
       {
         question: 'Complete: Ma lähen ___ (à biblioteca, ilativo).',
         options: ['raamatukokku', 'raamatusse kogu', 'raamatukogu'],
         answer: 'raamatukokku',
-        explanation: 'Só o último elemento se declina, e «kogu» tem o ilativo curto «kokku»: raamatukokku (a forma longa, raamatukogusse, também vale).',
+        explanation: 'Só o último elemento se declina, e “kogu” tem o ilativo curto “kokku”: raamatukokku (a forma longa, raamatukogusse, também vale).',
       },
       {
-        question: 'Qual é o lugar formado com «haige» (doente)?',
+        question: 'Qual é o lugar formado com “haige” (doente)?',
         options: ['haigla', 'haigja', 'haigik'],
         answer: 'haigla',
         explanation: 'O -la forma lugares: haigla (hospital).',
@@ -2715,11 +2715,11 @@ export const GRAMMAR_ET: GrammarTopic[] = [
     level: 'B2.4',
     title: 'Opinião e argumentação: minu arvates, esiteks, seevastu, seega',
     emoji: '⚖️',
-    summary: 'Para dar opinião: «ma arvan, et…», «minu arvates…», «ma leian, et…». Para concordar: «olen nõus». Para organizar o argumento: esiteks (em primeiro lugar), pealegi (além disso), seevastu (em compensação), siiski (no entanto), seega (portanto), kokkuvõttes (em resumo).',
+    summary: 'Para dar opinião: “ma arvan, et…”, “minu arvates…”, “ma leian, et…”. Para concordar: “olen nõus”. Para organizar o argumento: esiteks (em primeiro lugar), pealegi (além disso), seevastu (em compensação), siiski (no entanto), seega (portanto), kokkuvõttes (em resumo).',
     sections: [
       {
         heading: 'Dar e pedir opinião',
-        text: '«Arvama» (achar) é o verbo de opinião mais comum: «Ma arvan, et…». «Leidma» (literalmente «encontrar») é o «considero», um pouco mais formal: «Ma leian, et…». «Minu arvates» e «minu meelest» são o nosso «na minha opinião»; «minu arust» é o mesmo, mais falado. E «pidama» + partitivo + translativo (-ks) é o «considerar algo como»: «Pean seda heaks mõtteks» (considero isso uma boa ideia). Para concordar e discordar, use «nõus olema»: «Olen sinuga nõus» (concordo com você), «Ma ei ole nõus».',
+        text: '“Arvama” (achar) é o verbo de opinião mais comum: “Ma arvan, et…”. “Leidma” (literalmente “encontrar”) é o “considero”, um pouco mais formal: “Ma leian, et…”. “Minu arvates” e “minu meelest” são o nosso “na minha opinião”; “minu arust” é o mesmo, mais falado. E “pidama” + partitivo + translativo (-ks) é o “considerar algo como”: “Pean seda heaks mõtteks” (considero isso uma boa ideia). Para concordar e discordar, use “nõus olema”: “Olen sinuga nõus” (concordo com você), “Ma ei ole nõus”.',
         table: {
           head: ['Função', 'Estoniano', 'Português'],
           rows: [
@@ -2742,7 +2742,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Os conectores',
-        text: 'Os conectores organizam o texto e são cobrados em redações e provas. Atenção a três pares. «Aga» e «kuid» são «mas» (kuid é mais escrito), enquanto «vaid» é o «mas sim» depois de uma negação: «mitte…, vaid…». «Sest» (porque) liga duas orações e costuma vir no meio; para começar a frase com a causa, use «kuna» (como, já que). E «samas» (ao mesmo tempo, por outro lado) é mais suave que «seevastu» (em compensação, pelo contrário).',
+        text: 'Os conectores organizam o texto e são cobrados em redações e provas. Atenção a três pares. “Aga” e “kuid” são “mas” (kuid é mais escrito), enquanto “vaid” é o “mas sim” depois de uma negação: “mitte…, vaid…”. “Sest” (porque) liga duas orações e costuma vir no meio; para começar a frase com a causa, use “kuna” (como, já que). E “samas” (ao mesmo tempo, por outro lado) é mais suave que “seevastu” (em compensação, pelo contrário).',
         table: {
           head: ['Função', 'Conectores', 'Português'],
           rows: [
@@ -2759,7 +2759,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Um parágrafo de argumentação',
-        text: 'Veja como os conectores trabalham juntos num texto curto sobre morar no campo ou na cidade. Repare na inversão logo depois do conector (Esiteks on…, Samas on…) e na vírgula que fecha a oração com «kuigi», obrigatória em estoniano.',
+        text: 'Veja como os conectores trabalham juntos num texto curto sobre morar no campo ou na cidade. Repare na inversão logo depois do conector (Esiteks on…, Samas on…) e na vírgula que fecha a oração com “kuigi”, obrigatória em estoniano.',
         examples: [
           ['Esiteks on maal elu rahulikum ja loodus on lähedal.', 'Em primeiro lugar, no campo a vida é mais calma e a natureza está perto.'],
           ['Teiseks on elamine seal odavam.', 'Em segundo lugar, morar lá é mais barato.'],
@@ -2770,64 +2770,64 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar «aga» depois de negação para corrigir: «Ma ei ole soomlane, aga eestlane» está errado. Para «não…, mas sim…», é «vaid»: «Ma ei ole soomlane, vaid eestlane».',
-      'Começar a frase com «sest»: «Sest ilm oli halb, jäime koju» soa errado. Para abrir com a causa, use «kuna»: «Kuna ilm oli halb, jäime koju».',
-      'Esquecer a inversão depois do conector no começo: «Esiteks maal elu on rahulikum» fica estranho; o verbo vem logo depois do conector: «Esiteks on maal elu rahulikum».',
-      'Construir «pidama» (considerar) sem o translativo: «Pean seda oluline» está errado; é «Pean seda oluliseks».',
-      'Dizer «Ma olen nõus sinu» sem caso: quem concorda, concorda «com» alguém: «Ma olen sinuga nõus».',
+      'Usar “aga” depois de negação para corrigir: “Ma ei ole soomlane, aga eestlane” está errado. Para “não…, mas sim…”, é “vaid”: “Ma ei ole soomlane, vaid eestlane”.',
+      'Começar a frase com “sest”: “Sest ilm oli halb, jäime koju” soa errado. Para abrir com a causa, use “kuna”: “Kuna ilm oli halb, jäime koju”.',
+      'Esquecer a inversão depois do conector no começo: “Esiteks maal elu on rahulikum” fica estranho; o verbo vem logo depois do conector: “Esiteks on maal elu rahulikum”.',
+      'Construir “pidama” (considerar) sem o translativo: “Pean seda oluline” está errado; é “Pean seda oluliseks”.',
+      'Dizer “Ma olen nõus sinu” sem caso: quem concorda, concorda “com” alguém: “Ma olen sinuga nõus”.',
     ],
     quiz: [
       {
         question: 'Complete: Ma ei ole soomlane, ___ eestlane.',
         options: ['vaid', 'aga', 'sest'],
         answer: 'vaid',
-        explanation: 'Depois de uma negação, o «mas sim» é «vaid».',
+        explanation: 'Depois de uma negação, o “mas sim” é “vaid”.',
       },
       {
         question: 'Qual frase está certa?',
         options: ['Kuna ilm oli halb, jäime koju.', 'Sest ilm oli halb, jäime koju.', 'Kuna ilm oli halb, me jäime koju sest.'],
         answer: 'Kuna ilm oli halb, jäime koju.',
-        explanation: 'Para abrir a frase com a causa, usa-se «kuna»; «sest» costuma vir no meio.',
+        explanation: 'Para abrir a frase com a causa, usa-se “kuna”; “sest” costuma vir no meio.',
       },
       {
         question: 'Complete: Ma pean seda väga ___.',
         options: ['oluliseks', 'oluline', 'olulist'],
         answer: 'oluliseks',
-        explanation: '«Pidama» no sentido de «considerar» pede o translativo (-ks): oluliseks.',
+        explanation: '“Pidama” no sentido de “considerar” pede o translativo (-ks): oluliseks.',
       },
       {
-        question: 'Qual conector quer dizer «portanto»?',
+        question: 'Qual conector quer dizer “portanto”?',
         options: ['seega', 'siiski', 'samas'],
         answer: 'seega',
-        explanation: '«Seega» (portanto) marca a conclusão; «siiski» é «no entanto» e «samas», «por outro lado».',
+        explanation: '“Seega” (portanto) marca a conclusão; “siiski” é “no entanto” e “samas”, “por outro lado”.',
       },
       {
-        question: 'Como se diz «Concordo com você»?',
+        question: 'Como se diz “Concordo com você”?',
         options: ['Olen sinuga nõus.', 'Olen sinu nõus.', 'Olen sulle nõus.'],
         answer: 'Olen sinuga nõus.',
-        explanation: '«Nõus olema» pede o comitativo da pessoa: sinuga.',
+        explanation: '“Nõus olema” pede o comitativo da pessoa: sinuga.',
       },
     ],
   },
   {
     id: 'et-g29',
     level: 'B2.4',
-    title: 'Pontuação e escrita: a vírgula antes de «et», as aspas „…“, datas e minúsculas',
+    title: 'Pontuação e escrita: a vírgula antes de “et”, as aspas „…“, datas e minúsculas',
     emoji: '✒️',
     summary: 'O estoniano põe vírgula antes de TODA oração subordinada (et, kui, sest, mis, kes, kas), escreve com minúscula os dias, os meses, os povos e as línguas (esmaspäev, jaanuar, eestlane, eesti keel) e marca os ordinais com ponto: 24. veebruar (24 de fevereiro), 3. klass (3º ano).',
     sections: [
       {
         heading: 'A vírgula',
-        text: 'A regra de ouro: toda oração subordinada é separada por vírgula, sem exceção. Isso inclui «et» (que), onde o português NÃO põe vírgula: «Ma tean, et ta tuleb». Vale também para as relativas (mis, kes, kus), para as perguntas indiretas (kas, millal, miks) e para as conjunções kui, sest, kuna, kuigi e nagu (quando introduz uma oração). Antes de «aga», «kuid» e «vaid» também vai vírgula. Já «ja», «ning» e «või», ligando palavras ou orações simples, dispensam vírgula, a não ser que se repitam (nii… kui ka…, kas… või…).',
+        text: 'A regra de ouro: toda oração subordinada é separada por vírgula, sem exceção. Isso inclui “et” (que), onde o português NÃO põe vírgula: “Ma tean, et ta tuleb”. Vale também para as relativas (mis, kes, kus), para as perguntas indiretas (kas, millal, miks) e para as conjunções kui, sest, kuna, kuigi e nagu (quando introduz uma oração). Antes de “aga”, “kuid” e “vaid” também vai vírgula. Já “ja”, “ning” e “või”, ligando palavras ou orações simples, dispensam vírgula, a não ser que se repitam (nii… kui ka…, kas… või…).',
         table: {
           head: ['Regra', 'Exemplo'],
           rows: [
-            ['antes de «et»', 'Ma arvan, et see on hea mõte.'],
+            ['antes de “et”', 'Ma arvan, et see on hea mõte.'],
             ['antes da relativa', 'Raamat, mida ma loen, on põnev.'],
             ['antes da pergunta indireta', 'Ma ei tea, kas ta tuleb.'],
-            ['antes de «kui», «sest»', 'Helista mulle, kui sa kohale jõuad.'],
-            ['antes de «aga», «vaid»', 'Ta on väsinud, aga õnnelik.'],
-            ['sem vírgula com «ja»', 'Ostsin leiba ja piima.'],
+            ['antes de “kui”, “sest”', 'Helista mulle, kui sa kohale jõuad.'],
+            ['antes de “aga”, “vaid”', 'Ta on väsinud, aga õnnelik.'],
+            ['sem vírgula com “ja”', 'Ostsin leiba ja piima.'],
             ['vocativo', 'Tere, Mari!'],
           ],
         },
@@ -2839,7 +2839,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Maiúsculas e minúsculas',
-        text: 'Com minúscula: os dias da semana (esmaspäev, teisipäev…), os meses (jaanuar, veebruar…), os nomes de povos e de línguas (eestlane, brasiillane, eesti keel, portugali keel) e os títulos antes do nome (härra Tamm, proua Kask, president). Com maiúscula: os nomes de países, cidades e lugares (Eesti, Brasiilia, Tallinn, Lahemaa). O «Teie» de respeito, numa carta a uma pessoa, pode vir com maiúscula.',
+        text: 'Com minúscula: os dias da semana (esmaspäev, teisipäev…), os meses (jaanuar, veebruar…), os nomes de povos e de línguas (eestlane, brasiillane, eesti keel, portugali keel) e os títulos antes do nome (härra Tamm, proua Kask, president). Com maiúscula: os nomes de países, cidades e lugares (Eesti, Brasiilia, Tallinn, Lahemaa). O “Teie” de respeito, numa carta a uma pessoa, pode vir com maiúscula.',
         table: {
           head: ['Minúscula', 'Maiúscula'],
           rows: [
@@ -2852,7 +2852,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Aspas, datas, horas e números',
-        text: 'As aspas estonianas abrem embaixo e fecham em cima: „nii“. A vírgula da fala direta fica dentro das aspas: „Tule siia,“ ütles ema. Os números ordinais levam ponto: «24. veebruar» (24 de fevereiro), «20. sajand» (século 20), «3. klass». A data em algarismos usa pontos: 24.02.1918. As horas usam ponto também: kell 14.30. O decimal é com vírgula (3,5) e os milhares se separam com espaço (10 000), e não com ponto como no Brasil (10.000).',
+        text: 'As aspas estonianas abrem embaixo e fecham em cima: „nii“. A vírgula da fala direta fica dentro das aspas: „Tule siia,‘ ütles ema. Os números ordinais levam ponto: ‘24. veebruar’ (24 de fevereiro), ‘20. sajand’ (século 20), ‘3. klass’. A data em algarismos usa pontos: 24.02.1918. As horas usam ponto também: kell 14.30. O decimal é com vírgula (3,5) e os milhares se separam com espaço (10 000), e não com ponto como no Brasil (10.000).',
         examples: [
           ['Eesti iseseisvusmanifest kuulutati välja 24. veebruaril 1918.', 'O manifesto de independência da Estônia foi proclamado em 24 de fevereiro de 1918.'],
           ['„Tule siia,“ ütles ema.', '— Vem aqui — disse a mãe.'],
@@ -2863,9 +2863,9 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Esquecer a vírgula antes de «et»: «Ma arvan et see on hea» está errado. Em estoniano, a vírgula antes de «et» é obrigatória.',
-      'Escrever dias, meses e línguas com maiúscula, como no inglês: «Esmaspäev», «Jaanuar» e «Eesti keel» no meio da frase estão errados; o certo é «esmaspäev», «jaanuar», «eesti keel».',
-      'Esquecer o ponto do ordinal: «24 veebruar» se lê como número cardinal; a data se escreve «24. veebruar».',
+      'Esquecer a vírgula antes de “et”: “Ma arvan et see on hea” está errado. Em estoniano, a vírgula antes de “et” é obrigatória.',
+      'Escrever dias, meses e línguas com maiúscula, como no inglês: “Esmaspäev”, “Jaanuar” e “Eesti keel” no meio da frase estão errados; o certo é “esmaspäev”, “jaanuar”, “eesti keel”.',
+      'Esquecer o ponto do ordinal: “24 veebruar” se lê como número cardinal; a data se escreve “24. veebruar”.',
       'Usar as aspas do português ou do inglês em texto estoniano formal: a forma padrão é „assim“, abrindo embaixo.',
     ],
     quiz: [
@@ -2873,16 +2873,16 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         question: 'Qual frase está pontuada corretamente?',
         options: ['Ma tean, et ta tuleb.', 'Ma tean et ta tuleb.', 'Ma tean, et, ta tuleb.'],
         answer: 'Ma tean, et ta tuleb.',
-        explanation: 'Toda subordinada leva vírgula antes, inclusive a com «et».',
+        explanation: 'Toda subordinada leva vírgula antes, inclusive a com “et”.',
       },
       {
         question: 'Qual está escrita corretamente?',
         options: ['Ma räägin eesti keelt.', 'Ma räägin Eesti keelt.', 'Ma räägin Eesti Keelt.'],
         answer: 'Ma räägin eesti keelt.',
-        explanation: 'Nomes de línguas se escrevem com minúscula; só o país, «Eesti», leva maiúscula.',
+        explanation: 'Nomes de línguas se escrevem com minúscula; só o país, “Eesti”, leva maiúscula.',
       },
       {
-        question: 'Como se escreve «24 de fevereiro»?',
+        question: 'Como se escreve “24 de fevereiro”?',
         options: ['24. veebruar', '24 Veebruar', '24-s veebruar'],
         answer: '24. veebruar',
         explanation: 'O ordinal leva ponto, e o mês fica em minúscula.',
@@ -2891,7 +2891,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         question: 'Qual frase pede vírgula?',
         options: ['Ma ei tea, kas ta tuleb.', 'Ostsin leiba ja piima.', 'Tallinn ja Tartu on linnad.'],
         answer: 'Ma ei tea, kas ta tuleb.',
-        explanation: '«Kas» abre uma pergunta indireta, que é subordinada; «ja» ligando palavras não leva vírgula.',
+        explanation: '“Kas” abre uma pergunta indireta, que é subordinada; “ja” ligando palavras não leva vírgula.',
       },
     ],
   },
@@ -2901,7 +2901,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
     level: 'C1.1',
     title: 'Kirjakeel e os dialetos: norte, sul, costa e ilhas',
     emoji: '🗺️',
-    summary: 'A Estônia é pequena, mas já teve duas línguas escritas e dialetos que mal se entendiam. O padrão de hoje (kirjakeel) se firmou sobre os falares do norte; o sul, a costa nordeste e as ilhas guardam traços próprios, como o dialeto de Saaremaa, que vive sem o «õ».',
+    summary: 'A Estônia é pequena, mas já teve duas línguas escritas e dialetos que mal se entendiam. O padrão de hoje (kirjakeel) se firmou sobre os falares do norte; o sul, a costa nordeste e as ilhas guardam traços próprios, como o dialeto de Saaremaa, que vive sem o “õ”.',
     sections: [
       {
         heading: 'Duas línguas escritas',
@@ -2931,9 +2931,9 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'As ilhas: Saaremaa, Hiiumaa e Kihnu',
-        text: 'O dialeto de Saaremaa é o mais fácil de reconhecer: ele não tem o «õ». Onde o padrão diz «õ», o saarlane (morador de Saaremaa) costuma dizer um «ö», e a piada nacional é imitar isso. Em Hiiumaa, os hiidlased têm fama de contadores de histórias e de humor seco. Na pequena Kihnu, as mulheres ainda usam as saias listradas do dia a dia, e o espaço cultural da ilha (canto, danças, trajes) foi reconhecido pela UNESCO em 2003.',
+        text: 'O dialeto de Saaremaa é o mais fácil de reconhecer: ele não tem o “õ”. Onde o padrão diz “õ”, o saarlane (morador de Saaremaa) costuma dizer um “ö”, e a piada nacional é imitar isso. Em Hiiumaa, os hiidlased têm fama de contadores de histórias e de humor seco. Na pequena Kihnu, as mulheres ainda usam as saias listradas do dia a dia, e o espaço cultural da ilha (canto, danças, trajes) foi reconhecido pela UNESCO em 2003.',
         examples: [
-          ['Saare murdes ei ole õ-häälikut.', 'No dialeto de Saaremaa não existe o som «õ».'],
+          ['Saare murdes ei ole õ-häälikut.', 'No dialeto de Saaremaa não existe o som “õ”.'],
           ['Hiidlased on tuntud oma huumori poolest.', 'Os moradores de Hiiumaa são conhecidos pelo seu humor.'],
           ['Kihnu naised kannavad triibulisi seelikuid.', 'As mulheres de Kihnu usam saias listradas.'],
         ],
@@ -2949,8 +2949,8 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Achar que o estoniano «verdadeiro» é o do sul por ser mais antigo na escrita: o padrão de hoje é o do norte.',
-      'Imitar o «ö» de Saaremaa ao escrever: no padrão, põld, sõber e õun continuam com «õ».',
+      'Achar que o estoniano “verdadeiro” é o do sul por ser mais antigo na escrita: o padrão de hoje é o do norte.',
+      'Imitar o “ö” de Saaremaa ao escrever: no padrão, põld, sõber e õun continuam com “õ”.',
       'Confundir sotaque regional com dialeto: quem é de Tartu fala kirjakeel com melodia de Tartu, não o dialeto tradicional.',
       'Esperar entender o velho dialeto da costa nordeste só com o padrão: ele lembra mais o finlandês.',
     ],
@@ -2965,7 +2965,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         question: 'Que vogal falta no dialeto de Saaremaa?',
         options: ['õ', 'ä', 'ü'],
         answer: 'õ',
-        explanation: 'O saarlane costuma dizer «ö» onde o padrão tem «õ».',
+        explanation: 'O saarlane costuma dizer “ö” onde o padrão tem “õ”.',
       },
       {
         question: 'Em que ano saiu o Novo Testamento em estoniano do sul?',
@@ -2992,7 +2992,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
     level: 'C1.1',
     title: 'Võro e seto: o sul que escreve e canta à sua maneira',
     emoji: '🌲',
-    summary: 'No sudeste da Estônia vivem o võro (võro kiil) e o seto, herdeiros do antigo estoniano do sul. Têm harmonia vocálica, uma letra «q» para a parada glotal e, no caso dos setos, um canto polifônico reconhecido pela UNESCO.',
+    summary: 'No sudeste da Estônia vivem o võro (võro kiil) e o seto, herdeiros do antigo estoniano do sul. Têm harmonia vocálica, uma letra “q” para a parada glotal e, no caso dos setos, um canto polifônico reconhecido pela UNESCO.',
     sections: [
       {
         heading: 'Dialeto ou língua?',
@@ -3005,7 +3005,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Como o võro soa diferente',
-        text: 'Três traços saltam aos olhos. Primeiro, a harmonia vocálica, como no finlandês: numa palavra com ä, ö ou ü, as vogais seguintes também ficam «da frente» (külä, e não küla). Segundo, a parada glotal, um pequeno corte na garganta no fim da palavra, escrito com «q»: é ela que marca, por exemplo, o plural no nominativo (latsõq, «crianças»). Terceiro, o «õ» aparece muito mais do que no padrão, também em sílabas átonas (kõnõlõma, «falar»). No passado, a negação usa «es» em vez de «ei».',
+        text: 'Três traços saltam aos olhos. Primeiro, a harmonia vocálica, como no finlandês: numa palavra com ä, ö ou ü, as vogais seguintes também ficam “da frente” (külä, e não küla). Segundo, a parada glotal, um pequeno corte na garganta no fim da palavra, escrito com “q”: é ela que marca, por exemplo, o plural no nominativo (latsõq, “crianças”). Terceiro, o “õ” aparece muito mais do que no padrão, também em sílabas átonas (kõnõlõma, “falar”). No passado, a negação usa “es” em vez de “ei”.',
         table: {
           head: ['Võro', 'Padrão', 'Português', 'Traço'],
           rows: [
@@ -3019,12 +3019,12 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         examples: [
           ['Võru keeles märgib q-täht kõrisulghäälikut.', 'Em võro, a letra q marca a parada glotal.'],
           ['Võru keeles on vokaalharmoonia nagu soome keeles.', 'O võro tem harmonia vocálica, como o finlandês.'],
-          ['Kirjakeeles öeldakse „küla“, võru keeles „külä“.', 'No padrão se diz «küla»; em võro, «külä».'],
+          ['Kirjakeeles öeldakse „küla“, võru keeles „külä‘.', 'No padrão se diz ‘küla’; em võro, ‘külä’.'],
         ],
       },
       {
         heading: 'O võro hoje',
-        text: 'Desde os anos 1990 o võro ganhou instituições: o Instituto Võro (Võro Instituut, fundado em 1995), livros, um jornal próprio, programas de rádio e os «keelepesad», os «ninhos de língua» em que crianças pequenas brincam em võro. Nas placas de Võrumaa às vezes aparece o nome local ao lado do padrão. Para o estudante, basta reconhecer: quando vir q no fim da palavra e muitos «õ», provavelmente é võro.',
+        text: 'Desde os anos 1990 o võro ganhou instituições: o Instituto Võro (Võro Instituut, fundado em 1995), livros, um jornal próprio, programas de rádio e os “keelepesad”, os “ninhos de língua” em que crianças pequenas brincam em võro. Nas placas de Võrumaa às vezes aparece o nome local ao lado do padrão. Para o estudante, basta reconhecer: quando vir q no fim da palavra e muitos “õ”, provavelmente é võro.',
         examples: [
           ['Võro Instituut asutati 1995. aastal.', 'O Instituto Võro foi fundado em 1995.'],
           ['Keelepesas räägitakse lastega ainult võru keelt.', 'No ninho de língua se fala com as crianças só em võro.'],
@@ -3033,7 +3033,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Os setos e o leelo',
-        text: 'Os setos vivem em Setomaa, dividida desde 1944 pela fronteira: uma parte fica na Estônia e outra na região de Pskov, na Rússia. Ao contrário da maioria dos estonianos, luteranos por tradição, os setos são de tradição ortodoxa. O seu maior tesouro é o leelo, um canto polifônico em que uma cantora puxa o verso e o coro responde, com uma voz aguda (a killõ) por cima das outras. O leelo seto entrou na lista do patrimônio imaterial da UNESCO em 2009. Todo verão, no «Dia do Reino Seto», os setos escolhem de brincadeira o representante do seu rei mítico, Peko.',
+        text: 'Os setos vivem em Setomaa, dividida desde 1944 pela fronteira: uma parte fica na Estônia e outra na região de Pskov, na Rússia. Ao contrário da maioria dos estonianos, luteranos por tradição, os setos são de tradição ortodoxa. O seu maior tesouro é o leelo, um canto polifônico em que uma cantora puxa o verso e o coro responde, com uma voz aguda (a killõ) por cima das outras. O leelo seto entrou na lista do patrimônio imaterial da UNESCO em 2009. Todo verão, no “Dia do Reino Seto”, os setos escolhem de brincadeira o representante do seu rei mítico, Peko.',
         examples: [
           ['Seto leelo kanti UNESCO nimekirja 2009. aastal.', 'O leelo seto entrou na lista da UNESCO em 2009.'],
           ['Setod on traditsiooniliselt õigeusklikud.', 'Os setos são tradicionalmente ortodoxos.'],
@@ -3042,10 +3042,10 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Escrever «külä» ou «latsõq» num texto em estoniano padrão: são formas do võro, não erros de digitação a imitar.',
-      'Ler o q do võro como o q do português: ele não é consoante «k», é um corte rápido da garganta (a parada glotal).',
+      'Escrever “külä” ou “latsõq” num texto em estoniano padrão: são formas do võro, não erros de digitação a imitar.',
+      'Ler o q do võro como o q do português: ele não é consoante “k”, é um corte rápido da garganta (a parada glotal).',
       'Achar que os setos são russos por viverem na fronteira e serem ortodoxos: eles falam uma forma do estoniano do sul e se veem como povo próprio.',
-      'Tratar a discussão «dialeto ou língua» como encerrada: a lei diz uma coisa, muitos falantes dizem outra.',
+      'Tratar a discussão “dialeto ou língua” como encerrada: a lei diz uma coisa, muitos falantes dizem outra.',
     ],
     quiz: [
       {
@@ -3055,10 +3055,10 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         explanation: 'O q é o corte da garganta que marca, por exemplo, o plural no nominativo: latsõq.',
       },
       {
-        question: 'Qual é a forma võro de «küla» (aldeia)?',
+        question: 'Qual é a forma võro de “küla” (aldeia)?',
         options: ['külä', 'kila', 'kyla'],
         answer: 'külä',
-        explanation: 'Pela harmonia vocálica, depois de ü a vogal também fica «da frente»: külä.',
+        explanation: 'Pela harmonia vocálica, depois de ü a vogal também fica “da frente”: külä.',
       },
       {
         question: 'Em que ano o leelo seto entrou na lista da UNESCO?',
@@ -3070,7 +3070,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         question: 'Qual palavra é negação do passado no võro?',
         options: ['es', 'ei', 'mitte'],
         answer: 'es',
-        explanation: 'No passado, o võro usa «es»; o padrão usa «ei» em todos os tempos.',
+        explanation: 'No passado, o võro usa “es”; o padrão usa “ei” em todos os tempos.',
       },
       {
         question: 'Qual é a tradição religiosa dos setos?',
@@ -3085,7 +3085,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
     level: 'C1.1',
     title: 'Estoniano × finlandês: primos que se enganam',
     emoji: '🇫🇮',
-    summary: 'O estoniano e o finlandês são as duas línguas fínicas grandes, separadas por 80 km de mar. Parecem muito no papel, mas o estoniano perdeu vogais finais e a harmonia vocálica, ganhou o «õ», nega sempre com «ei» e troca os sufixos possessivos por pronomes. E há falsos amigos traiçoeiros, como «hallitus».',
+    summary: 'O estoniano e o finlandês são as duas línguas fínicas grandes, separadas por 80 km de mar. Parecem muito no papel, mas o estoniano perdeu vogais finais e a harmonia vocálica, ganhou o “õ”, nega sempre com “ei” e troca os sufixos possessivos por pronomes. E há falsos amigos traiçoeiros, como “hallitus”.',
     sections: [
       {
         heading: 'Parentes próximos, não gêmeos',
@@ -3098,7 +3098,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'O que mudou do lado estoniano',
-        text: 'O estoniano encurtou as palavras: caiu a vogal final em muitas delas (fi. jalka → et. jalg, «perna») e caiu o -n do genitivo (fi. talon → et. maja, «da casa»), por isso no estoniano o nominativo e o genitivo muitas vezes se escrevem igual. O padrão estoniano não tem harmonia vocálica (o finlandês tem), mas tem o «õ», que o finlandês não tem. A negação não se conjuga: o finlandês diz en, et, ei, emme…, o estoniano diz «ei» para todos. E onde o finlandês põe sufixo possessivo (talossani, «na minha casa»), o estoniano usa o pronome: minu majas.',
+        text: 'O estoniano encurtou as palavras: caiu a vogal final em muitas delas (fi. jalka → et. jalg, “perna”) e caiu o -n do genitivo (fi. talon → et. maja, “da casa”), por isso no estoniano o nominativo e o genitivo muitas vezes se escrevem igual. O padrão estoniano não tem harmonia vocálica (o finlandês tem), mas tem o “õ”, que o finlandês não tem. A negação não se conjuga: o finlandês diz en, et, ei, emme…, o estoniano diz “ei” para todos. E onde o finlandês põe sufixo possessivo (talossani, “na minha casa”), o estoniano usa o pronome: minu majas.',
         table: {
           head: ['Finlandês', 'Estoniano', 'Português'],
           rows: [
@@ -3111,14 +3111,14 @@ export const GRAMMAR_ET: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['Eesti keeles on eitussõna „ei“ kõigis isikutes sama.', 'Em estoniano, a palavra de negação «ei» é a mesma em todas as pessoas.'],
+          ['Eesti keeles on eitussõna „ei“ kõigis isikutes sama.', 'Em estoniano, a palavra de negação ‘ei’ é a mesma em todas as pessoas.'],
           ['Eesti kirjakeeles ei ole vokaalharmooniat.', 'O estoniano padrão não tem harmonia vocálica.'],
           ['Soome keeles ei ole õ-tähte.', 'O finlandês não tem a letra õ.'],
         ],
       },
       {
         heading: 'Os falsos amigos',
-        text: 'Como as palavras se parecem, o erro é confiar demais. O caso mais famoso é «hallitus»: para o finlandês é o governo; para o estoniano, o mofo. Os finlandeses e os estonianos adoram contar essas trocas em piadas. Aprenda estes pares antes de viajar de balsa de Tallinn a Helsinque.',
+        text: 'Como as palavras se parecem, o erro é confiar demais. O caso mais famoso é “hallitus”: para o finlandês é o governo; para o estoniano, o mofo. Os finlandeses e os estonianos adoram contar essas trocas em piadas. Aprenda estes pares antes de viajar de balsa de Tallinn a Helsinque.',
         table: {
           head: ['Estoniano', 'Sentido em estoniano', 'Finlandês', 'Sentido em finlandês'],
           rows: [
@@ -3138,7 +3138,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Como tirar proveito do parentesco',
-        text: 'Se você já estudou finlandês, use-o como mapa, não como dicionário: a estrutura dos casos (-ssa × -s, -sta × -st, -lla × -l) é quase a mesma, só mais curta no estoniano. Se o estoniano é a sua primeira língua fínica, o finlandês depois vai parecer uma versão «mais longa» do que você já sabe. Nos dois sentidos, desconfie das palavras idênticas: quanto mais parecida, mais vale conferir.',
+        text: 'Se você já estudou finlandês, use-o como mapa, não como dicionário: a estrutura dos casos (-ssa × -s, -sta × -st, -lla × -l) é quase a mesma, só mais curta no estoniano. Se o estoniano é a sua primeira língua fínica, o finlandês depois vai parecer uma versão “mais longa” do que você já sabe. Nos dois sentidos, desconfie das palavras idênticas: quanto mais parecida, mais vale conferir.',
         table: {
           head: ['Caso', 'Finlandês', 'Estoniano', 'Português'],
           rows: [
@@ -3155,35 +3155,35 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar «hallitus» para falar do governo em estoniano: o certo é «valitsus»; «hallitus» é o mofo.',
-      'Conjugar a negação como no finlandês: em estoniano é sempre «ei» (ma ei tea, me ei tea).',
-      'Colocar sufixo possessivo à finlandesa: em estoniano se diz «minu majas», não «majassani».',
-      'Achar que «halb» quer dizer barato: barato é «odav»; «halb» é ruim.',
+      'Usar “hallitus” para falar do governo em estoniano: o certo é “valitsus”; “hallitus” é o mofo.',
+      'Conjugar a negação como no finlandês: em estoniano é sempre “ei” (ma ei tea, me ei tea).',
+      'Colocar sufixo possessivo à finlandesa: em estoniano se diz “minu majas”, não “majassani”.',
+      'Achar que “halb” quer dizer barato: barato é “odav”; “halb” é ruim.',
     ],
     quiz: [
       {
-        question: 'O que significa «hallitus» em estoniano?',
+        question: 'O que significa “hallitus” em estoniano?',
         options: ['mofo', 'governo', 'castelo'],
         answer: 'mofo',
-        explanation: 'Em finlandês «hallitus» é o governo; em estoniano, governo é «valitsus».',
+        explanation: 'Em finlandês “hallitus” é o governo; em estoniano, governo é “valitsus”.',
       },
       {
-        question: 'Como se diz «nós não sabemos» em estoniano?',
+        question: 'Como se diz “nós não sabemos” em estoniano?',
         options: ['me ei tea', 'me emme tea', 'meie ei teame'],
         answer: 'me ei tea',
-        explanation: 'A negação «ei» não se conjuga e o verbo fica na forma negativa sem pessoa: tea.',
+        explanation: 'A negação “ei” não se conjuga e o verbo fica na forma negativa sem pessoa: tea.',
       },
       {
-        question: 'Qual é o equivalente estoniano do finlandês «talossani» (na minha casa)?',
+        question: 'Qual é o equivalente estoniano do finlandês “talossani” (na minha casa)?',
         options: ['minu majas', 'majassani', 'minu majast'],
         answer: 'minu majas',
-        explanation: 'O estoniano usa o pronome «minu» + o inessivo -s; «majast» seria «da casa».',
+        explanation: 'O estoniano usa o pronome “minu” + o inessivo -s; “majast” seria “da casa”.',
       },
       {
-        question: 'O que é «linn» em estoniano?',
+        question: 'O que é “linn” em estoniano?',
         options: ['cidade', 'castelo', 'rio'],
         answer: 'cidade',
-        explanation: 'O finlandês «linna» é castelo; o estoniano «linn» é cidade.',
+        explanation: 'O finlandês “linna” é castelo; o estoniano “linn” é cidade.',
       },
       {
         question: 'Qual letra o estoniano tem e o finlandês não?',
@@ -3215,14 +3215,14 @@ export const GRAMMAR_ET: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['Sõna „köök“ on tulnud saksa keelest.', 'A palavra «köök» veio do alemão.'],
+          ['Sõna „köök“ on tulnud saksa keelest.', 'A palavra ‘köök’ veio do alemão.'],
           ['Me istume köögis ja sööme kartuleid.', 'Estamos sentados na cozinha comendo batatas.'],
           ['Pane müts pähe, väljas on külm!', 'Põe o gorro, lá fora está frio!'],
         ],
       },
       {
         heading: 'A camada russa antiga e a sueca',
-        text: 'Muito antes do alemão, o estoniano já trocava palavras com os eslavos do leste. Do russo antigo vieram termos de comércio e de igreja: raamat (livro, de «gramota», documento), turg (mercado), rist (cruz), pirukas (pastel). O período sueco (séculos XVI a XVIII) deixou menos palavras, mas uma instituição: a Universidade de Tartu, fundada em 1632 pelo rei da Suécia. E até a Segunda Guerra viviam na costa oeste, perto de Haapsalu, os suecos da costa (rannarootslased).',
+        text: 'Muito antes do alemão, o estoniano já trocava palavras com os eslavos do leste. Do russo antigo vieram termos de comércio e de igreja: raamat (livro, de “gramota”, documento), turg (mercado), rist (cruz), pirukas (pastel). O período sueco (séculos XVI a XVIII) deixou menos palavras, mas uma instituição: a Universidade de Tartu, fundada em 1632 pelo rei da Suécia. E até a Segunda Guerra viviam na costa oeste, perto de Haapsalu, os suecos da costa (rannarootslased).',
         examples: [
           ['Turul müüakse värsket kala.', 'No mercado se vende peixe fresco.'],
           ['Tartu ülikool asutati 1632. aastal.', 'A Universidade de Tartu foi fundada em 1632.'],
@@ -3240,7 +3240,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Empréstimos dentro da gramática',
-        text: 'Toda palavra que entra no estoniano ganha as 14 formas de caso e entra num tipo de declinação. Por isso «raamat» faz raamatu (genitivo) e raamatut (partitivo), exatamente como uma palavra nativa. As palavras novas do inglês seguem o mesmo caminho, às vezes com grafia adaptada: džäss (jazz), džinsid (jeans), e se declinam normalmente.',
+        text: 'Toda palavra que entra no estoniano ganha as 14 formas de caso e entra num tipo de declinação. Por isso “raamat” faz raamatu (genitivo) e raamatut (partitivo), exatamente como uma palavra nativa. As palavras novas do inglês seguem o mesmo caminho, às vezes com grafia adaptada: džäss (jazz), džinsid (jeans), e se declinam normalmente.',
         table: {
           head: ['Nominativo', 'Genitivo', 'Partitivo', 'Inessivo'],
           rows: [
@@ -3257,20 +3257,20 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Esquecer a gradação nos empréstimos antigos: é köögis (na cozinha), não «köökis».',
-      'Usar o inessivo com «turg»: o mercado pede o adessivo, turul (no mercado), como uma superfície.',
+      'Esquecer a gradação nos empréstimos antigos: é köögis (na cozinha), não “köökis”.',
+      'Usar o inessivo com “turg”: o mercado pede o adessivo, turul (no mercado), como uma superfície.',
       'Tratar o russo na Estônia como assunto de piada ou de rótulo: é a língua materna de muitos vizinhos; mantenha o tom neutro.',
-      'Achar que «raamat» é parente do finlandês «raamattu» só por acaso: os dois vêm do mesmo empréstimo eslavo, mas o finlandês ficou com o sentido de Bíblia.',
+      'Achar que “raamat” é parente do finlandês “raamattu” só por acaso: os dois vêm do mesmo empréstimo eslavo, mas o finlandês ficou com o sentido de Bíblia.',
     ],
     quiz: [
       {
-        question: 'De que língua veio a palavra «köök» (cozinha)?',
+        question: 'De que língua veio a palavra “köök” (cozinha)?',
         options: ['saksa keel', 'vene keel', 'rootsi keel'],
         answer: 'saksa keel',
         explanation: 'Köök vem do alemão Küche; a camada alemã é a maior dos empréstimos antigos.',
       },
       {
-        question: 'Qual é o inessivo de «köök»?',
+        question: 'Qual é o inessivo de “köök”?',
         options: ['köögis', 'köökis', 'köögas'],
         answer: 'köögis',
         explanation: 'A gradação consonantal troca o k por g nas formas fracas: köök → köögi → köögis.',
@@ -3279,7 +3279,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         question: 'Qual palavra veio do russo antigo?',
         options: ['raamat', 'tool', 'kartul'],
         answer: 'raamat',
-        explanation: 'Raamat vem de «gramota»; tool e kartul vieram do alemão.',
+        explanation: 'Raamat vem de “gramota”; tool e kartul vieram do alemão.',
       },
       {
         question: 'Em que ano foi fundada a Universidade de Tartu?',
@@ -3288,7 +3288,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         explanation: 'Ela foi fundada no período sueco, em 1632.',
       },
       {
-        question: 'Como se diz «no mercado»?',
+        question: 'Como se diz “no mercado”?',
         options: ['turul', 'turus', 'turgus'],
         answer: 'turul',
         explanation: 'Mercado pede o adessivo (-l): turul.',
@@ -3305,7 +3305,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
     sections: [
       {
         heading: 'Os sufixos que fazem substantivos',
-        text: 'O estoniano forma substantivos com alguns sufixos muito produtivos. O -mine transforma qualquer verbo em nome da ação (lugema → lugemine, «a leitura»). O -us forma nomes de qualidade a partir de adjetivos (vaba → vabadus, «liberdade») e nomes de resultado a partir de verbos (ehitama → ehitus, «a construção»). O -ja faz quem age (õpetama → õpetaja, «professor»), e o -la, o lugar (söök → söökla, «refeitório»; haige → haigla, «hospital»).',
+        text: 'O estoniano forma substantivos com alguns sufixos muito produtivos. O -mine transforma qualquer verbo em nome da ação (lugema → lugemine, “a leitura”). O -us forma nomes de qualidade a partir de adjetivos (vaba → vabadus, “liberdade”) e nomes de resultado a partir de verbos (ehitama → ehitus, “a construção”). O -ja faz quem age (õpetama → õpetaja, “professor”), e o -la, o lugar (söök → söökla, “refeitório”; haige → haigla, “hospital”).',
         table: {
           head: ['Sufixo', 'Base', 'Derivado', 'Português'],
           rows: [
@@ -3324,7 +3324,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'O objeto da nominalização vai para o genitivo',
-        text: 'Quando o verbo vira substantivo com -mine, o objeto dele passa para o genitivo e vem antes: «ehitama maja» (construir uma casa) vira «maja ehitamine» (a construção da casa). E o próprio -mine se declina como um substantivo comum: genitivo -mise, partitivo -mist, adessivo -misel. Com o adessivo, ele ainda indica «ao fazer, durante»: lugemisel, «ao ler».',
+        text: 'Quando o verbo vira substantivo com -mine, o objeto dele passa para o genitivo e vem antes: “ehitama maja” (construir uma casa) vira “maja ehitamine” (a construção da casa). E o próprio -mine se declina como um substantivo comum: genitivo -mise, partitivo -mist, adessivo -misel. Com o adessivo, ele ainda indica “ao fazer, durante”: lugemisel, “ao ler”.',
         table: {
           head: ['Caso', 'Forma', 'Exemplo'],
           rows: [
@@ -3342,7 +3342,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Quando o estilo nominal pesa demais',
-        text: 'Os textos de repartição adoram a fórmula «a realização de X acontece»: «X-i läbiviimine toimub». Os guias de estilo estonianos pedem o contrário: use o verbo. Três conselhos clássicos da norma: troque «-mine toimub» por um verbo no impessoal (-takse); troque a passiva com «poolt» (valitsuse poolt, «pelo governo») por uma frase ativa; e não use «antud» no sentido de «este» (antud juhul → sel juhul).',
+        text: 'Os textos de repartição adoram a fórmula “a realização de X acontece”: “X-i läbiviimine toimub”. Os guias de estilo estonianos pedem o contrário: use o verbo. Três conselhos clássicos da norma: troque “-mine toimub” por um verbo no impessoal (-takse); troque a passiva com “poolt” (valitsuse poolt, “pelo governo”) por uma frase ativa; e não use “antud” no sentido de “este” (antud juhul → sel juhul).',
         table: {
           head: ['Pesado', 'Mais claro', 'Português'],
           rows: [
@@ -3364,34 +3364,34 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         examples: [
           ['Aruande kirjutamine võttis rohkem aega, kui arvasin.', 'Escrever o relatório levou mais tempo do que eu pensava.'],
           ['Lepingu allkirjastamine lükati edasi.', 'A assinatura do contrato foi adiada.'],
-          ['Kirjuta lihtsalt: „Me kontrollime andmeid.“', 'Escreva simplesmente: «Nós verificamos os dados».'],
+          ['Kirjuta lihtsalt: „Me kontrollime andmeid.“', 'Escreva simplesmente: ‘Nós verificamos os dados’.'],
         ],
       },
     ],
     pitfalls: [
-      'Pôr o objeto depois, como no português: é «maja ehitamine» (genitivo antes), não «ehitamine maja».',
-      'Encher o texto de «toimub»: «Koosolek toimub» ainda passa, mas «läbiviimine toimub» soa burocrático.',
-      'Traduzir a passiva do português com «poolt»: em estoniano soa pesado; prefira a frase ativa ou o impessoal sem agente.',
-      'Usar «antud» como «este, esse»: a norma pede «see», «käesolev» (nos textos oficiais) ou «sel juhul».',
+      'Pôr o objeto depois, como no português: é “maja ehitamine” (genitivo antes), não “ehitamine maja”.',
+      'Encher o texto de “toimub”: “Koosolek toimub” ainda passa, mas “läbiviimine toimub” soa burocrático.',
+      'Traduzir a passiva do português com “poolt”: em estoniano soa pesado; prefira a frase ativa ou o impessoal sem agente.',
+      'Usar “antud” como “este, esse”: a norma pede “see”, “käesolev” (nos textos oficiais) ou “sel juhul”.',
     ],
     quiz: [
       {
-        question: 'Qual é o nome da ação de «õppima» (estudar)?',
+        question: 'Qual é o nome da ação de “õppima” (estudar)?',
         options: ['õppimine', 'õppija', 'õppus'],
         answer: 'õppimine',
         explanation: 'O -mine forma o nome da ação; õppija é quem estuda.',
       },
       {
-        question: 'Como fica «construir a casa» nominalizado?',
+        question: 'Como fica “construir a casa” nominalizado?',
         options: ['maja ehitamine', 'maja ehitamist', 'majas ehitamine'],
         answer: 'maja ehitamine',
         explanation: 'O objeto vai para o genitivo, antes do substantivo em -mine.',
       },
       {
-        question: 'Qual é a versão recomendada de «Otsus tehti valitsuse poolt»?',
+        question: 'Qual é a versão recomendada de “Otsus tehti valitsuse poolt”?',
         options: ['Otsuse tegi valitsus.', 'Otsuse tegemine toimus valitsuse poolt.', 'Antud otsus tehti valitsusel.'],
         answer: 'Otsuse tegi valitsus.',
-        explanation: 'A norma recomenda a frase ativa em vez da passiva com «poolt».',
+        explanation: 'A norma recomenda a frase ativa em vez da passiva com “poolt”.',
       },
       {
         question: 'Que palavra designa o lugar onde se come (refeitório)?',
@@ -3400,10 +3400,10 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         explanation: 'O -la forma nomes de lugar (söök → söökla); sööja é quem come e söömine, o ato de comer.',
       },
       {
-        question: 'O que quer dizer «lugemisel»?',
+        question: 'O que quer dizer “lugemisel”?',
         options: ['ao ler', 'para ler', 'sem ler'],
         answer: 'ao ler',
-        explanation: 'O adessivo do -mine indica o momento da ação: lugemisel, «durante a leitura».',
+        explanation: 'O adessivo do -mine indica o momento da ação: lugemisel, “durante a leitura”.',
       },
     ],
   },
@@ -3412,11 +3412,11 @@ export const GRAMMAR_ET: GrammarTopic[] = [
     level: 'C1.2',
     title: 'Oskuskeel: leis, termos técnicos e a saúde',
     emoji: '⚖️',
-    summary: 'A linguagem especializada (oskuskeel) tem regras próprias: as leis se citam por §, lõige e punkt, as obrigações vêm com «peab», «ei tohi» e «on kohustatud», e os termos técnicos preferem palavras compostas nativas (arvuti, tarkvara, andmebaas) às importadas.',
+    summary: 'A linguagem especializada (oskuskeel) tem regras próprias: as leis se citam por §, lõige e punkt, as obrigações vêm com “peab”, “ei tohi” e “on kohustatud”, e os termos técnicos preferem palavras compostas nativas (arvuti, tarkvara, andmebaas) às importadas.',
     sections: [
       {
         heading: 'Como se lê uma lei',
-        text: 'As leis (seadus) e os regulamentos (määrus) estonianos se dividem em parágrafos (paragrahv, §), que se dividem em alíneas (lõige, lg) e incisos (punkt, p). Na citação, «§ 12 lg 3 p 2» se lê em cadeia de genitivos: «paragrahvi 12 lõike 3 punkt 2». Para dizer «de acordo com», o texto jurídico usa «vastavalt» com o alativo (-le) ou «järgi» com o genitivo.',
+        text: 'As leis (seadus) e os regulamentos (määrus) estonianos se dividem em parágrafos (paragrahv, §), que se dividem em alíneas (lõige, lg) e incisos (punkt, p). Na citação, “§ 12 lg 3 p 2” se lê em cadeia de genitivos: “paragrahvi 12 lõike 3 punkt 2”. Para dizer “de acordo com”, o texto jurídico usa “vastavalt” com o alativo (-le) ou “järgi” com o genitivo.',
         table: {
           head: ['Abreviatura', 'Palavra', 'Português'],
           rows: [
@@ -3434,7 +3434,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Dever, poder e proibir',
-        text: 'O texto normativo gira em torno de poucos verbos: «peab» (deve, com o supino -ma: peab esitama), «võib» (pode), «ei tohi» (não pode, é proibido), «on kohustatud» (é obrigado, com o supino -ma) e «on keelatud» (é proibido). A fórmula «kui seadusest ei tulene teisiti» quer dizer «salvo disposição legal em contrário». E muita regra vem no impessoal, sem sujeito: «Taotlus vaadatakse läbi kümne päeva jooksul».',
+        text: 'O texto normativo gira em torno de poucos verbos: “peab” (deve, com o supino -ma: peab esitama), “võib” (pode), “ei tohi” (não pode, é proibido), “on kohustatud” (é obrigado, com o supino -ma) e “on keelatud” (é proibido). A fórmula “kui seadusest ei tulene teisiti” quer dizer “salvo disposição legal em contrário”. E muita regra vem no impessoal, sem sujeito: “Taotlus vaadatakse läbi kümne päeva jooksul”.',
         table: {
           head: ['Estoniano', 'Português'],
           rows: [
@@ -3453,7 +3453,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Termos técnicos: o estoniano prefere compor',
-        text: 'Onde o português importa palavras, o estoniano muitas vezes compõe as suas. O computador é «arvuti» (de arv, «número»); o software é «tarkvara» («mercadoria esperta») e o hardware, «riistvara» («mercadoria de ferramenta»); o banco de dados é «andmebaas». Nas compostas, a última parte é o núcleo e é ela que recebe os casos: andmebaasis, «no banco de dados». O país é famoso pelo governo digital, e daí vêm palavras do dia a dia como ID-kaart, digiallkiri (assinatura digital) e e-kiri (e-mail).',
+        text: 'Onde o português importa palavras, o estoniano muitas vezes compõe as suas. O computador é “arvuti” (de arv, “número”); o software é “tarkvara” (“mercadoria esperta”) e o hardware, “riistvara” (“mercadoria de ferramenta”); o banco de dados é “andmebaas”. Nas compostas, a última parte é o núcleo e é ela que recebe os casos: andmebaasis, “no banco de dados”. O país é famoso pelo governo digital, e daí vêm palavras do dia a dia como ID-kaart, digiallkiri (assinatura digital) e e-kiri (e-mail).',
         table: {
           head: ['Termo', 'Partes', 'Português'],
           rows: [
@@ -3473,7 +3473,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Na saúde',
-        text: 'No consultório, o vocabulário mistura palavras nativas e internacionais. O primeiro médico é o «perearst» (médico de família); a receita é «retsept»; a febre, «palavik»; a pressão arterial, «vererõhk» («pressão do sangue»). O atestado de afastamento do trabalho, oficialmente «töövõimetusleht», todo mundo chama de «haigusleht». As palavras internacionais ganham grafia estoniana: diagnoos, bioloogia, keemia.',
+        text: 'No consultório, o vocabulário mistura palavras nativas e internacionais. O primeiro médico é o “perearst” (médico de família); a receita é “retsept”; a febre, “palavik”; a pressão arterial, “vererõhk” (“pressão do sangue”). O atestado de afastamento do trabalho, oficialmente “töövõimetusleht”, todo mundo chama de “haigusleht”. As palavras internacionais ganham grafia estoniana: diagnoos, bioloogia, keemia.',
         examples: [
           ['Perearst kirjutas mulle retsepti.', 'A médica de família me passou uma receita.'],
           ['Mul on palavik ja kõrge vererõhk.', 'Estou com febre e pressão alta.'],
@@ -3482,38 +3482,38 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Confundir «ei pea» com «ei tohi»: «ei pea» é «não precisa»; «ei tohi» é «não pode, é proibido».',
-      'Usar o infinitivo -da depois de «peab» ou «on kohustatud»: o certo é o supino, peab esitama, on kohustatud teavitama.',
-      'Declinar a primeira parte da composta: é andmebaasis, não «andmetesbaas».',
+      'Confundir “ei pea” com “ei tohi”: “ei pea” é “não precisa”; “ei tohi” é “não pode, é proibido”.',
+      'Usar o infinitivo -da depois de “peab” ou “on kohustatud”: o certo é o supino, peab esitama, on kohustatud teavitama.',
+      'Declinar a primeira parte da composta: é andmebaasis, não “andmetesbaas”.',
       'Escrever as palavras internacionais à portuguesa: diagnoos, keemia, bioloogia, com a grafia estoniana.',
     ],
     quiz: [
       {
-        question: 'O que significa «ei tohi»?',
+        question: 'O que significa “ei tohi”?',
         options: ['é proibido', 'é opcional', 'é obrigatório'],
         answer: 'é proibido',
-        explanation: '«Ei tohi» proíbe; «ei pea» só tira a obrigação.',
+        explanation: '“Ei tohi” proíbe; “ei pea” só tira a obrigação.',
       },
       {
-        question: 'Como se lê «§ 12 lg 3»?',
+        question: 'Como se lê “§ 12 lg 3”?',
         options: ['paragrahvi 12 lõige 3', 'paragrahv 12 lõikes 3', 'paragrahvile 12 lõige 3'],
         answer: 'paragrahvi 12 lõige 3',
         explanation: 'É uma cadeia de genitivos: a alínea 3 do parágrafo 12.',
       },
       {
-        question: 'Qual forma vem depois de «on kohustatud»?',
+        question: 'Qual forma vem depois de “on kohustatud”?',
         options: ['teavitama', 'teavitada', 'teavitanud'],
         answer: 'teavitama',
-        explanation: '«On kohustatud» pede o supino -ma.',
+        explanation: '“On kohustatud” pede o supino -ma.',
       },
       {
-        question: 'O que é «tarkvara»?',
+        question: 'O que é “tarkvara”?',
         options: ['software', 'hardware', 'computador'],
         answer: 'software',
         explanation: 'Tark (esperto) + vara (mercadoria); o hardware é riistvara e o computador, arvuti.',
       },
       {
-        question: 'Quem é o «perearst»?',
+        question: 'Quem é o “perearst”?',
         options: ['o médico de família', 'o farmacêutico', 'o enfermeiro'],
         answer: 'o médico de família',
         explanation: 'Pere (família) + arst (médico).',
@@ -3525,11 +3525,11 @@ export const GRAMMAR_ET: GrammarTopic[] = [
     level: 'C1.2',
     title: 'Estilo jornalístico e acadêmico',
     emoji: '📰',
-    summary: 'A notícia estoniana tem manchetes curtas, com dois-pontos para dizer quem falou, e cita com «sõnul», «teatas» e o modo indireto -vat. O texto acadêmico usa o impessoal (käsitletakse, uuritakse), fórmulas fixas («Töö eesmärk on…») e uma porção de abreviaturas: nt, jne, vt, st, lk.',
+    summary: 'A notícia estoniana tem manchetes curtas, com dois-pontos para dizer quem falou, e cita com “sõnul”, “teatas” e o modo indireto -vat. O texto acadêmico usa o impessoal (käsitletakse, uuritakse), fórmulas fixas (“Töö eesmärk on…”) e uma porção de abreviaturas: nt, jne, vt, st, lk.',
     sections: [
       {
         heading: 'A manchete',
-        text: 'Manchetes estonianas cortam tudo o que podem. Duas marcas saltam aos olhos: o nome de quem falou seguido de dois-pontos («Valitsus: …»), que equivale ao nosso «diz governo»; e o passado impessoal para contar o que aconteceu sem dizer quem fez (avati, «foi aberto»; peeti kinni, «foi detido»). O corpo da notícia começa com o fato principal e responde logo a kes, mis, kus e millal.',
+        text: 'Manchetes estonianas cortam tudo o que podem. Duas marcas saltam aos olhos: o nome de quem falou seguido de dois-pontos (“Valitsus: …”), que equivale ao nosso “diz governo”; e o passado impessoal para contar o que aconteceu sem dizer quem fez (avati, “foi aberto”; peeti kinni, “foi detido”). O corpo da notícia começa com o fato principal e responde logo a kes, mis, kus e millal.',
         examples: [
           ['Valitsus: maksud järgmisel aastal ei tõuse', 'Governo diz que impostos não sobem no ano que vem'],
           ['Tartus avati uus raamatukogu', 'Nova biblioteca é inaugurada em Tartu'],
@@ -3538,7 +3538,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Citar sem assumir: sõnul, teatas e -vat',
-        text: 'O jornalista mostra que a informação é de outra pessoa de três jeitos. Com «X-i sõnul» (segundo X, com o genitivo). Com os verbos de citação no passado: teatas (comunicou), ütles (disse), lisas (acrescentou), kinnitas (confirmou). E com o modo indireto -vat, que você viu no B1.4: «Sild olevat valmis» significa «a ponte estaria pronta, dizem». O advérbio «väidetavalt» (supostamente) faz o mesmo papel.',
+        text: 'O jornalista mostra que a informação é de outra pessoa de três jeitos. Com “X-i sõnul” (segundo X, com o genitivo). Com os verbos de citação no passado: teatas (comunicou), ütles (disse), lisas (acrescentou), kinnitas (confirmou). E com o modo indireto -vat, que você viu no B1.4: “Sild olevat valmis” significa “a ponte estaria pronta, dizem”. O advérbio “väidetavalt” (supostamente) faz o mesmo papel.',
         table: {
           head: ['Recurso', 'Exemplo', 'Português'],
           rows: [
@@ -3556,7 +3556,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'O texto acadêmico',
-        text: 'O artigo científico estoniano evita o «eu». Usa o impessoal (käsitletakse, «trata-se»; uuriti, «foi estudado»), às vezes o «nós» (me) e, na hora da opinião, «autori arvates» (na opinião do autor). O estilo tem fórmulas fixas para cada parte do texto, e «käesolev» (o presente) ainda é comum aqui: «käesolevas artiklis», «neste artigo».',
+        text: 'O artigo científico estoniano evita o “eu”. Usa o impessoal (käsitletakse, “trata-se”; uuriti, “foi estudado”), às vezes o “nós” (me) e, na hora da opinião, “autori arvates” (na opinião do autor). O estilo tem fórmulas fixas para cada parte do texto, e “käesolev” (o presente) ainda é comum aqui: “käesolevas artiklis”, “neste artigo”.',
         table: {
           head: ['Parte', 'Fórmula', 'Português'],
           rows: [
@@ -3575,7 +3575,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Abreviaturas e datas',
-        text: 'As abreviaturas estonianas se escrevem em minúscula e, na maioria, sem ponto. Os números ordinais levam ponto: «12. märtsil» (em 12 de março), «2024. aastal» (em 2024). Os meses se escrevem com minúscula.',
+        text: 'As abreviaturas estonianas se escrevem em minúscula e, na maioria, sem ponto. Os números ordinais levam ponto: “12. märtsil” (em 12 de março), “2024. aastal” (em 2024). Os meses se escrevem com minúscula.',
         table: {
           head: ['Abreviatura', 'Por extenso', 'Português'],
           rows: [
@@ -3596,17 +3596,17 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Ler o -vat como fato: «Sild olevat valmis» não garante nada, só relata o que se diz.',
-      'Pôr o nome no nominativo com «sõnul»: é «linnapea sõnul», com genitivo.',
-      'Escrever os meses com maiúscula ou a data sem o ponto do ordinal: é «12. märtsil», não «12 Märtsil».',
-      'Encher o artigo de «mina»: no estoniano acadêmico, o impessoal e o «me» soam mais naturais.',
+      'Ler o -vat como fato: “Sild olevat valmis” não garante nada, só relata o que se diz.',
+      'Pôr o nome no nominativo com “sõnul”: é “linnapea sõnul”, com genitivo.',
+      'Escrever os meses com maiúscula ou a data sem o ponto do ordinal: é “12. märtsil”, não “12 Märtsil”.',
+      'Encher o artigo de “mina”: no estoniano acadêmico, o impessoal e o “me” soam mais naturais.',
     ],
     quiz: [
       {
-        question: 'O que significa «Linnapea sõnul…»?',
+        question: 'O que significa “Linnapea sõnul…”?',
         options: ['segundo o prefeito', 'para o prefeito', 'sem o prefeito'],
         answer: 'segundo o prefeito',
-        explanation: '«Sõnul» com o genitivo atribui a informação a alguém.',
+        explanation: '“Sõnul” com o genitivo atribui a informação a alguém.',
       },
       {
         question: 'Qual forma relata algo sem garantir que é verdade?',
@@ -3615,22 +3615,22 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         explanation: 'O -vat é o modo indireto; oli é passado e oleks, condicional.',
       },
       {
-        question: 'Como se escreve «em 12 de março»?',
+        question: 'Como se escreve “em 12 de março”?',
         options: ['12. märtsil', '12 Märtsil', '12. Märts'],
         answer: '12. märtsil',
         explanation: 'Ordinal com ponto, mês com minúscula e o adessivo -l para a data.',
       },
       {
-        question: 'O que quer dizer «jne»?',
+        question: 'O que quer dizer “jne”?',
         options: ['ja nii edasi', 'ja teised', 'järgmine'],
         answer: 'ja nii edasi',
-        explanation: '«Jne» equivale ao nosso «etc.».',
+        explanation: '“Jne” equivale ao nosso “etc.”.',
       },
       {
         question: 'Como começa tipicamente um artigo acadêmico?',
         options: ['Käesolevas artiklis käsitletakse…', 'Mina kirjutan nüüd…', 'Tere, lugeja!'],
         answer: 'Käesolevas artiklis käsitletakse…',
-        explanation: 'O impessoal com «käesolev» é a fórmula clássica de abertura.',
+        explanation: 'O impessoal com “käesolev” é a fórmula clássica de abertura.',
       },
     ],
   },
@@ -3644,7 +3644,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
     sections: [
       {
         heading: 'Como nasceu a epopeia',
-        text: 'Na primeira metade do século XIX, o médico Friedrich Robert Faehlmann começou a juntar as lendas sobre o gigante Kalevipoeg, «o filho de Kalev». Depois da morte dele, em 1850, o também médico Friedrich Reinhold Kreutzwald, que clinicava em Võru, continuou o trabalho e escreveu a epopeia em vinte cantos e cerca de dezenove mil versos, misturando canções populares autênticas com versos seus. Ela saiu em edição bilíngue (estoniano e alemão) entre 1857 e 1861, e em 1862 ganhou uma edição popular, impressa em Kuopio, na Finlândia. Para um povo que ainda lutava para ver a sua língua levada a sério, ter uma epopeia foi um marco do «despertar nacional».',
+        text: 'Na primeira metade do século XIX, o médico Friedrich Robert Faehlmann começou a juntar as lendas sobre o gigante Kalevipoeg, “o filho de Kalev”. Depois da morte dele, em 1850, o também médico Friedrich Reinhold Kreutzwald, que clinicava em Võru, continuou o trabalho e escreveu a epopeia em vinte cantos e cerca de dezenove mil versos, misturando canções populares autênticas com versos seus. Ela saiu em edição bilíngue (estoniano e alemão) entre 1857 e 1861, e em 1862 ganhou uma edição popular, impressa em Kuopio, na Finlândia. Para um povo que ainda lutava para ver a sua língua levada a sério, ter uma epopeia foi um marco do “despertar nacional”.',
         examples: [
           ['Kalevipoja pani kokku Friedrich Reinhold Kreutzwald.', 'Quem compôs o Kalevipoeg foi Friedrich Reinhold Kreutzwald.'],
           ['Eepos ilmus aastatel 1857–1861.', 'A epopeia foi publicada entre 1857 e 1861.'],
@@ -3680,7 +3680,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Declinando o herói',
-        text: 'O nome do herói é uma palavra composta: Kalevi (genitivo de Kalev) + poeg (filho). Só a última parte se declina, e com gradação: poeg → poja → poega. Por isso se diz «Kalevipoja lugu» (a história de Kalevipoeg) e «Ma loen Kalevipoega» (estou lendo o Kalevipoeg, com o partitivo da ação em andamento).',
+        text: 'O nome do herói é uma palavra composta: Kalevi (genitivo de Kalev) + poeg (filho). Só a última parte se declina, e com gradação: poeg → poja → poega. Por isso se diz “Kalevipoja lugu” (a história de Kalevipoeg) e “Ma loen Kalevipoega” (estou lendo o Kalevipoeg, com o partitivo da ação em andamento).',
         table: {
           head: ['Caso', 'Forma'],
           rows: [
@@ -3698,8 +3698,8 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Chamar o Kalevipoeg de «coletânea de canções populares»: é uma obra autoral de Kreutzwald, feita a partir do folclore.',
-      'Declinar o nome inteiro ou esquecer a gradação: é Kalevipoja, não «Kalevipoegi».',
+      'Chamar o Kalevipoeg de “coletânea de canções populares”: é uma obra autoral de Kreutzwald, feita a partir do folclore.',
+      'Declinar o nome inteiro ou esquecer a gradação: é Kalevipoja, não “Kalevipoegi”.',
       'Confundir o Kalevipoeg com o Kalevala finlandês: são obras parentes, de autores e países diferentes.',
       'Achar que o regilaul rima no fim do verso: ele se apoia na aliteração e no paralelismo, não na rima.',
     ],
@@ -3717,7 +3717,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         explanation: 'O túmulo de Kalev é a colina de Toompea; o lago nasceu do choro de Linda.',
       },
       {
-        question: 'Qual é o genitivo de «Kalevipoeg»?',
+        question: 'Qual é o genitivo de “Kalevipoeg”?',
         options: ['Kalevipoja', 'Kalevipoegi', 'Kalevi poegi'],
         answer: 'Kalevipoja',
         explanation: 'Só a última parte se declina, com gradação: poeg → poja.',
@@ -3741,11 +3741,11 @@ export const GRAMMAR_ET: GrammarTopic[] = [
     level: 'C2',
     title: 'Peterson e Koidula: a poesia que inventou a pátria',
     emoji: '🕊️',
-    summary: 'Kristjan Jaak Peterson (1801–1822) perguntou se a língua da sua terra podia subir ao céu na poesia; Lydia Koidula (1843–1886) respondeu com «Mu isamaa on minu arm», cantado até hoje no fim de cada festival de canto. Os dois ensinam a ler a poesia estoniana: formas encurtadas (sull’, kel), casos pouco usados na fala e a ordem livre do verso.',
+    summary: 'Kristjan Jaak Peterson (1801–1822) perguntou se a língua da sua terra podia subir ao céu na poesia; Lydia Koidula (1843–1886) respondeu com “Mu isamaa on minu arm”, cantado até hoje no fim de cada festival de canto. Os dois ensinam a ler a poesia estoniana: formas encurtadas (sull’, kel), casos pouco usados na fala e a ordem livre do verso.',
     sections: [
       {
         heading: 'Kristjan Jaak Peterson e o Dia da Língua Materna',
-        text: 'Peterson nasceu em Riga, estudou em Tartu e morreu com apenas 21 anos; os seus poemas só foram publicados quase um século depois. Mesmo assim, virou o símbolo do poeta estoniano: o dia do seu nascimento, 14 de março, é o Dia da Língua Materna (emakeelepäev). Na ode «Kuu» (A lua), ele pergunta se a língua de um povo de camponeses pode chegar à eternidade pela poesia. Os versos mais famosos: «Kas siis selle maa keel / laulutuules ei või / taevani tõustes üles / igavikku omale otsida?»',
+        text: 'Peterson nasceu em Riga, estudou em Tartu e morreu com apenas 21 anos; os seus poemas só foram publicados quase um século depois. Mesmo assim, virou o símbolo do poeta estoniano: o dia do seu nascimento, 14 de março, é o Dia da Língua Materna (emakeelepäev). Na ode “Kuu” (A lua), ele pergunta se a língua de um povo de camponeses pode chegar à eternidade pela poesia. Os versos mais famosos: “Kas siis selle maa keel / laulutuules ei või / taevani tõustes üles / igavikku omale otsida?”',
         examples: [
           ['Kas siis selle maa keel laulutuules ei või taevani tõustes üles igavikku omale otsida?', 'Será que a língua desta terra, no vento do canto, não pode, subindo até o céu, buscar para si a eternidade?'],
           ['Emakeelepäeva tähistatakse 14. märtsil.', 'O Dia da Língua Materna é celebrado em 14 de março.'],
@@ -3754,7 +3754,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Lendo Peterson: casos e formas do verso',
-        text: 'Os quatro versos são uma aula de gramática. «Selle maa keel»: dois genitivos antes do núcleo (a língua desta terra). «Laulutuules»: palavra composta no inessivo (no vento do canto). «Taevani»: o terminativo -ni (até o céu), um caso que a fala usa pouco. «Tõustes»: a forma -des, uma ação ao lado da outra. «Omale» é a forma antiga e poética de «endale» (para si). E a pergunta com «kas… ei või» espera um «sim»: claro que pode.',
+        text: 'Os quatro versos são uma aula de gramática. “Selle maa keel”: dois genitivos antes do núcleo (a língua desta terra). “Laulutuules”: palavra composta no inessivo (no vento do canto). “Taevani”: o terminativo -ni (até o céu), um caso que a fala usa pouco. “Tõustes”: a forma -des, uma ação ao lado da outra. “Omale” é a forma antiga e poética de “endale” (para si). E a pergunta com “kas… ei või” espera um “sim”: claro que pode.',
         table: {
           head: ['No verso', 'Forma', 'Caso ou função', 'Na fala'],
           rows: [
@@ -3768,21 +3768,21 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         examples: [
           ['Lind lendas taevani.', 'O pássaro voou até o céu.'],
           ['Ta ostis omale uue raamatu.', 'Ele comprou para si um livro novo (estilo antigo; hoje: endale).'],
-          ['Kas sa ei saa natuke oodata?', 'Você não pode esperar um pouco? (na fala, «ei saa» é o mais comum aqui; o «ei või» de Peterson soa antigo)'],
+          ['Kas sa ei saa natuke oodata?', 'Você não pode esperar um pouco? (na fala, “ei saa” é o mais comum aqui; o “ei või” de Peterson soa antigo)'],
         ],
       },
       {
         heading: 'Lydia Koidula, a poeta do despertar',
-        text: 'Koidula (de «koit», aurora) é o nome literário de Lydia Jannsen, filha do jornalista que organizou o primeiro festival de canto, em Tartu, em 1869. Ela publicou «Vainulilled» (1866) e «Emajõe ööbik» (1867), escreveu a primeira peça de teatro em estoniano, «Saaremaa onupoeg» (1870), e ficou conhecida como o «rouxinol do Emajõgi». O poema «Mu isamaa on minu arm» foi cantado já em 1869; com a melodia composta por Gustav Ernesaks em 1944, virou hino não oficial e fecha até hoje os grandes festivais.',
+        text: 'Koidula (de “koit”, aurora) é o nome literário de Lydia Jannsen, filha do jornalista que organizou o primeiro festival de canto, em Tartu, em 1869. Ela publicou “Vainulilled” (1866) e “Emajõe ööbik” (1867), escreveu a primeira peça de teatro em estoniano, “Saaremaa onupoeg” (1870), e ficou conhecida como o “rouxinol do Emajõgi”. O poema “Mu isamaa on minu arm” foi cantado já em 1869; com a melodia composta por Gustav Ernesaks em 1944, virou hino não oficial e fecha até hoje os grandes festivais.',
         examples: [
           ['Mu isamaa on minu arm, kel südant andnud ma.', 'A minha pátria é o meu amor, a quem dei o coração.'],
           ['Sull’ laulan ma, mu ülem õnn, mu õitsev Eestimaa!', 'A ti eu canto, minha maior felicidade, minha Estônia em flor!'],
-          ['Laulupeo lõpus laulavad kõik koos «Mu isamaa on minu arm».', 'No fim do festival de canto, todos cantam juntos «Mu isamaa on minu arm».'],
+          ['Laulupeo lõpus laulavad kõik koos “Mu isamaa on minu arm”.', 'No fim do festival de canto, todos cantam juntos “Mu isamaa on minu arm”.'],
         ],
       },
       {
         heading: 'Formas encurtadas e ordem do verso',
-        text: 'A poesia do século XIX corta sílabas para caber no ritmo e marca o corte com apóstrofo: sull’ = sulle (a ti), mull’ = mulle (a mim). «Kel» é a forma curta de «kellele» (a quem). A ordem também se solta: «kel südant andnud ma» seria, em prosa, «kellele ma olen südame andnud». Na leitura, reconstrua a frase em prosa e o sentido aparece.',
+        text: 'A poesia do século XIX corta sílabas para caber no ritmo e marca o corte com apóstrofo: sull’ = sulle (a ti), mull’ = mulle (a mim). “Kel” é a forma curta de “kellele” (a quem). A ordem também se solta: “kel südant andnud ma” seria, em prosa, “kellele ma olen südame andnud”. Na leitura, reconstrua a frase em prosa e o sentido aparece.',
         examples: [
           ['Sull’ laulan ma. → Ma laulan sulle.', 'A ti eu canto. → Eu canto para você.'],
           ['kel südant andnud ma → kellele ma olen südame andnud', 'a quem dei o coração (verso → prosa)'],
@@ -3791,10 +3791,10 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Copiar as formas do verso na fala: hoje se diz «sulle», «kellele» e «endale», não «sull’», «kel» e «omale».',
-      'Confundir o terminativo «taevani» (até o céu) com o alativo «taevale» (para o céu, sobre o céu).',
-      'Achar que «arm» é braço, como em inglês: em estoniano poético, «arm» é amor, graça; na fala comum, «arm» é cicatriz.',
-      'Tomar «Koidula» por sobrenome de família: é nome literário, formado de «koit» (aurora).',
+      'Copiar as formas do verso na fala: hoje se diz “sulle”, “kellele” e “endale”, não “sull’”, “kel” e “omale”.',
+      'Confundir o terminativo “taevani” (até o céu) com o alativo “taevale” (para o céu, sobre o céu).',
+      'Achar que “arm” é braço, como em inglês: em estoniano poético, “arm” é amor, graça; na fala comum, “arm” é cicatriz.',
+      'Tomar “Koidula” por sobrenome de família: é nome literário, formado de “koit” (aurora).',
     ],
     quiz: [
       {
@@ -3804,50 +3804,50 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         explanation: '14 de março (14.03) é o emakeelepäev; 24 de fevereiro é o Dia da Independência; 23 de junho é o Dia da Vitória (võidupüha), véspera de São João.',
       },
       {
-        question: 'Que caso é «taevani»?',
+        question: 'Que caso é “taevani”?',
         options: ['terminativo', 'alativo', 'essivo'],
         answer: 'terminativo',
         explanation: 'O terminativo -ni marca o limite: até o céu.',
       },
       {
-        question: 'Qual é a forma de prosa de «sull’»?',
+        question: 'Qual é a forma de prosa de “sull’”?',
         options: ['sulle', 'sul', 'sinu'],
         answer: 'sulle',
         explanation: 'O apóstrofo marca a vogal cortada: sull’ = sulle (a ti).',
       },
       {
-        question: 'Complete o verso de Koidula: «Mu isamaa on minu …»',
+        question: 'Complete o verso de Koidula: “Mu isamaa on minu …”',
         options: ['arm', 'kodu', 'süda'],
         answer: 'arm',
-        explanation: '«Mu isamaa on minu arm»: a minha pátria é o meu amor.',
+        explanation: '“Mu isamaa on minu arm”: a minha pátria é o meu amor.',
       },
       {
         question: 'Qual foi a primeira peça de teatro em estoniano, escrita por Koidula?',
         options: ['Saaremaa onupoeg', 'Emajõe ööbik', 'Vainulilled'],
         answer: 'Saaremaa onupoeg',
-        explanation: '«Saaremaa onupoeg» (1870); os outros dois são livros de poemas.',
+        explanation: '“Saaremaa onupoeg” (1870); os outros dois são livros de poemas.',
       },
     ],
   },
   {
     id: 'et-g39',
     level: 'C2',
-    title: 'Tammsaare e «Tõde ja õigus»: a prosa do romance nacional',
+    title: 'Tammsaare e “Tõde ja õigus”: a prosa do romance nacional',
     emoji: '🌾',
-    summary: 'A. H. Tammsaare (1878–1940) escreveu o grande romance estoniano, «Tõde ja õigus» (Verdade e justiça), em cinco volumes. A briga de dois vizinhos na fazenda de Vargamäe vira um retrato do país. Ler Tammsaare é treinar a prosa longa: a forma -des, o discurso indireto, a inversão depois da fala.',
+    summary: 'A. H. Tammsaare (1878–1940) escreveu o grande romance estoniano, “Tõde ja õigus” (Verdade e justiça), em cinco volumes. A briga de dois vizinhos na fazenda de Vargamäe vira um retrato do país. Ler Tammsaare é treinar a prosa longa: a forma -des, o discurso indireto, a inversão depois da fala.',
     sections: [
       {
         heading: 'O autor e a obra',
-        text: 'Anton Hansen, que assinava Tammsaare, nasceu numa família de camponeses em Järvamaa, no centro do país. «Tõde ja õigus» saiu entre 1926 e 1933. O primeiro volume conta a vida de Andres, que compra a fazenda Mäe no pântano de Vargamäe e passa décadas brigando com Pearu, o vizinho da fazenda Oru; os seguintes acompanham Indrek, o filho, na escola, na cidade e na revolução de 1905. Tammsaare também escreveu «Põrgupõhja uus Vanapagan» (1939), em que o diabo vem viver como camponês. O rosto dele estava na nota de 25 coroas, com a paisagem de Vargamäe.',
+        text: 'Anton Hansen, que assinava Tammsaare, nasceu numa família de camponeses em Järvamaa, no centro do país. “Tõde ja õigus” saiu entre 1926 e 1933. O primeiro volume conta a vida de Andres, que compra a fazenda Mäe no pântano de Vargamäe e passa décadas brigando com Pearu, o vizinho da fazenda Oru; os seguintes acompanham Indrek, o filho, na escola, na cidade e na revolução de 1905. Tammsaare também escreveu “Põrgupõhja uus Vanapagan” (1939), em que o diabo vem viver como camponês. O rosto dele estava na nota de 25 coroas, com a paisagem de Vargamäe.',
         examples: [
-          ['«Tõde ja õigus» ilmus viies osas aastatel 1926–1933.', '«Verdade e justiça» saiu em cinco volumes entre 1926 e 1933.'],
+          ['“Tõde ja õigus” ilmus viies osas aastatel 1926–1933.', '“Verdade e justiça” saiu em cinco volumes entre 1926 e 1933.'],
           ['Andres ja Pearu on naabrid, kes tülitsevad terve elu.', 'Andres e Pearu são vizinhos que brigam a vida inteira.'],
           ['Tammsaare majamuuseum asub Tallinnas Kadriorus.', 'A casa-museu de Tammsaare fica em Tallinn, em Kadriorg.'],
         ],
       },
       {
-        heading: '«Tee tööd ja näe vaeva»',
-        text: 'A frase mais citada do romance é o lema de Andres: «Tee tööd ja näe vaeva, küll siis tuleb ka armastus» (trabalhe e se esforce, que o amor vem depois). Repare na gramática: dois imperativos em paralelo (tee, näe), a expressão «vaeva nägema» (literalmente «ver esforço», se esforçar, com partitivo) e o «küll» que dá certeza: «pode deixar que vem». O romance inteiro testa esse lema, porque o trabalho vence o pântano mas nem sempre traz o amor.',
+        heading: '“Tee tööd ja näe vaeva”',
+        text: 'A frase mais citada do romance é o lema de Andres: “Tee tööd ja näe vaeva, küll siis tuleb ka armastus” (trabalhe e se esforce, que o amor vem depois). Repare na gramática: dois imperativos em paralelo (tee, näe), a expressão “vaeva nägema” (literalmente “ver esforço”, se esforçar, com partitivo) e o “küll” que dá certeza: “pode deixar que vem”. O romance inteiro testa esse lema, porque o trabalho vence o pântano mas nem sempre traz o amor.',
         examples: [
           ['Tee tööd ja näe vaeva, küll siis tuleb ka armastus.', 'Trabalhe e se esforce, que o amor vem depois.'],
           ['Andres nägi Vargamäel palju vaeva.', 'Andres se esforçou muito em Vargamäe.'],
@@ -3856,7 +3856,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'A forma -des: duas ações ao mesmo tempo',
-        text: 'A prosa de Tammsaare é cheia da forma -des (o gerúndio estoniano), que diz o que alguém faz enquanto faz outra coisa, com o mesmo sujeito: mõeldes (pensando), vaadates (olhando), öeldes (dizendo). Ela se forma a partir do infinitivo -da/-ta: mõelda → mõeldes, vaadata → vaadates. Outro traço literário é a inversão depois da fala citada: «Ei,» ütles Pearu (disse Pearu), e não «Pearu ütles».',
+        text: 'A prosa de Tammsaare é cheia da forma -des (o gerúndio estoniano), que diz o que alguém faz enquanto faz outra coisa, com o mesmo sujeito: mõeldes (pensando), vaadates (olhando), öeldes (dizendo). Ela se forma a partir do infinitivo -da/-ta: mõelda → mõeldes, vaadata → vaadates. Outro traço literário é a inversão depois da fala citada: “Ei,” ütles Pearu (disse Pearu), e não “Pearu ütles”.',
         table: {
           head: ['Infinitivo', 'Forma -des', 'Português', 'Na frase'],
           rows: [
@@ -3868,7 +3868,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
         },
         examples: [
           ['Andres kõndis põllul, mõeldes kraavidele.', 'Andres andava pelo campo pensando nas valas.'],
-          ['«Ega see sinu maa ole,» ütles Pearu naerdes.', '«Essa terra não é sua», disse Pearu, rindo.'],
+          ['“Ega see sinu maa ole,” ütles Pearu naerdes.', '“Essa terra não é sua”, disse Pearu, rindo.'],
           ['Koju tulles nägi ta, et naaber oli jälle aia maha võtnud.', 'Ao voltar para casa, ele viu que o vizinho tinha derrubado a cerca de novo.'],
         ],
       },
@@ -3883,20 +3883,20 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Usar a forma -des com sujeitos diferentes: «Koju tulles sadas vihma» soa errado, porque quem vem para casa não é a chuva.',
-      'Formar -des a partir do supino: é do infinitivo (mõelda → mõeldes), não de «mõtlema».',
-      'Traduzir «vaeva nägema» por «ver o esforço»: é se esforçar, penar.',
-      'Estranhar «ütles Pearu» depois da fala: na narrativa, o verbo vem antes do sujeito nesse caso.',
+      'Usar a forma -des com sujeitos diferentes: “Koju tulles sadas vihma” soa errado, porque quem vem para casa não é a chuva.',
+      'Formar -des a partir do supino: é do infinitivo (mõelda → mõeldes), não de “mõtlema”.',
+      'Traduzir “vaeva nägema” por “ver o esforço”: é se esforçar, penar.',
+      'Estranhar “ütles Pearu” depois da fala: na narrativa, o verbo vem antes do sujeito nesse caso.',
     ],
     quiz: [
       {
-        question: 'Complete o lema de Andres: «Tee tööd ja näe vaeva, küll siis tuleb ka …»',
+        question: 'Complete o lema de Andres: “Tee tööd ja näe vaeva, küll siis tuleb ka …”',
         options: ['armastus', 'raha', 'kevad'],
         answer: 'armastus',
-        explanation: '«Trabalhe e se esforce, que o amor vem depois»: o romance inteiro testa essa promessa.',
+        explanation: '“Trabalhe e se esforce, que o amor vem depois”: o romance inteiro testa essa promessa.',
       },
       {
-        question: 'Qual é a forma -des de «vaadata» (olhar)?',
+        question: 'Qual é a forma -des de “vaadata” (olhar)?',
         options: ['vaadates', 'vaatades', 'vaadatades'],
         answer: 'vaadates',
         explanation: 'Troca-se o -a final do infinitivo por -es: vaadata → vaadates.',
@@ -3909,12 +3909,12 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         question: 'Qual ordem é a natural depois de uma fala citada?',
-        options: ['«Ei,» ütles Pearu.', '«Ei,» Pearu ütles.', '«Ei,» ütles Pearu ta.'],
-        answer: '«Ei,» ütles Pearu.',
+        options: ['“Ei,” ütles Pearu.', '“Ei,” Pearu ütles.', '“Ei,” ütles Pearu ta.'],
+        answer: '“Ei,” ütles Pearu.',
         explanation: 'Depois da citação, o verbo vem antes do sujeito.',
       },
       {
-        question: 'Em que período saiu «Tõde ja õigus»?',
+        question: 'Em que período saiu “Tõde ja õigus”?',
         options: ['1926–1933', '1857–1861', '1901–1905'],
         answer: '1926–1933',
         explanation: 'Cinco volumes entre 1926 e 1933; 1857–1861 é o Kalevipoeg.',
@@ -3926,7 +3926,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
     level: 'C2',
     title: 'Vanasõnad: provérbios e a sabedoria da aldeia',
     emoji: '🦉',
-    summary: 'Os provérbios estonianos (vanasõnad, «palavras antigas») são curtos, rurais e muitas vezes rimados ou aliterados. Eles usam uma gramática enxuta: o «kes…, see…» genérico, o imperativo, o presente com valor de verdade eterna. Saber alguns abre conversas e ajuda a entender a literatura.',
+    summary: 'Os provérbios estonianos (vanasõnad, “palavras antigas”) são curtos, rurais e muitas vezes rimados ou aliterados. Eles usam uma gramática enxuta: o “kes…, see…” genérico, o imperativo, o presente com valor de verdade eterna. Saber alguns abre conversas e ajuda a entender a literatura.',
     sections: [
       {
         heading: 'Uma coleta nacional',
@@ -3939,7 +3939,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'A gramática dos provérbios',
-        text: 'Muitos provérbios começam com «kes…» (quem) e retomam com «see…» (esse): é o sujeito genérico. Outros usam o presente para uma verdade de sempre, o imperativo para um conselho ou dois termos em paralelo, com a mesma estrutura dos dois lados. A aliteração, herdada do canto antigo (regilaul), também aparece: tasa… / kaugele…',
+        text: 'Muitos provérbios começam com “kes…” (quem) e retomam com “see…” (esse): é o sujeito genérico. Outros usam o presente para uma verdade de sempre, o imperativo para um conselho ou dois termos em paralelo, com a mesma estrutura dos dois lados. A aliteração, herdada do canto antigo (regilaul), também aparece: tasa… / kaugele…',
         table: {
           head: ['Estrutura', 'Provérbio', 'Tradução literal', 'Sentido'],
           rows: [
@@ -3957,7 +3957,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Trabalho, paciência e aldeia',
-        text: 'Os temas repetem a vida no campo: o trabalho, a paciência, o tempo, a vizinhança. «Julge pealehakkamine on pool võitu» (começar com coragem é meia vitória) serve para dar ânimo; «Aeg annab arutust» (o tempo traz juízo) pede calma; «Kuidas küla koerale, nõnda koer külale» (como a aldeia trata o cão, assim o cão trata a aldeia) é o equivalente de «quem planta vento colhe tempestade» nas relações.',
+        text: 'Os temas repetem a vida no campo: o trabalho, a paciência, o tempo, a vizinhança. “Julge pealehakkamine on pool võitu” (começar com coragem é meia vitória) serve para dar ânimo; “Aeg annab arutust” (o tempo traz juízo) pede calma; “Kuidas küla koerale, nõnda koer külale” (como a aldeia trata o cão, assim o cão trata a aldeia) é o equivalente de “quem planta vento colhe tempestade” nas relações.',
         examples: [
           ['Julge pealehakkamine on pool võitu.', 'Começar com coragem é meia vitória.'],
           ['Aeg annab arutust.', 'O tempo traz juízo.'],
@@ -3966,7 +3966,7 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
       {
         heading: 'Usar na conversa',
-        text: 'Na fala, o provérbio costuma vir apresentado: «nagu öeldakse» (como se diz) ou «vanasõna ütleb» (o provérbio diz). Muitas vezes se diz só a primeira metade e o ouvinte completa. E cuidado com o tom: citar provérbio demais soa a avô ou a discurso de político.',
+        text: 'Na fala, o provérbio costuma vir apresentado: “nagu öeldakse” (como se diz) ou “vanasõna ütleb” (o provérbio diz). Muitas vezes se diz só a primeira metade e o ouvinte completa. E cuidado com o tom: citar provérbio demais soa a avô ou a discurso de político.',
         examples: [
           ['Nagu öeldakse, hommik on õhtust targem.', 'Como se diz, a manhã é mais sábia que a noite.'],
           ['Vanasõna ütleb, et vana arm ei roosteta.', 'O provérbio diz que amor antigo não enferruja.'],
@@ -3975,32 +3975,32 @@ export const GRAMMAR_ET: GrammarTopic[] = [
       },
     ],
     pitfalls: [
-      'Traduzir palavra por palavra: «Kes ees, see mees» não fala de homens, mas de quem chega primeiro.',
-      'Trocar «see» por «ta» na segunda parte do «kes…, see…»: o provérbio perde o ritmo.',
-      'Esquecer o elativo no comparativo: «õhtust targem» (mais sábia que a noite), não «õhtu targem».',
+      'Traduzir palavra por palavra: “Kes ees, see mees” não fala de homens, mas de quem chega primeiro.',
+      'Trocar “see” por “ta” na segunda parte do “kes…, see…”: o provérbio perde o ritmo.',
+      'Esquecer o elativo no comparativo: “õhtust targem” (mais sábia que a noite), não “õhtu targem”.',
       'Citar provérbios a toda hora: na conversa moderna, um basta.',
     ],
     quiz: [
       {
-        question: 'Complete: «Tasa sõuad, kaugele …»',
+        question: 'Complete: “Tasa sõuad, kaugele …”',
         options: ['jõuad', 'lähed', 'sõidad'],
         answer: 'jõuad',
-        explanation: '«Tasa sõuad, kaugele jõuad»: remas devagar, chegas longe; a rima sõuad/jõuad é o que fixa o provérbio.',
+        explanation: '“Tasa sõuad, kaugele jõuad”: remas devagar, chegas longe; a rima sõuad/jõuad é o que fixa o provérbio.',
       },
       {
-        question: 'Complete: «Hommik on õhtust …»',
+        question: 'Complete: “Hommik on õhtust …”',
         options: ['targem', 'parem', 'ilusam'],
         answer: 'targem',
         explanation: 'A manhã é mais sábia que a noite: deixe a decisão para depois de dormir.',
       },
       {
-        question: 'Complete: «Kes teisele auku kaevab, … ise sisse kukub.»',
+        question: 'Complete: “Kes teisele auku kaevab, … ise sisse kukub.”',
         options: ['see', 'kes', 'mis'],
         answer: 'see',
-        explanation: 'O par «kes…, see…» é a estrutura típica do provérbio com sujeito genérico.',
+        explanation: 'O par “kes…, see…” é a estrutura típica do provérbio com sujeito genérico.',
       },
       {
-        question: 'O que é «kuld» em «Rääkimine hõbe, vaikimine kuld»?',
+        question: 'O que é “kuld” em “Rääkimine hõbe, vaikimine kuld”?',
         options: ['ouro', 'prata', 'cobre'],
         answer: 'ouro',
         explanation: 'Falar é prata (hõbe), calar é ouro (kuld).',

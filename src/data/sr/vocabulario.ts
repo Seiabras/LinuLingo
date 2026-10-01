@@ -75,7 +75,7 @@ export const ROWS: VocabRow[] = [
   ['млеко', 'leite', 'substantivo', 'Alimentação e Restaurantes', '🥛', 'Млеко је бело.', 'n'],
   ['сир', 'queijo', 'substantivo', 'Alimentação e Restaurantes', '🧀', 'Волим сир.', 'm'],
   ['кафа', 'café', 'substantivo', 'Alimentação e Restaurantes', '☕', 'Једну кафу, молим.', 'f'],
-  ['вино', 'vinho (o tinto se chama «црно вино», «vinho preto»)', 'substantivo', 'Alimentação e Restaurantes', '🍷', 'Чашу вина, молим.', 'n'],
+  ['вино', 'vinho (o tinto se chama “црно вино”, “vinho preto”)', 'substantivo', 'Alimentação e Restaurantes', '🍷', 'Чашу вина, молим.', 'n'],
   // ── Números ──
   ['један', 'um (fem. једна, neutro једно)', 'numeral', 'Números', '1️⃣', 'Један чај, молим.'],
   ['два', 'dois (fem. две)', 'numeral', 'Números', '2️⃣', 'Два чаја, молим.'],
@@ -97,7 +97,7 @@ export const ROWS: VocabRow[] = [
   ['четвртак', 'quinta-feira', 'substantivo', 'Tempo', '📅', 'Данас је четвртак.', 'm'],
   ['петак', 'sexta-feira', 'substantivo', 'Tempo', '📅', 'Данас је петак.', 'm'],
   ['субота', 'sábado', 'substantivo', 'Tempo', '📅', 'Данас је субота.', 'f'],
-  ['недеља', 'domingo (também «semana»)', 'substantivo', 'Tempo', '📅', 'Данас је недеља.', 'f'],
+  ['недеља', 'domingo (também “semana”)', 'substantivo', 'Tempo', '📅', 'Данас је недеља.', 'f'],
   // ── Cores ──
   ['црвен', 'vermelho', 'adjetivo', 'Cores', '🔴', 'Јабука је црвена.'],
   ['плав', 'azul', 'adjetivo', 'Cores', '🔵', 'Небо је плаво.'],

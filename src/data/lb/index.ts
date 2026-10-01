@@ -39,5 +39,5 @@ export const LUXEMBURGUES: LanguagePack = {
   phrases: { hi: 'Moien!', thanks: 'Merci!', letsStart: ['Mir fänken un!', 'Vamos começar!'] },
   formalMarkers: 'Dir (com maiúscula e o verbo no plural), wannechgelift, Entschëllegt',
   cognateNote:
-    'O luxemburguês é parente próximo do alemão (Haus, Waasser, Brout lembram Haus, Wasser, Brot), mas convive há séculos com o francês e pegou dele muitas palavras do dia a dia, como «Merci» e «Gare» (estação), que ficam fáceis para quem fala português.',
+    'O luxemburguês é parente próximo do alemão (Haus, Waasser, Brout lembram Haus, Wasser, Brot), mas convive há séculos com o francês e pegou dele muitas palavras do dia a dia, como “Merci” e “Gare” (estação), que ficam fáceis para quem fala português.',
 };

@@ -27,7 +27,7 @@ export const STORIES_DE: StorySeed[] = [
         emoji: '😊',
         choices: [
           { text: 'Ich komme aus São Paulo.', translation: 'Sou de São Paulo.', next: 'final_gut' },
-          { text: 'Ich trinke Wasser.', translation: 'Eu bebo água.', wrong: 'Isso não responde de onde você é. Use «Ich komme aus…».' },
+          { text: 'Ich trinke Wasser.', translation: 'Eu bebo água.', wrong: 'Isso não responde de onde você é. Use “Ich komme aus…”.' },
         ],
       },
       final_gut: {
@@ -51,7 +51,7 @@ export const STORIES_DE: StorySeed[] = [
     title: 'Ein Abendessen mit der Familie',
     emoji: '👪',
     summary: 'Jonas, um amigo de Munique, pergunta pela sua família e convida você para jantar com a família dele.',
-    cultural_context: 'Munique (München) é a capital da Baviera, no sul da Alemanha; o jantar em família costuma ser simples, muitas vezes com pão, queijo e frios («Abendbrot»).',
+    cultural_context: 'Munique (München) é a capital da Baviera, no sul da Alemanha; o jantar em família costuma ser simples, muitas vezes com pão, queijo e frios (“Abendbrot”).',
     start: 'inicio',
     nodes: {
       inicio: {
@@ -60,7 +60,7 @@ export const STORIES_DE: StorySeed[] = [
         emoji: '📱',
         choices: [
           { text: 'Ja, ich habe einen Bruder und eine Schwester.', translation: 'Sim, tenho um irmão e uma irmã.', next: 'geschwister' },
-          { text: 'Mein Haus ist groß.', translation: 'A minha casa é grande.', wrong: 'Isso não responde se você tem irmãos. Use «Ich habe…».' },
+          { text: 'Mein Haus ist groß.', translation: 'A minha casa é grande.', wrong: 'Isso não responde se você tem irmãos. Use “Ich habe…”.' },
         ],
       },
       geschwister: {
@@ -69,7 +69,7 @@ export const STORIES_DE: StorySeed[] = [
         emoji: '🍽️',
         choices: [
           { text: 'Ja, gern! Danke!', translation: 'Sim, com prazer! Obrigado!', next: 'final_gut' },
-          { text: 'Ich komme aus São Paulo.', translation: 'Sou de São Paulo.', wrong: 'Jonas fez um convite: responda com «Ja, gern!» ou «Nein, danke».' },
+          { text: 'Ich komme aus São Paulo.', translation: 'Sou de São Paulo.', wrong: 'Jonas fez um convite: responda com “Ja, gern!” ou “Nein, danke”.' },
         ],
       },
       final_gut: {

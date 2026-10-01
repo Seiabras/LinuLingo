@@ -17,7 +17,7 @@ export const ROWS: VocabRow[] = [
   ['prepáčte', 'com licença, desculpe (formal)', 'interjeição', 'Expressões', '🙏', 'Prepáčte, kde je stanica?'],
   ['ako sa máš?', 'como vai? (informal)', 'expressão', 'Expressões', '🙂', 'Ahoj, Zuzka! Ako sa máš?'],
   // ── Essenciais ──
-  ['áno', 'sim (na fala, também «hej»)', 'partícula', 'Essenciais', '👍', 'Áno, prosím.'],
+  ['áno', 'sim (na fala, também “hej”)', 'partícula', 'Essenciais', '👍', 'Áno, prosím.'],
   ['nie', 'não', 'partícula', 'Essenciais', '👎', 'Nie, ďakujem.'],
   ['a', 'e', 'conjunção', 'Essenciais', null, 'Chlieb a syr.'],
   ['alebo', 'ou', 'conjunção', 'Essenciais', null, 'Káva alebo čaj?'],
@@ -55,7 +55,7 @@ export const ROWS: VocabRow[] = [
   ['ísť', 'ir (a pé: idem, ideš)', 'verbo', 'Verbos-chave', '🚶', 'Idem domov.'],
   ['jesť', 'comer (jem, ješ; perf. zjesť)', 'verbo', 'Verbos-chave', '🍽️', 'Jem chlieb so syrom.'],
   ['piť', 'beber (pijem, piješ; perf. vypiť)', 'verbo', 'Verbos-chave', '🥤', 'Pijem vodu.'],
-  ['mať rád', 'gostar (lit. «ter querido»: mám rád, uma mulher diz «mám rada»)', 'expressão', 'Verbos-chave', '❤️', 'Mám rád kávu.'],
+  ['mať rád', 'gostar (lit. “ter querido”: mám rád, uma mulher diz “mám rada”)', 'expressão', 'Verbos-chave', '❤️', 'Mám rád kávu.'],
   ['vedieť', 'saber (viem, vieš)', 'verbo', 'Verbos-chave', '🧠', 'Neviem.'],
   ['chcieť', 'querer (chcem, chceš)', 'verbo', 'Verbos-chave', '💭', 'Chcem sa učiť slovenčinu.'],
   ['učiť sa', 'aprender, estudar (učím sa; perf. naučiť sa)', 'verbo', 'Verbos-chave', '📚', 'Učím sa slovenčinu.'],

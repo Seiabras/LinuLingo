@@ -46,7 +46,7 @@ export const RECURSOS_OM: LanguageResources = {
       title: 'Canções de Hacaaluu Hundeessaa',
       by: 'Hacaaluu Hundeessaa (Hachalu Hundessa)',
       level: 'B2',
-      why: 'Cantor cujas letras sobre terra, identidade e justiça viraram hinos dos protestos oromos dos anos 2010; foi assassinado em 2020. Músicas como «Maalan Jira» mostram o oromo poético de hoje.',
+      why: 'Cantor cujas letras sobre terra, identidade e justiça viraram hinos dos protestos oromos dos anos 2010; foi assassinado em 2020. Músicas como “Maalan Jira” mostram o oromo poético de hoje.',
     },
     {
       kind: 'musica',
@@ -109,9 +109,9 @@ export const RECURSOS_OM: LanguageResources = {
   ],
   tips: [
     'Não existe prova padronizada de oromo. Para comprovar o nível, o caminho são cursos: universidades da Etiópia, como a de Adis Abeba, têm departamentos de afaan oromoo. Se precisar de um certificado de fala para trabalho, pergunte à Language Testing International, que aplica a entrevista oral da ACTFL, se há avaliador de oromo. Sem prova, grave-se lendo e conversando todo mês para acompanhar o progresso.',
-    "O oromo usa o alfabeto latino, chamado qubee, adotado oficialmente em 1991. Algumas letras têm valor diferente do português: «c» é um «tch» com estalo, «x» é um «t» com estalo, «q» é um «k» com estalo, «dh» é um «d» dito puxando o ar para dentro, «ny» soa como «nh» e o apóstrofo marca uma pequena parada na garganta, como em «har'a» (hoje).",
-    'Vogal dobrada é vogal longa, e consoante dobrada se segura um instante; as duas coisas mudam o sentido das palavras. Em «akkam?» (como vai?), o «k» é dobrado; em «nagaa» (paz), o último «a» é longo. Leia devagar e respeite as duplas.',
-    'Cumprimentos para começar: «Akkam?» (como vai?), «Nagaan bulte?» (passou bem a noite?, o nosso bom-dia) e «Galatoomi» (obrigado). Como no português, o verbo concorda com a pessoa, e há masculino e feminino: «inni» é ele, e «isheen», ela.',
+    "O oromo usa o alfabeto latino, chamado qubee, adotado oficialmente em 1991. Algumas letras têm valor diferente do português: “c” é um “tch” com estalo, “x” é um “t” com estalo, “q” é um “k” com estalo, “dh” é um “d” dito puxando o ar para dentro, “ny” soa como “nh” e o apóstrofo marca uma pequena parada na garganta, como em “har'a” (hoje).",
+    'Vogal dobrada é vogal longa, e consoante dobrada se segura um instante; as duas coisas mudam o sentido das palavras. Em “akkam?” (como vai?), o “k” é dobrado; em “nagaa” (paz), o último “a” é longo. Leia devagar e respeite as duplas.',
+    'Cumprimentos para começar: “Akkam?” (como vai?), “Nagaan bulte?” (passou bem a noite?, o nosso bom-dia) e “Galatoomi” (obrigado). Como no português, o verbo concorda com a pessoa, e há masculino e feminino: “inni” é ele, e “isheen”, ela.',
     'Para entender a cultura, conheça o gadaa, sistema tradicional oromo de governo por classes de idade, reconhecido pela UNESCO como patrimônio imaterial da humanidade em 2016, e o irreecha, festa de ação de graças celebrada à beira de lagos e rios. As duas palavras aparecem o tempo todo em música e em notícias.',
   ],
 };

@@ -18,9 +18,9 @@ export const UNITS_VI: UnitSeed[] = [
       history:
         'O vietnamita pertence ao tronco austro-asiático e é falado por mais de 85 milhões de pessoas. Foi escrito por séculos com caracteres chineses adaptados (chữ Nôm); a escrita latina atual, o quốc ngữ, foi criada por missionários no século XVII e virou oficial só no século XX, depois de simplificar o acesso à alfabetização. Como o indonésio, o vietnamita não conjuga verbos — mas soma a isso um sistema de seis tons (no dialeto do Norte, referência deste curso) que muda completamente o significado da mesma sílaba.',
       culture_tip:
-        '«Xin chào» é o cumprimento mais neutro, usado a qualquer hora do dia. «Cảm ơn» é obrigado; a resposta comum é «không có gì» (não é nada). O tratamento no vietnamita usa palavras de parentesco mesmo com estranhos (anh para um homem jovem, chị para uma mulher jovem, em para alguém mais novo) — este curso simplifica com «tôi» (eu) e «bạn» (você) neutros, para começar, mas você vai encontrar o sistema real de tratamento em unidades futuras.',
+        '“Xin chào” é o cumprimento mais neutro, usado a qualquer hora do dia. “Cảm ơn” é obrigado; a resposta comum é “không có gì” (não é nada). O tratamento no vietnamita usa palavras de parentesco mesmo com estranhos (anh para um homem jovem, chị para uma mulher jovem, em para alguém mais novo) — este curso simplifica com “tôi” (eu) e “bạn” (você) neutros, para começar, mas você vai encontrar o sistema real de tratamento em unidades futuras.',
       grammar_why:
-        'Como o indonésio, o verbo vietnamita nunca muda de forma: «tôi là» (eu sou), «bạn là» (você é), «anh ấy là» (ele é) usam sempre a mesma palavra «là». A diferença crucial é o TOM: a mesma sílaba com tons diferentes vira palavras completamente diferentes. «ma» sem marca é «fantasma»; «má» (tom ascendente) é «bochecha» ou «mãe» (no Sul); «mà» (tom grave) é «mas»; «mả» é «túmulo»; «mã» é «cavalo» (em chinês-vietnamita) ou «código»; «mạ» é «muda de arroz».',
+        'Como o indonésio, o verbo vietnamita nunca muda de forma: “tôi là” (eu sou), “bạn là” (você é), “anh ấy là” (ele é) usam sempre a mesma palavra “là”. A diferença crucial é o TOM: a mesma sílaba com tons diferentes vira palavras completamente diferentes. “ma” sem marca é “fantasma”; “má” (tom ascendente) é “bochecha” ou “mãe” (no Sul); “mà” (tom grave) é “mas”; “mả” é “túmulo”; “mã” é “cavalo” (em chinês-vietnamita) ou “código”; “mạ” é “muda de arroz”.',
       grammar_examples: [
         ['Tôi đến từ Brazil.', 'Eu sou do Brasil. (literalmente: eu venho de Brasil)'],
         ['Bạn tên là gì?', 'Qual é o seu nome?'],
@@ -51,9 +51,9 @@ export const UNITS_VI: UnitSeed[] = [
           bot: 'Xin chào! Bạn khỏe không?',
           botTranslation: 'Oi! Você está bem?',
           expected: ['Tôi khỏe, cảm ơn! Còn bạn?', 'khỏe', 'cảm ơn'],
-          hint: 'Responda que está bem («tôi khỏe») e devolva a pergunta com «còn bạn?».',
+          hint: 'Responda que está bem (“tôi khỏe”) e devolva a pergunta com “còn bạn?”.',
         },
-        communityPrompt: 'Escreva um cumprimento e uma despedida em vietnamita: «Xin chào…» e «Tạm biệt…».',
+        communityPrompt: 'Escreva um cumprimento e uma despedida em vietnamita: “Xin chào…” e “Tạm biệt…”.',
       },
       {
         id: 'vi-u1-l2',
@@ -69,9 +69,9 @@ export const UNITS_VI: UnitSeed[] = [
           bot: 'Xin chào! Bạn tên là gì?',
           botTranslation: 'Oi! Qual é o seu nome?',
           expected: ['Tôi tên là Ana. Còn bạn?', 'tôi tên là', 'còn bạn'],
-          hint: 'Diga o seu nome com «Tôi tên là…» e devolva a pergunta com «Còn bạn?».',
+          hint: 'Diga o seu nome com “Tôi tên là…” e devolva a pergunta com “Còn bạn?”.',
         },
-        communityPrompt: 'Apresente-se em vietnamita: diga o seu nome com «Tôi tên là…» e pergunte o nome de outra pessoa.',
+        communityPrompt: 'Apresente-se em vietnamita: diga o seu nome com “Tôi tên là…” e pergunte o nome de outra pessoa.',
       },
       {
         id: 'vi-u1-l3',
@@ -83,9 +83,9 @@ export const UNITS_VI: UnitSeed[] = [
           bot: 'Xin chào! Tôi tên là Minh. Bạn tên là gì, và bạn đến từ đâu?',
           botTranslation: 'Oi! Meu nome é Minh. Qual é o seu nome, e de onde você é?',
           expected: ['Xin chào! Tôi tên là Lucia, và tôi đến từ Brazil. Rất vui được gặp bạn!', 'tôi tên là', 'tôi đến từ', 'xin chào'],
-          hint: 'Devolva o cumprimento («Xin chào!»), diga o seu nome com «Tôi tên là…», a origem com «Tôi đến từ…» e feche com «Rất vui được gặp bạn!».',
+          hint: 'Devolva o cumprimento (“Xin chào!”), diga o seu nome com “Tôi tên là…”, a origem com “Tôi đến từ…” e feche com “Rất vui được gặp bạn!”.',
         },
-        communityPrompt: 'Escreva uma apresentação completa: cumprimento, nome, origem com «Tôi đến từ…» e uma despedida.',
+        communityPrompt: 'Escreva uma apresentação completa: cumprimento, nome, origem com “Tôi đến từ…” e uma despedida.',
       },
     ],
   },
@@ -102,9 +102,9 @@ export const UNITS_VI: UnitSeed[] = [
       history:
         'O vietnamita leva a lógica do indonésio kakak/adik um passo além: além de distinguir irmão mais velho de mais novo, também distingue o sexo em cada caso, resultando em quatro palavras diferentes onde o português usa só duas: anh trai (irmão mais velho), chị gái (irmã mais velha), em trai (irmão mais novo) e em gái (irmã mais nova). Essa precisão vem da importância da hierarquia familiar por idade na cultura vietnamita, que também aparece nos pronomes de tratamento do dia a dia.',
       culture_tip:
-        'A família estendida é o centro da vida social vietnamita, e o culto aos ancestrais é praticado em quase todos os lares, com um pequeno altar familiar. Perguntar sobre a família de alguém («Bạn có anh chị em không?», você tem irmãos?) é uma forma comum e bem-vinda de puxar assunto.',
+        'A família estendida é o centro da vida social vietnamita, e o culto aos ancestrais é praticado em quase todos os lares, com um pequeno altar familiar. Perguntar sobre a família de alguém (“Bạn có anh chị em không?”, você tem irmãos?) é uma forma comum e bem-vinda de puxar assunto.',
       grammar_why:
-        'O plural em vietnamita, como no indonésio, geralmente não muda a palavra: o contexto (ou uma palavra contadora antes do substantivo) já diz se é singular ou plural. «một con mèo» é «um gato»; «những con mèo» é «os gatos» — o classificador «con» (usado para animais) aparece nos dois casos.',
+        'O plural em vietnamita, como no indonésio, geralmente não muda a palavra: o contexto (ou uma palavra contadora antes do substantivo) já diz se é singular ou plural. “một con mèo” é “um gato”; “những con mèo” é “os gatos” — o classificador “con” (usado para animais) aparece nos dois casos.',
       grammar_examples: [
         ['Gia đình tôi rất đông.', 'A minha família é grande. (literalmente: muito numerosa)'],
         ['Tôi có một anh trai và một em gái.', 'Eu tenho um irmão mais velho e uma irmã mais nova.'],
@@ -131,7 +131,7 @@ export const UNITS_VI: UnitSeed[] = [
           bot: 'Bạn có anh chị em không?',
           botTranslation: 'Você tem irmãos?',
           expected: ['Có, tôi có một anh trai và một em gái.', 'tôi có', 'anh trai', 'em gái'],
-          hint: 'Responda com «tôi có…» e o tipo de irmão, ou «tôi không có anh chị em» se não tiver.',
+          hint: 'Responda com “tôi có…” e o tipo de irmão, ou “tôi không có anh chị em” se não tiver.',
         },
         communityPrompt: 'Descreva a sua família em vietnamita: quantos irmãos você tem (mais velhos ou mais novos, homens ou mulheres), e como se chamam os seus pais.',
       },
@@ -149,7 +149,7 @@ export const UNITS_VI: UnitSeed[] = [
           bot: 'Bạn có thích cà phê Việt Nam không?',
           botTranslation: 'Você gosta do café vietnamita?',
           expected: ['Có, tôi rất thích, nó rất tốt!', 'tôi thích', 'rất tốt'],
-          hint: 'Use «tôi thích» (eu gosto) e o adjetivo «tốt» para dizer que é bom.',
+          hint: 'Use “tôi thích” (eu gosto) e o adjetivo “tốt” para dizer que é bom.',
         },
         communityPrompt: 'Descreva a sua casa em duas ou três frases: se é grande ou pequena, e o que você gosta de comer ou beber nela.',
       },
@@ -163,7 +163,7 @@ export const UNITS_VI: UnitSeed[] = [
           bot: 'Kể cho tôi nghe về gia đình bạn: có bao nhiêu người, và nhà bạn thế nào?',
           botTranslation: 'Me conte sobre a sua família: quantas pessoas, e como é a sua casa?',
           expected: ['Gia đình tôi có bốn người: mẹ, bố, anh trai tôi và tôi. Nhà chúng tôi nhỏ nhưng rất đẹp.', 'gia đình tôi', 'nhà chúng tôi'],
-          hint: 'Diga quantas pessoas há na família, nomeie alguns parentes e descreva a casa com «nhà chúng tôi…».',
+          hint: 'Diga quantas pessoas há na família, nomeie alguns parentes e descreva a casa com “nhà chúng tôi…”.',
         },
         communityPrompt: 'Escreva um parágrafo curto apresentando a sua família e a sua casa, usando pelo menos três palavras desta unidade.',
       },

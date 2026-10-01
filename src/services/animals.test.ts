@@ -37,11 +37,11 @@ test('bichos: a rodada mistura os 3 tipos, a certa sempre nas opções e o portu
     assert.ok(q.options.length >= 3);
   }
   const dog = buildAnimalRound(BICHOS_RO, {}, 60, rnd).find((q) => q.kind === 'como-faz' && q.a.id === 'cao');
-  assert.ok(dog && dog.kind === 'como-faz' && dog.trap === 'au-au' && dog.options.includes('au-au'), 'o «au-au» do português aparece como armadilha');
+  assert.ok(dog && dog.kind === 'como-faz' && dog.trap === 'au-au' && dog.options.includes('au-au'), 'o “au-au” do português aparece como armadilha');
   const cat = buildAnimalRound(BICHOS_ES, {}, 60, rnd).find((q) => q.kind === 'como-faz' && q.a.id === 'gato');
   assert.ok(cat && cat.kind === 'como-faz' && cat.trap === null, 'miau é igual: sem armadilha');
   const cow = buildAnimalRound(BICHOS_RO, {}, 60, rnd).find((q) => q.kind === 'como-faz' && q.a.id === 'vaca');
-  assert.ok(cow && cow.kind === 'como-faz' && cow.trap === null, '«muu» e «muuu» são o mesmo som: sem armadilha');
+  assert.ok(cow && cow.kind === 'como-faz' && cow.trap === null, '“muu” e “muuu” são o mesmo som: sem armadilha');
 });
 
 test('bichos: os menos acertados vêm primeiro', () => {

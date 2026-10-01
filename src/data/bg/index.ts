@@ -45,5 +45,5 @@ export const BULGARO: LanguagePack = {
   phrases: { hi: 'Здраве́й!', thanks: 'Благодаря́!', letsStart: ['Да запо́чваме!', 'Vamos começar!'] },
   formalMarkers: 'ви́е (com o verbo no plural, para uma pessoa só), здраве́йте, мо́ля, извине́те',
   cognateNote:
-    'O búlgaro é uma língua eslava meridional, prima distante do português: os dois vêm do indo-europeu. Por isso «три» lembra «três» e «вода́» é prima de «hidro-». Dos séculos de convivência com o turco vieram palavras como «кафе́». Cada palavra mostra a raiz e os parentes em outras línguas.',
+    'O búlgaro é uma língua eslava meridional, prima distante do português: os dois vêm do indo-europeu. Por isso “три” lembra “três” e “вода́” é prima de “hidro-”. Dos séculos de convivência com o turco vieram palavras como “кафе́”. Cada palavra mostra a raiz e os parentes em outras línguas.',
 };

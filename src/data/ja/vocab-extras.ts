@@ -130,7 +130,7 @@ export const ROWS: VocabRow[] = [
   ['今', 'agora', 'advérbio', 'Tempo', '⏰', '今、ちょっと忙しいです。'],
   ['ここ', 'aqui', 'pronome', 'Essenciais', '📍', 'ここは私の学校です。'],
   ['あの', 'aquele, aquela (antes do substantivo)', 'pronome', 'Essenciais', '👉', 'あの店のケーキは、おいしいです。'],
-  ['から', 'de, desde (partícula; também «porque»)', 'partícula', 'Essenciais', '➡️', '授業は八時からです。'],
+  ['から', 'de, desde (partícula; também “porque”)', 'partícula', 'Essenciais', '➡️', '授業は八時からです。'],
   ['ごま', 'gergelim', 'substantivo', 'Alimentação e Restaurantes', null, 'サラダにごまをかけます。'],
   ['あと', 'depois', 'advérbio', 'Tempo', '⏭️', '授業のあとで、図書館に行きます。'],
   // ——— bichos ———

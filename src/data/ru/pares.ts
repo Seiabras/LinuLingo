@@ -10,13 +10,13 @@ export const PARES_RU: MinimalPairs = {
       id: 'dura-mole',
       name: 'consoante dura × mole',
       sounds: ['t', 'tʲ'],
-      tip: 'Quase toda consoante russa tem duas versões: dura e mole (palatalizada: a língua sobe para o céu da boca, como se fosse dizer «i»). O «ь» (sinal mole) e as vogais е, ё, и, ю, я amolecem a consoante antes delas. É isso que separa брат (irmão) de брать (pegar).',
+      tip: 'Quase toda consoante russa tem duas versões: dura e mole (palatalizada: a língua sobe para o céu da boca, como se fosse dizer “i”). O “ь” (sinal mole) e as vogais е, ё, и, ю, я amolecem a consoante antes delas. É isso que separa брат (irmão) de брать (pegar).',
     },
     {
       id: 'y-i',
       name: 'ы × и',
       sounds: ['ɨ', 'i'],
-      tip: 'O «ы» não existe em português: é um «i» com a língua puxada para trás, quase um «u» sem arredondar os lábios. Depois de consoante dura vem ы; depois de mole, и. Por isso быть (ser) e бить (bater) são palavras diferentes.',
+      tip: 'O “ы” não existe em português: é um “i” com a língua puxada para trás, quase um “u” sem arredondar os lábios. Depois de consoante dura vem ы; depois de mole, и. Por isso быть (ser) e бить (bater) são palavras diferentes.',
     },
   ],
   pairs: [

@@ -87,7 +87,7 @@ for (const pack of Object.values(PACKS)) {
     for (const g of pack.grammar) {
       assert.ok((SUBLEVELS as readonly string[]).includes(g.level), `${g.id}: nível ${g.level}`);
       assert.ok(g.sections.length > 0, g.id);
-      for (const q of g.quiz) assert.ok(q.options.includes(q.answer), `${g.id}: «${q.answer}» fora das opções`);
+      for (const q of g.quiz) assert.ok(q.options.includes(q.answer), `${g.id}: “${q.answer}” fora das opções`);
       for (const sec of g.sections)
         if (sec.table) for (const r of sec.table.rows) assert.equal(r.length, sec.table.head.length, `${g.id}: tabela com colunas desiguais`);
     }
@@ -107,7 +107,7 @@ for (const pack of Object.values(PACKS)) {
   });
 }
 
-test('mapa: códigos ISO 3166-1/2 usados em «onde se fala» existem', () => {
+test('mapa: códigos ISO 3166-1/2 usados em “onde se fala” existem', () => {
   const countries = new Set(WORLD.map((c) => c.iso));
   const subs = new Set(
     Object.values(ISO_3166_2)
@@ -146,7 +146,7 @@ test('seletor agrupa por família e ramo', () => {
   assert.deepEqual(g['Urálico']['Fínico'].map((l) => l.code).sort(), ['et', 'fi']);
 });
 
-test('subdivisões: um arquivo por país do mapa e as regiões de «onde se fala» desenhadas', async () => {
+test('subdivisões: um arquivo por país do mapa e as regiões de “onde se fala” desenhadas', async () => {
   const { readFileSync, readdirSync } = await import('node:fs');
   const files = new Set(readdirSync('assets/geo').map((f) => f.replace('.geo', '')));
   const index = readFileSync('src/data/subdivisoes-geo.ts', 'utf8');
@@ -229,7 +229,7 @@ test('linguística: aulas gerais e áreas por idioma consistentes', async () => 
 test('it: todo texto italiano sem letras do português e com os acentos certos', async () => {
   const { italianTextProblems } = await import('../services/it-texto');
   const { italianTexts } = await import('./it/textos');
-  const problems = italianTexts(PACKS.it).flatMap((t) => italianTextProblems(t).map((p) => `«${t.slice(0, 40)}»: ${p}`));
+  const problems = italianTexts(PACKS.it).flatMap((t) => italianTextProblems(t).map((p) => `“${t.slice(0, 40)}”: ${p}`));
   assert.deepEqual(problems.slice(0, 10), []);
 });
 
@@ -245,7 +245,7 @@ test('it: dicionário de pronúncia cobre o vocabulário, com tônica e timbre b
 test('pt: texto europeu sem brasileirismos (gerúndio com estar, próclise no começo, grafias do Brasil)', async () => {
   const { europeanPortugueseProblems } = await import('../services/pt-texto');
   const { europeanTexts } = await import('./pt/textos');
-  const problems = europeanTexts(PACKS.pt).flatMap((t) => europeanPortugueseProblems(t).map((p) => `«${t.slice(0, 40)}»: ${p}`));
+  const problems = europeanTexts(PACKS.pt).flatMap((t) => europeanPortugueseProblems(t).map((p) => `“${t.slice(0, 40)}”: ${p}`));
   assert.deepEqual(problems.slice(0, 10), []);
 });
 
@@ -262,7 +262,7 @@ for (const code of LEXICON_LANGS.filter((c) => PACKS[c])) {
   test(`${code}: texto sem letras nem palavras de línguas vizinhas`, async () => {
     const { nordicTextProblems } = await import('../services/texto-nordico');
     const { targetTexts } = await import('./textos-alvo');
-    const problems = targetTexts(PACKS[code]).flatMap((t) => nordicTextProblems(code, t).map((p) => `«${t.slice(0, 40)}»: ${p}`));
+    const problems = targetTexts(PACKS[code]).flatMap((t) => nordicTextProblems(code, t).map((p) => `“${t.slice(0, 40)}”: ${p}`));
     assert.deepEqual(problems.slice(0, 10), []);
   });
 

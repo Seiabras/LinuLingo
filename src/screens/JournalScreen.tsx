@@ -70,7 +70,7 @@ export default function JournalScreen() {
         language: pack.code,
         source: 'diario',
         key,
-        prompt: `Como se escreve certo? «${issue.original}»`,
+        prompt: `Como se escreve certo? “${issue.original}”`,
         expected: issue.suggestion,
         given: issue.original,
         note: issue.why,
