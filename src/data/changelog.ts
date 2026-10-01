@@ -7,6 +7,8 @@ export interface ChangelogEntry {
 }
 
 export const CHANGELOG: ChangelogEntry[] = [
+  { date: '2026-10-01T19:38:41-03:00', summary: "feat: adiciona xavante e tukano" },
+  { date: '2026-10-01T19:07:29-03:00', summary: "chore: atualiza o changelog do app" },
   { date: '2026-10-01T19:07:24-03:00', summary: "feat: adiciona kaingang e tikuna; corrige rótulo de ramo no acordeão" },
   { date: '2026-10-01T18:59:17-03:00', summary: "chore: atualiza o changelog do app" },
   { date: '2026-10-01T18:59:12-03:00', summary: "docs+test: atualiza PENDENTES.md e os scripts de verificação para o acordeão" },
