@@ -84,6 +84,8 @@ import { GUARANI_MBYA } from './gun';
 import { GEORGIANO } from './ka';
 import { XAVANTE } from './xav';
 import { TUKANO } from './tuo';
+import { TAILANDES } from './th';
+import { KHMER } from './km';
 
 /** Idiomas com conteúdo pronto. */
 export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES, fr: FRANCES, ca: CATALAO, is: ISLANDES, fi: FINLANDES, et: ESTONIANO, fo: FEROES, lt: LITUANO, lv: LETAO, sw: SUAILI, ja: JAPONES, ko: COREANO,
@@ -97,7 +99,7 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   pms: PIEMONTES, lij: LIGURE, lmo: LOMBARDO, mwl: MIRANDES, frp: FRANCOPROVENCAL,
   el: GREGO, sq: ALBANES, hy: ARMENIO,
   hi: HINDI, gn: GUARANI, tpw: TUPI_ANTIGO, ha: HAUCA, ig: IGBO, yrl: NHEENGATU, bn: BENGALI, qu: QUECHUA, kgp: KAINGANG, tca: TIKUNA,
-  xav: XAVANTE, tuo: TUKANO, gun: GUARANI_MBYA, ka: GEORGIANO };
+  xav: XAVANTE, tuo: TUKANO, gun: GUARANI_MBYA, ka: GEORGIANO, th: TAILANDES, km: KHMER };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -187,10 +189,14 @@ export const LANGUAGES: LanguageInfo[] = [
     lineage: { family: 'Indo-europeu', branches: ['Indo-iraniano', 'Indo-ariano', 'Indo-ariano meridional'], region: 'Maharashtra (oeste da Índia)', writing: 'Devanágari' },
   },
   VIETNAMITA,
+  KHMER,
   {
     code: 'te', name: 'Télugo', nativeName: 'తెలుగు', flag: '🇮🇳',
     lineage: { family: 'Dravídico', branches: ['Dravídico centro-meridional'], region: 'Andhra Pradesh e Telangana (sudeste da Índia)', writing: 'Alfabeto télugo' },
   },
+  // tailandês: família kra-dai, sem parentesco com o vietnamita nem com o khmer (vizinhos geográficos,
+  // não linguísticos)
+  TAILANDES,
   TURCO,
   // línguas indígenas das Américas (família tupi-guarani)
   GUARANI,
