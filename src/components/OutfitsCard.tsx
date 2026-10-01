@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState, type ReactNode } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { useFocusEffect } from 'expo-router';
-import { Card, Chip } from '@/components/ui';
+import { Card, Chip, Collapsible } from '@/components/ui';
 import { Linu } from '@/components/Linu';
 import { useApp } from '@/services/app-state';
 import { PACKS } from '@/data/idiomas';
@@ -40,6 +40,8 @@ export function OutfitsCard() {
   const [krill, setKrill] = useState(0);
   const [pacoteResult, setPacoteResult] = useState<PacotePrize | null>(null);
   const [opening, setOpening] = useState(false);
+  const [tab, setTab] = useState<'presentes' | 'loja'>('presentes');
+  const [othersOpen, setOthersOpen] = useState(false);
   const xp = user?.total_xp ?? 0;
 
   useFocusEffect(
@@ -65,6 +67,8 @@ export function OutfitsCard() {
   const inSlot = (o: LinuOutfit) => !slot || slotOf(o.id) === slot;
   const mine = ROUPAS_LINU.filter((o) => o.lang === pack.code && inSlot(o));
   const others = ROUPAS_LINU.filter((o) => o.lang && o.lang !== pack.code && inSlot(o));
+  const othersByLang = new Map<string, LinuOutfit[]>();
+  for (const o of others) othersByLang.set(o.lang!, [...(othersByLang.get(o.lang!) ?? []), o]);
   const shop = ROUPAS_LINU.filter((o) => o.price && inSlot(o));
   const shown = ROUPAS_LINU.find((o) => o.id === picked) ?? null;
   // a prévia mostra o Linu com o que já usa e a peça escolhida no lugar dela
@@ -187,6 +191,20 @@ export function OutfitsCard() {
         </View>
       </View>
 
+      {/* abas: o que já tenho × a loja do mundo */}
+      <View className="flex-row rounded-2xl bg-slate-200 p-1 dark:bg-slate-800">
+        {(
+          [
+            ['presentes', `🎁 Presentes (${mine.length + others.length})`],
+            ['loja', `🌍 Loja (${shop.length})`],
+          ] as const
+        ).map(([k, label]) => (
+          <Pressable key={k} accessibilityRole="button" accessibilityState={{ selected: tab === k }} onPress={() => setTab(k)} className={`flex-1 items-center rounded-xl py-2 ${tab === k ? 'bg-white dark:bg-slate-950' : ''}`}>
+            <Text className={`text-sm font-bold ${tab === k ? 'text-conecta' : 'text-slate-500 dark:text-slate-400'}`}>{label}</Text>
+          </Pressable>
+        ))}
+      </View>
+
       {/* filtro por lugar */}
       <View className="flex-row flex-wrap gap-2">
         {[null, ...SLOTS.map((x) => x.id)].map((id) => {
@@ -205,35 +223,55 @@ export function OutfitsCard() {
           );
         })}
       </View>
-      <View className="flex-row flex-wrap gap-2">
-        <OutfitTile label="Sem roupinha" sub="tira tudo" outfit={null} on={wearing.length === 0} seen={false} onPress={() => { setPicked(null); void takeOff(null); }} />
-      </View>
-      {mine.length > 0 && <Section title={`🎁 Presentes do ${nomeIdioma(pack.name)}`}>{mine.map(tile)}</Section>}
-      <Section title="🎁 Presentes dos outros idiomas">{others.map(tile)}</Section>
-      <Section title="🌍 Do mundo (com krill)">{shop.map(tile)}</Section>
 
-      <View className="gap-2 rounded-2xl border-2 border-amber-300 bg-amber-50 p-3 dark:border-amber-700 dark:bg-amber-950/30">
-        <Text className="text-sm font-extrabold text-slate-700 dark:text-slate-200">🎁 Pacote de chance</Text>
-        <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">
-          Uma surpresa por 🦐 {PACOTE_PRICE}: quase sempre uma figurinha do álbum, às vezes uma roupinha do mundo que ainda falta. Sem dinheiro real, só krill.
-        </Text>
-        <Pressable
-          accessibilityRole="button"
-          accessibilityLabel={krill >= PACOTE_PRICE ? `Abrir pacote de chance por ${PACOTE_PRICE} krill` : `Faltam ${PACOTE_PRICE - krill} krill para o pacote de chance`}
-          disabled={krill < PACOTE_PRICE || opening}
-          onPress={abrirPacote}
-          className={`self-start rounded-xl px-4 py-2 ${krill >= PACOTE_PRICE ? 'bg-amber-500' : 'bg-slate-200 dark:bg-slate-700'}`}
-        >
-          <Text className={`font-extrabold ${krill >= PACOTE_PRICE ? 'text-white' : 'text-slate-600 dark:text-slate-300'}`}>
-            {opening ? 'Abrindo…' : krill >= PACOTE_PRICE ? `Abrir por 🦐 ${PACOTE_PRICE}` : `Faltam 🦐 ${PACOTE_PRICE - krill}`}
-          </Text>
-        </Pressable>
-        {pacoteResult && (
-          <Text className="text-sm font-bold text-amber-700 dark:text-amber-300">
-            {pacoteResult.kind === 'roupa' ? `🎉 Saiu uma roupinha: ${pacoteResult.outfit.name}!` : '🎉 Saiu uma figurinha! (veja o aviso em cima)'}
-          </Text>
-        )}
-      </View>
+      {tab === 'presentes' ? (
+        <>
+          <View className="flex-row flex-wrap gap-2">
+            <OutfitTile label="Sem roupinha" sub="tira tudo" outfit={null} on={wearing.length === 0} seen={false} onPress={() => { setPicked(null); void takeOff(null); }} />
+          </View>
+          {mine.length > 0 && <Section title={`🎁 Presentes do ${nomeIdioma(pack.name)}`}>{mine.map(tile)}</Section>}
+          {others.length > 0 && (
+            <Collapsible title="🎁 Presentes de outros idiomas" count={others.length} open={othersOpen} onToggle={() => setOthersOpen((v) => !v)} titleClassName="text-sm font-extrabold text-slate-700 dark:text-slate-200">
+              <View className="gap-3">
+                {[...othersByLang.entries()].map(([langCode, langs]) => (
+                  <View key={langCode} className="gap-1.5">
+                    <Text className="text-xs font-semibold text-slate-400">
+                      {PACKS[langCode]?.flag ?? ''} {PACKS[langCode] ? nomeIdioma(PACKS[langCode].name) : langCode}
+                    </Text>
+                    <View className="flex-row flex-wrap gap-2">{langs.map(tile)}</View>
+                  </View>
+                ))}
+              </View>
+            </Collapsible>
+          )}
+        </>
+      ) : (
+        <>
+          <View className="gap-2 rounded-2xl border-2 border-amber-300 bg-amber-50 p-3 dark:border-amber-700 dark:bg-amber-950/30">
+            <Text className="text-sm font-extrabold text-slate-700 dark:text-slate-200">🎁 Pacote de chance</Text>
+            <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">
+              Uma surpresa por 🦐 {PACOTE_PRICE}: quase sempre uma figurinha do álbum, às vezes uma roupinha do mundo que ainda falta. Sem dinheiro real, só krill.
+            </Text>
+            <Pressable
+              accessibilityRole="button"
+              accessibilityLabel={krill >= PACOTE_PRICE ? `Abrir pacote de chance por ${PACOTE_PRICE} krill` : `Faltam ${PACOTE_PRICE - krill} krill para o pacote de chance`}
+              disabled={krill < PACOTE_PRICE || opening}
+              onPress={abrirPacote}
+              className={`self-start rounded-xl px-4 py-2 ${krill >= PACOTE_PRICE ? 'bg-amber-500' : 'bg-slate-200 dark:bg-slate-700'}`}
+            >
+              <Text className={`font-extrabold ${krill >= PACOTE_PRICE ? 'text-white' : 'text-slate-600 dark:text-slate-300'}`}>
+                {opening ? 'Abrindo…' : krill >= PACOTE_PRICE ? `Abrir por 🦐 ${PACOTE_PRICE}` : `Faltam 🦐 ${PACOTE_PRICE - krill}`}
+              </Text>
+            </Pressable>
+            {pacoteResult && (
+              <Text className="text-sm font-bold text-amber-700 dark:text-amber-300">
+                {pacoteResult.kind === 'roupa' ? `🎉 Saiu uma roupinha: ${pacoteResult.outfit.name}!` : '🎉 Saiu uma figurinha! (veja o aviso em cima)'}
+              </Text>
+            )}
+          </View>
+          <Section title="🌍 Do mundo (com krill)">{shop.map(tile)}</Section>
+        </>
+      )}
     </Card>
   );
 }

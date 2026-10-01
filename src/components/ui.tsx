@@ -2,18 +2,22 @@ import { Children, useState, type ReactNode } from 'react';
 import { router } from 'expo-router';
 import { ActivityIndicator, Pressable, ScrollView, Text, View, type PressableProps } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Info, Volume2, VolumeX } from 'lucide-react-native';
+import { ChevronDown, ChevronRight, Info, Volume2, VolumeX } from 'lucide-react-native';
 import { useApp } from '@/services/app-state';
 import { speak } from '@/services/speech';
 import { tapLight } from '@/services/haptics';
 import { useIsDark } from '@/services/theme';
 import { nomeIdioma } from '@/services/idioma-nome';
 
-/** Tela padrão: área segura, fundo do tema e largura máxima no desktop. */
-export function Screen({ children, scroll = true, edges }: { children: ReactNode; scroll?: boolean; edges?: ('top' | 'bottom')[] }) {
+/**
+ * Tela padrão: área segura, fundo do tema e largura máxima no desktop. `background`, quando passado
+ * (ex.: `FieldNotebookBackground`), substitui o fundo liso — fica atrás do conteúdo, que rola por cima.
+ */
+export function Screen({ children, scroll = true, edges, background }: { children: ReactNode; scroll?: boolean; edges?: ('top' | 'bottom')[]; background?: ReactNode }) {
   const body = <View className="w-full max-w-2xl self-center px-4 pb-8">{children}</View>;
   return (
-    <SafeAreaView edges={edges ?? ['top']} className="flex-1 bg-suave dark:bg-grafite">
+    <SafeAreaView edges={edges ?? ['top']} className={`flex-1 ${background ? '' : 'bg-suave dark:bg-grafite'}`}>
+      {background}
       {scroll ? (
         <ScrollView contentContainerStyle={{ flexGrow: 1 }} keyboardShouldPersistTaps="handled">
           {body}
@@ -168,6 +172,51 @@ export function Ipa({ text, className = '' }: { text: string; className?: string
         {reading}
       </Text>
       {ipaLine}
+    </View>
+  );
+}
+
+/**
+ * Aba que abre e fecha, com seta e contador — para listas compridas (idiomas, roupinhas…) que não
+ * cabem tudo aberto de uma vez. `title`/`count` ficam sempre visíveis; `children` só quando aberta.
+ */
+export function Collapsible({
+  title,
+  count,
+  open,
+  onToggle,
+  badge,
+  titleClassName,
+  children,
+}: {
+  title: string;
+  count?: number;
+  open: boolean;
+  onToggle: () => void;
+  badge?: ReactNode;
+  titleClassName?: string;
+  children: ReactNode;
+}) {
+  const dark = useIsDark();
+  return (
+    <View className="gap-2">
+      <Pressable
+        accessibilityRole="button"
+        accessibilityState={{ expanded: open }}
+        accessibilityLabel={`${open ? 'Fechar' : 'Abrir'} ${title}${count !== undefined ? `, ${count}` : ''}`}
+        onPress={onToggle}
+        className="flex-row items-center justify-between py-1"
+      >
+        <View className="flex-row items-center gap-2">
+          <Text className={titleClassName ?? 'text-sm font-extrabold uppercase tracking-wide text-slate-500'}>{title}</Text>
+          {count !== undefined && <Text className="text-xs font-semibold text-slate-400">{count}</Text>}
+        </View>
+        <View className="flex-row items-center gap-2">
+          {badge}
+          {open ? <ChevronDown size={18} color={dark ? '#94A3B8' : '#64748B'} /> : <ChevronRight size={18} color={dark ? '#94A3B8' : '#64748B'} />}
+        </View>
+      </Pressable>
+      {open && children}
     </View>
   );
 }

@@ -1,20 +1,24 @@
 import { Pressable, Text, View } from 'react-native';
 import { ArrowLeft } from 'lucide-react-native';
-import { Screen, Card, Chip, SectionTitle, SpeechBubble } from '@/components/ui';
+import { Screen, Chip, SectionTitle, SpeechBubble } from '@/components/ui';
 import { Linu } from '@/components/Linu';
 import { LinuAmigo } from '@/components/LinuAmigo';
+import { FieldNotebookBackground } from '@/components/FieldNotebookBackground';
+import { FieldGuideCard } from '@/components/FieldGuideCard';
 import { AMIGOS_LINU, GRUPOS_AMIGOS, type AmigoGrupo, type AmigoLinu } from '@/data/amigos-linu';
 import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
 
 /**
  * /amigos: os amigos do Linu — outros pinguins e vizinhos da fauna antártica —, cada um com o
- * desenho, a espécie de verdade e fatos sobre ela.
+ * desenho, a espécie de verdade e fatos sobre ela. Visual de caderno de campo de expedição: fundo de
+ * gelo com linhas de contorno e cartões de guia de campo, com a etiqueta do grupo (pinguins, vizinhos
+ * do gelo…) em vez de bichos soltos num fundo liso.
  */
 export default function FriendsScreen() {
   const dark = useIsDark();
   return (
-    <Screen>
+    <Screen background={<FieldNotebookBackground variant="gelo" />}>
       <View className="flex-row items-center gap-3 pt-3">
         <Pressable accessibilityLabel="Voltar" onPress={goBack} hitSlop={10}>
           <ArrowLeft size={24} color={dark ? '#CBD5E1' : '#334155'} />
@@ -48,12 +52,11 @@ export default function FriendsScreen() {
 
 function FriendCard({ a }: { a: AmigoLinu }) {
   return (
-    <Card className="gap-2">
+    <FieldGuideCard label={a.species} className="gap-2">
       <View className="flex-row items-center gap-3">
         <LinuAmigo id={a.id} size={92} />
         <View className="flex-1 gap-1">
           <Text className="text-xl font-extrabold text-slate-900 dark:text-white">{a.name}</Text>
-          <Text className="text-sm font-semibold text-slate-700 dark:text-slate-300">{a.species}</Text>
           <Text className="text-xs italic text-slate-500 dark:text-slate-400">{a.scientific}</Text>
           <Text className="text-xs text-slate-600 dark:text-slate-400">{a.jeito}</Text>
         </View>
@@ -70,6 +73,6 @@ function FriendCard({ a }: { a: AmigoLinu }) {
           • {f}
         </Text>
       ))}
-    </Card>
+    </FieldGuideCard>
   );
 }

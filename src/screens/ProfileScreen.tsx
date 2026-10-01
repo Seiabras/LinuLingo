@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
 import { Alert, Platform, Pressable, Text, TextInput, View } from 'react-native';
 import { router, useFocusEffect } from 'expo-router';
-import { Screen, Button, Card, Chip, SectionTitle } from '@/components/ui';
+import { Screen, Button, Card, Chip, Collapsible, SectionTitle } from '@/components/ui';
 import { Linu } from '@/components/Linu';
 import { SpeciesPhotos } from '@/components/SpeciesPhotos';
 import { OfflineCard } from '@/components/OfflineCard';
@@ -11,6 +11,7 @@ import { useApp } from '@/services/app-state';
 import { missingParts } from '@/services/incompleto';
 import { completedLessons, resetProgress, updateUser, vocabStats, xpByDay } from '@/database/queries';
 import { groupByLineage, isAvailable, PACKS } from '@/data/idiomas';
+import type { LanguageInfo } from '@/data/types';
 import type { ThemePref } from '@/services/theme';
 
 const WEEKDAY = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'];
@@ -21,6 +22,17 @@ export default function ProfileScreen() {
   const { db, user, pack, streak, refresh, theme, setTheme, setLanguage } = useApp();
   // idioma sendo preparado (o conteúdo dele é gravado no banco na primeira vez)
   const [switching, setSwitching] = useState<string | null>(null);
+  // família e ramo do idioma atual começam abertos; o resto, fechado (a lista tem mais de 70 idiomas)
+  const [openGroups, setOpenGroups] = useState<Set<string>>(
+    () => new Set([`F:${pack.lineage.family}`, `B:${pack.lineage.family}:${pack.lineage.branches[0]}`]),
+  );
+  const toggleGroup = (key: string) =>
+    setOpenGroups((prev) => {
+      const next = new Set(prev);
+      if (next.has(key)) next.delete(key);
+      else next.add(key);
+      return next;
+    });
   const [name, setName] = useState(user?.name ?? '');
   const [week, setWeek] = useState<{ day: string; xp: number }[]>([]);
   const [lessons, setLessons] = useState(0);
@@ -42,6 +54,52 @@ export default function ProfileScreen() {
   const groups = groupByLineage();
   const max = Math.max(10, ...week.map((d) => d.xp));
   const weekTotal = week.reduce((s, d) => s + d.xp, 0);
+
+  const languageRow = (l: LanguageInfo) => {
+    const available = isAvailable(l.code);
+    const active = l.code === pack.code;
+    const incomplete = available ? PACKS[l.code].incomplete : undefined;
+    return (
+      <Pressable
+        key={l.code}
+        disabled={!available || active || switching !== null}
+        onPress={async () => {
+          setSwitching(l.code);
+          try {
+            await setLanguage(l.code);
+          } finally {
+            setSwitching(null);
+          }
+        }}
+        className={`flex-row items-center gap-3 rounded-xl px-3 py-2.5 ${active ? 'bg-conecta-light dark:bg-blue-950' : 'bg-slate-50 dark:bg-slate-800/50'}`}
+      >
+        <Text className="text-2xl">{l.flag}</Text>
+        <View className="flex-1">
+          <Text className={`font-bold ${available ? 'text-slate-900 dark:text-white' : 'text-slate-400'}`}>
+            {l.name} <Text className="font-normal text-slate-500">· {l.nativeName}</Text>
+          </Text>
+          <Text className="text-xs text-slate-500 dark:text-slate-400">
+            {l.lineage.branches.join(' › ')} · {l.lineage.region}
+          </Text>
+          {incomplete && (
+            <Text className="mt-0.5 text-xs text-amber-700 dark:text-amber-400">
+              {incomplete.note}
+              {missingParts(PACKS[l.code]).length > 0 && ` Ainda falta também: ${missingParts(PACKS[l.code]).join(', ')}.`}
+            </Text>
+          )}
+        </View>
+        {switching === l.code ? (
+          <Chip label="preparando…" tone="amber" />
+        ) : active ? (
+          <Chip label="estudando" tone="blue" />
+        ) : incomplete ? (
+          <Chip label={`só até ${incomplete.until}`} tone="amber" />
+        ) : (
+          !available && <Chip label="em breve" />
+        )}
+      </Pressable>
+    );
+  };
 
   const confirmReset = () => {
     const run = async () => {
@@ -145,61 +203,47 @@ export default function ProfileScreen() {
 
       <SectionTitle>Idioma · por família e ramo</SectionTitle>
       <View className="gap-3">
-        {Object.entries(groups).map(([family, branches]) => (
-          <Card key={family} className="gap-2">
-            <Text className="text-sm font-extrabold uppercase tracking-wide text-slate-500">{family}</Text>
-            {Object.entries(branches).map(([branch, langs]) => (
-              <View key={branch} className="gap-1.5">
-                {branch !== langs[0].name && <Text className="text-xs font-semibold text-slate-400">{branch}</Text>}
-                {langs.map((l) => {
-                  const available = isAvailable(l.code);
-                  const active = l.code === pack.code;
-                  const incomplete = available ? PACKS[l.code].incomplete : undefined;
-                  return (
-                    <Pressable
-                      key={l.code}
-                      disabled={!available || active || switching !== null}
-                      onPress={async () => {
-                        setSwitching(l.code);
-                        try {
-                          await setLanguage(l.code);
-                        } finally {
-                          setSwitching(null);
-                        }
-                      }}
-                      className={`flex-row items-center gap-3 rounded-xl px-3 py-2.5 ${active ? 'bg-conecta-light dark:bg-blue-950' : 'bg-slate-50 dark:bg-slate-800/50'}`}
-                    >
-                      <Text className="text-2xl">{l.flag}</Text>
-                      <View className="flex-1">
-                        <Text className={`font-bold ${available ? 'text-slate-900 dark:text-white' : 'text-slate-400'}`}>
-                          {l.name} <Text className="font-normal text-slate-500">· {l.nativeName}</Text>
-                        </Text>
-                        <Text className="text-xs text-slate-500 dark:text-slate-400">
-                          {l.lineage.branches.join(' › ')} · {l.lineage.region}
-                        </Text>
-                        {incomplete && (
-                          <Text className="mt-0.5 text-xs text-amber-700 dark:text-amber-400">
-                            {incomplete.note}
-                            {missingParts(PACKS[l.code]).length > 0 && ` Ainda falta também: ${missingParts(PACKS[l.code]).join(', ')}.`}
-                          </Text>
-                        )}
+        {Object.entries(groups).map(([family, branches]) => {
+          const famKey = `F:${family}`;
+          const famOpen = openGroups.has(famKey);
+          const famLangs = Object.values(branches).flat();
+          const famHasActive = famLangs.some((l) => l.code === pack.code);
+          return (
+            <Card key={family} className="gap-2">
+              <Collapsible title={family} count={famLangs.length} open={famOpen} onToggle={() => toggleGroup(famKey)} badge={!famOpen && famHasActive ? <Text className="text-lg">{pack.flag}</Text> : undefined}>
+                {Object.entries(branches).map(([branch, langs]) => {
+                  // ramo com 1 idioma só: sem sub-aba (não há o que recolher), mas o nome do ramo
+                  // continua visível — senão, vários ramos de 1 idioma só seguidos (grego, armênio,
+                  // albanês…) ficam parecendo um grupo só, sem nada que diga que são ramos diferentes
+                  if (langs.length <= 1) {
+                    return (
+                      <View key={branch} className="gap-1.5">
+                        <Text className="text-xs font-semibold text-slate-400">{branch}</Text>
+                        {langs.map(languageRow)}
                       </View>
-                      {switching === l.code ? (
-                        <Chip label="preparando…" tone="amber" />
-                      ) : active ? (
-                        <Chip label="estudando" tone="blue" />
-                      ) : incomplete ? (
-                        <Chip label={`só até ${incomplete.until}`} tone="amber" />
-                      ) : (
-                        !available && <Chip label="em breve" />
-                      )}
-                    </Pressable>
+                    );
+                  }
+                  const branchKey = `B:${family}:${branch}`;
+                  const branchOpen = openGroups.has(branchKey);
+                  const branchHasActive = langs.some((l) => l.code === pack.code);
+                  return (
+                    <Collapsible
+                      key={branch}
+                      title={branch}
+                      count={langs.length}
+                      open={branchOpen}
+                      onToggle={() => toggleGroup(branchKey)}
+                      titleClassName="text-xs font-semibold text-slate-400"
+                      badge={!branchOpen && branchHasActive ? <Text className="text-sm">{pack.flag}</Text> : undefined}
+                    >
+                      <View className="gap-1.5">{langs.map(languageRow)}</View>
+                    </Collapsible>
                   );
                 })}
-              </View>
-            ))}
-          </Card>
-        ))}
+              </Collapsible>
+            </Card>
+          );
+        })}
       </View>
 
       {Platform.OS === 'web' && (

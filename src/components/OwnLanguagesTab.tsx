@@ -10,7 +10,7 @@ import { useIsDark } from '@/services/theme';
 import { nomeIdioma } from '@/services/idioma-nome';
 import { WORLD } from '@/data/mapa-mundi';
 import { flagOf } from '@/data/onde-se-fala';
-import { allOwnLanguages, sameFamily, type OwnLanguage } from '@/data/linguas-proprias';
+import { allOwnLanguages, isImmigrationLanguage, sameFamily, type OwnLanguage } from '@/data/linguas-proprias';
 import { RISK_LEVELS } from '@/data/linguas-indigenas';
 
 const countryLabel = (iso3: string) => {
@@ -38,39 +38,56 @@ function useRiskByGlottocode(): Map<string, { name: string; level: number }> | n
  * mas que não são um jeito de falar esses idiomas (o sámi não é sueco; nem é da mesma família).
  * As do idioma estudado vêm primeiro; cada uma abre com o mapa, o que a marca, frases e o treino.
  */
+function groupByHost(list: OwnLanguage[]): OwnLanguage[][] {
+  const m = new Map<string, OwnLanguage[]>();
+  for (const l of list) m.set(l.pack.code, [...(m.get(l.pack.code) ?? []), l]);
+  return [...m.values()];
+}
+
 export function OwnLanguagesTab() {
   const { pack } = useApp();
   const all = useMemo(() => allOwnLanguages(pack.code), [pack.code]);
   const risk = useRiskByGlottocode();
   const [open, setOpen] = useState<string | null>(null);
-  const groups = useMemo(() => {
-    const m = new Map<string, OwnLanguage[]>();
-    for (const l of all) m.set(l.pack.code, [...(m.get(l.pack.code) ?? []), l]);
-    return [...m.values()];
-  }, [all]);
+  const proprias = useMemo(() => groupByHost(all.filter((l) => !isImmigrationLanguage(l))), [all]);
+  const imigracao = useMemo(() => groupByHost(all.filter(isImmigrationLanguage)), [all]);
+
+  const section = (groups: OwnLanguage[][]) =>
+    groups.map((list) => {
+      const host = list[0].pack;
+      return (
+        <View key={host.code} className="gap-2">
+          <Text className="mt-2 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">
+            {host.flag} Onde se fala {nomeIdioma(host.name)}
+            {host.code === pack.code ? ' (o que você estuda)' : ''}
+          </Text>
+          {list.map((l) => (
+            <OwnLanguageCard key={l.accent.id} l={l} risk={risk} open={open === l.accent.id} onToggle={() => setOpen(open === l.accent.id ? null : l.accent.id)} />
+          ))}
+        </View>
+      );
+    });
 
   return (
     <View className="gap-3">
       <View className="mt-2 flex-row items-end gap-2">
         <Linu mood="falando" size={60} animate={false} />
         <SpeechBubble className="mb-5">
-          Estas não são sotaques: são línguas com gramática, história e nome próprios, faladas nos mesmos lugares que os idiomas do app. Algumas nem são da mesma família.
+          Estas não são sotaques: são línguas com gramática, história e nome próprios. As próprias se falam há muito tempo onde um idioma do app é falado; as de imigração vieram com um povo que se mudou para outro país e mantiveram a língua de lá.
         </SpeechBubble>
       </View>
-      {groups.map((list) => {
-        const host = list[0].pack;
-        return (
-          <View key={host.code} className="gap-2">
-            <Text className="mt-2 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">
-              {host.flag} Onde se fala {nomeIdioma(host.name)}
-              {host.code === pack.code ? ' (o que você estuda)' : ''}
-            </Text>
-            {list.map((l) => (
-              <OwnLanguageCard key={l.accent.id} l={l} risk={risk} open={open === l.accent.id} onToggle={() => setOpen(open === l.accent.id ? null : l.accent.id)} />
-            ))}
-          </View>
-        );
-      })}
+      {proprias.length > 0 && (
+        <View className="gap-3">
+          <Text className="text-sm font-extrabold text-slate-700 dark:text-slate-200">🗣️ Línguas próprias</Text>
+          {section(proprias)}
+        </View>
+      )}
+      {imigracao.length > 0 && (
+        <View className="gap-3">
+          <Text className="text-sm font-extrabold text-slate-700 dark:text-slate-200">🧳 Línguas de imigração</Text>
+          {section(imigracao)}
+        </View>
+      )}
       <Text className="text-xs leading-5 text-slate-500 dark:text-slate-400">
         Grau de risco: Glottolog 5 (Max Planck Institute for Evolutionary Anthropology, CC BY 4.0).
       </Text>
