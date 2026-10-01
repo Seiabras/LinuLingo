@@ -50,10 +50,9 @@ commitado.
   idiomas registrados contra a classificação de verdade (Glottolog/Ethnologue): não achei nenhum erro
   de fundo, só um nome de ramo impreciso no scots (dizia "Inglês" no lugar de "Ânglico" — corrigido;
   scots é parente do inglês, não veio dele).
-- **Asiáticos**: hi (híndi) e bn (bengali) feitos; faltam ur e fa (bloqueados por RTL, ver abaixo),
-  mr, te, ta, th, tl. **Pedido do Matheus Vega (01/10/2026 de madrugada)**: depois dos agentes atuais
-  acabarem, ir para th (tailandês) e as línguas vizinhas do Sudeste Asiático continental (ex.: lo
-  laosiano, km khmer, my birmanês — ainda não confirmados, conferir documentação antes de começar).
+- **Asiáticos**: hi (híndi), bn (bengali), th (tailandês) e km (khmer) feitos; faltam ur e fa
+  (bloqueados por RTL, ver abaixo), mr, te, ta, tl. Do Sudeste Asiático continental ainda faltam lo
+  (laosiano) e my (birmanês) — ainda não confirmados, conferir documentação antes de começar.
 - **Indígenas**: tpw (tupi antigo), gn (guarani paraguaio), qu (quéchua sulenho), yrl (nheengatu),
   kgp (kaingang), tca (tikuna), xav (xavante) e tuo (tukano) feitos; guarani mbyá (gun) e georgiano
   (ka, pedido à parte) em andamento. **Nota de 01/10/2026, madrugada**: esta sessão passou a rodar em
