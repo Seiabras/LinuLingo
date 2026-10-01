@@ -48,6 +48,12 @@ import { BASCO } from './eu';
 import { MACEDONIO } from './mk';
 import { AROMENO } from './rup';
 import { CHINES } from './zh';
+import { CORSO } from './co';
+import { ARAGONES } from './an';
+import { VALAO } from './wa';
+import { VENETO } from './vec';
+import { NAPOLITANO } from './nap';
+import { SICILIANO } from './scn';
 
 /** Idiomas com conteúdo pronto. */
 export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES, fr: FRANCES, ca: CATALAO, is: ISLANDES, fi: FINLANDES, et: ESTONIANO, fo: FEROES, lt: LITUANO, lv: LETAO, sw: SUAILI, ja: JAPONES, ko: COREANO,
@@ -55,7 +61,8 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   gl: GALEGO, ast: ASTURIANO, oc: OCCITANO, sc: SARDO, rm: ROMANCHE, fur: FRIULANO, la: LATIM, lad: JUDEU_ESPANHOL, en: INGLES, id: INDONESIO, vi: VIETNAMITA, yo: IORUBA,
   lld: LADINO_DOLOMITAS, de: ALEMAO, nl: NEERLANDES, af: AFRICANER, pl: POLONES, cs: TCHECO, sk: ESLOVACO, uk: UCRANIANO, tr: TURCO,
   lb: LUXEMBURGUES, bg: BULGARO, sr: SERVIO, hr: CROATA, sl: ESLOVENO, eu: BASCO,
-  mk: MACEDONIO, rup: AROMENO, zh: CHINES };
+  mk: MACEDONIO, rup: AROMENO, zh: CHINES,
+  co: CORSO, an: ARAGONES, wa: VALAO, vec: VENETO, nap: NAPOLITANO, scn: SICILIANO };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -77,11 +84,17 @@ export const LANGUAGES: LanguageInfo[] = [
   CATALAO,
   GALEGO,
   ASTURIANO,
+  ARAGONES,
   OCCITANO,
   SARDO,
+  CORSO,
+  VENETO,
+  NAPOLITANO,
+  SICILIANO,
   ROMANCHE,
   FRIULANO,
   LADINO_DOLOMITAS,
+  VALAO,
   LATIM,
   JUDEU_ESPANHOL,
   AROMENO,

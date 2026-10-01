@@ -64,8 +64,27 @@ commitado.
 - Atualizar o README (tabela de idiomas) e o NotebookLM.md com os idiomas incompletos.
 - Suaíli: ~2.400 palavras, a meta é ~4.000. Os próximos lotes vão em `src/data/sw/vocab-17.ts` e seguintes.
 
-## Ideias de pesquisa externa (tipo Gemini, 30/09/2026 — lista ainda incompleta)
-O usuário está colando aos poucos; só anotar por enquanto, não implementar.
+## Ideias de pesquisa externa (tipo Gemini, 30/09–01/10/2026 — lista completa, 6 itens)
+Só anotar, não implementar ainda. Era uma lista numerada 1-6; os itens 3 e 4 chegaram primeiro
+(entradas abaixo), depois o resto chegou de uma vez.
+- **Item 1, ramificações eletivas na trilha**: a partir do B1.1, além da trilha principal linear,
+  abrir "pontes eletivas" temáticas opcionais sem sair da progressão CEFR: ✈️ Viagens/burocracia
+  (check-in, saúde, documentos); 💼 Profissional/negócios (entrevista, e-mail formal, reunião);
+  🎭 Cultura/literatura (provérbios, regionalismos, história do séc. XX). Ideia: mantém motivação
+  no "platô intermediário" (quando o aluno já sabe o básico e a progressão linear cansa).
+- **Item 2, SRS visível na trilha ("nós de reparo")**: hoje o SM-2 só aparece no Vocab/Cofre e no
+  sprint de 5 min; a ideia é mostrar o esquecimento na própria trilha — o ícone da unidade muda de
+  cor/anima quando as palavras dela estão no ponto de esquecer ("a ponte da Unidade 2 precisa de
+  manutenção"), e um "nó de reparo" rápido restaura e dá XP bônus. Força revisão ativa antes de
+  esquecer de vez, em vez de só depois.
+- **Item 5, checkpoints adaptativos dentro da lição**: ajustar a quantidade de exercícios pelo
+  desempenho em tempo real — acerto rápido e sem hesitar encurta a lição; dificuldade num ponto
+  gramatical específico insere um card extra de "Por que é assim?" antes de retestar.
+- **Item 6, blocos de lançamento por família** (ordem sugerida pro roadmap de expansão, não uma
+  mecânica nova): 🌲 nórdico/fínico (dinamarquês, islandês, feroês, finlandês, estoniano — JÁ TODOS
+  completos no app, essa parte da sugestão está desatualizada); 🌏 asiático (japonês/coreano com
+  kanji/hangul graduado e registro de polidez — também já completos); 🌍 africano (iorubá, amárico,
+  suaíli). Vale só pro que ainda falta: amárico e os outros africanos da lista de "não começados".
 - **Item 3, "Desafios de Chefe" (boss battles com o Linu)**: trocar a prova de fim de subnível
   (hoje valida antes de liberar o próximo, múltipla escolha) por um cenário de missão completa —
   ex.: resolver um imprevisto num aeroporto/hotel no fim da unidade de Viagens, misturando escuta
