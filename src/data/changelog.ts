@@ -7,6 +7,10 @@ export interface ChangelogEntry {
 }
 
 export const CHANGELOG: ChangelogEntry[] = [
+  { date: '2026-10-01T20:04:47-03:00', summary: "fix: tikuna (tca) remove 4 palavras sem fonte confirmável" },
+  { date: '2026-10-01T20:03:53-03:00', summary: "feat: adiciona guarani mbyá e georgiano" },
+  { date: '2026-10-01T19:39:23-03:00', summary: "docs: atualiza PENDENTES.md (xavante, tukano, nota sobre a sessão em paralelo)" },
+  { date: '2026-10-01T19:38:46-03:00', summary: "chore: atualiza o changelog do app" },
   { date: '2026-10-01T19:38:41-03:00', summary: "feat: adiciona xavante e tukano" },
   { date: '2026-10-01T19:07:29-03:00', summary: "chore: atualiza o changelog do app" },
   { date: '2026-10-01T19:07:24-03:00', summary: "feat: adiciona kaingang e tikuna; corrige rótulo de ramo no acordeão" },
