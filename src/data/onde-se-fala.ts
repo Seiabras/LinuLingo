@@ -451,7 +451,8 @@ export function languagesIn(iso: string) {
 }
 
 /** Grau de risco das línguas (escala AES do Glottolog). */
-export const STATUS_LABEL = ['não ameaçada', 'ameaçada', 'em declínio', 'moribunda', 'quase extinta', 'extinta'];
+// nomes dos graus pela UNESCO (ver RISK_LEVELS em linguas-indigenas.ts, a mesma escala AES do Glottolog)
+export const STATUS_LABEL = ['não ameaçada', 'vulnerável', 'em perigo', 'severamente ameaçada', 'criticamente ameaçada', 'extinta'];
 
 let glottologLoaded = false;
 /**

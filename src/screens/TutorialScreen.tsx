@@ -133,6 +133,7 @@ export default function TutorialScreen() {
     if (router.canGoBack()) router.back();
     else router.replace('/');
   };
+  const advance = () => (last ? finish() : setI(i + 1));
 
   return (
     <Screen edges={['top', 'bottom']}>
@@ -187,7 +188,7 @@ export default function TutorialScreen() {
         )}
         {s.extra === 'trilha' && <TrailLegend />}
         {s.extra === 'etapas' && <StepsList />}
-        {s.extra === 'gestos' && <GestureDemo />}
+        {s.extra === 'gestos' && <GestureDemo onDone={advance} />}
         {s.extra === 'ofensiva' && <StreakInfo />}
         {s.extra === 'voz' && (
           <View className="gap-2">
@@ -199,7 +200,7 @@ export default function TutorialScreen() {
 
       <View className="mt-6 flex-row gap-2">
         {i > 0 && <Button title="Voltar" variant="ghost" className="flex-1" onPress={() => setI(i - 1)} />}
-        <Button title={last ? 'Começar!' : 'Próximo'} variant="success" className="flex-1" onPress={() => (last ? finish() : setI(i + 1))} />
+        <Button title={last ? 'Começar!' : 'Próximo'} variant="success" className="flex-1" onPress={advance} />
       </View>
     </Screen>
   );
@@ -309,9 +310,8 @@ const GESTURE_FEEDBACK: Record<SwipeDir, string> = {
   baixo: '↓ Difícil. Conta como acerto, mas os intervalos crescem devagar.',
 };
 
-function GestureDemo() {
+function GestureDemo({ onDone }: { onDone: () => void }) {
   const [last, setLast] = useState<SwipeDir | null>(null);
-  const [n, setN] = useState(0);
   return (
     <View className="items-center gap-2">
       <Text className="text-xs font-bold text-conquista">↑ fácil</Text>
@@ -319,15 +319,15 @@ function GestureDemo() {
         <Text className="text-xs font-bold text-rose-500">←{'\n'}não{'\n'}sei</Text>
         <View className="flex-1">
           <SwipeCard
-            key={n}
             onSwipe={(d) => {
               setLast(d);
-              setN((x) => x + 1);
+              // dá um instante pra ler o feedback do gesto antes de seguir sozinho pro próximo passo
+              setTimeout(onDone, 700);
             }}
           >
             <View className="items-center rounded-3xl border-2 border-slate-200 bg-white py-5 dark:border-slate-700 dark:bg-slate-900">
               <Text style={{ fontSize: 56, lineHeight: 68 }}>🐧</Text>
-              <Text className="text-2xl font-extrabold text-slate-900 dark:text-white">pinguin</Text>
+              <Text className="text-2xl font-extrabold text-slate-900 dark:text-white">pinguim</Text>
             </View>
           </SwipeCard>
         </View>

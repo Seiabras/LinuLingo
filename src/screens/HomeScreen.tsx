@@ -132,35 +132,6 @@ export default function HomeScreen() {
         </View>
       </View>
 
-      <Pressable accessibilityRole="button" onPress={() => router.push('/sprint')} className="mt-2 overflow-hidden rounded-3xl bg-fogo p-5 active:opacity-90">
-        <Text className="text-xs font-extrabold uppercase tracking-widest text-orange-100">⚡ Sprint de 5 minutos</Text>
-        <Text className="mt-1 text-xl font-extrabold text-white">Vocabulário rápido com gestos</Text>
-        <Text className="mt-1 text-sm text-orange-100">Deslize os cartões: → sei · ← não sei · ↑ fácil · ↓ difícil</Text>
-        <View className="mt-3 self-start rounded-xl bg-white px-4 py-2">
-          <Text className="font-extrabold text-fogo">Iniciar sprint agora</Text>
-        </View>
-      </Pressable>
-
-      <Text className="mb-2 mt-5 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">Mais práticas</Text>
-      <View className="flex-row flex-wrap gap-2">
-        {[...(pack.alphabet ? [ALPHABET_PRACTICE] : []), ...(pack.falseFriends ? [FALSE_FRIENDS_PRACTICE] : []), ...(ACCENT_PRACTICE ? [ACCENT_PRACTICE] : []), ...PRACTICES.slice(0, 1), ...(PAIRS_PRACTICE ? [PAIRS_PRACTICE] : []), MISTAKES_PRACTICE, ...PRACTICES.slice(1), ...(ANIMALS_PRACTICE ? [ANIMALS_PRACTICE] : []), SOUNDS_PRACTICE, MAP_GAME_PRACTICE, ...(EXPEDITION_PRACTICE ? [EXPEDITION_PRACTICE] : []), KIN_PRACTICE, ACCENT_GUESS_PRACTICE, COURSES_PRACTICE, ALBUM_PRACTICE, FRIENDS_PRACTICE, RESOURCES_PRACTICE].map((p) => (
-          <Pressable
-            key={p.route}
-            accessibilityRole="button"
-            onPress={() => router.push(p.route)}
-            className="min-w-[46%] flex-1 gap-1 rounded-2xl border-2 border-slate-200 bg-white p-3 active:opacity-80 dark:border-slate-700 dark:bg-slate-900"
-          >
-            <View className="flex-row items-center justify-between">
-              <Text className="text-2xl">{p.emoji}</Text>
-              {p.route === '/diario' && journalToday && <Text className="text-xs font-bold text-conquista">✓ hoje</Text>}
-              {p.route === '/erros' && mistakes > 0 && <Text className="rounded-full bg-rose-100 px-2 text-xs font-bold text-rose-700 dark:bg-rose-950 dark:text-rose-300">{mistakes}</Text>}
-            </View>
-            <Text className="font-extrabold text-slate-900 dark:text-white">{p.title}</Text>
-            <Text className="text-xs text-slate-500 dark:text-slate-400">{p.text}</Text>
-          </Pressable>
-        ))}
-      </View>
-
       {noVoice && (
         <Pressable
           onPress={() => router.push('/voz')}
@@ -185,7 +156,7 @@ export default function HomeScreen() {
         </Pressable>
       )}
 
-      <View className="mb-2 mt-7 flex-row items-center gap-3">
+      <View className="mb-2 mt-5 flex-row items-center gap-3">
         <View className="h-px flex-1 bg-slate-300 dark:bg-slate-700" />
         <Text className="text-xs font-extrabold uppercase tracking-widest text-slate-500 dark:text-slate-400">{pack.incomplete ? `Trilha CEFR · até o ${pack.incomplete.until}` : 'Trilha CEFR · 15 subníveis'}</Text>
         <View className="h-px flex-1 bg-slate-300 dark:bg-slate-700" />
@@ -277,6 +248,35 @@ export default function HomeScreen() {
           </View>
         );
       })}
+
+      <Pressable accessibilityRole="button" onPress={() => router.push('/sprint')} className="mt-7 overflow-hidden rounded-3xl bg-fogo p-5 active:opacity-90">
+        <Text className="text-xs font-extrabold uppercase tracking-widest text-orange-100">⚡ Sprint de 5 minutos</Text>
+        <Text className="mt-1 text-xl font-extrabold text-white">Vocabulário rápido com gestos</Text>
+        <Text className="mt-1 text-sm text-orange-100">Deslize os cartões: → sei · ← não sei · ↑ fácil · ↓ difícil</Text>
+        <View className="mt-3 self-start rounded-xl bg-white px-4 py-2">
+          <Text className="font-extrabold text-fogo">Iniciar sprint agora</Text>
+        </View>
+      </Pressable>
+
+      <Text className="mb-2 mt-5 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">Mais práticas</Text>
+      <View className="flex-row flex-wrap gap-2">
+        {[...(pack.alphabet ? [ALPHABET_PRACTICE] : []), ...(pack.falseFriends ? [FALSE_FRIENDS_PRACTICE] : []), ...(ACCENT_PRACTICE ? [ACCENT_PRACTICE] : []), ...PRACTICES.slice(0, 1), ...(PAIRS_PRACTICE ? [PAIRS_PRACTICE] : []), MISTAKES_PRACTICE, ...PRACTICES.slice(1), ...(ANIMALS_PRACTICE ? [ANIMALS_PRACTICE] : []), SOUNDS_PRACTICE, MAP_GAME_PRACTICE, ...(EXPEDITION_PRACTICE ? [EXPEDITION_PRACTICE] : []), KIN_PRACTICE, ACCENT_GUESS_PRACTICE, COURSES_PRACTICE, ALBUM_PRACTICE, FRIENDS_PRACTICE, RESOURCES_PRACTICE].map((p) => (
+          <Pressable
+            key={p.route}
+            accessibilityRole="button"
+            onPress={() => router.push(p.route)}
+            className="min-w-[46%] flex-1 gap-1 rounded-2xl border-2 border-slate-200 bg-white p-3 active:opacity-80 dark:border-slate-700 dark:bg-slate-900"
+          >
+            <View className="flex-row items-center justify-between">
+              <Text className="text-2xl">{p.emoji}</Text>
+              {p.route === '/diario' && journalToday && <Text className="text-xs font-bold text-conquista">✓ hoje</Text>}
+              {p.route === '/erros' && mistakes > 0 && <Text className="rounded-full bg-rose-100 px-2 text-xs font-bold text-rose-700 dark:bg-rose-950 dark:text-rose-300">{mistakes}</Text>}
+            </View>
+            <Text className="font-extrabold text-slate-900 dark:text-white">{p.title}</Text>
+            <Text className="text-xs text-slate-500 dark:text-slate-400">{p.text}</Text>
+          </Pressable>
+        ))}
+      </View>
 
       <Pressable
         onPress={() => router.push('/comunidade')}

@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
-import { useFocusEffect } from 'expo-router';
+import { useFocusEffect, useLocalSearchParams } from 'expo-router';
 import { ArrowLeft } from 'lucide-react-native';
 import { Screen, Button, Card, Chip, ProgressBar, SpeakButton, SpeechBubble } from '@/components/ui';
 import { Linu } from '@/components/Linu';
@@ -24,8 +24,9 @@ import { playClip } from '@/services/speech';
 export default function AlbumScreen() {
   const { db, pack } = useApp();
   const dark = useIsDark();
+  const { sticker: openSticker } = useLocalSearchParams<{ sticker?: string }>();
   const [album, setAlbum] = useState<Album>({});
-  const [open, setOpen] = useState<string | null>(null);
+  const [open, setOpen] = useState<string | null>(openSticker ?? null);
   const [traded, setTraded] = useState<Sticker | null>(null);
   const [rare, setRare] = useState<Set<string>>(new Set());
 
@@ -33,7 +34,12 @@ export default function AlbumScreen() {
     useCallback(() => {
       loadAlbum(db).then(setAlbum);
       loadRare(db).then(setRare);
-    }, [db]),
+      if (openSticker) {
+        setOpen(openSticker);
+        const s = STICKERS.find((st) => st.id === openSticker);
+        if (s && STICKER_SOUNDS[s.id] && SONS[STICKER_SOUNDS[s.id]]) playClip(SONS[STICKER_SOUNDS[s.id]].src);
+      }
+    }, [db, openSticker]),
   );
 
   const st = albumStats(album);

@@ -5,14 +5,16 @@ import { regionOf } from './regioes';
  * Línguas indígenas e ameaçadas de cada país, a partir do Glottolog (o mesmo arquivo do mapa,
  * carregado sob demanda). O grau de risco é a escala AES do Glottolog, que junta as avaliações da
  * UNESCO, do Ethnologue e do Catálogo de Línguas Ameaçadas: o que conta é se as crianças ainda
- * aprendem a língua em casa.
+ * aprendem a língua em casa. Os nomes dos 6 graus seguem os termos do Atlas das Línguas em Perigo
+ * da UNESCO (Not endangered, Vulnerable, Definitely/Severely/Critically endangered, Extinct), por
+ * serem os mais reconhecidos internacionalmente.
  */
 export const RISK_LEVELS = [
   { level: 0, label: 'não ameaçada', color: '#16A34A', text: 'as crianças aprendem a língua em casa e ela é usada no dia a dia.' },
-  { level: 1, label: 'ameaçada', color: '#CA8A04', text: 'todas as gerações ainda falam, mas ela perde espaço para outra língua.' },
-  { level: 2, label: 'em declínio', color: '#EA580C', text: 'os pais falam, mas as crianças já não aprendem como primeira língua.' },
-  { level: 3, label: 'moribunda', color: '#DC2626', text: 'só a geração dos avós ainda fala.' },
-  { level: 4, label: 'quase extinta', color: '#9F1239', text: 'restam poucos falantes, quase todos idosos.' },
+  { level: 1, label: 'vulnerável', color: '#CA8A04', text: 'todas as gerações ainda falam, mas ela perde espaço para outra língua.' },
+  { level: 2, label: 'em perigo', color: '#EA580C', text: 'os pais falam, mas as crianças já não aprendem como primeira língua.' },
+  { level: 3, label: 'severamente ameaçada', color: '#DC2626', text: 'só a geração dos avós ainda fala.' },
+  { level: 4, label: 'criticamente ameaçada', color: '#9F1239', text: 'restam poucos falantes, quase todos idosos.' },
   { level: 5, label: 'extinta', color: '#64748B', text: 'ninguém mais a tem como língua materna. Muitos povos preferem dizer “adormecida”, e alguns a estão retomando a partir de registros antigos e da memória dos mais velhos.' },
 ] as const;
 

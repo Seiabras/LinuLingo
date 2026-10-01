@@ -236,6 +236,7 @@ export default function ProfileScreen() {
         <Button title="🐧 Ver o tutorial do Linu" variant="ghost" onPress={() => router.push('/tutorial')} />
         <Button title="🎧 Créditos dos áudios" variant="ghost" onPress={() => router.push('/creditos')} />
         <Button title="🐞 Reportar um erro" variant="ghost" onPress={() => router.push('/reportar-erro')} />
+        <Button title="🗓️ Atualizações do app" variant="ghost" onPress={() => router.push('/atualizacoes')} />
       </View>
 
       <Button title="Apagar meu progresso" variant="ghost" onPress={confirmReset} className="mt-8" />

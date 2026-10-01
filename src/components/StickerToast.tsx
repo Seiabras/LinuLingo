@@ -31,7 +31,7 @@ export function StickerToast() {
         accessibilityLabel={`${e.rare ? 'Figurinha rara' : e.isNew ? 'Figurinha nova' : 'Figurinha repetida'}: ${e.sticker.item.name}. Abrir o álbum`}
         onPress={() => {
           setE(null);
-          router.push('/album');
+          router.push({ pathname: '/album', params: { sticker: e.sticker.id } });
         }}
         className="w-full max-w-md flex-row items-center gap-3 rounded-2xl border-2 border-amber-300 bg-amber-50 px-4 py-3 shadow-lg dark:border-amber-700 dark:bg-slate-900"
       >
