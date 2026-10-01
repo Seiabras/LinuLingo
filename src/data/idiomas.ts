@@ -62,6 +62,11 @@ import { BIELORRUSSO } from './be';
 import { BOSNIO } from './bs';
 import { ALTO_SORABIO } from './hsb';
 import { CASSUBIO } from './csb';
+import { PIEMONTES } from './pms';
+import { LIGURE } from './lij';
+import { LOMBARDO } from './lmo';
+import { MIRANDES } from './mwl';
+import { FRANCOPROVENCAL } from './frp';
 
 /** Idiomas com conteúdo pronto. */
 export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES, fr: FRANCES, ca: CATALAO, is: ISLANDES, fi: FINLANDES, et: ESTONIANO, fo: FEROES, lt: LITUANO, lv: LETAO, sw: SUAILI, ja: JAPONES, ko: COREANO,
@@ -71,7 +76,8 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   lb: LUXEMBURGUES, bg: BULGARO, sr: SERVIO, hr: CROATA, sl: ESLOVENO, eu: BASCO,
   mk: MACEDONIO, rup: AROMENO, zh: CHINES,
   co: CORSO, an: ARAGONES, wa: VALAO, vec: VENETO, nap: NAPOLITANO, scn: SICILIANO,
-  fy: FRISIO, nds: BAIXO_ALEMAO, sco: SCOTS, gsw: SUICO_ALEMAO, be: BIELORRUSSO, bs: BOSNIO, hsb: ALTO_SORABIO, csb: CASSUBIO };
+  fy: FRISIO, nds: BAIXO_ALEMAO, sco: SCOTS, gsw: SUICO_ALEMAO, be: BIELORRUSSO, bs: BOSNIO, hsb: ALTO_SORABIO, csb: CASSUBIO,
+  pms: PIEMONTES, lij: LIGURE, lmo: LOMBARDO, mwl: MIRANDES, frp: FRANCOPROVENCAL };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -98,16 +104,21 @@ export const LANGUAGES: LanguageInfo[] = [
   GALEGO,
   ASTURIANO,
   ARAGONES,
+  MIRANDES,
   OCCITANO,
   SARDO,
   CORSO,
   VENETO,
   NAPOLITANO,
   SICILIANO,
+  PIEMONTES,
+  LIGURE,
+  LOMBARDO,
   ROMANCHE,
   FRIULANO,
   LADINO_DOLOMITAS,
   VALAO,
+  FRANCOPROVENCAL,
   LATIM,
   JUDEU_ESPANHOL,
   AROMENO,
