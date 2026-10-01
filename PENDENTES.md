@@ -20,7 +20,7 @@ O trabalho foi interrompido por falta de créditos. Tudo está comitado. Este ar
   - brithenig;
   - loglan → lojban.
   - A regra dos 70 anos foi relaxada (ver AGENTS.md): a frase do quenya voltou, com o crédito.
-  - **Falta ver no navegador**: Cultura → Tipos de línguas → Artificiais.
+  - **Conferido no navegador** (30/09/2026): as 5 árvores (quenya/sindarin, alto valiriano, esperanto→ido→novial, brithenig, loglan→lojban) aparecem certas em Cultura → Tipos de línguas → Artificiais, sem erro de console.
 
 ## Prontos, mas ainda não registrados
 Passam no `checkpack`, mas falta revisar o conteúdo, pôr em `PACKS` e em `LANGUAGES` no grupo da
@@ -72,6 +72,41 @@ família (em `src/data/idiomas.ts`) e rodar o roteiro:
   «nai» < matre(m), no galego.
 - Atualizar o README (tabela de idiomas) e o NotebookLM.md com os idiomas incompletos.
 - Suaíli: ~2.400 palavras, a meta é ~4.000. Os próximos lotes vão em `src/data/sw/vocab-17.ts` e seguintes.
+
+## Pedidos do Matheus Vega (29–30/09/2026, por WhatsApp)
+Lista bruta, ainda não implementada — fica aqui para não se perder. Itens com `❓` precisam de
+mais detalhe do usuário antes de mexer em código.
+- Status de ameaça das línguas indígenas: trocar para a escala (tipo UNESCO) **Não ameaçada,
+  Vulnerável, Em perigo/Ameaçada, Severamente Ameaçada, Criticamente Ameaçada, Extinta**.
+- **Esclarecido**: «enviar para nativos» é o botão «Enviar também para nativos» do Diário (e o
+  `communityPrompt` das lições) — hoje ele só grava o texto no SQLite local
+  (`submitToCommunity`); não existe destino de verdade (confirma a pendência #4, comunidade
+  simulada). O botão promete mais do que entrega; talvez valha ajustar o texto pra deixar claro
+  que é local por enquanto.
+- **Esclarecido**: «cofre» é a própria aba Vocabulário — o título da tela é literalmente
+  «⚡ Cofre de Vocabulário» (`src/screens/VocabScreen.tsx`). Não é outra coisa; falta saber o que
+  exatamente não funcionou ao tentar entrar.
+- No tutorial: ao arrastar o pinguim (gesto), avançar direto sem esperar outro toque.
+- Palavras parecidas que confundem (ex.: mãe/manhã/manha, em português) viram um recurso pra
+  ajudar a lembrar — decidir se é dentro do idioma estudado, do português, ou os dois.
+- Melhorar a parte do XP (sem detalhe do que incomoda).
+- Página inicial: subir a trilha para o topo.
+- Tutorial: explicar mais com imagens/demonstração visual do que com texto.
+- Álbum de figurinhas: ao tocar numa figurinha nova (ganha!), ir direto pra ela, com a imagem e o
+  som do que ela representa.
+- **Confirmado (30/09/2026)**: tirar as aspas « » usadas pra citar palavras no app inteiro.
+  Maior que parecia: não é só texto de exibição — ~20 arquivos de serviço (`answers.ts`,
+  `mistakes.ts`, `pitch.ts`, `word-images.ts`, `*-texto.ts`, `ipa-lexicon.ts`, `*-pronuncia.ts`,
+  `numeros/*.ts`) usam « » em regex pra checar resposta do aluno, gerar avisos dinâmicos de
+  ortografia e achar trechos citados dentro das histórias — essa lógica muda junto, não só o texto
+  estático dos ~650 arquivos de conteúdo. Troca por aspas tipográficas “ ” (não as retas "):
+  não colidem com os delimitadores de string (' nem ") do TypeScript, então não quebra a sintaxe.
+  Em andamento (30/09/2026).
+- Mudar a frequência de ganhar figurinha (hoje: toda atividade concluída dá uma).
+- Ideia nova: «pacote de chance» (tipo loot box, sem dinheiro real) que sorteia entre figurinha,
+  roupa do Linu ou outra coisa a definir.
+- Pergunta: o app usa muito os códigos ISO (639 idiomas, 3166 países) — existe alternativa? (Já
+  usamos também Glottolog e CLDR em partes do mapa; dá pra comparar as opções quando ele quiser.)
 
 ## Git
 - Push feito até `5ddab696`. Os commits depois disso (amigos do Linu, 9 idiomas novos, árvores)
