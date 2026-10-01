@@ -2,10 +2,14 @@ import type { GrammarTopic } from '../types';
 
 /**
  * Tópicos de gramática do tikuna — por enquanto só A1.1 e A1.2 (pacote incompleto). Fontes:
- * “Naanearu Uchiga” (Ministério da Educação do Peru/SIL, 1997, alfabeto e exemplos de pronúncia);
- * Bertet, D. “Tikuna, a Ten-Toneme Language in Amazonia”, Amerindia 43 (2021); Bertet, D. “Nominal
- * agreement class assignment in Tikuna”, Journal of Historical Linguistics (2022, resumo); e os
- * numerais de native-languages.org, conferidos contra a forma fonológica “dog” de Bertet (2021).
+ * “Naanearu Uchiga” (Ministério da Educação do Peru/SIL, 1997), cartilha oficial de alfabetização
+ * cujo texto completo (alfabeto, pronúncia e os pares mínimos de nasalização/laringalização/
+ * glotalização usados nesta unidade) foi lido em archive.org/details/rosettaproject_tca_ortho-1
+ * (Projeto Rosetta); Bertet, D. “Tikuna, a Ten-Toneme Language in Amazonia”, Amerindia 43 (2021) —
+ * para os dez tonemas da variedade de San Martín de Amacayacu e, na nota de rodapé 22 do mesmo
+ * artigo, para as cinco classes nominais do tikuna; e os numerais de um a cinco de
+ * native-languages.org/ticuna_words.htm, conferidos contra a forma fonológica de “dog” (“airu”) do
+ * próprio Bertet (2021).
  */
 export const GRAMMAR_TCA: GrammarTopic[] = [
   {
@@ -62,10 +66,10 @@ export const GRAMMAR_TCA: GrammarTopic[] = [
     sections: [
       {
         text:
-          'Isso quer dizer que a mesma sequência de consoantes e vogais pode ter significados totalmente diferentes, dependendo só da melodia com que é pronunciada — como no mandarim, mas com muito mais tons distintos. A ortografia prática do tikuna não marca o tom em toda palavra: ela só usa o acento agudo quando duas palavras escritas do mesmo jeito poderiam se confundir.',
+          'Isso quer dizer que a mesma sequência de consoantes e vogais pode ter significados totalmente diferentes, dependendo só da melodia com que é pronunciada — como no mandarim, mas com muito mais tons distintos. A ortografia prática do tikuna não marca o tom em toda palavra: ela só usa o acento agudo quando duas palavras poderiam se confundir por escrito. A própria cartilha oficial de 1997 usa este par quase idêntico para ensinar a regra:',
         examples: [
           ['dexi', 'água'],
-          ['dexá', 'mensagem, recado (mesma sequência de letras sem acento; o acento marca o tom diferente)'],
+          ['dexa', 'mensagem, recado (duas palavras quase iguais na escrita, mas com tons diferentes)'],
         ],
       },
       {
@@ -93,65 +97,59 @@ export const GRAMMAR_TCA: GrammarTopic[] = [
           'Nunca: o tikuna não tem acentos',
         ],
         answer: 'Só quando duas palavras escritas do mesmo jeito podem se confundir por causa do tom',
-        explanation: 'É o caso de “dexi” (água) e “dexá” (mensagem): sem o acento, as duas se escreveriam exatamente igual.',
+        explanation: 'É o caso de “dexi” (água) e “dexa” (mensagem): duas palavras quase idênticas na escrita, que a própria cartilha de 1997 usa para mostrar por que marcar o tom é necessário.',
       },
     ],
   },
   {
     id: 'tca-g3',
     level: 'A1.2',
-    title: 'Os numerais e a contagem por composição',
-    emoji: '🔢',
+    title: 'Mais do que tom: nasalização, laringalização e glotalização',
+    emoji: '🧵',
     summary:
-      'O tikuna tem numerais próprios de um a cinco e de dez; os números de seis a nove se formam juntando os numerais menores a uma expressão ligada à outra mão — um padrão de contagem por composição comum em línguas indígenas da Amazônia.',
+      'Além do tom (visto no tópico anterior), a cartilha oficial de 1997 usa três outras marcas para separar palavras que, sem elas, pareceriam idênticas: a til (nasalização), o sublinhado numa vogal (laringalização) e o sublinhado numa consoante (glotalização consonantica).',
     sections: [
       {
-        heading: 'De um a cinco, e dez',
+        heading: 'A til: nasalização',
+        text:
+          'Como em português (“mãe”, “não”), a til sobre uma vogal tikuna marca que o ar sai também pelo nariz ao pronunciá-la. A cartilha de 1997 usa justamente um par quase idêntico para mostrar a regra:',
+        examples: [
+          ['tuxii', '“a” (complemento direto, “ela” como objeto)'],
+          ['tiixil', '“cântaro” (com a vogal nasalizada marcada por til)'],
+        ],
+      },
+      {
+        heading: 'O sublinhado: laringalização e glotalização',
+        text:
+          'Quando a contração acontece na garganta (laringalização) numa vogal, ou quando uma consoante é pronunciada com uma pequena parada no ar (glotalização), a cartilha de 1997 sublinha a letra afetada. Sem essa marca, duas palavras bem diferentes podem parecer escritas quase do mesmo jeito. São exemplos citados na própria cartilha:',
         table: {
-          head: ['Numeral', 'Tikuna'],
+          head: ['Par', 'Tikuna', 'Tikuna', 'Significados'],
           rows: [
-            ['um', 'wüxi'],
-            ['dois', 'taxre'],
-            ['três', 'tomaxixpü'],
-            ['quatro', 'ãgümücü'],
-            ['cinco', 'wüxi mixepüx'],
-            ['dez', 'guxmixepüx'],
+            ['vogal laringalizada', 'to', 'tox', '“outro” / “macaco-da-noite”'],
+            ['consoante glotalizada', 'tacii', 'tacii', '“grande” / “qual, que”'],
           ],
         },
-        examples: [
-          ['Wüxi, taxre, tomaxixpü, ãgümücü.', 'Um, dois, três, quatro.'],
-          ['Wüxi mixepüx.', 'Cinco.'],
-        ],
       },
       {
-        heading: 'Seis a nove: numerais compostos',
+        heading: 'Nem toda semelhança na escrita é coincidência',
         text:
-          'Entre seis e nove, o tikuna junta uma expressão (documentada como “naixmixwa rü…”, algo como “da outra mão…”) ao numeral de um a quatro correspondente: seis é, literalmente, “da outra mão, um”; sete, “da outra mão, dois”; e assim por diante. É o mesmo tipo de lógica de contar pelas mãos que aparece em várias línguas indígenas do Brasil.',
-      },
-      {
-        heading: 'Numeral junto do substantivo',
-        text:
-          'Como em português, o numeral tikuna vem antes do substantivo que ele conta, sem precisar de nenhuma palavra extra entre os dois.',
-        examples: [
-          ['Wüxi airu.', 'Um cachorro.'],
-          ['Taxre churi.', 'Dois morcegos.'],
-        ],
+          'Outros dois pares citados pela cartilha mostram a mesma ideia com o tom: “chiitacu” (noite) e “churi” (morcego) foram escolhidos ali para o aluno treinar o ouvido com os dois tipos de consoante (“normal” e “forte”); e “nape” pode ser “(ele/ela) dorme” ou “na frente de”, dependendo só da pronúncia.',
       },
     ],
     pitfalls: [
-      'Tentar traduzir “seis”, “sete”, “oito” e “nove” como palavras soltas: no tikuna documentado, eles são expressões compostas a partir dos numerais menores, não palavras novas e independentes.',
-      'Esquecer que “wüxi mixepüx” (cinco) já é, ele mesmo, uma expressão com duas palavras — não é um erro de digitação.',
+      'Achar que til, sublinhado numa vogal e sublinhado numa consoante marcam a mesma coisa: são três fenômenos diferentes (nasalização, laringalização, glotalização), que só por acaso usam sinais parecidos.',
+      'Ignorar essas marcas ao ler em voz alta: como “to” (outro) e “tox” (macaco-da-noite) mostram, elas podem ser a única diferença entre duas palavras completamente diferentes.',
     ],
     quiz: [
       {
-        question: 'Como o tikuna forma os numerais de seis a nove?',
+        question: 'Segundo a cartilha oficial de 1997, o que diferencia “to” (outro) de “tox” (macaco-da-noite)?',
         options: [
-          'Compondo uma expressão ligada à outra mão com os numerais de um a quatro',
-          'Com palavras totalmente novas, sem relação com um a quatro',
-          'Emprestando os numerais do português',
+          'A laringalização/glotalização marcada por sublinhado',
+          'Nada: são a mesma palavra escrita de dois jeitos',
+          'O gênero gramatical',
         ],
-        answer: 'Compondo uma expressão ligada à outra mão com os numerais de um a quatro',
-        explanation: 'Seis a nove se formam juntando “naixmixwa rü…” (da outra mão…) ao numeral correspondente de um a quatro.',
+        answer: 'A laringalização/glotalização marcada por sublinhado',
+        explanation: 'A cartilha de 1997 cita justamente este par para mostrar como o sublinhado numa letra separa duas palavras bem diferentes.',
       },
     ],
   },
@@ -165,7 +163,7 @@ export const GRAMMAR_TCA: GrammarTopic[] = [
     sections: [
       {
         text:
-          'O linguista Denis Bertet descreve, no tikuna, um sistema de cinco classes nominais (2022, “Nominal agreement class assignment in Tikuna”): feminino, masculino, neutro, saliente e não saliente. Diferente do gênero gramatical fixo do português (“a casa”, “o carro”), a classe de um substantivo tikuna pode mudar de acordo com o que o falante quer destacar no discurso — por isso este curso não marca gênero gramatical no vocabulário, como marca no de línguas românicas.',
+          'O linguista Denis Bertet descreve, na variedade de tikuna de San Martín de Amacayacu (Amerindia 43, 2021, nota de rodapé 22), um sistema de cinco classes nominais: feminino, masculino, neutro, saliente e não saliente. Diferente do gênero gramatical fixo do português (“a casa”, “o carro”), a classe de um substantivo tikuna pode mudar de acordo com o que o falante quer destacar no discurso — por isso este curso não marca gênero gramatical no vocabulário, como marca no de línguas românicas.',
       },
     ],
     pitfalls: [
@@ -174,7 +172,7 @@ export const GRAMMAR_TCA: GrammarTopic[] = [
     ],
     quiz: [
       {
-        question: 'Quantas classes de concordância nominal o tikuna tem, segundo a descrição de Bertet (2022)?',
+        question: 'Quantas classes de concordância nominal o tikuna tem, segundo a descrição de Bertet (2021)?',
         options: ['Cinco (feminino, masculino, neutro, saliente, não saliente)', 'Duas (masculino e feminino, como o português)', 'Nenhuma: o tikuna não marca classe nominal'],
         answer: 'Cinco (feminino, masculino, neutro, saliente, não saliente)',
         explanation: 'Bertet descreve cinco classes nominais no tikuna, que além disso podem mudar de acordo com o contexto do discurso — diferente do gênero fixo do português.',

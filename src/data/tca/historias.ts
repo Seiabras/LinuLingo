@@ -2,9 +2,11 @@ import type { StorySeed } from '../types';
 
 /**
  * Histórias interativas do tikuna — por enquanto uma por nível (A1.1 e A1.2), pacote incompleto.
- * Ambientadas em lugares reais do Alto Solimões: Tabatinga (um dos municípios com maior população
- * tikuna, segundo o ISA) e Filadélfia, comunidade tikuna perto de Benjamin Constant citada por
- * Bertet (2019, Revista Linguística) como um lugar onde o idioma segue bem vivo no dia a dia.
+ * Ambientadas em lugares reais do Alto Solimões, confirmados por pib.socioambiental.org/pt/Povo:Ticuna
+ * (ISA): Tabatinga, um dos municípios com população tikuna citados pelo ISA, e o município de
+ * Benjamin Constant — onde fica a aldeia Filadélfia, sede da Organização Geral dos Professores
+ * Tikuna Bilíngues (OGPTB) e do centro de formação de professores tikuna, segundo dissertações da
+ * Universidade do Estado do Amazonas (UEA) sobre a aldeia.
  */
 export const STORIES_TCA: StorySeed[] = [
   {
@@ -57,7 +59,7 @@ export const STORIES_TCA: StorySeed[] = [
     emoji: '🌳',
     summary: 'Perto da comunidade de Filadélfia, ao lado de Benjamin Constant, você conta e nomeia alguns bichos da floresta em tikuna.',
     cultural_context:
-      'Filadélfia, comunidade tikuna perto de Benjamin Constant (Amazonas), é descrita pelo linguista Denis Bertet como um lugar onde o tikuna mantém uma posição firme no dia a dia, mesmo com a urbanização crescente da região.',
+      'Filadélfia, aldeia tikuna no município de Benjamin Constant (Amazonas, um dos municípios tikuna citados pelo Instituto Socioambiental), sedia a Organização Geral dos Professores Tikuna Bilíngues (OGPTB) e um centro de formação de professores tikuna — um sinal de como a língua segue viva no ensino local.',
     start: 'inicio',
     nodes: {
       inicio: {

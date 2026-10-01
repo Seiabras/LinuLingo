@@ -87,7 +87,7 @@ export const ETYMOLOGY_TCA: EtymologySeed[] = [
     origin_language: 'Tikuna',
     cognates: c(['pt', 'sem cognatos: o tikuna é uma língua isolada']),
     evolution_note:
-      'O numeral “cinco” já nasce como uma expressão de duas palavras, e os numerais de seis a nove se formam compondo os numerais de um a quatro com uma expressão ligada à outra mão — um padrão de contagem por composição comum em línguas indígenas da Amazônia, e não uma palavra simples como em português.',
+      'Diferente de “wüxi”, “taxre” e “tomaxixpü” (um, dois, três), que são uma palavra só, o numeral “cinco” já nasce como uma expressão de duas palavras — literalmente “wüxi” (um) mais “mixepüx” — algo que também acontece em outras línguas que organizam a contagem a partir da mão.',
     transparent: false,
   },
   {
@@ -96,7 +96,7 @@ export const ETYMOLOGY_TCA: EtymologySeed[] = [
     origin_language: 'Tikuna',
     cognates: c(['pt', 'sem cognatos: o tikuna é uma língua isolada']),
     evolution_note:
-      'Escrita sem acento, “dexi” quer dizer “água”; com o tom marcado por acento, “dexá”, a mesma sequência de letras quer dizer “mensagem”. A cartilha oficial de 1997 usa exatamente esse par para explicar por que o tikuna às vezes precisa de acento só para separar duas palavras que o tom distingue na fala.',
+      '“Dexi” (água) e “dexa” (mensagem, recado) são duas palavras quase idênticas na escrita, mas com tons diferentes — a cartilha oficial de 1997 usa exatamente este par para explicar por que o tikuna às vezes precisa do acento agudo só para separar palavras que o tom distingue na fala.',
     transparent: false,
   },
   {

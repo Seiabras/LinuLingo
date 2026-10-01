@@ -28,7 +28,7 @@ export const TIKUNA: LanguagePack = {
   incomplete: {
     until: 'A1.2',
     note:
-      'Só o nível A1 por enquanto (unidades 1 e 2, pouco mais de 30 palavras, 4 tópicos de gramática, 2 histórias), com um vocabulário deliberadamente pequeno: o tikuna é uma língua riquíssima, mas as fontes abertas em ortografia prática (fora de artigos acadêmicos muito técnicos) são raras, e preferimos um vocabulário 100% verificado em fontes reais a inventar palavras ou frases. Nenhum serviço de síntese de voz consultado tem voz para o tikuna: os áudios usam a voz do aparelho, se houver. Da A2.1 até o C2 chega nas próximas atualizações, conforme mais fontes forem encontradas.',
+      'Só o nível A1 por enquanto (unidades 1 e 2, 28 palavras, 4 tópicos de gramática, 2 histórias), com um vocabulário deliberadamente pequeno: o tikuna é uma língua riquíssima, mas as fontes abertas em ortografia prática (fora de artigos acadêmicos muito técnicos) são raras, e preferimos um vocabulário 100% verificado em fontes reais a inventar palavras ou frases. Nenhum serviço de síntese de voz consultado tem voz para o tikuna: os áudios usam a voz do aparelho, se houver. Da A2.1 até o C2 chega nas próximas atualizações, conforme mais fontes forem encontradas.',
   },
   vocab: VOCAB_TCA,
   units: UNITS_TCA,
@@ -39,7 +39,7 @@ export const TIKUNA: LanguagePack = {
   grammar: GRAMMAR_TCA,
   journalPrompts: JOURNAL_PROMPTS_TCA,
   shadowing: SHADOWING_TCA,
-  specialChars: ['ü', 'ã', 'ẽ', 'ũ', 'ā'],
+  specialChars: ['ü', 'ã', 'ẽ', 'ũ'],
   // o sistema de 5 classes nominais do tikuna (feminino, masculino, neutro, saliente, não saliente) é
   // dinâmico e depende do contexto do discurso — não é um gênero fixo por palavra como no português,
   // por isso não é marcado aqui (ver o tópico de gramática sobre classes nominais).

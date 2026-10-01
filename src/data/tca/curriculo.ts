@@ -4,8 +4,8 @@ import type { UnitSeed } from '../types';
  * Trilha do tikuna: por enquanto só as duas unidades do nível A1 (pacote incompleto — ver
  * `incomplete` em index.ts). As frases em tikuna que aparecem aqui usam só palavras com fonte
  * confirmada (ver vocabulario.ts); por isso a maioria junta um numeral a um substantivo — o padrão
- * de frase mais seguro, documentado nos próprios numerais compostos do tikuna — em vez de inventar
- * orações com verbos conjugados que nenhuma fonte registrou nesta ortografia prática.
+ * de frase mais seguro e documentado — em vez de inventar orações com verbos conjugados que nenhuma
+ * fonte registrou nesta ortografia prática.
  */
 export const UNITS_TCA: UnitSeed[] = [
   {
@@ -21,7 +21,7 @@ export const UNITS_TCA: UnitSeed[] = [
       history:
         'O tikuna (ou ticuna) é falado por cerca de 48 mil pessoas no Alto Solimões, no Amazonas, além de comunidades na Colômbia e no Peru — provavelmente a língua indígena com mais falantes do Brasil e da própria Amazônia. Os próprios falantes chamam a si mesmos e à sua língua de “magüta”, nome que a tradição oral liga ao herói Yoi, que teria “pescado” o primeiro tikuna com uma vara nas águas vermelhas do igarapé Eware. O tikuna é classificado como língua isolada: não se comprovou parentesco com nenhuma outra língua viva, embora pesquisas recentes (Carvalho 2009; Goulard & Montes Rodríguez 2013) tenham proposto — sem confirmação definitiva até agora — uma conexão com o extinto yuri e com a língua dos caravalo. O território tikuna se expandiu bastante só a partir do século XIX, o que ajuda a explicar por que a língua varia pouco de um lado a outro de um domínio tão grande, que vai do rio Putumayo-Içá ao rio Tefé, com falantes também nas cidades de Manaus e Iquitos.',
       culture_tip:
-        'A sociedade tikuna se divide em duas metades exogâmicas (ou seja: quem nasce numa metade só pode casar com alguém da outra), cada uma reunindo vários clãs chamados “kï’á” — uma metade agrupa clãs batizados com nomes de pássaros, a outra, com nomes de plantas. O nome de cada pessoa costuma indicar a qual clã ela pertence.',
+        'Segundo o Instituto Socioambiental (ISA), a sociedade tikuna se divide em duas metades exogâmicas (quem nasce numa metade só pode casar com alguém da outra), cada uma reunindo vários clãs chamados “kï’á” — uma metade agrupa clãs batizados com nomes de pássaros (como arara, mutum, japu), a outra, com nomes de plantas (como buriti, saúva, onça).',
       grammar_why:
         'O tikuna é uma língua tonal: a mesma sequência de letras pode mudar de sentido só pela melodia da voz. A ortografia oficial (criada com o Instituto Linguístico de Verão/SIL e o Ministério da Educação do Peru) só marca essa melodia com acento quando duas palavras escritas do mesmo jeito podem se confundir — como “dexi” (água) e “dexa” (mensagem). Isso volta com mais detalhe na gramática desta unidade.',
       grammar_examples: [
@@ -104,11 +104,11 @@ export const UNITS_TCA: UnitSeed[] = [
       culture_tip:
         'Segundo a tradição oral tikuna, dois irmãos heróis, Yoi e Ipi, criaram o primeiro povo tikuna e organizaram a vida social: a montanha de origem de Yoi, chamada Taiwegine, é considerada um território sagrado até hoje.',
       grammar_why:
-        'Os numerais do tikuna mostram como a língua forma palavras por composição: depois de “ãgümücü” (quatro), os números seguintes se constroem juntando palavras menores — um padrão comum em línguas indígenas da Amazônia, que costumam contar por mãos. Isso volta com mais detalhe na gramática desta unidade.',
+        'A cartilha oficial de 1997 usa a mesma letra sublinhada para marcar duas coisas diferentes: uma vogal “laringalizada” (pronunciada com uma pequena contração na garganta) ou uma consoante “glotalizada”. Por isso “to” (outro) e “tox” (macaco-da-noite), ou “nape” (dorme) e “nape” (na frente de), podem até se escrever quase igual e ainda assim serem palavras completamente diferentes. Isso volta com mais detalhe na gramática desta unidade.',
       grammar_examples: [
         ['Wüxi airu, taxre churi.', '“Um cachorro, dois morcegos.” — numeral junto do substantivo, sem palavra para “é”.'],
         ['Chiitacu, nape.', '“De noite, (ele/ela) dorme.”'],
-        ['Guxmixepüx', '“Dez” — um numeral composto, construído a partir dos numerais menores.'],
+        ['To.', '“Outro.” — citado na cartilha de 1997 junto de “tox” (macaco-da-noite) para mostrar como a laringalização muda o sentido.'],
       ],
       character_guide: [
         ['acento agudo (´)', 'marca o tom só quando duas palavras se confundiriam por escrito', 'dexi (“água”) × dexa (“mensagem”)'],
@@ -139,11 +139,11 @@ export const UNITS_TCA: UnitSeed[] = [
         id: 'tca-u2-l2',
         title: 'Sol, lua e noite',
         kind: 'licao',
-        words: ['Iake', 'Tawẽmake', 'Chiitacu', 'Nape', 'Dexi', 'Témā'],
+        words: ['Iake', 'Tawẽmake', 'Chiitacu', 'Nape', 'Dexi', 'Tuxu'],
         cloze: [
-          { sentence: 'Wüxi ___.', answer: 'Iake', options: ['Iake', 'Dexi', 'Témā'], translation: 'Um sol.' },
+          { sentence: 'Wüxi ___.', answer: 'Iake', options: ['Iake', 'Dexi', 'Tuxu'], translation: 'Um sol.' },
           { sentence: 'Chiitacu, ___.', answer: 'Nape', options: ['Nape', 'Tawẽmake', 'Dexi'], translation: 'De noite, (ele/ela) dorme.' },
-          { sentence: 'Wüxi ___.', answer: 'Témā', options: ['Témā', 'Tawẽmake', 'Chiitacu'], translation: 'Uma palmeira de buriti.' },
+          { sentence: 'Wüxi ___.', answer: 'Tuxu', options: ['Tuxu', 'Tawẽmake', 'Chiitacu'], translation: 'Um espinho.' },
         ],
         voice: {
           bot: 'Iake, tawẽmake, dexi…',
