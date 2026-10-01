@@ -1,45 +1,36 @@
-# Pendências (atualizado em 29/09/2026)
+# Pendências (atualizado em 01/10/2026)
 
-O trabalho foi interrompido por falta de créditos. Tudo está comitado. Este arquivo diz onde parou.
+Este arquivo diz onde o trabalho de conteúdo parou. Tudo mencionado aqui como "feito" já está
+commitado.
 
-## Feito nesta rodada
-- **Amigos do Linu** (`/amigos`): 5 pinguins e 7 animais da Antártida, com desenho, espécie e
-  fatos. Tem atalho na Home e no Perfil.
-- **Idiomas registrados só com o A1** (22), todos testados no navegador com
-  `scripts/fluxo-incompletos.mjs`:
-  - gl, ast, oc, sc, rm, fur, la, lad, en, id, vi, yo;
-  - lld, de, nl, af, pl, cs, sk, uk;
-  - tr (completado e revisado).
-- **Categorias padronizadas**: «Saudações/Família/Comida» → «Expressões/Pessoas/Alimentação e
-  Restaurantes» em gl, ast, oc, sc, la, en, id e vi.
-- **Árvores genealógicas das línguas artificiais** (`tree` em `src/data/tipos-de-linguas.ts`, que
-  o `ConlangCard` mostra):
-  - quenya e sindarin (a árvore dos elfos de Tolkien);
-  - alto valiriano, com os dialetos derivados;
-  - esperanto → ido → novial;
-  - brithenig;
-  - loglan → lojban.
-  - A regra dos 70 anos foi relaxada (ver AGENTS.md): a frase do quenya voltou, com o crédito.
-  - **Conferido no navegador** (30/09/2026): as 5 árvores (quenya/sindarin, alto valiriano, esperanto→ido→novial, brithenig, loglan→lojban) aparecem certas em Cultura → Tipos de línguas → Artificiais, sem erro de console.
-
-## Prontos, mas ainda não registrados
-Passam no `checkpack`, mas falta revisar o conteúdo, pôr em `PACKS` e em `LANGUAGES` no grupo da
-família (em `src/data/idiomas.ts`) e rodar o roteiro:
-- **lb** luxemburguês (LUXEMBURGUES), **bg** búlgaro, **sr** sérvio, **hr** croata,
-  **sl** esloveno, **eu** basco.
-- Os nomes das exportações estão no `index.ts` de cada pasta.
-
-## Pela metade (os agentes pararam no meio)
-- **mk** macedônio: só `vocabulario.ts`.
-- **rup** arromeno: só vocabulario, curriculo e gramatica.
-- **zh** chinês: só vocabulario, curriculo e gramatica.
+## Feito até 01/10/2026
+- **Amigos do Linu** (`/amigos`): 5 pinguins (Tobias, Duque, Dedé, Pipo, Topete) e 7 vizinhos do
+  gelo (Wendel, Bolota, Malhada, Jubi, Kiko, Vento, Floco), todos ilustrados no mesmo estilo do
+  Linu (não são fotos). Tem atalho na Home e no Perfil.
+- **28 idiomas registrados só com o A1**: gl, ast, oc, sc, rm, fur, la, lad, en, id, vi, yo, lld,
+  de, nl, af, pl, cs, sk, uk, tr — e, desde 30/09/2026, lb (luxemburguês), bg (búlgaro), sr
+  (sérvio), hr (croata), sl (esloveno) e eu (basco). Todos testados no navegador com
+  `scripts/fluxo-incompletos.mjs`.
+- **Árvores genealógicas das línguas artificiais** (Cultura → Tipos de línguas → Artificiais):
+  quenya/sindarin, alto valiriano, esperanto→ido→novial, brithenig, loglan→lojban — conferidas no
+  navegador em 30/09/2026, sem erro de console.
+- **mk (macedônio), rup (arromeno) e zh (chinês mandarim): completos até A1.2** (01/10/2026) —
+  eram os "pela metade"; agora têm vocabulário, currículo, gramática, histórias e extras, iguais
+  aos outros 28 "só A1". Testados no navegador.
+- **Aspas « » trocadas por “ ”/‘ ’ no app inteiro** (30/09/2026, commit `325ecd21`): 546 arquivos,
+  incluindo ~20 arquivos de serviço que usavam « » em regex (resposta do aluno, avisos de
+  ortografia, extração de citação em histórias). Comentários de código continuam com « » (não é
+  texto que o usuário vê). **Essa é a convenção de agora em diante**: citação de palavra usa “ ”;
+  citação dentro de citação usa ‘ ’.
+- **README e NotebookLM.md atualizados** com a lista real de idiomas (antes estavam bem
+  desatualizados — nem listavam o catalão).
 
 ## Não começados
 - **Românicos**: co, an, wa, vec, nap, scn, pms, lij, lmo, mwl, frp.
 - **Germânicos**: fy, yi, nds, sco, gsw.
 - **Eslavos**: be, bs, hsb, csb.
 - **Família única**: el (grego), sq (albanês), hy (armênio).
-- **Asiáticos**: hi, bn, ur, mr, te, ta, th, fa, tl. zh está pela metade.
+- **Asiáticos**: hi, bn, ur, mr, te, ta, th, fa, tl.
 - **Indígenas**:
   - gn guarani, yrl nheengatu, tpw tupi antigo;
   - qu quéchua, ay aimará, nah náuatle;

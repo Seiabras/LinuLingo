@@ -24,7 +24,7 @@ As faixas que rolam para os lados (fotos, trilha de subníveis, idiomas e regiõ
 | 🇷🇸 Sérvio | Indo-europeu › Balto-eslavo › Eslavo › Eslavo meridional | disponível (só A1) |
 | 🇭🇷 Croata | Indo-europeu › Balto-eslavo › Eslavo › Eslavo meridional | disponível (só A1) |
 | 🇸🇮 Esloveno | Indo-europeu › Balto-eslavo › Eslavo › Eslavo meridional | disponível (só A1) |
-| 🇲🇰 Macedônio | Indo-europeu › Balto-eslavo › Eslavo › Eslavo meridional | em andamento |
+| 🇲🇰 Macedônio | Indo-europeu › Balto-eslavo › Eslavo › Eslavo meridional | disponível (só A1) |
 | 🇪🇸 Espanhol | Indo-europeu › Itálico › Românico › Ibero-românico | **disponível** |
 | 🇮🇹 Italiano | Indo-europeu › Itálico › Românico › Ítalo-dálmata | **disponível** |
 | 🇵🇹 Português de Portugal | Indo-europeu › Itálico › Românico › Ibero-românico › Galego-português | **disponível** |
@@ -39,7 +39,7 @@ As faixas que rolam para os lados (fotos, trilha de subníveis, idiomas e regiõ
 | 🇮🇹 Ladino das Dolomitas | Indo-europeu › Itálico › Românico › Reto-românico | disponível (só A1) |
 | 🏛️ Latim | Indo-europeu › Itálico › Latino-faliscano | disponível (só A1) |
 | 📜 Judeu-espanhol (ladino) | Indo-europeu › Itálico › Românico › Ibero-românico › Castelhano | disponível (só A1) |
-| 🇷🇴 Arromeno | Indo-europeu › Itálico › Românico › Românico oriental | em andamento |
+| 🇲🇰 Arromeno | Indo-europeu › Itálico › Românico › Românico oriental | disponível (só A1) |
 | 🇪🇸 Basco | Língua isolada › Basco | disponível (só A1) |
 | 🇸🇪 Sueco | Indo-europeu › Germânico › Germânico setentrional › Nórdico oriental | **disponível** |
 | 🇳🇴 Norueguês (bokmål, com o nynorsk como variante) | Indo-europeu › Germânico › Germânico setentrional › Nórdico ocidental | **disponível** |
@@ -57,7 +57,7 @@ As faixas que rolam para os lados (fotos, trilha de subníveis, idiomas e regiõ
 | 🇱🇻 Letão | Indo-europeu › Báltico › Báltico oriental | **disponível** |
 | 🇯🇵 Japonês | Japônico | **disponível** |
 | 🇰🇷 Coreano | Coreânico | **disponível** |
-| 🇨🇳 Chinês mandarim | Sino-tibetano › Sinítico › Mandarim | em andamento |
+| 🇨🇳 Chinês mandarim | Sino-tibetano › Sinítico › Mandarim | disponível (só A1) |
 | 🇮🇳 Híndi | Indo-europeu › Indo-iraniano › Indo-ariano › Indo-ariano central | em breve |
 | 🇸🇦 Árabe | Afro-asiático › Semítico › Semítico central | em breve |
 | 🇧🇩 Bengali | Indo-europeu › Indo-iraniano › Indo-ariano › Indo-ariano oriental | em breve |
@@ -75,10 +75,9 @@ As faixas que rolam para os lados (fotos, trilha de subníveis, idiomas e regiõ
 | 🇳🇬 Igbo | Níger-Congo › Atlântico-congolês › Volta-Níger › Igbóide | em breve |
 
 “Disponível (só A1)” quer dizer que dá para jogar hoje, mas só as duas primeiras unidades (A1.1 e
-A1.2); “em andamento” é o que está sendo escrito agora (macedônio, arromeno e chinês mandarim); o
-resto de “em breve” ainda não tem nenhum conteúdo. Luxemburguês, búlgaro, sérvio, croata, esloveno
-e basco entraram no app em 30/09/2026. A lista completa de pendências por idioma fica em
-`PENDENTES.md`.
+A1.2); o resto de “em breve” ainda não tem nenhum conteúdo. Luxemburguês, búlgaro, sérvio, croata,
+esloveno e basco entraram no app em 30/09/2026; macedônio, arromeno e chinês mandarim, em
+01/10/2026. A lista completa de pendências por idioma fica em `PENDENTES.md`.
 
 As maiores línguas da Ásia (mandarim, híndi, árabe, bengali, indonésio, urdu, japonês, marati, vietnamita, télugo e turco, pelo total de falantes no Ethnologue) já estão na lista; o russo, que também é falado na Ásia, já está no app. Da África, entram as maiores depois do suaíli: hauçá, amárico, iorubá, oromo e igbo (o árabe já está na lista, e o pidgin nigeriano, um crioulo, fica de fora).
 
