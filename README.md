@@ -16,39 +16,69 @@ As faixas que rolam para os lados (fotos, trilha de subníveis, idiomas e regiõ
 | --- | --- | --- |
 | 🇷🇴 Romeno | Indo-europeu › Itálico › Românico › Românico oriental | **disponível** |
 | 🇷🇺 Russo | Indo-europeu › Balto-eslavo › Eslavo › Eslavo oriental | **disponível** |
+| 🇺🇦 Ucraniano | Indo-europeu › Balto-eslavo › Eslavo › Eslavo oriental | disponível (só A1) |
+| 🇵🇱 Polonês | Indo-europeu › Balto-eslavo › Eslavo › Eslavo ocidental | disponível (só A1) |
+| 🇨🇿 Tcheco | Indo-europeu › Balto-eslavo › Eslavo › Eslavo ocidental | disponível (só A1) |
+| 🇸🇰 Eslovaco | Indo-europeu › Balto-eslavo › Eslavo › Eslavo ocidental | disponível (só A1) |
+| 🇧🇬 Búlgaro | Indo-europeu › Balto-eslavo › Eslavo › Eslavo meridional | disponível (só A1) |
+| 🇷🇸 Sérvio | Indo-europeu › Balto-eslavo › Eslavo › Eslavo meridional | disponível (só A1) |
+| 🇭🇷 Croata | Indo-europeu › Balto-eslavo › Eslavo › Eslavo meridional | disponível (só A1) |
+| 🇸🇮 Esloveno | Indo-europeu › Balto-eslavo › Eslavo › Eslavo meridional | disponível (só A1) |
+| 🇲🇰 Macedônio | Indo-europeu › Balto-eslavo › Eslavo › Eslavo meridional | em andamento |
 | 🇪🇸 Espanhol | Indo-europeu › Itálico › Românico › Ibero-românico | **disponível** |
 | 🇮🇹 Italiano | Indo-europeu › Itálico › Românico › Ítalo-dálmata | **disponível** |
 | 🇵🇹 Português de Portugal | Indo-europeu › Itálico › Românico › Ibero-românico › Galego-português | **disponível** |
 | 🇫🇷 Francês | Indo-europeu › Itálico › Românico › Galo-românico | **disponível** |
 | 🇪🇸 Catalão | Indo-europeu › Itálico › Românico › Occitano-românico | **disponível** |
+| 🇪🇸 Galego | Indo-europeu › Itálico › Românico › Ibero-românico › Galego-português | disponível (só A1) |
+| 🇪🇸 Asturiano | Indo-europeu › Itálico › Românico › Ibero-românico › Astur-leonês | disponível (só A1) |
+| 🇫🇷 Occitano | Indo-europeu › Itálico › Românico › Occitano-românico | disponível (só A1) |
+| 🇮🇹 Sardo | Indo-europeu › Itálico › Românico › Sardo | disponível (só A1) |
+| 🇨🇭 Romanche | Indo-europeu › Itálico › Românico › Reto-românico | disponível (só A1) |
+| 🇮🇹 Friulano | Indo-europeu › Itálico › Românico › Reto-românico | disponível (só A1) |
+| 🇮🇹 Ladino das Dolomitas | Indo-europeu › Itálico › Românico › Reto-românico | disponível (só A1) |
+| 🏛️ Latim | Indo-europeu › Itálico › Latino-faliscano | disponível (só A1) |
+| 📜 Judeu-espanhol (ladino) | Indo-europeu › Itálico › Românico › Ibero-românico › Castelhano | disponível (só A1) |
+| 🇷🇴 Arromeno | Indo-europeu › Itálico › Românico › Românico oriental | em andamento |
+| 🇪🇸 Basco | Língua isolada › Basco | disponível (só A1) |
 | 🇸🇪 Sueco | Indo-europeu › Germânico › Germânico setentrional › Nórdico oriental | **disponível** |
 | 🇳🇴 Norueguês (bokmål, com o nynorsk como variante) | Indo-europeu › Germânico › Germânico setentrional › Nórdico ocidental | **disponível** |
 | 🇩🇰 Dinamarquês | Indo-europeu › Germânico › Germânico setentrional › Nórdico oriental | **disponível** |
 | 🇮🇸 Islandês | Indo-europeu › Germânico › Germânico setentrional › Nórdico ocidental | **disponível** |
 | 🇫🇴 Feroês | Indo-europeu › Germânico › Germânico setentrional › Nórdico ocidental | **disponível** |
-| 🇬🇧 Inglês | Indo-europeu › Germânico › Germânico ocidental | em breve |
+| 🇬🇧 Inglês | Indo-europeu › Germânico › Germânico ocidental › Anglo-frísio | disponível (só A1) |
+| 🇩🇪 Alemão | Indo-europeu › Germânico › Germânico ocidental › Alto-alemão | disponível (só A1) |
+| 🇳🇱 Neerlandês | Indo-europeu › Germânico › Germânico ocidental › Baixo-franconiano | disponível (só A1) |
+| 🇿🇦 Africâner | Indo-europeu › Germânico › Germânico ocidental › Baixo-franconiano | disponível (só A1) |
+| 🇱🇺 Luxemburguês | Indo-europeu › Germânico › Germânico ocidental › Alto-alemão › Médio-alemão ocidental › Franco-moselano | disponível (só A1) |
 | 🇫🇮 Finlandês | Urálico › Fínico › Fínico setentrional | **disponível** |
 | 🇪🇪 Estoniano | Urálico › Fínico › Fínico meridional | **disponível** |
 | 🇱🇹 Lituano | Indo-europeu › Báltico › Báltico oriental | **disponível** |
 | 🇱🇻 Letão | Indo-europeu › Báltico › Báltico oriental | **disponível** |
-| 🇯🇵 Japonês | Japônico | em breve |
-| 🇰🇷 Coreano | Coreânico | em breve |
-| 🇨🇳 Chinês mandarim | Sino-tibetano › Sinítico › Mandarim | em breve |
+| 🇯🇵 Japonês | Japônico | **disponível** |
+| 🇰🇷 Coreano | Coreânico | **disponível** |
+| 🇨🇳 Chinês mandarim | Sino-tibetano › Sinítico › Mandarim | em andamento |
 | 🇮🇳 Híndi | Indo-europeu › Indo-iraniano › Indo-ariano › Indo-ariano central | em breve |
 | 🇸🇦 Árabe | Afro-asiático › Semítico › Semítico central | em breve |
 | 🇧🇩 Bengali | Indo-europeu › Indo-iraniano › Indo-ariano › Indo-ariano oriental | em breve |
-| 🇮🇩 Indonésio | Austronésio › Malaio-polinésio › Malaico | em breve |
+| 🇮🇩 Indonésio | Austronésio › Malaio-polinésio › Malaico | disponível (só A1) |
 | 🇵🇰 Urdu | Indo-europeu › Indo-iraniano › Indo-ariano › Indo-ariano central | em breve |
 | 🇮🇳 Marati | Indo-europeu › Indo-iraniano › Indo-ariano › Indo-ariano meridional | em breve |
-| 🇻🇳 Vietnamita | Austro-asiático › Vietico › Viet-muong | em breve |
+| 🇻🇳 Vietnamita | Austro-asiático › Vietico › Viet-muong | disponível (só A1) |
 | 🇮🇳 Télugo | Dravídico › Dravídico centro-meridional | em breve |
-| 🇹🇷 Turco | Túrquico › Oghuz | em breve |
-| 🇹🇿 Suaíli | Níger-Congo › Atlântico-congolês › Benue-congolês › Banto | **disponível** |
+| 🇹🇷 Turco | Túrquico › Oghuz | disponível (só A1) |
+| 🇹🇿 Suaíli | Níger-Congo › Atlântico-congolês › Benue-congolês › Banto | **disponível** (vocabulário e histórias ainda crescendo até a meta) |
 | 🇳🇬 Hauçá | Afro-asiático › Chádico › Chádico ocidental | em breve |
 | 🇪🇹 Amárico | Afro-asiático › Semítico › Semítico etiópico | em breve |
-| 🇳🇬 Iorubá | Níger-Congo › Atlântico-congolês › Volta-Níger › Iorubóide | em breve |
+| 🇳🇬 Iorubá | Níger-Congo › Atlântico-congolês › Volta-Níger › Iorubóide | disponível (só até A2.1) |
 | 🇪🇹 Oromo | Afro-asiático › Cuchítico › Cuchítico oriental | em breve |
 | 🇳🇬 Igbo | Níger-Congo › Atlântico-congolês › Volta-Níger › Igbóide | em breve |
+
+“Disponível (só A1)” quer dizer que dá para jogar hoje, mas só as duas primeiras unidades (A1.1 e
+A1.2); “em andamento” é o que está sendo escrito agora (macedônio, arromeno e chinês mandarim); o
+resto de “em breve” ainda não tem nenhum conteúdo. Luxemburguês, búlgaro, sérvio, croata, esloveno
+e basco entraram no app em 30/09/2026. A lista completa de pendências por idioma fica em
+`PENDENTES.md`.
 
 As maiores línguas da Ásia (mandarim, híndi, árabe, bengali, indonésio, urdu, japonês, marati, vietnamita, télugo e turco, pelo total de falantes no Ethnologue) já estão na lista; o russo, que também é falado na Ásia, já está no app. Da África, entram as maiores depois do suaíli: hauçá, amárico, iorubá, oromo e igbo (o árabe já está na lista, e o pidgin nigeriano, um crioulo, fica de fora).
 
