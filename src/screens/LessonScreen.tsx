@@ -3,6 +3,7 @@ import { Pressable, Text, View } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
 import { X } from 'lucide-react-native';
 import { Screen, Button, ProgressBar } from '@/components/ui';
+import { PageFlipTransition } from '@/components/PageFlipTransition';
 import { CulturalGrammarCard } from '@/components/CulturalGrammarCard';
 import { ImmersionStep, type WordResult } from '@/components/lesson/ImmersionStep';
 import { ClozeStep } from '@/components/lesson/ClozeStep';
@@ -105,76 +106,78 @@ export default function LessonScreen() {
         {found.unit.emoji} {jump ? `Teste para pular · ${found.unit.level}` : lesson.title} · Etapa {step + 1} de 6 · {STEPS[step]}
       </Text>
 
-      {step === 0 && (
-        <View className="gap-4">
-          <CulturalGrammarCard card={found.unit.card} locale={pack.speechLocale} compact={lesson.kind !== 'licao' || found.unit.lessons[0].id !== lesson.id} />
-          <Button title="Entendi, vamos praticar!" variant="success" onPress={() => setStep(1)} />
-        </View>
-      )}
+      <PageFlipTransition pageKey={step}>
+        {step === 0 && (
+          <View className="gap-4">
+            <CulturalGrammarCard card={found.unit.card} locale={pack.speechLocale} compact={lesson.kind !== 'licao' || found.unit.lessons[0].id !== lesson.id} />
+            <Button title="Entendi, vamos praticar!" variant="success" onPress={() => setStep(1)} />
+          </View>
+        )}
 
-      {step === 1 && words.length > 0 && pool.length > 0 && (
-        <ImmersionStep
-          words={words}
-          pool={pool}
-          locale={pack.speechLocale}
-          onDone={(r) => {
-            setWordResults(r);
-            setStep(2);
-          }}
-        />
-      )}
+        {step === 1 && words.length > 0 && pool.length > 0 && (
+          <ImmersionStep
+            words={words}
+            pool={pool}
+            locale={pack.speechLocale}
+            onDone={(r) => {
+              setWordResults(r);
+              setStep(2);
+            }}
+          />
+        )}
 
-      {step === 2 && (
-        <ClozeStep
-          items={lesson.cloze}
-          locale={pack.speechLocale}
-          specialChars={pack.specialChars}
-          onDone={(c) => {
-            setClozeCorrect(c);
-            setStep(3);
-          }}
-        />
-      )}
+        {step === 2 && (
+          <ClozeStep
+            items={lesson.cloze}
+            locale={pack.speechLocale}
+            specialChars={pack.specialChars}
+            onDone={(c) => {
+              setClozeCorrect(c);
+              setStep(3);
+            }}
+          />
+        )}
 
-      {step === 3 && (
-        <VoiceStep
-          challenge={lesson.voice}
-          locale={pack.speechLocale}
-          onDone={(ok) => {
-            setVoiceCorrect(ok);
-            setStep(4);
-          }}
-        />
-      )}
+        {step === 3 && (
+          <VoiceStep
+            challenge={lesson.voice}
+            locale={pack.speechLocale}
+            onDone={(ok) => {
+              setVoiceCorrect(ok);
+              setStep(4);
+            }}
+          />
+        )}
 
-      {step === 4 && <CommunityStep prompt={lesson.communityPrompt} specialChars={pack.specialChars} onDone={finish} />}
+        {step === 4 && <CommunityStep prompt={lesson.communityPrompt} specialChars={pack.specialChars} onDone={finish} />}
 
-      {step === 5 && jumped !== null && (
-        <View className={`mb-4 gap-1 rounded-2xl p-4 ${jumped ? 'bg-green-50 dark:bg-green-950' : 'bg-amber-50 dark:bg-amber-950'}`}>
-          <Text className={`text-lg font-extrabold ${jumped ? 'text-conquista' : 'text-amber-800 dark:text-amber-200'}`}>
-            {jumped ? `⏩ Pronto: tudo até o ${found.unit.level} está concluído!` : '🐧 Quase! Ainda não deu para pular.'}
-          </Text>
-          <Text className="text-sm text-slate-700 dark:text-slate-300">
-            {jumped
-              ? 'A trilha continua na unidade seguinte. As palavras das unidades puladas continuam no cofre para revisar.'
-              : `Para pular é preciso acertar ${Math.round(JUMP_PASS * 100)}%. Continue pela trilha ou tente de novo depois.`}
-          </Text>
-        </View>
-      )}
+        {step === 5 && jumped !== null && (
+          <View className={`mb-4 gap-1 rounded-2xl p-4 ${jumped ? 'bg-green-50 dark:bg-green-950' : 'bg-amber-50 dark:bg-amber-950'}`}>
+            <Text className={`text-lg font-extrabold ${jumped ? 'text-conquista' : 'text-amber-800 dark:text-amber-200'}`}>
+              {jumped ? `⏩ Pronto: tudo até o ${found.unit.level} está concluído!` : '🐧 Quase! Ainda não deu para pular.'}
+            </Text>
+            <Text className="text-sm text-slate-700 dark:text-slate-300">
+              {jumped
+                ? 'A trilha continua na unidade seguinte. As palavras das unidades puladas continuam no cofre para revisar.'
+                : `Para pular é preciso acertar ${Math.round(JUMP_PASS * 100)}%. Continue pela trilha ou tente de novo depois.`}
+            </Text>
+          </View>
+        )}
 
-      {step === 5 && reward && (
-        <RewardStep
-          xp={reward.xp}
-          correct={correct}
-          total={total}
-          streak={reward.streak}
-          usedFreeze={reward.usedFreeze}
-          words={reward.words}
-          todayXp={reward.todayXp}
-          goalXp={reward.goalXp}
-          onContinue={goBack}
-        />
-      )}
+        {step === 5 && reward && (
+          <RewardStep
+            xp={reward.xp}
+            correct={correct}
+            total={total}
+            streak={reward.streak}
+            usedFreeze={reward.usedFreeze}
+            words={reward.words}
+            todayXp={reward.todayXp}
+            goalXp={reward.goalXp}
+            onContinue={goBack}
+          />
+        )}
+      </PageFlipTransition>
     </Screen>
   );
 }
