@@ -78,6 +78,8 @@ import { IGBO } from './ig';
 import { NHEENGATU } from './yrl';
 import { BENGALI } from './bn';
 import { QUECHUA } from './qu';
+import { KAINGANG } from './kgp';
+import { TIKUNA } from './tca';
 
 /** Idiomas com conteúdo pronto. */
 export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES, fr: FRANCES, ca: CATALAO, is: ISLANDES, fi: FINLANDES, et: ESTONIANO, fo: FEROES, lt: LITUANO, lv: LETAO, sw: SUAILI, ja: JAPONES, ko: COREANO,
@@ -90,7 +92,7 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   fy: FRISIO, nds: BAIXO_ALEMAO, sco: SCOTS, gsw: SUICO_ALEMAO, be: BIELORRUSSO, bs: BOSNIO, hsb: ALTO_SORABIO, csb: CASSUBIO,
   pms: PIEMONTES, lij: LIGURE, lmo: LOMBARDO, mwl: MIRANDES, frp: FRANCOPROVENCAL,
   el: GREGO, sq: ALBANES, hy: ARMENIO,
-  hi: HINDI, gn: GUARANI, tpw: TUPI_ANTIGO, ha: HAUCA, ig: IGBO, yrl: NHEENGATU, bn: BENGALI, qu: QUECHUA };
+  hi: HINDI, gn: GUARANI, tpw: TUPI_ANTIGO, ha: HAUCA, ig: IGBO, yrl: NHEENGATU, bn: BENGALI, qu: QUECHUA, kgp: KAINGANG, tca: TIKUNA };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -189,6 +191,10 @@ export const LANGUAGES: LanguageInfo[] = [
   NHEENGATU,
   // quéchua: família própria, sem parentesco com o indo-europeu nem com o tupi-guarani
   QUECHUA,
+  // kaingang: família macro-jê, bem diferente do tupi-guarani e do quéchua
+  KAINGANG,
+  // tikuna: língua isolada, como o basco (mas de família nenhuma em comum com ele)
+  TIKUNA,
   // o suaíli, a língua africana mais falada como segunda língua, e as maiores da África depois dele
   // (Ethnologue; o árabe já está acima e o pidgin nigeriano é crioulo)
   SUAILI,

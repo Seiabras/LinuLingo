@@ -40,14 +40,23 @@ commitado.
 - **Românicos**: fechado (pms, lij, lmo, mwl, frp — todos integrados).
 - **Germânico que falta**: yi (iídiche) — precisa de suporte a escrita direita-pra-esquerda no app
   antes de dar pra fazer (ver "RTL" abaixo).
-- **Família única**: fechado (el grego, sq albanês, hy armênio).
+- **Família única**: fechado (el grego, sq albanês, hy armênio); ka (georgiano) em andamento —
+  família cartveliana, sem parentesco com o indo-europeu, mas pedida pelo Matheus junto com a
+  conferência abaixo. **Auditoria de família/ramo (01/10/2026)**: o Matheus notou grego, armênio e
+  albanês parecendo "juntos" em Helênico no Perfil — na verdade cada um é mesmo o único ramo próprio
+  dentro do indo-europeu (está certo, é assim que a linguística classifica os três); o bug era só
+  visual: o acordeão escondia o nome do ramo quando só tinha 1 idioma, então vários ramos de 1 só
+  ficavam parecendo um grupo só sem rótulo (corrigido). Conferi as famílias/ramos de todos os
+  idiomas registrados contra a classificação de verdade (Glottolog/Ethnologue): não achei nenhum erro
+  de fundo, só um nome de ramo impreciso no scots (dizia "Inglês" no lugar de "Ânglico" — corrigido;
+  scots é parente do inglês, não veio dele).
 - **Asiáticos**: hi (híndi) e bn (bengali) feitos; faltam ur e fa (bloqueados por RTL, ver abaixo),
   mr, te, ta, th, tl. **Pedido do Matheus Vega (01/10/2026 de madrugada)**: depois dos agentes atuais
   acabarem, ir para th (tailandês) e as línguas vizinhas do Sudeste Asiático continental (ex.: lo
   laosiano, km khmer, my birmanês — ainda não confirmados, conferir documentação antes de começar).
-- **Indígenas**: tpw (tupi antigo), gn (guarani paraguaio), qu (quéchua sulenho) e yrl (nheengatu)
-  feitos; kaingang (kgp), tikuna (tca) e guarani mbyá (gun) em andamento. **Pedido do Matheus Vega:
-  dar prioridade às línguas indígenas brasileiras.**
+- **Indígenas**: tpw (tupi antigo), gn (guarani paraguaio), qu (quéchua sulenho), yrl (nheengatu),
+  kgp (kaingang) e tca (tikuna) feitos; guarani mbyá (gun) em andamento (1ª tentativa caiu no limite
+  de sessão, relançado). **Pedido do Matheus Vega: dar prioridade às línguas indígenas brasileiras.**
   - **Família guarani (pesquisa do próprio Matheus, 01/10/2026 de madrugada)** — não são a mesma
     língua com nomes diferentes, são variedades/línguas próprias, cada uma com seu código:
     - gn guarani paraguaio (**feito**) — jopará (mistura com o espanhol no dia a dia) não é uma
@@ -97,6 +106,14 @@ antes de começar esses dois.
 - Revisar la, oc, en, id e vi como já foi feito com gl, ast e sc. Há dúvida sobre a etimologia de
   «nai» < matre(m), no galego.
 - Atualizar o README (tabela de idiomas) e o NotebookLM.md com os idiomas incompletos.
+- **Histórias: revisão "de história em história" (pedido do Matheus, 01/10/2026 de madrugada)** —
+  ele notou em catalão e espanhol que o Linu, escrito em 3ª pessoa como protagonista, às vezes
+  "decide" pelo jogador quem ele é/o que ele faz (o jogador só escolhe a fala do Linu, não é ele
+  quem vive a cena). Decisão: NÃO reescrever tudo para 2ª pessoa — só ajustar os trechos em que isso
+  fica mais forte (o personagem "decidindo" algo por conta própria em vez de esperar a escolha).
+  Ainda não começado: precisa de uma passada por `historias.ts` de cada idioma (são muitos — os ~40
+  "só A1" têm 2 cada, os completos (es, it, pt, fr, ru, sv…) têm bem mais) procurando esses trechos
+  específicos, não uma reescrita geral.
 - Suaíli: ~2.400 palavras, a meta é ~4.000. Os próximos lotes vão em `src/data/sw/vocab-17.ts` e seguintes.
 
 ## Ideias de pesquisa externa (tipo Gemini, 30/09–01/10/2026 — lista completa, 6 itens)

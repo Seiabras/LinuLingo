@@ -15,7 +15,7 @@ export const SCOTS: LanguagePack = {
   flag: '🇬🇧',
   lineage: {
     family: 'Indo-europeu',
-    branches: ['Germânico', 'Germânico ocidental', 'Anglo-frísio', 'Inglês'],
+    branches: ['Germânico', 'Germânico ocidental', 'Anglo-frísio', 'Ânglico'],
     region: 'Escócia (terras baixas) e Ulster, na Irlanda do Norte (Ulster Scots)',
     writing: 'Alfabeto latino, sem norma ortográfica única oficial — convenção tradicional usada aqui',
   },
