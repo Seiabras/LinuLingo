@@ -73,6 +73,60 @@ família (em `src/data/idiomas.ts`) e rodar o roteiro:
 - Atualizar o README (tabela de idiomas) e o NotebookLM.md com os idiomas incompletos.
 - Suaíli: ~2.400 palavras, a meta é ~4.000. Os próximos lotes vão em `src/data/sw/vocab-17.ts` e seguintes.
 
+## Ideias de pesquisa externa (tipo Gemini, 30/09/2026 — lista ainda incompleta)
+O usuário está colando aos poucos; só anotar por enquanto, não implementar.
+- **Item 3, "Desafios de Chefe" (boss battles com o Linu)**: trocar a prova de fim de subnível
+  (hoje valida antes de liberar o próximo, múltipla escolha) por um cenário de missão completa —
+  ex.: resolver um imprevisto num aeroporto/hotel no fim da unidade de Viagens, misturando escuta
+  de áudio real, decisão (estilo histórias interativas) e resposta por voz, com 80% para passar.
+  Itens 1 e 2 da lista ainda não chegaram.
+- **Guias de escrita/alfabeto na trilha principal**: pra idiomas de escrita não-latina (russo,
+  japonês, coreano, amárico, iorubá…), ensinar o sistema de escrita já no começo do A1.1, dentro da
+  própria trilha (não só como extra à parte) — «micro-nós de alfabetização»: cirílico + regra da
+  tônica no russo; kana/hangul progressivos antes do vocabulário no japonês/coreano, restringindo
+  romaji nos campos principais pra forçar a leitura nativa; marcas tonais no iorubá; caracteres
+  ge'ez no amárico. Hoje o app já tem um pouco disso solto (treino do alfabeto russo em
+  `pack.alphabet`/`/alfabeto`, IPA por regras/dicionário) mas não integrado À TRILHA logo no
+  início — comparar com o que já existe antes de desenhar isso.
+- **Visual «Antártica selvagem»**: paleta inspirada na luz polar de verdade (azul-marinho do
+  oceano, branco neve texturizado, cinza rocha das ilhas antárticas tipo Deception/Elefante, tons
+  quentes do sol da meia-noite/Aurora Austral); telas com cara de caderno de expedição/diário de
+  naturalista (contornos suaves, mapas em linha fina, tipografia elegante); sons ambiente sutis
+  (mar, vento nas geleiras, aves oceânicas reais) de fundo no estudo. Mudança de identidade visual
+  grande — precisa decidir se é reskin geral ou só em telas específicas.
+- **«O bando» no hábitat natural**: dar papel a bichos antárticos de verdade (não antropomorfizados
+  fazendo tarefa de escritório, já tem «Amigos do Linu» em `/amigos` com 5 pinguins + 7 da fauna
+  antártica, ver `src/data/amigos-linu.ts`) ligados a partes específicas do app: 🐧 pinguim-de-adélia
+  nas lições de estrutura/gramática; 🦭 foca-de-weddell guiando escuta/história/cultura no mapa;
+  🐦 petrel-das-neves ligando mapa, expedições e diário; 🐋 baleia-jubarte/orca nas travessias
+  oceânicas da trilha (transição entre continentes/idiomas). Combinar com o visual «Antártica
+  selvagem» acima — parecem a mesma reformulação temática maior, não ideias soltas.
+- **Trilha como «rota de migração»**: em vez de caminho reto, desenhar a trilha como rota de
+  navegação saindo da Antártica, atravessando o oceano e desembarcando nos biomas do idioma
+  estudado (fiordes na Noruega, vales na Romênia, rios na Rússia…); os «Desafios de Chefe» (item
+  acima) virariam «travessias oceânicas» no fim de cada subnível — ancorar na região nova depois de
+  escutar áudio local, ajustar a fala e corrigir pontos fracos. Isso amarra os 3 itens anteriores
+  (chefe/boss battle, visual antártico, bando no hábitat) numa reformulação temática só, não 4
+  ideias separadas — vale esperar o resto da lista antes de avaliar o tamanho da mudança.
+  - Proposta de paleta Tailwind pro tema «caderno de expedição» (cores `field.paper/darkpaper/
+    border/darkborder/ink/amber/glacier` + fontes PlayfairDisplay/SpaceMono) — fica aqui pra
+    quando/se o reskin acima for decidido; NativeWind já está no projeto (`tailwind.config.js` na
+    raiz), então o formato bate com o que o app usa.
+  - Proposta de um `FieldNotebookBackground.tsx` com `react-native-svg` desenhando linhas
+    topográficas/coordenadas sutis de fundo (clima de mapa/caderno de campo) — o trecho de código
+    colado veio incompleto (o corpo do componente e o JSX se perderam na colagem), só a ideia e os
+    imports servem de referência; precisa ser escrito do zero quando for a hora.
+  - Proposta de um `FieldGuideCard.tsx`: cartões de lição/animal/gramática como «ficha catalogada
+    de diário de campo» (borda fina, carimbo de categoria tipo «FAUNA NATIVA» ou «GRAMÁTICA //
+    B1.2», IPA, descrição).
+  - Proposta de um `PageFlipTransition.tsx` (`react-native-reanimated`, `FadeInRight`/`FadeOutLeft`)
+    pra passar entre as 6 etapas da lição com sensação de «folhear o caderno de campo».
+  - **Aviso sobre os códigos colados**: nos últimos 3 (`FieldNotebookBackground`, `FieldGuideCard`,
+    `PageFlipTransition`) só chegaram os imports e a assinatura da função — o corpo/JSX do retorno
+    se perdeu na colagem toda vez. Parece ser um problema sistemático de onde o usuário está
+    copiando (um documento que não exporta bem o bloco de retorno). Só a ideia de cada um é
+    confiável; o código precisa ser escrito do zero quando for a hora de implementar.
+
 ## Pedidos do Matheus Vega (29–30/09/2026, por WhatsApp)
 Lista bruta, ainda não implementada — fica aqui para não se perder. Itens com `❓` precisam de
 mais detalhe do usuário antes de mexer em código.
