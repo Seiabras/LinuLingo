@@ -107,12 +107,8 @@ export function onSticker(l: (e: StickerEvent) => void): () => void {
   };
 }
 
-/**
- * Dá a figurinha de uma atividade concluída e avisa quem estiver ouvindo (o aviso na tela) — só
- * `STICKER_CHANCE` das vezes, pra figurinha não vir em toda atividade e continuar especial.
- */
-export async function grantSticker(db: SQLiteDatabase, lang: string, rnd: () => number = Math.random): Promise<StickerEvent | null> {
-  if (rnd() >= STICKER_CHANCE) return null;
+/** Dá a figurinha sorteada sem passar pelo `STICKER_CHANCE` (quem chama já decidiu que é hora de dar) e avisa quem estiver ouvindo. */
+export async function grantStickerNow(db: SQLiteDatabase, lang: string, rnd: () => number = Math.random): Promise<StickerEvent> {
   const album = await loadAlbum(db);
   const sticker = pickSticker(album, lang, rnd);
   const count = (album[sticker.id] ?? 0) + 1;
@@ -120,6 +116,15 @@ export async function grantSticker(db: SQLiteDatabase, lang: string, rnd: () => 
   const e = { sticker, isNew: count === 1, count };
   listeners.forEach((l) => l(e));
   return e;
+}
+
+/**
+ * Dá a figurinha de uma atividade concluída e avisa quem estiver ouvindo (o aviso na tela) — só
+ * `STICKER_CHANCE` das vezes, pra figurinha não vir em toda atividade e continuar especial.
+ */
+export async function grantSticker(db: SQLiteDatabase, lang: string, rnd: () => number = Math.random): Promise<StickerEvent | null> {
+  if (rnd() >= STICKER_CHANCE) return null;
+  return grantStickerNow(db, lang, rnd);
 }
 
 // ---------- figurinhas raras (das expedições) ----------

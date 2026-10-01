@@ -178,9 +178,9 @@ export function unlockedOutfits(lessonsByLang: Record<string, number>, bought: I
   return out;
 }
 
-/** Krill ganho com o XP total, menos o gasto na loja. */
-export function krillBalance(totalXp: number, bought: Iterable<string>): number {
-  let spent = 0;
+/** Krill ganho com o XP total, menos o gasto na loja e (`spentExtra`) em outras coisas, como o pacote de chance. */
+export function krillBalance(totalXp: number, bought: Iterable<string>, spentExtra = 0): number {
+  let spent = spentExtra;
   for (const id of bought) spent += ROUPAS_LINU.find((o) => o.id === id)?.price ?? 0;
   return Math.floor(totalXp / KRILL_XP) - spent;
 }

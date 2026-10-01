@@ -1,4 +1,4 @@
-import { useCallback, useState, type ReactNode } from 'react';
+import { useCallback, useEffect, useState, type ReactNode } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { useFocusEffect } from 'expo-router';
 import { Card, Chip } from '@/components/ui';
@@ -7,9 +7,9 @@ import { useApp } from '@/services/app-state';
 import { PACKS } from '@/data/idiomas';
 import { WORLD } from '@/data/mapa-mundi';
 import { flagOf } from '@/data/onde-se-fala';
-import { KRILL_XP, krillBalance, lessonsToUnlock, ROUPAS_LINU, SLOTS, slotOf, unlockedOutfits, withOutfit, type LinuOutfit, type OutfitSlot } from '@/data/roupas-linu';
+import { KRILL_XP, lessonsToUnlock, ROUPAS_LINU, SLOTS, slotOf, unlockedOutfits, withOutfit, type LinuOutfit, type OutfitSlot } from '@/data/roupas-linu';
 import { CORES_LINU, corLinu } from '@/data/cores-linu';
-import { buyOutfit, lessonsByLanguage, loadBought, saveOutfit, useLinuOutfit } from '@/services/linu-outfit';
+import { buyOutfit, krillForPacote, lessonsByLanguage, loadBought, loadPacoteWon, openPacote, PACOTE_PRICE, saveOutfit, useLinuOutfit, type PacotePrize } from '@/services/linu-outfit';
 import { saveCor, useLinuCor } from '@/services/linu-cor';
 import { nomeIdioma } from '@/services/idioma-nome';
 import * as haptics from '@/services/haptics';
@@ -33,30 +33,35 @@ export function OutfitsCard() {
   };
   const [lessons, setLessons] = useState<Record<string, number>>({});
   const [bought, setBought] = useState<string[]>([]);
+  const [wonPacote, setWonPacote] = useState<string[]>([]);
   const [fresh, setFresh] = useState<Set<string>>(new Set());
   const [picked, setPicked] = useState<string | null>(null);
   const [slot, setSlot] = useState<OutfitSlot | null>(null);
+  const [krill, setKrill] = useState(0);
+  const [pacoteResult, setPacoteResult] = useState<PacotePrize | null>(null);
+  const [opening, setOpening] = useState(false);
   const xp = user?.total_xp ?? 0;
 
   useFocusEffect(
     useCallback(() => {
       (async () => {
         const byLang = await lessonsByLanguage(db);
-        const b = await loadBought(db);
+        const [b, w] = await Promise.all([loadBought(db), loadPacoteWon(db)]);
         setLessons(byLang);
         setBought(b);
+        setWonPacote(w);
+        setKrill(await krillForPacote(db, xp));
         // as liberadas desde a última visita ganham um «nova!»
-        const unlocked = unlockedOutfits(byLang, b);
+        const unlocked = unlockedOutfits(byLang, [...b, ...w]);
         const r = await db.getFirstAsync<{ value: string }>('SELECT value FROM Meta WHERE key = ?', [SEEN]);
         const seen = new Set((r?.value ?? '').split(',').filter(Boolean));
-        setFresh(new Set([...unlocked].filter((id) => !seen.has(id) && !b.includes(id))));
+        setFresh(new Set([...unlocked].filter((id) => !seen.has(id) && ![...b, ...w].includes(id))));
         await db.runAsync('INSERT OR REPLACE INTO Meta (key, value) VALUES (?, ?)', [SEEN, [...unlocked].join(',')]);
       })();
-    }, [db]),
+    }, [db, xp]),
   );
 
-  const unlocked = unlockedOutfits(lessons, bought);
-  const krill = krillBalance(xp, bought);
+  const unlocked = unlockedOutfits(lessons, [...bought, ...wonPacote]);
   const inSlot = (o: LinuOutfit) => !slot || slotOf(o.id) === slot;
   const mine = ROUPAS_LINU.filter((o) => o.lang === pack.code && inSlot(o));
   const others = ROUPAS_LINU.filter((o) => o.lang && o.lang !== pack.code && inSlot(o));
@@ -78,8 +83,29 @@ export function OutfitsCard() {
     if (!next) return;
     haptics.success();
     setBought(next);
+    setKrill(await krillForPacote(db, xp));
     await saveOutfit(db, withOutfit(wearing, o.id));
   };
+
+  const abrirPacote = async () => {
+    setOpening(true);
+    const result = await openPacote(db, pack.code, xp);
+    setOpening(false);
+    if (!result) return;
+    haptics.success();
+    if (result.kind === 'roupa') {
+      setWonPacote((w) => [...w, result.outfit.id]);
+      setPicked(result.outfit.id);
+    }
+    setKrill(await krillForPacote(db, xp));
+    setPacoteResult(result);
+  };
+
+  useEffect(() => {
+    if (!pacoteResult) return;
+    const t = setTimeout(() => setPacoteResult(null), 6000);
+    return () => clearTimeout(t);
+  }, [pacoteResult]);
 
   const tile = (o: LinuOutfit) => {
     const open = unlocked.has(o.id);
@@ -185,6 +211,29 @@ export function OutfitsCard() {
       {mine.length > 0 && <Section title={`🎁 Presentes do ${nomeIdioma(pack.name)}`}>{mine.map(tile)}</Section>}
       <Section title="🎁 Presentes dos outros idiomas">{others.map(tile)}</Section>
       <Section title="🌍 Do mundo (com krill)">{shop.map(tile)}</Section>
+
+      <View className="gap-2 rounded-2xl border-2 border-amber-300 bg-amber-50 p-3 dark:border-amber-700 dark:bg-amber-950/30">
+        <Text className="text-sm font-extrabold text-slate-700 dark:text-slate-200">🎁 Pacote de chance</Text>
+        <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">
+          Uma surpresa por 🦐 {PACOTE_PRICE}: quase sempre uma figurinha do álbum, às vezes uma roupinha do mundo que ainda falta. Sem dinheiro real, só krill.
+        </Text>
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel={krill >= PACOTE_PRICE ? `Abrir pacote de chance por ${PACOTE_PRICE} krill` : `Faltam ${PACOTE_PRICE - krill} krill para o pacote de chance`}
+          disabled={krill < PACOTE_PRICE || opening}
+          onPress={abrirPacote}
+          className={`self-start rounded-xl px-4 py-2 ${krill >= PACOTE_PRICE ? 'bg-amber-500' : 'bg-slate-200 dark:bg-slate-700'}`}
+        >
+          <Text className={`font-extrabold ${krill >= PACOTE_PRICE ? 'text-white' : 'text-slate-600 dark:text-slate-300'}`}>
+            {opening ? 'Abrindo…' : krill >= PACOTE_PRICE ? `Abrir por 🦐 ${PACOTE_PRICE}` : `Faltam 🦐 ${PACOTE_PRICE - krill}`}
+          </Text>
+        </Pressable>
+        {pacoteResult && (
+          <Text className="text-sm font-bold text-amber-700 dark:text-amber-300">
+            {pacoteResult.kind === 'roupa' ? `🎉 Saiu uma roupinha: ${pacoteResult.outfit.name}!` : '🎉 Saiu uma figurinha! (veja o aviso em cima)'}
+          </Text>
+        )}
+      </View>
     </Card>
   );
 }
