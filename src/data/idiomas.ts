@@ -80,6 +80,8 @@ import { BENGALI } from './bn';
 import { QUECHUA } from './qu';
 import { KAINGANG } from './kgp';
 import { TIKUNA } from './tca';
+import { GUARANI_MBYA } from './gun';
+import { GEORGIANO } from './ka';
 import { XAVANTE } from './xav';
 import { TUKANO } from './tuo';
 
@@ -95,7 +97,7 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   pms: PIEMONTES, lij: LIGURE, lmo: LOMBARDO, mwl: MIRANDES, frp: FRANCOPROVENCAL,
   el: GREGO, sq: ALBANES, hy: ARMENIO,
   hi: HINDI, gn: GUARANI, tpw: TUPI_ANTIGO, ha: HAUCA, ig: IGBO, yrl: NHEENGATU, bn: BENGALI, qu: QUECHUA, kgp: KAINGANG, tca: TIKUNA,
-  xav: XAVANTE, tuo: TUKANO };
+  xav: XAVANTE, tuo: TUKANO, gun: GUARANI_MBYA, ka: GEORGIANO };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -165,6 +167,8 @@ export const LANGUAGES: LanguageInfo[] = [
   GREGO,
   ALBANES,
   ARMENIO,
+  // georgiano: família cartveliana própria, sem parentesco com o indo-europeu
+  GEORGIANO,
   // as maiores línguas da Ásia (Ethnologue, falantes nativos + segunda língua; o russo já está no app)
   {
     code: 'ar', name: 'Árabe', nativeName: 'العربية', flag: '🇸🇦',
@@ -190,6 +194,7 @@ export const LANGUAGES: LanguageInfo[] = [
   TURCO,
   // línguas indígenas das Américas (família tupi-guarani)
   GUARANI,
+  GUARANI_MBYA,
   TUPI_ANTIGO,
   NHEENGATU,
   // quéchua: família própria, sem parentesco com o indo-europeu nem com o tupi-guarani
