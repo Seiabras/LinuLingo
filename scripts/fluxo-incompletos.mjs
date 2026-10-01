@@ -39,6 +39,26 @@ const skipTutorial = async () => {
 };
 const escape = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
+// a lista de idiomas do Perfil agora é um acordeão (família > ramo), fechado por padrão — mas a
+// família (e o ramo) do idioma estudado no momento já vêm abertos; só clica em «Abrir …», nunca no
+// que já estiver aberto (senão fecharia de novo)
+const openIfClosed = async (text) => {
+  const btn = page.getByRole('button', { name: new RegExp(`^Abrir ${escape(text)}`) }).first();
+  if (await btn.count()) {
+    await btn.scrollIntoViewIfNeeded().catch(() => {});
+    await btn.click();
+    await page.waitForTimeout(200);
+  }
+};
+const openLanguageRow = async (pack) => {
+  const row = page.getByText(new RegExp(`^${escape(pack.name)} · ${escape(pack.nativeName)}`)).first();
+  if (await row.isVisible().catch(() => false)) return row;
+  await openIfClosed(pack.lineage.family);
+  if (await row.isVisible().catch(() => false)) return row;
+  await openIfClosed(pack.lineage.branches[0]);
+  return row;
+};
+
 await page.goto(BASE + '/', { waitUntil: 'load', timeout: 180000 });
 await page.locator('text=Pular >> visible=true').or(page.locator('text=Mais práticas >> visible=true')).first().waitFor({ timeout: 120000 });
 await skipTutorial();
@@ -49,7 +69,8 @@ for (const code of codes) {
   errors = [];
   try {
     await page.goto(BASE + '/perfil', { waitUntil: 'load' });
-    const row = page.getByText(new RegExp(`^${escape(pack.name)} · ${escape(pack.nativeName)}`)).first();
+    await page.waitForFunction(() => document.body.innerText.includes('Loja do Linu'), { timeout: 60000 });
+    const row = await openLanguageRow(pack);
     await row.waitFor({ timeout: 30000 });
     await expectText(`só até ${pack.incomplete.until}`);
     await row.scrollIntoViewIfNeeded();

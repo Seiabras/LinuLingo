@@ -37,19 +37,35 @@ commitado.
   desatualizados — nem listavam o catalão).
 
 ## Não começados
-- **Românicos**: pms (piemontês), lij (lígure), lmo (lombardo), mwl (mirandês), frp
-  (francoprovençal) — em andamento, 5 agentes escrevendo agora (01/10/2026 de madrugada).
+- **Românicos**: fechado (pms, lij, lmo, mwl, frp — todos integrados).
 - **Germânico que falta**: yi (iídiche) — precisa de suporte a escrita direita-pra-esquerda no app
   antes de dar pra fazer (ver "RTL" abaixo).
-- **Família única**: el (grego), sq (albanês), hy (armênio).
-- **Asiáticos**: hi, bn, ur, mr, te, ta, th, fa, tl.
-- **Indígenas**:
-  - gn guarani, yrl nheengatu, tpw tupi antigo;
-  - qu quéchua, ay aimará, nah náuatle;
-  - mi maori, haw havaiano, nv navajo.
+- **Família única**: fechado (el grego, sq albanês, hy armênio).
+- **Asiáticos**: hi (híndi) e bn (bengali) feitos; faltam ur e fa (bloqueados por RTL, ver abaixo),
+  mr, te, ta, th, tl. **Pedido do Matheus Vega (01/10/2026 de madrugada)**: depois dos agentes atuais
+  acabarem, ir para th (tailandês) e as línguas vizinhas do Sudeste Asiático continental (ex.: lo
+  laosiano, km khmer, my birmanês — ainda não confirmados, conferir documentação antes de começar).
+- **Indígenas**: tpw (tupi antigo), gn (guarani paraguaio), qu (quéchua sulenho) e yrl (nheengatu)
+  feitos; kaingang (kgp), tikuna (tca) e guarani mbyá (gun) em andamento. **Pedido do Matheus Vega:
+  dar prioridade às línguas indígenas brasileiras.**
+  - **Família guarani (pesquisa do próprio Matheus, 01/10/2026 de madrugada)** — não são a mesma
+    língua com nomes diferentes, são variedades/línguas próprias, cada uma com seu código:
+    - gn guarani paraguaio (**feito**) — jopará (mistura com o espanhol no dia a dia) não é uma
+      língua à parte, só uma nota no texto do `gn`;
+    - gun guarani mbyá (**em andamento**) — Brasil (Sul/Sudeste), Paraguai, Argentina;
+    - kgk guarani kaiowá/pãi-tavyterã — Mato Grosso do Sul e norte do Paraguai;
+    - guarani ñandeva/avá guarani (código a confirmar) — Brasil (MS e outras regiões), Paraguai,
+      Argentina; o avá chiripá costuma ser agrupado com essa variedade, confirmar antes de separar;
+    - tpj tapieté — grupo pequeno na região do Chaco (Bolívia, Paraguai, Argentina);
+    - **guarani antigo** (colonial, documentado por jesuítas como Ruiz de Montoya) — língua histórica
+      à parte, prima do tupi antigo (`tpw`) mas não o mesmo pacote; ainda não começado.
+  - xavante (xav), baniwa (kpc), tukano (tuo);
+  - huni kuĩ/kaxinawá (hvn, grafia a confirmar — o Matheus não tinha certeza da escrita certa).
+  - Ainda não começados: ay (aimará), nah (náuatle), mi (maori), haw (havaiano), nv (navajo).
   - Todos exigem fonte para cada palavra: não inventar, e usar o empréstimo que a comunidade usa.
-- **Africanos que ainda são só um nome em `LANGUAGES`**: ar (árabe — também precisa de RTL, ver
-  abaixo), ha, am, om, ig.
+- **Africanos**: ha (haussá), ig (igbo) feitos; falta am (amárico) e om (oromo) — ambos já têm o
+  scaffold "língua madura" pronto em `src/data/am/` e `src/data/om/` (como `ha`/`ig` tinham), só
+  falta preencher. ar (árabe) continua bloqueado por RTL (ver abaixo).
 
 ### Pendência técnica: escrita da direita pra esquerda (RTL)
 O app nunca precisou disso até agora (nenhum idioma atual é RTL). Árabe (ar) e iídiche (yi) estão
@@ -190,6 +206,19 @@ mais detalhe do usuário antes de mexer em código.
   roupa do Linu ou outra coisa a definir.
 - Pergunta: o app usa muito os códigos ISO (639 idiomas, 3166 países) — existe alternativa? (Já
   usamos também Glottolog e CLDR em partes do mapa; dá pra comparar as opções quando ele quiser.)
+- **Ideia nova (01/10/2026 de madrugada), ainda não implementada**: histórias e mitos de criação dos
+  povos que falam cada idioma — a mitologia de cada cultura, não só a gramática e o vocabulário.
+  Precisa decidir onde entra (Cultura? Histórias, como aba própria? Um `creationMyth` novo no
+  `LanguagePack`?) e o mesmo cuidado de fonte real que o resto do conteúdo já tem.
+- **Ideia nova (01/10/2026 de madrugada), ainda não implementada**: ensinar escritas antigas que não
+  são só alfabeto — hieróglifos egípcios, copta e a escrita maia (logossilábica, "glifos maias" — o
+  Matheus não lembrava o nome). São bem mais difíceis que os idiomas de escrita não latina já no app
+  (armênio, híndi…): hieróglifos e glifos maias não são digitáveis por teclado normal, então pedem
+  imagem/SVG de cada sinal em vez de texto Unicode, e um jeito de "digitar" a resposta nas lições que
+  ainda não existe no app. O copta tem alfabeto Unicode próprio (parecido com o grego) e é mais
+  parecido com as línguas que já existem. Vale tratar como 3 propostas separadas, não uma só: copta
+  é parecido com o fluxo atual; egípcio antigo e maia clássico pedem um jeito novo de mostrar e
+  treinar a escrita.
 
 ## Git
 - Push feito até `5ddab696`. Os commits depois disso (amigos do Linu, 9 idiomas novos, árvores)
