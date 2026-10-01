@@ -55,8 +55,12 @@ commitado.
   acabarem, ir para th (tailandês) e as línguas vizinhas do Sudeste Asiático continental (ex.: lo
   laosiano, km khmer, my birmanês — ainda não confirmados, conferir documentação antes de começar).
 - **Indígenas**: tpw (tupi antigo), gn (guarani paraguaio), qu (quéchua sulenho), yrl (nheengatu),
-  kgp (kaingang) e tca (tikuna) feitos; guarani mbyá (gun) em andamento (1ª tentativa caiu no limite
-  de sessão, relançado). **Pedido do Matheus Vega: dar prioridade às línguas indígenas brasileiras.**
+  kgp (kaingang), tca (tikuna), xav (xavante) e tuo (tukano) feitos; guarani mbyá (gun) e georgiano
+  (ka, pedido à parte) em andamento. **Nota de 01/10/2026, madrugada**: esta sessão passou a rodar em
+  paralelo com outra sessão do Claude Code (mesmo repositório) — por isso os idiomas feitos vêm às
+  vezes de um processo, às vezes de outro; sempre `git pull` antes de editar `idiomas.ts`/
+  `conteudo.test.ts`/este arquivo, pra não divergir. **Pedido do Matheus Vega: dar prioridade às
+  línguas indígenas brasileiras.**
   - **Família guarani (pesquisa do próprio Matheus, 01/10/2026 de madrugada)** — não são a mesma
     língua com nomes diferentes, são variedades/línguas próprias, cada uma com seu código:
     - gn guarani paraguaio (**feito**) — jopará (mistura com o espanhol no dia a dia) não é uma
@@ -68,7 +72,7 @@ commitado.
     - tpj tapieté — grupo pequeno na região do Chaco (Bolívia, Paraguai, Argentina);
     - **guarani antigo** (colonial, documentado por jesuítas como Ruiz de Montoya) — língua histórica
       à parte, prima do tupi antigo (`tpw`) mas não o mesmo pacote; ainda não começado.
-  - xavante (xav), baniwa (kpc), tukano (tuo);
+  - xavante (xav) e tukano (tuo) **feitos**; falta baniwa (kpc);
   - huni kuĩ/kaxinawá (hvn, grafia a confirmar — o Matheus não tinha certeza da escrita certa).
   - Ainda não começados: ay (aimará), nah (náuatle), mi (maori), haw (havaiano), nv (navajo).
   - Todos exigem fonte para cada palavra: não inventar, e usar o empréstimo que a comunidade usa.
