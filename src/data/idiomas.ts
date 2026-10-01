@@ -70,6 +70,14 @@ import { FRANCOPROVENCAL } from './frp';
 import { GREGO } from './el';
 import { ALBANES } from './sq';
 import { ARMENIO } from './hy';
+import { HINDI } from './hi';
+import { GUARANI } from './gn';
+import { TUPI_ANTIGO } from './tpw';
+import { HAUCA } from './ha';
+import { IGBO } from './ig';
+import { NHEENGATU } from './yrl';
+import { BENGALI } from './bn';
+import { QUECHUA } from './qu';
 
 /** Idiomas com conteúdo pronto. */
 export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES, fr: FRANCES, ca: CATALAO, is: ISLANDES, fi: FINLANDES, et: ESTONIANO, fo: FEROES, lt: LITUANO, lv: LETAO, sw: SUAILI, ja: JAPONES, ko: COREANO,
@@ -81,7 +89,8 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   co: CORSO, an: ARAGONES, wa: VALAO, vec: VENETO, nap: NAPOLITANO, scn: SICILIANO,
   fy: FRISIO, nds: BAIXO_ALEMAO, sco: SCOTS, gsw: SUICO_ALEMAO, be: BIELORRUSSO, bs: BOSNIO, hsb: ALTO_SORABIO, csb: CASSUBIO,
   pms: PIEMONTES, lij: LIGURE, lmo: LOMBARDO, mwl: MIRANDES, frp: FRANCOPROVENCAL,
-  el: GREGO, sq: ALBANES, hy: ARMENIO };
+  el: GREGO, sq: ALBANES, hy: ARMENIO,
+  hi: HINDI, gn: GUARANI, tpw: TUPI_ANTIGO, ha: HAUCA, ig: IGBO, yrl: NHEENGATU, bn: BENGALI, qu: QUECHUA };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -157,14 +166,8 @@ export const LANGUAGES: LanguageInfo[] = [
     lineage: { family: 'Afro-asiático', branches: ['Semítico', 'Semítico central'], region: 'Península Arábica (Ásia Ocidental), hoje também o norte da África', writing: 'Alfabeto árabe (abjad, da direita para a esquerda)' },
   },
   CHINES,
-  {
-    code: 'hi', name: 'Híndi', nativeName: 'हिन्दी', flag: '🇮🇳',
-    lineage: { family: 'Indo-europeu', branches: ['Indo-iraniano', 'Indo-ariano', 'Indo-ariano central'], region: 'Norte da Índia (planície do Ganges)', writing: 'Devanágari' },
-  },
-  {
-    code: 'bn', name: 'Bengali', nativeName: 'বাংলা', flag: '🇧🇩',
-    lineage: { family: 'Indo-europeu', branches: ['Indo-iraniano', 'Indo-ariano', 'Indo-ariano oriental'], region: 'Bengala (Bangladesh e leste da Índia)', writing: 'Alfabeto bengali' },
-  },
+  HINDI,
+  BENGALI,
   INDONESIO,
   {
     code: 'ur', name: 'Urdu', nativeName: 'اردو', flag: '🇵🇰',
@@ -180,13 +183,16 @@ export const LANGUAGES: LanguageInfo[] = [
     lineage: { family: 'Dravídico', branches: ['Dravídico centro-meridional'], region: 'Andhra Pradesh e Telangana (sudeste da Índia)', writing: 'Alfabeto télugo' },
   },
   TURCO,
+  // línguas indígenas das Américas (família tupi-guarani)
+  GUARANI,
+  TUPI_ANTIGO,
+  NHEENGATU,
+  // quéchua: família própria, sem parentesco com o indo-europeu nem com o tupi-guarani
+  QUECHUA,
   // o suaíli, a língua africana mais falada como segunda língua, e as maiores da África depois dele
   // (Ethnologue; o árabe já está acima e o pidgin nigeriano é crioulo)
   SUAILI,
-  {
-    code: 'ha', name: 'Hauçá', nativeName: 'Harshen Hausa', flag: '🇳🇬',
-    lineage: { family: 'Afro-asiático', branches: ['Chádico', 'Chádico ocidental'], region: 'Norte da Nigéria e sul do Níger (Sahel)', writing: 'Alfabeto latino (boko: ɓ, ɗ, ƙ, ƴ); também em escrita árabe (ajami)' },
-  },
+  HAUCA,
   {
     code: 'am', name: 'Amárico', nativeName: 'አማርኛ', flag: '🇪🇹',
     lineage: { family: 'Afro-asiático', branches: ['Semítico', 'Semítico etiópico'], region: 'Planalto etíope (Chifre da África)', writing: 'Silabário ge’ez (fidel)' },
@@ -196,10 +202,7 @@ export const LANGUAGES: LanguageInfo[] = [
     code: 'om', name: 'Oromo', nativeName: 'Afaan Oromoo', flag: '🇪🇹',
     lineage: { family: 'Afro-asiático', branches: ['Cuchítico', 'Cuchítico oriental'], region: 'Centro e sul da Etiópia e norte do Quênia', writing: 'Alfabeto latino (qubee)' },
   },
-  {
-    code: 'ig', name: 'Igbo', nativeName: 'Asụsụ Igbo', flag: '🇳🇬',
-    lineage: { family: 'Níger-Congo', branches: ['Atlântico-congolês', 'Volta-Níger', 'Igbóide'], region: 'Sudeste da Nigéria', writing: 'Alfabeto latino (ị, ọ, ụ, ṅ e os tons)' },
-  },
+  IGBO,
 ];
 
 export const DEFAULT_LANGUAGE = 'ro';

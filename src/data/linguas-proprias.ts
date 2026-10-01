@@ -1,5 +1,6 @@
 import { PACKS } from './idiomas';
 import type { Accent, LanguagePack } from './types';
+import { HOMELANDS } from './fauna-musica';
 import { OWN_META_JA } from './ja/linguas-meta';
 import { OWN_META_KO } from './ko/linguas-meta';
 
@@ -9,6 +10,11 @@ import { OWN_META_KO } from './ko/linguas-meta';
  * o sardo na Itália, o mirandês em Portugal. Vêm dos `sotaques.ts` de cada idioma (kind 'língua'),
  * mas aparecem numa aba só delas, com a família de cada uma (que muitas vezes nem é a do idioma
  * vizinho) e o grau de risco do Glottolog.
+ *
+ * Dentro desse grupo, uma língua de imigração é uma própria falada por um povo que LEVOU o idioma
+ * para outro país e lá o manteve — o talian é vêneto, mas falado no Brasil, não na Itália; o
+ * hunsriqueano é alemão, mas também só se fala no Brasil. A `country` do `Accent` desencontra do
+ * `HOMELANDS` do idioma do app: por isso não precisa de um campo novo, só de conferir os dois.
  */
 export interface OwnLanguageMeta {
   /** A família e os ramos, do mais geral ao mais específico: «Urálico › Sámi» */
@@ -158,6 +164,10 @@ export const OWN_LANGUAGE_META: Record<string, OwnLanguageMeta> = {
     family: 'Indo-europeu › Românico › Occitano-romance',
     recognition: "Oficial em toda a Catalunha desde o Estatuto de Autonomia de 2006, ao lado do catalão e do castelhano; é a única variedade do occitano com esse grau de reconhecimento e a língua de ensino na Vall d'Aran.",
   },
+  'de-hunsrik': {
+    family: 'Indo-europeu › Germânico › Alto-alemão (francônio-moselano)',
+    recognition: 'Cooficial, por lei municipal, em cidades como Santa Maria do Herval-RS (desde 2009) e Antônio Carlos-SC (desde 2010) — um reconhecimento municipal, não nacional.',
+  },
   // as dos pacotes novos ficam em cada pasta (ja/linguas-meta.ts…)
   ...OWN_META_JA,
   ...OWN_META_KO,
@@ -179,6 +189,16 @@ export function ownLanguagesOf(pack: LanguagePack): OwnLanguage[] {
 export function allOwnLanguages(studied: string): OwnLanguage[] {
   const packs = Object.values(PACKS).sort((a, b) => Number(b.code === studied) - Number(a.code === studied));
   return packs.flatMap(ownLanguagesOf);
+}
+
+/**
+ * É uma língua de imigração: um povo que levou o idioma para outro país e lá o manteve (o talian é
+ * vêneto, mas só se fala no Brasil; o hunsriqueano é alemão, mas também só se fala no Brasil). Sem
+ * `HOMELANDS` do idioma (poucos idiomas têm), não dá pra saber — conta como própria, não como imigração.
+ */
+export function isImmigrationLanguage(l: OwnLanguage): boolean {
+  const home = HOMELANDS[l.pack.code];
+  return !!home && !home.includes(l.accent.country);
 }
 
 /** Encontra um sotaque, dialeto ou língua própria de qualquer idioma do app (o treino abre por id). */

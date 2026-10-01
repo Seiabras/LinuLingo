@@ -4,6 +4,7 @@ import { UNITS_DE } from './curriculo';
 import { GRAMMAR_DE } from './gramatica';
 import { STORIES_DE } from './historias';
 import { COMMUNITY_DE, ETYMOLOGY_DE, JOURNAL_PROMPTS_DE, SCENARIOS_DE, SHADOWING_DE } from './extras';
+import { ACCENTS_DE } from './sotaques';
 
 export const ALEMAO: LanguagePack = {
   code: 'de',
@@ -31,6 +32,7 @@ export const ALEMAO: LanguagePack = {
   grammar: GRAMMAR_DE,
   journalPrompts: JOURNAL_PROMPTS_DE,
   shadowing: SHADOWING_DE,
+  accents: ACCENTS_DE,
   specialChars: ['ä', 'ö', 'ü', 'ß', 'Ä', 'Ö', 'Ü'],
   // masculino (der), feminino (die) e neutro (das)
   genders: ['m', 'f', 'n'],

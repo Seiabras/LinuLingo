@@ -321,4 +321,4 @@ export const FAUNA_MUSICA: Record<string, CountryNature> = {
 };
 
 /** Países «de origem» de cada idioma do app (seção Bichos e sons da aba Cultura). */
-export const HOMELANDS: Record<string, string[]> = { ro: ['ROU', 'MDA'], ru: ['RUS'], es: ['ESP', 'MEX', 'COL', 'ARG', 'PER', 'CHL', 'CUB'], it: ['ITA'], sv: ['SWE'], nb: ['NOR'], nn: ['NOR'], da: ['DNK'], is: ['ISL'], fo: ['FRO'], pt: ['BRA', 'PRT'], fr: ['FRA'], fi: ['FIN'], et: ['EST'], lt: ['LTU'], lv: ['LVA'], sw: ['TZA', 'KEN'], ja: ['JPN'], ko: ['KOR'], en: ['GBR'] };
+export const HOMELANDS: Record<string, string[]> = { ro: ['ROU', 'MDA'], ru: ['RUS'], es: ['ESP', 'MEX', 'COL', 'ARG', 'PER', 'CHL', 'CUB'], it: ['ITA'], sv: ['SWE'], nb: ['NOR'], nn: ['NOR'], da: ['DNK'], is: ['ISL'], fo: ['FRO'], pt: ['BRA', 'PRT'], fr: ['FRA'], fi: ['FIN'], et: ['EST'], lt: ['LTU'], lv: ['LVA'], sw: ['TZA', 'KEN'], ja: ['JPN'], ko: ['KOR'], en: ['GBR'], de: ['DEU', 'AUT', 'CHE'] };

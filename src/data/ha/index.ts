@@ -25,6 +25,10 @@ export const HAUCA: LanguagePack = {
   },
   speechLocale: 'ha-NG',
   available: true,
+  incomplete: {
+    until: 'A1.2',
+    note: 'Só o nível A1 por enquanto (unidades 1 e 2, cerca de 70 palavras, 4 tópicos de gramática, 2 histórias), no hauçá padrão (boko, sem marcação de tom). Da A2.1 até o C2 chega nas próximas atualizações.',
+  },
   vocab: VOCAB_HA,
   units: UNITS_HA,
   etymology: ETYMOLOGY_HA,
@@ -34,7 +38,8 @@ export const HAUCA: LanguagePack = {
   variants: VARIANTS_HA.length ? VARIANTS_HA : undefined,
   accents: ACCENTS_HA,
   grammar: GRAMMAR_HA,
-  linguistics: LINGUISTICS_HA,
+  // ainda vazio: os 4 tópicos de gramática desta unidade não foram agrupados em áreas da linguística
+  linguistics: LINGUISTICS_HA.length ? LINGUISTICS_HA : undefined,
   journalPrompts: JOURNAL_PROMPTS_HA,
   shadowing: SHADOWING_HA,
   ipa: toIpaHa,
