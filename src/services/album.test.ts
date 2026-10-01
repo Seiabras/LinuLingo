@@ -43,15 +43,16 @@ test('álbum: 3 repetidas trocam por uma que falta (do idioma estudado, se houve
   assert.equal(tradeDuplicates({ [a.id]: 3 }, 'it', rnd), null, 'só 2 repetidas: não dá');
 });
 
-test('álbum: cada atividade que dá XP dá uma figurinha e avisa a tela', async () => {
+test('álbum: atividade com XP suficiente concorre a uma figurinha (por sorte) e avisa a tela', async () => {
   const db = memoryDb();
   await initDatabase(db);
   const seen: string[] = [];
   const off = onSticker((e) => seen.push(e.sticker.id));
-  await awardXp(db, 10, 'licao');
-  await awardXp(db, 1, 'toque');
+  await awardXp(db, 1, 'toque', rnd); // XP pequeno: nem chega a rodar a sorte
+  await awardXp(db, 10, 'licao', () => 0); // XP suficiente + sorte sempre boa: dá
+  await awardXp(db, 10, 'licao', () => 0.99); // XP suficiente, mas sorte ruim: não dá
   off();
-  assert.equal(seen.length, 1, 'XP pequeno (menos que MIN_XP) não dá figurinha');
+  assert.equal(seen.length, 1, 'só a chamada com sorte boa deu figurinha');
   const album = await loadAlbum(db);
   assert.equal(album[seen[0]], 1);
 });

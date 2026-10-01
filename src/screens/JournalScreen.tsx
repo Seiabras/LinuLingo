@@ -205,15 +205,18 @@ export default function JournalScreen() {
           <Text className="text-2xl font-extrabold text-slate-900 dark:text-white">Salvo! +{saved} XP</Text>
           <Text className="text-center text-slate-600 dark:text-slate-300">Volte amanhã para um tema novo.</Text>
           {!sent ? (
-            <Button
-              title="Enviar também para nativos"
-              variant="ghost"
-              className="w-full"
-              onPress={async () => {
-                await submitToCommunity(db, pack.code, null, `Diário: ${prompt}`, result?.corrected ?? text);
-                setSent(true);
-              }}
-            />
+            <>
+              <Button
+                title="Enviar também para nativos"
+                variant="ghost"
+                className="w-full"
+                onPress={async () => {
+                  await submitToCommunity(db, pack.code, null, `Diário: ${prompt}`, result?.corrected ?? text);
+                  setSent(true);
+                }}
+              />
+              <Text className="text-center text-xs text-slate-500 dark:text-slate-400">Por enquanto a fila fica salva no aparelho, sem servidor.</Text>
+            </>
           ) : (
             <Chip label="✓ na fila da comunidade" tone="green" />
           )}

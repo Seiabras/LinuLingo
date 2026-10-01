@@ -32,8 +32,10 @@ export const stickerById = (id: string) => BY_ID.get(id);
 /** Figurinha → quantas você tem. */
 export type Album = Record<string, number>;
 export const TRADE_COST = 3;
-/** Atividades que dão pelo menos este XP dão figurinha. */
+/** Atividades que dão pelo menos este XP concorrem a uma figurinha. */
 export const MIN_XP = 3;
+/** Chance de uma atividade que já passou do MIN_XP realmente dar a figurinha. */
+export const STICKER_CHANCE = 0.5;
 
 export function albumStats(album: Album) {
   const owned = STICKERS.filter((s) => (album[s.id] ?? 0) > 0).length;
@@ -105,8 +107,12 @@ export function onSticker(l: (e: StickerEvent) => void): () => void {
   };
 }
 
-/** Dá a figurinha de uma atividade concluída e avisa quem estiver ouvindo (o aviso na tela). */
-export async function grantSticker(db: SQLiteDatabase, lang: string, rnd: () => number = Math.random): Promise<StickerEvent> {
+/**
+ * Dá a figurinha de uma atividade concluída e avisa quem estiver ouvindo (o aviso na tela) — só
+ * `STICKER_CHANCE` das vezes, pra figurinha não vir em toda atividade e continuar especial.
+ */
+export async function grantSticker(db: SQLiteDatabase, lang: string, rnd: () => number = Math.random): Promise<StickerEvent | null> {
+  if (rnd() >= STICKER_CHANCE) return null;
   const album = await loadAlbum(db);
   const sticker = pickSticker(album, lang, rnd);
   const count = (album[sticker.id] ?? 0) + 1;

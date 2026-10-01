@@ -24,7 +24,7 @@ export async function updateUser(db: SQLiteDatabase, fields: Partial<Pick<User, 
 }
 
 /** Soma XP, atualiza a ofensiva e registra no log diário. */
-export async function awardXp(db: SQLiteDatabase, xp: number, source: string): Promise<StreakResult | null> {
+export async function awardXp(db: SQLiteDatabase, xp: number, source: string, rnd: () => number = Math.random): Promise<StreakResult | null> {
   const user = await getUser(db);
   if (!user) return null;
   const today = localDay();
@@ -37,8 +37,9 @@ export async function awardXp(db: SQLiteDatabase, xp: number, source: string): P
     xp, streak.streak, streak.freezes, today, uid,
   );
   await db.runAsync('INSERT INTO XP_Log (user_id, day, xp, source) VALUES (?, ?, ?, ?)', uid, today, xp, source);
-  // cada atividade concluída dá uma figurinha do álbum (o aviso aparece em qualquer tela)
-  if (xp >= MIN_XP) await grantSticker(db, user.current_language).catch(() => null);
+  // uma atividade concluída tem uma chance de dar uma figurinha do álbum (o aviso aparece em
+  // qualquer tela); não é mais toda vez, pra manter a figurinha especial (pedido do dono do app)
+  if (xp >= MIN_XP) await grantSticker(db, user.current_language, rnd).catch(() => null);
   return streak;
 }
 
