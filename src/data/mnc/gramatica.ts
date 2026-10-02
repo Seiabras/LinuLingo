@@ -14,7 +14,7 @@ export const GRAMMAR_MNC: GrammarTopic[] = [
     summary: 'Vem da escrita mongol: desce de cima pra baixo, as colunas andam da esquerda pra direita, e pontos e círculos separam letras que no mongol eram iguais.',
     sections: [
       {
-        text: 'Em 1599, Nurhaci, o líder jurchen que unificou os manchus, mandou adaptar a escrita mongol à sua língua. Em 1632, Dahai acrescentou sinais para tirar as ambiguidades: segundo a Wikipédia em inglês, um k, um g e um h no começo da sílaba passaram a se distinguir por nenhuma marca, um ponto e um círculo. Essa é a “escrita com pontos e círculos”, a forma padrão até hoje. Como na escrita mongol, cada palavra desce de cima pra baixo, e a coluna seguinte vem à direita.',
+        text: 'Em 1599, Nurhaci, o líder jurchen que unificou os manchus, mandou adaptar a escrita mongol à sua língua. Em 1632, Dahai acrescentou sinais para tirar as ambiguidades: um k, um g e um h no começo da sílaba passaram a se distinguir por nenhuma marca, um ponto e um círculo. Essa é a “escrita com pontos e círculos”, a forma padrão até hoje. Como na escrita mongol, cada palavra desce de cima pra baixo, e a coluna seguinte vem à direita.',
         examples: [
           ['ᠰᡳ ᠰᠠᡳᠶᡡᠨ?', 'Como vai você?'],
           ['ᠰᠠᡳᠨ᠈ ᠪᠠᠨᡳᡥᠠ᠉', 'Bem, obrigado(a).'],
@@ -42,7 +42,7 @@ export const GRAMMAR_MNC: GrammarTopic[] = [
     summary: 'O verbo fecha a frase, e partículas como be (objeto), de (para, em, com), i (de, posse) e ci (de, a partir de) vêm DEPOIS da palavra que marcam.',
     sections: [
       {
-        text: 'Onde o português põe uma preposição antes do nome (“para esta pessoa”, “da casa”), o manchu põe uma partícula depois dele. Todos os exemplos abaixo são da Wikipédia em inglês.',
+        text: 'Onde o português põe uma preposição antes do nome (“para esta pessoa”, “da casa”), o manchu põe uma partícula depois dele.',
         table: {
           head: ['Partícula', 'Função', 'Exemplo', 'Português'],
           rows: [
@@ -74,7 +74,7 @@ export const GRAMMAR_MNC: GrammarTopic[] = [
     summary: 'Antes do nome, o adjetivo descreve (“uma boa pessoa”); depois, ele afirma (“a pessoa é boa”). Para comparar, usa-se ci.',
     sections: [
       {
-        text: 'A Wikipédia em inglês dá o par “ᠰᠠᡳᠨ ᠨᡳᠶᠠᠯᠮᠠ᠉” (sain niyalma) (uma boa pessoa) e “ᠨᡳᠶᠠᠯᠮᠠ ᠰᠠᡳᠨ᠉” (niyalma sain) (a pessoa é boa): a mesma palavra muda de papel só pela posição, sem verbo “ser”. Para dizer que algo é maior, menor ou melhor que outra coisa, a partícula “ci” vai depois do termo de comparação.',
+        text: 'O par “ᠰᠠᡳᠨ ᠨᡳᠶᠠᠯᠮᠠ᠉” (sain niyalma) (uma boa pessoa) e “ᠨᡳᠶᠠᠯᠮᠠ ᠰᠠᡳᠨ᠉” (niyalma sain) (a pessoa é boa) mostra a mesma palavra mudando de papel só pela posição, sem verbo “ser”. Para dizer que algo é maior, menor ou melhor que outra coisa, a partícula “ci” vai depois do termo de comparação.',
         table: {
           head: ['Manchu', 'Leitura', 'Português'],
           rows: [
@@ -106,7 +106,7 @@ export const GRAMMAR_MNC: GrammarTopic[] = [
     summary: 'Os verbos aparecem no dicionário em -mbi; para perguntar, acrescenta-se -o; para negar, usa-se a forma em -rakū.',
     sections: [
       {
-        text: 'A forma em -mbi é a do presente e a do dicionário: “ᠵᡳᠮᠪᡳ” (jimbi) (vir), “ᠣᠮᡳᠮᠪᡳ” (omimbi) (beber). Para perguntar, a Wikipédia em inglês mostra a partícula -o colada no verbo: “ᡳ ᡳᠨᡝᠩᡤᡳ ᠵᡳᠮᠪᡳᠣ?” (i inenggi jimbio) (ele vem hoje?). O guia do Wikivoyage traz a mesma partícula em “si … gisureme bahanambio?” (você sabe falar …?) e a negação em -rakū: “bahanarakū” (não sei), “ulhirakū” (não entendo).',
+        text: 'A forma em -mbi é a do presente e a do dicionário: “ᠵᡳᠮᠪᡳ” (jimbi) (vir), “ᠣᠮᡳᠮᠪᡳ” (omimbi) (beber). Para perguntar, a partícula -o cola no verbo: “ᡳ ᡳᠨᡝᠩᡤᡳ ᠵᡳᠮᠪᡳᠣ?” (i inenggi jimbio) (ele vem hoje?). O guia do Wikivoyage traz a mesma partícula em “si … gisureme bahanambio?” (você sabe falar …?) e a negação em -rakū: “bahanarakū” (não sei), “ulhirakū” (não entendo).',
         table: {
           head: ['Forma', 'Leitura', 'Português'],
           rows: [

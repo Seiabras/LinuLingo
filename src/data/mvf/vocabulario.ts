@@ -93,7 +93,7 @@ const ROWS: VocabRow[] = [
   ['ᠡᠨᠡ', 'este, esta, isto', 'pronome', 'Expressões', '👉', 'ᠡᠨᠡ ᠬᠦᠮᠦᠨ ᠮᠢᠨᠤ ᠨᠠᠶ᠋ᠢᠵᠠ᠃'], // энэ
   ['ᠰᠠᠶ᠋ᠢᠨ ᠪᠠᠢᠨ᠎ᠠ ᠤᠤ', 'olá (lit. “você está bem?”)', 'expressão', 'Expressões', '👋', 'ᠰᠠᠶ᠋ᠢᠨ᠂ ᠲᠠ ᠰᠠᠶ᠋ᠢᠨ ᠪᠠᠢᠨ᠎ᠠ ᠤᠤ?'], // сайн байна уу
   ['ᠪᠠᠶᠠᠷᠯᠠᠯᠤᠭ᠎ᠠ', 'obrigado, obrigada', 'expressão', 'Expressões', '🙏', 'ᠪᠠᠶᠠᠷᠯᠠᠯᠤᠭ᠎ᠠ!'], // баярлалаа
-  ['ᠪᠠᠶᠠᠷᠲᠠᠢ', 'tchau, adeus', 'expressão', 'Expressões', '👋', 'ᠪᠠᠶᠠᠷᠲᠠᠢ!'], // баяртай
+  ['ᠪᠠᠶᠠᠷᠲᠠᠢ', 'tchau, adeus', 'expressão', 'Expressões', '🚶', 'ᠪᠠᠶᠠᠷᠲᠠᠢ!'], // баяртай
 ];
 
 export const VOCAB_MVF = buildVocab('mvf', ROWS);

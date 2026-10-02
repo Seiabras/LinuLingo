@@ -42,7 +42,8 @@ export const STORIES_MVF: StorySeed[] = [
         emoji: '🤝',
         choices: [
           { text: 'ᠰᠠᠶ᠋ᠢᠨ ᠪᠠᠢᠨ᠎ᠠ ᠤᠤ?', translation: 'Olá!', next: 'final' },
-          { text: 'ᠪᠠᠶᠠᠷᠲᠠᠢ!', translation: 'Tchau!', wrong: 'Seria rude se despedir sem cumprimentar quem acabou de ser apresentado. Diga “olá”.' },
+          { text: 'ᠪᠠᠶᠠᠷᠯᠠᠯᠤᠭ᠎ᠠ!', translation: 'Obrigado(a)!', next: 'final2' },
+          { text: 'ᠪᠠᠶᠠᠷᠲᠠᠢ!', translation: 'Tchau!', wrong: 'Seria rude se despedir sem cumprimentar quem acabou de ser apresentado. Diga “olá” ou agradeça.' },
         ],
       },
       final: {
@@ -50,6 +51,12 @@ export const STORIES_MVF: StorySeed[] = [
         translation: 'Tchau!',
         emoji: '👋',
         ending: { tone: 'bom', title: 'ᠨᠠᠶ᠋ᠢᠵᠠ', message: 'Você se apresentou, disse seu nome e cumprimentou um novo amigo — tudo na escrita de cima pra baixo.' },
+      },
+      final2: {
+        text: 'ᠪᠠᠶᠠᠷᠲᠠᠢ!',
+        translation: 'Tchau!',
+        emoji: '🚶',
+        ending: { tone: 'bom', title: 'ᠪᠠᠶᠠᠷᠯᠠᠯᠤᠭ᠎ᠠ', message: 'Você se apresentou e agradeceu por conhecer um novo amigo — tudo na escrita de cima pra baixo.' },
       },
     },
     glossary: [
@@ -99,7 +106,8 @@ export const STORIES_MVF: StorySeed[] = [
         emoji: '🐴',
         choices: [
           { text: 'ᠲᠡᠮᠡᠭᠡ ᠬᠠᠮᠢᠭ᠎ᠠ ᠪᠠᠢᠨ᠎ᠠ?', translation: 'Onde está o camelo?', next: 'final' },
-          { text: 'ᠮᠢᠨᠤ ᠨᠡᠷ᠎ᠡ ᠯᠢᠨᠠ᠃', translation: 'Meu nome é Lina.', wrong: 'Isso não tem a ver com os animais. Pergunte onde está o camelo.' },
+          { text: 'ᠪᠠᠶᠠᠷᠯᠠᠯᠤᠭ᠎ᠠ!', translation: 'Obrigado(a)!', next: 'final2' },
+          { text: 'ᠮᠢᠨᠤ ᠨᠡᠷ᠎ᠡ ᠯᠢᠨᠠ᠃', translation: 'Meu nome é Lina.', wrong: 'Isso não tem a ver com os animais. Pergunte onde está o camelo ou agradeça.' },
         ],
       },
       final: {
@@ -107,6 +115,12 @@ export const STORIES_MVF: StorySeed[] = [
         translation: 'O camelo está ali.',
         emoji: '🐫',
         ending: { tone: 'bom', title: 'ᠭᠡᠷ', message: 'Você aceitou a hospitalidade da guer e conheceu os animais da família: cavalo, ovelha, cabra e camelo.' },
+      },
+      final2: {
+        text: 'ᠪᠠᠶᠠᠷᠲᠠᠢ!',
+        translation: 'Tchau!',
+        emoji: '🚶',
+        ending: { tone: 'bom', title: 'ᠪᠠᠶᠠᠷᠯᠠᠯᠤᠭ᠎ᠠ', message: 'Você agradeceu a hospitalidade da guer, com chá ou airag, antes de se despedir.' },
       },
     },
     glossary: [

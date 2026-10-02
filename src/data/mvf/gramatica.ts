@@ -16,7 +16,7 @@ export const GRAMMAR_MVF: GrammarTopic[] = [
     summary: 'A escrita mongol desce em colunas, e as colunas andam da esquerda pra direita; as letras de uma palavra ficam ligadas por uma linha vertical.',
     sections: [
       {
-        text: 'Cada palavra é escrita de cima pra baixo, e a frase seguinte começa numa nova coluna à DIREITA da anterior — o contrário das escritas verticais do chinês e do japonês, cujas colunas andam da direita pra esquerda. Segundo a Wikipédia em inglês, a escrita mongol e as que nasceram dela (como a manchu) são as únicas escritas verticais conhecidas que andam da esquerda pra direita. As letras de uma palavra se ligam por uma linha que desce pelo meio, e cada letra tem uma forma no começo, outra no meio e outra no fim da palavra.',
+        text: 'Cada palavra é escrita de cima pra baixo, e a frase seguinte começa numa nova coluna à DIREITA da anterior — o contrário das escritas verticais do chinês e do japonês, cujas colunas andam da direita pra esquerda. A escrita mongol e as que nasceram dela (como a manchu) são as únicas escritas verticais conhecidas que andam da esquerda pra direita. As letras de uma palavra se ligam por uma linha que desce pelo meio, e cada letra tem uma forma no começo, outra no meio e outra no fim da palavra.',
         examples: [
           ['ᠰᠠᠶ᠋ᠢᠨ ᠪᠠᠢᠨ᠎ᠠ ᠤᠤ?', 'Olá! (lit. “você está bem?”)'],
           ['ᠡᠨᠡ ᠬᠦᠮᠦᠨ ᠮᠢᠨᠤ ᠨᠠᠶ᠋ᠢᠵᠠ᠃', 'Esta pessoa é meu amigo/minha amiga.'],
@@ -47,7 +47,7 @@ export const GRAMMAR_MVF: GrammarTopic[] = [
     summary: 'A mesma gramática do mongol em cirílico: o verbo fecha a frase, não há palavras para “o/a/um/uma” e os substantivos não têm gênero.',
     sections: [
       {
-        text: 'A Wikipédia em inglês confirma que a ordem básica do mongol é sujeito-objeto-verbo e que a língua não tem artigos nem gênero gramatical. Frases do tipo “isto é ___” dispensam o verbo “ser”: “ᠡᠨᠡ ᠮᠣᠷᠢ᠃” (ene mori.) é “isto [é] um cavalo”. Para dizer como uma coisa está, usa-se “ᠪᠠᠢᠨ᠎ᠠ” (bayin-a) no fim, depois do adjetivo.',
+        text: 'A ordem básica do mongol é sujeito-objeto-verbo, e a língua não tem artigos nem gênero gramatical. Frases do tipo “isto é ___” dispensam o verbo “ser”: “ᠡᠨᠡ ᠮᠣᠷᠢ᠃” (ene mori.) é “isto [é] um cavalo”. Para dizer como uma coisa está, usa-se “ᠪᠠᠢᠨ᠎ᠠ” (bayin-a) no fim, depois do adjetivo.',
         table: {
           head: ['Escrita', 'Leitura', 'Português'],
           rows: [

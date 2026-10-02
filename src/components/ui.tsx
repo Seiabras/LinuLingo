@@ -264,7 +264,7 @@ export function LetterPad({ onInsert, onBackspace, small }: { onInsert: (ch: str
   return (
     <View className="gap-1">
       <Pressable accessibilityRole="button" accessibilityState={{ expanded: open }} onPress={() => setOpen((v) => !v)} className="self-center rounded-full bg-slate-200 px-3 py-1 dark:bg-slate-800">
-        <Text className="text-sm font-semibold text-slate-700 dark:text-slate-200">⌨️ {open ? 'Esconder' : 'Mostrar'} teclado ({nomeIdioma(pack.name)})</Text>
+        <Text className="text-sm font-semibold text-slate-700 dark:text-slate-200">⌨️ {open ? 'Esconder' : 'Mostrar'} teclado — {nomeIdioma(pack.name)}</Text>
       </Pressable>
       {open &&
         rows.map((row, r) => (

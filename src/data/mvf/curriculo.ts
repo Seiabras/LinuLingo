@@ -18,7 +18,7 @@ export const UNITS_MVF: UnitSeed[] = [
       id: 'mvf-c1',
       title: 'Uma escrita de cima pra baixo',
       emoji: '📜',
-      history: 'A escrita mongol foi adaptada do alfabeto uigur antigo por volta de 1204: segundo a Wikipédia em inglês, quem a levou para os mongóis foi Tata-tonga, um escriba uigur capturado por Gengis Khan. A inscrição mais antiga que se conhece nela é a Estela de Yisüngge, do século XIII. Ela se escreve de cima pra baixo, em colunas que avançam da esquerda pra direita — segundo a Wikipédia em inglês, ela e as escritas que nasceram dela (como a manchu) são as únicas escritas verticais conhecidas que andam da esquerda pra direita. Na Mongólia, foi trocada pelo cirílico a partir de 1941, mas continuou sendo a escrita do dia a dia na Mongólia Interior, na China. Em março de 2020, o governo da Mongólia anunciou o plano de usar as duas escritas, a cirílica e a tradicional, nos documentos oficiais a partir de 2025.',
+      history: 'A escrita mongol foi adaptada do alfabeto uigur antigo por volta de 1204: quem a levou para os mongóis foi Tata-tonga, um escriba uigur capturado por Gengis Khan. A inscrição mais antiga que se conhece nela é a Estela de Yisüngge, do século XIII. Ela se escreve de cima pra baixo, em colunas que avançam da esquerda pra direita — ela e as escritas que nasceram dela (como a manchu) são as únicas escritas verticais conhecidas que andam da esquerda pra direita. Na Mongólia, foi trocada pelo cirílico a partir de 1941, mas continuou sendo a escrita do dia a dia na Mongólia Interior, na China. Em março de 2020, o governo da Mongólia anunciou o plano de usar as duas escritas, a cirílica e a tradicional, nos documentos oficiais a partir de 2025.',
       culture_tip: 'As letras se ligam por uma linha vertical que desce pela palavra toda, e cada letra muda de forma conforme a posição: no começo, no meio ou no fim da palavra. Por isso a mesma letra pode parecer diferente em duas palavras — o app desenha a forma certa sozinho, você não precisa escolher.',
       grammar_why: 'A língua é a mesma do pacote em cirílico: sem gênero, sem artigos e com o verbo no fim da frase. O que muda é a escrita, que guarda a ortografia do mongol clássico. Por isso a grafia muitas vezes tem letras que não se pronunciam mais: “ᠮᠣᠷᠢ” (mori) é o “морь” do cirílico, e “ᠤᠰᠤ” (usu) é o “ус”.',
       grammar_examples: [
@@ -27,7 +27,7 @@ export const UNITS_MVF: UnitSeed[] = [
       ],
       character_guide: [
         ['ᠠᠪᠤ', 'a e b soam como em português', 'ᠠᠪᠤ (abu, pai)'],
-        ['ᠮᠣᠷᠢ', 'o e u têm o mesmo desenho (a Wikipédia lista essa ambiguidade entre as que a escrita herdou do uigur) — quem sabe a palavra sabe qual é', 'ᠮᠣᠷᠢ (mori, cavalo), ᠤᠰᠤ (usu, água)'],
+        ['ᠮᠣᠷᠢ', 'o e u têm o mesmo desenho, uma ambiguidade herdada do uigur — quem sabe a palavra sabe qual é', 'ᠮᠣᠷᠢ (mori, cavalo), ᠤᠰᠤ (usu, água)'],
         ['ᠰᠦᠨ', 'ö e ü também têm o mesmo desenho entre si', 'ᠰᠦᠨ (sün, leite), ᠳᠥᠷᠪᠡ (dörbe, quatro)'],
         ['ᠴᠢ', 'č soa como o “tch” de “tchau”', 'ᠴᠢ (či, você), ᠴᠠᠢ (čai, chá)'],
       ],
@@ -46,7 +46,7 @@ export const UNITS_MVF: UnitSeed[] = [
         voice: {
           bot: 'ᠰᠠᠶ᠋ᠢᠨ ᠪᠠᠢᠨ᠎ᠠ ᠤᠤ?',
           botTranslation: 'Olá! (lit. “você está bem?”)',
-          expected: ['ᠰᠠᠶ᠋ᠢᠨ᠂ ᠲᠠ ᠰᠠᠶ᠋ᠢᠨ ᠪᠠᠢᠨ᠎ᠠ ᠤᠤ?', 'sayin, ta sayin bayin-a uu?', 'ᠰᠠᠶ᠋ᠢᠨ', 'sayin', 'Сайн, та сайн байна уу?', 'сайн'],
+          expected: ['ᠰᠠᠶ᠋ᠢᠨ᠂ ᠲᠠ ᠰᠠᠶ᠋ᠢᠨ ᠪᠠᠢᠨ᠎ᠠ ᠤᠤ?', 'sayin, ta sayin bayin-a uu?', 'Сайн, та сайн байна уу?'],
           hint: 'Responda com ᠰᠠᠶ᠋ᠢᠨ᠂ ᠲᠠ ᠰᠠᠶ᠋ᠢᠨ ᠪᠠᠢᠨ᠎ᠠ ᠤᠤ? (bem, e você?).',
         },
         communityPrompt: 'Cumprimente alguém e agradeça usando ᠰᠠᠶ᠋ᠢᠨ ᠪᠠᠢᠨ᠎ᠠ ᠤᠤ? (olá) e ᠪᠠᠶᠠᠷᠯᠠᠯᠤᠭ᠎ᠠ (obrigado).',
@@ -78,7 +78,7 @@ export const UNITS_MVF: UnitSeed[] = [
         voice: {
           bot: 'ᠰᠠᠶ᠋ᠢᠨ ᠪᠠᠢᠨ᠎ᠠ ᠤᠤ? ᠲᠠᠨ ᠤ ᠨᠡᠷ᠎ᠡ ᠬᠡᠨ ᠪᠤᠢ?',
           botTranslation: 'Olá! Qual é o seu nome?',
-          expected: ['ᠮᠢᠨᠤ ᠨᠡᠷ᠎ᠡ', 'minu ner-e', 'ᠰᠠᠶ᠋ᠢᠨ', 'sayin', 'Миний нэр', 'сайн'],
+          expected: ['ᠮᠢᠨᠤ ᠨᠡᠷ᠎ᠡ', 'minu ner-e', 'Миний нэр'],
           hint: 'Responda com ᠮᠢᠨᠤ ᠨᠡᠷ᠎ᠡ (meu nome é …) e o seu nome.',
         },
         communityPrompt: 'Escreva cinco frases curtas se apresentando: seu nome, sua família e um amigo.',

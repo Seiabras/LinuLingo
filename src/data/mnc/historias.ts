@@ -42,7 +42,8 @@ export const STORIES_MNC: StorySeed[] = [
         emoji: '🤝',
         choices: [
           { text: 'ᠪᠠᠨᡳᡥᠠ!', translation: 'Obrigado(a)!', next: 'final' },
-          { text: 'ᡠᠯᡥᡳᡵᠠᡴᡡ᠉', translation: 'Não entendo.', wrong: 'É só um “prazer em conhecer”. Agradeça com “baniha”.' },
+          { text: 'ᠰᠠᡳᠨ᠉', translation: 'Que bom.', next: 'final2' },
+          { text: 'ᡠᠯᡥᡳᡵᠠᡴᡡ᠉', translation: 'Não entendo.', wrong: 'É só um “prazer em conhecer”. Agradeça com “baniha” ou responda “sain” (que bom).' },
         ],
       },
       final: {
@@ -50,6 +51,12 @@ export const STORIES_MNC: StorySeed[] = [
         translation: 'Até logo.',
         emoji: '👋',
         ending: { tone: 'bom', title: 'ᡤᡠᠴᡠ', message: 'Você cumprimentou, disse seu nome e fez um novo amigo — numa das línguas mais ameaçadas da Ásia.' },
+      },
+      final2: {
+        text: 'ᠵᠠᡳ ᠠᠴᠠᡴᡳ᠉',
+        translation: 'Até logo.',
+        emoji: '🚶',
+        ending: { tone: 'bom', title: 'ᠰᠠᡳᠨ', message: 'Você cumprimentou, disse seu nome e recebeu bem um novo amigo — numa das línguas mais ameaçadas da Ásia.' },
       },
     },
     glossary: [
@@ -96,7 +103,8 @@ export const STORIES_MNC: StorySeed[] = [
         emoji: '🐴',
         choices: [
           { text: 'ᡳᠨᡠ᠉', translation: 'É isso.', next: 'final' },
-          { text: 'ᠰᡳ ᠰᠠᡳᠶᡡᠨ?', translation: 'Como vai?', wrong: 'Vocês já se cumprimentaram. Concorde com “inu” (é isso).' },
+          { text: 'ᠪᠠᠨᡳᡥᠠ!', translation: 'Obrigado(a)!', next: 'final2' },
+          { text: 'ᠰᡳ ᠰᠠᡳᠶᡡᠨ?', translation: 'Como vai?', wrong: 'Vocês já se cumprimentaram. Concorde com “inu” (é isso) ou agradeça.' },
         ],
       },
       final: {
@@ -104,6 +112,12 @@ export const STORIES_MNC: StorySeed[] = [
         translation: 'O cão vigia à noite.',
         emoji: '🐕',
         ending: { tone: 'bom', title: 'ᠪᠣᠣ', message: 'Você aceitou o chá e conheceu os animais da casa: o cavalo e o cão que vigia à noite.' },
+      },
+      final2: {
+        text: 'ᠵᠠᡳ ᠠᠴᠠᡴᡳ᠉',
+        translation: 'Até logo.',
+        emoji: '🚶',
+        ending: { tone: 'bom', title: 'ᠪᠠᠨᡳᡥᠠ', message: 'Você aceitou o chá, agradeceu pela visita e conheceu o cavalo e o cão da casa.' },
       },
     },
     glossary: [

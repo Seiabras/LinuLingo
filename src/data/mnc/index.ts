@@ -19,7 +19,7 @@ export const MANCHU: LanguagePack = {
   lineage: {
     family: 'Tungúsico',
     branches: ['Tungúsico do sul', 'Jurchênico', 'Manchu-xibe'],
-    region: 'Manchúria, no nordeste da China. Criticamente ameaçado (UNESCO): a Wikipédia em inglês dá cerca de 20 falantes nativos e milhares de pessoas que aprenderam a língua como segunda língua.',
+    region: 'Manchúria, no nordeste da China. Criticamente ameaçado (UNESCO): cerca de 20 falantes nativos, e milhares de pessoas que aprenderam a língua como segunda língua.',
     writing: 'Escrita manchu, adaptada da mongol em 1599 e reformada em 1632: vertical, de cima pra baixo, com as colunas andando da esquerda pra direita.',
   },
   direction: 'ttb',
@@ -57,6 +57,6 @@ export const MANCHU: LanguagePack = {
     thanks: 'ᠪᠠᠨᡳᡥᠠ',
     letsStart: ['ᠰᠠᡳᠨ!', 'Bom! (usado aqui como “vamos lá”)'],
   },
-  formalMarkers: 'Segundo a Wikipédia em inglês, os manchus instruídos evitavam os pronomes pessoais com quem era de posição mais alta e usavam ᠰᡳᠨᡳ ᠪᡝᠶᡝ (sini beye, lit. “sua pessoa”) como um “você” educado, no lugar do simples ᠰᡳ (si).',
+  formalMarkers: 'Os manchus instruídos evitavam os pronomes pessoais com quem era de posição mais alta e usavam ᠰᡳᠨᡳ ᠪᡝᠶᡝ (sini beye, lit. “sua pessoa”) como um “você” educado, no lugar do simples ᠰᡳ (si).',
   cognateNote: 'O manchu NÃO é parente do português: é uma língua tungúsica, da mesma família do evenki e do nanai, falados na Sibéria e no extremo leste da Rússia. Ele tomou muitas palavras emprestadas do mongol e do chinês — ᠴᠠᡳ (cai, chá) vem do chinês 茶, a mesma palavra que deu o “chá” do português. A antiga hipótese “altaica”, que juntaria tungúsico, mongólico e túrquico numa família só, é hoje vista como obsoleta pela maioria dos linguistas.',
 };

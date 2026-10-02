@@ -16,7 +16,7 @@ export const UNITS_MNC: UnitSeed[] = [
       id: 'mnc-c1',
       title: 'A língua dos imperadores Qing',
       emoji: '🏯',
-      history: 'O manchu foi a língua da dinastia Qing, que governou a China de 1644 a 1912, e por isso aparece até hoje, ao lado do chinês, em placas da Cidade Proibida, em Pequim. A escrita manchu nasceu em 1599, quando o líder jurchen Nurhaci mandou adaptar a escrita mongol à língua do seu povo; em 1632, Dahai acrescentou pontos e círculos para separar sons que a escrita mongol confundia. Hoje o manchu está criticamente ameaçado: segundo a Wikipédia em inglês, o censo chinês de 1990 contou quase 10 milhões de manchus, mas menos de 100 falantes nativos, todos idosos. Há um movimento de resgate, com milhares de pessoas aprendendo a língua.',
+      history: 'O manchu foi a língua da dinastia Qing, que governou a China de 1644 a 1912, e por isso aparece até hoje, ao lado do chinês, em placas da Cidade Proibida, em Pequim. A escrita manchu nasceu em 1599, quando o líder jurchen Nurhaci mandou adaptar a escrita mongol à língua do seu povo; em 1632, Dahai acrescentou pontos e círculos para separar sons que a escrita mongol confundia. Hoje o manchu está criticamente ameaçado: o censo chinês de 1990 contou quase 10 milhões de manchus, mas menos de 100 falantes nativos, todos idosos. Há um movimento de resgate, com milhares de pessoas aprendendo a língua.',
       culture_tip: 'O xibe, falado no noroeste da China por descendentes de soldados manchus mandados para lá no século XVIII, é tão próximo do manchu que os dois se entendem. A escrita manchu também é a dos documentos da corte Qing, e muitos historiadores aprendem a língua só para ler esses arquivos.',
       grammar_why: 'Como o mongol, o manchu põe o verbo no fim da frase e marca a função das palavras com partículas depois delas: “ᡳ ᠪᠣᠣ ᠪᡝ ᠸᡝᡳᠯᡝᠮᠪᡳ᠉” (i boo be weilembi) é “ele constrói uma casa”, com “be” marcando o objeto. Não há artigos nem gênero gramatical.',
       grammar_examples: [
@@ -94,7 +94,7 @@ export const UNITS_MNC: UnitSeed[] = [
       title: 'Cavalos, caça e as florestas da Manchúria',
       emoji: '🌲',
       history: 'Os manchus descendem dos jurchens, povo das florestas e dos rios do nordeste da Ásia, e eram cavaleiros e caçadores antes de conquistarem a China. A palavra “ᠮᠣᡵᡳᠨ” (morin) (cavalo) vem do jurchen “muri” e tem parentes em outras línguas tungúsicas da Sibéria, como o evenki “мурин”. Já “ᠴᠠᡳ” (cai) (chá) é emprestada do chinês 茶, sinal de séculos de convivência.',
-      culture_tip: 'Um exemplo da gramática manchu citado pela Wikipédia em inglês é “ᡳᠨᡩᠠᡥᡡᠨ ᡩᠣᠪᠣᡵᡳ ᡨᡠᠸᠠᡥᡳᠶᠠᠮᠪᡳ᠉” (indahūn dobori tuwahiyambi): “o cão vigia à noite”.',
+      culture_tip: 'Um exemplo da gramática manchu: “ᡳᠨᡩᠠᡥᡡᠨ ᡩᠣᠪᠣᡵᡳ ᡨᡠᠸᠠᡥᡳᠶᠠᠮᠪᡳ᠉” (indahūn dobori tuwahiyambi), “o cão vigia à noite”.',
       grammar_why: 'Para comparar, o manchu põe a partícula “ci” (de, a partir de) depois do termo de comparação: “ᠮᠣᡵᡳᠨ ᡳᠨᡩᠠᡥᡡᠨ ᠴᡳ ᠠᠮᠪᠠ᠉” (morin indahūn ci amba) quer dizer “o cavalo é maior que o cão” — literalmente, “cavalo, a partir do cão, grande”.',
       grammar_examples: [
         ['ᠮᠣᡵᡳᠨ ᡳᠨᡩᠠᡥᡡᠨ ᠴᡳ ᠠᠮᠪᠠ᠉', 'O cavalo é maior que o cão.'],
