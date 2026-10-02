@@ -3,6 +3,9 @@ import { ARABE } from './ar';
 import { PERSA } from './fa';
 import { URDU } from './ur';
 import { OKINAWANO } from './ryu';
+import { DHIVEHI } from './dv';
+import { UIGUR } from './ug';
+import { PASHTO } from './ps';
 import { ARABE_EGIPCIO } from './arz';
 import { IIDICHE } from './yi';
 import { HEBRAICO } from './he';
@@ -148,7 +151,7 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   hu: HUNGARO, tsd: TSAKONIO, pcm: PIDGIN_NIGERIANO, ta: TAMIL, tl: TAGALO, hyw: ARMENIO_OCIDENTAL,
   tdt: TETUM, arn: MAPUDUNGUN, gd: GAELICO_ESCOCES, ht: CRIOULO_HAITIANO, ktn: KARITIANA, kmb: QUIMBUNDO,
   pln: PALENQUERO, kl: GROENLANDES, br: BRETAO, lkt: LAKOTA, se: SAMI_DO_NORTE, fon: FON, ar: ARABE,
-  fa: PERSA, ur: URDU, ryu: OKINAWANO, arz: ARABE_EGIPCIO, yi: IIDICHE, he: HEBRAICO, mt: MALTES };
+  fa: PERSA, ur: URDU, ryu: OKINAWANO, arz: ARABE_EGIPCIO, yi: IIDICHE, he: HEBRAICO, mt: MALTES, dv: DHIVEHI, ug: UIGUR, ps: PASHTO };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -371,6 +374,16 @@ export const LANGUAGES: LanguageInfo[] = [
   // mundo escrita só em alfabeto latino, nunca em árabe; muitos empréstimos do siciliano/italiano
   // por cima da base árabe
   MALTES,
+  // divehi/dhivehi: indo-europeu, indo-ariano, mas no grupo insular com o cingalês (não no mesmo
+  // subgrupo do hindi/urdu) — a única língua indo-ariana escrita da direita pra esquerda, no alfabeto
+  // thaana (único no mundo: as letras vêm de algarismos árabes e numerais índicos locais)
+  DHIVEHI,
+  // uigur: família túrquica, mas ramo carlúquico — diferente do ramo oghuz do turco (tr) já no app;
+  // escrito em alfabeto árabe com vogais explícitas (ao contrário do árabe padrão)
+  UIGUR,
+  // pachto: indo-europeu, iraniano ORIENTAL — irmão de ramo do farsi (iraniano ocidental), não o
+  // mesmo sub-ramo; indo-iraniano como o urdu/hindi, mas não indo-ariano
+  PASHTO,
 ];
 
 export const DEFAULT_LANGUAGE = 'ro';
