@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { router } from 'expo-router';
 import { ChevronDown, ChevronUp } from 'lucide-react-native';
-import { Button, Card, Chip, SpeakButton, SpeechBubble } from '@/components/ui';
+import { Button, Card, Chip, InfoLabel, SpeakButton, SpeechBubble } from '@/components/ui';
 import { Linu } from '@/components/Linu';
 import { AccentMap } from '@/components/AccentsPanel';
 import { useApp } from '@/services/app-state';
@@ -78,13 +78,21 @@ export function OwnLanguagesTab() {
       </View>
       {proprias.length > 0 && (
         <View className="gap-3">
-          <Text className="text-sm font-extrabold text-slate-700 dark:text-slate-200">🗣️ Línguas próprias</Text>
+          <InfoLabel
+            label="🗣️ Línguas próprias"
+            labelClassName="text-sm font-extrabold text-slate-700 dark:text-slate-200"
+            info="Faladas há muito tempo no mesmo território de um idioma do app, por um povo que sempre esteve ali — o sámi na Suécia, o sardo na Itália, o mirandês em Portugal. Não vieram de fora: nasceram ou já estavam na região."
+          />
           {section(proprias)}
         </View>
       )}
       {imigracao.length > 0 && (
         <View className="gap-3">
-          <Text className="text-sm font-extrabold text-slate-700 dark:text-slate-200">🧳 Línguas de imigração</Text>
+          <InfoLabel
+            label="🧳 Línguas de imigração"
+            labelClassName="text-sm font-extrabold text-slate-700 dark:text-slate-200"
+            info="Vieram de fora: um povo se mudou para outro país, levou o idioma e o manteve lá, longe de onde ele nasceu — o talian é vêneto, mas só se fala no Brasil; o hunsriqueano é alemão, mas também só se fala no Brasil."
+          />
           {section(imigracao)}
         </View>
       )}
