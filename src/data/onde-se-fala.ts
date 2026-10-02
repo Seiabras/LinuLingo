@@ -490,6 +490,18 @@ export function languagesIn(iso: string) {
   );
 }
 
+/**
+ * Como `languagesIn`, mas só as línguas com papel oficial/regional de verdade — exclui as línguas
+ * "faladas" (role 'falada') que o Glottolog carrega aos milhares por país, cada uma com só um ponto
+ * de coordenada (1-2 subdivisões), não um território reconhecido. Usado pelo mapa pra decidir quem
+ * pode pintar um estado/província/cantão quando aproxima: sem esse filtro, uma língua minúscula do
+ * Glottolog (menos subdivisões = "mais específica" na ordenação) pintava por cima de línguas de
+ * verdade como o tâmil ou o francês (achado pela revisão externa de seiabras-b8, 02/10/2026).
+ */
+export function notableLanguagesIn(iso: string) {
+  return languagesIn(iso).filter((x) => x.lang.status !== 5 && (x.spoken.role === 'oficial' || x.spoken.role === 'regional'));
+}
+
 /** Grau de risco das línguas (escala AES do Glottolog). */
 // nomes dos graus pela UNESCO (ver RISK_LEVELS em linguas-indigenas.ts, a mesma escala AES do Glottolog)
 export const STATUS_LABEL = ['não ameaçada', 'vulnerável', 'em perigo', 'severamente ameaçada', 'criticamente ameaçada', 'extinta'];

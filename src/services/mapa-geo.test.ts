@@ -1,7 +1,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { fitBox, focusBox, parseSubdivisions, ringBoxes } from './mapa-geo';
-import { byKinship, languagesIn } from '../data/onde-se-fala';
+import { addGlottolog, byKinship, languagesIn, notableLanguagesIn } from '../data/onde-se-fala';
+import { GLOTTOLOG_ROWS } from '../data/linguas-glottolog';
 
 test('caixas de anéis absolutos (M/L) e relativos (m/l)', () => {
   assert.deepEqual(ringBoxes('M1 2L5 2L5 6Z'), [{ x: 1, y: 2, w: 4, h: 4 }]);
@@ -48,4 +49,21 @@ test('no país, do idioma mais falado ao menos', () => {
   const ukr = languagesIn('UKR').map((x) => x.lang.code);
   assert.equal(ukr[0], 'uk');
   assert.ok(ukr.indexOf('ru') < ukr.indexOf('ro'));
+});
+
+test('mapa: línguas oficiais/regionais vencem o Glottolog na cor por estado (achado de seiabras-b8)', () => {
+  // com o Glottolog carregado (centenas de línguas "faladas" por país, cada uma com 1-2 subdivisões),
+  // a ordenação antiga por "menos subdivisões" deixava línguas minúsculas pintarem por cima de línguas
+  // de verdade (ex.: Tamil Nadu saía como alguma língua obscura, não como tâmil) — ver MapScreen.tsx.
+  addGlottolog(GLOTTOLOG_ROWS);
+  const winner = (iso: string, subdivision: string) => {
+    const specific = notableLanguagesIn(iso)
+      .filter((x) => (x.spoken.subdivisions?.length ?? 0) > 0)
+      .sort((a, b) => a.spoken.subdivisions!.length - b.spoken.subdivisions!.length);
+    return specific.find((x) => x.spoken.subdivisions!.includes(subdivision))?.lang.code;
+  };
+  assert.equal(winner('IND', 'IN-TN'), 'ta', 'Tamil Nadu deveria pintar como tâmil');
+  assert.equal(winner('IND', 'IN-TS'), 'te', 'Telangana deveria pintar como télugo');
+  assert.equal(winner('IND', 'IN-WB'), 'bn', 'West Bengal deveria pintar como bengali');
+  assert.equal(winner('CAN', 'CA-QC'), 'fr', 'Quebec deveria pintar como francês');
 });

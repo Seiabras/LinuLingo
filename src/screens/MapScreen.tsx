@@ -9,7 +9,7 @@ import { ArrowLeft, Globe, Minus, Plus, Search, X } from 'lucide-react-native';
 import { Screen, Button, Card, Chip, SectionTitle, SpeakButton } from '@/components/ui';
 import { useApp } from '@/services/app-state';
 import { MAP_H, MAP_W, WORLD, type MapCountry } from '@/data/mapa-mundi';
-import { addGlottolog, ALL_MAP_LANGUAGES, byKinship, findMapLanguage, flagOf, languagesIn, MAP_LANGUAGES, ROLE_LABEL, searchLanguages, STATUS_LABEL, type LangRole, type MapLanguage } from '@/data/onde-se-fala';
+import { addGlottolog, ALL_MAP_LANGUAGES, byKinship, findMapLanguage, flagOf, languagesIn, notableLanguagesIn, MAP_LANGUAGES, ROLE_LABEL, searchLanguages, STATUS_LABEL, type LangRole, type MapLanguage } from '@/data/onde-se-fala';
 import { FAUNA_MUSICA, HOMELANDS } from '@/data/fauna-musica';
 import { CULTURA_PAISES, CULTURE_KINDS } from '@/data/cultura-paises';
 import { WORLD_REGIONS } from '@/data/regioes';
@@ -305,40 +305,43 @@ export default function MapScreen() {
   // mostrar). A língua oficial do país inteiro, sem recorte, pinta o que sobrar.
   const focusSubs = focus && subs?.iso === focus.iso ? subs.list : null;
   const focusSel = focus && mode === 'hoje' ? roles.get(focus.iso) : undefined;
-  const focusLangs = useMemo(
-    () => (focus && mode === 'hoje' ? languagesIn(focus.iso).filter((x) => x.lang.status !== 5) : []),
-    [focus, mode],
-  );
+  // só línguas com papel oficial/regional pintam estado (ver notableLanguagesIn): o Glottolog carrega
+  // centenas de línguas "faladas" por país (role 'falada', sempre com só 1-2 subdivisões, um ponto de
+  // coordenada, não um território de verdade) — sem esse filtro, uma língua minúscula com 1 estado só
+  // ganhava de línguas de verdade como o tâmil/hindi/francês na comparação de "menos subdivisões".
+  const notable = useMemo(() => (focus && mode === 'hoje' ? notableLanguagesIn(focus.iso) : []), [focus, mode]);
   const specific = useMemo(
     () =>
-      focusLangs
+      notable
         .filter((x) => (x.spoken.subdivisions?.length ?? 0) > 0)
         .sort(
           (a, b) =>
             Number(b.lang.code === lang.code) - Number(a.lang.code === lang.code) || a.spoken.subdivisions!.length - b.spoken.subdivisions!.length,
         ),
-    [focusLangs, lang.code],
+    [notable, lang.code],
   );
-  const background = focusLangs.find((x) => x.spoken.role === 'oficial' && !x.spoken.subdivisions?.length);
+  const background = notable.find((x) => x.spoken.role === 'oficial' && !x.spoken.subdivisions?.length);
   // a legenda segue a ordem de languagesIn (oficial primeiro, depois por % da população), não a de
   // "specific" (essa é pela especificidade da região, pro subFill decidir quem pinta por cima quando
   // duas se sobrepõem) — senão hindi, a língua com mais estados e mais falantes da Índia, ficava de
   // fora por entrar por último nesse outro critério, e o corte de 6 cortava antes de chegar nele.
-  const countryLangLegend = focusLangs.filter((x) => x === background || specific.includes(x)).slice(0, 6);
+  const countryLangLegend = notable.filter((x) => x === background || specific.includes(x)).slice(0, 6);
   // cor de desempate (ver CHOROPLETH_PALETTE): a língua escolhida lá em cima guarda a cor dela de
-  // verdade (bate com o resto da tela); as outras do mesmo país ganham uma cor da paleta que ainda não
-  // esteja em uso, numa ordem estável (a de languagesIn), pra nunca repetir entre as que aparecem juntas.
+  // verdade (bate com o resto da tela); as outras línguas notáveis do mesmo país ganham uma cor da
+  // paleta que ainda não esteja em uso, numa ordem estável (a de languagesIn), pra nunca repetir entre
+  // as que aparecem juntas. Só entre as notáveis (não todo focusLangs): senão as centenas de línguas
+  // do Glottolog esgotavam a paleta de 12 cores antes de chegar nas línguas que realmente pintam algo.
   const focusColor = useMemo(() => {
     const assigned = new Map<string, string>([[lang.code, lang.color]]);
     const used = new Set<string>([lang.color]);
-    for (const x of focusLangs) {
+    for (const x of notable) {
       if (assigned.has(x.lang.code)) continue;
       const free = CHOROPLETH_PALETTE.find((c) => !used.has(c)) ?? x.lang.color;
       used.add(free);
       assigned.set(x.lang.code, free);
     }
     return (code: string, fallback: string) => assigned.get(code) ?? fallback;
-  }, [focusLangs, lang.code, lang.color]);
+  }, [notable, lang.code, lang.color]);
   const inRegion = (codes: string[], sh: SubShape) => codes.includes(sh.code) || codes.includes(sh.parent);
   const subFill = (sh: SubShape): [string, number] => {
     if (mode === 'antigos') return formerHighlight.has(focus?.iso ?? '') ? [FORMER_COLOR, 1] : [land, 1];

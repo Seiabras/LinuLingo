@@ -8,7 +8,7 @@ import type { LanguagePack } from './types';
 
 import { WORLD } from './mapa-mundi';
 import { ISO_3166_2 } from './iso-3166-2';
-import { MAP_LANGUAGES } from './onde-se-fala';
+import { ALL_MAP_LANGUAGES, MAP_LANGUAGES } from './onde-se-fala';
 import { FORMER_COUNTRIES } from './iso-3166-3';
 
 /** Os subníveis que o pacote já tem: todos, ou só até `incomplete.until` nos idiomas em construção. */
@@ -115,7 +115,9 @@ test('mapa: códigos ISO 3166-1/2 usados em “onde se fala” existem', () => {
       .map(([code]) => code),
   );
   assert.ok(WORLD.length >= 249, 'mapa sem todos os países da ISO 3166-1');
-  for (const l of MAP_LANGUAGES)
+  // ALL_MAP_LANGUAGES, não só MAP_LANGUAGES: cobre também as subdivisões do CLDR_SUBDIVISIONS
+  // (onde-se-fala.ts), que entram por idiomas vindos do CLDR (fromCldr), não da lista escrita à mão.
+  for (const l of ALL_MAP_LANGUAGES)
     for (const c of l.countries) {
       assert.ok(countries.has(c.iso), `${l.code}: país ${c.iso} fora do mapa`);
       for (const sd of c.subdivisions ?? []) assert.ok(subs.has(sd), `${l.code}: subdivisão ${sd} não existe`);
