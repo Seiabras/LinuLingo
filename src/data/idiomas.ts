@@ -114,6 +114,7 @@ import { MAPUDUNGUN } from './arn';
 import { GAELICO_ESCOCES } from './gd';
 import { CRIOULO_HAITIANO } from './ht';
 import { KARITIANA } from './ktn';
+import { QUIMBUNDO } from './kmb';
 
 /** Idiomas com conteúdo pronto. */
 export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES, fr: FRANCES, ca: CATALAO, is: ISLANDES, fi: FINLANDES, et: ESTONIANO, fo: FEROES, lt: LITUANO, lv: LETAO, sw: SUAILI, ja: JAPONES, ko: COREANO,
@@ -131,7 +132,7 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   ay: AIMARA, kgk: GUARANI_KAIOWA, nah: NAUATLE, kpc: BANIWA, lo: LAOSIANO, cbs: HUNI_KUIN,
   nv: NAVAJO, nhd: GUARANI_NANDEVA, tpj: TAPIETE, mi: MAORI, gnw: GUARANI_ANTIGO, haw: HAVAIANO, te: TELUGO, om: OROMO, mr: MARATHI, am: AMARICO, mn: MONGOL,
   hu: HUNGARO, tsd: TSAKONIO, pcm: PIDGIN_NIGERIANO, ta: TAMIL, tl: TAGALO, hyw: ARMENIO_OCIDENTAL,
-  tdt: TETUM, arn: MAPUDUNGUN, gd: GAELICO_ESCOCES, ht: CRIOULO_HAITIANO, ktn: KARITIANA };
+  tdt: TETUM, arn: MAPUDUNGUN, gd: GAELICO_ESCOCES, ht: CRIOULO_HAITIANO, ktn: KARITIANA, kmb: QUIMBUNDO };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -306,6 +307,10 @@ export const LANGUAGES: LanguageInfo[] = [
   // tupis já no app (gn, tpw, yrl, gun...); única língua viva do próprio ramo; ergativo-absolutivo,
   // um alinhamento raro entre as línguas tupis
   KARITIANA,
+  // quimbundo: níger-congo, ramo banto (zona H.20 de Guthrie) — uma das línguas bantas que mais
+  // moldou o português do Brasil via o tráfico negreiro (moleque, cafuné, caçula, quitute, zumbi,
+  // quilombo, dendê, bunda, fubá, senzala, quitanda...)
+  QUIMBUNDO,
 ];
 
 export const DEFAULT_LANGUAGE = 'ro';

@@ -386,8 +386,11 @@ mais detalhe do usuário antes de mexer em código.
     europeu, ramo goidélico, irmão do irlandês), crioulo haitiano (`ht` — crioulo de base francesa,
     família própria "Crioulo de base francesa" adicionada à lista fechada de `conteudo.test.ts`,
     mesma convenção do pidgin nigeriano) e karitiana (`ktn` — família tupi, mas ramo arikém, diferente
-    do tupi-guarani das outras línguas tupis do app; ergativo-absolutivo, raro entre línguas tupis).
-  - **Em andamento** (pacote do zero, igual aos outros): kimbundu (`kmb`), groenlandês/kalaallisut
+    do tupi-guarani das outras línguas tupis do app; ergativo-absolutivo, raro entre línguas tupis) e
+    quimbundo (`kmb` — níger-congo, ramo banto zona H.20 de Guthrie; uma das línguas bantas que mais
+    moldou o português do Brasil via o tráfico negreiro: moleque, cafuné, caçula, quitute, zumbi,
+    quilombo, dendê, bunda, fubá, senzala, quitanda).
+  - **Em andamento** (pacote do zero, igual aos outros): groenlandês/kalaallisut
     (`kl`), palenquero (`pln`), saami do norte (`se` — a variedade sami mais falada, ~15-25 mil
     falantes; as outras línguas sami, como a lule e a skolt, têm código próprio à parte), bretão
     (`br`), lakota (`lkt`).
