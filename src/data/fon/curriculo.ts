@@ -25,7 +25,7 @@ export const UNITS_FON: UnitSeed[] = [
       grammar_why:
         'O fon tem só duas marcas de tom (alto e baixo) e os verbos não mudam de forma por pessoa: “un ɖó” (eu tenho) e “éh ɖó” (ele tem) usam o mesmo “ɖó”, sem terminação nenhuma — bem diferente do português, que conjuga “tenho/tem/temos”.',
       grammar_examples: [
-        ['Kwabɔ! Un xɔ̀ hwévi ɖò aximɛ.', 'Bem-vindo! Eu comprei peixe no mercado.'],
+        ['Kwabɔ! Un xɔ̀ hweví ɖò aximɛ.', 'Bem-vindo! Eu comprei peixe no mercado.'],
         ['Sìn ɔ́.', 'A água.'],
         ['Un ɖó wémà.', 'Eu tenho um livro.'],
         ['Wémà ɖokpó.', 'Um livro.'],
@@ -46,15 +46,15 @@ export const UNITS_FON: UnitSeed[] = [
         kind: 'licao',
         words: ['Kwabɔ', 'un', 'ɔ́', 'sìn', 'aximɛ', 'xɔ̀'],
         cloze: [
-          { sentence: '___! Un xɔ̀ hwévi.', answer: 'Kwabɔ', options: ['Kwabɔ', 'Honton', 'Mɛxó'], translation: 'Bem-vindo! Eu compro peixe.' },
-          { sentence: 'Un ___ hwévi ɖò aximɛ.', answer: 'xɔ̀', options: ['xɔ̀', 'yì', 'ɖó'], translation: 'Eu comprei peixe no mercado.' },
+          { sentence: '___! Un xɔ̀ hweví.', answer: 'Kwabɔ', options: ['Kwabɔ', 'Honton', 'Mɛxó'], translation: 'Bem-vindo! Eu compro peixe.' },
+          { sentence: 'Un ___ hweví ɖò aximɛ.', answer: 'xɔ̀', options: ['xɔ̀', 'yì', 'ɖó'], translation: 'Eu comprei peixe no mercado.' },
           { sentence: 'Sìn ___.', answer: 'ɔ́', options: ['ɔ́', 'ɖò', 'nú'], translation: 'A água.' },
         ],
         voice: {
-          bot: 'Kwabɔ! Un ɖó hwévi ɖò aximɛ.',
+          bot: 'Kwabɔ! Un ɖó hweví ɖò aximɛ.',
           botTranslation: 'Bem-vindo! Eu tenho peixe no mercado.',
-          expected: ['Un xɔ̀ hwévi.', 'un xɔ̀', 'xɔ̀ hwévi'],
-          hint: 'Diga que você compra o peixe: “Un xɔ̀ hwévi.”.',
+          expected: ['Un xɔ̀ hweví.', 'un xɔ̀', 'xɔ̀ hweví'],
+          hint: 'Diga que você compra o peixe: “Un xɔ̀ hweví.”.',
         },
         communityPrompt: 'Escreva uma frase em fon usando “Un xɔ̀…” (eu compro) e uma palavra do vocabulário.',
       },
@@ -83,9 +83,9 @@ export const UNITS_FON: UnitSeed[] = [
         words: [],
         cloze: [],
         voice: {
-          bot: 'Kwabɔ ɖò aximɛ ɔ́! Un ɖó wémà, akouwè, kpo hwévi kpo.',
+          bot: 'Kwabɔ ɖò aximɛ ɔ́! Un ɖó wémà, akwɛ́, kpo hweví kpo.',
           botTranslation: 'Bem-vindo ao mercado! Eu tenho livro, dinheiro e peixe.',
-          expected: ['Un xɔ̀ wémà kpo hwévi kpo.', 'un xɔ̀'],
+          expected: ['Un xɔ̀ wémà kpo hweví kpo.', 'un xɔ̀'],
           hint: 'Diga que você compra duas coisas, ligando-as com “kpo … kpo”.',
         },
         communityPrompt: 'Escreva uma frase comprando duas coisas do mercado, usando “Un xɔ̀ … kpo … kpo.”.',
@@ -147,13 +147,13 @@ export const UNITS_FON: UnitSeed[] = [
         words: ['gbɔ́', 'lɛ̀ngbɔ́', 'azwì', 'acɔci', 'hweví', 'dà'],
         cloze: [
           { sentence: '___ ɔ́.', answer: 'Gbɔ́', options: ['Gbɔ́', 'Lɛ̀ngbɔ́', 'Azwì'], translation: 'A cabra.' },
-          { sentence: 'Un ___ hwévi.', answer: 'dà', options: ['dà', 'xɔ̀', 'ɖó'], translation: 'Eu cozinho peixe.' },
+          { sentence: 'Un ___ hweví.', answer: 'dà', options: ['dà', 'xɔ̀', 'ɖó'], translation: 'Eu cozinho peixe.' },
           { sentence: '___ ɔ́.', answer: 'Acɔci', options: ['Acɔci', 'Aboli', 'Hweví'], translation: 'A lagosta.' },
         ],
         voice: {
-          bot: 'Un dà hwévi kpo acɔci kpo.',
+          bot: 'Un dà hweví kpo acɔci kpo.',
           botTranslation: 'Eu cozinho peixe e lagosta.',
-          expected: ['Un dà hwévi.', 'un dà'],
+          expected: ['Un dà hweví.', 'un dà'],
           hint: 'Diga o que você cozinha: “Un dà…”.',
         },
         communityPrompt: 'Escreva uma frase com “Un dà…” (eu cozinho) e um animal ou peixe do vocabulário.',

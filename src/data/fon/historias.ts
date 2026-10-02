@@ -19,20 +19,20 @@ export const STORIES_FON: StorySeed[] = [
     start: 'inicio',
     nodes: {
       inicio: {
-        text: 'Kwabɔ! Un ɖó hwévi ɖò aximɛ.',
+        text: 'Kwabɔ! Un ɖó hweví ɖò aximɛ.',
         translation: 'Bem-vindo! Eu tenho peixe no mercado.',
         emoji: '🙋',
         choices: [
-          { text: 'Un xɔ̀ hwévi.', translation: 'Eu compro peixe.', next: 'compra' },
+          { text: 'Un xɔ̀ hweví.', translation: 'Eu compro peixe.', next: 'compra' },
           { text: 'Wémà ɔ́.', translation: 'O livro.', wrong: 'O honton falou de peixe, não de livro. Responda sobre o que ele está oferecendo.' },
         ],
       },
       compra: {
-        text: 'Nǔ ɔ́ kpàtàkì: un ɖó akouwè?',
+        text: 'Nǔ ɔ́ kpàtàkì: un ɖó akwɛ́?',
         translation: 'A coisa importante: você tem dinheiro?',
         emoji: '💰',
         choices: [
-          { text: 'Un ɖó akouwè.', translation: 'Eu tenho dinheiro.', next: 'final_bom' },
+          { text: 'Un ɖó akwɛ́.', translation: 'Eu tenho dinheiro.', next: 'final_bom' },
           { text: 'Un yì.', translation: 'Eu vou embora.', wrong: 'Vocês já estão combinando a compra do peixe — ir embora agora não responde à pergunta sobre o dinheiro.' },
         ],
       },
@@ -47,7 +47,7 @@ export const STORIES_FON: StorySeed[] = [
       ['Kwabɔ', 'bem-vindo'],
       ['aximɛ', 'mercado'],
       ['xɔ̀', 'comprar'],
-      ['akouwè', 'dinheiro'],
+      ['akwɛ́', 'dinheiro'],
     ],
   },
   {

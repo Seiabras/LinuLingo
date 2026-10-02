@@ -12,7 +12,7 @@ export const COMMUNITY_FON: CommunitySeed[] = [
     author_name: 'Beto 🇧🇷',
     prompt: 'Aximɛ ɔ́.',
     content: 'Ɔ́ aximɛ, un xɔ hwevi.',
-    reference: 'Aximɛ ɔ́, un xɔ̀ hwévi.',
+    reference: 'Aximɛ ɔ́, un xɔ̀ hweví.',
   },
   {
     author_name: 'Carla 🇧🇷',
@@ -40,16 +40,16 @@ export const SCENARIOS_FON: ScenarioSeed[] = [
     description: 'Honton te recebe no mercado e oferece peixe e lagosta. É uma conversa informal entre amigos.',
     turns: [
       {
-        bot: 'Kwabɔ ɖò aximɛ ɔ́! Un ɖó hwévi kpo acɔci kpo.',
+        bot: 'Kwabɔ ɖò aximɛ ɔ́! Un ɖó hweví kpo acɔci kpo.',
         botTranslation: 'Bem-vindo ao mercado! Eu tenho peixe e lagosta.',
-        keywords: ['xɔ̀', 'akouwè'],
-        suggestions: ['Un xɔ̀ hwévi.', 'Un ɖó akouwè.'],
+        keywords: ['xɔ̀', 'akwɛ́'],
+        suggestions: ['Un xɔ̀ hweví.', 'Un ɖó akwɛ́.'],
       },
       {
         bot: 'Hweví ɔ́ ɖò aximɛ.',
         botTranslation: 'O peixe está no mercado.',
         keywords: ['xɔ̀', 'ɖó'],
-        suggestions: ['Un xɔ̀ hwévi.', 'Un ɖó akouwè ɖokpó.'],
+        suggestions: ['Un xɔ̀ hweví.', 'Un ɖó akwɛ́ ɖokpó.'],
       },
     ],
   },
@@ -113,6 +113,6 @@ export const JOURNAL_PROMPTS_FON: [string, string][] = [
 export const SHADOWING_FON: [string, string][] = [
   ['Sìn ɔ́.', 'A água.'],
   ['Kwabɔ!', 'Bem-vindo!'],
-  ['Un xɔ̀ hwévi ɖò aximɛ.', 'Eu comprei peixe no mercado.'],
+  ['Un xɔ̀ hweví ɖò aximɛ.', 'Eu comprei peixe no mercado.'],
   ['Houé yòyò.', 'Ano novo.'],
 ];

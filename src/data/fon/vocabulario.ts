@@ -24,13 +24,20 @@ import { buildVocab, type VocabRow } from '../types';
  *
  * Nível B — Wikipédia (artigo «Fon language» em inglês, com a tabela oficial de marcação de tom, e
  * «Fon (langue)» em francês, com um pequeno dicionário francês→fon escrito pela comunidade e a
- * tradução fon da Declaração Universal dos Direitos Humanos): Kwabɔ, hɔ̀n, wiin, akouwè, ɔ́ (artigo
+ * tradução fon da Declaração Universal dos Direitos Humanos): Kwabɔ, hɔ̀n, wiin, ɔ́ (artigo
  * posposto, visto em duas legendas de imagem: «Sìn ɔ́», «Dànhweví ɔ́»; «Kwabɔ» vem de uma terceira
  * legenda, de uma farmácia no aeroporto de Cotonou), aximɛ, xɔ̀, nǔ, ɖó/ɖò, yì,
  * wâ, dà, houé, yòyò, égbé, gbada, wanyínyí, honton, mɛxó, ví, nú, na, mǐ, un, wé, éh, mɛɖé, kpo,
  * ɖokpó. Essas fontes nem sempre marcam o tom (o próprio artigo da Wikipédia explica que o tom
  * «é marcado em obras de referência, mas nem sempre na escrita do dia a dia») — por isso parte
- * destas palavras aparece sem acento de tom, fiel à fonte, e não por descuido.
+ * destas palavras aparece sem acento de tom, fiel à fonte, e não por descuido. ATENÇÃO: esse pequeno
+ * dicionário francês→fon usa, às vezes, grafia influenciada pelo francês em vez da ortografia oficial
+ * do fon — «houé» (ano) e «honton» (amigo) estão nessa forma, não confirmada ainda contra a
+ * ortografia oficial (os equivalentes oficiais seriam algo como «xwè» e «hɔ̀ntɔ̃n», mas isso ainda não
+ * foi verificado numa fonte independente, então os dois ficam como estão por ora, com este aviso).
+ * «akwɛ́» (dinheiro) já foi corrigido dessa grafia à francesa («akouwè») para a forma oficial,
+ * confirmada em fr.wiktionary.org/wiki/akwɛ (cauri, a concha que já serviu de moeda na África
+ * Ocidental, de onde vem o sentido de «dinheiro»).
  *
  * Nível C — Glosbe (dicionário colaborativo): só a expressão «un dó kú nú mi» (obrigado), a única
  * fonte que achamos para agradecer em fon; é contribuição de usuário, não uma obra acadêmica —
@@ -56,7 +63,7 @@ export const ROWS: VocabRow[] = [
   ['kpo', 'e (liga duas coisas, repetida depois de cada uma: “X kpo Y kpo”)', 'conjunção', 'Essenciais', '➕', 'Gbɔ́ kpo lɛ̀ngbɔ́ kpo.'],
   ['nú', 'para, a (preposição)', 'preposição', 'Essenciais', '➡️', 'Un ɖó wémà nú wé.'],
   ['na', 'vai, vou (marca o futuro, antes do verbo)', 'partícula', 'Essenciais', '⏩', 'Un na wá.'],
-  ['akouwè', 'dinheiro', 'substantivo', 'Essenciais', '💰', 'Un ɖó akouwè.'],
+  ['akwɛ́', 'dinheiro', 'substantivo', 'Essenciais', '💰', 'Un ɖó akwɛ́.'],
   ['ganxixo', 'hora', 'substantivo', 'Essenciais', '🕐', 'Ganxixo ɖokpó mɛ̀.'],
   ['houé', 'ano', 'substantivo', 'Essenciais', '📅', 'Houé yòyò.'],
   ['égbé', 'hoje', 'advérbio', 'Essenciais', '☀️', 'Égbé, un yì aximɛ.'],
@@ -102,7 +109,7 @@ export const ROWS: VocabRow[] = [
   ['wiin', 'abelha', 'substantivo', 'Animais', '🐝', 'Wiin ɔ́.'],
 
   // ── Alimentação e Restaurantes ──
-  ['hweví', 'peixe', 'substantivo', 'Alimentação e Restaurantes', '🐟', 'Un xɔ̀ hwévi ɖò aximɛ.'],
+  ['hweví', 'peixe', 'substantivo', 'Alimentação e Restaurantes', '🐟', 'Un xɔ̀ hweví ɖò aximɛ.'],
 
   // ── Corpo ──
   ['lànmɛ̀', 'corpo (literalmente “dentro da carne”)', 'substantivo', 'Corpo', '🧍', 'Lànmɛ̀ ɔ́.'],
@@ -110,12 +117,12 @@ export const ROWS: VocabRow[] = [
   ['adɔví', 'intestino(s)', 'substantivo', 'Corpo', null, 'Adɔví ɔ́.'],
 
   // ── Verbos-chave ──
-  ['xɔ̀', 'comprar', 'verbo', 'Verbos-chave', '🛒', 'Un xɔ̀ hwévi ɖò aximɛ.'],
+  ['xɔ̀', 'comprar', 'verbo', 'Verbos-chave', '🛒', 'Un xɔ̀ hweví ɖò aximɛ.'],
   ['ɖó', 'ter', 'verbo', 'Verbos-chave', '🤲', 'Un ɖó wémà.'],
   ['ɖò', 'estar em, estar em (lugar)', 'verbo', 'Verbos-chave', '📍', 'Hweví ɔ́ ɖò aximɛ.'],
   ['yì', 'ir', 'verbo', 'Verbos-chave', '🚶', 'Un yì aximɛ.'],
   ['wâ', 'vir', 'verbo', 'Verbos-chave', '👋', 'Un wâ gbada.'],
-  ['dà', 'cozinhar', 'verbo', 'Verbos-chave', '🍳', 'Un dà hwévi.'],
+  ['dà', 'cozinhar', 'verbo', 'Verbos-chave', '🍳', 'Un dà hweví.'],
 
   // ── Descrições ──
   ['kpàtàkì', 'importante (empréstimo do iorubá “pàtàkì”)', 'adjetivo', 'Descrições', '⭐', 'Nǔ ɔ́ kpàtàkì.'],

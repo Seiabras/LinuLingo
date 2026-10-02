@@ -29,7 +29,7 @@ for (const pack of Object.values(PACKS)) {
     // achado pela revisão externa de seiabras-b8, 02/10/2026: `incomplete.note` aparece no Perfil e
     // na Home, e notas como "ver o cabeçalho de vocabulario.ts" ou "comentada em lineage, em index.ts"
     // são instruções pra quem desenvolve, não informação útil pra quem estuda.
-    const leaks = /`|\.ts\b|cabeçalho de/;
+    const leaks = /`|\.ts\b|cabeçalho de|cognateNote|incomplete\.note|formalMarkers/;
     if (pack.incomplete?.note) assert.ok(!leaks.test(pack.incomplete.note), `${pack.code}: incomplete.note vaza nota de dev`);
     if (pack.cognateNote) assert.ok(!leaks.test(pack.cognateNote), `${pack.code}: cognateNote vaza nota de dev`);
     if (pack.formalMarkers) assert.ok(!leaks.test(pack.formalMarkers), `${pack.code}: formalMarkers vaza nota de dev`);

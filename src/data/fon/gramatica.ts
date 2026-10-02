@@ -47,7 +47,7 @@ export const GRAMMAR_FON: GrammarTopic[] = [
     summary: 'Os pronomes pessoais mais simples do fon, vistos no pequeno dicionário francês-fon da Wikipédia e no artigo sobre o tom.',
     sections: [
       {
-        text: 'O artigo “Fon language” da Wikipédia em inglês mostra o pronome “mǐ” (nós, vocês) na própria seção sobre o tom, explicando que ele tem tom alto por natureza mas costuma soar médio em Uidá. Os outros pronomes aparecem repetidos várias vezes no pequeno dicionário francês-fon: “un” (eu) em quase todo exemplo de verbo, “éh” (ele, ela) em frases como “éh ɖó akouwè” (ele tem dinheiro), e “wé” (você, te) em “un yíwan nu wé” (eu te amo).',
+        text: 'O artigo “Fon language” da Wikipédia em inglês mostra o pronome “mǐ” (nós, vocês) na própria seção sobre o tom, explicando que ele tem tom alto por natureza mas costuma soar médio em Uidá. Os outros pronomes aparecem repetidos várias vezes no pequeno dicionário francês-fon: “un” (eu) em quase todo exemplo de verbo, “éh” (ele, ela) em frases como “éh ɖó akwɛ́” (ele tem dinheiro), e “wé” (você, te) em “un yíwan nu wé” (eu te amo).',
         table: {
           head: ['Fon', 'Português'],
           rows: [
@@ -92,7 +92,7 @@ export const GRAMMAR_FON: GrammarTopic[] = [
         },
         examples: [
           ['Un ɖó wémà.', 'Eu tenho um livro.'],
-          ['Éh ɖó akouwè.', 'Ele/ela tem dinheiro.'],
+          ['Éh ɖó akwɛ́.', 'Ele/ela tem dinheiro.'],
           ['Un na wá.', 'Eu virei.'],
         ],
       },
@@ -121,7 +121,7 @@ export const GRAMMAR_FON: GrammarTopic[] = [
           ],
         },
         examples: [
-          ['Un xɔ̀ hwévi ɖò aximɛ.', 'Eu comprei peixe no mercado.'],
+          ['Un xɔ̀ hweví ɖò aximɛ.', 'Eu comprei peixe no mercado.'],
           ['Wémà ɖokpó.', 'Um livro.'],
           ['Nǔ ɔ́ kpàtàkì.', 'A coisa é importante.'],
         ],
@@ -129,7 +129,7 @@ export const GRAMMAR_FON: GrammarTopic[] = [
     ],
     pitfalls: ['Pôr o numeral antes do nome, como em português (“ɖokpó wémà”): em fon é “wémà ɖokpó”.', 'Procurar um verbo “ser” para o adjetivo: em fon, “kpàtàkì” já quer dizer “ser importante” sozinho.'],
     quiz: [
-      { question: 'Qual é a ordem básica das frases em fon?', options: ['sujeito-verbo-objeto', 'verbo-sujeito-objeto', 'objeto-sujeito-verbo'], answer: 'sujeito-verbo-objeto', explanation: 'Como o português: “Un xɔ̀ hwévi” (eu compro peixe) segue sujeito-verbo-objeto.' },
+      { question: 'Qual é a ordem básica das frases em fon?', options: ['sujeito-verbo-objeto', 'verbo-sujeito-objeto', 'objeto-sujeito-verbo'], answer: 'sujeito-verbo-objeto', explanation: 'Como o português: “Un xɔ̀ hweví” (eu compro peixe) segue sujeito-verbo-objeto.' },
       { question: 'Como se diz “a coisa é importante”?', options: ['Nǔ ɔ́ kpàtàkì.', 'Kpàtàkì nǔ ɔ́.', 'Nǔ ɔ́ é kpàtàkì.'], answer: 'Nǔ ɔ́ kpàtàkì.', explanation: 'O adjetivo/verbo de estado vem depois do sujeito, sem um “ser” separado.' },
     ],
   },
