@@ -91,9 +91,9 @@ commitado.
     fonologia e documentação próprias; o lugar exato do tapiete dentro do ramo guarani é discutido
     entre linguistas — ver a nota em `src/data/tpj/index.ts`). Jopará (mistura guarani-espanhol do dia
     a dia) não é uma língua à parte, só uma nota no texto do `gn`. Ainda falta:
-    - **guarani antigo** (colonial, documentado por jesuítas como Ruiz de Montoya) — língua histórica
-      à parte, prima do tupi antigo (`tpw`) mas não o mesmo pacote; pasta `src/data/gnw/` começada por
-      um agente mas incompleta (faltam `extras.ts` e `index.ts`).
+    - **guarani antigo**: **feito** como `gnw` (02/10/2026) — colonial, documentado por jesuítas
+      (sobretudo Ruiz de Montoya, "Tesoro"/"Vocabulario de la lengua guaraní", 1639-40); língua
+      histórica à parte, ancestral direto do `gn` de hoje e prima do tupi antigo (`tpw`).
   - huni kuĩ/kaxinawá: **feito** como `cbs` (código confirmado via ISO 639-3/Glottolog).
   - navajo: **feito** como `nv` (02/10/2026) — família na-dené, sem parentesco com as demais línguas
     indígenas americanas do app.
