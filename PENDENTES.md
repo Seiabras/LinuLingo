@@ -395,11 +395,11 @@ mais detalhe do usuário antes de mexer em código.
     das Américas; nova família "Crioulo de base espanhola" na lista fechada de `conteudo.test.ts`) e
     groenlandês/kalaallisut (`kl` — família esquimó-aleúte própria, sem parentesco com nenhuma outra
     já no app; fortemente polissintética, o que limitou o vocabulário a formas já atestadas inteiras,
-    sem flexionar nada por conta própria — ver `incomplete.note` do pacote).
+    sem flexionar nada por conta própria — ver `incomplete.note` do pacote) e bretão (`br` — indo-
+    europeu, ramo britônico, irmão do galês, diferente do goidélico do gaélico escocês/irlandês).
   - **Em andamento** (pacote do zero, igual aos outros): saami do norte (`se` — a variedade sami mais
     falada, ~15-25 mil falantes; as outras línguas sami, como a lule e a skolt, têm código próprio à
-    parte), bretão
-    (`br`), lakota (`lkt`).
+    parte), lakota (`lkt`).
   - **"Língua geral de mina"**: pesquisado em 02/10/2026. Descartada a hipótese de ser a língua
     geral tupi (nheengatu, `yrl`, ou a paulista) — nenhuma fonte liga as duas coisas. Confirmado:
     "mina" vem da Costa da Mina/São Jorge da Mina (Elmina, Gana de hoje) e remete ao Tambor de Mina e
