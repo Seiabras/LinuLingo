@@ -596,6 +596,20 @@ export function byKinship(studied: string): MapLanguage[] {
 
 const fold = (s: string) => s.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase();
 
+const collator = new Intl.Collator('pt', { sensitivity: 'base' });
+const byName = (a: MapLanguage, b: MapLanguage) => collator.compare(a.name, b.name);
+
+/** Primeira letra do nome, sem acento (“Árabe” → “A”); o que não começa com letra latina vai em “#”. */
+export function initialOf(l: MapLanguage): string {
+  const c = fold(l.name).charAt(0).toUpperCase();
+  return /[A-Z]/.test(c) ? c : '#';
+}
+
+/** Todos os idiomas do mundo, para a lista completa (sem busca): do mais falado ao menos, ou de A a Z. */
+export function listLanguages(order: 'falados' | 'az'): MapLanguage[] {
+  return [...ALL_MAP_LANGUAGES].sort(order === 'az' ? byName : (a, b) => b.millions - a.millions || byName(a, b));
+}
+
 /** Busca em todos os idiomas do mundo: pelo nome, pelo nome no próprio idioma, pelo código ou pela família. */
 export function searchLanguages(query: string, limit = 40): MapLanguage[] {
   const q = fold(query.trim());
