@@ -3,6 +3,7 @@ import { Alert, Platform, Pressable, Text, TextInput, View } from 'react-native'
 import { router, useFocusEffect } from 'expo-router';
 import { Screen, Button, Card, Chip, Collapsible, SectionTitle } from '@/components/ui';
 import { Linu } from '@/components/Linu';
+import { FieldNotebookBackground } from '@/components/FieldNotebookBackground';
 import { SpeciesPhotos } from '@/components/SpeciesPhotos';
 import { OfflineCard } from '@/components/OfflineCard';
 import { BackupCard } from '@/components/BackupCard';
@@ -121,7 +122,7 @@ export default function ProfileScreen() {
   };
 
   return (
-    <Screen>
+    <Screen background={<FieldNotebookBackground variant="pergaminho" />}>
       <View className="items-center gap-2 pt-4">
         <Linu mood="feliz" size={90} />
         <TextInput

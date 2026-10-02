@@ -2,13 +2,14 @@ import { Pressable, Text, View } from 'react-native';
 import { router } from 'expo-router';
 import { Screen, Chip, SpeechBubble } from '@/components/ui';
 import { Linu } from '@/components/Linu';
+import { FieldNotebookBackground } from '@/components/FieldNotebookBackground';
 import { useApp } from '@/services/app-state';
 
 /** Lista de cenários de conversa guiada, com persona e registro social. */
 export default function ConversationScreen() {
   const { pack } = useApp();
   return (
-    <Screen>
+    <Screen background={<FieldNotebookBackground variant="gelo" />}>
       <Text className="pt-3 text-2xl font-extrabold text-slate-900 dark:text-white">💬 Conversação</Text>
 
       <View className="mt-3 flex-row items-end gap-2">

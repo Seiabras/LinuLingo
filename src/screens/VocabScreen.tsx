@@ -4,6 +4,7 @@ import { router, useFocusEffect } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Search } from 'lucide-react-native';
 import { Button, Card, Chip, GENDER_LABEL, ProgressBar, SpeakButton, Ipa } from '@/components/ui';
+import { FieldNotebookBackground } from '@/components/FieldNotebookBackground';
 import { hasWordImage, WordImage } from '@/components/WordImage';
 import { useApp } from '@/services/app-state';
 import { targetTextStyle } from '@/services/direction';
@@ -141,7 +142,8 @@ export default function VocabScreen() {
   );
 
   return (
-    <SafeAreaView edges={['top']} className="flex-1 bg-suave dark:bg-grafite">
+    <SafeAreaView edges={['top']} className="flex-1">
+      <FieldNotebookBackground variant="pergaminho" />
       <View className="w-full max-w-2xl flex-1 self-center px-4">
         {tab === 'frequencia' && (
           <FlatList
