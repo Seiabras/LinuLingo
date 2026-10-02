@@ -94,9 +94,12 @@ commitado.
   começar.
 - **Mongol (pedido do Matheus)**: **feito** como `mn` (02/10/2026), em escrita CIRÍLICA MODERNA (a
   oficial na Mongólia desde 1941/1946) — família mongólica própria, sem parentesco comprovado com o
-  turcaico/tungúsico (hipótese "altaica" obsoleta). A escrita mongol vertical tradicional (ainda usada
-  na Mongólia Interior, China) fica de fora por enquanto: é um problema de renderização à parte (texto
-  de cima pra baixo), tratado separadamente das RTL — nenhuma das duas está resolvida ainda.
+  turcaico/tungúsico (hipótese "altaica" obsoleta). A escrita mongol vertical tradicional **também
+  feita**, como `mvf` (02/10/2026), junto com o manchu (`mnc`, família tungúsica, escrito numa escrita
+  que nasceu da mongol) — resolvido o suporte a escrita vertical (`direction: 'ttb'` em
+  `src/services/direction.ts`, `writing-mode: vertical-lr` na web). Trabalho iniciado pela sessão
+  "LinuLingu arquivo revisão", que ficou indisponível no meio do caminho; assumido e finalizado por
+  esta sessão (commit `f0b96260`).
 - **Indígenas**: tpw (tupi antigo), gn (guarani paraguaio), qu (quéchua sulenho), yrl (nheengatu),
   kgp (kaingang), tca (tikuna), xav (xavante), tuo (tukano), kpc (baniwa), ay (aimará), kgk (guarani
   kaiowá) e nah (náuatle) feitos; gun (guarani mbyá) e ka (georgiano, pedido à parte) feitos por outra
@@ -140,9 +143,10 @@ e prejudica a leitura do PORTUGUÊS. Mesmo problema que a Wikipédia resolve com
 Unicode (U+2066 LRI / U+2068 FSI … U+2069 PDI). Conserto provável: uma função que varre o texto por
 trechos em escrita não latina e os envolve em isolamento bidi (FSI…PDI) na camada de apresentação,
 não no conteúdo — mesmo padrão de `targetTextStyle`. Achado e documentado por um subagente desta
-sessão (pacote `ar`) com capturas de tela reais; ainda não corrigido porque as telas envolvidas
-(`CulturalGrammarCard.tsx`, `TutorialScreen.tsx`, `direction.ts`) estavam sendo editadas ao mesmo
-tempo por outra sessão (escrita vertical mongol/manchu) — avisada, ver resposta no histórico.
+sessão (pacote `ar`) com capturas de tela reais; ainda não corrigido. A sessão que editava
+`CulturalGrammarCard.tsx`/`direction.ts` em paralelo (escrita vertical mongol/manchu) ficou
+indisponível e esse trabalho dela já foi assumido e commitado (ver nota do mongol/manchu acima) — o
+conserto do bidi continua livre pra pegar, sem mais colisão.
 
 ### Como fazer um pacote novo
 - Modelo: `src/data/rm/` e `src/data/lad/`. Para uma língua morta, veja `src/data/la/`; para uma
