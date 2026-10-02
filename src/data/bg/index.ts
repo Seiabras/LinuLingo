@@ -4,6 +4,7 @@ import { UNITS_BG } from './curriculo';
 import { GRAMMAR_BG } from './gramatica';
 import { STORIES_BG } from './historias';
 import { COMMUNITY_BG, ETYMOLOGY_BG, JOURNAL_PROMPTS_BG, SCENARIOS_BG, SHADOWING_BG } from './extras';
+import { toReadingBg } from '@/services/reading-cyrillic';
 
 export const BULGARO: LanguagePack = {
   code: 'bg',
@@ -31,6 +32,8 @@ export const BULGARO: LanguagePack = {
   grammar: GRAMMAR_BG,
   journalPrompts: JOURNAL_PROMPTS_BG,
   shadowing: SHADOWING_BG,
+  // o cirílico não é latino: embaixo de cada frase vem a romanização oficial (Здравей · Zdravey)
+  reading: (t) => (/[Ѐ-ӿ]/.test(t) ? toReadingBg(t) : ''),
   specialChars: ['ъ', 'щ', 'ж', 'ч', 'ш', 'ю', 'я', 'й', 'ь'],
   // o alfabeto búlgaro em ordem, em fileiras
   keyboardRows: [

@@ -4,6 +4,7 @@ import { UNITS_BE } from './curriculo';
 import { GRAMMAR_BE } from './gramatica';
 import { STORIES_BE } from './historias';
 import { COMMUNITY_BE, ETYMOLOGY_BE, JOURNAL_PROMPTS_BE, SCENARIOS_BE, SHADOWING_BE } from './extras';
+import { toReadingBe } from '@/services/reading-cyrillic';
 
 export const BIELORRUSSO: LanguagePack = {
   code: 'be',
@@ -31,6 +32,8 @@ export const BIELORRUSSO: LanguagePack = {
   grammar: GRAMMAR_BE,
   journalPrompts: JOURNAL_PROMPTS_BE,
   shadowing: SHADOWING_BE,
+  // o cirílico não é latino: embaixo de cada frase vem a romanização oficial (Прывітанне · Pryvitannie)
+  reading: (t) => (/[Ѐ-ӿ]/.test(t) ? toReadingBe(t) : ''),
   specialChars: ['ў', 'і', 'ё', 'ы', 'э', '’'],
   // teclado bielorrusso (variante do ЙЦУКЕН com ў e і)
   keyboardRows: [

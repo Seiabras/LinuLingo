@@ -6,6 +6,7 @@ import { GRAMMAR_RU } from './gramatica';
 import { STORIES_RU } from './historias';
 import { COMMUNITY_RU, ETYMOLOGY_RU, JOURNAL_PROMPTS_RU, SCENARIOS_RU, SHADOWING_RU } from './extras';
 import { toIpaRu } from '@/services/ipa-ru';
+import { toReadingRu } from '@/services/reading-cyrillic';
 import { ALPHABET_RU } from './alfabeto';
 import { ACCENTS_RU } from './sotaques';
 import { PARES_RU } from './pares';
@@ -40,6 +41,8 @@ export const RUSSO: LanguagePack = {
   journalPrompts: JOURNAL_PROMPTS_RU,
   shadowing: SHADOWING_RU,
   ipa: toIpaRu,
+  // o cirílico não é latino: embaixo de cada frase vem a romanização popular (Привет · Privet)
+  reading: (t) => (/[Ѐ-ӿ]/.test(t) ? toReadingRu(t) : ''),
   specialChars: ['ё', 'й', 'ы', 'э', 'ю', 'я', 'ъ', 'ь'],
   // teclado russo padrão (ЙЦУКЕН)
   alphabet: ALPHABET_RU,

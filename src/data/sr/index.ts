@@ -4,6 +4,7 @@ import { UNITS_SR } from './curriculo';
 import { GRAMMAR_SR } from './gramatica';
 import { STORIES_SR } from './historias';
 import { COMMUNITY_SR, ETYMOLOGY_SR, JOURNAL_PROMPTS_SR, SCENARIOS_SR, SHADOWING_SR } from './extras';
+import { toReadingSr } from '@/services/reading-cyrillic';
 
 export const SERVIO: LanguagePack = {
   code: 'sr',
@@ -31,6 +32,8 @@ export const SERVIO: LanguagePack = {
   grammar: GRAMMAR_SR,
   journalPrompts: JOURNAL_PROMPTS_SR,
   shadowing: SHADOWING_SR,
+  // o cirílico sérvio é bialfabético: embaixo de cada frase vem o latino oficial (Хвала · Hvala)
+  reading: (t) => (/[Ѐ-ӿ]/.test(t) ? toReadingSr(t) : ''),
   specialChars: ['ђ', 'ј', 'љ', 'њ', 'ћ', 'џ', 'ж', 'ч', 'ш'],
   // o alfabeto cirílico sérvio em ordem (азбука), em fileiras
   keyboardRows: [

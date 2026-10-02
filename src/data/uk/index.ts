@@ -4,6 +4,7 @@ import { UNITS_UK } from './curriculo';
 import { GRAMMAR_UK } from './gramatica';
 import { STORIES_UK } from './historias';
 import { COMMUNITY_UK, ETYMOLOGY_UK, JOURNAL_PROMPTS_UK, SCENARIOS_UK, SHADOWING_UK } from './extras';
+import { toReadingUk } from '@/services/reading-cyrillic';
 
 export const UCRANIANO: LanguagePack = {
   code: 'uk',
@@ -31,6 +32,8 @@ export const UCRANIANO: LanguagePack = {
   grammar: GRAMMAR_UK,
   journalPrompts: JOURNAL_PROMPTS_UK,
   shadowing: SHADOWING_UK,
+  // o cirílico não é latino: embaixo de cada frase vem a romanização oficial (Привіт · Pryvit)
+  reading: (t) => (/[Ѐ-ӿ]/.test(t) ? toReadingUk(t) : ''),
   specialChars: ['ґ', 'є', 'і', 'ї', 'й', 'ь', '’'],
   // teclado ucraniano padrão (ЙЦУКЕН)
   keyboardRows: [

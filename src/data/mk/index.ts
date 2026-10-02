@@ -4,6 +4,7 @@ import { UNITS_MK } from './curriculo';
 import { GRAMMAR_MK } from './gramatica';
 import { STORIES_MK } from './historias';
 import { COMMUNITY_MK, ETYMOLOGY_MK, JOURNAL_PROMPTS_MK, SCENARIOS_MK, SHADOWING_MK } from './extras';
+import { toReadingMk } from '@/services/reading-cyrillic';
 
 export const MACEDONIO: LanguagePack = {
   code: 'mk',
@@ -31,6 +32,8 @@ export const MACEDONIO: LanguagePack = {
   grammar: GRAMMAR_MK,
   journalPrompts: JOURNAL_PROMPTS_MK,
   shadowing: SHADOWING_MK,
+  // o cirílico não é latino: embaixo de cada frase vem a romanização oficial (Здраво · Zdravo)
+  reading: (t) => (/[Ѐ-ӿ]/.test(t) ? toReadingMk(t) : ''),
   specialChars: ['ѓ', 'ѕ', 'ј', 'љ', 'њ', 'ќ', 'џ'],
   // o alfabeto macedônio em ordem, em fileiras
   keyboardRows: [
