@@ -4,6 +4,7 @@ import { UNITS_EL } from './curriculo';
 import { GRAMMAR_EL } from './gramatica';
 import { STORIES_EL } from './historias';
 import { COMMUNITY_EL, ETYMOLOGY_EL, JOURNAL_PROMPTS_EL, SCENARIOS_EL, SHADOWING_EL } from './extras';
+import { toReadingEl } from '@/services/reading-greek';
 
 export const GREGO: LanguagePack = {
   code: 'el',
@@ -31,6 +32,7 @@ export const GREGO: LanguagePack = {
   grammar: GRAMMAR_EL,
   journalPrompts: JOURNAL_PROMPTS_EL,
   shadowing: SHADOWING_EL,
+  reading: (t) => (/[Ͱ-Ͽἀ-῿]/.test(t) ? toReadingEl(t) : ''),
   specialChars: ['θ', 'χ', 'ψ', 'ξ', 'ς'],
   // teclado grego padrão
   keyboardRows: [
