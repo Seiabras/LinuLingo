@@ -2,7 +2,6 @@ import { useEffect, useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { WordImage } from '@/components/WordImage';
 import type { VocabWithSRS } from '@/types';
-import { SwipeCard } from '../SwipeCard';
 import { Button, SpeakButton, Ipa } from '../ui';
 import { speak } from '@/services/speech';
 import { shuffle } from '@/services/answers';
@@ -20,8 +19,10 @@ export interface WordResult {
 
 /**
  * Etapa 2 — associação imersiva imagem ↔ som (Rosetta Stone / Drops).
- * Nenhuma tradução aparece: o aluno liga a imagem à palavra ouvida.
- * Deslizar para a direita = «já sei esta palavra».
+ * Nenhuma tradução aparece: o aluno ouve a palavra e toca na opção que combina
+ * com a imagem. Só esse gesto (toque numa opção) faz a etapa avançar — sem o
+ * gesto de arrastar/virar cartão do SRS (ver DeckSession), que é outra
+ * metodologia (autoavaliação de revisão) e não cabe aqui.
  */
 export function ImmersionStep({ words, pool, locale, onDone }: { words: VocabWithSRS[]; pool: VocabWithSRS[]; locale: string; onDone: (r: WordResult[]) => void }) {
   const { db, pack } = useApp();
@@ -82,16 +83,14 @@ export function ImmersionStep({ words, pool, locale, onDone }: { words: VocabWit
     <View className="flex-1 gap-4">
       <Text className="text-center text-lg font-bold text-slate-700 dark:text-slate-200">Ouça e escolha a palavra que combina com a imagem</Text>
       <Text className="text-center text-xs text-slate-500 dark:text-slate-400">
-        {i + 1} de {words.length} · deslize para a direita se já sabe →
+        {i + 1} de {words.length}
       </Text>
 
-      <SwipeCard key={word.id} enabled={['direita']} onSwipe={() => next({ vocabId: word.id, quality: qualityFromAnswer(true, { knewAlready: true }), correct: true })}>
-        <View className="items-center gap-3 rounded-3xl border-2 border-slate-200 bg-white py-8 dark:border-slate-700 dark:bg-slate-900">
-          <WordImage wordNative={word.word_native} emoji={word.emoji} size={150} credit pos={word.part_of_speech} target={word.word_target} />
-          <SpeakButton text={word.word_target} locale={locale} size={26} />
-          {solved && <Ipa text={word.word_target} className="text-base" />}
-        </View>
-      </SwipeCard>
+      <View className="items-center gap-3 rounded-3xl border-2 border-slate-200 bg-white py-8 dark:border-slate-700 dark:bg-slate-900">
+        <WordImage wordNative={word.word_native} emoji={word.emoji} size={150} credit pos={word.part_of_speech} target={word.word_target} />
+        <SpeakButton text={word.word_target} locale={locale} size={26} />
+        {solved && <Ipa text={word.word_target} className="text-base" />}
+      </View>
 
       <View className="gap-2">
         {options.map((o) => {
