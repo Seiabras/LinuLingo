@@ -33,11 +33,13 @@ function Loading() {
 
 /**
  * «Reduzir movimento» do Perfil vale para TODA animação do Reanimated (entradas, molas, transições):
- * ligado, força `ReduceMotion.Always`; desligado, segue o ajuste do aparelho (`ReduceMotion.System`).
+ * ligado, monta o ReducedMotionConfig em `ReduceMotion.Always`; desligado, não monta nada e vale o
+ * ajuste do aparelho (ao desmontar, o próprio ReducedMotionConfig restaura o valor anterior). Montar
+ * sempre, com `System`, fazia o Reanimated avisar em todo carregamento que o ajuste foi sobrescrito.
  */
 function MotionPreference() {
   const reduce = useAppReduceMotion();
-  return <ReducedMotionConfig mode={reduce ? ReduceMotion.Always : ReduceMotion.System} />;
+  return reduce ? <ReducedMotionConfig mode={ReduceMotion.Always} /> : null;
 }
 
 export default function RootLayout() {

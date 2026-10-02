@@ -1,4 +1,4 @@
-import { Component, useEffect, useState, type ReactNode } from 'react';
+import { Component, useEffect, useRef, useState, type ReactNode } from 'react';
 import { ActivityIndicator, Platform, Pressable, Text, View } from 'react-native';
 
 /**
@@ -48,13 +48,30 @@ export function DatabaseGate({ children, fallback }: { children: ReactNode; fall
     return () => clearTimeout(t);
   }, [asked, state]);
 
+  // A trava fica presa enquanto ESTE portão existir — não a página inteira: se o portão desmontar e
+  // montar de novo na mesma página (a árvore raiz remontando, como no Fast Refresh), o portão antigo
+  // precisa soltar a trava, senão o novo a encontra presa por ele mesmo e mostra «aberto em outra
+  // aba» para sempre (e «Usar nesta aba» não adianta: quem segura não é outra aba).
+  const release = useRef<(() => void) | null>(null);
+  useEffect(
+    () => () => {
+      release.current?.();
+      release.current = null;
+    },
+    [],
+  );
+
   useEffect(() => {
     if (!web || !locks || state === 'mine' || state === 'yielded') return;
     let alive = true;
-    // a trava fica presa enquanto a página existir: a promessa nunca termina
+    const queued = new AbortController();
     const hold = () => {
-      if (alive) setState('mine');
-      return new Promise<void>(() => {});
+      // a trava chegou depois de este portão sumir: solta na hora em vez de prendê-la para ninguém
+      if (!alive) return undefined;
+      setState('mine');
+      return new Promise<void>((resolve) => {
+        release.current = resolve;
+      });
     };
     if (state === 'checking') {
       locks.request(LOCK, { ifAvailable: true }, (lock) => {
@@ -63,11 +80,12 @@ export function DatabaseGate({ children, fallback }: { children: ReactNode; fall
         return undefined;
       });
     } else {
-      // na fila: quando a outra aba fechar (ou ceder), esta abre
-      locks.request(LOCK, hold);
+      // na fila: quando a outra aba fechar (ou ceder), esta abre; se o portão sumir, sai da fila
+      locks.request(LOCK, { signal: queued.signal }, hold).catch(() => {});
     }
     return () => {
       alive = false;
+      if (state === 'elsewhere') queued.abort();
     };
   }, [state]);
 
