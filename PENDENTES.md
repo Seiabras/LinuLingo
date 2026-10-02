@@ -392,10 +392,13 @@ mais detalhe do usuário antes de mexer em código.
     quilombo, dendê, bunda, fubá, senzala, quitanda) e palenquero (`pln` — crioulo de base espanhola
     com substrato quicongo (banto), o único crioulo de base espanhola que sobreviveu na América
     Latina; falado em San Basilio de Palenque, Colômbia, o primeiro povoado de ex-escravizados livres
-    das Américas; nova família "Crioulo de base espanhola" na lista fechada de `conteudo.test.ts`).
-  - **Em andamento** (pacote do zero, igual aos outros): groenlandês/kalaallisut
-    (`kl`), saami do norte (`se` — a variedade sami mais falada, ~15-25 mil
-    falantes; as outras línguas sami, como a lule e a skolt, têm código próprio à parte), bretão
+    das Américas; nova família "Crioulo de base espanhola" na lista fechada de `conteudo.test.ts`) e
+    groenlandês/kalaallisut (`kl` — família esquimó-aleúte própria, sem parentesco com nenhuma outra
+    já no app; fortemente polissintética, o que limitou o vocabulário a formas já atestadas inteiras,
+    sem flexionar nada por conta própria — ver `incomplete.note` do pacote).
+  - **Em andamento** (pacote do zero, igual aos outros): saami do norte (`se` — a variedade sami mais
+    falada, ~15-25 mil falantes; as outras línguas sami, como a lule e a skolt, têm código próprio à
+    parte), bretão
     (`br`), lakota (`lkt`).
   - **"Língua geral de mina"**: pesquisado em 02/10/2026. Descartada a hipótese de ser a língua
     geral tupi (nheengatu, `yrl`, ou a paulista) — nenhuma fonte liga as duas coisas. Confirmado:

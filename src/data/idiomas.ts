@@ -116,6 +116,7 @@ import { CRIOULO_HAITIANO } from './ht';
 import { KARITIANA } from './ktn';
 import { QUIMBUNDO } from './kmb';
 import { PALENQUERO } from './pln';
+import { GROENLANDES } from './kl';
 
 /** Idiomas com conteúdo pronto. */
 export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES, fr: FRANCES, ca: CATALAO, is: ISLANDES, fi: FINLANDES, et: ESTONIANO, fo: FEROES, lt: LITUANO, lv: LETAO, sw: SUAILI, ja: JAPONES, ko: COREANO,
@@ -134,7 +135,7 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   nv: NAVAJO, nhd: GUARANI_NANDEVA, tpj: TAPIETE, mi: MAORI, gnw: GUARANI_ANTIGO, haw: HAVAIANO, te: TELUGO, om: OROMO, mr: MARATHI, am: AMARICO, mn: MONGOL,
   hu: HUNGARO, tsd: TSAKONIO, pcm: PIDGIN_NIGERIANO, ta: TAMIL, tl: TAGALO, hyw: ARMENIO_OCIDENTAL,
   tdt: TETUM, arn: MAPUDUNGUN, gd: GAELICO_ESCOCES, ht: CRIOULO_HAITIANO, ktn: KARITIANA, kmb: QUIMBUNDO,
-  pln: PALENQUERO };
+  pln: PALENQUERO, kl: GROENLANDES };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -318,6 +319,9 @@ export const LANGUAGES: LanguageInfo[] = [
   // primeiro povoado de ex-escravizados livres das Américas; mesma convenção de família própria já
   // usada pro pidgin nigeriano e pro crioulo haitiano
   PALENQUERO,
+  // groenlandês (kalaallisut): família esquimó-aleúte própria, sem parentesco com nenhuma outra já
+  // no app — fortemente polissintética (um "verbo" sozinho pode ser uma frase inteira)
+  GROENLANDES,
 ];
 
 export const DEFAULT_LANGUAGE = 'ro';
