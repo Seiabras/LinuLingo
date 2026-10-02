@@ -4,6 +4,7 @@ import { ArrowLeft, ChevronDown, ChevronUp, Copy } from 'lucide-react-native';
 import { Screen, Button, Card, Chip, SectionTitle, SpeechBubble } from '@/components/ui';
 import { Linu, type LinuMood } from '@/components/Linu';
 import { useApp } from '@/services/app-state';
+import { targetTextStyle } from '@/services/direction';
 import { canRecognize, findVoice, resetVoiceCache, speak, type VoiceInfo } from '@/services/speech';
 import { detectPlatform, OS_ICON, OS_LABEL, type OS } from '@/services/platform-info';
 import { ALL_OS, voiceGuide, type GuideStep } from '@/data/guias-voz';
@@ -84,7 +85,7 @@ export default function VoiceSetupScreen() {
           <Button title="▶ Ouvir" className="flex-1" disabled={status === 'verificando'} onPress={() => speak(pack.sampleSentence, pack.speechLocale)} />
           <Button title="Verificar de novo" variant="ghost" className="flex-1" onPress={check} />
         </View>
-        <Text className="text-xs italic text-slate-500 dark:text-slate-400">“{pack.sampleSentence}”</Text>
+        <Text style={targetTextStyle(pack)} className="text-xs italic text-slate-500 dark:text-slate-400">“{pack.sampleSentence}”</Text>
       </Card>
 
       {neural && <NeuralVoiceCard locale={pack.speechLocale} sample={pack.sampleSentence} preferred={status !== 'natural'} />}

@@ -7,6 +7,7 @@ import { ArrowLeft, Mic, Send } from 'lucide-react-native';
 import { Linu } from '@/components/Linu';
 import { Button, Chip, SpeakButton, Ipa } from '@/components/ui';
 import { useApp } from '@/services/app-state';
+import { targetTextStyle } from '@/services/direction';
 import { canRecognize, listen, speak, stopSpeaking } from '@/services/speech';
 import { keywordHits, registerBreaks } from '@/services/answers';
 import { awardXp } from '@/database/queries';
@@ -138,7 +139,7 @@ export default function ScenarioScreen() {
             m.from === 'bot' ? (
               <View key={i} className="max-w-[85%] self-start rounded-2xl rounded-tl-sm bg-white p-3 dark:bg-slate-900">
                 <View className="flex-row items-center gap-2">
-                  <Text className="flex-shrink text-lg font-semibold text-slate-900 dark:text-white">{m.text}</Text>
+                  <Text style={targetTextStyle(pack)} className="flex-shrink text-lg font-semibold text-slate-900 dark:text-white">{m.text}</Text>
                   <SpeakButton text={m.text} locale={pack.speechLocale} size={16} />
                 </View>
                 <Ipa text={m.text} className="text-xs" />
@@ -148,7 +149,7 @@ export default function ScenarioScreen() {
               </View>
             ) : m.from === 'me' ? (
               <View key={i} className="max-w-[85%] self-end rounded-2xl rounded-tr-sm bg-conecta p-3">
-                <Text className="text-lg text-white">{m.text}</Text>
+                <Text style={targetTextStyle(pack)} className="text-lg text-white">{m.text}</Text>
               </View>
             ) : (
               <View key={i} className="flex-row items-end gap-2 self-center">
@@ -182,7 +183,8 @@ export default function ScenarioScreen() {
             <HScroll label="as sugestões" contentContainerStyle={{ gap: 8 }}>
               {current.suggestions.map((s) => (
                 <Pressable key={s} onPress={() => setInput(s)} className="rounded-full border border-conecta/40 px-3 py-1.5 active:bg-conecta-light">
-                  <Text className="text-sm text-conecta">💡 {s}</Text>
+                  <Text style={targetTextStyle(pack)} className="text-sm text-conecta">💡 {s}</Text>
+                  {!!pack.reading?.(s) && <Text className="text-xs text-conecta/70">{pack.reading(s)}</Text>}
                 </Pressable>
               ))}
             </HScroll>
@@ -199,6 +201,7 @@ export default function ScenarioScreen() {
                 placeholder={listening ? 'Ouvindo…' : `Responda em ${nomeIdioma(pack.name)}…`}
                 placeholderTextColor="#94A3B8"
                 autoCapitalize="none"
+                style={targetTextStyle(pack)}
                 className="flex-1 rounded-full border-2 border-slate-200 bg-white px-4 py-2.5 text-base text-slate-900 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
               />
               <Pressable accessibilityLabel="Enviar" onPress={() => send(input)} disabled={!input.trim()} className={`h-12 w-12 items-center justify-center rounded-full bg-conecta ${input.trim() ? '' : 'opacity-40'}`}>

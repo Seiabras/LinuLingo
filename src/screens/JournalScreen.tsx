@@ -5,6 +5,7 @@ import { ArrowLeft, Mic } from 'lucide-react-native';
 import { Screen, Button, Card, Chip, SectionTitle, SpeakButton, SpeechBubble, LetterPad } from '@/components/ui';
 import { Linu } from '@/components/Linu';
 import { useApp } from '@/services/app-state';
+import { targetTextStyle } from '@/services/direction';
 import { awardXp, listJournal, saveJournal, submitToCommunity, type JournalEntry } from '@/database/queries';
 import { buildLexicon, checkJournal, countSentences, type JournalIssue } from '@/services/journal';
 import { canRecognize, listen } from '@/services/speech';
@@ -123,7 +124,8 @@ export default function JournalScreen() {
       <View className="mt-4 flex-row items-end gap-2">
         <Linu mood="falando" size={70} />
         <SpeechBubble className="mb-6">
-          <Text className="text-xl font-bold text-slate-900 dark:text-white">{prompt}</Text>
+          <Text style={targetTextStyle(pack)} className="text-xl font-bold text-slate-900 dark:text-white">{prompt}</Text>
+          {!!pack.reading?.(prompt) && <Text className="text-sm text-slate-500 dark:text-slate-400">{pack.reading(prompt)}</Text>}
           <Text className="text-sm text-slate-500 dark:text-slate-400">🇧🇷 {promptPt} Escreva 3 frases curtas.</Text>
         </SpeechBubble>
       </View>
@@ -142,6 +144,7 @@ export default function JournalScreen() {
             placeholder="Azi am… Apoi… Seara…"
             placeholderTextColor="#94A3B8"
             accessibilityLabel="Seu texto do diário"
+            style={targetTextStyle(pack)}
             className="min-h-[130px] rounded-2xl border-2 border-slate-200 bg-white p-4 text-lg text-slate-900 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
           />
           <View className="mt-2 flex-row flex-wrap items-center gap-2">
@@ -176,9 +179,9 @@ export default function JournalScreen() {
                     <View key={k} className="gap-1">
                       <View className="flex-row flex-wrap items-center gap-2">
                         <Chip label={i.kind} tone={KIND_TONE[i.kind]} />
-                        <Text className="text-base text-rose-600 line-through dark:text-rose-400">{i.original}</Text>
+                        <Text style={targetTextStyle(pack)} className="text-base text-rose-600 line-through dark:text-rose-400">{i.original}</Text>
                         <Text className="text-base text-slate-400">→</Text>
-                        <Text className="text-base font-bold text-conquista-dark dark:text-green-300">{i.suggestion}</Text>
+                        <Text style={targetTextStyle(pack)} className="text-base font-bold text-conquista-dark dark:text-green-300">{i.suggestion}</Text>
                       </View>
                       <Text className="text-sm text-slate-600 dark:text-slate-400">{i.why}</Text>
                     </View>
@@ -190,7 +193,7 @@ export default function JournalScreen() {
                   <Text className="text-xs font-bold uppercase tracking-wide text-conquista">Como um nativo diria</Text>
                   <SpeakButton text={result.corrected} locale={pack.speechLocale} size={16} />
                 </View>
-                <Text className="text-lg leading-7 text-slate-900 dark:text-white">{result.corrected}</Text>
+                <Text style={targetTextStyle(pack)} className="text-lg leading-7 text-slate-900 dark:text-white">{result.corrected}</Text>
               </Card>
               <Text className="text-center text-xs text-slate-500 dark:text-slate-400">
                 O corretor funciona sem internet e checa acentos, gênero e erros comuns de quem fala português. Ele não pega tudo: para uma correção completa, envie para os nativos.
