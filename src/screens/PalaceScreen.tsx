@@ -5,6 +5,7 @@ import { ArrowLeft } from 'lucide-react-native';
 import { Screen, Button, Card, Chip, SectionTitle, SpeakButton, SpeechBubble, Ipa } from '@/components/ui';
 import { Linu } from '@/components/Linu';
 import { useApp } from '@/services/app-state';
+import { targetTextStyle } from '@/services/direction';
 import { awardXp, palaceNouns, saveMnemonic, type PalaceNoun } from '@/database/queries';
 import { defaultMnemonic, genderTip, palaceIntro, roomsFor, type Gender } from '@/services/mnemonics';
 import { shuffle } from '@/services/answers';
@@ -110,7 +111,7 @@ export default function PalaceScreen() {
             <Card className="items-center gap-2 py-8">
               <Text style={{ fontSize: 72, lineHeight: 88 }}>{w.emoji ?? '🔤'}</Text>
               <View className="flex-row items-center gap-2">
-                <Text className="text-4xl font-extrabold text-slate-900 dark:text-white">{w.word_target}</Text>
+                <Text style={targetTextStyle(pack)} className="text-4xl font-extrabold text-slate-900 dark:text-white">{w.word_target}</Text>
                 <SpeakButton text={w.word_target} locale={pack.speechLocale} />
               </View>
               <Ipa text={w.word_target} />
@@ -243,7 +244,7 @@ function MnemonicRow({ n, locale, onSave }: { n: PalaceNoun; locale: string; onS
     <Card className="gap-1.5">
       <View className="flex-row items-center gap-2">
         <Text className="text-2xl">{n.emoji ?? '🔤'}</Text>
-        <Text className="text-lg font-bold text-slate-900 dark:text-white">{n.word_target}</Text>
+        <Text style={targetTextStyle(pack)} className="text-lg font-bold text-slate-900 dark:text-white">{n.word_target}</Text>
         <Text className="flex-1 text-slate-500 dark:text-slate-400">{n.word_native}</Text>
         {!n.learned && <Chip label="nova" />}
         <SpeakButton text={n.word_target} locale={locale} size={14} />

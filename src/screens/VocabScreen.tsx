@@ -6,6 +6,7 @@ import { Search } from 'lucide-react-native';
 import { Button, Card, Chip, GENDER_LABEL, ProgressBar, SpeakButton, Ipa } from '@/components/ui';
 import { hasWordImage, WordImage } from '@/components/WordImage';
 import { useApp } from '@/services/app-state';
+import { targetTextStyle } from '@/services/direction';
 import { categoryStats, listEtymology, listVocab, vocabStats } from '@/database/queries';
 import { cefrFromMastered } from '@/services/progress';
 import { isDue } from '@/srs/sm2';
@@ -194,6 +195,7 @@ export default function VocabScreen() {
 }
 
 function WordRow({ w, locale, now, variantWord, variantFlag }: { w: VocabWithSRS; locale: string; now: number; variantWord?: string; variantFlag?: string }) {
+  const { pack } = useApp();
   const g = w.gender ? GENDER_LABEL[w.gender] : null;
   let status: { label: string; tone: 'slate' | 'orange' | 'green' | 'blue' };
   if (!w.next_review_date) status = { label: 'nova', tone: 'slate' };
@@ -208,7 +210,7 @@ function WordRow({ w, locale, now, variantWord, variantFlag }: { w: VocabWithSRS
       <View className="w-9 items-center">{hasWordImage(w.word_native, { pos: w.part_of_speech, target: w.word_target }) ? <WordImage wordNative={w.word_native} size={36} pos={w.part_of_speech} target={w.word_target} /> : <Text className="text-xl">{w.emoji ?? ''}</Text>}</View>
       <View className="flex-1">
         <View className="flex-row flex-wrap items-center gap-1.5">
-          <Text className="text-base font-bold text-slate-900 dark:text-white">{w.word_target}</Text>
+          <Text style={targetTextStyle(pack)} className="text-base font-bold text-slate-900 dark:text-white">{w.word_target}</Text>
           {g && <Chip label={g.label} tone={g.tone} />}
           {hasNativeClip(w.word_target, locale) && <Text accessibilityLabel="gravação de falante nativo" className="text-xs">🎧</Text>}
         </View>

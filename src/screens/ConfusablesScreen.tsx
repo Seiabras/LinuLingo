@@ -4,6 +4,7 @@ import { ArrowLeft } from 'lucide-react-native';
 import { Screen, Card, SpeakButton, SpeechBubble } from '@/components/ui';
 import { Linu } from '@/components/Linu';
 import { useApp } from '@/services/app-state';
+import { targetTextStyle } from '@/services/direction';
 import { findConfusables, diffMask, type ConfusablePair } from '@/services/confusaveis';
 import type { VocabSeed } from '@/data/types';
 import { goBack } from '@/services/nav';
@@ -13,8 +14,9 @@ import { hasWordImage, WordImage } from '@/components/WordImage';
 
 /** Mostra as letras que diferem em negrito (o resto, normal) — o que pega o olho na confusão. */
 function Highlighted({ word, mask }: { word: string; mask: boolean[] }) {
+  const { pack } = useApp();
   return (
-    <Text className="text-2xl font-bold text-slate-900 dark:text-white">
+    <Text style={targetTextStyle(pack)} className="text-2xl font-bold text-slate-900 dark:text-white">
       {[...word].map((ch, i) => (
         <Text key={i} className={mask[i] ? 'text-fogo underline' : ''}>
           {ch}
