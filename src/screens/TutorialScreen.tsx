@@ -288,7 +288,7 @@ function TrailLegend() {
 function StepsList() {
   const steps = [
     ['📜', 'Aprenda primeiro', 'cultura e regra'],
-    ['🖼️', 'Imersão', 'foto (ou emoji) + som, sem tradução'],
+    ['🖼️', 'Imersão', 'foto (ou emoji) + som + tradução'],
     ['✏️', 'Lacunas', 'complete a frase'],
     ['🎙️', 'Voz', 'responda falando'],
     ['👥', 'Comunidade', 'escreva para nativos (opcional)'],

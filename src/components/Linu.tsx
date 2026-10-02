@@ -315,7 +315,7 @@ function Flipper({ side, mood, u, wave, flap }: { side: 'esq' | 'dir'; mood: Lin
   });
   let d: string;
   if (up) d = left ? 'M26 76 Q4 52 12 30 Q28 48 34 72 Z' : 'M94 76 Q116 52 108 30 Q92 48 86 72 Z';
-  else if (!left && mood === 'pensando') d = 'M92 84 Q104 82 88 70 Q80 72 84 84 Z';
+  else if (!left && mood === 'pensando') d = 'M94 80 Q110 66 98 54 Q86 64 94 80 Z';
   else d = left ? 'M24 76 Q6 100 18 120 Q30 104 30 82 Z' : 'M96 76 Q114 100 102 120 Q90 104 90 82 Z';
   return (
     <Layer style={style}>
