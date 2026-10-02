@@ -1,4 +1,12 @@
 import type { LanguageInfo, LanguagePack } from './types';
+import { ARABE } from './ar';
+import { PERSA } from './fa';
+import { URDU } from './ur';
+import { OKINAWANO } from './ryu';
+import { ARABE_EGIPCIO } from './arz';
+import { IIDICHE } from './yi';
+import { HEBRAICO } from './he';
+import { MALTES } from './mt';
 import { ROMENO } from './ro';
 import { RUSSO } from './ru';
 import { ESPANHOL } from './es';
@@ -139,7 +147,8 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   nv: NAVAJO, nhd: GUARANI_NANDEVA, tpj: TAPIETE, mi: MAORI, gnw: GUARANI_ANTIGO, haw: HAVAIANO, te: TELUGO, om: OROMO, mr: MARATHI, am: AMARICO, mn: MONGOL,
   hu: HUNGARO, tsd: TSAKONIO, pcm: PIDGIN_NIGERIANO, ta: TAMIL, tl: TAGALO, hyw: ARMENIO_OCIDENTAL,
   tdt: TETUM, arn: MAPUDUNGUN, gd: GAELICO_ESCOCES, ht: CRIOULO_HAITIANO, ktn: KARITIANA, kmb: QUIMBUNDO,
-  pln: PALENQUERO, kl: GROENLANDES, br: BRETAO, lkt: LAKOTA, se: SAMI_DO_NORTE, fon: FON };
+  pln: PALENQUERO, kl: GROENLANDES, br: BRETAO, lkt: LAKOTA, se: SAMI_DO_NORTE, fon: FON, ar: ARABE,
+  fa: PERSA, ur: URDU, ryu: OKINAWANO, arz: ARABE_EGIPCIO, yi: IIDICHE, he: HEBRAICO, mt: MALTES };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -212,10 +221,7 @@ export const LANGUAGES: LanguageInfo[] = [
   // georgiano: família cartveliana própria, sem parentesco com o indo-europeu
   GEORGIANO,
   // as maiores línguas da Ásia (Ethnologue, falantes nativos + segunda língua; o russo já está no app)
-  {
-    code: 'ar', name: 'Árabe', nativeName: 'العربية', flag: '🇸🇦',
-    lineage: { family: 'Afro-asiático', branches: ['Semítico', 'Semítico central'], region: 'Península Arábica (Ásia Ocidental), hoje também o norte da África', writing: 'Alfabeto árabe (abjad, da direita para a esquerda)' },
-  },
+  ARABE,
   CHINES,
   HINDI,
   BENGALI,
@@ -225,10 +231,10 @@ export const LANGUAGES: LanguageInfo[] = [
   // língua
   MAORI,
   HAVAIANO,
-  {
-    code: 'ur', name: 'Urdu', nativeName: 'اردو', flag: '🇵🇰',
-    lineage: { family: 'Indo-europeu', branches: ['Indo-iraniano', 'Indo-ariano', 'Indo-ariano central'], region: 'Norte do subcontinente indiano (Paquistão e Índia)', writing: 'Alfabeto perso-árabe (nastaliq)' },
-  },
+  // urdu: mesmo ramo indo-ariano do hindi (hi) — urdu e hindi compartilham a base cotidiana do
+  // vocabulário (hindustani), mas divergem no registro formal (urdu puxa pro persa/árabe, hindi pro
+  // sânscrito) e na escrita (perso-árabe nastaliq × devanágari); ver cognateNote do pacote
+  URDU,
   MARATHI,
   VIETNAMITA,
   KHMER,
@@ -342,6 +348,29 @@ export const LANGUAGES: LanguageInfo[] = [
   // acadêmicas (Ferretti 1996; Pereira 1979) — mas essa ligação foi uma decisão desta sessão, não
   // confirmada pelo Matheus; ver a nota completa em `src/data/fon/index.ts`
   FON,
+  // farsi/persa: indo-europeu, ramo iraniano ocidental — irmão de longe do urdu/hindi (ambos
+  // indo-iranianos), mas sem gênero gramatical nenhum (nem nos pronomes), ao contrário da maioria das
+  // línguas indo-europeias já no app
+  PERSA,
+  // okinawano: família japônica, mas ramo ryukyuano do norte — irmão do japonês (ja), não um dialeto
+  // dele; não são mutuamente inteligíveis (~71% de semelhança lexical) e a UNESCO classifica o
+  // okinawano como ameaçado
+  OKINAWANO,
+  // árabe egípcio: mesmo tronco semítico do árabe padrão (ar), mas código ISO 639-3 próprio (arz) —
+  // é a língua que se fala no dia a dia no Egito, diferente do árabe padrão escrito/formal em vários
+  // pontos de gramática e vocabulário (mesmo critério de "primos, não a mesma língua" já usado pro
+  // guarani ñandeva/paraguaio)
+  ARABE_EGIPCIO,
+  // iídiche: indo-europeu, ramo germânico — parente mais próximo do alemão (de), apesar de escrito no
+  // alfabeto hebraico; língua judaica asquenaze, hoje falada sobretudo em comunidades haredi/hassídicas
+  IIDICHE,
+  // hebraico (moderno): afro-asiático, ramo semítico cananeu — revivido como língua do dia a dia a
+  // partir do fim do século XIX, depois de séculos só como língua litúrgica/de estudo
+  HEBRAICO,
+  // maltês: afro-asiático, ramo semítico (sículo-árabe) — a única língua semítica padronizada do
+  // mundo escrita só em alfabeto latino, nunca em árabe; muitos empréstimos do siciliano/italiano
+  // por cima da base árabe
+  MALTES,
 ];
 
 export const DEFAULT_LANGUAGE = 'ro';
