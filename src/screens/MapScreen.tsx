@@ -114,7 +114,6 @@ export default function MapScreen() {
   const mapHeight = Math.round(Math.min(440, Math.max(260, Math.min(winW, 680) * 0.6)));
   const aspect = size.h / size.w;
   const [box, setBox] = useState<Box>({ x: 0, y: 0, w: MAP_W, h: MAP_H });
-  const [start, setStart] = useState<Box>(box);
   // /mapa?aba=antigos abre direto nos países que deixaram de existir (a linha do tempo leva para lá)
   const { aba } = useLocalSearchParams<{ aba?: string }>();
   const [mode, setMode] = useState<'hoje' | 'antigos'>(aba === 'antigos' ? 'antigos' : 'hoje');
@@ -237,20 +236,25 @@ export default function MapScreen() {
     setWorldBox(world);
   };
   const onPanStart = () => {
-    setStart(box);
     // só conta como arraste de verdade quando o gesto ativa (o Pan só ativa depois de passar
     // minDistance, então chegar aqui já significa que o dedo/mouse se moveu de verdade); tranca
     // indefinidamente até o gesto soltar (onGestureEnd troca por um prazo curto)
     setDragLockedUntil(Infinity);
   };
+  // incrementais (changeX/changeY, scaleChange) sobre a caixa ATUAL, via atualização funcional: não
+  // depende de um "início do gesto" guardado em estado, que num arraste rápido ainda não tinha sido
+  // aplicado quando o primeiro onUpdate chegava (o mapa saltava para a caixa inicial)
   const onPan = (dx: number, dy: number) => {
-    const k = start.w / size.w;
-    setBox(clamp({ ...start, x: start.x - dx * k, y: start.y - dy * k }));
+    setBox((b) => {
+      const k = b.w / size.w;
+      return clamp({ ...b, x: b.x - dx * k, y: b.y - dy * k });
+    });
   };
-  const onPinch = (scale: number) => {
-    const s = start;
-    const w = s.w / scale;
-    setBox(clamp({ x: s.x + (s.w - w) / 2, y: s.y + (s.w * aspect - w * aspect) / 2, w, h: w * aspect }));
+  const onPinch = (factor: number) => {
+    setBox((b) => {
+      const w = b.w / factor;
+      return clamp({ x: b.x + (b.w - w) / 2, y: b.y + (b.w * aspect - w * aspect) / 2, w, h: w * aspect });
+    });
   };
   const onGestureEnd = () => {
     // onFinalize roda SEMPRE que o gesto termina, mesmo quando ele nunca chegou a ativar (um toque
@@ -264,11 +268,11 @@ export default function MapScreen() {
   const pan = Gesture.Pan()
     .minDistance(6)
     .onStart(() => scheduleOnRN(onPanStart))
-    .onUpdate((e) => scheduleOnRN(onPan, e.translationX, e.translationY))
+    .onChange((e) => scheduleOnRN(onPan, e.changeX, e.changeY))
     .onFinalize(() => scheduleOnRN(onGestureEnd));
   const pinch = Gesture.Pinch()
     .onStart(() => scheduleOnRN(onPanStart))
-    .onUpdate((e) => scheduleOnRN(onPinch, e.scale))
+    .onChange((e) => scheduleOnRN(onPinch, e.scaleChange))
     .onFinalize(() => scheduleOnRN(onGestureEnd));
   const gestures = Gesture.Simultaneous(pan, pinch);
 
