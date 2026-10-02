@@ -40,9 +40,9 @@ commitado.
 - **Românicos**: fechado (pms, lij, lmo, mwl, frp — todos integrados).
 - **Germânico que falta**: yi (iídiche) — precisa de suporte a escrita direita-pra-esquerda no app
   antes de dar pra fazer (ver "RTL" abaixo).
-- **Urálico que falta**: húngaro (hu) — pedido do Matheus em 02/10/2026; mesma família do finlandês e
-  do estoniano já no app (fi, et), mas ramo diferente (úgrico, não fino-permiano) e sem parentesco
-  próximo com eles — não começado ainda.
+- **Urálico**: fechado. Húngaro (hu) — pedido do Matheus em 02/10/2026 — **feito** (02/10/2026):
+  mesma família do finlandês e do estoniano já no app (fi, et), mas ramo diferente (úgrico, não
+  fino-permiano) e sem parentesco próximo com eles.
 - **Família única**: fechado (el grego, sq albanês, hy armênio); ka (georgiano) em andamento —
   família cartveliana, sem parentesco com o indo-europeu, mas pedida pelo Matheus junto com a
   conferência abaixo. **Auditoria de família/ramo (01/10/2026)**: o Matheus notou grego, armênio e
@@ -74,10 +74,9 @@ commitado.
       na diáspora (Líbano, Síria, França, EUA), sem nenhum país onde seja língua oficial, classificado
       como ameaçado pela UNESCO. Forte candidato a pacote próprio, pelo mesmo critério já usado aqui
       para separar guarani ñandeva/tapiete do guarani paraguaio.
-  Nenhum desses foi criado ainda — fica como item da fila (ver "Não começados" seria o lugar, mas como
-  são "filhotes" das famílias já fechadas, registro aqui mesmo). Candidatos por ordem de força: armênio
-  ocidental (hyw) primeiro, tsakônio (tsd) em seguida; gheg/arbëresh/arvanítico ficam mais como ideia de
-  "sotaque" dentro do pacote `sq` já existente do que como pacote novo.
+  Armênio ocidental (hyw) e tsakônio (tsd), os dois candidatos mais fortes, **feitos em 02/10/2026**.
+  gheg/arbëresh/arvanítico ficam mais como ideia de "sotaque" dentro do pacote `sq` já existente do
+  que como pacote novo — não começado.
 - **Os 20 idiomas mais falados do mundo (pergunta do Matheus, 02/10/2026)**: conferido contra a
   tabela do Ethnologue 2026 (via Wikipédia, "List of languages by total number of speakers", L1+L2).
   18 dos 20 já têm pacote de verdade no app: inglês, chinês mandarim, híndi, espanhol, francês,
@@ -85,14 +84,14 @@ commitado.
   (os dois últimos feitos em 02/10/2026) completos ou em A1. Faltam 4:
     - **árabe padrão** (ar) e **urdu** (ur) — já tinham entrada placeholder em `idiomas.ts`, mas
       nenhum pacote de verdade: bloqueados por escrita direita-pra-esquerda (ver "RTL" abaixo).
-    - **pidgin nigeriano** (pcm) — crioulo de base inglesa, nem placeholder tem ainda; não bloqueado
-      por RTL, dá pra começar quando houver vaga na fila.
+    - **pidgin nigeriano** (pcm) — crioulo de base inglesa — **feito em 02/10/2026**.
     - **árabe egípcio** (arz) — variedade do árabe com código ISO 639-3 próprio (diferente do árabe
       padrão/moderno já citado acima); também bloqueado por RTL.
-- **Asiáticos**: hi (híndi), bn (bengali), th (tailandês), km (khmer), lo (laosiano), te (télugo) e
-  mr (marati, ambos 02/10/2026) feitos. Faltam: ur e fa (bloqueados por RTL, ver abaixo), ta, tl. Do
-  Sudeste Asiático continental ainda falta my (birmanês) — ainda não confirmado, conferir
-  documentação antes de começar.
+- **Asiáticos**: hi (híndi), bn (bengali), th (tailandês), km (khmer), lo (laosiano), te (télugo),
+  mr (marati), ta (tâmil) e tl (tagalo, idioma filipino, não indiano, mas agrupado aqui por região —
+  todos 02/10/2026) feitos. Falta: ur e fa (bloqueados por RTL, ver abaixo). Do Sudeste Asiático
+  continental ainda falta my (birmanês) — ainda não confirmado, conferir documentação antes de
+  começar.
 - **Mongol (pedido do Matheus)**: **feito** como `mn` (02/10/2026), em escrita CIRÍLICA MODERNA (a
   oficial na Mongólia desde 1941/1946) — família mongólica própria, sem parentesco comprovado com o
   turcaico/tungúsico (hipótese "altaica" obsoleta). A escrita mongol vertical tradicional (ainda usada
@@ -181,6 +180,29 @@ antes de começar esses dois.
   (`zh`) — o pinyin já vem escrito à mão em cada palavra do vocabulário, mas não como `reading`
   computado de verdade; como é por caractere (não por som), precisaria de um dicionário hanzi→pinyin,
   não uma regra fonética como os outros — fica pra outra sessão.
+- **Pendência de baixa prioridade (achado de seiabras-b8, 02/10/2026)**: bengali (`reading-bengali.ts`)
+  tem o mesmo problema que o devanágari tinha antes da regra de Ohala — "কলকাতা" sai "kolokata" em
+  vez de "kolkata" (schwa do meio da palavra sobrando); khmer (`reading-khmer.ts`) usa o mácron de
+  forma inconsistente entre exemplos diferentes (alguns têm, outros não). Nenhum dos dois corrigido
+  ainda — baixa prioridade.
+- **"Secretas e cifras" (Cultura → Tipos de línguas) — pedido do Matheus em 01-02/10/2026**: nova aba
+  com criptoletos (Pajubá, Verlan, Polari, Lunfardo), cifras fonéticas (Língua do P, Pig Latin,
+  Javanais) e código morse, **feito em 02/10/2026** (commit `e2584261`). Revisão externa de
+  seiabras-b8 achou 5 imprecisões factuais (base do Pajubá misturando banto com iorubá/jeje, data da
+  descriminalização no Reino Unido pro Polari, origem do Verlan, data da revisão de Gerke no morse, e
+  a Língua do P com regra/exemplo incoerentes) — **todas corrigidas** (commits `f08090aa` e
+  `4d8a0fbb`, esse último depois de uma segunda rodada de revisão pegar que a correção da Língua do P
+  tinha ficado inconsistente consigo mesma).
+- **Microfone não funcionava nas lições (pedido do Matheus, 01/10/2026 às 16:20 por WhatsApp)**:
+  investigado a fundo (Playwright, web, com permissão concedida/negada) — o mecanismo em si
+  (`src/services/speech.ts`, Web Speech API) funciona; o problema real era que todo erro, menos
+  "permissão negada", caía na mesma mensagem genérica de "falhou", incluindo os dois mais comuns na
+  prática ("no-speech", sem detectar fala a tempo, e "audio-capture", sem microfone de verdade — bem
+  comum em máquina de desenvolvimento Linux sem mic). **Corrigido em 02/10/2026** com mensagens
+  específicas por código de erro (`src/services/recognition-error.ts`, novo, com teste). **Limitação
+  que não é bug, e continua de fora**: no app nativo (Expo Go/build), não existe reconhecimento de
+  voz nenhum (`Platform.OS !== 'web'` sempre volta `false`) — precisa de um módulo nativo de STT e
+  um build de desenvolvimento, fora do alcance de uma sessão de CLI sem Xcode/Android Studio.
 
 ## Ideias de pesquisa externa (tipo Gemini, 30/09–01/10/2026 — lista completa, 6 itens)
 Só anotar, não implementar ainda. Era uma lista numerada 1-6; os itens 3 e 4 chegaram primeiro
@@ -302,6 +324,53 @@ mais detalhe do usuário antes de mexer em código.
   parecido com as línguas que já existem. Vale tratar como 3 propostas separadas, não uma só: copta
   é parecido com o fluxo atual; egípcio antigo e maia clássico pedem um jeito novo de mostrar e
   treinar a escrita.
+
+## Pedidos do Matheus Vega (01-02/10/2026, por WhatsApp)
+- **"Na parte de palavras é pra você escolher uma e passar pra outra, parece que você tá confundindo
+  duas metodologias de ensino"**: achado o bug — a Imersão (`ImmersionStep.tsx`) tinha um
+  `SwipeCard` com gesto de arrastar pra direita (emprestado do fluxo de revisão SRS do
+  `DeckSession.tsx`) competindo com o próprio mecanismo de toque-pra-escolher da Imersão; a legenda
+  da tela chegava a instruir os dois métodos ao mesmo tempo. **Corrigido** (commit `0bdaed4d`):
+  removido o gesto de arrastar da Imersão — ela é só toque-pra-escolher; o gesto de arrastar continua
+  existindo, mas só no `DeckSession` (revisão espaçada), onde faz sentido.
+- **"O microfone não tá funcionando dentro das lições"**: **corrigido** — ver a entrada em "Revisões
+  pendentes" acima.
+- **"Na parte do mundo o mapa tá meio bugado para mexer e colocar a língua onde se fala com o país, e
+  na hora de aproximar, colocar o estado em que se fala com as cores diferentes"**: em andamento (uma
+  sessão em paralelo está investigando e corrigindo o `MapScreen.tsx` e os dados de
+  `idiomas-mundo.ts`) — ainda não commitado nesta pendência no momento desta atualização.
+- **"Em línguas artificiais adicione a língua dos minions"**: a "língua dos minions" (dos filmes da
+  Illumination) não é um conlang estruturado de verdade — é gibberish dos diretores, uma mistura de
+  fragmentos de línguas reais (italiano, espanhol, francês, inglês, japonês, coreano, indonésio…) sem
+  gramática nem vocabulário consistentes documentados por linguistas, bem diferente do quenya/
+  sindarin/alto-valiriano/esperanto/lojban já no app (que são conlangs de verdade, com gramática
+  publicada). Pra não quebrar a regra de "nada de inventar" criando vocabulário/gramática que não
+  existe, a solução é uma seção pequena e honesta (como as outras árvores de Artificiais), explicando
+  o que é (e o que não é) a "língua" dos minions, citando as poucas palavras reais que os diretores
+  confirmaram em entrevista (ex.: "banana", "bello", "poopaye") — não um curso completo. Confirmado
+  pelo Matheus em 02/10/2026; **feito** (ver commit desta mesma pendência).
+- **"implemente as linguas que apareceram no Babbel podcast"**: não foi possível identificar o
+  episódio/lista exata (sem resultado de busca específico). Matheus então listou direto (02/10/2026)
+  os idiomas que quer que não estão no app ainda: tétum, mapudungún (mapuche), língua geral de mina,
+  farsi, karitiana, kimbundu, gaélico escocês, crioulo haitiano, groenlandês, palenquero, saami,
+  talian, bretão, lakota. Status de cada um:
+  - **Em andamento** (pacote do zero, igual aos outros): tétum (`tdt`), mapudungún (`arn`), karitiana
+    (`ktn`), kimbundu (`kmb`), gaélico escocês (`gd`), crioulo haitiano (`ht`), groenlandês/kalaallisut
+    (`kl`), palenquero (`pln`), saami do norte (`se` — a variedade sami mais falada, ~15-25 mil
+    falantes; as outras línguas sami, como a lule e a skolt, têm código próprio à parte), bretão
+    (`br`), lakota (`lkt`).
+  - **"Língua geral de mina"**: nome ambíguo — pode ser a língua geral amazônica (nheengatu, já no
+    app como `yrl`) confundida de nome, ou a "língua de mina/jeje", um jargão ritual de origem
+    gbe (fon/ewe) usado no candomblé jeje no Brasil, parecido com o papel do iorubá no candomblé
+    ketu (já coberto, indiretamente, pelo verbete do Pajubá). Em pesquisa — não começar o pacote até
+    confirmar do que se trata de verdade, pra não inventar conteúdo.
+  - **Farsi (fa)**: bloqueado por RTL, mesmo motivo do árabe e do urdu (ver "Pendência técnica: RTL"
+    acima) — não dá pra começar antes de resolver a escrita direita-pra-esquerda.
+  - **Talian**: não tem código ISO 639-3 próprio — é classificado como um dialeto/variante do vêneto
+    (`vec`, já no app) falado por descendentes de imigrantes no Rio Grande do Sul e Santa Catarina,
+    não uma língua separada pelo padrão que o app já segue (mesmo critério usado pro jopará dentro do
+    `gn`). Em vez de um pacote novo, a ideia é uma nota/variante dentro do `vec` existente — ainda não
+    feito.
 
 ## Git
 - Push feito até `5ddab696`. Os commits depois disso (amigos do Linu, 9 idiomas novos, árvores)

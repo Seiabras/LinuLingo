@@ -103,6 +103,12 @@ import { AMARICO } from './am';
 import { MONGOL } from './mn';
 import { GUARANI_NANDEVA } from './nhd';
 import { TAPIETE } from './tpj';
+import { HUNGARO } from './hu';
+import { TSAKONIO } from './tsd';
+import { PIDGIN_NIGERIANO } from './pcm';
+import { TAMIL } from './ta';
+import { TAGALO } from './tl';
+import { ARMENIO_OCIDENTAL } from './hyw';
 
 /** Idiomas com conteúdo pronto. */
 export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES, fr: FRANCES, ca: CATALAO, is: ISLANDES, fi: FINLANDES, et: ESTONIANO, fo: FEROES, lt: LITUANO, lv: LETAO, sw: SUAILI, ja: JAPONES, ko: COREANO,
@@ -118,7 +124,8 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   hi: HINDI, gn: GUARANI, tpw: TUPI_ANTIGO, ha: HAUCA, ig: IGBO, yrl: NHEENGATU, bn: BENGALI, qu: QUECHUA, kgp: KAINGANG, tca: TIKUNA,
   xav: XAVANTE, tuo: TUKANO, gun: GUARANI_MBYA, ka: GEORGIANO, th: TAILANDES, km: KHMER,
   ay: AIMARA, kgk: GUARANI_KAIOWA, nah: NAUATLE, kpc: BANIWA, lo: LAOSIANO, cbs: HUNI_KUIN,
-  nv: NAVAJO, nhd: GUARANI_NANDEVA, tpj: TAPIETE, mi: MAORI, gnw: GUARANI_ANTIGO, haw: HAVAIANO, te: TELUGO, om: OROMO, mr: MARATHI, am: AMARICO, mn: MONGOL };
+  nv: NAVAJO, nhd: GUARANI_NANDEVA, tpj: TAPIETE, mi: MAORI, gnw: GUARANI_ANTIGO, haw: HAVAIANO, te: TELUGO, om: OROMO, mr: MARATHI, am: AMARICO, mn: MONGOL,
+  hu: HUNGARO, tsd: TSAKONIO, pcm: PIDGIN_NIGERIANO, ta: TAMIL, tl: TAGALO, hyw: ARMENIO_OCIDENTAL };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -258,6 +265,24 @@ export const LANGUAGES: LanguageInfo[] = [
   // mongol: família mongólica própria, sem parentesco comprovado com o turcaico/tungúsico (a hipótese
   // "altaica" é hoje vista como obsoleta) nem com qualquer outra família já no app
   MONGOL,
+  // húngaro: família urálica, mas ramo úgrico — diferente do ramo fínico do finlandês/estoniano
+  HUNGARO,
+  // tsacônio: indo-europeu, ramo helênico (como o grego), mas um ramo à parte dentro dele — descende
+  // do dórico antigo, não do grego koiné que deu o grego moderno; criticamente ameaçado
+  TSAKONIO,
+  // pidgin nigeriano: crioulo de léxico inglês com gramática própria — por convenção do projeto, não
+  // entra na árvore genealógica do inglês nem é tratado como seu parente ou não-parente
+  PIDGIN_NIGERIANO,
+  // tâmil: dravídico, ramo meridional — parente mais próximo do malaiala, nada a ver com o télugo
+  // (dravídico centro-meridional) nem com as línguas indo-europeias do norte da Índia
+  TAMIL,
+  // tagalo: austronésio, ramo filipino — caminho diferente do indonésio (malaico) e do
+  // maori/havaiano (oceânico > polinésio), apesar de todos serem austronésios
+  TAGALO,
+  // armênio ocidental: indo-europeu, ramo armênio (como o hy já no app), mas língua separada pelo
+  // ISO 639-3 — dialeto de Istambul, sem país onde seja oficial, falado sobretudo na diáspora
+  // (Líbano, Síria, França, EUA); ameaçado pela UNESCO
+  ARMENIO_OCIDENTAL,
 ];
 
 export const DEFAULT_LANGUAGE = 'ro';
