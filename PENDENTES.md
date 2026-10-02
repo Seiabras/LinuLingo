@@ -60,17 +60,20 @@ commitado.
   Code no mesmo repositório — por isso os idiomas feitos vêm às vezes de um processo, às vezes de
   outro; sempre `git pull` antes de editar `idiomas.ts`/`conteudo.test.ts`/este arquivo, pra não
   divergir. **Pedido do Matheus Vega: dar prioridade às línguas indígenas brasileiras.**
-  - **Família guarani**: gn (paraguaio), gun (mbyá) e kgk (kaiowá/pãi-tavyterã) **feitos**, cada um
-    com fonte própria — não são a mesma língua com nomes diferentes. Jopará (mistura guarani-espanhol
-    do dia a dia) não é uma língua à parte, só uma nota no texto do `gn`. Ainda faltam:
-    - guarani ñandeva/avá guarani (código a confirmar) — Brasil (MS e outras regiões), Paraguai,
-      Argentina; o avá chiripá costuma ser agrupado com essa variedade, confirmar antes de separar;
-    - tpj tapieté — grupo pequeno na região do Chaco (Bolívia, Paraguai, Argentina);
+  - **Família guarani**: gn (paraguaio), gun (mbyá), kgk (kaiowá/pãi-tavyterã) e, desde 02/10/2026,
+    nhd (guarani ñandeva/avá guarani/chiripá) e tpj (tapieté) **feitos**, cada um com fonte própria —
+    não são a mesma língua com nomes diferentes (nhd é especialmente próximo do mbyá, mas tem
+    fonologia e documentação próprias; o lugar exato do tapiete dentro do ramo guarani é discutido
+    entre linguistas — ver a nota em `src/data/tpj/index.ts`). Jopará (mistura guarani-espanhol do dia
+    a dia) não é uma língua à parte, só uma nota no texto do `gn`. Ainda falta:
     - **guarani antigo** (colonial, documentado por jesuítas como Ruiz de Montoya) — língua histórica
-      à parte, prima do tupi antigo (`tpw`) mas não o mesmo pacote; ainda não começado.
-  - huni kuĩ/kaxinawá (hvn, grafia a confirmar — o Matheus não tinha certeza da escrita certa) —
-    ainda não começado.
-  - Ainda não começados: mi (maori), haw (havaiano), nv (navajo).
+      à parte, prima do tupi antigo (`tpw`) mas não o mesmo pacote; pasta `src/data/gnw/` começada por
+      um agente mas incompleta (faltam `extras.ts` e `index.ts`).
+  - huni kuĩ/kaxinawá: **feito** como `cbs` (código confirmado via ISO 639-3/Glottolog).
+  - navajo: **feito** como `nv` (02/10/2026) — família na-dené, sem parentesco com as demais línguas
+    indígenas americanas do app.
+  - Ainda não começados/incompletos: mi (maori — pasta `src/data/mi/` sem `index.ts`), haw (havaiano —
+    só `vocabulario.ts`).
   - Todos exigem fonte para cada palavra: não inventar, e usar o empréstimo que a comunidade usa.
 - **Africanos**: ha (haussá), ig (igbo) feitos; falta am (amárico) e om (oromo) — ambos já têm o
   scaffold "língua madura" pronto em `src/data/am/` e `src/data/om/` (como `ha`/`ig` tinham), só
