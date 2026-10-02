@@ -5,6 +5,7 @@ import { ArrowLeft } from 'lucide-react-native';
 import { Screen, Button, Card, Chip, SectionTitle, LetterPad, SpeechBubble } from '@/components/ui';
 import { Linu } from '@/components/Linu';
 import { useApp } from '@/services/app-state';
+import { targetTextStyle } from '@/services/direction';
 import { awardXp, listJournal } from '@/database/queries';
 import { localDay, XP } from '@/services/progress';
 import { goBack } from '@/services/nav';
@@ -86,7 +87,7 @@ export default function CommunityScreen() {
         <Text className="font-bold text-slate-800 dark:text-slate-100">📓 As 3 frases do diário de hoje</Text>
         {journalToday ? (
           <>
-            <Text className="rounded-xl bg-slate-100 p-3 text-base text-slate-900 dark:bg-slate-800 dark:text-white">{journalToday}</Text>
+            <Text style={targetTextStyle(pack)} className="rounded-xl bg-slate-100 p-3 text-base text-slate-900 dark:bg-slate-800 dark:text-white">{journalToday}</Text>
             <Button
               title={journalSent ? '✓ Já está nos seus envios' : 'Pôr nos meus envios'}
               variant="ghost"
@@ -148,6 +149,7 @@ function ReactionPicker({ value, onChange }: { value: Reaction | null; onChange:
 }
 
 function PeerCard({ item, specialChars, onRate }: { item: CommunityRow; specialChars: string[]; onRate: (r: Reaction, suggestion: string | null) => Promise<void> }) {
+  const { pack } = useApp();
   const [reaction, setReaction] = useState<Reaction | null>(null);
   const [text, setText] = useState(item.content);
   const [saving, setSaving] = useState(false);
@@ -159,7 +161,7 @@ function PeerCard({ item, specialChars, onRate }: { item: CommunityRow; specialC
         {rated && <Chip label={item.reaction ? `${REACTIONS[item.reaction].emoji} avaliado` : '✓ corrigido'} tone="green" />}
       </View>
       <Text className="text-xs text-slate-500 dark:text-slate-400">Tarefa: {item.prompt}</Text>
-      <Text className="rounded-xl bg-slate-100 p-3 text-lg text-slate-900 dark:bg-slate-800 dark:text-white">{item.content}</Text>
+      <Text style={targetTextStyle(pack)} className="rounded-xl bg-slate-100 p-3 text-lg text-slate-900 dark:bg-slate-800 dark:text-white">{item.content}</Text>
 
       {!rated ? (
         <>
@@ -172,6 +174,7 @@ function PeerCard({ item, specialChars, onRate }: { item: CommunityRow; specialC
             multiline
             autoCapitalize="none"
             accessibilityLabel={`Sugestão para ${item.author_name}`}
+            style={targetTextStyle(pack)}
             className="min-h-[70px] rounded-xl border-2 border-slate-200 bg-white p-3 text-base text-slate-900 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
           />
           <LetterPad small onInsert={(ch) => setText((t) => t + ch)} onBackspace={() => setText((t) => t.slice(0, -1))} />
@@ -193,13 +196,13 @@ function PeerCard({ item, specialChars, onRate }: { item: CommunityRow; specialC
           {item.correction && (
             <>
               <Text className="text-sm font-semibold text-slate-600 dark:text-slate-300">Sua sugestão:</Text>
-              <Text className="text-base text-conecta-dark dark:text-blue-300">{item.correction}</Text>
+              <Text style={targetTextStyle(pack)} className="text-base text-conecta-dark dark:text-blue-300">{item.correction}</Text>
             </>
           )}
           {item.reference && (
             <>
               <Text className="mt-1 text-sm font-semibold text-slate-600 dark:text-slate-300">Correção de referência:</Text>
-              <Text className="text-base font-semibold text-conquista-dark dark:text-green-300">{item.reference}</Text>
+              <Text style={targetTextStyle(pack)} className="text-base font-semibold text-conquista-dark dark:text-green-300">{item.reference}</Text>
             </>
           )}
         </View>
@@ -210,6 +213,7 @@ function PeerCard({ item, specialChars, onRate }: { item: CommunityRow; specialC
 
 /** Gravar 10 segundos lendo uma frase, para mandar a um colega. */
 function AudioSubmit({ phrase, onSaved }: { phrase: string; onSaved: (content: string, audio: string) => Promise<void> }) {
+  const { pack } = useApp();
   const rec = useClipRecorder();
   const [clip, setClip] = useState<string | null>(null);
   const finish = async () => setClip(await rec.stop());
@@ -217,7 +221,7 @@ function AudioSubmit({ phrase, onSaved }: { phrase: string; onSaved: (content: s
     <Card className="mt-3 gap-3">
       <Text className="font-bold text-slate-800 dark:text-slate-100">🎙️ 10 segundos de áudio</Text>
       <Text className="text-sm text-slate-600 dark:text-slate-400">Leia em voz alta (ou diga algo seu):</Text>
-      <Text className="text-lg font-semibold text-slate-900 dark:text-white">“{phrase}”</Text>
+      <Text style={targetTextStyle(pack)} className="text-lg font-semibold text-slate-900 dark:text-white">“{phrase}”</Text>
       {!rec.supported ? (
         <Text className="text-sm text-slate-500 dark:text-slate-400">Gravar para a comunidade funciona pelo site, num navegador com microfone.</Text>
       ) : rec.recording ? (
@@ -249,6 +253,7 @@ function AudioSubmit({ phrase, onSaved }: { phrase: string; onSaved: (content: s
 }
 
 function MineCard({ item, langCode, langName, from }: { item: CommunityRow; langCode: string; langName: string; from: string }) {
+  const { pack } = useApp();
   const [sent, setSent] = useState<string | null>(null);
   const share = async () => {
     const { url, withoutAudio } = exchangeLink(siteUrl(), {
@@ -273,14 +278,14 @@ function MineCard({ item, langCode, langName, from }: { item: CommunityRow; lang
   return (
     <Card className="gap-2">
       <Text className="text-xs font-bold text-slate-500">{item.prompt}</Text>
-      <Text className="text-lg text-slate-900 dark:text-white">{item.kind === 'audio' ? `🎙️ “${item.content}”` : item.content}</Text>
+      <Text style={targetTextStyle(pack)} className="text-lg text-slate-900 dark:text-white">{item.kind === 'audio' ? `🎙️ “${item.content}”` : item.content}</Text>
       {item.audio && <Button title="▶ Ouvir meu áudio" variant="ghost" onPress={() => playDataUri(item.audio!)} />}
       {item.reply_reaction ? (
         <View className="gap-1 rounded-xl bg-green-50 p-3 dark:bg-green-950/40">
           <Text className="font-bold text-slate-900 dark:text-white">
             {REACTIONS[item.reply_reaction].emoji} {item.reply_from}: {REACTIONS[item.reply_reaction].label.toLowerCase()}
           </Text>
-          {item.reply_suggestion && <Text className="text-base text-conquista-dark dark:text-green-300">Sugestão: {item.reply_suggestion}</Text>}
+          {item.reply_suggestion && <Text style={targetTextStyle(pack)} className="text-base text-conquista-dark dark:text-green-300">Sugestão: {item.reply_suggestion}</Text>}
         </View>
       ) : (
         <Chip label="⏳ aguardando avaliação" tone="amber" />
