@@ -7,6 +7,9 @@ export interface ChangelogEntry {
 }
 
 export const CHANGELOG: ChangelogEntry[] = [
+  { date: '2026-10-02T01:20:01-03:00', summary: "feat: adiciona guarani antigo (colonial)" },
+  { date: '2026-10-02T01:15:01-03:00', summary: "docs: pesquisa línguas das famílias helênica, albanesa e armênia" },
+  { date: '2026-10-02T01:13:35-03:00', summary: "chore: atualiza o changelog do app" },
   { date: '2026-10-02T01:13:35-03:00', summary: "feat: adiciona maori" },
   { date: '2026-10-02T01:09:05-03:00', summary: "chore: atualiza o changelog do app" },
   { date: '2026-10-02T01:08:59-03:00', summary: "feat: adiciona navajo, guarani ñandeva e tapiete" },
