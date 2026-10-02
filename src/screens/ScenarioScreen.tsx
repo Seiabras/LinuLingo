@@ -7,7 +7,7 @@ import { ArrowLeft, Mic, Send } from 'lucide-react-native';
 import { Linu } from '@/components/Linu';
 import { Button, Chip, SpeakButton, Ipa } from '@/components/ui';
 import { useApp } from '@/services/app-state';
-import { targetTextStyle } from '@/services/direction';
+import { targetInputStyle, targetTextStyle } from '@/services/direction';
 import { canRecognize, listen, speak, stopSpeaking } from '@/services/speech';
 import { keywordHits, registerBreaks } from '@/services/answers';
 import { awardXp } from '@/database/queries';
@@ -201,7 +201,7 @@ export default function ScenarioScreen() {
                 placeholder={listening ? 'Ouvindo…' : `Responda em ${nomeIdioma(pack.name)}…`}
                 placeholderTextColor="#94A3B8"
                 autoCapitalize="none"
-                style={targetTextStyle(pack)}
+                style={targetInputStyle(pack)}
                 className="flex-1 rounded-full border-2 border-slate-200 bg-white px-4 py-2.5 text-base text-slate-900 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
               />
               <Pressable accessibilityLabel="Enviar" onPress={() => send(input)} disabled={!input.trim()} className={`h-12 w-12 items-center justify-center rounded-full bg-conecta ${input.trim() ? '' : 'opacity-40'}`}>

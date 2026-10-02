@@ -1,6 +1,8 @@
 import { Text, View } from 'react-native';
 import type { CultureCardSeed } from '@/data/types';
 import { Card, SpeakButton, Ipa } from './ui';
+import { useApp } from '@/services/app-state';
+import { targetTextStyle } from '@/services/direction';
 
 /**
  * Card de conhecimento prévio («Aprenda primeiro, pratique depois»):
@@ -8,6 +10,7 @@ import { Card, SpeakButton, Ipa } from './ui';
  * 4. guia de caracteres (quando o idioma tem letras próprias).
  */
 export function CulturalGrammarCard({ card, locale, compact = false }: { card: CultureCardSeed; locale: string; compact?: boolean }) {
+  const { pack } = useApp();
   return (
     <Card className="gap-4">
       <View className="flex-row items-center gap-3">
@@ -32,7 +35,7 @@ export function CulturalGrammarCard({ card, locale, compact = false }: { card: C
             <View key={target} className="flex-row items-center gap-3 rounded-xl bg-conecta-light/60 px-3 py-2 dark:bg-blue-950/60">
               <SpeakButton text={target.split('→').pop()!.trim()} locale={locale} size={16} />
               <View className="flex-1">
-                <Text className="font-bold text-conecta-dark dark:text-blue-300">{target}</Text>
+                <Text style={targetTextStyle(pack)} className="font-bold text-conecta-dark dark:text-blue-300">{target}</Text>
                 <Ipa text={target.split('→').pop()!.trim()} className="text-xs" />
                 <Text className="text-sm text-slate-600 dark:text-slate-400">{pt}</Text>
               </View>
@@ -47,7 +50,7 @@ export function CulturalGrammarCard({ card, locale, compact = false }: { card: C
             {card.character_guide.map(([ch, sound, example]) => (
               <View key={ch} className="min-w-[46%] flex-1 rounded-xl border border-slate-200 p-3 dark:border-slate-700">
                 <View className="flex-row items-center justify-between">
-                  <Text className="text-2xl font-extrabold text-fogo">{ch}</Text>
+                  <Text style={targetTextStyle(pack)} className="text-2xl font-extrabold text-fogo">{ch}</Text>
                   <SpeakButton text={example.split(',')[0]} locale={locale} size={14} />
                 </View>
                 <Text className="text-sm text-slate-700 dark:text-slate-300">{sound}</Text>

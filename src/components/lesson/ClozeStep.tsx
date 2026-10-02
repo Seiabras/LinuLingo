@@ -6,7 +6,7 @@ import { normalize, shuffle } from '@/services/answers';
 import * as haptics from '@/services/haptics';
 import { logMistake } from '@/services/mistakes';
 import { useApp } from '@/services/app-state';
-import { targetTextStyle } from '@/services/direction';
+import { targetInputStyle, targetTextStyle } from '@/services/direction';
 
 /**
  * Etapa 3 — preenchimento de lacunas (Speakly). Toque numa opção ou digite,
@@ -116,7 +116,7 @@ export function ClozeStep({ items, locale, specialChars, onDone }: { items: Cloz
             placeholder="Digite a palavra que falta"
             placeholderTextColor="#94A3B8"
             onSubmitEditing={() => typed.trim() && submit(typed)}
-            style={targetTextStyle(pack)}
+            style={targetInputStyle(pack)}
             className="rounded-2xl border-2 border-slate-200 bg-white px-4 py-3 text-lg text-slate-900 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
           />
           {!answered && <LetterPad onInsert={(ch) => setTyped((t) => t + ch)} onBackspace={() => setTyped((t) => t.slice(0, -1))} />}

@@ -5,7 +5,7 @@ import { ArrowLeft, Mic } from 'lucide-react-native';
 import { Screen, Button, Card, Chip, SectionTitle, SpeakButton, SpeechBubble, LetterPad } from '@/components/ui';
 import { Linu } from '@/components/Linu';
 import { useApp } from '@/services/app-state';
-import { targetTextStyle } from '@/services/direction';
+import { targetInputStyle, targetTextStyle } from '@/services/direction';
 import { awardXp, listJournal, saveJournal, submitToCommunity, type JournalEntry } from '@/database/queries';
 import { buildLexicon, checkJournal, countSentences, type JournalIssue } from '@/services/journal';
 import { canRecognize, listen } from '@/services/speech';
@@ -144,7 +144,7 @@ export default function JournalScreen() {
             placeholder="Azi am… Apoi… Seara…"
             placeholderTextColor="#94A3B8"
             accessibilityLabel="Seu texto do diário"
-            style={targetTextStyle(pack)}
+            style={targetInputStyle(pack)}
             className="min-h-[130px] rounded-2xl border-2 border-slate-200 bg-white p-4 text-lg text-slate-900 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
           />
           <View className="mt-2 flex-row flex-wrap items-center gap-2">

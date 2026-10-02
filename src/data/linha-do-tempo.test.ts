@@ -5,6 +5,7 @@ import { erasOf, officialToday, TIMELINES } from './linha-do-tempo';
 
 test('linha do tempo: todo país citado existe no mapa, e cada etapa só cresce ou muda com texto', () => {
   const isos = new Set(WORLD.map((c) => c.iso));
+  assert.equal(new Set(TIMELINES.map((f) => f.id)).size, TIMELINES.length, 'ids repetidos');
   for (const f of TIMELINES) {
     const eras = erasOf(f);
     assert.ok(eras.length >= 3, `${f.id}: poucas etapas`);
@@ -21,4 +22,8 @@ test('linha do tempo: o “hoje” vem dos dados do mapa (onde a família é ofi
   assert.ok(officialToday('Eslavo').includes('RUS'));
   assert.ok(officialToday('Germânico').includes('ISL'));
   assert.deepEqual(new Set(officialToday('Urálico')), new Set(['FIN', 'EST', 'HUN']));
+  assert.ok(officialToday('Túrquico').includes('TUR'));
+  assert.ok(officialToday('Austronésio').includes('IDN'));
+  assert.ok(officialToday('Tupi').includes('PRY'));
+  assert.ok(officialToday('Quéchua').includes('PER'));
 });

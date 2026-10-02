@@ -5,7 +5,7 @@ import { ArrowLeft } from 'lucide-react-native';
 import { Screen, Button, Card, Chip, SectionTitle, LetterPad, SpeechBubble } from '@/components/ui';
 import { Linu } from '@/components/Linu';
 import { useApp } from '@/services/app-state';
-import { targetTextStyle } from '@/services/direction';
+import { targetInputStyle, targetTextStyle } from '@/services/direction';
 import { awardXp, listJournal } from '@/database/queries';
 import { localDay, XP } from '@/services/progress';
 import { goBack } from '@/services/nav';
@@ -174,7 +174,7 @@ function PeerCard({ item, specialChars, onRate }: { item: CommunityRow; specialC
             multiline
             autoCapitalize="none"
             accessibilityLabel={`Sugestão para ${item.author_name}`}
-            style={targetTextStyle(pack)}
+            style={targetInputStyle(pack)}
             className="min-h-[70px] rounded-xl border-2 border-slate-200 bg-white p-3 text-base text-slate-900 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
           />
           <LetterPad small onInsert={(ch) => setText((t) => t + ch)} onBackspace={() => setText((t) => t.slice(0, -1))} />

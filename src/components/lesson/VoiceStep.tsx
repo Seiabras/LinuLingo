@@ -10,7 +10,7 @@ import { recognitionErrorMessage } from '@/services/recognition-error';
 import { markWords, matchesAny, pronunciationScore, type WordMark } from '@/services/answers';
 import * as haptics from '@/services/haptics';
 import { useApp } from '@/services/app-state';
-import { targetTextStyle } from '@/services/direction';
+import { targetInputStyle, targetTextStyle } from '@/services/direction';
 
 const MARK_CLASS: Record<WordMark, string> = {
   ok: 'bg-conquista-light text-conquista-dark dark:bg-green-950 dark:text-green-300',
@@ -117,7 +117,7 @@ export function VoiceStep({ challenge, locale, onDone }: { challenge: VoiceChall
               placeholderTextColor="#94A3B8"
               autoCapitalize="none"
               onSubmitEditing={() => typed.trim() && evaluate(typed)}
-              style={targetTextStyle(pack)}
+              style={targetInputStyle(pack)}
               className="rounded-2xl border-2 border-slate-200 bg-white px-4 py-3 text-lg text-slate-900 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
             />
             <Button title="Verificar" disabled={!typed.trim()} onPress={() => evaluate(typed)} />

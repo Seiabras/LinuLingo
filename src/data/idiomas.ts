@@ -115,6 +115,8 @@ import { OROMO } from './om';
 import { MARATHI } from './mr';
 import { AMARICO } from './am';
 import { MONGOL } from './mn';
+import { MONGOL_TRADICIONAL } from './mvf';
+import { MANCHU } from './mnc';
 import { GUARANI_NANDEVA } from './nhd';
 import { TAPIETE } from './tpj';
 import { HUNGARO } from './hu';
@@ -150,7 +152,7 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   hi: HINDI, gn: GUARANI, tpw: TUPI_ANTIGO, ha: HAUCA, ig: IGBO, yrl: NHEENGATU, bn: BENGALI, qu: QUECHUA, kgp: KAINGANG, tca: TIKUNA,
   xav: XAVANTE, tuo: TUKANO, gun: GUARANI_MBYA, ka: GEORGIANO, th: TAILANDES, km: KHMER,
   ay: AIMARA, kgk: GUARANI_KAIOWA, nah: NAUATLE, kpc: BANIWA, lo: LAOSIANO, cbs: HUNI_KUIN,
-  nv: NAVAJO, nhd: GUARANI_NANDEVA, tpj: TAPIETE, mi: MAORI, gnw: GUARANI_ANTIGO, haw: HAVAIANO, te: TELUGO, om: OROMO, mr: MARATHI, am: AMARICO, mn: MONGOL,
+  nv: NAVAJO, nhd: GUARANI_NANDEVA, tpj: TAPIETE, mi: MAORI, gnw: GUARANI_ANTIGO, haw: HAVAIANO, te: TELUGO, om: OROMO, mr: MARATHI, am: AMARICO, mn: MONGOL, mvf: MONGOL_TRADICIONAL, mnc: MANCHU,
   hu: HUNGARO, tsd: TSAKONIO, pcm: PIDGIN_NIGERIANO, ta: TAMIL, tl: TAGALO, hyw: ARMENIO_OCIDENTAL,
   tdt: TETUM, arn: MAPUDUNGUN, gd: GAELICO_ESCOCES, ht: CRIOULO_HAITIANO, ktn: KARITIANA, kmb: QUIMBUNDO,
   pln: PALENQUERO, kl: GROENLANDES, br: BRETAO, lkt: LAKOTA, se: SAMI_DO_NORTE, fon: FON, ar: ARABE,
@@ -291,6 +293,11 @@ export const LANGUAGES: LanguageInfo[] = [
   // mongol: família mongólica própria, sem parentesco comprovado com o turcaico/tungúsico (a hipótese
   // "altaica" é hoje vista como obsoleta) nem com qualquer outra família já no app
   MONGOL,
+  // a mesma língua na escrita tradicional, vertical (de cima pra baixo), a da Mongólia Interior
+  MONGOL_TRADICIONAL,
+  // manchu: família tungúsica, sem parentesco comprovado com o mongólico (a “altaica” é obsoleta),
+  // mas escrito com uma escrita vertical que nasceu da mongol
+  MANCHU,
   // húngaro: família urálica, mas ramo úgrico — diferente do ramo fínico do finlandês/estoniano
   HUNGARO,
   // tsacônio: indo-europeu, ramo helênico (como o grego), mas um ramo à parte dentro dele — descende
