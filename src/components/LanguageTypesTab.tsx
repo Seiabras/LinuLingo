@@ -12,11 +12,16 @@ import {
   CONTACT_LANGUAGES,
   CONTACT_STAGES,
   CONTROLLED,
+  CRYPTOLECTS,
   FORMAL_BRIDGE,
   FORMAL_GROUPS,
   HUMAN_VS_FORMAL,
   MODALITIES,
+  MORSE_NOTE,
+  MORSE_SOS,
+  MORSE_TABLE,
   ORIGINS,
+  PHONETIC_CIPHERS,
   PIE_NOTE,
   PIE_WORDS,
   PURPOSES,
@@ -30,6 +35,7 @@ import {
   type ConlangOrigin,
   type ConlangPurpose,
   type ConlangStage,
+  type SecretLanguage,
 } from '@/data/tipos-de-linguas';
 
 const PARTS = [
@@ -39,6 +45,7 @@ const PARTS = [
   { id: 'controladas', label: '📏 Controladas' },
   { id: 'modalidade', label: '👂 Modalidade' },
   { id: 'estado', label: '🧬 Vivas e mortas' },
+  { id: 'secretas', label: '🤫 Secretas e cifras' },
 ] as const;
 type PartId = (typeof PARTS)[number]['id'];
 
@@ -80,6 +87,7 @@ export function LanguageTypesTab() {
       {part === 'controladas' && <Controlled />}
       {part === 'modalidade' && <Modality />}
       {part === 'estado' && <State />}
+      {part === 'secretas' && <Secret />}
     </View>
   );
 }
@@ -458,6 +466,61 @@ function State() {
       <Pressable accessibilityRole="button" onPress={() => router.push('/mapa')} className="items-center rounded-2xl border-2 border-conecta/30 bg-white p-3 active:opacity-80 dark:bg-slate-900">
         <Text className="font-bold text-conecta">⏳ A linha do tempo das línguas fica no mapa</Text>
       </Pressable>
+    </>
+  );
+}
+
+function SecretCard({ s }: { s: SecretLanguage }) {
+  return (
+    <Card className="gap-1.5">
+      <View className="flex-row flex-wrap items-center gap-2">
+        <Text className="text-base font-extrabold text-slate-900 dark:text-white">{s.name}</Text>
+        <Chip label={s.kind} tone={s.kind === 'criptoleto' ? 'blue' : 'amber'} />
+      </View>
+      <Text className="text-xs text-slate-500 dark:text-slate-400">
+        📍 {s.where} · base: {s.base}
+      </Text>
+      <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">{s.text}</Text>
+      {s.sample && (
+        <View className="rounded-xl bg-amber-50 px-3 py-2 dark:bg-amber-950/40">
+          <Text className="font-bold text-slate-900 dark:text-white">{s.sample[0]}</Text>
+          <Text className="text-sm text-slate-600 dark:text-slate-400">{s.sample[1]}</Text>
+        </View>
+      )}
+    </Card>
+  );
+}
+
+function Secret() {
+  return (
+    <>
+      <Intro
+        title="Secretas e cifras"
+        text="Duas famílias bem diferentes de “língua escondida”: o criptoleto tem vocabulário próprio, usado de verdade por um grupo para não ser entendido por fora dele; a cifra fonética é só uma regra de transformação — qualquer um decifra assim que aprende a regra, não tem vocabulário nem gramática próprios."
+      />
+      <Title>Criptoletos</Title>
+      {CRYPTOLECTS.map((s) => (
+        <SecretCard key={s.name} s={s} />
+      ))}
+      <Title>Cifras fonéticas (brincadeiras de linguagem)</Title>
+      {PHONETIC_CIPHERS.map((s) => (
+        <SecretCard key={s.name} s={s} />
+      ))}
+      <Title>Código morse</Title>
+      <Card className="gap-2">
+        <Text className="text-sm leading-5 text-slate-600 dark:text-slate-400">{MORSE_NOTE}</Text>
+        <View className="flex-row flex-wrap gap-x-3 gap-y-1">
+          {MORSE_TABLE.map(([ch, code]) => (
+            <Text key={ch} className="font-mono text-sm text-slate-800 dark:text-slate-200">
+              <Text className="font-bold">{ch}</Text> {code}
+            </Text>
+          ))}
+        </View>
+        <View className="rounded-xl bg-amber-50 px-3 py-2 dark:bg-amber-950/40">
+          <Text className="font-mono font-bold text-slate-900 dark:text-white">{MORSE_SOS.signal}</Text>
+          <Text className="text-sm text-slate-600 dark:text-slate-400">{MORSE_SOS.text}</Text>
+        </View>
+      </Card>
     </>
   );
 }

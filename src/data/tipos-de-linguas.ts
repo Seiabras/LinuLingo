@@ -726,3 +726,95 @@ export const PIE_WORDS: { pie: string; means: string; children: string }[] = [
 
 export const PIE_NOTE =
   'Em 1868, o linguista August Schleicher escreveu uma pequena fábula em proto-indo-europeu reconstruído, “A ovelha e os cavalos”. Desde então, outros a reescreveram a cada avanço da reconstrução: comparar as versões mostra quanto a ciência mudou — e quanto uma protolíngua é uma hipótese.';
+
+// ---------- línguas secretas: criptoletos e cifras fonéticas ----------
+
+export type SecretKind = 'criptoleto' | 'cifra fonética';
+
+export interface SecretLanguage {
+  name: string;
+  kind: SecretKind;
+  base: string;
+  where: string;
+  text: string;
+  sample?: [string, string];
+}
+
+/** Criptoletos: vocabulário próprio, usado por um grupo de verdade para não ser entendido por fora. */
+export const CRYPTOLECTS: SecretLanguage[] = [
+  {
+    name: 'Pajubá',
+    kind: 'criptoleto',
+    base: 'iorubá e outras línguas da África Ocidental (umbundo, kicongo, jeje, fon), com palavras do português alteradas',
+    where: 'Brasil',
+    text: 'Nasceu nos terreiros de religiões afro-brasileiras (candomblé, umbanda), onde esse vocabulário já era usado nos rituais, e foi adotado pela comunidade LGBTQIA+ — sobretudo travestis e mulheres trans — como código de comunicação: durante a ditadura militar, ajudava a reconhecer quem era "de dentro" e driblar a repressão policial. O próprio nome vem do iorubá e significa algo como "mistério", "segredo".',
+    sample: ['Ocó', 'Homem (do iorubá “okó”, órgão sexual masculino, que passou a nomear o homem inteiro)'],
+  },
+  {
+    name: 'Verlan',
+    kind: 'criptoleto',
+    base: 'francês, com as sílabas invertidas',
+    where: 'França',
+    text: 'Inverte a ordem das sílabas da palavra original: “femme” (mulher) vira “meuf”, “flic” (policial) vira “keuf”. O próprio nome “verlan” é a inversão de “l’envers” (“o inverso”). Nasceu nos subúrbios populares de Paris e, com o tempo, ganhou o país inteiro pela música e pelo cinema — a ponto de muitas palavras verlanizadas (como “meuf”) virarem gíria comum, sem ninguém mais pensar na inversão.',
+    sample: ['Laisse béton.', 'Deixa pra lá. (“béton” é o verlan de “tombé”, dentro da expressão “laisse tomber”)'],
+  },
+  {
+    name: 'Polari',
+    kind: 'criptoleto',
+    base: 'italiano, romani, calão de marinheiro e gírias de teatro, misturados ao inglês',
+    where: 'Reino Unido',
+    text: 'Usado desde pelo menos o século XIX por atores, marinheiros, artistas de circo e, sobretudo, homens gays — numa época em que a homossexualidade era crime no Reino Unido (só deixou de ser em 1967), servia para driblar a polícia disfarçada e reconhecer outros membros da comunidade. O nome vem do italiano “parlare” (falar).',
+    sample: ['Vada the bona eek.', 'Veja o rosto bonito. (“vada” é ver, do italiano “vardare”; “bona” é bom; “eek” é rosto, de trás pra frente)'],
+  },
+  {
+    name: 'Lunfardo',
+    kind: 'criptoleto',
+    base: 'italiano (sobretudo dialetos do norte da Itália) misturado ao espanhol do Rio da Prata',
+    where: 'Argentina e Uruguai',
+    text: 'Nasceu como gíria de prisão, no fim do século XIX, para os guardas não entenderem os presos — a imigração italiana em massa para Buenos Aires e Montevidéu misturou dialetos italianos ao espanhol local, e a gíria se espalhou da cadeia pra cidade inteira. Ficou famoso pelas letras de tango, que o levaram a todas as classes sociais. O próprio nome vem de “lombardo” (da região da Lombardia, Itália, de onde vieram muitos imigrantes).',
+    sample: ['Laburo', 'Trabalho (do italiano “lavorare”)'],
+  },
+];
+
+/** Cifras fonéticas (ludlings): uma regra de transformação que qualquer um decifra, sabendo a regra — não é um vocabulário próprio de um grupo. */
+export const PHONETIC_CIPHERS: SecretLanguage[] = [
+  {
+    name: 'Língua do P',
+    kind: 'cifra fonética',
+    base: 'português',
+    where: 'Brasil (com uma variante parecida em Portugal)',
+    text: 'Brincadeira de criança: encaixa a consoante “p” mais a vogal de cada sílaba, repetindo o som dela. É uma cifra fonética, não uma língua de verdade — não tem vocabulário nem gramática próprios, só uma regra de transformação que qualquer um decifra assim que a aprende. A escritora Clarice Lispector até deu esse nome a um conto, “A língua do P”, no livro “A Via Crucis do Corpo” (1974).',
+    sample: ['Oi, popi!', 'Oi! (a sílaba “oi” ganha o “p” e repete a vogal: oi + p + oi)'],
+  },
+  {
+    name: 'Pig Latin',
+    kind: 'cifra fonética',
+    base: 'inglês',
+    where: 'Estados Unidos e outros países de língua inglesa',
+    text: 'Move a consoante (ou o grupo de consoantes) do começo da palavra para o fim, e acrescenta “ay”. Palavras que já começam com vogal só ganham “way” ou “yay” no fim, sem mover nada.',
+    sample: ['Igpay Atinlay', '“Pig Latin” na própria Pig Latin (pig → igpay, latin → atinlay)'],
+  },
+  {
+    name: 'Javanais',
+    kind: 'cifra fonética',
+    base: 'francês',
+    where: 'França',
+    text: 'Encaixa “av” antes de cada vogal (ou seja, depois de cada consoante). Surgiu entre os marginais de Paris no Segundo Império (meados do século XIX) e virou brincadeira popular por toda a França, usada até mais ou menos os anos 1960 — apesar do nome, não tem relação nenhuma com o javanês, língua de verdade da Indonésia.',
+    sample: ['Bavonjavour!', 'Bonjour! (olá; bon-jour ganha “av” depois de cada consoante: b-av-on-j-av-our)'],
+  },
+];
+
+/** Código morse: não é uma língua nem uma cifra de som — é um jeito de transmitir letras por sinal (ponto/traço, luz, som, toque). */
+export const MORSE_NOTE =
+  'O código morse não é uma língua nem uma cifra fonética: ninguém “fala” morse, é um jeito de transmitir as LETRAS de uma língua (geralmente o alfabeto latino) por sinal — ponto e traço, que viram bipe curto/longo no som, lampejo curto/longo na luz, ou toque curto/longo no ombro. Criado por Samuel Morse e Alfred Vail nos Estados Unidos, nos anos 1830-40, para o telégrafo elétrico; o padrão internacional usado hoje é uma revisão de 1865 (de Friedrich Gerke), diferente do morse original americano. Cada letra tem seu próprio padrão de pontos e traços — não existe tradução de frase inteira, só letra por letra.';
+
+export const MORSE_TABLE: [string, string][] = [
+  ['A', '.-'], ['B', '-...'], ['C', '-.-.'], ['D', '-..'], ['E', '.'], ['F', '..-.'], ['G', '--.'], ['H', '....'],
+  ['I', '..'], ['J', '.---'], ['K', '-.-'], ['L', '.-..'], ['M', '--'], ['N', '-.'], ['O', '---'], ['P', '.--.'],
+  ['Q', '--.-'], ['R', '.-.'], ['S', '...'], ['T', '-'], ['U', '..-'], ['V', '...-'], ['W', '.--'], ['X', '-..-'],
+  ['Y', '-.--'], ['Z', '--..'],
+  ['0', '-----'], ['1', '.----'], ['2', '..---'], ['3', '...--'], ['4', '....-'], ['5', '.....'],
+  ['6', '-....'], ['7', '--...'], ['8', '---..'], ['9', '----.'],
+];
+
+export const MORSE_SOS = { signal: '... --- ...', text: 'SOS: fácil de bater e de reconhecer mesmo sem experiência — por isso virou o sinal internacional de socorro em 1906, e continua sendo, mesmo hoje.' };
