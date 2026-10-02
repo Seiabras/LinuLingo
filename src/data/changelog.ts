@@ -7,6 +7,10 @@ export interface ChangelogEntry {
 }
 
 export const CHANGELOG: ChangelogEntry[] = [
+  { date: '2026-10-01T21:28:52-03:00', summary: "feat: adiciona huni kuĩ (hãtxa kuĩ)" },
+  { date: '2026-10-01T20:54:36-03:00', summary: "feat: adiciona PageFlipTransition entre as etapas da lição" },
+  { date: '2026-10-01T20:44:57-03:00', summary: "docs: atualiza PENDENTES.md (baniwa, laosiano, lista de guarani e indígenas revisada)" },
+  { date: '2026-10-01T20:44:19-03:00', summary: "chore: atualiza o changelog do app" },
   { date: '2026-10-01T20:44:19-03:00', summary: "feat: adiciona baniwa e laosiano" },
   { date: '2026-10-01T20:32:53-03:00', summary: "chore: atualiza o changelog do app" },
   { date: '2026-10-01T20:32:49-03:00', summary: "feat: adiciona aimará, guarani kaiowá e náuatle" },
