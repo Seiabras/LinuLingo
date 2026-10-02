@@ -9,7 +9,7 @@ import { ArrowLeft, Globe, Minus, Plus, Search, X } from 'lucide-react-native';
 import { Screen, Button, Card, Chip, SectionTitle, SpeakButton } from '@/components/ui';
 import { useApp } from '@/services/app-state';
 import { MAP_H, MAP_W, WORLD, type MapCountry } from '@/data/mapa-mundi';
-import { addGlottolog, ALL_MAP_LANGUAGES, byKinship, findMapLanguage, flagOf, languagesIn, notableLanguagesIn, MAP_LANGUAGES, ROLE_LABEL, searchLanguages, STATUS_LABEL, type LangRole, type MapLanguage } from '@/data/onde-se-fala';
+import { addGlottolog, ALL_MAP_LANGUAGES, byKinship, findMapLanguage, flagOf, initialOf, languagesIn, listLanguages, notableLanguagesIn, MAP_LANGUAGES, ROLE_LABEL, searchLanguages, STATUS_LABEL, type LangRole, type MapLanguage } from '@/data/onde-se-fala';
 import { FAUNA_MUSICA, HOMELANDS } from '@/data/fauna-musica';
 import { CULTURA_PAISES, CULTURE_KINDS } from '@/data/cultura-paises';
 import { WORLD_REGIONS } from '@/data/regioes';
@@ -60,12 +60,23 @@ const OPACITY: Record<LangRole, number> = { oficial: 1, regional: 0.55, falada: 
 /** Idioma do app (dá para estudar) ou planejado (em breve). */
 const appStatus = (code: string): 'app' | 'breve' | null => (isAvailable(code) ? 'app' : LANGUAGES.some((l) => l.code === code) ? 'breve' : null);
 
+/** A lista de “Todos os idiomas” mostra de 50 em 50 (são milhares: desenhar todos de uma vez trava o celular). */
+const LIST_PAGE = 50;
+type ListOrder = 'falados' | 'az' | 'app';
+const LIST_ORDERS: [ListOrder, string][] = [
+  ['falados', 'Mais falados'],
+  ['az', 'A–Z'],
+  ['app', '📚 No app'],
+];
+
 /** Sotaques e dialetos (de todos os idiomas do app) de um país ou de uma subdivisão dele. */
 function accentsAt(iso: string, code?: string, parent?: string): (Accent & { lang: string })[] {
   return Object.values(PACKS).flatMap((p) =>
     (p.accents ?? [])
       .filter((a) => a.country === iso && (!code || a.subdivisions?.includes(code) || (!!parent && a.subdivisions?.includes(parent))))
-      .map((a) => ({ ...a, lang: p.name.toLowerCase() })),
+      // o nome do pacote (p.name) é o da variante padrão do curso (“Português de Portugal”); um sotaque
+      // de outra variante (o manezinho é pt-BR) precisa do nome da SUA variante, não do padrão do curso
+      .map((a) => ({ ...a, lang: (p.variants?.find((v) => v.code === a.variant)?.name ?? p.name).toLowerCase() })),
   );
 }
 
@@ -98,14 +109,33 @@ export default function MapScreen() {
       alive = false;
     };
   }, []);
+  // a lista completa: sem busca, todos os idiomas do mundo (mais falados, de A a Z ou só os do app)
+  const [listOrder, setListOrder] = useState<ListOrder>('falados');
+  const [letter, setLetter] = useState('A');
+  const [shown, setShown] = useState(LIST_PAGE);
   // eslint-disable-next-line react-hooks/exhaustive-deps -- glotto muda a lista de onde a busca lê
-  const found = useMemo(() => (showAll ? searchLanguages(query) : []), [showAll, query, glotto]);
+  const ranked = useMemo(() => (showAll ? listLanguages(listOrder === 'falados' ? 'falados' : 'az') : []), [showAll, listOrder, glotto]);
+  const initials = useMemo(() => [...new Set(ranked.map(initialOf))].sort((a, b) => (a === '#' ? 1 : b === '#' ? -1 : a.localeCompare(b))), [ranked]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- glotto muda a lista de onde a busca lê
+  const searched = useMemo(() => (showAll && query.trim() ? searchLanguages(query, Infinity) : []), [showAll, query, glotto]);
+  const pool = query.trim()
+    ? searched
+    : listOrder === 'az'
+      ? ranked.filter((l) => initialOf(l) === letter)
+      : listOrder === 'app'
+        ? ranked.filter((l) => appStatus(l.code) === 'app')
+        : ranked;
+  const found = pool.slice(0, shown);
+  const changeQuery = (q: string) => {
+    setQuery(q);
+    setShown(LIST_PAGE);
+  };
   const [showExtinct, setShowExtinct] = useState(false);
   const [allLangs, setAllLangs] = useState(false);
   const pickLanguage = (l: MapLanguage) => {
     setLangCode(l.code);
     setShowAll(false);
-    setQuery('');
+    changeQuery('');
   };
   const [selected, setSelected] = useState<MapCountry | null>(() => WORLD.find((c) => c.iso === (HOMELANDS[pack.code]?.[0] ?? '')) ?? null);
   const [size, setSize] = useState({ w: 360, h: 240 });
@@ -438,20 +468,63 @@ export default function MapScreen() {
                 <TextInput
                   accessibilityLabel="Buscar idioma"
                   value={query}
-                  onChangeText={setQuery}
+                  onChangeText={changeQuery}
                   placeholder="Buscar: guarani, suaíli, basco, tupi…"
                   placeholderTextColor="#94A3B8"
                   autoCorrect={false}
                   className="flex-1 py-2.5 text-base text-slate-900 dark:text-white"
                 />
                 {query !== '' && (
-                  <Pressable accessibilityLabel="Limpar busca" onPress={() => setQuery('')} hitSlop={8}>
+                  <Pressable accessibilityLabel="Limpar busca" onPress={() => changeQuery('')} hitSlop={8}>
                     <X size={16} color="#94A3B8" />
                   </Pressable>
                 )}
               </View>
+              {!query.trim() && (
+                <View className="flex-row gap-1 rounded-xl bg-slate-100 p-1 dark:bg-slate-800">
+                  {LIST_ORDERS.map(([k, label]) => (
+                    <Pressable
+                      key={k}
+                      accessibilityRole="tab"
+                      accessibilityState={{ selected: listOrder === k }}
+                      onPress={() => {
+                        setListOrder(k);
+                        setShown(LIST_PAGE);
+                      }}
+                      className={`flex-1 items-center rounded-lg py-1.5 ${listOrder === k ? 'bg-white dark:bg-slate-950' : ''}`}
+                    >
+                      <Text className={`text-sm font-bold ${listOrder === k ? 'text-conecta' : 'text-slate-500 dark:text-slate-400'}`}>{label}</Text>
+                    </Pressable>
+                  ))}
+                </View>
+              )}
+              {!query.trim() && listOrder === 'az' && (
+                <View className="flex-row flex-wrap gap-1">
+                  {initials.map((c) => (
+                    <Pressable
+                      key={c}
+                      accessibilityRole="button"
+                      accessibilityLabel={c === '#' ? 'Outros (não começam com letra)' : `Letra ${c}`}
+                      accessibilityState={{ selected: letter === c }}
+                      onPress={() => {
+                        setLetter(c);
+                        setShown(LIST_PAGE);
+                      }}
+                      className={`h-8 w-8 items-center justify-center rounded-lg ${letter === c ? 'bg-conecta' : 'bg-slate-100 dark:bg-slate-800'}`}
+                    >
+                      <Text className={`font-bold ${letter === c ? 'text-white' : 'text-slate-600 dark:text-slate-300'}`}>{c}</Text>
+                    </Pressable>
+                  ))}
+                </View>
+              )}
               <Text className="text-xs text-slate-500 dark:text-slate-400">
-                {query ? `${found.length === 40 ? 'Os 40 primeiros' : found.length} resultados` : 'Os mais falados do mundo. Busque pelo nome, pelo nome no próprio idioma ou pela família.'}
+                {query.trim()
+                  ? `${pool.length} ${pool.length === 1 ? 'resultado' : 'resultados'}`
+                  : listOrder === 'az'
+                    ? `${pool.length} idiomas com a letra ${letter === '#' ? 'de outro alfabeto' : letter}, de ${ranked.length} no mundo.`
+                    : listOrder === 'app'
+                      ? `${pool.length} idiomas que o app ensina.`
+                      : `Todos os ${ranked.length} idiomas do mundo, do mais falado ao menos. Busque pelo nome, pelo nome no próprio idioma ou pela família.`}
               </Text>
               {found.map((l) => {
                 const st = appStatus(l.code);
@@ -477,6 +550,13 @@ export default function MapScreen() {
                   </Pressable>
                 );
               })}
+              {pool.length > found.length && (
+                <Button
+                  title={`Mostrar mais (${pool.length - found.length} ${pool.length - found.length === 1 ? 'restante' : 'restantes'})`}
+                  variant="ghost"
+                  onPress={() => setShown((n) => n + LIST_PAGE * 2)}
+                />
+              )}
             </Card>
           )}
 
