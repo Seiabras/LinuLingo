@@ -10,9 +10,9 @@
  * /s/), "chh" para ఛ, "sh" para శ/ష, e descarta os pontos de retroflexa (ṭ ḍ ṇ ṣ → t d n sh) por
  * não terem valor pronunciável para quem está começando — seguindo o mesmo critério do arquivo de
  * devanágari. As duas letras retroflexas/vibrantes exclusivas do télugo que não têm par no
- * devanágari do hindi, ళ (lateral retroflexa) e ఱ (vibrante, "bandi ra"), viram "L" e "R"
- * maiúsculos — a mesma solução usada lá para o ळ do marata — para não colidirem com ల/ర na leitura
- * (నీళ్ళు "nīLLu" × నీరు "nīru" não ficam iguais).
+ * devanágari do hindi, ళ (lateral retroflexa) e ఱ (vibrante, "bandi ra"), viram "l" e "r" minúsculos,
+ * iguais a ల/ర — mesma simplificação já aplicada ao ळ do marata (também perde a distinção com ल):
+ * um diacrítico maiúsculo confunde mais do que ajuda um iniciante, e colidir é melhor que parecer erro.
  *
  * Os mácrons de vogal longa (ā ī ū) ficam, pela mesma razão do arquivo de devanágari: distinguem
  * pares que importam e já aparecem nos parênteses de pronúncia deste próprio vocabulário télugo
@@ -79,8 +79,8 @@ const CONSONANTS: Record<string, string> = {
   ప: 'p', ఫ: 'ph', బ: 'b', భ: 'bh', మ: 'm',
   య: 'y', ర: 'r', ల: 'l', వ: 'v',
   శ: 'sh', ష: 'sh', స: 's', హ: 'h',
-  ళ: 'L', // lateral retroflexa, exclusiva do télugo (నీళ్ళు × నీరు não podem colidir)
-  ఱ: 'R', // vibrante "bandi ra", exclusiva do télugo (hoje quase sempre lida como ర dobrado)
+  ళ: 'l', // lateral retroflexa, exclusiva do télugo; colide com ల na leitura, mesma simplificação do ळ marata
+  ఱ: 'r', // vibrante "bandi ra", exclusiva do télugo (hoje quase sempre lida como ర dobrado); colide com ర
   ఴ: 'zh', // lllla, letra histórica/rarissima (aparentada do ழ tâmil e ഴ malaiala); não usada no télugo moderno
 };
 
