@@ -123,10 +123,26 @@ commitado.
   (árabe) continua bloqueado por RTL (ver abaixo).
 
 ### Pendência técnica: escrita da direita pra esquerda (RTL)
-O app nunca precisou disso até agora (nenhum idioma atual é RTL). Árabe (ar) e iídiche (yi) estão
-parados por causa disso — teclado, cloze, comparação de resposta e o layout geral assumem texto da
-esquerda pra direita. Resolver isso (telas, `writingDirection`, o teclado virtual, o SM-2/cloze)
-antes de começar esses dois.
+**Resolvida em grande parte, 02/10/2026**: `src/services/direction.ts` (`isRtl`/`targetTextStyle`)
+está aplicado em ~15 telas/componentes (ImmersionStep, ClozeStep, VoiceStep, StoryScreen, etc.) e
+funciona bem para blocos 100% no idioma-alvo — confirmado com teste visual de verdade (Playwright)
+no pacote `ar`. Sete pacotes RTL no ar: ar, arz, fa, ur, yi, he, ckb (kmr e mt são semíticos/do
+Oriente Médio mas usam alfabeto latino, não são RTL).
+
+**Bug real encontrado no teste visual, ainda NÃO corrigido**: quando um texto majoritariamente em
+PORTUGUÊS intercala trechos citados no idioma-alvo (ex.: `card.culture_tip` citando "سلام" (salām)
+várias vezes seguidas, ou a saudação `pack.phrases.hi` no início da bolha de fala do Linu), o
+algoritmo de bidi do navegador reordena as ORAÇÕES EM PORTUGUÊS ao redor da citação RTL — não é
+`writingDirection` nem `targetTextStyle` fazendo isso errado, é o comportamento padrão do bidi
+quando duas direções se intercalam sem isolamento. Com uma citação curta e isolada o efeito é
+pequeno; com várias no mesmo parágrafo (como em `ar`'s `culture_tip`, que tem 5), o efeito é severo
+e prejudica a leitura do PORTUGUÊS. Mesmo problema que a Wikipédia resolve com `<bdi>`/isolamento
+Unicode (U+2066 LRI / U+2068 FSI … U+2069 PDI). Conserto provável: uma função que varre o texto por
+trechos em escrita não latina e os envolve em isolamento bidi (FSI…PDI) na camada de apresentação,
+não no conteúdo — mesmo padrão de `targetTextStyle`. Achado e documentado por um subagente desta
+sessão (pacote `ar`) com capturas de tela reais; ainda não corrigido porque as telas envolvidas
+(`CulturalGrammarCard.tsx`, `TutorialScreen.tsx`, `direction.ts`) estavam sendo editadas ao mesmo
+tempo por outra sessão (escrita vertical mongol/manchu) — avisada, ver resposta no histórico.
 
 ### Como fazer um pacote novo
 - Modelo: `src/data/rm/` e `src/data/lad/`. Para uma língua morta, veja `src/data/la/`; para uma
