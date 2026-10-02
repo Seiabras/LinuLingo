@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
-import { WordImage } from '@/components/WordImage';
+import { WordImage, photoFor, pictoFor } from '@/components/WordImage';
 import type { VocabWithSRS } from '@/types';
 import { Button, SpeakButton, Ipa } from '../ui';
 import { speak } from '@/services/speech';
@@ -15,6 +15,21 @@ export interface WordResult {
   vocabId: string;
   quality: number;
   correct: boolean;
+}
+
+/**
+ * A imagem que `WordImage` realmente mostra pra essa palavra (foto > pictograma > emoji), como uma
+ * chave só pra comparar: duas palavras com essa chave igual são visualmente a MESMA figura. Evita um
+ * cartão de imersão com duas opções "certas" por acaso (ex.: duas palavras que viram o mesmo emoji,
+ * ou o mesmo pictograma por sentidos parecidos).
+ */
+function imageKey(w: Pick<VocabWithSRS, 'word_native' | 'word_target' | 'part_of_speech' | 'emoji'>): string {
+  const ctx = { pos: w.part_of_speech, target: w.word_target };
+  const photo = photoFor(w.word_native, ctx);
+  if (photo) return `photo:${photo.src}`;
+  const picto = pictoFor(w.word_native, ctx);
+  if (picto) return `picto:${picto.src}`;
+  return `emoji:${w.emoji ?? ''}`;
 }
 
 /**
@@ -34,7 +49,8 @@ export function ImmersionStep({ words, pool, locale, onDone }: { words: VocabWit
 
   const options = useMemo(() => {
     if (!word) return [];
-    const others = shuffle(pool.filter((p) => p.id !== word.id && p.emoji)).slice(0, 2);
+    const wordKey = imageKey(word);
+    const others = shuffle(pool.filter((p) => p.id !== word.id && p.emoji && imageKey(p) !== wordKey)).slice(0, 2);
     return shuffle([word, ...others]);
   }, [word, pool]);
 
