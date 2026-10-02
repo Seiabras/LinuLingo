@@ -33,6 +33,8 @@ export const LADINO_DOLOMITAS: LanguagePack = {
   journalPrompts: JOURNAL_PROMPTS_LLD,
   shadowing: SHADOWING_LLD,
   specialChars: ['á', 'é', 'í', 'ó', 'ë', 'ö', 'ü'],
+  // masculino e feminino, sem neutro
+  genders: ['m', 'f'],
   greeting: 'Bun de',
   sampleSentence: 'Bun de! Iö á inom Linu. Nos imparun le ladin!',
   phrases: { hi: 'Bun de!', thanks: 'Dilan!', letsStart: ['Nos scomenciun!', 'Vamos começar!'] },

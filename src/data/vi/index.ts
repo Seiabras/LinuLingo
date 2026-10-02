@@ -32,6 +32,8 @@ export const VIETNAMITA: LanguagePack = {
   journalPrompts: JOURNAL_PROMPTS_VI,
   shadowing: SHADOWING_VI,
   specialChars: ['â', 'ă', 'đ', 'ê', 'ô', 'ơ', 'ư', 'á', 'à', 'ả', 'ã', 'ạ'],
+  // o vietnamita não marca gênero gramatical: os substantivos não se dividem por gênero
+  genders: [],
   greeting: 'Xin chào',
   sampleSentence: 'Xin chào! Tôi tên là Linu. Chúng ta cùng học tiếng Việt nhé!',
   phrases: { hi: 'Xin chào!', thanks: 'Cảm ơn!', letsStart: ['Bắt đầu thôi!', 'Vamos começar!'] },

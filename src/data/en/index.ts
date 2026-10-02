@@ -34,6 +34,8 @@ export const INGLES: LanguagePack = {
   journalPrompts: JOURNAL_PROMPTS_EN,
   shadowing: SHADOWING_EN,
   specialChars: [],
+  // o inglês não marca gênero gramatical: os substantivos não se dividem por gênero
+  genders: [],
   greeting: 'Hello',
   sampleSentence: 'Hello! My name is Linu. Let\'s learn English!',
   phrases: { hi: 'Hi!', thanks: 'Thanks!', letsStart: ['Let\'s start!', 'Vamos começar!'] },

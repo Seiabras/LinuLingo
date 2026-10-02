@@ -34,6 +34,8 @@ export const ASTURIANO: LanguagePack = {
   journalPrompts: JOURNAL_PROMPTS_AST,
   shadowing: SHADOWING_AST,
   specialChars: ['á', 'é', 'í', 'ó', 'ú', 'ñ', 'ü'],
+  // masculino e feminino, sem neutro
+  genders: ['m', 'f'],
   greeting: 'Hola',
   sampleSentence: 'Hola! Llámome Linu. Vamos deprender asturianu!',
   phrases: { hi: 'Hola!', thanks: 'Gracies!', letsStart: ['Entamamos!', 'Vamos começar!'] },

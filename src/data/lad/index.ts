@@ -33,6 +33,8 @@ export const JUDEU_ESPANHOL: LanguagePack = {
   journalPrompts: JOURNAL_PROMPTS_LAD,
   shadowing: SHADOWING_LAD,
   specialChars: [],
+  // masculino e feminino, sem neutro
+  genders: ['m', 'f'],
   greeting: 'Ke haber',
   sampleSentence: 'Ke haber? Me yamo Linu. Vamos ambezar ladino!',
   phrases: { hi: 'Ke haber?', thanks: 'Grasias!', letsStart: ['Vamos!', 'Vamos começar!'] },

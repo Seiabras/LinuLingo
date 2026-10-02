@@ -36,6 +36,8 @@ export const GALEGO: LanguagePack = {
   journalPrompts: JOURNAL_PROMPTS_GL,
   shadowing: SHADOWING_GL,
   specialChars: ['á', 'é', 'í', 'ó', 'ú', 'ñ', 'ü'],
+  // masculino e feminino, sem neutro
+  genders: ['m', 'f'],
   greeting: 'Ola',
   sampleSentence: 'Ola! Chámome Linu. Imos aprender galego!',
   phrases: { hi: 'Ola!', thanks: 'Grazas!', letsStart: ['Imos comezar!', 'Vamos começar!'] },

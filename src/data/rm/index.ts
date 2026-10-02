@@ -32,6 +32,8 @@ export const ROMANCHE: LanguagePack = {
   journalPrompts: JOURNAL_PROMPTS_RM,
   shadowing: SHADOWING_RM,
   specialChars: ['à', 'è', 'é', 'ì', 'ò', 'ù'],
+  // masculino e feminino, sem neutro
+  genders: ['m', 'f'],
   greeting: 'Allegra',
   sampleSentence: 'Allegra! Jau hai num Linu. Emprendain rumantsch!',
   phrases: { hi: 'Allegra!', thanks: 'Grazia!', letsStart: ['Nus cumenzain!', 'Vamos começar!'] },

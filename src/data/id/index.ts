@@ -34,6 +34,8 @@ export const INDONESIO: LanguagePack = {
   journalPrompts: JOURNAL_PROMPTS_ID,
   shadowing: SHADOWING_ID,
   specialChars: [],
+  // o indonésio não marca gênero gramatical: os substantivos não se dividem por gênero
+  genders: [],
   greeting: 'Halo',
   sampleSentence: 'Halo! Nama saya Linu. Ayo belajar bahasa Indonesia!',
   phrases: { hi: 'Halo!', thanks: 'Terima kasih!', letsStart: ['Ayo mulai!', 'Vamos começar!'] },

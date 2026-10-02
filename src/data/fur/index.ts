@@ -33,6 +33,8 @@ export const FRIULANO: LanguagePack = {
   journalPrompts: JOURNAL_PROMPTS_FUR,
   shadowing: SHADOWING_FUR,
   specialChars: ['à', 'è', 'ì', 'ò', 'ù', 'â', 'ê', 'î', 'ô', 'û', 'ç'],
+  // masculino e feminino, sem neutro
+  genders: ['m', 'f'],
   greeting: 'Mandi',
   sampleSentence: 'Mandi! O mi clami Linu. Imparìn il furlan!',
   phrases: { hi: 'Mandi!', thanks: 'Graciis!', letsStart: ['Tachìn!', 'Vamos começar!'] },

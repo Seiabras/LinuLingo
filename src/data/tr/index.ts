@@ -32,6 +32,8 @@ export const TURCO: LanguagePack = {
   journalPrompts: JOURNAL_PROMPTS_TR,
   shadowing: SHADOWING_TR,
   specialChars: ['ç', 'ğ', 'ı', 'İ', 'ö', 'ş', 'ü'],
+  // o turco não marca gênero gramatical: os substantivos não se dividem por gênero
+  genders: [],
   greeting: 'Merhaba',
   sampleSentence: 'Merhaba! Benim adım Linu. Haydi Türkçe öğrenelim!',
   phrases: { hi: 'Merhaba!', thanks: 'Teşekkürler!', letsStart: ['Haydi başlayalım!', 'Vamos começar!'] },

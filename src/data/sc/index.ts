@@ -33,6 +33,8 @@ export const SARDO: LanguagePack = {
   journalPrompts: JOURNAL_PROMPTS_SC,
   shadowing: SHADOWING_SC,
   specialChars: ['à', 'è', 'ì', 'ò', 'ù'],
+  // masculino e feminino, sem neutro
+  genders: ['m', 'f'],
   greeting: 'Bona die',
   sampleSentence: 'Bona die! Mi naro Linu. Imparamus su sardu!',
   phrases: { hi: 'Salude!', thanks: 'Gràtzias!', letsStart: ['Ajò!', 'Vamos começar!'] },

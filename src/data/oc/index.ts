@@ -32,6 +32,8 @@ export const OCCITANO: LanguagePack = {
   journalPrompts: JOURNAL_PROMPTS_OC,
   shadowing: SHADOWING_OC,
   specialChars: ['à', 'è', 'é', 'í', 'ò', 'ó', 'ú', 'ï', 'ç'],
+  // masculino e feminino, sem neutro
+  genders: ['m', 'f'],
   greeting: 'Adieu',
   sampleSentence: "Adieu! M'apèli Linu. Anèm aprendre occitan!",
   phrases: { hi: 'Adieu!', thanks: 'Mercé!', letsStart: ['Anèm!', 'Vamos começar!'] },
