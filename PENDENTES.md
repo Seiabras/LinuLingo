@@ -399,11 +399,14 @@ mais detalhe do usuário antes de mexer em código.
     europeu, ramo britônico, irmão do galês, diferente do goidélico do gaélico escocês/irlandês) e
     lakota (`lkt` — nova família "Siuano (Sioux)" na lista fechada de `conteudo.test.ts`; marca a
     pessoa no verbo, não com pronome + conjugação; partículas de fim de frase diferentes conforme
-    quem fala é homem ou mulher).
-  - **Em andamento** (pacote do zero, igual aos outros): saami do norte (`se` — a variedade sami mais
+    quem fala é homem ou mulher) e saami do norte (`se` — urálico, ramo sámi; a variedade sami mais
     falada, ~15-25 mil falantes; as outras línguas sami, como a lule e a skolt, têm código próprio à
-    parte).
-  - **"Língua geral de mina"**: pesquisado em 02/10/2026. Descartada a hipótese de ser a língua
+    parte — a escolha de qual variedade construir está documentada no próprio pacote).
+  - **Todos os 12 idiomas pedidos pelo Matheus, feitos em 02/10/2026**: tétum, mapudungún, karitiana,
+    kimbundu, gaélico escocês, crioulo haitiano, groenlandês, palenquero, saami do norte, bretão,
+    lakota (todos acima) — e **fon** (`fon`), construído no lugar da "língua geral de mina" ambígua.
+  - **"Língua geral de mina" → fon (`fon`), feito em 02/10/2026, mas como DECISÃO DESTA SESSÃO, NÃO
+    CONFIRMADA PELO MATHEUS** — pesquisado antes de construir: descartada a hipótese de ser a língua
     geral tupi (nheengatu, `yrl`, ou a paulista) — nenhuma fonte liga as duas coisas. Confirmado:
     "mina" vem da Costa da Mina/São Jorge da Mina (Elmina, Gana de hoje) e remete ao Tambor de Mina e
     ao candomblé jeje, cujos cânticos (na Casa das Minas, São Luís/MA) são na "língua jeje" — uma
@@ -413,10 +416,13 @@ mais detalhe do usuário antes de mexer em código.
     encontrada é de 1969, em francês, sem acesso). O fon (`fon`) em si tem base real e sólida
     (gramática, dicionário, ~2,3 milhões de falantes, língua oficial do Benim) — mas o próprio registro
     ritual brasileiro (os cânticos da Casa das Minas) não é ensinável sem inventar: a etnografia
-    acadêmica descreve esse registro como fragmentado e alterado ao longo dos séculos. Decisão: como o
-    pedido original citava justamente essa tradição brasileira, e a resposta mais honesta (fon, com
-    nota cultural ligando à Costa da Mina/jeje) é uma extrapolação razoável, mas não exatamente o que
-    foi pedido — fica como item pra confirmar com o Matheus antes de começar, em vez de presumir.
+    acadêmica descreve esse registro como fragmentado e alterado ao longo dos séculos. Como o pedido
+    original citava justamente essa tradição brasileira, e a resposta mais honesta (fon, com nota
+    cultural ligando à Costa da Mina/jeje, em `cognateNote`/`incomplete.note` do pacote) é uma
+    extrapolação razoável mas não exatamente o que foi pedido, **o pacote foi construído mesmo assim
+    como a melhor aposta, mas precisa da confirmação do Matheus** — se ele quis outra coisa (a língua
+    "mina"/gen literal, ou nem isso), o pacote fica disponível de qualquer forma (é uma língua real e
+    bem documentada do Benim), só a ligação com o pedido original que pode estar errada.
   - **Farsi (fa)**: bloqueado por RTL, mesmo motivo do árabe e do urdu (ver "Pendência técnica: RTL"
     acima) — não dá pra começar antes de resolver a escrita direita-pra-esquerda.
   - **Talian**: não tem código ISO 639-3 próprio — é classificado como um dialeto/variante do vêneto
