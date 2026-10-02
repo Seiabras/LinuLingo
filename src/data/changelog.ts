@@ -7,6 +7,17 @@ export interface ChangelogEntry {
 }
 
 export const CHANGELOG: ChangelogEntry[] = [
+  { date: '2026-10-02T02:15:15-03:00', summary: "feat: aplica direção RTL ao texto do idioma-alvo (palácio, confusões, vocabulário)" },
+  { date: '2026-10-02T02:15:15-03:00', summary: "fix: tutorial não trata mais toda escrita nova como coreano" },
+  { date: '2026-10-02T02:15:15-03:00', summary: "feat: adiciona leitura romanizada ao híndi e ao marati" },
+  { date: '2026-10-02T02:11:11-03:00', summary: "docs: registra progresso da leitura romanizada e achados da revisão externa" },
+  { date: '2026-10-02T02:10:29-03:00', summary: "feat: adiciona leitura romanizada ao russo, ucraniano, bielorrusso, búlgaro, macedônio e sérvio" },
+  { date: '2026-10-02T02:10:28-03:00', summary: "feat: adiciona leitura romanizada ao grego" },
+  { date: '2026-10-02T02:10:28-03:00', summary: "feat: adiciona leitura romanizada ao armênio" },
+  { date: '2026-10-02T02:08:46-03:00', summary: "fix: declara genders em 12 pacotes que caíam no padrão errado" },
+  { date: '2026-10-02T02:04:20-03:00', summary: "feat: adiciona leitura romanizada ao georgiano" },
+  { date: '2026-10-02T02:04:20-03:00', summary: "feat: adiciona suporte a texto RTL por idioma (sem espelhar a UI)" },
+  { date: '2026-10-02T02:03:08-03:00', summary: "chore: atualiza o changelog do app" },
   { date: '2026-10-02T02:03:07-03:00', summary: "feat: adiciona mongol" },
   { date: '2026-10-02T01:55:27-03:00', summary: "chore: atualiza o changelog do app" },
   { date: '2026-10-02T01:55:26-03:00', summary: "feat: adiciona amárico" },
