@@ -57,7 +57,7 @@ commitado.
   albanês e o armênio continuam sendo ramos de um só idioma dentro do indo-europeu — não existe uma
   "língua irmã" de ramo diferente para adicionar. Mas cada um tem variedades da MESMA língua que o
   ISO 639-3 trata como código próprio, por não serem inteligíveis com o padrão:
-    - **grego**: tsakônio (tsd) é o caso mais forte — descende do dórico antigo, não do coiné/ático
+    - **grego**: tsaconiano (tsd) é o caso mais forte — descende do dórico antigo, não do coiné/ático
       como o grego padrão, não é inteligível com ele, e está criticamente ameaçado (poucas centenas de
       falantes fluentes, na região da Lacônia). Pôntico (pnt) e capadócio (cpg, hoje quase extinto, os
       falantes foram realocados para a Grécia na troca populacional de 1923) também têm código próprio
@@ -74,7 +74,7 @@ commitado.
       na diáspora (Líbano, Síria, França, EUA), sem nenhum país onde seja língua oficial, classificado
       como ameaçado pela UNESCO. Forte candidato a pacote próprio, pelo mesmo critério já usado aqui
       para separar guarani ñandeva/tapiete do guarani paraguaio.
-  Armênio ocidental (hyw) e tsakônio (tsd), os dois candidatos mais fortes, **feitos em 02/10/2026**.
+  Armênio ocidental (hyw) e tsaconiano (tsd), os dois candidatos mais fortes, **feitos em 02/10/2026**.
   gheg/arbëresh/arvanítico ficam mais como ideia de "sotaque" dentro do pacote `sq` já existente do
   que como pacote novo — não começado.
 - **Os 20 idiomas mais falados do mundo (pergunta do Matheus, 02/10/2026)**: conferido contra a
@@ -359,11 +359,20 @@ mais detalhe do usuário antes de mexer em código.
     (`kl`), palenquero (`pln`), saami do norte (`se` — a variedade sami mais falada, ~15-25 mil
     falantes; as outras línguas sami, como a lule e a skolt, têm código próprio à parte), bretão
     (`br`), lakota (`lkt`).
-  - **"Língua geral de mina"**: nome ambíguo — pode ser a língua geral amazônica (nheengatu, já no
-    app como `yrl`) confundida de nome, ou a "língua de mina/jeje", um jargão ritual de origem
-    gbe (fon/ewe) usado no candomblé jeje no Brasil, parecido com o papel do iorubá no candomblé
-    ketu (já coberto, indiretamente, pelo verbete do Pajubá). Em pesquisa — não começar o pacote até
-    confirmar do que se trata de verdade, pra não inventar conteúdo.
+  - **"Língua geral de mina"**: pesquisado em 02/10/2026. Descartada a hipótese de ser a língua
+    geral tupi (nheengatu, `yrl`, ou a paulista) — nenhuma fonte liga as duas coisas. Confirmado:
+    "mina" vem da Costa da Mina/São Jorge da Mina (Elmina, Gana de hoje) e remete ao Tambor de Mina e
+    ao candomblé jeje, cujos cânticos (na Casa das Minas, São Luís/MA) são na "língua jeje" — uma
+    variedade gbe, identificada nas fontes acadêmicas (Ferretti 1996; Pereira 1979) como o fon. Existe
+    até uma língua africana chamada literalmente "mina"/gen/popo (ISO `gej`, ~620 mil falantes,
+    Togo/Benim), mas com documentação pública fraca demais pra um pacote honesto (a única gramática
+    encontrada é de 1969, em francês, sem acesso). O fon (`fon`) em si tem base real e sólida
+    (gramática, dicionário, ~2,3 milhões de falantes, língua oficial do Benim) — mas o próprio registro
+    ritual brasileiro (os cânticos da Casa das Minas) não é ensinável sem inventar: a etnografia
+    acadêmica descreve esse registro como fragmentado e alterado ao longo dos séculos. Decisão: como o
+    pedido original citava justamente essa tradição brasileira, e a resposta mais honesta (fon, com
+    nota cultural ligando à Costa da Mina/jeje) é uma extrapolação razoável, mas não exatamente o que
+    foi pedido — fica como item pra confirmar com o Matheus antes de começar, em vez de presumir.
   - **Farsi (fa)**: bloqueado por RTL, mesmo motivo do árabe e do urdu (ver "Pendência técnica: RTL"
     acima) — não dá pra começar antes de resolver a escrita direita-pra-esquerda.
   - **Talian**: não tem código ISO 639-3 próprio — é classificado como um dialeto/variante do vêneto

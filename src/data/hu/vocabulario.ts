@@ -39,7 +39,7 @@ export const ROWS: VocabRow[] = [
   ['név', 'nome', 'substantivo', 'Pessoas', '🏷️', 'A nevem Éva.'],
   ['anya', 'mãe', 'substantivo', 'Pessoas', '👩', 'Anyám jó.'],
   ['apa', 'pai', 'substantivo', 'Pessoas', '👨', 'Apám jó.'],
-  ['testvér', 'irmão, irmã (de “egy test és vér” = um corpo e sangue só)', 'substantivo', 'Pessoas', '🧑', 'Van egy testvérem.'],
+  ['testvér', 'irmão, irmã (de “test” = corpo + “vér” = sangue)', 'substantivo', 'Pessoas', '🧑', 'Van egy testvérem.'],
   ['lány', 'menina, filha', 'substantivo', 'Pessoas', '👧', 'A lány jó.'],
 
   // Natureza

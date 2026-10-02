@@ -158,7 +158,7 @@ export const STORIES_HU: StorySeed[] = [
     },
     glossary: [
       ['anya, apa', 'mãe, pai'],
-      ['testvér', 'irmão, irmã (de “egy test és vér”: um corpo e sangue só)'],
+      ['testvér', 'irmão, irmã (de “test” = corpo + “vér” = sangue)'],
       ['van', 'há, existe; também serve para “ter” (van egy kutyám = eu tenho um cachorro)'],
       ['tessék', 'aqui está (ao entregar algo)'],
     ],
