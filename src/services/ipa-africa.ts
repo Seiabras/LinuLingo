@@ -181,17 +181,25 @@ export function toIpaAm(text: string): string {
   return `[${ipa.join(' ')}]`;
 }
 
-/** Amárico em letras latinas (transliteração simplificada, como nos livros didáticos): ሰላም → sälam. */
+/**
+ * Amárico em letras latinas (transliteração simplificada, como nos livros didáticos): ሰላም → sälam.
+ * A 6.ª ordem (schwa, “ə”) segue a mesma regra de toIpaAm: fica no início da palavra e para desfazer
+ * um encontro de três consoantes, cai no resto (inclusive no fim) — do contrário, sílabas como ንጀ no
+ * meio da palavra saem com um “ə” extra que ninguém pronuncia (እንጀራ vira “ənəǧära”, não “ənǧära”).
+ */
 export function transliterateAm(text: string): string {
   return text.replace(AM_WORD, (w) => {
     const s = amSyllables(w);
-    return s
-      .map(([, , c, v], i) => {
-        const cons = (c === 'ʾ' || c === 'ʿ') && i === 0 ? '' : c;
-        const vowel = v === 'ə' && i === s.length - 1 ? '' : v;
-        return cons + vowel;
-      })
-      .join('');
+    let out = '';
+    let prevVowel = true;
+    s.forEach(([, , c, v], i) => {
+      const cons = (c === 'ʾ' || c === 'ʿ') && i === 0 ? '' : c;
+      let vowel = v;
+      if (v === 'ə') vowel = i === 0 ? 'ə' : !prevVowel && i < s.length - 1 ? 'ə' : '';
+      out += cons + vowel;
+      prevVowel = vowel !== '';
+    });
+    return out;
   }).replace(/።/g, '.').replace(/፣/g, ',').replace(/፧/g, '?').replace(/፤/g, ';').replace(/፡/g, ' ');
 }
 
