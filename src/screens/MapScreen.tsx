@@ -321,11 +321,12 @@ export default function MapScreen() {
     [notable, lang.code],
   );
   const background = notable.find((x) => x.spoken.role === 'oficial' && !x.spoken.subdivisions?.length);
-  // a legenda segue a ordem de languagesIn (oficial primeiro, depois por % da população), não a de
-  // "specific" (essa é pela especificidade da região, pro subFill decidir quem pinta por cima quando
-  // duas se sobrepõem) — senão hindi, a língua com mais estados e mais falantes da Índia, ficava de
-  // fora por entrar por último nesse outro critério, e o corte de 6 cortava antes de chegar nele.
-  const countryLangLegend = notable.filter((x) => x === background || specific.includes(x)).slice(0, 6);
+  // a legenda mostra toda língua que realmente pinta algo no mapa (o país inteiro, de fundo, ou pelo
+  // menos um estado/província/cantão) — nada de cortar num número fixo: a Índia sozinha já pinta mais
+  // de 6 línguas de verdade, e cortar deixava estado colorido sem nenhuma explicação na legenda. Segue
+  // a ordem de languagesIn (oficial primeiro, depois por % da população), não a de "specific" (essa é
+  // pela especificidade da região, pro subFill decidir quem pinta por cima quando duas se sobrepõem).
+  const countryLangLegend = notable.filter((x) => x === background || specific.includes(x));
   // cor de desempate (ver CHOROPLETH_PALETTE): a língua escolhida lá em cima guarda a cor dela de
   // verdade (bate com o resto da tela); as outras línguas notáveis do mesmo país ganham uma cor da
   // paleta que ainda não esteja em uso, numa ordem estável (a de languagesIn), pra nunca repetir entre

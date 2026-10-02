@@ -449,9 +449,42 @@ const CLDR_SUBDIVISIONS: Record<string, string[]> = {
     'CH-ZH', 'CH-BE', 'CH-LU', 'CH-UR', 'CH-SZ', 'CH-OW', 'CH-NW', 'CH-GL', 'CH-ZG', 'CH-SO',
     'CH-BS', 'CH-BL', 'CH-SH', 'CH-AR', 'CH-AI', 'CH-SG', 'CH-AG', 'CH-TG', 'CH-GR',
   ],
+  // Graubünden/Grisões (CH-GR) é o único cantão trilíngue da Suíça: alemão (maioria), depois
+  // romanche e italiano — a entrada do italiano já citada acima (ver `o('CHE', ...)`) e o romanche
+  // aqui embaixo também incluem CH-GR; como as duas têm menos cantões que o alemão, pintam por cima
+  // dele ali (romanche, com 1 cantão só, por cima do italiano, com 2) — não quer dizer que sejam
+  // majoritárias lá, só que são as mais específicas daquele cantão em particular.
   // Canadá: o francês é a única língua oficial de Quebec (Carta da Língua Francesa) e cooficial em
   // New Brunswick, a única província oficialmente bilíngue do país; o inglês é oficial nas demais.
+  // O inuktitut é cooficial (com o inglês e o francês) só em Nunavut, por lei territorial.
   'fr:CAN': ['CA-QC', 'CA-NB'],
+  'iu:CAN': ['CA-NU'],
+  // Suíça: o romanche é a 4ª língua nacional, cooficial só no cantão de Graubünden/Grisões (onde,
+  // dos 4 idiomas nacionais, é o único cooficial ao lado do alemão e do italiano).
+  'rm:CHE': ['CH-GR'],
+  // Espanha: catalão, galego e basco são cooficiais nas respectivas comunidades autônomas pela
+  // Constituição de 1978 e os estatutos de autonomia de cada uma. O catalão é cooficial também nas
+  // Baleares e, como "valenciano", na Comunidade Valenciana; o basco, na Comunidade Foral de Navarra,
+  // é cooficial só numa "zona vascófona" dentro dela, não na comunidade inteira — simplificação aceita
+  // aqui pela granularidade do mapa (o mesmo tipo de simplificação já usado nos cantões suíços).
+  'ca:ESP': ['ES-CT', 'ES-IB', 'ES-VC'],
+  'gl:ESP': ['ES-GA'],
+  'eu:ESP': ['ES-PV', 'ES-NC'],
+  // Havaí: o havaiano é cooficial com o inglês só no estado do Havaí, por emenda constitucional
+  // estadual de 1978 — único idioma indígena dos EUA com status oficial estadual.
+  'haw:USA': ['US-HI'],
+  // China: tibetano, uigur, mongol e zhuang são as línguas de título de 4 das 5 regiões autônomas
+  // do país, cada uma reconhecida por lei regional ao lado do mandarim.
+  'bo:CHN': ['CN-XZ'],
+  'ug:CHN': ['CN-XJ'],
+  'mn:CHN': ['CN-NM'],
+  'za:CHN': ['CN-GX'],
+  // Rússia: cada uma dessas é língua oficial da própria república constituinte, por constituição
+  // republicana, ao lado do russo (art. 68 da Constituição federal garante esse direito às repúblicas).
+  'tt:RUS': ['RU-TA'],
+  'ba:RUS': ['RU-BA'],
+  'ce:RUS': ['RU-CE'],
+  'sah:RUS': ['RU-SA'],
   // Índia: língua oficial de cada estado (listas oficiais estaduais e a 8ª lista da Constituição).
   // Cobertura parcial: só os estados com uma língua claramente predominante, entre as que o mapa já
   // lista para a Índia — não é a lista completa dos 22 idiomas da 8ª lista.
