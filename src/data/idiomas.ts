@@ -99,6 +99,7 @@ import { HAVAIANO } from './haw';
 import { TELUGO } from './te';
 import { OROMO } from './om';
 import { MARATHI } from './mr';
+import { AMARICO } from './am';
 import { GUARANI_NANDEVA } from './nhd';
 import { TAPIETE } from './tpj';
 
@@ -116,7 +117,7 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   hi: HINDI, gn: GUARANI, tpw: TUPI_ANTIGO, ha: HAUCA, ig: IGBO, yrl: NHEENGATU, bn: BENGALI, qu: QUECHUA, kgp: KAINGANG, tca: TIKUNA,
   xav: XAVANTE, tuo: TUKANO, gun: GUARANI_MBYA, ka: GEORGIANO, th: TAILANDES, km: KHMER,
   ay: AIMARA, kgk: GUARANI_KAIOWA, nah: NAUATLE, kpc: BANIWA, lo: LAOSIANO, cbs: HUNI_KUIN,
-  nv: NAVAJO, nhd: GUARANI_NANDEVA, tpj: TAPIETE, mi: MAORI, gnw: GUARANI_ANTIGO, haw: HAVAIANO, te: TELUGO, om: OROMO, mr: MARATHI };
+  nv: NAVAJO, nhd: GUARANI_NANDEVA, tpj: TAPIETE, mi: MAORI, gnw: GUARANI_ANTIGO, haw: HAVAIANO, te: TELUGO, om: OROMO, mr: MARATHI, am: AMARICO };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -246,10 +247,7 @@ export const LANGUAGES: LanguageInfo[] = [
   // (Ethnologue; o árabe já está acima e o pidgin nigeriano é crioulo)
   SUAILI,
   HAUCA,
-  {
-    code: 'am', name: 'Amárico', nativeName: 'አማርኛ', flag: '🇪🇹',
-    lineage: { family: 'Afro-asiático', branches: ['Semítico', 'Semítico etiópico'], region: 'Planalto etíope (Chifre da África)', writing: 'Silabário ge’ez (fidel)' },
-  },
+  AMARICO,
   IORUBA,
   OROMO,
   IGBO,

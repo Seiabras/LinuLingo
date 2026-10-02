@@ -26,6 +26,10 @@ export const AMARICO: LanguagePack = {
   },
   speechLocale: 'am-ET',
   available: true,
+  incomplete: {
+    until: 'A1.2',
+    note: 'Só o nível A1 por enquanto (unidades 1 e 2, 115 palavras, 4 tópicos de gramática, 2 histórias), no amárico padrão da Etiópia. Da A2.1 até o C2 chega nas próximas atualizações.',
+  },
   vocab: VOCAB_AM,
   units: UNITS_AM,
   etymology: ETYMOLOGY_AM,
@@ -35,13 +39,16 @@ export const AMARICO: LanguagePack = {
   variants: VARIANTS_AM.length ? VARIANTS_AM : undefined,
   accents: ACCENTS_AM,
   grammar: GRAMMAR_AM,
-  linguistics: LINGUISTICS_AM,
+  linguistics: LINGUISTICS_AM.length ? LINGUISTICS_AM : undefined,
   journalPrompts: JOURNAL_PROMPTS_AM,
   shadowing: SHADOWING_AM,
   ipa: toIpaAm,
   // o fidel não é latino: embaixo de cada frase vem a transliteração (ሰላም · sälam)
   reading: (t) => (/[\u1200-\u137f]/.test(t) ? transliterateAm(t) : ''),
   alphabet: ALPHABET_AM,
+  // uma fileira por família de sinais (consoante + as 7 vogais/“ordens”), como na própria tabela
+  // tradicional do fidel — os mesmos sinais treinados em alfabeto.ts
+  keyboardRows: ALPHABET_AM.letters.map((l) => [...l.letter]),
   specialChars: [],
   minimalPairs: PARES_AM,
   animalSounds: BICHOS_AM,
