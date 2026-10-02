@@ -1,8 +1,9 @@
 /**
- * Romanização do cirílico para os pacotes eslavos sem escrita latina (ru, uk, be, bg, mk, sr):
- * a leitura mostrada acima do IPA para quem ainda não lê o alfabeto cirílico. Não existe "o"
- * sistema cirílico — cada idioma tem o seu próprio padrão nacional, e letras como е/э, і/ї/ё/ў,
- * ъ, ѕ/ј/љ/њ/ѓ/ќ e љ/њ/џ/ђ/ћ significam coisas diferentes (ou nem existem) em cada um:
+ * Romanização do cirílico para os pacotes sem escrita latina que usam esse alfabeto — seis
+ * eslavos (ru, uk, be, bg, mk, sr) e um mongólico (mn): a leitura mostrada acima do IPA para
+ * quem ainda não lê o cirílico. Não existe "o" sistema cirílico — cada idioma tem o seu próprio
+ * padrão nacional, e letras como е/э, і/ї/ё/ў, ъ, ѕ/ј/љ/њ/ѓ/ќ, љ/њ/џ/ђ/ћ e өa/ү significam coisas
+ * diferentes (ou nem existem) em cada um:
  * - russo: sistema "popular" (BGN/PCGN simplificado, sem diacríticos) — o das placas e do
  *   noticiário em inglês, não a norma científica ISO 9/GOST cheia de acento (š č ž);
  * - ucraniano: sistema nacional oficial, Resolução n.º 55/2010 do Conselho de Ministros — o do
@@ -15,15 +16,31 @@
  *   (ѓ → gj, ќ → kj, ѕ → dz, џ → dj);
  * - sérvio: não é transliteração nenhuma — o sérvio é oficialmente bialfabético, com
  *   correspondência letra a letra entre o cirílico de Vuk Karadžić e o latino de Gaj
- *   (љ њ џ ђ ћ → lj nj dž đ ć), que é a romanização mais antiga e mais oficial que existe.
+ *   (љ њ џ ђ ћ → lj nj dž đ ć), que é a romanização mais antiga e mais oficial que existe;
+ * - mongol (khalkha): sistema nacional MNS 5217:2012 ("Монгол кирил үсгийн латин хөрвүүлгийн
+ *   шинэ стандарт", aprovado pelo governo da Mongólia em 18/02/2012, substituindo a versão de
+ *   2003), COM diacríticos nas duas vogais que o mongol tem a mais que o russo (ө → ö, ү → ü) —
+ *   não um sistema de dígrafos sem acento. O mongol não é eslavo e várias letras que o cirílico
+ *   mongol compartilha com o russo soam e/ou romanizam diferente: е é sempre "ye" (nunca o "e"
+ *   puro do russo, nem o "ye"/"e" que alterna por posição), й é sempre "i" (nunca "y"), ж vira
+ *   "j" (não "zh") e ambos os sinais ъ e ь também viram "i" na tabela oficial (nenhum dos dois
+ *   fica mudo, ao contrário do russo e do bielorrusso acima). Conferido letra a letra contra a
+ *   tabela "Standard romanization (MNS 5217:2012)" do artigo da Wikipédia e contra romanizações
+ *   reais já consagradas: "Улаанбаатар" → Ulaanbaatar, "Чингис хаан" → Chingis khaan, "төгрөг"
+ *   (moeda) → tögrög, "Сайн байна уу?" → Sain baina uu, "Баярлалаа" → Bayarlalaa, "Баяртай" →
+ *   Bayartai — todas batem exatamente com o resultado da tabela.
  * Fontes: Wikipédia, "Romanization of Russian", "Romanization of Ukrainian",
- * "Romanization of Belarusian", "Romanization of Bulgarian", "Romanization of Macedonian" e
- * "Serbian Cyrillic alphabet" — tabelas de cada lei/instrução nacional citadas nesses artigos.
+ * "Romanization of Belarusian", "Romanization of Bulgarian", "Romanization of Macedonian",
+ * "Serbian Cyrillic alphabet" e "Mongolian Cyrillic alphabet" (tabela MNS 5217:2012, citando
+ * GoGo.mn, 18/02/2012, "Монгол кирил үсгийн латин хөрвүүлгийн шинэ стандарт батлагдлаа") —
+ * tabelas de cada lei/instrução/norma nacional citadas nesses artigos.
  *
  * Simplificações (como nos livros didáticos, não para documentos oficiais): o acento tônico
  * marcado no texto (combining acute, U+0301) não aparece na romanização; os sinais mudos russo
  * (ъ) e bielorrusso (ь) somem sem deixar marca; o bielorrusso não marca a suavização das
- * consoantes л н с з ц com acento (ĺ ń ś ź ć), como faria a Łacinka completa.
+ * consoantes л н с з ц com acento (ĺ ń ś ź ć), como faria a Łacinka completa. O mongol não
+ * simplifica ъ/ь (eles viram "i" como na norma oficial), porque é a própria norma que já faz
+ * essa escolha, não uma licença didática.
  */
 
 /** Maiúscula na 1.ª letra do resultado se a palavra de origem começava maiúscula. */
@@ -189,3 +206,20 @@ function srWord(word: string): string {
 
 /** Sérvio em letras latinas (alfabeto latino sérvio de Gaj, oficial e de uso corrente): Хвала → Hvala. */
 export const toReadingSr = (text: string) => byMap(text, srWord);
+
+// ── mongol (khalkha): sistema nacional MNS 5217:2012, com diacríticos (ö/ü) ──
+const MN_MAP: Record<string, string> = {
+  а: 'a', б: 'b', в: 'v', г: 'g', д: 'd', е: 'ye', ё: 'yo', ж: 'j', з: 'z', и: 'i', й: 'i', к: 'k',
+  л: 'l', м: 'm', н: 'n', о: 'o', ө: 'ö', п: 'p', р: 'r', с: 's', т: 't', у: 'u', ү: 'ü', ф: 'f',
+  х: 'kh', ц: 'ts', ч: 'ch', ш: 'sh', щ: 'sh', ъ: 'i', ы: 'y', ь: 'i', э: 'e', ю: 'yu', я: 'ya',
+};
+
+function mnWord(word: string): string {
+  const w = word.toLowerCase();
+  let out = '';
+  for (const ch of w) out += MN_MAP[ch] ?? ch;
+  return capFirst(out, word);
+}
+
+/** Mongol (khalkha) em letras latinas, sistema nacional MNS 5217:2012: Сайн байна уу? → Sain baina uu? */
+export const toReadingMn = (text: string) => byMap(text, mnWord);

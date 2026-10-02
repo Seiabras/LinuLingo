@@ -4,6 +4,7 @@ import { UNITS_MN } from './curriculo';
 import { GRAMMAR_MN } from './gramatica';
 import { STORIES_MN } from './historias';
 import { COMMUNITY_MN, ETYMOLOGY_MN, JOURNAL_PROMPTS_MN, SCENARIOS_MN, SHADOWING_MN } from './extras';
+import { toReadingMn } from '@/services/reading-cyrillic';
 
 export const MONGOL: LanguagePack = {
   code: 'mn',
@@ -41,6 +42,9 @@ export const MONGOL: LanguagePack = {
   grammar: GRAMMAR_MN,
   journalPrompts: JOURNAL_PROMPTS_MN,
   shadowing: SHADOWING_MN,
+  // o cirílico mongol não é latino: embaixo de cada frase vem a romanização oficial (Сайн байна
+  // уу? · Sain baina uu?), sistema nacional MNS 5217:2012 (ver cabeçalho de reading-cyrillic.ts)
+  reading: (t) => (/[Ѐ-ӿ]/.test(t) ? toReadingMn(t) : ''),
   // Өө e Үү são as duas letras do cirílico mongol que não existem no alfabeto russo (confirmado em
   // en.wikipedia.org/wiki/Mongolian_Cyrillic_alphabet); as demais são letras cirílicas sem equivalente
   // direto no alfabeto latino, todas conferidas contra a coluna `word_target` de vocabulario.ts.
