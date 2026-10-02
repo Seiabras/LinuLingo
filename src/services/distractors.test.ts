@@ -10,6 +10,9 @@ interface W {
 }
 const w = (id: string, key: string, category: string | null = null): W => ({ id, key, category });
 const keyOf = (x: W) => x.key;
+// sem sorteio: determinístico, pra não depender de sorte num pool pequeno (achado por seiabras-b8 —
+// sem a preferência de categoria, os dois testes abaixo passavam "por sorte" em ~10% das rodadas)
+const noShuffle = () => 0;
 
 test('pickDistractors nunca devolve item com a mesma chave (mesma imagem)', () => {
   const word = w('1', 'img-a');
@@ -33,25 +36,26 @@ test('pickDistractors com pool pequeno devolve o que der, sem travar', () => {
 
 test('pickDistractors prefere a mesma categoria, completando com o resto quando falta', () => {
   const word = w('1', 'img-a', 'Saudações');
-  const pool = [
-    word,
+  const [saudacao2, pessoa, natureza, numero] = [
     w('2', 'img-b', 'Saudações'),
     w('3', 'img-c', 'Pessoas'),
     w('4', 'img-d', 'Natureza'),
     w('5', 'img-e', 'Números'),
   ];
-  // só 1 da mesma categoria no pool: o outro distrator tem que vir do resto, não travar em 1 só
-  const picked = pickDistractors(word, pool, keyOf, 2);
-  assert.equal(picked.length, 2);
-  assert.ok(picked.some((p) => p.category === 'Saudações'));
+  const pool = [word, saudacao2, pessoa, natureza, numero];
+  // só 1 da mesma categoria no pool: o outro distrator tem que vir do resto, não travar em 1 só.
+  // noShuffle: sem ele, este teste passaria "por sorte" em boa parte das rodadas (achado por
+  // seiabras-b8, via teste de mutação) — determinístico, dá pra exigir o resultado exato.
+  const picked = pickDistractors(word, pool, keyOf, 2, noShuffle);
+  assert.deepEqual(picked, [saudacao2, natureza]);
 });
 
 test('pickDistractors tira todos os n da mesma categoria quando dá', () => {
   const word = w('1', 'img-a', 'Saudações');
-  const pool = [word, w('2', 'img-b', 'Saudações'), w('3', 'img-c', 'Saudações'), w('4', 'img-d', 'Pessoas')];
-  const picked = pickDistractors(word, pool, keyOf, 2);
-  assert.equal(picked.length, 2);
-  assert.ok(picked.every((p) => p.category === 'Saudações'));
+  const [saudacao2, saudacao3, pessoa] = [w('2', 'img-b', 'Saudações'), w('3', 'img-c', 'Saudações'), w('4', 'img-d', 'Pessoas')];
+  const pool = [word, saudacao2, saudacao3, pessoa];
+  const picked = pickDistractors(word, pool, keyOf, 2, noShuffle);
+  assert.deepEqual(picked, [saudacao3, saudacao2]);
 });
 
 test('pickDistractors sem category no pool ignora a preferência, sem quebrar', () => {

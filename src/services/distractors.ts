@@ -7,14 +7,26 @@ import { shuffle } from './answers';
  * (quando ela existe), completando com o resto do pool quando não houver `n` da mesma categoria —
  * assim a Imersão testa o que o aluno ouviu, não deixa acertar por eliminação entre palavras raras
  * de qualquer assunto. Com um pool pequeno, devolve o que der; nunca trava nem lança erro.
+ *
+ * `rnd` é só pra teste determinístico (padrão: `Math.random` de verdade, via `shuffle`) — passe
+ * algo como `() => 0` pra desligar o sorteio e checar a ordem de preferência sem depender de sorte.
  */
-export function pickDistractors<T extends { id: string; category?: string | null }>(word: T, pool: T[], keyOf: (w: T) => string, n = 2): T[] {
+export function pickDistractors<T extends { id: string; category?: string | null }>(
+  word: T,
+  pool: T[],
+  keyOf: (w: T) => string,
+  n = 2,
+  rnd: () => number = Math.random,
+): T[] {
   const wordKey = keyOf(word);
-  const candidates = pool.filter((p) => p.id !== word.id && keyOf(p) !== wordKey);
-  const sameCategory = word.category != null ? candidates.filter((c) => c.category === word.category) : [];
-  const rest = candidates.filter((c) => !sameCategory.includes(c));
-  return shuffle(sameCategory)
+  const sameCategory: T[] = [];
+  const rest: T[] = [];
+  for (const p of pool) {
+    if (p.id === word.id || keyOf(p) === wordKey) continue;
+    (word.category != null && p.category === word.category ? sameCategory : rest).push(p);
+  }
+  return shuffle(sameCategory, rnd)
     .slice(0, n)
-    .concat(shuffle(rest))
+    .concat(shuffle(rest, rnd))
     .slice(0, n);
 }
