@@ -96,6 +96,9 @@ export default function LessonScreen() {
 
   const total = wordResults.length + lesson.cloze.length + 1;
   const correct = wordResults.filter((r) => r.correct).length + clozeCorrect + (voiceCorrect ? 1 : 0);
+  // sem o card "Aprenda primeiro", a lição tem 5 etapas visíveis, não 6
+  const totalSteps = isFirstLessonOfUnit ? STEPS.length : STEPS.length - 1;
+  const displayStep = isFirstLessonOfUnit ? step + 1 : step;
 
   return (
     <Screen edges={['top', 'bottom']} background={<FieldNotebookBackground variant="gelo" />}>
@@ -105,10 +108,10 @@ export default function LessonScreen() {
             <X size={26} color={dark ? '#94A3B8' : '#64748B'} />
           </Pressable>
         )}
-        <ProgressBar value={(step + (step === 5 ? 1 : 0)) / STEPS.length} className="flex-1" />
+        <ProgressBar value={(step + (step === 5 ? 1 : 0)) / totalSteps} className="flex-1" />
       </View>
       <Text className="mb-4 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">
-        {found.unit.emoji} {jump ? `Teste para pular · ${found.unit.level}` : lesson.title} · Etapa {step + 1} de 6 · {STEPS[step]}
+        {found.unit.emoji} {jump ? `Teste para pular · ${found.unit.level}` : lesson.title} · Etapa {displayStep} de {totalSteps} · {STEPS[step]}
       </Text>
 
       <PageFlipTransition pageKey={step}>

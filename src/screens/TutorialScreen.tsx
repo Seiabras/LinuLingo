@@ -45,7 +45,7 @@ export default function TutorialScreen() {
     },
     { mood: 'feliz', title: `${pack.phrases.hi} Vamos de ${nomeIdioma(pack.name)}!`, text: `Vou te acompanhar no ${nomeIdioma(pack.name)}. Em 1 minuto te mostro como tudo funciona!` },
     { mood: 'falando', title: 'A trilha', text: 'A trilha vai do A1.1 ao C2 em 15 subníveis, na faixa do topo. As lições liberam uma por vez; se você já sabe um nível, toque em “Já sei isto” numa unidade bloqueada e faça o teste: com 80% você pula para lá. Cada unidade tem quatro tipos de parada:', extra: 'trilha' },
-    { mood: 'pensando', title: 'Uma lição, 6 etapas', text: 'Primeiro você entende, depois pratica. Nada de decorar sem saber o porquê:', extra: 'etapas' },
+    { mood: 'pensando', title: 'Uma lição, 5 etapas', text: 'Primeiro você entende, depois pratica. Nada de decorar sem saber o porquê. A dica de cultura e regra só vem na primeira lição de cada unidade (dá para rever a qualquer hora, pela trilha):', extra: 'etapas' },
     // idiomas de outro alfabeto (russo): teclado próprio e sílaba tônica marcada
     ...(pack.keyboardRows && pack.code === 'ru'
       ? [
@@ -287,7 +287,7 @@ function TrailLegend() {
 
 function StepsList() {
   const steps = [
-    ['📜', 'Aprenda primeiro', 'cultura e regra'],
+    ['📜', 'Aprenda primeiro', 'cultura e regra, só na 1ª lição da unidade'],
     ['🖼️', 'Imersão', 'foto (ou emoji) + som + tradução'],
     ['✏️', 'Lacunas', 'complete a frase'],
     ['🎙️', 'Voz', 'responda falando'],
