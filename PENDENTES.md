@@ -344,13 +344,27 @@ mais detalhe do usuário antes de mexer em código.
   travado por um bug introduzido durante o próprio conserto do arrasto, pego e corrigido); zoom pela
   roda do mouse/trackpad na web; recorte por estado/província/cantão (Suíça, Canadá, Índia, via novo
   `CLDR_SUBDIVISIONS` em `onde-se-fala.ts`) com cor própria por idioma, em vez de todos saírem na
-  mesma cor por família linguística; legenda das línguas do país aproximado. **Pendência técnica
-  deixada aberta**: os códigos ISO 3166-2 do novo `CLDR_SUBDIVISIONS` não têm teste automático (só os
-  de `MAP_LANGUAGES` já tinham, em `conteudo.test.ts`) — conferido manualmente, mas sem guarda contra
-  regressão. **Nota de processo**: um agente em segundo plano rodou `git stash`/`git stash pop` sozinho
-  durante o diagnóstico (pra comparar com o estado já commitado) — voltou limpo, sem perder nada, mas
-  é um uso de git fora do combinado (git stash/reset não são ações que um agente devia tomar por conta
-  própria); vale reforçar essa instrução nos próximos agentes de bugfix.
+  mesma cor por família linguística; legenda das línguas do país aproximado. **Nota de processo**: um
+  agente em segundo plano rodou `git stash`/`git stash pop` sozinho durante o diagnóstico (pra comparar
+  com o estado já commitado) — voltou limpo, sem perder nada, mas é um uso de git fora do combinado
+  (git stash/reset não são ações que um agente devia tomar por conta própria); vale reforçar essa
+  instrução nos próximos agentes de bugfix.
+  - **2ª rodada (revisão de seiabras-b8, ainda 02/10/2026)**: achado grave — a prioridade de pintura
+    comparava TODAS as línguas (`languagesIn`, sem filtro de papel), e o Glottolog carrega centenas de
+    línguas "faladas" por país, cada uma com só 1-2 subdivisões (um ponto de coordenada, não um
+    território de verdade), que sempre venciam línguas reais na comparação de "menos subdivisões"
+    (Tamil Nadu saía como língua obscura, Quebec como outra, etc.). **Corrigido**: novo
+    `notableLanguagesIn()` em `onde-se-fala.ts`, só línguas com papel oficial/regional (o Glottolog
+    nunca marca nenhum dos dois); teste de regressão com o Glottolog de verdade carregado, cobrindo os
+    4 casos que a revisão apontou. Também corrigidos: legenda cortava em 6 mesmo com mais línguas
+    pintando de verdade (removido o corte fixo) e várias línguas regionais sem `subdivisions`
+    (catalão/galego/basco na Espanha, havaiano, inuktitut, romanche, tibetano/uigur/mongol/zhuang na
+    China, tártaro/baquir/checheno/sakha na Rússia — todas já eram `role: 'r'` no CLDR, só faltava o
+    recorte territorial). O teste de códigos ISO 3166-1/2 passou a cobrir `ALL_MAP_LANGUAGES`, fechando
+    de vez a pendência técnica anterior (os códigos do `CLDR_SUBDIVISIONS` agora têm guarda automática).
+    **Nota de dados de baixa prioridade, ainda aberta**: na Rússia, Carélia (RU-KR) pinta como finlandês
+    — o idioma regional com apoio oficial lá é o carélio (junto do finlandês e do vepse); se um dia o
+    carélio entrar no mapa, ele é a escolha mais precisa pra essa subdivisão.
 - **"Em línguas artificiais adicione a língua dos minions"**: a "língua dos minions" (dos filmes da
   Illumination) não é um conlang estruturado de verdade — é gibberish dos diretores, uma mistura de
   fragmentos de línguas reais (italiano, espanhol, francês, inglês, japonês, coreano, indonésio…) sem
