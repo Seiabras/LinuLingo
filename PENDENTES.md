@@ -374,6 +374,22 @@ mais detalhe do usuário antes de mexer em código.
     mapa e em mais dois componentes com o mesmo padrão (`RegionTapMap.tsx`, `MapGameScreen.tsx`); a
     trava de arrasto já existente (`dragLocked`) continua intacta. Removido o `LogBox.ignoreLogs` que
     nunca escondia o aviso na web mesmo — agora o aviso nem aparece mais.
+    **4ª rodada, URGENTE: a correção acima quebrou o toque em país/estado na web** — corrigido na hora
+    (commit `81f390ac`). Causa: o próprio react-native-svg sobrescreve `onClick` com `undefined` quando
+    `onPress` chega como `undefined` (não `null`) — `prepare.ts` faz `if (onPress !== null) clean.onClick
+    = props.onPress`. A correção de verdade precisa passar `onPress: null` explicitamente (não só omitir
+    o campo) junto do `onClick`, na web. Achado, testado e consertado por seiabras-b8 (ela mesma pediu
+    desculpa, já que a sugestão original de `onClick` sem o `onPress: null` foi dela).
+    **5ª achado, ainda aberto, de baixa prioridade (bug anterior a esta sessão, de `947c6be6`)**: num
+    arraste rápido e curto (ex.: 12px num só passo), o `onPan` às vezes lê o `start` (estado) de um
+    render anterior, em vez do valor que `onPanStart` acabou de gravar — o mapa salta pro mundo inteiro
+    por um instante. A correção óbvia (trocar o `useState` de `start` por um `useRef`, lido de forma
+    síncrona) esbarra no lint de pureza do React Compiler: `scheduleOnRN(onPan, …)`, dentro do
+    `.onUpdate(...)` do gesto, passa uma função que lê uma ref pra uma função externa durante a
+    renderização (a mesma classe de falso positivo que atingiu `tapProps`, achado na rodada anterior) —
+    e esta sessão preferiu não suprimir o lint (o app não tem nenhuma supressão dessa regra até agora)
+    sem antes achar uma reestruturação de verdade. Fica pra uma próxima rodada, com mais tempo pra
+    investigar uma forma limpa de ler o estado síncrono sem cair nesse alerta.
 - **"Em línguas artificiais adicione a língua dos minions"**: a "língua dos minions" (dos filmes da
   Illumination) não é um conlang estruturado de verdade — é gibberish dos diretores, uma mistura de
   fragmentos de línguas reais (italiano, espanhol, francês, inglês, japonês, coreano, indonésio…) sem
