@@ -272,6 +272,12 @@ export interface LanguagePack extends LanguageInfo {
   speechLocale: string;
   available: boolean;
   /**
+   * Sentido de escrita do idioma-alvo (padrão: esquerda pra direita, sem precisar declarar). Só a
+   * escrita do idioma-alvo muda de sentido — a interface em português continua da esquerda pra
+   * direita; nunca espelha a tela inteira (ver `src/services/direction.ts`).
+   */
+  direction?: 'rtl';
+  /**
    * Idioma em construção: só as unidades até este subnível existem — as de depois (e mais
    * vocabulário, gramática e histórias nas que já existem) chegam aos poucos. `note` aparece para
    * o aluno explicando o que falta.
