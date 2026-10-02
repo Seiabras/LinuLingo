@@ -7,6 +7,8 @@ export interface ChangelogEntry {
 }
 
 export const CHANGELOG: ChangelogEntry[] = [
+  { date: '2026-10-02T01:08:59-03:00', summary: "feat: adiciona navajo, guarani ñandeva e tapiete" },
+  { date: '2026-10-01T21:28:52-03:00', summary: "chore: atualiza o changelog do app" },
   { date: '2026-10-01T21:28:52-03:00', summary: "feat: adiciona huni kuĩ (hãtxa kuĩ)" },
   { date: '2026-10-01T20:54:36-03:00', summary: "feat: adiciona PageFlipTransition entre as etapas da lição" },
   { date: '2026-10-01T20:44:57-03:00', summary: "docs: atualiza PENDENTES.md (baniwa, laosiano, lista de guarani e indígenas revisada)" },
