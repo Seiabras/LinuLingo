@@ -419,8 +419,8 @@ export default function MapScreen() {
       <View className="mt-3 flex-row rounded-2xl bg-slate-200 p-1 dark:bg-slate-800">
         {(
           [
-            ['hoje', 'Hoje · ISO 3166-1'],
-            ['antigos', 'Já existiram · ISO 3166-3'],
+            ['hoje', 'Países reconhecidos'],
+            ['antigos', 'Países que não existem mais'],
           ] as const
         ).map(([k, label]) => (
           <Pressable
@@ -957,7 +957,7 @@ export default function MapScreen() {
                   <Text className="text-lg">{f.emoji}</Text>
                   <Text className="flex-1 text-sm text-amber-900 dark:text-amber-200">
                     Antes: <Text className="font-bold">{f.name}</Text>
-                    {f.event ? ` (até ${f.event})` : ''} · ISO 3166-3
+                    {f.event ? ` (até ${f.event})` : ''}
                   </Text>
                 </Pressable>
               ))}

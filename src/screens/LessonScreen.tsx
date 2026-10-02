@@ -4,6 +4,7 @@ import { router, useLocalSearchParams } from 'expo-router';
 import { X } from 'lucide-react-native';
 import { Screen, Button, ProgressBar } from '@/components/ui';
 import { PageFlipTransition } from '@/components/PageFlipTransition';
+import { FieldNotebookBackground } from '@/components/FieldNotebookBackground';
 import { CulturalGrammarCard } from '@/components/CulturalGrammarCard';
 import { ImmersionStep, type WordResult } from '@/components/lesson/ImmersionStep';
 import { ClozeStep } from '@/components/lesson/ClozeStep';
@@ -93,7 +94,7 @@ export default function LessonScreen() {
   const correct = wordResults.filter((r) => r.correct).length + clozeCorrect + (voiceCorrect ? 1 : 0);
 
   return (
-    <Screen edges={['top', 'bottom']}>
+    <Screen edges={['top', 'bottom']} background={<FieldNotebookBackground variant="gelo" />}>
       <View className="flex-row items-center gap-3 py-3">
         {step < 5 && (
           <Pressable accessibilityLabel="Sair da lição" onPress={goBack} hitSlop={10}>
