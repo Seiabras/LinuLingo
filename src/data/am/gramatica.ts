@@ -71,7 +71,7 @@ export const GRAMMAR_AM: GrammarTopic[] = [
             ['eu', 'ነኝ', 'eu sou'],
             ['tu/você (homem)', 'ነህ', 'tu és / você é'],
             ['tu/você (mulher)', 'ነሽ', 'tu és / você é'],
-            ['ele / neutro', 'ነው', 'ele é / é'],
+            ['ele / isto', 'ነው', 'ele é / é'],
             ['ela', 'ናት', 'ela é'],
             ['nós', 'ነን', 'nós somos'],
             ['vós/vocês', 'ናችሁ', 'vós sois / vocês são'],
@@ -116,7 +116,7 @@ export const GRAMMAR_AM: GrammarTopic[] = [
     summary: 'Para apresentar alguém ou algo (“este é…”, “esta é…”), o amárico usa o demonstrativo “ይህ” e deixa a cópula concordar em gênero com o que vem no meio.',
     sections: [
       {
-        text: 'A estrutura mais simples para apresentar alguém é “ይህ” (este/esta/isto) + substantivo + cópula. A cópula no fim é que marca se o substantivo é gramaticalmente masculino (ou neutro) ou feminino.',
+        text: 'A estrutura mais simples para apresentar alguém é “ይህ” (este/esta/isto) + substantivo + cópula. A cópula no fim é que marca se o substantivo é gramaticalmente masculino ou feminino (o amárico não tem gênero neutro).',
         examples: [
           ['ይህ አባት ነው።', 'Este é o pai.'],
           ['ይህ እናት ናት።', 'Esta é a mãe.'],

@@ -20,11 +20,11 @@ export const UNITS_AM: UnitSeed[] = [
       title: 'A língua do planalto etíope',
       emoji: '🇪🇹',
       history:
-        'O amárico pertence ao ramo semítico-etiópico da família afro-asiática — é parente do árabe, do hebraico e do tigrínia, não das línguas banta ou cuxíticas também faladas na Etiópia (como o oromo). É a língua oficial de trabalho do governo federal etíope e a segunda língua semítica mais falada do mundo, atrás só do árabe, com cerca de 32 milhões de falantes nativos. A Etiópia nunca foi colonizada de fato (resistiu à invasão italiana de 1935–1941), e por isso o amárico manteve sua própria escrita, o fidel, em vez de adotar o alfabeto latino como quase toda a África.',
+        'O amárico pertence ao ramo semítico-etiópico da família afro-asiática — é parente do árabe, do hebraico e do tigrínia; o oromo, também falado na Etiópia, é da mesma família afro-asiática, mas de outro ramo, o cuxítico (um parentesco bem mais distante). É a língua oficial de trabalho do governo federal etíope e a segunda língua semítica mais falada do mundo, atrás só do árabe, com cerca de 32 milhões de falantes nativos. A Etiópia nunca foi colonizada de fato (resistiu à invasão italiana de 1935–1941), e por isso o amárico manteve sua própria escrita, o fidel, em vez de adotar o alfabeto latino como quase toda a África.',
       culture_tip:
         'A cerimônia do café (buna) é um ritual social central: os grãos são torrados, moídos e coados na hora, em três rodadas sucessivas, enquanto os presentes conversam — recusar participar pode soar indelicado. Lembre-se: a palavra “café” em si veio do árabe/turco para o português, mas o amárico guardou seu próprio nome para a bebida, ቡና (buna), de uma raiz local.',
       grammar_why:
-        'O amárico tem um “é” (a cópula) que muda com quem fala e com o gênero: “ነኝ” (eu sou), “ነህ” (tu és, para homem), “ነሽ” (tu és, para mulher), “ነው” (ele é / neutro) e “ናት” (ela é). “እሱ መምህር ነው” (Ele é professor) e “እሷ መምህር ናት” (Ela é professora) mudam só a cópula no fim.',
+        'O amárico tem um “é” (a cópula) que muda com quem fala e com o gênero: “ነኝ” (eu sou), “ነህ” (tu és, para homem), “ነሽ” (tu és, para mulher), “ነው” (ele é / isto é) e “ናት” (ela é). “እሱ መምህር ነው” (Ele é professor) e “እሷ መምህር ናት” (Ela é professora) mudam só a cópula no fim.',
       grammar_examples: [
         ['ሰላም! ስሜ ሊኑ ነው።', 'Oi! Meu nome é Linu.'],
         ['እንደምን አለህ?', 'Como você está? (para homem)'],
