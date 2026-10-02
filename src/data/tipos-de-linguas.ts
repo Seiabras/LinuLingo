@@ -783,8 +783,8 @@ export const PHONETIC_CIPHERS: SecretLanguage[] = [
     kind: 'cifra fonética',
     base: 'português',
     where: 'Brasil (com uma variante parecida em Portugal)',
-    text: 'Brincadeira de criança: encaixa “pe” antes de cada sílaba da palavra original, repetindo a sílaba logo em seguida. É uma cifra fonética, não uma língua de verdade — não tem vocabulário nem gramática próprios, só uma regra de transformação que qualquer um decifra assim que a aprende. A escritora Clarice Lispector até deu esse nome a um conto, “A língua do P”, no livro “A Via Crucis do Corpo” (1974).',
-    sample: ['Pecapesa', 'Casa (ca+pa+sa+pa: cada sílaba vem seguida de “p” + sua própria vogal)'],
+    text: 'Brincadeira de criança: encaixa a sílaba “pe” antes de cada sílaba da palavra original. É uma cifra fonética, não uma língua de verdade — não tem vocabulário nem gramática próprios, só uma regra de transformação que qualquer um decifra assim que a aprende. A escritora Clarice Lispector até deu esse nome a um conto, “A língua do P”, no livro “A Via Crucis do Corpo” (1974).',
+    sample: ['Pecapesa', 'Casa (pe+ca + pe+sa: a sílaba “pe” vem antes de cada sílaba)'],
   },
   {
     name: 'Pig Latin',
