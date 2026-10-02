@@ -226,6 +226,9 @@ conserto do bidi continua livre pra pegar, sem mais colisão.
   que não é bug, e continua de fora**: no app nativo (Expo Go/build), não existe reconhecimento de
   voz nenhum (`Platform.OS !== 'web'` sempre volta `false`) — precisa de um módulo nativo de STT e
   um build de desenvolvimento, fora do alcance de uma sessão de CLI sem Xcode/Android Studio.
+- **`GrammarParts.tsx`: a 3ª coluna ("Som aproximado") trunca em telas estreitas** — achado por um
+  subagente desta sessão (02/10/2026) enquanto dava papel à Dedé em `GrammarTopicScreen.tsx`; não é
+  causado pela mudança dele (não mexeu nesse arquivo), só notado de passagem. Ainda não corrigido.
 
 ## Ideias de pesquisa externa (tipo Gemini, 30/09–01/10/2026 — lista completa, 6 itens)
 Só anotar, não implementar ainda. Era uma lista numerada 1-6; os itens 3 e 4 chegaram primeiro
@@ -261,44 +264,34 @@ Só anotar, não implementar ainda. Era uma lista numerada 1-6; os itens 3 e 4 c
   ge'ez no amárico. Hoje o app já tem um pouco disso solto (treino do alfabeto russo em
   `pack.alphabet`/`/alfabeto`, IPA por regras/dicionário) mas não integrado À TRILHA logo no
   início — comparar com o que já existe antes de desenhar isso.
-- **Visual «Antártica selvagem»**: paleta inspirada na luz polar de verdade (azul-marinho do
-  oceano, branco neve texturizado, cinza rocha das ilhas antárticas tipo Deception/Elefante, tons
-  quentes do sol da meia-noite/Aurora Austral); telas com cara de caderno de expedição/diário de
-  naturalista (contornos suaves, mapas em linha fina, tipografia elegante); sons ambiente sutis
-  (mar, vento nas geleiras, aves oceânicas reais) de fundo no estudo. Mudança de identidade visual
-  grande — precisa decidir se é reskin geral ou só em telas específicas.
-- **«O bando» no hábitat natural**: dar papel a bichos antárticos de verdade (não antropomorfizados
-  fazendo tarefa de escritório, já tem «Amigos do Linu» em `/amigos` com 5 pinguins + 7 da fauna
-  antártica, ver `src/data/amigos-linu.ts`) ligados a partes específicas do app: 🐧 pinguim-de-adélia
-  nas lições de estrutura/gramática; 🦭 foca-de-weddell guiando escuta/história/cultura no mapa;
-  🐦 petrel-das-neves ligando mapa, expedições e diário; 🐋 baleia-jubarte/orca nas travessias
-  oceânicas da trilha (transição entre continentes/idiomas). Combinar com o visual «Antártica
-  selvagem» acima — parecem a mesma reformulação temática maior, não ideias soltas.
-- **Trilha como «rota de migração»**: em vez de caminho reto, desenhar a trilha como rota de
-  navegação saindo da Antártica, atravessando o oceano e desembarcando nos biomas do idioma
-  estudado (fiordes na Noruega, vales na Romênia, rios na Rússia…); os «Desafios de Chefe» (item
-  acima) virariam «travessias oceânicas» no fim de cada subnível — ancorar na região nova depois de
-  escutar áudio local, ajustar a fala e corrigir pontos fracos. Isso amarra os 3 itens anteriores
-  (chefe/boss battle, visual antártico, bando no hábitat) numa reformulação temática só, não 4
-  ideias separadas — vale esperar o resto da lista antes de avaliar o tamanho da mudança.
-  - Proposta de paleta Tailwind pro tema «caderno de expedição» (cores `field.paper/darkpaper/
-    border/darkborder/ink/amber/glacier` + fontes PlayfairDisplay/SpaceMono) — fica aqui pra
-    quando/se o reskin acima for decidido; NativeWind já está no projeto (`tailwind.config.js` na
-    raiz), então o formato bate com o que o app usa.
-  - Proposta de um `FieldNotebookBackground.tsx` com `react-native-svg` desenhando linhas
-    topográficas/coordenadas sutis de fundo (clima de mapa/caderno de campo) — o trecho de código
-    colado veio incompleto (o corpo do componente e o JSX se perderam na colagem), só a ideia e os
-    imports servem de referência; precisa ser escrito do zero quando for a hora.
-  - Proposta de um `FieldGuideCard.tsx`: cartões de lição/animal/gramática como «ficha catalogada
-    de diário de campo» (borda fina, carimbo de categoria tipo «FAUNA NATIVA» ou «GRAMÁTICA //
-    B1.2», IPA, descrição).
-  - Proposta de um `PageFlipTransition.tsx` (`react-native-reanimated`, `FadeInRight`/`FadeOutLeft`)
-    pra passar entre as 6 etapas da lição com sensação de «folhear o caderno de campo».
-  - **Aviso sobre os códigos colados**: nos últimos 3 (`FieldNotebookBackground`, `FieldGuideCard`,
-    `PageFlipTransition`) só chegaram os imports e a assinatura da função — o corpo/JSX do retorno
-    se perdeu na colagem toda vez. Parece ser um problema sistemático de onde o usuário está
-    copiando (um documento que não exporta bem o bloco de retorno). Só a ideia de cada um é
-    confiável; o código precisa ser escrito do zero quando for a hora de implementar.
+- **Reformulação temática «Antártica selvagem» — EM GRANDE PARTE FEITA em 02/10/2026** (confirmado
+  pelo Matheus: Antártica mesmo, de propósito, por não pertencer a nenhum país — tema neutro pra
+  quem estuda qualquer idioma do app; essa razão está registrada em `tailwind.config.js`). O que
+  já existe:
+  - **Visual**: `src/components/FieldNotebookBackground.tsx` (fundo gelo/pergaminho com linhas de
+    contorno fracas, estilo mapa topográfico), `FieldGuideCard.tsx` (borda tracejada + etiqueta no
+    canto, "ficha de espécime"), `PageFlipTransition.tsx` (troca de tela "folheando o caderno",
+    com `useReducedMotion`/o toggle de acessibilidade desligando a animação). Cores em
+    `tailwind.config.js`: `gelo`, `pergaminho`, `aurora`. Aplicado em Amigos do Linu (`/amigos`,
+    já existia), e agora também nas telas de estudo: `LessonScreen`, `HomeScreen`, `GrammarScreen`,
+    `GrammarTopicScreen`, `CultureScreen`, `ExpeditionScreen`, `JournalScreen`.
+  - **«O bando» no hábitat natural**: 3 dos 12 bichos de `src/data/amigos-linu.ts` ganharam papel
+    fixo, na voz da própria personalidade já registrada — Dedé (pinguim-de-adélia) na gramática,
+    Wendel (foca-de-weddell) na Cultura, Floco (petrel-das-neves) ligando expedição e diário.
+  - **Trilha como «rota de migração»**: a trilha da Home tem visual de rota náutica (linha
+    tracejada cor de aurora, âncoras ⚓ nos subníveis não alcançados, halo tipo GPS no atual); entre
+    uma unidade e a próxima, um cartão fixo de "🌊 Travessia oceânica" com a Jubi (baleia-jubarte)
+    marcando a transição.
+  - Sons ambiente (mar, vento, aves) e paisagens específicas por região de destino (fiordes na
+    Noruega, vales na Romênia…) **não feitos** — ficam para outra rodada, se quiser.
+  - «Desafios de Chefe» virarem «travessias oceânicas» de verdade (um teste interativo na
+    transição, não só visual) **não feito**: o próprio conceito de chefe/boss battle nunca chegou a
+    ser construído no app, então não tinha o que "virar" — por ora a travessia é um marco visual.
+  - Fontes PlayfairDisplay/SpaceMono da proposta original **não usadas** — as telas de estudo
+    continuam com a tipografia padrão do app; avaliar se vale a pena trocar depois de ver o
+    restante do reskin em uso.
+  - Achado de passagem (não deste trabalho): `GrammarParts.tsx` trunca a 3ª coluna ("Som
+    aproximado") em telas estreitas — ver "Revisões pendentes" acima.
 
 ## Pedidos do Matheus Vega (29–30/09/2026, por WhatsApp)
 Lista bruta, ainda não implementada — fica aqui para não se perder. Itens com `❓` precisam de
