@@ -521,7 +521,7 @@ export default function MapScreen() {
                       stroke={isSel ? (dark ? '#FBBF24' : '#0F172A') : stroke}
                       strokeWidth={isSel ? view.w / 400 : view.w / 1600}
                       strokeDasharray={c.disputed ? `${view.w / 300} ${view.w / 400}` : undefined}
-                      {...(Platform.OS === 'web' ? { onClick: () => selectCountry(c) } : { onPress: () => selectCountry(c) })}
+                      {...(Platform.OS === 'web' ? { onClick: () => selectCountry(c), onPress: null as never } : { onPress: () => selectCountry(c) })}
                     />
                   );
                 })}
@@ -545,6 +545,7 @@ export default function MapScreen() {
                                 setSelected(focus);
                                 setSubSel(sh);
                               },
+                              onPress: null as never,
                             }
                           : {
                               onPress: () => {
@@ -581,7 +582,7 @@ export default function MapScreen() {
                     fillOpacity={role ? Math.max(0.5, OPACITY[role]) : 1}
                     stroke={selected?.iso === c.iso ? '#FBBF24' : stroke}
                     strokeWidth={markerR / 3}
-                    {...(Platform.OS === 'web' ? { onClick: () => selectCountry(c) } : { onPress: () => selectCountry(c) })}
+                    {...(Platform.OS === 'web' ? { onClick: () => selectCountry(c), onPress: null as never } : { onPress: () => selectCountry(c) })}
                   />
                 );
               })}
