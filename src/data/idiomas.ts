@@ -95,6 +95,7 @@ import { NAUATLE } from './nah';
 import { NAVAJO } from './nv';
 import { MAORI } from './mi';
 import { GUARANI_ANTIGO } from './gnw';
+import { HAVAIANO } from './haw';
 import { GUARANI_NANDEVA } from './nhd';
 import { TAPIETE } from './tpj';
 
@@ -112,7 +113,7 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   hi: HINDI, gn: GUARANI, tpw: TUPI_ANTIGO, ha: HAUCA, ig: IGBO, yrl: NHEENGATU, bn: BENGALI, qu: QUECHUA, kgp: KAINGANG, tca: TIKUNA,
   xav: XAVANTE, tuo: TUKANO, gun: GUARANI_MBYA, ka: GEORGIANO, th: TAILANDES, km: KHMER,
   ay: AIMARA, kgk: GUARANI_KAIOWA, nah: NAUATLE, kpc: BANIWA, lo: LAOSIANO, cbs: HUNI_KUIN,
-  nv: NAVAJO, nhd: GUARANI_NANDEVA, tpj: TAPIETE, mi: MAORI, gnw: GUARANI_ANTIGO };
+  nv: NAVAJO, nhd: GUARANI_NANDEVA, tpj: TAPIETE, mi: MAORI, gnw: GUARANI_ANTIGO, haw: HAVAIANO };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -193,8 +194,11 @@ export const LANGUAGES: LanguageInfo[] = [
   HINDI,
   BENGALI,
   INDONESIO,
-  // maori: mesma família austronésia do indonésio (ramo polinésio), mas bem mais distante dentro dela
+  // maori e havaiano: mesma família austronésia do indonésio (ramo polinésio), mas bem mais distantes
+  // dentro dela; maori e havaiano são parentes próximos entre si (ambos polinésios), mas não a mesma
+  // língua
   MAORI,
+  HAVAIANO,
   {
     code: 'ur', name: 'Urdu', nativeName: 'اردو', flag: '🇵🇰',
     lineage: { family: 'Indo-europeu', branches: ['Indo-iraniano', 'Indo-ariano', 'Indo-ariano central'], region: 'Norte do subcontinente indiano (Paquistão e Índia)', writing: 'Alfabeto perso-árabe (nastaliq)' },

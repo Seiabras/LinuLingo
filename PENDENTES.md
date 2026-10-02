@@ -112,7 +112,7 @@ commitado.
   - navajo: **feito** como `nv` (02/10/2026) — família na-dené, sem parentesco com as demais línguas
     indígenas americanas do app.
   - maori: **feito** como `mi` (02/10/2026).
-  - Ainda não começado/incompleto: haw (havaiano).
+  - havaiano: **feito** como `haw` (02/10/2026).
   - Todos exigem fonte para cada palavra: não inventar, e usar o empréstimo que a comunidade usa.
 - **Africanos**: ha (haussá), ig (igbo) feitos; falta am (amárico) e om (oromo) — ambos já têm o
   scaffold "língua madura" pronto em `src/data/am/` e `src/data/om/` (como `ha`/`ig` tinham), só
