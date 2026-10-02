@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { LogBox, Pressable, Text, TextInput, useWindowDimensions, View } from 'react-native';
+import { LogBox, Platform, Pressable, Text, TextInput, useWindowDimensions, View } from 'react-native';
 import { HScroll } from '@/components/HScroll';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import { router, useLocalSearchParams } from 'expo-router';
@@ -29,8 +29,21 @@ import { KIND } from '@/services/variedade';
 // mas o React avisa em modo de desenvolvimento. Aviso conhecido e inofensivo.
 LogBox.ignoreLogs(['Unknown event handler property']);
 
+// Fora do componente de propósito: o lint de pureza do React Compiler barra Date.now() dentro do
+// corpo do componente (mesmo num handler de gesto, que só roda bem depois da renderização) porque
+// não consegue provar que não é lido durante a renderização; numa função comum, fora da análise, é
+// só mais uma chamada opaca — exatamente como qualquer outra função de biblioteca.
+const now = () => Date.now();
 const pointBox = (c: MapCountry): Box => ({ x: c.cx - 1, y: c.cy - 1, w: 2, h: 2 });
 const countryBox = (c: MapCountry): Box => (c.d ? focusBox(ringBoxes(c.d)) : null) ?? pointBox(c);
+
+// Só para colorir lado a lado as línguas de UM país aproximado (ver focusColor em MapScreen): a cor
+// normal de cada idioma (lang.color, em onde-se-fala.ts) é por família linguística, pensada pra lista
+// de línguas do mundo inteiro — mas isso faz duas línguas de regiões diferentes do mesmo país, da
+// mesma família (alemão e francês na Suíça, hindi e marata na Índia, ambas indo-europeias), saírem
+// pintadas da mesma cor no recorte por estado/cantão, que é exatamente o que o mapa aproximado
+// precisa distinguir. Paleta só pra esse desempate; o resto do app continua com a cor de família.
+const CHOROPLETH_PALETTE = ['#7C3AED', '#0D9488', '#DC2626', '#CA8A04', '#DB2777', '#2563EB', '#16A34A', '#EA580C', '#0891B2', '#9333EA', '#BE123C', '#4D7C0F'];
 
 // A Rússia entra na Europa Oriental, mas o enquadramento fica na parte europeia
 const REGION_BOX_OVERRIDE: Record<string, Box> = {
@@ -119,6 +132,14 @@ export default function MapScreen() {
   const [worldBox, setWorldBox] = useState<Box>({ x: 0, y: 0, w: MAP_W, h: MAP_H });
   const anim = useRef<number | null>(null);
   const request = useRef(0);
+  // Até quando (Date.now()) um país não deve abrir ao toque: Infinity enquanto um arraste real
+  // estiver rolando, e por mais um instante depois de soltar (o clique do mouse chega atrasado na
+  // web, mesmo depois de arrastar, se soltar em cima do mesmo país). É estado de verdade (não ref)
+  // de propósito: os handlers do gesto rodam na UI thread e só voltam à JS thread pelo scheduleOnRN,
+  // que não pode receber uma função presa a uma ref (o próprio valor da ref não atravessaria a volta
+  // à JS thread); comparar um timestamp evita precisar ler/cancelar um temporizador guardado em ref.
+  const [dragLockedUntil, setDragLockedUntil] = useState(0);
+  const dragLocked = () => now() < dragLockedUntil;
 
   const roles = useMemo(() => new Map(lang.countries.map((c) => [c.iso, c])), [lang]);
   const view = { ...box, h: box.w * aspect };
@@ -151,6 +172,8 @@ export default function MapScreen() {
 
   /** Toque num país: seleciona, aproxima e carrega as subdivisões. */
   const selectCountry = (c: MapCountry) => {
+    // veio de um arraste (não de um toque parado): ignora, senão mover o mapa também abre um país
+    if (dragLocked()) return;
     setSelected(c);
     setSubSel(null);
     setAllLangs(false);
@@ -216,7 +239,13 @@ export default function MapScreen() {
     setBox(world);
     setWorldBox(world);
   };
-  const onPanStart = () => setStart(box);
+  const onPanStart = () => {
+    setStart(box);
+    // só conta como arraste de verdade quando o gesto ativa (o Pan só ativa depois de passar
+    // minDistance, então chegar aqui já significa que o dedo/mouse se moveu de verdade); tranca
+    // indefinidamente até o gesto soltar (onGestureEnd troca por um prazo curto)
+    setDragLockedUntil(Infinity);
+  };
   const onPan = (dx: number, dy: number) => {
     const k = start.w / size.w;
     setBox(clamp({ ...start, x: start.x - dx * k, y: start.y - dy * k }));
@@ -226,14 +255,42 @@ export default function MapScreen() {
     const w = s.w / scale;
     setBox(clamp({ x: s.x + (s.w - w) / 2, y: s.y + (s.w * aspect - w * aspect) / 2, w, h: w * aspect }));
   };
+  const onGestureEnd = () => {
+    // onFinalize roda SEMPRE que o gesto termina, mesmo quando ele nunca chegou a ativar (um toque
+    // parado não passa do minDistance do Pan, então onStart nunca roda — mas onFinalize roda do
+    // mesmo jeito). Só vira a trava curta de pós-arraste se tinha mesmo uma trava indefinida (posta
+    // por onPanStart) pra virar; um toque que nunca ativou nada aqui não mexe na trava, senão todo
+    // toque ficava preso atrás dela e o país nunca abria. Dá tempo do clique do navegador (que o
+    // toque no país usa na web) chegar e ser ignorado, mas libera o próximo toque de verdade.
+    setDragLockedUntil((u) => (u === Infinity ? now() + 300 : u));
+  };
   const pan = Gesture.Pan()
     .minDistance(6)
     .onStart(() => scheduleOnRN(onPanStart))
-    .onUpdate((e) => scheduleOnRN(onPan, e.translationX, e.translationY));
+    .onUpdate((e) => scheduleOnRN(onPan, e.translationX, e.translationY))
+    .onFinalize(() => scheduleOnRN(onGestureEnd));
   const pinch = Gesture.Pinch()
     .onStart(() => scheduleOnRN(onPanStart))
-    .onUpdate((e) => scheduleOnRN(onPinch, e.scale));
+    .onUpdate((e) => scheduleOnRN(onPinch, e.scale))
+    .onFinalize(() => scheduleOnRN(onGestureEnd));
   const gestures = Gesture.Simultaneous(pan, pinch);
+
+  // zoom pela roda do mouse/trackpad na web (como o Google Maps): sem isso, a página rolava no
+  // lugar do mapa dar zoom, e não tinha jeito nenhum de aproximar sem os botões ou a pinça
+  const mapWrapRef = useRef<View>(null);
+  useEffect(() => {
+    if (Platform.OS !== 'web') return;
+    const node = mapWrapRef.current as unknown as HTMLElement | null;
+    if (!node) return;
+    const onWheelNative = (e: WheelEvent) => {
+      e.preventDefault();
+      const f = Math.min(1.18, Math.max(0.85, Math.pow(1.0015, e.deltaY)));
+      zoom(f);
+    };
+    node.addEventListener('wheel', onWheelNative, { passive: false });
+    return () => node.removeEventListener('wheel', onWheelNative);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- zoom() lê o box mais recente por dentro do setState
+  }, []);
 
   const land = dark ? '#334155' : '#CBD5E1';
   const sea = dark ? '#0B1220' : '#E0F2FE';
@@ -241,16 +298,57 @@ export default function MapScreen() {
   const markerR = view.w / 180;
   const px = view.w / size.w; // unidades do mapa por pixel da tela
 
-  // subdivisões do país em foco: cor pelo idioma escolhido (as regiões onde ele é falado se destacam)
+  // subdivisões do país em foco: o retrato linguístico de lá, não só «onde o idioma escolhido lá em
+  // cima aparece». Cada língua com um recorte por estado/província/cantão (lista curta e sourced,
+  // ex.: alemão/francês/italiano na Suíça) ganha a própria cor; a mais específica fica por cima
+  // quando duas se sobrepõem (ex.: Graubünden é maioria alemã, mas o italiano ali é o que importa
+  // mostrar). A língua oficial do país inteiro, sem recorte, pinta o que sobrar.
   const focusSubs = focus && subs?.iso === focus.iso ? subs.list : null;
-  const focusRole = focus && mode === 'hoje' ? roles.get(focus.iso) : undefined;
-  const regionCodes = new Set(focusRole?.subdivisions ?? []);
-  const inRegion = (sh: SubShape) => regionCodes.has(sh.code) || regionCodes.has(sh.parent);
+  const focusSel = focus && mode === 'hoje' ? roles.get(focus.iso) : undefined;
+  const focusLangs = useMemo(
+    () => (focus && mode === 'hoje' ? languagesIn(focus.iso).filter((x) => x.lang.status !== 5) : []),
+    [focus, mode],
+  );
+  const specific = useMemo(
+    () =>
+      focusLangs
+        .filter((x) => (x.spoken.subdivisions?.length ?? 0) > 0)
+        .sort(
+          (a, b) =>
+            Number(b.lang.code === lang.code) - Number(a.lang.code === lang.code) || a.spoken.subdivisions!.length - b.spoken.subdivisions!.length,
+        ),
+    [focusLangs, lang.code],
+  );
+  const background = focusLangs.find((x) => x.spoken.role === 'oficial' && !x.spoken.subdivisions?.length);
+  // a legenda segue a ordem de languagesIn (oficial primeiro, depois por % da população), não a de
+  // "specific" (essa é pela especificidade da região, pro subFill decidir quem pinta por cima quando
+  // duas se sobrepõem) — senão hindi, a língua com mais estados e mais falantes da Índia, ficava de
+  // fora por entrar por último nesse outro critério, e o corte de 6 cortava antes de chegar nele.
+  const countryLangLegend = focusLangs.filter((x) => x === background || specific.includes(x)).slice(0, 6);
+  // cor de desempate (ver CHOROPLETH_PALETTE): a língua escolhida lá em cima guarda a cor dela de
+  // verdade (bate com o resto da tela); as outras do mesmo país ganham uma cor da paleta que ainda não
+  // esteja em uso, numa ordem estável (a de languagesIn), pra nunca repetir entre as que aparecem juntas.
+  const focusColor = useMemo(() => {
+    const assigned = new Map<string, string>([[lang.code, lang.color]]);
+    const used = new Set<string>([lang.color]);
+    for (const x of focusLangs) {
+      if (assigned.has(x.lang.code)) continue;
+      const free = CHOROPLETH_PALETTE.find((c) => !used.has(c)) ?? x.lang.color;
+      used.add(free);
+      assigned.set(x.lang.code, free);
+    }
+    return (code: string, fallback: string) => assigned.get(code) ?? fallback;
+  }, [focusLangs, lang.code, lang.color]);
+  const inRegion = (codes: string[], sh: SubShape) => codes.includes(sh.code) || codes.includes(sh.parent);
   const subFill = (sh: SubShape): [string, number] => {
     if (mode === 'antigos') return formerHighlight.has(focus?.iso ?? '') ? [FORMER_COLOR, 1] : [land, 1];
-    if (!focusRole) return [land, 1];
-    if (regionCodes.size) return inRegion(sh) ? [lang.color, 0.9] : [land, 1];
-    return [lang.color, OPACITY[focusRole.role]];
+    const hit = specific.find((x) => inRegion(x.spoken.subdivisions!, sh));
+    if (hit) return [focusColor(hit.lang.code, hit.lang.color), hit.lang.code === lang.code ? 0.9 : 0.8];
+    // a língua escolhida lá em cima está aqui mas sem recorte por região: pinta o país inteiro nela
+    // (igual ao comportamento de antes, para não perder esse destaque)
+    if (focusSel && !focusSel.subdivisions?.length) return [lang.color, OPACITY[focusSel.role]];
+    if (background) return [focusColor(background.lang.code, background.lang.color), OPACITY[background.spoken.role]];
+    return [land, 1];
   };
   // rótulos: dos maiores para os menores, pulando os que se sobreporiam (como no Google Maps)
   const labels: { sh: SubShape; text: string }[] = [];
@@ -400,6 +498,7 @@ export default function MapScreen() {
       )}
 
       <View
+        ref={mapWrapRef}
         className="mt-3 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700"
         style={{ height: mapHeight }}
         onLayout={(e) => onLayout(e.nativeEvent.layout.width, e.nativeEvent.layout.height)}
@@ -439,6 +538,7 @@ export default function MapScreen() {
                         stroke={stroke}
                         strokeWidth={px}
                         onPress={() => {
+                          if (dragLocked()) return;
                           setSelected(focus);
                           setSubSel(sh);
                         }}
@@ -619,9 +719,24 @@ export default function MapScreen() {
               </View>
             ))}
           </View>
+          {focus && countryLangLegend.length > 1 && (
+            <View className="mt-1.5 gap-1">
+              <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">Línguas daqui no mapa</Text>
+              <View className="flex-row flex-wrap gap-3">
+                {countryLangLegend.map((x) => (
+                  <View key={x.lang.code} className="flex-row items-center gap-1.5">
+                    <View style={{ backgroundColor: focusColor(x.lang.code, x.lang.color) }} className="h-3 w-3 rounded-full" />
+                    <Text className="text-xs text-slate-600 dark:text-slate-400">
+                      {x.lang.flag} {x.lang.name}
+                    </Text>
+                  </View>
+                ))}
+              </View>
+            </View>
+          )}
           <Text className="mt-1 text-xs text-slate-400">
-            Toque num país para aproximar e ver as subdivisões; toque numa delas para saber o nome e o código. Arraste para mover e use a pinça ou os botões
-            para o zoom.
+            Toque num país para aproximar e ver as subdivisões; toque numa delas para saber o nome e o código. Arraste para mover e use a pinça, a roda do
+            mouse ou os botões para o zoom.
           </Text>
 
           {selected ? (

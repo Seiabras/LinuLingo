@@ -430,6 +430,46 @@ for (const [code, name, native, lineage, millions, spec] of WORLD_LANGUAGE_ROWS)
 }
 for (const l of MAP_LANGUAGES) for (const c of l.countries) c.pct ??= CLDR_PCT.get(`${l.code}:${c.iso}`);
 
+/**
+ * Recorte por estado/província/cantão para línguas que só vêm do CLDR por país inteiro (o CLDR não
+ * tem o detalhe por subdivisão). É um complemento, não substitui o idioma: só entra onde a divisão é
+ * oficial e bem documentada, para o mapa colorir o país por dentro quando aproxima (ver MapScreen).
+ * Cobertura de propósito parcial (poucos países, exemplo de prova de conceito) — cada grupo cita a
+ * fonte; nada aqui é um palpite sobre fronteira linguística.
+ */
+const CLDR_SUBDIVISIONS: Record<string, string[]> = {
+  // Suíça: a língua oficial de cada cantão vem da própria constituição cantonal (art. 70 da
+  // Constituição Federal deixa a cada cantão decidir a(s) sua(s) língua(s) oficial(is)). O quarto
+  // idioma nacional, o romanche, fica de fora porque o CLDR não traz dado de falantes para ele.
+  // Fribourg/Friburgo (FR), Genebra (GE), Jura (JU), Neuchâtel (NE), Vaud (VD) e Valais/Wallis (VS)
+  // têm o francês como majoritário/oficial; os outros 20 cantões, o alemão (Ticino é só italiano,
+  // já coberto pela entrada do italiano com CH-TI e CH-GR).
+  'fr:CHE': ['CH-FR', 'CH-GE', 'CH-JU', 'CH-NE', 'CH-VD', 'CH-VS'],
+  'de:CHE': [
+    'CH-ZH', 'CH-BE', 'CH-LU', 'CH-UR', 'CH-SZ', 'CH-OW', 'CH-NW', 'CH-GL', 'CH-ZG', 'CH-SO',
+    'CH-BS', 'CH-BL', 'CH-SH', 'CH-AR', 'CH-AI', 'CH-SG', 'CH-AG', 'CH-TG', 'CH-GR',
+  ],
+  // Canadá: o francês é a única língua oficial de Quebec (Carta da Língua Francesa) e cooficial em
+  // New Brunswick, a única província oficialmente bilíngue do país; o inglês é oficial nas demais.
+  'fr:CAN': ['CA-QC', 'CA-NB'],
+  // Índia: língua oficial de cada estado (listas oficiais estaduais e a 8ª lista da Constituição).
+  // Cobertura parcial: só os estados com uma língua claramente predominante, entre as que o mapa já
+  // lista para a Índia — não é a lista completa dos 22 idiomas da 8ª lista.
+  'hi:IND': ['IN-UP', 'IN-MP', 'IN-RJ', 'IN-BR', 'IN-HR', 'IN-UK', 'IN-CG', 'IN-JH', 'IN-DL', 'IN-HP'],
+  'bn:IND': ['IN-WB', 'IN-TR'],
+  'te:IND': ['IN-AP', 'IN-TS'],
+  'mr:IND': ['IN-MH'],
+  'ta:IND': ['IN-TN', 'IN-PY'],
+  'gu:IND': ['IN-GJ'],
+  'kn:IND': ['IN-KA'],
+  'ml:IND': ['IN-KL'],
+  'or:IND': ['IN-OD'],
+  'pa:IND': ['IN-PB'],
+  'as:IND': ['IN-AS'],
+  'ne:IND': ['IN-SK'],
+};
+for (const l of fromCldr) for (const c of l.countries) c.subdivisions ??= CLDR_SUBDIVISIONS[`${l.code}:${c.iso}`];
+
 /** Todos os idiomas do mapa: os do app (com notas) e os demais do mundo (CLDR), do mais falado ao menos. */
 export const ALL_MAP_LANGUAGES: MapLanguage[] = [...MAP_LANGUAGES, ...fromCldr.sort((a, b) => b.millions - a.millions)];
 
