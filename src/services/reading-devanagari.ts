@@ -7,7 +7,7 @@
  * (ṃ ḥ ṣ ṇ ṭ ḍ ñ — os pontos embaixo das retroflexas não mudam o jeito de ler para quem fala
  * português, só marcam uma diferença articulatória que o aluno ainda não produz). Em vez disso,
  * esta função segue o espírito do sistema Hunterian (o das placas e documentos oficiais da Índia)
- * simplificado: troca os dígrafos por grafias que already soam certo em português — "ch" para च
+ * simplificado: troca os dígrafos por grafias que já soam certo em português — "ch" para च
  * (não "c", que em português lê /k/ ou /s/), "chh" para छ, "sh" para श/ष, "z" para ज़, "ph"/"f" etc.
  * — e descarta os pontos de retroflexa (ṭ ḍ ṇ ṣ → t d n sh) por não terem valor pronunciável para
  * quem está começando. Os mácrons de vogal longa (ā ī ū) ficam: diferenciam pares que importam
@@ -15,8 +15,8 @@
  * app, então não chegam como novidade. A nasalização (anusvara/candrabindu) também usa o til
  * (ã, ĩ...) pela mesma razão — já é a convenção usada nas glosas do app (hā̃, nahī̃, kahā̃).
  * A única letra própria do marata, ळ (lateral retroflexa, ausente do devanágari do hindi), sai como
- * "L" maiúsculo: differentiates de ल sem recorrer a outro diacrítico de ponto — काळा (preto) × काला
- * (hindi, preto) não colidem na leitura.
+ * "l" simples, igual a ल: mesma simplificação já aplicada às outras retroflexas (ट/त, ड/द, ण/न),
+ * sem reintroduzir um diacrítico de ponto só para esta letra.
  *
  * Fontes: Wikipedia "Devanagari", "Hunterian transliteration", "IAST" e "Schwa deletion in Hindi";
  * Census of India / Government of India Hunterian convention (placas e documentos); Omniglot
@@ -40,14 +40,16 @@
  * - ळ do marata (ausente do hindi padrão), nukta do hindi para sons emprestados do persa/árabe
  *   (क़ ख़ ग़ ज़ ड़ ढ़ फ़), danda (।॥) como pontuação, dígitos devanágaris.
  *
- * O que fica de fora, por ser um apagamento de "a" no meio da palavra sem marca escrita nenhuma
- * (nem virama, nem posição final) — um fenômeno real do hindi falado (कृपया soa "kṛpyā", नमस्कार
- * as vezes "namaskār" mesmo, रहना soa "rêhnā") mas que depende de léxico e não só da grafia: é um
- * problema aberto mesmo na linguística computacional do hindi (o algoritmo clássico de Narasimhan
- * et al. chega a uns 89% de acerto). Esta função lê a grafia com fidelidade e aplica só as regras
- * regulares (encontro marcado por virama, apagamento final); o resultado em palavras como कृपया
- * sai "kripayā" em vez do "kṛpyā" falado — uma leitura mais "silabada" mas sempre pronunciável,
- * nunca errada, só mais formal que o jeito corrido de falar.
+ * Apagamento do "a" no MEIO da palavra, sem marca escrita nenhuma (regra de Ohala, a mesma usada
+ * nos algoritmos de síntese de fala do hindi, ~89% de acerto segundo Narasimhan et al. — não é
+ * perfeita, mas erra bem menos que nunca apagar): a sílaba C+"a" (sem mátra, sem virama) no MEIO da
+ * palavra (nem a primeira, nem a última) perde o "a" quando a sílaba anterior termina em vogal E a
+ * sílaba seguinte é consoante+vogal (contexto VC_CV) — varrendo da direita para a esquerda, pra uma
+ * cadeia de apagamentos ficar consistente (समझना = sa+ma+jha+nā: primeiro झ perde o "a" porque ना
+ * tem vogal própria, depois म MANTÉM o "a" porque agora झ não tem mais vogal nenhuma → samajhnā).
+ * A primeira sílaba da palavra nunca perde o "a" por essa regra (só a última, pela regra separada
+ * logo acima). Exemplos: लड़का → laṛkā, पढ़ना → paṛhnā, कृपया → kripyā, रहना → rahnā, नमस्ते
+ * continua namaste (o "s" de स्ते já é parte de um encontro, não uma sílaba C+vogal à direita).
  */
 
 const VIRAMA = '्';
@@ -67,7 +69,7 @@ const CONSONANTS: Record<string, string> = {
   प: 'p', फ: 'ph', ब: 'b', भ: 'bh', म: 'm',
   य: 'y', र: 'r', ल: 'l', व: 'v',
   श: 'sh', ष: 'sh', स: 's', ह: 'h',
-  ळ: 'L', // só marata: lateral retroflexa, ausente do devanágari padrão do hindi
+  ळ: 'l', // só marata: lateral retroflexa, ausente do devanágari padrão do hindi; simplificada pra "l"
   // nukta precomposto (caso o texto já venha assim, em vez de base + marca de nukta separada)
   'क़': 'q', 'ख़': 'kh', 'ग़': 'g', 'ज़': 'z', 'ड़': 'r', 'ढ़': 'rh', 'फ़': 'f', 'य़': 'y',
 };
@@ -106,30 +108,124 @@ const DEVANAGARI_CONTINUATION = new Set<string>([
   VIRAMA, ANUSVARA, CANDRABINDU, VISARGA, NUKTA,
 ]);
 
-function isEndOfWord(text: string, i: number): boolean {
-  return i >= text.length || !DEVANAGARI_CONTINUATION.has(text[i]);
+const WORD_RE = new RegExp(`[${[...DEVANAGARI_CONTINUATION].join('')}]+`, 'g');
+
+const APPROXIMANTS = new Set(['y', 'r', 'l', 'v']);
+
+/** Uma sílaba (consoante + o que vier depois) de uma palavra devanágari, já em letras latinas. */
+interface Syllable {
+  latin: string;
+  /** Vogal já decidida (string, inclusive vazia pra sílabas só de vogal), ou `null` = sem vogal (bare). */
+  vowel: string | null;
+  /** `true` só na sílaba C+"a" sem mátra nem virama: é a única candidata a perder o "a". */
+  deletable: boolean;
+  /** A consoante da sílaba é y/r/l/v (importa pra não isolar uma aproximante num encontro final). */
+  approximant: boolean;
 }
 
-/** Aplica anusvara/candrabindu/visarga em `text[i]`, se houver, devolvendo o próximo índice. */
-function consumeTrailingNasal(text: string, i: number, out: string[]): number {
-  const c = text[i];
+/** Aplica anusvara/candrabindu/visarga em `word[i]`, se houver: devolve [sufixo, próximo índice]. */
+function trailingNasal(word: string, i: number, prevLatin: string): [string, number] {
+  const c = word[i];
   if (c === ANUSVARA || c === CANDRABINDU) {
-    const next = text[i + 1];
-    if (next && CONSONANTS[next]) {
-      // nasal homorgânica: m antes de consoante labial, n nas outras famílias
-      out.push('पफबभम'.includes(next) ? 'm' : 'n');
-    } else {
-      // sem consoante depois: nasaliza a vogal que acabou de sair (til combinante)
-      const last = out.pop() ?? '';
-      out.push(last + '̃');
+    const next = word[i + 1];
+    if (next && CONSONANTS[next]) return ['पफबभम'.includes(next) ? 'm' : 'n', i + 1]; // nasal homorgânica
+    return ['̃', i + 1]; // sem consoante depois: til na vogal anterior (prevLatin fica por conta de quem chama)
+  }
+  if (c === VISARGA) return ['h', i + 1];
+  return ['', i];
+}
+
+/** Sílabas de uma palavra devanágari (só os caracteres de DEVANAGARI_CONTINUATION). */
+function syllablesOf(word: string): Syllable[] {
+  const out: Syllable[] = [];
+  let i = 0;
+  while (i < word.length) {
+    const c = word[i];
+
+    if (INDEPENDENT_VOWELS[c] !== undefined) {
+      let latin = INDEPENDENT_VOWELS[c];
+      i++;
+      const [nasal, next] = trailingNasal(word, i, latin);
+      i = next;
+      out.push({ latin: latin + nasal, vowel: '', deletable: false, approximant: false });
+      continue;
     }
-    return i + 1;
+
+    // CONSONANTS[c] !== undefined aqui sempre, já que word só tem caracteres de DEVANAGARI_CONTINUATION
+    let latin: string;
+    if (c === 'ज' && word[i + 1] === VIRAMA && word[i + 2] === 'ञ') {
+      // ज्ञ é um encontro congelado e irregular (ज्ञान = gyān, विज्ञान = vigyān), não "jn".
+      latin = 'gy';
+      i += 3;
+    } else {
+      latin = CONSONANTS[c];
+      i++;
+      if (word[i] === NUKTA) {
+        latin = NUKTA_LATIN[c] ?? latin;
+        i++;
+      }
+    }
+    // o nukta pode trocar a consoante por uma aproximante (ड़ → "r"): decide depois do ajuste
+    const approximant = APPROXIMANTS.has(latin);
+
+    if (word[i] === VIRAMA) {
+      // encontro consonantal: esta sílaba fica sem vogal, presa à próxima
+      out.push({ latin, vowel: null, deletable: false, approximant });
+      i++;
+      continue;
+    }
+
+    const matraVowel = MATRAS[word[i]];
+    if (matraVowel !== undefined) {
+      i++;
+      const [nasal] = trailingNasal(word, i, matraVowel);
+      if (word[i] === ANUSVARA || word[i] === CANDRABINDU || word[i] === VISARGA) i++;
+      out.push({ latin, vowel: matraVowel + nasal, deletable: false, approximant });
+      continue;
+    }
+
+    if (word[i] === ANUSVARA || word[i] === CANDRABINDU || word[i] === VISARGA) {
+      const [nasal] = trailingNasal(word, i, 'a');
+      i++;
+      out.push({ latin, vowel: 'a' + nasal, deletable: false, approximant });
+      continue;
+    }
+
+    // vogal "a" inerente, sem marca nenhuma: candidata a desaparecer (ver decideVowels)
+    out.push({ latin, vowel: 'a', deletable: true, approximant });
   }
-  if (c === VISARGA) {
-    out.push('h');
-    return i + 1;
+  return out;
+}
+
+/**
+ * Decide quais "a" inerentes somem: o da última sílaba (regra de apagamento final) e os do meio
+ * da palavra (regra de Ohala, VC_CV, da direita pra esquerda) — ver o cabeçalho do arquivo.
+ * Modifica `syll` no lugar (cada sílaba decide `vowel = null` quando o "a" cai).
+ */
+function decideVowels(syll: Syllable[]): void {
+  const n = syll.length;
+  if (n === 0) return;
+  const last = syll[n - 1];
+  if (last.deletable) {
+    // apaga no fim da palavra, a não ser que a palavra só tenha essa vogal, ou que isso isolasse uma
+    // aproximante fechando um encontro (सूर्य sūrya, चंद्र candra, não sūry/candr)
+    const strandedApproximant = n >= 2 && syll[n - 2].vowel === null && last.approximant;
+    const onlyVowelInWord = !syll.slice(0, n - 1).some((s) => s.vowel !== null);
+    if (!strandedApproximant && !onlyVowelInWord) last.vowel = null;
   }
-  return i;
+  for (let i = n - 2; i >= 1; i--) {
+    const s = syll[i];
+    if (!s.deletable) continue;
+    const leftHasVowel = syll[i - 1].vowel !== null;
+    const rightHasVowel = syll[i + 1].vowel !== null;
+    if (leftHasVowel && rightHasVowel) s.vowel = null;
+  }
+}
+
+function wordToLatin(word: string): string {
+  const syll = syllablesOf(word);
+  decideVowels(syll);
+  return syll.map((s) => s.latin + (s.vowel ?? '')).join('');
 }
 
 /**
@@ -138,114 +234,23 @@ function consumeTrailingNasal(text: string, i: number, out: string[]): number {
  */
 export function toReadingDevanagari(raw: string): string {
   const text = raw.normalize('NFC');
-  const out: string[] = [];
+  let out = '';
   let i = 0;
-  let wordHasVowel = false;
-  // true logo depois de uma consoante presa por virama: a aproximante (y/r/l/v) que fecha um
-  // encontro no fim da palavra mantém o "a" (सूर्य sūrya, चंद्र candra), ao contrário de uma
-  // obstruinte no mesmo lugar (दोस्त dost).
-  let afterVirama = false;
-
   while (i < text.length) {
     const c = text[i];
-
-    if (DANDA[c] !== undefined) {
-      out.push(DANDA[c]);
-      wordHasVowel = false;
-      afterVirama = false;
-      i++;
+    if (DANDA[c] !== undefined) { out += DANDA[c]; i++; continue; }
+    if (DIGITS[c] !== undefined) { out += DIGITS[c]; i++; continue; }
+    if (c === OM) { out += 'om'; i++; continue; }
+    if (c === AVAGRAHA) { i++; continue; }
+    WORD_RE.lastIndex = i;
+    const m = WORD_RE.exec(text);
+    if (m && m.index === i) {
+      out += wordToLatin(m[0]);
+      i += m[0].length;
       continue;
     }
-    if (DIGITS[c] !== undefined) {
-      out.push(DIGITS[c]);
-      afterVirama = false;
-      i++;
-      continue;
-    }
-    if (c === OM) {
-      out.push('om');
-      wordHasVowel = true;
-      afterVirama = false;
-      i++;
-      continue;
-    }
-    if (c === AVAGRAHA) {
-      afterVirama = false;
-      i++;
-      continue;
-    }
-
-    if (INDEPENDENT_VOWELS[c] !== undefined) {
-      out.push(INDEPENDENT_VOWELS[c]);
-      wordHasVowel = true;
-      afterVirama = false;
-      i++;
-      i = consumeTrailingNasal(text, i, out);
-      continue;
-    }
-
-    if (CONSONANTS[c] !== undefined) {
-      let latin: string;
-      if (c === 'ज' && text[i + 1] === VIRAMA && text[i + 2] === 'ञ') {
-        // ज्ञ é um encontro congelado e irregular (ज्ञान = gyān, विज्ञान = vigyān), não "jn".
-        latin = 'gy';
-        i += 3;
-      } else {
-        latin = CONSONANTS[c];
-        i++;
-        if (text[i] === NUKTA) {
-          latin = NUKTA_LATIN[c] ?? latin;
-          i++;
-        }
-      }
-
-      if (text[i] === VIRAMA) {
-        // encontro consonantal: esta consoante fica sem vogal, presa à próxima
-        out.push(latin);
-        afterVirama = true;
-        i++;
-        continue;
-      }
-
-      const matraVowel = MATRAS[text[i]];
-      if (matraVowel !== undefined) {
-        out.push(latin + matraVowel);
-        wordHasVowel = true;
-        afterVirama = false;
-        i++;
-        i = consumeTrailingNasal(text, i, out);
-        continue;
-      }
-
-      if (text[i] === ANUSVARA || text[i] === CANDRABINDU || text[i] === VISARGA) {
-        // vogal "a" inerente, nasalizada ou com visarga em seguida
-        out.push(latin + 'a');
-        wordHasVowel = true;
-        afterVirama = false;
-        i = consumeTrailingNasal(text, i, out);
-        continue;
-      }
-
-      // vogal "a" inerente, sem marca nenhuma: apaga no fim da palavra (घर = ghar, não ghara),
-      // a não ser que isso deixasse uma aproximante sozinha fechando um encontro (सूर्य, चंद्र)
-      // ou que esta fosse a única vogal da palavra inteira.
-      const strandedApproximant = afterVirama && 'यरलव'.includes(c);
-      if (wordHasVowel && isEndOfWord(text, i) && !strandedApproximant) {
-        out.push(latin);
-      } else {
-        out.push(latin + 'a');
-        wordHasVowel = true;
-      }
-      afterVirama = false;
-      continue;
-    }
-
-    // pontuação, espaço, dígitos latinos, texto em outra escrita: passa direto
-    out.push(c);
-    wordHasVowel = false;
-    afterVirama = false;
+    out += c; // pontuação, espaço, texto em outra escrita: passa direto
     i++;
   }
-
-  return out.join('').normalize('NFC');
+  return out.normalize('NFC');
 }
