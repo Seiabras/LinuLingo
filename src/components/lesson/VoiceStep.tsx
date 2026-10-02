@@ -8,6 +8,8 @@ import { router } from 'expo-router';
 import { canRecognize, canSpeak, listen, speak } from '@/services/speech';
 import { markWords, matchesAny, pronunciationScore, type WordMark } from '@/services/answers';
 import * as haptics from '@/services/haptics';
+import { useApp } from '@/services/app-state';
+import { targetTextStyle } from '@/services/direction';
 
 const MARK_CLASS: Record<WordMark, string> = {
   ok: 'bg-conquista-light text-conquista-dark dark:bg-green-950 dark:text-green-300',
@@ -21,6 +23,7 @@ const MARK_CLASS: Record<WordMark, string> = {
  * ficam verdes (ditas), amarelas (quase) ou vermelhas (faltaram).
  */
 export function VoiceStep({ challenge, locale, onDone }: { challenge: VoiceChallenge; locale: string; onDone: (correct: boolean) => void }) {
+  const { pack } = useApp();
   const [listening, setListening] = useState(false);
   const [heard, setHeard] = useState<string | null>(null);
   const [typed, setTyped] = useState('');
@@ -69,7 +72,7 @@ export function VoiceStep({ challenge, locale, onDone }: { challenge: VoiceChall
         <Linu mood={heard === null ? 'falando' : accepted ? 'comemorando' : 'pensando'} size={76} />
         <SpeechBubble className="mb-8">
           <View className="flex-row items-center gap-2">
-            <Text className="flex-1 text-xl font-bold text-slate-900 dark:text-white">{challenge.bot}</Text>
+            <Text style={targetTextStyle(pack)} className="flex-1 text-xl font-bold text-slate-900 dark:text-white">{challenge.bot}</Text>
             <SpeakButton text={challenge.bot} locale={locale} />
           </View>
           <Ipa text={challenge.bot} className="text-xs" />
@@ -114,6 +117,7 @@ export function VoiceStep({ challenge, locale, onDone }: { challenge: VoiceChall
               placeholderTextColor="#94A3B8"
               autoCapitalize="none"
               onSubmitEditing={() => typed.trim() && evaluate(typed)}
+              style={targetTextStyle(pack)}
               className="rounded-2xl border-2 border-slate-200 bg-white px-4 py-3 text-lg text-slate-900 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
             />
             <Button title="Verificar" disabled={!typed.trim()} onPress={() => evaluate(typed)} />
@@ -130,7 +134,7 @@ export function VoiceStep({ challenge, locale, onDone }: { challenge: VoiceChall
           <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">Resposta-modelo · {score}% de acerto</Text>
           <View className="flex-row flex-wrap gap-1.5">
             {marks.map((m, k) => (
-              <Text key={k} className={`overflow-hidden rounded-lg px-2 py-1 text-lg font-bold ${MARK_CLASS[m.mark]}`}>
+              <Text key={k} style={targetTextStyle(pack)} className={`overflow-hidden rounded-lg px-2 py-1 text-lg font-bold ${MARK_CLASS[m.mark]}`}>
                 {m.word}
               </Text>
             ))}

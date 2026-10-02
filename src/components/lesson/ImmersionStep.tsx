@@ -10,6 +10,7 @@ import * as haptics from '@/services/haptics';
 import { qualityFromAnswer } from '@/srs/sm2';
 import { logMistake } from '@/services/mistakes';
 import { useApp } from '@/services/app-state';
+import { targetTextStyle } from '@/services/direction';
 
 export interface WordResult {
   vocabId: string;
@@ -106,7 +107,10 @@ export function ImmersionStep({ words, pool, locale, onDone }: { words: VocabWit
                 good ? 'border-conquista bg-conquista-light dark:bg-green-950' : bad ? 'border-rose-400 bg-rose-50 dark:bg-rose-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'
               }`}
             >
-              <Text className={`text-lg font-bold ${good ? 'text-conquista-dark dark:text-green-300' : bad ? 'text-rose-600 dark:text-rose-300' : 'text-slate-800 dark:text-slate-100'}`}>{o.word_target}</Text>
+              <View className="flex-1">
+                <Text style={targetTextStyle(pack)} className={`text-lg font-bold ${good ? 'text-conquista-dark dark:text-green-300' : bad ? 'text-rose-600 dark:text-rose-300' : 'text-slate-800 dark:text-slate-100'}`}>{o.word_target}</Text>
+                {!!pack.reading?.(o.word_target) && <Text className="text-xs text-slate-500 dark:text-slate-400">{pack.reading(o.word_target)}</Text>}
+              </View>
               {solved && o.id === word.id && <Text className="text-lg">✅</Text>}
             </Pressable>
           );

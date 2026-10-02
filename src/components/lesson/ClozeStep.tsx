@@ -6,6 +6,7 @@ import { normalize, shuffle } from '@/services/answers';
 import * as haptics from '@/services/haptics';
 import { logMistake } from '@/services/mistakes';
 import { useApp } from '@/services/app-state';
+import { targetTextStyle } from '@/services/direction';
 
 /**
  * Etapa 3 — preenchimento de lacunas (Speakly). Toque numa opção ou digite,
@@ -68,7 +69,7 @@ export function ClozeStep({ items, locale, specialChars, onDone }: { items: Cloz
       </Text>
 
       <View className="flex-row items-center gap-3 rounded-3xl border-2 border-slate-200 bg-white p-5 dark:border-slate-700 dark:bg-slate-900">
-        <Text className="flex-1 text-2xl leading-9 text-slate-900 dark:text-white">
+        <Text style={targetTextStyle(pack)} className="flex-1 text-2xl leading-9 text-slate-900 dark:text-white">
           {before}
           <Text className={`font-extrabold ${answered ? (right || almost ? 'text-conquista' : 'text-rose-500') : 'text-conecta'}`}>
             {answered ? item.answer : ' _____ '}
@@ -93,7 +94,8 @@ export function ClozeStep({ items, locale, specialChars, onDone }: { items: Cloz
                   isRight ? 'border-conquista bg-conquista-light dark:bg-green-950' : isWrong ? 'border-rose-400 bg-rose-50 dark:bg-rose-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'
                 }`}
               >
-                <Text className="text-lg font-bold text-slate-800 dark:text-slate-100">{o}</Text>
+                <Text style={targetTextStyle(pack)} className="text-lg font-bold text-slate-800 dark:text-slate-100">{o}</Text>
+                {!!pack.reading?.(o) && <Text className="text-xs text-slate-500 dark:text-slate-400">{pack.reading(o)}</Text>}
               </Pressable>
             );
           })}
@@ -114,6 +116,7 @@ export function ClozeStep({ items, locale, specialChars, onDone }: { items: Cloz
             placeholder="Digite a palavra que falta"
             placeholderTextColor="#94A3B8"
             onSubmitEditing={() => typed.trim() && submit(typed)}
+            style={targetTextStyle(pack)}
             className="rounded-2xl border-2 border-slate-200 bg-white px-4 py-3 text-lg text-slate-900 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
           />
           {!answered && <LetterPad onInsert={(ch) => setTyped((t) => t + ch)} onBackspace={() => setTyped((t) => t.slice(0, -1))} />}
