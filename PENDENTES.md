@@ -49,7 +49,32 @@ commitado.
   ficavam parecendo um grupo só sem rótulo (corrigido). Conferi as famílias/ramos de todos os
   idiomas registrados contra a classificação de verdade (Glottolog/Ethnologue): não achei nenhum erro
   de fundo, só um nome de ramo impreciso no scots (dizia "Inglês" no lugar de "Ânglico" — corrigido;
-  scots é parente do inglês, não veio dele).
+  scots é parente do inglês, não veio dele). **Pergunta do Matheus (02/10/2026): dá pra adicionar mais
+  línguas nessas famílias de um só idioma?** Resposta, pesquisada na Wikipédia em inglês: o helênico, o
+  albanês e o armênio continuam sendo ramos de um só idioma dentro do indo-europeu — não existe uma
+  "língua irmã" de ramo diferente para adicionar. Mas cada um tem variedades da MESMA língua que o
+  ISO 639-3 trata como código próprio, por não serem inteligíveis com o padrão:
+    - **grego**: tsakônio (tsd) é o caso mais forte — descende do dórico antigo, não do coiné/ático
+      como o grego padrão, não é inteligível com ele, e está criticamente ameaçado (poucas centenas de
+      falantes fluentes, na região da Lacônia). Pôntico (pnt) e capadócio (cpg, hoje quase extinto, os
+      falantes foram realocados para a Grécia na troca populacional de 1923) também têm código próprio
+      por falta de inteligibilidade mútua; jevânico/judeu-grego (yej) tem código próprio por motivo
+      étnico/cultural, não por falta de inteligibilidade. A linguística grega tradicional trata todos
+      como dialetos do grego, não como línguas à parte — mas o ISO os separa.
+    - **albanês**: gheg (aln) e tosk (als, base do albanês padrão já no app) são dialetos mutuamente
+      inteligíveis com códigos próprios; arbëresh (aae, Itália) e arvanítico (aat, Grécia) são
+      variedades de diáspora antigas (séculos de isolamento) com código próprio, mas ainda inteligíveis
+      com o albanês padrão — mais parecido com o caso de um "sotaque"/variante do que com uma língua
+      separada de verdade.
+    - **armênio**: o caso mais claro de todos. O armênio ocidental (hyw) é tratado pelo ISO 639-3 como
+      língua separada do armênio oriental padrão (hy, já no app) — 1,58 milhão de falantes, quase todos
+      na diáspora (Líbano, Síria, França, EUA), sem nenhum país onde seja língua oficial, classificado
+      como ameaçado pela UNESCO. Forte candidato a pacote próprio, pelo mesmo critério já usado aqui
+      para separar guarani ñandeva/tapiete do guarani paraguaio.
+  Nenhum desses foi criado ainda — fica como item da fila (ver "Não começados" seria o lugar, mas como
+  são "filhotes" das famílias já fechadas, registro aqui mesmo). Candidatos por ordem de força: armênio
+  ocidental (hyw) primeiro, tsakônio (tsd) em seguida; gheg/arbëresh/arvanítico ficam mais como ideia de
+  "sotaque" dentro do pacote `sq` já existente do que como pacote novo.
 - **Asiáticos**: hi (híndi), bn (bengali), th (tailandês), km (khmer) e lo (laosiano) feitos; faltam
   ur e fa (bloqueados por RTL, ver abaixo), mr, te, ta, tl. Do Sudeste Asiático continental ainda
   falta my (birmanês) — ainda não confirmado, conferir documentação antes de começar.
