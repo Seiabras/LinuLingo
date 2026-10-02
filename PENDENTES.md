@@ -365,12 +365,15 @@ mais detalhe do usuário antes de mexer em código.
     **Nota de dados de baixa prioridade, ainda aberta**: na Rússia, Carélia (RU-KR) pinta como finlandês
     — o idioma regional com apoio oficial lá é o carélio (junto do finlandês e do vepse); se um dia o
     carélio entrar no mapa, ele é a escolha mais precisa pra essa subdivisão.
-    **3ª rodada: o aviso de console "Unknown event handler property" (onStartShouldSetResponder etc.)
-    continua aberto** — cosmético, não quebra nenhuma interação (toque/arrasto/zoom todos funcionam),
-    só suja o console no modo dev. Um agente dedicado a investigar isso travou num loop de ferramentas
-    (problema de resolução de módulo do Node ao tentar rodar um script próprio) sem progresso em mais
-    de uma hora e foi interrompido manualmente. Fica como pendência técnica de baixa prioridade; a
-    supressão via `LogBox.ignoreLogs` já existente continua no lugar, mesmo não resolvendo no modo web.
+    **3ª rodada: o aviso de console "Unknown event handler property" — FECHADO em 02/10/2026** (achado
+    e resolvido pela própria revisão de seiabras-b8, depois que o agente dedicado a investigar isso
+    travou num loop de ferramentas e foi interrompido manualmente). Causa raiz lida direto no código do
+    react-native-svg: qualquer `<Path>`/`<Circle>` com `onPress`, na web, faz a biblioteca injetar 6
+    props de responder do React Native direto no elemento SVG real do DOM, que não os reconhece.
+    Corrigido trocando `onPress` por `onClick` na web (mantendo `onPress` no nativo) nos três pontos do
+    mapa e em mais dois componentes com o mesmo padrão (`RegionTapMap.tsx`, `MapGameScreen.tsx`); a
+    trava de arrasto já existente (`dragLocked`) continua intacta. Removido o `LogBox.ignoreLogs` que
+    nunca escondia o aviso na web mesmo — agora o aviso nem aparece mais.
 - **"Em línguas artificiais adicione a língua dos minions"**: a "língua dos minions" (dos filmes da
   Illumination) não é um conlang estruturado de verdade — é gibberish dos diretores, uma mistura de
   fragmentos de línguas reais (italiano, espanhol, francês, inglês, japonês, coreano, indonésio…) sem
