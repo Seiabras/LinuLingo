@@ -515,6 +515,25 @@ export const CONLANGS: Conlang[] = [
     text: 'Apareceu pela primeira vez em SimCopter (1996) e ficou famosa com The Sims (2000). É quase toda improvisada pelos dubladores, para soar como uma língua sem que os jogadores ouçam a mesma frase repetida em qualquer idioma. Tem algumas expressões fixas, mas não é uma língua de verdade.',
     samples: [['Sul sul!', 'Olá!']],
   },
+  {
+    id: 'minionese',
+    name: 'Minionês',
+    emoji: '🍌',
+    creator: 'Pierre Coffin (também dublador dos minions) e a equipe da Illumination',
+    year: '2010',
+    purpose: 'artistica',
+    origin: 'mista',
+    stage: 'esboco',
+    about: 'Meu Malvado Favorito (2010) e as sequências e spin-offs da franquia: a fala dos minions.',
+    text: 'Não é um idioma construído de verdade, com gramática e vocabulário documentados por um linguista — é gibberish improvisado, sobretudo pelo próprio Pierre Coffin na hora de dublar, misturando sons e fragmentos reconhecíveis de várias línguas (inglês, francês, espanhol, italiano, indonésio, japonês, coreano, hindi, entre outras) escolhidos pelo som engraçado, não por uma regra gramatical. Por isso o “vocabulário” muda de um filme para o outro e boa parte é só som cômico, sem significado fixo. Um punhado de palavras e frases virou fixo por aparecer repetido nos filmes e em entrevistas da equipe.',
+    samples: [
+      ['Bello!', 'Olá! (do italiano “ciao, bello”)'],
+      ['Poopaye!', 'Tchau!'],
+      ['Tank yu!', 'Obrigado! (do inglês “thank you”)'],
+      ['Me want bananaaa!', 'Eu quero banana!'],
+    ],
+    note: 'Entra aqui mais como curiosidade do que como conlang de verdade: sem gramática nem vocabulário fechado e consistente, a maioria dos linguistas não classificaria o minionês como uma língua construída — é efeito sonoro com algumas palavras fixas, parecido com o simlish, mas ainda menos estruturado.',
+  },
 ];
 
 // ---------- línguas formais e computacionais ----------
