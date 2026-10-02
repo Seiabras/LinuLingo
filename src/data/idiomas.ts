@@ -111,6 +111,9 @@ import { TAGALO } from './tl';
 import { ARMENIO_OCIDENTAL } from './hyw';
 import { TETUM } from './tdt';
 import { MAPUDUNGUN } from './arn';
+import { GAELICO_ESCOCES } from './gd';
+import { CRIOULO_HAITIANO } from './ht';
+import { KARITIANA } from './ktn';
 
 /** Idiomas com conteúdo pronto. */
 export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES, fr: FRANCES, ca: CATALAO, is: ISLANDES, fi: FINLANDES, et: ESTONIANO, fo: FEROES, lt: LITUANO, lv: LETAO, sw: SUAILI, ja: JAPONES, ko: COREANO,
@@ -128,7 +131,7 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   ay: AIMARA, kgk: GUARANI_KAIOWA, nah: NAUATLE, kpc: BANIWA, lo: LAOSIANO, cbs: HUNI_KUIN,
   nv: NAVAJO, nhd: GUARANI_NANDEVA, tpj: TAPIETE, mi: MAORI, gnw: GUARANI_ANTIGO, haw: HAVAIANO, te: TELUGO, om: OROMO, mr: MARATHI, am: AMARICO, mn: MONGOL,
   hu: HUNGARO, tsd: TSAKONIO, pcm: PIDGIN_NIGERIANO, ta: TAMIL, tl: TAGALO, hyw: ARMENIO_OCIDENTAL,
-  tdt: TETUM, arn: MAPUDUNGUN };
+  tdt: TETUM, arn: MAPUDUNGUN, gd: GAELICO_ESCOCES, ht: CRIOULO_HAITIANO, ktn: KARITIANA };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -292,6 +295,17 @@ export const LANGUAGES: LanguageInfo[] = [
   // mapudungún: tratado aqui como língua isolada (posição majoritária entre linguistas hoje), como
   // o basco e o tikuna — sem parentesco comprovado com nenhuma outra família já no app
   MAPUDUNGUN,
+  // gaélico escocês: indo-europeu, ramo goidélico (irmão do irlandês), diferente do britônico do
+  // galês/bretão — falado sobretudo nas Terras Altas e nas Hébridas Exteriores da Escócia
+  GAELICO_ESCOCES,
+  // crioulo haitiano: crioulo de base francesa com gramática própria (marcadores pré-verbais
+  // te/ap/pral, sem conjugação verbal) — mesma convenção já usada pro pidgin nigeriano, família
+  // própria em vez de entrar na árvore genealógica do francês
+  CRIOULO_HAITIANO,
+  // karitiana: família tupi, mas ramo arikém — diferente do ramo tupi-guarani das outras línguas
+  // tupis já no app (gn, tpw, yrl, gun...); única língua viva do próprio ramo; ergativo-absolutivo,
+  // um alinhamento raro entre as línguas tupis
+  KARITIANA,
 ];
 
 export const DEFAULT_LANGUAGE = 'ro';

@@ -381,12 +381,16 @@ mais detalhe do usuário antes de mexer em código.
   farsi, karitiana, kimbundu, gaélico escocês, crioulo haitiano, groenlandês, palenquero, saami,
   talian, bretão, lakota. Status de cada um:
   - **Feitos em 02/10/2026**: tétum (`tdt` — austronésio, ramo tetárico, muitos empréstimos do
-    português por contato colonial) e mapudungún (`arn` — tratado como língua isolada, posição
-    majoritária entre linguistas hoje, mesmo caso do tikuna/basco).
-  - **Em andamento** (pacote do zero, igual aos outros): karitiana (`ktn`), kimbundu (`kmb`), gaélico
-    escocês (`gd`), crioulo haitiano (`ht`), groenlandês/kalaallisut (`kl`), palenquero (`pln`), saami
-    do norte (`se` — a variedade sami mais falada, ~15-25 mil falantes; as outras línguas sami, como a
-    lule e a skolt, têm código próprio à parte), bretão (`br`), lakota (`lkt`).
+    português por contato colonial), mapudungún (`arn` — tratado como língua isolada, posição
+    majoritária entre linguistas hoje, mesmo caso do tikuna/basco), gaélico escocês (`gd` — indo-
+    europeu, ramo goidélico, irmão do irlandês), crioulo haitiano (`ht` — crioulo de base francesa,
+    família própria "Crioulo de base francesa" adicionada à lista fechada de `conteudo.test.ts`,
+    mesma convenção do pidgin nigeriano) e karitiana (`ktn` — família tupi, mas ramo arikém, diferente
+    do tupi-guarani das outras línguas tupis do app; ergativo-absolutivo, raro entre línguas tupis).
+  - **Em andamento** (pacote do zero, igual aos outros): kimbundu (`kmb`), groenlandês/kalaallisut
+    (`kl`), palenquero (`pln`), saami do norte (`se` — a variedade sami mais falada, ~15-25 mil
+    falantes; as outras línguas sami, como a lule e a skolt, têm código próprio à parte), bretão
+    (`br`), lakota (`lkt`).
   - **"Língua geral de mina"**: pesquisado em 02/10/2026. Descartada a hipótese de ser a língua
     geral tupi (nheengatu, `yrl`, ou a paulista) — nenhuma fonte liga as duas coisas. Confirmado:
     "mina" vem da Costa da Mina/São Jorge da Mina (Elmina, Gana de hoje) e remete ao Tambor de Mina e
