@@ -745,9 +745,9 @@ export const CRYPTOLECTS: SecretLanguage[] = [
   {
     name: 'Pajubá',
     kind: 'criptoleto',
-    base: 'iorubá e outras línguas da África Ocidental (umbundo, kicongo, jeje, fon), com palavras do português alteradas',
+    base: 'iorubá, fon/jeje (línguas da África Ocidental) e línguas banto da África Central/Austral, como o quimbundo, o umbundo e o kikongo, com palavras do português alteradas',
     where: 'Brasil',
-    text: 'Nasceu nos terreiros de religiões afro-brasileiras (candomblé, umbanda), onde esse vocabulário já era usado nos rituais, e foi adotado pela comunidade LGBTQIA+ — sobretudo travestis e mulheres trans — como código de comunicação: durante a ditadura militar, ajudava a reconhecer quem era "de dentro" e driblar a repressão policial. O próprio nome vem do iorubá e significa algo como "mistério", "segredo".',
+    text: 'Nasceu nos terreiros de religiões afro-brasileiras (candomblé, umbanda), onde esse vocabulário africano já era usado nos rituais, e foi adotado pela comunidade LGBTQIA+ — sobretudo travestis e mulheres trans — como código de comunicação: durante a ditadura militar, ajudava a reconhecer quem era “de dentro” e driblar a repressão policial. A etimologia exata do nome “pajubá” (também “bajubá”) é discutida; o sentido mais citado é “fofoca, notícia”.',
     sample: ['Ocó', 'Homem (do iorubá “okó”, órgão sexual masculino, que passou a nomear o homem inteiro)'],
   },
   {
@@ -755,7 +755,7 @@ export const CRYPTOLECTS: SecretLanguage[] = [
     kind: 'criptoleto',
     base: 'francês, com as sílabas invertidas',
     where: 'França',
-    text: 'Inverte a ordem das sílabas da palavra original: “femme” (mulher) vira “meuf”, “flic” (policial) vira “keuf”. O próprio nome “verlan” é a inversão de “l’envers” (“o inverso”). Nasceu nos subúrbios populares de Paris e, com o tempo, ganhou o país inteiro pela música e pelo cinema — a ponto de muitas palavras verlanizadas (como “meuf”) virarem gíria comum, sem ninguém mais pensar na inversão.',
+    text: 'Inverte a ordem das sílabas da palavra original: “femme” (mulher) vira “meuf”, “flic” (policial) vira “keuf”. O próprio nome “verlan” é a inversão de “l’envers” (“o inverso”). A prática existe desde pelo menos o século XIX, mas foi nos subúrbios populares de Paris, entre os anos 1970 e 1980, que ela se popularizou e ganhou o país inteiro pela música e pelo cinema — a ponto de muitas palavras verlanizadas (como “meuf”) virarem gíria comum, sem ninguém mais pensar na inversão.',
     sample: ['Laisse béton.', 'Deixa pra lá. (“béton” é o verlan de “tombé”, dentro da expressão “laisse tomber”)'],
   },
   {
@@ -763,7 +763,7 @@ export const CRYPTOLECTS: SecretLanguage[] = [
     kind: 'criptoleto',
     base: 'italiano, romani, calão de marinheiro e gírias de teatro, misturados ao inglês',
     where: 'Reino Unido',
-    text: 'Usado desde pelo menos o século XIX por atores, marinheiros, artistas de circo e, sobretudo, homens gays — numa época em que a homossexualidade era crime no Reino Unido (só deixou de ser em 1967), servia para driblar a polícia disfarçada e reconhecer outros membros da comunidade. O nome vem do italiano “parlare” (falar).',
+    text: 'Usado desde pelo menos o século XIX por atores, marinheiros, artistas de circo e, sobretudo, homens gays — numa época em que a homossexualidade era crime no Reino Unido, servia para driblar a polícia disfarçada e reconhecer outros membros da comunidade. A descriminalização veio em datas diferentes em cada parte do Reino Unido: Inglaterra e País de Gales em 1967, Escócia só em 1980, Irlanda do Norte em 1982. O nome vem do italiano “parlare” (falar).',
     sample: ['Vada the bona eek.', 'Veja o rosto bonito. (“vada” é ver, do italiano “vardare”; “bona” é bom; “eek” é rosto, de trás pra frente)'],
   },
   {
@@ -783,8 +783,8 @@ export const PHONETIC_CIPHERS: SecretLanguage[] = [
     kind: 'cifra fonética',
     base: 'português',
     where: 'Brasil (com uma variante parecida em Portugal)',
-    text: 'Brincadeira de criança: encaixa a consoante “p” mais a vogal de cada sílaba, repetindo o som dela. É uma cifra fonética, não uma língua de verdade — não tem vocabulário nem gramática próprios, só uma regra de transformação que qualquer um decifra assim que a aprende. A escritora Clarice Lispector até deu esse nome a um conto, “A língua do P”, no livro “A Via Crucis do Corpo” (1974).',
-    sample: ['Oi, popi!', 'Oi! (a sílaba “oi” ganha o “p” e repete a vogal: oi + p + oi)'],
+    text: 'Brincadeira de criança: encaixa “pe” antes de cada sílaba da palavra original, repetindo a sílaba logo em seguida. É uma cifra fonética, não uma língua de verdade — não tem vocabulário nem gramática próprios, só uma regra de transformação que qualquer um decifra assim que a aprende. A escritora Clarice Lispector até deu esse nome a um conto, “A língua do P”, no livro “A Via Crucis do Corpo” (1974).',
+    sample: ['Pecapesa', 'Casa (ca+pa+sa+pa: cada sílaba vem seguida de “p” + sua própria vogal)'],
   },
   {
     name: 'Pig Latin',
@@ -806,7 +806,7 @@ export const PHONETIC_CIPHERS: SecretLanguage[] = [
 
 /** Código morse: não é uma língua nem uma cifra de som — é um jeito de transmitir letras por sinal (ponto/traço, luz, som, toque). */
 export const MORSE_NOTE =
-  'O código morse não é uma língua nem uma cifra fonética: ninguém “fala” morse, é um jeito de transmitir as LETRAS de uma língua (geralmente o alfabeto latino) por sinal — ponto e traço, que viram bipe curto/longo no som, lampejo curto/longo na luz, ou toque curto/longo no ombro. Criado por Samuel Morse e Alfred Vail nos Estados Unidos, nos anos 1830-40, para o telégrafo elétrico; o padrão internacional usado hoje é uma revisão de 1865 (de Friedrich Gerke), diferente do morse original americano. Cada letra tem seu próprio padrão de pontos e traços — não existe tradução de frase inteira, só letra por letra.';
+  'O código morse não é uma língua nem uma cifra fonética: ninguém “fala” morse, é um jeito de transmitir as LETRAS de uma língua (geralmente o alfabeto latino) por sinal — ponto e traço, que viram bipe curto/longo no som, lampejo curto/longo na luz, ou toque curto/longo no ombro. Criado por Samuel Morse e Alfred Vail nos Estados Unidos, nos anos 1830-40, para o telégrafo elétrico; o padrão internacional usado hoje vem de uma revisão de Friedrich Gerke em 1848, depois adotada e padronizada numa conferência em Paris em 1865 — diferente do morse original americano. Cada letra tem seu próprio padrão de pontos e traços — não existe tradução de frase inteira, só letra por letra.';
 
 export const MORSE_TABLE: [string, string][] = [
   ['A', '.-'], ['B', '-...'], ['C', '-.-.'], ['D', '-..'], ['E', '.'], ['F', '..-.'], ['G', '--.'], ['H', '....'],
