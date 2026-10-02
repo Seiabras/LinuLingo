@@ -1,0 +1,116 @@
+import { buildVocab, type VocabRow } from '../types';
+
+/**
+ * Vocabulário do maori (te reo Māori), língua polinésia (austronésia) indígena da Nova Zelândia.
+ * Idioma incompleto: por enquanto só o nível A1 (unidades 1 e 2) — ver o campo `incomplete` em
+ * index.ts. Toda palavra foi conferida no Te Aka Māori Dictionary (maoridictionary.co.nz), a
+ * referência mais usada para o maori, com reforço do Wikipédia e do Wiktionary para números,
+ * pronomes e dias da semana.
+ */
+export const ROWS: VocabRow[] = [
+  // Expressões
+  ['kia ora', 'oi / olá (também “obrigado”)', 'interjeição', 'Expressões', '👋', 'Kia ora! Kei te pēhea koe?'],
+  ['tēnā koe', 'saudação formal a uma pessoa', 'interjeição', 'Expressões', '🙏', 'Tēnā koe, e te rangatira.'],
+  ['haere mai', 'bem-vindo / venha', 'interjeição', 'Expressões', '🤗', 'Haere mai ki te marae!'],
+  ['haere rā', 'tchau (dito por quem fica para quem vai)', 'interjeição', 'Expressões', '👋', 'Haere rā! Ka kite anō.'],
+  ['ka kite anō', 'até logo / nos vemos', 'interjeição', 'Expressões', '👋', 'Ka kite anō, e hoa!'],
+  ['āe', 'sim', 'advérbio', 'Expressões', '👍', 'He pai tēnei? Āe!'],
+  ['kāo', 'não (só como resposta direta)', 'advérbio', 'Expressões', '👎', 'Kei te pai koe? Kāo.'],
+  ['kāore', 'não (nega uma frase inteira)', 'advérbio', 'Expressões', '🚫', 'Kāore au i te mōhio.'],
+  // Essenciais
+  ['kei te pēhea koe', 'como você está (a uma pessoa)', 'expressão', 'Essenciais', '❓', 'Kia ora! Kei te pēhea koe?'],
+  ['kei te pai', 'estou bem / está bem', 'expressão', 'Essenciais', '👍', 'Kei te pai ahau, kei te pēhea koe?'],
+  ['pai', 'bom', 'adjetivo', 'Essenciais', '👍', 'He kai pai tēnei.'],
+  ['kino', 'ruim', 'adjetivo', 'Essenciais', '👎', 'Kāore i te pai, he kino.'],
+  ['nui', 'grande / muito', 'adjetivo', 'Essenciais', '📏', 'He whare nui tērā.'],
+  ['iti', 'pequeno', 'adjetivo', 'Essenciais', '📏', 'He kāinga iti tōku.'],
+  ['aha', 'o quê', 'pronome', 'Essenciais', '❓', 'He aha tēnei?'],
+  ['nō hea', 'de onde', 'advérbio', 'Essenciais', '❓', 'Nō hea koe?'],
+  ['kura', 'escola', 'substantivo', 'Essenciais', '🏫', 'Kei te haere au ki te kura.'],
+  ['kurī', 'cachorro', 'substantivo', 'Essenciais', '🐕', 'He kurī pai tāku.'],
+  ['ngeru', 'gato', 'substantivo', 'Essenciais', '🐈', 'Kei te moe te ngeru.'],
+  ['kāinga', 'casa / lar', 'substantivo', 'Essenciais', '🏠', 'Kei tōku kāinga au.'],
+  ['whare', 'casa (construção)', 'substantivo', 'Essenciais', '🏡', 'Kei roto i te whare au.'],
+  // Pessoas
+  ['au', 'eu', 'pronome', 'Pessoas', '🙋', 'Kei Rotorua au.'],
+  ['koe', 'você', 'pronome', 'Pessoas', '🫵', 'Nō hea koe?'],
+  ['ia', 'ele/ela', 'pronome', 'Pessoas', '🧑', 'Kei te kōrero ia.'],
+  ['tātou', 'nós (incluindo quem ouve)', 'pronome', 'Pessoas', '🙌', 'Haere tātou!'],
+  ['koutou', 'vocês (três ou mais)', 'pronome', 'Pessoas', '👥', 'Kia ora koutou!'],
+  ['rātou', 'eles/elas', 'pronome', 'Pessoas', '👥', 'Kei te haere rātou.'],
+  ['ingoa', 'nome', 'substantivo', 'Pessoas', '🏷️', 'Ko Ana tōku ingoa.'],
+  ['whānau', 'família', 'substantivo', 'Pessoas', '👪', 'He nui tōku whānau.'],
+  ['māmā', 'mãe', 'substantivo', 'Pessoas', '👩', 'Ko Rina tōku māmā.'],
+  ['pāpā', 'pai', 'substantivo', 'Pessoas', '👨', 'Ko Hemi tōku pāpā.'],
+  ['tuakana', 'irmão/irmã mais velho(a) (mesmo sexo)', 'substantivo', 'Pessoas', '🧑', 'Ko ia tōku tuakana.'],
+  ['teina', 'irmão/irmã mais novo(a) (mesmo sexo)', 'substantivo', 'Pessoas', '🧒', 'Ko ia tōku teina.'],
+  ['tamaiti', 'criança', 'substantivo', 'Pessoas', '🧒', 'He tamaiti pai ia.'],
+  ['tangata', 'pessoa', 'substantivo', 'Pessoas', '🧑', 'He tangata pai ia.'],
+  ['wahine', 'mulher', 'substantivo', 'Pessoas', '👩', 'He kaiako tērā wahine.'],
+  ['tāne', 'homem', 'substantivo', 'Pessoas', '👨', 'He kaiako tērā tāne.'],
+  ['hoa', 'amigo', 'substantivo', 'Pessoas', '🧑‍🤝‍🧑', 'He hoa pai ia nōku.'],
+  ['kaiako', 'professor(a)', 'substantivo', 'Pessoas', '🧑‍🏫', 'He kaiako pai tērā tāne.'],
+  ['manuhiri', 'visitante / convidado', 'substantivo', 'Pessoas', '🧳', 'He manuhiri au ki konei.'],
+  // Verbos-chave
+  ['haere', 'ir / vir', 'verbo', 'Verbos-chave', '🚶', 'Kei te haere au ki te kura.'],
+  ['noho', 'ficar / morar / sentar', 'verbo', 'Verbos-chave', '🏠', 'Kei te noho au ki Rotorua.'],
+  ['kai', 'comer / comida', 'verbo', 'Verbos-chave', '🍽️', 'Kei te kai au i te kai.'],
+  ['inu', 'beber', 'verbo', 'Verbos-chave', '🥤', 'Kei te inu au i te wai.'],
+  ['moe', 'dormir', 'verbo', 'Verbos-chave', '😴', 'Kei te moe te tamaiti.'],
+  ['mahi', 'trabalhar / fazer', 'verbo', 'Verbos-chave', '💼', 'Kei te mahi au.'],
+  ['kōrero', 'falar / conversar', 'verbo', 'Verbos-chave', '🗣️', 'Kei te kōrero au.'],
+  ['pīrangi', 'querer', 'verbo', 'Verbos-chave', '💭', 'Kei te pīrangi au ki te kai.'],
+  ['aroha', 'amar / se importar', 'verbo', 'Verbos-chave', '❤️', 'Kei te aroha au ki tōku whānau.'],
+  // Alimentação e Restaurantes
+  ['wai', 'água', 'substantivo', 'Alimentação e Restaurantes', '💧', 'He wai mā tēnei.'],
+  // Natureza
+  ['maunga', 'montanha', 'substantivo', 'Natureza', '⛰️', 'He maunga nui a Tongariro.'],
+  ['awa', 'rio', 'substantivo', 'Natureza', '🏞️', 'He awa nui a Waikato.'],
+  ['moana', 'mar / oceano', 'substantivo', 'Natureza', '🌊', 'He moana nui tēnei.'],
+  ['ngahere', 'floresta / mato', 'substantivo', 'Natureza', '🌳', 'He ngahere nui tēnei.'],
+  ['whenua', 'terra', 'substantivo', 'Natureza', '🌍', 'He whenua ātaahua a Aotearoa.'],
+  ['manu', 'pássaro', 'substantivo', 'Natureza', '🐦', 'He manu te kiwi.'],
+  ['kiwi', 'kiwi (ave símbolo da Nova Zelândia; também apelido dos neozelandeses)', 'substantivo', 'Natureza', '🥝', 'He manu te kiwi, kāore e rere.'],
+  // Cultura
+  ['marae', 'marae (pátio de encontros, centro da vida comunitária)', 'substantivo', 'Cultura', '🏛️', 'Kei te marae mātou.'],
+  ['wharenui', 'casa de reuniões', 'substantivo', 'Cultura', '🏯', 'He wharenui nui tērā.'],
+  ['iwi', 'tribo / povo', 'substantivo', 'Cultura', '👥', 'Nō tēhea iwi koe?'],
+  ['hui', 'reunião / encontro', 'substantivo', 'Cultura', '🤝', 'He hui tā mātou ā te rātapu.'],
+  ['karakia', 'oração / encantamento ritual', 'substantivo', 'Cultura', '🙏', 'Ka tīmata te hui ki te karakia.'],
+  ['waiata', 'canção / cantar', 'substantivo', 'Cultura', '🎵', 'He waiata pai tēnei.'],
+  ['mana', 'prestígio / poder espiritual', 'substantivo', 'Cultura', '✨', 'He mana nui tōna.'],
+  ['haka', 'haka (dança-desafio ritual)', 'substantivo', 'Cultura', '💃', 'Kei te mahi haka rātou.'],
+  ['rangatira', 'chefe / líder', 'substantivo', 'Cultura', '👑', 'He rangatira ia.'],
+  ['pōwhiri', 'cerimônia de boas-vindas no marae', 'substantivo', 'Cultura', '🎉', 'He pōwhiri tā mātou mō ngā manuhiri.'],
+  // Números
+  ['tahi', 'um', 'numeral', 'Números', '1️⃣', 'Kotahi te kurī.'],
+  ['rua', 'dois', 'numeral', 'Números', '2️⃣', 'E rua ngā tamariki.'],
+  ['toru', 'três', 'numeral', 'Números', '3️⃣', 'E toru ngā rā.'],
+  ['whā', 'quatro', 'numeral', 'Números', '4️⃣', 'E whā ngā tau.'],
+  ['rima', 'cinco', 'numeral', 'Números', '5️⃣', 'E rima ngā manu.'],
+  ['ono', 'seis', 'numeral', 'Números', '6️⃣', 'E ono ngā hāora.'],
+  ['whitu', 'sete', 'numeral', 'Números', '7️⃣', 'E whitu ngā rā o te wiki.'],
+  ['waru', 'oito', 'numeral', 'Números', '8️⃣', 'E waru ngā marama.'],
+  ['iwa', 'nove', 'numeral', 'Números', '9️⃣', 'E iwa ngā hoa.'],
+  ['tekau', 'dez', 'numeral', 'Números', '🔟', 'Tekau ngā tāngata.'],
+  // Cores
+  ['whero', 'vermelho', 'adjetivo', 'Cores', '🔴', 'He whero te kākahu.'],
+  ['kōwhai', 'amarelo', 'adjetivo', 'Cores', '🟡', 'He kōwhai te puāwai.'],
+  ['kākāriki', 'verde', 'adjetivo', 'Cores', '🟢', 'He kākāriki te ngahere.'],
+  ['kikorangi', 'azul', 'adjetivo', 'Cores', '🔵', 'He kikorangi te rangi.'],
+  ['mā', 'branco', 'adjetivo', 'Cores', '⚪', 'He mā te kapua.'],
+  ['pango', 'preto', 'adjetivo', 'Cores', '⚫', 'He pango te kurī.'],
+  // Tempo
+  ['āpōpō', 'amanhã', 'advérbio', 'Tempo', '📅', 'Ka kite anō āpōpō.'],
+  ['inanahi', 'ontem', 'advérbio', 'Tempo', '📅', 'I haere au inanahi.'],
+  ['ināianei', 'agora', 'advérbio', 'Tempo', '⏰', 'Kei te pai ahau ināianei.'],
+  ['Rāhina', 'segunda-feira', 'substantivo', 'Tempo', '📅', 'Ka haere au ki te kura ā Rāhina.'],
+  ['Rātū', 'terça-feira', 'substantivo', 'Tempo', '📅', 'He hui tā mātou ā Rātū.'],
+  ['Rāapa', 'quarta-feira', 'substantivo', 'Tempo', '📅', 'Waenganui o te wiki a Rāapa.'],
+  ['Rāpare', 'quinta-feira', 'substantivo', 'Tempo', '📅', 'Ka kai māua ā Rāpare.'],
+  ['Rāmere', 'sexta-feira', 'substantivo', 'Tempo', '📅', 'Ka haere mātou ki te marae ā Rāmere.'],
+  ['Rāhoroi', 'sábado', 'substantivo', 'Tempo', '📅', 'Kāore au e mahi ā Rāhoroi.'],
+  ['Rātapu', 'domingo', 'substantivo', 'Tempo', '📅', 'He rā whakatā a Rātapu.'],
+];
+
+export const VOCAB_MI = buildVocab('mi', ROWS);

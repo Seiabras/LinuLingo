@@ -93,6 +93,7 @@ import { AIMARA } from './ay';
 import { GUARANI_KAIOWA } from './kgk';
 import { NAUATLE } from './nah';
 import { NAVAJO } from './nv';
+import { MAORI } from './mi';
 import { GUARANI_NANDEVA } from './nhd';
 import { TAPIETE } from './tpj';
 
@@ -110,7 +111,7 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   hi: HINDI, gn: GUARANI, tpw: TUPI_ANTIGO, ha: HAUCA, ig: IGBO, yrl: NHEENGATU, bn: BENGALI, qu: QUECHUA, kgp: KAINGANG, tca: TIKUNA,
   xav: XAVANTE, tuo: TUKANO, gun: GUARANI_MBYA, ka: GEORGIANO, th: TAILANDES, km: KHMER,
   ay: AIMARA, kgk: GUARANI_KAIOWA, nah: NAUATLE, kpc: BANIWA, lo: LAOSIANO, cbs: HUNI_KUIN,
-  nv: NAVAJO, nhd: GUARANI_NANDEVA, tpj: TAPIETE };
+  nv: NAVAJO, nhd: GUARANI_NANDEVA, tpj: TAPIETE, mi: MAORI };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -191,6 +192,8 @@ export const LANGUAGES: LanguageInfo[] = [
   HINDI,
   BENGALI,
   INDONESIO,
+  // maori: mesma família austronésia do indonésio (ramo polinésio), mas bem mais distante dentro dela
+  MAORI,
   {
     code: 'ur', name: 'Urdu', nativeName: 'اردو', flag: '🇵🇰',
     lineage: { family: 'Indo-europeu', branches: ['Indo-iraniano', 'Indo-ariano', 'Indo-ariano central'], region: 'Norte do subcontinente indiano (Paquistão e Índia)', writing: 'Alfabeto perso-árabe (nastaliq)' },

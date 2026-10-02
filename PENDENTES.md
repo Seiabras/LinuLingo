@@ -72,8 +72,8 @@ commitado.
   - huni kuĩ/kaxinawá: **feito** como `cbs` (código confirmado via ISO 639-3/Glottolog).
   - navajo: **feito** como `nv` (02/10/2026) — família na-dené, sem parentesco com as demais línguas
     indígenas americanas do app.
-  - Ainda não começados/incompletos: mi (maori — pasta `src/data/mi/` sem `index.ts`), haw (havaiano —
-    só `vocabulario.ts`).
+  - maori: **feito** como `mi` (02/10/2026).
+  - Ainda não começado/incompleto: haw (havaiano).
   - Todos exigem fonte para cada palavra: não inventar, e usar o empréstimo que a comunidade usa.
 - **Africanos**: ha (haussá), ig (igbo) feitos; falta am (amárico) e om (oromo) — ambos já têm o
   scaffold "língua madura" pronto em `src/data/am/` e `src/data/om/` (como `ha`/`ig` tinham), só
