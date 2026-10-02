@@ -1,4 +1,5 @@
 import type { LanguagePack } from '../types';
+import { toReadingTa } from '@/services/reading-tamil';
 import { VOCAB_TA } from './vocabulario';
 import { UNITS_TA } from './curriculo';
 import { GRAMMAR_TA } from './gramatica';
@@ -24,9 +25,11 @@ export const TAMIL: LanguagePack = {
   incomplete: {
     until: 'A1.2',
     note:
-      'Só o nível A1 por enquanto (unidades 1 e 2, 65 palavras, 5 tópicos de gramática, 2 histórias), no tâmil padrão falado em Tamil Nadu. Ainda sem treino do alfabeto tâmil nem romanização automática (as outras línguas de alfabeto próprio, como o télugo e o hindi, já têm um serviço de leitura; o do tâmil ainda não existe). Da A2.1 até o C2 chega nas próximas atualizações.',
+      'Só o nível A1 por enquanto (unidades 1 e 2, 65 palavras, 5 tópicos de gramática, 2 histórias), no tâmil padrão falado em Tamil Nadu. Ainda sem treino do alfabeto tâmil. Da A2.1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_TA,
+  // leitura em letras latinas para quem ainda não lê o alfabeto tâmil (ver src/services/reading-tamil.ts)
+  reading: (t) => (/[஀-௿]/.test(t) ? toReadingTa(t) : ''),
   units: UNITS_TA,
   etymology: ETYMOLOGY_TA,
   community: COMMUNITY_TA,

@@ -175,11 +175,14 @@ antes de começar esses dois.
   armênio (apóstrofo de aspiração BGN-PCGN/ISO 9985), grego (ELOT 743), cirílico — russo, ucraniano,
   bielorrusso, búlgaro, macedônio, sérvio e mongol, cada um no seu sistema nacional, não um padrão
   genérico único —, devanágari (híndi e marati, com a regra de Ohala pro "a" do meio da palavra),
-  télugo, bengali, khmer (consciente do registro A/O das consoantes) e tailandês (RTGS, com a
-  reordenação das vogais escritas antes da consoante). Todos com teste. Único que falta: mandarim
-  (`zh`) — o pinyin já vem escrito à mão em cada palavra do vocabulário, mas não como `reading`
-  computado de verdade; como é por caractere (não por som), precisaria de um dicionário hanzi→pinyin,
-  não uma regra fonética como os outros — fica pra outra sessão.
+  télugo, bengali, khmer (consciente do registro A/O das consoantes), tailandês (RTGS, com a
+  reordenação das vogais escritas antes da consoante) e, desde 02/10/2026 (achado pela revisão
+  externa de seiabras-b8, que notou o tâmil sem nenhuma pista de pronúncia), tâmil — com a alofonia
+  das 6 consoantes "duras" (வல்லினம்) implementada letra por letra (cada uma com sua própria regra de
+  voicing por posição, verificada no Wikcionário; não é uma regra única pra todas). Todos com teste.
+  Único que falta: mandarim (`zh`) — o pinyin já vem escrito à mão em cada palavra do vocabulário, mas
+  não como `reading` computado de verdade; como é por caractere (não por som), precisaria de um
+  dicionário hanzi→pinyin, não uma regra fonética como os outros — fica pra outra sessão.
 - **Pendência de baixa prioridade (achado de seiabras-b8, 02/10/2026)**: bengali (`reading-bengali.ts`)
   tem o mesmo problema que o devanágari tinha antes da regra de Ohala — "কলকাতা" sai "kolokata" em
   vez de "kolkata" (schwa do meio da palavra sobrando); khmer (`reading-khmer.ts`) usa o mácron de
