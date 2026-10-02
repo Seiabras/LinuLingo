@@ -1,4 +1,5 @@
 import type { LanguagePack } from '../types';
+import { toReadingTh } from '@/services/reading-thai';
 import { VOCAB_TH } from './vocabulario';
 import { UNITS_TH } from './curriculo';
 import { GRAMMAR_TH } from './gramatica';
@@ -23,6 +24,9 @@ export const TAILANDES: LanguagePack = {
     note: 'Só o nível A1 por enquanto (unidades 1 e 2, cerca de 90 palavras, 4 tópicos de gramática, 2 histórias), no tailandês padrão (o de Bangkok, língua oficial da Tailândia). Ainda sem treino da escrita tailandesa letra por letra. Da A2.1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_TH,
+  // leitura em letras latinas (romanização RTGS) para quem ainda não lê a escrita tailandesa (ver
+  // src/services/reading-thai.ts)
+  reading: (t) => (/[฀-๿]/.test(t) ? toReadingTh(t) : ''),
   units: UNITS_TH,
   etymology: ETYMOLOGY_TH,
   community: COMMUNITY_TH,
