@@ -65,7 +65,9 @@ export default function TutorialScreen() {
             text:
               pack.code === 'ja'
                 ? 'O japonês mistura três escritas: o hiragana e o katakana (cada letra é uma sílaba) e os kanji, que vêm do chinês. A lição 1 e o treino “🔤 Kana” (em Mais práticas) ensinam as sílabas, e embaixo de cada frase aparecem a leitura em kana, o romaji e a pronúncia em IPA: 学生 · がくせい · gakusei. Nas respostas escritas, pode digitar em kana (みず vale por 水), com o teclado do celular ou com o botão “⌨️ Mostrar teclado”.'
-                : `O ${nomeIdioma(pack.name)} tem escrita própria, mas é um alfabeto: cada bloco é uma sílaba montada com letras (ㅎ + ㅏ + ㄴ = 한). A lição 1 e o treino “🔤 Alfabeto” (em Mais práticas) ensinam as letras, e embaixo de cada frase aparecem a romanização oficial e a pronúncia em IPA, que mostra como as sílabas mudam ao se encontrar (한국어 · hangugeo).`,
+                : pack.code === 'ko'
+                  ? 'O coreano tem escrita própria, mas é um alfabeto: cada bloco é uma sílaba montada com letras (ㅎ + ㅏ + ㄴ = 한). A lição 1 e o treino “🔤 Alfabeto” (em Mais práticas) ensinam as letras, e embaixo de cada frase aparecem a romanização oficial e a pronúncia em IPA, que mostra como as sílabas mudam ao se encontrar (한국어 · hangugeo).'
+                  : `O ${nomeIdioma(pack.name)} tem escrita própria, diferente da nossa.${pack.alphabet ? ` A lição 1 e o treino “🔤 Alfabeto” (em Mais práticas) ensinam as letras, e` : ' E'} embaixo de cada frase aparecem a leitura romanizada e a pronúncia em IPA, pra você acompanhar mesmo antes de ler a escrita de verdade. Nas respostas escritas, use o botão “⌨️ Mostrar teclado” pra digitar com as letras certas.`,
           },
         ]
       : []),
