@@ -80,20 +80,19 @@ commitado.
   "sotaque" dentro do pacote `sq` já existente do que como pacote novo.
 - **Os 20 idiomas mais falados do mundo (pergunta do Matheus, 02/10/2026)**: conferido contra a
   tabela do Ethnologue 2026 (via Wikipédia, "List of languages by total number of speakers", L1+L2).
-  17 dos 20 já têm pacote de verdade no app: inglês, chinês mandarim, híndi, espanhol, francês,
-  bengali, português, indonésio, russo, alemão, japonês, vietnamita, suaíli, haussá e télugo (te,
-  feito em 02/10/2026) completos ou em A1; marati (mr) está sendo criado agora mesmo (agente em
-  andamento). Faltam 4:
+  18 dos 20 já têm pacote de verdade no app: inglês, chinês mandarim, híndi, espanhol, francês,
+  bengali, português, indonésio, russo, alemão, japonês, vietnamita, suaíli, haussá, télugo e marati
+  (os dois últimos feitos em 02/10/2026) completos ou em A1. Faltam 4:
     - **árabe padrão** (ar) e **urdu** (ur) — já tinham entrada placeholder em `idiomas.ts`, mas
       nenhum pacote de verdade: bloqueados por escrita direita-pra-esquerda (ver "RTL" abaixo).
     - **pidgin nigeriano** (pcm) — crioulo de base inglesa, nem placeholder tem ainda; não bloqueado
       por RTL, dá pra começar quando houver vaga na fila.
     - **árabe egípcio** (arz) — variedade do árabe com código ISO 639-3 próprio (diferente do árabe
       padrão/moderno já citado acima); também bloqueado por RTL.
-- **Asiáticos**: hi (híndi), bn (bengali), th (tailandês), km (khmer), lo (laosiano) e te (télugo,
-  02/10/2026) feitos; mr (marati) sendo criado agora. Faltam: ur e fa (bloqueados por RTL, ver
-  abaixo), ta, tl. Do Sudeste Asiático continental ainda falta my (birmanês) — ainda não confirmado,
-  conferir documentação antes de começar.
+- **Asiáticos**: hi (híndi), bn (bengali), th (tailandês), km (khmer), lo (laosiano), te (télugo) e
+  mr (marati, ambos 02/10/2026) feitos. Faltam: ur e fa (bloqueados por RTL, ver abaixo), ta, tl. Do
+  Sudeste Asiático continental ainda falta my (birmanês) — ainda não confirmado, conferir
+  documentação antes de começar.
 - **Indígenas**: tpw (tupi antigo), gn (guarani paraguaio), qu (quéchua sulenho), yrl (nheengatu),
   kgp (kaingang), tca (tikuna), xav (xavante), tuo (tukano), kpc (baniwa), ay (aimará), kgk (guarani
   kaiowá) e nah (náuatle) feitos; gun (guarani mbyá) e ka (georgiano, pedido à parte) feitos por outra
