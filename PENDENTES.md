@@ -40,6 +40,9 @@ commitado.
 - **Românicos**: fechado (pms, lij, lmo, mwl, frp — todos integrados).
 - **Germânico que falta**: yi (iídiche) — precisa de suporte a escrita direita-pra-esquerda no app
   antes de dar pra fazer (ver "RTL" abaixo).
+- **Urálico que falta**: húngaro (hu) — pedido do Matheus em 02/10/2026; mesma família do finlandês e
+  do estoniano já no app (fi, et), mas ramo diferente (úgrico, não fino-permiano) e sem parentesco
+  próximo com eles — não começado ainda.
 - **Família única**: fechado (el grego, sq albanês, hy armênio); ka (georgiano) em andamento —
   família cartveliana, sem parentesco com o indo-europeu, mas pedida pelo Matheus junto com a
   conferência abaixo. **Auditoria de família/ramo (01/10/2026)**: o Matheus notou grego, armênio e
@@ -75,6 +78,17 @@ commitado.
   são "filhotes" das famílias já fechadas, registro aqui mesmo). Candidatos por ordem de força: armênio
   ocidental (hyw) primeiro, tsakônio (tsd) em seguida; gheg/arbëresh/arvanítico ficam mais como ideia de
   "sotaque" dentro do pacote `sq` já existente do que como pacote novo.
+- **Os 20 idiomas mais falados do mundo (pergunta do Matheus, 02/10/2026)**: conferido contra a
+  tabela do Ethnologue 2026 (via Wikipédia, "List of languages by total number of speakers", L1+L2).
+  16 dos 20 já têm pacote de verdade no app: inglês, chinês mandarim, híndi, espanhol, francês,
+  bengali, português, indonésio, russo, alemão, japonês, vietnamita, suaíli e haussá completos ou em
+  A1; marati (mr) e télugo (te) estão sendo criados agora mesmo (agentes em andamento). Faltam 4:
+    - **árabe padrão** (ar) e **urdu** (ur) — já tinham entrada placeholder em `idiomas.ts`, mas
+      nenhum pacote de verdade: bloqueados por escrita direita-pra-esquerda (ver "RTL" abaixo).
+    - **pidgin nigeriano** (pcm) — crioulo de base inglesa, nem placeholder tem ainda; não bloqueado
+      por RTL, dá pra começar quando houver vaga na fila.
+    - **árabe egípcio** (arz) — variedade do árabe com código ISO 639-3 próprio (diferente do árabe
+      padrão/moderno já citado acima); também bloqueado por RTL.
 - **Asiáticos**: hi (híndi), bn (bengali), th (tailandês), km (khmer) e lo (laosiano) feitos; faltam
   ur e fa (bloqueados por RTL, ver abaixo), mr, te, ta, tl. Do Sudeste Asiático continental ainda
   falta my (birmanês) — ainda não confirmado, conferir documentação antes de começar.
