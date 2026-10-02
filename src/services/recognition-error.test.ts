@@ -5,7 +5,7 @@ import { recognitionErrorMessage } from './recognition-error';
 
 test('recognitionErrorMessage distingue os motivos do reconhecimento de voz falhar', () => {
   assert.match(recognitionErrorMessage('not-allowed'), /permita/i);
-  assert.match(recognitionErrorMessage('service-not-allowed'), /permita/i);
+  assert.match(recognitionErrorMessage('service-not-allowed'), /ditado|siri/i);
   assert.match(recognitionErrorMessage('audio-capture'), /não encontrei um microfone/i);
   assert.match(recognitionErrorMessage('network'), /sem conexão/i);
   assert.match(recognitionErrorMessage('no-speech'), /não percebi nenhuma fala/i);

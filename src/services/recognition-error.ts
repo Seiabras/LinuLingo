@@ -7,8 +7,9 @@
 export function recognitionErrorMessage(code: string): string {
   switch (code) {
     case 'not-allowed':
-    case 'service-not-allowed':
       return 'Permita o uso do microfone no navegador.';
+    case 'service-not-allowed':
+      return 'O reconhecimento de voz está desligado no aparelho. No iPhone/iPad, ative o Ditado (ou a Siri) em Ajustes. Você pode digitar a resposta.';
     case 'audio-capture':
       return 'Não encontrei um microfone neste aparelho. Você pode digitar a resposta.';
     case 'network':
