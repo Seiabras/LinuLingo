@@ -88,6 +88,7 @@ import { TAILANDES } from './th';
 import { KHMER } from './km';
 import { BANIWA } from './kpc';
 import { LAOSIANO } from './lo';
+import { HUNI_KUIN } from './cbs';
 import { AIMARA } from './ay';
 import { GUARANI_KAIOWA } from './kgk';
 import { NAUATLE } from './nah';
@@ -105,7 +106,7 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   el: GREGO, sq: ALBANES, hy: ARMENIO,
   hi: HINDI, gn: GUARANI, tpw: TUPI_ANTIGO, ha: HAUCA, ig: IGBO, yrl: NHEENGATU, bn: BENGALI, qu: QUECHUA, kgp: KAINGANG, tca: TIKUNA,
   xav: XAVANTE, tuo: TUKANO, gun: GUARANI_MBYA, ka: GEORGIANO, th: TAILANDES, km: KHMER,
-  ay: AIMARA, kgk: GUARANI_KAIOWA, nah: NAUATLE, kpc: BANIWA, lo: LAOSIANO };
+  ay: AIMARA, kgk: GUARANI_KAIOWA, nah: NAUATLE, kpc: BANIWA, lo: LAOSIANO, cbs: HUNI_KUIN };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -224,6 +225,8 @@ export const LANGUAGES: LanguageInfo[] = [
   TUKANO,
   // baniwa: família aruak, cooficial em São Gabriel da Cachoeira ao lado do nheengatu e do tukano
   BANIWA,
+  // huni kuĩ: família pano, do Acre e sudeste do Peru
+  HUNI_KUIN,
   // náuatle: família uto-asteca, a língua dos astecas/mexicas
   NAUATLE,
   // o suaíli, a língua africana mais falada como segunda língua, e as maiores da África depois dele
