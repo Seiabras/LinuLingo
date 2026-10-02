@@ -9,6 +9,7 @@ import { localDay, visibleStreak } from './progress';
 import { Appearance } from 'react-native';
 import { colorScheme } from 'nativewind';
 import { loadThemePref, saveThemePref, useThemeSync, type ThemePref } from './theme';
+import { applyTextScale, DEFAULT_ACCESS_PREFS, loadAccessPrefs, saveAccessPrefs, setReduceMotion, type AccessPrefs } from './accessibility';
 import { loadOutfit } from './linu-outfit';
 import { loadCor } from './linu-cor';
 
@@ -23,6 +24,8 @@ interface AppState {
   refresh: () => Promise<void>;
   theme: ThemePref;
   setTheme: (t: ThemePref) => void;
+  access: AccessPrefs;
+  setAccess: (p: AccessPrefs) => void;
   /** Variante do idioma que o aluno escolheu (ex.: ro-MD) */
   variant: string | null;
   setVariant: (code: string) => void;
@@ -46,19 +49,23 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
   }, [db]);
 
   const [theme, setThemeState] = useState<ThemePref>('system');
+  const [access, setAccessState] = useState<AccessPrefs>(DEFAULT_ACCESS_PREFS);
   const [ready, setReady] = useState(false);
   // muda quando o banco é relido por inteiro: variantes e sotaques voltam a ser lidos
   const [generation, setGeneration] = useState(0);
   useThemeSync(theme);
 
-  const readAll = useCallback(() => Promise.all([getUser(db), loadThemePref(db)]), [db]);
-  const applyAll = useCallback(([u, pref]: [AppUser | null, ThemePref]) => {
+  const readAll = useCallback(() => Promise.all([getUser(db), loadThemePref(db), loadAccessPrefs(db)]), [db]);
+  const applyAll = useCallback(([u, pref, accessPrefs]: [AppUser | null, ThemePref, AccessPrefs]) => {
     const resolved = pref === 'system' ? (Appearance.getColorScheme() === 'dark' ? 'dark' : 'light') : pref;
     try {
       colorScheme.set(resolved);
     } catch {}
     setUser(u);
     setThemeState(pref);
+    setAccessState(accessPrefs);
+    applyTextScale(accessPrefs.textScale);
+    setReduceMotion(accessPrefs.reduceMotion);
   }, []);
 
   // Aplica o tema salvo ANTES de montar as telas (evita atualizar componentes ainda montando)
@@ -84,6 +91,16 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
     (t: ThemePref) => {
       setThemeState(t);
       saveThemePref(db, t);
+    },
+    [db],
+  );
+
+  const setAccess = useCallback(
+    (p: AccessPrefs) => {
+      setAccessState(p);
+      applyTextScale(p.textScale);
+      setReduceMotion(p.reduceMotion);
+      saveAccessPrefs(db, p);
     },
     [db],
   );
@@ -156,7 +173,11 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
     ? visibleStreak({ streak: user.streak_days, freezes: user.streak_freezes, lastStudyDate: user.last_study_date }, localDay())
     : 0;
 
-  return <Ctx.Provider value={{ db, user, pack, streak, refresh, theme, setTheme, variant, setVariant, setLanguage, accent, setAccent, reload }}>{ready ? children : null}</Ctx.Provider>;
+  return (
+    <Ctx.Provider value={{ db, user, pack, streak, refresh, theme, setTheme, access, setAccess, variant, setVariant, setLanguage, accent, setAccent, reload }}>
+      {ready ? children : null}
+    </Ctx.Provider>
+  );
 }
 
 export function useApp(): AppState {

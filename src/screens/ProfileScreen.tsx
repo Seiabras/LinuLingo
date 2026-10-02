@@ -13,13 +13,14 @@ import { completedLessons, resetProgress, updateUser, vocabStats, xpByDay } from
 import { groupByLineage, isAvailable, PACKS } from '@/data/idiomas';
 import type { LanguageInfo } from '@/data/types';
 import type { ThemePref } from '@/services/theme';
+import type { TextScale } from '@/services/accessibility';
 
 const WEEKDAY = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'];
 const GOALS = [10, 20, 30, 50];
 
 /** Perfil: estatísticas, XP da semana, idioma (agrupado por família), meta diária e tema. */
 export default function ProfileScreen() {
-  const { db, user, pack, streak, refresh, theme, setTheme, setLanguage } = useApp();
+  const { db, user, pack, streak, refresh, theme, setTheme, access, setAccess, setLanguage } = useApp();
   // idioma sendo preparado (o conteúdo dele é gravado no banco na primeira vez)
   const [switching, setSwitching] = useState<string | null>(null);
   // família e ramo do idioma atual começam abertos; o resto, fechado (a lista tem mais de 70 idiomas)
@@ -271,6 +272,40 @@ export default function ProfileScreen() {
             <Text className={`font-bold ${theme === k ? 'text-conecta' : 'text-slate-500 dark:text-slate-400'}`}>{label}</Text>
           </Pressable>
         ))}
+      </View>
+
+      <SectionTitle>Acessibilidade</SectionTitle>
+      <View className="gap-3">
+        <View className="flex-row items-center justify-between rounded-2xl bg-white p-3 dark:bg-slate-900">
+          <View className="flex-1 pr-3">
+            <Text className="font-bold text-slate-800 dark:text-slate-100">Reduzir movimento</Text>
+            <Text className="text-xs text-slate-500 dark:text-slate-400">Desliga as animações do Linu e a transição entre etapas da lição, mesmo que o aparelho não peça isso.</Text>
+          </View>
+          <Pressable
+            accessibilityRole="switch"
+            accessibilityState={{ checked: access.reduceMotion }}
+            onPress={() => setAccess({ ...access, reduceMotion: !access.reduceMotion })}
+            className={`h-8 w-14 justify-center rounded-full p-1 ${access.reduceMotion ? 'bg-conecta' : 'bg-slate-300 dark:bg-slate-700'}`}
+          >
+            <View className={`h-6 w-6 rounded-full bg-white ${access.reduceMotion ? 'ml-6' : 'ml-0'}`} />
+          </Pressable>
+        </View>
+
+        <Text className="text-sm font-bold text-slate-700 dark:text-slate-200">Tamanho do texto</Text>
+        <View className="flex-row rounded-2xl bg-slate-200 p-1 dark:bg-slate-800">
+          {(
+            [
+              ['normal', 'Normal'],
+              ['grande', 'Grande'],
+              ['extra', 'Extra grande'],
+            ] as [TextScale, string][]
+          ).map(([k, label]) => (
+            <Pressable key={k} onPress={() => setAccess({ ...access, textScale: k })} className={`flex-1 items-center rounded-xl py-2 ${access.textScale === k ? 'bg-white dark:bg-slate-950' : ''}`}>
+              <Text className={`text-center font-bold ${access.textScale === k ? 'text-conecta' : 'text-slate-500 dark:text-slate-400'}`}>{label}</Text>
+            </Pressable>
+          ))}
+        </View>
+        {Platform.OS !== 'web' && <Text className="text-xs text-slate-400">Neste aparelho, o tamanho de texto segue o que está configurado no sistema.</Text>}
       </View>
 
       <SectionTitle>Ajuda</SectionTitle>

@@ -20,6 +20,7 @@ import { slotOf } from '@/data/roupas-linu';
 import { useLinuOutfit } from '@/services/linu-outfit';
 import { corLinu, type CorLinu } from '@/data/cores-linu';
 import { useLinuCor } from '@/services/linu-cor';
+import { useAppReduceMotion } from '@/services/accessibility';
 
 export type LinuMood = 'feliz' | 'pensando' | 'comemorando' | 'triste' | 'falando';
 
@@ -90,7 +91,9 @@ const VB_H = 140;
  * aparelho) deixa o Linu parado.
  */
 export function Linu({ mood = 'feliz', size = 96, animate = true, outfit, cor }: { mood?: LinuMood; size?: number; animate?: boolean; outfit?: string | readonly string[] | null; cor?: string | null }) {
-  const reduce = useReducedMotion();
+  const reduceOS = useReducedMotion();
+  const reduceApp = useAppReduceMotion();
+  const reduce = reduceOS || reduceApp;
   // o visual escolhido no Perfil (ou o pedido, nas prévias): uma peça na cabeça, no corpo, na mão e no rosto
   const chosen = useLinuOutfit();
   const look = outfit === undefined ? chosen : outfit == null ? [] : typeof outfit === 'string' ? [outfit] : outfit;
