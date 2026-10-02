@@ -7,6 +7,8 @@ export interface ChangelogEntry {
 }
 
 export const CHANGELOG: ChangelogEntry[] = [
+  { date: '2026-10-02T01:13:35-03:00', summary: "feat: adiciona maori" },
+  { date: '2026-10-02T01:09:05-03:00', summary: "chore: atualiza o changelog do app" },
   { date: '2026-10-02T01:08:59-03:00', summary: "feat: adiciona navajo, guarani ñandeva e tapiete" },
   { date: '2026-10-01T21:28:52-03:00', summary: "chore: atualiza o changelog do app" },
   { date: '2026-10-01T21:28:52-03:00', summary: "feat: adiciona huni kuĩ (hãtxa kuĩ)" },
