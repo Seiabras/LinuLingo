@@ -284,6 +284,7 @@ export default function ProfileScreen() {
           </View>
           <Pressable
             accessibilityRole="switch"
+            accessibilityLabel="Reduzir movimento"
             accessibilityState={{ checked: access.reduceMotion }}
             onPress={() => setAccess({ ...access, reduceMotion: !access.reduceMotion })}
             className={`h-8 w-14 justify-center rounded-full p-1 ${access.reduceMotion ? 'bg-conecta' : 'bg-slate-300 dark:bg-slate-700'}`}
@@ -292,21 +293,33 @@ export default function ProfileScreen() {
           </Pressable>
         </View>
 
-        <Text className="text-sm font-bold text-slate-700 dark:text-slate-200">Tamanho do texto</Text>
-        <View className="flex-row rounded-2xl bg-slate-200 p-1 dark:bg-slate-800">
-          {(
-            [
-              ['normal', 'Normal'],
-              ['grande', 'Grande'],
-              ['extra', 'Extra grande'],
-            ] as [TextScale, string][]
-          ).map(([k, label]) => (
-            <Pressable key={k} onPress={() => setAccess({ ...access, textScale: k })} className={`flex-1 items-center rounded-xl py-2 ${access.textScale === k ? 'bg-white dark:bg-slate-950' : ''}`}>
-              <Text className={`text-center font-bold ${access.textScale === k ? 'text-conecta' : 'text-slate-500 dark:text-slate-400'}`}>{label}</Text>
-            </Pressable>
-          ))}
-        </View>
-        {Platform.OS !== 'web' && <Text className="text-xs text-slate-400">Neste aparelho, o tamanho de texto segue o que está configurado no sistema.</Text>}
+        {Platform.OS === 'web' ? (
+          <>
+            <Text className="text-sm font-bold text-slate-700 dark:text-slate-200">Tamanho do texto</Text>
+            <View className="flex-row rounded-2xl bg-slate-200 p-1 dark:bg-slate-800">
+              {(
+                [
+                  ['normal', 'Normal'],
+                  ['grande', 'Grande'],
+                  ['extra', 'Extra grande'],
+                ] as [TextScale, string][]
+              ).map(([k, label]) => (
+                <Pressable
+                  key={k}
+                  accessibilityRole="radio"
+                  accessibilityLabel={label}
+                  accessibilityState={{ selected: access.textScale === k }}
+                  onPress={() => setAccess({ ...access, textScale: k })}
+                  className={`flex-1 items-center rounded-xl py-2 ${access.textScale === k ? 'bg-white dark:bg-slate-950' : ''}`}
+                >
+                  <Text className={`text-center font-bold ${access.textScale === k ? 'text-conecta' : 'text-slate-500 dark:text-slate-400'}`}>{label}</Text>
+                </Pressable>
+              ))}
+            </View>
+          </>
+        ) : (
+          <Text className="text-xs text-slate-400">Neste aparelho, o tamanho de texto segue o que está configurado no sistema.</Text>
+        )}
       </View>
 
       <SectionTitle>Ajuda</SectionTitle>
