@@ -16,16 +16,21 @@ const noShuffle = () => 0;
 
 test('pickDistractors nunca devolve item com a mesma chave (mesma imagem)', () => {
   const word = w('1', 'img-a');
-  const pool = [word, w('2', 'img-a'), w('3', 'img-a'), w('4', 'img-b'), w('5', 'img-c')];
-  const picked = pickDistractors(word, pool, keyOf, 2);
-  assert.ok(picked.every((p) => keyOf(p) !== 'img-a'));
+  const [mesmaChave1, mesmaChave2, imgB, imgC] = [w('2', 'img-a'), w('3', 'img-a'), w('4', 'img-b'), w('5', 'img-c')];
+  const pool = [word, mesmaChave1, mesmaChave2, imgB, imgC];
+  // noShuffle: com Math.random de verdade, essa mutação (tirar o filtro de chave) só reprovava
+  // 9 de 10 rodadas — 1/6 de chance de os 2 sorteados serem justamente imgB e imgC (achado por
+  // seiabras-b8, via teste de mutação). Determinístico, reprova sempre.
+  const picked = pickDistractors(word, pool, keyOf, 2, noShuffle);
+  assert.deepEqual(picked, [imgC, imgB]);
 });
 
 test('pickDistractors nunca devolve a própria palavra', () => {
   const word = w('1', 'img-a');
-  const pool = [word, w('2', 'img-b'), w('3', 'img-c')];
-  const picked = pickDistractors(word, pool, keyOf, 2);
-  assert.ok(picked.every((p) => p.id !== word.id));
+  const [outra1, outra2] = [w('2', 'img-b'), w('3', 'img-c')];
+  const pool = [word, outra1, outra2];
+  const picked = pickDistractors(word, pool, keyOf, 2, noShuffle);
+  assert.deepEqual(picked, [outra2, outra1]);
 });
 
 test('pickDistractors com pool pequeno devolve o que der, sem travar', () => {
