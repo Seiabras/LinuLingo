@@ -389,9 +389,12 @@ mais detalhe do usuário antes de mexer em código.
     do tupi-guarani das outras línguas tupis do app; ergativo-absolutivo, raro entre línguas tupis) e
     quimbundo (`kmb` — níger-congo, ramo banto zona H.20 de Guthrie; uma das línguas bantas que mais
     moldou o português do Brasil via o tráfico negreiro: moleque, cafuné, caçula, quitute, zumbi,
-    quilombo, dendê, bunda, fubá, senzala, quitanda).
+    quilombo, dendê, bunda, fubá, senzala, quitanda) e palenquero (`pln` — crioulo de base espanhola
+    com substrato quicongo (banto), o único crioulo de base espanhola que sobreviveu na América
+    Latina; falado em San Basilio de Palenque, Colômbia, o primeiro povoado de ex-escravizados livres
+    das Américas; nova família "Crioulo de base espanhola" na lista fechada de `conteudo.test.ts`).
   - **Em andamento** (pacote do zero, igual aos outros): groenlandês/kalaallisut
-    (`kl`), palenquero (`pln`), saami do norte (`se` — a variedade sami mais falada, ~15-25 mil
+    (`kl`), saami do norte (`se` — a variedade sami mais falada, ~15-25 mil
     falantes; as outras línguas sami, como a lule e a skolt, têm código próprio à parte), bretão
     (`br`), lakota (`lkt`).
   - **"Língua geral de mina"**: pesquisado em 02/10/2026. Descartada a hipótese de ser a língua
