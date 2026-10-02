@@ -1,4 +1,5 @@
 import type { LanguagePack } from '../types';
+import { toReadingTe } from '@/services/reading-telugu';
 import { VOCAB_TE } from './vocabulario';
 import { UNITS_TE } from './curriculo';
 import { GRAMMAR_TE } from './gramatica';
@@ -23,6 +24,8 @@ export const TELUGO: LanguagePack = {
     note: 'Só o nível A1 por enquanto (unidades 1 e 2, 62 palavras, 5 tópicos de gramática, 2 histórias), no télugo padrão falado em Andhra Pradesh e Telangana. Ainda sem treino do alfabeto télugo. Da A2.1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_TE,
+  // leitura em letras latinas para quem ainda não lê o alfabeto télugo (ver src/services/reading-telugu.ts)
+  reading: (t) => (/[ఀ-౿]/.test(t) ? toReadingTe(t) : ''),
   units: UNITS_TE,
   etymology: ETYMOLOGY_TE,
   community: COMMUNITY_TE,
