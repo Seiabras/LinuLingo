@@ -1,4 +1,5 @@
 import type { LanguagePack } from '../types';
+import { toReadingBn } from '@/services/reading-bengali';
 import { VOCAB_BN } from './vocabulario';
 import { UNITS_BN } from './curriculo';
 import { GRAMMAR_BN } from './gramatica';
@@ -23,6 +24,8 @@ export const BENGALI: LanguagePack = {
     note: 'Só o nível A1 por enquanto (unidades 1 e 2, vocabulário essencial, 4 tópicos de gramática, 2 histórias), no bengali padrão usado tanto em Bangladesh quanto em Bengala Ocidental. Ainda sem treino do alfabeto bengali. Da A2.1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_BN,
+  // leitura em letras latinas para quem ainda não lê a escrita bengali (ver src/services/reading-bengali.ts)
+  reading: (t) => (/[ঀ-৿]/.test(t) ? toReadingBn(t) : ''),
   units: UNITS_BN,
   etymology: ETYMOLOGY_BN,
   community: COMMUNITY_BN,
