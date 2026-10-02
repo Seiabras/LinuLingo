@@ -1,0 +1,61 @@
+/// <reference types="node" />
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { pickDistractors } from './distractors';
+
+interface W {
+  id: string;
+  category?: string | null;
+  key: string;
+}
+const w = (id: string, key: string, category: string | null = null): W => ({ id, key, category });
+const keyOf = (x: W) => x.key;
+
+test('pickDistractors nunca devolve item com a mesma chave (mesma imagem)', () => {
+  const word = w('1', 'img-a');
+  const pool = [word, w('2', 'img-a'), w('3', 'img-a'), w('4', 'img-b'), w('5', 'img-c')];
+  const picked = pickDistractors(word, pool, keyOf, 2);
+  assert.ok(picked.every((p) => keyOf(p) !== 'img-a'));
+});
+
+test('pickDistractors nunca devolve a própria palavra', () => {
+  const word = w('1', 'img-a');
+  const pool = [word, w('2', 'img-b'), w('3', 'img-c')];
+  const picked = pickDistractors(word, pool, keyOf, 2);
+  assert.ok(picked.every((p) => p.id !== word.id));
+});
+
+test('pickDistractors com pool pequeno devolve o que der, sem travar', () => {
+  const word = w('1', 'img-a');
+  assert.deepEqual(pickDistractors(word, [word], keyOf, 2), []);
+  assert.equal(pickDistractors(word, [word, w('2', 'img-b')], keyOf, 2).length, 1);
+});
+
+test('pickDistractors prefere a mesma categoria, completando com o resto quando falta', () => {
+  const word = w('1', 'img-a', 'Saudações');
+  const pool = [
+    word,
+    w('2', 'img-b', 'Saudações'),
+    w('3', 'img-c', 'Pessoas'),
+    w('4', 'img-d', 'Natureza'),
+    w('5', 'img-e', 'Números'),
+  ];
+  // só 1 da mesma categoria no pool: o outro distrator tem que vir do resto, não travar em 1 só
+  const picked = pickDistractors(word, pool, keyOf, 2);
+  assert.equal(picked.length, 2);
+  assert.ok(picked.some((p) => p.category === 'Saudações'));
+});
+
+test('pickDistractors tira todos os n da mesma categoria quando dá', () => {
+  const word = w('1', 'img-a', 'Saudações');
+  const pool = [word, w('2', 'img-b', 'Saudações'), w('3', 'img-c', 'Saudações'), w('4', 'img-d', 'Pessoas')];
+  const picked = pickDistractors(word, pool, keyOf, 2);
+  assert.equal(picked.length, 2);
+  assert.ok(picked.every((p) => p.category === 'Saudações'));
+});
+
+test('pickDistractors sem category no pool ignora a preferência, sem quebrar', () => {
+  const word = w('1', 'img-a');
+  const pool = [word, w('2', 'img-b'), w('3', 'img-c')];
+  assert.equal(pickDistractors(word, pool, keyOf, 2).length, 2);
+});

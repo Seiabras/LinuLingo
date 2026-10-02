@@ -5,6 +5,7 @@ import type { VocabWithSRS } from '@/types';
 import { Button, SpeakButton, Ipa } from '../ui';
 import { speak } from '@/services/speech';
 import { shuffle } from '@/services/answers';
+import { pickDistractors } from '@/services/distractors';
 import * as haptics from '@/services/haptics';
 import { qualityFromAnswer } from '@/srs/sm2';
 import { logMistake } from '@/services/mistakes';
@@ -49,8 +50,7 @@ export function ImmersionStep({ words, pool, locale, onDone }: { words: VocabWit
 
   const options = useMemo(() => {
     if (!word) return [];
-    const wordKey = imageKey(word);
-    const others = shuffle(pool.filter((p) => p.id !== word.id && p.emoji && imageKey(p) !== wordKey)).slice(0, 2);
+    const others = pickDistractors(word, pool.filter((p) => p.emoji), imageKey, 2);
     return shuffle([word, ...others]);
   }, [word, pool]);
 
