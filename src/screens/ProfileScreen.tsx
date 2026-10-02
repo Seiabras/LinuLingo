@@ -280,7 +280,7 @@ export default function ProfileScreen() {
         <View className="flex-row items-center justify-between rounded-2xl bg-white p-3 dark:bg-slate-900">
           <View className="flex-1 pr-3">
             <Text className="font-bold text-slate-800 dark:text-slate-100">Reduzir movimento</Text>
-            <Text className="text-xs text-slate-500 dark:text-slate-400">Desliga as animações do Linu e a transição entre etapas da lição, mesmo que o aparelho não peça isso.</Text>
+            <Text className="text-xs text-slate-500 dark:text-slate-400">Desliga as animações do app (o Linu, as transições, as entradas na tela e o voo do mapa), mesmo que o aparelho não peça isso.</Text>
           </View>
           <Pressable
             accessibilityRole="switch"

@@ -5,8 +5,10 @@ import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { SQLiteProvider } from 'expo-sqlite';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { ReducedMotionConfig, ReduceMotion } from 'react-native-reanimated';
 import { DB_NAME, initDatabase } from '@/database/db';
 import { AppStateProvider } from '@/services/app-state';
+import { useAppReduceMotion } from '@/services/accessibility';
 import { StickerToast } from '@/components/StickerToast';
 import { NeuralVoiceToast } from '@/components/NeuralVoiceToast';
 import { NativeSpeakerToast } from '@/components/NativeSpeakerToast';
@@ -29,9 +31,19 @@ function Loading() {
   );
 }
 
+/**
+ * «Reduzir movimento» do Perfil vale para TODA animação do Reanimated (entradas, molas, transições):
+ * ligado, força `ReduceMotion.Always`; desligado, segue o ajuste do aparelho (`ReduceMotion.System`).
+ */
+function MotionPreference() {
+  const reduce = useAppReduceMotion();
+  return <ReducedMotionConfig mode={reduce ? ReduceMotion.Always : ReduceMotion.System} />;
+}
+
 export default function RootLayout() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
+      <MotionPreference />
       <DatabaseGate fallback={<Loading />}>
         <Suspense fallback={<Loading />}>
           <SQLiteProvider databaseName={DB_NAME} onInit={onInit} useSuspense>

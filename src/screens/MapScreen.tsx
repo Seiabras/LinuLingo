@@ -4,10 +4,12 @@ import { HScroll } from '@/components/HScroll';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import { router, useLocalSearchParams } from 'expo-router';
 import { scheduleOnRN } from 'react-native-worklets';
+import { useReducedMotion } from 'react-native-reanimated';
 import Svg, { Circle, G, Path, Rect, Text as SvgText } from 'react-native-svg';
 import { ArrowLeft, Globe, Minus, Plus, Search, X } from 'lucide-react-native';
 import { Screen, Button, Card, Chip, InfoLabel, SectionTitle, SpeakButton } from '@/components/ui';
 import { useApp } from '@/services/app-state';
+import { useAppReduceMotion } from '@/services/accessibility';
 import { MAP_H, MAP_W, WORLD, type MapCountry } from '@/data/mapa-mundi';
 import { addGlottolog, ALL_MAP_LANGUAGES, byKinship, findMapLanguage, flagOf, initialOf, languagesIn, listLanguages, notableLanguagesIn, MAP_LANGUAGES, ROLE_LABEL, searchLanguages, STATUS_LABEL, type LangRole, type MapLanguage } from '@/data/onde-se-fala';
 import { FAUNA_MUSICA, HOMELANDS } from '@/data/fauna-musica';
@@ -157,6 +159,10 @@ export default function MapScreen() {
   const [subSel, setSubSel] = useState<SubShape | null>(null);
   const [worldBox, setWorldBox] = useState<Box>({ x: 0, y: 0, w: MAP_W, h: MAP_H });
   const anim = useRef<number | null>(null);
+  // «reduzir movimento» (do aparelho ou do Perfil): o zoom pula direto para a caixa final, sem o voo
+  const reduceOS = useReducedMotion();
+  const reduceApp = useAppReduceMotion();
+  const reduceMotion = reduceOS || reduceApp;
   const request = useRef(0);
   // Até quando (Date.now()) um país não deve abrir ao toque: Infinity enquanto um arraste real
   // estiver rolando, e por mais um instante depois de soltar (o clique do mouse chega atrasado na
@@ -180,6 +186,11 @@ export default function MapScreen() {
   const animateTo = (target: Box) => {
     if (anim.current !== null) cancelAnimationFrame(anim.current);
     const to = clamp(target);
+    if (reduceMotion) {
+      anim.current = null;
+      setBox(to);
+      return;
+    }
     const from = box;
     let t0 = -1;
     const step = (t: number) => {

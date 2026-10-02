@@ -270,7 +270,7 @@ export default function HomeScreen() {
                 )}
               </Card>
             </View>
-            {i < units.length - 1 && <OceanCrossing from={u} to={units[i + 1].u} reached={units[i + 1].reached} />}
+            {i < units.length - 1 && <OceanCrossing from={u} to={units[i + 1].u} reached={units[i + 1].reached} index={i} />}
           </Fragment>
         );
       })}
@@ -413,7 +413,24 @@ function PathNode({
  * oceânicas da trilha) marca a fronteira, em vez de um divisor genérico. Fica entre os cartões de
  * unidade, sempre visível (não depende de a unidade estar aberta).
  */
-function OceanCrossing({ from, to, reached }: { from: UnitSeed; to: UnitSeed; reached: boolean }) {
+// a Jubi só comemora a travessia depois de feita (o subnível seguinte já abriu); antes disso, fala no
+// futuro. A frase varia com a posição na trilha, para as 14 travessias não repetirem a mesma fala.
+const CROSSING_DONE: ((from: UnitSeed, to: UnitSeed) => string)[] = [
+  (f, t) => `${f.level} fica para trás! Vem nadando comigo até o ${t.level}: ‘${t.title}’.`,
+  (f, t) => `Travessia feita! Do ${f.level} ao ${t.level} foi um mergulho só. Agora: ‘${t.title}’.`,
+  (f, t) => `Que nado! O ${f.level} ficou na esteira; à frente, o ${t.level}: ‘${t.title}’.`,
+  (f, t) => `Mais um oceano cruzado: bem-vindo ao ${t.level}: ‘${t.title}’.`,
+];
+const CROSSING_AHEAD: ((from: UnitSeed, to: UnitSeed) => string)[] = [
+  (f, t) => `Quando você fechar o ${f.level}, eu te levo nadando até o ${t.level}: ‘${t.title}’.`,
+  (f, t) => `Termine o ${f.level} e a gente cruza junto até o ${t.level}: ‘${t.title}’.`,
+  (f, t) => `Daqui a pouco tem travessia: depois do ${f.level}, vem o ${t.level}: ‘${t.title}’.`,
+  (f, t) => `Estou esperando na beira do ${f.level}. Do outro lado: ${t.level}, ‘${t.title}’.`,
+];
+
+function OceanCrossing({ from, to, reached, index }: { from: UnitSeed; to: UnitSeed; reached: boolean; index: number }) {
+  const lines = reached ? CROSSING_DONE : CROSSING_AHEAD;
+  const line = lines[index % lines.length](from, to);
   return (
     <View
       className={`my-4 flex-row items-center gap-3 rounded-2xl border-2 border-dashed border-aurora/50 bg-gelo px-3 py-2.5 dark:border-aurora/30 dark:bg-gelo-dark ${reached ? '' : 'opacity-70'}`}
@@ -422,7 +439,7 @@ function OceanCrossing({ from, to, reached }: { from: UnitSeed; to: UnitSeed; re
       <View className="flex-1 gap-0.5">
         <Text className="text-[10px] font-extrabold uppercase tracking-widest text-aurora-dark dark:text-aurora">🌊 Travessia oceânica · Jubi</Text>
         <Text className="text-sm leading-5 text-slate-700 dark:text-slate-200">
-          “{from.level} fica para trás! Vem nadando comigo até o {to.level}: {to.title}.”
+          “{line}”
         </Text>
       </View>
     </View>
