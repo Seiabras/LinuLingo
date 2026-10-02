@@ -5,9 +5,9 @@ import { ROWS as TEMAS_A } from './vocab-a';
 import { ROWS as TEMAS_B } from './vocab-b';
 
 /**
- * Vocabulário: primeiro as palavras da trilha (as mais úteis), depois as das etimologias e dos
- * falsos amigos, depois os temas intercalados (uma palavra de cada lista por vez, para a ordem de
- * frequência não ficar presa a um tema). Palavra repetida vale a primeira.
+ * Vocabulário: primeiro as palavras da trilha (as mais úteis), depois as da etimologia e do
+ * restante do léxico, depois os temas intercalados (uma palavra de cada lista por vez, para a ordem
+ * de frequência não ficar presa a um tema). Palavra repetida vale a primeira.
  */
 function merge(...lists: VocabRow[][]): VocabRow[] {
   const seen = new Set<string>();

@@ -116,9 +116,9 @@ commitado.
   - maori: **feito** como `mi` (02/10/2026).
   - havaiano: **feito** como `haw` (02/10/2026).
   - Todos exigem fonte para cada palavra: não inventar, e usar o empréstimo que a comunidade usa.
-- **Africanos**: ha (haussá), ig (igbo) feitos; falta am (amárico) e om (oromo) — ambos já têm o
-  scaffold "língua madura" pronto em `src/data/am/` e `src/data/om/` (como `ha`/`ig` tinham), só
-  falta preencher. ar (árabe) continua bloqueado por RTL (ver abaixo).
+- **Africanos**: ha (haussá), ig (igbo) e om (oromo, 02/10/2026) feitos; am (amárico) sendo
+  preenchido agora (agente em andamento) no scaffold "língua madura" que já existia em
+  `src/data/am/` (como `ha`/`ig`/`om` tinham). ar (árabe) continua bloqueado por RTL (ver abaixo).
 
 ### Pendência técnica: escrita da direita pra esquerda (RTL)
 O app nunca precisou disso até agora (nenhum idioma atual é RTL). Árabe (ar) e iídiche (yi) estão
