@@ -469,6 +469,35 @@ mais detalhe do usuário antes de mexer em código.
     `gn`). Em vez de um pacote novo, a ideia é uma nota/variante dentro do `vec` existente — ainda não
     feito.
 
+## Lista de idiomas sugeridos pelo Matheus (02/10/2026, 3 mensagens coladas)
+Lista grande, por família, pra guardar pra quando chegar a vez — "foca em implementar o novo
+design" veio logo depois, então isso fica pra depois, não é pra começar agora. Os já implementados
+(ficam como estão, não listados nos "faltam" abaixo): sw, yo, ig, nah, nv, cbs, mn, mnc, lkt, kl,
+ht, pln, ar, am, om, zh, id, tl, mi, haw, vi, km, ta, te, th, lo, tr, gn, yrl, tpw, qu, ay, xav,
+kgp, tuo, ka, eu, ja, ryu, ko.
+- **Faltam, já com agentes rodando nesta sessão (02/10/2026)**: zu, xh, ln, wo, hop, shh, apache
+  (variedade a confirmar), tli, shp, yawanawá, marubo, buryat.
+- **Faltam, AINDA sem agente, pedidos nas mensagens coladas**:
+  - Afro-asiático: hauçá **já feito** (ha); somali, tamazight/berbere.
+  - Austronésio: malaio (distinto do indonésio, já feito).
+  - Túrquico: uzbeque.
+  - Tupi: sateré-mawé, mundurukú, kamaiurá, ka'apor, awetí, suruí do Pará.
+  - Macro-jê: xavante **já feito**; kaingang **já feito**.
+  - Tukano: tucano **já feito**.
+  - Aruak/Arawak: ashaninka, baniwa (`kpc` já é baniwa — conferir se é o mesmo) ou terena.
+  - Coreânica: jeju (além do coreano, já feito).
+  - Caucásicas do Norte: checheno, abecásio (georgiano, cartveliano, já feito).
+  - Papuas/Austrália: nada ainda — famílias inteiras (Trans-Nova Guiné, Pama-Nyungan), sem idioma
+    específico pedido.
+  - Outras famílias indígenas americanas: caribe, chibcha, iroquês — sem idioma específico pedido
+    (yanomami e mapuche/mapudungún `arn` já feitos).
+  - Línguas isoladas: ainu (Japão), burushaski (Paquistão) — basco `eu` já feito.
+  - Artificiais: esperanto, ido, klingon, toki pona, quenya, alto-valiriano — tsevhu já existe
+    (`src/data/tsevhu/`, conferir se é pasta cheia ou só rascunho).
+- Itens "MD"/"MD+1" nas mensagens coladas do Matheus: não ficou claro o que a sigla quer dizer
+  (talvez uma marcação da imagem de origem) — ignorado ao decidir o que já está feito, usei o
+  código real do pacote pra conferir em vez da sigla.
+
 ## Git
 - Push feito até `5ddab696`. Os commits depois disso (amigos do Linu, 9 idiomas novos, árvores)
   estão só no computador: é preciso dar push para o site (GitHub Pages) atualizar.
