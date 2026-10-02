@@ -4,6 +4,7 @@ import { UNITS_HY } from './curriculo';
 import { GRAMMAR_HY } from './gramatica';
 import { STORIES_HY } from './historias';
 import { COMMUNITY_HY, ETYMOLOGY_HY, JOURNAL_PROMPTS_HY, SCENARIOS_HY, SHADOWING_HY } from './extras';
+import { toReadingHy } from '@/services/reading-armenian';
 
 export const ARMENIO: LanguagePack = {
   code: 'hy',
@@ -31,6 +32,8 @@ export const ARMENIO: LanguagePack = {
   grammar: GRAMMAR_HY,
   journalPrompts: JOURNAL_PROMPTS_HY,
   shadowing: SHADOWING_HY,
+  // o alfabeto armênio não é latino: embaixo de cada frase vem a transliteração (Բարև · Barev)
+  reading: (t) => (/[԰-֏]/.test(t) ? toReadingHy(t) : ''),
   specialChars: ['ա', 'բ', 'գ', 'դ', 'ե', 'զ', 'է', 'ը', 'թ', 'ժ', 'ի', 'լ', 'խ', 'ծ', 'կ', 'հ', 'ձ', 'ղ', 'ճ', 'մ', 'յ', 'ն', 'շ', 'ո', 'չ', 'պ', 'ջ', 'ռ', 'ս', 'վ', 'տ', 'ր', 'ց', 'ու', 'փ', 'ք', 'և', 'օ', 'ֆ'],
   // alfabeto armênio inteiro, em fileiras de teclado (ordem tradicional)
   keyboardRows: [
