@@ -8,6 +8,7 @@ import { UIGUR } from './ug';
 import { PASHTO } from './ps';
 import { CURDO_CENTRAL } from './ckb';
 import { CURMANJI } from './kmr';
+import { EWE } from './ee';
 import { ARABE_EGIPCIO } from './arz';
 import { IIDICHE } from './yi';
 import { HEBRAICO } from './he';
@@ -153,7 +154,7 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   hu: HUNGARO, tsd: TSAKONIO, pcm: PIDGIN_NIGERIANO, ta: TAMIL, tl: TAGALO, hyw: ARMENIO_OCIDENTAL,
   tdt: TETUM, arn: MAPUDUNGUN, gd: GAELICO_ESCOCES, ht: CRIOULO_HAITIANO, ktn: KARITIANA, kmb: QUIMBUNDO,
   pln: PALENQUERO, kl: GROENLANDES, br: BRETAO, lkt: LAKOTA, se: SAMI_DO_NORTE, fon: FON, ar: ARABE,
-  fa: PERSA, ur: URDU, ryu: OKINAWANO, arz: ARABE_EGIPCIO, yi: IIDICHE, he: HEBRAICO, mt: MALTES, dv: DHIVEHI, ug: UIGUR, ps: PASHTO, ckb: CURDO_CENTRAL, kmr: CURMANJI };
+  fa: PERSA, ur: URDU, ryu: OKINAWANO, arz: ARABE_EGIPCIO, yi: IIDICHE, he: HEBRAICO, mt: MALTES, dv: DHIVEHI, ug: UIGUR, ps: PASHTO, ckb: CURDO_CENTRAL, kmr: CURMANJI, ee: EWE };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -353,6 +354,9 @@ export const LANGUAGES: LanguageInfo[] = [
   // acadêmicas (Ferretti 1996; Pereira 1979) — mas essa ligação foi uma decisão desta sessão, não
   // confirmada pelo Matheus; ver a nota completa em `src/data/fon/index.ts`
   FON,
+  // ewe: mesma família gbe do fon, mas ramo irmão (gbe ocidental, o fon é gbe oriental) — não a mesma
+  // língua; falado sobretudo em Gana e no Togo
+  EWE,
   // farsi/persa: indo-europeu, ramo iraniano ocidental — irmão de longe do urdu/hindi (ambos
   // indo-iranianos), mas sem gênero gramatical nenhum (nem nos pronomes), ao contrário da maioria das
   // línguas indo-europeias já no app
