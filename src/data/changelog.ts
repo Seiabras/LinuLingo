@@ -7,6 +7,9 @@ export interface ChangelogEntry {
 }
 
 export const CHANGELOG: ChangelogEntry[] = [
+  { date: '2026-10-02T01:33:21-03:00', summary: "feat: adiciona havaiano" },
+  { date: '2026-10-02T01:25:37-03:00', summary: "docs: registra húngaro na fila e confere os 20 idiomas mais falados" },
+  { date: '2026-10-02T01:20:02-03:00', summary: "chore: atualiza o changelog do app" },
   { date: '2026-10-02T01:20:01-03:00', summary: "feat: adiciona guarani antigo (colonial)" },
   { date: '2026-10-02T01:15:01-03:00', summary: "docs: pesquisa línguas das famílias helênica, albanesa e armênia" },
   { date: '2026-10-02T01:13:35-03:00', summary: "chore: atualiza o changelog do app" },
