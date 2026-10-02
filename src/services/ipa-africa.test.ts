@@ -29,3 +29,10 @@ test('amárico: fidel sílaba por sílaba, guturais em [a], 6.ª ordem sem vogal
   assert.equal(toIpaAm('አማርኛ እንዴት ቋንቋ'), '[amarɲa ɨndet kʷʼankʷʼa]');
   assert.equal(transliterateAm('ሰላም ነው?'), 'sälam näw?');
 });
+
+test('amárico: transliterateAm não deixa um "ə" sobrando em encontro consonantal no meio da palavra', () => {
+  assert.equal(transliterateAm('እንጀራ'), 'ənǧära');
+  assert.equal(transliterateAm('ኢትዮጵያ'), 'ityop̣ya');
+  assert.equal(transliterateAm('ጤና ይስጥልኝ'), 'ṭena yəsṭəlñ');
+  assert.equal(transliterateAm('olá, 123!'), 'olá, 123!');
+});
