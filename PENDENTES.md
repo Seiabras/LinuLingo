@@ -93,6 +93,11 @@ commitado.
   mr (marati, ambos 02/10/2026) feitos. Faltam: ur e fa (bloqueados por RTL, ver abaixo), ta, tl. Do
   Sudeste Asiático continental ainda falta my (birmanês) — ainda não confirmado, conferir
   documentação antes de começar.
+- **Mongol (pedido do Matheus)**: **feito** como `mn` (02/10/2026), em escrita CIRÍLICA MODERNA (a
+  oficial na Mongólia desde 1941/1946) — família mongólica própria, sem parentesco comprovado com o
+  turcaico/tungúsico (hipótese "altaica" obsoleta). A escrita mongol vertical tradicional (ainda usada
+  na Mongólia Interior, China) fica de fora por enquanto: é um problema de renderização à parte (texto
+  de cima pra baixo), tratado separadamente das RTL — nenhuma das duas está resolvida ainda.
 - **Indígenas**: tpw (tupi antigo), gn (guarani paraguaio), qu (quéchua sulenho), yrl (nheengatu),
   kgp (kaingang), tca (tikuna), xav (xavante), tuo (tukano), kpc (baniwa), ay (aimará), kgk (guarani
   kaiowá) e nah (náuatle) feitos; gun (guarani mbyá) e ka (georgiano, pedido à parte) feitos por outra

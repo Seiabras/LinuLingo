@@ -100,6 +100,7 @@ import { TELUGO } from './te';
 import { OROMO } from './om';
 import { MARATHI } from './mr';
 import { AMARICO } from './am';
+import { MONGOL } from './mn';
 import { GUARANI_NANDEVA } from './nhd';
 import { TAPIETE } from './tpj';
 
@@ -117,7 +118,7 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   hi: HINDI, gn: GUARANI, tpw: TUPI_ANTIGO, ha: HAUCA, ig: IGBO, yrl: NHEENGATU, bn: BENGALI, qu: QUECHUA, kgp: KAINGANG, tca: TIKUNA,
   xav: XAVANTE, tuo: TUKANO, gun: GUARANI_MBYA, ka: GEORGIANO, th: TAILANDES, km: KHMER,
   ay: AIMARA, kgk: GUARANI_KAIOWA, nah: NAUATLE, kpc: BANIWA, lo: LAOSIANO, cbs: HUNI_KUIN,
-  nv: NAVAJO, nhd: GUARANI_NANDEVA, tpj: TAPIETE, mi: MAORI, gnw: GUARANI_ANTIGO, haw: HAVAIANO, te: TELUGO, om: OROMO, mr: MARATHI, am: AMARICO };
+  nv: NAVAJO, nhd: GUARANI_NANDEVA, tpj: TAPIETE, mi: MAORI, gnw: GUARANI_ANTIGO, haw: HAVAIANO, te: TELUGO, om: OROMO, mr: MARATHI, am: AMARICO, mn: MONGOL };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -254,6 +255,9 @@ export const LANGUAGES: LanguageInfo[] = [
   // navajo: família na-dené, sem parentesco com o indo-europeu nem com as línguas indígenas americanas
   // já no app (que são de famílias diferentes: tupi, macro-jê, quéchua, aimará, tukano, aruak, pano)
   NAVAJO,
+  // mongol: família mongólica própria, sem parentesco comprovado com o turcaico/tungúsico (a hipótese
+  // "altaica" é hoje vista como obsoleta) nem com qualquer outra família já no app
+  MONGOL,
 ];
 
 export const DEFAULT_LANGUAGE = 'ro';
