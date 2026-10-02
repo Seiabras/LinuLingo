@@ -35,10 +35,12 @@ function imageKey(w: Pick<VocabWithSRS, 'word_native' | 'word_target' | 'part_of
 
 /**
  * Etapa 2 — associação imersiva imagem ↔ som (Rosetta Stone / Drops).
- * Nenhuma tradução aparece: o aluno ouve a palavra e toca na opção que combina
- * com a imagem. Só esse gesto (toque numa opção) faz a etapa avançar — sem o
- * gesto de arrastar/virar cartão do SRS (ver DeckSession), que é outra
- * metodologia (autoavaliação de revisão) e não cabe aqui.
+ * O aluno ouve a palavra e toca na opção que combina com a imagem; a tradução
+ * fica visível (pequena, abaixo da imagem) porque nem toda imagem livre
+ * disponível ilustra bem o conceito — sem ela, uma imagem ambígua vira
+ * adivinhação. Só o toque numa opção faz a etapa avançar — sem o gesto de
+ * arrastar/virar cartão do SRS (ver DeckSession), que é outra metodologia
+ * (autoavaliação de revisão) e não cabe aqui.
  */
 export function ImmersionStep({ words, pool, locale, onDone }: { words: VocabWithSRS[]; pool: VocabWithSRS[]; locale: string; onDone: (r: WordResult[]) => void }) {
   const { db, pack } = useApp();
@@ -104,6 +106,7 @@ export function ImmersionStep({ words, pool, locale, onDone }: { words: VocabWit
 
       <View className="items-center gap-3 rounded-3xl border-2 border-slate-200 bg-white py-8 dark:border-slate-700 dark:bg-slate-900">
         <WordImage wordNative={word.word_native} emoji={word.emoji} size={150} credit pos={word.part_of_speech} target={word.word_target} />
+        <Text className="text-sm text-slate-500 dark:text-slate-400">{word.word_native}</Text>
         <SpeakButton text={word.word_target} locale={locale} size={26} />
         {solved && <Ipa text={word.word_target} className="text-base" />}
       </View>
