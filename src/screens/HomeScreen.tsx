@@ -43,6 +43,7 @@ export default function HomeScreen() {
   const [peers, setPeers] = useState(0);
   const [todayXp, setTodayXp] = useState(0);
   const [card, setCard] = useState<CultureCardSeed | null>(null);
+  const [lockedMsg, setLockedMsg] = useState<{ title: string; text: string; testRoute?: string } | null>(null);
   const [noVoice, setNoVoice] = useState(false);
   const [journalToday, setJournalToday] = useState(false);
   const [mistakes, setMistakes] = useState(0);
@@ -178,7 +179,15 @@ export default function HomeScreen() {
               <Pressable
                 key={u.id}
                 accessibilityLabel={`Parada ${u.level}: ${u.title}. ${done ? 'Concluída' : cur ? 'Atual' : reached ? 'Em andamento' : 'Bloqueada'}`}
-                onPress={() => toggle(u.id, true)}
+                onPress={() =>
+                  reached
+                    ? toggle(u.id, true)
+                    : setLockedMsg({
+                        title: `${u.level} ainda não foi alcançado`,
+                        text: 'Conclua a unidade anterior para desbloquear esta, ou faça o teste de nivelamento para tentar atravessar direto até aqui.',
+                        testRoute: `/licao/${u.lessons.at(-1)!.id}?pular=1`,
+                      })
+                }
                 className={`items-center rounded-full border-2 px-3 py-2 ${cur ? 'border-conecta bg-conecta-light dark:bg-blue-950' : done ? 'border-conquista/40 bg-green-50 dark:bg-green-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
               >
                 <Text className="text-lg">{done ? '✅' : reached ? u.emoji : '⚓'}</Text>
@@ -241,7 +250,11 @@ export default function HomeScreen() {
                         title={p.lesson.title}
                         state={p.state}
                         score={p.score}
-                        onPress={() => p.state !== 'bloqueada' && router.push(`/licao/${p.lesson.id}`)}
+                        onPress={() =>
+                          p.state !== 'bloqueada'
+                            ? router.push(`/licao/${p.lesson.id}`)
+                            : setLockedMsg({ title: p.lesson.title, text: 'Conclua as lições anteriores desta unidade, em ordem, para desbloquear esta.' })
+                        }
                       />
                     ))}
                   </View>
@@ -305,6 +318,7 @@ export default function HomeScreen() {
       </Pressable>
 
       <CardModal card={card} locale={pack.speechLocale} onClose={() => setCard(null)} />
+      <LockedMsgModal msg={lockedMsg} onClose={() => setLockedMsg(null)} />
     </Screen>
   );
 }
@@ -412,6 +426,38 @@ function OceanCrossing({ from, to, reached }: { from: UnitSeed; to: UnitSeed; re
         </Text>
       </View>
     </View>
+  );
+}
+
+function LockedMsgModal({ msg, onClose }: { msg: { title: string; text: string; testRoute?: string } | null; onClose: () => void }) {
+  const dark = useIsDark();
+  return (
+    <Modal visible={!!msg} animationType="fade" onRequestClose={onClose} transparent>
+      <Pressable accessibilityRole="button" accessibilityLabel="Fechar" onPress={onClose} className="flex-1 items-center justify-center bg-black/50 px-6">
+        <Pressable onPress={(e) => e.stopPropagation()} className="w-full max-w-sm gap-3 rounded-2xl bg-white p-5 dark:bg-slate-900">
+          <View className="flex-row items-start justify-between gap-3">
+            <View className="flex-1 flex-row items-center gap-2">
+              <Lock size={18} color={dark ? '#94A3B8' : '#64748B'} />
+              <Text className="flex-1 font-extrabold text-slate-900 dark:text-white">{msg?.title}</Text>
+            </View>
+            <Pressable accessibilityRole="button" accessibilityLabel="Fechar" onPress={onClose} hitSlop={10}>
+              <X size={20} color={dark ? '#94A3B8' : '#64748B'} />
+            </Pressable>
+          </View>
+          <Text className="text-sm leading-6 text-slate-600 dark:text-slate-400">{msg?.text}</Text>
+          {msg?.testRoute && (
+            <Button
+              title="⏩ Fazer o teste"
+              variant="success"
+              onPress={() => {
+                onClose();
+                router.push(msg.testRoute as Parameters<typeof router.push>[0]);
+              }}
+            />
+          )}
+        </Pressable>
+      </Pressable>
+    </Modal>
   );
 }
 

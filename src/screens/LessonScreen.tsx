@@ -35,8 +35,12 @@ export default function LessonScreen() {
   const dark = useIsDark();
   const found = useMemo(() => findLesson(pack, id), [pack, id]);
   const lesson = useMemo(() => (found ? resolveLesson(found.unit, found.lesson) : null), [found]);
+  // o card "Aprenda primeiro" é da unidade, não da lição: só a primeira lição da unidade o mostra,
+  // senão toda lição começaria repetindo o mesmo texto (já dá pra rever o card a qualquer hora, pelo
+  // item "Dica de cultura e regra gramatical" na trilha).
+  const isFirstLessonOfUnit = found ? found.unit.lessons[0].id === lesson?.id : true;
 
-  const [step, setStep] = useState(0);
+  const [step, setStep] = useState(() => (isFirstLessonOfUnit ? 0 : 1));
   const [words, setWords] = useState<VocabWithSRS[]>([]);
   const [pool, setPool] = useState<VocabWithSRS[]>([]);
   const [wordResults, setWordResults] = useState<WordResult[]>([]);
@@ -110,7 +114,7 @@ export default function LessonScreen() {
       <PageFlipTransition pageKey={step}>
         {step === 0 && (
           <View className="gap-4">
-            <CulturalGrammarCard card={found.unit.card} locale={pack.speechLocale} compact={lesson.kind !== 'licao' || found.unit.lessons[0].id !== lesson.id} />
+            <CulturalGrammarCard card={found.unit.card} locale={pack.speechLocale} />
             <Button title="Entendi, vamos praticar!" variant="success" onPress={() => setStep(1)} />
           </View>
         )}
