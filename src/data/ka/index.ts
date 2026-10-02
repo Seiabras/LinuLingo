@@ -4,6 +4,7 @@ import { UNITS_KA } from './curriculo';
 import { GRAMMAR_KA } from './gramatica';
 import { STORIES_KA } from './historias';
 import { COMMUNITY_KA, ETYMOLOGY_KA, JOURNAL_PROMPTS_KA, SCENARIOS_KA, SHADOWING_KA } from './extras';
+import { toReadingKa } from '@/services/reading-georgian';
 
 export const GEORGIANO: LanguagePack = {
   code: 'ka',
@@ -31,6 +32,8 @@ export const GEORGIANO: LanguagePack = {
   grammar: GRAMMAR_KA,
   journalPrompts: JOURNAL_PROMPTS_KA,
   shadowing: SHADOWING_KA,
+  // o mkhedruli não é latino: embaixo de cada frase vem a romanização oficial (გამარჯობა · gamarjoba)
+  reading: (t) => (/[Ⴀ-ჿ]/.test(t) ? toReadingKa(t) : ''),
   specialChars: ['ა', 'ბ', 'გ', 'დ', 'ე', 'ვ', 'ზ', 'თ', 'ი', 'კ', 'ლ', 'მ', 'ნ', 'ო', 'პ', 'ჟ', 'რ', 'ს', 'ტ', 'უ', 'ფ', 'ქ', 'ღ', 'ყ', 'შ', 'ჩ', 'ც', 'ძ', 'წ', 'ჭ', 'ხ', 'ჯ', 'ჰ'],
   // alfabeto mkhedruli inteiro, em fileiras de teclado (ordem tradicional)
   keyboardRows: [
