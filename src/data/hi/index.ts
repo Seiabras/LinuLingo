@@ -1,4 +1,5 @@
 import type { LanguagePack } from '../types';
+import { toReadingDevanagari } from '@/services/reading-devanagari';
 import { VOCAB_HI } from './vocabulario';
 import { UNITS_HI } from './curriculo';
 import { GRAMMAR_HI } from './gramatica';
@@ -23,6 +24,8 @@ export const HINDI: LanguagePack = {
     note: 'Só o nível A1 por enquanto (unidades 1 e 2, ~86 palavras, 4 tópicos de gramática, 2 histórias), no hindi padrão (o de Déli, língua oficial da Índia ao lado do inglês). Ainda sem treino do alfabeto devanágari. Da A2.1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_HI,
+  // leitura em letras latinas para quem ainda não lê o devanágari (ver src/services/reading-devanagari.ts)
+  reading: (t) => (/[ऀ-ॿ]/.test(t) ? toReadingDevanagari(t) : ''),
   units: UNITS_HI,
   etymology: ETYMOLOGY_HI,
   community: COMMUNITY_HI,

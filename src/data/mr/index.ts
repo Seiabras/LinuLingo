@@ -1,4 +1,5 @@
 import type { LanguagePack } from '../types';
+import { toReadingDevanagari } from '@/services/reading-devanagari';
 import { VOCAB_MR } from './vocabulario';
 import { UNITS_MR } from './curriculo';
 import { GRAMMAR_MR } from './gramatica';
@@ -23,6 +24,8 @@ export const MARATHI: LanguagePack = {
     note: 'Só o nível A1 por enquanto (unidades 1 e 2, 77 palavras, 5 tópicos de gramática, 2 histórias). Ainda sem treino do alfabeto devanágari. Da A2.1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_MR,
+  // leitura em letras latinas para quem ainda não lê o devanágari (ver src/services/reading-devanagari.ts)
+  reading: (t) => (/[ऀ-ॿ]/.test(t) ? toReadingDevanagari(t) : ''),
   units: UNITS_MR,
   etymology: ETYMOLOGY_MR,
   community: COMMUNITY_MR,
