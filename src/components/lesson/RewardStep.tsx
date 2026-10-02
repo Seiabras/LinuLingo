@@ -6,6 +6,8 @@ import { Button, Card, ProgressBar } from '../ui';
 import { retentionLevel } from '@/srs/sm2';
 import type { VocabWithSRS } from '@/types';
 import * as haptics from '@/services/haptics';
+import { useApp } from '@/services/app-state';
+import { targetTextStyle } from '@/services/direction';
 
 const CONFETTI = ['🎉', '✨', '⭐', '🎊', '💫', '🌟'];
 
@@ -31,6 +33,7 @@ export function RewardStep({
   goalXp: number;
   onContinue: () => void;
 }) {
+  const { pack } = useApp();
   useEffect(() => haptics.success(), []);
   const pct = total ? Math.round((correct / total) * 100) : 100;
 
@@ -77,7 +80,7 @@ export function RewardStep({
               <View key={w.id} className="gap-1">
                 <View className="flex-row items-center justify-between">
                   <Text className="font-semibold text-slate-800 dark:text-slate-100">
-                    {w.emoji} {w.word_target}
+                    {w.emoji} <Text style={targetTextStyle(pack)}>{w.word_target}</Text>
                   </Text>
                   <Text className="text-xs text-slate-500 dark:text-slate-400">revisar em {days} {days === 1 ? 'dia' : 'dias'}</Text>
                 </View>

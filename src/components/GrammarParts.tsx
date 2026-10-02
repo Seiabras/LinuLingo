@@ -4,6 +4,7 @@ import { HScroll } from './HScroll';
 import { Card, Ipa, SpeakButton } from './ui';
 import { Linu } from './Linu';
 import { useApp } from '@/services/app-state';
+import { targetTextStyle } from '@/services/direction';
 import * as haptics from '@/services/haptics';
 import type { GrammarQuiz as QuizItem, GrammarSection } from '@/data/types';
 import { logMistake } from '@/services/mistakes';
@@ -49,7 +50,7 @@ export function GrammarSections({ sections }: { sections: GrammarSection[] }) {
                 <View key={i} className="flex-row items-center gap-3 rounded-xl bg-conecta-light/60 px-3 py-2 dark:bg-blue-950/60">
                   <SpeakButton text={ro} locale={pack.speechLocale} size={16} />
                   <View className="flex-1">
-                    <Text className="font-bold text-conecta-dark dark:text-blue-300">{ro}</Text>
+                    <Text style={targetTextStyle(pack)} className="font-bold text-conecta-dark dark:text-blue-300">{ro}</Text>
                     <Ipa text={ro} className="text-xs" />
                     <Text className="text-sm text-slate-600 dark:text-slate-400">{pt}</Text>
                   </View>

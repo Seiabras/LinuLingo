@@ -6,6 +6,7 @@ import { SwipeCard, type SwipeDir } from './SwipeCard';
 import { Linu } from './Linu';
 import { Button, GENDER_LABEL, Chip, ProgressBar, Screen, SpeakButton, Ipa } from './ui';
 import { useApp } from '@/services/app-state';
+import { targetTextStyle } from '@/services/direction';
 import { awardXp, reviewWord } from '@/database/queries';
 import { speak, stopSpeaking } from '@/services/speech';
 import * as haptics from '@/services/haptics';
@@ -163,13 +164,13 @@ export function DeckSession({
               className="w-full items-center gap-3 pt-10"
             >
               <WordImage wordNative={card.word_native} emoji={card.emoji} size={120} credit={flipped} pos={card.part_of_speech} target={card.word_target} />
-              <Text className="text-4xl font-extrabold text-slate-900 dark:text-white">{card.word_target}</Text>
+              <Text style={targetTextStyle(pack)} className="text-4xl font-extrabold text-slate-900 dark:text-white">{card.word_target}</Text>
               <Ipa text={card.word_target} className="text-base" />
               {g && card.gender && <Chip label={`${ROOMS[card.gender].emoji} ${g.label}`} tone={g.tone} />}
               {flipped ? (
                 <View className="items-center gap-1">
                   <Text className="text-xl font-bold text-conecta">{card.word_native}</Text>
-                  {card.example_sentence && <Text className="text-center italic text-slate-500 dark:text-slate-400">{card.example_sentence}</Text>}
+                  {card.example_sentence && <Text style={targetTextStyle(pack)} className="text-center italic text-slate-500 dark:text-slate-400">{card.example_sentence}</Text>}
                 </View>
               ) : (
                 <Text className="text-sm text-slate-400">toque para ver o significado</Text>

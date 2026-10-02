@@ -6,6 +6,7 @@ import { X } from 'lucide-react-native';
 import { Screen, Button, Card, Chip, SpeakButton, Ipa } from '@/components/ui';
 import { Linu } from '@/components/Linu';
 import { useApp } from '@/services/app-state';
+import { targetTextStyle } from '@/services/direction';
 import { awardXp, reachEnding } from '@/database/queries';
 import { endingIds, storyXp } from '@/services/stories';
 import { speak, stopSpeaking } from '@/services/speech';
@@ -101,7 +102,8 @@ export default function StoryScreen() {
               <SpeakButton text={node.text} locale={pack.speechLocale} slow />
             </View>
           </View>
-          <Text className="text-xl leading-8 text-slate-900 dark:text-white">{node.text}</Text>
+          <Text style={targetTextStyle(pack)} className="text-xl leading-8 text-slate-900 dark:text-white">{node.text}</Text>
+          {!!pack.reading?.(node.text) && <Text className="text-sm text-slate-500 dark:text-slate-400">{pack.reading(node.text)}</Text>}
           <Pressable onPress={() => setShowTr((v) => !v)}>
             <Text className="text-sm text-conecta">{showTr ? `🇧🇷 ${node.translation}` : 'Ver tradução'}</Text>
           </Pressable>
@@ -124,7 +126,8 @@ export default function StoryScreen() {
                 onPress={() => choose(c)}
                 className="min-h-[52px] justify-center rounded-2xl border-2 border-slate-200 bg-white px-4 py-3 active:border-conecta active:bg-conecta-light dark:border-slate-700 dark:bg-slate-900 dark:active:bg-blue-950"
               >
-                <Text className="text-lg font-bold text-slate-800 dark:text-slate-100">{c.text}</Text>
+                <Text style={targetTextStyle(pack)} className="text-lg font-bold text-slate-800 dark:text-slate-100">{c.text}</Text>
+                {!!pack.reading?.(c.text) && <Text className="text-xs text-slate-500 dark:text-slate-400">{pack.reading(c.text)}</Text>}
                 {showTr && <Text className="text-sm text-slate-500 dark:text-slate-400">{c.translation}</Text>}
               </Pressable>
             ))}
@@ -158,7 +161,7 @@ export default function StoryScreen() {
             {story.glossary.map(([ro, pt]) => (
               <View key={ro} className="flex-row items-center gap-2">
                 <SpeakButton text={ro} locale={pack.speechLocale} size={14} />
-                <Text className="font-bold text-slate-900 dark:text-white">{ro}</Text>
+                <Text style={targetTextStyle(pack)} className="font-bold text-slate-900 dark:text-white">{ro}</Text>
                 <Ipa text={ro} className="text-xs" />
                 <Text className="flex-1 text-slate-500 dark:text-slate-400">— {pt}</Text>
               </View>
