@@ -510,6 +510,26 @@ kgp, tuo, ka, eu, ja, ryu, ko.
   - Ucronias (como uma língua teria evoluído): brithenig (latim vulgar com influência céltica, como
     se tivesse se fixado na Grã-Bretanha).
 
+## Achados do Matheus testando ao vivo (02/10/2026) — ainda em aberto
+
+Vários já foram corrigidos na hora (aba "Cofre", card "Aprenda primeiro" repetido, mensagem ao
+tocar numa parada/lição bloqueada, tradução na etapa de imersão, nadadeira sumida no humor
+"pensando"). Ficaram em aberto:
+
+- **"LinuLingo já está aberto em outra aba" preso**: aconteceu depois de abrir "Ver os amigos do
+  Linu" (Perfil → `/amigos`) e voltar. "Recarregar" não resolveu; só `Ctrl+R` (recarga de verdade do
+  navegador), e aí foi parar no álbum de figurinhas em vez de voltar pra onde estava. `/amigos` é
+  uma rota comum do `Stack` (não deveria desmontar o `DatabaseGate`, que fica na raiz) — não
+  consegui reproduzir com o Playwright pra confirmar a causa. Ver `src/components/DatabaseGate.tsx`
+  (o comentário do arquivo explica a trava por aba via Web Locks).
+- **Aba "Comunidade"**: como ainda não tem falante nativo corrigindo as frases dos desafios de voz
+  e do `communityPrompt`, seria bom uma aba onde o Matheus possa ver (e marcar como "resposta
+  ideal") o que foi enviado por `submitToCommunity`, em vez de ficar só arquivado no banco.
+- **Reorganizar idiomas no Perfil**: abas por tipo (idiomas naturais / artificiais / outros),
+  podendo escolher qualquer um dos 8 mil+ idiomas do mundo; os que já têm trilha (ou vão ter) ficam
+  como estão, os que não têm (e não está nos planos ter) vão para a parte de "cursos"
+  (`src/app/cursos.tsx` / `curso/[id]`, já existe como conceito de conteúdo mais leve).
+
 ## Git
 - Push feito até `5ddab696`. Os commits depois disso (amigos do Linu, 9 idiomas novos, árvores)
   estão só no computador: é preciso dar push para o site (GitHub Pages) atualizar.
