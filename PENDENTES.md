@@ -150,6 +150,13 @@ antes de começar esses dois.
   - `npx tsx scripts/pictogramas-palavras.mjs`.
 
 ## Revisões pendentes
+- **Achados da revisão externa de seiabras-b8 (02/10/2026, commit 969bbc86)**: (1) `genders` faltando
+  em 12 pacotes caindo no padrão errado — **corrigido**. (2) Textos genéricos mencionando "gênero" em
+  idiomas sem gênero (card "🏛️ Palácio" na Home, frase do tutorial "eu corrijo acentos, gênero e
+  erros comuns", texto do Diário) — ainda não corrigido: esconder/trocar o texto quando
+  `pack.genders?.length === 0`. (3) `reading` faltando em vários idiomas — ver item acima, em
+  andamento. (4) Seletor de idioma no topo da Home abre o Perfil na primeira família da lista, sem
+  rolar até a família do idioma atual nem ter busca — ainda não corrigido, menor prioridade.
 - Revisar la, oc, en, id e vi como já foi feito com gl, ast e sc. Há dúvida sobre a etimologia de
   «nai» < matre(m), no galego.
 - Atualizar o README (tabela de idiomas) e o NotebookLM.md com os idiomas incompletos.
@@ -162,6 +169,16 @@ antes de começar esses dois.
   "só A1" têm 2 cada, os completos (es, it, pt, fr, ru, sv…) têm bem mais) procurando esses trechos
   específicos, não uma reescrita geral.
 - Suaíli: ~2.400 palavras, a meta é ~4.000. Os próximos lotes vão em `src/data/sw/vocab-17.ts` e seguintes.
+- **Leitura romanizada (`reading`) pra idiomas de escrita não-latina (pedido do Matheus, 02/10/2026,
+  achado também pela revisão externa de seiabras-b8)**: o campo `reading` (mostrado acima do IPA,
+  pra quem ainda não lê a escrita do idioma) só existia em ja, ko e am. Feito em 02/10/2026: georgiano
+  (`reading-georgian.ts`, National System 2002/BGN-PCGN), armênio (`reading-armenian.ts`, apóstrofo
+  de aspiração BGN-PCGN/ISO 9985, com testes), grego (`reading-greek.ts`, ELOT 743) e cirílico —
+  russo, ucraniano, bielorrusso, búlgaro, macedônio e sérvio (`reading-cyrillic.ts`, sistema nacional
+  de cada um, não um padrão genérico único). Em andamento (agente): devanágari (híndi e marati,
+  compartilhado, mais complexo por ser abugida com matras/virama). Ainda faltam: bengali, télugo,
+  tailandês, khmer — e, se o mandarim (`zh`) contar aqui, o pinyin já vem escrito à mão em cada
+  palavra do vocabulário, mas não como leitura automática computada (`reading` de verdade).
 
 ## Ideias de pesquisa externa (tipo Gemini, 30/09–01/10/2026 — lista completa, 6 itens)
 Só anotar, não implementar ainda. Era uma lista numerada 1-6; os itens 3 e 4 chegaram primeiro
