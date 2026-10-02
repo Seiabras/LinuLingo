@@ -142,7 +142,7 @@ export default function StoryScreen() {
             <View className="flex-row flex-wrap justify-center gap-2">
               <Chip label={`+${result.xp} XP`} tone="amber" />
               {result.first && <Chip label="🆕 final descoberto" tone="green" />}
-              <Chip label={`${total} finais nesta história`} />
+              <Chip label={total === 1 ? '1 final nesta história' : `${total} finais nesta história`} />
               {mistakes === 0 && <Chip label="sem nenhuma dica" tone="blue" />}
             </View>
             <Text className="text-center text-sm text-slate-600 dark:text-slate-400">💡 {story.cultural_context}</Text>

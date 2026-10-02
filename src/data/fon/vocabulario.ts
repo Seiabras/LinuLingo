@@ -25,14 +25,16 @@ import { buildVocab, type VocabRow } from '../types';
  * Nível B — Wikipédia (artigo «Fon language» em inglês, com a tabela oficial de marcação de tom, e
  * «Fon (langue)» em francês, com um pequeno dicionário francês→fon escrito pela comunidade e a
  * tradução fon da Declaração Universal dos Direitos Humanos): Kwabɔ, hɔ̀n, wiin, akouwè, ɔ́ (artigo
- * posposto, visto em duas legendas de imagem: «Sìn ɔ́», «Dànhweví ɔ́»), aximɛ, xɔ̀, nǔ, ɖó/ɖò, yì,
+ * posposto, visto em duas legendas de imagem: «Sìn ɔ́», «Dànhweví ɔ́»; «Kwabɔ» vem de uma terceira
+ * legenda, de uma farmácia no aeroporto de Cotonou), aximɛ, xɔ̀, nǔ, ɖó/ɖò, yì,
  * wâ, dà, houé, yòyò, égbé, gbada, wanyínyí, honton, mɛxó, ví, nú, na, mǐ, un, wé, éh, mɛɖé, kpo,
  * ɖokpó. Essas fontes nem sempre marcam o tom (o próprio artigo da Wikipédia explica que o tom
  * «é marcado em obras de referência, mas nem sempre na escrita do dia a dia») — por isso parte
  * destas palavras aparece sem acento de tom, fiel à fonte, e não por descuido.
  *
  * Nível C — Glosbe (dicionário colaborativo): só a expressão «un dó kú nú mi» (obrigado), a única
- * fonte que achamos para agradecer em fon; é contribuição de usuário, não uma obra acadêmica.
+ * fonte que achamos para agradecer em fon; é contribuição de usuário, não uma obra acadêmica —
+ * merece uma segunda confirmação antes de tratar como definitiva.
  *
  * LACUNAS HONESTAS (preferimos deixar de fora a inventar): não achamos fontes para números além de
  * «ɖokpó» (um), para cores, para «casa», «mãe», «pai», «cão/gato», nem para saudações como «bom
@@ -43,8 +45,8 @@ import { buildVocab, type VocabRow } from '../types';
  */
 export const ROWS: VocabRow[] = [
   // ── Expressões ──
-  ['Kwabɔ', 'bem-vindo (visto numa farmácia do aeroporto de Cotonou)', 'interjeição', 'Expressões', '👋', 'Kwabɔ!'],
-  ['un dó kú nú mi', 'obrigado (fonte: Glosbe, contribuição de usuário — a única achada)', 'expressão', 'Expressões', '🙏', 'Un dó kú nú mi.'],
+  ['Kwabɔ', 'bem-vindo', 'interjeição', 'Expressões', '👋', 'Kwabɔ!'],
+  ['un dó kú nú mi', 'obrigado', 'expressão', 'Expressões', '🙏', 'Un dó kú nú mi.'],
 
   // ── Essenciais ──
   ['ɔ́', 'o, a (artigo definido — vem DEPOIS da palavra, nunca antes)', 'artigo', 'Essenciais', '🔹', 'Sìn ɔ́.'],
