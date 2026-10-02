@@ -493,10 +493,22 @@ kgp, tuo, ka, eu, ja, ryu, ko.
     (yanomami e mapuche/mapudungún `arn` já feitos).
   - Línguas isoladas: ainu (Japão), burushaski (Paquistão) — basco `eu` já feito.
   - Artificiais: esperanto, ido, klingon, toki pona, quenya, alto-valiriano — tsevhu já existe
-    (`src/data/tsevhu/`, conferir se é pasta cheia ou só rascunho).
+    (`src/data/tsevhu/`, pasta cheia: dicionario.ts tem 389 KB, não é rascunho).
 - Itens "MD"/"MD+1" nas mensagens coladas do Matheus: não ficou claro o que a sigla quer dizer
   (talvez uma marcação da imagem de origem) — ignorado ao decidir o que já está feito, usei o
   código real do pacote pra conferir em vez da sigla.
+- **Lista extra de línguas artificiais (02/10/2026, mais 2 mensagens coladas)** — pra quando chegar
+  a vez, não um pedido de agora:
+  - Auxlangs (internacionais): esperanto (**já feito**), interlíngua, ido, novial, volapük,
+    interslavo (medžuslovjansky), lingua franca nova (elefen).
+  - Artlangs (ficção): klingon, quenya/sindarin, alto-valiriano, na'vi (Avatar), dothraki (além do
+    alto-valiriano, mesmo autor/série), lang belta (The Expanse), mando'a (Star Wars) — tsevhu
+    **já feito**.
+  - Loglangs/englangs (lógicas e minimalistas): toki pona, lojban/loglan, ithkuil, solresol (as 7
+    notas musicais), kēlen (sem verbos), aUI, blissymbols (sistema de símbolos, sem forma falada —
+    não dá pra ensinar "pronúncia", avaliar se cabe no formato do app antes de começar).
+  - Ucronias (como uma língua teria evoluído): brithenig (latim vulgar com influência céltica, como
+    se tivesse se fixado na Grã-Bretanha).
 
 ## Git
 - Push feito até `5ddab696`. Os commits depois disso (amigos do Linu, 9 idiomas novos, árvores)
