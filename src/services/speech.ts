@@ -297,12 +297,16 @@ function recognitionCtor(): RecognitionCtor | null {
 }
 
 /**
- * Reconhecimento de fala disponível? Hoje: navegadores com Web Speech API (Chrome, Edge, Safari).
- * No app nativo o aluno digita o que falou; o reconhecimento nativo exige um build de desenvolvimento.
+ * Reconhecimento de fala disponível? Hoje: navegadores com Web Speech API (Chrome e outros com motor
+ * Chromium/Blink). O Safari (iOS e macOS) e o Firefox padrão não implementam o reconhecimento — só a
+ * fala sintetizada. No app nativo o aluno digita o que falou; o reconhecimento nativo exige um módulo
+ * próprio (ex.: expo-speech-recognition) e um build de desenvolvimento, que o Expo Go não traz.
  */
 export function canRecognize(): boolean {
   return recognitionCtor() !== null;
 }
+
+export { recognitionErrorMessage } from './recognition-error';
 
 export function listen(locale: string, timeoutMs = 8000): Promise<string> {
   const Ctor = recognitionCtor();

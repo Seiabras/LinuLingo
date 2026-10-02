@@ -6,6 +6,7 @@ import { Linu } from '../Linu';
 import { Button, SpeakButton, SpeechBubble, Ipa } from '../ui';
 import { router } from 'expo-router';
 import { canRecognize, canSpeak, listen, speak } from '@/services/speech';
+import { recognitionErrorMessage } from '@/services/recognition-error';
 import { markWords, matchesAny, pronunciationScore, type WordMark } from '@/services/answers';
 import * as haptics from '@/services/haptics';
 import { useApp } from '@/services/app-state';
@@ -53,8 +54,7 @@ export function VoiceStep({ challenge, locale, onDone }: { challenge: VoiceChall
       if (text.trim()) evaluate(text);
       else setError('Não consegui ouvir. Tente de novo mais perto do microfone.');
     } catch (e) {
-      const msg = (e as Error).message;
-      setError(msg === 'not-allowed' ? 'Permita o uso do microfone no navegador.' : 'O reconhecimento de voz falhou. Você pode digitar a resposta.');
+      setError(recognitionErrorMessage((e as Error).message));
     } finally {
       setListening(false);
     }
