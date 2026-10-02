@@ -339,9 +339,18 @@ mais detalhe do usuário antes de mexer em código.
 - **"O microfone não tá funcionando dentro das lições"**: **corrigido** — ver a entrada em "Revisões
   pendentes" acima.
 - **"Na parte do mundo o mapa tá meio bugado para mexer e colocar a língua onde se fala com o país, e
-  na hora de aproximar, colocar o estado em que se fala com as cores diferentes"**: em andamento (uma
-  sessão em paralelo está investigando e corrigindo o `MapScreen.tsx` e os dados de
-  `idiomas-mundo.ts`) — ainda não commitado nesta pendência no momento desta atualização.
+  na hora de aproximar, colocar o estado em que se fala com as cores diferentes"**: **feito em
+  02/10/2026**. Corrigido: arrastar/aproximar não abre mais um país por engano (o toque real ficou
+  travado por um bug introduzido durante o próprio conserto do arrasto, pego e corrigido); zoom pela
+  roda do mouse/trackpad na web; recorte por estado/província/cantão (Suíça, Canadá, Índia, via novo
+  `CLDR_SUBDIVISIONS` em `onde-se-fala.ts`) com cor própria por idioma, em vez de todos saírem na
+  mesma cor por família linguística; legenda das línguas do país aproximado. **Pendência técnica
+  deixada aberta**: os códigos ISO 3166-2 do novo `CLDR_SUBDIVISIONS` não têm teste automático (só os
+  de `MAP_LANGUAGES` já tinham, em `conteudo.test.ts`) — conferido manualmente, mas sem guarda contra
+  regressão. **Nota de processo**: um agente em segundo plano rodou `git stash`/`git stash pop` sozinho
+  durante o diagnóstico (pra comparar com o estado já commitado) — voltou limpo, sem perder nada, mas
+  é um uso de git fora do combinado (git stash/reset não são ações que um agente devia tomar por conta
+  própria); vale reforçar essa instrução nos próximos agentes de bugfix.
 - **"Em línguas artificiais adicione a língua dos minions"**: a "língua dos minions" (dos filmes da
   Illumination) não é um conlang estruturado de verdade — é gibberish dos diretores, uma mistura de
   fragmentos de línguas reais (italiano, espanhol, francês, inglês, japonês, coreano, indonésio…) sem
@@ -357,11 +366,13 @@ mais detalhe do usuário antes de mexer em código.
   os idiomas que quer que não estão no app ainda: tétum, mapudungún (mapuche), língua geral de mina,
   farsi, karitiana, kimbundu, gaélico escocês, crioulo haitiano, groenlandês, palenquero, saami,
   talian, bretão, lakota. Status de cada um:
-  - **Em andamento** (pacote do zero, igual aos outros): tétum (`tdt`), mapudungún (`arn`), karitiana
-    (`ktn`), kimbundu (`kmb`), gaélico escocês (`gd`), crioulo haitiano (`ht`), groenlandês/kalaallisut
-    (`kl`), palenquero (`pln`), saami do norte (`se` — a variedade sami mais falada, ~15-25 mil
-    falantes; as outras línguas sami, como a lule e a skolt, têm código próprio à parte), bretão
-    (`br`), lakota (`lkt`).
+  - **Feitos em 02/10/2026**: tétum (`tdt` — austronésio, ramo tetárico, muitos empréstimos do
+    português por contato colonial) e mapudungún (`arn` — tratado como língua isolada, posição
+    majoritária entre linguistas hoje, mesmo caso do tikuna/basco).
+  - **Em andamento** (pacote do zero, igual aos outros): karitiana (`ktn`), kimbundu (`kmb`), gaélico
+    escocês (`gd`), crioulo haitiano (`ht`), groenlandês/kalaallisut (`kl`), palenquero (`pln`), saami
+    do norte (`se` — a variedade sami mais falada, ~15-25 mil falantes; as outras línguas sami, como a
+    lule e a skolt, têm código próprio à parte), bretão (`br`), lakota (`lkt`).
   - **"Língua geral de mina"**: pesquisado em 02/10/2026. Descartada a hipótese de ser a língua
     geral tupi (nheengatu, `yrl`, ou a paulista) — nenhuma fonte liga as duas coisas. Confirmado:
     "mina" vem da Costa da Mina/São Jorge da Mina (Elmina, Gana de hoje) e remete ao Tambor de Mina e

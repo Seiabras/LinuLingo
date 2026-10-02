@@ -109,6 +109,8 @@ import { PIDGIN_NIGERIANO } from './pcm';
 import { TAMIL } from './ta';
 import { TAGALO } from './tl';
 import { ARMENIO_OCIDENTAL } from './hyw';
+import { TETUM } from './tdt';
+import { MAPUDUNGUN } from './arn';
 
 /** Idiomas com conteúdo pronto. */
 export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES, fr: FRANCES, ca: CATALAO, is: ISLANDES, fi: FINLANDES, et: ESTONIANO, fo: FEROES, lt: LITUANO, lv: LETAO, sw: SUAILI, ja: JAPONES, ko: COREANO,
@@ -125,7 +127,8 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   xav: XAVANTE, tuo: TUKANO, gun: GUARANI_MBYA, ka: GEORGIANO, th: TAILANDES, km: KHMER,
   ay: AIMARA, kgk: GUARANI_KAIOWA, nah: NAUATLE, kpc: BANIWA, lo: LAOSIANO, cbs: HUNI_KUIN,
   nv: NAVAJO, nhd: GUARANI_NANDEVA, tpj: TAPIETE, mi: MAORI, gnw: GUARANI_ANTIGO, haw: HAVAIANO, te: TELUGO, om: OROMO, mr: MARATHI, am: AMARICO, mn: MONGOL,
-  hu: HUNGARO, tsd: TSAKONIO, pcm: PIDGIN_NIGERIANO, ta: TAMIL, tl: TAGALO, hyw: ARMENIO_OCIDENTAL };
+  hu: HUNGARO, tsd: TSAKONIO, pcm: PIDGIN_NIGERIANO, ta: TAMIL, tl: TAGALO, hyw: ARMENIO_OCIDENTAL,
+  tdt: TETUM, arn: MAPUDUNGUN };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -283,6 +286,12 @@ export const LANGUAGES: LanguageInfo[] = [
   // ISO 639-3 — dialeto de Istambul, sem país onde seja oficial, falado sobretudo na diáspora
   // (Líbano, Síria, França, EUA); ameaçado pela UNESCO
   ARMENIO_OCIDENTAL,
+  // tétum: austronésio, ramo filipino-malaio-oriental próprio (tetárico) — língua nacional de
+  // Timor-Leste, com muitos empréstimos do português por contato colonial
+  TETUM,
+  // mapudungún: tratado aqui como língua isolada (posição majoritária entre linguistas hoje), como
+  // o basco e o tikuna — sem parentesco comprovado com nenhuma outra família já no app
+  MAPUDUNGUN,
 ];
 
 export const DEFAULT_LANGUAGE = 'ro';
