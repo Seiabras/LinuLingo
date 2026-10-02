@@ -4,6 +4,9 @@ import { useFocusEffect } from 'expo-router';
 import { ArrowLeft, Mic } from 'lucide-react-native';
 import { Screen, Button, Card, Chip, SectionTitle, SpeakButton, SpeechBubble, LetterPad } from '@/components/ui';
 import { Linu } from '@/components/Linu';
+import { LinuAmigo } from '@/components/LinuAmigo';
+import { FieldNotebookBackground } from '@/components/FieldNotebookBackground';
+import { FieldGuideCard } from '@/components/FieldGuideCard';
 import { useApp } from '@/services/app-state';
 import { targetInputStyle, targetTextStyle } from '@/services/direction';
 import { awardXp, listJournal, saveJournal, submitToCommunity, type JournalEntry } from '@/database/queries';
@@ -112,7 +115,7 @@ export default function JournalScreen() {
   };
 
   return (
-    <Screen>
+    <Screen background={<FieldNotebookBackground variant="pergaminho" />}>
       <View className="flex-row items-center gap-3 pt-3">
         <Pressable accessibilityLabel="Voltar" onPress={goBack} hitSlop={10}>
           <ArrowLeft size={24} color={dark ? '#CBD5E1' : '#334155'} />
@@ -121,14 +124,17 @@ export default function JournalScreen() {
         {doneToday && <Chip label="✓ hoje" tone="green" />}
       </View>
 
-      <View className="mt-4 flex-row items-end gap-2">
-        <Linu mood="falando" size={70} />
-        <SpeechBubble className="mb-6">
-          <Text style={targetTextStyle(pack)} className="text-xl font-bold text-slate-900 dark:text-white">{prompt}</Text>
-          {!!pack.reading?.(prompt) && <Text className="text-sm text-slate-500 dark:text-slate-400">{pack.reading(prompt)}</Text>}
-          <Text className="text-sm text-slate-500 dark:text-slate-400">🇧🇷 {promptPt} Escreva 3 frases curtas.</Text>
-        </SpeechBubble>
-      </View>
+      <FieldGuideCard label="FLOCO TROUXE" className="mb-6 mt-4">
+        <View className="flex-row items-end gap-2">
+          <LinuAmigo id="petrel" size={70} />
+          <SpeechBubble>
+            <Text className="text-sm text-slate-500 dark:text-slate-400">Voei bem longe e trouxe esse tema para o seu diário de hoje:</Text>
+            <Text style={targetTextStyle(pack)} className="text-xl font-bold text-slate-900 dark:text-white">{prompt}</Text>
+            {!!pack.reading?.(prompt) && <Text className="text-sm text-slate-500 dark:text-slate-400">{pack.reading(prompt)}</Text>}
+            <Text className="text-sm text-slate-500 dark:text-slate-400">🇧🇷 {promptPt} Escreva 3 frases curtas.</Text>
+          </SpeechBubble>
+        </View>
+      </FieldGuideCard>
 
       {saved === null ? (
         <>

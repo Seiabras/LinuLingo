@@ -1,7 +1,10 @@
 import { Pressable, Text, View } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
 import { ArrowLeft } from 'lucide-react-native';
-import { Screen, Card, Chip, SectionTitle } from '@/components/ui';
+import { Screen, Card, Chip, SectionTitle, SpeechBubble } from '@/components/ui';
+import { LinuAmigo } from '@/components/LinuAmigo';
+import { FieldNotebookBackground } from '@/components/FieldNotebookBackground';
+import { FieldGuideCard } from '@/components/FieldGuideCard';
 import { useApp } from '@/services/app-state';
 import { awardXp } from '@/database/queries';
 import { goBack } from '@/services/nav';
@@ -18,7 +21,7 @@ export default function GrammarTopicScreen() {
   const idx = pack.grammar.indexOf(topic);
 
   return (
-    <Screen>
+    <Screen background={<FieldNotebookBackground variant="gelo" />}>
       <View className="flex-row items-center gap-3 pt-3">
         <Pressable accessibilityLabel="Voltar" onPress={goBack} hitSlop={10}>
           <ArrowLeft size={24} color={dark ? '#CBD5E1' : '#334155'} />
@@ -28,6 +31,13 @@ export default function GrammarTopicScreen() {
         </Text>
         <Chip label={topic.level} tone="blue" />
       </View>
+
+      <FieldGuideCard label="MAIS UMA PEDRINHA" className="mb-2 mt-3">
+        <View className="flex-row items-end gap-2">
+          <LinuAmigo id="adelia" size={60} />
+          <SpeechBubble>Achei mais uma pedrinha para a coleção: {topic.title.toLowerCase()}! Vem ver como ela funciona.</SpeechBubble>
+        </View>
+      </FieldGuideCard>
       <Text className="mt-2 text-base text-slate-600 dark:text-slate-300">{topic.summary}</Text>
 
       <GrammarSections sections={topic.sections} />

@@ -4,7 +4,8 @@ import { router, useLocalSearchParams } from 'expo-router';
 import { ChevronDown, ChevronUp } from 'lucide-react-native';
 import { Screen, Card, InfoLabel, SpeechBubble, SpeakButton } from '@/components/ui';
 import { CulturalGrammarCard } from '@/components/CulturalGrammarCard';
-import { Linu } from '@/components/Linu';
+import { LinuAmigo } from '@/components/LinuAmigo';
+import { FieldGuideCard } from '@/components/FieldGuideCard';
 import { useApp } from '@/services/app-state';
 import { useIsDark } from '@/services/theme';
 import { FAUNA_MUSICA, HOMELANDS, type NatureItem } from '@/data/fauna-musica';
@@ -17,6 +18,7 @@ import { OwnLanguagesTab } from '@/components/OwnLanguagesTab';
 import { IndigenousTab } from '@/components/IndigenousTab';
 import { SignLanguagesTab } from '@/components/SignLanguagesTab';
 import { LanguageTypesTab } from '@/components/LanguageTypesTab';
+import { FieldNotebookBackground } from '@/components/FieldNotebookBackground';
 import type { LanguagePack } from '@/data/types';
 import { nomeIdioma } from '@/services/idioma-nome';
 
@@ -42,7 +44,7 @@ export default function CultureScreen() {
   const setTab = (id: TabId) => router.setParams({ aba: id });
 
   return (
-    <Screen>
+    <Screen background={<FieldNotebookBackground variant="pergaminho" />}>
       <InfoLabel
         className="pt-3"
         label={<Text className="text-2xl font-extrabold text-slate-900 dark:text-white">🏛️ Cultura & História</Text>}
@@ -97,10 +99,14 @@ function CultureTab({ onOwnLanguages }: { onOwnLanguages: () => void }) {
 
   return (
     <>
-      <View className="mt-3 flex-row items-end gap-2">
-        <Linu mood="pensando" size={64} animate={false} />
-        <SpeechBubble className="mb-5">Toda palavra tem uma história. Conhecer a origem ajuda a lembrar!</SpeechBubble>
-      </View>
+      <FieldGuideCard label="WENDEL CONTA" className="mb-5 mt-3">
+        <View className="flex-row items-end gap-2">
+          <LinuAmigo id="weddell" size={64} />
+          <SpeechBubble>
+            Sou o Wendel. Adoro um cochilo tranquilo no gelo, ouvindo de onde vem cada coisa. Toda palavra tem uma história — vem descansar aqui comigo e descobrir a origem do {nomeIdioma(pack.name)}.
+          </SpeechBubble>
+        </View>
+      </FieldGuideCard>
 
       <Card className="mt-2 gap-3">
         <Text className="text-xs font-bold uppercase tracking-wide text-slate-500">🌳 Família do {nomeIdioma(pack.name)}</Text>

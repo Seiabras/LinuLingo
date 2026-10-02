@@ -3,7 +3,9 @@ import { Pressable, Text, View } from 'react-native';
 import { useFocusEffect } from 'expo-router';
 import { ArrowLeft } from 'lucide-react-native';
 import { Screen, Button, Card, Chip, ProgressBar, SpeechBubble } from '@/components/ui';
-import { Linu } from '@/components/Linu';
+import { LinuAmigo } from '@/components/LinuAmigo';
+import { FieldNotebookBackground } from '@/components/FieldNotebookBackground';
+import { FieldGuideCard } from '@/components/FieldGuideCard';
 import { RegionTapMap, regionName, regionNameByCode } from '@/components/RegionTapMap';
 import { useApp } from '@/services/app-state';
 import { awardXp } from '@/database/queries';
@@ -55,14 +57,17 @@ export default function ExpeditionScreen() {
 
   if (!stops.length)
     return (
-      <Screen>
+      <Screen background={<FieldNotebookBackground variant="gelo" />}>
         <Header dark={dark} />
-        <Card className="mt-4">
-          <Text className="text-base text-slate-700 dark:text-slate-300">As expedições do {nomeIdioma(pack.name)} ainda estão sendo preparadas.</Text>
-        </Card>
+        <FieldGuideCard label="FLOCO AVISA" className="mt-4">
+          <View className="flex-row items-end gap-2">
+            <LinuAmigo id="petrel" size={60} />
+            <SpeechBubble>Ainda estou sobrevoando para achar as paradas desta semana do {nomeIdioma(pack.name)}. Na neve ninguém me acha, mas eu volto logo!</SpeechBubble>
+          </View>
+        </FieldGuideCard>
       </Screen>
     );
-  if (!p) return <Screen>{null}</Screen>;
+  if (!p) return <Screen background={<FieldNotebookBackground variant="gelo" />}>{null}</Screen>;
 
   const k = arrived ?? currentStop(p);
   const done = finished(p) && arrived === null;
@@ -119,16 +124,18 @@ export default function ExpeditionScreen() {
   };
 
   return (
-    <Screen>
+    <Screen background={<FieldNotebookBackground variant="gelo" />}>
       <Header dark={dark} />
-      <View className="mt-4 flex-row items-end gap-2">
-        <Linu mood={done ? 'comemorando' : arrived !== null ? 'feliz' : 'falando'} size={64} />
-        <SpeechBubble className="mb-5">
-          {done
-            ? `Expedição da semana completa! ${totalStars} de ${stops.length * 3} estrelas. Na segunda-feira tem outra.`
-            : `Vou viajar por lugares onde se fala ${nomeIdioma(pack.name)}! Ouça a pista no idioma e toque no mapa a região para onde eu fui.`}
-        </SpeechBubble>
-      </View>
+      <FieldGuideCard label="FLOCO VOA" className="mb-5 mt-4">
+        <View className="flex-row items-end gap-2">
+          <LinuAmigo id="petrel" size={64} />
+          <SpeechBubble>
+            {done
+              ? `Voltei de mais uma expedição! ${totalStars} de ${stops.length * 3} estrelas essa semana. Na segunda-feira eu alço voo de novo.`
+              : `Sou o Floco: voo bem longe para descobrir lugares onde se fala ${nomeIdioma(pack.name)}! Ouça a pista no idioma e toque no mapa a região para onde eu fui.`}
+          </SpeechBubble>
+        </View>
+      </FieldGuideCard>
       <View className="flex-row items-center gap-2">
         <Chip label={`Semana ${week.slice(5)}`} tone="blue" />
         <View className="flex-1">

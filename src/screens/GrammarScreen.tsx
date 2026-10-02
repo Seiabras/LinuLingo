@@ -3,7 +3,9 @@ import { Pressable, Text, TextInput, View } from 'react-native';
 import { router } from 'expo-router';
 import { Search } from 'lucide-react-native';
 import { Screen, Chip, SectionTitle, SpeechBubble } from '@/components/ui';
-import { Linu } from '@/components/Linu';
+import { LinuAmigo } from '@/components/LinuAmigo';
+import { FieldNotebookBackground } from '@/components/FieldNotebookBackground';
+import { FieldGuideCard } from '@/components/FieldGuideCard';
 import { useApp } from '@/services/app-state';
 import { useIsDark } from '@/services/theme';
 import { SUBLEVELS } from '@/types';
@@ -30,14 +32,16 @@ export default function GrammarScreen() {
   }, [pack.grammar, q]);
 
   return (
-    <Screen>
+    <Screen background={<FieldNotebookBackground variant="gelo" />}>
       <Text className="pt-3 text-2xl font-extrabold text-slate-900 dark:text-white">📐 Gramática</Text>
-      <View className="mt-3 flex-row items-end gap-2">
-        <Linu mood="pensando" size={64} animate={false} />
-        <SpeechBubble className="mb-5">
-          A gramática do {nomeIdioma(pack.name)} explicada para quem fala português, do A1.1 ao C2. Cada tópico tem exemplos com áudio, IPA e um mini-quiz.
-        </SpeechBubble>
-      </View>
+      <FieldGuideCard label="DEDÉ EXPLICA" className="mb-5 mt-3">
+        <View className="flex-row items-end gap-2">
+          <LinuAmigo id="adelia" size={64} />
+          <SpeechBubble>
+            Gramática é que nem pedrinha: eu junto uma regrinha de cada vez! Vem comigo entender o {nomeIdioma(pack.name)}, do A1.1 ao C2 — cada tópico tem exemplos com áudio, IPA e um mini-quiz.
+          </SpeechBubble>
+        </View>
+      </FieldGuideCard>
 
       <View className="mb-3 flex-row rounded-2xl bg-slate-200 p-1 dark:bg-slate-800">
         {(
