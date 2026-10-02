@@ -1,4 +1,5 @@
 import type { LanguagePack } from '../types';
+import { toReadingKm } from '@/services/reading-khmer';
 import { VOCAB_KM } from './vocabulario';
 import { UNITS_KM } from './curriculo';
 import { GRAMMAR_KM } from './gramatica';
@@ -23,6 +24,8 @@ export const KHMER: LanguagePack = {
     note: 'Só o nível A1 por enquanto (unidades 1 e 2, ~82 palavras, 4 tópicos de gramática, 2 histórias). Ainda sem treino do alfabeto khmer, um dos mais longos do mundo (mais de 70 letras entre consoantes e vogais) — o teclado mostra só as letras mais essenciais. Da A2.1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_KM,
+  // leitura em letras latinas para quem ainda não lê a escrita khmer (ver src/services/reading-khmer.ts)
+  reading: (t) => (/[ក-៿]/.test(t) ? toReadingKm(t) : ''),
   units: UNITS_KM,
   etymology: ETYMOLOGY_KM,
   community: COMMUNITY_KM,
