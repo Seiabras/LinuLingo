@@ -17,6 +17,7 @@ import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
 import { nomeIdioma } from '@/services/idioma-nome';
 import { KIND } from '@/services/variedade';
+import { tapProps } from '@/services/svg-tap';
 
 const ROUND = 8;
 const MAP_HEIGHT = 260;
@@ -258,7 +259,7 @@ function FrameMap({ frame, highlight, good, bad, onTap }: { frame: string[]; hig
               fill={fill}
               stroke={dark ? '#0F172A' : '#FFFFFF'}
               strokeWidth={px}
-              onPress={tappable ? () => onTap(c.iso) : undefined}
+              {...(tappable ? tapProps(() => onTap(c.iso)) : {})}
             />
           );
         })}

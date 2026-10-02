@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { LogBox, Platform, Pressable, Text, TextInput, useWindowDimensions, View } from 'react-native';
+import { Platform, Pressable, Text, TextInput, useWindowDimensions, View } from 'react-native';
 import { HScroll } from '@/components/HScroll';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import { router, useLocalSearchParams } from 'expo-router';
@@ -25,9 +25,6 @@ import { hasSubdivisions, loadSubdivisions } from '@/services/subdivisoes';
 import { nomeIdioma } from '@/services/idioma-nome';
 import { KIND } from '@/services/variedade';
 
-// Na web o react-native-svg repassa os props de toque (onResponder…) ao HTML: o toque funciona,
-// mas o React avisa em modo de desenvolvimento. Aviso conhecido e inofensivo.
-LogBox.ignoreLogs(['Unknown event handler property']);
 
 // Fora do componente de propósito: o lint de pureza do React Compiler barra Date.now() dentro do
 // corpo do componente (mesmo num handler de gesto, que só roda bem depois da renderização) porque
@@ -524,7 +521,7 @@ export default function MapScreen() {
                       stroke={isSel ? (dark ? '#FBBF24' : '#0F172A') : stroke}
                       strokeWidth={isSel ? view.w / 400 : view.w / 1600}
                       strokeDasharray={c.disputed ? `${view.w / 300} ${view.w / 400}` : undefined}
-                      onPress={() => selectCountry(c)}
+                      {...(Platform.OS === 'web' ? { onClick: () => selectCountry(c) } : { onPress: () => selectCountry(c) })}
                     />
                   );
                 })}
@@ -541,11 +538,21 @@ export default function MapScreen() {
                         fillOpacity={subSel === sh ? Math.min(1, op + 0.25) : op}
                         stroke={stroke}
                         strokeWidth={px}
-                        onPress={() => {
-                          if (dragLocked()) return;
-                          setSelected(focus);
-                          setSubSel(sh);
-                        }}
+                        {...(Platform.OS === 'web'
+                          ? {
+                              onClick: () => {
+                                if (dragLocked()) return;
+                                setSelected(focus);
+                                setSubSel(sh);
+                              },
+                            }
+                          : {
+                              onPress: () => {
+                                if (dragLocked()) return;
+                                setSelected(focus);
+                                setSubSel(sh);
+                              },
+                            })}
                       />
                     );
                   })}
@@ -574,7 +581,7 @@ export default function MapScreen() {
                     fillOpacity={role ? Math.max(0.5, OPACITY[role]) : 1}
                     stroke={selected?.iso === c.iso ? '#FBBF24' : stroke}
                     strokeWidth={markerR / 3}
-                    onPress={() => selectCountry(c)}
+                    {...(Platform.OS === 'web' ? { onClick: () => selectCountry(c) } : { onPress: () => selectCountry(c) })}
                   />
                 );
               })}

@@ -6,6 +6,7 @@ import { ISO_3166_2 } from '@/data/iso-3166-2';
 import { fitBox, focusBox, ringBoxes, type SubShape } from '@/services/mapa-geo';
 import { loadSubdivisions } from '@/services/subdivisoes';
 import { useIsDark } from '@/services/theme';
+import { tapProps } from '@/services/svg-tap';
 
 /** Nome da região em português (lista ISO 3166-2); senão, o do Natural Earth. */
 export function regionName(iso3: string, sh: Pick<SubShape, 'code' | 'name'>): string {
@@ -72,7 +73,7 @@ export function RegionTapMap({
               fill={fill}
               stroke={dark ? '#0F172A' : '#FFFFFF'}
               strokeWidth={px * 0.7}
-              onPress={disabled ? undefined : () => onTap(sh)}
+              {...(disabled ? {} : tapProps(() => onTap(sh)))}
             />
           );
         })}
