@@ -6,7 +6,7 @@ import { router, useLocalSearchParams } from 'expo-router';
 import { scheduleOnRN } from 'react-native-worklets';
 import Svg, { Circle, G, Path, Rect, Text as SvgText } from 'react-native-svg';
 import { ArrowLeft, Globe, Minus, Plus, Search, X } from 'lucide-react-native';
-import { Screen, Button, Card, Chip, SectionTitle, SpeakButton } from '@/components/ui';
+import { Screen, Button, Card, Chip, InfoLabel, SectionTitle, SpeakButton } from '@/components/ui';
 import { useApp } from '@/services/app-state';
 import { MAP_H, MAP_W, WORLD, type MapCountry } from '@/data/mapa-mundi';
 import { addGlottolog, ALL_MAP_LANGUAGES, byKinship, findMapLanguage, flagOf, initialOf, languagesIn, listLanguages, notableLanguagesIn, MAP_LANGUAGES, ROLE_LABEL, searchLanguages, STATUS_LABEL, type LangRole, type MapLanguage } from '@/data/onde-se-fala';
@@ -415,6 +415,12 @@ export default function MapScreen() {
         </Pressable>
         <Text className="text-2xl font-extrabold text-slate-900 dark:text-white">🗺️ Onde se fala</Text>
       </View>
+
+      <InfoLabel
+        className="mt-2"
+        label="O que são esses códigos?"
+        info="Por trás da tela, cada país e cada idioma tem um código internacional da ISO (International Organization for Standardization), pra todo sistema do mundo chamar a mesma coisa do mesmo jeito. ISO 639 identifica idiomas (ex.: “pt” é português); ISO 3166 identifica países (ex.: “BR” é Brasil) e suas divisões internas, como estados e províncias (ISO 3166-2); e ISO 3166-3 guarda os códigos dos países que já existiram e não existem mais, como a União Soviética ou a Iugoslávia. Este app usa esses códigos nos bastidores, mas mostra os nomes em português, sem a sigla, pra ficar mais simples de ler."
+      />
 
       <View className="mt-3 flex-row rounded-2xl bg-slate-200 p-1 dark:bg-slate-800">
         {(
