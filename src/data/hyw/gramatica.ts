@@ -14,7 +14,7 @@ export const GRAMMAR_HYW: GrammarTopic[] = [
     summary: 'O mesmo alfabeto do armênio oriental, mas uma língua padronizada à parte — falada na diáspora, sem um país onde seja língua oficial, e classificada como ameaçada pela UNESCO.',
     sections: [
       {
-        text: 'O armênio tem dois padrões escritos modernos, e nenhum é “dialeto” do outro: o oriental, falado na Armênia (base: o dialeto de Erevan — ver `hy/`), e o ocidental, deste curso, baseado no dialeto de Constantinopla/Istambul, falado por quem descende dos armênios do Império Otomano. Depois do genocídio armênio de 1915, que destruiu as comunidades de origem na Anatólia, o ocidental passou a existir quase só na diáspora: no Líbano (Beirute tem sido um centro importante de publicação — dicionários e material escolar em armênio ocidental saíram de lá), na Síria (Alepo, Damasco), na França (Marselha) e nos Estados Unidos (a região de Los Angeles e Fresno, na Califórnia, concentra o maior número de armênios ocidentais fora do Oriente Médio). A UNESCO classifica o armênio ocidental como língua “vulnerável”/“definitivamente em perigo” no seu Atlas das Línguas em Perigo: nos EUA, por exemplo, a proporção de descendentes de armênios que ainda falam a língua em casa caiu de 25% em 1980 para 16% em 2000.',
+        text: 'O armênio tem dois padrões escritos modernos, e nenhum é “dialeto” do outro: o oriental, falado na Armênia (base: o dialeto de Erevan, também neste app), e o ocidental, deste curso, baseado no dialeto de Constantinopla/Istambul, falado por quem descende dos armênios do Império Otomano. Depois do genocídio armênio de 1915, que destruiu as comunidades de origem na Anatólia, o ocidental passou a existir quase só na diáspora: no Líbano (Beirute tem sido um centro importante de publicação — dicionários e material escolar em armênio ocidental saíram de lá), na Síria (Alepo, Damasco), na França (Marselha) e nos Estados Unidos (a região de Los Angeles e Fresno, na Califórnia, concentra o maior número de armênios ocidentais fora do Oriente Médio). A UNESCO classifica o armênio ocidental como língua “vulnerável”/“definitivamente em perigo” no seu Atlas das Línguas em Perigo: nos EUA, por exemplo, a proporção de descendentes de armênios que ainda falam a língua em casa caiu de 25% em 1980 para 16% em 2000.',
       },
       {
         heading: 'Por que não é só “pronúncia diferente”',
@@ -70,7 +70,7 @@ export const GRAMMAR_HYW: GrammarTopic[] = [
       },
       {
         heading: 'Um par curioso: “դուն” e “տուն”',
-        text: 'Repare no oriental e no ocidental ao mesmo tempo: “դու” (tu, no oriental) soa “du”, e “տուն” (casa, nos dois padrões) soa “tun” no oriental — bem diferentes. Mas no ocidental a troca de sonoridade quase inverte os dois: “դուն” (tu) passa a soar “toun”, e “տուն” (casa) passa a soar “doun”. A letra que era “d” vira “t” aspirado, e a que era “t” vira “d” — por isso quem já estudou o armênio oriental (`hy/`) precisa redesaprender esse reflexo ao chegar no ocidental.',
+        text: 'Repare no oriental e no ocidental ao mesmo tempo: “դու” (tu, no oriental) soa “du”, e “տուն” (casa, nos dois padrões) soa “tun” no oriental — bem diferentes. Mas no ocidental a troca de sonoridade quase inverte os dois: “դուն” (tu) passa a soar “toun”, e “տուն” (casa) passa a soar “doun”. A letra que era “d” vira “t” aspirado, e a que era “t” vira “d” — por isso quem já estudou o armênio oriental precisa redesaprender esse reflexo ao chegar no ocidental.',
       },
     ],
     pitfalls: [

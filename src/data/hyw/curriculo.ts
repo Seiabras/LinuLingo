@@ -17,7 +17,7 @@ export const UNITS_HYW: UnitSeed[] = [
       title: 'A mesma letra, um som diferente',
       emoji: '🔄',
       history:
-        'O armênio ocidental é um dos dois padrões cultos modernos do armênio — o outro é o oriental, falado na Armênia (ver `hy/`). Os dois usam o mesmo alfabeto de 39 letras, criado em 405 por Mesrop Mashtots, mas descendem de comunidades diferentes: o ocidental se baseia no dialeto armênio de Constantinopla/Istambul, falado no Império Otomano. Depois do genocídio armênio de 1915, que arrasou essas comunidades na Anatólia, o armênio ocidental passou a viver quase só na diáspora — no Líbano, na Síria, na França e nos Estados Unidos — sem nenhum país onde seja língua oficial. A UNESCO o classifica como língua ameaçada.',
+        'O armênio ocidental é um dos dois padrões cultos modernos do armênio — o outro é o oriental, falado na Armênia (também neste app). Os dois usam o mesmo alfabeto de 39 letras, criado em 405 por Mesrop Mashtots, mas descendem de comunidades diferentes: o ocidental se baseia no dialeto armênio de Constantinopla/Istambul, falado no Império Otomano. Depois do genocídio armênio de 1915, que arrasou essas comunidades na Anatólia, o armênio ocidental passou a viver quase só na diáspora — no Líbano, na Síria, na França e nos Estados Unidos — sem nenhum país onde seja língua oficial. A UNESCO o classifica como língua ameaçada.',
       culture_tip:
         'O cumprimento de qualquer hora do dia é “Parev” (Բարև) — a mesma palavra do armênio oriental, só que pronunciada diferente: lá soa “barev”, aqui soa “parev”. Isso acontece porque o ocidental trocou a sonoridade de várias consoantes em relação ao oriental (ver o tópico de gramática “A troca de sonoridade”).',
       grammar_why:

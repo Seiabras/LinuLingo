@@ -33,6 +33,23 @@ for (const pack of Object.values(PACKS)) {
     if (pack.incomplete?.note) assert.ok(!leaks.test(pack.incomplete.note), `${pack.code}: incomplete.note vaza nota de dev`);
     if (pack.cognateNote) assert.ok(!leaks.test(pack.cognateNote), `${pack.code}: cognateNote vaza nota de dev`);
     if (pack.formalMarkers) assert.ok(!leaks.test(pack.formalMarkers), `${pack.code}: formalMarkers vaza nota de dev`);
+    // achado pela revisão de seiabras-b8, 02/10/2026: o mesmo vazamento voltou num pacote criado depois
+    // da varredura original (mzr/curriculo.ts), porque o card da unidade e os tópicos de gramática nunca
+    // tinham entrado nesta checagem — só os três campos acima.
+    for (const u of pack.units) {
+      assert.ok(!leaks.test(u.card.history), `${pack.code}/${u.card.id}: card.history vaza nota de dev`);
+      assert.ok(!leaks.test(u.card.culture_tip), `${pack.code}/${u.card.id}: card.culture_tip vaza nota de dev`);
+      assert.ok(!leaks.test(u.card.grammar_why), `${pack.code}/${u.card.id}: card.grammar_why vaza nota de dev`);
+    }
+    for (const g of pack.grammar) {
+      assert.ok(!leaks.test(g.summary), `${pack.code}/${g.id}: grammar.summary vaza nota de dev`);
+      for (const s of g.sections) {
+        if (s.heading) assert.ok(!leaks.test(s.heading), `${pack.code}/${g.id}: grammar.sections[].heading vaza nota de dev`);
+        if (s.text) assert.ok(!leaks.test(s.text), `${pack.code}/${g.id}: grammar.sections[].text vaza nota de dev`);
+      }
+      for (const p of g.pitfalls) assert.ok(!leaks.test(p), `${pack.code}/${g.id}: grammar.pitfalls[] vaza nota de dev`);
+      for (const q of g.quiz) assert.ok(!leaks.test(q.explanation), `${pack.code}/${g.id}: grammar.quiz[].explanation vaza nota de dev`);
+    }
   });
 
   test(`${pack.code}: palavras das lições existem e têm emoji para a imersão`, () => {

@@ -23,7 +23,7 @@ export const UNITS_CBS: UnitSeed[] = [
       culture_tip:
         'O huni kuĩ é internacionalmente conhecido por seus cantos (entoados sobretudo durante o uso ritual do “nixi pae”, a bebida que o restante do mundo chama de ayahuasca), pelos desenhos gráficos entrelaçados que decoram corpos, cerâmicas e tecidos, e por um movimento ativo de revitalização cultural e de educação escolar indígena bilíngue, em parceria com organizações como a Comissão Pró-Índio do Acre (CPI-AC).',
       grammar_why:
-        'O huni kuĩ tem DUAS séries de pronomes pessoais: uma forma livre, citada aqui como vocabulário básico (“ɨ” eu, “mĩ” tu/você, “nũ” nós, “mã” vocês), e uma segunda série que recebe marcas de caso — o sufixo ergativo “-ã” (sujeito/possuidor) e o acusativo “-a” (objeto) — explicada em gramatica.ts. É por isso que “minha casa” se diz “ɨ-ã hiwɨ” (ɨ + -ã, não simplesmente “ɨ”).',
+        'O huni kuĩ tem DUAS séries de pronomes pessoais: uma forma livre, citada aqui como vocabulário básico (“ɨ” eu, “mĩ” tu/você, “nũ” nós, “mã” vocês), e uma segunda série que recebe marcas de caso — o sufixo ergativo “-ã” (sujeito/possuidor) e o acusativo “-a” (objeto) — explicada na aba Gramática. É por isso que “minha casa” se diz “ɨ-ã hiwɨ” (ɨ + -ã, não simplesmente “ɨ”).',
       grammar_examples: [
         ['Ɨ-ã hiwɨ hawɨ̃-rua.', 'Minha casa é bonita.'],
         ['Huni kuin.', 'Gente verdadeira (o autônimo do povo).'],

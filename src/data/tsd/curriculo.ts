@@ -103,7 +103,7 @@ export const UNITS_TSD: UnitSeed[] = [
       culture_tip:
         'Kastanítsa, uma das aldeias do norte da Tsakônia, é famosa por suas castanhas — seu próprio nome vem da palavra grega para essa fruta. Historicamente, os tsakônios eram conhecidos como pedreiros e pastores, migrando sazonalmente: saíam depois do dia de São Demétrio e voltavam na Páscoa, trabalhando em lugares como a Ática.',
       grammar_why:
-        'O verbo “ser/estar” muda de forma em cada pessoa (“έννι”, ele/ela/isto é; “ένει”, eu sou), e os outros verbos do tsakônio podem formar o presente com essa cópula mais um particípio — que muda de forma conforme o GÊNERO de quem fala, não só a pessoa, um traço raro entre as línguas gregas (ver gramatica.ts, tsd-g4).',
+        'O verbo “ser/estar” muda de forma em cada pessoa (“έννι”, ele/ela/isto é; “ένει”, eu sou), e os outros verbos do tsakônio podem formar o presente com essa cópula mais um particípio — que muda de forma conforme o GÊNERO de quem fala, não só a pessoa, um traço raro entre as línguas gregas (veja o tópico sobre isso na aba Gramática).',
       grammar_examples: [
         ['Νι έννι θάσσα.', 'Isto é o mar.'],
         ['Ένει φερήκχου.', '(Eu) trago. (dito por um homem)'],

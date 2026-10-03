@@ -48,7 +48,7 @@ export const GRAMMAR_EE: GrammarTopic[] = [
     summary: 'O eʋe não distingue “ele” de “ela”: um pronome só, “eya”, cobre as duas coisas (e também “isto/aquilo”).',
     sections: [
       {
-        text: 'O Wiktionary define “eya” como pronome de 3ª pessoa do singular com os sentidos “he, it, she” (ele, isto, ela) ao mesmo tempo — não há uma forma separada para masculino e feminino, ao contrário do português (“ele”/“ela”). O mesmo vale para os substantivos: nenhuma das fontes consultadas (Wikipédia, Wiktionary) descreve artigos, adjetivos ou sufixos que mudem de forma por gênero gramatical, nem um sistema de classes nominais tipo bantu — é por isso que este pacote usa `genders: []`.',
+        text: 'O Wiktionary define “eya” como pronome de 3ª pessoa do singular com os sentidos “he, it, she” (ele, isto, ela) ao mesmo tempo — não há uma forma separada para masculino e feminino, ao contrário do português (“ele”/“ela”). O mesmo vale para os substantivos: nenhuma das fontes consultadas (Wikipédia, Wiktionary) descreve artigos, adjetivos ou sufixos que mudem de forma por gênero gramatical, nem um sistema de classes nominais tipo bantu — por isso este curso não marca gênero gramatical nenhum.',
         table: {
           head: ['Eʋe', 'Português'],
           rows: [
@@ -66,7 +66,7 @@ export const GRAMMAR_EE: GrammarTopic[] = [
     pitfalls: ['Tentar adivinhar o gênero de “eya” pelo contexto e traduzir só como “ele” ou só como “ela”: sem mais contexto, as duas traduções valem.', 'Procurar uma terminação de gênero em adjetivos como “gã” (grande) ou “nyo” (bom): elas não existem — a palavra é a mesma para qualquer substantivo.'],
     quiz: [
       { question: 'O que “eya” pode querer dizer?', options: ['ele, ela ou isto/aquilo, sem diferença gramatical', 'só “ele”', 'só “ela”'], answer: 'ele, ela ou isto/aquilo, sem diferença gramatical', explanation: 'O Wiktionary lista os três sentidos juntos para o mesmo pronome “eya”.' },
-      { question: 'O eʋe muda adjetivos ou artigos conforme o gênero do substantivo?', options: ['Não — nenhuma fonte consultada descreve esse tipo de marca', 'Sim, como em português', 'Só com substantivos de pessoa'], answer: 'Não — nenhuma fonte consultada descreve esse tipo de marca', explanation: 'Por isso este pacote usa `genders: []`, como outras línguas gbe/kwa sem gênero gramatical.' },
+      { question: 'O eʋe muda adjetivos ou artigos conforme o gênero do substantivo?', options: ['Não — nenhuma fonte consultada descreve esse tipo de marca', 'Sim, como em português', 'Só com substantivos de pessoa'], answer: 'Não — nenhuma fonte consultada descreve esse tipo de marca', explanation: 'Por isso este curso não marca gênero gramatical nenhum, como outras línguas gbe/kwa sem gênero gramatical.' },
     ],
   },
   {

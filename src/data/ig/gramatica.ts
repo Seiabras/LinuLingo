@@ -55,7 +55,7 @@ export const GRAMMAR_IG: GrammarTopic[] = [
     summary: 'O igbo é uma língua tonal: a mesma sequência de letras pode ter sentidos opostos, só pela altura da voz.',
     sections: [
       {
-        text: 'No igbo, cada sílaba tem um tom alto ou baixo (há também o “downstep”, um tom alto que cai um degrau depois de outro alto). Quando o tom é marcado na escrita, o acento agudo (´) indica tom alto e o acento grave (`) indica tom baixo — mas no dia a dia (jornais, placas, mensagens) o tom quase nunca é escrito: quem já sabe a língua reconhece a palavra certa pelo contexto. O exemplo mais famoso é “akwa”, que sem marcação de tom pode ser quatro palavras diferentes.',
+        text: 'No igbo, cada sílaba tem um tom alto ou baixo (há também o “downstep”, um tom alto que cai um degrau depois de outro alto). Quando o tom é marcado na escrita, o acento agudo (´) indica tom alto e o acento grave (ˋ) indica tom baixo — mas no dia a dia (jornais, placas, mensagens) o tom quase nunca é escrito: quem já sabe a língua reconhece a palavra certa pelo contexto. O exemplo mais famoso é “akwa”, que sem marcação de tom pode ser quatro palavras diferentes.',
         table: {
           head: ['Escrita com tom', 'Tom', 'Significado'],
           rows: [
