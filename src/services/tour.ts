@@ -56,7 +56,7 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean }): PassoT
       alvo: 'abrigo',
       humor: 'comemorando',
       titulo: 'Toque em mim também',
-      texto: 'Minha ficha mostra 5 atributos tirados do que você estudou. E o meu cachecol muda de cor a cada nível conquistado nas travessias.',
+      texto: 'Minha ficha mostra 5 atributos tirados do que você estudou. E o meu cachecol muda de cor a cada nível conquistado nas travessias (dá para tirar e pôr).',
     }),
     p({
       id: 'moradias',
@@ -149,7 +149,7 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean }): PassoT
       alvo: 'praticas',
       humor: 'falando',
       titulo: 'Mais práticas',
-      texto: 'Escuta e ditado, histórias com vários finais, diário corrigido, shadowing com a curva da melodia… um treino para cada coisa.',
+      texto: 'Escuta e ditado, histórias com vários finais, diário corrigido, palavras que se confundem, shadowing com a curva da melodia… um treino para cada coisa.',
     }),
     p({
       id: 'erros',
