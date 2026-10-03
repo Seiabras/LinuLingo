@@ -7,7 +7,8 @@ import { Linu } from './Linu';
 import { useApp } from '@/services/app-state';
 import { useIsDark } from '@/services/theme';
 import { calcularAtributos, DADOS_VAZIOS, lerDadosAtributos, pontoFraco, type AtributoId } from '@/services/atributos';
-import { CORES_CACHECOL, fraseDoCachecol, useCachecol } from '@/services/cachecol';
+import { CORES_CACHECOL, fraseDoCachecol, useCachecolConquistado, useUsarCachecol } from '@/services/cachecol';
+import { CachecolSwitch } from './CachecolSwitch';
 import { useLinuOutfit } from '@/services/linu-outfit';
 import { ROUPAS_LINU, slotOf } from '@/data/roupas-linu';
 
@@ -29,7 +30,8 @@ export function FichaLinu({ onNavigate }: { onNavigate?: () => void }) {
   const { db, pack, user } = useApp();
   const dark = useIsDark();
   const [dados, setDados] = useState(DADOS_VAZIOS);
-  const cachecol = useCachecol();
+  const cachecol = useCachecolConquistado();
+  const usando = useUsarCachecol();
   const look = useLinuOutfit();
   const corpo = look.find((o) => slotOf(o) === 'corpo');
   const roupaCorpo = corpo ? ROUPAS_LINU.find((o) => o.id === corpo)?.name : undefined;
@@ -70,7 +72,8 @@ export function FichaLinu({ onNavigate }: { onNavigate?: () => void }) {
           </View>
         </View>
       </View>
-      {cachecol && roupaCorpo && (
+      <CachecolSwitch />
+      {cachecol && usando && roupaCorpo && (
         <Text className="-mt-1 text-[11px] text-slate-500 dark:text-slate-400">Com a roupa do corpo ({roupaCorpo}), o cachecol fica por baixo dela.</Text>
       )}
 

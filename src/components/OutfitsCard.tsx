@@ -13,6 +13,7 @@ import { buyOutfit, krillForPacote, lessonsByLanguage, loadBought, loadPacoteWon
 import { saveCor, useLinuCor } from '@/services/linu-cor';
 import { nomeIdioma } from '@/services/idioma-nome';
 import * as haptics from '@/services/haptics';
+import { CachecolSwitch } from './CachecolSwitch';
 
 const SEEN = 'roupas_vistas';
 
@@ -158,6 +159,9 @@ export function OutfitsCard() {
           )}
         </View>
       </View>
+
+      {/* o cachecol do nível: com ou sem roupinha, o aluno escolhe se o Linu usa */}
+      <CachecolSwitch />
 
       {/* cor do Linu, estilo Club Penguin */}
       <View className="gap-2">

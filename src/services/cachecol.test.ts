@@ -5,7 +5,8 @@ import { initDatabase } from '@/database/db';
 import { completeLesson, skipLessons } from '@/database/queries';
 import { ROMENO } from '@/data/ro';
 import { jumpLessons } from './curriculum';
-import { cachecolDoProgresso, CORES_CACHECOL, fraseDoCachecol, loadCachecol, NIVEIS_CEFR, proximoCachecol } from './cachecol';
+import { cachecolDoProgresso, CORES_CACHECOL, fraseDoCachecol, loadCachecol, NIVEIS_CEFR, proximoCachecol, setUsarCachecol, USAR_CACHECOL_KEY } from './cachecol';
+import { getMeta } from '@/database/queries';
 
 const prova = (level: string) => ROMENO.units.find((u) => u.level === level)!.lessons.find((l) => l.kind === 'prova')!.id;
 const licao = (level: string) => ROMENO.units.find((u) => u.level === level)!.lessons.find((l) => l.kind === 'licao')!.id;
@@ -46,4 +47,16 @@ test('cachecol: lido do banco, com a travessia ou com o teste para pular', async
   // o teste para pular até o A2.2 marca tudo até lá como feito, inclusive as travessias
   await skipLessons(db, jumpLessons(ROMENO, ROMENO.units.find((u) => u.level === 'A2.2')!.id), 0.85);
   assert.deepEqual(await loadCachecol(db, ROMENO), { cefr: 'A2', level: 'A2.2' });
+});
+
+test('cachecol: guardar o cachecol fica salvo e não apaga a conquista', async () => {
+  const db = memoryDb();
+  await initDatabase(db);
+  await completeLesson(db, prova('A1.1'), 1);
+  await setUsarCachecol(db, false);
+  assert.equal(await getMeta(db, USAR_CACHECOL_KEY), '0');
+  // a conquista continua: guardar é só não mostrar
+  assert.equal((await loadCachecol(db, ROMENO))?.cefr, 'A1');
+  await setUsarCachecol(db, true);
+  assert.equal(await getMeta(db, USAR_CACHECOL_KEY), '1');
 });

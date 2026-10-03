@@ -69,7 +69,18 @@ export function fraseDoCachecol(c: Cachecol | null): string {
 // ---------- o cachecol de agora, lido por todos os Linus da tela (como a cor e a roupa) ----------
 
 let current: Cachecol | null = null;
+// o aluno pode guardar o cachecol: conquistado continua, só não aparece no Linu
+let usar = true;
 const listeners = new Set<() => void>();
+const subscribe = (l: () => void) => {
+  listeners.add(l);
+  return () => {
+    listeners.delete(l);
+  };
+};
+
+/** Chave do Meta: '0' quando o aluno escolheu não usar o cachecol. */
+export const USAR_CACHECOL_KEY = 'cachecol_usar';
 
 export function setCurrentCachecol(c: Cachecol | null) {
   if (current?.cefr === c?.cefr && current?.level === c?.level) return;
@@ -77,20 +88,39 @@ export function setCurrentCachecol(c: Cachecol | null) {
   listeners.forEach((l) => l());
 }
 
+/** O cachecol que o Linu está usando: o conquistado, se o aluno não o guardou. */
 export function useCachecol(): Cachecol | null {
   return useSyncExternalStore(
-    (l) => {
-      listeners.add(l);
-      return () => listeners.delete(l);
-    },
-    () => current,
-    () => current,
+    subscribe,
+    () => (usar ? current : null),
+    () => (usar ? current : null),
   );
+}
+
+/** O cachecol conquistado, esteja o Linu usando ou não (para a ficha). */
+export function useCachecolConquistado(): Cachecol | null {
+  return useSyncExternalStore(subscribe, () => current, () => current);
+}
+
+export function useUsarCachecol(): boolean {
+  return useSyncExternalStore(subscribe, () => usar, () => usar);
+}
+
+/** Usar ou guardar o cachecol (com ou sem roupinha, tanto faz): fica salvo no Meta. */
+export async function setUsarCachecol(db: SQLiteDatabase, valor: boolean) {
+  usar = valor;
+  listeners.forEach((l) => l());
+  await db.runAsync('INSERT OR REPLACE INTO Meta (key, value) VALUES (?, ?)', USAR_CACHECOL_KEY, valor ? '1' : '0');
 }
 
 /** Recalcula o cachecol do idioma estudado (ao abrir o app, trocar de idioma ou depois de uma travessia). */
 export async function loadCachecol(db: SQLiteDatabase, pack: Pick<LanguagePack, 'units'>): Promise<Cachecol | null> {
   const c = cachecolDoProgresso(pack.units, await completedLessons(db));
+  const salvo = (await db.getFirstAsync<{ value: string }>('SELECT value FROM Meta WHERE key = ?', USAR_CACHECOL_KEY))?.value;
+  if (usar !== (salvo !== '0')) {
+    usar = salvo !== '0';
+    listeners.forEach((l) => l());
+  }
   setCurrentCachecol(c);
   return c;
 }
