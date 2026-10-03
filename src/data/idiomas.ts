@@ -154,6 +154,7 @@ import { BRETAO } from './br';
 import { LAKOTA } from './lkt';
 import { SAMI_DO_NORTE } from './se';
 import { FON } from './fon';
+import { KAMAIURA } from './kay';
 
 /** Idiomas com conteúdo pronto. */
 export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: ESPANHOL, it: ITALIANO, pt: PORTUGUES, sv: SUECO, nb: NORUEGUES, da: DINAMARQUES, fr: FRANCES, ca: CATALAO, is: ISLANDES, fi: FINLANDES, et: ESTONIANO, fo: FEROES, lt: LITUANO, lv: LETAO, sw: SUAILI, ja: JAPONES, ko: COREANO,
@@ -174,7 +175,7 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   hu: HUNGARO, tsd: TSAKONIO, pcm: PIDGIN_NIGERIANO, ta: TAMIL, tl: TAGALO, hyw: ARMENIO_OCIDENTAL,
   tdt: TETUM, arn: MAPUDUNGUN, gd: GAELICO_ESCOCES, ht: CRIOULO_HAITIANO, ktn: KARITIANA, mav: SATERE_MAWE, urb: KAAPOR, myu: MUNDURUKU, kmb: QUIMBUNDO,
   pln: PALENQUERO, kl: GROENLANDES, br: BRETAO, lkt: LAKOTA, se: SAMI_DO_NORTE, fon: FON, ar: ARABE,
-  fa: PERSA, ur: URDU, ryu: OKINAWANO, arz: ARABE_EGIPCIO, yi: IIDICHE, he: HEBRAICO, mt: MALTES, dv: DHIVEHI, ug: UIGUR, ps: PASHTO, ckb: CURDO_CENTRAL, kmr: CURMANJI, ee: EWE };
+  fa: PERSA, ur: URDU, ryu: OKINAWANO, arz: ARABE_EGIPCIO, yi: IIDICHE, he: HEBRAICO, mt: MALTES, dv: DHIVEHI, ug: UIGUR, ps: PASHTO, ckb: CURDO_CENTRAL, kmr: CURMANJI, ee: EWE, kay: KAMAIURA };
 
 /** Todos os idiomas planejados, com família, ramo e região (agrupam o seletor). */
 export const LANGUAGES: LanguageInfo[] = [
@@ -283,6 +284,9 @@ export const LANGUAGES: LanguageInfo[] = [
   // ka'apor: também tupi-guarani, mas do subgrupo VIII (com o guajá), não do guarani nem do
   // tupinambá — a língua do povo Ka'apor, no norte do Maranhão (TI Alto Turiaçu)
   KAAPOR,
+  // kamaiurá: tupi-guarani do Alto Xingu (MT), ramo próprio na família (subconjunto VII de Rodrigues);
+  // guarda as consoantes finais que o guarani perdeu (jawat, onça × guarani jagua)
+  KAMAIURA,
   // sateré-mawé: tronco tupi, mas não tupi-guarani — ramo próprio (Mawé) dentro do Mawetí-Guaraní,
   // irmão do awetí e da família tupi-guarani; povo que domesticou o guaraná (do sateré-mawé waranã)
   SATERE_MAWE,
