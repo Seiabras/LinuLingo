@@ -18,7 +18,8 @@ import { CulturalGrammarCard } from '@/components/CulturalGrammarCard';
 import { useApp } from '@/services/app-state';
 import { isolateRtlRuns } from '@/services/direction';
 import { missingParts } from '@/services/incompleto';
-import { completedLessons, getMeta, setMeta, journalDoneToday, pendingPeerCount, vocabStats, xpByDay } from '@/database/queries';
+import { completedLessons, dueReviews, getMeta, setMeta, journalDoneToday, pendingPeerCount, vocabStats, xpByDay } from '@/database/queries';
+import { reparoDasParadas, REPARO_XP_MULT } from '@/services/reparo';
 import { canSpeak } from '@/services/speech';
 import { TUTORIAL_KEY } from './TutorialScreen';
 import { buildPath, currentUnit, type PathLesson } from '@/services/curriculum';
@@ -48,6 +49,8 @@ export default function HomeScreen() {
   const MAP_GAME_PRACTICE = { route: '/mapa-jogo' as const, emoji: '🗺️', title: 'Jogo do mapa', text: 'Onde se fala cada língua' };
   const ANIMALS_PRACTICE = dogSound ? { route: '/bichos' as const, emoji: '🐶', title: 'Como faz o bicho?', text: `O cachorro faz “${dogSound}”` } : null;
   const [path, setPath] = useState<PathLesson[]>([]);
+  // palavras com revisão vencida no SRS: as paradas concluídas com várias delas pedem reparo
+  const [vencidas, setVencidas] = useState<ReadonlySet<string>>(new Set());
   const [due, setDue] = useState(0);
   const [peers, setPeers] = useState(0);
   const [todayXp, setTodayXp] = useState(0);
@@ -81,6 +84,7 @@ export default function HomeScreen() {
         openMistakeCount(db, pack.code).then((n) => alive && setMistakes(n));
         loadAlbum(db).then((a) => alive && setStickers(albumStats(a).owned));
         loadExpedition(db, pack.code, isoWeek()).then((x) => alive && setExpedition(x.stops.filter((st) => st.done).length));
+        dueReviews(db, pack.code, 5000).then((d) => alive && setVencidas(new Set(d.map((v) => v.word_target))));
         const [done, stats, peerCount, days] = await Promise.all([
           completedLessons(db),
           vocabStats(db, pack.code),
@@ -117,6 +121,7 @@ export default function HomeScreen() {
   });
   const provaOf = (u: UnitSeed | null) => (u ? path.find((x) => x.unit.id === u.id && x.lesson.kind === 'prova') : undefined);
   const travessias: TravessiaEstado[] = rota.map((p) => provaOf(p.unit)?.state ?? null);
+  const reparos = reparoDasParadas(rota, estados.map((e) => e === 'feita'), vencidas);
   // a parada mais longe já alcançada libera as moradias (barraca → estação → refúgio → navio → casa do país)
   const alcance = estados.reduce((m, e, i) => (e === 'feita' || e === 'atual' || e === 'aberta' ? i : m), 0);
   const liberadas = moradiasLiberadas(pack.code, alcance);
@@ -222,6 +227,7 @@ export default function HomeScreen() {
           estados={estados}
           travessias={travessias}
           pais={destino?.iso}
+          reparos={reparos}
           onParada={setParada}
           onTravessia={(i) => openCrossing(i)}
         />
@@ -291,6 +297,11 @@ export default function HomeScreen() {
         proxima={parada === null ? null : (rota[parada + 1] ?? null)}
         estado={parada === null ? null : estados[parada]}
         travessia={parada === null ? null : travessias[parada]}
+        reparo={parada === null ? 0 : reparos[parada]}
+        onRepair={(u) => {
+          setParada(null);
+          router.push({ pathname: '/revisao', params: { unidade: u.id } });
+        }}
         items={parada === null ? [] : path.filter((x) => x.unit.id === rota[parada].unit?.id && x.lesson.kind !== 'prova')}
         incompleteNote={pack.incomplete ? `O curso de ${nomeIdioma(pack.name)} ainda vai só até o ${pack.incomplete.until}. Esta parada chega quando o conteúdo ficar pronto.` : null}
         onClose={() => setParada(null)}
@@ -556,6 +567,8 @@ function StopSheet({
   proxima,
   estado,
   travessia,
+  reparo,
+  onRepair,
   items,
   incompleteNote,
   onClose,
@@ -568,6 +581,8 @@ function StopSheet({
   proxima: Parada | null;
   estado: ParadaEstado | null;
   travessia: TravessiaEstado;
+  reparo: number;
+  onRepair: (u: UnitSeed) => void;
   items: PathLesson[];
   incompleteNote: string | null;
   onClose: () => void;
@@ -628,6 +643,21 @@ function StopSheet({
                     {done}/{items.length} lições concluídas
                   </Text>
                   <ProgressBar value={items.length ? done / items.length : 0} className="mt-3" />
+                  {reparo > 0 && (
+                    <Pressable
+                      accessibilityRole="button"
+                      onPress={() => onRepair(u)}
+                      className="mt-4 flex-row items-center gap-3 rounded-2xl border-2 border-fogo bg-orange-50 p-3 active:opacity-80 dark:bg-orange-950"
+                    >
+                      <PixelIcon name="chave" size={32} />
+                      <View className="flex-1">
+                        <Text className="font-extrabold text-slate-900 dark:text-white">A ponte precisa de reparo</Text>
+                        <Text className="text-xs text-slate-600 dark:text-slate-300">
+                          {`${reparo} palavras desta parada estão quase esquecidas. Um reparo rápido revisa só elas, com XP em dobro (×${REPARO_XP_MULT}).`}
+                        </Text>
+                      </View>
+                    </Pressable>
+                  )}
                   <View className="ml-5 mt-4 border-l-2 border-dashed border-aurora/40 dark:border-aurora/30">
                     <PathNode kind="teoria" title="Dica de cultura e regra gramatical" state={reached ? 'feita' : 'bloqueada'} onPress={() => reached && onCard(u.card)} />
                     {items.map((p) => (

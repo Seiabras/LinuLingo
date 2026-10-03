@@ -44,12 +44,15 @@ export function AdventureMap({
   estados,
   travessias,
   pais,
+  reparos,
   onParada,
   onTravessia,
 }: {
   paradas: Parada[];
   estados: ParadaEstado[];
   travessias: TravessiaEstado[];
+  /** palavras vencidas no SRS por parada (0 = não precisa de reparo); ver `src/services/reparo.ts` */
+  reparos?: number[];
   /** ISO alfa-3 do país do desembarque (para o contorno), se houver */
   pais?: string | null;
   onParada: (i: number) => void;
@@ -216,18 +219,24 @@ export function AdventureMap({
               const right = pt.x < w / 2;
               const cur = e === 'atual';
               const dim = e === 'bloqueada' || e === 'construcao';
+              const reparo = reparos?.[i] ?? 0;
               return (
                 <View key={p.id} style={{ position: 'absolute', left: pt.x - 30, top: pt.y - 30 }}>
                   {cur && <View pointerEvents="none" className="absolute -left-2 -top-2 h-[76px] w-[76px] rounded-full border-2 border-dashed border-aurora" />}
                   <Pressable
                     accessibilityRole="button"
-                    accessibilityLabel={`Parada ${p.level}: ${p.name}. ${e === 'feita' ? 'Concluída' : cur ? 'Você está aqui' : e === 'aberta' ? 'Em andamento' : e === 'construcao' ? 'Em construção' : 'Bloqueada'}`}
+                    accessibilityLabel={`Parada ${p.level}: ${p.name}. ${e === 'feita' ? 'Concluída' : cur ? 'Você está aqui' : e === 'aberta' ? 'Em andamento' : e === 'construcao' ? 'Em construção' : 'Bloqueada'}${reparo ? `. Precisa de reparo: ${reparo} palavras quase esquecidas` : ''}`}
                     onPress={() => onParada(i)}
                     className={`h-[60px] w-[60px] items-center justify-center rounded-full border-4 ${
                       cur ? 'border-conecta bg-white dark:bg-slate-900' : e === 'feita' ? 'border-conquista bg-white dark:bg-slate-900' : e === 'aberta' ? 'border-aurora bg-white dark:bg-slate-900' : 'border-slate-300 bg-slate-100 dark:border-slate-600 dark:bg-slate-800'
                     }`}
                   >
                     <PixelIcon name={e === 'construcao' ? 'obra' : p.icone} size={36} dim={dim} />
+                    {reparo > 0 && (
+                      <View className="absolute -left-2 -top-2 h-7 w-7 items-center justify-center rounded-full border-2 border-fogo bg-orange-50 dark:bg-orange-950">
+                        <PixelIcon name="chave" size={18} />
+                      </View>
+                    )}
                     {e === 'feita' && (
                       <View className="absolute -bottom-1 -right-1 h-5 w-5 items-center justify-center rounded-full bg-conquista">
                         <Text className="text-[10px] font-extrabold text-white">✓</Text>

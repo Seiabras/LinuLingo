@@ -268,6 +268,24 @@ export const PIXEL_ART = {
     '.kkGkk....kkGkk.',
     '................',
   ],
+  chave: [
+    '................',
+    '.........kk..kk.',
+    '........kgk..kgk',
+    '........kggkkggk',
+    '........kwggggk.',
+    '.......kgggggk..',
+    '......kgggkkk...',
+    '.....kgggk......',
+    '....kgwgk.......',
+    '...kgggk........',
+    '..kgggk.........',
+    '.kgwgk..........',
+    'kgggk...........',
+    'kggk............',
+    '.kk.............',
+    '................',
+  ],
 } satisfies Record<string, string[]>;
 
 export type PixelIconName = keyof typeof PIXEL_ART;

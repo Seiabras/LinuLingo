@@ -100,6 +100,14 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean }): PassoT
       texto: 'Entre as paradas fica um desafio com a unidade toda: rádio, decisões, lacunas e voz. Com 80% de acertos, a gente segue viagem.',
     }),
     p({
+      id: 'reparo',
+      rota: '/',
+      alvo: 'mapa',
+      humor: 'pensando',
+      titulo: 'Pontes que pedem reparo 🔧',
+      texto: 'Se as palavras de uma parada começarem a sumir da memória, ela ganha uma chave inglesa. O reparo revisa só essas palavras e vale XP em dobro.',
+    }),
+    p({
       id: 'pular',
       rota: '/',
       alvo: 'mapa',
