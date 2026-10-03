@@ -1,0 +1,50 @@
+/**
+ * Pinyin das palavras que aparecem nas frases do pacote mas não têm linha própria no vocabulário
+ * (nomes de gente e de cidades, e algumas palavras das histórias). Junto com o pinyin do vocabulário,
+ * alimenta a leitura automática (src/services/zh-pinyin.ts). Conferido no CC-CEDICT (MDBG, CC BY-SA
+ * 4.0, versão de 03/10/2026), escrito como o resto do pacote: tons com acento, nomes com maiúscula e
+ * as mudanças de tom do 一 já aplicadas (一点儿 yìdiǎnr, como 一个 yí ge).
+ */
+export const PINYIN_EXTRA: [string, string][] = [
+  ['人', '(rén)'],
+  ['王', '(Wáng)'],
+  ['王明', '(Wáng Míng)'],
+  ['李华', '(Lǐ Huá)'],
+  ['安娜', '(Ānnà)'],
+  ['玛丽亚', '(Mǎlìyà)'],
+  ['卢卡斯', '(Lúkǎsī)'],
+  ['上海', '(Shànghǎi)'],
+  ['北京', '(Běijīng)'],
+  ['北京人', '(Běijīngrén)'],
+  ['圣保罗', '(Shèng Bǎoluó)'],
+  ['见', '(jiàn)'],
+  ['岁', '(suì)'],
+  ['加', '(jiā)'],
+  ['等于', '(děngyú)'],
+  ['现在', '(xiànzài)'],
+  ['点', '(diǎn)'],
+  ['一点儿', '(yìdiǎnr)'],
+  // 一 com classificador e 不 antes do 4º tom, como a gramática do pacote ensina
+  ['一个', '(yí ge)'],
+  ['一只', '(yì zhī)'],
+  ['不是', '(bú shì)'],
+  ['哪里', '(nǎlǐ)'],
+  ['太好了', '(tài hǎo le)'],
+  ['来', '(lái)'],
+  ['饭', '(fàn)'],
+  ['爱', '(ài)'],
+  ['两', '(liǎng)'],
+  ['会', '(huì)'],
+  ['星期', '(xīngqī)'],
+  ['天', '(tiān)'],
+  ['天空', '(tiānkōng)'],
+  ['苹果', '(píngguǒ)'],
+  ['晚上', '(wǎnshang)'],
+  ['没有', '(méiyǒu)'],
+  ['欢迎', '(huānyíng)'],
+  ['第一次', '(dì-yī cì)'],
+  ['用', '(yòng)'],
+  ['聊天', '(liáotiān)'],
+  ['吧', '(ba)'],
+  ['邀请', '(yāoqǐng)'],
+];

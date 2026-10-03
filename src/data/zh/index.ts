@@ -1,5 +1,7 @@
 import type { LanguagePack } from '../types';
-import { VOCAB_ZH } from './vocabulario';
+import { ROWS, VOCAB_ZH } from './vocabulario';
+import { PINYIN_EXTRA } from './pinyin-extra';
+import { leituraPinyin } from '@/services/zh-pinyin';
 import { UNITS_ZH } from './curriculo';
 import { GRAMMAR_ZH } from './gramatica';
 import { STORIES_ZH } from './historias';
@@ -17,10 +19,12 @@ export const CHINES: LanguagePack = {
     writing: 'Caracteres simplificados + pinyin (romanização oficial, com os tons marcados)',
   },
   speechLocale: 'zh-CN',
+  // pinyin embaixo de cada frase, palavra por palavra, tirado do próprio vocabulário
+  reading: leituraPinyin([...ROWS, ...PINYIN_EXTRA]),
   available: true,
   incomplete: {
     until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, ~90 palavras, 4 tópicos de gramática, 2 histórias), no mandarim padrão (pǔtōnghuà) com caracteres simplificados; o pinyin vem escrito ao lado de cada frase, mas ainda não há treino dos tons nem leitura automática palavra por palavra. Da A2.1 até o C2 chega nas próximas atualizações.',
+    note: 'Só o nível A1 por enquanto (unidades 1 e 2, ~90 palavras, 4 tópicos de gramática, 2 histórias), no mandarim padrão (pǔtōnghuà) com caracteres simplificados; o pinyin aparece embaixo de cada frase, mas ainda não há treino dos tons. Da A2.1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_ZH,
   units: UNITS_ZH,
