@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { memoryDb } from '@/database/banco-teste';
 import { initDatabase, ensurePack } from '@/database/db';
-import { applyReply, decodeExchange, encodeExchange, exchangeLink, LINK_MAX_CHARS, listCommunityRows, ratePeer, submitMine, type ExchangeRequest } from './community';
+import { applyReply, decodeExchange, encodeExchange, exchangeLink, LINK_MAX_CHARS, listCommunityRows, loadIdeais, ratePeer, submitMine, toggleIdeal, type ExchangeRequest } from './community';
 
 const req: ExchangeRequest = {
   v: 1,
@@ -65,4 +65,15 @@ test('comunidade: avaliar colega com emoji e guardar a resposta que voltou por l
   assert.equal(got?.reply_from, 'Bia');
   assert.equal(got?.kind, 'audio');
   assert.equal(got?.status, 'corrigido');
+});
+
+test('respostas ideais: marca, desmarca e aguenta um valor estragado no Meta', async () => {
+  const db = memoryDb();
+  await initDatabase(db);
+  assert.equal((await loadIdeais(db)).size, 0);
+  assert.deepEqual([...(await toggleIdeal(db, 'mine-1'))], ['mine-1']);
+  assert.ok((await loadIdeais(db)).has('mine-1'));
+  assert.equal((await toggleIdeal(db, 'mine-1')).size, 0);
+  await db.runAsync("INSERT OR REPLACE INTO Meta (key, value) VALUES ('respostas_ideais', '{oops')");
+  assert.equal((await loadIdeais(db)).size, 0);
 });

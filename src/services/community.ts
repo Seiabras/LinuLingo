@@ -154,3 +154,32 @@ export async function applyReply(db: SQLiteDatabase, r: ExchangeReply, now = new
   if (!res.changes) return null;
   return db.getFirstAsync<CommunityRow>('SELECT * FROM Community_Feedback WHERE id = ?', [r.id]);
 }
+
+// ---------- respostas ideais ----------
+
+/** Chave do Meta com os ids dos envios marcados como “resposta ideal” (JSON: string[]). */
+export const IDEAIS_KEY = 'respostas_ideais';
+
+/**
+ * Enquanto não há falante nativo corrigindo, quem cuida do app marca, entre os próprios envios (do
+ * diário, do áudio e da etapa 5 das lições), os que servem de resposta ideal. Fica no Meta (vai junto
+ * na cópia do progresso), sem mudar o banco.
+ */
+export async function loadIdeais(db: SQLiteDatabase): Promise<Set<string>> {
+  const raw = (await db.getFirstAsync<{ value: string }>('SELECT value FROM Meta WHERE key = ?', IDEAIS_KEY))?.value;
+  try {
+    const ids: unknown = raw ? JSON.parse(raw) : [];
+    return new Set(Array.isArray(ids) ? ids.filter((x): x is string => typeof x === 'string') : []);
+  } catch {
+    return new Set();
+  }
+}
+
+/** Marca ou desmarca um envio como resposta ideal; devolve o conjunto atualizado. */
+export async function toggleIdeal(db: SQLiteDatabase, id: string): Promise<Set<string>> {
+  const ideais = await loadIdeais(db);
+  if (ideais.has(id)) ideais.delete(id);
+  else ideais.add(id);
+  await db.runAsync('INSERT OR REPLACE INTO Meta (key, value) VALUES (?, ?)', IDEAIS_KEY, JSON.stringify([...ideais]));
+  return ideais;
+}

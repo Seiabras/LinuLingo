@@ -202,7 +202,7 @@ export default function JournalScreen() {
                 <Text style={targetTextStyle(pack)} className="text-lg leading-7 text-slate-900 dark:text-white">{result.corrected}</Text>
               </Card>
               <Text className="text-center text-xs text-slate-500 dark:text-slate-400">
-                O corretor funciona sem internet e checa acentos{pack.genders?.length ? ', gênero' : ''} e erros comuns de quem fala português. Ele não pega tudo: para uma correção completa, envie para os nativos.
+                O corretor funciona sem internet e checa acentos{pack.genders?.length ? ', gênero' : ''} e erros comuns de quem fala português. Ele não pega tudo: para uma correção completa, mande para um nativo avaliar pela aba Comunidade.
               </Text>
               <Button title={`Salvar no diário (+${doneToday ? 2 : JOURNAL_XP} XP)`} variant="success" onPress={save} />
             </View>
@@ -216,7 +216,7 @@ export default function JournalScreen() {
           {!sent ? (
             <>
               <Button
-                title="Enviar também para nativos"
+                title="Pôr também nos meus envios"
                 variant="ghost"
                 className="w-full"
                 onPress={async () => {
@@ -224,10 +224,10 @@ export default function JournalScreen() {
                   setSent(true);
                 }}
               />
-              <Text className="text-center text-xs text-slate-500 dark:text-slate-400">Por enquanto a fila fica salva no aparelho, sem servidor.</Text>
+              <Text className="text-center text-xs text-slate-500 dark:text-slate-400">Fica na aba Comunidade, de onde você manda por link para um colega ou um nativo avaliar.</Text>
             </>
           ) : (
-            <Chip label="✓ na fila da comunidade" tone="green" />
+            <Chip label="✓ nos seus envios da Comunidade" tone="green" />
           )}
           <Button title="Escrever outra entrada" className="w-full" onPress={reset} />
         </Card>

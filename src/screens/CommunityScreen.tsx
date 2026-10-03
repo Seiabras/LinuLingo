@@ -12,7 +12,7 @@ import { nomeIdioma } from '@/services/idioma-nome';
 import { siteUrl } from '@/services/site-url';
 import { sendLink } from '@/services/share';
 import { useClipRecorder } from '@/services/recorder';
-import { AUDIO_MAX_MS, exchangeLink, listCommunityRows, ratePeer, REACTIONS, submitMine, type CommunityRow, type Reaction } from '@/services/community';
+import { AUDIO_MAX_MS, exchangeLink, listCommunityRows, loadIdeais, ratePeer, REACTIONS, submitMine, toggleIdeal, type CommunityRow, type Reaction } from '@/services/community';
 import * as haptics from '@/services/haptics';
 import { alvoDoTour } from '@/services/tour';
 
@@ -30,9 +30,11 @@ export default function CommunityScreen() {
   const { db, pack, user, refresh } = useApp();
   const [items, setItems] = useState<CommunityRow[]>([]);
   const [journalToday, setJournalToday] = useState<string | null>(null);
+  const [ideais, setIdeais] = useState<Set<string>>(new Set());
 
   const load = useCallback(async () => {
     setItems(await listCommunityRows(db, pack.code));
+    setIdeais(await loadIdeais(db));
     const today = (await listJournal(db, pack.code)).find((j) => j.day === localDay());
     setJournalToday(today ? (today.corrected_input ?? today.raw_user_input) : null);
   }, [db, pack.code]);
@@ -43,7 +45,8 @@ export default function CommunityScreen() {
   );
 
   const peers = items.filter((i) => !i.is_mine);
-  const mine = items.filter((i) => i.is_mine);
+  // as respostas ideais primeiro, para servirem de modelo
+  const mine = items.filter((i) => i.is_mine).sort((a, b) => Number(ideais.has(b.id)) - Number(ideais.has(a.id)));
   const journalSent = !!journalToday && mine.some((m) => m.kind !== 'audio' && m.content === journalToday);
 
   return (
@@ -109,7 +112,15 @@ export default function CommunityScreen() {
       ) : (
         <View className="gap-3">
           {mine.map((m) => (
-            <MineCard key={m.id} item={m} langCode={pack.code} langName={nomeIdioma(pack.name)} from={user?.name ?? 'Um colega'} />
+            <MineCard
+              key={m.id}
+              item={m}
+              langCode={pack.code}
+              langName={nomeIdioma(pack.name)}
+              from={user?.name ?? 'Um colega'}
+              ideal={ideais.has(m.id)}
+              onIdeal={async () => setIdeais(await toggleIdeal(db, m.id))}
+            />
           ))}
         </View>
       )}
@@ -245,7 +256,21 @@ function AudioSubmit({ phrase, onSaved }: { phrase: string; onSaved: (content: s
   );
 }
 
-function MineCard({ item, langCode, langName, from }: { item: CommunityRow; langCode: string; langName: string; from: string }) {
+function MineCard({
+  item,
+  langCode,
+  langName,
+  from,
+  ideal,
+  onIdeal,
+}: {
+  item: CommunityRow;
+  langCode: string;
+  langName: string;
+  from: string;
+  ideal: boolean;
+  onIdeal: () => void;
+}) {
   const { pack } = useApp();
   const [sent, setSent] = useState<string | null>(null);
   const share = async () => {
@@ -269,8 +294,22 @@ function MineCard({ item, langCode, langName, from }: { item: CommunityRow; lang
     );
   };
   return (
-    <Card className="gap-2">
-      <Text className="text-xs font-bold text-slate-500">{item.prompt}</Text>
+    <Card className={`gap-2 ${ideal ? 'border-2 border-amber-400' : ''}`}>
+      <View className="flex-row items-start gap-2">
+        <Text className="flex-1 text-xs font-bold text-slate-500">{item.prompt}</Text>
+        {/* sem nativo corrigindo ainda: quem cuida do app marca os envios que servem de modelo */}
+        <Pressable
+          accessibilityRole="switch"
+          accessibilityState={{ checked: ideal }}
+          aria-checked={ideal}
+          accessibilityLabel="Resposta ideal"
+          onPress={onIdeal}
+          hitSlop={8}
+          className={`rounded-full px-2 py-0.5 ${ideal ? 'bg-amber-100 dark:bg-amber-900' : 'bg-slate-100 dark:bg-slate-800'}`}
+        >
+          <Text className={`text-xs font-bold ${ideal ? 'text-amber-700 dark:text-amber-300' : 'text-slate-500 dark:text-slate-400'}`}>{ideal ? '⭐ resposta ideal' : '☆ marcar como ideal'}</Text>
+        </Pressable>
+      </View>
       <Text style={targetTextStyle(pack)} className="text-lg text-slate-900 dark:text-white">{item.kind === 'audio' ? `🎙️ “${item.content}”` : item.content}</Text>
       {item.audio && <Button title="▶ Ouvir meu áudio" variant="ghost" onPress={() => playDataUri(item.audio!)} />}
       {item.reply_reaction ? (

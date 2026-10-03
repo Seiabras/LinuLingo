@@ -5,8 +5,8 @@ import { useApp } from '@/services/app-state';
 import { nomeIdioma } from '@/services/idioma-nome';
 
 /**
- * Etapa 5 — envio opcional para a comunidade (Busuu). O texto fica guardado
- * no aparelho até existir o servidor da comunidade.
+ * Etapa 5 — envio opcional para a comunidade (Busuu). Sem servidor: o texto fica nos envios da aba
+ * Comunidade, de onde sai por link para quem for avaliar.
  */
 export function CommunityStep({ prompt, specialChars, onDone }: { prompt: string; specialChars: string[]; onDone: (text: string | null) => void }) {
   const { pack } = useApp();
@@ -29,9 +29,9 @@ export function CommunityStep({ prompt, specialChars, onDone }: { prompt: string
       />
       <LetterPad onInsert={(ch) => setText((t) => t + ch)} onBackspace={() => setText((t) => t.slice(0, -1))} />
       <Text className="text-center text-xs text-slate-500 dark:text-slate-400">
-        Seu texto vai para a fila de correção por falantes nativos (+5 XP). Por enquanto a fila fica salva no aparelho.
+        Seu texto fica em “Seus envios”, na aba Comunidade (+5 XP). De lá, você manda por link para um colega ou um falante nativo avaliar.
       </Text>
-      <Button title="Enviar para nativos" variant="success" disabled={text.trim().length < 3} onPress={() => onDone(text.trim())} />
+      <Button title="Pôr nos meus envios" variant="success" disabled={text.trim().length < 3} onPress={() => onDone(text.trim())} />
       <Pressable onPress={() => onDone(null)} className="self-center p-2">
         <Text className="font-semibold text-slate-500">Pular esta etapa</Text>
       </Pressable>
