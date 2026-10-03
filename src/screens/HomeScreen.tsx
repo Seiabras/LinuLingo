@@ -15,6 +15,7 @@ import { FieldNotebookBackground } from '@/components/FieldNotebookBackground';
 import { StatusHeader } from '@/components/StatusHeader';
 import { CulturalGrammarCard } from '@/components/CulturalGrammarCard';
 import { useApp } from '@/services/app-state';
+import { isolateRtlRuns } from '@/services/direction';
 import { missingParts } from '@/services/incompleto';
 import { completedLessons, getMeta, setMeta, journalDoneToday, pendingPeerCount, vocabStats, xpByDay } from '@/database/queries';
 import { canSpeak } from '@/services/speech';
@@ -135,12 +136,13 @@ export default function HomeScreen() {
     else router.push(`/travessia/${u.id}`);
   };
   const goal = user?.daily_goal_xp ?? 30;
-  const greeting =
+  const greeting = isolateRtlRuns(
     todayXp >= goal
       ? `Meta do dia cumprida! ${streak} ${streak === 1 ? 'dia' : 'dias'} de ofensiva. ${pack.phrases.thanks} 🎉`
       : streak > 0
         ? `${pack.phrases.hi} Faltam ${goal - todayXp} XP para a meta de hoje. Não deixa o fogo apagar! 🔥`
-        : `${pack.phrases.hi} Eu sou o Linu. Bora aprender ${nomeIdioma(pack.name)} hoje?`;
+        : `${pack.phrases.hi} Eu sou o Linu. Bora aprender ${nomeIdioma(pack.name)} hoje?`,
+  );
 
   return (
     <Screen background={<FieldNotebookBackground variant="gelo" />}>

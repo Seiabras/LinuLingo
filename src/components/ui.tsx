@@ -1,4 +1,4 @@
-import { Children, useState, type ReactNode } from 'react';
+import { Children, useState, type ReactNode, type RefObject } from 'react';
 import { router } from 'expo-router';
 import { ActivityIndicator, Pressable, ScrollView, Text, View, type PressableProps } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -13,13 +13,26 @@ import { nomeIdioma } from '@/services/idioma-nome';
  * Tela padrão: área segura, fundo do tema e largura máxima no desktop. `background`, quando passado
  * (ex.: `FieldNotebookBackground`), substitui o fundo liso — fica atrás do conteúdo, que rola por cima.
  */
-export function Screen({ children, scroll = true, edges, background }: { children: ReactNode; scroll?: boolean; edges?: ('top' | 'bottom')[]; background?: ReactNode }) {
+export function Screen({
+  children,
+  scroll = true,
+  edges,
+  background,
+  scrollRef,
+}: {
+  children: ReactNode;
+  scroll?: boolean;
+  edges?: ('top' | 'bottom')[];
+  background?: ReactNode;
+  /** Pra rolar a tela por código (ex.: até uma seção específica assim que ela monta). */
+  scrollRef?: RefObject<ScrollView | null>;
+}) {
   const body = <View className="w-full max-w-2xl self-center px-4 pb-8">{children}</View>;
   return (
     <SafeAreaView edges={edges ?? ['top']} className={`flex-1 ${background ? '' : 'bg-suave dark:bg-grafite'}`}>
       {background}
       {scroll ? (
-        <ScrollView contentContainerStyle={{ flexGrow: 1 }} keyboardShouldPersistTaps="handled">
+        <ScrollView ref={scrollRef} contentContainerStyle={{ flexGrow: 1 }} keyboardShouldPersistTaps="handled">
           {body}
         </ScrollView>
       ) : (
@@ -29,8 +42,8 @@ export function Screen({ children, scroll = true, edges, background }: { childre
   );
 }
 
-export function Card({ children, className = '' }: { children: ReactNode; className?: string }) {
-  return <View className={`rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900 ${className}`}>{children}</View>;
+export function Card({ children, className = '', ref }: { children: ReactNode; className?: string; ref?: RefObject<View | null> | ((v: View | null) => void) }) {
+  return <View ref={ref} className={`rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900 ${className}`}>{children}</View>;
 }
 
 type Variant = 'primary' | 'success' | 'fire' | 'ghost' | 'danger';

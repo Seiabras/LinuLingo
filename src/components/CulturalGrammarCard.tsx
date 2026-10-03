@@ -2,7 +2,7 @@ import { Text, View } from 'react-native';
 import type { CultureCardSeed } from '@/data/types';
 import { Card, SpeakButton, Ipa } from './ui';
 import { useApp } from '@/services/app-state';
-import { targetTextStyle } from '@/services/direction';
+import { isolateRtlRuns, targetTextStyle } from '@/services/direction';
 
 /**
  * Card de conhecimento prévio («Aprenda primeiro, pratique depois»):
@@ -76,5 +76,5 @@ function Section({ icon, title, children }: { icon: string; title: string; child
 }
 
 function Body({ children }: { children: string }) {
-  return <Text className="text-base leading-6 text-slate-800 dark:text-slate-200">{children}</Text>;
+  return <Text className="text-base leading-6 text-slate-800 dark:text-slate-200">{isolateRtlRuns(children)}</Text>;
 }

@@ -1,5 +1,5 @@
-import { useCallback, useState } from 'react';
-import { Alert, Platform, Pressable, Text, TextInput, View } from 'react-native';
+import { useCallback, useRef, useState } from 'react';
+import { Alert, Platform, Pressable, ScrollView, Text, TextInput, View } from 'react-native';
 import { router, useFocusEffect } from 'expo-router';
 import { Screen, Button, Card, Chip, Collapsible, SectionTitle } from '@/components/ui';
 import { Linu } from '@/components/Linu';
@@ -37,6 +37,20 @@ export default function ProfileScreen() {
     });
   // qual grupo o seletor de idioma mostra: natural (quase tudo, hoje) ou artificial (construída)
   const [langKind, setLangKind] = useState<'natural' | 'artificial'>(() => (isArtificial(pack) ? 'artificial' : 'natural'));
+  const [langSearch, setLangSearch] = useState('');
+  // rola até a família do idioma atual assim que ela mede o próprio tamanho, só na primeira vez
+  const scrollRef = useRef<ScrollView>(null);
+  const scrolledToActive = useRef(false);
+  const scrollToActiveFamily = useCallback((node: View | null) => {
+    if (!node || scrolledToActive.current || !scrollRef.current) return;
+    scrolledToActive.current = true;
+    const target = scrollRef.current.getInnerViewNode?.() ?? scrollRef.current;
+    node.measureLayout(
+      target,
+      (_x: number, y: number) => scrollRef.current?.scrollTo({ y: Math.max(0, y - 80), animated: false }),
+      () => {},
+    );
+  }, []);
   const [name, setName] = useState(user?.name ?? '');
   const [week, setWeek] = useState<{ day: string; xp: number }[]>([]);
   const [lessons, setLessons] = useState(0);
@@ -126,7 +140,7 @@ export default function ProfileScreen() {
   };
 
   return (
-    <Screen background={<FieldNotebookBackground variant="pergaminho" />}>
+    <Screen scrollRef={scrollRef} background={<FieldNotebookBackground variant="pergaminho" />}>
       <View className="items-center gap-2 pt-4">
         <Linu mood="feliz" size={90} />
         <TextInput
@@ -233,6 +247,22 @@ export default function ProfileScreen() {
           Nenhum idioma artificial tem curso pronto ainda. Quando um ganhar trilha de verdade, aparece aqui.
         </Text>
       )}
+      <TextInput
+        value={langSearch}
+        onChangeText={setLangSearch}
+        placeholder="Buscar idioma pelo nome…"
+        placeholderTextColor="#94A3B8"
+        autoCapitalize="none"
+        accessibilityLabel="Buscar idioma pelo nome"
+        className="mb-3 rounded-2xl border-2 border-slate-200 bg-white px-4 py-2.5 text-base text-slate-900 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
+      />
+      {langSearch.trim() ? (
+        <View className="gap-1.5">
+          {(langKind === 'artificial' ? artificialLangs : naturalLangs)
+            .filter((l) => `${l.name} ${l.nativeName}`.toLowerCase().includes(langSearch.trim().toLowerCase()))
+            .map(languageRow)}
+        </View>
+      ) : (
       <View className="gap-3">
         {Object.entries(groups).map(([family, branches]) => {
           const famKey = `F:${family}`;
@@ -240,7 +270,7 @@ export default function ProfileScreen() {
           const famLangs = Object.values(branches).flat();
           const famHasActive = famLangs.some((l) => l.code === pack.code);
           return (
-            <Card key={family} className="gap-2">
+            <Card key={family} className="gap-2" ref={famHasActive ? scrollToActiveFamily : undefined}>
               <Collapsible title={family} count={famLangs.length} open={famOpen} onToggle={() => toggleGroup(famKey)} badge={!famOpen && famHasActive ? <Text className="text-lg">{pack.flag}</Text> : undefined}>
                 {Object.entries(branches).map(([branch, langs]) => {
                   // ramo com 1 idioma só: sem sub-aba (não há o que recolher), mas o nome do ramo
@@ -276,6 +306,7 @@ export default function ProfileScreen() {
           );
         })}
       </View>
+      )}
 
       {Platform.OS === 'web' && (
         <View className="mt-6">

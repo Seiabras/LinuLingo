@@ -1,6 +1,8 @@
 import type { LanguagePack } from '@/data/types';
 import { Platform, type TextStyle } from 'react-native';
 
+export { isolateRtlRuns } from './bidi';
+
 /**
  * Sentido de escrita do idioma-alvo. Só o TEXTO NO IDIOMA-ALVO muda de sentido — a interface do app
  * continua em português, da esquerda pra direita:

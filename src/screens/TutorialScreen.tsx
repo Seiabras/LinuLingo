@@ -9,6 +9,7 @@ import { Logo } from '@/components/Logo';
 import { SpeciesPhotos } from '@/components/SpeciesPhotos';
 import { SwipeCard, type SwipeDir } from '@/components/SwipeCard';
 import { useApp } from '@/services/app-state';
+import { isolateRtlRuns } from '@/services/direction';
 import { setMeta } from '@/database/queries';
 import { speak } from '@/services/speech';
 import { ACCENT_VOICES, CLIPS } from '@/data/audio-index';
@@ -43,7 +44,7 @@ export default function TutorialScreen() {
       text: 'Sou um pinguim-de-barbicha, dá para ver pela faixinha preta embaixo do queixo. Primeiro: que idioma você quer aprender comigo? Dá para trocar quando quiser, no Perfil.',
       extra: 'idioma',
     },
-    { mood: 'feliz', title: `${pack.phrases.hi} Vamos de ${nomeIdioma(pack.name)}!`, text: `Vou te acompanhar no ${nomeIdioma(pack.name)}. Em 1 minuto te mostro como tudo funciona!` },
+    { mood: 'feliz', title: isolateRtlRuns(`${pack.phrases.hi} Vamos de ${nomeIdioma(pack.name)}!`), text: `Vou te acompanhar no ${nomeIdioma(pack.name)}. Em 1 minuto te mostro como tudo funciona!` },
     { mood: 'falando', title: 'A trilha é uma expedição', text: `A trilha é um mapa: eu saio da minha colônia, na Antártica, atravesso o mar e desembarco onde se fala ${nomeIdioma(pack.name)}. São 15 paradas, do A1.1 ao C2. Toque numa parada para ver as lições, que liberam uma por vez. Entre uma parada e a próxima fica a travessia 🌊: com 80% de acertos, a gente segue viagem. Já sabe um nível? Abra a parada e toque em “Já sei isto” para fazer o teste. Em cada parada há quatro tipos de passo:`, extra: 'trilha' },
     { mood: 'pensando', title: 'Uma lição, 5 etapas', text: 'Primeiro você entende, depois pratica. Nada de decorar sem saber o porquê. A dica de cultura e regra só vem na primeira lição de cada unidade (dá para rever a qualquer hora, pela trilha):', extra: 'etapas' },
     // idiomas de outro alfabeto (russo): teclado próprio e sílaba tônica marcada
