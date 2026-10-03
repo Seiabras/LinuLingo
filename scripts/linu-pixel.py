@@ -100,7 +100,37 @@ def costas(fundo, cor):
     return im
 
 
+def lado():
+    """O Linu de lado (andando): o pinguim do PixelLab (assets/pixel/linu-pixel.png, fundo cinza liso),
+    recortado e reduzido do mesmo jeito que as outras camadas — pixels cheios, poucas cores e contorno —,
+    para não parecer borrado ao lado da cena."""
+    from collections import deque
+    src = Image.open(os.path.join(ROOT, 'assets', 'pixel', 'linu-pixel.png')).convert('RGBA')
+    w0, h0 = src.size
+    px = src.load()
+    fundo, sombra = px[0, 0], (99, 109, 117, 255)
+    vistos, fila = set(), deque([(x, y) for x in range(w0) for y in (0, h0 - 1)] + [(x, y) for y in range(h0) for x in (0, w0 - 1)])
+    while fila:
+        x, y = fila.popleft()
+        if (x, y) in vistos or not (0 <= x < w0 and 0 <= y < h0) or px[x, y] not in (fundo, sombra):
+            continue
+        vistos.add((x, y))
+        px[x, y] = (0, 0, 0, 0)
+        fila.extend([(x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)])
+    corte = src.crop(src.getbbox())
+    global W, H
+    W0, H0 = W, H
+    W, H = 44, 60
+    try:
+        esq = pixelate(corte, colors=14)
+    finally:
+        W, H = W0, H0
+    esq.save(os.path.join(ROOT, 'assets', 'pixel', 'linu-sprite-esquerda.png'))
+    ImageOps.mirror(esq).save(os.path.join(ROOT, 'assets', 'pixel', 'linu-sprite-direita.png'))
+
+
 def main():
+    lado()
     global CORPO
     CORPO = cores_do_corpo()
     pares = {}

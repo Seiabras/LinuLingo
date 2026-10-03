@@ -97,8 +97,8 @@ export const MORADIAS: Moradia[] = [
       caderno: [100, 96, 40, 16, 122],
       radio: [143, 77, 38, 25, 162],
       cabideiro: [197, 45, 54, 60, 222],
-      estante: [255, 45, 44, 45, 262],
-      cama: [243, 105, 92, 62, 236],
+      estante: [255, 45, 44, 45, 219],
+      cama: [243, 105, 92, 62, 219],
     }),
     lampiao: [178, 3, 22, 44],
     parada: 0,
@@ -118,8 +118,8 @@ export const MORADIAS: Moradia[] = [
       caderno: [86, 98, 40, 14, 110],
       radio: [138, 85, 34, 20, 156],
       cabideiro: [194, 40, 58, 60, 222],
-      estante: [256, 40, 44, 42, 270],
-      cama: [240, 100, 95, 65, 232],
+      estante: [256, 40, 44, 42, 216],
+      cama: [240, 100, 95, 65, 216],
     }),
     lampiao: [176, 3, 18, 40],
     parada: 1,
@@ -140,7 +140,7 @@ export const MORADIAS: Moradia[] = [
       radio: [134, 83, 34, 23, 150],
       cabideiro: [195, 45, 48, 60, 220],
       estante: [245, 40, 37, 75, 258],
-      cama: [282, 60, 62, 115, 274],
+      cama: [282, 60, 62, 115, 258],
     }),
     lampiao: [172, 5, 20, 40],
     parada: 3,
@@ -160,8 +160,8 @@ export const MORADIAS: Moradia[] = [
       caderno: [100, 92, 37, 12, 118],
       radio: [140, 75, 32, 23, 156],
       cabideiro: [196, 42, 62, 75, 226],
-      estante: [260, 40, 40, 40, 270],
-      cama: [242, 98, 98, 77, 236],
+      estante: [260, 40, 40, 40, 218],
+      cama: [242, 98, 98, 77, 218],
     }),
     lampiao: [174, 3, 19, 34],
     parada: 6,
@@ -181,8 +181,8 @@ export const MORADIAS: Moradia[] = [
       caderno: [95, 98, 42, 14, 118],
       radio: [136, 80, 39, 24, 156],
       cabideiro: [196, 40, 52, 68, 222],
-      estante: [254, 40, 42, 50, 266],
-      cama: [244, 100, 90, 80, 238],
+      estante: [254, 40, 42, 50, 220],
+      cama: [244, 100, 90, 80, 220],
     }),
     lampiao: [175, 3, 18, 42],
     parada: 8,
@@ -203,8 +203,8 @@ export const MORADIAS: Moradia[] = [
       caderno: [102, 98, 38, 13, 120],
       radio: [143, 80, 36, 24, 158],
       cabideiro: [198, 42, 52, 55, 224],
-      estante: [255, 38, 44, 52, 268],
-      cama: [248, 98, 90, 82, 242],
+      estante: [255, 38, 44, 52, 224],
+      cama: [248, 98, 90, 82, 224],
     }),
     lampiao: [178, 3, 20, 45],
     parada: 8,
@@ -225,8 +225,8 @@ export const MORADIAS: Moradia[] = [
       caderno: [100, 96, 40, 14, 120],
       radio: [142, 78, 38, 26, 158],
       cabideiro: [195, 42, 55, 60, 222],
-      estante: [255, 32, 45, 55, 268],
-      cama: [242, 98, 96, 82, 236],
+      estante: [255, 32, 45, 55, 218],
+      cama: [242, 98, 96, 82, 218],
     }),
     lampiao: [178, 3, 20, 42],
     parada: 8,
@@ -332,7 +332,9 @@ export function PixelShelter({ moradia = MORADIAS[0], selos, onObjeto }: { morad
                 {!!selo && (
                   <View
                     pointerEvents="none"
-                    className={`absolute -right-1.5 -top-1.5 h-5 min-w-5 items-center justify-center rounded-full border-2 border-white px-1 ${selo === '!' ? 'bg-amber-400' : 'bg-rose-500'}`}
+                    // em cima do objeto, no meio (no canto, um objeto largo deixava o selo solto na parede)
+                    style={{ position: 'absolute', top: -8, left: '50%', marginLeft: -10 }}
+                    className={`h-5 min-w-5 items-center justify-center rounded-full border-2 border-white px-1 ${selo === '!' ? 'bg-amber-400' : 'bg-rose-500'}`}
                   >
                     <Text className="text-[10px] font-extrabold text-white">{selo}</Text>
                   </View>
