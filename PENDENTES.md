@@ -1,4 +1,4 @@
-# Pendências (atualizado em 01/10/2026)
+# Pendências (atualizado em 03/10/2026)
 
 Este arquivo diz onde o trabalho de conteúdo parou. Tudo mencionado aqui como "feito" já está
 commitado.
@@ -35,6 +35,34 @@ commitado.
   citação dentro de citação usa ‘ ’.
 - **README e NotebookLM.md atualizados** com a lista real de idiomas (antes estavam bem
   desatualizados — nem listavam o catalão).
+
+## Feito em 02–03/10/2026
+- **Idiomas novos**: zulu (`zu`), somali (`so`) e sateré-mawé (`mav`). Kamaiurá (`kay`), mundurukú
+  (`myu`), ka'apor (`urb`) e terena (`ter`) estão com agente rodando (03/10/2026).
+- **Bidi nas citações RTL** (commit `96f72987`): `isolateRtlRuns` envolve os trechos em escrita da
+  direita pra esquerda em isolamento Unicode (FSI…PDI) na hora de mostrar; o português em volta não
+  se reordena mais. No mesmo commit, o seletor de idioma ganhou busca e rola até a família do idioma
+  atual.
+- **Textos de gênero e tabela truncada** (commit `9ff20855`): os textos genéricos sobre gênero somem
+  nos idiomas sem gênero, e a 3ª coluna do `GrammarParts.tsx` não corta mais em tela estreita.
+- **Leitura em pinyin do mandarim** (`src/services/zh-pinyin.ts`): sai do pinyin já conferido de
+  cada palavra do vocabulário (com um suplemento conferido no CC-CEDICT); caractere desconhecido →
+  sem leitura, nunca uma pronúncia inventada. **Bengali** com a regra de Ohala (কলকাতা → kolkata) e
+  **khmer** com as vogais longas escritas dobradas (sem mácron), os dois com teste.
+- **Talian** como nota dentro do vêneto (`vec`): região certa (RS, SC), reconhecimento do IPHAN
+  (2014) e de Serafina Corrêa (2010).
+- **Comunidade**: os envios ganharam «☆ marcar como ideal» (a resposta ideal vai para o topo), e o
+  diário e a lição deixam claro que o envio fica no aparelho.
+- **Ficha do Linu** (atributos e o cachecol do nível CEFR conquistado na travessia), com a opção de
+  usar ou não o cachecol (na ficha e na loja de roupinhas).
+- **Tutorial refeito como passeio guiado** pelas páginas de verdade (`src/services/tour.ts`,
+  `src/components/TourOverlay.tsx`): balões curtos, o resto da tela escurecido, Voltar/Próximo/Sair.
+- **`fluxo-trilha.mjs` refeito** e `fluxo-travessia.mjs` novo. Achado deles: tocar várias vezes no
+  fim da lição/travessia dava o XP várias vezes — corrigido.
+- **Rádio do abrigo** abre a conversa com uma seta de voltar para o abrigo.
+- **LICENSE** (todos os direitos reservados, com as licenças de terceiros), **README** com
+  destaques e a tabela dos idiomas gerada do app (`npx tsx scripts/tabela-idiomas.mjs`) e o
+  **changelog** das Atualizações regenerado.
 
 ## Não começados
 - **Românicos**: fechado (pms, lij, lmo, mwl, frp — todos integrados).
@@ -132,7 +160,7 @@ funciona bem para blocos 100% no idioma-alvo — confirmado com teste visual de 
 no pacote `ar`. Sete pacotes RTL no ar: ar, arz, fa, ur, yi, he, ckb (kmr e mt são semíticos/do
 Oriente Médio mas usam alfabeto latino, não são RTL).
 
-**Bug real encontrado no teste visual, ainda NÃO corrigido**: quando um texto majoritariamente em
+**Corrigido em 02/10/2026 (commit `96f72987`, `isolateRtlRuns`).** O bug era este: quando um texto majoritariamente em
 PORTUGUÊS intercala trechos citados no idioma-alvo (ex.: `card.culture_tip` citando "سلام" (salām)
 várias vezes seguidas, ou a saudação `pack.phrases.hi` no início da bolha de fala do Linu), o
 algoritmo de bidi do navegador reordena as ORAÇÕES EM PORTUGUÊS ao redor da citação RTL — não é
@@ -173,12 +201,13 @@ conserto do bidi continua livre pra pegar, sem mais colisão.
   em 12 pacotes caindo no padrão errado — **corrigido**. (2) Textos genéricos mencionando "gênero" em
   idiomas sem gênero (card "🏛️ Palácio" na Home, frase do tutorial "eu corrijo acentos, gênero e
   erros comuns", texto do Diário) — ainda não corrigido: esconder/trocar o texto quando
-  `pack.genders?.length === 0`. (3) `reading` faltando em vários idiomas — ver item acima, em
+  `pack.genders?.length === 0` — **corrigido** (`9ff20855`). (3) `reading` faltando em vários idiomas — ver item acima, em
   andamento. (4) Seletor de idioma no topo da Home abre o Perfil na primeira família da lista, sem
-  rolar até a família do idioma atual nem ter busca — ainda não corrigido, menor prioridade.
+  rolar até a família do idioma atual nem ter busca — **corrigido** (`96f72987`).
 - Revisar la, oc, en, id e vi como já foi feito com gl, ast e sc. Há dúvida sobre a etimologia de
   «nai» < matre(m), no galego.
-- Atualizar o README (tabela de idiomas) e o NotebookLM.md com os idiomas incompletos.
+- ~~Atualizar o README (tabela de idiomas)~~ — **feito** (03/10/2026, gerada por
+  `scripts/tabela-idiomas.mjs`; rodar de novo depois de juntar idiomas). Falta o NotebookLM.md.
 - **Histórias: revisão "de história em história" (pedido do Matheus, 01/10/2026 de madrugada)** —
   ele notou em catalão e espanhol que o Linu, escrito em 3ª pessoa como protagonista, às vezes
   "decide" pelo jogador quem ele é/o que ele faz (o jogador só escolhe a fala do Linu, não é ele
@@ -200,14 +229,13 @@ conserto do bidi continua livre pra pegar, sem mais colisão.
   externa de seiabras-b8, que notou o tâmil sem nenhuma pista de pronúncia), tâmil — com a alofonia
   das 6 consoantes "duras" (வல்லினம்) implementada letra por letra (cada uma com sua própria regra de
   voicing por posição, verificada no Wikcionário; não é uma regra única pra todas). Todos com teste.
-  Único que falta: mandarim (`zh`) — o pinyin já vem escrito à mão em cada palavra do vocabulário, mas
+  **Mandarim também feito em 03/10/2026** (ver "Feito em 02–03/10/2026"). Antes: faltava o mandarim (`zh`) — o pinyin já vem escrito à mão em cada palavra do vocabulário, mas
   não como `reading` computado de verdade; como é por caractere (não por som), precisaria de um
   dicionário hanzi→pinyin, não uma regra fonética como os outros — fica pra outra sessão.
 - **Pendência de baixa prioridade (achado de seiabras-b8, 02/10/2026)**: bengali (`reading-bengali.ts`)
   tem o mesmo problema que o devanágari tinha antes da regra de Ohala — "কলকাতা" sai "kolokata" em
   vez de "kolkata" (schwa do meio da palavra sobrando); khmer (`reading-khmer.ts`) usa o mácron de
-  forma inconsistente entre exemplos diferentes (alguns têm, outros não). Nenhum dos dois corrigido
-  ainda — baixa prioridade.
+  forma inconsistente entre exemplos diferentes (alguns têm, outros não). **Os dois corrigidos em 03/10/2026.**
 - **"Secretas e cifras" (Cultura → Tipos de línguas) — pedido do Matheus em 01-02/10/2026**: nova aba
   com criptoletos (Pajubá, Verlan, Polari, Lunfardo), cifras fonéticas (Língua do P, Pig Latin,
   Javanais) e código morse, **feito em 02/10/2026** (commit `e2584261`). Revisão externa de
@@ -226,7 +254,7 @@ conserto do bidi continua livre pra pegar, sem mais colisão.
   que não é bug, e continua de fora**: no app nativo (Expo Go/build), não existe reconhecimento de
   voz nenhum (`Platform.OS !== 'web'` sempre volta `false`) — precisa de um módulo nativo de STT e
   um build de desenvolvimento, fora do alcance de uma sessão de CLI sem Xcode/Android Studio.
-- **`GrammarParts.tsx`: a 3ª coluna ("Som aproximado") trunca em telas estreitas** — achado por um
+- **`GrammarParts.tsx`: a 3ª coluna ("Som aproximado") trunca em telas estreitas** — **corrigido** (`9ff20855`). Achado por um
   subagente desta sessão (02/10/2026) enquanto dava papel à Dedé em `GrammarTopicScreen.tsx`; não é
   causado pela mudança dele (não mexeu nesse arquivo), só notado de passagem. Ainda não corrigido.
 
@@ -299,7 +327,7 @@ Só anotar, não implementar ainda. Era uma lista numerada 1-6; os itens 3 e 4 c
     usando a prova antiga (`/licao/<prova>?pular=1`).
   - Roteiros Playwright atualizados para o mapa (`fluxo-trilha`, `fluxo-fotos`, `fluxo-licao` e os
     de cada idioma). **Achado**: a parte de `fluxo-trilha.mjs` que faz o teste para pular (arrastar
-    cartões, lacunas) já estava desatualizada antes do mapa e trava em "Continuar" — falta refazer.
+    cartões, lacunas) já estava desatualizada antes do mapa e trava em "Continuar" — **refeito em 03/10/2026**, junto com um `fluxo-travessia.mjs` novo.
   - **Abrigo em pixel art no topo da Home (feito, 02/10/2026)**: `src/components/PixelShelter.tsx` —
     a barraca com o Linu em pixel art, luz pelo relógio (dia, sol da meia-noite, noite com aurora;
     o lampião troca), objetos tocáveis com o Linu andando até eles: mural → quadro da expedição,
@@ -318,7 +346,7 @@ Só anotar, não implementar ainda. Era uma lista numerada 1-6; os itens 3 e 4 c
     `src/data/linu-pixel.ts`); `LinuPixel` empilha o visual escolhido. Poses: de frente (parado),
     de costas (olhando o objeto) e de lado (andando, o pinguim do PixelLab, sem roupas). Peça nova na
     loja → rodar os dois scripts de novo (com o servidor de pé).
-  - **Próximo: o abrigo customizável** (inspirado no app do irmão do usuário, "Dojo Legacy"): cena
+  - **Feito (03/10/2026): o abrigo customizável** (inspirado no app do irmão do usuário, "Dojo Legacy"): cena
     pixel art do PixelLab com objetos tocáveis (mural → quadro da expedição, rádio → conversa,
     caderno → diário, cabideiro → loja/roupas, estante → álbum), selos de pendência, o Linu andando
     até o objeto, moradias que mudam com as paradas (barraca → refúgio → estação → navio → casa do
@@ -515,8 +543,7 @@ mais detalhe do usuário antes de mexer em código.
   - **Talian**: não tem código ISO 639-3 próprio — é classificado como um dialeto/variante do vêneto
     (`vec`, já no app) falado por descendentes de imigrantes no Rio Grande do Sul e Santa Catarina,
     não uma língua separada pelo padrão que o app já segue (mesmo critério usado pro jopará dentro do
-    `gn`). Em vez de um pacote novo, a ideia é uma nota/variante dentro do `vec` existente — ainda não
-    feito.
+    `gn`). Em vez de um pacote novo, entrou como nota dentro do `vec` existente — **feito** (03/10/2026).
 
 ## Lista de idiomas sugeridos pelo Matheus (02/10/2026, 3 mensagens coladas)
 Lista grande, por família, pra guardar pra quando chegar a vez — "foca em implementar o novo
@@ -527,17 +554,17 @@ kgp, tuo, ka, eu, ja, ryu, ko.
 - **Feitos, registrados e com push (02-03/10/2026)**: marúbo (mzr), yawanawá (ywn), apache ocidental
   (apw), buriato (bxr), lingala (ln), shoshone (shh), lingít/tlingit (tli), shipibo-konibo (shp),
   hopi (hop), uolofe/wolof (wo), xhosa (xh) — 11 dos 12 que chegaram a ter agente rodando.
-- **Falta**: zu (zulu) — o agente falhou por limite de uso antes de escrever qualquer arquivo (ao
+- **zu (zulu): feito** (02/10/2026, commit `019e6f33`). Antes: o agente falhou por limite de uso antes de escrever qualquer arquivo (ao
   contrário dos outros 11, que já tinham pelo menos o vocabulário pronto); precisa recomeçar do
   zero, não só retomar.
 - **Faltam, AINDA sem agente, pedidos nas mensagens coladas**:
-  - Afro-asiático: hauçá **já feito** (ha); somali, tamazight/berbere.
+  - Afro-asiático: hauçá **já feito** (ha); somali **feito** (`so`, 03/10/2026); falta tamazight/berbere.
   - Austronésio: malaio (distinto do indonésio, já feito).
   - Túrquico: uzbeque.
-  - Tupi: sateré-mawé, mundurukú, kamaiurá, ka'apor, awetí, suruí do Pará.
+  - Tupi: sateré-mawé **feito** (`mav`, 03/10/2026); mundurukú, kamaiurá e ka'apor com agente rodando (03/10/2026); faltam awetí e suruí do Pará.
   - Macro-jê: xavante **já feito**; kaingang **já feito**.
   - Tukano: tucano **já feito**.
-  - Aruak/Arawak: ashaninka, baniwa (`kpc` já é baniwa — conferir se é o mesmo) ou terena.
+  - Aruak/Arawak: baniwa já é o `kpc`; terena com agente rodando (03/10/2026); falta ashaninka.
   - Coreânica: jeju (além do coreano, já feito).
   - Caucásicas do Norte: checheno, abecásio (georgiano, cartveliano, já feito).
   - Papuas/Austrália: nada ainda — famílias inteiras (Trans-Nova Guiné, Pama-Nyungan), sem idioma
@@ -575,14 +602,14 @@ tocar numa parada/lição bloqueada, tradução na etapa de imersão, nadadeira 
   uma rota comum do `Stack` (não deveria desmontar o `DatabaseGate`, que fica na raiz) — não
   consegui reproduzir com o Playwright pra confirmar a causa. Ver `src/components/DatabaseGate.tsx`
   (o comentário do arquivo explica a trava por aba via Web Locks).
-- **Aba "Comunidade"**: como ainda não tem falante nativo corrigindo as frases dos desafios de voz
+- **Aba "Comunidade"** — **feito** (03/10/2026: «marcar como ideal» nos envios). Pedido: como ainda não tem falante nativo corrigindo as frases dos desafios de voz
   e do `communityPrompt`, seria bom uma aba onde o Matheus possa ver (e marcar como "resposta
   ideal") o que foi enviado por `submitToCommunity`, em vez de ficar só arquivado no banco.
-- **Reorganizar idiomas no Perfil**: abas por tipo (idiomas naturais / artificiais / outros),
+- **Reorganizar idiomas no Perfil** — a separação naturais/artificiais e a busca já existem
+  (`fdd308fb`, `96f72987`); falta a parte dos 8 mil idiomas virando cursos. Pedido: abas por tipo (idiomas naturais / artificiais / outros),
   podendo escolher qualquer um dos 8 mil+ idiomas do mundo; os que já têm trilha (ou vão ter) ficam
   como estão, os que não têm (e não está nos planos ter) vão para a parte de "cursos"
   (`src/app/cursos.tsx` / `curso/[id]`, já existe como conceito de conteúdo mais leve).
 
 ## Git
-- Push feito até `5ddab696`. Os commits depois disso (amigos do Linu, 9 idiomas novos, árvores)
-  estão só no computador: é preciso dar push para o site (GitHub Pages) atualizar.
+- Tudo com push até 03/10/2026 (o site do GitHub Pages atualiza sozinho a cada push em `master`).
