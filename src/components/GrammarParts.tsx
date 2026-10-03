@@ -22,7 +22,7 @@ export function GrammarSections({ sections }: { sections: GrammarSection[] }) {
               <View className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700">
                 <View className="flex-row bg-conecta-light dark:bg-blue-950">
                   {s.table.head.map((h, i) => (
-                    <Text key={i} className="w-36 px-3 py-2 text-xs font-extrabold uppercase text-conecta-dark dark:text-blue-300">
+                    <Text key={i} className="w-36 shrink-0 px-3 py-2 text-xs font-extrabold uppercase text-conecta-dark dark:text-blue-300">
                       {h}
                     </Text>
                   ))}
@@ -33,7 +33,7 @@ export function GrammarSections({ sections }: { sections: GrammarSection[] }) {
                       <Text
                         key={c}
                         selectable
-                        className={`w-36 px-3 py-2 text-sm ${c === 0 ? 'font-bold text-slate-900 dark:text-white' : 'text-slate-700 dark:text-slate-300'}`}
+                        className={`w-36 shrink-0 px-3 py-2 text-sm ${c === 0 ? 'font-bold text-slate-900 dark:text-white' : 'text-slate-700 dark:text-slate-300'}`}
                       >
                         {cell}
                       </Text>

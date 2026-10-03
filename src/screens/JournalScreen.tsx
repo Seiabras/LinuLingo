@@ -202,7 +202,7 @@ export default function JournalScreen() {
                 <Text style={targetTextStyle(pack)} className="text-lg leading-7 text-slate-900 dark:text-white">{result.corrected}</Text>
               </Card>
               <Text className="text-center text-xs text-slate-500 dark:text-slate-400">
-                O corretor funciona sem internet e checa acentos, gênero e erros comuns de quem fala português. Ele não pega tudo: para uma correção completa, envie para os nativos.
+                O corretor funciona sem internet e checa acentos{pack.genders?.length ? ', gênero' : ''} e erros comuns de quem fala português. Ele não pega tudo: para uma correção completa, envie para os nativos.
               </Text>
               <Button title={`Salvar no diário (+${doneToday ? 2 : JOURNAL_XP} XP)`} variant="success" onPress={save} />
             </View>
