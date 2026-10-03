@@ -510,8 +510,12 @@ design" veio logo depois, então isso fica pra depois, não é pra começar agor
 (ficam como estão, não listados nos "faltam" abaixo): sw, yo, ig, nah, nv, cbs, mn, mnc, lkt, kl,
 ht, pln, ar, am, om, zh, id, tl, mi, haw, vi, km, ta, te, th, lo, tr, gn, yrl, tpw, qu, ay, xav,
 kgp, tuo, ka, eu, ja, ryu, ko.
-- **Faltam, já com agentes rodando nesta sessão (02/10/2026)**: zu, xh, ln, wo, hop, shh, apache
-  (variedade a confirmar), tli, shp, yawanawá, marubo, buryat.
+- **Feitos, registrados e com push (02-03/10/2026)**: marúbo (mzr), yawanawá (ywn), apache ocidental
+  (apw), buriato (bxr), lingala (ln), shoshone (shh), lingít/tlingit (tli), shipibo-konibo (shp),
+  hopi (hop), uolofe/wolof (wo), xhosa (xh) — 11 dos 12 que chegaram a ter agente rodando.
+- **Falta**: zu (zulu) — o agente falhou por limite de uso antes de escrever qualquer arquivo (ao
+  contrário dos outros 11, que já tinham pelo menos o vocabulário pronto); precisa recomeçar do
+  zero, não só retomar.
 - **Faltam, AINDA sem agente, pedidos nas mensagens coladas**:
   - Afro-asiático: hauçá **já feito** (ha); somali, tamazight/berbere.
   - Austronésio: malaio (distinto do indonésio, já feito).
