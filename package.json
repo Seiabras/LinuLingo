@@ -57,5 +57,6 @@
     "lint": "expo lint",
     "build:web": "node scripts/preparar-tts.mjs && expo export -p web && node scripts/preparar-pages.mjs"
   },
-  "private": true
+  "private": true,
+  "license": "SEE LICENSE IN LICENSE"
 }

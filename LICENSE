@@ -1,0 +1,53 @@
+LinuLingo
+Copyright © 2026 Matheus Vega (Seiabras). Todos os direitos reservados.
+
+1. Direitos autorais
+
+O LinuLingo — o código-fonte, o conteúdo didático escrito para o app (lições, explicações de
+gramática, histórias, artigos, roteiros de conversa, textos do tutorial e da interface), o mascote
+Linu e os amigos dele (desenhos, nomes e personalidades), as ilustrações e a pixel art feitas para o
+app, o nome “LinuLingo” e a identidade visual — é obra protegida pela Lei nº 9.610/1998 (Lei de
+Direitos Autorais) e pelos tratados internacionais de que o Brasil é parte. Os direitos patrimoniais
+e morais pertencem ao autor indicado acima.
+
+O código está publicado no GitHub para consulta. Publicar o código não concede nenhuma licença de
+uso. Sem autorização prévia e por escrito do autor, é proibido:
+
+  a) copiar, reproduzir ou redistribuir o app, o código ou o conteúdo, no todo ou em parte;
+  b) modificar, adaptar, traduzir ou criar obras derivadas a partir deles;
+  c) publicar, hospedar ou oferecer o app (ou uma versão dele) a terceiros, com ou sem cobrança;
+  d) usar o nome LinuLingo, o Linu ou a identidade visual em outro produto.
+
+Ficam garantidos os usos que a lei permite sem autorização, como a citação de trechos com a
+indicação da fonte (art. 46 da Lei nº 9.610/1998). Usar o site publicado para estudar é livre.
+
+2. Material de terceiros
+
+Parte do que acompanha o app é de outros autores e continua sob a licença original de cada um. Este
+arquivo não muda nem restringe essas licenças. O crédito de cada item (autor, licença e link)
+aparece no próprio app, em Perfil › 🎧 Créditos dos áudios (que lista também as fotos, os
+pictogramas e as vozes), e na documentação. Entre eles:
+
+  - fotos do Wikimedia Commons (CC0, CC BY, CC BY-SA ou domínio público);
+  - gravações de falantes nativos do Lingua Libre e de outras coleções do Wikimedia Commons
+    (CC BY, CC BY-SA ou CC0);
+  - pictogramas do Mulberry Symbols, de Steve Lee (CC BY-SA 4.0);
+  - sons de bichos e instrumentos do Wikimedia Commons (licenças livres indicadas em cada um);
+  - vozes neurais do Piper (CC0 ou CC BY, conforme a voz) e a voz MMS-TTS da Meta para o feroês
+    (CC BY-NC 4.0, só uso não comercial);
+  - dados do CC-CEDICT (CC BY-SA 4.0), do Wikidata (CC0), do Unicode CLDR (licença Unicode), do
+    Glottolog (CC BY 4.0) e de outras bases públicas citadas no código;
+  - a língua Tsevhu, de Koa Vhukva e sua comunidade, usada com autorização dos autores.
+
+As adaptações feitas pelo app a partir de material CC BY-SA (por exemplo, os pictogramas convertidos
+para WebP e as fotos recortadas) são compartilhadas sob a mesma licença do original, como ela exige.
+
+As bibliotecas de código aberto usadas pelo app (Expo, React Native e as demais listadas em
+package.json) continuam sob as licenças delas. O motor de voz do site usa o Piper e o
+piper-phonemize (MIT), o ONNX Runtime Web (MIT) e o espeak-ng (GPL-3.0), que vai como componente
+separado e cujo código está em https://github.com/espeak-ng/espeak-ng.
+
+3. Contato
+
+Para pedir autorização ou tirar dúvidas, abra uma issue no repositório
+https://github.com/Seiabras/LinuLingo.
