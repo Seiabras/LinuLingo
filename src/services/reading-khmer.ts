@@ -453,5 +453,9 @@ export function toReadingKm(raw: string): string {
     i++;
   }
 
-  return out.join('').normalize('NFC');
+  // vogal longa escrita dobrada (chhmaa, pii), como as dicas de pronúncia do vocabulário do pacote:
+  // o mácron só serve na conta interna (encurtar com o bântôc), não na tela
+  return out.join('').normalize('NFC').replace(/[āīūēō]/g, (v) => DOBRADA[v]);
 }
+
+const DOBRADA: Record<string, string> = { ā: 'aa', ī: 'ii', ū: 'uu', ē: 'ee', ō: 'oo' };

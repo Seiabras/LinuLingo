@@ -74,13 +74,15 @@
  * um punhado de palavras comuns mantém essa vogal final sem nenhuma marca escrita que avise — três
  * exemplos do próprio vocabulário deste app: ছোট ("chhoto", não "chhot"), পছন্দ ("pochhondo", não
  * "pochhond") e শুভ ("shubho", não "shubh" — por isso esta função lê "শুভ সকাল" como "shubh shokal" em
- * vez do "shubho shokal" do parêntese de pronúncia do vocabulário). Nomes compostos dos dias da
- * semana (সোমবার, মঙ্গলবার, বুধবার) também escapam: cada um é um nome
- * de planeta/deus (সোম, মঙ্গল, বুধ) + বার ("dia"), e a consoante final do primeiro pedaço mantém o
- * apagamento que teria sozinho (shom, mongol, budh) mesmo dentro da palavra composta — como o
- * algoritmo lê a string inteira sem saber onde o composto se divide, o resultado sai "shomobar"/
- * "mongolobar"/"budhobar" em vez de "shombar"/"mongolbar"/"budhbar": uma sílaba a mais, nunca
- * errado a ponto de virar sopa de consoantes, só mais silabado que o jeito corrido de falar.
+ * vez do "shubho shokal" do parêntese de pronúncia do vocabulário).
+ *
+ * No MEIO da palavra, a vogal inerente cai pela regra de Ohala, a mesma do devanágari (contexto
+ * VC_CV, da direita para a esquerda, ver dropMedialVowels): কলকাতা = "kolkata", আমরা = "amra",
+ * সোমবার = "shombar", বুধবার = "budhbar", কমলা = "komla", বলতে = "bolte". Consoante presa num
+ * encontro não perde a vogal (ধন্যবাদ "dhonnobad", নমস্কার "nomoshkar"). Também é uma regra
+ * aproximada: algumas palavras guardam o "o" do meio sem marca nenhuma — অথবা é "othoba", e esta
+ * função lê "othba". Conferido contra as pronúncias entre parênteses do vocabulário do pacote: a
+ * regra acerta mais palavras do que erra.
  *
  * Fontes: Wikipédia em inglês "Bengali phonology", "Bengali alphabet", "Bengali grammar",
  * "Romanisation of Bengali"; Wiktionary em inglês para সকাল e সাদা (IPA); as próprias dicas de
@@ -166,24 +168,72 @@ function isClassifierSuffix(text: string, i: number): boolean {
   return c === 'ট' && (vowel === 'া' || vowel === 'ি') && isEndOfWord(text, i + 2);
 }
 
+/**
+ * Um pedaço da saída: a consoante (ou o encontro) e a vogal que ela carrega. `del` marca a vogal "o"
+ * inerente que pode cair no meio da palavra (regra de Ohala, decidida no fim da palavra); `word`
+ * diz se o pedaço é parte de uma palavra bengali (pontuação e espaço separam as palavras).
+ */
+interface Tok {
+  base: string;
+  vowel: string;
+  del?: boolean;
+  word: boolean;
+}
+
 /** Aplica anusvara (sempre "ng")/chandrabindu (nasaliza a vogal anterior, com til)/visarga ("h")
  * em `text[i]`, se houver, devolvendo o próximo índice. */
-function consumeTrailingNasal(text: string, i: number, out: string[]): number {
+function consumeTrailingNasal(text: string, i: number, out: Tok[]): number {
   const c = text[i];
   if (c === ANUSVARA) {
-    out.push('ng');
+    out.push({ base: 'ng', vowel: '', word: true });
     return i + 1;
   }
   if (c === CANDRABINDU) {
-    const last = out.pop() ?? '';
-    out.push(last + '̃');
+    const last = out[out.length - 1];
+    if (last) last.vowel += '̃';
+    else out.push({ base: '', vowel: '̃', word: true });
     return i + 1;
   }
   if (c === VISARGA) {
-    out.push('h');
+    out.push({ base: 'h', vowel: '', word: true });
     return i + 1;
   }
   return i;
+}
+
+/**
+ * O "o" inerente no MEIO da palavra cai quando a sílaba de antes termina em vogal e a de depois é
+ * consoante + vogal (contexto VC_CV, regra de Ohala, a mesma do devanágari), varrendo da direita
+ * para a esquerda: কলকাতা ko-lo-ka-ta → kolkata, সোমবার sho-mo-ba-r → shombar. A consoante presa
+ * num encontro não entra (ধন্যবাদ continua dhonnobad), nem a primeira sílaba.
+ */
+function dropMedialVowels(word: Tok[]): void {
+  for (let i = word.length - 2; i >= 1; i--) {
+    const t = word[i];
+    if (!t.del) continue;
+    const left = word[i - 1];
+    const right = word[i + 1];
+    if (left.vowel && right.base && right.vowel) t.vowel = '';
+  }
+}
+
+function render(out: Tok[]): string {
+  let res = '';
+  let word: Tok[] = [];
+  const flush = () => {
+    dropMedialVowels(word);
+    res += word.map((t) => t.base + t.vowel).join('');
+    word = [];
+  };
+  for (const t of out) {
+    if (t.word) word.push(t);
+    else {
+      flush();
+      res += t.base;
+    }
+  }
+  flush();
+  return res;
 }
 
 /**
@@ -192,7 +242,7 @@ function consumeTrailingNasal(text: string, i: number, out: string[]): number {
  */
 export function toReadingBn(raw: string): string {
   const text = raw.normalize('NFC');
-  const out: string[] = [];
+  const out: Tok[] = [];
   let i = 0;
   let wordHasVowel = false;
   // true logo depois de uma consoante presa por virama: a aproximante (য র ল ব) que fecha um
@@ -203,28 +253,28 @@ export function toReadingBn(raw: string): string {
     const c = text[i];
 
     if (DANDA[c] !== undefined) {
-      out.push(DANDA[c]);
+      out.push({ base: DANDA[c], vowel: '', word: false });
       wordHasVowel = false;
       afterVirama = false;
       i++;
       continue;
     }
     if (DIGITS[c] !== undefined) {
-      out.push(DIGITS[c]);
+      out.push({ base: DIGITS[c], vowel: '', word: false });
       afterVirama = false;
       i++;
       continue;
     }
     if (c === KHANDA_TA) {
       // ৎ nunca carrega vogal nenhuma (é o ত "seco"): não conta como a vogal da palavra.
-      out.push('t');
+      out.push({ base: 't', vowel: '', word: true });
       afterVirama = false;
       i++;
       continue;
     }
 
     if (INDEPENDENT_VOWELS[c] !== undefined) {
-      out.push(INDEPENDENT_VOWELS[c]);
+      out.push({ base: '', vowel: INDEPENDENT_VOWELS[c], word: true });
       wordHasVowel = true;
       afterVirama = false;
       i++;
@@ -235,18 +285,23 @@ export function toReadingBn(raw: string): string {
     if (CONSONANTS[c] !== undefined) {
       let latin: string;
       let isFlap = FLAP_PRECOMPOSED.has(c);
+      // encontro escrito numa letra só (nn, kkh, gg, consoante + ya-phala): a vogal dele não cai
+      let cluster = afterVirama;
 
       if (c === 'ন' && text[i + 1] === VIRAMA && text[i + 2] === 'য') {
         // ন্য é um encontro congelado: não é "ny", o ন dobra (ধন্যবাদ = dhonnobad, অন্য = ônno).
         latin = 'nn';
+        cluster = true;
         i += 3;
       } else if (c === 'ক' && text[i + 1] === VIRAMA && text[i + 2] === 'ষ') {
         // ক্ষ (sânscrito kṣ) sai "kkh" no bengali, não "ksh" como no hindi (রক্ষা = rokkha).
         latin = 'kkh';
+        cluster = true;
         i += 3;
       } else if (c === 'জ' && text[i + 1] === VIRAMA && text[i + 2] === 'ঞ') {
         // জ্ঞ sai "gg" (জ্ঞান = /ggæn/, বিজ্ঞান = biggan), não "gy" como o ज्ञ do hindi.
         latin = 'gg';
+        cluster = true;
         i += 3;
       } else {
         latin = CONSONANTS[c];
@@ -260,13 +315,14 @@ export function toReadingBn(raw: string): string {
           // ্য (ya-phala) fora do encontro ন্য: funciona como semivogal "y" presa à consoante
           // anterior (হ্যাঁ = hyan), não como gem aqui.
           latin = latin + 'y';
+          cluster = true;
           i += 2;
         }
       }
 
       if (text[i] === VIRAMA) {
         // encontro consonantal: esta consoante fica sem vogal, presa à próxima
-        out.push(latin);
+        out.push({ base: latin, vowel: '', word: true });
         afterVirama = true;
         i++;
         continue;
@@ -274,7 +330,7 @@ export function toReadingBn(raw: string): string {
 
       const matraVowel = MATRAS[text[i]];
       if (matraVowel !== undefined) {
-        out.push(latin + matraVowel);
+        out.push({ base: latin, vowel: matraVowel, word: true });
         wordHasVowel = true;
         afterVirama = false;
         i++;
@@ -284,7 +340,7 @@ export function toReadingBn(raw: string): string {
 
       if (text[i] === ANUSVARA || text[i] === CANDRABINDU || text[i] === VISARGA) {
         // vogal "o" inerente, nasalizada ou com visarga em seguida
-        out.push(latin + 'o');
+        out.push({ base: latin, vowel: 'o', word: true });
         wordHasVowel = true;
         afterVirama = false;
         i = consumeTrailingNasal(text, i, out);
@@ -298,9 +354,10 @@ export function toReadingBn(raw: string): string {
       const strandedApproximant = afterVirama && APPROXIMANTS.includes(c);
       const atWordEnd = isEndOfWord(text, i) || isClassifierSuffix(text, i);
       if (wordHasVowel && atWordEnd && !strandedApproximant && !isFlap) {
-        out.push(latin);
+        out.push({ base: latin, vowel: '', word: true });
       } else {
-        out.push(latin + 'o');
+        // no meio da palavra, este "o" ainda pode cair pela regra de Ohala (ver dropMedialVowels)
+        out.push({ base: latin, vowel: 'o', del: wordHasVowel && !atWordEnd && !cluster && !isFlap, word: true });
         wordHasVowel = true;
       }
       afterVirama = false;
@@ -308,11 +365,11 @@ export function toReadingBn(raw: string): string {
     }
 
     // pontuação, espaço, dígitos latinos, texto em outra escrita: passa direto
-    out.push(c);
+    out.push({ base: c, vowel: '', word: false });
     wordHasVowel = false;
     afterVirama = false;
     i++;
   }
 
-  return out.join('').normalize('NFC');
+  return render(out).normalize('NFC');
 }

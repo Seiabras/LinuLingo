@@ -18,3 +18,12 @@ test('bengali: frase completa, nasalização com til, ড় com vogal final man
 test('bengali: texto que não é bengali passa intacto', () => {
   assert.equal(toReadingBn('olá, 123!'), 'olá, 123!');
 });
+
+test('bengali: o "o" inerente cai no meio da palavra (regra de Ohala), menos preso num encontro', () => {
+  assert.equal(toReadingBn('কলকাতা'), 'kolkata');
+  assert.equal(toReadingBn('আমরা'), 'amra');
+  assert.equal(toReadingBn('সোমবার'), 'shombar');
+  assert.equal(toReadingBn('বুধবার'), 'budhbar');
+  assert.equal(toReadingBn('ধন্যবাদ'), 'dhonnobad');
+  assert.equal(toReadingBn('খবর'), 'khobor');
+});
