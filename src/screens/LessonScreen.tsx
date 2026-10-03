@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
 import { X } from 'lucide-react-native';
@@ -48,6 +48,8 @@ export default function LessonScreen() {
   const [voiceCorrect, setVoiceCorrect] = useState(false);
   const [reward, setReward] = useState<{ xp: number; streak: number; usedFreeze: boolean; words: VocabWithSRS[]; todayXp: number; goalXp: number } | null>(null);
   const [jumped, setJumped] = useState<boolean | null>(null);
+  // o fim da lição grava e dá XP: um segundo toque enquanto ela termina não pode contar de novo
+  const finishing = useRef(false);
 
   useEffect(() => {
     if (!lesson) return;
@@ -73,6 +75,8 @@ export default function LessonScreen() {
   }
 
   const finish = async (communityText: string | null) => {
+    if (finishing.current) return;
+    finishing.current = true;
     if (communityText) await submitToCommunity(db, pack.code, lesson.id, lesson.communityPrompt, communityText);
     for (const r of wordResults) await reviewWord(db, r.vocabId, r.quality);
 

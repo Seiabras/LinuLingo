@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
 import { X } from 'lucide-react-native';
@@ -59,6 +59,8 @@ export default function CrossingScreen() {
   const [fase, setFase] = useState<Fase>('inicio');
   const [score, setScore] = useState({ escuta: 0, decisao: 0, lacunas: 0, voz: 0 });
   const [xp, setXp] = useState(0);
+  // chegar grava e dá XP uma vez só, mesmo com toque duplo no último botão
+  const finishing = useRef(false);
 
   useEffect(() => () => stopSpeaking(), []);
 
@@ -95,6 +97,8 @@ export default function CrossingScreen() {
   };
 
   const finish = async (final = score) => {
+    if (finishing.current) return;
+    finishing.current = true;
     const c = final.escuta + final.decisao + final.lacunas + final.voz;
     if (passou(c, total)) {
       haptics.success();
@@ -108,6 +112,7 @@ export default function CrossingScreen() {
   };
 
   const again = () => {
+    finishing.current = false;
     setScore({ escuta: 0, decisao: 0, lacunas: 0, voz: 0 });
     setRound((r) => r + 1);
     setFase('inicio');
