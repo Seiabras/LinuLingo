@@ -309,7 +309,15 @@ Só anotar, não implementar ainda. Era uma lista numerada 1-6; os itens 3 e 4 c
     Moradias (03/10/2026): barraca, estação de pesquisa (Rei George), refúgio (Port Lockroy), navio
     (Drake) e casa romena (desembarque do romeno) — geradas no Canva com a barraca como referência,
     reduzidas à grade 344 × 192; noite/sol da meia-noite recoloridos por código. Escolha salva em
-    Meta `moradia`. Falta: casas do desembarque dos outros idiomas; as roupas da loja no Linu pixel.
+    Meta `moradia`. Casas do desembarque: romena, andaluza (es) e toscana (it). **Faltam as de pt, ru,
+    sv, fr, nb, da, is, fi, et** — a cota de IA do Canva acabou (03/10/2026) no meio; os pedidos (com
+    a barraca como referência) estão prontos para repetir. Para os outros ~130 idiomas não há casa:
+    eles ficam nas moradias antárticas.
+  - **Linu em pixel art com as roupas da loja** (03/10/2026): `scripts/linu-pixel.mjs` + `.py` geram,
+    do desenho vetorial, o corpo/olhos nas 12 cores e as 106 peças (`assets/pixel/linu/`,
+    `src/data/linu-pixel.ts`); `LinuPixel` empilha o visual escolhido. Poses: de frente (parado),
+    de costas (olhando o objeto) e de lado (andando, o pinguim do PixelLab, sem roupas). Peça nova na
+    loja → rodar os dois scripts de novo (com o servidor de pé).
   - **Próximo: o abrigo customizável** (inspirado no app do irmão do usuário, "Dojo Legacy"): cena
     pixel art do PixelLab com objetos tocáveis (mural → quadro da expedição, rádio → conversa,
     caderno → diário, cabideiro → loja/roupas, estante → álbum), selos de pendência, o Linu andando

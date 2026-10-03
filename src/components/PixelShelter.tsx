@@ -61,7 +61,7 @@ const NOMES: Record<ObjetoId, string> = {
 };
 const objetos = (r: Record<ObjetoId, Rect>): Objeto[] => (Object.keys(r) as ObjetoId[]).map((id) => obj(id, NOMES[id], r[id]));
 
-export type MoradiaId = 'barraca' | 'estacao' | 'refugio' | 'navio' | 'casa-ro';
+export type MoradiaId = 'barraca' | 'estacao' | 'refugio' | 'navio' | 'casa-ro' | 'casa-es' | 'casa-it';
 
 export interface Moradia {
   id: MoradiaId;
@@ -187,6 +187,50 @@ export const MORADIAS: Moradia[] = [
     lampiao: [175, 3, 18, 42],
     parada: 8,
     lang: 'ro',
+  },
+  {
+    id: 'casa-es',
+    nome: 'Casa andaluza',
+    luzes: {
+      dia: require('../../assets/pixel/abrigo-espanha-dia.png'),
+      'sol-da-meia-noite': require('../../assets/pixel/abrigo-espanha-sol-da-meia-noite.png'),
+      noite: require('../../assets/pixel/abrigo-espanha-noite.png'),
+    },
+    objetos: objetos({
+      porta: [12, 25, 52, 150, 72],
+      janela: [72, 38, 30, 55, 92],
+      mural: [114, 40, 62, 45, 140],
+      caderno: [102, 98, 38, 13, 120],
+      radio: [143, 80, 36, 24, 158],
+      cabideiro: [198, 42, 52, 55, 224],
+      estante: [255, 38, 44, 52, 268],
+      cama: [248, 98, 90, 82, 242],
+    }),
+    lampiao: [178, 3, 20, 45],
+    parada: 8,
+    lang: 'es',
+  },
+  {
+    id: 'casa-it',
+    nome: 'Casa toscana',
+    luzes: {
+      dia: require('../../assets/pixel/abrigo-italia-dia.png'),
+      'sol-da-meia-noite': require('../../assets/pixel/abrigo-italia-sol-da-meia-noite.png'),
+      noite: require('../../assets/pixel/abrigo-italia-noite.png'),
+    },
+    objetos: objetos({
+      porta: [8, 22, 60, 155, 72],
+      janela: [70, 38, 38, 55, 96],
+      mural: [112, 40, 62, 42, 140],
+      caderno: [100, 96, 40, 14, 120],
+      radio: [142, 78, 38, 26, 158],
+      cabideiro: [195, 42, 55, 60, 222],
+      estante: [255, 32, 45, 55, 268],
+      cama: [242, 98, 96, 82, 236],
+    }),
+    lampiao: [178, 3, 20, 42],
+    parada: 8,
+    lang: 'it',
   },
 ];
 
