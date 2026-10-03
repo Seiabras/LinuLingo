@@ -26,6 +26,7 @@ import { fitBox, focusBox, ringBoxes, type Box, type SubShape } from '@/services
 import { hasSubdivisions, loadSubdivisions } from '@/services/subdivisoes';
 import { nomeIdioma } from '@/services/idioma-nome';
 import { KIND } from '@/services/variedade';
+import { alvoDoTour } from '@/services/tour';
 
 
 // Fora do componente de propósito: o lint de pureza do React Compiler barra Date.now() dentro do
@@ -454,29 +455,31 @@ export default function MapScreen() {
 
       {mode === 'hoje' && (
         <>
-          <HScroll label="os idiomas" className="mt-3" contentContainerStyle={{ gap: 8 }}>
-            <Pressable
-              accessibilityRole="button"
-              accessibilityState={{ expanded: showAll }}
-              onPress={() => setShowAll((v) => !v)}
-              className={`flex-row items-center gap-1 rounded-full border-2 px-3 py-1.5 ${showAll ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-dashed border-slate-300 bg-white dark:border-slate-600 dark:bg-slate-900'}`}
-            >
-              <Search size={14} color={dark ? '#93C5FD' : '#2563EB'} />
-              <Text className="font-bold text-conecta">Todos os idiomas ({ALL_MAP_LANGUAGES.length})</Text>
-            </Pressable>
-            {/* um idioma escolhido na busca aparece primeiro, marcado */}
-            {[...(ordered.some((l) => l.code === lang.code) ? [] : [lang]), ...ordered].map((l) => (
+          <View ref={alvoDoTour('mapa-idiomas')} className="mt-3">
+            <HScroll label="os idiomas" contentContainerStyle={{ gap: 8 }}>
               <Pressable
-                key={l.code}
-                onPress={() => setLangCode(l.code)}
-                style={langCode === l.code ? { backgroundColor: l.color, borderColor: l.color } : undefined}
-                className={`flex-row items-center gap-1 rounded-full border-2 px-3 py-1.5 ${langCode === l.code ? '' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
+                accessibilityRole="button"
+                accessibilityState={{ expanded: showAll }}
+                onPress={() => setShowAll((v) => !v)}
+                className={`flex-row items-center gap-1 rounded-full border-2 px-3 py-1.5 ${showAll ? 'border-conecta bg-conecta-light dark:bg-blue-950' : 'border-dashed border-slate-300 bg-white dark:border-slate-600 dark:bg-slate-900'}`}
               >
-                <Text>{l.flag}</Text>
-                <Text className={`font-bold ${langCode === l.code ? 'text-white' : 'text-slate-700 dark:text-slate-200'}`}>{l.name}</Text>
+                <Search size={14} color={dark ? '#93C5FD' : '#2563EB'} />
+                <Text className="font-bold text-conecta">Todos os idiomas ({ALL_MAP_LANGUAGES.length})</Text>
               </Pressable>
-            ))}
-          </HScroll>
+              {/* um idioma escolhido na busca aparece primeiro, marcado */}
+              {[...(ordered.some((l) => l.code === lang.code) ? [] : [lang]), ...ordered].map((l) => (
+                <Pressable
+                  key={l.code}
+                  onPress={() => setLangCode(l.code)}
+                  style={langCode === l.code ? { backgroundColor: l.color, borderColor: l.color } : undefined}
+                  className={`flex-row items-center gap-1 rounded-full border-2 px-3 py-1.5 ${langCode === l.code ? '' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
+                >
+                  <Text>{l.flag}</Text>
+                  <Text className={`font-bold ${langCode === l.code ? 'text-white' : 'text-slate-700 dark:text-slate-200'}`}>{l.name}</Text>
+                </Pressable>
+              ))}
+            </HScroll>
+          </View>
 
           {showAll && (
             <Card className="mt-2 gap-2">
@@ -587,6 +590,7 @@ export default function MapScreen() {
         </>
       )}
       <Pressable
+        ref={alvoDoTour('mapa-linha')}
         accessibilityRole="link"
         onPress={() => router.push('/linha-do-tempo')}
         className="mt-3 flex-row items-center gap-2 self-start rounded-full border-2 border-slate-200 bg-white px-3 py-1.5 active:opacity-80 dark:border-slate-700 dark:bg-slate-900"

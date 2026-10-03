@@ -20,7 +20,7 @@ page.on('pageerror', (e) => errors.push(e.message));
 page.on('console', (m) => m.type() === 'error' && !m.text().includes('Unknown event handler property') && !m.text().includes('404') && errors.push(m.text()));
 
 await page.goto(BASE + '/tutorial', { waitUntil: 'load', timeout: 180000 });
-const linu = page.locator('[aria-label^="Linu, o pinguim-de-barbicha"]').first();
+let linu = page.locator('[aria-label^="Linu, o pinguim-de-barbicha"]').first();
 await linu.waitFor({ timeout: 120000 });
 if (!(await page.getByLabel('LinuLingo').count())) throw new Error('a logo não aparece no primeiro slide');
 
@@ -41,20 +41,24 @@ async function frames(name, n = 6, gap = 140) {
 
 await page.waitForTimeout(900);
 await frames('feliz');
-const next = () => page.getByText('Próximo', { exact: true }).first().click();
+const next = () => page.getByText('Próximo', { exact: true }).last().click();
 await next();
 await page.waitForTimeout(900);
 await frames('falando');
-await next();
-await page.waitForTimeout(900);
-await frames('pensando', 6, 250);
-// avança até o slide da ofensiva, onde o Linu comemora
-for (let k = 0; k < 6 && !(await page.getByText('Ofensiva e meta do dia').count()); k++) {
-  await next();
-  await page.waitForTimeout(500);
-}
-await page.waitForTimeout(700);
+await page.getByText('Me mostra o app!', { exact: true }).click();
+// o resto é o passeio guiado: o Linu do balão (o último na página) muda de humor a cada passo
+linu = page.locator('[aria-label^="Linu, o pinguim-de-barbicha"]').last();
+const ate = async (titulo) => {
+  for (let k = 0; k < 10 && !(await page.getByText(titulo, { exact: true }).count()); k++) {
+    await next();
+    await page.waitForTimeout(600);
+  }
+  await page.waitForTimeout(900);
+};
+await ate('Casas novas pelo caminho');
 await frames('comemorando', 6, 120);
+await ate('Cada lição, 5 etapas');
+await frames('pensando', 6, 250);
 
 console.log(errors.length ? `⚠️  erros:\n   ${[...new Set(errors)].join('\n   ')}` : '✅ sem erros no console');
 await browser.close();

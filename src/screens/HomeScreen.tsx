@@ -30,6 +30,7 @@ import { loadExpedition } from '@/services/expeditions';
 import { EXPEDITION_PLACES, isoWeek, STOPS_PER_EXPEDITION } from '@/data/expedicoes';
 import { nomeIdioma } from '@/services/idioma-nome';
 import { destinoDoIdioma, rotaDaAventura, type Parada } from '@/services/aventura';
+import { alvoDoTour } from '@/services/tour';
 
 export default function HomeScreen() {
   const { db, pack, user, streak, refresh, accent } = useApp();
@@ -146,27 +147,33 @@ export default function HomeScreen() {
 
   return (
     <Screen background={<FieldNotebookBackground variant="gelo" />}>
-      <StatusHeader cefr={unit?.level ?? 'A1.1'} />
+      <View ref={alvoDoTour('status')}>
+        <StatusHeader cefr={unit?.level ?? 'A1.1'} />
+      </View>
 
       {/* o abrigo do Linu: cada objeto da barraca é um atalho (ver PixelShelter) */}
       <View className="mt-2 gap-2">
         <SpeechBubble>{greeting}</SpeechBubble>
-        <PixelShelter
-          moradia={moradia}
-          selos={{ mural: todayXp < goal ? '!' : null, caderno: journalToday ? null : '!', cama: due > 0 ? due : null }}
-          onObjeto={(o) => {
-            if (o === 'porta') setParada(atualIndex);
-            else if (o === 'janela') router.push('/mapa');
-            else if (o === 'mural') setMural(true);
-            else if (o === 'caderno') router.push('/diario');
-            else if (o === 'radio') router.push('/conversa');
-            else if (o === 'cabideiro') setRoupas(true);
-            else if (o === 'estante') router.push('/album');
-            else if (o === 'cama') router.push('/revisao');
-          }}
-        />
+        <View ref={alvoDoTour('abrigo')}>
+          <PixelShelter
+            moradia={moradia}
+            selos={{ mural: todayXp < goal ? '!' : null, caderno: journalToday ? null : '!', cama: due > 0 ? due : null }}
+            onObjeto={(o) => {
+              if (o === 'porta') setParada(atualIndex);
+              else if (o === 'janela') router.push('/mapa');
+              else if (o === 'mural') setMural(true);
+              else if (o === 'caderno') router.push('/diario');
+              else if (o === 'radio') router.push('/conversa');
+              else if (o === 'cabideiro') setRoupas(true);
+              else if (o === 'estante') router.push('/album');
+              else if (o === 'cama') router.push('/revisao');
+            }}
+          />
+        </View>
         <Text className="text-center text-xs text-slate-500 dark:text-slate-400">Toque nos objetos · o lampião troca a luz</Text>
-        <MoradiaPicker lang={pack.code} liberadas={liberadas.map((m) => m.id)} atual={moradia.id} rota={rota} onEscolher={escolherMoradia} />
+        <View ref={alvoDoTour('moradias')}>
+          <MoradiaPicker lang={pack.code} liberadas={liberadas.map((m) => m.id)} atual={moradia.id} rota={rota} onEscolher={escolherMoradia} />
+        </View>
         <View className="flex-row items-center gap-2 px-1">
           <ProgressBar value={todayXp / goal} color="bg-fogo" className="flex-1" />
           <Text className="text-xs font-bold text-slate-500 dark:text-slate-400">
@@ -206,14 +213,16 @@ export default function HomeScreen() {
         </Text>
         <View className="h-px flex-1 bg-slate-300 dark:bg-slate-700" />
       </View>
-      <AdventureMap
-        paradas={rota}
-        estados={estados}
-        travessias={travessias}
-        pais={destino?.iso}
-        onParada={setParada}
-        onTravessia={(i) => openCrossing(i)}
-      />
+      <View ref={alvoDoTour('mapa')}>
+        <AdventureMap
+          paradas={rota}
+          estados={estados}
+          travessias={travessias}
+          pais={destino?.iso}
+          onParada={setParada}
+          onTravessia={(i) => openCrossing(i)}
+        />
+      </View>
       <Text className="mt-2 text-center text-xs text-slate-500 dark:text-slate-400">
         Toque numa parada para ver as lições · 🌊 é a travessia: o desafio para seguir viagem
       </Text>
@@ -228,7 +237,7 @@ export default function HomeScreen() {
         </Card>
       )}
 
-      <Pressable accessibilityRole="button" onPress={() => router.push('/sprint')} className="mt-7 overflow-hidden rounded-3xl bg-fogo p-5 active:opacity-90">
+      <Pressable ref={alvoDoTour('sprint')} accessibilityRole="button" onPress={() => router.push('/sprint')} className="mt-7 overflow-hidden rounded-3xl bg-fogo p-5 active:opacity-90">
         <Text className="text-xs font-extrabold uppercase tracking-widest text-orange-100">⚡ Sprint de 5 minutos</Text>
         <Text className="mt-1 text-xl font-extrabold text-white">Vocabulário rápido com gestos</Text>
         <Text className="mt-1 text-sm text-orange-100">Deslize os cartões: → sei · ← não sei · ↑ fácil · ↓ difícil</Text>
@@ -238,13 +247,14 @@ export default function HomeScreen() {
       </Pressable>
 
       <Text className="mb-2 mt-5 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">Mais práticas</Text>
-      <View className="flex-row flex-wrap gap-2">
+      <View ref={alvoDoTour('praticas')} className="flex-row flex-wrap gap-2">
         {[...(pack.alphabet ? [ALPHABET_PRACTICE] : []), ...(pack.falseFriends ? [FALSE_FRIENDS_PRACTICE] : []), ...(ACCENT_PRACTICE ? [ACCENT_PRACTICE] : []), ...PRACTICES.slice(0, 1), ...(PAIRS_PRACTICE ? [PAIRS_PRACTICE] : []), MISTAKES_PRACTICE, ...PRACTICES.slice(1), ...(ANIMALS_PRACTICE ? [ANIMALS_PRACTICE] : []), SOUNDS_PRACTICE, MAP_GAME_PRACTICE, ...(EXPEDITION_PRACTICE ? [EXPEDITION_PRACTICE] : []), KIN_PRACTICE, CONFUSABLES_PRACTICE, ACCENT_GUESS_PRACTICE, COURSES_PRACTICE, ALBUM_PRACTICE, FRIENDS_PRACTICE, RESOURCES_PRACTICE]
           // sem gênero gramatical, o palácio fica vazio: o card não pode prometer "gêneros com memória visual"
           .map((p) => (p.route === '/palacio' && !pack.genders?.length ? { ...p, text: 'Sem gênero aqui: o palácio fica vazio' } : p))
           .map((p) => (
           <Pressable
             key={p.route}
+            ref={alvoDoTour(`pratica:${p.route}`)}
             accessibilityRole="button"
             onPress={() => router.push(p.route)}
             className="min-w-[46%] flex-1 gap-1 rounded-2xl border-2 border-slate-200 bg-white p-3 active:opacity-80 dark:border-slate-700 dark:bg-slate-900"

@@ -12,6 +12,7 @@ import { useAppReduceMotion } from '@/services/accessibility';
 import { StickerToast } from '@/components/StickerToast';
 import { NeuralVoiceToast } from '@/components/NeuralVoiceToast';
 import { NativeSpeakerToast } from '@/components/NativeSpeakerToast';
+import { TourOverlay } from '@/components/TourOverlay';
 import { DatabaseGate, databaseOpened } from '@/components/DatabaseGate';
 import type { SQLiteDatabase } from 'expo-sqlite';
 // guarda desde o início o aviso do navegador de que o app pode ser instalado
@@ -95,6 +96,7 @@ export default function RootLayout() {
               <StickerToast />
               <NeuralVoiceToast />
               <NativeSpeakerToast />
+              <TourOverlay />
             </AppStateProvider>
           </SQLiteProvider>
         </Suspense>

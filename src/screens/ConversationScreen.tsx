@@ -4,6 +4,7 @@ import { Screen, Chip, SpeechBubble } from '@/components/ui';
 import { Linu } from '@/components/Linu';
 import { FieldNotebookBackground } from '@/components/FieldNotebookBackground';
 import { useApp } from '@/services/app-state';
+import { alvoDoTour } from '@/services/tour';
 
 /** Lista de cenários de conversa guiada, com persona e registro social. */
 export default function ConversationScreen() {
@@ -19,7 +20,7 @@ export default function ConversationScreen() {
         </SpeechBubble>
       </View>
 
-      <View className="mt-2 gap-3">
+      <View ref={alvoDoTour('conversa-lista')} className="mt-2 gap-3">
         {pack.scenarios.map((s) => (
           <Pressable
             key={s.id}

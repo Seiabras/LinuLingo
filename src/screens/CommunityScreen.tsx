@@ -14,6 +14,7 @@ import { sendLink } from '@/services/share';
 import { useClipRecorder } from '@/services/recorder';
 import { AUDIO_MAX_MS, exchangeLink, listCommunityRows, ratePeer, REACTIONS, submitMine, type CommunityRow, type Reaction } from '@/services/community';
 import * as haptics from '@/services/haptics';
+import { alvoDoTour } from '@/services/tour';
 
 /** Toca um áudio guardado (data URI) no navegador. */
 function playDataUri(uri: string) {
@@ -49,7 +50,7 @@ export default function CommunityScreen() {
     <Screen background={<FieldNotebookBackground variant="pergaminho" />}>
       <Text className="pt-3 text-2xl font-extrabold text-slate-900 dark:text-white">👥 Comunidade</Text>
 
-      <View className="mt-4 flex-row items-end gap-2">
+      <View ref={alvoDoTour('comunidade')} className="mt-4 flex-row items-end gap-2">
         <Linu mood="falando" size={64} />
         <SpeechBubble className="mb-5">
           Troca de feedback entre alunos: você avalia colegas com 3 emojis e uma sugestão gentil, e pede avaliação mandando um link para quem quiser. Sem servidor: o envio vai dentro do link.

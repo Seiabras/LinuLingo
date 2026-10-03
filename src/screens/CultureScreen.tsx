@@ -21,6 +21,7 @@ import { LanguageTypesTab } from '@/components/LanguageTypesTab';
 import { FieldNotebookBackground } from '@/components/FieldNotebookBackground';
 import type { LanguagePack } from '@/data/types';
 import { nomeIdioma } from '@/services/idioma-nome';
+import { alvoDoTour } from '@/services/tour';
 
 const TABS = [
   { id: 'cultura', label: '🏛️ Cultura', info: 'A cultura de quem fala o idioma que você estuda: a família da língua, o mapa, as variantes e os sotaques, os bichos, os sons, a comida, o folclore, as danças, as plantas e as brincadeiras de cada país e os cards de cada unidade.' },
@@ -60,7 +61,7 @@ export default function CultureScreen() {
           </View>
         }
       />
-      <View className="mt-3 flex-row flex-wrap gap-1 rounded-2xl bg-slate-100 p-1 dark:bg-slate-800" accessibilityRole="tablist">
+      <View ref={alvoDoTour('cultura-abas')} className="mt-3 flex-row flex-wrap gap-1 rounded-2xl bg-slate-100 p-1 dark:bg-slate-800" accessibilityRole="tablist">
         {TABS.map((t) => {
           const on = t.id === tab;
           return (
@@ -140,12 +141,12 @@ function CultureTab({ onOwnLanguages }: { onOwnLanguages: () => void }) {
       </Pressable>
 
       {((pack.variants?.length ?? 0) > 1 || (pack.accents ?? []).some((a) => a.kind !== 'língua')) && (
-        <>
+        <View ref={alvoDoTour('cultura-variedades')}>
           <Text className="mb-2 mt-6 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">
             🌍 {varietyTitle(pack)}
           </Text>
           <VarietyPicker onOwnLanguages={onOwnLanguages} />
-        </>
+        </View>
       )}
 
       <Text className="mb-2 mt-6 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">🌍 Cada país: bichos, sons, comida, folclore…</Text>

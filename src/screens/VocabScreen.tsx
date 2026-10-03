@@ -16,6 +16,7 @@ import type { Cognate, VocabWithSRS } from '@/types';
 import { useIsDark } from '@/services/theme';
 import { hasNativeClip } from '@/services/speech';
 import { nomeIdioma } from '@/services/idioma-nome';
+import { alvoDoTour } from '@/services/tour';
 
 type Tab = 'frequencia' | 'categorias' | 'etimologia';
 type Ety = Awaited<ReturnType<typeof listEtymology>>[number];
@@ -67,7 +68,7 @@ export default function VocabScreen() {
   const header = (
     <View className="gap-3 pb-3">
       <Text className="pt-3 text-2xl font-extrabold text-slate-900 dark:text-white">⚡ Cofre de Vocabulário</Text>
-      <Card className="gap-2">
+      <Card ref={alvoDoTour('cofre')} className="gap-2">
         <Text className="font-semibold text-slate-700 dark:text-slate-200">
           Palavras aprendidas: <Text className="font-extrabold text-conecta">{stats.learned}</Text> / {VOCAB_TARGET_TOTAL.toLocaleString('pt-BR')}{' '}
           <Text className="text-slate-500">(nível {cefrFromMastered(stats.mastered)})</Text>
@@ -85,7 +86,7 @@ export default function VocabScreen() {
         />
       </Card>
 
-      <View className="flex-row rounded-2xl bg-slate-200 p-1 dark:bg-slate-800">
+      <View ref={alvoDoTour('cofre-abas')} className="flex-row rounded-2xl bg-slate-200 p-1 dark:bg-slate-800">
         {(
           [
             ['frequencia', 'Frequência'],

@@ -141,9 +141,11 @@ await page.goto(BASE + '/tutorial', { waitUntil: 'load' });
 await expectText('que idioma você quer aprender comigo?');
 await click('Próximo');
 await expectText('Halló! Vamos de');
-for (let i = 0; i < 3; i++) {
+// o passeio guiado: avança os balões até o dos falsos amigos (na trilha, apontando o cartão do treino)
+await click('Me mostra o app!');
+for (let i = 0; i < 20 && !(await page.getByText('Cuidado com os falsos amigos').first().isVisible().catch(() => false)); i++) {
   await click('Próximo');
-  await page.waitForTimeout(400);
+  await page.waitForTimeout(600);
 }
 await expectText('Cuidado com os falsos amigos');
 await shot('tutorial-falsos-amigos');

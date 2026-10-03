@@ -12,6 +12,7 @@ import { SUBLEVELS } from '@/types';
 import { AREAS } from '@/data/linguistica';
 import { LESSONS } from '@/data/linguistica-aulas';
 import { nomeIdioma } from '@/services/idioma-nome';
+import { alvoDoTour } from '@/services/tour';
 
 /** Aba Gramática: tópicos por subnível (A1.1 … C2), com busca. */
 export default function GrammarScreen() {
@@ -43,7 +44,7 @@ export default function GrammarScreen() {
         </View>
       </FieldGuideCard>
 
-      <View className="mb-3 flex-row rounded-2xl bg-slate-200 p-1 dark:bg-slate-800">
+      <View ref={alvoDoTour('gramatica-modos')} className="mb-3 flex-row rounded-2xl bg-slate-200 p-1 dark:bg-slate-800">
         {(
           [
             ['nivel', 'Por nível'],

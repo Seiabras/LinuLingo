@@ -15,6 +15,7 @@ import { groupByLineage, isArtificial, isAvailable, LANGUAGES, PACKS } from '@/d
 import type { LanguageInfo } from '@/data/types';
 import type { ThemePref } from '@/services/theme';
 import type { TextScale } from '@/services/accessibility';
+import { alvoDoTour } from '@/services/tour';
 
 const WEEKDAY = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'];
 const GOALS = [10, 20, 30, 50];
@@ -205,7 +206,7 @@ export default function ProfileScreen() {
       </Card>
 
       <SectionTitle>Meta diária</SectionTitle>
-      <View className="flex-row gap-2">
+      <View ref={alvoDoTour('perfil-meta')} className="flex-row gap-2">
         {GOALS.map((g) => (
           <Pressable
             key={g}
@@ -309,11 +310,11 @@ export default function ProfileScreen() {
       )}
 
       {Platform.OS === 'web' && (
-        <View className="mt-6">
+        <View ref={alvoDoTour('perfil-app')} className="mt-6">
           <OfflineCard />
         </View>
       )}
-      <View className="mt-4">
+      <View ref={alvoDoTour('perfil-loja')} className="mt-4">
         <OutfitsCard />
       </View>
       <View className="mt-4">
@@ -385,7 +386,7 @@ export default function ProfileScreen() {
       </View>
 
       <SectionTitle>Ajuda</SectionTitle>
-      <View className="gap-2">
+      <View ref={alvoDoTour('perfil-ajuda')} className="gap-2">
         <Button title="🗺️ Mapa: onde se fala" variant="ghost" onPress={() => router.push('/mapa')} />
         <Button title="🔊 Voz e microfone" variant="ghost" onPress={() => router.push('/voz')} />
         <Button title="🐧 Ver o tutorial do Linu" variant="ghost" onPress={() => router.push('/tutorial')} />
