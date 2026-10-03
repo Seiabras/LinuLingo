@@ -2,11 +2,10 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { memoryDb } from '@/database/banco-teste';
 import { initDatabase } from '@/database/db';
-import { completeLesson, skipLessons } from '@/database/queries';
+import { completeLesson, getMeta, skipLessons } from '@/database/queries';
 import { ROMENO } from '@/data/ro';
 import { jumpLessons } from './curriculum';
 import { cachecolDoProgresso, CORES_CACHECOL, fraseDoCachecol, loadCachecol, NIVEIS_CEFR, proximoCachecol, setUsarCachecol, USAR_CACHECOL_KEY } from './cachecol';
-import { getMeta } from '@/database/queries';
 
 const prova = (level: string) => ROMENO.units.find((u) => u.level === level)!.lessons.find((l) => l.kind === 'prova')!.id;
 const licao = (level: string) => ROMENO.units.find((u) => u.level === level)!.lessons.find((l) => l.kind === 'licao')!.id;
