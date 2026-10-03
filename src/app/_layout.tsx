@@ -54,6 +54,7 @@ export default function RootLayout() {
               <Stack screenOptions={{ headerShown: false }}>
                 <Stack.Screen name="(tabs)" />
                 <Stack.Screen name="licao/[id]" options={{ presentation: 'fullScreenModal', gestureEnabled: false }} />
+                <Stack.Screen name="travessia/[id]" options={{ presentation: 'fullScreenModal', gestureEnabled: false }} />
                 <Stack.Screen name="sprint" options={{ presentation: 'fullScreenModal' }} />
                 <Stack.Screen name="revisao" options={{ presentation: 'fullScreenModal' }} />
                 <Stack.Screen name="troca" />

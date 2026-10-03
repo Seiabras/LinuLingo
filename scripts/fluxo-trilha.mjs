@@ -1,4 +1,4 @@
-// Teste de ponta a ponta da trilha em subníveis e do teste para pular.
+// Teste de ponta a ponta do mapa da aventura (as 15 paradas da trilha) e do teste para pular.
 // Uso: npx tsx scripts/fluxo-trilha.mjs   (servidor em http://localhost:8081; tsx para ler o currículo)
 import { chromium } from 'playwright-core';
 import { existsSync, mkdirSync, readdirSync } from 'node:fs';
@@ -26,23 +26,29 @@ const shot = async (name) => {
 const click = (text) => page.getByText(text, { exact: true }).first().click();
 
 await page.goto(BASE + '/', { waitUntil: 'load', timeout: 180000 });
-await page.getByText('Pular', { exact: true }).or(page.getByText('Oi, tudo bem?', { exact: true })).first().waitFor({ timeout: 120000 });
+await page.getByText('Pular', { exact: true }).or(page.getByLabel(/^Parada A1\.1:/)).first().waitFor({ timeout: 120000 });
 await page.waitForTimeout(800);
 if (await page.getByText('Pular', { exact: true }).isVisible().catch(() => false)) {
   await click('Pular');
   await page.waitForTimeout(1500);
 }
 
-// faixa com todos os subníveis
+// o mapa com todas as paradas (uma por subnível), o Linu na primeira
 const levels = ROMENO.units.map((u) => u.level);
-for (const l of levels) if (!(await page.getByLabel(new RegExp(`^Subnível ${l.replace('.', '\\.')}:`)).count())) throw new Error(`faixa sem ${l}`);
+const parada = (l) => page.getByLabel(new RegExp(`^Parada ${l.replace('.', '\\.')}:`));
+for (const l of levels) if (!(await parada(l).count())) throw new Error(`mapa sem a parada ${l}`);
+if (!(await page.getByLabel(/^Parada A1\.1:.*Você está aqui/).count())) throw new Error('o Linu não está na primeira parada');
 await shot('inicio');
 
-// teste para pular até a 2ª unidade
+// teste para pular até a 2ª unidade: pelo painel da parada
 const target = ROMENO.units[1];
+await parada(target.level).first().click();
+await page.getByText('Diário de campo', { exact: true }).first().waitFor({ timeout: 10000 });
+await shot('parada');
 await page.getByText('⏩ Já sei isto: fazer o teste e pular para cá').first().click();
 await page.getByText(`Teste para pular · ${target.level}`, { exact: false }).first().waitFor({ timeout: 20000 });
-await click('Entendi, vamos praticar!');
+// o card «Aprenda primeiro» só abre a primeira lição da unidade; o teste (a prova) começa direto na imersão
+if (await page.getByText('Entendi, vamos praticar!', { exact: true }).isVisible().catch(() => false)) await click('Entendi, vamos praticar!');
 await page.waitForTimeout(800);
 for (let i = 0; i < 6; i++) {
   const card = page.getByLabel(/^Ouvir: /).first();
@@ -84,8 +90,8 @@ await shot('pulou');
 await page.goto(BASE + '/', { waitUntil: 'load' });
 await page.waitForTimeout(2500);
 const next = ROMENO.units[2];
-await page.getByText(next.lessons[0].title, { exact: true }).first().waitFor({ timeout: 20000 });
-if (!(await page.getByLabel(new RegExp(`^Subnível ${target.level.replace('.', '\\.')}:.*Concluído`)).count())) throw new Error('a unidade pulada não ficou concluída');
+await page.getByLabel(new RegExp(`^Parada ${next.level.replace('.', '\\.')}:.*Você está aqui`)).first().waitFor({ timeout: 20000 });
+if (!(await page.getByLabel(new RegExp(`^Parada ${target.level.replace('.', '\\.')}:.*Concluída`)).count())) throw new Error('a unidade pulada não ficou concluída');
 await shot('depois');
 
 console.log(errors.length ? `⚠️  erros:\n   ${[...new Set(errors)].join('\n   ')}` : '✅ sem erros no console');

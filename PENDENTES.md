@@ -282,6 +282,33 @@ Só anotar, não implementar ainda. Era uma lista numerada 1-6; os itens 3 e 4 c
     tracejada cor de aurora, âncoras ⚓ nos subníveis não alcançados, halo tipo GPS no atual); entre
     uma unidade e a próxima, um cartão fixo de "🌊 Travessia oceânica" com a Jubi (baleia-jubarte)
     marcando a transição.
+  - **Trilha virou mapa de aventura (02/10/2026, 2ª camada, pedido do usuário)**: a faixa de
+    subníveis e os cartões de unidade da Home deram lugar a um mapa ilustrado vertical
+    (`src/components/AdventureMap.tsx`) que se lê de baixo para cima: o Linu sai da colônia dele na
+    Ilha Meia-Lua, desce a Península Antártica (6 paradas de verdade, fatos em
+    `src/data/aventura.ts`), cruza o Drake e a Convergência Antártica e **desembarca no país do
+    idioma** (7 paradas: cidades das expedições quando o idioma tem, senão os temas das unidades;
+    país pelo mapa de "Onde se fala" ou pela bandeira do pacote — `src/services/aventura.ts`), com o
+    contorno do país desenhado na terra. Tocar numa parada abre um painel com o amigo do Linu daquele
+    lugar, o "diário de campo", as lições e a travessia.
+  - **Travessias viraram desafio de verdade** (`src/screens/CrossingScreen.tsx`, rota
+    `/travessia/[id]`, lógica em `src/services/travessia.ts`): substituem a prova da unidade — 2
+    mensagens de rádio (só áudio), 2 decisões (o que o Linu responde), 2 lacunas e 1 conversa por
+    voz, gerados do conteúdo da própria unidade (vale para todos os idiomas); 80% para chegar à
+    próxima parada; errou, "o mar ficou bravo" e dá para tentar de novo. O teste para pular continua
+    usando a prova antiga (`/licao/<prova>?pular=1`).
+  - Roteiros Playwright atualizados para o mapa (`fluxo-trilha`, `fluxo-fotos`, `fluxo-licao` e os
+    de cada idioma). **Achado**: a parte de `fluxo-trilha.mjs` que faz o teste para pular (arrastar
+    cartões, lacunas) já estava desatualizada antes do mapa e trava em "Continuar" — falta refazer.
+  - **Próximo: o abrigo customizável** (inspirado no app do irmão do usuário, "Dojo Legacy"): cena
+    pixel art do PixelLab com objetos tocáveis (mural → quadro da expedição, rádio → conversa,
+    caderno → diário, cabideiro → loja/roupas, estante → álbum), selos de pendência, o Linu andando
+    até o objeto, moradias que mudam com as paradas (barraca → refúgio → estação → navio → casa do
+    país). Em `assets/pixel/`: a barraca de dia (PixelLab), as versões de noite com aurora e de sol
+    da meia-noite (geradas por código a partir dela, recolorindo os pixels) e um Linu em pixel art
+    (`linu-pixel.png`, ainda com fundo cinza, sem transparência). Guia do PixelLab foi passado no chat.
+  - Paradas usam emoji como ícone por enquanto; trocar por ilustrações (PixelLab) segue a regra
+    "imagens, não emojis" do AGENTS.md.
   - Sons ambiente (mar, vento, aves) e paisagens específicas por região de destino (fiordes na
     Noruega, vales na Romênia…) **não feitos** — ficam para outra rodada, se quiser.
   - «Desafios de Chefe» virarem «travessias oceânicas» de verdade (um teste interativo na

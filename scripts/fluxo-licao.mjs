@@ -34,13 +34,16 @@ const shot = async (name) => {
 const click = (text) => page.getByText(text, { exact: true }).first().click();
 
 await page.goto(BASE + '/', { waitUntil: 'load', timeout: 180000 });
-// primeira visita: o tutorial abre sozinho — espera ele ou a trilha, o que vier primeiro
-await page.getByText('Pular', { exact: true }).or(page.getByText('Oi, tudo bem?', { exact: true })).first().waitFor({ timeout: 120000 });
+// primeira visita: o tutorial abre sozinho — espera ele ou o mapa da trilha, o que vier primeiro
+await page.getByText('Pular', { exact: true }).or(page.getByLabel(/^Parada A1\.1:/)).first().waitFor({ timeout: 120000 });
 await page.waitForTimeout(800);
 if (await page.getByText('Pular', { exact: true }).isVisible().catch(() => false)) {
   await click('Pular');
   await page.waitForTimeout(1500);
 }
+// a lição fica no painel da primeira parada do mapa
+await page.getByLabel(/^Parada A1\.1:/).first().click();
+await page.waitForTimeout(600);
 await click('Oi, tudo bem?');
 await page.waitForTimeout(1500);
 await shot('etapa1-card');

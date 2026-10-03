@@ -1,12 +1,13 @@
-import { Fragment, useCallback, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { Modal, Pressable, ScrollView, Text, View } from 'react-native';
-import { HScroll } from '@/components/HScroll';
 import { router, useFocusEffect } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Lightbulb, Lock, MessageCircle, Star, Trophy, Check, X } from 'lucide-react-native';
 import { Screen, Card, Button, ProgressBar, SpeechBubble } from '@/components/ui';
 import { Linu } from '@/components/Linu';
 import { LinuAmigo } from '@/components/LinuAmigo';
+import { AdventureMap, type ParadaEstado, type TravessiaEstado } from '@/components/AdventureMap';
+import { FieldGuideCard } from '@/components/FieldGuideCard';
 import { FieldNotebookBackground } from '@/components/FieldNotebookBackground';
 import { StatusHeader } from '@/components/StatusHeader';
 import { CulturalGrammarCard } from '@/components/CulturalGrammarCard';
@@ -24,6 +25,7 @@ import { albumStats, loadAlbum, STICKERS } from '@/services/album';
 import { loadExpedition } from '@/services/expeditions';
 import { EXPEDITION_PLACES, isoWeek, STOPS_PER_EXPEDITION } from '@/data/expedicoes';
 import { nomeIdioma } from '@/services/idioma-nome';
+import { destinoDoIdioma, rotaDaAventura, type Parada } from '@/services/aventura';
 
 export default function HomeScreen() {
   const { db, pack, user, streak, refresh, accent } = useApp();
@@ -90,26 +92,30 @@ export default function HomeScreen() {
   );
 
   const unit = currentUnit(path);
-  const units = pack.units.map((u) => {
-    const items = path.filter((p) => p.unit.id === u.id);
-    return { u, items, total: items.length, doneCount: items.filter((p) => p.state === 'feita').length, reached: items.some((p) => p.state !== 'bloqueada') };
+  const rota = useMemo(() => rotaDaAventura(pack), [pack]);
+  const destino = useMemo(() => destinoDoIdioma(pack.code, pack.flag), [pack]);
+  const [parada, setParada] = useState<number | null>(null);
+  // estado de cada parada (a unidade daquele subnível) e da travessia que sai dela (a prova da unidade)
+  const estados: ParadaEstado[] = rota.map((p) => {
+    if (!p.unit) return 'construcao';
+    const items = path.filter((x) => x.unit.id === p.unit!.id);
+    if (items.length && items.every((x) => x.state === 'feita')) return 'feita';
+    if (unit?.id === p.unit.id) return 'atual';
+    return items.some((x) => x.state !== 'bloqueada') ? 'aberta' : 'bloqueada';
   });
-  // a unidade atual começa aberta; as outras, recolhidas (a trilha tem 15 subníveis)
-  const [open, setOpen] = useState<Set<string>>(new Set());
-  const [closed, setClosed] = useState<Set<string>>(new Set());
-  const toggle = (id: string, show: boolean) => {
-    setOpen((s) => {
-      const n = new Set(s);
-      if (show) n.add(id);
-      else n.delete(id);
-      return n;
-    });
-    setClosed((s) => {
-      const n = new Set(s);
-      if (show) n.delete(id);
-      else n.add(id);
-      return n;
-    });
+  const provaOf = (u: UnitSeed | null) => (u ? path.find((x) => x.unit.id === u.id && x.lesson.kind === 'prova') : undefined);
+  const travessias: TravessiaEstado[] = rota.map((p) => provaOf(p.unit)?.state ?? null);
+  const openCrossing = (i: number) => {
+    const u = rota[i].unit;
+    const st = travessias[i];
+    if (!u || !st) return;
+    if (st === 'bloqueada')
+      setLockedMsg({
+        title: `Travessia: ${rota[i].name} → ${rota[i + 1]?.name ?? 'fim da expedição'}`,
+        text: `Termine as lições de ${rota[i].name} (${u.level}) para atravessar. Ou, se já sabe tudo isso, faça o teste para pular até aqui.`,
+        testRoute: `/licao/${u.lessons.at(-1)!.id}?pular=1`,
+      });
+    else router.push(`/travessia/${u.id}`);
   };
   const goal = user?.daily_goal_xp ?? 30;
   const greeting =
@@ -163,40 +169,21 @@ export default function HomeScreen() {
       <View className="mb-2 mt-5 flex-row items-center gap-3">
         <View className="h-px flex-1 bg-slate-300 dark:bg-slate-700" />
         <Text className="text-xs font-extrabold uppercase tracking-widest text-slate-500 dark:text-slate-400">
-          🧭 {pack.incomplete ? `Rota até o ${pack.incomplete.until}` : 'Rota migratória · 15 subníveis'}
+          🧭 Expedição do Linu · Antártica → {destino?.name ?? nomeIdioma(pack.name)}
         </Text>
         <View className="h-px flex-1 bg-slate-300 dark:bg-slate-700" />
       </View>
-      <View className="relative">
-        <View pointerEvents="none" className="absolute inset-x-4 inset-y-0 -z-10 items-center justify-center">
-          <View className="h-0 w-full border-t-2 border-dashed border-aurora/50 dark:border-aurora/30" />
-        </View>
-        <HScroll label="a trilha" contentContainerStyle={{ gap: 10, paddingVertical: 4, paddingHorizontal: 2 }}>
-          {units.map(({ u, doneCount, total, reached }) => {
-            const done = doneCount === total;
-            const cur = unit?.id === u.id;
-            return (
-              <Pressable
-                key={u.id}
-                accessibilityLabel={`Parada ${u.level}: ${u.title}. ${done ? 'Concluída' : cur ? 'Atual' : reached ? 'Em andamento' : 'Bloqueada'}`}
-                onPress={() =>
-                  reached
-                    ? toggle(u.id, true)
-                    : setLockedMsg({
-                        title: `${u.level} ainda não foi alcançado`,
-                        text: 'Conclua a unidade anterior para desbloquear esta, ou faça o teste de nivelamento para tentar atravessar direto até aqui.',
-                        testRoute: `/licao/${u.lessons.at(-1)!.id}?pular=1`,
-                      })
-                }
-                className={`items-center rounded-full border-2 px-3 py-2 ${cur ? 'border-conecta bg-conecta-light dark:bg-blue-950' : done ? 'border-conquista/40 bg-green-50 dark:bg-green-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
-              >
-                <Text className="text-lg">{done ? '✅' : reached ? u.emoji : '⚓'}</Text>
-                <Text className={`text-xs font-extrabold ${cur ? 'text-conecta' : 'text-slate-600 dark:text-slate-300'}`}>{u.level}</Text>
-              </Pressable>
-            );
-          })}
-        </HScroll>
-      </View>
+      <AdventureMap
+        paradas={rota}
+        estados={estados}
+        travessias={travessias}
+        pais={destino?.iso}
+        onParada={setParada}
+        onTravessia={(i) => openCrossing(i)}
+      />
+      <Text className="mt-2 text-center text-xs text-slate-500 dark:text-slate-400">
+        Toque numa parada para ver as lições · 🌊 é a travessia: o desafio para seguir viagem
+      </Text>
 
       {pack.incomplete && (
         <Card className="mt-3 border border-amber-300 bg-amber-50 dark:border-amber-700 dark:bg-amber-950">
@@ -207,73 +194,6 @@ export default function HomeScreen() {
           )}
         </Card>
       )}
-
-      {units.map(({ u, items, doneCount, reached }, i) => {
-        const isOpen = open.has(u.id) || (unit?.id === u.id && !closed.has(u.id));
-        return (
-          <Fragment key={u.id}>
-            <View className="mt-4">
-              <Card className={reached ? '' : 'opacity-80'}>
-                <Pressable
-                  accessibilityRole="button"
-                  accessibilityState={{ expanded: isOpen }}
-                  accessibilityLabel={`Unidade ${u.level}: ${u.title}`}
-                  onPress={() => toggle(u.id, !isOpen)}
-                  className="flex-row items-center gap-3"
-                >
-                  <Text className="text-3xl">{u.emoji}</Text>
-                  <View className="flex-1">
-                    <Text className="text-xs font-extrabold uppercase tracking-widest text-conecta">
-                      {u.level} · {CEFR_NAME[u.cefr]}
-                    </Text>
-                    <Text className="text-lg font-extrabold text-slate-900 dark:text-white">{u.title}</Text>
-                    <Text className="text-xs text-slate-500 dark:text-slate-400">
-                      {doneCount}/{items.length} concluídas
-                    </Text>
-                  </View>
-                  <Text className="text-lg text-slate-400">{isOpen ? '▾' : '▸'}</Text>
-                </Pressable>
-                <ProgressBar value={items.length ? doneCount / items.length : 0} className="mt-3" />
-
-                {isOpen && (
-                  <View className="ml-5 mt-4 border-l-2 border-dashed border-aurora/40 pl-0 dark:border-aurora/30">
-                    <PathNode
-                      kind="teoria"
-                      title="Dica de cultura e regra gramatical"
-                      state={reached ? 'feita' : 'bloqueada'}
-                      onPress={() => reached && setCard(u.card)}
-                    />
-                    {items.map((p) => (
-                      <PathNode
-                        key={p.lesson.id}
-                        kind={p.lesson.kind}
-                        title={p.lesson.title}
-                        state={p.state}
-                        score={p.score}
-                        onPress={() =>
-                          p.state !== 'bloqueada'
-                            ? router.push(`/licao/${p.lesson.id}`)
-                            : setLockedMsg({ title: p.lesson.title, text: 'Conclua as lições anteriores desta unidade, em ordem, para desbloquear esta.' })
-                        }
-                      />
-                    ))}
-                  </View>
-                )}
-                {!reached && (
-                  <Pressable
-                    accessibilityRole="button"
-                    onPress={() => router.push(`/licao/${u.lessons.at(-1)!.id}?pular=1`)}
-                    className="mt-3 flex-row items-center justify-center gap-2 rounded-xl border-2 border-dashed border-conecta/50 py-2 active:opacity-70"
-                  >
-                    <Text className="font-bold text-conecta">⏩ Já sei isto: fazer o teste e pular para cá</Text>
-                  </Pressable>
-                )}
-              </Card>
-            </View>
-            {i < units.length - 1 && <OceanCrossing from={u} to={units[i + 1].u} reached={units[i + 1].reached} index={i} />}
-          </Fragment>
-        );
-      })}
 
       <Pressable accessibilityRole="button" onPress={() => router.push('/sprint')} className="mt-7 overflow-hidden rounded-3xl bg-fogo p-5 active:opacity-90">
         <Text className="text-xs font-extrabold uppercase tracking-widest text-orange-100">⚡ Sprint de 5 minutos</Text>
@@ -317,6 +237,33 @@ export default function HomeScreen() {
         </Text>
       </Pressable>
 
+      <StopSheet
+        parada={parada === null ? null : rota[parada]}
+        proxima={parada === null ? null : (rota[parada + 1] ?? null)}
+        estado={parada === null ? null : estados[parada]}
+        travessia={parada === null ? null : travessias[parada]}
+        items={parada === null ? [] : path.filter((x) => x.unit.id === rota[parada].unit?.id && x.lesson.kind !== 'prova')}
+        incompleteNote={pack.incomplete ? `O curso de ${nomeIdioma(pack.name)} ainda vai só até o ${pack.incomplete.until}. Esta parada chega quando o conteúdo ficar pronto.` : null}
+        onClose={() => setParada(null)}
+        onCard={(c) => {
+          setParada(null);
+          setCard(c);
+        }}
+        onLesson={(p) => {
+          setParada(null);
+          if (p.state !== 'bloqueada') router.push(`/licao/${p.lesson.id}`);
+          else setLockedMsg({ title: p.lesson.title, text: 'Conclua as lições anteriores desta parada, em ordem, para desbloquear esta.' });
+        }}
+        onCrossing={() => {
+          const i = parada!;
+          setParada(null);
+          openCrossing(i);
+        }}
+        onSkipTest={(u) => {
+          setParada(null);
+          router.push(`/licao/${u.lessons.at(-1)!.id}?pular=1`);
+        }}
+      />
       <CardModal card={card} locale={pack.speechLocale} onClose={() => setCard(null)} />
       <LockedMsgModal msg={lockedMsg} onClose={() => setLockedMsg(null)} />
     </Screen>
@@ -408,44 +355,6 @@ function PathNode({
   );
 }
 
-/**
- * A travessia oceânica entre um subnível e o próximo: a Jubi (baleia-jubarte, a amiga das travessias
- * oceânicas da trilha) marca a fronteira, em vez de um divisor genérico. Fica entre os cartões de
- * unidade, sempre visível (não depende de a unidade estar aberta).
- */
-// a Jubi só comemora a travessia depois de feita (o subnível seguinte já abriu); antes disso, fala no
-// futuro. A frase varia com a posição na trilha, para as 14 travessias não repetirem a mesma fala.
-const CROSSING_DONE: ((from: UnitSeed, to: UnitSeed) => string)[] = [
-  (f, t) => `${f.level} fica para trás! Vem nadando comigo até o ${t.level}: ‘${t.title}’.`,
-  (f, t) => `Travessia feita! Do ${f.level} ao ${t.level} foi um mergulho só. Agora: ‘${t.title}’.`,
-  (f, t) => `Que nado! O ${f.level} ficou na esteira; à frente, o ${t.level}: ‘${t.title}’.`,
-  (f, t) => `Mais um oceano cruzado: bem-vindo ao ${t.level}: ‘${t.title}’.`,
-];
-const CROSSING_AHEAD: ((from: UnitSeed, to: UnitSeed) => string)[] = [
-  (f, t) => `Quando você fechar o ${f.level}, eu te levo nadando até o ${t.level}: ‘${t.title}’.`,
-  (f, t) => `Termine o ${f.level} e a gente cruza junto até o ${t.level}: ‘${t.title}’.`,
-  (f, t) => `Daqui a pouco tem travessia: depois do ${f.level}, vem o ${t.level}: ‘${t.title}’.`,
-  (f, t) => `Estou esperando na beira do ${f.level}. Do outro lado: ${t.level}, ‘${t.title}’.`,
-];
-
-function OceanCrossing({ from, to, reached, index }: { from: UnitSeed; to: UnitSeed; reached: boolean; index: number }) {
-  const lines = reached ? CROSSING_DONE : CROSSING_AHEAD;
-  const line = lines[index % lines.length](from, to);
-  return (
-    <View
-      className={`my-4 flex-row items-center gap-3 rounded-2xl border-2 border-dashed border-aurora/50 bg-gelo px-3 py-2.5 dark:border-aurora/30 dark:bg-gelo-dark ${reached ? '' : 'opacity-70'}`}
-    >
-      <LinuAmigo id="jubarte" size={52} />
-      <View className="flex-1 gap-0.5">
-        <Text className="text-[10px] font-extrabold uppercase tracking-widest text-aurora-dark dark:text-aurora">🌊 Travessia oceânica · Jubi</Text>
-        <Text className="text-sm leading-5 text-slate-700 dark:text-slate-200">
-          “{line}”
-        </Text>
-      </View>
-    </View>
-  );
-}
-
 function LockedMsgModal({ msg, onClose }: { msg: { title: string; text: string; testRoute?: string } | null; onClose: () => void }) {
   const dark = useIsDark();
   return (
@@ -491,6 +400,140 @@ function CardModal({ card, locale, onClose }: { card: CultureCardSeed | null; lo
           <Button title="Entendi!" variant="success" onPress={onClose} className="mb-4" />
         </View>
       </SafeAreaView>
+    </Modal>
+  );
+}
+
+const ESTADO_TEXTO: Record<ParadaEstado, string> = {
+  feita: '✓ Parada concluída',
+  atual: '📍 Você está aqui',
+  aberta: 'Em andamento',
+  bloqueada: '⚓ Ainda não alcançada',
+  construcao: '🚧 Em construção',
+};
+
+/** O painel de uma parada: o lugar, quem o Linu encontra lá, as lições e a travessia para a próxima. */
+function StopSheet({
+  parada,
+  proxima,
+  estado,
+  travessia,
+  items,
+  incompleteNote,
+  onClose,
+  onCard,
+  onLesson,
+  onCrossing,
+  onSkipTest,
+}: {
+  parada: Parada | null;
+  proxima: Parada | null;
+  estado: ParadaEstado | null;
+  travessia: TravessiaEstado;
+  items: PathLesson[];
+  incompleteNote: string | null;
+  onClose: () => void;
+  onCard: (c: CultureCardSeed) => void;
+  onLesson: (p: PathLesson) => void;
+  onCrossing: () => void;
+  onSkipTest: (u: UnitSeed) => void;
+}) {
+  const dark = useIsDark();
+  const u = parada?.unit ?? null;
+  const reached = estado === 'feita' || estado === 'atual' || estado === 'aberta';
+  const done = items.filter((p) => p.state === 'feita').length;
+  return (
+    <Modal visible={!!parada} animationType="slide" onRequestClose={onClose} transparent>
+      {/* o fundo escuro fecha o painel; fica ao lado do painel (não em volta), para não haver botão dentro de botão */}
+      <View className="flex-1 justify-end">
+        <Pressable accessibilityRole="button" accessibilityLabel="Fechar" onPress={onClose} className="absolute inset-0 bg-black/50" />
+        <View className="max-h-[88%] w-full max-w-2xl self-center rounded-t-3xl bg-suave dark:bg-grafite">
+          {parada && (
+            <ScrollView contentContainerStyle={{ padding: 20, gap: 14 }}>
+              <View className="flex-row items-start gap-3">
+                <Text className="text-4xl">{estado === 'construcao' ? '🚧' : parada.emoji}</Text>
+                <View className="flex-1">
+                  <Text className="text-xs font-extrabold uppercase tracking-widest text-aurora-dark dark:text-aurora">
+                    {parada.level} · {parada.region}
+                  </Text>
+                  <Text className="text-2xl font-extrabold text-slate-900 dark:text-white">{parada.name}</Text>
+                  <Text className="text-xs font-bold text-slate-500 dark:text-slate-400">{estado ? ESTADO_TEXTO[estado] : ''}</Text>
+                </View>
+                <Pressable accessibilityRole="button" accessibilityLabel="Fechar" onPress={onClose} hitSlop={10}>
+                  <X size={24} color={dark ? '#94A3B8' : '#64748B'} />
+                </Pressable>
+              </View>
+
+              <View className="flex-row items-end gap-3">
+                {parada.amigo ? <LinuAmigo id={parada.amigo} size={64} /> : <Linu size={64} mood="feliz" />}
+                <SpeechBubble className="mb-4 flex-1">{parada.fala}</SpeechBubble>
+              </View>
+              {parada.fact && (
+                <FieldGuideCard label="Diário de campo">
+                  <Text className="text-sm leading-6 text-slate-700 dark:text-slate-200">{parada.fact}</Text>
+                </FieldGuideCard>
+              )}
+
+              {!u ? (
+                <Card className="border border-amber-300 bg-amber-50 dark:border-amber-700 dark:bg-amber-950">
+                  <Text className="text-sm text-amber-900 dark:text-amber-200">{incompleteNote ?? 'Esta parada ainda está em construção.'}</Text>
+                </Card>
+              ) : (
+                <Card>
+                  <Text className="text-xs font-extrabold uppercase tracking-widest text-conecta">
+                    {u.level} · {CEFR_NAME[u.cefr]}
+                  </Text>
+                  <Text className="text-lg font-extrabold text-slate-900 dark:text-white">
+                    {u.emoji} {u.title}
+                  </Text>
+                  <Text className="text-xs text-slate-500 dark:text-slate-400">
+                    {done}/{items.length} lições concluídas
+                  </Text>
+                  <ProgressBar value={items.length ? done / items.length : 0} className="mt-3" />
+                  <View className="ml-5 mt-4 border-l-2 border-dashed border-aurora/40 dark:border-aurora/30">
+                    <PathNode kind="teoria" title="Dica de cultura e regra gramatical" state={reached ? 'feita' : 'bloqueada'} onPress={() => reached && onCard(u.card)} />
+                    {items.map((p) => (
+                      <PathNode key={p.lesson.id} kind={p.lesson.kind} title={p.lesson.title} state={p.state} score={p.score} onPress={() => onLesson(p)} />
+                    ))}
+                  </View>
+                  {travessia && (
+                    <Pressable
+                      accessibilityRole="button"
+                      onPress={onCrossing}
+                      className={`mt-4 flex-row items-center gap-3 rounded-2xl border-2 p-3 active:opacity-80 ${
+                        travessia === 'atual' ? 'border-fogo bg-orange-50 dark:bg-orange-950' : travessia === 'feita' ? 'border-conquista/50 bg-green-50 dark:bg-green-950' : 'border-dashed border-slate-300 dark:border-slate-600'
+                      }`}
+                    >
+                      <Text className="text-3xl">{travessia === 'feita' ? '✅' : '🌊'}</Text>
+                      <View className="flex-1">
+                        <Text className="font-extrabold text-slate-900 dark:text-white">
+                          Travessia{proxima ? ` até ${proxima.name}` : ' final'}
+                        </Text>
+                        <Text className="text-xs text-slate-600 dark:text-slate-300">
+                          {travessia === 'feita'
+                            ? 'Feita! Toque para atravessar de novo e treinar.'
+                            : travessia === 'atual'
+                              ? 'Rádio, decisões e conversa: 80% de acertos para seguir viagem.'
+                              : 'Termine as lições desta parada para atravessar.'}
+                        </Text>
+                      </View>
+                    </Pressable>
+                  )}
+                  {!reached && (
+                    <Pressable
+                      accessibilityRole="button"
+                      onPress={() => onSkipTest(u)}
+                      className="mt-3 flex-row items-center justify-center gap-2 rounded-xl border-2 border-dashed border-conecta/50 py-2 active:opacity-70"
+                    >
+                      <Text className="font-bold text-conecta">⏩ Já sei isto: fazer o teste e pular para cá</Text>
+                    </Pressable>
+                  )}
+                </Card>
+              )}
+            </ScrollView>
+          )}
+        </View>
+      </View>
     </Modal>
   );
 }

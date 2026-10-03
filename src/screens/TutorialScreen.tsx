@@ -44,7 +44,7 @@ export default function TutorialScreen() {
       extra: 'idioma',
     },
     { mood: 'feliz', title: `${pack.phrases.hi} Vamos de ${nomeIdioma(pack.name)}!`, text: `Vou te acompanhar no ${nomeIdioma(pack.name)}. Em 1 minuto te mostro como tudo funciona!` },
-    { mood: 'falando', title: 'A trilha', text: 'A trilha vai do A1.1 ao C2 em 15 subníveis, na faixa do topo. As lições liberam uma por vez; se você já sabe um nível, toque em “Já sei isto” numa unidade bloqueada e faça o teste: com 80% você pula para lá. Cada unidade tem quatro tipos de parada:', extra: 'trilha' },
+    { mood: 'falando', title: 'A trilha é uma expedição', text: `A trilha é um mapa: eu saio da minha colônia, na Antártica, atravesso o mar e desembarco onde se fala ${nomeIdioma(pack.name)}. São 15 paradas, do A1.1 ao C2. Toque numa parada para ver as lições, que liberam uma por vez. Entre uma parada e a próxima fica a travessia 🌊: com 80% de acertos, a gente segue viagem. Já sabe um nível? Abra a parada e toque em “Já sei isto” para fazer o teste. Em cada parada há quatro tipos de passo:`, extra: 'trilha' },
     { mood: 'pensando', title: 'Uma lição, 5 etapas', text: 'Primeiro você entende, depois pratica. Nada de decorar sem saber o porquê. A dica de cultura e regra só vem na primeira lição de cada unidade (dá para rever a qualquer hora, pela trilha):', extra: 'etapas' },
     // idiomas de outro alfabeto (russo): teclado próprio e sílaba tônica marcada
     ...(pack.keyboardRows && pack.code === 'ru'
@@ -280,7 +280,7 @@ function TrailLegend() {
       <Row icon={<Lightbulb size={17} color="#fff" />} bg="bg-amber-400" title="Teoria:" text="história, cultura e o porquê da gramática." />
       <Row icon={<Star size={17} color="#fff" fill="#fff" />} bg="bg-conquista" title="Lição:" text="palavras novas e prática." />
       <Row icon={<MessageCircle size={17} color="#fff" />} bg="bg-conecta" title="Fala:" text="desafio de voz comigo." />
-      <Row icon={<Trophy size={17} color="#fff" />} bg="bg-fogo" title="Prova:" text="junta a unidade toda e vale XP em dobro." />
+      <Row icon={<Trophy size={17} color="#fff" />} bg="bg-fogo" title="Travessia 🌊:" text="rádio, decisões e voz com a unidade toda; vale XP em dobro." />
     </View>
   );
 }

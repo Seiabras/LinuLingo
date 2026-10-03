@@ -61,11 +61,14 @@ console.log(`  troca de idioma: ${((Date.now() - tTroca) / 1000).toFixed(1)} s`)
 await page.goto(BASE + '/', { waitUntil: 'load' });
 await skipTutorial();
 const u1 = PACK.units[0];
-await expectText(u1.lessons[0].title);
+await page.getByLabel(/^Parada A1\.1:/).first().waitFor({ timeout: 15000 });
 await expectText('Falsos amigos');
 await shot('trilha');
 
 // primeira lição: card «Aprenda primeiro»
+// a lição fica no painel da primeira parada do mapa
+await page.getByLabel(/^Parada A1\.1:/).first().click();
+await expectText(u1.lessons[0].title);
 await click(u1.lessons[0].title);
 await page.waitForTimeout(1500);
 await expectText(u1.card.title);

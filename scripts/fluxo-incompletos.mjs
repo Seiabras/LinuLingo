@@ -81,8 +81,10 @@ for (const code of codes) {
     await page.goto(BASE + '/', { waitUntil: 'load' });
     await skipTutorial();
     await expectText('idioma em construção');
-    await expectText(pack.units[0].lessons[0].title);
+    await page.getByLabel(/^Parada A1\.1:/).first().waitFor({ timeout: 15000 });
     await shot(code, '2-trilha');
+    await page.getByLabel(/^Parada A1\.1:/).first().click();
+    await expectText(pack.units[0].lessons[0].title);
     await page.getByText(pack.units[0].lessons[0].title, { exact: true }).first().click();
     await page.waitForTimeout(1500);
     await expectText(pack.units[0].card.title);

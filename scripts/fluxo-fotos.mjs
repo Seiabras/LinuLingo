@@ -85,13 +85,13 @@ await page.waitForFunction(() => /\d de 4/.test(document.body.innerText), null, 
 await page.getByLabel('Fechar', { exact: true }).click();
 await page.waitForTimeout(500);
 check(!(await counter()), 'o botão Fechar fechou a foto');
-// a trilha do início também ganhou setas no celular
+// o início mostra o mapa da aventura
 await page.goto(BASE + '/', { waitUntil: 'load' });
 // numa conta nova o tutorial abre por cima do início
 await page.getByText('Pular', { exact: true }).first().click({ timeout: 30000 });
-await page.getByText('Trilha CEFR', { exact: false }).first().waitFor({ timeout: 30000 });
+await page.getByLabel(/^Parada A1\.1:/).first().waitFor({ timeout: 30000 });
 await page.waitForTimeout(800);
-if (device === 'iphone') check((await page.getByLabel('Rolar a trilha para a direita').count()) === 1, 'a trilha do início tem seta para a direita');
+check((await page.getByLabel(/^Parada /).count()) === 15, 'o mapa do início tem as 15 paradas');
 await page.screenshot({ path: `${OUT}/fotos-${device}-${scheme}-6-inicio.png` });
 await page.goto(BASE + '/creditos', { waitUntil: 'load' });
 await page.getByText('Fotos do pinguim-de-barbicha', { exact: false }).first().waitFor({ timeout: 30000 });

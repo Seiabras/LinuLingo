@@ -1,0 +1,92 @@
+import type { LanguagePack, UnitSeed } from '@/data/types';
+import { SUBLEVELS, type SubLevel } from '@/types';
+import { PARADAS_ANTARTICA, PARADAS_TERRA, type Zona } from '@/data/aventura';
+import { EXPEDITION_PLACES } from '@/data/expedicoes';
+import { findMapLanguage, flagOf } from '@/data/onde-se-fala';
+import { WORLD } from '@/data/mapa-mundi';
+
+/** Uma parada da aventura: um subnível da trilha num lugar (Antártica, mar ou o país do idioma). */
+export interface Parada {
+  level: SubLevel;
+  id: string;
+  name: string;
+  region: string;
+  emoji: string;
+  zona: Zona;
+  amigo?: string;
+  fala: string;
+  fact?: string;
+  /** a primeira parada em terra firme */
+  desembarque?: boolean;
+  /** a unidade da trilha deste subnível (null: o idioma ainda não chegou até aqui) */
+  unit: UnitSeed | null;
+}
+
+export interface Destino {
+  /** ISO 3166-1 alfa-3 */
+  iso: string;
+  name: string;
+  flag: string;
+}
+
+/**
+ * O país onde o Linu desembarca: o das cidades das expedições, se o idioma tem; senão o primeiro país
+ * onde a língua é oficial no mapa de “Onde se fala” (ou, sem nenhum oficial, o primeiro da lista); e,
+ * para as línguas que não estão nesse mapa (várias indígenas, o mirandês, o manchu…), o país da
+ * bandeira do próprio pacote (🇧🇷 → Brasil).
+ */
+export function destinoDoIdioma(code: string, flag = ''): Destino | null {
+  const iso = EXPEDITION_PLACES[code]?.[0]?.country ?? pickCountry(code);
+  const c = iso ? WORLD.find((w) => w.iso === iso) : WORLD.find((w) => w.iso2 === iso2OfFlag(flag));
+  return c ? { iso: c.iso, name: c.name, flag: flagOf(c.iso2) } : null;
+}
+
+/** 🇧🇷 → 'BR' (as duas letras de indicador regional da bandeira); '' se não for bandeira de país. */
+export function iso2OfFlag(flag: string): string {
+  const cps = [...flag].map((ch) => ch.codePointAt(0)! - 0x1f1e6);
+  return cps.length === 2 && cps.every((n) => n >= 0 && n < 26) ? String.fromCharCode(65 + cps[0], 65 + cps[1]) : '';
+}
+
+function pickCountry(code: string): string | undefined {
+  const lang = findMapLanguage(code);
+  if (!lang) return undefined;
+  return (lang.countries.find((c) => c.role === 'oficial') ?? lang.countries.find((c) => c.role === 'regional') ?? lang.countries[0])?.iso;
+}
+
+const FALAS_TERRA = [
+  'Que cidade! Repara como as pessoas falam na rua.',
+  'Mais uma cidade nova. Bora conversar com quem mora aqui?',
+  'Olha só onde a gente chegou! Anota tudo no diário.',
+  'Daqui dá pra ouvir a língua em todo canto. Presta atenção nos detalhes.',
+  'Cada cidade tem o seu jeito de falar. Vamos descobrir o desta.',
+  'Quase no fim da viagem! Agora você já entende muito do que ouve.',
+];
+
+/** As 15 paradas da trilha do idioma, de A1.1 (a colônia do Linu) a C2. */
+export function rotaDaAventura(pack: Pick<LanguagePack, 'code' | 'name' | 'flag' | 'units'>): Parada[] {
+  const unitOf = (level: SubLevel) => pack.units.find((u) => u.level === level) ?? null;
+  const destino = destinoDoIdioma(pack.code, pack.flag);
+  const pais = destino?.name ?? `a terra do ${pack.name.toLowerCase()}`;
+  const flag = destino?.flag ?? pack.flag;
+  const cidades = (EXPEDITION_PLACES[pack.code] ?? []).slice(0, PARADAS_TERRA);
+  const paradas: Parada[] = PARADAS_ANTARTICA.map((p, i) => ({ ...p, level: SUBLEVELS[i], unit: unitOf(SUBLEVELS[i]) }));
+  for (let k = 0; k < PARADAS_TERRA; k++) {
+    const level = SUBLEVELS[PARADAS_ANTARTICA.length + k];
+    const unit = unitOf(level);
+    const cidade = cidades[k];
+    const regiao = cidade ? (WORLD.find((w) => w.iso === cidade.country)?.name ?? pais) : pais;
+    paradas.push({
+      level,
+      id: `terra-${k + 1}`,
+      name: cidade ? cidade.cityPt : k === 0 ? pais : (unit?.title ?? `${pais}, parada ${k + 1}`),
+      region: k === 0 ? `${flag} Desembarque` : `${flag} ${regiao}`,
+      emoji: k === 0 ? '⚓' : cidade ? '🏙️' : (unit?.emoji ?? '📍'),
+      zona: 'terra',
+      fala: k === 0 ? `Terra à vista! Depois de tanto gelo e tanto mar, chegamos: ${pais}.` : FALAS_TERRA[(k - 1) % FALAS_TERRA.length],
+      ...(cidade ? { fact: cidade.fact } : {}),
+      ...(k === 0 ? { desembarque: true } : {}),
+      unit,
+    });
+  }
+  return paradas;
+}

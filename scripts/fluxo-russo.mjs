@@ -32,7 +32,7 @@ const expectText = async (t) => {
 };
 
 await page.goto(BASE + '/', { waitUntil: 'load', timeout: 180000 });
-await page.getByText('Pular', { exact: true }).or(page.getByText('Oi, tudo bem?', { exact: true })).first().waitFor({ timeout: 120000 });
+await page.getByText('Pular', { exact: true }).or(page.getByLabel(/^Parada A1\.1:/)).first().waitFor({ timeout: 120000 });
 await page.waitForTimeout(800);
 if (await page.getByText('Pular', { exact: true }).isVisible().catch(() => false)) {
   await click('Pular');
@@ -58,10 +58,15 @@ if (await page.getByText('Pular', { exact: true }).isVisible().catch(() => false
 }
 const u1 = RUSSO.units[0];
 await expectText('Russo');
-await expectText(u1.lessons[0].title);
+await page.getByLabel(/^Parada A1\.1:/).first().waitFor({ timeout: 15000 });
 await shot('trilha');
 
-// primeira lição: card com o guia do cirílico
+// primeira lição (no painel da primeira parada do mapa): card com o guia do cirílico
+await page.getByLabel(/^Parada A1\.1:/).first().click();
+await page.getByLabel(/^Parada A1\.1:/).first().waitFor({ timeout: 15000 });
+// a lição fica no painel da primeira parada do mapa
+await page.getByLabel(/^Parada A1\.1:/).first().click();
+await expectText(u1.lessons[0].title);
 await click(u1.lessons[0].title);
 await page.waitForTimeout(1500);
 await expectText(u1.card.title);

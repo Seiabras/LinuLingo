@@ -26,7 +26,7 @@ const shot = async (name) => {
 const expectText = (t) => page.getByText(t, { exact: false }).first().waitFor({ timeout: 15000 });
 
 await page.goto(BASE + '/', { waitUntil: 'load', timeout: 180000 });
-await page.getByText('Pular', { exact: true }).or(page.getByText('Oi, tudo bem?', { exact: true })).first().waitFor({ timeout: 120000 });
+await page.getByText('Pular', { exact: true }).or(page.getByLabel(/^Parada A1\.1:/)).first().waitFor({ timeout: 120000 });
 if (await page.getByText('Pular', { exact: true }).isVisible().catch(() => false)) await page.getByText('Pular', { exact: true }).click();
 
 await page.goto(BASE + '/gramatica', { waitUntil: 'load' });
