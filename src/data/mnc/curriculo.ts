@@ -27,7 +27,7 @@ export const UNITS_MNC: UnitSeed[] = [
         ['ᡴᠠ', 'k: sem marca nenhuma', 'ᠠᠪᡴᠠ (abka, céu)'],
         ['ᡤᠠ', 'g: o mesmo desenho, com um ponto ao lado (marca acrescentada por Dahai em 1632)', 'ᡤᠠᠰᡥᠠ (gasha, pássaro)'],
         ['ᡥᠠ', 'h: o mesmo desenho, com um círculo ao lado; soa como o “rr” carioca', 'ᡥᠣᠨᡳᠨ (honin, ovelha)'],
-        ['ᡡ', 'ū: outra vogal parecida com o u, mais relaxada (como o “oo” do inglês “foot”, segundo o guia do Wikivoyage), escrita com letra própria', 'ᡳᠨᡩᠠᡥᡡᠨ (indahūn, cão)'],
+        ['ᡡ', 'ū: outra vogal parecida com o u, mais relaxada (como o “oo” do inglês “foot”), escrita com letra própria', 'ᡳᠨᡩᠠᡥᡡᠨ (indahūn, cão)'],
       ],
     },
     lessons: [

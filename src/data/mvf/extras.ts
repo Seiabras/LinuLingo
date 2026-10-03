@@ -68,7 +68,7 @@ export const ETYMOLOGY_MVF: EtymologySeed[] = [
     root_word: '*morïn (protomongólico)',
     origin_language: 'Protomongólico',
     cognates: c(['bua', 'морин'], ['xal', 'мөрн']),
-    evolution_note: 'Do mongol médio ᠮᠣᠷᠢᠨ (morin), do protomongólico *morïn, com parentes no buriato (морин) e no calmuco (мөрн). O manchu tem uma palavra parecida, ᠮᠣᡵᡳᠨ (morin), que o Wiktionary só manda comparar: como o mongólico e o tungúsico não têm parentesco comprovado, a semelhança pode ser empréstimo antigo entre vizinhos.',
+    evolution_note: 'Do mongol médio ᠮᠣᠷᠢᠨ (morin), do protomongólico *morïn, com parentes no buriato (морин) e no calmuco (мөрн). O manchu tem uma palavra parecida, ᠮᠣᡵᡳᠨ (morin), mas só parecida: como o mongólico e o tungúsico não têm parentesco comprovado, a semelhança pode ser empréstimo antigo entre vizinhos.',
     transparent: false,
   },
   {
@@ -76,7 +76,7 @@ export const ETYMOLOGY_MVF: EtymologySeed[] = [
     root_word: '*konïn (protomongólico)',
     origin_language: 'Protomongólico',
     cognates: c(['bua', 'хонин'], ['xal', 'хөн']),
-    evolution_note: 'Do protomongólico *konïn, que segundo o Wiktionary veio do proto-túrquico *koń — a mesma raiz do turco “koyun”, ovelha. É um empréstimo por contato entre povos de pastores, não sinal de parentesco entre as famílias.',
+    evolution_note: 'Do protomongólico *konïn, que veio do proto-túrquico *koń — a mesma raiz do turco “koyun”, ovelha. É um empréstimo por contato entre povos de pastores, não sinal de parentesco entre as famílias.',
     transparent: false,
   },
   {
@@ -84,7 +84,7 @@ export const ETYMOLOGY_MVF: EtymologySeed[] = [
     root_word: '*ïmaxan (protomongólico)',
     origin_language: 'Protomongólico',
     cognates: c(['bua', 'ямаан'], ['xal', 'яман']),
-    evolution_note: 'Do protomongólico *ïmaxan, com parentes no buriato e no calmuco. O Wiktionary liga a palavra também ao proto-túrquico *ïmga, por herança ou empréstimo — não se sabe qual.',
+    evolution_note: 'Do protomongólico *ïmaxan, com parentes no buriato e no calmuco. A palavra também é ligada ao proto-túrquico *ïmga, por herança ou empréstimo — não se sabe qual.',
     transparent: false,
   },
   {
@@ -92,7 +92,7 @@ export const ETYMOLOGY_MVF: EtymologySeed[] = [
     root_word: '*ayïrag (protomongólico)',
     origin_language: 'Protomongólico',
     cognates: c(),
-    evolution_note: 'Do protomongólico *ayïrag, que o Wiktionary dá como empréstimo do proto-túrquico *ayran — a origem do “ayran”, a bebida de iogurte do turco. Outro sinal do contato antigo entre mongóis e povos túrquicos nas estepes.',
+    evolution_note: 'Do protomongólico *ayïrag, empréstimo do proto-túrquico *ayran — a origem do “ayran”, a bebida de iogurte do turco. Outro sinal do contato antigo entre mongóis e povos túrquicos nas estepes.',
     transparent: false,
   },
   {

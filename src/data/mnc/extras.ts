@@ -67,7 +67,7 @@ export const ETYMOLOGY_MNC: EtymologySeed[] = [
     root_word: '*murin (prototungúsico)',
     origin_language: 'Prototungúsico',
     cognates: c(['evn', 'мурин'], ['eve', 'мурон']),
-    evolution_note: 'Do jurchen “muri” (a língua dos antepassados dos manchus), do prototungúsico *murin, com parentes no evenki (мурин) e no even (мурон), línguas tungúsicas da Sibéria. O mongol “ᠮᠣᠷᠢ” (mori) se parece, mas o Wiktionary só manda comparar: o tungúsico e o mongólico não têm parentesco comprovado.',
+    evolution_note: 'Do jurchen “muri” (a língua dos antepassados dos manchus), do prototungúsico *murin, com parentes no evenki (мурин) e no even (мурон), línguas tungúsicas da Sibéria. O mongol “ᠮᠣᠷᠢ” (mori) se parece, mas é só semelhança: o tungúsico e o mongólico não têm parentesco comprovado.',
     transparent: false,
   },
   {
@@ -75,7 +75,7 @@ export const ETYMOLOGY_MNC: EtymologySeed[] = [
     root_word: 'xoni (jurchen)',
     origin_language: 'Jurchen',
     cognates: c(['gld', 'хонин']),
-    evolution_note: 'Do jurchen “xoni”, com parente no nanai (хонин). O Wiktionary manda comparar com o protomongólico *konïn (mongol “хонь”), que veio do proto-túrquico: a ovelha passou de língua em língua entre os povos de pastores da Ásia Central.',
+    evolution_note: 'Do jurchen “xoni”, com parente no nanai (хонин). Lembra o protomongólico *konïn (mongol “хонь”), que veio do proto-túrquico: a ovelha passou de língua em língua entre os povos de pastores da Ásia Central.',
     transparent: false,
   },
   {

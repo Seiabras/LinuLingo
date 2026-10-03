@@ -106,7 +106,7 @@ export const GRAMMAR_MNC: GrammarTopic[] = [
     summary: 'Os verbos aparecem no dicionário em -mbi; para perguntar, acrescenta-se -o; para negar, usa-se a forma em -rakū.',
     sections: [
       {
-        text: 'A forma em -mbi é a do presente e a do dicionário: “ᠵᡳᠮᠪᡳ” (jimbi) (vir), “ᠣᠮᡳᠮᠪᡳ” (omimbi) (beber). Para perguntar, a partícula -o cola no verbo: “ᡳ ᡳᠨᡝᠩᡤᡳ ᠵᡳᠮᠪᡳᠣ?” (i inenggi jimbio) (ele vem hoje?). O guia do Wikivoyage traz a mesma partícula em “si … gisureme bahanambio?” (você sabe falar …?) e a negação em -rakū: “bahanarakū” (não sei), “ulhirakū” (não entendo).',
+        text: 'A forma em -mbi é a do presente e a do dicionário: “ᠵᡳᠮᠪᡳ” (jimbi) (vir), “ᠣᠮᡳᠮᠪᡳ” (omimbi) (beber). Para perguntar, a partícula -o cola no verbo: “ᡳ ᡳᠨᡝᠩᡤᡳ ᠵᡳᠮᠪᡳᠣ?” (i inenggi jimbio) (ele vem hoje?). A mesma partícula aparece em “si … gisureme bahanambio?” (você sabe falar …?) e a negação em -rakū: “bahanarakū” (não sei), “ulhirakū” (não entendo).',
         table: {
           head: ['Forma', 'Leitura', 'Português'],
           rows: [

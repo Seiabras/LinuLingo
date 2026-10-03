@@ -96,7 +96,7 @@ export const UNITS_MVF: UnitSeed[] = [
       title: 'A guer e o gado da estepe',
       emoji: '🐴',
       history: 'A pecuária nômade é o centro da vida tradicional mongol, e as palavras do gado estão entre as mais antigas da língua: “ᠮᠣᠷᠢ” (mori), cavalo; “ᠬᠣᠨᠢ” (qoni), ovelha; “ᠢᠮᠠᠭ᠎ᠠ” (imaɣ-a), cabra; “ᠲᠡᠮᠡᠭᠡ” (temege), camelo. A “ᠭᠡᠷ” (ger) é a tenda redonda levada de um pasto a outro, que em português também se chama “iurta”.',
-      culture_tip: 'O “ᠠᠶᠢᠷᠠᠭ” (ayiraɣ) é o leite de égua fermentado, bebida tradicional do verão. O Wiktionary registra que a palavra vem do protomongólico, que por sua vez a tomou emprestada de uma língua turcomana — a mesma origem do “ayran” do turco.',
+      culture_tip: 'O “ᠠᠶᠢᠷᠠᠭ” (ayiraɣ) é o leite de égua fermentado, bebida tradicional do verão. A palavra vem do protomongólico, que por sua vez a tomou emprestada de uma língua turcomana — a mesma origem do “ayran” do turco.',
       grammar_why: 'Os numerais e os adjetivos vêm ANTES do substantivo, e numa frase como “o camelo é grande” o adjetivo vem antes da cópula “ᠪᠠᠢᠨ᠎ᠠ” (bayin-a), que fecha a frase.',
       grammar_examples: [
         ['ᠬᠣᠶᠠᠷ ᠮᠣᠷᠢ᠃', 'Dois cavalos.'],

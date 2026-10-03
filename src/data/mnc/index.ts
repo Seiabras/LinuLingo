@@ -28,7 +28,7 @@ export const MANCHU: LanguagePack = {
   available: true,
   incomplete: {
     until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, 64 palavras, 4 tópicos de gramática e 2 histórias), na escrita manchu, que se lê de cima pra baixo. As palavras vêm da lista Swadesh e dos verbetes do Wiktionary em inglês; as frases, do guia de conversação do Wikivoyage e dos exemplos da Wikipédia. Nenhuma voz sintética fala manchu, então o áudio pode ficar mudo; a romanização aparece embaixo de cada frase, e digitá-la também vale como resposta. No celular (fora do navegador), o texto aparece deitado, porque o aplicativo nativo ainda não sabe escrever na vertical. Da A2.1 até o C2 chega nas próximas atualizações.',
+    note: 'Só o nível A1 por enquanto (unidades 1 e 2, 64 palavras, 4 tópicos de gramática e 2 histórias), na escrita manchu, que se lê de cima pra baixo. As palavras são as do dia a dia mais básico, e as frases, de conversa simples. Nenhuma voz sintética fala manchu, então o áudio pode ficar mudo; a romanização aparece embaixo de cada frase, e digitá-la também vale como resposta. No celular (fora do navegador), o texto aparece deitado, porque o aplicativo nativo ainda não sabe escrever na vertical. Da A2.1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_MNC,
   units: UNITS_MNC,

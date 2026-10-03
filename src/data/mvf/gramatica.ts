@@ -78,7 +78,7 @@ export const GRAMMAR_MVF: GrammarTopic[] = [
     summary: 'A escrita tradicional guarda a ortografia do mongol clássico; a pronúncia mudou desde então, e muitas palavras se escrevem com letras que não se dizem mais.',
     sections: [
       {
-        text: 'O cirílico, adotado no século XX, escreve o mongol como se fala hoje; a escrita tradicional escreve como se falava séculos atrás. A tabela compara a grafia tradicional, a leitura letra por letra e a mesma palavra em cirílico, que mostra a pronúncia de hoje (todas as grafias vêm dos verbetes do Wiktionary).',
+        text: 'O cirílico, adotado no século XX, escreve o mongol como se fala hoje; a escrita tradicional escreve como se falava séculos atrás. A tabela compara a grafia tradicional, a leitura letra por letra e a mesma palavra em cirílico, que mostra a pronúncia de hoje.',
         table: {
           head: ['Escrita', 'Leitura', 'Cirílico (como se diz)', 'Português'],
           rows: [
@@ -118,7 +118,7 @@ export const GRAMMAR_MVF: GrammarTopic[] = [
     summary: 'Pergunta de sim ou não termina em ᠤᠤ (uu); pergunta com quem, o quê, onde termina em ᠪᠤᠢ (bui).',
     sections: [
       {
-        text: 'São as mesmas partículas do mongol em cirílico, onde se escrevem “уу/үү” e “вэ/бэ”. Na escrita tradicional, o Wiktionary dá a mesma grafia, “ᠪᠤᠢ” (bui), para “вэ” e para “бэ”: a escolha entre os dois é só de pronúncia.',
+        text: 'São as mesmas partículas do mongol em cirílico, onde se escrevem “уу/үү” e “вэ/бэ”. Na escrita tradicional, a grafia é a mesma, “ᠪᠤᠢ” (bui), para “вэ” e para “бэ”: a escolha entre os dois é só de pronúncia.',
         table: {
           head: ['Partícula', 'Quando usar', 'Exemplo'],
           rows: [

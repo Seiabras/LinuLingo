@@ -249,16 +249,28 @@ export function PixelShelter({ moradia = MORADIAS[0], selos, onObjeto }: { morad
   const [w, setW] = useState(0);
   const s = w / SCENE_W;
   const [luz, setLuz] = useState<Luz>(luzDaHora);
-  // de frente parado, de lado andando, de costas olhando o objeto (depois volta a ficar de frente)
+  // parado, sempre de frente (com a roupinha); de lado andando; de costas só na olhadinha para o objeto
   const [pose, setPose] = useState<LinuPose>('frente');
   const volta = useRef<ReturnType<typeof setTimeout> | null>(null);
   useEffect(() => () => {
     if (volta.current) clearTimeout(volta.current);
   }, []);
-  const olhar = () => {
-    setPose('costas');
+  /** Ao chegar: vira de costas para o objeto por meio segundo, abre o que ele guarda e volta a ficar de frente. */
+  const olhar = (id: ObjetoId) => {
     if (volta.current) clearTimeout(volta.current);
-    volta.current = setTimeout(() => setPose('frente'), 1600);
+    if (reduce) {
+      setPose('frente');
+      busy.current = false;
+      onObjeto(id);
+      return;
+    }
+    busy.current = true;
+    setPose('costas');
+    volta.current = setTimeout(() => {
+      setPose('frente');
+      busy.current = false;
+      onObjeto(id);
+    }, 500);
   };
   const [andando, setAndando] = useState<ObjetoId | null>(null);
   const x = useSharedValue(HOME_X);
@@ -266,12 +278,10 @@ export function PixelShelter({ moradia = MORADIAS[0], selos, onObjeto }: { morad
   const busy = useRef(false);
 
   const chegou = (id: ObjetoId) => {
-    busy.current = false;
     setAndando(null);
     cancelAnimation(bob);
     bob.set(withTiming(0, { duration: 80 }));
-    olhar();
-    onObjeto(id);
+    olhar(id);
   };
 
   const ir = (o: Objeto) => {
@@ -280,8 +290,7 @@ export function PixelShelter({ moradia = MORADIAS[0], selos, onObjeto }: { morad
     const dist = Math.abs(o.ir - atual);
     if (reduce || dist < 4) {
       x.set(o.ir);
-      olhar();
-      onObjeto(o.id);
+      olhar(o.id);
       return;
     }
     busy.current = true;

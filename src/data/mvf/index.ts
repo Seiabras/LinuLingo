@@ -31,7 +31,7 @@ export const MONGOL_TRADICIONAL: LanguagePack = {
   available: true,
   incomplete: {
     until: 'A1.2',
-    note: 'Só o nível A1 por enquanto (unidades 1 e 2, as mesmas 60 palavras do mongol em cirílico, 4 tópicos de gramática e 2 histórias), na escrita mongol tradicional, que se lê de cima pra baixo. Cada grafia foi copiada do Wiktionary em inglês, que traz a forma na escrita tradicional de cada palavra; as frases usam só os padrões já usados no mongol em cirílico. Nenhuma voz sintética conhecida lê a escrita tradicional, então o áudio pode ficar mudo; a leitura em letras latinas aparece embaixo de cada frase, e digitar essa leitura também vale como resposta. No celular (fora do navegador), o texto aparece deitado, com as letras giradas, porque o aplicativo nativo ainda não sabe escrever na vertical. Da A2.1 até o C2 chega nas próximas atualizações.',
+    note: 'Só o nível A1 por enquanto (unidades 1 e 2, as mesmas 60 palavras do mongol em cirílico, 4 tópicos de gramática e 2 histórias), na escrita mongol tradicional, que se lê de cima pra baixo. As frases usam só os padrões já vistos no mongol em cirílico. Nenhuma voz sintética conhecida lê a escrita tradicional, então o áudio pode ficar mudo; a leitura em letras latinas aparece embaixo de cada frase, e digitar essa leitura também vale como resposta. No celular (fora do navegador), o texto aparece deitado, com as letras giradas, porque o aplicativo nativo ainda não sabe escrever na vertical. Da A2.1 até o C2 chega nas próximas atualizações.',
   },
   vocab: VOCAB_MVF,
   units: UNITS_MVF,
