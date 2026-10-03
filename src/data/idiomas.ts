@@ -111,6 +111,8 @@ import { LINGALA } from './ln';
 import { SHOSHONE } from './shh';
 import { LINGIT } from './tli';
 import { SHIPIBO_KONIBO } from './shp';
+import { HOPI } from './hop';
+import { WOLOF } from './wo';
 import { AIMARA } from './ay';
 import { GUARANI_KAIOWA } from './kgk';
 import { NAUATLE } from './nah';
@@ -160,7 +162,7 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   hi: HINDI, gn: GUARANI, tpw: TUPI_ANTIGO, ha: HAUCA, ig: IGBO, yrl: NHEENGATU, bn: BENGALI, qu: QUECHUA, kgp: KAINGANG, tca: TIKUNA,
   xav: XAVANTE, tuo: TUKANO, gun: GUARANI_MBYA, ka: GEORGIANO, th: TAILANDES, km: KHMER,
   ay: AIMARA, kgk: GUARANI_KAIOWA, nah: NAUATLE, kpc: BANIWA, lo: LAOSIANO, cbs: HUNI_KUIN, mzr: MARUBO, ywn: YAWANAWA,
-  apw: APACHE_OCIDENTAL, bxr: BURIATO, ln: LINGALA, shh: SHOSHONE, tli: LINGIT, shp: SHIPIBO_KONIBO,
+  apw: APACHE_OCIDENTAL, bxr: BURIATO, ln: LINGALA, shh: SHOSHONE, tli: LINGIT, shp: SHIPIBO_KONIBO, hop: HOPI, wo: WOLOF,
   nv: NAVAJO, nhd: GUARANI_NANDEVA, tpj: TAPIETE, mi: MAORI, gnw: GUARANI_ANTIGO, haw: HAVAIANO, te: TELUGO, om: OROMO, mr: MARATHI, am: AMARICO, mn: MONGOL, mvf: MONGOL_TRADICIONAL, mnc: MANCHU,
   hu: HUNGARO, tsd: TSAKONIO, pcm: PIDGIN_NIGERIANO, ta: TAMIL, tl: TAGALO, hyw: ARMENIO_OCIDENTAL,
   tdt: TETUM, arn: MAPUDUNGUN, gd: GAELICO_ESCOCES, ht: CRIOULO_HAITIANO, ktn: KARITIANA, kmb: QUIMBUNDO,
@@ -296,6 +298,8 @@ export const LANGUAGES: LanguageInfo[] = [
   NAUATLE,
   // shoshone: mesma família uto-asteca (ramo numic), da Grande Bacia (Wyoming, Idaho, Nevada, Utah)
   SHOSHONE,
+  // hopi: também uto-asteca (ramo setentrional), da Reserva Hopi, no Arizona
+  HOPI,
   // o suaíli, a língua africana mais falada como segunda língua, e as maiores da África depois dele
   // (Ethnologue; o árabe já está acima e o pidgin nigeriano é crioulo)
   SUAILI,
@@ -306,6 +310,9 @@ export const LANGUAGES: LanguageInfo[] = [
   IGBO,
   // lingala: também banta, família Níger-Congo, língua nacional da RD Congo e da República do Congo
   LINGALA,
+  // wolof: família Níger-Congo, mas ramo atlântico/senegambiano — não é uma língua banta como o suaíli
+  // e o lingala; língua franca do Senegal
+  WOLOF,
   // navajo: família na-dené, sem parentesco com o indo-europeu nem com as línguas indígenas americanas
   // já no app (que são de famílias diferentes: tupi, macro-jê, quéchua, aimará, tukano, aruak, pano)
   NAVAJO,
