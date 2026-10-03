@@ -207,7 +207,7 @@ conserto do bidi continua livre pra pegar, sem mais colisão.
 - Revisar la, oc, en, id e vi como já foi feito com gl, ast e sc. Há dúvida sobre a etimologia de
   «nai» < matre(m), no galego.
 - ~~Atualizar o README (tabela de idiomas)~~ — **feito** (03/10/2026, gerada por
-  `scripts/tabela-idiomas.mjs`; rodar de novo depois de juntar idiomas). Falta o NotebookLM.md.
+  `scripts/tabela-idiomas.mjs`; rodar de novo depois de juntar idiomas). NotebookLM.md também atualizado (03/10/2026).
 - **Histórias: revisão "de história em história" (pedido do Matheus, 01/10/2026 de madrugada)** —
   ele notou em catalão e espanhol que o Linu, escrito em 3ª pessoa como protagonista, às vezes
   "decide" pelo jogador quem ele é/o que ele faz (o jogador só escolhe a fala do Linu, não é ele
