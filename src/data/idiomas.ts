@@ -103,6 +103,8 @@ import { KHMER } from './km';
 import { BANIWA } from './kpc';
 import { LAOSIANO } from './lo';
 import { HUNI_KUIN } from './cbs';
+import { MARUBO } from './mzr';
+import { YAWANAWA } from './ywn';
 import { AIMARA } from './ay';
 import { GUARANI_KAIOWA } from './kgk';
 import { NAUATLE } from './nah';
@@ -151,7 +153,7 @@ export const PACKS: Record<string, LanguagePack> = { ro: ROMENO, ru: RUSSO, es: 
   el: GREGO, sq: ALBANES, hy: ARMENIO,
   hi: HINDI, gn: GUARANI, tpw: TUPI_ANTIGO, ha: HAUCA, ig: IGBO, yrl: NHEENGATU, bn: BENGALI, qu: QUECHUA, kgp: KAINGANG, tca: TIKUNA,
   xav: XAVANTE, tuo: TUKANO, gun: GUARANI_MBYA, ka: GEORGIANO, th: TAILANDES, km: KHMER,
-  ay: AIMARA, kgk: GUARANI_KAIOWA, nah: NAUATLE, kpc: BANIWA, lo: LAOSIANO, cbs: HUNI_KUIN,
+  ay: AIMARA, kgk: GUARANI_KAIOWA, nah: NAUATLE, kpc: BANIWA, lo: LAOSIANO, cbs: HUNI_KUIN, mzr: MARUBO, ywn: YAWANAWA,
   nv: NAVAJO, nhd: GUARANI_NANDEVA, tpj: TAPIETE, mi: MAORI, gnw: GUARANI_ANTIGO, haw: HAVAIANO, te: TELUGO, om: OROMO, mr: MARATHI, am: AMARICO, mn: MONGOL, mvf: MONGOL_TRADICIONAL, mnc: MANCHU,
   hu: HUNGARO, tsd: TSAKONIO, pcm: PIDGIN_NIGERIANO, ta: TAMIL, tl: TAGALO, hyw: ARMENIO_OCIDENTAL,
   tdt: TETUM, arn: MAPUDUNGUN, gd: GAELICO_ESCOCES, ht: CRIOULO_HAITIANO, ktn: KARITIANA, kmb: QUIMBUNDO,
@@ -277,6 +279,10 @@ export const LANGUAGES: LanguageInfo[] = [
   BANIWA,
   // huni kuĩ: família pano, do Acre e sudeste do Peru
   HUNI_KUIN,
+  // marúbo: família pano, do Vale do Javari (Amazonas), parente distante do huni kuĩ
+  MARUBO,
+  // yawanawá: família pano, do Rio Gregório (Acre), o parente mais próximo do huni kuĩ aqui dentro
+  YAWANAWA,
   // náuatle: família uto-asteca, a língua dos astecas/mexicas
   NAUATLE,
   // o suaíli, a língua africana mais falada como segunda língua, e as maiores da África depois dele
