@@ -11,7 +11,8 @@ import { VoiceStep } from '@/components/lesson/VoiceStep';
 import { Linu } from '@/components/Linu';
 import { LinuAmigo } from '@/components/LinuAmigo';
 import { useApp } from '@/services/app-state';
-import { awardXp, completeLesson } from '@/database/queries';
+import { awardXp, completedLessons, completeLesson } from '@/database/queries';
+import { buildPath } from '@/services/curriculum';
 import { lessonXp } from '@/services/progress';
 import { canSpeak, speak, stopSpeaking } from '@/services/speech';
 import { logMistake } from '@/services/mistakes';
@@ -64,6 +65,21 @@ export default function CrossingScreen() {
 
   useEffect(() => () => stopSpeaking(), []);
 
+  // travessia trancada (aberta pelo endereço, sem ter chegado na parada): não deixa atravessar
+  const [trancada, setTrancada] = useState<{ unit: string; v: boolean } | null>(null);
+  useEffect(() => {
+    if (!unit) return;
+    let alive = true;
+    completedLessons(db).then((done) => {
+      const estado = buildPath(pack, done).find((x) => x.unit.id === unit.id && x.lesson.kind === 'prova')?.state;
+      if (alive) setTrancada({ unit: unit.id, v: estado === 'bloqueada' });
+    });
+    return () => {
+      alive = false;
+    };
+  }, [db, pack, unit]);
+  const bloqueio = trancada && trancada.unit === unit?.id ? trancada.v : null;
+
   if (!unit || !t || !prova || !from) {
     return (
       <Screen>
@@ -71,6 +87,23 @@ export default function CrossingScreen() {
           <Linu mood="triste" size={100} />
           <Text className="text-lg text-slate-700 dark:text-slate-200">Travessia não encontrada.</Text>
           <Button title="Voltar para o mapa" onPress={() => router.replace('/')} />
+        </View>
+      </Screen>
+    );
+  }
+
+  if (bloqueio === null) return <Screen>{null}</Screen>;
+  if (bloqueio) {
+    return (
+      <Screen>
+        <View className="flex-1 items-center justify-center gap-4 py-20">
+          <Linu mood="pensando" size={100} />
+          <Text className="text-center text-lg font-extrabold text-slate-900 dark:text-white">Esta travessia ainda está trancada</Text>
+          <Text className="text-center text-base text-slate-600 dark:text-slate-400">
+            {`Termine as lições de ${from.name} (${unit.level}) para atravessar. Se já sabe tudo isso, faça o teste para pular até aqui.`}
+          </Text>
+          <Button title="⏩ Fazer o teste para pular" onPress={() => router.replace(`/licao/${prova.id}?pular=1`)} />
+          <Button title="Voltar para o mapa" variant="ghost" onPress={() => router.replace('/')} />
         </View>
       </Screen>
     );

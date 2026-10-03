@@ -87,6 +87,43 @@ const [origem, destino] = [rota[0].name, rota[1].name];
 await page.goto(BASE + '/', { waitUntil: 'load', timeout: 180000 });
 await esperarMapa();
 
+// num perfil novo a travessia ainda está trancada, mesmo abrindo pelo endereço: o app oferece o
+// teste para pular, que conclui a unidade e libera a travessia
+await page.goto(`${BASE}/travessia/${unit.id}`, { waitUntil: 'load', timeout: 180000 });
+await page.getByText('Esta travessia ainda está trancada', { exact: true }).waitFor({ timeout: 60000 });
+await shot('trancada');
+await click('⏩ Fazer o teste para pular');
+await page.getByText(`Teste para pular · ${unit.level}`, { exact: false }).first().waitFor({ timeout: 60000 });
+{
+  const prova = unit.lessons.at(-1);
+  const vocab = lessons.flatMap((l) => l.words).map((w) => ROMENO.vocab.find((v) => v.word_target === w)).filter(Boolean);
+  let fim = null;
+  for (let passo = 0; passo < 80 && !fim; passo++) {
+    await settle();
+    const t = await body();
+    if (t.includes('⏩ Pronto:') || t.includes('Quase! Ainda não deu para pular')) fim = t;
+    else if (await visible('Continuar')) await click('Continuar');
+    else if (await visible('Entendi, vamos praticar!')) await click('Entendi, vamos praticar!');
+    else if (t.includes('Ouça e escolha a palavra')) {
+      const linhas = new Set(t.split('\n').map((x) => x.trim()));
+      const w = vocab.find((v) => linhas.has(v.word_native) && linhas.has(v.word_target));
+      if (!w) throw new Error(`imersão: não achei a palavra desta tela:\n${t.slice(0, 400)}`);
+      await click(w.word_target);
+    } else if (t.includes('Complete a frase')) {
+      const c = naTela(t, cloze, blank);
+      if (!c) throw new Error(`lacunas: não achei a frase desta tela:\n${t.slice(0, 400)}`);
+      await click(c.answer);
+    } else if (t.includes('Desafio de voz')) {
+      await page.getByPlaceholder(/digite sua resposta/i).fill(prova.voice.expected[0]);
+      await click('Verificar');
+    } else if (await visible('Pular esta etapa')) {
+      await click('Pular esta etapa');
+      await page.getByText(/⏩ Pronto:|Quase! Ainda não deu para pular/).first().waitFor({ timeout: 60000 });
+    }
+  }
+  if (!fim?.includes(`⏩ Pronto: tudo até o ${unit.level} está concluído!`)) throw new Error(`o teste para pular não passou:\n${(fim ?? (await body())).slice(0, 400)}`);
+}
+
 /** Faz a travessia; `acertar` decide se escolhe a resposta certa ou uma errada. */
 async function atravessar(acertar) {
   // o servidor de desenvolvimento pode estar refazendo o pacote (outra edição em andamento): paciência
