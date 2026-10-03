@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { useFocusEffect } from 'expo-router';
 import { ArrowLeft } from 'lucide-react-native';
@@ -13,6 +13,7 @@ import { goBack } from '@/services/nav';
 import { useIsDark } from '@/services/theme';
 import type { AlphabetLetter } from '@/data/types';
 import { logMistake } from '@/services/mistakes';
+import { alfabetoAutomatico } from '@/services/alfabeto-auto';
 
 const GROUPS: { key: AlphabetLetter['group']; title: string; text: string }[] = [
   { key: 'igual', title: '✅ Iguais às nossas', text: 'Mesma forma e som parecido: você já sabe.' },
@@ -24,7 +25,7 @@ const GROUPS: { key: AlphabetLetter['group']; title: string; text: string }[] = 
 export default function AlphabetScreen() {
   const { db, pack, refresh } = useApp();
   const dark = useIsDark();
-  const data = pack.alphabet;
+  const data = useMemo(() => alfabetoAutomatico(pack), [pack]);
   const key = `alfabeto_${pack.code}`;
   const [progress, setProgress] = useState<AlphabetProgress>({});
   const [picked, setPicked] = useState<AlphabetLetter | null>(null);

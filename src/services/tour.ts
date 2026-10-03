@@ -5,6 +5,7 @@ import type { LanguagePack } from '@/data/types';
 import { EXPEDITION_PLACES } from '@/data/expedicoes';
 import { destinoDoIdioma } from '@/services/aventura';
 import { nomeIdioma } from '@/services/idioma-nome';
+import { alfabetoAutomatico } from '@/services/alfabeto-auto';
 
 /**
  * O passeio guiado do tutorial: depois de escolher o idioma, o Linu vai abrindo cada página do app e
@@ -129,7 +130,7 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean }): PassoT
           p({
             id: 'escrita',
             rota: '/',
-            alvo: pack.alphabet ? 'pratica:/alfabeto' : 'praticas',
+            alvo: alfabetoAutomatico(pack) ? 'pratica:/alfabeto' : 'praticas',
             humor: 'pensando',
             titulo: 'Outra escrita, sem medo',
             texto: escrita,
@@ -336,6 +337,8 @@ function textoDaEscrita(pack: LanguagePack): string | null {
   if (pack.code === 'ja')
     return 'Hiragana, katakana e kanji: o treino “🔤 Kana” ensina as sílabas, e cada frase vem com a leitura e o romaji. Pode responder em kana.';
   if (pack.code === 'ko') return 'O hangul é um alfabeto: cada bloco é uma sílaba (ㅎ + ㅏ + ㄴ = 한). O treino “🔤 Alfabeto” ensina as letras.';
+  if (alfabetoAutomatico(pack))
+    return `O ${nomeIdioma(pack.name)} tem escrita própria. O treino “🔤 Alfabeto” ensina as letras, e embaixo de cada frase vem a leitura.`;
   if (pack.reading || pack.keyboardRows) {
     return `O ${nomeIdioma(pack.name)} tem escrita própria. Embaixo de cada frase vem a leitura, e o botão “⌨️ Mostrar teclado” ajuda a responder.`;
   }

@@ -20,6 +20,7 @@ import { isolateRtlRuns } from '@/services/direction';
 import { missingParts } from '@/services/incompleto';
 import { completedLessons, dueReviews, getMeta, setMeta, journalDoneToday, pendingPeerCount, vocabStats, xpByDay } from '@/database/queries';
 import { reparoDasParadas, REPARO_XP_MULT } from '@/services/reparo';
+import { alfabetoAutomatico } from '@/services/alfabeto-auto';
 import { canSpeak } from '@/services/speech';
 import { TUTORIAL_KEY } from './TutorialScreen';
 import { buildPath, currentUnit, type PathLesson } from '@/services/curriculum';
@@ -121,6 +122,8 @@ export default function HomeScreen() {
   });
   const provaOf = (u: UnitSeed | null) => (u ? path.find((x) => x.unit.id === u.id && x.lesson.kind === 'prova') : undefined);
   const travessias: TravessiaEstado[] = rota.map((p) => provaOf(p.unit)?.state ?? null);
+  // idioma de outra escrita: o treino do alfabeto (feito à mão ou gerado do teclado e da leitura)
+  const temAlfabeto = useMemo(() => !!alfabetoAutomatico(pack), [pack]);
   const reparos = reparoDasParadas(rota, estados.map((e) => e === 'feita'), vencidas);
   // a parada mais longe já alcançada libera as moradias (barraca → estação → refúgio → navio → casa do país)
   const alcance = estados.reduce((m, e, i) => (e === 'feita' || e === 'atual' || e === 'aberta' ? i : m), 0);
@@ -257,7 +260,7 @@ export default function HomeScreen() {
 
       <Text className="mb-2 mt-5 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">Mais práticas</Text>
       <View ref={alvoDoTour('praticas')} className="flex-row flex-wrap gap-2">
-        {[...(pack.alphabet ? [ALPHABET_PRACTICE] : []), ...(pack.falseFriends ? [FALSE_FRIENDS_PRACTICE] : []), ...(ACCENT_PRACTICE ? [ACCENT_PRACTICE] : []), ...PRACTICES.slice(0, 1), ...(PAIRS_PRACTICE ? [PAIRS_PRACTICE] : []), MISTAKES_PRACTICE, ...PRACTICES.slice(1), ...(ANIMALS_PRACTICE ? [ANIMALS_PRACTICE] : []), SOUNDS_PRACTICE, MAP_GAME_PRACTICE, ...(EXPEDITION_PRACTICE ? [EXPEDITION_PRACTICE] : []), KIN_PRACTICE, CONFUSABLES_PRACTICE, ACCENT_GUESS_PRACTICE, COURSES_PRACTICE, ALBUM_PRACTICE, FRIENDS_PRACTICE, RESOURCES_PRACTICE]
+        {[...(temAlfabeto ? [ALPHABET_PRACTICE] : []), ...(pack.falseFriends ? [FALSE_FRIENDS_PRACTICE] : []), ...(ACCENT_PRACTICE ? [ACCENT_PRACTICE] : []), ...PRACTICES.slice(0, 1), ...(PAIRS_PRACTICE ? [PAIRS_PRACTICE] : []), MISTAKES_PRACTICE, ...PRACTICES.slice(1), ...(ANIMALS_PRACTICE ? [ANIMALS_PRACTICE] : []), SOUNDS_PRACTICE, MAP_GAME_PRACTICE, ...(EXPEDITION_PRACTICE ? [EXPEDITION_PRACTICE] : []), KIN_PRACTICE, CONFUSABLES_PRACTICE, ACCENT_GUESS_PRACTICE, COURSES_PRACTICE, ALBUM_PRACTICE, FRIENDS_PRACTICE, RESOURCES_PRACTICE]
           // sem gênero gramatical, o palácio fica vazio: o card não pode prometer "gêneros com memória visual"
           .map((p) => (p.route === '/palacio' && !pack.genders?.length ? { ...p, text: 'Sem gênero aqui: o palácio fica vazio' } : p))
           .map((p) => (
@@ -298,6 +301,11 @@ export default function HomeScreen() {
         estado={parada === null ? null : estados[parada]}
         travessia={parada === null ? null : travessias[parada]}
         reparo={parada === null ? 0 : reparos[parada]}
+        escrita={parada === 0 && temAlfabeto ? nomeIdioma(pack.name) : null}
+        onEscrita={() => {
+          setParada(null);
+          router.push('/alfabeto');
+        }}
         onRepair={(u) => {
           setParada(null);
           router.push({ pathname: '/revisao', params: { unidade: u.id } });
@@ -569,6 +577,8 @@ function StopSheet({
   travessia,
   reparo,
   onRepair,
+  escrita,
+  onEscrita,
   items,
   incompleteNote,
   onClose,
@@ -583,6 +593,9 @@ function StopSheet({
   travessia: TravessiaEstado;
   reparo: number;
   onRepair: (u: UnitSeed) => void;
+  /** na primeira parada de um idioma de outra escrita: o nome do idioma, para o nó «a escrita» */
+  escrita: string | null;
+  onEscrita: () => void;
   items: PathLesson[];
   incompleteNote: string | null;
   onClose: () => void;
@@ -655,6 +668,19 @@ function StopSheet({
                         <Text className="text-xs text-slate-600 dark:text-slate-300">
                           {`${reparo} palavras desta parada estão quase esquecidas. Um reparo rápido revisa só elas, com XP em dobro (×${REPARO_XP_MULT}).`}
                         </Text>
+                      </View>
+                    </Pressable>
+                  )}
+                  {escrita && (
+                    <Pressable
+                      accessibilityRole="button"
+                      onPress={onEscrita}
+                      className="mt-4 flex-row items-center gap-3 rounded-2xl border-2 border-conecta/60 bg-sky-50 p-3 active:opacity-80 dark:bg-sky-950"
+                    >
+                      <Text className="text-3xl">🔤</Text>
+                      <View className="flex-1">
+                        <Text className="font-extrabold text-slate-900 dark:text-white">Antes de tudo: a escrita</Text>
+                        <Text className="text-xs text-slate-600 dark:text-slate-300">{`As letras do ${escrita} e o som de cada uma, com um jogo rápido. Ajuda em todas as lições daqui para a frente.`}</Text>
                       </View>
                     </Pressable>
                   )}
