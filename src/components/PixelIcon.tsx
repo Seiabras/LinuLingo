@@ -1,0 +1,307 @@
+import { View } from 'react-native';
+import Svg, { Rect, type SvgProps } from 'react-native-svg';
+
+/**
+ * Ícones em pixel art (16 × 16) desenhados por código, no mesmo espírito das cenas do abrigo do Linu:
+ * cada letra da arte é uma cor da paleta e “.” é transparente. São desenhados em SVG, um retângulo
+ * por trecho de cor numa linha, com `crispEdges` — ficam nítidos em qualquer tamanho, no celular e na web.
+ * Usados nas paradas do mapa da aventura (no lugar dos emojis) e nos detalhes da interface.
+ */
+const PAL: Record<string, string> = {
+  k: '#1F2A44',
+  K: '#2B2F3A',
+  w: '#FFFFFF',
+  i: '#CDEBFA',
+  I: '#9CCFEA',
+  b: '#3B82C4',
+  B: '#1E4E79',
+  o: '#F28C28',
+  O: '#C2410C',
+  r: '#D9443A',
+  R: '#9B2C2C',
+  y: '#F5C542',
+  g: '#AAB4BF',
+  G: '#5B6573',
+  n: '#A0673A',
+  N: '#5C3A1E',
+  e: '#5DBB63',
+  E: '#2E7D32',
+  s: '#EAD7A1',
+  p: '#F28DB2',
+  c: '#FFF3D6',
+  l: '#FF7A2E',
+  v: '#7C5C3B',
+};
+
+export const PIXEL_ART = {
+  pinguim: [
+    '................',
+    '......kkkk......',
+    '.....kKKKKk.....',
+    '....kKwwKKKk....',
+    '...kKwkwwKKk....',
+    '.kkkwwwwwKKk....',
+    '...kwkkkwwKKk...',
+    '...kwwwwwwKKk...',
+    '..kwwwwwwwKKKk..',
+    '..kwwwwwwwKKKk..',
+    '..kwwwwwwwKKKk..',
+    '..kwwwwwwwKKKk..',
+    '...kwwwwwwKKk...',
+    '....kwwwwKKk....',
+    '...kookkkook....',
+    '................',
+  ],
+  estacao: [
+    '...........r....',
+    '...........rrr..',
+    '...........rr...',
+    '...........k....',
+    '..kkkkkkkkkkkk..',
+    '..koooooooooOk..',
+    '..kokkkookkkOk..',
+    '..kokbkookbkOk..',
+    '..kokkkookkkOk..',
+    '..koooooooooOk..',
+    '..kooookkoooOk..',
+    '..kooookNoooOk..',
+    '..kkkkkkkkkkkk..',
+    '.kGk.......kGk..',
+    'iiiiiiiiiiiiiiii',
+    'iiwiiiiiiwiiiiii',
+  ],
+  vulcao: [
+    '...gg....gg.....',
+    '..gwwg..gwwg....',
+    '...gwwggwwg.....',
+    '.....gwwg.......',
+    '......kk........',
+    '.....krrk.......',
+    '....kGlrGk......',
+    '....kGGlGGk.....',
+    '...kGGGGlGGk....',
+    '...kGgGGGlGk....',
+    '..kGGGGgGGGGk...',
+    '..kGgGGGGGgGGk..',
+    '.kGGGGGgGGGGGGk.',
+    '.kGGgGGGGGgGGGk.',
+    'bbbbbbbbbbbbbbbb',
+    'BbBbBbBbBbBbBbBb',
+  ],
+  correio: [
+    '................',
+    '................',
+    '.kkkkkkkkkkkkkk.',
+    '.kckcccccccckck.',
+    '.kcckcccccckcck.',
+    '.kccckcccckccck.',
+    '.kcccckcckcrrrk.',
+    '.kccccckkccrrrk.',
+    '.kcccckcckcrrrk.',
+    '.kccckcccckccck.',
+    '.kcckcccccckcck.',
+    '.kckcccccccckck.',
+    '.kkkkkkkkkkkkkk.',
+    '................',
+    '................',
+    '................',
+  ],
+  canal: [
+    '.....k......k...',
+    '....kwk....kwk..',
+    '...kwwik..kwwik.',
+    '...kwiik..kwiik.',
+    '..kwiIIik.kiIIik',
+    '..kiIIGIkkkIGIIk',
+    '.kiIGGGGkbkGGGIk',
+    '.kIGGgGGkbkGgGGk',
+    'kIGGGGGGkbkGGGGk',
+    'kGGgGGGGkbkGGgGk',
+    'kGGGGGGkbbbkGGGk',
+    'kGGGGGkbbbbbkGGk',
+    'kGGGGkbbwbbbbkGk',
+    'kkkkkbbbbbbwbbkk',
+    'bbbbbbbbbbbbbbbb',
+    'BbBbBbBbBbBbBbBb',
+  ],
+  iceberg: [
+    '................',
+    '.......kk.......',
+    '......kwwk......',
+    '.....kwwiik.....',
+    '....kwwwiiik....',
+    '...kwwwwiiiik...',
+    '..kwwwwwiiiiIk..',
+    '..kwwwwiiiiIIk..',
+    '.kwwwwwiiiiIIIk.',
+    'bbbbbbbbbbbbbbbb',
+    'bbIIIIIIIIIIIIbb',
+    'bbbIIIIIIIIIIbbb',
+    'BbbbIIIIIIIIbbbB',
+    'BBbbbIIIIIIbbbBB',
+    'BBBbbbbbbbbbbBBB',
+    'BBBBBBBBBBBBBBBB',
+  ],
+  onda: [
+    '................',
+    '.......kkkkk....',
+    '.....kkwwiiikk..',
+    '....kwwbbbbIIik.',
+    '...kwbbkkkkbbIk.',
+    '..kwbbk....kbIk.',
+    '..kwbk.....kbk..',
+    '.kwbbk...kkbk...',
+    '.kwbbbkkkbbbk...',
+    '.kibbbbbbbbbk...',
+    'kibbbbbbbbbbbk..',
+    'kibbbbbbbbbbbbk.',
+    'bbbbbbbbbbbbbbbb',
+    'BbbbBbbbBbbbBbbb',
+    'BBBBBBBBBBBBBBBB',
+    '................',
+  ],
+  baleia: [
+    '................',
+    '.kkk........kkk.',
+    'kGGGk......kGGGk',
+    'kGGGGk....kGGGGk',
+    '.kGGGGk..kGGGGk.',
+    '..kGGGGkkGGGGk..',
+    '...kkGGGGGGkk...',
+    '.....kGGGGk.....',
+    '......kGGk......',
+    '......kGGk......',
+    '......kGGk......',
+    '.....kGGGGk.....',
+    'bbbbiiiiiiiibbbb',
+    'bbbbbbbbbbbbbbbb',
+    'BbbbBbbbBbbbBbbb',
+    'BBBBBBBBBBBBBBBB',
+  ],
+  ancora: [
+    '......kkkk......',
+    '.....kGggGk.....',
+    '.....kg..gk.....',
+    '.....kGggGk.....',
+    '......kgGk......',
+    '...kkkkgGkkkk...',
+    '...kGGGgGGGGk...',
+    '...kkkkgGkkkk...',
+    '......kgGk......',
+    '......kgGk......',
+    '.k....kgGk....k.',
+    'kgk...kgGk...kgk',
+    'kggk..kgGk..kggk',
+    '.kggkkkgGkkkggk.',
+    '..kkggggGGGGkk..',
+    '....kkkkkkkk....',
+  ],
+  cidade: [
+    '................',
+    '.........kkk....',
+    '.........kyk....',
+    '...kkk...kyk....',
+    '...knk..kkkkk...',
+    '..kkkkk.kgggk...',
+    '..knnnk.kgygk...',
+    '..knynk.kgggk...',
+    '..knnnkkkgygkkk.',
+    '..knynkcckggkrrk',
+    '.kknnnkcykgygrrk',
+    '.kcknnkcckgggryk',
+    '.kcknynkcckgykrk',
+    '.kcknnnkcckggkrk',
+    'kkkkkkkkkkkkkkkk',
+    'gggggggggggggggg',
+  ],
+  torre: [
+    '.......kk.......',
+    '.......yy.......',
+    '......kyyk......',
+    '......kRRk......',
+    '.....kRRRRk.....',
+    '....kRRRRRRk....',
+    '....kccccccK....',
+    '....kcckkcck....',
+    '....kcckkcck....',
+    '....kccccccK....',
+    '..kkkcckkcckkk..',
+    '..krkcckkcckrk..',
+    '.kRRkcckkcckRRk.',
+    '.kcckcckkcckcck.',
+    'kkkkkkkkkkkkkkkk',
+    'gggggggggggggggg',
+  ],
+  casas: [
+    '................',
+    '................',
+    '....kk......kk..',
+    '...krrk....kRRk.',
+    '..krrrrk..kRRRRk',
+    '.krrrrrrkkRRRRRR',
+    'kkkkkkkkkkkkkkkk',
+    '.kccccccckssssk.',
+    '.kckbkcckksbsk..',
+    '.kckbkcckksbsk..',
+    '.kcccccckkssssk.',
+    '.kcckkcckksskks.',
+    '.kccknccckssknk.',
+    '.kccknccckssknk.',
+    'eeeeeeeeeeeeeeee',
+    'EeEeEeEeEeEeEeEe',
+  ],
+  obra: [
+    '................',
+    '................',
+    '..kk........kk..',
+    '..kGk......kGk..',
+    'kkkkkkkkkkkkkkkk',
+    'koowwoowwoowwook',
+    'kowwoowwoowwoowk',
+    'kkkkkkkkkkkkkkkk',
+    '..kGk......kGk..',
+    'kkkkkkkkkkkkkkkk',
+    'kwwoowwoowwoowwk',
+    'kwoowwoowwoowwok',
+    'kkkkkkkkkkkkkkkk',
+    '..kGk......kGk..',
+    '.kkGkk....kkGkk.',
+    '................',
+  ],
+} satisfies Record<string, string[]>;
+
+export type PixelIconName = keyof typeof PIXEL_ART;
+
+/** Junta os pixels vizinhos da mesma cor numa linha: menos retângulos para desenhar. */
+function runs(art: string[]) {
+  const out: { x: number; y: number; w: number; c: string }[] = [];
+  art.forEach((row, y) => {
+    for (let x = 0; x < row.length; ) {
+      const ch = row[x];
+      let w = 1;
+      while (row[x + w] === ch) w++;
+      if (PAL[ch]) out.push({ x, y, w, c: PAL[ch] });
+      x += w;
+    }
+  });
+  return out;
+}
+
+// `shapeRendering` existe no SVG (e no react-native-svg), mas não no tipo SvgProps
+const CRISP = { shapeRendering: 'crispEdges' } as unknown as SvgProps;
+
+const CACHE = new Map<string, ReturnType<typeof runs>>();
+
+export function PixelIcon({ name, size = 32, dim = false }: { name: PixelIconName; size?: number; dim?: boolean }) {
+  let r = CACHE.get(name);
+  if (!r) CACHE.set(name, (r = runs(PIXEL_ART[name])));
+  return (
+    <View style={{ width: size, height: size, opacity: dim ? 0.45 : 1 }} accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
+      <Svg width={size} height={size} viewBox="0 0 16 16" {...CRISP}>
+        {r.map((p, i) => (
+          <Rect key={i} x={p.x} y={p.y} width={p.w} height={1} fill={p.c} />
+        ))}
+      </Svg>
+    </View>
+  );
+}

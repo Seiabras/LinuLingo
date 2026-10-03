@@ -93,6 +93,7 @@ export function travessiaTotal(t: Travessia): number {
   return t.escuta.length + t.decisao.length + t.lacunas.length + (t.voz ? 1 : 0);
 }
 
+/** 80% para passar; uma unidade sem nada para perguntar (pacote ainda muito magro) não tranca a trilha. */
 export function passou(correct: number, total: number): boolean {
-  return total > 0 && correct / total >= TRAVESSIA_PASS;
+  return total === 0 || correct / total >= TRAVESSIA_PASS;
 }

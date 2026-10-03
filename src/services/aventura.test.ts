@@ -59,11 +59,12 @@ test('travessia: toda unidade de todo idioma gera um desafio válido', () => {
 test('travessia: 80% para passar', () => {
   assert.equal(passou(6, 7), true);
   assert.equal(passou(5, 7), false);
-  assert.equal(passou(0, 0), false);
+  assert.equal(passou(0, 0), true); // sem perguntas, a travessia não tranca a trilha
 });
 
 test('aventura: país pela bandeira, para as línguas fora do mapa', () => {
   assert.equal(iso2OfFlag('🇧🇷'), 'BR');
   assert.equal(iso2OfFlag('☀️'), '');
   assert.equal(destinoDoIdioma('tca', '🇧🇷')?.name, 'Brasil');
+  assert.equal(destinoDoIdioma('kmr', '☀️')?.name, 'Curdistão');
 });

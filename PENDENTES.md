@@ -300,6 +300,14 @@ Só anotar, não implementar ainda. Era uma lista numerada 1-6; os itens 3 e 4 c
   - Roteiros Playwright atualizados para o mapa (`fluxo-trilha`, `fluxo-fotos`, `fluxo-licao` e os
     de cada idioma). **Achado**: a parte de `fluxo-trilha.mjs` que faz o teste para pular (arrastar
     cartões, lacunas) já estava desatualizada antes do mapa e trava em "Continuar" — falta refazer.
+  - **Abrigo em pixel art no topo da Home (feito, 02/10/2026)**: `src/components/PixelShelter.tsx` —
+    a barraca com o Linu em pixel art, luz pelo relógio (dia, sol da meia-noite, noite com aurora;
+    o lampião troca), objetos tocáveis com o Linu andando até eles: mural → quadro da expedição,
+    caderno → diário, rádio → conversa, cabideiro → loja de roupas, estante → álbum, cama → revisão,
+    porta → parada atual, janela → mapa "Onde se fala"; selos de pendência. Ícones das paradas, das
+    travessias e enfeites do mapa em pixel art desenhada por código (`src/components/PixelIcon.tsx`).
+    Falta: o refúgio de madeira (gerado no Canva, só falta baixar o arquivo grande) e as outras
+    moradias; as roupas da loja não aparecem no Linu em pixel art.
   - **Próximo: o abrigo customizável** (inspirado no app do irmão do usuário, "Dojo Legacy"): cena
     pixel art do PixelLab com objetos tocáveis (mural → quadro da expedição, rádio → conversa,
     caderno → diário, cabideiro → loja/roupas, estante → álbum), selos de pendência, o Linu andando

@@ -10,6 +10,8 @@
  * King George Island, Comandante Ferraz Antarctic Station, Deception Island, Port Lockroy, Lemaire
  * Channel, Petermann Island, Drake Passage, Antarctic Convergence). Só o que é bem estabelecido.
  */
+import type { PixelIconName } from '@/components/PixelIcon';
+
 export type Zona = 'gelo' | 'mar' | 'terra';
 
 export interface ParadaAntartica {
@@ -17,6 +19,8 @@ export interface ParadaAntartica {
   name: string;
   region: string;
   emoji: string;
+  /** o ícone em pixel art no mapa (`src/components/PixelIcon.tsx`) */
+  icone: PixelIconName;
   zona: Zona;
   /** o amigo do Linu que aparece nesta parada (id de `src/data/amigos-linu.ts`) */
   amigo?: string;
@@ -28,6 +32,7 @@ export interface ParadaAntartica {
 export const PARADAS_ANTARTICA: ParadaAntartica[] = [
   {
     id: 'meia-lua',
+    icone: 'pinguim',
     name: 'Ilha Meia-Lua',
     region: 'Ilhas Shetland do Sul',
     emoji: '🐧',
@@ -37,6 +42,7 @@ export const PARADAS_ANTARTICA: ParadaAntartica[] = [
   },
   {
     id: 'rei-george',
+    icone: 'estacao',
     name: 'Ilha Rei George',
     region: 'Ilhas Shetland do Sul',
     emoji: '🏠',
@@ -47,16 +53,18 @@ export const PARADAS_ANTARTICA: ParadaAntartica[] = [
   },
   {
     id: 'deception',
+    icone: 'vulcao',
     name: 'Ilha Deception',
     region: 'Ilhas Shetland do Sul',
     emoji: '🌋',
     zona: 'gelo',
     amigo: 'leopardo',
     fala: 'Cuidado onde pisa: o chão aqui é quente! Esta ilha é a boca de um vulcão.',
-    fact: 'É a cratera de um vulcão ativo, cheia de mar. Os navios entram por uma passagem de só 500 m de largura, o Fole de Netuno. As erupções de 1967 e 1969 danificaram as estações de pesquisa, abandonadas de vez depois da de 1970.',
+    fact: 'É a cratera de um vulcão ativo, cheia de mar. Os navios entram por uma passagem estreita, o Fole de Netuno. As erupções de 1967 e 1969 danificaram as estações de pesquisa, abandonadas de vez depois da de 1970.',
   },
   {
     id: 'port-lockroy',
+    icone: 'correio',
     name: 'Port Lockroy',
     region: 'Ilha Wiencke, Península Antártica',
     emoji: '✉️',
@@ -67,6 +75,7 @@ export const PARADAS_ANTARTICA: ParadaAntartica[] = [
   },
   {
     id: 'lemaire',
+    icone: 'canal',
     name: 'Canal Lemaire',
     region: 'Península Antártica',
     emoji: '🏔️',
@@ -77,6 +86,7 @@ export const PARADAS_ANTARTICA: ParadaAntartica[] = [
   },
   {
     id: 'petermann',
+    icone: 'iceberg',
     name: 'Ilha Petermann',
     region: 'Península Antártica',
     emoji: '🧊',
@@ -87,6 +97,7 @@ export const PARADAS_ANTARTICA: ParadaAntartica[] = [
   },
   {
     id: 'drake',
+    icone: 'onda',
     name: 'Passagem de Drake',
     region: 'Entre a Antártica e o Cabo Horn',
     emoji: '🌊',
@@ -97,6 +108,7 @@ export const PARADAS_ANTARTICA: ParadaAntartica[] = [
   },
   {
     id: 'convergencia',
+    icone: 'baleia',
     name: 'Convergência Antártica',
     region: 'Oceano Austral',
     emoji: '🐋',

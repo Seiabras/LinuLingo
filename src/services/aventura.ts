@@ -4,6 +4,9 @@ import { PARADAS_ANTARTICA, PARADAS_TERRA, type Zona } from '@/data/aventura';
 import { EXPEDITION_PLACES } from '@/data/expedicoes';
 import { findMapLanguage, flagOf } from '@/data/onde-se-fala';
 import { WORLD } from '@/data/mapa-mundi';
+import type { PixelIconName } from '@/components/PixelIcon';
+
+const ICONES_TERRA: PixelIconName[] = ['cidade', 'torre', 'casas'];
 
 /** Uma parada da aventura: um subnível da trilha num lugar (Antártica, mar ou o país do idioma). */
 export interface Parada {
@@ -12,6 +15,7 @@ export interface Parada {
   name: string;
   region: string;
   emoji: string;
+  icone: PixelIconName;
   zona: Zona;
   amigo?: string;
   fala: string;
@@ -23,7 +27,7 @@ export interface Parada {
 }
 
 export interface Destino {
-  /** ISO 3166-1 alfa-3 */
+  /** ISO 3166-1 alfa-3 ('' para uma região sem país, como o Curdistão) */
   iso: string;
   name: string;
   flag: string;
@@ -36,10 +40,19 @@ export interface Destino {
  * bandeira do próprio pacote (🇧🇷 → Brasil).
  */
 export function destinoDoIdioma(code: string, flag = ''): Destino | null {
+  if (REGIOES_SEM_PAIS[code]) return REGIOES_SEM_PAIS[code];
   const iso = EXPEDITION_PLACES[code]?.[0]?.country ?? pickCountry(code);
   const c = iso ? WORLD.find((w) => w.iso === iso) : WORLD.find((w) => w.iso2 === iso2OfFlag(flag));
   return c ? { iso: c.iso, name: c.name, flag: flagOf(c.iso2) } : null;
 }
+
+/**
+ * Línguas de povos sem estado próprio: o Linu desembarca na região, sem contorno de país no mapa
+ * (o curmanji é falado na Turquia, no Iraque, na Síria e no Irã — escolher um país seria tomar partido).
+ */
+const REGIOES_SEM_PAIS: Record<string, Destino> = {
+  kmr: { iso: '', name: 'Curdistão', flag: '☀️' },
+};
 
 /** 🇧🇷 → 'BR' (as duas letras de indicador regional da bandeira); '' se não for bandeira de país. */
 export function iso2OfFlag(flag: string): string {
@@ -81,6 +94,7 @@ export function rotaDaAventura(pack: Pick<LanguagePack, 'code' | 'name' | 'flag'
       name: cidade ? cidade.cityPt : k === 0 ? pais : (unit?.title ?? `${pais}, parada ${k + 1}`),
       region: k === 0 ? `${flag} Desembarque` : `${flag} ${regiao}`,
       emoji: k === 0 ? '⚓' : cidade ? '🏙️' : (unit?.emoji ?? '📍'),
+      icone: k === 0 ? 'ancora' : ICONES_TERRA[(k - 1) % ICONES_TERRA.length],
       zona: 'terra',
       fala: k === 0 ? `Terra à vista! Depois de tanto gelo e tanto mar, chegamos: ${pais}.` : FALAS_TERRA[(k - 1) % FALAS_TERRA.length],
       ...(cidade ? { fact: cidade.fact } : {}),

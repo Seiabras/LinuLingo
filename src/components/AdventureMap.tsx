@@ -1,11 +1,25 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Pressable, ScrollView, Text, View, useWindowDimensions } from 'react-native';
-import Svg, { Defs, Ellipse, G, LinearGradient, Path, Polygon, Rect, Stop } from 'react-native-svg';
-import { Linu } from './Linu';
+import { Image, Pressable, ScrollView, Text, View, useWindowDimensions, type ImageStyle } from 'react-native';
+import Svg, { Defs, Ellipse, G, LinearGradient, Path, Rect, Stop } from 'react-native-svg';
+import { PixelIcon, type PixelIconName } from './PixelIcon';
 import { useIsDark } from '@/services/theme';
 import { WORLD } from '@/data/mapa-mundi';
 import { focusBox, ringBoxes } from '@/services/mapa-geo';
 import type { Parada } from '@/services/aventura';
+
+const LINU_PIXEL = require('../../assets/pixel/linu-sprite-esquerda.png');
+const PIXELATED = { imageRendering: 'pixelated' } as unknown as ImageStyle;
+
+/** Os enfeites do mapa: entre que paradas (índice da de baixo) e de que lado. */
+const ENFEITES: { icone: PixelIconName; entre: number; lado: 'esq' | 'dir' | 'auto' }[] = [
+  { icone: 'pinguim', entre: 0, lado: 'auto' },
+  { icone: 'iceberg', entre: 1, lado: 'auto' },
+  { icone: 'pinguim', entre: 3, lado: 'auto' },
+  { icone: 'iceberg', entre: 4, lado: 'auto' },
+  { icone: 'baleia', entre: 6, lado: 'auto' },
+  { icone: 'casas', entre: 9, lado: 'auto' },
+  { icone: 'casas', entre: 12, lado: 'auto' },
+];
 
 export type ParadaEstado = 'feita' | 'atual' | 'aberta' | 'bloqueada' | 'construcao';
 export type TravessiaEstado = 'feita' | 'atual' | 'bloqueada' | null;
@@ -74,12 +88,14 @@ export function AdventureMap({
   // onde o Linu está: a parada atual, ou a última concluída (quando o curso todo já foi feito)
   const atual = estados.indexOf('atual');
   const current = atual >= 0 ? atual : Math.max(0, estados.lastIndexOf('feita'));
-  useEffect(() => {
+  const toCurrent = () => {
     if (!w || !pts[current]) return;
-    const y = Math.max(0, pts[current].y - viewH / 2);
-    const t = setTimeout(() => scroll.current?.scrollTo({ y, animated: false }), 0);
+    scroll.current?.scrollTo({ y: Math.max(0, pts[current].y - viewH / 2), animated: false });
+  };
+  useEffect(() => {
+    const t = setTimeout(toCurrent, 0);
     return () => clearTimeout(t);
-  }, [w, current, pts, viewH]);
+  }, [w, current, pts, viewH]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const route = pts.length ? pts.slice(1).reduce((d, p, i) => `${d} Q ${pts[i].x} ${p.y} ${p.x} ${p.y}`, `M ${pts[0].x} ${pts[0].y}`) : '';
   const doneUntil = estados.reduce((last, e, i) => (e === 'feita' ? i : last), -1);
@@ -105,7 +121,7 @@ export function AdventureMap({
       style={{ height: viewH }}
     >
       {w > 0 && (
-        <ScrollView ref={scroll} nestedScrollEnabled showsVerticalScrollIndicator={false} accessibilityLabel="Mapa da aventura">
+        <ScrollView ref={scroll} nestedScrollEnabled showsVerticalScrollIndicator={false} accessibilityLabel="Mapa da aventura" onContentSizeChange={toCurrent}>
           <View style={{ width: w, height: H }}>
             <Svg width={w} height={H} style={{ position: 'absolute' }}>
               <Defs>
@@ -151,14 +167,27 @@ export function AdventureMap({
               ].map(([fx, dy], i) => (
                 <Ellipse key={i} cx={w * fx} cy={yIce + dy - 34} rx={18 + i * 4} ry={7} fill={col.floe} opacity={0.85} />
               ))}
-              {[0.08, 0.92, 0.5].map((fx, i) => (
-                <Polygon key={i} points={`${w * fx - 16},${yIce + 160 + i * 230} ${w * fx},${yIce + 126 + i * 230} ${w * fx + 16},${yIce + 160 + i * 230}`} fill={col.floe} opacity={0.9} />
-              ))}
               {/* a rota: tracejada inteira e cheia até onde o aluno já chegou */}
               <Path d={route} stroke={col.floe} strokeWidth={6} fill="none" opacity={0.5} strokeLinecap="round" />
               <Path d={route} stroke={col.path} strokeWidth={3} strokeDasharray="8 8" fill="none" strokeLinecap="round" />
               {!!routeDone && <Path d={routeDone} stroke={col.path} strokeWidth={4} fill="none" strokeLinecap="round" />}
             </Svg>
+
+            {/* enfeites em pixel art nas bordas do mapa: icebergs e pinguins no gelo, baleia no mar, casas na terra */}
+            {pts.length > 0 &&
+              ENFEITES.map(({ icone, entre, lado }, i) => {
+                const a = pts[entre];
+                const b = pts[entre + 1];
+                if (!a || !b) return null;
+                const y = (a.y + b.y) / 2 - 14;
+                // do lado oposto ao da curva naquele trecho, para não cobrir o caminho nem os nomes
+                const left = lado === 'auto' ? ((a.x + b.x) / 2 > w / 2 ? 10 : w - 42) : lado === 'esq' ? 10 : w - 42;
+                return (
+                  <View key={i} pointerEvents="none" style={{ position: 'absolute', left, top: y }}>
+                    <PixelIcon name={icone} size={30} />
+                  </View>
+                );
+              })}
 
             {/* as travessias, no meio do caminho entre uma parada e a próxima */}
             {pts.slice(0, -1).map((_, i) => {
@@ -177,7 +206,7 @@ export function AdventureMap({
                     t === 'feita' ? 'border-conquista bg-green-50 dark:bg-green-950' : t === 'atual' ? 'border-fogo bg-orange-50 dark:bg-orange-950' : 'border-slate-300 bg-white/80 dark:border-slate-600 dark:bg-slate-800/80'
                   }`}
                 >
-                  <Text className="text-base">{t === 'feita' ? '✓' : '🌊'}</Text>
+                  {t === 'feita' ? <Text className="text-base font-extrabold text-conquista">✓</Text> : <PixelIcon name="onda" size={22} dim={t === 'bloqueada'} />}
                 </Pressable>
               );
             })}
@@ -200,9 +229,7 @@ export function AdventureMap({
                       cur ? 'border-conecta bg-white dark:bg-slate-900' : e === 'feita' ? 'border-conquista bg-white dark:bg-slate-900' : e === 'aberta' ? 'border-aurora bg-white dark:bg-slate-900' : 'border-slate-300 bg-slate-100 dark:border-slate-600 dark:bg-slate-800'
                     }`}
                   >
-                    <Text className="text-2xl" style={{ opacity: dim ? 0.45 : 1 }}>
-                      {e === 'construcao' ? '🚧' : p.emoji}
-                    </Text>
+                    <PixelIcon name={e === 'construcao' ? 'obra' : p.icone} size={36} dim={dim} />
                     {e === 'feita' && (
                       <View className="absolute -bottom-1 -right-1 h-5 w-5 items-center justify-center rounded-full bg-conquista">
                         <Text className="text-[10px] font-extrabold text-white">✓</Text>
@@ -224,7 +251,7 @@ export function AdventureMap({
                   {i === current && (
                     // do lado oposto ao do nome da parada, para não cobrir o caminho nem o nome
                     <View pointerEvents="none" style={{ position: 'absolute', top: -8, ...(right ? { left: -46 } : { left: 62 }) }}>
-                      <Linu size={48} mood="feliz" />
+                      <Image source={LINU_PIXEL} style={[{ width: 33, height: 45 }, PIXELATED]} resizeMode="stretch" accessibilityLabel="Linu" />
                     </View>
                   )}
                 </View>

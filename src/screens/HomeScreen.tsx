@@ -7,6 +7,9 @@ import { Screen, Card, Button, ProgressBar, SpeechBubble } from '@/components/ui
 import { Linu } from '@/components/Linu';
 import { LinuAmigo } from '@/components/LinuAmigo';
 import { AdventureMap, type ParadaEstado, type TravessiaEstado } from '@/components/AdventureMap';
+import { PixelShelter } from '@/components/PixelShelter';
+import { PixelIcon } from '@/components/PixelIcon';
+import { OutfitsCard } from '@/components/OutfitsCard';
 import { FieldGuideCard } from '@/components/FieldGuideCard';
 import { FieldNotebookBackground } from '@/components/FieldNotebookBackground';
 import { StatusHeader } from '@/components/StatusHeader';
@@ -29,6 +32,7 @@ import { destinoDoIdioma, rotaDaAventura, type Parada } from '@/services/aventur
 
 export default function HomeScreen() {
   const { db, pack, user, streak, refresh, accent } = useApp();
+  const dark = useIsDark();
   // sotaques: o escolhido, ou o convite para escolher um
   const ACCENT_PRACTICE = pack.accents?.length
     ? { route: '/sotaque' as const, emoji: accent?.emoji ?? '🗣️', title: accent ? accent.name : 'Sotaques', text: accent ? 'O sotaque que você estuda' : `${pack.accents.length} jeitos regionais de falar` }
@@ -95,6 +99,8 @@ export default function HomeScreen() {
   const rota = useMemo(() => rotaDaAventura(pack), [pack]);
   const destino = useMemo(() => destinoDoIdioma(pack.code, pack.flag), [pack]);
   const [parada, setParada] = useState<number | null>(null);
+  const [mural, setMural] = useState(false);
+  const [roupas, setRoupas] = useState(false);
   // estado de cada parada (a unidade daquele subnível) e da travessia que sai dela (a prova da unidade)
   const estados: ParadaEstado[] = rota.map((p) => {
     if (!p.unit) return 'construcao';
@@ -105,6 +111,7 @@ export default function HomeScreen() {
   });
   const provaOf = (u: UnitSeed | null) => (u ? path.find((x) => x.unit.id === u.id && x.lesson.kind === 'prova') : undefined);
   const travessias: TravessiaEstado[] = rota.map((p) => provaOf(p.unit)?.state ?? null);
+  const atualIndex = Math.max(0, estados.indexOf('atual') >= 0 ? estados.indexOf('atual') : estados.lastIndexOf('feita'));
   const openCrossing = (i: number) => {
     const u = rota[i].unit;
     const st = travessias[i];
@@ -129,16 +136,28 @@ export default function HomeScreen() {
     <Screen background={<FieldNotebookBackground variant="gelo" />}>
       <StatusHeader cefr={unit?.level ?? 'A1.1'} />
 
-      <View className="mt-2 flex-row items-end gap-3">
-        <Linu mood={todayXp >= goal ? 'comemorando' : 'feliz'} size={84} />
-        <View className="mb-6 flex-1 gap-2">
-          <SpeechBubble>{greeting}</SpeechBubble>
-          <View className="flex-row items-center gap-2 px-1">
-            <ProgressBar value={todayXp / goal} color="bg-fogo" className="flex-1" />
-            <Text className="text-xs font-bold text-slate-500 dark:text-slate-400">
-              {Math.min(todayXp, goal)}/{goal} XP
-            </Text>
-          </View>
+      {/* o abrigo do Linu: cada objeto da barraca é um atalho (ver PixelShelter) */}
+      <View className="mt-2 gap-2">
+        <SpeechBubble>{greeting}</SpeechBubble>
+        <PixelShelter
+          selos={{ mural: todayXp < goal ? '!' : null, caderno: journalToday ? null : '!', cama: due > 0 ? due : null }}
+          onObjeto={(o) => {
+            if (o === 'porta') setParada(atualIndex);
+            else if (o === 'janela') router.push('/mapa');
+            else if (o === 'mural') setMural(true);
+            else if (o === 'caderno') router.push('/diario');
+            else if (o === 'radio') router.push('/conversa');
+            else if (o === 'cabideiro') setRoupas(true);
+            else if (o === 'estante') router.push('/album');
+            else if (o === 'cama') router.push('/revisao');
+          }}
+        />
+        <Text className="text-center text-xs text-slate-500 dark:text-slate-400">Toque nos objetos da barraca · o lampião troca a luz</Text>
+        <View className="flex-row items-center gap-2 px-1">
+          <ProgressBar value={todayXp / goal} color="bg-fogo" className="flex-1" />
+          <Text className="text-xs font-bold text-slate-500 dark:text-slate-400">
+            {Math.min(todayXp, goal)}/{goal} XP hoje
+          </Text>
         </View>
       </View>
 
@@ -264,6 +283,35 @@ export default function HomeScreen() {
           router.push(`/licao/${u.lessons.at(-1)!.id}?pular=1`);
         }}
       />
+      <BoardModal
+        visible={mural}
+        onClose={() => setMural(false)}
+        todayXp={todayXp}
+        goal={goal}
+        streak={streak}
+        due={due}
+        stickers={stickers}
+        parada={rota[atualIndex]}
+        proxima={rota[atualIndex + 1] ?? null}
+        travessia={travessias[atualIndex]}
+        onParada={() => {
+          setMural(false);
+          setParada(atualIndex);
+        }}
+      />
+      <Modal visible={roupas} animationType="slide" onRequestClose={() => setRoupas(false)}>
+        <SafeAreaView className="flex-1 bg-suave dark:bg-grafite">
+          <View className="w-full max-w-2xl flex-1 self-center px-4">
+            <Pressable accessibilityRole="button" accessibilityLabel="Fechar" onPress={() => setRoupas(false)} className="self-end p-2">
+              <X size={26} color={dark ? '#CBD5E1' : '#475569'} />
+            </Pressable>
+            <Text className="mb-2 text-xs font-extrabold uppercase tracking-widest text-aurora-dark dark:text-aurora">🧥 Cabideiro da barraca</Text>
+            <ScrollView contentContainerStyle={{ paddingBottom: 24 }}>
+              <OutfitsCard />
+            </ScrollView>
+          </View>
+        </SafeAreaView>
+      </Modal>
       <CardModal card={card} locale={pack.speechLocale} onClose={() => setCard(null)} />
       <LockedMsgModal msg={lockedMsg} onClose={() => setLockedMsg(null)} />
     </Screen>
@@ -451,7 +499,7 @@ function StopSheet({
           {parada && (
             <ScrollView contentContainerStyle={{ padding: 20, gap: 14 }}>
               <View className="flex-row items-start gap-3">
-                <Text className="text-4xl">{estado === 'construcao' ? '🚧' : parada.emoji}</Text>
+                <PixelIcon name={estado === 'construcao' ? 'obra' : parada.icone} size={48} />
                 <View className="flex-1">
                   <Text className="text-xs font-extrabold uppercase tracking-widest text-aurora-dark dark:text-aurora">
                     {parada.level} · {parada.region}
@@ -532,6 +580,70 @@ function StopSheet({
               )}
             </ScrollView>
           )}
+        </View>
+      </View>
+    </Modal>
+  );
+}
+
+/** O mural da barraca: o quadro da expedição (meta do dia, onde o Linu está, a próxima travessia). */
+function BoardModal({
+  visible,
+  onClose,
+  todayXp,
+  goal,
+  streak,
+  due,
+  stickers,
+  parada,
+  proxima,
+  travessia,
+  onParada,
+}: {
+  visible: boolean;
+  onClose: () => void;
+  todayXp: number;
+  goal: number;
+  streak: number;
+  due: number;
+  stickers: number;
+  parada: Parada | undefined;
+  proxima: Parada | null;
+  travessia: TravessiaEstado;
+  onParada: () => void;
+}) {
+  const dark = useIsDark();
+  const linhas: [string, string][] = [
+    ['🎯 Meta de hoje', todayXp >= goal ? `cumprida! ${todayXp} XP` : `${todayXp} de ${goal} XP`],
+    ['🔥 Ofensiva', `${streak} ${streak === 1 ? 'dia' : 'dias'}`],
+    ['📍 Parada de agora', parada ? `${parada.name} (${parada.level})` : '—'],
+    [
+      '🌊 Próxima travessia',
+      !proxima ? 'a última, rumo ao fim da expedição' : travessia === 'atual' ? `pronta! Até ${proxima.name}` : travessia === 'feita' ? `feita: ${proxima.name}` : `até ${proxima.name}, depois das lições`,
+    ],
+    ['🧠 Revisão', due > 0 ? `${due} ${due === 1 ? 'palavra' : 'palavras'} no ponto` : 'tudo em dia'],
+    ['📒 Álbum', `${stickers} de ${STICKERS.length} figurinhas`],
+  ];
+  return (
+    <Modal visible={visible} animationType="fade" onRequestClose={onClose} transparent>
+      <View className="flex-1 items-center justify-center px-5">
+        <Pressable accessibilityRole="button" accessibilityLabel="Fechar" onPress={onClose} className="absolute inset-0 bg-black/50" />
+        <View className="w-full max-w-sm overflow-hidden rounded-2xl border-4 border-amber-800 bg-amber-100 dark:border-amber-900 dark:bg-amber-950">
+          <View className="flex-row items-center justify-between bg-amber-800 px-4 py-2 dark:bg-amber-900">
+            <Text className="font-extrabold uppercase tracking-widest text-amber-50">📌 Quadro da expedição</Text>
+            <Pressable accessibilityRole="button" accessibilityLabel="Fechar" onPress={onClose} hitSlop={10}>
+              <X size={20} color={dark ? '#FDE68A' : '#FFFBEB'} />
+            </Pressable>
+          </View>
+          <View className="gap-2 p-4">
+            {linhas.map(([k, v]) => (
+              <View key={k} className="rounded-lg bg-white/80 px-3 py-2 dark:bg-black/30">
+                <Text className="text-xs font-bold text-amber-900 dark:text-amber-200">{k}</Text>
+                <Text className="font-extrabold text-slate-800 dark:text-slate-100">{v}</Text>
+              </View>
+            ))}
+            <Button title="Ir para a parada de agora" variant="success" onPress={onParada} />
+          </View>
         </View>
       </View>
     </Modal>

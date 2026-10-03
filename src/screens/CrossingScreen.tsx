@@ -98,7 +98,7 @@ export default function CrossingScreen() {
     const c = final.escuta + final.decisao + final.lacunas + final.voz;
     if (passou(c, total)) {
       haptics.success();
-      await completeLesson(db, prova.id, c / total);
+      await completeLesson(db, prova.id, total ? c / total : 1);
       const gained = lessonXp(c, total, true);
       await awardXp(db, gained, `travessia:${unit.id}`);
       setXp(gained);
