@@ -28,7 +28,7 @@ const CATEGORY_EMOJI: Record<string, string> = {
   Escola: '🎒', Profissões: '👷', Animais: '🐾', Sociedade: '🏛️', Tecnologia: '💻', 'Lazer e Esportes': '⚽', Ciência: '🔬', Expressões: '💬',
 };
 
-const LANG_FLAG: Record<string, string> = { pt: '🇧🇷', es: '🇪🇸', it: '🇮🇹', fr: '🇫🇷', ru: '🇷🇺', pl: '🇵🇱', cs: '🇨🇿', sr: '🇷🇸', bg: '🇧🇬', el: '🇬🇷', sq: '🇦🇱', hu: '🇭🇺', tr: '🇹🇷', en: '🇬🇧', de: '🇩🇪', nl: '🇳🇱', ro: '🇷🇴', sv: '🇸🇪', nb: '🇳🇴', da: '🇩🇰', is: '🇮🇸', fi: '🇫🇮', et: '🇪🇪', ja: '🇯🇵', ko: '🇰🇷', zh: '🇨🇳', ar: '🇸🇦', fa: '🇮🇷', hi: '🇮🇳', la: '🏛️', ha: '🇳🇬', yo: '🇳🇬', ig: '🇳🇬', am: '🇪🇹', om: '🇪🇹', lt: '🇱🇹', lv: '🇱🇻', sw: '🇹🇿', zu: '🇿🇦', ln: '🇨🇩', kmb: '🇦🇴', gr: '🏛️' };
+const LANG_FLAG: Record<string, string> = { pt: '🇧🇷', es: '🇪🇸', it: '🇮🇹', fr: '🇫🇷', ru: '🇷🇺', pl: '🇵🇱', cs: '🇨🇿', sr: '🇷🇸', bg: '🇧🇬', el: '🇬🇷', sq: '🇦🇱', hu: '🇭🇺', tr: '🇹🇷', en: '🇬🇧', de: '🇩🇪', nl: '🇳🇱', ro: '🇷🇴', sv: '🇸🇪', nb: '🇳🇴', da: '🇩🇰', is: '🇮🇸', fi: '🇫🇮', et: '🇪🇪', ja: '🇯🇵', ko: '🇰🇷', zh: '🇨🇳', ar: '🇸🇦', fa: '🇮🇷', hi: '🇮🇳', la: '🏛️', ha: '🇳🇬', yo: '🇳🇬', ig: '🇳🇬', am: '🇪🇹', om: '🇪🇹', so: '🇸🇴', lt: '🇱🇹', lv: '🇱🇻', sw: '🇹🇿', zu: '🇿🇦', ln: '🇨🇩', kmb: '🇦🇴', gr: '🏛️' };
 
 /** Cofre de vocabulário: palavras por frequência com estado SRS, categorias e árvore etimológica. */
 export default function VocabScreen() {
