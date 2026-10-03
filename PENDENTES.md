@@ -306,8 +306,10 @@ Só anotar, não implementar ainda. Era uma lista numerada 1-6; os itens 3 e 4 c
     caderno → diário, rádio → conversa, cabideiro → loja de roupas, estante → álbum, cama → revisão,
     porta → parada atual, janela → mapa "Onde se fala"; selos de pendência. Ícones das paradas, das
     travessias e enfeites do mapa em pixel art desenhada por código (`src/components/PixelIcon.tsx`).
-    Falta: o refúgio de madeira (gerado no Canva, só falta baixar o arquivo grande) e as outras
-    moradias; as roupas da loja não aparecem no Linu em pixel art.
+    Moradias (03/10/2026): barraca, estação de pesquisa (Rei George), refúgio (Port Lockroy), navio
+    (Drake) e casa romena (desembarque do romeno) — geradas no Canva com a barraca como referência,
+    reduzidas à grade 344 × 192; noite/sol da meia-noite recoloridos por código. Escolha salva em
+    Meta `moradia`. Falta: casas do desembarque dos outros idiomas; as roupas da loja no Linu pixel.
   - **Próximo: o abrigo customizável** (inspirado no app do irmão do usuário, "Dojo Legacy"): cena
     pixel art do PixelLab com objetos tocáveis (mural → quadro da expedição, rádio → conversa,
     caderno → diário, cabideiro → loja/roupas, estante → álbum), selos de pendência, o Linu andando

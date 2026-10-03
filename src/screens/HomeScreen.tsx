@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useState } from 'react';
-import { Modal, Pressable, ScrollView, Text, View } from 'react-native';
+import { Image, Modal, Pressable, ScrollView, Text, View, type ImageStyle } from 'react-native';
 import { router, useFocusEffect } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Lightbulb, Lock, MessageCircle, Star, Trophy, Check, X } from 'lucide-react-native';
@@ -7,7 +7,7 @@ import { Screen, Card, Button, ProgressBar, SpeechBubble } from '@/components/ui
 import { Linu } from '@/components/Linu';
 import { LinuAmigo } from '@/components/LinuAmigo';
 import { AdventureMap, type ParadaEstado, type TravessiaEstado } from '@/components/AdventureMap';
-import { PixelShelter } from '@/components/PixelShelter';
+import { MORADIAS, moradiasLiberadas, PixelShelter, type MoradiaId } from '@/components/PixelShelter';
 import { PixelIcon } from '@/components/PixelIcon';
 import { OutfitsCard } from '@/components/OutfitsCard';
 import { FieldGuideCard } from '@/components/FieldGuideCard';
@@ -16,7 +16,7 @@ import { StatusHeader } from '@/components/StatusHeader';
 import { CulturalGrammarCard } from '@/components/CulturalGrammarCard';
 import { useApp } from '@/services/app-state';
 import { missingParts } from '@/services/incompleto';
-import { completedLessons, getMeta, journalDoneToday, pendingPeerCount, vocabStats, xpByDay } from '@/database/queries';
+import { completedLessons, getMeta, setMeta, journalDoneToday, pendingPeerCount, vocabStats, xpByDay } from '@/database/queries';
 import { canSpeak } from '@/services/speech';
 import { TUTORIAL_KEY } from './TutorialScreen';
 import { buildPath, currentUnit, type PathLesson } from '@/services/curriculum';
@@ -55,6 +55,7 @@ export default function HomeScreen() {
   const [mistakes, setMistakes] = useState(0);
   const [stickers, setStickers] = useState(0);
   const [expedition, setExpedition] = useState(0);
+  const [moradiaSalva, setMoradiaSalva] = useState<MoradiaId | null>(null);
   const ALBUM_PRACTICE = { route: '/album' as const, emoji: '📒', title: 'Álbum', text: `${stickers} de ${STICKERS.length} figurinhas` };
   const KIN_PRACTICE = { route: '/palavras-irmas' as const, emoji: '🌳', title: 'Palavras irmãs', text: 'Parentes em outras línguas' };
   const CONFUSABLES_PRACTICE = { route: '/confunda' as const, emoji: '⚠️', title: 'Não confunda', text: 'Palavras parecidas na escrita' };
@@ -72,6 +73,7 @@ export default function HomeScreen() {
           return;
         }
         canSpeak(pack.speechLocale).then((ok) => alive && setNoVoice(!ok));
+        getMeta(db, MORADIA_KEY).then((m) => alive && setMoradiaSalva(m as MoradiaId | null));
         journalDoneToday(db, pack.code, localDay()).then((d) => alive && setJournalToday(d));
         openMistakeCount(db, pack.code).then((n) => alive && setMistakes(n));
         loadAlbum(db).then((a) => alive && setStickers(albumStats(a).owned));
@@ -111,6 +113,14 @@ export default function HomeScreen() {
   });
   const provaOf = (u: UnitSeed | null) => (u ? path.find((x) => x.unit.id === u.id && x.lesson.kind === 'prova') : undefined);
   const travessias: TravessiaEstado[] = rota.map((p) => provaOf(p.unit)?.state ?? null);
+  // a parada mais longe já alcançada libera as moradias (barraca → estação → refúgio → navio → casa do país)
+  const alcance = estados.reduce((m, e, i) => (e === 'feita' || e === 'atual' || e === 'aberta' ? i : m), 0);
+  const liberadas = moradiasLiberadas(pack.code, alcance);
+  const moradia = liberadas.find((m) => m.id === moradiaSalva) ?? liberadas.at(-1) ?? MORADIAS[0];
+  const escolherMoradia = (id: MoradiaId) => {
+    setMoradiaSalva(id);
+    setMeta(db, MORADIA_KEY, id);
+  };
   const atualIndex = Math.max(0, estados.indexOf('atual') >= 0 ? estados.indexOf('atual') : estados.lastIndexOf('feita'));
   const openCrossing = (i: number) => {
     const u = rota[i].unit;
@@ -140,6 +150,7 @@ export default function HomeScreen() {
       <View className="mt-2 gap-2">
         <SpeechBubble>{greeting}</SpeechBubble>
         <PixelShelter
+          moradia={moradia}
           selos={{ mural: todayXp < goal ? '!' : null, caderno: journalToday ? null : '!', cama: due > 0 ? due : null }}
           onObjeto={(o) => {
             if (o === 'porta') setParada(atualIndex);
@@ -152,7 +163,8 @@ export default function HomeScreen() {
             else if (o === 'cama') router.push('/revisao');
           }}
         />
-        <Text className="text-center text-xs text-slate-500 dark:text-slate-400">Toque nos objetos da barraca · o lampião troca a luz</Text>
+        <Text className="text-center text-xs text-slate-500 dark:text-slate-400">Toque nos objetos · o lampião troca a luz</Text>
+        <MoradiaPicker lang={pack.code} liberadas={liberadas.map((m) => m.id)} atual={moradia.id} rota={rota} onEscolher={escolherMoradia} />
         <View className="flex-row items-center gap-2 px-1">
           <ProgressBar value={todayXp / goal} color="bg-fogo" className="flex-1" />
           <Text className="text-xs font-bold text-slate-500 dark:text-slate-400">
@@ -315,6 +327,48 @@ export default function HomeScreen() {
       <CardModal card={card} locale={pack.speechLocale} onClose={() => setCard(null)} />
       <LockedMsgModal msg={lockedMsg} onClose={() => setLockedMsg(null)} />
     </Screen>
+  );
+}
+
+const MORADIA_KEY = 'moradia';
+const PIXELATED = { imageRendering: 'pixelated' } as unknown as ImageStyle;
+
+/** As moradias do Linu, como a grade de casinhas de um jogo: as liberadas se escolhem; as outras dizem onde chegam. */
+function MoradiaPicker({ lang, liberadas, atual, rota, onEscolher }: { lang: string; liberadas: MoradiaId[]; atual: MoradiaId; rota: Parada[]; onEscolher: (id: MoradiaId) => void }) {
+  const todas = MORADIAS.filter((m) => !m.lang || m.lang === lang);
+  if (todas.length < 2) return null;
+  return (
+    <View className="gap-1">
+      <Text className="px-1 text-[10px] font-extrabold uppercase tracking-widest text-slate-500 dark:text-slate-400">🏠 Moradia</Text>
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 8, paddingHorizontal: 2 }}>
+        {todas.map((m) => {
+          const livre = liberadas.includes(m.id);
+          const on = m.id === atual;
+          return (
+            <Pressable
+              key={m.id}
+              accessibilityRole="button"
+              accessibilityState={{ selected: on, disabled: !livre }}
+              accessibilityLabel={livre ? `Moradia: ${m.nome}${on ? ' (atual)' : ''}` : `${m.nome}: chega em ${rota[m.parada]?.name}`}
+              onPress={() => livre && onEscolher(m.id)}
+              className={`w-[92px] items-center gap-1 rounded-xl border-2 p-1 ${on ? 'border-aurora bg-aurora-light dark:bg-teal-950' : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900'}`}
+            >
+              <View>
+                <Image source={m.luzes.dia} style={[{ width: 80, height: 45, borderRadius: 6, opacity: livre ? 1 : 0.35 }, PIXELATED]} resizeMode="stretch" />
+                {!livre && (
+                  <View className="absolute inset-0 items-center justify-center">
+                    <Lock size={16} color="#475569" />
+                  </View>
+                )}
+              </View>
+              <Text numberOfLines={1} className={`text-[10px] font-bold ${livre ? 'text-slate-700 dark:text-slate-200' : 'text-slate-400 dark:text-slate-500'}`}>
+                {livre ? m.nome : (rota[m.parada]?.name ?? m.nome)}
+              </Text>
+            </Pressable>
+          );
+        })}
+      </ScrollView>
+    </View>
   );
 }
 

@@ -15,12 +15,7 @@ import { useAppReduceMotion } from '@/services/accessibility';
 export const SCENE_W = 344;
 export const SCENE_H = 192;
 
-const LUZES = {
-  dia: require('../../assets/pixel/abrigo-barraca-dia.png'),
-  'sol-da-meia-noite': require('../../assets/pixel/abrigo-barraca-sol-da-meia-noite.png'),
-  noite: require('../../assets/pixel/abrigo-barraca-noite.png'),
-};
-export type Luz = keyof typeof LUZES;
+export type Luz = 'dia' | 'sol-da-meia-noite' | 'noite';
 const ORDEM_LUZ: Luz[] = ['dia', 'sol-da-meia-noite', 'noite'];
 const NOME_LUZ: Record<Luz, string> = { dia: 'dia', 'sol-da-meia-noite': 'sol da meia-noite', noite: 'noite com aurora' };
 
@@ -54,20 +49,158 @@ interface Objeto {
   ir: number;
 }
 
-const OBJETOS: Objeto[] = [
-  { id: 'porta', nome: 'Porta: sair para a parada de agora', x: 30, y: 50, w: 34, h: 128, ir: 78 },
-  { id: 'janela', nome: 'Janela: onde se fala cada língua', x: 72, y: 46, w: 26, h: 48, ir: 96 },
-  { id: 'mural', nome: 'Mural: quadro da expedição', x: 111, y: 43, w: 63, h: 34, ir: 140 },
-  { id: 'caderno', nome: 'Caderno: diário', x: 100, y: 96, w: 40, h: 16, ir: 122 },
-  { id: 'radio', nome: 'Rádio: conversa', x: 143, y: 77, w: 38, h: 25, ir: 162 },
-  { id: 'cabideiro', nome: 'Cabideiro: roupas do Linu', x: 197, y: 45, w: 54, h: 60, ir: 222 },
-  { id: 'estante', nome: 'Estante: álbum de figurinhas', x: 255, y: 45, w: 44, h: 45, ir: 262 },
-  { id: 'cama', nome: 'Cama: revisão antes de dormir', x: 243, y: 105, w: 92, h: 62, ir: 236 },
+type Rect = [x: number, y: number, w: number, h: number, ir: number];
+const obj = (id: ObjetoId, nome: string, [x, y, w, h, ir]: Rect): Objeto => ({ id, nome, x, y, w, h, ir });
+const NOMES: Record<ObjetoId, string> = {
+  porta: 'Porta: sair para a parada de agora',
+  janela: 'Janela: onde se fala cada língua',
+  mural: 'Mural: quadro da expedição',
+  caderno: 'Caderno: diário',
+  radio: 'Rádio: conversa',
+  cabideiro: 'Cabideiro: roupas do Linu',
+  estante: 'Estante: álbum de figurinhas',
+  cama: 'Cama: revisão antes de dormir',
+};
+const objetos = (r: Record<ObjetoId, Rect>): Objeto[] => (Object.keys(r) as ObjetoId[]).map((id) => obj(id, NOMES[id], r[id]));
+
+export type MoradiaId = 'barraca' | 'estacao' | 'refugio' | 'navio' | 'casa-ro';
+
+export interface Moradia {
+  id: MoradiaId;
+  nome: string;
+  luzes: Record<Luz, number>;
+  objetos: Objeto[];
+  /** o lampião (tocar troca a luz) */
+  lampiao: [x: number, y: number, w: number, h: number];
+  /** a parada da aventura (índice, 0 = A1.1) em que a moradia fica disponível */
+  parada: number;
+  /** só para quem estuda este idioma (a casa do desembarque) */
+  lang?: string;
+}
+
+/**
+ * As moradias: a barraca (PixelLab) e as outras (geradas no Canva com a barraca como referência de
+ * estilo e de disposição). As versões de noite e de sol da meia-noite são recoloridas por código. Os
+ * retângulos são [x, y, largura, altura, até onde o Linu anda] na imagem de 344 × 192.
+ */
+export const MORADIAS: Moradia[] = [
+  {
+    id: 'barraca',
+    nome: 'Barraca',
+    luzes: {
+      dia: require('../../assets/pixel/abrigo-barraca-dia.png'),
+      'sol-da-meia-noite': require('../../assets/pixel/abrigo-barraca-sol-da-meia-noite.png'),
+      noite: require('../../assets/pixel/abrigo-barraca-noite.png'),
+    },
+    objetos: objetos({
+      porta: [30, 50, 34, 128, 78],
+      janela: [72, 46, 26, 48, 96],
+      mural: [111, 43, 63, 34, 140],
+      caderno: [100, 96, 40, 16, 122],
+      radio: [143, 77, 38, 25, 162],
+      cabideiro: [197, 45, 54, 60, 222],
+      estante: [255, 45, 44, 45, 262],
+      cama: [243, 105, 92, 62, 236],
+    }),
+    lampiao: [178, 3, 22, 44],
+    parada: 0,
+  },
+  {
+    id: 'estacao',
+    nome: 'Estação de pesquisa',
+    luzes: {
+      dia: require('../../assets/pixel/abrigo-estacao-dia.png'),
+      'sol-da-meia-noite': require('../../assets/pixel/abrigo-estacao-sol-da-meia-noite.png'),
+      noite: require('../../assets/pixel/abrigo-estacao-noite.png'),
+    },
+    objetos: objetos({
+      porta: [30, 40, 40, 140, 80],
+      janela: [70, 47, 22, 41, 92],
+      mural: [108, 40, 64, 40, 140],
+      caderno: [86, 98, 40, 14, 110],
+      radio: [138, 85, 34, 20, 156],
+      cabideiro: [194, 40, 58, 60, 222],
+      estante: [256, 40, 44, 42, 270],
+      cama: [240, 100, 95, 65, 232],
+    }),
+    lampiao: [176, 3, 18, 40],
+    parada: 1,
+  },
+  {
+    id: 'refugio',
+    nome: 'Refúgio de madeira',
+    luzes: {
+      dia: require('../../assets/pixel/abrigo-refugio-dia.png'),
+      'sol-da-meia-noite': require('../../assets/pixel/abrigo-refugio-sol-da-meia-noite.png'),
+      noite: require('../../assets/pixel/abrigo-refugio-noite.png'),
+    },
+    objetos: objetos({
+      porta: [30, 40, 32, 135, 74],
+      janela: [70, 47, 28, 53, 92],
+      mural: [104, 43, 61, 40, 132],
+      caderno: [95, 100, 40, 13, 118],
+      radio: [134, 83, 34, 23, 150],
+      cabideiro: [195, 45, 48, 60, 220],
+      estante: [245, 40, 37, 75, 258],
+      cama: [282, 60, 62, 115, 274],
+    }),
+    lampiao: [172, 5, 20, 40],
+    parada: 3,
+  },
+  {
+    id: 'navio',
+    nome: 'Navio quebra-gelo',
+    luzes: {
+      dia: require('../../assets/pixel/abrigo-navio-dia.png'),
+      'sol-da-meia-noite': require('../../assets/pixel/abrigo-navio-sol-da-meia-noite.png'),
+      noite: require('../../assets/pixel/abrigo-navio-noite.png'),
+    },
+    objetos: objetos({
+      porta: [14, 25, 46, 155, 70],
+      janela: [66, 30, 32, 52, 92],
+      mural: [112, 35, 63, 40, 140],
+      caderno: [100, 92, 37, 12, 118],
+      radio: [140, 75, 32, 23, 156],
+      cabideiro: [196, 42, 62, 75, 226],
+      estante: [260, 40, 40, 40, 270],
+      cama: [242, 98, 98, 77, 236],
+    }),
+    lampiao: [174, 3, 19, 34],
+    parada: 6,
+  },
+  {
+    id: 'casa-ro',
+    nome: 'Casa romena',
+    luzes: {
+      dia: require('../../assets/pixel/abrigo-romenia-dia.png'),
+      'sol-da-meia-noite': require('../../assets/pixel/abrigo-romenia-sol-da-meia-noite.png'),
+      noite: require('../../assets/pixel/abrigo-romenia-noite.png'),
+    },
+    objetos: objetos({
+      porta: [8, 33, 54, 147, 70],
+      janela: [68, 46, 24, 49, 90],
+      mural: [110, 44, 62, 36, 140],
+      caderno: [95, 98, 42, 14, 118],
+      radio: [136, 80, 39, 24, 156],
+      cabideiro: [196, 40, 52, 68, 222],
+      estante: [254, 40, 42, 50, 266],
+      cama: [244, 100, 90, 80, 238],
+    }),
+    lampiao: [175, 3, 18, 42],
+    parada: 8,
+    lang: 'ro',
+  },
 ];
+
+/** As moradias que o aluno já alcançou na aventura (a casa do país só para o idioma dela). */
+export function moradiasLiberadas(lang: string, paradaAlcancada: number): Moradia[] {
+  return MORADIAS.filter((m) => (!m.lang || m.lang === lang) && m.parada <= paradaAlcancada);
+}
 
 export type Selo = number | '!' | null;
 
-export function PixelShelter({ selos, onObjeto }: { selos: Partial<Record<ObjetoId, Selo>>; onObjeto: (id: ObjetoId) => void }) {
+export function PixelShelter({ moradia = MORADIAS[0], selos, onObjeto }: { moradia?: Moradia; selos: Partial<Record<ObjetoId, Selo>>; onObjeto: (id: ObjetoId) => void }) {
+  const OBJETOS = moradia.objetos;
   const reduceOS = useReducedMotion();
   const reduceApp = useAppReduceMotion();
   const reduce = reduceOS || reduceApp;
@@ -119,7 +252,7 @@ export function PixelShelter({ selos, onObjeto }: { selos: Partial<Record<Objeto
     <View onLayout={(e) => setW(e.nativeEvent.layout.width)} className="w-full overflow-hidden rounded-3xl border-2 border-aurora/40 dark:border-aurora/30">
       {w > 0 && (
         <View style={{ width: w, height: SCENE_H * s }}>
-          <Image source={LUZES[luz]} style={[{ width: w, height: SCENE_H * s }, pixelated]} resizeMode="stretch" accessibilityIgnoresInvertColors />
+          <Image source={moradia.luzes[luz]} style={[{ width: w, height: SCENE_H * s }, pixelated]} resizeMode="stretch" accessibilityIgnoresInvertColors />
 
           {OBJETOS.map((o) => {
             const selo = selos[o.id];
@@ -149,7 +282,7 @@ export function PixelShelter({ selos, onObjeto }: { selos: Partial<Record<Objeto
             accessibilityRole="button"
             accessibilityLabel={`Lampião: trocar a luz (agora: ${NOME_LUZ[luz]})`}
             onPress={() => setLuz((l) => ORDEM_LUZ[(ORDEM_LUZ.indexOf(l) + 1) % ORDEM_LUZ.length])}
-            style={{ position: 'absolute', left: 178 * s, top: 3 * s, width: 22 * s, height: 44 * s }}
+            style={{ position: 'absolute', left: moradia.lampiao[0] * s, top: moradia.lampiao[1] * s, width: moradia.lampiao[2] * s, height: moradia.lampiao[3] * s }}
             className="rounded-md active:bg-amber-200/30"
           />
 
