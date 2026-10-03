@@ -1,17 +1,37 @@
 import { Pressable, Text, View } from 'react-native';
-import { router } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
+import { ArrowLeft } from 'lucide-react-native';
 import { Screen, Chip, SpeechBubble } from '@/components/ui';
 import { Linu } from '@/components/Linu';
 import { FieldNotebookBackground } from '@/components/FieldNotebookBackground';
 import { useApp } from '@/services/app-state';
+import { useIsDark } from '@/services/theme';
 import { alvoDoTour } from '@/services/tour';
 
 /** Lista de cenários de conversa guiada, com persona e registro social. */
 export default function ConversationScreen() {
   const { pack } = useApp();
+  const dark = useIsDark();
+  // aberta pelo rádio do abrigo, a aba ganha a seta de volta para a trilha
+  const { de } = useLocalSearchParams<{ de?: string }>();
   return (
     <Screen background={<FieldNotebookBackground variant="gelo" />}>
-      <Text className="pt-3 text-2xl font-extrabold text-slate-900 dark:text-white">💬 Conversação</Text>
+      <View className="flex-row items-center gap-3 pt-3">
+        {de === 'abrigo' && (
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel="Voltar para o abrigo"
+            hitSlop={10}
+            onPress={() => {
+              router.setParams({ de: undefined });
+              router.navigate('/');
+            }}
+          >
+            <ArrowLeft size={24} color={dark ? '#CBD5E1' : '#334155'} />
+          </Pressable>
+        )}
+        <Text className="text-2xl font-extrabold text-slate-900 dark:text-white">💬 Conversação</Text>
+      </View>
 
       <View className="mt-3 flex-row items-end gap-2">
         <Linu mood="falando" size={70} />

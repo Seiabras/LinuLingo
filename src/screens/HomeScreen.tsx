@@ -165,7 +165,7 @@ export default function HomeScreen() {
               else if (o === 'janela') router.push('/mapa');
               else if (o === 'mural') setMural(true);
               else if (o === 'caderno') router.push('/diario');
-              else if (o === 'radio') router.push('/conversa');
+              else if (o === 'radio') router.push({ pathname: '/conversa', params: { de: 'abrigo' } });
               else if (o === 'cabideiro') setRoupas(true);
               else if (o === 'estante') router.push('/album');
               else if (o === 'cama') router.push('/revisao');
