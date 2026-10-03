@@ -1,15 +1,13 @@
 import { useCallback, useState } from 'react';
 import { Platform, Pressable, Text, TextInput, View } from 'react-native';
 import { router, useFocusEffect } from 'expo-router';
-import { ArrowLeft } from 'lucide-react-native';
 import { Screen, Button, Card, Chip, SectionTitle, LetterPad, SpeechBubble } from '@/components/ui';
 import { Linu } from '@/components/Linu';
+import { FieldNotebookBackground } from '@/components/FieldNotebookBackground';
 import { useApp } from '@/services/app-state';
 import { targetInputStyle, targetTextStyle } from '@/services/direction';
 import { awardXp, listJournal } from '@/database/queries';
 import { localDay, XP } from '@/services/progress';
-import { goBack } from '@/services/nav';
-import { useIsDark } from '@/services/theme';
 import { nomeIdioma } from '@/services/idioma-nome';
 import { siteUrl } from '@/services/site-url';
 import { sendLink } from '@/services/share';
@@ -29,7 +27,6 @@ function playDataUri(uri: string) {
  */
 export default function CommunityScreen() {
   const { db, pack, user, refresh } = useApp();
-  const dark = useIsDark();
   const [items, setItems] = useState<CommunityRow[]>([]);
   const [journalToday, setJournalToday] = useState<string | null>(null);
 
@@ -49,13 +46,8 @@ export default function CommunityScreen() {
   const journalSent = !!journalToday && mine.some((m) => m.kind !== 'audio' && m.content === journalToday);
 
   return (
-    <Screen>
-      <View className="flex-row items-center gap-3 pt-3">
-        <Pressable accessibilityLabel="Voltar" onPress={goBack} hitSlop={10}>
-          <ArrowLeft size={24} color={dark ? '#CBD5E1' : '#334155'} />
-        </Pressable>
-        <Text className="text-2xl font-extrabold text-slate-900 dark:text-white">👥 Comunidade</Text>
-      </View>
+    <Screen background={<FieldNotebookBackground variant="pergaminho" />}>
+      <Text className="pt-3 text-2xl font-extrabold text-slate-900 dark:text-white">👥 Comunidade</Text>
 
       <View className="mt-4 flex-row items-end gap-2">
         <Linu mood="falando" size={64} />

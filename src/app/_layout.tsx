@@ -56,7 +56,6 @@ export default function RootLayout() {
                 <Stack.Screen name="licao/[id]" options={{ presentation: 'fullScreenModal', gestureEnabled: false }} />
                 <Stack.Screen name="sprint" options={{ presentation: 'fullScreenModal' }} />
                 <Stack.Screen name="revisao" options={{ presentation: 'fullScreenModal' }} />
-                <Stack.Screen name="comunidade" />
                 <Stack.Screen name="troca" />
                 <Stack.Screen name="palavras-irmas" />
                 <Stack.Screen name="expedicao" />
