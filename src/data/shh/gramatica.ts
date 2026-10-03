@@ -84,7 +84,7 @@ export const GRAMMAR_SHH: GrammarTopic[] = [
         question: 'O que a Wikipédia diz sobre o sentido de uma frase shoshone se a ordem das palavras mudar?',
         options: ['Pode continuar claro, porque o sentido não depende só da ordem', 'A frase vira automaticamente uma pergunta', 'A frase perde todo o sentido'],
         answer: 'Pode continuar claro, porque o sentido não depende só da ordem',
-        explanation: 'A própria Wikipédia diz que “sentence meaning is not dependent on word order in Shoshoni”.',
+        explanation: 'A própria Wikipédia diz que “sentence meaning is not dependent on word order in Shoshoni” (o sentido da frase não depende da ordem das palavras em shoshone).',
       },
     ],
   },
@@ -115,7 +115,7 @@ export const GRAMMAR_SHH: GrammarTopic[] = [
         question: 'O shoshone é descrito pela Wikipédia em inglês como principalmente...',
         options: ['Sufixal (a gramática entra depois da raiz)', 'Prefixal (a gramática entra antes da raiz)', 'Sem nenhum afixo'],
         answer: 'Sufixal (a gramática entra depois da raiz)',
-        explanation: 'A fonte chama o shoshone de “a synthetic, agglutinative language” e “primarily suffixing”, com só alguns prefixos instrumentais como exceção.',
+        explanation: 'A fonte chama o shoshone de “a synthetic, agglutinative language” (uma língua sintética, aglutinante) e “primarily suffixing” (que usa sufixos principalmente), com só alguns prefixos instrumentais como exceção.',
       },
       {
         question: 'O que é “referência cruzada” (switch-reference) no shoshone?',

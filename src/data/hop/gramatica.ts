@@ -53,7 +53,7 @@ export const GRAMMAR_HOP: GrammarTopic[] = [
         question: 'Qual é a ordem básica de palavras do hopi, segundo a Wikipédia em inglês?',
         options: ['Sujeito-Objeto-Verbo (SOV)', 'Sujeito-Verbo-Objeto (SVO)', 'Verbo-Sujeito-Objeto (VSO)'],
         answer: 'Sujeito-Objeto-Verbo (SOV)',
-        explanation: 'A Wikipédia em inglês afirma diretamente: “Hopi is a subject–object–verb language.”',
+        explanation: 'A Wikipédia em inglês afirma diretamente: “Hopi is a subject–object–verb language” (o hopi é uma língua sujeito-objeto-verbo).',
       },
       {
         question: 'Na frase “maana wuupa” (a moça é alta), o que liga o sujeito ao adjetivo?',

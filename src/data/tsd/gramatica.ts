@@ -43,13 +43,13 @@ export const GRAMMAR_TSD: GrammarTopic[] = [
         options: ['Do dórico', 'Do ático-jônico (o mesmo do grego padrão)', 'Do coiné bizantino'],
         answer: 'Do dórico',
         explanation:
-          'A Wikipédia é clara: “Unlike all other extant varieties of Greek, Tsakonian derives from Doric Greek rather than from the Attic–Ionic branch.”',
+          'A Wikipédia é clara: “Unlike all other extant varieties of Greek, Tsakonian derives from Doric Greek rather than from the Attic–Ionic branch” (diferente de todas as outras variedades vivas do grego, o tsakônio descende do grego dórico, não do ramo ático-jônico).',
       },
       {
         question: 'Quem fala grego padrão entende tsakônio sem estudar?',
         options: ['Não — as duas línguas não são mutuamente inteligíveis, apesar do parentesco', 'Sim, perfeitamente', 'Só a forma escrita, nunca a falada'],
         answer: 'Não — as duas línguas não são mutuamente inteligíveis, apesar do parentesco',
-        explanation: '“Although Tsakonian and standard Modern Greek are related, they are not mutually intelligible” (Wikipédia).',
+        explanation: '“Although Tsakonian and standard Modern Greek are related, they are not mutually intelligible” (embora o tsakônio e o grego padrão moderno sejam parentes, eles não são mutuamente inteligíveis) — Wikipédia.',
       },
     ],
   },
