@@ -11,7 +11,7 @@ import { OutfitsCard } from '@/components/OutfitsCard';
 import { useApp } from '@/services/app-state';
 import { missingParts } from '@/services/incompleto';
 import { completedLessons, resetProgress, updateUser, vocabStats, xpByDay } from '@/database/queries';
-import { groupByLineage, isAvailable, PACKS } from '@/data/idiomas';
+import { groupByLineage, isArtificial, isAvailable, LANGUAGES, PACKS } from '@/data/idiomas';
 import type { LanguageInfo } from '@/data/types';
 import type { ThemePref } from '@/services/theme';
 import type { TextScale } from '@/services/accessibility';
@@ -35,6 +35,8 @@ export default function ProfileScreen() {
       else next.add(key);
       return next;
     });
+  // qual grupo o seletor de idioma mostra: natural (quase tudo, hoje) ou artificial (construída)
+  const [langKind, setLangKind] = useState<'natural' | 'artificial'>(() => (isArtificial(pack) ? 'artificial' : 'natural'));
   const [name, setName] = useState(user?.name ?? '');
   const [week, setWeek] = useState<{ day: string; xp: number }[]>([]);
   const [lessons, setLessons] = useState(0);
@@ -53,7 +55,9 @@ export default function ProfileScreen() {
     }, [loadStats, user?.name]),
   );
 
-  const groups = groupByLineage();
+  const naturalLangs = LANGUAGES.filter((l) => !isArtificial(l));
+  const artificialLangs = LANGUAGES.filter(isArtificial);
+  const groups = groupByLineage(langKind === 'artificial' ? artificialLangs : naturalLangs);
   const max = Math.max(10, ...week.map((d) => d.xp));
   const weekTotal = week.reduce((s, d) => s + d.xp, 0);
 
@@ -204,6 +208,31 @@ export default function ProfileScreen() {
       </View>
 
       <SectionTitle>Idioma · por família e ramo</SectionTitle>
+      <View className="mb-3 flex-row rounded-2xl bg-slate-200 p-1 dark:bg-slate-800">
+        {(
+          [
+            ['natural', `🗣️ Naturais (${naturalLangs.length})`],
+            ['artificial', `🤖 Artificiais (${artificialLangs.length})`],
+          ] as [typeof langKind, string][]
+        ).map(([k, label]) => (
+          <Pressable
+            key={k}
+            accessibilityRole="radio"
+            accessibilityLabel={label}
+            accessibilityState={{ selected: langKind === k }}
+            aria-checked={langKind === k}
+            onPress={() => setLangKind(k)}
+            className={`flex-1 items-center rounded-xl py-2 ${langKind === k ? 'bg-white dark:bg-slate-950' : ''}`}
+          >
+            <Text className={`text-center font-bold ${langKind === k ? 'text-conecta' : 'text-slate-500 dark:text-slate-400'}`}>{label}</Text>
+          </Pressable>
+        ))}
+      </View>
+      {langKind === 'artificial' && artificialLangs.length === 0 && (
+        <Text className="mb-3 text-sm text-slate-500 dark:text-slate-400">
+          Nenhum idioma artificial tem curso pronto ainda. Quando um ganhar trilha de verdade, aparece aqui.
+        </Text>
+      )}
       <View className="gap-3">
         {Object.entries(groups).map(([family, branches]) => {
           const famKey = `F:${family}`;

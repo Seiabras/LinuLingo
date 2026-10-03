@@ -423,6 +423,17 @@ export function isAvailable(code: string): boolean {
   return code in PACKS;
 }
 
+/**
+ * Convenção deste app: um idioma é "artificial" (construído) quando `lineage.family` é exatamente
+ * "Construída" — nenhum precisa de outro campo novo, e a família continua servindo pra agrupar por
+ * tipo de língua construída (auxiliar, artística, lógica...) no segundo nível do seletor, como as
+ * famílias de verdade já fazem com os ramos. Hoje nenhum idioma artificial está registrado em
+ * `LANGUAGES` (o tsevhu existe só como dicionário em `src/data/tsevhu/`, sem currículo montado).
+ */
+export function isArtificial(l: Pick<LanguageInfo, 'lineage'>): boolean {
+  return l.lineage.family === 'Construída';
+}
+
 /** Agrupa por família e depois pelo primeiro ramo: { 'Indo-europeu': { 'Itálico': [...] } } */
 export function groupByLineage(langs: LanguageInfo[] = LANGUAGES) {
   const groups: Record<string, Record<string, LanguageInfo[]>> = {};
