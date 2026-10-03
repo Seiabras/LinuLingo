@@ -51,6 +51,14 @@ export function passosDoTour(pack: LanguagePack, opts: { web: boolean }): PassoT
       texto: 'O rádio abre a Conversa, o caderno é o diário, a estante guarda o álbum e no cabideiro ficam as minhas roupinhas. O lampião troca a luz.',
     }),
     p({
+      id: 'ficha',
+      rota: '/',
+      alvo: 'abrigo',
+      humor: 'comemorando',
+      titulo: 'Toque em mim também',
+      texto: 'Minha ficha mostra 5 atributos tirados do que você estudou. E o meu cachecol muda de cor a cada nível conquistado nas travessias.',
+    }),
+    p({
       id: 'moradias',
       rota: '/',
       alvo: 'moradias',
